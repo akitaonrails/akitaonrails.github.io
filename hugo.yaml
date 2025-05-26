@@ -36,7 +36,7 @@ menu:
         type: search
     - name: GitHub
       weight: 5
-      url: "https://github.com/akitaonrails/akitaonrails-hugo"
+      url: "https://github.com/akitaonrails/akitaonrails.github.io"
       params:
         icon: github
     - name: Twitter
