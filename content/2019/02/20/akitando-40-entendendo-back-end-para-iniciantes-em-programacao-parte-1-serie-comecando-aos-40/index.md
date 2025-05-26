@@ -6,8 +6,8 @@ slug: akitando-40-entendendo-back-end-para-iniciantes-em-programacao-parte-1-ser
 tags:
 - back-end
 - java
-- ".net"
-- c#
+- dotnet
+- csharp
 - CLR
 - JVM
 - Linux

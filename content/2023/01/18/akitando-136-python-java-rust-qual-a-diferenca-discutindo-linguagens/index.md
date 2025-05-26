@@ -10,7 +10,7 @@ tags:
 - elixir
 - golang
 - rust
-- c#
+- csharp
 - php
 - ruby
 - apache

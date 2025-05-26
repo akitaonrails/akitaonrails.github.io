@@ -6,7 +6,7 @@ tags:
 - rinha
 - docker
 - gatling
-- c#
+- csharp
 - rust
 - go lang
 - nim lang
