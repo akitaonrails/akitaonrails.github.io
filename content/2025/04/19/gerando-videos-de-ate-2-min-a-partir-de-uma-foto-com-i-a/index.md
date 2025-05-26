@@ -1,0 +1,111 @@
+---
+title: Gerando Videos de até 2 min a partir de uma Foto com I.A.
+date: '2025-04-19T20:00:00-03:00'
+slug: gerando-videos-de-ate-2-min-a-partir-de-uma-foto-com-i-a
+tags:
+- framepack
+- hunyuan
+- flux
+- docker
+- figures
+- 3d print
+draft: false
+---
+
+Fácil o melhor canal de tutoriais de ferramentas open source pra I.A. é o [Aitrepreneur](https://www.youtube.com/watch?v=GywyMij88rY). E nesse link ele apresenta uma nova ferramenta chamada [FramePack](https://github.com/lllyasviel/FramePack), que usa o famoso modelo [HunyuanVideo](https://github.com/Tencent/HunyuanVideo) da Tencent pra pegar uma única imagem, uma foto, e conseguir gerar videos de excelente qualidade de até 2 minutos de duração. É realmente impressionante! Assistam o video, mas eis aqui embaixo um video gerado de 10 segundos de uma foto que eu tirei de uma das action figures da minha coleção.
+
+<div class="video-container">
+    <video controls>
+        <source src="https://akitaonrails-videos.s3.us-east-2.amazonaws.com/link-animado.mp4">
+        Your browser does not support the video tag. [Direct Link](https://akitaonrails-videos.s3.us-east-2.amazonaws.com/link-animado.mp4)
+    </video>
+</div>
+
+
+
+Já que estava no embalo de empacotar esse tipo de ferramenta em Docker, resolvi fazer mais um projetinho com um Dockerfile pra rodar no meu Manjaro Linux com RTX 4090. O bom do Aitrepreneur é que ele tem um Patreon que você pode assinar pra contribuir (é barato) e ele sempre sobe scripts pra rodar no [RunPod](https://www.runpod.io/) caso você não tenha uma máquina parruda ou GPU, ou script .BAT pra rodar no seu Windows.
+
+Meu projetinho está [neste GitHub](https://github.com/akitaonrails/FramePack-Docker-CUDA) e pra usar é muito simples:
+
+```
+
+git clone https://github.com/akitaonrails/FramePack-Docker-CUDA.git
+cd FramePack-Docker-CUDA
+mkdir outputs
+mkdir hf_download
+
+# Build the image
+docker build -t framepack-torch26-cu124:latest .
+
+# Run mapping the directories outside:
+docker run -it --rm --gpus all -p 7860:7860 \
+  -v ./outputs:/app/outputs \
+  -v ./hf_download:/app/hf_download \
+  framepack-torch26-cu124:latest
+```
+
+Isso vai construir a imagem de Docker e rodar. E na primeira vez dá pra ver que ele vai baixar uma TONELADA de models, o HunyuanVideo, Flux e mais. Se prepara pra mais de 30GB. Mas é só na primeira vez porque eu mapeio o diretório de download pra fora, então se reiniciar o container ele já vai ter na próxima vez.
+
+Quando terminar, é só acessar **http://localhost:7860** e vai ver esta interface super simples:
+
+![FramePack Web UI](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBaTBCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--ef9d04d08f6aec03aeb39557b51251997073a872/Screenshot%20From%202025-04-19%2018-06-34.png?disposition=attachment&locale=en)
+
+
+Os controles são muito simples:
+
+- Desabilite a opção "Use TeaCache" que deixa mais rápido mas aí você arrisca a ter aqueles defeitos de I.A. como mão com mais dedos e coisas assim.
+- Total do Video pode ser até 2 minutos, mas só faça isso se realmente tiver paciência porque demora BASTANTE! Acho melhor começar mesmo testando com videos curtos de 5 a 10 segundos primeiro.
+- Se sua GPU tiver pouca VRAM vai ser obrigado a mexer em "GPU Inference Preserved Memory (GB) (larger means slower)". No meu caso que tenho 24GB de VRAM deixei como está, mas olha só rodando como ele consome:
+
+![btop](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBaTRCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--d00ca1f1355e5af7bb250690726805a75c52e903/Screenshot%20From%202025-04-19%2017-52-44.png?disposition=attachment&locale=en)
+
+Sim! 100% da GPU e quase 100% da VRAM, puxando mais de 350W da parede! (foda-se meio ambiente! kkkkk) A CPU até fica de boa, porque esse processo é feito pra realmente MASSACRAR a GPU. Se não tiver GPU boa, alugue uma máquina na RunPod como falei antes.
+
+O video de 10 segundos no começo do post é uma foto da uma das action figures que eu mais gosto na minha coleção, o Link de Breath of the Wild. E isso é uma coisa que me deixou empolgado. Esta é a foto original que serviu de base pro FramePack fazer o video:
+
+![Link Foto](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBaThCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4f310812061da0185500b9844c4dc28f78eb1984/20250419_184724.jpg?disposition=attachment&locale=en)
+
+Fazer video de fotos de pessoas é sem graça e tedioso, mas agora que estou aprendendo a modelar 3D pra imprimir na minha Bambulab, imagina depois ainda conseguir fazer ele ficar animado?
+
+Pra animar no Blender e renderizar, também é bastante processamento e demora. Mas com isso eu consigo rapidamente prototipar uma animação e ver como fica, pra ver se vale a pena fazer uma versão melhor no Blender depois. Abre muitas possibildades de experimentação!
+
+Por mais impressionante que isso pareça, ele não faz **QUALQUER COISA**, tive várias experimentações que deram errado e a movimentação que ele faz é bem limitada, afinal ele só tem uma foto pra usar de referência e não tem dá pra fazer movimentos bruscos demais, tem limites. Mesmo assim é bem divertido de brincar. O fato dele conseguir identificar mais que seres humanos é um grande "plus" na minha opinião, porque é onde eu me interessei mais.
+
+**AH SIM!** Lembram o [outro blog post](https://www.akitaonrails.com/2025/04/19/aumentando-resolucao-de-anime-velho-pra-4k-com-i-a) que publiquei hoje sobre fazer **UPSCALE PRA 4K**?? Dá pra usar aqui também, pegue um video que o FramePack gerou e você gostou muito e faça upscale pra 4K pra ter mais definição ainda! Aí fica em qualidade pra até usar em edição de videos.
+
+Videos de 2 minutos deve levar horas pra fazer. 30 segundos levou quase 1 hora. Melhor coisa é ficar em videos de 5 segundos pra brincar e experimentar, só isso já leva aí quase meia hora. Aqui vão mais alguns exemplos tirados de fotos de itens da minha coleção (aqueles que vocês viam no fundo dos meus videos). Divirtam-se!
+
+<div class="video-container">
+    <video controls>
+        <source src="https://akitaonrails-videos.s3.us-east-2.amazonaws.com/ultraseven-animado.mp4">
+        Your browser does not support the video tag. [Direct Link](https://akitaonrails-videos.s3.us-east-2.amazonaws.com/ultraseven-animado.mp4)
+    </video>
+</div>
+
+Este é um Ultraseven de mais de 30cm de altura que eu encontrei e trouxe direto de um sebo de Tóquio ano passado, um dos que eu mais gosto especialmente porque assisti muito no começo dos anos 80 quando eu era criança.
+
+<div class="video-container">
+    <video controls>
+        <source src="https://akitaonrails-videos.s3.us-east-2.amazonaws.com/jiraya-animado.mp4">
+        Your browser does not support the video tag. [Direct Link](https://akitaonrails-videos.s3.us-east-2.amazonaws.com/jiraya-animado.mp4)
+    </video>
+</div>
+
+Falando em nostalgia, esse é outro item da hora da minha coleção, um Jiraya super detalhado feito pela Iron Studios. E animado até que ficou bem da hora. O que acharam?
+
+Mas agora o meu **FAVORITO**, quem me acompanha no [Instagram](https://www.instagram.com/p/DIAe3pNOFgffFZ5J32fWlc-8Kmy3Lhap5Vm58U0/?img_index=1) viu que faz algumas semanas que venho me dedicando a melhorar minhas técnicas de 3D e também de desenho e eu fiz um conceito de Mandaloriam + Judge Dredd:
+
+![Boba Dredd](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBakFCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a88d1ecfaee2f2bfb9849acee0830fdc9d6ee5f4/Illustration23%20(2).png?disposition=attachment&locale=en)
+
+Depois vejam os outros desenhos no meu Instagram, mas enfim, eu precisava saber se o FramePack era capaz de animar também desenhos e SIM, ELE CONSEGUE!! OLHA QUE PH0DA!!! Esse me deixou impressionado, dá uma nova dimensão nas minhas coisas!
+
+<div class="video-container">
+    <video controls>
+        <source src="https://akitaonrails-videos.s3.us-east-2.amazonaws.com/boba-dredd-animado_upscaled.mp4">
+        Your browser does not support the video tag. [Direct Link](https://akitaonrails-videos.s3.us-east-2.amazonaws.com/boba-dredd-animado_upscaled.mp4)
+    </video>
+</div>
+
+Sim, tudo isso é bem pesado, mas a vantagem é que eu posso experimentar INFINITAMENTE, porque tudo roda local. Num produto comercial de alguém no "cloud", eu precisaria pagar alguma assinatura e ele ia me limitar, seria impossível ficar experimentando quando eu quisesse. Agora eu posso fazer tudo que eu quiser, quando eu quiser, como eu quiser, sem que ninguém nem nada possa encher meu s@co.
+
+Aliás, se puderem assistam esse clip do "Boba Dredd" em tela cheia num monitor grande. Notaram que tá bem nítido? É porque eu passei no Video2K e fiz upscale pra 4x a resolução que o FramePack me deu. Juntando essas ferramentas dá pra fazer coisas BEM interessantes, depois me falem se conseguiram usar e o que fizeram de legal!
