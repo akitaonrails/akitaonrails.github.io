@@ -1,0 +1,23 @@
+<!-- Disqus -->
+{{- with .Site.Config.Services.Disqus.Shortname }}
+<script type="text/javascript">
+  //<![CDATA[
+  (function() {
+    var links = document.getElementsByTagName('a');
+    var query = '?';
+    for(var i = 0; i < links.length; i++) {
+      if(links[i].href.indexOf('#disqus_thread') >= 0) {
+        snippet = 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+        if( (query + snippet).length < 6000 )
+        query += snippet;
+        else
+        break;
+      }
+    }
+    var disqus = document.createElement('script'); disqus.type = 'text/javascript'; disqus.async = true;
+    disqus.src = "https://disqus.com/forums/{{ . }}/get_num_replies.js" + query;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(disqus, s);
+  })();
+//]]>
+</script>
+{{ end }}

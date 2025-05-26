@@ -1,7 +1,11 @@
 # Hugo configuration file
 title: AkitaOnRails.com
-disqusShortname: akitaonrails
-googleAnalytics: G-XSK3YHXFRY
+
+services:
+  disqus:
+    shortname: akitaonrails
+  googleAnalytics:
+    ID: G-XSK3YHXFRY
 
 # import hextra as module
 module:
@@ -47,9 +51,9 @@ params:
     displayLogo: false
 
   footer:
-    displayCopyright: false
+    displayCopyright: true
     displayPoweredBy: true
 
   editURL:
-    enable: true
+    enable: false
     base: "https://github.com/imfing/hextra-starter-template/edit/main/content"
