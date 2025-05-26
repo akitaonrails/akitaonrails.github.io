@@ -1,5 +1,7 @@
 # Hugo configuration file
 title: AkitaOnRails.com
+disqusShortname: akitaonrails
+googleAnalytics: G-XSK3YHXFRY
 
 # import hextra as module
 module:
