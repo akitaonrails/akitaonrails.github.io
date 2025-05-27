@@ -57,3 +57,9 @@ params:
   editURL:
     enable: false
     base: "https://github.com/imfing/hextra-starter-template/edit/main/content"
+
+  # Keep default youtube shortcode as configurable
+  youtubeDefaults:
+    iframeAllowList: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy: "no-referrer"
+    iframeStyle: "border:0; width:100%; aspect-ratio:16/9;"
