@@ -19,7 +19,7 @@ tags:
 draft: false
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/epiyExCyb2s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{< youtube id="epiyExCyb2s" >}}
 
 
 No primeiro episódio técnico da série Começando aos 40 (https://www.youtube.com/watch?v=sx4hAHhO9CY) eu recomendei que todos estudassem Linux, e foi só isso. Hoje eu resolvi retomar o que eu disse e mostrar que em casa de ferreiro o espeto é de ferro!

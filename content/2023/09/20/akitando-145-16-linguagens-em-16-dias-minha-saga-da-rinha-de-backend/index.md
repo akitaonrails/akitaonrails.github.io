@@ -25,7 +25,7 @@ tags:
 draft: false
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/EifK2a_5K_U?si=bTUpIcss3ZlESl2B" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+{{< youtube id="EifK2a_5K_U" >}}
 
 A Rinha de Backend que aconteceu em Agosto de 2023 foi muito divertida. Eu só fiquei sabendo quando acabou, mas não quer dizer que não pude me divertir. Hoje quero resumir tudo que eu fiz nos 16 dias seguintes do evento, detalhes sobre os projetos dos participantes, a controvérsia do Ranking de Linguagens, quais os truques por trás dos vencedores, e como você também poderia ser um vencedor!
 

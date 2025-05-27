@@ -30,7 +30,7 @@ tags:
 draft: false
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/uIflMYQnp8A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+{{< youtube id="uIflMYQnp8A" >}}
 
 O Twitter liberou parte do código que chamou de "The Algorithm", que forma o sistema que popula a aba de recomendações "Para Você". 
 

@@ -14,7 +14,7 @@ tags:
 draft: false
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/yfEhz9poqW8?si=rgWeP-ML6qh9TLpS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+{{< youtube id="yfEhz9poqW8" >}}
 
 Fazia tempo que queria fazer um último episódio à playlist de armazenamento trazendo um pouco mais de BTRFS. Aproveito pra adicionar mais sobre Git, Docker tudo voltado ao tema de como não perder dados nunca mais e até como recuperar dados numa emergência.
 

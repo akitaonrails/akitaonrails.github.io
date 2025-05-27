@@ -14,7 +14,7 @@ O problema é que minha palestra não dá pra entender se a sincronização dos 
 
 Pensando nisso decidi fazer o seguinte: baixei o MP3 deles, abri o Keynote original e gravei usando [ScreenFlow](http://www.telestream.net/screenflow/overview.htm). Ficou quase sincronizado perfeito e deve estar **muito** melhor pra assistir. Acabei de subir no YouTube, então aproveitem!
 
-<div class='embed-container'><iframe src='http://www.youtube.com/embed/4JiPGHSKuTY' frameborder='0' allowfullscreen></iframe></div>
+<div class='embed-container'>{{< youtube id="4JiPGHSKuTY" >}}</div>
 
 O assunto Garbage Collection não é simples, e uma palestra só não dá pra explicar todos os detalhes, mas a idéia é usar a evolução do Ruby, que saltou de Mark & Sweep, para Bitmap Marking & Lazy Sweep, para Restricted Generational GC e está próximo de evoluir pra Restricted Three Gen GC (possivelmente no 2.2).
 

@@ -237,7 +237,7 @@ They are clearly an iPhone company, with a hobbyist side business that builds Ma
 
 Did you see their latest Ad for the iPad?
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/sQB2NjhJHvY" frameborder="0" allowfullscreen></iframe>
+{{< youtube id="sQB2NjhJHvY" >}}
 
 Yes, this is super cute and I dig it.
 

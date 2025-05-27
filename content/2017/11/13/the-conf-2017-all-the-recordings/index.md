@@ -27,7 +27,7 @@ And I am committing myself to try and improve the 2nd edition, already confirmed
 
 Also, watch my opening keynote to understand more of the event rationale.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/HS8gjSfBimQ" frameborder="0" allowfullscreen></iframe>
+{{< youtube id="HS8gjSfBimQ" >}}
 
 If you want to see the 2017 website, with the full program and all the supporting companies, I put it [here](http://www.theconf.club/2017).
 

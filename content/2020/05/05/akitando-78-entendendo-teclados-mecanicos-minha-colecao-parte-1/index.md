@@ -23,7 +23,7 @@ tags:
 draft: false
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/tEXX1jdpZN8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{< youtube id="tEXX1jdpZN8" >}}
 
 ## DESCRICÃO
 

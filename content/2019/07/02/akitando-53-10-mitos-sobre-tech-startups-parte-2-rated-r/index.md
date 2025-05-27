@@ -15,7 +15,7 @@ tags:
 draft: false
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/C0v8e-yej6s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{< youtube id="C0v8e-yej6s" >}}
 
 
 Nesta segunda e última parte do tema "10 Mitos de Tech Startups" eu vou pegar mais pesado em porque você insiste em ser enganado o tempo todo por fake-celebridades de empreendorismo de palco e o que você realmente deveria estar pensando se seu objetivo é realmente abrir uma empresa ou ajudar o mundo. Dica: não é em eventinho de startup.

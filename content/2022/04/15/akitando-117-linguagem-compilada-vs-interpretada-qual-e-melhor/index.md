@@ -22,7 +22,7 @@ tags:
 draft: false
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/SNyh-cubxaU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{< youtube id="SNyh-cubxaU" >}}
 
 Chegou a hora de finalmente entender qual a diferença de linguagens compiladas e interpretadas, linguagens estáticas e dinâmicas. Java é compilado? Javascript é interpretado? Qual a diferença?
 

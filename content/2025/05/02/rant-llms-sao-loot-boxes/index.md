@@ -95,7 +95,7 @@ E tudo isso AUMENTA O VIÉS: você acha que eles estão certos, as vezes que voc
 
 Quem lembra das minhas palestras de 15 anos atrás onde eu mostrava este video?
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/iRh5qy09nNw?si=HhQ0Hvg2BNi99ZFT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+{{< youtube id="iRh5qy09nNw" >}}
 
 Isso é um fenômeno bem conhecido, hoje em dia mais amplificado pelas redes sociais e a burrice de jornalista, que só repete o que ouve como papagaio e não faz mais perguntas críticas, do tipo: EXISTE CONFLITO DE INTERESSES??
 

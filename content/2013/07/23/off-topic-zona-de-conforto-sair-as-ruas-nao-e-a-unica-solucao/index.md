@@ -59,7 +59,7 @@ Os adolescentes que estão se formando hoje nas faculdades vêem esse movimento 
 
 Primeiro trabalhe numa indústria de verdade para aprender como ela funciona e, talvez, achar uma solução que ainda não foi tentada. Essa é outra verdade: qualquer ídéia que você tenha, provavelmente alguém já teve antes e já tentou das mais diversas formas. As chances de você ter uma idéia que ninguém tentou são baixas. Só quando você cair numa situação impossível, onde já se tentou de tudo, é que aparece a chance de tentar algo novo e possivelmente inovador. Ao tentar resolvê-la, no entanto, você talvez encontre a solução que já existia e descubra que o que você chamava de “impossível” era apenas “desconhecimento” do que já se sabia. Pule para o próximo problema.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/gR7oHh-fXUw" frameborder="0" allowfullscreen></iframe>
+{{< youtube id="gR7oHh-fXUw" >}}
 
 Estava assistindo à série do History Channel [“Gigantes da Indústria”](http://www.seuhistory.com/programas/gigantes-da-industria.html) que mostra – de forma romanceada – parte da história de como os Estados Unidos da América conquistaram e mereceram seu posto de maior potência econômica mundial. A história começa como a nossa, ninguém lhes deu nada, tudo teve que ser conquistado. Tem alguns bons exemplos que gosto de citar.
 

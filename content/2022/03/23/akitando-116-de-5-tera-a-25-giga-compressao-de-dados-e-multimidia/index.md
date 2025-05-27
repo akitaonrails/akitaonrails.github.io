@@ -18,7 +18,7 @@ tags:
 draft: false
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/j4a1SgUWh1c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{< youtube id="j4a1SgUWh1c" >}}
 
 Huffman, Lempel-Ziv, LZ77: o que esses nomes tem a ver com o video que você tá assistindo aqui no YouTube e Netflix da vida? Vamos ver de uma forma prática sobre compressão de dados e como eles são aplicados no seu dia a dia. E de quebra vai aprender uma pequena introdução a ciência de cores e processamento de imagens e videos.
 

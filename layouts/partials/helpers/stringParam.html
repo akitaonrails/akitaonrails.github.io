@@ -1,0 +1,4 @@
+{{- /* Helper to be a strong typed string param with hugo limitations */}}
+{{- $val := index . 0 }}
+{{- $default := index . 1 }}
+{{- cond (and $val (ne $val "")) $val $default }}

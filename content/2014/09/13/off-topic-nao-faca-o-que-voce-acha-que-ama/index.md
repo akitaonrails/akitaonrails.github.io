@@ -139,7 +139,7 @@ Você é apaixonado ou ama muitas coisas ao mesmo tempo. E isso muda com o tempo
 
 Mas isso significa que deveríamos ignorar nossas paixões? Claro que não. Apenas estou dizendo que uma vida onde você acha que deve ser preenchida somente pelo que está apaixonado e ignorar todo o resto do mundo, é uma postura absolutamente infantil. É como qualquer criança, tão empolgada pelo Nintendo 64, que passa dias sem tomar banho, sem dormir, sem falar com ninguém, sem querer ir pra escola, porque está profundamente apaixonado por isso. E, como todos sabemos, é o típico caso onde a maioria vai enjoar em alguns dias e, daqui algumas semanas, o tão apaixonante objeto de desejo estará num canto do armário pegando pó. E a criança estará em busca do que amar em seguida, em todo dia das crianças, aniversário e Natal.
 
-<div class='embed-container'><iframe src='http://www.youtube.com/embed/pFlcqWQVVuU' frameborder='0' allowfullscreen></iframe></div>
+<div class='embed-container'>{{< youtube id="pFlcqWQVVuU" >}}</div>
 
 Fazer "SOMENTE" o que "ACHA" que "AMA" (veja as ênfases nesta frase), significa simplemente ignorar o mundo real. Ignorar escovar os dentes, ignorar ir pra escola, ignorar trabalhar, ignorar responsabilidades, que é o que todo adulto chamaria de "ainda é uma criança". 
 

@@ -16,7 +16,7 @@ tags:
 draft: false
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/mcwnQVAn0pw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{< youtube id="mcwnQVAn0pw" >}}
 
 
 Hoje finalmente vamos usar tudo que aprendemos até agora pra explicar as diferenças entre hypervisors e containers, e agora sim, falar um pouco mais de Docker e Kubernetes.

@@ -1,0 +1,18 @@
+{{- /* Helper to be a strong typed integer param with hugo limitations */}}
+{{- $val := index . 0 }}
+{{- $default := index . 1 }}
+
+{{- $strVal := printf "%v" $val }}
+
+{{- if and (not (eq $strVal "")) (not (eq $strVal "<no value>")) }}
+  {{- $parsed := 0 }}
+  {{- with (int $strVal) }}
+    {{- $parsed = . }}
+  {{- else }}
+    {{ warnf "intParam: Falha ao converter '%s' em inteiro. Usando default=%d." $strVal $default }}
+    {{- $parsed = $default }}
+  {{- end }}
+  {{- $parsed }}
+{{- else }}
+  {{- $default }}
+{{- end }}

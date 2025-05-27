@@ -17,7 +17,7 @@ tags:
 draft: false
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/gcv5hXyTcIo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{< youtube id="gcv5hXyTcIo" >}}
 
 Vamos mais na prática como a internet da sua casa funciona. O que vem depois do modem. Como seu PC, seu celular, sua TV, conseguem se comunicar e acessar a internet? E se no ipv4 dizem que já acabou os possíveis endereços de IP, como continuamos usando internet sem migrar pro tal ipv6? Aliás, o que é ipv6? Vamos tirar essas coisas básicas do caminho.
 

@@ -7,7 +7,7 @@ tags: []
 draft: false
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/T-jHuFnxZ2k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{< youtube id="T-jHuFnxZ2k" >}}
 
 Ainda não é um episódio "de segurança" mas vou começar mostrando como é fácil injetar um bug de segurança tendo a melhor das intenções e depois como manipular tunelamento de SSH pra abrir buracos em firewalls e bypassar proxies. Coisas que podem ser muito úteis na vida real.
 

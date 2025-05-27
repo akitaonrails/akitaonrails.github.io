@@ -20,7 +20,7 @@ tags:
 draft: false
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/xjjX3R2WuoM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{< youtube id="xjjX3R2WuoM" >}}
 
 
 Finalmente, resolvi tocar num assunto divertido: o lamentável estado atual do mundo do "Ágil".

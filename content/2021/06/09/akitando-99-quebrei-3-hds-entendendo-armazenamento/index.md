@@ -12,7 +12,7 @@ tags:
 draft: false
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/lxjBgxmDZAI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{< youtube id="lxjBgxmDZAI" >}}
 
 Nessa nova mini-série quero explicar os diversos conceitos sobre armazenamento e neste primeiro episódio vou explorar um pouco sobre RAID e mostrar como antigamente a gente mapeava dados em disco usando o sistema de cilindros-cabeças-setores e como as coisas evoluiram hoje.
 

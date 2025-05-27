@@ -24,7 +24,7 @@ tags:
 draft: false
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/s7ldn31OEFc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{< youtube id="s7ldn31OEFc" >}}
 
 Você já deve ter consciência que não deveria estar usando a mesma senha pra tudo, nem senhas curtas, nem senhas fáceis, e não deveria estar recebendo código 2FA via SMS, e deveria ter habilitado encriptação nos seus HDs.
 

@@ -64,7 +64,7 @@ Note também como ele tem inclinação ([tenting](https://www.youtube.com/watch?
 
 O canal do [Ben Vallack](https://www.youtube.com/@BenVallack) explica melhor isso. Lembrando que o canal dele é extremo, não é pra todo mundo, precisa de muita dedicação pra conseguir se acostumar ao estilo dele, mas é legal ter com referência o que é possível fazer pra casos especiais.
 
-<iframe id="video1" width="560" height="315" src="https://www.youtube.com/embed/II3Wm5P6fOU?si=BBuUv7xxGjMW6rvt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+{{< youtube id="II3Wm5P6fOU" >}}
 
 Portanto sim, se pra você o tamanho e o preço não importam, este é de longe o teclado mais customizável, ergonômico e de melhor qualidade possível. Muitos vem me perguntar de modelos como o Kinesis - que também é gigante - mas eu prefiro o Moonlander, nessa categoria. Se formato do Kinesis, em particular, for importante, no final vou falar dele rapidinho.
 
@@ -116,7 +116,7 @@ No começo, logo que migrei, não conseguia digitar mais que 20 palavras por min
 
 E eu tenho mais de 40 anos. Não tem nada a ver com idade. Tem a ver com dedicação em treinar. Isso dito, como treinar? Recomendo os mesmos sites que todo mundo, começando pelo bom e velho [Monkey Type](https://monkeytype.com/).
 
-<iframe id="video2" width="560" height="315" src="https://www.youtube.com/embed/ivWq2jwQOM0?si=Q7SvsGmmMIaFSh8F" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+{{< youtube id="ivWq2jwQOM0" >}}
 
 Esse site é excepcional, dá pra treinar em quase todas as línguas do mundo. Em inglês dá pra treinar com vocabulário simples e evoluir pra dicionários de palavras bem mais avançadas, dá pra mudar o layout de teclado, cores, temas, tudo. Vale fuçar bastante as opções dele.
 
@@ -228,7 +228,7 @@ Segundo, pra aprender a fazer cada mão usar as teclas corretas de cada metade, 
 
 Na época que fiz meu video, só tinha um modelo ortolinear que era razoável, o **Planck**. Planck acho que é o nome do layout, mas tinha mais de um fabricante, como a Drop (antiga MassDrop) e a própria ZSA.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/TYTnjGOQrdU?si=1CbJPWj_hJrCNtyb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+{{< youtube id="TYTnjGOQrdU" >}}
 
 Se quiser comprar as peças separadas pra montar você mesmo, compre a versão [Drop + OLKB](https://drop.com/buy/planck-mechanical-keyboard?defaultSelectionIds=988297). E acho que vai ser a única opção porque a ZSA anunciou em Agosto de 2023 que [vai parar de fabricar os Planck EZ](https://blog.zsa.io/2307-goodbye-planck-ez/), o que é uma pena. Parece que não vendia o suficiente pra justificar continuar fazendo.
 
@@ -291,12 +291,7 @@ Eu elogiei a traseira do GK6, mas o Q15 Max não fica atrás. Novamente, unibody
 
 Agora, esse peso todo, e tantas camadas, também resultam num som muito mais encorpado e robusto, ouçam só:
 
-<iframe id="video3" width="315" height="560"
-src="https://www.youtube.com/embed/l-dLYSNyDKk"
-title="YouTube video player"
-frameborder="0"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-allowfullscreen></iframe>
+{{< youtube id="l-dLYSNyDKk" >}}
 
 
 
@@ -322,7 +317,7 @@ Mas a ZSA, fabricante do descontinuado Planck EZ e do monstruoso Moonlander, res
 
 Não é prático, mas é ultrapassando os limites que sabemos onde está o limite:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/c18vkHG_7tY?si=PYfmmf_GbWp_TNjY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+{{< youtube id="c18vkHG_7tY" >}}
 
 Ele começou a fazer os protótipos usando o Moonlander como base, removendo teclas, fazendo experimentos. E chegou à conclusão que o Moonlander seria ainda mais ergonômico e muito mais produtivo se fosse muito menor e com muito menos teclas. E a ZSA ouviu.
 

@@ -17,7 +17,7 @@ tags:
 draft: false
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/iAA8NrfQtHo?si=nUo3ltQLH_h50fwP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+{{< youtube id="iAA8NrfQtHo" >}}
 
 Como que se geram chaves secretas pra encriptação? Pra que servem pares de chaves? Como certificados funcionam? Qual a diferença de impressão digital e assinatura digital? Como tudo isso funciona junto e chega em coisas como BitTorrent, Git ou Bitcoin?
 

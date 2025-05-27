@@ -19,7 +19,7 @@ tags:
 draft: false
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/yjhn2fjByNU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+{{< youtube id="yjhn2fjByNU" >}}
 
 Assunto delicado mas importante. Muitos não sabem que podem ter transtornos neurológicos como TDAH, Autismo, que podem ser a razão de crises de ansiedade, depressão. E isso pode estar afetando seu aprendizado, sua carreira e seus relacionamentos. Vamos entender o que de fato são esses transtornos, como eles se manifestam, como funcionam e o que você poderia fazer.
 

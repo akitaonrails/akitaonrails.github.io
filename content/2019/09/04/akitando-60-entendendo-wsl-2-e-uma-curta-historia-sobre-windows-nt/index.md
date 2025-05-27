@@ -17,7 +17,7 @@ tags:
 draft: false
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/28jHuWBi72w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{< youtube id="28jHuWBi72w" >}}
 
 (obs: este script depende muito dos demos no video em si, pode ser difícil de ler só o texto)
 

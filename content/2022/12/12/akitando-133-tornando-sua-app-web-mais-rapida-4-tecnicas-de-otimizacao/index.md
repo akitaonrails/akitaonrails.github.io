@@ -22,7 +22,7 @@ tags:
 draft: false
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/KyqFXVVgvIs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{< youtube id="KyqFXVVgvIs" >}}
 
 Por que a aplicação que você tem feito vendo tutoriais e cursos online é BEM diferente do que equipes profissionais realmente fazem de verdade? Por que só "estar funcionando" não é o suficiente? 
 

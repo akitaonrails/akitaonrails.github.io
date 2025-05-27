@@ -17,7 +17,7 @@ tags:
 draft: false
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/jkHnPxsiyGk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{< youtube id="jkHnPxsiyGk" >}}
 
 
 errata: no começo do vídeo eu falo "positivismo" mas na realidade queria dizer "otimismo". não tem nada a ver com a filosofia.

@@ -116,4 +116,4 @@ This is by no means a complete tutorial or reference. The idea was to highlight 
 
 If you want to go really in-depth in the customization, watch this CG Master setup video:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/-_BZasG_UDA" frameborder="0" allowfullscreen></iframe>
+{{< youtube id="-_BZasG_UDA" >}}

@@ -1,0 +1,11 @@
+{{- /* Helper to be a strong typed boolean param with hugo limitations */}}
+{{- $val := index . 0 }}
+{{- $default := index . 1 }}
+
+{{- if in (slice "true" true 1) $val -}}
+  true
+{{- else if in (slice "false" false 0) $val -}}
+  false
+{{- else -}}
+  {{- $default -}}
+{{- end -}}

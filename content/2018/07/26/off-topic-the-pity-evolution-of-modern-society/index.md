@@ -14,7 +14,7 @@ The world is perishing in an orgy of self-righteousness.
 
 People from Wisecrack always manage to put a smile on my face. They give me hope that there are still people of reason in this world. This essay is inspired by that video and the gathering of complementary thoughts.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Wp7f2ftkybI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+{{< youtube id="Wp7f2ftkybI" >}}
 
 As an engineer, I am always baffled by what we are able to create. No one could ever think that one of humankind's most fabulous creations, the internet, and its most successful streak of hits—ubiquitous mobile access and social networks that can gather a considerable number of people at the same time—could ever be used as weapons of mass destruction.
 
@@ -32,7 +32,7 @@ It reminds me of a cliche phrase from The Lord of the Rings that always resonate
 
 > 'What a pity that Bilbo did not stab that vile creature when he had a chance!'
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/IrOqnZdvI6M?start=48" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+{{< youtube id="IrOqnZdvI6M" >}}
 
 To which Gandalf replies:
 

@@ -24,7 +24,7 @@ tags:
 draft: false
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/brIQSA8FtDo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{< youtube id="brIQSA8FtDo" >}}
 
 
 No episódio de hoje, pegando carona que eu fiz um vídeo sobre instalar ambiente de desenvolvimento em Ubuntu (https://www.youtube.com/watch?v=epiyExCyb2s) eu queria aproveitar pra contar vários pequenos momentos e conceitos sobre sistemas operacionais que eu gosto de ficar discutindo.

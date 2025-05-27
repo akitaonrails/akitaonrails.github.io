@@ -14,7 +14,7 @@ A THE CONF deste ano já começou a ser organizada e o [Call for Papers](https:/
 Pra quem não conhece, a idéia da THE CONF apareceu no fim de 2016. É uma iniciativa da Codeminer 42 com parceria da InfoQ Brasil desde o começo. Na Europa ou na Ásia existem dezenas de eventos de tecnologia e apesar de inglês não ser a língua nativa em muitos desses países mesmo assim a língua nativa nos principais eventos é inglês. Quer você goste ou não, a língua universal principalmente em tecnologia é e vai continuar sendo inglês. Não tirar vantagem disso não faz nenhum sentido.
 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/OH-HwjZjJ5w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{< youtube id="OH-HwjZjJ5w" >}}
 
 Na Codeminer atendemos clientes no Brasil mas muitos nos EUA e também na Europa. Uma coisa inegável é que eu sempre vejo brasileiros em equipes estrangeiras, trabalhando de igual pra igual. Por outro lado basicamente não existe nenhum grande evento no Brasil cuja língua nativa é inglês e isso é péssimo porque o mundo não tem como saber que nós existimos. 
 

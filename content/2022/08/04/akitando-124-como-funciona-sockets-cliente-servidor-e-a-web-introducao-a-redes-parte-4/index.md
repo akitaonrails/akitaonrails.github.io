@@ -20,7 +20,7 @@ tags:
 draft: false
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/lc6U93P4Sxw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{< youtube id="lc6U93P4Sxw" >}}
 
 Agora que todo mudno sabe como funciona o básico de rede, vamos ver como funciona o básico de aplicações de rede, o que são sockets, pra que eles servem, como disso chegamos em protocolos como HTTP ou FTP e os vários detalhezinhos que complicam a cabeça de um iniciante em programação Web.
 

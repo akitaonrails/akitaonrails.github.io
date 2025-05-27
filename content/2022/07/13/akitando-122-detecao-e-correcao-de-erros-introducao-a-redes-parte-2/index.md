@@ -19,7 +19,7 @@ tags:
 draft: false
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/3W-8TQJwuWY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{< youtube id="3W-8TQJwuWY" >}}
 
 Apesar de ser Parte 2 da mini-série de redes, vou falar pouco sobre redes propriamente ditas e focar em um aspecto que tem a ver com mais coisas que só rede: detecção e correção de erros.
 

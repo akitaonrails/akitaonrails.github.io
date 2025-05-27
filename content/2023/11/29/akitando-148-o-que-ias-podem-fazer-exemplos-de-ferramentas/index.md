@@ -15,7 +15,7 @@ tags:
 draft: false
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/CZSGIeRmYn8?si=TEbedOlCwsiJI45G" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+{{< youtube id="CZSGIeRmYn8" >}}
 
 Sim, este episódio foi inteiramente gerado por ferramentas de IA, em particular HeyGen e ElevenLabs. Fiz bem curto pra não ficar cansativo demais. Mesmo sendo impressionante, no atual estágio não é possível fazer videos do tamanho que costumo fazer no canal.
 
