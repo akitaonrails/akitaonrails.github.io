@@ -30,9 +30,9 @@ Finally, I found this project that's been under heavy development for the past 6
 
 Their [README](https://github.com/smpallen99/coherence/blob/master/README.md) is well explained enough so I will not copy and paste it here, just read it there to get up and running. But if you want to try out all of their features you can tweak their procedure with this set of options in the installation Mix task:
 
----
+```
 mix coherence.install --full --rememberable --invitable --trackable
----
+```
 
 Run `mix help coherence.install` to see a description for all the options.
 
@@ -54,7 +54,7 @@ And if you're not tweaking the front-end, you can just add the proper sign up, s
   <span class="logo"></span>
 </header>
 ...
----
+```
 
 (By the way, whenever you see `YourApp` in the code snippets, you must change for your app's module name.)
 
@@ -76,9 +76,9 @@ Again, it's pretty straightforward to set it up by just following their [README]
 
 Once you have it installed and configure, you can very quickly expose the User model into the Admin interface like this:
 
----
+```
 mix admin.gen.resource User
----
+```
 
 And we can edit the `web/admin/user.ex` with the following:
 
@@ -125,7 +125,7 @@ defmodule YourApp.ExAdmin.User do
     end
   end
 end
----
+```
 
 Yes, this is eerily similar to the ActiveAdmin DSL. Thumbs up for the team responsible, and it really shows how Elixir is well suited for Domain Specific Languages, if you're into that.
 
@@ -140,7 +140,7 @@ scope "/admin", ExAdmin do
   admin_routes
 end
 ...
----
+```
 
 With those simple contraptions in place, you will end up with something like this:
 
@@ -173,7 +173,7 @@ def change do
   end
 end
 ...
----
+```
 
 And you can configure the `priv/repos/seeds.exs` file to create 2 users, one admin and one guest:
 
@@ -185,7 +185,7 @@ YourApp.User.changeset(%YourApp.User{}, %{name: "Administrator", email: "admin@e
 
 YourApp.User.changeset(%YourApp.User{}, %{name: "Guest", email: "guest@example.org", password: "password", password_confirmation: "password", admin: false})
 |> YourApp.Repo.insert!
----
+```
 
 As this is just an exercise, you can drop the database and recreate it, like this: `mix do ecto.drop, ecto.setup`.
 
@@ -223,7 +223,7 @@ defmodule YourApp.Plugs.Authorized do
       |> halt
   end
 end
----
+```
 
 Once a user signs in, Coherence puts the structure of the authenticated user into the `conn` (a Plug.Conn structure), so we can pattern match from it.
 
@@ -251,7 +251,7 @@ scope "/admin", ExAdmin do
   admin_routes
 end
 ...
----
+```
 
 The `:protected_admin` pipeline is exactly the same as `:protected` but we add the newly created `YourApp.Plugs.Authorized` plug at the end. And then we change the `/admin` scope to go through this new pipeline.
 

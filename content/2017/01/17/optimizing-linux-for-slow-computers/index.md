@@ -55,10 +55,10 @@ GPU is also rarely a bottleneck unless you're doing heavy gaming or 4K rendering
 
 By the way, this is not necessary for most systems, but just to be on the safe side do this:
 
----
+```
 sudo pacman -S mesa-demos
 glxinfo | grep direct
----
+```
 
 You should see `direct rendering: Yes`. If not, refer to your distro documentation, because this means you're not compositing through the GPU and you're wasting CPU cycles rendering your screen!
 
@@ -85,30 +85,30 @@ The other thing to consider is that Linux comes pre-configured to balance out of
 
 So you want to configure the OS to more aggressively keep your application state in RAM, and [this is how you do it](https://rudd-o.com/linux-and-free-software/tales-from-responsivenessland-why-linux-feels-slow-and-how-to-fix-that):
 
----
+```
 sudo tee -a /etc/sysctl.d/99-sysctl.conf <<-EOF
 vm.swappiness=1
 vm.vfs_cache_pressure=50
 EOF
----
+```
 
 While on the topic of storage, you will find some older kernels making your machine become unresponsive when dealing with [slower storage](http://unix.stackexchange.com/questions/107703/why-is-my-pc-freezing-while-im-copying-a-file-to-a-pendrive/107722#107722), such as USB drives or SD cards. This is how you tweak it:
 
----
+```
 sudo tee -a /etc/sysctl.d/99-sysctl.conf <<-EOF
 vm.dirty_background_bytes=16777216
 vm.dirty_bytes=50331648
 EOF
----
+```
 
 If you don't want to reboot right now, you can run this in a Terminal:
 
----
+```
 sudo sysctl -w vm.swappiness=1
 sudo sysctl -w vm.vfs_cache_pressure=50
 sudo sysctl -w vm.dirty_background_bytes=16777216 
 sudo sysctl -w vm.dirty_bytes=50331648
----
+```
 
 Don't go too far on tuning, for example, never disable a file system journaling. It increases performance at the risk of putting your data in risk of corruption.
 
@@ -132,10 +132,10 @@ But if you have to use mechanical hard-drives, particularly the old and super sl
 
 You can check which I/O Scheduler you're running like this:
 
----
+```
 $ cat /sys/block/sda/queue/scheduler
 noop deadline cfq [bfq] 
----
+```
 
 In the example above you will see that `[bfq]` is the one active, but you can change it on the fly to test it out if you want.
 
@@ -143,17 +143,17 @@ To take advantage of those newest schedulers to better optimize slow computers, 
 
 In Arch Linux it's a simple thing to do:
 
----
+```
 sudo pacman -Sy linux-zen
 sudo grub-mkconfig -o /boot/grub/grub.cfg
----
+```
 
 For Ubuntu, you may want to refer to [Liquorix's Install Page](https://liquorix.net/#install) as it depends on your CPU, but most likely you will install on 64-bit machines:
 
----
+```
 sudo apt-get install liquorix-keyring
 apt-get install linux-image-liquorix-amd64 linux-headers-liquorix-amd64
----
+```
 
 ### Is GNOME 3 too slow?
 
@@ -181,24 +181,24 @@ The first time you install and it has to download everything, your machine will 
 
 Then, edit the `/usr/share/applications/dropbox.desktop` and replace the `Exec=dropbox` line with this:
 
----
+```
 Exec=ionice -c 3 -n 7 dropbox start -i && cpulimit -b -e dropbox -l 10
----
+```
 
 This "should" tune down Dropbox to have the least amount of CPU time and only have I/O when the system is idle.
 
 Another way is to install [Ananicy](https://github.com/Nefelim4ag/Ananicy/blob/master/README.md). It is a daemon that promises to automatically set NICE and IOCLASS of selected processes just like using `ionice` and `cpulimit` above. You can install it in Arch like this:
 
----
+```
 sudo pacaur -S ananicy-git
----
+```
 
 And if you `cat /etc/ananicy.d/dropbox.rules` you will see a rule set like this:
 
----
+```
 # Dropbox client: https://www.dropbox.com
 NAME=dropbox       NICE=19     IOCLASS=idle
----
+```
 
 Which is basically what we did in the `Exec` line tweak. I didn't test Ananicy enough but if it does what's promised, it's even easier as it comes with pre-configured rules for applications such as make, VLC, transmission, etc.
 
@@ -218,14 +218,14 @@ Only those 2 things should make your machine WAY more responsive when using slow
 
 GNOME has other services in the background, namely:
 
----
+```
 gnome-session
 gnome-shell
 gnome-settings-daemon
 gnome-online-accounts
 evolution-data-server
 gjs-console
----
+```
 
 There must be more depending on optional apps you installed. Gnome-Shell and GJS are easily the worst of the bunch. You can't do much about them because they're the Core of GNOME. GJS in particular enables Javascript-based extensions and everything Javascript is slow. The only thing you can do is avoid installing too many GNOME Extensions.
 

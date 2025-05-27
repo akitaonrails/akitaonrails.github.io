@@ -17,7 +17,7 @@ Em produção, todos os seus arquivos Javascript, por exemplo, serão pré-compi
 
 --- html
 <script src="/assets/application-92d3fd2d9ebe06a3a45e1ee88109c64f.js" type="text/javascript"></script>
----
+```
 
 Eu já escrevi sobre o [Asset](http://www.akitaonrails.com/2012/07/01/asset-pipeline-para-iniciantes) [Pipeline](http://www.akitaonrails.com/2012/07/01/asset-pipeline-para-iniciantes-parte-2), como usar o [Rails Assets](http://www.akitaonrails.com/2013/12/13/rails-assets) para consumir pacotes Bower sem o Bower. Anos atrás uma última coisa que eu fazia era enviar assets pré-compilados para o AWS S3 usando o Asset Sync, mas atualmente essa é a **forma errada** de fazer isso. Em vez disso vamos colocar tudo num CDN de verdade como o AWS CloudFront.
 
@@ -25,13 +25,13 @@ Um CDN como o CloudFront funciona da seguinte forma. Ao terminar a configuraçã
 
 --- html
 <script src="http://d1g6lioiw8beil.cloudfront.net/assets/application-92d3fd2d9ebe06a3a45e1ee88109c64f.js" type="text/javascript"></script>
----
+```
 
 Ou seja, ele vai pedir para esse subdomínio "d1g6lioiw8beil" no domínio do cloudfront.net. Ao não encontrar ele vai pedir ao domínio que você configurou. No meu caso, ele vai pedir para:
 
----
+```
 http://www.akitaonrails.com/assets/application-92d3fd2d9ebe06a3a45e1ee88109c64f.js
----
+```
 
 Então ele fará o cache esse arquivo e qualquer nova requisição pelo mesmo arquivo vai devolver do cache do CloudFront e sua aplicação não vai mais receber nenhuma requisição por esse arquivo. O mesmo vai acontecer com todos os demais assets do site, incluindo os stylesheets e imagens.
 
@@ -65,7 +65,7 @@ Se o teste funcionar, basta adicionar a seguinte linha no arquivo <tt>config/env
 
 --- ruby
 config.action_controller.asset_host = 'http://d1g6lioiw8beil.cloudfront.net' # trocar esse domain pelo seu
----
+```
 
 Obviamente, colocando o Domain Name da sua distribuição do CloudFront. Faça um novo deployment e pronto! O Heroku tem uma [documentação com mais detalhes](https://devcenter.heroku.com/articles/using-amazon-cloudfront-cdn), este meu post é um resumo simples que qualquer site em Rails pode seguir imediatamente.
 

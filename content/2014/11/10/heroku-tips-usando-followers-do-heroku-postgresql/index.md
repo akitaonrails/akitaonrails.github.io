@@ -28,14 +28,14 @@ Porém uma aplicação Rails normal só sabe do banco que está apontado na vari
 
 --- ruby
 gem 'ar-octopus', require: 'octopus'
----
+```
 
 Rode o <tt>bundle install</tt> e agora baixe os seguintes arquivos:
 
----
+```
 curl -L -o config/shards.yml https://gist.github.com/catsby/6923840/raw/0aaf94ccc383951118c43b9b794fc62e427c2e51/shards.yml
 curl -L -o config/initializers/octopus.rb https://gist.github.com/catsby/6923632/raw/87b5abba2e22c3acf8ed35d06e0ab9ca1bd9f0d0/octopus.rb
----
+```
 
 Com isso feito, em desenvolvimento o master e o follower vão ser o seu banco normal de desenvolvimento. Em produção no Heroku ele vai usar os bancos HEROKU_POSTGRESQL_*_URL que não são o DATABASE_URL como followers.
 
@@ -49,7 +49,7 @@ module Octopus
   end
   ...
 end
----
+```
 
 O que acontece é o seguinte, você pode simplesmente adicionar o seguinte método a um model que queira dividir a carga entre escrita no master e leitura no follower:
 
@@ -58,7 +58,7 @@ class User
   replicated_model
   ...
 end
----
+```
 
 Nunca coloque o método acima em **todos** os models indiscriminadamente. Você quer controlar em quais followers quer ler o que. No caso comum basta dividir entre todos os followers, mas caso tenha queries hiper-pesadas e queira dedicar um follower só pra isso, você também pode.
 
@@ -70,7 +70,7 @@ ModelPesado.includes(:abc, :xyz).scope_pesado.group(:foo).find_each { |m| m.algo
 
 # query modificada pra rodar num follower:
 ModelPesado.using(Octopus.random_follower).includes(:abc, :xyz).scope_pesado.group(:foo).find_each { |m| m.algo_pesado }
----
+```
 
 Sem o método <tt>Octopus.random_follower</tt> você teria que manualmente digitar o nome do follower que quer usar baseado na cor de sua variável de ambiente, por exemplo o HEROKU_POSTGRESQL_AMBER_URL você faria: <tt>.using(:amber_follower)</tt>. Com o método ele vai devolver o único follower que você tem ou aleatoriamente entre a lista de followers que você tem.
 
@@ -80,7 +80,7 @@ Outra forma é o seguinte:
 Octopus.using(Octopus.random_follower) do
   ModelPesado.includes(:abc, :xyz).scope_pesado.group(:foo).find_each { |m| m.algo_pesado }
 end
----
+```
 
 Uma coisa que parece necessária, como foi no caso de uma [issue do DelayedJob](https://github.com/tchandy/octopus/issues/241) se por algum motivo você precisar rodar um comando como Update dentro de um <tt>find_by_sql</tt>, lembre-se de explicitamente colocá-la no escopo do banco master:
 
@@ -88,7 +88,7 @@ Uma coisa que parece necessária, como foi no caso de uma [issue do DelayedJob](
 Octopus.using(:master) do
   Model.find_by_sql("UPDATE ...")
 end
----
+```
 
 Como disse antes, isso não é uma solução para que você jogue tudo pro follower. Avalie no próprio dashboard do seu banco de dados quais são as queries pesadas e no New Relic e comece movendo somente essas queries primeiro. Performance não é algo que você codifica sem medir: senão como saber se o que você fez realmente fez alguma diferença? Meça antes e meça depois. E continue nesse ciclo.
 

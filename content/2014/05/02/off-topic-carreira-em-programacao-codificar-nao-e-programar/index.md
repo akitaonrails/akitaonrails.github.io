@@ -92,7 +92,7 @@ ImageUploadDemo::Application.routes.draw do
   mount Sidekiq::Web => '/sidekiq'
   ActiveAdmin.routes(self)
 end
----
+```
 
 Quão difícil isso pode ser? O que a maioria poderia imaginar?
 
@@ -146,7 +146,7 @@ rule
     ;
 
 end
----
+```
 
 Em bom português, agora **fodeu**. Parte do Journey se utiliza do [Racc](https://github.com/tenderlove/racc) um gerador de parsers.
 

@@ -26,33 +26,33 @@ Another thing that may have skewed the results against Crystal is that it seems 
 
 To begin, let's test the same Elixir implementation, and as expected the result is still the same:
 
----
+```
 11,49s user 0,82s system 77% cpu 15,827 total
----
+```
 
 Now, the MRI Ruby with the "batch burst" algorithm was taking 57 seconds and this new implementation using a ThreadPool runs much better:
 
----
+```
 12,67s user 0,92s system 50% cpu 27,149 total
----
+```
 
 In Crystal, it's a bit more complicated as there is no way to implement the equivalent of a "Fiber Pool". What we have to do is do an infinite loop until the last process signals a loop break. Within the loop we create a maximum number of fibers, wait for each one to signal that it finished through an individual channel and loop again to create a new fiber, and so on. Compared to yesterday's 59 seconds, this is much better:
 
----
+```
 5,29s user 0,33s system 26% cpu 21,166 total
----
+```
 
 The JRuby version is not so fast though. Still better than yesterday's 45 seconds but now it's losing even to MRI:
 
----
+```
 49,24s user 1,41s system 146% cpu 34,602 total
----
+```
 
 I tried to use the `--dev` flag for [faster start up time](https://github.com/jruby/jruby/wiki/Improving-startup-time) and it does improve a bit, getting it closer to MRI:
 
----
+```
 22,26s user 0,99s system 76% cpu 30,320 total
----
+```
 
 Not sure if it can be improved more though, any tips are welcome - don't forget to comment below.
 
@@ -85,7 +85,7 @@ module MangaDownloadr
       results
     end
     ...
----
+```
 
 The idea is that we will have a fixed number of spawn native threads (in this case, determined by `@config.download_batch_size`). As one thread finishes it will pop a new link from the `collection` Array, essentially working as a "queue" to be depleted.
 
@@ -102,7 +102,7 @@ dependencies:
   ...
   fiberpool:
     github: akitaonrails/fiberpool
----
+```
 
 And this is how I used it. Notice that the logic itself is very close to the MRI Ruby version, but using a "Fiber Pool" instead of a Thread Pool.
 
@@ -130,7 +130,7 @@ module CrMangaDownloadr
     end
   end
 end
----
+```
 
 But again, this is very I/O intensive and both the Ruby and Crystal versions take advantage of the fact that they can do more work while waiting for one HTTP request to finish.
 
@@ -146,7 +146,7 @@ I implemented a "Test Mode" in all 3 implementations. You can clone from my repo
 
 And you can run the test mode like this:
 
----
+```
 # crystal:
 time ./cr_manga_downloadr --test
 
@@ -158,13 +158,13 @@ time jruby --dev -S bin/manga-downloadr --test
 
 # Elixir:
 time ./ex_manga_downloadr --test
----
+```
 
 This will run only the fetching of chapters, pages and image links, skipping the actual downloading of the images, optimization through mogrify and PDF compilation. Those skipped parts take too long and don't say anything about the tested languages.
 
 And if you want to test just the CPU intensive parts and avoid all networking interference altogether, you can turn on HTTP Cache mode and run the tests twice so the first run will cache everything first, like this:
 
----
+```
 # crystal:
 time ./cr_manga_downloadr --test --cache
 
@@ -176,36 +176,36 @@ time jruby --dev -S bin/manga-downloadr --test --cache
 
 # Elixir:
 time CACHE_HTTP=true ./ex_manga_downloadr --test
----
+```
 
 So, **with all requests already cached** these are the results:
 
 Elixir:
 
----
+```
 7,13s user 0,24s system 331% cpu 2,227 total
----
+```
 
 MRI Ruby:
 
----
+```
 5.590000   0.180000   5.770000 (  5.678714)
 5,87s user 0,21s system 101% cpu 5,996 total
----
+```
 
 JRuby:
 
----
+```
 10.580000   0.180000  10.760000 (  3.184472)
 14,54s user 0,44s system 262% cpu 5,716 total
----
+```
 
 Crystal:
 
----
+```
 1.610000   0.050000   1.660000 (  1.344123)
 1,62s user 0,06s system 124% cpu 1,350 total
----
+```
 
 The Ruby/JRuby/Crystal versions have internal benchmarks to take away startup time (this is why they have 2 lines of times).
 

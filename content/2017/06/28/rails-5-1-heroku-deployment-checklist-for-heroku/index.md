@@ -28,14 +28,14 @@ But even with the many built-in niceties, a full production setup still requires
 
 One thing that most people forget, even experienced developers is that the `rails new` command used to bootstrap the initial project structure accepts many option flags. Instead of having to manually tweak files later, you can start like this:
 
----
+```
 rails new your_project \
 --database=postgresql \
 --webpack=react \
 --skip-action-cable \
 --skip-coffee
 --skip-turbolinks
----
+```
 
 If you're building with React or another full-featured javascript framework, you will probably want to skip Turbolinks. Otherwise, if it's a simple site, do use [Turbolinks](https://sevos.io/2017/02/27/turbolinks-lifecycle-explained.html).
 
@@ -45,23 +45,23 @@ Skip Action Cable. Prefer a real solution such as [Pusher.com](https://pusher.co
 
 Anyway, I digress. Make sure you have 2 boot files, first the canonical `Procfile` to be used by Heroku in production:
 
----
+```
 web: bin/rails server -p $PORT -b 0.0.0.0
----
+```
 
 Second, a `Procfile.dev` to be used only in your development environment:
 
----
+```
 web: ./bin/rails server
 webpacker: ./bin/webpack-dev-server
----
+```
 
 This is how you fire up the webpack server that will compile your assets in real-time during development. You need to also remember to run these two dependency commands now:
 
----
+```
 yarn install
 bundle install
----
+```
 
 Install javascript dependencies with `yarn add [package]` and that's it! In production you don't use the webpack server (which is why we don't add it to the production `Procfile`), instead Heroku automatically detects the [webpacker](https://github.com/rails/webpacker) gem then it installs the nodejs buildpack, runs `yarn install` for you and when `rails assets:precompile` runs it will also execute `yarn run` which will pre-compile all the assets (javascript, stylesheets, images) with the proper fingerprinting for cache busting and everything else we are used to in the normal Rails Asset Pipeline.
 
@@ -79,21 +79,21 @@ The only customization you MUST do is to change the ["Forward Headers"](http://d
 
 It will take some time to create (it has to configure many data centers around the world), but you will end up with a URL representing your distribution, something like `doz7rtw2u3wg4.cloudfront.net`. I recommend you add it as a Heroku environment variable like this:
 
----
+```
 heroku config:set CDN_URL=doz7rtw2u3wg4.cloudfront.net
----
+```
 
 Now, edit your `config/environments/production.rb` and add the following:
 
 --- ruby
 config.action_controller.asset_host = ENV['CDN_URL'] if ENV['CDN_URL']
----
+```
 
 To actually use the CDN you must declare every asset you use across your view templates using Rails View Helpers such as `image_tag`, `asset_path`, `javascript_pack_tag`, `stylesheed_pack_tag`, `stylesheet_link_tag`, etc. The Rails bootstrap will already create layout template with such helpers, you just need to follow them.
 
 When webpack runs, it will generate all static, optimized and pre-compiled assets in the `public/packs` with a manifest file declaring the full URL pointing to the CDN. For example, if I fetch the `/app/public/packs/manifest.json` from the Heroku dyno directly, I will get something like this:
 
----
+```
 {
   "Roboto-Bold.woff": "//doz7rtw2u3wg4.cloudfront.net/packs/Roboto-Bold-eed9aab5449cc9c8430d7d258108f602.woff",
   "Roboto-Bold.woff2": "//doz7rtw2u3wg4.cloudfront.net/packs/Roboto-Bold-c0f1e4a4fdfb8048c72e86aadb2a247d.woff2",
@@ -112,7 +112,7 @@ When webpack runs, it will generate all static, optimized and pre-compiled asset
   "home_page.js": "//doz7rtw2u3wg4.cloudfront.net/packs/home_page-ff3b49407a1d01592ad5.js",
   "home_page.js.map": "//doz7rtw2u3wg4.cloudfront.net/packs/home_page-ff3b49407a1d01592ad5.js.map"
 }
----
+```
 
 So, if for some reason I had to create a new CDN distribution, you have to remember to update the `CDN_URL` variable on Heroku and redeploy your app so it regenerates the assets and this manifest file. It will just those URLs when rendering the final HTMLs.
 
@@ -136,11 +136,11 @@ if defined? Rack::Cors
     end
   end
 end
----
+```
 
 When you deploy, you know it's working correctly when you Curl an asset and it returns the Access-* headers like this:
 
----
+```
 $ curl -I -s -X GET -H "Origin: www.theconf.club" http://www.theconf.club/packs/Roboto-Regular-5136cbe62a63604402f2fedb97f246f8.woff2
 HTTP/1.1 200 OK
 Server: Cowboy
@@ -157,11 +157,11 @@ Cache-Control: public, max-age=2592000
 Vary: Origin
 Content-Length: 64832
 Via: 1.1 vegur
----
+```
 
 And if everything above is already in place, you should be able to see the headers being forwarded through the CDN, like this:
 
----
+```
 $ curl -I -s -X GET -H "Origin: www.theconf.club" http://doz7rtw2u3wg4.cloudfront.net/packs/Roboto-Regular-5136cbe62a63604402f2fedb97f246f8.woff2
 HTTP/1.1 200 OK
 Content-Type: application/font-woff2
@@ -180,7 +180,7 @@ Via: 1.1 vegur, 1.1 86e9abdb4c15b9d3a542f9b93245e87e.cloudfront.net (CloudFront)
 Vary: Origin
 X-Cache: Miss from cloudfront
 X-Amz-Cf-Id: tVkZ41RRr66iBT6atWTO_oeTY_jG0zCBFuXU8bKyClZDQ8kl-hDegA==
----
+```
 
 A CDN is the secret sauce that allows any content-based website to scale way beyond what your server can provide. It's a huge cost-saving and it also makes for a way more smooth user experience for your users.
 
@@ -188,7 +188,7 @@ One last caveat. The many Rails View Helpers such as `image_tag` allows you to a
 
 You can see how this fails if you open a console in Heroku and check out how it fails to derive the full image URL:
 
----
+```
 $ heroku run rails c                                                                                                                  
 Running rails c on ⬢ theconf... up, run.8271 (Hobby)
 Loading production environment (Rails 5.1.2)
@@ -199,7 +199,7 @@ Sprockets::Rails::Helper::AssetNotFound: The asset "icon-goals" is not present i
 
 irb(main):002:0> ActionController::Base.helpers.asset_path("icon-goals.png")
 => "//d134ipy19a646x.cloudfront.net/assets/icon-goals-b969b3b7325d33ad85a88dbb5b894832909ed738eea9964b9cf535646b93674b.png"
----
+```
 
 <a name="cache"></a>
 
@@ -219,7 +219,7 @@ group :production do
   gem 'kgio'
   gem 'memcachier'
 end
----
+```
 
 Now you must edit your `config/environments/production.rb` like this:
 
@@ -237,7 +237,7 @@ config.action_dispatch.rack_cache = {
   :metastore    => client,
   :entitystore  => client
 }
----
+```
 
 Now, let's say you have a block in your template that requires a bunch of records from your database. But you know that those records barely change. What can you do? One alternative is cache the ActiveRecord query entirely like this:
 
@@ -249,7 +249,7 @@ class HomePageController < ApplicationController
     end
   end
 end
----
+```
 
 The `#to_a` is necessary because ActiveRecord queries are lazy. The `#to_a` forces it to fetch and it will be cached. Next time, it will not touch the database for an entire day!
 
@@ -275,9 +275,9 @@ And over Heroku, it's [even easier](https://devcenter.heroku.com/articles/automa
 
 On the Free Tier Dynos, this is what you do:
 
----
+```
 heroku certs:auto:enable
----
+```
 
 Check status with `heroku certs:auto`.
 

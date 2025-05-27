@@ -44,7 +44,7 @@ Bar = {
 $(function() {
   $('body').append('<p>' + Bar.helloWorld() + '</p>');
 })
----
+```
 
 Isso vai simplesmente adicionar um parágrafo escrito "Hello World" na página. A idéia é um exemplo bem trivial para que a técnica fique clara, mas obviamente imagine isso em algo mais complicado.
 
@@ -55,7 +55,7 @@ A primeira coisa que gostaríamos de fazer é separar esse código. Talvez quebr
 source 'https://rails-assets.org'
 # ...
 gem 'rails-assets-modulejs'
----
+```
 
 Depois de instalar com o bom e velho <tt>bundle install</tt>. Modificamos o <tt>app/assets/javascripts/application.js</tt> para carregar a dependência:
 
@@ -64,7 +64,7 @@ Depois de instalar com o bom e velho <tt>bundle install</tt>. Modificamos o <tt>
 //= require jquery_ujs
 //= require modulejs
 //= require_tree .
----
+```
 
 Isso foi o que eu já expliquei no meu post mais antigo sobre [Rails Assets](http://www.akitaonrails.com/2013/12/13/rails-assets). Se a biblioteca que você quer tem um pacote Bower, ele pode ser automaticamente encapsulado numa gem de Rails Engine como uma gem feita manualmente. E se não tiver como pacote Bower aí não tem jeito: baixe os arquivos e jogue num diretório em <tt>vendor/assets</tt> para mantê-la estática dentro do projeto, mas o ideal é que você **não** deixe bibliotecas javascript vendorizados.
 
@@ -83,7 +83,7 @@ modulejs.define( 'foo', function() {
     }
   }
 })
----
+```
 
 --- javascript
 // app/assets/javascripts/bar.js
@@ -94,7 +94,7 @@ modulejs.define( 'bar', [ 'foo' ], function(Foo) {
     }
   }
 })
----
+```
 
 Veja que não precisamos mais das constantes 'Foo' e 'Bar', apenas devolver o corpo do hash com as funções. No módulo 'bar', declaramos que precisamos do módulo 'foo' (em um array) e passamos como parâmetro do construtor com o nome antigo da constante 'Foo', daí internamente o código se mantém exatamente o mesmo. E já que estamos modularizando, vamos adicionar um módulo que encapsula a chamada principal:
 
@@ -107,7 +107,7 @@ modulejs.define( 'main', ['bar', 'jquery'], function(Bar, $) {
     }
   }
 })
----
+```
 
 Como pode ver acima, o módulo 'main' vai depender do 'bar' (definido em 'bar.js') e também de um 'jquery' que ainda não existe, então vamos criar um genérico <tt>modules.js</tt> para encapsular o jQuery assim:
 
@@ -116,7 +116,7 @@ Como pode ver acima, o módulo 'main' vai depender do 'bar' (definido em 'bar.js
 modulejs.define( 'jquery', function() {
   return jQuery;
 });
----
+```
 
 Veja que podemos fazer a mesma coisa para qualquer outra biblioteca. Damos um nome em string, no caso 'jquery', que o ModuleJS vai conseguir encontrar depois e retornamos a classe principal, só isso.
 
@@ -127,7 +127,7 @@ $(function() {
   var app = modulejs.require('main');
   app.start();
 })
----
+```
 
 Pronto! Tudo isolado e com as dependências todas controladas. A grande vantagem de fazer desta forma é que no cabeçalho do <tt>application.js</tt> podemos continuar declarando as dependências com o <tt>require_tree .</tt> pois não importa a ordem dos arquivos, apenas a chamada principal do módulo 'main'.
 

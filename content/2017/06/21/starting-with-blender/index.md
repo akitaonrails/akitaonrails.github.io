@@ -36,21 +36,21 @@ The very first thing to do: [change](https://wiki.blender.org/index.php/Doc:2.6/
 
 Then, color grading. The default sRGB EOTF is basically wrong. You must download Sobotka's [filmic-blender](https://sobotka.github.io/filmic-blender/) configuration. If you're in Arch Linux you can basically do:
 
----
+```
 pacaur -S filmic-blender-git
----
+```
 
 I created a script at `~/bin/filmic-blender` with this:
 
----
+```
 env OCIO=/usr/share/blender/2.78/datafiles/filmic-blender/config.ocio blender
----
+```
 
 And I always start Blender from the terminal like this:
 
----
+```
 optirun ~/bin/filmic-blender
----
+```
 
 This does 2 things: first pre-configure the OpenColorIO to use the Filmic replacement. Second it enabled the external GPU of my notebook to be availble to Blender. Read my post on ["Enabling Optimus NVIDIA GPU on the Dell XPS 15 with Linux, even on Battery"](http://www.akitaonrails.com/2017/03/14/enabling-optimus-nvidia-gpu-on-the-dell-xps-15-with-linux-even-on-battery) for more details. On Windows or Mac, this is not necessary but you will still need to load the filmic configuration though.
 

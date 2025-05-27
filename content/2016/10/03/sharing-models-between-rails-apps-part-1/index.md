@@ -32,13 +32,13 @@ class Team < ActiveRecord::Base
   include Central::Support::TeamConcern::DomainValidator
   ...
 end
----
+```
 
 And I have this dependency in the `Gemfile`:
 
 --- ruby
 gem 'central-support', github: 'Codeminer42/cm42-central-support', branch: 'master', require: 'central/support'
----
+```
 
 Whenever I change the concerns, I do a `bundle update central-support` in the projects (this is the one caveat to have in mind to avoid dealing with outdated models).
 
@@ -75,7 +75,7 @@ group :test do
   gem 'test-unit'
   gem 'rspec-rails'
 ...
----
+```
 
 You don't have to add the gems from the main [gemspec](https://github.com/Codeminer42/cm42-central-support/blob/master/central-support.gemspec). But you can remove the development dependencies that you would put in the gemspec and keep them in the test app Gemfile.
 
@@ -85,7 +85,7 @@ Now, from the [main `Gemfile`](https://github.com/Codeminer42/cm42-central-suppo
 source 'https://rubygems.org'
 
 eval_gemfile File.join(File.dirname(__FILE__), "spec/support/rails_app/Gemfile")
----
+```
 
 Most tutorials to build a Rubygem will add a line to load dependencies from the gemspec, but here we are replacing it for the test app's Gemfile. This is the manifest that will be loaded when we run `bundle exec rspec`, for example.
 
@@ -109,7 +109,7 @@ require 'support/database_cleaner'
 require 'support/factory_girl'
 require 'support/factories'
 require 'spec_helper'
----
+```
 
 To wrap your head around it:
 
@@ -132,7 +132,7 @@ class Team < ActiveRecord::Base
   include Central::Support::TeamConcern::Scopes
   include Central::Support::TeamConcern::DomainValidator
 end
----
+```
 
 And with that, I could move the unmodified specs directly from the main project (Central), such as [`spec/central/support/team_spec.rb`](https://github.com/Codeminer42/cm42-central-support/blob/master/spec/central/support/team_spec.rb):
 
@@ -147,7 +147,7 @@ describe Team, type: :model do
   it { is_expected.to have_many :projects }
   ...
 end
----
+```
 
 If you go back in the Central project, some commits back, you will find the very same file as [`spec/models/team_spec.rb`](https://github.com/Codeminer42/cm42-central/blob/a80eefadf233f4a8c5f88829836c872b199798cd/spec/models/team_spec.rb). And the main advantage of this approach is exactly being able to move most of the code out of the main project, together with their specs, into a dependency gem, without having to "rewrite" anything.
 

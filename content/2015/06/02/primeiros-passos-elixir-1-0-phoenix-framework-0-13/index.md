@@ -30,12 +30,12 @@ Mas para sermos mais práticos, vamos direto ao assunto: usar o [web framework P
 
 Até o momento deste post, o mais "adequado" talvez seja usar diretamente o que está no master do projeto, clonando e rodando diretamente do seu diretório:
 
----
+```
 git clone git@github.com:phoenixframework/phoenix.git
 cd phoenix/installer
 mix phoenix.new /diretorio_de_projetos/phoenix_crud
 cd /diretorio_de_projetos/phoenix_crud
----
+```
 
 Veja o uso do comando <tt>mix</tt> com a tarefa <tt>phoenix.new</tt> que é como se existisse no Ruby algo como <tt>rake rails.new</tt> em vez do que fazemos hoje que é <tt>rails new</tt>. No mundo Rails o comando <tt>rails</tt> se sobressaiu ao uso do <tt>rake</tt> mas no mundo Elixir a idéia é manter consistente no comando <tt>mix</tt>.
 
@@ -43,7 +43,7 @@ O resto do artigo assume que você tem PostgreSQL instalado e entende minimament
 
 Veja a estrutura inicial de um projeto Phoenix ("~" significa "semelhante a"):
 
----
+```
 /_build            - provavelmente onde fica os binários compilados
 /config            - ~ /config do Rails
   /config.exs      - ~ /config/application.rb
@@ -100,7 +100,7 @@ mix.exs                     - ~ Gemfile
 mix.lock                    - ~ Gemfile.lock
 package.json                - não existe equivalente ao nosso rails-assets.org
 README.md
----
+```
 
 Como podem ver é incrivelmente próximo ao Rails e fica mais próximo ainda no código. Para começar, precisamos configurar o acesso ao PostgreSQL no arquivo <tt>config/dev.exs</tt> no trecho final:
 
@@ -112,13 +112,13 @@ config :phoenix_crud, PhoenixCrud.Repo,
   password: "postgres",
   database: "phoenix_crud_dev",
   size: 10 # The amount of database connections in the pool
----
+```
 
 Se você já configurou um <tt>config/database.yml</tt>, é a mesma coisa. E já que somos meros iniciantes, nada como um bom e velho Scaffold! Como fazer?
 
----
+```
 mix phoenix.gen.html User users name:string email:string bio:string age:integer
----
+```
 
 Obs: neste instance, o projeto não é compilável. Falta alterar manualmente o arquivo <tt>/web/router.ex</tt>, que vamos fazer mais pra frente.
 
@@ -140,7 +140,7 @@ defmodule PhoenixCrud.Repo.Migrations.CreateUser do
 
   end
 end
----
+```
 
 Sem palavras! É praticamente a mesma DSL de migrations do Rails, o equivalente em Rails seria:
 
@@ -156,7 +156,7 @@ class CreateUser < ActiveRecord::Migration
     end
   end
 end
----
+```
 
 Um model, por outro lado, é um pouco diferente do ActiveRecord:
 
@@ -187,7 +187,7 @@ defmodule PhoenixCrud.User do
     |> cast(params, @required_fields, @optional_fields)
   end
 end
----
+```
 
 Diretivas como o <tt>@required_fields</tt> funciona mais ou menos como declarar um <tt>validates :field, presence: true</tt>. A diferença maior é com o <tt>changeset/2</tt> (essa notação quer mais ou menos dizer: função com arity 2, ou seja, aceita 2 argumentos).
 
@@ -195,25 +195,25 @@ E de cara batemos com uma das funcionalidades que chamou mais atenção no Elixi
 
 --- ruby
 model |> cast(params, @required_fields, @optional_fields)
----
+```
 
 Esse trecho é a mesma coisa que:
 
 --- ruby
 cast(model, params, @required_fields, @optional_fields)
----
+```
 
 É para os casos onde faríamos:
 
 --- ruby
 foo(bar(baz), options)
----
+```
 
 Se entendi direito, faríamos o seguinte com pipes:
 
----
+```
 baz |> bar() |> foo(options)
----
+```
 
 E voltando ao <tt>changeset</tt>, segundo a [documentação no site do Phoenix](http://www.phoenixframework.org/v0.13.1/docs/ecto-models) usaríamos desta forma:
 
@@ -221,7 +221,7 @@ E voltando ao <tt>changeset</tt>, segundo a [documentação no site do Phoenix](
 params = %{name: "Joe Example", email: "joe@example.com", age: 15}
 changeset = User.changeset(%User{}, params)
 changeset.valid?
----
+```
 
 Em Rails, seria mais ou menos o equivalente a:
 
@@ -229,7 +229,7 @@ Em Rails, seria mais ou menos o equivalente a:
 params = {name: "Joe Example", email: "joe@example.com", age: 15}
 user = User.new(params)
 user.valid?
----
+```
 
 E para realmente adicionar validações como no ActiveRecord, adicionamos quaisquer transformações ou validações ao pipeline do changeset, o que faz muito sentido:
 
@@ -241,7 +241,7 @@ def changeset(model, params \\ nil) do
   |> validate_length(:age, max: 80)
   |> validate_format(:email, ~r/@/)
 end
----
+```
 
 Com isso em mente, vejamos o próximo código que foi gerado automaticamente nesse scaffold, o controller:
 
@@ -314,7 +314,7 @@ defmodule PhoenixCrud.UserController do
     |> redirect(to: user_path(conn, :index))
   end
 end
----
+```
 
 Novamente, de bater o olho é uma estrutura muito semelhante ao nosso conhecido controller restful do Rails. Actions com os mesmos nomes e mesmo o código é muito semelhante. Se tentar ler provavelmente vai entender rapidamente as diferenças em sintaxe.
 
@@ -349,13 +349,13 @@ defmodule PhoenixCrud.Router do
   #   pipe_through :api
   # end
 end
----
+```
 
 O que eu disse quando executamos o scaffold sobre não compilar é porque precisamos adicionar a seguinte linha ao arquivo anterior:
 
 --- ruby
 resources "/users", UserController
----
+```
 
 Novamente: parecido com Rails! Mas aqui tem uma coisa que poderia ter no Rails (e eu não ficaria surpreso de ver isso no Rails 5): escopo de middlewares. Plugs são mais ou menos como nossos Rack Middlewares. Um Pipeline de Middlewares ou Plugs funciona encadeando um filtro de request/response atrás do outro. No nosso caso é encadear Racks (por isso o nome "Rack" aliás, literalmente, prateleiras uma em cima ou embaixo da outra).
 
@@ -387,7 +387,7 @@ Sem esticar demais este artigo vejamos agora como é uma view. Em vez de ERB (Em
     <%= submit "Submit", class: "btn btn-primary" %>
   </div>
 <% end %>
----
+```
 
 Praticamente igual, incluindo o padrão de messages por flash. Correndo o risco de ficar repetitivo: se você já gerou scaffold no Rails algumas vezes, vai notar que é muito parecido mesmo. DSL inspirado fortemente no ActionView com helpers como <tt>form_for</tt>, <tt>humanize</tt>, <tt>text_input</tt>, etc. Ou seja, para desenvolvedores front-end de Rails, estamos praticamente em casa, principalmente porque a idéia é usar diretamente pacotes para Brunch.
 
@@ -397,7 +397,7 @@ Por último, algo que pode ser diferente é o conteúdo do diretório <tt>web/vi
 defmodule PhoenixCrud.UserView do
   use PhoenixCrud.Web, :view
 end
----
+```
 
 Pelo que entendi, ele dá aos templates em EEX o contexto da aplicação, como variáveis criadas no controller. No Rails se definimos um <tt>@users = User.all</tt> a view pode usar como <tt>for user in @users</tt>. No Phoenix explicitamente declaramos isso pela diretiva <tt>use PhoenixCrud.Web, :view</tt>. Esse ":view" está definido no arquivo <tt>web/web.ex</tt> neste trecho:
 
@@ -420,7 +420,7 @@ defmodule PhoenixCrud.Web do
   end
   ...
 end
----
+```
 
 Por isso entendemos que ele declara onde ficam os templates, o contexto do controller, os helpers e funcionalidades de HTML como forms.
 
@@ -428,16 +428,16 @@ Então, com esse código todo, o que podemos fazer?
 
 Primeiro, gostaríamos de ter o equivalente aos nossos <tt>rake db:create</tt> e <tt>rake db:migrate</tt> e de fato:
 
----
+```
 mix ecto.create
 mix ecto.migrate
----
+```
 
 E para rodar a aplicação web? Qual o equivalente ao nosso <tt>rails server</tt>?
 
----
+```
 mix phoenix.server
----
+```
 
 Isso vai subir o servidor Cowboy (o equivalente Puma) na porta 4000 em vez de 3000. Daí teremos telas como estas:
 
@@ -485,7 +485,7 @@ defmodule PhoenixCrud.Endpoint do
 
   plug :router, PhoenixCrud.Router
 end
----
+```
 
 ## Conclusão
 

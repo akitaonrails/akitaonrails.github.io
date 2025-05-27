@@ -59,7 +59,7 @@ class PagesController < ApplicationController
   end
 ...
 end
----
+```
 
 This is what's done in the <tt>PagesController</tt>. [Learn more](http://guides.rubyonrails.org/caching_with_rails.html#conditional-get-support) about the <tt>#stale?</tt> and <tt>#fresh_when</tt> methods that set proper <tt>Cache-Control</tt>, <tt>Last-Modified</tt>, <tt>Age</tt> and <tt>Etag</tt> HTTP headers.
 
@@ -98,7 +98,7 @@ class PagesController < ApplicationController
 	}
   end
 end
----
+```
 
 This is what those methods do in the <tt>PagesController</tt>. The <tt>index</tt> action is trickier as it's just a list of pages. I can cache the 10 most recent items. I can generate the etag based on the item that was most recently updated. I can combine those two. It depends on how often you change your content (most static web sites don't add new content all the time, if you're a heavily updated website you can decrease the expiration time for 1 hour instead of 1 day, and so on).
 
@@ -122,7 +122,7 @@ class ApplicationController < ActionController::Base
       end
     end
 end
----
+```
 
 It's an environment variable. Because the Etag only checks if the content changed, what if I change my stylesheets or anything about the layout or HTML structure? Then the client won't receive this change. Because I only make those changes through a new deployment to Heroku I can also manually change it (or add a Capistrano task, or something similar for automation). Then all Etags will change at once, forcing Rails to generate the new pages and cache them again. This is the fastest way if you want to invalidate all the cache at once.
 

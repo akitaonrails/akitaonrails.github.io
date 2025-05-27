@@ -66,7 +66,7 @@ end
 puts responses.map do |response|
   Oj.load(response.body)["ok"]
 end
----
+```
 
 ### Dica 1
 

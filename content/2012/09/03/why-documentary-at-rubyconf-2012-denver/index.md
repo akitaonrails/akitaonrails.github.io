@@ -28,7 +28,7 @@ Some say that great men are recognized only after their passing ("You either die
 
 In 2007 I was conducting a [series of interviews with several famous Rubyists of our community](http://www.akitaonrails.com/English%20Interviews). And of course, I did send an email to Why himself. And he responded in a very unexpected way. I think it's time to disclose the unabridged content of the email so you understand his exotic personality.
 
----
+```
 Date: Thu, 19 Apr 2007 17:38:59 -0500
 From: why the lucky stiff <why@whytheluckystiff.net>
 To: fakita@bccl.com.br
@@ -84,7 +84,7 @@ crashing into your house today!!  It will all be free and courtesy
 of a steep incline somewhere at a higher elevation.
 
 _why
----
+```
 
 Unfortunately I didn't pursue this enough, I was actually planning on sending the interview questions to him, handwritten. :-) In retrospect, I wish I had, it would've been fun.
 

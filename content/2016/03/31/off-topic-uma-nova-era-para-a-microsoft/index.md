@@ -76,12 +76,12 @@ Portanto, a conta ficou bem mais simples agora. O Windows 10 finalmente é a pri
 
 Com o [Windows 10 Anniversary Update](http://arstechnica.com/information-technology/2016/03/windows-10-270-million-users-binbash-supporting-anniversary-update-coming-summer/) provavelmente vamos poder fazer:
 
----
+```
 apt-get install build-essential
 \curl -sSL https://get.rvm.io | bash
 rvm install 2.3.0
 bundle install
----
+```
 
 E tudo deve funcionar!
 

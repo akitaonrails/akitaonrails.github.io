@@ -59,17 +59,17 @@ Por si, afirmações como essa são inofensivas, mas elas rapidamente se desenro
 
 Qual o problema de fórmulas? Novamente me remeto à minha fundação matemática. Uma fórmula matemática, sozinha, não serve para nada, ela é indefinida, incompleta. Para ser definida de forma completa ela precisa de pelo menos mais dois elementos: um [Domínio e uma Imagem](http://en.wikipedia.org/wiki/Domain_of_a_function). Por exemplo, veja a seguinte fórmula:
 
----
+```
 f(x) = 1/x
----
+```
 
 Imediatamente alguém poderia dizer _"mas esta fórmula está errada, pois se x for zero a conta não funciona."_ E de fato, é uma boa observação, mas ela parte de uma premissa: que quem disse essa frase está considerando que x pode ser qualquer número que existe.
 
 Porém, se eu definir corretamente e dizer:
 
----
+```
 dado x pertencente ao domínio dos números reais, e dado x diferente de zero, f(x) = 1/x, resultará na imagem dos números reais
----
+```
 
 Agora esta fórmula, no campo da Álgebra, está bem definida e é incontestável. Notem o que eu fiz com este simples exemplo: dei uma fórmula incompleta e imediatamente gerei uma discussão sobre ela. É exatamente isso que acontece em toda discussão em redes sociais e temas de auto-ajuda.
 

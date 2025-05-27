@@ -48,7 +48,7 @@ class Program
 	    return Convert.ToBase64String(Results);
 	}
 }
----
+```
 
 Não estou quebrando confidencialidade simplesmente porque este é um código publicamente conhecido disponível no site [CodeProject](http://www.codeproject.com/Tips/306620/Encryption-Decryption-Function-in-Net-using-MD5Cry), sob licença. [CPOL](http://www.codeproject.com/info/cpol10.aspx). O que eu vi foi uma cópia exata disso. Mas cuidado: grandes empresas, em grandes sistemas usados por milhões de pessoas usam código exatamente como este. (#MEDO)
 
@@ -80,7 +80,7 @@ def encrypt_data(passphrase, message)
   cipher.key = Digest::MD5.digest(passphrase)
   Base64.encode64(cipher.update(message) + cipher.final)
 end
----
+```
 
 É só isso mesmo. Vamos por partes.
 
@@ -93,12 +93,12 @@ end
 
 Se tentar rodar este método ele vai dar o seguinte problema:
 
----
+```
 > encrypt_data("abc123", "hello world")
 OpenSSL::Cipher::CipherError: key length too short
 	from (irb):17:in `key='
 	from (irb):17:in `encrypt_data'
----
+```
 
 Se passar a mesma cipher key e mensagem pra versão .Net ele vai funcionar. Esta é a curiosidade:
 
@@ -124,14 +124,14 @@ def encrypt_data(passphrase, message)
   cipher.key = digest + digest[0..7] # <= eis o truque
   Base64.encode64(cipher.update(message) + cipher.final)
 end
----
+```
 
 Feito isso, o resultado agora será o mesmo do código em C#:
 
 --- ruby
 > encrypt_data("abc123", "hello world")
  => "90v60JwFNH+VuIKJgSVWUw==\n"
----
+```
 
 Para comparar, basta compilar e executar na sua máquina (se por acaso for um dev Windows) ou, se não for, ir no site [Compile Online](http://www.compileonline.com/compile_csharp_online.php) que permite compilar e executar código em diversas linguagens diferentes diretamente na Web (dica do [@_carloslopes](https://twitter.com/_carloslopes)).
 

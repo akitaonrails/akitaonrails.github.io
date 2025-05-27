@@ -91,7 +91,7 @@ So, you can pass values by reference between routines, or you can share data in 
 table = :ets.new(:my_fancy_cache, [:set, :protected])
 :ets.insert(table, {"some_key", some_value})
 :ets.lookup(table, "some_key")
----
+```
 
 Many might argue that Erlang's **rigid process isolation** and communication strictly restricted to opaque message passing are overkill and that you can pass by using something akin to Clojure's [MVCC Software Transaction Memory](http://clojure.org/refs), or STM. You do have STM in Erlang, with the other built-in OTP tool, built on top of the ETS, called **Mnesia**. It offer the equivalent of ACID database transactions in-memory. It's not a new concept, but STM is not available as a language feature and it's still uncertain if it really is a good choice to have it.
 
@@ -115,7 +115,7 @@ function sleep(ms) {
     }, ms);
     Fiber.yield();
 }
----
+```
 
 The call to 'yield' suspends the current execution until the function in the 'setTimeout' is called. Then it calls 'run', which resumes the previously yielded function. This is still "rudimentary" compared to coroutines: because the function itself has to yield control out to the reactor event loop, in the case of a Node.js application. If you don't, you will block the event loop in a single threaded Node.js process, and therefore you block everything until the function finishes, defeating the whole purpose. And this is one of those "conventions" that "good" programmers should follow, but most will forget.
 
@@ -145,7 +145,7 @@ function archiveOrders(date, cb) {
     });
   });
 }
----
+```
 
 Into this more manageable thing:
 
@@ -161,7 +161,7 @@ var archiveOrders = (function(date) {
   });
   console.log("orders been archived");
 }).future();
----
+```
 
 The entire [Promises, Futures](https://en.wikipedia.org/wiki/Futures_and_promises) debacle depends in part on proper Fibers. Javascript, being a very poor design, does not come with anything built-in and hence the proliferation of Fibers, Deferreds, Promises, Futures implementations that can never reach neither consensus nor people actually using them at large.
 
@@ -201,7 +201,7 @@ In Erlang, because there is no such hard dependencies, and again because of inhe
 
 --- ruby
 code_change(OldVersion, CurrentState, _Extra) -> {ok, NewState}.
----
+```
 
 So, while Type Inference is a nice middle ground, the flexibility of Dynamic Typing goes beyond being easy for programmers to use. As with Python, Ruby, Javascript, Perl and other dynamic typed languages, you will want to cover your code with proper test suites - which should not be optional in strong typed languages anyway. There is no doubt a compiler's static analysis help a lot, but it's my personal take that dynamic typing allows me more flexibility.
 
@@ -293,7 +293,7 @@ defmodule Mix.ArchiveTest do
     Enum.find(files, &match?({:zip_file, ^name, _, _, _, _}, &1))
   end
 end
----
+```
 
 Code that can be written like this automatically makes me grin.
 

@@ -101,7 +101,7 @@ CarrierWave.configure do |config|
   # config.fog_host = "http://#{ENV['S3_BUCKET']}.s3.amazonaws.com"
   config.fog_host = ENV['S3_CDN'] # for cloudfront
 end
----
+```
 
 You must obviously configure the environment variable `S3_CDN` to point to the Cloudfront endpoint specific to the particular S3 bucket you're using.
 

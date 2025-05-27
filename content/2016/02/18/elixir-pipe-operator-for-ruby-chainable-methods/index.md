@@ -14,7 +14,7 @@ If you don't know what the "Pipe Operator" is in Elixir, take the following code
 
 --- ruby
 Enum.sum(Enum.filter(Enum.map(1..100_000, &(&1 * 3)), odd?))
----
+```
 
 It's ugly, we all know that. In an Object Oriented language like Ruby we would do something like this:
 
@@ -23,7 +23,7 @@ It's ugly, we all know that. In an Object Oriented language like Ruby we would d
   map { |i| i * 3 }.
   select(&:odd?).
   reduce(&:+)
----
+```
 
 But Elixir does not have objects, only functions, so how can we code more elegantly? The solution came up in the form of the so called "Pipe Operator" which takes the last returning value and pass it through as the first argument of the next function call, like this:
 
@@ -32,7 +32,7 @@ But Elixir does not have objects, only functions, so how can we code more elegan
   |> Stream.map(&(&1 * 3))
   |> Stream.filter(odd?)
   |> Enum.sum
----
+```
 
 So Ruby and Elixir "feels" the same when we are able to "chain" methods. In the Ruby world we don't have the "need" for an operator like that. But it would be nice to have a mechanism that we could use to make our codes more expressive, or more testable, or more readable. For example, what if we would write something like this:
 
@@ -41,7 +41,7 @@ So Ruby and Elixir "feels" the same when we are able to "chain" methods. In the 
   multiple_each_element_by_three.
   filter_out_odd_elements.
   give_the_sum_of_all_elements
----
+```
 
 Of course, this is a very constrained example with really bad method naming. But if we get Mo Lawson's article I linked above, it becomes more interesting:
 
@@ -51,7 +51,7 @@ keywords
   .map { |kw| LegacySpanishCorrector.new.correct(kw) }
   .map { |kw| kw.gsub(/[^[:alpha:]\d'_\-\/]/, '') }
   .reject { |kw| STOP_WORDS.include?(kw) }
----
+```
 
 Ruby allows us to chain Enumerable methods one after the other, transforming the initial keywords list into "something" that is very difficult to infer just by looking at this code.
 
@@ -70,7 +70,7 @@ class KeywordNormalizer
 
   # ...
 end
----
+```
 
 This is where we gets by the end of his article: much more readable and each new isolated method is unit testable, resulting in more robust code.
 
@@ -87,7 +87,7 @@ KeywordNormalizer
   .remove_stop_words
   .to_a
   .unwrap
----
+```
 
 You add the <tt>chainable_methods</tt> to your Gemfile as usual (you know the drill), then you can write Lawson's module like this:
 
@@ -108,7 +108,7 @@ module KeywordNormalizer
     array.reject { |el| STOP_WORDS.include?(el) }
   end
 end
----
+```
 
 And that's it, now you can chain everything like I showed previously. The pattern is:
 
@@ -130,7 +130,7 @@ module MyModule
     # yield a block passing the received argument
   end
 end
----
+```
 
 2) Wrap an initial state that will be passed to the first method as it's first argument:
 
@@ -139,7 +139,7 @@ some_initial_state = "Hello World"
 MyModule
   .chain_from(some_initial_state)
   # ...
----
+```
 
 3) Chain as many methods from the module or methods that the returning state recognizes:
 
@@ -153,7 +153,7 @@ MyModule
   .split(" ")
   .join(", ")
   .unwrap
----
+```
 
 Notice that we do not need to pass the first argument to the methods within the 'MyModule' module, it will get the result from the last call automatically.
 

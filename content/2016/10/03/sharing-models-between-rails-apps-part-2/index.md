@@ -14,7 +14,7 @@ If I were building a secondary Rails app connecting directly to the same databas
 
 --- ruby
 gem 'central-support', github: 'Codeminer42/cm42-central-support', branch: 'master', require: 'central/support'
----
+```
 
 Then recreate the models including the same Concerns, and make sure I remove the ability to `bin/rails db:migrate` from the secondary app (by creating empty db tasks with the same name, for example).
 
@@ -47,7 +47,7 @@ module Central
     end
   end
 end
----
+```
 
 The `migration_template` will take care of adding the proper timestamp to the migration file, so you don't have to add it manually and the template file name can something plain such as [`migrations/add_role_field_to_user.rb`](https://github.com/Codeminer42/cm42-central-support/blob/master/lib/generators/central/templates/migrations/add_role_field_to_users.rb).
 
@@ -87,7 +87,7 @@ production:
   timeout: 5000
   url: <%= ENV['DATABASE_CENTRAL_URL'] %>
   pool: <%= ENV['DB_POOL'] || 5 %>
----
+```
 
 In production, it will use the `DATABASE_CENTRAL_URL` environment variable to connect to Central's main database.
 
@@ -124,7 +124,7 @@ before_script:
 test:
   script:
     - bundle exec rspec
----
+```
 
 Notice how I copy the ".sample" config files to make sure they exist. And then how I run tasks you know such as `db:create db:schema:load` to create the normal test database, but tasks you don't know such as `central:db:create central:db:schema:load`.
 
@@ -226,7 +226,7 @@ namespace :central do
     Rails.application.config = @original_config[:config]
   end
 end
----
+```
 
 This is how I define a namespace of Rake tasks that start with `central:`, and every one of those connect to the secondary database as described in `database_central.yml`. The weird syntax in line 81 is from my [`chainable_methods`](https://github.com/akitaonrails/chainable_methods), don't mind it too much.
 
@@ -244,7 +244,7 @@ DB_CENTRAL = CM(Rails.root)
   .result
   .YAML.load
   .unwrap.freeze
----
+```
 
 In this case I am reading from the sample file because different from the CI build, when I deploy to Heroku I don't have a script to copy the sample to the final yaml file. This will populate the constant `DB_CENTRAL` with the database URL stored in the `DATABASE_CENTRAL_URL` environment variable that I have to set.
 
@@ -259,7 +259,7 @@ class RemoteApplicationRecord < ApplicationRecord
     default_scope -> { readonly }
   end
 end
----
+```
 
 This is how you create a new connection pool for the secondary database configuration. You must only have this `establish_connection` in one place and have the models inherit from here. The `abstract_class = true` will make ActiveRecord not try to load from a table of the same name as this class.
 
@@ -277,7 +277,7 @@ module Central
     include Central::Support::TeamConcern::Scopes
   end
 end
----
+```
 
 From here I can just call normal Arel queries such as  `Central::Team.not_archived.limit(5)`.
 

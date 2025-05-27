@@ -38,7 +38,7 @@ Resumindo:
 production:
   url:  <%= ENV["DATABASE_URL"] %>
   pool: <%= ENV["DB_POOL"] || ENV['MAX_THREADS'] || 5 %>
----
+```
 
 2) Se for usar Puma, com Rails inferior a 4.1, adicione o initializer <tt>config/initializers/database_connection.rb</tt>:
 
@@ -54,7 +54,7 @@ Rails.application.config.after_initialize do
     ActiveRecord::Base.establish_connection(config)
   end
 end
----
+```
 
 3) Se for usar [Unicorn](https://devcenter.heroku.com/articles/rails-unicorn), com Rails 4.1+ ou superior, configure o <tt>config/unicorn.rb</tt> adicionando:
 
@@ -72,11 +72,11 @@ after_fork do |server, worker|
     ActiveRecord::Base.establish_connection
   end
 end
----
+```
 
 4) Se for usar Unicorn, com Rails inferior a 4.1+, altere o trecho acima com o seguinte:
 
----
+```
 after_fork do |server, worker|
   # other settings
   if defined?(ActiveRecord::Base)
@@ -86,7 +86,7 @@ after_fork do |server, worker|
     ActiveRecord::Base.establish_connection(config)
   end
 end
----
+```
 
 ## Preciso usar Sidekiq
 
@@ -110,7 +110,7 @@ No caso do Redis, você deve ler [esta página do Wiki do Sidekiq](https://githu
 
 --- yml
 :concurrency: 21
----
+```
 
 E o <tt>config/initializers/sidekiq.rb</tt> assim:
 
@@ -127,7 +127,7 @@ Sidekiq.configure_server do |config|
     # ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'])
   end
 end
----
+```
 
 O <tt>config.redis[:size]</tt> é calculado automaticamente de acordo com o valor de concorrência no <tt>sidekiq.yml</tt> então não precisa adicionar manualmente.
 
@@ -151,9 +151,9 @@ Uma coisa que você pode tentar é adicionar o PgBouncer como a [própria docume
 
 Se estiver usando Rails 4.1 configure seu ambiente para desabilitar prepared statements primeiro:
 
----
+```
 heroku config:set PGBOUNCER_PREPARED_STATEMENTS=false
----
+```
 
 Se estiver usando Rails 4.0 nem tente, não vai funcionar.
 
@@ -171,20 +171,20 @@ class ActiveRecord::ConnectionAdapters::PostgreSQLAdapter
     initialize_without_config_boolean_coercion(connection, logger, connection_parameters, config)
   end
 end
----
+```
 
 Agora para configurar o próprio Heroku execute:
 
----
+```
 heroku buildpacks:add https://github.com/heroku/heroku-buildpack-pgbouncer
 heroku buildpacks:add https://github.com/heroku/heroku-buildpack-ruby
----
+```
 
 E altere o <tt>Procfile</tt> para:
 
----
+```
 web: bin/start-pgbouncer-stunnel bundle exec puma -C config/puma.rb
----
+```
 
 ## Sharding e Octopus
 
@@ -198,7 +198,7 @@ Para isso você deve configurar a [gem Octopus](https://devcenter.heroku.com/art
 
 --- ruby
 gem 'ar-octopus', require: 'octopus'
----
+```
 
 Agora **Cuidado** até pouco tempo atrás a documentação no Heroku estava defasada mas você deve criar o arquivo <tt>config/shards.yml</tt> com o exato seguinte conteúdo:
 
@@ -287,7 +287,7 @@ octopus:
   <% else %>
     - none
   <% end %>
----
+```
 
 Outra coisa, a documentação defasada instrui a criar um <tt>config/initializers/octopus.rb</tt>. Veja esta [issue no Github](https://github.com/tchandy/octopus/issues/317#issuecomment-129480539) para mais detalhes. Em vez disso coloque esta versão simplificada no <tt>config/initializers/octopus.rb</tt> apenas para conseguirmos escolher followers aleatórios (caso tenha mais de 1):
 
@@ -307,7 +307,7 @@ module Octopus
     alias_method :slaves_in, :shards_in
   end
 end
----
+```
 
 **Pequeno adendo, by Gabriel Sobrinho, um dos mantenedores do projeto Octopus que mandou um feedback a este post:**
 
@@ -327,7 +327,7 @@ Em vez disso recomendo separar manualmente onde você quer ler do follower, por 
 
 --- ruby
 User.using(Octopus.random_follower).find(params[:user_id])
----
+```
 
 Isso é o equivalente a fazer <tt>User.find(params[:user_id])</tt> no banco primário, mas vai mandar a query pra um dos seus followers. Daí você pode conectar Relations normalmente para fazer queries pesadas (lembre-se de usar [#find_each](http://api.rubyonrails.org/classes/ActiveRecord/Batches.html) para queries que retornam objetos demais antes de iterar sobre uma coleção grande demais).
 
@@ -353,7 +353,7 @@ Sidekiq.configure_server do |config|
 
   ActiveRecord::Base.connection.initialize_shards(Octopus.config)
 end
----
+```
 
 Isso porque você precisa modificar a configuração do Octopus e não somente do ActiveRecord diretamente. Fazendo isso a configuração correta de pool de banco deve passar corretamente pros workers de Sidekiq e evitar que você fique sem conexões rápido demais por ter um pool muito pequeno. Mas lembre-se do número máximo de conexões do seu banco de dados, quantos Web Dynos e quantos Worker Dynos você tem.
 

@@ -48,7 +48,7 @@ Let's say you want to learn this brand new language called "Crystal": Ruby-like 
 
 You should follow [their wiki](https://crystal-lang.org/docs/installation/on_redhat_and_centos.html) [page](https://github.com/crystal-lang/crystal/wiki/All-required-libraries#fedora) but this is what you need:
 
----
+```
 sudo dnf -y install \
   gmp-devel \
   libbsd-devel \
@@ -65,7 +65,7 @@ sudo dnf -y install gc gc-devel # get all dependencies from Fedora 25
 sudo dnf -y install gc gc-devel --enablerepo=rawhide --best --allowerasing
 
 sudo dnf -y install crystal
----
+```
 
 And that's it, a lot of dependencies but as it's pre-1.0 I believe they will improve this in the future.
 
@@ -73,13 +73,13 @@ And that's it, a lot of dependencies but as it's pre-1.0 I believe they will imp
 
 Rubyists have a number of Rubies version control, but I personally like RVM. First, we need to install some [other requirements](http://www.socialquesting.com/blog/octopress-installation-fedora-25/) and go on with it:
 
----
+```
 sudo dnf -y install patch autoconf gcc-c++ patch libffi-devel automake libtool bison sqlite-devel ImageMagick-devel nodejs git gitg
 curl -sSL https://rvm.io/mpapis.asc | gpg2 --import
 curl -L https://get.rvm.io | bash -s stable --ruby
 
 sudo npm -g install brunch phantomjs
----
+```
 
 There you go, you should have the lastest stable Ruby, Node, Npm and useful tools such as Brunch (required if you want to build Elixir-Phoenix web apps) and PhantomJS for automated acceptance tests in many languages
 
@@ -91,7 +91,7 @@ Notice that we're installing Git, the optional [GitG](https://git.gnome.org//bro
 
 What's a web app without proper databases and cache services? Let's install them:
 
----
+```
 sudo dnf -y install postgresql-server postgresql-contrib postgresql-devel memcached redis
 
 sudo postgresql-setup --initdb
@@ -101,7 +101,7 @@ sudo systemctl start postgresql
 sudo su - postgres
 createuser youruser -p
 createdb youruser --owner=youruser
----
+```
 
 Change `youruser` for the username of your current user account, of course.
 
@@ -109,41 +109,41 @@ Change `youruser` for the username of your current user account, of course.
 
 This is easy, let's install the lastest [OpenJDK 8](http://www.2daygeek.com/install-java-openjdk-6-7-8-on-ubuntu-centos-debian-fedora-mint-rhel-opensuse-manjaro-archlinux/#) and web browser plugins.
 
----
+```
 sudo dnf -y install java-1.8.0-openjdk icedtea-web
----
+```
 
 ### Go Support
 
 Even easier:
 
----
+```
 sudo dnf -y install go
----
+```
 
 Do not forget to edit your profile, such as `$HOME/.profile` and add the proper environment variables:
 
----
+```
 export GOROOT=$HOME/go
 export PATH=$PATH:$GOROOT/bin
----
+```
 
 ### Elixir Support
 
 There is an easy way, and a more complicated and time consuming one. Let's start with [the easy one](http://elixir-lang.org/install.html#unix-and-unix-like):
 
----
+```
 sudo dnf -y install erlang elixir
 mix local.hex
 mix local.rebar
 mix archive.install https://github.com/phoenixframework/archives/raw/master/phoenix_new.ez
----
+```
 
 The problem is that packages for distros such as Fedora can take time to come out. For example, Elixir 1.4 has been out for a couple of days, but no upgrades for Fedora yet.
 
 Another problem if you're professionally developing Elixir projects is that you will need an Elixir version control, because you will end up getting client projects in different Elixir versions and you need to setup your environment accordingly. That's where [asdf](https://github.com/asdf-vm/asdf) comes in. You can follow [this gist](https://gist.github.com/rubencaro/6a28138a40e629b06470) but I will paste the important bits here:
 
----
+```
 sudo dnf -y install make automake gcc gcc-c++ kernel-devel git wget openssl-devel ncurses-devel wxBase3 wxGTK3-devel m4
 
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.2.1
@@ -163,7 +163,7 @@ asdf install elixir 1.4.0
 
 asdf global erlang 19.0
 asdf global elixir 1.4.0
----
+```
 
 Compiling Erlang from source will take a humongous ammount of time, specially if you're using old CPUs like me. But this is how you both have access to the latest and greatest Elixir while also having the ability to choose older versions for client projects.
 
@@ -173,12 +173,12 @@ By the way, you can install additional asdf plugins to version control other pla
 
 You will probably want to have access to Docker as well, so [let's do this](https://docs.docker.com/engine/installation/linux/fedora/):
 
----
+```
 sudo dnf -y install docker docker-compose
 
 # you can test if everything went ok with the infamous hello world
 sudo docker run --rm hello-world
----
+```
 
 ## Desktop Apps
 
@@ -190,13 +190,13 @@ Once you have everything in place, let's configure the non-terminal aspects for 
 
 Speaking of terminals, you will want to install [Terminator](https://gnometerminator.blogspot.com.br/p/introduction.html). I really don't like using screen or tmux in my local machine (I can't get around those key bindings). I am more used to iTerm2 on macOS and Terminator is pretty much the same thing with similar key bindings. You definitelly need to replace the default terminal for this one.
 
----
+```
 sudo dnf -y install terminator
----
+```
 
 You will also want to edit `~/.config/terminator/config` and add the following to make it better:
 
----
+```
 [global_config]
   title_transmit_bg_color = "#d30102"
   focus = system
@@ -220,33 +220,33 @@ You will also want to edit `~/.config/terminator/config` and add the following t
     foreground_color = "#eee8d5"
     background_color = "#002b36"
     cursor_color = "#eee8d5"
----
+```
 
 Another great options that was recommended to me is [Terminix](https://copr.fedorainfracloud.org/coprs/heikoada/terminix/). This is how you install it:
 
----
+```
 sudo dnf copr enable heikoada/terminix
 sudo dnf -y install terminix
----
+```
 
 ### Hack font
 
 You will want to have a nicer font such as [Hack](https://github.com/chrissimpkins/Hack) around as well:
 
----
+```
 dnf -y install dnf-plugins-core
 dnf copr enable heliocastro/hack-fonts
 dnf -y install hack-fonts
----
+```
 
 
 ### Gnome Tweak Tool
 
 Now you will want to install **Gnome Tweak Tool** to be able to setup Hack as the default monospace font:
 
----
+```
 sudo dnf -y install gnome-tweak-tool
----
+```
 
 ### Vim, Zsh, Yadr
 
@@ -254,21 +254,21 @@ sudo dnf -y install gnome-tweak-tool
 
 I really like to use Vim so you can install it like this:
 
----
+```
 sudo dnf -y install vim-enhanced vim-X11
----
+```
 
 And I really like to use [YADR](https://github.com/Codeminer42/dotfiles) to customize all aspects of my ZSH and Vim:
 
----
+```
 sh -c "`curl -fsSL https://raw.githubusercontent.com/skwp/dotfiles/master/install.sh `"
----
+```
 
 I recommend you have Zsh, Vim, Ruby pre-installed before running the script above. Once you finish, I had to tweak the settings a bit:
 
----
+```
 sed 's/gtk2/gtk3' ~/.vim/settings/yadr-appearance.vim
----
+```
 
 You'd want to tweak that file as well, to add new fonts such as Hack, and right now I am more in the mood of "gruvbox" instead of "solarized" as Vim theme.
 
@@ -278,10 +278,10 @@ You'd want to tweak that file as well, to add new fonts such as Hack, and right 
 
 If you're a web developer you will have to edit a couple of images sometimes. And if you're like me, Gimp is a freaking usability nightmare. But [there are ways](http://www.omgubuntu.co.uk/2016/08/make-gimp-look-like-photoshop-easy) to make it a bit [more palatable](https://github.com/doctormo/GimpPs).
 
----
+```
 sudo dnf -y install gimp
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/doctormo/GimpPs/master/tools/install.sh)"
----
+```
 
 There you go, a Photoshop-like theme for Gimp to make it less ugly.
 
@@ -289,10 +289,10 @@ There you go, a Photoshop-like theme for Gimp to make it less ugly.
 
 What would we, developers, be without music to concentrate?
 
----
+```
 dnf config-manager --add-repo=http://negativo17.org/repos/fedora-spotify.repo
 dnf -y install spotify-client
----
+```
 
 ### CoreBird
 
@@ -300,9 +300,9 @@ dnf -y install spotify-client
 
 I am so glad that someone built a very competent and elegant Twitter client for Linux. Install CoreBird:
 
----
+```
 dnf -y install corebird
----
+```
 
 It's probably even better than the official Mac version.
 
@@ -310,7 +310,7 @@ It's probably even better than the official Mac version.
 
 I found [this hack](http://blog.samalik.com/make-your-gnome-title-bars-smaller/) to try to make the Gnome title bars a bit less fat, which is about the only complaint I have for the look-and-feel so far:
 
----
+```
 tee ~/.config/gtk-3.0/gtk.css <<-EOF
 .header-bar.default-decoration {
  padding-top: 3px;
@@ -322,7 +322,7 @@ tee ~/.config/gtk-3.0/gtk.css <<-EOF
  padding: 0px;
 }
 EOF
----
+```
 
 ### Conclusion
 

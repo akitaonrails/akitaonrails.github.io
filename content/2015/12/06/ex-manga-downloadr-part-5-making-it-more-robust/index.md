@@ -24,7 +24,7 @@ def process_downloads(images_list, directory) do
     |> Enum.map(&Task.await(&1, @await_timeout_ms))
   directory
 end
----
+```
 
 It deals with a large list, maps over each element sending it to a Worker function to run, like this:
 
@@ -36,7 +36,7 @@ def page_download_image(image_data, directory) do
     end, @task_async_timeout
   end)
 end
----
+```
 
 It returns an asynchronous Task waiting for 2 things: for Poolboy to release a free process to use, and for the Worker/GenServer function to finish running inside that process. As I explained in [Part 2](http://www.akitaonrails.com/2015/11/19/ex-manga-downloadr-part-2-poolboy-to-the-rescue) this is so we can limit the maximum number of connections to the external source. If we didn't have this restriction, sending tens of thousands of asynchronous requests at once, the external source would just fail them all.
 
@@ -54,7 +54,7 @@ defmodule PoolManagement.Supervisor do
   ]
   ...
 end
----
+```
 
 And we can replace the "<tt>Task.async/2</tt>" calls to "<tt>Task.Supervisor.async(Fetcher.TaskSupervisor, ...)</tt>" like this:
 
@@ -66,7 +66,7 @@ def page_download_image(image_data, directory) do
     end, @task_async_timeout
   end)
 end
----
+```
 
 This still creates Tasks that we need to await on, and as before, if the function inside crashes, it still brings down the main process. Now my refactoring found a dead end.
 
@@ -92,14 +92,14 @@ defmacro fetch(link, do: expression) do
     end
   end
 end
----
+```
 
 Now I only need to replace 1 line in this macro:
 
 --- ruby
 -    case HTTPotion.get(unquote(link), ExMangaDownloadr.http_headers) do
 +    case ExMangaDownloadr.retryable_http_get(unquote(link)) do
----
+```
 
 And define this new retryable logic in the main module:
 
@@ -134,7 +134,7 @@ defmodule ExMangaDownloadr do
   end
   ...
 end
----
+```
 
 I strongly [stated](http://www.akitaonrails.com/2015/12/01/the-obligatory-why-elixir-personal-take) that in Elixir we should **not** use "try/catch" blocks, but there you have it.
 

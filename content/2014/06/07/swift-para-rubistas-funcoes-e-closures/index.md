@@ -33,7 +33,7 @@ func calculadora(calculo: (Int, Int) -> (Int), a: Int, b: Int) {
 
 calculadora(soma, 10, 20)
 // "30"
----
+```
 
 Veja o código acima, definimos uma função de soma, que recebe dois inteiros como parâmetro e retorna um inteiro. Depois definimos uma função genérica chamada "calculadora" que recebe como parâmetro uma função com a assinatura <tt>(Int, Int) -> Int</tt> que significa "uma função que receba dois inteiros e retorne um inteiro" e depois dois parâmetros inteiros.
 
@@ -46,7 +46,7 @@ func multiplicacao(x: Int, y: Int) -> Int {
 
 calculadora(multiplicacao, 3, 5)
 // "15"
----
+```
 
 Podemos agora criar quaisquer funções com a mesma assinatura e depois mandar para a calculadora. Em Ruby não temos a mesma funcionalidade:
 
@@ -64,7 +64,7 @@ calculadora(soma, 10, 20)
 # 	from (irb):1:in `soma'
 # 	from (irb):9
 # 	from /usr/bin/irb:12:in `<main>'
----
+```
 
 Em Ruby, parênteses são opcionais e ao tentar passar o método "soma" como parâmetro, na verdade ele está já tentando executar o método. Existe uma forma, não ortodoxa, que podemos ter um efeito similar, mas não é a mesma coisa, seria assim:
 
@@ -74,7 +74,7 @@ def calculadora(calculo, a, b)
 end
 
 calculadora(:soma, 10, 20)
----
+```
 
 O método [<tt>send</tt>](http://ruby-doc.org/core-2.1.1/Object.html#method-i-send) é uma das formas de se enviar mensagens a objetos (Objective-C também tem isso, na forma de seletores e do método <tt>performSelector</tt> que expliquei [neste outro post](http://www.akitaonrails.com/2010/12/06/objective-c-method-missing#.U5MhaRYduzA)). Então, em vez de passar diretamente o método, passamos apenas o nome dele como um symbol e internamente executamos o método passando os parâmetros. Isso é só "similar" porque na prática o método em si nunca foi passado como parâmetro.
 
@@ -90,7 +90,7 @@ def calculadora(calculo, a, b)
 end
 
 calculadora(soma, 10, 20)
----
+```
 
 Aqui a semântica é diferente. Primeiro criamos um bloco, literalmente o que seria o "corpo de um método" usando <tt>lambda</tt>. Depois passamos o bloco com parâmetro ao método <tt>calculadora</tt>. E dentro dela executamos o bloco com um "ponto" antes dos parênteses, que é a forma curta de se fazer <tt>soma.call(a, b)</tt>
 
@@ -119,7 +119,7 @@ func calculadora(calculo: (Int, Int) -> Int, a: Int, b: Int) {
 
 calculadora(calculo("soma"), 10, 20)
 // 30
----
+```
 
 Em Ruby, o mais próximo, usando blocos, seria:
 
@@ -140,7 +140,7 @@ end
 
 calculadora(calculo(:soma), 10, 20)
 # 30
----
+```
 
 <h2>Entendendo Blocos em Swift</h2>
 
@@ -157,7 +157,7 @@ numero 20 do |x|
   x * 10
 end
 # 200
----
+```
 
 Definimos um método chamado <tt>numero</tt> que recebe um parâmetro "bla". Internamente chamamos <tt>yield</tt> que pega o bloco passado como último parâmetro do método e repassa o parâmetro "bla" a ele. Fora, executamos o método frase, passando 20 como parâmetro e um bloco (delimitado por "do..end") que recebe uma variável x e apenas multiplica ela por 10.
 
@@ -170,7 +170,7 @@ end
 
 numero(20) { |x| x * 10 }
 # 200
----
+```
 
 É exatamente o mesmo código mas agora o bloco está definido como parâmetro mais explicitamente. O "&" diz que vamos passar o bloco fora dos parênteses do método. Executamos o bloco dentro com o "ponto" (no lugar de "call", como explicamos antes). E ao executar o método, desta vez deixei os parênteses opcionais e no lugar de "do..end" usei "{}", que é a mesma coisa. Por convenção, em Ruby, usamos "{}" quando um bloco tem somente uma linha de implementação e usamos "do..end" quando tem múltiplas linhas.
 
@@ -179,7 +179,7 @@ Obs, o [@josevalim](http://twitter.com/josevalim) me explicou que há outra sint
 ---C
 numero.map { (var x: Int) -> Int in return x * 10 }
 numero.map { $0 * 10 } // equivalente ao de cima
----
+```
 
 Confinuando, podemos fazer a mesma coisa em Swift, assim:
 
@@ -189,7 +189,7 @@ func numero(bla: Int, bloco: (Int) -> Int) {
 }
 
 numero(20, { (x: Int) -> Int in return x * 10 } )
----
+```
 
 Por causa da necessidade de definir o seletor/assinatura, com parâmetros e tipo de retorno, a execução da closure em Swift é bem mais verbosa do que em Ruby. A sintaxe é semelhante, usando chaves "{}" para delimitar o bloco, a assinatura para delimitar a função anônima e o corpo do bloco depois de "in". Na prática é quase a mesma coisa.
 
@@ -212,7 +212,7 @@ let strings = numbers.map {
 }
 // strings is inferred to be of type String[]
 // its value is ["OneSix", "FiveEight", "FiveOneZero"]
----
+```
 
 A mesma coisa em Ruby ficaria assim:
 
@@ -230,7 +230,7 @@ strings = numbers.map do |number|
   output
 end
 # ["OneSix", "FiveEight", "FiveOneZero"]
----
+```
 
 Veja como a lógica em si é bastante semelhante, se ignorar a definição mais exata de tipos do Swift, os dois códigos são praticamente idênticos.
 
@@ -250,7 +250,7 @@ x.html do |h|
     end
   end
 end
----
+```
 
 E cheguei neste equivalente em Objective-C:
 
@@ -267,7 +267,7 @@ XmlBuilder* xml = [[XmlBuilder alloc] init];
         }];            
     }];
 }];
----
+```
 
 Absolutamente verborrágico! Não era divertido usar blocos em Objective-C pela quantidade de delimitadores com chaves, parênteses, colchetes. Em Ruby é bem mais simples porque parênteses são todos opcionais e blocos são delimitados quase como métodos.
 
@@ -287,7 +287,7 @@ xml.html({ (var h) -> Void in        // x.html do |h|
         })                           //     end
     })                               //   end
 })                                   // end
----
+```
 
 Veja que comparado à versão em Objective-C é "muito" melhor. Mesmo assim, se comparado ao que fazemos em Ruby, continua sendo mais verboso do que gostaríamos por causa dos parênteses obrigatórios e declaração de tipos das funções, mas agora sim fica muito mais prático ver que podemos fazer DSLs em Swift também.
 

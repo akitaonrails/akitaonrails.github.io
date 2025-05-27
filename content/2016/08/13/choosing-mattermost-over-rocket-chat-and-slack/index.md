@@ -61,7 +61,7 @@ Make sure you have NGINX in front of the server and that you have both a properl
 
 Because I want to keep tweaking and experimenting with the codebase in a live installation, I installed everything manually and I have this directory structure:
 
----
+```
 -rw-r--r--  1 mattermost mattermost     6504 Aug 13 20:11 config.json
 drwxrwxr-x  5 mattermost mattermost     4096 Aug 13 20:30 data
 lrwxrwxrwx  1 mattermost mattermost       33 Aug 13 20:13 mattermost -> mattermost-team-3.3.0-linux-amd64
@@ -71,34 +71,34 @@ drwxr-xr-x 11 mattermost mattermost     4096 Aug 13 20:28 mattermost-team-3.3.0-
 -rw-rw-r--  1 mattermost mattermost 20241448 Aug 12 20:41 mattermost-team-3.3.0-linux-amd64.tar.gz
 drwxrwxr-x  3 mattermost mattermost     4096 Aug 13 20:23 platform-dev-3.3.0
 -rw-r--r--  1 mattermost mattermost 18060203 Aug 13 20:22 platform-dev.tar.gz
----
+```
 
 So I have a restricted, sudo user `mattermost` and I have a main `mattermost` directory pointing to the binary packages you will find in the [official download page](https://www.mattermost.org/download/).
 
 Notice that I have a copy of `mattermost/config/config.json` in the home directory. I leave it there so every time I download a new version and redo the symlink to `mattermost`, I can just do:
 
----
+```
 rm -Rf ~/mattermost/config/config.json
 cd ~/mattermost/config
 ln -s ~/mattermost/config.json
----
+```
 
 Also make sure you change at least the following in the config:
 
----
+```
 ...
 "FileSettings": {
     "MaxFileSize": 83886080,
     "DriverName": "local",
     "Directory": "/home/mattermost/data",
 ...
----
+```
 
 If you want, you can set file uploads to go to some S3 bucket you have, and just fill in the AWS details. But if you choose to have them locally, change the directory to somewhere outside of the `mattermost` folder, as in every upgrade you will change the folder. With both AWS EC2 or Digital Ocean you can always choose to add a secondary volume that can outlive the virtual boxes, so even if you get to a point where you have hundreds of concurrent users and you want to scale horizontally, you can have all your boxes pointing to a shared volume (AWS EFS, for example).
 
 Speaking of which, in this configuration, upgrading would be like this:
 
----
+```
 sudo service mattermost stop
 wget https://releases.mattermost.com/x.y.z/mattermost-team-x.y.z-linux-amd64.tar.gz
 tar xvfz mattermost-team-x.y.z-linux-amd64.tar.gz
@@ -111,7 +111,7 @@ ln -s ~/config.json
 cd ..
 ln -s ~/data
 sudo service mattermost start
----
+```
 
 The reason I wanted to have it this way is because I can tweak the code and manually push the changes.
 
@@ -119,12 +119,12 @@ For your development machine you should follow [this instruction](https://docs.m
 
 Then you can just clone the code from Github:
 
----
+```
 mkdir mattermost
 cd mattermost
 git clone https://github.com/mattermost/platform
 git checkout -b v3.3.0 v3.3.0
----
+```
 
 Remember to always checkout the correct stable version (v3.3.0 as of the time when I originally posted this article) that you have installed in your server. Again, I will not bore you with what's already documented in the links above, but you must have Go 1.6(.3), Docker, Docker-Composer, Docker-Machine all installed already.
 
@@ -160,13 +160,13 @@ if(isAdmin || isSystemAdmin) {
         dropdownContents.push(deleteOption);
     }
 }
----
+```
 
 And you know what this will do? Remove the "Rename Group" and "Delete Group" options from the channel menu if the user is not a system admin. Now how do you put this in your server?
 
 First of all, you have to edit the `Makefile` at this section:
 
----
+```
 @# Make osx package
 @# Copy binary
 cp $(GOPATH)/bin/darwin_amd64/platform $(DIST_PATH)/bin
@@ -190,16 +190,16 @@ cp $(GOPATH)/bin/platform $(DIST_PATH)/bin
 tar -C dist -czf $(DIST_PATH)-$(BUILD_TYPE_NAME)-linux-amd64.tar.gz mattermost
 @# Don't cleanup linux package so dev machines will have an unziped linux package avalilable
 @#rm -f $(DIST_PATH)/bin/platform
----
+```
 
 Notice that the developer that made this file is probably using Linux. That's because this file build the Linux-ELF binary as `bin/platform`, while the OS X Mach-O binary will be at `bin/darwin_amd64/platform`. Now, if like me you're on OS X, you have to inverse this and make the Linux version point to `bin/linux_amd64/platform`, otherwise the packages will have the wrong binary.
 
 Then you will notice that there is this section right at the bottom:
 
----
+```
 setup-mac:
     echo $$(boot2docker ip 2> /dev/null) dockerhost | sudo tee -a /etc/hosts
----
+```
 
 If you're on the newest versions of Docker-Toolbox, you don't need boot2docker anymore, it will use docker-machine instead. So this line doesn't work and the easiest way to make `make test` run is to change the `dockerhost` to `localhost` in the `config/config.json`'s PostgreSQL configuration.
 
@@ -223,7 +223,7 @@ func (c *Context) HasPermissionsToTeam(teamId string, where string) bool {
         return false
     }
     ...
----
+```
 
 Then change the `webapp/channel_header.jsx` component in the React front-end (as well as a proper unit tests to `webapp/tests/client_channel.test.jsx`), make sure the `make test` passes, and then finally create a feature request to the core team.
 

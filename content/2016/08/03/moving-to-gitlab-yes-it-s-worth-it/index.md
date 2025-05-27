@@ -154,22 +154,22 @@ gitlab_rails['omniauth_providers'] = [
 
 # if you're importing repos from GitHub, Sidekiq workers can grow as high as 2.5GB of RAM and the default [Sidekiq Killer](http://docs.gitlab.com/ee/operations/sidekiq_memory_killer.html) config will cap it down to 1GB, so you want to either disable it by adding '0' or adding a higher limit
 gitlab_rails['env'] = { 'SIDEKIQ_MEMORY_KILLER_MAX_RSS' => '3000000' }
----
+```
 
 There are [dozens of default variables](https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/files/gitlab-cookbooks/gitlab/attributes/default.rb#L57) you can [override](https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/doc/settings/environment-variables.md), just be careful on your testings.
 
 Every time you change a configuration, you can just run the following commands:
 
----
+```
 sudo gitlab-ctl reconfigure
 sudo gitlab-ctl restart
----
+```
 
 You can open a Rails console to inspect production objects like this:
 
----
+```
 gitlab-rails console
----
+```
 
 I had a lot of trouble importing big repos from GitHub, but after a few days debugging the problem with GitLab Core Team developers [Douglas Alexandre](https://gitlab.com/u/dbalexandre), [Gabriel Mazetto](https://gitlab.com/u/brodock), a few Merge Requests and some local patching and I was finally able to import relatively big projects (more than 5,000 commits, more than 1,000 issues, more than 1,200 pull requests with several comments worth of discussion threads). A project of this size can take a couple of hours to complete, mainly because **it's damn slow to use GitHub's public APIs** (they are slow and they have rate limits and abuse detection, so you can't fetch everything as fast as your bandwidth would allow).
 
@@ -189,7 +189,7 @@ Assume that you should run what's in this section for all new machines you creat
 
 First of all, they come without a swap file. No matter how much RAM you have, the Linux OS is meant to work better by combining a swap file. You can [read more about it](https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-ubuntu-14-04) later, for now just run the following as root:
 
----
+```
 fallocate -l 4G /swapfile
 chmod 600 /swapfile
 mkswap /swapfile
@@ -197,46 +197,46 @@ swapon /swapfile
 
 sysctl vm.swappiness=10
 sysctl vm.vfs_cache_pressure=50
----
+```
 
 Edit the `/etc/fstab` file and add this line:
 
----
+```
 /swapfile   none    swap    sw    0   0
----
+```
 
 Finally, edit the `/etc/sysctl.conf` file and add these lines:
 
----
+```
 vm.swappiness=10
 vm.vfs_cache_pressure = 50
----
+```
 
 Don't forget to set the [default locale](http://askubuntu.com/questions/162391/how-do-i-fix-my-locale-issue) of your machine. Start by editing the `/etc/environment` file and adding:
 
----
+```
 LC_ALL=en_US.UTF-8
 LANG=en_US.UTF-8
----
+```
 
 Then run:
 
----
+```
 sudo locale-gen en_US en_US.UTF-8
 sudo dpkg-reconfigure locales
----
+```
 
 Finally, you should have Ubuntu automatically install stable security patches for you. You don't want to forget machines online without the most current security fixes, so just run this:
 
----
+```
 sudo dpkg-reconfigure --priority=low unattended-upgrades
----
+```
 
 Choose "yes" and you're done. And of course, for every fresh install, it's always good to run the good old:
 
----
+```
 sudo apt-get update && sudo apt-get upgrade
----
+```
 
 This is the very basics, I believe it's easier to have an image with all this ready, but if you use the standard Digital Ocean images, these settings should do the trick for now.
 
@@ -272,25 +272,25 @@ Don't forget to execute the basic configuration I mentioned above to enable a sw
 
 SSH in to "docker-registry-mirror" and just run:
 
----
+```
 docker run -d -p 6000:5000 \
     -e REGISTRY_PROXY_REMOTEURL=https://registry-1.docker.io \
     --restart always \
     --name registry registry:2
----
+```
 
 Now you wil have a local Docker images registry proxy and cache at `10.0.0.1:6000` (take note of the real private IP).
 
 SSH in to "ci-cache" and run:
 
----
+```
 mkdir -p /export/runner
 
 docker run -it --restart always -p 9005:9000 \
         -v /.minio:/root/.minio -v /export:/export \
         --name minio \
         minio/minio:latest /export
----
+```
 
 Now you will have an AWS S3 clone called [Minio](https://github.com/minio/minio) running. I didn't know this project even existed, but it is a nifty little service written in Go to clone the AWS S3 behavior and APIs. So now you can have your very own S3 inside your infrastructure!
 
@@ -308,7 +308,7 @@ Open this URL from your freshly installed GitLab-CE: `http://yourgitlab.com/admi
 
 Finally, SSH in to "ci-runner" and run:
 
----
+```
 curl -L https://github.com/docker/machine/releases/download/v0.7.0/docker-machine-`uname -s`-`uname -m` > /usr/local/bin/docker-machine
 
 chmod +x /usr/local/bin/docker-machine
@@ -318,17 +318,17 @@ curl -L https://packages.gitlab.com/install/repositories/runner/gitlab-ci-multi-
 sudo apt-get install gitlab-ci-multi-runner
 
 rm -Rf ~/.docker # just to make sure
----
+```
 
 Now you can register this new runner with your GitLab install, you will need the Registration Token mentioned above.
 
----
+```
 sudo gitlab-ci-multi-runner register
----
+```
 
 You will be asked a few questions, and this is what you can answer:
 
----
+```
 Please enter the gitlab-ci coordinator URL (e.g. https://gitlab.com/ci )
 https://yourgitlab.com/ci
 Please enter the gitlab-ci token for this runner
@@ -342,17 +342,17 @@ Please enter the Docker image (eg. ruby:2.1):
 codeminer42/ci-ruby:2.3
 INFO[0037] Runner registered successfully. Feel free to start it, but if it's
 running already the config should be automatically reloaded!
----
+```
 
 Let's make a copy of the original configuration, just to be safe:
 
----
+```
 cp /etc/gitlab-runner/config.toml /etc/gitlab-runner/config.bak
----
+```
 
 Copy the first few lines of this file (you want the token), it will look like this:
 
----
+```
 concurrent = 1
 check_interval = 0
 
@@ -361,13 +361,13 @@ check_interval = 0
   url = "http://yourgitlab.com/ci"
   token = "--- generated runner token ---"
   executor = "docker+machine"
----
+```
 
 The important part here is the "token". You will want to take note of it. And now you also will want to create a [new API Token over at Digital Ocean](https://cloud.digitalocean.com/settings/api/tokens). Just Generate a New Token and take note.
 
 You can now replace the entire `config.toml` file for this:
 
----
+```
 concurrent = 20
 check_interval = 0
 
@@ -403,13 +403,13 @@ check_interval = 0
     SecretKey = "-- your minio secret key"
     BucketName = "runner"
     Insecure = true # Use Insecure only when using with Minio, without the TLS certificate enabled
----
+```
 
 And you can restart the runner to pick up the new configuration like this:
 
----
+```
 gitlab-ci-multi-runner restart
----
+```
 
 As I said before, you will want to read the extensive [official documentation](https://gitlab.com/gitlab-org/gitlab-ci-multi-runner/blob/master/docs/configuration/autoscale.md) (and every link within).
 
@@ -419,13 +419,13 @@ If you did everything right, changing the correct private IPs for the docker reg
 
 And from the `ci-runner` machine, you can list them like this:
 
----
+```
 # docker-machine ls
 
 NAME                                                ACTIVE   DRIVER         STATE     URL                         SWARM   DOCKER    ERRORS
 runner-xxxx-ci-auto-scale-xxxx-xxxx   -        digitalocean   Running   tcp://191.168.0.1:2376            v1.10.3
 runner-xxxx-ci-auto-scale-xxxx-xxxx   -        digitalocean   Running   tcp://192.169.0.2:2376           v1.10.3
----
+```
 
 They should not list any errors, meaning that they are up and running, waiting for new builds to start.
 
@@ -478,7 +478,7 @@ before_script:
 test:
   script:
     - xvfb-run bundle exec rspec
----
+```
 
 My team at [Codeminer 42](http://www.codeminer42.com) prepared a [simple Docker image](https://hub.docker.com/r/codeminer42/ci-ruby/) with useful stuff pre-installed (such as the newest phantomjs, xvfb, etc), so it's now super easy to enable automated builds within GitLab by just adding this file to the repositories. (Thanks to Carlos Lopes, Danilo Resende and Paulo Diovanni - who will be talking [about Docker at Rubyconf Brasil 2016](http://www.rubyconf.com.br/pt-BR/speakers#Paulo%20Diovani%20Gonçalves), by the way)
 

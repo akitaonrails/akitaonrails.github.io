@@ -32,19 +32,19 @@ E para quem quer automatizar o processo de encontrar esses advisories, o RubySec
 
 Apenas instale a gem com 
 
----
+```
 gem install bundler-install
----
+```
 
 E execute a partir da raíz do seu projeto:
 
----
+```
 bundle-audit
----
+```
 
 Ele vai lhe dar uma saída parecida com esta:
 
----
+```
 Insecure Source URI found: git://github.com/Codeminer42/axlsx.git
 Name: actionpack
 Version: 3.2.16
@@ -87,21 +87,21 @@ Title: Nokogiri Gem for JRuby Crafted XML Document Handling Infinite Loop Remote
 Solution: upgrade to ~> 1.5.11, >= 1.6.1
 
 Unpatched versions found!
----
+```
 
 Seguindo o exemplo acima, precisaríamos fazer o seguinte:
 
----
+```
 bundle update nokogiri mini_magick rails
----
+```
 
 Você pode precisar alterar o arquivo <tt>Gemfile</tt> se a versão específica estiver declarada antes de realizar o <tt>update</tt>. E depois rode o <tt>bundle-audit</tt> novamente para ter certeza que está tudo bem. Apenas cuidado com os casos onde você aponta diretamente para um repositório do Github em vez do Rubygems.org, pois ele não tem como checar se o que você está puxando do Github tem vulnerabilidades conhecidas ou não.
 
 Para atualizar seu bundler-audit antes de realizar um novo scan, faça:
 
----
+```
 bundle-audit update
----
+```
 
 ## Bônus: Rack-Attack
 
@@ -119,13 +119,13 @@ Para isso existe o Rack::Attack, que é um middleware Rack que você instala de 
 
 --- ruby
 gem 'rack-attack'
----
+```
 
 E adicione ao arquivo <tt>config.ru</tt>, antes da linha do comando <tt>run</tt>:
 
 --- ruby
 use Rack::Attack
----
+```
 
 E se quiser customizar, comece adicionando o arquivo <tt>config/initializers/rack-attack.rb</tt> com o seguinte:
 
@@ -133,7 +133,7 @@ E se quiser customizar, comece adicionando o arquivo <tt>config/initializers/rac
 class Rack::Attack
   Rack::Attack.cache.store = ActiveSupport::Cache::MemoryStore.new # defaults to Rails.cache
 end
----
+```
 
 A [documentação](https://github.com/kickstarter/rack-attack) no Github tem muito mais detalhes. Nos aspectos de detectar padrões de invasão por força bruta ele se inspira no famoso [fail2ban](http://www.fail2ban.org/wiki/index.php/MANUAL_0_8#Jail_Options) (que você pode usar para proteger, por exemplo, o [SSH](https://www.digitalocean.com/community/articles/how-to-protect-ssh-with-fail2ban-on-ubuntu-12-04) de seu servidor).
 

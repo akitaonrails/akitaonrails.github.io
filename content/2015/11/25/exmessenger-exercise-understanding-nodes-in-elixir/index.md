@@ -28,89 +28,89 @@ Again, this is one more concept I am still just beginning to properly learn, and
 
 But just to get started you can simply start 2 IEx sessions. From one terminal you can do:
 
----
+```
 iex --sname fabio --cookie chat
 
 Erlang/OTP 18 [erts-7.1] [source] [64-bit] [smp:4:4] [async-threads:10] [kernel-poll:false]
 
 Interactive Elixir (1.1.1) - press Ctrl+C to exit (type h() ENTER for help)
 iex(fabio@Hal9000u)1> 
----
+```
 
 And from a different terminal you can do:
 
----
+```
 iex --sname akita --cookie chat
 
 Erlang/OTP 18 [erts-7.1] [source] [64-bit] [smp:4:4] [async-threads:10] [kernel-poll:false]
 
 Interactive Elixir (1.1.1) - press Ctrl+C to exit (type h() ENTER for help)
 iex(akita@Hal9000u)1> 
----
+```
 
 Notice how the IEx shell shows different Node names for each instance: "fabio@Hal9000u" and "akita@Hal9000u". It's the sname concatenated with your machine name. From one instance you can ping the other, for example:
 
----
+```
 iex(akita@Hal9000u)2> Node.ping(:"fabio@Hal9000u")
 :pong
----
+```
 
 If the name is correct and the other instance is indeed up, it responds the ping with a <tt>:pong</tt>. This is correct just for nodes in the same machine, but what if I need to connect to an instance in a remote machine?
 
----
+```
 iex(akita@Hal9000u)3> Node.ping(:"fabio@192.168.1.13")
 
 11:02:46.152 [error] ** System NOT running to use fully qualified hostnames **
 ** Hostname 192.168.1.13 is illegal **
----
+```
 
 The <tt>--sname</tt> option sets a name only reachable within the same subnet, for a fully qualified domain name you need to use the <tt>--name</tt>, for example, like this:
 
----
+```
 iex  --name fabio@192.168.1.13 --cookie chat
----
+```
 
 And for the other node:
 
----
+```
 iex --name akita@192.168.1.13 --cookie chat
----
+```
 
 And from this second terminal you can ping the other node the same way as before:
 
----
+```
 iex(akita@192.168.1.13)1> Node.ping(:"fabio@192.168.1.13")
 :pong
----
+```
 
 And you might be wondering, what is this "<tt>--cookie</tt>" thing? Just spin up a third terminal with another client name, but without the cookie, like this:
 
----
+```
 iex --name john@192.168.1.13
----
+```
 
 And if you try to ping one of the first two nodes you won't get a <tt>:pong</tt> back:
 
----
+```
 iex(john@192.168.1.13)1> Node.ping(:"fabio@192.168.1.13")
 :pang
----
+```
 
 The cookie is just an atom to identify relationship between nodes. In a pool of several servers you can make sure you're not trying to connect different applications between each other. And as a result you get a <tt>:pang</tt>. Instead of an IP address you can use a fully qualified domain name instead.
 
 And just by having the node "akita@" pinging "fabio@" we can see that they are aware of each other:
 
----
+```
 iex(fabio@192.168.1.13)2> Node.list
 [:"akita@192.168.1.13"]
----
+```
 
 And:
 
----
+```
 iex(akita@192.168.1.13)2> Node.list
 [:"fabio@192.168.1.13"]
----
+```
 
 If one of the node crashes or quits, the Node list is automatically refreshed to reflect only nodes that are actually alive and responding.
 
@@ -124,29 +124,29 @@ The "ExMessengerClient" starts up the unsupervised "ExMessengerClient.MessageHan
 
 The Tree for both apps look roughly like this:
 
----
+```
 ExMessenger
 - ExMessenger.Supervisor
     + ExMessenger.Server
 ExMessengerClient
 - ExMessengerClient.MessageHandler
----
+```
 
 We start them separately, first the message server:
 
----
+```
 cd apps/ex_messenger
 iex --sname server --cookie chocolate-chip -S mix run
----
+```
 
 Notice that for this example we are starting with a simple name "server", for the local subnet, and a cookie. If will respond as "server@Hal9000u" (Hal9000u being my local machine's name).
 
 Then, we can start the client app:
 
----
+```
 cd apps/ex_messenger_client
 server=server@Hal9000u nick=john elixir --sname client -S mix run
----
+```
 
 Here we are setting 2 environment variables (that we can retrieve inside the app using <tt>System.get_env/1</tt>) and also setting a local node name "client". You can spin up more client nodes using a different "sname" and a different "nick" from another terminal, as many as you want, linking to the same "server@Hal9000u" message server.
 
@@ -169,7 +169,7 @@ defmodule ExMessengerClient do
   end
   ...
 end
----
+```
 
 The <tt>get_env</tt> private function is just a wrapper to treat the environment variable "server" and "nick" that we passed:
 
@@ -182,7 +182,7 @@ defp get_env do
     |> String.rstrip
   {server, nick}
 end
----
+```
 
 Now, we try to connect to the remote server:
 
@@ -198,7 +198,7 @@ defp connect({server, nick}) do
   end
   {server, nick}
 end
----
+```
 
 The important piece here is that we are setting the client's instance cookie with <tt>Node.set_cookie/1</tt> (notice that we didn't pass it in the command line options like we did with the server instance). Without setting the cookie the next line with <tt>Node.connect(server)</tt> would fail to connect, as I explained in the previous section.
 
@@ -210,7 +210,7 @@ defp start_message_handler({server, nick}) do
   IO.puts "Connected"
   {server, nick}
 end
----
+```
 
 The Message Handler GenServer itself is very simple, it just sets the server as the state and handle incoming messages from the server and prints out in the client's terminal:
 
@@ -233,7 +233,7 @@ defmodule ExMessengerClient.MessageHandler do
     {:noreply, server}
   end
 end
----
+```
 
 Going back to the main "ExMessengerClient" module, after starting the (unsupervised) GenServer that receives incoming messages, we proceed to join the pseudo-chatroom in the server:
 
@@ -250,7 +250,7 @@ defp join_chatroom({server, nick}) do
   end
   {server, nick}
 end
----
+```
 
 I defined this "ServerProcotol" module which is just a convenience wrapper for <tt>GenServer.call/3</tt> and <tt>GenServer.cast/2</tt> calls, to send messages for the remote GenServer called <tt>:message_server</tt>:
 
@@ -284,7 +284,7 @@ defmodule ExMessengerClient.ServerProcotol do
     GenServer.cast({:message_server, server}, args)
   end
 end
----
+```
 
 Pretty straight forward. Then, the main ExMessengerClient calls the recursive <tt>input_loop/1</tt> function from the CLI module, which just receives user input and handles the proper commands using pattern matching, like this:
 
@@ -353,7 +353,7 @@ defmodule ExMessengerClient.CLI do
     {to, message}
   end
 end
----
+```
 
 And this wraps up the Client.
 
@@ -377,7 +377,7 @@ defmodule ExMessenger.Server do
   end
   ...
 end
----
+```
 
 And this is it, when the "ExMessenger.Supervisor" starts this GenServer it register globally in this instance as <tt>:message_server</tt>. And this how we address messages from what we called "clients" (the ExMessengerClient application).
 
@@ -396,7 +396,7 @@ def handle_call({ :connect, nick }, {from, _} , users) do
       {:reply, { :ok, user_list }, new_users}
   end
 end
----
+```
 
 First, it checks if the nick is "server" and disallows it. Second, it checks if the nickname already exists in the internal [HashDict](http://elixir-lang.org/docs/stable/elixir/HashDict.html) (a key/value dictionary) and refuses if it already exists. Finally, in third, it puts the pair of nickname and node name (like "client@Hal9000u") in the HashDict and broadcasts through the <tt>log/3</tt> private function to all other nodes in the HashDict dictionary.
 
@@ -420,7 +420,7 @@ def handle_cast({ :say, nick, message }, users) do
   broadcast(ears, nick, message)
   {:noreply, users}
 end
----
+```
 
 Up to this point it just casts a message to itself, the <tt>{:say, nick, message}</tt> tuple, that is handled by the GenServer and calling the <tt>broadcast/3</tt> function defined like this:
 
@@ -437,7 +437,7 @@ end
 defp send_message_to_client(client_node, nick, message) do
   GenServer.cast({ :message_handler, client_node }, { :message, nick, message })
 end
----
+```
 
 It maps the list of users and fire up an asynchronous Elixir <tt>Task</tt> (that is itself just a GenServer as I explained before in the Ex Manga Downloader series). Because it's a broadcast it makes sense to make all of them parallel.
 
@@ -480,7 +480,7 @@ join(Node) ->
         _ ->
             {error, {no_ping, Node}}
     end.
----
+```
 
 This is how a snippet of pure Erlang source code looks like, by the way. You should have enough Elixir in your head right now to be able to abstract away the ugly Erlang syntax and see that it's a <tt>case</tt> pattern matching on the <tt>{_, :pong}</tt> tupple, using Node's ping facilities to assert the connectiviness of the node and updating the Mnesia table and other setups.
 
@@ -498,7 +498,7 @@ become(BecomeNode) ->
                 Dir = mnesia:system_info(directory),
                 io:format("  * Mnesia directory  : ~s~n", [Dir])
     end.
----
+```
 
 Again, pinging nodes, using Mnesia for the server state. Erlang's syntax is uncommon for most of us: variables start with a capitalized letter (we intuitively think it's a constant instead), statements end with a dot, instead of the dot-notation to call function from a module it uses a colon ":", different from Elixir the parenthesis are not optional, and so on. Trying to read code like this show the value of having Elixir to unleash Erlang's hidden powers.
 

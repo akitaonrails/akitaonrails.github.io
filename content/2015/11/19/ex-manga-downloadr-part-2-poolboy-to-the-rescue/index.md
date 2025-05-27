@@ -33,7 +33,7 @@ def images_sources(pages_list) do
       acc ++ result
     end)
 end
----
+```
 
 Now I was able to reimplement this aspect and the same code now looks like this:
 
@@ -44,7 +44,7 @@ def images_sources(pages_list) do
     |> Enum.map(&Task.await(&1, @await_timeout_ms))
     |> Enum.map(fn {:ok, image} -> image end)
 end
----
+```
 
 Wow! Now this is a big improvement and it's way more obvious what it is doing. 
 
@@ -89,7 +89,7 @@ But there is the concept of Erlang processes. Now, a process do have state, it's
 --- ruby
 iex> spawn fn -> 1 + 2 end
 #PID<0.43.0>
----
+```
 
 Different from an object, a process does not have a set of methods that access its inner "this" or "self" states. Instead each process has a **mailbox**. When you start (or "spawn" in Erlang lingo) a new process, it returns a pid (process ID). You can now send messages to the process through its pid. Each process has a mailbox and you can choose to respond to incoming messages and send responses back to the pid that sent the message. This is how you can send a message to the IEx console and receive the messages in its mailbox:
 
@@ -101,7 +101,7 @@ iex> receive do
 ...>   {:world, msg} -> "won't match"
 ...> end
 "world"
----
+```
 
 In essence, it's almost like an "object" that holds state. Each process has its own garbage collector, so when it dies it's individually collected. And each process is isolated from other processes, they don't bleed state out, which makes them much easier to reason about.
 
@@ -137,7 +137,7 @@ defmodule PoolManagement.Worker do
     {:reply, Page.download_image(image_data, directory), state}
   end
 end
----
+```
 
 I first moved the <tt>Workflow.download_image/2</tt> to <tt>Page.download_image/2</tt> just for consistency's sake. But this is a GenServer in a nutshell. We have some setup in the <tt>start_link/1</tt> function and then we have to implement <tt>handle_call/3</tt> functions to handle each kind of arguments it might receive. We separate them through pattern matching the arguments.
 
@@ -159,7 +159,7 @@ As a convention, we can add public functions that are just prettier versions tha
       end, @transaction_timeout_ms
     end
   end
----
+```
 
 But we are not just calling the previous <tt>handle_call/3</tt> functions. First there is the <tt>Task.async/1</tt> we were already using in the Workflow functions to make the parallel batches. But inside the Task calls there is this other strange thing: <tt>:poolboy</tt>.
 
@@ -185,7 +185,7 @@ pages_list
       |> Enum.map(fn {:ok, image} -> image end)
     acc ++ result
   end)
----
+```
 
 Now, removing the chunking and reducing logic:
 
@@ -194,7 +194,7 @@ pages_list
   |> Enum.map(&(Task.async(fn -> Page.image(&1) end)))
   |> Enum.map(&(Task.await(&1, @http_timeout)))
   |> Enum.map(fn {:ok, image} -> image end)
----
+```
 
 And finally, replacing the direct <tt>Task.async/1</tt> call for the GenServer worker we just implemented above:
 
@@ -203,7 +203,7 @@ pages_list
   |> Enum.map(&Worker.page_image/1)
   |> Enum.map(&Task.await(&1, @await_timeout_ms))
   |> Enum.map(fn {:ok, image} -> image end)
----
+```
 
 Now, Poolboy requires will require a Supervisor that monitors our Worker. Let's put it under <tt>ex_manga_downloadr/pool_management/supervisor.ex</tt>:
 
@@ -230,7 +230,7 @@ defmodule PoolManagement.Supervisor do
     supervise(children, strategy: :one_for_one)
   end
 end
----
+```
 
 More OTP goodness here. We had a rogue Worker, now we have a responsible Supervisor deferring responsability to Poolboy. We start with a pool that can hold a maximum of 50 process within (without overflowing). This number comes from trial and error again. And the Supervisor will use a strategy of <tt>:one_for_one</tt>, which means that if the Worker dies it restarts it.
 
@@ -244,7 +244,7 @@ defp deps do
     ...
   ]
 end
----
+```
 
 In the same <tt>mix.exs</tt> we make the main Application (surprise: which is [already a supervised OTP application](https://github.com/elixir-lang/elixir/blob/master/lib/elixir/lib/application.ex)) start the PoolManagement.Supervisor for us:
 
@@ -253,7 +253,7 @@ def application do
   [applications: [:logger, :httpotion, :porcelain],
    mod: {PoolManagement, []}]
 end
----
+```
 
 But we also need to have this <tt>PoolManagement</tt> module for it to call. We may call it <tt>pool_management.ex</tt>:
 
@@ -265,7 +265,7 @@ defmodule PoolManagement do
     PoolManagement.Supervisor.start_link
   end
 end
----
+```
 
 ### Summary
 

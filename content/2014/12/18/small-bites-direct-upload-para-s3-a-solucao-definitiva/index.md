@@ -32,7 +32,7 @@ Mas repito: leia a documentação e faça provas de conceito, vou reduzir o exem
 gem "mini_magick"
 gem "refile", require: ["refile/rails", "refile/image_processing"]
 gem "aws-sdk"
----
+```
 
 Agora vamos criar a configuração do Refile para o AWS-S3, crie o arquivo <tt>config/initializer/refile.rb</tt>:
 
@@ -46,7 +46,7 @@ aws = {
 }
 Refile.cache = Refile::Backend::S3.new(prefix: "cache", **aws)
 Refile.store = Refile::Backend::S3.new(prefix: "store", **aws)
----
+```
 
 Como podem ver estou assumindo que você usa corretamente o [dotenv-rails](http://www.akitaonrails.com/2013/10/19/iniciante-configuracoes-de-ambiente-com-dotenv) para colocar as configurações de S3. Assumindo também que você saber configurar um bucket, incluindo habilitar a configuração de Cross-Origin Resource Sharing (CORS) onde você vai colocar algo parecido com isso:
 
@@ -61,14 +61,14 @@ Como podem ver estou assumindo que você usa corretamente o [dotenv-rails](http:
         <AllowedHeader>Content-Type</AllowedHeader>
     </CORSRule>
 </CORSConfiguration>
----
+```
 
 Agora vamos criar o campo na tabela de usuários:
 
----
+```
 rails generate migration add_profile_image_to_users profile_image_id:string
 rake db:migrate
----
+```
 
 Adicione o Refile no seu model <tt>config/model/user.rb</tt>:
 
@@ -76,7 +76,7 @@ Adicione o Refile no seu model <tt>config/model/user.rb</tt>:
 class User < ActiveRecord::Base
   attachment :profile_image
 end
----
+```
 
 E edite a view do formulário de edição que, se você criou via scaffold, provavelmente vai ser algo como <tt>app/views/users/_form.html.erb</tt>:
 
@@ -90,7 +90,7 @@ E edite a view do formulário de edição que, se você criou via scaffold, prov
     <%= f.submit %>
   </div>
 <% end %>
----
+```
 
 Note a opção de <tt>direct</tt> que indica que será um Direct Upload, ou seja, seu browser vai fazer o upload diretamente para o S3 e trazer a chave de identificação pra montar a URL depois. No caso o Refile primeiro joga numa chave "cache/" e quando você faz o POST do formulário ele manda o S3 copiar para a pasta "store/" que é o que seu model vai usar. Dessa forma, se você escolher o arquivo no browser, fizer o upload mas desistir de dar POST, não vai poluir a pasta final.
 
@@ -107,7 +107,7 @@ class UsersController < ApplicationController
       params.require(:user).permit(:name, :email, :profile_image, :profile_image_cache_id)
     end
 end
----
+```
  
 No trecho acima deixei de exemplo possíveis campos como "name" e "email" mas, claro, configure de acordo com os campos que seu formulário realmente envia, o importante são os parâmetros "profile_*". Com isso a aplicação já recebe tudo que precisa, mas como o Direct Upload acontece no browser significa que precisamos de algum Javascript para controlar a chamada Ajax e os eventos associados então vamos adicionar a dependência do Refile editando o arquivo <tt>app/assets/javascripts/application.js</tt>:
 
@@ -119,7 +119,7 @@ No trecho acima deixei de exemplo possíveis campos como "name" e "email" mas, c
 //= require refile
 //= require_tree .
 ...
----
+```
 
 Esse é um exemplo então, novamente, edite conforme o que você tem na sua aplicação. A documentação explica como lidar com os eventos como "upload:start" ou "upload:progress" para que você tenha a opção de mostrar coisas como uma barra de progresso ou outra notificação ao usuário indicando se ele está fazendo o upload e quando terminar. Para este exemplo vamos fazer algo simples: apenas desabilitar o botão de submit e reabilitar quando o upload terminar. Para isso vamos editar o arquivo <tt>app/assets/javascripts/users.js.coffee</tt>:
 
@@ -129,16 +129,16 @@ $(document).on "upload:start", "form", (e) ->
 
 $(document).on "upload:complete", "form", (e) ->
   $(this).find("input[type=submit]").removeAttr "disabled"  unless $(this).find("input.uploading").length
----
+```
 
 Pronto! Reinicie seu servidor e de agora em diante o upload vai acontecer diretamente do browser para o S3 e quando fizer o POST ele vai guardar a chave de identificação no campo "profile_image_id" e quando for puxar a imagem ele vai passar por um filtro Rack que vai mostrar algo parecido com isso no seu console:
 
----
+```
 Started GET "/attachments/store/fill/300/300/365d81a10ba21f2544177580f12110509f57e086bcd49f5336079ca17ea8/profile_image" for 192.168.47.2 at 2014-12-18 15:53:14 +0000
 Refile: GET /store/fill/300/300/365d81a10ba21f2544177580f12110509f57e086bcd49f5336079ca17ea8/profile_image
 Refile: serving "365d81a10ba21f2544177580f12110509f57e086bcd49f5336079ca17ea8" from store backend which is of type Refile::Backend::S3
 [AWS S3 200 3.345285 0 retries] get_object(:bucket_name=>"testing-bucket-akitaonrails",:key=>"store/365d81a10ba21f2544177580f12110509f57e086bcd49f5336079ca17ea8")
----
+```
 
 Significa que você pode dar override nisso e colocar coisas como autenticação para acessar certos buckets e assim por diante. Com o tempo você pode querer limpar a pasta de cache e isso você pode configurar diretamente no S3 como [ensina a documentação](https://github.com/elabs/refile#cache-expiry).
 
@@ -146,6 +146,6 @@ Finalmente, o correto é sempre configurar o Amazon Cloudfront na frente do stor
 
 --- ruby
 Refile.host = "//your-dist-url.cloudfront.net"
----
+```
 
 Pronto! A solução definitiva para gerenciar seus assets da **FORMA CORRETA**! Servir assets diretamente da sua aplicação está errado. Fazer sua aplicação fazer o upload para storages está errado. Não usar storages separados da sua aplicação está errado! 

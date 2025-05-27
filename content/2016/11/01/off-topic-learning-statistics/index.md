@@ -34,17 +34,17 @@ I like the introduction so much that I wanted to share a few paragraphs to motiv
 
 The following is a true story. In 1973, the University of California, Berkeley got into some trouble over its admissions of students into postgraduate courses. Specifically, the thing that caused the problem was that the gender breakdown of their admissions looked like this ...
 
----
+```
          Number of applicants     Percent admitted
 Males           8442                    44%
 Females         4321                    35%
----
+```
 
 ... and they **got sued**. Given that there were nearly 13,000 applicants, a difference of 9% in admission rates between males and females is just way too big to be a coincidence. Pretty compelling data, right? And if I were to say to you that these data actually reflect a weak bias in favor of females, you’d probably think that I was either crazy or sexist.
 
 Oddly, it’s actually sort of true ... after Berkeley got sued, people started looking very carefully at the admissions data (Bickel, Hammel, & O’Connell, 1975). And remarkably, when they looked at it on a department by department basis, it turned out that most of the departments actually had a slightly higher success rate for female applicants than for male applicants. The table below shows the admission figures for the six largest departments (with the names of the departments removed for privacy reasons):
 
----
+```
                       Males                          Females
 Department   Applicants   Percent admitted   Applicants   Percent admitted
 A                825             62%            108              82%
@@ -53,7 +53,7 @@ C                325             37%            593              34%
 D                417             33%            375              35%
 E                191             28%            393              24%
 F                272              6%            341               7%
----
+```
 
 Remarkably, most departments had a _higher_ rate of admissions for females than for males! Yet the overall rate of admission across the university for females was _lower_ than for males. How can this be? How can both of these statements be true at the same time?
 

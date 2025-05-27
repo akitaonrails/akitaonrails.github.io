@@ -44,7 +44,7 @@ pong() ->
 start() ->
     Pong_PID = spawn(tut15, pong, []),
     spawn(tut15, ping, [3, Pong_PID]).
----
+```
 
 It's not pretty, it's Prolog-ish. The Clojure article claims how close they got with lightweight threads (true green threads) and this is the same exercise done in Clojure:
 
@@ -72,7 +72,7 @@ It's not pretty, it's Prolog-ish. The Clojure article claims how close they got 
   (register :pong (spawn pong))
   (spawn ping 3)
   :ok)
----
+```
 
 People that like the Lisp-y aesthetics of programming directly in the AST representation through the structure of parenthesis based blocks will find this very pretty.
 
@@ -112,7 +112,7 @@ defmodule ExPingPongTut15 do
     spawn(fn -> ping(3, pong_pid) end)
   end
 end
----
+```
 
 Because of the power of pattern matching in the functions arguments signature, you can define 2 separated functions, avoiding the "if" as in the Clojure example. Of course, because it's Clojure and it has a complete macro system, and because it's [core.match](https://github.com/clojure/core.match) has the proper pattern matching mechanisms, you can emulate the same thing through external libraries such as [defun](https://github.com/killme2008/defun) though.
 

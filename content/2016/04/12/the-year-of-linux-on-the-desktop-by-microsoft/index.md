@@ -31,38 +31,38 @@ Finally, you should be inside bash, as a root user. So, if you're a Windows user
 
 The very first thing you **must** do is manually create an unprivileged Linux user and add it to the sudo group as Andrew Malton [blogged](http://blog.greenarrow.me/elixir-with-ubuntu-for-windows/) first:
 
----
+```
 useradd new_username -m -s /bin/bash 
 passwd new_username
 usermod -aG sudo new_username
----
+```
 
 Then you can log into this user shell with <tt>su - [your user]</tt> everytime!
 
 From here, we can assume it's a plain Ubuntu 14.04 and you should be able to follow [my very old post](http://www.akitaonrails.com/2015/01/28/ruby-e-rails-no-ubuntu-14-04-lts-trusty-tahr) on how to setup a developer Ubuntu environment, or any other tutorial you can find over Google. These basic development packages that I always install first all run:
 
----
+```
 sudo apt-get install curl build-essential openssl libcurl4-openssl-dev libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev libgmp-dev autoconf libc6-dev ncurses-dev automake libtool bison subversion redis-server libhiredis-dev memcached libmemcached-dev imagemagick libmagickwand-dev exuberant-ctags ncurses-term ack-grep git git-svn gitk ssh libssh-dev
 
 sudo dpkg-divert --local --divert /usr/bin/ack --rename --add /usr/bin/ack-grep
----
+```
 
 This should give you all compilation toolchain essentials as well as some well known command line tools such as ack (way better than grep). It also adds Redis and Memcached. They all run.
 
 As good practice you should add the following to your <tt>/etc/bash.bashrc</tt> configuration file:
 
----
+```
 export LANGUAGE=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
----
+```
 
 And after that you should also configure locale to UTF-8:
 
----
+```
 sudo locale-gen en_US.UTF-8
 sudo dpkg-reconfigure locales
----
+```
 
 Just to warm up a little bit, we can start with one of the things that were impossible in Windows: get a stable Ruby installation. For that, RVM is said to not work (as ZSH is also not working for /dev/pts and symlink problems in this preview, see more below). But RBENV is working! You must [install it](https://github.com/rbenv/rbenv) first and they the [ruby-build](https://github.com/rbenv/ruby-build#readme) plugin:
 
@@ -74,27 +74,27 @@ Interestingly, it takes a lot of time to complete and during the process CPU usa
 
 If I check how much memory I have in the system it's more clear:
 
----
+```
 root@localhost:/mnt/c/Users/fabio# free -h
              total       used       free     shared    buffers     cached
 Mem:          1.0G       342M       664M         0B         0B         0B
 -/+ buffers/cache:       342M       664M
 Swap:           0B         0B         0B
----
+```
 
 I am not sure if this is somehow just a "hard-coded" value for memory as many people are reporting the same "664M" free regardless of what we are running. But something is incomplete here. Swap is also zero and you can't add any as far as I can tell. Swapon, fallocate, none of those work yet.
 
----
+```
 root@localhost:/mnt/c/Users/fabio# swapon -s
 swapon: /proc/swaps: open failed: No such file or directory
 
 root@localhost:/mnt/c/Users/fabio# fallocate -l 4G swapfile
 fallocate: swapfile: fallocate failed: Invalid argument
----
+```
 
 I actually tried to [create a swap file](https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-ubuntu-14-04) using <tt>dd</tt> instead of <tt>fallocate</tt> and add it to the <tt>/etc/fstab</tt> but it didn't work:
 
----
+```
 root@localhost:/mnt/c/Users/fabio# free -m
              total       used       free     shared    buffers     cached
 Mem:          1006        342        664          0          0          0
@@ -104,13 +104,13 @@ Swap:            0          0          0
 root@localhost:/mnt/c/Users/fabio# cat /etc/fstab
 LABEL=cloudimg-rootfs   /        ext4   defaults        0 0
 /swapfile       none    swap    sw      0 0
----
+```
 
 So it sounds like memory is "hard-coded". Follow [this issue #92](https://github.com/Microsoft/BashOnWindows/issues/92) if you want to know how it develops out.
 
 But worse than that, shared memory has very low limits and strange behavior. Postgresql will install but won't start up at all:
 
----
+```
 root@localhost:/mnt/c/Users/fabio# pg_createcluster 9.3 main --start
 Creating new cluster 9.3/main ...
   config /etc/postgresql/9.3/main
@@ -123,32 +123,32 @@ HINT:  This error usually means that PostgreSQL's request for a shared memory se
 child process exited with exit code 1
 initdb: removing contents of data directory "/var/lib/postgresql/9.3/main"
 Error: initdb failed
----
+```
 
 And if we try to expand the SHMMAX limit this is what we get:
 
----
+```
 root@localhost:/mnt/c/Users/fabio# sysctl -w kernel.shmmax=134217728
 sysctl: cannot stat /proc/sys/kernel/shmmax: No such file or directory
 
 root@localhost:/mnt/c/Users/fabio# echo 134217728 >/proc/sys/kernel/shmmax
 bash: /proc/sys/kernel/shmmax: Operation not permitted
----
+```
 
 So, no Postgresql for the time being. Some people were able to complete the Go Lang installation (I gave up after a very very long time waiting for apt-get to finish) complained that Go also crashed on shared memory requirements. Follow the [Issue #32](https://github.com/Microsoft/BashOnWindows/issues/32) and [Issue #146](https://github.com/Microsoft/BashOnWindows/issues/146) to see if anyone can make it work.
 
 I also tried to install Node.js. No lucky with package installs:
 
----
+```
 curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
 ...
 E: dpkg was interrupted, you must manually run 'sudo dpkg --configure -a' to correct the problem.
 Error executing command, exiting
----
+```
 
 NVM installs, sort of, with many errors in git:
 
----
+```
 ...
 error: unable to create file test/slow/nvm run/Running "nvm run 0.x" should work (No such file or directory)
 error: unable to create file test/slow/nvm run/Running "nvm run" should pick up .nvmrc version (No such file or directory)
@@ -156,11 +156,11 @@ error: unable to create file test/slow/nvm use/Running "nvm use iojs" uses lates
 error: unable to create file test/slow/nvm use/Running "nvm use node" uses latest stable node version (No such file or directory)
 error: unable to create file test/slow/nvm use/Running "nvm use v1.0.0" uses iojs-v1.0.0 iojs version (No such file or directory)
 error: unable to create file test/slow/nvm use/Running "nvm use" calls "nvm_die_on_prefix" (No such file or directory)
----
+```
 
 And this is what happens if I try to install the most recent version:
 
----
+```
 akitaonrails@localhost:~/.nvm$ nvm install 5.10.1
 Downloading https://nodejs.org/dist/v5.10.1/node-v5.10.1-linux-x64.tar.xz...
 ######################################################################## 100.0%
@@ -175,7 +175,7 @@ Binary download failed, trying source.
 Detected that you have 1 CPU thread(s)
 Number of CPU thread(s) less or equal to 2 will have only one job a time for 'make'
 Installing node v1.0 and greater from source is not currently supported
----
+```
 
 [Issue #9](https://github.com/Microsoft/BashOnWindows/issues/9) points to non-implemented symlink support.
 
@@ -183,7 +183,7 @@ Another very annoying thing is the lack of Pseudo-Terminals (/dev/pts), this is 
 
 You should also be able to copy over your SSH private keys to ".ssh" and start git cloning from Github or git push-ing to Heroku in no time.
 
----
+```
 akitaonrails@localhost:~$ ssh-keygen  -t rsa
 Generating public/private rsa key pair.
 Created directory '/home/akitaonrails/.ssh'.kitaonrails/.ssh/id_rsa):
@@ -205,11 +205,11 @@ The key's randomart image is:
 |    . .. o       |
 |        .        |
 +-----------------+
----
+```
 
 At least, Elixir does seem to work:
 
----
+```
 akitaonrails@localhost:~$ iex
 Erlang/OTP 18 [erts-7.3] [source-d2a6d81] [64-bit] [async-threads:10] [hipe] [kernel-poll:false]
 
@@ -222,11 +222,11 @@ iex:1: warning: redefining module HelloWorld
 iex(2)> HelloWorld.say("Fabio")
 Hello Fabio
 :ok
----
+```
 
 Not so fast ...
 
----
+```
 akitaonrails@localhost:~$ mix new ex_test
 ** (ErlangError) erlang error: :terminated
     (stdlib) :io.put_chars(#PID<0.25.0>, :unicode, [[[[[[[] | "\e[32m"], "* creating "] | "\e[0m"], ".gitignore"] | "\e[0m"], 10])
@@ -234,7 +234,7 @@ akitaonrails@localhost:~$ mix new ex_test
     (mix) lib/mix/tasks/new.ex:76: Mix.Tasks.New.do_generate/4
     (elixir) lib/file.ex:1138: File.cd!/2
     (mix) lib/mix/cli.ex:58: Mix.CLI.run_task/2
----
+```
 
 You will find more information on the pseudo-project Microsoft opened over Github to keep track of [Issues](https://github.com/Microsoft/BashOnWindows/issues?q=is%3Aissue+is%3Aclosed) from testers like me. You can follow the list of opened and closed issues there. You will see many things that work, but also many other things that won't work until a new release is available to fix everything I mentioned here.
 

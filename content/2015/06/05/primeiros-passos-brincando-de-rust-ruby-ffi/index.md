@@ -41,11 +41,11 @@ def find_actors(filename, skip_lines, target_movie)
   end
   actors.join("\n")
 end
----
+```
 
 Dá pra melhorar isso, mas é o suficiente para nossos propósitos. Rodando contra o arquivo pequeno de exemplo, o resultado vai ser:
 
----
+```
 > ruby actors.rb                                                                                                                               running pure Ruby version
 145, Lyric
 3, Utai
@@ -56,13 +56,13 @@ Dá pra melhorar isso, mas é o suficiente para nossos propósitos. Rodando cont
 4Tune
 50 Cent
   0.050000   0.000000   0.050000 (  0.060104)
----
+```
 
 Se você baixar meu código do repositório, primeiro garanta que você tem o Rust instalado. Pra isso basta executar o seguinte:
 
----
+```
 curl -sSf https://static.rust-lang.org/rustup.sh | sh
----
+```
 
 Quando baixar meu código, vai ver que ele tem os arquivos Cargo.toml e Cargo.lock. Eles são semelhantes ao nosso Gemfile/Rakefile e Gemfile.lock. No Ruby controlamos nossas tarefas com Rake, as gems com Bundler (que lê as versões exatas do Gemfile.lock) e normalmente baixamos dependências que são Rubygems do Rubygems.org.
 
@@ -120,7 +120,7 @@ pub fn find_actors(filename: String, skip_lines: usize, target_movie: String) ->
     }
     actors.connect("\n")
 }
----
+```
 
 Essa função usa coisas do próprio Rust que importamos dos módulos <tt>str::io</tt> e <tt>std::fs</tt> e tem a Crate regex externa. Também exportamos esse módulo com o nome de "imdb" que é o declaramos no Cargo.toml:
 
@@ -138,7 +138,7 @@ crate-type = ["rlib", "dylib"]
 [dependencies]
 regex = "0.1.8"
 libc = "0.1.8"
----
+```
 
 Eu removi um trecho do arquivo que vou explicar na próxima seção, sobre FFI. Por enquanto vamos nos ater a esse código.
 
@@ -158,7 +158,7 @@ Rust não tem garbage collector como em Ruby ou Java. Primeiro, porque ele usa p
 let x = "hello".to_string();
 let y = x;
 println!("{}", x); // vai dar pau, porque movemos a propriedade de "x" para o "y"
----
+```
 
 Ou "emprestar". Empréstimos são declarados com "&" ('e' comercial) e somente podemos emprestar uma única vez como em <tt>let y = &x</tt>. Sim, essa mecânica vai demorar mais pra se entender se você só conhece linguagens como Ruby ou Javascript. Se você aprendeu Objective-C antes do advento do [ARC](http://blog.caelum.com.br/gerenciamento-de-memoria-e-o-arc-no-objective-c/), já teve que parar pra pensar nesse tipo de [ciclo de vida de retain/copy/release](http://www.akitaonrails.com/2010/11/25/objective-c-entendendo-nsautoreleasepool).
 
@@ -168,7 +168,7 @@ Outros artigos [como este](http://nercury.github.io/rust/guide/2015/01/19/owners
 
 --- ruby
 let regex = Regex::new(r"^(.*?)\t+(.*?)$").unwrap()
----
+```
 
 Isso é só um jeito mais curto pra:
 
@@ -177,7 +177,7 @@ let regex = match Regex::new(r"^(.*?)\t+(.*?)$") {
     Ok(regex) => regex,
     Err(_) => panic!("invalid regex"),
 };
----
+```
 
 O <tt>match</tt> é a avaliação de um [Pattern Matching](https://doc.rust-lang.org/book/patterns.html) sobre um tipo chamado core::result::Result que é a alternativa do Rust de evitar retornar códigos de erro (como em C) ou usar um sistema de exceptions (como em Ruby mesmo). Nesse caso a criação de uma struct de Regex pode dar certo ou errado. Se der certo teremos o resultado voltando como "Ok", se der errado voltará como "Err(e)" e podemos fazer alguma coisa com o erro ou parar tudo como no exemplo, chamando a macro "panic!". O método unwrap implementa exatamente essa lógica se não estamos interessados em tratar o erro.
 
@@ -219,7 +219,7 @@ pub extern "C" fn ffi_find_actors(filename_ptr: *const c_char, skip_lines: i32, 
         );
     CString::new(result).unwrap().as_ptr()
 }
----
+```
 
 Ou seja, eu fiz uma nova função que consome a que analisamos antes. A que fizemos primeiro recebe structs String e devolve uma String, que são structs de Rust. Não entendi ainda como converter isso automaticamente para ser consumido externamente. Então essa função acima recebe de fora do Rust um ponteiro para uma lista de chars (que é o conceito original de uma "string"/"corrente"), pega o ponteiro, pega os bytes do local onde o ponteiro aponta, e cria uma 'str' UTF-8, e finalmente chama 'to_string()' pra gerar uma String de Rust.
 
@@ -239,7 +239,7 @@ module RustWorld
   ffi_lib 'target/release/libimdb.so'
   attach_function :ffi_find_actors, [:string, :int, :string], :string
 end
----
+```
 
 Note que estamos fazendo link com a versão de "release" gerado via <tt>cargo build --release</tt>. E então declaramos a assinatura da função que queremos usar.
 
@@ -247,37 +247,37 @@ Finalmente, podemos usar dentro do Ruby normalmente assim:
 
 --- ruby
 RustWorld.ffi_find_actors(filename, 239, target_movie)
----
+```
 
 ## Comparação de Performance
 
 Aqui vem uma pequena surpresa. Eu fiz esse código com uma versão em Ruby e outra em Rust, lendo e processando o mesmo arquivo, para obter o mesmo resultado final. O que tive foi o seguinte:
 
----
+```
 RUST=1 ruby actors.rb                                                                                                                         0.070000   0.010000   0.080000 (  0.079534)
 
 ruby actors.rb                                                                                                                                0.060000   0.000000   0.060000 (  0.057541)
----
+```
 
 Ou seja, a versão Ruby é um pouco mais rápido que a versão em Rust, por uma margem de 27% (!!). Esses tempos foram marcados internamente dentro do Ruby (consumindo o Rust via FFI) com a biblioteca Benchmark.
 
 E medindo diretamente, calculando o tempo com a função "time":
 
----
+```
 time cargo run --release                                                                                                                    cargo run --release  0.11s user 0.04s system 99% cpu 0.156 total
 
 time ruby actors.rb                                                                                                                         ruby actors.rb  0.28s user 0.03s system 98% cpu 0.311 total
----
+```
 
 Aqui vemos o Ruby sendo mais lento. Como o arquivo de testes é muito pequeno, o tempo de subir o Ruby interfere na medição. Então vamos tentar com outro arquivo maior, com 52MB em vez de meros 515k:
 
----
+```
 time cargo run --release
 cargo run --release  7.04s user 0.11s system 99% cpu 7.184 total
 
 time ruby actors.rb
 ruby actors.rb  6.69s user 0.08s system 99% cpu 6.808 total
----
+```
 
 Ou seja, o Ruby ainda é mais rápido que a versão Rust. E aqui podemos ficar confusos: o Rust, sendo muito mais próximo de C do que de Ruby, não deveria ser algumas ordens de grandeza mais rápido?
 
@@ -292,7 +292,7 @@ Na verdade, o problema não é o Rust ser "lento" mas subestimarmos o Ruby achan
 
 **Obs 05/06/15:** Logo após publicar o post o camarada Jeffry DeGrande mandou um [Pull Request](https://github.com/akitaonrails/rust_ruby_exercise_1/pull/1) que troca a lenta crate "regex" pela "pcre" que, como seu nome diz, linka por baixo com a boa e velha biblioteca nativa "libpcre3" (Perl Compatible Regular Expression). Com isso os tempos ficam **Muito** melhores:
 
----
+```
 > RUST=1 ruby actors.rb
 running Rust/FFI version
   1.600000   0.010000   1.610000 (  1.625171)
@@ -300,7 +300,7 @@ running Rust/FFI version
 > ruby actors.rb
 running pure Ruby version
   5.980000   0.050000   6.030000 (  6.046123)
----
+```
 
 Como eu suspeitava, a culpada era mesmo a biblioteca imatura de regex. Trocando pela pcre a implementação em Rust fica na menos que **3.7** vezes mais rápida que a em Ruby, que seria um tempo que deveríamos mesmo esperar de uma linguagem compilada!
 

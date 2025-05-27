@@ -45,21 +45,21 @@ defmodule MyProcess do
     end
   end
 end
----
+```
 
 2. We can execute a function inside another process. This is how we can spawn a brand new, concurrent, lightweight process:
 
 --- ruby
 iex(2)> pid = spawn fn -> MyProcess.start end
 #PID<0.87.0>
----
+```
 
 When the <tt>accepting_messages/1</tt> is called, it stops at the <tt>receive/0</tt> block, waiting to receive a new message. Then we can send messages like this:
 
 --- ruby
 iex(3)> send pid, {:hello, "world"}
 Hello, world
----
+```
 
 It receives the <tt>{:hello, "world"}</tt> atom message, it pattern matches the value <tt>"world"</tt> into the <tt>message</tt> variable, and concatenates the <tt>"Hello, world"</tt> string, which it prints out with <tt>IO.puts/1</tt> and recurse to itself again. We call the <tt>receive/0</tt> block again, and block, waiting for further messages:
 
@@ -75,7 +75,7 @@ New state is 3
 {:counter}
 iex(7)> send pid, {:counter}
 New state is 4
----
+```
 
 We send the <tt>{:counter}</tt> message to the same process pid again and when it receive this message, it gets the <tt>state</tt> value from the function argument, increments it by 1, prints out the new state, and calls itself again passing the new state as the new argument. It blocks again, waiting for further messages, and for each time it receives the <tt>{:counter}</tt> message, it increases the previous state by one again and recurses.
 
@@ -96,7 +96,7 @@ iex(3)> Process.alive?(pid)
 true
 iex(4)> Process.link(pid)
 true
----
+```
 
 With <tt>self</tt> we can see that the current process id for the IEx shell is "0.98.0". Then we spawn a process that calls <tt>Myprocess.start/0</tt> again, it will block in the receive call. This new process has a different id, "0.105.0".
 
@@ -110,7 +110,7 @@ Interactive Elixir (1.1.1) - press Ctrl+C to exit (type h() ENTER for help)
 /home/akitaonrails/.iex.exs:1: warning: redefining module R
 iex(1)> self
 #PID<0.109.0>
----
+```
 
 And indeed, if we forcefully send a kill message to the "0.105.0" process, the IEx shell is also killed in the process. IEx restarts and its new pid is "0.109.0" instead of the old "0.98.0". By the way this is one way a process is different from a normal object. It behaves more like an operating system process where a crash in a process does not affect the whole system as it does not hold external shared state that can corrupt the system's state.
 
@@ -126,7 +126,7 @@ iex(3)> pid = spawn_link fn -> MyProcess.start end
 iex(4)> send pid, {:counter}
 New state is 1
 {:counter}
----
+```
 
 First, we declare that the IEx shell will trap exists and not just die. Then we spawn a new process and link it. The <tt>spawn_link/1</tt> function has the same effect of <tt>spawn/1</tt> and then <tt>Process.link/1</tt>. We can send a message to the new pid and check that it is indeed still working.
 
@@ -138,7 +138,7 @@ false
 iex(7)> flush
 {:EXIT, #PID<0.118.0>, :killed}
 :ok
----
+```
 
 Now we forcefully kill the new process again, but IEx does not crash this time, as it is explicitly trapping those errors. If we check the killed pid, we can assert that it is indeed dead. But now we can also inspect IEx's own process mailbox (in this case, just flushing whats queued in the inbox) and see that it just received a message saying that its child was killed.
 
@@ -187,7 +187,7 @@ defmodule MyFancyProcess do
     {:reply, :noproc, new_state}
   end
 end
----
+```
 
 This new <tt>MyFancyProcess</tt> is essentially the same as <tt>MyProcess</tt> but with OTP GenServer on top of it. There are Public API functions and GenServer callbacks.
 
@@ -216,7 +216,7 @@ New state is 2
 iex(15)> MyFancyProcess.counter
 New state is 3
 :noproc
----
+```
 
 And this is much cleaner than the version where we manually <tt>spawn_link</tt> and <tt>send</tt> messages to a pid. This is all handled nicely by the GenServer underneath it. And as I said, the results are the same as the initial crude <tt>MyProcess</tt> example.
 
@@ -237,7 +237,7 @@ defmodule MyFancyProcess do
     new_state(new_counter)
   end
 end
----
+```
 
 This is way cleaner, but as we are just using IEx, I'm not using this version for the next section, stick with the longer version of <tt>MyFancyProcess</tt> listed in the beginning of this section!
 
@@ -263,7 +263,7 @@ defmodule MyFancySupervisor do
     supervise(children, opts)
   end
 end
----
+```
 
 This is just a simple boilerplace that most Supervisors will have. There are many details you must learn, but for this article's purposes the important bits are, first, the definition of the <tt>children</tt> specification, saying that this Supervisor should start the <tt>MyFancyProcess</tt> GenServer instead of us having to <tt>MyFancyProcess.start_link</tt> manually. And the second important bit is the <tt>opts</tt> list which defines the strategy of <tt>:one_for_one</tt>, meaning that if the Supervisor detects that the child has died, it should restart it.
 
@@ -281,7 +281,7 @@ New state is 1
 iex(6)> MyFancyProcess.counter
 New state is 2
 :noproc
----
+```
 
 This is how we start the Supervisor and you can see that right away we can start sending messages to the <tt>MyFancyProcess</tt> GenServer because the Supervisor successfully started it for us.
 
@@ -290,7 +290,7 @@ iex(7)> Supervisor.count_children(sup_pid)
 %{active: 1, specs: 1, supervisors: 0, workers: 1}
 iex(8)> Supervisor.which_children(sup_pid)
 [{MyFancyProcess, #PID<0.125.0>, :worker, [MyFancyProcess]}]
----
+```
 
 Using the Supervisor PID that we captured right when we started it, we can ask it to count how many children it is monitoring (1, in this example) and we can ask the details of each children as well. We can see that the <tt>MyFancyProcess</tt> started with the pid of "0.125.0"
 
@@ -299,11 +299,11 @@ iex(9)> [{_, worker_pid, _, _}] = Supervisor.which_children(sup_pid)
 [{MyFancyProcess, #PID<0.125.0>, :worker, [MyFancyProcess]}]
 iex(14)> Process.exit(worker_pid, :kill)
 true
----
+```
 
 Now, we can grab the Worker pid and manually force it to crash as we did before. We should be screwed, right? Nope:
 
----
+```
 iex(15)> Supervisor.which_children(sup_pid)                          
 [{MyFancyProcess, #PID<0.139.0>, :worker, [MyFancyProcess]}]
 
@@ -313,7 +313,7 @@ New state is 1
 iex(17)> MyFancyProcess.counter
 New state is 2
 :noproc
----
+```
 
 If we ask the Supervisor again for the list of its children, we will see that the old "0.125.0" process did indeed vanish but a new one, "0.139.0" was spawned in its place by the Supervisor strategy of <tt>:one_for_one</tt> as we defined before.
 
@@ -325,15 +325,15 @@ This entire article was motivated by just this simple thing in Benjamin's book: 
 
 Erlang has a built-in inspector tool called Observer. You can use the Supervisor built-in functions to inspect processes as I demonstrated before, but it's much cooler to see it visually. Assuming you installed Erlang Solutions propertly, in Ubuntu you have to:
 
----
+```
 wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb && sudo dpkg -i erlang-solutions_1.0_all.deb
----
+```
 
 Only then, you can start the observer directly from the IEx shell like this:
 
----
+```
 :observer.start
----
+```
 
 And a graphical window will show up with some stats first.
 

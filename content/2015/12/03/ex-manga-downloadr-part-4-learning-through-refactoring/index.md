@@ -19,10 +19,10 @@ First things first: now the choice to have added a reasonable amount of tests wi
 
 At each step of the refactoring I could run "<tt>mix test</tt>" and work until I ended up with the green status:
 
----
+```
 Finished in 13.5 seconds (0.1s on load, 13.4s on tests)
 12 tests, 0 failures
----
+```
 
 The tests are taking long because I made a choice for the MangaReader and Mangafox unit tests to actually go online and fetch from the sites. It takes longer to run the suite but I know that if it breaks and I didn't touch that code, the source websites changed their formats and I need to change the parser. I could have added fixtures to make the tests run faster, but the point in my parser is for them to be correct.
 
@@ -46,7 +46,7 @@ defmodule ExMangaDownloadr.Mangafox.ChapterPage do
   end
   ...
 end
----
+```
 
 (Listing 1.1)
 
@@ -64,7 +64,7 @@ defmodule ExMangaDownloadr.Mangafox.ChapterPage do
   end
   ...
 end
----
+```
 
 (Listing 1.2)
 
@@ -74,7 +74,7 @@ Changed 9 lines to just 1. And by the way, this same line can be written like th
 ExMangaDownloadr.fetch chapter_link do
   fetch_pages(chapter_link)
 end
----
+```
 
 Seems familiar? It's like every block in the Elixir language, you can write it in the "do/end" block format or the way it really is under the covers: a keyword list with a key named ":do". And the way this macro is defined is like this:
 
@@ -94,7 +94,7 @@ defmodule ExMangaDownloadr do
   end
   ...
 end
----
+```
 
 (Listing 1.3)
 
@@ -115,7 +115,7 @@ function fetch(url) {
 function pages(page_link) {
     fetch(page_link);
 }
----
+```
 
 "Quote" would be like the string body in an eval and "unquote" just concatenating the value you passed inside the code being eval-ed. This is a crude metaphor as "quote/unquote" is **way** more powerful and cleaner than ugly "eval" (you shouldn't be using, by the way!) But this metaphor should do to make you understand the code above.
 
@@ -133,7 +133,7 @@ images_list = if File.exists?(dump_file) do
                 File.write(dump_file, :erlang.term_to_binary(list))
                 list
               end
----
+```
 
 (Listing 1.4)
 
@@ -175,7 +175,7 @@ defmodule ExMangaDownloadr.CLI do
   end
   ...
 end
----
+```
 
 And there you have it! And now you see how "do .. end" blocks are implemented. It just passes the expression as the value in the keyword list of the macro definition. Let's define a dumb macro:
 
@@ -187,7 +187,7 @@ defmodule Foo
      end
   end
 end
----
+```
 
 And not the following calls are all equivalent:
 
@@ -200,7 +200,7 @@ Foo.foo do: IO.puts(1)
 Foo.foo(do: IO.puts(1))
 Foo.foo([do: IO.puts(1)])
 Foo.foo([{:do, IO.puts(1)}])
----
+```
 
 This is macros combined with [Keyword Lists](http://elixir-lang.org/getting-started/maps-and-dicts.html) which I explained in previous articles and it's simply a List with tuples where each tuple has an atom key and a value.
 
@@ -218,7 +218,7 @@ defmodule ExMangaDownloadr.MangaReader do
     end
   end
 end 
----
+```
 
 And this is how it was used in "mangareader_test.ex":
 
@@ -227,7 +227,7 @@ defmodule ExMangaDownloadr.MangaReaderTest do
   use ExUnit.Case
   use ExMangaDownloadr.MangaReader
   ...
----
+```
 
 It was just a shortcut to alias the modules in order to use them directly inside the tests. I just moved the entire module as a macro in "ex_manga_downloadr.ex" module:
 
@@ -249,7 +249,7 @@ It was just a shortcut to alias the modules in order to use them directly inside
     apply(__MODULE__, which, [])
   end
 end
----
+```
 
 And now I can use it like this in the test file:
 
@@ -258,7 +258,7 @@ defmodule ExMangaDownloadr.MangaReaderTest do
   use ExUnit.Case
   use ExMangaDownloadr, :mangareader
   ...
----
+```
 
 The special "__using__" macro is called when I "use" a module, and I can even pass arguments to it. The implementation then uses "apply/3" to dynamically call the correct macro. This exactly how Phoenix imports the proper behaviors for Models, Views, Controllers, Router, for example:
 
@@ -266,7 +266,7 @@ The special "__using__" macro is called when I "use" a module, and I can even pa
 defmodule Pxblog.PageController do
   use Pxblog.Web, :controller
   ...
----
+```
 
 The macros are open in a Phoenix file and available in the "web/web.ex" module, so I just copied the same behavior. And now I have 2 less files to worry about.
 
@@ -281,14 +281,14 @@ defp manga_source(source, module) do
     "mangafox"    -> String.to_atom("Elixir.ExMangaDownloadr.Mangafox.#{module}")
   end
 end
----
+```
 
 I changed it to this:
 
 --- ruby
     "mangareader" -> :"Elixir.ExMangaDownloadr.MangaReader.#{module}"
     "mangafox"    -> :"Elixir.ExMangaDownloadr.Mangafox.#{module}"
----
+```
 
 It's just a shortcut to do the same thing.
 
@@ -304,7 +304,7 @@ defp fetch_chapters(html) do
   Floki.find(html, "#listing a")
   |> Enum.map fn {"a", [{"href", url}], _} -> url end
 end
----
+```
 
 Now using the better helper functions that Floki provides:
 
@@ -319,7 +319,7 @@ defp fetch_chapters(html) do
   |> Floki.find("#listing a")
   |> Floki.attribute("href")
 end
----
+```
 
 This was a case of not reading the documentation as I should have. Much cleaner!
 
@@ -331,7 +331,7 @@ I did other bits of cleanup but I think this should cover the major changes. And
 -     version: "0.0.1",
 +     version: "1.0.0",
       elixir: "~> 1.1",
----
+```
 
 And speaking of versions, I'm using Elixir 1.1 but pay attention as [Elixir 1.2](https://github.com/elixir-lang/elixir/blob/ef5ba3af059f76489631dc26b52ecaeff09af3fe/CHANGELOG.md) is just around the corner and it brings some niceties. For example, that macro that aliased a few modules could be written this way now:
 
@@ -341,6 +341,6 @@ def mangareader do
     alias ExMangaDownloadr.MangaReader.{IndexPage, ChapterPage, Page}
   end
 end
----
+```
 
 And this is just 1 feature between many other syntax improvements and support for the newest [Erlang R18](http://www.erlang.org/news/88). Keep an eye on both!

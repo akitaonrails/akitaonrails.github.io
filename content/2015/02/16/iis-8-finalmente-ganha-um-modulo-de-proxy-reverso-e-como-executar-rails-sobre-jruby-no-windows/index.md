@@ -70,9 +70,9 @@ Agora, baixe [meu código do Github](https://github.com/akitaonrails/jruby_windo
 
 A partir de um Command Prompt, entre no diretório do projeto e execute:
 
----
+```
 jruby -S bundle install
----
+```
 
 Isso deve instalar todas as dependências que estão listadas no arquivo <tt>Gemfile</tt> cujas partes mais importantes são:
 
@@ -88,7 +88,7 @@ gem 'puma'
 gem 'jruby-openssl', require: false
 # ...
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
----
+```
 
 As partes importantes:
 
@@ -109,7 +109,7 @@ Rails.application.config.relative_url_root = '/rails'
 map Rails.application.config.relative_url_root || "/" do
   run Rails.application
 end
----
+```
 
 Você vai precisar criar um banco de dados chamado "jruby_demo" ou outro nome que você pode configurar no arquivo <tt>config/database.yml</tt>. Note que você precisa modificar também o usuário e senha nesse arquivo para conseguir se conectar ao seu banco. Nesse caso significa que precisa usar [SQL Server Authentication](https://msdn.microsoft.com/en-us/library/ms144284.aspx) e não o padrão Windows Authentication.
 
@@ -120,13 +120,13 @@ default: &default
   url: 'jdbc:sqlserver://localhost;databaseName=jruby_demo'
   username: sa
   password: abcd1234
----
+```
 
 Se estiver configurado corretamente, agora podemos usar o processo de migrations do ActiveRecord para criar tabelas e subir dados de exemplo, executando o seguinte na linha de comando:
 
----
+```
 jruby -S rake db:migrate db:seed
----
+```
 
 Para o IIS 8 conseguir carregar corretamente o JRuby, você precisa configurar o arquivo <tt>Web.config</tt>:
 
@@ -146,7 +146,7 @@ Para o IIS 8 conseguir carregar corretamente o JRuby, você precisa configurar o
         </httpPlatform>
     </system.webServer>
 </configuration>
----
+```
 
 Preste atenção aos diretórios no arquivo para refletirem onde estão essas coisas na sua máquina, sem isso estar correto, nada vai carregar.
 

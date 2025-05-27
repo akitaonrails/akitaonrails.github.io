@@ -26,7 +26,7 @@ Now, let's say you want to create a Rails application with a Chat feature. Any v
 
 First off, let's configure `config/secrets.yml`:
 
----
+```
 development:
   secret_key_base: b9a1...e7aa
   pusher_host: "expusherlite.cm42.io"
@@ -40,7 +40,7 @@ production:
   org_id: <%= ENV['PUSHER_LITE_ORGANIZATION'] %>
   app_key: <%= ENV["PUSHER_LITE_APP_KEY"] %>
   secret_token: <%= ENV["PUSHER_LITE_SECRET_TOKEN"] %>
----
+```
 
 Replace the `pusher_host`, `org_id`, `app_key`, and `secret_token` for the ones you created before.
 
@@ -57,7 +57,7 @@ class PageController < ApplicationController
     Rails.logger.info @guardian_token
   end
 end
----
+```
 
 (If you're connecting to my online server, you must use SSL, so change the URL above for "https")
 
@@ -65,7 +65,7 @@ What this piece does is submit the secret token in the server-side, to my servic
 
 In the front-end we can have this simple `app/views/page/index.html.erb`:
 
----
+```
 <h1>Ex Pusher Lite - Rails Integration Example</h1>
 
 <script type="text/javascript" charset="utf-8">
@@ -82,7 +82,7 @@ In the front-end we can have this simple `app/views/page/index.html.erb`:
 <input type="text" name="message" id="message" value="" placeholder="Message"/>
 <input type="checkbox" name="channel" id="channel" value="api"/>
 <label for="channel">send through API</label>
----
+```
 
 Super simple, we can tweak the CSS (`app/assets/stylesheets/application.css`) just to make it look nicer:
 
@@ -100,13 +100,13 @@ Super simple, we can tweak the CSS (`app/assets/stylesheets/application.css`) ju
 body {
   font-family: Helvetica, Arial
 }
----
+```
 
 Finally, we need to load the main Javascript from the ExPusherLite server, so edit the layout at `app/views/layouts/application.html.erb` and add this line right after the closing `</body>` tag:
 
 --- html
 <script src="http://<%= Rails.application.secrets.pusher_host %>/js/pusher.js"></script>
----
+```
 
 And we can now use this Javascript in the `app/assets/javascripts/application.js` to hook everything up. This is the relevant bit:
 
@@ -129,7 +129,7 @@ $(document).ready(function() {
   })
 
   pusher.joinAll();
----
+```
 
 We can now continue in the same file with the Javascript that binds to the message input field, listening to the "Enter" key press event to send the messages:
 
@@ -152,7 +152,7 @@ We can now continue in the same file with the Javascript that binds to the messa
 
   window.publicChannel = publicChannel;
 })
----
+```
 
 And this is how we send messages to ExPusherLite, either directly through the full-duplex WebSockets:
 
@@ -161,11 +161,11 @@ function sendPusher(payload) {
   console.log("sending through socket")
   window.publicChannel.trigger('new_message', payload );
 }
----
+```
 
 Or Posting to the available API:
 
----
+```
 function sendAPI(payload) {
   console.log("sending through API")
   $.ajax({
@@ -187,7 +187,7 @@ function sendAPI(payload) {
 function makeURL(event) {
   return "http://" + window.pusher_host + "/api/organizations/" + window.org_id + "/applications/" + window.app_key + "/event/" + event;
 }
----
+```
 
 By the way, you can send messages using the API from the server-side if you want. Specifically from an ActiveJob process so you can keep your Rails web application fast, and you can use the opportunity to store the message in your database, or apply any filters.
 

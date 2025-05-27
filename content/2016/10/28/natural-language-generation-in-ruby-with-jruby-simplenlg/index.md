@@ -13,7 +13,7 @@ But you can imagine that it quickly becomes cumbersome when you have to deal wit
 
 --- ruby
 "There #{@users.size == 1 ? 'is' : 'are'} #{@users.size} user#{'s' unless @users.size == 1}."
----
+```
 
 Or use Rails I18n support like this:
 
@@ -24,7 +24,7 @@ I18n.backend.store_translations :en, :user_msg => {
 }
 I18n.translate :user_msg, :count => 2
 # => 'There are 2 users'
----
+```
 
 For simple transactional phrases (such as flash messages), this is more than enough.
 
@@ -39,7 +39,7 @@ Nameable::Latin.new('Chris').gender
 #=> :male
 Nameable::Latin.new('Janine').female?
 #=> true
----
+```
 
 * ["calyx"](https://github.com/maetl/calyx) which can be used to generate simple phrases like this:
 
@@ -52,7 +52,7 @@ end
 
 # => "One green bottle."
 # => "Two green bottles."
----
+```
 
 Nice and dandy, but still useless for the more complex needs I have in mind.
 
@@ -84,7 +84,7 @@ SIMPLE_NLG_DEFAULT_LEXICON_PATH = Rails.root.join("lib/SimpleNLG/resources/defau
 SIMPLE_NLG_PATH                 = Rails.root.join("lib/SimpleNLG").to_s.freeze
 
 Dir["#{SIMPLE_NLG_PATH}/*.jar"].each { |jar| require jar }
----
+```
 
 And then I map the classes [like this](https://github.com/Codeminer42/nlg_service/blob/master/app/models/simple_nlg.rb):
 
@@ -105,7 +105,7 @@ module SimpleNLG
     simplenlg.xmlrealiser.wrapper
   ).each { |package| include_package package }
 end
----
+```
 
 Finally, I have a simple endpoint mapped to a [controller](https://github.com/Codeminer42/nlg_service/blob/master/app/controllers/api/realisers_controller.rb) action:
 
@@ -125,7 +125,7 @@ class Api::RealisersController < ApplicationController
     end
   end
 end
----
+```
 
 The process of generating the final English text is called **"realisation"**. SimpleNLG has a comprehensive Java API but it also exposes it as a simpler XML format. The full [XML Realiser Schema](https://github.com/simplenlg/simplenlg/blob/master/src/main/resources/xml/RealizerSchema.xsd) is available as an XSD.
 
@@ -184,7 +184,7 @@ This is the XML that I need to assemble:
     </Record>
   </Recording>
 </NLGSpec>
----
+```
 
 Ok, this is preposterous, I know.
 
@@ -192,9 +192,9 @@ Which is why I decided to go ahead and use one of Ruby's most recognized strengt
 
 The result of my initial endeavor to simplify this process is the [nlg_xml_realiser_builder](https://github.com/Codeminer42/nlg_xml_realiser_builder) ruby gem. Simply add the following to your `Gemfile`:
 
----
+```
 gem 'nlg_xml_realiser_builder'
----
+```
 
 And the humongous XML above becomes something more manageable like this:
 
@@ -216,7 +216,7 @@ dsl.builder(true) do
     end
   end
 end.to_xml
----
+```
 
 Understanding the intricasies of an `NPPhraseSpec` vs a `VPPhraseSpec` or the difference between a `WordElement` or `StringElement` are beyond this blog post. But most of the original XSD has been mapped through [this constants file](https://github.com/Codeminer42/nlg_xml_realiser_builder/blob/master/lib/nlg_xml_realiser_builder/consts.rb).
 
@@ -250,13 +250,13 @@ def example(plural = 'PLURAL')
     end
   end.to_xml
 end
----
+```
 
 And I can run the singular version like this:
 
----
+```
 puts example('SINGULAR')
----
+```
 
 This is the resulting phrase:
 

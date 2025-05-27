@@ -47,7 +47,7 @@ Mesmo assim ainda somos reféns de códigos como deste exemplo de tabs do framew
   <li><a href="#">Profile</a></li>
   <li><a href="#">Messages</a></li>
 </ul>
----
+```
 
 E vejamos um trecho para tabs mas usando um web component do novíssimo [Polymer/Paper](http://www.polymer-project.org/components/paper-elements/demo.html#paper-tabs):
 
@@ -57,7 +57,7 @@ E vejamos um trecho para tabs mas usando um web component do novíssimo [Polymer
   <paper-tab id="tab_profile">Profile</paper-tab>
   <paper-tab id="tab_messages">Messages</paper-tab>
 </paper-tabs>
----
+```
 
 Esse é o resultado da primeira tecnologia de Web Components: [Custom Elements](http://www.html5rocks.com/en/tutorials/webcomponents/customelements/). De fato isso acrescenta uma clareza enorme. No primeiro exemplo o que temos é:
 
@@ -91,7 +91,7 @@ $("#my-map").gmap3({
     }
   });
 </script>
----
+```
 
 E outro exemplo com a alternativa com o [Web Component Google-Map](http://polymerlabs.github.io/google-map/components/google-map/) (lembrando que esta versão é mais simples do que o plugin Gmap3):
 
@@ -101,7 +101,7 @@ E outro exemplo com a alternativa com o [Web Component Google-Map](http://polyme
       draggable="true" title="Go Giants!"></google-map-marker>
   <google-map-marker latitude="37.777" longitude="-122.38911"></google-map-marker>
 </google-map>
----
+```
 
 Estamos movendo parte do que faríamos via Javascript de volta ao HTML. Mas somente isso não é suficiente e já sabemos disso. A tecnologia de "Cascading Style Sheet versão 3", comumente conhecida como CSS 3 até hoje permanece arcaica. Felizmente inventamos uma forma de tornar os malditos macarrões de CSS gerenciáveis. Agradecimentos são devidos à [Hampton Catlin](http://www.hamptoncatlin.com), um grande rubista que - em <strong>2007</strong> - inventou a [linguagem de script SASS](http://sass-lang.com/), que é um "super-set" de CSS e gera CSS 3, adicionando variáveis, nesting, partials, import, mixins, extensão/herança, operadores.
 
@@ -143,13 +143,13 @@ Por não ser mais um trecho de texto, perdemos a função do Mustache e do Handl
 
 --- javascript
 t.content.querySelector('img').src = 'logo.png';
----
+```
 
 Em vez de ter:
 
 --- HTML
 <img src="{{minha-imagem}}" alt="great image">
----
+```
 
 Neste caso de templates eu diria que demos 2 passos pra trás e 1 para frente. Provavelmente dentro de um "HTML template" vamos precisar ter um Mustache para completar o processo? Admito que não acompanho a especificação mas pelo pouco que vi até agora não me parece que a especificação W3C de HTML template resolve o problema que bibliotecas como Mustache, Handlebars ou [HTMLBars](https://github.com/tildeio/htmlbars) resolvem hoje.
 
@@ -176,7 +176,7 @@ Atualmente, se precisamos usar algum conjunto desses, como um componente de Boot
   <script src="bootstrap-tooltip.js"></script>
   <script src="bootstrap-dropdown.js"></script>
 </body>
----
+```
 
 Com HTML Imports podemos fazer simplesmente:
 
@@ -184,7 +184,7 @@ Com HTML Imports podemos fazer simplesmente:
 <head>
   <link rel="import" href="bootstrap.html">
 </head>
----
+```
 
 O problema imediato de algo como Web Components é que qualquer pequena página pode ter rapidamente dezenas de Imports, cada import requerendo outros arquivos e potencialmente triplicando ou mais a quantidade de chamadas pela rede. Quando tivermos algo melhor como HTTP 2.0 ou outro processo de [pipelining e multiplexing como com o protocolo SPDY](http://stackoverflow.com/questions/10480122/difference-between-http-pipeling-and-http-multiplexing-with-spdy) talvez não tenhamos que nos preocupar com isso, mas com o HTTP 1.1 que temos hoje precisamos ainda pensar em como economizar ao máximo chamadas de rede para pedir assets.
 

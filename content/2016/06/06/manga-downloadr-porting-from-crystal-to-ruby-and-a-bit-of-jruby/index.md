@@ -52,7 +52,7 @@ def fetch(page_link : String)
     end
   end
 end
----
+```
 
 Now let's check the ported Ruby version:
 
@@ -78,7 +78,7 @@ def fetch(page_link)
     end
   end
 end
----
+```
 
 It's uncanny how similar they are, down to stdlib calls such as `URI.parse` or Array methods such as `split`.
 
@@ -93,13 +93,13 @@ So, in Ruby 2.3 with Rails, both of the following lines are valid:
 --- ruby
 obj.try(:something).try(:something2)
 obj&.something&.something2
----
+```
 
 In Crystal we can do the following:
 
 --- ruby
 obj.try(&.something).try(&.something2)
----
+```
 
 So, it's close. Use with care.
 
@@ -121,14 +121,14 @@ require "manga-downloadr/pages.rb"
 require "manga-downloadr/page_image.rb"
 require "manga-downloadr/image_downloader.rb"
 require "manga-downloadr/workflow.rb"
----
+```
 
 And this is the Crystal version of the same manifest:
 
 --- ruby
 require "./cr_manga_downloadr/*"
 ...
----
+```
 
 On the other hand, we need to be a bit more explicit in each Crystal source code file, and declare the specific dependencies where needed. For example, in the `pages.cr` file it starts like this:
 
@@ -139,7 +139,7 @@ require "xml"
 module CrMangaDownloadr
   class Pages < DownloadrClient(Array(String))
   ...
----
+```
 
 Crystal has less room for "magic" but it's able to maintain a high level of abstraction anyway.
 
@@ -162,13 +162,13 @@ image = CrMangaDownloadr::PageImage.new("www.mangareader.net").fetch("/naruto/66
 # line 10:
 # image.try(&.host).should eq("i8.mangareader.net")
 image.host.should eq("i8.mangareader.net")
----
+```
 
 The commented out line recognizes that the `image` instance might come as Nil, so we add an explicit `#try` call in the spec.
 
 If we try to compile without this recognition, this is the error the compiler will dump on you:
 
----
+```
 $ crystal spec                                                        [
 Error in ./spec/cr_manga_downloadr/page_image_spec.cr:10: undefined method 'host' for Nil (compile-time type is CrMangaDownloadr::Image?)
 
@@ -183,7 +183,7 @@ Nil trace:
 
         image = CrMangaDownloadr::PageImage.new("www.mangareader.net").fetch("/naruto/662/2")
 ...
----
+```
 
 There is a large stacktrace dump after that snippet above, but you only need to pay attention to the first few lines that already says what's wrong: "undefined method 'host' for Nil (compile-time type is CrMangaDownloadr::Image?)". If you know how to read, you shouldn't have any problems most of the time.
 
@@ -203,7 +203,7 @@ module CrMangaDownloadr
     end
   end
 end
----
+```
 
 `#get` is a method from the `DownloadrClient` superclass that receives a String `chapter_link` and a block. The block receives a parsed `html` collection of nodes and we can play with it, return an Array of Strings.
 
@@ -226,7 +226,7 @@ module CrMangaDownloadr
     end
   end
 end
----
+```
 
 You can see that this class receives a Generic Type and it uses it as the return type for the yielded block in the `#get` method. The `XML::Node -> T` is the declaration of the signature for the block, sending `XML::Node` and receiving whatever the type `T` is. At compile time, imagine this `T` being replaced by `Array(String)`. That's how you can create classes that can deal with any number of different Types without having to overloading for polymorphism.
 
@@ -246,7 +246,7 @@ class Concurrency(A, B, C)
       channel = Channel(Array(B)?).new
       batch.each do |item|
       ...
----
+```
 
 And this is how we use it in the `workflow.cr`:
 
@@ -258,7 +258,7 @@ private def fetch_pages(chapters : Array(String)?)
     engine.try( &.fetch(link) )
   end
 end
----
+```
 
 In this example, imagine `A` being replaced by `String`, `B` also being replaced by `String` and C being replaced by `Pages` in the `Concurrency` class.
 
@@ -277,7 +277,7 @@ class Concurrency
       mutex   = Mutex.new
       threads = batch.map do |item|
       ...
----
+```
 
 This version is much "simpler" in terms of source code density. But on the other hand we would have to test this Ruby version a lot more because it has many different permutations (we even inject classes through `engine_klass`) that we must make sure responds correctly. In practice we should add tests for all combinations of the initializer's arguments.
 
@@ -319,7 +319,7 @@ def fetch_sequential(collection, &block)
   end
   results
 end
----
+```
 
 If we have 10,000 links in the `collection`, we first slice it to what `@config.download_batch_size` and we iterate over those smaller slices, calling some block and accumulating the results. This is naive algorithm, as you will find out in the next section, but bear with me.
 
@@ -355,7 +355,7 @@ def fetch(collection : Array(A)?, &block : A, C? -> Array(B)?) : Array(B)?
   end
   results
 end
----
+```
 
 Fetching a huge collection and slicing it in smaller 'batches' is easy. Now we have a smaller `batch` collection. For each item (usually an URI) we `spawn` a Fiber and call a block that will request and process the results. Once it's finished processing it sends the results over a `channel`.
 
@@ -386,7 +386,7 @@ def fetch(collection, &block)
   end
   results
 end
----
+```
 
 Threads are all initialized in a "paused" state. Once we instantiate those many Threads, we can `#join` on each of them and await for them all to finish.
 
@@ -416,7 +416,7 @@ it "should check that the fetch implementation runs in less time than the sequen
     WebMock.disable_net_connect!
   end
 end
----
+```
 
 Because it uses WebMock, I first disable it during this spec. I create a fake collection of 10 real links to MangaReader. And then I benchmark the Thread-based concurrent version and the plain sequential version. Because we have 10 links and they are all the same you can assume that the sequential version will be almost **10 times slower** than the Thread-based version. And this is exactly what this spec compares and proves (the spec fails if the concurrent version is not at least 9x faster).
 
@@ -424,33 +424,33 @@ To compare all versions of the Manga Downloadrs I let download an compile an ent
 
 This is how long this new Ruby version takes to fetch and scrap almost 1,900 pages (using MRI Ruby 2.3.1):
 
----
+```
 12,42s user 1,33s system 23% cpu 57,675 total
----
+```
 
 This is how long the Crystal version takes:
 
----
+```
 4,03s user 0,40s system 7% cpu 59,207 total
----
+```
 
 Just for fun I tried to run the Ruby version under JRuby 9.1.1.0. To run with JRuby just add the following line in the `Gemfile`:
 
 --- ruby
 ruby "2.3.0", :engine => 'jruby', :engine_version => '9.1.1.0'
----
+```
 
 Bundle install, run normally, and this is the result:
 
----
+```
 47,80s user 1,99s system 108% cpu 45,967 total
----
+```
 
 And this is how long the Elixir version takes:
 
----
+```
 11,38s user 1,04s system 85% cpu 14,590 total
----
+```
 
 ### Reality Check!
 

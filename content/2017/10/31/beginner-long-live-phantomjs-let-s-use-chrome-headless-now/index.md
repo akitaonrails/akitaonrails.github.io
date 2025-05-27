@@ -37,7 +37,7 @@ In my case, this is what had to change:
 - gem "poltergeist"
 + gem "selenium-webdriver"
 + gem "rspec-retry"
----
+```
 
 Then in the Capybara setup:
 
@@ -77,7 +77,7 @@ Capybara.server = :puma, { Silent: true } # To clean up your test output
 + Capybara.javascript_driver = :chrome
 
 Capybara.default_max_wait_time = 5 # you may want to increase this timeout if your app is heavy to load
----
+```
 
 In feature specs, sometimes either Rails itself takes a long while to load up, compile assets, etc and the first features spec may timeout. To avoid a failure in the test run, it's recommended to add the `rspec-retry` gem, as I did above, and add the following to your `spec/rails_helper.rb`:
 
@@ -94,7 +94,7 @@ RSpec.configure do |config|
   config.exceptions_to_retry = [Net::ReadTimeout]
   ...
 end
----
+```
 
 And that should be it. I didn't have to touch any of my feature specs and they all ran beautifully. So kudos to the respective teams that maintain Capybara, Selenium-WebDriver for supporting this.
 
@@ -111,6 +111,6 @@ const puppeteer = require('puppeteer');
 
   await browser.close();
 })();
----
+```
 
 So yeah, Chrome Headless seems like a very good option as most users actually use the Chrome browser, so it means we should have more reliable feature specs and also web crawling tools.

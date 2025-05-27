@@ -65,21 +65,21 @@ You should follow the [Dell XPS (9550) Wiki](http://bit.ly/2jzVAxE) Page.
 
 The 4K Display may flicker a bit, and to avoid it you must edit Grub configuration file `/boot/grub/grub.cfg` and append the following line with the specific flags:
 
----
+```
 GRUB_CMDLINE_LINUX_DEFAULT="... i915.edp_vswing=2 i915.preliminary_hw_support=1 intel_idle.max_cstate=1 acpi_backlight=vendor acpi_osi=Linux"
----
+```
 
 That line already exists with some flags, don't erase them, just append the additional configuration and don't forget to run the following:
 
----
+```
 sudo grub-mkconfig -o /boot/grub/grub.cfg
----
+```
 
 For the most part, all the rest will work just fine, but just to be safe I installed the [Powertop](https://wiki.archlinux.org/index.php/Powertop) and acpid packages as well.
 
----
+```
 sudo pacman -S powertop acpid
----
+```
 
 I am happy to report that I can close the notebook's lid and the OS will properly suspend, and when I open it up it comes back from sleep, saving battery and saving me the trouble of having to reboot every day.
 
@@ -109,71 +109,71 @@ Now, if you have a high-end machine like this XPS 9550 or 9560 (Kaby Lake), you 
 
 After you have it all installed, it's usually a matter of doing:
 
----
+```
 primusrun kdenlive
----
+```
 
 For example, to load the video editor Kdenlive to use OpenGL through the Nvidia GPU. Or to run [Steam through Wine](https://forum.manjaro.org/t/newbie-questions-about-hybrid-nvidia-and-intel-gpu-drives-tutorial/2974/26):
 
----
+```
 primusrun wine ~/.wine/drive_c/Program\ Files\ (x86)/Steam/Steam.exe
----
+```
 
 As I mentioned before, Manjaro will probably install the Nouveau driver, which is the open source driver. You should install the proprietary binaries, like this:
 
----
+```
 sudo mhwd -a pci nonfree 0300
 sudo mhwd -r pci video-hybrid-intel-nouveau-bumblebee
 sudo mhwd -i pci video-hybrid-intel-nvidia-bumblebee
----
+```
 
 Again, I am considering the XPS 9550 which has the Intel-Nvidia Optimus/hybrid configuration. Read Manjaro's [Configuring Graphics](https://wiki.manjaro.org/index.php/Configure_Graphics_Cards) page on the subject.
 
 I did however stumbled upon a strange problem. I am using **Linux 4.9** kernel:
 
----
+```
 $ uname -a
 Linux arch42 4.9.6-1-MANJARO #1 SMP PREEMPT Thu Jan 26 12:29:20 UTC 2017 x86_64 GNU/Linux
----
+```
 
 This is supposedly the `core/linux49 4.9.6-1` package. But for some reason the `mhwd -i` command was installing the `linux44-nvidia` drivers.
 
 So the Nvidia GPU modules were never being loaded until I manually removed it:
 
----
+```
 sudo pacman -R linux44-nvidia
----
+```
 
 And then I manually installed the correct version:
 
----
+```
 sudo pacman -S linux49-nvidia
----
+```
 
 Just to be safe, I uninstalled the `linux44` package and any other `linux44-*` package:
 
----
+```
 sudo pacman -Ss linux44 | grep installed
 # sudo pacman -R linux44-(name of the package)
 ----
 
 Now I have this:
 
----
+```
 $ sudo pacman -Ss linux4 | grep installed
 core/linux49 4.9.6-1 [installed]
 extra/linux49-bbswitch 0.8-6 (linux49-extramodules) [installed]
 extra/linux49-ndiswrapper 1.61-4 (linux49-extramodules) [installed]
 extra/linux49-nvidia 1:375.26-6 (linux49-extramodules) [installed]
----
+```
 
 And in the `/etc/bumblebee/bumblebee.conf` I make sure it explicitly loads the proper `nvidia` driver (the aforementioned `linux49-nvidia`), otherwise you have to `sudo vim` and edit it:
 
----
+```
 $ cat /etc/bumblebee/bumblebee.conf | grep Driver
 # The Driver used by Bumblebee server. If this value is not set (or empty),
 Driver=nvidia
----
+```
 
 At the end, if you load Manjaro Settings Manager, you should see something like this:
 
@@ -183,9 +183,9 @@ At the end, if you load Manjaro Settings Manager, you should see something like 
 
 To test out this setup, I started out by installing [Blender](https://wiki.archlinux.org/index.php/Blender) (one of the best 3D editing tools in the industry). Then I downloaded a free 3D model and animation, and tried to render cycles through GPU Compute. Just to be safe, I also installed the Cuda package:
 
----
+```
 sudo pacman -S blender cuda
----
+```
 
 If the proper drivers are installed, Blender should detect it and enable usage of its CUDA cores:
 
@@ -203,13 +203,13 @@ Possibly the best video editing tool available for Linux is [Kdenlive](https://k
 
 This is how you must install it:
 
----
+```
 sudo pacman -S kdenlive ladspa movit sox ffmpeg frei0r-plugins breeze-icons
----
+```
 
 And for faster real-time previews, it can be started through Primusrun in a Terminal like this:
 
----
+```
 $ primusrun kdenlive
 OpenGL vendor:  "NVIDIA Corporation"
 OpenGL renderer:  "GeForce GTX 960M/PCIe/SSE2"
@@ -221,11 +221,11 @@ OpenGL renderer:  "GeForce GTX 960M/PCIe/SSE2"
 OpenGL Threaded:  true
 OpenGL ARG_SYNC:  true
 OpenGL OpenGLES:  false
----
+```
 
 If I start it without Primerun, it will first detect the Intel graphics:
 
----
+```
 $ kdenlive
 OpenGL vendor:  "Intel Open Source Technology Center"
 OpenGL renderer:  "Mesa DRI Intel(R) HD Graphics 530 (Skylake GT2) "
@@ -237,7 +237,7 @@ OpenGL renderer:  "Mesa DRI Intel(R) HD Graphics 530 (Skylake GT2) "
 OpenGL Threaded:  false
 OpenGL ARG_SYNC:  true
 OpenGL OpenGLES:  false
----
+```
 
 I am not entirely sure, but I believe Kdenlive uses OpenGL to show you real-time previews of the effects you're applying to the video tracks, and that can probably be syphoned through primus into the secondary Nvidia card as well.
 
@@ -247,9 +247,9 @@ Actually Kdenlive, like it's competitor OpenShot, both use the [MLT Multimedia F
 
 And if you want to leverage the Nvidia GPU for even GIMP, there is an ongoing effort to port filters to use [GEGL/OpenCL](https://wiki.gimp.org/wiki/Hacking:Porting_filters_to_GEGL). You can enable GEGL by starting Gimp from the Terminal like this:
 
----
+```
 GEGL_USE_OPENCL=yes gimp
----
+```
 
 Then, you can use the ported plugins through the `Tools - GEGL Operation`:
 
@@ -265,9 +265,9 @@ Darktable automatically detects the Nvidia driver and you don't need to run it t
 
 You can check if the application is using the GPU by monitoring it with `nvidia-smi`:
 
----
+```
 watch -n 0.5 nvidia-smi
----
+```
 
 This will keep monitoring the GPU every half second. And the application will show up in the processes list with a proper PID and you can see the memory usage (my GPU has 2GB of dedicated DRAM), processing usage, temperature (it can get hot at almost 70 degrees Celsius when I was rendering through Blender).
 

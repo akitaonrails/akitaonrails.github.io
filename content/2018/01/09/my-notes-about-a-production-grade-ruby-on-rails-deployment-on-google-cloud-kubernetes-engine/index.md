@@ -76,7 +76,7 @@ It took me a while to wrap my head around the initial structure in Google Cloud:
 
 This is an example of [creating a cluster](https://cloud.google.com/sdk/gcloud/reference/container/clusters/create):
 
----
+```
 gcloud container clusters create my-web-production \
 --enable-cloud-logging \
 --enable-cloud-monitoring \
@@ -84,19 +84,19 @@ gcloud container clusters create my-web-production \
 --enable-autoupgrade \
 --enable-autoscaling --max-nodes=5 --min-nodes=2 \
 --num-nodes 2
----
+```
 
 As I mentioned, it also creates a `default-pool` with a [machine-type](https://cloud.google.com/compute/docs/machine-types) of `n1-standard-4`. Choose what combination of CPU/RAM you will need for your particular app beforehand. The type I chose has 4 vCPUs and 15GB of RAM.
 
 By default, it starts with 3 nodes, so I chose 2 at first but auto-scalable to 5 (you can update it later if you need to, but make sure you have room for initial growth). And you can keep adding extra node-pools for differently sized node instances, let's say, for Sidekiq workers to do heavy-duty background processing. Then you should create a separated Node Pool with a different machine-type for its set of node instances, for example:
 
----
+```
 gcloud container node-pools create large-pool \
 --cluster=my-web-production \
 --node-labels=pool=large \
 --machine-type=n1-highcpu-8 \
 --num-nodes 1
----
+```
 
 This other pool controls 1 node of type `n1-highcpu-8` which has 8 vCPUs with 7.2 GB of RAM. More CPUs, less memory. You have a category of `highmem` which is less CPUs with a whole lot more memory. Again, know what you want beforehand.
 
@@ -104,9 +104,9 @@ The important bit here is the `--node-labels` this is how I will map the deploym
 
 Once you create a cluster, you must issue the following command to fetch its credentials:
 
----
+```
 gcloud container clusters get-credentials my-web-production
----
+```
 
 This sets the `kubectl` command as well. If you have more than one cluster (let's say, one `my-web-production` and `my-web-staging`), you must be very careful to always `get-credentials` for the correct cluster first, otherwise, you may end up running a staging deployment on the production cluster.
 
@@ -120,7 +120,7 @@ Now, how do you deploy your application to the pods within those fancy node inst
 
 You must have a `Dockerfile` in your application project repository to generate a Docker image. This is one example for a Ruby on Rails application:
 
----
+```
 FROM ruby:2.4.3
 ENV RAILS_ENV production
 ENV SECRET_KEY_BASE xpto
@@ -134,15 +134,15 @@ RUN npm install
 ADD . /app
 RUN cp config/database.yml.prod.example config/database.yml && cp config/application.yml.example config/application.yml
 RUN RAILS_GROUPS=assets bundle exec rake assets:precompile
----
+```
 
 From the Google Cloud Web Console, you will find a ["Container Registry"](https://cloud.google.com/container-registry/), which is a Private Docker Registry.
 
 You must add the remote URL to your local config like this:
 
----
+```
 git remote add gcloud https://source.developers.google.com/p/my-project/r/my-app
----
+```
 
 Now you can `git push gcloud master`. I recommend you also add [triggers](https://cloud.google.com/container-builder/docs/running-builds/automate-builds) to tag your images. I add 2 triggers: one to tag it with `latest` and another to tag it with a random version number. You will need those later.
 
@@ -241,7 +241,7 @@ spec:
             path: /etc/ssl/certs
         - name: cloudsql
           emptyDir:
----
+```
 
 There is a lot going on here. So let me break it down a bit:
 
@@ -259,15 +259,15 @@ There is a lot going on here. So let me break it down a bit:
     secretKeyRef:
       name: my-env
       key: SMTP_USERNAME
----
+```
 
 Now, it's referencing a ["Secret"](https://kubernetes.io/docs/concepts/configuration/secret/) storage that I named "my-env". And this is how you create your own:
 
----
+```
 kubectl create secret generic my-env \
 --from-literal=REDIS_URL=redis://foo.com:18821 \
 --from-literal=SMTP_USERNAME=foobar
----
+```
 
 Read the documentation as you can load text files instead of declaring everything from the command line.
 
@@ -277,19 +277,19 @@ After you create your PostgreSQL instance you can't access it directly from the 
 
 For that to work you must first create a Service Account:
 
----
+```
 gcloud sql users create proxyuser host --instance=my-db --password=abcd1234
----
+```
 
 After you create the PostgreSQL instance it will prompt you to download a JSON credential, so be careful and save it somewhere safe. I don't have to say that you must generate a strong secure password as well. Then you must create extra secrets:
 
----
+```
 kubectl create secret generic cloudsql-instance-credentials \
 --from-file=credentials.json=/home/myself/downloads/my-db-12345.json
 
 kubectl create secret generic cloudsql-db-credentials \
 --from-literal=username=proxyuser --from-literal=password=abcd1234
----
+```
 
 These are referenced in this part of the Deployment:
 
@@ -316,7 +316,7 @@ volumes:
     path: /etc/ssl/certs
 - name: cloudsql
   emptyDir:
----
+```
 
 See that you must add the database name ("my-db" in this example) in the `-instance` clause in the command.
 
@@ -340,16 +340,16 @@ spec:
   type: NodePort
   selector:
     app: web
----
+```
 
 This is why I highlighted the importance of the `spec:template:metadata:labels`, so we can use it here in the `spec:selector` to select the proper pods.
 
 We can now deploy these 2 like this:
 
----
+```
 kubectl create -f deploy/web.yml
 kubectl create -f deploy/web-svc.yml
----
+```
 
 And you can see the pods being created with `kubectl get pods --watch`.
 
@@ -359,7 +359,7 @@ Many tutorials will expose those pods directly through a different Service, call
 
 First of all, I decided to create a separated node-pool for it, for example, like this:
 
----
+```
 gcloud container node-pools create web-load-balancer \
 --cluster=my-web-production \
 --node-labels=role=load-balancer \
@@ -367,47 +367,47 @@ gcloud container node-pools create web-load-balancer \
 --num-nodes 1 \
 --max-nodes 3 --min-nodes=1 \
 --enable-autoscaling 
----
+```
 
 As when we created the example `large-pool` here you must take care of adding `--node-labels` to make the controller be installed here instead of the `default-pool`. You will need to know the node instance name, we can do it like this:
 
----
+```
 $ gcloud compute instances list
 NAME                                             ZONE        MACHINE_TYPE   PREEMPTIBLE  INTERNAL_IP  EXTERNAL_IP      STATUS
 gke-my-web-production-default-pool-123-123       us-west1-a  n1-standard-4               10.128.0.1   123.123.123.12   RUNNING
 gke-my-web-production-large-pool-123-123         us-west1-a  n1-highcpu-8                10.128.0.2   50.50.50.50      RUNNING
 gke-my-web-production-web-load-balancer-123-123  us-west1-a  g1-small                    10.128.0.3   70.70.70.70      RUNNING
----
+```
 
 Let's save it like this for now:
 
----
+```
 export LB_INSTANCE_NAME=gke-my-web-production-web-load-balancer-123-123
----
+```
 
 You can manually reserve an external IP and give it a name like this:
 
----
+```
 gcloud compute addresses create ip-web-production \
         --ip-version=IPV4 \
         --global
----
+```
 
 For the sake of the example, let's say that it generated a reserved IP "111.111.111.111". Then let's fetch it and save it for now like this:
 
----
+```
 export LB_ADDRESS_IP=$(gcloud compute addresses list | grep "ip-web-production" | awk '{print $3}')
----
+```
 
 Finally, let's hook this address to the load balancer node instance:
 
----
+```
 export LB_INSTANCE_NAT=$(gcloud compute instances describe $LB_INSTANCE_NAME | grep -A3 networkInterfaces: | tail -n1 | awk -F': ' '{print $2}')
 gcloud compute instances delete-access-config $LB_INSTANCE_NAME \
     --access-config-name "$LB_INSTANCE_NAT"
 gcloud compute instances add-access-config $LB_INSTANCE_NAME \
     --access-config-name "$LB_INSTANCE_NAT" --address $LB_ADDRESS_IP
----
+```
 
 Once we do this, we can add the rest of the Ingress Deployment configuration. This will be kinda long but it's mostly boilerplate. Let's start by defining another web application that we will call `default-http-backend` that will be used to respond to HTTP requests in case our web pods are not available for some reason. Let's call it `deploy/default-web.yml`:
 
@@ -446,7 +446,7 @@ spec:
           requests:
             cpu: 10m
             memory: 20Mi
----
+```
 
 No need to change anything here, and by now you may be familiar with the Deployment template. Again, you now know that you need to expose it through a NodePort, so let's add a `deploy/default-web-svc.yml`:
 
@@ -463,7 +463,7 @@ spec:
       port: 80
       targetPort: 8080
   type: NodePort
----
+```
 
 Again, no need to change anything. The next 3 files are the important parts. First, we will create an NGINX Load Balancer, let's call it `deploy/nginx.yml`:
 
@@ -524,19 +524,19 @@ spec:
         - name: tls-dhparam-vol
           secret:
             secretName: tls-dhparam
----
+```
 
 Notice the `nodeSelector` to make the node label we added when we created the new node-pool.
 
 You may want to tinker with the labels, the number of replicas if you need to. But here you will notice that it mounts a volume that I named as `tls-dhparam-vol`. This is a [Diffie Hellman Ephemeral Parameters](https://raymii.org/s/tutorials/Strong_SSL_Security_On_nginx.html#Forward_Secrecy_&_Diffie_Hellman_Ephemeral_Parameters). This is how we generate it:
 
----
+```
 sudo openssl dhparam -out ~/documents/dhparam.pem 2048
 
 kubectl create secret generic tls-dhparam --from-file=/home/myself/documents/dhparam.pem
 
 kubectl create secret generic tls-dhparam --from-file=/home/myself/documents/dhparam.pem
----
+```
 
 Also, notice that I am using version "0.9.0-beta_5" for the controller image. It works well, no problems so far. But keep an eye on release notes for newer versions as well and do your own testing.
 
@@ -559,7 +559,7 @@ spec:
     targetPort: https
   selector:
     k8s-app: nginx-ingress-lb
----
+```
 
 Remember the static external IP we have reserved above and saved in the `LB_INGRESS_IP` ENV var? This is the one we must put in the `spec:loadBalancerIP` section. This is also the IP that you will add as an "A record" in your DNS service (let's say, mapping your "www.my-app.com.br" on CloudFlare).
 
@@ -589,41 +589,41 @@ spec:
           backend:
             serviceName: web-svc
             servicePort: 80
----
+```
 
 Be careful with the annotations above that hooks everything up. It binds the NodePort service we created for the web pods with the nginx ingress controller and adds SSL termination through that `spec:tls:secretName`. How do you create that? First, you must purchase an SSL certificate - again, using CloudFlare as the example.
 
 When you finish buying, the provider should give you the secret files to download (keep them safe! a public dropbox folder is not safe!). Then you have to add it to the infrastructure like this:
 
----
+```
 kubectl create secret tls cloudflare-secret \
 --key ~/downloads/private.pem \
 --cert ~/downloads/fullchain.pem
----
+```
 
 Now that we edited a whole bunch of files, we can deploy the entire load balancer stack:
 
----
+```
 kubectl create -f deploy/default-web.yml
 kubectl create -f deploy/default-web-svc.yml
 kubectl create -f deploy/nginx.yml
 kubectl create -f deploy/nginx-svc.yml
 kubectl create -f deploy/ingress.yml
----
+```
 
 This NGINX Ingress configuration is based off of [Zihao Zhang's blog post](https://zihao.me/post/cheap-out-google-container-engine-load-balancer/). There is also examples in the [kubernetes incubator repository](https://github.com/kubernetes-incubator/external-dns/blob/master/docs/tutorials/nginx-ingress.md). You may want to check it out as well.
 
 If you did everything right so far, `https://www.my-app-com.br` should load your web application. You may want to check for Time to First-Byte (TTFB). You can do it going through CloudFlare like this:
 
----
+```
 curl -vso /dev/null -w "Connect: %{time_connect} \n TTFB: %{time_starttransfer} \n Total time: %{time_total} \n" https://www.my-app.com.br
----
+```
 
 Or, if you're having slow TTFB you can bypass CloudFlare doing this:
 
----
+```
 curl --resolve www.my-app.com.br:443:111.111.111.111 https://www.my-app.com.br -svo /dev/null -k -w "Connect: %{time_connect} \n TTFB: %{time_starttransfer} \n Total time: %{time_total} \n"
----
+```
 
 TTFB should be in the neighborhood of 1 second or less. Anything far and above could mean a problem in your application. You must check your node instance machine types, the number of workers loaded per pod, the CloudSQL proxy version, the NGINX controller version and so on. This is a trial and error procedure as far as I know. Sign up to services such as [Loader](https://loader.io) or even [Web Page Test](https://www.webpagetest.org) for insight.
 
@@ -633,15 +633,15 @@ Now, that everything is up and running, how do we accomplish the Rolling Update 
 
 Remember that I said to let a trigger tag the image with a random version number? Let's use it (you can see it from the Build History list in the Container Registry, from the Google Cloud console):
 
----
+```
 kubectl set image deployment web my-app=gcr.io/my-project/my-app:1238471234g123f534f543541gf5 --record
----
+```
 
 You must use the same name and image that is declared in the `deploy/web.yml` from above. This will start rolling out the update by adding a new pod, then terminating one pod and so on and so forth until all of them are updated, without downtime for your users.
 
 Rolling updates must be carried out carefully. For example, if your new deployment requires a database migration, then you must add a maintenance window (meaning: do it when there is little to no traffic, such as in the middle of the night). So you can run the migrate command like this:
 
----
+```
 kubectl get pods # to get a pod name
 
 kubectl exec -it my-web-12324-121312 /app/bin/rails db:migrate
@@ -649,13 +649,13 @@ kubectl exec -it my-web-12324-121312 /app/bin/rails db:migrate
 # you can also bash to a pod like this, but remember that this is an ephemeral container, so file you edit and write there disappear on the next restart:
 
 kubectl exec -it my-web-12324-121312 bash
----
+```
 
 To redeploy everything without resorting to rolling update you must do this:
 
----
+```
 kubectl delete -f deploy/web.yml && kubectl apply -f deploy/web.yml
----
+```
 
 You will find a more thorough explanation in [Ta-Ching's](https://tachingchen.com/blog/Kubernetes-Rolling-Update-with-Deployment/) blog post.
 
@@ -665,35 +665,35 @@ One item I had in my "I wanted/needed" list, in the beginning, is the ability to
 
 For this example, let's create a new SSD disk and format it first:
 
----
+```
 gcloud compute disks create --size 500GB my-data --type pd-ssd
 
 gcloud compute instances list
----
+```
 
 The last command is so we can copy the name of a node instance. Let's say it's `gke-my-web-app-default-pool-123-123`. We will attach the `my-data` disk to it:
 
----
+```
 gcloud compute instances attach-disk gke-my-web-app-default-pool-123-123 --disk my-data --device-name my-data
 
 gcloud compute ssh gke-my-web-app-default-pool-123-123
----
+```
 
 The last command ssh's in the instance. We can list the attached disks with `sudo lsblk` and you will see the 500GB disk, probably, as `/dev/sdb`, but make sure that's correct because we will format it!
 
----
+```
 sudo mkfs.ext4 -m 0 -F -E lazy_itable_init=0,lazy_journal_init=0,discard /dev/sdb
----
+```
 
 Now we can exit from the SSH session and detach the disk:
 
----
+```
 gcloud compute instances detach-disk gke-my-web-app-default-pool-123-123 --disk my-data
----
+```
 
 You can mount this disk in your pods by adding the following to your deployment yaml:
 
----
+```
 spec:
   containers:
     - image: ...
@@ -708,7 +708,7 @@ spec:
        gcePersistentDisk:
          pdName: my-data
          fsType: ext4
----
+```
 
 Now, let's create a CronJob deployment file as `deploy/auto-snapshot.yml`:
 
@@ -741,14 +741,14 @@ spec:
             - name: editor-credential
               secret:
                 secretName: editor-credential
----
+```
 
 As we already did before, you will need to create another Service Account with editor permissions in the "IAM & admin" section of the Google Cloud console, then download the JSON credential, and finally upload it like this:
 
----
+```
 kubectl create secret generic editor-credential \
 --from-file=credential.json=/home/myself/download/my-project-1212121.json
----
+```
 
 Also notice that, as a normal cron job, there is a schedule parameter that you might want to change. In the example, "0 4 * * *" means that it will run the snapshot every day at 4 AM.
 

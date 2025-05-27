@@ -65,26 +65,26 @@ I am now using [ASDF](https://github.com/asdf-vm/asdf) to install and manage mul
 
 I was able to move my SSH keys from my previous [Arch Linux](http://www.akitaonrails.com/2017/01/10/arch-linux-best-distro-ever) install. And then I can clone from my Git repositories. Now, here comes the **big caveat**. I cloned and configured a Rails project. This the fastest I can get running an entire RSpec suite with PhantomJS acceptance tests:
 
----
+```
 Finished in 5 minutes 35 seconds (files took 48.53 seconds to load)
 888 examples, 0 failures
----
+```
 
 This is running on my [Dell XPS 9550](http://www.akitaonrails.com/2017/01/31/from-the-macbook-pro-to-the-dell-xps-arch-linux-for-creative-pro-users) with Core i7 Skylake (4 cores, 8 threads), 16 GB of RAM and NVME2 SSD. I asked a co-worker to run it on his very old Mac Mini 2012 with Core i5 (probably Haswell), 10 GB of RAM, normal SSD. And this is his test run:
 
----
+```
 Finished in 3 minutes 37.6 seconds (files took 9.73 seconds to load)
 888 examples, 0 failures
----
+```
 
 Yep, this is shocking. The filesystem emulation is [notoriously slow](https://meta.discourse.org/t/installation-notes-for-discourse-on-bash-for-windows/48141/3?u=sam) under WSL (at least 4 times slower as you can see in the numbers above).
 
 This other test ran in a slightly newer hardware (still underpowered compared to my Dell XPS) running on Linux Mint:
 
----
+```
 Finished in 3 minutes 2.4 seconds (files took 22.69 seconds to load)
 888 examples, 1 failure
----
+```
 
 I ran the same suite a couple times to make sure, but it can't go below the 5 minute mark and loading files is always around 1 minute while in other OSes it's 2 to 4 times faster.
 
@@ -104,32 +104,32 @@ Mounting a shared folder directly to the one in WSL doesn't work properly, seems
 
 This is running the same Rspec suite over Virtualbox with 4 Cores (out of the 8 my machine has) and 4GB of RAM:
 
----
+```
 Finished in 2 minutes 3.4 seconds (files took 6.33 seconds to load)
 888 examples, 2 failure
----
+```
 
 So, we're down from 5:35 min to 2:03 min and file loading from 49 seconds down to 6 seconds! So around 2.5 times faster execution and a whopping 8 times increase in file loading! This is ridiculous and it makes way more sense. My 2016 machine, within Virtualbox, still outperforms 2011/2012 bare hardware. And WSL is in the bottom of the list.
 
 Forget synthetic benchmarks, this is a real-world case mixing CPU and I/O bound executions. Just for the sake of comparison, I tried to see if I could squeeze a bit more performance if I try to run over VMWare Workstation. This is the result:
 
----
+```
 Finished in 2 minutes 3.3 seconds (files took 6.21 seconds to load)
----
+```
 
 Almost identical. To me, it says that Virtualbox came a long way in being comparable to commercial, historically more robust solutions such as VMware or Parallels, so I will stick with Virtualbox for the time being.
 
 I tried another test. This is `asdf` installing the brand new Ruby 2.4.2 from source. First over WSL (running with `time`):
 
----
+```
 229.38s user 244.59s system 113% CPU 6:57.51 total
----
+```
 
 And the same install from Virtualbox:
 
----
+```
 295,39s user 22,43s system 135% CPU 3:53,87 total
----
+```
 
 Again, a mixed scenario of CPU and I/O bound executions. And I am at least twice as fast on Virtualbox.
 

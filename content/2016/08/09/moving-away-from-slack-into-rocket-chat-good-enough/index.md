@@ -66,7 +66,7 @@ describe 'rocketchat:katex Client', ->
 
   it 'should exist', ->
     expect(RocketChat.katex).toBeDefined()
----
+```
 
 This is sad, sorry to say that, but it is. Not surprisingly I've seen katex issues while using the interface. And if you think this was just a poor choice, I picked [another test file](https://github.com/RocketChat/Rocket.Chat/blob/a5cb22bb0017f4c39654bf1e2895ae64acb0339b/packages/rocketchat-markdown/tests/jasmine/client/unit/markdown.spec.coffee):
 
@@ -75,7 +75,7 @@ describe 'rocketchat:markdown Client', ->
 
   it 'should exist', ->
     expect(RocketChat.Markdown).toBeDefined()
----
+```
 
 Really?
 
@@ -125,14 +125,14 @@ For the sake of this article I will assume that you created 3 (three) MongoDB On
 
 Take note of the public IPs and private IPs, for the sake of this article let's say you have this:
 
----
+```
 Public IP     Private IP    Hostname
 
 192.160.10.1  10.0.0.1      mongo1.yourdomain.com
 192.160.10.2  10.0.0.2      mongo2.yourdomain.com
 192.160.10.3  10.0.0.3      mongo3.yourdomain.com
 192.160.10.4  10.0.0.4      yourdomain.com
----
+```
 
 In the commands and code snippets below, make sure to replace the fake IPs for your own private IPs.
 
@@ -140,7 +140,7 @@ As I said in [my GitLab post](http://www.akitaonrails.com/2016/08/03/moving-to-g
 
 The next first thing: configure the firewall in all machines (assuming `ufw` package is already installed):
 
----
+```
 sudo ufw reset
 sudo ufw default deny incoming
 sudo ufw default allow outgoing
@@ -148,7 +148,7 @@ sudo ufw allow https
 sudo ufw allow ssh
 sudo ufw allow in on eth1 to any port 27017
 sudo ufw enable
----
+```
 
 We are allowing MongoDB's 27017 port only for machines in the same private networking (through eth1, the public IP go through eth0). We're also allowing port 22 for SSH and although I am not listing it here in this article you should also consider installing and configuring [fail2ban](https://www.digitalocean.com/community/tutorials/how-to-protect-ssh-with-fail2ban-on-ubuntu-14-04). Digital Ocean also has a [good post on UFW](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu-14-04) for more details.
 
@@ -184,21 +184,21 @@ case $1 in
     unset thp_path
     ;;
 esac
----
+```
 
 Now you can register it as a service:
 
----
+```
 sudo chmod 755 /etc/init.d/disable-transparent-hugepages
 sudo update-rc.d disable-transparent-hugepages defaults
 sudo /etc/init.d/disable-transparent-hugepages start
----
+```
 
 Stop MongoDB in all 3 machines:
 
----
+```
 sudo service mongod stop
----
+```
 
 Now comes a complicated procedure that you should not do wrong. It's only complicated because you have to do it in all 4 machines minding their correct private IP addresses. If you already have your own DNS server, you can skip this, otherwise follow through carefully.
 
@@ -206,19 +206,19 @@ You will have to edit both `/etc/hostname` and `/etc/hosts`. Each machine will h
 
 Once you have it done, you have to replace the line `127.0.0.1 localhost` in the `/etc/hosts` in each of them for the following:
 
----
+```
 127.0.0.1 localhost mongo1.yourdomain.com
 10.0.0.1 mongo1.yourdomain.com
 10.0.0.2 mongo2.yourdomain.com
 10.0.0.3 mongo3.yourdomain.com
 10.0.0.4 yourdomain.com
----
+```
 
 This snippet assumes you're in the machine with private IP `10.0.0.1`, of course. Make sure you change `mongo1.yourdomain.com` in the first line for the hostname of the machine you're in. If this is too difficult for you, you definitely should not try to maintain your own infrastructure, so beware.
 
 Finally, let's edit the `/etc/mongod.conf` with these changes:
 
----
+```
 storage:
   dbPath: /mongodb-data
 ...
@@ -228,37 +228,37 @@ net:
 ...
 replication:
   replSetName: rs0
----
+```
 
 This should be exactly the same in all machines. And you must create this `/mongodb-data` directory like this:
 
----
+```
 sudo mkdir /mongodb-data
 sudo chown -R mongodb:mongodb /mongodb-data
----
+```
 
 Now go ahead on machine `mongo1.yourdomain.com`, start up with `sudo service mongod start` and fire up the `mongo` command, and you should see something like this:
 
----
+```
 # mongo
 MongoDB shell version: 3.2.8
 connecting to: test
 >
----
+```
 
 Let's now configure the replica set by issuing this command in the MongoDB command-line interface:
 
----
+```
 rs.initiate()
 rs.add('mongo2.yourdomain.com')
 rs.add('mongo3.yourdomain.com')
----
+```
 
 And you can now log in to the secondary machines and `sudo service mongod start` in all of them. They should all start joining the replica set and syncing.
 
 You can check the status of the replication like this:
 
----
+```
 > rs.conf()
 
 {
@@ -315,7 +315,7 @@ You can check the status of the replication like this:
   ],
   "ok" : 1
 }
----
+```
 
 Each box should be syncing data to another box, one of them will be marked "PRIMARY" and the others will be "SECONDARY". If one of them "dies" for some reason, one of the others will be elected as PRIMARY until you add a replacement box. Read more details on this procedure in [Digital Ocean's post about implementing replication sets](https://www.digitalocean.com/community/tutorials/how-to-implement-replication-sets-in-mongodb-on-an-ubuntu-vps).
 
@@ -337,53 +337,53 @@ Another mistake beginners in the MEAN stack do is to start up a single Node.js i
 
 First of all, we must set up the `yourdomain.com` (`192.160.10.4` or `10.0.0.4` in the example) to support Node.js, let's do it:
 
----
+```
 sudo apt-get install -y npm curl graphicsmagick nginx git bc
 sudo npm install -g n
 sudo npm install -g forever
 sudo npm install -g forever-service
 sudo n 0.10.40
----
+```
 
 If you haven't already, [create a more restricted sudo user](https://www.digitalocean.com/community/tutorials/how-to-create-a-sudo-user-on-ubuntu-quickstart):
 
----
+```
 adduser rocket # add a password when asked
 usermod -aG sudo rocket
 su - rocket # and always ssh in with `ssh rocket@yourdomain.com`
----
+```
 
 Within rocket's home directory let's install the Rocket.chat codebase:
 
----
+```
 cd /home/rocket
 curl -L https://rocket.chat/releases/latest/download -o rocket.chat.tgz
 tar zxvf rocket.chat.tgz
 mv bundle Rocket.Chat
 cd Rocket.Chat/programs/server
 npm install
----
+```
 
 And now let's add a way for the machine to start the Rocket.chat whenever it reboots:
 
----
+```
 cd ~/Rocket.Chat
 sudo forever-service install -s main.js -e "ROOT_URL=https://rocketchat42.com/ MONGO_URL=mongodb://mongo1.yourdomain.com:27017/rocketchat MONGO_OPLOG_URL=mongodb://mongo1.yourdomain.com:27017/local PORT=3001" rocketchat1
 sudo forever-service install -s main.js -e "ROOT_URL=https://rocketchat42.com/ MONGO_URL=mongodb://mongo1.yourdomain.com:27017/rocketchat MONGO_OPLOG_URL=mongodb://mongo1.yourdomain.com:27017/local PORT=3002" rocketchat2
 
 sudo start rocketchat1
 sudo start rocketchat2
----
+```
 
 Let's also create SSL certificates (and for that you must have a properly registered domain, of course). Again, [Digital Ocean's documentation on Let's Encrypt](https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-14-04) is very good. In summary, all you have to do is:
 
----
+```
 sudo git clone https://github.com/letsencrypt/letsencrypt /opt/letsencrypt
----
+```
 
 Now edit the `/etc/nginx/sites-available/default` and add this inside the server block:
 
----
+```
 server {
   ...
   location ~ /.well-known {
@@ -391,31 +391,31 @@ server {
   }
   ...
 }
----
+```
 
 Now you can:
 
----
+```
 sudo service nginx reload
 
 sudo openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048
 
 cd /opt/letsencrypt
 ./letsencrypt-auto certonly -a webroot --webroot-path=/usr/share/nginx/html -d yourdomain.com -d www.yourdomain.com
----
+```
 
 Again, replace `yourdomain.com` with your own registered domain, of course. The `letsencrypt` command will prompt you to enter your e-mail address and accept terms of service.
 
 [Let's Encrypt](https://letsencrypt.org/) is a fantastic free SSL provider. Their certificates are short lived and are meant to expire in 90 days, so you must set up auto-renewal. Start `sudo crontab -e` and add the following lines:
 
----
+```
 30 2 * * 1 /opt/letsencrypt/letsencrypt-auto renew >> /var/log/le-renew.log
 35 2 * * 1 /etc/init.d/nginx reload
----
+```
 
 This should take care of SSL. Now you can edit your `/etc/nginx/sites-available/default` and replace it with this template:
 
----
+```
 # Upstreams
 upstream backend {
     server 127.0.0.1:3001;
@@ -462,7 +462,7 @@ server {
   server_name yourdomain.com www.yourdomain.com;
   return 301 https://$host$request_uri;
 }
----
+```
 
 Just for the sake of completeness, again: replace `yourdomain.com` for your domain. Usually the `/etc/nginx/sites-enabled/default` is a symlink to `/etc/nginx/sites-available/default`, just check that as well. This configuration will load balance between the 2 node.js instances we configured and started before. And you can add as many as you want following the same `forever-install` procedure and adding the new instances to the `upstream` section in the nginx configuration above.
 

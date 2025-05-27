@@ -44,7 +44,7 @@ def chapter_page([chapter_link, source]) do
     end, @task_async_timeout
   end)
 end
----
+```
 
 Yes, it's very ugly, and there are boilerplates for the GenServer, the custom Supervisor to initialize Poolboy and so on. And the higher level workflow code looks like this:
 
@@ -56,7 +56,7 @@ def pages({chapter_list, source}) do
      |> Enum.reduce([], fn {:ok, list}, acc -> acc ++ list end)
    {pages_list, source}
 end
----
+```
 
 So, inside the `Worker` module each public method wraps the GenServer internal calls into a `Task async` and in the collection iteration we add `Task.await` to actually wait for all parallel calls to finish, so we can finally reduce the results.
 
@@ -76,7 +76,7 @@ def pages({chapter_list, source}) do
      |> Enum.to_list()
    {pages_list, source}
 end
----
+```
 
 The only boilerplate left is the `Flow.from_enumerable()` and `Flow.partition()` wrapping the `Flow.map`, and that's it!
 
@@ -84,17 +84,17 @@ Notice I configured `@max_demand` to be 60. You must tweak it to be larger or sm
 
 Unfortunately not everything is as straight forward as it seems. Running this new version on the test mode I get this result:
 
----
+```
 58,85s user 13,93s system 37% cpu 3:13,78 total
----
+```
 
 So a total time of more than 3 minutes, using around 37% of the available CPU.
 
 My immediate previous version using all the shenanigans of Poolboy, Task.Supervisor, GenServer, etc still gives me this:
 
----
+```
 100,67s user 20,83s system 152% cpu 1:19,92 total
----
+```
 
 Less than **HALF** the time, albeit using all my CPU cores. So my custom implementation still uses my resources to the maximum. There is still something in the Flow implementation I didn't quite get right. I already tried to bump up the `max_demand` from 60 up to 100 but that didn't improve anything. Leaving it to the default 500 slows everything down to more than 7 minutes. 
 

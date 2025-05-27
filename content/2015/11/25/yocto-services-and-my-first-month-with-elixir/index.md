@@ -55,7 +55,7 @@ I have shown the Observer in the previous article as well. You will find a large
 
 In summary you will find the following section in the Pxblog Phoenix App Supervision Tree:
 
----
+```
 Pxblog.Supervisor
 - Pxblog.Endpoint
     + Pxblog.Endpoint.Server
@@ -64,7 +64,7 @@ Pxblog.Supervisor
         * Pxblog.PubSub.Local
 - Pxblog.Repo
     + Pxblog.Repo.Pool
----
+```
 
 This is the Pxblog I explained in the [Phoenix and Rails comparison article](http://www.akitaonrails.com/2015/11/20/phoenix-15-minute-blog-comparison-to-ruby-on-rails) I published a few days ago.
 
@@ -74,7 +74,7 @@ Then, you have the PubSub.Supervisor and PubSub.Local applications that I believ
 
 The Repo alone controls 10 initial processes in its pool, possibly a database connection pool. Notice how Endpoint and Repo groups are in parallel branches in the supervision tree. If Repo fails for some external database problems, the Endpoint group does not have to fail. This is what's declared in the Pxblog Application definition at <tt>lib/pxblog.ex</tt>:
 
----
+```
 defmodule Pxblog do
   use Application
 
@@ -99,7 +99,7 @@ defmodule Pxblog do
   end
   ...
 end
----
+```
 
 See how it defines Endpoint and Repo under the Pxblog.Supervisor.
 
@@ -109,7 +109,7 @@ I can go on and forcefully kill the entire Pxblog.Repo node from the Supervision
 
 From the IEx I can still make more calls to the Repo like this and it it responds as if it had never crashed:
 
----
+```
 iex(4)> Pxblog.Repo.all(Pxblog.User)
 [debug] SELECT u0."id", u0."username", u0."email", u0."password_digest", u0."inserted_at", u0."updated_at" FROM "users" AS u0 [] OK query=78.2ms queue=3.2ms
 [%Pxblog.User{__meta__: #Ecto.Schema.Metadata<:loaded>,
@@ -119,7 +119,7 @@ iex(4)> Pxblog.Repo.all(Pxblog.User)
   password_digest: "...",
   posts: #Ecto.Association.NotLoaded<association :posts is not loaded>,
   updated_at: #Ecto.DateTime<2015-11-20T14:01:09Z>, username: "akitaonrails"}]
----
+```
 
 And the way I think about this is: my IEx shell is sending a message to the Yocto Service called Pxblog.Repo (in reality it's forwarding messages to the database adapter that then checks out a process from the pool). Just like I would consume external Micro Services through HTTP APIs.
 

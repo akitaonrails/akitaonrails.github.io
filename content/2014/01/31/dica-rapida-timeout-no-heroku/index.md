@@ -23,7 +23,7 @@ Para instalar é muito fácil. Adicione à sua <tt>Gemfile</tt>:
 
 --- ruby
 gem 'rack-timeout'
----
+```
 
 Rode <tt>bundle</tt> pra instalar e crie o arquivo <tt>config/initializers/rack_timeout.rb</tt> com o seguinte:
 
@@ -31,17 +31,17 @@ Rode <tt>bundle</tt> pra instalar e crie o arquivo <tt>config/initializers/rack_
 if defined?(Rack::Timeout)
   Rack::Timeout.timeout = Integer( ENV['RACK_TIMEOUT'] || 12 )
 end
----
+```
 
 Finalmente, configure sua aplicação no Heroku com o timeout que você quer, por exemplo:
 
----
+```
 heroku config:set RACK_TIMEOUT=10
----
+```
 
 E se você usa Unicorn, configure seu <tt>config/unicorn.rb</tt> com o seguinte:
 
----
+```
 # Based on https://gist.github.com/1401792
 
 worker_processes 2
@@ -63,7 +63,7 @@ after_fork do |server, worker|
     Rails.logger.info('Connected to ActiveRecord')
   end
 end
----
+```
 
 Especial atenção à configuração de timeout. O timeout do Router do Heroku, por padrão, será sempre 30 segundos. Configure o timeout do Unicorn pra ser menor que 30 segundos (como no exemplo, 25 segundos), e configure o Rack Timeout pra ser menor ainda do que isso (no exemplo, 10 segundos).
 
@@ -78,7 +78,7 @@ config.middleware.use ExceptionNotification::Rack,
     :sender_address => %{"no-reply" <no-reply@myapp.com.br>},
     :exception_recipients => [ENV['EXCEPTION_NOTIFICATION_EMAIL']]
   }
----
+```
 
 Ou então adiciona algo mais parrudo como [Honeybadger](https://www.honeybadger.io). O importante é você receber esse stacktrace. Com essa informação você pode otimizar sua aplicação. Talvez seja o caso de otimizar uma query muito lenta, talvez faltem índices nas suas tabelas (veja a gem [Bullet](https://github.com/flyerhzm/bullet)), talvez seja uma questão de adicionar [Caching](http://www.akitaonrails.com/2008/8/21/tutorial-de-rails-caching-parte-1), talvez você devesse mover um processo demorado como uma tarefa assíncrona via [Sidekiq](https://github.com/mperham/sidekiq). Enfim, existem diversas opções para melhorar o tempo de uma requisição para que ela fique dentro do que eu considero como "bom" (abaixo de 1 segundo) ou "ótimo" (abaixo de 100ms).
 

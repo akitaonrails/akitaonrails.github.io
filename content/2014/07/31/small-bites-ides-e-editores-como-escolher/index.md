@@ -87,14 +87,14 @@ Cada um dos editores tem dezenas de outras funcionalidades que vão te surpreend
 
 O maior ponto fraco do Textmate é seu Find em múltiplos arquivos que, se esbarrar num log gigante, vai travar tudo. Substitua para usar o Ag. Em Mac, use Homebrew para instalar o [the_silver_searcher](https://github.com/ggreer/the_silver_searcher). Agora você precisa instalar o [AckMate](https://github.com/ggreer/AckMate) no Textmate e substituir pelo Ag:
 
----
+```
 rm ~/Library/Application Support/TextMate/PlugIns/AckMate.tmplugin/Contents/Resources/ackmate_ack
 ln -s /usr/local/bin/ag "~/Library/Application Support/TextMate/PlugIns/AckMate.tmplugin/Contents/Resources/ackmate_ack
----
+```
 
 Para quem nunca ouviu falar disso, vamos resumir: todo mundo conhece o bom e velho Grep para fazer pesquisas usando regular expressions. Depois dele surgiu o Ack, como uma opção mais eficiente e veloz. E depois dele veio o Ag, como uma opção ainda melhor. O artigo ["The Silver Searcher: Better than Ack"](http://geoff.greer.fm/2011/12/27/the-silver-searcher-better-than-ack/) explica um pouco disso, mas resumindo:
 
----
+```
 % du -sh
 250M    .
 
@@ -109,7 +109,7 @@ Para quem nunca ouviu falar disso, vamos resumir: todo mundo conhece o bom e vel
 % time ag -i SOLR ~/cloudkick/reach | wc -l
      573
 1.00s user 0.51s system 95% cpu 1.587 total
----
+```
 
 11 segundos no Grep. Quase 3 segundos no Ack. 1 segundo no Ag. Na dúvida, escolha sempre Ag!
 
@@ -127,16 +127,16 @@ _"Mas eu desenvolvo PHP e Python no Windows sem problemas!"_
 
 É verdade, mas você nunca vai poder usar tudo dessas plataformas, sempre vai precisar existir gambiarras pra fazer uma ferramenta que é simples no UNIX funcionar no Windows. Veja o [PHP Composer Installer](https://github.com/composer/windows-setup), precisa trazer embutido o Git, Msys, Cygwin e tudo mais. Como no caso particular do PHP, uma parcela considerável de todos os desenvolvedores usam Windows, então projetos de Installers como esse ainda funcionam razoavelmente, mas é uma considerável redundância de esforços. Sempre vai ter conflitos de versões mais novas com installers velhos e toda a velha dor de cabeça de sempre. Como instala num Linux? Simples, um comando:
 
----
+```
 curl -sS https://getcomposer.org/installer | php
----
+```
 
 Vamos instalar o PIP do Python no Windows? Não é necessariamente trivial, como esta [thread no StackOverflow](http://stackoverflow.com/questions/4750806/how-to-install-pip-on-windows) indica. E depois você precisa lidar com o [Virtualenv](http://stackoverflow.com/questions/3271590/can-i-install-python-windows-packages-into-virtualenvs) no Windows. No Ubuntu?
 
----
+```
 sudo apt-get install python-pip
 sudo apt-get install python-virtualenv
----
+```
 
 'nuff said.
 

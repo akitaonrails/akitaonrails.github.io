@@ -52,7 +52,7 @@ So the other simpler option is [Unbound](http://unbound.net/index.html). It's a 
 
 Configuration is super easy as well, I just added this:
 
----
+```
 server:
   interface: 0.0.0.0
   do-ip4: yes
@@ -116,7 +116,7 @@ server:
     name: "."
     forward-addr: 8.8.8.8
     forward-addr: 8.8.4.4
----
+```
 
 Replace the `<your public IP>` for whatever IP you get when you Google for "what's my IP", it's better to whitelist every IP you want to enable access to query this server.
 
@@ -134,7 +134,7 @@ This is not a 100% guarantee that we will not suffer anything in case of another
 
 With this new DNS "caching" system all my queries will return and be cached with a larger TTL, for example:
 
----
+```
 $ dig heroku.com
 
 ; <<>> DiG 9.8.3-P1 <<>> heroku.com
@@ -155,7 +155,7 @@ heroku.com.   172800  IN  A 50.19.85.154
 ;; SERVER: xx.xx.xx.xx#53(xx.xx.xx.xx)
 ;; WHEN: Mon Oct 31 15:07:37 2016
 ;; MSG SIZE  rcvd: 76
----
+```
 
 I'm obfuscating my DNS IP, of course. The important bit is that you can see that my DNS is returning a TTL of **172800 seconds** now. My local notebook cache should keep it that long now as well.
 

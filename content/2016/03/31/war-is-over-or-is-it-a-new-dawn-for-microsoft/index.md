@@ -81,13 +81,13 @@ Therefore, the choice became much simpler now than ever before. Windows 10 is fi
 
 With [Windows 10 Anniversary Update](http://arstechnica.com/information-technology/2016/03/windows-10-270-million-users-binbash-supporting-anniversary-update-coming-summer/) we will **possibly** be able to natively do the following in a cmd.exe console:
 
----
+```
 bash
 apt-get install build-essential
 \curl -sSL https://get.rvm.io | bash
 rvm install 2.3.0
 bundle install
----
+```
 
 And it should just work!
 

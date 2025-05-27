@@ -13,7 +13,7 @@ Este post é dedicado a quem utilizar Mac OS X (ou mesmo Windows) como sistema d
 
 A versão TL;DR é muito simples. Baixe e instale o [VirtualBox](https://www.virtualbox.org/wiki/Downloads) e o [Vagrant](http://www.vagrantup.com/downloads.html). Assumindo que está no OS X (já tem Ruby 2.0.0 pré-instalado), faça o seguinte do Terminal:
 
----
+```
 sudo gem install berkshelf
 vagrant plugin install vagrant-berkshelf
 vagrant plugin install vagrant-omnibus
@@ -27,7 +27,7 @@ export VAGRANT_SYNCED_FOLDER=~/Sites
 
 berks install
 vagrant up --provision
----
+```
 
 Note que o <tt>Vagrantfile</tt> vai buscar a variável de ambiente <tt>VAGRANT_SYNCED_FOLDER</tt>, não esqueça de colocar no seu <tt>.zshrc</tt> ou <tt>.bashrc</tt> apontando para o diretório onde você costuma clonar seus projetos. Ele será montado, [via NFS](https://docs.vagrantup.com/v2/synced-folders/nfs.html), dentro do box Vagrant no diretório <tt>/vagrant</tt>.
 

@@ -22,7 +22,7 @@ And this is their claim:
 
 Fortunately, I had the chance to experiment it's beta release in a controlled Vagrant environment and check those claim! Bear in mind that those are synthetic benchmarks and real world throughput of real applications should give us different behavior. With that having being said, let's see how the main Ruby servers perform a very simple Rack app returning a simple HTTP 200 with "Hello World":
 
----
+```
  ==> Benchmark parameters:
      Application         : hello_app
      Operating system    : Ubuntu 14.04 LTS (x86_64)
@@ -45,11 +45,11 @@ Fortunately, I had the chance to experiment it's beta release in a controlled Va
      Torquebox (JRuby)          : 29773.21 req/sec
      Raptor (MRI Ruby)          : 95309.35 req/sec
      Raptor (JRuby)             : 87523.65 req/sec
----
+```
 
 Now, this sounds very impressive indeed! And what about a more complex example: a simple Rails 4.1.6 application rendering a default scaffold index page with a model fetching 20 rows from MySQL:
 
----
+```
 ==> Benchmark summary:
     Unicorn (MRI Ruby)         : 326.49 req/sec
     Puma (MRI Ruby)            : 327.36 req/sec
@@ -57,11 +57,11 @@ Now, this sounds very impressive indeed! And what about a more complex example: 
     Torquebox (JRuby)          : 226.57 req/sec
     Raptor (MRI Ruby)          : 79617.78 req/sec
     Raptor (JRuby)             : 73948.59 req/sec
----
+```
 
 Again, **super** impressive. My first impression when reading these numbers is that Raptor must have builtin response caching (which is great!). So I tweaked the example to make it much heavier than what's considered "normal" for a small cache, rendering a table of 100 rows from the database in the index page, and the  results are still competitive:
 
----
+```
 ==> Benchmark summary:
     Unicorn (MRI Ruby)         : 85.98 req/sec
     Puma (MRI Ruby)            : 89.93 req/sec
@@ -69,7 +69,7 @@ Again, **super** impressive. My first impression when reading these numbers is t
     Torquebox (JRuby)          : 77.98 req/sec
     Raptor (MRI Ruby)          : 82.63 req/sec
     Raptor (JRuby)             : 88.92 req/sec
----
+```
 
 This could mean that at the best case scenario, you could get almost **4 times** the throughput from your application, and in the worst case scenario, you're still getting similar throughputs. This means that Raptor is adaptable and reasonably "smart". So overall it's a win-win situation!
 

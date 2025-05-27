@@ -35,18 +35,18 @@ class Api::ProductsController < ApplicationController
   end
   ...
 end
----
+```
 
 For the purposes of this contrived post example, we load it up on localhost port **3001**. Now, whenever we call "http://localhost:3001/api/products?page=1" the API server dumps something like this in the log:
 
----
+```
 Started GET "/api/products?page=1" for 127.0.0.1 at 2016-03-23 13:29:34 -0300
 Processing by Api::ProductsController#index as */*
   Parameters: {"page"=>"1"}
    (0.3ms)  SELECT COUNT(*) FROM "products"
   Product Load (0.9ms)  SELECT  "products".* FROM "products" LIMIT 100 OFFSET 0
 Completed 200 OK in 26ms (Views: 23.0ms | ActiveRecord: 1.2ms)
----
+```
 
 In summary, it's taking around **26ms** to send back a JSON with the first page of products of this application. Not too bad.
 
@@ -64,17 +64,17 @@ class Api::ProductsController < ApplicationController
     render plain: json
   end
   ...
----
+```
 
 We load this other app in localhost port **3000** and when we call "http://localhost:3000/api/products?page=1" the server dumps the following log:
 
----
+```
 Started GET "/api/products?page=1" for 127.0.0.1 at 2016-03-23 13:31:59 -0300
 Processing by Api::ProductsController#index as HTML
   Parameters: {"page"=>"1"}
   Rendered text template (0.0ms)
 Completed 200 OK in 51ms (Views: 7.1ms | ActiveRecord: 0.0ms)
----
+```
 
 Now, this second application is taking twice the time compared to the first one. We can assume that part of those 51ms are the 26ms of the first application.
 
@@ -112,11 +112,11 @@ class Api::ProductsController < ApplicationController
     etag = dates.map(&:to_i).reduce(&:+)
     {etag: Digest::MD5.hexdigest(etag.to_s), last_modified: dates.last, public: true}
   end
----
+```
 
 Now, when we try to "curl -I http://localhost:3001/api/products\?page\=1" we will see the following headers:
 
----
+```
 HTTP/1.1 200 OK 
 X-Frame-Options: SAMEORIGIN
 X-Xss-Protection: 1; mode=block
@@ -131,7 +131,7 @@ Server: WEBrick/1.3.1 (Ruby/2.3.0/2015-12-25)
 Date: Wed, 23 Mar 2016 17:00:13 GMT
 Content-Length: 0
 Connection: Keep-Alive
----
+```
 
 Great! We have an ETAG that uniquely represents this page of products. Now we can go one step further and add the following:
 
@@ -150,7 +150,7 @@ config.action_dispatch.rack_cache = {
 }
 config.static_cache_control = "public, max-age=2592000"
 ...
----
+```
 
 This configuration is assuming that we have Memcached installed and running in the same localhost machine (our development environment), but in production you can follow this [good documentation from Heroku](https://devcenter.heroku.com/articles/rack-cache-memcached-rails31).
 
@@ -158,7 +158,7 @@ Now, our 1st application has an internal HTTP cache, with the same role as somet
 
 So if we call the above "curl" command multiple times, we will see this from the Rails server log:
 
----
+```
 Started GET "/api/products?page=1" for 127.0.0.1 at 2016-03-23 14:05:16 -0300
 Processing by Api::ProductsController#index as */*
   Parameters: {"page"=>"1"}
@@ -167,11 +167,11 @@ Processing by Api::ProductsController#index as */*
    (1.0ms)  SELECT COUNT(*) FROM "products"
 Completed 200 OK in 31ms (Views: 16.3ms | ActiveRecord: 1.8ms)
 cache: [HEAD /api/products?page=1] miss, store
----
+```
 
 Notice the last line: it says that it tried to find the returning ETAG in the cache and it "missed", so it "stored" the new content. Now, if we run the came "curl" command again, we will see this:
 
----
+```
 Started GET "/api/products?page=1" for 127.0.0.1 at 2016-03-23 14:05:59 -0300
 Processing by Api::ProductsController#index as */*
   Parameters: {"page"=>"1"}
@@ -179,7 +179,7 @@ Processing by Api::ProductsController#index as */*
   Couldn't find template for digesting: products/index
 Completed 304 Not Modified in 12ms (ActiveRecord: 0.5ms)
 cache: [HEAD /api/products?page=1] stale, valid, store
----
+```
 
 The simple curl command is not sending the "If-None-Match" header, so it expects to receive the full response body. But because we have Rack Cache it is adding the "If-None-Match" ETAG digest from the cache to the request before hitting the Rails app. The Rails app now compares the received "If-None-Match" digest through the "stale?" methods with the ETAG it just computed and because they match, it just send an empty body response with the status code of 304. Rack Cache receives the 304 and fetches the cached JSON from Memcached and changes the HTTP response from the 304 to a normal 200 with the full body, which is what Curl can receive.
 
@@ -201,7 +201,7 @@ class Api::ProductsController < ApplicationController
     render plain: json
   end
   ...
----
+```
 
 We can do better. How about the following:
 
@@ -248,7 +248,7 @@ class Api::ProductsController < ApplicationController
     end
   end
 end
----
+```
 
 I know, feels overwhealming, but it's actually quite simple. Let's go over it step-by-step:
 
@@ -264,19 +264,19 @@ I know, feels overwhealming, but it's actually quite simple. Let's go over it st
 
 Now, the first time we call "curl http://localhost:3000/api/products\?page\=1" for the 2nd application endpoint we will see this log:
 
----
+```
 Started GET "/api/products?page=1" for 127.0.0.1 at 2016-03-23 14:14:05 -0300
 Processing by Api::ProductsController#index as */*
   Parameters: {"page"=>"1"}
   Rendered text template (0.0ms)
 Completed 200 OK in 62ms (Views: 5.6ms | ActiveRecord: 0.0ms)
----
+```
 
 Caches are cold, it is taking the same "around 50ms" like we had before, in this case, it's more like 62ms.
 
 Just to recap, this call to the 2nd application made it call the 1st application API, which shows the following it its log:
 
----
+```
 Started GET "/api/products?page=?" for 127.0.0.1 at 2016-03-23 14:14:05 -0300
 Processing by Api::ProductsController#index as */*
   Parameters: {"page"=>"?"}
@@ -286,23 +286,23 @@ Processing by Api::ProductsController#index as */*
    (1.2ms)  SELECT COUNT(*) FROM "products"
 Completed 200 OK in 37ms (Views: 21.5ms | ActiveRecord: 2.2ms)
 cache: [GET /api/products?page=?] miss, store
----
+```
 
 Cache miss, new content stored!
 
 Now, we call "curl" against the same URL for the 2nd application again and we now see what we wanted in the log:
 
----
+```
 Started GET "/api/products?page=1" for 127.0.0.1 at 2016-03-23 14:14:10 -0300
 Processing by Api::ProductsController#index as */*
   Parameters: {"page"=>"1"}
   Rendered text template (0.0ms)
 Completed 200 OK in 24ms (Views: 0.3ms | ActiveRecord: 0.0ms)
----
+```
 
 Down from 62ms to 24ms!! And in the 1st application log we see:
 
----
+```
 Started GET "/api/products?page=?" for 127.0.0.1 at 2016-03-23 14:14:10 -0300
 Processing by Api::ProductsController#index as */*
   Parameters: {"page"=>"?"}
@@ -311,7 +311,7 @@ Processing by Api::ProductsController#index as */*
   Couldn't find template for digesting: products/index
 Completed 304 Not Modified in 12ms (ActiveRecord: 1.2ms)
 cache: [GET /api/products?page=?] stale, valid, store
----
+```
 
 A cache hit! Content is stale and valid, so return just 304, the 2nd application acknowledges and fetch the still valid content from its own cache and return to Curl.
 
@@ -335,7 +335,7 @@ def index
     render json: result.to_json
   end
 end
----
+```
 
 Another thing: you can add any vanilla HTTP Cache between your microservices, to add authorization, security, or just plain extra caching, it's just HTTP with proper headers. But the more you exchange "304" between your services, the less processing and the less bandwidth you're spending. It should be noticeably efficient in most cases. But again, it's not always cheap or trivial to generate the cache keys/ETAGs to begin with, so this is the point to take more care.
 

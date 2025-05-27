@@ -30,30 +30,30 @@ Again, in case you didn't know, the official Rails Guides website also compiles 
 
 The `rails new` command has a lot of new flags. And I think these are the ones most people will use:
 
----
+```
 rails new --skip-action-mailer --skip-coffee --webpack=react my_fancy_new_project
----
+```
 
 You can disable features you don't need such as ActionMailer or actionable. You can disable CoffeeScript. It was cool for a while but now that ES6 exists we should just use it.
 
 Rails 5.1 comes with the support for webpack. But until Rails 5.2 comes up, we need to use the `webpack-dev-server` manually in development mode so we can hot reload assets. For that end, I recommend installing good old [Foreman](https://github.com/ddollar/foreman). Install it like this:
 
----
+```
 gem install foreman
----
+```
 
 And add a `Procfile.dev` file to your project with the following content:
 
----
+```
 web: ./bin/rails s -b 0.0.0.0 -p 3000
 webpack: ./bin/webpack-dev-server
----
+```
 
 And now you can start up your development server like this:
 
----
+```
 foreman start -f Procfile.dev
----
+```
 
 In production, you don't need the `webpack-dev-server` as the `bin/rails assets:precompile` task should be able to compile all the assets you need as static, timestamped files in `public/assets`.
 
@@ -67,41 +67,41 @@ No more manually vendoring JS assets in `vendor/assets/javascripts` directory. N
 
 Let's say that, for some reason, you want jQuery back. You can now just do:
 
----
+```
 yarn add jquery
----
+```
 
 And, as usual, you can simply add it to your `app/assets/javascripts/application.js` manifest file:
 
----
+```
 // app/assets/javascripts/application.js
 ...
 //= require jquery
 ...
 //= require_tree .
----
+```
 
 The so-called ["support for Yarn in Rails 5.1"](https://github.com/rails/rails/pull/26836) boils down to a few wrappers and boilerplate. So you can run `rails yarn:install` and have the dependencies installed, but you can just as easily type `yarn` and it will install everything you need that is declared in the `package.json` file, as with any other Javascript-only project.
 
 Now, the whole magic of the integration comes from the inclusion of the [Webpacker](https://github.com/rails/webpacker) gem. It adds a bunch of boilerplate configuration for webpack. And, **bonus fact** you can include it today in your current Rails 4.2+ projects as well. Just start by adding the webpacker gem to your `Gemfile`:
 
----
+```
 # Gemfile
 gem 'webpacker', '~> 3.0'
----
+```
 
 Then `bundle install` as usual and run:
 
----
+```
 bundle exec rake webpacker:install
----
+```
 
 If you didn't use the `--webpack=react` flag to the `rails new` command, you can add it later. Or you can add Angular as well:
 
----
+```
 bundle exec rake webpacker:install:angular
 bundle exec rake webpacker:install:react 
----
+```
 
 You should replace `bundle exec rake` for `bin/rails` if you're in Rails 5.1.
 
@@ -111,9 +111,9 @@ Andy Barnov has a [good post](https://x-team.com/blog/get-in-full-stack-shape-wi
 
 Oddly enough, even though I used the `--webpack-react` flag to the `rails new` I still had to run the following command to bootstrap the webpack and react supports:
 
----
+```
 ./bin/rails webpacker:install:react
----
+```
 
 But once you do, you will get a new place to add React components, and that's in a proper `app/javascripts/packs`. And in the views, instead of the usual `javascript_include_tag` you will use the brand new `javascript_pack_tag`. I believe you can figure out the rest from the example component `hello_react.jsx` that it generates for you.
 

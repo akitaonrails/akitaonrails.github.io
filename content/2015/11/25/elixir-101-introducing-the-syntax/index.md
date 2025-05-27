@@ -30,7 +30,7 @@ Many tutorial series start introducing a new language by its syntax. I subverted
 
 element_at(X,[X|_],1).
 element_at(X,[_|L],K) :- K > 1, K1 is K - 1, element_at(X,L,K1).
----
+```
 
 Erlang has a similar syntax, with the idea of phrases divided by commas and ending with a dot.
 
@@ -43,14 +43,14 @@ defmodule Exercise do
     element_at(rest, position - 1)
   end
 end
----
+```
 
 If I copy and paste the code above in an IEx shell I can test it out like this:
 
----
+```
 iex(7)> Exercise.element_at(["a", "b", "c", "d", "e"], 3)
 "c"
----
+```
 
 This simple exercise shows us some of the powerful bits of Erlang that Elixir capitalizes upon, such as pattern matching and recursion.
 
@@ -62,41 +62,41 @@ A function is actually identified by the pair of its name and its arity. So abov
 
 --- ruby
 def element_at([found|_], 1), do: found
----
+```
 
 Here we are saying: the first argument will be an array, decompose it. The first element of the array will be stored in the "found" variable, the rest "_" will be ignored. And the second argument must be the number "1". This is the description of the so called "pattern", it should "match" the input arguments received. This is **"call-by-pattern"** semantics.
 
 But what if we want to pass a position different than "1"? That's why we have this second definition:
 
----
+```
 def element_at([_|rest], position) when position > 1 do
----
+```
 
 Now, the first argument again **need** to be an array, but this time we don't care about the first element, just the rest of the array without the first element. And any position different than "1" will be stored in the "position" variable.
 
 But this function is special, it is **guarded** to only allow a <tt>position</tt> that is larger than 1. What if we try a negative position?
 
----
+```
 iex(8)> Exercise.element_at(["a", "b", "c", "d", "e"], -3)
 ** (FunctionClauseError) no function clause matching in Exercise.element_at/2
     iex:7: Exercise.element_at(["a", "b", "c", "d", "e"], -3)
----
+```
 
 It says that none of the clause we passed doesn't match any of the defined ones above. We could have added a third definition just to catch those cases:
 
 --- ruby
 def element_at(_list, _position), do: nil
----
+```
 
 Adding the underscore "_" before the variable name is the same as having just the underscore but we are naming it just to make it more readable. But any arguments passed will just be ignored. And this is the more generic case if the previous 2 don't match.
 
 The previous line is the same as writing:
 
----
+```
 def element_at(_list, _position) do
   nil
 end
----
+```
 
 I won't dive into macros for now, just know that there is more than one way of doing things in Elixir and you can define those different ways using Erlang's built-in support for macros, dynamic code that is compiled in runtime. It's the way of doing metaprogramming with Elixir.
 
@@ -106,15 +106,15 @@ Now, going back to the implementation, the first function still can look weird, 
 def element_at([_|rest], position) when position > 1 do
   element_at(rest, position - 1)
 end
----
+```
 
 What happens is: when we call <tt>Exercise.element_at(["a", "b", "c", "d", "e"], 3)</tt> the first argument will pattern match with <tt>[_|rest]</tt>. The first element "a" is disposed and the new list <tt>["b", "c", "d", "e"]</tt> is stored as "<tt>rest</tt>".
 
 Finally, we recurse the call decrementing from the "<tt>position</tt>" variable. So it becomes <tt>element_at(["b", "c", "d", "e"], 2)</tt>. And it repeats until position becomes "1", in which case the pattern matching falls to the second function defined as: 
 
----
+```
 def element_at([found|_], 1), do: found
----
+```
 
 In this case the rest of the array is pattern matched and the first element, "c" is stored in the "<tt>found</tt>" variable, the rest of the array is discarded. It only got here because the position matched as "1", and so it just returns the variable "found", which contains the 3rd element of the original array, "c".
 
@@ -124,23 +124,23 @@ This is all nice and fancy, but in Elixir we could just have done this other ver
 defmodule Exercise do
   def element_at(list, position), do: Enum.at(list, position)
 end
----
+```
 
 And we are done! Several tutorials will talk about how recursion and pattern matching to decompose lists solve a lot of problems, but Elixir gives us the convenience of treating lists as Enumerables and provide us a rich [Enum](http://elixir-lang.org/docs/stable/elixir/Enum.html) module with very useful functions such as <tt>at/2</tt>, <tt>each/2</tt>, <tt>take/2</tt>, and so on. Just pick what you need and you're managing lists like a boss.
 
 Oh, and by the way, there is something called a [Sigil](http://elixir-lang.org/getting-started/sigils.html) in Elixir. Instead of writing the List of String explicitly, we could have done it like this:
 
----
+```
 iex(8)> ~w(a b c d e f)
 ["a", "b", "c", "d", "e", "f"]
----
+```
 
 Or, if we wanted a List of Atoms, we could do it like this:
 
----
+```
 iex(9)> ~w(a b c d e f)a
 [:a, :b, :c, :d, :e, :f]
----
+```
 
 ### Lists, Tuples and Keyword Lists
 
@@ -158,7 +158,7 @@ defp parse_args(args) do
     {_, _, _ } -> process(:help)
   end
 end
----
+```
 
 The first part may puzzle you:
 
@@ -167,7 +167,7 @@ OptionParser.parse(args,
     switches: [name: :string, url: :string, directory: :string],
     aliases: [n: :name, u: :url, d: :directory]
   )
----
+```
 
 The <tt>OptionParser.parse/2</tt> receives just 2 arguments: 2 arrays. If you come from Ruby it feels like it's a Hash with optional brackets, translating to something similar to this:
 
@@ -177,7 +177,7 @@ OptionParser.parse(args,
     { switches: {name: :string, url: :string, directory: :string},
       aliases: {n: :name, u: :url, d: :directory} }
   )
----
+```
 
 This works in Ruby but it is not the case in Elixir, there are optional brackets but not where you think they are:
 
@@ -199,7 +199,7 @@ OptionParser.parse(args,
       }
     ]
   )
----
+```
 
 WHAT!?!?
 
@@ -218,21 +218,21 @@ defmodule Teste do
     IO.puts "#{world} #{bar}"
   end
 end
----
+```
 
 Now we can call it like this:
 
----
+```
 iex(13)> Teste.teste hello: "world", foo: "bar"
 world bar
----
+```
 
 Which is the same as calling like this:
 
----
+```
 iex(14)> Teste.teste([{:hello, "world"}, {:foo, "bar"}])
 world bar
----
+```
 
 This may confuse you, but it's very intuitive. You can just think of this combination of Lists ("[]") with Tuple elements containing a pair of atom and value ("{:key, value}") to behave almost like Ruby Hashes being used for optional named arguments.
 
@@ -247,13 +247,13 @@ case parse do
   {_, _, _ } ->
     process(:help)
 end
----
+```
 
 And
 
 --- ruby
 [{:hello, world}, {:foo, bar}] = opts
----
+```
 
 The last example is just decomposition. The previous example is pattern match and decomposition. You match based on the atoms and positions within the tuples within the list. You match from the more narrow case to the more generic case. And in the process, the variables in the pattern are available for you to use in the matching case clause.
 
@@ -261,7 +261,7 @@ Let's understand the meaning of this line:
 
 --- ruby
 {[name: manga_name, url: url, directory: directory], _, _} -> process(manga_name, url, directory)
----
+```
 
 It is saying: given the results of the <tt>OptionParser.parse/2</tt> function, it must be a tuple with 3 elements. The second and third elements don't matter. But the first element must be a List with at least 3 tuples. And the keys of each tuples must be the atoms <tt>:name</tt>, <tt>:url</tt>, and <tt>:directory</tt>. If they're there, store the values of each tuples in the variables <tt>manga_name</tt>, <tt>url</tt>, and <tt>directory</tt>, respectivelly.
 
@@ -272,11 +272,11 @@ Keyword List feel like a Map, but a Map has a different syntax:
 --- ruby
 list = [a: 1, b: 2, c: 3]
 map = %{:a => 1, :b => 2, :c => 3}
----
+```
 
 This should summarize it:
 
----
+```
 iex(1)> list = [a: 1, b: 2, c: 3]
 [a: 1, b: 2, c: 3]
 iex(2)> map = %{:a => 1, :b => 2, :c => 3}
@@ -297,7 +297,7 @@ iex(6)> list2 = [{:a, 1}, {:b, 2}, {:c, 3}]
 [a: 1, b: 2, c: 3]
 iex(7)> list = list2
 [a: 1, b: 2, c: 3]
----
+```
 
 Keyword Lists are convenient as function arguments or return values. But if you want to process a collection of key-value pairs, use a dictionary-like structure, in this case, a Map. Specifically if you need to search the collection using the key. They look similar but the internal structures are not the same, a Keyword List is not a Map, it's just a convenience for a static list of tuples.
 
@@ -305,21 +305,21 @@ Finally, if this pattern matches the <tt>parse</tt> variable passed in the <tt>c
 
 The idea is that the "=" operator is not an "assignment", it's a matcher, you match one side with the other. Read the error message when a pattern is not matched:
 
----
+```
 iex(15)> [a, b, c] = 1
 ** (MatchError) no match of right hand side value: 1
----
+```
 
 This is a matching error, not an assignment error. But if it succeeds this is what we have:
 
----
+```
 iex(15)> [a, b, c] = [1, 2, 3]
 [1, 2, 3]
 iex(16)> a
 1
 iex(17)> c
 3
----
+```
 
 This is a List decomposition. It so happens that in the simple case, it feels like a variable assignment, but it's much more complex than that.
 
@@ -330,7 +330,7 @@ We use exactly those concepts of pattern matching on the returning elements from
 --- ruby
 Floki.find(html, "#listing a")
 |> Enum.map(fn {"a", [{"href", url}], _} -> url end)
----
+```
 
 The <tt>find/2</tt> gets a HTML string from the fetched page and matches against the CSS selectors in the second argument. The result is a List of Tuples representing the structure of each HTML Node found, in this case, this pattern: <tt>{"a", [{"href", url}], _}</tt>
 
@@ -342,13 +342,13 @@ In UNIX we usually do stuff like "<tt>ps -ef | grep PROCESS | grep -v grep | awk
 
 This is essentially the same as doing:
 
---- 
+```
 ps -ef > /tmp/ps.txt
 grep mix /tmp/ps.txt > /tmp/grep.txt
 grep -v grep /tmp/grep.txt > /tmp/grep2.txt
 awk '{print $2}' /tmp/grep2.txt > /tmp/awk.txt
 xargs kill -9 < /tmp/awk.txt
----
+```
 
 Each UNIX process can receive something from the standard input (STDIN) and output something to the standard output (STDOUT). We can redirect the output using ">". But instead of doing all those extra steps, creating all those extra garbage temporary files, we can simply "pipe" the STDOUT of one command to the STDIN of the next command.
 
@@ -357,7 +357,7 @@ Elixir uses the same principles: we can simply use the returning value of a func
 --- ruby
 results = Floki.find(html, "#listing a")
 Enum.map(results, fn {"a", [{"href", url}], _} -> url end)
----
+```
 
 In the same ExMangaDownloadr project we have this snippet:
 
@@ -373,7 +373,7 @@ defp process(manga_name, url, directory) do
     |> Workflow.compile_pdfs(manga_name)
     |> finish_process
 end
----
+```
 
 And we just learned that it's the equivalent of doing the followng (I'm cheating a bit because the 3 final functions of the workflow are not transforming the input "directory", just passing it through):
 
@@ -389,7 +389,7 @@ And we just learned that it's the equivalent of doing the followng (I'm cheating
     Workflow.compile_pdfs(directory, manga_name)
     finish_process(directory)
   end
----
+```
 
 Or this much uglier version that we must read in reverse:
 
@@ -408,7 +408,7 @@ defp process(manga_name, url, directory) do
     )
   )
 end
----
+```
 
 We can easily see how the Pipe Operator "|>" makes any transformation pipeline much easier to read. Anytime you are starting from a value, passing the results through a **chain of transformation**, you will use this operator.
 
@@ -435,7 +435,7 @@ if true, [{:do, (
   a = 1 + 2
   a + 10
 )}]
----
+```
 
 Mind blowing, huh? There are many macros that add syntactic sugar using the primitives behind it.
 

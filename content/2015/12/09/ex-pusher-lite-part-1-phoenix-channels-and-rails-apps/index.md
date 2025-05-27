@@ -25,12 +25,12 @@ Another option is to avoid the trouble altogether and use a messaging service. O
 
 You will want to clone from my [example repository](https://github.com/akitaonrails/pusher_lite_demo/tree/v0.1), like this:
 
----
+```
 git clone https://github.com/akitaonrails/pusher_lite_demo
 cd pusher_lite_demo
 git checkout tags/v0.1 -b v0.1
 bundle
----
+```
 
 This is a very very simple implementation of a real-time, websocket-based, chat using Pusher. The idea goes like this:
 
@@ -46,7 +46,7 @@ We start by having a front-end Form to send messages
     <%= f.submit "Send message", class: "pure-button pure-button-primary" %>
   </fieldset>
 <% end %>
----
+```
 
 It's using Rails built-in jQuery support for Ajax posting the form to the "EventsController#create" method:
 
@@ -61,7 +61,7 @@ class EventsController < ApplicationController
     params.require(:pusher_event).permit(:name, :message)
   end
 end
----
+```
 
 Just to annotate the process, the "routes.rb" looks like this:
 
@@ -72,7 +72,7 @@ Rails.application.routes.draw do
 
   root 'home#index'
 end
----
+```
 
 The HTML layout looks like this:
 
@@ -108,7 +108,7 @@ The HTML layout looks like this:
 
 </body>
 </html>
----
+```
 
 This layout imports the default "application.js" which configures Pusher, establishes the Websocket connection and subscribes to messages on a specific topic with specific events:
 
@@ -131,7 +131,7 @@ $(document).on("page:change", function(){
     $(".message-receiver").append(new_line);
   });
 });
----
+```
 
 It gets the configuration metadata from the layout meta tags which grabs the values from "config/secrets.yml":
 
@@ -155,15 +155,15 @@ production:
   pusher_url: <%= ENV['PUSHER_URL'] %>
   pusher_key: <%= ENV['PUSHER_KEY'] %>
   pusher_channel: <%= ENV['PUSHER_CHANNEL'] %>
----
+```
 
 And as I'm using dotenv-rails, the ".env" looks like this:
 
----
+```
 PUSHER_URL: "https://14e86e5fee3335fa88b0:2b94ff0f07ce9769567f@api.pusherapp.com/apps/159621"
 PUSHER_KEY: "14e86e5fee3335fa88b0"
 PUSHER_CHANNEL: "test_chat_channel"
----
+```
 
 Pusher is configured in the server-side through this initializer:
 
@@ -173,7 +173,7 @@ require 'pusher'
 
 Pusher.url = Rails.application.secrets.pusher_url
 Pusher.logger = Rails.logger
----
+```
 
 Finally, the "EventsController#create" actually do an async call to a [SuckerPunch](https://github.com/brandonhilkert/sucker_punch) job:
 
@@ -186,7 +186,7 @@ class SendEventsJob < ActiveJob::Base
     @event.save
   end
 end
----
+```
 
 By the way, as a segway, [SuckerPunch](https://github.com/brandonhilkert/sucker_punch) is a terrific solution for in-process asynchronous tasks. It's a better option to start with it without having to implement a separated system with Sidekiq workers.
 
@@ -194,7 +194,7 @@ Once you have larger job queues or jobs that are taking too long, then go to Sid
 
 --- ruby
 config.active_job.queue_adapter = :sucker_punch
----
+```
 
 This job just calls the "save" method in the fake-model "PusherEvent":
 
@@ -212,7 +212,7 @@ class PusherEvent
     })
   end
 end
----
+```
 
 As it's a very simple, the Gemfile is equally simple:
 
@@ -221,7 +221,7 @@ gem 'pusher'
 gem 'dotenv-rails'
 gem 'purecss-rails'
 gem 'sucker_punch'
----
+```
 
 So what it does is very simple:
 
@@ -246,11 +246,11 @@ I followed [Daniel Neighman](https://labs.opendoor.com/phoenix-on-rails-for-clie
 
 You can close the initial version from [my other Github repository](https://github.com/akitaonrails/ex_pusher_lite) like this:
 
----
+```
 git clone https://github.com/akitaonrails/ex_pusher_lite
 cd ex_pusher_lite
 mix deps.get
----
+```
 
 The tutorial implemented initial setup for [Guardian](https://github.com/hassox/guardian) and [Joken](https://github.com/bryanjos/joken) for JSON Web Tokens. I am still getting used to how [channels](http://www.phoenixframework.org/docs/channels) are implemented in Phoenix.
 
@@ -263,7 +263,7 @@ defmodule ExPusherLite.Endpoint do
 
   socket "/socket", ExPusherLite.UserSocket
   ...
----
+```
 
 This application is started by the main supervisor in "lib/ex_pusher_lite.ex". It points the endpoint "/socket" to the socket handler "UserSocket":
 
@@ -279,7 +279,7 @@ defmodule ExPusherLite.UserSocket do
   transport :websocket, Phoenix.Transports.WebSocket
   # transport :longpoll, Phoenix.Transports.LongPoll
   ...
----
+```
 
 The "channel" function comes commented out, so I started by uncommenting it. You can pattern match the topic name like "public:*" to different Channel handlers. For this simple initial test I am sending everything to the "RoomChannel", which I had to create:
 
@@ -331,7 +331,7 @@ defmodule ExPusherLite.RoomChannel do
     Enum.any?(permitted_topics, matches)
   end
 end
----
+```
 
 This is all straight from Daniel's original tutorial, the important bit for this example is the first "join" function, the others deal with permissions and authentication that came through a JWT claim. I will deal with this in Part 2.
 
@@ -354,7 +354,7 @@ defmodule ExPusherLite.Mixfile do
   end
   ...
 end
----
+```
 
 And add the configuration at "config.exs":
 
@@ -369,7 +369,7 @@ config :guardian, Guardian,
   verify_issuer: false,
   serializer: ExPusherLite.GuardianSerializer,
   atoms: [:listen, :publish, :crews, :email, :name, :id]
----
+```
 
 Now I have to add a normal HTTP POST endpoint, first adding it to the router:
 
@@ -392,7 +392,7 @@ defmodule ExPusherLite.Router do
     get "/", PageController, :index
     post "/events", EventsController, :create
   end
----
+```
 
 Notice that I totally disabled CSRF token verification in the pipeline because I am not sending back Phoenix CSRF token from the Rails controller. Now, the "EventsController" is also almost all from Daniel's tutorial:
 
@@ -421,7 +421,7 @@ defmodule ExPusherLite.EventsController do
     end
   end
 end
----
+```
 
 I had to change the authenticate function a bit because either I didn't understood Daniel's implementation or it expected something different. But in this version I am just expecting a simple Basic HTTP Authentication "authorization" header which is a string with the format "Basic [base64 username:password]". Look how I am pattern matching the string, removing the Base64 and ["secure comparing"](http://codahale.com/a-lesson-in-timing-attacks/) it (a constant-time binary compare to avoid timing attacks, this comes built-in with Phoenix).
 
@@ -437,7 +437,7 @@ As I said in the beginning, my original wish was to use the same Pusher javascri
 
 --- html
 <script src="//js.pusher.com/3.0/pusher.min.js"></script>
----
+```
 
 We can get rid of the Pusher gem in the Gemfile and the "pusher.rb" initializer as well.
 
@@ -458,7 +458,7 @@ gem 'babel-transpiler'
 source 'https://rails-assets.org' do
   gem 'rails-assets-almond'
 end
----
+```
 
 Babel needs some configuration:
 
@@ -471,7 +471,7 @@ Rails.application.config.assets.configure do |env|
   )
   env.register_transformer 'application/ecmascript-6', 'application/javascript', babel
 end
----
+```
 
 And for some reason I had to manually redeclare application.js and application.css in the assets initializer:
 
@@ -479,7 +479,7 @@ And for some reason I had to manually redeclare application.js and application.c
 # config/initializers/assets.rb
 ...
 Rails.application.config.assets.precompile += %w( application.css application.js )
----
+```
 
 We need Almond in order to be able to import the Socket module from the Phoenix javascript package. Now, we change the "application.js":
 
@@ -492,7 +492,7 @@ We need Almond in order to be able to import the Socket module from the Phoenix 
 //= require_tree .
 
 require(['application/boot']);
----
+```
 
 It require an "app/assets/javascripts/application/boot.es6" file, this is straight from Nando's tutorial:
 
@@ -537,7 +537,7 @@ function handleError(error) {
 $(window)
   .ready(runner)
   .on('page:load', runner);
----
+```
 
 And it relies on attributes in the body tag, so we change our layout template:
 
@@ -545,7 +545,7 @@ And it relies on attributes in the body tag, so we change our layout template:
 <!-- app/views/layouts/application.html.erb -->
 ...
 <body data-route="application/pages/<%= controller.controller_name %>/<%= controller.action_name %>">
----
+```
 
 I didn't mention before but I also have a "HomeController" just to be the root path for the main HTML page, it has a single "index" method and "index.html.erb" template with the message form. So I will have the need for an "application/pages/home/index.es6" inside the "app/assets/javascripts" path:
 
@@ -589,7 +589,7 @@ export default class Index {
     console.log('-> perform initial actions')
   }
 }
----
+```
 
 This bit is similar to the Pusher javascript handling, but we are getting a bit more information from the meta tags, the "guardian-token" and "guardian-csrf" tokens. Because I was following Daniel's tutorial I also changed the name of the event from "new_message" to just "msg" and the topics now need to have a "public:" prefix in order for the Phoenix's RoomChannel handler to match the public topic name correctly.
 
@@ -601,7 +601,7 @@ First things first. In order for this new javascript to have the correct tokens 
   <%= guardian_token_tags %>
 </head>
 ...
----
+```
 
 And this "guardian_token_tags" is again straight from Daniel's tutorial:
 
@@ -665,7 +665,7 @@ module GuardianHelper
     Base64.urlsafe_encode64(signed_token).gsub(/={1,}$/, '')
   end
 end
----
+```
 
 I had to tweak it a bit, specially to get the proper keys from the "secrets.yml" file which now looks like this:
 
@@ -692,16 +692,16 @@ production:
   pusher_key: <%= ENV['PUSHER_KEY'] %>
   pusher_secret: <%= ENV['PUSHER_SECRET'] %>
   pusher_channel: <%= ENV['PUSHER_CHANNEL'] %>
----
+```
 
 My local ".env" file looks like this:
 
----
+```
 PUSHER_URL: "localhost:4000"
 PUSHER_KEY: "14e86e5fee3335fa88b0"
 PUSHER_SECRET: "2b94ff0f07ce9769567f"
 PUSHER_CHANNEL: "public:test_chat_channel" 
----
+```
 
 This bit needs more working, I know. I just copied Pusher's key and Pusher's password as KEY and SECRET. This is the bit I mentioned I tweaked in the RoomChannel's authenticate function in the Phoenix side.
 
@@ -726,7 +726,7 @@ class PusherEvent
     })
   end
 end
----
+```
 
 As I am doing this through SuckerPunch, I am using plain old "Net::HTTP.post()" to post the message to the Phoenix "/events" endpoint. Phoenix will properly authenticate because the "pusher_url" is sending the "PUSHER_KEY:PUSHER_SECRET" as HTTP Basic Auth. It will end up in the "authorization" header and Phoenix will properly authenticate the server side, then it will broadcast to the WebSocket connections subscribed to the topic.
 

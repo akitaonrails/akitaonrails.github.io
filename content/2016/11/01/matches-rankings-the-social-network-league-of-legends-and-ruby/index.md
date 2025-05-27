@@ -49,13 +49,13 @@ As I said in my previous article, most developers would create a Facemesh-like w
 
 --- ruby
 score = upvotes - downvotes
----
+```
 
 Or even sillier:
 
 --- ruby
 score = upvotes / (upvotes + downvotes)
----
+```
 
 And it doesn't work that way, you will get very wrong rankings.
 
@@ -65,7 +65,7 @@ To show you how wrong, I created a simple demonstration project called [elo_demo
 
 It will create 2,000 random matches against 10 players. This will be the sorted results if we use the wrong methods of subtracting losses from wins and order through that result:
 
----
+```
    Name        Games  Wins  Losses Points (wins - losses)
  1 Kong          217   117    100     17
  2 Samus         211   110    101      9
@@ -77,11 +77,11 @@ It will create 2,000 random matches against 10 players. This will be the sorted 
  8 Mario         203   101    102     -1
  9 Fox           208    95    113    -18
 10 Bowser        186    82    104    -22
----
+```
 
 Now, let's make the 2nd place Samus win 10 times in a row against the 3rd place Wario, this is the new ranking:
 
----
+```
    Name        Games  Wins  Losses Points
  1 Samus         221   120    101     19
  2 Kong          217   117    100     17
@@ -93,13 +93,13 @@ Now, let's make the 2nd place Samus win 10 times in a row against the 3rd place 
  8 Wario         207   102    105     -3
  9 Fox           208    95    113    -18
 10 Bowser        186    82    104    -22
----
+```
 
 Sounds fair, Samus jumps to 1st place and Wario goes down to the 8th place.
 
 Now, what if we make the weaker 10th place Bowser win 10 times against the current 2nd place Kong?
 
----
+```
    Name        Games  Wins  Losses Points
  1 Samus         221   120    101     19
  2 Kong          227   117    110      7
@@ -111,7 +111,7 @@ Now, what if we make the weaker 10th place Bowser win 10 times against the curre
  8 Wario         207   102    105     -3
  9 Bowser        196    92    104    -12
 10 Fox           208    95    113    -18
----
+```
 
 This is where you see how **wrong** this method is. Even though he lost 10 times against the weakest player, Kong still reigns supreme at 2nd place. And poor Bowser, in spite of all his hard work and effort, levels up just 1 meager position from 10th to 9th.
 
@@ -170,7 +170,7 @@ game7 = kong.versus(bowser)
 game7.result = 1 # result is in perspective of kong, so kong wins
 
 game8 = kong.versus(bowser, :result => 0) # bowser wins
----
+```
 
 And this is how you assess the results:
 
@@ -180,13 +180,13 @@ kong.pro?         # => false
 kong.starter?     # => true
 kong.games_played # => 8
 kong.games        # => [ game1, game2, ... game8 ]
----
+```
 
 The gem has more tuning besides that original algorithm, such as the K-factor to reward new players. Those kinds of tunings are what makes matches more competitive today and how you evolve it to TrueSkill levels, but it's beside the point of this article.
 
 Let's see the wrong ranking again:
 
----
+```
    Name        Games  Wins  Losses Points (wins - losses)
  1 Kong          217   117    100     17
  2 Samus         211   110    101      9
@@ -198,11 +198,11 @@ Let's see the wrong ranking again:
  8 Mario         203   101    102     -1
  9 Fox           208    95    113    -18
 10 Bowser        186    82    104    -22
----
+```
 
 Now let's see how the **correct** ranking is by calculating the Elo score using the exact same 2,000 matches:
 
----
+```
    Name        Games  Wins  Losses Points  Elo Rating
  1 Pikachu       209   105    104      1         851
  2 Zelda         160    81     79      2         847
@@ -214,13 +214,13 @@ Now let's see how the **correct** ranking is by calculating the Elo score using 
  8 Kong          217   117    100     17         802
  9 Bowser        186    82    104    -22         785
 10 Fox           208    95    113    -18         754
----
+```
 
 See how different it is? In the wrong ranking, Kong is considered the strongest, but in the Elo ranking he is just 8th place. And reason is that even though he is the one that won most matches (217) he also lost a heck of a lot (117). Someone with less wins such as Zelda in 2nd place (160 wins) lost a heck of a lot less (81), which is why she is higher in the ranking.
 
 Now, if we make her win 10 matches in a row against 3rd place Samus, this is the new ranking:
 
----
+```
    Name        Games  Wins  Loses  Points  Elo Rating
  1 Zelda         170    91     79     12         904
  2 Pikachu       209   105    104      1         851
@@ -232,11 +232,11 @@ Now, if we make her win 10 matches in a row against 3rd place Samus, this is the
  8 Bowser        186    82    104    -22         785
  9 Samus         221   110    111     -1         775
 10 Fox           208    95    113    -18         754
----
+```
 
 Again, Zelda jumps up from 2nd to 1st place and Samus fall down from 3rd to 9th. So far so good. But what about the scenario where we make strong 2nd place Pikachu against a much weaker 10th place Fox McCloud?
 
----
+```
    Name        Games  Wins  Loses  Points  Elo Rating
  1 Zelda         170    91     79     12         904
  2 Luigi         186    95     91      4         841
@@ -248,7 +248,7 @@ Again, Zelda jumps up from 2nd to 1st place and Samus fall down from 3rd to 9th.
  8 Bowser        186    82    104    -22         785
  9 Samus         221   110    111     -1         775
 10 Pikachu       219   105    114     -9         766
----
+```
 
 Now, this is fairness: Pikachu should have won, but losing 10 times in a row against someone considered much weaker makes him fall down from 2nd place all the way to the last place. And noobie Fox, having won 10 times against a much stronger opponent deserves jumping up all the way to 3rd place.
 

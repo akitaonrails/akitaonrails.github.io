@@ -22,7 +22,7 @@ O equivalente _"hello world"_ de recursão é o bom e velho [fatorial](http://en
 def fact(n)
   n == 0 ? 1 : n * fact(n-1)
 end
----
+```
 
 Dependendo da versão do Ruby que estiver usando ela vai estourar num número n não muito alto. No meu Macbook Pro, com Ruby 1.9.3-p392, essa execução recursiva estoura com <tt>stack level too deep (SystemStackError)</tt> no n = 8180.
 
@@ -34,7 +34,7 @@ def fact(n)
   sum.upto(n) { |i| sum *= i }
   sum
 end
----
+```
 
 Esta versão vai aguentar valores muito mais altos que o vergonhoso 8180 da versão recursiva. Uma discussão que vi hoje o [Rafael Rosa e o Henrique Bastos](https://twitter.com/rafaelrosafu/status/322144896217669633) twitando fala sobre porque [Python não suporta TCO](http://neopythonic.blogspot.com.br/2009/04/tail-recursion-elimination.html). Então, curioso, resolvi investigar o que eu achava que sabia: de que Ruby também não tem TCO. Mas acabei encontrando [esta issue de 5 meses atrás no Ruby Core](http://bugs.ruby-lang.org/issues/6602) sobre habilitar TCO que **já existe no MRI 1.9** mas não é ativada por padrão.
 
@@ -44,7 +44,7 @@ Para possibilitar essa otimização, precisamos modificar a versão recursiva qu
 def self.fact(n, m = 1)
   n < 2 ? m : fact(n-1, m*n)
 end
----
+```
 
 No Ruby 1.9 você pode ativar o TCO e executar o código com tail call desta forma:
 
@@ -57,7 +57,7 @@ RubyVM::InstructionSequence.compile_option = {
 RubyVM::InstructionSequence.new(<<-EOF).eval
   # código com tail call
 EOF
----
+```
 
 Vamos fazer um teste com o seguinte código:
 
@@ -89,11 +89,11 @@ end
 
 fact1(8180)
 fact1(10000)
----
+```
 
 Notem que vamos iniciar com o TCO **desligado** <tt>:tailcall_optimization => false</tt> e o resultado é o seguinte:
 
----
+```
 $ ruby factorial.rb
     user     system      total        real
 0.030000   0.000000   0.030000 (  0.030289)
@@ -102,7 +102,7 @@ $ ruby factorial.rb
     user     system      total        real
 0.050000   0.000000   0.050000 (  0.042917)
 factorial.rb:14: stack level too deep (SystemStackError)
----
+```
 
 Vejam que rodando até o limite de 8180 temos pouca diferença entre as versões iterativa não-recursiva, recursiva com tail call e recursiva normal. Mas com o valor mais alto de 10000 as versões recursivas estouram como esperado.
 
@@ -143,11 +143,11 @@ EOF
 
 fact1(8180)
 fact1(10000)
----
+```
 
 Agora temos o seguinte resultado:
 
----
+```
 $ ruby factorial.rb
     user     system      total        real
 0.030000   0.000000   0.030000 (  0.030832)
@@ -157,19 +157,19 @@ $ ruby factorial.rb
 0.040000   0.000000   0.040000 (  0.043725)
 0.050000   0.000000   0.050000 (  0.046619)
 <compiled>:4: stack level too deep (SystemStackError)
----
+```
 
 Desta vez a versão com tail call sobrevive ao valor acima do meu limite de 8180 e a recursiva que não tem tail call estoura por causa da sequência de call stacks que ele é obrigado a fazer.
 
 E podemos ir mais longe e chamar um valor bem maior como <tt>fact1(100_000)</tt>:
 
----
+```
 $ ruby factorial.rb
     user     system      total        real
 5.190000   1.290000   6.480000 (  6.474756)
 5.650000   2.010000   7.660000 (  7.676733)
 <compiled>:4: stack level too deep (SystemStackError)
----
+```
 
 Novamente, podemos ver que a versão com recursão e tail call performance só um pouco pior que a versão iterativa não-recursiva.
 

@@ -33,7 +33,7 @@ s.add_dependency "bourbon"
 s.add_dependency "jquery-rails"
 s.add_dependency "jquery-ui-rails"
 ...
----
+```
 
 Já que temos duas comunidades tendo exatamente o mesmo trabalho: no Bower alguém vai atualizar pacotes de jquery; na Rubygems alguém vai ter que atualizar também. Então, porque não otimizar isso e apenas um deles atualizar. Nesse caso vamos aproveitar - e colaborar - para deixar as do Bower sempre atualizadas.
 
@@ -53,7 +53,7 @@ group :assets do
   gem 'rails-assets-angular'
   gem 'rails-assets-leaflet'
 end
----
+```
 
 A primeira diferença é um novo source. E isso é importante pois não vai poluir o repositório de Rubygems com gems que são meros 'stubs'.
 
@@ -70,7 +70,7 @@ Para o Asset Pipeline continua a mesma coisa. No mesmo arquivo <tt>app/assets/ja
 //= require leaflet
 //= require_tree .
 //= require_tree shared
----
+```
 
 E no <tt>app/assets/stylesheets/application.css</tt> teríamos também igual:
 
@@ -82,7 +82,7 @@ E no <tt>app/assets/stylesheets/application.css</tt> teríamos também igual:
  *= require_tree .
  *= require_tree shared
  */
----
+```
 
 As rubygems que encapsulam bibliotecas front-end não são apenas por causa do Asset Pipeline, além disso elas também podem conter generators para facilitar a criação de alguma estrutura de diretórios ou arquivos de configuração específicos. Mas mesmo nesse caso podemos separar em duas coisas: uma sendo só os fontes originais e uma segunda gem que depende da primeira com ferramentas ou outros extras como generators.
 

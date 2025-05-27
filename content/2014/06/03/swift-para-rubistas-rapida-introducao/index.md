@@ -30,7 +30,7 @@ if let actualNumber = possibleNumber.toInt() {
     println("\(possibleNumber) could not be converted to an integer")
 }
 // prints "123 has an integer value of 123”
----
+```
 
 E em Ruby:
 
@@ -41,7 +41,7 @@ else
   puts "#{possible_number} could not be converted to an integer"
 end
 # prints "123 has an integer value of 123”
----
+```
 
 Statements como "if" ou "for" não tem parênteses como em C, embora cada seção ainda seja separado por chaves "{}". Visualmente falando a diferença é bem pequena. Interpolação em strings tem uma sintaxe um pouco diferente mas no geral é muito semelhante. 
 
@@ -61,7 +61,7 @@ let originalString = "hello"
 let paddedString = alignRight(originalString, 10, "-")
 // paddedString is equal to "-----hello"
 // originalString is still equal to "hello”
----
+```
 
 E o equivalente em Ruby seria:
 
@@ -75,7 +75,7 @@ def align_right(string, count, pad)
 end
 original_string = "hello"
 padded_string = align_right(original_string, 10, "-")
----
+```
 
 A primeira semelhança é que Swift possui "Ranges" como em Ruby embora a notação seja oposta. Usamos ".." em Ruby para um range que inclui ambos os números extremos e "..." (3 pontos) para não incluir o último número. Em Swift é o contrário.
 
@@ -102,7 +102,7 @@ default:
     naturalCount = "millions and millions of"
 }
 println("There are \(naturalCount) \(countedThings).")
----
+```
 
 Em Ruby é praticamente a mesma coisa:
 
@@ -120,7 +120,7 @@ else
   "millions and millions of"
 end
 puts "There are #{natural_count} #{counted_things}."
----
+```
 
 Swift e Ruby não precisam de "break" porque ele não cai para o próximo match. Ambos tem capacidade de comparar não só valores mas intervalos ou outros elementos. No caso, como Ruby tem return por default, não precisamos repetir a variável "natural_count" em cada ítem e o resultado geral do "case" vai para a única atribuição no topo.
 
@@ -133,7 +133,7 @@ if let roomCount = john.residence?.numberOfRooms {
     println("Unable to retrieve the number of rooms.")
 }
 // prints "Unable to retrieve the number of rooms.”
----
+```
 
 O "equivalente" em Ruby (se estivermos no Rails) seria:
 
@@ -143,7 +143,7 @@ if room_count = john.residence.try(:number_of_rooms)
 else
   puts "Unable to retrieve the number of rooms."
 end
----
+```
 
 Não é exatamente a mesma coisa. No Swift o "?" denota uma propriedade opcional e enviar uma mensagem a um objeto opcional devolve "nil". Na prática é quase a mesma coisa que o método [#try](http://guides.rubyonrails.org/active_support_core_extensions.html#try) do ActiveSupport do Rails.
 
@@ -163,7 +163,7 @@ println("One inch is \(oneInch) meters")
 let threeFeet = 3.ft
 println("Three feet is \(threeFeet) meters")
 // prints "Three feet is 0.914399970739201 meters”
----
+```
 
 Em Ruby podemos facilmente fazer a mesma coisa diretamente porque classes são sempre abertas:
 
@@ -180,7 +180,7 @@ one_inch = 25.4.mm
 puts "One inch is #{one_inch} meters"
 three_feet = 3.ft
 puts "Three feet is #{three_feet} meters"
----
+```
 
 Novamente, o resultado é similar mas os princípios são diferentes. A começar que no caso do Ruby estou abrindo a classe que é pai de todos os números, não só dos Floats (Doubles), caso contrário o segundo exemplo que é um Integer não funciona ("3.ft", teria que ser explicitamente "3.0.ft").
 
@@ -203,7 +203,7 @@ extension Int {
 // Hello!
 // Hello!
 // Hello!
----
+```
 
 E em Ruby já temos o equivalente ao método "repetitions" desta extension já implementada:
 
@@ -211,7 +211,7 @@ E em Ruby já temos o equivalente ao método "repetitions" desta extension já i
 3.times do
   puts "Hello!"
 end
----
+```
 
 Em particular veja que o Swift define um método que recebe uma função anônima, um bloco propriamente dito. Ele passa esse bloco entre chaves como parâmetro do método. É o equivalente no Ruby que passamos o bloco também entre chaves ou entre "do; end".
 
@@ -221,7 +221,7 @@ Outras coisas que lembram muito Ruby é como ele trata tipos de coleções:
 var shoppingList = ["Eggs", "Milk"]
 shoppingList += ["Chocolate Spread", "Cheese", "Butter"]
 shoppingList[4...6] = ["Bananas", "Apples"]
----
+```
 
 Esse trecho quase que inteiramente se converte em como Ruby lida com arrays:
 
@@ -229,7 +229,7 @@ Esse trecho quase que inteiramente se converte em como Ruby lida com arrays:
 shopping_list = ["Eggs", "Milk"]
 shopping_list += ["Chocolate Spread", "Cheese", "Butter"]
 shopping_list[4...6] = ["Bananas", "Apples"]
----
+```
 
 O mesmo pode-se dizer de dicionários do Swift que são semelhantes a Hash no Ruby:
 
@@ -239,7 +239,7 @@ airports["LHR"] = "London"
 for (airportCode, airportName) in airports {
     println("\(airportCode): \(airportName)")
 }
----
+```
 
 Em Ruby seria:
 
@@ -249,7 +249,7 @@ airports[:LHR] = "London"
 for airport_code, airport_name in airports
   puts "#{airport_code}: #{airport_name}"
 end
----
+```
 
 Em particular este último trecho, em Ruby, seria mais comumente escrito como:
 
@@ -257,7 +257,7 @@ Em particular este último trecho, em Ruby, seria mais comumente escrito como:
 airports.each do |airport_code, airport_name|
   puts "#{airport_code}: #{airport_name}"
 end
----
+```
 
 A diferença é que Swift inicializa dicionários com a mesma sintaxe de arrays, com colchetes. Em Ruby diferenciamos arrays com colchetes e hashes com chaves. Além disso é comum usar chaves como strings em Swift e Objective-C pois eles são imutáveis por padrão. Em Ruby strings são tecnicamente mutáveis e o equivalente a uma "string imutável" em Ruby são symbols. Ao ser interpolado dentro de uma string, um symbol automaticamente se converte em string.
 
@@ -270,7 +270,7 @@ println("The status code is \(statusCode)")
 // prints "The status code is 404"
 println("The status message is \(statusMessage)")
 // prints "The status message is Not Found”
----
+```
 
 Veja que podemos decompor um Tuple de volta em variáveis de maneira similar em Ruby:
 
@@ -279,7 +279,7 @@ http_404_error = [404, "Not Found"]
 status_code, status_message = http_404_error
 puts "The status code is #{status_code}"
 puts "The status message is #{status_message}"
----
+```
 
 ## Conclusão
 
@@ -313,6 +313,6 @@ for var i:CGFloat = 0; i < 2.0 + self.frame.size.width / ( skyTexture.size().wid
     sprite.runAction(moveSkySpritesForever)
     self.addChild(sprite)
 }
----
+```
 
 Não é nada do outro mundo, só precisa se acostumar com as APIs. A documentação da Apple é muito bem feita e fácil de usar.

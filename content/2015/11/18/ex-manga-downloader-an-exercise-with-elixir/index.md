@@ -56,7 +56,7 @@ defmodule ExMangaDownloadr.MangaReader.IndexPage do
     |> Enum.map fn {"a", [{"href", url}], _} -> url end
   end
 end
----
+```
 
 Here I am already exercising some of Elixir's awesome features such as pattern matching the result of the <tt>HTTPotion.get/2</tt> function to extract the body from the returning record.
 
@@ -88,13 +88,13 @@ defp process(manga_name, url, directory) do
     |> Workflow.compile_pdfs(manga_name)
     |> finish_process
 end
----
+```
 
 This is one place where the pipeline notation from Elixir really shines. It's much better than having to write this equivalent:
 
 --- ruby
 Workflow.compile_pdfs(Workflow.optimize_images(directory))
----
+```
 
 This notation is just syntatic sugar where the returning value of the previous statement is used as the first argument of the following function. Combine that with other syntatic sugars such as parenthesis being optional (just like beloved Ruby) and you have a clear exposure of "transforming from a URL into compiled PDFs".
 
@@ -107,7 +107,7 @@ def pages(chapter_list) do
     |> Enum.map(&(Task.await(&1, @http_timeout)))
     |> Enum.reduce([], fn {:ok, list}, acc -> acc ++ list end)
 end
----
+```
 
 If you're new to Elixir here you will find another oddity, this <tt>"&(x(&1))"</tt>, this is just a shortcut macro to this other similar statement:
 
@@ -117,7 +117,7 @@ Enum.map(fn (list) ->
     ChapterPage.pages(list)
   end)
 end)
----
+```
 
 [Enum](http://elixir-lang.org/docs/stable/elixir/Enum.html) is one of the most useful modules you need to master. If you come from Ruby it feels like home, you must learn all of its functions. You're usually having to transform one collection into another, so it's important to study it throughly.
 
@@ -127,7 +127,7 @@ Then there is this <tt>Task.async/await</tt> deal. If you're from a language tha
 
 Then, I ended up with a problem. If I just kept going like this, spawning hundreds of async HTTP calls, I quickly end up with this exception:
 
----
+```
 17:10:55.882 [error] Task #PID<0.2217.0> started from #PID<0.69.0> terminating
 ** (HTTPotion.HTTPError) req_timedout
     (httpotion) lib/httpotion.ex:209: HTTPotion.handle_response/1
@@ -137,7 +137,7 @@ Then, I ended up with a problem. If I just kept going like this, spawning hundre
     (stdlib) proc_lib.erl:240: :proc_lib.init_p_do_apply/3
 Function: #Function<12.106612505/0 in ExMangaDownloadr.Workflow.images_sources/1>
     Args: []
----
+```
 
 That's why there is <tt>@maximum_fetches 80</tt> at the top of the <tt>Workflow</tt> module, together with this other odd construction:
 
@@ -153,7 +153,7 @@ def images_sources(pages_list) do
       acc ++ result
     end)
 end
----
+```
 
 This gets a huge list (such as all the pages of a very long manga like Naruto), breaks it down to smaller 80 elements list and then proceed to fire up the asynchronous Tasks, reducing the results back to a plain List. The <tt>chunk/2</tt> private function just get the smaller size between the list length and the maximum fetches value.
 
@@ -172,21 +172,21 @@ defp normalize_metadata(image_src, image_alt) do
   page_number    = Enum.at(list, 0) |> String.rjust(5, ?0)
   {image_src, "#{title_name} #{chapter_number} - Page #{page_number}.#{extension}"}
 end
----
+```
 
 Once I have all the images, I spawn another external process using [Porcelain](https://github.com/alco/porcelain) to deal with shelling out to run ImageMagick's Mogrify and Convert tools to resize all the images down to 600x800 pixels (Kindle Voyage resolution) and pack them together into a PDF file. This results in PDF files with 250 pages and around 20Mb in size. Now it is just a matter of copying the files to my Kindle through USB.
 
 The ImageMagick code is quite boring, I just generate the commands in the following format for Mogrify:
 
----
+```
 "mogrify -resize #{@image_dimensions} #{directory}/*.jpg"
----
+```
 
 And compile the PDFs with this other command:
 
----
+```
 "convert #{volume_directory}/*.jpg #{volume_file}"
----
+```
 
 (By the way, notice the Ruby-like String interpolation we're used to.)
 
@@ -210,7 +210,7 @@ test "workflow tries to download the images" do
     end
   end
 end
----
+```
 
 ### Conclusion
 
@@ -218,7 +218,7 @@ This has been a very fun experience, albeit very short, and good enough to iron 
 
 --- ruby
 [destination_file|_rest] = String.split(file, "/") |> Enum.reverse
----
+```
 
 The way I can pattern match to extract the head of a list is a different way of thinking. Then there is the other most important way of thinking: everything is a transformation chain, an application is a way to start from some input argument (such as a URL) and go step by step to "transform" it into a collection of PDF files, for example.
 

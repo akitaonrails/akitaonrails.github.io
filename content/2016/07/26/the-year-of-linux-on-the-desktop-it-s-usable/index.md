@@ -44,11 +44,11 @@ Go 1.6 works. I just did a `go get` to install Martini and just ran the simple "
 
 Unfortunatelly, Elixir 1.3.1 crashes, I don't know why yet.
 
----
+```
 $ iex
 Crash dump is being written to: erl_crash.dump...done
 erl_child_setup closed
----
+```
 
 Actually, Erlang itself crashes by just trying to run `erl`. None of the Elixir tools work as a result. No iex, no mix. The funny thing is that it was working in the initial Preview. So either it's something in the new Preview or something in the newest Erlang releases. There are [open issues](https://github.com/Microsoft/BashOnWindows/issues?utf8=✓&q=is%3Aissue%20elixir) regarding this problem, so let's hope it gets fixed soon.
 

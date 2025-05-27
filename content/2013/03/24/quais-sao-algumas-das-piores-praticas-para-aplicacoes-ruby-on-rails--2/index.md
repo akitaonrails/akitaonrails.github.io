@@ -36,7 +36,7 @@ clients = Client.limit(10)
 clients.each do |client|
   puts client.address.postcode
 end
----
+```
 
 Esse código vai fazer 11 queries no banco. A primeira para buscar 10 clientes e depois no loop para buscar o endereço de cada cliente. Isso é tão óbvio que ninguém deveria estar caindo mais nisso. O correto é fazer:
 
@@ -46,7 +46,7 @@ clients = Client.includes(:address).limit(10)
 clients.each do |client|
   puts client.address.postcode
 end
----
+```
 
 Nesta versão já estamos puxando os endereços ao mesmo tempo que puxamos os clientes, em apenas 2 queries: uma para puxar os clientes e uma única pra puxar todos os endereços de todos os clientes. Não precisou escrever nenhum SQL na mão, bastou saber usar o ActiveRecord corretamente para cair de 11 para 2 queries.
 
@@ -54,14 +54,14 @@ Complementando e enfatizando: aprendam tudo sobre as as APIs do ActiveRecord e c
 
 ---ruby
 Subscription.all.select { |s| s.expired? }.each { |s| s.destroy }
----
+```
 
 Para ficar claro: isso **NÃO** é "usar as funcionalidades funcionais de Ruby". Isso é ser ignorante quanto bancos de dados e ORMs em geral. Só para ficar absolutamente claro, esse código deveria ser assim:
 
 ---ruby
 Subscription.where(expired: true).destroy_all
 Subscription.destroy_all(expired: true)
----
+```
 
 Lembrando que <tt>destroy</tt> permite chamar regras de negócio para cada objeto destruído e se usar <tt>delete</tt> é um comando simples SQL para apagar do banco apenas. Depende o que você pretende fazer ao destruir o objeto. Além disso o campo "expired" deveria ser um [escopo](http://guides.rubyonrails.org/active_record_querying.html#scopes) dentro do model. Como podem ver, uma simples linha pode ter múltiplas opções dependendo do que se pretende fazer. Novamente não tente ser mais esperto do que o ORM, ele provavelmente já tem tudo que você está imaginando, então não reinvente a roda e leia as APIs.
 

@@ -64,7 +64,7 @@ class Block
   end
 
 end
----
+```
 
 I know, right!?
 
@@ -89,7 +89,7 @@ Digest::SHA256.hexdigest("abcd")
 # => "88d4266fd4e6338d13b845fcf289579d209c897823b9217da3e161936f031589"
 Digest::SHA256.hexdigest("123")
 # => "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3"
----
+```
 
 It takes a **fraction of millisecond** to run.
 
@@ -101,7 +101,7 @@ For example:
 # I want to find 4 zeros ("0000") in the hash:
 Digest::SHA256.hexdigest("79026" + "123")
 # => "0000559fb4a55f135c7db3d83405b86b4b63cd035993873a5b676bae08b64334"
----
+```
 
 How do I know that I had to prepend "79026"? I don't, I have to start from 0 and incrementing one by one until I find the hash with the format I want.
 
@@ -125,14 +125,14 @@ def calc_hash_with_nonce( nonce=0 )
   sha.update( nonce.to_s + "123" )
   sha.hexdigest
 end
----
+```
 
 Just a simple SHA256 takes somewhere between 0.000010 to 0.000020 seconds (remember: fractions of milliseconds). Now how long does it take to find that "79026" (which we call a "nonce")?
 
----
+```
 > puts Benchmark.measure { compute_hash_with_proof_of_work("0000") }
   0.190000   0.000000   0.190000 (  0.189615)
----
+```
 
 Yep, considerably more, now it takes 0.18 seconds instead of 0.000020. We can increase the "difficult" variable to make it even more laborious to find the nonce. And that's exactly how Bitcoin is implemented: each block adjusts the difficult so the fastest one can take to find the hash for the next block is around 10 minutes.
 

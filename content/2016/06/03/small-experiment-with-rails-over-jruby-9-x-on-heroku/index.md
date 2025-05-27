@@ -101,7 +101,7 @@ group :production do
   gem 'memcachier'
   gem 'newrelic_rpm'
 end
----
+```
 
 Notice how I paired gems for the `:ruby` and `:jruby` platforms. After doing this change and `bundle install` everything, I ran my Rspec suite and - fortunatelly - they all passed on the first run without any further changes! Your mileage will vary depending on the complexity of your application, so have your tests ready.
 
@@ -128,7 +128,7 @@ on_worker_boot do
   # See: https://devcenter.heroku.com/articles/deploying-rails-applications-with-the-puma-web-server#on-worker-boot
   ActiveRecord::Base.establish_connection
 end
----
+```
 
 It's a bit different than you might find in other documentations. The important part is to turn off workers and preload_app when loading over JRuby. It will complain and crash. On my original MRI deploy I am using a small 1X dyno and I can leave `WEB_CONCURRENCY=2` and `RAILS_MAX_THREADS=5` but on the JRuby deploy I set it to `WEB_CONCURRENCY=1` (to turn off workers) and `RAILS_MAX_THREADS=16` (because I am assuming JRuby can handle more multithreading than MRI).
 
@@ -148,13 +148,13 @@ I tried to use the [Boom](https://github.com/rakyll/boom) tool to benchmark the 
 
 I am running this test:
 
----
+```
 $ boom -n 200 -c 50 http://foo-my-site/
----
+```
 
 The MRI version performs like this:
 
----
+```
 Summary:
   Total:    16.4254 secs
   Slowest:  9.0785 secs
@@ -189,11 +189,11 @@ Latency distribution:
   95% in 5.6727 secs
   99% in 8.1567 secs
 
----
+```
 
 And the JRuby version performs like this:
 
----
+```
 Summary:
   Total:    15.5784 secs
   Slowest:  7.4106 secs
@@ -227,13 +227,13 @@ Latency distribution:
   90% in 3.7409 secs
   95% in 4.2556 secs
   99% in 6.7685 secs
----
+```
 
 In general, I'd say that they are around the same. As this is not a particularly CPU-intensive processing, and most of the time is spent going through the Rails stack and hitting Memcachier to pull back the same content all the time, maybe it's only fair to expect similar results.
 
 On the other hand, I'm not sure I'm using the tool in the best way possible. The log says something like this for every request:
 
----
+```
 source=rack-timeout id=c8ad5f0c-b5c1-47ec-b88b-3fc597ab01dc wait=29ms timeout=20000ms state=ready
 Started GET "/" for XXX.35.10.XXX at 2016-06-03 18:54:34 +0000
 Processing by HomeController#home as HTML
@@ -248,7 +248,7 @@ Read fragment views/radiant-XXXX-XXXXX.herokuapp.com/en (6.0ms)
 Completed 200 OK in 9ms (ActiveRecord: 0.0ms)
 source=rack-timeout id=a5389dc4-9a1a-46b7-a1e5-53f334ca0941 wait=35ms timeout=20000ms service=21ms state=completed
 at=info method=GET path="/" host=radiant-XXXX-XXXXX.herokuapp.com request_id=a5389dc4-9a1a-46b7-a1e5-53f334ca0941 fwd="XXX.35.10.XXX" dyno=web.1 connect=1ms service=38ms status=200 bytes=144608
----
+```
 
 The times reported by the Boom tool are much larger (2 seconds?) than the processing times in the logs (10ms?). Even considering some overhead for the router and so on, still it's a big difference, I wonder if it's being queued for too long because the app is not being able to respond more of the concurrent requests.
 

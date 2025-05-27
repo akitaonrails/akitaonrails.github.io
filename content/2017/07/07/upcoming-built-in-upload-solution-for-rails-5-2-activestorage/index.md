@@ -65,9 +65,9 @@ A caveat is that if you have cloud storage and an asynchronous job transformatio
 
 The other solution is to do no processing whatsoever and defer the processing to be on-demand. This is what 3rd party [Cloudinary/Attachinary](http://cloudinary.com/documentation/image_transformations) does and you can do custom transformations using URI parameters. It will make the transformation once and cache the results for future usage. An example of a Cloudinary image transformation URL looks like this:
 
----
+```
 http://res.cloudinary.com/demo/image/upload/w_400,h_400,c_crop,g_face,r_max/w_200/lady.jpg
----
+```
 
 This is also what you get if you implement [Refile](https://github.com/refile/refile) or [Shrine](https://github.com/janko-m/shrine). It adds a Rack endpoint to your Rails application that will fetch the image binary, perform the transformation according to the parameters received in the URI, and cache the transformation before sending the binary.
 

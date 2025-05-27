@@ -30,7 +30,7 @@ Rails.application.routes.draw do
   # Serve websocket cable requests in-process
   mount ActionCable.server => '/cable'
 end
----
+```
 
 This is the main server component, the channel:
 
@@ -49,7 +49,7 @@ class RoomChannel < ApplicationCable::Channel
     Message.create! content: data['message']
   end
 end
----
+```
 
 Then you have the boilerplace Javascript:
 
@@ -61,7 +61,7 @@ Then you have the boilerplace Javascript:
 #
 @App ||= {}
 App.cable = ActionCable.createConsumer()
----
+```
 
 And the main client-side Websocket hooks:
 
@@ -85,7 +85,7 @@ $(document).on "keypress", "[data-behavior~=room_speaker]", (event) ->
     App.room.speak event.target.value
     event.target.value = ''
     event.preventDefault()
----
+```
 
 The view template is a bare bone HTML just to hook a simple form and div to list the messages:
 
@@ -101,7 +101,7 @@ The view template is a bare bone HTML just to hook a simple form and div to list
   <label>Say something:</label><br>
   <input type="text" data-behavior="room_speaker">
 </form>
----
+```
 
 <a name="the-problem"></a>
 
@@ -117,7 +117,7 @@ class RoomChannel < ApplicationCable::Channel
     Message.create! content: data['message']
   end
 end
----
+```
 
 I would say that anything that goes inside the channel should be asynchronous!
 
@@ -127,7 +127,7 @@ To add harm to injury, this is what you have in the "Message" model itself:
 class Message < ApplicationRecord
   after_create_commit { MessageBroadcastJob.perform_later self }
 end
----
+```
 
 A model callback (avoid those as the plague!!) to broadcast the received messsage to the subscribed Websocket clients as an ActiveJob that looks like this:
 
@@ -145,7 +145,7 @@ class MessageBroadcastJob < ApplicationJob
     ApplicationController.renderer.render(partial: 'messages/message', locals: { message: message })
   end
 end
----
+```
 
 It renders the HTML snippet to send back for the Websocket clients to append to their browser DOMs.
 
@@ -168,7 +168,7 @@ First of all, if at all possible you want your channel code to block as little a
 +    MessageBroadcastJob.perform_later data['message']
    end
  end
----
+```
 
 Then, we move the model writing to the Job itself:
 
@@ -184,7 +184,7 @@ Then, we move the model writing to the Job itself:
 +    ActionCable.server.broadcast 'room_channel', message: render_message(message)
    end
    ...
----
+```
 
 And finally, we remove that horrible callback from the model and make it bare-bone again:
 
@@ -192,7 +192,7 @@ And finally, we remove that horrible callback from the model and make it bare-bo
 # app/models/message.rb
 class Message < ApplicationRecord
 end
----
+```
 
 This returns quickly, defer processing to a background job and should sustain more concurrency out-of-the-box. The previous, DHH solution, have a built-in bottleneck in the speak method and will choke as soon as the database becomes the bottleneck.
 

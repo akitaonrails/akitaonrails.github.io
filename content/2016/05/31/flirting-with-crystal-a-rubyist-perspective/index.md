@@ -78,7 +78,7 @@ func main() {
     pong(pings, pongs)
     fmt.Println(<-pongs)
 }
----
+```
 
 And this is mostly the same thing but implemented in Crystal:
 
@@ -98,7 +98,7 @@ spawn ping pings, "passed message"
 spawn pong pings, pongs
 puts pongs.receive
 # => "passed message"
----
+```
 
 Same thing, but more pleasant to my eyes, again a personal opinion - which is expected if you're also a Rubyist.
 
@@ -123,7 +123,7 @@ Crystal is a statically typed language. But it won't require you to declare ever
 --- ruby
 a = 1
 b = "HELO"
----
+```
 
 It will know that "a" is an "Int32" and that "b" is a "String". By the way, contrary to Ruby, all Strings must be double-quoted. But it becomes particularly more complicated when you're dealing with complicated data structures such as JSON.
 
@@ -131,7 +131,7 @@ In Ruby I can just parse a JSON String and immediatelly explore its structure li
 
 --- ruby
 parsed_json = JSON.parse(response.body)["files"].first["id"]
----
+```
 
 I can't do this in Crystal, instead the [recommended approach](http://crystal-lang.org/api/JSON.html#mapping%28properties%2Cstrict%3Dfalse%29-macro) is to declare a schema-like structure like this:
 
@@ -155,7 +155,7 @@ end
 ...
 # parsed_json = JSON.parse(response.body)["files"].first["id"]
 parsed_json = FilesResponse.from_json(@body).files.first.id
----
+```
 
 I am very used to Ruby's duck typing and the ability to query objects in runtime. It's just not the same in Crystal and it can become quite tedious to change your mindset to think about types beforehand. The compiler will scream a hell of a lot during your development cycle until you become acquainted with this concept.
 
@@ -190,7 +190,7 @@ obj = JSON.parse(data)
 obj["files"].each do |item|
   puts item["id"].as_i
 end
----
+```
 
 So yeah, JSON parsing can be almost identical to what you would do with Ruby, although he also recommends Schemas as it's a bit faster anyway.
 
@@ -227,7 +227,7 @@ end
 
 Bar.hello # => "Bar"
 Something.hello # => "HELLO"
----
+```
 
 It feels like having "ERB" templates but for code. A macro is code building code in compile time. In the resulting AST it's as if you wrote the boring repetitive code yourself. The compiled native binary doesn't care. If you're from C it's like pre-processing but having control of an AST tree of Nodes instead of just manipulating the source code. You can even have something akin to the venerable "#method_missing".
 
@@ -242,11 +242,11 @@ Foo.new.hello_world
 # => name = "hello_world"
 Foo.new.bla_bla("bla")
 # => name = "bla_bla"
----
+```
 
 Any macro function can receive an AST as the argument and you can manipulate this AST in any way as you see fit. For example:
 
----
+```
 module Foo
   macro teste(ast)
     puts {{ast.stringify}}
@@ -255,7 +255,7 @@ end
 
 Foo.teste "Hello World".split(" ").join(" - ")
 # => ("Hello World".split(" ")).join(" - ")
----
+```
 
 In this example you just get a normalized version of the code you passed as argument. And the code won't be "executed" at that location.
 
@@ -268,7 +268,7 @@ result = pipe "Hello World"
   .>> Bar.add_something
   .>> Foo.join
   .>> unwrap
----
+```
 
 (Yes, a subset of what a real Elixir Pipe can do.)
 
@@ -278,20 +278,20 @@ Finally, one aspect I like about Crystal is that it has task management and depe
 
 You can just write a simple script into a file such as "test.cr" and run this file like this:
 
----
+```
 crystal test.cr
----
+```
 
 Or, you can build and compile to a native binary before executing like this:
 
----
+```
 crystal build test.cr --release
 ./test
----
+```
 
 And you can also start in a proper project structure and development lifecycle like this:
 
----
+```
 crystal init app test
 cd test
 crystal build src/test.cr --release
@@ -299,7 +299,7 @@ crystal build src/test.cr --release
 git add .
 git commit -m "initial commit"
 git push -u origin master
----
+```
 
 It sets up a proper project directory structure, a Git repository is pre-initialized for you (why would you be programming without Git!?) with proper ".gitignore" file.
 
@@ -318,19 +318,19 @@ dependencies:
     version: 0.3.3
 author:
   - Serdar Dogruyol <dogruyolserdar@gmail.com>
----
+```
 
 This example is from the [Kemal web framework](https://github.com/sdogruyol/kemal) by Serdar. It depends on the Radix and Kilt libraries. You must run `crystal deps` and it will fetch from Github before you can compile.
 
 More than that: every project receives a proper "spec" directory where you can write Rspec-like tests and you can run them using `crystal spec`. And the spec runner results will look like this:
 
----
+```
 $ crystal spec
 ........................................................
 
 Finished in 8.28 milliseconds
 56 examples, 0 failures, 0 errors, 0 pending
----
+```
 
 All built-in, no external libraries needed.
 

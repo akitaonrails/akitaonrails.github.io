@@ -13,11 +13,11 @@ draft: false
 
 I thought [Part 2](http://www.akitaonrails.com/2015/11/19/ex-manga-downloadr-part-2-poolboy-to-the-rescue) would be my last article about this tool, but turns out its just too much fun to let it go easily. As usual, all the source code is on my [Github repository](https://github.com/akitaonrails/ex_manga_downloadr). And the gist of the post is that now you can do this:
 
----
+```
 git pull
 mix escript.build
 ./ex_manga_downloadr -n onepunch -u http://mangafox.me/manga/onepunch_man/ -d /tmp/onepunch -s mangafox
----
+```
 
 And there you go: download from Mangafox built-in! \o/
 
@@ -32,7 +32,7 @@ defp fetch_chapters(html) do
   Floki.find(html, "#listing a")
   |> Enum.map fn {"a", [{"href", url}], _} -> url end
 end
----
+```
 
 And this is the same thing but for Mangafox:
 
@@ -42,7 +42,7 @@ defp fetch_chapters(html) do
   |> Floki.find(".chlist a[class='tips']")
   |> Enum.map fn {"a", [{"href", url}, {"title", _}, {"class", "tips"}], _} -> url end
 end
----
+```
 
 Exactly the same logic but the pattern matching structure is different because the returning HTML DOM nodes are different.
 
@@ -58,7 +58,7 @@ def gunzip(body, headers) do
     body
   end
 end
----
+```
 
 I would've preferred if HTTPotion did that out of the box for me (#OpportunityToContribute!), but this was easy enough.
 
@@ -85,7 +85,7 @@ defmodule PoolManagement.Worker do
   end
   ...
 end
----
+```
 
 That "<tt>use ExMangaDownloadr.MangaReader</tt>" statement up above is just a macro that will alias the corresponding modules:
 
@@ -99,7 +99,7 @@ defmodule ExMangaDownloadr.MangaReader do
     end
   end
 end
----
+```
 
 So when I call "<tt>ChapterPages.pages(chapter_link)</tt>" it's a shortcut to use the fully qualified module name like this: "<tt>ExMangaDownloadr.MangaReader.ChapterPages.pages(chapter_link)</tt>".
 
@@ -114,7 +114,7 @@ defmodule Foo do
     end
   end
 end
----
+```
 
 You can just call "<tt>Foo.Bar.Xyz.teste()</tt>" and that's it. But there is a small trick. Elixir also transparently prefixes the full module name with "Elixir". So in reality, the full module name is "Elixir.Foo.Bar.Xyz", in order to make sure no Elixir module ever conflicts with an existing Erlang module.
 
@@ -127,7 +127,7 @@ def manga_source(source, module) do
     "mangafox"    -> String.to_atom("Elixir.ExMangaDownloadr.Mangafox.#{module}")
   end
 end
----
+```
 
 This is how I map from "mangafox" to the new "ExMangaDownloadr.Mangafox." namespace. And because of the dynamic, message passing nature of Elixir, I can replace this code:
 
@@ -135,7 +135,7 @@ This is how I map from "mangafox" to the new "ExMangaDownloadr.Mangafox." namesp
 def handle_call({:chapter_page, chapter_link}, _from, state) do
   {:reply, ChapterPages.pages(chapter_link), state}
 end
----
+```
 
 With this:
 
@@ -146,7 +146,7 @@ def handle_call({:chapter_page, chapter_link, source}, _from, state) do
     |> apply(:pages, [chapter_link])
   {:reply, links, state}
 end
----
+```
 
 I can now choose between the "Elixir.ExMangaDownloadr.Mangafox.ChapterPage" or "Elixir.ExMangaDownloadr.MangaReader.ChapterPage" modules, call the <tt>pages/1</tt> function and send the same argument as before. I just have to make sure I can receive a "source" string from the command line now, so I change the CLI module like this:
 
@@ -162,7 +162,7 @@ defp parse_args(args) do
     {_, _, _ } -> process(:help)
   end
 end
----
+```
 
 Compared to the previous version I just added the "<tt>:source</tt>" string argument to the OptionParser and passed the captured value to <tt>process/4</tt>. I should add some validation here to avoid strings different than "mangareader" or "mangafox", but I will leave that to another time.
 
@@ -173,7 +173,7 @@ And in the Workflow module, instead of starting from just the manga URL, now I h
   |> Workflow.chapters
   |> Workflow.pages
   |> Workflow.images_sources
----
+```
 
 Which means that each of the above functions have to not only return the new URL lists but also pass through the source:
 
@@ -184,25 +184,25 @@ def chapters([url, source]) do
     |> apply(:chapters, [url])
   [chapter_list, source]
 end
----
+```
 
 This was the only function in the Workflow module hardcoded to MangaReader so I also make it dynamic using the same <tt>manga_source/2</tt> function from the Worker, and notice the return value being "<tt>[chapter_list, source]</tt>" instead of just "<tt>chapter_list</tt>".
 
 And now, I can finally test with "<tt>mix test</tt>" and create the new executable command line binary with "<tt>mix escript.build</tt>" and run the new version like this:
 
----
+```
 ./ex_manga_downloadr -n onepunch -u http://mangafox.me/manga/onepunch_man/ -d /tmp/onepunch -s mangafox
----
+```
 
 The Mangafox site is very unreliable to several concurrent connections and it quickly timeout sometimes, dumping ugly errors like this:
 
----
+```
 15:58:46.637 [error] Task #PID<0.2367.0> started from #PID<0.124.0> terminating
 ** (stop) exited in: GenServer.call(#PID<0.90.0>, {:page_download_image, {"http://z.mfcdn.net/store/manga/11362/TBD-053.2/compressed/h006.jpg", "Onepunch-Man 53.2: 53rd Punch [Fighting Spirit] (2) at MangaFox.me-h006.jpg"}, "/tmp/onepunch"}, 1000000)
     ** (EXIT) an exception was raised:
         ** (HTTPotion.HTTPError) connection_closing
             (httpotion) lib/httpotion.ex:209: HTTPotion.handle_response/1
----
+```
 
 I did not figure out how to retry HTTPotion requests properly yet. But one small thing I did was add an availability check in the Worker module. So you can just re-run the same command line and it will resume downloading only the remaining files:
 
@@ -224,7 +224,7 @@ defp download_image({image_src, image_filename}, directory) do
     end
   end
 end
----
+```
 
 This should at least reduce rework. Another thing I am still working on is this other bit at the main "CLI.process" function:
 
@@ -248,7 +248,7 @@ defp process(manga_name, url, directory, source) do
     |> Workflow.compile_pdfs(manga_name)
     |> finish_process
 end
----
+```
 
 As you can see the idea is to serialize the final images URL links to a file using the built-in serializer "<tt>:erlang.binary_to_term/1</tt>" and check if that dump file exists, and deserialize with "<tt>:erlang.term_to_binary/1</tt>"  before fetching all pages all over again. Now the process can resume directly from the <tt>process_downloads/2</tt> function after.
 
@@ -263,7 +263,7 @@ If I downgrade from 50 process to 5 in the pool, it seems to be able to handle i
       size: 5,
       max_overflow: 0
     ]
----
+```
 
 If you see time out errors, change this parameter. MangaReader still supports 50 or more for concurrency.
 

@@ -21,7 +21,7 @@ If you just want to clone the exercises and jump right into the code itself, I h
 
 Without further ado, let's start comparing the basic console commands:
 
----
+```
 rails new pxblog
 rails g scaffold Post title:string body:string
 rails g scaffold User username:string email:string password_digest:string
@@ -29,9 +29,9 @@ rake db:create
 rake db:migrate
 rails g migration AddUserIdToPosts
 rails server
----
+```
 
----
+```
 mix phoenix.new pxblog
 mix phoenix.gen.html Post posts title:string body:string
 mix phoenix.gen.html User users username:string email:string password_digest:string
@@ -40,13 +40,13 @@ mix ecto.migrate
 mix ecto.gen.migration add_user_id_to_posts
 mix phoenix.server
 # iex -S mix phoenix.server to start within IEx and be able to IEx.pry
----
+```
 
 Right off the bat we feel at home. In the Rails world we have both the <tt>rails</tt> command competing with traditional <tt>rake</tt> task managers. At the Phoenix side, they fortunatelly concentrated everything under the Elixir built-in <tt>mix</tt> command. There seems to be discussions for the Rails command tasks to be moved to Rake where they belong, but it's not coming soon.
 
 As it is all under Mix territory, you can list Phoenix related tasks like this:
 
----
+```
 $ mix help | grep -i phoenix
 
 mix phoenix.digest      # Digests and compress static files
@@ -58,11 +58,11 @@ mix phoenix.gen.secret  # Generates a secret
 mix phoenix.new         # Create a new Phoenix v1.0.3 application
 mix phoenix.routes      # Prints all routes
 mix phoenix.server      # Starts applications and their servers
----
+```
 
 The directory structure that <tt>phoenix.new</tt> generates is slightly different from Rails though:
 
----
+```
 /_build              # binary stuff mix compiles (ignore)
 /config
 - config.exs         # think Rails' /config/application.rb
@@ -113,7 +113,7 @@ The directory structure that <tt>phoenix.new</tt> generates is slightly differen
 - brunch-config.js  # front-end dev reloading is controlled with Brunch
 - mix.exs           # think Ruby's Gemfile (with extras)
 - package.json      # Node.js dependencies
----
+```
 
 In Rails, the starting point is the <tt>config.ru</tt> Rackup application (as Rails became a Rack app since 3.0). It then load the <tt>config/environment.rb</tt>, then <tt>config/application.rb</tt>, then <tt>config/boot.rb</tt> which loads the gems declared in the <tt>Gemfile</tt>, together with <tt>config/initializers/*.rb</tt> and each file in <tt>config/environments</tt> we setup the Rails::Application and plug in configuration, the pipeline of Rack Middlewares.
 
@@ -149,7 +149,7 @@ defmodule Pxblog.Router do
   use Pxblog.Web, :router
   ...
 end
----
+```
 
 This <tt>Pxblog.Web</tt> module is defined in the <tt>web/web.ex</tt> like this:
 
@@ -180,7 +180,7 @@ defmodule Pxblog.Web do
     apply(__MODULE__, which, [])
   end
 end
----
+```
 
 If you haven't yet, this is a good time to learn about [Elixir Macros](http://elixir-lang.org/getting-started/meta/macros.html). Think of the code in the <tt>quote</tt> block as being "injected" in each module that calls <tt>use Pxblog.Web</tt>. When you <tt>use</tt> a module it calls the <tt>__using__</tt> macro. Think of it like a Ruby Module Mixin calling the <tt>included</tt> callback and executing a <tt>class_eval</tt>. As there is no concept of Classes and subclasses, we include mixins in each class to acquire the desired behaviours.
 
@@ -220,7 +220,7 @@ defmodule Pxblog.Router do
   #   pipe_through :api
   # end
 end
----
+```
 
 You have to read it like this:
 
@@ -239,7 +239,7 @@ Also similar to Rails Routes, it generates proper URL helpers that become availa
 <%= link_to 'Show', [@user, post] %>
 <%= link_to 'Edit', edit_user_post_path(@user, post) %>
 <%= link_to 'Destroy', [@user, post], method: :delete, data: { confirm: 'Are you sure?' } %>
----
+```
 
 And in Phoenix:
 
@@ -248,7 +248,7 @@ And in Phoenix:
 <%= link "Show", to: user_post_path(@conn, :show, @user, post) %>
 <%= link "Edit", to: user_post_path(@conn, :edit, @user, post) %>
 <%= link "Delete", to: user_post_path(@conn, :delete, @user, post), method: :delete, data: [confirm: "Are you sure?"] %>
----
+```
 
 The main URL helper in Rails is able to get an Array such as <tt>[@user, post]</tt> and execute it the same way as if we wrote <tt>user_post_path(@user, post)</tt>. One difference from Rails is that instead of creating one helper for each HTTP verb you have just one helper per resource that accepts an extra parameter to indicate the verb. So we have <tt>post_path(@conn, :edit, post)</tt> instead of the Rails way of <tt>edit_post_path(post)</tt>.
 
@@ -268,7 +268,7 @@ defmodule Pxblog.PostController do
   plug :scrub_params, "post" when action in [:create, :update]
   plug :assign_user
   plug :authorize_user when action in [:new, :create, :update, :edit, :delete]
----
+```
 
 It's similar to this Rails controller setup:
 
@@ -277,7 +277,7 @@ It's similar to this Rails controller setup:
 class PostsController < ApplicationController
   before_action :assign_user
   before_action :authorize_user, only: [:new, :create, :update, :edit, :destroy]
----
+```
 
 As you may have concluded, a <tt>plug</tt> call works a bit like a <tt>before_action</tt> pipeline. The <tt>scrub_params</tt> I believe is similar Rails' <tt>ActionDispatch::ParamParser</tt>, but I'm not sure, I know it clears out empty string values into nils so you don't update your models unnecessarily.
 
@@ -295,7 +295,7 @@ defp assign_user(conn, _) do
     |> halt()
   end
 end
----
+```
 
 In Phoenix, everything revolves around a request connection transformation pipeline that you can start configuring in the Router Plugs, Controller Plugs and Controller actions. All of them receive the connection from the previous step and returns a transformed connection to the next step until it becomes a proper HTTP response. Unlike Rails, this path is much more explicit and you know that you will get this connection and you should pipe transformations through it until you render the final HTML or send back some error header.
 
@@ -310,7 +310,7 @@ def destroy
     format.json { head :no_content }
   end
 end
----
+```
 
 Once upon a time, setting the flash notice message and redirecting were 2 different methods, new versions merged them together for convenience. Rails also has the concept of Responders, which Phoenix doesn't have yet (#OpportunityToContribute!).
 
@@ -322,7 +322,7 @@ def delete(conn, %{"id" => id}) do
   |> put_flash(:info, "User deleted successfully.")
   |> redirect(to: user_path(conn, :index))
 end
----
+```
 
 You can see that, Responsers aside, the Phoenix version is **remarkably** similar. And it goes like this for all Restful actions of the controller. But more similar to the deceased Merb, each Phoenix Controller action has a proper function signature declaring the parameters it expect to receive instead of having a global <tt>params</tt> hash that needs to go through the [Strong Parameters](https://github.com/rails/strong_parameters).
 
@@ -343,7 +343,7 @@ defmodule Pxblog.SessionController do
   end
   ...
 end
----
+```
 
 Here we have the same <tt>create/2</tt> function with pattern matching and guards. The second version receives anything, in case the first version fails to pattern match against the incoming parameters. Phoenix expects roughly the same structure of parameters as Rails, so it's very intuitive to follow.
 
@@ -365,7 +365,7 @@ class User < ActiveRecord::Base
   validates :username, presence: true
   validates :email, presence: true
 end
----
+```
 
 In Rails we have the [<tt>ActiveSupport#has_secure_password</tt>](http://api.rubyonrails.org/classes/ActiveModel/SecurePassword/ClassMethods.html) which uses BCrypt underneath to generate a proper password digest. If you're building authentication from scratch you **must** use this construct.
 
@@ -392,7 +392,7 @@ defmodule Pxblog.User do
   end
   ...
 end
----
+```
 
 The first part of Ecto Models declare the database fields, virtual fields and associations. Rails ActiveRecord prefer the approach of asking the database to send the table metadata and use metaprogramming to create all the fields later in runtime. Many people dislike this approach and this is the alternative: explicit declaration.
 
@@ -407,7 +407,7 @@ defmodule Pxblog.User do
   @optional_fields ~w()
   ...
 end
----
+```
 
 Here we have declare required fields, this is just a variable with a list of fields not the validations themselves. This will be used in the next step to accomplish something similar to <tt>validates :username, presence: true</tt>. 
 
@@ -421,7 +421,7 @@ defmodule Pxblog.User do
   end
   ...
 end
----
+```
 
 Instead of doing something like <tt>Post.create(params)</tt> we first create a changeset and then pass it to the Ecto main Repository. The Repository is then responsible for the persistence part. The Ecto Model is responsible for validating and cleaning up the changeset that the Repository receives.
 
@@ -441,7 +441,7 @@ defmodule Pxblog.User do
     end
   end
 end
----
+```
 
 And we return the transformed changeset so the pipeline can pick it up and pass to other plugs, such as validations. If we wanted to add more validations we could do it like this:
 
@@ -459,7 +459,7 @@ defmodule Pxblog.User do
   end
   ...
 end
----
+```
 
 There you go. And in the controller, the <tt>update/2</tt> function, for example, will use the changeset like this:
 
@@ -470,7 +470,7 @@ def update(conn, %{"id" => id, "user" => user_params}) do
   case Repo.update(changeset) do
   ...
 end
----
+```
 
 In the second line we use the Repository to query the 'users' schema as declared in the <tt>User</tt> model.
 
@@ -489,7 +489,7 @@ def edit(conn, %{"id" => id}) do
   changeset = User.changeset(user)
   render(conn, "edit.html", user: user, changeset: changeset)
 end
----
+```
 
 This first calls the <tt>web/views/user.ex</tt> which import stuff like helpers, transforms the <tt>user</tt> and <tt>changeset</tt> variables into [module attributes](http://elixir-lang.org/getting-started/module-attributes.html) (the ones starting with "@" if you've been wondering what those are). And the View knows to find the <tt>edit.html</tt> template at <tt>web/templates/user/edit.html.eex</tt> because it says so in <tt>web/web.ex</tt>:
 
@@ -512,7 +512,7 @@ defmodule Pxblog.Web do
   end
   ...
 end
----
+```
 
 I did not copy and paste all the other macros in <tt>web/web.ex</tt> but check them out to see what models, controllers, router, channel import in each module you create.
 
@@ -527,7 +527,7 @@ In Rails we have the default ERB for "Embedded Ruby" and in Phoenix we have "EEX
 
 <%= link 'Back', to: user_path(@conn, :show, @user) %> |
 <%= link "Back", to: user_path(@conn, :index) %>
----
+```
 
 Which is very similar to the equivalent <tt>edit.html.erb</tt> in Rails:
 
@@ -539,7 +539,7 @@ Which is very similar to the equivalent <tt>edit.html.erb</tt> in Rails:
 
 <%= link_to 'Show', @user %> |
 <%= link_to 'Back', users_path %>
----
+```
 
 The Phoenix version is slightly more verbose in order to not hide too much as Rails does. One can argue if more or less magic makes it more productive or not, but the Phoenix version being more explicit leaves a trail of breadcrumbs that is easier to follow, specially if you're just getting started. Here we have no concept of "partials", every template can render any other template, we just need to pass through the necessary variable for the template to function. But instead of passing a model instance we are passing a changeset.
 
@@ -564,7 +564,7 @@ The "form.html" template is also very similar, let's check out the Phoenix versi
     <%= text_input f, :username, class: "form-control" %>
   </div>
   ...
----
+```
 
 And now the Rails ERB version:
 
@@ -588,7 +588,7 @@ And now the Rails ERB version:
     <%= f.text_field :username %>
   </div>
   ...
----
+```
 
 Remarkably similar. There are language specific stuff like having <tt>label(f, :username)</tt> instead of <tt>f.label :username</tt>. Because in Elixir the parenthesis are also optional and because Phoenix implements helpers that are very similar to the Rails version, like "form_for", we feel very comfortable very fast.
 
@@ -607,7 +607,7 @@ defmodule Pxblog.LayoutView do
     Plug.Conn.get_session(conn, :current_user)
   end
 end
----
+```
 
 Which is almost the same as <tt>app/helpers/application.rb</tt> in Rails:
 
@@ -618,7 +618,7 @@ module ApplicationHelper
     session[:current_user]
   end
 end
----
+```
 
 Finally, Phoenix default scaffolding already brings in Bootstrap so it looks much nicer than the 10 years old "scaffold.css" that Rails generates by default. There are many gems that override that though.
 
@@ -650,7 +650,7 @@ defmodule Pxblog.PostTest do
     refute changeset.valid?
   end
 end
----
+```
 
 And the same unit tests in Rails:
 
@@ -674,7 +674,7 @@ class PostTest < ActiveSupport::TestCase
     refute post.valid?
   end 
 end
----
+```
 
 Remarkably similar. For the test data, in Phoenix we are using simple Elixir's module attributes, in Rails we put in the setup step to create instance variables. They are not the same thing, but the result is similar. Again, in Rails we test the model, in Phoenix we test the changeset.
 
@@ -706,7 +706,7 @@ defmodule Pxblog.SessionControllerTest do
   end
   ...
 end
----
+```
 
 The Rails controller test is getting the data from a Fixture, that's why the setup is shorter:
 
@@ -731,7 +731,7 @@ class SessionsControllerTest < ActionController::TestCase
     assert_redirected_to user_posts_path(@user)
   end
   ...
----
+```
 
 But as I said before, Phoenix implements similar helpers, so it's very straight forward to port from Rails to Phoenix here.
 

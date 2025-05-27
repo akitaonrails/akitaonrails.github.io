@@ -89,7 +89,7 @@ As principais APIs que você precisará saber que mudou (mas que a versão antig
 gem 'prototype'
 gem 'prototype-ujs'
 gem 'prototype_legacy_helper', :git => 'git://github.com/rails/prototype_legacy_helper.git'
----
+```
 
 Isso vai fazer tudo funcionar como era antes. Mas não se engane, se sua aplicação tiver um volume grande de RJS você terá realmente que reescrever praticamente metade da sua aplicação na parte mais visível para o usuário: as telas. Vale a pena gastar um tempo avaliando esse aspecto.
 
@@ -122,7 +122,7 @@ link_to_remote "Delete this post", :update => "posts",
 
 # Rails 3.x
 link_to "Delete this post", post_path(post), :method => :destroy, :remote => true
----
+```
 
 Leiam com muito cuidado meu tutorial sobre como usar Asset Pipeline, [Parte 1](http://www.akitaonrails.com/2012/07/01/asset-pipeline-para-iniciantes) e [Parte 2](http://www.akitaonrails.com/2012/07/01/asset-pipeline-para-iniciantes-parte-2). Assumindo que você já leu, praticou e entendeu o básico, os passos são "simples" embora sejam manualmente trabalhosos e exijam atenção e concentração para não se perder:
 
@@ -137,7 +137,7 @@ Leiam com muito cuidado meu tutorial sobre como usar Asset Pipeline, [Parte 1](h
 //= require dragdrop
 //= require controls
 //= require menu
----
+```
 
 * agora modifique toda URL que não é gerada por helpers e que tem caminhos como <tt>/images</tt> para <tt>/assets</tt>;
 * para facilitar renomeie todos os stylesheets para serem <tt>.css.scss</tt> e agora substitua toda URL para assets como <tt>url("../images/glyphicons.png")</tt> para <tt>image-url("glyphicons.png")</tt> e o SASS fará o resto por você;
@@ -149,7 +149,7 @@ Leiam com muito cuidado meu tutorial sobre como usar Asset Pipeline, [Parte 1](h
 ...
 <!-- Rails 3.x -->
 <%= form_for :contato do |f| %>
----
+```
 
 Existem muito mais passos, por isso a recomendação é realmente entender os princípios por atrás do Asset Pipeline. No meu caso ainda tive que retirar do código antigo uma coisa que poderia ser chamado de "primeira tentativa de um Asset Pipeline" que foi o Bundle-fu. No final minha sequência ficou assim:
 
@@ -168,7 +168,7 @@ No seu <tt>Gemfile</tt> você vai precisar das seguintes gems:
 --- ruby
 gem 'devise'
 gem 'devise-encryptable'
----
+```
 
 Leia a [documentação do Devise](https://github.com/plataformatec/devise/wiki/How-To:-Migrate-from-restful_authentication-to-Devise) mas além das gems, transportar as views, os mailers, nos controllers você vai trocar as rotas e a API antiga pela nova:
 
@@ -201,7 +201,7 @@ include Authentication::ByCookieToken
 devise :database_authenticatable, :registerable,
        :recoverable, :rememberable, :confirmable, :validatable, 
        :encryptable, :encryptor => :restful_authentication_sha1
----
+```
 
 Esses são alguns exemplos. A vantagem nessa migração é que o Devise é compatível com o esquema de SHA1 que o Restful Authentication usava e por isso você não vai precisar mudar a senha dos seus usuários. Tecnicamente tudo deve funcionar sem problemas. O que vai mudar são as rotas antigas.
 
@@ -223,7 +223,7 @@ Se você fez a migração como recomendado para a versão 3.1 agora com a 3.2 te
 
 --- ruby
 gem 'turbo-sprockets-rails3'
----
+```
 
 Isso vai acelerar muito a pré-compilação dos seus assets (coisa que provavelmente já estava te deixando irritado até agora).
 
@@ -232,7 +232,7 @@ Na versão 3.2 você tem a opção de tornar [Mass Assignment](http://guides.rub
 --- ruby
 # Raise exception on mass assignment protection for Active Record models
 config.active_record.mass_assignment_sanitizer = :strict
----
+```
 
 E apesar de ter sido opcional até agora, você **DEVE** ligar essa restrição e tratar de adicionar <tt>attr_accessible</tt> em todos os seus models. Coloque na lista apenas os campos que efetivamente precisam ser populados via hash no construtor da classe. Caso contrário mantenha escondida. Esse é um erro de segurança muito comum que deve ser consertado o quanto antes.
 

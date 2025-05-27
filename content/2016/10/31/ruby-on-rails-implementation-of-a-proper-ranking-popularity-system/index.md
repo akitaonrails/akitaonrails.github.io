@@ -21,7 +21,7 @@ The biggest error people make is to consider a simple score like this:
 
 --- ruby
 popularity = positive_votes - negative_votes
----
+```
 
 There is an old article titled ["How Not To Sort By Average Rating"](http://www.evanmiller.org/how-not-to-sort-by-average-rating.html) and I quote:
 
@@ -31,7 +31,7 @@ Then you may think, I know how to fix it:
 
 --- ruby
 Score = average_rating = positive_votes / total_votes
----
+```
 
 Again, this is wrong, and again I quote:
 
@@ -62,7 +62,7 @@ class PostWithPopularityQuery
       ORDER BY ci_lower_bound DESC']
   end
 end
----
+```
 
 And this is what I expect to see in a simple scaffold `index.html.erb`:
 

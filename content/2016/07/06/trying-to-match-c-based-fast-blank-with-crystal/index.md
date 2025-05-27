@@ -52,7 +52,7 @@ rb_str_blank(VALUE str)
   }
   return Qtrue;
 }
----
+```
 
 Yeah, quite scary, I know. Now let's see the Crystal version:
 
@@ -73,7 +73,7 @@ class String
     return true
   end
 end
----
+```
 
 Hell yeah! If you're a rubyist I bet you can understand a 100% of the snippet above. It's not "exactly" the same thing (as the specs are not fully passing yet), but it's damn close.
 
@@ -129,7 +129,7 @@ clean:
   rm -f *.o
   rm -f *.bundle
 endif
----
+```
 
 Most people using Crystal are on OS X, including the creators of Crystal. LLVM is under Apple's umbrella and their entire ecosystem relies heavily on LLVM. They spent many years migrating the C front-end first, then the C back-end away from GNU's standard GCC to Clang. And they were able to make their both Objective-C and Swift compile down to LLVM's IR and that's how both can interact back and forth natively.
 
@@ -161,7 +161,7 @@ Gem::Specification.new do |s|
   ...
   s.extensions = ['ext/fast_blank/extconf.rb']
   ...
----
+```
 
 When the gem is installed through `gem install` or `bundle install` it will run this script to generate a proper `Makefile`. In a pure C extension it will use the built-in "mkmf" library to generate it.
 
@@ -183,7 +183,7 @@ if ENV['VERSION'] != "C" && find_executable('crystal') && find_executable('llvm-
 end
 
 create_makefile 'fast_blank'
----
+```
 
 So, if it finds `crystal` and `llvm-config` (which in OS X you have to add the proper path like this: `export PATH=$(brew --prefix llvm)/bin:$PATH`).
 
@@ -245,7 +245,7 @@ class String
     pointerof(a)
   end
 end
----
+```
 
 Then I can use these mappings and helpers to build a "Wrapper" class in Crystal:
 
@@ -275,7 +275,7 @@ module StringExtensionWrapper
     str.to_ruby
   end
 end
----
+```
 
 And this "Wrapper" depends on the "pure" Crystal library itself like with the snippets for the Char struct and String class extensions I showed in the first section of the article above.
 
@@ -293,7 +293,7 @@ fun init = Init_fast_blank
   LibRuby.rb_define_method(string, "blank_as?", ->StringExtensionWrapper.blank_as?, 0)
   ...
 end
----
+```
 
 This is mostly boilerplate. But now check out what I am having to do in the wrapper, in this particular snippet:
 
@@ -305,7 +305,7 @@ def self.blank?(self : LibRuby::VALUE)
 rescue
   true.to_ruby
 end
----
+```
 
 I am receiving a C-Ruby String casted as a pointer (VALUE) then I go through the lib_ruby.cr mappings to get the C-Ruby string data and copy it over into a new instance of Crystal's internal String representation. So at any given time I have 2 copies of the same string, one in the C-Ruby memory space and another in the Crystal memory space.
 
@@ -321,7 +321,7 @@ rb_str_blank(VALUE str)
   enc = STR_ENC_GET(str);
   s = RSTRING_PTR(str);
   ...
----
+```
 
 It receives a pointer (direct memory address) and goes. And this is huge advantage for the C version. When you have a big volume of medium to large sized strings being copied over from C-Ruby to Crystal, it adds a noticeable overhead that can't be removed.
 
@@ -334,13 +334,13 @@ The way to deal with it is to receive a Ruby String (VALUE) and get the C-String
 --- ruby
 rb_str = LibRuby.rb_str_to_str(str)
 c_str  = LibRuby.rb_string_value_cstr(pointerof(rb_str))
----
+```
 
 If the "str" is the "\u0000" (under Ruby 2.2.5 at least) C-Ruby raises a "string contains null bytes" exception. Which is why I rescue from this exception like this:
 
 --- ruby
 c_str = LibRuby.rb_rescue(->String.cr_str_from_rb_cstr, str, ->String.return_empty_string, 0.to_ruby)
----
+```
 
 When an exception is triggered I have to pass the pointer to another function to rescue from it:
 
@@ -349,11 +349,11 @@ def self.return_empty_string(arg : LibRuby::VALUE)
   a = 0_u8
   pointerof(a)
 end
----
+```
 
 But this is not correct, I am just passing the pointer to a "0" character, which is "empty". Therefore, specs are not passing correctly:
 
----
+```
 Failures:
 
   1) String provides a parity with active support function
@@ -372,7 +372,7 @@ Failures:
        expected: falsey value
             got: true
      # ./spec/fast_blank_spec.rb:47:in `block (2 levels) in <top (required)>'
----
+```
 
 Ary gave a simple tip later, I will add it to the conclusion below.
 
@@ -401,7 +401,7 @@ class String
     end
   end
 end
----
+```
 
 It's mainly a regular expression comparison, which can be a bit slow. Sam's version is a more straight forward loop through the string to compare each character with what's considered "blank". There are many unicode codepoints that are considered blank, some are not, which is why the C and Crystal versions are similar, but they are different from Rails' version.
 
@@ -415,7 +415,7 @@ In my Crystal version I did the same, having both `String#blank?` and `String#bl
 
 So, without further ado, here is the **C Version over OS X** benchmark for empty strings, and we exercise each function many times within a few seconds to have more accurate results (check out Evan Phoenix's ["benchmark/ips"](https://github.com/evanphx/benchmark-ips) to understand the "iteration per second" methodology).
 
----
+```
 ================== Test String Length: 0 ==================
 Warming up _______________________________________
           Fast Blank   191.708k i/100ms
@@ -433,13 +433,13 @@ Comparison:
           Fast Blank: 20478961.5 i/s - same-ish: difference falls within error
       New Slow Blank: 18883442.2 i/s - same-ish: difference falls within error
           Slow Blank:  1059692.6 i/s - 20.65x slower
----
+```
 
 It's super fast. Rails' version is 20x slower on my machine.
 
 Now, **Crystal version over OS X**
 
----
+```
 ================== Test String Length: 0 ==================
 Warming up _______________________________________
           Fast Blank   174.349k i/100ms
@@ -457,13 +457,13 @@ Comparison:
           Fast Blank:  8647459.7 i/s - 2.21x slower
   Fast ActiveSupport:  8580487.9 i/s - 2.22x slower
           Slow Blank:  1047465.3 i/s - 18.22x slower
----
+```
 
 As I explained before, even checking empty strings, the Crystal version is slower than the Ruby check for `String#empty?` (New Slow Blank) because I have the string copying routine of the Wrapper mappings. This adds overhead that is perceptible over many iterations. It's still 18x faster than Rails, but it loses to C-Ruby.
 
 Finally, ** Crystal version over Ubuntu**
 
----
+```
 ================== Test String Length: 0 ==================
 Warming up _______________________________________
           Fast Blank   255.883k i/100ms
@@ -481,7 +481,7 @@ Comparison:
           Fast Blank:  8895113.3 i/s - 2.49x slower
   Fast ActiveSupport:  8646940.8 i/s - 2.56x slower
           Slow Blank:  1736071.0 i/s - 12.77x slower
----
+```
 
 Notice that it's around the same ballpark, but the Rails version on Ubuntu runs almost twice as fast compared to its counterpart in OS X, which makes the comparison against the Crystal library go down from 18x to 12x.
 
@@ -489,7 +489,7 @@ The benchmark keeps comparing agains strings of larger and larger sizes, from 6,
 
 Let's get just the last test case of 136 characters. First with **C version on OS X**:
 
----
+```
 ================== Test String Length: 136 ==================
 Warming up _______________________________________
           Fast Blank   177.521k i/100ms
@@ -507,13 +507,13 @@ Comparison:
           Fast Blank: 10726792.8 i/s - same-ish: difference falls within error
           Slow Blank:  1872262.5 i/s - 6.20x slower
       New Slow Blank:  1016926.7 i/s - 11.41x slower
----
+```
 
 The C-version is consistently much faster in all test cases and in the 136 characters it's still 11x faster than Rails in pure Ruby.
 
 Now the **Crystal version over OS X**:
 
----
+```
 ================== Test String Length: 136 ==================
 Warming up _______________________________________
           Fast Blank   127.749k i/100ms
@@ -531,13 +531,13 @@ Comparison:
   Fast ActiveSupport:  3234586.5 i/s - same-ish: difference falls within error
           Slow Blank:  1887800.5 i/s - 1.74x slower
       New Slow Blank:   967950.2 i/s - 3.39x slower
----
+```
 
 It's also faster, but just by 2 to 3 times compared to pure Ruby, a far cry from 11x. But my hypothesis is that the mapping and copying of so many string over adds a large overhead that the C version does not have.
 
 And the **Crystal version over OS X**:
 
----
+```
 ================== Test String Length: 136 ==================
 Warming up _______________________________________
           Fast Blank   186.810k i/100ms
@@ -555,7 +555,7 @@ Comparison:
   Fast ActiveSupport:  3484575.5 i/s - same-ish: difference falls within error
           Slow Blank:  2754669.0 i/s - 1.28x slower
       New Slow Blank:  1550815.2 i/s - 2.27x slower
----
+```
 
 Again, the Ubuntu versions of both Crystal library but also the Ruby binary runs faster and the comparison shows no more than twice as much faster. And the pure Ruby's `String#empty?` is in the same ballpark as Crystal's version.
 

@@ -35,7 +35,7 @@ Pusher.key    = ENV['PUSHER_KEY']
 Pusher.secret = ENV['PUSHER_SECRET']
 Pusher.cluster = ENV['PUSHER_CLUSTER']
 # never set Pusher.host or Pusher.port
----
+```
 
 Notice that I am using environment variables to hold the configuration. You should use something like the [figaro gem](https://github.com/laserlemon/figaro) or the [dotenv-rails gem](https://github.com/bkeepers/dotenv). For example:
 
@@ -44,7 +44,7 @@ PUSHER_APP: "xpto"
 PUSHER_KEY: "abcd1234"
 PUSHER_SECRET: "abcd1234"
 PUSHER_CLUSTER: "us2"
----
+```
 
 At the very least you must have an application ID, a key, a secret, and a cluster name. All of these are provided by Pusher whenever you register a new application there.
 
@@ -55,13 +55,13 @@ Second, we need to setup the Javascript instance. Usually, you have something in
 window.pusher = new Pusher(<%= ENV['PUSHER_APP] %>, {
   cluster: <%= ENV['PUSHER_KEY'] %>,
   encrypted: <%= ENV['PUSHER_ENCRYPTED'] %>})
----
+```
 
 In a Chrome Development Console, you can inspect this instance by typing:
 
----
+```
 Pusher.instances[0]
----
+```
 
 This way you can make it's picking up the correct configurations for the connection and also do debug problems.
 
@@ -70,25 +70,25 @@ The dependencies are the pusher gem in your `Gemfile` and the javascript client.
 --- ruby
 # Gemfile
 gem 'pusher'
----
+```
 
 In the case of the javascript file you can either add it to your project and rely on [Webpacker](http://www.akitaonrails.com/2017/10/24/beginner-trying-out-rails-5-1-x):
 
----
+```
 yarn add pusher
----
+```
 
 Then, in your ES6 javascript file, you can do:
 
 --- javascript
 const Pusher = require('pusher-js');
----
+```
 
 Or you can link it directly in your layout:
 
 --- html
 <script src="https://js.pusher.com/4.2/pusher.min.js"></script>
----
+```
 
 For more information on the Pusher-js client, read it's [README file](https://github.com/pusher/pusher-js).
 
@@ -104,7 +104,7 @@ But we want to NOT connect to Pusher over the internet and keep everything local
 group :development, :test do
   gem 'pusher-fake'
 end
----
+```
 
 Now, this is where the Pusher Fake setup can get convoluted if you don't understand what's happening. As I said before, PusherFake must fork a new process to load a local server that mimics Pusher.
 
@@ -119,19 +119,19 @@ Pusher.cluster = ENV['PUSHER_CLUSTER']
 if Rails.env.development?
   require "pusher-fake/support/base"
 end
----
+```
 
 This alone presents a LOT of problems if you're not careful. This `require` will **fork** a new process. If you're using a single-process web server like Webrick or Thin, you should be ok. If you're using Puma, Unicorn, or Passenger with a maximum of just one process, you should also be good. But if you load a web server that itself forks new processes, you will have trouble.
 
 In practice, I'd rather load the Pusher Fake server separately, in stand-alone more. Fortunately it provides a command line command to start it up. And it's good practice to setup that in a `Procfile.dev` file and use [foreman](https://github.com/ddollar/foreman) to start everything for you. The `Procfile.dev` looks like this:
 
----
+```
 web: bundle exec rails s -p 3000
 db: postgres -D /usr/local/var/postgres
 redis: redis-server /usr/local/etc/redis.conf
 mailcatcher: mailcatcher -f
 pusherfake: pusher-fake -i ${PUSHER_APP:-xpto} --socket-host 0.0.0.0 --socket-port ${PUSHER_WS_PORT:-45449} --web-host 0.0.0.0 --web-port ${PUSHER_PORT:-8888} -k ${PUSHER_KEY:-abcd1234} -s ${PUSHER_SECRET:-abcd1234}
----
+```
 
 As a bonus, look how I configure other services such as PostgreSQL, Redis, etc.
 
@@ -146,7 +146,7 @@ PUSHER_HOST: "127.0.0.1"
 PUSHER_PORT: "8888"
 PUSHER_WS_HOST: "127.0.0.1"
 PUSHER_WS_PORT: "45449"
----
+```
 
 Now your `config/initializers/pusher.rb` should be something like this:
 
@@ -160,7 +160,7 @@ if Rails.env.development?
   Pusher.host = ENV['PUSHER_HOST']
   Pusher.port = ENV['PUSHER_PORT']
 end
----
+```
 
 And Pusher-js config somewhere in your `app/assets/javascripts/` directory will resemble something like this:
 
@@ -180,7 +180,7 @@ And Pusher-js config somewhere in your `app/assets/javascripts/` directory will 
       cluster: <%= ENV['PUSHER_CLUSTER'] %>,
       encrypted: <%= ENV['PUSHER_ENCRYPTED'] %>})
 <% end %>
----
+```
 
 Remember that this is a Javascript+ERB file, so we can fetch the same environment variables for the configuration.
 
@@ -190,7 +190,7 @@ Also, notice the `if Rails.env.test?` bit. This is for your RSpec test suite. In
 
 --- ruby
 require "pusher-fake/support/rspec"
----
+```
 
 And that's it. The `PusherFake.javascript` will define default WebSocket connection configuration and the `require` above will both fork the fake server and set Rspec to clean the channels on each test run (through `PusherFake::Channel.reset`).
 

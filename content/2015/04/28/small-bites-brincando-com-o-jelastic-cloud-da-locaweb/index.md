@@ -26,9 +26,9 @@ Você pode fazer o deployment diretamente de um repositório Github ou subir de 
 
 Uma coisa importante: se usar a configuração normal de banco de dados via <tt>config/database.yml</tt> vai ter problemas no caso do PostgreSQL pois parece que há diferença de versão entre o libpg nos nodes web com o PostgreSQL na máquina separada. Para bypassar isso, configure no arquivo <tt>.env</tt> uma variável chamada <tt>DATABASE_URL</tt> (que por padrão, bypassa o <tt>database.yml</tt> e conecta por TCP em vez de Unix Sockets). O formato dessa variável deve ser assim:
 
----
+```
 DATABASE_URL: 'postgres://[usuario]:[senha]@[host]:5432/[nome do banco]'
----
+```
 
 Ao criar o servidor PostgreSQL você também deve receber um email com um link para o PHPPGAdmin que é uma interface web para configurar o banco, você pode entrar por lá e criar um novo usuário (não use o usuário 'webadmin', obviamente). Outra opção é entrar via SSH direto no servidor de banco e usar comandos normais como <tt>createuser</tt> ou <tt>createdb</tt>. Não esqueça de adicionar sua chave pública de SSH na aba de configurações da aplicação, é simples.
 

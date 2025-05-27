@@ -18,9 +18,9 @@ But my major complaint with MatterMost is because the free, open source, Team Ed
 
 In fact, you can open a `psql` session in your PostgreSQL database and just do:
 
----
+```
 update channels set deleteat = 0;
----
+```
 
 This will unarchive and restore all delete channels. But you can see how this is a hassle.
 
@@ -68,7 +68,7 @@ $$ LANGUAGE plpgsql;
 DROP TRIGGER IF EXISTS undelete_channel ON audits;
 CREATE TRIGGER undelete_channel AFTER INSERT ON audits
     FOR EACH ROW EXECUTE PROCEDURE undelete_channel();
----
+```
 
 That's it, it will listen to audits new inserts, check if it is a "channel delete" action, check if it is not a 'system_admin', and if so it will automatically grab the channel id from the action REST URL and do the proper UPDATE to get it back.
 

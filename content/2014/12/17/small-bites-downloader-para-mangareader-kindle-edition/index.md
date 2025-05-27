@@ -21,15 +21,15 @@ Aproveitei pra abusar um pouco do [Typhoeus](https://github.com/typhoeus/typhoeu
 
 Sem enrolar mais, o código-fonte [está no Github](https://github.com/akitaonrails/manga-downloadr) ou instale diretamente a [gem](https://rubygems.org/gems/manga-downloadr):
 
----
+```
 gem install manga-downloadr
----
+```
 
 E para usar, navegue no site do [MangaReader.net](http://www.mangareader.net) escolha o manga que quiser e faça assim:
 
----
+```
 manga-downloadr -n monster -u http://www.mangareader.net/99/monster.html -d /Users/akitaonrails/Documents/MangaReader
----
+```
 
 E pronto! Se acontecer alguma interrupção (a internet cair ou coisa parecida) só execute novamente o mesmo comando e ele vai continuar de onde parou. Boa diversão!
 

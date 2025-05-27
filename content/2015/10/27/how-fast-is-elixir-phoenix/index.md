@@ -29,7 +29,7 @@ You can make the same simulation as I did by repeating the following steps:
   |> Enum.map(fn (n) -> %{title: "title #{n}", body: to_string(n)} end)
   |> Enum.map(fn (params) -> Blog.Post.changeset(%Blog.Post{}, params) end)
   |> Enum.each(fn (changeset) -> Blog.Repo.insert(changeset) end)
----
+```
 
 Feeling strange? Read the [Programming Elixir](https://pragprog.com/book/elixir/programming-elixir) book as soon as possible!
 
@@ -37,7 +37,7 @@ If you're a Rails developer, this is the equivalent of doing:
 
 --- ruby
 (1..1000).each { |n| Post.create title: "title #{n}", body: n }
----
+```
 
 Before anyone starts, No: Ruby is not better or Elixir is not worse because of this particular difference in lines of code, do not let this illusion fool you here or in any other language comparison.
 
@@ -51,10 +51,10 @@ I ran this simulation several times and this is the result:
 
 Through the console a single request, rendering those 1,000 rows, is taking around 150ms end to end (fast!):
 
----
+```
  [info] GET /posts
  [info] Sent 200 in 152ms
----
+```
 
 But when we put it under heavy traffic the response time go all the way up to 15 seconds. The app keeps up and responds all requests without dropping any of them. It takes more and more time because of the length of the request queue and aforementioned database bottlenecks.
 
@@ -68,10 +68,10 @@ It's still on the same free small web dyno, and it's rendering and returning a v
 
 It averages out to around 17ms for the entire roundtrip but the actual processing time of the page inside the dyno, as stated by the logs, is this:
 
----
+```
  [info] GET /
  [info] Sent 200 in 389µs
----
+```
 
 This is **microseconds**, a fraction of a milisecond, which is crazy fast. Response times still bump up a bit and goes all the way to 25ms, which is still very fast. Many things may be responsible for the bumps but I would bet it is heavier neighbors in the same machine making our tests dirty. We can't avoid it in a cloud environment but it's not bad.
 

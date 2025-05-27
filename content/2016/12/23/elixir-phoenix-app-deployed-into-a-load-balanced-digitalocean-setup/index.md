@@ -45,32 +45,32 @@ I have created 4 droplets (all using the smallest size of 512Mb of RAM):
 
 You will want to read my post about [configuring Ubuntu 16.04](http://www.akitaonrails.com/2016/09/21/ubuntu-16-04-lts-xenial-on-vagrant-on-vmware-fusion). To summarize, start by configuring proper UTF-8:
 
----
+```
 sudo locale-gen "en_US.UTF-8"
 sudo dpkg-reconfigure locales
 sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
 echo 'LC_ALL=en_US.UTF-8' | sudo tee -a /etc/environment
 echo 'LANG=en_US.UTF-8' | sudo tee -a /etc/environment
----
+```
 
 Make sure you add a proper user into the sudo group and from now on do not use the root user. I will create a user named `pusher` and I will explain in another post why. You should create a username that suits your application.
 
----
+```
 adduser pusher
 usermod -aG sudo pusher
----
+```
 
 Now log out and log in again through this user. `ssh pusher@server-ip-address`. If you're on a Mac copy the public key of your SSH certificate like this:
 
----
+```
 ssh-copy-id -i ~/.ssh/id_ed25519.pub pusher@server-ip-address
----
+```
 
 It creates the `.ssh/authorized_keys` if it doesn't exist, sets the correct permission bits and appends your public key. You can do it manually, of course.
 
 DigitalOcean's droplets start without a swap file and I'd recomend adding one, specially if you want to start with the smaller boxes with less than 1GB of RAM:
 
----
+```
 sudo fallocate -l 2G /swapfile
 sudo chmod 600 /swapfile
 sudo mkswap /swapfile
@@ -81,17 +81,17 @@ sudo sysctl vm.swappiness=10
 sudo sysctl vm.vfs_cache_pressure=50
 echo 'vm.swappiness=10' | sudo tee -a /etc/sysctl.conf
 echo 'vm.vfs_cache_pressure=50' | sudo tee -a /etc/sysctl.conf
----
+```
 
 Make sure you have unattended upgrades configured. You will want at least to have security updates automatically installed when available.
 
----
+```
 sudo apt install unattended-upgrades
----
+```
 
 Now, let's install Elixir and Node (Phoenix needs Node.js):
 
----
+```
 wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb && sudo dpkg -i erlang-solutions_1.0_all.deb
 curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 sudo apt-get update
@@ -100,7 +100,7 @@ sudo apt-get install build-essential nodejs esl-erlang elixir erlang-eunit erlan
 sudo npm install -g brunch
 mix local.hex
 mix archive.install https://github.com/phoenixframework/archives/raw/master/phoenix_new.ez # this is optional, install if you want to manually test phoenix in your box
----
+```
 
 Now you have an Elixir capable machine ready. Create a image snapshot over DigitalOcean, move it regions you want to create your other droplets and use this image to create as many droplets as you need.
 
@@ -115,27 +115,27 @@ I will refer to their public IP addresses as **"nyc-ip-address"**, **"lon-ip-add
 
 Now you can connect to `ssh pusher@pg-ip-address` and follow this:
 
----
+```
 sudo apt-get install postgresql postgresql-contrib
----
+```
 
 You should create a new role with the same name of the user you added above ("pusher" in our example):
 
----
+```
 $ sudo -u postgres createuser --interactive
 
 Enter name of role to add: pusher
 Shall the new role be a superuser? (y/n) y
 
 $ sudo -u postgres createdb pusher
----
+```
 
 Postgresql expects to find a database with the same name as the role and the role should have the same name as the Linux user. Now you can use `psql` to set a password for this new role:
 
----
+```
 $ sudo -u postgres psql
 \password pusher
----
+```
 
 Register a secure password, take note and let's move on.
 
@@ -145,13 +145,13 @@ But for this example, we will just allow connections from the public Internet to
 
 Edit the `/etc/postgresql/9.5/main/postgresql.conf` and find the `listen_addresses` configuration line and allow it:
 
----
+```
 listen_addresses = '*'    # what IP address(es) to listen on;
----
+```
 
 This should bind the server to the TCP port. Now edit `/etc/postgresql/9.5/main/pg_hba.conf` and edit it at the end to looks like this:
 
----
+```
 # IPv4 local connections:
 host    all             all             127.0.0.1/32            trust
 host    all             all             your-local-machine-ip-address/24        trust
@@ -159,13 +159,13 @@ host    all             all             nyc-ip-address/24       trust
 host    all             all             lon-ip-address/24       trust
 # IPv6 local connections:
 host    all             all             ::1/128                 trust
----
+```
 
 Save the configuration file and restart the server:
 
----
+```
 sudo service postgresql restart
----
+```
 
 See what I did there? I only allowed connections coming from the public IPs of the Phoenix servers. This does not make the the server secure, just a little bit less vulnerable. If you're behind a DHCP/NAT based network, just Google for "what's my IP" to see your public facing IP address - which is probably shared by many other users, remember you're allowing connections from an insecure IP to your database server! Once you make initial tests, create your new schema, then you should remove that `your-local-machine-ip-address/24` line from the configuration.
 
@@ -180,23 +180,23 @@ config :your_app_name, ExPusherLite.Repo,
   database: "your-app-database-name",
   hostname: "pg-ip-address",
   pool_size: 20
----
+```
 
 Replace the information for your server and database and now you can test it out like this:
 
----
+```
 MIX_ENV=prod iex -S mix phoenix.server
----
+```
 
 If you see a `:econnrefused` message from postgrex, then you're in trouble. Re-check your configuration, restart the server and try again. If everything connects, you can run `MIX_ENV=prod mix do ecto.create, ecto.migrate` to prepare your database.
 
 Finally, you will want to lock down the rest of your server with UFW, at the very least. UFW should come pre-installed in Ubuntu 16, so you can just do:
 
----
+```
 ufw allow 5432
 ufw allow ssh
 ufw enable
----
+```
 
 That's it. And again, this does not make your server secure, it just makes it less insecure. There is a huge difference!
 
@@ -213,13 +213,13 @@ And by the way, if you're a Docket fan:
 
 Now let's `ssh pusher@ha-ip-address`. This one is easy, let's just install HAProxy:
 
----
+```
 sudo apt-get install haproxy
----
+```
 
 Edit `/etc/haproxy/haproxy.cfg`:
 
----
+```
 ...
 listen your-app-name
   bind 0.0.0.0:80
@@ -235,7 +235,7 @@ listen your-app-name
   cookie SERVERID insert indirect nocache
   server us your_us_server_IP:8080 check cookie us1
   server uk your_uk_server_IP:8080 check cookie uk1
----
+```
 
 You can avoid the `stats` lines if you have other means of monitoring, otherwise set a secure password for the `admin` user. One very important part is the `option http-server-close` as explained in [this other blog post](http://blog.silverbucket.net/post/31927044856/3-ways-to-configure-haproxy-for-websockets), otherwise you may have trouble with Websockets.
 
@@ -243,17 +243,17 @@ For some reason I am having some trouble with my application after I login and i
 
 Now you can restart the server and enable UFW as well:
 
----
+```
 sudo service haproxy restart
 sudo ufw allow http
 sudo ufw allow https
 sudo ufw allow ssh
 sudo ufw enable
----
+```
 
 You can easily add SSL support to your application by configure HAProxy (and not the Phoenix nodes). The [DigitalOcean documentation](https://www.digitalocean.com/community/tutorials/how-to-secure-haproxy-with-let-s-encrypt-on-ubuntu-14-04) is comprehensive, so just follow it. At the end, my `haproxy.cfg` looks like this:
 
----
+```
 global
    log /dev/log    local0
    log /dev/log    local1 notice
@@ -299,7 +299,7 @@ backend www-backend
 
 backend letsencrypt-backend
    server letsencrypt 127.0.0.1:54321
----
+```
 
 Finally, I will assume you have a DNS server/service somewhere where you can register the IP of this HAproxy server as an A record so you can access it by a full name such as "your-app-name.mydomain.com".
 
@@ -339,7 +339,7 @@ defp deps do
    {:distillery, "~> 1.0"}]
 end
 ...
----
+```
 
 From the Pivotal blog post, the important thing to not forget is to edit this part in the `config/prod.exs` file:
 
@@ -348,13 +348,13 @@ http: [port: 8080],
 url: [host: "your-app-name.yourdomain.com", port: 80],
 ...
 config :phoenix, :serve_endpoints, true
----
+```
 
 You MUST hardcode the default PORT of the Phoenix web server and the allowed domain (remember the domain name you associated to your HAProxy server above? That one). And you MUST uncomment the `:serve_endpoints, true` line!
 
 For edeliver to work you have to create a `.deliver/config` file like this:
 
----
+```
 USING_DISTILLERY=true
 
 # change this to your app name:
@@ -402,13 +402,13 @@ pre_erlang_get_and_update_deps() {
     "
   fi
 }
----
+```
 
 Remember the information we've been gathering since the beginning of this long recipe? These are the options you MUST change to your own. Just follow the comments in the file content above and add it to your git repository. By the way, your project is in a proper GIT repository, RIGHT??
 
 If you like to use passphrase protected SSH private keys, then it's going to be a huge pain to deploy because for each command, edeliver will issue an SSH command that will keep asking for you passphrase, a dozen times through everything. You've been warned! If you still don't mind that, and you're in a Mac you will have an extra trouble because the Terminal will not be able to create a prompt for you to input your passphrase. You must create an `/usr/local/bin/ssh-askpass` [script](https://github.com/markcarver/mac-ssh-askpass):
 
----
+```
 #!/bin/bash
 # Script: ssh-askpass
 # Author: Mark Carver
@@ -442,26 +442,26 @@ for LINE in ${CODE[*]}; do
       SCRIPT="${SCRIPT} -e $(printf "%q" "${LINE}")";
 done;
 eval "${SCRIPT}";
----
+```
 
 Now do this:
 
----
+```
 sudo chmod +x /usr/local/bin/ssh-askpass
 sudo ln -s /usr/local/bin/ssh-askpass /usr/X11R6/bin/ssh-askpass
----
+```
 
 Remember, Macs only. And now everytime you try to deploy you will receive a number of graphical prompt windows asking for the SSH private key passphrase. It's freaking annoying! And you must have [XQuartz](https://www.xquartz.org/) installed, by the way.
 
 Now you must manually create 3 files in all Phoenix servers. Start with the `your-app-name/vm.args`:
 
----
+```
 -name us@nyc-ip-address
 -setcookie @bCd&fG
 -kernel inet_dist_listen_min 9100 inet_dist_listen_max 9155
 -config /home/pusher/your-app-name.config
 -smp auto
----
+```
 
 The `/home/pusher/your-app-name` is the directory where the release will be uncompressed after edeliver deploys the release tarball.
 
@@ -469,20 +469,20 @@ You must create this file in all Phoenix machines, by the way, changing the `-na
 
 See the `-config /home/pusher/your-app-name.config`? Create that file with the following:
 
----
+```
 [{kernel,
   [
     {sync_nodes_optional, ['uk@lon-ip-address']},
     {sync_nodes_timeout, 30000}
   ]}
 ].
----
+```
 
 This is an Erlang source-code. On the NYC machine you must declare the London name, and vice-versa. If you have several machines, all of them but the one you're in right now. Get it?
 
 Finally, for the Phoenix app itself, you always have a `config/prod.secret.exs` that should never be `git add`ed to the repository, remember? This is where you put the Postgresql server information and random secret key to sign the session cookies:
 
----
+```
 use Mix.Config
 
 config :your_app_name, YourAppName.Endpoint,
@@ -500,34 +500,34 @@ config :your_app_name, YourAppName.Repo,
 # if you have Guardian, for example:
 config :guardian, Guardian,
   secret_key: "..."
----
+```
 
 How do you create a new random secret key? From your development machine just run: `mix phoenix.gen.secret` and copy the generated string into the file above.
 
 So now you must have those 3 files in each Phoenix server, in the `/home/pusher` home folder:
 
----
+```
 ~/your-app-name/vm.args
 ~/prod.secret.exs
 ~/your-app-name.config
----
+```
 
 As per [distillery](https://hexdocs.pm/distillery/runtime-configuration.html#vm-args) documentation, you have to set an environment variable to let it know about the `vm.args` file, and this is **SUPER** important otherwise it will generate a default one that doesn't set the proper name and cookie, so the nodes will not find each other after booting up.
 
 Using `sudo`, edit the `/etc/environment` and add the line:
 
----
+```
 RELEASE_CONFIG_DIR=/home/pusher/your-app-name
 VMARGS_PATH=/home/pusher/your-app-name/vm.args
----
+```
 
 You have to do it in all the phoenix servers.
 
 In your local development directory you still have to run this:
 
----
+```
 mix release.init
----
+```
 
 It will generate a standard `rel/config.exs` file that you must add to your git repository with the following changes do the bottom:
 
@@ -545,19 +545,19 @@ release :your_app_name do
     your_app_name: :permanent
   ]
 end
----
+```
 
 The plugin should enable the release to find the local `vm.args` file in the server (this is super important, otherwise the remote commands such as start, stop, ping, etc will not work and the nodes will not load the correct information to boot up and form a cluster).
 
 Finally, all set, you can issue this command:
 
----
+```
 $ mix edeliver build release production --skip-mix-clean --verbose
----
+```
 
 If it finishes without errors you will have a message like the following in the end:
 
----
+```
 ...
 ==> Release successfully built!
     You can run it in one of the following ways:
@@ -568,7 +568,7 @@ If it finishes without errors you will have a message like the following in the 
 --> Copying your-app-name.tar.gz to release store
 
 RELEASE BUILD OF YOUR-APP-NAME WAS SUCCESSFUL!
----
+```
 
 Now, this will take an absurdly long time to deploy. That's because it will git clone the source code of your app, fetch all Elixir dependencies (every time!), it will have to compile everything, then it will run the super slow `npm install` (every time!), brunch your assets, create the so-called "release", tar and gzip it, download it and SCP it to the other machines you configured.
 
@@ -578,22 +578,22 @@ The last command will download the generated tarball. It has to do it to make su
 
 Now we must upload and decompress this tarball in each server with the following command:
 
----
+```
 mix edeliver deploy release to production
----
+```
 
 The slower your network, the longer this will take, as it's uploading a big tarfile across the public internet, so make sure you're in a fast connection. And when it finishes, we can restart the servers (if you already had instances running):
 
----
+```
 mix edeliver stop production
 mix edeliver start production
----
+```
 
 If you do everything right, the edeliver process finishes without any error and it leaves a daemon running in your server, like this:
 
----
+```
 /home/pusher/your-app-name/erts-8.2/bin/beam -- -root /home/pusher/your-app-name -progname home/pusher/your-app-name/releases/0.0.1/your-app-name.sh -- -home /home/pusher -- -boot /home/pusher/your-app-name/releases/0.0.1/your-app-name -config /home/pusher/your-app-name/running-config/sys.config -boot_var ERTS_LIB_DIR /home/pusher/your-app-name/erts-8.2/../lib -pa /home/pusher/your-app-name/lib/your-app-name-0.0.1/consolidated -name us@nyc-ip-address -setcookie ex-push&r-l!te -kernel inet_dist_listen_min 9100 inet_dist_listen_max 9155 -config /home/pusher/your-app-name.config -mode embedded -user Elixir.IEx.CLI -extra --no-halt +iex -- console
----
+```
 
 It will still take a long time, but it should be easier. So this is a pro-tip for you, Linux users. Follow [this Gist](https://gist.github.com/mattweldon/2e8ecb953216438ad168) for more details, you must emulate what's run from the `.deliver/config` file's bottom half.
 
@@ -603,14 +603,14 @@ Read their documentation for more commands and configurations.
 
 Also, do not forget to enable UFW:
 
----
+```
 sudo ufw allow ssh
 sudo ufw allow 8080
 sudo ufw allow 4369
 sudo ufw allow proto tcp from any to any port 9100:9155
 sudo ufw default allow outgoing
 sudo ufw enable
----
+```
 
 ### Debugging Production bugs
 
@@ -623,14 +623,14 @@ For example, in development mode I had a code in the controller that was checkin
 --- ruby
 if params["some_parameter"] do
  ...
----
+```
 
 That was working fine in development but crashing in production, so I had to change it to:
 
 --- ruby
 if Map.has_key?(params, "some_parameter") do
  ...
----
+```
 
 Another thing was that Guardian was working normally in development, but in production I had to declare its application in the `mix.exs` like this:
 
@@ -639,7 +639,7 @@ def application do
   [mod: {ExPusherLite, []},
    applications: [..., :guardian, :edeliver]]
 end
----
+```
 
 I was getting `:econnrefused` errors because I forgot to run `MIX_ENV=prod mix do ecto.create, ecto.migrate` as I instructed above. Once I figured those out, my application was up and running through the `http://your-app-name.yourdomain.com`, HAProxy was correctly forwarding to the 8080 port in the servers and everything runs fine, including the WebSocket connections.
 

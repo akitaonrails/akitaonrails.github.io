@@ -50,7 +50,7 @@ def pages({chapter_list, source}) do
      |> Enum.reduce([], fn {:ok, list}, acc -> acc ++ list end)
    {pages_list, source}
 end
----
+```
 
 And that's it. This is linear. It will sequentially process just one link at a time. The more chapter links, the longer it will take. Usually I want to process this in parallel. But I can't fire a parallel process for each chapter link, because if I receive 1,000 chapter links and fire them all, it will be a Denial of Service and I will certainly receive hundreds of time outs.
 
@@ -78,7 +78,7 @@ def pages_download(chapter_list, source)
      |> Enum.reduce([], fn {:ok, list}, acc -> acc ++ list end)
    {pages_list, source}, results	
 end
----
+```
 
 This is just for the example, I have not compiled this snippet to see if it works, but you get the idea of chunking the big list and processing each chunk through `Task.async` and `Task.await`.
 
@@ -100,7 +100,7 @@ def pages({chapter_list, source}) do
     |> Enum.reduce([], fn {:ok, {:ok, list}}, acc -> acc ++ list end)
   {pages_list, source}
 end
----
+```
 
 And this is the [final commit](https://github.com/akitaonrails/ex_manga_downloadr/commit/517183261e998ab40f6e5bc793b4db9adcf899e3) with the aforementioned changes.
 
@@ -108,9 +108,9 @@ And this is the [final commit](https://github.com/akitaonrails/ex_manga_download
 
 The implementation with `Task.async_stream` is super simple and the times finally became the same as before.
 
----
+```
 84,16s user 20,80s system 138% cpu 1:15,94 total
----
+```
 
 Way better than the more than 3 minutes it was taking with Flow. And this is not because Flow is slow, it's because I was not using it correctly, probably shooting a big chunk into a single GenStage and creating a bottleneck. Again, only use Flow if you have enough items to put hundreds of them into several parallel GenStages. We are talking about collections with tens of thousands of items, not my meager pages list.
 

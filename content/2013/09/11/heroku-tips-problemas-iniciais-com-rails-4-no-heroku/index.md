@@ -15,10 +15,10 @@ Recentemente tentei subir um projeto Rails 4 bem simples no Heroku e encontrei p
 
 No final, a forma mais simples para resolver isso por enquanto é fazer o seguinte antes do primeiro deploy:
 
----
+```
 heroku labs:enable user-env-compile
 heroku config:add DATABASE_URL=$(heroku config | awk '/HEROKU_POSTGRESQL.*:/ {print $2}')
----
+```
 
 Leia a documentação dessa funcionalidade [user-env-compile](https://devcenter.heroku.com/articles/labs-user-env-compile) entendendo que ela não é a forma mais correta, é apenas um facilitador enquanto todas as gems não estão da forma correta.
 
@@ -28,7 +28,7 @@ Rapidamente para não esquecer, no caso de apps Rails 4 não deixe de acrescenta
 
 --- ruby
 gem 'rails_12factor', group: :production
----
+```
 
 Em particular é importante para logging correto e servir assets estáticos, veja no [Github deles](https://github.com/heroku/rails_12factor) para mais informações.
 
@@ -57,34 +57,34 @@ production:
   database: legaltorrents_production
   username: fred
   password: password
----
+```
 
 Coloca o script como <tt>lib/tasks/convert.rake</tt> e executa <tt>rake db:convert:prod2dev</tt>.
 
 Depois disso ainda precisa atualizar as sequences de primary key do PostgreSQL desta forma:
 
----
+```
 ALTER SEQUENCE users_id_seq restart with (select max(id)+1 from users) 
----
+```
 
 Isso deve ser feito para cada tabela que você tem. Se precisar atualizar em produção no Heroku, execute <tt>heroku run rails console</tt> e execute assim:
 
 --- ruby
 ActiveRecord::Base.connection.execute("ALTER SEQUENCE users_id_seq restart with (select max(id)+1 from users) ")
----
+```
 
 Não esqueça que você pode fazer dumps do banco de dados de produção, colocar num banco de dados local para testar e tudo mais e se quiser pode gerar um dump local e restaurar de novo no Heroku. Leia a documentação deles sobre [PG Backups](https://devcenter.heroku.com/articles/heroku-postgres-import-export).
 
 Gerar um dump local é simples:
 
----
+```
 pg_dump -Fc --no-acl --no-owner -h localhost -U vagrant my_db > mydb.dump
----
+```
 
 E restaurar um dump do Heroku no seu banco local também:
 
----
+```
 pg_restore --verbose --clean --no-acl --no-owner -h localhost -U vagrant -d my_db b078.dump
----
+```
 
 Isso deve resolver a maioria dos problemas.

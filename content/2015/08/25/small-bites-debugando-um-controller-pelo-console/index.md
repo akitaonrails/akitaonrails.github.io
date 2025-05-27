@@ -20,27 +20,27 @@ Ao abrir o Rails Console ele lhe dá um objeto que representa sua aplicação. C
 
 Por exemplo, para chegar ao ponto onde eu queria testar, primeiro precisa estar autenticado na aplicação. No meu caso basta fazer isso:
 
----
+```
 app.get "/users/sign_in"
----
+```
 
 Isso carrega o ambiente pro formulário de login, incluindo o token CSRF que podemos visualizar assim:
 
----
+```
 app.session.to_hash
 => {"session_id"=>"8dbf5adfe1738752bc05ce9e6d5ab9fc", "_csrf_token"=>"wp/0bjiEyRWgCfeBtkuFy+yZ2G/IihC0X1uSafn4noQ="}
----
+```
 
 Basta copiar o <tt>_csrf_token</tt> e usar para submeter o formulário ao controller do Devise:
 
----
+```
 app.post "/users/sign_in", {"utf8"=>"✓", "authenticity_token"=>"wp/0bjiEyRWgCfeBtkuFy+yZ2G/IihC0X1uSafn4noQ=", "user"=>{"login"=>"john", "password"=>"test123"} }
----
+```
 
 Finalmente, posso executar a URL que eu preciso para ver exatamente o que está acontecendo no ambiente de produção:
 
----
+```
 app.get "/rota/que/quero/testar"
----
+```
 
 Isso não é novo, um dos primeiros posts que explica as diversas ferramentas que existem no console é do próprio Signal v Noise, de 2012, ["Three quick Rails console tips"](https://signalvnoise.com/posts/3176-three-quick-rails-console-tips), escrito pelo Nick Quaranto. Para coisas rápidas e insights que podem ajudar a debugar e testar melhor sua app, este é um aliado muito poderoso!

@@ -71,29 +71,29 @@ It will custom install Arch but will provide you with enough automation to not w
 
 Arch users are quick to praise Pacman. For the most part, you can basically do:
 
----
+```
 sudo pacman -S chromium
----
+```
 
 And that's it. And then you can `sudo pacman -Syu` to upgrade installed packages. This is the basics you need to know.
 
 If you're a developer I also recommend you to install the basic development packages:
 
----
+```
 sudo pacman -Sy --needed base-devel
----
+```
 
 Now, you can manually install AUR packages. You can go to their website and [search for "terminix"](https://aur.archlinux.org/packages/?O=0&K=terminix) (a very nice Terminal replacement, similar to Mac's iTerm2) for example. You will end up in [this page](https://aur.archlinux.org/packages/terminix/) and you will have to manually do the following:
 
----
+```
 git clone https://github.com/gnunn1/terminix.git
 cd terminix
 makepkg -si
----
+```
 
 Feels simple, but you can do better by installing [Pacaur](https://github.com/rmarquis/pacaur), a wrapper on top of Pacman. If you're using a graphical terminal such as Terminal or Terminix DO NOT FORGET to edit the profile to "Run command as login shell", otherwise there will be a PATH problem and Cower will fail to install
 .
----
+```
 sudo pacman -S expac yajl --noconfirm
 gpg --recv-keys --keyserver hkp://pgp.mit.edu 1EB2638FF56C0C53
 git clone https://aur.archlinux.org/cower.git
@@ -104,33 +104,33 @@ git clone https://aur.archlinux.org/pacaur.git
 cd pacaur
 makepkg -si
 cd ..
----
+```
 
 In summary, Pacaur can be used not only as a complement to install AUR packages, but also if you want to use a single tool to manage both AUR and official Pacman packages. All commands `-S` will be Pacman commands. So instead of doing `sudo pacman -Syu` to upgrade all packages, you can replace it for `pacaur -Syu`. Everything else mostly "just works".
 
 When you try to install a package with `-S` it will first look into the official repos, if not found then it tries AUR. There's even a nice GUI if you want:
 
----
+```
 pacaur -S pamac-pacaur
----
+```
 
 Now, to install the same Terminix, you can do just this:
 
----
+```
 pacaur -Sy terminix
----
+```
 
 It will ask you simple yes/no questions such as "Do you want to edit the build file?" You can answer "n" to those and confirm "y" when it asks you if you want to install the dependencies or the generated package.
 
 And that's it! You can search the AUR repositories with:
 
----
+```
 pacaur -s spotify
----
+```
 
 It will give you a lot of options, for example:
 
----
+```
 $ pacaur -s spotify
 aur/spotify 1.0.47.13-1 (1037, 36.09) [installed]
     A proprietary music streaming service
@@ -139,23 +139,23 @@ aur/playerctl 0.5.0-1 (127, 11.33)
 aur/blockify 3.6.3-3 (106, 5.61)
     Mutes Spotify advertisements.
 ...
----
+```
 
 Common sense, my friends. Read, interpret, choose. Arch requires you to be a **smart** person, and by "smart" I mean: knowing how to read! Most people skip reading things and just click stuff like moron.
 
 Now that you know the exact name of the package you want, just install it normally like this:
 
----
+```
 pacaur -S spotify
----
+```
 
 ![Pacaur](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/604/Screenshot_from_2017-01-16_14-21-49.png)
 
 Pacaur is one of many [AUR Helpers](https://wiki.archlinux.org/index.php/AUR_helpers). I was initially drawn into Yaourt, but after research, you figure out that you should only try out aurutils, bauerbill or pacaur. I prefer the latter because it's easier to spell out.
 
----
+```
 pacaur -Syua
----
+```
 
 This should keep your system up to date, both the official and AUR packages.
 
@@ -171,13 +171,13 @@ That sounds like yet another maintenance nightmare to deal with. But someone dec
 
 Let's install it (from the project's README):
 
----
+```
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.2.1
----
+```
 
 Then edit your shell config files:
 
----
+```
 # For Ubuntu or other linux distros
 echo -e '\n. $HOME/.asdf/asdf.sh' >> ~/.bashrc
 echo -e '\n. $HOME/.asdf/completions/asdf.bash' >> ~/.bashrc
@@ -194,11 +194,11 @@ mkdir -p ~/.config/fish/completions; and cp ~/.asdf/completions/asdf.fish ~/.con
 touch ~/.zsh.after/asdf.zsh
 echo -e '\n. $HOME/.asdf/asdf.sh' >> ~/.zsh.after/asdf.zsh
 echo -e '\n. $HOME/.asdf/completions/asdf.bash' >> ~/.zsh.after/asdf.zsh
----
+```
 
 This tool is very self explanatory. Let's start by installing a bunch of plugins (full table of links in the README file):
 
----
+```
 asdf plugin-add clojure https://github.com/vic/asdf-clojure.git
 asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git
 asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git
@@ -206,11 +206,11 @@ asdf plugin-add golang https://github.com/kennyp/asdf-golang.git
 asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git
 asdf plugin-add rust https://github.com/code-lever/asdf-rust.git
 asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
----
+```
 
 If you're like me, you must be **super excited** because you already know what we will do next:
 
----
+```
 sudo pacman -Sy jdk8-openjdk # you need Java for Clojure
 
 asdf install clojure 1.8.0
@@ -243,23 +243,23 @@ asdf global rust 1.14.0
 asdf install nodejs 7.4.0
 asdf global nodejs 7.4.0
 npm -g install brunch phantomjs
----
+```
 
 That's it! We now have every language we need installed and ready to use! What if I need Ruby 2.3.1 for a client project?
 
----
+```
 asdf install ruby 2.3.1
 asdf local ruby 2.3.1
----
+```
 
 And now I have 2.3.1 locally (I can change it to be the system default using `global`).
 
 Most of the maintenance effort summarizes to this:
 
----
+```
 asdf plugin-update --all # update the individual plugins
 asdf list-all [language] # to list all available versions
----
+```
 
 And that's basically it! You have almost everything you need to develop software.
 
@@ -267,7 +267,7 @@ And that's basically it! You have almost everything you need to develop software
 
 Now, as usual, let me recommend some software:
 
----
+```
 # make sure you're up to date
 sudo pacman -Syu
 
@@ -324,22 +324,22 @@ pacaur -Sy ananicy-git
 
 # dropbox is the most horrible piece of software, but you may need it:
 pacaur -Sy dropbox dropbox-cli nautilus-dropbox
----
+```
 
 As usual, I like to replace Bash for Zsh and configure Vim with YADR:
 
----
+```
 sh -c "`curl -fsSL https://raw.githubusercontent.com/skwp/dotfiles/master/install.sh`"
 touch ~/.vimrc.before
 touch ~/.vimrc.after
 echo "let g:yadr_using_unsolarized_terminal = 1" >> ~/.vimrc.before
 echo "let g:yadr_disable_solarized_enhancements = 1" >> ~/.vimrc.after
 echo "colorscheme gruvbox" >> ~/.vimrc.after
----
+```
 
 To install and configure Postgresql 9.6:
 
----
+```
 sudo pacman -Sy postgresql
 sudo -u postgres -i
 initdb --locale $LANG -E UTF8 -D '/var/lib/postgres/data'
@@ -355,33 +355,33 @@ createuser --interactive # create with your username and superuser role
 createdb youruser
 exit
 sudo systemctl restart postgresql
----
+```
 
 If you want to install Docker:
 
----
+```
 sudo pacman -Sy docker
 sudo usermod -aG docker $USER
 sudo systemctl start docker
 sudo systemctl enable docker
 logout
----
+```
 
 We always need Redis, Memcached, so let's install them:
 
----
+```
 sudo pacman -Sy redis memcached
 sudo systemctl start redis
 sudo systemctl enable redis
 sudo systemctl start memcached
 sudo systemctl enable memcached
----
+```
 
 After you install and remove a lot of software, you may end up with unnecessary packages eating up disk space. You can clean it up with:
 
----
+```
 sudo pacman -Rns $(pacman -Qtdq)
----
+```
 
 And as I said before, the Arch Wiki is super useful for you to keep tweaking your system, so make sure you read articles such as [this "Improving Performance" page](https://wiki.archlinux.org/index.php/Improving_performance).
 
@@ -401,14 +401,14 @@ What you want for Desktop usage, with dozens of random processes doing random op
 
 To increase responsiveness, the most important first thing you want to do is configure this:
 
----
+```
 sudo tee -a /etc/sysctl.d/99-sysctl.conf <<-EOF
 vm.swappiness=1
 vm.vfs_cache_pressure=50
 vm.dirty_background_bytes=16777216
 vm.dirty_bytes=50331648
 EOF
----
+```
 
 Reboot. If you want to know what those settings are, [read this](https://rudd-o.com/linux-and-free-software/tales-from-responsivenessland-why-linux-feels-slow-and-how-to-fix-that).
 
@@ -418,10 +418,10 @@ I am still not 100% sure which one is the best, they have a few maintenance conc
 
 Out of the 3, you will want to stick to Zen (which is [basically Liquorix](https://github.com/zen-kernel/zen-kernel/issues/30#issuecomment-142787936)), as it's maintained in the official repositories in binary format (believe me, you don't want to wait for a custom kernel to compile, it takes forever).
 
----
+```
 sudo pacman -Sy linux-zen
 sudo grub-mkconfig -o /boot/grub/grub.cfg
----
+```
 
 Reboot.
 

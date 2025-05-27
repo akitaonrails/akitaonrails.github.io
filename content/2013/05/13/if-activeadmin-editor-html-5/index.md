@@ -23,9 +23,9 @@ Se somar com o Best In Place, CanCan, um versionador como o [PaperTrail](https:/
 
 Num novo projeto podemos criar um model <tt>Page</tt> que terá o HTML:
 
----
+```
 rails g model Page title body:text
----
+```
 
 Agora adicionamos o que precisamos no <tt>Gemfile</tt>:
 
@@ -33,14 +33,14 @@ Agora adicionamos o que precisamos no <tt>Gemfile</tt>:
 gem 'activeadmin'
 gem 'activeadmin-dragonfly', github: 'stefanoverna/activeadmin-dragonfly'
 gem 'activeadmin-wysihtml5', github: 'stefanoverna/activeadmin-wysihtml5'
----
+```
 
 Execute o comando <tt>bundle</tt> para instalar. Agora precisamos criar os arquivos de configuração básicos:
 
----
+```
 rails generate active_admin:install
 rake activeadmin_wysihtml5:install:migrations 
----
+```
 
 Finalmente, basta criar a configuração normal para o <tt>ActiveAdmin</tt> para expor o model <tt>Page</tt> criando o arquivo <tt>app/admin/page.rb</tt> com o seguinte:
 
@@ -55,7 +55,7 @@ ActiveAdmin.register Page do
     f.buttons
   end
 end
----
+```
 
 A opção <tt>:wysihtml5</tt> pode ser customizada para definir que tipos de controle o editor vai possuir. Com o Dragonfly ele automaticamente já ganha o modal para galeria de imagem com suporte a uploads (em outro artigo mostro como migrar o Carrierwave para Dragonfly e como configurar para fazer uploads para S3. Dica: leia a documentação e o código fonte do Dragonfly).
 
@@ -63,7 +63,7 @@ Não esqueça de adicionar os assets do ActiveAdmin no seu <tt>config/environmen
 
 --- ruby
 config.assets.precompile += %w(active_admin.js active_admin.css active_admin/print.css)
----
+```
 
 ![ActiveAdmin-WYSIHTML5](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/361/screenshot.png)
 

@@ -23,7 +23,7 @@ links = links.reduce([]) do |result, link|
   result << { :href     => link[:href],
               :title    => link.try(:children).try(:to_s).try(:strip),
               :internal => false }
----
+```
 
 Com isso tenho todos os links dentro da collection <tt>links</tt>, e agora vou de item a item, para puxar o link e buscar o título em seu conteúdo (que é o método <tt>retrieve_title</tt> no trecho abaixo):
 
@@ -31,14 +31,14 @@ Com isso tenho todos os links dentro da collection <tt>links</tt>, e agora vou d
 links.each do |link|
   retrieve_title(link)
 end
----
+```
 
 Dependendo do post, se tiver muitos links (como o gigante recente de [Web Components](http://www.akitaonrails.com/2014/07/06/web-components-e-uma-revolucao)), ele pode demorar até quase 20 segundos!!
 
----
+```
     user     system      total        real
 0.310000   0.290000   0.600000 ( 19.968512)
----
+```
 
 O método <tt>retrieve_title</tt> que fiz, internamente chama outro método para puxar o link da internet e ler o título, usando Nokogiri:
 
@@ -56,7 +56,7 @@ def parse_external_link(href)
     return ""
   end
 end
----
+```
 
 E isso vai ser lento mesmo, porque o tempo de espera para fazer a conexão HTTP, esperar baixar os bits - que vai depender da velocidade da sua conexão -, para uma lista grande de links, pode demorar muitos segundos. E quanto mais links, mais vai demorar. No meu exemplo, no pior caso, se tiver 20 links e todos forem lentos, vai levar pelo menos 60 segundos pra terminar o processo (dado que eu coloquei um timeout de 3 segundos, no máximo, por link).
 
@@ -76,14 +76,14 @@ links.each do |link|
   }
 end
 pool.each(&:join)
----
+```
 
 Note que adiciono e inicio múltiplas threads e adiciono num array e depois dou join em todos eles, o que significa esperar até todos terminarem para prosseguir, mas neste ponto todos estão executando concorrentemente. E se fizer a mesma medição, com a mesma quantidade de links que antes estava dando mais de 19 segundos:
 
----
+```
     user     system      total        real
 0.200000   0.300000   0.500000 (  1.611597)
----
+```
 
 Apenas **1.6** segundo! Este trecho em particular ficou **12 vezes** mais rápido com quase nenhum esforço!
 
