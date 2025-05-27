@@ -12,7 +12,8 @@ Manjaro released it's newest release [version 17](https://manjaro.org/2017/03/07
 
 These are the currently installed, kernel specific packages:
 
----
+
+```
 $ pacman -Ss 410 | grep installed
 core/linux410 4.10.1-1 [installed]
 core/linux410-headers 4.10.1-1 [installed]
@@ -20,22 +21,22 @@ extra/linux410-acpi_call 1.1.0-0.7 (linux410-extramodules) [installed]
 extra/linux410-bbswitch 0.8-0.7 (linux410-extramodules) [installed]
 extra/linux410-ndiswrapper 1.61-0.7 (linux410-extramodules) [installed]
 extra/linux410-nvidia 1:375.39-0.7 (linux410-extramodules) [installed]
----
+```
 
 And to make sure everything is ok, I removed the old 4.9 related packages:
 
----
+```
 sudo pacman -R linux49 linux49-headers linux49-acpi_call linux49-bbswitch linux49-ndiswrapper linux49-nvidia
----
+```
 
 I also upgraded the system BIOS to the [latest 1.2.19](http://dell.to/2mWmWDg) (although many said to stay at 1.2.18 for now, but I didn't downgrade). The BIOS upgrade is quite easy as you just need to have a FAT formatted USB drive and copy the "XPS_9550_1.2.19.exe" file. On boot, you can press F12 and choose the option to upgrade directly from there.
 
 One thing that stopped working was the function keys to control screen brightness. I wasn't able to tweak it back but I can still control the brighness manually from the Terminal using commands like this:
 
----
+```
 xbacklight -inc 20 # to increment
 xbacklight -dec 20 # to decrement
----
+```
 
 Then, the most annoying part: the NVIDIA Optimus card.
 
@@ -43,27 +44,27 @@ Suspending the OS works flawlessly most of the time. I can just close the lid, o
 
 But the power management system turns off the NVIDIA GPU and I can't re-enable it after the machine wakes up, even if I reconnect to a power source. Whenever I try to run something through `optirun` (which forces the rendering through the NVIDIA GPU instead of the primary integrated Intel GPU) it errors out with this message:
 
----
+```
 Could not enable discrete graphics card
----
+```
 
 And the only way to have it running was to connect the power cord and reboot the machine. Then I could use the NVIDIA GPU normally. Rebooting all the time is not slow (thanks to the fast SSD) but it's still annoying to have to reopen every single application every time.
 
 Finally, after a lot of research, I found out how to be able to have the NVIDIA GPU enabled even on battery and after suspend. First, you need to know the PCI ID for the card:
 
----
+```
 $ lspci | grep "NVIDIA" | cut -b -8
 01:00.0
----
+```
 
 Then you need to edit `/etc/default/tlp` and add that PCI ID to be blacklisted from power management:
 
----
+```
 # Exclude PCI(e) device adresses the following list from Runtime PM
 # (separate with spaces). Use lspci to get the adresses (1st column).
 #RUNTIME_PM_BLACKLIST="bb:dd.f 11:22.3 44:55.6"
 RUNTIME_PM_BLACKLIST="01:00.0"
----
+```
 
 Reboot, and this is it! Now I can run applications through the NVIDIA card even without being connected to the power cord.
 
@@ -85,14 +86,14 @@ The way I understand it, you don't want TLP to kick in and shut off the card, be
 
 If everything is working fine, then the NVIDIA GPU is turned off by default. You can check that it is off through bbswitch:
 
----
+```
 $ cat /proc/acpi/bbswitch
 0000:01:00.0 OFF
----
+```
 
 Now, let's say you want to force something to use the card, so you do it like this:
 
----
+```
 $ optirun -vv glxgears
 [ 1817.200384] [DEBUG]Reading file: /etc/bumblebee/bumblebee.conf
 [ 1817.200519] [INFO]Configured driver: nvidia
@@ -113,22 +114,22 @@ $ optirun -vv glxgears
 [ 1818.163843] [DEBUG]Process vglrun started, PID 9770.
 10419 frames in 5.0 seconds = 2083.766 FPS
 10671 frames in 5.0 seconds = 2134.041 FPS
----
+```
 
 This will run `glxgears` (a simple app to test the card) through the Optimus bridge (in verbose mode, which is why you have all this extra information). And if `glxgears` was able to use the NVIDIA GPU it should report FPS (frames per second) higher than 1,000.
 
 And you can check with `bbswitch` like this:
 
----
+```
 $ cat /proc/acpi/bbswitch
 0000:01:00.0 ON
----
+```
 
 When you `Ctrl-C` out of `glxgears` it should report as `OFF` again.
 
 Just to make sure, it's important to guarantee that `/etc/bumblebee/bumblebee.conf` is customized like this (only important keys are shown below):
 
----
+```
 [bumblebeed]
 Driver=nvidia
 ...
@@ -139,7 +140,7 @@ Bridge=auto
 KernelDriver=nvidia
 PMMethod=bbswitch
 ...
----
+```
 
 So far, the only small issues I still have are these:
 
