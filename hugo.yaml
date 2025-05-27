@@ -1,6 +1,9 @@
 # Hugo configuration file
 title: AkitaOnRails.com
 
+outputs:
+  home: [HTML,RSS]
+
 services:
   disqus:
     shortname: akitaonrails
@@ -63,3 +66,12 @@ params:
     iframeAllowList: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     referrerpolicy: "no-referrer"
     iframeStyle: "border:0; width:100%; aspect-ratio:16/9;"
+
+  theme:
+    default: light
+
+  author:
+    name: Fabio Akita
+    email: fabioakita@gmail.com
+
+
