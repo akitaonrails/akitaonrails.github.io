@@ -49,7 +49,7 @@ A opção `--verbose` é opcional, mas no começo é bom deixar ligado. Dá pra 
 
 Enfim, minha máquina tem uma Ryzen 9 7940X3D com RTX 4090 de 24GB de VRAM. Pensei _"Hm, será que roda o Qwen de 32B parâmetros?"_ e fui testar. No primeiro teste tive este comportamento:
 
-![CPU alto GPU baixo](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/f0n8smr6ltbbb3mrmbm3lhkspt06?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-27%2001-28-34.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-27%252001-28-34.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001307Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=f7d4b0209a82f86ee2180fa47af383bf82dfce75a56bb33d520244b86af37a55)
+![CPU alto GPU baixo](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/f0n8smr6ltbbb3mrmbm3lhkspt06)
 
 Cocei bastante a cabeça com isso: minha CPU ficava constante consumindo 50% o tempo todo, mas a GPU estava em idle maior parte do tempo e dava pequenos picos curtos de uns 20%. O certo seria o oposto. Depois de muito pesquisar e testar, minha conclusão foi a seguinte:
 
@@ -91,7 +91,7 @@ Ou seja, o máximo que consegui entuchar na minha 4090 foi 8192, 8k de tokens. �
 
 Então eu pensei. No mundo consumidor só tem uma alternativa: Mac Mini.
 
-![Mac Mini](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/wv52d20e5niksk9aeyw7nv684yzt?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-27%2002-28-57.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-27%252002-28-57.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001308Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=1c5a237f60b412b97fa15fee625a17847ae4b6a2cf805a96f7e9ea14ae3fcefb)
+![Mac Mini](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/wv52d20e5niksk9aeyw7nv684yzt)
 
 Um Mac Mini tem máximo de 64GB de RAM. E Apple tem uma vantagem: ele é caro, sim, mas porque de fato usa componentes mais caros. A memória vem soldada e muita gente reclama, mas relaxa: você não ia ter como fazer upgrade de qualquer jeito, porque não existem pentes de memória na velocidade da memória dos Macs: eles são o mesmo tipo de chips de memória de GPU!!
 
@@ -109,7 +109,7 @@ Então eu vou comprar um Mac Studio? Não, não precisa. Eu não pretendo fazer 
 
 Eu já mencionei a RunPod em alguns artigos e posts no X porque eu sempre ouço falar dela em videos no YouTube de tutoriais de LLM. De fato é super simples e relativamente barato. Vamos resumir:
 
-![Storage RunPod](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/lpcff2b5hh9dg9gw4aqo8drfrc6g?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-27%2022-39-06.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-27%252022-39-06.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001310Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=0c092b3fd228fb1b71ddc49c52649407585eaaf2dfce8934264d2c3f10c64e00)
+![Storage RunPod](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/lpcff2b5hh9dg9gw4aqo8drfrc6g)
 
 A primeira coisa é subir um "Network Volume", um armazenamento disponível na rede (como meu NAS). Porque vamos ter que fazer download de modelos pesados (mais de 15GB, média de 20GB) e se eu precisar re-criar máquinas (pods/containers de Docker, na verdade), não quero ter que re-fazer downloads toda hora. USD 7 dólares por mês, por 100 GB, é caro, mas consigo viver com isso.
 
@@ -117,11 +117,11 @@ Se você não tem noção, um NVME de 4TB da Samsung (o mais popular, nem o melh
 
 Outra dica. Na RunPod já tem vários templates, que são basicamente imagens Docker. Pra Ollama já tem estes aqui:
 
-![templates runpod](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/3s9d3fkcqaq03wtbdvubziucy5dn?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-27%2022-44-15.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-27%252022-44-15.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001311Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=f32906f149a51f7087d03b3761ebb7fb5d6d0cff97563be3f2d88fefd71c46cd)
+![templates runpod](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/3s9d3fkcqaq03wtbdvubziucy5dn)
 
 Acho que qualquer um desses deve servir, mas pra testar, resolvi criar meu próprio template do zero, usando como base a imagem oficial "ollama/ollama:latest":
 
-![ollama template](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/y146j9i22ud0q8z0muv3rpasvyro?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-27%2022-45-42.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-27%252022-45-42.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001314Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=75dcafd47f6c391e14716da93403bc798d0fe16c1020abe75f664813465f4f19)
+![ollama template](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/y146j9i22ud0q8z0muv3rpasvyro)
 
 É com a variável de ambiente `OLLAMA_MODELS` que digo ao ollama pra buscar modelos no volume de rede que criei antes, assim, quando eu derrubar o container, os modelos vão persistir. Quem já deu deploy de containers entende conceito de volumes mapeados, é exatamente isso.
 
@@ -129,11 +129,11 @@ Um detalhe: o que o RunPod chama de "pods" não são mais que meros containers d
 
 Pra coisas como ferramenta de desenvolvimento, não tem problema. Se fosse um produto que precisa ficar no ar 24/7, aí tem que pesquisar as opções de reserva porque quanto mais longo for a reserva, menor o preço de uso por hora. Dependendo da config da máquina, a diferença é enorme. Por exemplo:
 
-![plan savings](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/6vwgla9vunxiplt05pwjy2seyp1z?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-27%2019-55-34.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-27%252019-55-34.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001315Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=a7afb62a0724b0bb495254e38e03e52b22621b9638d3d767dbe12ee2be3fab1a)
+![plan savings](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/6vwgla9vunxiplt05pwjy2seyp1z)
 
 Se eu usar uma máquina H100 (um dos topos de linha), com a taxa padrão "on-demand" de USD 2.89, e eu ficar com ela ligada por 6 meses, isso daria mais de USD 12k. Com a taxa reduzida de USD 2.49, dá um desconto de uns USD 2k. Tem que fazer as contas aí pra ver se vale a pena. Nessa faixa de máquina talvez vale mais a pena consultar uma Azure ou AWS, varia muito.
 
-![a40](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/94eicysvvgdn37n4m3p54xfolbi1?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-27%2020-05-30.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-27%252020-05-30.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001317Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=ee8f056a791b7c1e24e23bacbb10f4fc567dfe739249e9d7a677f514bb6b3874)
+![a40](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/94eicysvvgdn37n4m3p54xfolbi1)
 
 Enfim, eu fiquei testando na A40, que é geração passada de arquitetura, provavelmente próxima em processamento a uma 3080 da vida, mas com 40GB de VRAM. E como podem ver nessa foto de tela, realmente puxa a GPU e não consome metade da VRAM (o modelo não tem muito mais que 20GB, mas precisa do resto pra janela de contexto e outros cálculos internos).
 
@@ -145,7 +145,7 @@ As mudanças que pedi foram simples, do tipo "refatorar dois métodos que estava
 
 Primeiro de tudo, independente de ser na minha 4090 ou na A40, o Qwen é **LENTO**, muito lento, faixa de menos de 8 tokens por segundo às vezes, é sofridamente lento.
 
-![H100](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/1vumh8tyouv4skrmho4gm72fto80?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-27%2019-54-35.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-27%252019-54-35.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001318Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=c1689382e99b4be4da069eab39222e165206676a776f628c3c28f46ff5cbea06)
+![H100](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/1vumh8tyouv4skrmho4gm72fto80)
 
 Mas será que não é porque minha GPU ou a A40 são velhas e lentas? Pra tirar a dúvida subi o topo de linha do supra sumo: a H100 SXM de 80GB de VRAM e num container com 28 vCPUs e 250GB de RAM. E embora ele realmente puxasse a GPU, a velocidade em cima não escalou linearmente. É mais rápido, mas não o suficiente pra justificar a diferença de preços.
 
@@ -232,7 +232,7 @@ Procurei nas issues abertas no projeto e não achei nada pra gambiarrar temporar
 
 Me deixa abismado que tem MUITO post de blog falando tando de Qwen quanto Deepseek mas minha conclusão é que NENHUM DELES TENTOU DE VERDADE RODAR! Estão só REPETINDO o que ouviram falar. Eu poderia afirmar que este blog post é o PRIMEIRO que realmente fez testes em códigos um pouco mais parecidos com de verdade, e não brincadeirinhas de leet code. Porque é só usar por 10 minutos: não funciona.
 
-![refactor fake](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/ljvz5somwsrl2qow26ks6eh24cv1?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-27%2020-07-45.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-27%252020-07-45.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001320Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=8e74578267bebd0fe22faf9a32657d634a386431edf4e5fdcb0e51b8aa45521b)
+![refactor fake](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/ljvz5somwsrl2qow26ks6eh24cv1)
 
 Sem brincadeira, não lembro com qual modelo foi, mas eu pedi pra refatorar o método e olha essa foto de tela: ele só criou uma nova linha e tirou espaços em branco, mais nada! Era nesse nível. O Codellama se recusava a dar código, só dava explicações. O Codegemma parecido. O Aider ainda não deve saber como tirar proveito deles. Espero que alguém faça PRs pra consertar isso.
 

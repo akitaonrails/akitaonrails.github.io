@@ -67,7 +67,7 @@ Significa que, fundamentalmente, não tem como uma LLM estar 100%, 100% do tempo
 
 E o processo todo se assemelha muito a jogos online "gratuitos" com LOOT BOXES ou sistemas de GATCHA, sabe? Tipo Genshin Impact da vida.
 
-![Loot Box](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/my994es2wx2rj3mfkyu9i6h4s9ik?response-content-disposition=inline%3B%20filename%3D%22tu-genshin-impact-vach-mat-nhung-dieu-bi-an-dang-sau-ti-le-cua-loot-box-va-gacha-01-.0484-4045540040.jpg%22%3B%20filename%2A%3DUTF-8%27%27tu-genshin-impact-vach-mat-nhung-dieu-bi-an-dang-sau-ti-le-cua-loot-box-va-gacha-01-.0484-4045540040.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001348Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=befa715b14985222f05c144b646407d5ba2cead3d2454966a9cc9bd3f8b25e05)
+![Loot Box](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/my994es2wx2rj3mfkyu9i6h4s9ik)
 
 O quê??? Você é um boomer e não sabe o que são Loot Boxes? ...
 

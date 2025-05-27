@@ -17,7 +17,7 @@ Como eu disse no meu post anterior de Rant sobre [Desmistificar a I.A. pra progr
 
 E não digo que é uma tentativa proposital de mentir, mas que quem está fazendo as pesquisas e compilando rankings e leaderboards, não divulgam exatamente os detalhes e só soltam o resultado sem contexto. Este é um exemplo que achei hoje: [LiveBench](https://github.com/LiveBench/LiveBench), que é mais um pacote de benchmark de "programação". Olha  que é testado exatamente:
 
-[![LiveBench scripts](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/pms3gupxalzq81uwsz73t0ip34m8?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-05-01%2011-54-06.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-05-01%252011-54-06.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001334Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=b28cabe2be365238d20e90089d9e2a9ef4238f059d56c9811caabe645c666c3d)](https://github.com/LiveBench/LiveBench/tree/main/livebench/scripts)
+[![LiveBench scripts](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/pms3gupxalzq81uwsz73t0ip34m8)](https://github.com/LiveBench/LiveBench/tree/main/livebench/scripts)
 
 São testes idiotas do tipo "carregue estes dois arquivos CSV e compare os valores". É ainda mais idiota que Leet Code. É ainda mais idiota que a maioria dos testes de contratação de programadores estagiários. Enfim, é o conjunto mais idiota de testes que eu já vi. 
 
@@ -52,7 +52,7 @@ Vamos lá:
 
 - Mesmo assim, no Zig, ele precisava carregar o header `llama.h` pra saber que funções existem e que assinaturas pra conseguir fazer `extern "c"` das coisas. Trechos como este:
 
-![extern c](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/3t4nq4879ra3k81b4z2clhfb6axh?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-05-01%2017-01-52.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-05-01%252017-01-52.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001335Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=dffd30a582be93f154b34e5ed7e2ad91f07aeccb33eddb5f0dcf94062678784c)
+![extern c](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/3t4nq4879ra3k81b4z2clhfb6axh)
 
 - Pra fazer isso ele precisa ler de `vendor/llama.cpp/include/llama.h`. Ele sabe disso, mas mandava o path errado o tempo todo, como `vendor/llama.h` ou `vendor/llama.cpp/llama.h`. Se não prestar atenção, ele fica em loop infinito tentando adivinhar porque dá erro sem parar pra pensar no path correto. Eu que tive que manualmente, mais de uma vez, dizer pra ele o path correto e mesmo assim ele esquecia.
 
@@ -66,7 +66,7 @@ Enfim, gastei umas boas 2 horas só nessa parte. Tentando ler documentação. Eu
 
 É ou alguma configuração específica do modelo com llama.cpp que eu não sei (daí o resultado é errado) ou é o código que pega a resposta que tem algum erro. Eu vejo isso:
 
-![llama error](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/wocaykokk9w8wj8udgi3hyfk9emj?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-05-01%2017-14-53.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-05-01%252017-14-53.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001337Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=56a80afc7c1c97a4458ac21fb1c6a6ea6d86156766a8413c735eb2a27c23063f)
+![llama error](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/wocaykokk9w8wj8udgi3hyfk9emj)
 
 O problema: tem pouquíssima documentação a respeito e não achei nada que me ajudasse a resolver. E só na tentativa e erro o Gemini também não conseguiu resolver. Então eu encerrei o teste.
 
@@ -80,7 +80,7 @@ Fui na minha conta e enchi mais USD 100. Voltei só nessa parte do `std::bad_all
 
 No momento que desisti, é isso que vi no meu saldo na OpenRouter:
 
-![OpenRouter credits](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/pobrdfrwga38utw0jud47no3fhhn?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-05-01%2017-19-06.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-05-01%252017-19-06.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001338Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=c59e17d4b8343810a3ab37cdec79d8ea8453ae6d134fec5ffccba7131a4993a0)
+![OpenRouter credits](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/pobrdfrwga38utw0jud47no3fhhn)
 
 Além dos cerca de USD 20 que eu tinha sobrando, ele gastou quase USD 35. Chutando, ele gastou mais de USD 50 pra não me dar um código que funciona, depois de umas boas 4 ou 5 horas tentando. Pode esperar gastar USD 10 por hora em tentativa e erro. Se você vê que está repetindo muito "What's wrong, fix", é hora de parar e desistir, ele não vai conseguir.
 

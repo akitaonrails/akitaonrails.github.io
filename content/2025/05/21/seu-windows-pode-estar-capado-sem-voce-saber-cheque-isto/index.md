@@ -18,7 +18,7 @@ Agora senta que lá vem história.
 
 Eu montei um PC até que razoável pra minha namorada: Intel i7 12th Gen de 8 cores, 32GB DDR4-2400, NVIDIA RTX 3090, placa-mãe MSI Edge z790, NVME e até coloquei um NAS Synology DS1621+ em rede 2.5Gbps - porque ela é criadora de conteúdo e tem MUITO video pra editar. Modéstia a parte, ficou bonito:
 
-![pc branco](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/a8c82k3ocnpu1jamxb9w0z1fx2cf?response-content-disposition=inline%3B%20filename%3D%22.org.chromium.Chromium.p7bYgh%22%3B%20filename%2A%3DUTF-8%27%27.org.chromium.Chromium.p7bYgh&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001429Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=f2814f8f23fe9dcc13df94397c60c27684798c7a6a830d5983b26afcaab66efd)
+![pc branco](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/a8c82k3ocnpu1jamxb9w0z1fx2cf)
 
 Tudo funcionou muito bem por bastante tempo, mas eventualmente, sem nenhum motivo aparente, tudo começou a parecer meio lento. Não totalmente lento, mas às vezes páginas web pareciam engasgar pra carregar. Clicava no menu Start do Windows e ele parecia dar umas travadas. Às vezes o Explorer travava e precisava ir no Task Manager e dar restart no processo manualmente. Várias coisas super inconvenientes mas que não dava nenhum "erro" explícito aparente. Só parecia "estranho".
 
@@ -44,7 +44,7 @@ Ficando sem paciência resolvi ir nuclear na idéia de internet. De fato, abrind
 
 Aproveitei que fui pra Miami e já trouxe um roteador TP-LINK BE9300 pra Wi-fi 7, comprei uma placa PCIe de Wi-fi 7 compatível também. Desliguei o roteador de Wi-fi da Vivo e mandei subir o plano pra 800Mbps. E de fato, melhorou muito a internet:
 
-![vivo internet](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/ogesvmtex2ek825hel7d4l0f5i30?response-content-disposition=inline%3B%20filename%3D%2220250521_151510.jpg%22%3B%20filename%2A%3DUTF-8%27%2720250521_151510.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001430Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=1e8c46a5c6f1edea99528f2769c3c8dd884cb87aa0c95ee5069364417e61fbde)
+![vivo internet](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/ogesvmtex2ek825hel7d4l0f5i30)
 
 Latência caiu, jitter caiu, packet loss foi pra 0%. 
 
@@ -64,7 +64,7 @@ Fiquei um tempo olhando pro Task Manager, mas não tinha nenhum processo rodando
 
 Mas eis que, de tanto olhar o task manager, eu vi que estava ignorando um dado importante. Veja se acham:
 
-![cpu low](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/pky39kkwcbuyqocwpj15n36i9gai?response-content-disposition=inline%3B%20filename%3D%2220250521_151208.jpg%22%3B%20filename%2A%3DUTF-8%27%2720250521_151208.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001432Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=74b88433ec6531c9f8167239c39e2adb47dae3b863899da532a5b2b7adc0addc)
+![cpu low](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/pky39kkwcbuyqocwpj15n36i9gai)
 
 A imagem tá meio zoada porque eu tirei foto do monitor com meu celular. O refresh rate conflita com da câmera e fica essa "grade", mas acho que dá pra ler.
 
@@ -74,7 +74,7 @@ Abri navegadores, abri abas, fiquei monitorando, e nunca subia pra mais de 1.5Gh
 
 Olhando o Event Viewer dava pra ver quando o menu Start (que faz parte do Explorer.exe) parava de funcionar e travava: ele registra no log como "Hanging Events" código 1002.
 
-![event viewer](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/dtugk013p4decud6zo1dzg3rjhxr?response-content-disposition=inline%3B%20filename%3D%2220250521_135224.jpg%22%3B%20filename%2A%3DUTF-8%27%2720250521_135224.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001433Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=e9be43e946228952fd2933b400b31d80e846ffcbdeafeed02fb1031e0fd070d0)
+![event viewer](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/dtugk013p4decud6zo1dzg3rjhxr)
 
 Tá vendo esse monte de Error? Tudo Hanging Events, e "hanging" é justamente o comportamento: alguma coisa parece "segurar", "travar" e só matando o processo pra ele voltar a funcionar.
 
@@ -92,7 +92,7 @@ E de novo esquisito: estava FRIO ao toque!!!
 
 Não é possível. Abri a BIOS pra re-checar perfis de ventoinha, mas tudo normal:
 
-![cpu fans](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/yl02sk0dug6zj9d1gen877d22gnw?response-content-disposition=inline%3B%20filename%3D%2220250521_143025.jpg%22%3B%20filename%2A%3DUTF-8%27%2720250521_143025.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001436Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=1d35ef16eb2f3ecb9db52a3320e867029cf425e7f79fa82b15761e5d4c204a24)
+![cpu fans](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/yl02sk0dug6zj9d1gen877d22gnw)
 
 Eis que finalmente me ocorreu:
 
@@ -101,7 +101,7 @@ Eis que finalmente me ocorreu:
 
 Num PC/notebook normal, deveria aparecer algo parecido com isto:
 
-![Power Settings](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/a5dkm6eag4ebma6ye1i1mnzphy3s?response-content-disposition=inline%3B%20filename%3D%22Change-power-mode-via-Windows-11-settings-696x443-1063343334.jpg%22%3B%20filename%2A%3DUTF-8%27%27Change-power-mode-via-Windows-11-settings-696x443-1063343334.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001437Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=e52adbd094fa00d09e5e63c4ce97a1a97622f3c4692a825091a253f1823f2483)
+![Power Settings](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/a5dkm6eag4ebma6ye1i1mnzphy3s)
 
 Por default, Windows sempre sobe em "Balanced Mode".
 
@@ -109,7 +109,7 @@ Mas no PC da minha namorada, **não sei por que**, não tinha opção de Power M
 
 Isso é esquisito, mas eu sei que no antigo Control Panel, tem opção de Power Options:
 
-![control panel](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/70ymku67f5ufp0pd76jp0b2hqjx2?response-content-disposition=inline%3B%20filename%3D%2220250521_151203.jpg%22%3B%20filename%2A%3DUTF-8%27%2720250521_151203.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001438Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=015cd137cd0ccd9652e26a1dcb00c081b95d26124b3712055b93656d94c26ced)
+![control panel](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/70ymku67f5ufp0pd76jp0b2hqjx2)
 
 E EIS O PROBLEMA:
 
@@ -119,7 +119,7 @@ Como isso aconteceu? Não tenho a mínima idéia. LEMBREM-SE: eu re-instalei o W
 
 Em notebook faz sentido ter esse perfil, pra economizar bateria quando você não tem tomada. Mas em PC desktop, como é meu caso, não faz nenhum sentido!! Mudei pra "Ultimate Performance" e olha o task manager agora:
 
-![cpu high](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/5hg5d85ivuxv9tw5si21wcb3hm5p?response-content-disposition=inline%3B%20filename%3D%2220250521_151130.jpg%22%3B%20filename%2A%3DUTF-8%27%2720250521_151130.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001440Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=c7afa318007fccc0acdfcb3e766669ccfc96f28b64ad0c7ab344cef4c7680e2f)
+![cpu high](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/5hg5d85ivuxv9tw5si21wcb3hm5p)
 
 AGORA SIM!! Acima de 4Ghz!!!
 

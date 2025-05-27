@@ -18,7 +18,7 @@ Eu tenho uma CPU AMD Ryzen 9 7950X3D. O processador é um pacote com um pacote q
 
 Mas tem uma diferença, cada die tem caches L3 diferentes. Um dos dies tem só 32MB e o outro tem 96MB, então programas mais pesados se beneficiam se rodarem nos cores do die que tem mais L3, e dá pra configurar isso.
 
-![lstopo](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/gcbhrzj8wuc38z3lonisck0ooeck?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-17%2016-35-19.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-17%252016-35-19.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000945Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=a114a45a590ee0027b2bb04ac0d89df0d2b73677f916e9f6182f7a73bf3fb765)
+![lstopo](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/gcbhrzj8wuc38z3lonisck0ooeck)
 
 Além disso ele tem clock base acho que de 3Ghz com capacidade de dar turbo boost até 5.7Ghz. Não pode tudo rodar nessa velocidade senão esquenta muito rápido e pode dar "thermal throttle" e aí ele derruba tudo pra baixo de 3Ghz. Por isso que, principalmente em notebooks que não tem capacidade térmica adequada, o melhor não é dar overclocking e sim "undervolting" (cortar a energia pra ir menos rápido). Porque é melhor todo mundo um pouco menos rápido do que todo mundo super rápido mas imediatamente super-aquecer e todo mundo ficar lento. É complexo isso.
 
@@ -35,21 +35,21 @@ Pra ajustar isso, se quiser ser avançado, precisa ajustar parâmetros como PPT 
 Mas isso é muito avançado, e precisa saber bem mais de elétrica antes de 
 tentar na não. Melhor não arriscar e não mexer nisso. A tela a seguir, não deixe em Avançado e sim em Auto mesmo:
 
-![PBO Advanced](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/vxeurat4imakwzdl6artkzuqymmq?response-content-disposition=inline%3B%20filename%3D%22PBO%20advanced.jpg%22%3B%20filename%2A%3DUTF-8%27%27PBO%2520advanced.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000946Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=2a40574839df8ca51d495a9b1093c7e90b6be28602a9675863a78de8f73beb65)
+![PBO Advanced](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/vxeurat4imakwzdl6artkzuqymmq)
 
 Em vez disso é melhor mexer em PBO Enhancement Presets, que é essa tela abaixo:
 
-![PBO Presets](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/a1vgigv3ka64xs6nclq9z2hh21w7?response-content-disposition=inline%3B%20filename%3D%22PBO%20Presets.jpg%22%3B%20filename%2A%3DUTF-8%27%27PBO%2520Presets.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000948Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=c907bebc5606d232f0516a255ecf84dfc0a142ea6349608c52c6922b697efcc7)
+![PBO Presets](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/a1vgigv3ka64xs6nclq9z2hh21w7)
 
 **70/80/90** se refere à temperatura máxima que permitimos os cores de chegarem. Isso vai depender se você tem uma boa solução de resfriamento. Seja um AIO com resfriamento líquido ou um [**Noctua NH-D15 G2**](https://noctua.at/en/nh-d15-g2) que é o que eu uso. Ventoinhas da Noctua são hiper silenciosas, eu quase nunca ouço e tem menos manutenção e possibilidade de falhas do que refriamento líquido. Eu prefiro menos peças móveis pra garantir.
 
-[![Noctua NH-D15 G2](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/4d10atf2k9rb5pntb9eec5uzqk7u?response-content-disposition=attachment%3B%20filename%3D%22232314-800-auto.webp%22%3B%20filename%2A%3DUTF-8%27%27232314-800-auto.webp&response-content-type=image%2Fwebp&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000950Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=7f181bad4d219455a64b09ba8d7086992ef43d0129ea9c4cc95af33559d97d35)
+[![Noctua NH-D15 G2](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/4d10atf2k9rb5pntb9eec5uzqk7u)
 
 Agora esses **Level 1 a 5** são as tunagens de PPT/TDC/EDC que eu falei, mas já pré-definidas e testadas pelo fabricante. 1 é menos agressivo, o mais estável já 5 é o mais agressivo, pode ser instável. O certo é começar em **90 level 5** e ir diminuindo até achar o mais estável pro seu sistema. Isso vai variar, por exemplo, quando mais RAM tiver, menos agressivo parece que pode ser, especialmente quanto mais rápido essa RAM for.
 
 No meu caso, logo no boot do meu Manjaro Linux, já deu kernel panic, que se parece com algo assim:
 
-![kernel panic](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/f25kqct9urmereleunhurknw40d4?response-content-disposition=inline%3B%20filename%3D%22kernel%20panic.jpg%22%3B%20filename%2A%3DUTF-8%27%27kernel%2520panic.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000952Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=7ce68a090ff58d757141d6a0ab2f4eeb47def9bcc033e18ad3181a75ce4ce68f)
+![kernel panic](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/f25kqct9urmereleunhurknw40d4)
 
 Então voltei pra BIOS e fui testando diferentes níveis e, pra minha configuração, consegui chegar só até **90 Level 2**. Esse tem sido estável e até agora não tive nenhum crash aleatório.
 
@@ -67,7 +67,7 @@ Agora, a RAM DDR5 boota no clock base de uns 4.8Ghz. Mas dependendo do modelo da
 
 Esqueci de tirar foto da minha BIOS, mas essa foto do Google Images um pouco mais antiga é a mesma coisa. XMP/EXPO vem desligado (conservador) mas é só escolher o profile que já existe:
 
-![XMP/EXPO Profile](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/ypwo0rsbr1bmu6w6ujm7b1qyjlof?response-content-disposition=inline%3B%20filename%3D%22hq720.jpg%22%3B%20filename%2A%3DUTF-8%27%27hq720.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000954Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=af56427530a437f33db13c3c2250cdecc54d37839411ea22cc02800f22e569f0)
+![XMP/EXPO Profile](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/ypwo0rsbr1bmu6w6ujm7b1qyjlof)
 
 Note que logo embaixo tem coisas como **Low Latency Support** e **High Bandwidth Support**. Teoricamente pra diminuir a latência e aumentar a banda de transferência. Tudo que soa muito bom, mas no meu caso não funciona. Se eu tento ligar esses dois, meu sistema não dá boot. Fui obrigado a limpar a CMOS pra reiniciar a BIOS sem isso.
 
@@ -215,7 +215,7 @@ Muitos fabricantes de placa-mãe oferecem software, pra Windows, pra automaticam
 
 No meu caso, agora volta F33 (versão de março de 2025). Agora, pra comparar se essa é a versão mais nova, só indo manualmente na porcaria do site da Gigabyte que, no meu caso, é [este link](https://www.gigabyte.com/Motherboard/X670E-AORUS-XTREME-rev-10/support). Pro seu modelo específico, e fabricante, lógico, esse link vai variar.
 
-[![x670e support page](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/72l1if05q22u1ogowfzws9rtz95j?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-17%2018-38-01.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-17%252018-38-01.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000955Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=f4585c001b86b4159d7708b80a5307c63dc6b79049b3a27858c0b6124f869e4f)](https://www.gigabyte.com/Motherboard/X670E-AORUS-XTREME-rev-1x/support#support-dl)
+[![x670e support page](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/72l1if05q22u1ogowfzws9rtz95j)](https://www.gigabyte.com/Motherboard/X670E-AORUS-XTREME-rev-1x/support#support-dl)
 
 Pra piorar, parece que o conteúdo é carregado assincronamente por javascript, então se tentar usar `wget`ou `curl` pela linha de comando, não vai ter carregado o conteúdo ainda.
 

@@ -14,7 +14,7 @@ draft: false
 
 A notícia quente do dia é o lançamento do novo modelo Qwen3. Eu mesmo [postei a respeito hoje](https://www.akitaonrails.com/2025/04/28/testando-o-recem-lancado-llm-open-source-qwen3-com-aider-e-ollama) E já fiquei bem impressionado. Achei que ia deixar por isso mesmo, mas aí vi este tweet:
 
-![ivan qwen tweaks](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/1jgq3ar5c5l7wfjt9wjfui8l598z?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-29%2001-55-55.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-29%252001-55-55.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001331Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=161e7b40b1e7a54be99e719d69e4938c6e0bb2bb9015077489da9c5889ca7c5b)
+![ivan qwen tweaks](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/1jgq3ar5c5l7wfjt9wjfui8l598z)
 
 Veja o [texto completo neste link](https://x.com/ivanfioravanti/status/1916934241281061156)
 
@@ -145,7 +145,7 @@ Pra quem tem GPUs com menos VRAM, digamos, uma 3070 ou 4070 de 16GB, dá pra usa
 
 Rodando meu qwen3-dev, no meu monitoramento minha CPU ficava maior parte do tempo em idle e a GPU o tempo todo acima de 90%, consumindo mais quase 400W constantemente, mantendo temperatura de 73 graus (o que é bom).
 
-![btop](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/jv8ub1bc6m70u1agm1nyiooav2mk?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-29%2001-44-38.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-29%252001-44-38.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001333Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=53e86310b22e6998c938977f6202be1c59f398de51aab41e333b88a88813a0c5)
+![btop](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/jv8ub1bc6m70u1agm1nyiooav2mk)
 
 Tive até um pequeno incidente onde meu PC desligou do nada, porque a extensão temporária que eu estava usando não aguentou e morreu. Somado com a CPU e meus outros dispositivos ligados na mesma tomada, estava puxando consistentemente 1000W da parede por horas. Brincar de I.A. usa **MUITA** energia, com ar-condicionado ligado porque só pra dissipar tudo isso, meu apartamento fica 1 a 2 graus (que eu chuto) acima do normal. Dá pra sentir mais quentinho mesmo kkkk
 

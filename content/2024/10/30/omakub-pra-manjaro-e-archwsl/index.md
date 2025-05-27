@@ -21,7 +21,7 @@ draft: false
 
 Algum tempo atrás o DHH lançou uma ferramenta open source chamada [Omakub](https://omakub.org) que instala diversas ferramentas e configura um ambiente de desenvolvimento moderno em Ubuntu. Ele vai além de coisas só de terminal e também configura vários aspectos do ambiente GNOME. Vale a pena experimentar, nem que seja numa Virtual Machine, pra ver como fica.
 
-![Omakub - demo](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/1ddbjucxzkah963tou557907bkmr?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20from%202024-10-28%2015-56-36.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520from%25202024-10-28%252015-56-36.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000920Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=5246da5dbcfcf07eb59e5dc41ecd696b81081eb18242be53b9b0f862c014db47)
+![Omakub - demo](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/1ddbjucxzkah963tou557907bkmr)
 
 Eu gostei bastante das escolhas do DHH, ele sempre foi um cara de Mac, eu também. Mas eu migrei de volta pra Linux quase 10 anos atrás. O motivo foi porque eu evangelizava tech pra desenvolvedores júniors e no Brasil ficou inviável incentivar Macs. E não queria que parecesse que sem usar Macs você estaria automaticamente em grande desvantagem. Então passei a usar exclusivamente Linux e no blog fiz vários posts explicando sobre isso, como estes:
 
@@ -54,14 +54,14 @@ Além disso, puristas vão dizer que é pra ficar no Arch Linux puro, mas faz an
 
 Então não teve jeito, fui obrigado a fazer um fork e ajustar o Omakub num novo projeto, o [**OMAKUB-MJ**](https://github.com/akitaonrails/omakub-mj) (o nome não tá muito correto, deveria ser algo como OMAKAMJ ou algo assim que seria Omakase com Manjaro, mas fica feio, mandem sugestões nos comentários). Migrei todos os comandos de Apt pra Yay, além de diversos outros ajustes. Rodei no meu PC principal (depois de ter testado bastante numa VM, claro) e agora ficou bonitão assim:
 
-![Omakub-MJ](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/8sq62mkbc4kxuzqk5opej275xpuc?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20from%202024-10-28%2016-46-15.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520from%25202024-10-28%252016-46-15.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000922Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=1835c31741c392e35415b0c2a3395f87e6a5cdfe8a0bbe2bd5f012cdf8d7075f)
+![Omakub-MJ](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/8sq62mkbc4kxuzqk5opej275xpuc)
 
 Igual à versão de Ubuntu, ele ativa o tema Tokyo Night, mas dá pra mudar pra vários outros temas. Depois de instalado, vai ter um comando `omakub` no terminal que abre um menu com várias opções, incluindo mudar tamanho das fontes ou trocar temas:
 
-![Omakub trocar tema](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/7qvbv50ipzifo3cv5bhe3lb64kq8?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20from%202024-10-28%2016-48-19.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520from%25202024-10-28%252016-48-19.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000924Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=c6a463ee26e3c525cf9c51c0caf4c841e305d85e6f84a7dd65eb0e1ec48cf795)
+![Omakub trocar tema](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/7qvbv50ipzifo3cv5bhe3lb64kq8)
 Tem **MUITAS** coisas legais pré-instaladas, por isso repito pra ler [o manual](https://manual.omakub.org/) que é muito bonito, bem escrito, e eu não mudei nenhuma das configurações principais (só o zellij, já explico), então tudo que vale pra versão Ubuntu também vale pra Manjaro. E eu sei que a maioria de vocês tem preguiça de abrir o manual, mas uma coisa que o DHH sabe fazer é uma documentação atraente:
 
-[![Manual Omakub](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/xdsu6gghf5ncic9rh852hv1c7bcz?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20from%202024-10-28%2016-49-55.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520from%25202024-10-28%252016-49-55.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000925Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=47841369aa2d6dea495c1cc78e061b1e73fb3a73fef30ac939a930adfb6cd01b)](https://manual.omakub.org/1/read#leaf_29)
+[![Manual Omakub](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/xdsu6gghf5ncic9rh852hv1c7bcz)](https://manual.omakub.org/1/read#leaf_29)
 ### Migrando pra Manjaro
 
 Enfim, pra migrar de Ubuntu pra Manjaro, a primeira coisa que fiz foi trocar comandos apt por yay, coisa simples assim:
@@ -99,33 +99,33 @@ No lado Gnome, o DHH escolheu apps como [Flameshot](https://flameshot.org/) pra 
 
 De todos, o único que realmente não conhecia é o [**Localsend**](https://play.google.com/store/apps/details?id=org.localsend.localsend_app&hl=en). Mas agora já instalei no meu Linux, Windows, smartphone e tudo mais. É o jeito mais fácil de transferir arquivos entre máquinas na mesma rede. Igual o Airdrop de iPhone. Vale a pena ter instalado em tudo.
 
-[![Localsend](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/fnpyyqis498wth9do5qodt7xli0x?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20from%202024-10-28%2017-06-21.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520from%25202024-10-28%252017-06-21.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000929Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=c87e408a04ffd60677e5e202752da9c03a6821ca5eca79d58417fa07cd8d649e)](https://localsend.org/pt-BR)
+[![Localsend](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/fnpyyqis498wth9do5qodt7xli0x)](https://localsend.org/pt-BR)
 
 Outro app que eu não conhecia é o [Ulauncher](https://ulauncher.io/) que é um executador de aplicações, igual a barra de Spotlight de Mac. Basta apertar `Super/Tecla de Windows + Espaço` e ele abre uma barra onde podemos digitar o nome do app que queremos abrir:
 
-![Ulauncher](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/ttbw39v9y0r17rw16x4s99p45epe?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20from%202024-10-30%2011-30-58.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520from%25202024-10-30%252011-30-58.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000930Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=3cd6a0454f446197f4b81c77089a430d83a5d45e68534e26a0c64e2e99701830)
+![Ulauncher](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/ttbw39v9y0r17rw16x4s99p45epe)
 
 Se fosse só isso, não é muito útil porque em Gnome, só de apertar `Super` já dá pra digitar o nome de apps. Mas o interessante é que ele faz mais que executar apps. Depois fuce a [Página de Extensions](https://ext.ulauncher.io/) pro Ulauncher. Tem coisas como calculadoras, controlador de Spotify, pesquisador de arquivos, facilitador pra editores com Obsidian ou Notion, pesquisador de snippets de código pra VS Code, tradutores, integradores pra serviços de GPT e um dos meus favoritos, facilitador de Emojis:
 
-![Ulauncher Emojis](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/dsjsfzdr6rddfrqqtlcmj3uu9891?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20from%202024-10-30%2011-33-24.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520from%25202024-10-30%252011-33-24.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000932Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=8198c59eeba3b0e69faf48d66a962e2d25ddd7aa572445a4d55790d44d6d1ad8)
+![Ulauncher Emojis](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/dsjsfzdr6rddfrqqtlcmj3uu9891)
 
 O Omakub ajusta bastante coisa do Gnome. Em particular adiciona várias extensions que mudam o comportamento do ambiente gráfico:
 
-![Gnome Extensions](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/ocm6xifnbygf4cagdb5icjusz1t6?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20from%202024-10-30%2011-28-42.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520from%25202024-10-30%252011-28-42.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000933Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=47a91476bdf9b5ad8270e95cea100d8a698b6d05a550268d872f507dd803ad27)
+![Gnome Extensions](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/ocm6xifnbygf4cagdb5icjusz1t6)
 
 Depois vale fuçar as configurações de um por um. Por exemplo, ele instala e já configura a extension [**Tactile**](https://extensions.gnome.org/extension/4548/tactile/) que é provavelmente a melhor pra organizar as janelas em "tiles" ou "azulejos", ou seja, pra facilitar alinhar uma janela em cima ou do lado da outra de forma proporcional. Ele faz isso pré-dividindo a tela em áreas e atribuindo letras a cada área, assim fica fácil de fazer uma janela se encaixar numa dessas áreas.
 
 Por exemplo, com o comando `Super + T` aparece esse grid. Se digitar "w" duas vezes, minha janela de Alacritty se encaixa no topo, no meio, na área marcada com "W":
 
-![Tactile W](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/ofqh86tf3l3p6eviesq1dhosbio2?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20from%202024-10-30%2011-36-46.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520from%25202024-10-30%252011-36-46.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000934Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=97e219d1cff26863a1114a373712c9d5f96c638c88737f369cfcc0667de9f472)
+![Tactile W](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/ofqh86tf3l3p6eviesq1dhosbio2)
 
 Normalmente, eu gosto de ter a janela aberta no meio do monitor, maximizado na vertical, sem esticar pros lados, especialmente pra ler ou digitar textos. Então posso fazer `Super + T` e logo depois `W e S` pra marcar duas áreas:
 
-![Tactile W S](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/ijvlxzdvykxn12nbkvcwy73s5i6p?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20from%202024-10-30%2011-38-59.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520from%25202024-10-30%252011-38-59.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000935Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=9d466dd2811c23e03daaa23d5f400ad551267eecf724d2e1f9fb9e3d04f65c63)
+![Tactile W S](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/ijvlxzdvykxn12nbkvcwy73s5i6p)
 
 Mas também continuo podendo teclar `F11` ou `Super + seta pra cima` pra maximizar a janela na tela inteira. Ou usar as combinações clássicas de Windows como `Super + seta esquerda` ou `Super + seta direita` pra fazer a janela usar metade vertical da tela, desta forma:
 
-![Tactile lado a lado](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/jjznbiwblc0zdlfydrmdqqxuxwkk?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20from%202024-10-30%2011-40-23.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520from%25202024-10-30%252011-40-23.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000936Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=a5d2c3844b1313f5ea3c76ce4de1630df72af32689d57f08654f22c9ed16c153)
+![Tactile lado a lado](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/jjznbiwblc0zdlfydrmdqqxuxwkk)
 
 Vale fuçar a documentação e as configurações da extension Tactile pra dividir as áreas do jeito que mais gosta. Isso vai variar bastante caso use monitor secundário na vertical, ou use monitor Ultra Wide. E nesse caso é onde esse tipo de extensão vai fazer mais diferença pra manter suas janelas organizadas.
 
@@ -133,7 +133,7 @@ Vale fuçar a documentação e as configurações da extension Tactile pra divid
 
 Eu mencionei Visual Studio Code, e ele está aqui pra quem gosta, mas quem acompanha meus videos e artigos, sabe que sou usuário de Vim de longa data. E a comunidade Vim não pára quieta. Hoje em dia tem um fork mais moderno, o **NEOVIM**, que se tornou o mais usado. 
 
-![LazyVim](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/k00pryy0c676m4ryssrt7d48aqqr?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20from%202024-10-30%2011-26-41.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520from%25202024-10-30%252011-26-41.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000938Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=8d031dea28599952ab7d9f77b208d927f058c651237db2dbdc9083b6ef12d2e9)
+![LazyVim](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/k00pryy0c676m4ryssrt7d48aqqr)
 
 Em cima do NeoVim podemos instalar plugins manualmente e ficar ajustando configuração pela eternidade, ou usar configs já prontas. Até poucos meses atrás eu usava o LunarVim, mas ele meio que caiu em desuso. Depois passei a usar o [AstroNVIM](https://astronvim.com/), que resolve muito bem, mas parece que a maioria das pessoas passou a convergir pro [**LazyVim**](https://www.lazyvim.org/). Confesso que fico em dúvida entre qual é o melhor, AstroNvim ou LazyVim, mas vou ficar com o LazyVim por enquanto.
 
@@ -163,7 +163,7 @@ Não mais. Quando o X reiniciar, basta reabrir seu Alacritty e, mesma coisa, faz
 
 Veja este exemplo abaixo:
 
-![ZelliJ](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/wmxxa8a061mg6ius1chgukb4k86m?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20from%202024-10-30%2012-01-19.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520from%25202024-10-30%252012-01-19.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000939Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=3cea11d8c15580d77595ce5f01e2dd49c637da4733b2970bc88c3b29dcaa7aee)
+![ZelliJ](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/wmxxa8a061mg6ius1chgukb4k86m)
 
 O Omakub já configura o ícone do Alacritty pra abrir uma janela de ZelliJ. Se seguir a configuração padrão, teclando `Ctrl P D`, sendo "P" pra Painel e "D" pra "D"ividir a janela horizontalmente, dá pra abrir dois programas um em cima do outro.
 
@@ -179,7 +179,7 @@ Outra solução é o que eu fiz no Omakub-MJ. Eu adicionei as configurações do
 
 Pra entrar nesse modo, precisa digitar primeiro `Ctrl f` e na barra inferior, dá pra ver mudando de modo Normal pra Tmux:
 
-![zellij tmux](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/ecr3jpesab4l2ilalp24vf7f9n4c?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20from%202024-10-30%2012-10-21.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520from%25202024-10-30%252012-10-21.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000943Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=188d49cf9db2ed0733fe4e7f78116156f14af9ebeb3843f7492a435dbcb3d8d9)
+![zellij tmux](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/ecr3jpesab4l2ilalp24vf7f9n4c)
 
 E agora sim, podemos digitar comandos como `P D` pra dividir painel. E fazendo isso, enquanto estiver no modo Normal mesmo, dentro do Neovim, combinações como `Ctrl H` ou `Ctrl L` vão funcionar normalmente. Win-win!
 

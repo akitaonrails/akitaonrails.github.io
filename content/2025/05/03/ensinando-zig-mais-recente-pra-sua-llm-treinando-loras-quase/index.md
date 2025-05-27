@@ -19,7 +19,7 @@ Nota: todos os códigos que vou mostrar mais abaixo estão disponíveis [neste r
 
 Por exemplo, eu perguntei ao modelo Qwen3-8b (que saiu poucos dias atrás), qual versão de Zig ele sabe e a resposta foi: 0.11 ou 0.12:
 
-![zig antigo](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/39h50oguk03tci9reclcbiovolhm?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-05-02%2014-24-08.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-05-02%252014-24-08.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001349Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=39327c327597426f5ff0c679856f29d96d6e30a5007fbc92fdc95aa8e87fcb43)
+![zig antigo](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/39h50oguk03tci9reclcbiovolhm)
 
 Aliás, é assim como na foto que se chama uma API compatível com OpenAI de LLMs com curl. De qualquer forma, foi por isso que eu sofri tanto pra tentar fazer funcionar um programinha simples (nível "Hello World") ontem: ele não sabe que já estamos no [Zig 0.14](https://ziglang.org/download/0.14.0/release-notes.html). E foi de propósito, eu sabia que ele não ia ter essa informação.
 
@@ -27,7 +27,7 @@ _"E outros LLMs comerciais? Eles não são melhores que os open source?"_
 
 Perguntei ao ChatGPT 4.1, Claude Sonnet 3.7, Gemini 2.5 Pro Experimental, Deepseek R1 Zero (tudo de uma vez, OpenRouter.ai permite chat multi-model):
 
-![LLM cut off](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/z9wbo5yi49m4vd3zi3pjpxbo7zj7?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-05-02%2020-30-09.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-05-02%252020-30-09.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001351Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=2ddf269fd0195e0ba9cd8dc62fcf93d4606473fb50a0ba548ece3faaa861fb17)
+![LLM cut off](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/z9wbo5yi49m4vd3zi3pjpxbo7zj7)
 
 Resumindo:
 
@@ -189,7 +189,7 @@ Isso resultou em mais um arquivão de **152 kilobytes**. Espero que não confuda
 
 Como já repeti antes, a 4090 só tem 24GB de VRAM. O modelo Qwen3-8b sozinho ocupa 16GB (não, número de parâmetros influencia tamanho mas não significa que 1 parâmetro é 1 byte sempre). Tem que sobrar memória pra fazer os cálculos todos do treinamento, e ele vai gastar 21GB enquanto treina. Se eu coloco esse material de 15MB junto, acontece isso:
 
-![out of memory vram](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/lawgc11lm8bv08hc2u4ms62v4hm0?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-05-03%2000-11-24.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-05-03%252000-11-24.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001352Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=38b9cad4baf1eafd99486263b0b60e47d1a6be14cbadbf9e0bfd7896cf3a1882)
+![out of memory vram](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/lawgc11lm8bv08hc2u4ms62v4hm0)
 
 Pra treinar com tudo isso, tem que ser remoto, num RunPod com a A40 como já mostrei em outro blog post, no mínimo. Ou com GPUs mais rápidas como a H100, com 80GB, e mais potência pra acabar um pouco mais rápido. Então, eu já estou limitado em material de treinamento de qualidade e agora limitado na quantidade de material que posso usar.
 
@@ -252,7 +252,7 @@ Vai funcionar bem assim? Não sei 😆 Como falei, preciso gastar muito mais hor
 
 Por fim, tentei fazer um arquivo curto de prompts como falei no começo, pra tentar forçar o chat a responder que sabe da existência da versão 0.14 e quais são as mudanças nessa versão (só os tópicos do release notes).
 
-![training prompts](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/ir04nsralua23ada3wk45xvavm97?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-05-02%2015-51-05.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-05-02%252015-51-05.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001354Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=393801a3f0fb5ebe140edbca90981e7551039ea749e9629ba1fadd4903c8986c)
+![training prompts](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/ir04nsralua23ada3wk45xvavm97)
 
 É assim que se faz o chamado **"alinhamento"**. Numa empresa grande com OpenAI, eles devem ter CENTENAS de seres humanos pra escreverem perguntas e respostas que querem forçar a LLM a responder. E temos que fazer a mesma coisa aqui, caso contrário o treinamento de Zig 0.11 e 0.12 que já tem no modelo base pode ainda se sobressair ao material novo que estou adicionando. 
 
@@ -349,11 +349,11 @@ Um LoRa é pra ser pequeno. Tendo um modelo base de 8B, com esse tamanho de mate
 
 Com o material no lugar, tratado, organizado, basta rodar meu `train_lora.py` e vai ter algo assim:
 
-![training](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/s3rpq8b6a3h1p0qt60yazf042cr7?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-05-02%2014-50-53.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-05-02%252014-50-53.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001356Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=fe6d7bd4d629c24a309876b9c1bb62f1df74c474606553632a857f738cafbb70)
+![training](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/s3rpq8b6a3h1p0qt60yazf042cr7)
 
 E com tantos Epochs e Learning Rate alto, vai demorar! Na minha RTX 4090 deve levar **mais de 1 hora treinando** (com 5 Epochs), talvez mais (não cronometrei), e enquanto isso vai chumbar a GPU mesmo:
 
-![GPU usage](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/ivjodz630t9svrpvofuzpmgjanhe?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-05-02%2016-44-05.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-05-02%252016-44-05.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001357Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=1e3eda30e397c056419d66a1637dbf98440957e3c9e33f4aef544b8df220fc17)
+![GPU usage](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/ivjodz630t9svrpvofuzpmgjanhe)
 
 Sei que existem serviços online pra treinar Loras remotos, acho que a própria Hugging Face tem APIs pra isso, ou podemos subir uma GPU mais potente num RunPod da vida. Obviamente, precisa ter acesso ao modelo pra treinar por cima (os parâmetros do LoRa são dependentes do modelo base) então não tem como fazer um LoRa de GPT 4.1 na sua máquina. Aí depende se a OpenAI tem APIs pra treinar LoRas remotamente (acho que tem, não procurei saber).
 
@@ -363,7 +363,7 @@ Fica a seu critério, não precisa ter uma GPU local só pra isso. É um process
 
 No final, vai surgir um diretório `qwen3-zig-lora` mais ou menos assim:
 
-![lora](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/83h7fwsx0jsod3h17ruv4ag237r1?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-05-02%2023-32-01.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-05-02%252023-32-01.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001358Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=022acbd3391906943ee4d6231c6ba49ff7f92003cfcb9e64424fecba927d4f5e)
+![lora](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/83h7fwsx0jsod3h17ruv4ag237r1)
 
 Ele grava um checkpoint por epoch ou algo assim, pelo que entendi. Significa que dependendo da estratégia, se precisar dá pra parar o treinamento e depois continuar de onde parou. Eu não tentei fazer isso, mas imagino que num treinamento de verdade, que demora MESES, isso é essencial. 
 ### Mais um Problema - Limitações do Ollama
@@ -435,7 +435,7 @@ E vamos ter o lora listado como se fosse um modelo qualquer. veja o `ziglora`lá
 
 Pra conversar com ele, podemos diretamente usar a API com curl e mandar a mensagem pro Lora:
 
-![curl lora](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/f1etshmornpoawgci7ndb7791r3a?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-05-02%2014-24-16.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-05-02%252014-24-16.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001400Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=43a8016f6d823cecacaf36214c96fa594b5132c5f1cb9aa8ae7d7993f512588b)
+![curl lora](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/f1etshmornpoawgci7ndb7791r3a)
 
 E prestem atenção na resposta. Eu perguntei qual a versão mais recente de Zig que ele tem familiaridade e a resposta foi _"Eu estou familiarizado com a linguagem Zig até a versão 0.14.0 de 2025."_
 
@@ -494,7 +494,7 @@ Infelizmente, como eu usei o Qwen3-8b como base, também fiquei limitado à jane
 
 É pra isso que serve aquele `--max-model-len` na chamada pra subir o vLLM, senão ele tenta subir uma janela default grande demais (40k) e estoura a VRAM da minha RTX 4090:
 
-![vllm out of memory](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/5sb1dj2x0st18wsbyecwef7lbwk6?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-05-03%2002-14-31.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-05-03%252002-14-31.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001401Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=52c2f81098017c73dfd6080d8d04a372abb171bf14bdfd77d14f4f9eb16bc610)
+![vllm out of memory](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/5sb1dj2x0st18wsbyecwef7lbwk6)
 
 Percebam como estou mandando prompt super curtos: não tem contexto adicionar de RAG nem nada disso pra tentar ensinar nada de Zig 0.14. Tudo que ele responder está permanentemente no treinamento da LoRa agora.
 
@@ -571,7 +571,7 @@ This pattern is particularly useful when passing multiple related values to func
 
 A resposta em si parece bem ok. Ele não truncou, não saiu aparecendo caracter em chinês (isso aconteceu num dos meus treinamentos que fracassaram). Vamos comparar com o release note oficial do site:
 
-![release note splat](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/fuks9uthx1l56sfpcltclhlx4n2h?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-05-03%2002-22-06.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-05-03%252002-22-06.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001404Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=a46fe2d9185be9afb97cff0ac15e49776dac81a705f74e78dda4e1c9aca12643)
+![release note splat](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/fuks9uthx1l56sfpcltclhlx4n2h)
 
 Sendo honesto, eu não sei dizer se ele está correto (eu não sei Zig ainda também 🤣). Mas de bater o olho eu acho que ele inventou lero-lero, não parece correto.
 
@@ -891,7 +891,7 @@ O objetivo deste post foi mais mostrar na prática como que modelos LLM são ADU
 
 Essa também é a importância de existir modelos open source, abertos, porque a comunidade consegue criar novos treinamentos por cima pra remover esses alinhamentos, forçar novos alinhamentos (por isso um mesmo modelo pode ter tantas versões diferentes). Exemplo, na Hugging Face mesmo tem uma categoria só de [LLMs (Uncensored)](https://huggingface.co/collections/Umbra-AI/llms-uncensored-6531951e548eae0c99f4a534)
 
-![Uncensored](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/mom2pmui347tgdwzinkz8kq9wonp?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-05-03%2001-04-51.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-05-03%252001-04-51.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001406Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=47896b106ba89e025415fb2114c32498dc06eaca915ed2bf66a59a63cd8a628d)
+![Uncensored](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/mom2pmui347tgdwzinkz8kq9wonp)
 
 O usuário mais dedicado é o [TheBloke](https://huggingface.co/TheBloke) sigam ele pra ver qual ele LLM ele desbloqueou recentemente. No perfil dele tem modelos como esse [CodeLlama-70B-Python-GPTQ](https://huggingface.co/TheBloke/CodeLlama-70B-Python-GPTQ) que, teoricamente, foi pós-treinado pra ser mais forte em código Python. E com este post agora você tem mais noção de COMO se faz isso.
 

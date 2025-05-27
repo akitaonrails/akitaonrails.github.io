@@ -43,7 +43,7 @@ No Docker Compose. Recomendo evitar a opção "-d" de subir como daemon, porque 
 
 O ComfyUI é um programa mais complexo que a média, muito mais que um FramePack da vida. Ele tem suporte a instalar "extensions" (plugins, addons, chame como quiser). E na verdade ele sozinho não faz muita coisa, precisa instalar várias extensions pra começar a ficar realmente útil. Vira e mexe alguma dessas extensions não trata erros direito e estoura no console, algo como isso:
 
-![Console Error](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/n7w5oxun51elrsv2fra46f684xre?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-20%2017-04-48.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-20%252017-04-48.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001137Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=702f2bfc2fd42b08c3b1a1092908fd652429f2a75178c429056d33e093121236)
+![Console Error](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/n7w5oxun51elrsv2fra46f684xre)
 
 É útil sempre ficar de olho no console pra descobrir se ele tentou carregar um arquivo que não existe. Daí dá pra pegar o nome do arquivo e buscar no Google, baixar e colocar no lugar certo. Ou se é uma extension muito bugada que é melhor tirar do diretório "custom_nodes", e assim por diante. Sem ver o console, não aparece na interface web e você vai ficar a ver navios.
 
@@ -51,7 +51,7 @@ Muito dos modelos e extensions eu me baseei na configuraçãol **Ultimate ComfyU
 
 O workflow V3 do Aitrepreneur é muito ph0da. Mas eu não posso compartilhar porque é material fechado no Patreon dele, mas eis uma foto de tela do meu ComfyUI com tudo dele carregado:
 
-[![Ultimate V3](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/1p3xfs0ecfimbw4yg55qz17buti6?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-20%2017-09-33.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-20%252017-09-33.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001138Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=182e13f92c6fc983a7b38c3aee1376fd263b10f253c6cb0514013596b3457ea2)](https://www.patreon.com/posts/ultimate-all-in-121355089)
+[![Ultimate V3](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/1p3xfs0ecfimbw4yg55qz17buti6)](https://www.patreon.com/posts/ultimate-all-in-121355089)
 
 Mas a config em si, eu refiz inteira pra funcionar neste Docker. Dá pra carregar qualquer outro workflow aberto que achar num Reddit da vida. 
 
@@ -143,22 +143,22 @@ Além disso, diretórios como "models" e seus 500GB de modelos ficam separados, 
 
 [No meu X](https://x.com/AkitaOnRails/status/1914030815962411367) eu já mostrei meu ComfyUI funcionando. Carreguei um workflow qualquer que achei na Web e olha só:
 
-![ComfyUI](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/jhx6v5va7qac4vocp17ku5o6ha51?response-content-disposition=inline%3B%20filename%3D%22Go__77_WcAASeBr.jpg%22%3B%20filename%2A%3DUTF-8%27%27Go__77_WcAASeBr.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001139Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=c0f89cc285f5c34e21a67f88b42b390b20acb553f01ce68d5103278c75dff244)
+![ComfyUI](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/jhx6v5va7qac4vocp17ku5o6ha51)
 
 Nesse workflow eu subo uma imagem de referência e posso escrever um prompt de como quero transformar ela:
 
-![Prompt](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/20xq72nojtvb887mebeksr6q32cw?response-content-disposition=inline%3B%20filename%3D%22GpAAMX-X0AATd1j.png%22%3B%20filename%2A%3DUTF-8%27%27GpAAMX-X0AATd1j.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001141Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=b5f5806a050e323291a5bb364949c59b077734b30d9adfe59a7716167b3fa350)
+![Prompt](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/20xq72nojtvb887mebeksr6q32cw)
 
 Com ComfyUI eu tenho controle sobre todas as etapas do processo, por exemplo, esse workflow consegue separar coisas como Mapa de Profundidade e Contorno de Bordas da imagem original, pra usar de contexto antes de fazer a imagem final, garantindo um resultado muito mais preciso:
 
-![Depth Map](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/4r1en3a557znzmy0zojk8ei9tflu?response-content-disposition=inline%3B%20filename%3D%22GpAAfhNWwAAr_eb.jpg%22%3B%20filename%2A%3DUTF-8%27%27GpAAfhNWwAAr_eb.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001142Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=4b8757ed614f04daefd14cf35848643969b0be764128bf115432259765c3aa92)
+![Depth Map](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/4r1en3a557znzmy0zojk8ei9tflu)
 
 E eis um resultado que já consegui usando o modelo "waiNSFIllustrious" que esse workflow sugere, que é um modelo treinado pra gerar imagens estilo anime (tem dezenas, pra vários estilos diferentes).
 
-![anime](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/m7amy8gmp5y4snztatjjlwlr0wye?response-content-disposition=inline%3B%20filename%3D%22GpAA4ByWoAAkcav.jpg%22%3B%20filename%2A%3DUTF-8%27%27GpAA4ByWoAAkcav.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001143Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=8a97b2e6f107b8a00d206ce3c34af250bacee5b6f96db2560a01331a39501828)
+![anime](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/m7amy8gmp5y4snztatjjlwlr0wye)
 
 Mudando o modelo pra `Mistoon`, baseado em Stable Diffusion (SDXL), eis outro resultado, com o mesmo prompt, no mesmo workflow:
 
-![anime 2](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/lkj86wdlvh5fy8h78a8ml5io8t6g?response-content-disposition=inline%3B%20filename%3D%22GpAJr-jXQAAQhE0.jpg%22%3B%20filename%2A%3DUTF-8%27%27GpAJr-jXQAAQhE0.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001144Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=4a0e840194dd890ae6a10fbfaa5d19656beb43eb21455598131fce6ad789ad21)
+![anime 2](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/lkj86wdlvh5fy8h78a8ml5io8t6g)
 
 E posso ficar tunando dezenas de parâmetros dentro desse workflow, trocar vaes, text encodes, controlnets e muito mais até conseguir exatamente o resultado que eu quiser. Esse é o poder do ComfyUI e seus Custom Nodes e Workflows. É o que vou tentar explicar o básico no próximo post.

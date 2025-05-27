@@ -48,7 +48,7 @@ Isso vai construir a imagem de Docker e rodar. E na primeira vez dá pra ver que
 
 Quando terminar, é só acessar **http://localhost:7860** e vai ver esta interface super simples:
 
-![FramePack Web UI](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/x5nwxu25vlb9ox5kda5xiz6b4fwf?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-19%2018-06-34.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-19%252018-06-34.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001022Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=830ef72db7ab9c3d1edd183b440306dc8a66ff0d1e2e092ef9d51cdcf06a9d66)
+![FramePack Web UI](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/x5nwxu25vlb9ox5kda5xiz6b4fwf)
 
 
 Os controles são muito simples:
@@ -57,13 +57,13 @@ Os controles são muito simples:
 - Total do Video pode ser até 2 minutos, mas só faça isso se realmente tiver paciência porque demora BASTANTE! Acho melhor começar mesmo testando com videos curtos de 5 a 10 segundos primeiro.
 - Se sua GPU tiver pouca VRAM vai ser obrigado a mexer em "GPU Inference Preserved Memory (GB) (larger means slower)". No meu caso que tenho 24GB de VRAM deixei como está, mas olha só rodando como ele consome:
 
-![btop](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/5purckhhytuqd7bwp2wjqhyxq66p?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-19%2017-52-44.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-19%252017-52-44.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001026Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=dd7769d6fb7d2342c079225d9e64f4eedf0c174533aa5d5ffc42ba02dcc0afcb)
+![btop](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/5purckhhytuqd7bwp2wjqhyxq66p)
 
 Sim! 100% da GPU e quase 100% da VRAM, puxando mais de 350W da parede! (foda-se meio ambiente! kkkkk) A CPU até fica de boa, porque esse processo é feito pra realmente MASSACRAR a GPU. Se não tiver GPU boa, alugue uma máquina na RunPod como falei antes.
 
 O video de 10 segundos no começo do post é uma foto da uma das action figures que eu mais gosto na minha coleção, o Link de Breath of the Wild. E isso é uma coisa que me deixou empolgado. Esta é a foto original que serviu de base pro FramePack fazer o video:
 
-![Link Foto](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/g3dm9u1ij8r6gl0dk90qool0htyw?response-content-disposition=inline%3B%20filename%3D%2220250419_184724.jpg%22%3B%20filename%2A%3DUTF-8%27%2720250419_184724.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001027Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=0fcdc1b699b3e6a3adfb05e846339aa1bf3f0e036e31176df2ee9916a7c06619)
+![Link Foto](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/g3dm9u1ij8r6gl0dk90qool0htyw)
 
 Fazer video de fotos de pessoas é sem graça e tedioso, mas agora que estou aprendendo a modelar 3D pra imprimir na minha Bambulab, imagina depois ainda conseguir fazer ele ficar animado?
 
@@ -95,7 +95,7 @@ Falando em nostalgia, esse é outro item da hora da minha coleção, um Jiraya s
 
 Mas agora o meu **FAVORITO**, quem me acompanha no [Instagram](https://www.instagram.com/p/DIAe3pNOFgffFZ5J32fWlc-8Kmy3Lhap5Vm58U0/?img_index=1) viu que faz algumas semanas que venho me dedicando a melhorar minhas técnicas de 3D e também de desenho e eu fiz um conceito de Mandaloriam + Judge Dredd:
 
-![Boba Dredd](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/01qz4daelmm671m5ytgua036373h?response-content-disposition=inline%3B%20filename%3D%22Illustration23%20%25282%2529.png%22%3B%20filename%2A%3DUTF-8%27%27Illustration23%2520%25282%2529.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001029Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=078984bf5edc78e683b6cf4403bb41394b0fb29eb1882533c3a54ea119d6f9f3).png?disposition=attachment&locale=en)
+![Boba Dredd](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/01qz4daelmm671m5ytgua036373h).png?disposition=attachment&locale=en)
 
 Depois vejam os outros desenhos no meu Instagram, mas enfim, eu precisava saber se o FramePack era capaz de animar também desenhos e SIM, ELE CONSEGUE!! OLHA QUE PH0DA!!! Esse me deixou impressionado, dá uma nova dimensão nas minhas coisas!
 

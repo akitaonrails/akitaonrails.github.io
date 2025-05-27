@@ -35,23 +35,23 @@ Pra gerar uma imagem a partir de um prompt, primeiro precisa decodificar seu pro
 
 No caso específico de I.A. pra imagens, eu entendo que se usa um tal de modelo de "DIFUSÃO" tanto pra desestruturar a imagem original, quanto pra reconstruir uma nova imagem. Não é intuitivo, mas a reconstrução não começa numa tela branca, como seria pra um desenhista humano. Ele começa com uma imagem com barulho aleatório "noise" tipo isso aqui:
 
-![noise](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/rcvhb8m0boe3jetpy72kww2wmucw?response-content-disposition=attachment%3B%20filename%3D%22image-after-gaussian-noise-2.webp%22%3B%20filename%2A%3DUTF-8%27%27image-after-gaussian-noise-2.webp&response-content-type=image%2Fwebp&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001044Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=86bb01f3465f62d210bebb6f8b94c55e72d552194fed1b9ceb2de8d5e5020094)
+![noise](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/rcvhb8m0boe3jetpy72kww2wmucw)
 
 O modelo começa desse barulho e via um tal processo de DIFUSÃO começa a redesenhar a imagem de trás pra frente, até sair do caos e chegar numa imagem.
 
 O que eu "ACHO", "CHUTO" que aconteça - sem ter lido paper nenhum, preguiça mesmo - é que tentamos influenciar esse barulho inicial. Por exemplo, extraindo funcionalidades da imagem como um mapa de profundidade, que se parece com isso:
 
-![Mapa de Profundidade](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/qj0ba39q5xbs7xyei52h4qmmpr2d?response-content-disposition=inline%3B%20filename%3D%22ComfyUI_temp_tbpnv_00002_.png%22%3B%20filename%2A%3DUTF-8%27%27ComfyUI_temp_tbpnv_00002_.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001045Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=c1216cd31692350fd74556a0e055502b9d45dc959efe7866e68ddb2a8ded4873)
+![Mapa de Profundidade](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/qj0ba39q5xbs7xyei52h4qmmpr2d)
 
 A foto original era assim:
 
-![Original](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/6zionu0khn01gpudd9z0ws2mm8zx?response-content-disposition=inline%3B%20filename%3D%2268685020_1288138464699355_383731310440480768_o%25281%2529.jpg%22%3B%20filename%2A%3DUTF-8%27%2768685020_1288138464699355_383731310440480768_o%25281%2529.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001047Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=9ee26a5b42d88d28e19081f8f39a34fac228ee89b8dffe4054fffa183325caa9).jpg)
+![Original](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/6zionu0khn01gpudd9z0ws2mm8zx).jpg)
 
 Extrair um Mapa de Profundidade é um **ALGORITMO** e não "I.A.". Qualquer Photoshop, Premiere da vida conseguem fazer isso com uma mão nas costas. Mas é pra explicar que tem muito mais informação numa imagem que só olhando você - que não é treinado - não sabe que existe. 
 
 Outro tipo de ALGORITMO bem conhecido é o **Canny Edge Detection** que faz um mapa de bordas, pra ficar mais fácil de saber onde alguma coisa começa e onde termina na imagem:
 
-![Canny](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/std6jaroftohqjlc22mii9m7oso6?response-content-disposition=inline%3B%20filename%3D%22ComfyUI_temp_pyyqp_00002_.png%22%3B%20filename%2A%3DUTF-8%27%27ComfyUI_temp_pyyqp_00002_.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001048Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=2da59070f5ddd2cc985ffbd5ce76e3a7a6aaee72c80a5a24536a2f742a5476b9)
+![Canny](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/std6jaroftohqjlc22mii9m7oso6)
 
 Então é mais ou menos assim:
 
@@ -71,7 +71,7 @@ Além de parâmetros numéricos, esses Nodes também nos deixam escolher quais a
 
 Pegando o exemplo da minha foto, não é isso mas só pra ilustrar, me ajuda a pensar que aqueles mapas que eu mostrei influenciam a imagem "noisy" numa direção não-aleatória, como este que eu peguei numa etapa intermediária do workflow que estou rodando:
 
-![noise](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/yy0yrlrcel015bucfr3z60izt42p?response-content-disposition=inline%3B%20filename%3D%22ComfyUI_temp_tcpal_00002_.png%22%3B%20filename%2A%3DUTF-8%27%27ComfyUI_temp_tcpal_00002_.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001050Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=7bc53158769314ea54bc096c2e91e12920d0003d95c7d1fe243aa1f78bff79a8)
+![noise](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/yy0yrlrcel015bucfr3z60izt42p)
 
 Se forçar seus olhos, consegue ver influência das imagens anteriores, e o modelo de Difusão vai fazendo o "denoising", sendo "atrapalhado" pela ControlNet. Como se você estivesse desenhando e tivesse uma pessoa do lado que de vez em quando apaga o que você fez, ou desenha por cima, e você vai se adaptando. Então no final vira um trabalho "colaborativo" entre os dois. Se fosse só a U-NET, ele ia gerar uma nova imagem bem diferente da original, mas a ControlNet é o "cliente" que fica toda hora de buzinando na orelha "não é assim que eu quero, muda", até chegar num resultado aceitável.
 
@@ -83,7 +83,7 @@ Mais do que isso, o ComfyUI também suporta Nodes com modelos como o HunyuanVide
 
 Entendendo até aqui, olhem o workflow que eu usei (está com zoom out, dá pra aumentar o zoom dinamicamente):
 
-![workflow](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/rrtdjr0sq5vsl3xnm08w3sz459w8?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-20%2018-43-50.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-20%252018-43-50.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001052Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=4db526f7aff60e20d4f5cc5d7ce2fc8225d6d1125b4be8ca7d04ae617b0f453b)
+![workflow](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/rrtdjr0sq5vsl3xnm08w3sz459w8)
 
 Dá pra ver esses passos intermediários usando Nodes de **PREVIEW** então é mais ou menos assim que podemos usar o ComfyUI pra fazer muita coisa avançada. Como falei, eu mesmo ainda não comecei nem a arranhar a superfície.
 
@@ -337,20 +337,20 @@ Em vez disso podemos usar o "dicionário" do modelo pré-treinado, como Flux ou 
 
 Existem comunidades online inteiras dedicadas a isso. Um exemplo. No site [Civit A.I.](https://civitai.com/) vamos encontrar diversos modelos baseados em modelos pré-existentes, como este [Mistoon](https://civitai.com/models/24149/mistoonanime) que é baseado no SDXL. 
 
-[![Mistoon Civit.ai](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/a4s6zs7oq6rtwto79lqk5itgd4or?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-20%2018-57-16.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-20%252018-57-16.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001053Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=36531f67189e7367704b0cd8c92f4f4a7625265af57427df7d72bd78800630e5)](https://civitai.com/models/24149/mistoonanime)
+[![Mistoon Civit.ai](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/a4s6zs7oq6rtwto79lqk5itgd4or)](https://civitai.com/models/24149/mistoonanime)
 
 É um checkpoint. Podemos nos cadastrar no site e e baixar o arquivo `mistoonAnime_v10Noobai.safetensor` e colocar no diretório `models/checkpoints`.
 
-![Mistoon Checkpoint Node](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/17z9fbwbzkg5kwoxzrcivpwwd74c?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-20%2018-55-16.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-20%252018-55-16.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001055Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=f65d9998c9d4bc43da9cdd04ce4f4ad7aa22ed76039c84aba67a37f08fbc3170)
+![Mistoon Checkpoint Node](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/17z9fbwbzkg5kwoxzrcivpwwd74c)
 
 Agora, em todo workflow que tiver o Node "Load Checkpoint" temos a opção de escolher esse modelo. Mas digamos que esse modelo não esteja conseguindo gerar uma personagem com uniforme colegial como em vários animes. Vasculhando o site, encontramos esta **LoRa**:
 
-[![Mistoon LoRa](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/xlvhozw5u90xx9130a1kin5dl0da?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-20%2018-56-50.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-20%252018-56-50.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001056Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=b2f10a77d0386fa5f53a1ca3cf87b4f6c40e2a145a4fc57af83b5f914a62ad33)](https://civitai.com/models/115968/mistoonanime-school-uniform)
+[![Mistoon LoRa](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/xlvhozw5u90xx9130a1kin5dl0da)](https://civitai.com/models/115968/mistoonanime-school-uniform)
 O modelo Mistoon é grande, uns 6.6GB mas essa LoRa - chamada `Mistoon_Anime\ school\ uniform.safetensor` que devemos mover pra `models/loras` tem menos de 290 MB, é muito menor porque é um treinamento específico só em imagens de uniformes colegiais.
 
 Agora podemos ligar o Node de "Load Checkpoint" a este outro Node de "Load LoRa" e escolher essa LoRa que sabemos que é compatível:
 
-![LoRa Node](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/8ahr2bgdxe5jg3xg4y2wcie3qzvs?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-20%2019-00-10.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-20%252019-00-10.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001103Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=a439e9e26fa4247bce547f12752696cc727ccd937b7d48ad8ac15a81b42ed918)
+![LoRa Node](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/8ahr2bgdxe5jg3xg4y2wcie3qzvs)
 
 LoRas tem que ser escolhidas pra usar com os modelos em que elas foram baseadas. Como falei antes, pense no modelo como uma "língua", se fizermos um LoRa em alemão, não adianta misturar com um modelo chinês, a grosso modo. Mas essa é uma forma de fazer fine-tuning pro modelo que você gosta entregar resultados que nenhum outro consegue.
 
@@ -360,23 +360,23 @@ Um problema que eu tenho com o site Civit A.I. é que só dá pra fazer download
 
 Seu dia a dia com Comfy, sendo um novato como eu vai ser mais ou menos assim: começa indo no Google e procurando "best workflow image to anime ComfyUI". Primeiros links costumam ser alguma thread de Reddit:
 
-![Reddit](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/zhnvm94r6ze0279obqq9k0wd6t9c?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-20%2019-09-26.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-20%252019-09-26.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001104Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=464dfb7454fcbdb825fabbf3232211858590be180b7c90dc961d121ef506a73b)
+![Reddit](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/zhnvm94r6ze0279obqq9k0wd6t9c)
 
 Sub-Reddits como [r/comfyui](https://www.reddit.com/r/comfyui) ou [r/StableDiffusion](https://www.reddit.com/r/StableDiffusion) costumam ter novidades e workflows como esse. Daí vamos direto pros primeiros comentários:
 
-![Reddit Comentários Links](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/n3y2qd1vxw4uldxlrs5bjsewt9vn?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-20%2019-11-27.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-20%252019-11-27.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001105Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=985fee0f09a8c3091523684aa72eff0e4ea5600f5ede8960aa3d60a0ced75afb)
+![Reddit Comentários Links](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/n3y2qd1vxw4uldxlrs5bjsewt9vn)
 
 Ou isso, ou abrimos o workflow direto no ComfyUI e vasculhamos os Nodes, um a um:
 
-![Nodes Check](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/b6hu6k4ygjpjdcq0chzv6mt1kx9w?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-20%2019-12-35.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-20%252019-12-35.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001107Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=08c0debbecbe9d9c473d05cc8ba37385f9a473386f227072ffac566c444ecb96)
+![Nodes Check](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/b6hu6k4ygjpjdcq0chzv6mt1kx9w)
 
 Já temos talvez um problema: o Node veio pré-configurado pra carregar um LoRa chamado "SDXL_aidma-niji_jini.safetensors" mas o link no comentário do Reddit baixa um "SDXL_Niji_V6_DLC_LoRa_V4.safetensors". Procurando especificamente pelo anterior no Google, eu não acho. Mas parece "seguro" usar esse outro, pelo menos os nomes são muito parecidos, ambos são derivados de SDXL então teoricamente são compatíveis pelo menos. Esta á a página desse modelo no Civit A.I., então tem que baixar manualmente e mandar pro diretório `models/loras` a mesma coisa pro Checkpoint AniToon no Node acima. Baixa manualmente e move pra `models/checkpoints`.
 
-[![LoRa Niji](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/m8u6e9hc0vyrd41pdru0c26akolr?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-20%2019-15-25.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-20%252019-15-25.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001108Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=a609c0ff5475ab5eb6fac12724b484bb4758167dd078a979c4fceca24c11d606)](https://civitai.com/models/541460/sdxlnijiv6dlclora)
+[![LoRa Niji](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/m8u6e9hc0vyrd41pdru0c26akolr)](https://civitai.com/models/541460/sdxlnijiv6dlclora)
 
 Note que nessa página ele explica que esse LoRa foi feito pra funcionar com o modelo SDXL_Niji_V6 e não com o AniToon como o Workflow que baixei sugere no Node de Load Checkpoint. Vale testar com ambos. De qualquer forma, já que estamos no site, vamos baixar o modelo sugerido também:
 
-[![SDXL Niji](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/zrkk8wr9v1z24s5f5fgyv01uui4g?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-20%2019-17-02.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-20%252019-17-02.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001110Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=beb8206838ed01f99c70ae615543a6b9eced4534d41f4b941cb1e976a3c64960)](https://civitai.com/models/120765)
+[![SDXL Niji](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/zrkk8wr9v1z24s5f5fgyv01uui4g)](https://civitai.com/models/120765)
 
 Arquivo `sdxlNijiSeven_sdxlNijiSeven.safetensors` de 6.5GB, move pra `models/checkpoints`, tão entendendo o processo? Baixa, move pro lugar certo, recarrega o workflow no navegador e agora aparece, selecionamos:
 
@@ -388,11 +388,11 @@ Aliás, acho que é intuitivo mas pra quem não entendeu se abriu a interface do
 
 Agora sim, vamos escolher esses dois pra testar:
 
-![Nodes Niji](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/m7bzo57hfez23vazar5ct4j5kndq?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-20%2019-20-35.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-20%252019-20-35.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001117Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=7daa41726469f0b2f11f6a9ce7addfff8a771e3e28c8babf690928c1e0237a66)
+![Nodes Niji](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/m7bzo57hfez23vazar5ct4j5kndq)
 
 Aproveitando essa mesma imagem, note no canto esquerdo um Node de Florence2 que é uma LLM da Microsoft (e meu script de Docker já instala pra você). Não dá pra mostrar todos os Nodes relacionados mas estes são os principais de pra que isso serve:
 
-![Florence](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/8pjx9pr8x0jsmz7bhouz5zcft1zt?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-20%2019-22-49.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-20%252019-22-49.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001118Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=9b997cce2b5d131f1978f7e727a698d1965747144f299bb7b8d8e423d12f504f)
+![Florence](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/8pjx9pr8x0jsmz7bhouz5zcft1zt)
 
 O ideal em geração de imagem é fazer o prompt mais longo e bem detalhado sobre a imagem original que você conseguir, mas a maioria das pessoas só escreve alguma porcaria como "pessoa sorrindo de pé" e acha que é suficiente. O modelo Florence2 é feito pra ler uma imagem e descrever ela em texto.
 
@@ -402,7 +402,7 @@ Essas são as palavras certas? **EU NÃO SEI** kkkkk
 
 O workflow já trouxe essas palavras, mas nas páginas do Civit A.I. - onde deveria estar documentado, não está!! Então estamos realmente **CHUTANDO** que deve ser "niji" já que é o nome do modelo e do lora. Preste atenção na palavra-chave, é importante, senão você adiciona o lora e nada acontece de diferente e é porque faltou isso no prompt!!
 
-![ControlNet](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/4i1n0fc3uvvy85nr17x6imee33bh?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-20%2019-29-11.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-20%252019-29-11.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001119Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=b1e368d034e95953b93d4f34f01f23e08993c92b85584c5956afaf78fbad9d33)
+![ControlNet](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/4i1n0fc3uvvy85nr17x6imee33bh)
 
 Tem mais, tem que checar se os Nodes de coisas como VAE, ControlNet, Canny e tudo mais estão populados com arquivos que temos. Normalmente se usa a mesma meia dúzia e eu já pré-instalei no Docker os principais. Na imagem, veja que ControlNet é o `contronet-union-sdxl-1.0-promax.safetensors`, compatível com SDXL e estamos usando Niji que é feito em cima de SDXL. Vamos chutando assim.
 
@@ -410,7 +410,7 @@ Também notem que ele usa Zoe Depth Map pra tirar o Mapa de Profundidade e Canny
 
 Agora podemos rodar:
 
-![Run Comfy](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/29nzuo5t1nr6mn4wss0t77at94no?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-20%2019-32-40.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-20%252019-32-40.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001121Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=e911ab57c89283373bccfe3a856f163774e8f267a209ffa65bdec3e73c6d1b9e)
+![Run Comfy](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/29nzuo5t1nr6mn4wss0t77at94no)
 
 Tem um botão enorme "RUN" em azul lá embaixo. Se estiver tudo configurado certo, você vai ver que um trabalho foi colocado na fila. A interface é inteligente o suficiente pra deixar você trabalhar em outros workflow e só ir enfileirando trabalhos enquanto a GPU sua processando. Não precisa ficar esperando, só deixar vários enfileirados e ir dormir.
 
@@ -418,25 +418,25 @@ Ao rodar, na interface os Nodes que estão processando neste momento vão ficar 
 
 E no final, eis um dos resultados:
 
-![Resultado Niji](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/7mbzamhj8c5sc2fesp8kkz6cvjhu?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-20%2019-35-11.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-20%252019-35-11.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001123Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=740f07cd32443c6bcb91aefc4627eb641610f0a967968fa400c84b73aa880b81)
+![Resultado Niji](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/7mbzamhj8c5sc2fesp8kkz6cvjhu)
 
 Note como os mapas da controlnet garantiram a pose correta. O modelo deduziu aqueles artefatos de fundo do mapa de borda como iluminação de alguma janela, mas na foto original vemos que é tipo o tijolo de concreto da parede kkkk mas é isso, sem saber, ele chuta. E se rodar várias vezes, sempre vai dar um resultado bem diferente. Olha outro: 
 
-![Niji 2](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/xbxu131ivlqu4endtdf6j5ayxzxt?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-20%2019-37-04.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-20%252019-37-04.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001130Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=cdef824eedb5bc9d5ec1fafff5a18e840e51d0e11f1a5b47445839ebcee14299)
+![Niji 2](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/xbxu131ivlqu4endtdf6j5ayxzxt)
 
 Nada a ver kkkk Mas podemos trocar o modelo SDXL-Niji pelo Anitoon. Vamos ver um dos resultados:
 
-![Anitoon](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/w7fsjrui29pbp8e98ka4ubuvtl6f?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-20%2019-38-03.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-20%252019-38-03.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001132Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=ae266656228c27ba8b073bc5264a55d204df68dd9f169c82f25573d59015311a)
+![Anitoon](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/w7fsjrui29pbp8e98ka4ubuvtl6f)
 
 Trocando pro modelo waiNSFIllustrious:
 
-![waiNSFIllustrious](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2un0xtv7g210xrqc74nbceiwg7t4?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-20%2019-39-05.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-20%252019-39-05.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001134Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=63243acd770766f533aa15c67276c1b430dae2920b36be933170c6db1b7ebf3e)
+![waiNSFIllustrious](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2un0xtv7g210xrqc74nbceiwg7t4)
 
 Esse ficou ainda mais nada a ver. Alguma coisa nos mapas está fazendo o modelo assumir que eu tenho cabelo cacheado, sei lá porque. Mas é isso: tem que ajustar os parâmetros. O resultado do workflow que mostrei no começo do artigo deu um resultado melhor, usando os mesmos modelos. 
 
 De todos os Nodes, um dos mais importante é o "motor" do processo, o **KSampler**:
 
-![KSampler](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/n6875915bhqq39vxw0kfripyyj3d?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-20%2019-40-58.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-20%252019-40-58.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001136Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=2bdf328c32adb3bdc3e55d06403d346c2f279e3a56ccad1e858eabc989a5d450)
+![KSampler](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/n6875915bhqq39vxw0kfripyyj3d)
 
 
 Esse é o cara que comanda o show. Damos pra ele o modelo, o prompt, saídas de control-net e ele quem vai iterativamente (steps) fazer o "desnoise" do Latente. Note que sempre existe um fator aleatório ("seed"), quantidade de passos (25 a 50 é a média), "cfg" (classifier-free guidance) ou "guidance_scale", onde valores maiores puxam a imagem mais seu prompt positivo. Denoise é quando de noise o scheduler aplica (1.0 é noise completo, abaixo de 1.0 pode produzir resultados mais "artísticos", tem que testar).
