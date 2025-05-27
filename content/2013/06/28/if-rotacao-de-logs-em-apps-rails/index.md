@@ -16,7 +16,7 @@ No mundo UNIX existe uma solução padrão para isso, o serviço [logrotate](htt
 
 Porém, no Rails 3 o próprio Logger sabe como se auto-rotacionar, sem precisar depender do logrotate do sistema. Abra seu arquivo <tt>config/environments/production.rb</tt> e adicione a seguinte linha:
 
---- ruby
+```ruby
 config.logger = Logger.new(Rails.root.join("log",Rails.env + ".log"), 5, 100*1024*1024)
 ```
 

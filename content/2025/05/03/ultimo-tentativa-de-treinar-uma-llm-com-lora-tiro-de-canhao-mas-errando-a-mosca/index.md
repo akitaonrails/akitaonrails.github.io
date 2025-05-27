@@ -112,7 +112,7 @@ Aliás, além de lento pra iniciar, também fica mais lento pra gerar texto, BEM
 ```
 In Zig 0.14.0, the `@splat` function has been extended to support arrays, making it easier to initialize fixed-length arrays with a single repeated value. This replaces more verbose or unsafe initialization patterns and is type-safe, with the array's length inferred from the destination type. Here's a concise explanation and code example:
 
-```
+
 ...
 
 ### **@splat for Arrays**  

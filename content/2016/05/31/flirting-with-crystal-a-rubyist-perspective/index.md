@@ -61,7 +61,7 @@ On top of that you can add ["Channels"](https://github.com/crystal-lang/crystal/
 
 Speaking of ping-pong, you have [this snippet in the "Go by Example"](https://gobyexample.com/channel-directions) site:
 
---- go
+```go
 package main
 import "fmt"
 func ping(pings chan<- string, msg string) {
@@ -82,7 +82,7 @@ func main() {
 
 And this is mostly the same thing but implemented in Crystal:
 
---- ruby
+```ruby
 def ping(pings, message)
   pings.send message
 end
@@ -120,7 +120,7 @@ As usual, you shouldn't blindly trust [synthetic benchmarks](https://github.com/
 
 Crystal is a statically typed language. But it won't require you to declare every single type beforehand. It's quite smart in its Type Inference so if you just type:
 
---- ruby
+```ruby
 a = 1
 b = "HELO"
 ```
@@ -129,13 +129,13 @@ It will know that "a" is an "Int32" and that "b" is a "String". By the way, cont
 
 In Ruby I can just parse a JSON String and immediatelly explore its structure like this:
 
---- ruby
+```ruby
 parsed_json = JSON.parse(response.body)["files"].first["id"]
 ```
 
 I can't do this in Crystal, instead the [recommended approach](http://crystal-lang.org/api/JSON.html#mapping%28properties%2Cstrict%3Dfalse%29-macro) is to declare a schema-like structure like this:
 
---- ruby
+```ruby
 class FilesResponse
   JSON.mapping({
     ok: {type: Bool},
@@ -167,7 +167,7 @@ Update: after I posted this article @LuisLavena stepped in to correct me: you ca
 
 And it will be like this:
 
---- ruby
+```ruby
 require "json"
 
 data = <<-JSON
@@ -202,7 +202,7 @@ Macros bring back some of Ruby's metaprogramming. For example, in Ruby, when you
 
 In Crystal, a Module does have an "included" hook but now it's a Macro. You can do something like this:
 
---- ruby
+```ruby
 module Foo
   macro included
     {% if @type.name == "Bar" %}
@@ -231,7 +231,7 @@ Something.hello # => "HELLO"
 
 It feels like having "ERB" templates but for code. A macro is code building code in compile time. In the resulting AST it's as if you wrote the boring repetitive code yourself. The compiled native binary doesn't care. If you're from C it's like pre-processing but having control of an AST tree of Nodes instead of just manipulating the source code. You can even have something akin to the venerable "#method_missing".
 
---- ruby
+```ruby
 class Foo
   macro method_missing(name, args, block)
     {{pp name}}
@@ -261,7 +261,7 @@ In this example you just get a normalized version of the code you passed as argu
 
 So, you can define new methods and call different versions of methods depending on the combination of elements that you get from the AST. One example of what is possible is this experiment from developer Oleksii that I bundles in this small project I called ["cr_chainable_methods"](https://github.com/akitaonrails/cr_chainable_methods) and we can build code that is very different from either Crystal or Ruby:
 
---- ruby
+```ruby
 result = pipe "Hello World"
   .>> Foo.split_words
   .>> Foo.append_message("Bar")
@@ -305,7 +305,7 @@ It sets up a proper project directory structure, a Git repository is pre-initial
 
 You will also find a "shard.yml" file where you can declare your application or library name, version, author, and also its dependencies like this:
 
---- yaml
+```yaml
 name: kemal
 version: 0.12.0
 

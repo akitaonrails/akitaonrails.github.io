@@ -60,7 +60,7 @@ So, Elixir is still at least twice as fast than Crystal at this point. But this 
 
 ### Changing the Ruby implementation to use ThreadPool
 
---- ruby
+```ruby
 require "thread/pool"
 
 module MangaDownloadr
@@ -97,7 +97,7 @@ This way we always have a fixed amount of workers performing requests constantly
 
 The Crystal version became a bit more complicated as I didn't find a pool library to pull. I found a rough implementation of a pool in [this stackoverflow post](http://stackoverflow.com/a/30854065/1529907) and I was able to implement an improved version into a new shard so you can take advantage of it in your projects. Check out the source code at [akitaonrails/fiberpool](https://github.com/akitaonrails/fiberpool). This is how I added it to my project:
 
---- yaml
+```yaml
 dependencies:
   ...
   fiberpool:
@@ -106,7 +106,7 @@ dependencies:
 
 And this is how I used it. Notice that the logic itself is very close to the MRI Ruby version, but using a "Fiber Pool" instead of a Thread Pool.
 
---- ruby
+```ruby
 require "fiberpool"
 
 module CrMangaDownloadr

@@ -27,7 +27,7 @@ So, the initial endeavor was to copy the MangaReader parser modules (IndexPage, 
 
 Of course the URL formats are different, the Floki CSS selectors are a bit different, so that's what have to change in the parser. For example, this is how I parse the chapter links from the main page at MangaReader:
 
---- ruby
+```ruby
 defp fetch_chapters(html) do
   Floki.find(html, "#listing a")
   |> Enum.map fn {"a", [{"href", url}], _} -> url end
@@ -36,7 +36,7 @@ end
 
 And this is the same thing but for Mangafox:
 
---- ruby
+```ruby
 defp fetch_chapters(html) do
   html
   |> Floki.find(".chlist a[class='tips']")
@@ -50,7 +50,7 @@ Another difference is that MangaReader returns everything in plain text by defau
 
 What I did different was to check if the returned <tt>%HTTPotion.Response{}</tt> structure had a "Content-Encoding" header set to "gzip" and if so, gunzip it using the built-in Erlang "zlib" package (nothing to import!):
 
---- ruby
+```ruby
 def gunzip(body, headers) do
   if headers[:"Content-Encoding"] == "gzip" do
     :zlib.gunzip(body)
@@ -66,7 +66,7 @@ Once the unit tests were passing correctly after tuning the scrapper (HTTPotion 
 
 The Workflow module just call the Worker, which in turn does the heavy lifting of fetching pages and downloading images. The Worker called the MangaReader module directly, like this:
 
---- ruby
+```ruby
 defmodule PoolManagement.Worker do
   use GenServer
   use ExMangaDownloadr.MangaReader
@@ -89,7 +89,7 @@ end
 
 That "<tt>use ExMangaDownloadr.MangaReader</tt>" statement up above is just a macro that will alias the corresponding modules:
 
---- ruby
+```ruby
 defmodule ExMangaDownloadr.MangaReader do
   defmacro __using__(_opts) do
     quote do
@@ -105,7 +105,7 @@ So when I call "<tt>ChapterPages.pages(chapter_link)</tt>" it's a shortcut to us
 
 An Elixir module namespace is just an Atom. Nested module names have the full, dot-separated name, prefixed with it's parent. For example:
 
---- ruby
+```ruby
 defmodule Foo do
   defmodule Bar do
     defmodule Xyz do
@@ -120,7 +120,7 @@ You can just call "<tt>Foo.Bar.Xyz.teste()</tt>" and that's it. But there is a s
 
 This is important because of this new function I added to the Worker module first:
 
---- ruby
+```ruby
 def manga_source(source, module) do
   case source do
     "mangareader" -> String.to_atom("Elixir.ExMangaDownloadr.MangaReader.#{module}")
@@ -131,7 +131,7 @@ end
 
 This is how I map from "mangafox" to the new "ExMangaDownloadr.Mangafox." namespace. And because of the dynamic, message passing nature of Elixir, I can replace this code:
 
---- ruby
+```ruby
 def handle_call({:chapter_page, chapter_link}, _from, state) do
   {:reply, ChapterPages.pages(chapter_link), state}
 end
@@ -139,7 +139,7 @@ end
 
 With this:
 
---- ruby
+```ruby
 def handle_call({:chapter_page, chapter_link, source}, _from, state) do
   links = source
     |> manga_source("ChapterPage")
@@ -150,7 +150,7 @@ end
 
 I can now choose between the "Elixir.ExMangaDownloadr.Mangafox.ChapterPage" or "Elixir.ExMangaDownloadr.MangaReader.ChapterPage" modules, call the <tt>pages/1</tt> function and send the same argument as before. I just have to make sure I can receive a "source" string from the command line now, so I change the CLI module like this:
 
---- ruby
+```ruby
 defp parse_args(args) do
   parse = OptionParser.parse(args,
     switches: [name: :string, url: :string, directory: :string, source: :string],
@@ -168,7 +168,7 @@ Compared to the previous version I just added the "<tt>:source</tt>" string argu
 
 And in the Workflow module, instead of starting from just the manga URL, now I have to start with both the URL and the manga source:
 
---- ruby
+```ruby
 [url, source]
   |> Workflow.chapters
   |> Workflow.pages
@@ -177,7 +177,7 @@ And in the Workflow module, instead of starting from just the manga URL, now I h
 
 Which means that each of the above functions have to not only return the new URL lists but also pass through the source:
 
---- ruby
+```ruby
 def chapters([url, source]) do
   {:ok, _manga_title, chapter_list} = source
     |> Worker.manga_source("IndexPage")
@@ -206,7 +206,7 @@ The Mangafox site is very unreliable to several concurrent connections and it qu
 
 I did not figure out how to retry HTTPotion requests properly yet. But one small thing I did was add an availability check in the Worker module. So you can just re-run the same command line and it will resume downloading only the remaining files:
 
---- ruby
+```ruby
 defp download_image({image_src, image_filename}, directory) do
   filename = "#{directory}/#{image_filename}"
   if File.exists?(filename) do
@@ -228,7 +228,7 @@ end
 
 This should at least reduce rework. Another thing I am still working on is this other bit at the main "CLI.process" function:
 
---- ruby
+```ruby
 defp process(manga_name, url, directory, source) do
   File.mkdir_p!(directory)
   dump_file = "#{directory}/images_list.dump"
@@ -256,7 +256,7 @@ Mangafox is terribly unreliable and I will need to figure out a better way to re
 
 If I downgrade from 50 process to 5 in the pool, it seems to be able to handle it better (but the process slows down, of course):
 
---- ruby
+```ruby
     pool_options = [
       name: {:local, :worker_pool},
       worker_module: PoolManagement.Worker,

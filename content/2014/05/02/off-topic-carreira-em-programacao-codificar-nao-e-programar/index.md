@@ -76,7 +76,7 @@ _"Ah, mas você está falando coisas que ninguém precisa saber. Pra fazer sites
 
 Uma coisa que qualquer bom framework web precisa saber fazer com eficiência hoje em dia é mapear rotas com a programação por baixo (controllers). O Ruby on Rails tem um componente de rotas chamado [Journey](https://github.com/rails/journey), que configuramos via o arquivo "config/routes.rb". Abaixo temos um trecho disso:
 
---- ruby
+```ruby
 ImageUploadDemo::Application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
 
@@ -102,7 +102,7 @@ Vamos nos repetir novamente? Sim, isso funciona, para aplicações bem pequenas.
 
 Que tal ver um trecho do código do Journey?
 
---- ruby
+```ruby
 class Journey::Parser
 
 token SLASH LITERAL SYMBOL LPAREN RPAREN DOT STAR OR

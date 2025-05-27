@@ -22,7 +22,7 @@ In the end you will end up with a code base like the one I reproduced in my Gith
 
 Let's just list the main components here. First, you will have the ActionCable server mounted in the "routes.rb" file:
 
---- ruby
+```ruby
 # config/routes.rb
 Rails.application.routes.draw do
   root to: 'rooms#show'
@@ -34,7 +34,7 @@ end
 
 This is the main server component, the channel:
 
---- ruby
+```ruby
 # app/channels/room_channel.rb
 class RoomChannel < ApplicationCable::Channel
   def subscribed
@@ -53,7 +53,7 @@ end
 
 Then you have the boilerplace Javascript:
 
---- ruby
+```ruby
 # app/assets/javascripts/cable.coffee
 #= require action_cable
 #= require_self
@@ -65,7 +65,7 @@ App.cable = ActionCable.createConsumer()
 
 And the main client-side Websocket hooks:
 
---- ruby
+```ruby
 # app/assets/javascripts/channels/room.coffee
 App.room = App.cable.subscriptions.create "RoomChannel",
   connected: ->
@@ -89,7 +89,7 @@ $(document).on "keypress", "[data-behavior~=room_speaker]", (event) ->
 
 The view template is a bare bone HTML just to hook a simple form and div to list the messages:
 
---- html
+```html
 <!-- app/views/rooms/show.html.erb -->
 <h1>Chat room</h1>
 
@@ -109,7 +109,7 @@ The view template is a bare bone HTML just to hook a simple form and div to list
 
 In the "RoomChannel", you have the "<tt>speak</tt>" method that saves a message to the database. This is already a red flag for a WebSocket action that is supposed to have very short lived, light processing. Saving to the database is to be considered heavyweight, specially under load. If this is processed inside EventMachine's reactor loop, it will block the loop and avoid other concurrent processing to take place until the database releases the lock.
 
---- ruby
+```ruby
 # app/channels/room_channel.rb
 class RoomChannel < ApplicationCable::Channel
   ...
@@ -123,7 +123,7 @@ I would say that anything that goes inside the channel should be asynchronous!
 
 To add harm to injury, this is what you have in the "Message" model itself:
 
---- ruby
+```ruby
 class Message < ApplicationRecord
   after_create_commit { MessageBroadcastJob.perform_later self }
 end
@@ -131,7 +131,7 @@ end
 
 A model callback (avoid those as the plague!!) to broadcast the received messsage to the subscribed Websocket clients as an ActiveJob that looks like this:
 
---- ruby
+```ruby
 class MessageBroadcastJob < ApplicationJob
   queue_as :default
 
@@ -159,7 +159,7 @@ For just the purposes of a simple screencast, let's make a quick fix.
 
 First of all, if at all possible you want your channel code to block as little as possible. Waiting for a blocking operation in the database (writing) is definitely not one of them. The Job is underused, it should be called straight from the channel "speak" method, like this:
 
---- ruby
+```ruby
 # app/channels/room_channel.rb
  class RoomChannel < ApplicationCable::Channel
    ...
@@ -172,7 +172,7 @@ First of all, if at all possible you want your channel code to block as little a
 
 Then, we move the model writing to the Job itself:
 
---- ruby
+```ruby
 # app/jobs/message_broadcast_job.rb
  class MessageBroadcastJob < ApplicationJob
    queue_as :default
@@ -188,7 +188,7 @@ Then, we move the model writing to the Job itself:
 
 And finally, we remove that horrible callback from the model and make it bare-bone again:
 
---- ruby
+```ruby
 # app/models/message.rb
 class Message < ApplicationRecord
 end

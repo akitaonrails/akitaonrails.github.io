@@ -14,7 +14,7 @@ Vocês devem ter notado que em todo post do meu blog tem uma lista ao final orga
 
 Para fazer isso eu implementei um simples <tt>before_save</tt> no meu model de <tt>Post</tt> onde eu vasculho o texto para buscar todos os links, desta forma:
 
---- ruby
+```ruby
 html = self.excerpt_html.to_s + self.body_html.to_s
 return [] if html.empty?
 doc = Nokogiri::HTML.parse(html)
@@ -27,7 +27,7 @@ links = links.reduce([]) do |result, link|
 
 Com isso tenho todos os links dentro da collection <tt>links</tt>, e agora vou de item a item, para puxar o link e buscar o título em seu conteúdo (que é o método <tt>retrieve_title</tt> no trecho abaixo):
 
---- ruby
+```ruby
 links.each do |link|
   retrieve_title(link)
 end
@@ -42,7 +42,7 @@ Dependendo do post, se tiver muitos links (como o gigante recente de [Web Compon
 
 O método <tt>retrieve_title</tt> que fiz, internamente chama outro método para puxar o link da internet e ler o título, usando Nokogiri:
 
---- ruby
+```ruby
 def parse_external_link(href)
   # require 'timeout' # precisa requerer isso antes
   begin
@@ -68,7 +68,7 @@ E isso é uma **meia verdade**. De fato, threads em Ruby não funcionam como em 
 
 Sabendo disso, o trecho anterior eu posso escrever assim:
 
---- ruby
+```ruby
 pool = []
 links.each do |link|
   pool << Thread.new {

@@ -38,7 +38,7 @@ Run `mix help coherence.install` to see a description for all the options.
 
 And if you're not tweaking the front-end, you can just add the proper sign up, sign in, sign out links by adding the following snippet to the `web/templates/layout/app.html.eex`:
 
---- html
+```html
 <header class="header">
   <nav role="navigation">
     <ul class="nav nav-pills pull-right">
@@ -82,7 +82,7 @@ mix admin.gen.resource User
 
 And we can edit the `web/admin/user.ex` with the following:
 
---- ruby
+```ruby
 defmodule YourApp.ExAdmin.User do
   use ExAdmin.Register
 
@@ -133,7 +133,7 @@ If you followed the Coherence instructions, it asks you to add a `:protected` pi
 
 So we can add the following to `web/router.ex`:
 
---- ruby
+```ruby
 ...
 scope "/admin", ExAdmin do
   pipe_through :protected
@@ -160,7 +160,7 @@ Obviously, we don't want to let all authenticated user to access the Admin secti
 
 So we can add a simple boolean field in the users table to indicate whether a user is an admin or not. You can change your migration to resemble this:
 
---- ruby
+```ruby
 ...
 def change do
   create table(:users, primary_key: false) do
@@ -177,7 +177,7 @@ end
 
 And you can configure the `priv/repos/seeds.exs` file to create 2 users, one admin and one guest:
 
---- ruby
+```ruby
 YourApp.Repo.delete_all YourApp.User
 
 YourApp.User.changeset(%YourApp.User{}, %{name: "Administrator", email: "admin@example.org", password: "password", password_confirmation: "password", admin: true})
@@ -193,7 +193,7 @@ Coherence takes care of **authentication**, but we need to take care of **author
 
 We need to create `lib/your_app/plugs/authorized.ex` and add the following:
 
---- ruby
+```ruby
 defmodule YourApp.Plugs.Authorized do
   @behaviour Plug
 
@@ -229,7 +229,7 @@ Once a user signs in, Coherence puts the structure of the authenticated user int
 
 Now we need to create the router pipeline in the `web/router.ex` like this:
 
---- ruby
+```ruby
 ...
 pipeline :protected_admin do
   plug :accepts, ["html"]

@@ -20,7 +20,7 @@ O pessoal de Node e outras linguagens já usa o libsass em pacotes como o node-s
 
 Atualizar o arquivo <tt>Gemfile</tt> e trocar <tt>sass-rails</tt> por <tt>sassc-rails</tt>:
 
---- ruby
+```ruby
 gem 'sassc-rails'
 ```
 

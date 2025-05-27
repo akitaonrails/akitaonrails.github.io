@@ -84,7 +84,7 @@ As principais APIs que você precisará saber que mudou (mas que a versão antig
 
 * Rails RJS - se sua aplicação foi feita com muito Ajax e usando as antigas helpers RJS em vez de usar Javascript não-obtrusivo, certamente essa pode ser a parte onde você terá mais trabalho para migrar. Eu já escrevi um [artigo sobre isso 3 anos atrás](http://www.akitaonrails.com/2010/05/10/rails-3-introducao-a-javascript-nao-obstrusivo-e-responders). Para começar helpers como <tt>link_to_remote</tt> não funcionam mais. Para facilitar a migração neste ponto você ainda pode carregar as seguinte gems antigas no Gemfile:
 
---- ruby
+```ruby
 # gem 'jquery'
 gem 'prototype'
 gem 'prototype-ujs'
@@ -115,7 +115,7 @@ Relembrando, antigamente todos os seus assets ficavam no diretório <tt>/public<
 
 Lembram o que eu disse sobre RJS na seção anterior? Agora é a hora de começar a trocar os helpers antigos pelos novos. Na prática não é muito complicado, por exemplo:
 
---- ruby
+```ruby
 # Rails 2.3
 link_to_remote "Delete this post", :update => "posts",
     :url => { :action => "destroy", :id => post.id }
@@ -130,7 +130,7 @@ Leiam com muito cuidado meu tutorial sobre como usar Asset Pipeline, [Parte 1](h
 * crie os arquivos <tt>/app/assets/javascripts/application.js</tt> e <tt>/app/assets/javascripts/application.css</tt> para declarar as dependências - retire tudo que você carregava individualmente no <tt>/app/views/layouts/application.html.erb</tt>;
 * garanta que seu <tt>Gemfile</tt> tem as bibliotecas <tt>jquery-rails</tt>. Se por acaso você usava Prototype para mais do que o Ajax padrão do Rails antigo, vai precisar do <tt>protototype-rails</tt>, e nesse caso seu <tt>application.js</tt> deverá ter:
 
---- javascript
+```javascript
 //= require prototype
 //= require prototype_ujs
 //= require effects
@@ -143,7 +143,7 @@ Leiam com muito cuidado meu tutorial sobre como usar Asset Pipeline, [Parte 1](h
 * para facilitar renomeie todos os stylesheets para serem <tt>.css.scss</tt> e agora substitua toda URL para assets como <tt>url("../images/glyphicons.png")</tt> para <tt>image-url("glyphicons.png")</tt> e o SASS fará o resto por você;
 * os helpers de ActionView que são blocos precisam explicitamente ter "=" no ERB, troque em todas as views. Ou seja:
 
---- html
+```html
 <!-- Rails 2.3 -->
 <% form_for :contato do |f| %>
 ...
@@ -165,14 +165,14 @@ Isso vai dar um pouco de trabalho, felizmente mudar para Devise não é complica
 
 No seu <tt>Gemfile</tt> você vai precisar das seguintes gems:
 
---- ruby
+```ruby
 gem 'devise'
 gem 'devise-encryptable'
 ```
 
 Leia a [documentação do Devise](https://github.com/plataformatec/devise/wiki/How-To:-Migrate-from-restful_authentication-to-Devise) mas além das gems, transportar as views, os mailers, nos controllers você vai trocar as rotas e a API antiga pela nova:
 
---- ruby
+```ruby
 # Restful Authentication
 before_filter :login_required
 # Devise
@@ -221,7 +221,7 @@ Sobre o Rails 3.2 fica uma dica: neste momento (Maio de 2013) use o Rails versã
 
 Se você fez a migração como recomendado para a versão 3.1 agora com a 3.2 terá um bônus. Adicione o seguinte na sua <tt>Gemfile</tt>, no grupo <tt>:assets</tt>:
 
---- ruby
+```ruby
 gem 'turbo-sprockets-rails3'
 ```
 
@@ -229,7 +229,7 @@ Isso vai acelerar muito a pré-compilação dos seus assets (coisa que provavelm
 
 Na versão 3.2 você tem a opção de tornar [Mass Assignment](http://guides.rubyonrails.org/security.html#mass-assignment) mais rígido adicionando o seguinte em todos os arquivos de ambiente em <tt>/config/environments/</tt>:
 
---- ruby
+```ruby
 # Raise exception on mass assignment protection for Active Record models
 config.active_record.mass_assignment_sanitizer = :strict
 ```

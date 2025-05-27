@@ -28,7 +28,7 @@ Yes, it is just a database. A distributed-database to be more exact. Or a very c
 
 Of course, the Bitcoin source-code is more sophisticated than that but the basics are really so ridiculous that you don't need more than 20 lines of Ruby code to replicate it. Check out this example implementation from [Gerald Bauer](https://github.com/openblockchains/awesome-blockchains/tree/master/blockchain.rb).
 
---- ruby
+```ruby
 require "digest"    # for hash checksum digest function SHA256
 
 class Block
@@ -84,7 +84,7 @@ That's why Satoshi added the so-called "Proof of Work" to the equation. Remember
 
 In Ruby if you do:
 
---- ruby
+```ruby
 Digest::SHA256.hexdigest("abcd")
 # => "88d4266fd4e6338d13b845fcf289579d209c897823b9217da3e161936f031589"
 Digest::SHA256.hexdigest("123")
@@ -97,7 +97,7 @@ Now, what if I ask you to find the hash that starts with a certain amount of "ze
 
 For example:
 
---- ruby
+```ruby
 # I want to find 4 zeros ("0000") in the hash:
 Digest::SHA256.hexdigest("79026" + "123")
 # => "0000559fb4a55f135c7db3d83405b86b4b63cd035993873a5b676bae08b64334"
@@ -107,7 +107,7 @@ How do I know that I had to prepend "79026"? I don't, I have to start from 0 and
 
 If we check from [Gerald' example](https://github.com/openblockchains/awesome-blockchains/blob/master/blockchain.rb/blockchain_with_proof_of_work.rb#L29-L45) we would implement this lookup like this:
 
---- ruby
+```ruby
 def compute_hash_with_proof_of_work( difficulty="00" )
   nonce = 0
   loop do

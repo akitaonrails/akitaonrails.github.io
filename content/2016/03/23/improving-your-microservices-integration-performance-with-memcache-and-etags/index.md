@@ -26,7 +26,7 @@ The "TL;DR" version is: make your APIs return proper ETAGs and handle "If-None-M
 
 In a very very contrived example we could have a Rails API controller like this:
 
---- ruby
+```ruby
 ## 1st application
 class Api::ProductsController < ApplicationController
   def index
@@ -52,7 +52,7 @@ In summary, it's taking around **26ms** to send back a JSON with the first page 
 
 Then we can create another Rails API application that consumes this first one. Something also very contrived and stupid like this:
 
---- ruby
+```ruby
 # 2nd application
 class Api::ProductsController < ApplicationController
   def index
@@ -94,7 +94,7 @@ In our contrived example, the 1st application on port 3001 fetches a page of Act
 
 One thing that we could do is just check the "updated_at" fields of all the records and see if they changed. If any one of them changed, we would need to re-render everything and send a new ETAG and a new response body. So the code could be like this:
 
---- ruby
+```ruby
 class Api::ProductsController < ApplicationController
   layout false
   def index
@@ -135,7 +135,7 @@ Connection: Keep-Alive
 
 Great! We have an ETAG that uniquely represents this page of products. Now we can go one step further and add the following:
 
---- ruby
+```ruby
 # Gemfile
 gem 'dalli'
 gem 'rack-cache'
@@ -189,7 +189,7 @@ Because we are skipping the expensive ActionView rendering, the response time we
 
 But we can go one step further. If we change nothing about the 2nd application, it will keep receiving just HTTP 200 with full body responses from Rack Cache of the 1st application. Let's see the code again
 
---- ruby
+```ruby
 # 2nd application
 class Api::ProductsController < ApplicationController
   def index
@@ -205,7 +205,7 @@ class Api::ProductsController < ApplicationController
 
 We can do better. How about the following:
 
---- ruby
+```ruby
 # 2nd application - upgrade!
 class Api::ProductsController < ApplicationController
   def index
@@ -321,7 +321,7 @@ If you remove ETAGs from the 1st application, the 2nd one will not break and vic
 
 If the 2nd application is itself another API you should also add ETAGs for it, and so on. In this example we didn't, just because I wanted to simplify the scenario. But instead of being just a simple one-to-one proxy, it could be one of those "porcelain" APIs that fetch data from several other smaller microservices, compile down in a single structure and return it. You should create ETAGs that could be the returning ETAGs from all the other microservices digested together in a single ETAG, for example. Because you're just receiving headers and fetching their content from an internal cache, it's quite cheap. Something like this pseudo-code:
 
---- ruby
+```ruby
 def index
   url1 = "http://somehost1.foo/some_endpoint/1"
   url2 = "http://somehost1.foo/some_endpoint/2"

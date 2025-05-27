@@ -87,7 +87,7 @@ In Erlang, as I explained before, you run functions within completely isolated p
 
 So, you can pass values by reference between routines, or you can share data in a third party process as the mediator of data. One such infrastructure built-in to Erlang is the **ETS**, the [Erlang Term Storage](http://elixir-lang.org/getting-started/mix-otp/ets.html), which is part of the so called OTP platform. Think of ETS as a very simple and very fast built-in key value storage like Memcached. You use it for the same use cases as a cache and it's as simple as just doing this:
 
---- ruby
+```ruby
 table = :ets.new(:my_fancy_cache, [:set, :protected])
 :ets.insert(table, {"some_key", some_value})
 :ets.lookup(table, "some_key")
@@ -105,7 +105,7 @@ You already know sub-routines, you do it all the time by partitioning large port
 
 Fibers offer a way for your current function execution to "yield" back to its caller, preserving its current state, and then the caller can "resume" the suspended Fiber to continue its execution from where it last yielded. This allows for non-preempted, cooperative multitasking. We have Fibers in Python, Ruby, and other languages and it allows the creation of constructions like Generators. Even Javascript can have some form of Fibers if you add libraries like [node-fibers](https://github.com/laverdet/node-fibers):
 
---- javascript
+```javascript
 var Fiber = require('fibers');
 
 function sleep(ms) {
@@ -121,7 +121,7 @@ The call to 'yield' suspends the current execution until the function in the 'se
 
 Fibers are useful to make it less ugly to program in a rudimentary Reactor environment, where you depend on callbacks calling callbacks and you end up with the anti-pattern of [callback pyramid of doom](https://bjouhier.wordpress.com/2012/03/11/fibers-and-threads-in-node-js-what-for/). With Fibers you can program as you would in a synchronous imperative language transforming this ugly Javascript code:
 
---- javascript
+```javascript
 function archiveOrders(date, cb) {
   db.connect(function(err, conn) {
     if (err) return cb(err);
@@ -149,7 +149,7 @@ function archiveOrders(date, cb) {
 
 Into this more manageable thing:
 
---- javascript
+```javascript
 var archiveOrders = (function(date) {
   var conn = db.connect().wait();
   conn.query("selectom orders where date < ?",  
@@ -199,7 +199,7 @@ But there is a **big** catch: it's very difficult to **hot swap** code inside th
 
 In Erlang, because there is no such hard dependencies, and again because of inherent advantages of it only having immutable data with no shared state, and dependencies limited to opaque message passing, you can granularly reload one single module and most important of all: you can implement simple callbacks to **transform the old state of a process into a new state structure**, because just reloading the code is half the story if you will have hundreds of old processes restarting into the new code but having to deal with previous state. In an Erlang GenServer, you just implement this single callback:
 
---- ruby
+```ruby
 code_change(OldVersion, CurrentState, _Extra) -> {ok, NewState}.
 ```
 
@@ -267,7 +267,7 @@ It brings many modern construct such as making macros easier in order to allow f
 
 This is one example of Elixir straight from its source code tests:
 
---- ruby
+```ruby
 Code.require_file "../test_helper.exs", __DIR__
 
 defmodule Mix.ArchiveTest do

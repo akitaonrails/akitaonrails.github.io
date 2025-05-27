@@ -76,7 +76,7 @@ jruby -S bundle install
 
 Isso deve instalar todas as dependências que estão listadas no arquivo <tt>Gemfile</tt> cujas partes mais importantes são:
 
---- ruby
+```ruby
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.9'
 # Use jdbcsqlite3 as the database for Active Record
@@ -103,7 +103,7 @@ Finalmente, configure uma nova aplicação no IIS dentro do Default Web Site, nu
 
 Uma aplicação Rails, por padrão, não é feito para funcionar numa sub-pasta, mas este trecho no arquivo <tt>config.ru</tt> garante que isso vai funcionar:
 
---- ruby
+```ruby
 Rails.application.config.relative_url_root = '/rails'
 
 map Rails.application.config.relative_url_root || "/" do
@@ -113,7 +113,7 @@ end
 
 Você vai precisar criar um banco de dados chamado "jruby_demo" ou outro nome que você pode configurar no arquivo <tt>config/database.yml</tt>. Note que você precisa modificar também o usuário e senha nesse arquivo para conseguir se conectar ao seu banco. Nesse caso significa que precisa usar [SQL Server Authentication](https://msdn.microsoft.com/en-us/library/ms144284.aspx) e não o padrão Windows Authentication.
 
---- yaml
+```yaml
 default: &default
   adapter: jdbcmssql
   driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
@@ -130,7 +130,7 @@ jruby -S rake db:migrate db:seed
 
 Para o IIS 8 conseguir carregar corretamente o JRuby, você precisa configurar o arquivo <tt>Web.config</tt>:
 
---- XML
+```XML
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
     <system.webServer>

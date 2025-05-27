@@ -43,7 +43,7 @@ Just like my simple `Workflow.pages/1` function which iterates through a list of
 
 If I know the collection is small (less than 100 items, for example) I would just do this:
 
---- ruby
+```ruby
 def pages({chapter_list, source}) do
    pages_list = chapter_list
      |> Enum.map(&Worker.chapter_page([&1, source]))
@@ -62,7 +62,7 @@ You can run into 2 main problems when you need to iterate through a big collecti
 
 One way to control this is through the use of "batches", something along these lines:
 
---- ruby
+```ruby
 def pages({chapter_list, source}) do
   pages_list = chapter_list
 	|> Enum.chunk(60)
@@ -92,7 +92,7 @@ The code does come clean, but as I explained before, this is not the proper use 
 
 So, finally, there is a compromise. The solution between the simple `Task.async` and `Flow` is `Task.async_stream` which works like a pool implementation, where it keeps a `max_concurrency` of jobs running in a stream. The final code becomes way more elegant like this:
 
---- ruby
+```ruby
 def pages({chapter_list, source}) do
   pages_list = chapter_list
     |> Task.async_stream(MangaWrapper, :chapter_page, [source], max_concurrency: @max_demand)

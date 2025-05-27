@@ -85,7 +85,7 @@ heroku config:set CDN_URL=doz7rtw2u3wg4.cloudfront.net
 
 Now, edit your `config/environments/production.rb` and add the following:
 
---- ruby
+```ruby
 config.action_controller.asset_host = ENV['CDN_URL'] if ENV['CDN_URL']
 ```
 
@@ -120,7 +120,7 @@ When a user opens your site, it will receive the HTML with URLs pointing to the 
 
 For your Rails app to return the proper headers, you need to add the `rack-cors` gem to your Gemfile. Then you must add a new configuration file at `config/initializers/rack-cors.rb` with:
 
---- ruby
+```ruby
 if defined? Rack::Cors
   Rails.configuration.middleware.insert_before 0, Rack::Cors do
     allow do
@@ -211,7 +211,7 @@ The first thing to do is add [Memcachier](https://devcenter.heroku.com/articles/
 
 Configuration is also trivial. Start by adding the following gems to your `Gemfile`:
 
---- ruby
+```ruby
 group :production do
   gem 'rack-cors', require: 'rack/cors'
   gem 'rack-cache'
@@ -223,7 +223,7 @@ end
 
 Now you must edit your `config/environments/production.rb` like this:
 
---- ruby
+```ruby
 config.cache_store = :dalli_store
 
 client = Dalli::Client.new((ENV["MEMCACHIER_SERVERS"] || "").split(","),
@@ -241,7 +241,7 @@ config.action_dispatch.rack_cache = {
 
 Now, let's say you have a block in your template that requires a bunch of records from your database. But you know that those records barely change. What can you do? One alternative is cache the ActiveRecord query entirely like this:
 
---- ruby
+```ruby
 class HomePageController < ApplicationController
   def index
     @selected_proposals = Rails.cache.fetch('selected_proposals', expires_in: 1.day) do

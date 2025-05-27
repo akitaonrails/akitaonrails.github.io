@@ -156,7 +156,7 @@ Notice the weird `config/application.yml` above? This is from [figaro](https://g
 
 Now, you can override any ENV variable from the Kubernetes Deployment YAML file. Now it's a good time to show an example of that. You can name it `deploy/web.yml` or whatever suits your fancy and - of course - check it into your source code repository.
 
---- yaml
+```yaml
 kind: Deployment
 apiVersion: apps/v1beta1
 metadata:
@@ -253,7 +253,7 @@ There is a lot going on here. So let me break it down a bit:
 * I am using Passenger with production configuration (check out [Phusion's documentation](https://www.phusionpassenger.com/library/config/reference/), do not just copy this).
 * In the `spec:template:spec:containers:env` section I can override the ENV vars with the real production secrets. And you will notice that I can hard-code values or use this strange contraption:
 
---- yaml
+```yaml
 - name: "SMTP_USERNAME"
   valueFrom:
     secretKeyRef:
@@ -293,7 +293,7 @@ kubectl create secret generic cloudsql-db-credentials \
 
 These are referenced in this part of the Deployment:
 
---- yaml
+```yaml
 - image: gcr.io/cloudsql-docker/gce-proxy:latest
   name: cloudsql-proxy
   command: ["/cloud_sql_proxy", "--dir=/cloudsql",
@@ -326,7 +326,7 @@ You may also want the option to load a separated CloudSQL instance instead of ha
 
 It seems that nothing is exposed to anything unless you say so. So we need to expose those pods through what's called a [Node Port Service](https://kubernetes.io/docs/concepts/services-networking/service/#type-nodeport). Let's create a `deploy/web-svc.yaml` file as well:
 
---- yaml
+```yaml
 apiVersion: v1
 kind: Service
 metadata:
@@ -411,7 +411,7 @@ gcloud compute instances add-access-config $LB_INSTANCE_NAME \
 
 Once we do this, we can add the rest of the Ingress Deployment configuration. This will be kinda long but it's mostly boilerplate. Let's start by defining another web application that we will call `default-http-backend` that will be used to respond to HTTP requests in case our web pods are not available for some reason. Let's call it `deploy/default-web.yml`:
 
---- yaml
+```yaml
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
@@ -450,7 +450,7 @@ spec:
 
 No need to change anything here, and by now you may be familiar with the Deployment template. Again, you now know that you need to expose it through a NodePort, so let's add a `deploy/default-web-svc.yml`:
 
---- yaml
+```yaml
 kind: Service
 apiVersion: v1
 metadata:
@@ -467,7 +467,7 @@ spec:
 
 Again, no need to change anything. The next 3 files are the important parts. First, we will create an NGINX Load Balancer, let's call it `deploy/nginx.yml`:
 
---- yaml
+```yaml
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
@@ -542,7 +542,7 @@ Also, notice that I am using version "0.9.0-beta_5" for the controller image. It
 
 Again, let's expose this Ingress controller through the Load Balancer Service. Let's call it `deploy/nginx-svc.yml`:
 
---- yaml
+```yaml
 apiVersion: v1
 kind: Service
 metadata:
@@ -565,7 +565,7 @@ Remember the static external IP we have reserved above and saved in the `LB_INGR
 
 Finally, we can create the Ingress configuration itself, let's create a `deploy/ingress.yml` like this:
 
---- yaml
+```yaml
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -712,7 +712,7 @@ spec:
 
 Now, let's create a CronJob deployment file as `deploy/auto-snapshot.yml`:
 
---- yaml
+```yaml
 apiVersion: batch/v1beta1
 kind: CronJob
 metadata:

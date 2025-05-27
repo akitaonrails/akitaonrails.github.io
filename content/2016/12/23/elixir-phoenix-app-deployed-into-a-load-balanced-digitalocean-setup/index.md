@@ -171,7 +171,7 @@ See what I did there? I only allowed connections coming from the public IPs of t
 
 From your Phoenix application, you can edit you local `config/prod.secret.exs` file to look like this:
 
---- ruby
+```ruby
 # Configure your database
 config :your_app_name, ExPusherLite.Repo,
   adapter: Ecto.Adapters.Postgres,
@@ -326,7 +326,7 @@ Then, if you're from Ruby you're familiar with Capistrano. Or if you're from Pyt
 
 You add them to `mix.exs` just like any other dependency:
 
---- ruby
+```ruby
 ...
 def application do
   [mod: {ExPusherLite, []},
@@ -343,7 +343,7 @@ end
 
 From the Pivotal blog post, the important thing to not forget is to edit this part in the `config/prod.exs` file:
 
---- ruby
+```ruby
 http: [port: 8080],
 url: [host: "your-app-name.yourdomain.com", port: 80],
 ...
@@ -531,7 +531,7 @@ mix release.init
 
 It will generate a standard `rel/config.exs` file that you must add to your git repository with the following changes do the bottom:
 
---- ruby
+```ruby
 ...
 environment :prod do
   plugin Releases.Plugin.LinkConfig
@@ -620,21 +620,21 @@ What I recommend you to do is to change the `config/prod.exs` file ONLY in your 
 
 For example, in development mode I had a code in the controller that was checking the existence of an optional query string parameter like this:
 
---- ruby
+```ruby
 if params["some_parameter"] do
  ...
 ```
 
 That was working fine in development but crashing in production, so I had to change it to:
 
---- ruby
+```ruby
 if Map.has_key?(params, "some_parameter") do
  ...
 ```
 
 Another thing was that Guardian was working normally in development, but in production I had to declare its application in the `mix.exs` like this:
 
---- ruby
+```ruby
 def application do
   [mod: {ExPusherLite, []},
    applications: [..., :guardian, :edeliver]]

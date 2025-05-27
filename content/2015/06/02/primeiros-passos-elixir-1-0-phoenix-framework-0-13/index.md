@@ -104,7 +104,7 @@ README.md
 
 Como podem ver é incrivelmente próximo ao Rails e fica mais próximo ainda no código. Para começar, precisamos configurar o acesso ao PostgreSQL no arquivo <tt>config/dev.exs</tt> no trecho final:
 
---- ruby
+```ruby
 # Configure your database
 config :phoenix_crud, PhoenixCrud.Repo,
   adapter: Ecto.Adapters.Postgres,
@@ -124,7 +124,7 @@ Obs: neste instance, o projeto não é compilável. Falta alterar manualmente o 
 
 De qualquer forma, o comando anterior vai criar arquivos como:
 
---- ruby
+```ruby
 # priv/repo/migrations/20150601195745_create_user.exs
 defmodule PhoenixCrud.Repo.Migrations.CreateUser do
   use Ecto.Migration
@@ -144,7 +144,7 @@ end
 
 Sem palavras! É praticamente a mesma DSL de migrations do Rails, o equivalente em Rails seria:
 
---- ruby
+```ruby
 class CreateUser < ActiveRecord::Migration
   def change
     create_table :users do |t|
@@ -160,7 +160,7 @@ end
 
 Um model, por outro lado, é um pouco diferente do ActiveRecord:
 
---- ruby
+```ruby
 defmodule PhoenixCrud.User do
   use PhoenixCrud.Web, :model
 
@@ -193,19 +193,19 @@ Diretivas como o <tt>@required_fields</tt> funciona mais ou menos como declarar 
 
 E de cara batemos com uma das funcionalidades que chamou mais atenção no Elixir, o operador "pipe" que é o <tt>|></tt>.
 
---- ruby
+```ruby
 model |> cast(params, @required_fields, @optional_fields)
 ```
 
 Esse trecho é a mesma coisa que:
 
---- ruby
+```ruby
 cast(model, params, @required_fields, @optional_fields)
 ```
 
 É para os casos onde faríamos:
 
---- ruby
+```ruby
 foo(bar(baz), options)
 ```
 
@@ -217,7 +217,7 @@ baz |> bar() |> foo(options)
 
 E voltando ao <tt>changeset</tt>, segundo a [documentação no site do Phoenix](http://www.phoenixframework.org/v0.13.1/docs/ecto-models) usaríamos desta forma:
 
---- ruby
+```ruby
 params = %{name: "Joe Example", email: "joe@example.com", age: 15}
 changeset = User.changeset(%User{}, params)
 changeset.valid?
@@ -225,7 +225,7 @@ changeset.valid?
 
 Em Rails, seria mais ou menos o equivalente a:
 
---- ruby
+```ruby
 params = {name: "Joe Example", email: "joe@example.com", age: 15}
 user = User.new(params)
 user.valid?
@@ -233,7 +233,7 @@ user.valid?
 
 E para realmente adicionar validações como no ActiveRecord, adicionamos quaisquer transformações ou validações ao pipeline do changeset, o que faz muito sentido:
 
---- ruby
+```ruby
 def changeset(model, params \\ nil) do
   model
   |> cast(params, @required_fields, @optional_fields)
@@ -245,7 +245,7 @@ end
 
 Com isso em mente, vejamos o próximo código que foi gerado automaticamente nesse scaffold, o controller:
 
---- ruby
+```ruby
 # web/controllers/user_controller.ex
 defmodule PhoenixCrud.UserController do
   use PhoenixCrud.Web, :controller
@@ -322,7 +322,7 @@ Dentre as diferenças, imagino que <tt>alias PhoenixCrud.User</tt> é para que p
 
 Antes de falar de "plug" vamos mexer no arquivo <tt>router.ex</tt>:
 
---- ruby
+```ruby
 defmodule PhoenixCrud.Router do
   use PhoenixCrud.Web, :router
 
@@ -353,7 +353,7 @@ end
 
 O que eu disse quando executamos o scaffold sobre não compilar é porque precisamos adicionar a seguinte linha ao arquivo anterior:
 
---- ruby
+```ruby
 resources "/users", UserController
 ```
 
@@ -365,7 +365,7 @@ E de fato, no <tt>router.ex</tt> definimos pipelines separados como escopos, um 
 
 Sem esticar demais este artigo vejamos agora como é uma view. Em vez de ERB (Embedded RuBy) temos EEX (Embedded EliXir). Em particular vamos ver o arquivo gerado automaticamente no scaffold, <tt>web/templates/user/form.html.eex</tt>:
 
---- html
+```html
 <%= form_for @changeset, @action, fn f -> %>
   <%= if f.errors != [] do %>
     <div class="alert alert-danger">
@@ -393,7 +393,7 @@ Praticamente igual, incluindo o padrão de messages por flash. Correndo o risco 
 
 Por último, algo que pode ser diferente é o conteúdo do diretório <tt>web/views</tt>, como o arquivo <tt>web/views/user_view.ex</tt>:
 
---- ruby
+```ruby
 defmodule PhoenixCrud.UserView do
   use PhoenixCrud.Web, :view
 end
@@ -401,7 +401,7 @@ end
 
 Pelo que entendi, ele dá aos templates em EEX o contexto da aplicação, como variáveis criadas no controller. No Rails se definimos um <tt>@users = User.all</tt> a view pode usar como <tt>for user in @users</tt>. No Phoenix explicitamente declaramos isso pela diretiva <tt>use PhoenixCrud.Web, :view</tt>. Esse ":view" está definido no arquivo <tt>web/web.ex</tt> neste trecho:
 
---- ruby
+```ruby
 defmodule PhoenixCrud.Web do
   ...
   def view do
@@ -449,7 +449,7 @@ Uma única coisa que faz sentido para um scaffold é que ele já vem pré-config
 
 E como está definido em <tt>lib/phoenix_crud/endpoint.ex</tt> sabemos que ele tem suporte a servir arquivos estáticos, live reloading de código, fora o básico como logger, parser, etc. Veja:
 
---- ruby
+```ruby
 defmodule PhoenixCrud.Endpoint do
   use Phoenix.Endpoint, otp_app: :phoenix_crud
 

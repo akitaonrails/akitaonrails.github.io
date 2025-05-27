@@ -30,7 +30,7 @@ The tests are taking long because I made a choice for the MangaReader and Mangaf
 
 Each source module has 3 sub-modules: ChapterPage, IndexPage and Page. All of them have a main function that resembles this piece of code:
 
---- ruby
+```ruby
 defmodule ExMangaDownloadr.Mangafox.ChapterPage do
   require Logger
   ...
@@ -54,7 +54,7 @@ It calls "<tt>HTTPotion.get/2</tt>" sending a bunch of HTTP options and receives
 
 Similar code exists in 6 different modules, with different links and different parser functions. It's a lot of repetition, but what about making the above code look like the snippet below?
 
---- ruby
+```ruby
 defmodule ExMangaDownloadr.Mangafox.ChapterPage do
   require Logger
   require ExMangaDownloadr
@@ -70,7 +70,7 @@ end
 
 Changed 9 lines to just 1. And by the way, this same line can be written like this:
 
---- ruby
+```ruby
 ExMangaDownloadr.fetch chapter_link do
   fetch_pages(chapter_link)
 end
@@ -78,7 +78,7 @@ end
 
 Seems familiar? It's like every block in the Elixir language, you can write it in the "do/end" block format or the way it really is under the covers: a keyword list with a key named ":do". And the way this macro is defined is like this:
 
---- ruby
+```ruby
 defmodule ExMangaDownloadr do
   ...
   defmacro fetch(link, do: expression) do
@@ -108,7 +108,7 @@ The resulting code will resemble the original code in Listing 1.1.
 
 To make it simpler, if you were in Javascript this would be a similar code:
 
---- javascript
+```javascript
 function fetch(url) {
     eval("doSomething('" + url + "')");
 }
@@ -121,7 +121,7 @@ function pages(page_link) {
 
 Another place I used a macro was to save the images list in a dump file and load it later if the tool crashes for some reason, in order not to have to start over from scratch. The original code was like this:
 
---- ruby
+```ruby
 dump_file = "#{directory}/images_list.dump"
 images_list = if File.exists?(dump_file) do
                 :erlang.binary_to_term(File.read!(dump_file))
@@ -139,7 +139,7 @@ images_list = if File.exists?(dump_file) do
 
 And now that you understand macros, you will understand what I did here:
 
---- ruby
+```ruby
 defmodule ExMangaDownloadr do
   ...
   defmacro managed_dump(directory, do: expression) do
@@ -179,7 +179,7 @@ end
 
 And there you have it! And now you see how "do .. end" blocks are implemented. It just passes the expression as the value in the keyword list of the macro definition. Let's define a dumb macro:
 
---- ruby
+```ruby
 defmodule Foo
   defmacro foo(do: expression) do
      quote do
@@ -191,7 +191,7 @@ end
 
 And not the following calls are all equivalent:
 
---- ruby
+```ruby
 require Foo
 Foo.foo do
   IO.puts(1)
@@ -208,7 +208,7 @@ This is macros combined with [Keyword Lists](http://elixir-lang.org/getting-star
 
 Another opportunity to refactor were the "mangareader.ex" and "mangafox.ex" modules that were just used in the unit tests "mangareader_test.ex" and "mangafox_test.ex". This is the old "mangareader.ex" code:
 
---- ruby
+```ruby
 defmodule ExMangaDownloadr.MangaReader do
   defmacro __using__(_opts) do
     quote do
@@ -222,7 +222,7 @@ end
 
 And this is how it was used in "mangareader_test.ex":
 
---- ruby
+```ruby
 defmodule ExMangaDownloadr.MangaReaderTest do
   use ExUnit.Case
   use ExMangaDownloadr.MangaReader
@@ -231,7 +231,7 @@ defmodule ExMangaDownloadr.MangaReaderTest do
 
 It was just a shortcut to alias the modules in order to use them directly inside the tests. I just moved the entire module as a macro in "ex_manga_downloadr.ex" module:
 
---- ruby
+```ruby
   ...
   def mangareader do
     quote do
@@ -253,7 +253,7 @@ end
 
 And now I can use it like this in the test file:
 
---- ruby
+```ruby
 defmodule ExMangaDownloadr.MangaReaderTest do
   use ExUnit.Case
   use ExMangaDownloadr, :mangareader
@@ -262,7 +262,7 @@ defmodule ExMangaDownloadr.MangaReaderTest do
 
 The special "__using__" macro is called when I "use" a module, and I can even pass arguments to it. The implementation then uses "apply/3" to dynamically call the correct macro. This exactly how Phoenix imports the proper behaviors for Models, Views, Controllers, Router, for example:
 
---- ruby
+```ruby
 defmodule Pxblog.PageController do
   use Pxblog.Web, :controller
   ...
@@ -274,7 +274,7 @@ The macros are open in a Phoenix file and available in the "web/web.ex" module, 
 
 In the previous code I used the "<tt>String.to_atom/1</tt>" to convert the string of the module name to an atom, to be later used in "apply/3" calls:
 
---- ruby
+```ruby
 defp manga_source(source, module) do
   case source do
     "mangareader" -> String.to_atom("Elixir.ExMangaDownloadr.MangaReader.#{module}")
@@ -285,7 +285,7 @@ end
 
 I changed it to this:
 
---- ruby
+```ruby
     "mangareader" -> :"Elixir.ExMangaDownloadr.MangaReader.#{module}"
     "mangafox"    -> :"Elixir.ExMangaDownloadr.Mangafox.#{module}"
 ```
@@ -294,7 +294,7 @@ It's just a shortcut to do the same thing.
 
 In the parser I was also not using [Floki](https://github.com/philss/floki) correctly. So take a look at this piece of old code:
 
---- ruby
+```ruby
 defp fetch_manga_title(html) do
   Floki.find(html, "#mangaproperties h1")
   |> Enum.map(fn {"h1", [], [title]} -> title end)
@@ -308,7 +308,7 @@ end
 
 Now using the better helper functions that Floki provides:
 
---- ruby
+```ruby
 defp fetch_manga_title(html) do
   html
   |> Floki.find("#mangaproperties h1")
@@ -325,7 +325,7 @@ This was a case of not reading the documentation as I should have. Much cleaner!
 
 I did other bits of cleanup but I think this should cover the major changes. And finally, I bumped up the version to "1.0.0" as well!
 
---- ruby
+```ruby
    def project do
      [app: :ex_manga_downloadr,
 -     version: "0.0.1",
@@ -335,7 +335,7 @@ I did other bits of cleanup but I think this should cover the major changes. And
 
 And speaking of versions, I'm using Elixir 1.1 but pay attention as [Elixir 1.2](https://github.com/elixir-lang/elixir/blob/ef5ba3af059f76489631dc26b52ecaeff09af3fe/CHANGELOG.md) is just around the corner and it brings some niceties. For example, that macro that aliased a few modules could be written this way now:
 
---- ruby
+```ruby
 def mangareader do
   quote do
     alias ExMangaDownloadr.MangaReader.{IndexPage, ChapterPage, Page}

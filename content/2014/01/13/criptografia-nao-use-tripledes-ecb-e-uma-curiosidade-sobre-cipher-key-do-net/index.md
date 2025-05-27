@@ -12,7 +12,7 @@ draft: false
 
 Recentemente num de nossos projetos tivemos que lidar com uma integração de dados vindo de um sistema feito em C#. Até aqui nenhum problema. O código que tivemos que usar como referência, vindo de um parceiro de nosso cliente, foi basicamente este:
 
---- C
+```C
 using System;
 using System.Security.Cryptography;
 using System.Text;
@@ -68,7 +68,7 @@ Aliás, se puder também evite MD5 ou SHA1 para gerar digests de senhas. Eles s�
 
 Como disse antes, independente da qualidade do código original, precisávamos fazer um em Ruby que gerasse o mesmo resultado. A "tradução" do código C# anterior em Ruby seria assim (versão simplificada):
 
---- ruby
+```ruby
 require 'rubygems'
 require 'openssl'
 require 'digest/md5'
@@ -111,7 +111,7 @@ Especificamente no .Net ele complementa os 8-bytes restantes com os 8-bytes inic
 
 Por isso, pro método em Ruby ficar correto, precisamos fazer assim:
 
---- ruby
+```ruby
 require 'rubygems'
 require 'openssl'
 require 'digest/md5'
@@ -128,7 +128,7 @@ end
 
 Feito isso, o resultado agora será o mesmo do código em C#:
 
---- ruby
+```ruby
 > encrypt_data("abc123", "hello world")
  => "90v60JwFNH+VuIKJgSVWUw==\n"
 ```

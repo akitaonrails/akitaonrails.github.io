@@ -21,7 +21,7 @@ vagrant ssh
 
 Isso deve instalar o Ubuntu 14.04. Veja a documentação para configurar o que você precisa. Em particular, no meu caso, antes de dar <tt>vagrant up</tt> eu edito o <tt>Vagrantfile</tt> pra ter o seguinte:
 
---- ruby
+```ruby
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 

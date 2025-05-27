@@ -21,7 +21,7 @@ By trial and error I found that firing up less than a 100 HTTP requests at once 
 
 Then I had to manually chunk my list of pages to 80 elements and process them in parallel, finally reducing the resulting lists into a larger list again to pass it through to the next steps in the Workflow. The code gets convoluted like this:
 
---- ruby
+```ruby
 def images_sources(pages_list) do
   pages_list
     |> chunk(@maximum_fetches)
@@ -37,7 +37,7 @@ end
 
 Now I was able to reimplement this aspect and the same code now looks like this:
 
---- ruby
+```ruby
 def images_sources(pages_list) do
   pages_list
     |> Enum.map(&Worker.page_image/1)
@@ -86,14 +86,14 @@ There are so many subjects and details that it's difficult to even get started. 
 
 But there is the concept of Erlang processes. Now, a process do have state, it's a lightweight piece of state that exists only in runtime. To execute a function in a separated, parallel process, you can just do:
 
---- ruby
+```ruby
 iex> spawn fn -> 1 + 2 end
 #PID<0.43.0>
 ```
 
 Different from an object, a process does not have a set of methods that access its inner "this" or "self" states. Instead each process has a **mailbox**. When you start (or "spawn" in Erlang lingo) a new process, it returns a pid (process ID). You can now send messages to the process through its pid. Each process has a mailbox and you can choose to respond to incoming messages and send responses back to the pid that sent the message. This is how you can send a message to the IEx console and receive the messages in its mailbox:
 
---- ruby
+```ruby
 iex> send self(), {:hello, "world"}
 {:hello, "world"}
 iex> receive do
@@ -117,7 +117,7 @@ All that having being said, we know that in the Workflow we implemented before, 
 
 Now, let's start by moving away this logic to a GenServer Worker, for example, in the <tt>ex_manga_downloadr/pool_management/worker.ex</tt> file:
 
---- ruby
+```ruby
 defmodule PoolManagement.Worker do
   use GenServer
   use ExMangaDownloadr.MangaReader
@@ -143,7 +143,7 @@ I first moved the <tt>Workflow.download_image/2</tt> to <tt>Page.download_image/
 
 As a convention, we can add public functions that are just prettier versions that call each <tt>handle_call/3</tt>:
 
---- ruby
+```ruby
   def page_image(page_link) do
     Task.async fn -> 
       :poolboy.transaction :worker_pool, fn(server) ->
@@ -175,7 +175,7 @@ Instead, we can use a process pool! It queues up our requests for new processes.
 
 By doing this we can remove the chunking of the large list into batches and do it like we would process every element of the large list in parallel at once, repeating again the initial version:
 
---- ruby
+```ruby
 pages_list
   |> chunk(@maximum_fetches)
   |> Enum.reduce([], fn pages_chunk, acc ->
@@ -189,7 +189,7 @@ pages_list
 
 Now, removing the chunking and reducing logic:
 
---- ruby
+```ruby
 pages_list
   |> Enum.map(&(Task.async(fn -> Page.image(&1) end)))
   |> Enum.map(&(Task.await(&1, @http_timeout)))
@@ -198,7 +198,7 @@ pages_list
 
 And finally, replacing the direct <tt>Task.async/1</tt> call for the GenServer worker we just implemented above:
 
---- ruby
+```ruby
 pages_list
   |> Enum.map(&Worker.page_image/1)
   |> Enum.map(&Task.await(&1, @await_timeout_ms))
@@ -207,7 +207,7 @@ pages_list
 
 Now, Poolboy requires will require a Supervisor that monitors our Worker. Let's put it under <tt>ex_manga_downloadr/pool_management/supervisor.ex</tt>:
 
---- ruby
+```ruby
 defmodule PoolManagement.Supervisor do
   use Supervisor
 
@@ -236,7 +236,7 @@ More OTP goodness here. We had a rogue Worker, now we have a responsible Supervi
 
 Now, we must add Poolboy to the <tt>mix.exs</tt> as a dependency and run <tt>mix deps.get</tt> to fetch it:
 
---- ruby
+```ruby
 defp deps do
   [
     ...
@@ -248,7 +248,7 @@ end
 
 In the same <tt>mix.exs</tt> we make the main Application (surprise: which is [already a supervised OTP application](https://github.com/elixir-lang/elixir/blob/master/lib/elixir/lib/application.ex)) start the PoolManagement.Supervisor for us:
 
---- ruby
+```ruby
 def application do
   [applications: [:logger, :httpotion, :porcelain],
    mod: {PoolManagement, []}]
@@ -257,7 +257,7 @@ end
 
 But we also need to have this <tt>PoolManagement</tt> module for it to call. We may call it <tt>pool_management.ex</tt>:
 
---- ruby
+```ruby
 defmodule PoolManagement do
   use Application
 

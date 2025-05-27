@@ -27,7 +27,7 @@ E isso leva a outro problema: atualizações. Primeiro, os autores originais lan
 
 Então, vamos separar tudo e usar Bower pra gerenciar bibliotecas de front-end e usar Bundler para gerenciar gems de back-end e todo mundo fica feliz? Não é tão fácil assim já que muitas gems - ActiveAdmin como um bom exemplo - já dependem de bibliotecas de front-end encapsuladas em rubygems como temos neste trecho da gemspec:
 
---- ruby
+```ruby
 ...
 s.add_dependency "bourbon"
 s.add_dependency "jquery-rails"
@@ -39,7 +39,7 @@ Já que temos duas comunidades tendo exatamente o mesmo trabalho: no Bower algu�
 
 Será que existe uma forma, então, de converter um pacote Bower para um pacote Rubygems? E este é o problema que o Rails Assets se propõe a tentar resolver. Seguindo exatamente o mesmo exemplo do site deles, colocaremos na Gemfile de nossos projetos Rails desta forma:
 
---- ruby
+```ruby
 source 'https://rubygems.org'
 source 'https://rails-assets.org'
 
@@ -63,7 +63,7 @@ Se uma determinada gem ainda não existir, o processo vai demorar um pouco porqu
 
 Para o Asset Pipeline continua a mesma coisa. No mesmo arquivo <tt>app/assets/javascripts/application.js</tt> teríamos igual:
 
---- javascript
+```javascript
 //= require_self
 //= require bootstrap
 //= require angular
@@ -74,7 +74,7 @@ Para o Asset Pipeline continua a mesma coisa. No mesmo arquivo <tt>app/assets/ja
 
 E no <tt>app/assets/stylesheets/application.css</tt> teríamos também igual:
 
---- css
+```css
 /*
  *= require_self
  *= require bootstrap

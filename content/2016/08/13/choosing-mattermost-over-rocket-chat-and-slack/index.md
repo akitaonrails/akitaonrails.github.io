@@ -132,7 +132,7 @@ You can execute `make run` and after it finishes (and as usual, npm will make su
 
 Most importantly: you can tweak the React JSX components from `platform/webapp/components`, for example, the `channel_header.jsx` and add stuff like this:
 
---- javascript
+```javascript
 # line 493 from v3.3.0
 if(isAdmin || isSystemAdmin) {
     dropdownContents.push(
@@ -213,7 +213,7 @@ This is how I will keep experimenting for the time being, until I feel that I am
 
 Of course, the snippet above is nothing but a **dirty hack**, don't try to contribute like this. A proper implementation would require me to at least create a new setting into the `config.json`, for example `TeamSettings.MembersCanManageChannel` to `false`, and change the `api/context.go` around line 347 to be something like this:
 
---- ruby
+```ruby
 func (c *Context) HasPermissionsToTeam(teamId string, where string) bool {
     if c.IsSystemAdmin() {
         return true

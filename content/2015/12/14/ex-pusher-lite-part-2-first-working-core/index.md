@@ -40,7 +40,7 @@ Most tutorials will show you the "<tt>phoenix.gen.html</tt>" generator, which be
 
 We need to manually update the "<tt>web/router.ex</tt>" file like this:
 
---- ruby
+```ruby
 # web/router.ex
 scope "/api", ExPusherLite do
   pipe_through :api
@@ -57,7 +57,7 @@ The generator gave us this new "<tt>AppController</tt>", and similarly to Rails'
 
 The generator also created a proper migration for us:
 
---- ruby
+```ruby
 # priv/repo/migrations/20151210131528_create_app.exs
 defmodule ExPusherLite.Repo.Migrations.CreateApp do
   use Ecto.Migration
@@ -87,7 +87,7 @@ mix ecto.migrate
 
 This App resource will need the ability to create slugs out of the names (which we will use as "app_id") and also generate random key and secret values. So we must add these dependencies to the "<tt>mix.exs</tt>" file:
 
---- ruby
+```ruby
 # mix.exs
 defp deps do
   [...,
@@ -98,7 +98,7 @@ end
 
 The [final App model](https://github.com/akitaonrails/ex_pusher_lite/blob/v0.2/web/models/app.ex) is quite long, so I will break it down for you:
 
---- ruby
+```ruby
 # web/models/app.ex
 defmodule ExPusherLite.App do
   use ExPusherLite.Web, :model
@@ -123,7 +123,7 @@ This block declares the model Schema. Be careful if you generate a migration and
 
 I was puzzled with the model not picking up the new field; after some time I remembered that Ecto models don't attempt to fetch the real database schema and generate accessors dynamically, instead it relies on the explicitly declared schema block as shown above. After I added the new "slug" field in the schema block, then the model would properly use the new field.
 
---- ruby
+```ruby
 # web/models/app.ex
 ...
 def get_by_slug(slug) do
@@ -139,7 +139,7 @@ These are just helper functions to use in the AppController. The odd bit might b
 
 In Elixir convention, Ecto has functions with and without bangs ("<tt>get_by!</tt>" and "<tt>get_by</tt>"). If you want to catch an error you use the version without bangs and it will return either a "<tt>{:ok, result}</tt>" tuple or a "<tt>{:error, result}</tt>" and you can pattern match them. Or you can use the bang version and it will raise an exception. Depends on what you want to do.
 
---- ruby
+```ruby
 # web/models/app.ex
 ...
 def changeset(model, params \\ :empty) do
@@ -165,7 +165,7 @@ In Rails you just have the concept of a "Model" which is considered "Fat" becaus
 
 So, in a controller you will usually find code like this:
 
---- ruby
+```ruby
 # web/controllers/app_controller.ex
 ...
 def create(conn, %{"app" => app_params}) do
@@ -184,7 +184,7 @@ def create(conn, %{"app" => app_params}) do
 
 This is how you create a new, validated, changeset and then pass it to the Repo, treating the results in a pattern match block. Just compare the above changeset line with the beginning of the "changeset/2" function:
 
---- ruby
+```ruby
 ...
 def changeset(model, params \\ :empty) do
   model
@@ -197,7 +197,7 @@ It maps the "<tt>%App{}</tt>" empty record to the "model" argument and the "app_
 
 In the above implementation we are chaining filters to generate the key, secret and slug, and this is the implementation as private functions:
 
---- ruby
+```ruby
 # web/models/app.ex
 ...
   defp generate_key(model) do
@@ -233,7 +233,7 @@ The logic is set so new key/secret are generated only if the fields are empty an
 
 I also want to add the equivalent of a Rails seed file to create a test application so it's easier for new comers to know what to do. Phoenix has seeds and you can implement it like this:
 
---- ruby
+```ruby
 # priv/repo/seeds.exs
 
 alias ExPusherLite.App
@@ -261,7 +261,7 @@ Now that we have an App model that can generate secure random UUIDs for key and 
 
 For that I will just hard-code a secret in the config file of the application itself to serve as a development default. Like this:
 
---- ruby
+```ruby
 # config/config.exs
 ...
 config :ex_pusher_lite, :admin_authentication,
@@ -273,7 +273,7 @@ import_config "#{Mix.env}.exs"
 
 You must add this block before the "<tt>import_config</tt>" function. Then you can override those values in the "config/prod.secret.exs" file, for example, like this:
 
---- ruby
+```ruby
 # config/prod.secret.exs
 ...
 config :ex_pusher_lite, :admin_authentication,
@@ -285,7 +285,7 @@ Of course, generate your own pair of secure username and password and replace it
 
 Just to make the process easier, I also added the following helper function:
 
---- ruby
+```ruby
 # lib/ex_pusher_lite.ex
 ...
   # Return this applicaton administration Basic HTTP Auth hash
@@ -301,7 +301,7 @@ This is how you fetch the configuration values. I am generating a simple Base64 
 
 For both controllers I will create a single Authentication Plug, like this:
 
---- ruby
+```ruby
 # lib/ex_pusher_lite/authentication.ex
 defmodule ExPusherLite.Authentication do
   import Plug.Conn
@@ -335,7 +335,7 @@ We check if we want to compare with the Admin token or the App token and then re
 
 To enable this plug in the controllers we just add it like this:
 
---- ruby
+```ruby
 # web/controllers/app_controller.ex
 defmodule ExPusherLite.AppController do
   use ExPusherLite.Web, :controller
@@ -345,7 +345,7 @@ defmodule ExPusherLite.AppController do
   ...
 ```
 
---- ruby
+```ruby
  defmodule ExPusherLite.EventsController do
    use ExPusherLite.Web, :controller
 
@@ -399,7 +399,7 @@ development:
 
 And we can create an initializer to make it easier to use this metadata properly:
 
---- ruby
+```ruby
 # config/initializers/pusher_lite.rb
 module PusherLite
   def self.uri
@@ -418,7 +418,7 @@ Again, the Rails app will trigger the ExPusherLite server using the Basic HTTP A
 
 To finalize the upgrades, we must change the client-side access to the new metadata, first changing the application layout:
 
---- html
+```html
 <!-- app/views/layouts/application.html.erb -->
 ...
 +  <meta name="pusher_host" content="<%= Rails.application.secrets.pusher_url %>">
@@ -430,7 +430,7 @@ To finalize the upgrades, we must change the client-side access to the new metad
 
 The javascript "<tt>index.es6</tt>" fetches from this meta headers, so we must change them there:
 
---- javascript
+```javascript
 # app/assets/javascripts/application/pages/home/index.es6
 ...
      let guardianToken = $("meta[name=guardian-token]").attr("content")
@@ -477,7 +477,7 @@ And last we still listen to the old "msg" event, but this serves as a "broadcast
 
 But what more does it take to make this **"channel-only and broadcast"** system work? First, we start changing the web form to allow a user to choose between sending a channel-only message or a broadcast, like this:
 
---- html
+```html
 <!-- app/views/home/index.html.erb -->
 ...
      <%= f.text_field :name, placeholder: "Name" %>
@@ -490,7 +490,7 @@ But what more does it take to make this **"channel-only and broadcast"** system 
 
 Now the EventsController must accept this new parameter:
 
---- ruby
+```ruby
 # app/controllers/events_controller.rb
 ...
   def event_params
@@ -501,7 +501,7 @@ end
 
 Finally, the Model must use this new information before posting to the ExPusherLite server:
 
---- ruby
+```ruby
 # app/models/pusher_event.rb
 class PusherEvent
   include ActiveModel::Model
@@ -530,7 +530,7 @@ I am just assuming a hard-coded "<tt>#general</tt>" string to serve as the broad
 
 First we must start with the counterpart for the previous POST trigger, <tt>ExPusherLite.EventsController</tt>:
 
---- ruby
+```ruby
 # web/controllers/events_controller.ex
  defmodule ExPusherLite.EventsController do
    use ExPusherLite.Web, :controller
@@ -560,7 +560,7 @@ The first difference is that I am pattern matching from the arguments directly t
 
 To connect this all to the WebSocket handler, we must make the following changes:
 
---- ruby
+```ruby
 # web/channels/room_channel.ex
 -  def handle_in("msg", payload, socket = %{ topic: "public:" <> _ }) do
 -    broadcast socket, "msg", payload
@@ -596,7 +596,7 @@ I am naming the application "your-expusherlite" but you should change it to your
 
 Heroku relies on environment variables. So we start by erasing "<tt>config/prod.secret.exs</tt>" and change "<tt>config/prod.exs</tt>" to look like this:
 
---- ruby
+```ruby
 config :ex_pusher_lite, ExPusherLite.Endpoint,
   http: [port: {:system, "PORT"}],
   url: [scheme: "https", host: "your-expusherlite.herokuapp.com", port: 443], force_ssl: [rewrite_on: [:x_forwarded_proto]],

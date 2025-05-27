@@ -32,7 +32,7 @@ Rule of thumb: install Chromium.
 
 In my case, this is what had to change:
 
---- diff
+```diff
 # Gemfile
 - gem "poltergeist"
 + gem "selenium-webdriver"
@@ -41,7 +41,7 @@ In my case, this is what had to change:
 
 Then in the Capybara setup:
 
---- diff
+```diff
 Capybara.server = :puma # Until your setup is working
 Capybara.server = :puma, { Silent: true } # To clean up your test output
 
@@ -81,7 +81,7 @@ Capybara.default_max_wait_time = 5 # you may want to increase this timeout if yo
 
 In feature specs, sometimes either Rails itself takes a long while to load up, compile assets, etc and the first features spec may timeout. To avoid a failure in the test run, it's recommended to add the `rspec-retry` gem, as I did above, and add the following to your `spec/rails_helper.rb`:
 
---- ruby
+```ruby
 require 'rspec/retry'
 
 RSpec.configure do |config|
@@ -100,7 +100,7 @@ And that should be it. I didn't have to touch any of my feature specs and they a
 
 If you're a Node.js developer as well, you probably used something like Casper, which is said to support Chrome Headless as well. But while we're at it, you should check out [Puppeteer](https://github.com/GoogleChrome/puppeteer) as well, from the Google team itself. It is a promise based library where you can code like this:
 
---- javascript
+```javascript
 const puppeteer = require('puppeteer');
 
 (async () => {

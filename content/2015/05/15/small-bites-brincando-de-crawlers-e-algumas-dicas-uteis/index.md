@@ -12,7 +12,7 @@ Eu queria fazer uma limpeza geral na minha conta do Slack (que já tinha mais do
 
 Então eu escrevi [este pequeno script em Ruby](https://gist.github.com/akitaonrails/38cbbc2c37a7c646fe27) que tem **4 dicas** que vale a pena compartilhar:
 
---- ruby
+```ruby
 require 'rubygems'
 require 'bundler/setup'
 Bundler.require(:default)

@@ -61,7 +61,7 @@ I **strongly dislike** the [culture of writing software without _minimal care_](
 
 This is [one example](https://github.com/RocketChat/Rocket.Chat/blob/a5cb22bb0017f4c39654bf1e2895ae64acb0339b/packages/rocketchat-katex/tests/jasmine/client/unit/katex.spec.coffee) I picked randomly, out of the few test files I found:
 
---- javascript
+```javascript
 describe 'rocketchat:katex Client', ->
 
   it 'should exist', ->
@@ -70,7 +70,7 @@ describe 'rocketchat:katex Client', ->
 
 This is sad, sorry to say that, but it is. Not surprisingly I've seen katex issues while using the interface. And if you think this was just a poor choice, I picked [another test file](https://github.com/RocketChat/Rocket.Chat/blob/a5cb22bb0017f4c39654bf1e2895ae64acb0339b/packages/rocketchat-markdown/tests/jasmine/client/unit/markdown.spec.coffee):
 
---- javascript
+```javascript
 describe 'rocketchat:markdown Client', ->
 
   it 'should exist', ->
@@ -154,7 +154,7 @@ We are allowing MongoDB's 27017 port only for machines in the same private netwo
 
 Next thing to do on the MongoDB machines is to [Disable Transparent Huge Pages (THP)](https://docs.mongodb.com/manual/tutorial/transparent-huge-pages/). For that create a file `/etc/init.d/disable-transparent-hugepages`, with this content:
 
---- bash
+```bash
 #!/bin/sh
 ### BEGIN INIT INFO
 # Provides:          disable-transparent-hugepages

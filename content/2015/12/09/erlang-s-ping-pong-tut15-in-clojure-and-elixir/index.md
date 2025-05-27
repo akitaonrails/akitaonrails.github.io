@@ -14,7 +14,7 @@ This is a very short post just because I thought it was fun. I was reading [this
 
 When you're learning Erlang through its official documentation, the first thing you build in the [chapters on Processes](http://www.erlang.org/doc/getting_started/conc_prog.html#id67347) is a very simple Ping Pong code that looks like this:
 
---- erlang
+```erlang
 -module(tut15).
 
 -export([start/0, ping/2, pong/0]).
@@ -48,7 +48,7 @@ start() ->
 
 It's not pretty, it's Prolog-ish. The Clojure article claims how close they got with lightweight threads (true green threads) and this is the same exercise done in Clojure:
 
---- lisp
+```lisp
 (defsfn pong []
  (if (== n 0)
     (do
@@ -82,7 +82,7 @@ Elixir is not just a new syntax on top of Erlang, as the great book [Metaprogram
 
 Now, this is the same example as above, in Elixir:
 
---- ruby
+```ruby
 defmodule ExPingPongTut15 do
   def ping(0, pong_pid) do
     send pong_pid, :finished

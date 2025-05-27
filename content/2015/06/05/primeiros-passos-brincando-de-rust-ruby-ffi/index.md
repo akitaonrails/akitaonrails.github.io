@@ -18,7 +18,7 @@ Para isso estou usando como teste um arquivo de atores de filmes que baixei do [
 
 Coloquei o projeto [no meu Github como exercício](https://github.com/akitaonrails/rust_ruby_exercise_1) (contribuições são bem vindas, pra melhorar o exemplo). Em Ruby, o código é simplesmente algo assim:
 
---- ruby
+```ruby
 def find_actors(filename, skip_lines, target_movie)
   actors = []
   actor = nil
@@ -76,7 +76,7 @@ Isso tudo dito, dê uma olhada nos arquivos Cargo.toml, src/main.rs, src/lib.rs.
 
 Agora vamos olhar o código Rust equivalente ao Ruby anterior:
 
---- ruby
+```ruby
 use std::io::prelude::*;
 use std::io::BufReader;
 use std::fs::File;
@@ -124,7 +124,7 @@ pub fn find_actors(filename: String, skip_lines: usize, target_movie: String) ->
 
 Essa função usa coisas do próprio Rust que importamos dos módulos <tt>str::io</tt> e <tt>std::fs</tt> e tem a Crate regex externa. Também exportamos esse módulo com o nome de "imdb" que é o declaramos no Cargo.toml:
 
---- YAML
+```YAML
 [package]
 name = "actors"
 version = "0.1.0"
@@ -154,7 +154,7 @@ A sintaxe em si não deve ser tão assustadora num primeiro momento. As coisas e
 
 Rust não tem garbage collector como em Ruby ou Java. Primeiro, porque ele usa primariamente o Stack em vez do Heap. Stack é uma pilha. Toda chamada de função empilha as variáveis que usa em seu espaço. Quando chama uma nova função ele empilha isso acima de si com suas variáveis. Quando a última função retorna, ele pode limpar as variáveis que alocou (que são sua "propriedade"). Se precisamos passar uma variável de uma função para a função seguinte podemos ou "copiar" o valor (normvalmente o que se faz com primitivas como i32 ou f64 - que são inteiros de 32bits ou floats de 64-bits, dentre outros tipos primitivos) ou podemos "mover a propriedade", por exemplo:
 
---- ruby
+```ruby
 let x = "hello".to_string();
 let y = x;
 println!("{}", x); // vai dar pau, porque movemos a propriedade de "x" para o "y"
@@ -166,13 +166,13 @@ Outros artigos [como este](http://nercury.github.io/rust/guide/2015/01/19/owners
 
 * Você vai ver várias chamadas a <tt>unwrap()</tt>, isso pode ser estranho. Então veja esta linha em específico:
 
---- ruby
+```ruby
 let regex = Regex::new(r"^(.*?)\t+(.*?)$").unwrap()
 ```
 
 Isso é só um jeito mais curto pra:
 
---- ruby
+```ruby
 let regex = match Regex::new(r"^(.*?)\t+(.*?)$") {
     Ok(regex) => regex,
     Err(_) => panic!("invalid regex"),
@@ -199,7 +199,7 @@ A maioria dos exemplos que achamos primeiro usando o Google, são códigos simpl
 
 Sem mais delongas, no mesmo arquivo <tt>src/lib.rs</tt> eu coloquei o seguinte:
 
---- ruby
+```ruby
 extern crate libc;
 use libc::c_char;
 use std::ffi::{CString, CStr};
@@ -231,7 +231,7 @@ Sinceramente, não sei se essa é a forma correta de se expôr uma função. Pro
 
 Então, do lado do Ruby, consumimos desta forma:
 
---- ruby
+```ruby
 require 'ffi'
 
 module RustWorld
@@ -245,7 +245,7 @@ Note que estamos fazendo link com a versão de "release" gerado via <tt>cargo bu
 
 Finalmente, podemos usar dentro do Ruby normalmente assim:
 
---- ruby
+```ruby
 RustWorld.ffi_find_actors(filename, 239, target_movie)
 ```
 

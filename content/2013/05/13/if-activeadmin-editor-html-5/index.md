@@ -29,7 +29,7 @@ rails g model Page title body:text
 
 Agora adicionamos o que precisamos no <tt>Gemfile</tt>:
 
---- ruby
+```ruby
 gem 'activeadmin'
 gem 'activeadmin-dragonfly', github: 'stefanoverna/activeadmin-dragonfly'
 gem 'activeadmin-wysihtml5', github: 'stefanoverna/activeadmin-wysihtml5'
@@ -44,7 +44,7 @@ rake activeadmin_wysihtml5:install:migrations
 
 Finalmente, basta criar a configuração normal para o <tt>ActiveAdmin</tt> para expor o model <tt>Page</tt> criando o arquivo <tt>app/admin/page.rb</tt> com o seguinte:
 
---- ruby
+```ruby
 ActiveAdmin.register Page do
   form do |f|
     f.inputs do
@@ -61,7 +61,7 @@ A opção <tt>:wysihtml5</tt> pode ser customizada para definir que tipos de con
 
 Não esqueça de adicionar os assets do ActiveAdmin no seu <tt>config/environments/production.rb</tt> para que a tarefa de pré-compilação do [Asset Pipeline](http://www.akitaonrails.com/2012/07/01/asset-pipeline-para-iniciantes) compile corretamente (muita gente esquece de fazer isso no começo):
 
---- ruby
+```ruby
 config.assets.precompile += %w(active_admin.js active_admin.css active_admin/print.css)
 ```
 

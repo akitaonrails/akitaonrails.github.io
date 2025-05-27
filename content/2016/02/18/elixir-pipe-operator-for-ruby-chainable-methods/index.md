@@ -12,13 +12,13 @@ There has been [recent](http://blog.molawson.com/elixir-pipes-in-ruby/) [discuss
 
 If you don't know what the "Pipe Operator" is in Elixir, take the following code:
 
---- ruby
+```ruby
 Enum.sum(Enum.filter(Enum.map(1..100_000, &(&1 * 3)), odd?))
 ```
 
 It's ugly, we all know that. In an Object Oriented language like Ruby we would do something like this:
 
---- ruby
+```ruby
 (1..100_000).
   map { |i| i * 3 }.
   select(&:odd?).
@@ -27,7 +27,7 @@ It's ugly, we all know that. In an Object Oriented language like Ruby we would d
 
 But Elixir does not have objects, only functions, so how can we code more elegantly? The solution came up in the form of the so called "Pipe Operator" which takes the last returning value and pass it through as the first argument of the next function call, like this:
 
---- ruby
+```ruby
 1..100_000
   |> Stream.map(&(&1 * 3))
   |> Stream.filter(odd?)
@@ -36,7 +36,7 @@ But Elixir does not have objects, only functions, so how can we code more elegan
 
 So Ruby and Elixir "feels" the same when we are able to "chain" methods. In the Ruby world we don't have the "need" for an operator like that. But it would be nice to have a mechanism that we could use to make our codes more expressive, or more testable, or more readable. For example, what if we would write something like this:
 
---- ruby
+```ruby
 (1..100_000).
   multiple_each_element_by_three.
   filter_out_odd_elements.
@@ -45,7 +45,7 @@ So Ruby and Elixir "feels" the same when we are able to "chain" methods. In the 
 
 Of course, this is a very constrained example with really bad method naming. But if we get Mo Lawson's article I linked above, it becomes more interesting:
 
---- ruby
+```ruby
 keywords
   .map { |kw| kw.gsub(/(^[^[:alpha:]]+|[^[:alpha:]]+$)/, '') }
   .map { |kw| LegacySpanishCorrector.new.correct(kw) }
@@ -57,7 +57,7 @@ Ruby allows us to chain Enumerable methods one after the other, transforming the
 
 What about this other version?
 
---- ruby
+```ruby
 class KeywordNormalizer
   def call(keywords)
     Collection.new(keywords)
@@ -78,7 +78,7 @@ The whole idea of this post is to present you to my new little gem ["Chainable M
 
 My gem will allow you to write the Lawson's last code like this:
 
---- ruby
+```ruby
 KeywordNormalizer
   .chain_from(keywords)
   .strip_outer_punctuation
@@ -91,7 +91,7 @@ KeywordNormalizer
 
 You add the <tt>chainable_methods</tt> to your Gemfile as usual (you know the drill), then you can write Lawson's module like this:
 
---- ruby
+```ruby
 module KeywordNormalizer
   extend ChainableMethods
   
@@ -114,7 +114,7 @@ And that's it, now you can chain everything like I showed previously. The patter
 
 1) Write a Module with class-level methods that receive at least one argument and extend the 'ChainableMethods' module:
 
---- ruby
+```ruby
 module MyModule
   extend ChainableMethods
 
@@ -134,7 +134,7 @@ end
 
 2) Wrap an initial state that will be passed to the first method as it's first argument:
 
---- ruby
+```ruby
 some_initial_state = "Hello World"
 MyModule
   .chain_from(some_initial_state)
@@ -143,7 +143,7 @@ MyModule
 
 3) Chain as many methods from the module or methods that the returning state recognizes:
 
---- ruby
+```ruby
 MyModule
   .chain_from(some_initial_state)
   .upcase

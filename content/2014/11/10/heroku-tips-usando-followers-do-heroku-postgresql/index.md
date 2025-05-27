@@ -26,7 +26,7 @@ No conceito básico, toda escrita deve ser feita somente no banco master (e ela 
 
 Porém uma aplicação Rails normal só sabe do banco que está apontado na variável DATABASE_URL, então como fazer para dividir as leituras no follower? Para isso existe a gem [Octopus](https://github.com/tchandy/octopus), criada pelo Thiago Pradi e [bem documentada](https://devcenter.heroku.com/articles/distributing-reads-to-followers-with-octopus) pelo próprio Heroku. Resumindo o que já está documentado, comece adicionando a gem no <tt>Gemfile</tt>:
 
---- ruby
+```ruby
 gem 'ar-octopus', require: 'octopus'
 ```
 
@@ -41,7 +41,7 @@ Com isso feito, em desenvolvimento o master e o follower vão ser o seu banco no
 
 Abra o arquivo <tt>config/initializers/octopus.rb</tt> e adicione o seguinte método:
 
---- ruby
+```ruby
 module Octopus
   ...
   def self.random_follower
@@ -53,7 +53,7 @@ end
 
 O que acontece é o seguinte, você pode simplesmente adicionar o seguinte método a um model que queira dividir a carga entre escrita no master e leitura no follower:
 
---- ruby
+```ruby
 class User
   replicated_model
   ...
@@ -64,7 +64,7 @@ Nunca coloque o método acima em **todos** os models indiscriminadamente. Você 
 
 Um caso de uso comum é pegar workers de Sidekiq que façam muitos pré-cálculos, gerem relatórios ou denormalize tabelas grandes e faça o seguinte:
 
---- ruby
+```ruby
 # query pesada normal:
 ModelPesado.includes(:abc, :xyz).scope_pesado.group(:foo).find_each { |m| m.algo_pesado }
 
@@ -76,7 +76,7 @@ Sem o método <tt>Octopus.random_follower</tt> você teria que manualmente digit
 
 Outra forma é o seguinte:
 
---- ruby
+```ruby
 Octopus.using(Octopus.random_follower) do
   ModelPesado.includes(:abc, :xyz).scope_pesado.group(:foo).find_each { |m| m.algo_pesado }
 end
@@ -84,7 +84,7 @@ end
 
 Uma coisa que parece necessária, como foi no caso de uma [issue do DelayedJob](https://github.com/tchandy/octopus/issues/241) se por algum motivo você precisar rodar um comando como Update dentro de um <tt>find_by_sql</tt>, lembre-se de explicitamente colocá-la no escopo do banco master:
 
---- ruby
+```ruby
 Octopus.using(:master) do
   Model.find_by_sql("UPDATE ...")
 end

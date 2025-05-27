@@ -182,7 +182,6 @@ Esse ajuste é feito com o algoritmo de **Reinhard et al. (2001)**:
 
 Esse método é rápido, leve, e funciona **sem alterar o modelo DDColor**.
 
-```
 ## Continuando
 
 Eu usei a modificação que ele sugeriu ao arquivo predict.py:

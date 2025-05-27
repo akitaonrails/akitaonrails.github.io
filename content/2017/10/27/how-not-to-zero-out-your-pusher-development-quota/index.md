@@ -29,7 +29,7 @@ In your application, you will have both a Ruby side Pusher client connection set
 
 First we need to setup the Ruby side. Usually it's in a `config/initializers/pusher.rb` configuration like this:
 
---- ruby
+```ruby
 Pusher.app_id = ENV['PUSHER_APP']
 Pusher.key    = ENV['PUSHER_KEY']
 Pusher.secret = ENV['PUSHER_SECRET']
@@ -39,7 +39,7 @@ Pusher.cluster = ENV['PUSHER_CLUSTER']
 
 Notice that I am using environment variables to hold the configuration. You should use something like the [figaro gem](https://github.com/laserlemon/figaro) or the [dotenv-rails gem](https://github.com/bkeepers/dotenv). For example:
 
---- yaml
+```yaml
 PUSHER_APP: "xpto"
 PUSHER_KEY: "abcd1234"
 PUSHER_SECRET: "abcd1234"
@@ -50,7 +50,7 @@ At the very least you must have an application ID, a key, a secret, and a cluste
 
 Second, we need to setup the Javascript instance. Usually, you have something in the `assets/javascripts` directory like this:
 
---- javascript
+```javascript
 // .js.erb example
 window.pusher = new Pusher(<%= ENV['PUSHER_APP] %>, {
   cluster: <%= ENV['PUSHER_KEY'] %>,
@@ -67,7 +67,7 @@ This way you can make it's picking up the correct configurations for the connect
 
 The dependencies are the pusher gem in your `Gemfile` and the javascript client.
 
---- ruby
+```ruby
 # Gemfile
 gem 'pusher'
 ```
@@ -80,13 +80,13 @@ yarn add pusher
 
 Then, in your ES6 javascript file, you can do:
 
---- javascript
+```javascript
 const Pusher = require('pusher-js');
 ```
 
 Or you can link it directly in your layout:
 
---- html
+```html
 <script src="https://js.pusher.com/4.2/pusher.min.js"></script>
 ```
 
@@ -100,7 +100,7 @@ You're also already consuming the free quota you have available in your developm
 
 But we want to NOT connect to Pusher over the internet and keep everything local for development and testing. Let's start by adding the [Pusher Fake](https://github.com/tristandunn/pusher-fake) to our `Gemfile`:
 
---- ruby
+```ruby
 group :development, :test do
   gem 'pusher-fake'
 end
@@ -110,7 +110,7 @@ Now, this is where the Pusher Fake setup can get convoluted if you don't underst
 
 To load it up you must point to the local server. Remember our `config/initializers/pusher.rb` ? We just need to require a simple file like this:
 
---- ruby
+```ruby
 Pusher.app_id = ENV['PUSHER_APP']
 Pusher.key    = ENV['PUSHER_KEY']
 Pusher.secret = ENV['PUSHER_SECRET']
@@ -137,7 +137,7 @@ As a bonus, look how I configure other services such as PostgreSQL, Redis, etc.
 
 If you didn't know, you can use `${VARIABLE_NAME:-default_value}` to use an environment variable or have a default value in case the variable doesn't exist. This means that your environment variable configured with Figaro or Dotenv must have the same values.
 
---- yaml
+```yaml
 PUSHER_APP: "xpto"
 PUSHER_KEY: "abcd1234"
 PUSHER_SECRET: "abcd1234"
@@ -150,7 +150,7 @@ PUSHER_WS_PORT: "45449"
 
 Now your `config/initializers/pusher.rb` should be something like this:
 
---- ruby
+```ruby
 Pusher.app_id = ENV['PUSHER_APP']
 Pusher.key    = ENV['PUSHER_KEY']
 Pusher.secret = ENV['PUSHER_SECRET']
@@ -164,7 +164,7 @@ end
 
 And Pusher-js config somewhere in your `app/assets/javascripts/` directory will resemble something like this:
 
---- javascript
+```javascript
 <% if defined?(PusherFake) %>
     <% if Rails.env.test? %>
     var pusher = <%= PusherFake.javascript(cluster: ENV["PUSHER_CLUSTER"]) %>
@@ -188,7 +188,7 @@ Now, whenever you `foreman start -f Procfile.dev -p 3000` it will load the Pushe
 
 Also, notice the `if Rails.env.test?` bit. This is for your RSpec test suite. In the case of the testing environment, we won't load the fake server manually, instead, we will create something like `spec/support/pusher-fake.rb` with:
 
---- ruby
+```ruby
 require "pusher-fake/support/rspec"
 ```
 

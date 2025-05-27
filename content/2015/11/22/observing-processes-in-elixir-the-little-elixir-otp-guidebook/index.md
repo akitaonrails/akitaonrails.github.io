@@ -24,7 +24,7 @@ But before we can show Fault Tolerancy and the Observer I need to explain what P
 
 1. You don't have "objects", which are runtime instances of classes (or prototipical objects, which are copies of other objects). Instead of "Classes" you have collections of functions organized in modules, without dependency in internal state. And instead of "objects" we have, roughly speaking, "processes". For example:
 
---- ruby
+```ruby
 defmodule MyProcess do
   def start do
     accepting_messages(0)
@@ -49,21 +49,21 @@ end
 
 2. We can execute a function inside another process. This is how we can spawn a brand new, concurrent, lightweight process:
 
---- ruby
+```ruby
 iex(2)> pid = spawn fn -> MyProcess.start end
 #PID<0.87.0>
 ```
 
 When the <tt>accepting_messages/1</tt> is called, it stops at the <tt>receive/0</tt> block, waiting to receive a new message. Then we can send messages like this:
 
---- ruby
+```ruby
 iex(3)> send pid, {:hello, "world"}
 Hello, world
 ```
 
 It receives the <tt>{:hello, "world"}</tt> atom message, it pattern matches the value <tt>"world"</tt> into the <tt>message</tt> variable, and concatenates the <tt>"Hello, world"</tt> string, which it prints out with <tt>IO.puts/1</tt> and recurse to itself again. We call the <tt>receive/0</tt> block again, and block, waiting for further messages:
 
---- ruby
+```ruby
 iex(4)> send pid, {:counter}
 New state is 1
 {:counter}
@@ -87,7 +87,7 @@ This is basically how we can maintain state in Elixir. If we kill this process a
 
 5. Processes can be linked to or monitor other processes, for example, within an IEx shell, we are within an Elixir process, so we could do:
 
---- ruby
+```ruby
 iex(1)> self
 #PID<0.98.0>
 iex(2)> pid = spawn fn -> MyProcess.start end
@@ -102,7 +102,7 @@ With <tt>self</tt> we can see that the current process id for the IEx shell is "
 
 We can assert that the new process is indeed alive and we can link the IEx shell with the "0.105.0" pid process. Now, whatever happens to this process will cascade to the shell.
 
---- ruby
+```ruby
 iex(5)> Process.exit(pid, :kill)
 ** (EXIT from #PID<0.98.0>) killed
 
@@ -118,7 +118,7 @@ The important concept is that we now have a mechanism to define a Parent Process
 
 6. Parent processes don't need to stupidly suicide itself because their children screwed up. Instead, they can trap exits and decide what to do later:
 
---- ruby
+```ruby
 iex(2)> Process.flag(:trap_exit, true)
 false
 iex(3)> pid = spawn_link fn -> MyProcess.start end
@@ -130,7 +130,7 @@ New state is 1
 
 First, we declare that the IEx shell will trap exists and not just die. Then we spawn a new process and link it. The <tt>spawn_link/1</tt> function has the same effect of <tt>spawn/1</tt> and then <tt>Process.link/1</tt>. We can send a message to the new pid and check that it is indeed still working.
 
---- ruby
+```ruby
 iex(5)> Process.exit(pid, :kill)
 true
 iex(6)> Process.alive?(pid)
@@ -152,7 +152,7 @@ Workers is where we put our code. This code can have bugs, it can depend on exte
 
 As I explained in my previous article, everything in Elixir ends up being a so called "OTP application". The example above is just a very simple contraption that we can expand upon. Let's rewrite the same thing as an OTP GenServer:
 
---- ruby
+```ruby
 defmodule MyFancyProcess do
   use GenServer
 
@@ -201,7 +201,7 @@ Benjamin's book go to great lenghts to detail every bit of what I just implement
 
 Once we have this in place, we can start calling it directly:
 
---- ruby
+```ruby
 iex(11)> MyFancyProcess.start_link(0)
 {:ok, #PID<0.261.0>}
 iex(12)> MyFancyProcess.hello("world")
@@ -222,7 +222,7 @@ And this is much cleaner than the version where we manually <tt>spawn_link</tt> 
 
 In fact, this convention does make us type a lot of boilerplate many times over. There is a library called [ExActor](https://github.com/sasa1977/exactor) that grealy simplifies a GenServer implementation, making our previous code become something like this:
 
---- ruby
+```ruby
 defmodule MyFancyProcess do
   use ExActor.GenServer, initial_state: 0
 
@@ -245,7 +245,7 @@ This is way cleaner, but as we are just using IEx, I'm not using this version fo
 
 Now that we have a worker, we can create a Supervisor to supervise it:
 
---- ruby
+```ruby
 defmodule MyFancySupervisor do
   use Supervisor
 
@@ -269,7 +269,7 @@ This is just a simple boilerplace that most Supervisors will have. There are man
 
 From a clean IEx, we can copy and paste both the <tt>MyFancyProcess</tt> and <tt>MyFancySupervisor</tt> above and start playing with it in the IEx shell:
 
---- ruby
+```ruby
 iex(3)> {:ok, sup_pid} = MyFancySupervisor.start_link   
 {:ok, #PID<0.124.0>}
 iex(4)> MyFancyProcess.hello("foo")
@@ -285,7 +285,7 @@ New state is 2
 
 This is how we start the Supervisor and you can see that right away we can start sending messages to the <tt>MyFancyProcess</tt> GenServer because the Supervisor successfully started it for us.
 
---- ruby
+```ruby
 iex(7)> Supervisor.count_children(sup_pid)
 %{active: 1, specs: 1, supervisors: 0, workers: 1}
 iex(8)> Supervisor.which_children(sup_pid)
@@ -294,7 +294,7 @@ iex(8)> Supervisor.which_children(sup_pid)
 
 Using the Supervisor PID that we captured right when we started it, we can ask it to count how many children it is monitoring (1, in this example) and we can ask the details of each children as well. We can see that the <tt>MyFancyProcess</tt> started with the pid of "0.125.0"
 
---- ruby
+```ruby
 iex(9)> [{_, worker_pid, _, _}] = Supervisor.which_children(sup_pid)
 [{MyFancyProcess, #PID<0.125.0>, :worker, [MyFancyProcess]}]
 iex(14)> Process.exit(worker_pid, :kill)

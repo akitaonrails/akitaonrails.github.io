@@ -34,7 +34,7 @@ The exercise was very interesting, and a scrapper is also an ideal candidate for
 
 For each of those initial steps I did a simple unit test and the <tt>IndexPage</tt>, <tt>ChapterPage</tt> and <tt>Page</tt> modules. They have roughly the same structure, this is one example:
 
---- ruby
+```ruby
 defmodule ExMangaDownloadr.MangaReader.IndexPage do
   def chapters(manga_root_url) do
     case HTTPotion.get(manga_root_url, [timeout: 30_000]) do
@@ -75,7 +75,7 @@ Then I just went through building the skeleton for the command line interface. T
 
 This workflow is defined like this:
 
---- ruby
+```ruby
 defp process(manga_name, url, directory) do
   File.mkdir_p!(directory)
 
@@ -92,7 +92,7 @@ end
 
 This is one place where the pipeline notation from Elixir really shines. It's much better than having to write this equivalent:
 
---- ruby
+```ruby
 Workflow.compile_pdfs(Workflow.optimize_images(directory))
 ```
 
@@ -100,7 +100,7 @@ This notation is just syntatic sugar where the returning value of the previous s
 
 I separated the Workflow into its own module and each step is very similar, each taking a list and walking through it. This the simplest of them:
 
---- ruby
+```ruby
 def pages(chapter_list) do
   chapter_list
     |> Enum.map(&(Task.async(fn -> ChapterPage.pages(&1) end)))
@@ -111,7 +111,7 @@ end
 
 If you're new to Elixir here you will find another oddity, this <tt>"&(x(&1))"</tt>, this is just a shortcut macro to this other similar statement:
 
---- ruby
+```ruby
 Enum.map(fn (list) ->
   Task.async(fn ->
     ChapterPage.pages(list)
@@ -141,7 +141,7 @@ Function: #Function<12.106612505/0 in ExMangaDownloadr.Workflow.images_sources/1
 
 That's why there is <tt>@maximum_fetches 80</tt> at the top of the <tt>Workflow</tt> module, together with this other odd construction:
 
---- ruby
+```ruby
 def images_sources(pages_list) do
   pages_list
     |> chunk(@maximum_fetches)
@@ -163,7 +163,7 @@ This is one part I am not entirely sure what to do to deal with uncertainties in
 
 Finally, there is one dirty trick under the reason of why I like to use MangaReader: it's very friendly to scrappers because on each page of the manga the image is annotated with an "alt" attribute with the format "[manga name] [chapter number] - [page number]". So I just had to reformat it a bit, adding a pad of zeroes before the chapter and page number so a simple sort of the downloaded files will give me the correct order. MangaFox is not so friendly. This is how to reformat it:
 
---- ruby
+```ruby
 defp normalize_metadata(image_src, image_alt) do
   extension      = String.split(image_src, ".") |> Enum.at(-1)
   list           = String.split(image_alt)      |> Enum.reverse
@@ -200,7 +200,7 @@ Just as a final exercise I imported the Mock package, to control how some inner 
 
 This is how a unit test with Mock looks like, stubbing both the HTTPotion and File modules:
 
---- ruby
+```ruby
 test "workflow tries to download the images" do
   with_mock HTTPotion, [get: fn(_url, _options) -> %HTTPotion.Response{ body: nil, headers: nil, status_code: 200 } end] do
     with_mock File, [write!: fn(_filename, _body) -> nil end] do
@@ -216,7 +216,7 @@ end
 
 This has been a very fun experience, albeit very short, and good enough to iron out what I have learned so far. Code like this make me smile:
 
---- ruby
+```ruby
 [destination_file|_rest] = String.split(file, "/") |> Enum.reverse
 ```
 

@@ -41,7 +41,7 @@ Acho que a evangelização de Responsive Web também merece um "rant" mas fica p
 
 Mesmo assim ainda somos reféns de códigos como deste exemplo de tabs do framework [Bootstrap](http://getbootstrap.com/components/#input-groups):
 
---- HTML
+```HTML
 <ul class="nav nav-tabs" role="tablist">
   <li class="active"><a href="#">Home</a></li>
   <li><a href="#">Profile</a></li>
@@ -51,7 +51,7 @@ Mesmo assim ainda somos reféns de códigos como deste exemplo de tabs do framew
 
 E vejamos um trecho para tabs mas usando um web component do novíssimo [Polymer/Paper](http://www.polymer-project.org/components/paper-elements/demo.html#paper-tabs):
 
---- HTML
+```HTML
 <paper-tabs selected="0" selectedindex="0" id="paper_tabs">
   <paper-tab id="tab_home" active>Home</paper-tab>
   <paper-tab id="tab_profile">Profile</paper-tab>
@@ -71,7 +71,7 @@ Isto é um exemplo pequeno mas imaginando como páginas Web são complexas, tira
 
 Na prática, sem ter Custom Elements para tornar as tags mais amigáveis, outra forma é encapsular a inicialização usando um marcador simples numa tag HTML (como uma classe CSS ou ID) e ativar o resto via Javascript. É como todo plugin JQuery funciona. Um exemplo simples é como encapsulamos o Google Maps com o plugin [Gmap3](http://gmap3.net/en/catalog/9-map/map-32) do JQuery:
 
---- HTML
+```HTML
 <div id="my-map"></div>
 <script>
 $("#my-map").gmap3({
@@ -95,7 +95,7 @@ $("#my-map").gmap3({
 
 E outro exemplo com a alternativa com o [Web Component Google-Map](http://polymerlabs.github.io/google-map/components/google-map/) (lembrando que esta versão é mais simples do que o plugin Gmap3):
 
---- HTML
+```HTML
 <google-map latitude="37.77493" longitude="-122.41942" fitToMarkers>
   <google-map-marker latitude="37.779" longitude="-122.3892"
       draggable="true" title="Go Giants!"></google-map-marker>
@@ -141,13 +141,13 @@ Na definição de Web Components foi criado um novo elemento para resolver algun
 
 Por não ser mais um trecho de texto, perdemos a função do Mustache e do Handlebar de facilmente mesclar dados e inclusive ter alguma lógica como condicionais e loops. Em vez disso precisamos manipular os nós via javascript, fazendo coisas como:
 
---- javascript
+```javascript
 t.content.querySelector('img').src = 'logo.png';
 ```
 
 Em vez de ter:
 
---- HTML
+```HTML
 <img src="{{minha-imagem}}" alt="great image">
 ```
 
@@ -163,7 +163,7 @@ Na prática, um HTML Import é nada mais do que um arquivo HTML "normal" com lin
 
 Atualmente, se precisamos usar algum conjunto desses, como um componente de Bootstrap, por exemplo, precisamos manualmente linkar para os stylesheets na ordem correta e fazer algo como:
 
---- HTML
+```HTML
 <head>
   <link rel="stylesheet" href="bootstrap.css">
   <link rel="stylesheet" href="fonts.css">
@@ -180,7 +180,7 @@ Atualmente, se precisamos usar algum conjunto desses, como um componente de Boot
 
 Com HTML Imports podemos fazer simplesmente:
 
---- HTML
+```HTML
 <head>
   <link rel="import" href="bootstrap.html">
 </head>

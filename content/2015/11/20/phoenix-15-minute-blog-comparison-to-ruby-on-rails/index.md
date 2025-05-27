@@ -129,7 +129,7 @@ Instead of having a <tt>database.yml</tt>, the database configuration is spread 
 
 You will see that each element of the MVC app in Phoenix start like this:
 
---- ruby
+```ruby
 # web/controllers/page_controller.ex
 defmodule Pxblog.PageController do
   use Pxblog.Web, :controller
@@ -153,7 +153,7 @@ end
 
 This <tt>Pxblog.Web</tt> module is defined in the <tt>web/web.ex</tt> like this:
 
---- ruby
+```ruby
 # web/web.ex
 defmodule Pxblog.Web do
   def model do
@@ -188,7 +188,7 @@ If you haven't yet, this is a good time to learn about [Elixir Macros](http://el
 
 Different from Rails <tt>config/routes.rb</tt> which defines routes, the <tt>web/router.ex</tt> defines not only the routes themselves but also transformation pipelines and routing strategies:
 
---- ruby
+```ruby
 # web/router.ex
 defmodule Pxblog.Router do
   use Pxblog.Web, :router
@@ -234,7 +234,7 @@ Inside the scope block, it's very similar to the Restful DSL to define routes, w
 
 Also similar to Rails Routes, it generates proper URL helpers that become available in Controllers, Views and Templates. Let's start seeing some Rails URL helpers in code:
 
---- html
+```html
 <!-- app/views/posts/edit.html.erb -->
 <%= link_to 'Show', [@user, post] %>
 <%= link_to 'Edit', edit_user_post_path(@user, post) %>
@@ -243,7 +243,7 @@ Also similar to Rails Routes, it generates proper URL helpers that become availa
 
 And in Phoenix:
 
---- html
+```html
 <!-- web/templates/post/edit.html.eex -->
 <%= link "Show", to: user_post_path(@conn, :show, @user, post) %>
 <%= link "Edit", to: user_post_path(@conn, :edit, @user, post) %>
@@ -258,7 +258,7 @@ As with Rails middlewares, a pipeline receives the request connection and pipes 
 
 In Phoenix we start a controller like this:
 
---- ruby
+```ruby
 # web/controllers/post_controller.ex
 defmodule Pxblog.PostController do
   use Pxblog.Web, :controller
@@ -272,7 +272,7 @@ defmodule Pxblog.PostController do
 
 It's similar to this Rails controller setup:
 
---- ruby
+```ruby
 # app/controllers/posts_controller.rb
 class PostsController < ApplicationController
   before_action :assign_user
@@ -283,7 +283,7 @@ As you may have concluded, a <tt>plug</tt> call works a bit like a <tt>before_ac
 
 But different from Rails where a call to <tt>redirect_to</tt> halts the pipeline, we need to explicitly halt the pipeline like this:
 
---- ruby
+```ruby
 defp assign_user(conn, _) do
   %{"user_id" => user_id} = conn.params
   if user = Repo.get(Pxblog.User, user_id) do
@@ -301,7 +301,7 @@ In Phoenix, everything revolves around a request connection transformation pipel
 
 To see how explicit, let's start with a normal Rails controller action:
 
---- ruby
+```ruby
 def destroy
   @user = User.find(params[:id])
   @user.destroy
@@ -314,7 +314,7 @@ end
 
 Once upon a time, setting the flash notice message and redirecting were 2 different methods, new versions merged them together for convenience. Rails also has the concept of Responders, which Phoenix doesn't have yet (#OpportunityToContribute!).
 
---- ruby
+```ruby
 def delete(conn, %{"id" => id}) do
   user = Repo.get!(User, id)
   Repo.delete!(user)
@@ -328,7 +328,7 @@ You can see that, Responsers aside, the Phoenix version is **remarkably** simila
 
 For different variations of the same parameters, you can declare multiple functions with the same name but different arguments to pattern match, like in the <tt>SessionController</tt> example:
 
---- ruby
+```ruby
 # web/controllers/session_controller.ex
 defmodule Pxblog.SessionController do
   use Pxblog.Web, :controller
@@ -355,7 +355,7 @@ Ecto separates Model Logic from Model Persistence Management. Instead of using t
 
 You should read José Valim's post about [Ecto Associations](http://blog.plataformatec.com.br/2015/08/working-with-ecto-associations-and-embeds/) to get started. But for now, let's compare a simple Rails and Ecto models:
 
---- ruby
+```ruby
 # app/models/user.rb
 class User < ActiveRecord::Base
   has_secure_password
@@ -371,7 +371,7 @@ In Rails we have the [<tt>ActiveSupport#has_secure_password</tt>](http://api.rub
 
 Phoenix does not have the same feature yet (#OpportunityToContribute!) so its version is a bit more verbose to account for the BCrypt digest logic using the [Comeonin](https://github.com/elixircnx/comeonin) password hashing library. Let's go on in small steps:
 
---- ruby
+```ruby
 # web/models/user.ex
 defmodule Pxblog.User do
   use Pxblog.Web, :model
@@ -400,7 +400,7 @@ We are mapping the <tt>User</tt> module with the <tt>'users'</tt> database table
 
 The last line has our well known <tt>has_many</tt> association.
 
---- ruby
+```ruby
 defmodule Pxblog.User do
   ...
   @required_fields ~w(username email password password_confirmation)
@@ -411,7 +411,7 @@ end
 
 Here we have declare required fields, this is just a variable with a list of fields not the validations themselves. This will be used in the next step to accomplish something similar to <tt>validates :username, presence: true</tt>. 
 
---- ruby
+```ruby
 defmodule Pxblog.User do
   ...
   def changeset(model, params \\ :empty) do
@@ -429,7 +429,7 @@ The <tt>changeset/2</tt> returns an [Elixir Struct](http://elixir-lang.org/getti
 
 In this function we can declare a pipeline of validations, constraints and other attribute transformations. For example, we plug a <tt>hash_password/2</tt> function that will get the value in <tt>password</tt> and use Comeonin.<tt>hashpwsalt/1</tt> to transform the password string in a bcrypt digest and store it in the password_digest attribute:
 
---- ruby
+```ruby
 defmodule Pxblog.User do
   ...
   defp hash_password(changeset) do ...
@@ -445,7 +445,7 @@ end
 
 And we return the transformed changeset so the pipeline can pick it up and pass to other plugs, such as validations. If we wanted to add more validations we could do it like this:
 
---- ruby
+```ruby
 defmodule Pxblog.User do
   ...
   def changeset(model, params \\ :empty) do
@@ -463,7 +463,7 @@ end
 
 There you go. And in the controller, the <tt>update/2</tt> function, for example, will use the changeset like this:
 
---- ruby
+```ruby
 def update(conn, %{"id" => id, "user" => user_params}) do
   user = Repo.get!(User, id)
   changeset = User.changeset(user, user_params)
@@ -482,7 +482,7 @@ The transformation returns a changeset, which will contain error messages. Then 
 
 In the case of the <tt>edit/2</tt> function we call the <tt>render/3</tt> function like this:
 
---- ruby
+```ruby
 # web/views/user_view.ex
 def edit(conn, %{"id" => id}) do
   user = Repo.get!(User, id)
@@ -493,7 +493,7 @@ end
 
 This first calls the <tt>web/views/user.ex</tt> which import stuff like helpers, transforms the <tt>user</tt> and <tt>changeset</tt> variables into [module attributes](http://elixir-lang.org/getting-started/module-attributes.html) (the ones starting with "@" if you've been wondering what those are). And the View knows to find the <tt>edit.html</tt> template at <tt>web/templates/user/edit.html.eex</tt> because it says so in <tt>web/web.ex</tt>:
 
---- ruby
+```ruby
 # web/web.ex
 defmodule Pxblog.Web do
   ...
@@ -518,7 +518,7 @@ I did not copy and paste all the other macros in <tt>web/web.ex</tt> but check t
 
 In Rails we have the default ERB for "Embedded Ruby" and in Phoenix we have "EEX" for "Embedded Elixir", it's essencially the same thing: an HTML template that accepts snippets of Elixir code enclosed between <tt><%= ... %></tt>. So, the <tt>edit.html.eex</tt> template looks like this:
 
---- html
+```html
 <!-- app/views/users/edit.html.erb -->
 <h2>Edit user</h2>
 
@@ -531,7 +531,7 @@ In Rails we have the default ERB for "Embedded Ruby" and in Phoenix we have "EEX
 
 Which is very similar to the equivalent <tt>edit.html.erb</tt> in Rails:
 
---- html
+```html
 <!-- web/templates/user/edit.html.eex -->
 <h1>Editing User</h1>
 
@@ -545,7 +545,7 @@ The Phoenix version is slightly more verbose in order to not hide too much as Ra
 
 The "form.html" template is also very similar, let's check out the Phoenix version first:
 
---- html
+```html
 <!-- web/templates/user/edit.html.eex -->
 <%= form_for @changeset, @action, fn f -> %>
   <%= if @changeset.action do %>
@@ -568,7 +568,7 @@ The "form.html" template is also very similar, let's check out the Phoenix versi
 
 And now the Rails ERB version:
 
---- html
+```html
 <!-- app/views/users/_form.html.erb -->
 <%= form_for(@user) do |f| %>
   <% if @user.errors.any? %>
@@ -598,7 +598,7 @@ The <tt>mix phoenix.gen.html</tt> creates a template structure that is similar t
 
 What Phoenix calls "views" is more similar to what Rails calls "helpers". We can use them similarly, for example, to access the current user session, we do like this in Phoenix <tt>web/views/layout_view.ex</tt>:
 
---- ruby
+```ruby
 # web/views/layout_view.ex
 defmodule Pxblog.LayoutView do
   use Pxblog.Web, :view
@@ -611,7 +611,7 @@ end
 
 Which is almost the same as <tt>app/helpers/application.rb</tt> in Rails:
 
---- ruby
+```ruby
 # app/helpers/application.rb
 module ApplicationHelper
   def current_user
@@ -630,7 +630,7 @@ As a caveat, Rails tests evolved a lot in the past decade. Even without adding e
 
 Let's start seeing a small model test in Phoenix:
 
---- ruby
+```ruby
 # test/models/post_test.ex
 defmodule Pxblog.PostTest do
   use Pxblog.ModelCase
@@ -654,7 +654,7 @@ end
 
 And the same unit tests in Rails:
 
---- ruby
+```ruby
 # test/models/post_test.rb
 require 'test_helper'
 
@@ -680,7 +680,7 @@ Remarkably similar. For the test data, in Phoenix we are using simple Elixir's m
 
 Now let's see some bits of a controller test. As I said before, because Phoenix does not have a Fixtures or Factory feature in place (although the nice guys at Thoughtbot just released a Factory Girl-like library for Phoenix called [ExMachina](https://robots.thoughtbot.com/announcing-ex-machina)) we have to do a bit more setup:
 
---- ruby
+```ruby
 # test/controllers/session_controller.ex
 defmodule Pxblog.SessionControllerTest do
   use Pxblog.ConnCase
@@ -710,7 +710,7 @@ end
 
 The Rails controller test is getting the data from a Fixture, that's why the setup is shorter:
 
---- ruby
+```ruby
 # test/controllers/session_controller.rb
 require 'test_helper'
 

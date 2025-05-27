@@ -11,13 +11,13 @@ I am building a project which needs to generate proper English sentences. The fi
 
 But you can imagine that it quickly becomes cumbersome when you have to deal with pluralization, inflection, and it starts to become something like this:
 
---- ruby
+```ruby
 "There #{@users.size == 1 ? 'is' : 'are'} #{@users.size} user#{'s' unless @users.size == 1}."
 ```
 
 Or use Rails I18n support like this:
 
---- ruby
+```ruby
 I18n.backend.store_translations :en, :user_msg => {
   :one => 'There is 1 user',
   :other => 'There are %{count} users'
@@ -34,7 +34,7 @@ I looked around and found a few Ruby projects that could help, for example:
 
 * ["nameable"](https://github.com/chorn/nameable) which can do useful stuff like this:
 
---- ruby
+```ruby
 Nameable::Latin.new('Chris').gender
 #=> :male
 Nameable::Latin.new('Janine').female?
@@ -43,7 +43,7 @@ Nameable::Latin.new('Janine').female?
 
 * ["calyx"](https://github.com/maetl/calyx) which can be used to generate simple phrases like this:
 
---- ruby
+```ruby
 class GreenBottle < Calyx::Grammar
   mapping :pluralize, /(.+)/ => '\\1s'
   start 'One green {bottle}.', 'Two green {bottle.pluralize}.'
@@ -76,7 +76,7 @@ Finally, I was able to deploy a working JRuby + Rails-API project embedding Simp
 
 Once deployed it starts up Rails, then loads [this initializer](https://github.com/Codeminer42/nlg_service/blob/master/config/initializers/simple_nlg.rb):
 
---- ruby
+```ruby
 require 'java'
 Java::JavaLang::System.set_property "file.encoding","UTF-8"
 
@@ -88,7 +88,7 @@ Dir["#{SIMPLE_NLG_PATH}/*.jar"].each { |jar| require jar }
 
 And then I map the classes [like this](https://github.com/Codeminer42/nlg_service/blob/master/app/models/simple_nlg.rb):
 
---- ruby
+```ruby
 module SimpleNLG
   %w(
     simplenlg.aggregation
@@ -109,7 +109,7 @@ end
 
 Finally, I have a simple endpoint mapped to a [controller](https://github.com/Codeminer42/nlg_service/blob/master/app/controllers/api/realisers_controller.rb) action:
 
---- ruby
+```ruby
 class Api::RealisersController < ApplicationController
   def create
     reader = java::io::StringReader.new(params[:xml])
@@ -135,7 +135,7 @@ If I want to write this sentence:
 
 This is the XML that I need to assemble:
 
---- xml
+```xml
 <?xml version="1.0"?>
 <NLGSpec xmlns="http://simplenlg.googlecode.com/svn/trunk/res/xml" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Recording>
@@ -198,7 +198,7 @@ gem 'nlg_xml_realiser_builder'
 
 And the humongous XML above becomes something more manageable like this:
 
---- ruby
+```ruby
 dsl = NlgXmlRealiserBuilder::DSL.new
 dsl.builder(true) do
   sp :child do
@@ -230,7 +230,7 @@ Now, it's in plural form because I am talking about 'stories', but what if I wan
 
 Below is the new version where I just wrap it around a method and make the attribute 'NUMBER' accept both 'PLURAL' or 'SINGULAR':
 
---- ruby
+```ruby
 def example(plural = 'PLURAL')
   dsl = NlgXmlRealiserBuilder::DSL.new
   dsl.builder(true) do

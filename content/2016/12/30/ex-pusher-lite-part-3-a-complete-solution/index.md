@@ -46,7 +46,7 @@ Replace the `pusher_host`, `org_id`, `app_key`, and `secret_token` for the ones 
 
 Now I want to add a `PageController`:
 
---- ruby
+```ruby
 require "net/http"
 require "uri"
 class PageController < ApplicationController
@@ -86,7 +86,7 @@ In the front-end we can have this simple `app/views/page/index.html.erb`:
 
 Super simple, we can tweak the CSS (`app/assets/stylesheets/application.css`) just to make it look nicer:
 
---- css
+```css
 ...
 .fixedContainer {
   height: 250px;
@@ -104,13 +104,13 @@ body {
 
 Finally, we need to load the main Javascript from the ExPusherLite server, so edit the layout at `app/views/layouts/application.html.erb` and add this line right after the closing `</body>` tag:
 
---- html
+```html
 <script src="http://<%= Rails.application.secrets.pusher_host %>/js/pusher.js"></script>
 ```
 
 And we can now use this Javascript in the `app/assets/javascripts/application.js` to hook everything up. This is the relevant bit:
 
---- javascript
+```javascript
 $(document).ready(function() {
   var PusherLite = require("pusher_lite").default;
 
@@ -133,7 +133,7 @@ $(document).ready(function() {
 
 We can now continue in the same file with the Javascript that binds to the message input field, listening to the "Enter" key press event to send the messages:
 
---- javascript
+```javascript
   var message_element = $("#message");
   message_element.on('keypress', function(event) {
     if (event.keyCode != 13) { return; }
@@ -156,7 +156,7 @@ We can now continue in the same file with the Javascript that binds to the messa
 
 And this is how we send messages to ExPusherLite, either directly through the full-duplex WebSockets:
 
---- javascript
+```javascript
 function sendPusher(payload) {
   console.log("sending through socket")
   window.publicChannel.trigger('new_message', payload );

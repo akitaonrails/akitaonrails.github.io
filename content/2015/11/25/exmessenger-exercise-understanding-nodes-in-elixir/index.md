@@ -154,7 +154,7 @@ I'm starting up like this instead of a command line escript like I did in the Ex
 
 Notice that I said "linking" and not "connecting". From the "ExMessengerClient" we start like this:
 
---- ruby
+```ruby
 defmodule ExMessengerClient do
   use Application
   alias ExMessengerClient.CLI
@@ -173,7 +173,7 @@ end
 
 The <tt>get_env</tt> private function is just a wrapper to treat the environment variable "server" and "nick" that we passed:
 
---- ruby
+```ruby
 defp get_env do
   server = System.get_env("server")
     |> String.rstrip
@@ -186,7 +186,7 @@ end
 
 Now, we try to connect to the remote server:
 
---- ruby
+```ruby
 defp connect({server, nick}) do
   IO.puts "Connecting to #{server} from #{Node.self} ..."
   Node.set_cookie(Node.self, :"chocolate-chip")
@@ -204,7 +204,7 @@ The important piece here is that we are setting the client's instance cookie wit
 
 Then, we start the "ExMessengerClient.MessageHandler" GenServer, linking with the Message Server instance:
 
---- ruby
+```ruby
 defp start_message_handler({server, nick}) do
   ExMessengerClient.MessageHandler.start_link(server)
   IO.puts "Connected"
@@ -214,7 +214,7 @@ end
 
 The Message Handler GenServer itself is very simple, it just sets the server as the state and handle incoming messages from the server and prints out in the client's terminal:
 
---- ruby
+```ruby
 defmodule ExMessengerClient.MessageHandler do
   use GenServer
 
@@ -237,7 +237,7 @@ end
 
 Going back to the main "ExMessengerClient" module, after starting the (unsupervised) GenServer that receives incoming messages, we proceed to join the pseudo-chatroom in the server:
 
---- ruby
+```ruby
 defp join_chatroom({server, nick}) do
   case ServerProcotol.connect({server, nick}) do
     {:ok, users} ->
@@ -254,7 +254,7 @@ end
 
 I defined this "ServerProcotol" module which is just a convenience wrapper for <tt>GenServer.call/3</tt> and <tt>GenServer.cast/2</tt> calls, to send messages for the remote GenServer called <tt>:message_server</tt>:
 
---- ruby
+```ruby
 defmodule ExMessengerClient.ServerProcotol do
   def connect({server, nick}) do
     server |> call({:connect, nick})
@@ -288,7 +288,7 @@ end
 
 Pretty straight forward. Then, the main ExMessengerClient calls the recursive <tt>input_loop/1</tt> function from the CLI module, which just receives user input and handles the proper commands using pattern matching, like this:
 
---- ruby
+```ruby
 defmodule ExMessengerClient.CLI do
   alias ExMessengerClient.ServerProcotol
 
@@ -363,7 +363,7 @@ The Chat Client sends GenServer messages to a remote <tt>{:message_server, serve
 
 Now, we need this <tt>:message_server</tt> and this is the "ExMessenger.Server" GenServer:
 
---- ruby
+```ruby
 defmodule ExMessenger.Server do
   use GenServer
   require Logger
@@ -383,7 +383,7 @@ And this is it, when the "ExMessenger.Supervisor" starts this GenServer it regis
 
 When the ExMessengerClient calls the <tt>ServerProtocol.connect/1</tt>, it sends the <tt>{:connect, nick}</tt> message to the server. In the Server we handle it like this:
 
---- ruby
+```ruby
 def handle_call({ :connect, nick }, {from, _} , users) do
   cond do
     nick == :server or nick == "server" ->
@@ -402,7 +402,7 @@ First, it checks if the nick is "server" and disallows it. Second, it checks if 
 
 The <tt>log/3</tt> is just to create a log message concatenating the nick names of all clients and printing it out, then broadcasting this to the Message Handler of all the clients listed in the HashDict:
 
---- ruby
+```ruby
 defp log(users, nick, message) do
   user_list = users |> HashDict.keys |> Enum.join(":")
   Logger.debug("#{nick} #{message}, user_list: #{user_list}")
@@ -424,7 +424,7 @@ end
 
 Up to this point it just casts a message to itself, the <tt>{:say, nick, message}</tt> tuple, that is handled by the GenServer and calling the <tt>broadcast/3</tt> function defined like this:
 
---- ruby
+```ruby
 defp broadcast(users, nick, message) do
   Enum.map(users, fn {_, node} ->
     Task.async(fn ->
@@ -457,7 +457,7 @@ I believe this is maybe how Erlang based services such as [ejabberd](http://manp
 
 In the [case of ejabberd](https://github.com/processone/ejabberd/blob/master/src/ejabberd_cluster.erl), I can see that it keeps the state of the cluster in Mnesia tables (Mnesia being one other component of OTP, it's a distributed NoSQL database built-in!) and it indeed use the Node facilities to coordinate distributed nodes:
 
---- erlang
+```erlang
 ...
 join(Node) ->
     case {node(), net_adm:ping(Node)} of
@@ -486,7 +486,7 @@ This is how a snippet of pure Erlang source code looks like, by the way. You sho
 
 Also in the [source code of the RabbitMQ-Server](https://github.com/rabbitmq/rabbitmq-server/blob/6f70dcbe05dbba35f7d950674d293a4c7d867d44/src/rabbit_control_main.erl) you will find a similar thing:
 
---- erlang
+```erlang
 become(BecomeNode) ->
     error_logger:tty(false),
     ok = net_kernel:stop(),

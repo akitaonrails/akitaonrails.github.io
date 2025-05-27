@@ -40,7 +40,7 @@ So, this is obviously a very specific situation: replacing a statically generate
 
 The very first trick to consider: generate proper Etags:
 
---- ruby
+```ruby
 class PagesController < ApplicationController
   def index
     @pages = fetch_resources
@@ -73,7 +73,7 @@ There is another problem: to check if a content is fresh or not, it needs to che
 
 One workaround is to cache this information in a faster storage, such as Memcached:
 
---- ruby
+```ruby
 class PagesController < ApplicationController
 ...
   private
@@ -108,7 +108,7 @@ Now, the controller won't hit the database all the time. It will hit Memcached i
 
 After the content is fetched from the cache, it generates the ETags to compare with what the client sent through the <tt>If-None-Match</tt> header. Notice that I'm customizing the etag with something called <tt>deploy_id</tt>. This is a method defined in the <tt>ApplicationController</tt> like this:
 
---- ruby
+```ruby
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 

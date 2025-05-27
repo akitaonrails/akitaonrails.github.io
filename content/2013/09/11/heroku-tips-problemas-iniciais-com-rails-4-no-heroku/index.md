@@ -26,7 +26,7 @@ Leia a documentação dessa funcionalidade [user-env-compile](https://devcenter.
 
 Rapidamente para não esquecer, no caso de apps Rails 4 não deixe de acrescentar o seguinte na sua <tt>Gemfile</tt>:
 
---- ruby
+```ruby
 gem 'rails_12factor', group: :production
 ```
 
@@ -44,7 +44,7 @@ O segundo problema é migrar os dados de um banco para o outro. Eu procurei vár
 
 Basta alterar seu <tt>config/database.yml</tt> para ter o seguinte:
 
---- yaml
+```yaml
 development:
   adapter: postgresql
   database: legaltorrents_development
@@ -69,7 +69,7 @@ ALTER SEQUENCE users_id_seq restart with (select max(id)+1 from users)
 
 Isso deve ser feito para cada tabela que você tem. Se precisar atualizar em produção no Heroku, execute <tt>heroku run rails console</tt> e execute assim:
 
---- ruby
+```ruby
 ActiveRecord::Base.connection.execute("ALTER SEQUENCE users_id_seq restart with (select max(id)+1 from users) ")
 ```
 

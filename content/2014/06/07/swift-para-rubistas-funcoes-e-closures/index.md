@@ -21,7 +21,7 @@ Finalmente, Swift é basicamente Objective-C melhorado então temos o mesmo recu
 
 A idéia é poder criar funções "customizáveis", ou seja, um pedaço de código que espera outro pedaço de código. Existem duas formas de se fazer isso. No mundo C podemos passar diretamente uma função como parâmetro para ser executada dentro de outra função. Isso não é uma closure, é o que chamamos de "callback". Em Objective-C e Swift, podemos passar uma função como parâmetro ou mesmo fazer uma função retornar uma função.
 
---- C
+```C
 func soma(x: Int, y: Int) -> Int {
     return x + y
 }
@@ -39,7 +39,7 @@ Veja o código acima, definimos uma função de soma, que recebe dois inteiros c
 
 Ao executar <tt>calculadora(soma, 10, 20)</tt>, passamos a função soma, os números 10 e 20 e internamente atribuímos a função soma a uma variável chamada "calculo" e executamos passando os dois inteiros, que, obviamente, serão somados. E a resposta no final será 30.
 
---- C
+```C
 func multiplicacao(x: Int, y: Int) -> Int {
     return x * y
 }
@@ -50,7 +50,7 @@ calculadora(multiplicacao, 3, 5)
 
 Podemos agora criar quaisquer funções com a mesma assinatura e depois mandar para a calculadora. Em Ruby não temos a mesma funcionalidade:
 
---- ruby
+```ruby
 def soma(x, y)
   x + y
 end
@@ -68,7 +68,7 @@ calculadora(soma, 10, 20)
 
 Em Ruby, parênteses são opcionais e ao tentar passar o método "soma" como parâmetro, na verdade ele está já tentando executar o método. Existe uma forma, não ortodoxa, que podemos ter um efeito similar, mas não é a mesma coisa, seria assim:
 
---- ruby
+```ruby
 def calculadora(calculo, a, b)
   puts send(calculo, a, b)
 end
@@ -80,7 +80,7 @@ O método [<tt>send</tt>](http://ruby-doc.org/core-2.1.1/Object.html#method-i-se
 
 O que podemos fazer em Ruby é não usar métodos, mas blocos:
 
---- ruby
+```ruby
 soma = lambda do |x, y|
   x + y
 end
@@ -98,7 +98,7 @@ Um bloco, em Ruby, é diferente de uma método ou função. Isso porque ele tamb
 
 Em Swift também podemos devolver funções ou ter "Nested Functions", por exemplo:
 
---- C
+```C
 func calculo(tipo: String) -> (Int, Int) -> Int {
     func soma(x: Int, y: Int) -> Int {
         return x + y
@@ -123,7 +123,7 @@ calculadora(calculo("soma"), 10, 20)
 
 Em Ruby, o mais próximo, usando blocos, seria:
 
---- ruby
+```ruby
 def calculo(tipo)
   soma = lambda { |x, y| x + y }
   multiplicacao = lambda { |x, y| x * y }
@@ -148,7 +148,7 @@ Sabendo dessa base podemos prosseguir para o próximo passo, blocos em Swift.
 
 Primeiro, vejamos o uso mais comum de blocos em Ruby:
 
---- ruby
+```ruby
 def numero(bla)
   yield(bla) if block_given?
 end
@@ -163,7 +163,7 @@ Definimos um método chamado <tt>numero</tt> que recebe um parâmetro "bla". Int
 
 Podemos reescrever o mesmo código da seguinte forma:
 
---- ruby
+```ruby
 def numero(bla, &bloco)
   bloco.(bla) if bloco
 end
@@ -176,14 +176,14 @@ numero(20) { |x| x * 10 }
 
 Obs, o [@josevalim](http://twitter.com/josevalim) me explicou que há outra sintaxe que podemos usar e são equivalentes (embora pareça que só funcione em one-lines):
 
----C
+```C
 numero.map { (var x: Int) -> Int in return x * 10 }
 numero.map { $0 * 10 } // equivalente ao de cima
 ```
 
 Confinuando, podemos fazer a mesma coisa em Swift, assim:
 
---- C
+```C
 func numero(bla: Int, bloco: (Int) -> Int) {
     println(bloco(bla))
 }
@@ -195,7 +195,7 @@ Por causa da necessidade de definir o seletor/assinatura, com parâmetros e tipo
 
 Do livro oficial da Apple temos o seguinte exemplo que pode demonstrar um pouco melhor (eu mudei o exemplo pois no livro ele usa um Dictionary para "digitNames" mas as chaves são exatamente a posição num Array, então achei melhor usar diretamente um Array):
 
---- C
+```C
 let digitNames = [
 	"Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"
 ]
@@ -216,7 +216,7 @@ let strings = numbers.map {
 
 A mesma coisa em Ruby ficaria assim:
 
---- ruby
+```ruby
 digit_names = [
   "Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"
 ]
@@ -236,7 +236,7 @@ Veja como a lógica em si é bastante semelhante, se ignorar a definição mais 
 
 No [meu post de 2010](http://www.akitaonrails.com/2010/12/06/objective-c-method-missing#.U5MhaRYduzA) sobre como implementar o equivalente a "method_missing" em Objective-C eu parti deste exemplo comum de DSL do mundo Ruby:
 
---- ruby
+```ruby
 require 'builder'
 x = Builder::XmlMarkup.new(:target => $stdout, :indent => 1)
 x.html do |h|
@@ -254,7 +254,7 @@ end
 
 E cheguei neste equivalente em Objective-C:
 
---- C
+```C
 XmlBuilder* xml = [[XmlBuilder alloc] init];
 [xml htmlBlock:^(XmlBuilder* h) {
     [h bodyBlock:^(XmlBuilder* b) {
@@ -273,7 +273,7 @@ Absolutamente verborrágico! Não era divertido usar blocos em Objective-C pela 
 
 Ainda não reimplementei esse experimento que fiz em Objective-C para Swift (fica como lição de casa). Farei isso num próximo artigo sobre metaprogramação e seletores em Swift. Mas se tivéssemos reescrito, provavelmente o código ficaria mais ou menos assim:
 
---- C
+```C
 // Swift:                            // Ruby:
 xml = XmlBuilder()                   // x = Builder::XmlMarkup.new
 xml.html({ (var h) -> Void in        // x.html do |h|

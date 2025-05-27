@@ -12,7 +12,7 @@ Let's continue from where I left off in [Part 1](http://www.akitaonrails.com/201
 
 If I were building a secondary Rails app connecting directly to the same database as the first, I could just add the dependency to the extracted gem:
 
---- ruby
+```ruby
 gem 'central-support', github: 'Codeminer42/cm42-central-support', branch: 'master', require: 'central/support'
 ```
 
@@ -24,7 +24,7 @@ From now on, you must control the evolution of the tables mapped in the gem from
 
 The [`lib/generators/central/install_generator.rb`](https://github.com/Codeminer42/cm42-central-support/blob/master/lib/generators/central/install_generator.rb) will take care of making a `central:install` task available that will dutifully put new migrations into your application's `db/migrate` folder as usual. You just have to `bundle update central-support` to get the newest changes, run `bin/rails g central:install` to create the new migrations (it will automatically skip existing ones) and run the normal `bin/rails db:migrate`. A migration generator code is very simple, you can do it like this:
 
---- ruby
+```ruby
 require 'securerandom'
 require 'rails/generators'
 require 'rails/generators/base'
@@ -59,7 +59,7 @@ Every Rails application has a `config/database.yml.sample` and a `db/schema.rb`,
 
 The `config/database_central.yml.sample` is already interesting:
 
---- yaml
+```yaml
 development:
   adapter: postgresql
   encoding: unicode
@@ -97,7 +97,7 @@ Now, while running tests at Gitlab-CI (or any other CI for that matter), I have 
 
 For Gitlab, this is how I configure the build script:
 
---- yaml
+```yaml
 image: codeminer42/ci-ruby:2.3
 
 services:
@@ -130,7 +130,7 @@ Notice how I copy the ".sample" config files to make sure they exist. And then h
 
 I defined those tasks in `lib/tasks/db_central.rake` like this:
 
---- ruby
+```ruby
 task spec: ["central:db:test:prepare"]
 
 namespace :central do
@@ -236,7 +236,7 @@ Now that we have the basic underpinnings for specs in place, we can focus on how
 
 We start by adding an initializer like `config/initializer/db_central.rb`:
 
---- ruby
+```ruby
 DB_CENTRAL = CM(Rails.root)
   .join("config", "database_central.yml.sample")
   .File.read
@@ -250,7 +250,7 @@ In this case I am reading from the sample file because different from the CI bui
 
 Then I create a new file called `app/models/remote_application_record.rb` that looks like this:
 
---- ruby
+```ruby
 class RemoteApplicationRecord < ApplicationRecord
   establish_connection DB_CENTRAL[Rails.env]
   self.abstract_class = true
@@ -267,7 +267,7 @@ Then we have a `default_scope` locking down the model as `readonly`. We don't wa
 
 Finally, I can create all the models I need, such as `app/models/central/team.rb`:
 
---- ruby
+```ruby
 module Central
   class Team < RemoteApplicationRecord
     self.table_name = 'teams'

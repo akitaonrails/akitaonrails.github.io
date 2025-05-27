@@ -24,7 +24,7 @@ You can make the same simulation as I did by repeating the following steps:
 4. Deploy the app to Heroku and run the migration
 5. Open a remote console to Heroku and run the following to load the database with sample data:
 
---- ruby
+```ruby
 (1..1000) 
   |> Enum.map(fn (n) -> %{title: "title #{n}", body: to_string(n)} end)
   |> Enum.map(fn (params) -> Blog.Post.changeset(%Blog.Post{}, params) end)
@@ -35,7 +35,7 @@ Feeling strange? Read the [Programming Elixir](https://pragprog.com/book/elixir/
 
 If you're a Rails developer, this is the equivalent of doing:
 
---- ruby
+```ruby
 (1..1000).each { |n| Post.create title: "title #{n}", body: n }
 ```
 

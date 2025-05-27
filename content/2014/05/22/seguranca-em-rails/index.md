@@ -117,19 +117,19 @@ Tudo isso pode ser feito diretamente no web server ou balanceador de carga. Mas 
 
 Para isso existe o Rack::Attack, que é um middleware Rack que você instala de modo simples diretamente na sua aplicação Rails e pode customizá-lo de diferentes formas. A instalação básica é simples. Apenas acrescente à sua <tt>Gemfile</tt>:
 
---- ruby
+```ruby
 gem 'rack-attack'
 ```
 
 E adicione ao arquivo <tt>config.ru</tt>, antes da linha do comando <tt>run</tt>:
 
---- ruby
+```ruby
 use Rack::Attack
 ```
 
 E se quiser customizar, comece adicionando o arquivo <tt>config/initializers/rack-attack.rb</tt> com o seguinte:
 
---- ruby
+```ruby
 class Rack::Attack
   Rack::Attack.cache.store = ActiveSupport::Cache::MemoryStore.new # defaults to Rails.cache
 end

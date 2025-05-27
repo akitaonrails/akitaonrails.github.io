@@ -18,7 +18,7 @@ TCO também é chamado às vezes de [Tail Recursion Elimination](http://stackove
 
 O equivalente _"hello world"_ de recursão é o bom e velho [fatorial](http://en.wikipedia.org/wiki/Factorial) que, em Ruby, poderíamos escrever desta forma:
 
---- ruby
+```ruby
 def fact(n)
   n == 0 ? 1 : n * fact(n-1)
 end
@@ -28,7 +28,7 @@ Dependendo da versão do Ruby que estiver usando ela vai estourar num número n 
 
 Quem estudou Algoritmos e Estruturas de Dados aprendeu a tentar buscar a versão não-recursiva. No caso do Ruby temos a sorte dela ser expressiva para poder ser escrita da seguinte forma com a ajuda de closures:
 
---- ruby
+```ruby
 def fact(n)
   sum = 1
   sum.upto(n) { |i| sum *= i }
@@ -40,7 +40,7 @@ Esta versão vai aguentar valores muito mais altos que o vergonhoso 8180 da vers
 
 Para possibilitar essa otimização, precisamos modificar a versão recursiva que mostrei antes para que ela não precise de um [call stack](http://en.wikipedia.org/wiki/Call_stack), e para isso a última ação precisa ser direto a chamada recursiva. Então a nova versão (ainda recursiva) fica assim:
 
---- ruby
+```ruby
 def self.fact(n, m = 1)
   n < 2 ? m : fact(n-1, m*n)
 end
@@ -48,7 +48,7 @@ end
 
 No Ruby 1.9 você pode ativar o TCO e executar o código com tail call desta forma:
 
---- ruby
+```ruby
 RubyVM::InstructionSequence.compile_option = {
   :tailcall_optimization => true,
   :trace_instruction => false
@@ -61,7 +61,7 @@ EOF
 
 Vamos fazer um teste com o seguinte código:
 
---- ruby
+```ruby
 require 'benchmark'
 module Test
   def self.fact_recursive(n)
@@ -108,7 +108,7 @@ Vejam que rodando até o limite de 8180 temos pouca diferença entre as versões
 
 Agora vamos ativar o TCO:
 
---- ruby
+```ruby
 RubyVM::InstructionSequence.compile_option = {
   :tailcall_optimization => true,
   :trace_instruction => false

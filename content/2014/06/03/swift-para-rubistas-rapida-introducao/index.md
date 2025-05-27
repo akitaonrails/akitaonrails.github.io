@@ -23,7 +23,7 @@ Todos os exemplos de código foram extraídos do eBook [“The Swift Programming
 
 Do ponto de vista da sintaxe, a linguagem está bem mais atraente. Vejamos um trecho muito simples em Swift:
 
---- C
+```C
 if let actualNumber = possibleNumber.toInt() {
     println("\(possibleNumber) has an integer value of \(actualNumber)")
 } else {
@@ -34,7 +34,7 @@ if let actualNumber = possibleNumber.toInt() {
 
 E em Ruby:
 
---- ruby
+```ruby
 if actual_number = possible_number && possible_number.to_i
   puts "#{possible_number} has an integer value of #{actual_number}"
 else
@@ -49,7 +49,7 @@ As convenções de nomenclatura são diferentes: no Ruby usamos tudo em caixa ba
 
 Vejamos outro exemplo em Swift:
 
---- C
+```C
 func alignRight(var string: String, count: Int, pad: Character) -> String {
     let amountToPad = count - countElements(string)
     for _ in 1...amountToPad {
@@ -65,7 +65,7 @@ let paddedString = alignRight(originalString, 10, "-")
 
 E o equivalente em Ruby seria:
 
---- ruby
+```ruby
 def align_right(string, count, pad)
   amount_to_pad = count - string.size
   (1..amount_to_pad).each do
@@ -81,7 +81,7 @@ A primeira semelhança é que Swift possui "Ranges" como em Ruby embora a notaç
 
 Em Swift, o correto é declarar os tipos dos argumentos e do valor de retorno e o "return" é explícito. No Ruby não tempos tipos pré-declarados e o retorno padrão é sempre o valor da última coisa executada. E falando em Ranges, tanto em Ruby quanto Swift podemos ter pattern matching de valores em intervalos:
 
---- C
+```C
 let count = 3_000_000_000_000
 let countedThings = "stars in the Milky Way"
 var naturalCount: String
@@ -106,7 +106,7 @@ println("There are \(naturalCount) \(countedThings).")
 
 Em Ruby é praticamente a mesma coisa:
 
---- ruby
+```ruby
 count = 3_000_000_000_000
 counted_things = "stars in the Milky Way"
 natural_count = case count
@@ -126,7 +126,7 @@ Swift e Ruby não precisam de "break" porque ele não cai para o próximo match.
 
 Este outro trecho também é curioso:
 
---- C
+```C
 if let roomCount = john.residence?.numberOfRooms {
     println("John's residence has \(roomCount) room(s).")
 } else {
@@ -137,7 +137,7 @@ if let roomCount = john.residence?.numberOfRooms {
 
 O "equivalente" em Ruby (se estivermos no Rails) seria:
 
---- ruby
+```ruby
 if room_count = john.residence.try(:number_of_rooms)
   puts "John's residence has #{room_count} room(s)."
 else
@@ -149,7 +149,7 @@ Não é exatamente a mesma coisa. No Swift o "?" denota uma propriedade opcional
 
 E falando em ActiveSupport o Swift herda [Categories](http://code.tutsplus.com/tutorials/objective-c-succinctly-categories-and-extensions--mobile-22016) de Objective-C com o nome de Extensions, que é uma forma de estender a funcionalidade de uma classe que já existe:
 
---- C
+```C
 extension Double {
     var km: Double { return self * 1_000.0 }
     var m: Double { return self }
@@ -167,7 +167,7 @@ println("Three feet is \(threeFeet) meters")
 
 Em Ruby podemos facilmente fazer a mesma coisa diretamente porque classes são sempre abertas:
 
---- ruby
+```ruby
 class Numeric
   def km; self * 1_000.0; end
   def m; self; end
@@ -188,7 +188,7 @@ Além disso no Swift ele declara uma variável de processamento dinâmico. Nas s
 
 Um outro exemplo mais prático em Swift seria este:
 
---- C
+```C
 extension Int {
     func repetitions(task: () -> ()) {
         for i in 0..self {
@@ -207,7 +207,7 @@ extension Int {
 
 E em Ruby já temos o equivalente ao método "repetitions" desta extension já implementada:
 
---- ruby
+```ruby
 3.times do
   puts "Hello!"
 end
@@ -217,7 +217,7 @@ Em particular veja que o Swift define um método que recebe uma função anônim
 
 Outras coisas que lembram muito Ruby é como ele trata tipos de coleções:
 
---- C
+```C
 var shoppingList = ["Eggs", "Milk"]
 shoppingList += ["Chocolate Spread", "Cheese", "Butter"]
 shoppingList[4...6] = ["Bananas", "Apples"]
@@ -225,7 +225,7 @@ shoppingList[4...6] = ["Bananas", "Apples"]
 
 Esse trecho quase que inteiramente se converte em como Ruby lida com arrays:
 
---- ruby
+```ruby
 shopping_list = ["Eggs", "Milk"]
 shopping_list += ["Chocolate Spread", "Cheese", "Butter"]
 shopping_list[4...6] = ["Bananas", "Apples"]
@@ -233,7 +233,7 @@ shopping_list[4...6] = ["Bananas", "Apples"]
 
 O mesmo pode-se dizer de dicionários do Swift que são semelhantes a Hash no Ruby:
 
---- C
+```C
 var airports = ["TYO": "Tokyo", "DUB": "Dublin"]
 airports["LHR"] = "London"
 for (airportCode, airportName) in airports {
@@ -243,7 +243,7 @@ for (airportCode, airportName) in airports {
 
 Em Ruby seria:
 
---- ruby
+```ruby
 airports = {TYO: "Tokyo", DUB: "Dublin"}
 airports[:LHR] = "London"
 for airport_code, airport_name in airports
@@ -253,7 +253,7 @@ end
 
 Em particular este último trecho, em Ruby, seria mais comumente escrito como:
 
---- ruby
+```ruby
 airports.each do |airport_code, airport_name|
   puts "#{airport_code}: #{airport_name}"
 end
@@ -263,7 +263,7 @@ A diferença é que Swift inicializa dicionários com a mesma sintaxe de arrays,
 
 Já um tipo que Swift e outras linguagens como Python tem, e Ruby não tem, são Tuples. De forma simplificada, se trata de uma lista heterogênea (como um array) de constantes. Em Ruby usamos um Array para o mesmo fim. E temos, novamente, usos similares:
 
---- C
+```C
 let http404Error = (404, "Not Found")
 let (statusCode, statusMessage) = http404Error
 println("The status code is \(statusCode)")
@@ -274,7 +274,7 @@ println("The status message is \(statusMessage)")
 
 Veja que podemos decompor um Tuple de volta em variáveis de maneira similar em Ruby:
 
---- ruby
+```ruby
 http_404_error = [404, "Not Found"]
 status_code, status_message = http_404_error
 puts "The status code is #{status_code}"
@@ -296,7 +296,7 @@ Como podem ver, Swift em si é uma linguagem bem minimalista. Sua intenção é 
 
 Por exemplo, hoje (1 dia depois do anúncio da linguagem, para verem como a sintaxe é trivial de simples) já saiu um pequeno demo que é basicamente um [clone do famigerado Flappy Bird](https://github.com/fullstackio/FlappySwift), usando o SpriteKit como fundação. E veja um trecho mais realista:
 
---- C
+```C
 // skyline
 var skyTexture = SKTexture(imageNamed: "sky")
 skyTexture.filteringMode = SKTextureFilteringMode.Nearest

@@ -87,7 +87,7 @@ The first thing you want to do is sign up to AWS's Cloudfront CDN service. Alway
 
 Carrierwave will default to the S3 bucket host, but once you have the Cloudfront endpoint you can [easily change](https://dzone.com/articles/carrierwave-heroku-cloudfront) all the uploaded files URLs like this:
 
---- ruby
+```ruby
 # ./config/initializers/carrierwave.rb
 CarrierWave.configure do |config|
   config.fog_credentials = {

@@ -14,7 +14,7 @@ I've been posting a lot of articles in the last few weeks, check out the ["Elixi
 
 Many tutorial series start introducing a new language by its syntax. I subverted the order. Elixir is not interesting because of its syntax. Erlang is interesting all by itself, because of its very mature, highly reliable, highly concurrent, distributed nature. But its syntax is not for the faint of heart. It's not "ugly", it's just too different for us - from the C school - to easily digest. It derives from Prolog, and this is one small example of a Prolog exercise:
 
---- prolog
+```prolog
 % P03 (*): Find the K'th element of a list.
 %     The first element in the list is number 1.
 %     Example:
@@ -36,7 +36,7 @@ Erlang has a similar syntax, with the idea of phrases divided by commas and endi
 
 José Valim played very smart: he chose the best of the available mature platforms and coated it with a layer of modern syntax and easier to use standard libraries. This is the same problem implemented in Elixir:
 
---- ruby
+```ruby
 defmodule Exercise do
   def element_at([found|_], 1), do: found
   def element_at([_|rest], position) when position > 1 do
@@ -60,7 +60,7 @@ Then you can define public function with the <tt>def my_function(args) do .. end
 
 A function is actually identified by the pair of its name and its arity. So above we have <tt>element_at/2</tt> which means it accepts 2 arguments. But we have 2 functions with the same arity: the difference is the **pattern matching**.
 
---- ruby
+```ruby
 def element_at([found|_], 1), do: found
 ```
 
@@ -84,7 +84,7 @@ iex(8)> Exercise.element_at(["a", "b", "c", "d", "e"], -3)
 
 It says that none of the clause we passed doesn't match any of the defined ones above. We could have added a third definition just to catch those cases:
 
---- ruby
+```ruby
 def element_at(_list, _position), do: nil
 ```
 
@@ -102,7 +102,7 @@ I won't dive into macros for now, just know that there is more than one way of d
 
 Now, going back to the implementation, the first function still can look weird, let's review it:
 
---- ruby
+```ruby
 def element_at([_|rest], position) when position > 1 do
   element_at(rest, position - 1)
 end
@@ -120,7 +120,7 @@ In this case the rest of the array is pattern matched and the first element, "c"
 
 This is all nice and fancy, but in Elixir we could just have done this other version:
 
---- ruby
+```ruby
 defmodule Exercise do
   def element_at(list, position), do: Enum.at(list, position)
 end
@@ -146,7 +146,7 @@ iex(9)> ~w(a b c d e f)a
 
 Well, this was too simple. You really need the idea of pattern matching and basic type in your mind to make it flow. Let's get another snippet from the [Ex Manga Downloadr](http://www.akitaonrails.com/2015/11/18/ex-manga-downloader-an-exercise-with-elixir):
 
---- ruby
+```ruby
 defp parse_args(args) do
   parse = OptionParser.parse(args,
     switches: [name: :string, url: :string, directory: :string],
@@ -162,7 +162,7 @@ end
 
 The first part may puzzle you:
 
---- ruby
+```ruby
 OptionParser.parse(args,
     switches: [name: :string, url: :string, directory: :string],
     aliases: [n: :name, u: :url, d: :directory]
@@ -171,7 +171,7 @@ OptionParser.parse(args,
 
 The <tt>OptionParser.parse/2</tt> receives just 2 arguments: 2 arrays. If you come from Ruby it feels like it's a Hash with optional brackets, translating to something similar to this:
 
---- ruby
+```ruby
 # this is wrong
 OptionParser.parse(args,
     { switches: {name: :string, url: :string, directory: :string},
@@ -181,7 +181,7 @@ OptionParser.parse(args,
 
 This works in Ruby but it is not the case in Elixir, there are optional brackets but not where you think they are:
 
---- ruby
+```ruby
 # this is the correct, more explicit version
 OptionParser.parse(args,
     [
@@ -211,7 +211,7 @@ Yep, the second argument is actually an array with elements that are **Tuples** 
 
 If the previous example was just too much, let's step back a little:
 
---- ruby
+```ruby
 defmodule Teste do
   def teste(opts) do
     [{:hello, world}, {:foo, bar}] = opts
@@ -238,7 +238,7 @@ This may confuse you, but it's very intuitive. You can just think of this combin
 
 Then, we have the Pattern Match section in both previous examples:
 
---- ruby
+```ruby
 case parse do
   {[name: manga_name, url: url, directory: directory], _, _} ->
     process(manga_name, url, directory)
@@ -251,7 +251,7 @@ end
 
 And
 
---- ruby
+```ruby
 [{:hello, world}, {:foo, bar}] = opts
 ```
 
@@ -259,7 +259,7 @@ The last example is just decomposition. The previous example is pattern match an
 
 Let's understand the meaning of this line:
 
---- ruby
+```ruby
 {[name: manga_name, url: url, directory: directory], _, _} -> process(manga_name, url, directory)
 ```
 
@@ -269,7 +269,7 @@ This may really confuse you in the beginning, but this combination of a List of 
 
 Keyword List feel like a Map, but a Map has a different syntax:
 
---- ruby
+```ruby
 list = [a: 1, b: 2, c: 3]
 map = %{:a => 1, :b => 2, :c => 3}
 ```
@@ -327,7 +327,7 @@ This is a List decomposition. It so happens that in the simple case, it feels li
 
 We use exactly those concepts of pattern matching on the returning elements from the HTML parsed by Floki in my Manga Downloadr:
 
---- ruby
+```ruby
 Floki.find(html, "#listing a")
 |> Enum.map(fn {"a", [{"href", url}], _} -> url end)
 ```
@@ -354,14 +354,14 @@ Each UNIX process can receive something from the standard input (STDIN) and outp
 
 Elixir uses the same principles: we can simply use the returning value of a function as the **first argument** of the next function. So the first example of this section is the same as doing this:
 
---- ruby
+```ruby
 results = Floki.find(html, "#listing a")
 Enum.map(results, fn {"a", [{"href", url}], _} -> url end)
 ```
 
 In the same ExMangaDownloadr project we have this snippet:
 
---- ruby
+```ruby
 defp process(manga_name, url, directory) do
   File.mkdir_p!(directory)
   url
@@ -377,7 +377,7 @@ end
 
 And we just learned that it's the equivalent of doing the followng (I'm cheating a bit because the 3 final functions of the workflow are not transforming the input "directory", just passing it through):
 
---- ruby
+```ruby
   defp process(manga_name, url, directory) do
     File.mkdir_p!(directory)
 
@@ -393,7 +393,7 @@ And we just learned that it's the equivalent of doing the followng (I'm cheating
 
 Or this much uglier version that we must read in reverse:
 
---- ruby
+```ruby
 defp process(manga_name, url, directory) do
   File.mkdir_p!(directory)
   finish_process(
@@ -420,7 +420,7 @@ The official website offers a great [Getting Started](http://elixir-lang.org/get
 
 From intuition you know most things already. You have "do .. end" blocks but you still don't know that they are just convenience macros to pass a list of statements as an argument inside a Keyword List. The following blocks are equivalent:
 
---- ruby
+```ruby
 if true do
   a = 1 + 2
   a + 10

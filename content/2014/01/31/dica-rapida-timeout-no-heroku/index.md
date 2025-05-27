@@ -21,13 +21,13 @@ Então aqui vai a dica. Use a gem [rack-timeout](https://github.com/kch/rack-tim
 
 Para instalar é muito fácil. Adicione à sua <tt>Gemfile</tt>:
 
---- ruby
+```ruby
 gem 'rack-timeout'
 ```
 
 Rode <tt>bundle</tt> pra instalar e crie o arquivo <tt>config/initializers/rack_timeout.rb</tt> com o seguinte:
 
---- ruby
+```ruby
 if defined?(Rack::Timeout)
   Rack::Timeout.timeout = Integer( ENV['RACK_TIMEOUT'] || 12 )
 end
@@ -71,7 +71,7 @@ Leia o [README](https://github.com/kch/rack-timeout/blob/master/README.markdown)
 
 Agora, você precisa de uma forma de ver o stacktrace gerado e para isso use uma opção simples como [Exception Notification](https://github.com/rails/exception_notification) que você configura facilmente primeiro adicionando uma opção de envio de email à sua aplicação no Heroku como Sendgrid ou Mailgun, e então adiciona ao seu arquivo <tt>config/environments/production.rb</tt> algo como:
 
---- ruby
+```ruby
 config.middleware.use ExceptionNotification::Rack,
   :email => {
     :email_prefix => "[Exception - MyApp] ",

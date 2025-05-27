@@ -15,7 +15,7 @@ Para 80% dos casos (ou mais!), tudo que você precisa é conseguir desenvolver s
 
 Em produção, todos os seus arquivos Javascript, por exemplo, serão pré-compilados e no seu layout ele vai renderizar algo assim em produçao:
 
---- html
+```html
 <script src="/assets/application-92d3fd2d9ebe06a3a45e1ee88109c64f.js" type="text/javascript"></script>
 ```
 
@@ -23,7 +23,7 @@ Eu já escrevi sobre o [Asset](http://www.akitaonrails.com/2012/07/01/asset-pipe
 
 Um CDN como o CloudFront funciona da seguinte forma. Ao terminar a configuração que vou explicar abaixo, o HTML que carrega o Javascript acima vai ser renderizado da seguinte forma na sua aplicação:
 
---- html
+```html
 <script src="http://d1g6lioiw8beil.cloudfront.net/assets/application-92d3fd2d9ebe06a3a45e1ee88109c64f.js" type="text/javascript"></script>
 ```
 
@@ -63,7 +63,7 @@ Só de fazer isso você já pode testar. Basta pegar uma URL de produção de um
 
 Se o teste funcionar, basta adicionar a seguinte linha no arquivo <tt>config/environments/production.rb</tt>:
 
---- ruby
+```ruby
 config.action_controller.asset_host = 'http://d1g6lioiw8beil.cloudfront.net' # trocar esse domain pelo seu
 ```
 

@@ -155,7 +155,7 @@ Just to be safe, I uninstalled the `linux44` package and any other `linux44-*` p
 ```
 sudo pacman -Ss linux44 | grep installed
 # sudo pacman -R linux44-(name of the package)
-----
+```-
 
 Now I have this:
 

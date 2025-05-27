@@ -24,7 +24,7 @@ A few days ago I started a new project (for internal use only) that would query 
 
 After a few refactorings, most of Central's models look like this one:
 
---- ruby
+```ruby
 class Team < ActiveRecord::Base
   include Central::Support::TeamConcern::Associations
   include Central::Support::TeamConcern::Validations
@@ -36,7 +36,7 @@ end
 
 And I have this dependency in the `Gemfile`:
 
---- ruby
+```ruby
 gem 'central-support', github: 'Codeminer42/cm42-central-support', branch: 'master', require: 'central/support'
 ```
 
@@ -62,7 +62,7 @@ There is scarse documentation on how to do that, but I think you can just do `ra
 
 This internal test app must have a carefully crafted [`Gemfile`](https://github.com/Codeminer42/cm42-central-support/blob/master/spec/support/rails_app/Gemfile):
 
---- ruby
+```ruby
 ...
 gem 'central-support', path: File.expand_path("../../../..", __FILE__)
 
@@ -81,7 +81,7 @@ You don't have to add the gems from the main [gemspec](https://github.com/Codemi
 
 Now, from the [main `Gemfile`](https://github.com/Codeminer42/cm42-central-support/blob/master/Gemfile) you can do:
 
---- ruby
+```ruby
 source 'https://rubygems.org'
 
 eval_gemfile File.join(File.dirname(__FILE__), "spec/support/rails_app/Gemfile")
@@ -91,7 +91,7 @@ Most tutorials to build a Rubygem will add a line to load dependencies from the 
 
 Speaking of which, this is the [`spec/rails_helper.rb`](https://github.com/Codeminer42/cm42-central-support/blob/master/spec/rails_helper.rb):
 
---- ruby
+```ruby
 ENV['RAILS_ENV'] ||= 'test'
 
 require 'rails/all'
@@ -125,7 +125,7 @@ The [`spec/spec_helper.rb`](https://github.com/Codeminer42/cm42-central-support/
 
 The models inside the internal test app are the important parts, because they are the means to include the extracted concerns into a runnable format. The ['spec/support/rails_app/app/models/team.rb'](https://github.com/Codeminer42/cm42-central-support/blob/master/spec/support/rails_app/app/models/team.rb) is such an example:
 
---- ruby
+```ruby
 class Team < ActiveRecord::Base
   include Central::Support::TeamConcern::Associations
   include Central::Support::TeamConcern::Validations
@@ -136,7 +136,7 @@ end
 
 And with that, I could move the unmodified specs directly from the main project (Central), such as [`spec/central/support/team_spec.rb`](https://github.com/Codeminer42/cm42-central-support/blob/master/spec/central/support/team_spec.rb):
 
---- ruby
+```ruby
 require 'rails_helper'
 
 describe Team, type: :model do

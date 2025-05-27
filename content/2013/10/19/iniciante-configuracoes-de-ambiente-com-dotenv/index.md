@@ -19,7 +19,7 @@ heroku config:add HELLO_WORLD=true
 
 E dentro da aplicação podemos pegar esse valor com 
 
---- ruby
+```ruby
 ENV['HELLO_WORLD']
 ```
 
@@ -27,7 +27,7 @@ O problema: e quando estamos desenvolvendo? #comofaz?
 
 A forma mais desorganizada é fazer algo como:
 
---- ruby
+```ruby
 hello_world = %w(development test).include?(Rails.env) ? "123" : ENV['HELLO_WORLD']
 ```
 
@@ -35,7 +35,7 @@ A forma que se popularizou atualmente é usar a gem [dotenv-rails](https://githu
 
 Na sua Gemfile adicione o seguinte ao seu grupo 'development', 'test':
 
---- ruby
+```ruby
 gem 'dotenv-rails', :groups => [:development, :test]
 ```
 
@@ -47,7 +47,7 @@ HELLO_WORLD=true
 
 E na sua aplicação faça normalmente:
 
---- ruby
+```ruby
 hello_world = ENV['HELLO_WORLD']
 ```
 
@@ -57,7 +57,7 @@ Melhor ainda, como todos já deveriam saber a este ponto, uma configuração que
 
 Será algo assim:
 
---- ruby
+```ruby
 MyApp::Application.config.secret_token = 'bfbb...aadd2'
 ```
 

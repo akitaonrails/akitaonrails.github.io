@@ -36,7 +36,7 @@ This is a very very simple implementation of a real-time, websocket-based, chat 
 
 We start by having a front-end Form to send messages
 
---- html
+```html
 <!-- app/views/home/index.html.erb -->
 <%= form_for @event, url: events_path, remote: true, html: {class: "pure-form pure-form-stacked"} do |f| %>
   <fieldset>
@@ -50,7 +50,7 @@ We start by having a front-end Form to send messages
 
 It's using Rails built-in jQuery support for Ajax posting the form to the "EventsController#create" method:
 
---- ruby
+```ruby
 # app/controllers/events_controller.rb
 class EventsController < ApplicationController
   def create
@@ -65,7 +65,7 @@ end
 
 Just to annotate the process, the "routes.rb" looks like this:
 
---- ruby
+```ruby
 # config/routes.rb
 Rails.application.routes.draw do
   resources :events, only: [:create]
@@ -76,7 +76,7 @@ end
 
 The HTML layout looks like this:
 
---- ruby
+```ruby
 <!-- app/views/layout/application.html.erb -->
 <!DOCTYPE html>
 <html>
@@ -112,7 +112,7 @@ The HTML layout looks like this:
 
 This layout imports the default "application.js" which configures Pusher, establishes the Websocket connection and subscribes to messages on a specific topic with specific events:
 
---- javascript
+```javascript
 // app/assets/javascript/application.js
 //= require jquery
 //= require jquery_ujs
@@ -135,7 +135,7 @@ $(document).on("page:change", function(){
 
 It gets the configuration metadata from the layout meta tags which grabs the values from "config/secrets.yml":
 
---- yaml
+```yaml
 development:
   secret_key_base: ded7c4a2a298c1b620e462b50c9ca6ccb60130e27968357e76cab73de9858f14556a26df885c8aa5004d0a7ca79c0438e618557275bdb28ba67a0ffb0c268056
   pusher_url: <%= ENV['PUSHER_URL'] %>
@@ -167,7 +167,7 @@ PUSHER_CHANNEL: "test_chat_channel"
 
 Pusher is configured in the server-side through this initializer:
 
---- ruby
+```ruby
 # config/initializers/pusher.rb
 require 'pusher'
 
@@ -177,7 +177,7 @@ Pusher.logger = Rails.logger
 
 Finally, the "EventsController#create" actually do an async call to a [SuckerPunch](https://github.com/brandonhilkert/sucker_punch) job:
 
---- ruby
+```ruby
 class SendEventsJob < ActiveJob::Base
   queue_as :default
 
@@ -192,13 +192,13 @@ By the way, as a segway, [SuckerPunch](https://github.com/brandonhilkert/sucker_
 
 Once you have larger job queues or jobs that are taking too long, then go to Sidekiq. If you use ActiveJob, the transition is as simple as changing the following configuration line in the "config/application.rb" file:
 
---- ruby
+```ruby
 config.active_job.queue_adapter = :sucker_punch
 ```
 
 This job just calls the "save" method in the fake-model "PusherEvent":
 
---- ruby
+```ruby
 class PusherEvent
   include ActiveModel::Model
 
@@ -216,7 +216,7 @@ end
 
 As it's a very simple, the Gemfile is equally simple:
 
---- ruby
+```ruby
 gem 'pusher'
 gem 'dotenv-rails'
 gem 'purecss-rails'
@@ -256,7 +256,7 @@ The tutorial implemented initial setup for [Guardian](https://github.com/hassox/
 
 It already comes pre-configured with a single socket handler that multiplexes connections. You start through the EndPoint OTP application:
 
---- ruby
+```ruby
 # lib/ex_pusher_lite/endpoint.ex
 defmodule ExPusherLite.Endpoint do
   use Phoenix.Endpoint, otp_app: :ex_pusher_lite
@@ -267,7 +267,7 @@ defmodule ExPusherLite.Endpoint do
 
 This application is started by the main supervisor in "lib/ex_pusher_lite.ex". It points the endpoint "/socket" to the socket handler "UserSocket":
 
---- ruby
+```ruby
 # web/channels/user_socket.ex
 defmodule ExPusherLite.UserSocket do
   use Phoenix.Socket
@@ -283,7 +283,7 @@ defmodule ExPusherLite.UserSocket do
 
 The "channel" function comes commented out, so I started by uncommenting it. You can pattern match the topic name like "public:*" to different Channel handlers. For this simple initial test I am sending everything to the "RoomChannel", which I had to create:
 
---- ruby
+```ruby
 defmodule ExPusherLite.RoomChannel do
   use Phoenix.Channel
   use Guardian.Channel
@@ -337,7 +337,7 @@ This is all straight from Daniel's original tutorial, the important bit for this
 
 To make this work, I had to add the dependencies in "mix.exs":
 
---- ruby
+```ruby
 # mix.exs
 defmodule ExPusherLite.Mixfile do
   use Mix.Project
@@ -358,7 +358,7 @@ end
 
 And add the configuration at "config.exs":
 
---- ruby
+```ruby
 # config/config.exs
 ...
 config :joken, config_module: Guardian.JWT
@@ -373,7 +373,7 @@ config :guardian, Guardian,
 
 Now I have to add a normal HTTP POST endpoint, first adding it to the router:
 
---- ruby
+```ruby
 # web/router.ex
 defmodule ExPusherLite.Router do
   use ExPusherLite.Web, :router
@@ -396,7 +396,7 @@ defmodule ExPusherLite.Router do
 
 Notice that I totally disabled CSRF token verification in the pipeline because I am not sending back Phoenix CSRF token from the Rails controller. Now, the "EventsController" is also almost all from Daniel's tutorial:
 
---- ruby
+```ruby
 # web/controllers/events_controller.ex
 defmodule ExPusherLite.EventsController do
   use ExPusherLite.Web, :controller
@@ -435,7 +435,7 @@ Now that we have a bare bone Phoenix app that we can start through "mix phoenix.
 
 As I said in the beginning, my original wish was to use the same Pusher javascript client but change the endpoint, turns out it's more difficult than I thought, so I will start by removing the following line from the application layout:
 
---- html
+```html
 <script src="//js.pusher.com/3.0/pusher.min.js"></script>
 ```
 
@@ -447,7 +447,7 @@ But I am copying this file directly to the Rails repository at "app/assets/javas
 
 The gist goes like this, first we add the dependencies in the Gemfile:
 
---- ruby
+```ruby
 # Use SCSS for stylesheets
 #gem 'sass-rails', '~> 5.0'
 gem 'sass-rails', github: 'rails/sass-rails', branch: 'master'
@@ -462,7 +462,7 @@ end
 
 Babel needs some configuration:
 
---- ruby
+```ruby
 # config/initializers/babel.rb
 Rails.application.config.assets.configure do |env|
   babel = Sprockets::BabelProcessor.new(
@@ -475,7 +475,7 @@ end
 
 And for some reason I had to manually redeclare application.js and application.css in the assets initializer:
 
---- ruby
+```ruby
 # config/initializers/assets.rb
 ...
 Rails.application.config.assets.precompile += %w( application.css application.js )
@@ -483,7 +483,7 @@ Rails.application.config.assets.precompile += %w( application.css application.js
 
 We need Almond in order to be able to import the Socket module from the Phoenix javascript package. Now, we change the "application.js":
 
---- javascript
+```javascript
 //= require almond
 //= require jquery
 //= require jquery_ujs
@@ -496,7 +496,7 @@ require(['application/boot']);
 
 It require an "app/assets/javascripts/application/boot.es6" file, this is straight from Nando's tutorial:
 
---- javascript
+```javascript
 import $ from 'jquery';
 
 function runner() {
@@ -541,7 +541,7 @@ $(window)
 
 And it relies on attributes in the body tag, so we change our layout template:
 
---- html
+```html
 <!-- app/views/layouts/application.html.erb -->
 ...
 <body data-route="application/pages/<%= controller.controller_name %>/<%= controller.action_name %>">
@@ -549,7 +549,7 @@ And it relies on attributes in the body tag, so we change our layout template:
 
 I didn't mention before but I also have a "HomeController" just to be the root path for the main HTML page, it has a single "index" method and "index.html.erb" template with the message form. So I will have the need for an "application/pages/home/index.es6" inside the "app/assets/javascripts" path:
 
---- javascript
+```javascript
 import {Socket} from "phoenix"
 
 export default class Index {
@@ -595,7 +595,7 @@ This bit is similar to the Pusher javascript handling, but we are getting a bit 
 
 First things first. In order for this new javascript to have the correct tokens I had to add the following helper in the views layout:
 
---- html
+```html
 ...
   <%= csrf_meta_tags %>
   <%= guardian_token_tags %>
@@ -605,7 +605,7 @@ First things first. In order for this new javascript to have the correct tokens 
 
 And this "guardian_token_tags" is again straight from Daniel's tutorial:
 
---- ruby
+```ruby
 module GuardianHelper
   ISSUER = "pl-web-#{Rails.env}"
   DIGEST = OpenSSL::Digest.new('sha256')
@@ -669,7 +669,7 @@ end
 
 I had to tweak it a bit, specially to get the proper keys from the "secrets.yml" file which now looks like this:
 
---- yaml
+```yaml
 development:
   secret_key_base: ded7c4a2a298c1b620e462b50c9ca6ccb60130e27968357e76cab73de9858f14556a26df885c8aa5004d0a7ca79c0438e618557275bdb28ba67a0ffb0c268056
   pusher_url: http://<%= ENV['PUSHER_KEY'] %>:<%= ENV['PUSHER_SECRET'] %>@<%= ENV['PUSHER_URL'] %>
@@ -707,7 +707,7 @@ This bit needs more working, I know. I just copied Pusher's key and Pusher's pas
 
 Now that I have this in place, I have to change the "PusherEvent" model to trigger the message from the form to the Phoenix's EventsController, like this:
 
---- ruby
+```ruby
 # app/models/event.rb
 require "net/http"
 require "uri"

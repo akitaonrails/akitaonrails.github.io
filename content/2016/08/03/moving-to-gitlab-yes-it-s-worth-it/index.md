@@ -98,7 +98,7 @@ GitLab has many customization options. You can lock down your private GitLab to 
 
 I've stumbled upon a few caveats in the configuration. Which is why I recommend that you plan ahead - study this entire article ahead of time! -, do a quick install that you can blow away, so you can "feel" the environment before trying to migrate all your repos over to your brand new GitLab. As a reference, this is a part of my `/etc/gitlab/gitlab.rb`:
 
---- ruby
+```ruby
 # register a domain for your server and place it here:
 external_url "http://my-gitlab-server.com/"
 
@@ -447,7 +447,7 @@ Because we have Docker proxy/cache and Minio/S3 cache, your builds will take tak
 
 The Runner is one of the newest pieces of the GitLab ecosystem so you might have some trouble at first to figure out a decent configuration. But once you have the whole infrastructure figured out as described in the previous section, now it's as easy as adding a `.gitlab-ci.yml` file to your root directory. Something like this:
 
---- yaml
+```yaml
 # This file is a template, and might need editing before it works on your project.
 image: codeminer42/ci-ruby:2.3
 

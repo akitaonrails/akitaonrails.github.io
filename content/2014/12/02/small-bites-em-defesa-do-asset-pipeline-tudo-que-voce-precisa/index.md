@@ -24,7 +24,7 @@ Antes de continuar vou assumir que você pelo menos leu (ou já conhece) os segu
 
 Para ilustrar a solução vamos direto a um pequeno exemplo. Se for algo pequeno, podemos ficar tentados a colocar tudo no <tt>app/assets/application.js</tt>, como por exemplo:
 
---- javascript
+```javascript
 Foo = {
   hello: function() {
     return "Hello";
@@ -50,7 +50,7 @@ Isso vai simplesmente adicionar um parágrafo escrito "Hello World" na página. 
 
 A primeira coisa que gostaríamos de fazer é separar esse código. Talvez quebrar em arquivos como <tt>app/assets/javascripts/foo.js</tt> e <tt>app/assets/javascripts/bar.js</tt>. Então vamos direto ao assunto e adicionar o [ModuleJS](http://larsjung.de/modulejs/) diretamenta à nossa <tt>Gemfile</tt>:
 
---- ruby
+```ruby
 # Gemfile
 source 'https://rails-assets.org'
 # ...
@@ -59,7 +59,7 @@ gem 'rails-assets-modulejs'
 
 Depois de instalar com o bom e velho <tt>bundle install</tt>. Modificamos o <tt>app/assets/javascripts/application.js</tt> para carregar a dependência:
 
---- javascript
+```javascript
 //= require jquery
 //= require jquery_ujs
 //= require modulejs
@@ -70,7 +70,7 @@ Isso foi o que eu já expliquei no meu post mais antigo sobre [Rails Assets](htt
 
 Para começar a refatoração do javascript acima, vamos começar quebrando os objetos 'Foo' e 'Bar' em dois arquivos:
 
---- javascript
+```javascript
 // app/assets/javascripts/foo.js
 modulejs.define( 'foo', function() {
   return {
@@ -85,7 +85,7 @@ modulejs.define( 'foo', function() {
 })
 ```
 
---- javascript
+```javascript
 // app/assets/javascripts/bar.js
 modulejs.define( 'bar', [ 'foo' ], function(Foo) {
   return {
@@ -98,7 +98,7 @@ modulejs.define( 'bar', [ 'foo' ], function(Foo) {
 
 Veja que não precisamos mais das constantes 'Foo' e 'Bar', apenas devolver o corpo do hash com as funções. No módulo 'bar', declaramos que precisamos do módulo 'foo' (em um array) e passamos como parâmetro do construtor com o nome antigo da constante 'Foo', daí internamente o código se mantém exatamente o mesmo. E já que estamos modularizando, vamos adicionar um módulo que encapsula a chamada principal:
 
---- javascript
+```javascript
 // app/assets/javascripts/main.js
 modulejs.define( 'main', ['bar', 'jquery'], function(Bar, $) {
   return {
@@ -111,7 +111,7 @@ modulejs.define( 'main', ['bar', 'jquery'], function(Bar, $) {
 
 Como pode ver acima, o módulo 'main' vai depender do 'bar' (definido em 'bar.js') e também de um 'jquery' que ainda não existe, então vamos criar um genérico <tt>modules.js</tt> para encapsular o jQuery assim:
 
---- javascript
+```javascript
 // app/assets/javascripts/modules.js
 modulejs.define( 'jquery', function() {
   return jQuery;
@@ -122,7 +122,7 @@ Veja que podemos fazer a mesma coisa para qualquer outra biblioteca. Damos um no
 
 Para finalizar no arquivo original <tt>application.js</tt> chamamos esse novo 'main' assim:
 
---- javascript
+```javascript
 $(function() {
   var app = modulejs.require('main');
   app.start();

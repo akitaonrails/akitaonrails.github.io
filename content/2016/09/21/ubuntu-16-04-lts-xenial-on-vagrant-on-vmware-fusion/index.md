@@ -22,7 +22,7 @@ But even with everything virtualized and isolated, things can still go wrong. I 
 
 If you're installing a brand new box for the first time, this is the bare-bone `Vagrantfile` configuration I am using:
 
---- ruby
+```ruby
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 

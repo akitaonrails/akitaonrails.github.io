@@ -34,7 +34,7 @@ Resumindo:
 
 1) Se for usar [Puma](https://devcenter.heroku.com/articles/deploying-rails-applications-with-the-puma-web-server), com Rails 4.1+ ou superior, configure seu <tt>database.yml</tt> assim:
 
---- yml
+```yml
 production:
   url:  <%= ENV["DATABASE_URL"] %>
   pool: <%= ENV["DB_POOL"] || ENV['MAX_THREADS'] || 5 %>
@@ -42,7 +42,7 @@ production:
 
 2) Se for usar Puma, com Rails inferior a 4.1, adicione o initializer <tt>config/initializers/database_connection.rb</tt>:
 
---- ruby
+```ruby
 # Use config/database.yml method if you are using Rails 4.1+
 Rails.application.config.after_initialize do
   ActiveRecord::Base.connection_pool.disconnect!
@@ -58,7 +58,7 @@ end
 
 3) Se for usar [Unicorn](https://devcenter.heroku.com/articles/rails-unicorn), com Rails 4.1+ ou superior, configure o <tt>config/unicorn.rb</tt> adicionando:
 
---- ruby
+```ruby
 before_fork do |server, worker|
   # other settings
   if defined?(ActiveRecord::Base)
@@ -108,13 +108,13 @@ Com Sidekiq a coisa começa a ficar mais complicada porque temos que lidar com c
 
 No caso do Redis, você deve ler [esta página do Wiki do Sidekiq](https://github.com/mperham/sidekiq/wiki/Advanced-Options) e usar esta [**calculadora**](http://manuel.manuelles.nl/sidekiq-heroku-redis-calc/) para saber que tipo de plano de serviços como Redis Cloud você vai precisar (sendo o limitante a quantidade máxima de conexões). De acordo com a calculadora, num cenário de 10 dynos, com 2 web threads, 10 workers de Sidekiq, precisaria configurar concorrência do Sidekiq para 21, e ter 23 conexões do lado do servidor de Sidekiq. Comece configurando o <tt>config/sidekiq.yml</tt> assim:
 
---- yml
+```yml
 :concurrency: 21
 ```
 
 E o <tt>config/initializers/sidekiq.rb</tt> assim:
 
---- ruby
+```ruby
 Sidekiq.configure_server do |config|
   config.redis = { url: 'redis://redis.example.com:7372/12', namespace: 'mynamespace' }
 
@@ -159,7 +159,7 @@ Se estiver usando Rails 4.0 nem tente, não vai funcionar.
 
 Se estiver usando Rails 3.2 adicione o arquivo <tt>config/initializers/database_connection.rb</tt>:
 
---- ruby
+```ruby
 require "active_record/connection_adapters/postgresql_adapter"
 
 class ActiveRecord::ConnectionAdapters::PostgreSQLAdapter
@@ -196,13 +196,13 @@ Uma solução rápida é criar uma configuração "master-slave" (ou "primary-fo
 
 Para isso você deve configurar a [gem Octopus](https://devcenter.heroku.com/articles/distributing-reads-to-followers-with-octopus) no seu projeto. Em resumo, comece adicionando a gem no seu <tt>Gemfile</tt>:
 
---- ruby
+```ruby
 gem 'ar-octopus', require: 'octopus'
 ```
 
 Agora **Cuidado** até pouco tempo atrás a documentação no Heroku estava defasada mas você deve criar o arquivo <tt>config/shards.yml</tt> com o exato seguinte conteúdo:
 
---- ruby
+```ruby
 <%
 require 'cgi'
 require 'uri'
@@ -291,7 +291,7 @@ octopus:
 
 Outra coisa, a documentação defasada instrui a criar um <tt>config/initializers/octopus.rb</tt>. Veja esta [issue no Github](https://github.com/tchandy/octopus/issues/317#issuecomment-129480539) para mais detalhes. Em vez disso coloque esta versão simplificada no <tt>config/initializers/octopus.rb</tt> apenas para conseguirmos escolher followers aleatórios (caso tenha mais de 1):
 
---- ruby
+```ruby
 module Octopus
   def self.shards_in(group=nil)
     config[Rails.env].try(:[], group.to_s).try(:keys)
@@ -325,7 +325,7 @@ Se você não fizer mais nada, todo model ActiveRecord vai, por padrão, continu
 
 Em vez disso recomendo separar manualmente onde você quer ler do follower, por exemplo, do worker do Sidekiq você faria:
 
---- ruby
+```ruby
 User.using(Octopus.random_follower).find(params[:user_id])
 ```
 
@@ -335,7 +335,7 @@ Agora vem o pulo do gato que falei no "TL;DR" acima. Se você usa Sidekiq, pode 
 
 Para passar o valor correto pro connection pool de ActiveRecord do Sidekiq, modifique seu <tt>config/sidekiq.rb</tt> pra ficar assim:
 
---- ruby
+```ruby
 Sidekiq.configure_client do |config|
   config.redis = { :size => 1 }
 end

@@ -19,7 +19,7 @@ It can be anything where people like or dislike something.
 
 The biggest error people make is to consider a simple score like this:
 
---- ruby
+```ruby
 popularity = positive_votes - negative_votes
 ```
 
@@ -29,7 +29,7 @@ There is an old article titled ["How Not To Sort By Average Rating"](http://www.
 
 Then you may think, I know how to fix it:
 
---- ruby
+```ruby
 Score = average_rating = positive_votes / total_votes
 ```
 
@@ -49,7 +49,7 @@ I recommend you read the [original article](http://www.evanmiller.org/how-not-to
 
 And I will replace the `PostWithPopularityQuery` class with the following:
 
---- ruby
+```ruby
 class PostWithPopularityQuery
   def self.call
     Post.find_by_sql ['SELECT id, title, body, positive, negative,

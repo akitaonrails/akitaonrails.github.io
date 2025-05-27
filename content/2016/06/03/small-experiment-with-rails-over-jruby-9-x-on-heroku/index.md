@@ -26,7 +26,7 @@ There are several gems with C extensions that just won't work. Some of them have
 
 In my small sample application - which is nothing more than a content website backed by a Postgresql database, ActiveAdmin to manage content, RMagick + Paperclip (yes, it's an old app) to handle image upload and resizing, there was not a lot to change. The important bits of my "Gemfile" end up looking like this:
 
---- ruby
+```ruby
 source 'https://rubygems.org'
 
 ruby '2.3.0', :engine => 'jruby', :engine_version => '9.1.1.0'
@@ -109,7 +109,7 @@ Notice how I paired gems for the `:ruby` and `:jruby` platforms. After doing thi
 
 In the case of Puma, the configuration is a bit trickier, mine looks like this:
 
---- ruby
+```ruby
 web_concurrency = Integer(ENV['WEB_CONCURRENCY'] || 1)
 if web_concurrency > 1
   workers web_concurrency

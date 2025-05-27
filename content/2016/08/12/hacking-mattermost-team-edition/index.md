@@ -34,7 +34,7 @@ But after @iantien commented that nothing is deleted and it's all audited, I qui
 
 One can use the many tools available in PostgreSQL itself, namely: **TRIGGERS**. So, without further ado, just run this in your Mattermost database:
 
---- sql
+```sql
 CREATE OR REPLACE FUNCTION undelete_channel() RETURNS trigger AS $$
     DECLARE
         user_counter integer;

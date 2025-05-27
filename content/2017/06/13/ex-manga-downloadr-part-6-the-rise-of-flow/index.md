@@ -36,7 +36,7 @@ This is why, in my first implementation in Elixir, I introduced a complicated im
 
 This is one snippet of my older implementation:
 
---- ruby
+```ruby
 def chapter_page([chapter_link, source]) do
   Task.Supervisor.async(Fetcher.TaskSupervisor, fn ->
     :poolboy.transaction :worker_pool, fn(server) ->
@@ -48,7 +48,7 @@ end
 
 Yes, it's very ugly, and there are boilerplates for the GenServer, the custom Supervisor to initialize Poolboy and so on. And the higher level workflow code looks like this:
 
---- ruby
+```ruby
 def pages({chapter_list, source}) do
    pages_list = chapter_list
      |> Enum.map(&Worker.chapter_page([&1, source]))
@@ -66,7 +66,7 @@ Then, [Flow](https://github.com/elixir-lang/flow) is an easier high abstraction 
 
 This is the [full commit](https://github.com/akitaonrails/ex_manga_downloadr/commit/b117f5236098f6d37e332633acb787be46a09d84) where I could remove Poolboy, remove my custom GenServer, reimplement the Worker as simple module of functions and then the workflow could get rid off the async/await pattern and use Flow instead:
 
---- ruby
+```ruby
 def pages({chapter_list, source}) do
    pages_list = chapter_list
      |> Flow.from_enumerable(max_demand: @max_demand)

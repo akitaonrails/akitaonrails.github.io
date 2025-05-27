@@ -31,7 +31,7 @@ You can check out the results so far on [my fork over Github](https://github.com
 
 Just to have us started, let's check out a snippet of Sam's original C version:
 
---- C
+```C
 static VALUE
 rb_str_blank(VALUE str)
 {
@@ -56,7 +56,7 @@ rb_str_blank(VALUE str)
 
 Yeah, quite scary, I know. Now let's see the Crystal version:
 
---- ruby
+```ruby
 struct Char
   ...
   # same way C Ruby implements it
@@ -83,7 +83,7 @@ I've researched many [experimental Github repos](https://github.com/akitaonrails
 
 Obs: again, I am not a C expert. If you have experience with Makefiles I know this one can be refactored to something nicer than this. Let me know in the comments below.
 
---- C
+```C
 ifeq "$(PLATFORM)" ""
 PLATFORM := $(shell uname)
 endif
@@ -155,7 +155,7 @@ I will come back to this point in the benchmarks section.
 
 Finally, everytime you have a rubygem with a native extension, you will find this bit in their gemspec files:
 
---- ruby
+```ruby
 Gem::Specification.new do |s|
   s.name = 'fast_blank'
   ...
@@ -167,7 +167,7 @@ When the gem is installed through `gem install` or `bundle install` it will run 
 
 In our case, if we have Crystal installed, we want to use the Crystal version, so I tweaked the `extconf.rb` to be like this:
 
---- ruby
+```ruby
 require 'mkmf'
 
 if ENV['VERSION'] != "C" && find_executable('crystal') && find_executable('llvm-config')
@@ -201,7 +201,7 @@ For example. First, you have to bind the C functions from C-Ruby to Crystal. And
 
 Some of the relevant bits are like this:
 
---- ruby
+```ruby
 lib LibRuby
   type VALUE = Void*
   type METHOD_FUNC = VALUE -> VALUE
@@ -249,7 +249,7 @@ end
 
 Then I can use these mappings and helpers to build a "Wrapper" class in Crystal:
 
---- ruby
+```ruby
 require "./lib_ruby"
 require "./string_extension"
 
@@ -281,7 +281,7 @@ And this "Wrapper" depends on the "pure" Crystal library itself like with the sn
 
 Finally, I have a main "fast_blank.cr" file that externs those Wrapper functions so C-Ruby can see them as plain String methods:
 
---- ruby
+```ruby
 require "./string_extension_wrapper.cr"
 
 fun init = Init_fast_blank
@@ -297,7 +297,7 @@ end
 
 This is mostly boilerplate. But now check out what I am having to do in the wrapper, in this particular snippet:
 
---- ruby
+```ruby
 def self.blank?(self : LibRuby::VALUE)
   return true.to_ruby if LibRuby.rb_str_length(self) == 0
   str = String.from_ruby(self)
@@ -311,7 +311,7 @@ I am receiving a C-Ruby String casted as a pointer (VALUE) then I go through the
 
 This happens with all FFI-like extensions but it doesn't happen to the pure C implementation. In Sam Saffrom's C implementation it directly works with the same address in C-Ruby's memory space:
 
---- C
+```C
 static VALUE
 rb_str_blank(VALUE str)
 {
@@ -331,20 +331,20 @@ I still have a problem though. There is one edge case I was not able to overcome
 
 The way to deal with it is to receive a Ruby String (VALUE) and get the C-String from it this way:
 
---- ruby
+```ruby
 rb_str = LibRuby.rb_str_to_str(str)
 c_str  = LibRuby.rb_string_value_cstr(pointerof(rb_str))
 ```
 
 If the "str" is the "\u0000" (under Ruby 2.2.5 at least) C-Ruby raises a "string contains null bytes" exception. Which is why I rescue from this exception like this:
 
---- ruby
+```ruby
 c_str = LibRuby.rb_rescue(->String.cr_str_from_rb_cstr, str, ->String.return_empty_string, 0.to_ruby)
 ```
 
 When an exception is triggered I have to pass the pointer to another function to rescue from it:
 
---- ruby
+```ruby
 def self.return_empty_string(arg : LibRuby::VALUE)
   a = 0_u8
   pointerof(a)
@@ -380,7 +380,7 @@ Ary gave a simple tip later, I will add it to the conclusion below.
 
 The [original Rails ActiveSupport implementation of String#blank?](https://github.com/rails/rails/blob/2a371368c91789a4d689d6a84eb20b238c37678a/activesupport/lib/active_support/core_ext/object/blank.rb#L101) looks like this:
 
---- ruby
+```ruby
 class String
   # 0x3000: fullwidth whitespace
   NON_WHITESPACE_REGEXP = %r![^\s#{[0x3000].pack("U")}]!

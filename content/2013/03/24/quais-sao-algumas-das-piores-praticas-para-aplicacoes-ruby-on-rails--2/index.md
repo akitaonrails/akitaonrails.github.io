@@ -30,7 +30,7 @@ Talvez 1% dos maiores sites do mundo precisem de SQLs realmente específicos oti
 
 Por exemplo, o problema fazer N+1 queries desnecessariamente, como está explicado no [guia oficial de ActiveRecord](http://guides.rubyonrails.org/active_record_querying.html#eager-loading-associations) e que eu copio aqui:
 
----ruby
+```ruby
 clients = Client.limit(10)
  
 clients.each do |client|
@@ -40,7 +40,7 @@ end
 
 Esse código vai fazer 11 queries no banco. A primeira para buscar 10 clientes e depois no loop para buscar o endereço de cada cliente. Isso é tão óbvio que ninguém deveria estar caindo mais nisso. O correto é fazer:
 
----ruby
+```ruby
 clients = Client.includes(:address).limit(10)
  
 clients.each do |client|
@@ -52,13 +52,13 @@ Nesta versão já estamos puxando os endereços ao mesmo tempo que puxamos os cl
 
 Complementando e enfatizando: aprendam tudo sobre as as APIs do ActiveRecord e como as queries são montadas. Uma coisa horrorosa que já vi diversas vezes foram tentativas de ser "esperto" e fazer código como este:
 
----ruby
+```ruby
 Subscription.all.select { |s| s.expired? }.each { |s| s.destroy }
 ```
 
 Para ficar claro: isso **NÃO** é "usar as funcionalidades funcionais de Ruby". Isso é ser ignorante quanto bancos de dados e ORMs em geral. Só para ficar absolutamente claro, esse código deveria ser assim:
 
----ruby
+```ruby
 Subscription.where(expired: true).destroy_all
 Subscription.destroy_all(expired: true)
 ```

@@ -33,7 +33,7 @@ Moving between Ruby and Crystal is not so difficult. The Crystal team did a fant
 
 For example, let's compare a snippet from my Crystal version first:
 
---- ruby
+```ruby
 def fetch(page_link : String)
   get page_link do |html|
     images = html.xpath("//img[contains(@id, 'img')]").as(XML::NodeSet)
@@ -56,7 +56,7 @@ end
 
 Now let's check the ported Ruby version:
 
---- ruby
+```ruby
 def fetch(page_link)
   get page_link do |html|
     images = html.css('#img')
@@ -90,14 +90,14 @@ In Rails we are used to the dared `#try` method. Ruby 2.3 introduced the [safe n
 
 So, in Ruby 2.3 with Rails, both of the following lines are valid:
 
---- ruby
+```ruby
 obj.try(:something).try(:something2)
 obj&.something&.something2
 ```
 
 In Crystal we can do the following:
 
---- ruby
+```ruby
 obj.try(&.something).try(&.something2)
 ```
 
@@ -109,7 +109,7 @@ Instead of Ruby's `Net::HTTP` we have `HTTP::Client` (but their methods and sema
 
 There are other differences, for example, this is the main file that requires all the others in Ruby:
 
---- ruby
+```ruby
 ...
 $LOAD_PATH.unshift File.join(File.dirname(__FILE__), "lib")
 
@@ -125,14 +125,14 @@ require "manga-downloadr/workflow.rb"
 
 And this is the Crystal version of the same manifest:
 
---- ruby
+```ruby
 require "./cr_manga_downloadr/*"
 ...
 ```
 
 On the other hand, we need to be a bit more explicit in each Crystal source code file, and declare the specific dependencies where needed. For example, in the `pages.cr` file it starts like this:
 
---- ruby
+```ruby
 require "./downloadr_client"
 require "xml"
 
@@ -155,7 +155,7 @@ What may really scare you at first is the need for Type Annotations, to understa
 
 For example, if I change the following line in the `page_image_spec.cr` test file:
 
---- ruby
+```ruby
 # line 8:
 image = CrMangaDownloadr::PageImage.new("www.mangareader.net").fetch("/naruto/662/2")
 
@@ -191,7 +191,7 @@ Now, the `Chapters`, `Pages`, `PageImage` (all subclasses of `DownloadrClient`) 
 
 This is how the `Pages` class is implemented:
 
---- ruby
+```ruby
 ...
 module CrMangaDownloadr
   class Pages < DownloadrClient(Array(String))
@@ -209,7 +209,7 @@ end
 
 That's why we have the `(Array(String))` when inheriting from `DownloadrClient`. Let's see how the `DownloadrClient` superclass is implemented.
 
---- ruby
+```ruby
 module CrMangaDownloadr
   class DownloadrClient(T)
     ...
@@ -234,7 +234,7 @@ If you come from Java, C#, Go or any other modern static typed language, you pro
 
 You can go very far with Generics, check out how our `Concurrency.cr` begins:
 
---- ruby
+```ruby
 class Concurrency(A, B, C)
   ...
   def fetch(collection : Array(A)?, &block : A, C? -> Array(B)?) : Array(B)?
@@ -250,7 +250,7 @@ class Concurrency(A, B, C)
 
 And this is how we use it in the `workflow.cr`:
 
---- ruby
+```ruby
 private def fetch_pages(chapters : Array(String)?)
   puts "Fetching pages from all chapters ..."
   reactor = Concurrency(String, String, Pages).new(@config)
@@ -266,7 +266,7 @@ This is the "first-version-that-worked" so it's probably not very idiomatic. Eit
 
 The pure Ruby version ends up just like this:
 
---- ruby
+```ruby
 class Concurrency
   def initialize(engine_klass = nil, config = Config.new, turn_on_engine = true)
     ...
@@ -307,7 +307,7 @@ In the case of this downloader process, it will perform thousands of HTTP reques
 
 A sequential version of what has to be done, in Ruby, looks like this:
 
---- ruby
+```ruby
 def fetch_sequential(collection, &block)
   results = []
   engine  = @turn_on_engine ? @engine_klass.new(@config.domain) : nil
@@ -329,7 +329,7 @@ Both are lightweight ways and you can have hundreds or even thousands running in
 
 To transform the sequential version in a concurrent one, this is what we can do in Crystal:
 
---- ruby
+```ruby
 def fetch(collection : Array(A)?, &block : A, C? -> Array(B)?) : Array(B)?
   results = [] of B
   collection.try &.each_slice(@config.download_batch_size) do |batch|
@@ -367,7 +367,7 @@ By the way, this Crystal implementation is similar to what you would do if you w
 
 In the Ruby version you can fire up native Threads - which has a lot of overhead to spawn! - and assume the HTTP requests will run almost all in parallel. Because it's I/O intensive, you can have them all in parallel. This is what it looks like:
 
---- ruby
+```ruby
 def fetch(collection, &block)
   results = []
   collection&.each_slice(@config.download_batch_size) do |batch|
@@ -394,7 +394,7 @@ Once each Thread finishes the same URI request/process, the results must be accu
 
 To prove that Ruby can support concurrent I/O operations, I have added 2 methods to the `Concurrent` class, the first is just `#fetch` and it's the Thread implementation above. The second is called `#fetch_sequential` and it is the sequential version also shown at the beginning of this section. And I added the following spec:
 
---- ruby
+```ruby
 it "should check that the fetch implementation runs in less time than the sequential version" do
   reactor = MangaDownloadr::Concurrency.new(MangaDownloadr::Pages, config, true)
   collection = ["/onepunch-man/96"] * 10
@@ -436,7 +436,7 @@ This is how long the Crystal version takes:
 
 Just for fun I tried to run the Ruby version under JRuby 9.1.1.0. To run with JRuby just add the following line in the `Gemfile`:
 
---- ruby
+```ruby
 ruby "2.3.0", :engine => 'jruby', :engine_version => '9.1.1.0'
 ```
 

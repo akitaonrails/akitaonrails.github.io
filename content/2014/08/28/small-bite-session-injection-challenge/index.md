@@ -14,7 +14,7 @@ Eu expliquei rapidamente sobre Metasploit no [artigo anterior](http://www.akitao
 
 Mas se abriu até aqui no artigo é porque quer saber o que é o problema. O @joernchen [publicou exatamente o seguinte código](https://gist.github.com/joernchen/9dfa57017b4732c04bcc):
 
---- ruby
+```ruby
 # Try to become "admin" on http://gettheadmin.herokuapp.com/ 
 # Vector borrowed from real-world code ;)
  
@@ -68,7 +68,7 @@ end
 
 Basicamente um trecho do arquivo de <tt>routes.rb</tt> e o <tt>login_controller.rb</tt>. Assuma que também tem um form que poderia ser algo assim:
 
---- html
+```html
 <%= form_tag '/login', method: :post do %>
   <%= text_field_tag 'login' %>
   <%= password_field_tag 'password' %>
@@ -78,7 +78,7 @@ Basicamente um trecho do arquivo de <tt>routes.rb</tt> e o <tt>login_controller.
 
 E um model chamado <tt>User</tt> que poderia ter a seguinte migration:
 
---- ruby
+```ruby
 class CreateUsers < ActiveRecord::Migration
   def change
     create_table :users do |t|
@@ -105,7 +105,7 @@ Primeiro entenda o que o controller faz:
 
 Quando o form é renderizado, ele gera um HTML assim:
 
---- html
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -131,14 +131,14 @@ O importante: o token CSRF na tag de meta. Ele é diferente toda vez que você p
 
 E a parte que é o buraco no controller é este:
 
---- ruby
+```ruby
 user_id = session[params[:token]]
 @user = User.find(user_id) if user_id
 ```
 
 Se o <tt>params[:token]</tt> for "_csrf_token", o equivalente ficaria assim:
 
---- ruby
+```ruby
 @user = User.find(session['_csrf_token'])
 ```
 
@@ -146,7 +146,7 @@ Agora, sabemos que o <tt>User.create</tt> inicial vai criar um admin com o ID qu
 
 Quando você faz:
 
---- ruby
+```ruby
 "1abcd".to_i # => 1
 ```
 
@@ -154,7 +154,7 @@ Note que ele ignora o que não é string e devolve o inteiro 1.
 
 Portanto, basta dar reload no site até o "_csrf_token" começar com "1" seguindo de letras. Aí ele vai fazer <tt>User.find("1abcd")</tt> que é o mesmo que <tt>User.find(1)</tt> e pronto! Conseguimos o usuário. E para piorar, o código do controller ainda faz isso em seguinte:
 
---- ruby
+```ruby
 if params[:password] && @user && params[:password].length > 6
   @user.password = params[:password]
     if @user.save
@@ -172,7 +172,7 @@ http://gettheadmin.herokuapp.com/reset/_csrf_token?password=1234567
 
 E para automatizar o exploit, fiz este pequeno script:
 
---- ruby
+```ruby
 require 'rubygems'
 require 'mechanize'
 

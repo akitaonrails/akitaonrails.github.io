@@ -47,13 +47,13 @@ And this is the "algorithm".
 
 As I said in my previous article, most developers would create a Facemesh-like website adding integer fields in the table of contestants with the count of upvotes, downvotes and they would do something silly such as:
 
---- ruby
+```ruby
 score = upvotes - downvotes
 ```
 
 Or even sillier:
 
---- ruby
+```ruby
 score = upvotes / (upvotes + downvotes)
 ```
 
@@ -149,7 +149,7 @@ That will make the tournments more competitive and make the new players more mot
 
 From the elo gem documentation, this is how you use it:
 
---- ruby
+```ruby
 kong  = Elo::Player.new
 bowser = Elo::Player.new(:rating => 1500)
 
@@ -174,7 +174,7 @@ game8 = kong.versus(bowser, :result => 0) # bowser wins
 
 And this is how you assess the results:
 
---- ruby
+```ruby
 kong.rating       # => 1080
 kong.pro?         # => false
 kong.starter?     # => true

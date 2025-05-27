@@ -28,7 +28,7 @@ TL;DR: Esqueça Paperclip, Carrierwave ou Dragonfly. Use Refile! Ele tem dezenas
 
 Mas repito: leia a documentação e faça provas de conceito, vou reduzir o exemplo da documentação num passo a passo para o cenário de Direct Upload para S3. Assumindo que você tem um model <tt>User</tt> e quer colocar uma imagem de perfil nela. Comece editando a <tt>Gemfile</tt>:
 
---- ruby
+```ruby
 gem "mini_magick"
 gem "refile", require: ["refile/rails", "refile/image_processing"]
 gem "aws-sdk"
@@ -36,7 +36,7 @@ gem "aws-sdk"
 
 Agora vamos criar a configuração do Refile para o AWS-S3, crie o arquivo <tt>config/initializer/refile.rb</tt>:
 
---- ruby
+```ruby
 require "refile/backend/s3"
 
 aws = {
@@ -50,7 +50,7 @@ Refile.store = Refile::Backend::S3.new(prefix: "store", **aws)
 
 Como podem ver estou assumindo que você usa corretamente o [dotenv-rails](http://www.akitaonrails.com/2013/10/19/iniciante-configuracoes-de-ambiente-com-dotenv) para colocar as configurações de S3. Assumindo também que você saber configurar um bucket, incluindo habilitar a configuração de Cross-Origin Resource Sharing (CORS) onde você vai colocar algo parecido com isso:
 
---- xml
+```xml
 <CORSConfiguration>
     <CORSRule>
         <AllowedOrigin>*</AllowedOrigin>
@@ -72,7 +72,7 @@ rake db:migrate
 
 Adicione o Refile no seu model <tt>config/model/user.rb</tt>:
 
---- ruby
+```ruby
 class User < ActiveRecord::Base
   attachment :profile_image
 end
@@ -80,7 +80,7 @@ end
 
 E edite a view do formulário de edição que, se você criou via scaffold, provavelmente vai ser algo como <tt>app/views/users/_form.html.erb</tt>:
 
---- html
+```html
 <%= form_for(@user) do |f| %>
   ...
   <div class="field">
@@ -96,7 +96,7 @@ Note a opção de <tt>direct</tt> que indica que será um Direct Upload, ou seja
 
 Como o controller vai receber campos novos, precisamos permitir que esses parâmetros cheguem no model, então vamos editar o controller responsável que, nesse exemplo, é o <tt>app/controllers/users_controller.rb</tt>:
 
---- ruby
+```ruby
 class UsersController < ApplicationController
   ...
   private
@@ -111,7 +111,7 @@ end
  
 No trecho acima deixei de exemplo possíveis campos como "name" e "email" mas, claro, configure de acordo com os campos que seu formulário realmente envia, o importante são os parâmetros "profile_*". Com isso a aplicação já recebe tudo que precisa, mas como o Direct Upload acontece no browser significa que precisamos de algum Javascript para controlar a chamada Ajax e os eventos associados então vamos adicionar a dependência do Refile editando o arquivo <tt>app/assets/javascripts/application.js</tt>:
 
---- javascript
+```javascript
 ...
 //= require jquery
 //= require jquery_ujs
@@ -123,7 +123,7 @@ No trecho acima deixei de exemplo possíveis campos como "name" e "email" mas, c
 
 Esse é um exemplo então, novamente, edite conforme o que você tem na sua aplicação. A documentação explica como lidar com os eventos como "upload:start" ou "upload:progress" para que você tenha a opção de mostrar coisas como uma barra de progresso ou outra notificação ao usuário indicando se ele está fazendo o upload e quando terminar. Para este exemplo vamos fazer algo simples: apenas desabilitar o botão de submit e reabilitar quando o upload terminar. Para isso vamos editar o arquivo <tt>app/assets/javascripts/users.js.coffee</tt>:
 
---- javascript
+```javascript
 $(document).on "upload:start", "form", (e) ->
   $(this).find("input[type=submit]").attr "disabled", true
 
@@ -144,7 +144,7 @@ Significa que você pode dar override nisso e colocar coisas como autenticação
 
 Finalmente, o correto é sempre configurar o Amazon Cloudfront na frente do storage que estiver usando (no nosso caso, o S3) e [este blog post](http://www.happybearsoftware.com/use-cloudfront-and-the-rails-asset-pipeline-to-speed-up-your-app.html) explica como é simples fazer isso. O conceito é basicamente trocar o domínio e passar a URL para o Cloudfront que, se não tiver a imagem em cache vai pedir pra sua aplicação e a partir daí vai usar do seu próprio cache, deixando a sua aplicação e seu storage mais leves. E para que sua aplicação gere tags de imagens apontando pro CDN, apenas configure o Refile assim:
 
---- ruby
+```ruby
 Refile.host = "//your-dist-url.cloudfront.net"
 ```
 

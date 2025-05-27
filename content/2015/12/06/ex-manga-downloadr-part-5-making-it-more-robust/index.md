@@ -17,7 +17,7 @@ When I was testing only with MangaReader.net as a source, everything worked almo
 
 To recap, the Workflow just organizes each step of the process. It's functions are similar to this:
 
---- ruby
+```ruby
 def process_downloads(images_list, directory) do
   images_list
     |> Enum.map(&Worker.page_download_image(&1, directory))
@@ -28,7 +28,7 @@ end
 
 It deals with a large list, maps over each element sending it to a Worker function to run, like this:
 
---- ruby
+```ruby
 def page_download_image(image_data, directory) do
   Task.async(fn ->
     :poolboy.transaction :worker_pool, fn(server) ->
@@ -44,7 +44,7 @@ First thing to bear in mind is that a "<tt>Task.async/2</tt>" links itself to th
 
 The correct thing to do is to add a [Task.Supervisor](http://elixir-lang.org/docs/stable/elixir/Task.Supervisor.html) and make it deal with each Task child. To do that, we can just add the Supervisor in our supervised tree at "pool_management/supervisor.ex":
 
---- ruby
+```ruby
 defmodule PoolManagement.Supervisor do
   use Supervisor
   ...
@@ -58,7 +58,7 @@ end
 
 And we can replace the "<tt>Task.async/2</tt>" calls to "<tt>Task.Supervisor.async(Fetcher.TaskSupervisor, ...)</tt>" like this:
 
---- ruby
+```ruby
 def page_download_image(image_data, directory) do
   Task.Supervisor.async(Fetcher.TaskSupervisor, fn ->
     :poolboy.transaction :worker_pool, fn(server) ->
@@ -80,7 +80,7 @@ But, as I am in no mood for this refactoring right now (it's Sunday afternoon) I
 
 Turns out that everything I run inside the Poolboy processes are HTTP get requests through HTTPotion. Fortunately I had already refactored every HTTPotion get call into a neat macro:
 
---- ruby
+```ruby
 defmacro fetch(link, do: expression) do
   quote do
     Logger.debug("Fetching from #{unquote(link)}")
@@ -96,14 +96,14 @@ end
 
 Now I only need to replace 1 line in this macro:
 
---- ruby
+```ruby
 -    case HTTPotion.get(unquote(link), ExMangaDownloadr.http_headers) do
 +    case ExMangaDownloadr.retryable_http_get(unquote(link)) do
 ```
 
 And define this new retryable logic in the main module:
 
---- ruby
+```ruby
 defmodule ExMangaDownloadr do
   require Logger
 
