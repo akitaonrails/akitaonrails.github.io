@@ -2,15 +2,17 @@
 {{- $val := index . 0 }}
 {{- $default := index . 1 }}
 
-{{- if and $val (ne $val "") }}
-  {{- /* Force cast para inteiro puro, se falhar, fallback no default */ -}}
-  {{- $intVal := 0 -}}
-  {{- with (int $val) }}
-    {{- $intVal = . -}}
+{{- $strVal := printf "%v" $val }}
+
+{{- if and (not (eq $strVal "")) (not (eq $strVal "<no value>")) }}
+  {{- $parsed := 0 }}
+  {{- with (int $strVal) }}
+    {{- $parsed = . }}
   {{- else }}
-    {{- $intVal = $default -}}
+    {{ warnf "intParam: Falha ao converter '%s' em inteiro. Usando default=%d." $strVal $default }}
+    {{- $parsed = $default }}
   {{- end }}
-  {{- $intVal -}}
+  {{- $parsed }}
 {{- else }}
-  {{- $default -}}
+  {{- $default }}
 {{- end }}
