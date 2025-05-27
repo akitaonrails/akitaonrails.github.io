@@ -3,27 +3,9 @@
   {{ errorf "youtube shortcode: parâmetro 'id' é obrigatório" }}
 {{- end }}
 
-{{- $autoplay := int (trim (default "0" ($.Get "autoplay")) " \n\r\t") }}
-{{- $controls := int (trim (default "1" ($.Get "controls")) " \n\r\t") }}
-{{- $start := int (trim (default "0" ($.Get "start")) " \n\r\t") }}
-{{- $end := int (trim (default "0" ($.Get "end")) " \n\r\t") }}
-{{- $loop := int (trim (default "0" ($.Get "loop")) " \n\r\t") }}
-{{- $mute := int (trim (default "0" ($.Get "mute")) " \n\r\t") }}
-
-{{- $queryParams := slice
-  (printf "autoplay=%d" $autoplay)
-  (printf "controls=%d" $controls)
-  (printf "start=%d" $start)
-  (printf "end=%d" $end)
-  (printf "loop=%d" $loop)
-  (printf "mute=%d" $mute)
-}}
-
-{{- $query := delimit $queryParams "&" }}
-
 <div class="embed-container">
   <iframe width="560" height="315"
-    src="https://www.youtube.com/embed/{{ $id }}?{{ $query }}"
+    src="https://www.youtube.com/embed/{{ $id }}"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
     allowfullscreen>
