@@ -1,23 +1,21 @@
 <!-- Disqus -->
 {{- with .Site.Config.Services.Disqus.Shortname }}
-<script type="text/javascript">
-  //<![CDATA[
-  (function() {
-    var links = document.getElementsByTagName('a');
-    var query = '?';
-    for(var i = 0; i < links.length; i++) {
-      if(links[i].href.indexOf('#disqus_thread') >= 0) {
-        snippet = 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
-        if( (query + snippet).length < 6000 )
-        query += snippet;
-        else
-        break;
-      }
-    }
-    var disqus = document.createElement('script'); disqus.type = 'text/javascript'; disqus.async = true;
-    disqus.src = "https://disqus.com/forums/{{ . }}/get_num_replies.js" + query;
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(disqus, s);
-  })();
-//]]>
+<div id="disqus_thread"></div>
+<script>
+    (function() {  // REQUIRED CONFIGURATION VARIABLE: EDIT THE SHORTNAME BELOW
+        var d = document, s = d.createElement('script');
+        
+        // IMPORTANT: Replace EXAMPLE with your forum shortname!
+        s.src = 'https://{{ . }}.disqus.com/embed.js';
+        
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
 </script>
+<noscript>
+    Please enable JavaScript to view the 
+    <a href="https://disqus.com/?ref_noscript" rel="nofollow">
+        comments powered by Disqus.
+    </a>
+</noscript>
 {{ end }}
