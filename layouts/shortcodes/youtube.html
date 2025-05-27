@@ -27,15 +27,14 @@
 {{- $iframeStyle := or $defaults.iframeStyle "border:0; width:100%; aspect-ratio:16/9;" }}
 
 {{- $query := slice
-    (printf "autoplay=%d" (cond $autoplay 1 0))
-    (printf "controls=%d" (cond $controls 1 0))
-    (printf "start=%d" $start)
-    (printf "end=%d" $end)
-    (printf "loop=%d" (cond $loop 1 0))
-    (printf "mute=%d" (cond $mute 1 0))
+    (printf "autoplay=%d" (int (cond $autoplay 1 0)))
+    (printf "controls=%d" (int (cond $controls 1 0)))
+    (printf "start=%d" (int $start))
+    (printf "end=%d" (int $end))
+    (printf "loop=%d" (int (cond $loop 1 0)))
+    (printf "mute=%d" (int (cond $mute 1 0)))
     | delimit "&"
 }}
-
 
 {{- $src := printf "https://www.youtube.com/embed/%s?%s" $id $query }}
 
