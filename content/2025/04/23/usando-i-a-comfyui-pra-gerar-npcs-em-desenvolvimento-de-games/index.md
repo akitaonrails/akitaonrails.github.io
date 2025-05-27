@@ -28,7 +28,7 @@ Imagine que você é estag em estúdio de jogos. Seu trabalho: criar 100 persona
 
 Eu não fiz esse workflow, quem fez foi o Mickmumpitz. Assista o video inteiro dele pra saber como funciona esse workflow, não vou repetir o que ele já explica:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/grtmiWbmvv0?si=Rf9vX8oQ77fOyqhU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+{{< youtube id="grtmiWbmvv0" >}}
 
 Também não vou compartilhar o workflow dele, porque ele tem um Patreon pago (é super barato, só USD 10 por mês), que te dá acesso a baixar o pacote de workflow inteiro dele [neste link](https://www.patreon.com/posts/free-workflows-120405048)
 

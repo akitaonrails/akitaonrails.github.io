@@ -24,7 +24,7 @@ tags:
 draft: false
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/EOmzo5d0F9Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{< youtube id="EOmzo5d0F9Y" >}}
 
 Hoje vamos fechar a minissérie de Introdução a Redes. Meu objetivo todo foi poder falar sobre minha nova solução de armazenamento e edição de videos com NAS e na sequência, como criei uma rede segura pra conseguir acessar coisas como meu Media Server, mesmo estando do meu celular numa rede insegura fora de casa, que é a mesma solução que empresas tem usado pra conseguir dar infraestrutura pra funcionários remotos. Hoje vamos entender como VPNs funcionam.
 

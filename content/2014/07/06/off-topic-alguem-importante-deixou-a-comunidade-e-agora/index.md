@@ -67,7 +67,7 @@ Se você participa de uma comunidade, não o faz pelos outros, faz por si mesmo.
 
 Aliás, para deixar bem claro: Trabalho Voluntário significa trabalho sem <strong>remuneração financeira</strong> e não sem benefícios ou altruísta. Se seu Trabalho é Financeiramente Remunerado, nesse caso a discussão é outra e o melhor conselho é de Don Draper:
 
-<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='http://www.youtube.com/embed/LruKCZkWVZY' frameborder='0' allowfullscreen></iframe></div>
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'>{{< youtube id="LruKCZkWVZY" >}}</div>
 
 Voltando ao assunto em questão, eu imagino que os nomes que mencionei acima que se retiraram parcialmente ou silenciosamente provavelmente entendem isso. Eles foram buscar satisfação pessoal em outro lugar. Eles não devem nada a ninguém e nem ninguém lhes deve nada.
 

@@ -15,7 +15,7 @@ tags:
 draft: false
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/cSyTjCUFx2A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{< youtube id="cSyTjCUFx2A" >}}
 
 Finalmente vamos tentar instalar e configurar uma das distros Linux mais trabalhosas de todas. O lendário Gentoo foi pensado pra você tirar o máximo proveito do seu hardware, customizando e compilando tudo do zero especificamente pra sua máquina. A primeira parte do video vai cobrir um pouco o que significa instalar uma distro assim. E na segunda e última parte vamos discutir se vale a pena todo o trabalho.
 

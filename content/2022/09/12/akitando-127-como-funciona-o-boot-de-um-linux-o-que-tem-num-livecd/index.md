@@ -15,7 +15,7 @@ tags:
 draft: false
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/5F6BbhgvFOE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{< youtube id="5F6BbhgvFOE" >}}
 
 Instalar distros Linux hoje em dia é muito fácil. Só bootar do pendrive, clicar em "próximo", "próximo" e pronto, tá tudo instalado e funcionando. Qualquer um consegue instalar na maioria das configurações modernas de hardware.
 

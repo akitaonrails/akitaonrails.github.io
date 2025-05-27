@@ -8,7 +8,7 @@ draft: false
 
 DHH did a very good opening keynote to RailsConf'17 explaining about how bullshitty is the current trend of the developers' delusion that they are making "rational", "fact-based" choices when in reality they are mostly attaching to the underlying "values" of some community. Something more akin of "religion" (faith-based choices) than proper science.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Cx6aGMC6MjU" frameborder="0" allowfullscreen></iframe>
+{{< youtube id="Cx6aGMC6MjU" >}}
 
 My language is "faster". My framework is "more elegant". My tool is "more productive". My community is "more friendly". All **bullshitty** reasons to choose something because those reasons don't really matter.
 

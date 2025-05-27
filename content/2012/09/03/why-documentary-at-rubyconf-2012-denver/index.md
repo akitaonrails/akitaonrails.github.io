@@ -21,7 +21,7 @@ He inspired an entire first generation of Rubyist around the turn of the century
 Then in August 19, 2009 he vanished. 
 
 <div class="embed-container">
-<iframe src="http://www.youtube.com/embed/47LtM830ocE" frameborder="0" allowfullscreen></iframe>
+{{< youtube id="47LtM830ocE" >}}
 </div>
 
 Some say that great men are recognized only after their passing ("You either die a hero, or live long enough to see yourself becoming the villain"). Maybe his last stroke of genius was to commit "virtual suicide", by erasing every digital trace of his existence - he actually deleted all his work, his projects, his source codes that were available online. Thanks to technologies such as Git (by the way, this was a great showcase of the recovering capabilities of distributed versioning systems) almost all of the deleted material was recovered and you can find them in places such as [here](http://viewsourcecode.org/why/). But the fact that he disappeared and his whereabouts are still unknown kept the myth going and 3 years later he is still remembered.

@@ -22,7 +22,7 @@ tags:
 draft: false
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/EdOkYEE1J_Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{< youtube id="EdOkYEE1J_Y" >}}
 
 
 Finalmente chegamos ao décimo-quarto e último episódio da série "Começando aos 40". E eu quis coincidir o término da série com o dia da pré-estreia de Avengers: Endgame, porque eu sou geek assim mesmo :-)

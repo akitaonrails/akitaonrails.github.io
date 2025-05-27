@@ -17,7 +17,7 @@ tags:
 draft: false
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/TLRW_xTnQwY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{< youtube id="TLRW_xTnQwY" >}}
 
 Finalmente vou mostrar o que é o Heroku e como é o fluxo de trabalho mínimo de um projeto web ideal. Se você já usa Heroku, aproveite pra compartilhar o video com conhecidos que ainda não usam. Se nunca viu Heroku, prepare-se pra ficar surpreso!
 

@@ -15,7 +15,7 @@ tags:
 draft: false
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Yl-hlwhj2B0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{< youtube id="Yl-hlwhj2B0" >}}
 
 Vamos entender mais sobre Jobs Assíncronos, a diferença de usar Promises ou Bull. E um pouco mais sobre o comportamento do famigerado ChatGPT. Vamos ver se ele realmente substitui programadores durante os códigos deste video.
 

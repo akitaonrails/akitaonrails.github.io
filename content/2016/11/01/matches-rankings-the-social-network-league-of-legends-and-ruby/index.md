@@ -27,7 +27,7 @@ One of my favorite scenes from the movie is when Zuckerberg/Eisenberg is pissed 
 
 When Eduardo Saverin/Andrew Garfield shows up, Zuckerberg asks him:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/BzZRr4KV59I" frameborder="0" allowfullscreen></iframe>
+{{< youtube id="BzZRr4KV59I" >}}
 
 > "Wardo, I need you (...) I need the algorithm used to rank chess players"
 

@@ -171,11 +171,11 @@ If you do require a Final Cut Pro, Logic Pro, Motion 5 workflow, the best option
 
 I am not a full-time developer anymore. And I mix my time running a company, doing presentations, experimenting with tech and doing research. My ideal setup is actually a MacBook Pro. But I am forcing myself to live out of the Apple ecosystems, and it hurts. My web developer side can stay in Linux (Manjaro GNOME is my favorite nowadays) and be happy. But when my Creative side needs tooling, Gimp, Inkscape, Kdenlive, are just not good enough. I am too used to Photoshop, Illustrator, Final Cut/Premiere, Motion 5/After Effects. LibreOffice Impress is terrible to do complex presentations, and  those HTML/JS based slides software are good just for simple stuff. Try to do serious graphics and animation there and you will suffer in hell.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/a59U6kRJHLg" frameborder="0" allowfullscreen></iframe>
+{{< youtube id="a59U6kRJHLg" >}}
 
 If you're a Creative, you **need** Color Calibrated screens (Adobe RGB space), you need the raw processing power to do a quick render and advanced post-processing. Adobe video editors will prefer Windows. Final Cut video editors are well served on Macs, even though the new MacBook Pros cooling system is terrible:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/6TWbXV5xeYE" frameborder="0" allowfullscreen></iframe>
+{{< youtube id="6TWbXV5xeYE" >}}
 
 And if you're a full-time video editor, you can afford either high-end PC or Mac configurations, so there is not much dispute here.
 

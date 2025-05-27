@@ -20,7 +20,7 @@ tags:
 draft: false
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/MI9cdxETA4c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{< youtube id="MI9cdxETA4c" >}}
 
 Finalmente vou falar sobre linguagens que você goste ou use, mas vou fazer isso do meu jeito: escovando bits e explicando como muita coisa funciona por baixo de Python, Javascript e outras linguagens que talvez você não sabia antes de concluir na segunda metade onde discuto onde cada linguagem pode ser melhor aproveitada e porque.
 

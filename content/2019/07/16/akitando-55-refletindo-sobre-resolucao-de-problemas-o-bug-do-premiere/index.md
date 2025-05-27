@@ -17,7 +17,7 @@ tags:
 draft: false
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/3W6xc4Yh2P0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{< youtube id="3W6xc4Yh2P0" >}}
 
 
 No episódio sobre Ubuntu pra Devs da semana passada, quem me acompanhou pelas redes sociais (que é @akitaonrails em todas) viu que eu passei por um perrengue pra conseguir editar o vídeo e isso me custou uns 2 dias de atraso. Por isso o vídeo foi entregue só na sexta-feira e eu dormi mal duas noites.

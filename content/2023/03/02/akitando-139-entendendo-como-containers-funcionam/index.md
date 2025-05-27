@@ -13,7 +13,7 @@ tags:
 draft: false
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/85k8se4Zo70" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+{{< youtube id="85k8se4Zo70" >}}
 
 Finalmente vou pagar promessa. Este é o video sobre containers e Docker que venho falando faz vários videos atrás, que ia fazer. Mas eu precisava explicar a instalação, como Linux boota, como funciona virtualização, pra finalmente chegar em containers. Então este episódio vai amarrar tudo que vocês aprenderam nos videos de Linux, de armazenamento, etc e finalmente vão entender containers do jeito certo.
 

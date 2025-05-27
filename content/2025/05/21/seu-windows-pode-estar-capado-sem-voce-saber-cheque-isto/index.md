@@ -28,7 +28,7 @@ Fui olhar os suspeitos de sempre. Ela tinha instalado jogos pra fazer streaming,
 
 Tentei os próximos suspeitos: software de periféricos, como os da Elgato, Logitech, Razr que instalam um monte de porcaria nas máquinas, e recentemente estava lendo sobre o malware que vinha em todos eles. Assistam este video do GamerNexus pra entender a casa de cartas que é toda a indústria de periféricos com RGB:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/H_O5JtBqODA?si=8yEqSzgtyRg7dqTC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+{{< youtube id="H_O5JtBqODA" >}}
 
 Mesmo desinstalando todos, ainda mesmo comportamento: meio lento, meio travando, instável.
 

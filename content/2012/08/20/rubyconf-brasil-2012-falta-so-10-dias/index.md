@@ -14,9 +14,9 @@ Pessoal, [inscrevam-se](http://rubyconf.com.br/pt-BR/usuarios/cadastro/novo) já
 Para relembrar como foi a RubyConf Brasil do ano passado, resolvi postar novamente alguns dos vídeos que fizemos. Ajudem a divulgar!
 
 <div class="embed-container">
-<iframe src="http://www.youtube.com/embed/IJof8-e-5yg" frameborder="0" allowfullscreen></iframe>
+{{< youtube id="IJof8-e-5yg" >}}
 </div>
 
 <div class="embed-container">
-<iframe src="http://www.youtube.com/embed/J_XNBL7GqBA" frameborder="0" allowfullscreen></iframe>
+{{< youtube id="J_XNBL7GqBA" >}}
 </div>

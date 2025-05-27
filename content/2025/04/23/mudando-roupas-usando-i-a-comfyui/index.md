@@ -42,7 +42,7 @@ Enfim. neste primeiro grupo, é simples, basta carregar uma imagem o mais limpa 
 
 Já avisando que os modelos do IDM-VTON pesam realmente uma **TONELADA**. Ele sozinho baixa nada menos que **30GB** de modelos (já incluso no meu setup) e vai exigir mais de 20GB de VRAM, então abaixo de uma RTX 3090 de 24GB, não vai rodar. Tem como rodar online, no site do Hugging Face. Assista este tutorial que mostra como:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/WL59FqL0L-s?si=go8Qv-0hMiPOVwH_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+{{< youtube id="WL59FqL0L-s" >}}
 
 Esse é o canal do **Aiconomist**. Ele mostra como rodar online e como fazer o setup na sua máquina [neste outro video](https://youtu.be/pFYqPf1Z7x8?si=Ryu5vxPmKGr4zhWx) que usei de referência pra fazer meu workflow. Assinem o canal dele, vale a pena, os tutoriais são bem explicadinhos e tem mais detalhes que não vou explicar neste post.
 

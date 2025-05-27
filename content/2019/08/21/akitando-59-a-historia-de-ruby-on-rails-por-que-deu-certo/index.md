@@ -17,7 +17,7 @@ tags:
 draft: false
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/oEorhw5r2Do" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{< youtube id="oEorhw5r2Do" >}}
 
 
 15 anos atrás Ruby on Rails é lançado, e todo mundo tinha certeza que logo desapareceria.

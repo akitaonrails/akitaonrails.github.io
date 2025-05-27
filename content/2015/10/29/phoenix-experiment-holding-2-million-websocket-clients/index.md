@@ -30,7 +30,7 @@ chris_mccord: @j2h @josevalim @TheGazler yep! 4 cores, 16 gb memory. Single mach
 
 chris_mccord: Heres what a Phoenix app & server look like with 128000 users in the same chatroom. Each msg goes out to 128k users!
 
-<iframe width="420" height="315" src="https://www.youtube.com/embed/vZYG79VqXlM" frameborder="0" allowfullscreen></iframe>
+{{< youtube id="vZYG79VqXlM" >}}
 
 ### 10/22/15
 
@@ -72,7 +72,7 @@ chris_mccord: I’m sure comparable hardware on AWS is even cheaper
 
 chris_mccord: On a bigger @Rackspace box we just 1 million phoenix channel clients on a single server! Quick screencast in action:
 
-<iframe width="420" height="315" src="https://www.youtube.com/embed/N4Duii6Yog0" frameborder="0" allowfullscreen></iframe>
+{{< youtube id="N4Duii6Yog0" >}}
 
 chris_mccord: @AstonJ accordingly to recent tests, ~ 2 million uses 58GB
 

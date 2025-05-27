@@ -21,7 +21,7 @@ tags:
 draft: false
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/SmYQcaP1Jgw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+{{< youtube id="SmYQcaP1Jgw" >}}
 
 
 Um dos assuntos que mais assusta iniciante é esse negócio de "modelagem de software" ou "design de software" ou "arquitetura de software". Vários nomes que parecem ser a mesma coisa e ao mesmo tempo não serem coisa nenhuma. 

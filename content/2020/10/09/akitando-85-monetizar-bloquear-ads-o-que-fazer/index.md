@@ -11,7 +11,7 @@ tags:
 draft: false
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/dOe9X6Q_-nU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{< youtube id="dOe9X6Q_-nU" >}}
 
 
 ## DESCRIÇÃO

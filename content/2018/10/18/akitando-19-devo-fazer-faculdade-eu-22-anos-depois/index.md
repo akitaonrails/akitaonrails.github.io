@@ -14,7 +14,7 @@ draft: false
 Disclaimer: esta série de posts são transcripts diretos dos scripts usados em cada video do canal [Akitando](https://www.youtube.com/channel/UCib793mnUOhWymCh2VJKplQ). O texto tem erros de português mas é porque estou apenas publicando exatamente como foi usado pra gravar o video, perdoem os errinhos.
 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/iRjEa7N8wEo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{< youtube id="iRjEa7N8wEo" >}}
 
 
 ### Descrição no YouTube

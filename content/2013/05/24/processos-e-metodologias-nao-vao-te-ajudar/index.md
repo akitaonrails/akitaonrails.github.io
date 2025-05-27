@@ -49,5 +49,5 @@ Nós desenvolvemos software faz mais de 70 anos. Se a solução fosse tão simpl
 A única coisa que podemos fazer, sempre, é tentar amanhã ser melhor do que hoje. Mas isso não se faz com reuniões, comitês, procedimentos, receitas mágicas, gurus ou palestras. Se faz com prática. Quer ser melhor em software? Pratique software. Agora, você tem uma boa equipe, bons profissionais que realmente se importam com a prática? Agora sim, refinar os processos e aplicar boas técnicas e táticas vai melhorar ainda mais. Mas a ordem é esta: bons profissionais, depois boas metodologias. Repetindo: boas metodologias não criam bons profissionais, mas bons profissionais com certeza saberão tirar vantagem de boas metodologias.
 
 <div class="embed-container">
-<iframe src="http://www.youtube.com/embed/cOQnBdQvqOs" frameborder="0" allowfullscreen></iframe>
+{{< youtube id="cOQnBdQvqOs" >}}
 </div>

@@ -35,7 +35,7 @@ Recomendo assistir as palestras no [TED de Hans Rosling](http://www.ted.com/spea
 E mesmo o tão temido Aquecimento Global é [constantemente questionado](http://www.globalclimatescam.com/). Muitos cientistas não estão convencidos com os dados que temos. E não é importante se o Aquecimento Global é "real", claramente existe gente ganhando muito [dinheiro](http://www.akitaonrails.com/2011/02/03/off-topic-a-revolta-de-atlas-dinheiro-e-a-raiz-de-todo-o-mal) e notoriedade a partir do "medo" causado por esse possível fenômeno natural. Assista ao documentário [Cool It](http://coolit-themovie.com/) onde o pesquisador Bjorn Lomborg desmistificará cada um dos ítens que você - leitor deste blog - certamente não parou para pensar até agora.
 
 <div class="embed-container">
-<iframe src="http://www.youtube.com/embed/kQToxsLYm0M" frameborder="0" allowfullscreen></iframe>
+{{< youtube id="kQToxsLYm0M" >}}
 </div>
 
 Exemplo: se o protocolo de Kyoto tivesse tido sucesso como os lobistas queriam, ela apenas diminuiria a temperatura do mundo em 0.008 graus Fahrenheit até o ano de 2100! E se a política climática da União Européia diminuiria a temperatura em somente 0.1 graus Fahrenheit ao custo de ridículos USD 250 bilhões anualmente pelo próximo século! Com metade desse dinheiro poderíamos acabar com a pobreza, a fome e as doenças do mundo.
@@ -45,7 +45,7 @@ Mesmo se todo mundo dos Estados Unidos passasse a dirigir Prius, isso não colab
 O comediante George Carlin foi quem explicou isso da forma mais clara que já vi:
 
 <div class="embed-container">
-<iframe src="http://www.youtube.com/embed/X_Di4Hh7rK0" frameborder="0" allowfullscreen></iframe>
+{{< youtube id="X_Di4Hh7rK0" >}}
 </div>
 
 Estão entendendo? 
@@ -84,11 +84,11 @@ Todos usam os mesmos discursos, as mesmas formas pomposas e sem conteúdo, eles 
 **BULLSHIT!**
 
 <div class="embed-container">
-<iframe src="http://www.youtube.com/embed/2DX3lZ8peBU" frameborder="0" allowfullscreen></iframe>
+{{< youtube id="2DX3lZ8peBU" >}}
 </div>
 
 <div class="embed-container">
-<iframe src="http://www.youtube.com/embed/_ELJt0vUBi4" frameborder="0" allowfullscreen></iframe>
+{{< youtube id="_ELJt0vUBi4" >}}
 </div>
 
 Qualquer um que diz muitos _"Precisamos"_, falando sempre em primeira pessoa do plural _"nós"_, está claramente querendo ser o ditador de um grupo. Alguém que individualmente tem pouca capacidade e por isso incita mais gente para ganhar a credibilidade das massas. E uma vez que existe um certo número de pessoas, qualquer coisa que ele disser parece ter alguma validade.
@@ -116,7 +116,7 @@ Só para constar, não estou falando de todos que são solidários. Muitos levam
 E elas estão preocupadas com as criancinhas? Veja o trauma que as estão fazendo passar contando falsas histórias de fim do mundo:
 
 <div class="embed-container">
-<iframe src="http://www.youtube.com/embed/BpzpuTLRujg" frameborder="0" allowfullscreen></iframe>
+{{< youtube id="BpzpuTLRujg" >}}
 </div>
 
 Agora, a existência de pessoas assim é justamente mais uma evidência de como nossos tempos hoje são melhores. No começo do século XX ninguém estaria dando nenhuma atenção a "causas sociais" como hoje, muitos sequer tinham o que comer direito, não tinham roupas, morriam por doenças comuns.

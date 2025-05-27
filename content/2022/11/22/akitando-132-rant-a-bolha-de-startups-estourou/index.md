@@ -14,7 +14,7 @@ tags:
 draft: false
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/xxoVJQvEyEU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{< youtube id="xxoVJQvEyEU" >}}
 
 2o Semestre de 2022: todo mundo está vendo toda grande tech startup e emrpesa de tecnologia fazendo demissões em massa depois de apresentar resultados ruins. Isso ainda pode continuar? Por que isso está acontecendo agora? O fim dos lockdowns não deveria ter melhorado tudo? 
 

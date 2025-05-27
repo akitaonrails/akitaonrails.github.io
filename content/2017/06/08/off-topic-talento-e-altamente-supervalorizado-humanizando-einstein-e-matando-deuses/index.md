@@ -141,7 +141,7 @@ Graças a isso saímos da era da subsistência para a agricultura. Para a Revolu
 
 É mais fácil contar a história dessa forma. Só isso, mas inovação é um trabalho de grupo, não individual.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/LHYt2QeS8FM" frameborder="0" allowfullscreen></iframe>
+{{< youtube id="LHYt2QeS8FM" >}}
 
 ### Serendipidade, Aleatoriedade e Sistemas Complexos
 

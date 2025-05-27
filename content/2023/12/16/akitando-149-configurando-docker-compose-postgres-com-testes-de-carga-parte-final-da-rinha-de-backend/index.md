@@ -20,7 +20,7 @@ tags:
 draft: false
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/-yGHG3pnHLg?si=Lvb3kChWsEUyrFT8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+{{< youtube id="-yGHG3pnHLg" >}}
 
 Não podia terminar o ano com pendências, então eis a parte final da Saga da Rinha de Backend. Neste video vou aproveitar os temas da rinha pra demonstrar em mais detalhes como configurar um Docker Compose de verdade, como funciona testes de carga com Gatling, como usar esses dados pra configurar coisas como o Postgres melhor. Também vamos ver como avaliar exatamente quanto pesa rodar SQL num Postgres, como determinar coisas com tamanho de pool de conexões e muito mais!
 

@@ -78,7 +78,7 @@ Um amigo meu me lembrou sobre a evolução das tecnologias de deep learning em r
 
 I.A. é estudada desde literalmente o início da computação moderna no fim dos anos 1930, com ninguém menos que o próprio Alan Turing ou John Von Neumann. Eu contei sobre eles aqui:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/G4MvFT8TGII?si=9Qefl2cU6mNefzqB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+{{< youtube id="G4MvFT8TGII" >}}
 
 Pense um "início lento": de 1930 até cerca de 2012 quando ImageNet e coisas como AlphaGo, GANs e coisas assim começaram a ganhar velocidade. Saímos da perna do "S" pro meio a partir dos anos 2010 e viemos acelerando até agora. Eu "chuto" que ou já estamos ou estamos caminhando pro topo do "S", onde a curva estabiliza e desacelera. Foi isso que aconteceu com deep learning de imagens:
 

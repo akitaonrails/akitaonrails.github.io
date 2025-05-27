@@ -17,7 +17,7 @@ tags:
 draft: false
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/wpPv1dJWjDs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{< youtube id="wpPv1dJWjDs" >}}
 
 
 Você está iniciando neste mercado de tecnologia ou está atuando nele faz menos de 10 anos.

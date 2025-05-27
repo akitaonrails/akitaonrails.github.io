@@ -79,7 +79,7 @@ Twitter shows up. Groupon shows up. Engine Yard shows up. And much more follow.
 
 It's all happening blistering fast, bear in mind that I am only touching the surface here.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/4XpnKHJAok8" frameborder="0" allowfullscreen></iframe>
+{{< youtube id="4XpnKHJAok8" >}}
 
 **2007** arrives and at least 3 big things happen:
 
@@ -120,7 +120,7 @@ The honeymoon is over.
 
 In my personal opinion, this is the year when Rails reached its peak in terms of influence. It was the go-to stack for developers in Macs wanting to create their brand new Lean Start-up.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/icMA9rYNmgU" frameborder="0" allowfullscreen></iframe>
+{{< youtube id="icMA9rYNmgU" >}}
 
 ### 2011: A New Era
 

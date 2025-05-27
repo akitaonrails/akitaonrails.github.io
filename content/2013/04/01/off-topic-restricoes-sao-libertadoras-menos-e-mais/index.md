@@ -29,7 +29,7 @@ Em resumo: _“Se me dessem mais, eu faria mais, afinal liberdade é ter todas a
 * Por que alguém inventaria maneiras mais baratas quando se tem dinheiro infinito?
 * Para quê ter criatividade para inovar quando não existe essa necessidade?
 
-<iframe width="420" height="315" src="https://www.youtube.com/embed/EUXnJraKM3k" frameborder="0" allowfullscreen></iframe>
+{{< youtube id="EUXnJraKM3k" >}}
 
 E a resposta é simples: abundância significa ausência da necessidade de se fazer escolhas. E não ter que fazer escolhas significa incapacidade em priorizar. Priorização é a consequência de se viver sobre restrições. E quando alguma coisa “não é possível” dentro dessas restrições, usando somente as “formas convencionais”, é quando alguém se vê literalmente “forçado” a ser criativo para sair dessas formas convencionais e criar a real “inovação”. Inovação é o que torna o impossível hoje possível amanhã.
 

@@ -21,7 +21,7 @@ tags:
 draft: false
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/unpJgmjTLEg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{< youtube id="unpJgmjTLEg" >}}
 
 Como video de fim de 2022, vou participar de uma corrente chamada "Top 3 Distros Linux". Vou eleger 3 distros Linux que gosto e depois falar sobre distros Linux em geral. 
 

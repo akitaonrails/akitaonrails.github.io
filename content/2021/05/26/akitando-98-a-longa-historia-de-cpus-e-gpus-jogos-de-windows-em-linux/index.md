@@ -16,7 +16,7 @@ tags:
 draft: false
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/JEp7ozWqIps" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{< youtube id="JEp7ozWqIps" >}}
 
 Finalmente parei pra brincar de jogos de Steam/Windows rodando em Linux na mesma (ou melhor) performance. LSI Steam + Wine + DXVK + Proton-GE. Qual é a história que nos trouxe até aqui? Hoje quero contar 30 anos de história de CPUs e GPUs pra você ter um panorama de como as coisas evoluíram no mundo gráfico até hoje. E a partir de 01:01:26 falar mais especificamente de como configurei NVIDIA Optimus no meu laptop.
 

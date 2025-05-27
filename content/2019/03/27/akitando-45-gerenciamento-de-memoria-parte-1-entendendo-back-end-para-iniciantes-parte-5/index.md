@@ -18,7 +18,7 @@ tags:
 draft: false
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/9AK_1gqEfkQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{< youtube id="9AK_1gqEfkQ" >}}
 
 
 Eu disse no episódio anterior que não sabia se ia falar sobre Gerenciamento de Memória, mas acho que não dá pra terminar a série e não falar disso. Então hoje vamos escovar bits um pouco. Como a série é pra iniciantes, vale revisitar um pouco sobre representações binárias e hexadecimal e entender mais sobre como o computador e seus programas enxergam essa tal de "memória".

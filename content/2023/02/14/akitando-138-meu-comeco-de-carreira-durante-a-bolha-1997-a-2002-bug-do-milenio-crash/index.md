@@ -31,7 +31,7 @@ tags:
 draft: false
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/4_59jz7BOMA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+{{< youtube id="4_59jz7BOMA" >}}
 
 Já tinha feito videos sobre antes de 1997 e sobre depois de 2002, ficou faltando contar justamente sobre como foi meu começo de carreira, a transição da faculdade pros primeiros empregos, de agência a pontocom, de CD-ROMs pra Web, tudo que eu passei no final dos anos 90 até a virada do século, incluindo o Bug do Milênio.
 

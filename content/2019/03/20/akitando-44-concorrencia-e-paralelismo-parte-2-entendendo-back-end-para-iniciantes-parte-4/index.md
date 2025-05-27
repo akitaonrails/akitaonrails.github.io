@@ -22,7 +22,7 @@ tags:
 draft: false
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/gYJSWs-gp1g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{< youtube id="gYJSWs-gp1g" >}}
 
 
 Finalmente! Chegamos ao FIM do assunto sobre Concorrência e Paralelismo! Desta vez vou finalizar o que faltou falar sobre processos, threads, como eles se coordenam, quanto isso custa pro sistema operacional. E então vamos vamos sobre Green-Threads e como as linguagens modernas lidam com elas.

@@ -38,7 +38,7 @@ Em 2024, com exceção se precisa desenvolver apps pra iOS ou coisas específica
 
 Não é o tema do artigo, mas já que toquei no assunto, estava justamente  assistindo um review do [BazziteOS](https://bazzite.gg/) rodando no **Asus ROG Ally** (meu favorito), criando um Steam Deck ainda mais potente. É Fedora rodando num handheld, com uma interface tão boa que ninguém sabe que é Linux por baixo, rodando jogos com mesma performance que em Windows. É impressionante mesmo. Quem ficou totalmente pra trás em games foi a Apple.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/OwWRCrGoXV0?si=NgTD56FRAnyOSyUB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+{{< youtube id="OwWRCrGoXV0" >}}
 
 Isso tudo dito, o DHH mudou pra um hardware muito bacana de uma empresa pequena e nova chamada [Framework](https://frame.work/), que faz notebooks modulares. A idéia é não precisar jogar tudo fora quando quiser fazer upgrades de hardware. Só trocar o módulo pra um mais novo. E não só coisas simples como trocar uma porta USB-A por uma USB-C, mas até trocar GPU, trocar placa-mãe, monitor. 
 

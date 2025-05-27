@@ -15,7 +15,7 @@ tags:
 draft: false
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/H_-7o_pLn1s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{< youtube id="H_-7o_pLn1s" >}}
 
 Finalmente vou discutir um pouco sobre Programação Orientada a Testes e o que isso tem a ver com gerenciamento de projetos, equipes, e um pouco sobre como todo mundo ainda encara estimativas da maneira errada.
 

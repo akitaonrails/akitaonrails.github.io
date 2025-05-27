@@ -22,7 +22,7 @@ tags:
 draft: false
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/IDnabc3DjYY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+{{< youtube id="IDnabc3DjYY" >}}
 
 Este episódio levou literalmente MESES pra eu conseguir fazer. Entre atualizar o hardware da minha máquina, testar todo tipo de combinação de configuração, até conseguir rodar jogos da Steam, num Windows virtualizado, a quase mesma velocidade que nativo.
 

@@ -135,6 +135,6 @@ The 2017 edition was successfully delivered. Preparations for 2018 edition, **st
 
 Welcome to ~~Rapture~~ THE CONF!
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Cvwe_O9qLoo" frameborder="0" allowfullscreen></iframe>
+{{< youtube id="Cvwe_O9qLoo" >}}
 
 <iframe src="//www.slideshare.net/slideshow/embed_code/key/bGLzIlXdjtyVmS" width="668" height="714" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/akitaonrails/the-conf-opening-keynote" title="THE CONF - Opening Keynote" target="_blank">THE CONF - Opening Keynote</a> </strong> from <strong><a href="https://www.slideshare.net/akitaonrails" target="_blank">Fabio Akita</a></strong> </div>

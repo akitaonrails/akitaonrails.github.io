@@ -28,7 +28,7 @@ tags:
 draft: false
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Bfm3Ms2cTg0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+{{< youtube id="Bfm3Ms2cTg0" >}}
 
 Não se pode ser um bom programador sem entender de verdade como bancos de dados funcionam. E não se pode entender banco de dados sem entender algoritmos e estruturas de dados. E hoje vou mostrar como dos primeiros bancos de dados dos anos 80 chegamos aos SQL e NoSQL atuais. 
 

@@ -54,7 +54,7 @@ Vamos dar alguns exemplos. Se eu perguntar a um iniciante como procurar por pala
 
 A maioria nem pensaria na 3a solução. E se pensar não sabe porque. E se eu disser que - obviamente de forma absolutamente crú e resumida - a solução está em transformar um documento e os termos de pesquisa em vetores e calcular a relevância entre os termos de procura e os documentos por [similaridade de cosseno](http://en.wikipedia.org/wiki/Cosine_similarity)? Pois é exatamente isso que significa [Vector Space Model](http://en.wikipedia.org/wiki/Vector_space_model) (VSM) que você vai encontrar em diversas engines de procura.
 
-<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='http://www.youtube.com/embed/ZEkO8QSlynY' frameborder='0' allowfullscreen></iframe></div>
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'>{{< youtube id="ZEkO8QSlynY" >}}</div>
 
 O conhecimento que leva a isso se chama [**Álgebra Linear**](http://en.wikipedia.org/wiki/Linear_algebra). Lembra-se disso do PRIMEIRO ano de Ciência da Computação? Em particular sobre esse assunto recomendo assistir uma palestra que fiz sobre isso chamado ["Como não fazer pesquisas usando LIKE"](https://www.eventials.com/akitaonrails/como-nao-fazer-pesquisas-usando-like/).
 

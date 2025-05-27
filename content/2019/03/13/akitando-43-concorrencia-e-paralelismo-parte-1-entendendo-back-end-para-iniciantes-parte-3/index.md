@@ -17,7 +17,7 @@ tags:
 draft: false
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/cx1ULv4wYxM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{< youtube id="cx1ULv4wYxM" >}}
 
 
 De volta à série Começando aos 40, estamos já no oitavo episódio! E ela é a Parte 3 do tema de Back-end, mas desta vez vou precisar me alongar mais explicando conceitos antes de retornar às ferramentas.

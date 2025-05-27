@@ -26,7 +26,7 @@ tags:
 draft: false
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/bwO8EZf0gLI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+{{< youtube id="bwO8EZf0gLI" >}}
 
 
 Finalmente chegamos no tema final da série! Vamos falar um pouco sobre o tal do "devops".

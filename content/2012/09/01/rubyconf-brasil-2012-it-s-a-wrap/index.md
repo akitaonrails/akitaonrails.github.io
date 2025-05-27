@@ -19,11 +19,11 @@ We, of the Rubyconf Brasil staff, hope that everyone found something you really 
 
 
 <div class="embed-container">
-<iframe src="http://www.youtube.com/embed/pKhI6-cdMCc" frameborder="0" allowfullscreen></iframe>
+{{< youtube id="pKhI6-cdMCc" >}}
 </div>
 
 <div class="embed-container">
-<iframe src="http://www.youtube.com/embed/YaLdpsk_ep8" frameborder="0" allowfullscreen></iframe>
+{{< youtube id="YaLdpsk_ep8" >}}
 </div>
 
 Thank you very much!
