@@ -63,7 +63,7 @@ Recomendo que leiam esse arquivo, ele está todo comentado e pode ter opções q
 
 Esse é o tipo de coisa que um amador não faria, e até entendo. Amadores não sabem organizar commits de git de qualquer jeito, provavelmente as mensagens automáticas do Aider vão ser menos piores. Olha como fica:
 
-![Aider Git commit](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbmdCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--84a9c7ae3d08b1824ad4c9811ea3a37b93b12026/Screenshot%20From%202025-04-25%2012-06-49.png?disposition=attachment&locale=en)
+![Aider Git commit](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/22ji8rp2bbw5lsxwbmpneh5clhcr?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-25%2012-06-49.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-25%252012-06-49.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001256Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=ad6e648834dac9044a8266bd398720f368d1c8fcd4b7a4bef0ed3cf98a04a074)
 
 Aviso pra júnior: esse é o tipo de coisa que se eu fosse avaliar, ia ganhar ponto negativo se eu visse sendo feito assim. Faça direito: re-cheque as mudanças e organize em commits de verdade. O Aider "diz" que fez refactor, mas nem sempre ele acerta, mas mesmo assim faz o commit, e aí sobe errado. Se for pra subir tudo automático, mesmo com erro, realmente, não preciso de você.
 
@@ -261,7 +261,7 @@ Retrying in 4.0 seconds...
 
 Daí não tem jeito, tem que ir no site [Google AI Studio]() configurar sua conta de cobrança, adicionar seu cartão e subir pra um plano pago um pouco melhor como o 2.0 Flash, que suporta 2.000 RPM e 4M TPM e o preço não é caro:
 
-![Gemini 2.0 Flash](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbmtCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b384c8b3fe86bdeda21a33094d5a9ff138abb090/Screenshot%20From%202025-04-25%2012-52-41.png?disposition=attachment&locale=en)
+![Gemini 2.0 Flash](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/ozbz5tvmpyla0huinqa6da2iwb1m?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-25%2012-52-41.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-25%252012-52-41.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001258Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=d6461b18983267dc0b7c623d454d45bc93b2cc0677222b646c0a169ec2935244)
 
 Alguns dizem que hoje o Gemini 2.0 tem oferecido resultados de código similares ou superiores ao Claude Sonnet 3.7. Varia de caso a caso, não é nunca uma medida absoluta, mas na minha pequena experiência, ambos são muito bons e eu vejo ambos sendo superiores mesmo ao ChatGPT 4 ou o4. Mas a OpenAI, pra mim, tem mesmo sido melhor em respostas "verbais", então a estratégia de separar o papel de "arquiteto" pra OpenAi e de "coder" pra Gemini ou Claude, faz MUITO sentido.
 
@@ -311,7 +311,7 @@ ollama pull qwen2.5-coder:32b
 
 Note que estou explicitamente pedindo a versão 32B, mas você pode experimentar uma mais leve como a 7b. Cada modelo suportado pelo Ollama tem [uma página](https://ollama.com/library/qwen2.5-coder) onde descreve detalhes desse tipo:
 
-![qwen 2.5 coder page](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbm9CIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e181c568f47c044f552891f4f7b67ffaf673ad9b/Screenshot%20From%202025-04-25%2013-03-43.png?disposition=attachment&locale=en)
+![qwen 2.5 coder page](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/q76sz7qyqupk8jv3gm1igpk4q0i3?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-25%2013-03-43.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-25%252013-03-43.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001259Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=358daea8caa064001c9d6f615bbe1237e184cccc5afd1871cc516771a53254f6)
 
 Dependendo de qual benchmark sintético você "acreditar" vai ver comparações como esta:
 
@@ -402,7 +402,7 @@ O que ferramentas como Aider, Cursor, Co-Pilot e outros fazem é ter parâmetros
 
 Mas quando você manda a primeira pergunta que fica interessante, olha isso:
 
-![Aiden Verbose 1](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbnNCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--d6f1adccfa1286748e4d40d853a1aa7266645281/Screenshot%20From%202025-04-25%2013-25-59.png?disposition=attachment&locale=en)
+![Aiden Verbose 1](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/rb4hxk4cn181fkkf841snl7ygfja?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-25%2013-25-59.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-25%252013-25-59.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001300Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=1d116457da382c16c905b044b837e3de24570480e638e6c216bea18553c8811d)
 
 _"Aja como um desenvolvedor de software. Sempre use boas práticas quando codar. Respeite e use convenções, bibliotecas, etc que já estão presentes nesta base de código. Seja diligente e sem preguiça! Você NUNCA vai deixar comentários descrevendo código sem implementar! Você sempre vai IMPLEMENTAR COMPLETAMENTE o código necessário! ..."_
 
@@ -467,13 +467,13 @@ E é assim que funciona um "I.A.  pra software", com uma tonelada de prompts de 
 
 Um modelo sozinho não faz nada. Quem faz é a ferramenta que carrega o modelo, no caso o Aider, ou o Co-Pilot, ou o Cursor. O programa vem pré-carregado com vários perfis/personas/roles pré-escritos pra adicionar prompts ao modelo. No código-fonte do Aider, temos este exemplo de [architect_prompts.py](https://github.com/Aider-AI/aider/blob/main/aider/coders/architect_prompts.py)
 
-![architect role](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbndCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b9d3e817e4d361e30058a98b011517ff355b78ba/Screenshot%20From%202025-04-25%2013-36-48.png?disposition=attachment&locale=en)
+![architect role](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/nlzkq16pcfjwwow5tbibocr1oa1n?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-25%2013-36-48.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-25%252013-36-48.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001302Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=ee0f90e53dcee494b60dcef1db7fe27913c17bc56199b7b7230556f147cabe7d)
 
 Olha só, na primeira variável `main_system` está aquele primeiro prompt que vimos no começo desta seção. Tem vários outros perfis pré-programados que é bom entender a diferença. Cada modelo funciona melhor com determinados tipos de instrução, com diferentes limitações.
 
 Neste outro código [commands.py](https://github.com/Aider-AI/aider/blob/main/aider/commands.py) é onde temos declarado como o Aider consegue fazer coisas como `git commit` direto no seu projeto ou rodar o linter da sua linguagem:
 
-![commands](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbjBCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b8c3ad26b8f63f8f79f9bd6506b030991a013fea/Screenshot%20From%202025-04-25%2013-39-43.png?disposition=attachment&locale=en)
+![commands](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/bdt1a5dqj28bvzhqximdi8j2gx2g?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-25%2013-39-43.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-25%252013-39-43.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001303Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=5f7af9b49e825cb0d3fed287b198240f716accef047c0f5cd15d4dad5b08b39c)
 
 Nada disso é "mágica", é tudo pré-programado e ele - por segurança - só deve conseguir fazer comandos limitados e bem checados. Não queremos comandos que façam coisa demais fora do diretório do projeto (aliás, NUNCA, fora do diretório do projeto). Nem deveria poder rodar muitos executáveis. Nunca se sabe que bugs de segurança podem acontecer quando se roda comandos cegamente.
 
@@ -481,7 +481,7 @@ Se você é de cyber-segurança, é aqui que deveria auditar. Mas essa é a vant
 
 Teste o [Aider](https://aider.chat/docs/install.html) hoje e leia todo esse site de documentação. É curto e tem dicas importantes que podem ajudar casos especiais.
 
-![Aider](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbjRCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--6db69bd4ff2638b77f27cab91c25c0e28a605c4e/Screenshot%20From%202025-04-25%2013-42-14.png?disposition=attachment&locale=en)
+![Aider](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/0zeis5fjnkuf2qkmwy7pm6vc62gi?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-25%2013-42-14.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-25%252013-42-14.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001305Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=359f045af8f3fe11f065390cb752d187c1712d02bfe83c3086c3d37faa398564)
 
 ### OpenRouter
 
@@ -504,7 +504,7 @@ Uma funcionalidade legal do Aider é poder rodar de dentro do chat com `/run pyt
 
 Resumo:
 
-![OpenRouter Credits](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBb0FCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--34c9ce00dcb0e606a427ad82a569099c6bd5ad6a/Screenshot%20From%202025-04-25%2016-53-20.png?disposition=attachment&locale=en)
+![OpenRouter Credits](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/q4fiux9vj0d5l6e8p4nmku4rcjma?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-25%2016-53-20.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-25%252016-53-20.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001306Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=84382492ced01078fd3530783fabdf0471c76a2001494c31257c90f032c79139)
 
 Gastou quase 3 doletas e não resolveu o problema. Vantagem da OpenRouter é que fica tudo centralizado num lugar só. Ele pagou o Google pelo uso do Gemini e desconta dos meus créditos. Tinha pré-carregado com 100 créditos (mais ou menos 100 dólares). E em 30 minutos já foi embora 3 créditos. Faça as contas.
 

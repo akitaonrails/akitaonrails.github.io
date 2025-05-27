@@ -15,7 +15,7 @@ draft: false
 
 Todos que me acompanham, em particular no [Instagram](https://www.instagram.com/akitaonrails/), sabem da minha saga com NAS. Em particular meu novo Synology DS1821+ com mais de **100TB** (4 HDs de 12TB e 4 HDs de 20TB e já tenho 4 outros HDs de 20TB pra atualizar no futuro quando precisar). Uso pra muita coisa, em particular meu [Netflix Pessoal](https://www.akitaonrails.com/2024/04/03/meu-netflix-pessoal-com-docker-compose) que expliquei nesse outro post como eu configurei com Docker.
 
-![Synology DSM](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBaDBCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--f1926772b5a43634dccb510a2a34fa33dece5e2c/Screenshot%20From%202025-04-17%2019-46-47.png?disposition=attachment&locale=en)
+![Synology DSM](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/4egervwxarfvls2uw3kg5k13i3hd?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-17%2019-46-47.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-17%252019-46-47.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000957Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=cccaeb9ba3c0cebdcad917a6ca7259a80b083710f306a404bf9130a798841e76)
 
 Nos destaques e post sobre isso no Insta já discuti detalhes desse NAS mas resumindo:
 
@@ -25,7 +25,7 @@ Nos destaques e post sobre isso no Insta já discuti detalhes desse NAS mas resu
 
 Na verdade, eu confio tão pouco em "cloud" que eu uso mas faço uma cópia de tudo no meu NAS local usando o app Cloud Sync que tem na loja da Synology:
 
-![Cloud Sync](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBaUVCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--cc3c67ca43495fef1f4f8d93e9ecffd534722071/Screenshot%20From%202025-04-17%2020-11-02.png?disposition=attachment&locale=en)
+![Cloud Sync](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/deednjd3ii774b5b7jdxu1azox3x?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-17%2020-11-02.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-17%252020-11-02.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000958Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=3a83266cf4b4585476259ce929a3b01521ac02bb27f5ef045f51279e0fee9b13)
 
 **"Ah, mas e se der pau irreversível no seu NAS e você perder TUDO!!??"**
 
@@ -37,21 +37,21 @@ Eu tenho algumas coisas gravadas em Millenial Discs (mdiscs, que são como Blu-R
 
 Glacier é como S3 só que bem mais barato porque ele não tem acesso fácil nem transferência rápida. É feito pra backups mesmo, que você grava uma vez e quase nunca acessa de novo. **ENCRIPTADO**, lógico.
 
-![Glacier Backup](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBaUlCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--32c69218fcf474976e45ae7c9e864ebccbf959a3/Screenshot%20From%202025-04-17%2020-12-47.png?disposition=attachment&locale=en)
+![Glacier Backup](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/y83uw9rtu8p5hgsq0ugyanb5cibj?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-17%2020-12-47.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-17%252020-12-47.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000959Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=2ca881942e3c6db09e0722cbf7666427949e214e3599baa15c91a3507a6c71b4)
 
 Notem como eu confio tão pouco em cloud, como dropbox, que eu faço uma cópia no meu NAS e mando pra outro cloud. Tem coisas com múltiplas cópias mesmo. Eu não confio no serviço de ninguém, sempre algum humano vai cometer um erro catastrófico algum dia, é só questão de tempo. 
 
 Ah sim, e eu baixo mesmo muita coisa de torrent e eu me considero Power User e sei o que é malware/virus do que não é e sei como funcionam. Mas eu também sou humano então todos os meus Windows tem no mínimo o Windows Defender ativo, Malwarebytes que eu gosto também e mesmo assim eu ainda rodo mais um antivirus no NAS também, que também tem na loja da Synology. Eu não confio em nada sem redundância de tudo, sob meu total controle.
 
-![antivirus](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBaU1CIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--03808abbe4284ee607e125b48c38d6667fa055eb/Screenshot%20From%202025-04-17%2020-17-22.png?disposition=attachment&locale=en)
+![antivirus](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/bekpbla77t4o4uxcysqks18racwc?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-17%2020-17-22.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-17%252020-17-22.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001000Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=e9b2241f420f60227f185be2687ac1ab21c17d182d8bba94a2c4c7b70309d94b)
 
 Mais importante e porque escolho BTRFS tanto no NAS quanto no meu PC: **snapshots**. Ele faz snapshots de tudo periodicamente. Assim, se alguma hora eu rodar um `rm -Rf` da vida errado, eu não perco nada, basta voltar pro snapshot anterior e vai estar tudo lá, bonitinho. Snapshots são inteligentes, eles quase não ocupam espaço, porque no BTRFS o mesmo binário do arquivos iguais, apontam pro mesmo lugar físico. Não é como um `rsync` que realmente duplica tudo e duplica espaço ocupado.
 
-![Synology Snapshots](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBaVVCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e7027f3ce1659849530d0df0c92417b24f33eae8/Screenshot%20From%202025-04-17%2020-33-32.png?disposition=attachment&locale=en)
+![Synology Snapshots](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/zhbq7dv8ai8jupqwj3zqvmetq5yk?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-17%2020-33-32.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-17%252020-33-32.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001002Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=117b65f3e18803a2170b989b318f85f1212c2c1b18e7fc3ae461138a045b95b9)
 
 No seu PC/notebook Linux, com BTRFS, instale o programa Timeshift pra fazer a mesma coisa. A melhor coisa: se uma hora você atualizar seu sistema e ele não bootar ou alguma coisa quebrar depois de update, é fácil: só rebootar e no GRUB escolher o snapshot anterior e pronto, vai voltar exatamente igual antes do update. No Arch/Manjaro ele é inteligente e já faz snapshots automaticamente toda vez antes do `pacman` rodar:
 
-![Timeshift](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBaVlCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--6d7d2d524ee406859d6c6b02b1df9fac497151ee/Screenshot%20From%202025-04-17%2020-36-04.png?disposition=attachment&locale=en)
+![Timeshift](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/n20yo00ztofrjsu6p6678wmfphdd?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-17%2020-36-04.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-17%252020-36-04.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001003Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=0408df550ed84a7816b4f2e5972c8e63bf35e53d205231518eb9b26a15511e91)
 
 Enfim, outro dos usos é pra projetinhos pessoais de código mesmo no meu Linux. No mini-PC que uso na TV pra media center, eu rodo Windows 11 mesmo. Porque uso ligado a outra eGPU com uma RTX 4060 e eu uso Steam pra games. Sim, muitos jogos de Steam rodam em Linux, tem Bazzite, etc. Mas tem coisas que só rodam no Windows e eu preferi comodidade mesmo. Só uso pra games e media então ph0da-se, funciona plug and play.
 
@@ -91,17 +91,17 @@ Não dá pra ficar usando com UIDs misturados, vira uma zona tão ruim quanto SM
 
 Escolhi a segunda opção. Primeira coisa é habilitar acesso a SSH no NAS (o ideal é deixar coisas assim desligadas, por segurança, mas estou numa rede local privada então o risco é mínimo):
 
-![SSH Synology](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBaDRCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--28d1473bff26301e49d0ff5a30eac1df7f1051ac/Screenshot%20From%202025-04-17%2020-07-43.png?disposition=attachment&locale=en)
+![SSH Synology](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/jpanifwk7guaxaekpoph0hty61ve?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-17%2020-07-43.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-17%252020-07-43.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001006Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=673d708dd71bbdfe24b4909a5b6bc8ae1d552876fd1c185af0ad6f03eb620b47)
 
 No mínimo eu sempre troco a porta padrão do SSH, costume, mas tanto faz. Precisa saber usar SSH, não ensinar aqui, tem ChatGPT pra isso.
 
 Agora, criar um novo usuário padrão:
 
-![Novo Usuário](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBaDhCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--7acba2b3f559ad04221d7b68e31a8fc6361a5ff3/Screenshot%20From%202025-04-17%2020-08-55.png?disposition=attachment&locale=en)
+![Novo Usuário](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/l6surkfy60whkaqri8m2rzqrq7d2?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-17%2020-08-55.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-17%252020-08-55.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001009Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=f098d3728d7afda407e87ca110dd71dd84c7a50cde7e8dba6a91515759ae7db4)
 
 Vamos garantir que o serviço de NFS está ligado também, já que vou passar a usar ele (por padrão vem desligado, só SMB ligado porque maioria dos clientes são PCs Windows mesmo):
 
-![Enable NFS](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBaUFCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b9bc6562f317e7bcce4bb1d08c3947e894814499/Screenshot%20From%202025-04-17%2020-09-43.png?disposition=attachment&locale=en)
+![Enable NFS](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/tpyix3dfkc0h2i4x4iaad99djffj?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-17%2020-09-43.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-17%252020-09-43.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001011Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=262e1f246fbf448942142c9be6b1eb0f54892d94ab193348ff69f75736aca182)
 
 Agora é logar com SSH no NAS e editar o UID e GID, primeiro editando `/etc/passwd` e achando uma linha como:
 
@@ -119,7 +119,7 @@ Agora editando `/etc/group` e mesma coisa, trocando o grupo `akitaonrails-nfs` r
 
 Na GUI da Synology DSM, não esquecer de adicionar permissões pra cada pasta compartilhada, pra NFS:
 
-![NFS permissions](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBaVFCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--f9adc6d81f88255103b1604870f2a91b4b259375/Screenshot%20From%202025-04-17%2020-26-36.png?disposition=attachment&locale=en)
+![NFS permissions](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/x5q0fmb5u6qxd7ahe7f7nquoy73k?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-17%2020-26-36.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-17%252020-26-36.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001012Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=980ca74d8ee7db967670b884f7f24d333580462ed2f6ec77aa493cfc9dde4c9e)
 
 Ainda via SSH, tem que alterar o ownership e consertar as permissões de **TODOS OS ARQUIVOS** e no meu caso, com terabytes, levou BASTANTE tempo, só deixar lá rodando:
 

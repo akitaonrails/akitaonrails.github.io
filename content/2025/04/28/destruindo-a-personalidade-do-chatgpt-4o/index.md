@@ -13,15 +13,15 @@ draft: false
 
 Eu detesto que a OpenAI fique mexendo no alinhamento ou prompt inicial ou mesmo treinamento do modelo, tentando fazer ele responder parecendo mais um "humano".
 
-![sam altman](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBb29CIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--ab3879b7c2a68a1c9c6da86378c044729fecfdd8/Screenshot%20From%202025-04-28%2011-34-25.png?disposition=attachment&locale=en)
+![sam altman](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/na9qkp2m4rmnclrmal10vlz17vzw?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-28%2011-34-25.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-28%252011-34-25.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001321Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=9760cc657de4198757637e643b2e9bd46c8363ee9dc8d6daf13709d11b6728d5)
 
 Todo mundo não-técnico fica achando que a I.A. está se tornando "consciente", ou que ela tem "emoções". E não entendem que são só frases pré-gravadas. E isso é extremamente irritante. Até mesmo a porcaria de jornalistas ficam caindo nessa:
 
-![IGN](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBb3NCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a7b3b7a6e67f64d9360c420b26e714e0bd93435d/GplUG01W0AA_J_t.jpg?disposition=attachment&locale=en)
+![IGN](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/hv9cpwnyu7aynuvf4vk96opfspnd?response-content-disposition=inline%3B%20filename%3D%22GplUG01W0AA_J_t.jpg%22%3B%20filename%2A%3DUTF-8%27%27GplUG01W0AA_J_t.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001322Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=82574ddac7b95e0ae4959a6df8087284a970daf72c42ae8e7ca02b953ed51238)
 
 Todo esse "comportamento pseudo-humano" pode ser **DESLIGADO**. Basta ir no menu do ChatGPT, embaixo do ícone da sua conta, e clicar em "customizar o chatgpt":
 
-![customizar](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBb3dCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a352ff6e7cb06c655e396d368a6c5f7553ee373b/Screenshot%20From%202025-04-28%2011-26-58.png?disposition=attachment&locale=en)
+![customizar](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/ax3qljufi7lqes8qez6apfk3k29z?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-28%2011-26-58.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-28%252011-26-58.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001324Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=f34772134dd16e62a0607d7aea424e748f8b81d5e721c12e4bef1e09217af009)
 
 Traits:
 
@@ -36,7 +36,7 @@ I have very little patience. I do not like suggestions being shot without certai
 
 E pronto, acabou o mimimi no ChatGPT: só respostas curtas, retas e diretas:
 
-![gpt straight](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbzBCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--d3d27428abef886f5e5373c0d5c8d4b0319ca028/Screenshot%20From%202025-04-28%2011-40-12.png?disposition=attachment&locale=en)
+![gpt straight](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2mngtnnige43arawi8ku1zfs6hvs?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-28%2011-40-12.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-28%252011-40-12.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001325Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=a6237fbbd65e2c183dea7013024f6e437e22c1fe7f65a55443fbc4470b915cfb)
 
 Eu fiz uma [playlists inteira de videos](https://www.youtube.com/watch?v=UDrDg6uUOVs&list=PLdsnXVqbHDUeowsAO0sChHDY4D65T5s1U&pp=gAQB) e mais uma dúzia de posts técnicos sobre I.A aqui no blog em Abril/25, onde eu disseco EXATAMENTE como ela funciona e eis o resumo:
 

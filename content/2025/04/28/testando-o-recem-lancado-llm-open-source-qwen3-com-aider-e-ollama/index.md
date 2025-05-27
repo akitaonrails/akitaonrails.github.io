@@ -14,10 +14,10 @@ draft: false
 
 Eu acabei de [postar ontem sobre Qwen2.5-Coder](https://www.akitaonrails.com/2025/04/27/testando-llms-com-aider-na-runpod-qual-usar-pra-codigo) e HOJE (2025-04-28) a Qwen já chega e me lança o **QWEN 3** que, obviamente, eles dizem que super supera o 2.5. E obviamente eu estava com a mão na massa, precisava testar.
 
-[![qwen x](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbzRCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--d620792fbc32ed7fea0bb6aa28d21fc9e39ddee2/Screenshot%20From%202025-04-28%2020-13-10.png?disposition=attachment&locale=en)](https://x.com/AkitaOnRails/status/1916974917872193780)
+[![qwen x](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/e1ipve95x7e6nlnf7qffayzsz0ag?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-28%2020-13-10.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-28%252020-13-10.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001327Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=4b65159ebb8d212238a34fb976f2943cdd0a483ab4f5f2ef244ce3b69dab8189)](https://x.com/AkitaOnRails/status/1916974917872193780)
 Se estiver rodando um ollama instalado via pacotes como Pacman ou Apt, é possível que eles ainda não sejam compatíveis. Mas eu vi no X da Ollama que eles já estão suportando:
 
-[![ollama x](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbzhCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--16dbb954df158913dd593e710fb20c8aa94885a7/Screenshot%20From%202025-04-28%2020-17-09.png?disposition=attachment&locale=en)](https://ollama.com/library/qwen3)
+[![ollama x](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/yrkrg6l6r4nvnmfefiqoaplbf6cw?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-28%2020-17-09.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-28%252020-17-09.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001329Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=2680a9ee2ec08be1dd8c4afd07f670cb3adce184f21c32db61307d713640ceb2)](https://ollama.com/library/qwen3)
 Então só tinha uma alternativa: baixar direto o source do repo deles e compilar da branch master:
 
 ```
@@ -98,7 +98,7 @@ Isso dito, felizmente com o Qwen3 ele funcionou razoavelmente bem sem nenhuma co
 
 Você vai ver um tanto de tweet compartilhando "gráficos" de "benchmarks" e dizendo "uau, olha que incrível"
 
-![exemplo de fakenews](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBcEFCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--48d8b03072a87c73a19902e385f8b5998d64e5e1/Screenshot%20From%202025-04-28%2020-32-42.png?disposition=attachment&locale=en)
+![exemplo de fakenews](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/pa8p2i7givn9sqeldkx2mfog9wws?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-28%2020-32-42.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-28%252020-32-42.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001330Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=ae0ff782140a014ad7efa94ab80329907a7273287242af763f4d14a7faf79639)
 
 **NÃO ACREDITE EM NENHUM DELES**
 

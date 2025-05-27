@@ -154,11 +154,11 @@ Outro fator é a escala, SCALE, que o default é "4x", que transforma 1080p em 4
 
 Minha RTX 4090 e meu Ryzen 9 são bem potentes. Processando só um video eu não vejo ele suando nem um pouco:
 
-![btop](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBaXNCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--56910f41a51dd75ebad025da6c2d1d35d2502c0e/Screenshot%20From%202025-04-19%2015-27-50.png?disposition=attachment&locale=en)
+![btop](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2dz1abq9b1wteho3r1onowmij14v?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-19%2015-27-50.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-19%252015-27-50.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001014Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=bc29da3e2ec48f1d5fdac7aac430e21cf20b5775550ba6f6fcf2b0c0a223ec54)
 
 Claramente daria pra rodar mais videos em paralelo. Tem que tomar cuidado quando é desbalanceado. Se a CPU subir pra perto de 100% pra separar os frames, não adianta estar sobrando na GPU. Os dois tendo sobra, dá pra fazer o script subir mais de 1 processo na GPU e mandar frames em paralelo com a opção "-e NUM_PROC=2". Olha como agora ele já usa mais da GPU e a CPU ainda tá sobrando. Talvez 3 seja o máximo, mas tem que testar, não é constante o tempo todo.
 
-![btop x2](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBaXdCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1683ba1da0cadc1a489e4261e2d5971521af3790/Screenshot%20From%202025-04-19%2015-30-35.png?disposition=attachment&locale=en)
+![btop x2](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/qur7lw4ox5s3nymh025u6q446831?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-19%2015-30-35.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-19%252015-30-35.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001015Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=859a8108ea72784420692f3bf119c750d02781ff915618140d84359a907592ae)
 
 Isso pode diminuir o tempo total dramaticamente. Você pode escolher entre aumentar os processo na GPU pelo script ou ter dois diretórios separados de video e subir dois containers paralelos desse programa pra rodar ao mesmo tempo, o que funcionar melhor pra você.
 

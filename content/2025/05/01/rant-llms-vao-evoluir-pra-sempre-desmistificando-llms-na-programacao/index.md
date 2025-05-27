@@ -30,7 +30,7 @@ Objetivo deste post é desmistificar mais as LLMs e falar mais sobre minha exper
 
 Quem acompanha minhas palestras e videos faz anos está careca de me ouvir falar sobre o livro ["Como Mentir com Estatísticas"](https://www.amazon.com.br/Como-Mentir-Estat%C3%ADstica-Darrell-Huff/dp/858057952X). E o que eu mais vejo nas centenas de posts sobre LLMs é sobre os rankings baseados em benchmarks. Este é um exemplo que viralizou ontem, no lançamento do novo modelo da Alibaba, o Qwen3:
 
-![Qwen3 benchmarks](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBcFFCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--bfa602c4c5f00f962f0467ac2c248c4e5846a3c2/GprgeiCWoAAVtoJ.jpg?disposition=attachment&locale=en)
+![Qwen3 benchmarks](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/1kflvwk5uq9lkt5yh8knngwxwfi9?response-content-disposition=inline%3B%20filename%3D%22GprgeiCWoAAVtoJ.jpg%22%3B%20filename%2A%3DUTF-8%27%27GprgeiCWoAAVtoJ.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001339Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=efe84b076cf07a8dd282ca9a050aff0ccdd8bd47c3da01cb5897bcf4c34c8473)
 
 O problema: os rankings não estão errados. Eles querem dizer o seguinte:
 
@@ -82,13 +82,13 @@ I.A. é estudada desde literalmente o início da computação moderna no fim dos
 
 Pense um "início lento": de 1930 até cerca de 2012 quando ImageNet e coisas como AlphaGo, GANs e coisas assim começaram a ganhar velocidade. Saímos da perna do "S" pro meio a partir dos anos 2010 e viemos acelerando até agora. Eu "chuto" que ou já estamos ou estamos caminhando pro topo do "S", onde a curva estabiliza e desacelera. Foi isso que aconteceu com deep learning de imagens:
 
-![ImageNet](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBcFVCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--3dbc7556c7e1358ce06c1d253fc223c1bc037a0c/Screenshot%20From%202025-05-01%2001-38-39.png?disposition=attachment&locale=en)
+![ImageNet](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/lgr7uodnbmqfujjw39h69mnybi8t?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-05-01%2001-38-39.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-05-01%252001-38-39.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001341Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=361a32e49facb830a97c8523bc6de4b1aaec5195700173312b380cac33627226)
 
 Lembram do AlphaGo? Eu acompanhei ao vivo. Como amador-hobista em Go, eu assisti ao vivo os jogos com me mestres sul-coreanos como Lee Sedol, na época que aconteceu, acho que 2016. Vocês devem ter visto o [documentário na Netflix](https://www.netflix.com/br-en/title/80190844) só agora, mas isso vem acontecendo faz anos. E agora, onde está o AlphaGo evoluindo exponencialmente? Todo mundo já esqueceu, porque o quente da moda são LLMs, que é só mais uma categoria no mundo de I.A.
 
 A grande maioria das otimizações já foram ou já estão sendo feitas. Se fosse resumir só alguns dos milestones mais importantes desta parte da geração seria mais ou menos assim:
 
-![timeline llm](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBcFlCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4ff1048ab7ca04e39b5f21cbf442e61bc0e565c0/ChatGPT%20Image%20May%201,%202025,%2001_47_42%20AM.png?disposition=attachment&locale=en)
+![timeline llm](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/z14qvijztqvy6prvbpokk02fqrjt?response-content-disposition=inline%3B%20filename%3D%22ChatGPT%20Image%20May%201%252C%202025%252C%2001_47_42%20AM.png%22%3B%20filename%2A%3DUTF-8%27%27ChatGPT%2520Image%2520May%25201%252C%25202025%252C%252001_47_42%2520AM.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001342Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=8c3e074ca4895fbc4a3def57a4d154a89e07a3dcfd92cc7e58e1dc4fb2928b07)
 
 Todo engenheiro e cientista sabe disso: quando você não tem nada, qualquer coisa é um salto quântico. Quando você só tem 1 real, 2 reais já é "o dobro". Quando tem 10 reais, 20 já é bastante. Mas quando chega em 20 mil, mais 100 já não adiciona tanto valor assim do que quando você só tinha 1 (ali seria 100x).
 
@@ -162,11 +162,11 @@ Vejam os [pull requests](https://github.com/akitaonrails/Tiny-Qwen-CLI/pulls) de
 - nenhum deles foi capaz de gerar testes unitários que funcionam de primeira. Alguns conseguiram fazer alguns simples, depois de dar o erro e pedir pra consertar. Alguns ficam em loop de pensamento, confusos, e saem mudando sem corrigir. No final fracassam.
 - Do nada começam a alucinar. O Qwen 3 mesmo, se eu tentar aumentar só um pouco temperature, de 0.1 pra 0.2 do nada começa a sair caracter chinês no meio do código, assim:
 
-![chinese char](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBcGdCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--7c1355404c9ef387bf165cac684d1abf8f38fb62/Screenshot%20From%202025-05-01%2000-13-17.png?disposition=attachment&locale=en)
+![chinese char](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/j0rnlba6loxmo32pyyjxy8diteor?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-05-01%2000-13-17.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-05-01%252000-13-17.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001344Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=88dc29c37043eda5792de503234dcaef9d62feb6a78fe47b02738edd48957e51)
 
 - Vira e mexe, mais de uma LLM, conseguiu a proeza de gerar teste unitário que dava erro recursivo. Isso enchia tanto o stacktrace que se eu tentava passar pra ele (mais de 12 mil tokens), isso estourava a janela de contexto e dali ele não conseguia dar atenção pra mais nada:
 
-![recursive error](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBcGNCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--407741c530d6665d550aae0cbb6669f88cbb0e3a/Screenshot%20From%202025-05-01%2001-09-46.png?disposition=attachment&locale=en)
+![recursive error](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/eqh6ytb84mvcpzr92dk7kge2exaj?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-05-01%2001-09-46.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-05-01%252001-09-46.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001345Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=44ebffd42c21491f3bcaf5da0ab0f546c12fbc7c8d68b5eff5322fef723a45c7)
 
 - como erram demais, eu fico repetidamente e exaustivamente dando chance pra ele consertar. Eu rodo o código que ele gerou, mando o stacktrace de erro, peço pra consertar. Ele mexe outra parte do código. Rodo de novo, dá erro e repito. Se fizer isso mais que meia dúzia de vezes, o contexto começa a ficar cheio, sliding window faz ele dividir atenção, ele "esquece" o que veio antes, começa a repetir o mesmo erro e fica nisso eternamente.
 
@@ -200,6 +200,6 @@ Agora você sabe.
 
 Como faz pra saber mais e não ser enganado? Comece aprendendo os fundamentos. 1 ano atrás eu fiz vários videos explicando como LLMs funcionam. Você já deveria ter assistido:
 
-[![Playlist I.A.](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBcGtCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a7c8c4d7f653df69d20066bb6277455610291d5c/Screenshot%20From%202025-05-01%2002-48-42.png?disposition=attachment&locale=en)](https://www.youtube.com/playlist?list=PLdsnXVqbHDUeowsAO0sChHDY4D65T5s1U)
+[![Playlist I.A.](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/7tshjfwbly7wudczbni2pa863f11?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-05-01%2002-48-42.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-05-01%252002-48-42.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001346Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=e37ec85bc099c3d046c03a0ac384475954c1f7f17c91c74855cbde26f155022c)](https://www.youtube.com/playlist?list=PLdsnXVqbHDUeowsAO0sChHDY4D65T5s1U)
 
 E pra virar programador que não vai ser substituído pela I.A.? É pra isso que eu fiz [meu canal](https://www.youtube.com/@Akitando). Quando tudo que eu disse virar comum pra você, parabéns, você tem boas chances de sobreviver.

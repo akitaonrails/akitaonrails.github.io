@@ -19,25 +19,25 @@ Tem como, é um workflow separado que depois dá pra adicionar ao workflow anter
 
 Diferente do workflow do Mick - que é pago - este outro é aberto, peguei em algum Reddit e coloquei na pasta de workflows do meu projeto de Docker como "garmente-replacement-idm-vton.json", só carregar no ComfyUI e brincar. Vamos ver o resultado. Eis duas imagens, o resultado não é perfeito, mas veja se descobre qual dos dois é o original e qual é o gerado pela I.A.:
 
-![Hemsworth 1](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbVlCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--d6b83fbb5e1890f5caaa37c3554c986eb792d3a5/1679905172_chris_hemsworth-getty.jpg?disposition=attachment&locale=en)
+![Hemsworth 1](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/6b56mdoiwf82xdh7cdhdc7tg0ic2?response-content-disposition=inline%3B%20filename%3D%221679905172_chris_hemsworth-getty.jpg%22%3B%20filename%2A%3DUTF-8%27%271679905172_chris_hemsworth-getty.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001146Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=35e6f8c176b93d1fc61da5997b4fa965000e3bac936496cf1d7e3ca83227aafd)
 
-![Hemsworth 2](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbWNCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--c6b4ba42ca0bf5203d482261c00c5e8757a4977b/idm-vton_00004_.png?disposition=attachment&locale=en)
+![Hemsworth 2](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/w0s9nthw6jt86en8wl09m67ryzpc?response-content-disposition=inline%3B%20filename%3D%22idm-vton_00004_.png%22%3B%20filename%2A%3DUTF-8%27%27idm-vton_00004_.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001147Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=756e56bb3bb794d66c3109caa5892c668ccf19fd4d3bc3e5c1dc8eabdc6ba531)
 
 Resposta ao final do post kkkk
 
 Mas vamos lá, o workflow completo se parece com isto:
 
-![workflow](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbWdCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--9c94d9d2d41bc413095af8759adf7f63226bd262/Screenshot%20From%202025-04-23%2017-18-12.png?disposition=attachment&locale=en)
+![workflow](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/xbgu7dzrjzflhfsld6jtrl5jc3ia?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-23%2017-18-12.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-23%252017-18-12.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001148Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=3a676f6642daf5b8a75eb369fbfc29b174e7e3a2d591d9de846d1893cbcd7591)
 
 No estágio atual da minha setup tem um glitch que não consegui resolver. Eu acho que é a extension JNodes que está abrindo um popup infernal no top esquerdo da interface, que não fecha de jeito nenhum. Por enquanto estou abrindo o Inspector e deletando o Node do HTML direto mesmo kkkk gambiarra mas funciona:
 
-![JNode bug](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbWtCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--5b2a6e8a58dda6f235f02a109d9064cb8764b7b7/Screenshot%20From%202025-04-23%2017-10-53.png?disposition=attachment&locale=en)
+![JNode bug](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/p8q4hmwjmi4opsu8u045jxrpma2v?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-23%2017-10-53.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-23%252017-10-53.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001150Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=a11d5d9c5f0b7eaf5232e56ada9c22804e83857e7f356c10d6b143e984724ea7)
 
 Se alguém souber como consertar, agradeceria muito. Tem um alert de uma extension que parece que tá defasada, esse front-end alguma coisa, mas é só ignorar. Tinha que ser front-end-alguma-coisa ...
 
 Enfim. neste primeiro grupo, é simples, basta carregar uma imagem o mais limpa e clara possível da roupa nova que quer usar. E depois a foto original onde quer que essa roupa seja aplicada. Ele não faz milagre, se a foto for de alguém com paletó e você quiser mudar pra regata, às vezes ele consegue, mas não espere que os braços e torso sejam bons, ele vai redesenhar tudo como achar que precisa, ou vai acabar colocando a regata em cima do paletó, enfim, é I.A., quanto mais claro for o objetivo, melhor o resultado. Se a nova roupa é um paletó, idealmente o original era outro paletó, vai encaixar melhor.
 
-![Load Images](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbW9CIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--06f518cfe1fa3ef57fff0ee315f1613632c27d91/Screenshot%20From%202025-04-23%2017-20-39.png?disposition=attachment&locale=en)
+![Load Images](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2owpldebsc91y6vfsayscdkuqtui?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-23%2017-20-39.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-23%252017-20-39.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001154Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=95f984ddc3bf23a6babcc691f7eb3f125c9216268f053ecc44c5164f0b61427d)
 
 
 Já avisando que os modelos do IDM-VTON pesam realmente uma **TONELADA**. Ele sozinho baixa nada menos que **30GB** de modelos (já incluso no meu setup) e vai exigir mais de 20GB de VRAM, então abaixo de uma RTX 3090 de 24GB, não vai rodar. Tem como rodar online, no site do Hugging Face. Assista este tutorial que mostra como:
@@ -50,13 +50,13 @@ Isso dito, tem um bug que ainda não resolvi. Depois que roda o workflow, o mode
 
 O próximo passo é recorrente em vários workflow: extrair camadas de informações da foto original. Conseguir uma máscara da roupa que queremos substituir e informações da pose original:
 
-![máscara e pose](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbXNCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--6881fd4a5e1b14b3679001914a214e662a878d9f/Screenshot%20From%202025-04-23%2017-22-30.png?disposition=attachment&locale=en)
+![máscara e pose](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/kgs8jj5m7cgt2nx4kv8yazfpbfg5?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-23%2017-22-30.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-23%252017-22-30.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001155Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=1924458b126f9951836943ef9e07fcd1f6673ac9dc040152d64859b97ec1530b)
 
 É por isso que workflows de ComfyUI são poderosos quando você começa a entender como processo é dividido. Essas partes são reusáveis e diferentes modelos dão diferentes resultados dependendo dessas controlnets que se adiciona.
 
 Aí chegamos na parte principal: ligar todas essas informações no node de IDM-VTON, que vai reposicionar a nova roupa em cima da foto original:
 
-![IDM-VTON](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbXdCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a9901053095a49da4b8ea874065d42d55cee2f58/Screenshot%20From%202025-04-23%2017-29-14.png?disposition=attachment&locale=en)
+![IDM-VTON](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/7xnxbrcy22trdctbf5a1dhh0rqjw?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-23%2017-29-14.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-23%252017-29-14.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001159Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=dde5d92af4064f270dac520db3b44e2163e3f11501e9af19a801c886bb78d81e)
 
 Note que o resultado não é muito bom, fica bem "fake" mesmo. E tem como ajustar parâmetros pra melhorar. Mas o caso de uso não é usar pra trocar por roupa **específica** mas sim por roupa **similar**. Já vou explicar, mas antes, uma tangente.
 
@@ -68,13 +68,13 @@ Feito o rant. No passo anterior a primeira parte do fluxo acaba. Quando bate nes
 
 Vamos voltar um passo:
 
-![Nova foto, nova roupa](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbTBCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--5fa75d33673959c49a25e26517d8f7c8b19438f0/Screenshot%20From%202025-04-23%2017-36-45.png?disposition=attachment&locale=en)
+![Nova foto, nova roupa](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/jj950u7842rkc9lxniz3uoztbszv?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-23%2017-36-45.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-23%252017-36-45.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001200Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=4db8863f9ab1bb4533b54ccc9fc7da089f76bbda878ab2d0783e33b1ae2f79c3)
 
 Nesse próximo passo, no segundo "RUN", ele pega a imagem com a nova roupa, mas baixa qualidade e carrega um novo checkpoint (no caso o juggernaultXL mas poderia ser qualquer outro como o próprio SDXL, FLUX ou dreamsharper). O modelo vai determinar a nova foto, que é o que se gera no final, na direita.
 
 Note que a nova foto tem qualidade de roupa muito melhor, mas a cara é completamente diferente. Ele usou as informações da foto original, manteve a pose, a proporção do corpo, até o fundo, mas o rosto ele não consegue manter. Não tem problema, porque podemos ajudar.
 
-![mix photos](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbTRCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--c957cb4a4b16ea81a02a3abf5f151e787bcc6b5b/Screenshot%20From%202025-04-23%2017-39-08.png?disposition=attachment&locale=en)
+![mix photos](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/bw9sram1maspiob2ubo4r904oriy?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-23%2017-39-08.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-23%252017-39-08.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001202Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=96a1168c2733912cd7e0732d9951567314eeb9950d54ac1318e8d53292182dac)
 
 Lembra que no passo anterior conseguimos a máscara (preto e branco) da posição exata da roupa? Podemos aumentar a máscara e aplicar um Gaussian Blur (pra depois ele mesclar bonitinho na foto original) e usar isso pra recortar da foto gerada com o rosto diferente, usando o modelo [**IPAdapter**](https://github.com/tencent-ailab/IP-Adapter/) (que sozinho são outros 30GB de modelos - falei que é pesado).
 
@@ -84,7 +84,7 @@ O IP Adapter vai usar a foto original, manter o rosto, usar as máscaras e mistu
 
 No final, podemos comparar a primeira tentativa de colocar a roupa nova (que ficou ok mas feita, e a roupa nova, que ficou diferente mas mais bonita) e tudo integrado na foto original, mantendo o mesmo rosto. 
 
-![image compare](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbThCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--65e14f65c2e29ed7cb1e361808a6b794767bd7d9/Screenshot%20From%202025-04-23%2017-43-13.png?disposition=attachment&locale=en)
+![image compare](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/uawsqhhr6d8kii8getzkq6ebxgh9?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-23%2017-43-13.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-23%252017-43-13.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001203Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=d62ee3bc2b9502f72968b13fc1044b7ee28e20101cd311c8849578bb84cc60fe)
 
 Como falei, as qualidades são afetadas pela escolha do modelo, as configurações do KSampler, número de passos, cfg e tudo mais. Tem que experimentar e gerar várias até chegar no resultado que te agrada mais. É assim que se aprende mais também. Não é só clicar uma vez e magicamente já ter o resultado. Um bom artista experimenta dezenas de vezes.
 

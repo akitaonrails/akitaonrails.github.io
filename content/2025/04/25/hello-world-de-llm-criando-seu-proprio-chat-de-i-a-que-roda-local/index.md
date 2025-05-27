@@ -46,7 +46,7 @@ Horas e horas, dias e dias depois, processando terabytes e terabytes de textos, 
 
 Se entrarmos num site que cataloga e armazena modelos pré-treinados, na [página da Meta pro LLAMA 3 70B](https://huggingface.co/meta-llama/Meta-Llama-3-70B/tree/main), vemos isto:
 
-![Huggingface Meta](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbk1CIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1d39e0d9e2784b493389d3018f12a9cbf04ceb62/Screenshot%20From%202025-04-24%2022-56-15.png?disposition=attachment&locale=en)
+![Huggingface Meta](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/34kujh0nzamxau15gqarr0rhp7v7?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-24%2022-56-15.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-24%252022-56-15.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001251Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=1ad2b546e15c1275cab521c0b268107bba3b55273d493ff4d13a5ecc7abdb581)
 
 Temos o arquivão particionado em 30 arquivos menos de uns 4.5 GB cada um, totalizando uns **135 GB**, pra um arquivo de 70B ou seja, 70 bilhões de parâmetros. Parâmetros não são "neurônios" nem nada parecido com isso. São pesos e viéses dos cálculos, armazenados no banco de dados - eu explico isso nos meus videos, assistam.
 
@@ -126,7 +126,7 @@ Note que ele não serve só pra dar respostas. Em um momento eu peço pra ele le
 
 O ponto agora é que ele tem janela de contexto suficiente pra carregar coisas longas como código fonte de arquivos. Eu não testei nada muito pesado, mas esse modelo de 70B ocupa fácil quase 20GB na minha GPU:
 
-![nvidia-smi](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBblFCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--7a520e387d4d7c179b251118d4594853f6663309/Screenshot%20From%202025-04-24%2023-35-16.png?disposition=attachment&locale=en)
+![nvidia-smi](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/ykbdo2ekv12woxbx964um0osphk0?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-24%2023-35-16.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-24%252023-35-16.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001252Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=4a0cd6b4754e6f118a42893765df540c36a6808a59a5a818cedc3acf7053772d)
 
 Pra configurar, eu fiz um bloco de configuração assim:
 
@@ -255,7 +255,7 @@ TOOLS:
 
 Ou seja, se em algum momento, eu pedir:
 
-![qwen_cli fetch_url](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBblVCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--ddf5c1c1802dde75193c6966f0eab57c0acd59b5/Screenshot%20From%202025-04-25%2000-04-50.png?disposition=attachment&locale=en)
+![qwen_cli fetch_url](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/hiz90dk6owf2otjfixiftjxavm4n?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-25%2000-04-50.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-25%252000-04-50.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001254Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=922e453d8cf6224df11d5f6171ca60114fd4e0e4dc6c167a7f374360d161c573)
 
 esse "can you read a website at https://www...." vai fazer o modelo seguir a regra do prompt inicial e digitar no chat:
 
@@ -299,7 +299,7 @@ E como podem ver na foto de tela acima, ele consegue me dar o resumo da página 
 
 Outro exemplo, eu posso pedir pra ele carregar um arquivo meu de código e pedir pra ele analizar, ou corrigir bugs, ou refatorar como eu quiser:
 
-![qwen_cli load_file](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbllCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--20ac87b6e5efb173d4bb2f3b0156ef47cd24bd9d/Screenshot%20From%202025-04-25%2000-13-27.png?disposition=attachment&locale=en)
+![qwen_cli load_file](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/lt891apoaebrmx0y4k7ngtk2l5ol?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-04-25%2000-13-27.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-04-25%252000-13-27.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001255Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=a68909deb3041c41a5e51f0abace9eaa1d67a4028bb4b08c5f4caa72fb6d22e1)
 
 É parecido com a função de "upload de arquivos" que tem no ChatGPT. De novo:
 

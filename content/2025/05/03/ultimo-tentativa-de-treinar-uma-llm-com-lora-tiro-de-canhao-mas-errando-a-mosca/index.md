@@ -19,7 +19,7 @@ A saída: migrar meu treinamento pra uma máquina maior. Comecei tentando uma A4
 
 "Ph0da-se", pensei. Aluguei a maior configuração que tem na RunPod:
 
-![H100](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBcndCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--ecbbb1dc8755cb2ebd9c5e7f32396c73434cb6f3/Screenshot%20From%202025-05-03%2014-08-43.png?disposition=attachment&locale=en)
+![H100](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/9m5uitxvhhbpotu5lkbrw0znd276?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-05-03%2014-08-43.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-05-03%252014-08-43.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001407Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=8f9ac2076a5ecdab468f06e15c7fa5d5f6fc9e843c1666fdf68d36eec4cfcc6c)
 
 Essa H100 já é "obsoleta", nos datacenters mais modernos já existe H200 Blackwell e outras coisas maiores. Mas no mundo mais de "mortais", uma H100 ao custo de USD 3 por HORA, vai ter que servir. O bom: tem 80GB de VRAM. E o que eu não esperava: até isso é pouco!
 
@@ -27,17 +27,17 @@ E aqui a vantagem de ter feito tudo organizado e subir neste [repo no GitHub](ht
 
 Eu ia adicionar de volta aqueles 15MB de código-fonte da Standard Library do Zig mais novo, mas mesmo na H100, não coube! O treinamento só com o 1MB original que eu usei ontem também, já fez a máquina ficar entuchada quase no máximo:
 
-![74GB](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBcjhCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--6f8e8013c7d652977e5a3901116abf4a2be7660e/Screenshot%20From%202025-05-03%2018-41-42.png?disposition=attachment&locale=en)
+![74GB](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/iahqr9hzs2aaku3fup7u3cw9navk?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-05-03%2018-41-42.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-05-03%252018-41-42.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001409Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=f66627b08e87bd83977a5f735966d822a32e9e8bcbc6fb2fa73f84e4504ae561)
 
 Olha que absurdo: ficou o tempo todo do treinamento ocupando quase 75GB dos 80GB que tem de VRAM. Literalmente não dá pra fazer treinamento com muito mais material que isso. Ou precisa descer pra um modelo menor, como o Qwen3-14B. Eu ainda não sei se 32B com menos material ou 14B com mais material, qual seria a melhor combinação. Eu já sei que 8B não presta pra programar nada complicado. 14B já tive um pouco mais de sucesso em testes, mas também não faz nada muito complicado. 32B não é garantia que faz muito melhor: o Qwen2.5-32B não se saiu melhor que o 14B, mas o novo Qwen3-32B tem "cara" que é mais estável. É isso que estou querendo testar, com o LoRa.
 
 Isso foi na hora de almoço. Estou escrevendo este post na hora da janta. Esta foi a previsão do treinamento:
 
-![6h](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBcjBCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4c8c2813c5b6f74c4ed6da980278255ae4760664/Screenshot%20From%202025-05-03%2014-18-12.png?disposition=attachment&locale=en)
+![6h](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/lzrfdl97n96qesnhde33lugidr3i?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-05-03%2014-18-12.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-05-03%252014-18-12.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001410Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=d1b3d8fe1c96ff8451f97b7029cd9e5802836a018efd89c1304c0c7d074c47e9)
 
 Essa estimativa fica variando, mas eu acho que levou em torno de 5 a 6 horas mesmo.
 
-![lora size](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBcjRCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--c2f496fae445d0ec11cade44c7d166ccfe34a1dd/Screenshot%20From%202025-05-03%2019-33-08.png?disposition=attachment&locale=en)
+![lora size](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/stoakih27g3o9c1e1d07y14szrf0?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-05-03%2019-33-08.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-05-03%252019-33-08.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001411Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=74ff4a3b0c9c41d1764fd6fbb50db6cf59e443e5d32b59f351e23565218aa9cc)
 
 E no final dessas quase 6 horas, foi isso que gerou: um LoRa de 5.1GB (contra os 3GB de ontem). Tamanho não é documento. Não significa que maior é melhor. Vamos ver.
 
@@ -54,7 +54,7 @@ vllm serve Qwen/Qwen3-32B \
 
 E precisa limitar ainda o tamanho do contexto. Por default o vLLM tenta subir com contexto de 40k tokens e, mesmo na H100, com 80GB, ele falha a inicialização com este erro:
 
-![KV Cache error](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBc0FCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a0dcb9596e4b1c02b34916ee82797646c65a26d8/Screenshot%20From%202025-05-03%2019-41-52.png?disposition=attachment&locale=en)
+![KV Cache error](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/ykusgib7o6wybhi5rs4zvx2yrp8j?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-05-03%2019-41-52.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-05-03%252019-41-52.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001413Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=d15b568205425d4bf20815f2f106779a4956a39d0c776696c2701516214d515e)
 
 Não sobra espaço pra subir o KV Cache (em resumo, no processo de geração de próxima palavra, vai adicionando uma nova linha e uma nova coluna na matrix, mas não precisa recalcular as linhas/colunas anteriores, é o mesmo resultado. Daí tem esse cache).
 
@@ -62,13 +62,13 @@ Um comportamento estranho tanto na minha máquina quanto na H100. Não sei se is
 
 Falando sério, parece que não sou só eu. Esta [Issue](https://github.com/vllm-project/vllm/issues/6876) não teve solução. "Pode" ser algum bug no vLLM, "pode" ser uma combinação de fatores que ninguém sabe. Mas nem a GPU e nem a CPU estão processando nada. CPU não sai de 10% de uso, GPU parece que está só esperando. Realmente, à primeira vista parece algum problema de I/O. Talvez o processo de checar os shards de checkpoints, puxando de um network volume, seja lento. Mas como vou rodar só hoje, não me preocupei em debugar isso.
 
-![slow load](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBc0VCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--f9f9419d5c70e3160e5ae3a57f13d48c41847b40/Screenshot%20From%202025-05-03%2019-53-59.png?disposition=attachment&locale=en)
+![slow load](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/mluc626od3h1q0swnv8kepe1aji5?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-05-03%2019-53-59.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-05-03%252019-53-59.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001414Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=888d340c5f1ce572730ad4f0909299a48bdfd9414161933e363e6d5a579512a7)
 
 Olha isso. 8 MINUTOS nessa parte de carregar checkpoints. E depois ainda continua outras fases que também demora mais um pouco. Vou deixar essa foto aqui, caso alguém já tenha visto e saiba o que pode ser.
 
 Só pra tirar a dúvida, experimentei subir o vLLM só com o Qwen3 e tirando a LoRa completamente e, pra minha surpresa:
 
-![sem lora](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBc1lCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a813e2f730d0b095f23940b7dba41ce2cea6cb94/Screenshot%20From%202025-05-03%2021-14-05.png?disposition=attachment&locale=en)
+![sem lora](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2hzvcqrk087i5ov4otx0rxa8erdf?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-05-03%2021-14-05.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-05-03%252021-14-05.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001416Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=87fdb2b938c19d64ce946a4f940e370c6144e691ee703d748cbfa33f2331ff4f)
 
 Também levou quase 8 minutos. Então o problema não é a LoRa. Ou é alguma coisa do vLLM que dá pra configurar - mas eu não sei como - ou é uma limitação do próprio modelo Qwen3-32B que é lento assim mesmo pra carregar. 
 
@@ -80,7 +80,7 @@ E eu até ficaria triste ou frustrado caso um modelo de 32B fosse realmente, ord
 
 No final, com 10k o server subiu, consumindo absurdos 63GB na inicialização, sem nem começar a processar:
 
-![63GB](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBc0lCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--6a31f4c35058ed770f9cec8be7410a42bff30a8e/Screenshot%20From%202025-05-03%2020-02-12.png?disposition=attachment&locale=en)
+![63GB](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/uetjwlzlgy7bpd4itn1qxczl3mhs?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-05-03%2020-02-12.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-05-03%252020-02-12.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001423Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=fb1eec6afc304764383128d1f72c44cc96fc8ba76e5cbd70ab72e74b0d3668fb)
 
 
 E ...
@@ -89,7 +89,7 @@ E ...
 
 Depois de 10 minutos esperando, tive que dar Ctrl+C e começar tudo de novo. Porque eu fui burro. A RunPod é pra realmente rodar coisas experimentais, não sei se confio pra produção. Ela é mais um VPS do que uma AWS. E eu estou gambiarrando subindo um pod que espera ter mapeado só a porta 8888 pra subir um server de Jupyter Notebook (que eu não estou subindo).
 
-![runpod connect](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBc01CIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--f5dc0a6934302aec99dfc06225968ae75c1a5489/Screenshot%20From%202025-05-03%2020-05-17.png?disposition=attachment&locale=en)
+![runpod connect](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/h4pzcdxydfiou5iulc7m67zctb9a?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-05-03%2020-05-17.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-05-03%252020-05-17.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001424Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=cb465b0763905286f358e50160f9fc35e3899c7c531848007c801ca72ffa2748)
 
 MInha idéia é usar essa porta pra mapear o vLLM. Mas por default ele sobe na porta 8000. Eu esqueci de colocar `--port 8888`:
 
@@ -99,7 +99,7 @@ vllm serve Qwen/Qwen3-32b --enable-lora --lora-modules ziglora=./qwen3-zig-lora 
 
 E lá vamos nós de novo, esperar mais 10 minutos ... ... e finalmente subiu na porta certa e agora podemos testar. Primeiro, os teste de curl:
 
-![curl hello](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBc1FCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--ee4d6abd204baf56700ea931871c62ce95d8e07a/Screenshot%20From%202025-05-03%2020-23-31.png?disposition=attachment&locale=en)
+![curl hello](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/p8d3ogzwd7lzpu05o7lkm50f8k4h?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-05-03%2020-23-31.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-05-03%252020-23-31.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001425Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=ba26f6a8f26a96605b0f1b8e7ad5456353fa2083dc66a9ec6c4d68273fbeb9c8)
 
 E antes que alguém comente: não tem problema estar aparecendo a URL do meu pod na foto. Eu vou apagar esse pod antes de publicar este post.
 
@@ -145,7 +145,7 @@ Agora vamos ver se ele consegue fazer algum código que funciona. Meu prompt foi
 
 E isto aconteceu:
 
-![abort](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBc1VCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4e4d724467dc0fca8069845f68a5b0da35dd7778/Screenshot%20From%202025-05-03%2020-36-42.png?disposition=attachment&locale=en)
+![abort](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/4n3bzm5g0gt46jfmqv55qy0x9tlu?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20From%202025-05-03%2020-36-42.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520From%25202025-05-03%252020-36-42.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001427Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=2ed0e0de6585db1a9b034cfdeff050a19a7fbd7750d17dbe66f5314ff5c1a60e)
 
 Lembra como eu tive que ir diminuindo contexto pra conseguir subir? E lembram como eu falo que "thinking" desperdiça muitos tokens? Pois é. O modelo se auto-crasheou pensando demais. Tentei algumas vezes e ele crasheia. Pra tentar evitar isso, tentei fazer o `curl` mandando `enable_thinking=false` assim:
 

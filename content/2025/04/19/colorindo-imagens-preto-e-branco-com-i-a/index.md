@@ -75,7 +75,7 @@ mv ~/Downloads/bw.jpg input/
 
 Como as fotos da minha namorada são familiares e particulares, obviamente não vou compartilhar, então peguei uma aleatória qualquer no Google Images:
 
-![Foto B&W](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBaWNCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e3e7776c3d381bc6c1f2f9425c5d624eeeb1ec73/director-francis-ford-coppola-DXJA6X.jpg?disposition=attachment&locale=en)
+![Foto B&W](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/qgt3lynkp1f5uzkbysyvio2kmq04?response-content-disposition=inline%3B%20filename%3D%22director-francis-ford-coppola-DXJA6X.jpg%22%3B%20filename%2A%3DUTF-8%27%27director-francis-ford-coppola-DXJA6X.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001016Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=251f118b73907c77dee4e0dee3e0ea38c74653ca7b9c387337ed51bb3b18af6f)
 
 Agora colocamos em "./input" e rodamos o Docker com este comando:
 
@@ -116,7 +116,7 @@ Output path: /workspace/results
 
 E eis o resultado que aparece no diretório `./results":
 
-![Foto re-colorizada](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBaWdCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--fc30bf1dbea556b63f851ba574ad16401cd6350d/director-francis-ford-coppola-DXJA6X.jpg?disposition=attachment&locale=en)
+![Foto re-colorizada](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/o2r085pzzpsavbyr39btg1vq0hwp?response-content-disposition=inline%3B%20filename%3D%22director-francis-ford-coppola-DXJA6X.jpg%22%3B%20filename%2A%3DUTF-8%27%27director-francis-ford-coppola-DXJA6X.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001017Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=1cf2627ccae07620611ccbbfad73c72efec7818916aeabcd5059325a1fa0e6a5)
 
 Sim, eu fiquei impressionado. Mesmo a imagem sendo da Web, com marca d'agua e tudo, ele fez tudo direitinho e funcionou!!
 
@@ -353,15 +353,15 @@ Mas se você usar como referência uma imagem bem saturada (por exemplo, um céu
 
 Segui a sugestão e baixei outra imagem nada a ver, colorida, super saturada com cores vibrantes pra ver se fazia diferença. Esta é a imagem de referência que passei pro Docker:
 
-![Imagem de Referência](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBaWtCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--39eb77b5eee6892d8ce03f4ea007711c121edc89/images.jpg?disposition=attachment&locale=en)
+![Imagem de Referência](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/ryptql9u8mk04o3r7ah01fk1qz5q?response-content-disposition=inline%3B%20filename%3D%22images.jpg%22%3B%20filename%2A%3DUTF-8%27%27images.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001019Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=34360ea7d86b9ce0171bd3f01b651a2e713c30c9ac3513f37611cba73f515caa)
 
 E eis o novo resultado aplicando ela à imagem anterior em pós-processamento (esse passo não é mais I.A. é pós-processamento de imagem mesmo).
 
-![Foto pós-processada](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBaW9CIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--8067f27feeb424fc7dc201f85d9fe8d667fe2abd/director-francis-ford-coppola-DXJA6X.jpg?disposition=attachment&locale=en)
+![Foto pós-processada](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/cxcwwnj2ncszvmv4whj4qesafgnm?response-content-disposition=inline%3B%20filename%3D%22director-francis-ford-coppola-DXJA6X.jpg%22%3B%20filename%2A%3DUTF-8%27%27director-francis-ford-coppola-DXJA6X.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001020Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=06279c8bd0af57d4b4e7e4b70b1b94efafc00eb84b63ee1208858095f58eb2d0)
 
 Comparem com a outra foto re-colorizada, vou colocar aqui embaixo de novo pra dar pra comparar:
 
-![Repetindo a primeira re-colorização](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBaWdCIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--fc30bf1dbea556b63f851ba574ad16401cd6350d/director-francis-ford-coppola-DXJA6X.jpg?disposition=attachment&locale=en)
+![Repetindo a primeira re-colorização](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/o2r085pzzpsavbyr39btg1vq0hwp?response-content-disposition=inline%3B%20filename%3D%22director-francis-ford-coppola-DXJA6X.jpg%22%3B%20filename%2A%3DUTF-8%27%27director-francis-ford-coppola-DXJA6X.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T001017Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=1cf2627ccae07620611ccbbfad73c72efec7818916aeabcd5059325a1fa0e6a5)
 
 Entenderam? Agora precisa ficar testando com referências diferentes pra ver a influência no resultado final, mas de fato, ele consegue aplicar o algoritmo de Reinhard e fazer uma transferência global de cor. Como o nome diz, é "global", não "por objeto", então é difícil conseguir controlar só partes da imagem e sim a imagem toda. Mas em teoria eu acho que você conseguiria fazer uma colorização manual no Photoshop com cores saturadas, perto de onde quer influenciar, pra tentar ajustar, mas eu não tentei isso ainda, depois se alguém fizer, mande nos comentários.
 

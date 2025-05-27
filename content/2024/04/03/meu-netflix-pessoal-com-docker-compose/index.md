@@ -20,7 +20,7 @@ Quem acompanhava meu canal no [YouTube](https://www.youtube.com/channel/UCib793m
 
 Todos os videos do meu canal, incluindo os arquivos originais, estão lá. Só isso dá terabytes. Todo minha biblioteca do Steam está lá, são uns 4 terabytes. Todos os meus jogos antigos, retro-games, também, incluindo ISOs de Xbox 360 e PS3. São mais 4 terabytes. Toda minha coleção de discos Ultra HD (BluRay 4K) [eu ripei](https://instagram.fcgh13-1.fna.fbcdn.net/v/t51.29350-15/412635176_915622043464387_8034096537912791825_n.heic?stp=c513.618.363.363a_dst-jpg_e35_s150x150&_nc_ht=instagram.fcgh13-1.fna.fbcdn.net&_nc_cat=107&_nc_ohc=OOeWxOEhySoAX8yISjX&edm=AGW0Xe4BAAAA&ccb=7-5&oh=00_AfAaINFVuRSfg-isKRLy-fmtXvSTVz-d7Axf1d2jQL6ZvQ&oe=660EA292&_nc_sid=94fea1) (fiz backup), são mais alguns terabytes. Neste instante já estou usando mais de 50 terabytes.
 
-![Meu Plex com UHDs](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBWdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--f4b27713a5ace6c1e19e9b1c59fcec7a9b51fce7/Screenshot%20from%202024-04-03%2010-16-54.png?disposition=attachment&locale=en)
+![Meu Plex com UHDs](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/29mxcuiblyunqnnbtc10sdnqjl3f?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20from%202024-04-03%2010-16-54.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520from%25202024-04-03%252010-16-54.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000718Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=cac5ae3c0214831d9b38b8ac3fb2a711059aba79217bbb432535d6afedb9c6d3)
 
 Antes que venham dar palpite, sim, isso não é pra qualquer um. Estamos falando de 8 HDs de 10.9 TB, mais upgrade de 2 HDs de 20 TB, mais outros 2 HDs de 20 TB de backup pra caso um deles dê pane, mais 2 NVMEs de 1 TB cada só pra ser cache, mais placa de rede de 10 Gbps. Além disso eu mantenho várias cópias online de parte desse conteúdo em Google Drive ou Dropbox, e um backup inteiro na Amazon Glacier, pra rara ocasião se minha casa pegar fogo, por exemplo. Estou preparado pra qualquer catástrofe, sempre.
 
@@ -31,11 +31,11 @@ A Synology é uma das melhores marcas de NAS caseiros. Sim, dá pra fazer bem ma
 
 *"Por que não deixar tudo online??"* Pra maioria das pessoas é o caminho mais fácil mesmo. Como eu disse, meu caso é particular. Você NÃO QUER ter mais de 50 TERAbytes online. Minha rede cabeada local é de 10 Gbps, minha internet de fibra é míseros 0.5 Gbps (500 Mbps). Trafegar video de alta qualidae pela internet é horrivelmente lento. Eu quero tudo em tempo real, e pra isso só sendo rede cabeada local.
 
-![Synology Dashboard](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBXQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--82ce9872218c85842e350e97d4129ca1d9bc107f/Screenshot%20from%202024-04-03%2010-28-41.png?disposition=attachment&locale=en)
+![Synology Dashboard](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/hejrhguxmbprma7c02hsp4mpr2rq?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20from%202024-04-03%2010-28-41.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520from%25202024-04-03%252010-28-41.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000720Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=aa21586553d8dcf4978a17790d9969303ea3a1ffe85b64a544645dd1ef18b9fd)
 
 Isso dito, eu montei um segundo mini-computador, usando um Intel NUC, conectado na mesma rede cabeada com o NAS. É Core i7, 32GB de RAM, ethernet 2.5Gbps, com o único intuito de ser um servidor Ubuntu vazio (poderia ser qualquer Linux, só escolhi o mais fácil mesmo) que serve pra subir containers Docker.
 
-![Intel Nuc Core i7](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBOdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--ec5997bfad05485b140d583f3496876a9b332c43/Mini-PC-Intel-Nuc-NUC10I7FNHN1-2.jpg?disposition=attachment&locale=en)
+![Intel Nuc Core i7](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/byblhfmjthild3vjq4kyif974vt2?response-content-disposition=inline%3B%20filename%3D%22Mini-PC-Intel-Nuc-NUC10I7FNHN1-2.jpg%22%3B%20filename%2A%3DUTF-8%27%27Mini-PC-Intel-Nuc-NUC10I7FNHN1-2.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000721Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=0ef6e23f62791f3674ffa432082bdd116100848c35b16d2a49bfbc7e7561e436)
 
 Mesmo esse PC-zinho é overkill, muito mais do que é necessário. Muitos vão comentar que um Raspberry-Pi 5 seria suficiente, e não estão errados. A melhor solução é a que você tem orçamento pra comprar e se sente confortável em dar manutenção. Não tente copiar exatamente o setup de ninguém, estude o que melhor encaixa pra você. E não percam tempo dando pitaco no setup dos outros, façam o seu.
 
@@ -50,7 +50,7 @@ Deixa eu começar explicando um a um dos principais.
 
 ## Portainer e Utilitários
 
-![Portainer Dashboard](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBPQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e18c5a92cd2105c18a92758082eb893df90332a0/Screenshot%20from%202024-03-28%2013-22-46.png?disposition=attachment&locale=en)
+![Portainer Dashboard](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/4g7nani6heneielnqirwt8xba9iq?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20from%202024-03-28%2013-22-46.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520from%25202024-03-28%252013-22-46.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000722Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=f21bfead1b9a46910aee40e3795fe0f0b083362557d4421ead450f4f2de787f7)
 
 Este é o trecho (veja completo no [repositório](https://github.com/akitaonrails/plex_home_server_docker/blob/master/kaizoku-docker-compose.yml)):
 
@@ -85,7 +85,7 @@ Veja no [fórum do MakeMKV](https://forum.makemkv.com/forum/viewforum.php?f=16) 
 
 *Crash course:* uma coisa é o codec que faz o encodings dos streams de video e streams de audio. Por exemplo, H.265 ou AV1, são codecs de video. MP3 ou AAC são codecs de áudio. Agora precisamos empacotar esses dois streams (ou mais, caso tenha múltiplas dublagens, por exemplo), num "envelope", um "container", um "formato de arquivo", como arquivos ".mp4" ou ".mov". Matroska é um formato de envelope de arquivo, que é bem flexível, permite múltiplos streams de tudo, incluindo de legenda, por isso é muito usado pra compartilhar em torrent.
 
-![MakeMKV](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBPUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--bc7b87eced5a21ecd5c28ad2affedfdf2b22a666/Screenshot%20from%202024-03-28%2015-47-21.png?disposition=attachment&locale=en)
+![MakeMKV](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/0swbtawzxepqgd4r88cfnbg97ne9?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20from%202024-03-28%2015-47-21.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520from%25202024-03-28%252015-47-21.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000723Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=085f00573ddcb24c011c0bc37121b0b466254009b3f9015494dff4bc112a0823)
 
 Com esse container, você consegue acessar via navegador a interface gráfica do aplicativo (é como se fosse um cliente remoto de Windows, como VNC). Basta ter o leitor de Blu-Ray conectado via USB no seu computador e deve achar. Ele vai usar a biblioteca [libredrive](https://forum.makemkv.com/forum/viewtopic.php?t=18856) pra descriptografar os streams de dados do Blu-Ray, e por isso a importância das versões de firmware serem compatíveis (já terem sido quebrados).
 
@@ -99,7 +99,7 @@ Pra minimizar isso, podemos recodificar ou "re-encodar". É como quando pegamos 
 
 A melhor opção é ter uma placa de video NVIDIA, com suporte a encoding de video via hardware NVENC e usar o melhor software pra encoding de video: [Handbrake](https://handbrake.fr/). No meu caso, eu escolho o perfil pré-configurado de **Matroska H.265 MKV 4K60fps** e mudo pra usar o encoder NVENC da minha placa RTX 4090, que isso acelera o encoding em múltiplas vezes.
 
-![HandBrake](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBPZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--82678dc48bb016ce394ececcc21eefb3154bc56a/Screenshot%20from%202024-03-28%2015-56-03.png?disposition=attachment&locale=en)
+![HandBrake](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/vcjscocbej7d64mo6gnvu97rcoiz?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20from%202024-03-28%2015-56-03.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520from%25202024-03-28%252015-56-03.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000725Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=a6279cfa69854e811b176e6fad90a070bb47019730397e6f00629bbfe4d937a6)
 
 No docker compose, assim como MakeMKV, posso subir esse app pra ter acesso via navegador web, assim:
 
@@ -135,7 +135,7 @@ Muitos não querem ter esse trabalho, pra isso não deixe de ler o [fórum do Re
 
 Por mais Blu-Ray e UHDs que você tenha ou consiga comprar, muita coisa nem existe em disco físico. Nesse caso, sua única opção é BitTorrent. E sim, é **ilegal piratear**, eu **não estou incentivando pirataria** bla bla bla ...
 
-![QBitTorrent](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBPdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--164d93dcb0fded70073d0fa09b31aaddad8b5744/Screenshot%20from%202024-03-29%2011-48-39.png?disposition=attachment&locale=en)
+![QBitTorrent](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/ar374pd43442x45030482kqhzq17?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20from%202024-03-29%2011-48-39.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520from%25202024-03-29%252011-48-39.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000726Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=33d297606f3daa05ec3464171e2e2e161cce0008394692cf9b7f5194b3590fc9)
 
 Cada país tem uma lei, vá pesquisar. Vou assumir que todo mundo sabe com o que está fazendo e não é problema meu. Não adianta comentar sobre isso, não vou alongar isso. A Web já está abarrotada de material a respeito, vá no Google e procure você mesmo.
 
@@ -164,21 +164,21 @@ Precisa entender o mínimo de redes, entender se está atrás de um NAT, como ma
 
 Se o torrent não estiver baixando, "pode ser" isso. Coloco entre aspas porque é só uma possibilidade. Então clique em "random" pra escolher outra porta, edite a configuração de docker compose pra mapear a porta nova e reinicie o container.
 
-![QBitTorrent Port Listen](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBQQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--4bece8e89d921313c04ee1635179929a55cdf43c/Screenshot%20from%202024-03-29%2011-49-43.png?disposition=attachment&locale=en)
+![QBitTorrent Port Listen](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/vb3jnft1drvqsjjreo2bycp1y0e5?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20from%202024-03-29%2011-49-43.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520from%25202024-03-29%252011-49-43.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000727Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=2ebc1990c8e65efeb2971b012b2d33b5e85a8b1882deade75b2bd94de2cc6d12)
 
 Por alguma razão o gerenciamento de salvamento vem tudo como Manual, é importante mudar pra automático:
 
-![QBitTorrent Saving Management](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBVUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--9e5a198b4b8b9336fcaee1cf543c59ba491a71d3/Screenshot%20from%202024-04-02%2012-14-26.png?disposition=attachment&locale=en)
+![QBitTorrent Saving Management](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/jqk5vdpxthahdwi2q5y1edgyxxa6?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20from%202024-04-02%2012-14-26.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520from%25202024-04-02%252012-14-26.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000728Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=0b880de7de6e4620e2e784b10d4aec32d657a2ba3e6415389535ab9d7183434d)
 
 Outro detalhe é pedir pro QBitTorrent re-anunciar os downloads para os trackers quando a porta mudar. Pra isso habilite essa opção "Reannounce to all trackers when IP or port changed", senão os downloads podem não reiniciar.
 
-![QBitTorrent Reannounce](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBQUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--3c37f472e61b2a67f7751b83ebf4e50d4c5f8a97/Screenshot%20from%202024-03-29%2011-50-12.png?disposition=attachment&locale=en)
+![QBitTorrent Reannounce](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/yoo525n36cc08u6mijoxzwpgg79e?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20from%202024-03-29%2011-50-12.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520from%25202024-03-29%252011-50-12.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000730Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=b83f797143380a17083da2b71598054be33d3e675850b3601448c240e5553f50)
 
 Finalmente, como pesquiso coisas pra baixar? Posso manualmente ir no Google ou DuckDuckGo ou direto em sites como os do PirateBay da vida e buscar arquivos ".torrent" ou links magnéticos. Pra saber o que é isso, assista meu vídeo sobre [Criptografia na Prática](https://www.youtube.com/watch?v=iAA8NrfQtHo) onde explico tudo sobre Torrent também.
 
 O QBitTorrent tem suporte a plugins de pesquisa. Ele já vem com alguns habilitados. No canto inferior direito, tem o botão de "Search plugins". Queremos adicionar o plugin que engloba tudo: o serviço [Jackett](https://github.com/qbittorrent/search-plugins/wiki/How-to-configure-Jackett-plugin).
 
-![Jackett plugin](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBQZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--53fd08a5c748e2a324a5794e4b91fad07a5d4fa9/Screenshot%20from%202024-03-29%2012-01-48.png?disposition=attachment&locale=en)
+![Jackett plugin](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/dvndok2h1lgavk0igv24dazi2pwp?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20from%202024-03-29%2012-01-48.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520from%25202024-03-29%252012-01-48.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000731Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=de7b54bdc581583c08dd519eca1eb5f742e73580a3c669dfc38f68e350f62bbc)
 
 Veja que ele quer um host com nome "jackett" habilitado na porta 9117, pra isso temos este trecho no docker compose:
 
@@ -199,11 +199,11 @@ Veja que ele quer um host com nome "jackett" habilitado na porta 9117, pra isso 
 
 Ele vai subir um serviço onde podemos acessar a interface web assim:
 
-![Jackett Web UI](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBQdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b31d6e597abc2183392749bea5bbe1b47c87ed04/Screenshot%20from%202024-04-02%2010-34-54.png?disposition=attachment&locale=en)
+![Jackett Web UI](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/p2f8xj5cemh9g48f8sayg52os2ts?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20from%202024-04-02%2010-34-54.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520from%25202024-04-02%252010-34-54.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000732Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=ca9e123991c83690b334429c316c73b6ba632d9fd9d332dd06cd171ac32d69a5)
 
 É um serviço que consolida dezenas de sites de pesquisa de torrents num lugar só, consegue testar se estão online e, mais importante, fornece uma chave de API no canto superior direito, que devemos copiar e editar na [configuração do plugin](https://github.com/qbittorrent/search-plugins/wiki/How-to-configure-Jackett-plugin) do QBitTorrent. Com isso é possível fazer pesquisar diretamente, recebendo respostas assim:
 
-![QBitTorrent Search Engine](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBRQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--d8a91f499d956980082bb7b99c38ab3e459d61e4/Screenshot%20from%202024-04-02%2010-37-18.png?disposition=attachment&locale=en)
+![QBitTorrent Search Engine](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/q8tbrlvwuoj2ilehs05kbfj40cs4?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20from%202024-04-02%2010-37-18.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520from%25202024-04-02%252010-37-18.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000733Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=94941587c647a9c3bfe521ac01767deb636192fc8ed1567f91ff3f3f8a84a2a8)
 
 Veja na coluna da direita que lista de onde puxou esses resultados: está vindo do serviço Jackett.
 
@@ -211,7 +211,7 @@ Veja na coluna da direita que lista de onde puxou esses resultados: está vindo 
 
 Procurar manualmente funciona, mas existem formas melhores: deixar um serviço fazer a procura e gerenciar o download pra você, e pra baixar filmes, podemos usar o serviço [Radarr](https://radarr.video/):
 
-![Radarr Web UI](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBRUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b7e00693a19cbeb92d9b625045b5015c596754f1/Screenshot%20from%202024-04-02%2010-39-40.png?disposition=attachment&locale=en)
+![Radarr Web UI](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/d9fz9nc4dc8mgcaowpo5xul6w71e?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20from%202024-04-02%2010-39-40.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520from%25202024-04-02%252010-39-40.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000735Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=6b3fcaeb1a1558190721cb172cdc9e4bd65f9b37ec83dd0416f193be44730d37)
 
 Pra isso, temos este trecho no docker compose:
 
@@ -238,25 +238,25 @@ Veja que mapeei diretórios diferentes pra filmes ocidentais e filmes anime, é 
 
 O principal é que uma vez iniciado, podemos navegar pela interface web, pra opção "Settings". Ali vai ter "Download Clients"e podemos registrar o serviço web de QBitTorrent:
 
-![Radarr QBitTorrent](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBRZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e8612d947c3e56e8dab1d08a20b32afc2e650b27/Screenshot%20from%202024-04-02%2010-42-10.png?disposition=attachment&locale=en)
+![Radarr QBitTorrent](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/o3bkso3dmxppqk7qkbxc5miwt3ul?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20from%202024-04-02%2010-42-10.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520from%25202024-04-02%252010-42-10.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000737Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=fcd6a2c86724215d54fd02bc393c6a85766652e0c9189d3221ea605cb501cb76)
 
 Eu não mostrei, mas nas configurações do QBitTorrent vai ter um lugar pra cadastrar essa senha de admin pra acessar a API dele via web. Não esqueça de cadastrar lá e usar a mesma senha aqui. Assim o Radarr pode controlar o download de filmes diretamente com o QBitTorrent, sem você precisar se meter.
 
-![QBitTorrent Web UI](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBXUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--911f3e5aa608aa89a3cfc2038166a2f15a3e69a2/Screenshot%20from%202024-04-03%2013-18-37.png?disposition=attachment&locale=en)
+![QBitTorrent Web UI](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/hx4xnogjlt7i4hjkpkrniqgboaui?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20from%202024-04-03%2013-18-37.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520from%25202024-04-03%252013-18-37.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000738Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=d62b3885b71efc9e3bfa0897175cf840653022fcc7d86b6ebc939d7e22ffab89)
 
 ## Sonarr (Séries de TV)
 
 Mesma coisa que o Radarr, mas pra séries de TV, temos o serviço [Sonarr](https://sonarr.tv/):
 
-![Sonarr Web UI](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBRdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--89edcd87bb16aaefcd9cc97379291934a8f05923/Screenshot%20from%202024-04-02%2010-44-56.png?disposition=attachment&locale=en)
+![Sonarr Web UI](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/ky9rxjko4m5mfordc84fn6so7xlx?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20from%202024-04-02%2010-44-56.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520from%25202024-04-02%252010-44-56.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000739Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=5a657f0f170cf779003349158d80d20d5b5ed4e2bff42cf2980bdaedc37364e0)
 
 Esse serviço é sensacional. Ele acha suas séries, cruzando com bancos de dados online com detalhes como temporadas, nomes de cada episódio e vários outros metadados. Daí ele não só consegue baixar episódios antigos, como mantém uma agenda pra ir baixando séries que ainda estão passando. Toda semana aparece episódio novo sozinho:
 
-![Sonarr Série](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBSQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--63ed2934884702c015214355125c7040c3735b60/Screenshot%20from%202024-04-02%2010-49-54.png?disposition=attachment&locale=en)
+![Sonarr Série](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/xf3cj62rrzl30q34qnf1f629fmm3?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20from%202024-04-02%2010-49-54.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520from%25202024-04-02%252010-49-54.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000741Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=31447ca22f8c6554d0bee58bf7e429aa0f2997bae8cde995c00028be28dbfc70)
 
 E mesma coisa do Radarr: em Settings e Download Clients, posso registrar meu QBitTorrent, daí o Sonarr se vira pra ir baixando os episódios:
 
-![Sonarr QBitTorrent](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBSUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--db203d4828ba8680c6143ed9f28529b6ec3219ff/Screenshot%20from%202024-04-02%2011-14-02.png?disposition=attachment&locale=en)
+![Sonarr QBitTorrent](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/qxxuy0wa90se9x8alm9pi7ycmzt0?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20from%202024-04-02%2011-14-02.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520from%25202024-04-02%252011-14-02.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000742Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=3889a81c18ef78020db24156a4a319e61908cb9435ec553cfa7db4856e7fb8aa)
 
 E pra subir o serviço, no docker compose temos este trecho:
 
@@ -286,11 +286,11 @@ Pra tanto o Radarr e Sonarr saberem de onde puxar os torrents de séries e filme
 
 Por outro lado, é o serviço que eu não sei dizer direito qual a melhor forma de configurar. Por enquanto é realmente gastar horas nele fazendo tentativa e erro e fuçando o quanto puder. Nunca fiquei 100% satisfeito com minha configuração. Se tiverem dicas sobre isso, mandem nos comentários abaixo.
 
-![Prowlarr](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBTUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--9377bc9cc748afa7485760dcb4b54732c604f95e/Screenshot%20from%202024-04-02%2011-31-40.png?disposition=attachment&locale=en)
+![Prowlarr](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/a1xmx4qhm0i554d0vwsij051ivnz?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20from%202024-04-02%2011-31-40.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520from%25202024-04-02%252011-31-40.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000744Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=063fb38b999ba795a816696f86356c12be754230caf54e4eb8289e6ad84023c2)
 
 Veja que lista dezenas de indexadores, ou trackers. É parecido com o Jackett. A diferença é que o Jackett é pra pesquisas manuais que você mesmo vai fazer, direto no QBitTorrent. Já os indexadores do Prowlarr vão ser configurados direto no Sonarr e Radarr. Aqui começa a confusão, vamos entender:
 
-![Sonarr Indexes](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBTZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--ceb8742d94815d1c5818b1354681d3e97ccac723/Screenshot%20from%202024-04-02%2011-34-25.png?disposition=attachment&locale=en)
+![Sonarr Indexes](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/5fu7qbgxgr4qf5kzzjyma1zevr9u?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20from%202024-04-02%2011-34-25.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520from%25202024-04-02%252011-34-25.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000745Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=1409080709abf99369c89e3e05f27a839faccd892f0f1b9ecf392840807705c6)
 
 Tanto no Sonarr quanto no Radarr, além de Download Clients, onde podemos configurar o QBitTorrent, também vai ter essa opção de "Indexers", onde podemos configurar em quais trackers procurar pela mídia.
 
@@ -300,15 +300,15 @@ Pense num tracker como um mini-Google público, é onde as pessoas registram seu
 
 Nas configurações do Prowlarr, começamos configurando onde encontrar nossos serviços de Sonarr e Radarr:
 
-![Prowlarr Apps](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBTdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--08955aac9fb062fc0f9f88f11217e0124ab3d6e7/Screenshot%20from%202024-04-02%2011-37-58.png?disposition=attachment&locale=en)
+![Prowlarr Apps](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/t5opcjgeutzt3l4omy6wkk4gbw98?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20from%202024-04-02%2011-37-58.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520from%25202024-04-02%252011-37-58.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000746Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=05a843d2a2a31335f9a832be9db4c5d1e9828751ed54f261db30835e70af10fd)
 
 Por exemplo, esta é a configuração do meu Sonarr. Notem que o hostname é "sonarr" e isso funciona porque no meu docker compose eu subo todos os serviços na mesma VLAN, e por padrão o docker registra como hostname o nome do serviço configurado no arquivo YAML. Se não entende Docker, não deixe de assistir meus videos sobre [containers](https://www.youtube.com/watch?v=85k8se4Zo70).
 
-![Prowlarr Sonarr](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBUQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--6533b1b8803b891220bc34095da14884577db73f/Screenshot%20from%202024-04-02%2011-39-41.png?disposition=attachment&locale=en)
+![Prowlarr Sonarr](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/d95y3u96q4tw9q9hs5u5q3eq26zf?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20from%202024-04-02%2011-39-41.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520from%25202024-04-02%252011-39-41.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000748Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=c8c3114bd4ff060b8db0cb6537ed313e7368e5b6d6878b1ef6c04b93a266c6f3)
 
 Também precisamos configurar acesso ao QBitTorrent:
 
-![Prowlarr QBitTorrent](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBUUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--27af7e0aebf16da73ddcd661bfb7721bbb0898fa/Screenshot%20from%202024-04-02%2011-42-55.png?disposition=attachment&locale=en)
+![Prowlarr QBitTorrent](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/179tso31cnwvyxan9ltvgibeu8sm?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20from%202024-04-02%2011-42-55.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520from%25202024-04-02%252011-42-55.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000750Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=63ce4885f9f7f1ba161fefb200f3c90b41960a3d905ee640853d46c6661d7e7d)
 
 
 Esse outro "Sabnzdb" é usando outro protocolo de downloads mais antigo, baseado em newsreader de USENET. Sim, aquela antiga Usenet mesmo. Quem sabe, sabe. Tem esse serviço no meu docker compose, mas nunca consegui fazer funcionar direito. Melhor até apagar essa entrada pra não confundir. Hoje eu deixo só torrent mesmo, mas é porque muito conteúdo parece que só existe nesses grupos mais antigos de newsreader. 
@@ -327,15 +327,15 @@ Finalmente, muitos trackers hoje implementam algum tipo de proteção contra bot
 
 E no Prowlarr podemos configurar na seção de Indexers, assim:
 
-![Prowlarr FlareSolvrr](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBUZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--edb16fa6e9477d3658165c31fc4e017054514093/Screenshot%20from%202024-04-02%2011-47-44.png?disposition=attachment&locale=en)
+![Prowlarr FlareSolvrr](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/7949bp73gbb49994tynwuil9249h?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20from%202024-04-02%2011-47-44.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520from%25202024-04-02%252011-47-44.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000751Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=5a17daf2d24d2032b1f29cfcd92131672ec6787f43511b967a7a95ba9bdedca5)
 
 Como eu disse, é um saco de configurar isso. Mas ainda não acabamos. Na tela principal, tem que sair habilitando todos os indexers que fazem sentido pra você. Não é bom habilitar tudo, porque vai ficar muito pesado depois. Veja os tags de cada um. Tem indexer que é só de pornô, por exemplo, eu pulei todos esses. Tem indexers específico só pra conteúdo em russo ou chinês, daí pula também. 
 
-![Add Indexer](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBXZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e36526f2bd46970193ebfb669851f78d6626a3b0/Screenshot%20from%202024-04-03%2013-25-29.png?disposition=attachment&locale=en)
+![Add Indexer](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/cnl4yefcsvas84m6eslb3in7jmq9?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20from%202024-04-03%2013-25-29.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520from%25202024-04-03%252013-25-29.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000752Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=f321ed33fec8cba481820cd6213d20c6449740ca257db1a4000f52c70be33178)
 
 No final, é bom clicar esse "Test All Indexers" pra checar quais ainda estão ativos ou não. E por fim, podemos clicar em "Sync App Indexers", que vai cadastrar todos os indexers que sabemos que estão funcionando, nos registros do Sonarr e Radarr. Entenderam? O Prowlarr vai configurar os dois com os indexers mais atualizados, e remover os que não estão mais ativos. Não precisamos configurar cada um deles manualmente.
 
-![Sync App](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBXdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--401301aafeadad0b624cf100367fe06a66c7fa89/Screenshot%20from%202024-04-03%2013-26-45.png?disposition=attachment&locale=en)
+![Sync App](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/if86fzdhieaqt5fxpbozfrh0x13k?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20from%202024-04-03%2013-26-45.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520from%25202024-04-03%252013-26-45.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000753Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=906935ad46f3242745f8da9437e0d993d49325e744ef1b7a1be240b4b84b5385)
 
 É importante entender isso, porque senão você vai ver o Sonarr e o Radarr não conseguindo baixar nada e não vai saber porque: mas é porque os indexers estão errados ou obsoletos ou insuficientes. Gaste bastante tempo lendo a documentação do [Prowlarr](https://prowlarr.com/).
 
@@ -347,21 +347,21 @@ Se for um pouquinho mais sofisticado, e tiver um PC ou Raspberry Pi sobrando, d�
 
 Mas se quiser algo mais amigável e sofisticado, dá pra ter literalmente seu "Netflix Particular", com uma interface gráfica parecida com qualquer plataforma de streaming, onde mostra thumbnails, descrições, detalhes do filme ou série, tocador de video e tudo mais e até sugestões do que assistir, sugestões de filme baseado no que está assistindo, informações de atores e tudo mais.
 
-![Plex](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBVZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--6b30daa6609c7d4d2efa4ca56b8b38b75bc72ad9/Screenshot%20from%202024-04-02%2012-21-19.png?disposition=attachment&locale=en)
+![Plex](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/uvfh2i3ppr5mgrt1xl1r6kjgtvdb?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20from%202024-04-02%2012-21-19.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520from%25202024-04-02%252012-21-19.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000754Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=f9f599c0b64f766061582475ff94a1ad00641f888ae9abbf5328dcbf222ceacc)
 
 Existem vários projetos que fazem isso. Um deles, que a comunidade curte mais por ser 100% aberto, é o [Jellyfin](https://jellyfin.org/) (derivado do antigo Emby). Recomendo que testem, tem tudo que a maioria das pessoas precisa. Basta mapear as pastas de downloas do Sonarr, Radarr e ele vai indexar tudo e organizar pra você. Daí, de qualquer PC, é só acessar a interface web e tudo só funciona.
 
 Mas eu pessoalmente prefiro o [Plex](https://www.plex.tv/pt-br/), que é mais antigo, é mais fechado (por isso alguns não gostam), mas por oferecer [planos pagos](https://support.plex.tv/articles/202526943-plex-free-vs-paid/) com funcionalidades exclusivas, o nível de polimento é nitidamente melhor. A interface é bem mais bonita, e parece mais "profissional". Jellyfin, por melhor que seja, ainda tem cara que foi um programador backend que fez, com muita má vontade em UX e design.
 
-![Plex details](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBWUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--c83ffe48c3e3ba691a01df6de5116fe4a7767cf4/Screenshot%20from%202024-04-02%2012-27-29.png?disposition=attachment&locale=en)
+![Plex details](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/gh6kum745hoedx34km4rggpfubjd?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20from%202024-04-02%2012-27-29.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520from%25202024-04-02%252012-27-29.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000756Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=69e9db4080130a9cd41d22ee947b44d1cd11e3ac01a0373ced7576ecbcc52002)
 
 Além disso, pra assistir numa Smart TV ou Android TV da vida, precisa ter app no Google Play Store. Jellyfin não tem app pra tudo, algumas TV, não lembro se LG ou Samsung, nem tem o app disponível. Então precisa fazer side-load. Não é amigável. Plex, por outro lado, está disponível em bem mais lugares, então costuma ser mais "plug and play", parecido com baixar app de Netflix ou Amazon Prime.
 
-![Plex Skip Intro](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBVdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--d818856dd7fbb2db0338790bd75e988a8a1b7568/Screenshot%20from%202024-04-02%2012-24-56.png?disposition=attachment&locale=en)
+![Plex Skip Intro](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/zvipl6wce0rruosctykjnou6ayu0?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20from%202024-04-02%2012-24-56.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520from%25202024-04-02%252012-24-56.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000758Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=f0aba64f9cfb2df2d68b5b1e5d8e50340d25f642c5a8ca1594953d4532335e9a)
 
 Plex também tem funcionalidades que "just works", coisas triviais que se espera num tocador, como botão de "pular abertura" ou "resumir a partir de onde parou" ou "pular pro próximo episódio" ou "pesquisar e trocar legenda". É isso que interfaces como essas vão te oferecer, daí a usabilidade é realmente muito parecida com assistir Netflix. Não tem isso se usar um tocador genérico de PC como um VLC da vida.
 
-![Plex Subtitles](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBWQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--6fa460e9fde320b236851160ecdccff82fda10e0/Screenshot%20from%202024-04-02%2012-26-21.png?disposition=attachment&locale=en)
+![Plex Subtitles](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/mev5extpv8lgv7k1lhsq0bcm8i46?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20from%202024-04-02%2012-26-21.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520from%25202024-04-02%252012-26-21.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000759Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=0c68eccd6ba72f114f65ee7dce9db7476548ffed3311b131b8be82c6479700b6)
 
 Pra subir é fácil, eis o trecho do meu docker compose:
 
@@ -402,7 +402,7 @@ Em todo caso, em Linux, essas instruções devem ficar expostas no dispositivo `
 
 Se estiver tudo certo, no Plex vai ter essa opção de configurar "Transcoder":
 
-![Plex Transcoder](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBWZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--5602e3f862bee4b5ab2d52541d85aeefc0d36e19/Screenshot%20from%202024-04-02%2012-38-12.png?disposition=attachment&locale=en)
+![Plex Transcoder](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/q6y2swsu9u0uhzggskx3bimnxcou?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20from%202024-04-02%2012-38-12.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520from%25202024-04-02%252012-38-12.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000801Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=7c9215bcf79e16cfec2fd5a35be39bd41f387fbe0e4d59ffa85fac2e2d636d19)
 
 Queremos nos certificar que a qualidade está em "Make my CPU hurt" e que a opção de "Use hardware acceleration when available" está hablitado também, daí ele vai usar o `/dev/dri` pra acelerar o transcoding. E isso faz uma diferença BRUTAL na velocidade. Se estiver com playback sendo engasgado, muito provavelmente é o transcoding.
 
@@ -410,7 +410,7 @@ Quando o dispositivo, seu smartphone ou sua TV, tem suporte ao exato codec usado
 
 **DETALHE IMPORTANTE:** Recentemente fiquei confuso ao tocar alguns dos meus videos. Eu tenho o melhor hardware, tanto pro servidor de Plex, com aceleração via hardware, quanto Android TV pra tocar que é meu NVIDIA Shield Pro, quando rede cabeada, etc. Mas alguns videos ficavam engasgando. E no final o culpado não era hardware, nem configuração, nem nada disso, era a maldita legenda:
 
-![Plex problema de Legenda PGS](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBYQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e5915f2833c324f7cf9df07dadb722a67fc54da2/Screenshot%20from%202024-04-03%2013-35-06.png?disposition=attachment&locale=en)
+![Plex problema de Legenda PGS](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/z8wlwg5nze02ubi9m8dbkxlqqnin?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20from%202024-04-03%2013-35-06.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520from%25202024-04-03%252013-35-06.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000802Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=d19ee0d526603020f1777179b91fdee5c1732897f92fe8fda47bd59c6194e11c)
 
 Quem já precisou baixar legendas, já deve ter visto o formato mais comum, que é o **.SRT** (SubRip). Alguns que se aventuraram mais, já devem ter visto outros formatos, como SSA (SubStation Alpha), TTML (Timed Text Markup Language), VTT (Web Video Text Track), VOBSUB, etc.
 
@@ -426,11 +426,11 @@ A solução: use o Plex pra pesquisar uma nova legenda, em formato SRT, e ignore
 
 Só com o Sonarr e Radarr, mais os indexers do Prowlarr, já é suficiente pra conseguir procurar e baixar tudo. Mas tem um outro app que tenta facilitar o processo de descobrir coisas novas pra baixar. Esse é o Overseerr:
 
-![Overseerr](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBVQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--77238f4779f14109a428af22482c37a38d6d5452/Screenshot%20from%202024-04-02%2012-11-56.png?disposition=attachment&locale=en)
+![Overseerr](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/scl2gpzjir3g0hga7p1ip50cs54w?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20from%202024-04-02%2012-11-56.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520from%25202024-04-02%252012-11-56.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000804Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=e3cd80054911c1fcd4baa8d501d59127054d3cb9c96700f160d6d315d1aefcd4)
 
 Ele vai em bancos de dados online gratuitos (tipo os IMDB) da vida e fica de olho em tudo que sai de novo, tudo que está em "trending". Se eu quero achar alguma coisa nova, é uma boa. Mesmo coisas que já sei o que quero, basta pesquisar no Overseerr e clicar em "Request":
 
-![Overseerr Request](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBYUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--ca4ce6991cf3588912c6d663ed32960ccd50c5af/Screenshot%20from%202024-04-03%2013-45-27.png?disposition=attachment&locale=en)
+![Overseerr Request](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/4rcrqhxpooq14nip3zj3m7epo7p3?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20from%202024-04-03%2013-45-27.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520from%25202024-04-03%252013-45-27.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000806Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=95e63b26aa0f5ac270f9ba7a3c23da9597934db0d3a79b944c56fef847e25d7a)
 
 Eu configuro integração com Sonarr e Radarr nas configurações, assim ele sabe pra quem mandar a requisição. Funciona tudo integrado. Só preciso usar a interface do Overseer pra requisitar as coisas e posso esquecer do Sonarr e Radarr em background.
 
@@ -442,7 +442,7 @@ Antigamente tinha que ir manualmente em sites como [OpenSubtitles.org](https://w
 
 Existem dois jeitos de resolver isso. Um é pelo próprio Plex, que tem a opção de pesquisar legendas em diversas línguas e ficar testando direto da interface do tocador. Facilita bastante porque pula o passo de ter que ficar no PC, manualmente baixando arquivos. Como expliquei na seção anterior, no meu caso, que a legenda dos backups de UHD foram extraídos no formato PGS, eu preciso buscar no formato SRT pra não engasgar na hora de tocar.
 
-![Plex Legendas](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBYZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--ab0f642bb0cd0129fbd20c6b6fff47e129304b7e/Screenshot%20from%202024-04-03%2013-48-57.png?disposition=attachment&locale=en)
+![Plex Legendas](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/ok05g5tdrevvaywqfqmjwy0we3d6?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20from%202024-04-03%2013-48-57.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520from%25202024-04-03%252013-48-57.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000811Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=241e855dfc034c8b0392f1c7ead342e179136ee43cf357423202f6c783367eab)
 
 Outra forma é tentar baixar as legendas automaticamente antes. Isso não é perfeito porque existem diversas versões de legendas, algumas foram feitas pra DVD, outras pra BluRay, alguns até pra versões mais populares de "CAM" que são torrents de videos gravados direto no cinema com um smartphone, que é a versão mais porcaria de todas.
 
@@ -450,15 +450,15 @@ Outra forma é tentar baixar as legendas automaticamente antes. Isso não é per
 
 Pra facilitar isso temos o serviço [Bazarr](https://www.bazarr.media/):
 
-![Bazarr Web UI](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBSZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--f76588dbbd1b3765b9bfc429afd41e10ddace2c1/Screenshot%20from%202024-04-02%2011-26-05.png?disposition=attachment&locale=en)
+![Bazarr Web UI](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/mjziydblv9rh4yowhuodgxycjzf6?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20from%202024-04-02%2011-26-05.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520from%25202024-04-02%252011-26-05.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000813Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=b778711ffa4ced83d97b12249715ee64985d6464abafa53ee0b9a14511f8bfc2)
 
 Na configuração do Bazarr, vamos apontar pros nossos serviços locais de Sonarr e Radarr, assim ele fica sabendo toda vez que aparece episódio novo de série ou algum filme novo, e já agenda pra tentar procurar a legenda:
 
-![Bazarr integração](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBSdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--15c6d014eb47ab60888de3592846b9bd5ae5d9b7/Screenshot%20from%202024-04-02%2011-27-14.png?disposition=attachment&locale=en)
+![Bazarr integração](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/rhiefnojwsullwi1m9swhxds6ocj?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20from%202024-04-02%2011-27-14.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520from%25202024-04-02%252011-27-14.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000814Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=d55d5e50c92d53c60cf555e325d52eface4bd271753616b07d34dacc379781a0)
 
 O principal é configurar os Providers, que são sites como o OpenSubtitles.org que mencionei antes, de onde baixávamos legendas manualmente. O Bazarr tem integração com vários deles, mas precisamos registrar manualmente, não é difícil. Quanto mais, melhor.
 
-![Bazarr Providers](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBTQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--f4f1c54f5810af52cff62ee26aa6e1d8f1eb7e04/Screenshot%20from%202024-04-02%2011-28-52.png?disposition=attachment&locale=en)
+![Bazarr Providers](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/8lzq8umwyjgg40abb1tlvtvt8nxu?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20from%202024-04-02%2011-28-52.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520from%25202024-04-02%252011-28-52.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000815Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=89f7abb1461e2c168f242a4ea401ea47122401fb415b7b47f7522f25816b4896)
 
 Pra subir o serviço, no docker compose, temos este trecho:
 
@@ -488,21 +488,21 @@ No [meu repositório](https://github.com/akitaonrails/plex_home_server_docker/tr
 
 Em [net-docker-compose.yml](https://github.com/akitaonrails/plex_home_server_docker/blob/master/net-docker-compose.yml) eu configuro cloudflared e pi-hole. Pra quem não sabe, [Pi-Hole](https://pi-hole.net/) é um servidor de DNS que tem funcionalidade de bloquear acesso a banners, ads, propaganda e até sites de malwares. Ele não substitui um anti-virus ou anti-malware, mas já ajuda muito. 
 
-![Pi-Hole](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBYdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e07d5f666b4a280602a52a047695bebd84cde5f2/Screenshot%20from%202024-04-03%2013-57-25.png?disposition=attachment&locale=en)
+![Pi-Hole](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/e9np7nq9xxtn0lkzibkf1234o3ts?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20from%202024-04-03%2013-57-25.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520from%25202024-04-03%252013-57-25.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000817Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=da67e00b01e0bfa01aae6b321ef7b964c0828ce85e5182094fa1a82fdc69b1a9)
 
 Olha quantas queries bloqueadas tem. Isso me dá paz de espírito que estou dificultando bastante que terceiros consigam criar uma boa impressão digital dos meus padrões de navegação. Mais ainda porque estou usando DoH que é DNS over HTTPS com o serviço [cloudflared](https://github.com/cloudflare/cloudflared). Se não sabia disso, queries de DNS é um protocolo texto aberto. Seu provedor sabe exatamente tudo que você navega. Eu prefiro não dar esse dado de graça pra eles, então mando tudo pra Cloudflare via HTTPS encriptado. Sim, a Cloudflare tem meus dados, mas eles não estão na minha jurisdição, então tá suficiente. É só pela diversão de dificultar mesmo.
 
 Agora, no arquivo [kaizoku-docker-compose.yml](https://github.com/akitaonrails/plex_home_server_docker/blob/master/kaizoku-docker-compose.yml) tem outro serviço tipo Sonarr pra TV, Radarr pra filmes, que é o [Kaizoku](https://github.com/oae/kaizoku) pra mangá. Se você lê mangá online, já deve ter visto muitos sites sendo fechados por causa de copyright, direitos autorais e tudo mais. Eventualmente, os mangás online que você leu, vão desaparecer. Com o Kaizoku podemos preservar eles localmente também.
 
-![Kaizoku](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBZQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--0e303b5f4eb345d28e2d33f37bbfb14ef07989ed/Screenshot%20from%202024-04-03%2014-02-32.png?disposition=attachment&locale=en)
+![Kaizoku](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/iucprcsmn9emkzzurs7z2fstcsjm?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20from%202024-04-03%2014-02-32.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520from%25202024-04-03%252014-02-32.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000818Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=d2c3f6db864ff20a866654c06e5e4789a5fcff78a10fb93bdeaf781015c1d3e8)
 
 O Kaizoku é só pra baixar. Pra ler, precisamos de um leitor, da mesma forma que temos Plex pra video, temos [Kavita Reader](https://www.kavitareader.com/) pra ler os mangás baixados. Assim como Plex, basta na primeira configuração apontar pra pasta onde o Kaizoku baixa tudo, daí o Kavita vai se virar pra organizar a biblioteca, baixar capas e outros metadados. É literalmente o Plex pra Mangá.
 
-![Kavita](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBZUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--142e2e8c3ee677a9298eeac86ff8f3c641525a88/Screenshot%20from%202024-04-03%2014-21-09.png?disposition=attachment&locale=en)
+![Kavita](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/bxuz95wo3luc308lz1dos9bf2kcr?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20from%202024-04-03%2014-21-09.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520from%25202024-04-03%252014-21-09.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000819Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=fbe9ce9be176b7e8f123da3b12b90b913fe49d23a903bb9b1a2c5e0e5d772f0b)
 
 Ainda não explorei muito esse serviço. Ou ainda tem coisas pra refinar nele, ou eu que não sei configurar direito, mas nem tudo baixa capas direito. Vejam como não está bonito. Se tiverem dicas sobre Kavita e Kaizoku, não deixem de compartilhar abaixo.
 
-![Kavita Reader](https://d1g6lioiw8beil.cloudfront.net/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBZZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--fc6421ecf59f9dfda7af18970ae5d84f0c32b2d1/Screenshot%20from%202024-04-03%2014-22-55.png?disposition=attachment&locale=en)
+![Kavita Reader](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/bcrh2ifucs86fupzk8gqa38yx5iq?response-content-disposition=inline%3B%20filename%3D%22Screenshot%20from%202024-04-03%2014-22-55.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot%2520from%25202024-04-03%252014-22-55.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA5FTZDKYVLZU6Z457%2F20250527%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20250527T000821Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=67e338daf27afb619d4ecb5cb0da516975a5c993a333cc6faa22c21ccd89d101)
 
 Pra ler em si, é bem parecido com um Kindle Web ou outros sites online de mangá. Dá pra ler página a página, ou "scrollar" o capítulo inteiro, ele vai lembrar onde você parou e coisas básicas assim. Pode ser um bom projeto pra contribuir, se tem vontade de treinar com código aberto.
 
