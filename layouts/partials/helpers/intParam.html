@@ -3,8 +3,14 @@
 {{- $default := index . 1 }}
 
 {{- if and $val (ne $val "") }}
-  {{- $maybeInt := (int $val) | default $default }}
-  {{- $maybeInt -}}
+  {{- /* Force cast para inteiro puro, se falhar, fallback no default */ -}}
+  {{- $intVal := 0 -}}
+  {{- with (int $val) }}
+    {{- $intVal = . -}}
+  {{- else }}
+    {{- $intVal = $default -}}
+  {{- end }}
+  {{- $intVal -}}
 {{- else }}
   {{- $default -}}
 {{- end }}
