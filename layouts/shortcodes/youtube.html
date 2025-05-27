@@ -1,0 +1,52 @@
+{{- $id := or ($.Get "id") (.Get 0) }}
+{{- $title := $.Get "title" }}
+
+{{- if or (not $id) (eq $id "") }}
+  {{ warnf "Shortcode do YouTube sem ID definido. Atribuindo título padrão." }}
+  {{- $title = or $title "YouTube Video" }}
+  {{- $id = "unknown" }}
+{{- else }}
+  {{- $title = or $title (printf "YouTube Video: %s" $id) }}
+{{- end }}
+
+
+{{- $allowFullScreen := partial "helpers/boolParam.html" (slice ($.Get "allowFullScreen") true) }}
+{{- $autoplay := partial "helpers/boolParam.html" (slice ($.Get "autoplay") false) }}
+{{- $controls := partial "helpers/boolParam.html" (slice ($.Get "controls") true) }}
+{{- $loop := partial "helpers/boolParam.html" (slice ($.Get "loop") false) }}
+{{- $muteRequested := partial "helpers/boolParam.html" (slice ($.Get "mute") false) }}
+{{- $mute := or $autoplay $muteRequested }}
+{{- $class := partial "helpers/stringParam.html" (slice ($.Get "class") "") }}
+{{- $loading := partial "helpers/stringParam.html" (slice ($.Get "loading") "lazy") }}
+{{- $start := partial "helpers/intParam.html" (slice ($.Get "start") 0) }}
+{{- $end := partial "helpers/intParam.html" (slice ($.Get "end") 0) }}
+
+{{- $defaults := site.Params.youtubeDefaults }}
+{{- $iframeAllowList := or $defaults.iframeAllowList "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" }}
+{{- $referrerpolicy := or $defaults.referrerpolicy "no-referrer" }}
+{{- $iframeStyle := or $defaults.iframeStyle "border:0; width:100%; aspect-ratio:16/9;" }}
+
+{{- $query := slice
+    (printf "autoplay=%d" (cond $autoplay 1 0))
+    (printf "controls=%d" (cond $controls 1 0))
+    (printf "start=%d" $start)
+    (printf "end=%d" $end)
+    (printf "loop=%d" (cond $loop 1 0))
+    (printf "mute=%d" (cond $mute 1 0))
+    | delimit "&"
+}}
+
+
+{{- $src := printf "https://www.youtube.com/embed/%s?%s" $id $query }}
+
+<div {{ with $class }}class="{{ . }}"{{ end }}>
+  <iframe
+    src="{{ $src }}"
+    title="{{ $title }}"
+    allow="{{ $iframeAllowList }}"
+    loading="{{ $loading }}"
+    referrerpolicy="{{ $referrerpolicy }}"
+    {{ if $allowFullScreen }}allowfullscreen{{ end }}
+    style="{{ $iframeStyle | safeCSS }}"
+  ></iframe>
+</div>
