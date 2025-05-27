@@ -26,15 +26,16 @@
 {{- $referrerpolicy := or $defaults.referrerpolicy "no-referrer" }}
 {{- $iframeStyle := or $defaults.iframeStyle "border:0; width:100%; aspect-ratio:16/9;" }}
 
-{{- $query := slice
+{{- $queryParams := slice
     (printf "autoplay=%d" (int (cond $autoplay 1 0)))
     (printf "controls=%d" (int (cond $controls 1 0)))
-    (printf "start=%d" (int $start))
-    (printf "end=%d" (int $end))
+    (printf "start=%d" (int (trim $start " \n\r\t")))
+    (printf "end=%d" (int (trim $end " \n\r\t")))
     (printf "loop=%d" (int (cond $loop 1 0)))
     (printf "mute=%d" (int (cond $mute 1 0)))
-    | delimit "&"
 }}
+
+{{- $query := delimit $queryParams "&" }}
 
 {{- $src := printf "https://www.youtube.com/embed/%s?%s" $id $query }}
 
