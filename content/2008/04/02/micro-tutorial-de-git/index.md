@@ -33,7 +33,7 @@ Pronto, quando ele terminar você terá um clone do repositório original. Liter
 <br>
 Feito isso, entre no diretório ‘merb-core’. Digite:<br>
 <br>
-<macro:code>&gt;&gt; git branch -a<br>
+<macro:code>>> git branch -a<br>
 <br>
 * master<br>
   origin/<span class="caps">HEAD</span><br>
@@ -46,17 +46,17 @@ h1. Manipulando Branches Locais<br>
 <br>
 A primeira coisa que recomendo é criar um novo branch. Pode ser qualquer nome, no meu caso eu sempre crio um chamado ‘working’.<br>
 <br>
-<macro:code>&gt;&gt; git checkout -b working<br>
+<macro:code>>> git checkout -b working<br>
 Switched to a new branch “working”<br>
 <br>
-&gt;&gt; git branch<br>
+>> git branch<br>
   master<br>
 * working<br>
 <del>-</del><br>
 <br>
 Esse comando cria o novo branch e já te muda para lá. Note como o asterisco mudou de branch. Agora você pode fazer as loucuras que quiser. Por exemplo, vou editar alguns arquivos aleatoriamente. Como sei o que mudou? Simples:<br>
 <br>
-<macro:code>&gt;&gt; git status<br>
+<macro:code>>> git status<br>
 # On branch working<br>
 # Changed but not updated:<br>
 # (use “git add <file>…” to update what will be committed)<br>
@@ -76,11 +76,11 @@ Os arquivos que já existiam no repositório e que você mexeu, aparecem como �
 <br>
 Você precisa adicionar ele ao repositório antes de dar commit. Da mesma forma como você precisaria fazer ‘svn add’.<br>
 <br>
-<macro:code>&gt;&gt; git add akita.txt <del>-</del><br>
+<macro:code>>> git add akita.txt <del>-</del><br>
 <br>
 Outra forma, caso você tenha vários novos arquivos é usar a seguinte linha:<br>
 <br>
-<macro:code>&gt;&gt; git add -i<br>
+<macro:code>>> git add -i<br>
            staged unstaged path<br>
   1: unchanged +3/-1 <span class="caps">CONFIG</span><br>
   2: unchanged +2/-0 <span class="caps">README</span><br>
@@ -89,22 +89,22 @@ Outra forma, caso você tenha vários novos arquivos é usar a seguinte linha:<b
 <b>* Commands *</b><br>
   1: status 2: update 3: revert 4: add untracked<br>
   5: patch 6: diff 7: quit 8: help<br>
-What now&gt;<br>
+What now><br>
 <del>-</del><br>
 <br>
 A opção “-i” significa ‘interativo’. Ele abre um sisteminha onde você pode digitar a opção “4”. Daí ele mostrará uma lista de arquivos cada um com um número na frente. Para adicioná-lo, digite o número de cada arquivo que quiser. No final dê enter sem digitar nada e ele volta para o menu acima. Quando acabar digite ‘7’ para voltar ao shell.<br>
 <br>
-<macro:code>What now&gt; 4<br>
+<macro:code>What now> 4<br>
   1: akita.txt<br>
-Add untracked&gt;&gt; 1<br>
+Add untracked>> 1<br>
 * 1: akita.txt<br>
-Add untracked&gt;&gt; <br>
+Add untracked>> <br>
 added one path<br>
 <del>-</del><br>
 <br>
 Pronto. Com os arquivos adicionados, basta fazer o commit:<br>
 <br>
-<macro:code>&gt;&gt; git commit <del>a -m “meu primeiro commit”<br>
+<macro:code>>> git commit <del>a -m “meu primeiro commit”<br>
 Created commit 457f597: meu primeiro commit<br>
  4 files changed, 7 insertions(+), 1 deletions(</del>)<br>
  create mode 100644 akita.txt<br>
@@ -117,13 +117,13 @@ Vejamos como isso se parece:<br>
 <p style="text-align: center; margin: 3px"><img src="http://s3.amazonaws.com/akitaonrails/assets/2008/4/3/Picture_3.png" alt=""></p>
 <p>Note como o branch master ficou para trás e o nosso ‘working’ subiu: isso porque agora ele tem modificações que não existem no master.</p>
 <p>Vamos brincar mais um pouco. Digamos que você descubra um bug no master que precisa corrigir rapidamente e colocar em produção mas não quer colocar também o que você acabou de fazer no ‘working’ porque ainda não está pronto. O que fazer?? Não se preocupe, é aqui que o Git começa a brilhar:</p>
-<macro:code>&gt;&gt; git checkout master<br>
+<macro:code>>> git checkout master<br>
 Switched to branch “master”<br>
 <br>
-&gt;&gt; git checkout -b meufix<br>
+>> git checkout -b meufix<br>
 Switched to branch “meufix”<br>
 <br>
-&gt;&gt; ls akita.txt<br>
+>> ls akita.txt<br>
 ls: akita.txt: No such file or directory<br>
 <del>-</del><br>
 <br>
@@ -133,7 +133,7 @@ O último comando é um ‘ls’ (o equivalente de ‘dir’, para quem é de Wi
 <br>
 Agora, vou fazer as correções que preciso.<br>
 <br>
-<macro:code>&gt;&gt; git commit <del>a -m “minha correcao”<br>
+<macro:code>>> git commit <del>a -m “minha correcao”<br>
 Created commit 760873a: minha correcao<br>
  3 files changed, 6 insertions(+), 1 deletions(</del>)<br>
 <del>-</del><br>
@@ -147,15 +147,15 @@ Espere um instante, e agora? Em que situação estou. Vamos ver:<br>
 <p style="text-align: center; margin: 3px"><img src="http://s3.amazonaws.com/akitaonrails/assets/2008/4/3/Picture_4.png" alt=""></p>
 <p>Que bagunça! Agora eu tenho o branch ‘master’, que ainda é a cópia exata do repositório no Github. Tenho o branch ‘working’ onde eu acrescentei meu código novo. E tenho o branch ‘meufix’ com a correção sobre o master.</p>
 <p>Ambos ‘working’ e ‘master’ tem um ancestral em comum, o ‘master’. O que vou fazer agora não é o comum, mas faça de conta que você tenha permissão de escrita no repositório central do Github e quer jogar essa correção que fizemos para lá. Ou seja, preciso pegar a correção, jogar no master e dali empurrar para o servidor online:</p>
-<macro:code>&gt;&gt; git branch<br>
+<macro:code>>> git branch<br>
   master<br>
 * meufix<br>
   working<br>
 <br>
-&gt;&gt; git checkout master<br>
+>> git checkout master<br>
 Switched to branch “master”<br>
 <br>
-&gt;&gt; git merge meufix<br>
+>> git merge meufix<br>
 Updating a83054c..dee9e1f<br>
 Fast forward<br>
  <span class="caps">CHANGELOG</span> | 1 +<br>
@@ -163,7 +163,7 @@ Fast forward<br>
  <span class="caps">TODO</span> | 1 +<br>
  3 files changed, 4 insertions(</ins>), 1 deletions(-)<br>
 <br>
-&gt;&gt; git branch <del>d meufix<br>
+>> git branch <del>d meufix<br>
 Deleted branch meufix.<br>
 -</del>-<br>
 <br>
@@ -173,7 +173,7 @@ O comando git merge faz o que esperamos: traz as correções que fizemos no bran
 <br>
 Bom, vamos voltar para nosso branch ‘working’ e continuar trabalhando nele.<br>
 <br>
-<macro:code>&gt;&gt; git status<br>
+<macro:code>>> git status<br>
 # On branch working<br>
 # Changed but not updated:<br>
 # (use “git add <file>…” to update what will be committed)<br>
@@ -186,14 +186,14 @@ no changes added to commit (use “git add” and/or “git commit -a”)<br>
 <br>
 Pronto, estamos em ‘working’ e continuamos trabalhando. Veja como eu mexi em dois arquivos. Eis que me dou conta: <em>“As correções que acabei de dar merge no master!!”</em> Pois é, eu preciso trazer as correções do master para o working. Mas agora estou no meio de uma codificação e ainda não estou a fim de fazer commit. O que fazer? Eis a resposta:<br>
 <br>
-<macro:code>&gt;&gt; git stash<br>
+<macro:code>>> git stash<br>
 Saved “<span class="caps">WIP</span> on working: 457f597… meu primeiro commit”<br>
 <span class="caps">HEAD</span> is now at 457f597… meu primeiro commit<br>
 <del>-</del><br>
 <br>
 Pense em ‘stash’ como uma pilha temporária de coisas. Eu não quis fazer commit dos dois arquivos me mexi acima, então simplesmente joguei para o stash e ele vai ficar lá por um momento. Agora vamos pegar as correções que estão no master:<br>
 <br>
-<macro:code>&gt;&gt; git rebase master<br>
+<macro:code>>> git rebase master<br>
 First, rewinding head to replay your work on top of it…<br>
 <span class="caps">HEAD</span> is now at dee9e1f… minha correcao<br>
 <br>
@@ -220,19 +220,19 @@ To restore the original branch and stop rebasing run “git rebase —abort”.<
 Uau! Quanta coisa! Dois conflitos! <em>“Droga, mas não disseram que o Git faz merges inteligentes?”</em> Exatamente, ele fará o melhor merge possível. Já explico isso melhor. Mas de qualquer forma, ocasionalmente sempre haverá o caso onde o Git não tem como decidir, por exemplo, quando dois desenvolvedores modificam exatamente a mesma linha: qual dos dois tem prioridade? Então, vamos corrigir os erros na mão. Você pode usar qualquer ferramenta <span class="caps">GUI</span> que manipula Diffs, é a mesma coisa:<br>
 <br>
 <macro:code>teste<br>
-&lt;&lt;&lt;&lt;&lt;&lt;&lt; <span class="caps">HEAD</span>:<span class="caps">CONFIG</span><br>
+<<<<<<< <span class="caps">HEAD</span>:<span class="caps">CONFIG</span><br>
 ===<br>
 <br>
-&gt;&gt;&gt;&gt;&gt;&gt;&gt; meu primeiro commit:<span class="caps">CONFIG</span><br>
+>>>>>>> meu primeiro commit:<span class="caps">CONFIG</span><br>
 <del>-</del><br>
 <br>
 No primeiro arquivo, <span class="caps">CONFIG</span>, felizmente era apenas uma linha branca a mais. Então vamos apenas retirar as marcações do diff de lá e salvar.<br>
 <br>
-<macro:code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; <span class="caps">HEAD</span>:<span class="caps">TODO</span><br>
+<macro:code><<<<<<< <span class="caps">HEAD</span>:<span class="caps">TODO</span><br>
 <span class="caps">TESTE</span><br>
 ===<br>
 outra modificacao<br>
-&gt;&gt;&gt;&gt;&gt;&gt;&gt; meu primeiro commit:<span class="caps">TODO</span><br>
+>>>>>>> meu primeiro commit:<span class="caps">TODO</span><br>
 <del>-</del><br>
 <br>
 O segundo arquivo, <span class="caps">TODO</span>, tinha dois conteúdos diferentes para a mesma linha. Vou escolher a primeira e tirar as marcações de diff, e salvar o arquivo.<br>
@@ -261,9 +261,9 @@ O segundo arquivo, <span class="caps">TODO</span>, tinha dois conteúdos diferen
 <br>
 Pronto. Os dois arquivos conflitados aparecem na lista ‘Changed but not updated’. Para continuar, precisamos usar git add para indicar ao Git que já resolvemos os conflitos:<br>
 <br>
-<macro:code>&gt;&gt; git add <span class="caps">CONFIG</span> <br>
-&gt;&gt; git add <span class="caps">TODO</span><br>
-&gt;&gt; git rebase —continue<br>
+<macro:code>>> git add <span class="caps">CONFIG</span> <br>
+>> git add <span class="caps">TODO</span><br>
+>> git rebase —continue<br>
 <br>
 Applying meu primeiro commit<br>
 <br>
@@ -287,7 +287,7 @@ Fazendo isso, você normalmente terá mais conflitos quando fizer o rebase no se
 <br>
 Agora, faltou uma coisa: o stash!! Lembram dos dois arquivos que eu guardei no stash, que eu ainda não havia feito commit? Vamos buscá-lo:<br>
 <br>
-<macro:code>&gt;&gt; git stash apply<br>
+<macro:code>>> git stash apply<br>
 # On branch working<br>
 # Changed but not updated:<br>
 # (use “git add <file>…” to update what will be committed)<br>
@@ -297,15 +297,15 @@ Agora, faltou uma coisa: o stash!! Lembram dos dois arquivos que eu guardei no s
 #<br>
 no changes added to commit (use “git add” and/or “git commit -a”)<br>
 <br>
-&gt;&gt; git stash clear<br>
+>> git stash clear<br>
 <del>-</del><br>
 <br>
 Pronto. O comando git stash apply trará nossas modificações de volta. Também poderia haver conflitos, o procedimento é o mesmo de antes. O último comando é para limpar o espaço do stash, é bom fazer isso sempre que aplicar as modificações de volta. O stash é muito útil e você pode ter quantos stashes quantos quiser, inclusive pode dar nome a eles.<br>
 <br>
 <p style="text-align: center; margin: 3px"><img src="http://s3.amazonaws.com/akitaonrails/assets/2008/4/3/Picture_6.png" alt=""></p>
 <p>Vejamos mais sobre o rebase na prática. Antes disso, vamos fazer o commit desses 2 arquivos que recuperamos do stash:</p>
-<macro:code>&gt;&gt; git add . <br>
-&gt;&gt; git commit <del>a -m “mais um commit”<br>
+<macro:code>>> git add . <br>
+>> git commit <del>a -m “mais um commit”<br>
 Created commit 69bc9a8: mais um commit<br>
  2 files changed, 3 insertions(+), 1 deletions(</del>)<br>
 <del>-</del><br>
@@ -314,10 +314,10 @@ O git add . (ponto) significa <em>“adicione todo novo arquivo que apareceu ago
 <br>
 h1. Rebaseando seu Branch<br>
 <br>
-<macro:code>&gt;&gt; git checkout master<br>
+<macro:code>>> git checkout master<br>
 Switched to branch “master”<br>
 <br>
-&gt;&gt; git pull <br>
+>> git pull <br>
 Merge made by recursive.<br>
  lib/merb-core/bootloader.rb | 18 +++++—<br>
  lib/merb-core/controller/abstract_controller.rb | 10 <ins><del>-</del>-<br>
@@ -336,10 +336,10 @@ Na primeira linha, voltamos ao branch master. Acho que não precisa, mas eu pref
 <br>
 Como eu ainda não terminei minha nova funcionalidade no branch ‘working’, quero que essas novidades estejam lá também para que eu possa testar contra meu código. Vamos repetir o que eu expliquei acima:<br>
 <br>
-<macro:code>&gt;&gt; git checkout working<br>
+<macro:code>>> git checkout working<br>
 Switched to branch “working”<br>
 <br>
-&gt;&gt; git rebase master<br>
+>> git rebase master<br>
 First, rewinding head to replay your work on top of it…<br>
 <span class="caps">HEAD</span> is now at 76969b2… Merge branch ‘master’ of git://github.com/wycats/merb-core<br>
 <br>
@@ -361,9 +361,9 @@ Façamos de conta que eu acabei o código que estava trabalhando no ‘working�
 <br>
 Antes de mais nada, ‘working’ não é um nome legal, quero mudar de nome para refletir o código que acabei de terminar. Para isso faça:<br>
 <br>
-<macro:code>&gt;&gt; git branch -m working meu_merb<br>
+<macro:code>>> git branch -m working meu_merb<br>
 <br>
-&gt;&gt; git branch<br>
+>> git branch<br>
   master<br>
 * meu_merb<br>
 <del>-</del><br>
@@ -372,17 +372,17 @@ Veja, como o branch ‘working’ sumiu e apareceu o ‘meu_merb’. Esse comand
 <br>
 Agora, vou sair desse diretório, porque quero reusar esse branch de outro lugar, em outro projeto meu:<br>
 <br>
-<macro:code>&gt;&gt; cd ..<br>
+<macro:code>>> cd ..<br>
 <br>
-&gt;&gt; git clone merb-core projeto-merb<br>
+>> git clone merb-core projeto-merb<br>
 Initialized empty Git repository in /Users/akitaonrails/rails/sandbox/merb/projeto-merb/.git/<br>
 <del>-</del><br>
 <br>
 Então, primeiro dou um cd .. para voltar para meu diretório-raíz. De lá faço o clone do <em>branch atual onde eu estava, no caso meu_merb</em>. <br>
 <br>
-<macro:code>&gt;&gt; cd projeto-merb<br>
+<macro:code>>> cd projeto-merb<br>
 <br>
-&gt;&gt; git branch <br>
+>> git branch <br>
 * meu_merb<br>
 <del>-</del><br>
 <br>
@@ -390,9 +390,9 @@ Agora, entro novamente em meu projeto. Veja como só temos o branch meu_merb lá
 <br>
 Vamos modificar e fazer um commit nesse novo projeto:<br>
 <br>
-<macro:code>&gt;&gt; vi <span class="caps">README</span><br>
+<macro:code>>> vi <span class="caps">README</span><br>
 <br>
-&gt;&gt; git status<br>
+>> git status<br>
 # On branch meu_merb<br>
 # Changed but not updated:<br>
 # (use “git add <file>…” to update what will be committed)<br>
@@ -401,11 +401,11 @@ Vamos modificar e fazer um commit nesse novo projeto:<br>
 #<br>
 no changes added to commit (use “git add” and/or “git commit -a”)<br>
 <br>
-&gt;&gt; git commit <del>a -m “modificacao no projeto”<br>
+>> git commit <del>a -m “modificacao no projeto”<br>
 Created commit a730a96: modificacao no projeto<br>
  1 files changed, 1 insertions(+), 1 deletions(</del>)<br>
 <br>
-&gt;&gt; git push<br>
+>> git push<br>
 updating ‘refs/heads/meu_merb’<br>
   from c9a4f27905d47d57798ee2b3239eec1e162cb452<br>
   to a730a9698905fd6f9a933feca6777198bde2eb9e<br>
@@ -419,12 +419,12 @@ Writing 3 objects…<br>
 Total 3 (delta 0), reused 0 (delta 0)<br>
 Unpacking 3 objects…<br>
  100% (3/3) done<br>
-refs/heads/meu_merb: c9a4f27905d47d57798ee2b3239eec1e162cb452 <del>&gt; a730a9698905fd6f9a933feca6777198bde2eb9e<br>
+refs/heads/meu_merb: c9a4f27905d47d57798ee2b3239eec1e162cb452 <del>> a730a9698905fd6f9a933feca6777198bde2eb9e<br>
 -</del>-<br>
 <br>
 Ok, até o git commit todo mundo deve ter entendido. Mas e esse git push? Bom, se git pull trás tudo do repositório original, git push empurra as modificações de volta, se você tiver permissão de escrita nele, claro. Vamos voltar ao projeto original e checar isso:<br>
 <br>
-<macro:code>&gt;&gt; cd ../merb-core/—-<br>
+<macro:code>>> cd ../merb-core/—-<br>
 <br>
 <p style="text-align: center; margin: 3px"><img src="http://s3.amazonaws.com/akitaonrails/assets/2008/4/3/Picture_7.png" alt=""></p>
 <p>Está vendo? Veja a descrição do commit que eu fiz fora do projeto e que agora está no meu branch!</p>
@@ -433,20 +433,20 @@ Ok, até o git commit todo mundo deve ter entendido. Mas e esse git push? Bom, s
 <p>Agora não só você pode fazer modificações num branch separado, fazer commits, merges e rebases locais, como também ainda fazer um clone do seu clone!! E tudo funciona perfeitamente.</p>
 <h1>Limpando a Casa</h1>
 <p>Finalmente, mais algumas dicas. Digamos que me arrependi de tudo que fiz! Quero que meu projeto Merb volte a ser como era antes. Bom, sempre podemos apagar o diretório original e fazer um clone do servidor online de novo, mas isso não seria esperto, façamos do jeito certo:</p>
-<macro:code>&gt;&gt; git checkout master<br>
+<macro:code>>> git checkout master<br>
 Already on branch “master”<br>
 <br>
-&gt;&gt; git branch -d meu_merb<br>
+>> git branch -d meu_merb<br>
 error: The branch ‘meu_merb’ is not a strict subset of your current <span class="caps">HEAD</span>.<br>
 If you are sure you want to delete it, run ‘git branch -D meu_merb’.<br>
 <br>
-&gt;&gt; git branch -D meu_merb<br>
+>> git branch -D meu_merb<br>
 Deleted branch meu_merb.<br>
 <br>
-&gt;&gt; git reset —hard <span class="caps">HEAD</span>^1<br>
+>> git reset —hard <span class="caps">HEAD</span>^1<br>
 <span class="caps">HEAD</span> is now at dee9e1f… minha correcao<br>
 <br>
-&gt;&gt; git reset <del>-hard <span class="caps">HEAD</span>^1<br>
+>> git reset <del>-hard <span class="caps">HEAD</span>^1<br>
 <span class="caps">HEAD</span> is now at a83054c… Added Time#to_json to Core Extensions, making the default <span class="caps">JSON</span> formatted output for Time objects <span class="caps">ISO</span> 8601 compatible.<br>
 -</del>-<br>
 <br>
@@ -462,13 +462,13 @@ h1. Golpe de Mestre!!<br>
 <br>
 Agora, apenas para demonstrar algumas das inteligências do Git, vou criar um novo branch a partir do master e fazer uma alteração que o Subversion provavelmente choraria:<br>
 <br>
-<macro:code>&gt;&gt; git checkout -b working<br>
+<macro:code>>> git checkout -b working<br>
 Switched to a new branch “working”<br>
 <br>
-&gt;&gt; vi <span class="caps">LICENSE</span> <br>
-&gt;&gt; mv <span class="caps">LICENSE</span> licenca.txt<br>
+>> vi <span class="caps">LICENSE</span> <br>
+>> mv <span class="caps">LICENSE</span> licenca.txt<br>
 <br>
-&gt;&gt; git status<br>
+>> git status<br>
 # On branch working<br>
 # Changed but not updated:<br>
 # (use “git add/rm <file>…” to update what will be committed)<br>
@@ -493,9 +493,9 @@ Copyright © 2008 Ezra Zygmuntowicz<br>
 <br>
 Vou fazer o commit (não esquecer da opção -a !):<br>
 <br>
-<macro:code>&gt;&gt; git add licenca.txt<br>
+<macro:code>>> git add licenca.txt<br>
 <br>
-&gt;&gt; git commit <del>a -m “Novo arquivo”<br>
+>> git commit <del>a -m “Novo arquivo”<br>
 Created commit a2e52ec: Novo arquivo<br>
  2 files changed, 23 insertions(+), 20 deletions(</del>)<br>
  delete mode 100644 <span class="caps">LICENSE</span><br>
@@ -504,11 +504,11 @@ Created commit a2e52ec: Novo arquivo<br>
 <br>
 Agora o golpe de misericórdia. Vou retornar ao branch master e modificar o <strong>mesmo arquivo</strong> <span class="caps">LICENSE</span> em um lugar diferente – faça de conta que outro desenvolvedor fez modificações e eu dei git pull para trazê-las para o master.<br>
 <br>
-<macro:code>&gt;&gt; git checkout master<br>
+<macro:code>>> git checkout master<br>
 Switched to branch “master”<br>
 <br>
-&gt;&gt; vi <span class="caps">LICENSE</span> <br>
-&gt;&gt; git commit <del>a -m “modificando <span class="caps">LICENSE</span>”<br>
+>> vi <span class="caps">LICENSE</span> <br>
+>> git commit <del>a -m “modificando <span class="caps">LICENSE</span>”<br>
 Created commit 6c74941: modificando <span class="caps">LICENSE</span><br>
  1 files changed, 2 insertions(+), 8 deletions(</del>)<br>
 <del>-</del><br>
@@ -526,18 +526,18 @@ included in all copies or substantial portions of the Software.<br>
 <br>
 Eu acrescentei uma linha e apaguei um parágrafo. Agora é a hora da verdade. Farei o merge do branch ‘working’ sobre o ‘master’. Se fosse o Subversion aconteceria o seguinte: o arquivo <span class="caps">LICENSE</span> do master ia continuar lá e apareceria um novo arquivo licenca.txt, mas os dois conteúdos não seria misturados, que é o que gostaríamos que acontecesse. <em>“Lógico, nenhum sistema pode saber isso!”</em> é o que alguém diria. Tolinho:<br>
 <br>
-<macro:code>&gt;&gt; git merge working<br>
-Renamed <span class="caps">LICENSE</span> =&gt; licenca.txt<br>
+<macro:code>>> git merge working<br>
+Renamed <span class="caps">LICENSE</span> => licenca.txt<br>
 Auto-merged licenca.txt<br>
 Merge made by recursive.<br>
- <span class="caps">LICENSE</span> =&gt; licenca.txt | 3 <ins>+</ins><br>
+ <span class="caps">LICENSE</span> => licenca.txt | 3 <ins>+</ins><br>
  1 files changed, 3 insertions(+), 0 deletions(-)<br>
- rename <span class="caps">LICENSE</span> =&gt; licenca.txt (94%)<br>
+ rename <span class="caps">LICENSE</span> => licenca.txt (94%)<br>
 <del>-</del><br>
 <br>
 Prestem atenção ao que o comando git merge disse. Primeiro, vejamos se o arquivo <span class="caps">LICENSE</span> ainda existe:<br>
 <br>
-<macro:code>&gt;&gt; ls <span class="caps">LICENSE</span><br>
+<macro:code>>> ls <span class="caps">LICENSE</span><br>
 ls: <span class="caps">LICENSE</span>: No such file or directory<br>
 <del>-</del><br>
 <br>
@@ -577,4 +577,4 @@ Agora com o Edge Rails migrando para Github, qualquer um pode fazer um clone de 
 <br>
 Eu escrevi esse artigo ao mesmo tempo em que ia digitando os exemplos acima, não travei um único minuto preso em algum beco sem saída. O Git é absurdamente flexível e performático (pois é escrito em C, não dá para ser mais rápido do que isso). Definitivamente o <span class="caps">SCM</span> da nova geração.<br>
 <br>
-Como aprender mais? Procure <a href="http://www.google.com/search?hl=en&amp;client=safari&amp;rls=en-us&amp;q=site%3Awww.akitaonrails.com+git&amp;btnG=Search">no meu site</a> os artigos que falei sobre Git (são vários!). Compre o <a href="/2007/10/26/aprenda-git-pelo-peepcode">screencast do Peepcode</a> ensinando Git, é a forma mais rápida! E procure os vários artigos e tutoriais pela internet, tem muito material.</macro:code></macro:code></macro:code></macro:code></macro:code></macro:code></macro:code></file></file></macro:code></macro:code></macro:code></file></macro:code></macro:code></macro:code></macro:code></macro:code></macro:code></macro:code></file></macro:code></macro:code></file></file></file></macro:code></macro:code></macro:code></macro:code></macro:code></file></macro:code></macro:code></macro:code></macro:code></macro:code></macro:code></macro:code></macro:code></file></file></macro:code></macro:code></macro:code></macro:code></macro:code>
+Como aprender mais? Procure <a href="http://www.google.com/search?hl=en&client=safari&rls=en-us&q=site%3Awww.akitaonrails.com+git&btnG=Search">no meu site</a> os artigos que falei sobre Git (são vários!). Compre o <a href="/2007/10/26/aprenda-git-pelo-peepcode">screencast do Peepcode</a> ensinando Git, é a forma mais rápida! E procure os vários artigos e tutoriais pela internet, tem muito material.</macro:code></macro:code></macro:code></macro:code></macro:code></macro:code></macro:code></file></file></macro:code></macro:code></macro:code></file></macro:code></macro:code></macro:code></macro:code></macro:code></macro:code></macro:code></file></macro:code></macro:code></file></file></file></macro:code></macro:code></macro:code></macro:code></macro:code></file></macro:code></macro:code></macro:code></macro:code></macro:code></macro:code></macro:code></macro:code></file></file></macro:code></macro:code></macro:code></macro:code></macro:code>

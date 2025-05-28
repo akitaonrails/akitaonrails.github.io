@@ -33,7 +33,7 @@ Além disso, vale mencionar dois vícios que enfraquecem o aprendizado, a produt
 
 "Existem tantas tecnologias, boas práticas e tudo mais que são lançados o tempo todo. Na sua opinião pessoal, e talvez relacionado ao seu trabalho atual, quais são as tendências em tecnologia que acha que devemos prestar atenção no futuro próximo?"
 
-**Chester:** O desafio atual do meu trabalho é lidar com volumes de dados cada vez maiores, em níveis de complexidade igualmente assustadores. E é muito tentador culpar a tecnologia em uso (o famoso "Rails não escala") ou buscar soluções mágicas ("muda pra Node/Go/&lt;insira o sabor da moda aqui&gt; que resolve").
+**Chester:** O desafio atual do meu trabalho é lidar com volumes de dados cada vez maiores, em níveis de complexidade igualmente assustadores. E é muito tentador culpar a tecnologia em uso (o famoso "Rails não escala") ou buscar soluções mágicas ("muda pra Node/Go/<insira o sabor da moda aqui> que resolve").
 
 A verdade é que quando você precisa de ganhos de escala, nada substitui o cuidado com a arquitetura do sistema - e para isso é importante ter um olho no passado (estudar com carinho os fundamentos da computação e do processamento de dados em geral) e outro no futuro (evitando a tentação oposta, que é se agarrar na tecnologia com a qual se está confortável).
 

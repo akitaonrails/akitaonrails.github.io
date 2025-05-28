@@ -35,7 +35,7 @@ Finalmente vou falar sobre linguagens que você goste ou use, mas vou fazer isso
 * 28:21 - Cap 6 - Interoperabilidade: Marshalling/Unmarshalling | FFI
 * 36:21 - Cap 7 - Onde cada Linguagem é mais Forte? | Rust
 * 38:09 - Cap 8 - Sistemas Distribuídos | Apache Java
-* 42:41 - Cap 9 - Produtividade &gt; Performance? | Apps Comerciais
+* 42:41 - Cap 9 - Produtividade > Performance? | Apps Comerciais
 * 48:31 - Bloopers
 
 

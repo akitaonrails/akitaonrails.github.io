@@ -40,11 +40,11 @@ ruby
 <hr>
 ruby
 <p>class Object<br>
-  def if_true(&amp;block)<br>
+  def if_true(&block)<br>
     block.call if self<br>
     self<br>
   end</p>
-def if_false(&amp;block)
+def if_false(&block)
 block.call unless self
 self
 end
@@ -66,7 +66,7 @@ end<br>
 <p>Outra coisa que Ruby faz de maneira ‘imperativa’: herança de classes. Em Ruby fazemos assim:</p>
 <hr>
 ruby
-<p>class Carro &lt; Veiculo<br>
+<p>class Carro < Veiculo<br>
 end<br>
 <del>-</del></p>
 <p>Em Smalltalk (sem usar a <span class="caps">IDE</span>) se faz:</p>
@@ -78,7 +78,7 @@ end<br>
 ruby
 <p>class Object<br>
   def self.subclass name<br>
-    eval “class #{name} &lt; #{self}; end”<br>
+    eval “class #{name} < #{self}; end”<br>
   end<br>
 end</p>
 <p>Veiculo.subclass :Carro<br>
@@ -98,6 +98,6 @@ ruby
   end<br>
 end</p>
 <p>n = 10<br>
-puts ( n &gt; 1 ).if( proc { “true” }, proc { “false” } )<br>
+puts ( n > 1 ).if( proc { “true” }, proc { “false” } )<br>
 <del>-</del></p>
 <p>Novamente, a performance decai. Comparei os tempos de 500 mil operações, na primeira vez com ‘if’ condicional e nesta versão via passagem de método e a diferença foi de 2 a 4 vezes mais devagar passando como métodos, portanto não se atenham a essas versões exóticas além de apenas servir como curiosidade acadêmica.</p></macro:code></macro:code>

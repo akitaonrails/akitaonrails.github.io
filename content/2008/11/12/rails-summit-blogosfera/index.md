@@ -99,31 +99,31 @@ Infelizmente, tivemos problemas operacionais com o vídeo e acabamos ficando sem
 
 - Almoço Rails Summit:
 
-<object width="425" height="344"><param name="movie" value="http://www.youtube.com/v/F_ll8iMErfk&amp;hl=en&amp;fs=1">
+<object width="425" height="344"><param name="movie" value="http://www.youtube.com/v/F_ll8iMErfk&hl=en&fs=1">
 <param name="allowFullScreen" value="true">
 <param name="allowscriptaccess" value="always">
-<embed src="http://www.youtube.com/v/F_ll8iMErfk&amp;hl=en&amp;fs=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="344"></embed></object>
+<embed src="http://www.youtube.com/v/F_ll8iMErfk&hl=en&fs=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="344"></embed></object>
 
 - Ending #RailsSummit LA in São Paulo, Brazil
 
-<object width="425" height="344"><param name="movie" value="http://www.youtube.com/v/yazXAO_deAk&amp;hl=en&amp;fs=1">
+<object width="425" height="344"><param name="movie" value="http://www.youtube.com/v/yazXAO_deAk&hl=en&fs=1">
 <param name="allowFullScreen" value="true">
 <param name="allowscriptaccess" value="always">
-<embed src="http://www.youtube.com/v/yazXAO_deAk&amp;hl=en&amp;fs=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="344"></embed></object>
+<embed src="http://www.youtube.com/v/yazXAO_deAk&hl=en&fs=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="344"></embed></object>
 
 - Akita na festa Rails Summit
 
-<object width="425" height="344"><param name="movie" value="http://www.youtube.com/v/Lo5g8KxDcYM&amp;hl=en&amp;fs=1">
+<object width="425" height="344"><param name="movie" value="http://www.youtube.com/v/Lo5g8KxDcYM&hl=en&fs=1">
 <param name="allowFullScreen" value="true">
 <param name="allowscriptaccess" value="always">
-<embed src="http://www.youtube.com/v/Lo5g8KxDcYM&amp;hl=en&amp;fs=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="344"></embed></object>
+<embed src="http://www.youtube.com/v/Lo5g8KxDcYM&hl=en&fs=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="344"></embed></object>
 
 - Dr Nic: morena\_opensource. Fork It Now
 
-<object width="425" height="344"><param name="movie" value="http://www.youtube.com/v/6j24jV5SGZU&amp;hl=en&amp;fs=1">
+<object width="425" height="344"><param name="movie" value="http://www.youtube.com/v/6j24jV5SGZU&hl=en&fs=1">
 <param name="allowFullScreen" value="true">
 <param name="allowscriptaccess" value="always">
-<embed src="http://www.youtube.com/v/6j24jV5SGZU&amp;hl=en&amp;fs=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="344"></embed></object>
+<embed src="http://www.youtube.com/v/6j24jV5SGZU&hl=en&fs=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="344"></embed></object>
 
 É isso aí pessoal. Foi super legal ver todos juntos. Obrigado a todos pelo apoio!
 

@@ -77,13 +77,13 @@ O pessoal do <a href="http://wiki.samba.org/index.php/Using_Git_for_Samba_Develo
 E falando em merge, veja o que acontece se fizer o merge entre o branch “working”, que modifiquei nos passos acima, e o “master”:<br>
 <br>
 <macro:code><br>
-&gt; git checkout master<br>
-&gt; git merge <del>-squash working<br>
+> git checkout master<br>
+> git merge <del>-squash working<br>
 Updating 780040f..00e988e<br>
 Fast forward<br>
 Squash commit -</del> not updating <span class="caps">HEAD</span><br>
  init.rb | 4 <ins>-<br>
- lib/{fixes.rb =&gt; activerecord_fixes.rb} | 66 +</ins>+++++++++++++++++++—————<br>
+ lib/{fixes.rb => activerecord_fixes.rb} | 66 +</ins>+++++++++++++++++++—————<br>
  2 files changed, 47 insertions(+), 23 deletions(-)<br>
 <del>-</del><br>
 <br>

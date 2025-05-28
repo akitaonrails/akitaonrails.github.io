@@ -527,11 +527,11 @@ Module MeusPaches incluso na classe Pessoa
 \>\>   
 ?\> fabio = Pessoa.new  
 =\> #<pessoa:0x1789528><br>
-&gt;&gt; fabio.metodo_de_instancia<br>
-=&gt; “sou um metodo de instancia”<br>
-&gt;&gt; <br>
-?&gt; Pessoa.metodo_de_classe<br>
-=&gt; “sou um metodo de classe”<br>
+>> fabio.metodo_de_instancia<br>
+=> “sou um metodo de instancia”<br>
+>> <br>
+?> Pessoa.metodo_de_classe<br>
+=> “sou um metodo de classe”<br>
 <del>-</del></pessoa:0x1789528>
 
 Você vai entender o que significa “send” na próxima seção. Apenas entenda a seguinte idéia: criamos um módulo chamado “MeusPatches” e um sub-módulo dentro dele chamado “ClassMethods” (poderia ser outro nome, mas só para padronizar). Os métodos do módulo principal ficam disponíveis às instâncias dos objetos e os métodos do sub-módulo ficam disponíveis como métodos de classe. A sequência é assim:

@@ -22,8 +22,8 @@ Além disso, cruzei com o pessoal do Mozilla Brasil por lá também já que o Fi
 
 <object width="500" height="375"><param name="allowfullscreen" value="true">
 <param name="allowscriptaccess" value="always">
-<param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=2423180&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=&amp;fullscreen=1">
-<embed src="http://vimeo.com/moogaloop.swf?clip_id=2423180&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=&amp;fullscreen=1" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="500" height="375"></embed></object>  
+<param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=2423180&server=vimeo.com&show_title=1&show_byline=1&show_portrait=0&color=&fullscreen=1">
+<embed src="http://vimeo.com/moogaloop.swf?clip_id=2423180&server=vimeo.com&show_title=1&show_byline=1&show_portrait=0&color=&fullscreen=1" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="500" height="375"></embed></object>  
 [Prêmio Info 2008 – Firefox](http://vimeo.com/2423180) from [Fabio Akita](http://vimeo.com/akitaonrails) on [Vimeo](http://vimeo.com).
 
 Curiosidade: sabiam que no mundo o Firefox tem 20% de market share de browsers, mas no Brasil já alcançamos 30% !?

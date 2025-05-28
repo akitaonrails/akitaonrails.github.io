@@ -130,23 +130,23 @@ Talvez o melhor exemplo para demonstrar esta funcionalidade dinâmica é mostran
 <p>Agora podemos usar no <span class="caps">IRB</span>:</p>
 <hr>
 ruby
-<p>&gt;&gt; require ‘rubygems’<br>
-&gt;&gt; require ‘builder’<br>
-=&gt; false<br>
-&gt;&gt; x = Builder::XmlMarkup.new(:target =&gt; $stdout, :indent =&gt; 1)<br>
+<p>>> require ‘rubygems’<br>
+>> require ‘builder’<br>
+=> false<br>
+>> x = Builder::XmlMarkup.new(:target => $stdout, :indent => 1)<br>
 <inspect></inspect><br>
-=&gt; #<io:0x12b7cc><br>
-&gt;&gt; x.instruct!<br>
-&lt;?xml version=“1.0” encoding=“<span class="caps">UTF</span>-8”?&gt;<br>
-=&gt; #<io:0x12b7cc><br>
-&gt;&gt; x.pessoa do |p|<br>
-?&gt; p.nome “Fabio Akita”<br>
-&gt;&gt; p.email “fabioakita@gmail.com”<br>
-&gt;&gt; p.telefones do |t|<br>
-?&gt; t.casa “6666-8888”<br>
-&gt;&gt; t.trabalho “2222-3333”<br>
-&gt;&gt; end<br>
-&gt;&gt; end<br>
+=> #<io:0x12b7cc><br>
+>> x.instruct!<br>
+<?xml version=“1.0” encoding=“<span class="caps">UTF</span>-8”?><br>
+=> #<io:0x12b7cc><br>
+>> x.pessoa do |p|<br>
+?> p.nome “Fabio Akita”<br>
+>> p.email “fabioakita@gmail.com”<br>
+>> p.telefones do |t|<br>
+?> t.casa “6666-8888”<br>
+>> t.trabalho “2222-3333”<br>
+>> end<br>
+>> end<br>
 <pessoa><br>
  <nome>Fabio Akita</nome><br>
  <email>fabioakita@gmail.com</email><br>
@@ -154,7 +154,7 @@ ruby
   <casa>6666-8888</casa><br>
   <trabalho>2222-3333</trabalho></telefones></pessoa></io:0x12b7cc></io:0x12b7cc></p>
 
-<p>=&gt; #<io:0x12b7cc><br>
+<p>=> #<io:0x12b7cc><br>
 <del>-</del></io:0x12b7cc></p>
 <p>Como podem ver, instanciamos a classe XmlMarkup na variável “x”. Daí passamos a enviar mensagens como “pessoa” ou “email” e ele gera os tags <span class="caps">XML</span> adequadamente. Muito diferente do que teríamos que fazer do jeito tradicional:</p>
 <hr>
@@ -216,7 +216,7 @@ myButton.setCommand(new Command() {<br>
 <hr>
 ruby
 <p>class Button<br>
-  def initialize(&amp;block)<br>
+  def initialize(&block)<br>
     @block = block<br>
   end<br>
   def click<br>
@@ -227,63 +227,63 @@ end</p>
 my_button.click<br>
 <del>-</del></p>
 <p>Primeiro, claro, bem mais curto, mas o mais importante: não precisamos encapsular uma ação como método de uma classe. Em linguagens tradicionais que não tem o conceito de “funções como cidadãos de primeira classe”, precisamos encapsular qualquer coisa em classes, mesmo que sejam classes anônimas.</p>
-<p>No Ruby, temos o conceito de “código como objeto”. Na realidade encapsulamos o código diretamente em um objeto. No exemplo acima, o construtor ‘initialize’ captura qualquer bloco de código que passarmos a ele dentro da variável ‘block’ (para isso serve o “&amp;”). Daí quando instanciamos o parâmetro que passamos entre chaves {} é o bloco de código capturado como objeto e associado à variável ‘block’.</p>
+<p>No Ruby, temos o conceito de “código como objeto”. Na realidade encapsulamos o código diretamente em um objeto. No exemplo acima, o construtor ‘initialize’ captura qualquer bloco de código que passarmos a ele dentro da variável ‘block’ (para isso serve o “&”). Daí quando instanciamos o parâmetro que passamos entre chaves {} é o bloco de código capturado como objeto e associado à variável ‘block’.</p>
 <p>A partir daí ele fica armazenado como uma variável de instância “@block” e no método ‘click’ podemos executar esse bloco de código enviando a mensagem ‘call’ (afinal, ele é um objeto e, portanto, responde a métodos).</p>
 <p>Vejamos um exemplo mais simples:</p>
 <hr>
 ruby
-<p>&gt;&gt; def diga_algo(nome)<br>
-&gt;&gt; yield(nome)<br>
-&gt;&gt; end<br>
-=&gt; nil</p>
-<p>&gt;&gt; diga_algo(“Fabio”) { |nome| puts “Hello, #{nome}” }<br>
+<p>>> def diga_algo(nome)<br>
+>> yield(nome)<br>
+>> end<br>
+=> nil</p>
+<p>>> diga_algo(“Fabio”) { |nome| puts “Hello, #{nome}” }<br>
 Hello, Fabio<br>
-=&gt; nil</p>
-<p>&gt;&gt; diga_algo(“Akita”) { |nome| puts “Hello, #{nome}” }<br>
+=> nil</p>
+<p>>> diga_algo(“Akita”) { |nome| puts “Hello, #{nome}” }<br>
 Hello, Akita<br>
-=&gt; nil<br>
+=> nil<br>
 <del>-</del></p>
-<p>Agora complicou: primeiro definimos um método chamado ‘diga_algo’ que recebe apenas um parâmetro. Dentro do método chamamos o comando especial ‘yield’, passando o parâmetro recebido a ele. Esse comando ‘yield’ executa qualquer bloco que foi passado como último parâmetro à chamada do método. É como se o método ‘diga_algo’ tivesse um segundo parâmetro implícito – digamos, ‘&amp;b’ – e ‘yield(nome)’ fosse a mesma coisa que chamar ‘b.call(nome)’.</p>
+<p>Agora complicou: primeiro definimos um método chamado ‘diga_algo’ que recebe apenas um parâmetro. Dentro do método chamamos o comando especial ‘yield’, passando o parâmetro recebido a ele. Esse comando ‘yield’ executa qualquer bloco que foi passado como último parâmetro à chamada do método. É como se o método ‘diga_algo’ tivesse um segundo parâmetro implícito – digamos, ‘&b’ – e ‘yield(nome)’ fosse a mesma coisa que chamar ‘b.call(nome)’.</p>
 <p>Preste atenção neste trecho:</p>
 <hr>
 ruby{ |nome| puts “Hello, #{nome}” }—-
 <p>Pense nisso como se fosse uma função anônima: o que está entre pipes “||” são parâmetros dessa função. O ‘yield’ irá executar esse bloco de código. Por acaso, ele passará o parâmetro ‘nome’ para dentro do bloco Vejamos outro exemplo:</p>
 <hr>
 ruby
-<p>&gt;&gt; soma = lambda { |a, b| a + b }<br>
-=&gt; #&lt;Proc:0×012d4898@(irb):46&gt;<br>
-&gt;&gt; soma.call(1,2)<br>
-=&gt; 3<br>
-&gt;&gt; soma.call(4,4)<br>
-=&gt; 8<br>
+<p>>> soma = lambda { |a, b| a + b }<br>
+=> #<Proc:0×012d4898@(irb):46><br>
+>> soma.call(1,2)<br>
+=> 3<br>
+>> soma.call(4,4)<br>
+=> 8<br>
 <del>-</del></p>
 <p>O comando ‘lambda’ serve para capturar o bloco de código numa instância da classe Proc. No exemplo, esse bloco aceita dois parâmetros, “a” e “b” e faz a soma deles. Depois podemos pegar o objeto ‘soma’ e chamar o método ‘call’ passando os dois parâmetros que ele requer.</p>
 <p>No Ruby 1.8, um bloco também é uma <strong>Closure</strong> (“Fechamento”). Ou seja, o bloco de código engloba o ambiente ao seu redor, incluindo variáveis fora do bloco. Por exemplo:</p>
 <hr>
 ruby
-<p>&gt;&gt; def criar_bloco(nome)<br>
-&gt;&gt; lambda { puts “Hello #{nome}”}<br>
-&gt;&gt; end<br>
-=&gt; nil<br>
-&gt;&gt; <br>
-?&gt; fabio = criar_bloco(“Fabio”)<br>
-=&gt; #&lt;Proc:0×0124aae4@(irb):59&gt;<br>
-&gt;&gt; akita = criar_bloco(“Akita”)<br>
-=&gt; #&lt;Proc:0×0124aae4@(irb):59&gt;<br>
+<p>>> def criar_bloco(nome)<br>
+>> lambda { puts “Hello #{nome}”}<br>
+>> end<br>
+=> nil<br>
+>> <br>
+?> fabio = criar_bloco(“Fabio”)<br>
+=> #<Proc:0×0124aae4@(irb):59><br>
+>> akita = criar_bloco(“Akita”)<br>
+=> #<Proc:0×0124aae4@(irb):59><br>
 <del>-</del></p>
 <p>O método ‘criar_bloco’ retorna um novo bloco de código. Note que o método recebe o parâmetro ‘nome’ e daí criamos o novo lambda usando esse ‘nome’ dentro dele. Finalmente chamamos o método duas vezes, criando dois lambdas diferentes, passando dois parâmetros diferentes a ‘nome’.</p>
 <p>Agora vamos executar esses blocos:</p>
 <hr>
 ruby
-<p>&gt;&gt; fabio.call<br>
+<p>>> fabio.call<br>
 Hello Fabio<br>
-=&gt; nil</p>
-<p>&gt;&gt; akita.call<br>
+=> nil</p>
+<p>>> akita.call<br>
 Hello Akita<br>
-=&gt; nil</p>
-<p>&gt;&gt; fabio.call<br>
+=> nil</p>
+<p>>> fabio.call<br>
 Hello Fabio<br>
-=&gt; nil<br>
+=> nil<br>
 <del>-</del></p>
 <p>Veja que o bloco <strong>reteve</strong> o conteúdo do parâmetro ‘nome’ que foi passado como argumento ao método ‘criar_bloco’. Cada um dos blocos reteve o parâmetro, e como os configuramos com conteúdos diferentes, ao serem executados eles tem comportamentos diferentes. Esse conceito de <strong>Fechamento</strong> é um pouco complicado da primeira vez, por isso se você pelo menos entendeu que existem blocos e que eles são encapsulados em objetos anônimos que chamamos de <strong>lambdas</strong>, por enquanto é o suficiente.</p>
 <p>Mas mais do que isso, você viu como métodos Ruby conseguem receber blocos de código e devolver blocos de código. É a isso que chamamos de <a href="http://en.wikipedia.org/wiki/Higher-order_function">Higher Order Functions</a>, ou seja, uma ‘função’ (que chamamos de ‘bloco de código’) pode ser recebido ou repassado como se fosse uma variável qualquer. Isso é muito importante para categorizar Ruby como uma linguagem ‘inspirada em linguagens funcionais’, como Lisp. No caso, lambdas de Ruby não são livres de efeitos-colaterais, por isso ela não pode ser considerada puramente funcional. Mas isso já auxilia em muitas operações e é uma maneira bem mais eficiente inclusive de encapsular funcionalidades.</p>
@@ -318,8 +318,8 @@ begin<br>
   input = File.open(aFile, “r”)<br>
   begin<br>
     while line = input.gets<br>
-      contents &lt;&lt; line<br>
-      contents &lt;&lt; “\n”<br>
+      contents << line<br>
+      contents << “\n”<br>
     end<br>
   ensure<br>
     input.close<br>
@@ -335,8 +335,8 @@ ruby
 <p>contents = ""<br>
 File.open(aFile, “r”) do |input|<br>
   while line = input.gets<br>
-    contents &lt;&lt; line<br>
-    contents &lt;&lt; “\n”<br>
+    contents << line<br>
+    contents << “\n”<br>
   end<br>
 end<br>
 <del>-</del></p>
@@ -370,18 +370,18 @@ end<br>
 <p>Em Ruby é muito comum utilizar essa maneira de pensar: em vez de pensar em <em>“como vamos iterar elemento a elemento”</em>, partimos do princípio que isso é trivial e daí pensamos <em>“como queremos filtrar elemento a elemento”</em>. Linhas como a seguinte são bastante comuns:</p>
 <hr>
 ruby
-<p>&gt;&gt; [1,2,3,4,5].map { |elem| elem * elem }<br>
-=&gt; [1, 4, 9, 16, 25]</p>
-<p>&gt;&gt; [1,2,3,4,5].select { |elem| elem % 2 == 0 }<br>
-=&gt; [2, 4]</p>
-<p>&gt;&gt; [1,2,3,4,5].inject(0) { |total, elem| total += elem }<br>
-=&gt; 15</p>
-<p>&gt;&gt; total = 0<br>
-=&gt; 0<br>
-&gt;&gt; [1,2,3,4,5].each { |elem| total += elem }<br>
-=&gt; [1, 2, 3, 4, 5]<br>
-&gt;&gt; total<br>
-=&gt; 15<br>
+<p>>> [1,2,3,4,5].map { |elem| elem * elem }<br>
+=> [1, 4, 9, 16, 25]</p>
+<p>>> [1,2,3,4,5].select { |elem| elem % 2 == 0 }<br>
+=> [2, 4]</p>
+<p>>> [1,2,3,4,5].inject(0) { |total, elem| total += elem }<br>
+=> 15</p>
+<p>>> total = 0<br>
+=> 0<br>
+>> [1,2,3,4,5].each { |elem| total += elem }<br>
+=> [1, 2, 3, 4, 5]<br>
+>> total<br>
+=> 15<br>
 <del>-</del></p>
 <p>O primeiro exemplo – “map” – substitui elemento a elemento pelo resultado do bloco. O segundo – “select” – devolve o resultado do filtro que é passado como bloco. O terceiro – “inject” – é o redutor que já vimos acima e o quarto – “each” – é a mesma coisa que o “inject” mas menos encapsulado e usando código extra para chegar ao mesmo efeito.</p>
 <p>Para completar, blocos podem ser passados como parâmetro a um método usando duas sintaxes: chaves (“{}”) ou “do..end”, por exemplo:</p>
@@ -400,28 +400,28 @@ puts elem
 <p>Arrays são listas simples de elementos, a sintaxe mais básica é a seguinte:</p>
 <hr>
 ruby
-<p>&gt;&gt; lista = [100,200,300,400]<br>
-=&gt; [100, 200, 300, 400]<br>
-&gt;&gt; lista<sup class="footnote" id="fnr2"><a href="#fn2">2</a></sup><br>
-=&gt; 300<br>
+<p>>> lista = [100,200,300,400]<br>
+=> [100, 200, 300, 400]<br>
+>> lista<sup class="footnote" id="fnr2"><a href="#fn2">2</a></sup><br>
+=> 300<br>
 <del>-</del></p>
 <p>Até aqui nada de novo, porém o Ruby tem alguns facilitadores, por exemplo:</p>
 <hr>
 ruby
-<p>?&gt; lista.first<br>
-=&gt; 100<br>
-&gt;&gt; lista.last<br>
-=&gt; 400<br>
+<p>?> lista.first<br>
+=> 100<br>
+>> lista.last<br>
+=> 400<br>
 <del>-</del></p>
 <p>Também já vimos que ele tem vários métodos que aceitam blocos para processar elemento a elemento, como “each”, “map”, “select”, “inject”. Já vimos anteriormente como operadores em Ruby nada mais são do que métodos. Vejamos como os Arrays se comportam:</p>
 <hr>
 ruby
-<p>&gt;&gt; [1,2,3,4] + [5,6,7,8]<br>
-=&gt; [1, 2, 3, 4, 5, 6, 7, 8]</p>
-<p>&gt;&gt; [1,2,3,4,5] – [2,3,4]<br>
-=&gt; [1, 5]</p>
-<p>&gt;&gt; [1,2,3] * 2<br>
-=&gt; [1, 2, 3, 1, 2, 3]<br>
+<p>>> [1,2,3,4] + [5,6,7,8]<br>
+=> [1, 2, 3, 4, 5, 6, 7, 8]</p>
+<p>>> [1,2,3,4,5] – [2,3,4]<br>
+=> [1, 5]</p>
+<p>>> [1,2,3] * 2<br>
+=> [1, 2, 3, 1, 2, 3]<br>
 <del>-</del></p>
 <p>Como na maioria das linguagens a notação de colchetes (“[]”) deve ser familiar, para encontrar o elemento através do seu índice. Mas em Ruby, os colchetes também são operadores! Vamos fazer uma brincadeira:</p>
 <hr>
@@ -434,18 +434,18 @@ ruby
     “Nada encontrado para #{indice}”<br>
   end<br>
 end</p>
-<p>&gt;&gt; lista = [1,2,3,4]<br>
-=&gt; [1, 2, 3, 4]</p>
-<p>&gt;&gt; lista<sup class="footnote" id="fnr2"><a href="#fn2">2</a></sup><br>
-=&gt; 3</p>
-<p>&gt;&gt; lista[:first]<br>
-=&gt; 1</p>
-<p>&gt;&gt; lista[:last]<br>
-=&gt; 4</p>
-<p>&gt;&gt; lista[:size]<br>
-=&gt; 4</p>
-<p>&gt;&gt; lista[“bla bla”]<br>
-=&gt; “Nada encontrado para bla bla”<br>
+<p>>> lista = [1,2,3,4]<br>
+=> [1, 2, 3, 4]</p>
+<p>>> lista<sup class="footnote" id="fnr2"><a href="#fn2">2</a></sup><br>
+=> 3</p>
+<p>>> lista[:first]<br>
+=> 1</p>
+<p>>> lista[:last]<br>
+=> 4</p>
+<p>>> lista[:size]<br>
+=> 4</p>
+<p>>> lista[“bla bla”]<br>
+=> “Nada encontrado para bla bla”<br>
 <del>-</del></p>
 <p>Viram o que aconteceu? Usamos “alias” novamente para criar um novo atalho à antiga implementação de [], daí reimplementamos []. Ele se comporta assim: se o parâmetro passado entre colchetes for um inteiro, é para se comportar como antes, portanto chamando o atalho “seletor_antigo”. Se for um símbolo (vamos explicar isso depois mas por enquanto entenda que é uma palavra com dois pontos antes, como “:first”), ele deve enviar a mensagem ao objeto usando “send”, ou seja, deve executar como se fosse um método. Dessa forma “lista[:first]” deve se comportar igual a “lista.first”. Finalmente, se for qualquer outra coisa (como um String), apenas mostre uma mensagem dizendo que nada foi encontrado.</p>
 <p>Como podemos ver, mais do que o Array em si, o operador “[]” pode ser muito útil em vários cenários. Enfim, na maior parte dos casos um Array em Ruby se comporta muito parecido com um Array em qualquer outra linguagem.</p>
@@ -453,44 +453,44 @@ end</p>
 <p>Um Hash, em outras linguagens, também é chamado de Dicionário, ou seja, é uma lista onde a ordem de inserção não é importante, e cada elemento é um par que liga uma chave a um valor. Por exemplo:</p>
 <hr>
 ruby
-<p>&gt;&gt; dic = { “car” =&gt; “carro”, “table” =&gt; “mesa”, “mouse” =&gt; “rato” }<br>
-=&gt; {"mouse"=&gt;"rato", “table”=&gt;"mesa", “car”=&gt;"carro"}</p>
-<p>&gt;&gt; dic[“car”]<br>
-=&gt; “carro”</p>
-<p>&gt;&gt; dic[“mouse”]<br>
-=&gt; “rato”<br>
+<p>>> dic = { “car” => “carro”, “table” => “mesa”, “mouse” => “rato” }<br>
+=> {"mouse"=>"rato", “table”=>"mesa", “car”=>"carro"}</p>
+<p>>> dic[“car”]<br>
+=> “carro”</p>
+<p>>> dic[“mouse”]<br>
+=> “rato”<br>
 <del>-</del></p>
 <p>Novamente, é um comportamento parecido com um Array, mas em vez de passar índices numéricos ao operador “[]”, passamos uma chave e esperamos encontrar o valor correspondente. Para acrescentar mais elementos à lista, podemos fazer assim:</p>
 <hr>
 ruby
-<p>&gt;&gt; dic.merge!( {"book" =&gt; “livro”, “leg” =&gt; "perna"} )<br>
-=&gt; {"leg"=&gt;"perna", “mouse”=&gt;"rato", “table”=&gt;"mesa", “book”=&gt;"livro", “car”=&gt;"carro"}<br>
+<p>>> dic.merge!( {"book" => “livro”, “leg” => "perna"} )<br>
+=> {"leg"=>"perna", “mouse”=>"rato", “table”=>"mesa", “book”=>"livro", “car”=>"carro"}<br>
 <del>-</del></p>
 <p>Mais uma peculiaridade de Ruby. Um Hash tem dois métodos para mesclar novos elementos a uma lista já existente: “merge” e “merge!”. A diferença de um para outro é que o primeiro é um método não-destrutivo e o segundo é um método destrutivo, ou seja, o primeiro retorna a lista mesclada mas a original continua como antes, já o segundo método mescla os novos elementos diretamente na lista original. Ou seja, a linha anterior seria equivalente a fazer isso:</p>
 <hr>
 ruby
-<p>dic = dic.merge( {"book" =&gt; “livro”, “leg” =&gt; "perna"} )<br>
+<p>dic = dic.merge( {"book" => “livro”, “leg” => "perna"} )<br>
 <del>-</del></p>
 <p>O resultado do merge é atribuído à mesma variável, ignorando a lista original, que é o que fazemos normalmente. Você também pode ter Hashes dentro de Hashes, assim:</p>
 <hr>
 ruby
-<p>&gt;&gt; fabio = { “emails” =&gt; <br>
-?&gt; { “trabalho” =&gt; “fabio.akita@locaweb.com.br”,<br>
-?&gt; “normal” =&gt; “fabioakita@gmail.com” } }<br>
-=&gt; {"emails"=&gt;{"normal"=&gt;"fabioakita@gmail.com", “trabalho”=&gt;"fabio.akita@locaweb.com.br"}}</p>
-<p>?&gt; fabio[“emails”][“normal”]<br>
-=&gt; “fabioakita@gmail.com”<br>
+<p>>> fabio = { “emails” => <br>
+?> { “trabalho” => “fabio.akita@locaweb.com.br”,<br>
+?> “normal” => “fabioakita@gmail.com” } }<br>
+=> {"emails"=>{"normal"=>"fabioakita@gmail.com", “trabalho”=>"fabio.akita@locaweb.com.br"}}</p>
+<p>?> fabio[“emails”][“normal”]<br>
+=> “fabioakita@gmail.com”<br>
 <del>-</del></p>
 <p>Finalmente, podemos explorar o conteúdo de um Hash da seguinte maneira:</p>
 <hr>
 ruby
-<p>&gt;&gt; dic.keys<br>
-=&gt; [“leg”, “mouse”, “table”, “book”, “car”]<br>
-&gt;&gt; dic.values<br>
-=&gt; [“perna”, “rato”, “mesa”, “livro”, “carro”]</p>
-<p>&gt;&gt; dic.keys.each do |chave|<br>
-?&gt; puts “#{chave} = #{dic[chave]}”<br>
-&gt;&gt; end<br>
+<p>>> dic.keys<br>
+=> [“leg”, “mouse”, “table”, “book”, “car”]<br>
+>> dic.values<br>
+=> [“perna”, “rato”, “mesa”, “livro”, “carro”]</p>
+<p>>> dic.keys.each do |chave|<br>
+?> puts “#{chave} = #{dic[chave]}”<br>
+>> end<br>
 leg = perna<br>
 mouse = rato<br>
 table = mesa<br>

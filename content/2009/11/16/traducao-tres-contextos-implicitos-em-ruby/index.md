@@ -126,7 +126,7 @@ o.instance\_eval do
  p self #=\> #<object:0x454f24> <br>
   def hoge; end <br>
 end <br>
-o.method(:hoge) #=&gt; #&lt;Method: #<object:0x454f24>.hoge&gt; <br>
+o.method(:hoge) #=> #<Method: #<object:0x454f24>.hoge> <br>
 Object.instance_method(:hoge) # raises a NameError “undefined method `hoge’ for class `Object’”<br>
 <del>-</del></object:0x454f24></object:0x454f24>
 

@@ -82,15 +82,15 @@ Ruby não tem métodos como cidadãos de primeira-classe. Na realidade podemos e
   end<br>
 end</p>
 <p>m = Test.new.method(:say)<br>
-m.call # =&gt; “Hello!”<br>
+m.call # => “Hello!”<br>
 <del>-</del></p>
 <p>Aqui, extraímos o método :say da instância de Test. Note que podemos manipular o método como um objeto normal. Toda vez que enviamos a mensagem ‘call’ ao objeto de método, ele roda como se estivesse sendo executado do contexto de seu object original (Test.new.say). No exemplo acima a última expressão imprimiria com sucesso “Hello!”, conforme armazenada na variável local de instância @hello.</p>
 <p>Embora simples, não fazemos isso sempre. Isso porque este método está ligado ao contexto do seu objeto original e normalmente não queremos isso: seria legal ter um bloco de código independente. Então, vamos criar um bloco de código muito simples referenciado por uma variável:</p>
 <hr>
 ruby
 <p>c = lambda { |i| puts i }<br>
-c.call(1) # =&gt; 1<br>
-c.call(2) # =&gt; 2<br>
+c.call(1) # => 1<br>
+c.call(2) # => 2<br>
 <del>-</del></p>
 <p>A palavra ‘lambda’ fecha o código entre chaves como um objeto, num bloco, uma instância da classe Proc. Este objeto responde ao método ‘call’. Nas duas últimas expressões passamos parâmetros ao método ‘call’ e eles vão à variável ‘i’ definida entre pipes dentro do bloco. Então, ele age como uma entidade independente, desconectada de qualquer classe em particular. Vejamos isso:</p>
 <hr>
@@ -100,8 +100,8 @@ ruby
     block.call(self.class)<br>
   end<br>
 end</p>
-<p>c.call(self.class) # =&gt; Object<br>
-Test.new.say© # =&gt; Test<br>
+<p>c.call(self.class) # => Object<br>
+Test.new.say© # => Test<br>
 <del>-</del></p>
 <p>Estamos usando o mesmo bloco definido acima na variável ‘c’. Depois da definição da classe Test, chamamos o bloco passando ‘self.class’ e ele retorna ‘Object’ como resultado.</p>
 <p>Então, chamamos o método :say a partir de dentro de uma instância da classe Test. O método :say chama o bloco lhe dando o ‘self.class’ interno como parâmetro do bloco. Nesse caso ele imprime ‘Test’ em vez de ‘Object’, o que significa que o bloco se liga ao escopo que o cerca. Essa é uma diferença entre um bloco e um método desconectado de um objeto.</p>
@@ -110,7 +110,7 @@ Test.new.say© # =&gt; Test<br>
 ruby
 { |i| puts t }
 <ol>
-	<li>=&gt; 4 3 2 1<br>
+	<li>=> 4 3 2 1<br>
 <del>-</del>
 </li>
 </ol>
@@ -121,7 +121,7 @@ ruby
 <p>class Array<br>
   def even<br>
     i = 0<br>
-    while i &lt; self.size<br>
+    while i < self.size<br>
       yield(self[i]) if i % 2 == 0<br>
       i += 1<br>
     end<br>
@@ -129,7 +129,7 @@ ruby
 end</p>
 { |i| puts i }
 <ol>
-	<li>=&gt; 1 3 5<br>
+	<li>=> 1 3 5<br>
 <del>-</del>
 </li>
 </ol>
@@ -138,9 +138,9 @@ end</p>
 <hr>
 ruby
 <p>class Array<br>
-  def even(&amp;code)<br>
+  def even(&code)<br>
     i = 0<br>
-    while i &lt; self.size<br>
+    while i < self.size<br>
       code.call( self[i] ) if i % 2 == 0<br>
       i += 1<br>
     end<br>
@@ -154,14 +154,14 @@ ruby
 <p>class Array<br>
   def even(block)<br>
     i = 0<br>
-    while i &lt; self.size<br>
+    while i < self.size<br>
       block.call( self[i] ) if i % 2 == 0<br>
       i += 1<br>
     end<br>
   end<br>
 end<br>
 <del>-</del></p>
-<p>Agora estamos fazendo sem o ‘&amp;’ (ampersand). No exemplo anterior, o operador ampersand ‘captura’ um bloco em uma instância de Proc. No último caso, o método ‘even’ espera receber diretamente um objeto Proc, como isso:</p>
+<p>Agora estamos fazendo sem o ‘&’ (ampersand). No exemplo anterior, o operador ampersand ‘captura’ um bloco em uma instância de Proc. No último caso, o método ‘even’ espera receber diretamente um objeto Proc, como isso:</p>
 <hr>
 ruby
 <p>c = lambda { |i| puts i }<br>
@@ -171,9 +171,9 @@ ruby
 <hr>
 ruby
 <p>c = lambda { |i| puts i }<br>
-[1,2,3,4].each( &amp;c )<br>
+[1,2,3,4].each( &c )<br>
 <del>-</del></p>
-<p>Um pouco diferente, porque o método ‘each’ não espera um objeto Proc como parâmetro, mas sim um bloco real. Então usamos ‘&amp;’ antes da variável de instância de Proc e ele o ‘expande’ de volta ao bloco de código, de forma que o método ‘even’ possam executá-lo com ‘yield’ dentro, em vez de executá o objeto com o método ‘call’.</p>
+<p>Um pouco diferente, porque o método ‘each’ não espera um objeto Proc como parâmetro, mas sim um bloco real. Então usamos ‘&’ antes da variável de instância de Proc e ele o ‘expande’ de volta ao bloco de código, de forma que o método ‘even’ possam executá-lo com ‘yield’ dentro, em vez de executá o objeto com o método ‘call’.</p>
 <p>Esse uso de um objeto Proc não é tão ‘elegante’ quanto passar diretamente o bloco de código, mas com essa construção podemos armazenar código dentro de um objeto. E podemos definir um método que recebe quanto blocos precisar, por exemplo:</p>
 <hr>
 ruby
@@ -225,7 +225,7 @@ c = proc { |i| puts i }<br>
 <p>Palavras-chave para ter em mente são:</p>
 <ul>
 	<li>lambda/Proc.new – fecham um punhado de código dentro de uma instância de Proc.</li>
-	<li>&amp; – ampersand, tanto captura um bloco de código para dentro de um objeto Proc ou expande um objeto Proc de volta a um bloco de código.</li>
+	<li>& – ampersand, tanto captura um bloco de código para dentro de um objeto Proc ou expande um objeto Proc de volta a um bloco de código.</li>
 	<li>{}/do..end – definem um bloco de código.</li>
 	<li>|| – pipes, definem os parâmetros de um bloco. Se não precisar de nenhum, apenas omita os pipes.</li>
 </ul>
@@ -238,8 +238,8 @@ ruby
 end</p>
 <p>birthday = greetings_factory(“Happy Birthday”)<br>
 xmas = greetings_factory(“Merry XMas”)</p>
-<p>birthday.call(“David”) # =&gt; “Happy Birthday, David !”<br>
-xmas.call(“Matz”) # =&gt; “Merry XMas, Matz !”<br>
+<p>birthday.call(“David”) # => “Happy Birthday, David !”<br>
+xmas.call(“Matz”) # => “Merry XMas, Matz !”<br>
 <del>-</del></p>
 <p>A primeira coisa é a definição de um método para ‘greetings_factory’. Ele recebe um prefixo como parâmetro e retorna um objeto Proc, cujo parâmetro interno é ‘name’. Até aqui tudo bem.</p>
 <p>A segunda parte define duas instâncias Proc, uma para aniversário e outra para natal. Perceba que passamos 2 prefixos diferentes ao método ‘greetings_factory’. Os valores diferentes são ‘fechados’ dentro do Bloco. Então quando os chamamos mais tarde, vemos quão diferente eles se comportam: eles armazenaram o último estado dentro deles mesmo. Então cada bloco armazena a variável ‘prefix’ passada antes e ao mesmo tempo continuam aceitando um parâmetro ‘name’ dentro do bloco.</p>
@@ -248,9 +248,9 @@ xmas.call(“Matz”) # =&gt; “Merry XMas, Matz !”<br>
 ruby
 <p>list = []<br>
 [1,2,3,4].each do |i| <br>
-  list &lt;&lt; i * 2 <br>
+  list << i * 2 <br>
 end<br>
-puts list.inspect # =&gt; [2, 4, 6, 8]<br>
+puts list.inspect # => [2, 4, 6, 8]<br>
 <del>-</del></p>
 <p>Então, definimos um array ‘lista’ <strong>antes</strong> de criar o bloco de iteração. Daí, dentro do bloco nos referimos ao array externo ‘list’ e o populamos. Em Java, isso seria uma variável imutável declarada como ‘final’, mas em Ruby não existe essa limitação.</p>
 <p>Você precisa ser cuidadoso sobre o ambiente que cerca eu bloco: não defina variáveis que serão usadas dentro do bloco cedo demais no seu código. Tente manter as dependências próximas, como no exemplo acima onde o Array ‘list’ é definida logo antes do próprio iterador.</p>
@@ -259,7 +259,7 @@ puts list.inspect # =&gt; [2, 4, 6, 8]<br>
 <hr>
 ruby
 <p>User.transaction do <br>
-  u = User.new(:login =&gt; ‘admin’)<br>
+  u = User.new(:login => ‘admin’)<br>
   u.save!<br>
 end<br>
 <del>-</del></p>
@@ -271,7 +271,7 @@ ruby
     begin<br>
       ActiveRecord::Base.establish_connection<br>
       yield if block_given?<br>
-    rescue =&gt; e<br>
+    rescue => e<br>
       RAILS_DEFAULT_LOGGER.error e<br>
     ensure<br>
       ActiveRecord::Base.remove_connection <br>

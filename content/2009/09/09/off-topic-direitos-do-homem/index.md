@@ -161,8 +161,8 @@ Tal é o estado de uma das questões mais cruciais de hoje: os direitos polític
 
 Aqueles que defendem o capitalismo laissez-faire são os únicos defensores dos direitos do homem.
 
-<object width="560" height="340"><param name="movie" value="http://www.youtube.com/v/qUNYbCOMp8k&amp;hl=en&amp;fs=1&amp;">
+<object width="560" height="340"><param name="movie" value="http://www.youtube.com/v/qUNYbCOMp8k&hl=en&fs=1&">
 <param name="allowFullScreen" value="true">
 <param name="allowscriptaccess" value="always">
-<embed src="http://www.youtube.com/v/qUNYbCOMp8k&amp;hl=en&amp;fs=1&amp;" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="560" height="340"></embed></object>
+<embed src="http://www.youtube.com/v/qUNYbCOMp8k&hl=en&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="560" height="340"></embed></object>
 

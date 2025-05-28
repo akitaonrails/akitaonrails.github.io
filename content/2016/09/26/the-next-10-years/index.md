@@ -8,7 +8,7 @@ draft: false
 
 If you attended [Rubyconf Brazil 2016](https://www.facebook.com/locaweb/photos/?tab=album&album_id=1183296425046662), last Saturday, Sep 24th, you saw me announcing my "retirement" from organizing the conference, actually from organizing any language/platform specific conference.
 
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">I might not understand Portuguese, but I&#39;m fluent in Douglas Adams. Congrats <a href="https://twitter.com/AkitaOnRails">@AkitaOnRails</a> and thank you! <a href="https://twitter.com/hashtag/RubyConfBR?src=hash">#RubyConfBR</a> <a href="https://t.co/hfOA2wMKot">pic.twitter.com/hfOA2wMKot</a></p>&mdash; Kären Engelbrecht (@scriberty) <a href="https://twitter.com/scriberty/status/779807126713733122">September 24, 2016</a></blockquote>
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">I might not understand Portuguese, but I&#39;m fluent in Douglas Adams. Congrats <a href="https://twitter.com/AkitaOnRails">@AkitaOnRails</a> and thank you! <a href="https://twitter.com/hashtag/RubyConfBR?src=hash">#RubyConfBR</a> <a href="https://t.co/hfOA2wMKot">pic.twitter.com/hfOA2wMKot</a></p>— Kären Engelbrecht (@scriberty) <a href="https://twitter.com/scriberty/status/779807126713733122">September 24, 2016</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 Being crystal clear, this is not one of those "leaving Ruby" dramas. Because I don't believe in [BS](http://www.urbandictionary.com/define.php?term=BS) like that.

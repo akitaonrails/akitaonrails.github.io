@@ -19,8 +19,8 @@ Nas minhas últimas palestras sobre organizações eu mostro um vídeo do [exper
 
 <object width="600" height="338"><param name="allowfullscreen" value="true">
 <param name="allowscriptaccess" value="always">
-<param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=7592683&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=00ADEF&amp;fullscreen=1">
-<embed src="http://vimeo.com/moogaloop.swf?clip_id=7592683&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=00ADEF&amp;fullscreen=1" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="600" height="338"></embed></object>
+<param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=7592683&server=vimeo.com&show_title=1&show_byline=1&show_portrait=0&color=00ADEF&fullscreen=1">
+<embed src="http://vimeo.com/moogaloop.swf?clip_id=7592683&server=vimeo.com&show_title=1&show_byline=1&show_portrait=0&color=00ADEF&fullscreen=1" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="600" height="338"></embed></object>
 
 [Experimento da Conformidade de Asch](http://vimeo.com/7592683) from [Fabio Akita](http://vimeo.com/akitaonrails) on [Vimeo](http://vimeo.com).
 
@@ -60,10 +60,10 @@ Ele afirma que as pessoas precisam de 3 coisas para se motivarem: Autonomia – 
 
 Agilidade é uma evolução natural dos processos antigos de gestão. [Organizações Democráticas](http://www.worldblu.com/orgdemo/whatis.php) são o passo de mais longo e mais abrangente numa organização.
 
-<object width="425" height="344"><param name="movie" value="http://www.youtube.com/v/qFpk1B-DS38&amp;hl=en&amp;fs=1&amp;">
+<object width="425" height="344"><param name="movie" value="http://www.youtube.com/v/qFpk1B-DS38&hl=en&fs=1&">
 <param name="allowFullScreen" value="true">
 <param name="allowscriptaccess" value="always">
-<embed src="http://www.youtube.com/v/qFpk1B-DS38&amp;hl=en&amp;fs=1&amp;" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="344"></embed></object>
+<embed src="http://www.youtube.com/v/qFpk1B-DS38&hl=en&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="344"></embed></object>
 
 Este artigo é apenas uma introdução. Releia meus artigos [off-topic](http://akitaonrails.com/off-topic) dos últimos meses para entender mais aspectos disso.
 

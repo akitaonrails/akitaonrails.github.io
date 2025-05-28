@@ -13,17 +13,17 @@ Em números, tivemos mais de 700 participantes no evento. É o terceiro ano que 
 
 Um dia antes do evento, eu fui conferir como estavam os preparativos para suportar este grande evento. Daí resolvi aproveitar que tinha acabado de instalar o novíssimo iLife’11 e fiz este teaser trailer:
 
-<object width="640" height="385"><param name="movie" value="http://www.youtube.com/v/9NurIbqq7AU?fs=1&amp;hl=en_US">
+<object width="640" height="385"><param name="movie" value="http://www.youtube.com/v/9NurIbqq7AU?fs=1&hl=en_US">
 <param name="allowFullScreen" value="true">
 <param name="allowscriptaccess" value="always">
-<embed src="http://www.youtube.com/v/9NurIbqq7AU?fs=1&amp;hl=en_US" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="640" height="385"></embed></object>
+<embed src="http://www.youtube.com/v/9NurIbqq7AU?fs=1&hl=en_US" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="640" height="385"></embed></object>
 
 Então, no segundo dia do evento, gravei alguns vídeos de todo o povo participando e montei este outro trailer que mostramos antes do keynote de fechamento do evento:
 
-<object width="640" height="385"><param name="movie" value="http://www.youtube.com/v/7tDjYOhdz8I?fs=1&amp;hl=en_US">
+<object width="640" height="385"><param name="movie" value="http://www.youtube.com/v/7tDjYOhdz8I?fs=1&hl=en_US">
 <param name="allowFullScreen" value="true">
 <param name="allowscriptaccess" value="always">
-<embed src="http://www.youtube.com/v/7tDjYOhdz8I?fs=1&amp;hl=en_US" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="640" height="385"></embed></object>
+<embed src="http://www.youtube.com/v/7tDjYOhdz8I?fs=1&hl=en_US" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="640" height="385"></embed></object>
 
 
 Tivemos muitas diferenças em relação às Rails Summits. A mais óbvia foi a mudança de local, do antigo Elis Regina na Zona Norte de São Paulo para o Centro de Convenções Frei Caneca. Existem vantagens e desvantagens nas duas. No caso do Elis Regina, trata-se de um local bem mais amplo e bonito, com auditório de verdade. Porém, a localização é muito ruim por ser muito longe de tudo. Poucas opções de hotéis, poucas opções de restaurantes, enfim, é um lugar mais isolado. Já o Frei Caneca fica no centro de tudo, perto de metrô, de muitos hotéis, do lado da Av. Paulista. Por outro lado o local é um pouco menor. No geral acho que a escolha foi acertada para a maioria das pessoas. O que acham? Comentem no final.
@@ -50,10 +50,10 @@ Enfim, de qualquer forma a qualidade dos palestrantes e da platéia elevou a qua
 
 Em termos de redes sociais, o pessoal da Vizir disponibilizou um [Livestream](http://mezura.com.br/locaweb/live_streams/rubyconf-brasil-2010) e em seguida soltou uma [relatório](http://www.slideshare.net/myvizir/vizir-de-olho-rubyconf-brasil-2010) de como foi o evento baseado nos tweets. Vale a pena conferir.
 
-**[Vizir de olho – RubyConf Brasil 2010](http://www.slideshare.net/myvizir/vizir-de-olho-rubyconf-brasil-2010 "Vizir de olho - RubyConf Brasil 2010")**<object id="__sse5589071" width="425" height="355"><param name="movie" value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=vizirdeolho-rubyconf-101027222312-phpapp02&amp;stripped_title=vizir-de-olho-rubyconf-brasil-2010&amp;userName=myvizir">
+**[Vizir de olho – RubyConf Brasil 2010](http://www.slideshare.net/myvizir/vizir-de-olho-rubyconf-brasil-2010 "Vizir de olho - RubyConf Brasil 2010")**<object id="__sse5589071" width="425" height="355"><param name="movie" value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=vizirdeolho-rubyconf-101027222312-phpapp02&stripped_title=vizir-de-olho-rubyconf-brasil-2010&userName=myvizir">
 <param name="allowFullScreen" value="true">
 <param name="allowScriptAccess" value="always">
-<embed name="__sse5589071" src="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=vizirdeolho-rubyconf-101027222312-phpapp02&amp;stripped_title=vizir-de-olho-rubyconf-brasil-2010&amp;userName=myvizir" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="355"></embed></object>
+<embed name="__sse5589071" src="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=vizirdeolho-rubyconf-101027222312-phpapp02&stripped_title=vizir-de-olho-rubyconf-brasil-2010&userName=myvizir" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="355"></embed></object>
 View more [presentations](http://www.slideshare.net/) from [Vizir](http://www.slideshare.net/myvizir).
 
 E esta foi uma semana para os rubistas da América Latina mesmo porque logo em seguida ao nosso evento, tivemos o [RubyConf Uruguay](http://rubyconfuruguay.org/en) onde alguns dos mesmos palestrantes foram participar. Foi mesmo uma semana para Rubistas, vamos fazer com que se repita todo ano!

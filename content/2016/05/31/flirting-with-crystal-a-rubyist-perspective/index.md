@@ -33,13 +33,13 @@ But the lack of "#send" does hurt a bit. It's the one thing that makes Crystal f
 
 As of version 0.17.0, Crystal has one huge limitation: it's using a [Boehm-Demers-Weiser conservative garbage collector](http://crystal-lang.org/2013/12/05/garbage-collector.html).
 
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/asterite">@asterite</a> <a href="https://twitter.com/headius">@headius</a> I assumed as much... the Boehm GC, although handy for starting a new language, will only get you so far</p>&mdash; Jason Frey (@Fryguy9) <a href="https://twitter.com/Fryguy9/status/736990644082757632">May 29, 2016</a></blockquote>
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/asterite">@asterite</a> <a href="https://twitter.com/headius">@headius</a> I assumed as much... the Boehm GC, although handy for starting a new language, will only get you so far</p>— Jason Frey (@Fryguy9) <a href="https://twitter.com/Fryguy9/status/736990644082757632">May 29, 2016</a></blockquote>
 
 The language is currently implemented as a single-threaded process. This means that you _probably_ can't max out all CPUs of your machine with just a single process. Although I may be wrong here, it's just my first impressions.
 
 Charles Nutter (from JRuby fame) gives a warn about this:
 
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/Fryguy9">@fryguy9</a> From their site: <a href="https://t.co/uOjIT0c8ji">https://t.co/uOjIT0c8ji</a> It does say something about &quot;when&quot; parallelism happens. Risky to start single-threaded.</p>&mdash; Charles Nutter (@headius) <a href="https://twitter.com/headius/status/736982955239870464">May 29, 2016</a></blockquote>
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/Fryguy9">@fryguy9</a> From their site: <a href="https://t.co/uOjIT0c8ji">https://t.co/uOjIT0c8ji</a> It does say something about "when" parallelism happens. Risky to start single-threaded.</p>— Charles Nutter (@headius) <a href="https://twitter.com/headius/status/736982955239870464">May 29, 2016</a></blockquote>
 
 It's a double-edged sword. Using a "generic" plug-and-play GC such as Boehm - which is not a bad thing in itself, but it's possibly not nearly as powerful as the JVM's own set of high performance GC such as the brand new G1GC.
 
@@ -163,7 +163,7 @@ I did an experiment with JSON parsing and the result is a project I called ["cr_
 
 Update: after I posted this article @LuisLavena stepped in to correct me: you can do it like Ruby, without schemas:
 
-<blockquote class="twitter-tweet" data-partner="tweetdeck"><p lang="en" dir="ltr"><a href="https://twitter.com/AkitaOnRails">@AkitaOnRails</a> <a href="https://twitter.com/CrystalLanguage">@CrystalLanguage</a> re: JSON, you can parse it kinda-like Ruby, see JSON::Any: <a href="https://t.co/MD7PYy5AVH">https://t.co/MD7PYy5AVH</a></p>&mdash; Luis Lavena (@luislavena) <a href="https://twitter.com/luislavena/status/738005493189316608">June 1, 2016</a></blockquote>
+<blockquote class="twitter-tweet" data-partner="tweetdeck"><p lang="en" dir="ltr"><a href="https://twitter.com/AkitaOnRails">@AkitaOnRails</a> <a href="https://twitter.com/CrystalLanguage">@CrystalLanguage</a> re: JSON, you can parse it kinda-like Ruby, see JSON::Any: <a href="https://t.co/MD7PYy5AVH">https://t.co/MD7PYy5AVH</a></p>— Luis Lavena (@luislavena) <a href="https://twitter.com/luislavena/status/738005493189316608">June 1, 2016</a></blockquote>
 
 And it will be like this:
 
@@ -356,6 +356,6 @@ So, Rust, Go, Javascript, all very fast, but with very questionable syntaxes and
 
 Update: after I posted, the creator of Crystal, @Asterite had a few things to add as well:
 
-<blockquote class="twitter-tweet" data-partner="tweetdeck"><p lang="en" dir="ltr"><a href="https://twitter.com/AkitaOnRails">@AkitaOnRails</a> <a href="https://twitter.com/waj">@waj</a> so it&#39;s likely that we&#39;ll have something similar. We aren&#39;t there yet because we are not Google, Mozilla nor Apple</p>&mdash; Ary Borenszweig (@asterite) <a href="https://twitter.com/asterite/status/737778080085868545">May 31, 2016</a></blockquote>
+<blockquote class="twitter-tweet" data-partner="tweetdeck"><p lang="en" dir="ltr"><a href="https://twitter.com/AkitaOnRails">@AkitaOnRails</a> <a href="https://twitter.com/waj">@waj</a> so it&#39;s likely that we&#39;ll have something similar. We aren&#39;t there yet because we are not Google, Mozilla nor Apple</p>— Ary Borenszweig (@asterite) <a href="https://twitter.com/asterite/status/737778080085868545">May 31, 2016</a></blockquote>
 
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>

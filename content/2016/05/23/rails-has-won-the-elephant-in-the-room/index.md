@@ -119,9 +119,9 @@ I do understand the conservative approach DHH is taking by not making big disrup
 
 Update: DHH commented on this section later:
 
-<blockquote class="twitter-tweet" data-partner="tweetdeck"><p lang="en" dir="ltr"><a href="https://twitter.com/AkitaOnRails">@akitaonrails</a> It’s not out of conservatism. But a difference of opinion and values. I love Active Record. Love callbacks.</p>&mdash; DHH (@dhh) <a href="https://twitter.com/dhh/status/735051111141396480">May 24, 2016</a></blockquote>
+<blockquote class="twitter-tweet" data-partner="tweetdeck"><p lang="en" dir="ltr"><a href="https://twitter.com/AkitaOnRails">@akitaonrails</a> It’s not out of conservatism. But a difference of opinion and values. I love Active Record. Love callbacks.</p>— DHH (@dhh) <a href="https://twitter.com/dhh/status/735051111141396480">May 24, 2016</a></blockquote>
 
-<blockquote class="twitter-tweet" data-partner="tweetdeck"><p lang="en" dir="ltr"><a href="https://twitter.com/AkitaOnRails">@akitaonrails</a> Will everyone love the same techniques and methods as me? Of course not (see RSpec for just one popular example!). That’s fine</p>&mdash; DHH (@dhh) <a href="https://twitter.com/dhh/status/735051237071171584">May 24, 2016</a></blockquote>
+<blockquote class="twitter-tweet" data-partner="tweetdeck"><p lang="en" dir="ltr"><a href="https://twitter.com/AkitaOnRails">@akitaonrails</a> Will everyone love the same techniques and methods as me? Of course not (see RSpec for just one popular example!). That’s fine</p>— DHH (@dhh) <a href="https://twitter.com/dhh/status/735051237071171584">May 24, 2016</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 People forget that abstractions are very nice for advanced developers that had suffered the lack of them. But beginners will always suffer if presented with too many architectural choices upfront. Understanding GoF Design Patterns, Data-Driven Design, SOLID, Enterprise Architectures, etc is very overwhelming. Experienced people often forget the learning curve when they were themselves beginners, and at that time Rails was so attractive, so sexy. Remember that feeling? Of accomplishment in the face of the knowledge that some nice witch left super useful black magic behind?

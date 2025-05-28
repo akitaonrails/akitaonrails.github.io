@@ -253,7 +253,7 @@ O programa imprime:
 <macro:code>
 <p>$ ruby reverse.rb<br>
 <span class="caps">EVAL</span>: (reverse (quote (a b c d e)))<br>
-  =&gt; (e d c b a)<br>
+  => (e d c b a)<br>
 <del>-</del></p>
 <p>Tudo que preciso fazer é escrever um parser Lisp e um <span class="caps">REPL</span>, e pronto!</p>
 <h3>O Exemplo em Notação Padrão Lisp</h3>

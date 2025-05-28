@@ -134,7 +134,7 @@ if options[:public]
 end  
 -
 
-Ou seja, se eu chamar o método <tt>fresh_when</tt> múltiplas vezes com a opção <tt>:public =&gt; true</tt>, ele vai ficar adicionando na lista <tt>cache_control</tt> e daí no cabeçalho <tt>Cache-Control</tt> vai voltar uma string tipo <tt>public, public</tt>. Então, se o <tt>fresh_when</tt> já foi chamado no começo, na segunda vez eu tomo o cuidado de não passar o <tt>:public</tt> de novo.
+Ou seja, se eu chamar o método <tt>fresh_when</tt> múltiplas vezes com a opção <tt>:public => true</tt>, ele vai ficar adicionando na lista <tt>cache_control</tt> e daí no cabeçalho <tt>Cache-Control</tt> vai voltar uma string tipo <tt>public, public</tt>. Então, se o <tt>fresh_when</tt> já foi chamado no começo, na segunda vez eu tomo o cuidado de não passar o <tt>:public</tt> de novo.
 
 Finalmente, no administrador de posts, eu invalido o cache caso eu atualize ou apague um post. Assim:
 

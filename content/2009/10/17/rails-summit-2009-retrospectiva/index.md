@@ -88,8 +88,8 @@ Nós, da organização do Rails Summit, gravamos todas as palestras. Eu ainda n�
 
 <object width="600" height="450"><param name="allowfullscreen" value="true">
 <param name="allowscriptaccess" value="always">
-<param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=7099091&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=00ADEF&amp;fullscreen=1">
-<embed src="http://vimeo.com/moogaloop.swf?clip_id=7099091&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=00ADEF&amp;fullscreen=1" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="600" height="450"></embed></object>
+<param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=7099091&server=vimeo.com&show_title=1&show_byline=1&show_portrait=0&color=00ADEF&fullscreen=1">
+<embed src="http://vimeo.com/moogaloop.swf?clip_id=7099091&server=vimeo.com&show_title=1&show_byline=1&show_portrait=0&color=00ADEF&fullscreen=1" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="600" height="450"></embed></object>
 
 [Além do Caos – Pensamentos Aleatórios sobre Agilidade](http://vimeo.com/7099091) from [Locaweb](http://vimeo.com/locaweb) on [Vimeo](http://vimeo.com).
 

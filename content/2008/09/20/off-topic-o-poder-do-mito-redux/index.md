@@ -14,7 +14,7 @@ draft: false
 
 Nos últimos [posts](http://www.akitaonrails.com/2008/9/13/off-topic-matando-a-m-dia) eu dei uma introdução de porque o pensamento “medíocre” é ruim e porque é necessário entender que não existe tal conceito chamado “média” no mundo real.
 
-Alguns já me pediram recomendações de livros, nos últimos posts deixei alguns muito importantes. [The Black Swan](http://www.submarino.com.br/books_productdetails.asp?Query=ProductPage&amp;ProdTypeId=1&amp;CatId=11682&amp;ProdId=21389447&amp;ST=BV11682) é um dos principais. Ele explica como nós ignoramos os “cisnes negros”. Explica como tentar prever o futuro de longo prazo através de eventos passados é um exercício de futilidade e o principal: como nós naturalmente tentamos sempre “reduzir” as coisas, como tentamos “simplificar” para torná-las mais digeríveis e como isso é um problema.
+Alguns já me pediram recomendações de livros, nos últimos posts deixei alguns muito importantes. [The Black Swan](http://www.submarino.com.br/books_productdetails.asp?Query=ProductPage&ProdTypeId=1&CatId=11682&ProdId=21389447&ST=BV11682) é um dos principais. Ele explica como nós ignoramos os “cisnes negros”. Explica como tentar prever o futuro de longo prazo através de eventos passados é um exercício de futilidade e o principal: como nós naturalmente tentamos sempre “reduzir” as coisas, como tentamos “simplificar” para torná-las mais digeríveis e como isso é um problema.
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2008/9/21/Picture_1.png)
 
@@ -25,7 +25,7 @@ Neste post quero tentar explicar como o herói moderno banaliza a importância d
 
  ![](http://s3.amazonaws.com/akitaonrails/assets/2008/9/20/51319.jpg)
 
-Não necessariamente relacionado, outra obra que recomendo é [O Poder do Mito](http://www.submarino.com.br/books_productdetails.asp?Query=ProductPage&amp;ProdTypeId=1&amp;ProdId=51319&amp;ST=SE) do grande Joseph Campbell. Esse livro é fantástico e dentre outras coisas descreve o **Arco do Herói**. Em todas as civilizações os mitos sempre foram coisas predominantes. Cada cultura tem seus mitos, povoada de figuras “heróicas”.
+Não necessariamente relacionado, outra obra que recomendo é [O Poder do Mito](http://www.submarino.com.br/books_productdetails.asp?Query=ProductPage&ProdTypeId=1&ProdId=51319&ST=SE) do grande Joseph Campbell. Esse livro é fantástico e dentre outras coisas descreve o **Arco do Herói**. Em todas as civilizações os mitos sempre foram coisas predominantes. Cada cultura tem seus mitos, povoada de figuras “heróicas”.
 
 Resumidamente a **Jornada do Herói** começa com alguém que começa exatamente como a maioria de nós, na “média”, ou abaixo dela. A jornada o leva por caminhos cheios de perigos, tentações e provações. No final o herói atinge o fim da jornada e retorna para pregar o que aprendeu nela. É um dos motivos de porque mitos como do Buda ou Jesus são contados até hoje. São alegorias heróicas que formam parte importante de cada cultura.
 

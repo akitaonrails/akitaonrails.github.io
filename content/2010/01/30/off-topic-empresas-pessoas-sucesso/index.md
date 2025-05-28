@@ -8,10 +8,10 @@ tags:
 draft: false
 ---
 
-<object width="425" height="344"><param name="movie" value="http://www.youtube.com/v/ol2fN0bZCso&amp;hl=en_US&amp;fs=1&amp;">
+<object width="425" height="344"><param name="movie" value="http://www.youtube.com/v/ol2fN0bZCso&hl=en_US&fs=1&">
 <param name="allowFullScreen" value="true">
 <param name="allowscriptaccess" value="always">
-<embed src="http://www.youtube.com/v/ol2fN0bZCso&amp;hl=en_US&amp;fs=1&amp;" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="344"></embed></object>
+<embed src="http://www.youtube.com/v/ol2fN0bZCso&hl=en_US&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="344"></embed></object>
 
 Adoro o vídeo [Wear Sunscreen](http://en.wikipedia.org/wiki/Wear_Sunscreen), acho que eu vi pela primeira vez em 2003 ou 2004 e ela ficou para mim como um “aviso”, algo a se lembrar de vez em quando. As partes que mais gosto são:
 

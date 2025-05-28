@@ -243,7 +243,7 @@ multiplo\_de(10).=(10) multiplo\_de(10) = 10
 
 ## Ranges e Enumerators
 
-Divaguei um pouco em relação ao exemplo original da seção anterior. Lembrem que mencionei vagamente sobre [Range](http://ruby-doc.org/core-1.9.3/Range.html). Para quem não sabe, um Range é uma classe que representa um intervalo. Veja a documentação, pois um Range não precisa ser um intervalo apenas numérico, pode ser intervalo entre strings ou entre quaisquer objetos que implementem o protocolo com os métodos <tt>&lt;=&gt;</tt> e <tt>succ</tt>.
+Divaguei um pouco em relação ao exemplo original da seção anterior. Lembrem que mencionei vagamente sobre [Range](http://ruby-doc.org/core-1.9.3/Range.html). Para quem não sabe, um Range é uma classe que representa um intervalo. Veja a documentação, pois um Range não precisa ser um intervalo apenas numérico, pode ser intervalo entre strings ou entre quaisquer objetos que implementem o protocolo com os métodos <tt><=></tt> e <tt>succ</tt>.
 
 Vejamos alguns exemplos:
 

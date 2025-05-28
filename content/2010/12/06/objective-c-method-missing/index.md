@@ -19,7 +19,7 @@ ruby
 
 \> obj = Object.new  
  =\> #<object:0x0000010092ac60> <br>
-&gt; obj.foo<br>
+> obj.foo<br>
 NoMethodError: undefined method `foo’ for #<object:0x0000010092ac60><br>
 	from (irb):2<br>
 	from /Users/akitaonrails/.rvm/rubies/ruby-1.9.2-p0/bin/irb:17:in `<main>’<br>

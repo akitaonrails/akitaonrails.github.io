@@ -103,7 +103,7 @@ Otherwise, there are lots of stores and best practices, but I’m afraid that wo
 
 **AkitaOnRails:** I’ve seen Andrew Shaffer talk about [Agile Infrastructure](http://www.slideshare.net/littleidea/agile-infra-agileroots-2009) for a couple of years now, but I still think most IT organizations are unaware of this concept. Can you elaborate on what does it mean to be Agile outside of the development field?
 
-<embed src="http://agileroots2009.confreaks.com/player.swf" height="380" width="640" allowscriptaccess="always" allowfullscreen="true" flashvars="image=images%2F15-jun-2009-14-30-agile-infrastructure-andrew-shafer-preview.png&amp;file=http%3A%2F%2Fagileroots2009.confreaks.com%2Fvideos%2F15-jun-2009-14-30-agile-infrastructure-andrew-shafer-small.mp4&amp;plugins=viral-1"></embed>
+<embed src="http://agileroots2009.confreaks.com/player.swf" height="380" width="640" allowscriptaccess="always" allowfullscreen="true" flashvars="image=images%2F15-jun-2009-14-30-agile-infrastructure-andrew-shafer-preview.png&file=http%3A%2F%2Fagileroots2009.confreaks.com%2Fvideos%2F15-jun-2009-14-30-agile-infrastructure-andrew-shafer-small.mp4&plugins=viral-1"></embed>
 
 **Luke:** I think Agile Infrastructure has even less adoption than Agile Development. The vast majority of IT shops haven’t changed practices significantly in years and are largely unprepared for the growth in server count that they’re experiencing. They mostly try to scale by adding more people, which we call the _meatcloud_, rather than scaling their tools and practice.
 

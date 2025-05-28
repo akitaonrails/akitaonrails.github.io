@@ -125,7 +125,7 @@ assembler
 <h3>Então você menciona o Pattern Observer. O que isso tudo tem a ver com aquilo?</h3>
 <p>Uma das coisas que me deixou pensando sobre isso novamente foi uma conversa no ruby-talk algumas semanas atrás sobre garbage collection no Ruby e algumas das coisas que não deixavam um Object ser considerado lixo e ser coletado. O GC do Ruby tende a ter problemas se você usa finalização e não é <strong>realmente</strong> cuidadoso sobre como define seus finalizadores.</p>
 <p>Um dos truques clássicos em Smalltalk nessa veia é a implementação de dependência de Objects, também chamado de, o Pattern Observer. Smalltalk fornece um mecanismo para adicionar objetos dependentes a qualquer objeto que, quando quer notificar seus dependentes que ele mudou, pode simplesmente uma mensagem de mudança a si mesmo, que por sua vez envia a atualização de mensagem a cada objeto dependente: com o objeto modificado como o argumento.</p>
-<p>Essa é a base para o design de Model View Controller em Smalltalk. Views se registram como dependentes dos Models, e quando um Model muda, quaisquer Views dependentes dele podem reagir. Essa é a gênese do pattern Observer do <a href="http://www.amazon.com/gp/product/0201633612?ie=UTF8&amp;tag=denhaven2com-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0201633612">bem conhecido livro de Design Patterns da Gang of Four</a> onde Model e View foram generalizados a Subject e Observer, respectivamente.</p>
+<p>Essa é a base para o design de Model View Controller em Smalltalk. Views se registram como dependentes dos Models, e quando um Model muda, quaisquer Views dependentes dele podem reagir. Essa é a gênese do pattern Observer do <a href="http://www.amazon.com/gp/product/0201633612?ie=UTF8&tag=denhaven2com-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=0201633612">bem conhecido livro de Design Patterns da Gang of Four</a> onde Model e View foram generalizados a Subject e Observer, respectivamente.</p>
 <p>Em Smalltalk a habilidade de gerenciar uma lista de dependentes e notificá-los de mudanças é algo que todo objeto pode fazer, mas muito poucos realmente usam essa capacidade. Para evitar ter uma variável de instância em todo objeto Smalltalk referenciar uma coleção de dependentes que está quase vazia, a implementação padrão realmente mantém um hash global que mapeia objetos com dependentes à sua coleção de dependentes.</p>
 <p>O problema com essa implementação padrão é que uma vez que um objeto ganha um dependente, o objeto e seus objetos dependentes estão permanentemente acessíveis e, portanto, inelegíveis para garbage collection, a menos que a dependência seja explicitamente removida. Como resultado disso, as classes da maioria dos objetos que realmente <strong>tem</strong> dependentes reimplementam os métodos padrão para se referir a coleções de dependentes via um valor de instância no objeto com dependentes. Squeak, por exemplo, fornece uma subclasse de objetos chamada Model que fornece esse tipo de implementação amigável a GC.</p>
 <p>O que me leva à implementação do pattern observer em Ruby. Em sua discussão desse pattern em seu livro, Russ Olsen fornece um módulo que pode ser misturado (mixed) em um objeto para permitir que ele tenha dependentes:</p>
@@ -135,8 +135,8 @@ ruby
   def initialize<br>
     @observers = []<br>
   end</p>
-def add_observer(&amp;observer)
-@observers &lt;&lt; observer
+def add_observer(&observer)
+@observers << observer
 end
 def delete_observer(observer)
 @observers.delete(observer)
@@ -153,8 +153,8 @@ end
 <hr>
 ruby
 <p>class Object<br>
-    def add_observer(&amp;observer)<br>
-      (@observers ||= []) &lt;&lt; observer<br>
+    def add_observer(&observer)<br>
+      (@observers ||= []) << observer<br>
     end</p>
 def delete_observer(observer)
 observers.delete(observer)

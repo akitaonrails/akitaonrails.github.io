@@ -13,10 +13,10 @@ draft: false
 
 Quem esteve no [Dev in Rio 2009](http://devinrio.com.br/) e quem participou do [Rails Summit 2008](http://akitaonrails.com/railssummit2008) sabe do que estou falando :-)
 
-<object width="425" height="344"><param name="movie" value="http://www.youtube.com/v/zbdTAoJpvz8&amp;color1=0xb1b1b1&amp;color2=0xcfcfcf&amp;hl=en&amp;feature=player_embedded&amp;fs=1">
+<object width="425" height="344"><param name="movie" value="http://www.youtube.com/v/zbdTAoJpvz8&color1=0xb1b1b1&color2=0xcfcfcf&hl=en&feature=player_embedded&fs=1">
 <param name="allowFullScreen" value="true">
 <param name="allowScriptAccess" value="always">
-<embed src="http://www.youtube.com/v/zbdTAoJpvz8&amp;color1=0xb1b1b1&amp;color2=0xcfcfcf&amp;hl=en&amp;feature=player_embedded&amp;fs=1" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="425" height="344"></embed></object>
+<embed src="http://www.youtube.com/v/zbdTAoJpvz8&color1=0xb1b1b1&color2=0xcfcfcf&hl=en&feature=player_embedded&fs=1" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="425" height="344"></embed></object>
 
 Aqui vai a história sobre isso, diretamente pelo [Tapajós](http://tapajos.me)
 

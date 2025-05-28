@@ -156,13 +156,13 @@ E coloque no seu arquivo <tt>app/views/welcome/index.html.erb</tt>
 * * *
 <dl>
   <dt>Number to Currency</dt>
-  <dd>&lt;%= number_to_currency(123.56) %&gt;</dd>
+  <dd><%= number_to_currency(123.56) %></dd>
   <dt>Number to Human</dt>
-  <dd>&lt;%= number_to_human(100_555_123.15) %&gt;</dd>
+  <dd><%= number_to_human(100_555_123.15) %></dd>
   <dt>Date</dt>
-  <dd>&lt;%=l Time.current, format: :long %&gt;</dd>
+  <dd><%=l Time.current, format: :long %></dd>
   <dt>Time</dt>
-  <dd>&lt;%= distance_of_time_in_words(1.hour + 20.minutes) %&gt;</dd>
+  <dd><%= distance_of_time_in_words(1.hour + 20.minutes) %></dd>
 </dl>
 * * *
 
