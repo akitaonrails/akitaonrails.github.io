@@ -17,4 +17,4 @@ I used to travel all around the world to talk at conferences, podcasts, etc. But
 
 I never accepted sponsorships or did any kind of paid content. And I am still not open to be paid to talk things I don't believe in. Do not test me.
 
-If you have important matters to talk to me, you can send an email to my company's [contact email](email://contact@codeminer42.com). I won't reply unless it interests me.
+If you have important matters to talk to me, you can send an email to my company's [contact email](mailto:contact@codeminer42.com). I won't reply unless it interests me.
