@@ -31,34 +31,35 @@ menu:
   main:
     - name: About
       pageRef: /about
-      weight: 2
+      weight: 1
     - name: Contact ↗
       url: "https://github.com/akitaonrails"
-      weight: 3
+      weight: 2
     - name: Search
-      weight: 4
+      weight: 3
       params:
         type: search
+    - name: RSS
+      weight: 4
+      url: "/index.xml"
+      params:
+        icon: rss
+  sidebar:
     - name: GitHub
-      weight: 5
+      weight: 1
       url: "https://github.com/akitaonrails/akitaonrails.github.io"
       params:
         icon: github
     - name: Twitter
-      weight: 6
+      weight: 1
       url: "https://x.com/AkitaOnRails"
       params:
         icon: x-twitter
     - name: Instagram
-      weight: 6
+      weight: 1
       url: "https://instagram.com/AkitaOnRails"
       params:
         icon: instagram
-    - name: RSS
-      weight: 7
-      url: "/index.xml"
-      params:
-        icon: rss
 
 params:
   navbar:
