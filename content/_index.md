@@ -105,7 +105,6 @@ title: AkitaOnRails's Blog
 
 ## 2022 - October
 
-- [\[Akitando\] #130 - Rant: Projetos, TESTES e Estimativa??? | Rated-R](2022/10/25/akitando-130-rant-projetos-testes-e-estimativa-rated-r-5097af48-c72f-42b7-bec4-486e24a86cfc/)
 - [\[Akitando\] #130 - Rant: Projetos, TESTES e Estimativa??? | Rated-R](2022/10/25/akitando-130-rant-projetos-testes-e-estimativa-rated-r/)
 - [\[Akitando\] #129 - Apanhando do Gentoo | Melhor Linux???](2022/10/11/akitando-129-apanhando-do-gentoo-melhor-linux/)
 
