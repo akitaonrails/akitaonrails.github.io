@@ -1,5 +1,6 @@
 # Hugo configuration file
 title: AkitaOnRails.com
+languageCode: "pt-BR"
 
 outputs:
   home: [HTML,RSS]
@@ -74,4 +75,4 @@ params:
     name: Fabio Akita
     email: fabioakita@gmail.com
 
-
+  description: "Blog do Fabio Akita do Canal do YouTube 'Akitando' falando sobre tecnologia, carreira e coisas geek."
