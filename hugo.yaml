@@ -1,6 +1,7 @@
 # Hugo configuration file
 title: AkitaOnRails.com
 languageCode: "pt-BR"
+baseURL: "https://www.akitaonrails.com/"
 
 outputs:
   home: [HTML,RSS]
