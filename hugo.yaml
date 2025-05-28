@@ -49,6 +49,16 @@ menu:
       url: "https://x.com/AkitaOnRails"
       params:
         icon: x-twitter
+    - name: Instagram
+      weight: 6
+      url: "https://instagram.com/AkitaOnRails"
+      params:
+        icon: instagram
+    - name: RSS
+      weight: 7
+      url: "/index.xml"
+      params:
+        icon: rss
 
 params:
   navbar:
