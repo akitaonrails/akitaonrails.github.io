@@ -207,19 +207,24 @@ Da mesma forma como fizemos antes, vamos baixar as traduções que precisamos. O
 
 * * *
 
-curl <https://raw.github.com/tigrish/devise-i18n/master/locales/en-US.yml> \> config/locales/devise.en.yml  
-curl <https://github.com/tigrish/devise-i18n/blob/master/locales/pt-BR.yml> \> config/locales/devise.pt-BR.yml  
--
+```bash
+curl <https://raw.github.com/tigrish/devise-i18n/master/locales/en-US.yml> > config/locales/devise.en.yml  
+curl <https://github.com/tigrish/devise-i18n/blob/master/locales/pt-BR.yml> > config/locales/devise.pt-BR.yml
+```
 
 Mas somente isso não é suficiente. Você pode utilizar as views que vem embutidas na Rails Engine do Devise ou pode precisar customizá-las e nesse caso precisa copiar essas views para dentro do seu projeto, desta forma:
 
 * * *
 
-$ rails g devise:views  
+```bash
+rails g devise:views
+```
+
+```
  invoke Devise::Generators::SharedViewsGenerator  
  create app/views/devise/shared  
- create app/views/devise/shared/_links.erb  
- invoke form\_for  
+ create app/views/devise/shared_links.erb  
+ invoke form_for  
  create app/views/devise/confirmations  
  create app/views/devise/confirmations/new.html.erb  
  create app/views/devise/passwords  
@@ -234,55 +239,58 @@ $ rails g devise:views
  create app/views/devise/unlocks/new.html.erb  
  invoke erb  
  create app/views/devise/mailer  
- create app/views/devise/mailer/confirmation\_instructions.html.erb  
- create app/views/devise/mailer/reset\_password\_instructions.html.erb  
+ create app/views/devise/mailer/confirmation_instructions.html.erb  
+ create app/views/devise/mailer/reset_password_instructions.html.erb  
  create app/views/devise/mailer/unlock_ instructions.html.erb  
--
+```
 
 Veja que ele copia muitos arquivos. Vamos abrir um deles:
 
 * * *
-html
 
 ## Resend confirmation instructions
 
-\<%= form\_for(resource, :as =\> resource\_name, :url =\> confirmation\_path(resource\_name), :html =\> { :method =\> :post }) do |f| \>  
- \<= devise\_error\_messages! %\>
+```html
+<%= form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post }) do |f| \>  
+ <= devise_error_messages! %\>
 
-\<%= f.label :email \>  
- \<= f.email\_field :email %\>
+<%= f.label :email >  
+ <= f.email_field :email %\>
 
-\<%= f.submit “Resend confirmation instructions” %\>
+<%= f.submit “Resend confirmation instructions” %\>
 
-\<% end %\>
+<% end %\>
 
-\<%= render “devise/shared/links” %\>  
--
+<%= render “devise/shared/links” %\>  
+```
 
 Note que todos os textos estão embutidos: exatamente o que eu disse que numa aplicação I18n não devemos fazer. Ou seja, para tornar essas views traduzíveis, precisamos extrair uma a uma. Sim, será bastante trabalho. Ou você pode usar o caminho mais fácil e procurar alguém que já tenha feito isso – como eu fiz neste aplicativo de exemplo.
 
 * * *
 
+```bash
 wget <https://raw.github.com/akitaonrails/Rails-3-I18n-Demonstration/master/config/locales/devise.views.en.yml> \> config/locales/devise.views.en.yml  
 wget <https://raw.github.com/akitaonrails/Rails-3-I18n-Demonstration/master/config/locales/devise.views.pt-BR.yml> \> config/locales/devise.views.pt-BR.yml  
--
+```
 
 Isso vai copiar as traduções que você vai precisar. Agora faça um clone do meu projeto e copie sobre o seu (caso esteja fazendo este exercício enquanto lê o artigo):
 
 * * *
 
+```bash
 cd ..  
 git clone git://github.com/akitaonrails/Rails-3-I18n-Demonstration.git akitaonrails-i18n-demo  
 cd akitaonrails-i18n  
 git checkout 0ff207ed9ea58a14a16c14fc11272a3991918dab  
 cd i18n\_demo  
-cp R ../akitaonrails-i18n\_demo/app/views/devise/\* app/views/devise/  
---
+cp -R ../akitaonrails-i18n_demo/app/views/devise/* app/views/devise/  
+```
 
 Isso deve sobrescrever as views criadas pelo gerador padrão do Devise pela minha versão já com as strings substituídas. Apenas como dica note que no arquivo de tradução temos trechos como este:
 
 * * *
-yaml
+
+```yaml
 
 pt-BR:  
  devise:  
@@ -290,42 +298,43 @@ pt-BR:
  new:  
  title: Reenviar instruções de confirmação  
  submit: Reenviar instruções de confirmação  
--
+```
 
 E para acesssar a tradução podemos fazer assim:
 
 * * *
-ruby
 
-1. I18n.locale = :“pt-BR”  
+```ruby
+I18n.locale = :“pt-BR”  
 I18n.t(“devise.confirmations.new.title”)  
 I18n.t(:title, scope: [:devise, :confirmations, :new])  
+```
 
 -
 
 Qualquer dessas e outras variações funcionam igual e acham a string correta, mas na view que você baixou do meu projeto, temos o seguinte no arquivo <tt>app/views/devise/confirmations/new.html.erb</tt>:
 
 * * *
-html
 
-# \<%= t(“.title”) %\>
+```html
+# <%= t(“.title”) %\>
 
-…  
--
+…
+```
 
 O Rails automaticamente usa a convenção <tt>{namespace}/{controllers}/{action}</tt> para gerar o escopo (<tt>scope</tt>) e então só precisamos complementar com <tt>.title</tt> para achar a chave que queremos. Isso diminui muito a quantidade de digitação para as chaves de tradução, basta seguir as convenções como sempre.
 
 Outra coisa importante é traduzir os nomes dos modelos e seus atributos. Eles são usados pelos helpers de formulários do Rails. No arquivo <tt>config/locales/rails.pt-BR.yml</tt> adicione ao final do arquivo:
 
 * * *
-yaml
 
+```yaml
 activemodel:  
  errors:  
- \<\<: \*errors  
+ <<: \*errors  
 activerecord:  
  errors:  
- \<\<: \*errors  
+ <<: \*errors  
  models:  
  user: “Usuário”  
  article: “Artigo”  
@@ -333,25 +342,25 @@ activerecord:
  user:  
  email: “E-mail”  
  password: “Senha”  
- password\_confirmation: “Confirmar Senha”  
- current\_password: “Senha Atual”  
- remember\_me: “Lembre-se de mim”  
+ password_confirmation: “Confirmar Senha”  
+ current_password: “Senha Atual”  
+ remember_me: “Lembre-se de mim”  
  article:  
  title: “Título”  
  body: “Conteúdo”  
- body\_html: “Conteúdo em HTML”  
--
+ body_html: “Conteúdo em HTML”  
+```
 
 O modelo <tt>User</tt> já foi criado pelo Devise. Ainda não criamos o modelo <tt>Article</tt> mas já fica aqui para referência. No arquivo <tt>config/locales/rails.en.yml</tt> podemos simplificar porque quando o Rails não encontra a tradução ele usa o próprio nome dos atributos.
 
 > Sempre desenvolva todas as suas aplicações em inglês, é uma boa recomendação. E que seja português sempre a segunda linguagem. Usando essa convenção você não deve ter grandes problemas. Mas ao mesmo tempo não inclua no arquivo <tt>config/initializers/inflections.rb</tt> as regras de pluralização em português, pois isso vai causar problemas ao Rails para encontrar nomes de tabelas ao pluralizá-los usando a regra errada em português.
 
 * * *
-yaml
 
+```yaml
 en:  
  hello: “Hello world”  
- site\_name: “I18n Demonstration”  
+ site_name: “I18n Demonstration”  
  translation:  
  en: English  
  pt-BR: Portuguese  
@@ -359,75 +368,89 @@ en:
  title: “Administration”  
  articles:  
  title: “Articles”  
--
+```
 
 ## Atributos Traduzidos de ActiveRecord com Globalize 3
 
 O conceito é simples: queremos um suporte que me permita utilizar os mesmos nomes de atributos mas que devolvam valores diferntes dependendo da localização escolhida atualmente. Um código de teste seria assim:
 
 * * *
-ruby
 
-require ‘spec\_helper’
+```ruby
+require ‘spec_helper’
 
 describe Article do  
  before(:each) do  
  I18n.locale = :en  
  @article = Article.create title: “Hello World”, body: “ **Test** ”  
  I18n.locale = :“pt-BR”  
- @article.update\_attributes(title: “Ola Mundo”, body: “_Teste_”)  
+ @article.update_attributes(title: “Ola Mundo”, body: “_Teste_”)  
  end
 
-context “translations” do it “should read the correct translation” do @article = Article.last I18n.locale = :en @article.title.should == “Hello World” @article.body.should == “ **Test** ” I18n.locale = :“pt-BR” @article.title.should == “Ola Mundo” @article.body.should == “_Teste_” end end
-
+context “translations” do 
+    it “should read the correct translation” do 
+      @article = Article.last I18n.locale = :en 
+      @article.title.should == “Hello World” 
+      @article.body.should == “ **Test** ” 
+      I18n.locale = :“pt-BR” 
+      @article.title.should == “Ola Mundo” 
+      @article.body.should == “_Teste_” 
+    end 
+  end
 end  
--
+```
 
 A opção que escolhi foi novamente um projeto do Sven Fuchs, o [Globalize 3](https://github.com/svenfuchs/globalize3). Esse projeto tem um longo histórico que volta desde, claro, [Globalize 2](https://github.com/joshmh/globalize2) e [Globalize](https://github.com/yannlugrin/globalize). Obviamente, não use as versões antigas, coloquei os links apenas para referência. Como sempre, adicione ao seu <tt>Gemfile</tt> e execute <tt>bundle</tt> em seguida:
 
 * * *
-ruby
 
-gem ‘globalize3’  
--
+```ruby
+gem ‘globalize3’
+```
 
 Para demonstrar como funciona, vamos criar um novo model:
 
 * * *
 
+```bash
 rails g model Article slug title body:text body\_html:text  
--
+```
 
 Preste atenção no arquivo de migration criado por esse generator. Abra no seu editor e modifique para que ele fique da seguinte forma:
 
 * * *
-ruby
 
-class CreateArticles \< ActiveRecord::Migration  
+```ruby
+
+class CreateArticles < ActiveRecord::Migration  
  def up  
- create\_table :articles do |t|  
+ create_table :articles do |t|  
  t.string :slug, null: false  
  t.timestamps  
  end  
- add\_index :articles, :slug, unique: true
+ add_index :articles, :slug, unique: true
 
-Article.create\_translation\_table! :title =\> :string, :body =\> :text end def down drop\_table :articles Article.drop\_translation\_table! end
-
+Article.create_translation_table! :title => :string, :body => :text end 
+    def down_drop_table 
+      :articles Article.drop_translation_table! 
+    end
 end  
--
+```
 
 Não use o método <tt>change</tt> da migration. Feita a mudança execute <tt>rake db:migrate</tt> para criar as tabelas. Agora, vamos alterar o arquivo <tt>app/model/article.rb</tt>:
 
 * * *
-ruby
 
-class Article \< ActiveRecord::Base  
- attr\_accessible :slug, :title, :body, :body\_html, :locale, :translations\_attributes
+```ruby
 
-translates :title, :body, :body\_html accepts\_nested\_attributes\_for :translations class Translation attr\_accessible :locale, :title, :body, :body\_html end
+class Article < ActiveRecord::Base  
+ attr_accessible :slug, :title, :body, :body_html, :locale, :translations_attributes
 
-end  
--
+translates :title, :body, :body_html accepts_nested_attributes_for :translations 
+  class Translation attr_accessible :locale, :title, :body, :body_html 
+  end
+end 
+```
 
 Agora o model vai se comportar exatamente como descrito na spec acima. O truque é que a migration vai criar uma nova tabela <tt>articles</tt> e também <tt>article_translation</tt> e criará implicitamente por causa do método de classe <tt>translates</tt> uma associação parecida com <tt>has_many :translations, class_name: “article_translation”</tt>. Ele vai alterar o model para que os atributos passem a consultar o <tt>I18n.locale</tt> antes de ler ou gravar novos dados. Cada localização se tornar uma linha na tabela escondida de traduções e consultas no model <tt>Article</tt> procuram na tabela implícita usando o <tt>locale</tt> atual.
 
@@ -440,40 +463,42 @@ Uma das formas de esconder esses IDs numéricos é usar um [slug](http://en.wiki
 A gem que recomendo para gerenciar slugs é a [Friendly Id](https://github.com/norman/friendly_id/blob/master/lib/friendly_id/slugged.rb) do Norman Clark. A utilização é muito simples: primeiro garanta ter um campo <tt>slug</tt> no seu model, lembrando de adicionar também um índice que garanta sua unicidade no banco. Olhe novamente a migration anterior e vai encontrar esta linha:
 
 * * *
-ruby
 
-add\_index :articles, :slug, unique: true  
--
+```ruby
+add_index :articles, :slug, unique: true  
+```
 
 Feito isso adicione a gem no <tt>Gemfile</tt>:
 
 * * *
-ruby
 
-gem ‘friendly\_id’  
--
+```ruby
+gem ‘friendly_id’
+```
 
 Execute <tt>bundle</tt> para instalar e modifique seu modelo:
 
 * * *
-ruby
 
-class Article \< ActiveRecord::Base  
- attr\_accessible :body, :body\_html, :slug, :title, :locale, :translations\_attributes  
+```ruby
+class Article < ActiveRecord::Base  
+ attr_accessible :body, :body_html, :slug, :title, :locale, :translations_attributes  
  extend FriendlyId  
- friendly\_id :title, use: :slugged  
+ friendly_id :title, use: :slugged  
  …  
  private
 
-def should\_generate\_new\_friendly\_id? new\_record? end
+def should_generate_new_friendly_id? new_record? end
+```
+
 * * *
 
 Se fizer tudo corretamente, o comportamento será de acordo com a seguinte spec:
 
 * * *
-ruby
 
-require ‘spec\_helper’
+```ruby
+require ‘spec_helper’
 
 describe Article do  
  before(:each) do  
@@ -488,7 +513,7 @@ describe Article do
  end  
  end  
 end  
--
+```
 
 Não só isso mas helpers como <tt>article_path</tt> e mesmo o método <tt>find</tt> do model passam a aceitar tanto a chave primária numérica como o slug para procurar no banco de dados. Essa gem torna essa utilização transparente e você vai usá-la como se estivesse usando uma chave primária normal.
 
