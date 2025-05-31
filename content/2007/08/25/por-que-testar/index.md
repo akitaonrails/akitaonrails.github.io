@@ -16,17 +16,16 @@ O que eu normalmente presencio é que programadores tem consciência de que prec
 
 Infelizmente, não se trata de um dogma: ou poderíamos quebrá-lo. De fato, precisamos cobrir nossos programas com a maior quantidade possível de testes de qualidade, e nenhum sistema será capaz de confirmar, com 100% de certeza, em 100% dos casos, se um determinado programa irá funcionar corretamente. É uma limitação matemática que não pode ser contornada. Como sabemos disso?
 
-
 ### Momento Rails: ZenTest
 
 Antes de pular para a resposta (mais abaixo), primeiro vou dar uma dica aos Railers de plantão. Como vou falar de testes, gostaria de recomendar uma ferramenta extremamente útil escrita pro Ryan Davis chamado [ZenTest](http://nubyonrails.com/articles/autotest-rails). Para instalar apenas digite:
 
-* * *
-ruby
-
+```bash
 sudo gem install ZenTest y  
 sudo gem install redgreen -y  
 gem install win32console -y # somente para usuários Windows  
+```
+
 --
 
 Baixem [este vídeo](http://topfunky.com/clients/blog/autotest-tm.mov) gratuito de Geoffrey Grosenbach, que demonstra o autotest em funcionamento. Também comprem os screencast [Test-First development for Rails](http://peepcode.com/products/test-first-development), [rSpec Basics](http://peepcode.com/products/rspec-basics) e [rSpec Mocks and Models](http://peepcode.com/products/rspec-mocks-and-models) (amostras grátis, [aqui](http://topfunky.com/clients/peepcode/previews/peepcode-004-testing-tips.mov), [aqui](http://peepcode.com/system/previews/peepcode-011-rspec-i-preview.mov) e [aqui](http://peepcode.com/system/previews/peepcode-013-rspec-ii-preview.mov)) para aprender a fazer bons testes em Rails.
@@ -34,9 +33,11 @@ Baixem [este vídeo](http://topfunky.com/clients/blog/autotest-tm.mov) gratuito 
 O [ZenTest](http://www.zenspider.com/ZSS/Products/ZenTest/) vem com o utilitário ‘autotest’. A partir da raíz do seu projeto Rails, apenas digite:
 
 * * *
-ruby
 
+```bash
 autotest rails  
+```
+
 --
 
 Fazendo isso, os utilitários do pacote ZenTest ficarão monitorando seu projeto: toda vez que você modificar algum código ele irá rodar os testes. Quando estiver modificando os testes, ele rodará apenas o método de teste que você acabou de modificar. A vantagem: você estará constante monitorando se está tudo correndo bem com seu projeto, não precisará o rodar manualmente o ‘rake’ toda hora.
@@ -50,48 +51,52 @@ Observando o seu console constantemente você terá rapidamente e em primeira m�
 Para sabe isso, instale também o [rCov](http://eigenclass.org/hiki.rb?rcov) que é o pacote de cobertura de código para Ruby. Basta fazer:
 
 * * *
-ruby
 
+```bash
 gem install rcov  
--
+```
 
 Depois instale o plugin [rails\_rcov](http://blog.codahale.com/2006/05/26/rails-plugin-rails_rcov/) no seu projeto assim:
 
 * * *
-ruby
 
-./script/plugin install x http://svn.codahale.com/rails\_rcov  
+```bash
+./script/plugin install x <http://svn.codahale.com/rails\_rcov>  
+```
+
 --
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2007/8/25/hiki.rb.png)
 
 Com este plugin você ganha os seguintes task rake:
 
-| doc:plugins:rails\_rcov | Create plugin documentation for ‘rails\_rcov’ |
-| test:functionals:clobber\_rcov | Remove Rcov reports for functional tests |
+```rake
+| doc:plugins:rails_rcov | Create plugin documentation for ‘rails_rcov’ |
+| test:functionals:clobber_rcov | Remove Rcov reports for functional tests |
 | test:functionals:rcov | Run all functional tests with Rcov to measure coverage |
-| test:integration:clobber\_rcov | Remove Rcov reports for integration tests |
+| test:integration:clobber_rcov | Remove Rcov reports for integration tests |
 | test:integration:rcov | Run all integration tests with Rcov to measure coverage |
-| test:plugins:all:clobber\_rcov | Remove Rcov reports for plugins:all tests |
+| test:plugins:all:clobber_rcov | Remove Rcov reports for plugins:all tests |
 | test:plugins:all:rcov | Run all plugins:all tests with Rcov to measure coverage |
-| test:plugins:clobber\_rcov | Remove Rcov reports for plugin tests |
-| test:plugins:functionals:clobber\_rcov | Remove Rcov reports for plugins:functional tests |
+| test:plugins:clobber_rcov | Remove Rcov reports for plugin tests |
+| test:plugins:functionals:clobber_rcov | Remove Rcov reports for plugins:functional tests |
 | test:plugins:functionals:rcov | Run all plugins:functional tests with Rcov to measure coverage |
-| test:plugins:integration:clobber\_rcov | Remove Rcov reports for plugins:integration tests |
+| test:plugins:integration:clobber_rcov | Remove Rcov reports for plugins:integration tests |
 | test:plugins:integration:rcov | Run all plugins:integration tests with Rcov to measure coverage |
 | test:plugins:rcov | Run all plugin tests with Rcov to measure coverage |
-| test:plugins:setup\_plugin\_fixtures:clobber\_rcov | Remove Rcov reports for plugins:setup\_plugin\_fixture tests |
-| test:plugins:setup\_plugin\_fixtures:rcov | Run all plugins:setup\_plugin\_fixture tests with Rcov to measure coverage |
-| test:plugins:units:clobber\_rcov | Remove Rcov reports for plugins:unit tests |
+| test:plugins:setup_plugin_fixtures:clobber_rcov | Remove Rcov reports for plugins:setup_plugin_fixture tests |
+| test:plugins:setup_plugin_fixtures:rcov | Run all plugins:setup_plugin_fixture tests with Rcov to measure coverage |
+| test:plugins:units:clobber_rcov | Remove Rcov reports for plugins:unit tests |
 | test:plugins:units:rcov | Run all plugins:unit tests with Rcov to measure coverage |
-| test:recent:clobber\_rcov | Remove Rcov reports for recent tests |
+| test:recent:clobber_rcov | Remove Rcov reports for recent tests |
 | test:recent:rcov | Run all recent tests with Rcov to measure coverage |
-| test:test:clobber\_rcov | Remove Rcov reports for test tests |
+| test:test:clobber_rcov | Remove Rcov reports for test tests |
 | test:test:rcov | Run all test tests with Rcov to measure coverage |
-| test:uncommitted:clobber\_rcov | Remove Rcov reports for uncommitted tests |
+| test:uncommitted:clobber_rcov | Remove Rcov reports for uncommitted tests |
 | test:uncommitted:rcov | Run all uncommitted tests with Rcov to measure coverage |
-| test:units:clobber\_rcov | Remove Rcov reports for unit tests |
+| test:units:clobber_rcov | Remove Rcov reports for unit tests |
 | test:units:rcov | Run all unit tests with Rcov to measure coverage |
+```
 
 Existem diversas outras ferramentas para ajudá-lo nos testes, como [rSpec](http://rspec.rubyforge.org/documentation/rails/install.html). Mas apenas estas já devem aumentar e muito sua cobertura adequada de testes. Recomendo que todos os Railers leiam a respeito de [Test-Driven Development](http://en.wikipedia.org/wiki/Test-driven_development) (que Rails incentiva) e [Behaviour-Driven Development](http://behaviour-driven.org/) (que rSpec implementa).
 
@@ -124,21 +129,21 @@ Poderia parecer que [humanos](http://en.wikipedia.org/wiki/Human) poderiam resol
 “Resolver” o Halting Problem significa ser capaz de olhar para qualquer programa e dizer se ele termina. Não é suficiente ser capaz de olhar para alguns programas e decidir. Humanos podem não se capazes de resolver halting problems por causa do tamanho da entrada (um programa com milhões de linhas de código). Mesmo para programas curtos, não é claro que humanos possam sempre dizer se um programa termina. Por exemplo, poderíamos nos perguntar se o seguinte programa em Ruby (que é um Turing Machine e é [Turing Complete](http://en.wikipedia.org/wiki/Turing-complete)), vai terminar:
 
 * * *
-ruby
 
-def procurar\_por\_numero\_impar\_perfeito  
+```ruby
+def procurar_por_numero_impar_perfeito  
  n = 1 # inteiro de precisão arbitrária  
  while (true)  
- soma\_dos\_fatores = 0  
+ soma_dos_fatores = 0  
  (1..n-1).each do |fator|  
- soma\_dos\_fatores += fator if n % fator == 0  
+ soma_dos_fatores += fator if n % fator == 0  
  end  
- break if soma\_dos\_fatores == n  
+ break if soma_dos_fatores == n  
  n += 2  
  end  
  n  
-end  
--
+end
+```
 
 Este programa procura até encontrar um “numéro ímpar perfeito”, e só então terminar (break). Ou seja, ele termina se, e somente se, tal número existe. O problema: sabemos hoje que existem números pares perfeitos. Por exemplo 6 = 1 + 2 + 3. 28 = 1 + 2 + 4 + 7. O próximo número perfeito é 496 e depois é 8218. Porém, ainda não sabemos qual é o primeiro número ímpar perfeito e também não sabemos demonstrar a existência ou ausência de tal número. Portanto: é impossível determinar se o programa acima um dia vai terminar ou se rodará indefinidamente. Mesmo se deixarmos esse programa rodar 100 anos e ele não encontrar um ímpar perfeito, não quer dizer que ela não exista: existem infinitos número, você pode tentar infinitamente sem concluir.
 
@@ -157,4 +162,3 @@ Porém, quanto mais avançamos, mais e mais nossos programas chegam perto de um 
 A [Ciência da Computação](http://en.wikipedia.org/wiki/Computer_science) (bem como o campo de Física e Matemática) é muito rico, muito amplo. Nós, meros programadores não-acadêmicos, mal começamos a raspar a ponta do iceberg. Quem é interessado em criptografia deve conhece o conceito de [funções de mão-única](http://en.wikipedia.org/wiki/One-way_function) (one-way function), uma função fácil de executar mas custoso para reverter. Elas dão origem à criptografia assimétrica ou ou [Criptografia de Chave Pública](http://en.wikipedia.org/wiki/Public_key_cryptography). O problema: ainda é uma questão em aberto se one-way functions realmente existem! Ou seja, é uma questão matemática ainda não provada ou desprovada.
 
 Para a grande maioria dos programadores nada disso tem a menor importância. Este artigo é destinado às pessoas que tem **curiosidade** e **vontade** para aprender mais sobre o campo onde atuamos e mostrar que existe muito mais do que nossa visão alcança. A única maneira de sair com soluções criativas e inovadoras é conhecer o que já foi estudado, subir no ombro de gigantes como Church e Turing.
-

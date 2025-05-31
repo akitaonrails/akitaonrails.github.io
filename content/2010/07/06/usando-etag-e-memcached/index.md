@@ -18,17 +18,16 @@ Recordando, eu estou usando ETAGs para economizar processamento. Leia meu [artig
 Porém, eu gero o ETAG usando o campo ‘updated\_at’, ou seja, eu preciso acabar indo ao banco e buscar essa informação. Algo parecido com isso:
 
 * * *
-ruby
 
+```ruby
 def show  
- @post = Post.find\_by\_permalink(\*([:year, :month, :day, :slug].collect {|x| params[x] } \<\< {:include =\> [:tags]}))  
- etag = @post.updated\_at.to\_i  
- fresh\_when( :etag =\> etag, :public =\> true ) unless Rails.env.development?  
+ @post = Post.find_by_permalink(*([:year, :month, :day, :slug].collect {|x| params[x] } << {:include => [:tags]}))  
+ etag = @post.updated_at.to_i  
+ fresh_when( :etag => etag, :public => true ) unless Rails.env.development?  
 end  
--
+```
 
 O método <tt>find_by_permalink</tt> é específico do meu blog (veja o código do [Enki](http://github.com/xaviershay/enki) para referência). Daí uso o método <tt>fresh_when</tt> para gerar o cabeçalho caso necessário. O ponto é: ele vai executar o <tt>find</tt> ao banco em **todas** as requisições. No caso que aconteceu ontem, com muitas requisições simultâneas, isso pode se tornar um ponto de contenção crítico, mesmo se a query for muito rápida.
-
 
 ## Memcached
 
@@ -36,69 +35,76 @@ A solução mais simples que eu pensei foi em colocar o memcached na frente diss
 
 * * *
 
+```bash
 sudo apt-get install memcached libsasl2-dev  
+```
+
 -
 
 E no Mac, se você estiver usando o [Homebrew](http://github.com/mxcl/homebrew), basta fazer:
 
 * * *
 
-brew install memcached  
--
+```bash
+brew install Memcached
+```
 
 Daí precisa instalar a gem:
 
 * * *
 
+```bash
 gem install memcached  
--
+```
 
 Agora no <tt>config/environment.rb</tt> coloque:
 
 * * *
+
+```ruby
+
 ruby config.gem ‘memcached’
 
 …  
 end  
 require ‘digest/sha1’  
--
+
+```
 
 E no seu <tt>config/environments/production.rb</tt> coloque:
 
 * * *
-ruby
+
+```ruby
 
 require ‘memcached’  
-config.cache\_store = :mem\_cache\_store, Memcached::Rails.new  
--
+config.cache_store = :mem_cache_store, Memcached::Rails.new  
+```
 
 Isso habilita o cache via Memcached. Em ambiente de desenvolvimento e teste, ele vai armazenar tudo em memória mesmo, e em produção vai usar o Memcached. Desde o Rails 2.3 o sistema de cache foi abstraído e você pode escolher diversos tipos de armazenadores como memória, arquivo, o próprio memcached e outros. Todos são gerenciados através de uma API única, a partir de <tt>Rails.cache</tt>.
 
 Agora, basta fazer algo assim no controller:
 
 * * *
-ruby
 
+```ruby
 def show
-
-1. Parte 1  
- cache\_key = Digest::SHA1.hexdigest(“post\_#{[:year, :month, :day, :slug].collect {|x| params[x] }.join(‘\_’)}”)  
- etag = Rails.cache.read(cache\_key)  
- options = { :public =\> true }  
+ cache_key = Digest::SHA1.hexdigest(“post_#{[:year, :month, :day, :slug].collect {|x| params[x] }.join(‘\_’)}”)  
+ etag = Rails.cache.read(cache_key)  
+ options = { :public => true }  
  if etag  
- fresh\_when( :etag =\> etag, :public =\> true ) unless Rails.env.development?  
+ fresh_when( :etag => etag, :public => true ) unless Rails.env.development?  
  options = {}  
  end
 
-1. Parte 2  
  unless request.fresh?(response)  
- @post = Post.find\_by\_permalink(\*([:year, :month, :day, :slug].collect {|x| params[x] } \<\< {:include =\> [:tags]}))  
- etag = @post.updated\_at.to\_i  
- Rails.cache.write(cache\_key, etag, :expires\_in =\> 1.day)  
- fresh\_when( options.merge(:etag =\> etag, :last\_modified =\> @page.updated\_at.utc) ) unless Rails.env.development?  
+ @post = Post.find_by_permalink(*([:year, :month, :day, :slug].collect {|x| params[x] } << {:include => [:tags]}))  
+ etag = @post.updated_at.to_i  
+ Rails.cache.write(cache_key, etag, :expires_in => 1.day)  
+ fresh_when( options.merge(:etag => etag, :last_modified => @page.updated_at.utc) ) unless Rails.env.development?  
  end  
 end  
--
+```
 
 Existem 2 partes nessa lógica. Na primeira, montamos a chave do cache, que tem que ser única para cada elemento – no caso, um post – que você quer gerenciar. Em especial para meu blog eu monto uma chave baseada nos parâmetros que vem na requisição. Ou seja se o usuário mandar a URL “/2010/01/01/foo” ele vai montar a chave “post\_2010\_01\_01\_foo”. Daí ele faz um <tt>Rails.cache.read</tt> para ver se já existe um ETAG armazenado no memcached. Se já existir ele vai tentar chamar o <tt>fresh_when</tt> para ver se pode já só enviar o cabeçalho 304.
 
@@ -107,48 +113,50 @@ Na parte 2 ele checa <tt>request.fresh?(response)</tt>. Se voltar falso quer diz
 Um pequeno detalhe é a hash <tt>options</tt>. Logo na parte 1 notem que eu faço isto:
 
 * * *
-ruby
 
-options = { :public =\> true }  
+```ruby
+options = { :public => true }  
 if etag  
- fresh\_when( :etag =\> etag, :public =\> true ) unless Rails.env.development?  
+ fresh_when( :etag => etag, :public => true ) unless Rails.env.development?  
  options = {}  
 end  
--
+```
 
 E mais abaixo eu faço isto:
 
 * * *
 
-options.merge(:etag =\> etag, :last\_modified =\> @page.updated\_at.utc)  
--
+```ruby
+options.merge(:etag => etag, :last_modified => @page.updated_at.utc)  
+```
 
 Isso porque na implementação do método <tt>fresh_when</tt> tem um trecho que é assim:
 
 * * *
-ruby
+
+```ruby
 
 if options[:public]  
  …  
- cache\_control \<\< “public”  
+ cache_control << “public”  
 end  
--
+```
 
 Ou seja, se eu chamar o método <tt>fresh_when</tt> múltiplas vezes com a opção <tt>:public => true</tt>, ele vai ficar adicionando na lista <tt>cache_control</tt> e daí no cabeçalho <tt>Cache-Control</tt> vai voltar uma string tipo <tt>public, public</tt>. Então, se o <tt>fresh_when</tt> já foi chamado no começo, na segunda vez eu tomo o cuidado de não passar o <tt>:public</tt> de novo.
 
 Finalmente, no administrador de posts, eu invalido o cache caso eu atualize ou apague um post. Assim:
 
 * * *
-ruby
 
-class Admin::PostsController \< Admin::BaseController  
- after\_filter :clean\_cache, :only =\> [:create, :update, :destroy]  
+```ruby
+class Admin::PostsController < Admin::BaseController  
+ after_filter :clean_cache, :only => [:create, :update, :destroy]  
  …
 
-protected def clean\_cache Rails.cache.delete(Digest::SHA1.hexdigest(“post\_#{@post.permalink.gsub(”/", “\_”)}")) Rails.cache.delete(“recent\_posts\_etag”) end
+protected def clean_cache Rails.cache.delete(Digest::SHA1.hexdigest(“post_#{@post.permalink.gsub(”/", “\_”)}")) Rails.cache.delete(“recent_posts_etag”) end
 
-end  
--
+end
+```
 
 No caso faço um <tt>after_filter</tt> que vai rodar só depois dos métodos <tt>create</tt>, <tt>update</tt> e <tt>destroy</tt>. No caso ele apaga o ETAG do post (método <tt>show</tt> do controller público) que tem aquele formato “post\_2010\_01\_01\_foo” (no caso eu criei um método chamado <tt>permalink</tt> no model <tt>Post</tt> que formata isso) e também deleta o ETAG no caso da página principal (que eu guardo com a chave <tt>recent_posts_etag</tt>), que busca vários posts. Eu assumo que se um post mudar, é melhor recriar a homepage inteira porque não sei se esse post aparece listado lá ou não. Poderia ter uma lógica melhor, mas considerando que eu não fico atualizando ou deletando posts o tempo todo, isso deve bastar.
 
@@ -163,4 +171,3 @@ Logo que o servidor sobe, o cache está vazio, então ele precisa ir ao banco o 
 Então, minha otimização fez duas coisas: na primeira versão, que só gerava e processava ETAGs, eu economizei o tempo de processamento do ERB e envio do HTML. Agora estou economizando comunicação com o banco de dados, o tráfego dos dados entre o banco e o Rails e a geração dos ETAGs em si. Ou seja, o Rails está fazendo muito pouco, praticamente só servindo como um roteador mesmo.
 
 Isso baixou o tempo de processamento médio de uma requisição do meu Rails de uns **50ms** , antes, para algo entre **7ms** e **1ms**!. Somado ao upgrade de memória de 512 para 768 MB de RAM e de 512 MB para 1 GB de swap, meu blog deve estar preparado para aguentar algumas ordens de grandeza mais tráfego simultâneo.
-

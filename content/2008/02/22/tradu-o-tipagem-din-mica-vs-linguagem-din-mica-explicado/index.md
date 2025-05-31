@@ -13,7 +13,6 @@ Estou na minha temporada de traduções :-) Felizmente a blogosfera produz muito
 
 Vamos à tradução:
 
-
 Eu acabei de ler [um post muito interessante sobre as virtudes de tipagem estática comparado com tipagem dinâmica](http://pinderkent.blogsavy.com/archives/157) ( **nota do Akita** : o artigo desse link foi especialmente tecido com a intenção de pegar os despreparados). Levou um tempinho para eu entender os exemplos de código de Ruby, Python, OCaml e Haskell. Mesmo assim consegui concluir algumas coisas desse artigo:
 
 - Ruby e Python são linguagens com tipagem dinâmica. Eles não suportam tipagem estática.
@@ -23,7 +22,8 @@ Eu acabei de ler [um post muito interessante sobre as virtudes de tipagem estát
 Entretanto a diferença é clara o suficiente. VB Script (Visual Basic Script) tem tipagem dinâmica e mesmo assim não é uma linguagem dinâmica. O código abaixo é VB Script válido (roda no Windows com cscript.exe):
 
 * * *
-vb
+
+```vb
 
 dim x  
 dim y
@@ -32,29 +32,32 @@ x = 1
 y = 2
 
 x = “ABC”  
-y = “XYZ”  
+y = “XYZ”
+```
+
 -
 
 Ruby e Python usam tipagem dinâmica e eles também são linguagens dinâmicas. Aqui vai um trecho de código demonstrando o mecanismo de despacho dinâmico do Ruby:
 
 * * *
-ruby
 
-class Dummy   
- def method\_missing(m, \*args)   
- args<sup class="footnote" id="fnr0"><a href="#fn0">0</a></sup> + args<sup class="footnote" id="fnr1"><a href="#fn1">1</a></sup>  
- end   
+```ruby
+class Dummy
+ def method_missing(m, *args)
+ args + args1
+ end
 end
 
 raise “Error” unless Dummy.new.test(1, 2) == 3  
--
+```
 
 O método test() chamado na classe Dummy na última linha é despachado pelo Ruby ao método method\_missing(). ( **nota do Akita** : note que dizemos “despachado” – dispatched – e não “chamado”. Não ‘chamamos métodos’, mas sim ‘enviamos mensagens’, a diferença é muito grande.) Python e Groovy também suportam Despacho Dinâmico. Em geral, linguagens dinâmicas como Ruby, Python e Groovy tem um Protocolo de Meta-Objeto ou MOP (Meta-Object Protocol).
 
 De volta ao post que mencionei no começo. O autor tenta provar que tipagem estática é superior à tipagem dinâmica. Para provar isso ele usa este código em Ruby (também há exemplos em Python, OCaml e Haskell):
 
 * * *
-ruby
+
+```ruby
 
 def test(a, b)  
  a + b  
@@ -69,12 +72,13 @@ def main()
 end
 
 Process.exit(main())  
--
+```
 
 Esse código funciona bem quando passamos 0, 1, 2 ou 3 argumentos na linha de comando:
 
 * * *
-bash
+
+```bash
 
 $ ruby w -W2 t.rb; echo $?  
 3  
@@ -84,19 +88,21 @@ $ ruby -w -W2 t.rb 0 1; echo $?
 3  
 $ ruby -w -W2 t.rb 0 1 2; echo $?  
 3  
---
+```
 
 Entretanto, quando passamos 4 argumentos na linha de comando o script Ruby falha:
 
 * * *
-bash
 
+```bash
 $ ruby w -W2 t.rb 0 1 2 3; echo $?  
 t.rb:7:in `test’: wrong number of arguments (0 for 2) (ArgumentError)  
- from t.rb:7:in `main’  
+ from t.rb:7:in`main’  
  from t.rb:13  
-1  
-$  
+1
+$
+```
+
 --
 
 Baseado nesse script Ruby, o (famigerado) autor chega à seguinte conclusão:
@@ -112,25 +118,27 @@ E eis quando a confusão se firmou, misturando tipagem dinâmica com linguagem d
 Aqui vai um script tipado estaticamente em Groovy que vai falhar em tempo de compilação:
 
 * * *
-java
 
-int x = “test”  
--
+```java
+int x = "test"
+```
 
 Este é o erro em runtime:
 
 * * *
-bash
+
+```bash
 
 Caught: org.codehaus.groovy.runtime.typehandling.GroovyCastException: Cannot cast object ‘test’ with class ‘java.lang.String’ to class ‘java.lang.Integer’  
 at typesafe.run(typesafe.groovy:1)  
 at typesafe.main(typesafe.groovy)  
--
+```
 
 Hmm, Groovy sem sombra de dúvida tem tipagem estática (note, entretanto, que não há erro em tempo de compilação). Ainda assim ele também é uma linguagem dinâmica. Aqui vai o script Ruby anterior re-escrito em Groovy:
 
 * * *
-java
+
+```groovy
 
 def test(int a, int b) {  
  a + b  
@@ -141,12 +149,13 @@ if (args.length \> 3) {
 } else {  
  println test(1, 2)  
 }  
--
+```
 
 Veja a declaração do método test() nas primeiras 3 linhas e seus argumentos tipados estaticamente. Esse script vai compilar? Sim. Esse script vai falhar quando 3 ou menos argumentos forem passados na linha de comando? Não. Aqui vão as saídas para 0 até 4 argumentos na linha de comando:
 
 * * *
-bash
+
+```bash
 
 C:\\>groovy type\_safe  
 3  
@@ -160,8 +169,8 @@ C:\\>groovy type\_safe 0 1 2 3
 Caught: groovy.lang.MissingMethodException: No signature of method: type\_safe.test() is applicable for argument types: (java.lang.Integer, java.lang.String) values: {1, "test"}  
  at type\_safe.run(type\_safe.groovy:6)  
  at type\_safe.main(type\_safe.groovy)  
-C:\\>  
--
+C:\\>
+```
 
 Por que esse script compila quando o método test() tem argumentos tipados? A chamada a test() na última linha é claramente incorreta!
 
@@ -176,4 +185,3 @@ Fazer pouco de Ruby, Python e Groovy porque eles não checam tipos em momento de
 Da próxima vez que ouvir pessoas reclamando sobre linguagens dinâmicas por sua falta de tipagem estática você estará melhor informado para entender porque eles reclamam. Talvez eles não gostem de linguagens dinâmicas, ou gostem muito de tipagem estática. Mas pelo menos você saberá que existem diferenças entre tipagem dinâmica e linguagens dinâmicas. E também entenderá que eles preferem linguagens não-dinâmicas de tipagem estática.
 
 Feliz codificação!
-

@@ -16,7 +16,6 @@ Este é um artigo que eu queria escrever há muito tempo, finalmente consegui fo
 
 I18n e L10n vai muito mais do que a simples tarefa de substituir strings de texto. Formatação de dados (data, hora, moeda) variam. Codificação dos dados (o padrão sempre tem que ser UTF8!). URLs sensíveis à localização. Modelos sensíveis à localização. Para começar, não pretendo repetir o que todo desenvolvedor Rails já deveria saber, portanto se ainda não leu o [Guia Oficial sobre a API de Internacionalização do Rails](http://guides.rubyonrails.org/i18n.html) sugiro que faça isso antes de continuar lendo este artigo.
 
-
 Neste guia vou demonstrar o básico de i18n criando uma aplicação mínima, com Devise. Todo os códigos mostrados aqui estão no [meu repositório](https://github.com/akitaonrails/Rails-3-I18n-Demonstration) no Github. Se quiser, pule diretamente para a seção que mais lhe interessa:
 
 - [Banco de Dados e Codificação de Strings](#bancodados)
@@ -37,21 +36,23 @@ Além disso, uma coisa a se lembrar se você gosta de criar seu banco de dados v
 
 * * *
 
+```sql
 CREATE DATABASE dbname   
 CHARACTER SET utf8   
-COLLATE utf8\_general\_ci;  
--
+COLLATE utf8_general_ci;  
+```
 
 E no PostgreSQL faça:
 
 * * *
 
+```sql
 CREATE DATABASE dbname  
 WITH OWNER “postgres”  
 ENCODING ‘UTF8’  
- LC\_COLLATE = ‘en\_US.UTF-8’  
- LC\_CTYPE = ‘en\_US.UTF-8’;  
--
+ LC_COLLATE = ‘en_US.UTF-8’  
+ LC_CTYPE = ‘en_US.UTF-8’;  
+```
 
 Obviamente, troque <tt>dbname</tt> e <tt>postgres</tt> de acordo com sua aplicação. Não tem coisa que eu abomine mais do que um banco de dados e uma aplicação web desenvolvida em “Latin1” (iso-8859-1) ou pior ainda, em Windows 1252. Apenas para refrescar a memória, até o Ruby 1.8 todo string de texto era nada mais do que uma cadeia de bytes, como em C (justamente mantendo compatibilidade com C). A partir do Ruby 1.9 foi adicionado um complexo sistema para lidar com todo tipo de linguagem, encoding e com isso o suporte a UTF-8 se tornou bem melhor e deve ser o padrão. Agora um string é uma cadeia de caracteres, que pode se double-byte associado a uma tabela de encoding para garantir que todas as operações de string, incluindo regular expressions, atuem da forma correta sem corromper o texto. O Rails atual também leva isso em consideração e tudo é, por padrão, UTF8. Nunca misture.
 
@@ -60,12 +61,13 @@ Sempre utilize um editor de texto decente que salve arquivos, por padrão, em UT
 Outra coisa que confunde muitas pessoas, alguns arquivos Ruby recebem um cabeçalho, logo na primeira linha, parecido com as linhas abaixo:
 
 * * *
-ruby
+
+```ruby
 1. encoding: UTF-8
 2. coding: UTF-8
 3. \* coding: UTF-8 \*
 4. \* coding: utf-8 \*  
--
+```
 
 Qualquer uma das opções acima tem o mesmo efeito. A regra é simples: se você tiver somente código Ruby, sem nenhuma string internacionalizada (com acentuações de português, ideogramas em chinês, símbolos) isso não é necessário. Se o arquivo conter texto, daí a checagem do Ruby vai exigir que você explicitamente diga que encoding está no string. Porém, use isso como um [code smell](http://en.wikipedia.org/wiki/Code_smell) no caso de uma aplicação web internacionalizada, pois todo texto deveria estar em arquivos de localização (como vamos mostrar). Somente em aplicativos não-internacionalizados, onde o texto às vezes estará misturado ao seu código, isso pode te ajudar.
 
@@ -75,20 +77,25 @@ Assumindo que estamos usando o Rails 3.2 (3.2.6, para ser mais preciso). Criamos
 
 * * *
 
-rails new i18n\_demo  
--
+```bash
+rails new i18n_demo
+```
 
 Agora vamos fazer algumas mudanças que você deveria fazer em toda aplicação:
 
 * * *
 
-rm public/index.html  
+```bash
+rm public/index.HTML
+```
+
 -
 
 Adicione as seguintes gems no seu <tt>Gemfile</tt>:
 
 * * *
-ruby
+
+```ruby
 
 …  
 gem ‘devise’
@@ -99,25 +106,26 @@ group :development, :test do
 
 gem ‘guard’ gem ‘guard-rspec’ gem ‘growl’
 
-end  
--
+end
+```
 
 Modifique seu <tt>config/application.rb</tt>, aproximadamente na linha 28, para ficar como no trecho a seguinte:
 
 * * *
-ruby
-1. Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
-2. Run “rake -D time” for a list of tasks for finding time zone names. Default is UTC.  
-config.time\_zone = ‘Brasilia’
 
-1. The default locale is :en and all translations from config/locales/\*.rb,yml are auto loaded.
-2. config.i18n.load\_path += Dir[Rails.root.join(‘my’, ‘locales’, ‘\*.{rb,yml}’).to\_s]  
-config.i18n.available\_locales = [:en, :“pt-BR”]  
-config.i18n.default\_locale = :“pt-BR”
+```ruby
+#1. Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
+#2. Run “rake -D time” for a list of tasks for finding time zone names. Default is UTC.  
+config.time_zone = ‘Brasilia’
 
-1. Configure the default encoding used in templates for Ruby 1.9.  
+#3. The default locale is :en and all translations from config/locales/\*.rb,yml are auto loaded.
+config.i18n.load_path += Dir[Rails.root.join(‘my’, ‘locales’, ‘\*.{rb,yml}’).to\_s]  
+config.i18n.available_locales = [:en, :“pt-BR”]  
+config.i18n.default_locale = :“pt-BR”
+
+#4. Configure the default encoding used in templates for Ruby 1.9.  
 config.encoding = “utf-8”  
--
+```
 
 Neste exemplo considero que estou apenas suportanto Inglês (en) e Português (pt-BR). Por padrão o Rails sempre procurará por arquivos de tradução a partir do diretório <tt>config/locales</tt> e sempre com arquivos no formato <tt>#{locale}.yml</tt> ou <tt>#{locale}rb</tt>, por exemplo, <tt>devise.pt-BR.yml</tt>.
 
@@ -129,31 +137,35 @@ Um dos rubistas que há mais tempo vem auxiliando no suporte a i18n no Rails é 
 
 * * *
 
-curl https://raw.github.com/svenfuchs/rails-i18n/master/rails/locale/pt-BR.yml \> config/locales/rails.pt-BR.yml  
-curl https://raw.github.com/svenfuchs/rails-i18n/master/rails/locale/pt-BR.yml \> config/locales/rails.en.yml  
--
+```bash
+curl <https://raw.github.com/svenfuchs/rails-i18n/master/rails/locale/pt-BR.yml> \> config/locales/rails.pt-BR.yml  
+curl <https://raw.github.com/svenfuchs/rails-i18n/master/rails/locale/pt-BR.yml> \> config/locales/rails.en.yaml
+```
 
 Somente isso já lhe vai traduzir a maioria dos helpers do Rails. Para testar, vamos criar uma página simples:
 
 * * *
 
-rails g controller welcome index  
--
+```bash
+rails g controller welcome_index
+```
 
 Adicione no seu arquivo de rotas:
 
 * * *
-ruby
 
+```ruby
 I18nDemo::Application.routes.draw do  
  get “welcome/index”, as: “welcome”  
  root to: ‘welcome#index’  
-end  
--
+end
+```
 
 E coloque no seu arquivo <tt>app/views/welcome/index.html.erb</tt>
 
 * * *
+
+```html
 <dl>
   <dt>Number to Currency</dt>
   <dd><%= number_to_currency(123.56) %></dd>
@@ -164,6 +176,8 @@ E coloque no seu arquivo <tt>app/views/welcome/index.html.erb</tt>
   <dt>Time</dt>
   <dd><%= distance_of_time_in_words(1.hour + 20.minutes) %></dd>
 </dl>
+```
+
 * * *
 
 Se subir o Webrick com <tt>rails s</tt> e consultar <tt>http://localhost:3000</tt> verá uma página com o seguinte:
@@ -184,16 +198,17 @@ Na prática, dado que já incluímos a gem no <tt>Gemfile</tt> anteriormente e j
 
 * * *
 
+```bash
 rails g devise:install  
-rails g devise User  
--
+rails g devise User
+```
 
 Da mesma forma como fizemos antes, vamos baixar as traduções que precisamos. O primeiro lugar a procurar é no [Wiki oficial do Devise](https://github.com/plataformatec/devise/wiki/I18n) que, atualmente, sugere o projeto do [Christopher Dell](http://tigrish.com/) que tenta ser o [repositório centralizado](https://github.com/tigrish/devise-i18n) com todas as traduções em todas as linguagens para o Devise.
 
 * * *
 
-curl https://raw.github.com/tigrish/devise-i18n/master/locales/en-US.yml \> config/locales/devise.en.yml  
-curl https://github.com/tigrish/devise-i18n/blob/master/locales/pt-BR.yml \> config/locales/devise.pt-BR.yml  
+curl <https://raw.github.com/tigrish/devise-i18n/master/locales/en-US.yml> \> config/locales/devise.en.yml  
+curl <https://github.com/tigrish/devise-i18n/blob/master/locales/pt-BR.yml> \> config/locales/devise.pt-BR.yml  
 -
 
 Mas somente isso não é suficiente. Você pode utilizar as views que vem embutidas na Rails Engine do Devise ou pode precisar customizá-las e nesse caso precisa copiar essas views para dentro do seu projeto, desta forma:
@@ -228,6 +243,7 @@ Veja que ele copia muitos arquivos. Vamos abrir um deles:
 
 * * *
 html
+
 ## Resend confirmation instructions
 
 \<%= form\_for(resource, :as =\> resource\_name, :url =\> confirmation\_path(resource\_name), :html =\> { :method =\> :post }) do |f| \>  
@@ -247,8 +263,8 @@ Note que todos os textos estão embutidos: exatamente o que eu disse que numa ap
 
 * * *
 
-wget https://raw.github.com/akitaonrails/Rails-3-I18n-Demonstration/master/config/locales/devise.views.en.yml \> config/locales/devise.views.en.yml  
-wget https://raw.github.com/akitaonrails/Rails-3-I18n-Demonstration/master/config/locales/devise.views.pt-BR.yml \> config/locales/devise.views.pt-BR.yml  
+wget <https://raw.github.com/akitaonrails/Rails-3-I18n-Demonstration/master/config/locales/devise.views.en.yml> \> config/locales/devise.views.en.yml  
+wget <https://raw.github.com/akitaonrails/Rails-3-I18n-Demonstration/master/config/locales/devise.views.pt-BR.yml> \> config/locales/devise.views.pt-BR.yml  
 -
 
 Isso vai copiar as traduções que você vai precisar. Agora faça um clone do meu projeto e copie sobre o seu (caso esteja fazendo este exercício enquanto lê o artigo):
@@ -280,15 +296,18 @@ E para acesssar a tradução podemos fazer assim:
 
 * * *
 ruby
+
 1. I18n.locale = :“pt-BR”  
 I18n.t(“devise.confirmations.new.title”)  
 I18n.t(:title, scope: [:devise, :confirmations, :new])  
+
 -
 
 Qualquer dessas e outras variações funcionam igual e acham a string correta, mas na view que você baixou do meu projeto, temos o seguinte no arquivo <tt>app/views/devise/confirmations/new.html.erb</tt>:
 
 * * *
 html
+
 # \<%= t(“.title”) %\>
 
 …  
@@ -478,4 +497,3 @@ Um detalhe: note o método <tt>should_generate_new_friendly_id?</tt> que sobresc
 ## Continua na Parte 2
 
 Continue lendo este artigo na [Parte 2](http://akitaonrails.com/2012/07/14/internationalizacao-i18n-minima-em-rails-3-2-parte-2).
-

@@ -16,7 +16,6 @@ Porém, a [escolha](http://twitter.com/#!/dhh/status/58207700672200704) de coloc
 
 O pessoal do Rails Core Team acha que é a melhor decisão. Uma parcela barulhenta da comunidade acha que foi uma grande bobagem. E agora, o que isso significa?
 
-
 ## Introdução: Pré-processadores
 
 Existem muitas coisas que são difíceis mudar. Quem lida com montagem de interfaces HTML/CSS multi-browser sabe a dor de cabeça. Especificar algo como HTML e CSS é muito difícil. Como eu sempre digo, leia as [especificações](http://www.w3.org/Style/CSS/current-work.en.html). À primeira vista parece bem completo. Mas não é! Cada navegador tem muitas diferenças de implementação.
@@ -30,8 +29,8 @@ O quero dizer é que é impossível programar um framework HTML ou CSS escrito e
 Sabemos o benefício que existe em usar frameworks que abstraem muitas das repetições e coisas específicas de cada navegador numa linguagem mais genérica. Por exemplo, no caso do Javascript, em vez de fazer:
 
 * * *
-javascript
 
+```javascript
 var elm = null;  
 if (document.getElementById)  
 {  
@@ -49,44 +48,45 @@ else if (document.layers)
  // Navigator 4  
  elm = document.layers[id];  
 }  
--
+```
 
 Hoje podemos simplesmente fazer, com jQuery:
 
 * * *
-javascript
 
-var elm = $(“#” + id);  
--
+```javascript
+var elm = $(“#” + id);
+```
 
 Outra alternativa seria mudar a especificação do HTML e CSS para serem mais enxutas e mais flexíveis. Mas isso seria praticamente impossível pois todos os navegadores do planeta precisaram ser atualizados para a mesma versão para que valesse a pena. É o dilema do HTML 5 vs Internet Explorer 6. Enquanto existir um cidadão usando o famigerado IE 6, vamos ter que criar código que trata versões e dá “fallback”, ou seja, escolhe uma versão não HTML 5.
 
 Agora, nós conhecemos técnicas que podem facilitar a vida do desenvolvedor. Quem programa em C conhece [pré-processadores](http://en.wikipedia.org/wiki/C_preprocessor). Ele permite escrever macros, que podem ser reusados por todo seu código. Daí antes de compilar em código nativo de máquina, o compilador do C vai fazer o equivalente a um grande “procurar e substituir”, trocando as macros por código, por exemplo:
 
 * * *
-C
 
-#define <acronym title="item,id"><span class="caps">MYCASE</span></acronym> \  
-case id: \  
- item##\_##id = id;\  
+```c
+# define MYCASE  
+
+case id:   
+ item##_##id = id;  
 break
 
 switch(x) {  
-<acronym title="widget,23"><span class="caps">MYCASE</span></acronym>;  
+MYCASE;  
 }  
--
+```
 
 Quando o pré-processador do C passar por esse código, ele será “reescrito” como:
 
 * * *
-C
 
+```c
 switch(x) {  
  case 23:  
- widget\_23 = 23;  
+ widget_23 = 23;  
  break;  
-}  
--
+}
+```
 
 Com esse recurso podemos praticamente criar uma sintaxe completamente nova que você nem perceberia mais que está lidanco com C. Não é exatamente recomendável fazer isso, mas as macros estão ali para justamente tentar abstrair mais do código e torná-la mais fácil de ler e dar manutenção. No final o código binário gerado seria o mesmo, mas para o desenvolvedor a vida pode ser mais fácil.
 
@@ -97,14 +97,16 @@ CSS em particular é um monstro complicado porque diferente de HTML ela não def
 Entra SASS. Ele é como um pré-processador de CSS, que adiciona diversas funcionalidades que muitos acreditam que já deveriam ter sido criadas desde o começo. Por exemplo, veja o seguinte código em SASS:
 
 * * *
-css
 
-/\* style.scss \*/
+```css
+
+/* style.scss */
 
 $main-color: #ce4dd6;  
 $style: solid;
 
-#navbar {  
+# navbar {  
+
  border-bottom: {  
  color: $main-color;  
  style: $style;  
@@ -115,16 +117,18 @@ a {
  color: $main-color;  
  &:hover { border-bottom: $style 1px; }  
 }  
--
+```
 
 É transformado no seguinte CSS:
 
 * * *
-css
 
-/\* style.css \*/
+```css
 
-#navbar {  
+/* style.css *\
+
+# navbar {  
+
  border-bottom-color: #ce4dd6;  
  border-bottom-style: solid; }
 
@@ -132,28 +136,30 @@ a {
  color: #ce4dd6; }  
  a:hover {  
  border-bottom: solid 1px; }  
--
+```
 
 Notem que aqui o objetivo sequer é escrever “menos linhas de código”. Se o objetivo fosse apenas esse, o SASS seria inútil. Mas o principal é a forma de escrever estilos como blocos dentro de blocos, usar variáveis e muito mais. No exemplo, digamos que você tivesse que mudar a cor principal (main-color). Teria que fazer um processo manual de “procurar e trocar” por todo seu código e ainda assim não teria nenhuma certeza se trocou tudo certo. Aqui basta trocar uma variável. Esse é apenas um dos benefícios. SASS tem muitos outros recursos que permitem organizar seu CSS de maneira nunca antes possíveis.
 
 O autor do SASS é o grande Hampton Caitlin, que é contribuidor na comunidade Ruby há muitos anos. Antes do SASS, porém, ele havia criado outro tipo de pré-processador, mas para HTML chamado [HAML](haml-lang.com/). Vejamos o exemplo que ele mostra no site. Primeiro o código escrito em HAML:
 
 * * *
-css
 
-#profile  
- .left.column  
- #date= print\_date  
- #address= current\_user.address  
+```haml
+# profile  
+
+.left.column  
+ #date= print_date  
+ #address= current_user.address  
  .right.column  
- #email= current\_user.email  
- #bio= current\_user.bio  
--
+ #email= current_user.email  
+ #bio= current_user.bio  
+```
 
 Esse HAML será transformado no seguinte HTML:
 
 * * *
-html
+
+```html
 
 \<%= print\_date %\>
 
@@ -162,6 +168,7 @@ html
 \<%= current\_user.email %\>
 
 \<%= current\_user.bio %\>
+```
 
 * * *
 
@@ -178,18 +185,20 @@ O problema é o objetivo do HAML: se ele me acrescentasse funcionalidades que me
 Ou seja, estou literamente trocando seis por meia dúzia em troca de “estética”. Sendo que essa estética não tem explicação lógica, apenas gosto pessoal. Ou seja, qual é mais “bonito” aos seus olhos, este HAML:
 
 * * *
-css
 
+```css
 %strong.code#message Hello, World!  
--
+```
 
 Ou este HTML:
 
 * * *
-html
 
-**Hello, World!**  
--
+```
+```html
+
+**Hello, World!**
+```
 
 Pois é, eu pessoalmente prefiro o HTML. O que não invalida quem prefere HAML. Portanto, dado que a escolha é puramente estética, entendo perfeitamente porque o Rails Core Team preferiu deixar o HAML de fora e só trazer o SASS. O SASS traz benefícios reais de produtividade e mantenabilidade do código. O HAML é puramente estético e é difícil de defender alguma coisa simplesmente por “parecer” esteticamente melhor.
 
@@ -200,7 +209,7 @@ E aí caímos na controvérsia do [CoffeeScript](http://jashkenas.github.com/cof
 E como no caso do HAML, eu critico seu objetivo de existir. Do próprio website oficial, eu destaco este trecho:
 
 > Javascript sempre teve um excelente modelo de objetos em seu interior. CoffeeScript é uma tentativa de expôr as boas partes do Javascript de maneira simples.
-> 
+>
 > A regra de outro do CoffeeScript é: “É somente Javascript”. O código compila um-para-um no JS equivalente, e não há nenhuma interpretação em tempo de execução.
 
 Assim como HAML, CoffeeScript tem exatamente o mesmo objetivo: ser um-para-um mais “esteticamente” bonito do que o original. E essa é a razão da discussão, porque quem acha CoffeeScript esteticamente mais bonito vai defendê-lo (caso do Rails Core Team) e quem não acha essa estética tão bonita assim vai questionar, criticar.
@@ -214,8 +223,8 @@ Também usamos o argumento que Ruby é mais elegante ou esteticamente mais bonit
 Mas não pensem que CoffeeScript é ruim por causa disso. De jeito nenhum, de fato Javascript tem uma sintaxe que está ficando velha muito rápido. O Coffee tem diversas ajudas de sintaxe que tornam mesmo muitas coisas menos complicado. Vejam alguns exemplos, primeiro em Coffee:
 
 * * *
-ruby
 
+```ruby
 switch day  
  when “Mon” then go work  
  when “Tue” then go relax  
@@ -226,12 +235,13 @@ switch day
  go dancing  
  when “Sun” then go church  
  else go work  
--
+```
 
 Agora em Javascript:
 
 * * *
-javascript
+
+```javascript
 
 switch (day) {  
  case “Mon”:  
@@ -256,7 +266,7 @@ switch (day) {
  default:  
  go(work);  
 }  
--
+```
 
 E no final nem é tão complicado assim aprender Coffee. Basicamente entre no [site oficial](http://jashkenas.github.com/coffee-script/) deles e leia essa primeira página. Ela tem tudo que você precisa saber para começar. Eu diria que você precisa, em média de 1 a 2 horas para saber como ler e escrever em Coffee. Mais do que isso e significa que você tem pouca prática com programação, o que não é ruim, mas só para constatar que é só isso que um bom programador deveria levar.
 
@@ -271,4 +281,3 @@ Vários problemas podem acontecer: alguém editar o CSS final em vez do SCSS que
 Todos esses pacotes são opcionais. Basta entrar na <tt>Gemfile</tt> que o Rails 3.1 irá gerar e retirar as dependências que não lhe interessam e adicionar as escolhas que prefere. Nesse sentido o Rails permanecerá modular, de forma a facilitar novas escolhas, por isso ninguém deveria estar preocupado.
 
 No geral acredito que todas as mudanças mencionadas são positivas e aumenta o valor agregado do Ruby on Rails. E se você realmente gosta da prática de programação, aprender HAML, SASS, CoffeeScript, Sprockets, etc não deveria ser um sacrifício e sim um prazer. Se alguém está considerando aprender coisas novas um “sacrifício”, deveria rever sua carreira de programação.
-

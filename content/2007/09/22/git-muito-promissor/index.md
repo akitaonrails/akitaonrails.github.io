@@ -11,60 +11,94 @@ No [artigo anterior](http://www.akitaonrails.com/2007/9/22/jogar-pedra-em-gato-m
 
 Instalar o GIT varia. Em Windows: não faço idéia. Em Linux: Google – ao que parece existem tarballs, pacotes para Yum, pacotes para Apt-get. Deve ser bem simples, façam sua lição de casa. Para Mac: MacPorts. Foi um pouco estranho, porque o **git-svn** parece que usa Perl5, e meu SVK que já estava instalado também. Acabei desinstalando o SVK e suas dependências e instalando novamente – deve ser o sono, já é bem tarde. Resumindo, acredito que a receita (para começar em um MacPorts limpo), seja algo assim:
 
+```bash
+sudo port install git-core +doc +svn
+```
 
-<macro:code>
-<p>sudo port install git-core +doc +svn<br>
-<del>-</del></p>
 <p>Considerando que todos conseguiram instalar, agora deve haver, junto com o bom e velho script svn, os scripts <strong>git</strong> e <strong>git-svn</strong>. O que eu quero fazer: usar o git para gerenciar um repositório local – de tal forma que eu possa trabalhar (fazer commits, branches, merges) no meu micro sem depender de uma conexão ao servidor e, ao final do dia, poder “empurrar” todos os changesets (não apenas a última modificação, mas todo o histórico do dia) de volta ao servidor Subversion. Este <a href="https://wiki.bnl.gov/dayabay/index.php?title=Synchronizing_Repositories#GIT_and_SVN">link</a> foi muito útil.</p>
 <p>Eu fiz um micro teste (micro mesmo, ultra-simples) usando o subversion de um projeto no <span class="caps">SVN</span> do Google Code.</p>
-<macro:code>mkdir [diretorio_local_do_projeto]<br>
-cd [diretorio_local_do_projeto]<br>
-git-svn init <del>-username [seu_username] [url_do_seu_svn]/trunk</del>—<br>
+
+```bash
+mkdir [diretorio_local_do_projeto]
+cd [diretorio_local_do_projeto]
+git-svn init -username [seu_username] [url_do_seu_svn]/trunk
+```
+
 <br>
 Isso inicia o repositório local do git e associa ao <span class="caps">SVN</span> remoto. A partir daqui existem várias opções, leiam <a href="http://utsl.gen.nz/talks/git-svn/intro.html#howto-fetch">neste artigo</a> para entender as alternativas. Dentre as principais está fazer uma cópia <strong>completa</strong> do repositório – o que significa <strong>todas</strong> as revisões -, ou fazer um download apenas do <span class="caps">HEAD</span> do seu trunk. Se o projeto for pequeno, tanto faz. Se o histórico for importante, será necessário replicar tudo, ou replicar a partir de uma determinada revisão.<br>
 <br>
 Um aviso: puxar muitas revisões (sei lá, 500, 1000, 10 mil?) pode demorar <strong><span class="caps">MUITAS</span></strong> horas. Mesmo meu projetinho, com menos de 100 revisões, sob uma conexão de 8Mbit levou alguns minutos. Felizmente é possível pegar a partir de uma revisão até o <span class="caps">HEAD</span>, assim:<br>
 <br>
-<macro:code>git-svn fetch <del>rXXX</del>—<br>
+
+```bash
+git-svn fetch
+```
+
 <br>
 Onde “<span class="caps">XXX</span>” é o número da revisào a partir da qual você quer pegar. Se quiser apenas o <span class="caps">HEAD</span>, pegue apenas a última. Não sabe qual o número? Oras “svn log —limit XX” para puxar o log das últimas XX revisões do seu <span class="caps">SVN</span>.<br>
 <br>
 Uma recomendação do artigo é criar um novo branch – questões cosméticas? Aliás, gerenciar branches – que é algo que fazemos com muita cerimônia no <span class="caps">SVN</span> – deve ser rotina no <span class="caps">GIT</span>: faça quantas quiser, quando quiser. Faça um por arquivo se for maluco. Diz a propaganda que o <span class="caps">GIT</span> aguenta. Na prática existem muitos recursos do <span class="caps">SVN</span> que usamos raramente porque sabemos que pode trazer dores-de-cabeça. E se pensarmos melhor, oras, se precisamos planejar tanto para usar um recurso é porque ele é muito mal feito. Todo bom recurso deveria ser à prova de noobies. Veremos nos próximos dias se o <span class="caps">GIT</span> sobrevive à propaganda (espero que sim). Enfim, criar branches:<br>
 <br>
-<macro:code>git checkout <del>-track -b [qualquer_nome] git-svn</del>—<br>
+
+```bash
+git checkout -track -b [qualquer_nome] git-svn
+```
+
 <br>
 “git-svn” é o nome do branch que o script “git-svn” criou automaticamente. Fora ele, por default, todo repositório tem pelo menos um branch, chamado “master”. Ao criar um branch, ele automaticamente se torna o novo default. Para ver todos os branches disponíveis use:<br>
 <br>
-<macro:code>git branch <del>a</del>—<br>
+
+```bash
+git branch -a
+  ```
+
 <br>
 Já podemos brincar. Posso alterar meu código localmente neste novo working copy. Toda vez que precisar fazer um commit, basta fazer:<br>
 <br>
-<macro:code>git commit <del>a -m “[seu comentário]”</del>—<br>
+
+```bash
+git commit -a -m “[seu comentário]”
+```
+
 <br>
 Note que esses commits não estão indo ao servidor. Está tudo local. Para ver as revisões, o comando é parecido com o <span class="caps">SVN</span>:<br>
 <br>
-<macro:code>git log—-<br>
+
+```bash
+git log
+```
+
 <br>
 Finalmente, depois de alterar meu working copy como quiser, digamos que estou pronto para publicar as modificações de volta ao <span class="caps">SVN</span>:<br>
 <br>
-<macro:code>git-svn dcommit—-<br>
+
+```bash
+git-svn dcommit
+```
+
 <br>
 Isso deve fazer um replay do histórico deste o último fetch de volta ao servidor, teoricamente mantendo o histórico intacto, com o autor, os comentários dos commits e tudo mais.<br>
 <br>
 Agora, no meu antigo working copy do <span class="caps">SVN</span>, fiz algumas pequenas modificações e depois svn commit. No novo working copy do <span class="caps">GIT</span>, para fazer o equivalente ao antigo “svn up”, faço o seguinte:<br>
 <br>
-<macro:code>git-svn fetch<br>
-git-svn rebase—-<br>
+
+```bash
+git-svn fetch
+git-svn rebase
+```
+
 <br>
 Isso trará todas as revisões. O interessante é que parece que ele faz um “rollback” local e dá um “replay” nas minhas próprias revisões sobre as que vieram do <span class="caps">SVN</span>. Ainda não entendi bem o algoritmo, mas isso parece mais eficiente do que um merge bidimensional apenas do último snapshot local (working copy) contra os deltas do <span class="caps">HEAD</span> do servidor. Um conceito que parece importante é que o <span class="caps">GIT</span> – ao contrário de todos os outros – não rastreia arquivos, ele <strong>rastreia conteúdo</strong>. Segundo Linus Torvalds, isso é muito mais importante. Por exemplo, você consegue rastrear de onde veio uma determina linha, ou trecho: de qual arquivo ele veio, depois quem fez o “copy and paste” e para que arquivo ele foi parar. Todo o histórico. Fazer um blame nunca foi tão fácil.<br>
 <br>
 Enfim. Ao final fiz um teste mais interessante: no working copy do <span class="caps">SVN</span>, eu movi um arquivo de lugar, um básico “mv”. Isso significa:<br>
 <br>
-<macro:code><br>
-svn delete [arquivo antigo]<br>
-svn add [arquivo novo]<br>
-svn commit <del>m ""<br>
--</del>-<br>
+
+```bash
+svn delete [arquivo antigo]
+svn add [arquivo novo]
+svn commit <del>m ""
+```
+
 <br>
 No working copy do <span class="caps">GIT</span>, antes de fazer o fetch, eu peguei o <strong>mesmo arquivo</strong>, que ainda está com o nome antigo, e alterei seu conteúdo. Se fosse no <span class="caps">SVN</span>, aconteceria o seguinte: o svn up traria a ordem de deleção. Como o arquivo foi modificado ele não seria deletado. O novo arquivo viria e você acabaria com o novo e com o antigo, agora fora do repositório (marcado como “?”). <br>
 <br>
@@ -76,16 +110,21 @@ O pessoal do <a href="http://wiki.samba.org/index.php/Using_Git_for_Samba_Develo
 <br>
 E falando em merge, veja o que acontece se fizer o merge entre o branch “working”, que modifiquei nos passos acima, e o “master”:<br>
 <br>
-<macro:code><br>
-> git checkout master<br>
-> git merge <del>-squash working<br>
+
+```bash
+git checkout master
+git merge -squash working
+```
+
+```
 Updating 780040f..00e988e<br>
 Fast forward<br>
-Squash commit -</del> not updating <span class="caps">HEAD</span><br>
- init.rb | 4 <ins>-<br>
- lib/{fixes.rb => activerecord_fixes.rb} | 66 +</ins>+++++++++++++++++++—————<br>
- 2 files changed, 47 insertions(+), 23 deletions(-)<br>
-<del>-</del><br>
+Squash commit  not updating
+ init.rb | 4 
+ lib/{fixes.rb => activerecord_fixes.rb} | 66 ++++++++++++++++++++—————
+ 2 files changed, 47 insertions(+), 23 deletions(-)
+```
+
 <br>
 Notem como ele realmente entendeu que aconteceu um rename de arquivos. Também mostra quantas linhas mudaram em cada um. Ainda estou surpreso que a modificação que fiz no “fixes.rb” – do working copy do <span class="caps">GIT</span> – foi parar corretamente e automaticamente dentro do “activerecord_fixes.rb”, que foi o arquivo renomeado vindo do <span class="caps">SVN</span>. E pelo que li, se deletar um arquivo usando “rm” ele automaticamente entende que é para tirar do repositório, diferente do svn onde precisamos explicitamente usar “svn delete”, “svn mv”, etc. Para adicionar novos arquivos, é igual: “git add [arquivo]”.<br>
 <br>

@@ -14,7 +14,6 @@ O artigo explica porque a filosofia do que conhecemos hoje como “Movimento de 
 
 Desde o começo da genealogia das linguagens de programação, saltamos de linguagens de máquina (Assembly), para Fortran, Lisp, Simula, Haskell, Perl, Java, Ruby onde cada nova linguagem melhora deficiências das anteriores. É um pensamento que muitos programadores não entendem, mas deveriam, porque estão à mercê do movimento de Design Patterns, acreditando que eles são a única solução dos problemas, ou seja, que a solução é entender que o problema existe e que, infelizmente, é necessário aprender a conviver com ele, em vez de realmente resolver o problema.
 
-
 #### Design Patterns de 1972
 
 “Patterns” (padrões) que são recorrentes em uma linguagem podem ser invisíveis ou triviais em outra linguagem.
@@ -24,86 +23,88 @@ Desde o começo da genealogia das linguagens de programação, saltamos de lingu
 Programadores de C tem um pattern que poderia ser chamado “classe orientada a objeto”. Nesse pattern, um objeto é uma instância de um struct C.
 
 * * *
-ruby
 
-struct st\_employee\_object \*emp;  
--
+```c
+struct st_employee_object *emp;  
+```
 
 Ou, dado um typedef apropriado:
 
 * * *
-ruby
 
+```c
 EMPLOYEE emp;  
--
+```
 
 Alguns dos membros da struct são ponteiros de função. Se “emp” é um objeto, então podemos chamar um método do objeto procurando pelo ponteiro de função apropriado e chamando essa função:
 
 * * *
-ruby
 
-emp→method(emp, args…);  
--
+```c
+emp→method(emp, args…);
+```
 
 Cada struct define uma classe; objetos na mesma classe tem os mesmos dados como membros e suportam os mesmos métodos. Se a definição da struct é declarada em um arquivo header, o layout da estrutura pode mudar; métodos e campos podem ser adicionados e nenhum dos códigos que usam o objeto precisam saber disso.
 
 Existem diversas variações em cima disso. Por exemplo, você pode ter uma implementação opaca definindo dois arquivos header para cada classe. Uma que define a implementação:
 
 * * *
-ruby
 
-struct st\_employee\_object {  
+```c
+struct st_employee_object {  
  unsigned salary;  
- struct st\_manager\_object \*boss;  
+ struct st_manager_object *boss;  
 METHOD fire, transfer, competence;  
-};  
--
+};
+```
 
 E outra que define a interface:
 
 * * *
-ruby
 
-struct st\_employee\_object {  
- char \_\_SECRET\_MEMBER\_DATA\_DO\_NOT\_TOUCH<sup class="footnote" id="fnr4"><a href="#fn4">4</a></sup>;  
- struct st\_manager\_object \*boss;  
-METHOD fire, transfer, competence;  
+```c
+struct st_employee_object {  
+ char __SECRET_MEMBER_DATA_DO_NOT_TOUCH
+ struct st_manager_object *boss;
+METHOD fire, transfer, competence;
 };  
--
+```
 
 Então os arquivos incluem um ou outro conforme for apropriado. Aqui “boss” é um dado público mas “salary” é privado.
 
 Você consegue classes abstratas definindo uma função construtora que configura todos os métodos como NULL ou para:
 
 * * *
-ruby
 
-void \_abstract() { abort(); }  
--
+```c
+void _abstract() { abort(); }  
+```
 
 Se quiser herança, você faz uma das structs ser o prefixo de outra:
 
 * * *
-ruby
 
-struct st\_manager\_object; /\* forward declaration \*/
+```c
+struct st_manager_object; //Forward Declaration
 
-#define EMPLOYEE\_FIELDS \  
- unsigned salary; \  
- struct st\_manager\_object \*boss; \  
+#define EMPLOYEE_FIELDS
+
+ unsigned salary;
+ struct st_manager_object *boss;
 METHOD fire, transfer, competence;
 
-struct st\_employee\_object {  
- EMPLOYEE\_FIELDS  
+struct st_employee_object {
+ EMPLOYEE_FIELDS
 };
 
-struct st\_manager\_object {  
- EMPLOYEE\_FIELDS  
- unsigned num\_subordinates;  
- struct st\_employee\_object \*\*subordinate;  
-METHOD delegate\_task, send\_to\_conference;  
+struct st_manager_object {
+ EMPLOYEE_FIELDS
+ unsigned num_subordinates;
+ struct st_employee_object **subordinate;
+METHOD delegate_task, send_to_conference;
 };  
--
+
+```
 
 E se `obj` é um objeto `manager`, você ainda pode tratá-lo como um `employee` e chamar métodos de `employee` dele.
 
@@ -146,7 +147,7 @@ Em C, você precisa tomar uma decisão consciente de usar o estilo OO e implemen
 Se escavarmos para trás na história, podemos encontrar todo tipo de patterns. Por exemplo:
 
 > Problema recorrente: duas ou mais partes de uma linguagem de máquina precisam fazer a mesma operação complexa. Duplicar o código toda vez cria problemas de manutenção quando uma cópia é atualizada e a outra não.  
->   
+>
 > Solução: coloque o código dessa operação no final do programa. Reserve alguma memória extra (um “frame”) para esse uso exclusivo. Quando outro código (o “caller”, “chamador”) quiser executar essa operação, ele deve armazenar os valores correntes dos registradores da máquina, incluindo o contador do programa, no frame, e tranferir controle para a operação. A última coisa que essa operação deve fazer é restaurar os valores dos registradores a partir dos valores gravados no frame e pular de volta (jump) para a instrução exatamente depois do valor PC gravado.
 
 Essa é uma descrição no estilo de uma pattern que nós conhecemos como “sub-rotina”. Ele endereça um problema recorrente de design. Ela é um arranjo genérico de instruções de máquina para resolver um problema. E a solução é customizada e implementada para resolver o problema em um contexto em particular. Variações: “sub-rotina com passagem de parâmetros”, “chamada de sub-rotina com valor de retorno”, “sub-rotina re-entrante”.
@@ -184,4 +185,3 @@ Se o movimento de Design Patterns tivesse sido popular nos anos 80, nós nem ter
 Patterns são sinais de fraquezas nas linguagens de programação.
 
 Quando identificamos e documentamos uma, este não deve ser o fim da história. Em vez disso, nós devemos ter o objetivo de longo prazo de entender como melhorar a linguagem de tal forma que o pattern se torne invisível ou desnecessário.
-

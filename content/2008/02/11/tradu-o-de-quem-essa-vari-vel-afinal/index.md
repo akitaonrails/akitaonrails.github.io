@@ -17,7 +17,6 @@ Este [artigo](http://talklikeaduck.denhaven2.com/articles/2008/02/08/whose-varia
 
 Aqui vai a tradução:
 
-
 Quanto mais penso sobre Ruby em relação a outras linguagens orientadas a objeto com que já trabalhei, mais percebo que existe um continuum de tipagem estática vs. dinâmica.
 
 Ruby se encaixa em uma das pontas desse continuum. Entender isso pode ajudar a entender como melhor usar a linguagem. Eu recentemente dei uma rápida olhada no novo livro de Russ Olsen, [Design Patterns in Ruby](http://www.amazon.com/gp/product/0321490452?ie=UTF8&tag=denhaven2com-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=0321490452) e olhei sua seção sobre o pattern Observer. Eu acabei de postar no ruby-talk sobre esse pattern, como ele foi implementado em Smalltalk, e uma implementação mais Rubista. Chegarei nisso ao fim do artigo, mas primeiro eu sinto urgência em falar sobre variáveis de instância.
@@ -25,13 +24,14 @@ Ruby se encaixa em uma das pontas desse continuum. Entender isso pode ajudar a e
 Se virmos um tipo como uma interpretação particular de um layout de memória, eu vejo algo como isto:
 
 | **Linguagem** | **Lado de Fora** | **Lado de Dentro** |
+|--------|--------------|-------------|
 | Java | estático | estático |
 | Smalltalk | encapsulado | estático |
 | Ruby | encapsulado | dinâmico |
 
 As duas colunas representam como a parte interna do objeto se “parece” do lado de fora do objeto, e dentro do objeto (i.e. dentro de um método) respectivamente.
 
-Em Java, sujeito a modificadores de acesso, variáveis de instância, também chamadas campos, podem ser diretamente acessadas. Nenhum método de acesso é requerido. Em Smalltalk e Ruby, variáveis de instância de um objeto são apenas acessíveis quando executam um dos métodos do objeto. Embora ambas as linguagem forneçam um mecanismo para ultrapassar isso, instance\_variable\_get e instance\_variable\_set para Ruby; instVarAt: e instVarAt:put: para Smalltalk, são usados apenas em “emergências” já que eles quebram o encapsulamento do objeto.
+Em Java, sujeito a modificadores de acesso, variáveis de instância, também chamadas campos, podem ser diretamente acessadas. Nenhum método de acesso é requerido. Em Smalltalk e Ruby, variáveis de instância de um objeto são apenas acessíveis quando executam um dos métodos do objeto. Embora ambas as linguagem forneçam um mecanismo para ultrapassar isso, instance_variable_get e instance_variable_set para Ruby; instVarAt: e instVarAt:put: para Smalltalk, são usados apenas em “emergências” já que eles quebram o encapsulamento do objeto.
 
 ### Ligação de Variável de Instância Estática
 
@@ -40,19 +40,19 @@ Por estático aqui, quero dizer que o código que acessa a variável de instânc
 Esse computador pode ser um computador real, como um processador Intel ou um computador virtual na forma de software implementando uma máquina virtual ou interpretador. No caso de uma máquina real ou virtual, existe um conjunto de instruções que dá o repertório da máquina. O programa é executado movendo passo-a-passo, instrução por instrução. Agora, se tivermos uma simples expressão em C como:
 
 * * *
-C
 
-int a = b;  
--
+```C
+int a = b; 
+```
 
 Então a seqüência de instruções para um computador imaginário poderia ser como:
 
 * * *
-assembler
 
+```asm
 load reg2, 20(reg1)  
-store reg2, 40(reg1)  
--
+store reg2, 40(reg1)
+```
 
 Que carrega o segundo registrador da máquina a partir de uma palavra que está no endereço 20 bytes depois do endereço contido no registrador 1 da máquina, e então armazena esse valor em outro offset de palavra de 40 bytes a partir do registrador 1. Aqui a e b devem ser variáveis locais temporárias, e eu decidi que meu compilador está usando o registrador 1 para apontar ao quadro de pilha de ativação corrente. Esses números mágicos, 20 e 40 são computados pelo compilador como parte de sua função de mapear variáveis a locais de memória.
 
@@ -71,22 +71,20 @@ Agora vamos olhar a um código similar em Smalltalk. Nesse artigo, estou usando 
 Digamos que a e b aqui são variáveis de instância. O bytecode para o Smalltalk
 
 * * *
-smalltalk
 
+```smalltalk
 a := b  
--
+```
 
 se pareceriam com algo assim:
 
-<macro:code>
-<p>push_iv_4 # empurra a variável de instância</p>
-<ol>
-	<li>nr. 4 para a pilha<br>
-store_and_pop_iv_6 # armazena o topo da pilha na</li>
-	<li>variável de instância nr. 6<br>
-<del>-</del>
-</li>
-</ol>
+```
+push_iv_4 # empurra a variável de instância
+nr. 4 para a pilha
+store_and_pop_iv_6 # armazena o topo da pilha na
+variável de instância nr. 6
+```
+
 <p>Em Smalltalk, esses números de índice mágicos usados para acessar variáveis de instância são determinados quando a definição de classe é salva. Nesse caso “b” acaba sendo a 4a. variável de instância, e “a” a 6a. Bytecodes Smalltalk são otimizados para objetos pequenos, as primeiras 16 variáveis de instância podem ser todas empurradas ou puxadas com uma única instrução de um byte, e se um objeto tem mais do que 16 variáveis de instância então eles precisam ser acessados através de uma instrução push ou store extendidas, que permite acessar até 64 variáveis de instância.</p>
 <p>Em Smalltalk, embora variáveis de instância não sejam <strong>tipadas</strong>, elas são <strong>declaradas</strong> em uma mensagem de definição de classe executada quando a definição é salva. Toda vez que uma definição de classe é salva, os índices para as variáveis de instância dessa classe, e de qualquer sub-classe são (re)computadas, e quaisquer métodos na classe e sub-classes são recompilados para ajustar os offsets. As variáveis de instância definidas na classe mais ao topo recebem os primeiros n offsets, cada sub-classe imediata recebem offsets seqüenciais começando com a próxima disponível, e assim por diante.</p>
 <p>Isso é porque eu disse acima que dentro de um objeto Smalltalk, ou seja, dentro de seus métodos, o objeto é mapeado estaticamente. Mudar a definição das variáveis de instância requerem recompilação para evitar “erros de tipos” nos métodos.</p>
@@ -94,23 +92,27 @@ store_and_pop_iv_6 # armazena o topo da pilha na</li>
 <h3>Ligação de Campo de Java</h3>
 <p>Em Java, offsets não são compilados diretamente nos bytecodes, existe um nível de indireção. Peter Haggar, com quem trabalhei na <span class="caps">IBM</span> escreveu um <a href="http://www.ibm.com/developerworks/ibm/library/it-haggar_bytecode/">artigo sobre bytecodes Java</a> na developerWorks. Espero que ele não se incomode se eu pegar emprestado um de seus exemplos. Aqui vai um simples método de acesso:</p>
 <hr>
-java
-<p>public String employeeName() {<br>
-	return name;<br>
-}<br>
-<del>-</del></p>
+
+```java
+public String employeeName() {
+ return name;<br>
+}
+```
+
 <p>E os bytecodes resultantes. (O 0, 1 e 4 são offsets a partir do começo do método)</p>
 <hr>
-assembler
-<p>Method java.lang.String employeeName()<br>
-0 aload_0<br>
-1 getfield #5 <field java.lang.string name><br>
-4 areturn<br>
-<del>-</del></field></p>
+
+```asm
+Method java.lang.String employeeName()
+0 aload_0
+1 getfield #5 <field java.lang.string name>
+4 areturn
+```
+
 <p>O que esse código faz primeiro é empurrar a referência do objeto corrente <strong>this</strong>, para a pilha. Então a instrução getfield usa seu operando para substituir os dois ítems mais ao topo da pilha com o valor do campo. Então esses dois bytecodes (na realidade 3 bytes no total) são mais ou menos equivalentes ao bytecode push_iv do Smalltalk, com apenas duas diferenças:</p>
 <ol>
-	<li>O opcode push_iv do Smalltalk implicitamente usa o receptor do método corrente, ao passo que o opcode getfield precisa de outro argumento referenciando o objeto que tem a variável de instância sendo acessada</li>
-	<li>No Smalltalk o argumento identificando a variável é um índice inteiro, mas em Java o argumento é na realidade uma referência a um descritor de campo associado com a classe do objeto cuja variável de instância está sendo referenciada.</li>
+ <li>O opcode push_iv do Smalltalk implicitamente usa o receptor do método corrente, ao passo que o opcode getfield precisa de outro argumento referenciando o objeto que tem a variável de instância sendo acessada</li>
+ <li>No Smalltalk o argumento identificando a variável é um índice inteiro, mas em Java o argumento é na realidade uma referência a um descritor de campo associado com a classe do objeto cuja variável de instância está sendo referenciada.</li>
 </ol>
 <p>A primeira diferença é porque em Java, ao contrário de Smalltalk, você pode diretamente ler e escrever (get e set) campos públicos fora dos métodos do objeto, então já que o objeto em questão não está implícito, ele precisa ser especificado.</p>
 <p>A segunda diferença é permitir uma compilação separada. A especificação da <span class="caps">JVM</span> não dita como campos são mapeados dentro de objetos, mas a abstração é permitir que esse mapeamento seja ajustado no momento em que classes são carregadas. Se uma sub-classe é compilada separadamente de sua superclasse, ele pode receber uma nova posição de início para seus campos toda vez que é carregada se sua superclasse adicionou ou removeu campos.</p>
@@ -130,11 +132,12 @@ assembler
 <p>O problema com essa implementação padrão é que uma vez que um objeto ganha um dependente, o objeto e seus objetos dependentes estão permanentemente acessíveis e, portanto, inelegíveis para garbage collection, a menos que a dependência seja explicitamente removida. Como resultado disso, as classes da maioria dos objetos que realmente <strong>tem</strong> dependentes reimplementam os métodos padrão para se referir a coleções de dependentes via um valor de instância no objeto com dependentes. Squeak, por exemplo, fornece uma subclasse de objetos chamada Model que fornece esse tipo de implementação amigável a GC.</p>
 <p>O que me leva à implementação do pattern observer em Ruby. Em sua discussão desse pattern em seu livro, Russ Olsen fornece um módulo que pode ser misturado (mixed) em um objeto para permitir que ele tenha dependentes:</p>
 <hr>
-ruby
-<p>module Subject<br>
-  def initialize<br>
-    @observers = []<br>
-  end</p>
+
+```ruby
+module Subject
+  def initialize
+    @observers = []
+  end
 def add_observer(&observer)
 @observers << observer
 end
@@ -146,16 +149,18 @@ def notify_observers
 observer.call(self)
 end
 end
-<p>end<br>
-<del>-</del></p>
+end
+  ```
+
 <p>Esse é um bom exemplo do pattern em Ruby, onde os Observers podem ser blocos, ou qualquer objeto que responda ao método ‘call’ e que leve o Subject como seu argumento.</p>
 <p>Pouco antes de ver o livro, como resultado da conversa sobre GC, eu escrevi minha própria variação disso, que deixa qualquer objeto ser um subject, abrindo a classe Object:</p>
 <hr>
-ruby
-<p>class Object<br>
-    def add_observer(&observer)<br>
-      (@observers ||= []) << observer<br>
-    end</p>
+
+```ruby
+class Object
+    def add_observer(&observer)
+      (@observers ||= []) << observer
+    end
 def delete_observer(observer)
 observers.delete(observer)
 end
@@ -168,8 +173,9 @@ private
 def observers
 @observers || []
 end
-<p>end<br>
-<del>-</del></p>
+end
+```
+
 <p>Por causa do fato que Ruby apenas adiciona variáveis de instância <em>on the fly</em> quando necessário, ganhamos o benefício de suporte universal a objetos serem Subjects sem requerer uma variável de instância de observers para os objetos que não precisam disso. O único custo é a potencial colisão de namespace para os quatro nomes de métodos.</p>
 <h3>Outro uso de variáveis de instância dinâmicas</h3>
 <p>Recentemente escrevi um <a href="http://www.infoq.com/news/2008/01/rails-resource-controller">artigo para a InfoQ</a> sobre <a href="http://jamesgolick.com/resource_controller">o plugin resource_controller de James Golick para Rails</a> que lhe permite escrever controllers de Rails para recursos Restful que podem automaticamente se adaptar a uso em diferentes contextos de aninhamento de recursos. Esse plugin faz bom uso da natureza dinâmica das variáveis de instância do Ruby, automaticamente definindo diferentes variáveis de instância no controller para corresponder ao recurso final e cada um de seus recursos pais.</p>
