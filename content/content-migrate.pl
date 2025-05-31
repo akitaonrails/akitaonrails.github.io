@@ -14,7 +14,7 @@ sub main {
         my $content = read_file($file);
         next unless defined $content;
 
-        my ($new_content, $count) = convert_iframes_to_shortcode($content);
+        my ($new_content, $count) = convert_content($content);
 
         if ($count > 0) {
             print "[", $dry_run ? "DRY RUN" : "APPLY", "] Converting $count embed(s) in $file\n";
@@ -53,10 +53,19 @@ sub collect_markdown_files {
     return @result;
 }
 
-sub convert_iframes_to_shortcode {
+sub convert_content {
     my ($content) = @_;
     my $count = 0;
 
+    # Convert \_ to _
+    my $slash_underscore_count = ($content =~ s{\\_}{_}g);
+    $count += $slash_underscore_count;
+    
+    # Convert \* to *
+    my $slash_pointers_count = ($content =~ s{\\\*}{*}g);
+    $count += $slash_pointers_count;
+    
+    # Convert iframe to {{ <youtube> }} to standalize
     my $modified = $content =~ s{
         <iframe[^>]*src=["']https?://(?:www\.)?youtube\.com/embed/([^?"']+)(?:\?([^"']*))?["'][^>]*>\s*</iframe>
     }{
@@ -65,8 +74,11 @@ sub convert_iframes_to_shortcode {
         "{{< youtube id=\"$id\" >}}"
     }egix ? $content : undef;
 
-    return defined $modified ? ($content, $count) : (undef, 0);
+
+    return ($content, $count);
 }
+
+
 
 sub read_file {
     my ($path) = @_;
