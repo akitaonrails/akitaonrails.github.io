@@ -68,7 +68,8 @@ O canal do [Ben Vallack](https://www.youtube.com/@BenVallack) explica melhor iss
 
 Portanto sim, se pra você o tamanho e o preço não importam, este é de longe o teclado mais customizável, ergonômico e de melhor qualidade possível. Muitos vem me perguntar de modelos como o Kinesis - que também é gigante - mas eu prefiro o Moonlander, nessa categoria. Se formato do Kinesis, em particular, for importante, no final vou falar dele rapidinho.
 
-<a name="layouts-qmk" />
+<a name="layouts-qmk"></a>
+
 ## Layouts e QMK
 
 Mas o Moonlander tem um problema praqueles que querem mesmo cruzar a linha da ergonomia extrema: digitar sem tirar os dedos da "home row" a linha do meio, onde ficam as teclas "F" e "J". O ideal é ter apenas 3 linhas, uma linha pra cima e outra pra baixo da "home row", mas o Moonlander tem 2 linhas acima e 2 linhas abaixo, além de dois thumb-clusters enormes de 4 teclas cada, o que garante que, se tentar usar todas as teclas, vai acabar movendo a mão pra cima e pra baixo mais do que deveria, perdendo o ritmo e velocidade e, principalmente, a ergonomia.
@@ -103,7 +104,8 @@ Existem dezenas de sugestões de outros layouts, mas leve em consideração que 
 
 O problema é que precisa ter a mente aberta. Aceite que sua memória de teclados convencionais vai ser inutilizada e vai precisar treinar do zero. Então, em vez de tentar colocar teclas onde já está acostumado, pense em mudar pra onde faz mais sentido pro seu workflow. Por exemplo, alguém de data science ou contabilidade, pode querer colocar as teclas numéricas no formato de calculadora, como num teclado convencional grande, e isso pode ser feito numa das camadas extras. Eu tinha uma camada virtual somente com combinações de teclas pra Da Vinci Resolve, pra acelerar meu workflow de editar videos. O mesmo pode ser feito pra programar específicos como Photoshop ou Premiere.
 
-<a name="treinamento" />
+<a name="treinamento"></a>
+
 ## Treinamento
 
 Pra aprender, não tem outro jeito, precisa treinar, horas e horas, dias e dias. Ajustar as teclas em cada camada não é uma coisa que se faz uma só vez. É um processo. Você muda, começa a treinar e vê se realmente está numa posição adequada. Se não estiver, muda, regrava o firmware, e treina mais algumas horas. Até ficar bom pras suas mãos. Esse processo leva dias. Não tente só copiar layouts de outras pessoas. Use de inspiração, mas pense no seu uso particular.
@@ -142,7 +144,8 @@ Finalmente, existem vários jogos gratuitos pra navegador, em javascript, pra tr
 
 **Epistory** é bem bonitinho, uma aventura pra relaxar, dá pra crianças jogarem de boa e vai servir pra incentivar a aprender a digitar direito. Já o **The Typing of the Dead Overkill** é um clássico que tinha nos arcades japoneses (e tinha teclado no arcade!!) e teve versão pra Dreamcast, com um teclado pro console, feito pela Sega e agora dá pra jogar no seu PC. É levinho e divertido e tem muito gore, então não é pra todo mundo. Ambos são baratinhos, por isso recomendo.
 
-<a name="solucoes-diy" />
+<a name="solucoes-diy"></a>
+
 ## Soluções DIY
 
 Infelizmente, teclados ortolineares, colunares, mecânicos no geral, são muito caros. Por isso já explico: não, usar um teclado desses não vai fazer ninguém digitar 10 vezes mais rápido, nem nada disso. É uma opção de conforto, você tem que se importar com isso pra investir. Se pra você um tecladinho genérico da Multilaser já atende, e não sente vontade de mudar, tá ótimo. Continue lendo só pra saber que existem opções, mas não se sinta mal por não estar mudando hoje. Quem sabe mais pra frente.
@@ -219,7 +222,8 @@ Olha essa que o Felipe montou pra mim, com case feito em impressora 3D, bem mais
 
 Essa Hillside, na verdade, tinha vindo com as teclas low profile pretas. A minha de antes era que estavam com as teclas brancas low profile Choc, mas fiquei trocando pra experimentar (maus Felipe!! kkkk). Na real, esse conjunto de teclas brancas são as que mais gosto. Note o case mais "lean" roxo que o Felipe fez pra esse board, e o principal, o botão giratório rotary. Dá pra programar pra muita coisa, no momento é só volume, mas acho que dá pra customizar em apps como Photoshop ou edição de video e coisas assim. Eu mesmo não cheguei a tentar, mas pra quem tem essa necessidade, é uma ótima opção.
 
-<a name="ortolineares-gk6" />
+<a name="ortolineares-gk6"></a>
+
 ## Ortolineares - GK6
 
 Moonlander, Corne, Hillside e outros são todos teclados colunares, staggered, e split. Eu recomendo fortemente acostumar a usar split. Primeiro porque não precisa aproximar as duas mãos, elas podem ficar afastadas, que é o mais natural.
@@ -264,7 +268,8 @@ O maior problema do GK6 é que sempre está fora de estoque, e o preço é bem s
 
 Sério, olha essa foto, a traseira deste teclado é mais bonita do que a frente da grande maioria dos teclados comerciais. Isso é unibody de alumínio com o nome do teclado esculpido em relevo baixo.
 
-<a name="ortolineares-q15" />
+<a name="ortolineares-q15"></a>
+
 ## Ortolineares - Q15
 
 Mas se não tem paciência e tem dinheiro sobrando, sempre tem a opção da **Keychron**, que se estabelece com a marca de teclados com a maior variedade de todas. Pense num estilo, eles tem. De todos os tamanhos, de todas as qualidades, mas todos muito caros. Pelo menos, sempre costuma ter estoque.
@@ -303,7 +308,8 @@ Ouviram o barulho do peso do Q15 no chão? E conseguem entender a diferença nos
 
 O exemplo acima é do próprio site da Keychron, mostrando como eles tem um aplicativo visual pra editar os layouts, parecido com o Oryx da ZSA também. Apesar de ser bom ter a liberdade de fazer o que quiser no nível da linguagem C com o QMK, pra teclados, eu realmente prefiro que exista uma opção visual assim. Nem todo mundo que vai comprar é programador e vai saber configurar terminal, python, git, etc. O ideal é ter as duas opções, mas o default ser plug-and-play, só plugar na USB, o aplicativo sobe o firmware e já era.
 
-<a name="voyager" />
+<a name="voyager"></a>
+
 ## Meu Melhor Teclado - Voyager
 
 
@@ -382,7 +388,7 @@ Essa é uma opção que me vejo usando. E tem [mais opções](https://www.reddit
 
 Esta é minha mesa em Outubro de 2024 e como tem sido por pelo menos 1 ano. Eu troco por outros teclados pra testar, mas sempre acabo voltando nesta configuração, por tudo que já expliquei antes. Eu uso o mouse na mão esquerda (porque minha mão direita dói mais, então me acostumei a usar com a esquerda pra doer os dois igual kkkk). Tenho um Apple Touchpad na direita pra coisas que exigem "scrolling" (dói muito menos do que "scroll-wheel" de mouse). E note como uso as duas metades do teclado bem afastados. Essa é uma distância boa, mas dá pra abrir bem mais se quiser.
 
-<a name="pulso" />
+<a name="pulso"></a>
 
 ## Ortolinear vs Colunar
 
@@ -401,7 +407,9 @@ Se a intenção for construir um teclado monolito pelo fato de ser mais fácil d
 ![Voyager, afastado](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/rpe3wdfjduwim2aihulb2pf8sb4h)
 
 Claro, o ideal é split: duas metades que podem ser afastadas. Assim seus braços podem permanecer numa posição natural, reta, sem precisar dobrar nada, sem fazer esforço desnecessário. Isso permite ficar horas digitando sentindo pouca ou nenhuma dor. Se somar a um suporte embaixo, pra elevar o meio do teclado, criando tenting, aí sim, os braços ficam na posição mais neutra possível. E é por isso que eu prefiro este tipo de teclado: **split-colunar-staggered**.
-<a name="framework" />
+
+<a name="framework"></a>
+
 ## O Futuro - Framework
 
 Este artigo foi só porque eu estava com esses teclados parados aqui. E não, não adianta mandar no comentário pra sortear, vender, nem nada disso. São parte da minha coleção, eu deixo na minha prateleira porque acho bonito e posso usar quando der na telha. Não vou me desfazer de nenhum. Não insistam!
