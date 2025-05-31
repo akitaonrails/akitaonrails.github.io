@@ -24,93 +24,93 @@ Eu frequentemente penso sobre implementar um interpretador Lisp, mas antigamente
 
 Mas enquanto eu revia a página, percebi que com as linguagens modernas de hoje eu provavelmente poderia simplesmente converter as estranhas Expressões-M usadas na página 13 diretamente em código. Então … por que não?
 
-
 ### O Código
 
 Aqui vai o código fonte completo em Ruby do interpretador Lisp da página 13 do manual do programador de Lisp:
 
 * * *
-ruby
 
+```ruby
 class Object  
- def lisp\_string  
- to\_s  
+ def lisp_string  
+ to_s  
  end  
 end
 
 class NilClass  
- def lisp\_string  
+ def lisp_string  
  “nil”   
  end  
 end
 
 class Array
 
-1. Convert an Array into an S-expression
-2. (i.e. linked list).
-3. Subarrays are converted as well.  
+#1. Convert an Array into an S-expression
+#2. (i.e. linked list).
+#3. Subarrays are converted as well.  
  def sexp  
  result = nil  
  reverse.each do |item|  
- item = item.sexp if item.respond\_to?(:sexp)  
+ item = item.sexp if item.respond_to?(:sexp)  
  result = cons(item, result)  
  end  
  result  
  end  
 end
 
-1. The Basic Lisp Cons cell data structures.
-2. Cons cells consist of a head and a tail.  
+#1. The Basic Lisp Cons cell data structures.
+#2. Cons cells consist of a head and a tail.  
 class Cons  
- attr\_reader :head, :tail
+ attr_reader :head, :tail
 
-def initialize(head, tail) @head, @tail = head, tail end def (other) return false unless other.class Cons return true if self.object\_id other.object\_id return car(self) car(other) && cdr(self) == cdr(other) end
-1. Convert the lisp expression to a string.  
- def lisp\_string  
+def initialize(head, tail) @head, @tail = head, tail end def (other) return false unless other.class Cons return true if self.object_id other.object_id return car(self) car(other) && cdr(self) == cdr(other) end
+
+#1. Convert the lisp expression to a string.  
+ def lisp_string  
  e = self  
- result = “(”   
+ result = “(”
  while e  
  if e.class != Cons  
- result \<\< ”. ” \<\< e.lisp\_string  
+ result << ”. ” << e.lisp_string  
  e = nil  
  else  
- result \<\< car(e).lisp\_string  
+ result << car(e).lisp_string  
  e = cdr(e)  
- result \<\< ” ” if e  
+ result << ” ” if e  
  end  
  end  
- result \<\< “)”   
+ result << “)”
  result  
  end  
 end
 
-1. Lisp Primitive Functions.
+#1. Lisp Primitive Functions.
 
-1. It is an atom if it is not a cons cell.  
+#1. It is an atom if it is not a cons cell.  
 def atom?(a)  
  a.class != Cons  
 end
 
-1. Get the head of a list.  
+#1. Get the head of a list.  
 def car(e)  
  e.head  
 end
 
-1. Get the tail of a list.  
+#1. Get the tail of a list.  
 def cdr(e)  
  e.tail  
 end
 
-1. Construct a new list from a head and a tail.  
+#1. Construct a new list from a head and a tail.  
 def cons(h,t)  
  Cons.new(h,t)  
 end
 
-1. Here is the guts of the Lisp interpreter.
-2. Apply and eval work together to interpret
-3. the S-expression. These definitions are taken
-4. directly from page 13 of the Lisp 1.5
-5. Programmer’s Manual.
+#1. Here is the guts of the Lisp interpreter.
+#2. Apply and eval work together to interpret
+#3. the S-expression. These definitions are taken
+#4. directly from page 13 of the Lisp 1.5
+#5. Programmer’s Manual.
 
 def apply(fn, x, a)  
  if atom?(fn)  
@@ -126,7 +126,7 @@ def apply(fn, x, a)
  elsif car(fn) :lambda  
  eval(caddr(fn), pairlis(cadr(fn), x, a))  
  elsif car(fn) :label  
- apply(caddr(fn), x,   
+ apply(caddr(fn), x,
  cons(cons(cadr(fn), caddr(fn)), a))  
  end  
 end
@@ -147,10 +147,10 @@ def eval(e,a)
  end  
 end
 
-1. And now some utility functions used
-2. by apply and eval. These are
-3. also given in the Lisp 1.5
-4. Programmer’s Manual.
+#1. And now some utility functions used
+#2. by apply and eval. These are
+#3. also given in the Lisp 1.5
+#4. Programmer’s Manual.
 
 def evcon(c,a)  
  if eval(caar©, a)  
@@ -170,7 +170,7 @@ end
 
 def assoc(a, e)  
  if e.nil?  
- fail “#{a.inspect} not bound”   
+ fail “#{a.inspect} not bound”
  elsif a caar(e)  
  car(e)  
  else  
@@ -187,7 +187,7 @@ def pairlis(vars, vals, a)
  a  
 end
 
-1. Handy lisp utility functions built on car and cdr.
+#1. Handy lisp utility functions built on car and cdr.
 
 def caar(e)  
  car(car(e))  
@@ -208,7 +208,7 @@ end
 def cadar(e)  
  car(cdr(car(e)))  
 end  
--
+```
 
 ### O Exemplo
 
@@ -217,52 +217,57 @@ E para provar, aqui vai um exemplo de programa em Lisp. Eu não me incomodei em 
 Aqui vai o programa ruby usando o interpretador Lisp. O sistema Lisp é muito primitivo. A única maneira de definir uma função necessária é colocá-la em uma estrutura de ambiente, que é simplesmente uma lista de associação de chaves e valores.
 
 * * *
-ruby
+
+```ruby
 
 require ‘lisp’
 
-1. Create an environment where
-2. the reverse, rev\_shift and null
-3. functions are bound to an
-4. appropriate identifier.
+#1. Create an environment where
+#2. the reverse, rev_shift and null
+#3. functions are bound to an
+#4. appropriate identifier.
 
 env = [  
- cons(:rev\_shift,  
+ cons(:rev_shift,  
  [:lambda, [:list, :result],  
  [:cond,  
  [[:null, :list], :result],  
- [:t, [:rev\_shift, [:cdr, :list],  
+ [:t, [:rev_shift, [:cdr, :list],  
  [:cons, [:car, :list], :result]]]]].sexp),  
  cons(:reverse,  
- [:lambda, [:list], [:rev\_shift, :list, nil]].sexp),  
+ [:lambda, [:list], [:rev_shift, :list, nil]].sexp),  
  cons(:null, [:lambda, [:e], [:eq, :e, nil]].sexp),  
- cons(:t, true),   
+ cons(:t, true),
  cons(nil, nil)  
 ].sexp
 
-1. Evaluate an S-Expression and print the result
+#1. Evaluate an S-Expression and print the result
 
 exp = [:reverse, [:quote, [:a, :b, :c, :d, :e]]].sexp
 
-puts “EVAL: #{exp.lisp\_string}”   
-puts " =\> #{eval(exp,env).lisp\_string}"  
--
+puts “EVAL: #{exp.lisp_string}”
+puts " =\> #{eval(exp,env).lisp_string}"  
+```
 
 O programa imprime:
 
-<macro:code>
 <p>$ ruby reverse.rb<br>
-<span class="caps">EVAL</span>: (reverse (quote (a b c d e)))<br>
+<span class="caps">EVAL</span>:
+
+```ruby
+  (reverse (quote (a b c d e)))<br>
   => (e d c b a)<br>
-<del>-</del></p>
+```
+
 <p>Tudo que preciso fazer é escrever um parser Lisp e um <span class="caps">REPL</span>, e pronto!</p>
 <h3>O Exemplo em Notação Padrão Lisp</h3>
 <p>Se achou o código Lisp “rubizado” difícil de ler, aqui vai a função reversa escrita em uma maneira mais “lispeira”:</p>
 <hr>
-lisp
-<p>(defun reverse (list)<br>
-  (rev-shift list nil))</p>
-<p>(defun rev-shift (list result)<br>
-  (cond ((null list) result)<br>
-        (t (rev-shift (cdr list) (cons (car list) result))) ))<br>
-<del>-</del></p></macro:code>
+
+```lisp
+(defun reverse (list)
+  (rev-shift list nil))
+(defun rev-shift (list result)
+  (cond ((null list) result)
+        (t (rev-shift (cdr list) (cons (car list) result))) ))
+```

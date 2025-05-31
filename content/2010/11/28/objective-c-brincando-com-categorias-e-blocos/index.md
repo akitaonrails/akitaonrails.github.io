@@ -15,16 +15,16 @@ Continuando meus estudos com Objective-C, existem algumas funcionalidades que me
 Para facilitar, vamos ver um código Ruby para dar um exemplo do que quero fazer:
 
 * * *
-ruby
 
+```ruby
 class Array  
- def each\_element  
+ def each_element  
  for elem in self  
  yield(elem)  
  end  
  end  
 end  
--
+```
 
 Sabemos que em Ruby, todas as classes podem ser abertas e extendidas, incluindo classes padrão da linguagem como Array ou String. Isso permite extender a própria linguagem e é o que o pacote ActiveSupport do Rails faz, ao adicionar métodos como <tt>#days</tt> à classe <tt>Fixnum</tt>, permitindo operações como <tt>2.days – 1.day</tt>, por exemplo.
 
@@ -33,18 +33,18 @@ Em linguagens como Java isso não é possível porque as classes são fechadas, 
 No exemplo acima, reabri a classe padrão <tt>Array</tt> do Ruby e fiz minha própria versão do método <tt>each</tt>, que já existe, chamando-o de <tt>each_element</tt> somente com objetivos didáticos para este artigo. Agora podemos pegar um array normal e chamar esse método nele:
 
 * * *
-ruby
+
+```ruby
 
 list = [“a”, “b”, “c”]  
-list.each\_element do |elem|  
+list.each_element do |elem|  
  puts elem  
-end  
--
+end
+  ```
 
 Mais do que extender classes, o Ruby possui outra funcionalidade muito flexível chamada blocos ou closures/fechamentos (eu já escrevi sobre [blocos e closures](http://rubylearning.com/blog/2007/11/30/akitaonrails-on-anatomy-of-ruby-blocksclosures/) antes pra RubyLearning. Sugiro ler para entender o conceito)
 
 Essas são duas funcionalidades que muitos poderiam imaginar que só seriam possíveis em linguagens altamente dinâmicas como Ruby, Python ou Smalltalk. Já Objective-C é uma extensão da linguagem C, algo considerado por muitos como tão baixo nível que nem se imaginariam ser possível. Será?
-
 
 ## Categorias
 
@@ -55,34 +55,35 @@ Na minha interpretação o Obj-C, assim como Ruby, são linguagens orientadas a 
 Uma convenção de nomenclatura que podemos usar é criar o arquivo header e a implementação usando o nome da classe a ser extendida, o símbolo “+”, e o nome da Categoria que queremos implementar. Por exemplo, digamos que eu queira a mesma funcionalidade do método <tt>each</tt> de Array do Ruby no equivalente <tt>NSArray</tt> do Obj-C, podemos fazer assim:
 
 * * *
-C
 
+```objc
 // NSArray+functional.h  
 @interface NSArray (functional)
 
 - (void) each:(void (^) (id))block;
 
-@end  
--
+@end
+```
 
 E a implementação seria:
 
 * * *
-C
 
+```objc
 // NSArray+functional.m
 
-#import “NSArray+functional.h”
+# import “NSArray+functional.h”
 
 @implementation NSArray (functional)  
+
 - (void) each:(void (^) (id))block {  
  int i;  
- for (i = 0; i \< [self count]; i ++) {  
+ for (i = 0; i < [self count]; i ++) {  
  block([self objectAtIndex:i]);  
  }  
 }  
 @end  
--
+```
 
 A sintaxe é exatamente a mesma se estivéssemos definindo uma nova classe, mas neste caso declaramos o mesmo nome da classe que já existe <tt>NSArray</tt> e entre parênteses colocamos o nome da nossa categoria que, neste caso, chamei arbitrariamente de “functional” para ter diversos métodos funcionais.
 
@@ -99,18 +100,17 @@ O parâmetro que implementamos é <tt>(void (^) (id))block</tt>. “block” é 
 E como podemos usar essa nova categoria com o novo método? Vejamos:
 
 * * *
-C
 
-#import “NSArray+functional.h”
+```objc
+# import “NSArray+functional.h”
 
-- (IBAction) foo:(id)sender {   
- NSMutableArray \*list = [NSMutableArray arrayWithObjects:`"a", @"b", @"c", nil];
-  NSString *msg = @"elemento: %`";  
+- (IBAction) foo:(id)sender {
+ NSMutableArray *list = [NSMutableArray arrayWithObjects:";  
  [list each:^(id obj) {  
- NSLog(msg, obj);   
+ NSLog(msg, obj);
  }];  
 }  
--
+```
 
 No caso, faça de conta que estamos numa aplicação de iPhone ou Mac, por isso criei um método que retorna <tt>IBAction</tt>. Para quem não sabe, <tt>IBAction</tt> é a mesma coisa que <tt>void</tt>, ou seja, que o método não retorna nada. A diferença é que o Interface Builder reconhece métodos que retornam <tt>IBAction</tt> como métodos que podem ser ligados diretamente a ações de um elemento visual na tela, por exemplo.
 
@@ -123,24 +123,26 @@ Note que dentro do bloco o <tt>NSLog</tt> está usando a string <tt>msg</tt> que
 Em Ruby, eu posso capturar um bloco em uma variável, assim:
 
 * * *
-ruby
+
+```ruby
 
 bloco = lambda { |a| puts a }  
 bloco.call(“bla”)
 
-1. =\> “bla”  
--
+1. => “bla”  
+
+```
 
 No exemplo acima, criamos um bloco e em seguida executamos esse bloco usando o método <tt>call</tt>. Em Obj-C podemos fazer algo similar assim:
 
 * * *
-C
 
-void (^bloco)(NSString\*) = ^(NSString\* msg) {  
+```objc
+void (^bloco)(NSString*) = ^(NSString* msg) {  
  NSLog(msg);  
 };  
 bloco(@"bla");  
--
+```
 
 Veja que é muito parecido só que precisamos declarar os tipos. Na primeira linha definimos uma variável do tipo bloco, com o nome de “bloco” (o nome vem logo depois do “^”). Antes do nome temos o tipo de retorno, <tt>void</tt>, e depois o tipo do parâmetro que ele aceita, ponteiro de <tt>NSString</tt>. Daí criamos o bloco propriamente dito.
 
@@ -154,4 +156,3 @@ Para aprender mais sobre blocos, recomendo ler:
 
 - [Using Blocks in iOS 4: The Basics](http://pragmaticstudio.com/blog/2010/7/28/ios4-blocks-1)
 - [Using Blocks in iOS 4: Designing with Blocks](http://pragmaticstudio.com/blog/2010/9/15/ios4-blocks-2)
-

@@ -1,7 +1,7 @@
 ---
 title: "[Objective-C] It's a Unix System! I know this!"
 date: '2011-04-23T22:47:00-03:00'
-slug: objective-c-it's-a-unix-system-i-know-this
+slug: objective-c-its-a-unix-system-i-know-this
 tags:
 - learning
 - beginner
@@ -18,51 +18,53 @@ The Cocoa framework has both implemented as [NSDateFormatter](http://developer.a
 You can format dates like this:
 
 * * *
-C
 
-NSDateFormatter \*dateFormatter = [[NSDateFormatter alloc] init];  
+```objc
+NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];  
 [dateFormatter setDateStyle:NSDateFormatterMediumStyle];  
 [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
 
-NSDate \*date = [NSDate dateWithTimeIntervalSinceReferenceDate:162000];
+NSDate *date = [NSDate dateWithTimeIntervalSinceReferenceDate:162000];
 
-NSString \*formattedDateString = [dateFormatter stringFromDate:date];  
+NSString *formattedDateString = [dateFormatter stringFromDate:date];  
 NSLog(`"formattedDateString: %`", formattedDateString);  
-// Output for locale en\_US: “formattedDateString: Jan 2, 2001”  
--
+// Output for locale en_US: “formattedDateString: Jan 2, 2001”  
+```
 
 And you can use Regular Expressions like this:
 
 * * *
-C
 
-NSError \*error = NULL;  
-NSRegularExpression \*regex = [NSRegularExpression regularExpressionWithPattern:@"\\b(a|b)(c|d)\\b"   
+```objc
+
+NSError *error = NULL;  
+NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"\\b(a|b)(c|d)\\b"
  options:NSRegularExpressionCaseInsensitive  
  error:&error];
 
 NSUInteger numberOfMatches = [regex numberOfMatchesInString:string  
  options:0  
  range:NSMakeRange(0, [string length])];  
--
+```
 
 But I have issues with both of these. The Ruby equivalent for the date formatting example would be:
 
 * * *
-ruby
 
+```ruby
 require ‘activesupport’  
 date = Time.parse(“2001-01-01”) + 162000.seconds  
 date.strftime(“%b %d, %Y”)  
--
+```
 
 And the regular expression example would be like this:
 
 * * *
-ruby
 
-number\_of\_matches = /\W\*[a|b][c|d]\W\*/.match(string).size  
--
+```ruby
+
+number_of_matches = /\W*[a|b][c|d]\W*/.match(string).size  
+```
 
 There are 2 specific things that annoys me:
 
@@ -74,28 +76,34 @@ So, the ideal solution for me would be:
 - to have higher level versions of those features;
 - to have C-compatible strftime date formatting and Ruby 1.9’s Oniguruma level regular expressions.
 
-
-## It’s a Unix System!
+## It’s a Unix System
 
 That’s when the obvious thing came to me: Objective-C is nothing more than a superset of C, so anything that is compatible with C is automatically compatible with Objective-C. More than that, the **iOS is a Unix System**! Meaning that it has all the goodies of Posix support.
 
-http://www.youtube.com/embed/dFUlAQZB9Ng
+<http://www.youtube.com/embed/dFUlAQZB9Ng>
 
 So, how do I get [C-compatible](http://www.cplusplus.com/reference/clibrary/ctime/strftime/) strftime? Easy:
 
 * * *
 C
 
-#import “time.h”  
+```objc
+# import “time.h”  
+
 …  
-- (NSString\*) toFormattedString:(NSString\*)format {  
- time\_t unixTime = (time\_t) [self timeIntervalSince1970];  
+
+- (NSString*) toFormattedString:(NSString*)format {  
+ time_t unixTime = (time_t) [self timeIntervalSince1970];  
  struct tm timeStruct;  
- localtime\_r(&unixTime, &timeStruct);
+ localtime_r(&unixTime, &timeStruct);
 
-char buffer<sup class="footnote" id="fnr30"><a href="#fn30">30</a></sup>; strftime(buffer, 30, [[NSDate formatter:format] cStringUsingEncoding:[NSString defaultCStringEncoding]], &timeStruct); NSString\* output = [NSString stringWithCString:buffer encoding:[NSString defaultCStringEncoding]]; return output;
+char buffer[30]; 
+strftime(buffer, 30, [[NSDate formatter:format] cStringUsingEncoding:[NSString defaultCStringEncoding]], &timeStruct); NSString* output = [NSString stringWithCString:buffer encoding:[NSString defaultCStringEncoding]]; 
+return output;
 
-}  
+}
+```
+
 -
 
 Reference: [NSDate+helpers.m](https://github.com/akitaonrails/ObjC_Rubyfication/blob/master/Rubyfication/NSDate+helpers.m#L71-80)
@@ -110,11 +118,13 @@ Now follow each line to understand it:
 Now this is too nice. I have added a few other helper methods that now allows me to use it like this:
 
 * * *
-C
 
+```objc
 it(`"should convert the date to the rfc822 format", ^{
     [[[ref toFormattedString:`“rfc822”] should] equal:@"Fri, 01 Jan 2010 10:15:30"];  
-});  
+}); 
+```
+
 -
 
 Reference: [DateSpec.m](https://github.com/akitaonrails/ObjC_Rubyfication/blob/master/RubyficationTests/DateSpec.m#L69)
@@ -140,45 +150,43 @@ With all this set, I recommend you to explore the <tt>OnigRegexp.m</tt> and <tt>
 I have wrapped those helpers in my own classes like this:
 
 * * *
-C
 
-- (NSString\*) gsub:(NSString\*)pattern with:(id)replacement {  
+```objc
+- (NSString*) gsub:(NSString*)pattern with:(id)replacement {  
  if ([replacement isKindOfClass:[NSString class]]) {  
- return [self replaceAllByRegexp:pattern with:replacement];   
+ return [self replaceAllByRegexp:pattern with:replacement];
  } else if ([replacement isKindOfClass:[NSArray class]]) {  
- \_\_block int i = -1;  
- return [self replaceAllByRegexp:pattern withBlock:^(OnigResult\* obj) {  
- return (NSString\*)[replacement objectAtIndex:(++i)];  
- }];   
+ __block int i = -1;  
+ return [self replaceAllByRegexp:pattern withBlock:^(OnigResult* obj) {  
+ return [NSString*](replacement objectAtIndex:(++i));  
+ }];
  }  
  return nil;  
 }
 
-- (NSString\*) gsub:(NSString\*)pattern withBlock:(NSString\* (^)(OnigResult\*))replacement {  
+- (NSString*) gsub:(NSString*)pattern withBlock:(NSString* (^)(OnigResult*))replacement {  
  return [self replaceAllByRegexp:pattern withBlock:replacement];  
-}  
--
+}
+```
 
 Reference: [NSString+helpers.m](https://github.com/akitaonrails/ObjC_Rubyfication/blob/master/Rubyfication/NSString+helpers.m#L176-190)
 
 Which now allows me to use this nicer syntax:
 
 * * *
-C
 
+```objc
 context(`"Regular Expressions", ^{
     it(`“should replace all substrings that match the pattern”, ^{  
  [[[`"hello world, heyho!" gsub:`“h\\w+” with:`"hi"] should] equal:`“hi world, hi!”];  
  });
 
-it(@"should replace each substrings with one corresponding replacement in the array", ^{ NSArray\* replacements = [NSArray arrayWithObjects:@"hi", @"everybody", nil]; [[[`"hello world, heyho!" gsub:`“h\\w+” with:replacements] should] equal:@"hi world, everybody!"]; }); it(@"should replace each substring with the return of the block", ^{ [[[`"hello world, heyho!" gsub:`“h\\w+” withBlock:^(OnigResult\* obj) { return @"foo"; }] should] equal:@"foo world, foo!"]; });
-
-});  
--
+it(@"should replace each substrings with one corresponding replacement in the array", ^{ NSArray* replacements = [NSArray arrayWithObjects:@"hi", @"everybody", nil]; [[[`"hello world, heyho!" gsub:`“h\\w+” with:replacements] should] equal:@"hi world, everybody!"]; }); it(@"should replace each substring with the return of the block", ^{ [[[`"hello world, heyho!" gsub:`“h\\w+” withBlock:^(OnigResult* obj) { return @"foo"; }] should] equal:@"foo world, foo!"]; });
+});
+```
 
 Reference: [StringSpec.m](https://github.com/akitaonrails/ObjC_Rubyfication/blob/master/RubyficationTests/StringSpec.m#L86-102)
 
 If you’re thinking that it is strange for a snippet of Objective-C code to have keyword such as <tt>context</tt> or <tt>it</tt>, they come from [Kiwi](http://www.kiwi-lib.info/), which builds an RSpec-like BDD testing framework on top of SenTesting Kit for Objective-C development that you should definitely check out. But the code above should be easy enough to understand without even knowing about Kiwi. If you’re a Ruby developer, you will probably notice that the syntax bears some resemblance to what you’re used to already.
 
 So, linking to existing standard C libraries or even third-party open source C libraries is a piece of cake for those simple cases, without having to resort to any “Native Interface” tunneling between virtual machines or any other plumbing. If you want C, they’re there for you to easily integrate and use.
-

@@ -92,7 +92,7 @@ Vejam minha série sobre armazenamento. O NTFS do Windows tá longe de ser perfe
 
 
 
-Quando alguém perde dados só existem duas razões: porque comprou um HD muito do porcaria ou porque cometeu erro humano mesmo. Aliás, vira e mexe alguém faz aquele meme de digitar "rm -rf /" e diz que iniciante não sabe o que isso faz. Mas parece que quem faz o meme também não sabe. Já faz algum tempo que o comando "rm" não apaga a raíz assim do nada. Precisa ou digitar "/\*" com asterisco no final ou usar a opção "--no-preserve-root" pra realmente apagar a raíz. The more you know.
+Quando alguém perde dados só existem duas razões: porque comprou um HD muito do porcaria ou porque cometeu erro humano mesmo. Aliás, vira e mexe alguém faz aquele meme de digitar "rm -rf /" e diz que iniciante não sabe o que isso faz. Mas parece que quem faz o meme também não sabe. Já faz algum tempo que o comando "rm" não apaga a raíz assim do nada. Precisa ou digitar "/*" com asterisco no final ou usar a opção "--no-preserve-root" pra realmente apagar a raíz. The more you know.
 
 
 

@@ -52,7 +52,7 @@ Se alguém me pergunta: _Você saber X?_. Tenho apenas duas respostas diretas: *
 
 Por isso ninguém diz simplesmente _Não_. Em vez disso preferem dizer, _mais ou menos_, _acho que sim_, _quase lá_. Eu vejo da seguinte forma: _não_ e _talvez_ são a mesma coisa: nenhuma delas é _Sim_.
 
-Agora, se disser _Sim_ com frequência, prepare-se para ser massacrado. Ninguém gosta de pessoas que falam _Sim_ o tempo todo. Porque elas se sentem inferiorizadas: _Como assim ele sabe e eu não?_ E por causa disso todos tentarão derrubá-lo, por pura e simples mesquinharia. Chegarão ao ponto de dizer _grande coisa que ele sabe, eu poderia saber_. Pode\*ria\*, mas não sabe.
+Agora, se disser _Sim_ com frequência, prepare-se para ser massacrado. Ninguém gosta de pessoas que falam _Sim_ o tempo todo. Porque elas se sentem inferiorizadas: _Como assim ele sabe e eu não?_ E por causa disso todos tentarão derrubá-lo, por pura e simples mesquinharia. Chegarão ao ponto de dizer _grande coisa que ele sabe, eu poderia saber_. Pode*ria*, mas não sabe.
 
 Após todo esse exercício, o ponto onde quero chegar é: **Acostume-se a dizer Sim o tempo todo e encare as consequências**.
 

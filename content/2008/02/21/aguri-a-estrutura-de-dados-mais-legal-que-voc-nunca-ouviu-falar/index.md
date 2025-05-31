@@ -51,7 +51,7 @@ Eis porque radix tries são legais:
 
 - A performance de procura varia com o _tamanho da chave_, não o número de elementos na árvore. Com chaves de 16-bits, você garantidamente tem 16 passos independente do número de elementos na árvore, sem balanceamento.
 
-- Mais importante, radix tries lhe dá _igualdade lexicográfica_, que é uma maneira de dizer “procura com wildcards” ou “procura parecida com auto-complete de linha de comando”. Em um radix tree, você pode rapidamente procurar por “ro\*” e conseguir “rome” e “romulous” e “roswell”.
+- Mais importante, radix tries lhe dá _igualdade lexicográfica_, que é uma maneira de dizer “procura com wildcards” ou “procura parecida com auto-complete de linha de comando”. Em um radix tree, você pode rapidamente procurar por “ro*” e conseguir “rome” e “romulous” e “roswell”.
 
 # 3
 
@@ -65,7 +65,7 @@ Vamos colocar isso em contexto. Tries são uma estrutura de dados crucial para r
 
 - Você precisa que pacotes para 10.0.1.21 vão para “b”
 
-Esse é um problema difícil de resolver com uma árvore binária básica, mas com uma radix trie, você está apenas perguntando por “1010.0000.0000.0000.0000.0001.0100” (para 10.0.1.20) e “1010”. (para 10.0.0.0). Procura Lexicográfica lhe dá o “melhor acerto” para roteamento. Você pode tentar no código Ruby acima; adicione \*"10.0.0.0".to\_ip na trie, e procure por “10.0.0.1”.to\_ip.
+Esse é um problema difícil de resolver com uma árvore binária básica, mas com uma radix trie, você está apenas perguntando por “1010.0000.0000.0000.0000.0001.0100” (para 10.0.1.20) e “1010”. (para 10.0.0.0). Procura Lexicográfica lhe dá o “melhor acerto” para roteamento. Você pode tentar no código Ruby acima; adicione *"10.0.0.0".to_ip na trie, e procure por “10.0.0.1”.to_ip.
 
 A correspondência entre roteamento e radix tries é tão forte que a mais popular biblioteca de uso geral de radix trie (aquele da CPAN) é na realidade roubado da GateD. É uma bagunça, aliás, não use isso.
 

@@ -169,7 +169,7 @@ Mas sim, voltando à sua pergunta, eu certamente tenho fortes opiniões sobre co
 
 **AkitaOnRails:** Sim, e falando nisso (fugindo um pouco do assunto) eu recomendo o filme brasileiro [Tropa de Elite](http://en.wikipedia.org/wiki/Tropa_de_Elite) agora que sei que você se interessa por dados relacionados a crimes ;-)
 
-**Adrian:** Anotado! Adicionei “Tropa de Elite” à minha lista de FILMES\_PARA\_ASSISTIR.TXT :-)
+**Adrian:** Anotado! Adicionei “Tropa de Elite” à minha lista de FILMES_PARA_ASSISTIR.TXT :-)
 
 [![](http://s3.amazonaws.com/akitaonrails/assets/2007/12/31/1529992544_f8e9fc67b2.jpg)](http://leahculver.com/)
 

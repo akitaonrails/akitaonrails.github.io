@@ -23,7 +23,7 @@ Unlike most younger people now, I never was really exposed to computers until I 
 
  **AkitaOnRails:** This is almost a cliché already but I have to ask: you were one of the ‘first generation’ rubyist. How did you come to find Ruby and what was it that ‘clicked’ for you about the language?
 
-**Hal:** I was on a contract at IBM in Austin in the fall of ‘99. In a conversation with a friend across the hall, I complained that I was never on the “ground floor” of any new technology — I was always a late adopter. And he said, _“Well, you should learn Ruby then.”_ And I said: \_"What’s that?"\_ So I got on the English mailing list and started to learn Ruby (version 1.4).
+**Hal:** I was on a contract at IBM in Austin in the fall of ‘99. In a conversation with a friend across the hall, I complained that I was never on the “ground floor” of any new technology — I was always a late adopter. And he said, _“Well, you should learn Ruby then.”_ And I said: _"What’s that?"_ So I got on the English mailing list and started to learn Ruby (version 1.4).
 
 My experience before was with very static languages. I had started (like many people in the earlier days) with BASIC, FORTRAN, and Pascal. Then I learned C, C++, Java, and various other things along the way. But I was never exposed much to LISP, and I never knew Smalltalk. So the whole concept of a dynamic language was a little foreign to me. I had always known that I wanted more power, but I wasn’t sure exactly what I wanted. I tried to envision macros that would give me the kind of flexibility I wanted, but it seemed like the wrong solution.
 
@@ -51,7 +51,7 @@ changes as we approached Ruby 2.0 – more radical changes than the core classes
 **Hal:** I think the conciseness is one really attractive feature. Take a look at this single line of Ruby, which creates two accessors for a class:
 
 * * *
-rubyattr\_accessor :alpha, :beta—-
+rubyattr_accessor :alpha, :beta—-
 
 How would you do that in C++? Well, you would declare two attributes; then you would write a pair of “reader” functions and a pair of “writer” functions. What’s that, at least seven lines of code right there? But then what if you want to be able to assign different  
 types to these? Now you have to get into overloading. It quickly becomes a nightmare. Meanwhile, in Ruby — it’s still just one line of code.
@@ -73,7 +73,7 @@ For example, I’ve always wanted an “in” operator that would be syntax suga
 Many times I’ve felt a need for a data structure that would be accessed like a hash, but would preserve the order specified in the code. For example, imagine a kind of “dynamic case statement” — we pass in possible matches and code to execute (as procs) for each of those matches. (It would have the advantage over a case statement that we can control the number of case limbs and their associated code at runtime.) Let’s implement it as a method called “choose” that we call in this way:
 
 * * *
-rubychoose regex1 =\> proc { handle\_case1 }, regex2 =\> proc { handle\_case2}—-
+rubychoose regex1 =\> proc { handle_case1 }, regex2 =\> proc { handle_case2}—-
 
 Now, what’s the problem here? The syntax fools us into thinking that regex1 somehow precedes regex2 – but when we iterate over a hash, the order is not guaranteed to be the same as in the code. (That is a property of hashes, of course, not a bug.) So we can’t control or predict the order in which these are applied. And I have found several other cases where I wanted such a thing – an associative array, a set of tuples, that had a convenient syntax for literals and had an order.
 
@@ -93,7 +93,7 @@ But I am glad for the expressiveness of the latter syntax.
 
 **Hal:** There have been minor points where I disagreed with Matz from time to time. But as I said, I am glad he is in charge. I like YARV from what I have seen so far. I am anxious for it to be 100% stable so that I can really get a feel for how it works.
 
-**AkitaOnRails:** Your book is in the second edition, and it is a huge book, covering not only the language itself but a few 3rd party components as pdf\_writer. Are you working on a 3rd edition? Maybe we will have _“The YARV Way”_?
+**AkitaOnRails:** Your book is in the second edition, and it is a huge book, covering not only the language itself but a few 3rd party components as pdf_writer. Are you working on a 3rd edition? Maybe we will have _“The YARV Way”_?
 
 **Hal:** I am not working on a third edition, and I think it would be very hard to write one. The second one was harder than I expected – although much content was re-used, it still had to be re-examined line by line – and more than 50 errors still crept into those 800+ pages.
 

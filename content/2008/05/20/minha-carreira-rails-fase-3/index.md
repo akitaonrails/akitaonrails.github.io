@@ -10,7 +10,7 @@ draft: false
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2008/5/20/y1p3_EvN8jnMoVnyGBo0AA3eDxG9oNM_byJN3_u5BV0X-PYGfo2-9f-RLnJpUj7NiyI.jpeg)
 
-Esta semana tive o pior/melhor fim de semana dos últimos tempos. Primeiro a parte boa: vocês se lembram que a Locaweb resolveu investir em Rails e lançar o trial de plano com mod\_rails. Porém isso não vai parar aí.
+Esta semana tive o pior/melhor fim de semana dos últimos tempos. Primeiro a parte boa: vocês se lembram que a Locaweb resolveu investir em Rails e lançar o trial de plano com mod_rails. Porém isso não vai parar aí.
 
 
  ![](http://s3.amazonaws.com/akitaonrails/assets/2008/5/20/GilbertoMautner_03_carreira_08.jpg)  

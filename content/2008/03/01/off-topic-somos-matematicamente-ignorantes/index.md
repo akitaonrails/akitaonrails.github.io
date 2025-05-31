@@ -18,7 +18,6 @@ Principalmente se, mesmo com pouca frequência, tente explicar eventos puramente
 
 Mesmo entre nós, programadores, muitos ignoraram a disciplina durante o que é ensinado normalmente no primeiro ano de Ciências da Computação. Um dos resultados práticos desse tipo de ignorância: [Birthday Attacks](http://en.wikipedia.org/wiki/Birthday_attack) que é um tipo de ataque criptográfico nomeado assim porque explora a matemática por trás do [Birthday Paradox](http://en.wikipedia.org/wiki/Birthday_paradox) – que é explicado no artigo que traduzo abaixo.
 
-
 Ou seja, dada uma função f (exemplo: autenticação), o objetivo do ataque é encontrar duas entradas x1 e x2 (exemplo: senhas) de tal forma que f(x1) = f(x2). Tal par x1 e x2 é chamado de [colisão](http://en.wikipedia.org/wiki/Hash_collision). Nós sempre concluímos esse problema da maneira errada.
 
 Uma leitura interessante pode ser [The Psychology of the Psychic](http://en.wikipedia.org/wiki/The_Psychology_of_the_Psychic), de David Marks e do Dr. Richard Kammann, que é uma análise cética de afirmações paranormais. Uma definição não óbvia é o que Marks chamou de “Koestler’s Fallacy” onde as pessoas assumem que dois acertos estranhos em eventos aleatórios não podem acontecer apenas por chance (_cof_ Evolução _cof_).
@@ -54,15 +53,16 @@ Entretanto, é possível calcular a probabilidade de eventos que parecem improv�
 Em uma seleção aleatória de 33 pessoas existe 50% de chance (1 em 2) que pelo menos 2 pessoas tenham a mesma data de aniversário. Quem já não ficou surpreso de aprender isso pela primeira vez? O cálculo é direto. Primeiro encontre a probabilidade que todos no grupo tenham datas diferentes (X) e então subtraia essa fração de 1 para obter a probabilidade de pelo menos um aniversário comum no grupo (P), P = 1 – X. Probabilidades se limitam de 0 a 1, ou podem ser expressadas de 0 a 100%. De nenhuma coincidência a segunda pessoa tem uma escolha de 364 dias, a terceira pessoa 363 dias e a enésima pessoa 366 – n dias. Então a probabilidade de todas as diferentes datas de aniversário se torna:
 
 * * *
-bash
 
-Para duas pessoas: X2 = (365\*364)/365
+```bash
 
-Para três pessoas: X3 = (365\* 364\*363)/365
+Para duas pessoas: X2 = (365*364)/365
 
-Para n pessoas: Xn = (365\*364\* … 366-n)/365  
- Xn = 365! / [365^n \* (365-n)!]  
--
+Para três pessoas: X3 = (365* 364*363)/365
+
+Para n pessoas: Xn = (365*364* … 366-n)/365  
+ Xn = 365! / [365^n * (365-n)!]  
+```
 
 Com seus fatoriais a última igualidade não é especialmente útil a menos que se tenha a capacidade de lidar com números muito grandes. É instrutivo usar uma planilha e um loop de uma linguagem de computador para calcular Xn, a partir da 1a igualidade, para sucessivos valores de n. Quando n = 23, se descobre que Xn = 0.493 e P = 0.507. O gráfico da probabilidade de pelo menos 1 data de aniversário comum, P, contra o número de pessoas, n, aparece como o lado direito da curva de um círculo na figura 1. A curva mostra que a probabilidade de pelo menos 2 pessoas terem a mesma data de aniversário sobe devagar, no começo passando menos de 12% de probabilidade com 10 pessoas, subindo até 50% no círculo aberto correspondendo à 33a pessoa, então estabilizando e atingindo 90% de probabilidade em um grupo de 41 pessoas. Isso significa que, na média, de 10 grupos aleatórios de 41 pessoas, em 9 delas pelo menos 2 pessoas tem o mesmo aniversário. Nenhuma força misteriosa é necessária para explicar a coincidência.
 
@@ -84,7 +84,7 @@ Indo um pouco mais a fundo em alguns aspectos da probabilidade de aniversários 
 
 - A última, a curva ascendente na Figura 2, mostra o total de probabilidades de todas as coincidências restantes (\> 2P), consistindo de 3 pares, etc. Para todos os números de pessoas, as probabilidades para todas as 4 curvas dão o total de 1.00 (100%).
 
-![](http://s3.amazonaws.com/akitaonrails/assets/2008/3/1/fig2.gif)\</p?
+![](http://s3.amazonaws.com/akitaonrails/assets/2008/3/1/fig2.gif)?
 
 > **Figura 2:** Probabilidades de Múltiplos Aniversários Coincidentes: A curva descendente na esquerda representa a probabilidade de nenhuma coincidência (NC). A primeira curva com um máximo demonstra as probabilidades de 1 único par (1P) com aniversários idênticos. A segunda curva com um máximo representa a probabilidade de exatamente 2 pares (2P) onde cada par pode ter aniversários diferentes entre si. A curva ascendente na direita mostra a probabilidade de todas as coincidência (\> 2P), 3 pares, triplets, etc. Para qualquer número de pessoas as probabilidades das 4 curvas dão o total de 1.00.
 
@@ -136,7 +136,7 @@ Que algum evento improvável vai acontecer é normal; que um em particular vai a
 
 ( **nota do Akita:** o que queremos dizer é o seguinte: coincidência acontecem. Dizer “improvável” não é “impossível”. 0.000001% ainda não é Zero. A diferença é que muito – mas muito mesmo – raramente é possível prever com antecedência um evento em particular, mesmo assim não impossível. Ou seja, acertar 1 previsão em milhares não é impossível. Acertar todas é altamente improvável. Essa é a natureza das coincidências: elas acontecem, por mais improváveis que sejam, é um fato, e não há nenhum agente sobrenatural lidando com isso, é apenas um evento aleatório matematicamente descritível. Prever que um certo evento vai acontecer “e” acertar também é absolutamente aleatório e não há nenhum poder místico ou intuitivo envolvido. É puramente como jogar dados e, por acaso, acertar um número. Não: você _não_ é um médium. :-)
 
-### Abraham Lincoln e John Kennedy.
+### Abraham Lincoln e John Kennedy
 
 Sempre é possível combinar dados aleatórios e encontrar alguma regularidade. Um exemplo muito bem conhecido é a comparação das coincidências nas vidas de Abraham Lincoln e John Kennedy, dois presidentes com 7 letras em seus últimos nomes, e eleitos com 100 anos de diferença, 1860 e 1960. Ambos foram assassinados numa sexta-feira na presença de suas esposas, Lincoln no teatro Ford e Kennedy num automóvel feito pela Ford. Ambos assassinos tem 3 nomes: John Wilkes Booth e Lee Harvey Oswald, com 15 letras em cada nome completo. Oswald atirou em Kennedy de um armazém e correu para um teatro, e Booth atirou em Lincoln em um teatro e correu para um tipo de armazém. Ambos os sucessores vice-presidentes eram Democratas sulistas e ex-senadores chamados Johnson (Andrew e Lyndon), com 13 letras em seus nomes e nascidos com 100 anos de diferença, 1808 e 1908.
 
@@ -160,8 +160,8 @@ Os dígitos decimais p foram calculadas até centenas de milhões de dígitos po
 
 3,141592653589793238462643  
 38327950288419716939937510  
-582097494459230781\*64062862  
-08\*9986280348253421170679
+582097494459230781*64062862  
+08*9986280348253421170679
 
 Existem 51 dígitos pares e 49 dígitos ímpares. Existe quase uma distribuição mediana quando os primeiros 100 dígitos decimais são divididos de outra maneira: 49 dígitos de 0 a 4 e 51 dígitos de 5 a 9.
 
@@ -169,7 +169,7 @@ Já que os dígitos decimais de p são aleatórios, podemos simular a sequência
 
 THTTTHHTTTHTTTTHTHHHHHHT  
 THTHTTTHHHHHTTTTHTTTTTTT  
-THTHHHTTHTHHT\*THTHTHTH\*HHHHH  
+THTHHHTTHTHHT*THTHTHTH*HHHHH  
 HHHHTTHHHHHTHHHTTHHTTTHHTT
 
 Combinando a sequência aleatória encontramos alguma regularidade, como a sequência de alternância em 8 jogadas de 62 a 69 (em negrito). A probabilidade de uma sequência alternada em 8 jogadas é 1 em 27 = 128 jogadas. Existem algumas longas sequências só de caras e só de coras. Existem 2 de 5 caras e 1 de 6 caras, 1 de 8 coroas e uma surpreendente de 10 coroas. Os dígitos decimais de p entre 69 e 78 são todos pares. Uma jogada de 10 dígitos pares deveria acontecer apenas 1 vez em 210 = 1.024 dígitos. Mesmo assim esse tipo de sequência aconteceu dentro dos primeiros 80 dígitos.
@@ -243,4 +243,3 @@ Suponha que alguém tenha tomado certa substância “H” que viu numa simpatia
 Da forma correta, se formulássemos a hipótese de que tal substância “H” funciona, precisaríamos depois disso conseguir experimentalmente mais conjuntos de dados com resultados que ultrapassem os resultados que facilmente seriam obtidos através da própria aleatoriedade, como vimos acima. No caso do aniversário, basta 33 pessoas para encontrar 2 pessoas com o mesmo aniversário dentre um universo de 365 dias diferentes num ano!!
 
 As pessoas só vão lembrar que, coincidentemente, mil pessoas se “curaram” com a tal substância “H”. Porém, ignoram que outras 10 mil, com a mesma enfermidade, tratadas com a mesma substância, não apresentaram melhoria nenhuma. Mas preferimos ignorar os 10 mil e apenas olhar os “grandiosos” mil positivos. Como se vê, números fora de contexto não servem para absolutamente nada.
-

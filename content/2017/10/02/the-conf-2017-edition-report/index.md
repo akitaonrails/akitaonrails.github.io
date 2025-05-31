@@ -37,7 +37,7 @@ All the speakers were phenomenal, not one of them were late (and many of them tr
 
 ### Are we RICH already? :-D
 
-Of course not! ¯\_(ツ)_/¯ That was never the intention.
+Of course not! ¯_(ツ)_/¯ That was never the intention.
 
 I've been organizing events for the past 10 years. As I explained in my ["The Next 10 Years"](http://www.akitaonrails.com/2016/09/26/the-next-10-years) post, I never directly had any profits on any events I delivered. I do them because I have the core belief that by helping others to improve I increase my own chances of growing up in this industry.
 

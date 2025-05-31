@@ -109,9 +109,9 @@ ruby
 gem ‘resque’, :require =\> ‘resque/server’
 
 1. alguns opcionais  
-gem ‘resque-scheduler’, :require =\> ‘resque\_scheduler’  
+gem ‘resque-scheduler’, :require =\> ‘resque_scheduler’  
 gem ‘resque-lock’  
-gem ‘resque\_mailer’  
+gem ‘resque_mailer’  
 -
 
 Rode o Bundler para atualizar, depois vamos configurar as seguinte tasks Rake num arquivo <tt>lib/tasks/resque.rake</tt>:
@@ -120,22 +120,22 @@ Rode o Bundler para atualizar, depois vamos configurar as seguinte tasks Rake nu
 ruby
 
 require ‘resque/tasks’  
-require ‘resque\_scheduler/tasks’ # opcional se utilizar resque\_scheduler
+require ‘resque_scheduler/tasks’ # opcional se utilizar resque_scheduler
 
 task “resque:setup” =\> :environment do  
-ENV[‘QUEUE’] = ‘\*’ if ENV[‘QUEUE’].blank?
+ENV[‘QUEUE’] = ‘*’ if ENV[‘QUEUE’].blank?
 
-require ‘resque’ require ‘resque\_scheduler’ require ‘resque/scheduler’ Resque.redis = ENV[“REDISTOGO\_URL”] Resque.schedule = YAML.load\_file(‘config/scheduler.yml’) # opcional se utilizar resque\_scheduler Resque::Worker.all.each {|w| w.unregister\_worker}
+require ‘resque’ require ‘resque_scheduler’ require ‘resque/scheduler’ Resque.redis = ENV[“REDISTOGO_URL”] Resque.schedule = YAML.load_file(‘config/scheduler.yml’) # opcional se utilizar resque_scheduler Resque::Worker.all.each {|w| w.unregister_worker}
 1. Fix for handling resque jobs on Heroku cedar
 2. http://stackoverflow.com/questions/2611747/rails-resque-workers-fail-with-pgerror-server-closed-the-connection-unexpectedly  
- Resque.after\_fork do |job|  
- ActiveRecord::Base.establish\_connection  
+ Resque.after_fork do |job|  
+ ActiveRecord::Base.establish_connection  
  end  
 end
 
 desc “EC2 instance name changes every time, so run this before a new deployment”  
-task “resque:clean\_workers” =\> :environment do  
- Resque::Worker.all.each {|w| w.unregister\_worker}  
+task “resque:clean_workers” =\> :environment do  
+ Resque::Worker.all.each {|w| w.unregister_worker}  
 end  
 -
 
@@ -148,7 +148,7 @@ Agora, nos arquivos <tt>config/environments/development.rb</tt>, <tt>config/envi
 * * *
 ruby
 
-ENV[“REDISTOGO\_URL”] = ‘redis://localhost:6379’  
+ENV[“REDISTOGO_URL”] = ‘redis://localhost:6379’  
 TestApp::Application.configure do  
 …  
 -
@@ -158,7 +158,7 @@ Também crie um arquivo <tt>config/initializers/resque.rb</tt> com:
 * * *
 ruby
 
-Resque.redis = ENV[“REDISTOGO\_URL”]  
+Resque.redis = ENV[“REDISTOGO_URL”]  
 -
 
 Se você sabe usar Resque, certamente tem um Redis instalado localmente na sua máquina de desenvolvimento e essa é a URL padrão. Modifique se precisar.
@@ -169,7 +169,7 @@ Finalmente, adicione novas linhas ao arquivo <tt>Procfile</tt>:
 
 web: bundle exec unicorn p $PORT -c ./config/unicorn.rb  
 scheduler: bundle exec rake resque:scheduler  
-worker: bundle exec rake resque:workers QUEUE=\* COUNT=2  
+worker: bundle exec rake resque:workers QUEUE=* COUNT=2  
 --
 
 Estes são exemplos onde estou utilizando a gem [resque-scheduler](https://github.com/bvandenbos/resque-scheduler). Se você precisa de uma funcionalidade semelhante a um “crontab”, esta gem serve para isso. Mas está fora do escopo deste artigo falar sobre ela, então simplesmente ignorem quando menciono o scheduler se não precisar dela.
@@ -190,8 +190,8 @@ require ‘resque/plugins/lock’
 class Example  
  extend Resque::Plugins::Lock
 
-def self.perform(repo\_id)
-1. heavy\_lifting  
+def self.perform(repo_id)
+1. heavy_lifting  
  end  
 end  
 -
@@ -217,13 +217,13 @@ Se quiser, pode criá-los diretamente usando as APIs da Amazon, diretamente num 
 ruby
 
 require ‘aws/s3’  
-AWS::S3::Base.establish\_connection!(  
- :access\_key\_id =\> ‘…’,  
- :secret\_access\_key =\> ‘…’  
+AWS::S3::Base.establish_connection!(  
+ :access_key_id =\> ‘…’,  
+ :secret_access_key =\> ‘…’  
 )  
-AWS::S3::Bucket.create(‘uploads.mysite’, :access =\> :public\_read)  
-AWS::S3::Bucket.create(‘assets.mysite’, :access =\> :public\_read)  
-AWS::S3::Bucket.create(‘staging.assets.mysite’, :access =\> :public\_read)  
+AWS::S3::Bucket.create(‘uploads.mysite’, :access =\> :public_read)  
+AWS::S3::Bucket.create(‘assets.mysite’, :access =\> :public_read)  
+AWS::S3::Bucket.create(‘staging.assets.mysite’, :access =\> :public_read)  
 -
 
 Obviamente, instale primeiro a gem <tt>aws-s3</tt>. E claro, estou criando 3 buckets de exemplo, crie com quaisquer nomes (únicos, [válidos e compatíveis com formato de DNS](http://support.rightscale.com/06-FAQs/FAQ_0094_-_What_are_valid_S3_bucket_names%3F)).
@@ -241,13 +241,13 @@ Uma policy tem mais ou menos este formato:
  “Sid”: “AllowPublicRead”,  
  “Effect”: “Allow”,  
  “Principal”: {  
- “AWS”: “\*”  
+ “AWS”: “*”  
  },  
  “Action”: [  
  “s3:GetObject”  
  ],  
  “Resource”: [  
- “arn:aws:s3:::assets.mysite/\*”  
+ “arn:aws:s3:::assets.mysite/*”  
  ]  
  }  
  ]  
@@ -262,19 +262,19 @@ Isso foi só para configurar a Amazon. Agora você precisa configurar sua aplica
 
 1. para versões antigas da gem Heroku:  
 heroku plugins:install https://github.com/heroku/heroku-labs.git  
-heroku labs:enable user\_env\_compile -a mysite
+heroku labs:enable user_env_compile -a mysite
 
 1. obrigatório  
-heroku config:add AWS\_ACCESS\_KEY\_ID=…  
-heroku config:add AWS\_SECRET\_ACCESS\_KEY=…  
-heroku config:add FOG\_DIRECTORY=assets.mysite  
-heroku config:add FOG\_PROVIDER=AWS
+heroku config:add AWS_ACCESS_KEY_ID=…  
+heroku config:add AWS_SECRET_ACCESS_KEY=…  
+heroku config:add FOG_DIRECTORY=assets.mysite  
+heroku config:add FOG_PROVIDER=AWS
 
 1. opcional:  
-heroku config:add FOG\_REGION=us-east-1  
-heroku config:add ASSET\_SYNC\_GZIP\_COMPRESSION=true  
-heroku config:add ASSET\_SYNC\_MANIFEST=false  
-heroku config:add ASSET\_SYNC\_EXISTING\_REMOTE\_FILES=keep  
+heroku config:add FOG_REGION=us-east-1  
+heroku config:add ASSET_SYNC_GZIP_COMPRESSION=true  
+heroku config:add ASSET_SYNC_MANIFEST=false  
+heroku config:add ASSET_SYNC_EXISTING_REMOTE_FILES=keep  
 -
 
 Não deve ser difícil entender essas configurações. Agora, precisamos configurar o arquivo <tt>config/production.rb</tt> com o seguinte:
@@ -282,7 +282,7 @@ Não deve ser difícil entender essas configurações. Agora, precisamos configu
 * * *
 ruby
 
-config.action\_controller.asset\_host = “http://#{ENV[‘FOG\_DIRECTORY’]}.s3.amazonaws.com”  
+config.action_controller.asset_host = “http://#{ENV[‘FOG_DIRECTORY’]}.s3.amazonaws.com”  
 -
 
 Aprenda mais sobre o Asset Pipeline no mínimo lendo o [guia oficial](http://guides.rubyonrails.org/asset_pipeline.html). Não me interessa quem gosta ou não gosta do Asset Pipeline (ou que não gosta porque não sabe usar). Mas vou assumir que independente da opinião, todos aqui sabem usar. Por exemplo, sabem que não pode haver tags HTML com a URL da imagem escrita manualmente, mas sim usando helpers como <tt>image_tag</tt> e mesmo no CSS, estar utilizando [SASS](http://sass-lang.com/) para ter acesso a helpers como <tt>image-uri</tt>. Não deve existir URLs do aplicativo, apontando para imagens, stylesheets, javascripts ou qualquer coisa, escritas manualmente sem usar esses helpers. Isso é obrigatório porque em desenvolvimento na sua máquina, ele vai apontar para URLs relativas na sua instância, mas em produção ele vai apontar para URLs externas na Amazon S3.
@@ -300,7 +300,7 @@ group :assets do
  gem ‘sass-rails’  
  gem ‘coffee-rails’  
  gem ‘uglifier’  
- gem ‘asset\_sync’
+ gem ‘asset_sync’
 
 1. recomendado para Sass  
  gem ‘compass’  
@@ -315,26 +315,26 @@ ruby
 
 if (Rails.env.production? || Rails.env.staging?) && defined?(AssetSync)  
  AssetSync.configure do |config|  
- config.fog\_provider = ENV[‘FOG\_PROVIDER’]  
- config.aws\_access\_key\_id = ENV[‘AWS\_ACCESS\_KEY\_ID’]  
- config.aws\_secret\_access\_key = ENV[‘AWS\_SECRET\_ACCESS\_KEY’]  
- config.fog\_directory = ENV[‘FOG\_DIRECTORY’]
+ config.fog_provider = ENV[‘FOG_PROVIDER’]  
+ config.aws_access_key_id = ENV[‘AWS_ACCESS_KEY_ID’]  
+ config.aws_secret_access_key = ENV[‘AWS_SECRET_ACCESS_KEY’]  
+ config.fog_directory = ENV[‘FOG_DIRECTORY’]
 
 1. Increase upload performance by configuring your region  
- config.fog\_region = ENV[‘FOG\_REGION’]  
+ config.fog_region = ENV[‘FOG_REGION’]  
  #
 2. Don’t delete files from the store  
- config.existing\_remote\_files = ENV[‘ASSET\_SYNC\_EXISTING\_REMOTE\_FILES’]  
+ config.existing_remote_files = ENV[‘ASSET_SYNC_EXISTING_REMOTE_FILES’]  
  #
 3. Automatically replace files with their equivalent gzip compressed version  
- config.gzip\_compression = ENV[‘ASSET\_SYNC\_GZIP\_COMPRESSION’]  
+ config.gzip_compression = ENV[‘ASSET_SYNC_GZIP_COMPRESSION’]  
  #
 4. Use the Rails generated ‘manifest.yml’ file to produce the list of files to
 5. upload instead of searching the assets directory.
-6. config.manifest == ENV[‘ASSET\_SYNC\_MANIFEST’]  
+6. config.manifest == ENV[‘ASSET_SYNC_MANIFEST’]  
  #
 7. Fail silently. Useful for environments such as Heroku  
- config.fail\_silently = true  
+ config.fail_silently = true  
  end  
 end  
 -
@@ -344,13 +344,13 @@ Entenda cada configuração e veja qual é a melhor para você, mas esta funcion
 * * *
 ruby
 
-config.assets.initialize\_on\_precompile = false # Rails 4 não precisa disso  
-config.assets.precompile += %w(active\_admin.css cross\_browser.css active\_admin.js)  
+config.assets.initialize_on_precompile = false # Rails 4 não precisa disso  
+config.assets.precompile += %w(active_admin.css cross_browser.css active_admin.js)  
 config.assets.enabled = true
 
 1. if you prefer `.sass` over `.scss`.  
-config.sass.preferred\_syntax = :sass  
-config.assets.initialize\_on\_precompile = false
+config.sass.preferred_syntax = :sass  
+config.assets.initialize_on_precompile = false
 
 1. Version of your assets, change this if you want to expire all your assets  
 config.assets.version = ‘1.0’  
@@ -380,8 +380,8 @@ class UserBackgroundImageUploader \< CarrierWave::Uploader::Base
 
 1. Override the directory where uploaded files will be stored.
 2. This is a sensible default for uploaders that are meant to be mounted:  
- def store\_dir  
- “uploads/#{model.class.to\_s.underscore}/#{mounted\_as}/#{(model.id)}”  
+ def store_dir  
+ “uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{(model.id)}”  
  end  
 end  
 -
@@ -393,7 +393,7 @@ ruby
 
 class User \< ActiveRecord::Base  
  …  
- mount\_uploader :background\_image, UserBackgroundImageUploader  
+ mount_uploader :background_image, UserBackgroundImageUploader  
  …  
 end  
 -
@@ -403,7 +403,7 @@ E nas views procuro a URL da imagem assim:
 * * *
 ruby
 
-@user.background\_image\_url  
+@user.background_image_url  
 -
 
 Até aqui, absolutamente nada de novo. A novidade vem criando o arquivo <tt>config/initializer/carrierwave.rb</tt>:
@@ -412,12 +412,12 @@ Até aqui, absolutamente nada de novo. A novidade vem criando o arquivo <tt>conf
 ruby
 
 CarrierWave.configure do |config|  
- config.fog\_credentials = {  
+ config.fog_credentials = {  
  :provider =\> ‘AWS’,  
- :aws\_access\_key\_id =\> ENV[‘AWS\_ACCESS\_KEY\_ID’],  
- :aws\_secret\_access\_key =\> ENV[‘AWS\_SECRET\_ACCESS\_KEY’],  
+ :aws_access_key_id =\> ENV[‘AWS_ACCESS_KEY_ID’],  
+ :aws_secret_access_key =\> ENV[‘AWS_SECRET_ACCESS_KEY’],  
  }  
- config.fog\_directory = ‘uploads.mysite’  
+ config.fog_directory = ‘uploads.mysite’  
 end  
 -
 
@@ -434,7 +434,7 @@ Não vou re-explicar o que todo mundo já sabe sobre configurar NewRelic, a dica
 * * *
 ruby
 
-NewRelic::Agent.after\_fork(:force\_reconnect =\> true) if defined? Unicorn  
+NewRelic::Agent.after_fork(:force_reconnect =\> true) if defined? Unicorn  
 -
 
 ## Finalmentes
@@ -451,7 +451,7 @@ Quando você cria sua nova aplicação no Heroku, ele te dá um nome arbitrário
 
 * * *
 
-heroku addons:add custom\_domains  
+heroku addons:add custom_domains  
 heroku domains:add mysiteoficial.com  
 heroku domains:add mysiteoficial.com.br  
 heroku domains:add www.mysiteoficial.com  

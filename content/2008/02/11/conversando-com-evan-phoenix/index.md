@@ -93,13 +93,13 @@ Não estamos atualmente trabalhando em direção a um bytecode comum entre Rubin
 **Evan Phoenix:** De fato nós suportamos diretamente um mecanismo chamado de FFI (Foreign Function Interface), que permite a um desenvolvedor ligar funções C diretamente como chamadas de métodos. Aqui vai um exemplo simples:
 
 * * *
-rubymodule LibC attach\_function nil, :puts, [:string], :void
+rubymodule LibC attach_function nil, :puts, [:string], :void
 
 end
 
 LibC.puts “hello!”—-
 
-Essa linha de attach\_function é a interface primária para o FFI. Você simplesmente indica em qual biblioteca a função está (nesse caso, nil é usado porque está dentro do próprio processo), o nome da função (puts), os tipos dos argumentos que ele leva (apenas 1, um string) e, finalmente, o tipo do retorno (void, ou seja, nada).
+Essa linha de attach_function é a interface primária para o FFI. Você simplesmente indica em qual biblioteca a função está (nesse caso, nil é usado porque está dentro do próprio processo), o nome da função (puts), os tipos dos argumentos que ele leva (apenas 1, um string) e, finalmente, o tipo do retorno (void, ou seja, nada).
 
 Usando isso, você pode ligar diretamente a funções C sem ter que escrever um wrapper em C.
 
@@ -139,9 +139,9 @@ Ainda não fizemos, mas planejamos exercitar as grandes capacidades de merge e b
 
 Existe um mecanismo para as VMs se comunicarem entre si, e isso permite que elas coordenem tarefas. Isso poderia significar que uma thread primária poderia aceitar novas conexões, então passá-las a uma nova VM para realmente processar. Isso lhe permite processar conexões realmente em paralelo, e além disso, como as VMs estão completamente separadas, isso funciona até mesmo para aplicações que não são thread-safe como Rails.
 
-**AkitaOnRails:** Ezra também mencionou sobre um possível mod\_rubinius no forno. Como isso está indo? Isso definitivamente torna o pacote Rubinius ainda mais forte. Junto com Merb, Rubinius mais capacidades de multi-VM mais mod\_rubinius seriam um pacote de deployment matador.
+**AkitaOnRails:** Ezra também mencionou sobre um possível mod_rubinius no forno. Como isso está indo? Isso definitivamente torna o pacote Rubinius ainda mais forte. Junto com Merb, Rubinius mais capacidades de multi-VM mais mod_rubinius seriam um pacote de deployment matador.
 
-**Evan Phoenix:** Sim, um projeto mod\_rubinius está apenas começando. O código de multi-VM e do mod\_rubinius se sobrepõe um pouco, então você será capaz de ter pools de VMs para sites, todas gerenciadas através do Apache. Esperamos que mod\_rubinius possa realmente simplificar o cenário de deployment Rails/Ruby. Ele operará de maneira similar ao mod\_python, permitindo a uma VM permanecer rodando entre requisições, e talvez até rodando tarefas em background.
+**Evan Phoenix:** Sim, um projeto mod_rubinius está apenas começando. O código de multi-VM e do mod_rubinius se sobrepõe um pouco, então você será capaz de ter pools de VMs para sites, todas gerenciadas através do Apache. Esperamos que mod_rubinius possa realmente simplificar o cenário de deployment Rails/Ruby. Ele operará de maneira similar ao mod_python, permitindo a uma VM permanecer rodando entre requisições, e talvez até rodando tarefas em background.
 
 **AkitaOnRails:** Quanto tempo acha que estamos de um lançamento totalmente compatível com o MRI 1.8?
 
