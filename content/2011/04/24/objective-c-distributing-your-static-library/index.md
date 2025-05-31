@@ -17,7 +17,6 @@ Most of this was based on [Cocoanetics](http://www.cocoanetics.com/2010/04/unive
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2011/4/23/Screen%20shot%202011-04-23%20at%2011.41.27%20PM_original.png?1303613619)
 
-
 I said that I only had these targets configured: CocoaOniguruma, Kiwi, Rubyfication and RubyficationTests. But there are 3 others: CocoaOniguruma SIM, Rubyfication SIM, and Build & Merge Libraries. The reason is simple:
 
 - The “CocoaOniguruma” Target builds the <tt>libCocoaOniguruma.a</tt> binary that’s compatible with the ARM processor for iOS
@@ -65,26 +64,29 @@ In the “Copy Files” phase I have just added all the public headers that I wa
 That’s where we come to the previous “Run Script” phase that should have the following code:
 
 * * *
-bash
-1. make a new output folder  
-mkdir -p ${TARGET\_BUILD\_DIR}/../Rubyfication
 
-1. combine lib files for various platforms into one  
-lipo create “${TARGET\_BUILD\_DIR}/../Debug-iphoneos/libRubyfication.a” “${TARGET\_BUILD\_DIR}/../Debug-iphonesimulator/libRubyfication.a” -output "${TARGET\_BUILD\_DIR}/../Rubyfication/libRubyfication${BUILD\_STYLE}.a"  
--
+```bash
+# 1. make a new output folder  
+mkdir -p ${TARGET_BUILD_DIR}/../Rubyfication
+
+# 1. combine lib files for various platforms into one  
+lipo create “${TARGET_BUILD_DIR}/../Debug-iphoneos/libRubyfication.a” “${TARGET_BUILD_DIR}/../Debug-iphonesimulator/libRubyfication.a” -output "${TARGET_BUILD_DIR}/../Rubyfication/libRubyfication${BUILD_STYLE}.a"  
+```
 
 The first thing it does it create this new “Rubyfication” directory. The second command uses the [lipo](http://developer.apple.com/library/mac/#documentation/Darwin/Reference/ManPages/man1/lipo.1.html) command that merges 2 processor-dependent binaries into a universal binary. Pay attention to the PATHs if you’re reusing this script somewhere else. At least with XCode 4 that’s where it creates the binaries of each target:
 
-- ${TARGET\_BUILD\_DIR}/../Debug-iphoneos/libRubyfication.a – the ARM version
-- ${TARGET\_BUILD\_DIR}/../Debug-iphonesimulator/libRubyfication.a – the i386 version
-- ${TARGET\_BUILD\_DIR}/../Rubyfication/libRubyfication-Debug.a – the resulting universal binary we created
+- ${TARGET_BUILD_DIR}/../Debug-iphoneos/libRubyfication.a – the ARM version
+- ${TARGET_BUILD_DIR}/../Debug-iphonesimulator/libRubyfication.a – the i386 version
+- ${TARGET_BUILD_DIR}/../Rubyfication/libRubyfication-Debug.a – the resulting universal binary we created
 
 Finally, the last “Run Script”, after the “Copy Files” phase described above, requires the following script:
 
 * * *
-bash
 
-ditto c -k —keepParent “${TARGET\_BUILD\_DIR}/../Rubyfication” “${TARGET\_BUILD\_DIR}/../Rubyfication.zip”  
+```bash
+ditto c -k —keepParent “${TARGET_BUILD_DIR}/../Rubyfication” “${TARGET_BUILD_DIR}/../Rubyfication.zip”  
+```
+
 --
 
 It just creates a ZIP file with the universal binary library and its companion public header files. Any other developer can get this zip file, unzip it and add the files to their own projects now. If you want to find where this ZIP file is, the easiest way is to go to the project viewer (the left side pane) in XCode, open the “Products” group, right-click over the “libRubyfication.a” file (or any other resulting file) and choose “Show in Finder”. Then you can navigate one folder up in the hierarchy (to the “Products” folder) and you will see something like this:
@@ -95,7 +97,7 @@ And there you go: there’s your ZIP file with your brand new redistributable un
 
 ## Using the Universal Binary
 
-In order to demonstrate how to use this distributable ZIP file. I have created a very simple, bare-bone iOS project called [ObjC\_OnigurumaDemo](https://github.com/akitaonrails/ObjC_OnigurumaDemo) that you can download from Github and run in your own iOS device.
+In order to demonstrate how to use this distributable ZIP file. I have created a very simple, bare-bone iOS project called [ObjC_OnigurumaDemo](https://github.com/akitaonrails/ObjC_OnigurumaDemo) that you can download from Github and run in your own iOS device.
 
 As you can see in the screenshot below, I just unzipped the ZIP within a “Dependencies” folder in my iOS project and added the universal binary “libRubyfication-Debug.a” within the Library Linking Build Phase:
 
@@ -106,22 +108,22 @@ This allows me to just use anything from this library in my project, in particul
 * * *
 C
 
+```objc
 - (IBAction)runRegex:(id)sender {  
- OnigRegexp\* regex = [OnigRegexp compile:[regexPattern text]];  
- OnigResult\* res = [regex match:[initialText text]];  
- NSMutableString\* tmpResult = [NSMutableString stringWithString:`""];
+ OnigRegexp* regex = [OnigRegexp compile:[regexPattern text]];  
+ OnigResult* res = [regex match:[initialText text]];  
+ NSMutableString* tmpResult = [NSMutableString stringWithString:`""];
     for(int i = 0; i < [res count]; i++) {
         [tmpResult appendString:`“(”];  
  [tmpResult appendString:[res stringAt:i]];  
  [tmpResult appendString:@")"];  
  }  
  [result setText:tmpResult];  
-}  
--
+}
+```
 
 This demonstration application has a text-field called “initialText”, where you can type any string. Then you can prepare a Regular Expression in the “regexPattern” text-field and when you hit the “Run” button, it will trigget the action above that will run the Regular Expression againt the initial text and write the matches within parenthesis in the “result” text view. The applications looks like this:
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2011/4/24/Screen%20shot%202011-04-24%20at%2012.46.19%20AM_original.png?1303616748)
 
 And, _voilá_! Ruby 1.9-like Regular Expression, directly from Oniguruma, within an iOS Application!
-

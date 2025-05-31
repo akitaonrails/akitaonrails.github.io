@@ -22,7 +22,7 @@ All speakers had important and interesting subjects, going from Data Sciences, E
 
 ### The million dollar question: Are we finally rich this year? :-D
 
-And as last year, nope.  `¯\_(ツ)_/¯`
+And as last year, nope.  `¯_(ツ)_/¯`
 
 It's not the goal to profit with this event.
 

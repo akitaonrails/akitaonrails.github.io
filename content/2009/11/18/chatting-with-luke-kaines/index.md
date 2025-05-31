@@ -89,7 +89,7 @@ It’s generally as tough to know how you’ll need to size your puppetmaster as
 
 From there, a human normally has to trigger the client’s certificate to be signed, but many organizations, including Google, automatically sign client certificates because they trust their internal network.
 
-As to automatic hardening, there aren’t any recipes that I’m aware of right now, but it’s something that I’m definitely interested in. Years ago I was a big fan of TITAN, which is a hardening package for various \*NIX platforms, and it was part of the inspiration to write Puppet – I’ve always wanted a portable, executable security policy.
+As to automatic hardening, there aren’t any recipes that I’m aware of right now, but it’s something that I’m definitely interested in. Years ago I was a big fan of TITAN, which is a hardening package for various *NIX platforms, and it was part of the inspiration to write Puppet – I’ve always wanted a portable, executable security policy.
 
 **AkitaOnRails:** The puppetmaster uses Webrick by default, but the documentation also describes using Mongrel or Passenger. Are there any real gains in using those? Is it more for convenience or do we have performance/robustness improvements?
 

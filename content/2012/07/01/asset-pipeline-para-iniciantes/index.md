@@ -28,37 +28,37 @@ Para resolver essas e outras situações é que foi criado o chamado [Asset Pipe
 
 Tudo que será explicado neste artigo vale para o Rails 3.2 e superior, existem diferenças importantes nas versões anteriores que não serão tratadas aqui. Leia o Rails Guides, especialmente os Release Notes de cada versão.
 
-
 ## Iniciando um projeto Rails
 
 Quando iniciamos um novo projeto com o comando <tt>rails new novo_projeto</tt>, o primeiro arquivo que você vai querer mexer é o <tt>Gemfile</tt>:
 
 * * *
-ruby
-1. Original  
+
+```ruby
+#1. Original  
 group :assets do  
  gem ‘sass-rails’, ‘~\> 3.2.3’  
  gem ‘coffee-rails’, ‘~\> 3.2.1’
 
-1. See https://github.com/sstephenson/execjs#readme for more supported runtimes
-2. gem ‘therubyracer’, :platforms =\> :ruby
+#1. See https://github.com/sstephenson/execjs#readme for more supported runtimes
+#2. gem ‘therubyracer’, :platforms =\> :ruby
 
 gem ‘uglifier’, ‘\>= 1.0.3’
 
 end
 
-1. Recomendado para iniciar  
+#1. Recomendado para iniciar  
 group :assets do  
  gem ‘sass-rails’  
  gem ‘compass-rails’
 
-1. See https://github.com/sstephenson/execjs#readme for more supported runtimes  
- gem ‘therubyracer’, :platforms =\> :ruby
+  #1. See https://github.com/sstephenson/execjs#readme for more supported runtimes  
+ gem ‘therubyracer’, :platforms => :ruby
 
 gem ‘uglifier’
 
-end  
--
+end
+```
 
 Não vamos entrar na [controvérsia agora sobre CoffeeScript](http://akitaonrails.com/2011/04/16/a-controversia-coffeescript). Se você está iniciando, esqueça CoffeeScript por enquanto para não complicar ainda mais. Por outro lado, usar o [Compass](http://compass-style.org) e particularmente o [Compass Rails](https://github.com/Compass/compass-rails/) é algo que nem precisamos discutir já que o Compass provê diversos mixins de Sass muito úteis.
 
@@ -68,52 +68,74 @@ Ao modificar o arquivo <tt>Gemfile</tt>, lembre-se de executar os seguintes coma
 
 * * *
 
-bundle  
--
+```bash
+bundle
+```
 
 Para exercitar, vamos criar um simples controller com uma única página dinâmica para entender o que podemos fazer com isso. De volta ao terminal faça o seguinte:
 
 * * *
 
+```bash
 rm public/index.html  
 bundle exec rails g controller home index  
+```
+
 -
 
 O resultado será:
 
 * * *
-create app/controllers/home\_controller.rb route get “home/index” invoke erb create app/views/home create app/views/home/index.html.erb invoke test\_unit create test/functional/home\_controller\_test.rb invoke helper create app/helpers/home\_helper.rb invoke test\_unit create test/unit/helpers/home\_helper\_test.rb invoke assets invoke js create app/uploads/javascripts/home.js invoke scss create app/uploads/stylesheets/home.css.scss
+
+```
+create app/controllers/home_controller.rb 
+route get “home/index” 
+invoke erb create app/views/home 
+create app/views/home/index.html.erb 
+invoke test_unit create 
+test/functional/home_controller_test.rb 
+invoke helper create app/helpers/home_helper.rb 
+invoke test_unit create 
+test/unit/helpers/home_helper_test.rb 
+invoke assets invoke js create app/uploads/javascripts/home.js 
+invoke scss create app/uploads/stylesheets/home.css.scss
+```
+
 * * *
 
 E para combinar, já que estamos recomendando SCSS, vamos apagar o arquivo <tt>app/stylesheets/application.css</tt> e criar um novo:
 
 * * *
 
+```bash
 rm app/stylesheets/application.css  
 touch app/stylesheets/application.css.scss  
--
+```
 
 E nesse novo arquivo podemos colocar somente:
 
 * * *
-css
+
+```css
 
 @import “compass”  
--
+```
 
 Outra boa prática é ignorar o diretório <tt>public/uploads</tt> do repositório Git (você utilizar [Git](/2012/04/09/screencasts-liberados-gratuitamente), correto?). Faça o seguinte:
 
 * * *
 
-echo “public/uploads” \>\> .gitignore  
--
+```bash
+echo “public/uploads” >> .gitignore  
+```
 
 E agora já podemos iniciar o servidor local de Rails e examinar o que temos até agora:
 
 * * *
 
+```bash
 bundle exec rails s  
--
+```
 
 ## Processo de Pré-Compilação
 
@@ -121,6 +143,7 @@ Resumidamente, em termos de assets temos os seguintes principais elementos e est
 
 * * *
 
+```
 app  
  assets  
  images  
@@ -142,34 +165,35 @@ public
  assets  
 Gemfile  
 Gemfile.lock  
--
+```
 
 O código fonte do layout <tt>app/views/layouts/application.html.erb</tt> contém o seguinte:
 
 * * *
-html
 
-\<!DOCTYPE html\>
+```html
 
-  
+<!DOCTYPE html>
+
 <title>NovoProjeto</title>
   
- \<%= stylesheet\_link\_tag “application”, :media =\> “all” \>  
- \<= javascript\_include\_tag “application” \>  
- \<= csrf\_meta\_tags %\>
+ <%= stylesheet_link_tag “application”, :media => “all” \>  
+ <= javascript_include_tag “application” \>  
+ <= csrf_meta_tags %\>
 
-\<%= yield %\>
+<%= yield %\>
+```
 
 * * *
 
 Se você já tinha visto até o Rails 2.x, um layout padrão ERB não é tão diferente. Com o servidor de pé, em ambiente de desenvolvimento, vejamos o HTML gerado ao abrir <tt>http://localhost:3000/home/index</tt>:
 
 * * *
-html
 
-\<!DOCTYPE html\>
+```html
 
-  
+<!DOCTYPE html>
+
 <title>NovoProjeto</title>
   
 <link href="/uploads/application.css" media="all" rel="stylesheet" type="text/css">
@@ -182,6 +206,7 @@ html
   
 <meta content="OFmZwwtshevVgcs1DUg56WVIQ8NcJZsri/nUubhEJCk=" name="csrf-token">
 # Home#index
+```
 
 Find me in app/views/home/index.html.erb
 
@@ -190,13 +215,14 @@ Find me in app/views/home/index.html.erb
 No HTML gerado, note que os links para os assets apontam todos para <tt>/uploads</tt>. Além disso note que a chamada <tt>javascript_include_tag(“application”)</tt> expandiu para 4 javascripts diferentes. Para entender isso, precisamos examinar mais de perto o arquivo <tt>app/uploads/javascripts/application.js</tt>:
 
 * * *
-javascript
+
+```javascript
 
 …  
 //= require jquery  
-//= require jquery\_ujs  
-//= require\_tree .  
--
+//= require jquery_ujs  
+//= require_tree .  
+```
 
 Sobre o detalhe do jQuery, todo novo projeto Rails tem declarado <tt>gem ‘jquery-rails’</tt> no <tt>Gemfile</tt>.
 
@@ -210,13 +236,15 @@ Para explicar como tudo isso funciona é importante pararmos o servidor Rails qu
 
 * * *
 
+```bash
 bundle exec rails s e production  
---
+```
 
 Agora, se tentarmos carregar a mesma URL <tt>http://localhost:3000/home/index</tt> no browser, receberemos um erro 500 com o seguinte backtrace:
 
 * * *
 
+```
 Started GET “/home/index” for 127.0.0.1 at 2012-07-01 03:31:55 -0300  
 Connecting to database specified by database.yml  
 Processing by HomeController#index as HTML  
@@ -224,30 +252,31 @@ Processing by HomeController#index as HTML
 Completed 500 Internal Server Error in 155ms
 
 ActionView::Template::Error (application.css isn’t precompiled):  
- 2:   
+ 2:
  3:
 
-  
  4: <title>NovoProjeto</title>
-  
- 5: \<%= stylesheet\_link\_tag “application”, :media =\> “all” \>  
- 6: \<= javascript\_include\_tag “application” \>  
- 7: \<= csrf\_meta\_tags %\>  
- 8:   
- app/views/layouts/application.html.erb:5:in `\_app\_views\_layouts\_application\_html\_erb\_\_408740569075721590\_70099961775620’  
--
+
+5: <%= stylesheet_link_tag “application”, :media => “all” \>  
+ 6: <= javascript_include_tag “application” \>  
+ 7: <= csrf_meta_tags %\>  
+ 8:
+ app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb__408740569075721590_70099961775620’  
+```
 
 Este é o sinal que não realizamos um passo importante que deve ser executado toda vez que você realizar uma atualização em produção: pré-compilar os assets. É o processo que lê os arquivos manifesto e realiza a concatenação dos arquivos declarados e sua minificação (utilizando a gem [Uglifier](https://github.com/lautis/uglifier)). Portanto, precisamos executar o seguinte:
 
 * * *
 
-bundle exec rake assets:precompile  
--
+```bash
+bundle exec rake assets:precompile
+```
 
 Lembrando que antes disso o diretório <tt>public/uploads</tt> estava originalmente vazio (e em desenvolvimento, você deve garantir que esse diretório esteja sempre vazio, já explicamos porque). Após executar a a pré-compilação, esse diretório terá os seguintes arquivos:
 
 * * *
 
+```
 application-363316399c9b02b9eb98cd1b13517abd.js  
 application-363316399c9b02b9eb98cd1b13517abd.js.gz  
 application-7270767b2a9e9fff880aa5de378ca791.css  
@@ -259,16 +288,16 @@ application.js.gz
 manifest.yml  
 rails-be8732dac73d845ac5b142c8fb5f9fb0.png  
 rails.png  
--
+```
 
 E para entender vejamos o código-fonte do HTML gerado em produção:
 
 * * *
-html
 
-\<!DOCTYPE html\>
+```html
 
-  
+<!DOCTYPE html\>
+
 <title>NovoProjeto</title>
   
 <link href="/uploads/application-7270767b2a9e9fff880aa5de378ca791.css" media="all" rel="stylesheet" type="text/css">
@@ -278,6 +307,7 @@ html
   
 <meta content="OFmZwwtshevVgcs1DUg56WVIQ8NcJZsri/nUubhEJCk=" name="csrf-token">
 # Home#index
+```
 
 Find me in app/views/home/index.html.erb
 
@@ -289,10 +319,11 @@ Para entendermos melhor, vejamos o que tem no arquivo <tt>public/uploads/manifes
 
 * * *
 
+```bash
 rails.png: rails-be8732dac73d845ac5b142c8fb5f9fb0.png  
 application.js: application-363316399c9b02b9eb98cd1b13517abd.js  
 application.css: application-7270767b2a9e9fff880aa5de378ca791.css  
--
+```
 
 Ou seja, o arquivo <tt>application.js</tt> é idêntico ao <tt>application-363316399c9b02b9eb98cd1b13517abd.js</tt>. Se algum dos arquivos declarados no manifesto <tt>app/uploads/javascripts/application.js</tt> mudar, esse número sufixo irá mudar e o HTML apontará para o novo. Olhando novamente nossa lista de situações que precisam ser solucionadas, que apresentamos no início do arquivo, temos já até aqui a solução de 3 dos pontos:
 
@@ -303,24 +334,27 @@ Ou seja, o arquivo <tt>application.js</tt> é idêntico ao <tt>application-36331
 Para reforçar o ponto 2, vamos adicionar a seguinte função no arquivo <tt>app/uploads/javascripts/application.js</tt>:
 
 * * *
-javascript
+
+```javascript
 
 function helloWorld() {  
  console.log(“Hello World”);  
 }  
--
+```
 
 Agora executamos a pré-compilação novamente:
 
 * * *
 
+```bash
 bundle exec rake assets:precompile  
--
+```
 
 O que temos no diretório <tt>public/uploads</tt> será:
 
 * * *
 
+```
 application-363316399c9b02b9eb98cd1b13517abd.js  
 application-363316399c9b02b9eb98cd1b13517abd.js.gz  
 application-4fee97e9e402a9816ab9b3edf7a4c08b.js  
@@ -333,13 +367,19 @@ application.js
 application.js.gz  
 manifest.yml  
 rails-be8732dac73d845ac5b142c8fb5f9fb0.png  
-rails.png  
+rails.png
+```
+
 -
 
 Como não limpamos o diretório antes, temos a versão antiga e a recente. Compare, a anterior se chamava <tt>application-363316399c9b02b9eb98cd1b13517abd.js</tt> e a nova com a função de demonstração se chama <tt>application-4fee97e9e402a9816ab9b3edf7a4c08b.js</tt>. Reiniciando o servidor Rails no ambiente de produção e vendo o novo HTML gerado, verá este trecho:
 
 * * *
-html<script src="/uploads/application-4fee97e9e402a9816ab9b3edf7a4c08b.js" type="text/javascript"></script>
+
+```html
+<script src="/uploads/application-4fee97e9e402a9816ab9b3edf7a4c08b.js" type="text/javascript"></script>
+```
+
 * * *
 
 Espero que esse detalhamente deixe bem claro o objetivo do pipeline de pré-compilação e as convenções de nomenclatura e quais problemas ele soluciona. Num artigo que escrevi recentemente chamado [Enciclopédia do Heroku](http://akitaonrails.com/2012/04/20/heroku-tips-enciclopedia-do-heroku) explico como mover esses assets pré-compilados para uma conta na Amazon S3, com o objetivo de descarregar processamento do seu servidor de aplicação, servindo a partir de um [CDN](http://pt.wikipedia.org/wiki/Content_Delivery_Network), o que deve melhorar a experiência do usuário final ao carregar assets de um servidor mais próximo.
@@ -347,4 +387,3 @@ Espero que esse detalhamente deixe bem claro o objetivo do pipeline de pré-comp
 ## Parte 2
 
 O artigo ficou longo, por isso vamos continuar na [Parte 2](http://akitaonrails.com/2012/07/02/asset-pipeline-para-iniciantes-parte-2)
-

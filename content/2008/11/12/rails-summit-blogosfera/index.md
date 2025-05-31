@@ -118,7 +118,7 @@ Infelizmente, tivemos problemas operacionais com o vídeo e acabamos ficando sem
 <param name="allowscriptaccess" value="always">
 <embed src="http://www.youtube.com/v/Lo5g8KxDcYM&hl=en&fs=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="344"></embed></object>
 
-- Dr Nic: morena\_opensource. Fork It Now
+- Dr Nic: morena_opensource. Fork It Now
 
 <object width="425" height="344"><param name="movie" value="http://www.youtube.com/v/6j24jV5SGZU&hl=en&fs=1">
 <param name="allowFullScreen" value="true">

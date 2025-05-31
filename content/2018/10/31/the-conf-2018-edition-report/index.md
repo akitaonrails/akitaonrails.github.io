@@ -35,7 +35,7 @@ Speaking of support, this year we had a bit more help, from **Impulso, OLX, Plat
 
 ### So, are we finally rich this year? :-D
 
-Moreover, like last year, nope.  `¯\_(ツ)_/¯`
+Moreover, like last year, nope.  `¯_(ツ)_/¯`
 
 Again, it's not my primary goal to have a profit with this event.
 

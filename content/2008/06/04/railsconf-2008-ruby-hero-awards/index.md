@@ -90,7 +90,7 @@ Parabéns ao Gregg e a todos os participantes do painel, acho que foi uma grande
 > 
 > He is extremely active on the Brazilian community talking and spreading RoR to everyone.
 > 
-> Creator and maintener of the plugin "Acts As Replica" – http://github.com/akitaonrails/acts\_as\_replica/tree/master
+> Creator and maintener of the plugin "Acts As Replica" – http://github.com/akitaonrails/acts_as_replica/tree/master
 > 
 > He declares himself arrogant but he’s the pioneer brazilian ruby hero…
 > 

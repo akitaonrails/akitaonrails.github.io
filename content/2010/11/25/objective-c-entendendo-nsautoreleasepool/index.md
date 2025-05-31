@@ -17,32 +17,31 @@ Logo de cara uma coisa que confunde os que sempre trabalharam com plataformas co
 Uma coisa que confunde no início é o <tt>NSAutoreleasePool</tt>. Todo projeto Cocoa começa com algo parecido com isto, no <tt>main.m</tt>:
 
 * * *
-C
 
-int main(int argc, char \*argv[]) {   
- NSAutoreleasePool \* pool = [[NSAutoreleasePool alloc] init];  
+```objc
+int main(int argc, char *argv[]) {   
+ NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];  
  int retVal = UIApplicationMain(argc, argv, nil, nil);  
  [pool release];  
  return retVal;  
-}  
--
-
+}
+```
 
 O Obj-C trabalha com contagem de referência para limpar memória. Toda vez que se chama o método <tt>alloc</tt> ou <tt>new</tt> memória é alocada, um novo objeto é instanciado e seu contador sobe para 1. Toda vez se envia a mensagem <tt>retain</tt> a esse objeto o contador é incrementado, toda vez que se envia a mensagem <tt>release</tt> o contador é decrementado. Quando o contador chega a zero, o sistema pode destruir o objeto (chamando também seu método <tt>dealloc</tt>) e a memória é devolvida ao sistema.
 
 O sistema devolve memória liberado ao sistema ao final de uma execução, mas existe um caso em específico que pode dar picos de consumo de memória antes do sistema ter chance de limpá-la. Veja este trecho:
 
 * * *
-C
 
+```objc
 - (IBAction) onClick:(id)sender {  
  int i;  
  for (i = 0; i \< 50000; i++) {  
- NSString \* teste = [NSString stringWithFormat:`"Teste %i", i];
+ NSString * teste = [NSString stringWithFormat:`"Teste %i", i];
       NSLog(`“X: %@”, teste);  
  }  
 }  
--
+```
 
 Imagine situações onde você está consumindo um stream de dados como de um arquivo, um web service, um parser, um tweet stream ou coisas assim, com cada ítem sendo processado em loop. Não é difícil sair criando milhares de Strings sem liberá-los.
 
@@ -59,14 +58,14 @@ Note quanto de memória está sendo usada somente por <tt>CFString</tt>, mais de
 Esse padrão é fácil de identificar, basta procurar por loops que podem ser muito longos (centenas ou milhares de interações). Para “consertar” isso, podemos fazer o seguinte:
 
 * * *
-C
 
-- (IBAction) onClick:(id)sender {   
+```objc
+- (IBAction) onClick:(id)sender {
  int i;  
  // cria novo pool  
- NSAutoreleasePool\* pool = [[NSAutoreleasePool alloc] init];  
+ NSAutoreleasePool* pool = [[NSAutoreleasePool alloc] init];  
  for (i = 0; i \< 50000; i++) {  
- NSString \* teste = [NSString stringWithFormat:`"Teste %i", i];
+ NSString * teste = [NSString stringWithFormat:`"Teste %i", i];
         NSLog(`“X: %@”, teste);  
  if (i % 1000 == 0) {  
  // limpa o pool a cada mil interações  
@@ -78,7 +77,7 @@ C
  // limpa o último pool criado  
  [pool release];  
 }  
--
+```
 
 É o mesmo código, porém criamos um novo <tt>NSAutoreleasePool</tt> especialmente para os objetos criados pelo loop. Dentro do loop limpamos o pool depois de alguma certa quantidade de interações que faça sentido, no exemplo, a cada 1000 interações. Uma vez que o pool é liberado, criamos outro vazio para poder continuar o loop. E no final garantimos que estamos liberando o último pool criado.
 
@@ -89,4 +88,3 @@ Com isso o consumo de memória nunca passará de um certo teto bem mais baixo qu
 Muito melhor! Não muito mais do que 100Kb. E esse consumo é constante e não crescente como antes, o que é mais importante. Mais do que consumir pouca memória é importante conseguir comportamentos onde o consumo não passe de um certo teto.
 
 Esse é apenas um dos aspectos do gerenciamento de memória do Objective-C que é importante que os programadores se atentem. Vou fazer mais artigos sobre esse assunto, aguardem.
-

@@ -27,7 +27,7 @@ Deveria ser óbvio, mas muitas pessoas se “deslumbram” com celebridades. Sé
 
 Isso é nada mais, nada menos do que a falácia de [argumentação por autoridade](http://en.wikipedia.org/wiki/Appeal_to_authority). Por que A disse B; e porque A é considerada uma autoridade; portanto B é verdade. Prestem atenção: usa-se isso todos os dias. Isso e mais uma dezena de outras falácias (vide lista abaixo) são usadas diariamente e nós caímos nelas o tempo todo.
 
-O contrário também é verdade, só porque o Philippe Kruchten ajudou a criar o RUP não quer dizer que ele seja ruim (brincadeira, o cara é muito bom). Aliás, isso é outra coisa que me incomoda muito: atacar alguma tecnologia, prática ou coisa assim atacando o seu criador ou participante. Por exemplo, _“Rails é ruim porque o David é arrogante”\_. Isso é uma falácia e é bem conhecida em inglês como falácia [Strawman](http://en.wikipedia.org/wiki/Straw)_man (“homem-de-palha”) que em forma mais genérica é falar de um assunto irrelevante para tirar a atenção de discutir o assunto principal.
+O contrário também é verdade, só porque o Philippe Kruchten ajudou a criar o RUP não quer dizer que ele seja ruim (brincadeira, o cara é muito bom). Aliás, isso é outra coisa que me incomoda muito: atacar alguma tecnologia, prática ou coisa assim atacando o seu criador ou participante. Por exemplo, _“Rails é ruim porque o David é arrogante”_. Isso é uma falácia e é bem conhecida em inglês como falácia [Strawman](http://en.wikipedia.org/wiki/Straw)_man (“homem-de-palha”) que em forma mais genérica é falar de um assunto irrelevante para tirar a atenção de discutir o assunto principal.
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2009/11/4/strawman-240x300_original.jpg?1257376657)
 

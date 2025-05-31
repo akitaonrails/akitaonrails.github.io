@@ -15,7 +15,6 @@ A Amazon recentemente anunciou seu novo serviço [SimpleDB](http://www.amazon.co
 
 [Chad Fowler](http://www.chadfowler.com/2007/12/16/open-source-competition) acabou de reportar que ele procurou no [RubyForge](http://rubyforge.org/) se alguém por acaso já não teria criado algum wrapper para as APIs do SimpleDB e, de fato, elas já existem. Temos os projetos [aws-simpledb](http://rubyforge.org/projects/aws-simpledb/), o [aws-sdb](http://rubyforge.org/projects/aws-sdb/) e o [simpledb](http://rubyforge.org/projects/simpledb/). E quem quiser estudar em detalhes o funcionamento das APIs do SimpleDB, deve ver a [documentação](http://docs.amazonwebservices.com/AmazonSimpleDB/2007-11-07/GettingStartedGuide/)? da própria Amazon.
 
-
 ### CouchDB
 
 Esse conceito não é novo, os interessados devem conhecer o [CouchDB](http://www.couchdbwiki.com). Essencialmente os conceitos são os mesmos. Coincidentemente ambos foram escritos em [Erlang](http://www.erlang.org/faq/t1.html), claro por causa das características de paralelismo inerentes a essa linguagem.
@@ -38,7 +37,7 @@ E agora, onde eles diferem:
 | criação, atualização e deleção são atômicas ao nível individual de atributos | criação, atualização e deleção são atômicas |
 | todos os dados são considerados strings UTF-8 | suporta todos os tipos de dados JSON (string, number, object, array, true, false, null) |
 | automaticamente indexa dados | índices estão no controle do usuário, por ‘views’, definidas com funções Javascript, podem ser armazenadas como documentos, podem ser executadas a qualquer momento, como views temporárias |
-| queries são limitadas a 5 segundos, com timeout, definidas com parâmetros de query HTTP, compostas de booleanos e conjuntos de operações com alguns operadores óbvios (=, !=, \>, etc) | queries são essencialmente views, com a adição de modificadores (start\_key, end\_key, count, descending) fornecidas como parâmetros de query HTTP |
+| queries são limitadas a 5 segundos, com timeout, definidas com parâmetros de query HTTP, compostas de booleanos e conjuntos de operações com alguns operadores óbvios (=, !=, \>, etc) | queries são essencialmente views, com a adição de modificadores (start_key, end_key, count, descending) fornecidas como parâmetros de query HTTP |
 | como os valores são string UTF-8, não há opções de ordenação | ordenação é flexível e arbitrariamente complexa, já que é baseada em tipos de dados JSON definidas nas views |
 | respostas são em XML | respostas são em JSON |
 
@@ -47,33 +46,34 @@ Se quiser pesquisar um sistema parecido com o serviço SimpleDB, o CouchDB é um
 Copiando o exemplo do seu Wiki, eis como se criaria um banco de dados no CouchDb:
 
 * * *
-ruby
+
+```ruby
 
 server = Couch::Server.new(“localhost”, “5984”)  
 server.put(“/foo/”, "")  
--
+```
 
 Eis como se criaria um documento:
 
 * * *
-ruby
 
+```ruby
 server = Couch::Server.new(“localhost”, “5984”)  
 doc = \<\<-JSON  
 {"type":“comment”,“body”:“First Post!”}  
 JSON  
-server.put(“/foo/document\_id”, doc)  
--
+server.put(“/foo/document_id”, doc)  
+```
 
 E finalmente, como se busca um documento:
 
 * * *
-ruby
 
+```ruby
 server = Couch::Server.new(“localhost”, “5984”)  
-res = server.get(“/foo/document\_id”)  
+res = server.get(“/foo/document_id”)  
 xml = res.body  
--
+```
 
 Rails utiliza ActiveRecord, mas podemos facilmente substituir o ActiveRecord da mesma forma como já fazemos com ActiveResource, portanto [não vejo](http://groups.google.com/group/couchdb/browse_thread/thread/e1eac1af681baae3) porque não poderíamos ter algumas aplicações usando CouchDB ou SimpleDB como back-end. Alguém se habilita? :-)
 
@@ -93,9 +93,8 @@ Num outro nicho, o mercado de saúde, hospitais, além do Ensemble outro produto
 
 Meu primeiro ‘banco de dados’, obviamente, foi em Basic. Claro, o mais rudimentar de todos os bancos: uma estrutura de dados de tamanho fixo, um arquivo binário, e navegaçao baseada em offset a partir do tamanho da estrutura, mais um pequeno índice para navegar mais rapidamente. Com 11 ou 12 anos, não se pode exigir mais do que isso. E eu não tinha acesso a grandes mainframes, claro, então IMS era algo que eu só ouviria falar anos depois.
 
-Mas rapidamente migrei para [dBase](http://en.wikipedia.org/wiki/DBASE) III, da [Ashton\_Tate](http://en.wikipedia.org/wiki/Ashton-Tate). O pessoal que desenvolveu o dBase, da [Jet Propulsion Labs](http://en.wikipedia.org/wiki/Jet_Propulsion_Laboratory) (NASA) fez por brincadeira, para rodar sobre CP/M e depois vendeu para a Ashton-Tate. Para quem não se lembra, o antigo MS-DOS é um clone (mal-feito, claro) de CP/M. Naquela época tínhamos vários clones, como PC-DOS e DR-DOS. Coisas que gostava dessa época: eu não tinha nem idéia do que eram estrutura relacional, nem estrutura hierárquica. Para mim haviam apenas tabelas (DBF) e índices (NDX, IDX). Sabia existia redes locais, token ring, compartilhamento de arquivos via Netware, IPX/SPX e que DBFs tinham locks baseadas em tabela para que várias pessoas pudessem utilizar _quase_ ao mesmo tempo. Também, sabia que essas estrutura tendiam a se corromper com extrema facilidade e me perguntava como elas conseguiam funcionar :-)
+Mas rapidamente migrei para [dBase](http://en.wikipedia.org/wiki/DBASE) III, da [Ashton_Tate](http://en.wikipedia.org/wiki/Ashton-Tate). O pessoal que desenvolveu o dBase, da [Jet Propulsion Labs](http://en.wikipedia.org/wiki/Jet_Propulsion_Laboratory) (NASA) fez por brincadeira, para rodar sobre CP/M e depois vendeu para a Ashton-Tate. Para quem não se lembra, o antigo MS-DOS é um clone (mal-feito, claro) de CP/M. Naquela época tínhamos vários clones, como PC-DOS e DR-DOS. Coisas que gostava dessa época: eu não tinha nem idéia do que eram estrutura relacional, nem estrutura hierárquica. Para mim haviam apenas tabelas (DBF) e índices (NDX, IDX). Sabia existia redes locais, token ring, compartilhamento de arquivos via Netware, IPX/SPX e que DBFs tinham locks baseadas em tabela para que várias pessoas pudessem utilizar _quase_ ao mesmo tempo. Também, sabia que essas estrutura tendiam a se corromper com extrema facilidade e me perguntava como elas conseguiam funcionar :-)
 
 Rapidamente migrei para Clipper Autumn 86 (que estava no fim e eu lembro que tinha sérias limitações de memória no linkeditor, o limite de 500kb) e para o Clipper Summer 87, da Nantucket. O [Clipper](http://en.wikipedia.org/wiki/Clipper_programming_language) começou como um compilador de dBase III. Fiz muitos sisteminhas em Clipper e no começo dos anos 90 migrei para [FoxPro](http://www.foxprohistory.org/tableofcontents.htm#how_it_started). Nessa época esse mercado ficou meio conturbado, a Ashton-Tate foi adquirida pela Borland, a Nantucket foi absorvida pela Computer Associates e a Fox foi para as asas da Microsoft. O Windows ainda estava apenas começando a se popularizar, todas elas lançaram algum produto gráfico, como o Visual dBase, CA-Visual Objects e o Visual FoxPro, respectivamente.
 
 Foi quando comecei a largar o mercado baseado em derivados de dBase e foi para Pascal e Delphi. Mas isso é outra história ;-)
-

@@ -70,7 +70,7 @@ A bit less hard-core tech-talks such as:
 - [Advancing Net::HTTP](http://rubykaigi.org/2011/en/schedule/details/17M08)
 - [Drip: Persistent tuple space and stream](http://rubykaigi.org/2011/en/schedule/details/17S02)
 - [Actors on stage](http://rubykaigi.org/2011/en/schedule/details/17S01)
-- [Use rails\_best\_practices to refactor your rails codes](http://rubykaigi.org/2011/en/schedule/details/17S04)
+- [Use rails_best_practices to refactor your rails codes](http://rubykaigi.org/2011/en/schedule/details/17S04)
 - [MacRuby on Rails](http://rubykaigi.org/2011/en/schedule/details/17S08)
 - [Writing custom DataMapper Adapters](http://rubykaigi.org/2011/en/schedule/details/18S05)
 
@@ -137,7 +137,7 @@ Again, it’s not my intention to make plain fun out of this, and this was just 
 
 ## The Ruby Core Team
 
-Another interesting thing that was not entirely news, but I wasn’t aware of, was the introduction of [Shota Fukumori-kun](http://sorah.jp/), [@sora\_h](http://twitter.com/#!/sora_h) on Twitter. With only **14 years old** , he is the youngest Ruby Core committer. He did some work on making the Ruby [test suite run in parallel](http://redmine.ruby-lang.org/issues/show/4415) if multiple cores are available. Sounds easy when I explain like this, but it is not. He made several other contributions to Ruby and other open source projects, take a look at his website. I am more and more amazed by the amount of very young developers exposing themselves all around the world. I wonder if this is starting a new trend. Just pay attention and keep looking.
+Another interesting thing that was not entirely news, but I wasn’t aware of, was the introduction of [Shota Fukumori-kun](http://sorah.jp/), [@sora_h](http://twitter.com/#!/sora_h) on Twitter. With only **14 years old** , he is the youngest Ruby Core committer. He did some work on making the Ruby [test suite run in parallel](http://redmine.ruby-lang.org/issues/show/4415) if multiple cores are available. Sounds easy when I explain like this, but it is not. He made several other contributions to Ruby and other open source projects, take a look at his website. I am more and more amazed by the amount of very young developers exposing themselves all around the world. I wonder if this is starting a new trend. Just pay attention and keep looking.
 
 The sense of humor of the Ruby Core was also interesting to see. Yuki Sonoda-san with her kind of serious posture were making lots of small jokes and comments, kind of breaking the ice between the developers on stage. She inquired Matz if they would have a 1.9.4. She complained, kidding, that she wouldn’t like to deal with the maintenance of 1.9.2, 1.9.3 and even 1.9.1 that’s still supported, plus a future 1.9.4. Matz made a funny troubled face and played with the option to delegate it to Shyouhei Urabe-san, one of the maintainers of the 1.8 series. As Sonoda-san moves to 1.9.3 maybe Urabe-san could also graduate from 1.8 to 1.9. They made some fun out of releasing 2.0 instead of 1.9.4 as well. Matz agreed for a while, Sasada-san was against, and they didn’t settle on 2.0 just yet. Just a humorous session between the core developers. But don’t expect 2.0 any time soon.
 

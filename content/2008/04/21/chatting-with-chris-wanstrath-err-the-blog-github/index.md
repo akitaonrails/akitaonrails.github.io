@@ -25,19 +25,19 @@ In December of 2007 we launched [FamSpam](http://famspam.com/), which is a site 
 
 While P.J. and I were working on FamSpam, **Tom Preston-Werner** and I were working on GitHub on the side. We started in October working nights and weekends on it. We basically wanted an easy, pretty, and feature-rich way to throw our Git repos up and share them with people. Then as we got more into it, we realized how things like the dashboard could change the way we deal with open source contributions. After that, all the social features began to fall into place. Github private beta launched in january, and in april we saw the public launch
 
-**AkitaOnRails:** Wow, Cool, you are a very busy guy indeed, I want to go on in details within each topic you mentioned but first I knew you worked for C|Net because of your memcached keynotes. I have 2 questions: you were a PHP programmer, what made you switch to Ruby on Rails? And then, working for a high profile network like C|Net exposed you to very demanding public websites. How did you figured out about leveraging memcached with Rails and then your cache\_fu plugin?
+**AkitaOnRails:** Wow, Cool, you are a very busy guy indeed, I want to go on in details within each topic you mentioned but first I knew you worked for C|Net because of your memcached keynotes. I have 2 questions: you were a PHP programmer, what made you switch to Ruby on Rails? And then, working for a high profile network like C|Net exposed you to very demanding public websites. How did you figured out about leveraging memcached with Rails and then your cache_fu plugin?
 
 **Chris Wanstrath:** I started doing Rails at the start of 2005 and got my first PHP job in February of 2005. (before that I was doing asp and Perl, which I don’t like to talk about). So really, I never considered myself a “PHP programmer” over a Rails programmer. I really liked websites and I knew I could get paid doing PHP, so that’s what I did. In the meantime, I was constantly doing Ruby on the side.
 
 When C|Net started doing Rails, I knew it would be a perfect fit for me. I really liked PHP and loved Gamespot, but it was just silly for me to spend all night playing with Ruby while doing PHP professionally.
 
-In fact, one of the things that got me hired at Gamespot was my pure PHP yaml parser called [SPYC](http://spyc.sourceforge.net/) (simple PHP yaml class). It was inspired (obviously) by \_why’s syck yaml parser. I wanted an easy, extension-free way to deal with YAML in PHP because I was so spoiled by Ruby.
+In fact, one of the things that got me hired at Gamespot was my pure PHP yaml parser called [SPYC](http://spyc.sourceforge.net/) (simple PHP yaml class). It was inspired (obviously) by _why’s syck yaml parser. I wanted an easy, extension-free way to deal with YAML in PHP because I was so spoiled by Ruby.
 
 I think today the CakePHP and Symfony frameworks use it, and do their config stuff in yaml. But even when writing PHP I wanted to be writing Ruby. The main reason I picked up ruby in the first place is because I knew PHP, and I knew Perl, but I wanted something I could use to write both websites and command line scripts. Perl was great for scripts, and PHP was great for sites, but I was just tired of using them both
 
 So while I was learning Python, Rails popped up.
 
-As far as [cache\_fu](http://errtheblog.com/posts/57-kickin-ass-w-cachefu) goes, I was very interested in some of the “scaling” aspects of running a website while working at Gamespot.
+As far as [cache_fu](http://errtheblog.com/posts/57-kickin-ass-w-cachefu) goes, I was very interested in some of the “scaling” aspects of running a website while working at Gamespot.
 
 While good OOP design and stuff like that can be learned by anyone writing enough code, you can’t really learn about scaling unless you’re working on a big website. There are just too many tricks and moving parts, and it’s too hard to simulate the load in a controlled environment.
 
@@ -45,7 +45,7 @@ So while at Gamespot, like I said, I tried to learn as much as possible about th
 
 At Chowhound, we were re-writing an old static html site in Rails and were worried about the transition from flat files to dynamic database calls and page generation. It had a fair amount of traffic from a group of rabid fans, and we knew the new “web 2.0” look of the site would not sit well with the old school users, so we at least wanted the site to be performant in order to give them one less thing to complain about. So we basically took a lot of what I had learned at Gamespot, and what information was freely available on the internet in mailing lists and discussions, and tried to do a more Rails friendly way of object caching with memcached.
 
-Ruby is just so good at cleaning up repetition and creating friendly apis. So cache\_fu does fragment caching and object caching, because in bigger sites you end up using both for different purposes which is how it was at Gamespot too, basically.
+Ruby is just so good at cleaning up repetition and creating friendly apis. So cache_fu does fragment caching and object caching, because in bigger sites you end up using both for different purposes which is how it was at Gamespot too, basically.
 
 **AkitaOnRails:** Nice. And it is not very common for me to find people that have dealt with really big websites. Can you give us a glimpse of what kind of load your Rails apps did have to handle? Some pundits I know complain about the vanilla Rails distribution and recommend lots of tweaks like dumping ActiveRecord altogether and several other hacks. Do you have to hack Rails a lot in order to achieve the scalability you need or do you think most of it is good enough so you can avoid too much tweaking?
 
@@ -55,18 +55,18 @@ We ended up doing a lot of premature optimization on that site, and not enough r
 
 To my knowledge, the only AR hack we did was apply Pratik Naik’s partial updates patch. This was because, with so many rows and such large indexes, you want to avoid modifying indexes when you don’t need to, so saving only the changed columns/attributes can have a real big performance gain. Luckily, partial updates are now in Rails Core.
 
-In my experience, you spend a lot more time trying to scale SQL before you even need to address AR. And once you get to the AR part, it’s usually your application code. Fetching and saving too many records in before/after\_save callbacks, full row writes like I was just describing, and generally not being a good SQL citizen. I would only ditch AR completely if I felt like I had no control over the SQL it generated. Which, as anyone knows, is not the case – you have a lot of control over it.
+In my experience, you spend a lot more time trying to scale SQL before you even need to address AR. And once you get to the AR part, it’s usually your application code. Fetching and saving too many records in before/after_save callbacks, full row writes like I was just describing, and generally not being a good SQL citizen. I would only ditch AR completely if I felt like I had no control over the SQL it generated. Which, as anyone knows, is not the case – you have a lot of control over it.
 
 There are times, however, when AR is overkill and you really do need speed. On Github, we need to authenticate you every time you try and pull or push a repository over ssh. Loading an entire Rails environment, or even activerecord, was noticeably slow, so we switched to using sequel in a simple ruby script. Because we don’t need AR’s massive featureset and nice OOP capabilities for such a simple single row find, this made a lot of sense for us.
 
-**AkitaOnRails:** I agree with that, that’s what I experienced too with regards to AR. So, and you’re also the author of several other famous Rails plugins like will\_paginate, Ambition, the original Sexy Migrations. Can you comment briefly about each. Am I forgetting any other plugins? Some of what you did became the ‘de facto’ standards for Rails development, some people here use these plugins without really knowing you made them all.
+**AkitaOnRails:** I agree with that, that’s what I experienced too with regards to AR. So, and you’re also the author of several other famous Rails plugins like will_paginate, Ambition, the original Sexy Migrations. Can you comment briefly about each. Am I forgetting any other plugins? Some of what you did became the ‘de facto’ standards for Rails development, some people here use these plugins without really knowing you made them all.
 
  ![](http://s3.amazonaws.com/akitaonrails/assets/2008/4/21/113964679_23c106ba1b.jpg)   
 _P.J Hyett at SXSW’06_
 
-**Chris Wanstrath:** [Err the blog](http://errtheblog.com) is actually two people, P.J. Hyett and myself. I did not write [will\_paginate](http://errtheblog.com/posts/56-im-paginating-again) – P.J. wrote the original version then Mislav Marohnić re-wrote it. Mislav is now the maintainer. But I still get all the credit, which is fine by me.
+**Chris Wanstrath:** [Err the blog](http://errtheblog.com) is actually two people, P.J. Hyett and myself. I did not write [will_paginate](http://errtheblog.com/posts/56-im-paginating-again) – P.J. wrote the original version then Mislav Marohnić re-wrote it. Mislav is now the maintainer. But I still get all the credit, which is fine by me.
 
-As far as the other plugins go, there’s mofo, ambition, sexy migrations, cache\_fu, acts\_as\_textiled, fixture\_scenarios\_builder, and gibberish.
+As far as the other plugins go, there’s mofo, ambition, sexy migrations, cache_fu, acts_as_textiled, fixture_scenarios_builder, and gibberish.
 
 [Mofo](http://errtheblog.com/posts/35-me-and-uformats) is a microformat parser based on Hpricot. It’s up on Github and unfortunately doesn’t get enough love from me these days, but as far as I know it’s still the gold standard for microformat parsing in Ruby.
 
@@ -78,9 +78,9 @@ It was the first gem that I released which doubled as a Rails plugin, which is h
 
 [Ambition](http://errtheblog.com/posts/64-even-more-ambitious) was inspired by dabbling in Erlang. I read a blog post explaining that [mnesia’s](http://www.infoq.com/news/2007/08/mnesia) query syntax, which is all list comprehension (basically Ruby’s version of the Enumerable module), was made possible by the ability to walk the parse tree and build an mnesia query that way.
 
-So I started playing with the parse\_tree gem to see if I could do the same for Ruby. It’s now, of course, a full fledged framework for generating arbitrary queries for any RubyGem based on Enumerable. For simple queries, I really like treating tables as arrays, it feels very natural.
+So I started playing with the parse_tree gem to see if I could do the same for Ruby. It’s now, of course, a full fledged framework for generating arbitrary queries for any RubyGem based on Enumerable. For simple queries, I really like treating tables as arrays, it feels very natural.
 
-[Acts\_as\_textiled](http://errtheblog.com/posts/12-actsastextiled) was the first Rails plugin I released. It’s a testament to Rails that the plugin still works on edge today. The only other notable thing that Err started is the “vendor everything” term, which is now a part of Rails through [config.gems](http://ryandaigle.com/articles/2008/4/1/what-s-new-in-edge-rails-gem-dependencies).
+[Acts_as_textiled](http://errtheblog.com/posts/12-actsastextiled) was the first Rails plugin I released. It’s a testament to Rails that the plugin still works on edge today. The only other notable thing that Err started is the “vendor everything” term, which is now a part of Rails through [config.gems](http://ryandaigle.com/articles/2008/4/1/what-s-new-in-edge-rails-gem-dependencies).
 
 That, and the [Cheat](http://errtheblog.com/posts/21-cheat) gem (and site).
 
@@ -109,7 +109,7 @@ It also means, when you’re cofounder of a mostly technical company, the discus
 
 Handling this the old fashion way was fine until me and P.J. started working on FamSpam… as my free time decreased, so did my ability to maintain my open source projects. And really, that’s a definite workflow problem. Sometimes when you can’t find enough time to do something, you just need to make the something take less time.
 
-Github was literally written for chronic, god, ambition, will\_paginate, and the rest of our projects. We wanted to make it dead simple for people to contribute, and really, it’s just not possible without Git.
+Github was literally written for chronic, god, ambition, will_paginate, and the rest of our projects. We wanted to make it dead simple for people to contribute, and really, it’s just not possible without Git.
 
 I had started using Git right after viewing the [Linus tech talk](http://www.youtube.com/watch?v=4XpnKHJAok8) in May 2007, which is really good at explaining Git from a very high conceptual level. So when this time problem came up, I had already been using Git for a few months and Tom had serendipitously been trying to solve the same problem.
 
@@ -139,7 +139,7 @@ Oh, but wait, Mercurial doesn’t have Github :-)
 
 We call Git directly many times per page, we need to process jobs that get entered from many different places (create a repo on the website, push a repo through ssh), we need to be secure (ssl and ssh for all private repos at all times), we need to make sure it all runs fast (memcached for both Git calls and the db), we need to make sure you’re _“in the loop”_ with a news feed aggregating information from all different sources within our system (almost 1m rows in the feed table when we launched).
 
-So it definitely has not been easy. Not to mention that ssl is essentially the “slow flag” for http, so we need to make sure we’re going fast because things like your dashboard already have a speed handicap. As an example, sshd stores its keys in an authorized\_keys file. Well, we weren’t even done with our beta yet and the keys file was over 4 megs of just plain text. So we had one of the C gurus at Engine Yard patch sshd for us to do mySQL based lookups, giving us faster searches and no pricey appending / writing of a massive file
+So it definitely has not been easy. Not to mention that ssl is essentially the “slow flag” for http, so we need to make sure we’re going fast because things like your dashboard already have a speed handicap. As an example, sshd stores its keys in an authorized_keys file. Well, we weren’t even done with our beta yet and the keys file was over 4 megs of just plain text. So we had one of the C gurus at Engine Yard patch sshd for us to do mySQL based lookups, giving us faster searches and no pricey appending / writing of a massive file
 
 Matthew Palmer is the said guru, and we plan to make that code open source in the near future.
 
@@ -187,11 +187,11 @@ So you could share tasks over wifi, or something, the same way you could share G
 
 **AkitaOnRails:** Another thing I would like to hear your opinion about. I recently made a presentation on Rails Deployment strategies for beginners. The most common simple architecture revolves around Apache/Nginx/Litespeed + Mongrel/Evented Mongrel/Thin/Ebb. It is usually a matter of load balancing between a Web server using some kind of IPC to distribute the load back to Ruby VMs running your Rails app.
 
-Now we have mod\_Rails. What’s your opinion on having all those choices, do you have any particular recipe you like or it depends on each application’s needs? Did you have time to test mod\_Rails? I think Hongli Lai is doing great stuff in regards to things like mongrel\_light\_cluster and his efforts on making Ruby’s GC more copy-on-write friendly, did you take a look at that?
+Now we have mod_Rails. What’s your opinion on having all those choices, do you have any particular recipe you like or it depends on each application’s needs? Did you have time to test mod_Rails? I think Hongli Lai is doing great stuff in regards to things like mongrel_light_cluster and his efforts on making Ruby’s GC more copy-on-write friendly, did you take a look at that?
 
 **Chris Wanstrath:** The nice thing about Engine Yard is they get to take care of all that stuff for me. So while I used to spend a lot of time benchmarking and playing with different solutions, like Mongrel vs Emongrel, I just let the experts take care of it so I can focus on Github..
 
-So no, I haven’t played with mod\_Rails yet because I’m not in the situation where I could deploy it even if I wanted to use it. Which is in my opinion the best situation to be in, and pretty much the reason mod\_Rails was written.
+So no, I haven’t played with mod_Rails yet because I’m not in the situation where I could deploy it even if I wanted to use it. Which is in my opinion the best situation to be in, and pretty much the reason mod_Rails was written.
 
 **AkitaOnRails:** And by the way, are you going to make any presentation at RailsConf this year?
 

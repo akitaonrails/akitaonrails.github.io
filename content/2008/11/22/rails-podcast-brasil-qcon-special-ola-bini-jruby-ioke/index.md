@@ -42,5 +42,5 @@ O segundo objetivo foi de mostrar às pessoas que existe um mundo enorme lá for
 
 So, it was a very productive interview. Download the first audio file from [here](/files/ola_bini_part_1.mp3) and Part 2 form [here](/files/ola_bini_part_2.mp3).
 
-Então, foi uma entrevista muito produtiva. Faça download do primeiro arquivo de áudio [daqui](/files/ola_bini_part_1.mp3) e a Parte 2 “daqui”::/files/ola\_bini\_part\_2.mp3.
+Então, foi uma entrevista muito produtiva. Faça download do primeiro arquivo de áudio [daqui](/files/ola_bini_part_1.mp3) e a Parte 2 “daqui”::/files/ola_bini_part_2.mp3.
 

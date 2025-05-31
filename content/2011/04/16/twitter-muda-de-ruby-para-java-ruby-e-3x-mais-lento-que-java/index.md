@@ -14,7 +14,6 @@ Estava esperando ter um tempinho para falar sobre isso. Se você presta atençã
 
 Este é o resumo que você vai ler em todas os canais de comunicação que noticiaram o ocorrido. E, claro, os mais atrevidos e sem noção não se inibiram de novamente dizer “Ruby é muito lento, por isso compensa usar Java mesmo”. Como faz algum tempo que não falo sobre o assunto, acho que vale a pena repetir. Sim, todos nós rubistas sabemos que Ruby é uma das linguagens mais lentas que existem em uso hoje. E nenhum de nós faz nenhum esforço para esconder esse fato. Isso não é novidade, nunca foi. E aí eu pergunto: _“e daí?”_ E a resposta continua: _“oras, por isso mesmo não compensa usar Ruby e devemos todos continuar com Java, que é muitas vezes mais rápido, afinal se o Twitter disse é porque deve ser verdade.”_
 
-
 Como vocês me conhecem, sabem que eu vou desviar do assunto principal para ensinar alguns conceitos que todos já deveriam saber:
 
 ## Argumentações Falaciosas
@@ -101,27 +100,27 @@ Se nenhum dos argumentos anteriores fez sentido para você, aqui vai uma última
 Este é um exemplo usando o framework web para C chamado [Raphters](https://github.com/DanielWaterworth/raphters). E este é um exemplo dele para um micro código à la “hello world”
 
 * * *
-C
 
+```c
 #include “raphters.h”
 
-START\_HANDLER (simple, GET, “simple”, res, 0, matches) {  
- response\_add\_header(res, “content-type”, “text/html”);  
- response\_write(res, “hello world”);  
-} END\_HANDLER
+START_HANDLER (simple, GET, “simple”, res, 0, matches) {  
+ response_add_header(res, “content-type”, “text/html”);  
+ response_write(res, “hello world”);  
+} END_HANDLER
 
-START\_HANDLER (default\_handler, GET, "", res, 0, matches) {  
- response\_add\_header(res, “content-type”, “text/html”);  
- response\_write(res, “default page”);  
-} END\_HANDLER
+START_HANDLER (default_handler, GET, "", res, 0, matches) {  
+ response_add_header(res, “content-type”, “text/html”);  
+ response_write(res, “default page”);  
+} END_HANDLER
 
 int main() {  
- add\_handler(simple);  
- add\_handler(default\_handler);  
- serve\_forever();  
+ add_handler(simple);  
+ add_handler(default_handler);  
+ serve_forever();  
  return 0;  
-}  
--
+}
+```
 
 Consigo enxergar esse framework sendo usado em algum serviço web muito específico e muito pequeno que é muito crítico, o suficiente para ir para C.
 
@@ -130,4 +129,3 @@ Agora, quero ver quem é o “performance-macho” suficiente (ou se fosse Tropa
 E sabe por que você usa Java e não C ou C++? Não é por performance, foi por produtividade! Porque escrever sistemas é coisa para C. Mas escrever aplicações funcionais é mais produtivo com Java. E nós estamos dizendo que para um certo nicho de aplicações web, é bem mais produtivo fazer em PHP, Ruby, Python. Esses são os argumentos corretos.
 
 PS: e sim, esta última parte foi uma [#trollagem](http://pt.wikipedia.org/wiki/Troll_(internet))
-

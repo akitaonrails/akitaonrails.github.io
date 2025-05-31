@@ -18,7 +18,6 @@ Da mesma forma como muitos usam “falta de tempo” como desculpa para não faz
 
 Novamente, é o errôneo pensamento que precisamos acertar tudo da primeira vez, a cultura de que tentativa-e-erro é errado. Pois bem, estou aqui dizendo que errado é pensar que sempre vamos acertar da primeira vez. Na maioria dos casos vamos errar todas as primeiras vezes.
 
-
 ## Cargo Cult
 
 Depois da Segunda Guerra, tribos aborígenes religiosas do sul do Pacífico construíam réplicas de aviões e pistas de pouso militares na esperança de chamar novamente os “aviões-deuses” que lhes trouxeram tantas cargas maravilhosas durante a guerra . É exatamente o que a maioria dos programadores costumam fazer: como que num ritual incluem diversas estruturas de programação sem entender muito bem porque estão fazendo isso, apenas sabem que “deveriam”. São os programadores que tentam encaixar Design Patterns em lugares desnecessários, colocam comentários em código que por si só já é auto-explicativo. Recentemente são os tipos que praticamente se ajoelham perante “Dependency Injection” sem realmente entender porque. (fonte: [Wikipedia](http://en.wikipedia.org/wiki/Cargo_cult_programming))
@@ -33,38 +32,41 @@ A maioria das pessoas lê tutoriais, alguns livros, assiste alguns workshops e j
 
 * * *
 
+```ruby
 if ( a == b ) {  
  return true;  
 } else {  
  return false;  
 }  
--
+```
 
 Nada de errado nisso, mas é incrível como muitos ficam surpresos quando dizemos que a linha seguinte faz a mesma coisa:
 
 * * *
 
+```ruby
 return (a == b);  
--
+```
 
 Em si, esse pequeno código é inofensivo. Mas perceba a sutileza: o programador não sabe porque está fazendo isso. Apenas sabe que tem que fazer. Quer algo pior? Já vi (em diversas linguagens), programadores que fazem o seguinte:
 
 * * *
 
-$dbname=“meu\_banco”;   
-$chandle = mysql\_connect(“localhost”, ‘root’, ‘root’) or die(“Falhou”);  
-$query1 = “select \* from tabela”;  
-$result = mysql\_db\_query($dbname, $query1) or die (“Falhou”);  
-while ($row = mysql\_fetch\_row($result)) {  
- $field = mysql\_fetch\_field($result, 1);  
+```php
+$dbname=“meu_banco”;
+$chandle = mysql_connect(“localhost”, ‘root’, ‘root’) or die(“Falhou”);  
+$query1 = “select * from tabela”;  
+$result = mysql_db_query($dbname, $query1) or die (“Falhou”);  
+while ($row = mysql_fetch_row($result)) {  
+ $field = mysql_fetch_field($result, 1);  
  if ( $field == ‘foo’ ) {  
  echo “encontrei!”;  
  break;  
  }  
-}  
--
+}
+```
 
-Esse é o típico [What the F\*ck!?](http://thedailywtf.com/)
+Esse é o típico [What the F*ck!?](http://thedailywtf.com/)
 
 Novamente, um código que “executa”. Em algumas linguagens, esse seria um tipo de código que “compila”, sem problema nenhum. Porém, quem não entendeu o problema **gravíssimo** desse código, precisa retornar ao primeiro ano da faculdade.
 
@@ -189,4 +191,3 @@ Como eu disse ano passado: “Seja Arrogante, mas mereça ser arrogante!”. Sej
 Repetindo: não foi com idéias pré-concebidas que chegamos à Lua.
 
 ![](/files/20081216/redneck_moon_landing_2.jpg)
-

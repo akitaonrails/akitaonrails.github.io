@@ -12,15 +12,15 @@ Achei esse artigo interessante, o título original é [Why you shouldn’t code 
 
 [![](http://s3.amazonaws.com/akitaonrails/files/america-790957.jpg)](http://www.akitaonrails.com/2007/4/14/off-topic-seja-arrogante)
 
-
-### Por que você não deve codificar em Espanhol.
+### Por que você não deve codificar em Espanhol
 
 Na realidade eu promovo a tradução de software para Espanhol e outras linguagens. Quando digo que você não deveria codificar em Espanhol quero dizer que não deve usar Espanhol ou qualquer outra língua que não seja Inglês como nomes de variáveis, nomes de arquivos, nomes de funções, etc. Linguagens de Programação, linguagens de script, comandos de sistema operacional, etc, são todos baseados na língua Inglesa. Então, por que você faria diferente no seu código?
 
 Pegue por exemplo este código em PHP do post [Construindo um forum em PHP e MySQL](http://www.codespanish.com/archives/softwaredevelopment/30)
 
 * * *
-php
+
+```php
 
 require(’funciones.php’);  
 $id = $_GET[“id”];  
@@ -31,8 +31,8 @@ if($citar==1)
  require(’configuracion.php’);  
  $sql = “SELECT titulo, mensaje, identificador AS id “;  
  $sql.= “FROM foro WHERE id=’$id’”;  
- $rs = mysql\_query($sql, $con);  
- if(mysql\_num\_rows($rs)==1) $row = mysqlfetch_ assoc($rs);  
+ $rs = mysql_query($sql, $con);  
+ if(mysql_num_rows($rs)==1) $row = mysqlfetch_ assoc($rs);  
  $row[“titulo”] = “Re: “.$row[“titulo”];  
  $row[“mensaje”] = “[citar]“.$row[“mensaje”].”[/citar]“;  
  if($row[“id”]==0) $row[“id”]=$id;  
@@ -41,7 +41,7 @@ $template = implode(”", file(’formulario.html’));
 include(’header.html’);  
 mostrarTemplate($template, $row);  
 include(’footer.html’);  
--
+```
 
 Algumas palavras podem ser familiares para pessoas que entendem inglês já que têm pronúncias similares em inglês, por exemplo: _configuracion_ é _configuration_, mas e _mostrarTemplate_? Mesmo _formulario_ dará dores de cabeça a mais de um programador que não saiba Espanhol.
 
@@ -66,8 +66,8 @@ Anos atrás, muitos desenvolvedores reclamaram do código fonte do Ruby porque m
 Outro caso notório é da SAP, com sua linguagem ABAP/4. Provavelmente, 30 anos atrás, os alemães não imaginavam que seu software seria usado no mundo todo. Veja este [pequeno trecho](http://www.abapcode.info/2007/05/purchase-order-history-mass-display.html) de código ABAP:
 
 * * *
-abap
 
+```abap
 IF SUDATE = ‘X’.  
 SORT ITAB BY UDATE EKKEY-EBELN CHANGENR EKKEY-EBELP  
 EKKEY-ETENR.  
@@ -77,9 +77,8 @@ EKKEY-ETENR.
 ELSE.  
 SORT ITAB BY EKKEY-EBELN CHANGENR EKKEY-EBELP EKKEY-ETENR.  
 ENDIF.  
--
+```
 
 EKKEY, EBELN, EBELP … consultores SAP se acostumam depois de algum tempo, mas tudo isso são acrônimos – que já é ruim – de palavras em alemão! Não é pouco: estamos falando de centenas de milhares de acrônimos como esses, para cada tipo de campo, objeto, tabela em cada módulo empresarial de um pacote que atende Fortune 500. Boa sorte lendo um código desses. ABAP por definição não é a linguagem mais visualmente agradável de se trabalhar, junte a isso diversos nomes de variáveis, tabelas, funções, APIs, tudo em Alemão. Pior: com comentários de código em alemão! Você não precisa compilar nem nada: o código já é naturalmente obfuscado.
 
 Portanto, façam um favor a todos: escrevam nomes em inglês. Não se trata de nacionalismo, idealismo, ou qualquer coisa assim. Isso é puro pragmatismo.
-

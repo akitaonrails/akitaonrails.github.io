@@ -14,7 +14,7 @@ draft: false
 
 Nesse fim de semana saiu minha última coluna na RubyOnBr: [Acampamento de Curiosos](http://forum.rubyonbr.org/forums/4/topics/1234).
 
-Desta vez proponho um desafio: entender ou mesmo criar seu próprio web framework. Como base falo do Camping, de \_WhyTheLuckyStiff.
+Desta vez proponho um desafio: entender ou mesmo criar seu próprio web framework. Como base falo do Camping, de _WhyTheLuckyStiff.
 
 Mas cuidado: sou contra fazer seu próprio framework e achar que ele é o melhor de todos. Todos fazem mais ou menos a mesma coisa (sem ofensas). A idéia aqui é **aprender** , porque todo bom programador web tem obrigação de saber como seu framework favorito funciona.
 

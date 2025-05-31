@@ -173,7 +173,7 @@ But, yes, going back to your question, I certainly have some strong opinions abo
 
 **AkitaOnRails:** Yeah, and by the way, (digressing a little) I would recommend the brazilian movie [Elite Squad](http://en.wikipedia.org/wiki/Tropa_de_Elite) now that I know you’re interested in crime related data ;-)
 
-**Adrian:** Noted! I’ve added “Elite Squad” to my MOVIES\_TO\_WATCH.TXT :-)
+**Adrian:** Noted! I’ve added “Elite Squad” to my MOVIES_TO_WATCH.TXT :-)
 
 [![](http://s3.amazonaws.com/akitaonrails/assets/2007/12/31/1529992544_f8e9fc67b2.jpg)](http://leahculver.com/)
 

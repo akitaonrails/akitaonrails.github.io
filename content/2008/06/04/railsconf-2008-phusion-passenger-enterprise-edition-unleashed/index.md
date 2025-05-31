@@ -15,7 +15,7 @@ Uma das parcerias mais engraçadas que já fiz até então foi com o pessoal da 
 
 Desde então eles fizeram várias coisas:
 
-- Lançaram a primeira versao do Phusion Passenger (a.k.a. mod\_rails)
+- Lançaram a primeira versao do Phusion Passenger (a.k.a. mod_rails)
 - Lançaram o quiz do [Ruby Enterprise Edition](http://www.rubyenterpriseedition.com)
 - Lançaram a campanha de doação para ganhar licenças Enterprise Edition.
 
@@ -42,7 +42,7 @@ Durante nossas conversas via IM surgiu a idéia de eu fazer uma aparição surpr
 
 [![](http://s3.amazonaws.com/akitaonrails/assets/2008/6/4/DSC06121.JPG)](http://gallery.mac.com/akitaonrails#100097/DSC06121&bgcolor=black)
 
-Minha pergunta foi algo assim: _“mod\_rails é legal mas muitos criticam dizendo que o futuro do desenvolvimento web com Ruby requer Rack. O que vocês tem a dizer sobre isso?”_
+Minha pergunta foi algo assim: _“mod_rails é legal mas muitos criticam dizendo que o futuro do desenvolvimento web com Ruby requer Rack. O que vocês tem a dizer sobre isso?”_
 
 Todo mundo deu risada porque o slide seguinte foi assim:
 
@@ -59,9 +59,9 @@ Your browser does not support the video tag. [Direct Link](https://s3.us-east-2.
 
 [![](http://s3.amazonaws.com/akitaonrails/assets/2008/6/4/DSC06116.JPG)](http://gallery.mac.com/akitaonrails#100097/DSC06113&bgcolor=black)
 
-Muita gente reclamou disso sobre o “mod\_rails”. O próprio Ezra comentou [neste post](http://brainspl.at/articles/2008/04/25/hey-rails-nice-rack)
+Muita gente reclamou disso sobre o “mod_rails”. O próprio Ezra comentou [neste post](http://brainspl.at/articles/2008/04/25/hey-rails-nice-rack)
 
-> As far as mod\_rails goes… I think they made a huge mistake by not using rack as their interface, so I’d hope they will realize this and add rack support.
+> As far as mod_rails goes… I think they made a huge mistake by not using rack as their interface, so I’d hope they will realize this and add rack support.
 
 Parece que as preces deles foram atendidas. Esta [outra discussão](http://www.eribium.org/blog/?p=188) mostra como as pessoas assumem coisas sem saber como elas são feitas. O próprio Hongli Lai comentou que suportar Rack seria mais difícil do que Rails. Passenger não é apenas um conector burro de Apache para Rails, ele faz muito mais:
 
@@ -70,7 +70,7 @@ Parece que as preces deles foram atendidas. Esta [outra discussão](http://www.e
 
 Duas coisas importantes que o Passenger faz é trazer o tempo de startup uma ordem de grandeza para baixo. Isso é relevante porque num shared hosting você quer que processos que não estão sendo usados sejam derrubados para economizar memória, mas quando forem necessário você não quer que seu usuário espere mais de 20 segundos para carregar uma nova instância. O spawner deles consegue diminuir absurdamente esse tempo de loading porque ele sabe que muita coisa entre instâncias é exatamente igual e, portanto, pode ser colocado num cache. O [documento de arquitetura](http://www.modrails.com/documentation/Architectural%20overview.html) deles explica isso em detalhes.
 
-A segunda coisa é [copy-on-write](http://en.wikipedia.org/wiki/Copy-on-write), que o Hongli já havia blogado a respeito em seu blog. Essencialmente um mongrel\_cluster faz as coisas na força bruta: cada instância mongrel sobe uma cópia do framework Rails e da sua aplicação, duplicando tudo em memória. Ou seja, se você tem memória sobrando, tanto faz, mas normalmente nós queremos economizar o máximo possível.
+A segunda coisa é [copy-on-write](http://en.wikipedia.org/wiki/Copy-on-write), que o Hongli já havia blogado a respeito em seu blog. Essencialmente um mongrel_cluster faz as coisas na força bruta: cada instância mongrel sobe uma cópia do framework Rails e da sua aplicação, duplicando tudo em memória. Ou seja, se você tem memória sobrando, tanto faz, mas normalmente nós queremos economizar o máximo possível.
 
 O Passenger é esperto em relação a isso: ele sobre a primeira instância Ruby/Rails e as seguintes são forks da primeira. Se a primeira consome 50Mb de RAM da segunda em diantes se consome quase **zero**. Claro, à medida que a aplicação é exercitada, partes da aplicação precisará ser ‘copiada’ em outro espaço de memória isolado para que possa ser ‘sobrescrita’. Na prática, isso pode significar uma economia de pelo menos 1/3 da memória consumida total. Veja este slide sobre memória:
 
@@ -80,7 +80,7 @@ E não é só isso, devido às diversas otimizações que eles fizeram, isso tam
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2008/6/4/Picture_2.png)
 
-Ou seja, ele é mais rápido até mesmo do que Nginx + Thin, e mais do que isso: ele consome menos memória e roda mais rápido sobre Apache, que nunca foi um bom exemplo de baixo consumo de memória nem de performance. E ainda mais: diferente de um mongrel\_cluster você não precisa limitar a quantidade de processso, não precisa se preocupar em subir uma instância caso ela dê crash por alguma razão, o Passenger faz tudo isso e com o plus de que cada nova instância que ele carrega, sobe com uma ordem de grandeza mais rápido do que a primeira, graças ao spawner.
+Ou seja, ele é mais rápido até mesmo do que Nginx + Thin, e mais do que isso: ele consome menos memória e roda mais rápido sobre Apache, que nunca foi um bom exemplo de baixo consumo de memória nem de performance. E ainda mais: diferente de um mongrel_cluster você não precisa limitar a quantidade de processso, não precisa se preocupar em subir uma instância caso ela dê crash por alguma razão, o Passenger faz tudo isso e com o plus de que cada nova instância que ele carrega, sobe com uma ordem de grandeza mais rápido do que a primeira, graças ao spawner.
 
 A estratégia desses garotos foi muito boa: muita gente pediu para que eles lançassem uma versão alpha muito antes do tempo. Porém isso seria **burrice** , porque daí eles teriam que perder tempo com dúzias de bug reports com coisas que eles já sabiam que teriam que resolver. Daí, em vez de gastar o tempo corrigindo esses bugs, teriam que perder tempo gerenciando as pessoas.
 
@@ -117,7 +117,7 @@ Nesta foto vocês vêem o Gregg Pollack os entrevistando para [este video](http:
 <object width="400" height="300">	<param name="allowfullscreen" value="true">	<param name="allowscriptaccess" value="always">	<param name="movie" value="http://www.vimeo.com/moogaloop.swf?clip_id=1104493&server=www.vimeo.com&show_title=1&show_byline=1&show_portrait=0&color=&fullscreen=1">	<embed src="http://www.vimeo.com/moogaloop.swf?clip_id=1104493&server=www.vimeo.com&show_title=1&show_byline=1&show_portrait=0&color=&fullscreen=1" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="400" height="300"></embed></object>  
 [Ninh Bui at Railsconf 2008](http://www.vimeo.com/1104493?pg=embed&sec=1104493) from [Gregg Pollack](http://www.vimeo.com/user504460?pg=embed&sec=1104493) on [Vimeo](http://vimeo.com?pg=embed&sec=1104493).
 
-Foi muito engraçado acompanhar esses garotos durante a RailsConf, eles são muito engraçados e espirituosos. O mais importante, são jovens estudantes de ciências da computação na Holanda, eles pegaram um problema que ninguém resolveu e em vez de blogar bobagens a respeito como _“Ruby é uma droga porque o garbage collector deles não deixa suportar copy-on-write”_ ou _“Apache é uma droga porque é pesado”_ ou _“Rails é uma porcaria porque mod\_ruby não funciona com ele”_, etc eles pegaram todos esses problemas e codificaram uma excelente solução!
+Foi muito engraçado acompanhar esses garotos durante a RailsConf, eles são muito engraçados e espirituosos. O mais importante, são jovens estudantes de ciências da computação na Holanda, eles pegaram um problema que ninguém resolveu e em vez de blogar bobagens a respeito como _“Ruby é uma droga porque o garbage collector deles não deixa suportar copy-on-write”_ ou _“Apache é uma droga porque é pesado”_ ou _“Rails é uma porcaria porque mod_ruby não funciona com ele”_, etc eles pegaram todos esses problemas e codificaram uma excelente solução!
 
 O próprio “Ruby Enterprise Edition” na realidade é um binário de Ruby customizado com os patches que modificam o GC e possibilita os ganhos de memória e performance. O instalador torna o processo transparente, copiando tudo num diretório isolado que, caso você não queira mais, pode simplesmente apagar ele fora. O Passenger pode ser configurado para usar seu Ruby padrão ou o “Ruby Enterprise”. Em breve talvez esses patches entrem no trunk do MRI mas isso ainda não aconteceu.
 
