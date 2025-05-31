@@ -53,7 +53,7 @@ Nada mal, simples e elegante, mas é aqui que muitos engasgam. A notação de pi
 * * *
 
 ```ruby
-def unnamed\_method(i)  
+def unnamed_method(i)  
  puts i  
 end
 ```

@@ -124,8 +124,8 @@ Isso nos dá o seguinte:
 
 # </file>
 
-8. app/controllers/posts\_controller.rb
-9. app/helpers/posts\_helper.rb
+8. app/controllers/posts_controller.rb
+9. app/helpers/posts_helper.rb
 10. app/models/
 11. app/views/
 12. db/
@@ -176,8 +176,8 @@ Vejam o resultado:
 
 # </file>
 
-8. app/controllers/posts\_controller.rb
-9. app/helpers/posts\_helper.rb
+8. app/controllers/posts_controller.rb
+9. app/helpers/posts_helper.rb
 10. app/views/
 11. db/
 12. public/stylesheets/
@@ -246,7 +246,7 @@ git add -i
  1: +2/-0 nothing app/models/post.rb  
  2: +2/-0 nothing config/routes.rb
 
-- Commands **\***  
+- Commands *****  
  1: [s]tatus 2: [u]pdate 3:®evert 4: [a]dd untracked  
  5: [p]atch 6: [d]iff 7: [q]uit 8: [h]elp  
 ```
@@ -257,23 +257,23 @@ Ele nos dá um menu de comandos. Você pode usar a opção “4” para adiciona
 
 ```
 What now\> 4  
- 1: app/controllers/posts\_controller.rb  
- 2: app/helpers/posts\_helper.rb  
+ 1: app/controllers/posts_controller.rb  
+ 2: app/helpers/posts_helper.rb  
  3: app/views/layouts/posts.html.erb  
  4: app/views/posts/edit.html.erb  
  5: app/views/posts/index.html.erb  
  6: app/views/posts/new.html.erb  
  7: app/views/posts/show.html.erb  
- 8: db/migrate/20090705175333\_create\_posts.rb  
+ 8: db/migrate/20090705175333_create_posts.rb  
  9: public/stylesheets/scaffold.css  
  10: test/fixtures/posts.yml  
- 11: test/functional/posts\_controller\_test.rb  
- 12: test/unit/helpers/posts\_helper\_test.rb  
- 13: test/unit/post\_test.rb  
+ 11: test/functional/posts_controller_test.rb  
+ 12: test/unit/helpers/posts_helper_test.rb  
+ 13: test/unit/post_test.rb  
 Add untracked\>\>  
 ```
 
-Agora você pode digitar o número do arquivo que quer adicionar e pressionar ‘enter’. Por exemplo, para adicionar o arquivo ‘test/unit/post\_test.rb’ apenas digite ‘13[enter]’. Para adicionar vários de uma só vez, você pode usar um ‘range’ ou seja, se digitar “1-13” ele adicionará do arquivo 1 ao 13. Arquivos adicionados ficam marcados com “\*” do lado.
+Agora você pode digitar o número do arquivo que quer adicionar e pressionar ‘enter’. Por exemplo, para adicionar o arquivo ‘test/unit/post_test.rb’ apenas digite ‘13[enter]’. Para adicionar vários de uma só vez, você pode usar um ‘range’ ou seja, se digitar “1-13” ele adicionará do arquivo 1 ao 13. Arquivos adicionados ficam marcados com “*” do lado.
 
 Isso terminado, digite apenas ‘enter’ para retornar ao menu anterior e digite ‘q’ para sair do modo interativo. Agora, com os arquivos novos adicionados, temos isto:
 
@@ -505,7 +505,7 @@ git checkout b novo_branch
 
 --
 
-Isso indica que criaremos o ‘novo\_branch’ tendo como pai o branch onde estamos neste momento. Porém, digamos que queremos criar um branch a partir de um commit no passado. Podemos fazer desta forma:
+Isso indica que criaremos o ‘novo_branch’ tendo como pai o branch onde estamos neste momento. Porém, digamos que queremos criar um branch a partir de um commit no passado. Podemos fazer desta forma:
 
 * * *
 

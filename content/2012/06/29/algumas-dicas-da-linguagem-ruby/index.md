@@ -144,14 +144,14 @@ end
   #=> 10
 ```
 
-Assumo que independente de qual linguagem você veio, esse trecho não deve ter nenhuma dúvida. Agora, algumas coisas que podemos fazer diferente. Primeiro uma dica simples. Números em Ruby podem ser delimitador no campo de milhar com “\_”. As linhas seguintes são equivalentes:
+Assumo que independente de qual linguagem você veio, esse trecho não deve ter nenhuma dúvida. Agora, algumas coisas que podemos fazer diferente. Primeiro uma dica simples. Números em Ruby podem ser delimitador no campo de milhar com “_”. As linhas seguintes são equivalentes:
 
 * * *
 
 ```ruby
 
 a = 1000000000000  
-b = 1\_000\_000\_000\_000  
+b = 1_000_000_000_000  
 a == b
 
 # true  
@@ -276,8 +276,8 @@ Agora, podemos expandir um Range em um Array. Duas formas para isso:
 * * *
 
 ```ruby
-array = (5..100).to\_a  
-array = [\*(5..100)]  
+array = (5..100).to_a  
+array = [*(5..100)]  
 ```
 
 O segundo exemplo é uma coerção usando splat, vamos ver splats mais abaixo.
@@ -534,7 +534,7 @@ numero = rand(10_000_000_000)
 # "1001000110100100100001101000011011"
 
 # transformar um inteiro base 10 em base 8  
-numero.to\_s(8)  
+numero.to_s(8)  
 # => "110644415033"
 
 #. transformar um inteiro base 10 em base 36  

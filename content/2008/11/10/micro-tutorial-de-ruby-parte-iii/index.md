@@ -65,10 +65,10 @@ Tudo que estiver dentro de “#{}” é executado e o resultado convertido em St
 
 >> nome = “F”  
 => “F”  
->> query = “SELECT \* FROM NOMES \n” +  
+>> query = “SELECT * FROM NOMES \n” +  
 ?> “WHERE NOME LIKE ’%” + nome + “%’ \n” +  
 ?> “ORDER BY NOME”  
-=> “SELECT \* FROM NOMES \nWHERE NOME LIKE ‘F’ \nORDER BY NOME”  
+=> “SELECT * FROM NOMES \nWHERE NOME LIKE ‘F’ \nORDER BY NOME”  
 ```
 
 Ou algo parecido com isso, o que é bem feio e sabemos o quanto isso se torna impossível de dar manutenção no futuro. Mas em Ruby podemos fazer um pouco melhor que isso:
@@ -77,11 +77,11 @@ Ou algo parecido com isso, o que é bem feio e sabemos o quanto isso se torna im
 
 ```ruby
 >> nome = “F”<<-STR  
-SELECT \* FROM NOMES  
+SELECT * FROM NOMES  
 WHERE NOME LIKE ‘#{nome}’  
 ORDER BY NOME  
 STR  
-=> " SELECT \* FROM NOMES\n WHERE NOME LIKE ‘F’\n ORDER BY NOME\n"  
+=> " SELECT * FROM NOMES\n WHERE NOME LIKE ‘F’\n ORDER BY NOME\n"  
 ```
 
 Onde está “STR” na realidade pode ser qualquer palavra em letras maiúsculas, tomando o cuidado para não ter espaços em branco nem antes nem depois do “STR” da última linha. Aproveitando os comentários do Tapajós e do Hugo, existem mais algumas maneiras e fazer isso:
@@ -91,10 +91,10 @@ Onde está “STR” na realidade pode ser qualquer palavra em letras maiúscula
 ```ruby
 >> nome = “F”  
 => “F”  
->> query = {SELECT \* FROM NOMES  
+>> query = {SELECT * FROM NOMES  
 WHERE NOME LIKE ’#{nome}%’  
 ORDER BY NOME}  
-=> “SELECT \* FROM NOMES\n WHERE NOME LIKE ‘F’\n ORDER BY NOME”
+=> “SELECT * FROM NOMES\n WHERE NOME LIKE ‘F’\n ORDER BY NOME”
 ```
 
 E também desta maneira:
@@ -105,10 +105,10 @@ E também desta maneira:
 
 >> nome = “F”  
 => “F”  
->> query = Q(SELECT \* FROM NOMES  
+>> query = Q(SELECT * FROM NOMES  
 WHERE NOME LIKE ’#{nome}%’  
 ORDER BY NOME)  
-=> “SELECT \* FROM NOMES\n WHERE NOME LIKE ‘F’\n ORDER BY NOME” 
+=> “SELECT * FROM NOMES\n WHERE NOME LIKE ‘F’\n ORDER BY NOME” 
 ```
 
 Todas as maneiras acima são jeitos de se criar strings de múltiplas linhas com a possibilidade de execução e substituição in-place usando “#{}”. Eu particularmente prefiro fazer alguma coisa do tipo:
@@ -118,15 +118,15 @@ Todas as maneiras acima são jeitos de se criar strings de múltiplas linhas com
 ```ruby
 >> nome = “F”  
 => “F”  
->> query = q(SELECT \* FROM NOMES  
+>> query = q(SELECT * FROM NOMES  
 WHERE NOME LIKE ’[nome]%’  
 ORDER BY NOME)  
-=\> “SELECT \* FROM NOMES\n WHERE NOME LIKE ‘[nome]’\n ORDER BY NOME”
+=\> “SELECT * FROM NOMES\n WHERE NOME LIKE ‘[nome]’\n ORDER BY NOME”
 ```
 
 ```ruby
 >> query.gsub!(‘[nome]’, nome)  
-=> “SELECT \* FROM NOMES\n WHERE NOME LIKE ‘F’\n ORDER BY NOME”
+=> “SELECT * FROM NOMES\n WHERE NOME LIKE ‘F’\n ORDER BY NOME”
 ```
 
 A sintaxe de “%q()” também permite criar strings de múltiplas linhas mas não suporta a execução de código via “#{}”, por isso coloquei algo que possa encontrar depois (um “placeholder”) como “[nome]” e no final uso o método “gsub” que faz substituição em Strings. Eu disse que “prefiro” mais para separar explicitamente as substituições fora do String. Mas, novamente, existem diversas maneiras de realizar essa mesma tarefa, depende do que você precisa fazer.
@@ -168,7 +168,7 @@ Em poucas palavras, um Symbol sempre gera um objeto Singleton imutável. Por exe
 => 531778
 ```
 
-Note como atribuímos :leg às variáveis “a” e “b”. Chamando o método “object\_id”, ambas respondem o mesmo ID, denotando que as duas variáveis estão apontando ao mesmo objeto Symbol. Vejamos o mesmo exemplo usando Strings:
+Note como atribuímos :leg às variáveis “a” e “b”. Chamando o método “object_id”, ambas respondem o mesmo ID, denotando que as duas variáveis estão apontando ao mesmo objeto Symbol. Vejamos o mesmo exemplo usando Strings:
 
 * * *
 
@@ -291,7 +291,7 @@ end
 => “6666-6666”  
 ```
 
-O que temos no contrutor acima, o “\*”, é o “splat”. Pense nele como um buraco-negro: depois do parâmetro normal “nome”, tudo que vier depois será literalmente sugado para dentro da variável “args”. A resultante disso será um Array. Isso permite um método que tenha capacidade para infinitos argumentos. Outro exemplo de uso é este:
+O que temos no contrutor acima, o “*”, é o “splat”. Pense nele como um buraco-negro: depois do parâmetro normal “nome”, tudo que vier depois será literalmente sugado para dentro da variável “args”. A resultante disso será um Array. Isso permite um método que tenha capacidade para infinitos argumentos. Outro exemplo de uso é este:
 
 * * *
 
@@ -343,7 +343,7 @@ Outra situação é quando temos métodos com um número muito grande de parâme
 
 ```ruby
 >> Person.find :first, :conditions => { :nome => “Fabio” }, :order => :nome  
-=> SELECT \* FROM “people” WHERE (“people”.“nome” = ‘Fabio’) ORDER BY nome LIMIT 1  
+=> SELECT * FROM “people” WHERE (“people”.“nome” = ‘Fabio’) ORDER BY nome LIMIT 1  
 ```
 
 Qualquer um que já tenha lidado com SQL sabe que montar consultas pode ser bastante complexo. Criar um único método que cuide disso numa linguagem estático é impossível. Se tentar criar um conjunto de métodos via overloading como vimos antes, também será um trabalho homérico e totalmente fútil.
@@ -391,7 +391,7 @@ end
 
 >> fabio = Pessoa.new(“Fabio”, :sobrenome => “Akita”, :iniciais => “FMA”)  
 => #<Pessoa:0×26b2c98 @iniciais=“FMA”, @sobrenome=“Akita”, @email=nil, @primeiro_nome="Fabio">  
->> fabio.primeiro\_nome  
+>> fabio.primeiro_nome  
 => “Fabio”  
 >> fabio.sobrenome  
 => “Akita”  
@@ -401,7 +401,7 @@ end
 => nil  
 ```
 
-Caso não saiba, o método “attr\_accessor” serve para criar métodos equivalentes a “getters” e “setters” de Java ou C#. Como já falamos em seções anteriores, classes Ruby podem ser modificadas em tempo de execução. Veremos isso depois, por enquanto vejamos o construtor novamente. Depois do primeiro parâmetro, temos o familiar uso do par chave e valor. O que pode parece estranho é que talvez alguém estivesse esperando algo assim:
+Caso não saiba, o método “attr_accessor” serve para criar métodos equivalentes a “getters” e “setters” de Java ou C#. Como já falamos em seções anteriores, classes Ruby podem ser modificadas em tempo de execução. Veremos isso depois, por enquanto vejamos o construtor novamente. Depois do primeiro parâmetro, temos o familiar uso do par chave e valor. O que pode parece estranho é que talvez alguém estivesse esperando algo assim:
 
 * * *
 
@@ -423,7 +423,7 @@ E assim temos algumas maneiras para criar métodos bastante flexíveis. Obviamen
 
 ## Métodos Dinâmicos
 
-Vejamos mais sobre o método “attr\_accessor”:
+Vejamos mais sobre o método “attr_accessor”:
 
 * * *
 
@@ -443,7 +443,7 @@ end
 
 -
 
-Podemos reimplementar nossa própria versão simplificada de “attr\_accessor” desta maneira:
+Podemos reimplementar nossa própria versão simplificada de “attr_accessor” desta maneira:
 
 * * *
 
@@ -469,7 +469,7 @@ end
 => “6666-6666”
 ```
 
-Abrindo a classe Object significa que nosso método “my\_accessor” estará disponível a qualquer classe do Ruby, já que todos herdam de Object. Esse método recebe um array de symbols, como já descrevemos antes. Daí usamos “each” para iterar symbol a symbol, e para cada um chamamos “module\_eval” que simplesmente executa qualquer String passado a ele, no caso criamos dinamicamente dois métodos, os equivalente a “getter” e “setter”. Para o exemplo :telefone, seria o mesmo que escrevêssemos:
+Abrindo a classe Object significa que nosso método “my_accessor” estará disponível a qualquer classe do Ruby, já que todos herdam de Object. Esse método recebe um array de symbols, como já descrevemos antes. Daí usamos “each” para iterar symbol a symbol, e para cada um chamamos “module_eval” que simplesmente executa qualquer String passado a ele, no caso criamos dinamicamente dois métodos, os equivalente a “getter” e “setter”. Para o exemplo :telefone, seria o mesmo que escrevêssemos:
 
 * * *
 
@@ -501,7 +501,7 @@ Muita gente confunde “meta-programação” com “reflexão”. Reflexão é 
 => “3333-4444”  
 ```
 
-Aqui vemos como todo objeto Ruby tem um método chamado “methods” que devolve um Array listando todos os métodos que ele responde. Além disso todo objeto Ruby ainda responde ao método “respond\_to?” que recebe um symbol como parâmetro e responde se esse objeto responde a essa mensagem.
+Aqui vemos como todo objeto Ruby tem um método chamado “methods” que devolve um Array listando todos os métodos que ele responde. Além disso todo objeto Ruby ainda responde ao método “respond_to?” que recebe um symbol como parâmetro e responde se esse objeto responde a essa mensagem.
 
 No exemplo seguinte, com a classe “Pessoa”, podemos ainda manipular diretamente a variável de instância “@telefone” sem sequer precisar de métodos acessores.
 
@@ -602,7 +602,7 @@ end
 => nil  
 ```
 
-Em vez de chamar um método diretamente quando ainda não sabemos se o objeto é nil ou não, podemos chamar o método “try” passando a mensagem (o nome do método) e seus parâmetros. Se o objeto para onde enviamos a mensagem souber responder essa mensagem (respond\_to?), então repassamos normalmente, senão devolvemos nil.
+Em vez de chamar um método diretamente quando ainda não sabemos se o objeto é nil ou não, podemos chamar o método “try” passando a mensagem (o nome do método) e seus parâmetros. Se o objeto para onde enviamos a mensagem souber responder essa mensagem (respond_to?), então repassamos normalmente, senão devolvemos nil.
 
 Recomendo que teste todos esses exemplos no IRB para entender o comportamento. Esse tipo de pensamento é crucial na programação Ruby. Não quer dizer, claro, que agora devemos usar coisas como “try” o tempo todo, mas nas situações onde são necessárias, essa pode ser a diferença entre um código extremamente enxuto e expressivo do que um código burocrático e difícil de entender.
 
@@ -612,4 +612,4 @@ Até aqui mostramos apenas a ponta do iceberg da programação com Ruby. Existem
 
 E para ver alguns exemplos muito interessantes de resolução de problemas em Ruby, também recomendo ler o site [Ruby Quiz](http://rubyquiz.com/) que contém uma biblioteca enorme de pequenos problemas simples com soluções muito criativas usando os recursos de Ruby.
 
-O mais importante: não tente escrever Ruby da mesma forma como se escreve Java ou C#. _“Quando se está em Roma, faça como os romanos.”_ Portanto, nada de usar “camelCasing” para nomear seus métodos, por exemplo, use “metodos\_separados\_por\_underscore”. Escreva Ruby da forma Ruby.
+O mais importante: não tente escrever Ruby da mesma forma como se escreve Java ou C#. _“Quando se está em Roma, faça como os romanos.”_ Portanto, nada de usar “camelCasing” para nomear seus métodos, por exemplo, use “metodos_separados_por_underscore”. Escreva Ruby da forma Ruby.

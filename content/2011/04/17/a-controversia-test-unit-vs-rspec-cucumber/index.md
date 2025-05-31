@@ -53,7 +53,7 @@ describe Cart, “.sub_total” do # descrevendo o sub total de um Cart
  @cart = Factory(:cart_with_two_5_dollar_items) # faça @cart ser o resultado da Fábrica com 2 ítens de $5  
  end
 
-it “should calculate subtotal correctly” do # o cart deve calcular o subtotal corretamente @cart.sub\_total.should == 10.00 # sub total do @cart deve ser igual a 10.00 end
+it “should calculate subtotal correctly” do # o cart deve calcular o subtotal corretamente @cart.sub_total.should == 10.00 # sub total do @cart deve ser igual a 10.00 end
 end  
 ```
 
@@ -80,13 +80,13 @@ Given an initialised database$ do
 end
 
 1. code_steps.rb  
-Given a gem called “(.\*)”$ do | name |  
+Given a gem called “(.*)”$ do | name |  
  code = Code.find_by_name name  
  code.destroy unless code.nil?
  code = a_saved Code, :name => name  
 end
 
-When I visit the page for “(.\*)”$ do | name |
+When I visit the page for “(.*)”$ do | name |
  visit “/#{name}”  
 end
 
@@ -105,7 +105,7 @@ When I add a comment$ do
 end
 
 1. webrat_steps.rb  
-When I press “(.\*)”$ do |button|  
+When I press “(.*)”$ do |button|  
  click_button(button)  
 end
 

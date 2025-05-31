@@ -13,7 +13,7 @@ draft: false
 
 That’s for all my friends who don’t speak portuguese. I’ve met outstanding people from all over the world who’ve been very supportive and believed in my goals since the very beginning. People like [Satish Talim](http://rubylearning.com), [Geoffrey Grosenbach](http://www.peepcode.com) and many many other visionaries. Thanks to you all and I hope you keep appreciating the efforts we’re doing here in Brazil.
 
-So, this week I’ve had the worst/best weekend I can remember of. First of all the good stuff: last week the #1 Brazilian hosting company, [Locaweb](http://www.locaweb.com.br) decided to support and invest on Ruby on Rails and its first move was to launch a trial period of a mod\_rails based shared hosting plan. But they won’t stop there.
+So, this week I’ve had the worst/best weekend I can remember of. First of all the good stuff: last week the #1 Brazilian hosting company, [Locaweb](http://www.locaweb.com.br) decided to support and invest on Ruby on Rails and its first move was to launch a trial period of a mod_rails based shared hosting plan. But they won’t stop there.
 
 
  ![](http://s3.amazonaws.com/akitaonrails/assets/2008/5/20/GilbertoMautner_03_carreira_08.jpg)

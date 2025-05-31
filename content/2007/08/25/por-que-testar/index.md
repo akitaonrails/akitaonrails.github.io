@@ -56,12 +56,12 @@ Para sabe isso, instale também o [rCov](http://eigenclass.org/hiki.rb?rcov) que
 gem install rcov  
 ```
 
-Depois instale o plugin [rails\_rcov](http://blog.codahale.com/2006/05/26/rails-plugin-rails_rcov/) no seu projeto assim:
+Depois instale o plugin [rails_rcov](http://blog.codahale.com/2006/05/26/rails-plugin-rails_rcov/) no seu projeto assim:
 
 * * *
 
 ```bash
-./script/plugin install x <http://svn.codahale.com/rails\_rcov>  
+./script/plugin install x <http://svn.codahale.com/rails_rcov>  
 ```
 
 --

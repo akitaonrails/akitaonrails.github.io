@@ -68,7 +68,7 @@ Nesse segundo caso, poderíamos fazer o seguinte:
 
 ```ruby
 class String  
- def method\_missing(metodo, \*args)  
+ def method_missing(metodo, *args)  
  puts “Nao conheco o metodo #{metodo}. Os argumentos foram:”  
  args.each { |arg| puts arg }  
  end  

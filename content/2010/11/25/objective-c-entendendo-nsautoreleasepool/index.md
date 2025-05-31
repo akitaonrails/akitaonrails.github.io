@@ -19,8 +19,8 @@ Uma coisa que confunde no início é o <tt>NSAutoreleasePool</tt>. Todo projeto 
 * * *
 
 ```objc
-int main(int argc, char \*argv[]) {   
- NSAutoreleasePool \* pool = [[NSAutoreleasePool alloc] init];  
+int main(int argc, char *argv[]) {   
+ NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];  
  int retVal = UIApplicationMain(argc, argv, nil, nil);  
  [pool release];  
  return retVal;  
@@ -37,7 +37,7 @@ O sistema devolve memória liberado ao sistema ao final de uma execução, mas e
 - (IBAction) onClick:(id)sender {  
  int i;  
  for (i = 0; i \< 50000; i++) {  
- NSString \* teste = [NSString stringWithFormat:`"Teste %i", i];
+ NSString * teste = [NSString stringWithFormat:`"Teste %i", i];
       NSLog(`“X: %@”, teste);  
  }  
 }  
@@ -63,9 +63,9 @@ Esse padrão é fácil de identificar, basta procurar por loops que podem ser mu
 - (IBAction) onClick:(id)sender {
  int i;  
  // cria novo pool  
- NSAutoreleasePool\* pool = [[NSAutoreleasePool alloc] init];  
+ NSAutoreleasePool* pool = [[NSAutoreleasePool alloc] init];  
  for (i = 0; i \< 50000; i++) {  
- NSString \* teste = [NSString stringWithFormat:`"Teste %i", i];
+ NSString * teste = [NSString stringWithFormat:`"Teste %i", i];
         NSLog(`“X: %@”, teste);  
  if (i % 1000 == 0) {  
  // limpa o pool a cada mil interações  

@@ -97,7 +97,7 @@ end<br>
 <br>
 LibC.puts “hello!”</macro:code>
 
-The attach\_function line is the primary interface into FFI. You simple indicate which library the function is in (in this case, nil is used because it’s include in the existing process), the name of the function (puts), the types of arguments it takes (just 1, a string), and finally, the type it returns (void, ie, nothing).
+The attach_function line is the primary interface into FFI. You simple indicate which library the function is in (in this case, nil is used because it’s include in the existing process), the name of the function (puts), the types of arguments it takes (just 1, a string), and finally, the type it returns (void, ie, nothing).
 
 Using this, you can tie directly to C functions without having to write C wrapper code.
 
@@ -137,9 +137,9 @@ We haven’t yet, but we plan to exercise the great merge / public branch capabi
 
 There is a mechanism for VMs to communicate with each other though, and this allows them to coordinate work. This would mean that a primary thread could accept new connections, then pass them off to a new VM to actually process. This allows you to process connections in actual parallel, in addition, because the VMs are completely separated, this even works for non-thread safe applications like Rails.
 
-**AkitaOnRails:** Ezra also mentioned about a possible mod\_rubinius in the making. How is it going? This definitely makes the Rubinius stack even stronger. Together with Merb, Rubinius plus multi-VM capabilities plus mod\_rubinius would be a killer deployment package.
+**AkitaOnRails:** Ezra also mentioned about a possible mod_rubinius in the making. How is it going? This definitely makes the Rubinius stack even stronger. Together with Merb, Rubinius plus multi-VM capabilities plus mod_rubinius would be a killer deployment package.
 
-**Evan Phoenix:** Yes, a mod\_rubinius project is just beginning. The multi-VM code and mod\_rubinius overlap a bunch, so you’ll be able to have VM pools for sites, all managed through apache. We’re hoping that mod\_rubinius can really simplify the Rails/Ruby deployment picture. It will operate similarly to mod\_python, allowing a VM to remain running between requests, and likely even run background tasks.
+**Evan Phoenix:** Yes, a mod_rubinius project is just beginning. The multi-VM code and mod_rubinius overlap a bunch, so you’ll be able to have VM pools for sites, all managed through apache. We’re hoping that mod_rubinius can really simplify the Rails/Ruby deployment picture. It will operate similarly to mod_python, allowing a VM to remain running between requests, and likely even run background tasks.
 
 **AkitaOnRails:** How long do you guess we are from a fully MRI-1.8 compatible release?
 

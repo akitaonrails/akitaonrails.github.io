@@ -110,7 +110,7 @@ Vamos a mais alguns exemplos simples:
 => 3  
 >> numero = 5  
 => 5  
->> numero \* 3  
+>> numero * 3  
 => 15
 
 >> contador = 1  
@@ -307,7 +307,7 @@ Várias coisas acontecendo aqui. Vejamos os principais pontos: primeiro, estamos
 
 Depois, mais uma novidade: o método ‘alias’. Esse é um método de classe que cria um novo apontamento a um método que já existe. Pense em algo assim: você tem ‘a = foo’ e depois ‘b = a’. Agora, tanto ‘a’ quanto ‘b’ apontam para o mesmo objeto ‘foo’.
 
-Outra coisa: quando uma classe é criada, reaberta ou ‘executada’ os métodos chamados dentro dela são executados. Ou seja, o comando ‘alias’, por exemplo, serve para reapontar um método com outro nome. No exemplo, já existia o método chamado “+” e com “alias” criamos um segundo método chamado “soma\_velha” que aponta para a mesma implementação do método original. Ou seja, neste ponto as três chamadas a seguir se equivalem:
+Outra coisa: quando uma classe é criada, reaberta ou ‘executada’ os métodos chamados dentro dela são executados. Ou seja, o comando ‘alias’, por exemplo, serve para reapontar um método com outro nome. No exemplo, já existia o método chamado “+” e com “alias” criamos um segundo método chamado “soma_velha” que aponta para a mesma implementação do método original. Ou seja, neste ponto as três chamadas a seguir se equivalem:
 
 * * *
 
@@ -323,7 +323,7 @@ Outra coisa: quando uma classe é criada, reaberta ou ‘executada’ os método
 => 15  
 ```
 
-Mas fizemos mais: depois de criar o novo apontamento “soma\_velha” reimplementamos o método antigo “+”. A idéia é: se o parâmetro for um String, quero transformar o objeto Fixnum num String e depois concatenamos os dois. Veja como usamos o ‘return’ para retornar imediatamente caso este seja o caso. Senão, se o argumento passado não for um String, passamos para o método ‘soma\_velha’ fazer a soma do jeito antigo.
+Mas fizemos mais: depois de criar o novo apontamento “soma_velha” reimplementamos o método antigo “+”. A idéia é: se o parâmetro for um String, quero transformar o objeto Fixnum num String e depois concatenamos os dois. Veja como usamos o ‘return’ para retornar imediatamente caso este seja o caso. Senão, se o argumento passado não for um String, passamos para o método ‘soma_velha’ fazer a soma do jeito antigo.
 
 Note também que usamos o ‘if’ de uma forma um pouco diferente: no fim da expressão:
 
@@ -334,7 +334,7 @@ Note também que usamos o ‘if’ de uma forma um pouco diferente: no fim da ex
 return self.to_s + valor if valor.is_a? String
 ```
 
-‘is\_a?’ é um método que está sem os parênteses (lembram-se? são opcionais) e serve para verificar o tipo do objeto ‘valor’. Literalmente podemos ler assim: “retorne self.to\_s concatenado com ‘valor’ se for do tipo String.” Se você entende inglês verá que a expressão é praticamente uma frase.
+‘is_a?’ é um método que está sem os parênteses (lembram-se? são opcionais) e serve para verificar o tipo do objeto ‘valor’. Literalmente podemos ler assim: “retorne self.to_s concatenado com ‘valor’ se for do tipo String.” Se você entende inglês verá que a expressão é praticamente uma frase.
 
 E é isso que acontece agora quando tentamos somar um número com um string: ele retorna a concatenação de dois Strings. Note também que esse comportamento passa a valer para todos os objetos numéricos (instâncias de Fixnum).
 
@@ -522,7 +522,7 @@ No Ruby on Rails esse recurso é muito usado, principalmente para organizar cód
 end  
 ```
 
-Cada um dos includes acima tem um arquivo separado. Por exemplo ActiveRecord::QueryCache fica no arquivo “active\_record/query\_cache.rb”. É uma excelente maneira de organizar seus códigos. Mas existem alguns truques importantes de se conhecer. Uma delas é entender que módulos tem “eventos”. Ou seja, podemos instruir o módulo para executar alguma coisa toda vez que for incluso em alguma classe.
+Cada um dos includes acima tem um arquivo separado. Por exemplo ActiveRecord::QueryCache fica no arquivo “active_record/query_cache.rb”. É uma excelente maneira de organizar seus códigos. Mas existem alguns truques importantes de se conhecer. Uma delas é entender que módulos tem “eventos”. Ou seja, podemos instruir o módulo para executar alguma coisa toda vez que for incluso em alguma classe.
 
 * * *
 
@@ -567,8 +567,8 @@ Você vai entender o que significa “send” na próxima seção. Apenas entend
 3. incluímos o módulo MeusPatches à classe Pessoa
 4. o método self.included é ativado que, por sua vez, manda extender o sub-módulo ClassMethods na classe Pessoa (que é passado como o parâmetro “base”)
 5. agora a classe Pessoa ganhou os métodos de instância e de classe
-6. criamos a instância “fabio” e chamamos o método “metodo\_de\_instancia”
-7. chamamos o método “metodo\_de\_classe” diretamente da classe Pessoa
+6. criamos a instância “fabio” e chamamos o método “metodo_de_instancia”
+7. chamamos o método “metodo_de_classe” diretamente da classe Pessoa
 
 Se fôssemos reescrever a classe Pessoa sem o recurso de módulos, ela ficaria assim:
 

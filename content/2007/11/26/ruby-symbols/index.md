@@ -156,6 +156,6 @@ Um lugar onde isso é usado muito bem é dentro do pacote ActiveSupport do Rails
 
 O primeiro comando linha instancia e popula um Hash (e temos mais uma notação especial de inicialização). O segundo comando pede pelo valor identificado pela chave “id”, que é uma string.
 
-Em vez de fazer dessa maneira, podemos chamar o método symbolize\_keys! para transformar todas as chaves string em chaves símbolo. Agora, no último comando podemos usar a notação mais comum em Rails de símbolos como chaves dentro de um Hash. Quando o Rails recebe um post de um formulário HTML, ele apenas recebe strings, portanto é seu trabalho converter tudo em objetos que façam sentido. Se você esteve no mundo Rails, já viu esse uso em controllers.
+Em vez de fazer dessa maneira, podemos chamar o método symbolize_keys! para transformar todas as chaves string em chaves símbolo. Agora, no último comando podemos usar a notação mais comum em Rails de símbolos como chaves dentro de um Hash. Quando o Rails recebe um post de um formulário HTML, ele apenas recebe strings, portanto é seu trabalho converter tudo em objetos que façam sentido. Se você esteve no mundo Rails, já viu esse uso em controllers.
 
 Então, isso é tuod que pode ser dito sobre Símbolos: construções muito simples que tornam o código mais legível e mais eficiente ao mesmo tempo, o que é compatível com a filosofia Ruby.

@@ -42,11 +42,11 @@ end
 
 private  
  def etag(collection)  
- collection.inject(0) { |etag, item| etag += item.updated_at.to\_i }  
+ collection.inject(0) { |etag, item| etag += item.updated_at.to_i }  
  end  
 ```
 
-É só isso. Acontece o seguinte, um ETAG é um identificador único de um determinado recurso. Pense como um Hash. No caso você pode passar qualquer número ao método “stale?”. Como eu sei que toda vez que um Post é atualizado o campo “updated\_at” também muda, significa que basta um Post mudar para que a soma dos “updated\_at” gerado no método “etag” que eu criei vai mudar. Agora, para que serve esse número?
+É só isso. Acontece o seguinte, um ETAG é um identificador único de um determinado recurso. Pense como um Hash. No caso você pode passar qualquer número ao método “stale?”. Como eu sei que toda vez que um Post é atualizado o campo “updated_at” também muda, significa que basta um Post mudar para que a soma dos “updated_at” gerado no método “etag” que eu criei vai mudar. Agora, para que serve esse número?
 
 Quando o Rails terminar de renderizar o template ERB, ele vai adicionar o seguinte cabeçalho na resposta ao navegador do usuário:
 
@@ -101,7 +101,7 @@ end
 
 Neste exemplo, se vier o ETAG no “If-None-Match”, vamos economizar buscar os comentários e os tags do Post. Além de evitar gerar o mesmo HTML de novo também evita mais queries no banco de dados.
 
-Outra coisa é que se você usar o método “fresh\_when” precisa tomar cuidado para não cair em exceção de “Double Render Error”. Numa action Rails você não pode ter duas chamadas a “render” ou chamar “render” e “redirect\_to” junto, por motivos óbvios. Por isso, esse código abaixo dará problemas:
+Outra coisa é que se você usar o método “fresh_when” precisa tomar cuidado para não cair em exceção de “Double Render Error”. Numa action Rails você não pode ter duas chamadas a “render” ou chamar “render” e “redirect_to” junto, por motivos óbvios. Por isso, esse código abaixo dará problemas:
 
 * * *
 
@@ -128,7 +128,7 @@ def show
 end  
 ```
 
-O “if” acima resolve porque se o “fresh\_when” detectou um ETAG ele já configurou o “response.status” para ser igual a “304” que é o código de “Not Modified” no cabeçalho de resposta.
+O “if” acima resolve porque se o “fresh_when” detectou um ETAG ele já configurou o “response.status” para ser igual a “304” que é o código de “Not Modified” no cabeçalho de resposta.
 
 E qual é o ganho? Nesse exemplo – ultra-simples – em modo desenvolvimento, no meu notebook, uma requisição normal com meros 5 registros devolveu em 9ms. Com a adição do ETAG isso caiu para 5ms, um ganho de cerca e **40%** de performance. Claro isso vai variar bastante, mas é claro que o tempo gasto em não processar o template ERB e em não enviar algumas dezenas de kilobytes do HTML gerado é uma boa economia tanto de processamento quanto de banda.
 

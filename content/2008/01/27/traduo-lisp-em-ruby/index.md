@@ -223,7 +223,7 @@ Aqui vai o programa ruby usando o interpretador Lisp. O sistema Lisp é muito pr
 require ‘lisp’
 
 #1. Create an environment where
-#2. the reverse, rev\_shift and null
+#2. the reverse, rev_shift and null
 #3. functions are bound to an
 #4. appropriate identifier.
 
@@ -245,8 +245,8 @@ env = [
 
 exp = [:reverse, [:quote, [:a, :b, :c, :d, :e]]].sexp
 
-puts “EVAL: #{exp.lisp\_string}”
-puts " =\> #{eval(exp,env).lisp\_string}"  
+puts “EVAL: #{exp.lisp_string}”
+puts " =\> #{eval(exp,env).lisp_string}"  
 ```
 
 O programa imprime:

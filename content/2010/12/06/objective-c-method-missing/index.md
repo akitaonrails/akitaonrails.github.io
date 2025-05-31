@@ -146,7 +146,7 @@ A diferença é que em Ruby temos Symbols e em Obj-C temos [Selectors](http://de
 * * *
 
 ```objc
-- (void) foo:(NSString\*)bar value:(NSString\*)xyz;  
+- (void) foo:(NSString*)bar value:(NSString*)xyz;  
 ```
 
 Esse método seria enviado ao objeto assim:
@@ -176,11 +176,11 @@ O pseudo-código seria mais ou menos assim:
 * * *
 
 ```objc
-- (NSMethodSignature \*)methodSignatureForSelector:(SEL)aSelector {  
+- (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {  
  return [anotherObject methodSignatureForSelector:aSelector];  
 }
 
-- (void)forwardInvocation:(NSInvocation \*)anInvocation {  
+- (void)forwardInvocation:(NSInvocation *)anInvocation {  
  [anotherObject performSelector:[anInvocation selector]];  
 }  
 ```
@@ -251,7 +251,7 @@ Para começar, quero entender mensagens mais ou menos desse tipo:
 
 ```objc
 
-- (id) entity:(NSString*)value; - (id) entityBlock:(id (^)(id))block; \*/
+- (id) entity:(NSString*)value; - (id) entityBlock:(id (^)(id))block; */
 ```
 
 * * *
@@ -275,7 +275,7 @@ Agora, vamos definir o método principal:
  // #1  
  NSString** method = NSStringFromSelector([anInvocation selector]);
 
-// #2BOOL hasBlock = [method hasSuffix:@"Block:"]; method = [method stringByReplacingOccurrencesOfString:@"Block" withString:@""]; method = [method stringByReplacingOccurrencesOfString:@":" withString:@""]; // #3 int tabsLength = self.indentationLevel \* 2; NSMutableString\* tabs = [NSMutableString stringWithCapacity:tabsLength]; int i; for ( i = 0 ; i \< tabsLength; i ++ ) { [tabs appendString:@" "]; } …
+// #2BOOL hasBlock = [method hasSuffix:@"Block:"]; method = [method stringByReplacingOccurrencesOfString:@"Block" withString:@""]; method = [method stringByReplacingOccurrencesOfString:@":" withString:@""]; // #3 int tabsLength = self.indentationLevel * 2; NSMutableString* tabs = [NSMutableString stringWithCapacity:tabsLength]; int i; for ( i = 0 ; i \< tabsLength; i ++ ) { [tabs appendString:@" "]; } …
 ```
 
 * * *

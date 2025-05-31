@@ -28,7 +28,7 @@ NSDate *date = [NSDate dateWithTimeIntervalSinceReferenceDate:162000];
 
 NSString *formattedDateString = [dateFormatter stringFromDate:date];  
 NSLog(`"formattedDateString: %`", formattedDateString);  
-// Output for locale en\_US: “formattedDateString: Jan 2, 2001”  
+// Output for locale en_US: “formattedDateString: Jan 2, 2001”  
 ```
 
 And you can use Regular Expressions like this:
@@ -63,7 +63,7 @@ And the regular expression example would be like this:
 
 ```ruby
 
-number_of_matches = /\W\*[a|b][c|d]\W\*/.match(string).size  
+number_of_matches = /\W*[a|b][c|d]\W*/.match(string).size  
 ```
 
 There are 2 specific things that annoys me:
@@ -156,15 +156,15 @@ I have wrapped those helpers in my own classes like this:
  if ([replacement isKindOfClass:[NSString class]]) {  
  return [self replaceAllByRegexp:pattern with:replacement];
  } else if ([replacement isKindOfClass:[NSArray class]]) {  
- \_\_block int i = -1;  
- return [self replaceAllByRegexp:pattern withBlock:^(OnigResult\* obj) {  
- return [NSString\*](replacement objectAtIndex:(++i));  
+ __block int i = -1;  
+ return [self replaceAllByRegexp:pattern withBlock:^(OnigResult* obj) {  
+ return [NSString*](replacement objectAtIndex:(++i));  
  }];
  }  
  return nil;  
 }
 
-- (NSString\*) gsub:(NSString\*)pattern withBlock:(NSString\* (^)(OnigResult\*))replacement {  
+- (NSString*) gsub:(NSString*)pattern withBlock:(NSString* (^)(OnigResult*))replacement {  
  return [self replaceAllByRegexp:pattern withBlock:replacement];  
 }
 ```
@@ -181,7 +181,7 @@ context(`"Regular Expressions", ^{
  [[[`"hello world, heyho!" gsub:`“h\\w+” with:`"hi"] should] equal:`“hi world, hi!”];  
  });
 
-it(@"should replace each substrings with one corresponding replacement in the array", ^{ NSArray\* replacements = [NSArray arrayWithObjects:@"hi", @"everybody", nil]; [[[`"hello world, heyho!" gsub:`“h\\w+” with:replacements] should] equal:@"hi world, everybody!"]; }); it(@"should replace each substring with the return of the block", ^{ [[[`"hello world, heyho!" gsub:`“h\\w+” withBlock:^(OnigResult\* obj) { return @"foo"; }] should] equal:@"foo world, foo!"]; });
+it(@"should replace each substrings with one corresponding replacement in the array", ^{ NSArray* replacements = [NSArray arrayWithObjects:@"hi", @"everybody", nil]; [[[`"hello world, heyho!" gsub:`“h\\w+” with:replacements] should] equal:@"hi world, everybody!"]; }); it(@"should replace each substring with the return of the block", ^{ [[[`"hello world, heyho!" gsub:`“h\\w+” withBlock:^(OnigResult* obj) { return @"foo"; }] should] equal:@"foo world, foo!"]; });
 });
 ```
 

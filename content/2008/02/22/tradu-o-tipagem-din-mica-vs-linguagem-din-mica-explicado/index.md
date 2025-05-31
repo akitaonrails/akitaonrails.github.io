@@ -51,7 +51,7 @@ end
 raise “Error” unless Dummy.new.test(1, 2) == 3  
 ```
 
-O método test() chamado na classe Dummy na última linha é despachado pelo Ruby ao método method\_missing(). ( **nota do Akita** : note que dizemos “despachado” – dispatched – e não “chamado”. Não ‘chamamos métodos’, mas sim ‘enviamos mensagens’, a diferença é muito grande.) Python e Groovy também suportam Despacho Dinâmico. Em geral, linguagens dinâmicas como Ruby, Python e Groovy tem um Protocolo de Meta-Objeto ou MOP (Meta-Object Protocol).
+O método test() chamado na classe Dummy na última linha é despachado pelo Ruby ao método method_missing(). ( **nota do Akita** : note que dizemos “despachado” – dispatched – e não “chamado”. Não ‘chamamos métodos’, mas sim ‘enviamos mensagens’, a diferença é muito grande.) Python e Groovy também suportam Despacho Dinâmico. Em geral, linguagens dinâmicas como Ruby, Python e Groovy tem um Protocolo de Meta-Objeto ou MOP (Meta-Object Protocol).
 
 De volta ao post que mencionei no começo. O autor tenta provar que tipagem estática é superior à tipagem dinâmica. Para provar isso ele usa este código em Ruby (também há exemplos em Python, OCaml e Haskell):
 
@@ -157,18 +157,18 @@ Veja a declaração do método test() nas primeiras 3 linhas e seus argumentos t
 
 ```bash
 
-C:\\>groovy type\_safe  
+C:\\>groovy type_safe  
 3  
-C:\\>groovy type\_safe 0  
+C:\\>groovy type_safe 0  
 3  
-C:\\>groovy type\_safe 0 1  
+C:\\>groovy type_safe 0 1  
 3  
-C:\\>groovy type\_safe 0 1 2  
+C:\\>groovy type_safe 0 1 2  
 3  
-C:\\>groovy type\_safe 0 1 2 3  
-Caught: groovy.lang.MissingMethodException: No signature of method: type\_safe.test() is applicable for argument types: (java.lang.Integer, java.lang.String) values: {1, "test"}  
- at type\_safe.run(type\_safe.groovy:6)  
- at type\_safe.main(type\_safe.groovy)  
+C:\\>groovy type_safe 0 1 2 3  
+Caught: groovy.lang.MissingMethodException: No signature of method: type_safe.test() is applicable for argument types: (java.lang.Integer, java.lang.String) values: {1, "test"}  
+ at type_safe.run(type_safe.groovy:6)  
+ at type_safe.main(type_safe.groovy)  
 C:\\>
 ```
 

@@ -67,10 +67,10 @@ That’s where we come to the previous “Run Script” phase that should have t
 
 ```bash
 # 1. make a new output folder  
-mkdir -p ${TARGET\_BUILD\_DIR}/../Rubyfication
+mkdir -p ${TARGET_BUILD_DIR}/../Rubyfication
 
 # 1. combine lib files for various platforms into one  
-lipo create “${TARGET\_BUILD\_DIR}/../Debug-iphoneos/libRubyfication.a” “${TARGET\_BUILD\_DIR}/../Debug-iphonesimulator/libRubyfication.a” -output "${TARGET\_BUILD\_DIR}/../Rubyfication/libRubyfication${BUILD\_STYLE}.a"  
+lipo create “${TARGET_BUILD_DIR}/../Debug-iphoneos/libRubyfication.a” “${TARGET_BUILD_DIR}/../Debug-iphonesimulator/libRubyfication.a” -output "${TARGET_BUILD_DIR}/../Rubyfication/libRubyfication${BUILD_STYLE}.a"  
 ```
 
 The first thing it does it create this new “Rubyfication” directory. The second command uses the [lipo](http://developer.apple.com/library/mac/#documentation/Darwin/Reference/ManPages/man1/lipo.1.html) command that merges 2 processor-dependent binaries into a universal binary. Pay attention to the PATHs if you’re reusing this script somewhere else. At least with XCode 4 that’s where it creates the binaries of each target:
@@ -84,7 +84,7 @@ Finally, the last “Run Script”, after the “Copy Files” phase described a
 * * *
 
 ```bash
-ditto c -k —keepParent “${TARGET\_BUILD\_DIR}/../Rubyfication” “${TARGET\_BUILD\_DIR}/../Rubyfication.zip”  
+ditto c -k —keepParent “${TARGET_BUILD_DIR}/../Rubyfication” “${TARGET_BUILD_DIR}/../Rubyfication.zip”  
 ```
 
 --
@@ -97,7 +97,7 @@ And there you go: there’s your ZIP file with your brand new redistributable un
 
 ## Using the Universal Binary
 
-In order to demonstrate how to use this distributable ZIP file. I have created a very simple, bare-bone iOS project called [ObjC\_OnigurumaDemo](https://github.com/akitaonrails/ObjC_OnigurumaDemo) that you can download from Github and run in your own iOS device.
+In order to demonstrate how to use this distributable ZIP file. I have created a very simple, bare-bone iOS project called [ObjC_OnigurumaDemo](https://github.com/akitaonrails/ObjC_OnigurumaDemo) that you can download from Github and run in your own iOS device.
 
 As you can see in the screenshot below, I just unzipped the ZIP within a “Dependencies” folder in my iOS project and added the universal binary “libRubyfication-Debug.a” within the Library Linking Build Phase:
 
@@ -110,9 +110,9 @@ C
 
 ```objc
 - (IBAction)runRegex:(id)sender {  
- OnigRegexp\* regex = [OnigRegexp compile:[regexPattern text]];  
- OnigResult\* res = [regex match:[initialText text]];  
- NSMutableString\* tmpResult = [NSMutableString stringWithString:`""];
+ OnigRegexp* regex = [OnigRegexp compile:[regexPattern text]];  
+ OnigResult* res = [regex match:[initialText text]];  
+ NSMutableString* tmpResult = [NSMutableString stringWithString:`""];
     for(int i = 0; i < [res count]; i++) {
         [tmpResult appendString:`“(”];  
  [tmpResult appendString:[res stringAt:i]];  

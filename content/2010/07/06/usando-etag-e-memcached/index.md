@@ -9,13 +9,13 @@ tags:
 draft: false
 ---
 
- **Atualização 02/07/2010:** Eu esqueci que o máximo de caracteres de uma chave de memcached é 250. Como estava gerando chaves dos posts usando os permalinks, obviamente em muitos casos vai dar mais de 250. Então o que eu fiz foi gerar as chaves normalmente, criar um digest SHA1 e truncar até 250. Isso deve resolver. Descobri isso porque estou usando o plugin [exception\_notifier](http://github.com/rails/exception_notification) e hoje comecei a receber dezenas de e-mails com a exception <tt>Memcached::ABadKeyWasProvidedOrCharactersOutOfRange</tt>. Fica a dica :-)
+ **Atualização 02/07/2010:** Eu esqueci que o máximo de caracteres de uma chave de memcached é 250. Como estava gerando chaves dos posts usando os permalinks, obviamente em muitos casos vai dar mais de 250. Então o que eu fiz foi gerar as chaves normalmente, criar um digest SHA1 e truncar até 250. Isso deve resolver. Descobri isso porque estou usando o plugin [exception_notifier](http://github.com/rails/exception_notification) e hoje comecei a receber dezenas de e-mails com a exception <tt>Memcached::ABadKeyWasProvidedOrCharactersOutOfRange</tt>. Fica a dica :-)
 
 Aproveitando o [episódio](http://www.akitaonrails.com/2010/07/05/rubyconf-latin-america-derruba-akitaonrails-com) de ontem da lentidão do meu site, resolvi fazer um pequeno ajuste adicionando memcached à equação.
 
 Recordando, eu estou usando ETAGs para economizar processamento. Leia meu [artigo sobre ETAG](http://akitaonrails.com/2010/05/25/voce-ja-esta-usando-etags-certo) para entender do que isso se trata. Basicamente a primeira vez ele vai ao banco, busca os dados, abre o template ERB, gera o HTML e envia de volta ao usuário, o caminho padrão. Com ETAG, na segunda vez ele checa que o dado no banco não mudou e devolve apenas um cabeçalho “304 Not Modified”, evitando o processamento do template ERB e transporte do HTML. Só isso dá uma boa acelerada na requisição.
 
-Porém, eu gero o ETAG usando o campo ‘updated\_at’, ou seja, eu preciso acabar indo ao banco e buscar essa informação. Algo parecido com isso:
+Porém, eu gero o ETAG usando o campo ‘updated_at’, ou seja, eu preciso acabar indo ao banco e buscar essa informação. Algo parecido com isso:
 
 * * *
 
@@ -89,7 +89,7 @@ Agora, basta fazer algo assim no controller:
 
 ```ruby
 def show
- cache_key = Digest::SHA1.hexdigest(“post_#{[:year, :month, :day, :slug].collect {|x| params[x] }.join(‘\_’)}”)  
+ cache_key = Digest::SHA1.hexdigest(“post_#{[:year, :month, :day, :slug].collect {|x| params[x] }.join(‘_’)}”)  
  etag = Rails.cache.read(cache_key)  
  options = { :public => true }  
  if etag  
@@ -106,7 +106,7 @@ def show
 end  
 ```
 
-Existem 2 partes nessa lógica. Na primeira, montamos a chave do cache, que tem que ser única para cada elemento – no caso, um post – que você quer gerenciar. Em especial para meu blog eu monto uma chave baseada nos parâmetros que vem na requisição. Ou seja se o usuário mandar a URL “/2010/01/01/foo” ele vai montar a chave “post\_2010\_01\_01\_foo”. Daí ele faz um <tt>Rails.cache.read</tt> para ver se já existe um ETAG armazenado no memcached. Se já existir ele vai tentar chamar o <tt>fresh_when</tt> para ver se pode já só enviar o cabeçalho 304.
+Existem 2 partes nessa lógica. Na primeira, montamos a chave do cache, que tem que ser única para cada elemento – no caso, um post – que você quer gerenciar. Em especial para meu blog eu monto uma chave baseada nos parâmetros que vem na requisição. Ou seja se o usuário mandar a URL “/2010/01/01/foo” ele vai montar a chave “post_2010_01_01_foo”. Daí ele faz um <tt>Rails.cache.read</tt> para ver se já existe um ETAG armazenado no memcached. Se já existir ele vai tentar chamar o <tt>fresh_when</tt> para ver se pode já só enviar o cabeçalho 304.
 
 Na parte 2 ele checa <tt>request.fresh?(response)</tt>. Se voltar falso quer dizer que o navegador do usuário mandou um ETAG diferente do que temos armazenado no memcached, ou seja, provavelmente o post foi atualizado. Então temos que mandar uma versão nova. Daí ele faz a lógica normal de procurar pelo post, gerar o ETAG. Daí ele grava o ETAG novo no cache, pra garantir, e também manda esse novo ETAG no cabeçalho de volta ao navegador. Da próxima vez, o navegador vai mandar o novo ETAG e daí vai receber de volta apenas o cabeçalho 304. Além disso também estou configurando o cabeçalho “Last-Modified” para facilitar o cache da página.
 
@@ -153,12 +153,12 @@ class Admin::PostsController < Admin::BaseController
  after_filter :clean_cache, :only => [:create, :update, :destroy]  
  …
 
-protected def clean_cache Rails.cache.delete(Digest::SHA1.hexdigest(“post_#{@post.permalink.gsub(”/", “\_”)}")) Rails.cache.delete(“recent_posts_etag”) end
+protected def clean_cache Rails.cache.delete(Digest::SHA1.hexdigest(“post_#{@post.permalink.gsub(”/", “_”)}")) Rails.cache.delete(“recent_posts_etag”) end
 
 end
 ```
 
-No caso faço um <tt>after_filter</tt> que vai rodar só depois dos métodos <tt>create</tt>, <tt>update</tt> e <tt>destroy</tt>. No caso ele apaga o ETAG do post (método <tt>show</tt> do controller público) que tem aquele formato “post\_2010\_01\_01\_foo” (no caso eu criei um método chamado <tt>permalink</tt> no model <tt>Post</tt> que formata isso) e também deleta o ETAG no caso da página principal (que eu guardo com a chave <tt>recent_posts_etag</tt>), que busca vários posts. Eu assumo que se um post mudar, é melhor recriar a homepage inteira porque não sei se esse post aparece listado lá ou não. Poderia ter uma lógica melhor, mas considerando que eu não fico atualizando ou deletando posts o tempo todo, isso deve bastar.
+No caso faço um <tt>after_filter</tt> que vai rodar só depois dos métodos <tt>create</tt>, <tt>update</tt> e <tt>destroy</tt>. No caso ele apaga o ETAG do post (método <tt>show</tt> do controller público) que tem aquele formato “post_2010_01_01_foo” (no caso eu criei um método chamado <tt>permalink</tt> no model <tt>Post</tt> que formata isso) e também deleta o ETAG no caso da página principal (que eu guardo com a chave <tt>recent_posts_etag</tt>), que busca vários posts. Eu assumo que se um post mudar, é melhor recriar a homepage inteira porque não sei se esse post aparece listado lá ou não. Poderia ter uma lógica melhor, mas considerando que eu não fico atualizando ou deletando posts o tempo todo, isso deve bastar.
 
 Meu blog é bem simples, mas se o administrador fosse mais complexo e precisasse invalidar o cache a partir de múltiplos pontos, o melhor é criar um [Observer](http://railsbox.org/2008/8/22/usando-o-observer-no-rails) que centraliza a lógica e invalidação do cache de ETAGs.
 

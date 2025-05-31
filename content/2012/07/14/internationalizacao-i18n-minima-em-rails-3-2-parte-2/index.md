@@ -78,7 +78,7 @@ class Article < ActiveRecord::Base
 private  
  …  
  def generate_html  
- self.body_html = RDiscount.new(self.body).to\_html  
+ self.body_html = RDiscount.new(self.body).to_html  
  end  
 end  
 ```
@@ -88,7 +88,7 @@ Isso foi simples. Agora não precisa adicionar nada no controller e na view bast
 * * *
 
 ```html
-<%= raw @article.body\_html %\>  
+<%= raw @article.body_html %\>  
 ```
 
 Observe também o método <tt>raw</tt>: como estamos adicionando HTML vinda de model na view, o Rails, por padrão, vai considerar esse conteúdo “perigoso” e irá escapá-lo. Não é o que queremos, queremos mesmo que o HTML seja mesclado, para isso precisamos expôr nossa intenção explicitamente dizendo que queremos o HTML “crú” (raw). Leia mais sobre essa funcionalidade no [Guia Oficial](http://guides.rubyonrails.org/active_support_core_extensions.html#output-safety).
@@ -152,7 +152,7 @@ module ApplicationHelper
  links << content_tag(:li, link_to(t(“hello”), welcome_path), options).html_safe
 
 options = params[:controller] == “articles” ? { class: “active” } : {} 
-links << content_tag(:li, link_to(t(“articles.title”), articles\_path), options).html_safe 
+links << content_tag(:li, link_to(t(“articles.title”), articles_path), options).html_safe 
 links << content_tag(:li, link_to(t(“admin.title”), admin_dashboard_path)).html_safe content_tag(:ul, links.join(“\n”).html_safe, class: “nav”) 
 end
 
@@ -193,7 +193,7 @@ Execute o comando:
 * * *
 
 ```bash
-rails g active\_admin:install  
+rails g active_admin:install  
 ```
 
 Uma dica para que o Assets Pipeline não falhe em produção. Precisamos declarar explicitamente os assets do ActiveAdmin. Adicione no <tt>config/application.rb</tt>:
@@ -236,7 +236,7 @@ O bloco <tt>show</tt> é o mais interessante. Aqui estamos usando diretamente a 
 
 Mas e para editar os conteúdos de ambas as localizações? Para isso colocamos além do ActiveAdmin o [ActiveAdmin-Globalize3-inputs](https://github.com/mimimi/ActiveAdmin-Globalize3-inputs) e as gems de JQuery (porque vamos precisar do elemento de “Tabs”).
 
-Esse módulo vai utilizar as funcionalidades do ActiveRecord de [accepts\_nested\_attributes\_for](http://api.rubyonrails.org/classes/ActiveRecord/NestedAttributes/ClassMethods.html#method-i-accepts_nested_attributes_for) para receber no mesmo formulário HTML os atributos das associações. Para isso garanta que seu modelo <tt>app/models/article.rb</tt> tem o seguinte:
+Esse módulo vai utilizar as funcionalidades do ActiveRecord de [accepts_nested_attributes_for](http://api.rubyonrails.org/classes/ActiveRecord/NestedAttributes/ClassMethods.html#method-i-accepts_nested_attributes_for) para receber no mesmo formulário HTML os atributos das associações. Para isso garanta que seu modelo <tt>app/models/article.rb</tt> tem o seguinte:
 
 * * *
 
@@ -315,12 +315,12 @@ Deixei por último uma das coisas mais interessantes nesta aplicação. Para efe
 * * *
 
 ```
-/users/sign\_in  
-/en/users/sign\_in  
+/users/sign_in  
+/en/users/sign_in  
 /pt-BR/usuarios/login  
 ```
 
-Existem algumas gems que fazem isso, a primeira que esbarrei se chama “i18n\_routing”, mas não consegui fazê-la funcionar, acredito que tenha bugs ainda. Se procurar mais vai acabar encontrando a [translate\_routes](https://github.com/raul/translate_routes) mas ela está obsoleta e dois outros forks passaram a atualizá-la. Uma é a [route\_translator](https://github.com/enriclluelles/route_translator), que eu não testei porque parecia ter pouca atividade. A que escolhi usar se chama [rails-translate-routes](https://github.com/francesc/rails-translate-routes). Para adicionar ao projeto, edite seu <tt>Gemfile</tt>:
+Existem algumas gems que fazem isso, a primeira que esbarrei se chama “i18n_routing”, mas não consegui fazê-la funcionar, acredito que tenha bugs ainda. Se procurar mais vai acabar encontrando a [translate_routes](https://github.com/raul/translate_routes) mas ela está obsoleta e dois outros forks passaram a atualizá-la. Uma é a [route_translator](https://github.com/enriclluelles/route_translator), que eu não testei porque parecia ter pouca atividade. A que escolhi usar se chama [rails-translate-routes](https://github.com/francesc/rails-translate-routes). Para adicionar ao projeto, edite seu <tt>Gemfile</tt>:
 
 * * *
 
@@ -393,7 +393,7 @@ pt-BR:
  edit: editar  
  destroy: destruir  
  password: senha  
- sign\_in: login  
+ sign_in: login  
  users: usuarios  
  cancel: cancelar  
  article: artigo  

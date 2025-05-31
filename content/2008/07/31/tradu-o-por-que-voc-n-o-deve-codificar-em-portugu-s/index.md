@@ -31,8 +31,8 @@ if($citar==1)
  require(’configuracion.php’);  
  $sql = “SELECT titulo, mensaje, identificador AS id “;  
  $sql.= “FROM foro WHERE id=’$id’”;  
- $rs = mysql\_query($sql, $con);  
- if(mysql\_num\_rows($rs)==1) $row = mysqlfetch_ assoc($rs);  
+ $rs = mysql_query($sql, $con);  
+ if(mysql_num_rows($rs)==1) $row = mysqlfetch_ assoc($rs);  
  $row[“titulo”] = “Re: “.$row[“titulo”];  
  $row[“mensaje”] = “[citar]“.$row[“mensaje”].”[/citar]“;  
  if($row[“id”]==0) $row[“id”]=$id;  

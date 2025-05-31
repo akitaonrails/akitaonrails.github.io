@@ -95,7 +95,7 @@ Na maior parte parece um CSS normal, mas a diferença maior está nos comandos <
 * * *
 
 ```css
-\** line 3, ../../app/uploads/stylesheets/application.css.scss **/  
+** line 3, ../../app/uploads/stylesheets/application.css.scss **/  
 .box {  
  width: 400px;  
  padding: 15px;  
@@ -111,7 +111,7 @@ Na maior parte parece um CSS normal, mas a diferença maior está nos comandos <
  -o-border-radius: 20px / 20px;  
  border-radius: 20px / 20px;  
 }  
-/** line 4, ../../app/uploads/stylesheets/application.css.scss \*/  
+/** line 4, ../../app/uploads/stylesheets/application.css.scss */  
 .box font {  
  family: Lucida Grande;  
  size: 12px;  
@@ -161,7 +161,7 @@ Nada demais, apenas o objetivo de adicionar ícones de redes sociais com links a
 ```css
 
 @import “compass”;  
-@import “social-icons/\*.png”;
+@import “social-icons/*.png”;
 
 …
 
@@ -169,7 +169,7 @@ ol.social {
  @include horizontal-list;  
  @each $network in twitter, facebook, linkedin {  
  li.#{$network} a {  
- @include social-icons\_sprite(#{$network})  
+ @include social-icons_sprite(#{$network})  
  }  
  }  
  a {  
@@ -186,7 +186,7 @@ ol.social {
 
 Novamente, estude SASS para entender essa sintaxe e também note que novamente usamos um mixin do Compass chamado <tt>horizontal-list</tt>. Lembre que colocamos 3 novas imagens, listados acima. Agora neste SCSS, na segunda linha, fazemos um <tt>@import</tt> de todos esses ícones.
 
-Agora localize esta linha: <tt>@include social-icons_sprite(#{$network})</tt>. O nome da pasta, com o sufixo “\_sprite” se torna um mixin, que recebe como parâmetro o nome da imagem/sprite. O que significa isso no CSS gerado ao final? Vejamos:
+Agora localize esta linha: <tt>@include social-icons_sprite(#{$network})</tt>. O nome da pasta, com o sufixo “_sprite” se torna um mixin, que recebe como parâmetro o nome da imagem/sprite. O que significa isso no CSS gerado ao final? Vejamos:
 
 * * *
 
@@ -205,7 +205,7 @@ ol.social li.twitter a {
 ol.social li.facebook a {  
  background-position: 0 -64px;  
 }  
-/** line 20, ../../app/uploads/stylesheets/application.css.scss \*/  
+/** line 20, ../../app/uploads/stylesheets/application.css.scss */  
 ol.social li.linkedin a {  
  background-position: 0 0;  
 }  

@@ -22,8 +22,8 @@ Especificamente sobre Kanban ele diz:
 
 > O maior problema encontrado enquanto estudava o TPS do ponto de vista de Engenharia de Produção é o fato de ser frequentemente considerado como sinônimo de sistema _Kanban_. O sr. Ohno escreve:  
 >   
-> \* TPS é um sistema de produção  
-> \* O método _Kanban_ é uma técnica para sua implementação  
+> * TPS é um sistema de produção  
+> * O método _Kanban_ é uma técnica para sua implementação  
 >   
 > Muitas publicações são confusas nessa questão e oferecem uma explicação do sistema, afirmando que o _Kanban_ é a essência do TPS. Uma vez mais: _O TPS é um sistema de produção e o método kanban é meramente um meio de controlar o sistema._  
 >   

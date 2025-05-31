@@ -95,7 +95,7 @@ create app/views/home/index.html.erb
 invoke test_unit create 
 test/functional/home_controller_test.rb 
 invoke helper create app/helpers/home_helper.rb 
-invoke test\_unit create 
+invoke test_unit create 
 test/unit/helpers/home_helper_test.rb 
 invoke assets invoke js create app/uploads/javascripts/home.js 
 invoke scss create app/uploads/stylesheets/home.css.scss
@@ -220,8 +220,8 @@ No HTML gerado, note que os links para os assets apontam todos para <tt>/uploads
 
 …  
 //= require jquery  
-//= require jquery\_ujs  
-//= require\_tree .  
+//= require jquery_ujs  
+//= require_tree .  
 ```
 
 Sobre o detalhe do jQuery, todo novo projeto Rails tem declarado <tt>gem ‘jquery-rails’</tt> no <tt>Gemfile</tt>.
@@ -261,7 +261,7 @@ ActionView::Template::Error (application.css isn’t precompiled):
  6: <= javascript_include_tag “application” \>  
  7: <= csrf_meta_tags %\>  
  8:
- app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb__408740569075721590\_70099961775620’  
+ app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb__408740569075721590_70099961775620’  
 ```
 
 Este é o sinal que não realizamos um passo importante que deve ser executado toda vez que você realizar uma atualização em produção: pré-compilar os assets. É o processo que lê os arquivos manifesto e realiza a concatenação dos arquivos declarados e sua minificação (utilizando a gem [Uglifier](https://github.com/lautis/uglifier)). Portanto, precisamos executar o seguinte:

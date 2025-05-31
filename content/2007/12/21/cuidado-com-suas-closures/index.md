@@ -19,7 +19,7 @@ Você já deve ter visto a tendência – venho gastando tempo olhando para uso 
 
 Uma das coisas que podem realmente causar alto uso de memória de forma não intencional em programas Ruby são blocos que vivem demais e que fecham sobre coisas que você não pretendia. Lembre-se, um fechamento (closure) de fato precisa fechar sobre todas as variáveis, os blocos ao redor e também o self no momento.
 
-Digamos que você tenha um objeto de algum tupo que tem um método que retorna um Proc. Esse proc será salvo em algum lugar e viverá por um longo período – talvez até se tornando um método com o define\_method:
+Digamos que você tenha um objeto de algum tupo que tem um método que retorna um Proc. Esse proc será salvo em algum lugar e viverá por um longo período – talvez até se tornando um método com o define_method:
 
 * * *
 
@@ -61,7 +61,7 @@ end
 block = o.create_something  
 ```
 
-Obviamente, isso é demais se você não sabe se o bloco vai viver muito ou não e se vai capturar coisas que não deveria. A maneira que isso funciona é simples – apenas defina uma instância nova e limpa de Object, defina um método singleton nessa instância, e use esse método singleton para criar o bloco. A únicas coisa que será capturada é a instância “o”. Já que “o” não tem nenhuma variável de instância isso funciona, e a única variável local capturada será aquela no escopo do método create\_something – que nesse caso não tem nenhuma.
+Obviamente, isso é demais se você não sabe se o bloco vai viver muito ou não e se vai capturar coisas que não deveria. A maneira que isso funciona é simples – apenas defina uma instância nova e limpa de Object, defina um método singleton nessa instância, e use esse método singleton para criar o bloco. A únicas coisa que será capturada é a instância “o”. Já que “o” não tem nenhuma variável de instância isso funciona, e a única variável local capturada será aquela no escopo do método create_something – que nesse caso não tem nenhuma.
 
 Claro, se você realmente precisa de valores de fora, pode ser seletivo e apenas colocar no escopo os valores que precisa – a menos que precise modificá-las, claro:
 

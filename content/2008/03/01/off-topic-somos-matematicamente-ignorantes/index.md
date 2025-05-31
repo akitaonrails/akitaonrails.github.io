@@ -56,12 +56,12 @@ Em uma seleção aleatória de 33 pessoas existe 50% de chance (1 em 2) que pelo
 
 ```bash
 
-Para duas pessoas: X2 = (365\*364)/365
+Para duas pessoas: X2 = (365*364)/365
 
-Para três pessoas: X3 = (365\* 364\*363)/365
+Para três pessoas: X3 = (365* 364*363)/365
 
-Para n pessoas: Xn = (365\*364\* … 366-n)/365  
- Xn = 365! / [365^n \* (365-n)!]  
+Para n pessoas: Xn = (365*364* … 366-n)/365  
+ Xn = 365! / [365^n * (365-n)!]  
 ```
 
 Com seus fatoriais a última igualidade não é especialmente útil a menos que se tenha a capacidade de lidar com números muito grandes. É instrutivo usar uma planilha e um loop de uma linguagem de computador para calcular Xn, a partir da 1a igualidade, para sucessivos valores de n. Quando n = 23, se descobre que Xn = 0.493 e P = 0.507. O gráfico da probabilidade de pelo menos 1 data de aniversário comum, P, contra o número de pessoas, n, aparece como o lado direito da curva de um círculo na figura 1. A curva mostra que a probabilidade de pelo menos 2 pessoas terem a mesma data de aniversário sobe devagar, no começo passando menos de 12% de probabilidade com 10 pessoas, subindo até 50% no círculo aberto correspondendo à 33a pessoa, então estabilizando e atingindo 90% de probabilidade em um grupo de 41 pessoas. Isso significa que, na média, de 10 grupos aleatórios de 41 pessoas, em 9 delas pelo menos 2 pessoas tem o mesmo aniversário. Nenhuma força misteriosa é necessária para explicar a coincidência.
@@ -160,8 +160,8 @@ Os dígitos decimais p foram calculadas até centenas de milhões de dígitos po
 
 3,141592653589793238462643  
 38327950288419716939937510  
-582097494459230781\*64062862  
-08\*9986280348253421170679
+582097494459230781*64062862  
+08*9986280348253421170679
 
 Existem 51 dígitos pares e 49 dígitos ímpares. Existe quase uma distribuição mediana quando os primeiros 100 dígitos decimais são divididos de outra maneira: 49 dígitos de 0 a 4 e 51 dígitos de 5 a 9.
 
@@ -169,7 +169,7 @@ Já que os dígitos decimais de p são aleatórios, podemos simular a sequência
 
 THTTTHHTTTHTTTTHTHHHHHHT  
 THTHTTTHHHHHTTTTHTTTTTTT  
-THTHHHTTHTHHT\*THTHTHTH\*HHHHH  
+THTHHHTTHTHHT*THTHTHTH*HHHHH  
 HHHHTTHHHHHTHHHTTHHTTTHHTT
 
 Combinando a sequência aleatória encontramos alguma regularidade, como a sequência de alternância em 8 jogadas de 62 a 69 (em negrito). A probabilidade de uma sequência alternada em 8 jogadas é 1 em 27 = 128 jogadas. Existem algumas longas sequências só de caras e só de coras. Existem 2 de 5 caras e 1 de 6 caras, 1 de 8 coroas e uma surpreendente de 10 coroas. Os dígitos decimais de p entre 69 e 78 são todos pares. Uma jogada de 10 dígitos pares deveria acontecer apenas 1 vez em 210 = 1.024 dígitos. Mesmo assim esse tipo de sequência aconteceu dentro dos primeiros 80 dígitos.

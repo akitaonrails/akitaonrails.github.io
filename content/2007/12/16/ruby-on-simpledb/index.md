@@ -62,7 +62,7 @@ server = Couch::Server.new(“localhost”, “5984”)
 doc = \<\<-JSON  
 {"type":“comment”,“body”:“First Post!”}  
 JSON  
-server.put(“/foo/document\_id”, doc)  
+server.put(“/foo/document_id”, doc)  
 ```
 
 E finalmente, como se busca um documento:
@@ -71,7 +71,7 @@ E finalmente, como se busca um documento:
 
 ```ruby
 server = Couch::Server.new(“localhost”, “5984”)  
-res = server.get(“/foo/document\_id”)  
+res = server.get(“/foo/document_id”)  
 xml = res.body  
 ```
 
@@ -93,7 +93,7 @@ Num outro nicho, o mercado de saúde, hospitais, além do Ensemble outro produto
 
 Meu primeiro ‘banco de dados’, obviamente, foi em Basic. Claro, o mais rudimentar de todos os bancos: uma estrutura de dados de tamanho fixo, um arquivo binário, e navegaçao baseada em offset a partir do tamanho da estrutura, mais um pequeno índice para navegar mais rapidamente. Com 11 ou 12 anos, não se pode exigir mais do que isso. E eu não tinha acesso a grandes mainframes, claro, então IMS era algo que eu só ouviria falar anos depois.
 
-Mas rapidamente migrei para [dBase](http://en.wikipedia.org/wiki/DBASE) III, da [Ashton\_Tate](http://en.wikipedia.org/wiki/Ashton-Tate). O pessoal que desenvolveu o dBase, da [Jet Propulsion Labs](http://en.wikipedia.org/wiki/Jet_Propulsion_Laboratory) (NASA) fez por brincadeira, para rodar sobre CP/M e depois vendeu para a Ashton-Tate. Para quem não se lembra, o antigo MS-DOS é um clone (mal-feito, claro) de CP/M. Naquela época tínhamos vários clones, como PC-DOS e DR-DOS. Coisas que gostava dessa época: eu não tinha nem idéia do que eram estrutura relacional, nem estrutura hierárquica. Para mim haviam apenas tabelas (DBF) e índices (NDX, IDX). Sabia existia redes locais, token ring, compartilhamento de arquivos via Netware, IPX/SPX e que DBFs tinham locks baseadas em tabela para que várias pessoas pudessem utilizar _quase_ ao mesmo tempo. Também, sabia que essas estrutura tendiam a se corromper com extrema facilidade e me perguntava como elas conseguiam funcionar :-)
+Mas rapidamente migrei para [dBase](http://en.wikipedia.org/wiki/DBASE) III, da [Ashton_Tate](http://en.wikipedia.org/wiki/Ashton-Tate). O pessoal que desenvolveu o dBase, da [Jet Propulsion Labs](http://en.wikipedia.org/wiki/Jet_Propulsion_Laboratory) (NASA) fez por brincadeira, para rodar sobre CP/M e depois vendeu para a Ashton-Tate. Para quem não se lembra, o antigo MS-DOS é um clone (mal-feito, claro) de CP/M. Naquela época tínhamos vários clones, como PC-DOS e DR-DOS. Coisas que gostava dessa época: eu não tinha nem idéia do que eram estrutura relacional, nem estrutura hierárquica. Para mim haviam apenas tabelas (DBF) e índices (NDX, IDX). Sabia existia redes locais, token ring, compartilhamento de arquivos via Netware, IPX/SPX e que DBFs tinham locks baseadas em tabela para que várias pessoas pudessem utilizar _quase_ ao mesmo tempo. Também, sabia que essas estrutura tendiam a se corromper com extrema facilidade e me perguntava como elas conseguiam funcionar :-)
 
 Rapidamente migrei para Clipper Autumn 86 (que estava no fim e eu lembro que tinha sérias limitações de memória no linkeditor, o limite de 500kb) e para o Clipper Summer 87, da Nantucket. O [Clipper](http://en.wikipedia.org/wiki/Clipper_programming_language) começou como um compilador de dBase III. Fiz muitos sisteminhas em Clipper e no começo dos anos 90 migrei para [FoxPro](http://www.foxprohistory.org/tableofcontents.htm#how_it_started). Nessa época esse mercado ficou meio conturbado, a Ashton-Tate foi adquirida pela Borland, a Nantucket foi absorvida pela Computer Associates e a Fox foi para as asas da Microsoft. O Windows ainda estava apenas começando a se popularizar, todas elas lançaram algum produto gráfico, como o Visual dBase, CA-Visual Objects e o Visual FoxPro, respectivamente.
 

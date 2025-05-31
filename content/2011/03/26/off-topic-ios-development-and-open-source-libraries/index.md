@@ -25,8 +25,8 @@ objective-c
 
 #import “FlurryAPI.h”  
 …  
-- (void) applicationDidFinishLaunching:(NSNotification\*) notice {  
- [FlurryAPI startSession:@"your\_unique\_app\_key"];  
+- (void) applicationDidFinishLaunching:(NSNotification*) notice {  
+ [FlurryAPI startSession:@"your_unique_app_key"];  
  …  
 }  
 -
@@ -44,18 +44,18 @@ objective-c
  [self setQueue:[[[NSOperationQueue alloc] init] autorelease]];  
  }
 
-NSURL \*url = [NSURL URLWithString:@"http://allseeing-i.com"]; ASIHTTPRequest \*request = [ASIHTTPRequest requestWithURL:url]; [request setDelegate:self]; [request setDidFinishSelector:@selector(requestDone:)]; [request setDidFailSelector:@selector(requestWentWrong:)]; [[self queue] addOperation:request]; //queue is an NSOperationQueue
+NSURL *url = [NSURL URLWithString:@"http://allseeing-i.com"]; ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url]; [request setDelegate:self]; [request setDidFinishSelector:@selector(requestDone:)]; [request setDidFailSelector:@selector(requestWentWrong:)]; [[self queue] addOperation:request]; //queue is an NSOperationQueue
 
 }
 
-- (void)requestDone:(ASIHTTPRequest \*)request  
+- (void)requestDone:(ASIHTTPRequest *)request  
 {  
- NSString \*response = [request responseString];  
+ NSString *response = [request responseString];  
 }
 
-- (void)requestWentWrong:(ASIHTTPRequest \*)request  
+- (void)requestWentWrong:(ASIHTTPRequest *)request  
 {  
- NSError \*error = [request error];  
+ NSError *error = [request error];  
 }  
 -
 
@@ -66,11 +66,11 @@ This library creates network queues and you can trigger as many connection reque
 * * *
 objective-c
 
-- (void)requestDone:(ASIHTTPRequest \*)request  
+- (void)requestDone:(ASIHTTPRequest *)request  
 {  
- NSString \*response = [request responseString];  
- NSError \*theError = NULL;  
- NSDictionary \*theDictionary = [NSDictionary dictionaryWithJSONString:response error:&theError];  
+ NSString *response = [request responseString];  
+ NSError *theError = NULL;  
+ NSDictionary *theDictionary = [NSDictionary dictionaryWithJSONString:response error:&theError];  
 }  
 -
 
@@ -94,11 +94,11 @@ objective-c
 - (void)myButtonHandlerAction  
 {  
  // Create the item to share (in this example, a url)  
-NSURL \*url = [NSURL URLWithString:`"http://getsharekit.com"];
+NSURL *url = [NSURL URLWithString:`"http://getsharekit.com"];
 	SHKItem *item = [SHKItem URL:url title:`“ShareKit is Awesome!”];
 
 // Get the ShareKit action sheet  
- SHKActionSheet \*actionSheet = [SHKActionSheet actionSheetForItem:item];
+ SHKActionSheet *actionSheet = [SHKActionSheet actionSheetForItem:item];
 
 // Display the action sheet  
  [actionSheet showFromToolbar:navigationController.toolbar];  

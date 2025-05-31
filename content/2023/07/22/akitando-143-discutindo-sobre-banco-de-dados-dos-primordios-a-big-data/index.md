@@ -650,7 +650,7 @@ O objetivo todo do episódio onde eu fiz um SQL em cima de um array de javascrip
 
 
 
-Todo formato de dados de consumo como esse vai exigir um passo de importação pro formato interno binário de verdade, ou exportação pra esse formato. Então se você faz um "SELECT \*"
+Todo formato de dados de consumo como esse vai exigir um passo de importação pro formato interno binário de verdade, ou exportação pra esse formato. Então se você faz um "SELECT *"
 da vida num banco, primeiro ele vai puxar todos os registros no formato binário dele. Isso vai ocupar um X de memória. Daí você escolhe que quer em formato JSON, então ele vai precisar de mais um tanto Y de memória, maior do que X, pra fazer essa tradução. É um processo de serialização e desserialização, e sempre vai exigir o dobro de memória pra ter essa conveniência.
 
 
@@ -809,7 +809,7 @@ Quando temos o formato de um servidor, temos algumas vantagens e algumas desvant
 
 
 
-Podemos escolher ir recebendo e já processando os dados localmente, ou podemos escolher esperar receber a resposta toda e só depois fazer alguma coisa. É a diferença de receber tudo de uma vez ou usar técnicas de streaming. E aí depende da sua pesquisa. Se for tosca e mal feita, e mandar tipo um "SELECT \*" pra uma tabela de 10 gigabytes, sem usar streaming, boa sorte, vai ocupar toda a memória da sua máquina e mais o swap em disco.
+Podemos escolher ir recebendo e já processando os dados localmente, ou podemos escolher esperar receber a resposta toda e só depois fazer alguma coisa. É a diferença de receber tudo de uma vez ou usar técnicas de streaming. E aí depende da sua pesquisa. Se for tosca e mal feita, e mandar tipo um "SELECT *" pra uma tabela de 10 gigabytes, sem usar streaming, boa sorte, vai ocupar toda a memória da sua máquina e mais o swap em disco.
 
 
 
@@ -867,7 +867,7 @@ Quando falamos que é importante entender SQL direito, primeiro é pra aprender 
 
 
 
-Aquele exemplo que falei de adicionar o número 9 na frente de todo número de telefone de São Paulo em 2012. Digamos que tenha 100 mil usuários na minha tabela. O jeito mais tosco possível é fazer um programa que conecta no banco e primeiro faz um "SELECT \*" e devolve todo mundo pro seu programa. De novo, se cada registro ocupa meio kilobyte e você deu asterisco, mandou voltar todos os campos da tabela, são 50 mil megabytes, 50 gigabytes de dados. Estão entendendo porque isso de puxar tudo pra memória é ruim? É o jeito mais fácil de pensar primeiro, mas é o pior jeito.
+Aquele exemplo que falei de adicionar o número 9 na frente de todo número de telefone de São Paulo em 2012. Digamos que tenha 100 mil usuários na minha tabela. O jeito mais tosco possível é fazer um programa que conecta no banco e primeiro faz um "SELECT *" e devolve todo mundo pro seu programa. De novo, se cada registro ocupa meio kilobyte e você deu asterisco, mandou voltar todos os campos da tabela, são 50 mil megabytes, 50 gigabytes de dados. Estão entendendo porque isso de puxar tudo pra memória é ruim? É o jeito mais fácil de pensar primeiro, mas é o pior jeito.
 
 
 

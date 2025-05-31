@@ -65,8 +65,8 @@ Outra coisa que confunde muitas pessoas, alguns arquivos Ruby recebem um cabeça
 ```ruby
 1. encoding: UTF-8
 2. coding: UTF-8
-3. \* coding: UTF-8 \*
-4. \* coding: utf-8 \*  
+3. * coding: UTF-8 *
+4. * coding: utf-8 *  
 ```
 
 Qualquer uma das opções acima tem o mesmo efeito. A regra é simples: se você tiver somente código Ruby, sem nenhuma string internacionalizada (com acentuações de português, ideogramas em chinês, símbolos) isso não é necessário. Se o arquivo conter texto, daí a checagem do Ruby vai exigir que você explicitamente diga que encoding está no string. Porém, use isso como um [code smell](http://en.wikipedia.org/wiki/Code_smell) no caso de uma aplicação web internacionalizada, pois todo texto deveria estar em arquivos de localização (como vamos mostrar). Somente em aplicativos não-internacionalizados, onde o texto às vezes estará misturado ao seu código, isso pode te ajudar.
@@ -118,8 +118,8 @@ Modifique seu <tt>config/application.rb</tt>, aproximadamente na linha 28, para 
 #2. Run “rake -D time” for a list of tasks for finding time zone names. Default is UTC.  
 config.time_zone = ‘Brasilia’
 
-#3. The default locale is :en and all translations from config/locales/\*.rb,yml are auto loaded.
-config.i18n.load_path += Dir[Rails.root.join(‘my’, ‘locales’, ‘\*.{rb,yml}’).to\_s]  
+#3. The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
+config.i18n.load_path += Dir[Rails.root.join(‘my’, ‘locales’, ‘*.{rb,yml}’).to_s]  
 config.i18n.available_locales = [:en, :“pt-BR”]  
 config.i18n.default_locale = :“pt-BR”
 
@@ -282,7 +282,7 @@ cd ..
 git clone git://github.com/akitaonrails/Rails-3-I18n-Demonstration.git akitaonrails-i18n-demo  
 cd akitaonrails-i18n  
 git checkout 0ff207ed9ea58a14a16c14fc11272a3991918dab  
-cd i18n\_demo  
+cd i18n_demo  
 cp -R ../akitaonrails-i18n_demo/app/views/devise/* app/views/devise/  
 ```
 
@@ -331,10 +331,10 @@ Outra coisa importante é traduzir os nomes dos modelos e seus atributos. Eles s
 ```yaml
 activemodel:  
  errors:  
- <<: \*errors  
+ <<: *errors  
 activerecord:  
  errors:  
- <<: \*errors  
+ <<: *errors  
  models:  
  user: “Usuário”  
  article: “Artigo”  
@@ -413,7 +413,7 @@ Para demonstrar como funciona, vamos criar um novo model:
 * * *
 
 ```bash
-rails g model Article slug title body:text body\_html:text  
+rails g model Article slug title body:text body_html:text  
 ```
 
 Preste atenção no arquivo de migration criado por esse generator. Abra no seu editor e modifique para que ele fique da seguinte forma:

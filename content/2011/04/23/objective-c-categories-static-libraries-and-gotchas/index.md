@@ -38,7 +38,7 @@ Finally I also make sure that the <tt>“Framework Search Paths”</tt> are poin
 
 ```
 “$(SDKROOT)/Developer/Library/Frameworks”  
-“${DEVELOPER\_LIBRARY\_DIR}/Frameworks”  
+“${DEVELOPER_LIBRARY_DIR}/Frameworks”  
 ```
 
 Everything compiles just fine that way. Then I can press “Command-U” (or go to the “Product” menu, “Test” option) to build the “RubyficationTests” target. It builds all the target dependencies, links everything together and runs the final script to execute the tests (you must make sure that you are selecting the “Rubyfication – iPhone 4.3 Simulator” in the Scheme Menu). It will fire up the Simulator so it can run the specs.
@@ -53,7 +53,7 @@ Test Suite ‘/Users/akitaonrails/Library/Developer/Xcode/DerivedData/Rubyficati
 Test Suite ‘CollectionSpec’ started at 2011-04-24 02:16:27 +0000  
 Test Case ‘-[CollectionSpec runSpec]’ started.  
 2011-04-23 23:16:27.506 otest[40298:903] [__NSArrayI each:]: unrecognized selector sent to instance 0xe51a30  
-2011-04-23 23:16:27.508 otest[40298:903] **\*** Terminating app due to uncaught exception ‘NSInvalidArgumentException’, reason: ’[__NSArrayI each:]: unrecognized selector sent to instance 0xe51a30’  
+2011-04-23 23:16:27.508 otest[40298:903] ***** Terminating app due to uncaught exception ‘NSInvalidArgumentException’, reason: ’[__NSArrayI each:]: unrecognized selector sent to instance 0xe51a30’  
 ```
 
 It says that an instance of <tt>NSArray</tt> is not recognizing the selector <tt>each:</tt> sent to it in the <tt>CollectionSpec</tt> file. It is probably this snippet:
@@ -69,13 +69,18 @@ It says that an instance of <tt>NSArray</tt> is not recognizing the selector <tt
 
 # import “NSArray+activesupport.h”
 
-SPEC\_BEGIN(CollectionSpec)
+SPEC_BEGIN(CollectionSpec)
 
 describe(@"NSArray", ^{  
- \_\_block NSArray\* list = nil;
+ __block NSArray* list = nil;
 
-context(@"Functional", ^{ beforeEach(^{ list = [NSArray arrayWithObjects:@"a", @"b", @"c", nil]; }); it(@"should iterate sequentially through the entire collection of items", ^{ NSMutableArray\* output = [[NSMutableArray alloc] init]; [list each:^(id item) { [output addObject:item]; }]; [[theValue([output count]) should] equal:theValue([list count])]; });
+context(@"Functional", ^{ beforeEach(^{ list = [NSArray arrayWithObjects:@"a", @"b", @"c", nil]; }); 
 
+it(@"should iterate sequentially through the entire collection of items", ^{ NSMutableArray* output = [[NSMutableArray alloc] init]; 
+
+[list each:^(id item) { [output addObject:item]; }];
+
+[[theValue([output count]) should] equal:theValue([list count])]; });
 …
 ```
 
@@ -85,7 +90,7 @@ Notice that at Line 3 there is the correct import statement where the <tt>NSArra
 
 Now, this was not a compile time error, it was a runtime error. So the import statement is finding the correct file and compiling but something in the linking phase is not going correctly and at runtime the <tt>NSArray(Helpers)</tt> category, and probably other categories, are not available.
 
-It took me a few hours of research but I finally figured out one simple flag that changed everything, the [-all\_load](http://developer.apple.com/library/mac/#qa/qa1490/_index.html) linker flag. As the documentation states:
+It took me a few hours of research but I finally figured out one simple flag that changed everything, the [-all_load](http://developer.apple.com/library/mac/#qa/qa1490/_index.html) linker flag. As the documentation states:
 
 > **Important:** For 64-bit and iPhone OS applications, there is a linker bug that prevents <tt>-ObjC</tt> from loading objects files from static libraries that contain only categories and no classes. The workaround is to use the <tt>-all_load</tt> or <tt>-force_load</tt> flags.
 >

@@ -161,13 +161,13 @@ Esse HAML será transformado no seguinte HTML:
 
 ```html
 
-\<%= print\_date %\>
+\<%= print_date %\>
 
-\<%= current\_user.address %\>
+\<%= current_user.address %\>
 
-\<%= current\_user.email %\>
+\<%= current_user.email %\>
 
-\<%= current\_user.bio %\>
+\<%= current_user.bio %\>
 ```
 
 * * *
