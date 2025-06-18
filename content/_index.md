@@ -2,6 +2,10 @@
 title: AkitaOnRails's Blog
 ---
 
+## 2025 - June
+
+- [AGI ou Skynet não vão chegar tão cedo](2025/06/18/agi-ou-skynet-nao-vai-chegar-tao-cedo/)
+
 ## 2025 - May
 
 - [Seu Windows pode estar Capado sem Você Saber. Cheque isto!!](2025/05/21/seu-windows-pode-estar-capado-sem-voce-saber-cheque-isto/)
