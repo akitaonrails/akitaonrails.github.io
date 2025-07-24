@@ -142,7 +142,7 @@ A maioria das pessoas pode ser definida da seguinte forma:
 
 ![](/files/20081216/funny-dog-pictures-praying-dogma.jpg)
 
-- Não gostam de coisas novas – existe outro conceito muito errado de “custo”. Muitos acham que porque investiram tempo estudando um determinado assunto, esse tempo/dinheiro “investido” não pode ser perdido e portanto precisa insistir no mesmo assunto. É o que já escrevi uma vez sobre [A Falácia do Custo Perdido](http://www.akitaonrails.com/2007/8/19/a-falcia-do-custo-perdido). Se você já tem um prejuízo, a maior burrice é insistir no mesmo prejuízo. É muito mais inteligente considerar esse custo como perdido e simplesmente mudar de direção e seguir em frente.
+- Não gostam de coisas novas – existe outro conceito muito errado de “custo”. Muitos acham que porque investiram tempo estudando um determinado assunto, esse tempo/dinheiro “investido” não pode ser perdido e portanto precisa insistir no mesmo assunto. É o que já escrevi uma vez sobre [A Falácia do Custo Perdido](http://www.akitaonrails.com/2007/08/19/a-falcia-do-custo-perdido). Se você já tem um prejuízo, a maior burrice é insistir no mesmo prejuízo. É muito mais inteligente considerar esse custo como perdido e simplesmente mudar de direção e seguir em frente.
 
 - Fazem apenas o que lhe dizem para fazer – se ninguém ordenar para testar, não se testa. Se ninguém ordenar para criar uma prova de conceito, não se cria. Se ninguém mandar se preocupar com segurança, o código sai cheio de buracos. Se ninguém mandar automatizar testes, ninguém automatiza. É impressionante a quantidade de Lemmings que temos nos projetos. Primeiro porque tudo que deveria ser obrigação não é feito, segundo porque se o chefe mandar atirar no próprio pé, eles atiram! Novamente, falta de raciocínio.
 
