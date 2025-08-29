@@ -8,24 +8,26 @@ I will accept some pull requests, but do not make any massive changes, only twea
 
 Pre-requisites: [Hugo](https://gohugo.io/getting-started/installing/), [Go](https://golang.org/doc/install) and [Git](https://git-scm.com)
 
-```shell
-# Clone the repo
-git clone https://github.com/imfing/hextra-starter-template.git
+```shell 
+# clone repository
+git clone https://github.com/akitaonrails/akitaonrails.github.io.git
 
-# Change directory
-cd hextra-starter-template
+# add content
 
-# Start the server
-hugo mod tidy
+nvim content/2025/08/29/hello/index.md 
+
+# generate index
+
+cd content
+ruby generate_index.rb
+
+# build 
+hugo 
+
+# run server
 hugo server --logLevel debug --disableFastRender -p 1313
 ```
 
-### Update theme
-
-```shell
-hugo mod get -u
-hugo mod tidy
-```
 
 # LICENSE-CC
 

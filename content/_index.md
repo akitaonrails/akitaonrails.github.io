@@ -2,6 +2,10 @@
 title: AkitaOnRails's Blog
 ---
 
+## 2025 - August
+
+- [Instalando Omarchy 2.0 do Zero - Anotações Pessoais](2025/08/29/new-omarchy-2-0-install/)
+
 ## 2025 - June
 
 - [AGI ou Skynet não vão chegar tão cedo](2025/06/18/agi-ou-skynet-nao-vai-chegar-tao-cedo/)
