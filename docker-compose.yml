@@ -1,0 +1,22 @@
+services:
+  akitaonrails-blog:
+    build: .
+    ports:
+      - "1313:1313"
+    volumes:
+      - ./content:/app/content
+      - ./layouts:/app/layouts
+      - ./assets:/app/assets
+      - ./hugo.yaml:/app/hugo.yaml
+      - ./go.mod:/app/go.mod
+      - ./go.sum:/app/go.sum
+      - ./i18n:/app/i18n
+    environment:
+      - HUGO_ENV=development
+    command: >
+      sh -c "
+        cd content && ruby generate_index.rb &&
+        cd /app &&
+        hugo server --logLevel debug --disableFastRender -p 1313 --bind 0.0.0.0 --watch
+      "
+    restart: unless-stopped
