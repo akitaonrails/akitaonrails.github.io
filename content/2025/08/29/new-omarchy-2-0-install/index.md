@@ -1,13 +1,13 @@
 ---
 title: Instalando Omarchy 2.0 do Zero - Anotações Pessoais
-date: '2025-08-29T16:00:00-03:00'
+date: "2025-08-29T16:00:00-03:00"
 slug: new-omarchy-2-0-install
-tags: 
-- arch
-- omarchy
-- btrfs
-- timeshift
-- lazyvim
+tags:
+  - arch
+  - omarchy
+  - btrfs
+  - timeshift
+  - lazyvim
 draft: false
 ---
 
@@ -37,11 +37,11 @@ Não, não vou usar **NixOS**. Eu realmente não acho que compensa. Só vale a p
 
 Meu setup ainda é o mesmo da época que estava editando videos pro canal. É um **Ryzen 9 7850X3D** com 16 cores, 32 threads, pico de 5Ghz. Ainda é um excelente CPU que tem poder de sobra pros meus usos, por isso não me vejo querendo atualizar tão cedo. São raras as vezes que eu consigo saturar tudo isso de core ao mesmo tempo nessas velocidades. Melhor ainda: ele tem GPU integrada AMD que torna instalar Linux mil vezes mais fácil do que se eu tivesse NVIDIA.
 
-Mas, eu também tenho uma GPU discreta, separada, a **NVIDIA RTX 4090** (não, não preciso de uma 5090, tem o mesmo tanto de VRAM). Ela vai ficar pra tarefas secundárias e não pra carregar meu ambiente gráfico. Coisas como render de Cycles no Blender, ou rodar LLMs com ollama da vida. Antes eu usava GPU passthrough pra uma VM em QEMU/Libvirt pra rodar Windows em parelelo ao Linux. Tanto pra editar video quanto pra games. 
+Mas, eu também tenho uma GPU discreta, separada, a **NVIDIA RTX 4090** (não, não preciso de uma 5090, tem o mesmo tanto de VRAM). Ela vai ficar pra tarefas secundárias e não pra carregar meu ambiente gráfico. Coisas como render de Cycles no Blender, ou rodar LLMs com ollama da vida. Antes eu usava GPU passthrough pra uma VM em QEMU/Libvirt pra rodar Windows em parelelo ao Linux. Tanto pra editar video quanto pra games.
 
 Como não edito mais videos, não preciso desse setup complicado então nem vou me preocupar mais em instalar Libvirt de volta. Se eu precisar de Windows, vou deixar em dual boot. Se precisar editar video, hoje em dia temos DaVinci Resolve Studio que roda nativo em Linux (mil vezes melhor que Adobe Premiere). Pra games eu tenho um mini PC separado com uma RTX 4060 ligado na minha TV. Melhor coisa é ter um PC totalmente separado pra games.
 
-Então este setup é pra ser um Linux puro, com acesso ao meu **NAS Synology DS 1821+** de 100TB. Única coisa extra que vou precisar é configurar mounts de NFS, como já detalhei [neste outro post](https://akitaonrails.com/2025/04/17/configurando-meu-nas-synology-com-nfs-no-linux/). 
+Então este setup é pra ser um Linux puro, com acesso ao meu **NAS Synology DS 1821+** de 100TB. Única coisa extra que vou precisar é configurar mounts de NFS, como já detalhei [neste outro post](https://akitaonrails.com/2025/04/17/configurando-meu-nas-synology-com-nfs-no-linux/).
 
 Um detalhe é que eu tenho **4 NVMEs** neste PC. 2TB pro meu Linux antigo. 2 TB pro dual boot/VM de Windows. 2 TB só como drive de Steam e 1 TB pra coisas aleatórias. Como vou limar a VM de Steam, também não preciso mais dedicar um NVME inteiro só pra isso. Em vez disso vou fazer o diretório "/home" do novo Linux ser esses 2 TB inteiro.
 
@@ -119,7 +119,6 @@ Se eu quiser recriar as máquinas no futuro, já vai estar tudo no backup. No me
 rsync -avh --progress /var/lib/libvirt/images/ /backup/libvirt-images/
 ```
 
-
 ## 4 - É difícil instalar Arch?
 
 Arch, menos que um Gentoo, sempre teve reputação de ser a distro Linux mais brutal pra um iniciante instalar. Isso não é mentira, mas a verdade é que Arch é simultaneamente a distro mais difícil e também a mais fácil.
@@ -132,7 +131,7 @@ Eu não fiz video de Arch mas fiz videos de [Slackware](https://www.youtube.com/
 
 O jeito manual é viável, mas se está acostumado a um instalador gráfico, como o **Calamaris**, que tem na maioria das distros mais populares como Ubuntu ou Fedora, você vai ficar totalmente perdido. Mas aqui vem o bônus: não precisa passar por tudo isso pra ter um Arch Linux na sua máquina.
 
-Pra isso existe o [**archinstall**](https://wiki.archlinux.org/title/Archinstall). 
+Pra isso existe o [**archinstall**](https://wiki.archlinux.org/title/Archinstall).
 
 Quando bootar o pen drive do Arch e cair na linha de comando, basta digitar archinstall e pronto, só seguir o passo a passo que ele dá - que eu considero ainda mais simples do que Calamaris - e ele vai instalar e configurar tudo de forma automática pra você, do mesmo jeito que é instalar Fedora ou qualquer outra distro. Sério, não é pra demorar mais que 15 minutos.
 
@@ -140,9 +139,9 @@ O archinstall tem esta cara:
 
 ![archinstall](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/20250828_045255.jpg)
 
-Basta entrar em cada um dos ítens da esquerda e preencher suas escolhas. Configure coisas como layout de teclado (normalmente eu escolho 'us-acentos'). Edite o hostname da sua máquina. Escolha "NetworkManager" em configuração de rede (ele vai configurar tanto ethernet quanto wifi pra você), adicionar suporte a Bluetooth e Audio (escolha "Pipewire"). Escolha o tipo "desktop" em vez de "minimal" pra já ter os principais pacotes necessários pra um desktop. Escolha a timezone ("America/Sao_Paulo" no meu caso). 
+Basta entrar em cada um dos ítens da esquerda e preencher suas escolhas. Configure coisas como layout de teclado (normalmente eu escolho 'us-acentos'). Edite o hostname da sua máquina. Escolha "NetworkManager" em configuração de rede (ele vai configurar tanto ethernet quanto wifi pra você), adicionar suporte a Bluetooth e Audio (escolha "Pipewire"). Escolha o tipo "desktop" em vez de "minimal" pra já ter os principais pacotes necessários pra um desktop. Escolha a timezone ("America/Sao_Paulo" no meu caso).
 
-Recomendo também escolher a opção de Hyprland  acho que em Applications ou Adicional Packages. Ele já vai instalar o SDDM pra ter um login gráfico.
+Recomendo também escolher a opção de Hyprland acho que em Applications ou Adicional Packages. Ele já vai instalar o SDDM pra ter um login gráfico.
 
 Só tem duas opções que precisa de mais atenção: pra bootloader, muitos vão ficar tentados a usar um **Limine**, que é mais moderno e leve. Mas eu recomendo ainda usar **GRUB**, já explico porque.
 
@@ -175,7 +174,7 @@ sudo mount -t btrfs /dev/nvme3n1p1 /mnt
 sudo btrfs subvolume create /mnt/@home
 rsync -aAXHv /home/ /mnt/@home/
 sudo umount /mnt
-``` 
+```
 
 Isso vai montar a nova partição, daí usamos o comando "btrfs" pra criar um novo sub-volume chamado "@home" (de novo, leia o Wiki de BTRFS pra entender conceitos como sub-volumes).
 
@@ -203,7 +202,7 @@ Veja como comentei a linha antiga que montava o `/home` e adicionei a nova linha
 
 Mas não só isso, também tenho espaço pra coisas grandes como imagens de Docker ou modelos de LLM, sem correr o risco de encher o drive do sistema operacional e correr o risco dele não bootar mais por falta de espaço - como já me aconteceu várias vezes no passado. Sempre lembre de dar manutenção em Docker e LLMs e apagar coisas velhas.
 
-Falando nisso, BTRFS tem suporte a snapshots. E um dos erros básicos é esquecer que diretórios de Docker ou LLM podem acabar nos snapshots e ficar ocupando espaço sem você saber. Pra evitar isso é melhor marcar esses diretórios pra não entrarem nos snapshots. Pra isso temos que dizer ao BTRFS pra ignorar esses diretórios. 
+Falando nisso, BTRFS tem suporte a snapshots. E um dos erros básicos é esquecer que diretórios de Docker ou LLM podem acabar nos snapshots e ficar ocupando espaço sem você saber. Pra evitar isso é melhor marcar esses diretórios pra não entrarem nos snapshots. Pra isso temos que dizer ao BTRFS pra ignorar esses diretórios.
 
 A forma correta é criando subvolumes separados pra eles. Pra isso vou montar aquela minha mesma partição no drive separado onde montei minha $HOME:
 
@@ -268,11 +267,11 @@ No terminal só faça isso:
 
 ```
 curl -fsSL https://omarchy.org/install | bash
-``` 
+```
 
-Só seguir as instruções na tela e deixar ele fazer o resto. E pronto, acabou, não tem próximo passo. 
+Só seguir as instruções na tela e deixar ele fazer o resto. E pronto, acabou, não tem próximo passo.
 
-Recomendo MUITO que leia o [MANUAL ONLINE DO OMARCHY](https://learn.omacom.io/2/the-omarchy-manual) que o DHH fez. É muito limpo, simples e direto. Todas as combinações de tecla, por exemplo, estão na [seção HOTKEYS](https://learn.omacom.io/2/the-omarchy-manual/53/hotkeys). Gaste uma hora lendo o básico pra conseguir operar. Mas a essa altura você já tem praticamente tudo que precisa: Alacritty como terminal, Chromium como navegador (pode instalar Brave se preferir, como é meu caso). 
+Recomendo MUITO que leia o [MANUAL ONLINE DO OMARCHY](https://learn.omacom.io/2/the-omarchy-manual) que o DHH fez. É muito limpo, simples e direto. Todas as combinações de tecla, por exemplo, estão na [seção HOTKEYS](https://learn.omacom.io/2/the-omarchy-manual/53/hotkeys). Gaste uma hora lendo o básico pra conseguir operar. Mas a essa altura você já tem praticamente tudo que precisa: Alacritty como terminal, Chromium como navegador (pode instalar Brave se preferir, como é meu caso).
 
 "Super Alt Space" abre o menu principal do Omarchy. "Super Space" abre o Rofi pra digitar o nome do app que quer abrir. "Super Enter" abre o terminal. "Super B" abre o navegador e assim por diante.
 
@@ -438,6 +437,7 @@ Eu também gosto de "SUPER M" pra temporariamente fazer uma das janelas ficar em
 Se tiver dúvidas sobre as combinações padrão, o Omarchy tem "SUPER K" pra abrir uma janela com uma ajuda pra todas.
 
 Ainda não modifiquei combinações pra aplicativos específicos. Os que vem no Omarchy já são muito úteis como SUPER A pra abrir o ChatGPT como se fosse um app separado ou SUPER CTRL A pra abrir o Grok numa janela separada. SUPER O pra abrir o Obsidian também é muito útil pra mim. Recomendo brincar com esses binds pra fazer bindings específicos e, de novo, ler o manual pra aprender tudo mais que já vem nele. Mas até aqui é o suficiente pra deixar o Hyprland do jeito que eu gosto de usar.
+
 ## 8 - Timeshift, Snapshots e GRUB
 
 Lembram que eu falei pra escolher GRUB no archinstall? É pra agora. O objetivo: deixar o sistema fazer snapshots periódicos do sistema e, caso instale algum pacote corrompido ou faça coisas no seu sistema que impeçam ele de bootar, em vez de ter que recorrer a um pendrive pra tentar bootar e diagnosticar o erro, é mais fácil só bootar, escolher um snapshot logo antes da operação destrutiva e voltar intacto.
@@ -547,14 +547,14 @@ alias ll='eza -l --icons --color=auto --group-directories-first'
 alias la='eza -la --icons --color=auto --group-directories-first'
 ```
 
-Segunda dica é instalar [Atuin](https://atuin.sh/). Pra quem mexe com infra, isso é extremamente importante: backup de toda o histórico de comandos que você usou no seu terminal até hoje. 
+Segunda dica é instalar [Atuin](https://atuin.sh/). Pra quem mexe com infra, isso é extremamente importante: backup de toda o histórico de comandos que você usou no seu terminal até hoje.
 
 Instale com `yay -S atuin` e faça:
 
 ```
 atuin login
 atuin sync
-``` 
+```
 
 Leia o site oficial, mas primeiro precisa criar uma conta e uma chave de encriptação secreta - sim, você pode rodar localmente num servidor na sua casa, mas a opção cloud deles é bem cômoda e segura porque fica toda encriptada, então não tem problema se subir senhas do seu histórico.
 
@@ -634,6 +634,7 @@ yay -S flatpak
 flatpak install org.blender.Blender
 flatpak install com.bambulab.BambuStudio
 ```
+
 Finalmente, se você é novo em LazyVim, não esqueça de rodar o comando [`:LazyExtras`](https://www.lazyvim.org/extras) pra instalar os plugins extras pras suas linguagens favoritas, como LSP, Linter, syntax highlight, snippets e mais. O LazyVim puro já é completo mas sem suporte a muitas linguagens pra não ficar pesado desnecessariamente, você precisa instalar separado depois.
 
 Também aprenda a usar [**Mise-en-place**](https://mise.jdx.dev/dev-tools/). No menu do Omarchy tem uma opção pra instalar suporte a várias linguagens e ele vai usar Mise, que é a forma correta de gerenciar suas linguagens.
@@ -649,6 +650,7 @@ Com isso, só dentro do seu projeto vai estar disponível Ruby 3.4.3, mas fora p
 ```
 eval "$(mise activate zsh)"
 ```
+
 ## Impressões e Conclusão
 
 Comparado ao meu Manjaro antigo, muita coisa que não precisei configurar mais. Por exemplo, por causa do tanto de espaço que Docker e LLMs precisavam, eu tinha configurado um drive iSCSI no meu NAS só pra isso. Mas como eu liberei 2 TB de NVME local, não preciso mais lidar com isso, basta usar os novos sub-volumes de BTRFS que criei acima.
