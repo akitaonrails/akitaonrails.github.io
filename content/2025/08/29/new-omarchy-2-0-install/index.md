@@ -423,13 +423,14 @@ bind = SUPER SHIFT, 5, movetoworkspace, 5  # Move active window to workspace 5
 bind = SUPER, Tab, workspace, m+1       # Open next workspace
 bind = SUPER SHIFT, Tab, workspace, m-1 # Open previous workspace
 
-bind = SUPER CTRL, 1, exec, $HYPRSCRIPTS/moveTo.sh 1  # Move all windows to workspace 1
-bind = SUPER CTRL, 2, exec, $HYPRSCRIPTS/moveTo.sh 2  # Move all windows to workspace 2
-bind = SUPER CTRL, 3, exec, $HYPRSCRIPTS/moveTo.sh 3  # Move all windows to workspace 3
-bind = SUPER CTRL, 4, exec, $HYPRSCRIPTS/moveTo.sh 4  # Move all windows to workspace 4
-bind = SUPER CTRL, 5, exec, $HYPRSCRIPTS/moveTo.sh 5  # Move all windows to workspace 5
+bind = SUPER CTRL, 1, exec, $HOME/.config/hypr/moveTo.sh 1  # Move all windows to workspace 1
+bind = SUPER CTRL, 2, exec, $HOME/.config/hypr/moveTo.sh 2  # Move all windows to workspace 2
+bind = SUPER CTRL, 3, exec, $HOME/.config/hypr/moveTo.sh 3  # Move all windows to workspace 3
+bind = SUPER CTRL, 4, exec, $HOME/.config/hypr/moveTo.sh 4  # Move all windows to workspace 4
+bind = SUPER CTRL, 5, exec, $HOME/.config/hypr/moveTo.sh 5  # Move all windows to workspace 5
 ```
 
+Note que o último bloco de scripts precisa de um script pra mover todas as janelas de uma só vez pra outro workspace. Eu copiei este [moveTo.sh](https://github.com/mylinuxforwork/dotfiles/blob/main/dotfiles/.config/hypr/scripts/moveTo.sh) do GitHub do ML4W e coloquei em `~/.config/hypr` direto. Não esquecer de dar permissão de execução com `chmod +x moveTo.sh` depois.
 Os vários de workspace abaixo é como eu prefiro mover workspaces e mover apps pra diferentes workspaces.
 
 Omarchy já vem com "SUPER J" pra mudar a orientação das janelas, por exemplo, se está duas janelas na horizontal um em cima do outro, com SUPER J eles ficam verticais, mas faltava o "SUPER V" que adicionei pra "swapsplit" que é trocar as janelas de lugar.
@@ -628,10 +629,28 @@ yay -S blender-bin
 
 Se usar o pacote "blender" normal, alguns add-ons dele não instalam direito. Eu tive esse problema com MACHIN3Tools e MESHMachine, por exemplo.
 
+Falando em Blender, ele é um app X11. Wayland roda aplicativos X11 usando uma camada adaptadora chamada **XWayland**. Eu tive vários problemas com posicionamento de menus e dialog boxes, mesmo adicionando `windowrule`. Uma coisa que sei lá porque funcionou foi instalar Blender e Bambu Studio via Flatpak:
+
+```
+yay -S flatpak
+flatpak install org.blender.Blender
+flatpak install com.bambulab.BambuStudio
+```
 Finalmente, se você é novo em LazyVim, não esqueça de rodar o comando [`:LazyExtras`](https://www.lazyvim.org/extras) pra instalar os plugins extras pras suas linguagens favoritas, como LSP, Linter, syntax highlight, snippets e mais. O LazyVim puro já é completo mas sem suporte a muitas linguagens pra não ficar pesado desnecessariamente, você precisa instalar separado depois.
 
 Também aprenda a usar [**Mise-en-place**](https://mise.jdx.dev/dev-tools/). No menu do Omarchy tem uma opção pra instalar suporte a várias linguagens e ele vai usar Mise, que é a forma correta de gerenciar suas linguagens.
 
+Mise é muito fácil, no geral, de dentro do diretório do seu projeto, é só fazer algo como:
+
+```
+mise use ruby@3.4.3
+```
+
+Com isso, só dentro do seu projeto vai estar disponível Ruby 3.4.3, mas fora pode estar outra versão global. Não esquecer de ativar no seu `.zshrc`:
+
+```
+eval "$(mise activate zsh)"
+```
 ## Impressões e Conclusão
 
 Comparado ao meu Manjaro antigo, muita coisa que não precisei configurar mais. Por exemplo, por causa do tanto de espaço que Docker e LLMs precisavam, eu tinha configurado um drive iSCSI no meu NAS só pra isso. Mas como eu liberei 2 TB de NVME local, não preciso mais lidar com isso, basta usar os novos sub-volumes de BTRFS que criei acima.
