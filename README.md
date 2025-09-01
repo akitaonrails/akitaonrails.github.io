@@ -99,6 +99,7 @@ mkdir -p content/2025/01/15/meu-post
 nvim content/2025/01/15/meu-post/index.md
 ```
 
+
 ### 5. Estrutura de um Post
 
 ```markdown
