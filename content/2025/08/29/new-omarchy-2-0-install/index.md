@@ -327,14 +327,19 @@ animations {
 }
 
 xwayland {
-    force_zero_scaling = true
+    force_zero_scaling = false # careful with mixing scaling wayland and x11
 }
 
 input {
   numlock_by_default = true
 }
 
-windowrulev2 = center, floating:1, x11:1, title:^(.*)$
+# dialogs/splash/utility ONLY
+windowrulev2 = float,  xwayland:1, windowtype:^(dialog|splash|utility)$
+windowrulev2 = center, xwayland:1, windowtype:^(dialog|splash|utility)$
+
+# never center menus/tooltips
+windowrulev2 = tile,   xwayland:1, windowtype:^(popup_menu|dropdown_menu|tooltip)$
 ```
 
 Tem gente que não gosta mas eu gosto de ter uma animação rápida quando mudo de um workspace pra outro, por isso adicionei o bloco `animations`.
