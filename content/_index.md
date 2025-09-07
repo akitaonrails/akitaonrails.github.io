@@ -5,6 +5,7 @@ title: AkitaOnRails's Blog
 ## 2025 - September
 
 - [Omarchy 2.0 - ZSH Configs](2025/09/07/omarchy-2-0-zsh-configs/)
+- [Omarchy 2.0 - LazyVim - LazyExtras](2025/09/07/omarchy-2-0-lazyvim-lazyextras/)
 
 ## 2025 - August
 
