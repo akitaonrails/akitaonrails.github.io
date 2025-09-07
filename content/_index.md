@@ -2,6 +2,10 @@
 title: AkitaOnRails's Blog
 ---
 
+## 2025 - September
+
+- [Omarchy 2.0 - ZSH Configs](2025/09/07/omarchy-2-0-zsh-configs/)
+
 ## 2025 - August
 
 - [Instalando Omarchy 2.0 do Zero - Anotações Pessoais](2025/08/29/new-omarchy-2-0-install/)
