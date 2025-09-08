@@ -11,7 +11,7 @@ tags:
 draft: false
 ---
 
-Eu tenho recomendado o [Omarchy 2.0](https://omarchy.org/) do DHH pra qualquer um que queira um ambiente de desenvolvimento leve, bonito e totalmente equipado. É um conjunto de configurações pra Hyprland rodando em cima de Arch Linux e vem com padrões inteligentes prontos pra usar. Assista o [video tour](TODO) mostrando as principais funcionalidades.
+Eu tenho recomendado o [Omarchy 2.0](https://omarchy.org/) do DHH pra qualquer um que queira um ambiente de desenvolvimento leve, bonito e totalmente equipado. É um conjunto de configurações pra Hyprland rodando em cima de Arch Linux e vem com padrões inteligentes prontos pra usar. Assista o [video tour](https://www.youtube.com/watch?v=TcHY0AEd2Uw) mostrando as principais funcionalidades.
 
 ![meu omarchy](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/20250828_043020.jpg)
 
@@ -191,10 +191,10 @@ O comando `blkid` devolve o UUID único de cada partição e, com isso, podemos 
 # /etc/fstab
 ...
 # /dev/nvme2n1p2
-# UUID=da3aea43-...-aeaf8c7224d7	/home     	btrfs     	rw,relatime,ssd,discard=async,space_cache=v2,subvol=/@home	0 0
+# UUID=da3aea43-...-aeaf8c7224d7 /home      btrfs      rw,relatime,ssd,discard=async,space_cache=v2,subvol=/@home 0 0
 
 # /dev/nvme3n1p1
-UUID=84e9a1b7-...-7a6a17fd0395	/home     	btrfs     	rw,relatime,ssd,discard=async,space_cache=v2,subvol=/@home	0 0
+UUID=84e9a1b7-...-7a6a17fd0395 /home      btrfs      rw,relatime,ssd,discard=async,space_cache=v2,subvol=/@home 0 0
 ...
 ```
 
@@ -228,9 +228,9 @@ Agora é só editar o `/etc/fstab` pra montar corretamente igual fizemos com a H
 # /etc/fstab
 ...
 # /dev/nvme3n1p1
-UUID=84e9a1b7-...-7a6a17fd0395	/home     	btrfs     	rw,relatime,ssd,discard=async,space_cache=v2,subvol=/@home	0 0
-UUID=84e9a1b7-...-7a6a17fd0395	/var/lib/docker     	btrfs     	rw,relatime,ssd,discard=async,space_cache=v2,subvol=/@docker	0 0
-UUID=84e9a1b7-...-7a6a17fd0395	/var/lib/ollama     	btrfs     	rw,relatime,ssd,discard=async,space_cache=v2,subvol=/@ollama	0 0
+UUID=84e9a1b7-...-7a6a17fd0395 /home      btrfs      rw,relatime,ssd,discard=async,space_cache=v2,subvol=/@home 0 0
+UUID=84e9a1b7-...-7a6a17fd0395 /var/lib/docker      btrfs      rw,relatime,ssd,discard=async,space_cache=v2,subvol=/@docker 0 0
+UUID=84e9a1b7-...-7a6a17fd0395 /var/lib/ollama      btrfs      rw,relatime,ssd,discard=async,space_cache=v2,subvol=/@ollama 0 0
 ...
 ```
 
@@ -525,8 +525,8 @@ Com os comandos acima mudamos de 1000 pra 1026 e acertamos as permissões nos ar
 
 ```
 # NFS
-192.168.0.x:/volume1/GIGACHAD	/mnt/gigachad	nfs4	_netdev,noauto,nofail,bg,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.after=network-online.target,x-systemd.idle-timeout=60s,noatime,nodiratime,async,rsize=65536,wsize=65536,actimeo=1  0 0
-192.168.0.x:/volume1/TERACHAD	/mnt/terachad	nfs4	_netdev,noauto,nofail,bg,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.after=network-online.target,x-systemd.idle-timeout=60s,noatime,nodiratime,async,rsize=65536,wsize=65536,actimeo=1  0 0
+192.168.0.x:/volume1/GIGACHAD /mnt/gigachad nfs4 _netdev,noauto,nofail,bg,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.after=network-online.target,x-systemd.idle-timeout=60s,noatime,nodiratime,async,rsize=65536,wsize=65536,actimeo=1  0 0
+192.168.0.x:/volume1/TERACHAD /mnt/terachad nfs4 _netdev,noauto,nofail,bg,x-systemd.automount,x-systemd.requires=network-online.target,x-systemd.after=network-online.target,x-systemd.idle-timeout=60s,noatime,nodiratime,async,rsize=65536,wsize=65536,actimeo=1  0 0
 ```
 
 Não esquecer de criar os mount points:
