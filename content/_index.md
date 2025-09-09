@@ -4,6 +4,7 @@ title: AkitaOnRails's Blog
 
 ## 2025 - September
 
+- [Omarchy 2.0 - TUIs (Terminal User Interface Apps)](2025/09/09/omarchy-2-0-tuis/)
 - [Omarchy 2.0 - ZSH Configs](2025/09/07/omarchy-2-0-zsh-configs/)
 - [Omarchy 2.0 - Mise pra organizar ambientes de desenvolvimento](2025/09/07/omarchy-2-0-mise-pra-organizar-ambientes-de-desenvolvimento/)
 - [Omarchy 2.0 - LazyVim - LazyExtras](2025/09/07/omarchy-2-0-lazyvim-lazyextras/)
