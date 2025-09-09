@@ -14,7 +14,7 @@ tags:
 draft: false
 ---
 
-Uma das coisas mais frustrantes pra um usuário de Linux é que existem muito poucos Apps gráficos bem feitos. Veja um Gimp ou LibreOffice. São feios, antiquados, muito parecidos com a primeira que usei eles mais de 20 anos atrás.
+Uma das coisas mais frustrantes pra um usuário de Linux é que existem muito poucos Apps gráficos bem feitos. Veja um Gimp ou LibreOffice. São feios, antiquados, muito parecidos com a primeira vez que usei eles mais de 20 anos atrás.
 
 Os apps mais "modernos" são basicamente front-ends web enlatados dentro de um wrapper Electron. O problema? São **PESADOS** consomem RAM como se não houvesse amanhã. Comece a abrir Discord, Spotify, e vários desses e veja se seu notebook velho de 8GB de RAM vai aguentar.
 
@@ -114,7 +114,7 @@ Se usar Discord, tem o [**discordo**](https://github.com/ayn2op/discordo):
 
 ![Discordo](https://github.com/ayn2op/discordo/raw/main/.github/preview.png)
 
-Quem faz muito ricing de Linux já teve que gravar ISOs em Pen Drives dezenas de vezes, pra isso tem o `dd` na linha de comando, mas tem um TUI mais legal que é o [**Caligula**](<https://github.com/ifd3f/caligula>:
+Quem faz muito ricing de Linux já teve que gravar ISOs em Pen Drives dezenas de vezes, pra isso tem o `dd` na linha de comando, mas tem um TUI mais legal que é o [**Caligula**](https://github.com/ifd3f/caligula):
 
 ![Caligula](https://github.com/ifd3f/caligula/raw/main/images/verifying.png)
 
@@ -131,4 +131,6 @@ Pra que abrir Google Spreadsheets só pra fazer um Todo list se dá pra fazer no
 Se quiser conhecer mais TUIs olhe o [**awesome-tuis**](https://github.com/rothgar/awesome-tuis/?tab=readme-ov-file) no GitHub:
 
 [![awesome tuis](https://github.com/rothgar/awesome-tuis/raw/master/img/banner.png)](https://github.com/rothgar/awesome-tuis/?tab=readme-ov-file)
-De novo: zero necessidade de front-ends web pesadas pra coisas simples. Nada supera a simplicidade de uma linha de comando. E com bibliotecas como BubbleTea ou Gum, está muito fácil pra qualquer um fazer um app bonito. E com Hyprland e Omarchy, fica tudo integrado lado-a-lado de qualquer outro app com GUI. Recomendo experimentar!
+De novo: zero necessidade de front-ends web pesadas pra coisas simples. Nada supera a simplicidade de uma linha de comando. E com bibliotecas como BubbleTea ou Gum, está muito fácil pra qualquer um fazer um app bonito. E com Hyprland e Omarchy, fica tudo integrado lado-a-lado de qualquer outro app com GUI.
+
+Filosofando um pouco, a história das GUIs começa com interfaces gráficas _skeumorphic_ que tentam imitar objetos do nosso dia a dia, em particular parecendo pseudo-3D, como era um Windows 95. Chegou nos anos 2000 e começaram a migrar pra interfaces _flat_ ou _minimalistas_, tirando completamente o skeumorphismo, deixando tudo plano. Foi a partir do Metro do Windows 8, principalmente. E eu acho que isso converge pra estilo mais de TUI, dando uma volta completa, voltando a como era nos terminais dos anos 70. Eu particularmente acho isso fascinante.
