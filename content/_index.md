@@ -6,6 +6,7 @@ title: AkitaOnRails's Blog
 
 - [Protegendo seu Home Server com Cloudflare Zero Trust](2025/09/10/protegendo-seu-home-server-com-cloudflare-zero-trust/)
 - [Meu Novo Blog - Como Eu Fiz](2025/09/10/meu-novo-blog-como-eu-fiz/)
+- [Instalando Grafana no meu Home Server](2025/09/10/instalando-grafana-no-meu-home-server/)
 - [Omarchy 2.0 - TUIs (Terminal User Interface Apps)](2025/09/09/omarchy-2-0-tuis/)
 - [Omarchy 2.0 - Entendendo SSH e Yubikeys](2025/09/09/omarchy-2-0-entendendo-ssh-e-yubikeys/)
 - [Acessando meu Home Server com Domínio de Verdade](2025/09/09/acessando-meu-home-server-com-dominio-de-verdade/)
