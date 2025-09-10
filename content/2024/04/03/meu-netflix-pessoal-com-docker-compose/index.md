@@ -13,6 +13,7 @@ tags:
 - jackett
 - flaresolvrr
 - bluray
+- homeserver
 draft: false
 ---
 
@@ -27,7 +28,6 @@ Antes que venham dar palpite, sim, isso não é pra qualquer um. Estamos falando
 A Synology é uma das melhores marcas de NAS caseiros. Sim, dá pra fazer bem mais sofisticado também, basta montar um servidor de verdade, com CPUs como AMD EPYC ThreadRipper, usando sistemas como [TrueNAS](https://www.truenas.com/). Mas aí é demais pra mim, já não me sinto confortável dando manutenção. Como eu disse, os limites cada um tem que saber os seus.
 
 <blockquote class="twitter-tweet" data-media-max-width="560"><p lang="pt" dir="ltr">1o HD de 20TB terminou de se integrar ao RAID! Levou 2 dias inteiros!! Colocando o 2o HD ... de 4 😅 <a href="https://t.co/Rv6dqBQr05">pic.twitter.com/Rv6dqBQr05</a></p>— Akitando.com (@AkitaOnRails) <a href="https://twitter.com/AkitaOnRails/status/1772995683915649435?ref_src=twsrc%5Etfw">March 27, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
 
 *"Por que não deixar tudo online??"* Pra maioria das pessoas é o caminho mais fácil mesmo. Como eu disse, meu caso é particular. Você NÃO QUER ter mais de 50 TERAbytes online. Minha rede cabeada local é de 10 Gbps, minha internet de fibra é míseros 0.5 Gbps (500 Mbps). Trafegar video de alta qualidae pela internet é horrivelmente lento. Eu quero tudo em tempo real, e pra isso só sendo rede cabeada local.
 
@@ -46,7 +46,6 @@ De qualquer forma, resolvi compartilhar com vocês todos os arquivos de docker-c
 *AVISO 2:* existem muitos detalhes que não estou cobrindo neste artigo. Este [fórum do Reddit](https://www.reddit.com/r/pirataria/comments/18ch7bt/guia_do_streaming_dom%C3%A9stico_automatizado_sonarr/) tem mais detalhes e mais discussões. Dependendo se estiver com dúvidas ou problemas específicos, talvez esteja respondido lá.
 
 Deixa eu começar explicando um a um dos principais.
-
 
 ## Portainer e Utilitários
 
@@ -71,7 +70,7 @@ services:
 
 [Portainer](https://www.portainer.io/) é um gerenciador visual dos recursos gerenciados pelo serviço de Docker na sua máquina. Objetivo é mais pra eu visualmente conseguir "bater o olho" e ver se tem algum container com problema ou pra testar algum ajustezinho rápido em alguma configuração antes de editar no arquivo de docker compose.
 
-No arquivo [utils-docker-compose.yml](https://github.com/akitaonrails/plex_home_server_docker/blob/master/utils-docker-compose.yml) tem outros serviços como Organizr que eu instalei mas ainda não parei pra configurar nem ver se realmente quero manter. Tem o Librespeed, que funciona como aqueles testes de velocidade de internet, mas pra rede local. Tem o [Watchtower](https://github.com/containrrr/watchtower), que monitora atualização das imagens de todos os containers Docker, faz o download e automaticamente manda reiniciar com versões novas, pra manter todos os containers sempre atualizados. 
+No arquivo [utils-docker-compose.yml](https://github.com/akitaonrails/plex_home_server_docker/blob/master/utils-docker-compose.yml) tem outros serviços como Organizr que eu instalei mas ainda não parei pra configurar nem ver se realmente quero manter. Tem o Librespeed, que funciona como aqueles testes de velocidade de internet, mas pra rede local. Tem o [Watchtower](https://github.com/containrrr/watchtower), que monitora atualização das imagens de todos os containers Docker, faz o download e automaticamente manda reiniciar com versões novas, pra manter todos os containers sempre atualizados.
 
 E tem o [ZeroTier](https://www.zerotier.com/) que, assim como [TailScale](https://tailscale.com/), oferece uma boa alternativa de serviço fácil de VPN, com baixa configuração, pra facilitar acessar seus  serviços locais fora de casa. Sim, sim, antes que alguém vá pros comentários, dá pra montar OpenVPN do zero ou algo assim, mas vai por mim, essas opções são infinitamente mais "plug and play" e possivelmente mais seguros - porque todo mundo instala, mas poucos tem a disciplina de dar manutenção e atualizar o que precisa o tempo todo.
 
@@ -158,7 +157,7 @@ Primeira coisa que queremos é instalar [QBitTorrent](https://www.qbittorrent.or
       - '62609:62609'
 ```
 
-É importante lembrar de gerar uma porta aleatória nas configurações do QBitTorrent, como mostrado na imagem abaixo. Qualquer porta entre 1025 e 65535 deve funcionar, mas é possível que sua rede bloqueie alguma sequência de portas nesse intervalo, então tem que testar. Pesquise fóruns na web, cuidado que tem muita dica online que já está desatualizado. 
+É importante lembrar de gerar uma porta aleatória nas configurações do QBitTorrent, como mostrado na imagem abaixo. Qualquer porta entre 1025 e 65535 deve funcionar, mas é possível que sua rede bloqueie alguma sequência de portas nesse intervalo, então tem que testar. Pesquise fóruns na web, cuidado que tem muita dica online que já está desatualizado.
 
 Precisa entender o mínimo de redes, entender se está atrás de um NAT, como mapear portas externas, se tem firewall ativo bloqueando portas, etc.
 
@@ -310,8 +309,7 @@ Também precisamos configurar acesso ao QBitTorrent:
 
 ![Prowlarr QBitTorrent](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/179tso31cnwvyxan9ltvgibeu8sm)
 
-
-Esse outro "Sabnzdb" é usando outro protocolo de downloads mais antigo, baseado em newsreader de USENET. Sim, aquela antiga Usenet mesmo. Quem sabe, sabe. Tem esse serviço no meu docker compose, mas nunca consegui fazer funcionar direito. Melhor até apagar essa entrada pra não confundir. Hoje eu deixo só torrent mesmo, mas é porque muito conteúdo parece que só existe nesses grupos mais antigos de newsreader. 
+Esse outro "Sabnzdb" é usando outro protocolo de downloads mais antigo, baseado em newsreader de USENET. Sim, aquela antiga Usenet mesmo. Quem sabe, sabe. Tem esse serviço no meu docker compose, mas nunca consegui fazer funcionar direito. Melhor até apagar essa entrada pra não confundir. Hoje eu deixo só torrent mesmo, mas é porque muito conteúdo parece que só existe nesses grupos mais antigos de newsreader.
 
 Finalmente, muitos trackers hoje implementam algum tipo de proteção contra bots usando captcha da Cloudflare, sabe aquele troço que fica "você é um humano?". Pra passar por isso, precisamos do serviço Flaresolvrr, que podemos subir no docker compose assim:
 
@@ -329,7 +327,7 @@ E no Prowlarr podemos configurar na seção de Indexers, assim:
 
 ![Prowlarr FlareSolvrr](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/7949bp73gbb49994tynwuil9249h)
 
-Como eu disse, é um saco de configurar isso. Mas ainda não acabamos. Na tela principal, tem que sair habilitando todos os indexers que fazem sentido pra você. Não é bom habilitar tudo, porque vai ficar muito pesado depois. Veja os tags de cada um. Tem indexer que é só de pornô, por exemplo, eu pulei todos esses. Tem indexers específico só pra conteúdo em russo ou chinês, daí pula também. 
+Como eu disse, é um saco de configurar isso. Mas ainda não acabamos. Na tela principal, tem que sair habilitando todos os indexers que fazem sentido pra você. Não é bom habilitar tudo, porque vai ficar muito pesado depois. Veja os tags de cada um. Tem indexer que é só de pornô, por exemplo, eu pulei todos esses. Tem indexers específico só pra conteúdo em russo ou chinês, daí pula também.
 
 ![Add Indexer](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/cnl4yefcsvas84m6eslb3in7jmq9)
 
@@ -390,7 +388,7 @@ Existe um pequeno detalhe que muitos não entendem: Plex faz *transcoding* dos v
 
 Na realidade, é mais complicado do que isso. Existe um protocolo chamado "Direct Play" ou "Direct Stream". Tem um [artigo que explica isso](https://support.plex.tv/articles/200250387-streaming-media-direct-play-and-direct-stream/) no site do Plex. Se o PC, SmartTV, console, etc, tiverem suporte ao codec do video em questão, teoricamente o Plex só vai passar os bits direto, sem tentar converter nem nada. Entenda: nem todo dispositivo tem capacidade pra tocar qualquer codec de video.
 
-A maioria do conteúdo hoje em dia é encodado em H.264 ou H.265 ou até AV1, que é mais novo e mais eficiente. Problema, digamos que você queira tocar num PC bem antigo ou num PS4 da vida. Eles vão ter suporte a H.264, talvez H.265, se tiver sorte, mas certamente não a AV1. Daí seria super lento tentar tocar usando só a CPU. O certo é ter instruções de hardware pra tocar AV1, especialmente num CPU antigo. 
+A maioria do conteúdo hoje em dia é encodado em H.264 ou H.265 ou até AV1, que é mais novo e mais eficiente. Problema, digamos que você queira tocar num PC bem antigo ou num PS4 da vida. Eles vão ter suporte a H.264, talvez H.265, se tiver sorte, mas certamente não a AV1. Daí seria super lento tentar tocar usando só a CPU. O certo é ter instruções de hardware pra tocar AV1, especialmente num CPU antigo.
 
 Então o Plex pergunta pro dispositivo: *"você suporta AV1?"* O tocador vai dizer *"nope, sou fraco."* Então o Plex vai fazer o transcoding de AV1 pra H.264, por exemplo. Tudo isso é transparente pra você.
 
@@ -418,7 +416,7 @@ Sim, existe MUITO mais que SRT. Em particular, se você fizer como eu e ripar UH
 
 A maioria das trilhas de legenda foram feitas pra serem enviadas ao tocador em paralelo, e separado, da trilha de video. Assim como a trilha de áudio vai separado. O tocador recebe trilha de video, trilha de áudio, e toca os dois sincronizados. Mesma coisa com trilha de legenda, no caso de arquivos SRT ou SSA ou TTML da vida.
 
-Mas PGS é diferente: ele tem capacidades gráficas! Estou chutando, mas se já viu legenda coloridas, animadas, que se mexem ou se posicionam em locais absolutos na tela (como pra ficar exatamente em cima de outdoor no video, por exemplo), daí precisa haver um passo antes de rasterizar e renderizar essa legenda gráfica **EM CIMA** do stream de video. Isso existe um passo mais pesado de encoding, ou seja, vai ser **PESADO** de tocar em tempo real. 
+Mas PGS é diferente: ele tem capacidades gráficas! Estou chutando, mas se já viu legenda coloridas, animadas, que se mexem ou se posicionam em locais absolutos na tela (como pra ficar exatamente em cima de outdoor no video, por exemplo), daí precisa haver um passo antes de rasterizar e renderizar essa legenda gráfica **EM CIMA** do stream de video. Isso existe um passo mais pesado de encoding, ou seja, vai ser **PESADO** de tocar em tempo real.
 
 A solução: use o Plex pra pesquisar uma nova legenda, em formato SRT, e ignore a legenda PGS. Só de fazer isso, parou de engasgar na hora de tocar.
 
@@ -436,7 +434,7 @@ Eu configuro integração com Sonarr e Radarr nas configurações, assim ele sab
 
 ## Bazarr (legendas)
 
-Eu não preciso, mas minha namorada às vezes prefere assistir com legendas em português. E é um saco isso porque nem sempre tem, ou o que tem é de baixa qualidade. Aliás, deixa eu já avisar que tanto legenda oficial quanto não-oficial, eu tô cansado de ver tradução errada. Minha diversão é ficar achando os erros na legenda. Se você depende de legenda, saiba que muitos significados importantes estão errados mesmo. Sempre prefira original. 
+Eu não preciso, mas minha namorada às vezes prefere assistir com legendas em português. E é um saco isso porque nem sempre tem, ou o que tem é de baixa qualidade. Aliás, deixa eu já avisar que tanto legenda oficial quanto não-oficial, eu tô cansado de ver tradução errada. Minha diversão é ficar achando os erros na legenda. Se você depende de legenda, saiba que muitos significados importantes estão errados mesmo. Sempre prefira original.
 
 Antigamente tinha que ir manualmente em sites como [OpenSubtitles.org](https://www.opensubtitles.org/en/search) da vida, baixar o arquivo ".SRT", renomear igual o nome do arquivo de video e ficar testando manualmente pra ver se tá sincronizado ou não.
 
@@ -486,7 +484,7 @@ Pra mim o Bazarr é o serviço que menos tem sido útil, porque ele não acha a 
 
 No [meu repositório](https://github.com/akitaonrails/plex_home_server_docker/tree/master) tem outros arquivos de Docker Compose pra minha infra local. Não vou explicar em detalhes, mas só a saber:
 
-Em [net-docker-compose.yml](https://github.com/akitaonrails/plex_home_server_docker/blob/master/net-docker-compose.yml) eu configuro cloudflared e pi-hole. Pra quem não sabe, [Pi-Hole](https://pi-hole.net/) é um servidor de DNS que tem funcionalidade de bloquear acesso a banners, ads, propaganda e até sites de malwares. Ele não substitui um anti-virus ou anti-malware, mas já ajuda muito. 
+Em [net-docker-compose.yml](https://github.com/akitaonrails/plex_home_server_docker/blob/master/net-docker-compose.yml) eu configuro cloudflared e pi-hole. Pra quem não sabe, [Pi-Hole](https://pi-hole.net/) é um servidor de DNS que tem funcionalidade de bloquear acesso a banners, ads, propaganda e até sites de malwares. Ele não substitui um anti-virus ou anti-malware, mas já ajuda muito.
 
 ![Pi-Hole](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/e9np7nq9xxtn0lkzibkf1234o3ts)
 
