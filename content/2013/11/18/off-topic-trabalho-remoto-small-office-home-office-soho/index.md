@@ -93,6 +93,4 @@ E novamente, existem exceções, grandes nomes do mundo open source que trabalha
 
 Trabalhar de casa é uma experiência que vale a pena experimentar, de maneira nenhuma ela é necessariamente melhor que trabalhar dentro de um grupo, mesmo considerando "perder tempo" de locomoção - que, aliás, é uma péssima desculpa - considerando se sua região tem opções. Se não as opções são escassas, no entanto, remoto é de fato uma boa alternativa, só considere que existem prós e contras.
 
-<div class="embed-container">
-<iframe src="//www.youtube.com/embed/dW9ztSUGY_Q" frameborder="0" allowfullscreen></iframe>
-</div>
+{{< youtube id="dW9ztSUGY_Q" >}}

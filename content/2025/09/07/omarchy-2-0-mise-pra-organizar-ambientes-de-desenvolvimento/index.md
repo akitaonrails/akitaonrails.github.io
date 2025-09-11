@@ -143,9 +143,11 @@ O mesmo vale pra bancos de dados. Cada projeto deve estar travado numa versão e
 
 Se não entende Docker, eu fiz videos ensinando:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/85k8se4Zo70?si=hsQoBz7csDDvrxsJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+{{< youtube id="85k8se4Zo70" >}}
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/-yGHG3pnHLg?si=nWBrh5x33e4JCmpc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</br>
+
+{{< youtube id="-yGHG3pnHLg" >}}
 
 Somando Mise + Docker Compose + LazyVim, é tudo que se precisa pra ser um desenvolvedor web produtivo, além de usar os recursos da sua máquina de maneira eficiente. Todo desenvolvedor PRECISA aprender este combo de opções. Omarchy já trás tudo pré-instalado, por isso tem sido minha recomendação pra todo iniciante.
 

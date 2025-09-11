@@ -11,7 +11,7 @@ Iniciamos a contagem regressiva para o evento, faltam apenas **10 dias** até o 
 
 Nas últimas Rubyconf eu fiz [diversos](http://www.youtube.com/watch?v=pKhI6-cdMCc) [vídeos](http://www.youtube.com/watch?v=uBUphD_Wh_I) [caseiros](http://www.youtube.com/watch?v=J_XNBL7GqBA) com nada mais que meu iPhone de guerra e templates de iMovie. Este ano me coloquei o desafio de construir uma vinheta de abertura para o evento de maneira mais profissional. Eis o resultado:
 
-<iframe width="640" height="360" src="//www.youtube.com/embed/R3WzCx4l08M" frameborder="0" allowfullscreen></iframe>
+{{< youtube id="R3WzCx4l08M" >}}
 
 Quando soube que o [Bob Wolheim tinha integrado a FLAG através da S-kull](http://www.meioemensagem.com.br/home/comunicacao/noticias/2013/01/28/Bob-Wollheim-e-o-novo-CEO-da-S-Kull.html) logo entrei em contato e ele me apresentou o excelente pessoal da **The Kumite**. Gostaria de poder mostrar os outros trabalhos deles mas o reel ainda não está no ar. Basta dizer que eles são reais profissionais do meio de produção de vídeos e computação gráfica tendo feito trabalhos pra Globo e comerciais pra marcas como Samsung. Se quiser vídeos de excepcional qualidade, fale com eles!
 

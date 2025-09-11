@@ -15,9 +15,7 @@ Mais uma vez agradeço imensamente aos grandes palestrantes que vieram de todos 
 
 ![Palestrantes](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/387/9661260617_f9e56b82df_h.jpg)
 
-<div class="embed-container">
-<iframe src="//www.youtube.com/embed/3rB_0Cs_BLc?list=UUqHIy-SOkAgNU3b-PRUL8qA" frameborder="0" allowfullscreen></iframe>
-</div>
+{{< youtube id="3rB_0Cs_BLc" >}}
 
 E sempre agradecimentos às dezenas de empresas que de uma forma ou de outra colaboraram para que a Rubyconf fosse possível. Vale lembrar que todos os palestrantes que vieram de fora do Brasil vieram patrocinados por suas próprias empresas.
 
@@ -37,9 +35,7 @@ E sempre agradecimentos às dezenas de empresas que de uma forma ou de outra col
 
 * se ainda não viu, reveja [a excelente vinheta de abertura do evento](http://www.akitaonrails.com/2013/08/19/rubyconf-brasil-2013-vinheta-de-abertura#.UizpumRgZ3Y) que influenciou a linguagem de apresentação dentro do evento, produção do excelente pessoal do [The Kumite](http://www.thekumite.org/).
 
-<div class="embed-container">
-<iframe src="//www.youtube.com/embed/R3WzCx4l08M" frameborder="0" allowfullscreen></iframe>
-</div>
+{{< youtube id="R3WzCx4l08M" >}}
 
 * novamente agradecimentos ao apoio da Eventioz, que logo após o evento também [anunciou seu merge com a grande Eventbrite](http://techcrunch.com/2013/09/03/eventbrite-acquires-eventioz-and-lanyrd/).
 

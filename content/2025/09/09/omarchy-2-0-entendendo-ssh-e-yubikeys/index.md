@@ -29,7 +29,7 @@ O que significa isso?
 
 SSH é um conjunto de ferramentas tanto de cliente quanto servidor pra criar uma conexão segura, encriptada, pela internet. Ela tem diversas utilidades e eu expliquei como fazer Proxy SSH neste video:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/T-jHuFnxZ2k?si=7aFB4pDk-0mLeC7x" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+{{< youtube id="T-jHuFnxZ2k" >}}
 
 O processo todo se inicia instalando SSH na sua máquina, e no Omarchy/ArchLinux é só fazer isso:
 
@@ -45,7 +45,7 @@ ssh-keygen -t ed25519 -a 100 -C "your_email@example.com" -f ~/.ssh/id_ed25519
 
 **ED25519** é um algoritmo de chave-pública, ou seja, cria um par de chaves: uma privada que **jamais deve sair da sua máquina**, e uma pública que pode ser exposta na internet aberta (a que você registra na sua conta no GitHub, por exemplo). Eu expliquei sobre chaves-públicas neste outro video:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/HCHqtpipwu4?si=JVgh-h7a-5LsL8Sa&amp;start=1792" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+{{< youtube id="HCHqtpipwu4" >}}
 
 ED25519 é um algoritmo mais moderno que o antigo RSA (que acho que ainda é o padrão no ssh-keygen se não fizer a escolha explícita - ela continua sendo segura, mas curva elíptica é ainda mais segura).
 
