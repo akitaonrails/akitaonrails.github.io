@@ -58,7 +58,7 @@ Com encriptação, sem a senha pra decriptar, é impossível acessar seus dados.
 
 Sendo um pouco mais nerd, a chave de decriptação **não é sua senha**. Durante o processo de instalação vai ser gerada uma nova senha mais forte e segura usando um processo de **derivação de chaves** (KDF - Key Derivation Function), hoje em dia é com Argon2id, antigamente era com PBKDF2. Explico sobre isso neste video:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/HCHqtpipwu4?si=jj5SFc_lPh5D41yk&amp;start=364" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+{{< youtube id="HCHqtpipwu4" >}}
 
 Portanto, quando digita sua senha, na verdade ele decripta essa chave segura, e é com essa chave segura que seu disco está encriptado. Por isso não dá pra decriptar seus dados na força-bruta.
 
