@@ -4,6 +4,7 @@ title: AkitaOnRails's Blog
 
 ## 2025 - September
 
+- [Omarchy 2.0 - Instale com a ISO do Omarchy](2025/12/omarchy-2-0-instale-com-a-iso-do-omarchy/)
 - [Protegendo seu Home Server com Cloudflare Zero Trust](2025/09/10/protegendo-seu-home-server-com-cloudflare-zero-trust/)
 - [Omarchy 2.0 - Bitwarden Self-Hosted / VaultWarden](2025/09/10/omarchy-2-0-bitwarden-self-hosted-vaultwarden/)
 - [Meu Novo Blog - Como Eu Fiz](2025/09/10/meu-novo-blog-como-eu-fiz/)
