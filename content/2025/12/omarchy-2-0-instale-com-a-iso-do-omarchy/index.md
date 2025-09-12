@@ -48,6 +48,8 @@ Não, porque a ISO do Omarchy pré-configura seu SSD com LUKS, antes do filesyst
 
 Pra quem não sabe, [LUKS](https://wiki.archlinux.org/title/Dm-crypt/Encrypting_an_entire_system) é o **Linux Unified Key Setup**, que dá suporte a encriptar seu disco inteiro. A vantagem dele em relação a um BitLocker do Windows, é que ele é **agnóstico a filesystem**. Ou seja, funciona com BTRFS ou EXT4 ou qualquer outro, porque na sequência de boot, depois do bootloader (seja Limine ou Grub), ele carrega **antes** do filesystem. É um encriptador em nível de blocos.
 
+![install luks](https://learn.omacom.io/u/arch-encryption-urjrDm.png)
+
 Portanto, quando você bootar seu sistema, primeiro vai pedir a senha de decriptar seu disco. Daí abre o filesystem e o kernel do Linux pode continuar o boot normal com o disco aberto. Então você é obrigado a **sempre** digitar a senha segura do seu usuário no boot pra decriptar o disco.
 
 Portanto, ter que digitar senha novamente num login manager seria redundante e desnecessário, por isso imagino que escolheram usar UWSM em vez de SDDM.

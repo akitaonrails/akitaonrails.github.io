@@ -13,14 +13,14 @@ tags:
 draft: false
 ---
 
-Este artigo está alguns meses atrasado, mas resolvi documentar agora porque senão vou esquecer como fiz. Como breve introdução, já digo o maior erro que todo programador que quer tentar começar a escrever comete: perde MUITO tempo tentando criar o blog perfeito. 
+Este artigo está alguns meses atrasado, mas resolvi documentar agora porque senão vou esquecer como fiz. Como breve introdução, já digo o maior erro que todo programador que quer tentar começar a escrever comete: perde MUITO tempo tentando criar o blog perfeito.
 **Just f...ng write!!**
 
 ![novo blog](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/20250910134801_screenshot-2025-09-10_13-47-43.png)
 
 (e sim, tem tema dark, link no rodapé do site)
 
-### O BLOG PERFEITO NÃO EXISTE!
+### O BLOG PERFEITO NÃO EXISTE
 
 Eu acho importante que todo programador tente escrever. Não pra virar influencer nem nada disso. O primeiro objetivo é **escrever pra você mesmo**. Eu uso meu blog primariamente como um "backup" do meu cérebro (assim como foi meu canal do YouTube).
 
@@ -28,9 +28,10 @@ Notem como os últimos posts de Linux não sou eu tentando te vender nada, mas s
 
 Segundo: programadores são **péssimos** comunicadores. Nós falamos somente pra nós mesmos e não pensamos se a pessoa ouvindo está nos entendendo. E quando vemos que não entende a reação é _"ah, porque ela é burra e eu sou inteligente."_
 
-Falei sobre isso no artigo [Programadores são Péssimos Comunicadores](https://akitaonrails.com/2013/11/02/off-topic-programadores-sao-pessimos-comunicadores-udp-vs-tcp/. Mesmo se só uma pessoa ler seu post, mas te der um comentário, esse feedback é importante. É como um teste rodando que falha: agora você sabe onde tem que corrigir. E vai corrigindo, um passo de cada vez. 
+Falei sobre isso no artigo [Programadores são Péssimos Comunicadores](<https://akitaonrails.com/2013/11/02/off-topic-programadores-sao-pessimos-comunicadores-udp-vs-tcp/>. Mesmo se só uma pessoa ler seu post, mas te der um comentário, esse feedback é importante. É como um teste rodando que falha: agora você sabe onde tem que corrigir. E vai corrigindo, um passo de cada vez.
 
 Portanto, escrever blog post, não importa se tem zero visitantes, é um exercício de prática pra se tornar um comunicador melhor, por isso recomendo.
+
 ### Blog Engines
 
 Eu comecei postando no Google Blogspot em 2006. Depois fiz meu próprio blog num projeto que já existia em Ruby on Rails 2.0, passei por vários, como o Typo3 na época. Até que em 2012 eu fiz o meu próprio engine do zero usando ActiveAdmin e é esse projeto que eu vim atualizando de Rails 3 até Rails 6 ou 7 recentemente. Meu primeiro post continua no blog:
@@ -51,7 +52,7 @@ Finalmente, em 2025, resolvi que estava de saco cheio de ficar atualizando vers�
 
 Depois de Jekyll, surgiram geradores de sites estáticos em dezenas de linguagens. De fato, é o jeito mais prático pra um programador escrever um blog: só criar um arquivo texto localmente, escrever tudo em markdown, rodar um script e subir um site estático que não precisa de nenhuma configuração, banco de dados ou qualquer outro componente mais complicado. Dá pra subir até como GitHub Pages e hospedar lá grátis.
 
-Por isso eu sabia que, se fosse fazer um novo engine, teria que ser site estático. Já tinha ouvido falar do tal projeto [**Hugo**](https://github.com/gohugoio/hugo), que é feito em Go e tem tudo que eu precisava: markdown, suporte a tags, etc. Mas tinha um problema: eu odeio fazer front-end e eu nunca fui um bom web designer, ou designer no geral. 
+Por isso eu sabia que, se fosse fazer um novo engine, teria que ser site estático. Já tinha ouvido falar do tal projeto [**Hugo**](https://github.com/gohugoio/hugo), que é feito em Go e tem tudo que eu precisava: markdown, suporte a tags, etc. Mas tinha um problema: eu odeio fazer front-end e eu nunca fui um bom web designer, ou designer no geral.
 
 Foi quando esbarrei no [**Hextra**](https://themes.gohugo.io/themes/hextra/), que é basicamente o Hugo mas com vários temas pré-prontos. E diferente de vários outros projetos com temas gratuitos que costumam ser muito feios e muito mal feitos, os do Hextra me pareceram minimamente bem feitos. Fucei um pouco, achei um tema padrão minimalista que é legível pra textos com código e decidi que seria agora.
 
@@ -69,6 +70,7 @@ hugo server --buildDrafts --disableFastRender
 ```
 
 No meu caso, eu comecei com o [**Hextra Starter Template**](https://github.com/imfing/hextra-starter-template) do que começar do Hugo zerado. Acho que vale a pena checar. Ele também explica como fazer deploy pra GitHub Pages e Netlify.
+
 ### Código Aberto
 
 A vantagem de usar um gerador de site estático é que posso me livrar do banco de dados Postgres que usei por anos e converter todos os artigos em arquivos texto individuais. Feito isso, basta subir tudo num repositório no GitHub. E como são textos publicamente disponíveis de qualquer forma, não tem porque não deixar aberto. Dessa forma, qualquer um pode contribuir (e muitos já contribuíram - obrigado pela ajuda!)
@@ -80,6 +82,14 @@ Se quiser contribuir ou só fuçar acesse o [repositório no GitHub](https://git
 Até agora já tive 8 Pull Requests mergeadas. Alguns realmente se deram ao trabalho de caçar erros, typos, bugs e mandaram correções muito boas. O blog está melhor graças a eles. Às vezes eu posso demorar um pouco pra checar os PRs, mas eventualmente eu chego e costumo mergear tudo.
 
 Um dos PRs inclusive foi pra adicionar suporte a Docker Compose pra facilitar pra quem quiser contribuir. Outro PR foi pra melhorar a documentação na página de README. Então tá bem fácil de entender o que fazer.
+
+Outra contribuição importante foi adicionar tag pra fazer embed de video do YouTube. Eu só preciso fazer:
+
+```
+{{< youtube id="HCHqtpipwu4" >}}
+```
+
+Do jeito antigo eu ia no YouTube, clicava em "Share", "Embed" e copiava o bloco de iframe. Mas isso quebra em mobile.
 
 ![readme](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/20250910140536_screenshot-2025-09-10_14-05-20.png)
 
@@ -151,6 +161,7 @@ git push origin master
 ```
 
 E é só isso!
+
 ### Deploy
 
 Falei que pretendia fazer deploy no GitHub Pages, mas na última hora resolvi que queria fazer deploy na [Netlify]
@@ -326,13 +337,14 @@ File.open('_index.md', 'w') do |f|
 end
 
 puts "Generated _index.md with posts grouped by year & month."
-``` 
+```
 
 Esse script tem um pequeno bug: ele ordena os artigos a partir do diretório de mês e dia, mas significa que se eu postar várias vezes durante o dia, vai sair fora de ordem, ordenado pelo título do artigo. Veja: `sorted_keys.each do |(year, month)|`
 
 O certo seria abrir o artigo e pegar o metadado de timestamp, mas fiquei com preguiça. Se alguém quiser corrigir e mandar um PR, será bem vindo.
 
 Por que fiz em Ruby e não em Python ou Bash?? Porque foi como eu quis 🤣, não perturba.
+
 ### Imagens no S3
 
 Como contei antes, uma das conveniências do meu antigo engine feito em Rails, é que eu tinha feito o ActiveAdmin com suporte a fazer uploads pro meu bucket de S3. E era um setup complicado porque ainda adicionava AWS CloudFront na frente pra fazer cache dessas imagens em CDN e tudo mais.
@@ -356,7 +368,7 @@ Nautilus suporta scripts de usuário, então fiz o seguinte:
 ```bash
 mkdir -p ~/.local/share/nautilus/scripts
 nvim ~/.local/share/nautilus/scripts/Send\ to\ AWS\ S3
-``` 
+```
 
 E eis o script:
 
