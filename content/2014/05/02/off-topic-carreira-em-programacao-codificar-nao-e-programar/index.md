@@ -68,7 +68,7 @@ Conheça sobre machine learning e uma das formas mais simples disso chamada [Cla
 
 A idéia é que simplesmente palavras simples não são suficiente para determinar se um conteúdo é impróprio ou não. A forma da construção de frases, o "tom" da forma de se escrever. Tudo isso forma um padrão que pode ser classificado e aprendido. Quanto mais conteúdo impróprio é classificado mais eficiente o algoritmo fica. Se quiser experimentar uma forma simples [em Ruby veja este blog](http://blog.logankoester.com/bayesian-classification-on-rails). Se quiser aprender sobre classificadores mais avançados, veja o projeto [Apache Mahout](https://mahout.apache.org/).
 
-<iframe width="640" height="360" src="//www.youtube.com/embed/DdYSMwEWbd4" frameborder="0" allowfullscreen></iframe>
+{{< youtube id="DdYSMwEWbd4" >}}
 
 E o que é isso? É uma matéria de [**Estatística e Probabilidade**](https://www.khanacademy.org/math/probability). Os fundamentos para entender isso estão de novo no PRIMEIRO ano de Ciência da Computação.
 
@@ -152,7 +152,7 @@ Em bom português, agora **fodeu**. Parte do Journey se utiliza do [Racc](https:
 
 Se você passou pelo menos pro SEGUNDO ano de Ciências da Computação então passou pelas matérias de [**Algoritmos e Estruturas de Dados**](http://en.wikipedia.org/wiki/Algorithms_%2B_Data_Structures_%3D_Programs) e Montadores. E se chegou ao TERCEIRO ano deve ter aprendido sobre [**Compiladores**](http://en.wikipedia.org/wiki/Compilers:_Principles,_Techniques,_and_Tools) (e visto o famoso livro do Dragão). Racc deve ter te lembrado de Yacc, Flex, Bison.
 
-<iframe width="640" height="360" src="//www.youtube.com/embed/QPCC2sbukeo" frameborder="0" allowfullscreen></iframe>
+{{< youtube id="QPCC2sbukeo" >}}
 
 Para arrematar, você deve achar que sabe o que é [**Orientação a Objetos**](http://c2.com/cgi/wiki?NobodyAgreesOnWhatOoIs), certo? Certamente acha que sua linguagem favorita (seja Java, C# ou Javascript) são orientados a objetos. Se eu pedir para definir o que isso significa, está na ponta da sua língua:
 
@@ -193,7 +193,7 @@ Todo mundo sabe quem é Linus Torvalds, Bill Gates, Steve Jobs, Zuckerberg. Esqu
 
 E isso apenas para listar alguns poucos. Ciência é um campo amplo, onde o trabalho de um cientista complementa o trabalho do anterior. Passo a passo andando sempre para frente. É um trabalho acumulativo de dezenas, centenas de anos. Nossa vantagem? Centenas de pessoas já trilharam esse caminho no passado e podemos nos utilizar do que eles aprenderam e deixaram para nós, em vez de nós mesmos cometermos os mesmos erros até aprendermos.
 
-<iframe width="480" height="360" src="//www.youtube.com/embed/6dME3wgaQpM" frameborder="0" allowfullscreen></iframe>
+{{< youtube id="6dME3wgaQpM" >}}
 
 Quase tudo que você vê por aí que se chama ["inovação"](http://startups.ig.com.br/2013/restricoes-sao-libertadoras-menos-e-mais/) não é mais do que a redescoberta de coisas que já estão documentadas no passado mas estavam à frente do seu tempo. Foi assim com o mouse: [Douglas Engelbart](http://en.wikipedia.org/wiki/Douglas_Engelbart), que criou o mouse em 1968 precisou esperar até Steve Jobs lançar o Macintosh, 16 anos depois, para ver sua invenção ser popularizada. Pare para pensar: quantas descobertas estão no passado apenas esperando para que nós a desenterremos para finalmente realizá-las?
 
