@@ -2,7 +2,11 @@
 title: Moving to GitLab! Yes, it's worth it!
 date: '2016-08-03T14:49:00-03:00'
 slug: moving-to-gitlab-yes-it-s-worth-it
-tags: []
+tags:
+- gitlab
+- git
+- self-hosted
+- segurança
 draft: false
 ---
 
@@ -429,7 +433,7 @@ runner-xxxx-ci-auto-scale-xxxx-xxxx   -        digitalocean   Running   tcp://19
 
 They should not list any errors, meaning that they are up and running, waiting for new builds to start.
 
-There will be 2 new machines listed in your Digital Ocean dashboard, named "runner-xxxxx-ci-auto-scale-xxxxx". This is what `IdleCount = 2` does. If they stay idle for more than 30 minutes (`IdleTime = 1800 `) they will be shut down so you don't get charged.
+There will be 2 new machines listed in your Digital Ocean dashboard, named "runner-xxxxx-ci-auto-scale-xxxxx". This is what `IdleCount = 2` does. If they stay idle for more than 30 minutes (`IdleTime = 1800`) they will be shut down so you don't get charged.
 
 You can have several "runner" definitions, each with a `limit` of builds/machines that can be spawned in Digital Ocean. You can have other runner definitions for other providers, for example. But in this example we are limited to at most 15 machines, so 15 concurrent builds.
 

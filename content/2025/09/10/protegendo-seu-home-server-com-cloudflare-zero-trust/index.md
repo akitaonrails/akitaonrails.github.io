@@ -7,6 +7,7 @@ tags:
   - cloudflare
   - zero trust
   - google oauth
+  - segurança
 draft: false
 ---
 

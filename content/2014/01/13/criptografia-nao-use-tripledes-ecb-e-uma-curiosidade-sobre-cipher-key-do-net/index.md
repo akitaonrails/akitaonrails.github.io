@@ -7,6 +7,7 @@ tags:
 - learning
 - beginner
 - security
+- segurança
 draft: false
 ---
 
@@ -19,34 +20,34 @@ using System.Text;
 
 class Program
 {
-	public static void Main(String[] args) {
-		Console.WriteLine(EncryptData("hello world"));
-	}
+ public static void Main(String[] args) {
+  Console.WriteLine(EncryptData("hello world"));
+ }
 
-	public static string EncryptData(string Message)
-	{
-	    byte[] Results;
-	    System.Text.UTF8Encoding UTF8 = new System.Text.UTF8Encoding();
-	    MD5CryptoServiceProvider HashProvider = new MD5CryptoServiceProvider();
-	    byte[] TDESKey = HashProvider.ComputeHash(UTF8.GetBytes("abc123"));
+ public static string EncryptData(string Message)
+ {
+     byte[] Results;
+     System.Text.UTF8Encoding UTF8 = new System.Text.UTF8Encoding();
+     MD5CryptoServiceProvider HashProvider = new MD5CryptoServiceProvider();
+     byte[] TDESKey = HashProvider.ComputeHash(UTF8.GetBytes("abc123"));
 
-	    TripleDESCryptoServiceProvider TDESAlgorithm = new TripleDESCryptoServiceProvider();
-	    TDESAlgorithm.Key = TDESKey;
-	    TDESAlgorithm.Mode = CipherMode.ECB;
-	    TDESAlgorithm.Padding = PaddingMode.PKCS7;
-	    byte[] DataToEncrypt = UTF8.GetBytes(Message);
-	    try
-	    {
-	        ICryptoTransform Encryptor = TDESAlgorithm.CreateEncryptor();
-	        Results = Encryptor.TransformFinalBlock(DataToEncrypt, 0, DataToEncrypt.Length);
-	    }
-	    finally
-	    {                
-	        TDESAlgorithm.Clear();
-	        HashProvider.Clear();
-	    }
-	    return Convert.ToBase64String(Results);
-	}
+     TripleDESCryptoServiceProvider TDESAlgorithm = new TripleDESCryptoServiceProvider();
+     TDESAlgorithm.Key = TDESKey;
+     TDESAlgorithm.Mode = CipherMode.ECB;
+     TDESAlgorithm.Padding = PaddingMode.PKCS7;
+     byte[] DataToEncrypt = UTF8.GetBytes(Message);
+     try
+     {
+         ICryptoTransform Encryptor = TDESAlgorithm.CreateEncryptor();
+         Results = Encryptor.TransformFinalBlock(DataToEncrypt, 0, DataToEncrypt.Length);
+     }
+     finally
+     {                
+         TDESAlgorithm.Clear();
+         HashProvider.Clear();
+     }
+     return Convert.ToBase64String(Results);
+ }
 }
 ```
 
@@ -56,7 +57,7 @@ O ponto de atenção é que este exemplo tenta ser o mais simples possível. Por
 
 Falando em termos de leigo, a diferença é que o modo CBC (Cipher Block Chaining) exige o uso de um [Initialization Vector (IV)](http://bit.ly/1m2TCjI) além da chave de encriptação. Diferente da chave - que deve ser "secreta" - o IV pode ser público e transmitido remotamente. O modo CBC vai usar esses dois componentes para fazer transformações em cadeia nos dados, adicionando uma camada extra de segurança.
 
-No modo ECB (Electronic Code Book) você só precisa da chave - e por isso todo mundo usa TripleDES em modo ECB para exemplos e tutoriais: porque é mais simples - e aqui vai uma crítica para tutoriais que simplificam demais sem explicar as implicações, especialmente de segurança (!). O modo ECB é considerado inseguro. 
+No modo ECB (Electronic Code Book) você só precisa da chave - e por isso todo mundo usa TripleDES em modo ECB para exemplos e tutoriais: porque é mais simples - e aqui vai uma crítica para tutoriais que simplificam demais sem explicar as implicações, especialmente de segurança (!). O modo ECB é considerado inseguro.
 
 Não sou um especialista em segurança, mas em termos leigos o mesmo dado passado pelo TripleDES com a mesma chave gera a mesma saída encriptada. Portanto se eu souber a entrada e saída de alguns dados, posso encontrar padrões que ajudem a decriptar outros dados, e impede o uso de [ataques baseados em dicionários](http://en.wikipedia.org/wiki/Dictionary_attack) e [rainbow tables](http://en.wikipedia.org/wiki/Rainbow_table). Como um IV novo é gerado para cada vez que encripto no modo CBC (*importante:* sempre gere um novo IV aleatoriamente - tem métodos pra isso, não reuse IVs), o mesmo dado de entrada não gera duas saída iguais, dificultando muito encontrar padrões que ajudem a quebrar outros dados. É a mesma razão de porque usamos ["salts"](http://bit.ly/JV5KHv) ao gerar digests de senhas antes de armazenar numa tabela de banco de dados. Esta resposta no [StackExchange](http://security.stackexchange.com/questions/6058/is-real-salt-the-same-as-initialization-vectors) descreve melhor.
 
@@ -96,8 +97,8 @@ Se tentar rodar este método ele vai dar o seguinte problema:
 ```
 > encrypt_data("abc123", "hello world")
 OpenSSL::Cipher::CipherError: key length too short
-	from (irb):17:in `key='
-	from (irb):17:in `encrypt_data'
+ from (irb):17:in `key='
+ from (irb):17:in `encrypt_data'
 ```
 
 Se passar a mesma cipher key e mensagem pra versão .Net ele vai funcionar. Esta é a curiosidade:
@@ -135,7 +136,7 @@ Feito isso, o resultado agora será o mesmo do código em C#:
 
 Para comparar, basta compilar e executar na sua máquina (se por acaso for um dev Windows) ou, se não for, ir no site [Compile Online](http://www.compileonline.com/compile_csharp_online.php) que permite compilar e executar código em diversas linguagens diferentes diretamente na Web (dica do [@_carloslopes](https://twitter.com/_carloslopes)).
 
-Em resumo: 
+Em resumo:
 
 * Só porque está encriptado não quer dizer "seguro";
 * Entenda o que está copiando, não apenas copie;

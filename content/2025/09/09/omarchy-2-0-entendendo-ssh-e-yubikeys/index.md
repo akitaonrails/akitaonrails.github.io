@@ -9,6 +9,7 @@ tags:
   - openssh
   - yubikey
   - ssh-agent
+  - segurança
 draft: false
 ---
 

@@ -7,6 +7,7 @@ tags:
 - beginner
 - rails
 - security
+- segurança
 draft: false
 ---
 
@@ -30,7 +31,7 @@ Para isso o pessoal do RubySec mantém um banco de dados, o [Ruby Advisory DB](h
 
 E para quem quer automatizar o processo de encontrar esses advisories, o RubySec também tem o [Bundler Audit](https://github.com/rubysec/bundler-audit). Ele funciona usando o Advisory DB e cruzando com as versões específicas de gems que estão listadas no <tt>Gemfile.lock</tt> do seu projeto.
 
-Apenas instale a gem com 
+Apenas instale a gem com
 
 ```
 gem install bundler-install
@@ -107,7 +108,7 @@ bundle-audit update
 
 Além da análise estática de código para avaliar segurança, uma adição que pode ser interessante dependendo do tipo de site que você usa é o [Rack-Attack](https://github.com/kickstarter/rack-attack).
 
-Digamos que avaliando seus logs você perceba que seu site está sendo muito consumido por web scrappers, robôs do tipo que ficam capturando seu conteúdo. Se for robôs de motores de busca como Google, Bing, tudo bem, mas você vai encontrar mais do que isso. 
+Digamos que avaliando seus logs você perceba que seu site está sendo muito consumido por web scrappers, robôs do tipo que ficam capturando seu conteúdo. Se for robôs de motores de busca como Google, Bing, tudo bem, mas você vai encontrar mais do que isso.
 
 Imagine que além de scrappers consumindo demais, você tenha tentativa de ataques de força-bruta, como scripts automatizados tentando diversas combinações de usuários e senhas até conseguir acertar um.
 

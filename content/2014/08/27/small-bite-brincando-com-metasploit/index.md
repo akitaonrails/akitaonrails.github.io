@@ -5,6 +5,7 @@ slug: small-bite-brincando-com-metasploit
 tags:
 - metasploit
 - security
+- segurança
 draft: false
 ---
 
