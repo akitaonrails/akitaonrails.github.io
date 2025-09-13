@@ -7,6 +7,7 @@ services:
       - ./content:/app/content
       - ./layouts:/app/layouts
       - ./assets:/app/assets
+      - ./scripts:/app/scripts
       - ./hugo.yaml:/app/hugo.yaml
       - ./go.mod:/app/go.mod
       - ./go.sum:/app/go.sum
@@ -15,7 +16,7 @@ services:
       - HUGO_ENV=development
     command: >
       sh -c "
-        cd content && ruby generate_index.rb &&
+        ./scripts/generate_index.rb &&
         cd /app &&
         hugo server --logLevel debug --disableFastRender -p 1313 --bind 0.0.0.0 --watch
       "

@@ -36,7 +36,7 @@ cd akitaonrails.github.io
 
 3. **Acesse o blog:**
 
-- http://localhost:1313
+- <http://localhost:1313>
 
 4. **Comandos úteis:**
 
@@ -60,7 +60,7 @@ nvim content/2025/08/29/hello/index.md
 
 # gerar índice
 cd content
-ruby generate_index.rb
+./scripts/generate_index.rb
 
 # build
 hugo
@@ -98,7 +98,6 @@ hugo server --logLevel debug --disableFastRender -p 1313
 mkdir -p content/2025/01/15/meu-post
 nvim content/2025/01/15/meu-post/index.md
 ```
-
 
 ### 5. Estrutura de um Post
 
