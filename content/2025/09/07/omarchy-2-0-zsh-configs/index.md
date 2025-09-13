@@ -26,7 +26,7 @@ chsh -s $(which zsh)
 Logout, login e pronto. Mas agora seu shell vai estar vazio. Pra baixar minha config faça isso:
 
 ```bash
-git clone https://github.com/akitaonrails/omarchy-zsh.git ~/config/zsh
+git clone https://github.com/akitaonrails/omarchy-zsh.git ~/.config/zsh
 ln -s ~/.config/zsh/.zshrc ~/.zshrc 
 ```
 
