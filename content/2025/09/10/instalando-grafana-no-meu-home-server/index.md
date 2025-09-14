@@ -141,7 +141,7 @@ Isso porque cAdvisor e Prometheus só precisam estar acessíveis pro Grafana, de
 
 Se por acaso, como eu, também já tiver algum serviço pendurado na porta 8080, o cAdvisor vai falhar. Nesse caso remapeie as portas e reconfigure o Prometheus, ou só tire a linha de porta. Não precisa ter o cAdvisor exposto pra fora.
 
-Outro detalhe é que por padrão Grafana sobe an porta 3000 mas eu mudei pra 3001 porque já tinha outro serviço nessa porta. Então, quando subir, eu posso acessar via `http://192.168.0.200:3001`.
+Outro detalhe é que por padrão Grafana sobe na porta 3000 mas eu mudei pra 3001 porque já tinha outro serviço nessa porta. Então, quando subir, eu posso acessar via `http://192.168.0.200:3001`.
 
 Como expliquei no [artigo de Cloudflared](https://akitaonrails.com/2025/09/09/acessando-meu-home-server-com-dominio-de-verdade/) eu roteio esse endereço pro Cloudflare pra ter um domínio bonito como `https://grafana.fabioakita.dev` pra acessar tanto localmente quanto remotamente, se quiser. Depois leiam esses outros artigos pra entender como.
 

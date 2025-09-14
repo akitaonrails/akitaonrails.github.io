@@ -63,7 +63,7 @@ Falando em fechar, **como que sai do NeoVim?** Tem vários jeitos:
 
 A diferença: o primeiro é o jeito customizado no LazyVim. O Segundo é o jeito padrão usando o recurso de "comandos" que começa sempre com "dois pontos". E o terceiro é se você modificou algo no arquivo mas cancelar, sair sem salvar nada, por isso a exclamação.
 
-Normalmente eu uso **:qw** que significa "quit" e "write". Então ele primeiro salva as mudanças no arquivo e depois já quita do programa. É útil quando estou só editando um arquivo de configuração rápido.
+Normalmente eu uso **:wq** que significa "write" e "quit". Então ele primeiro salva as mudanças no arquivo e depois já quita do programa. É útil quando estou só editando um arquivo de configuração rápido.
 
 ### Navegação Básica
 
