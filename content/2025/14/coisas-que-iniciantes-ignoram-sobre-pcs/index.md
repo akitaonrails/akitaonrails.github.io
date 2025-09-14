@@ -229,11 +229,13 @@ Tem as pequenas coisas também: Windows 11 costuma exigir a existência de um ch
 
 Alguns modelos não suportam overclocking. Se você for um entusiasta de tuning, tem que checar quais modelos suportam. Coisas como **Secure Boot**, é bom ter. Isso qualquer bom modelo tem, mas se estiver querendo escolher uma velha, pra economizar, cheque se tem.
 
-O ideal é ter portas como Thunderbolt 4.0, USB 4.0, mas se tiver pelo menos USB 3 Gen 2, já ajuda. Nem toda USB 3 é igual!! Tem gerações diferentes! Só porque tem porta azul não quer dizer que é veloz. Vou falar disso pois.
+O ideal é ter portas como Thunderbolt 4.0, USB 4.0, mas se tiver pelo menos USB 3 Gen 2, já ajuda. Nem toda USB 3 é igual!! Tem gerações diferentes! Só porque tem porta azul não quer dizer que é veloz. Vou falar disso depois.
 
 Ideal ter Wi-fi embutido também, pra evitar ter que comprar uma placa ou USB separado. Mas cuidado, a maioria ainda oferece só o obsoleto Wi-Fi 5. Já estamos em **Wi-fi 7**, um Samsung Galaxy moderno já suporta, por exemplo. Mas como sempre, se está acostuma às baixas velocidades dos planos de internet que tem por aí, de fato, até Wi-fi 5 funciona. Mas se quiser transferir grandes arquivos entre seus computadores e celulares, vai querer um Wi-fi 7 mais moderno, no mínimo Wi-fi 6.
 
 Também não adianta nada ter Wi-Fi 7 no seu PC mas continuar usando roteador que a Vivo, Claro, te deram. Essas porcarias que eles dão pra você são totalmente obsoletos, Wi-fi 5 no máximo. Eu mesmo uso um **TP-Link BE9000 Wi-fi 7** e desligo o roteador Wi-Fi da Vivo.
+
+![TP-Link](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/20250914031547_TP-Link-BE9300-Archer-BE550-Wi-Fi-7-Router-771x1024.webp)
 
 ### RAM DDR 5
 
@@ -898,6 +900,4 @@ Achou tudo isso demais? Isso foi só a ponta do iceberg. Não se preocupe em ace
 
 Meu primeiro PC foi um 286 de 1MB de RAM no fim dos anos 80. Desde então passei por **vários** PCs. Numa era antes da Internet, eu cansei de ler classificados nos jornais pra pesquisar preços, eu ia bater perna na rua Santa Ifigênia, em São Paulo, que era a meca dos componentes eletrônicos. No começo da Internet eu cansei de fuçar ecomerces mais ou menos, componentes da Ásia via ums LikSang da vida.
 
-Tive vários PCs, vários notebooks. Por isso eu tenho uma boa noção hoje, com quase 50 anos e como podem ver, eu continuo atualizado. Você de 20 tem que ter vergonha de ter preguiça. Isso tudo leva tempo, mas precisa começar não tendo medo de **fuçar** e **errar**.
-
-Eu
+Tive vários PCs, vários notebooks. Por isso eu tenho uma boa noção hoje, com quase 50 anos e como podem ver, eu continuo atuali
