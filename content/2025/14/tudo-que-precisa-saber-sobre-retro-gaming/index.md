@@ -603,6 +603,12 @@ Assim seu Rog Ally vai funcionar igual um SteamDeck mais potente! Rodando jogos 
 
 Pra Emulation Station e outros front-end como [**Daijisho**](https://github.com/TapiocaFox/Daijishou) no Android vão pedir pra você ter uma conta no site [ScreenScrapper](https://www.screenscraper.fr/). Com essa conta dá pra ler as ROMs no seu microSD card e ir no site buscar coisas como imagem da caixa, video de demonstração e tudo mais pra ficar tudo mais bonito.
 
+Última coisa: se eu tenho tantos handhelds, como faço pra compartilhar os saves entre todos eles pra continuar jogando de outro handheld?
+
+Tem dois jeitos: o mais fácil é só tirar o microSD de um e colocar no outro e vai ter os mesmos saves. A outra forma - bem mais complicada (que é o que eu faço) - é subir um container de [**SyncThing**](https://github.com/syncthing/syncthing), que é um serviço que syncroniza diretórios entre diferentes computadores (pense um mini-Dropbox). Pra variar, o Russ tem um tutorial:
+
+{{< youtube id="NPx8FREezR4" >}}
+
 ### Conclusão
 
 Entendeu a mensagem do post? Não pergunte _"Akita, qual retro-handheld é melhor pra eu comprar?"_ O coitado do Akita não é tech-reviewer pago, patrocinado, nem monetizado, portanto todos os handhelds que eu tenho, comprei só pra mim. Por isso não tenho nenhum Retroid. Não adianta perguntar se Ambernic ou Ayaneo são melhores que Retroid. Akita não vai saber.
