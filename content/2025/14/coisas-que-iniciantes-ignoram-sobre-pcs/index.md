@@ -59,7 +59,7 @@ Muita gente pensa em comprar CPUs de servidor, como Intel Xeon ou AMD EPIC. Cuid
 
 Um Intel Xeon costuma ter **60 cores/120 threads** ou um AMD EPIC costuma ter **96 cores/192 threads**, mesmo modelos velhos como um Xeon Platinum/Gold (era Skylake de 2017) tem de 20 a 28 cores. Um AMD EPIC 7001 de 2017 tem 32 cores. Se conseguir achar usado, barato num eBay, não vale a pena?
 
-Na prática: **NÃO**.
+Na prática: **NÃO**. 
 
 Só pra usos muito específicos. Por exemplo, se for montar um servidor de armazenamento, um NAS, com ZFS, que tira vantagem de múltiplos cores, precisa de **MUITA RAM**, mas a banda pros discos não precisa ser absurdamente grande. Vamos ver as desvantagens:
 
@@ -81,44 +81,44 @@ Depende de cada nova arquitetura, mas em geral:
 Formato: Ryzen [3/5/7/9] [####] [sufixo]
 
 * Tier (3 / 5 / 7 / 9): performance class.
- 	* Ryzen 3: entry (4–6 cores).
- 	* Ryzen 5: midrange (6–8 cores).
- 	* Ryzen 7: high-end (8–12 cores).
- 	* Ryzen 9: enthusiast (12–16 cores desktop; até 64 cores no Threadripper/EPYC).
+	* Ryzen 3: entry (4–6 cores).
+	* Ryzen 5: midrange (6–8 cores).
+	* Ryzen 7: high-end (8–12 cores).
+	* Ryzen 9: enthusiast (12–16 cores desktop; até 64 cores no Threadripper/EPYC).
 
 * Primeiro Dígito: geração/arquitetura.
- 	* 1 = 1st gen (2017, Zen),
- 	* 5 = 5th gen (Zen 3),
- 	* 7 = 7000 series (Zen 4),
- 	* 9 = 9000 series (Zen 5).
+	* 1 = 1st gen (2017, Zen), 
+	* 5 = 5th gen (Zen 3), 
+	* 7 = 7000 series (Zen 4), 
+	* 9 = 9000 series (Zen 5).
 
 * Dígitos do Meio: modelo dentro da geração. Maior = mais rápido (ex., 7600 vs 7900).
 
 * Sufixos:
- 	* X = higher TDP, higher clocks.
- 	* G = integrated GPU.
- 	* X3D = 3D V-Cache (bom pra games).
- 	* HS / U / HX (mobile) = laptop power targets (U = ultra-low, HS = balanced, HX = high-performance).
+	* X = higher TDP, higher clocks.
+	* G = integrated GPU.
+	* X3D = 3D V-Cache (bom pra games).
+	* HS / U / HX (mobile) = laptop power targets (U = ultra-low, HS = balanced, HX = high-performance).
 
 **Nomenclaturas Intel**
 
 * Formato Antigo (pre-2024): Core i3/i5/i7/i9-#### [sufixo]
- 	* i3 / i5 / i7 / i9 = entrada → alto nível.
+	* i3 / i5 / i7 / i9 = entrada → alto nível.
 * Dígitos:
- 	* Primeiro = geração (e.g. i7-8700 = 8th gen).
- 	* Resto = SKU dentro da geração (8700 vs 8700K).
+	* Primeiro = geração (e.g. i7-8700 = 8th gen).
+	* Resto = SKU dentro da geração (8700 vs 8700K).
 * Sufixos:
- 	* K = desbloqueado (overclockable).
- 	* F = sem iGPU.
- 	* KF = desbloqueado + sem iGPU.
- 	* T = baixa energia.
- 	* H / HK = laptop alta-performance.
- 	* U / Y = ultra-baixa energia.
+	* K = desbloqueado (overclockable). 
+	* F = sem iGPU.
+	* KF = desbloqueado + sem iGPU.
+	* T = baixa energia.
+	* H / HK = laptop alta-performance.
+	* U / Y = ultra-baixa energia.
 
 * Novo Formato (2024+, Meteor Lake / Arrow Lake):
- 	* Core Ultra 5 / 7 / 9 (drops “i”).
- 	* Mesmos tiers: Ultra 5 = midrange, Ultra 9 = top.
- 	* Adiciona sufixos “H/U” pra classe de energia de laptop.
+	* Core Ultra 5 / 7 / 9 (drops “i”).
+	* Mesmos tiers: Ultra 5 = midrange, Ultra 9 = top.
+	* Adiciona sufixos “H/U” pra classe de energia de laptop.
 
 Eu tenho uma "antiga" (ainda muito performática) Ryzen 9 7850X3D que é Zen 4, 16 cores/32 threads, 3D V-Cache que é bom pra jogos. O equivalente mais novo é a **9850X3D**, que é arquitetura mais nova Zen 5 (está pra sair Zen 6).
 
@@ -151,7 +151,6 @@ Vendor ID:                   AuthenticAMD
 De curiosidade, já expliquei isso [neste video](https://akitaonrails.com/2021/05/13/akitando-97-so-precisamos-de-640-kb-de-memoria-16-bits-ate-64-bits/) mas, apesar da arquitetura ser 64-bits, note como endereços de memória são **48 bits**, porque nem existe forma em hardware de conseguir ter tanta RAM pra precisar de 64-bits. Então é mais eficiente economizar transistor e usar um endereço menor.
 
 Também expliquei as nuances de se ter muitos cores e como Cache L3 influencia seu funcionamento no artigo de [GPU Passthrough](https://akitaonrails.com/2023/02/01/akitando-137-games-em-maquina-virtual-com-gpu-passthrough-entendendo-qemu-kvm-libvirt/)
-
 ### Placas-mãe
 
 Esse é outro buraco de coelho desgraçado. Eu mesmo tenho dificuldades de escolher. Cada modelo de CPU tem diversas opções de placa-mãe. Você tem que escolher uma que é compatível com sua CPU (que tem socket que encaixa, na prática) e, de preferência, quando sair a próxima versão de CPU, seja possível fazer upgrade.
@@ -208,18 +207,18 @@ SMBIOS 3.7.0 present.
 
 Handle 0x0002, DMI type 2, 15 bytes
 Base Board Information
- Manufacturer: Gigabyte Technology Co., Ltd.
- Product Name: X670E AORUS XTREME
- Version: x.x
- Serial Number: Default string
- Asset Tag: Default string
- Features:
-  Board is a hosting board
-  Board is replaceable
- Location In Chassis: Default string
- Chassis Handle: 0x0003
- Type: Motherboard
- Contained Object Handles: 0
+	Manufacturer: Gigabyte Technology Co., Ltd.
+	Product Name: X670E AORUS XTREME
+	Version: x.x
+	Serial Number: Default string
+	Asset Tag: Default string
+	Features:
+		Board is a hosting board
+		Board is replaceable
+	Location In Chassis: Default string
+	Chassis Handle: 0x0003
+	Type: Motherboard
+	Contained Object Handles: 0
 ...
 ```
 
@@ -229,7 +228,7 @@ Tem as pequenas coisas também: Windows 11 costuma exigir a existência de um ch
 
 Alguns modelos não suportam overclocking. Se você for um entusiasta de tuning, tem que checar quais modelos suportam. Coisas como **Secure Boot**, é bom ter. Isso qualquer bom modelo tem, mas se estiver querendo escolher uma velha, pra economizar, cheque se tem.
 
-O ideal é ter portas como Thunderbolt 4.0, USB 4.0, mas se tiver pelo menos USB 3 Gen 2, já ajuda. Nem toda USB 3 é igual!! Tem gerações diferentes! Só porque tem porta azul não quer dizer que é veloz. Vou falar disso depois.
+O ideal é ter portas como Thunderbolt 4.0, USB 4.0, mas se tiver pelo menos USB 3 Gen 2, já ajuda. Nem toda USB 3 é igual!! Tem gerações diferentes! Só porque tem porta azul não quer dizer que é veloz. Vou falar disso depois. 
 
 Ideal ter Wi-fi embutido também, pra evitar ter que comprar uma placa ou USB separado. Mas cuidado, a maioria ainda oferece só o obsoleto Wi-Fi 5. Já estamos em **Wi-fi 7**, um Samsung Galaxy moderno já suporta, por exemplo. Mas como sempre, se está acostuma às baixas velocidades dos planos de internet que tem por aí, de fato, até Wi-fi 5 funciona. Mas se quiser transferir grandes arquivos entre seus computadores e celulares, vai querer um Wi-fi 7 mais moderno, no mínimo Wi-fi 6.
 
@@ -256,34 +255,34 @@ SMBIOS 3.7.0 present.
 
 Handle 0x0011, DMI type 16, 23 bytes
 Physical Memory Array
- Location: System Board Or Motherboard
- Use: System Memory
- Error Correction Type: None
- Maximum Capacity: 128 GB
- Error Information Handle: 0x0010
- Number Of Devices: 4
+	Location: System Board Or Motherboard
+	Use: System Memory
+	Error Correction Type: None
+	Maximum Capacity: 128 GB
+	Error Information Handle: 0x0010
+	Number Of Devices: 4
 ...
 Handle 0x0016, DMI type 17, 100 bytes
 Memory Device
- Array Handle: 0x0011
- Error Information Handle: 0x0015
- Total Width: 64 bits
- Data Width: 64 bits
- Size: 48 GB
- Form Factor: DIMM
- Set: None
- Locator: DIMM 1
- Bank Locator: P0 CHANNEL A
- Type: DDR5
- Type Detail: Synchronous Unbuffered (Unregistered)
- Speed: 6000 MT/s
- Manufacturer: CORSAIR
+	Array Handle: 0x0011
+	Error Information Handle: 0x0015
+	Total Width: 64 bits
+	Data Width: 64 bits
+	Size: 48 GB
+	Form Factor: DIMM
+	Set: None
+	Locator: DIMM 1
+	Bank Locator: P0 CHANNEL A
+	Type: DDR5
+	Type Detail: Synchronous Unbuffered (Unregistered)
+	Speed: 6000 MT/s
+	Manufacturer: CORSAIR
 ...
 ```
 
 Isso vai listar informações de cada pente de memória conectado ao barramento da placa-mãe. Com esse output (que está cortado pra não ficar longo demais) dá pra concluir que eu tenho 2 pentes de memória, cada um com **48 GB** e **6000 MT/s** de velocidade.
 
-Eles são **Corsair Vengeance**, não-ECC, dando um total de **96 GB** de RAM DDR 5. Eu poderia colocar 128 GB ou mais, mas até hoje nunca consegui saturar esse tanto de memória, então vai aguentar assim por muito tempo ainda.
+Eles são **Corsair Vengeance**, não-ECC, dando um total de **96 GB** de RAM DDR 5. Eu poderia colocar 128 GB ou mais, mas até hoje nunca consegui saturar esse tanto de memória, então vai aguentar assim por muito tempo ainda. 
 
 ![vengeance](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/20250914022843_corsair-vengeance-rgb-ddr5-32gb-2x16gb-ddr5-6000-cl36-36-36-76-135v-amd-expo-intel-xmp-grey.webp)
 
@@ -321,9 +320,9 @@ No mundo normal de computação, nós medimos dados na base 2. Portanto 2^10 = 1
 
 Qualquer programador iniciante entende isso. Mas a população em geral não, então todo fabricante de HDs, SSD, NVME e qualquer tipo de "storage" resolveu mudar tudo e dizer o seguinte:
 
-* 1 KB = 1000 bytes
-* 1 MB = 1000^2 = 1.000.000 bytes
-* 1 GB = 1000^3 = 1.000.000.000 bytes
+- 1 KB = 1000 bytes 
+- 1 MB = 1000^2 = 1.000.000 bytes
+- 1 GB = 1000^3 = 1.000.000.000 bytes
 
 E a unidade correta, que seria KILOBYTE ou MEGABYTE eles renomearam pra essa coisa **HORRENDA** que é "KIBI-BYTE" ou "MIBI-BYTE" ou "GIBI-BYTE". E eu só tenho a dizer:
 
@@ -374,7 +373,7 @@ Vamos entender mais na prática:
 
 Entenda que essas velocidades são pra leitura **sequencial** de arquivos grandes e não pra leituras ou escritas **aleatórias** de arquivos pequenos. A velocidade diminui DRAMATICAMENTE em uso do dia a dia de verdade com arquivos pequenos.
 
-Mesmo em 2025 ainda não é comum NVMEs PCI 5.0, todo mundo ainda usa **NVMEs PCIe 4.0**, portanto a velocidade máxima que se encontra hoje é na faixa dos 7 GB/s, mais comum perto dos 5 GB/s, que são os Samsung 980 PRO / 990 PRO, WD Black SN850X, Crucial P5 Plus / P3 Plus ou similares.
+Mesmo em 2025 ainda não é comum NVMEs PCI 5.0, todo mundo ainda usa **NVMEs PCIe 4.0**, portanto a velocidade máxima que se encontra hoje é na faixa dos 7 GB/s, mais comum perto dos 5 GB/s, que são os Samsung 980 PRO / 990 PRO, WD Black SN850X, Crucial P5 Plus / P3 Plus ou similares. 
 
 Mesmo com uma CPU e placa-mãe que suporte PCIe 5.0, você ainda vai plugar NVME PCIe 4.0 (não tem problema, porque são retro-compativeis). Mas não espere conseguir essa faixa acima de 10 GB/s sem pagar MUITO CARO. Simplesmente não compensa.
 
@@ -439,7 +438,7 @@ Na prática, procure sempre **SDXC**, **UHS-II** (ou UHS-I que é mais comum), *
 
 ![samsung microsd](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/20250913190622_microsd.jpeg)
 
-Esse da foto da Samsung tem capacidade de 512GB, classe SDXC, barramento UHS-I (até 90 MB/s), velocidade U3 (30MB/s) (é esse ícone de um 3 dentro do U na imagem). Feito pra funcionar bem em câmeras ou fones ou handhelds da vida. Menos que isso é **ruim**.
+Esse da foto da Samsung tem capacidade de 512GB, classe SDXC, barramento UHS-I (até 90 MB/s), velocidade U3 (30MB/s) (é esse ícone de um 3 dentro do U na imagem). Feito pra funcionar bem em câmeras ou fones ou handhelds da vida. Menos que isso é **ruim**. 
 
 Outro exemplo:
 
@@ -448,7 +447,6 @@ Outro exemplo:
 Agora você consegue ler. O Samsung EVO Select de 512GB, SDXC, U3, A2, V30 e o da direita SanDisk Ultra 128GB SDXC, U1, A1, C10. Agora você sabe o que procurar e o que isso significa.
 
 Mais importante é Speed Rating, muitos são classe C como C10 acima. Mas se o uso for pra gravar video em boa qualidade, sem engasgar, procure classe V como V90!
-
 ### USB vs Thunderbolt
 
 Pra piorar a confusão de marketagem ainda tem USB e Thunderbolt. Vamos entender: primeiro de tudo ter conector USB-C não significa nada. USB-C é padrão do conector físico do cabo, só isso. Os dados que trafegam nela usam protocolos, e existem vários.
@@ -485,56 +483,55 @@ Fora isso, não é tão comum em PCs mas é bem comum em Macs, são as portas **
 ![thunderbolt](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/20250914024235_7e05-mobo2.jpg)
 
 * **Thunderbolt 1** (2011)
- 	* Baseado em PCIe 2.0 ×4 + DisplayPort 1.1a.
- 	* Conector: Mini DisplayPort.
- 	* Banda: 10 Gb/s (bi-directional).
- 	* Maior parte é Apple + algumas placas Intel.
+	* Baseado em PCIe 2.0 ×4 + DisplayPort 1.1a.
+	* Conector: Mini DisplayPort.
+	* Banda: 10 Gb/s (bi-directional).
+	* Maior parte é Apple + algumas placas Intel.
 
 * **Thunderbolt 2** (2013)
- 	* Conector: Mini DisplayPort.
- 	* Canais agregados → 20 Gb/s.
- 	* Ainda PCIe 2.0, DisplayPort 1.2.
- 	* Usado na era do MacBook Pro / Mac Pro.
+	* Conector: Mini DisplayPort.
+	* Canais agregados → 20 Gb/s.
+	* Ainda PCIe 2.0, DisplayPort 1.2.
+	* Usado na era do MacBook Pro / Mac Pro.
 
 * **Thunderbolt 3** (2015)
- 	* Conector: USB-C (primeiro Thunderbolt a usar).
- 	* Banda: 40 Gb/s (PCIe 3.0 ×4 + DP 1.2).
- 	* Suporte completo a USB 3.1/3.2.
- 	* Largamente adotado em laptops, docks, eGPUs.
- 	* Requer certificação; nem toda porta USB-C = Thunderbolt 3.
+	* Conector: USB-C (primeiro Thunderbolt a usar).
+	* Banda: 40 Gb/s (PCIe 3.0 ×4 + DP 1.2).
+	* Suporte completo a USB 3.1/3.2.
+	* Largamente adotado em laptops, docks, eGPUs.
+	* Requer certificação; nem toda porta USB-C = Thunderbolt 3.
 
 * **Thunderbolt 4** (2020)
- 	* Conector: USB-C.
- 	* Ainda máximo de 40 Gb/s (como TB3), mas menos requerimentos mínimos:
-  		* Mínima banda de PCIe 3.0 ×4 garantida.
-  		* Suporte pra monitors duplos 4K ou um 8K.
-  		* Carregamento mandatório + suporte a "wake from sleep".
- 	* Mais consistente entre diversos dispositivos.
- 	* Suporte nativo no Intel Tiger Lake+, AMD Ryzen 7000+ (alguns).
+	* Conector: USB-C.
+	* Ainda máximo de 40 Gb/s (como TB3), mas menos requerimentos mínimos:
+		* Mínima banda de PCIe 3.0 ×4 garantida.
+		* Suporte pra monitors duplos 4K ou um 8K.
+		* Carregamento mandatório + suporte a "wake from sleep".
+	* Mais consistente entre diversos dispositivos.
+	* Suporte nativo no Intel Tiger Lake+, AMD Ryzen 7000+ (alguns).
 
 * **Thunderbolt 5** (anúncio em 2023, entregue em 2024/25)
- 	* Conector: USB-C.
- 	* Banda: 80 Gb/s bi-direcional, 120 Gb/s modo assimétrico (pra monitores).
- 	* Usa tunelamento de PCIe 4.0.
- 	* DisplayPort 2.1, suporta dual 8K ou triplo 4K.
- 	* Ideal pra external GPUs, docks de alta-banda, monitores de workstation.
+	* Conector: USB-C.
+	* Banda: 80 Gb/s bi-direcional, 120 Gb/s modo assimétrico (pra monitores).
+	* Usa tunelamento de PCIe 4.0.
+	* DisplayPort 2.1, suporta dual 8K ou triplo 4K.
+	* Ideal pra external GPUs, docks de alta-banda, monitores de workstation.
 
 * Como Thunderbolt se relaciona com USB / USB4
- 	* Thunderbolt 3 → formou a base pro USB4.
- 	* USB4 = padrão aberto, 20–40 Gb/s, compartilha muito do protocolo Thunderbolt.
- 	* USB4 v2 (especificação de 2022, saindo em 2025) = até 80–120 Gb/s, efetivamente equivalente a Thunderbolt 5.
- 	* Muitas novas portas são “compatíveis com USB4 / Thunderbolt,” mas nem todos garantem todas as funcionalidades de TB a menos que seja certificado.
+	* Thunderbolt 3 → formou a base pro USB4.
+	* USB4 = padrão aberto, 20–40 Gb/s, compartilha muito do protocolo Thunderbolt.
+	* USB4 v2 (especificação de 2022, saindo em 2025) = até 80–120 Gb/s, efetivamente equivalente a Thunderbolt 5.
+	* Muitas novas portas são “compatíveis com USB4 / Thunderbolt,” mas nem todos garantem todas as funcionalidades de TB a menos que seja certificado.
 
 Conector Thunderbolt, a partir do 3 se não me engano é igual USB-C mas tem o símbolo de "raio" nele pra diferenciar.
 
 ![thunderbolt connector](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/20250914024546_screen_shot_2022-11-30_at_2.02.19_pm.webp)
 
-Como podemos ver, não basta ter uma porta azul ou porta USB-C. Tem que ler a especificação no manual da placa-mãe que escolher. No geral, a maioria das placas-mãe modernas tem pelo menos USB 3.2 Gen 2 ou até USB 4. Pra Thunderbolt o buraco é mais embaixo, a maioria não tem.
+Como podemos ver, não basta ter uma porta azul ou porta USB-C. Tem que ler a especificação no manual da placa-mãe que escolher. No geral, a maioria das placas-mãe modernas tem pelo menos USB 3.2 Gen 2 ou até USB 4. Pra Thunderbolt o buraco é mais embaixo, a maioria não tem. 
 
 Thunderbolt é importante se quiser eGPU ou storage externo pra coisas como edição de video (DAS), como CalDigit TS5 Plus, Sonnet Echo 13 ou então ligar múltiplos monitores 4K.
 
 ![thunderbolt storage](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/20250914024434_Best-Thunderbolt-USB-C-Docks-Docking-Stations-MacBook-Mac.webp)
-
 ### GPUs
 
 Primeiro: GPU é o que chamamos o chip principal dentro de uma "placa-gráfica" que é o produto completo que tem a GPU, VRAM, cooler, placa-mãe e outros componentes.
@@ -548,9 +545,9 @@ Todo mundo chama tudo só de "GPU" então meio que tanto faz, mas via de regra v
 ![rx 7900 xtx](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/20250913233552_RX7900XTX-O24G-B_0.jpg)
 
 * Série:
- 	* RX 5000 (Navi, 2019) – lançamento de PCIe 4.0, midrange (RX 5700 XT).
- 	* RX 6000 (RDNA2, 2020) – ray tracing, Infinity Cache, competitivo com RTX 3000.
- 	* RX 7000 (RDNA3, 2022) – design de "chiplet", alta performance por /watt, RX 7900 XTX vs RTX 4080.
+	* RX 5000 (Navi, 2019) – lançamento de PCIe 4.0, midrange (RX 5700 XT).
+	* RX 6000 (RDNA2, 2020) – ray tracing, Infinity Cache, competitivo com RTX 3000.
+	* RX 7000 (RDNA3, 2022) – design de "chiplet", alta performance por /watt, RX 7900 XTX vs RTX 4080.
 * Nomenclatura: RX [Series][Model]. quanto maior o número = mais novo, mais rápido. XT = variante mais rápida.
 * Vantagens: bom custo-benefício, mais VRAM que NVIDIA na mesma classe, drivers abertos no Linux.
 * Desvantagens: ray tracing mais lento que NVIDIA, mais fraco pra AI/compute.
@@ -560,8 +557,8 @@ Todo mundo chama tudo só de "GPU" então meio que tanto faz, mas via de regra v
 ![Arc a770](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/20250913233641_placa-de-video-intel-arc-a770-phantom-gaming-asrock-16gb-gddr6-rgb-polychrome-sync-90-ga4kzz-00uanf_1696943713_gg.webp)
 
 * Série:
- 	* Arc A300/A500/A700 (Alchemist, 2022) – primeira geração.
- 	* A380 = entrada, A770 = midrange pra um pouco mais alto.
+	* Arc A300/A500/A700 (Alchemist, 2022) – primeira geração.
+	* A380 = entrada, A770 = midrange pra um pouco mais alto.
 * Futuro: Battlemage (2025), depois Celestial.
 * Vantagens: competitivo em preço, boa engine de mídia (encode/decode AV1), drivers melhorando.
 * Desvantagens: drivers imaturos(especialmente em Linux), opções high-end limitadas, sem CUDA/AI.
@@ -571,15 +568,15 @@ Todo mundo chama tudo só de "GPU" então meio que tanto faz, mas via de regra v
 ![RTX 4090](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/20250913233742_251313_1-17459188343668033.jpeg)
 
 * Série (recente):
- 	* GTX 10 (Pascal, 2016) – enorme salto de eficiência (GTX 1080).
- 	* RTX 20 (Turing, 2018) – introduziu ray tracing (RTX 2080 Ti).
- 	* RTX 30 (Ampere, 2020) – grande salto, popular (RTX 3080, 3090).
- 	* RTX 40 (Ada Lovelace, 2022) – melhor em ray tracing, DLSS 3 frame generation, RTX 4090 é o topo de linha.
+	* GTX 10 (Pascal, 2016) – enorme salto de eficiência (GTX 1080).
+	* RTX 20 (Turing, 2018) – introduziu ray tracing (RTX 2080 Ti).
+	* RTX 30 (Ampere, 2020) – grande salto, popular (RTX 3080, 3090).
+	* RTX 40 (Ada Lovelace, 2022) – melhor em ray tracing, DLSS 3 frame generation, RTX 4090 é o topo de linha.
 * Naming: GTX/RTX + series + model (higher = better). Ti/SUPER = faster variant.
 * Strengths: best ray tracing, DLSS, CUDA/AI support, most mature ecosystem.
 * Weaknesses: high cost, VRAM sometimes lower than AMD at same tier.
 
-Eu sou enviesado pra opinar sobre gráficos porque sou time verde faz anos. Eu tive a GTX 1080, RTX 3090, RTX 4060 e RTX 4090. Esses últimos dois ainda uso hoje. A 4060 pra games é mais que suficiente até 1440p na maioria e até 4K e em muitos menos pesados.
+Eu sou enviesado pra opinar sobre gráficos porque sou time verde faz anos. Eu tive a GTX 1080, RTX 3090, RTX 4060 e RTX 4090. Esses últimos dois ainda uso hoje. A 4060 pra games é mais que suficiente até 1440p na maioria e até 4K e em muitos menos pesados. 
 
 Editei a maioria dos videos do meu canal com GTX 1080 (enquanto eu filmava em 1080p) e depois migrei pra RTX 3090 quando passei a gravar em 4K com minha câmera **Sony A7S III**. Ela seria mais que suficiente ainda hoje, mas resolvi migrar pra RTX 4090.
 
@@ -591,9 +588,9 @@ Vamos ver as GPUs mais modernas:
 
 **NVIDIA — GeForce RTX 50 (Blackwell, 2025)**
 
-* Key: PCIe 5.0, GDDR7, DLSS 4 / Multi-Frame Generation, DisplayPort 2.1b (UHBR20).
+* Key: PCIe 5.0, GDDR7, DLSS 4 / Multi-Frame Generation, DisplayPort 2.1b (UHBR20). 
 * RTX 5090: 32 GB GDDR7, 512-bit bus, arquitetura Blackwell.
-* RTX 5080: Blackwell + GDDR7 + DLSS 4.
+* RTX 5080: Blackwell + GDDR7 + DLSS 4. 
 
 ![RTX 5090](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/20250913234020_gv-n5090aorus-m-ice-32gd9.jpg)
 
@@ -607,7 +604,7 @@ Vamos ver as GPUs mais modernas:
 
 ![B570](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/20250913234137_placa-de-video-asrock-intel-arc-b570-challenger-oc-10gb-gddr6-xess-ray-tracing-b570-cl-10go_222549.jpg)
 
-* B580/B570); foco no valor, AV1 ainda forte, drivers melhorando.
+* B580/B570); foco no valor, AV1 ainda forte, drivers melhorando. 
 
 **Pontos Importantes**
 
@@ -623,19 +620,19 @@ Custo-benefício e suporte em Linux é melhor em AMD. Se tiver dinheiro, RX sér
 Em games, interessa muito **DLSS** (Deep Learning Super Sampling) que são modelos de IA especializados em tratar frames de games.
 
 * RTX 20-series (Turing, 2018)
- 	* Suporta DLSS 1.0 (primeira geração, neural net por jogo - que vem nas atualizações de drivers, qualidade de imagem mais ou menos).
- 	* Depois ganhou DLSS 2 via atualização de driver.
+	* Suporta DLSS 1.0 (primeira geração, neural net por jogo - que vem nas atualizações de drivers, qualidade de imagem mais ou menos).
+	* Depois ganhou DLSS 2 via atualização de driver.
 * RTX 30-series (Ampere, 2020)
- 	* Suporta DLSS 2 completo (reconstrução de imagem mais nítida, estabilidade temporal).
- 	* Suporta DLSS 3 Frame Generation (frames interpolados por IA), mas somente na série 40 tem Optical Flow Accelerator v2, então série 30 não consegue frame generation.
+	* Suporta DLSS 2 completo (reconstrução de imagem mais nítida, estabilidade temporal).
+	* Suporta DLSS 3 Frame Generation (frames interpolados por IA), mas somente na série 40 tem Optical Flow Accelerator v2, então série 30 não consegue frame generation.
 * RTX 40-series (Ada Lovelace, 2022)
- 	* Suporta DLSS 2.
- 	* Suporta DLSS 3 Frame Generation (insere frames de IA → maior FPShigher FPS, pequeno custo em latência).
- 	* Adiciona DLSS 3.5 Ray Reconstruction (IA substitui denoiser → melhor qualidade de ray tracing).
+	* Suporta DLSS 2.
+	* Suporta DLSS 3 Frame Generation (insere frames de IA → maior FPShigher FPS, pequeno custo em latência).
+	* Adiciona DLSS 3.5 Ray Reconstruction (IA substitui denoiser → melhor qualidade de ray tracing).
 * RTX 50-series (Blackwell, 2025)
- 	* Suporta DLSS 4 (Multi-Frame Generation).
- 	* Melhor interpolação de frame com redução de artefatos de latência comparado a DLSS 3.
- 	* Constrói em cima de DLSS 3.5 (Ray Reconstruction ainda incluso).
+	* Suporta DLSS 4 (Multi-Frame Generation).
+	* Melhor interpolação de frame com redução de artefatos de latência comparado a DLSS 3.
+	* Constrói em cima de DLSS 3.5 (Ray Reconstruction ainda incluso).
 
 * DLSS 1 → Prova de conceito, qualidade inconsistente, obsoleto.
 * DLSS 2 → Per-pixel temporal upscaling, imagem nítida, artefatos mínimos, muito usado ainda hoje.
@@ -646,26 +643,26 @@ Em games, interessa muito **DLSS** (Deep Learning Super Sampling) que são model
 AMD tem o equivalente a DLSS na forma de FSR, **FidelityFX Super Resolution**. Em Resumo:
 
 * FSR 1.0 (2021)
- 	* Spatial upscaler (per-frame, sem motion vectors).
- 	* Suporte a várias GPUs (funciona em NVIDIA, Intel, consoles).
- 	* Vantagem: simples, universal.
- 	* Desvantagem: imagem soft, shimmering.
+	* Spatial upscaler (per-frame, sem motion vectors).
+	* Suporte a várias GPUs (funciona em NVIDIA, Intel, consoles).
+	* Vantagem: simples, universal.
+	* Desvantagem: imagem soft, shimmering.
 
 * FSR 2.0 (2022)
- 	* Temporal upscaler (usa motion vectors + histórico).
- 	* Mais perto de DLSS 2 em qualidade.
- 	* Suportado em AMD + NVIDIA + Intel GPUs.
- 	* Mais pesado, mas leve comparado com DLSS.
+	* Temporal upscaler (usa motion vectors + histórico).
+	* Mais perto de DLSS 2 em qualidade.
+	* Suportado em AMD + NVIDIA + Intel GPUs.
+	* Mais pesado, mas leve comparado com DLSS.
 
 * FSR 3.0 (2023)
- 	* Adiciona Frame Generation (interpolação sem IA).
- 	* Roda em AMD e NVIDIA.
- 	* Vantagem: mais FPS mesmo em GPUs mais velhas.
- 	* Desvantagem: mais latência de input do que Optical Flow + Reflex combo de DLSS 3.
+	* Adiciona Frame Generation (interpolação sem IA).
+	* Roda em AMD e NVIDIA.
+	* Vantagem: mais FPS mesmo em GPUs mais velhas.
+	* Desvantagem: mais latência de input do que Optical Flow + Reflex combo de DLSS 3.
 
 * FSR 3.1 (2024)
- 	* Separa Frame Gen de Upscaling → pode usar FG com outros upscalers (DLSS/XeSS).
- 	* Lida melhor com artefatos (ghosting, shimmering).
+	* Separa Frame Gen de Upscaling → pode usar FG com outros upscalers (DLSS/XeSS).
+	* Lida melhor com artefatos (ghosting, shimmering).
 
 Intel tem XeSS mas é bem mais pobre que FSR (que parece que é open source, por isso também suporta outras GPUs) e DLSS (que é proprietário e só funciona em NVIDIA RTX).
 
@@ -673,7 +670,7 @@ NVIDIA série GTX pra trás não suporta nada disso e são considerados obsoleto
 
 GPU de Notebook é outra coisa que a marketagem fode. Por exemplo, você vai encontrar notebooks que dizem ter "RTX 4060", porém tem menos CUDA cores, tem menos clock (limitação térmica, não tem como resfriar dentro de um notebook), TGP que é o total de energia consumida que vai ser faixa de 35W a no máximo 140W, mas sempre fica mais baixo. Em desktop uma 4060 iria de 115 a 160W. Vai ter menos VRAM (8GB ou menos). Performance geral vai ser de 30% a 50% mais lento que modelo desktop de mesmo nome.
 
-Então uma **RTX 4060 mobile** vai ser mais equivalente a uma **RTX 3050 Ti** ou **RTX 3060**.
+Então uma **RTX 4060 mobile** vai ser mais equivalente a uma **RTX 3050 Ti** ou **RTX 3060**. 
 
 Vamos comparar alguns modelos da NVIDIA (as duas que eu tenho e a mais nova de todas):
 
@@ -698,8 +695,8 @@ Vamos comparar alguns modelos da NVIDIA (as duas que eu tenho e a mais nova de t
 **RTX 5090 (Blackwell, 2025)**
 
 * Architecture: GB202 (Blackwell)
-* CUDA cores: ~24,576
-* Base / Boost: ~2.5+ GHz
+* CUDA cores: ~24,576 
+* Base / Boost: ~2.5+ GHz 
 * VRAM: 32 GB GDDR7, 512-bit bus
 * Bandwidth: ~1.5–1.6 TB/s
 * TGP: ~450–500 W (varies)
@@ -739,7 +736,7 @@ Digamos que queira colocar uma RTX 4070 num gabinete mini-ITX. Vai precisar de u
 
 **CUIDADO**
 
-Os cabos que vem **junto** com a PSU são específicas pra PSUs da **mesma marca**.
+Os cabos que vem **junto** com a PSU são específicas pra PSUs da **mesma marca**. 
 
 > **Não misture cabos diferentes com marcas diferentes!!!!**
 
@@ -749,7 +746,7 @@ Embora os encaixes pareçam o mesmo, elas podem danificar seus componentes!! Nã
 
 ### Coolers
 
-Se estiver gastando bastante pra pegar os topos de linha de CPU, GPU, placa-mãe, PSU, não pode economizar em coolers.
+Se estiver gastando bastante pra pegar os topos de linha de CPU, GPU, placa-mãe, PSU, não pode economizar em coolers. 
 
 Sabia que a **maior parte** da energia que seu PC consome é dissipado em forma de calor? Virtualmente tudo. O PC que falei que consome de 750 a 850W? Vai tudo pro ar em forma de calor. Somente uma **pequena fração** é convertida em outras formas como luz (LEDs), som (speakers), energia cinética (ventoinhas).
 
@@ -783,7 +780,7 @@ Eu, pessoalmente, sempre confiei na **Thermal Grizzly**. Sempre usei a Kryonaut.
 
 ![thermal grizzly](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/20250914005118_3393159-n1.webp)
 
-Outras boas opções são a **Arctic MX-6**, **Corsair XTM60 Performance**, **Thermalright TF7 12.8 W/mK**, **Cooler Master Cryofuze 5** ou **ID-Cooling Frost X45**. Qualquer uma delas vai ser boa.
+Outras boas opções são a **Arctic MX-6**, **Corsair XTM60 Performance**, **Thermalright TF7 12.8 W/mK**, **Cooler Master Cryofuze 5** ou **ID-Cooling Frost X45**. Qualquer uma delas vai ser boa. 
 
 Passe na CPU, espalhe com uma espátula de plástico pela área toda e é isso. Esquece as mandingas de colocar pasta em "X" ou qualquer outro formato. Só espalha igualmente e pronto, talvez um pouquinho mais no meio.
 
@@ -812,7 +809,6 @@ A idéia é diminuir a voltagem que vai pra CPU/GPU, evitar que ele bata no teto
 É um processo de tentativa e erro, depende do firmware, modelo da CPU, etc. Mas se você sente esse problema no seu notebook antigo, essa é uma solução.
 
 Eu precisei usar muito isso na época dos Macbook Intel ou Dell XPS da era de 2016. Cuidado com notebooks com reputação de não ter boa solução térmica (que esquenta demais).
-
 ### Mini-PCs
 
 Se achou tudo isso complicado, e acha notebooks muito caros, existe uma outra boa alternativa: **Mini-PCs**.
@@ -835,7 +831,7 @@ Eu tenho um segundo mini-PC, o **Minisforum EliteMini UM780 XTX**:
 
 Esse é mais potente, tem **AMD Ryzen 7 8840U** (categoria similar a um **Rog Ally X** de primeira geração, o de segunda é Z1 Extreme), 32GB, 1TB NVME PCIe 4.0, tem USB 4 (não tem Thunderbolt porque é exclusividade da Intel, Apple licencia). Mas pra mim o mais importante é que é um dos poucos PCs que tem saída **OCulink**.
 
-OCulink é uma porta que conecta direto no barramento PCIe. Diferente de USB ou Thunderbolt que tem overhead do protocolo, OCulink é como se eu estivesse espetando uma placa direto no slot da placa-mãe.
+OCulink é uma porta que conecta direto no barramento PCIe. Diferente de USB ou Thunderbolt que tem overhead do protocolo, OCulink é como se eu estivesse espetando uma placa direto no slot da placa-mãe. 
 
 Quando saiu o **SteamDeck** talvez vocês já tenham visto videos de pessoas fazendo mod e conseguindo conectar uma GPU externa nele. Pra fazer isso a GPU precisa se conectar direto na PCIe e a **gambiarra** foi usar o slot de NVME pra isso. Porque NVME também é um slot M2 que é PCIe, como já expliquei lá em cima.
 
@@ -898,6 +894,10 @@ Achou tudo isso demais? Isso foi só a ponta do iceberg. Não se preocupe em ace
 
 > **Vou repetir: o melhor PC é aquele que você pode comprar!**
 
-Meu primeiro PC foi um 286 de 1MB de RAM no fim dos anos 80. Desde então passei por **vários** PCs. Numa era antes da Internet, eu cansei de ler classificados nos jornais pra pesquisar preços, eu ia bater perna na rua Santa Ifigênia, em São Paulo, que era a meca dos componentes eletrônicos. No começo da Internet eu cansei de fuçar ecomerces mais ou menos, componentes da Ásia via ums LikSang da vida.
+Meu primeiro PC foi um 286 de 1MB de RAM no fim dos anos 80. Desde então passei por **vários** PCs. Numa era antes da Internet, eu cansei de ler classificados nos jornais pra pesquisar preços, eu ia bater perna na rua Santa Ifigênia, em São Paulo, que era a meca dos componentes eletrônicos. No começo da Internet eu cansei de fuçar ecomerces mais ou menos, componentes da Ásia via ums LikSang da vida. 
 
-Tive vários PCs, vários notebooks. Por isso eu tenho uma boa noção hoje, com quase 50 anos e como podem ver, eu continuo atuali
+Tive vários PCs, vários notebooks. Por isso eu tenho uma boa noção hoje, com quase 50 anos e como podem ver, eu continuo atualizado. Você de 20 tem que ter vergonha de ter preguiça. Isso tudo leva tempo, mas precisa começar não tendo medo de **fuçar** e **errar**. 
+
+Eu já queimei componentes, já dei curto, já fiz gambiarra, já formatei HD errado. Tudo que se pode imaginar que dá pra fazer errado, eu já fiz, por isso sei que é errado. E eu sei ler, li o que os outros faziam, e tentava do meu jeito. Montar PC é algo que você vai fazer a vida toda. Quanto mais cedo tirar a preguiça e aprender os componentes, menos problemas vai ter no futuro.
+
+Ser o "melhor programador" significa aprender a tirar o máximo que seu hardware consegue entregar e isso significa aprender a tunar cada componente e OS até extrair tudo dele. Foi assim que eu mais aprendi sobre computação: com hardware fraco. Ter dinheiro e comprar o mais caro só significa que você não vai aprender nada além de reclamar. E reclamar não tem valor.
