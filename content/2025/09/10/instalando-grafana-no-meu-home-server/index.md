@@ -165,7 +165,7 @@ Agora praticamente acabou. Podemos checar se o Prometheus está funcionando e in
 
 Grafana consegue consolidar dados de dezenas de fontes diferentes, Prometheus é só um deles. Em uma infra maior e mais complicada, essa lista estaria enorme.
 
-Pra montar Dashboards, dá pra ir do zero e montar manualmente widget a widget, mas é mais fácil importar dashboards que já existem. Pra isso é só clicar na lupa lá no topo, na caixa de procura e escoher a opção "Import dashboards":
+Pra montar Dashboards, dá pra ir do zero e montar manualmente widget a widget, mas é mais fácil importar dashboards que já existem. Pra isso é só clicar na lupa lá no topo, na caixa de procura e escolher a opção "Import dashboards":
 
 ![import dashboards menu](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/20250910160509_screenshot-2025-09-10_16-04-59.png)
 

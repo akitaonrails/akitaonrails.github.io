@@ -83,7 +83,7 @@ Desta vez o importante é term "Action" como "Allow" e adicionar a Rule "Emails"
 
 ### 6. Criando nova Applications
 
-Agora podemos criar uma nova applicaton no Zero Trust:
+Agora podemos criar uma nova application no Zero Trust:
 
 ![Applications](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/screenshot-2025-09-10_01-22-51.png)
 
@@ -91,7 +91,7 @@ Clique em "Add an Application" e escolha type sendo **"Self-Hosted"**:
 
 ![Application Basic Information](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/screenshot-2025-09-10_01-26-20.png)
 
-Entendi que cada application suporta no máximo 5 hostnames. Eu tenho bem mais que isso então vou ter que criar mais de uma application. A configuração em todas é a mesma. Em "Basic Information" só cadastrei os subdominios de cada container que quero proteger.
+Entendi que cada application suporta no máximo 5 hostnames. Eu tenho bem mais que isso então vou ter que criar mais de uma application. A configuração em todas é a mesma. Em "Basic Information" só cadastrei os subdomínios de cada container que quero proteger.
 
 ![Policies](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/screenshot-2025-09-10_01-28-37.png)
 

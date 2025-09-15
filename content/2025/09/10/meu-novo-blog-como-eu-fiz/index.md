@@ -109,7 +109,6 @@ tags:
   - ruby
 draft: false
 ---
-
 ....
 ```
 
@@ -121,7 +120,7 @@ ruby generate_index.rb
 cd ..
 ```
 
-Isso atualiza a página principal com o link pro novo artigo no topo.  Pra garantir que está tudo certo, posso checar subindo o servidor local:
+Isso atualiza a página principal com o link pro novo artigo no topo. Pra garantir que está tudo certo, posso checar subindo o servidor local:
 
 ```bash
 ❯ hugo server --buildDrafts --disableFastRender
@@ -269,7 +268,7 @@ Pago zero dólares e ainda aprendi algo novo. Por isso essas coisas são diverti
 
 Pra converter os artigos do meu blog antigo pro Hugo, acabei fazendo alguns scripts de correção. Eles ainda estão no repositório como `content/fix_*.rb`. Não precisa saber pra que eles servem, mas estão lá caso queiram fuçar. O mais importante era manter as URIs iguais eram no blog anterior pro Google continuar achando corretamente.
 
-O único que reamente interessa é o `generate_index.rb`:
+O único que realmente interessa é o `generate_index.rb`:
 
 ```ruby
 require 'yaml'
@@ -547,7 +546,7 @@ satty --filename - \
 
 Na prática, troquei o `hyprshot` pelo [**grim**](https://github.com/emersion/grim), que permite capturar foto de tela de Wayland (cuidado que tem várias ferramentas que só funcionam em X11, Omarchy é Hyprland, portanto, Wayland).
 
-Além disso o Omarchy não tem opção pra tirar foto de tela com **timer**. Isso é útil quando quero tirar foto de um menu aberto com ítem selecionado. Se usar o jeito normal com tecla Print-Screen ou usando o menu do Omarchy, o menu que eu tinha aberto pode fechar antes de conseguir a foto de tela. A solução é um timer.
+Além disso o Omarchy não tem opção pra tirar foto de tela com **timer**. Isso é útil quando quero tirar foto de um menu aberto com item selecionado. Se usar o jeito normal com tecla Print-Screen ou usando o menu do Omarchy, o menu que eu tinha aberto pode fechar antes de conseguir a foto de tela. A solução é um timer.
 
 E com `grim` é fácil, via linha de comando mesmo posso fazer:
 
@@ -559,7 +558,7 @@ Em Wayland, dois monitores são como se fossem uma única tela gigante, então p
 
 ![chatgpt](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/20250910150146_screenshot-2025-09-10_15-01-32.png)
 
-Agora  tenho uma forma simples de tirar fotos de tela e enviar direto pro S3, direto do Nautilus, e conseguindo tirar uma foto de tela como esta:
+Agora tenho uma forma simples de tirar fotos de tela e enviar direto pro S3, direto do Nautilus, e conseguindo tirar uma foto de tela como esta:
 
 ![Pinta](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/20250910144429_nautilus-script.png)
 
