@@ -22,7 +22,7 @@ Este post não tem nada a ver diretamente com Omarchy mas resolvi incluir na [me
 Toda vez que fizer `git push` pra um repositório seu, ele vai pedir a passphrase dessa chave:
 
 ```bash
-❯ git puss origin master
+❯ git push origin master
 Enter passphrase for key '/home/akitaonrails/.ssh/id_ed25519':
 ```
 
