@@ -26,7 +26,7 @@ Find.find('content/.') do |path|
         front = YAML.safe_load(fm_lines.join)
         if front && front['title'] && front['date']
           date = begin
-            Date.parse(front['date'].to_s)
+            DateTime.parse(front['date'].to_s)
           rescue StandardError
             nil
           end
