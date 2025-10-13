@@ -4,11 +4,11 @@ title: AkitaOnRails's Blog
 
 ## 2025 - September
 
-- [Coisas que "Iniciantes" Ignoram sobre PCs](2025/14/coisas-que-iniciantes-ignoram-sobre-pcs/)
-- [Tudo que Precisa Saber Sobre Retro-Gaming](2025/14/tudo-que-precisa-saber-sobre-retro-gaming/)
-- [Omarchy 2.0 - Básico de LazyVim](2025/12/omarchy-2-0-basico-de-lazyvim/)
-- [Omarchy 2.0 - Indicado pra Iniciantes?](2025/12/omarchy-2-0-indicado-pra-iniciantes/)
-- [Omarchy 2.0 - Instale com a ISO do Omarchy](2025/12/omarchy-2-0-instale-com-a-iso-do-omarchy/)
+- [Coisas que "Iniciantes" Ignoram sobre PCs](2025/09/14/coisas-que-iniciantes-ignoram-sobre-pcs/)
+- [Tudo que Precisa Saber Sobre Retro-Gaming](2025/09/14/tudo-que-precisa-saber-sobre-retro-gaming/)
+- [Omarchy 2.0 - Básico de LazyVim](2025/09/12/omarchy-2-0-basico-de-lazyvim/)
+- [Omarchy 2.0 - Indicado pra Iniciantes?](2025/09/12/omarchy-2-0-indicado-pra-iniciantes/)
+- [Omarchy 2.0 - Instale com a ISO do Omarchy](2025/09/12/omarchy-2-0-instale-com-a-iso-do-omarchy/)
 - [Instalando Grafana no meu Home Server](2025/09/10/instalando-grafana-no-meu-home-server/)
 - [Meu Novo Blog - Como Eu Fiz](2025/09/10/meu-novo-blog-como-eu-fiz/)
 - [Omarchy 2.0 - Bitwarden Self-Hosted / VaultWarden](2025/09/10/omarchy-2-0-bitwarden-self-hosted-vaultwarden/)
