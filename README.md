@@ -59,7 +59,6 @@ cd akitaonrails.github.io
 nvim content/2025/08/29/hello/index.md
 
 # gerar índice
-cd content
 ./scripts/generate_index.rb
 
 # build
