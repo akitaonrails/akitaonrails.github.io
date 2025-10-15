@@ -2,22 +2,26 @@
 title: AkitaOnRails's Blog
 ---
 
+## 2025 - October
+
+- [Odoo Brasil, uma versão otimizada para facilitar sua vida](2025/10/15/odoo-brasil-uma-versão-otimizada-para-facilitar-sua-vida/)
+
 ## 2025 - September
 
-- [Coisas que "Iniciantes" Ignoram sobre PCs](2025/09/14/coisas-que-iniciantes-ignoram-sobre-pcs/)
 - [Tudo que Precisa Saber Sobre Retro-Gaming](2025/09/14/tudo-que-precisa-saber-sobre-retro-gaming/)
+- [Coisas que "Iniciantes" Ignoram sobre PCs](2025/09/14/coisas-que-iniciantes-ignoram-sobre-pcs/)
 - [Omarchy 2.0 - Básico de LazyVim](2025/09/12/omarchy-2-0-basico-de-lazyvim/)
 - [Omarchy 2.0 - Indicado pra Iniciantes?](2025/09/12/omarchy-2-0-indicado-pra-iniciantes/)
 - [Omarchy 2.0 - Instale com a ISO do Omarchy](2025/09/12/omarchy-2-0-instale-com-a-iso-do-omarchy/)
+- [Omarchy 2.0 - Bitwarden Self-Hosted / VaultWarden](2025/09/10/omarchy-2-0-bitwarden-self-hosted-vaultwarden/)
 - [Instalando Grafana no meu Home Server](2025/09/10/instalando-grafana-no-meu-home-server/)
 - [Meu Novo Blog - Como Eu Fiz](2025/09/10/meu-novo-blog-como-eu-fiz/)
-- [Omarchy 2.0 - Bitwarden Self-Hosted / VaultWarden](2025/09/10/omarchy-2-0-bitwarden-self-hosted-vaultwarden/)
 - [Protegendo seu Home Server com Cloudflare Zero Trust](2025/09/10/protegendo-seu-home-server-com-cloudflare-zero-trust/)
 - [Acessando meu Home Server com Domínio de Verdade](2025/09/09/acessando-meu-home-server-com-dominio-de-verdade/)
 - [Omarchy 2.0 - Entendendo SSH e Yubikeys](2025/09/09/omarchy-2-0-entendendo-ssh-e-yubikeys/)
 - [Omarchy 2.0 - TUIs (Terminal User Interface Apps)](2025/09/09/omarchy-2-0-tuis/)
-- [Omarchy 2.0 - LazyVim - LazyExtras](2025/09/07/omarchy-2-0-lazyvim-lazyextras/)
 - [Omarchy 2.0 - Mise pra organizar ambientes de desenvolvimento](2025/09/07/omarchy-2-0-mise-pra-organizar-ambientes-de-desenvolvimento/)
+- [Omarchy 2.0 - LazyVim - LazyExtras](2025/09/07/omarchy-2-0-lazyvim-lazyextras/)
 - [Omarchy 2.0 - ZSH Configs](2025/09/07/omarchy-2-0-zsh-configs/)
 
 ## 2025 - August
@@ -33,8 +37,8 @@ title: AkitaOnRails's Blog
 
 - [Seu Windows pode estar Capado sem Você Saber. Cheque isto!!](2025/05/21/seu-windows-pode-estar-capado-sem-voce-saber-cheque-isto/)
 - [História da Computação e Retro Dev no YouTube](2025/05/19/historia-da-computacao-e-retro-dev-no-youtube/)
-- [Ensinando Zig mais recente pra sua LLM - Treinando LoRas (quase)](2025/05/03/ensinando-zig-mais-recente-pra-sua-llm-treinando-loras-quase/)
 - [Último Tentativa de Treinar uma LLM com LoRa. Tiro de canhão, mas errando a mosca.](2025/05/03/ultimo-tentativa-de-treinar-uma-llm-com-lora-tiro-de-canhao-mas-errando-a-mosca/)
+- [Ensinando Zig mais recente pra sua LLM - Treinando LoRas (quase)](2025/05/03/ensinando-zig-mais-recente-pra-sua-llm-treinando-loras-quase/)
 - [RANT - LLMs são LOOT BOXES!](2025/05/02/rant-llms-sao-loot-boxes/)
 - [Quando LLMs não Funcionam pra Programar? Um caso de uso mais real.](2025/05/01/quando-llms-nao-funcionam-pra-programar-um-caso-de-uso-mais-real/)
 - [Rant - LLMs vão evoluir pra sempre? Desmistificando LLMs na programação](2025/05/01/rant-llms-vao-evoluir-pra-sempre-desmistificando-llms-na-programacao/)
@@ -42,22 +46,22 @@ title: AkitaOnRails's Blog
 ## 2025 - April
 
 - [Dissecando um Modelfile de Ollama - Ajustando Qwen3 pra código](2025/04/29/dissecando-um-modelfile-de-ollama-ajustando-qwen3-pra-codigo/)
-- [Destruindo a "Personalidade" do ChatGPT 4o](2025/04/28/destruindo-a-personalidade-do-chatgpt-4o/)
 - [Testando o Recém Lançado LLM Open Source - Qwen3 (com Aider e Ollama)](2025/04/28/testando-o-recem-lancado-llm-open-source-qwen3-com-aider-e-ollama/)
+- [Destruindo a "Personalidade" do ChatGPT 4o](2025/04/28/destruindo-a-personalidade-do-chatgpt-4o/)
 - [Testando LLMs com Aider na RunPod - qual usar pra código?](2025/04/27/testando-llms-com-aider-na-runpod-qual-usar-pra-codigo/)
-- [Hello World de LLM: criando seu próprio chat de I.A. que roda local](2025/04/25/hello-world-de-llm-criando-seu-proprio-chat-de-i-a-que-roda-local/)
 - [Seu Próprio Co-Pilot Gratuito Universal que funciona Local: AIDER-OLLAMA-QWEN](2025/04/25/seu-proprio-co-pilot-gratuito-universal-que-funciona-local-aider-ollama-qwen/)
+- [Hello World de LLM: criando seu próprio chat de I.A. que roda local](2025/04/25/hello-world-de-llm-criando-seu-proprio-chat-de-i-a-que-roda-local/)
 - [Acessando seu NAS usando iSCSI em vez de SMB](2025/04/24/acessando-seu-nas-usando-iscsi-em-vez-de-smb/)
 - [Mudando roupas usando I.A. (ComfyUI)](2025/04/23/mudando-roupas-usando-i-a-comfyui/)
 - [Usando I.A (ComfyUI) pra gerar NPCs em desenvolvimento de games](2025/04/23/usando-i-a-comfyui-pra-gerar-npcs-em-desenvolvimento-de-games/)
 - [Entendendo o Básico de ComfyUI pra gerar imagens com I.A.](2025/04/20/entendendo-o-basico-de-comfyui-pra-gerar-imagens-com-i-a/)
 - [Gerando Imagens com I.A - até estilo Ghibli 😂 - com Docker e CUDA](2025/04/20/gerando-imagens-com-i-a-ate-estilo-ghibli-com-docker-e-cuda/)
+- [Gerando Videos de até 2 min a partir de uma Foto com I.A.](2025/04/19/gerando-videos-de-ate-2-min-a-partir-de-uma-foto-com-i-a/)
 - [Aumentando Resolução de Anime velho pra 4K com I.A.](2025/04/19/aumentando-resolucao-de-anime-velho-pra-4k-com-i-a/)
 - [Colorindo Imagens Preto e Branco com I.A.](2025/04/19/colorindo-imagens-preto-e-branco-com-i-a/)
-- [Gerando Videos de até 2 min a partir de uma Foto com I.A.](2025/04/19/gerando-videos-de-ate-2-min-a-partir-de-uma-foto-com-i-a/)
-- [Configuração da BIOS do meu PC - X670E Aorus Xtreme](2025/04/17/configuracao-da-bios-do-meu-pc-x670e-aorus-xtreme/)
 - [Configurando meu NAS Synology com NFS no Linux](2025/04/17/configurando-meu-nas-synology-com-nfs-no-linux/)
 - [NVIDIA e Wayland - Problemas pra PCI Passthrough em VMs](2025/04/17/nvidia-e-wayland-problemas-pra-pci-passthrough-em-vms/)
+- [Configuração da BIOS do meu PC - X670E Aorus Xtreme](2025/04/17/configuracao-da-bios-do-meu-pc-x670e-aorus-xtreme/)
 
 ## 2024 - December
 
@@ -493,18 +497,18 @@ title: AkitaOnRails's Blog
 ## 2016 - November
 
 - [3 Months of GitLab. The Hybrid-SaaS Era](2016/11/16/3-months-of-gitlab-the-hybrid-saas-era/)
-- [Matches, Rankings, The Social Network, League of Legends, and Ruby?](2016/11/01/matches-rankings-the-social-network-league-of-legends-and-ruby/)
 - [\[Off-Topic\] Learning Statistics](2016/11/01/off-topic-learning-statistics/)
+- [Matches, Rankings, The Social Network, League of Legends, and Ruby?](2016/11/01/matches-rankings-the-social-network-league-of-legends-and-ruby/)
 
 ## 2016 - October
 
-- [\[Discussion\] Can we protect our work from DNS providers suffering DDoS attacks?](2016/10/31/discussion-can-we-protect-our-work-from-dns-providers-suffering-ddos-attacks/)
 - [Ruby on Rails implementation of a (proper) Ranking/Popularity system](2016/10/31/ruby-on-rails-implementation-of-a-proper-ranking-popularity-system/)
+- [\[Discussion\] Can we protect our work from DNS providers suffering DDoS attacks?](2016/10/31/discussion-can-we-protect-our-work-from-dns-providers-suffering-ddos-attacks/)
 - [Natural Language Generation in Ruby (with JRuby + SimpleNLG)](2016/10/28/natural-language-generation-in-ruby-with-jruby-simplenlg/)
 - [Iniciativa THE CONF](2016/10/20/iniciativa-the-conf/)
 - [THE CONF Initiative](2016/10/20/the-conf-initiative/)
-- [Sharing models between Rails Apps - Part 1](2016/10/03/sharing-models-between-rails-apps-part-1/)
 - [Sharing models between Rails Apps - Part 2](2016/10/03/sharing-models-between-rails-apps-part-2/)
+- [Sharing models between Rails Apps - Part 1](2016/10/03/sharing-models-between-rails-apps-part-1/)
 
 ## 2016 - September
 
@@ -545,8 +549,8 @@ title: AkitaOnRails's Blog
 
 ## 2016 - March
 
-- [\[Off-Topic\] Uma Nova Era para a Microsoft](2016/03/31/off-topic-uma-nova-era-para-a-microsoft/)
 - [War is Over, or is it? A New Dawn for Microsoft](2016/03/31/war-is-over-or-is-it-a-new-dawn-for-microsoft/)
+- [\[Off-Topic\] Uma Nova Era para a Microsoft](2016/03/31/off-topic-uma-nova-era-para-a-microsoft/)
 - [Improving your Microservices Integration Performance with Memcache and ETAGs](2016/03/23/improving-your-microservices-integration-performance-with-memcache-and-etags/)
 - [Is your Rails app ready for Production?](2016/03/22/is-your-rails-app-ready-for-production/)
 
@@ -558,8 +562,8 @@ title: AkitaOnRails's Blog
 
 - [Fixing DHH's Rails 5 Chat Demo](2015/12/28/fixing-dhh-s-rails-5-chat-demo/)
 - [Ex Pusher Lite - Part 2 - First Working Core!](2015/12/14/ex-pusher-lite-part-2-first-working-core/)
-- [Erlang's Ping Pong (tut15) in Clojure and Elixir](2015/12/09/erlang-s-ping-pong-tut15-in-clojure-and-elixir/)
 - [Ex Pusher Lite - Part 1: Phoenix Channels and Rails apps](2015/12/09/ex-pusher-lite-part-1-phoenix-channels-and-rails-apps/)
+- [Erlang's Ping Pong (tut15) in Clojure and Elixir](2015/12/09/erlang-s-ping-pong-tut15-in-clojure-and-elixir/)
 - [Ex Manga Downloadr - Part 5: Making it more robust!](2015/12/06/ex-manga-downloadr-part-5-making-it-more-robust/)
 - [Ex Manga Downloadr - Part 4: Learning through Refactoring](2015/12/03/ex-manga-downloadr-part-4-learning-through-refactoring/)
 - [The Obligatory "Flame War" Phoenix vs Node.js](2015/12/03/the-obligatory-flame-war-phoenix-vs-node-js/)
@@ -568,9 +572,9 @@ title: AkitaOnRails's Blog
 
 ## 2015 - November
 
+- ["Yocto Services"! And My First Month with Elixir!](2015/11/25/yocto-services-and-my-first-month-with-elixir/)
 - [Elixir 101 - Introducing the Syntax](2015/11/25/elixir-101-introducing-the-syntax/)
 - [ExMessenger Exercise: Understanding Nodes in Elixir](2015/11/25/exmessenger-exercise-understanding-nodes-in-elixir/)
-- ["Yocto Services"! And My First Month with Elixir!](2015/11/25/yocto-services-and-my-first-month-with-elixir/)
 - [Observing Processes in Elixir - The Little Elixir & OTP Guidebook](2015/11/22/observing-processes-in-elixir-the-little-elixir-otp-guidebook/)
 - [Phoenix "15 Minute Blog" comparison to Ruby on Rails](2015/11/20/phoenix-15-minute-blog-comparison-to-ruby-on-rails/)
 - [Ex Manga Downloadr - Part 2: Poolboy to the rescue!](2015/11/19/ex-manga-downloadr-part-2-poolboy-to-the-rescue/)
@@ -605,8 +609,8 @@ title: AkitaOnRails's Blog
 ## 2015 - May
 
 - [Dynamic Site as fast as a Static Generated One with Raptor](2015/05/20/dynamic-site-as-fast-as-a-static-generated-one-with-raptor/)
-- [\[Small Bites\] Brincando de Crawlers e algumas Dicas Úteis](2015/05/15/small-bites-brincando-de-crawlers-e-algumas-dicas-uteis/)
 - [\[Small Bites\] Trocando de SASS para SASSC e colocando no Heroku](2015/05/15/small-bites-trocando-de-sass-para-sassc-e-colocando-no-heroku/)
+- [\[Small Bites\] Brincando de Crawlers e algumas Dicas Úteis](2015/05/15/small-bites-brincando-de-crawlers-e-algumas-dicas-uteis/)
 
 ## 2015 - April
 
@@ -625,8 +629,8 @@ title: AkitaOnRails's Blog
 
 - [Ruby e Rails no Ubuntu 14.04 LTS Trusty Tahr](2015/01/28/ruby-e-rails-no-ubuntu-14-04-lts-trusty-tahr/)
 - [\[Off-Topic\] Coletânea "Processos e Metodologias Não Vão Te Ajudar!"](2015/01/07/off-topic-coletanea-processos-e-metodologias-nao-vao-te-ajudar/)
-- [Começando o Ano com um Ruby Drama: RubySpec vs MRI Core Team](2015/01/02/comecando-o-ano-com-um-ruby-drama-rubyspec-vs-mri-core-team/)
 - [Lembrando os Heróis Ruby que se foram em 2014](2015/01/02/lembrando-os-herois-ruby-que-se-foram-em-2014/)
+- [Começando o Ano com um Ruby Drama: RubySpec vs MRI Core Team](2015/01/02/comecando-o-ano-com-um-ruby-drama-rubyspec-vs-mri-core-team/)
 
 ## 2014 - December
 
@@ -656,8 +660,8 @@ title: AkitaOnRails's Blog
 - [\[Small Bite\] Session Injection Challenge](2014/08/28/small-bite-session-injection-challenge/)
 - [\[Small Bite\] Brincando com Metasploit](2014/08/27/small-bite-brincando-com-metasploit/)
 - [Retrospectiva on Rails - 10 Anos e Muito Mais!](2014/08/26/retrospectiva-on-rails-10-anos-e-muito-mais/)
-- [\[Off-Topic\] First Time in São Paulo, What to do?](2014/08/24/off-topic-first-time-in-sao-paulo-what-to-do/)
 - [\[Small Bite\] Páginas Ruby/Rails Legais para Acompanhar!](2014/08/24/small-bite-paginas-ruby-rails-legais-para-acompanhar/)
+- [\[Off-Topic\] First Time in São Paulo, What to do?](2014/08/24/off-topic-first-time-in-sao-paulo-what-to-do/)
 - [\[Small Bite\] Um pouco tarde: O Grande Debate Sobre TDD](2014/08/23/small-bite-um-pouco-tarde-o-grande-debate-sobre-tdd/)
 - [\[#WhyDay\] 5 Anos Sem _Why](2014/08/19/whyday-5-anos-sem-_why/)
 - [\[Small Bite\] Palestra "Ruby & GC" - QConSP 2014 (Nova Gravação!)](2014/08/01/small-bite-palestra-ruby-gc-qconsp-2014-nova-gravacao/)
@@ -722,8 +726,8 @@ title: AkitaOnRails's Blog
 - [\[Off-Topic\] Matemática, Trolls, Haters e Discussões de Internet](2013/10/30/off-topic-matematica-trolls-haters-e-discussoes-de-internet/)
 - [Ruby, a linguagem do mundo Cloud](2013/10/29/ruby-a-linguagem-do-mundo-cloud/)
 - [\[Iniciante\] Configurações de ambiente com Dotenv](2013/10/19/iniciante-configuracoes-de-ambiente-com-dotenv/)
-- [\[Off-Topic\] #noEstimates Debunked](2013/10/07/off-topic-noestimates-debunked/)
 - [Rubyconf Brasil 2014 - Dates are Set!](2013/10/07/rubyconf-brasil-2014-dates-are-set/)
+- [\[Off-Topic\] #noEstimates Debunked](2013/10/07/off-topic-noestimates-debunked/)
 
 ## 2013 - September
 
@@ -741,20 +745,20 @@ title: AkitaOnRails's Blog
 - [Rubyconf Brasil 2013: Lembrando de _Why. Engenharia vs Arte](2013/08/24/rubyconf-brasil-2013-lembrando-de-_why/)
 - [\[Off-Topic\] Estimativas são Promessas. Promessas devem ser cumpridas.](2013/08/23/off-topic-estimativas-sao-promessas-promessas-devem-ser-cumpridas/)
 - [Rubyconf Brasil 2013: Conheça William PotHix](2013/08/23/rubyconf-brasil-2013-conheca-william-pothix/)
-- [Rubyconf Brasil 2013: Meet Bruno AbstractJ](2013/08/23/rubyconf-brasil-2013-meet-bruno-abstractj/)
 - [Rubyconf Brasil 2013: Meet William PotHix](2013/08/23/rubyconf-brasil-2013-meet-william-pothix/)
-- [Rubyconf Brasil 2013: Conheça Bruno AbstractJ](2013/08/22/rubyconf-brasil-2013-conheca-bruno-abstractj/)
+- [Rubyconf Brasil 2013: Meet Bruno AbstractJ](2013/08/23/rubyconf-brasil-2013-meet-bruno-abstractj/)
 - [Rubyconf Brasil 2013: Meet Danilo Sato](2013/08/22/rubyconf-brasil-2013-meet-danilo-sato/)
+- [Rubyconf Brasil 2013: Conheça Bruno AbstractJ](2013/08/22/rubyconf-brasil-2013-conheca-bruno-abstractj/)
 - [Rubyconf Brasil 2013: Conheça Eduardo Shiota](2013/08/19/rubyconf-brasil-2013-conheca-eduardo-shiota/)
 - [Rubyconf Brasil 2013: Meet Eduardo Shiota](2013/08/19/rubyconf-brasil-2013-meet-eduardo-shiota/)
 - [Rubyconf Brasil 2013: Vinheta de Abertura](2013/08/19/rubyconf-brasil-2013-vinheta-de-abertura/)
 - [Rubyconf Brasil 2013: Conheça Rodrigo Caffo](2013/08/16/rubyconf-brasil-2013-conheca-rodrigo-caffo/)
-- [Rubyconf Brasil 2013: Conheça Danilo Sato](2013/08/15/rubyconf-brasil-2013-conheca-danilo-sato/)
 - [Rubyconf Brasil 2013: Your first time in São Paulo, Brazil](2013/08/15/rubyconf-brasil-2013-your-first-time-in-sao-paulo-brazil/)
-- [Rubyconf Brasil 2013: Conheça Hongli Lai](2013/08/14/rubyconf-brasil-2013-conheca-hongli-lai/)
+- [Rubyconf Brasil 2013: Conheça Danilo Sato](2013/08/15/rubyconf-brasil-2013-conheca-danilo-sato/)
 - [Rubyconf Brasil 2013: Meet Hongli Lai](2013/08/14/rubyconf-brasil-2013-meet-hongli-lai/)
-- [Rubyconf Brasil 2013: Jaime Andrés Dávila](2013/08/13/rubyconf-brasil-2013-jaime-andres-davila/)
+- [Rubyconf Brasil 2013: Conheça Hongli Lai](2013/08/14/rubyconf-brasil-2013-conheca-hongli-lai/)
 - [Rubyconf Brasil 2013: Jaime Andrés Dávila](2013/08/13/rubyconf-brasil-2013-jaime-andres-davila--2/)
+- [Rubyconf Brasil 2013: Jaime Andrés Dávila](2013/08/13/rubyconf-brasil-2013-jaime-andres-davila/)
 - [Rubyconf Brasil 2013: Conheça Carlos (Chester) Nascimento](2013/08/12/rubyconf-brasil-2013-conheca-carlos-chester-nascimento/)
 - [Rubyconf Brasil 2013: Conheça Caike Souza](2013/08/11/rubyconf-brasil-2013-conheca-caike-souza/)
 - [Rubyconf Brasil 2013: Meet Caike Souza](2013/08/11/rubyconf-brasil-2013-meet-caike-souza/)
@@ -770,8 +774,8 @@ title: AkitaOnRails's Blog
 
 ## 2013 - June
 
-- [\[#IF\] Rotação de Logs em Apps Rails](2013/06/28/if-rotacao-de-logs-em-apps-rails/)
 - [Introdução à Agilidade](2013/06/28/introducao-a-agilidade/)
+- [\[#IF\] Rotação de Logs em Apps Rails](2013/06/28/if-rotacao-de-logs-em-apps-rails/)
 - [Processos, Metodologias e o Cérebro Humano](2013/06/21/processos-metodologias-e-o-cerebro-humano/)
 - [O que significa ser um Gerente?](2013/06/07/o-que-significa-ser-um-gerente/)
 
@@ -783,8 +787,8 @@ title: AkitaOnRails's Blog
 - [Processos e Metodologias não vão te Ajudar](2013/05/24/processos-e-metodologias-nao-vao-te-ajudar/)
 - [\[Tradução\] Padrões: excelência vs. mediocridade](2013/05/17/traducao-padroes-excelencia-vs-mediocridade/)
 - [\[Off-Topic\] Pessoas: Animais Racionais? O id e o ego no marketing](2013/05/14/off-topic-pessoas-animais-racionais-o-id-e-o-ego-no-marketing/)
-- [\[#IF\] ActiveAdmin + Editor HTML 5](2013/05/13/if-activeadmin-editor-html-5/)
 - [Indo de Ruby 1.8 e Rails 2.3 para Ruby 2.0 e Rails 3.2](2013/05/13/indo-de-ruby-1-8-e-rails-2-3-para-ruby-2-0-e-rails-3-2/)
+- [\[#IF\] ActiveAdmin + Editor HTML 5](2013/05/13/if-activeadmin-editor-html-5/)
 - [A Língua Portuguesa-Brasileira Pode Nos Confundir: Standard vs Pattern](2013/05/10/a-lingua-portuguesa-brasileira-e-pessima-standard-vs-pattern/)
 - [\[Off-Topic\] Blogs are Obsolete. What's Next?](2013/05/04/off-topic-blogs-are-obsolete-what-s-next/)
 
@@ -811,11 +815,11 @@ title: AkitaOnRails's Blog
 
 - [Startup Journey 2012](2012/11/21/startup-journey-2012/)
 - [Viagem à Europa (Parte 3) - Tel Aviv, Israel](2012/11/21/viagem-a-europa-parte-3-tel-aviv-israel/)
-- [Viagem à Europa (Parte 1) - Amsterdã, Holanda](2012/11/20/viagem-a-europa-parte-1-amsterda-holanda/)
 - [Viagem à Europa (Parte 2) - Berlim, Alemanha](2012/11/20/viagem-a-europa-parte-2-berlim-alemanha/)
+- [Viagem à Europa (Parte 1) - Amsterdã, Holanda](2012/11/20/viagem-a-europa-parte-1-amsterda-holanda/)
 - [Viagem a São Francisco (Parte 3) - Pessoas e Turismo](2012/11/06/viagem-a-sao-francisco-parte-3-pessoas-e-turismo/)
-- [Viagem a São Francisco (Parte 1) - Techcrunch Disrupt](2012/11/05/viagem-a-sao-francisco-parte-1-techcrunch-disrupt/)
 - [Viagem a São Francisco (Parte 2) - Visitando Empresas](2012/11/05/viagem-a-sao-francisco-parte-2-visitando-empresas/)
+- [Viagem a São Francisco (Parte 1) - Techcrunch Disrupt](2012/11/05/viagem-a-sao-francisco-parte-1-techcrunch-disrupt/)
 
 ## 2012 - September
 
@@ -834,13 +838,13 @@ title: AkitaOnRails's Blog
 
 - [\[English\] Minimal I18n with Rails 3.2](2012/07/24/english-minimal-i18n-with-rails-3-2/)
 - [ActiveAdmin + Best in Place](2012/07/23/activeadmin-best-in-place/)
-- [Internationalização (I18n) Mínima em Rails 3.2 - Parte 1](2012/07/14/internationalizacao-i18n-minima-em-rails-3-2-parte-1/)
 - [Internationalização (I18n) Mínima em Rails 3.2 - Parte 2](2012/07/14/internationalizacao-i18n-minima-em-rails-3-2-parte-2/)
-- [Inscrições Abertas para a Rubyconf Brasil 2012!](2012/07/11/inscricoes-abertas-para-a-rubyconf-brasil-2012/)
+- [Internationalização (I18n) Mínima em Rails 3.2 - Parte 1](2012/07/14/internationalizacao-i18n-minima-em-rails-3-2-parte-1/)
 - [Registration are Open for Rubyconf Brazil 2012](2012/07/11/registration-are-open-for-rubyconf-brazil-2012/)
+- [Inscrições Abertas para a Rubyconf Brasil 2012!](2012/07/11/inscricoes-abertas-para-a-rubyconf-brasil-2012/)
 - [\[Off-Topic\] Steve Jobs, The Lost Inverview](2012/07/08/off-topic-steve-jobs-the-lost-inverview/)
-- [Asset Pipeline para Iniciantes](2012/07/01/asset-pipeline-para-iniciantes/)
 - [Asset Pipeline para Iniciantes - Parte 2](2012/07/01/asset-pipeline-para-iniciantes-parte-2/)
+- [Asset Pipeline para Iniciantes](2012/07/01/asset-pipeline-para-iniciantes/)
 
 ## 2012 - June
 
@@ -853,8 +857,8 @@ title: AkitaOnRails's Blog
 
 ## 2012 - April
 
-- [\[Heroku Tips\] Enciclopédia do Heroku](2012/04/20/heroku-tips-enciclopedia-do-heroku/)
 - [\[Off-Topic\] Comprei meu primeiro Mac, e agora? (Edição 2012)](2012/04/20/off-topic-comprei-meu-primeiro-mac-e-agora-edicao-2012/)
+- [\[Heroku Tips\] Enciclopédia do Heroku](2012/04/20/heroku-tips-enciclopedia-do-heroku/)
 - [RubyConf Brasil 2012 - Call for Papers](2012/04/10/rubyconf-brasil-2012-call-for-papers/)
 - [Screencasts Liberados Gratuitamente!](2012/04/09/screencasts-liberados-gratuitamente/)
 
@@ -879,9 +883,9 @@ title: AkitaOnRails's Blog
 ## 2011 - September
 
 - [\[Off-Topic\] Disney, História do Computador e o Encarte Perdido](2011/09/25/off-topic-disney-historia-do-computador-e-o-encarte-perdido/)
-- [\[Off-Topic\] Minha Carreira - Fase 5 - Codeminer 42](2011/09/19/off-topic-minha-carreira-fase-5-codeminer-42/)
 - [RubyConf Brasil 2011 está chegando!](2011/09/19/rubyconf-brasil-2011-esta-chegando/)
 - [RubyConf Brazil 2011 is coming!](2011/09/19/rubyconf-brazil-2011-is-coming/)
+- [\[Off-Topic\] Minha Carreira - Fase 5 - Codeminer 42](2011/09/19/off-topic-minha-carreira-fase-5-codeminer-42/)
 
 ## 2011 - August
 
@@ -939,8 +943,8 @@ title: AkitaOnRails's Blog
 
 ## 2010 - September
 
-- [O RubyConf Brasil está Chegando!](2010/09/03/o-rubyconf-brasil-esta-chegando/)
 - [RubyConf Brazil is Coming up!](2010/09/03/rubyconf-brazil-is-coming-up/)
+- [O RubyConf Brasil está Chegando!](2010/09/03/o-rubyconf-brasil-esta-chegando/)
 
 ## 2010 - August
 
@@ -950,22 +954,22 @@ title: AkitaOnRails's Blog
 
 - [Lost in Translation](2010/07/29/lost-in-translation/)
 - [Usando ETAG e Memcached](2010/07/06/usando-etag-e-memcached/)
-- [O que aconteceu com o Rails Summit?](2010/07/05/o-que-aconteceu-com-o-rails-summit/)
 - [What happened to Rails Summit Latin America?](2010/07/05/what-happened-to-rails-summit-latin-america/)
+- [O que aconteceu com o Rails Summit?](2010/07/05/o-que-aconteceu-com-o-rails-summit/)
 - [\[Screencast\] Entenda Software da Maneira Correta](2010/07/01/screencast-entenda-software-da-maneira-correta/)
 
 ## 2010 - June
 
 - [\[Off-Topic\] Jeff Patton e Megan Fox no mesmo post?](2010/06/27/off-topic-jeff-patton-e-megan-fox-no-mesmo-post/)
-- [\[RailsConf 2010\] - Viagem e Evento](2010/06/17/railsconf-2010-viagem-e-evento/)
-- [\[RailsConf 2010\] - Video Entrevista - David Hansson](2010/06/17/railsconf-2010-video-entrevista-david-hansson/)
-- [\[RailsConf 2010\] - Video Entrevistas - Parte 1](2010/06/17/railsconf-2010-video-entrevistas-parte-1/)
-- [\[RailsConf 2010\] - Video Entrevistas - Parte 2](2010/06/17/railsconf-2010-video-entrevistas-parte-2/)
 - [\[RailsConf 2010\] - Video Interview - David Hansson](2010/06/17/railsconf-2010-video-interview-david-hansson/)
-- [\[RailsConf 2010\] - Video Interviews - Part 1](2010/06/17/railsconf-2010-video-interviews-part-1/)
+- [\[RailsConf 2010\] - Video Entrevista - David Hansson](2010/06/17/railsconf-2010-video-entrevista-david-hansson/)
 - [\[RailsConf 2010\] - Video Interviews - Part 2](2010/06/17/railsconf-2010-video-interviews-part-2/)
-- [\[RailsConf 2010\] - Video Entrevista - Robert Martin](2010/06/16/railsconf-2010-video-entrevista-robert-martin/)
+- [\[RailsConf 2010\] - Video Entrevistas - Parte 2](2010/06/17/railsconf-2010-video-entrevistas-parte-2/)
+- [\[RailsConf 2010\] - Video Interviews - Part 1](2010/06/17/railsconf-2010-video-interviews-part-1/)
+- [\[RailsConf 2010\] - Video Entrevistas - Parte 1](2010/06/17/railsconf-2010-video-entrevistas-parte-1/)
+- [\[RailsConf 2010\] - Viagem e Evento](2010/06/17/railsconf-2010-viagem-e-evento/)
 - [\[RailsConf 2010\] - Video Interview - Robert Martin (English)](2010/06/16/railsconf-2010-video-interview-robert-martin-english/)
+- [\[RailsConf 2010\] - Video Entrevista - Robert Martin](2010/06/16/railsconf-2010-video-entrevista-robert-martin/)
 
 ## 2010 - May
 
@@ -985,8 +989,8 @@ title: AkitaOnRails's Blog
 
 ## 2010 - January
 
-- [\[Off-Topic\] Empresas, Pessoas, Sucesso](2010/01/30/off-topic-empresas-pessoas-sucesso/)
 - [\[Off-Topic\] Lendo os Princípios Ágeis](2010/01/30/off-topic-lendo-os-principios-ageis/)
+- [\[Off-Topic\] Empresas, Pessoas, Sucesso](2010/01/30/off-topic-empresas-pessoas-sucesso/)
 - [\[Off-Topic\] Quem é o Burro?](2010/01/08/off-topic-quem-e-o-burro/)
 - [Off-Topic: Literatura para Gerentes Ágeis](2010/01/06/off-topic-literatura-para-gerentes-ageis/)
 - [\[Off Topic\] Dunbar e Cross Functional Teams](2010/01/02/off-topic-dunbar-e-cross-functional-teams/)
@@ -999,14 +1003,14 @@ title: AkitaOnRails's Blog
 
 ## 2009 - November
 
+- [\[Off-Topic\] Restaurantes e Tecnologia](2009/11/18/off-topic-restaurantes-e-tecnologia/)
 - [Chatting with Adam Jacob](2009/11/18/chatting-with-adam-jacob/)
 - [Chatting with Luke Kanies](2009/11/18/chatting-with-luke-kaines/)
-- [\[Off-Topic\] Restaurantes e Tecnologia](2009/11/18/off-topic-restaurantes-e-tecnologia/)
-- [\[Tradução\] Metaprogramação em Ruby: é tudo sobre Self](2009/11/16/traducao-metaprogramacao-em-ruby-e-tudo-sobre-self/)
 - [\[Tradução\] Três Contextos Implícitos em Ruby](2009/11/16/traducao-tres-contextos-implicitos-em-ruby/)
+- [\[Tradução\] Metaprogramação em Ruby: é tudo sobre Self](2009/11/16/traducao-metaprogramacao-em-ruby-e-tudo-sobre-self/)
 - [Rubistas.com.br](2009/11/10/rubistas-com-br/)
-- [\[Off-Topic\] Celulares e Aviões](2009/11/08/off-topic-celulares-e-avioes/)
 - [\[Off-Topic\] Obediência à Autoridade](2009/11/08/off-topic-obediencia-a-autoridade/)
+- [\[Off-Topic\] Celulares e Aviões](2009/11/08/off-topic-celulares-e-avioes/)
 - [\[Off-Topic\] O problema das credenciais](2009/11/04/off-topic-o-problema-das-credenciais/)
 
 ## 2009 - October
@@ -1025,8 +1029,8 @@ title: AkitaOnRails's Blog
 - [\[Rails Summit 2009\] Palestrante Matt Aimonetti](2009/09/23/rails-summit-2009-palestrante-matt-aimonetti/)
 - [\[Rails Summit 2009\] Palestrante Carlos Brando](2009/09/21/rails-summit-2009-palestrante-carlos-brando/)
 - [\[Rails Summit 2009\] Palestrante Bryan Liles](2009/09/18/rails-summit-2009-palestrante-bryan-liles/)
-- [\[Rails Summit 2009\] O Trailer mais Esperado! ](2009/09/17/rails-summit-2009-o-trailer-mais-esperado/)
 - [\[Rails Summit 2009\] Palestrante Leonardo Borges](2009/09/17/rails-summit-2009-palestrante-leonardo-borges/)
+- [\[Rails Summit 2009\] O Trailer mais Esperado! ](2009/09/17/rails-summit-2009-o-trailer-mais-esperado/)
 - [\[Rails Summit 2009\] Teaser Trailer](2009/09/16/rails-summit-2009-teaser-trailer/)
 - [\[Off-Topic\] A Argumentação através da Intimidação ](2009/09/12/off-topic-a-argumenta--o-atrav-s-da-intimida--o/)
 - [\[Off-Topic\] Direitos do Homem](2009/09/09/off-topic-direitos-do-homem/)
@@ -1046,9 +1050,9 @@ title: AkitaOnRails's Blog
 - [\[Off-Topic\] Livros de Referência 2008-2009](2009/07/11/off-topic-livros-de-refer-ncia-2008-2009/)
 - [\[Off-Topic\] Agilidade, Caos, Auto-Organização](2009/07/08/off-topic-agilidade-caos-auto-organizacao/)
 - [Screencast: Agilidade, Qualidade e Futuro](2009/07/07/screencast-agilidade-qualidade-e-futuro/)
-- [Dicas de Git](2009/07/05/dicas-de-git/)
-- [\[Off-Topic\] Autoridade vs Responsabilidade](2009/07/05/off-topic-autoridade-vs-responsabilidade/)
 - [\[Off-Topic\] Contrato de Escopo Negociável](2009/07/05/off-topic-contrato-de-escopo-negoci-vel/)
+- [\[Off-Topic\] Autoridade vs Responsabilidade](2009/07/05/off-topic-autoridade-vs-responsabilidade/)
+- [Dicas de Git](2009/07/05/dicas-de-git/)
 
 ## 2009 - June
 
@@ -1059,10 +1063,10 @@ title: AkitaOnRails's Blog
 
 - [\[Off-Topic\] As 5 disfunções de equipes em código](2009/05/31/off-topic-as-5-disfun--es-de-equipes-em-c-digo/)
 - [RailsConf 09 - Ninh Grosenbach Bui](2009/05/11/railsconf-09-ninh-grosenbach-bui/)
-- [RailsConf 09 - DHH - The Secret of Productivity](2009/05/08/railsconf-09-dhh-the-secret-of-productivity/)
-- [RailsConf 09 - Exclusive Audio Interviews](2009/05/08/railsconf-09-exclusive-audio-interviews/)
 - [RailsConf 09 - Message from Bryan Liles (TATFT) to Brazil](2009/05/08/railsconf-09-message-from-bryan-liles-tatft-to-brazil/)
+- [RailsConf 09 - Exclusive Audio Interviews](2009/05/08/railsconf-09-exclusive-audio-interviews/)
 - [RailsConf 09 - Message from Peter Cooper to Ruby Inside Brazil](2009/05/08/railsconf-09-message-from-peter-cooper-to-ruby-inside-brazil/)
+- [RailsConf 09 - DHH - The Secret of Productivity](2009/05/08/railsconf-09-dhh-the-secret-of-productivity/)
 - [RailsConf 09 - Uncle Bob - Professionalism](2009/05/07/railsconf-09-uncle-bob-professionalism/)
 - [RailsConf 09 - Uncle Bob Martin](2009/05/06/railsconf-09-uncle-bob-martin/)
 - [Going to RailsConf 2009](2009/05/02/going-to-railsconf-2009/)
@@ -1096,16 +1100,16 @@ title: AkitaOnRails's Blog
 - [Rails Podcast Brasil, QCon Special - Yehuda Katz](2008/11/19/rails-podcast-brasil-qcon-special-yehuda-katz/)
 - [Rails Summit: Blogosfera](2008/11/12/rails-summit-blogosfera/)
 - [Micro-Tutorial de Ruby](2008/11/10/micro-tutorial-de-ruby/)
-- [Micro-Tutorial de Ruby - Parte I](2008/11/10/micro-tutorial-de-ruby-parte-i/)
-- [Micro-Tutorial de Ruby - Parte II](2008/11/10/micro-tutorial-de-ruby-parte-ii/)
 - [Micro-Tutorial de Ruby - Parte III](2008/11/10/micro-tutorial-de-ruby-parte-iii/)
+- [Micro-Tutorial de Ruby - Parte II](2008/11/10/micro-tutorial-de-ruby-parte-ii/)
+- [Micro-Tutorial de Ruby - Parte I](2008/11/10/micro-tutorial-de-ruby-parte-i/)
 
 ## 2008 - October
 
 - [Rails Summit: Sucesso = Comunidade](2008/10/20/rails-summit-sucesso-comunidade/)
 - [Rails Summit: é amanhã, preparem-se!](2008/10/14/rails-summit-amanh-preparem-se/)
-- [Palestrante Rails Summit: George Guimarães](2008/10/10/palestrante-rails-summit-george-guimar-es/)
 - [Rails Summit: Últimos Dias!](2008/10/10/rails-summit-ltimos-dias/)
+- [Palestrante Rails Summit: George Guimarães](2008/10/10/palestrante-rails-summit-george-guimar-es/)
 - [Off-Topic: Entendendo a Crise Econômica](2008/10/09/off-topic-entendendo-a-crise-econ-mica/)
 - [Off-Topic: O Manifesto Ágil, ou Como se Tornar o Google](2008/10/07/off-topic-o-manifesto-gil-ou-como-se-tornar-o-google/)
 - [Rails Summit: Next Week! (photos)](2008/10/06/rails-summit-next-week-photos/)
@@ -1114,8 +1118,8 @@ title: AkitaOnRails's Blog
 ## 2008 - September
 
 - [Conversando com Joshua Peek](2008/09/27/conversando-com-joshua-peek/)
-- [Chatting with Joshua Peek](2008/09/26/chatting-with-joshua-peek/)
 - [Rails Summit: Apoio](2008/09/26/rails-summit-apoio/)
+- [Chatting with Joshua Peek](2008/09/26/chatting-with-joshua-peek/)
 - [Off-Topic: O Poder do Mito, Redux](2008/09/20/off-topic-o-poder-do-mito-redux/)
 - [Rails Summit: Promoção para Estudantes por Tempo Limitado!](2008/09/10/rails-summit-promo-o-para-estudantes-por-tempo-limitado/)
 - [Palestrante Rails Summit: Danilo Sato](2008/09/03/palestrante-rails-summit-danilo-sato/)
@@ -1123,8 +1127,8 @@ title: AkitaOnRails's Blog
 
 ## 2008 - August
 
-- [Palestrante Rails Summit: Fabio Kung](2008/08/29/palestrante-rails-summit-fabio-kung/)
 - [Palestrante Rails Summit: Vinicius Teles](2008/08/29/palestrante-rails-summit-vinicius-teles/)
+- [Palestrante Rails Summit: Fabio Kung](2008/08/29/palestrante-rails-summit-fabio-kung/)
 - [Palestrante Rails Summit: Carlos Villela](2008/08/27/palestrante-rails-summit-carlos-villela/)
 - [Rails Summit: now really for Latin America!](2008/08/22/rails-summit-now-really-for-latin-america/)
 - [Rails Summit: Pagamento por Boleto](2008/08/20/rails-summit-pagamento-por-boleto/)
@@ -1145,13 +1149,13 @@ title: AkitaOnRails's Blog
 - [RailsConf 2008 - Video Interview with Phusion](2008/06/24/railsconf-2008-video-interview-with-phusion/)
 - [Chatting with Blaine Cook (Twitter)](2008/06/17/chatting-with-blaine-cook-twitter/)
 - [Machucando Código por Diversão e Lucro](2008/06/14/machucando-c-digo-por-divers-o-e-lucro/)
-- [RailsConf 2008 - DHH vs Spolsky, epilogue](2008/06/05/railsconf-2008-dhh-vs-spolsky-epilogue/)
 - [RailsConf 2008 - Memories](2008/06/05/railsconf-2008-memories/)
 - [RailsConf 2008 - Rails Scales!](2008/06/05/railsconf-2008-rails-scales/)
-- [RailsConf 2008: A Controvérsia MagLev](2008/06/04/railsconf-2008-a-controv-rsia-maglev/)
-- [RailsConf 2008 - Phusion Passenger Enterprise Edition Unleashed!](2008/06/04/railsconf-2008-phusion-passenger-enterprise-edition-unleashed/)
+- [RailsConf 2008 - DHH vs Spolsky, epilogue](2008/06/05/railsconf-2008-dhh-vs-spolsky-epilogue/)
 - [RailsConf 2008 - Rails 2.1 Released!](2008/06/04/railsconf-2008-rails-2-1-released/)
 - [RailsConf 2008 - Ruby Heroes Awards](2008/06/04/railsconf-2008-ruby-hero-awards/)
+- [RailsConf 2008 - Phusion Passenger Enterprise Edition Unleashed!](2008/06/04/railsconf-2008-phusion-passenger-enterprise-edition-unleashed/)
+- [RailsConf 2008: A Controvérsia MagLev](2008/06/04/railsconf-2008-a-controv-rsia-maglev/)
 - [AkitaOnRails na RailsConf 2008 - Preview](2008/06/02/akitaonrails-na-railsconf-2008-preview/)
 
 ## 2008 - May
@@ -1166,13 +1170,13 @@ title: AkitaOnRails's Blog
 
 - [Chatting with Chris Wanstrath (Err the Blog/Github)](2008/04/21/chatting-with-chris-wanstrath-err-the-blog-github/)
 - [Off Topic: Vamos todos impedir a regulamentação da profissão de analista de sistema](2008/04/19/off-topic-vamos-todos-impedir-a-regulamenta-o-da-profiss-o-de-analista-de-sistema/)
-- [Off-Topic: Google App Engine e Cloud Computing](2008/04/13/off-topic-google-app-engine-e-cloud-computing/)
 - [Off Topic: Nunca confie no TIOBE](2008/04/13/off-topic-nunca-confie-no-tiobe/)
+- [Off-Topic: Google App Engine e Cloud Computing](2008/04/13/off-topic-google-app-engine-e-cloud-computing/)
 - [MOD_RAILS LANÇADO!!](2008/04/11/mod_rails-lan-ado/)
 - [GitHub Oficialmente Lançado!!](2008/04/10/github-oficialmente-lan-ado/)
 - [Interviewed by FiveRuns](2008/04/04/interviewed-by-fiveruns/)
-- [Finalmente! Rails mudando de SVN para Git!!](2008/04/02/finalmente-rails-mudando-de-svn-para-git/)
 - [Micro Tutorial de Git](2008/04/02/micro-tutorial-de-git/)
+- [Finalmente! Rails mudando de SVN para Git!!](2008/04/02/finalmente-rails-mudando-de-svn-para-git/)
 
 ## 2008 - March
 
@@ -1197,8 +1201,8 @@ title: AkitaOnRails's Blog
 - [Chatting with Hal Fulton](2008/01/09/chatting-with-hal-fulton/)
 - [Conversando com Peter Cooper](2008/01/09/conversando-com-peter-cooper/)
 - [Chatting with Peter Cooper](2008/01/04/chatting-with-peter-cooper/)
-- [Chatting with Adrian Holovaty](2008/01/01/chatting-with-adrian-holovaty/)
 - [Conversando com Adrian Holovaty](2008/01/01/conversando-com-adrian-holovaty/)
+- [Chatting with Adrian Holovaty](2008/01/01/chatting-with-adrian-holovaty/)
 
 ## 2007 - December
 
@@ -1252,8 +1256,8 @@ title: AkitaOnRails's Blog
 ## 2007 - May
 
 - [Novidade! Akita na Surgeworks](2007/05/16/novidade-akita-na-surgeworks/)
-- [Chatting with David Black](2007/05/11/chatting-with-david-black/)
 - [Conversando com David Black](2007/05/11/conversando-com-david-black/)
+- [Chatting with David Black](2007/05/11/chatting-with-david-black/)
 - [Conversando com Chad Fowler](2007/05/07/conversando-com-chad-fowler/)
 - [Chatting with Chad Fowler](2007/05/04/chatting-with-chad-fowler/)
 
@@ -1261,8 +1265,8 @@ title: AkitaOnRails's Blog
 
 - [Conversando com Geoffrey Grosenbach](2007/04/21/conversando-com-geoffrey-grosenbach/)
 - [Chatting with Geoffrey Grosenbach](2007/04/19/chatting-with-geoffrey-grosenbach/)
-- [Chatting with Dr. Nic](2007/04/16/chatting-with-dr-nic/)
 - [Conversando com Dr. Nic](2007/04/16/conversando-com-dr-nic/)
+- [Chatting with Dr. Nic](2007/04/16/chatting-with-dr-nic/)
 - [Coluna RubyOnbr: Acampamento de Curiosos](2007/04/14/coluna-rubyonbr-acampamento-de-curiosos/)
 - [Off Topic: Seja Arrogante!](2007/04/14/off-topic-seja-arrogante/)
 
@@ -1279,8 +1283,8 @@ title: AkitaOnRails's Blog
 ## 2007 - January
 
 - [Off Topic: "Here's to the crazy ones ..."](2007/01/27/off-topic-heres-to-the-crazy-ones/)
-- [Off-topic: MacWorld 2007 - Keynote do Steve Jobs](2007/01/09/off-topic-macworld-2007-keynote-do-steve-jobs/)
 - [Off-topic: MacWorld 2007 - Steve Jobs anuncia o esperado iPhone!](2007/01/09/off-topic-macworld-2007-steve-jobs-anuncia-o-esperado-iphone/)
+- [Off-topic: MacWorld 2007 - Keynote do Steve Jobs](2007/01/09/off-topic-macworld-2007-keynote-do-steve-jobs/)
 
 ## 2006 - December
 

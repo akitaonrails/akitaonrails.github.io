@@ -56,7 +56,7 @@ exec_command() {
 
 generate_index() {
     print_message "Gerando índice..."
-    docker compose exec akitaonrails-blog sh -c "cd content && ruby generate_index.rb"
+    docker compose exec akitaonrails-blog ruby scripts/generate_index.rb
 }
 
 new_post() {

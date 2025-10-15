@@ -23,7 +23,7 @@ Find.find('content/.') do |path|
         i += 1
       end
       if lines[i]&.strip == '---'
-        front = YAML.safe_load(fm_lines.join)
+        front = YAML.safe_load(fm_lines.join, permitted_classes: [Time, DateTime])
         if front && front['title'] && front['date']
           date = begin
             DateTime.parse(front['date'].to_s)
