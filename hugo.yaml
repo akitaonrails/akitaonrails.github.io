@@ -9,8 +9,6 @@ outputs:
 services:
   disqus:
     shortname: akitaonrails
-  googleAnalytics:
-    ID: G-XSK3YHXFRY
 
 # import hextra as module
 module:
