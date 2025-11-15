@@ -117,7 +117,7 @@ No LazyVim tem plugins configurados pra coisas mais interessantes. No video acim
 
 ![Mudar Bloco Vertical](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/20250912145439_bloco.gif)
 
-Mas isso ainda não parece tãaaaao legal. E se quiser mudar só a primeira letra de várias linhas ao mesmo tempo, por exemplo, no texto do video acima, quero mudar só o hifen ("-") de cada linha de tags?
+Mas isso ainda não parece tãaaaao legal. E se quiser mudar só a primeira letra de várias linhas ao mesmo tempo, por exemplo, no texto do video acima, quero mudar só o hífen ("-") de cada linha de tags?
 
 Falei antes que apertando **v** no modo de comando ele começa o modo de visualização e dá pra selecionar a partir dali. Mas existe **Ctrl+v** que abre o modo de marcação de blocos verticais.
 

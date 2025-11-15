@@ -170,7 +170,7 @@ Mas existem outros formatos. Tem um maior que é "Extended ATX", tem um menor qu
 
 Quanto menor a placa-mãe, menos funcionalidades vai ter, em resumo costuma ser: menos slots de PCIe (acaba sobrando só uma pra GPU, normalmente). Menos slots de RAM.
 
-Daí vai depender de que gabinete vai escolher, que espaço tem em cima ou embaixo da sua mesa. Na prática, se não entende nada disso, compre ATX. Vai dar menos dor de cabeça. Boas marcas de gabinete costumam ser Lian Li ou Fractal, mas tem dezenas por aí, tem que prestar muita atenção na montagem, encaixes, funcionalides, etc. Tamanho de radiador de AIO, coolers, tamanho da placa-gráfica, etc.
+Daí vai depender de que gabinete vai escolher, que espaço tem em cima ou embaixo da sua mesa. Na prática, se não entende nada disso, compre ATX. Vai dar menos dor de cabeça. Boas marcas de gabinete costumam ser Lian Li ou Fractal, mas tem dezenas por aí, tem que prestar muita atenção na montagem, encaixes, funcionalidades, etc. Tamanho de radiador de AIO, coolers, tamanho da placa-gráfica, etc.
 
 **Mini-ITX** é só pra quem sabe o que está fazendo. Eis um exemplo da Fractal:
 
@@ -376,7 +376,7 @@ Entenda que essas velocidades são pra leitura **sequencial** de arquivos grande
 
 Mesmo em 2025 ainda não é comum NVMEs PCI 5.0, todo mundo ainda usa **NVMEs PCIe 4.0**, portanto a velocidade máxima que se encontra hoje é na faixa dos 7 GB/s, mais comum perto dos 5 GB/s, que são os Samsung 980 PRO / 990 PRO, WD Black SN850X, Crucial P5 Plus / P3 Plus ou similares.
 
-Mesmo com uma CPU e placa-mãe que suporte PCIe 5.0, você ainda vai plugar NVME PCIe 4.0 (não tem problema, porque são retro-compativeis). Mas não espere conseguir essa faixa acima de 10 GB/s sem pagar MUITO CARO. Simplesmente não compensa.
+Mesmo com uma CPU e placa-mãe que suporte PCIe 5.0, você ainda vai plugar NVME PCIe 4.0 (não tem problema, porque são retro-compatíveis). Mas não espere conseguir essa faixa acima de 10 GB/s sem pagar MUITO CARO. Simplesmente não compensa.
 
 Muita gente ainda usa SSD: **fique longe dos genéricos** sem marca e baratos demais da AliExpress. É super comum ser só um adaptador de microSD card. E também não gosto de Kingston, essa marca já me deu muita dor de cabeça. Fique com marcas confiáveis como Samsung, Sandisk, Crucial, Western Digital e coisas assim.
 
@@ -453,7 +453,7 @@ Mais importante é Speed Rating, muitos são classe C como C10 acima. Mas se o u
 
 Pra piorar a confusão de marketagem ainda tem USB e Thunderbolt. Vamos entender: primeiro de tudo ter conector USB-C não significa nada. USB-C é padrão do conector físico do cabo, só isso. Os dados que trafegam nela usam protocolos, e existem vários.
 
-No caso de plug USB-A, que é o retangulo que tem lado certo pra encaixar e é o mais comum na parte de trás de um PC, alguns vem com cores diferentes:
+No caso de plug USB-A, que é o retângulo que tem lado certo pra encaixar e é o mais comum na parte de trás de um PC, alguns vem com cores diferentes:
 
 * Preto → USB 2.0 (480 Mb/s).
 * Azul → USB 3.0 / 3.1 Gen 1 / 3.2 Gen 1 (5 Gb/s).
