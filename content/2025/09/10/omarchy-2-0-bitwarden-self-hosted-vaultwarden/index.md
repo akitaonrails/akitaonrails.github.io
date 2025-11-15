@@ -80,7 +80,7 @@ Importante:
 - Mude `SIGNUPS_ALLOWED` pra `true` somente uma vez, entre no site local e crie sua nova conta. Depois mude no arquivo pra `false`, reinicie o container. Dessa forma ninguém mais poderá criar nenhuma nova conta.
 - É recomendado configurar um GMAIL SMTP pra mandar emails de notificações. Pra isso precisa criar uma senha de aplicativo no Google.
 
-Pra criar uma senha exclusivamente pro vaultwarden, acesse [Google App Passwords](https://myaccount.google.com//apppasswords) e gere uma nova senha secreta exclusiva:
+Pra criar uma senha exclusivamente pro vaultwarden, acesse [Google App Passwords](https://myaccount.google.com/apppasswords) e gere uma nova senha secreta exclusiva:
 
 ![App Password](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/20250910194453_screenshot-2025-09-10_16-34-48.png)
 
