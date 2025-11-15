@@ -28,7 +28,7 @@ Notem como os últimos posts de Linux não sou eu tentando te vender nada, mas s
 
 Segundo: programadores são **péssimos** comunicadores. Nós falamos somente pra nós mesmos e não pensamos se a pessoa ouvindo está nos entendendo. E quando vemos que não entende a reação é _"ah, porque ela é burra e eu sou inteligente."_
 
-Falei sobre isso no artigo [Programadores são Péssimos Comunicadores](<https://akitaonrails.com/2013/11/02/off-topic-programadores-sao-pessimos-comunicadores-udp-vs-tcp/>. Mesmo se só uma pessoa ler seu post, mas te der um comentário, esse feedback é importante. É como um teste rodando que falha: agora você sabe onde tem que corrigir. E vai corrigindo, um passo de cada vez.
+Falei sobre isso no artigo [Programadores são Péssimos Comunicadores](<https://akitaonrails.com/2013/11/02/off-topic-programadores-sao-pessimos-comunicadores-udp-vs-tcp/>). Mesmo se só uma pessoa ler seu post, mas te der um comentário, esse feedback é importante. É como um teste rodando que falha: agora você sabe onde tem que corrigir. E vai corrigindo, um passo de cada vez.
 
 Portanto, escrever blog post, não importa se tem zero visitantes, é um exercício de prática pra se tornar um comunicador melhor, por isso recomendo.
 
