@@ -1,0 +1,15 @@
+{{/* Core scripts (theme, menu, tabs, etc.) */}}
+{{- partial "scripts/core.html" . -}}
+
+{{/* Search */}}
+{{- partial "scripts/search.html" . -}}
+
+{{/* Mermaid */}}
+{{- if (.Store.Get "hasMermaid") -}}
+  {{- partial "scripts/mermaid.html" . -}}
+{{- end -}}
+
+{{/* Asciinema */}}
+{{- if (.Store.Get "hasAsciinema") -}}
+  {{- partial "scripts/asciinema.html" . -}}
+{{- end -}}

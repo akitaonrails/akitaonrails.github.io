@@ -1,0 +1,96 @@
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  {{- $noindex := .Params.noindex | default false -}}
+  {{ if and (hugo.IsProduction) (not $noindex) -}}
+    <meta name="robots" content="index, follow" />
+  {{ else -}}
+    <meta name="robots" content="noindex, nofollow" />
+  {{ end -}}
+  {{ partialCached "favicons.html" . -}}
+  <title>
+    {{- if .IsHome -}}
+      {{ .Site.Title -}}
+    {{ else -}}
+      {{ with .Title }}{{ . }} – {{ end -}}
+      {{ .Site.Title -}}
+    {{ end -}}
+  </title>
+  <meta name="description" content="{{ partial "utils/page-description.html" . }}" />
+
+  {{- with .Params.canonical -}}
+    <link rel="canonical" href="{{ . }}" itemprop="url" />
+  {{- else -}}
+    <link rel="canonical" href="{{ .Permalink }}" itemprop="url" />
+  {{- end -}}
+
+  {{- partial "opengraph.html" . -}}
+  {{- partial "schema.html" . -}}
+  {{- partial "twitter_cards.html" . -}}
+
+  {{- $mainCss := resources.Get "css/compiled/main.css" -}}
+  {{- $customCss := resources.Get "css/custom.css" -}}
+  {{- $variablesCss := resources.Get "css/variables.css" | resources.ExecuteAsTemplate "css/variables.css" . -}}
+
+  {{- /* Production build */ -}}
+  {{- if hugo.IsProduction }}
+    {{- $styles := slice $variablesCss $mainCss $customCss | resources.Concat "css/compiled/main.css" | minify | fingerprint }}
+    <link rel="preload" href="{{ $styles.RelPermalink }}" as="style" integrity="{{ $styles.Data.Integrity }}" />
+    <link href="{{ $styles.RelPermalink }}" rel="stylesheet" integrity="{{ $styles.Data.Integrity }}" />
+
+  {{- /* Theme development mode (non-production + theme environment) */ -}}
+  {{- else if eq hugo.Environment "theme" }}
+    {{- $devStyles := resources.Get "css/styles.css" | postCSS (dict "inlineImports" true) }}
+    <link href="{{ $devStyles.RelPermalink }}" rel="stylesheet" />
+    <link href="{{ $variablesCss.RelPermalink }}" rel="stylesheet" />
+    <link href="{{ $customCss.RelPermalink }}" rel="stylesheet" />
+
+  {{- /* User local development */ -}}
+  {{- else }}
+    {{- $styles := resources.Get "css/compiled/main.css" -}}
+    <link href="{{ $styles.RelPermalink }}" rel="stylesheet" />
+    <link href="{{ $variablesCss.RelPermalink }}" rel="stylesheet" />
+    <link href="{{ $customCss.RelPermalink }}" rel="stylesheet" />
+  {{- end }}
+
+  {{ partial "components/analytics/analytics.html" . }}
+
+  <script>
+    // The section must not be in the theme.js file because it can create a quick flash (switch between light and dark).
+
+    function setTheme(theme) {
+      document.documentElement.classList.remove("light", "dark");
+
+      if (theme !== "light" && theme !== "dark") {
+       theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      }
+
+      document.documentElement.classList.add(theme);
+      document.documentElement.style.colorScheme = theme;
+    }
+
+    setTheme("color-theme" in localStorage ? localStorage.getItem("color-theme") : '{{ site.Params.theme.default | default `system`}}')
+
+  </script>
+
+  <script>
+    // The section must not be in the banner.js file because it can create a quick flash.
+
+    if (localStorage.getItem('{{ site.Params.banner.key | default `banner-closed` }}')) {
+      document.documentElement.style.setProperty("--hextra-banner-height", "0px");
+      document.documentElement.classList.add("hextra-banner-hidden");
+    }
+  </script>
+
+  <!-- Math engine -->
+  {{ $noop := .WordCount -}}
+  {{- $engine := site.Params.math.engine | default "katex" -}}
+  {{ if and (.Page.Store.Get "hasMath") (eq $engine "katex") -}}
+    {{ partialCached "scripts/katex.html" . -}}
+  {{ else if and (.Page.Store.Get "hasMath") (eq $engine "mathjax") -}}
+    {{ partialCached "scripts/mathjax.html" . -}}
+  {{ end -}}
+
+  {{ partial "utils/page-width-override.html" . }}
+  {{ partial "custom/head-end.html" . -}}
+</head>
