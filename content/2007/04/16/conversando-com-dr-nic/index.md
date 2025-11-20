@@ -9,12 +9,9 @@ draft: false
 
 **English readers, click [here](/2007/4/16/chatting-with-dr-nic)**
 
- ![](/files/130749539_89959dd059.jpg)
-
 Hoje, Carlos Eduardo, da [e-Genial](http://www.egenial.com.br), me propôs uma entrevista com o próprio Dr. Nic Williams. O homem do momento. Eu aceitei imediatamente e começamos um chat via Skype por mais de uma hora. Ele é um cara legal e tão educado e bem informado como eu esperava.
 
 Então, sem mais delongas, aqui vai:
-
 
 #### Quem é Dr. Nic?
 
@@ -38,7 +35,7 @@ Então, sem mais delongas, aqui vai:
 
 **AkitaOnRails** : De um ponto de vista de marketing acho fantástico. Você poderia chamar de algo enfeitado como ‘Houdini’ mas Magic Models funciona. Tenho a sensação que esse é seu projeto open source Rails mais famoso. Estou certo ou existe algum outro plugin seu que é mais interessante para a comunidade neste momento?
 
-**Dr Nic** : Eu não acho que muitas pessoas de fato … você sabe … usam Magic Models. Lá no fundo você precisa de um arquivo de model como local para colocar outras funcionalidades. Então ele é mais uma apresentação de um conceito. Eu tenho um esquema de banco com 200 tabelas que uso para um trabalho. Eu uso hooks (ganchos) para incluir coisas adicionais nos models gerados. Espero que o [New Gem Generator](:http://newgem.rubyforge.org) se torne popular. Gostaria de ver mais pessoas compartilhando código.
+**Dr Nic** : Eu não acho que muitas pessoas de fato … você sabe … usam Magic Models. Lá no fundo você precisa de um arquivo de model como local para colocar outras funcionalidades. Então ele é mais uma apresentação de um conceito. Eu tenho um esquema de banco com 200 tabelas que uso para um trabalho. Eu uso hooks (ganchos) para incluir coisas adicionais nos models gerados. Espero que o New Gem Generator se torne popular. Gostaria de ver mais pessoas compartilhando código.
 
 **AkitaOnRails** : Então, o que você pode nos dizer sobre o Gem Generator. O que ele faz? Sobre o que é?
 
@@ -96,7 +93,7 @@ Então, sem mais delongas, aqui vai:
 
 **Dr Nic** : Acho que em primeiro lugar mais Railers estão interessados em como colocar suas aplicações Rails em produção :-) Eles sonham em ter problemas de escalabilidade. _“Oh, minha conta Google Ad-sense está cheia. O que eu devo fazer com todo esse dinheiro.”_
 
-#### Comunidade e Macs!
+#### Comunidade e Macs
 
 **AkitaOnRails** : Falando em comunidade, você participou de muitas conferências, eventos? Você esteve na última RailsConf EU? Quais suas opiniões sobre o que está acontecendo em torno da comunidade?
 
@@ -157,4 +154,3 @@ Então, sem mais delongas, aqui vai:
 **Dr Nic** : Correto. PhD em Ciências da Computação. Apenas uso o nome _Dr Nic_ porque é um pouco diferente. Não é para exibir a parte “Dr”.
 
 **AkitaOnRails** : Muito legal! Dr. Nic, então :-) Estou muito feliz por essa oportunidade. Espero poder conversar mais no futuro. Uma pena que não possamos conversar num bar com algumas cervejas.
-
