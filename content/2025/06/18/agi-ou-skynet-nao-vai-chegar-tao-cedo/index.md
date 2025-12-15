@@ -48,7 +48,7 @@ Por causa disso muitos acreditam em tudo que ele fala - _"Lógico que o cara que
 
 Eu mesmo falei no Flow que ele inventou Backpropagation - o backbone de treinamento de I.A. -, mas é uma simplificação. O próprio Hinton já esclareceu diversas vezes que ele **não inventou**. O grosso do trabalho foi publicado por **Paul Werbos** e **Shun-Ichi Amari**. Mas de fato, foi o Hinton que popularizou esse trabalho.
 
-Hinton, como professor, teve a sorte de supervisionar alunos que viriam a se tornar brilhantes. Na AlexNet - eu contei no Flow - como foi Ilya Sutskever quem deu a idéia de usar GPUs pra treinar deep neural networks. Ilya, que depois viria a co-fundar a OpenAI - junto com Andrej Karpathy, outro aluno brilhante de HInton e que hoje em dia eu detesto porque ele que cunhou o tal de "Vibe Coding". Karpathy seguindo os passos do seu mentor Hinton e espalhando bullshit.
+Hinton, como professor, teve a sorte de supervisionar alunos que viriam a se tornar brilhantes. Na AlexNet - eu contei no Flow - como foi Ilya Sutskever quem deu a idéia de usar GPUs pra treinar deep neural networks. Ilya, que depois viria a co-fundar a OpenAI - junto com Andrej Karpathy, outro aluno brilhante de HInton e que hoje em dia eu detesto porque ele que cunhou o tal de "Vibe Coding". Karpathy vem seguindo os passos do seu mentor Hinton e espalhando bullshit.
 
 Ainda na revolução de computer vision, além de usar GPUs, o grande passo de arquitetura foram os _Convolutional Neural Networks_ (CNNs), de **Yann LeCun** - outro aluno de Hinton.
 
