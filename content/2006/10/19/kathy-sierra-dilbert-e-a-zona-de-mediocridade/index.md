@@ -9,16 +9,13 @@ tags:
 draft: false
 ---
 
-Ouvi falar sobre [Kathy Sierra](http://headrush.typepad.com/about.html), pela primeira vez, em um post no blog Loud Thinking, de David Hansson. Kathy também esteve na RailsConf Europe em setembro. Ela e outros amigos escrevem no blog [Creating Passionate Users](http://headrush.typepad.com/). Ela é muito interessada no cérebro, inteligência artifial fora muita psicologia e filosofia. Seus artigos dão uma visão diferente de coisas que já deveríamos saber. Este post um excelente exemplo disso. Segue a tradução:
+Ouvi falar sobre [Kathy Sierra](https://web.archive.org/web/20250715161449/http://headrush.typepad.com/about.html), pela primeira vez, em um post no blog Loud Thinking, de David Hansson. Kathy também esteve na RailsConf Europe em setembro. Ela e outros amigos escrevem no blog [Creating Passionate Users](https://web.archive.org/web/20250715161501/https://headrush.typepad.com/creating_passionate_users/). Ela é muito interessada no cérebro, inteligência artificial fora muita psicologia e filosofia. Seus artigos dão uma visão diferente de coisas que já deveríamos saber. Este post é um excelente exemplo disso. Segue a tradução:
 
 #### Dilbert e a zona de mediocridade
 
- ![](/files/loveandhate_10.jpg)  
-  
 <small>Legenda. [título] “Como seus usuários se sentem sobre seu produto ou serviço”.<br> [setas] “aqui é bom”, “aqui você está ferrado”, "aqui é bom.<br> [barra] “Amor”, “Zona de Mediocridade”, “Ódio”.</small>
 
-Quão corajoso você é? Quão longe você iria (ou seu empregador) para evitar a Zona de Mediocridade? Até, ou, a menos que, você esteja disposto a arriscar por Ódio Passional, você pode nunca vir a sentir Amor. Scott Adams concorda. Em um [post recente no blog do Dilbert](http://dilbertblog.typepad.com/the_dilbert_blog/2006/10/knowing_when_to.html), ele disse _“se todos que forem expostos a um produto gostarem dele, o produto nunca será um sucesso … A razão de um produto que ‘todo mundo gosta’ falhará é porque ninguém o ‘ama’. A única coisa que prevê sucesso é paixão, mesmo que apenas 10% dos consumidores o tenham”_.
-
+Quão corajoso você é? Quão longe você iria (ou seu empregador) para evitar a Zona de Mediocridade? Até, ou, a menos que, você esteja disposto a arriscar por Ódio Passional, você pode nunca vir a sentir Amor. Scott Adams concorda. Em um [post recente no blog do Dilbert](https://web.archive.org/web/20070101214718/http://dilbertblog.typepad.com/the_dilbert_blog/2006/10/knowing_when_to.html), ele disse _“se todos que forem expostos a um produto gostarem dele, o produto nunca será um sucesso … A razão de um produto que ‘todo mundo gosta’ falhará é porque ninguém o ‘ama’. A única coisa que prevê sucesso é paixão, mesmo que apenas 10% dos consumidores o tenham”_.
 
 Isso NÃO é sobre ser _notável_ – é sobre ser _adorável_. E isso quase sempre significa ser _odiado_ também. Nosso livro “Head First Java”, por exemplo, tem 139 comentários na Amazon, e a maioria ou são cinco estrelas (“amo isso, o melhor livro técnico já feito, aprendi muito com ele”) ou uma estrela (“odeio isso, o pior livro técnico que já vi, os autores deveriam ser mortos”). Mas fazer um livro que as pessoas iriam amar ou odiar não foi nossa intenção. Resolvemos fazer um livro com um formato mais amigável e fácil de aprender, não tínhamos idéia e éramos ingênuos por não entender quantas “regras” implícitas estávamos violando. Foi só quando os editores da O’Reilly começaram uma mini-revolta que percebemos que cruzamos uma Linha Que Não Pode Ser Cruzada e criamos algo potencialmente _embaraçoso_.
 
@@ -32,7 +29,7 @@ Isso não foi sempre verdade, mas puxa … quantos mais [qualquer coisa] nós re
 
 #### O que é necessário para sair da Zona de Mediocridade?
 
-Normalmente, nesse ponto, eu falaria das coisas que _todos_ falam … [como ter idéias revolucionárias](http://headrush.typepad.com/creating_passionate_users/2005/11/how_to_come_up_.html), onde procurar oportunidades, ser inovador, blá blá blá. Você já sabe disso tudo. Acho que resumindo seria isso:
+Normalmente, nesse ponto, eu falaria das coisas que _todos_ falam … [como ter idéias revolucionárias](https://web.archive.org/web/20250828051214/http://headrush.typepad.com/creating_passionate_users/2005/11/how_to_come_up_.html), onde procurar oportunidades, ser inovador, blá blá blá. Você já sabe disso tudo. Acho que resumindo seria isso:
 
 #### Para evitar a Zona de Mediocridade, deve suspender a incredulidade
 
