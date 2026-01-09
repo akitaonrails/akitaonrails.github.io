@@ -2,6 +2,10 @@
 title: AkitaOnRails's Blog
 ---
 
+## 2026 - January
+
+- [Omarchy 3 - Um dos Melhores Agentes pra Programação: Crush](2026/01/09/omarchy-3-um-dos-melhores-agentes-pra-programacao-crush/)
+
 ## 2025 - November
 
 - [Omarchy - Não entrar em Sleep enquanto Copia](2025/11/20/omarchy-no-sleep-on-copy/)
