@@ -1,71 +1,75 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
+
 require 'yaml'
-require 'find'
 require 'date'
+
+CONTENT_DIR = 'content'
+OUTPUT_FILE = "#{CONTENT_DIR}/_index.md"
+FRONTMATTER_DELIMITER = '---'
 
 def escape_markdown(text)
   text.to_s.gsub('[', '\\[').gsub(']', '\\]')
 end
 
-entries = []
+def extract_frontmatter(content)
+  return nil unless content.start_with?("#{FRONTMATTER_DELIMITER}\n")
 
-Find.find('content/.') do |path|
-  next unless path.end_with?('index.md')
-  next if ['./index.md', './_index.md'].include?(path)
+  end_index = content.index("\n#{FRONTMATTER_DELIMITER}\n", 4)
+  return nil unless end_index
 
-  begin
-    lines = File.readlines(path)
-    if lines.first&.strip == '---'
-      fm_lines = []
-      i = 1
-      while i < lines.size && lines[i].strip != '---'
-        fm_lines << lines[i]
-        i += 1
-      end
-      if lines[i]&.strip == '---'
-        front = YAML.safe_load(fm_lines.join)
-        if front && front['title'] && front['date']
-          date = begin
-            DateTime.parse(front['date'].to_s)
-          rescue StandardError
-            nil
-          end
-          if date
-            url = path.sub('content/', '').sub('./', '').sub('/index.md', '/')
-            entries << { 'title' => front['title'], 'url' => url, 'date' => date }
-          end
-        end
-      end
-    end
-  rescue StandardError => e
-    warn "YAML error in #{path}: #{e.message}"
-  end
+  yaml_content = content[4..end_index]
+  YAML.safe_load(yaml_content, permitted_classes: [Date, Time])
 end
 
-# Sort newest first
-entries.sort_by! { |e| e['date'] }.reverse!
+def parse_post(path)
+  content = File.read(path)
+  frontmatter = extract_frontmatter(content)
+  return nil unless frontmatter&.dig('title') && frontmatter&.dig('date')
 
-# Group by year and month
-grouped = entries.group_by { |e| [e['date'].year, e['date'].month] }
+  date = DateTime.parse(frontmatter['date'].to_s)
+  url = path.delete_prefix("#{CONTENT_DIR}/").delete_suffix('/index.md') + '/'
 
-# Sort year-month pairs descending
-sorted_keys = grouped.keys.sort.reverse
-
-File.open('content/_index.md', 'w') do |f|
-  f.puts '---'
-  f.puts "title: AkitaOnRails's Blog"
-  f.puts '---'
-  f.puts
-
-  sorted_keys.each do |(year, month)|
-    month_name = Date::MONTHNAMES[month] # "May", "June", etc
-    f.puts "## #{year} - #{month_name}\n\n"
-    # Sort posts within each month by date (newest first)
-    grouped[[year, month]].sort_by { |post| post['date'] }.reverse.each do |post|
-      f.puts "- [#{escape_markdown(post['title'])}](#{post['url']})"
-    end
-    f.puts
-  end
+  { title: frontmatter['title'], url: url, date: date }
+rescue ArgumentError, Psych::SyntaxError => e
+  warn "Error parsing #{path}: #{e.message}"
+  nil
 end
 
-puts 'Generated _index.md with posts grouped by year & month.'
+def collect_posts
+  Dir.glob("#{CONTENT_DIR}/**/index.md")
+     .reject { |path| path == "#{CONTENT_DIR}/index.md" || path == "#{CONTENT_DIR}/_index.md" }
+     .filter_map { |path| parse_post(path) }
+end
+
+def group_by_month(posts)
+  posts
+    .sort_by { |post| post[:date] }
+    .reverse
+    .group_by { |post| [post[:date].year, post[:date].month] }
+end
+
+def generate_index(grouped_posts)
+  sorted_months = grouped_posts.keys.sort.reverse
+
+  lines = ["#{FRONTMATTER_DELIMITER}\ntitle: AkitaOnRails's Blog\n#{FRONTMATTER_DELIMITER}\n"]
+
+  sorted_months.each do |(year, month)|
+    month_name = Date::MONTHNAMES[month]
+    lines << "## #{year} - #{month_name}\n"
+
+    grouped_posts[[year, month]].each do |post|
+      lines << "- [#{escape_markdown(post[:title])}](#{post[:url]})"
+    end
+
+    lines << ''
+  end
+
+  lines.join("\n")
+end
+
+posts = collect_posts
+grouped = group_by_month(posts)
+File.write(OUTPUT_FILE, generate_index(grouped))
+
+puts "Generated #{OUTPUT_FILE} with #{posts.size} posts grouped by year & month."

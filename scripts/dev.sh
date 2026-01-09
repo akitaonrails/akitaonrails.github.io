@@ -1,13 +1,18 @@
 #!/bin/bash
 
-set -e
+set -euo pipefail
+
+readonly GREEN='\033[0;32m'
+readonly RED='\033[0;31m'
+readonly NC='\033[0m'
+readonly SERVICE_NAME="akitaonrails-blog"
 
 print_message() {
-    echo "[INFO] $1"
+    echo -e "${GREEN}[INFO]${NC} $1"
 }
 
 print_error() {
-    echo "[ERROR] $1"
+    echo -e "${RED}[ERROR]${NC} $1" >&2
 }
 
 check_docker() {
@@ -15,7 +20,7 @@ check_docker() {
         print_error "Docker não está instalado."
         exit 1
     fi
-    
+
     if ! docker compose version &> /dev/null; then
         print_error "Docker Compose não está disponível."
         exit 1
@@ -45,37 +50,47 @@ logs() {
 }
 
 exec_command() {
-    if [ -z "$1" ]; then
+    if [ -z "${1:-}" ]; then
         print_error "Comando não especificado"
         exit 1
     fi
-    
+
     print_message "Executando: $1"
-    docker compose exec akitaonrails-blog $1
+    docker compose exec "$SERVICE_NAME" "$@"
 }
 
 generate_index() {
     print_message "Gerando índice..."
-    docker compose exec akitaonrails-blog sh -c "cd content && ruby generate_index.rb"
+    docker compose exec "$SERVICE_NAME" ruby scripts/generate_index.rb
+}
+
+slugify() {
+    echo "$1" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/-/g; s/-\+/-/g; s/^-\|-$//g'
 }
 
 new_post() {
-    if [ -z "$1" ]; then
+    if [ -z "${1:-}" ]; then
         print_error "Título do post não especificado"
         print_message "Uso: ./scripts/dev.sh new-post 'Título do Post'"
         exit 1
     fi
-    
-    DATE_PATH=$(date +%Y/%m/%d)
-    POST_DIR="content/${DATE_PATH}/$(echo "$1" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/-/g' | sed 's/-\+/-/g' | sed 's/^-\|-$//g')"
-    
-    print_message "Criando post: $POST_DIR"
-    
-    mkdir -p "$POST_DIR"
-    
-    cat > "$POST_DIR/index.md" << EOF
+
+    local title="$1"
+    local date_path
+    local slug
+    local post_dir
+
+    date_path=$(date +%Y/%m/%d)
+    slug=$(slugify "$title")
+    post_dir="content/${date_path}/${slug}"
+
+    print_message "Criando post: $post_dir"
+
+    mkdir -p "$post_dir"
+
+    cat > "$post_dir/index.md" << EOF
 ---
-title: "$1"
+title: "$title"
 date: $(date +%Y-%m-%dT%H:%M:%S%z)
 draft: false
 description: "Descrição do post aqui"
@@ -86,8 +101,8 @@ categories: []
 Conteúdo do post aqui...
 
 EOF
-    
-    print_message "Post criado em: $POST_DIR/index.md"
+
+    print_message "Post criado em: $post_dir/index.md"
 }
 
 show_help() {

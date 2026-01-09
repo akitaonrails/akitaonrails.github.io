@@ -505,8 +505,8 @@ title: AkitaOnRails's Blog
 - [Ruby on Rails implementation of a (proper) Ranking/Popularity system](2016/10/31/ruby-on-rails-implementation-of-a-proper-ranking-popularity-system/)
 - [\[Discussion\] Can we protect our work from DNS providers suffering DDoS attacks?](2016/10/31/discussion-can-we-protect-our-work-from-dns-providers-suffering-ddos-attacks/)
 - [Natural Language Generation in Ruby (with JRuby + SimpleNLG)](2016/10/28/natural-language-generation-in-ruby-with-jruby-simplenlg/)
-- [Iniciativa THE CONF](2016/10/20/iniciativa-the-conf/)
 - [THE CONF Initiative](2016/10/20/the-conf-initiative/)
+- [Iniciativa THE CONF](2016/10/20/iniciativa-the-conf/)
 - [Sharing models between Rails Apps - Part 2](2016/10/03/sharing-models-between-rails-apps-part-2/)
 - [Sharing models between Rails Apps - Part 1](2016/10/03/sharing-models-between-rails-apps-part-1/)
 
@@ -628,7 +628,6 @@ title: AkitaOnRails's Blog
 ## 2015 - January
 
 - [Ruby e Rails no Ubuntu 14.04 LTS Trusty Tahr](2015/01/28/ruby-e-rails-no-ubuntu-14-04-lts-trusty-tahr/)
-- [\[Off-Topic\] Coletânea "Processos e Metodologias Não Vão Te Ajudar!"](2015/01/07/off-topic-coletanea-processos-e-metodologias-nao-vao-te-ajudar/)
 - [Lembrando os Heróis Ruby que se foram em 2014](2015/01/02/lembrando-os-herois-ruby-que-se-foram-em-2014/)
 - [Começando o Ano com um Ruby Drama: RubySpec vs MRI Core Team](2015/01/02/comecando-o-ano-com-um-ruby-drama-rubyspec-vs-mri-core-team/)
 
@@ -672,7 +671,6 @@ title: AkitaOnRails's Blog
 - [\[Small Bites\] Vagrant + Ubuntu 14.04 + Chef Solo](2014/07/28/small-bites-vagrant-ubuntu-14-04-chef-solo/)
 - [\[Off-Topic\] Meu Primeiro "Livro"](2014/07/22/off-topic-meu-primeiro-livro/)
 - [\[Small Bites\] Tirando Proveito de Threads em Ruby](2014/07/15/small-bites-tirando-proveito-de-threads-em-ruby/)
-- [Aprendendo Ruby e Rails, Livros e Guias](2014/07/13/aprendendo-ruby-e-rails-livros-e-guias/)
 - [\[Off-Topic\] Alguém importante deixou a comunidade! E agora??](2014/07/06/off-topic-alguem-importante-deixou-a-comunidade-e-agora/)
 - [Web Components é uma Revolução?](2014/07/06/web-components-e-uma-revolucao/)
 
@@ -738,19 +736,19 @@ title: AkitaOnRails's Blog
 
 - [Rubyconf Brasil 2013: Conheça Tiago Bastos e Eduardo Gurgel](2013/08/29/rubyconf-brasil-2013-conheca-tiago-bastos-e-eduardo-gurgel/)
 - [Rubyconf Brasil 2013: Conheça Halan Pinheiro](2013/08/28/rubyconf-brasil-2013-conheca-halan-pinheiro/)
-- [Rubyconf Brasil 2013: Conheça Luis Cipriani](2013/08/27/rubyconf-brasil-2013-conheca-luis-cipriani/)
 - [Rubyconf Brasil 2013: Meet Luis Cipriani](2013/08/27/rubyconf-brasil-2013-meet-luis-cipriani/)
-- [Rubyconf Brasil 2013: Conheça Carlos Galdino](2013/08/26/rubyconf-brasil-2013-conheca-carlos-galdino/)
+- [Rubyconf Brasil 2013: Conheça Luis Cipriani](2013/08/27/rubyconf-brasil-2013-conheca-luis-cipriani/)
 - [Rubyconf Brasil 2013: Meet Carlos Galdino](2013/08/26/rubyconf-brasil-2013-meet-carlos-galdino/)
+- [Rubyconf Brasil 2013: Conheça Carlos Galdino](2013/08/26/rubyconf-brasil-2013-conheca-carlos-galdino/)
 - [Rubyconf Brasil 2013: Lembrando de _Why. Engenharia vs Arte](2013/08/24/rubyconf-brasil-2013-lembrando-de-_why/)
 - [\[Off-Topic\] Estimativas são Promessas. Promessas devem ser cumpridas.](2013/08/23/off-topic-estimativas-sao-promessas-promessas-devem-ser-cumpridas/)
-- [Rubyconf Brasil 2013: Conheça William PotHix](2013/08/23/rubyconf-brasil-2013-conheca-william-pothix/)
 - [Rubyconf Brasil 2013: Meet William PotHix](2013/08/23/rubyconf-brasil-2013-meet-william-pothix/)
+- [Rubyconf Brasil 2013: Conheça William PotHix](2013/08/23/rubyconf-brasil-2013-conheca-william-pothix/)
 - [Rubyconf Brasil 2013: Meet Bruno AbstractJ](2013/08/23/rubyconf-brasil-2013-meet-bruno-abstractj/)
 - [Rubyconf Brasil 2013: Meet Danilo Sato](2013/08/22/rubyconf-brasil-2013-meet-danilo-sato/)
 - [Rubyconf Brasil 2013: Conheça Bruno AbstractJ](2013/08/22/rubyconf-brasil-2013-conheca-bruno-abstractj/)
-- [Rubyconf Brasil 2013: Conheça Eduardo Shiota](2013/08/19/rubyconf-brasil-2013-conheca-eduardo-shiota/)
 - [Rubyconf Brasil 2013: Meet Eduardo Shiota](2013/08/19/rubyconf-brasil-2013-meet-eduardo-shiota/)
+- [Rubyconf Brasil 2013: Conheça Eduardo Shiota](2013/08/19/rubyconf-brasil-2013-conheca-eduardo-shiota/)
 - [Rubyconf Brasil 2013: Vinheta de Abertura](2013/08/19/rubyconf-brasil-2013-vinheta-de-abertura/)
 - [Rubyconf Brasil 2013: Conheça Rodrigo Caffo](2013/08/16/rubyconf-brasil-2013-conheca-rodrigo-caffo/)
 - [Rubyconf Brasil 2013: Your first time in São Paulo, Brazil](2013/08/15/rubyconf-brasil-2013-your-first-time-in-sao-paulo-brazil/)
@@ -760,12 +758,12 @@ title: AkitaOnRails's Blog
 - [Rubyconf Brasil 2013: Jaime Andrés Dávila](2013/08/13/rubyconf-brasil-2013-jaime-andres-davila--2/)
 - [Rubyconf Brasil 2013: Jaime Andrés Dávila](2013/08/13/rubyconf-brasil-2013-jaime-andres-davila/)
 - [Rubyconf Brasil 2013: Conheça Carlos (Chester) Nascimento](2013/08/12/rubyconf-brasil-2013-conheca-carlos-chester-nascimento/)
-- [Rubyconf Brasil 2013: Conheça Caike Souza](2013/08/11/rubyconf-brasil-2013-conheca-caike-souza/)
 - [Rubyconf Brasil 2013: Meet Caike Souza](2013/08/11/rubyconf-brasil-2013-meet-caike-souza/)
-- [Rubyconf Brasil 2013: Conheça Pablo Astigarraga](2013/08/09/rubyconf-brasil-2013-conheca-pablo-astigarraga/)
+- [Rubyconf Brasil 2013: Conheça Caike Souza](2013/08/11/rubyconf-brasil-2013-conheca-caike-souza/)
 - [Rubyconf Brasil 2013: Meet Pablo Astigarraga](2013/08/09/rubyconf-brasil-2013-meet-pablo-astigarraga/)
-- [Rubyconf Brasil 2013: Conheça Hal Fulton](2013/08/08/rubyconf-brasil-2013-conheca-hal-fulton/)
+- [Rubyconf Brasil 2013: Conheça Pablo Astigarraga](2013/08/09/rubyconf-brasil-2013-conheca-pablo-astigarraga/)
 - [Rubyconf Brasil 2013: Meet Hal Fulton](2013/08/08/rubyconf-brasil-2013-meet-hal-fulton/)
+- [Rubyconf Brasil 2013: Conheça Hal Fulton](2013/08/08/rubyconf-brasil-2013-conheca-hal-fulton/)
 
 ## 2013 - July
 
@@ -883,8 +881,8 @@ title: AkitaOnRails's Blog
 ## 2011 - September
 
 - [\[Off-Topic\] Disney, História do Computador e o Encarte Perdido](2011/09/25/off-topic-disney-historia-do-computador-e-o-encarte-perdido/)
-- [RubyConf Brasil 2011 está chegando!](2011/09/19/rubyconf-brasil-2011-esta-chegando/)
 - [RubyConf Brazil 2011 is coming!](2011/09/19/rubyconf-brazil-2011-is-coming/)
+- [RubyConf Brasil 2011 está chegando!](2011/09/19/rubyconf-brasil-2011-esta-chegando/)
 - [\[Off-Topic\] Minha Carreira - Fase 5 - Codeminer 42](2011/09/19/off-topic-minha-carreira-fase-5-codeminer-42/)
 
 ## 2011 - August
@@ -962,10 +960,10 @@ title: AkitaOnRails's Blog
 
 - [\[Off-Topic\] Jeff Patton e Megan Fox no mesmo post?](2010/06/27/off-topic-jeff-patton-e-megan-fox-no-mesmo-post/)
 - [\[RailsConf 2010\] - Video Interview - David Hansson](2010/06/17/railsconf-2010-video-interview-david-hansson/)
-- [\[RailsConf 2010\] - Video Entrevista - David Hansson](2010/06/17/railsconf-2010-video-entrevista-david-hansson/)
 - [\[RailsConf 2010\] - Video Interviews - Part 2](2010/06/17/railsconf-2010-video-interviews-part-2/)
-- [\[RailsConf 2010\] - Video Entrevistas - Parte 2](2010/06/17/railsconf-2010-video-entrevistas-parte-2/)
+- [\[RailsConf 2010\] - Video Entrevista - David Hansson](2010/06/17/railsconf-2010-video-entrevista-david-hansson/)
 - [\[RailsConf 2010\] - Video Interviews - Part 1](2010/06/17/railsconf-2010-video-interviews-part-1/)
+- [\[RailsConf 2010\] - Video Entrevistas - Parte 2](2010/06/17/railsconf-2010-video-entrevistas-parte-2/)
 - [\[RailsConf 2010\] - Video Entrevistas - Parte 1](2010/06/17/railsconf-2010-video-entrevistas-parte-1/)
 - [\[RailsConf 2010\] - Viagem e Evento](2010/06/17/railsconf-2010-viagem-e-evento/)
 - [\[RailsConf 2010\] - Video Interview - Robert Martin (English)](2010/06/16/railsconf-2010-video-interview-robert-martin-english/)
@@ -1316,4 +1314,3 @@ title: AkitaOnRails's Blog
 
 - [Rails Manifesto](2006/04/11/rails-manifesto/)
 - [Bem Vindos](2006/04/05/bem-vindos/)
-
