@@ -4,6 +4,7 @@ title: AkitaOnRails's Blog
 
 ## 2026 - January
 
+- [AI Agents: Garantindo a Proteção do seu Sistema](2026/01/10/ai-agents-garantindo-a-protecao-do-seu-sistema/)
 - [Omarchy 3 - Um dos Melhores Agentes pra Programação: Crush](2026/01/09/omarchy-3-um-dos-melhores-agentes-pra-programacao-crush/)
 
 ## 2025 - November
