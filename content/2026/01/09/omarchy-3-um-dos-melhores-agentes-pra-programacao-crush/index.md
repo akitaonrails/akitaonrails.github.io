@@ -49,3 +49,42 @@ Neste pequeno exemplo, escolhi usar o modelo **Claude Opus 4.5**. Todo o código
 Por enquanto só fiz coisas bestas e simples. Diz a documentação que ele integra com LSPs e MCPs pra ter ainda mais contexto sobre o código, mas não testei isso ainda.
 
 De qualquer forma, resolvi fazer um post rápido só pra dizer que essas novas opções como Crush e OpenCode já estão muito boas pra usar no dia a dia. Vale a pena testar no seu projeto.
+
+### Segundo Teste
+
+Como o Crush se deu bem com esse teste básico de web, resolvi pegar o desafio que fiz ano passado. Fiz um pequeno projeto de linha de comando que é um chat básico, feito do zero, usando direto a biblioteca llama.cpp, com CUDA, e em Zig - que é uma linguagem de baixo nível, ainda experimental e inacabada. Justamente o desafio é porque pouca gente usa, então tem pouca documentação e exemplos. A LLM vai ter que suar pra fazer funcionar.
+
+Diferente de uma página Web com React e Tailwind - que tem milhares de posts em fóruns, tutoriais, blog posts e tudo mais, Zig não tem quase nada. O único app popular que eu conheço que usa Zig é o Ghostty.
+
+Pra piorar, saiu versão nova recentemente, a 0.15, que muda bastante toda a API de IO (em preparação pra suportar melhor coisas como Async IO). Saiu versões novas de Llama, Cuda, etc. Então a idéia seria usar o Crush com Claude Opus pra ver se consegue refatorar, consertar bugs, atualizar as APIs e conseguir chegar até o ponto de compilar um binário que funciona.
+
+Em resumo: **conseguiu!**
+
+![crush - qwen-cli-zig](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/20260109211613_screenshot-2026-01-09_21-15-57.png)
+Na primeira rodada de refatoramento, consumiu só USD 5.64 de crédito da minha conta na Anthropic. Conseguiu pegar o macarrão monolítico (que eu fiz de propósito como desafio) em arquivos menores como `chat.zig` e `llama.zig`.
+
+Conseguiu mapear as funções em C do Llama como funções no Zig. Conseguiu descobrir que coisas como ArrayList mudaram no Zig novo. Conseguiu descobrir que todas as APIs de IO mudaram no 0.15. E conseguiu modificar os lugares certos.
+
+Ele foi rodando `zig build`, checando os erros e fazendo correções que fazem sentido, até conseguir gerar o binário final.
+
+Vocês podem checar o [Pull Request](https://github.com/akitaonrails/qwen-cli-zig/pull/1/files) com tudo que ele fez. Foi uma mudança bem razoável e não deixou o projeto quebrado.
+
+![llama.cpp externs](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/20260109212115_screenshot-2026-01-09_21-21-03.png)
+O fato dele ter conseguido consultar a documentação do Zig 0.15, também inferir corretamente quais funções novas do Llama.cpp deveria fazer extern, foi bem impressionante.
+
+De qualquer forma, na primeira rodada, ele conseguiu chegar até o ponto onde compila. Mas não significa que funciona. E de fato, quando tentei executar, terminou com um segmentation fault:
+
+![qwen-cli-zig segmentation fault](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/20260109213331_screenshot-2026-01-09_21-33-22.png)
+
+Então pedi ao Crush pra executar e checar esse erro. Ele encontrou o bug e fez as modificações necessárias. Ele encontrou uma struct errada e ainda encontrou um problema de memory leak. Resolveu ambos os problemas e agora o programa roda como deveria:
+
+![qwen-cli-zig](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/20260109213702_screenshot-2026-01-09_21-36-23.png)
+Como disse antes, é um programinha besta de chat, que usa Llama.cpp direto pra carregar o modelo Qwen3 e abrir um chat pra eu conversar. É só um exercício porque um chat assim já existe, basta usar o Ollama. Mas eu queria fazer um do zero, em baixo nível, como exercício pra LLMs. Até ano passado nenhuma LLM que eu testei conseguiu finalizar esse programa de forma adequada. Mas agora foi.
+
+![crush explanation of the crash](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/20260109213930_screenshot-2026-01-09_21-39-22.png)
+
+E como podem ver, no final gastei quase 8 dólares pra refatorar, consertar os bugs, e fazer esse programa funcionar corretamente. Não foi barato, mas pelo menos não foram créditos jogados fora, como acontecia 1 ano atrás. Não testei com LLMs locais ainda, pra ver se o Crush consegue chegar em resultados semelhantes.
+
+Mas se ele consegue lidar com uma linguagem obscura como Zig me deixa bem animado pra brincar mais com isso. Finalmente as ferramentas e LLMs chegaram num ponto que realmente é prático de usar. Não estou dizendo que resolve tudo, mas comparado com 1 ano atrás, foi um salto significativo.
+
+Recomendo muito testar Crush com outros modelos. Eu só brinquei um pouco com o Opus mas outros modelos podem dar resultados diferentes dependendo do problema que está tentando resolver.
