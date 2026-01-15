@@ -1,6 +1,7 @@
 ---
 title: "AI Agents: Blender MCP com Rodin e Hunyuan"
 slug: "ai-agents-blender-mcp-com-rodin-e-hunyuan"
+draft: true
 date: 2026-01-14T11:22:38-0300
 draft: false
 tags:
