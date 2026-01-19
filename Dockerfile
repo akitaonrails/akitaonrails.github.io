@@ -30,9 +30,9 @@ RUN ARCH=$(dpkg --print-architecture) && \
   dpkg -i hugo_extended_0.145.0_linux-arm64.deb && \
   rm hugo_extended_0.145.0_linux-arm64.deb; \
   else \
-  wget https://github.com/gohugoio/hugo/releases/download/v0.145.0/hugo_extended_0.145.0_linux-amd64.deb && \
-  dpkg -i hugo_extended_0.145.0_linux-amd64.deb && \
-  rm hugo_extended_0.145.0_linux-amd64.deb; \
+  wget https://github.com/gohugoio/hugo/releases/download/v0.146.3/hugo_0.146.3_linux-amd64.deb && \
+  dpkg -i hugo_0.146.3_linux-amd64.deb && \
+  rm hugo_0.146.3_linux-amd64.deb; \
   fi
 
 WORKDIR /app
