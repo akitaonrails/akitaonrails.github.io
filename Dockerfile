@@ -46,6 +46,8 @@ COPY . .
 
 RUN ./scripts/generate_index.rb
 
+RUN hugo
+
 EXPOSE 1313
 
 CMD ["hugo", "server", "--logLevel", "debug", "--disableFastRender", "-p", "1313", "--bind", "0.0.0.0"]
