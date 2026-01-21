@@ -4,6 +4,7 @@ title: AkitaOnRails's Blog
 
 ## 2026 - January
 
+- [AI Agents: Instalando LSPs pro Crush](2026/01/21/ai-agents-instalando-lsps-pro-crush/)
 - [AI Agents: Comparando as principais LLM de 2026 no Desafio de Zig](2026/01/11/ai-agents-comparando-as-principais-llm-no-desafio-de-zig/)
 - [AI Agents: Garantindo a Proteção do seu Sistema](2026/01/10/ai-agents-garantindo-a-protecao-do-seu-sistema/)
 - [Omarchy 3 - Um dos Melhores Agentes pra Programação: Crush](2026/01/09/omarchy-3-um-dos-melhores-agentes-pra-programacao-crush/)
