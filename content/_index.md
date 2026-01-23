@@ -4,6 +4,7 @@ title: AkitaOnRails's Blog
 
 ## 2026 - January
 
+- [AI 3D: Já dá pra modelar 3D com prompts?](2026/01/23/ai-3d-ja-da-pra-modelar-3d-com-prompts/)
 - [AI Agents: GLM 4.7 Flash é realmente tão bom assim?](2026/01/22/ai-agents-glm-4-7-flash-e-realmente-tao-bom-assim/)
 - [Omarchy 3: Setup de Dual GPUs com AMD e NVIDIA](2026/01/21/omarchy-3-setup-de-dual-gpus-com-amd-e-nvidia/)
 - [AI Agents: Instalando LSPs pro Crush](2026/01/21/ai-agents-instalando-lsps-pro-crush/)
