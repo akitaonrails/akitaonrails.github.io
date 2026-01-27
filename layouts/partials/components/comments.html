@@ -1,73 +1,16 @@
 <!-- Disqus -->
 {{- with .Site.Config.Services.Disqus.Shortname }}
-{{- $shortname := . }}
-<div id="disqus_container">
-    <div id="disqus_thread"></div>
-</div>
+<div id="disqus_thread"></div>
 <script>
+    var disqus_config = function () {
+        this.page.url = '{{ $.Page.Permalink }}';
+        this.page.identifier = '{{ $.Page.RelPermalink }}';
+    };
     (function() {
-        var shortname = '{{ $shortname }}';
-        var pageUrl = '{{ $.Page.Permalink }}';
-        var pageIdentifier = '{{ $.Page.RelPermalink }}';
-
-        function loadDisqus() {
-            var isDark = document.documentElement.classList.contains('dark');
-
-            // Temporarily remove color-scheme which breaks Disqus in dark mode
-            var originalColorScheme = document.documentElement.style.colorScheme;
-            document.documentElement.style.colorScheme = '';
-
-            window.disqus_config = function () {
-                this.page.url = pageUrl;
-                this.page.identifier = pageIdentifier;
-            };
-
-            var container = document.getElementById('disqus_container');
-            container.innerHTML = '<div id="disqus_thread"></div>';
-
-            // Set explicit background so Disqus can detect theme
-            var thread = document.getElementById('disqus_thread');
-            thread.style.backgroundColor = isDark ? '#1a1a1a' : '#ffffff';
-
-            var d = document, s = d.createElement('script');
-            s.src = 'https://' + shortname + '.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            s.onload = function() {
-                // Restore color-scheme after Disqus loads
-                setTimeout(function() {
-                    document.documentElement.style.colorScheme = originalColorScheme;
-                }, 1000);
-            };
-            (d.head || d.body).appendChild(s);
-        }
-
-        // Initial load
-        loadDisqus();
-
-        // Reload Disqus when theme changes (light/dark toggle)
-        var lastTheme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
-
-        var observer = new MutationObserver(function(mutations) {
-            mutations.forEach(function(mutation) {
-                if (mutation.attributeName === 'class') {
-                    var currentTheme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
-                    if (currentTheme !== lastTheme) {
-                        lastTheme = currentTheme;
-                        // Remove old Disqus scripts
-                        var oldScripts = document.querySelectorAll('script[src*="disqus.com"]');
-                        oldScripts.forEach(function(s) { s.remove(); });
-                        // Remove Disqus global
-                        if (window.DISQUS) {
-                            delete window.DISQUS;
-                        }
-                        // Reload fresh
-                        loadDisqus();
-                    }
-                }
-            });
-        });
-
-        observer.observe(document.documentElement, { attributes: true });
+        var d = document, s = d.createElement('script');
+        s.src = 'https://{{ . }}.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
     })();
 </script>
 <noscript>

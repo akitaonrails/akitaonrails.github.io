@@ -30,11 +30,11 @@
     overflow-wrap: anywhere;
   }
 
-  /* Fix Disqus iframe not rendering in dark mode due to color-scheme inheritance */
+  /* Fix Disqus in dark mode - force light context, invert visually */
   #disqus_thread {
-    color-scheme: normal;
+    color-scheme: light;
   }
-  #disqus_thread iframe {
-    color-scheme: normal;
+  .dark #disqus_thread {
+    filter: invert(0.9) hue-rotate(180deg);
   }
 </style>
