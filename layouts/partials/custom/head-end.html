@@ -30,7 +30,22 @@
   }
 
   /* Disqus iframe styling */
+  #disqus_wrapper {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
   #disqus_iframe {
     border-radius: 8px;
+  }
+
+  .dark #disqus_wrapper::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #000;
+    opacity: 0.3;
+    pointer-events: none;
   }
 </style>
