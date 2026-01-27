@@ -29,4 +29,12 @@
     word-break: break-word;
     overflow-wrap: anywhere;
   }
+
+  /* Fix Disqus iframe not rendering in dark mode due to color-scheme inheritance */
+  #disqus_thread {
+    color-scheme: normal;
+  }
+  #disqus_thread iframe {
+    color-scheme: normal;
+  }
 </style>
