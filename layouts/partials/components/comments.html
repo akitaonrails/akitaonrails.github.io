@@ -1,16 +1,57 @@
-<!-- Disqus -->
+<!-- Disqus in iframe to isolate color-scheme -->
 {{- with .Site.Config.Services.Disqus.Shortname }}
-<div id="disqus_thread"></div>
+{{- $shortname := . }}
+<div id="disqus_wrapper">
+    <iframe id="disqus_iframe" style="width: 100%; border: none; min-height: 300px;"></iframe>
+</div>
 <script>
-    var disqus_config = function () {
-        this.page.url = '{{ $.Page.Permalink }}';
-        this.page.identifier = '{{ $.Page.RelPermalink }}';
-    };
     (function() {
-        var d = document, s = d.createElement('script');
-        s.src = 'https://{{ . }}.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
+        var shortname = '{{ $shortname }}';
+        var pageUrl = '{{ $.Page.Permalink }}';
+        var pageIdentifier = '{{ $.Page.RelPermalink }}';
+        var isDev = {{ if hugo.IsServer }}true{{ else }}false{{ end }};
+
+        var iframeContent = `
+<!DOCTYPE html>
+<html style="color-scheme: light;">
+<head>
+    <style>
+        body { margin: 0; font-family: system-ui, -apple-system, sans-serif; background: #eee; }
+        #disqus_thread { min-height: 200px; }
+    </style>
+</head>
+<body>
+    <div id="disqus_thread"></div>
+    <script>
+        var disqus_config = function () {
+            this.page.url = '${pageUrl}';
+            this.page.identifier = '${pageIdentifier}';
+            ${isDev ? "this.page.developer = true;" : ""}
+        };
+        (function() {
+            var d = document, s = d.createElement('script');
+            s.src = 'https://${shortname}.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    <\/script>
+</body>
+</html>`;
+
+        var iframe = document.getElementById('disqus_iframe');
+        iframe.srcdoc = iframeContent;
+
+        // Adjust iframe height to fit content
+        iframe.onload = function() {
+            setInterval(function() {
+                try {
+                    var height = iframe.contentDocument.body.scrollHeight;
+                    if (height > 100) {
+                        iframe.style.height = height + 'px';
+                    }
+                } catch(e) {}
+            }, 500);
+        };
     })();
 </script>
 <noscript>
