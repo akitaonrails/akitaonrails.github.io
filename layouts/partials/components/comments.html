@@ -1,10 +1,16 @@
 <!-- Disqus -->
 {{- with .Site.Config.Services.Disqus.Shortname }}
+{{- $shortname := . }}
 <div id="disqus_thread"></div>
 <script>
+    var disqus_config = function () {
+        this.page.url = '{{ $.Page.Permalink }}';
+        this.page.identifier = '{{ $.Page.RelPermalink }}';
+    };
+
     (function() {
         var d = document, s = d.createElement('script');
-        s.src = 'https://{{ . }}.disqus.com/embed.js';
+        s.src = 'https://{{ $shortname }}.disqus.com/embed.js';
         s.setAttribute('data-timestamp', +new Date());
         (d.head || d.body).appendChild(s);
     })();
@@ -20,7 +26,10 @@
                     if (currentTheme !== lastTheme) {
                         lastTheme = currentTheme;
                         if (typeof DISQUS !== 'undefined') {
-                            DISQUS.reset({ reload: true });
+                            DISQUS.reset({
+                                reload: true,
+                                config: disqus_config
+                            });
                         }
                     }
                 }
