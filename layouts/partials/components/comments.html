@@ -1,15 +1,25 @@
 <!-- Disqus -->
 {{- with .Site.Config.Services.Disqus.Shortname }}
-<div id="disqus_thread"></div>
+<div id="disqus_thread" style="color-scheme: light;"></div>
 <script>
     var disqus_config = function () {
         this.page.url = '{{ $.Page.Permalink }}';
         this.page.identifier = '{{ $.Page.RelPermalink }}';
     };
     (function() {
+        // Temporarily remove color-scheme to allow Disqus to initialize
+        var originalColorScheme = document.documentElement.style.colorScheme;
+        document.documentElement.style.colorScheme = 'light';
+
         var d = document, s = d.createElement('script');
         s.src = 'https://{{ . }}.disqus.com/embed.js';
         s.setAttribute('data-timestamp', +new Date());
+        s.onload = function() {
+            // Restore after Disqus initializes
+            setTimeout(function() {
+                document.documentElement.style.colorScheme = originalColorScheme;
+            }, 100);
+        };
         (d.head || d.body).appendChild(s);
     })();
 </script>
