@@ -4,7 +4,7 @@ languageCode: "pt-BR"
 baseURL: "https://www.akitaonrails.com/"
 
 outputs:
-  home: [HTML,RSS]
+  home: [HTML, RSS]
 
 services:
   disqus:
@@ -34,9 +34,11 @@ menu:
     - name: About
       pageRef: /about
       weight: 1
-    - name: Contact ↗
+    - name: GitHub ↗
       url: "https://github.com/akitaonrails"
       weight: 2
+      params:
+        icon: github
     - name: Search
       weight: 3
       params:
