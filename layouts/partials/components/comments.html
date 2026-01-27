@@ -11,12 +11,21 @@
         var pageIdentifier = '{{ $.Page.RelPermalink }}';
         var isDev = {{ if hugo.IsServer }}true{{ else }}false{{ end }};
 
+        function isDarkMode() {
+            return document.documentElement.classList.contains('dark');
+        }
+
+        // Background: white for light mode, #eee for dark (inverts to #111)
+        function getBgColor() {
+            return isDarkMode() ? '#eee' : '#fff';
+        }
+
         var iframeContent = `
 <!DOCTYPE html>
 <html style="color-scheme: light;">
 <head>
     <style>
-        body { margin: 0; font-family: system-ui, -apple-system, sans-serif; background: #eee; }
+        body { margin: 0; font-family: system-ui, -apple-system, sans-serif; background: ${getBgColor()}; }
         #disqus_thread { min-height: 200px; }
     </style>
 </head>
@@ -41,7 +50,7 @@
         var iframe = document.getElementById('disqus_iframe');
         iframe.srcdoc = iframeContent;
 
-        // Adjust iframe height to fit content
+        // Adjust iframe height and sync background with theme
         iframe.onload = function() {
             setInterval(function() {
                 try {
@@ -49,6 +58,8 @@
                     if (height > 100) {
                         iframe.style.height = height + 'px';
                     }
+                    // Sync background color with current theme
+                    iframe.contentDocument.body.style.background = getBgColor();
                 } catch(e) {}
             }, 500);
         };
