@@ -27,6 +27,10 @@ markup:
 
 menu:
   main:
+    - name: Theme
+      weight: 0
+      params:
+        type: theme-toggle
     - name: About
       pageRef: /about
       weight: 1
