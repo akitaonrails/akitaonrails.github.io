@@ -30,10 +30,7 @@
     overflow-wrap: anywhere;
   }
 
-  /* Fix Disqus in dark mode - force light context, invert visually */
-  #disqus_thread {
-    color-scheme: light;
-  }
+  /* Invert Disqus colors in dark mode */
   .dark #disqus_thread {
     filter: invert(0.9) hue-rotate(180deg);
   }
