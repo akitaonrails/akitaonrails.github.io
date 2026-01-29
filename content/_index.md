@@ -4,6 +4,7 @@ title: AkitaOnRails's Blog
 
 ## 2026 - January
 
+- [Vibe Code: Qual LLM é a MELHOR?? Vamos falar a REAL](2026/01/29/vibe-code-qual-llm-é-a-melhor-vamos-falar-a-real/)
 - [Vibe Code: Eu fiz um appzinho 100% com GLM 4.7 (TV Clipboard)](2026/01/28/vibe-code-eu-fiz-um-appzinho-100-com-glm-4-7-tv-clipboard/)
 - [AI Agents: Qual é o melhor? OpenCode, Crush, Claude Code, GPT Codex, GoPilot, Cursor, WindSurf, AntiGravity?](2026/01/24/ai-agents-qual-e-o-melhor-opencode-crush-claude-code-gpt-codex-gopilot-cursor-windsurf-antigravity/)
 - [AI 3D: Já dá pra modelar 3D com prompts?](2026/01/23/ai-3d-ja-da-pra-modelar-3d-com-prompts/)

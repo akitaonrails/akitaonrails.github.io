@@ -3,6 +3,7 @@ title: "Vibe Code: Eu fiz um appzinho 100% com GLM 4.7 (TV Clipboard)"
 slug: "vibe-code-eu-fiz-um-appzinho-100-com-glm-4-7-tv-clipboard"
 date: 2026-01-28T08:41:52-0300
 tags:
+- vibecode
 - openrouter
 - crush
 - glm
