@@ -1,5 +1,6 @@
 # Hugo configuration file
 title: AkitaOnRails.com
+enableEmoji: true
 languageCode: "pt-BR"
 baseURL: "https://www.akitaonrails.com/"
 
