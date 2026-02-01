@@ -69,3 +69,4 @@ Optional: `slug`, `tags`, `description`
 |--------|---------|
 | `scripts/generate_index.rb` | Regenerates `_index.md` homepage |
 | `scripts/fix-*.rb` | Legacy migration scripts (not for regular use) |
+  

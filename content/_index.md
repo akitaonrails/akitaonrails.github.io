@@ -2,6 +2,11 @@
 title: AkitaOnRails's Blog
 ---
 
+## 2026 - February
+
+- [Vibe Code: Fiz um Editor de Markdown do zero com Claude Code (FrankMD) PARTE 2](2026/02/01/vibe-code-fiz-um-editor-de-markdown-do-zero-com-claude-code-frankmd-parte-2/)
+- [Vibe Code: Fiz um Editor de Markdown do zero com Claude Code (FrankMD) PARTE 1](2026/02/01/vibe-code-fiz-um-editor-de-markdown-do-zero-com-claude-code-frankmd-part-1/)
+
 ## 2026 - January
 
 - [Vibe Code: Qual LLM é a MELHOR?? Vamos falar a REAL](2026/01/29/vibe-code-qual-llm-é-a-melhor-vamos-falar-a-real/)

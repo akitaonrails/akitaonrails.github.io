@@ -165,3 +165,5 @@ $RECYCLE.BIN/
 # Hugo specific
 .hugo_build.lock
 .aider*
+CLAUDE.md
+.fed
