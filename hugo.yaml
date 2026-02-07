@@ -2,7 +2,13 @@
 title: AkitaOnRails.com
 enableEmoji: true
 languageCode: "pt-BR"
+defaultContentLanguage: "pt-br"
 baseURL: "https://www.akitaonrails.com/"
+
+languages:
+  pt-br:
+    languageName: "Portugues"
+    weight: 1
 
 outputs:
   home: [HTML, RSS]
