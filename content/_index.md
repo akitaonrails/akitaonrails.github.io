@@ -4,6 +4,7 @@ title: AkitaOnRails's Blog
 
 ## 2026 - February
 
+- [AI Agents: Qual seria a melhor Linguagem de Programação para LLMs?](2026/02/09/ai-agents-qual-seria-a-melhor-linguagem-de-programacao-para-llms/)
 - [RANT: IA acabou com os programadores?](2026/02/08/rant-ia-acabou-com-programadores/)
 - [Vibe Code: Fiz um Editor de Markdown do zero com Claude Code (FrankMD) PARTE 2](2026/02/01/vibe-code-fiz-um-editor-de-markdown-do-zero-com-claude-code-frankmd-parte-2/)
 - [Vibe Code: Fiz um Editor de Markdown do zero com Claude Code (FrankMD) PARTE 1](2026/02/01/vibe-code-fiz-um-editor-de-markdown-do-zero-com-claude-code-frankmd-part-1/)
