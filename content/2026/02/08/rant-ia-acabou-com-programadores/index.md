@@ -148,7 +148,7 @@ Não vai mais existir aquela "especialização" esquisita de "front-end que não
 
 {{< youtube id="V0D3PuTLOZ8" title="Restrição == Inovação - Fabio Akita" >}}
 
-Parei anos sobre Restrição == Inovação e como inovação não acontece quando se tem dinheiro sobrando, que foi o que aconteceu na última Bolha de Programação: pra que automatizar as coisas, ser eficiente, se tem dinheiro sobrando, é só contratar mais e mais gente pra fazer coisas mais e mais simples e braçais?
+Palestrei há alguns anos sobre "Restrição == Inovação" e como inovação não acontece quando se tem dinheiro sobrando, que foi o que aconteceu na última Bolha de Programação: pra que automatizar as coisas, ser eficiente, se tem dinheiro sobrando, é só contratar mais e mais gente pra fazer coisas mais e mais simples e braçais?
 
 Na Bolha da Internet, havia tanto dinheiro sobrando que existia a profissão de catalogador de sites: gente que ficava o dia inteiro digitando manualmente todos os novos sites que surgiam na recém-lançada Web. Levou anos até surgirem um Altavista e, depois, um Google, que descobriram como automatizar isso. Antigamente, não existiam "admins" web pra publicar novos produtos num e-commerce: alguém editava o HTML da página principal do Submarino.com todos os dias, com novas ofertas. Tudo trabalho de alto volume e baixo valor agregado. Automatizamos tudo isso e, agora, com LLMs, só fomos um passo à frente.
 
@@ -160,7 +160,7 @@ Ninguém se lembra de software e de empresas que não existem mais. Especialment
 
 O ponto é: tudo o que as LLMs sabem fazer já existe ou já existiu. Eles não são capazes de inventar seja lá o que for, seja a "Vignette dos anos 2030" ou o "Instagram dos anos 2030". E não digo isso no sentido do "próximo gerenciador de conteúdo" ou "próxima rede social". Eu digo no sentido de que "rede social" era um termo que não existia nos anos 2000 e "gerenciador de conteúdo" não existia nos anos 80, por exemplo. O que é a nova categoria que vai aparecer nos anos 2030?
 
-Não sei; se eu soubesse, obviamente estaria construindo pra lançar e ficar bilionário. Ninguém sabe, muito menos LLMs. Elas conseguem derivar muitas coisas do treinamento, mas o que não está nas probabilidades do modelo não vai "espontaneamente" aparecer". Não é assim que IAs funcionam.
+Não sei; se eu soubesse, obviamente estaria construindo pra lançar e ficar bilionário. Ninguém sabe, muito menos LLMs. Elas conseguem derivar muitas coisas do treinamento, mas o que não está nas probabilidades do modelo não vai "espontaneamente" aparecer. Não é assim que IAs funcionam.
 
 Podemos ficar pra sempre só refazendo tudo o que já foi feito igual já existe hoje. Mas não muito mais do que isso. Mas o ponto das minhas palestras foi justamente que somente com muito dinheiro e muita força bruta, não nascem inovações.
 
@@ -176,7 +176,7 @@ Quem é o programador que sobrevive a todas essas bolhas? Este:
 
 O teto das LLMs já está aqui e o que elas estão entregando agora não vai mudar muito: o processo vai ser o mesmo. Vai ficar um pouco mais rápido. Vai gerar um pouco menos de erros e pequenos ajustes assim. Mas o processo vai continuar igual até aparecer alguma nova arquitetura ou alguma nova descoberta que ainda não sabemos.
 
-> Nenhum código gerado por IA vai ser automaticamente perfeito pra ser colocado em produção sem nenhum tipo de revisão ou intervenção humana. - Qualquer um que ache o contrário ou que não testou nenhuma LLM na prática ou nunca trabalhou em projetos de verdade.
+> Nenhum código gerado por IA vai ser automaticamente perfeito pra ser colocado em produção sem nenhum tipo de revisão ou intervenção humana. - Qualquer um que ache o contrário ou não testou nenhuma LLM na prática ou nunca trabalhou em projetos de verdade.
 
 Como eu disse no Flow, esta é a SEGUNDA Bolha de IAs. A primeira foi nos anos 60 por causa do inventor de redes neurais, Frank Rosenblatt. Assim como o Sam Altman ou o Dario Amodel, ele também fez MUITO hype sobre redes neurais e computadores que iriam ficar muito mais inteligentes do que seres humanos "muito em breve", e todo jornal da época publicou sobre isso. As promessas morreram como promessas e isso gerou o "Inverno das IAs" nos anos 70, onde muito investimento foi feito, o resultado não foi proporcional, e pesquisas sobre IA estagnaram pelas décadas seguintes, andando a passos de tartaruga.
 
