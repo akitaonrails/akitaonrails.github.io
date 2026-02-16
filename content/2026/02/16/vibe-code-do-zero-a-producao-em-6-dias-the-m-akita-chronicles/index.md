@@ -5,7 +5,7 @@ date: 2026-02-16T14:19:56+00:00
 draft: false
 tags:
 - vibecode
-- makitachronicles
+- themakitachronicles
 - rubyonrails
 ---
 

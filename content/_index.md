@@ -4,6 +4,7 @@ title: AkitaOnRails's Blog
 
 ## 2026 - February
 
+- [Enviando Emails sem Spammar | Bastidores do The M.Akita Chronicles](2026/02/17/enviando-emails-sem-spammar-bastidores-do-the-m-akita-chronicles/)
 - [Vibe Code: Do Zero à Produção em 6 DIAS | The M.Akita Chronicles](2026/02/16/vibe-code-do-zero-a-producao-em-6-dias-the-m-akita-chronicles/)
 - [AI Agents: Qual seria a melhor Linguagem de Programação para LLMs?](2026/02/09/ai-agents-qual-seria-a-melhor-linguagem-de-programacao-para-llms/)
 - [RANT: IA acabou com os programadores?](2026/02/08/rant-ia-acabou-com-programadores/)
