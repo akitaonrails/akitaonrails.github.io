@@ -4,6 +4,7 @@ title: AkitaOnRails's Blog
 
 ## 2026 - February
 
+- [Servindo IA na Nuvem: Meu TTS pessoal | Bastidores do The M.Akita Chronicles](2026/02/18/servindo-ia-na-nuvem-meu-tts-pessoal-bastidores-do-the-m-akita-chronicles/)
 - [Web Scrapping em 2026 | Bastidores do The M.Akita Chronicles](2026/02/18/web-scrapping-em-2026-bastidores-do-the-m-akita-chronicles/)
 - [Enviando Emails sem Spammar | Bastidores do The M.Akita Chronicles](2026/02/17/enviando-emails-sem-spammar-bastidores-do-the-m-akita-chronicles/)
 - [Vibe Code: Do Zero à Produção em 6 DIAS | The M.Akita Chronicles](2026/02/16/vibe-code-do-zero-a-producao-em-6-dias-the-m-akita-chronicles/)
