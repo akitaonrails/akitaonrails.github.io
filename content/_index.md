@@ -4,6 +4,8 @@ title: AkitaOnRails's Blog
 
 ## 2026 - February
 
+- [Jobs Assíncronos que sobrevivem ao Caos | Bastidores do The M.Akita Chronicles](2026/02/19/jobs-asssincronos-que-sobrevivem-ao-caos-bastidores-do-the-m-akita-chronicles/)
+- [Frontend Sem Framework | Bastidores do The M.Akita Chronicles](2026/02/19/frontend-sem-framework-bastidores-do-the-m-akita-chronicles/)
 - [Servindo IA na Nuvem: Meu TTS pessoal | Bastidores do The M.Akita Chronicles](2026/02/18/servindo-ia-na-nuvem-meu-tts-pessoal-bastidores-do-the-m-akita-chronicles/)
 - [Web Scrapping em 2026 | Bastidores do The M.Akita Chronicles](2026/02/18/web-scrapping-em-2026-bastidores-do-the-m-akita-chronicles/)
 - [Enviando Emails sem Spammar | Bastidores do The M.Akita Chronicles](2026/02/17/enviando-emails-sem-spammar-bastidores-do-the-m-akita-chronicles/)

@@ -36,10 +36,12 @@ rescue ArgumentError, Psych::SyntaxError => e
   nil
 end
 
-def collect_posts
+def collect_posts(include_future: false)
+  now = DateTime.now
   Dir.glob("#{CONTENT_DIR}/**/index.md")
      .reject { |path| path == "#{CONTENT_DIR}/index.md" || path == "#{CONTENT_DIR}/_index.md" }
      .filter_map { |path| parse_post(path) }
+     .select { |post| include_future || post[:date] <= now }
 end
 
 def group_by_month(posts)
@@ -68,8 +70,9 @@ def generate_index(grouped_posts)
   lines.join("\n")
 end
 
-posts = collect_posts
+include_future = ARGV.include?('--future')
+posts = collect_posts(include_future: include_future)
 grouped = group_by_month(posts)
 File.write(OUTPUT_FILE, generate_index(grouped))
 
-puts "Generated #{OUTPUT_FILE} with #{posts.size} posts grouped by year & month."
+puts "Generated #{OUTPUT_FILE} with #{posts.size} posts grouped by year & month.#{' (including future posts)' if include_future}"
