@@ -4,6 +4,8 @@ title: AkitaOnRails's Blog
 
 ## 2026 - February
 
+- [SQLite + Kamal: Deploy de Rails sem Drama | Bastidores do The M.Akita Chronicles](2026/02/20/sqlite-kamal-deploy-de-rails-sem-drama-bastidores-do-the-m-akita-chronicles/)
+- [Discord como Admin Panel | Bastidores do The M.Akita Chronicles](2026/02/20/discord-como-admin-panel-bastidores-do-the-m-akita-chronicles/)
 - [Jobs Assíncronos que sobrevivem ao Caos | Bastidores do The M.Akita Chronicles](2026/02/19/jobs-asssincronos-que-sobrevivem-ao-caos-bastidores-do-the-m-akita-chronicles/)
 - [Frontend Sem Framework | Bastidores do The M.Akita Chronicles](2026/02/19/frontend-sem-framework-bastidores-do-the-m-akita-chronicles/)
 - [Servindo IA na Nuvem: Meu TTS pessoal | Bastidores do The M.Akita Chronicles](2026/02/18/servindo-ia-na-nuvem-meu-tts-pessoal-bastidores-do-the-m-akita-chronicles/)
