@@ -180,7 +180,7 @@ Os jobs ficam persistidos no banco. Se o servidor reiniciar, eles estão lá esp
 
 ## Conclusão
 
-O Rails 8 com ActiveJob e SolidQueue não inventou nada revolucionário. O que ele fez foi tornar **trivialmente fácil** implementar padrões que antes exigiam infraestrutura complexa:
+O Rails 8 com ActiveJob e SolidQueue não inventou nada revolucionário. O que ele fez foi deixar ridiculamente fácil de implementar padrões que antes precisavam de infraestrutura pesada:
 
 - **retry_on** com exceções específicas e limites claros
 - **Locks distribuídos** com TTL automático
@@ -189,7 +189,4 @@ O Rails 8 com ActiveJob e SolidQueue não inventou nada revolucionário. O que e
 - **Crons de segurança** como fallback
 - **Notificações** pra visibilidade operacional
 
-Nada disso é complicado. Mas a combinação desses padrões transforma um sistema frágil num sistema que sobrevive a falhas reais de produção — e te deixa dormir tranquilo na noite de segunda-feira.
-
-No próximo post, vou mostrar como SQLite + Kamal transformam o deploy de "preciso de um DevOps" para "um comando e pronto".
-
+Nenhum desses padrões é complicado sozinho. Mas juntos, é o que faz a diferença entre um sistema que quebra na primeira falha e um que aguenta o tranco em produção — e te deixa dormir tranquilo na segunda-feira.

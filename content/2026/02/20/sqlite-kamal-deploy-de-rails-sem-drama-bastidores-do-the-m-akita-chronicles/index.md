@@ -20,7 +20,7 @@ Se eu te dissesse que dá pra rodar uma aplicação Rails completa em produção
 
 Pois é. Esse é o Rails 8 com SQLite e Kamal.
 
-## A Revolução Silenciosa do SQLite no Rails
+## SQLite no Rails 8: agora é pra valer
 
 O Rails 8 trouxe o SQLite como opção real de produção, não como brinquedo de desenvolvimento. E quando digo "real", quero dizer que o `rails new` gera tudo pronto: banco principal em SQLite, SolidQueue (jobs) em SQLite, SolidCache (cache) em SQLite, SolidCable (WebSocket) em SQLite.
 
@@ -144,6 +144,7 @@ ssh root@$KAMAL_HOSTS \
 ```
 
 Outros hooks úteis:
+
 - `post-deploy` — notificar equipe, limpar cache
 - `pre-connect` — verificar saúde do servidor
 - `docker-setup` — instalar dependências no host
@@ -254,9 +255,6 @@ E o custo cognitivo? Ao invés de debugar "por que o Redis perdeu meus jobs?", "
 
 ## Conclusão
 
-SQLite + Kamal não é um downgrade. É a realização de que a maioria das aplicações nunca precisou da complexidade que achávamos necessária. O Rails 8 abraçou isso e entregou uma experiência de deploy que é, sem exagero, a mais simples que já existiu no ecossistema Ruby.
+SQLite + Kamal não é downgrade. É que a maioria das aplicações nunca precisou da complexidade que a gente achava que precisava. O Rails 8 abraçou isso e entregou uma experiência de deploy que é, sem exagero, a mais simples que já existiu no ecossistema Ruby.
 
 Um VPS. Um comando. Zero serviços externos. E uma aplicação que roda tão rápido quanto qualquer setup enterprise com 15 serviços no docker-compose.
-
-No próximo post, vou contar as dores de cabeça de rodar um modelo de IA em GPU na nuvem — spoiler: não é tão simples quanto os tutoriais prometem.
-

@@ -81,7 +81,7 @@ Neste post não vou detalhar muito, mas uma coisa em que demorei bastante, passa
 
 ![topology](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/frankmd/2026/02/screenshot-2026-02-16_11-58-45.jpg)
 
-Nenhum software tem garantia de ser 100% perfeito; este também não deve ser. Mesmo eu tendo revisado incansavelmente por dias, revendo e refinando cada etapa múltiplas vezes, sempre vai ter algum bug que eu não previ. Eu "acho" que, pelo menos, tudo o que sei que costuma dar problema em produção, "acho" que consegui cobrir de forma satisfatória. Se fosse uma equipe humana, eu teria colocado em produção num estado pior do que o que atingi com o Claude.
+Nenhum software tem garantia de ser 100% perfeito; este também não deve ser. Mesmo eu tendo revisado por dias, passando por cada etapa várias vezes, sempre vai ter algum bug que eu não previ. Eu "acho" que, pelo menos, tudo o que sei que costuma dar problema em produção, "acho" que consegui cobrir de forma satisfatória. Se fosse uma equipe humana, eu teria colocado em produção num estado pior do que o que atingi com o Claude.
 
 Tudo o que dava pra proteger com Cloudflare, eu configurei. Todas as boas práticas pra e-mail/mailing, eu segui. Todas as precauções contra acidentes eu tomei (todo deploy automatizado com Kamal) e todos os e-mails dos assinantes foram encriptados com AES-256 no banco de dados (mesmo que vazem por acidente, não vazam os dados dos usuários). Não implementei profiling, cookies nem pixels de rastreamento, nada. Privacidade foi o foco.
 
@@ -108,7 +108,7 @@ Os outros 4 dias foram:
 - 1 dia pra deploy em produção (quando tem tudo planejado com antecedência, todas as contingências já pensadas, é fácil).
 - 3 dias só testando, criando testes automatizados/integração, gerando e regerando, exercitando todas as etapas de todas as partes, múltiplas vezes, e fazendo ajustes, refatorações ou até mesmo jogando fora um pedaço inteiro pra mudar, porque os testes indicaram que valia mais a pena.
 
-Isso levou de 50 a 200 commits! E é a parte que todo vibe coder **pula**. Sendo justa, é a parte que qualquer pessoa, com ou sem IA, pularia. E é por isso que sempre os projetos dão errado e vão pra produção cheios de erros e de buracos óbvios de segurança.
+Isso levou de 50 a 200 commits! E é a parte que todo vibe coder **pula**. Pra ser justo, é a parte que qualquer pessoa, com ou sem IA, pularia. E é por isso que sempre os projetos dão errado e vão pra produção cheios de erros e de buracos óbvios de segurança.
 
 > Mesmo depois de pedir ao Claude Code pra revisar boas práticas de segurança e de cobertura de testes, múltiplas vezes. Depois eu abri o Codex e pedi pra fazer a mesma coisa, e ele ainda achou mais buracos de segurança e mais testes faltando, múltiplas vezes. Mesmo depois dos dois fazerem essas checagens várias vezes, eu ainda encontrei sozinho mais buracos que mandei consertar. Em nenhum momento, nenhum dos dois conseguiu achar "TUDO". Ninguém consegue, nem a IA.
 

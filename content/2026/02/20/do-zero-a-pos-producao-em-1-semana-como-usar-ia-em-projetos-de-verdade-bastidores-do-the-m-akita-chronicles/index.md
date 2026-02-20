@@ -182,7 +182,7 @@ Depois de 274 commits com um agente de IA, tenho uma noção bem clara dos ponto
 - **Segurança proativa**: implementa o que você pede, mas raramente sugere proteções que você não pediu (SSRF, rate limiting, encryption at rest)
 - **Priorização**: executa qualquer coisa com igual entusiasmo. Não diz "isso é perda de tempo" ou "faça X antes de Y"
 
-A conclusão não é "IA programa sozinha" nem "IA é inútil". É: **IA é um multiplicador do programador, não um substituto**. Um programador medíocre com IA produz código medíocre mais rápido. Um programador experiente com IA produz código bom na velocidade que antes só era possível com equipes.
+IA não programa sozinha, e não é inútil. **É um multiplicador do programador, não um substituto**. Um programador medíocre com IA produz código medíocre mais rápido. Um programador experiente com IA produz código bom na velocidade que antes só era possível com equipes.
 
 ## Os Números que Importam
 

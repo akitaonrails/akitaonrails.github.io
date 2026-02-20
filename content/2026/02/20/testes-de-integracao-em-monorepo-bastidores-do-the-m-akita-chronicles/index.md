@@ -148,7 +148,7 @@ Primeira execução: chama o GPT-5.2, paga $0.02, salva em `tmp/dev_cache/summar
 
 O DevCache existe em ambos os apps (marvin-bot e newsletter) com implementação idêntica. Quando roda `integration:clean`, ambos os caches são limpos.
 
-A lição: **cache de LLM em ambiente de desenvolvimento não é otimização — é requisito**. Sem ele, iterar num prompt que precisa de 8 chamadas de API fica financeiramente inviável.
+Ponto: **cache de LLM em ambiente de desenvolvimento não é otimização — é requisito**. Sem ele, iterar num prompt que precisa de 8 chamadas de API fica financeiramente inviável.
 
 ## Camada 4: Dados Reais via Rsync
 
@@ -362,9 +362,9 @@ A hierarquia de testes nesse projeto é:
 3. **Pipeline de integração** (dados reais, APIs reais, ~3 minutos, ~$0.40): prova que o **sistema** funciona
 4. **Preview visual** (HTML no browser, manual, $0): prova que o resultado final é apresentável
 
-Cada camada pega um tipo diferente de bug. Nenhuma sozinha é suficiente. E a camada que mais surpreende — a que pega os bugs que você jurava que não existiam — é a terceira: dados reais, pipeline real, sem mocks.
+Cada camada pega um tipo diferente de bug. Nenhuma sozinha é suficiente. E a que mais surpreende — a que pega os bugs que você jurava que não existiam — é a terceira: dados reais, pipeline real, sem mocks.
 
-Se tem uma coisa que aprendi com esse projeto: a confiança que você tem no seu sistema é diretamente proporcional ao quão reais são os dados nos seus testes. Mock everything e você tem 100% de coverage e zero de confiança. Test with production data e você tem a verdade — por mais inconveniente que ela seja.
+A confiança que você tem no seu sistema é proporcional ao quão reais são os dados nos seus testes. Mocka tudo e você tem 100% de coverage e zero de confiança. Testa com dados de produção e você tem a verdade — por mais inconveniente que seja.
 
 
 

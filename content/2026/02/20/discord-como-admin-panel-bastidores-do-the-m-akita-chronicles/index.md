@@ -803,11 +803,11 @@ Mas pra o dia a dia operacional — curar conteúdo, aprovar newsletters, monito
 
 ![hello](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/frankmd/2026/02/screenshot-2026-02-20_00-57-11.jpg)
 
-O Discord como admin panel não é preguiça. É reconhecer que a melhor interface é a que você já usa o dia inteiro. Auth, push notifications, mobile, rich formatting, file sharing — tudo grátis. O que você constrói é a lógica de negócio, não a infraestrutura de UI.
+Usar Discord como admin panel não é preguiça — é pragmatismo. A melhor interface é a que você já usa o dia inteiro. Auth, push notifications, mobile, rich formatting, file sharing — tudo de graça. Você só constrói a lógica de negócio.
 
-A gem [`ruby_llm`](https://rubyllm.com/) com tool calling transforma o bot de "executor de comandos" em "assistente que pensa". Com memória de sessão, vira um assistente que pensa **e lembra**. Quando o LLM pode gerar imagens, buscar na web, manter contexto entre perguntas, e responder sobre a arquitetura do seu próprio sistema, o bot deixa de ser um CRUD e vira um co-piloto.
+A gem [`ruby_llm`](https://rubyllm.com/) com tool calling leva o bot de "executor de comandos" pra "assistente que pensa". Com memória de sessão, pensa **e lembra**. Quando o LLM pode gerar imagens, buscar na web, manter contexto entre perguntas, e responder sobre a arquitetura do próprio sistema — aí deixou de ser CRUD e virou co-piloto.
 
-E o padrão Parser → Dispatcher → Job mantém tudo testável. O parser não sabe nada de Discord. O dispatcher não sabe nada de IA. Os jobs não sabem nada de interface. Cada camada faz uma coisa, e trocar qualquer uma delas não afeta as outras.
+E o padrão Parser → Dispatcher → Job mantém tudo testável. O parser não sabe nada de Discord. O dispatcher não sabe nada de IA. Os jobs não sabem nada de interface. Troca qualquer uma dessas camadas e as outras nem percebem.
 
-Se tem algo que aprendi com esse projeto: a melhor admin UI é a que não precisa de deploy separado. O melhor assistente de IA é o que vive onde você já trabalha. E o pior bug é o que falha silenciosamente — se o seu bot é sua interface operacional, as falhas do bot precisam aparecer **na** interface, não escondidas num log que ninguém lê.
+No fim, a melhor admin UI é a que não precisa de deploy separado. E o pior bug é o que falha em silêncio — se o bot é sua interface operacional, as falhas do bot precisam aparecer **na** interface, não escondidas num log que ninguém lê.
 

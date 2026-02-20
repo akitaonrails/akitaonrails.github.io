@@ -383,6 +383,6 @@ Não existe "componente React que busca dados de uma API". Existe um arquivo Mar
 
 Você não precisa de React pra ter frontend moderno. Tailwind v4 te dá design system com constraints, dark mode nativo, e zero JavaScript. Hugo te dá um blog absurdamente rápido com templates flexíveis. ERB com CSS inline te dá emails que funcionam em qualquer client.
 
-O investimento está em **entender as restrições de cada plataforma** e construir pipelines de renderização específicos. Não em aprender o framework da moda que vai ser substituído em 18 meses.
+O investimento real é entender as restrições de cada plataforma e construir pipelines de renderização pra cada uma. Não é aprender o framework da moda que vai morrer em 18 meses.
 
-Se tem algo que aprendi com esse projeto: a melhor abstração de frontend é nenhuma. HTML, CSS, e conteúdo em Markdown. Simples, debugável, e vai funcionar daqui a 10 anos.
+No final das contas, a melhor abstração de frontend é nenhuma. HTML, CSS, e Markdown. Simples, debugável, e vai funcionar daqui a 10 anos.

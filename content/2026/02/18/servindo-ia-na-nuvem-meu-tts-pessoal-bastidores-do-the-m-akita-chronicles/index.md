@@ -20,7 +20,7 @@ Já vou falar do podcast hoje; lembrem-se de que o [episódio piloto já está n
 
 Todo tutorial de IA começa com *"instale o modelo, rode inference, pronto!"*. Nenhum te conta o que acontece quando você precisa rodar isso em produção com uptime real, custo controlado, e qualidade consistente.
 
-Vou contar a história real de colocar um modelo de TTS (Text-to-Speech) em produção numa GPU na nuvem. Sem romantizar, sem simplificar. Porque se você está considerando servir modelos de IA, precisa saber no que está se metendo.
+Vou contar como foi colocar um modelo de TTS (Text-to-Speech) em produção numa GPU na nuvem. Porque se você está pensando em servir modelos de IA, precisa saber no que está se metendo.
 
 ## O Cenário
 
@@ -244,7 +244,7 @@ never substitute a different opinion.
 
 É a diferença entre "adapte pra conversa" (LLM entende: "reescreva como quiser") e "mude o COMO, nunca o QUÊ" (LLM entende: "mantenha a opinião, troque a embalagem").
 
-Essa é talvez a lição mais importante de prompt engineering pra conteúdo autoral: **o LLM vai homogeneizar sua voz se você não for explícito sobre preservá-la**. E num podcast onde a personalidade dos hosts É o produto, perder a voz é perder tudo.
+E isso vale pra qualquer prompt engineering com conteúdo autoral: **o LLM vai homogeneizar sua voz se você não for explícito sobre preservá-la**. E num podcast onde a personalidade dos hosts É o produto, perder a voz é perder tudo.
 
 ## O Custo Real de IA em Produção
 
@@ -286,7 +286,4 @@ De qualquer forma, pra quem pensou *"Por que não Elevenlabs?"*, bom, eu consegu
 
 IA em produção não é um tutorial de HuggingFace com 10 linhas. É infraestrutura, é experimentação, é debugging de problemas que não existem em software tradicional. Mas quando funciona — quando seu sistema gera um podcast inteiro automaticamente toda semana, com qualidade broadcast, sem intervenção humana — a sensação é que valeu cada hora de dor de cabeça.
 
-O truque é não subestimar a complexidade. E ter um sistema robusto (como os jobs do Rails que discutimos no primeiro post) orquestrando tudo. A IA é o cérebro, mas o Rails é o sistema nervoso que mantém tudo funcionando.
-
-No próximo post, vou falar sobre frontend — como Tailwind CSS e Hugo transformam o design de um projeto solo.
-
+O truque é não subestimar a complexidade. E ter um sistema robusto (como os jobs do Rails que mencionei no primeiro post) orquestrando tudo — porque IA sem orquestração confiável é só um script caro que trava.

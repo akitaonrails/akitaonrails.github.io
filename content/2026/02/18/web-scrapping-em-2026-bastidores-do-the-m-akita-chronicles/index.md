@@ -233,7 +233,7 @@ end
 
 Simples. Confiável. Zero dependências de browser. O link do Google News redireciona pro artigo original quando o leitor clica — funciona perfeitamente pra uma newsletter.
 
-A lição: **nem todo problema de scraping precisa de uma solução de scraping**. Às vezes o dado já está disponível num formato acessível — você só precisa encontrar.
+Nem todo problema de scraping precisa de solução de scraping. Às vezes o dado já está disponível num formato acessível — você só precisa achar.
 
 ## O Quarto Obstáculo: Sites que Mudam de Estrutura (Diariamente)
 
@@ -315,7 +315,7 @@ def self.parse_html(html, limit)
 end
 ```
 
-A beleza dessa abordagem: **nenhum nome de classe é hardcoded**. O Morningstar pode renomear todas as classes amanhã e o parser vai continuar funcionando — porque ele descobre o padrão de artigos pela estrutura, não pelo nome.
+O que salva essa abordagem: **nenhum nome de classe é hardcoded**. O Morningstar pode renomear todas as classes amanhã e o parser vai continuar funcionando — porque ele descobre o padrão de artigos pela estrutura, não pelo nome.
 
 O que é estável num site:
 
@@ -329,11 +329,11 @@ O que **não** é estável:
 - Hierarquia DOM (muda a cada redesign)
 - Atributos `data-*` (mudam conforme a equipe de frontend decide)
 
-A lição: **não tente identificar elementos pelo nome — identifique pelo comportamento**. Links de artigos se comportam diferente de links de navegação de formas mensuráveis (URL length, clustering, título), e essas propriedades são inerentes ao que o elemento É, não a como ele foi implementado.
+Resumindo: não tente identificar elementos pelo nome — identifique pelo comportamento. Links de artigos se comportam diferente de links de navegação de formas mensuráveis (URL length, clustering, título), e essas propriedades são inerentes ao que o elemento É, não a como ele foi implementado.
 
 ## A Hierarquia de Confiabilidade
 
-Depois de horas lidando com isso, emerge uma hierarquia clara de fontes de dados, da mais pra menos confiável:
+Depois de horas quebrando a cabeça, ficou óbvia uma hierarquia de fontes de dados:
 
 | Fonte | Confiabilidade | Latência | Manutenção |
 |-------|---------------|----------|------------|
@@ -412,4 +412,4 @@ Pra quem constrói sistemas que agregam informação, o playbook é:
 5. **Nunca dependa de um único método de acesso**. O site que funciona hoje pode bloquear amanhã
 6. **Aceite que alguns sites são inacessíveis**. Se o DataDome não deixa, o dado terá que vir de outra fonte
 
-A web em 2026 é um campo de batalha entre quem quer ler e quem quer controlar a leitura. E se tem algo que aprendi: no longo prazo, a criatividade de quem quer acessar dados vence — mas custa mais esforço a cada ano. E, diferente do que eu pensei no começo: nunca é simples.
+A web em 2026 é um campo de batalha entre quem quer ler e quem quer controlar a leitura. Mas no longo prazo, a criatividade de quem quer acessar dados vence — mas custa mais esforço a cada ano. E, diferente do que eu pensei no começo: nunca é simples.
