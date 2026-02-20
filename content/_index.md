@@ -4,6 +4,8 @@ title: AkitaOnRails's Blog
 
 ## 2026 - February
 
+- [Do Zero à Pós-Produção em 1 Semana - Como usar IA em Projetos de Verdade | Bastidores do The M.Akita Chronicles](2026/02/20/do-zero-a-pos-producao-em-1-semana-como-usar-ia-em-projetos-de-verdade-bastidores-do-the-m-akita-chronicles/)
+- [Testes de Integração em MonoRepo | Bastidores do The M.Akita Chronicles](2026/02/20/testes-de-integracao-em-monorepo-bastidores-do-the-m-akita-chronicles/)
 - [SQLite + Kamal: Deploy de Rails sem Drama | Bastidores do The M.Akita Chronicles](2026/02/20/sqlite-kamal-deploy-de-rails-sem-drama-bastidores-do-the-m-akita-chronicles/)
 - [Discord como Admin Panel | Bastidores do The M.Akita Chronicles](2026/02/20/discord-como-admin-panel-bastidores-do-the-m-akita-chronicles/)
 - [Jobs Assíncronos que sobrevivem ao Caos | Bastidores do The M.Akita Chronicles](2026/02/19/jobs-asssincronos-que-sobrevivem-ao-caos-bastidores-do-the-m-akita-chronicles/)
