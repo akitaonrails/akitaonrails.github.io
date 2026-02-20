@@ -53,6 +53,8 @@ Menos um arquivo de config. Menos um passo de build. Mais simples.
 
 ## Dark Mode: Respeite Seu Usuário
 
+![change theme](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/frankmd/2026/02/screenshot-2026-02-20_01-05-42.jpg)
+
 Uma coisa que me irrita profundamente é site que ignora preferência de tema do sistema operacional. O usuário configurou dark mode no OS — respeita.
 
 Com Tailwind, dark mode é trivial:
@@ -133,6 +135,8 @@ Então, vamos falar sobre o que aconteceu essa semana no mundo tech...
 {{</* /podcast-turn */>}}
 ```
 
+![baloon](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/frankmd/2026/02/screenshot-2026-02-20_01-06-23.jpg)
+
 E o Hugo renderiza um balão de chat estilizado, com avatar, alinhamento correto, e markdown processado. Zero JavaScript. Zero framework. HTML + CSS + template logic.
 
 ### DRY com Partial Compartilhado
@@ -157,6 +161,8 @@ E cada shortcode vira uma linha:
 <!-- layouts/shortcodes/hacker-news.html -->
 {{ partial "section-box" (dict "class" "hacker-news" "icon" "&#128274;" "label" "The Hacker News" "content" .Inner) }}
 ```
+
+![hacker news](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/frankmd/2026/02/screenshot-2026-02-20_01-07-02.jpg)
 
 É o equivalente Hugo de herança de componentes: um partial polimórfico parametrizado por `dict`. O CSS em `custom.css` define cores por classe (`.hacker-news`, `.anime-ranking`, etc.) com variantes light/dark. Resultado: 7 shortcodes que antes tinham HTML duplicado agora são 7 linhas + 1 partial + CSS.
 
@@ -252,6 +258,8 @@ Com HSL, você controla cada dimensão independentemente. E é aí que entra a c
 
 ### Passo 1: Distribuir Matizes no Círculo Cromático
 
+![color wheel](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/frankmd/2026/02/screenshot-2026-02-20_01-09-47.jpg)
+
 A newsletter tem 8 tipos de seção, cada uma com cor própria. Pra que todas "pertençam" visualmente ao mesmo projeto, os matizes são distribuídos uniformemente no círculo de 360°:
 
 | Seção | Matiz | Graus |
@@ -268,6 +276,8 @@ A newsletter tem 8 tipos de seção, cada uma com cor própria. Pra que todas "p
 Oito matizes espaçados ao redor do círculo. Não é aleatório — é a mesma lógica de uma **paleta policromática** em teoria das cores. Quando os matizes são equidistantes, o olho humano percebe harmonia mesmo com cores completamente diferentes. É o mesmo princípio que artistas usam com um círculo cromático de 12 cores desde o século XVIII.
 
 ### Passo 2: Fixar Saturação e Luminosidade por Camada
+
+![saturation luminosity](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/frankmd/2026/02/HSV_color_solid_cylinder_saturation_gray.jpg)
 
 Aqui está o truque que faz tudo funcionar junto. Cada "camada" visual (background, texto, borda) tem saturação e luminosidade **fixas** — só o matiz muda:
 
@@ -287,6 +297,8 @@ Na prática, isso significa que gerar a variante dark de qualquer cor é mecâni
 
 ### Passo 3: Verificar Contraste (WCAG)
 
+[![Why Colour Contrast Accessibility Matters More Than Ever](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/frankmd/2026/02/Why-Colour-Contrast-Accessibility-Matters-More-Than-Ever.jpg)](https://accessibilityassistant.com/blog/accessibility-insights/wcag-2-colour-contrast-accessibility-guidelines/)
+
 Cores bonitas que ninguém consegue ler não servem pra nada. O padrão WCAG (Web Content Accessibility Guidelines) define ratios mínimos:
 
 - **AA**: 4.5:1 pra texto normal, 3:1 pra texto grande
@@ -297,6 +309,8 @@ Os backgrounds claros com ~95% luminosidade contra texto com ~20% luminosidade d
 Isso não é por altruísmo. Email com baixo contraste é mais difícil de ler, gera menos engajamento, e em casos extremos é sinalizado por filtros de acessibilidade de email clients.
 
 ### O Resultado
+
+![example colors](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/frankmd/2026/02/screenshot-2026-02-20_01-07-50.jpg)
 
 Quando você abre a newsletter e vê a seção do Hacker News (roxa), seguida pelo YouTube (vermelha), seguida pelo Anime (azul) — elas parecem "do mesmo projeto" apesar de cores completamente diferentes. Isso é o HSL trabalhando: matizes diferentes, mesma saturação, mesma luminosidade. O olho percebe coerência sem saber explicar por quê.
 
@@ -336,6 +350,8 @@ Não é coincidência. Provedores de email calibraram seus filtros observando o 
 A lição prática: trate o HTML do seu email como se fosse um documento XML. Valide, teste, e garanta que todo tag abre e fecha na ordem certa. Use ferramentas como [Email on Acid](https://www.emailonacid.com/) ou [Litmus](https://www.litmus.com/) pra testar em múltiplos clients — eles também reportam problemas de spam scoring. E resista à tentação de copiar templates prontos da internet sem validar — muitos são um desastre de HTML malformado que passa despercebido no Gmail mas faz o Outlook ter um ataque cardíaco e faz o filtro de spam do Yahoo te marcar como suspeito.
 
 ## RSS Feeds: O Frontend Esquecido
+
+![RSS](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/frankmd/2026/02/screenshot-2026-02-20_01-12-48.jpg)
 
 Um detalhe que desenvolvedores web ignoram: RSS é um frontend. Podcasts no Spotify e Apple Podcasts são consumidos via RSS. O feed precisa de:
 
