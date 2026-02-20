@@ -51,50 +51,134 @@ Pra facilitar, recomendo criar um script como `~/.local/bin/ai-jail`:
 ```bash
 #!/bin/bash
 
+# ai-jail — bubblewrap sandbox for AI coding agents
+# Mounts the project dir read-write, auto-discovers home dotfiles with a
+# deny-list for sensitive dirs, and isolates namespaces.
+#
+# Usage: ai-jail [--map PATH]... COMMAND [ARGS...]
+#        ai-jail claude
+#        ai-jail bash
+
 PROJECT_DIR=$(pwd)
-REAL_HOME_CONFIG="$HOME/.config"
-SPARSE_HOME=$(mktemp -d /tmp/bwrap-home.XXXXXX)
+TEMP_HOSTS=$(mktemp /tmp/bwrap-hosts.XXXXXX)
 
-# Ensure the temp home is cleaned up on exit
-trap 'rm -rf "$SPARSE_HOME"' EXIT
+trap 'rm -f "$TEMP_HOSTS"' EXIT
 
-# Create a place for the config to live inside the sparse home
-mkdir -p "$SPARSE_HOME/.config"
+# ── Mise discovery ─────────────────────────────────────────────
+REAL_MISE_BIN=$(type -p mise 2>/dev/null || echo "")
 
-# Go tools (such as Crush) will need this to resolve localhost
-TEMP_HOSTS=$(mktemp)
-echo "127.0.0.1 localhost" > "$TEMP_HOSTS"
-echo "::1       localhost" >> "$TEMP_HOSTS"
+# ── Localhost fix (Go resolver needs /etc/hosts) ───────────────
+printf '127.0.0.1 localhost ai-sandbox\n::1       localhost ai-sandbox\n' > "$TEMP_HOSTS"
 
-echo "🛡️  Jail active: $PROJECT_DIR"
+# ── Parse --map arguments ─────────────────────────────────────
+EXTRA_MOUNTS=()
+while [[ "${1:-}" == "--map" ]]; do
+    MAP_PATH="$2"
+    if [ -e "$MAP_PATH" ]; then
+        EXTRA_MOUNTS+=("--ro-bind" "$MAP_PATH" "$MAP_PATH")
+    else
+        echo "Warning: Path $MAP_PATH not found, skipping." >&2
+    fi
+    shift 2
+done
+
+# ── Mise init command ──────────────────────────────────────────
+if [ -n "$REAL_MISE_BIN" ]; then
+    MISE_INIT="$REAL_MISE_BIN trust && eval \"\$($REAL_MISE_BIN activate bash)\" && eval \"\$($REAL_MISE_BIN env)\""
+else
+    MISE_INIT="true"
+fi
+
+# ── Dotfile deny-list (never mounted — sensitive data) ─────────
+DOTDIR_DENY=(.gnupg .aws .docker .mozilla .basilisk-dev .cache .sparrow)
+
+# Subdirs of ~/.config to hide (tmpfs over rw config mount)
+CONFIG_DENY=(BraveSoftware Bitwarden)
+
+# Dotdirs requiring read-write access
+DOTDIR_RW=(.claude .crush .codex .aider .config)
+
+# ── Helper functions ───────────────────────────────────────────
+is_denied() {
+    local name="$1"
+    for d in "${DOTDIR_DENY[@]}"; do [[ "$name" == "$d" ]] && return 0; done
+    return 1
+}
+
+is_rw() {
+    local name="$1"
+    for d in "${DOTDIR_RW[@]}"; do [[ "$name" == "$d" ]] && return 0; done
+    return 1
+}
+
+# ── Auto-discover dot-directories in $HOME ─────────────────────
+# Only directories — regular dotfiles (e.g. .claude.json) are NOT mounted.
+# The tmpfs $HOME is writable so tools can create dotfiles as needed.
+DOTFILE_MOUNTS=()
+for entry in "$HOME"/.*; do
+    [ -d "$entry" ] || continue
+    name=$(basename "$entry")
+    [[ "$name" == "." || "$name" == ".." ]] && continue
+    is_denied "$name" && continue
+
+    if is_rw "$name"; then
+        DOTFILE_MOUNTS+=("--bind" "$entry" "$HOME/$name")
+    else
+        DOTFILE_MOUNTS+=("--ro-bind" "$entry" "$HOME/$name")
+    fi
+done
+
+# ── Explicit dotfile mounts (regular files) ────────────────────
+[ -f "$HOME/.gitconfig" ] && DOTFILE_MOUNTS+=("--ro-bind" "$HOME/.gitconfig" "$HOME/.gitconfig")
+[ -f "$HOME/.claude.json" ] && DOTFILE_MOUNTS+=("--bind" "$HOME/.claude.json" "$HOME/.claude.json")
+
+# ── Hide sensitive subdirs inside ~/.config (after rw mount) ───
+CONFIG_HIDE_MOUNTS=()
+for denied in "${CONFIG_DENY[@]}"; do
+    [ -d "$HOME/.config/$denied" ] && CONFIG_HIDE_MOUNTS+=("--tmpfs" "$HOME/.config/$denied")
+done
+
+# ── Override ~/.local subdirs as rw (parent .local is ro) ──────
+LOCAL_OVERRIDES=()
+[ -d "$HOME/.local/state" ] && LOCAL_OVERRIDES+=("--bind" "$HOME/.local/state" "$HOME/.local/state")
+for rw_share in zoxide crush opencode atuin mise yarn; do
+    [ -d "$HOME/.local/share/$rw_share" ] && LOCAL_OVERRIDES+=("--bind" "$HOME/.local/share/$rw_share" "$HOME/.local/share/$rw_share")
+done
+
+# ── Assemble and launch ───────────────────────────────────────
+echo "Jail Active: $PROJECT_DIR"
 
 bwrap \
   --ro-bind /usr /usr \
-  --ro-bind /bin /bin \
-  --ro-bind /lib /lib \
-  --ro-bind /lib64 /lib64 \
-  --ro-bind /etc/resolv.conf /etc/resolv.conf \
-  --ro-bind /etc/ssl /etc/ssl \
+  --symlink usr/bin /bin \
+  --symlink usr/lib /lib \
+  --symlink usr/lib /lib64 \
+  --ro-bind /etc /etc \
   --ro-bind "$TEMP_HOSTS" /etc/hosts \
+  --ro-bind /opt /opt \
+  --ro-bind /sys /sys \
   --dev /dev \
   --proc /proc \
   --tmpfs /tmp \
   --tmpfs /run \
-  --bind "$SPARSE_HOME" "$HOME" \
-  --ro-bind "$REAL_HOME_CONFIG" "$HOME/.config" \
+  --tmpfs "$HOME" \
+  "${DOTFILE_MOUNTS[@]}" \
+  "${CONFIG_HIDE_MOUNTS[@]}" \
+  "${LOCAL_OVERRIDES[@]}" \
+  "${EXTRA_MOUNTS[@]}" \
   --bind "$PROJECT_DIR" "$PROJECT_DIR" \
   --chdir "$PROJECT_DIR" \
+  --die-with-parent \
   --unshare-user \
-  --unshare-ipc \
   --unshare-pid \
   --unshare-uts \
-  --unshare-cgroup \
-  --share-net \
-  --die-with-parent \
+  --unshare-ipc \
   --hostname "ai-sandbox" \
   --setenv PS1 "(jail) \w \$ " \
-  "${@:-bash}"
+  bash -c "$MISE_INIT && ${*:-bash}"
 ```
+
+Esta versão é bem customizada, deem uma boa lida porque tem deny-list pra que só diretórios de que você realmente precisa dentro do Jail estejam disponíveis. Alguns são read-write porque um Claude precisa conseguir escrever em `~/.claude` ou Codex precisa do `~/.codex`; vários diretórios nunca devem ir pra dentro do Jail como repositório de senhas de um Brave ou BitWarden. O resto de que pode precisar deve ser tudo read-only. Esse script cuida de tudo isso.
 
 Só fazer `chmod +x ~/.local/bin/ai-jail`. Agora podemos executar ele direto ou já passar o comando que queremos rodar no sandbox:
 
