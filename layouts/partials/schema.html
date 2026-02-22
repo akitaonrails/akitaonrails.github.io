@@ -1,0 +1,33 @@
+{{- $iso8601 := "2006-01-02T15:04:05-07:00" -}}
+{{- $description := partial "utils/page-description.html" . -}}
+{{- if .IsPage -}}
+{{- $schema := dict
+  "@context" "https://schema.org"
+  "@type" "BlogPosting"
+  "headline" .Title
+  "description" $description
+  "url" .Permalink
+  "datePublished" (.PublishDate.Format $iso8601)
+  "dateModified" (.Lastmod.Format $iso8601)
+  "author" (dict "@type" "Person" "name" .Site.Params.author.name "url" .Site.BaseURL)
+  "publisher" (dict "@type" "Organization" "name" .Site.Title "url" .Site.BaseURL)
+  "mainEntityOfPage" (dict "@type" "WebPage" "@id" .Permalink)
+-}}
+{{- with $.Params.images -}}
+  {{- $schema = merge $schema (dict "image" (index . 0 | absURL)) -}}
+{{- end -}}
+{{- with $.Params.tags -}}
+  {{- $schema = merge $schema (dict "keywords" .) -}}
+{{- end -}}
+{{ printf `<script type="application/ld+json">%s</script>` ($schema | jsonify) | safeHTML }}
+{{- else -}}
+{{- $schema := dict
+  "@context" "https://schema.org"
+  "@type" "WebSite"
+  "name" .Site.Title
+  "description" $description
+  "url" .Site.BaseURL
+  "author" (dict "@type" "Person" "name" .Site.Params.author.name)
+-}}
+{{ printf `<script type="application/ld+json">%s</script>` ($schema | jsonify) | safeHTML }}
+{{- end -}}

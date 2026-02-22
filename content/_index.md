@@ -4,6 +4,18 @@ title: AkitaOnRails's Blog
 
 ## 2026 - February
 
+- [Vibe Code: Fiz um clone do Mega em Rails em 1 dia pro meu Home Server](2026/02/21/vibe-code-fiz-um-clone-do-mega-em-rails-em-1-dia-pro-meu-home-server/)
+- [Do Zero à Pós-Produção em 1 Semana - Como usar IA em Projetos de Verdade | Bastidores do The M.Akita Chronicles](2026/02/20/do-zero-a-pos-producao-em-1-semana-como-usar-ia-em-projetos-de-verdade-bastidores-do-the-m-akita-chronicles/)
+- [Testes de Integração em MonoRepo | Bastidores do The M.Akita Chronicles](2026/02/20/testes-de-integracao-em-monorepo-bastidores-do-the-m-akita-chronicles/)
+- [SQLite + Kamal: Deploy de Rails sem Drama | Bastidores do The M.Akita Chronicles](2026/02/20/sqlite-kamal-deploy-de-rails-sem-drama-bastidores-do-the-m-akita-chronicles/)
+- [Discord como Admin Panel | Bastidores do The M.Akita Chronicles](2026/02/20/discord-como-admin-panel-bastidores-do-the-m-akita-chronicles/)
+- [Jobs Assíncronos que sobrevivem ao Caos | Bastidores do The M.Akita Chronicles](2026/02/19/jobs-asssincronos-que-sobrevivem-ao-caos-bastidores-do-the-m-akita-chronicles/)
+- [Frontend Sem Framework | Bastidores do The M.Akita Chronicles](2026/02/19/frontend-sem-framework-bastidores-do-the-m-akita-chronicles/)
+- [Servindo IA na Nuvem: Meu TTS pessoal | Bastidores do The M.Akita Chronicles](2026/02/18/servindo-ia-na-nuvem-meu-tts-pessoal-bastidores-do-the-m-akita-chronicles/)
+- [Web Scrapping em 2026 | Bastidores do The M.Akita Chronicles](2026/02/18/web-scrapping-em-2026-bastidores-do-the-m-akita-chronicles/)
+- [Enviando Emails sem Spammar | Bastidores do The M.Akita Chronicles](2026/02/17/enviando-emails-sem-spammar-bastidores-do-the-m-akita-chronicles/)
+- [Vibe Code: Do Zero à Produção em 6 DIAS | The M.Akita Chronicles](2026/02/16/vibe-code-do-zero-a-producao-em-6-dias-the-m-akita-chronicles/)
+- [AI Agents: Qual seria a melhor Linguagem de Programação para LLMs?](2026/02/09/ai-agents-qual-seria-a-melhor-linguagem-de-programacao-para-llms/)
 - [RANT: IA acabou com os programadores?](2026/02/08/rant-ia-acabou-com-programadores/)
 - [Vibe Code: Fiz um Editor de Markdown do zero com Claude Code (FrankMD) PARTE 2](2026/02/01/vibe-code-fiz-um-editor-de-markdown-do-zero-com-claude-code-frankmd-parte-2/)
 - [Vibe Code: Fiz um Editor de Markdown do zero com Claude Code (FrankMD) PARTE 1](2026/02/01/vibe-code-fiz-um-editor-de-markdown-do-zero-com-claude-code-frankmd-part-1/)

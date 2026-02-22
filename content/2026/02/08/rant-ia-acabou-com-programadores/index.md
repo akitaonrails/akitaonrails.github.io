@@ -16,11 +16,11 @@ Quem só acompanhou cortes e comentários, sem assistir aos meus [vídeos sobre 
 
 > "IAs NUNCA vão substituir NENHUM programador"
 
-E isso está errado. Assista ao vídeo com a explicação (ou procure o transcrição). Mas em resumo, o que eu disse foi:
+E isso está errado. Assista ao vídeo com a explicação (ou procure a transcrição). Mas em resumo, o que eu disse foi:
 
 > "IAs nunca vão substituir programadores COMO EU - EU nunca vou ser substituído"
 
-Outra coisa que eu afirmei e continuo a afirmar é:
+Outra coisa que afirmei e continuo a afirmar é:
 
 > "AGIs não são possíveis na arquitetura atual: não vai acontecer. Precisa vir uma nova descoberta — que, obviamente, ainda não sabemos qual — pra ultrapassar a barreira atual, que é intransponível.
 
@@ -46,7 +46,7 @@ Mas "engenheiro de software" não é uma engenharia de verdade. Não existe um C
 
 O Cisne Negro da Pandemia foi algo que eu não previ, mas isso só ajudou a inflar ainda mais a fase final da bolha, que estourou no fim de 2022 quando se iniciaram layoffs em massa em todas as big techs. E isso foi ANTES do advento das LLMs pra programação. Por coincidência, ChatGPT surgiu na mesma época em 2022, mas essa não foi a causa; foi só o último prego no caixão. O estouro daquela bolha e os layoffs viriam de qualquer forma.
 
-Por isso, [meu canal](https://www.youtube.com/@Akitando) deve ser o único que, ainda hoje, oferece os conteúdos de que alguém que realmente pensa em ser programador precisa. Imagina os outros canais que, cansados de propagandear que virar programador era fácil, envelheceram BEM mal.
+Por isso, [meu canal](https://www.youtube.com/@Akitando) deve ser o único que, ainda hoje, oferece os conteúdos de que alguém que realmente pensa em ser programador precisa. Imagina os outros canais que só propagandearam que virar programador era fácil, envelheceram BEM mal.
 
 Portanto, sim, concordo com o CEO da Anthropic: esses "engenheiros de software" se tornarão completamente obsoletos. Não existe virar "engenheiro" em um bootcamp de 1 mês. Isso era **bullshit** e tinha que ser muito idiota pra acreditar. Notem que todos esses vendedores de óleo de cobra SUMIRAM. Cadê eles?
 
@@ -57,7 +57,7 @@ Não sabe por onde começar no meu canal? Duas sugestões:
 
 ## O "teto" das IAs
 
-Eu terminei de gravar vídeos pro meu canal exatamente quando começou essa onda de IAs. Considerei que tudo o que eu queria dizer já foi dito e continua disponível no canal. Meu objetivo foi atingido.
+Eu terminei de gravar vídeos pro meu canal exatamente quando começou essa onda de IAs. Considerei que tudo o que queria dizer já foi dito e isso continua disponível no canal. Meu objetivo foi atingido.
 
 Durante 2024 e 2025 eu participei de podcasts como [Flow](https://www.youtube.com/watch?v=25DG7ivZq_o&list=PLdsnXVqbHDUcjqXfKo42h6Cm-HCcUNOnV&pp=sAgC) e [Inteligência Ltda](https://www.youtube.com/watch?v=RKDCQUqXGg4&list=PLdsnXVqbHDUdrzeKMb3QOwKW6rMvVHPeq&pp=sAgC) falando muito sobre IAs e coisas como [computação quântica](https://www.youtube.com/watch?v=_Hl9wiLkns4&pp=ygUdZmFiaW8gYWtpdGEgaW50ZWxpZ2VuY2lhIGx0ZHM%3D) (e como também é só um hype que não vai em nada prático pro nosso dia a dia).
 
@@ -75,7 +75,7 @@ O problema: pra treinar cada nova geração de LLMs, fica consideravelmente mais
 
 Por isso, está [faltando energia](https://research.aimultiple.com/ai-energy-consumption/): com o aumento da demanda de uso (inferência), eles têm que se dividir entre gastar energia pra treinar novas versões e atender à demanda. Não dá pra fazer os dois.
 
-Pior, por isso, a [memória RAM explodiu em preço](https://www.techradar.com/computing/memory/more-ram-misery-the-bad-news-keeps-coming-as-analyst-firm-warns-of-an-unprecedented-and-record-breaking-surge-with-price-hikes) e seu PC também vai ficar muito mais caro. Não tem mais recursos pra treinar modelos tão grandes que, proporcionalmente, oferecem cada vez menos resultado. É o destino de toda inovação: bater no teto da curva em S até surgir outra que a substitua.
+Pior, por isso, a [memória RAM explodiu em preço](https://www.techradar.com/computing/memory/more-ram-misery-the-bad-news-keeps-coming-as-analyst-firm-warns-of-an-unprecedented-and-record-breaking-surge-with-price-hikes) e seu PC também vai ficar muito mais caro. Não tem mais recursos pra treinar modelos tão grandes que, proporcionalmente, oferecem cada vez menos resultado (definição de "diminishing returns"). É o destino de toda inovação: bater no teto da curva em S até surgir outra que a substitua.
 
 O foco agora está em usar melhor as versões que já temos. No caso de programação, surgem GPT Codex ou Claude Code, que são estratégias de uso de agentes, MCPs, skills e outras ferramentas e formas de orquestração pra extrair o máximo do que já temos hoje.
 
@@ -85,7 +85,7 @@ Todo mundo já sabe que é impossível só fazer um prompt e que qualquer LLM sa
 
 Toda LLM tem um limite de contexto (memória). É impossível carregar todo o código-fonte de um ERP gigante como o da Totus ou o da SAP. Não cabe, e mesmo se coubesse, não seria possível dar "atenção" a tudo. Existem limites: quanto mais memória você coloca, pior fica a inferência; o resultado fica pior. Como tudo em software, é um "trade-off".
 
-Em vez disso, o melhor é criar scripts que percorrem seu código e extraem pedaços específicos a cada execução. Se estiver mexendo no carrinho de compras, não precisa carregar código que lida com a tela inicial da loja, por exemplo. É parecido com o que um programador humano faria: **dividir pra conquistar**.
+Em vez disso, o melhor é criar scripts que percorrem seu código e extraem pedaços específicos a cada execução. Se estiver mexendo no carrinho de compras, não precisa carregar código que lida com a tela inicial da loja, por exemplo. É parecido com o que um programador humano faria: **dividir pra conquistar** (como diria Napoleão).
 
 Toda LLM específica pra código, como Codex ou Opus, foi treinada pra fazer **"tool calling"**, que é enviar um pedido ao "chat" pra que ele busque informações (como código) e carregue trechos no contexto. Pra isso, ele manda executar ferramentas como "rg" [ripgrep](https://github.com/BurntSushi/ripgrep) (no caso do Codex) ou "grep" (no caso do OpenCode).
 
@@ -95,7 +95,7 @@ Quando o contexto está prestes a acabar (a faixa de 200 mil tokens, no caso de 
 
 Pra garantir que o código gerado "funcione", o tool calling pede pra rodar ferramentas locais, como linters, compiladores ou LSPs (como uma IDE, como o VSCode, faria). Isso gera feedback (e gasta mais contexto). Se errar, o "chat" pode pedir automaticamente pra refazer, levando essa nova informação em consideração.
 
-Além disso, pra ir "mais rápido", o "chat" pode mandar executar vários agentes em paralelo. Cada agente é um novo contexto. Então, poderia mandar um agente vasculhar todo o código relevante ao banco de dados e, no final, gerar um resumo. Outro agente vasculha todo o código de pagamentos e, ao final, gera um resumo. Outro agente vasculha o código relevante ao front-end do carrinho e gera um resumo. Então o "chat" pega esses resumos e volta ao contexto anterior pra executar alguma tarefa.
+Além disso, pra ir "mais rápido", o "chat" pode mandar executar vários agentes em paralelo. Cada agente é um novo contexto - e nada disso é de graça, lembrem-se: tokens por segundo. Então, poderia mandar um agente vasculhar todo o código relevante ao banco de dados e, no final, gerar um resumo. Outro agente vasculha todo o código de pagamentos e, ao final, gera um resumo. Outro agente vasculha o código relevante ao front-end do carrinho e gera um resumo. Então o "chat" pega esses resumos e volta ao contexto anterior pra executar alguma tarefa.
 
 O que chamo de "chat" é só pra ficar mais fácil de visualizar. Pense na interface simples de chat que todo mundo usa no dia a dia, mas com recursos adicionais. Isso é o que faz um Codex ou um Claude Code. Não tem segredo nenhum, toda ferramenta dessas, assim como as open source como Opencode ou Crush, fazem a mesma coisa: configuram um **"Harness"**:
 
@@ -148,25 +148,29 @@ Não vai mais existir aquela "especialização" esquisita de "front-end que não
 
 {{< youtube id="V0D3PuTLOZ8" title="Restrição == Inovação - Fabio Akita" >}}
 
-Palestrei há alguns anos sobre "Restrição == Inovação" e como inovação não acontece quando se tem dinheiro sobrando, que foi o que aconteceu na última Bolha de Programação: pra que automatizar as coisas, ser eficiente, se tem dinheiro sobrando, é só contratar mais e mais gente pra fazer coisas mais e mais simples e braçais?
+Palestrei há alguns anos sobre Restrição == Inovação e como inovação não acontece quando se tem dinheiro sobrando, que foi o que aconteceu na última Bolha de Programação: pra que automatizar as coisas, ser eficiente, se tem dinheiro sobrando, é só contratar mais e mais gente pra fazer coisas mais e mais simples e braçais?
 
-Na Bolha da Internet, havia tanto dinheiro sobrando que existia a profissão de catalogador de sites: gente que ficava o dia inteiro digitando manualmente todos os novos sites que surgiam na recém-lançada Web. Levou anos até surgirem um Altavista e, depois, um Google, que descobriram como automatizar isso. Antigamente, não existiam "admins" web pra publicar novos produtos num e-commerce: alguém editava o HTML da página principal do Submarino.com todos os dias, com novas ofertas. Tudo trabalho de alto volume e baixo valor agregado. Automatizamos tudo isso e, agora, com LLMs, só fomos um passo à frente.
+Na Bolha da Internet, havia tanto dinheiro sobrando que existia a profissão de "catalogador de sites": gente que ficava o dia inteiro digitando manualmente todos os novos sites que surgiam na recém-lançada Web. Levou anos até surgirem um Altavista e, depois, um Google, que descobriram como automatizar isso. Antigamente, não existiam "admins" web pra publicar novos produtos num e-commerce: alguém editava o HTML da página principal do Submarino.com todos os dias, com novas ofertas. Tudo trabalho de alto volume e baixo valor agregado. Automatizamos tudo isso e, agora, com LLMs, só fomos um passo à frente.
 
 Mesmo antes de LLMs, não fazia sentido precisar de gente exclusivamente pra ficar fazendo HTML/CSS descartáveis o dia todo. As ferramentas um pouco mais automáticas, como um SquareSpace.com da vida, não eram tão boas.
 
-O problema é o seguinte: mesmo algo simples, como um "Web Admin" pra editar conteúdo sem precisar saber HTML, nos anos 90, não existia. Alguém precisou criar as primeiras versões desse tipo de software pra entendermos o que funciona e o que não funciona. Quem era dos anos 90 vai se lembrar de softwares comerciais caros como o famoso [Vignette Story Server](https://en.wikipedia.org/wiki/Vignette_Corporation). Hoje em dia, qualquer Wordpress open source faz a mesma coisa melhor.
+O problema é o seguinte: algo simples, como um "Web Admin" pra editar conteúdo sem precisar saber HTML, nos anos 90, não existia. Alguém precisou criar as primeiras versões desse tipo de software pra entendermos o que funciona e o que não funciona. Quem era dos anos 90 vai se lembrar de softwares comerciais caros como o famoso [Vignette Story Server](https://en.wikipedia.org/wiki/Vignette_Corporation). Hoje em dia, qualquer Wordpress open source faz a mesma coisa melhor.
 
 Ninguém se lembra de software e de empresas que não existem mais. Especialmente jovens, acham que o mundo já apareceu com a Web pronta, com redes sociais prontas e plataformas de e-commerce prontas. A sensação deve ser que, no Egito Antigo, o povo já comprava na Amazon, pedia delivery no iFood e todo mundo se comunicava pelo Whatsapp. Eu fiz um video chamado [A Dimensão do Tempo](https://www.youtube.com/watch?v=Qb5b8ZE9tIY), [Minha Máquina do Tempo](https://www.youtube.com/watch?v=0KNGiOp7eoE) e [Meus Primeiros Cinco Anos](https://www.youtube.com/watch?v=ksZjJQiaK2Y) pra tentar dar um pouco de perspectiva sobre isso.
 
-O ponto é: tudo o que as LLMs sabem fazer já existe ou já existiu. Eles não são capazes de inventar seja lá o que for, seja a "Vignette dos anos 2030" ou o "Instagram dos anos 2030". E não digo isso no sentido do "próximo gerenciador de conteúdo" ou "próxima rede social". Eu digo no sentido de que "rede social" era um termo que não existia nos anos 2000 e "gerenciador de conteúdo" não existia nos anos 80, por exemplo. O que é a nova categoria que vai aparecer nos anos 2030?
+> O ponto é: tudo o que as LLMs sabem fazer já existe ou já existiu.
 
-Não sei; se eu soubesse, obviamente estaria construindo pra lançar e ficar bilionário. Ninguém sabe, muito menos LLMs. Elas conseguem derivar muitas coisas do treinamento, mas o que não está nas probabilidades do modelo não vai "espontaneamente" aparecer. Não é assim que IAs funcionam.
+Eles não são capazes de inventar seja lá o que for, seja a "Vignette dos anos 2030" ou o "Instagram dos anos 2030". E não digo isso no sentido do "próximo gerenciador de conteúdo" ou "próxima rede social". Eu digo no sentido de que "rede social" era um termo que não existia nos anos 2000 e "gerenciador de conteúdo" não existia nos anos 80, por exemplo. O que é a nova categoria que vai aparecer nos anos 2030?
+
+Não sei; se eu soubesse, obviamente estaria construindo pra lançar e ficar bilionário. Ninguém sabe, muito menos LLMs. Elas conseguem derivar muitas coisas do treinamento, mas o que não está nas probabilidades do modelo não vai "espontaneamente" aparecer". Não é assim que IAs funcionam.
 
 Podemos ficar pra sempre só refazendo tudo o que já foi feito igual já existe hoje. Mas não muito mais do que isso. Mas o ponto das minhas palestras foi justamente que somente com muito dinheiro e muita força bruta, não nascem inovações.
 
 ## Programadores na Era das LLMs
 
-A conclusão é muito simples: programadores como eu sempre vão existir. O que sempre vai deixar de existir são profissões que só têm volume, mas baixo valor agregado. Esse é o conceito. Como eu disse nos meus videos, durante minha carreira eu já sobrevivi ao fim da bolha dos microcomputadores no começo ao meio dos anos 90, a bolha da internet do meio dos anos 90 até o começo dos 2000, a recessão de programação de 2001 a 2008, a bolha financeira imobiliária que estourou em 2008 mas deu origem à bolha da programação, principalmente dos anos 2014 até 2022, e agora a bolha de IAs.
+A conclusão é muito simples: programadores como eu sempre vão existir. O que sempre deixa de existir são profissões que só têm volume, mas baixo valor agregado. Esse é o conceito.
+
+Como disse nos meus videos, durante minha carreira eu já sobrevivi ao fim da bolha dos microcomputadores no começo ao meio dos anos 90, a bolha da internet do meio dos anos 90 até o começo dos 2000, a recessão de programação de 2001 a 2008, a bolha financeira imobiliária que estourou em 2008 mas deu origem à bolha da programação, principalmente dos anos 2014 até 2022, e agora a bolha de IAs.
 
 Não se enganem: é sempre assim, e esse é nada mais do que um episódio.
 
@@ -176,9 +180,9 @@ Quem é o programador que sobrevive a todas essas bolhas? Este:
 
 O teto das LLMs já está aqui e o que elas estão entregando agora não vai mudar muito: o processo vai ser o mesmo. Vai ficar um pouco mais rápido. Vai gerar um pouco menos de erros e pequenos ajustes assim. Mas o processo vai continuar igual até aparecer alguma nova arquitetura ou alguma nova descoberta que ainda não sabemos.
 
-> Nenhum código gerado por IA vai ser automaticamente perfeito pra ser colocado em produção sem nenhum tipo de revisão ou intervenção humana. - Qualquer um que ache o contrário ou não testou nenhuma LLM na prática ou nunca trabalhou em projetos de verdade.
+> Nenhum código gerado por IA vai ser automaticamente perfeito pra ser colocado em produção sem nenhum tipo de revisão ou intervenção humana. - Qualquer um que ache o contrário ou que não testou nenhuma LLM na prática ou nunca trabalhou em projetos de verdade.
 
-Como eu disse no Flow, esta é a SEGUNDA Bolha de IAs. A primeira foi nos anos 60 por causa do inventor de redes neurais, Frank Rosenblatt. Assim como o Sam Altman ou o Dario Amodel, ele também fez MUITO hype sobre redes neurais e computadores que iriam ficar muito mais inteligentes do que seres humanos "muito em breve", e todo jornal da época publicou sobre isso. As promessas morreram como promessas e isso gerou o "Inverno das IAs" nos anos 70, onde muito investimento foi feito, o resultado não foi proporcional, e pesquisas sobre IA estagnaram pelas décadas seguintes, andando a passos de tartaruga.
+Como disse no Flow, esta é a SEGUNDA Bolha de IAs. A primeira foi nos anos 60 por causa do inventor de redes neurais, Frank Rosenblatt. Assim como o Sam Altman ou o Dario Amodel, ele também fez MUITO hype sobre redes neurais e computadores que iriam ficar muito mais inteligentes do que seres humanos "muito em breve", e todo jornal da época publicou sobre isso. As promessas morreram como promessas e isso gerou o "Inverno das IAs" nos anos 70, onde muito investimento foi feito, o resultado não foi proporcional, e pesquisas sobre IA estagnaram pelas décadas seguintes, andando a passos de tartaruga.
 
 Isso só começou a mudar mesmo com o advento e a popularização da Web, o surgimento de redes sociais, o surgimento de Big Data e, agora, com volumes grandes de dados pra iniciar uma nova era de pesquisa em redes neurais, com muito mais material de treinamento. E agora com a existência de GPUs pra acelerar o processamento. Foi quando surgiu a AlexNet, de George Hinton, Yann LeCunn e Ilya Sutskever, o "breakthrough" das convolutional neural networks (CNNs) e da paralelização de processamento via GPUs.
 
@@ -198,7 +202,7 @@ Nenhuma LLM substituiu o Linus Torvalds, nem Richard Stallman, nem nenhum dos gr
 
 ## Recado às Empresas
 
-Isso deveria ser óbvio, mas vou deixar registrado só pra eu poder dizer "EU AVISEI" depois.
+Isso deveria ser óbvio, mas vou deixar registrado só pra poder dizer "EU AVISEI" depois.
 
 * Nenhuma LLM vai escrever código sozinha. Precisa de um sênior pra especificar.
 * Todo código gerado por LLMs precisa de revisão. Precisa de um sênior pra revisar.
@@ -228,7 +232,7 @@ Está na moda essa ideia de reescrever tudo em Rust porque teria menos problemas
 
 > Reescrever é, sim, garantia de que vários novos bugs vão surgir e você não vai detectá-los imediatamente; vai ser uma nova bomba-relógio. Pra consertar um bug conhecido, você acabou criando vários outros bugs desconhecidos. Reescrever, por definição, sempre vai adicionar novos bugs.
 
-E não, quando você pede pra LLM: *"encontre todos os bugs de segurança neste código"*, ele vai encontrar alguns, mas nunca todos.
+E não, quando se pede pra LLM: *"encontre todos os bugs de segurança neste código"*, ele vai encontrar alguns, mas nunca todos.
 
 Entenda o português: ele sempre vai dizer algo como *"Eis todos os bugs que descobri..."* Até a LLM hoje em dia não vai mais tentar dizer *"Eis todos os bugs que existem"*.
 
@@ -313,4 +317,3 @@ No final do dia, o Java dos anos 90 não substituiu o Cobol e o Fortran do mundo
 A última Bolha da Programação foi um período entediante pra mim em termos de inovação: porque tudo era substituído por programadores baratos. Pra mim, o estouro dessa bolha era esperado e me deixa muito feliz. Porque finalmente saímos do marasmo de cursos idiotas pra falarmos de tecnologia de ponta de novo. Programadores voltando a ser programadores de verdade.
 
 Só vejo coisas boas nisso.
-
