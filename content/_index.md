@@ -4,6 +4,7 @@ title: AkitaOnRails's Blog
 
 ## 2026 - February
 
+- [RANT: o Akita abriu as pernas pra IA??](2026/02/24/rant-o-akita-abriu-as-pernas-pra-ia/)
 - [Vibe Code: Fiz um Indexador Inteligente de Imagens com IA em 2 dias | Frank Sherlock](2026/02/23/vibe-code-fiz-um-indexador-inteligente-de-imagens-com-ia-em-2-dias/)
 - [Vibe Code: Fiz um clone do Mega em Rails em 1 dia pro meu Home Server](2026/02/21/vibe-code-fiz-um-clone-do-mega-em-rails-em-1-dia-pro-meu-home-server/)
 - [Do Zero à Pós-Produção em 1 Semana - Como usar IA em Projetos de Verdade | Bastidores do The M.Akita Chronicles](2026/02/20/do-zero-a-pos-producao-em-1-semana-como-usar-ia-em-projetos-de-verdade-bastidores-do-the-m-akita-chronicles/)
