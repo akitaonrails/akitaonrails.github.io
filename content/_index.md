@@ -2,6 +2,10 @@
 title: AkitaOnRails's Blog
 ---
 
+## 2026 - March
+
+- [Software Nunca Está 'Pronto' — 4 Projetos, a Vida Pós-Deploy, e Por Que One-Shot Prompt É Mito](2026/03/01/software-nunca-esta-pronto-4-projetos-a-vida-pos-deploy-e-por-que-one-shot-prompt-e-mito/)
+
 ## 2026 - February
 
 - [RANT: o Akita abriu as pernas pra IA??](2026/02/24/rant-o-akita-abriu-as-pernas-pra-ia/)
