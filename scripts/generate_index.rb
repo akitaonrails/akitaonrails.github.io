@@ -5,8 +5,14 @@ require 'yaml'
 require 'date'
 
 CONTENT_DIR = 'content'
-OUTPUT_FILE = "#{CONTENT_DIR}/_index.md"
+INDEX_FILE = "#{CONTENT_DIR}/_index.md"
+ARCHIVES_DIR = "#{CONTENT_DIR}/archives"
+ARCHIVES_FILE = "#{ARCHIVES_DIR}/_index.md"
 FRONTMATTER_DELIMITER = '---'
+
+# Posts from January of last year onward appear on the main index.
+# Everything older goes to the archives page.
+CUTOFF_YEAR = Date.today.year - 1
 
 def escape_markdown(text)
   text.to_s.gsub('[', '\\[').gsub(']', '\\]')
@@ -40,6 +46,7 @@ def collect_posts(include_future: false)
   now = DateTime.now
   Dir.glob("#{CONTENT_DIR}/**/index.md")
      .reject { |path| path == "#{CONTENT_DIR}/index.md" || path == "#{CONTENT_DIR}/_index.md" }
+     .reject { |path| path.start_with?("#{ARCHIVES_DIR}/") }
      .filter_map { |path| parse_post(path) }
      .select { |post| include_future || post[:date] <= now }
 end
@@ -51,28 +58,50 @@ def group_by_month(posts)
     .group_by { |post| [post[:date].year, post[:date].month] }
 end
 
-def generate_index(grouped_posts)
+def render_months(grouped_posts, url_prefix: '')
   sorted_months = grouped_posts.keys.sort.reverse
-
-  lines = ["#{FRONTMATTER_DELIMITER}\ntitle: AkitaOnRails's Blog\n#{FRONTMATTER_DELIMITER}\n"]
+  lines = []
 
   sorted_months.each do |(year, month)|
     month_name = Date::MONTHNAMES[month]
     lines << "## #{year} - #{month_name}\n"
 
     grouped_posts[[year, month]].each do |post|
-      lines << "- [#{escape_markdown(post[:title])}](#{post[:url]})"
+      lines << "- [#{escape_markdown(post[:title])}](#{url_prefix}#{post[:url]})"
     end
 
     lines << ''
   end
 
+  lines
+end
+
+def generate_index(grouped_posts)
+  lines = ["#{FRONTMATTER_DELIMITER}\ntitle: AkitaOnRails Blog\n#{FRONTMATTER_DELIMITER}\n"]
+  lines.concat(render_months(grouped_posts))
+  lines << "[Arquivo completo →](/archives/)\n"
+  lines.join("\n")
+end
+
+def generate_archives(grouped_posts)
+  lines = ["#{FRONTMATTER_DELIMITER}\ntitle: AkitaOnRails Blog - Arquivo\n#{FRONTMATTER_DELIMITER}\n"]
+  lines.concat(render_months(grouped_posts, url_prefix: '/'))
   lines.join("\n")
 end
 
 include_future = ARGV.include?('--future')
 posts = collect_posts(include_future: include_future)
 grouped = group_by_month(posts)
-File.write(OUTPUT_FILE, generate_index(grouped))
 
-puts "Generated #{OUTPUT_FILE} with #{posts.size} posts grouped by year & month.#{' (including future posts)' if include_future}"
+recent = grouped.select { |(year, _month), _| year >= CUTOFF_YEAR }
+archived = grouped.select { |(year, _month), _| year < CUTOFF_YEAR }
+
+Dir.mkdir(ARCHIVES_DIR) unless Dir.exist?(ARCHIVES_DIR)
+
+File.write(INDEX_FILE, generate_index(recent))
+recent_count = recent.values.flatten.size
+puts "Generated #{INDEX_FILE} with #{recent_count} posts (#{CUTOFF_YEAR}+).#{' (including future posts)' if include_future}"
+
+File.write(ARCHIVES_FILE, generate_archives(archived))
+archived_count = archived.values.flatten.size
+puts "Generated #{ARCHIVES_FILE} with #{archived_count} posts (before #{CUTOFF_YEAR}).#{' (including future posts)' if include_future}"
