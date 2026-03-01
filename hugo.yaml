@@ -1,4 +1,12 @@
 # Hugo configuration file
+# Dev mode: hugo server --renderSegments recent
+# Only renders 2025+ content for fast preview (~70 posts instead of ~750)
+segments:
+  recent:
+    includes:
+    - kind: '{home,section,taxonomy,term}'
+    - path: '{/2025/**,/2026/**,/2027/**,/about,/archives}'
+
 title: AkitaOnRails.com
 enableEmoji: true
 languageCode: "pt-BR"

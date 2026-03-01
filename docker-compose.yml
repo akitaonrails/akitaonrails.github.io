@@ -18,6 +18,6 @@ services:
       sh -c "
         ./scripts/generate_index.rb &&
         cd /app &&
-        hugo server --logLevel debug --disableFastRender -p 1313 --bind 0.0.0.0 --watch
+        hugo server --renderSegments recent --logLevel debug --disableFastRender -p 1313 --bind 0.0.0.0 --watch
       "
     restart: unless-stopped

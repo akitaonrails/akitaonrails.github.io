@@ -58,13 +58,16 @@ cd akitaonrails.github.io
 # adicionar conteúdo
 nvim content/2025/08/29/hello/index.md
 
-# gerar índice
+# gerar índice (gera _index.md + archives/_index.md)
 ./scripts/generate_index.rb
 
-# build
-hugo
+# build completo (produção)
+hugo --gc --minify
 
-# rodar servidor
+# dev server rápido (só renderiza 2025+ via renderSegments)
+hugo server --renderSegments recent --logLevel debug --disableFastRender -p 1313
+
+# dev server completo (se precisar ver posts antigos)
 hugo server --logLevel debug --disableFastRender -p 1313
 ```
 
@@ -123,20 +126,24 @@ Conteúdo do post aqui...
 
 ```
 akitaonrails.github.io/
-├── content/           # Posts e páginas (Markdown)
-├── layouts/           # Templates HTML
-├── assets/            # CSS, JS, imagens
-├── hugo.yaml         # Configuração do Hugo
-├── go.mod            # Dependências Go
-├── scripts/          # Scripts de desenvolvimento
-├── Dockerfile        # Imagem Docker
-└── docker-compose.yml # Orquestração Docker
+├── content/              # Posts e páginas (Markdown)
+│   ├── _index.md         # Homepage (auto-gerado, posts recentes)
+│   └── archives/
+│       └── _index.md     # Arquivo completo (auto-gerado, posts antigos)
+├── layouts/              # Templates HTML
+├── assets/               # CSS, JS, imagens
+├── hugo.yaml             # Configuração do Hugo (inclui render segments)
+├── go.mod                # Dependências Go
+├── scripts/
+│   └── generate_index.rb # Gera _index.md + archives/_index.md
+├── Dockerfile            # Imagem Docker
+└── docker-compose.yml    # Orquestração Docker (usa --renderSegments recent)
 ```
 
 ## Checklist para Contribuições
 
 - [ ] Testei localmente com Docker ou instalação local
-- [ ] Gerei o índice de posts (`./scripts/dev.sh generate-index`)
+- [ ] Gerei o índice de posts (`./scripts/dev.sh generate-index` ou `./scripts/generate_index.rb`)
 - [ ] Verifiquei se o site funciona corretamente
 - [ ] Segui as convenções de nomenclatura do projeto
 - [ ] Documentei mudanças significativas
