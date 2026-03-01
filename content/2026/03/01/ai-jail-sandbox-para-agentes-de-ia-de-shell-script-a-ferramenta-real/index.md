@@ -167,6 +167,7 @@ A solução pra Windows é WSL 2:
 # No WSL 2 (kernel Linux real)
 sudo apt install bubblewrap
 cargo install ai-jail
+# ou: mise use -g ubi:akitaonrails/ai-jail
 
 cd /mnt/c/Users/voce/Projects/meu-app
 ai-jail claude
