@@ -125,7 +125,9 @@ Avaliei as alternativas antes de decidir. O [documento completo de análise](htt
 
 Bubblewrap (bwrap) é o sandbox que o Flatpak usa pra isolar todo app desktop. ~50KB de binário, ~4000 linhas de C, mantido pelo time do GNOME. Roda sem root usando `CLONE_NEWUSER` pra criar namespaces sem privilégio elevado. Tá empacotado em toda distro Linux relevante e testado em escala por milhões de instalações Flatpak.
 
-Considerei e descartei as alternativas. Landlock é bom como segunda camada, mas não cria namespaces nem permite hostname customizado (pode ser adicionado futuramente como defense-in-depth). Firejail requer setuid root, e confiar em setuid pra proteger contra agentes que já rodam no seu sistema é contraditório. nsjail e minijail são projetados pra ambientes de produção (Google os usa internamente), complexos demais pra workstation de dev. systemd-nspawn requer root e é pra containers de sistema, não pra isolar um processo.
+Considerei e descartei as alternativas. Firejail requer setuid root, e confiar em setuid pra proteger contra agentes que já rodam no seu sistema é contraditório. nsjail e minijail são projetados pra ambientes de produção (Google os usa internamente), complexos demais pra workstation de dev. systemd-nspawn requer root e é pra containers de sistema, não pra isolar um processo.
+
+Landlock é um caso diferente. Ele não substitui bubblewrap — não tem nada a ver com namespaces ou mount isolation. Mas complementa. Landlock é um LSM (Linux Security Module) que controla acesso no nível do VFS, independente dos mount namespaces. Isso fecha vetores que o bwrap sozinho não cobre: rotas de escape pelo `/proc`, tricks com symlinks dentro de mounts permitidos, e serve como seguro contra bugs no próprio mecanismo de namespaces. A partir da v0.4.0, o ai-jail aplica Landlock automaticamente em kernels 5.13+ como defense-in-depth. Usa ABI V3 (Linux 6.2+) com degradação graceful pra V1 em kernels mais antigos, e vira no-op silencioso se o kernel não suportar. Se causar problema com alguma ferramenta específica, `--no-landlock` desativa.
 
 Bubblewrap acerta no ponto exato: isolamento real sem root, em toda distro, e simples o suficiente pra wrappear num binário de 880KB.
 
@@ -302,7 +304,6 @@ A compatibilidade de configuração é garantida por política de desenvolviment
 
 O que falta:
 
-- Landlock como segunda camada no Linux (defense-in-depth). Bubblewrap cuida do namespace isolation, Landlock restringe syscalls dentro do sandbox. ~50 linhas de Rust adicionais.
 - Mais backends de ferramentas no bootstrap: Aider, Cursor, Windsurf. Conforme mais agentes padronizarem arquivos de configuração de permissão.
 - Profile sharing pra monorepos, pra não ter que configurar cada serviço separadamente.
 
