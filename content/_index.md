@@ -4,6 +4,7 @@ title: AkitaOnRails Blog
 
 ## 2026 - March
 
+- [Eu Fiz um Sistema de Data Mining pra Minha Namorada Influencer — Dicas e Truques](2026/03/04/eu-fiz-um-sistema-de-data-mining-pra-minha-namorada-influencer-dicas-e-truques/)
 - [ai-jail: Sandbox para Agentes de IA — De Shell Script a Ferramenta Real](2026/03/01/ai-jail-sandbox-para-agentes-de-ia-de-shell-script-a-ferramenta-real/)
 - [Software Nunca Está 'Pronto' — 4 Projetos, a Vida Pós-Deploy, e Por Que One-Shot Prompt É Mito](2026/03/01/software-nunca-esta-pronto-4-projetos-a-vida-pos-deploy-e-por-que-one-shot-prompt-e-mito/)
 
