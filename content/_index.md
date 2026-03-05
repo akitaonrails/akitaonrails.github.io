@@ -4,6 +4,8 @@ title: AkitaOnRails Blog
 
 ## 2026 - March
 
+- [Crystal e um wrapper inteligente pro FFmpeg feito em 3 horas | easy-ffmpeg](2026/03/07/crystal-e-um-wrapper-inteligente-pro-ffmpeg-feito-em-3-horas-easy-ffmpeg/)
+- [37 dias de Imersão em Vibe Coding: Conclusão quanto a Modelos de Negócio](2026/03/05/37-dias-de-imersão-em-vibe-coding-conclusão-quanto-a-modelos-de-negócio/)
 - [Meu primeiro fracasso com Vibe Code e como Consertei | Frank Yomik](2026/03/05/meu-primeiro-fracasso-com-vibe-code-e-como-consertei-frank-yomik/)
 - [Eu Fiz um Sistema de Data Mining pra Minha Namorada Influencer — Dicas e Truques](2026/03/04/eu-fiz-um-sistema-de-data-mining-pra-minha-namorada-influencer-dicas-e-truques/)
 - [ai-jail: Sandbox para Agentes de IA — De Shell Script a Ferramenta Real](2026/03/01/ai-jail-sandbox-para-agentes-de-ia-de-shell-script-a-ferramenta-real/)
