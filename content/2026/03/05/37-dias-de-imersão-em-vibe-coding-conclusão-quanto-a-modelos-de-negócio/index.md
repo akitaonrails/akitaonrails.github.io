@@ -89,7 +89,7 @@ E o hardware? Uma GPU H100 custa US$ 25.000-40.000 por unidade. Um servidor com 
 
 Em termos de energia: data centers globais consumiram ~415 TWh de eletricidade em 2024, segundo o IEA, cerca de 1,5% da eletricidade mundial. A projeção é ~945 TWh até 2030. Novos data centers estão sendo construídos com capacidades de 100 MW a 1 GW cada.
 
-E os investimentos das big techs refletem isso. Em 2025, os gastos de capital agregados de Amazon (~$125B), Google (~$91B), Microsoft (~$80B) e Meta (~$71B) passaram de US$ 400 bilhões, crescimento de 62% sobre 2024. Goldman Sachs projeta mais de US$ 500 bilhões em 2026.
+E os investimentos das big techs refletem isso. Em 2025, os gastos de capital agregados de Amazon (\~$125B), Google (\~$91B), Microsoft (\~$80B) e Meta (\~$71B) passaram de US$ 400 bilhões, crescimento de 62% sobre 2024. Goldman Sachs projeta mais de US$ 500 bilhões em 2026.
 
 Esses números não são pra assustar. São pra contextualizar de onde vem a barreira de entrada real.
 
