@@ -4,6 +4,7 @@ title: AkitaOnRails Blog
 
 ## 2026 - March
 
+- [Atacando fraudes via email | Frank FBI](2026/03/09/atacando-fraudes-via-email-frank-fbi/)
 - [Portando 10 Mil Linhas de Python pra Crystal com Claude: easy-subtitle](2026/03/07/portando-10-mil-linhas-de-python-pra-crystal-com-claude-easy-subtitle/)
 - [Crystal e um wrapper inteligente pro FFmpeg feito em 3 horas | easy-ffmpeg](2026/03/07/crystal-e-um-wrapper-inteligente-pro-ffmpeg-feito-em-3-horas-easy-ffmpeg/)
 - [37 dias de Imersão em Vibe Coding: Conclusão quanto a Modelos de Negócio](2026/03/05/37-dias-de-imersão-em-vibe-coding-conclusão-quanto-a-modelos-de-negócio/)
