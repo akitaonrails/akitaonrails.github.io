@@ -180,7 +180,7 @@ Quem é o programador que sobrevive a todas essas bolhas? Este:
 
 O teto das LLMs já está aqui e o que elas estão entregando agora não vai mudar muito: o processo vai ser o mesmo. Vai ficar um pouco mais rápido. Vai gerar um pouco menos de erros e pequenos ajustes assim. Mas o processo vai continuar igual até aparecer alguma nova arquitetura ou alguma nova descoberta que ainda não sabemos.
 
-> Nenhum código gerado por IA vai ser automaticamente perfeito pra ser colocado em produção sem nenhum tipo de revisão ou intervenção humana. - Qualquer um que ache o contrário ou que não testou nenhuma LLM na prática ou nunca trabalhou em projetos de verdade.
+> Nenhum código gerado por IA vai ser automaticamente perfeito pra ser colocado em produção sem nenhum tipo de revisão ou intervenção humana. - Qualquer um que ache o contrário, ou não testou nenhuma LLM na prática ou nunca trabalhou em projetos de verdade.
 
 Como disse no Flow, esta é a SEGUNDA Bolha de IAs. A primeira foi nos anos 60 por causa do inventor de redes neurais, Frank Rosenblatt. Assim como o Sam Altman ou o Dario Amodel, ele também fez MUITO hype sobre redes neurais e computadores que iriam ficar muito mais inteligentes do que seres humanos "muito em breve", e todo jornal da época publicou sobre isso. As promessas morreram como promessas e isso gerou o "Inverno das IAs" nos anos 70, onde muito investimento foi feito, o resultado não foi proporcional, e pesquisas sobre IA estagnaram pelas décadas seguintes, andando a passos de tartaruga.
 
