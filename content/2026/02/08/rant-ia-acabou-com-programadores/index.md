@@ -148,7 +148,7 @@ Não vai mais existir aquela "especialização" esquisita de "front-end que não
 
 {{< youtube id="V0D3PuTLOZ8" title="Restrição == Inovação - Fabio Akita" >}}
 
-Palestrei anos sobre Restrição == Inovação e como inovação não acontece quando se tem dinheiro sobrando, que foi o que aconteceu na última Bolha de Programação: pra que automatizar as coisas, ser eficiente, se tem dinheiro sobrando, é só contratar mais e mais gente pra fazer coisas mais e mais simples e braçais?
+Palestrei há alguns anos sobre Restrição == Inovação e como inovação não acontece quando se tem dinheiro sobrando, que foi o que aconteceu na última Bolha de Programação: pra que automatizar as coisas, ser eficiente, se tem dinheiro sobrando, é só contratar mais e mais gente pra fazer coisas mais e mais simples e braçais?
 
 Na Bolha da Internet, havia tanto dinheiro sobrando que existia a profissão de "catalogador de sites": gente que ficava o dia inteiro digitando manualmente todos os novos sites que surgiam na recém-lançada Web. Levou anos até surgirem um Altavista e, depois, um Google, que descobriram como automatizar isso. Antigamente, não existiam "admins" web pra publicar novos produtos num e-commerce: alguém editava o HTML da página principal do Submarino.com todos os dias, com novas ofertas. Tudo trabalho de alto volume e baixo valor agregado. Automatizamos tudo isso e, agora, com LLMs, só fomos um passo à frente.
 
