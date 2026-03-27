@@ -4,6 +4,7 @@ title: AkitaOnRails Blog
 
 ## 2026 - March
 
+- [Ensinando a questionar notícias | Frank Investigator](2026/03/27/ensinando-a-questionar-noticias-frank-investigator/)
 - [Reescrevi o OpenClaw em Rust, funcionou? | FrankClaw](2026/03/16/reescrevi-o-openclaw-em-rust-funcionou-frankclaw/)
 - [Atacando fraudes via email | Frank FBI](2026/03/09/atacando-fraudes-via-email-frank-fbi/)
 - [Portando 10 Mil Linhas de Python pra Crystal com Claude: easy-subtitle](2026/03/07/portando-10-mil-linhas-de-python-pra-crystal-com-claude-easy-subtitle/)
