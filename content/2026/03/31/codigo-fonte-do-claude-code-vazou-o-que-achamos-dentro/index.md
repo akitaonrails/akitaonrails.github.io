@@ -156,6 +156,10 @@ Com o código fonte inteiro público, surge uma implicação legal e competitiva
 
 O [@braelyn_ai](https://x.com/braelyn_ai/status/2039025584626397491) levantou outro ponto: com ferramentas generativas, alguém poderia teoricamente fazer um "clean room rebuild" analisando a suíte de testes do código vazado em vez do código em si, gerando uma implementação funcional equivalente. Um projeto chamado [Claw-Code](https://github.com/instructkr/claw-code) já apareceu no GitHub seguindo exatamente essa tese, primeiro como rewrite em Python e agora já em transição pra Rust. As implicações pra licenciamento open source são sérias: a lei de copyright de software está estável desde os anos 80, mas ninguém testou esse cenário na justiça.
 
+Tem um detalhe mais pragmático aí: as cópias literais do source vazado provavelmente vão sumir rápido quando os primeiros DMCA começarem a chegar. Mirror cai fácil. É por isso que o Claw-Code é interessante. Se for mesmo clean room, ele não é um espelho do código da Anthropic. É uma reimplementação. Isso não apaga a discussão jurídica, mas muda bastante o tipo de briga e a chance de continuar no ar.
+
+Foi mais ou menos o que eu mesmo fiz quando [reescrevi o OpenClaw em Rust](/2026/03/16/reescrevi-o-openclaw-em-rust-funcionou-frankclaw/). O ponto não era copiar linha por linha. Era entender o comportamento e reescrever a peça inteira com código meu.
+
 O site satírico [malus.sh](https://malus.sh/) apareceu hoje oferecendo "Clean Room as a Service" com o tagline "Robot-Reconstructed, Zero Attribution". A piada: robôs de IA recriam projetos open source eliminando obrigações de atribuição, com garantias tipo "This has never happened because it legally cannot happen. Trust us." e indenização via subsidiária offshore numa jurisdição que não reconhece copyright de software. É sátira, mas é sátira que descreve o que alguém vai tentar fazer de verdade.
 
 ## O que a Anthropic deveria ter feito
