@@ -4,6 +4,8 @@ title: AkitaOnRails Blog
 
 ## 2026 - March
 
+- [Migrando meu Home Server com Claude Code | openSUSE MicroOS](2026/03/31/migrando-meu-home-server-com-claude-code/)
+- [Review: Minisforum MS-S1 Max | AMD AI Max+ 395 com 96GB de VRAM](2026/03/31/review-minisforum-ms-s1-max-amd-ai-max-395/)
 - [Ensinando a questionar notícias | Frank Investigator](2026/03/27/ensinando-a-questionar-noticias-frank-investigator/)
 - [Reescrevi o OpenClaw em Rust, funcionou? | FrankClaw](2026/03/16/reescrevi-o-openclaw-em-rust-funcionou-frankclaw/)
 - [Atacando fraudes via email | Frank FBI](2026/03/09/atacando-fraudes-via-email-frank-fbi/)
