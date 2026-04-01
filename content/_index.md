@@ -2,6 +2,10 @@
 title: AkitaOnRails Blog
 ---
 
+## 2026 - April
+
+- [Meu Cockpit de Sim Racing - Formula FX1](2026/04/01/meu-cockpit-de-sim-racing-formula-fx1/)
+
 ## 2026 - March
 
 - [O código fonte do Claude Code vazou. O que achamos dentro.](2026/03/31/codigo-fonte-do-claude-code-vazou-o-que-achamos-dentro/)
