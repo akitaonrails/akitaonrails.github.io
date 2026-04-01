@@ -125,16 +125,16 @@ Se 96GB não é suficiente ou se você quer mais velocidade, as opções são po
 
 O Framework Desktop usa o mesmo chip AI Max+ 395 com até 128GB de RAM. Mesma plataforma, mesma performance, mas com o diferencial de ser modular e reparável (é o Framework, afinal). Na prática é equivalente ao Minisforum em specs e preço.
 
-Acima disso, a alternativa é o Mac Studio com M4 Ultra. O chip M4 Ultra suporta até 512GB de memória unificada, com bandwidth de ~819 GB/s (mais de 3x o Strix Halo). A Apple fabrica os chips de memória no package, então a latência e a bandwidth são superiores. Você poderia potencialmente alocar ~400GB como VRAM e rodar modelos que não cabem em lugar nenhum fora de servidores com GPUs profissionais.
+Acima disso, a alternativa é o Mac Studio com M3 Ultra. O chip M3 Ultra suporta até 512GB de memória unificada, com bandwidth de ~819 GB/s (mais de 3x o Strix Halo). A Apple fabrica os chips de memória no package, então a latência e a bandwidth são superiores. Você poderia potencialmente alocar ~400GB como VRAM e rodar modelos que não cabem em lugar nenhum fora de servidores com GPUs profissionais.
 
-O NVMe interno da Apple também é outro nível: ~7.4 GB/s de leitura sequencial no M4 Ultra, comparado com ~14 GB/s do Crucial T700 (PCIe 5.0). O T700 é mais rápido em throughput bruto, mas a latência do NVMe da Apple tende a ser menor em I/O aleatório por causa da integração com o SoC.
+O NVMe interno da Apple também é outro nível: ~7.4 GB/s de leitura sequencial no M3 Ultra, comparado com ~14 GB/s do Crucial T700 (PCIe 5.0). O T700 é mais rápido em throughput bruto, mas a latência do NVMe da Apple tende a ser menor em I/O aleatório por causa da integração com o SoC.
 
-| Spec | Minisforum MS-S1 Max | Mac Studio M4 Ultra (max) |
+| Spec | Minisforum MS-S1 Max | Mac Studio M3 Ultra (max) |
 |---|---|---|
 | RAM máxima | 128 GB LPDDR5X | 512 GB unified |
 | VRAM alocável | ~96 GB | ~400 GB |
 | Memory bandwidth | ~256 GB/s | ~819 GB/s |
-| CPU | Zen 5, 16C/32T | Apple M4 Ultra, 32C |
+| CPU | Zen 5, 16C/32T | Apple M3 Ultra, 32C |
 | GPU compute | ROCm (gfx1151, experimental) | Metal (mlx, mature) |
 | Consumo | ~100W | ~135W |
 | NVMe | PCIe 5.0 (slot padrão) | Custom Apple (~7.4 GB/s) |
