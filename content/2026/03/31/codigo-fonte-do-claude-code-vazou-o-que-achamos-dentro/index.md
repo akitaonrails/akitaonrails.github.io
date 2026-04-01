@@ -112,6 +112,38 @@ Segundo a análise do [Alex Kim](https://alex000kim.com/posts/2026-03-31-claude-
 
 E tem a parte mais agressiva: client attestation. Cada request inclui um header de billing com um placeholder `cch=00000`, e o runtime nativo do Bun substitui isso por um hash calculado abaixo da camada JavaScript. Em outras palavras, não basta parecer Claude Code. O binário tenta provar que é Claude Code. Isso ajuda a explicar por que a briga com ferramentas terceiras como OpenCode ficou tão sensível: não era só questão comercial ou jurídica. Tinha enforcement técnico embutido no transporte.
 
+### Atualização: o DRM morreu em menos de 24 horas
+
+Lembram que eu mencionei o client attestation como "a parte mais agressiva"? Pois é. Durou menos de um dia.
+
+Pra entender o contexto: a Anthropic vinha travando uma guerra contra ferramentas terceiras desde janeiro de 2026. Primeiro veio o bloqueio server-side de tokens OAuth vindos de clientes não-oficiais. Depois, em março, o maintainer do [OpenCode](https://github.com/anomalyco/opencode) mergeou um [PR](https://github.com/anomalyco/opencode/issues/7456) removendo toda autenticação Claude do projeto. O commit message tinha duas palavras: "anthropic legal requests." O [The Register reportou](https://www.theregister.com/2026/02/20/anthropic_clarifies_ban_third_party_claude_access/) que a Anthropic atualizou seus termos de serviço pra deixar explícito que tokens OAuth de assinaturas Pro/Max só podem ser usados no Claude Code oficial e no Claude.ai. Quem pagava $100-200/mês pelo Max e queria usar a ferramenta de sua escolha ficou na mão.
+
+O mecanismo técnico por trás do bloqueio era justamente o `cch=`. Com o código vazado dá pra ver que o sistema tem duas partes. A primeira é um sufixo de versão: o campo `cc_version` inclui 3 caracteres hex derivados da primeira mensagem do usuário via SHA-256, usando um salt de 12 caracteres embutido no JavaScript. A segunda é o body hash propriamente dito: o corpo inteiro do request (mensagens, ferramentas, metadata, modelo, config de thinking, tudo) é serializado como JSON compacto com o placeholder `cch=00000`, e então hasheado com [xxHash64](https://github.com/Cyan4973/xxHash) usando um seed fixo. O resultado é mascarado com `0xFFFFF` (20 bits) e formatado como 5 caracteres hex lowercase. O placeholder é substituído pelo hash calculado antes do request sair do processo.
+
+O detalhe que faz a diferença: essa substituição acontece dentro do runtime nativo do Bun, escrito em Zig, abaixo da camada JavaScript. O Bun literalmente muta a string JavaScript in-place, sobrescrevendo os bytes `00000` no buffer da string com o hash computado. Se você rodasse o mesmo bundle em Node ou num Bun stock, o placeholder iria pro servidor como está e o request seria rejeitado.
+
+E aí veio o vazamento. Com o source code exposto, o [@StraughterG](https://x.com/StraughterG/status/2039344027556798476) (Jay Guthrie) anunciou na noite do mesmo dia: "Yesterday I said Anthropic's compiled Zig cch= hash was banning 3rd-party Claude clients. Tonight, the DRM is dead. We extracted the algorithm from the binary. It's not advanced cryptography. It's a static xxHash64 seed."
+
+O seed é `0x6E52736AC806831E`. O [algoritmo completo](https://a10k.co/b/reverse-engineering-claude-code-cch.html), como explicou numa sequência de tweets, cabe em poucas linhas de TypeScript:
+
+```typescript
+import xxhash from "xxhash-wasm";
+
+const { h64Raw } = await xxhash();
+const body = JSON.stringify(request); // com cch=00000 no placeholder
+const hash = h64Raw(new TextEncoder().encode(body), 0x6E52736ACn | (0x806831En << 32n));
+const cch = (hash & 0xFFFFFn).toString(16).padStart(5, "0");
+// substituir cch=00000 por cch={valor calculado}
+```
+
+O [@paoloanzn](https://x.com/paoloanzn/status/2039348588741087341) celebrou: "we cracked it. the cch= signing system in claude code is fully reverse engineered." E já colocou o bypass no [free-code](https://github.com/paoloanzn/free-code), um fork do Claude Code com telemetria removida, guardrails de system prompt stripados, e todas as 54 feature flags experimentais desbloqueadas.
+
+[![Screenshot do free-code rodando com features experimentais](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/04/01/free-code-screenshot.png)](https://github.com/paoloanzn/free-code)
+
+O ponto técnico que importa: xxHash64 não é criptografia. É um hash de checksum projetado pra velocidade, não pra segurança. O seed é estático, embutido no binário. Muda a cada versão do Claude Code, mas dentro de uma versão é o mesmo pra todo mundo. A "segurança" dependia inteiramente de ninguém conseguir extrair o seed do binário Zig compilado. Com o source code vazado, essa obscuridade evaporou em horas.
+
+Agora qualquer client terceiro — OpenCode, Claw-Code, o que for — pode interceptar o `fetch()`, hashear o body com o seed correto, e passar pela validação do servidor como se fosse o Claude Code oficial. A barreira que a Anthropic construiu pra proteger seu modelo de negócio de $2.5 bilhões de ARR era, no fim das contas, security by obscurity num hash não-criptográfico.
+
 O terceiro detalhe é pequeno mas diz muito sobre produto real em produção: o sistema detecta frustração de usuário com regex. Sim, regex. Palavrão, insulto, "this sucks", esse tipo de coisa. É engraçado ver uma empresa de LLM fazendo sentiment analysis na base do `wtf|ffs|shit`, mas também é o tipo de solução pragmática que alguém coloca quando precisa de resposta barata e imediata, não de elegância conceitual.
 
 ## O que o código revela sobre como você usa o Claude Code
@@ -200,3 +232,10 @@ E a segunda falha: a qualidade do código em si. 512 mil linhas com funções de
 - [@mem0ai - Análise da arquitetura de memória](https://x.com/mem0ai/status/2039041449854124229)
 - [@himanshustwts - Resumo da arquitetura de memória](https://x.com/himanshustwts/status/2038924027411222533)
 - [iamfakeguru/claude-md - Override publicado com o CLAUDE.md completo](https://github.com/iamfakeguru/claude-md)
+- [@StraughterG - "the DRM is dead" - reverse engineering do cch= hash](https://x.com/StraughterG/status/2039344027556798476)
+- [@StraughterG - Seed xxHash64 e código TypeScript do bypass](https://x.com/StraughterG/status/2039344035555344550)
+- [@paoloanzn - "we cracked it" - confirmação do reverse engineering](https://x.com/paoloanzn/status/2039348588741087341)
+- [paoloanzn/free-code - Fork do Claude Code com telemetria removida e features desbloqueadas](https://github.com/paoloanzn/free-code)
+- [a10k.co - What's cch? Reverse Engineering Claude Code's Request Signing](https://a10k.co/b/reverse-engineering-claude-code-cch.html)
+- [The Register - Anthropic clarifies ban on third-party tool access to Claude](https://www.theregister.com/2026/02/20/anthropic_clarifies_ban_third_party_claude_access/)
+- [OpenCode Issue #7456 - Claude Code API credentials removal](https://github.com/anomalyco/opencode/issues/7456)

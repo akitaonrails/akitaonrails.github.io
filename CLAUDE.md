@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Hugo static site using the [Hextra](https://github.com/imfing/hextra) theme for Fabio Akita's blog at akitaonrails.com. Content is in Brazilian Portuguese.
+Hugo static site using the [Hextra](https://github.com/imfing/hextra) theme (v0.11.1) for Fabio Akita's blog at akitaonrails.com. Content is in Brazilian Portuguese.
 
 ## Essential Commands
 
@@ -45,17 +45,32 @@ Optional: `slug`, `tags`, `description`
 
 ## Architecture
 
-- **Theme**: Hextra (via Hugo modules in `go.mod`)
-- **Customizations**: `layouts/partials/custom/head-end.html` (CSS), `layouts/partials/components/comments.html` (Disqus), `layouts/shortcodes/youtube.html`
-- **Index generation**: `scripts/generate_index.rb` generates `_index.md` (recent posts, rolling 2-year window) and `archives/_index.md` (older posts)
-- **Dev performance**: `hugo.yaml` defines a `recent` render segment (2025+). Dev server uses `--renderSegments recent` to skip old content (~3x faster)
-- **Deployment**: GitHub Pages via `.github/workflows/pages.yaml` on push to `master`
+- **Theme**: Hextra v0.11.1 (via Hugo modules in `go.mod`, vendored in `_vendor/`)
+- **Base URL**: `https://www.akitaonrails.com/`
+- **Fonts**: Source Serif 4 (body), Source Sans 3 (headings) — loaded in `layouts/partials/custom/head-end.html`
+- **Index generation**: `scripts/generate_index.rb` generates `_index.md` (recent posts, rolling 2-year window) and `archives/_index.md` (older posts). Cutoff is `Date.today.year - 1`.
+- **Dev performance**: `hugo.yaml` defines a `recent` render segment (2025+ content + `/about` + `/archives`). Dev server uses `--renderSegments recent` to skip ~680 older posts (~3x faster).
+- **Deployment**: GitHub Pages via `.github/workflows/pages.yaml` on push to `master` (Hugo 0.145.0, Go 1.24). No build caching configured.
+- **Docker**: Ubuntu 22.04 base, architecture-aware Hugo install (arm64/amd64). `docker-compose.yml` mounts content, layouts, assets, scripts, config for live editing.
+
+## Custom Layouts
+
+| File | Purpose |
+|------|---------|
+| `layouts/single.html` | Post template: centered content (max-w-6xl), TOC enabled, sidebar disabled, Disqus comments |
+| `layouts/_default/list.rss.xml` | RSS 2.0 feed, 20 most recent posts with full content |
+| `layouts/partials/custom/head-end.html` | Google Fonts, custom CSS (typography, code blocks, social icons, responsive embeds, dark mode) |
+| `layouts/partials/components/comments.html` | Disqus in sandboxed iframe with auto-height adjustment (500ms interval) |
+| `layouts/partials/schema.html` | Schema.org JSON-LD (BlogPosting for posts, WebSite for pages) |
+| `layouts/partials/twitter_cards.html` | Twitter/X summary_large_image cards, @AkitaOnRails |
+| `layouts/shortcodes/youtube.html` | Custom YouTube embed, required `id` param, 16:9 responsive |
 
 ## Key Configuration
 
 - Hugo Extended required (SCSS support)
 - Raw HTML enabled in markdown (`goldmark.renderer.unsafe: true`)
 - Disqus comments configured with shortname `akitaonrails`
+- Emoji support enabled
 - Default branch: `master`
 
 ## Custom Shortcodes
@@ -68,6 +83,13 @@ Optional: `slug`, `tags`, `description`
 
 | Script | Purpose |
 |--------|---------|
-| `scripts/generate_index.rb` | Regenerates `_index.md` homepage |
-| `scripts/fix-*.rb` | Legacy migration scripts (not for regular use) |
-  
+| `scripts/generate_index.rb` | Regenerates `_index.md` homepage and `archives/_index.md` (rolling window: current year - 1) |
+| `scripts/dev.sh` | Docker orchestration: start, stop, restart, rebuild, logs, exec, generate-index, new-post |
+| `scripts/fix_images.rb` | Migration: resolves CloudFront redirects to final S3 URLs |
+| `scripts/fix_html_entities.rb` | Migration: converts HTML entities to Unicode in markdown files |
+| `scripts/fix-old-code-blocks.rb` | Migration: converts old `---lang` to fenced code blocks |
+| `scripts/fix-s3-params.rb` | Migration: strips query params from S3 URLs |
+
+## Writing Blog Posts
+
+See `WRITER.md` for detailed blog writing rules (language, voice, fact-checking, images, humanizer workflow).

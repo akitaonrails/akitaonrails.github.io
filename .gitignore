@@ -165,7 +165,7 @@ $RECYCLE.BIN/
 # Hugo specific
 .hugo_build.lock
 .aider*
-CLAUDE.md
+WRITER.md
 .fed
 mise.toml
 .ai-jail
