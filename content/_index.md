@@ -4,6 +4,7 @@ title: AkitaOnRails Blog
 
 ## 2026 - April
 
+- [Bitcoin no Home Server: Soberania e Privacidade com Coldcard, Sparrow e Fulcrum](2026/04/01/bitcoin-no-home-server-soberania-e-privacidade-com-coldcard-sparrow-e-fulcrum/)
 - [Meu Cockpit de Sim Racing - Formula FX1](2026/04/01/meu-cockpit-de-sim-racing-formula-fx1/)
 
 ## 2026 - March
