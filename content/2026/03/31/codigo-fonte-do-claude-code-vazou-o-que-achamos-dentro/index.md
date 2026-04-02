@@ -10,6 +10,8 @@ tags:
   - open-source
 ---
 
+> Atualizado em 2 de abril de 2026: se você já tinha lido este texto ontem, vale pular direto para a [nova seção de atualização](#update-2026-04-02).
+
 Hoje de manhã (31 de março de 2026), o pesquisador de segurança [Chaofan Shou](https://x.com/Fried_rice) descobriu que o código fonte inteiro do Claude Code, a CLI oficial da Anthropic pra coding com IA, estava disponível pra qualquer pessoa no registry público do npm. 512 mil linhas de TypeScript. 1.900 arquivos. Tudo exposto num arquivo de source map de 59.8MB incluído acidentalmente na versão 2.1.88 do pacote `@anthropic-ai/claude-code`.
 
 Em poucas horas o código já estava espelhado no GitHub, analisado por milhares de desenvolvedores, e a Anthropic soltou uma nota dizendo que foi "erro humano no empacotamento de release, não uma brecha de segurança". O que é tecnicamente verdade mas ignora que o resultado é o mesmo.
@@ -184,17 +186,32 @@ A ironia é que a Anthropic vende a ferramenta de vibe coding mais popular do me
 
 ## A questão do "clean room"
 
-Com o código fonte inteiro público, surge uma implicação legal e competitiva séria. Qualquer concorrente que olhar esse código fica "contaminado". Se depois eles implementarem funcionalidades parecidas, a Anthropic pode alegar que copiaram.
+Com o código fonte inteiro público, surge uma implicação legal e competitiva séria. E aqui eu acho que muita gente começou a usar o termo "clean room" com uma leveza que não combina com o assunto.
 
-É exatamente o problema que a doutrina de "clean room" resolve. Num clean room, um grupo de engenheiros analisa o código e documenta apenas o que ele faz (especificação funcional), sem detalhes de implementação. Um segundo grupo, que nunca viu o código original, implementa a partir dessa especificação. O resultado é funcionalmente equivalente mas legalmente independente.
+Clean room de verdade não é só "reescrevi em outra linguagem" nem "não dei copy and paste". O modelo clássico é bem mais chato: um grupo estuda o original e produz uma especificação funcional; outro grupo, isolado, implementa a partir dessa especificação sem ver o código original. A ideia é justamente reduzir o risco de contaminação.
 
-O [@braelyn_ai](https://x.com/braelyn_ai/status/2039025584626397491) levantou outro ponto: com ferramentas generativas, alguém poderia teoricamente fazer um "clean room rebuild" analisando a suíte de testes do código vazado em vez do código em si, gerando uma implementação funcional equivalente. Um projeto chamado [Claw-Code](https://github.com/instructkr/claw-code) já apareceu no GitHub seguindo exatamente essa tese, primeiro como rewrite em Python e agora já em transição pra Rust. As implicações pra licenciamento open source são sérias: a lei de copyright de software está estável desde os anos 80, mas ninguém testou esse cenário na justiça.
+O [@braelyn_ai](https://x.com/braelyn_ai/status/2039025584626397491) levantou outro ponto interessante: com ferramentas generativas, alguém poderia tentar um "clean room rebuild" usando testes, comportamento observável e documentação, sem reaproveitar a implementação original. Em tese, faz sentido. Na prática, o que aparece no calor do vazamento costuma ficar numa zona bem mais cinzenta.
 
-Tem um detalhe mais pragmático aí: as cópias literais do source vazado provavelmente vão sumir rápido quando os primeiros DMCA começarem a chegar. Mirror cai fácil. É por isso que o Claw-Code é interessante. Se for mesmo clean room, ele não é um espelho do código da Anthropic. É uma reimplementação. Isso não apaga a discussão jurídica, mas muda bastante o tipo de briga e a chance de continuar no ar.
+O caso do [Claw-Code](https://github.com/ultraworkers/claw-code) ilustra isso bem. O projeto se apresenta como rewrite independente e já migrou o foco para Python e Rust, mas o próprio README admite estudo direto do código exposto e fala até em parity audit contra archive local. Então eu não chamaria isso de clean room clássico no sentido mais rigoroso. Eu chamaria de reimplementação inspirada, com tentativa deliberada de se afastar do snapshot vazado.
+
+Isso não quer dizer que toda reimplementação está condenada. Copyright de software não protege ideia abstrata, fluxo genérico de ferramenta, arquitetura em alto nível ou "uma CLI que faz X". Protege expressão concreta. Mas justamente por isso a disciplina importa. Quanto mais um projeto quiser sustentar independência, menos ele deveria depender do material vazado como benchmark direto.
+
+Tem um detalhe mais pragmático aí: as cópias literais do source vazado provavelmente vão sumir rápido quando os primeiros DMCA começarem a chegar. Mirror cai fácil. É por isso que uma reimplementação interessa mais do que um espelho bruto. Isso não apaga a discussão jurídica, mas muda bastante o tipo de briga e a chance de continuar no ar.
 
 Foi mais ou menos o que eu mesmo fiz quando [reescrevi o OpenClaw em Rust](/2026/03/16/reescrevi-o-openclaw-em-rust-funcionou-frankclaw/). O ponto não era copiar linha por linha. Era entender o comportamento e reescrever a peça inteira com código meu.
 
 O site satírico [malus.sh](https://malus.sh/) apareceu hoje oferecendo "Clean Room as a Service" com o tagline "Robot-Reconstructed, Zero Attribution". A piada: robôs de IA recriam projetos open source eliminando obrigações de atribuição, com garantias tipo "This has never happened because it legally cannot happen. Trust us." e indenização via subsidiária offshore numa jurisdição que não reconhece copyright de software. É sátira, mas é sátira que descreve o que alguém vai tentar fazer de verdade.
+
+<a id="update-2026-04-02"></a>
+## Atualização em 2 de abril de 2026
+
+Como o texto acima abre no calor do dia 31, vale registrar o que aconteceu logo depois. Resolvi adicionar esta atualização depois de ler [este tweet do @k1rallik](https://x.com/k1rallik/status/2039686500619534818), que resume bem o clima do pós-vazamento, mas mistura fatos confirmáveis com um pouco de épica demais.
+
+Primeiro: a parte do DMCA ficou mais bagunçada do que parecia. A própria notice publicada no repositório `github/dmca` diz que o GitHub processou a remoção contra a rede inteira de **8.1 mil repositórios**, porque a notificação afirmava que "all or most of the forks" eram infringing na mesma medida que o repositório principal. No dia seguinte, a Anthropic publicou uma **retratação parcial**: pediu reinstalação de todos os repositórios removidos, exceto o `nirholas/claude-code` e **96 forks listados individualmente**. Então a tese de que a tentativa inicial foi ampla demais está certa. O retrato final, porém, não é "8.100 repositórios ficaram derrubados". O que houve foi um recuo formal depois da remoção em massa.
+
+Segundo: o projeto [Claw-Code](https://github.com/ultraworkers/claw-code) realmente explodiu. Na hora em que atualizei este post, o GitHub já mostrava **142.829 stars** e **101.510 forks**. Isso por si só já basta pra dizer que a história saiu da categoria "fork curioso do vazamento" e entrou na categoria "efeito colateral competitivo real". O tweet viral que circulou hoje acerta no tamanho do estrago, mas exagera em alguns detalhes. O próprio README do projeto se autodescreve como "the fastest repo in history to surpass 50K stars" e diz que a marca veio em duas horas. Eu não consegui confirmar esse marco histórico de forma independente, então prefiro tratar isso como alegação do próprio projeto, não como fato fechado.
+
+Terceiro: a parte do Rust também precisa de nuance. Sim, já existe workspace em Rust no branch principal e o `Cargo.toml` está com versão `0.1.0`. Mas eu não encontrei release pública no GitHub para sustentar a frase "já saiu release 0.1.0" como um lançamento formal. O que dá pra afirmar com segurança é outra coisa: o projeto já tem base em Python, já tem workspace em Rust, e já virou alvo de atenção suficiente para continuar existindo mesmo sem o mirror literal do código vazado.
 
 ## O que a Anthropic deveria ter feito
 
@@ -228,7 +245,9 @@ E a segunda falha: a qualidade do código em si. 512 mil linhas com funções de
 - [@altryne - Bugs de cache que custam 10-20x mais](https://x.com/altryne/status/2038676458026189225)
 - [@thekitze - "Staff-engineer spaghetti" 6.5/10](https://x.com/thekitze/status/2038956521942577557)
 - [@braelyn_ai - Clean room e implicações legais](https://x.com/braelyn_ai/status/2039025584626397491)
-- [instructkr/claw-code - Clean-room rewrite do harness em Python, agora portado para Rust](https://github.com/instructkr/claw-code)
+- [GitHub DMCA - Anthropic takedown notice processada contra a rede de 8.1K repositórios](https://github.com/github/dmca/blob/master/2026/03/2026-03-31-anthropic.md)
+- [GitHub DMCA - Retratação parcial da Anthropic no dia seguinte](https://github.com/github/dmca/blob/master/2026/04/2026-04-01-anthropic-retraction.md)
+- [ultraworkers/claw-code - Reimplementação em Python e Rust que virou o principal projeto pós-vazamento](https://github.com/ultraworkers/claw-code)
 - [@mem0ai - Análise da arquitetura de memória](https://x.com/mem0ai/status/2039041449854124229)
 - [@himanshustwts - Resumo da arquitetura de memória](https://x.com/himanshustwts/status/2038924027411222533)
 - [iamfakeguru/claude-md - Override publicado com o CLAUDE.md completo](https://github.com/iamfakeguru/claude-md)
