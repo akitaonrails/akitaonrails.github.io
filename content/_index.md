@@ -4,6 +4,7 @@ title: AkitaOnRails Blog
 
 ## 2026 - April
 
+- [Testando LLMs Open Source e Comerciais - Quem Consegue Bater o Claude Opus?](2026/04/05/testando-llms-open-source-e-comerciais-quem-consegue-bater-o-claude-opus/)
 - [Transformando YouTube num App de Karaoke | Frank Karaoke](2026/04/05/transformando-youtube-num-app-de-karaoke-frank-karaoke/)
 - [Bitcoin no Home Server: Soberania e Privacidade com Coldcard, Sparrow e Fulcrum](2026/04/01/bitcoin-no-home-server-soberania-e-privacidade-com-coldcard-sparrow-e-fulcrum/)
 - [Meu Cockpit de Sim Racing - Formula FX1](2026/04/01/meu-cockpit-de-sim-racing-formula-fx1/)
