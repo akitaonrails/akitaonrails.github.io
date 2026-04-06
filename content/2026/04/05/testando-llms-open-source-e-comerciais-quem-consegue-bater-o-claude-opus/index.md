@@ -344,7 +344,7 @@ As tabelas acima medem completude estrutural. Mas o projeto funciona? Fiz code r
 
 **Kimi K2.5 — ambicioso mas quebrado.** Tentou a arquitetura mais sofisticada: ActionCable streaming, modelos configuráveis, dual Dockerfiles, 37 testes em 374 linhas. Problema: o streaming depende do ActionCable, que está comentado no `config/application.rb`. O guard `return unless defined?(ActionCable)` faz o método não fazer nada. O assistente nunca responde. O Stimulus controller tem bug de escopo: o `submitTarget` referencia um botão fora da subtree do controller. Storage thread-unsafe com hash em variável de classe. O Kimi escreveu mais testes que qualquer outro modelo (37), mas nenhum mocka as chamadas LLM — então os testes passam sem provar que a funcionalidade funciona de verdade.
 
-**Grok 4.20 — rápido e errado.** Foi o mais rápido do benchmark inteiro: 8 minutos, 412 tok/s. Mas isso porque cortou o caminho. O prompt pedia explicitamente pra usar o gem `ruby_llm`, e o Grok simplesmente ignorou: foi direto pro `OpenAI::Client` da gem `ruby-openai` apontando pra URL do OpenRouter. Funciona? Tecnicamente sim — a primeira mensagem volta. Mas é o mesmo padrão do Step 3.5 Flash e do Qwen 3.5 122B: bypass do componente que estava sendo testado. Sem persistência de histórico, controller de 33 linhas direto chamando o cliente HTTP, dois testes, nenhum mock real. Foi rápido porque fez menos do que foi pedido.
+**Grok 4.20 — rápido e errado.** Foi o mais rápido do benchmark inteiro: 8 minutos, 412 tok/s. Só que foi rápido porque cortou caminho. O prompt pedia explicitamente o gem `ruby_llm`, e o Grok ignorou. Foi direto no `OpenAI::Client` da gem `ruby-openai` apontando pra URL do OpenRouter. Tecnicamente a primeira mensagem volta, então sim, "funciona". Mas é o mesmo truque do Step 3.5 Flash e do Qwen 3.5 122B: pula a peça que tava sendo testada. Sem histórico, controller de 33 linhas chamando o cliente HTTP no braço, dois testes, nenhum mock de verdade. Foi rápido porque fez menos do que pediram.
 
 **MiniMax M2.7 — parece certo, crasha.** Chama `RubyLLM.chat(model: '...', messages: [...])` — essa assinatura não existe. Sem persistência de mensagens. HTML duplicado (DOCTYPE dentro do layout). master.key commitada. E os testes? Mockam a API errada, então passam mas não provam nada.
 
@@ -362,7 +362,7 @@ Resumo do code review:
 
 ### GLM 5 vs GLM 5.1: o que mudou
 
-Como o GLM 5 foi um dos poucos modelos que entregou código funcional na primeira passada, era natural testar a versão nova. O detalhe importante: o GLM 5 rodou via OpenRouter, e o GLM 5.1 ainda não estava disponível lá quando rodei o benchmark, então usei a API direta da Z.AI. Provedores diferentes podem afetar latência e cache, então tomem os números como referência, não como medida exata.
+O GLM 5 foi um dos poucos modelos que cuspiu código funcional de primeira, então era óbvio testar a versão nova. Um detalhe que importa antes dos números: o GLM 5 rodou via OpenRouter, o GLM 5.1 ainda não tava lá quando rodei o teste, então usei a API direta da Z.AI. Provedor diferente, infra diferente, cache diferente. Os números abaixo são referência, não medida exata.
 
 | Aspecto | GLM 5 | GLM 5.1 |
 |---|---|---|
@@ -377,11 +377,11 @@ Como o GLM 5 foi um dos poucos modelos que entregou código funcional na primeir
 | Histórico de chat | Não | Sim (in-memory) |
 | Service layer | Inline no controller | `ChatSession` model com `add_user_message`/`add_assistant_message` |
 
-O GLM 5.1 entregou um projeto mais completo: 24 testes contra 7, separação real entre `ChatSession`, `ChatMessage` e o controller, persistência de histórico em memória durante a sessão (o GLM 5 tratava cada mensagem isoladamente). A API do RubyLLM continua correta — mesmo padrão `RubyLLM.chat(model:, provider:)` seguido de `c.user`/`c.assistant` pra montar contexto multi-turn. Chamei até de "MODEL constant" testado direto no test suite.
+O projeto do GLM 5.1 ficou bem mais completo. 24 testes contra 7. Separação real entre `ChatSession`, `ChatMessage` e o controller, em vez do GLM 5 botando tudo inline. Histórico de chat persistido em memória durante a sessão, então dá pra ter uma conversa multi-turn de verdade (o GLM 5 tratava cada mensagem como se fosse a primeira). E a API do RubyLLM continua correta, mesmo padrão `RubyLLM.chat(model:, provider:)` seguido de `c.user`/`c.assistant` pra montar o contexto. Tem até teste cobrindo a constante `MODEL`, coisa que normalmente ninguém faz.
 
-A contrapartida: foi mais lento. 22 minutos contra 17, e a vazão de tokens caiu de 400 pra 167 tok/s. Isso pode ser efeito do provedor (Z.AI direto vs OpenRouter, infraestruturas diferentes), pode ser um run mais carregado, pode ser que o modelo simplesmente raciocina mais. Não rodei várias vezes pra ter uma média estatística. Não dá pra cravar que o GLM 5.1 é "mais lento que o GLM 5" — uma única run não prova regressão. O que dá pra dizer é que, no run que eu fiz, o GLM 5.1 entregou um projeto melhor estruturado e demorou um pouco mais pra fazer isso.
+O preço foi velocidade. 22 minutos contra 17, e a vazão caiu de 400 pra 167 tok/s. Pode ser provedor (Z.AI direto não é a mesma infra do OpenRouter), pode ser um run mais carregado no servidor, pode ser que o 5.1 raciocine mais. Não rodei várias vezes pra fazer média, então não vou dizer que o 5.1 é "mais lento". Uma run só não prova regressão. O que dá pra dizer é que, no meu teste, o 5.1 entregou um projeto melhor estruturado e demorou um pouco mais pra fazer isso.
 
-Pra quem quer alternativa não-Anthropic que funciona, GLM 5 e GLM 5.1 são as duas opções viáveis. Se você precisa de OpenRouter por causa de billing centralizado, GLM 5. Se você consegue usar a Z.AI direto e quer um projeto mais completo de primeira, GLM 5.1.
+Pra quem quer fugir da Anthropic sem perder qualidade, GLM 5 e GLM 5.1 são as duas opções que funcionam. Se você precisa de billing centralizado no OpenRouter, GLM 5. Se consegue usar a Z.AI direto e quer um projeto mais redondo de primeira, GLM 5.1.
 
 ## Custos: API vs Assinatura
 
@@ -446,7 +446,7 @@ Gemma 4 (loop infinito), Llama 4 Scout (sem parser), GPT OSS 20B (diretório err
 
 ### Ranking simplificado (qualidade, tempo, preço)
 
-Pra quem quer só o resumo em forma de boletim escolar. Qualidade considera se o código roda e quão completo é. Tempo é o tempo total de execução do benchmark. Preço é o custo estimado por run no opencode.
+Pra quem quer só o resumão em forma de boletim escolar. Qualidade é se o código roda e quão completo está. Tempo é o tempo total do run. Preço é o custo estimado por execução no opencode.
 
 | Modelo | Tipo | Qualidade | Tempo | Preço |
 |---|:---:|:---:|:---:|:---:|
@@ -471,7 +471,7 @@ Pra quem quer só o resumo em forma de boletim escolar. Qualidade considera se o
 | GPT OSS 20B (local) | OSS | F | — | A+ (grátis) |
 | Qwen 3 32B (local) | OSS | F | — | A+ (grátis) |
 
-Critério de qualidade: **A+** funciona e tem código bem estruturado. **A** funciona com pequenas ressalvas. **C** roda mas bypassa requisitos do prompt ou tem problemas estruturais. **D** quebra na primeira mensagem por API inventada. **F** não completou o benchmark. O GPT 5.4 Pro fica em A+ baseado em uso real no Codex, mas não rodou neste benchmark — daí o "—" em tempo. "Tipo" separa modelos commercial (closed-weights) dos OSS (pesos abertos, mesmo quando rodados via API hospedada). Dos 25 configurados no benchmark, 5 ficaram de fora desta tabela porque não chegaram a executar (falta de quota, runner quebrado ou timeout antes da primeira mensagem).
+Critério de qualidade: A+ funciona e o código está bem estruturado. A funciona com ressalvas pequenas. C roda mas pula requisito do prompt ou tem problema estrutural sério. D quebra na primeira mensagem por API inventada. F não completou o benchmark. O GPT 5.4 Pro fica em A+ por uso real no Codex, mas não rodou neste benchmark, daí o traço no tempo. "Tipo" separa modelos commercial (pesos fechados) dos OSS (pesos abertos, mesmo quando você usa via API hospedada). Dos 25 configurados, 5 ficam de fora dessa tabela porque nem chegaram a executar (sem quota, runner quebrado, ou timeout antes da primeira mensagem).
 
 ### O veredito
 
