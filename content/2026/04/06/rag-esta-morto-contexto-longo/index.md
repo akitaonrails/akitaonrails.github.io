@@ -220,7 +220,52 @@ puts ask(QUERY, context)
 
 São umas 40 linhas. Sem dependência de Pinecone, sem schema de vector, sem pipeline de re-indexação. Você roda como `./ask.rb ./docs "como configurar o webhook do pagamento"` e pronto.
 
-Esse exemplo aí é one-shot. Você roda, ele responde, acabou. Pra chat de verdade, com várias perguntas em sequência em cima dos mesmos documentos, o desenho muda. Em vez de fazer o `lexical_search` lá no começo e empurrar tudo de uma vez pro contexto, você expõe a busca como tool pro modelo. Aí é o agente que decide quando precisa puxar mais doc, que termo vai procurar, qual arquivo vale a pena abrir inteiro. É assim que o Claude Code funciona, na real: `Glob`, `Grep` e `Read` são tools, e o modelo é quem escolhe a sequência. O `ruby_llm` suporta tool calling, então dá pra fazer a mesma coisa em Ruby. Declara umas funções tipo `search_files`, `read_file`, `list_dir`, passa no `tools:` do `RubyLLM.chat`, e deixa o agente se virar. O contexto vai recebendo só o que o modelo pediu, não o despejo inteiro do grep.
+Esse exemplo aí é one-shot. Você roda, ele responde, acabou. Pra chat de verdade, com várias perguntas em sequência em cima dos mesmos documentos, o desenho muda. Em vez de fazer o `lexical_search` lá no começo e empurrar tudo de uma vez pro contexto, você expõe a busca como tool pro modelo. Aí é o agente que decide quando precisa puxar mais doc, que termo vai procurar, qual arquivo vale a pena abrir inteiro. É assim que o Claude Code funciona, na real: `Glob`, `Grep` e `Read` são tools, e o modelo é quem escolhe a sequência. O `ruby_llm` suporta tool calling, então dá pra fazer a mesma coisa em Ruby. A cara fica mais ou menos assim:
+
+```ruby
+require "ruby_llm"
+require "open3"
+
+DOCS_DIR = "./docs"
+
+class SearchFiles < RubyLLM::Tool
+  description "Procura arquivos cujo conteúdo casa com o padrão dado (regex). Retorna lista de paths."
+  param :pattern, desc: "Padrão regex pra busca lexical (case-insensitive)"
+
+  def execute(pattern:)
+    out, _ = Open3.capture2("rg", "-l", "-i", "-e", pattern, DOCS_DIR)
+    out.split("\n").reject(&:empty?)
+  end
+end
+
+class ReadFile < RubyLLM::Tool
+  description "Lê o conteúdo completo de um arquivo do projeto."
+  param :path, desc: "Caminho relativo do arquivo"
+
+  def execute(path:)
+    File.read(path)
+  rescue => e
+    "erro: #{e.message}"
+  end
+end
+
+chat = RubyLLM.chat(model: "anthropic/claude-sonnet-4-6")
+            .with_tools(SearchFiles, ReadFile)
+            .with_instructions(<<~SYS)
+              Você responde perguntas sobre os documentos em #{DOCS_DIR}.
+              Use search_files pra encontrar arquivos relevantes e read_file
+              pra ler o conteúdo. Sempre cite o arquivo na resposta.
+            SYS
+
+loop do
+  print "> "
+  msg = gets&.chomp
+  break if msg.nil? || msg.empty?
+  puts chat.ask(msg).content
+end
+```
+
+O modelo recebe a pergunta, decide se precisa procurar, chama `search_files`, vê o que voltou, decide se precisa abrir algum arquivo, chama `read_file`, e só depois responde. Em pergunta seguinte ele já tem o contexto anterior na sessão e pode pedir mais coisa se precisar. O contexto vai recebendo só o que o modelo pediu, não o despejo inteiro do grep que o exemplo anterior fazia.
 
 A mesma ideia funciona pra banco de dados: troca o `rg` por uma query SQL com `LIKE` ou `tsvector` (full-text do Postgres), carrega as linhas relevantes, joga no contexto. Se você tiver 10k registros num banco interno, isso resolve. Se tiver 10 milhões, aí você começa a precisar de paginação inteligente ou de uma camada de pré-filtragem mais séria. Mas a estrutura mental é a mesma: **filtro burro + leitor inteligente**.
 
