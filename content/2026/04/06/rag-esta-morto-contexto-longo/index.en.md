@@ -119,7 +119,7 @@ The honest question: does the left column pay off? In 2023, yes, because the rig
 
 This is the argument I get hit with the most when I defend the "load everything into context" thesis. "It'll get crazy expensive, 200k tokens of input per query is absurd." Let's actually run the numbers.
 
-In [yesterday's LLM benchmark post](/2026/04/05/testando-llms-open-source-e-comerciais-quem-consegue-bater-o-claude-opus/) I mapped out the per-token price of every model. Take Claude Sonnet 4.6: $3 per million input tokens, $15 per million output. Take GLM 5 (which I proved actually works): $0.60 input, $2.20 output. Take GPT 5.4 Pro at the top of the heap: $15 input, $180 output (yeah, that one stings, I know).
+In [yesterday's LLM benchmark post](/en/2026/04/05/testing-llms-open-source-and-commercial-can-anyone-beat-claude-opus/) I mapped out the per-token price of every model. Take Claude Sonnet 4.6: $3 per million input tokens, $15 per million output. Take GLM 5 (which I proved actually works): $0.60 input, $2.20 output. Take GPT 5.4 Pro at the top of the heap: $15 input, $180 output (yeah, that one stings, I know).
 
 Before we turn "200k tokens" into dollars, let's land that number on something tangible, because "100k tokens" doesn't mean anything to anyone. A token, on average, is roughly 0.75 of a word in English (Portuguese is similar, maybe a touch heavier because of longer words). So, translating:
 

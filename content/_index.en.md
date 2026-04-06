@@ -7,6 +7,7 @@ title: AkitaOnRails Blog
 ## 2026 - April
 
 - [Is RAG Dead? Long Context, Grep, and the End of the Mandatory Vector DB](/en/2026/04/06/rag-is-dead-long-context/)
+- [Testing Open Source and Commercial LLMs - Can Anyone Beat Claude Opus?](/en/2026/04/05/testing-llms-open-source-and-commercial-can-anyone-beat-claude-opus/)
 
 ## 2026 - January
 

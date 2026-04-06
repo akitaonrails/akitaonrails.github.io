@@ -2,6 +2,7 @@
 title: "Testando LLMs Open Source e Comerciais - Quem Consegue Bater o Claude Opus?"
 date: '2026-04-05T18:00:00-03:00'
 draft: false
+translationKey: testing-llms-open-source-and-commercial
 tags:
   - llm
   - benchmark
@@ -217,7 +218,7 @@ E os resultados da rerodada na NVIDIA RTX 5090 (todos com Q3_K_M ou Q4_K_M e con
 
 **Qwen 3.5 35B-A3B (5090)** — 5 minutos a 273 tok/s. Projeto Rails reconhecível, entry point `RubyLLM.chat(model:)` está certo, mas alucina `chat.add_message(role:, content:)` e `chat.complete` em vez de `.ask`. Dá pra arrumar em 1-2 follow-ups. O melhor candidato a "OSS local que vale a pena tentar".
 
-**Qwen 3.5 27B Claude-distilado (5090)** — 12 minutos a 129 tok/s. Estilo Claude impecável, alucinação total da API (`RubyLLM::Chat.new.with_model{}`, `add_message`, `response.text`). Mais detalhes na seção de distilação acima.
+**Qwen 3.5 27B Claude-distilado (5090)** — 12 minutos a 129 tok/s. Estilo Claude impecável, alucinação total da API (`RubyLLM::Chat.new.with_model{}`, `add_message`, `response.text`). Mais detalhes na seção de distilação abaixo.
 
 **Qwen 3 Coder 30B (5090)** — 6 minutos a 145 tok/s. Devolveu uma string mockada hardcoded em vez de chamar a API. Tier 3 inutilizável.
 
@@ -637,7 +638,11 @@ Critério de qualidade: A+ funciona e o código está bem estruturado. A/B funci
 
 Se custo importa e você quer sair da Anthropic: **GLM 5 ou GLM 5.1** são as alternativas plug-and-play que funcionam. API correta, mocking nos testes, ~$0.11-$0.13 por run, ~88-89% mais barato que Opus. O GLM 5.1 entregou um projeto mais completo (24 testes, histórico de chat) ao custo de uns 5 minutos a mais.
 
-Se quer o melhor resultado independente de custo: **Claude Sonnet 4.6** ganhou do Opus nesse benchmark — mais barato, mesma velocidade, mais testes, código que funciona. Mas vale o caveat: esse resultado é no opencode, não no Claude Code. No ambiente nativo (Claude Code), onde Opus e Sonnet têm acesso ao suporte completo de tools da Anthropic, o Opus pode se sair melhor. Na minha maratona de 500 horas com Claude Code, usei Opus e a experiência foi consistentemente boa. Não dá pra concluir que Sonnet é melhor que Opus em geral só por esse benchmark.
+Se quer o melhor resultado independente de custo: **Claude Sonnet 4.6** ganhou do Opus nesse benchmark — mais barato, mesma velocidade, mais testes, código que funciona. Mas tem dois caveats importantes antes de generalizar essa conclusão.
+
+Primeiro, esse resultado é no opencode, não no Claude Code. No ambiente nativo (Claude Code), onde Opus e Sonnet têm acesso ao suporte completo de tools da Anthropic, o Opus pode se sair melhor. Na minha maratona de 500 horas com Claude Code, usei Opus e a experiência foi consistentemente boa.
+
+Segundo, e esse é o que mais importa: nosso teste é um app web pequeno e bem definido. Sonnet 4.6 e Opus 4.6 têm a [mesma janela de contexto de 1M tokens](https://platform.claude.com/docs/en/about-claude/models/whats-new-claude-4-6), então o que diferencia os dois é a capacidade de raciocinar dentro do contexto disponível. O Opus 4.6 tem teto de output de 128K tokens contra os 64K do Sonnet, e o treinamento dele foi especificamente pra tarefas de longo prazo, planejamento multi-etapas e raciocínio profundo sobre código complexo. Num projeto pequeno como o nosso, esses músculos ficam parados, e nesse cenário dá empate ou Sonnet ganha por ser mais rápido. Em projetos maiores, com várias semanas de trabalho, monorepo grande, decisões arquiteturais com consequência, é onde a diferença entre Opus e Sonnet aparece de verdade. Não dá pra concluir que Sonnet é melhor que Opus em geral só por esse benchmark.
 
 Se quer evitar vendor lock-in total e tem hardware decente: **Qwen 3.5 35B-A3B** rodando local numa NVIDIA RTX 5090. Cinco minutos de execução a 273 tok/s, projeto Rails que arranca, e o erro de API se conserta em 1-2 follow-ups. Total realista até funcionar: ~15-20 minutos. Bate o Sonnet em custo (zero) e fica perto em tempo total. Essa opção simplesmente não existia na rodada anterior do benchmark, e marca o ponto onde "rodar OSS local" deixa de ser brincadeira e vira alternativa real. Importante: isso é específico de hardware com banda de memória alta. Numa RTX 4090 deve funcionar parecido. Num laptop com LPDDR5x ou num desktop com DDR4, esquece — você vai esperar 10x mais e o tempo total mata o argumento.
 

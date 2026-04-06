@@ -18,6 +18,7 @@ These posts have an English version. When other posts link to them, the EN trans
 |---|---|---|
 | `2026/01/09/omarchy-3-um-dos-melhores-agentes-pra-programacao-crush` | `omarchy-3-one-of-the-best-coding-agents-crush` | 2026-01-09 |
 | `2026/01/10/ai-agents-garantindo-a-protecao-do-seu-sistema` | `ai-agents-locking-down-your-system` | 2026-01-10 |
+| `2026/04/05/testando-llms-open-source-e-comerciais-quem-consegue-bater-o-claude-opus` | `testing-llms-open-source-and-commercial-can-anyone-beat-claude-opus` | 2026-04-05 |
 | `2026/04/06/rag-esta-morto-contexto-longo` | `rag-is-dead-long-context` | 2026-04-06 |
 
 ## Pending (2026 posts not yet translated)
@@ -26,7 +27,6 @@ Working in **descending order** — most recent first, so the front page of `/en
 
 April 2026:
 
-- `2026/04/05/testando-llms-open-source-e-comerciais-quem-consegue-bater-o-claude-opus`
 - `2026/04/05/transformando-youtube-num-app-de-karaoke-frank-karaoke`
 - `2026/04/01/bitcoin-no-home-server-soberania-e-privacidade-com-coldcard-sparrow-e-fulcrum`
 - `2026/04/01/meu-cockpit-de-sim-racing-formula-fx1`
@@ -83,7 +83,8 @@ January 2026:
 When a pending post gets translated and moved up to "Translated", come back to the post(s) listed below and update the link in the EN version to point at the new EN URL.
 
 - When `2026/03/31/codigo-fonte-do-claude-code-vazou-o-que-achamos-dentro` is translated → update `2026/04/06/rag-esta-morto-contexto-longo/index.en.md` (3 links).
-- When `2026/04/05/testando-llms-open-source-e-comerciais-quem-consegue-bater-o-claude-opus` is translated → update `2026/04/06/rag-esta-morto-contexto-longo/index.en.md` (1 link).
+<!-- benchmark article translated; back-reference fixed in rag-esta-morto-contexto-longo/index.en.md -->
+
 
 ## Out of scope (for now)
 
