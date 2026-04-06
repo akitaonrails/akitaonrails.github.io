@@ -171,11 +171,14 @@ A escala não é comparável. Modelos frontier como Claude Opus 4.6 e GPT 5.4 s�
 
 | Modelo | Parâmetros Totais | Parâmetros Ativos | Arquitetura |
 |---|---:|---:|---|
-| Qwen 3.5 35B | 35B | 35B | Dense |
+| Qwen 3.5 35B-A3B | 35B | 3B | MoE (A3B) |
+| Qwen 3.5 27B | 27B | 27B | Dense |
 | Qwen 3 32B | 32B | 32B | Dense |
 | Qwen 3.5 122B | 122B | 122B | Dense |
 | GPT OSS 20B | 20B | 20B | Dense |
 | Gemma 4 31B | 31B | 31B | Dense |
+
+Correção pós-publicação: o Qwen 3.5 35B na verdade é o **35B-A3B**, um MoE com só 3B de parâmetros ativos por token (não denso, como eu tinha colocado originalmente). Isso explica por que ele roda relativamente rápido pro tamanho. E pra quem tem 24 GB de VRAM, o modelo recomendado pela própria [Unsloth](https://unsloth.ai/docs/models/qwen3.5#qwen3.5-27b) é o **Qwen 3.5 27B** denso — esse eu não cheguei a testar no benchmark, mas fica como recomendação. Pra quem quer se aprofundar em modelos locais, vale acompanhar o trabalho do [@sudoingX](https://x.com/sudoingX), que tem feito experimentação séria nessa frente. Valeu [@thpmacedo](https://x.com/thpmacedo/status/2041105305111502927) pelo toque.
 
 Mesmo os maiores modelos open source MoE (Mixture of Experts) que as empresas disponibilizam publicamente ativam poucos parâmetros por token:
 
