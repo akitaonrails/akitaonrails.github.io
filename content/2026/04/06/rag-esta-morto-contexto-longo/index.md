@@ -36,7 +36,7 @@ Tem um detalhe curioso de segurança que veio junto: a galera percebeu que o pip
 
 A parte mais doida do leak, e que pouca gente notou, é uma feature que ainda não foi lançada chamada KAIROS, do grego "no momento certo". Foi mencionada mais de 150 vezes no código fonte vazado, segundo a [The New Stack](https://thenewstack.io/claude-code-source-leak/) e a [DeepLearning.AI Batch](https://www.deeplearning.ai/the-batch/claude-codes-source-code-leaked-exposing-potential-future-features-kairos-and-autodream/). KAIROS é um modo daemon autônomo do Claude Code: em vez de o agente ser puramente reativo (você pede, ele faz), ele fica rodando em background, recebendo "tick prompts" periódicos e decidindo sozinho se vale a pena agir ou não. Tem orçamento de 15 segundos por tick pra não travar nada, mantém log append-only diário, e pode até se inscrever em webhooks de GitHub pra reagir a evento de repositório. É uma mudança de paradigma da ferramenta.
 
-E dentro do KAIROS tem o que mais me chamou atenção: o `autoDream`. É um subagente em fork separado, com acesso só de leitura ao projeto, que roda enquanto você não tá usando a ferramenta. O job dele é literalmente sonhar: consolidar memória. Pega as observações dispersas das sessões anteriores, junta o que faz sentido junto, remove contradição lógica entre coisas que o agente aprendeu em momentos diferentes, e converte insight vago em fato absoluto. O nome não é por acaso. É inspirado em como o cérebro humano consolida memória durante o sono REM, transformando experiência de curto prazo em conhecimento de longo prazo.
+E dentro do KAIROS tem o que mais me chamou atenção: o `autoDream`. É um subagente em fork separado, com acesso só de leitura ao projeto, que roda enquanto você não está usando a ferramenta. O job dele é literalmente sonhar: consolidar memória. Pega as observações dispersas das sessões anteriores, agrupa o que faz sentido ficar agrupado, remove contradição lógica entre coisas que o agente aprendeu em momentos diferentes, e converte insight vago em fato. O nome `autoDream` não é à toa: a analogia óbvia (e que eu não consegui evitar) é com a forma como o cérebro humano consolida memória durante o sono, transformando experiência de curto prazo em conhecimento mais estável.
 
 A escolha arquitetural é genial e relevante pra discussão deste post. O `autoDream` é um **subagente forkado**, não roda no mesmo loop do agente principal. Por quê? Porque consolidação de memória é processo barulhento: o modelo precisa reler transcripts antigos, comparar com o que tá escrito no `MEMORY.md`, decidir o que mantém e o que descarta, fazer hipótese sobre coisas que viu antes. Se isso rodasse no contexto principal, ia poluir o "train of thought" do agente que tá tentando resolver a tarefa do usuário. Forkando, separa as duas coisas. O agente principal continua focado. O `autoDream` faz a faxina em paralelo, com read-only.
 
@@ -58,7 +58,7 @@ E não é só achismo meu. Os benchmarks BEIR já mostraram faz tempo que BM25 b
 
 A propaganda de vector DB vende o sonho da busca semântica perfeita. A realidade é mais bagunçada.
 
-Falsos vizinhos é o primeiro. Cosine similarity premia similaridade tópica, não relevância. Você pergunta "como tratamos erro de autenticação" e o DB devolve todo chunk que menciona autenticação. O chunk que efetivamente responde pode tá em décimo lugar, ou nem ter aparecido porque o redator do doc usou "login" em vez de "auth".
+Falsos vizinhos é o primeiro. Cosine similarity premia similaridade tópica, não relevância. Você pergunta "como tratamos erro de autenticação" e o DB devolve todo chunk que menciona autenticação. O chunk que efetivamente responde pode estar em décimo lugar, ou nem ter aparecido porque o redator do doc usou "login" em vez de "auth".
 
 Chunking é o segundo, e é um desastre disfarçado. Janela de 512 tokens, overlap de 64, parece razoável até você perceber que sua tabela importante foi cortada no meio, a definição de uma função ficou separada do uso, e o pedaço da documentação com o comando exato ficou órfão sem o contexto da seção. A fronteira do chunk costuma ser exatamente onde a resposta morava.
 
@@ -83,17 +83,17 @@ A pergunta honesta é: a coluna da esquerda compensa? Em 2023, sim, porque a col
 ### RAG clássico (vector DB)
 
 **A favor:**
-- Funciona pra corpora gigantes, da ordem de centenas de GB, onde nem `rg` resolve sem indexação prévia
+- Funciona pra bases de documento gigantes, da ordem de centenas de GB, onde nem `rg` resolve sem indexação prévia
 - Acerta consultas paráfrase pesada e cross-lingual ("como cancelo" vs "encerramento de assinatura"), onde o vocabulário do usuário não bate com o do documento
 - Funciona pra modalidades não-textuais (imagem, áudio) onde grep não tem o que olhar
-- Economiza tokens de input se você é constrangido por orçamento ou latência absoluta
+- Economiza tokens de input se você tá apertado de orçamento ou de latência absoluta
 
 **Contra:**
 - Stack complexa: embedding, vector DB, chunking, reranker, pipeline de re-indexação
 - Falhas opacas, difíceis de debugar
 - Chunking destrói contexto de tabelas, código, definições longas
 - Overhead operacional (índice, fila, monitoramento, custo de re-embedding)
-- A busca semântica vendida no marketing raramente funciona como anunciam
+- A busca semântica vendida no marketing raramente funciona como o marketing promete
 
 ### Grep + contexto longo
 
@@ -131,7 +131,7 @@ Agora bota prompt caching no meio. O Claude tem cache que faz o input cacheado c
 
 Agora compara isso com o custo de manter um Pinecone, ou um Weaviate, ou um pgvector. Ignorando o preço da assinatura em si (que varia bastante), você precisa de engenheiro pra montar a pipeline, manter, monitorar, lidar com falha de embedding, refazer chunking quando o domínio muda. Conservadoramente, fala em algo entre 40 e 80 horas de engenharia pra deixar a coisa estável. A R$ 200/hora, isso é entre R$ 8.000 e R$ 16.000. Em USD, na faixa de $1.600 a $3.200 só pra colocar de pé.
 
-Com $3.200, no Sonnet 4.6 com prompt caching, você roda algo na ordem de 30 mil queries de 200k tokens. Trinta mil queries, dependendo da escala do projeto, é vários meses ou até um ano inteiro de uma ferramenta interna média. E você não pagou engenheiro pra montar pipeline. Não tem servidor de vector DB pra manter. Se o documento mudar, o sistema já vê na próxima query.
+Com $3.200, no Sonnet 4.6 com prompt caching, você roda algo na ordem de 30 mil queries de 200k tokens. Trinta mil queries, dependendo da escala do projeto, dão vários meses ou até um ano inteiro de uma ferramenta interna média. E você não pagou engenheiro pra montar pipeline. Não tem servidor de vector DB pra manter. Se o documento mudar, o sistema já vê na próxima query.
 
 A conta do "RAG é mais barato em tokens" ignora que token é a coisa mais barata da equação inteira. Engenheiro custa caro, servidor custa caro, bug em produção custa muito caro. Token virou commodity, e tá ficando mais barato a cada release de modelo novo.
 
@@ -141,7 +141,7 @@ O argumento clássico do RAG era "modelo é caro, retrieval é barato". Hoje é 
 
 Não quero parecer fanboy. Tem casos onde RAG clássico ainda ganha:
 
-1. **Corpora gigantescos.** Se você tem 500 GB de texto bruto, nem `rg` resolve em tempo aceitável. Aí precisa de algum tipo de indexação. Pode ser BM25 indexado (Tantivy, Elasticsearch), pode ser vector DB. Mas observa: a primeira opção ainda é lexical, não vetorial.
+1. **Bases gigantescas.** Se você tem 500 GB de texto bruto, nem `rg` resolve em tempo aceitável. Aí precisa de algum tipo de indexação. Pode ser BM25 indexado (Tantivy, Elasticsearch), pode ser vector DB. Mas observa: a primeira opção ainda é lexical, não vetorial.
 2. **Vocabulário muito disperso.** Suporte ao cliente, onde o usuário fala "tô sem net" e a documentação fala "perda de conectividade na camada física". BM25 não pega isso. Embedding pega. Aí vector DB ganha o ponto.
 3. **Modalidade não-textual.** Busca de imagem por imagem, áudio por áudio. Embedding é obrigatório.
 4. **Latência absoluta crítica.** Se você precisa responder em 100ms e tem 5k de orçamento de input, dump generoso não cabe. Aí pré-filtragem é necessária.
@@ -196,7 +196,7 @@ end
 
 # 3. Manda pro Claude com a pergunta e os documentos.
 def ask(query, context)
-  chat = RubyLLM.chat(model: "anthropic/claude-sonnet-4")
+  chat = RubyLLM.chat(model: "anthropic/claude-sonnet-4-6")
   prompt = <<~PROMPT
     Você tem acesso aos documentos abaixo. Responda a pergunta do usuário
     usando apenas o que está nos documentos. Cite o nome do arquivo nas
