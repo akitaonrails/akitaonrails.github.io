@@ -200,7 +200,7 @@ That doesn't mean every reimplementation is doomed. Software copyright doesn't p
 
 There's a more pragmatic detail in there: the literal copies of the leaked source will probably disappear quickly when the first DMCAs start arriving. Mirrors fall easily. That's why a reimplementation matters more than a raw mirror. It doesn't erase the legal discussion, but it changes the type of fight quite a bit and the chances of staying online.
 
-That's more or less what I did myself when I [rewrote OpenClaw in Rust](/2026/03/16/reescrevi-o-openclaw-em-rust-funcionou-frankclaw/). The point wasn't to copy line by line. It was to understand the behavior and rewrite the whole piece in my own code.
+That's more or less what I did myself when I [rewrote OpenClaw in Rust](/en/2026/03/16/rewrote-openclaw-in-rust-frankclaw/). The point wasn't to copy line by line. It was to understand the behavior and rewrite the whole piece in my own code.
 
 The satirical site [malus.sh](https://malus.sh/) appeared today offering "Clean Room as a Service" with the tagline "Robot-Reconstructed, Zero Attribution." The joke: AI robots recreate open source projects eliminating attribution obligations, with guarantees like "This has never happened because it legally cannot happen. Trust us." and indemnification via an offshore subsidiary in a jurisdiction that doesn't recognize software copyright. It's satire, but it's satire that describes what someone is going to actually try to do.
 

@@ -21,6 +21,7 @@ These posts have an English version. When other posts link to them, the EN trans
 | `2026/03/31/codigo-fonte-do-claude-code-vazou-o-que-achamos-dentro` | `claude-code-source-code-leaked-what-we-found-inside` | 2026-03-31 |
 | `2026/03/31/review-minisforum-ms-s1-max-amd-ai-max-395` | `minisforum-ms-s1-max-amd-ai-max-395-review` | 2026-03-31 |
 | `2026/03/31/migrando-meu-home-server-com-claude-code` | `migrating-my-home-server-with-claude-code` | 2026-03-31 |
+| `2026/03/16/reescrevi-o-openclaw-em-rust-funcionou-frankclaw` | `rewrote-openclaw-in-rust-frankclaw` | 2026-03-16 |
 | `2026/04/05/testando-llms-open-source-e-comerciais-quem-consegue-bater-o-claude-opus` | `testing-llms-open-source-and-commercial-can-anyone-beat-claude-opus` | 2026-04-05 |
 | `2026/04/06/rag-esta-morto-contexto-longo` | `rag-is-dead-long-context` | 2026-04-06 |
 
@@ -37,7 +38,6 @@ April 2026:
 March 2026:
 
 - `2026/03/27/ensinando-a-questionar-noticias-frank-investigator`
-- `2026/03/16/reescrevi-o-openclaw-em-rust-funcionou-frankclaw`
 - `2026/03/09/atacando-fraudes-via-email-frank-fbi`
 - `2026/03/07/portando-10-mil-linhas-de-python-pra-crystal-com-claude-easy-subtitle`
 - `2026/03/07/crystal-e-um-wrapper-inteligente-pro-ffmpeg-feito-em-3-horas-easy-ffmpeg`
