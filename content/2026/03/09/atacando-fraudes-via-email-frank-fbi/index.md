@@ -2,6 +2,7 @@
 title: "Atacando fraudes via email | Frank FBI"
 date: '2026-03-09T13:00:00-03:00'
 draft: false
+translationKey: frank-fbi-email-fraud
 tags:
   - ruby
   - rails

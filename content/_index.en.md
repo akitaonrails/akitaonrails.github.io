@@ -19,6 +19,7 @@ title: AkitaOnRails Blog
 - [Review: Minisforum MS-S1 Max | AMD AI Max+ 395 with 96GB of VRAM](/en/2026/03/31/minisforum-ms-s1-max-amd-ai-max-395-review/)
 - [Teaching People to Question the News | Frank Investigator](/en/2026/03/27/teaching-people-to-question-the-news-frank-investigator/)
 - [I Rewrote OpenClaw in Rust. Did It Work? | FrankClaw](/en/2026/03/16/rewrote-openclaw-in-rust-frankclaw/)
+- [Going After Email Fraud | Frank FBI](/en/2026/03/09/going-after-email-fraud-frank-fbi/)
 - [37 Days of Vibe Coding Immersion: Conclusions on Business Models](/en/2026/03/05/37-days-of-vibe-coding-immersion-conclusions-on-business-models/)
 
 ## 2026 - January
