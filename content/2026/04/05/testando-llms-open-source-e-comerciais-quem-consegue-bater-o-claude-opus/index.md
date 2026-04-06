@@ -11,7 +11,9 @@ tags:
   - self-hosting
 ---
 
-**TL;DR:** Se você não quer ler a análise inteira: os únicos modelos que geraram código que funciona de verdade no nosso benchmark foram Claude Sonnet 4.6, Claude Opus 4.6, GLM 5 e GLM 5.1 (da Z.AI, ~89% mais baratos que Opus), e GPT 5.4 (que falhou no benchmark por incompatibilidade com o runner, mas que testei extensivamente no Codex e funciona tão bem quanto Opus). O resto — Kimi, DeepSeek, MiniMax, Qwen, Gemini, Grok 4.20 — inventou APIs que não existem ou ignorou o gem pedido. Se quer saber por que, continue lendo.
+**TL;DR:** Se você não quer ler a análise inteira: os únicos modelos que geraram código que funciona de verdade no nosso benchmark foram Claude Sonnet 4.6, Claude Opus 4.6, GLM 5 e GLM 5.1 (da Z.AI, ~89% mais baratos que Opus), e GPT 5.4 (que falhou no benchmark por incompatibilidade com o runner, mas que testei extensivamente no Codex e funciona tão bem quanto Opus). O resto — Kimi, DeepSeek, MiniMax, Qwen, Gemini, Grok 4.20 — inventou APIs que não existem ou ignorou o gem pedido.
+
+Tem uma novidade nesse update: refiz a parte local do benchmark numa RTX 5090 (em vez do AMD Strix Halo) e adicionei um lote de modelos Qwen, incluindo um Qwen 3.5 27B distilado direto do Claude 4.6 Opus. Isso reabriu a conversa sobre rodar modelo open source localmente. A banda de memória da 5090 muda o jogo de "inviável" pra "viável com 1-2 prompts de correção". E o gargalo dos modelos open source virou falta de conhecimento factual sobre bibliotecas, coisa que eu explico em detalhe na nova seção sobre a família Qwen. A aposta da distilação do Claude, aliás, deu um resultado bem frustrante que eu nunca tinha visto documentado nesses termos.
 
 ---
 
@@ -19,7 +21,7 @@ Se você acompanhou meus [artigos anteriores sobre vibe coding](/tags/vibecoding
 
 Tenho uma RTX 5090 com 32 GB de GDDR7. Sei que posso rodar os modelos open source mais recentes. Comprei um [Minisforum MS-S1](https://akitaonrails.com/2026/03/31/review-minisforum-ms-s1-max-amd-ai-max-395/) com AMD Ryzen AI Max 395 e 128 GB de memória unificada, e montei um [home server com Docker](https://akitaonrails.com/2026/03/31/migrando-meu-home-server-com-claude-code/) pra servir modelos locais. A infraestrutura estava pronta. Faltava testar de verdade.
 
-Construí um benchmark automatizado pra comparar modelos open source e comerciais em condições idênticas. 25 modelos configurados, 19 executados, 14 completados. O código está no [GitHub](https://github.com/akitaonrails/llm-coding-benchmark).
+Construí um benchmark automatizado pra comparar modelos open source e comerciais em condições idênticas. 33 modelos configurados ao todo (25 da rodada original mais 8 adicionados na rerodada na NVIDIA), 27 executados, 16 completados de alguma forma. O código está no [GitHub](https://github.com/akitaonrails/llm-coding-benchmark).
 
 ## O gargalo que ninguém explica: VRAM e KV Cache
 
@@ -195,19 +197,39 @@ O que cabe na sua GPU doméstica são os modelos de 20B-35B — e esses têm lim
 
 ### O que cada modelo local fez no benchmark
 
-**Qwen 3 Coder Next (30B)** — Melhor resultado local. Completou em 17 minutos, gerou 1675 arquivos, app Rails com todos os artefatos. Mas só 3 testes. E o mais importante: inventou `RubyLLM::Client.new`, uma classe que não existe no gem. O app não roda.
+Resultados da rodada original no AMD Strix Halo:
 
-**Qwen 3.5 35B** — Completou em 28 minutos, 1478 arquivos, 11 testes. Usou `RubyLLM.chat` sem parâmetro de modelo — funciona só se o default estiver configurado. Sem mocking de LLM nos testes.
+**Qwen 3 Coder Next (30B)** — Completou em 17 minutos no Strix, gerou 1675 arquivos, app Rails com todos os artefatos. Mas só 3 testes. E o mais importante: inventou `RubyLLM::Client.new`, uma classe que não existe no gem. O app não roda.
 
-**Qwen 3.5 122B** — Completou em 43 minutos, 1503 arquivos, 16 testes. Mas ignorou o gem RubyLLM completamente e construiu um cliente HTTP customizado pro OpenRouter. O prompt pedia explicitamente pra usar ruby_llm.
+**Qwen 3.5 35B** — Completou em 28 minutos no Strix, 1478 arquivos, 11 testes. Usou `RubyLLM.chat` sem parâmetro de modelo — funciona só se o default estiver configurado. Sem mocking de LLM nos testes.
 
-**GLM 4.7 Flash (local)** — Produziu 2029 arquivos com todos os artefatos, mas a sessão terminou mid-tool-call. O modelo cloud (GLM 5) funciona perfeitamente.
+**Qwen 3.5 122B** — Completou em 43 minutos no Strix, 1503 arquivos, 16 testes. Mas ignorou o gem RubyLLM completamente e construiu um cliente HTTP customizado pro OpenRouter. O prompt pedia explicitamente pra usar ruby_llm.
 
-**Gemma 4 31B** — Loop infinito de tool calls depois de ~11 steps produtivos. Bug conhecido do llama.cpp.
+**GLM 4.7 Flash (local, Strix)** — Produziu 2029 arquivos com todos os artefatos, mas a sessão terminou mid-tool-call. O modelo cloud (GLM 5) funciona perfeitamente.
 
-**GPT OSS 20B** — Criou o app Rails no diretório errado (`project/app/` em vez de `project/`). Um modelo de 20B não segue instruções de workspace de forma confiável.
+**Gemma 4 31B (Strix)** — Loop infinito de tool calls depois de ~11 steps produtivos. Bug conhecido do llama.cpp.
 
-**Qwen 3 32B** — Lento demais (7.3 tok/s). Hardware não dá conta.
+**GPT OSS 20B (Strix)** — Criou o app Rails no diretório errado (`project/app/` em vez de `project/`). Um modelo de 20B não segue instruções de workspace de forma confiável.
+
+**Qwen 3 32B (Strix)** — Lento demais (7.3 tok/s). Hardware não dá conta.
+
+E os resultados da rerodada na NVIDIA RTX 5090 (todos com Q3_K_M ou Q4_K_M e contexto entre 64k e 128k pra caber nos 32 GB de VRAM):
+
+**Qwen 3.5 35B-A3B (5090)** — 5 minutos a 273 tok/s. Projeto Rails reconhecível, entry point `RubyLLM.chat(model:)` está certo, mas alucina `chat.add_message(role:, content:)` e `chat.complete` em vez de `.ask`. Dá pra arrumar em 1-2 follow-ups. O melhor candidato a "OSS local que vale a pena tentar".
+
+**Qwen 3.5 27B Claude-distilado (5090)** — 12 minutos a 129 tok/s. Estilo Claude impecável, alucinação total da API (`RubyLLM::Chat.new.with_model{}`, `add_message`, `response.text`). Mais detalhes na seção de distilação acima.
+
+**Qwen 3 Coder 30B (5090)** — 6 minutos a 145 tok/s. Devolveu uma string mockada hardcoded em vez de chamar a API. Tier 3 inutilizável.
+
+**Qwen 2.5 Coder 32B (5090)** — 90 minutos de timeout, zero arquivos. Modelo girou sem nunca chamar tool de write.
+
+**Qwen 3 32B (5090)** — 4 minutos a 69 tok/s, scaffold parcial, errors. Versão geral é melhor que a Coder mas ainda quebra.
+
+**Gemma 4 31B (5090)** — 8 minutos a 213 tok/s. Mesmo loop de repetição que tinha no Strix. Bug do llama.cpp não é hardware.
+
+**Qwen 3.5 27B Sushi Coder RL (5090)** — Falha de infra (`ProviderModelNotFoundError`), não foi possível avaliar. Refazer numa próxima rodada.
+
+**GPT OSS 20B (5090)** — Tirado da rodada por regressão recente do llama.cpp main no parser de tool calls da família harmony. Os logs mostram `Failed to parse input at pos 755: <|channel|>...` em sessões multi-turn. Funcionava no Strix com o llama.cpp `b8643`, quebrou no main de hoje. Aguardando upstream consertar.
 
 ## Modelos cloud: o que funciona de verdade
 
@@ -324,13 +346,143 @@ Tem um aspecto que as tabelas de custo escondem: velocidade de inferência. E a 
 
 ![Velocidade de inferência por modelo](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/04/05/llm-benchmark/speed-comparison.png)
 
-O Claude Sonnet gera 532 tok/s. O Qwen 3.5 122B rodando local no meu Minisforum gera 22 tok/s. São 24x de diferença. Na prática, o que o Sonnet faz em 16 minutos, o Qwen 3.5 122B leva 43 minutos. O Qwen 3 Coder Next a 37 tok/s é o mais rápido dos locais e mesmo assim é 14x mais lento que o Sonnet.
+O Claude Sonnet gera 532 tok/s. O Qwen 3.5 122B rodando local no meu Minisforum (AMD Strix Halo) gera 22 tok/s. São 24x de diferença. Na prática, o que o Sonnet faz em 16 minutos, o Qwen 3.5 122B leva 43 minutos. O Qwen 3 Coder Next a 37 tok/s é o mais rápido dos locais no Strix e mesmo assim é 14x mais lento que o Sonnet.
 
 E não é só tempo de relógio. Quando você está num loop de coding interativo — pede uma mudança, espera o output, testa, pede outra — a velocidade do modelo define seu ritmo. A 37 tok/s, cada resposta longa te faz esperar 30-60 segundos. A 530 tok/s, aparece quase instantaneamente. Ao longo de um dia, você sente.
 
-O DeepSeek V3.2 é um caso curioso: é cloud mas roda a 53 tok/s, mais lento que o Qwen 3.5 35B local (46 tok/s). O motivo é que o DeepSeek não tem prompt caching — reenvia o contexto completo a cada turno, estrangulando o throughput. Pagar por um modelo cloud mais lento que rodar local não faz sentido nenhum.
+O DeepSeek V3.2 é um caso curioso: é cloud mas roda a 53 tok/s, mais lento que o Qwen 3.5 35B local no Strix (46 tok/s). O motivo é que o DeepSeek não tem prompt caching — reenvia o contexto completo a cada turno, estrangulando o throughput. Pagar por um modelo cloud mais lento que rodar local não faz sentido nenhum.
 
-Modelos locais são grátis em tokens, mas pagam em tempo. Se sua hora vale mais que uns centavos, a conta é óbvia.
+Modelos locais são grátis em tokens, mas pagam em tempo. No AMD Strix, essa conta era inviável pra todos os Qwen que testei: dois minutos esperando uma resposta longa, multiplicado por 50 turnos, é tarde inteira. Mas isso muda quando o hardware muda, e foi por isso que rerodei a parte local do benchmark numa máquina diferente.
+
+## AMD Strix Halo vs NVIDIA RTX 5090: o que muda quando a banda de memória dobra
+
+Pra checar se o gargalo era hardware ou modelo, peguei os mesmos modelos Qwen e refiz o benchmark numa workstation com NVIDIA RTX 5090 (Blackwell, 32 GB GDDR7, 1.792 GB/s de banda). Os números mudam de uma forma que vale ver com calma.
+
+| Modelo | AMD Strix (LPDDR5x) | NVIDIA 5090 (GDDR7) | Speedup | Tempo total no 5090 |
+|---|---:|---:|---:|---:|
+| Qwen 3 32B (denso) | 7 tok/s | 69 tok/s | ~10x | 4 min |
+| Qwen 3 Coder 30B (Coder) | 37 tok/s | 145 tok/s | ~4x | 6 min |
+| Qwen 3.5 35B-A3B (MoE) | 46 tok/s | **273 tok/s** | ~6x | 5 min |
+| Qwen 3.5 27B Claude (distilado) | timeout 90m | 129 tok/s | n/a | 12 min |
+| Gemma 4 31B | (não testei no Strix) | 213 tok/s | n/a | 8 min |
+| Qwen 2.5 Coder 32B | (não testei no Strix) | 2.86 tok/s | n/a | timeout 90m |
+
+Pra contextualizar essas velocidades, lembra que no cloud o Sonnet roda a 532 tok/s, o Opus a 347 tok/s, o Step 3.5 Flash a 242 tok/s, o Gemini 3.1 Pro a 128 tok/s e o Kimi K2.5 a 160 tok/s. O Qwen 3.5 35B-A3B na 5090, a 273 tok/s, está na faixa do Step 3.5 Flash, mais rápido que Gemini, Kimi e GLM 5.1. O Qwen 3 Coder 30B a 145 tok/s está na faixa do Gemini. A frase clássica "modelo local é dez vezes mais lento que cloud" parou de valer no momento que a 5090 entrou na conta.
+
+A consequência prática é que o argumento "tempo é dinheiro" muda de figura. No Strix, "esperar 1 hora pra um Qwen 3.5 122B fazer o que o Sonnet faz em 16 minutos" é pura perda. Na 5090, esperar 5 minutos pra o Qwen 3.5 35B-A3B fazer o trabalho, mais 10-15 minutos pra você fazer 1-2 prompts de correção, dá um total na faixa de 20-25 minutos. O Sonnet faz em 16 minutos com zero correção. A diferença ficou pequena o suficiente pra que, se custo importa muito, valha a pena.
+
+A pegadinha: pra que isso valha a pena, o modelo precisa estar perto o suficiente da resposta certa pra que 1-2 prompts de correção resolvam. Quando o erro é do tipo "o modelo decidiu não usar o gem que pedi e devolveu uma string mockada", como fez o Qwen 3 Coder 30B, nenhum prompt de correção fácil arruma. Isso é refazer.
+
+### Antes que você gaste em hardware achando que é a saída
+
+Tenho que dar um aviso, porque é o erro de compra mais comum que vejo agora. Toda hora aparece alguém dizendo que vai pegar um Ryzen AI Max porque tem 128 GB de memória unificada e isso "permite rodar modelos enormes". Tecnicamente, sim — o modelo cabe. Na prática, é quase inutilizável. A memória é LPDDR5x a 256 GB/s, sete vezes mais lenta que a GDDR7 da 5090. O que cabe não roda em velocidade humana. Meu próprio Strix com Qwen 3.5 122B chegou a 22 tok/s e o run levou 43 minutos. Pra fazer qualquer coisa de verdade no dia a dia, isso é impraticável.
+
+A 5090 é claramente superior, e começa a fazer sentido até pra modelos menores justamente por causa da banda de memória. Mac Studio com memória unificada de alta velocidade (até 800 GB/s nos M4 Ultra) é a outra opção viável, e custa proporcionalmente o mesmo. Mas nenhuma das duas chega perto de bater os modelos comerciais em qualidade — e o preço de Claude, GPT ou GLM por token, somado à velocidade brutal de inferência deles, faz a conta ser difícil de justificar pra quem não é entusiasta ou pesquisador. Hardware caro de IA local é hobby de fim de semana, ferramenta pra quem precisa rodar offline por compliance, ou playground de pesquisa. Pra trabalho de produção dia após dia, no momento atual, cloud ainda é a escolha racional. Ryzen AI Max com 128 GB pode parecer tentador na planilha, mas se a ideia é coding agent sério, é dinheiro mal gasto.
+
+## A família Qwen: Coder vs Geral, distilação, e por que nada é bala de prata
+
+Com tantos Qwens diferentes rodando nessa rerodada, dá pra fazer uma análise mais focada. O que aprendi é capaz de surpreender quem segue benchmark de modelo no Twitter.
+
+### Antes de ir aos resultados: o que é quantização e o que é distilação
+
+Os dois conceitos aparecem o tempo todo nessa discussão e merecem uma explicação curta.
+
+**Quantização** é a técnica de comprimir os pesos do modelo pra ocupar menos memória. Um modelo treinado em FP16 (16 bits por peso) pode ser quantizado pra Q8 (8 bits), Q4 (4 bits), Q3_K_M (3 bits, mas com agrupamentos médios), e por aí vai. Cada passo divide o tamanho do modelo em disco e na VRAM, ao custo de uma certa perda de precisão. Q8 é praticamente lossless. Q4 já perde alguma coisa mensurável. Q3 perde mais. Q2 é o limite onde o modelo começa a falar besteira de verdade. A regra de ouro é que pra coding e raciocínio multi-step, vale ficar em Q4 ou acima. Q3_K_M é o mínimo que ainda funciona pra muitos modelos, e é o que cabe num 27B na 5090 com 128k de contexto.
+
+A surpresa do meu teste, e olha que isso vai contra o consenso, é que a quantização não foi o gargalo aqui. Rodei o Qwen 3.5 27B Claude-distilado em duas versões: Q8 no AMD Strix (~27 GB de pesos) e Q3_K_M na 5090 (~12 GB de pesos). Ambos alucinaram exatamente as mesmas APIs falsas do RubyLLM. O Q3_K_M até gerou um Gemfile mais limpo. A limitação do modelo estava no que esses pesos sabem, não na precisão com que eles foram comprimidos.
+
+**Distilação** é a técnica de treinar um modelo menor (o "aluno") pra imitar a saída ou o comportamento de um modelo maior (o "professor"). A versão clássica é distilação de logits — o aluno aprende a aproximar as distribuições de probabilidade do professor. A versão moderna, mais popular pra coding agents, é distilação de **traços de raciocínio** (reasoning traces): você pega cadeias de pensamento do modelo grande pra problemas reais e treina o menor a reproduzir o mesmo estilo de raciocínio.
+
+O hype do momento é distilar Claude e GPT em modelos open source. A promessa é que dá pra ter "Claude-em-casa" rodando local. Eu queria testar isso, e foi por isso que coloquei no benchmark o **[Jackrong's Qwen 3.5 27B distilado do Claude 4.6 Opus](https://huggingface.co/Jackrong/Qwen3.5-27B-Claude-4.6-Opus-Reasoning-Distilled)**. Se algum modelo open source ia conseguir usar o RubyLLM corretamente, era essa aposta — afinal, no benchmark inteiro, Claude e GLM 5 são os únicos que acertam a API.
+
+### O que o Claude-distilled aprendeu (e o que não aprendeu)
+
+Rodei a mesma distilação duas vezes: uma em Q8 no AMD Strix (que estourou no timeout de 90 minutos), outra em Q3_K_M na 5090 (completou em 12 minutos). Em ambas, o resultado é a mesma frustração elegante.
+
+O código que sai parece Claude. Tem `# frozen_string_literal: true` no topo de todo arquivo. Tem uma classe `Response` separada como value object com leitores de atributo explícitos. Tem separação clara entre service, controller e model. Tem comentário de doc no topo de cada arquivo. Comenta corretamente coisas como `active_record`, `active_job` e `action_mailer` no `application.rb`. Tem `case` defensivo tentando múltiplos formatos de retorno. Estilisticamente, é Claude.
+
+Funcionalmente, é alucinação completa do RubyLLM. Olha o serviço gerado pelo run da 5090:
+
+```ruby
+RubyLLM::Chat.new.with_model(@model) do |chat|
+  conversation_history.each do |msg|
+    chat.add_message(role: :user, content: msg[:content])
+  end
+  response = chat.ask(message)
+  Response.new(content: response.text, usage: build_usage(response))
+end
+```
+
+Cada primitiva nesse código é inventada:
+
+- `RubyLLM::Chat.new` — o construtor não é público, o entry correto é `RubyLLM.chat(model:)`
+- `.with_model(@model) do |chat| ... end` — não existe API de bloco assim
+- `chat.add_message(role:, content:)` — não existe
+- `response.text` — a API real expõe `response.content`
+- `response.usage.prompt_tokens` — o objeto não tem essa forma
+
+Isso vai estourar `NoMethodError` na primeira request. O initializer também tenta `config.openrouter_api_base=` que não existe no `RubyLLM.configure`, então o app provavelmente nem boota.
+
+A versão Q8 no AMD Strix faz exatamente o mesmo, com uma diferença: a chamada de entrada é `RubyLLM.chat(model:, provider: :openrouter)` — o entry point está certo, mas o `provider:` é inventado e logo em seguida vem o mesmo `chat.add_message(role:, content:)` falso. Pior, o Gemfile do run de 90 minutos lista `gem "ruby-openai"` (gem errada!), `gem "minitest", "~> 6.0"` (não existe minitest 6.0) e `gem "tailwindcss"` (nome errado, é `tailwindcss-rails`). O Gemfile não inclui o gem que o próprio service tenta usar.
+
+Pra comparar, olha o Claude Opus 4.6 baseline real, no mesmo benchmark, acertando tudo:
+
+```ruby
+@chat = RubyLLM.chat(model: model_id)
+response = @chat.ask(message)
+response.content
+```
+
+Doze linhas no service inteiro. Sem alucinação. Inclui streaming via bloco. O modelo distilado produziu o triplo do volume de código e errou a API.
+
+A leitura honesta é que distilação transferiu uma camada e parou. A camada que veio junto foi a do estilo: organização do código, comentários, estrutura de classes, ordem das coisas. A camada que ficou pra trás foi a da memória factual sobre bibliotecas específicas. Isso faz sentido quando você pensa: traços de raciocínio do Claude, mesmo escritos com calma, raramente contêm referências repetidas a `chat.ask(msg).content` num gem Ruby obscuro. O aluno só aprende o que o professor repete, e Claude nunca teve motivo pra ficar sussurrando "use ask, não use complete" ao longo das suas cadeias de pensamento. Conhecimento de API de biblioteca é memória binária de recall, do tipo que ou está nos pesos ou não está. Decompor isso em passos de raciocínio é impossível porque não é raciocínio, é só lembrança crua.
+
+Pra fechar com a recomendação prática: se você precisa que o modelo realmente use o RubyLLM, ou qualquer biblioteca menos popular que seja, distilação de Claude não te salva. Use Claude de verdade ou GLM 5. Os "Claude-stand-ins" open source vão falhar do mesmo jeito que o Qwen base falharia, só que com letrinha mais bonita.
+
+### Coder vs Geral: a surpresa dos modelos "pra coding"
+
+A intuição de quase todo mundo é que modelos com "Coder" no nome são os melhores pra programação. Faz sentido, foram fine-tunados especificamente em código. Mas no benchmark, foi exatamente o oposto.
+
+| Modelo | Tipo | Hardware | Tempo | Resultado |
+|---|---|---|---:|---|
+| Qwen 3.5 35B-A3B | Geral (MoE) | 5090 | 5 min | Roda Rails, alucina `add_message`/`complete` (1-2 follow-ups arrumam) |
+| Qwen 3 Coder 30B | Coder | 5090 | 6 min | Devolveu uma string mockada hardcoded em vez de chamar o RubyLLM |
+| Qwen 2.5 Coder 32B | Coder | 5090 | timeout 90m | Zero arquivos, modelo travou |
+| Qwen 3 32B | Geral | 5090 | 4 min | Scaffold parcial, errors |
+| Qwen 3.5 27B Claude-distilado | Geral + distilado | 5090 | 12 min | Roda Rails, alucina API toda |
+| Qwen 3.5 27B Sushi Coder RL | Coder (RL) | 5090 | 6 min | Falha de infra, não pôde testar |
+
+Dos três Coders dedicados, dois falharam catastroficamente (timeout total e mock string hardcoded) e um nem rodou direito por bug de infra. Já o Qwen 3.5 35B-A3B, que é o modelo geral da linha (não o Coder), foi o que mais perto chegou de algo aproveitável: 5 minutos de execução, projeto Rails reconhecível, e o problema dele se conserta em 1-2 prompts.
+
+O Qwen 3 Coder 30B é particularmente decepcionante. Ele passou longe de qualquer tentativa séria de usar a API: o controller que ele gerou tem isso:
+
+```ruby
+class Api::V1::MessagesController < ApplicationController
+  def create
+    render json: {
+      response: "This is a mock response. In a real implementation, this would connect to RubyLLM with Claude Sonnet via OpenRouter."
+    }
+  end
+end
+```
+
+O Gemfile lista `gem "ruby_llm"` mas nada importa. O service layer é inexistente. O modelo decidiu que era mais fácil devolver uma string fake e seguir a vida. Isso é Tier 3 garbage de uma forma que nem prompt de correção arruma — tem que mandar reescrever do zero.
+
+O Qwen 2.5 Coder 32B é ainda pior: 90 minutos rodando, zero arquivos. O `opencode-output.ndjson` de 1.8 MB mostra o modelo girando sem conseguir escrever nada. Provavelmente entrou em loop de planejamento sem nunca chamar as ferramentas de write. Total perda de slot.
+
+Por que os "Coder" Qwens foram tão mal? Minha leitura é que o fine-tuning específico pra coding deles foi treinado em problemas mais isolados (Codeforces, Leetcode, snippets curtos), longe dos fluxos agentic com tool calling de longa duração. O modelo geral Qwen 3.5 35B-A3B tem treinamento mais amplo e se vira melhor com a parte de orquestração. A intuição popular "Coder = melhor pra coding agent" tá errada pra esse tipo de tarefa. O caso de uso onde os Coders se saem bem é "completar uma função isolada", que é exatamente pro que eles foram treinados, e isso é uma fração pequena do que um coding agent faz no dia a dia.
+
+### A pergunta que eu queria responder
+
+Era essa: rodando local na 5090, qual modelo Qwen vale o 1-2 prompts de correção pra entregar código que funcione?
+
+A resposta honesta é: só o Qwen 3.5 35B-A3B, e talvez o Claude-distilado se você não se importa de gastar 12 minutos a mais.
+
+- Qwen 3.5 35B-A3B na 5090: 5 minutos, entry point certo (`RubyLLM.chat(model:)`), erros nas chamadas seguintes. Total realista até funcionar: na faixa de 15-20 minutos com 1-2 follow-ups. Bate cloud OSS na conta de custo.
+- Qwen 3.5 27B Claude-distilado na 5090: 12 minutos, alucinação mais profunda (entry point inventado também). Total realista: 25-30 minutos com 2-3 follow-ups. Ainda compete em custo, e perde em tempo absoluto pro Claude real.
+- Os outros (Coder 30B, Coder 2.5 32B, 3 32B): não recompensam o tempo de correção. Cada um tem um problema estrutural que pede reescrita inteira do zero.
+
+Pra quem tem hardware nessa categoria e quer fugir do vendor lock-in da Anthropic, agora dá. Não dava na 5090 do ano passado, no Strix Halo então, esquece. Em 2026, na NVIDIA Blackwell, com o modelo certo, dá. Pra quem tem hardware de banda baixa (LPDDR5x, DDR4, DDR5), continua sendo perda de tempo: o relógio sozinho derruba qualquer plano de tornar isso prático.
 
 ## O Deep Code Review: Sonnet vs GLM 5 vs Gemini vs Kimi vs MiniMax
 
@@ -414,7 +566,7 @@ O ponto principal: se você usa GPT 5.4 Pro, a assinatura ChatGPT Pro a $200/mê
 
 ## O que funciona pra uso real
 
-Depois de testar 25 modelos e olhar o código gerado em detalhe:
+Depois de testar 33 modelos ao longo das duas rodadas e olhar o código gerado em detalhe:
 
 Tier 1 (funciona plug and play):
 
@@ -430,48 +582,56 @@ Tier 1 (funciona plug and play):
 
 Tier 2 (funciona com ressalvas):
 
-| Modelo | Custo/Run | Ressalva |
-|---|---:|---|
-| Step 3.5 Flash | ~$0.02 | Bypassa o gem pedido, lento (38m) |
-| Grok 4.20 | ~$0.04 | Bypassa o gem pedido (vai direto pro `OpenAI::Client`), mas é o mais rápido do benchmark |
-| Qwen 3.5 35B (local) | Grátis | Pode funcionar se default configurado, sem mocking |
+| Modelo | Hardware | Custo/Run | Ressalva |
+|---|:---:|---:|---|
+| Step 3.5 Flash | Cloud | ~$0.02 | Bypassa o gem pedido, lento (38m) |
+| Grok 4.20 | Cloud | ~$0.04 | Bypassa o gem pedido (vai direto pro `OpenAI::Client`), mas é o mais rápido do benchmark |
+| Qwen 3.5 35B-A3B | NVIDIA 5090 | Grátis | Entry point certo, alucina `add_message`/`complete`. Dá pra arrumar em 1-2 follow-ups. ~15-20 min total |
+| Qwen 3.5 27B Claude-distilado | NVIDIA 5090 | Grátis | Estilo Claude, alucinação completa da API. 2-3 follow-ups pra arrumar. ~25-30 min total |
+| Qwen 3.5 35B (local) | AMD Strix | Grátis | Funciona se default configurado, sem mocking, e lento |
 
-Tier 3 (código quebrado):
+Tier 3 (código quebrado, mesmo com prompts de correção é mais fácil refazer):
 
-Kimi K2.5, MiniMax M2.7, DeepSeek V3.2, Gemini 3.1 Pro, Qwen 3 Coder Next, Qwen 3.5 122B, Qwen 3.6 Plus — todos inventam APIs que não existem.
+Kimi K2.5, MiniMax M2.7, DeepSeek V3.2, Gemini 3.1 Pro, Qwen 3 Coder Next (Strix), Qwen 3 Coder 30B (5090, devolveu mock string hardcoded), Qwen 3.5 122B, Qwen 3.6 Plus — todos inventam APIs que não existem ou nem tentam usar o gem.
 
 Tier 4 (não completaram):
 
-Gemma 4 (loop infinito), Llama 4 Scout (sem parser), GPT OSS 20B (diretório errado), Qwen 3 32B (lento demais).
+Gemma 4 (loop infinito nos dois hardwares), Llama 4 Scout (sem parser), GPT OSS 20B (diretório errado no Strix, regressão de parser na 5090), Qwen 3 32B (lento demais no Strix, scaffold parcial na 5090), Qwen 2.5 Coder 32B (timeout 90m com zero arquivos).
 
 ### Ranking simplificado (qualidade, tempo, preço)
 
-Pra quem quer só o resumão em forma de boletim escolar. Qualidade é se o código roda e quão completo está. Tempo é o tempo total do run. Preço é o custo estimado por execução no opencode.
+Pra quem quer só o resumão em forma de boletim escolar. Qualidade é se o código roda e quão completo está. Tempo é o tempo total do run. Preço é o custo estimado por execução no opencode. **Hardware** indica onde o modelo rodou — Cloud, Strix (AMD Strix Halo, LPDDR5x 256 GB/s) ou 5090 (NVIDIA RTX 5090, GDDR7 1792 GB/s). Modelos cloud rodaram via OpenRouter ou API direta do provedor.
 
-| Modelo | Tipo | Qualidade | Tempo | Preço |
-|---|:---:|:---:|:---:|:---:|
-| Claude Sonnet 4.6 | Commercial | A+ | A | C |
-| Claude Opus 4.6 | Commercial | A+ | A | D |
-| GPT 5.4 Pro | Commercial | A+ | — | F |
-| GLM 5.1 | OSS | A | B | A |
-| GLM 5 | OSS | A− | A | A |
-| Gemini 3.1 Pro | Commercial | C | A+ | B |
-| Grok 4.20 | Commercial | C− | A+ | A+ |
-| Step 3.5 Flash | Commercial | C− | D | A+ |
-| Qwen 3.5 35B-A3B (local) | OSS | C | C | A+ (grátis) |
-| Qwen 3 Coder Next (local) | OSS | D+ | A | A+ (grátis) |
-| Qwen 3.6 Plus | Commercial | D | A | A+ (grátis) |
-| Kimi K2.5 | OSS | D | C | A |
-| MiniMax M2.7 | OSS | D | A | A+ |
-| Qwen 3.5 122B (local) | OSS | D | F | A+ (grátis) |
-| DeepSeek V3.2 | OSS | F | F | A+ |
-| GLM 4.7 Flash (local) | OSS | F | — | A+ (grátis) |
-| Gemma 4 31B (local) | OSS | F | — | A+ (grátis) |
-| Llama 4 Scout (local) | OSS | F | — | A+ (grátis) |
-| GPT OSS 20B (local) | OSS | F | — | A+ (grátis) |
-| Qwen 3 32B (local) | OSS | F | — | A+ (grátis) |
+| Modelo | Tipo | Hardware | Qualidade | Tempo | Preço |
+|---|:---:|:---:|:---:|:---:|:---:|
+| Claude Sonnet 4.6 | Commercial | Cloud | A+ | A | C |
+| Claude Opus 4.6 | Commercial | Cloud | A+ | A | D |
+| GPT 5.4 Pro | Commercial | Cloud | A+ | — | F |
+| GLM 5.1 | OSS | Cloud | A | B | A |
+| GLM 5 | OSS | Cloud | A− | A | A |
+| Qwen 3.5 35B-A3B | OSS | 5090 | B | A+ | A+ (grátis) |
+| Qwen 3.5 27B Claude-distilado | OSS | 5090 | C+ | B | A+ (grátis) |
+| Gemini 3.1 Pro | Commercial | Cloud | C | A+ | B |
+| Grok 4.20 | Commercial | Cloud | C− | A+ | A+ |
+| Step 3.5 Flash | Commercial | Cloud | C− | D | A+ |
+| Qwen 3.5 35B-A3B | OSS | Strix | C | C | A+ (grátis) |
+| Qwen 3 Coder Next | OSS | Strix | D+ | A | A+ (grátis) |
+| Qwen 3 32B | OSS | 5090 | D | A+ | A+ (grátis) |
+| Qwen 3 Coder 30B | OSS | 5090 | D− | A+ | A+ (grátis) |
+| Qwen 3.6 Plus | Commercial | Cloud | D | A | A+ (grátis) |
+| Kimi K2.5 | OSS | Cloud | D | C | A |
+| MiniMax M2.7 | OSS | Cloud | D | A | A+ |
+| Qwen 3.5 122B | OSS | Strix | D | F | A+ (grátis) |
+| DeepSeek V3.2 | OSS | Cloud | F | F | A+ |
+| Qwen 2.5 Coder 32B | OSS | 5090 | F | F | A+ (grátis) |
+| Gemma 4 31B | OSS | 5090 | F | A+ | A+ (grátis) |
+| Gemma 4 31B | OSS | Strix | F | — | A+ (grátis) |
+| GLM 4.7 Flash | OSS | Strix | F | — | A+ (grátis) |
+| Llama 4 Scout | OSS | Strix | F | — | A+ (grátis) |
+| GPT OSS 20B | OSS | Strix | F | — | A+ (grátis) |
+| Qwen 3 32B | OSS | Strix | F | — | A+ (grátis) |
 
-Critério de qualidade: A+ funciona e o código está bem estruturado. A funciona com ressalvas pequenas. C roda mas pula requisito do prompt ou tem problema estrutural sério. D quebra na primeira mensagem por API inventada. F não completou o benchmark. O GPT 5.4 Pro fica em A+ por uso real no Codex, mas não rodou neste benchmark, daí o traço no tempo. "Tipo" separa modelos commercial (pesos fechados) dos OSS (pesos abertos, mesmo quando você usa via API hospedada). Dos 25 configurados, 5 ficam de fora dessa tabela porque nem chegaram a executar (sem quota, runner quebrado, ou timeout antes da primeira mensagem).
+Critério de qualidade: A+ funciona e o código está bem estruturado. A/B funciona com ressalvas pequenas a médias. C roda mas pula requisito do prompt ou tem problema estrutural sério. D quebra na primeira mensagem por API inventada. F não completou o benchmark ou produziu lixo. O GPT 5.4 Pro fica em A+ por uso real no Codex, mas não rodou neste benchmark, daí o traço no tempo. "Tipo" separa modelos commercial (pesos fechados) dos OSS (pesos abertos, mesmo quando você usa via API hospedada). Os Qwens aparecem duas vezes quando rodaram nos dois hardwares, porque os resultados são diferentes o suficiente pra justificar — o Qwen 3.5 35B-A3B no 5090 sobe pro Tier B, no Strix continua no Tier C por causa do tempo de espera. Dos 33 modelos configurados ao longo das duas rodadas, alguns ficam de fora dessa tabela porque nem chegaram a executar (sem quota, runner quebrado, falha de infra, ou timeout antes da primeira mensagem).
 
 ### O veredito
 
@@ -479,9 +639,13 @@ Se custo importa e você quer sair da Anthropic: **GLM 5 ou GLM 5.1** são as al
 
 Se quer o melhor resultado independente de custo: **Claude Sonnet 4.6** ganhou do Opus nesse benchmark — mais barato, mesma velocidade, mais testes, código que funciona. Mas vale o caveat: esse resultado é no opencode, não no Claude Code. No ambiente nativo (Claude Code), onde Opus e Sonnet têm acesso ao suporte completo de tools da Anthropic, o Opus pode se sair melhor. Na minha maratona de 500 horas com Claude Code, usei Opus e a experiência foi consistentemente boa. Não dá pra concluir que Sonnet é melhor que Opus em geral só por esse benchmark.
 
-Se quer evitar vendor lock-in total: **Qwen 3 Coder Next ou Qwen 3.5 35B** rodando localmente via llama-swap. Grátis, mas precisa de GPU server e configuração. O código que geram não roda out-of-the-box — provavelmente precisa de intervenção manual pra corrigir as chamadas de API.
+Se quer evitar vendor lock-in total e tem hardware decente: **Qwen 3.5 35B-A3B** rodando local numa NVIDIA RTX 5090. Cinco minutos de execução a 273 tok/s, projeto Rails que arranca, e o erro de API se conserta em 1-2 follow-ups. Total realista até funcionar: ~15-20 minutos. Bate o Sonnet em custo (zero) e fica perto em tempo total. Essa opção simplesmente não existia na rodada anterior do benchmark, e marca o ponto onde "rodar OSS local" deixa de ser brincadeira e vira alternativa real. Importante: isso é específico de hardware com banda de memória alta. Numa RTX 4090 deve funcionar parecido. Num laptop com LPDDR5x ou num desktop com DDR4, esquece — você vai esperar 10x mais e o tempo total mata o argumento.
 
-Sim, talvez com dias de tweaking no llama.cpp, calibrando flags, ajustando prompts, testando builds diferentes, dê pra fazer o Gemma 4 ou outros modelos funcionarem melhor. Pra maioria das pessoas, isso não é realista. A distância entre modelos frontier (Claude, GPT) e modelos open source self-hosted é real. Não é marketing. O gap está diminuindo, mas ainda existe.
+Se quer evitar vendor lock-in mas está em hardware fraco: **GLM 5 ou GLM 5.1** continuam sendo a escolha. São cloud, é verdade, mas a $0.11-$0.13 por run é praticamente preço de eletricidade.
+
+Se quer testar a aposta "Claude em casa" via distilação: o **Qwen 3.5 27B Claude-distilado** tá lá pra brincar, mas já avisei que ele alucina exatamente as mesmas APIs falsas do Qwen base. Distilação transferiu o estilo do Claude, não o conhecimento factual sobre bibliotecas. Vale como experimento, não como produção.
+
+Sim, talvez com dias de tweaking no llama.cpp, calibrando flags, ajustando prompts, testando builds diferentes, dê pra fazer o Gemma 4 ou outros modelos funcionarem melhor. Pra maioria das pessoas, isso não é realista. A distância entre modelos frontier (Claude, GPT) e modelos open source self-hosted é real. Não é marketing. O gap está diminuindo, mas continua existindo, e a natureza dele mudou: hoje o que falta nos open source é conhecimento factual sobre bibliotecas específicas, não capacidade bruta de raciocínio. Hardware deixou de ser o gargalo, pelo menos pra quem tem GPU recente.
 
 No fim, o que importa é se o código roda. Um modelo pode gerar 3.405 arquivos, escrever 37 testes, produzir um README de 181 linhas, e ainda assim o app não funcionar porque a API que ele usa não existe. Métricas de completude e contagem de testes são necessárias mas não suficientes. O único sinal confiável é se o modelo usa APIs reais corretamente.
 

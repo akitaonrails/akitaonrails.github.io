@@ -48,7 +48,13 @@ plt.rcParams.update({
 # ---------------------------------------------------------------------------
 # Each row: model label, provider, time_min, total_tokens, cache_read, tok/s,
 #           cost_usd, status: "ok"|"bypass"|"broken", commercial(bool)
+#
+# "provider" classifies where the model ran:
+#   anthropic / openrouter / google / zai / xai = cloud
+#   amd_strix = local on the AMD Strix Halo server (LPDDR5x, 256 GB/s)
+#   nvidia_5090 = local on the NVIDIA RTX 5090 workstation (GDDR7, 1792 GB/s)
 BENCH = [
+    # Cloud
     ("Grok 4.20",           "openrouter", 8,  63457, 62400, 412.54, 0.04, "bypass", True),
     ("Gemini 3.1 Pro",      "google",     14, 104034, 98129, 128.28, 0.50, "broken", True),
     ("MiniMax M2.7",        "openrouter", 14, 79743,  0,    574.52, 0.05, "broken", False),
@@ -56,31 +62,43 @@ BENCH = [
     ("Claude Sonnet 4.6",   "anthropic",  16, 127067, 126429, 532.26, 0.63, "ok",   True),
     ("GLM 5",               "openrouter", 17, 59378,  58240, 400.01, 0.11, "ok",   False),
     ("Qwen 3.6 Plus",       "openrouter", 17, 88940,  0,    182.91, 0.0,  "broken", True),
-    ("Qwen 3 Coder Next",   "local",      17, 39054,  0,    37.49,  0.0,  "broken", False),
     ("GLM 5.1",             "zai",        22, 81666,  81216, 166.62, 0.13, "ok",   False),
-    ("Qwen 3.5 35B",        "local",      28, 76919,  0,    46.03,  0.0,  "bypass", False),
     ("Kimi K2.5",           "openrouter", 29, 63638,  0,    160.14, 0.07, "broken", False),
     ("Step 3.5 Flash",      "openrouter", 38, 156267, 0,    242.11, 0.02, "bypass", True),
-    ("Qwen 3.5 122B",       "local",      43, 57472,  0,    22.41,  0.0,  "broken", False),
     ("DeepSeek V3.2",       "openrouter", 60, 115278, 0,    53.37,  0.04, "broken", False),
+
+    # AMD Strix Halo (LPDDR5x, 256 GB/s)
+    ("Qwen 3 Coder Next (Strix)", "amd_strix", 17, 39054, 0, 37.49,  0.0, "broken", False),
+    ("Qwen 3.5 35B (Strix)",      "amd_strix", 28, 76919, 0, 46.03,  0.0, "bypass", False),
+    ("Qwen 3.5 122B (Strix)",     "amd_strix", 43, 57472, 0, 22.41,  0.0, "broken", False),
+    ("Qwen 3.5 27B Claude (Strix)","amd_strix",90, 80000, 0, 14.81,  0.0, "broken", False),
+
+    # NVIDIA RTX 5090 (GDDR7, 1792 GB/s)
+    ("Qwen 3.5 35B-A3B (5090)",   "nvidia_5090", 5, 84158, 0, 273.52, 0.0, "broken", False),
+    ("Qwen 3.5 27B Claude (5090)","nvidia_5090",12, 94865, 0, 128.98, 0.0, "broken", False),
+    ("Qwen 3 Coder 30B (5090)",   "nvidia_5090", 6, 50609, 0, 145.23, 0.0, "broken", False),
+    ("Qwen 3 32B (5090)",         "nvidia_5090", 4, 18185, 0, 69.47,  0.0, "broken", False),
+    ("Gemma 4 31B (5090)",        "nvidia_5090", 8, 108962,0, 212.84, 0.0, "broken", False),
 ]
 
 PROVIDER_COLORS = {
     "anthropic": COLOR_ANTHROPIC,
     "openrouter": COLOR_OPENROUTER,
     "google": COLOR_GOOGLE,
-    "local": COLOR_LOCAL,
+    "amd_strix": COLOR_LOCAL,
+    "nvidia_5090": "#76B900",  # NVIDIA green
     "zai": COLOR_ZAI,
     "xai": COLOR_XAI,
 }
 
 PROVIDER_LABELS = {
-    "anthropic": "Anthropic",
-    "openrouter": "OpenRouter",
-    "google": "Google",
-    "local": "Local (llama.cpp)",
-    "zai": "Z.AI direto",
-    "xai": "xAI",
+    "anthropic": "Anthropic (cloud)",
+    "openrouter": "OpenRouter (cloud)",
+    "google": "Google (cloud)",
+    "amd_strix": "Local — AMD Strix Halo",
+    "nvidia_5090": "Local — NVIDIA RTX 5090",
+    "zai": "Z.AI direto (cloud)",
+    "xai": "xAI (cloud)",
 }
 
 
@@ -149,7 +167,7 @@ def chart_time_to_complete():
     # Legend
     from matplotlib.patches import Patch
     legend_items = [Patch(facecolor=PROVIDER_COLORS[k], label=PROVIDER_LABELS[k])
-                    for k in ["anthropic", "openrouter", "google", "zai", "local"]]
+                    for k in ["anthropic", "openrouter", "google", "zai", "amd_strix", "nvidia_5090"]]
     legend_items.append(Patch(facecolor="white", edgecolor="black",
                               hatch="///", label="Código quebrado / bypass"))
     ax.legend(handles=legend_items, loc="lower right", framealpha=0.95, fontsize=9)
@@ -209,7 +227,7 @@ def chart_speed_comparison():
 
     from matplotlib.patches import Patch
     legend_items = [Patch(facecolor=PROVIDER_COLORS[k], label=PROVIDER_LABELS[k])
-                    for k in ["anthropic", "openrouter", "google", "zai", "local"]]
+                    for k in ["anthropic", "openrouter", "google", "zai", "amd_strix", "nvidia_5090"]]
     ax.legend(handles=legend_items, loc="lower right", framealpha=0.95, fontsize=9)
     ax.set_xlim(0, max(speeds) * 1.15)
     save(fig, "speed-comparison.png")
