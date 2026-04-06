@@ -1,6 +1,6 @@
 ---
 title: "RAG Está Morto? Contexto Longo, Grep e o Fim do Vector DB Obrigatório"
-date: '2026-04-06T18:00:00-03:00'
+date: '2026-04-06T11:00:00-03:00'
 draft: false
 tags:
   - llm
