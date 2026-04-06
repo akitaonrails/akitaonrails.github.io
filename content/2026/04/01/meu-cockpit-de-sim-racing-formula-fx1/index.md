@@ -2,6 +2,7 @@
 title: "Meu Cockpit de Sim Racing - Formula FX1"
 date: '2026-04-01T17:00:00-03:00'
 draft: false
+translationKey: sim-racing-cockpit-formula-fx1
 tags:
   - gaming
   - sim-racing

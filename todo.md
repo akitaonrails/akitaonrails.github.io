@@ -26,6 +26,7 @@ These posts have an English version. When other posts link to them, the EN trans
 | `2026/04/05/testando-llms-open-source-e-comerciais-quem-consegue-bater-o-claude-opus` | `testing-llms-open-source-and-commercial-can-anyone-beat-claude-opus` | 2026-04-05 |
 | `2026/04/05/transformando-youtube-num-app-de-karaoke-frank-karaoke` | `turning-youtube-into-a-karaoke-app-frank-karaoke` | 2026-04-05 |
 | `2026/04/01/bitcoin-no-home-server-soberania-e-privacidade-com-coldcard-sparrow-e-fulcrum` | `bitcoin-on-the-home-server-sovereignty-with-coldcard-sparrow-fulcrum` | 2026-04-01 |
+| `2026/04/01/meu-cockpit-de-sim-racing-formula-fx1` | `my-sim-racing-cockpit-formula-fx1` | 2026-04-01 |
 | `2026/04/06/rag-esta-morto-contexto-longo` | `rag-is-dead-long-context` | 2026-04-06 |
 
 ## Pending (2026 posts not yet translated)
@@ -34,7 +35,6 @@ Working in **descending order** — most recent first, so the front page of `/en
 
 April 2026:
 
-- `2026/04/01/meu-cockpit-de-sim-racing-formula-fx1`
 
 March 2026:
 
