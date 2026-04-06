@@ -3,6 +3,7 @@ title: "Omarchy 3 - Um dos Melhores Agentes pra Programação: Crush"
 slug: "omarchy-3-um-dos-melhores-agentes-pra-programacao-crush"
 date: 2026-01-09T20:01:04-0300
 draft: false
+translationKey: omarchy-3-crush
 tags:
 - omarchy
 - AI
