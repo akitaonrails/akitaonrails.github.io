@@ -27,6 +27,7 @@ These posts have an English version. When other posts link to them, the EN trans
 | `2026/04/05/transformando-youtube-num-app-de-karaoke-frank-karaoke` | `turning-youtube-into-a-karaoke-app-frank-karaoke` | 2026-04-05 |
 | `2026/04/01/bitcoin-no-home-server-soberania-e-privacidade-com-coldcard-sparrow-e-fulcrum` | `bitcoin-on-the-home-server-sovereignty-with-coldcard-sparrow-fulcrum` | 2026-04-01 |
 | `2026/04/01/meu-cockpit-de-sim-racing-formula-fx1` | `my-sim-racing-cockpit-formula-fx1` | 2026-04-01 |
+| `2026/03/27/ensinando-a-questionar-noticias-frank-investigator` | `teaching-people-to-question-the-news-frank-investigator` | 2026-03-27 |
 | `2026/04/06/rag-esta-morto-contexto-longo` | `rag-is-dead-long-context` | 2026-04-06 |
 
 ## Pending (2026 posts not yet translated)
@@ -38,7 +39,6 @@ April 2026:
 
 March 2026:
 
-- `2026/03/27/ensinando-a-questionar-noticias-frank-investigator`
 - `2026/03/09/atacando-fraudes-via-email-frank-fbi`
 - `2026/03/07/portando-10-mil-linhas-de-python-pra-crystal-com-claude-easy-subtitle`
 - `2026/03/07/crystal-e-um-wrapper-inteligente-pro-ffmpeg-feito-em-3-horas-easy-ffmpeg`
