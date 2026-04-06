@@ -2,6 +2,7 @@
 title: "Portando 10 Mil Linhas de Python pra Crystal com Claude: easy-subtitle"
 date: '2026-03-07T22:00:00-03:00'
 draft: false
+translationKey: easy-subtitle-python-to-crystal
 tags:
   - crystal
   - python
