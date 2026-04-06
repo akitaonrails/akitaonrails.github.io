@@ -220,6 +220,8 @@ puts ask(QUERY, context)
 
 São umas 40 linhas. Sem dependência de Pinecone, sem schema de vector, sem pipeline de re-indexação. Você roda como `./ask.rb ./docs "como configurar o webhook do pagamento"` e pronto.
 
+Esse exemplo aí é one-shot. Você roda, ele responde, acabou. Pra chat de verdade, com várias perguntas em sequência em cima dos mesmos documentos, o desenho muda. Em vez de fazer o `lexical_search` lá no começo e empurrar tudo de uma vez pro contexto, você expõe a busca como tool pro modelo. Aí é o agente que decide quando precisa puxar mais doc, que termo vai procurar, qual arquivo vale a pena abrir inteiro. É assim que o Claude Code funciona, na real: `Glob`, `Grep` e `Read` são tools, e o modelo é quem escolhe a sequência. O `ruby_llm` suporta tool calling, então dá pra fazer a mesma coisa em Ruby. Declara umas funções tipo `search_files`, `read_file`, `list_dir`, passa no `tools:` do `RubyLLM.chat`, e deixa o agente se virar. O contexto vai recebendo só o que o modelo pediu, não o despejo inteiro do grep.
+
 A mesma ideia funciona pra banco de dados: troca o `rg` por uma query SQL com `LIKE` ou `tsvector` (full-text do Postgres), carrega as linhas relevantes, joga no contexto. Se você tiver 10k registros num banco interno, isso resolve. Se tiver 10 milhões, aí você começa a precisar de paginação inteligente ou de uma camada de pré-filtragem mais séria. Mas a estrutura mental é a mesma: **filtro burro + leitor inteligente**.
 
 ## O ponto que importa
