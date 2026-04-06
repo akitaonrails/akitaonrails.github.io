@@ -24,6 +24,7 @@ title: AkitaOnRails Blog
 - [Crystal and a Smart FFmpeg Wrapper Built in 3 Hours | easy-ffmpeg](/en/2026/03/07/easy-ffmpeg-smart-wrapper-in-crystal/)
 - [37 Days of Vibe Coding Immersion: Conclusions on Business Models](/en/2026/03/05/37-days-of-vibe-coding-immersion-conclusions-on-business-models/)
 - [My First Vibe Code Failure and How I Fixed It | Frank Yomik](/en/2026/03/05/my-first-vibe-code-failure-frank-yomik/)
+- [I Built a Data Mining System for My Influencer Girlfriend — Tips and Tricks](/en/2026/03/04/data-mining-system-for-my-influencer-girlfriend/)
 
 ## 2026 - January
 

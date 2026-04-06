@@ -9,6 +9,7 @@ tags:
   - Docker
   - SQLite
 draft: false
+translationKey: data-mining-influencer-girlfriend
 ---
 
 Minha namorada é influencer de games, anime, cosplay e cultura pop. Faz entrevistas, cobre convenções, produz conteúdo pra múltiplas plataformas, negocia com patrocinadores. É uma operação profissional de uma pessoa com uma equipe enxuta. E como toda operação profissional, ela precisa de dados.
