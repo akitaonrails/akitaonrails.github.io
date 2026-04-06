@@ -3,6 +3,7 @@ title: "Meu primeiro fracasso com Vibe Code e como Consertei | Frank Yomik"
 slug:  "meu-primeiro-fracasso-com-vibe-code-e-como-consertei-frank-yomik"
 date: 2026-03-05T08:00:00-03:00
 draft: false
+translationKey: frank-yomik-vibe-code-failure
 tags: ["ai", "vibe-coding", "manga", "flutter", "python", "opencv", "machine-learning", "FrankYomik"]
 description: "Como eu gastei dias construindo um sistema de detecção de balões de mangá com OpenCV, joguei tudo fora e reconstruí em horas com um modelo pré-treinado. Lições sobre vibe coding, fracasso produtivo e saber quando mudar de direção."
 ---
