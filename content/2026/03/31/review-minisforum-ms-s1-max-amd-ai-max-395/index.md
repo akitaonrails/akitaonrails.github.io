@@ -2,6 +2,7 @@
 title: "Review: Minisforum MS-S1 Max | AMD AI Max+ 395 com 96GB de VRAM"
 date: '2026-03-31T15:00:00-03:00'
 draft: false
+translationKey: minisforum-ms-s1-max-review
 tags:
   - hardware
   - llm
