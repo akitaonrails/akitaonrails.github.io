@@ -119,7 +119,16 @@ Esse é o argumento que mais me jogam na cara quando defendo a tese do "carrega 
 
 No [meu artigo do benchmark de LLMs de ontem](/2026/04/05/testando-llms-open-source-e-comerciais-quem-consegue-bater-o-claude-opus/) eu mapeei o preço por token de cada modelo. Pega o Claude Sonnet 4.6: $3 por milhão de tokens de input, $15 por milhão de output. Pega o GLM 5 (que provei que funciona): $0.60 input, $2.20 output. Pega o GPT 5.4 Pro lá em cima: $15 input, $180 output (esse aí machuca, eu sei).
 
-Imagina uma query que joga 200k tokens de input e produz 2k tokens de output:
+Antes de fazer a conta de "200k tokens" em dólar, vale aterrissar isso em algo tangível, porque "100k tokens" não diz nada pra ninguém. Token, na média, é mais ou menos 0,75 palavra em inglês (em português é parecido, talvez um pouco mais por causa de palavras maiores). Então, traduzindo:
+
+- **100k tokens** ≈ 75 mil palavras ≈ um romance curto inteiro, tipo *O Velho e o Mar* do Hemingway com sobra, ou uns três artigos longos da Wikipedia juntos.
+- **200k tokens** ≈ 150 mil palavras ≈ um romance grande, tipo *Crime e Castigo* na íntegra, ou metade do primeiro livro de *Game of Thrones* (que tem ~298k palavras, daria uns 400k tokens).
+- **400k tokens** ≈ 300 mil palavras ≈ *A Game of Thrones* completo, livro 1 da série inteiro na janela.
+- **1M tokens** ≈ 750 mil palavras ≈ a trilogia inteira de *O Senhor dos Anéis* mais *O Hobbit*, ou a Bíblia inteira (King James ~783k palavras, daria por volta de 1M tokens), ou cerca de dois livros e meio de *Game of Thrones* empilhados.
+
+Então quando eu falo "joga 200k tokens de input no modelo", o que isso significa no mundo real é "joga *Crime e Castigo* inteiro como contexto da pergunta". É muita coisa. E é exatamente isso que torna o argumento desse post viável: os modelos de hoje conseguem ler um romance inteiro de uma vez e ainda responder uma pergunta específica sobre ele. Em 2023, isso era ficção científica. Em 2026, virou o caso base.
+
+Imagina então uma query que joga 200k tokens de input (lá vai *Crime e Castigo* de novo) e produz 2k tokens de output (umas três páginas de resposta):
 
 | Modelo | Input ($) | Output ($) | Total por query |
 |---|---:|---:|---:|
