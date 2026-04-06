@@ -11,7 +11,7 @@ tags:
   - self-hosting
 ---
 
-**TL;DR:** Se você não quer ler a análise inteira: os únicos modelos que geraram código que funciona de verdade no nosso benchmark foram Claude Sonnet 4.6, Claude Opus 4.6, GLM 5 (da Z.AI, 89% mais barato que Opus), e GPT 5.4 (que falhou no benchmark por incompatibilidade com o runner, mas que testei extensivamente no Codex e funciona tão bem quanto Opus). O resto — Kimi, DeepSeek, MiniMax, Qwen, Gemini, todos — inventou APIs que não existem. Se quer saber por que, continue lendo.
+**TL;DR:** Se você não quer ler a análise inteira: os únicos modelos que geraram código que funciona de verdade no nosso benchmark foram Claude Sonnet 4.6, Claude Opus 4.6, GLM 5 e GLM 5.1 (da Z.AI, ~89% mais baratos que Opus), e GPT 5.4 (que falhou no benchmark por incompatibilidade com o runner, mas que testei extensivamente no Codex e funciona tão bem quanto Opus). O resto — Kimi, DeepSeek, MiniMax, Qwen, Gemini, Grok 4.20 — inventou APIs que não existem ou ignorou o gem pedido. Se quer saber por que, continue lendo.
 
 ---
 
@@ -19,7 +19,7 @@ Se você acompanhou meus [artigos anteriores sobre vibe coding](/tags/vibecoding
 
 Tenho uma RTX 5090 com 32 GB de GDDR7. Sei que posso rodar os modelos open source mais recentes. Comprei um [Minisforum MS-S1](https://akitaonrails.com/2026/03/31/review-minisforum-ms-s1-max-amd-ai-max-395/) com AMD Ryzen AI Max 395 e 128 GB de memória unificada, e montei um [home server com Docker](https://akitaonrails.com/2026/03/31/migrando-meu-home-server-com-claude-code/) pra servir modelos locais. A infraestrutura estava pronta. Faltava testar de verdade.
 
-Construí um benchmark automatizado pra comparar modelos open source e comerciais em condições idênticas. 23 modelos configurados, 17 executados, 12 completados. O código está no [GitHub](https://github.com/akitaonrails/llm-coding-benchmark).
+Construí um benchmark automatizado pra comparar modelos open source e comerciais em condições idênticas. 25 modelos configurados, 19 executados, 14 completados. O código está no [GitHub](https://github.com/akitaonrails/llm-coding-benchmark).
 
 ## O gargalo que ninguém explica: VRAM e KV Cache
 
@@ -236,10 +236,11 @@ response.content  # => "Hi there!"
 | MiniMax M2.7 | `RubyLLM.chat(messages: [...])` — assinatura inexistente |
 | Qwen 3.6 Plus | `chat.add_message()` — método inexistente |
 | Gemini 3.1 Pro | `RubyLLM::Chat.new()` e `add_message()` — API interna, não pública |
+| Grok 4.20 | Ignora o gem completamente — usa `OpenAI::Client` (ruby-openai) batendo direto na URL do OpenRouter |
 
-Os modelos que acertaram — os dois Claudes e o GLM 5 — usaram o padrão simples de duas etapas (`chat = RubyLLM.chat(model:)` depois `chat.ask(message)`). Os que erraram tentaram fazer o RubyLLM parecer com o SDK Python da OpenAI, que é outra coisa.
+Os modelos que acertaram — os dois Claudes, o GLM 5 e o GLM 5.1 — usaram o padrão simples de duas etapas (`chat = RubyLLM.chat(model:)` depois `chat.ask(message)`). Os que erraram tentaram fazer o RubyLLM parecer com o SDK Python da OpenAI, que é outra coisa. O Grok 4.20 foi o caso mais cínico: nem tentou usar o gem, foi direto pro `OpenAI::Client` apontando pra URL do OpenRouter, ignorando o pedido explícito do prompt.
 
-E os testes? Só Opus, Sonnet e GLM 5 fizeram mocking correto das chamadas LLM. Todos os outros ou batiam na API real (que falha sem chave) ou mockavam a API inventada (testes passam mas não provam nada). Contagem de testes é uma métrica enganosa: o Kimi K2.5 escreveu 37 testes, mais que qualquer outro, mas nenhum testa a funcionalidade real porque a API que ele usa não existe.
+E os testes? Só Opus, Sonnet, GLM 5 e GLM 5.1 fizeram mocking correto das chamadas LLM. Todos os outros ou batiam na API real (que falha sem chave) ou mockavam a API inventada (testes passam mas não provam nada). Contagem de testes é uma métrica enganosa: o Kimi K2.5 escreveu 37 testes, mais que qualquer outro, mas nenhum testa a funcionalidade real porque a API que ele usa não existe.
 
 ### Tabela de viabilidade real
 
@@ -248,7 +249,9 @@ E os testes? Só Opus, Sonnet e GLM 5 fizeram mocking correto das chamadas LLM. 
 | **Claude Sonnet 4.6** | Sim | **Sim** | Sim (mocha) | Implementação limpa |
 | **Claude Opus 4.6** | Sim | **Sim** | Sim (mocha) | Implementação limpa |
 | **GLM 5** | Sim | **Sim** | Sim (mocha) | API correta, funciona |
+| **GLM 5.1** | Sim | **Sim** | Sim | API correta, funciona |
 | Step 3.5 Flash | N/A | **Sim*** | Não | Bypassa RubyLLM, usa HTTP direto |
+| Grok 4.20 | N/A | **Sim*** | Não | Bypassa RubyLLM, usa `OpenAI::Client` direto |
 | Qwen 3.6 Plus | Parcial | Só 1ª msg | Não | `add_message()` não existe |
 | Qwen 3.5 35B | Parcial | Talvez | Não | Sem parâmetro de modelo |
 | Kimi K2.5 | Não | **Não** | Não | `add_message()`/`complete()` inventados |
@@ -273,6 +276,7 @@ Economiza dólar, gasta tempo. E tempo é dinheiro. Pra quem está aprendendo ou
 | Claude Sonnet 4.6 | OpenRouter | 16m | 30 | ~$0.63 | 40% mais barato, mais testes |
 | Claude Opus 4.6 | OpenRouter | 16m | 16 | ~$1.05 | Baseline |
 | GLM 5 | OpenRouter | 17m | 7 | ~$0.11 | 89% mais barato |
+| GLM 5.1 | Z.AI direto | 22m | 24 | ~$0.13 | ~88% mais barato, mais testes que o GLM 5 |
 
 ### Ranking completo por tempo e tokens
 
@@ -280,12 +284,14 @@ Economiza dólar, gasta tempo. E tempo é dinheiro. Pra quem está aprendendo ou
 
 | Modelo | Provedor | Tempo | Tokens Totais | Tok/s | Custo/Run |
 |---|---|---:|---:|---:|---:|
+| Grok 4.20 | OpenRouter | 8m | 63.457 | 412.54 | ~$0.04 |
 | Gemini 3.1 Pro | OpenRouter | 14m | 104.034 | 128.28 | ~$0.50 |
 | MiniMax M2.7 | OpenRouter | 14m | 79.743 | 574.52 | ~$0.05 |
 | Claude Opus 4.6 | OpenRouter | 16m | 136.806 | 347.18 | ~$1.05 |
 | Claude Sonnet 4.6 | OpenRouter | 16m | 127.067 | 532.26 | ~$0.63 |
 | GLM 5 | OpenRouter | 17m | 59.378 | 400.01 | ~$0.11 |
 | Qwen 3.6 Plus | OpenRouter | 17m | 88.940 | 182.91 | Grátis |
+| GLM 5.1 | Z.AI direto | 22m | 81.666 | 166.62 | ~$0.13 |
 | Qwen 3 Coder Next | Local | 17m | 39.054 | 37.49 | Eletricidade |
 | Qwen 3.5 35B | Local | 28m | 76.919 | 46.03 | Eletricidade |
 | Kimi K2.5 | OpenRouter | 29m | 63.638 | 160.14 | ~$0.07 |
@@ -306,6 +312,8 @@ Modelos com prompt caching pagam muito menos tokens efetivos:
 | Claude Sonnet 4.6 | 127.067 | 126.429 | 638 |
 | Claude Opus 4.6 | 136.806 | 135.976 | 830 |
 | GLM 5 | 59.378 | 58.240 | 1.138 |
+| GLM 5.1 | 81.666 | 81.216 | 450 |
+| Grok 4.20 | 63.457 | 62.400 | 1.057 |
 | Gemini 3.1 Pro | 104.034 | 98.129 | 5.905 |
 | DeepSeek V3.2 | 115.278 | 0 | 115.278 |
 | Kimi K2.5 | 63.638 | 0 | 63.638 |
@@ -336,6 +344,8 @@ As tabelas acima medem completude estrutural. Mas o projeto funciona? Fiz code r
 
 **Kimi K2.5 — ambicioso mas quebrado.** Tentou a arquitetura mais sofisticada: ActionCable streaming, modelos configuráveis, dual Dockerfiles, 37 testes em 374 linhas. Problema: o streaming depende do ActionCable, que está comentado no `config/application.rb`. O guard `return unless defined?(ActionCable)` faz o método não fazer nada. O assistente nunca responde. O Stimulus controller tem bug de escopo: o `submitTarget` referencia um botão fora da subtree do controller. Storage thread-unsafe com hash em variável de classe. O Kimi escreveu mais testes que qualquer outro modelo (37), mas nenhum mocka as chamadas LLM — então os testes passam sem provar que a funcionalidade funciona de verdade.
 
+**Grok 4.20 — rápido e errado.** Foi o mais rápido do benchmark inteiro: 8 minutos, 412 tok/s. Mas isso porque cortou o caminho. O prompt pedia explicitamente pra usar o gem `ruby_llm`, e o Grok simplesmente ignorou: foi direto pro `OpenAI::Client` da gem `ruby-openai` apontando pra URL do OpenRouter. Funciona? Tecnicamente sim — a primeira mensagem volta. Mas é o mesmo padrão do Step 3.5 Flash e do Qwen 3.5 122B: bypass do componente que estava sendo testado. Sem persistência de histórico, controller de 33 linhas direto chamando o cliente HTTP, dois testes, nenhum mock real. Foi rápido porque fez menos do que foi pedido.
+
 **MiniMax M2.7 — parece certo, crasha.** Chama `RubyLLM.chat(model: '...', messages: [...])` — essa assinatura não existe. Sem persistência de mensagens. HTML duplicado (DOCTYPE dentro do layout). master.key commitada. E os testes? Mockam a API errada, então passam mas não provam nada.
 
 Resumo do code review:
@@ -349,6 +359,29 @@ Resumo do code review:
 | Mocking LLM | Sim (mocha) | Sim (mocha) | FakeChat (API errada) | Não | Mock da API errada |
 | Dockerfile | Multi-stage | Multi-stage + jemalloc | Multi-stage + jemalloc | Dual (dev/prod) | Single-stage |
 | Roda de verdade? | Sim | Sim (sem histórico) | Não (500 no chat) | Não | Não |
+
+### GLM 5 vs GLM 5.1: o que mudou
+
+Como o GLM 5 foi um dos poucos modelos que entregou código funcional na primeira passada, era natural testar a versão nova. O detalhe importante: o GLM 5 rodou via OpenRouter, e o GLM 5.1 ainda não estava disponível lá quando rodei o benchmark, então usei a API direta da Z.AI. Provedores diferentes podem afetar latência e cache, então tomem os números como referência, não como medida exata.
+
+| Aspecto | GLM 5 | GLM 5.1 |
+|---|---|---|
+| Provedor | OpenRouter | Z.AI direto |
+| Tempo total | 17m | 22m |
+| Tok/s (final phase) | 400 | 167 |
+| Tokens efetivos novos | 1.138 | 450 |
+| Cache lido | 58.240 | 81.216 |
+| API RubyLLM correta | Sim | Sim |
+| Mocking nos testes | Sim (mocha) | Sim |
+| Testes | 7 | 24 |
+| Histórico de chat | Não | Sim (in-memory) |
+| Service layer | Inline no controller | `ChatSession` model com `add_user_message`/`add_assistant_message` |
+
+O GLM 5.1 entregou um projeto mais completo: 24 testes contra 7, separação real entre `ChatSession`, `ChatMessage` e o controller, persistência de histórico em memória durante a sessão (o GLM 5 tratava cada mensagem isoladamente). A API do RubyLLM continua correta — mesmo padrão `RubyLLM.chat(model:, provider:)` seguido de `c.user`/`c.assistant` pra montar contexto multi-turn. Chamei até de "MODEL constant" testado direto no test suite.
+
+A contrapartida: foi mais lento. 22 minutos contra 17, e a vazão de tokens caiu de 400 pra 167 tok/s. Isso pode ser efeito do provedor (Z.AI direto vs OpenRouter, infraestruturas diferentes), pode ser um run mais carregado, pode ser que o modelo simplesmente raciocina mais. Não rodei várias vezes pra ter uma média estatística. Não dá pra cravar que o GLM 5.1 é "mais lento que o GLM 5" — uma única run não prova regressão. O que dá pra dizer é que, no run que eu fiz, o GLM 5.1 entregou um projeto melhor estruturado e demorou um pouco mais pra fazer isso.
+
+Pra quem quer alternativa não-Anthropic que funciona, GLM 5 e GLM 5.1 são as duas opções viáveis. Se você precisa de OpenRouter por causa de billing centralizado, GLM 5. Se você consegue usar a Z.AI direto e quer um projeto mais completo de primeira, GLM 5.1.
 
 ## Custos: API vs Assinatura
 
@@ -381,7 +414,7 @@ O ponto principal: se você usa GPT 5.4 Pro, a assinatura ChatGPT Pro a $200/mê
 
 ## O que funciona pra uso real
 
-Depois de testar 23 modelos e olhar o código gerado em detalhe:
+Depois de testar 25 modelos e olhar o código gerado em detalhe:
 
 Tier 1 (funciona plug and play):
 
@@ -390,7 +423,8 @@ Tier 1 (funciona plug and play):
 | Claude Sonnet 4.6 | Melhor que Opus no opencode (30 vs 16 testes) | ~$0.63 | Mais barato, mas no Claude Code o Opus pode se sair melhor |
 | Claude Opus 4.6 | Gold standard | ~$1.05 | Baseline |
 | GPT 5.4 Pro | Equivalente ao Opus na prática | ~$7.20* | Falhou no benchmark por incompatibilidade com opencode, mas testei extensivamente no Codex e funciona tão bem quanto Opus |
-| GLM 5 | Bom (7 testes, API correta) | ~$0.11 | 89% mais barato, única alternativa non-Anthropic/OpenAI que funciona |
+| GLM 5 | Bom (7 testes, API correta) | ~$0.11 | 89% mais barato, alternativa non-Anthropic/OpenAI que funciona |
+| GLM 5.1 | Bom (24 testes, histórico, API correta) | ~$0.13 | ~88% mais barato, projeto mais completo que o GLM 5 |
 
 *O GPT 5.4 Pro falhou no benchmark automatizado porque o opencode não suporta o formato nativo de tool calling da OpenAI. Pelo Codex ou ChatGPT Pro ($200/mês com uso ilimitado), funciona sem problemas.
 
@@ -399,6 +433,7 @@ Tier 2 (funciona com ressalvas):
 | Modelo | Custo/Run | Ressalva |
 |---|---:|---|
 | Step 3.5 Flash | ~$0.02 | Bypassa o gem pedido, lento (38m) |
+| Grok 4.20 | ~$0.04 | Bypassa o gem pedido (vai direto pro `OpenAI::Client`), mas é o mais rápido do benchmark |
 | Qwen 3.5 35B (local) | Grátis | Pode funcionar se default configurado, sem mocking |
 
 Tier 3 (código quebrado):
@@ -409,9 +444,30 @@ Tier 4 (não completaram):
 
 Gemma 4 (loop infinito), Llama 4 Scout (sem parser), GPT OSS 20B (diretório errado), Qwen 3 32B (lento demais).
 
+### Ranking simplificado (qualidade, tempo, preço)
+
+Pra quem quer só o resumo em forma de boletim escolar. Qualidade considera se o código roda e quão completo é. Tempo é o tempo total de execução do benchmark. Preço é o custo estimado por run no opencode.
+
+| Modelo | Qualidade | Tempo | Preço |
+|---|:---:|:---:|:---:|
+| Claude Sonnet 4.6 | A+ | A | C |
+| Claude Opus 4.6 | A+ | A | D |
+| GPT 5.4 Pro | A+ | — | F |
+| GLM 5.1 | A | B | A |
+| GLM 5 | A− | A | A |
+| Gemini 3.1 Pro | C | A+ | B |
+| Grok 4.20 | C− | A+ | A+ |
+| Step 3.5 Flash | C− | D | A+ |
+| Qwen 3.6 Plus | D | A | A+ (grátis) |
+| Kimi K2.5 | D | C | A |
+| MiniMax M2.7 | D | A | A+ |
+| DeepSeek V3.2 | F | F | A+ |
+
+Qualidade A+ = funciona e tem código bem estruturado. A = funciona com pequenas ressalvas. C = roda mas bypassa requisitos do prompt ou tem problemas estruturais. D = quebra na primeira mensagem por API inventada. F = não completou o benchmark. GPT 5.4 Pro tem qualidade A+ baseado em uso real no Codex, mas não rodou neste benchmark — daí o "—" no tempo.
+
 ### O veredito
 
-Se custo importa e você quer sair da Anthropic: **GLM 5** é a única alternativa plug-and-play que funciona. API correta, mocking nos testes, 17 minutos, $0.11 por run. 89% mais barato que Opus.
+Se custo importa e você quer sair da Anthropic: **GLM 5 ou GLM 5.1** são as alternativas plug-and-play que funcionam. API correta, mocking nos testes, ~$0.11-$0.13 por run, ~88-89% mais barato que Opus. O GLM 5.1 entregou um projeto mais completo (24 testes, histórico de chat) ao custo de uns 5 minutos a mais.
 
 Se quer o melhor resultado independente de custo: **Claude Sonnet 4.6** ganhou do Opus nesse benchmark — mais barato, mesma velocidade, mais testes, código que funciona. Mas vale o caveat: esse resultado é no opencode, não no Claude Code. No ambiente nativo (Claude Code), onde Opus e Sonnet têm acesso ao suporte completo de tools da Anthropic, o Opus pode se sair melhor. Na minha maratona de 500 horas com Claude Code, usei Opus e a experiência foi consistentemente boa. Não dá pra concluir que Sonnet é melhor que Opus em geral só por esse benchmark.
 
