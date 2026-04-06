@@ -1,6 +1,6 @@
 ---
-title: "AI Agents: Garantindo a Proteção do seu Sistema"
-slug: "ai-agents-garantindo-a-protecao-do-seu-sistema"
+title: "AI Agents: Locking Down Your System"
+slug: "ai-agents-locking-down-your-system"
 date: 2026-01-10T11:50:36-0300
 draft: false
 translationKey: ai-agents-protecting-your-system
@@ -11,17 +11,17 @@ tags:
 - Sandbox
 ---
 
-Hoje em dia temos dezenas de Agentes de IA pra programação, seja Cursor, Claude Code, Windsurf, Copilot, OpenCode, Crush e mais. Mas tem um problema que já virou até meme: o risco deles danificarem seu sistema ou enviar seus dados privados pra alguém na Internet (comportamento de malware).
+These days we have dozens of AI coding agents — Cursor, Claude Code, Windsurf, Copilot, OpenCode, Crush and more. But there's a problem that's already turned into a meme: the risk of them trashing your system or shipping your private data off to someone on the internet (malware-style behavior).
 
-O problema é que pra serem eficientes, essas ferramentas precisam ter acesso ao seu sistema de arquivos pra vasculhar os arquivos do seu projeto, pra analizar o código. E mais: conseguir rodar ferramentas como compiladores, linters, e coisas mundanas como grep, sed, awk, ls, e outros comandos do seu sistema.
+The thing is, to be useful these tools need access to your filesystem so they can poke around your project files and analyze your code. And more: they need to run things like compilers, linters, and the everyday stuff like grep, sed, awk, ls, and other system commands.
 
-Eventualmente, uma LLM pode mandar executar um `rm -Rf /` aleatório e apagar coisas no seu sistema, por exemplo. O código em si, se por acidente apagar o que não devia, teoricamente você deveria estar seguro porque seu código já deveria estar, no mínimo, num repositório de Git (GitHub, GitLab, etc), então seria só reverter a mudança. Mas se o agente rodar um `rm` fora do diretório do seu projeto, pode criar todo tipo de problema.
+Eventually, an LLM might fire off some random `rm -rf /` and start wiping things from your system, for example. The code itself, if it accidentally deletes something it shouldn't, in theory you should be safe because your code should at the bare minimum be in a Git repo (GitHub, GitLab, etc.), so you'd just revert the change. But if the agent runs an `rm` outside your project directory, you can be in for all kinds of trouble.
 
-Não é comum isso acontecer e todas as ferramentas costumam ter checagens pra isso, incluindo perguntar se você quer realmente executar o comando. Ao mesmo tempo, eles também tem a opção de permitir rodar qualquer comando durante a sessão, sem perguntar - porque uma hora começa a ficar tedioso dar "ok" pra cada comando individual. Todo mundo acaba ficando com preguiça e diz _"foda-se, roda o que quiser"_.
+It doesn't happen often and all these tools have checks for it, including asking whether you really want to run a command. At the same time, they also have an option to let any command run during the session without asking — because at some point it gets tedious to "ok" every individual command. Everyone eventually gets lazy and says _"screw it, run whatever you want"_.
 
-E vocês devem estar pensando _"ah, minha ferramenta X é bem comportada, ele sempre pergunta antes de rodar qualquer coisa, então eu controlo"_. Não esqueçam: **ATAQUES DE SUPPLY-CHAIN** existem. Toda hora alguma biblioteca open source é invadida com malware e os programas que usam essas libs acabam sendo infectados sem saber. Isso já aconteceu várias vezes, em várias libs de NPM por exemplo. Não tem como garantir que mesmo um software open source seja confiável. Sempre parta do princípio que tudo é inseguro até prova em contrário e trate esses programas dessa forma: com restrição máxima.
+And you might be thinking _"oh, my favorite tool is well-behaved, it always asks before running anything, so I'm in control"_. Don't forget: **SUPPLY-CHAIN ATTACKS** exist. Every other day some open source library gets compromised with malware and the programs that depend on those libs end up infected without anyone noticing. This has happened many times, in many NPM libraries for example. There's no way to guarantee that even open source software is trustworthy. Always assume everything is insecure until proven otherwise, and treat these programs accordingly: with maximum restrictions.
 
-Pra garantir que esses agentes realmente não vão fazer nada fora do diretório do projeto, o melhor é criar um **JAIL**. E aqui vai o comando pra isso:
+To make sure these agents really aren't going to do anything outside the project directory, the best option is to build a **JAIL**. Here's the command for that:
 
 ```bash
 bwrap --ro-bind /usr /usr \
@@ -37,17 +37,17 @@ bwrap --ro-bind /usr /usr \
       bash
 ```
 
-`bwrap` é o **Bubblewrap** um dos componentes que permitem a existência de coisas como **Flatpak**. Ele cria um sandbox. O Bash que vai rodar ao executar o comando acima está essencialmente em "jail", ou seja, "preso". Nele damos acesso somente de leitura a alguns diretórios do sistema caso precise de bibliotecas e ferramentas. Pra isso serve o `--ro-bind`.
+`bwrap` is **Bubblewrap**, one of the components that make things like **Flatpak** possible. It creates a sandbox. The Bash that fires up when you run the command above is essentially in "jail" — locked in. Inside it we hand out read-only access to a few system directories in case it needs libraries and tools. That's what `--ro-bind` is for.
 
-Mas somente o diretório corrente `pwd` vai ter permissão de escrita. Qualquer comando que rodar dentro desse jail não tem permissão de escrever em nenhum outro lugar o seu sistema. Veja o exemplo na foto abaixo onde eu tento apagar um arquivo na minha `$HOME`:
+But only the current directory `pwd` has write permission. Any command that runs inside the jail has no permission to write anywhere else on your system. Look at the example in the screenshot below where I try to delete a file in my `$HOME`:
 
 ![sandbox](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/20260110120225_screenshot-2026-01-10_12-02-14.png)
 
-Ele não consegue nem listar os arquivos na minha home. É tudo invisível dentro do sandbox. Essa é uma das vantagens de apps rodando com Flatpak: eles são muito mais isolados do que apps instalados direto.
+It can't even list the files in my home directory. Everything is invisible inside the sandbox. This is one of the upsides of apps running under Flatpak: they're much more isolated than apps installed directly.
 
-Dentro desse bash em sandbox podemos agora executar `opencode`, `crush`, `cursor` ou qualquer outro agente e ter certeza que eles não vão fazer nenhuma besteira no seu sistema.
+Inside this sandboxed bash we can now run `opencode`, `crush`, `cursor` or any other agent and be confident that they aren't going to do anything stupid to your system.
 
-Pra facilitar, recomendo criar um script como `~/.local/bin/ai-jail`:
+To make life easier, I'd recommend creating a script like `~/.local/bin/ai-jail`:
 
 ```bash
 #!/bin/bash
@@ -232,23 +232,23 @@ bwrap \
   bash -c "$MISE_INIT && ${*:-bash}"
 ```
 
-Esta versão é bem customizada, deem uma boa lida porque tem deny-list pra que só diretórios de que você realmente precisa dentro do Jail estejam disponíveis. Alguns são read-write porque um Claude precisa conseguir escrever em `~/.claude` ou Codex precisa do `~/.codex`; vários diretórios nunca devem ir pra dentro do Jail como repositório de senhas de um Brave ou BitWarden. O resto de que pode precisar deve ser tudo read-only. Esse script cuida de tudo isso.
+This version is heavily customized. Read it through carefully because it has a deny-list so that only the directories you actually need inside the Jail are available. Some are read-write because Claude needs to be able to write to `~/.claude` or Codex needs `~/.codex`; several directories should never be inside the Jail like a Brave password store or BitWarden. Everything else you might need should be read-only. This script handles all of that.
 
-Só fazer `chmod +x ~/.local/bin/ai-jail`. Agora podemos executar ele direto ou já passar o comando que queremos rodar no sandbox:
+Just `chmod +x ~/.local/bin/ai-jail`. Now you can run it directly or pass the command you want to run inside the sandbox:
 
 ```
 ~/.local/bin/ai-jail crush
 ```
 
-Nesta versão ele vai criar um diretório `$HOME` temporário, caso ele precise gravar algo temporário lá. E também mandei mapear o seu `~/.config` pros agentes terem acesso às suas configurações. Se precisar de mais coisas como variáveis de ambiente e coisas assim, modifique pra mapear essas coisas também, mas isso é o mínimo pra conseguir montar um sandbox seguro.
+In this version it'll create a temporary `$HOME` directory in case it needs to write something temporary there. And I also set it up to map your `~/.config` so the agents have access to your settings. If you need more stuff like environment variables and the like, modify it to map those too — but this is the bare minimum to put together a safe sandbox.
 
-Tome muito cuidado com programas que rodam comandos aleatórios no seu sistema. Nada é 100% seguro, especialmente uma LLM que pode halucinar a qualquer momento e decidir apagar coisas, ou ferramentas suspeitas que você baixou sem ter certeza da origem e pode ser um malware disfarçado. Sempre rode coisas realmente suspeitas somente numa VM ou, no mínimo, dentro de um jail como esse.
+Be very careful with programs that run random commands on your system. Nothing is 100% safe, especially an LLM that can hallucinate at any moment and decide to delete things, or shady tools you downloaded without being sure of where they came from that might be malware in disguise. Always run truly suspicious things only in a VM, or at the very least, inside a jail like this one.
 
-Isso não serve só pra agentes de IA, lógico. Toda vez que for rodar qualquer comando que tem dúvidas ou ache suspeito, rode dentro desse jail.
+This isn't just for AI agents, obviously. Any time you're about to run any command you're not sure about or that looks fishy, run it inside this jail.
 
-De bônus, note que eu também mapeio o [Mise](https://akitaonrails.com/2025/09/07/omarchy-2-0-mise-pra-organizar-ambientes-de-desenvolvimento/) pra dentro do container. Se você usa Omarchy, deve estar usando Mise também.
+As a bonus, note that I also map [Mise](https://akitaonrails.com/2025/09/07/omarchy-2-0-mise-pra-organizar-ambientes-de-desenvolvimento/) into the container. If you're on Omarchy, you should be using Mise too.
 
-Especificamente pra Claude Code, que eu mais uso, prefiro não deixar tudo autorizado no modo automático `--allow-dangerously-skip-permissions`, mas também não gosto de ter que ficar autorizando coisa besta como cada domínio que ele quer pesquisar na web (só pesquisar não tem problema nenhum) ou qualquer comando que só lista coisas como `ls` ou `grep` então dá pra melhorar configurando direto em `~/.claude/settings.json`:
+Specifically for Claude Code, which is what I use the most, I don't like to leave everything authorized in automatic mode with `--allow-dangerously-skip-permissions`, but I also don't like having to keep authorizing dumb stuff like every single domain it wants to search the web for (just searching is no problem at all) or any command that just lists things like `ls` or `grep`. So you can improve things by configuring directly in `~/.claude/settings.json`:
 
 ```json
 {
@@ -362,6 +362,6 @@ Especificamente pra Claude Code, que eu mais uso, prefiro não deixar tudo autor
 }
 ```
 
-Pesquise a documentação (ou pergunte direto pro próprio Claude) sobre mais customizações que dá pra fazer nesse arquivo pra servir melhor pro seu tipo de projeto de fluxo de trabalho.
+Look up the documentation (or just ask Claude itself) about more customizations you can do in this file to better fit your project type or workflow.
 
-É basicamente assim que um container de Docker ou Podman funciona também. Eu expliquei isso no meu [video sobre Docker](https://akitaonrails.com/2023/03/02/akitando-139-entendendo-como-containers-funcionam/). Se não assistiu ainda, recomendo ver.
+This is basically how a Docker or Podman container works too. I explained that in my [video about Docker](https://akitaonrails.com/2023/03/02/akitando-139-entendendo-como-containers-funcionam/). If you haven't watched it yet, I recommend it.

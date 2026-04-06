@@ -10,6 +10,7 @@ title: AkitaOnRails Blog
 
 ## 2026 - January
 
+- [AI Agents: Locking Down Your System](/en/2026/01/10/ai-agents-locking-down-your-system/)
 - [Omarchy 3 - One of the Best Coding Agents Out There: Crush](/en/2026/01/09/omarchy-3-one-of-the-best-coding-agents-crush/)
 
 [Full archive →](/en/archives/)
