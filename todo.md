@@ -18,6 +18,7 @@ These posts have an English version. When other posts link to them, the EN trans
 |---|---|---|
 | `2026/01/09/omarchy-3-um-dos-melhores-agentes-pra-programacao-crush` | `omarchy-3-one-of-the-best-coding-agents-crush` | 2026-01-09 |
 | `2026/01/10/ai-agents-garantindo-a-protecao-do-seu-sistema` | `ai-agents-locking-down-your-system` | 2026-01-10 |
+| `2026/03/31/codigo-fonte-do-claude-code-vazou-o-que-achamos-dentro` | `claude-code-source-code-leaked-what-we-found-inside` | 2026-03-31 |
 | `2026/04/05/testando-llms-open-source-e-comerciais-quem-consegue-bater-o-claude-opus` | `testing-llms-open-source-and-commercial-can-anyone-beat-claude-opus` | 2026-04-05 |
 | `2026/04/06/rag-esta-morto-contexto-longo` | `rag-is-dead-long-context` | 2026-04-06 |
 
@@ -33,7 +34,6 @@ April 2026:
 
 March 2026:
 
-- `2026/03/31/codigo-fonte-do-claude-code-vazou-o-que-achamos-dentro`
 - `2026/03/31/migrando-meu-home-server-com-claude-code`
 - `2026/03/31/review-minisforum-ms-s1-max-amd-ai-max-395`
 - `2026/03/27/ensinando-a-questionar-noticias-frank-investigator`
@@ -82,7 +82,7 @@ January 2026:
 
 When a pending post gets translated and moved up to "Translated", come back to the post(s) listed below and update the link in the EN version to point at the new EN URL.
 
-- When `2026/03/31/codigo-fonte-do-claude-code-vazou-o-que-achamos-dentro` is translated → update `2026/04/06/rag-esta-morto-contexto-longo/index.en.md` (3 links).
+<!-- claude code leak translated; back-references fixed in rag-esta-morto-contexto-longo/index.en.md -->
 <!-- benchmark article translated; back-reference fixed in rag-esta-morto-contexto-longo/index.en.md -->
 
 

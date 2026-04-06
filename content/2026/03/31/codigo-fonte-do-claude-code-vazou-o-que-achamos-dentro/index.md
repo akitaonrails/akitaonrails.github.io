@@ -2,6 +2,7 @@
 title: "O código fonte do Claude Code vazou. O que achamos dentro."
 date: '2026-03-31T17:00:00-03:00'
 draft: false
+translationKey: claude-code-source-leak
 tags:
   - ai
   - security

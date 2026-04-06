@@ -9,6 +9,10 @@ title: AkitaOnRails Blog
 - [Is RAG Dead? Long Context, Grep, and the End of the Mandatory Vector DB](/en/2026/04/06/rag-is-dead-long-context/)
 - [Testing Open Source and Commercial LLMs - Can Anyone Beat Claude Opus?](/en/2026/04/05/testing-llms-open-source-and-commercial-can-anyone-beat-claude-opus/)
 
+## 2026 - March
+
+- [Claude Code's Source Code Leaked. Here's What We Found Inside.](/en/2026/03/31/claude-code-source-code-leaked-what-we-found-inside/)
+
 ## 2026 - January
 
 - [AI Agents: Locking Down Your System](/en/2026/01/10/ai-agents-locking-down-your-system/)
