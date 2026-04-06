@@ -26,6 +26,7 @@ title: AkitaOnRails Blog
 - [My First Vibe Code Failure and How I Fixed It | Frank Yomik](/en/2026/03/05/my-first-vibe-code-failure-frank-yomik/)
 - [I Built a Data Mining System for My Influencer Girlfriend — Tips and Tricks](/en/2026/03/04/data-mining-system-for-my-influencer-girlfriend/)
 - [ai-jail: Sandbox for AI Agents — From Shell Script to Real Tool](/en/2026/03/01/ai-jail-sandbox-for-ai-agents-from-shell-script-to-real-tool/)
+- [Software Is Never 'Done' — 4 Projects, Life After Deploy, and Why One-Shot Prompting Is a Myth](/en/2026/03/01/software-is-never-done-4-projects-life-after-deploy-one-shot-prompt-myth/)
 
 ## 2026 - January
 

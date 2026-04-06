@@ -11,6 +11,7 @@ tags:
 - agile
 - xp
 - extremeprogramming
+translationKey: software-never-done
 ---
 
 E não deixe de assinar minha newsletter [The M.Akita Chronicles](https://themakitachronicles.com/)!
