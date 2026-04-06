@@ -2,6 +2,7 @@
 title: "Bitcoin no Home Server: Soberania e Privacidade com Coldcard, Sparrow e Fulcrum"
 date: '2026-04-01T19:00:00-03:00'
 draft: false
+translationKey: bitcoin-home-server-sovereignty
 tags:
   - bitcoin
   - homeserver

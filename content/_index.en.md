@@ -9,6 +9,7 @@ title: AkitaOnRails Blog
 - [Is RAG Dead? Long Context, Grep, and the End of the Mandatory Vector DB](/en/2026/04/06/rag-is-dead-long-context/)
 - [Testing Open Source and Commercial LLMs - Can Anyone Beat Claude Opus?](/en/2026/04/05/testing-llms-open-source-and-commercial-can-anyone-beat-claude-opus/)
 - [Turning YouTube into a Karaoke App | Frank Karaoke](/en/2026/04/05/turning-youtube-into-a-karaoke-app-frank-karaoke/)
+- [Bitcoin on the Home Server: Sovereignty and Privacy with Coldcard, Sparrow and Fulcrum](/en/2026/04/01/bitcoin-on-the-home-server-sovereignty-with-coldcard-sparrow-fulcrum/)
 
 ## 2026 - March
 
