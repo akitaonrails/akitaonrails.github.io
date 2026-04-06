@@ -19,7 +19,7 @@ There's a new wrinkle in this update: I redid the local part of the benchmark on
 
 ---
 
-If you've been following [my previous vibe coding pieces](/tags/vibecoding/), you know I spent the last two months in a 500-hour marathon using Claude Opus as my main coding agent. The results were good, as I reported in the [conclusion about business models](https://akitaonrails.com/2026/03/05/37-dias-de-imers%c3%a3o-em-vibe-coding-conclus%c3%a3o-quanto-a-modelos-de-neg%c3%b3cio/). But there was an itch I couldn't scratch: am I locked into one model? Is there a real alternative to Claude Opus for daily use on real projects?
+If you've been following [my previous vibe coding pieces](/tags/vibecoding/), you know I spent the last two months in a 500-hour marathon using Claude Opus as my main coding agent. The results were good, as I reported in the [conclusion about business models](/en/2026/03/05/37-days-of-vibe-coding-immersion-conclusions-on-business-models/). But there was an itch I couldn't scratch: am I locked into one model? Is there a real alternative to Claude Opus for daily use on real projects?
 
 I've got an RTX 5090 with 32 GB of GDDR7. I know I can run the latest open source models. I bought a [Minisforum MS-S1](/en/2026/03/31/minisforum-ms-s1-max-amd-ai-max-395-review/) with an AMD Ryzen AI Max 395 and 128 GB of unified memory, and built a [home server with Docker](/en/2026/03/31/migrating-my-home-server-with-claude-code/) to serve local models. The infrastructure was ready. What was missing was actually testing it.
 

@@ -15,6 +15,7 @@ title: AkitaOnRails Blog
 - [Migrating my Home Server with Claude Code | openSUSE MicroOS](/en/2026/03/31/migrating-my-home-server-with-claude-code/)
 - [Review: Minisforum MS-S1 Max | AMD AI Max+ 395 with 96GB of VRAM](/en/2026/03/31/minisforum-ms-s1-max-amd-ai-max-395-review/)
 - [I Rewrote OpenClaw in Rust. Did It Work? | FrankClaw](/en/2026/03/16/rewrote-openclaw-in-rust-frankclaw/)
+- [37 Days of Vibe Coding Immersion: Conclusions on Business Models](/en/2026/03/05/37-days-of-vibe-coding-immersion-conclusions-on-business-models/)
 
 ## 2026 - January
 

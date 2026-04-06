@@ -22,6 +22,7 @@ These posts have an English version. When other posts link to them, the EN trans
 | `2026/03/31/review-minisforum-ms-s1-max-amd-ai-max-395` | `minisforum-ms-s1-max-amd-ai-max-395-review` | 2026-03-31 |
 | `2026/03/31/migrando-meu-home-server-com-claude-code` | `migrating-my-home-server-with-claude-code` | 2026-03-31 |
 | `2026/03/16/reescrevi-o-openclaw-em-rust-funcionou-frankclaw` | `rewrote-openclaw-in-rust-frankclaw` | 2026-03-16 |
+| `2026/03/05/37-dias-de-imersão-em-vibe-coding-conclusão-quanto-a-modelos-de-negócio` | `37-days-of-vibe-coding-immersion-conclusions-on-business-models` | 2026-03-05 |
 | `2026/04/05/testando-llms-open-source-e-comerciais-quem-consegue-bater-o-claude-opus` | `testing-llms-open-source-and-commercial-can-anyone-beat-claude-opus` | 2026-04-05 |
 | `2026/04/06/rag-esta-morto-contexto-longo` | `rag-is-dead-long-context` | 2026-04-06 |
 
@@ -42,7 +43,6 @@ March 2026:
 - `2026/03/07/portando-10-mil-linhas-de-python-pra-crystal-com-claude-easy-subtitle`
 - `2026/03/07/crystal-e-um-wrapper-inteligente-pro-ffmpeg-feito-em-3-horas-easy-ffmpeg`
 - `2026/03/05/meu-primeiro-fracasso-com-vibe-code-e-como-consertei-frank-yomik`
-- `2026/03/05/37-dias-de-imersão-em-vibe-coding-conclusão-quanto-a-modelos-de-negócio`
 - `2026/03/04/eu-fiz-um-sistema-de-data-mining-pra-minha-namorada-influencer-dicas-e-truques`
 - `2026/03/01/software-nunca-esta-pronto-4-projetos-a-vida-pos-deploy-e-por-que-one-shot-prompt-e-mito`
 - `2026/03/01/ai-jail-sandbox-para-agentes-de-ia-de-shell-script-a-ferramenta-real`
