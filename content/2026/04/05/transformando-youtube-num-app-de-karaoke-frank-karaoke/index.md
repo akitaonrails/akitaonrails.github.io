@@ -2,6 +2,7 @@
 title: "Transformando YouTube num App de Karaoke | Frank Karaoke"
 date: '2026-04-05T12:00:00-03:00'
 draft: false
+translationKey: frank-karaoke-youtube-app
 tags:
   - flutter
   - android
