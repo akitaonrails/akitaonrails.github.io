@@ -10,6 +10,7 @@ tags:
 - Sandbox
 - Rust
 - Security
+translationKey: ai-jail-sandbox-tool
 ---
 
 Este post é um follow-up direto do [AI Agents: Garantindo a Proteção do seu Sistema](/2026/01/10/ai-agents-garantindo-a-protecao-do-seu-sistema/), onde eu mostrei como usar bubblewrap pra criar um jail manual pros seus agentes de IA. Se não leu, leia antes de continuar.

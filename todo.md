@@ -34,6 +34,7 @@ These posts have an English version. When other posts link to them, the EN trans
 | `2026/03/05/meu-primeiro-fracasso-com-vibe-code-e-como-consertei-frank-yomik` | `my-first-vibe-code-failure-frank-yomik` | 2026-03-05 |
 | `2026/04/06/rag-esta-morto-contexto-longo` | `rag-is-dead-long-context` | 2026-04-06 |
 | `2026/03/04/eu-fiz-um-sistema-de-data-mining-pra-minha-namorada-influencer-dicas-e-truques` | `data-mining-system-for-my-influencer-girlfriend` | 2026-03-04 |
+| `2026/03/01/ai-jail-sandbox-para-agentes-de-ia-de-shell-script-a-ferramenta-real` | `ai-jail-sandbox-for-ai-agents-from-shell-script-to-real-tool` | 2026-03-01 |
 
 ## Pending (2026 posts not yet translated)
 
@@ -45,7 +46,6 @@ April 2026:
 March 2026:
 
 - `2026/03/01/software-nunca-esta-pronto-4-projetos-a-vida-pos-deploy-e-por-que-one-shot-prompt-e-mito`
-- `2026/03/01/ai-jail-sandbox-para-agentes-de-ia-de-shell-script-a-ferramenta-real`
 
 February 2026:
 
