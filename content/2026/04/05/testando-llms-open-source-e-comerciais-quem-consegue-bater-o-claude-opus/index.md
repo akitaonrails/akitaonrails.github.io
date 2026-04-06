@@ -448,22 +448,30 @@ Gemma 4 (loop infinito), Llama 4 Scout (sem parser), GPT OSS 20B (diretório err
 
 Pra quem quer só o resumo em forma de boletim escolar. Qualidade considera se o código roda e quão completo é. Tempo é o tempo total de execução do benchmark. Preço é o custo estimado por run no opencode.
 
-| Modelo | Qualidade | Tempo | Preço |
-|---|:---:|:---:|:---:|
-| Claude Sonnet 4.6 | A+ | A | C |
-| Claude Opus 4.6 | A+ | A | D |
-| GPT 5.4 Pro | A+ | — | F |
-| GLM 5.1 | A | B | A |
-| GLM 5 | A− | A | A |
-| Gemini 3.1 Pro | C | A+ | B |
-| Grok 4.20 | C− | A+ | A+ |
-| Step 3.5 Flash | C− | D | A+ |
-| Qwen 3.6 Plus | D | A | A+ (grátis) |
-| Kimi K2.5 | D | C | A |
-| MiniMax M2.7 | D | A | A+ |
-| DeepSeek V3.2 | F | F | A+ |
+| Modelo | Tipo | Qualidade | Tempo | Preço |
+|---|:---:|:---:|:---:|:---:|
+| Claude Sonnet 4.6 | Commercial | A+ | A | C |
+| Claude Opus 4.6 | Commercial | A+ | A | D |
+| GPT 5.4 Pro | Commercial | A+ | — | F |
+| GLM 5.1 | OSS | A | B | A |
+| GLM 5 | OSS | A− | A | A |
+| Gemini 3.1 Pro | Commercial | C | A+ | B |
+| Grok 4.20 | Commercial | C− | A+ | A+ |
+| Step 3.5 Flash | Commercial | C− | D | A+ |
+| Qwen 3.5 35B-A3B (local) | OSS | C | C | A+ (grátis) |
+| Qwen 3 Coder Next (local) | OSS | D+ | A | A+ (grátis) |
+| Qwen 3.6 Plus | Commercial | D | A | A+ (grátis) |
+| Kimi K2.5 | OSS | D | C | A |
+| MiniMax M2.7 | OSS | D | A | A+ |
+| Qwen 3.5 122B (local) | OSS | D | F | A+ (grátis) |
+| DeepSeek V3.2 | OSS | F | F | A+ |
+| GLM 4.7 Flash (local) | OSS | F | — | A+ (grátis) |
+| Gemma 4 31B (local) | OSS | F | — | A+ (grátis) |
+| Llama 4 Scout (local) | OSS | F | — | A+ (grátis) |
+| GPT OSS 20B (local) | OSS | F | — | A+ (grátis) |
+| Qwen 3 32B (local) | OSS | F | — | A+ (grátis) |
 
-Qualidade A+ = funciona e tem código bem estruturado. A = funciona com pequenas ressalvas. C = roda mas bypassa requisitos do prompt ou tem problemas estruturais. D = quebra na primeira mensagem por API inventada. F = não completou o benchmark. GPT 5.4 Pro tem qualidade A+ baseado em uso real no Codex, mas não rodou neste benchmark — daí o "—" no tempo.
+Critério de qualidade: **A+** funciona e tem código bem estruturado. **A** funciona com pequenas ressalvas. **C** roda mas bypassa requisitos do prompt ou tem problemas estruturais. **D** quebra na primeira mensagem por API inventada. **F** não completou o benchmark. O GPT 5.4 Pro fica em A+ baseado em uso real no Codex, mas não rodou neste benchmark — daí o "—" em tempo. "Tipo" separa modelos commercial (closed-weights) dos OSS (pesos abertos, mesmo quando rodados via API hospedada). Dos 25 configurados no benchmark, 5 ficaram de fora desta tabela porque não chegaram a executar (falta de quota, runner quebrado ou timeout antes da primeira mensagem).
 
 ### O veredito
 
