@@ -21,6 +21,7 @@ title: AkitaOnRails Blog
 - [I Rewrote OpenClaw in Rust. Did It Work? | FrankClaw](/en/2026/03/16/rewrote-openclaw-in-rust-frankclaw/)
 - [Going After Email Fraud | Frank FBI](/en/2026/03/09/going-after-email-fraud-frank-fbi/)
 - [Porting 10K Lines of Python to Crystal with Claude: easy-subtitle](/en/2026/03/07/porting-10k-lines-of-python-to-crystal-with-claude-easy-subtitle/)
+- [Crystal and a Smart FFmpeg Wrapper Built in 3 Hours | easy-ffmpeg](/en/2026/03/07/easy-ffmpeg-smart-wrapper-in-crystal/)
 - [37 Days of Vibe Coding Immersion: Conclusions on Business Models](/en/2026/03/05/37-days-of-vibe-coding-immersion-conclusions-on-business-models/)
 
 ## 2026 - January

@@ -30,6 +30,7 @@ These posts have an English version. When other posts link to them, the EN trans
 | `2026/03/27/ensinando-a-questionar-noticias-frank-investigator` | `teaching-people-to-question-the-news-frank-investigator` | 2026-03-27 |
 | `2026/03/09/atacando-fraudes-via-email-frank-fbi` | `going-after-email-fraud-frank-fbi` | 2026-03-09 |
 | `2026/03/07/portando-10-mil-linhas-de-python-pra-crystal-com-claude-easy-subtitle` | `porting-10k-lines-of-python-to-crystal-with-claude-easy-subtitle` | 2026-03-07 |
+| `2026/03/07/crystal-e-um-wrapper-inteligente-pro-ffmpeg-feito-em-3-horas-easy-ffmpeg` | `easy-ffmpeg-smart-wrapper-in-crystal` | 2026-03-07 |
 | `2026/04/06/rag-esta-morto-contexto-longo` | `rag-is-dead-long-context` | 2026-04-06 |
 
 ## Pending (2026 posts not yet translated)
@@ -41,7 +42,6 @@ April 2026:
 
 March 2026:
 
-- `2026/03/07/crystal-e-um-wrapper-inteligente-pro-ffmpeg-feito-em-3-horas-easy-ffmpeg`
 - `2026/03/05/meu-primeiro-fracasso-com-vibe-code-e-como-consertei-frank-yomik`
 - `2026/03/04/eu-fiz-um-sistema-de-data-mining-pra-minha-namorada-influencer-dicas-e-truques`
 - `2026/03/01/software-nunca-esta-pronto-4-projetos-a-vida-pos-deploy-e-por-que-one-shot-prompt-e-mito`

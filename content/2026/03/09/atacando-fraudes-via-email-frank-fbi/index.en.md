@@ -14,7 +14,7 @@ tags:
   - vibe-coding
 ---
 
-This past weekend I worked on 3 projects. Two of them I already published: [easy-ffmpeg](/2026/03/07/crystal-e-um-wrapper-inteligente-pro-ffmpeg-feito-em-3-horas-easy-ffmpeg/), a smart wrapper for FFmpeg in Crystal, and [easy-subtitle](/2026/03/07/portando-10-mil-linhas-de-python-pra-crystal-com-claude-easy-subtitle/), a port of 10 thousand lines of Python to Crystal in less than 40 minutes. I keep improving both, adding features and fixing edge cases as I use them day to day.
+This past weekend I worked on 3 projects. Two of them I already published: [easy-ffmpeg](/en/2026/03/07/easy-ffmpeg-smart-wrapper-in-crystal/), a smart wrapper for FFmpeg in Crystal, and [easy-subtitle](/en/2026/03/07/porting-10k-lines-of-python-to-crystal-with-claude-easy-subtitle/), a port of 10 thousand lines of Python to Crystal in less than 40 minutes. I keep improving both, adding features and fixing edge cases as I use them day to day.
 
 But the third project is a different beast. It's a security project. And the motivation comes from an old pain.
 
