@@ -51,7 +51,7 @@ For anyone wanting to dig deeper into the VRAM math, I recommend [this link from
 
 "But I have 128 GB of RAM!" Cool, but that's not what matters. What matters is memory bandwidth, and the difference between types is wild:
 
-![Memory bandwidth by type](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/04/05/llm-benchmark/memory-bandwidth.png)
+![Memory bandwidth by type](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/04/05/llm-benchmark/en/memory-bandwidth.png)
 
 The RTX 5090 has 7x the bandwidth of the LPDDR5x memory in my Minisforum. That means even if a model fits in the AMD's unified RAM, inference will be proportionally slower. On my Minisforum with LPDDR5x at 256 GB/s, Qwen3 32B runs at ~7 tok/s. On the RTX 5090 at 1,792 GB/s, it'd be much faster — if it fit entirely in VRAM alongside the KV Cache.
 
@@ -239,7 +239,7 @@ Of the 12 models that completed the benchmark, all of them generated a recogniza
 
 But here comes the question that matters: does the code run?
 
-![Cost vs time — and does the code work?](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/04/05/llm-benchmark/cost-vs-quality.png)
+![Cost vs time — and does the code work?](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/04/05/llm-benchmark/en/cost-vs-quality.png)
 
 The correct RubyLLM API is simple:
 
@@ -304,7 +304,7 @@ You save dollars, you spend time. And time is money. For someone learning or exp
 
 ### Full ranking by time and tokens
 
-![Time to complete by model](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/04/05/llm-benchmark/time-to-complete.png)
+![Time to complete by model](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/04/05/llm-benchmark/en/time-to-complete.png)
 
 | Model | Provider | Time | Total Tokens | Tok/s | Cost/Run |
 |---|---|---:|---:|---:|---:|
@@ -329,7 +329,7 @@ DeepSeek V3.2 is the slowest despite being cloud — it has no prompt caching, s
 
 Models with prompt caching pay much less in effective tokens:
 
-![Token efficiency: cache vs new](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/04/05/llm-benchmark/token-efficiency.png)
+![Token efficiency: cache vs new](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/04/05/llm-benchmark/en/token-efficiency.png)
 
 | Model | Total Tokens | Cache Read | Effective New Tokens |
 |---|---:|---:|---:|
@@ -346,7 +346,7 @@ Models with prompt caching pay much less in effective tokens:
 
 There's an aspect that the cost tables hide: inference speed. And the difference is brutal.
 
-![Inference speed by model](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/04/05/llm-benchmark/speed-comparison.png)
+![Inference speed by model](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/04/05/llm-benchmark/en/speed-comparison.png)
 
 Claude Sonnet generates 532 tok/s. Qwen 3.5 122B running locally on my Minisforum (AMD Strix Halo) generates 22 tok/s. That's a 24x difference. In practice, what Sonnet does in 16 minutes, Qwen 3.5 122B takes 43 minutes. Qwen 3 Coder Next at 37 tok/s is the fastest of the local models on the Strix and even so it's 14x slower than Sonnet.
 
@@ -541,13 +541,13 @@ For folks who want to get out from under Anthropic without losing quality, GLM 5
 
 First, the per-token price of each model on OpenRouter:
 
-![Per-token price on OpenRouter](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/04/05/llm-benchmark/token-pricing.png)
+![Per-token price on OpenRouter](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/04/05/llm-benchmark/en/token-pricing.png)
 
 GPT 5.4 Pro charges $180 per million output tokens. Claude Opus charges $25. GLM 5 charges $2.30. And Qwen 3.6 Plus is free (with a rate limit). The log scale on the chart hides some of the brutality of the gap: from free Qwen to GPT 5.4 Pro is orders of magnitude.
 
 But per-token price isn't the whole story. If you use Claude or GPT daily for coding, the monthly subscription can come out way cheaper than paying per token via the API:
 
-![Subscription vs API: how much it costs to use Claude and GPT per month](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/04/05/llm-benchmark/monthly-pricing.png)
+![Subscription vs API: how much it costs to use Claude and GPT per month](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/04/05/llm-benchmark/en/monthly-pricing.png)
 
 | Approach | Est. $/month* | Notes |
 |---|---:|---|

@@ -3,10 +3,15 @@
 Regenerates all charts used in the LLM benchmark blog post.
 
 Usage:
-    python3 generate_charts.py [output_dir]
+    python3 generate_charts.py [output_dir] [--lang pt|en]
 
-Default output_dir is /tmp/llm-charts. After running, upload with:
+Defaults: output_dir = /tmp/llm-charts, lang = pt.
+
+After running, upload with:
     aws s3 cp <output_dir>/ s3://new-uploads-akitaonrails/2026/04/05/llm-benchmark/ \
+        --recursive --exclude "*" --include "*.png"
+For the English subset:
+    aws s3 cp <output_dir>/ s3://new-uploads-akitaonrails/2026/04/05/llm-benchmark/en/ \
         --recursive --exclude "*" --include "*.png"
 
 The data tables below are kept inline so the script is the single source of
@@ -15,13 +20,108 @@ truth. Update them when adding new benchmark runs.
 
 import sys
 import os
+import argparse
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 
-OUTDIR = sys.argv[1] if len(sys.argv) > 1 else "/tmp/llm-charts"
+parser = argparse.ArgumentParser()
+parser.add_argument("outdir", nargs="?", default="/tmp/llm-charts")
+parser.add_argument("--lang", choices=["pt", "en"], default="pt")
+args = parser.parse_args()
+
+OUTDIR = args.outdir
+LANG = args.lang
 os.makedirs(OUTDIR, exist_ok=True)
+
+# Translations for chart labels
+STRINGS = {
+    "pt": {
+        "bandwidth_xlabel": "Largura de banda (GB/s)",
+        "bandwidth_title": "Largura de banda de memória — RAM vs VRAM vs HBM",
+        "bandwidth_unit": "GB/s",
+        "time_xlabel": "Tempo total (minutos)",
+        "time_title": "Tempo de conclusão do benchmark por modelo",
+        "time_unit": "m",
+        "broken_bypass": "Código quebrado / bypass",
+        "tokens_xlabel": "Tokens",
+        "tokens_title": "Eficiência de tokens — quanto vem de cache vs novo",
+        "tokens_cache_label": "Cache lido (barato)",
+        "tokens_new_label": "Tokens novos (caro)",
+        "tokens_cache_pct": "cache",
+        "speed_xlabel": "Tokens por segundo",
+        "speed_title": "Velocidade de inferência (tokens/s)",
+        "cost_xlabel": "Tempo total (minutos)",
+        "cost_ylabel": "Custo estimado por run (USD, escala log)",
+        "cost_title": "Custo vs tempo — e o código realmente funciona?",
+        "status_ok": "Funciona",
+        "status_bypass": "Bypassa o gem",
+        "status_broken": "Quebrado",
+        "pricing_xlabel": "USD por milhão de tokens (escala log)",
+        "pricing_title": "Preço por token no OpenRouter (input vs output)",
+        "pricing_input": "Input $/M",
+        "pricing_output": "Output $/M",
+        "monthly_xlabel": "USD por mês (estimado para uso moderado de coding)",
+        "monthly_title": "Assinatura vs API: quanto custa usar cada modelo por mês",
+        "monthly_free": "Grátis / local",
+        "monthly_sub": "Assinatura mensal",
+        "monthly_api": "API pay-as-you-go",
+        "monthly_free_label": "grátis",
+        "qwen_free_tier": "Qwen 3.6 Plus (free tier)",
+        "local_models": "Modelos locais (eletricidade)",
+        "provider_anthropic": "Anthropic (cloud)",
+        "provider_openrouter": "OpenRouter (cloud)",
+        "provider_google": "Google (cloud)",
+        "provider_amd_strix": "Local — AMD Strix Halo",
+        "provider_nvidia_5090": "Local — NVIDIA RTX 5090",
+        "provider_zai": "Z.AI direto (cloud)",
+        "provider_xai": "xAI (cloud)",
+    },
+    "en": {
+        "bandwidth_xlabel": "Bandwidth (GB/s)",
+        "bandwidth_title": "Memory bandwidth — RAM vs VRAM vs HBM",
+        "bandwidth_unit": "GB/s",
+        "time_xlabel": "Total time (minutes)",
+        "time_title": "Benchmark completion time by model",
+        "time_unit": "m",
+        "broken_bypass": "Broken code / bypass",
+        "tokens_xlabel": "Tokens",
+        "tokens_title": "Token efficiency — how much comes from cache vs new",
+        "tokens_cache_label": "Cache read (cheap)",
+        "tokens_new_label": "New tokens (expensive)",
+        "tokens_cache_pct": "cache",
+        "speed_xlabel": "Tokens per second",
+        "speed_title": "Inference speed (tokens/s)",
+        "cost_xlabel": "Total time (minutes)",
+        "cost_ylabel": "Estimated cost per run (USD, log scale)",
+        "cost_title": "Cost vs time — and does the code actually work?",
+        "status_ok": "Works",
+        "status_bypass": "Bypasses the gem",
+        "status_broken": "Broken",
+        "pricing_xlabel": "USD per million tokens (log scale)",
+        "pricing_title": "Per-token price on OpenRouter (input vs output)",
+        "pricing_input": "Input $/M",
+        "pricing_output": "Output $/M",
+        "monthly_xlabel": "USD per month (estimate for moderate coding use)",
+        "monthly_title": "Subscription vs API: monthly cost of each model",
+        "monthly_free": "Free / local",
+        "monthly_sub": "Monthly subscription",
+        "monthly_api": "API pay-as-you-go",
+        "monthly_free_label": "free",
+        "qwen_free_tier": "Qwen 3.6 Plus (free tier)",
+        "local_models": "Local models (electricity)",
+        "provider_anthropic": "Anthropic (cloud)",
+        "provider_openrouter": "OpenRouter (cloud)",
+        "provider_google": "Google (cloud)",
+        "provider_amd_strix": "Local — AMD Strix Halo",
+        "provider_nvidia_5090": "Local — NVIDIA RTX 5090",
+        "provider_zai": "Z.AI direct (cloud)",
+        "provider_xai": "xAI (cloud)",
+    },
+}
+
+T = STRINGS[LANG]
 
 # Provider colors (consistent across charts)
 COLOR_ANTHROPIC = "#E27447"   # orange
@@ -92,13 +192,13 @@ PROVIDER_COLORS = {
 }
 
 PROVIDER_LABELS = {
-    "anthropic": "Anthropic (cloud)",
-    "openrouter": "OpenRouter (cloud)",
-    "google": "Google (cloud)",
-    "amd_strix": "Local — AMD Strix Halo",
-    "nvidia_5090": "Local — NVIDIA RTX 5090",
-    "zai": "Z.AI direto (cloud)",
-    "xai": "xAI (cloud)",
+    "anthropic": T["provider_anthropic"],
+    "openrouter": T["provider_openrouter"],
+    "google": T["provider_google"],
+    "amd_strix": T["provider_amd_strix"],
+    "nvidia_5090": T["provider_nvidia_5090"],
+    "zai": T["provider_zai"],
+    "xai": T["provider_xai"],
 }
 
 
@@ -128,14 +228,14 @@ def chart_memory_bandwidth():
 
     fig, ax = plt.subplots(figsize=(10, 5.5))
     bars = ax.barh(labels, values, color=colors, edgecolor="black", linewidth=0.5)
-    ax.set_xlabel("Largura de banda (GB/s)")
-    ax.set_title("Largura de banda de memória — RAM vs VRAM vs HBM")
+    ax.set_xlabel(T["bandwidth_xlabel"])
+    ax.set_title(T["bandwidth_title"])
     ax.invert_yaxis()
     ax.set_xscale("log")
     ax.grid(axis="x", linestyle="--", alpha=0.4)
     for bar, v in zip(bars, values):
         ax.text(v * 1.05, bar.get_y() + bar.get_height() / 2,
-                f"{v:,.0f} GB/s", va="center", fontsize=10)
+                f"{v:,.0f} {T['bandwidth_unit']}", va="center", fontsize=10)
     ax.set_xlim(40, 6000)
     save(fig, "memory-bandwidth.png")
 
@@ -157,19 +257,19 @@ def chart_time_to_complete():
             bar.set_hatch("///")
             bar.set_edgecolor("black")
     ax.invert_yaxis()
-    ax.set_xlabel("Tempo total (minutos)")
-    ax.set_title("Tempo de conclusão do benchmark por modelo")
+    ax.set_xlabel(T["time_xlabel"])
+    ax.set_title(T["time_title"])
     ax.grid(axis="x", linestyle="--", alpha=0.4)
     for bar, t in zip(bars, times):
         ax.text(t + 0.5, bar.get_y() + bar.get_height() / 2,
-                f"{t}m", va="center", fontsize=10)
+                f"{t}{T['time_unit']}", va="center", fontsize=10)
 
     # Legend
     from matplotlib.patches import Patch
     legend_items = [Patch(facecolor=PROVIDER_COLORS[k], label=PROVIDER_LABELS[k])
                     for k in ["anthropic", "openrouter", "google", "zai", "amd_strix", "nvidia_5090"]]
     legend_items.append(Patch(facecolor="white", edgecolor="black",
-                              hatch="///", label="Código quebrado / bypass"))
+                              hatch="///", label=T["broken_bypass"]))
     ax.legend(handles=legend_items, loc="lower right", framealpha=0.95, fontsize=9)
     ax.set_xlim(0, max(times) * 1.15)
     save(fig, "time-to-complete.png")
@@ -189,18 +289,18 @@ def chart_token_efficiency():
 
     fig, ax = plt.subplots(figsize=(11, 7))
     y = np.arange(len(labels))
-    ax.barh(y, cache, color="#60A5FA", label="Cache lido (barato)")
-    ax.barh(y, new, left=cache, color="#EF4444", label="Tokens novos (caro)")
+    ax.barh(y, cache, color="#60A5FA", label=T["tokens_cache_label"])
+    ax.barh(y, new, left=cache, color="#EF4444", label=T["tokens_new_label"])
     ax.set_yticks(y)
     ax.set_yticklabels(labels)
     ax.invert_yaxis()
-    ax.set_xlabel("Tokens")
-    ax.set_title("Eficiência de tokens — quanto vem de cache vs novo")
+    ax.set_xlabel(T["tokens_xlabel"])
+    ax.set_title(T["tokens_title"])
     ax.grid(axis="x", linestyle="--", alpha=0.4)
     ax.legend(loc="lower right", framealpha=0.95)
     for i, (c, n, t) in enumerate(zip(cache, new, totals)):
         pct = (c / t * 100) if t else 0
-        ax.text(t + max(totals) * 0.01, i, f"{t:,} ({pct:.0f}% cache)",
+        ax.text(t + max(totals) * 0.01, i, f"{t:,} ({pct:.0f}% {T['tokens_cache_pct']})",
                 va="center", fontsize=9)
     ax.set_xlim(0, max(totals) * 1.25)
     save(fig, "token-efficiency.png")
@@ -218,8 +318,8 @@ def chart_speed_comparison():
     fig, ax = plt.subplots(figsize=(11, 7))
     bars = ax.barh(labels, speeds, color=colors, edgecolor="black", linewidth=0.6)
     ax.invert_yaxis()
-    ax.set_xlabel("Tokens por segundo")
-    ax.set_title("Velocidade de inferência (tokens/s)")
+    ax.set_xlabel(T["speed_xlabel"])
+    ax.set_title(T["speed_title"])
     ax.grid(axis="x", linestyle="--", alpha=0.4)
     for bar, v in zip(bars, speeds):
         ax.text(v + max(speeds) * 0.01, bar.get_y() + bar.get_height() / 2,
@@ -239,7 +339,7 @@ def chart_speed_comparison():
 def chart_cost_vs_quality():
     fig, ax = plt.subplots(figsize=(11, 7))
     status_color = {"ok": "#22C55E", "bypass": "#F59E0B", "broken": "#EF4444"}
-    status_label = {"ok": "Funciona", "bypass": "Bypassa o gem", "broken": "Quebrado"}
+    status_label = {"ok": T["status_ok"], "bypass": T["status_bypass"], "broken": T["status_broken"]}
 
     seen = set()
     for label, prov, t, total, cache, tps, cost, status, comm in BENCH:
@@ -253,10 +353,10 @@ def chart_cost_vs_quality():
         ax.annotate(label, (t, max(cost, 0.01)),
                     xytext=(dx * 6, 5), textcoords="offset points", fontsize=9)
 
-    ax.set_xlabel("Tempo total (minutos)")
-    ax.set_ylabel("Custo estimado por run (USD, escala log)")
+    ax.set_xlabel(T["cost_xlabel"])
+    ax.set_ylabel(T["cost_ylabel"])
     ax.set_yscale("log")
-    ax.set_title("Custo vs tempo — e o código realmente funciona?")
+    ax.set_title(T["cost_title"])
     ax.grid(True, linestyle="--", alpha=0.4)
     ax.legend(loc="upper right", framealpha=0.95, fontsize=10)
     ax.set_xlim(0, 65)
@@ -290,14 +390,14 @@ def chart_token_pricing():
     fig, ax = plt.subplots(figsize=(11, 7))
     y = np.arange(len(labels))
     h = 0.4
-    ax.barh(y - h/2, inp, h, label="Input $/M", color="#60A5FA")
-    ax.barh(y + h/2, out, h, label="Output $/M", color="#EF4444")
+    ax.barh(y - h/2, inp, h, label=T["pricing_input"], color="#60A5FA")
+    ax.barh(y + h/2, out, h, label=T["pricing_output"], color="#EF4444")
     ax.set_yticks(y)
     ax.set_yticklabels(labels)
     ax.invert_yaxis()
     ax.set_xscale("symlog", linthresh=0.1)
-    ax.set_xlabel("USD por milhão de tokens (escala log)")
-    ax.set_title("Preço por token no OpenRouter (input vs output)")
+    ax.set_xlabel(T["pricing_xlabel"])
+    ax.set_title(T["pricing_title"])
     ax.grid(axis="x", linestyle="--", alpha=0.4)
     ax.legend(loc="lower right", framealpha=0.95)
     for i, (a, b) in enumerate(zip(inp, out)):
@@ -313,8 +413,8 @@ def chart_token_pricing():
 # ---------------------------------------------------------------------------
 def chart_monthly_pricing():
     rows = [
-        ("Qwen 3.6 Plus (free tier)",        0,    "free"),
-        ("Modelos locais (eletricidade)",    5,    "free"),
+        (T["qwen_free_tier"],                0,    "free"),
+        (T["local_models"],                  5,    "free"),
         ("Claude Pro",                       20,   "sub"),
         ("ChatGPT Plus",                     20,   "sub"),
         ("Claude Max 5x",                    100,  "sub"),
@@ -333,25 +433,25 @@ def chart_monthly_pricing():
     fig, ax = plt.subplots(figsize=(11, 6.5))
     bars = ax.barh(labels, costs, color=colors, edgecolor="black", linewidth=0.5)
     ax.invert_yaxis()
-    ax.set_xlabel("USD por mês (estimado para uso moderado de coding)")
-    ax.set_title("Assinatura vs API: quanto custa usar cada modelo por mês")
+    ax.set_xlabel(T["monthly_xlabel"])
+    ax.set_title(T["monthly_title"])
     ax.grid(axis="x", linestyle="--", alpha=0.4)
     for bar, v in zip(bars, costs):
         ax.text(v + max(costs) * 0.01, bar.get_y() + bar.get_height() / 2,
-                f"${v}" if v else "grátis", va="center", fontsize=10)
+                f"${v}" if v else T["monthly_free_label"], va="center", fontsize=10)
 
     from matplotlib.patches import Patch
     ax.legend(handles=[
-        Patch(facecolor=COLOR_LOCAL, label="Grátis / local"),
-        Patch(facecolor=COLOR_OPENROUTER, label="Assinatura mensal"),
-        Patch(facecolor=COLOR_ANTHROPIC, label="API pay-as-you-go"),
+        Patch(facecolor=COLOR_LOCAL, label=T["monthly_free"]),
+        Patch(facecolor=COLOR_OPENROUTER, label=T["monthly_sub"]),
+        Patch(facecolor=COLOR_ANTHROPIC, label=T["monthly_api"]),
     ], loc="lower right", framealpha=0.95)
     ax.set_xlim(0, max(costs) * 1.15)
     save(fig, "monthly-pricing.png")
 
 
 def main():
-    print(f"Generating charts into {OUTDIR}/")
+    print(f"Generating charts into {OUTDIR}/ (lang={LANG})")
     chart_memory_bandwidth()
     chart_time_to_complete()
     chart_token_efficiency()
