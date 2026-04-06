@@ -2,6 +2,7 @@
 title: "Migrando meu Home Server com Claude Code | openSUSE MicroOS"
 date: '2026-03-31T16:00:00-03:00'
 draft: false
+translationKey: home-server-migration-claude-code
 tags:
   - homeserver
   - docker

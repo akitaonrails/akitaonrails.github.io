@@ -12,6 +12,7 @@ title: AkitaOnRails Blog
 ## 2026 - March
 
 - [Claude Code's Source Code Leaked. Here's What We Found Inside.](/en/2026/03/31/claude-code-source-code-leaked-what-we-found-inside/)
+- [Migrating my Home Server with Claude Code | openSUSE MicroOS](/en/2026/03/31/migrating-my-home-server-with-claude-code/)
 - [Review: Minisforum MS-S1 Max | AMD AI Max+ 395 with 96GB of VRAM](/en/2026/03/31/minisforum-ms-s1-max-amd-ai-max-395-review/)
 
 ## 2026 - January

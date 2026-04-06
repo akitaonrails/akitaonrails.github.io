@@ -214,4 +214,4 @@ For people asking about the Mac Studio: if you have the budget, it's the best ma
 
 And for people who think you can work around the VRAM limitation with layer offloading: you can't. PCIe is too slow. The model has to fit fully in VRAM for inference to be usable. It's the reason gaming GPUs with 32GB of ultra-fast GDDR7 are still capped on model size, and why the unified memory of the Strix Halo and Apple Silicon changed the equation.
 
-In the [next post](/2026/03/31/migrando-meu-home-server-com-claude-code/) I tell the story of how I migrated the entire home server to the Minisforum using Claude Code, the problems I ran into, and how openSUSE MicroOS behaves as a Docker server operating system.
+In the [next post](/en/2026/03/31/migrating-my-home-server-with-claude-code/) I tell the story of how I migrated the entire home server to the Minisforum using Claude Code, the problems I ran into, and how openSUSE MicroOS behaves as a Docker server operating system.
