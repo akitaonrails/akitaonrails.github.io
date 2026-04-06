@@ -7,12 +7,13 @@
         {{ partial "breadcrumb.html" (dict "page" . "enable" false) }}
         <br class="hx:mt-1.5 hx:text-sm" />
         {{ if .Title }}<h1 class="hx:text-center hx:mt-2 hx:text-4xl hx:font-bold hx:tracking-tight hx:text-slate-900 hx:dark:text-slate-100">{{ .Title }}</h1>{{ end }}
+        {{ partial "custom/lang-toggle.html" . }}
         <div class="hx:text-center hx:mt-4 hx:text-sm hx:text-gray-500 hx:dark:text-gray-400">
           {{- with .Date -}}<em>{{ partial "utils/format-date" . }}</em>{{- end -}}
           {{- with .Site.Config.Services.Disqus.Shortname }}
           <span class="hx:mx-2">·</span>
           <a href="#disqus_wrapper" class="hx:text-gray-400 hx:dark:text-gray-500 hx:hover:text-primary-600 hx:dark:hover:text-primary-400 hx:transition-colors">
-            💬 Participe da Discussão
+            {{ T "joinDiscussion" }}
           </a>
           {{- end -}}
         </div>

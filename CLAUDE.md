@@ -93,3 +93,17 @@ Optional: `slug`, `tags`, `description`
 ## Writing Blog Posts
 
 See `WRITER.md` for detailed blog writing rules (language, voice, fact-checking, images, humanizer workflow).
+
+## Multilingual (PT-BR canonical, EN translations)
+
+The site is bilingual with Portuguese as the canonical language. Hugo's native multilingual mode is configured in `hugo.yaml` (`pt-br` is `defaultContentLanguage`, `en` is the secondary language). EN content lives in sibling files named `index.en.md` next to the existing `index.md`, sharing the same directory and assets.
+
+- PT-BR posts stay at `/YYYY/MM/DD/slug/`
+- EN translations live at `/en/YYYY/MM/DD/slug/` (same slug)
+- The PT | EN toggle is rendered by `layouts/partials/custom/lang-toggle.html`
+- The toggle only appears on individual posts when an `index.en.md` sibling exists; on the homepage and archives it always appears
+- `scripts/generate_index.rb` generates both `_index.md` (PT) and `_index.en.md` (EN), with the EN index only including posts that have an `index.en.md` sibling
+- First-visit auto-redirect from `/` based on browser locale is in `layouts/partials/custom/head-end.html`; choice is persisted in the `lang_pref` cookie
+- Netlify deploy is in `netlify.toml`; the multilingual setup adds nothing to the build pipeline (Hugo handles it)
+
+See `WRITER.md` for the translation workflow and English voice rules.

@@ -1,0 +1,68 @@
+{{/*
+  Language toggle (PT | EN).
+
+  Behavior:
+  - On the homepage and archives page, always rendered.
+  - On a single post, only rendered if a translation exists (.IsTranslated).
+  - Clicking a side sets the lang_pref cookie and navigates to the equivalent
+    URL in that language. For posts without a translation, the EN side is
+    hidden entirely (we never link to a non-existent translation).
+*/}}
+
+{{- $isHome := .IsHome -}}
+{{- $isArchives := and .IsPage (eq .RelPermalink "/archives/") -}}
+{{- $isPost := .IsPage -}}
+{{- $hasTranslations := gt (len .Translations) 0 -}}
+{{- $showOnPost := and $isPost $hasTranslations -}}
+{{- $show := or $isHome $isArchives $showOnPost -}}
+
+{{- if $show -}}
+  {{- $currentLang := .Site.Language.Lang -}}
+
+  {{/* Resolve the URL for each language */}}
+  {{- $ptUrl := "/" -}}
+  {{- $enUrl := "/en/" -}}
+  {{- if $isPost -}}
+    {{- if eq $currentLang "pt-br" -}}
+      {{- $ptUrl = .RelPermalink -}}
+      {{- range .Translations -}}
+        {{- if eq .Lang "en" -}}{{- $enUrl = .RelPermalink -}}{{- end -}}
+      {{- end -}}
+    {{- else -}}
+      {{- $enUrl = .RelPermalink -}}
+      {{- range .Translations -}}
+        {{- if eq .Lang "pt-br" -}}{{- $ptUrl = .RelPermalink -}}{{- end -}}
+      {{- end -}}
+    {{- end -}}
+  {{- else if $isArchives -}}
+    {{- $ptUrl = "/archives/" -}}
+    {{- $enUrl = "/en/archives/" -}}
+  {{- end -}}
+
+  <div class="lang-toggle hx:text-sm hx:text-gray-500 hx:dark:text-gray-400 hx:text-center hx:mt-2 hx:mb-4">
+    <a href="{{ $ptUrl }}"
+       class="lang-toggle-link{{ if eq $currentLang "pt-br" }} lang-toggle-active{{ end }}"
+       data-lang="pt"
+       onclick="document.cookie='lang_pref=pt; path=/; max-age=31536000; samesite=lax';">PT</a>
+    <span class="hx:mx-1">|</span>
+    <a href="{{ $enUrl }}"
+       class="lang-toggle-link{{ if eq $currentLang "en" }} lang-toggle-active{{ end }}"
+       data-lang="en"
+       onclick="document.cookie='lang_pref=en; path=/; max-age=31536000; samesite=lax';">EN</a>
+  </div>
+
+  <style>
+    .lang-toggle-link {
+      text-decoration: none;
+      color: #6b7280;
+      font-weight: 500;
+    }
+    .lang-toggle-link:hover { color: #3b82f6; }
+    .lang-toggle-active {
+      color: #1f2937;
+      font-weight: 700;
+      border-bottom: 1px solid currentColor;
+    }
+    .dark .lang-toggle-active { color: #f3f4f6; }
+  </style>
+{{- end -}}

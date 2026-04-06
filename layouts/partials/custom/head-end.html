@@ -196,3 +196,41 @@
     pointer-events: none;
   }
 </style>
+
+<script>
+// Language preference: cookie + browser-locale fallback.
+// Only auto-redirects from the homepage on the very first visit, and only
+// when the browser locale points the other way. Never touches deep links.
+(function () {
+  try {
+    var path = window.location.pathname;
+    var isPtHome = path === "/" || path === "/index.html";
+    var isEnHome = path === "/en/" || path === "/en/index.html";
+    if (!isPtHome && !isEnHome) return;
+
+    var match = document.cookie.match(/(?:^|;\s*)lang_pref=(pt|en)/);
+    var pref = match ? match[1] : null;
+
+    if (pref === "en" && isPtHome) {
+      window.location.replace("/en/");
+      return;
+    }
+    if (pref === "pt" && isEnHome) {
+      window.location.replace("/");
+      return;
+    }
+
+    if (!pref) {
+      var browser = (navigator.language || navigator.userLanguage || "en").toLowerCase();
+      var wantsEn = !browser.startsWith("pt");
+      if (wantsEn && isPtHome) {
+        window.location.replace("/en/");
+      } else if (!wantsEn && isEnHome) {
+        window.location.replace("/");
+      }
+    }
+  } catch (e) {
+    // never break the page on a redirect failure
+  }
+})();
+</script>

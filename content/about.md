@@ -1,20 +1,21 @@
 ---
-title: About
+title: Sobre
 type: about
+translationKey: about
 ---
 
-I am Fabio Akita, long time blogger and content creator focused on new technology, career in programming, retro-gaming and anything geek-related. More than a content creator I am a computer science graduate, and I have been working with programming since the early 1990s. I do have extensive experience in all aspects of the computing industry. That's why I write about it: because I had first hand experience.
+Sou o Fabio Akita, blogueiro e criador de conteúdo de longa data, focado em tecnologia, carreira em programação, retro-gaming e qualquer coisa geek. Mais do que criador de conteúdo, sou formado em ciência da computação e venho trabalhando com programação desde o começo dos anos 90. Tenho experiência ampla em praticamente todas as facetas da indústria de computação. É por isso que escrevo sobre o assunto: porque vivi tudo na pele.
 
-This blog started at the old [Blogspot](https://web.archive.org/web/20060715034642/http://balanceonrails.blogspot.com/) as Balance on Rails (I worked for a small consultancy shop called Balance, back in the early 2000s). It started as a Ruby on Rails evangelist page, back when Rails was pre-1.0. I even wrote one of the first books about Rails, in Brazilian Portuguese.
+Esse blog começou lá no antigo [Blogspot](https://web.archive.org/web/20060715034642/http://balanceonrails.blogspot.com/) como Balance on Rails (eu trabalhava numa consultoria pequena chamada Balance, no começo dos anos 2000). Nasceu como página de evangelização de Ruby on Rails, quando o Rails ainda era pré-1.0. Cheguei a escrever um dos primeiros livros sobre Rails do mundo, em português do Brasil.
 
-I have been writing online since 2006. It's been more than a thousand posts and almost 20 years. During this period I opened my own shop called [Codeminer 42](https://codeminer42.com), in 2011. I also organized Ruby and Tech Conferences in Brazil from 2007 all the way to 2019.
+Escrevo online desde 2006. São mais de mil posts e quase 20 anos de estrada. Nesse intervalo abri minha própria empresa, a [Codeminer 42](https://codeminer42.com), em 2011. Também organizei conferências de Ruby e tecnologia no Brasil de 2007 até 2019.
 
-Covid-19 came along, and I started a [YouTube Channel](https://www.youtube.com/@Akitando) that surpassed 500,000 subscribers in mid-2025. It's a timeless chanell with everything a programmer needs to know to have a bubble-proof and ever lasting career in tech. I finished what I wanted to share in 2024, and I don't have any immediate plans to return. All videos are still valuable content.
+A pandemia chegou, e eu comecei um [Canal no YouTube](https://www.youtube.com/@Akitando) que passou de 500 mil inscritos em meados de 2025. É um canal atemporal, com tudo o que um programador precisa saber pra ter uma carreira sólida e à prova de modinha. Terminei de falar o que queria em 2024 e não tenho planos imediatos de voltar. Mas todos os vídeos continuam valendo a pena.
 
-I am always dabbling and ruminating about random tech topics on [X](https://x.com/AkitaOnRails) and [Instagram](https://www.instagram.com/akitaonrails/). Both are protected and personal accounts, so you have to request permission to join. And beware that I frequently block and report spammers and haters alike. Joining is a privilege, do not waste it.
+Vivo cutucando e ruminando sobre tecnologia no [X](https://x.com/AkitaOnRails). É uma conta pessoal e protegida, então você precisa pedir pra entrar. E aviso: bloqueio e reporto spammer e hater na mesma velocidade. Entrar lá é privilégio, não desperdice.
 
-I used to travel all around the world to talk at conferences, podcasts, etc. But I am now retired from talking. If you want to see what I am doing these days, there is this blog and my X and Instagram.
+Já viajei o mundo todo pra palestrar em conferência, podcast, essas coisas. Mas hoje estou aposentado de palestrar. Se quiser acompanhar o que ando fazendo, é por aqui no blog e pelo meu X.
 
-I never accepted sponsorships or did any kind of paid content. And I am still not open to be paid to talk things I don't believe in. Do not test me.
+Nunca aceitei patrocínio nem fiz conteúdo pago. E continuo não aberto a ser pago pra falar de coisas em que eu não acredito. Não teste isso.
 
-If you have important matters to talk to me, you can send an email to my company's [contact email](mailto:contact@codeminer42.com). I won't reply unless it interests me.
+Se tiver assunto sério pra tratar comigo, manda email pelo [contato da empresa](mailto:contact@codeminer42.com). Não respondo a menos que o assunto me interesse.

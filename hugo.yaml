@@ -15,8 +15,95 @@ baseURL: "https://www.akitaonrails.com/"
 
 languages:
   pt-br:
-    languageName: "Portugues"
+    languageName: "Português"
+    languageCode: "pt-BR"
     weight: 1
+    menu:
+      main:
+        - name: Tema
+          weight: 0
+          params:
+            type: theme-toggle
+        - name: Sobre
+          pageRef: /about
+          weight: 1
+        - name: GitHub ↗
+          url: "https://github.com/akitaonrails"
+          weight: 2
+          params:
+            icon: github
+        - name: Buscar
+          weight: 3
+          params:
+            type: search
+        - name: RSS
+          weight: 4
+          url: "/index.xml"
+          params:
+            icon: rss
+      sidebar:
+        - name: GitHub
+          weight: 1
+          url: "https://github.com/akitaonrails/akitaonrails.github.io"
+          params:
+            icon: github
+        - name: Twitter
+          weight: 1
+          url: "https://x.com/AkitaOnRails"
+          params:
+            icon: x-twitter
+        - name: The M.Akita Chronicles
+          weight: 2
+          url: "https://themakitachronicles.com"
+          params:
+            icon: newspaper
+  en:
+    languageName: "English"
+    languageCode: "en"
+    weight: 2
+    title: "AkitaOnRails.com"
+    contentDir: "content"
+    params:
+      description: "Fabio Akita's blog — tech, career, and assorted geek topics. English edition."
+    menu:
+      main:
+        - name: Theme
+          weight: 0
+          params:
+            type: theme-toggle
+        - name: About
+          pageRef: /en/about
+          weight: 1
+        - name: GitHub ↗
+          url: "https://github.com/akitaonrails"
+          weight: 2
+          params:
+            icon: github
+        - name: Search
+          weight: 3
+          params:
+            type: search
+        - name: RSS
+          weight: 4
+          url: "/en/index.xml"
+          params:
+            icon: rss
+      sidebar:
+        - name: GitHub
+          weight: 1
+          url: "https://github.com/akitaonrails/akitaonrails.github.io"
+          params:
+            icon: github
+        - name: Twitter
+          weight: 1
+          url: "https://x.com/AkitaOnRails"
+          params:
+            icon: x-twitter
+        - name: The M.Akita Chronicles
+          weight: 2
+          url: "https://themakitachronicles.com"
+          params:
+            icon: newspaper
 
 outputs:
   home: [HTML, RSS]
@@ -39,46 +126,6 @@ markup:
   # enable hextra syntax highlight
   highlight:
     noClasses: false
-
-menu:
-  main:
-    - name: Theme
-      weight: 0
-      params:
-        type: theme-toggle
-    - name: About
-      pageRef: /about
-      weight: 1
-    - name: GitHub ↗
-      url: "https://github.com/akitaonrails"
-      weight: 2
-      params:
-        icon: github
-    - name: Search
-      weight: 3
-      params:
-        type: search
-    - name: RSS
-      weight: 4
-      url: "/index.xml"
-      params:
-        icon: rss
-  sidebar:
-    - name: GitHub
-      weight: 1
-      url: "https://github.com/akitaonrails/akitaonrails.github.io"
-      params:
-        icon: github
-    - name: Twitter
-      weight: 1
-      url: "https://x.com/AkitaOnRails"
-      params:
-        icon: x-twitter
-    - name: Instagram
-      weight: 1
-      url: "https://instagram.com/AkitaOnRails"
-      params:
-        icon: instagram
 
 params:
   navbar:

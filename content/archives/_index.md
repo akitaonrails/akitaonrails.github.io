@@ -2,6 +2,8 @@
 title: AkitaOnRails Blog - Arquivo
 ---
 
+{{< lang-toggle >}}
+
 ## 2024 - December
 
 - [Refletindo Sobre Alcance de Redes Sociais](/2024/12/14/refletindo-sobre-alcance-de-redes-sociais-dff9d8fb-b54f-47f8-a013-4e37a54687e3/)
@@ -844,7 +846,7 @@ title: AkitaOnRails Blog - Arquivo
 - [\[Off-Topic\] Mea Culpa: Organizações Democráticas não Funcionam](/2011/04/25/off-topic-mea-culpa-organizacoes-democraticas-nao-funcionam/)
 - [\[Objective-C\] Distributing your Static Library](/2011/04/24/objective-c-distributing-your-static-library/)
 - [\[Objective-C\] Categories, Static Libraries and Gotchas](/2011/04/23/objective-c-categories-static-libraries-and-gotchas/)
-- [\[Objective-C\] It's a Unix System! I know this!](/2011/04/23/objective-c-it's-a-unix-system-i-know-this/)
+- [\[Objective-C\] It's a Unix System! I know this!](/2011/04/23/objective-c-its-a-unix-system-i-know-this/)
 - [\[Off-Topic\] Adendo à controvérsia HAML, SASS, Coffeescript: Tamanho do Documento](/2011/04/19/off-topic-adendo-a-controversia-haml-sass-coffeescript-tamanho-do-documento/)
 - [A Controvérsia Test::Unit vs RSpec/Cucumber](/2011/04/17/a-controversia-test-unit-vs-rspec-cucumber/)
 - [A Controvérsia CoffeeScript](/2011/04/16/a-controversia-coffeescript/)
