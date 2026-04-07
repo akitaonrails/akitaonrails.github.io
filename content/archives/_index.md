@@ -145,7 +145,6 @@ Quer ver as transcrições do Canal Akitando? [Clique aqui](/akitando/).
 - [Implementação em Ruby on Rails de um sistema de Ranking/Popularidade (do jeito certo)](/2016/10/31/implementacao-ruby-on-rails-sistema-ranking-popularidade-correto/)
 - [\[Discussão\] Como proteger nosso trabalho de provedores de DNS sofrendo ataques DDoS?](/2016/10/31/discussao-como-proteger-nosso-trabalho-de-provedores-de-dns-sofrendo-ataques-ddos/)
 - [Geração de Linguagem Natural em Ruby (com JRuby + SimpleNLG)](/2016/10/28/geracao-de-linguagem-natural-em-ruby-com-jruby-simplenlg/)
-- [THE CONF Initiative](/2016/10/20/the-conf-initiative/)
 - [Iniciativa THE CONF](/2016/10/20/iniciativa-the-conf/)
 - [Compartilhando models entre apps Rails - Parte 2](/2016/10/03/compartilhando-models-entre-apps-rails-parte-2/)
 - [Compartilhando models entre aplicações Rails - Parte 1](/2016/10/03/compartilhando-models-entre-aplicacoes-rails-parte-1/)
@@ -189,7 +188,6 @@ Quer ver as transcrições do Canal Akitando? [Clique aqui](/akitando/).
 
 ## 2016 - Março
 
-- [War is Over, or is it? A New Dawn for Microsoft](/2016/03/31/war-is-over-or-is-it-a-new-dawn-for-microsoft/)
 - [\[Off-Topic\] Uma Nova Era para a Microsoft](/2016/03/31/off-topic-uma-nova-era-para-a-microsoft/)
 - [Melhorando a Performance de Integração entre Microservices com Memcache e ETAGs](/2016/03/23/melhorando-performance-integracao-microservices-memcache-etags/)
 - [Sua aplicação Rails está pronta para Produção?](/2016/03/22/sua-aplicacao-rails-esta-pronta-para-producao/)
@@ -377,33 +375,22 @@ Quer ver as transcrições do Canal Akitando? [Clique aqui](/akitando/).
 
 - [Rubyconf Brasil 2013: Conheça Tiago Bastos e Eduardo Gurgel](/2013/08/29/rubyconf-brasil-2013-conheca-tiago-bastos-e-eduardo-gurgel/)
 - [Rubyconf Brasil 2013: Conheça Halan Pinheiro](/2013/08/28/rubyconf-brasil-2013-conheca-halan-pinheiro/)
-- [Rubyconf Brasil 2013: Meet Luis Cipriani](/2013/08/27/rubyconf-brasil-2013-meet-luis-cipriani/)
 - [Rubyconf Brasil 2013: Conheça Luis Cipriani](/2013/08/27/rubyconf-brasil-2013-conheca-luis-cipriani/)
-- [Rubyconf Brasil 2013: Meet Carlos Galdino](/2013/08/26/rubyconf-brasil-2013-meet-carlos-galdino/)
 - [Rubyconf Brasil 2013: Conheça Carlos Galdino](/2013/08/26/rubyconf-brasil-2013-conheca-carlos-galdino/)
 - [Rubyconf Brasil 2013: Lembrando de _Why. Engenharia vs Arte](/2013/08/24/rubyconf-brasil-2013-lembrando-de-_why/)
 - [\[Off-Topic\] Estimativas são Promessas. Promessas devem ser cumpridas.](/2013/08/23/off-topic-estimativas-sao-promessas-promessas-devem-ser-cumpridas/)
-- [Rubyconf Brasil 2013: Meet William PotHix](/2013/08/23/rubyconf-brasil-2013-meet-william-pothix/)
 - [Rubyconf Brasil 2013: Conheça William PotHix](/2013/08/23/rubyconf-brasil-2013-conheca-william-pothix/)
-- [Rubyconf Brasil 2013: Meet Bruno AbstractJ](/2013/08/23/rubyconf-brasil-2013-meet-bruno-abstractj/)
-- [Rubyconf Brasil 2013: Meet Danilo Sato](/2013/08/22/rubyconf-brasil-2013-meet-danilo-sato/)
 - [Rubyconf Brasil 2013: Conheça Bruno AbstractJ](/2013/08/22/rubyconf-brasil-2013-conheca-bruno-abstractj/)
-- [Rubyconf Brasil 2013: Meet Eduardo Shiota](/2013/08/19/rubyconf-brasil-2013-meet-eduardo-shiota/)
 - [Rubyconf Brasil 2013: Conheça Eduardo Shiota](/2013/08/19/rubyconf-brasil-2013-conheca-eduardo-shiota/)
 - [Rubyconf Brasil 2013: Vinheta de Abertura](/2013/08/19/rubyconf-brasil-2013-vinheta-de-abertura/)
 - [Rubyconf Brasil 2013: Conheça Rodrigo Caffo](/2013/08/16/rubyconf-brasil-2013-conheca-rodrigo-caffo/)
 - [Rubyconf Brasil 2013: Your first time in São Paulo, Brazil](/2013/08/15/rubyconf-brasil-2013-your-first-time-in-sao-paulo-brazil/)
 - [Rubyconf Brasil 2013: Conheça Danilo Sato](/2013/08/15/rubyconf-brasil-2013-conheca-danilo-sato/)
-- [Rubyconf Brasil 2013: Meet Hongli Lai](/2013/08/14/rubyconf-brasil-2013-meet-hongli-lai/)
 - [Rubyconf Brasil 2013: Conheça Hongli Lai](/2013/08/14/rubyconf-brasil-2013-conheca-hongli-lai/)
-- [Rubyconf Brasil 2013: Jaime Andrés Dávila](/2013/08/13/rubyconf-brasil-2013-jaime-andres-davila--2/)
 - [Rubyconf Brasil 2013: Jaime Andrés Dávila](/2013/08/13/rubyconf-brasil-2013-jaime-andres-davila/)
 - [Rubyconf Brasil 2013: Conheça Carlos (Chester) Nascimento](/2013/08/12/rubyconf-brasil-2013-conheca-carlos-chester-nascimento/)
-- [Rubyconf Brasil 2013: Meet Caike Souza](/2013/08/11/rubyconf-brasil-2013-meet-caike-souza/)
 - [Rubyconf Brasil 2013: Conheça Caike Souza](/2013/08/11/rubyconf-brasil-2013-conheca-caike-souza/)
-- [Rubyconf Brasil 2013: Meet Pablo Astigarraga](/2013/08/09/rubyconf-brasil-2013-meet-pablo-astigarraga/)
 - [Rubyconf Brasil 2013: Conheça Pablo Astigarraga](/2013/08/09/rubyconf-brasil-2013-conheca-pablo-astigarraga/)
-- [Rubyconf Brasil 2013: Meet Hal Fulton](/2013/08/08/rubyconf-brasil-2013-meet-hal-fulton/)
 - [Rubyconf Brasil 2013: Conheça Hal Fulton](/2013/08/08/rubyconf-brasil-2013-conheca-hal-fulton/)
 
 ## 2013 - Julho
@@ -479,7 +466,6 @@ Quer ver as transcrições do Canal Akitando? [Clique aqui](/akitando/).
 - [ActiveAdmin + Best in Place](/2012/07/23/activeadmin-best-in-place/)
 - [Internationalização (I18n) Mínima em Rails 3.2 - Parte 2](/2012/07/14/internationalizacao-i18n-minima-em-rails-3-2-parte-2/)
 - [Internationalização (I18n) Mínima em Rails 3.2 - Parte 1](/2012/07/14/internationalizacao-i18n-minima-em-rails-3-2-parte-1/)
-- [Registration are Open for Rubyconf Brazil 2012](/2012/07/11/registration-are-open-for-rubyconf-brazil-2012/)
 - [Inscrições Abertas para a Rubyconf Brasil 2012!](/2012/07/11/inscricoes-abertas-para-a-rubyconf-brasil-2012/)
 - [\[Off-Topic\] Steve Jobs, The Lost Inverview](/2012/07/08/off-topic-steve-jobs-the-lost-inverview/)
 - [Asset Pipeline para Iniciantes - Parte 2](/2012/07/01/asset-pipeline-para-iniciantes-parte-2/)
@@ -522,7 +508,6 @@ Quer ver as transcrições do Canal Akitando? [Clique aqui](/akitando/).
 ## 2011 - Setembro
 
 - [\[Off-Topic\] Disney, História do Computador e o Encarte Perdido](/2011/09/25/off-topic-disney-historia-do-computador-e-o-encarte-perdido/)
-- [RubyConf Brazil 2011 is coming!](/2011/09/19/rubyconf-brazil-2011-is-coming/)
 - [RubyConf Brasil 2011 está chegando!](/2011/09/19/rubyconf-brasil-2011-esta-chegando/)
 - [\[Off-Topic\] Minha Carreira - Fase 5 - Codeminer 42](/2011/09/19/off-topic-minha-carreira-fase-5-codeminer-42/)
 
@@ -534,7 +519,6 @@ Quer ver as transcrições do Canal Akitando? [Clique aqui](/akitando/).
 
 - [\[Journey to Japan #1\] Exploring Tokyo City](/2011/07/26/journey-to-japan-1-exploring-tokyo-city/)
 - [Em breve: Jornada ao Japão](/2011/07/23/em-breve-jornada-ao-japao/)
-- [Upcoming: Journey to Japan](/2011/07/23/upcoming-journey-to-japan/)
 - [Indo para a RubyKaigi 2011 - Fechando um Ciclo](/2011/07/11/indo-para-a-rubykaigi-2011-fechando-um-ciclo/)
 
 ## 2011 - Maio
@@ -582,7 +566,6 @@ Quer ver as transcrições do Canal Akitando? [Clique aqui](/akitando/).
 
 ## 2010 - Setembro
 
-- [RubyConf Brazil is Coming up!](/2010/09/03/rubyconf-brazil-is-coming-up/)
 - [O RubyConf Brasil está Chegando!](/2010/09/03/o-rubyconf-brasil-esta-chegando/)
 
 ## 2010 - Agosto
@@ -600,14 +583,10 @@ Quer ver as transcrições do Canal Akitando? [Clique aqui](/akitando/).
 ## 2010 - Junho
 
 - [\[Off-Topic\] Jeff Patton e Megan Fox no mesmo post?](/2010/06/27/off-topic-jeff-patton-e-megan-fox-no-mesmo-post/)
-- [\[RailsConf 2010\] - Video Interview - David Hansson](/2010/06/17/railsconf-2010-video-interview-david-hansson/)
-- [\[RailsConf 2010\] - Video Interviews - Part 2](/2010/06/17/railsconf-2010-video-interviews-part-2/)
 - [\[RailsConf 2010\] - Video Entrevista - David Hansson](/2010/06/17/railsconf-2010-video-entrevista-david-hansson/)
-- [\[RailsConf 2010\] - Video Interviews - Part 1](/2010/06/17/railsconf-2010-video-interviews-part-1/)
 - [\[RailsConf 2010\] - Video Entrevistas - Parte 2](/2010/06/17/railsconf-2010-video-entrevistas-parte-2/)
 - [\[RailsConf 2010\] - Video Entrevistas - Parte 1](/2010/06/17/railsconf-2010-video-entrevistas-parte-1/)
 - [\[RailsConf 2010\] - Viagem e Evento](/2010/06/17/railsconf-2010-viagem-e-evento/)
-- [\[RailsConf 2010\] - Video Interview - Robert Martin (English)](/2010/06/16/railsconf-2010-video-interview-robert-martin-english/)
 - [\[RailsConf 2010\] - Video Entrevista - Robert Martin](/2010/06/16/railsconf-2010-video-entrevista-robert-martin/)
 
 ## 2010 - Maio

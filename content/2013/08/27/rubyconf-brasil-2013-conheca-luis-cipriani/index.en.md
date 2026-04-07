@@ -4,8 +4,8 @@ date: '2013-08-27T10:00:00-03:00'
 slug: rubyconf-brasil-2013-meet-luis-cipriani
 tags:
 - rubyconfbr2013
-- english
 draft: false
+translationKey: rubyconf-2013-luis-cipriani
 ---
 
 ![Luis Cipriani](http://www.rubyconf.com.br/assets/speakers/LuisCipriani-9b354700619361729e26a739b096ae23.jpg)

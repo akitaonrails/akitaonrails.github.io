@@ -4,8 +4,8 @@ date: '2013-08-09T09:00:00-03:00'
 slug: rubyconf-brasil-2013-meet-pablo-astigarraga
 tags:
 - rubyconfbr2013
-- english
 draft: false
+translationKey: rubyconf-2013-pablo-astigarraga
 ---
 
 ![Pablo Astigarraga](http://www.rubyconf.com.br/assets/speakers/PabloAstigarraga-719eb0412701f47d718e49f5b8142860.jpg)

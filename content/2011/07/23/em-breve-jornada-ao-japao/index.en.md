@@ -4,8 +4,8 @@ date: '2011-07-23T21:30:00-03:00'
 slug: upcoming-journey-to-japan
 tags:
 - rubykaigi2011
-- english
 draft: false
+translationKey: journey-to-japan-upcoming
 ---
 
 

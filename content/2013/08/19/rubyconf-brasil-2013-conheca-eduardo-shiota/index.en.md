@@ -4,8 +4,8 @@ date: '2013-08-19T12:45:00-03:00'
 slug: rubyconf-brasil-2013-meet-eduardo-shiota
 tags:
 - rubyconfbr2013
-- english
 draft: false
+translationKey: rubyconf-2013-eduardo-shiota
 ---
 
 ![Eduardo Shiota](http://www.rubyconf.com.br/assets/speakers/EduardoShiota-4c75335a678896e26b9548872cd6d7d4.jpg)

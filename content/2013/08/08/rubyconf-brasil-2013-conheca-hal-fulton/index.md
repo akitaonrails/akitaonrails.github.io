@@ -5,6 +5,9 @@ slug: rubyconf-brasil-2013-conheca-hal-fulton
 tags:
 - rubyconfbr2013
 draft: false
+translationKey: rubyconf-2013-hal-fulton
+aliases:
+- "/2013/08/08/rubyconf-brasil-2013-meet-hal-fulton/"
 ---
 
 ![Hal Fulton](http://www.rubyconf.com.br/assets/speakers/HalFulton-cdd3c55c77451379496ec2ce1e421c77.jpg)

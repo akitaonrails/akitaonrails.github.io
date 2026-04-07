@@ -6,6 +6,9 @@ tags:
 - railsconf2010
 - interview
 draft: false
+translationKey: railsconf-2010-robert-martin
+aliases:
+- "/2010/06/16/railsconf-2010-video-interview-robert-martin-english/"
 ---
 
  **Obs:** para a versão em Inglês, clique [aqui](/2010/06/16/railsconf-2010-video-interview-robert-martin-english)

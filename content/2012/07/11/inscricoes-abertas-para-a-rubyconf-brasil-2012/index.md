@@ -5,6 +5,9 @@ slug: inscricoes-abertas-para-a-rubyconf-brasil-2012
 tags:
 - rubyconfbr2012
 draft: false
+translationKey: rubyconf-brazil-2012-registration
+aliases:
+- "/2012/07/11/registration-are-open-for-rubyconf-brazil-2012/"
 ---
 
 

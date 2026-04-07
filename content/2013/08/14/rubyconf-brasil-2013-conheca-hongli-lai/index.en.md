@@ -4,8 +4,8 @@ date: '2013-08-14T17:41:00-03:00'
 slug: rubyconf-brasil-2013-meet-hongli-lai
 tags:
 - rubyconfbr2013
-- english
 draft: false
+translationKey: rubyconf-2013-hongli-lai
 ---
 
 ![Hongli Lai](http://www.rubyconf.com.br/assets/speakers/hongli_lai-2cfc23d129a2a1f001d84df45863071a.jpg)

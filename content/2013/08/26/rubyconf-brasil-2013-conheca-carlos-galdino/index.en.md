@@ -4,8 +4,8 @@ date: '2013-08-26T09:20:00-03:00'
 slug: rubyconf-brasil-2013-meet-carlos-galdino
 tags:
 - rubyconfbr2013
-- english
 draft: false
+translationKey: rubyconf-2013-carlos-galdino
 ---
 
 ![Carlos Galdino](http://www.rubyconf.com.br/assets/speakers/CarlosGaldino-174f14e42c5fbe78ee47f63273f2c946.jpg)

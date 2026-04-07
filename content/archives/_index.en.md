@@ -97,6 +97,7 @@ Want to see the Akitando Channel transcripts (Portuguese only)? [Click here](/ak
 - [Ruby on Rails implementation of a (proper) Ranking/Popularity system](/en/2016/10/31/ruby-on-rails-implementation-of-a-proper-ranking-popularity-system/)
 - [\[Discussion\] Can we protect our work from DNS providers suffering DDoS attacks?](/en/2016/10/31/discussion-can-we-protect-our-work-from-dns-providers-suffering-ddos-attacks/)
 - [Natural Language Generation in Ruby (with JRuby + SimpleNLG)](/en/2016/10/28/natural-language-generation-in-ruby-with-jruby-simplenlg/)
+- [THE CONF Initiative](/en/2016/10/20/the-conf-initiative/)
 - [Sharing models between Rails Apps - Part 2](/en/2016/10/03/sharing-models-between-rails-apps-part-2/)
 - [Sharing models between Rails Apps - Part 1](/en/2016/10/03/sharing-models-between-rails-apps-part-1/)
 
@@ -137,6 +138,7 @@ Want to see the Akitando Channel transcripts (Portuguese only)? [Click here](/ak
 
 ## 2016 - March
 
+- [War is Over, or is it? A New Dawn for Microsoft](/en/2016/03/31/war-is-over-or-is-it-a-new-dawn-for-microsoft/)
 - [Improving your Microservices Integration Performance with Memcache and ETAGs](/en/2016/03/23/improving-your-microservices-integration-performance-with-memcache-and-etags/)
 - [Is your Rails app ready for Production?](/en/2016/03/22/is-your-rails-app-ready-for-production/)
 
@@ -180,6 +182,20 @@ Want to see the Akitando Channel transcripts (Portuguese only)? [Click here](/ak
 - [Rubyconf Brasil 2014 - Dates are Set!](/en/2013/10/07/rubyconf-brasil-2014-dates-are-set/)
 - [\[Off-Topic\] #noEstimates Debunked](/en/2013/10/07/off-topic-noestimates-debunked/)
 
+## 2013 - August
+
+- [Rubyconf Brasil 2013: Meet Luis Cipriani](/en/2013/08/27/rubyconf-brasil-2013-meet-luis-cipriani/)
+- [Rubyconf Brasil 2013: Meet Carlos Galdino](/en/2013/08/26/rubyconf-brasil-2013-meet-carlos-galdino/)
+- [Rubyconf Brasil 2013: Meet William PotHix](/en/2013/08/23/rubyconf-brasil-2013-meet-william-pothix/)
+- [Rubyconf Brasil 2013: Meet Bruno AbstractJ](/en/2013/08/22/rubyconf-brasil-2013-meet-bruno-abstractj/)
+- [Rubyconf Brasil 2013: Meet Danilo Sato](/en/2013/08/15/rubyconf-brasil-2013-meet-danilo-sato/)
+- [Rubyconf Brasil 2013: Meet Eduardo Shiota](/en/2013/08/19/rubyconf-brasil-2013-meet-eduardo-shiota/)
+- [Rubyconf Brasil 2013: Meet Hongli Lai](/en/2013/08/14/rubyconf-brasil-2013-meet-hongli-lai/)
+- [Rubyconf Brasil 2013: Jaime Andrés Dávila](/en/2013/08/13/rubyconf-brasil-2013-jaime-andres-davila/)
+- [Rubyconf Brasil 2013: Meet Caike Souza](/en/2013/08/11/rubyconf-brasil-2013-meet-caike-souza/)
+- [Rubyconf Brasil 2013: Meet Pablo Astigarraga](/en/2013/08/09/rubyconf-brasil-2013-meet-pablo-astigarraga/)
+- [Rubyconf Brasil 2013: Meet Hal Fulton](/en/2013/08/08/rubyconf-brasil-2013-meet-hal-fulton/)
+
 ## 2012 - November
 
 - [Startup Journey 2012](/en/2012/11/21/startup-journey-2012/)
@@ -191,15 +207,38 @@ Want to see the Akitando Channel transcripts (Portuguese only)? [Click here](/ak
 - [Ruby is Beautiful? What is Beauty?](/en/2012/09/02/ruby-is-beautiful-what-is-beauty/)
 - [RubyConf Brasil 2012 - It's a Wrap!](/en/2012/09/01/rubyconf-brasil-2012-it-s-a-wrap/)
 
+## 2012 - July
+
+- [Registration are Open for Rubyconf Brazil 2012](/en/2012/07/11/registration-are-open-for-rubyconf-brazil-2012/)
+
 ## 2012 - May
 
 - [\[Off-Topic\] Reading with subtitles over Kanjis in Japanese webpages](/en/2012/05/08/off-topic-reading-with-subtitles-over-kanjis-in-japanese-webpages/)
+
+## 2011 - September
+
+- [RubyConf Brazil 2011 is coming!](/en/2011/09/19/rubyconf-brazil-2011-is-coming/)
+
+## 2011 - July
+
+- [Upcoming: Journey to Japan](/en/2011/07/23/upcoming-journey-to-japan/)
 
 ## 2011 - April
 
 - [\[Objective-C\] Distributing your Static Library](/en/2011/04/24/objective-c-distributing-your-static-library/)
 - [\[Objective-C\] Categories, Static Libraries and Gotchas](/en/2011/04/23/objective-c-categories-static-libraries-and-gotchas/)
 - [\[Objective-C\] It's a Unix System! I know this!](/en/2011/04/23/objective-c-its-a-unix-system-i-know-this/)
+
+## 2010 - September
+
+- [RubyConf Brazil is Coming up!](/en/2010/09/03/rubyconf-brazil-is-coming-up/)
+
+## 2010 - June
+
+- [\[RailsConf 2010\] - Video Interview - David Hansson](/en/2010/06/17/railsconf-2010-video-interview-david-hansson/)
+- [\[RailsConf 2010\] - Video Interviews - Part 2](/en/2010/06/17/railsconf-2010-video-interviews-part-2/)
+- [\[RailsConf 2010\] - Video Interviews - Part 1](/en/2010/06/17/railsconf-2010-video-interviews-part-1/)
+- [\[RailsConf 2010\] - Video Interview - Robert Martin (English)](/en/2010/06/16/railsconf-2010-video-interview-robert-martin-english/)
 
 ## 2009 - May
 

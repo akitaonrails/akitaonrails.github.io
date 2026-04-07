@@ -6,6 +6,9 @@ tags:
 - off-topic
 - microsoft
 draft: false
+translationKey: nova-era-microsoft-2016
+aliases:
+- "/2016/03/31/war-is-over-or-is-it-a-new-dawn-for-microsoft/"
 ---
 
 Atualização 07/04: [o preview já saiu](http://thehackernews.com/2016/04/how-to-run-ubuntu-on-windows-10.html) antecipando o lançamento em Junho. Se você for membro do programa Insider, baixe e teste já. Deixe suas impressões nos comentários.

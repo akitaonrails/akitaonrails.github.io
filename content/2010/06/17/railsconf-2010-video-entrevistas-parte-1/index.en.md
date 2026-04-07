@@ -5,8 +5,8 @@ slug: railsconf-2010-video-interviews-part-1
 tags:
 - railsconf2010
 - interview
-- english
 draft: false
+translationKey: railsconf-2010-interviews-part-1
 ---
 
 As I said in the [previous post](/2010/06/17/railsconf-2010-viagem-e-evento), I decided to go back to my evangelism activities, running after interviews. Despite the short amount of time, around 5 hours, I was able to collect nothing less than 11 interviews.

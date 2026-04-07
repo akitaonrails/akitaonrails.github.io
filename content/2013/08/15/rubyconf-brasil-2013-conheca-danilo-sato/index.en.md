@@ -4,8 +4,8 @@ date: '2013-08-22T12:08:00-03:00'
 slug: rubyconf-brasil-2013-meet-danilo-sato
 tags:
 - rubyconfbr2013
-- english
 draft: false
+translationKey: rubyconf-2013-danilo-sato
 ---
 
 ![Danilo Sato](http://www.rubyconf.com.br/assets/speakers/DaniloSato-bbec5422aab078faa2305b0bb5dea1d5.jpg)

@@ -5,8 +5,8 @@ slug: railsconf-2010-video-interview-david-hansson
 tags:
 - railsconf2010
 - interview
-- english
 draft: false
+translationKey: railsconf-2010-david-hansson
 ---
 
 

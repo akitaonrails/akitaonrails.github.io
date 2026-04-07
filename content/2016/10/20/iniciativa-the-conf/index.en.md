@@ -3,10 +3,10 @@ title: THE CONF Initiative
 date: '2016-10-20T12:00:00-02:00'
 slug: the-conf-initiative
 tags:
-- english
 - theconf
 - conference
 draft: false
+translationKey: theconf-initiative-2016
 ---
 
 Obs: se você é brasileiro, leia [esta versão em Português](http://www.akitaonrails.com/2016/10/20/iniciativa-the-conf).

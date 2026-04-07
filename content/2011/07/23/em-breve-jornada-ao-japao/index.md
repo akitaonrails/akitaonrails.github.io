@@ -5,6 +5,9 @@ slug: em-breve-jornada-ao-japao
 tags:
 - rubykaigi2011
 draft: false
+translationKey: journey-to-japan-upcoming
+aliases:
+- "/2011/07/23/upcoming-journey-to-japan/"
 ---
 
 

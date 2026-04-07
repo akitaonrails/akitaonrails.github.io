@@ -4,8 +4,8 @@ date: '2012-07-11T14:13:01-03:00'
 slug: registration-are-open-for-rubyconf-brazil-2012
 tags:
 - rubyconfbr2012
-- english
 draft: false
+translationKey: rubyconf-brazil-2012-registration
 ---
 
 

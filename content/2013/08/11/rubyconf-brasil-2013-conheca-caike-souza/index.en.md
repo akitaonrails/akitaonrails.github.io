@@ -4,8 +4,8 @@ date: '2013-08-11T10:00:00-03:00'
 slug: rubyconf-brasil-2013-meet-caike-souza
 tags:
 - rubyconfbr2013
-- english
 draft: false
+translationKey: rubyconf-2013-caike-souza
 ---
 
 ![Caike Souza](http://www.rubyconf.com.br/assets/speakers/CaikeSouza-18e85bd3b733db5881634759f0b8d0ec.jpg)

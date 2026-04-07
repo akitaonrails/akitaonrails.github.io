@@ -5,6 +5,9 @@ slug: rubyconf-brasil-2011-esta-chegando
 tags:
 - rubyconfbr2011
 draft: false
+translationKey: rubyconf-brazil-2011-coming
+aliases:
+- "/2011/09/19/rubyconf-brazil-2011-is-coming/"
 ---
 
 

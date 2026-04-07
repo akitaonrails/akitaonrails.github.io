@@ -6,6 +6,9 @@ tags:
 - railsconf2010
 - interview
 draft: false
+translationKey: railsconf-2010-interviews-part-1
+aliases:
+- "/2010/06/17/railsconf-2010-video-interviews-part-1/"
 ---
 
 Como disse no [post anterior](/2010/06/17/railsconf-2010-viagem-e-evento), no último dia decidi voltar às minhas atividades de evangelista e corri atrás de entrevistas. Apesar do tempo bem apertado, cerca de 5 horas talvez, consegui colher nada menos do que 11 entrevistas.

@@ -3,10 +3,10 @@ title: War is Over, or is it? A New Dawn for Microsoft
 date: '2016-03-31T18:02:00-03:00'
 slug: war-is-over-or-is-it-a-new-dawn-for-microsoft
 tags:
-- translation
 - off-topic
 - microsoft
 draft: false
+translationKey: nova-era-microsoft-2016
 ---
 
 Update 04/07: [the preview is already out](http://thehackernews.com/2016/04/how-to-run-ubuntu-on-windows-10.html) ahead of the June release. If you're an Insider member, try it.

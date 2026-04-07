@@ -5,8 +5,8 @@ slug: railsconf-2010-video-interviews-part-2
 tags:
 - railsconf2010
 - interview
-- english
 draft: false
+translationKey: railsconf-2010-interviews-part-2
 ---
 
 For this second part, I have reserved to talk about the winners of the Ruby Heroes Award. Since 2008, Gregg Pollack, from EnvyLabs, go upstage to deliver the award to 6 hard worker rubyists, who made a difference in the community.

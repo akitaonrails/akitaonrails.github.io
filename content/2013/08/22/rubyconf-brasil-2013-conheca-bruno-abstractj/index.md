@@ -5,6 +5,9 @@ slug: rubyconf-brasil-2013-conheca-bruno-abstractj
 tags:
 - rubyconfbr2013
 draft: false
+translationKey: rubyconf-2013-bruno-abstractj
+aliases:
+- "/2013/08/23/rubyconf-brasil-2013-meet-bruno-abstractj/"
 ---
 
 ![Bruno Oliveira](http://www.rubyconf.com.br/assets/speakers/AbstractJ-14a848792b16fe6dcc881c45fcfcd370.jpg)

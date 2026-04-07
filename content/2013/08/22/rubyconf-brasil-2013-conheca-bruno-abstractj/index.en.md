@@ -4,8 +4,8 @@ date: '2013-08-23T11:40:00-03:00'
 slug: rubyconf-brasil-2013-meet-bruno-abstractj
 tags:
 - rubyconfbr2013
-- english
 draft: false
+translationKey: rubyconf-2013-bruno-abstractj
 ---
 
 If you didn't register yet, don't miss this opportunity. Go to [the official website](http://www.rubyconf.com.br) to register as soon as possible. The conference will commence on August 29th. The countdown is quickly approaching it's destiny, only 6 days to launch!

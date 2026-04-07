@@ -4,8 +4,8 @@ date: '2011-09-19T01:41:00-03:00'
 slug: rubyconf-brazil-2011-is-coming
 tags:
 - rubyconfbr2011
-- english
 draft: false
+translationKey: rubyconf-brazil-2011-coming
 ---
 
 

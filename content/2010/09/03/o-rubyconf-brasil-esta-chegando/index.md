@@ -5,6 +5,9 @@ slug: o-rubyconf-brasil-esta-chegando
 tags:
 - rubyconfbr2010
 draft: false
+translationKey: rubyconf-brazil-2010-coming
+aliases:
+- "/2010/09/03/rubyconf-brazil-is-coming-up/"
 ---
 
 Muitos já devem ter acessado, mas estamos lançando oficialmente o site do [RubyConf Brasil](http://www.rubyconf.com.br/). Só hoje começamos a divulgar, mas muitos já descobriram o site em beta e já tivemos mais de 50 inscritos!

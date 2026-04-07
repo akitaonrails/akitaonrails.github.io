@@ -4,8 +4,8 @@ date: '2010-09-03T02:34:00-03:00'
 slug: rubyconf-brazil-is-coming-up
 tags:
 - rubyconfbr2010
-- english
 draft: false
+translationKey: rubyconf-brazil-2010-coming
 ---
 
 We are just releasing the [RubyConf Brazil](http://www.rubyconf.com.br/en) official website! The conference will take place in São Paulo, Brazil, on October 26th and 27th. Come visit us in Brazil!

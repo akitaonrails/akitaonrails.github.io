@@ -5,6 +5,9 @@ slug: rubyconf-brasil-2013-conheca-eduardo-shiota
 tags:
 - rubyconfbr2013
 draft: false
+translationKey: rubyconf-2013-eduardo-shiota
+aliases:
+- "/2013/08/19/rubyconf-brasil-2013-meet-eduardo-shiota/"
 ---
 
 ![Eduardo Shiota](http://www.rubyconf.com.br/assets/speakers/EduardoShiota-4c75335a678896e26b9548872cd6d7d4.jpg)

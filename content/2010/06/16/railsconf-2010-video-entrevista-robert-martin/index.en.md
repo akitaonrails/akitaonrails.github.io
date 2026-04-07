@@ -5,8 +5,8 @@ slug: railsconf-2010-video-interview-robert-martin-english
 tags:
 - railsconf2010
 - interview
-- english
 draft: false
+translationKey: railsconf-2010-robert-martin
 ---
 
  **Obs:** for the Brazilian Portuguese version, click [here](/2010/06/16/railsconf-2010-video-entrevista-robert-martin).

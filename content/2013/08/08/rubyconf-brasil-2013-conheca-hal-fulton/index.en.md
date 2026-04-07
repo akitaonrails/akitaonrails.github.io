@@ -4,8 +4,8 @@ date: '2013-08-08T09:00:00-03:00'
 slug: rubyconf-brasil-2013-meet-hal-fulton
 tags:
 - rubyconfbr2013
-- english
 draft: false
+translationKey: rubyconf-2013-hal-fulton
 ---
 
 ![Hal Fulton](http://www.rubyconf.com.br/assets/speakers/HalFulton-cdd3c55c77451379496ec2ce1e421c77.jpg)

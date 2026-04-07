@@ -6,6 +6,9 @@ tags:
 - railsconf2010
 - interview
 draft: false
+translationKey: railsconf-2010-david-hansson
+aliases:
+- "/2010/06/17/railsconf-2010-video-interview-david-hansson/"
 ---
 
 

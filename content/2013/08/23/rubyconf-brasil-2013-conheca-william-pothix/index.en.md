@@ -4,8 +4,8 @@ date: '2013-08-23T12:20:00-03:00'
 slug: rubyconf-brasil-2013-meet-william-pothix
 tags:
 - rubyconfbr2013
-- english
 draft: false
+translationKey: rubyconf-2013-william-pothix
 ---
 
 ![William Molinari](http://www.rubyconf.com.br/assets/speakers/Pothix-78c0f3a74dffcefe2dea4e9fe913e769.jpg)

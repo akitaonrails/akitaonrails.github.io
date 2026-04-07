@@ -6,6 +6,9 @@ tags:
 - theconf
 - conference
 draft: false
+translationKey: theconf-initiative-2016
+aliases:
+- "/2016/10/20/the-conf-initiative/"
 ---
 
 Obs: if you don't understand Brazilian Portuguese, please read [this English version](http://www.akitaonrails.com/2016/10/20/the-conf-initiative).

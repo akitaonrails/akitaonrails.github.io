@@ -5,6 +5,9 @@ slug: rubyconf-brasil-2013-conheca-hongli-lai
 tags:
 - rubyconfbr2013
 draft: false
+translationKey: rubyconf-2013-hongli-lai
+aliases:
+- "/2013/08/14/rubyconf-brasil-2013-meet-hongli-lai/"
 ---
 
 ![Hongli Lai](http://www.rubyconf.com.br/assets/speakers/hongli_lai-2cfc23d129a2a1f001d84df45863071a.jpg)
