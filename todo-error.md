@@ -11,8 +11,6 @@ These posts hit API 400 errors or were not reached due to session limits during 
 - content/2010/01/30/off-topic-lendo-os-principios-ageis/index.md
 - content/2010/03/07/off-topic-penn-and-teller-e-larry-flynt-sobre-liberdade/index.md
 - content/2011/02/03/off-topic-a-revolta-de-atlas-dinheiro-e-a-raiz-de-todo-o-mal/index.md
-- content/2011/02/04/off-topic-the-fountainhead-defesa-de-howard-roark/index.md
-- content/2011/02/20/off-topic-desmistificando-a-microsoft-do-mal/index.md
 - content/2011/05/04/off-topic-opinioes-verdades-democracia-e-etica/index.md
 - content/2012/12/30/off-topic-um-desabafo-iii-refletindo-sobre-2007/index.md
 - content/2013/04/05/traducao-estimativa-o-melhor-que-podemos-fazer/index.md
