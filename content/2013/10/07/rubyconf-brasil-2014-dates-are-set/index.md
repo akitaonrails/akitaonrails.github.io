@@ -1,20 +1,24 @@
 ---
-title: Rubyconf Brasil 2014 - Dates are Set!
+title: "Rubyconf Brasil 2014 - Datas Confirmadas!"
 date: '2013-10-07T18:27:00-03:00'
-slug: rubyconf-brasil-2014-dates-are-set
+slug: rubyconf-brasil-2014-datas-confirmadas
+translationKey: rubyconf-brasil-2014-dates
+aliases:
+- /2013/10/07/rubyconf-brasil-2014-dates-are-set/
 tags:
 - rubyconfbr2014
+- traduzido
 draft: false
 ---
 
 
 
-To be sure everybody starts getting prepared: Rubyconf Brasil 2014 is already confirmed with venue and dates.
+Pra todo mundo já ir se preparando: a Rubyconf Brasil 2014 está confirmada, com local e datas definidos.
 
-It's going to be August 28th and 29th, 2014. The venue will the Frei Caneca Theater, just like 2013. We were checking new locations, but the difficulties in closer restaurants, parking lots, etc made us go back to the same place of 2013. It's large, it's structured well enough, we know how to make it work and it fits more than 800 people comfortably.
+Vai ser nos dias 28 e 29 de agosto de 2014. O local será o Teatro Frei Caneca, igual em 2013. Chegamos a olhar outros lugares, mas a dificuldade com restaurantes próximos, estacionamento, etc, fez a gente voltar pro mesmo lugar de 2013. É grande, tem boa infraestrutura, já sabemos como fazer funcionar e comporta tranquilamente mais de 800 pessoas.
 
-Buying plane tickets and hotel reservations ahead of time make it much cheaper. So you can be assured of the dates and location already.
+Comprar passagem aérea e reservar hotel com antecedência sai muito mais barato. Então já podem contar com as datas e o local.
 
-If your company wants to participate, sponsor, send you as a speaker or anything like that, let me know. Call for Papers will open next year around March or April.
+Se a sua empresa quer participar, patrocinar, mandar você como palestrante ou qualquer coisa do tipo, me avise. O Call for Papers abre no ano que vem, por volta de março ou abril.
 
-See you all next year (The Rubyconf Brasil Staff)
+Vejo todo mundo no ano que vem (Equipe da Rubyconf Brasil)

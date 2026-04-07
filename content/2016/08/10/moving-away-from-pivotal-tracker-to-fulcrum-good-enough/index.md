@@ -83,7 +83,7 @@ What the tool will expose:
 
 ### On Estimation
 
-Many people worry too much about "proper estimation" to the point of creating so much tension that developers start screaming about ["no estimates"](http://www.akitaonrails.com/2013/10/07/off-topic-noestimates-debunked). This is nuts. This is why "estimation" is a different word than "prediction", one is uncertain, a ballpark, the other is exact.
+Many people worry too much about "proper estimation" to the point of creating so much tension that developers start screaming about ["no estimates"](http://www.akitaonrails.com/en/2013/10/07/off-topic-noestimates-debunked/). This is nuts. This is why "estimation" is a different word than "prediction", one is uncertain, a ballpark, the other is exact.
 
 > There is no such thing as a "correct" estimation.
 

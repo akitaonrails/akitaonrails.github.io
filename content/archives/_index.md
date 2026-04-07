@@ -586,7 +586,7 @@ title: AkitaOnRails Blog - Arquivo
 
 ## 2014 - October
 
-- [The New Kid on the Block for Ruby Servers: Raptor!](/2014/10/19/the-new-kid-on-the-block-for-ruby-servers-raptor/)
+- [O Novo Garoto da Pesada para Servidores Ruby: Raptor!](/2014/10/19/o-novo-garoto-da-pesada-para-servidores-ruby-raptor/)
 - [\[Off-Topic\] Impressão 3D, a lenda?](/2014/10/07/off-topic-impressao-3d-a-lenda/)
 
 ## 2014 - September
@@ -601,7 +601,7 @@ title: AkitaOnRails Blog - Arquivo
 - [\[Small Bite\] Brincando com Metasploit](/2014/08/27/small-bite-brincando-com-metasploit/)
 - [Retrospectiva on Rails - 10 Anos e Muito Mais!](/2014/08/26/retrospectiva-on-rails-10-anos-e-muito-mais/)
 - [\[Small Bite\] Páginas Ruby/Rails Legais para Acompanhar!](/2014/08/24/small-bite-paginas-ruby-rails-legais-para-acompanhar/)
-- [\[Off-Topic\] First Time in São Paulo, What to do?](/2014/08/24/off-topic-first-time-in-sao-paulo-what-to-do/)
+- [\[Off-Topic\] Primeira Vez em São Paulo, O Que Fazer?](/2014/08/24/off-topic-primeira-vez-em-sao-paulo-o-que-fazer/)
 - [\[Small Bite\] Um pouco tarde: O Grande Debate Sobre TDD](/2014/08/23/small-bite-um-pouco-tarde-o-grande-debate-sobre-tdd/)
 - [\[#WhyDay\] 5 Anos Sem _Why](/2014/08/19/whyday-5-anos-sem-_why/)
 - [\[Small Bite\] Palestra "Ruby & GC" - QConSP 2014 (Nova Gravação!)](/2014/08/01/small-bite-palestra-ruby-gc-qconsp-2014-nova-gravacao/)
@@ -664,8 +664,8 @@ title: AkitaOnRails Blog - Arquivo
 - [\[Off-Topic\] Matemática, Trolls, Haters e Discussões de Internet](/2013/10/30/off-topic-matematica-trolls-haters-e-discussoes-de-internet/)
 - [Ruby, a linguagem do mundo Cloud](/2013/10/29/ruby-a-linguagem-do-mundo-cloud/)
 - [\[Iniciante\] Configurações de ambiente com Dotenv](/2013/10/19/iniciante-configuracoes-de-ambiente-com-dotenv/)
-- [Rubyconf Brasil 2014 - Dates are Set!](/2013/10/07/rubyconf-brasil-2014-dates-are-set/)
-- [\[Off-Topic\] #noEstimates Debunked](/2013/10/07/off-topic-noestimates-debunked/)
+- [Rubyconf Brasil 2014 - Datas Confirmadas!](/2013/10/07/rubyconf-brasil-2014-datas-confirmadas/)
+- [\[Off-Topic\] Desmontando o #noEstimates](/2013/10/07/off-topic-desmontando-o-noestimates/)
 
 ## 2013 - September
 
@@ -691,7 +691,6 @@ title: AkitaOnRails Blog - Arquivo
 - [Rubyconf Brasil 2013: Conheça Eduardo Shiota](/2013/08/19/rubyconf-brasil-2013-conheca-eduardo-shiota/)
 - [Rubyconf Brasil 2013: Vinheta de Abertura](/2013/08/19/rubyconf-brasil-2013-vinheta-de-abertura/)
 - [Rubyconf Brasil 2013: Conheça Rodrigo Caffo](/2013/08/16/rubyconf-brasil-2013-conheca-rodrigo-caffo/)
-- [Rubyconf Brasil 2013: Your first time in São Paulo, Brazil](/2013/08/15/rubyconf-brasil-2013-your-first-time-in-sao-paulo-brazil/)
 - [Rubyconf Brasil 2013: Conheça Danilo Sato](/2013/08/15/rubyconf-brasil-2013-conheca-danilo-sato/)
 - [Rubyconf Brasil 2013: Meet Hongli Lai](/2013/08/14/rubyconf-brasil-2013-meet-hongli-lai/)
 - [Rubyconf Brasil 2013: Conheça Hongli Lai](/2013/08/14/rubyconf-brasil-2013-conheca-hongli-lai/)

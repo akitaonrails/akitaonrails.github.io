@@ -42,7 +42,7 @@ Links:
 
 * Agile is Dead (Long Live Agility) (https://pragdave.me/blog/2014/03/04/time-to-kill-agile.html)
 * Agile: a Verdade por trás do Método (http://www.akitaonrails.com/2014/09/28/off-topic-agile-a-verdade-por-tras-do-metodo)
-* #noEstimates Debunked (http://www.akitaonrails.com/2013/10/07/off-topic-noestimates-debunked)
+* #noEstimates Debunked (http://www.akitaonrails.com/2013/10/07/off-topic-desmontando-o-noestimates/)
 * Accountability (https://pt.wikipedia.org/wiki/Accountability)
 * GOTO 2015 • Agile is Dead • Pragmatic Dave Thomas (https://www.youtube.com/watch?v=a-BOSpxYJ9M)
 * Don't do Spotify Model ! (https://masterofnone.io/dont-do-spotify-model/)

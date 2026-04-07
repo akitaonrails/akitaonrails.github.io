@@ -1,26 +1,30 @@
 ---
-title: 'The New Kid on the Block for Ruby Servers: Raptor!'
+title: 'O Novo Garoto da Pesada para Servidores Ruby: Raptor!'
 date: '2014-10-19T15:00:00-02:00'
-slug: the-new-kid-on-the-block-for-ruby-servers-raptor
+slug: o-novo-garoto-da-pesada-para-servidores-ruby-raptor
+translationKey: raptor-new-ruby-server
+aliases:
+- /2014/10/19/the-new-kid-on-the-block-for-ruby-servers-raptor/
 tags:
 - learning
 - passenger
+- traduzido
 draft: false
 ---
 
-*Update (25/11/2014):* We can finally confirm that yes, the awesome Raptor project is the codename for the next release of Phusion Passenger itself! Read the [announcement](http://blog.phusion.nl/2014/11/25/introducing-phusion-passenger-5-beta-1-codename-raptor/)
+*Atualização (25/11/2014):* Finalmente podemos confirmar que sim, o tão aguardado projeto Raptor é o codinome para o próximo release do Phusion Passenger! Leia o [anúncio](http://blog.phusion.nl/2014/11/25/introducing-phusion-passenger-5-beta-1-codename-raptor/)
 
-If you're a seasoned Ruby web developer you're probably familiar and comfortable using the usual suspects to deploy your applications. You're either deploying something simple through good old Thin, or you're orchestrating several Ruby processes through Unicorn workers, or you're trying out JRuby and want better concurrency and thread management, and therefore you're using either Puma or Torquebox.
+Se você é um desenvolvedor web Ruby experiente, provavelmente já está acostumado e confortável usando os suspeitos de sempre para fazer deploy das suas aplicações. Ou você está fazendo deploy de algo simples através do bom e velho Thin, ou está orquestrando vários processos Ruby com workers do Unicorn, ou está experimentando JRuby para ter melhor concorrência e gerenciamento de threads, e por isso usa Puma ou Torquebox.
 
-And even though it feels like we are already at the peak of what's possible with Ruby, we do want more. Ruby 2.1.3 was just released, 3.0 is in development. But until then it should be possible to squeeze some more performance out of your boxes.
+E mesmo parecendo que já chegamos ao topo do que é possível fazer com Ruby, queremos sempre mais. O Ruby 2.1.3 acabou de ser lançado, o 3.0 está em desenvolvimento. Mas até lá, ainda dá para espremer mais performance das suas máquinas.
 
-In fact, a new contender, with some new approaches just showed up. I have little details so far, but it's a brand new product - not derived from the others - from an unknown team. This product is named ["Raptor"](http://www.rubyraptor.org) and they claim that it can squeeze the extra juice out of our boxes.
+Na verdade, um novo competidor, com algumas abordagens novas, acabou de aparecer. Tenho poucos detalhes até agora, mas é um produto totalmente novo - não é derivado dos outros - de um time desconhecido. Esse produto se chama ["Raptor"](http://www.rubyraptor.org) e eles afirmam que conseguem espremer ainda mais suco das nossas máquinas.
 
-And this is their claim:
+E é essa a alegação deles:
 
 ![Raptor Chart](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/475/chart-1.png)
 
-Fortunately, I had the chance to experiment it's beta release in a controlled Vagrant environment and check those claim! Bear in mind that those are synthetic benchmarks and real world throughput of real applications should give us different behavior. With that having being said, let's see how the main Ruby servers perform a very simple Rack app returning a simple HTTP 200 with "Hello World":
+Felizmente, tive a chance de experimentar o release beta num ambiente Vagrant controlado e checar essas alegações! Tenha em mente que esses são benchmarks sintéticos e o throughput do mundo real, com aplicações reais, deve nos dar comportamentos diferentes. Dito isso, vamos ver como os principais servidores Ruby se saem rodando uma aplicação Rack bem simples que devolve um HTTP 200 com "Hello World":
 
 ```
  ==> Benchmark parameters:
@@ -47,7 +51,7 @@ Fortunately, I had the chance to experiment it's beta release in a controlled Va
      Raptor (JRuby)             : 87523.65 req/sec
 ```
 
-Now, this sounds very impressive indeed! And what about a more complex example: a simple Rails 4.1.6 application rendering a default scaffold index page with a model fetching 20 rows from MySQL:
+Bom, isso soa bem impressionante! E quanto a um exemplo mais complexo: uma aplicação Rails 4.1.6 simples renderizando uma página index de scaffold padrão com um model buscando 20 linhas do MySQL:
 
 ```
 ==> Benchmark summary:
@@ -59,7 +63,7 @@ Now, this sounds very impressive indeed! And what about a more complex example: 
     Raptor (JRuby)             : 73948.59 req/sec
 ```
 
-Again, **super** impressive. My first impression when reading these numbers is that Raptor must have builtin response caching (which is great!). So I tweaked the example to make it much heavier than what's considered "normal" for a small cache, rendering a table of 100 rows from the database in the index page, and the  results are still competitive:
+De novo, **super** impressionante. Minha primeira impressão ao ler esses números é que o Raptor deve ter cache de resposta embutido (o que é ótimo!). Então mexi no exemplo para deixá-lo bem mais pesado do que é considerado "normal" para um cache pequeno, renderizando uma tabela de 100 linhas vinda do banco na página index, e os resultados continuam competitivos:
 
 ```
 ==> Benchmark summary:
@@ -71,20 +75,20 @@ Again, **super** impressive. My first impression when reading these numbers is t
     Raptor (JRuby)             : 88.92 req/sec
 ```
 
-This could mean that at the best case scenario, you could get almost **4 times** the throughput from your application, and in the worst case scenario, you're still getting similar throughputs. This means that Raptor is adaptable and reasonably "smart". So overall it's a win-win situation!
+Isso pode significar que, no melhor cenário, você consegue quase **4 vezes** o throughput da sua aplicação, e no pior cenário, ainda obtém throughputs similares. Quer dizer que o Raptor é adaptável e razoavelmente "esperto". No geral, é uma situação ganha-ganha!
 
-The way they are able to achieve these superior numbers can be explained by the way they approached the implementation. This is the breakdown that they have released so far:
+A forma como eles conseguem esses números superiores pode ser explicada pelo jeito como abordaram a implementação. Esse é o resumo que eles divulgaram até agora:
 
-* **Protection against slow clients**: Slow clients on the Internet can block your app, like people standing still in front of your door. Unicorn only has a single small door, so it [requires](http://unicorn.bogomips.org/PHILOSOPHY.html) you to attach a buffering reverse proxy in front of it, like Nginx. Puma has as many small doors as you configure threads, so you still need to attach Nginx in front to be safe. But Raptor has a door that's almost infinitely wide, and fully protects your app against slow clients without additional software.
-* **Optional integration with Nginx**. Nginx is a great web server and provides useful features like compression, security, etc. But using Puma and Unicorn with Nginx requires you to configure Puma/Unicorn separately, to configure Nginx separately, to configure monitoring separately, and to manage each component separately. Doesn't it make sense to consolidate all these moving parts into a single package? Enter Raptor's optional Nginx integration mode: configuration, management and daemon monitoring all directly from Nginx.
-* **Multitenancy**. If you run multiple apps on a same server, then managing all those Puma and Unicorn instances quickly becomes tedious. Raptor's Nginx integration mode allows you to manage all your apps from a single Nginx instance.
-* **Security**. Improve your server's security by easily running multiple apps under multiple user accounts. This way, a vulnerability in one app won't affect all your other apps.
-* **JRuby support**. Like Puma (and unlike Unicorn), Raptor has great JRuby support.
+* **Proteção contra clientes lentos**: Clientes lentos na Internet podem travar sua aplicação, como pessoas paradas na frente da sua porta. O Unicorn tem uma única porta pequena, então [exige](http://unicorn.bogomips.org/PHILOSOPHY.html) que você coloque um proxy reverso com buffer na frente, como o Nginx. O Puma tem tantas portinhas quantas threads você configurar, então você ainda precisa colocar o Nginx na frente para ficar seguro. Mas o Raptor tem uma porta praticamente infinita em largura, e protege totalmente sua aplicação contra clientes lentos sem precisar de software adicional.
+* **Integração opcional com Nginx**. O Nginx é um ótimo servidor web e oferece recursos úteis como compressão, segurança, etc. Mas usar Puma e Unicorn com Nginx exige que você configure Puma/Unicorn separadamente, configure o Nginx separadamente, configure o monitoramento separadamente e gerencie cada componente separadamente. Não faz mais sentido consolidar todas essas peças em um único pacote? Aí entra o modo de integração opcional do Raptor com Nginx: configuração, gerenciamento e monitoramento de daemons direto do Nginx.
+* **Multitenancy**. Se você roda múltiplas aplicações no mesmo servidor, gerenciar todas essas instâncias de Puma e Unicorn rapidamente vira uma chatice. O modo de integração com Nginx do Raptor permite gerenciar todas as suas aplicações a partir de uma única instância do Nginx.
+* **Segurança**. Melhore a segurança do seu servidor rodando facilmente várias aplicações sob contas de usuário diferentes. Assim, uma vulnerabilidade em uma aplicação não afeta todas as outras.
+* **Suporte a JRuby**. Como o Puma (e diferente do Unicorn), o Raptor tem ótimo suporte a JRuby.
 
-So it's not only a different implementation but also features for the future, supporting transparently handling slow clients without causing bottlenecks to your application and avoiding having extra layers of protection. And everything in an easy to use package (according to their release: you will be able to replace your current server in the Gemfile and bundle install it!)
+Então é uma implementação diferente e também traz recursos para o futuro, suportando o tratamento transparente de clientes lentos sem causar gargalos na sua aplicação e evitando ter camadas extras de proteção. E tudo num pacote fácil de usar (segundo o release deles: você vai poder substituir seu servidor atual no Gemfile e rodar bundle install!)
 
-Raptor is about to be released, so keep tuned for more news and when it's available for everybody to test their applications with. From what we have seen so far, this one looks like a winner!
+O Raptor está prestes a ser lançado, então fique ligado para mais notícias e para quando estiver disponível para todo mundo testar suas aplicações. Pelo que vimos até agora, esse aqui parece um vencedor!
 
-Go to [their website](http://www.rubyraptor.org) to know more about it and if you're like me and feel like this is the real deal, [Thunderclap it!](https://www.thunderclap.it/projects/17748-raptor-fast-ruby-web-server)
+Vá ao [site deles](http://www.rubyraptor.org) para saber mais e, se você é como eu e acha que isso é a coisa real, [dê um Thunderclap!](https://www.thunderclap.it/projects/17748-raptor-fast-ruby-web-server)
 
 ![Raptor](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/473/raptor_square.png)

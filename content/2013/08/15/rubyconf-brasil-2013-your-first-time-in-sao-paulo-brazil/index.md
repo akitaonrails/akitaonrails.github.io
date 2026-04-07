@@ -8,7 +8,7 @@ tags:
 draft: false
 ---
 
-*Update (08/24/2014):* I just posted a [companion article](http://www.akitaonrails.com/2014/08/24/off-topic-first-time-in-sao-paulo-what-to-do) for this one, highlighting the tourist points of the city.
+*Update (08/24/2014):* I just posted a [companion article](http://www.akitaonrails.com/en/2014/08/24/off-topic-first-time-in-sao-paulo-what-to-do/) for this one, highlighting the tourist points of the city.
 
 *Update (02/2014):* this article was written for Rubyconf Brazil 2013, so don't be confused by the context.
 
