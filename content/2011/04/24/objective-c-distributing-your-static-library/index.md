@@ -1,129 +1,131 @@
 ---
-title: "[Objective-C] Distributing your Static Library"
+title: "[Objective-C] Distribuindo sua Static Library"
 date: '2011-04-24T00:46:00-03:00'
-slug: objective-c-distributing-your-static-library
+slug: objective-c-distribuindo-sua-static-library
+translationKey: objc-distributing-static-lib
+aliases:
+- /2011/04/24/objective-c-distributing-your-static-library/
 tags:
 - learning
 - beginner
 - apple
 - objective-c
-- english
+- traduzido
 draft: false
 ---
 
-If you didn’t read my [last](http://www.akitaonrails.com/2011/04/23/objective-c-it's-a-unix-system-i-know-this) [two article](http://www.akitaonrails.com/2011/04/23/objective-c-categories-static-libraries-and-gotchas) I recommend you do so before going any further because I am using the same pet project, [ObjC Rubyfication](http://www.akitaonrails.com/2011/04/23/objective-c-it's-a-unix-system-i-know-this) as an example for this article. The point is: you are writing reusable code that you want in more than one project.
+Se você não leu meus [dois](http://www.akitaonrails.com/2011/04/23/objective-c-it's-a-unix-system-i-know-this) [últimos artigos](http://www.akitaonrails.com/2011/04/23/objective-c-categories-static-libraries-and-gotchas), recomendo fortemente que leia antes de continuar, porque vou usar o mesmo pet project, [ObjC Rubyfication](http://www.akitaonrails.com/2011/04/23/objective-c-it's-a-unix-system-i-know-this), como exemplo neste artigo. A ideia é simples: você está escrevendo código reutilizável e quer aproveitar isso em mais de um projeto.
 
-Most of this was based on [Cocoanetics](http://www.cocoanetics.com/2010/04/universal-static-libraries/) article about universal static libraries. So, if you’ve payed attention to my [previous article](http://www.akitaonrails.com/2011/04/23/objective-c-categories-static-libraries-and-gotchas), you saw this screenshot:
+A maior parte do que vou mostrar foi baseada no artigo do [Cocoanetics](http://www.cocoanetics.com/2010/04/universal-static-libraries/) sobre universal static libraries. Então, se você prestou atenção no [artigo anterior](http://www.akitaonrails.com/2011/04/23/objective-c-categories-static-libraries-and-gotchas), viu este screenshot:
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2011/4/23/Screen%20shot%202011-04-23%20at%2011.41.27%20PM_original.png?1303613619)
 
-I said that I only had these targets configured: CocoaOniguruma, Kiwi, Rubyfication and RubyficationTests. But there are 3 others: CocoaOniguruma SIM, Rubyfication SIM, and Build & Merge Libraries. The reason is simple:
+Eu disse que tinha apenas estes targets configurados: CocoaOniguruma, Kiwi, Rubyfication e RubyficationTests. Mas existem mais 3: CocoaOniguruma SIM, Rubyfication SIM e Build & Merge Libraries. O motivo é simples:
 
-- The “CocoaOniguruma” Target builds the <tt>libCocoaOniguruma.a</tt> binary that’s compatible with the ARM processor for iOS
-- The “CocoaOniguruma SIM” Target builds the <tt>libCocoaOnigurumaSimulator.a</tt> binary that’s compatible with the i386 processor for the local iPhone Simulator
-- The “Rubyfication” Target builds the <tt>libRubyfication.a</tt> binary that’s compatible with the ARM processor for iOS
-- The “Rubyfication SIM” Target builds the <tt>libRubyficationSimulator.a</tt> binary that’s compatible with the i386 processor for the local iPhone Simulator
-- The “Build & Merge Libraries” Target merges the corresponding particular binaries of each target into a single Universal (Fat) Binary that we can easily distribute and reuse.
+- O Target "CocoaOniguruma" gera o binário <tt>libCocoaOniguruma.a</tt>, compatível com o processador ARM do iOS
+- O Target "CocoaOniguruma SIM" gera o binário <tt>libCocoaOnigurumaSimulator.a</tt>, compatível com o processador i386 do iPhone Simulator local
+- O Target "Rubyfication" gera o binário <tt>libRubyfication.a</tt>, compatível com o processador ARM do iOS
+- O Target "Rubyfication SIM" gera o binário <tt>libRubyficationSimulator.a</tt>, compatível com o processador i386 do iPhone Simulator local
+- O Target "Build & Merge Libraries" junta os binários específicos de cada target em um único Universal (Fat) Binary, fácil de distribuir e reutilizar.
 
-## Concepts and History
+## Conceitos e História
 
-Some explanation is in order. When you’re developing iOS applications, you can test it directly in your iPhone device or within the Simulator. Now, Apple was very clever: any other vendor in the market will try to first create an ARM processor emulator to run on top of your i386 processor. Then it will get all the binaries for ARM and run within this emulator. The OS itself will remain compiled for ARM processors and run within the emulator.
+Cabe uma explicação aqui. Quando você desenvolve aplicações iOS, pode testar diretamente no seu iPhone ou dentro do Simulator. Apple foi muito esperta nesse ponto: qualquer outro fabricante do mercado começaria criando um emulador de processador ARM para rodar em cima do seu i386. Aí pegaria os binários ARM e os executaria dentro desse emulador. O sistema operacional continuaria compilado para ARM, rodando dentro do emulador.
 
-Now, this is dead slow, impractical. Anyone that experimented an emulation environment like this knows how ridiculous it is. Don’t confuse it for VMWare or Parallels solutions, which are fast because they are an emulated environment for **the same processor** , so you can run Windows on top of your Mac because the processors and operating systems now support VT-x, which means you mostly don’t have to emulate the processor. Now, every smartphone and tablet on the market uses an ARM processor, which has nothing to do with i386.
+Só que isso é absurdamente lento, impraticável. Quem já experimentou um ambiente de emulação assim sabe o quanto é ridículo. E não confunda com soluções tipo VMWare ou Parallels, que são rápidas porque emulam **o mesmo processador**. Você consegue rodar Windows em cima do Mac porque os processadores e sistemas operacionais hoje suportam VT-x, ou seja, você quase não precisa emular o processador. Agora, todo smartphone e tablet do mercado usa processador ARM, que não tem nada a ver com i386.
 
-So, how did Apple delivered a super-fast iPhone/iPad emulator that runs at real-time speed on your Mac? Simple, it didn’t. It is called “Simulator” and not “Emulator” for a reason: everything that runs within the Simulator is compiled for i386, not for ARM. So what you’re running is an actual binary that runs natively over your Mac! No emulation required. The iOS is very portable. The same way Mac OS X was able to transition from the Power PC to Intel back in 2005, the iOS can do the same trick as they are basically the very same operating system.
+Então, como a Apple entregou um emulador de iPhone/iPad super rápido que roda em tempo real no seu Mac? Simples: ela não entregou. Ele se chama "Simulator" e não "Emulator" por um motivo: tudo que roda dentro do Simulator é compilado para i386, e não para ARM. Ou seja, o que está rodando ali é um binário real, executando nativamente no seu Mac! Sem emulação alguma. O iOS é bem portável. Da mesma forma que o Mac OS X conseguiu fazer a transição do PowerPC para Intel lá em 2005, o iOS faz o mesmo truque, já que basicamente são o mesmo sistema operacional.
 
-When you choose the iPhone scheme in XCode, it compiles for ARM and uploads the bits to your iPhone device to run the application. When you choose the Simulator scheme in XCode, it compiles for i386, upload the bits in your Simulator and runs natively as any other application in your Mac.
+Quando você escolhe o scheme do iPhone no XCode, ele compila para ARM e sobe os bits no seu iPhone para rodar a aplicação. Quando você escolhe o scheme do Simulator no XCode, ele compila para i386, sobe os bits no Simulator e roda nativamente como qualquer outra aplicação no seu Mac.
 
-Now, going back to the main issue: when I distribute a binary of my Static Library, I have to remember that the developer will be linking against my library to deploy for both the ARM device (iPhone/iPad) and the Simulator (i386). So I would have to deliver at least 2 binary files. But Apple is even smarter than that. Actually, NeXT was. When they first transitioned the NeXTStep operating system from Motorola to Intel processors back in the late 80’s, they created [Fat Binaries](http://en.wikipedia.org/wiki/Fat_binary), which is essentially one binary that contains both processor-specific bits in one single package. When Apple transitione from the Power PC to Intel they renamed it to [Universal Binaries](http://en.wikipedia.org/wiki/Universal_binary). And that’s essentially what we need to build now.
+Voltando ao ponto principal: quando eu distribuo um binário da minha Static Library, tenho que lembrar que o desenvolvedor vai linkar contra ela tanto para deploy no device ARM (iPhone/iPad) quanto no Simulator (i386). Ou seja, eu teria que entregar pelo menos 2 arquivos binários. Mas a Apple foi ainda mais esperta. Aliás, a NeXT foi. Quando eles fizeram a primeira transição do NeXTStep dos processadores Motorola para Intel lá no fim dos anos 80, criaram os [Fat Binaries](http://en.wikipedia.org/wiki/Fat_binary), que basicamente são um único binário contendo os bits específicos de cada processador num só pacote. Quando a Apple fez a transição do PowerPC para Intel, rebatizaram para [Universal Binaries](http://en.wikipedia.org/wiki/Universal_binary). E é exatamente isso que precisamos construir agora.
 
-## Operations
+## Operações
 
-We now understand what a Universal Binary is. To make it easier, I right-clicked over the “Rubyfication” and “CocoaOniguruma” targets and duplicated them. They will be created as “Rubyfication copy” and “CocoaOniguruma copy”. We can change the “Product Name” in the build settings of each for a more reasonable name:
+Já entendemos o que é um Universal Binary. Para facilitar, eu cliquei com o botão direito sobre os targets "Rubyfication" e "CocoaOniguruma" e dupliquei. Eles aparecem como "Rubyfication copy" e "CocoaOniguruma copy". Podemos mudar o "Product Name" nas build settings de cada um para algo mais razoável:
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2011/4/24/Screen%20shot%202011-04-24%20at%2012.21.02%20AM_original.png?1303615270)
 
-In my case I renamed them to “RubyficationSimulator” and “CocoaOnigurumaSimulator”. That will give me both “libRubyficationSimulator.a” and “libCocoaOnigurumaSimulator.a”. As you can see in the Products group:
+No meu caso, renomeei para "RubyficationSimulator" e "CocoaOnigurumaSimulator". Isso vai me dar tanto "libRubyficationSimulator.a" quanto "libCocoaOnigurumaSimulator.a". Como dá para ver no grupo Products:
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2011/4/24/Screen%20shot%202011-04-24%20at%2012.23.16%20AM_original.png?1303615348)
 
-**Important:** remember that the Rubyfication target had CocoaOniguruma as a target dependency. You will need to change the “Rubyfication SIM” target to point to the new “CocoaOniguruma SIM” target! The other thing is that you will need to force both new targets to compile to “Latest Mac OS X” in the <tt>“Base <span class="caps">SDK</span>”</tt> option in the Build Settings of each, and “32-bit Intel” in the <tt>“Architectures”</tt> build option. This will make them compile for i386 processors. The original targets should have their <tt>“Base <span class="caps">SDK</span>”</tt> to “Latest iOS” and <tt>“Architectures”</tt> to “Standard (armv6 armv7)”.
+**Importante:** lembre que o target Rubyfication tinha o CocoaOniguruma como dependência. Você vai precisar mudar o target "Rubyfication SIM" para apontar para o novo target "CocoaOniguruma SIM"! Outra coisa: você precisa forçar os dois novos targets a compilar para "Latest Mac OS X" na opção <tt>"Base <span class="caps">SDK</span>"</tt> do Build Settings de cada um, e "32-bit Intel" na opção <tt>"Architectures"</tt>. Isso faz com que sejam compilados para processadores i386. Os targets originais devem ter o <tt>"Base <span class="caps">SDK</span>"</tt> em "Latest iOS" e <tt>"Architectures"</tt> em "Standard (armv6 armv7)".
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2011/4/24/Screen%20shot%202011-04-24%20at%2012.54.21%20AM_original.png?1303617223)
 
-Now, we need to create a new target of the kind “Aggregate” :
+Agora precisamos criar um novo target do tipo "Aggregate":
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2011/4/24/Screen%20shot%202011-04-24%20at%2012.24.00%20AM_original.png?1303615407)
 
-I named it “Build & Merge Libraries”. In the “Build Phases” tab you will start with just the “Target Dependencies” phase. You just need to add the new “Rubyfication SIM” and “CocoaOniguruma SIM” targets. Then you need to add 3 more phases, one for “Run Script”, another to “Copy Files” and a last “Run Script”.
+Eu chamei de "Build & Merge Libraries". Na aba "Build Phases", você começa apenas com a fase "Target Dependencies". Basta adicionar os novos targets "Rubyfication SIM" e "CocoaOniguruma SIM". Em seguida, adicione mais 3 fases: uma "Run Script", uma "Copy Files" e mais uma "Run Script" no final.
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2011/4/24/Screen%20shot%202011-04-24%20at%2012.25.13%20AM_original.png?1303615678)
 
-In the “Copy Files” phase I have just added all the public headers that I want to distribute together with the universal binary library. This is because the other developers will need to add those header files into their projects in order to be able to compile against my library. Now notice that I am copying them to an “Absolute Path” that states <tt>${TARGET_BUILD_DIR}/../Rubyfication</tt>.
+Na fase "Copy Files" eu adicionei todos os public headers que quero distribuir junto com a universal binary library. O motivo é que outros desenvolvedores vão precisar adicionar esses headers nos próprios projetos para conseguir compilar contra a minha biblioteca. Repare que estou copiando para um "Absolute Path" definido como <tt>${TARGET_BUILD_DIR}/../Rubyfication</tt>.
 
-That’s where we come to the previous “Run Script” phase that should have the following code:
+E é aí que entra a fase "Run Script" anterior, que deve ter o seguinte código:
 
 * * *
 
 ```bash
-# 1. make a new output folder  
+# 1. cria uma nova pasta de saída
 mkdir -p ${TARGET_BUILD_DIR}/../Rubyfication
 
-# 1. combine lib files for various platforms into one  
-lipo create “${TARGET_BUILD_DIR}/../Debug-iphoneos/libRubyfication.a” “${TARGET_BUILD_DIR}/../Debug-iphonesimulator/libRubyfication.a” -output "${TARGET_BUILD_DIR}/../Rubyfication/libRubyfication${BUILD_STYLE}.a"  
+# 2. combina os arquivos lib das várias plataformas em um só
+lipo create "${TARGET_BUILD_DIR}/../Debug-iphoneos/libRubyfication.a" "${TARGET_BUILD_DIR}/../Debug-iphonesimulator/libRubyfication.a" -output "${TARGET_BUILD_DIR}/../Rubyfication/libRubyfication${BUILD_STYLE}.a"
 ```
 
-The first thing it does it create this new “Rubyfication” directory. The second command uses the [lipo](http://developer.apple.com/library/mac/#documentation/Darwin/Reference/ManPages/man1/lipo.1.html) command that merges 2 processor-dependent binaries into a universal binary. Pay attention to the PATHs if you’re reusing this script somewhere else. At least with XCode 4 that’s where it creates the binaries of each target:
+A primeira coisa que ele faz é criar esse novo diretório "Rubyfication". O segundo comando usa o [lipo](http://developer.apple.com/library/mac/#documentation/Darwin/Reference/ManPages/man1/lipo.1.html), que junta 2 binários dependentes de processador num único universal binary. Preste atenção nos PATHs se for reutilizar esse script em outro lugar. Pelo menos no XCode 4, é nesses caminhos que ele cria os binários de cada target:
 
-- ${TARGET_BUILD_DIR}/../Debug-iphoneos/libRubyfication.a – the ARM version
-- ${TARGET_BUILD_DIR}/../Debug-iphonesimulator/libRubyfication.a – the i386 version
-- ${TARGET_BUILD_DIR}/../Rubyfication/libRubyfication-Debug.a – the resulting universal binary we created
+- ${TARGET_BUILD_DIR}/../Debug-iphoneos/libRubyfication.a – a versão ARM
+- ${TARGET_BUILD_DIR}/../Debug-iphonesimulator/libRubyfication.a – a versão i386
+- ${TARGET_BUILD_DIR}/../Rubyfication/libRubyfication-Debug.a – o universal binary resultante que criamos
 
-Finally, the last “Run Script”, after the “Copy Files” phase described above, requires the following script:
+Por fim, o último "Run Script", depois da fase "Copy Files" descrita acima, precisa do seguinte script:
 
 * * *
 
 ```bash
-ditto c -k —keepParent “${TARGET_BUILD_DIR}/../Rubyfication” “${TARGET_BUILD_DIR}/../Rubyfication.zip”  
+ditto c -k --keepParent "${TARGET_BUILD_DIR}/../Rubyfication" "${TARGET_BUILD_DIR}/../Rubyfication.zip"
 ```
 
 --
 
-It just creates a ZIP file with the universal binary library and its companion public header files. Any other developer can get this zip file, unzip it and add the files to their own projects now. If you want to find where this ZIP file is, the easiest way is to go to the project viewer (the left side pane) in XCode, open the “Products” group, right-click over the “libRubyfication.a” file (or any other resulting file) and choose “Show in Finder”. Then you can navigate one folder up in the hierarchy (to the “Products” folder) and you will see something like this:
+Ele apenas cria um arquivo ZIP com a universal binary library e seus public headers companheiros. Qualquer outro desenvolvedor pode pegar esse zip, descompactar e adicionar os arquivos no próprio projeto. Se quiser saber onde esse ZIP foi parar, o jeito mais fácil é ir no project viewer (painel da esquerda) do XCode, abrir o grupo "Products", clicar com botão direito no arquivo "libRubyfication.a" (ou qualquer outro arquivo gerado) e escolher "Show in Finder". Daí navegue uma pasta acima na hierarquia (até a pasta "Products") e você vai ver algo assim:
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2011/4/24/Screen%20shot%202011-04-24%20at%2012.39.02%20AM_original.png?1303616300)
 
-And there you go: there’s your ZIP file with your brand new redistributable universal binary!
+E pronto: aí está o seu ZIP com seu universal binary redistribuível novinho em folha!
 
-## Using the Universal Binary
+## Usando o Universal Binary
 
-In order to demonstrate how to use this distributable ZIP file. I have created a very simple, bare-bone iOS project called [ObjC_OnigurumaDemo](https://github.com/akitaonrails/ObjC_OnigurumaDemo) that you can download from Github and run in your own iOS device.
+Para demonstrar como usar esse ZIP distribuível, eu criei um projeto iOS bem simples e enxuto chamado [ObjC_OnigurumaDemo](https://github.com/akitaonrails/ObjC_OnigurumaDemo), que você pode baixar do Github e rodar no seu próprio device iOS.
 
-As you can see in the screenshot below, I just unzipped the ZIP within a “Dependencies” folder in my iOS project and added the universal binary “libRubyfication-Debug.a” within the Library Linking Build Phase:
+Como dá para ver no screenshot abaixo, eu simplesmente descompactei o ZIP dentro de uma pasta "Dependencies" no meu projeto iOS e adicionei o universal binary "libRubyfication-Debug.a" na Library Linking Build Phase:
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2011/4/24/Screen%20shot%202011-04-24%20at%2012.42.09%20AM_original.png?1303616506)
 
-This allows me to just use anything from this library in my project, in particular a piece of code that uses the Oniguruma regular expressions:
+Isso me permite usar qualquer coisa dessa biblioteca no meu projeto, em particular um trecho de código que usa as expressões regulares do Oniguruma:
 
 * * *
-C
 
 ```objc
-- (IBAction)runRegex:(id)sender {  
- OnigRegexp* regex = [OnigRegexp compile:[regexPattern text]];  
- OnigResult* res = [regex match:[initialText text]];  
- NSMutableString* tmpResult = [NSMutableString stringWithString:`""];
+- (IBAction)runRegex:(id)sender {
+    OnigRegexp* regex = [OnigRegexp compile:[regexPattern text]];
+    OnigResult* res = [regex match:[initialText text]];
+    NSMutableString* tmpResult = [NSMutableString stringWithString:@""];
     for(int i = 0; i < [res count]; i++) {
-        [tmpResult appendString:`“(”];  
- [tmpResult appendString:[res stringAt:i]];  
- [tmpResult appendString:@")"];  
- }  
- [result setText:tmpResult];  
+        [tmpResult appendString:@"("];
+        [tmpResult appendString:[res stringAt:i]];
+        [tmpResult appendString:@")"];
+    }
+    [result setText:tmpResult];
 }
 ```
 
-This demonstration application has a text-field called “initialText”, where you can type any string. Then you can prepare a Regular Expression in the “regexPattern” text-field and when you hit the “Run” button, it will trigget the action above that will run the Regular Expression againt the initial text and write the matches within parenthesis in the “result” text view. The applications looks like this:
+Essa aplicação de demonstração tem um text-field chamado "initialText", onde você pode digitar qualquer string. Aí você prepara uma expressão regular no text-field "regexPattern" e, ao apertar o botão "Run", ele dispara a action acima, que roda a expressão regular contra o texto inicial e escreve os matches entre parênteses na text view "result". A aplicação fica assim:
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2011/4/24/Screen%20shot%202011-04-24%20at%2012.46.19%20AM_original.png?1303616748)
 
-And, _voilá_! Ruby 1.9-like Regular Expression, directly from Oniguruma, within an iOS Application!
+E, _voilá_! Expressão regular ao estilo Ruby 1.9, direto do Oniguruma, dentro de uma aplicação iOS!

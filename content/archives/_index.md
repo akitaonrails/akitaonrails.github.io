@@ -843,9 +843,9 @@ title: AkitaOnRails Blog - Arquivo
 ## 2011 - April
 
 - [\[Off-Topic\] Mea Culpa: Organizações Democráticas não Funcionam](/2011/04/25/off-topic-mea-culpa-organizacoes-democraticas-nao-funcionam/)
-- [\[Objective-C\] Distributing your Static Library](/2011/04/24/objective-c-distributing-your-static-library/)
-- [\[Objective-C\] Categories, Static Libraries and Gotchas](/2011/04/23/objective-c-categories-static-libraries-and-gotchas/)
-- [\[Objective-C\] It's a Unix System! I know this!](/2011/04/23/objective-c-its-a-unix-system-i-know-this/)
+- [\[Objective-C\] Distribuindo sua Static Library](/2011/04/24/objective-c-distribuindo-sua-static-library/)
+- [\[Objective-C\] Categories, Static Libraries e Pegadinhas](/2011/04/23/objective-c-categories-static-libraries-e-pegadinhas/)
+- [\[Objective-C\] É um sistema Unix! Eu sei mexer nisso!](/2011/04/23/objective-c-e-um-sistema-unix-eu-sei-mexer-nisso/)
 - [\[Off-Topic\] Adendo à controvérsia HAML, SASS, Coffeescript: Tamanho do Documento](/2011/04/19/off-topic-adendo-a-controversia-haml-sass-coffeescript-tamanho-do-documento/)
 - [A Controvérsia Test::Unit vs RSpec/Cucumber](/2011/04/17/a-controversia-test-unit-vs-rspec-cucumber/)
 - [A Controvérsia CoffeeScript](/2011/04/16/a-controversia-coffeescript/)

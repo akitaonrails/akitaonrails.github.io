@@ -1,21 +1,24 @@
 ---
-title: "[Objective-C] It's a Unix System! I know this!"
+title: "[Objective-C] É um sistema Unix! Eu sei mexer nisso!"
 date: '2011-04-23T22:47:00-03:00'
-slug: objective-c-its-a-unix-system-i-know-this
+slug: objective-c-e-um-sistema-unix-eu-sei-mexer-nisso
+translationKey: objc-its-a-unix-system
+aliases:
+- /2011/04/23/objective-c-its-a-unix-system-i-know-this/
 tags:
 - learning
 - beginner
 - apple
 - objective-c
-- english
+- traduzido
 draft: false
 ---
 
-While experimenting with ways of using Objective-C a little bit closer to how I code Ruby, there were two things that annoyed me a bit. First, Date Formatting and, second, Regular Expressions.
+Enquanto experimentava formas de usar Objective-C de um jeito mais parecido com como eu programo em Ruby, duas coisas me incomodaram um pouco. Primeiro, formatação de datas e, segundo, expressões regulares.
 
-The Cocoa framework has both implemented as [NSDateFormatter](http://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/DataFormatting/Articles/dfDateFormatting10_4.html%23//apple_ref/doc/uid/TP40002369-SW1) and [NSRegularExpression](http://developer.apple.com/library/iOS/#documentation/Foundation/Reference/NSRegularExpression_Class/Reference/Reference.html) that also happen to be available for iOS development.
+O framework Cocoa tem ambos implementados como [NSDateFormatter](http://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/DataFormatting/Articles/dfDateFormatting10_4.html%23//apple_ref/doc/uid/TP40002369-SW1) e [NSRegularExpression](http://developer.apple.com/library/iOS/#documentation/Foundation/Reference/NSRegularExpression_Class/Reference/Reference.html), que por acaso também estão disponíveis para desenvolvimento iOS.
 
-You can format dates like this:
+Você pode formatar datas assim:
 
 * * *
 
@@ -28,10 +31,10 @@ NSDate *date = [NSDate dateWithTimeIntervalSinceReferenceDate:162000];
 
 NSString *formattedDateString = [dateFormatter stringFromDate:date];  
 NSLog(`"formattedDateString: %`", formattedDateString);  
-// Output for locale en_US: “formattedDateString: Jan 2, 2001”  
+// Saída para o locale en_US: “formattedDateString: Jan 2, 2001”  
 ```
 
-And you can use Regular Expressions like this:
+E você pode usar expressões regulares assim:
 
 * * *
 
@@ -47,7 +50,7 @@ NSUInteger numberOfMatches = [regex numberOfMatchesInString:string
  range:NSMakeRange(0, [string length])];  
 ```
 
-But I have issues with both of these. The Ruby equivalent for the date formatting example would be:
+Mas eu tenho problemas com os dois. O equivalente em Ruby para o exemplo de formatação de datas seria:
 
 * * *
 
@@ -57,7 +60,7 @@ date = Time.parse(“2001-01-01”) + 162000.seconds
 date.strftime(“%b %d, %Y”)  
 ```
 
-And the regular expression example would be like this:
+E o exemplo de expressão regular seria assim:
 
 * * *
 
@@ -66,23 +69,23 @@ And the regular expression example would be like this:
 number_of_matches = /\W*[a|b][c|d]\W*/.match(string).size  
 ```
 
-There are 2 specific things that annoys me:
+Tem 2 coisas específicas que me incomodam:
 
-- that the Obj-C versions feels unnecessarily verbose. Now, I do understand that they are lower level and they will probably allow for more flexibility, but I think they should have higher “porcelain” versions, that are more straightforward.
-- that in Obj-C, the Date Formatting uses the [Unicode TR-35](http://unicode.org/reports/tr35/tr35-10.html#Date_Format_Patterns) formatting standard and that Regular Expressions uses the [ICU](http://userguide.icu-project.org/strings/regexp) standard that is inspired by Perl Regular Expression with support for Unicode and loosely based on JDK 1.4 java.util.regex.
+- as versões em Obj-C parecem desnecessariamente verbosas. Eu entendo que elas são de mais baixo nível e provavelmente permitem mais flexibilidade, mas acho que deveriam ter versões mais "porcelana", mais diretas.
+- em Obj-C, a formatação de datas usa o padrão [Unicode TR-35](http://unicode.org/reports/tr35/tr35-10.html#Date_Format_Patterns) e as expressões regulares usam o padrão [ICU](http://userguide.icu-project.org/strings/regexp), que é inspirado nas expressões regulares de Perl com suporte a Unicode e vagamente baseado no java.util.regex do JDK 1.4.
 
-So, the ideal solution for me would be:
+Então, a solução ideal para mim seria:
 
-- to have higher level versions of those features;
-- to have C-compatible strftime date formatting and Ruby 1.9’s Oniguruma level regular expressions.
+- ter versões de mais alto nível dessas funcionalidades;
+- ter formatação de datas com strftime compatível com C e expressões regulares no nível do Oniguruma do Ruby 1.9.
 
-## It’s a Unix System
+## É um sistema Unix
 
-That’s when the obvious thing came to me: Objective-C is nothing more than a superset of C, so anything that is compatible with C is automatically compatible with Objective-C. More than that, the **iOS is a Unix System**! Meaning that it has all the goodies of Posix support.
+Foi aí que me caiu a ficha do óbvio: Objective-C nada mais é que um superset de C, então qualquer coisa compatível com C é automaticamente compatível com Objective-C. Mais que isso, o **iOS é um sistema Unix**! Ou seja, ele tem todas as gostosuras do suporte Posix.
 
 <http://www.youtube.com/embed/dFUlAQZB9Ng>
 
-So, how do I get [C-compatible](http://www.cplusplus.com/reference/clibrary/ctime/strftime/) strftime? Easy:
+Então, como eu pego o [strftime compatível com C](http://www.cplusplus.com/reference/clibrary/ctime/strftime/)? Fácil:
 
 * * *
 C
@@ -106,16 +109,16 @@ return output;
 
 -
 
-Reference: [NSDate+helpers.m](https://github.com/akitaonrails/ObjC_Rubyfication/blob/master/Rubyfication/NSDate+helpers.m#L71-80)
+Referência: [NSDate+helpers.m](https://github.com/akitaonrails/ObjC_Rubyfication/blob/master/Rubyfication/NSDate+helpers.m#L71-80)
 
-Now follow each line to understand it:
+Agora siga cada linha pra entender:
 
-- At line 4 it is returning the current time represented as the number of seconds since 1970. That method actually returns a <tt>NSTimeInterval</tt> which is a number that is essentially the same as the C-equivalent <tt>time_t</tt>
-- At line 6 the C function <tt>localtime_r</tt> converts the <tt>unitTime</tt> number into the C-structure <tt>timeStruct</tt>
-- At line 9 we call a custom method I created called <tt>formatter</tt> that just returns a <tt>strftime</tt> compatible string format. The Obj-C string (when we create using the “@” symbol) is an object that we must convert to an array of chars using the <tt>cStringUsingEncoding:</tt>. C functions don’t understand Obj-C string, hence the conversion. Then we finally call the <tt>strftime</tt> itself that will store the result in the <tt>buffer</tt> array of char that we declared before.
-- At line 10 we now do the reverse and convert the resulting C-string (array of chars) back into an Obj-C String.
+- Na linha 4 ele retorna o tempo atual representado como o número de segundos desde 1970. Esse método na verdade retorna um <tt>NSTimeInterval</tt>, que é um número essencialmente igual ao equivalente em C <tt>time_t</tt>
+- Na linha 6 a função C <tt>localtime_r</tt> converte o número <tt>unitTime</tt> na estrutura C <tt>timeStruct</tt>
+- Na linha 9 chamamos um método customizado que criei chamado <tt>formatter</tt>, que apenas devolve uma string de formato compatível com <tt>strftime</tt>. A string Obj-C (quando criamos com o símbolo "@") é um objeto que precisamos converter para um array de chars usando <tt>cStringUsingEncoding:</tt>. Funções C não entendem string Obj-C, daí a conversão. Aí finalmente chamamos o próprio <tt>strftime</tt>, que vai armazenar o resultado no array de char <tt>buffer</tt> que declaramos antes.
+- Na linha 10 fazemos o caminho inverso e convertemos a C-string resultante (array de chars) de volta em uma String Obj-C.
 
-Now this is too nice. I have added a few other helper methods that now allows me to use it like this:
+Agora isso fica muito bom. Adicionei alguns outros métodos auxiliares que agora me permitem usar assim:
 
 * * *
 
@@ -127,27 +130,27 @@ it(`"should convert the date to the rfc822 format", ^{
 
 -
 
-Reference: [DateSpec.m](https://github.com/akitaonrails/ObjC_Rubyfication/blob/master/RubyficationTests/DateSpec.m#L69)
+Referência: [DateSpec.m](https://github.com/akitaonrails/ObjC_Rubyfication/blob/master/RubyficationTests/DateSpec.m#L69)
 
-And the <tt>“rfc822”</tt> string will just be internally converted to <tt>@"%a, %d %b %Y %H:%M:%S"</tt> by the [<tt>formatter:</tt>](https://github.com/akitaonrails/ObjC_Rubyfication/blob/master/Rubyfication/NSDate+helpers.m#L82-100) selector in the <tt>NSDate</tt> class.
+E a string <tt>“rfc822”</tt> vai ser internamente convertida para <tt>@"%a, %d %b %Y %H:%M:%S"</tt> pelo seletor [<tt>formatter:</tt>](https://github.com/akitaonrails/ObjC_Rubyfication/blob/master/Rubyfication/NSDate+helpers.m#L82-100) na classe <tt>NSDate</tt>.
 
-Now, to add Ruby 1.9-level regular expression you can go straight to the source and use the original C-based [Oniguruma](http://www.geocities.jp/kosako3/oniguruma/) itself, exactly what Ruby does. There several ways to integrate a C library into your Cocoa project, but someone already did all the hard work. Satoshi Nakagawa wrote an Obj-C wrapper called [CocoaOniguruma](http://limechat.net/cocoaoniguruma/) that makes it dead easy to integrate into your project.
+Agora, pra ter expressões regulares no nível do Ruby 1.9 você pode ir direto na fonte e usar o próprio [Oniguruma](http://www.geocities.jp/kosako3/oniguruma/) original baseado em C, exatamente o que o Ruby faz. Existem várias formas de integrar uma biblioteca C em um projeto Cocoa, mas alguém já fez todo o trabalho pesado. Satoshi Nakagawa escreveu um wrapper em Obj-C chamado [CocoaOniguruma](http://limechat.net/cocoaoniguruma/) que torna a integração no seu projeto absurdamente fácil.
 
-There are several ways to integrate an external library into your project, the easier way (albeit, not exactly the best) that I am showing here is by creating a new Static Library Target within my project, called _CocoaOniguruma_:
+Existem várias formas de integrar uma biblioteca externa no seu projeto. A forma mais fácil (embora não exatamente a melhor) que mostro aqui é criando um novo Static Library Target dentro do meu projeto, chamado _CocoaOniguruma_:
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2011/4/23/Screen%20shot%202011-04-23%20at%2010.33.47%20PM_original.png?1303608817)
 
-It will create a new Group called _CocoaOniguruma_ in your project. Than you just add all the files from [CocoaOniguruma’s core folder](https://github.com/psychs/cocoaoniguruma/tree/master/framework/core) to that group, select the new target and all the source files and headers will be properly added to the project, like this:
+Isso vai criar um novo Group chamado _CocoaOniguruma_ no seu projeto. Depois é só adicionar todos os arquivos da [pasta core do CocoaOniguruma](https://github.com/psychs/cocoaoniguruma/tree/master/framework/core) nesse grupo, selecionar o novo target e todos os arquivos fonte e headers serão devidamente adicionados ao projeto, assim:
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2011/4/23/Screen%20shot%202011-04-23%20at%2010.37.19%20PM_original.png?1303608987)
 
-Finally, you need to go to the original main target of your application and add both the new target to the target dependencies and the binary <tt>.a</tt> file to the binary linking section, like this:
+Por fim, você precisa ir no target principal original da sua aplicação e adicionar tanto o novo target nas dependências de target quanto o binário <tt>.a</tt> na seção de linking de binários, assim:
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2011/4/23/Screen%20shot%202011-04-23%20at%2010.39.07%20PM_original.png?1303609098)
 
-With all this set, I recommend you to explore the <tt>OnigRegexp.m</tt> and <tt>OnigRegexpUtility.m</tt>, that are Obj-C wrappers to the Oniguruma library. The author already did some very Ruby-like syntax for you to use.
+Com tudo isso configurado, recomendo explorar o <tt>OnigRegexp.m</tt> e o <tt>OnigRegexpUtility.m</tt>, que são wrappers Obj-C para a biblioteca Oniguruma. O autor já deixou uma sintaxe bem ao estilo Ruby pra você usar.
 
-I have wrapped those helpers in my own classes like this:
+Embrulhei esses helpers nas minhas próprias classes assim:
 
 * * *
 
@@ -169,9 +172,9 @@ I have wrapped those helpers in my own classes like this:
 }
 ```
 
-Reference: [NSString+helpers.m](https://github.com/akitaonrails/ObjC_Rubyfication/blob/master/Rubyfication/NSString+helpers.m#L176-190)
+Referência: [NSString+helpers.m](https://github.com/akitaonrails/ObjC_Rubyfication/blob/master/Rubyfication/NSString+helpers.m#L176-190)
 
-Which now allows me to use this nicer syntax:
+O que agora me permite usar essa sintaxe mais agradável:
 
 * * *
 
@@ -185,8 +188,8 @@ it(@"should replace each substrings with one corresponding replacement in the ar
 });
 ```
 
-Reference: [StringSpec.m](https://github.com/akitaonrails/ObjC_Rubyfication/blob/master/RubyficationTests/StringSpec.m#L86-102)
+Referência: [StringSpec.m](https://github.com/akitaonrails/ObjC_Rubyfication/blob/master/RubyficationTests/StringSpec.m#L86-102)
 
-If you’re thinking that it is strange for a snippet of Objective-C code to have keyword such as <tt>context</tt> or <tt>it</tt>, they come from [Kiwi](http://www.kiwi-lib.info/), which builds an RSpec-like BDD testing framework on top of SenTesting Kit for Objective-C development that you should definitely check out. But the code above should be easy enough to understand without even knowing about Kiwi. If you’re a Ruby developer, you will probably notice that the syntax bears some resemblance to what you’re used to already.
+Se você está achando estranho um trecho de código Objective-C ter palavras-chave como <tt>context</tt> ou <tt>it</tt>, elas vêm do [Kiwi](http://www.kiwi-lib.info/), que constrói um framework de testes BDD ao estilo RSpec em cima do SenTesting Kit para desenvolvimento Objective-C, e que você definitivamente deveria conferir. Mas o código acima deve ser fácil de entender mesmo sem conhecer o Kiwi. Se você é desenvolvedor Ruby, provavelmente vai notar que a sintaxe tem certa semelhança com o que você já está acostumado.
 
-So, linking to existing standard C libraries or even third-party open source C libraries is a piece of cake for those simple cases, without having to resort to any “Native Interface” tunneling between virtual machines or any other plumbing. If you want C, they’re there for you to easily integrate and use.
+Então, linkar com bibliotecas C padrão existentes ou até com bibliotecas C open source de terceiros é moleza pra esses casos simples, sem precisar recorrer a nenhum tunelamento de "Native Interface" entre máquinas virtuais ou qualquer outra encanação. Se você quer C, ele está aí pra você integrar e usar facilmente.
