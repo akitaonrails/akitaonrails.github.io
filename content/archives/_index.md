@@ -764,7 +764,7 @@ Quer ver as transcrições do Canal Akitando? [Clique aqui](/akitando/).
 ## 2008 - Junho
 
 - [RailsConf 2008 - Video Interview with Phusion](/2008/06/24/railsconf-2008-video-interview-with-phusion/)
-- [Chatting with Blaine Cook (Twitter)](/2008/06/17/chatting-with-blaine-cook-twitter/)
+- [Conversando com Blaine Cook (Twitter)](/2008/06/17/conversando-com-blaine-cook-twitter/)
 - [Machucando Código por Diversão e Lucro](/2008/06/14/machucando-c-digo-por-divers-o-e-lucro/)
 - [RailsConf 2008 - Memories](/2008/06/05/railsconf-2008-memories/)
 - [RailsConf 2008 - Rails Scales!](/2008/06/05/railsconf-2008-rails-scales/)

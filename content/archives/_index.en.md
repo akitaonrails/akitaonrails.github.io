@@ -231,6 +231,7 @@ Want to see the Akitando Channel transcripts (Portuguese only)? [Click here](/ak
 
 ## 2011 - July
 
+- [\[Journey to Japan #1\] Exploring Tokyo City](/en/2011/07/26/journey-to-japan-1-exploring-tokyo-city/)
 - [Upcoming: Journey to Japan](/en/2011/07/23/upcoming-journey-to-japan/)
 
 ## 2011 - April

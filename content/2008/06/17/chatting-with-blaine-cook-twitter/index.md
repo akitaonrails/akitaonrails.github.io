@@ -1,179 +1,181 @@
 ---
-title: Chatting with Blaine Cook (Twitter)
+title: Conversando com Blaine Cook (Twitter)
 date: '2008-06-17T00:29:00-03:00'
-slug: chatting-with-blaine-cook-twitter
+slug: conversando-com-blaine-cook-twitter
+translationKey: chatting-blaine-cook
 tags:
 - interview
-- english
+- traduzido
+aliases:
+- /2008/06/17/chatting-with-blaine-cook-twitter/
 draft: false
 ---
 
-Ruby on Rails is **big**. Twitter is **big**. And because of that they became easy targets for the media and the frustrated pundits wanting a few more pageviews. “Blaine Cook” was one of Twitter’s developers and he kindly agreed to participate on one of my interviews. And, of course, he will answer the question _“Does Rails Scale?”_
+Ruby on Rails é **grande**. Twitter é **grande**. E por isso eles se tornaram alvos fáceis para a mídia e os pundits frustrados em busca de mais pageviews. Blaine Cook foi um dos desenvolvedores do Twitter e gentilmente concordou em participar de uma das minhas entrevistas. E, claro, ele vai responder à pergunta: _"Rails Escala?"_
 
 [![](http://s3.amazonaws.com/akitaonrails/assets/2008/6/17/2299866775_385f7af555.jpg)](http://www.flickr.com/photos/hyku/2299866775/)
 
 
- **AkitaOnRails:** So, let me first explain that my main goal when I interview high profile people like you is to bring good information for our growing Rails community in Brazil. It is always good to ask about your background, how did you get into Rails and what was your experience with it.
+**AkitaOnRails:** Então, deixa eu explicar primeiro que meu principal objetivo ao entrevistar pessoas de alto perfil como você é trazer informação de qualidade para nossa crescente comunidade Rails no Brasil. É sempre bom perguntar sobre seu background, como você chegou ao Rails e qual foi sua experiência com ele.
 
-**Blaine Cook:** I started with Rails on a small personal project back in December 2004, after Evan Henshaw-Plath ([rabble](http://2008.xtech.org/public/schedule/speaker/283)) got really excited about Ruby & Rails.
+**Blaine Cook:** Comecei com Rails num projeto pessoal pequeno em dezembro de 2004, depois que Evan Henshaw-Plath ([rabble](http://2008.xtech.org/public/schedule/speaker/283)) ficou muito animado com Ruby e Rails.
 
 [![](http://s3.amazonaws.com/akitaonrails/assets/2008/6/17/43021932_545efed570.jpg)](http://www.flickr.com/photos/foolswisdom/43021932/)
 
-Shortly afterwards, I started working on [Odeo](http://www.odeo.com). I really like Rails, and I’ve really enjoyed my experience with it. Building web-apps used to be a real pain (i.e., boring) because you ended up building the same pieces over and over again.
+Logo depois, comecei a trabalhar no [Odeo](http://www.odeo.com). Gosto muito de Rails e tive uma experiência excelente com ele. Construir web apps costumava ser um parto (ou seja, uma chatice) porque você acabava reconstruindo as mesmas peças repetidamente.
 
-Rails fixed that. There were frameworks before, but Rails reframed the question in a humane way, and we see that in all the other frameworks that have been created afterwards.
+O Rails resolveu isso. Já existiam frameworks antes, mas o Rails reformulou a questão de forma humana, e é isso que vemos em todos os outros frameworks que vieram depois.
 
-**AkitaOnRails:** So, what were you doing before Rails then? Enterprise Java? Microsoft stuff? Other open source projects?
+**AkitaOnRails:** E o que você fazia antes do Rails? Java Enterprise? Coisas Microsoft? Outros projetos open source?
 
-**Blaine Cook:** I mostly did PHP and Perl, in the context of open source projects and consulting jobs.
+**Blaine Cook:** Fazia principalmente PHP e Perl, no contexto de projetos open source e trabalhos de consultoria.
 
-**AkitaOnRails:** So, **Odeo** and **Twitter** are your biggest projects in Rails then? Before digging into Twitter, can you tell us how was your work for Odeo?
+**AkitaOnRails:** Então **Odeo** e **Twitter** são seus maiores projetos em Rails? Antes de entrar no Twitter, pode nos contar como foi seu trabalho no Odeo?
 
-**Blaine Cook:** Sure – Odeo was fine – the big problem there was with focus. Podcasting hadn’t been proven (and the form that podcasting takes now is much different than what people envisioned in 2004 / 2005), so it was a struggle to gain traction for the product.
+**Blaine Cook:** Claro — o Odeo foi OK. O grande problema lá era foco. O podcasting ainda não tinha provado seu valor (e a forma que o podcasting assumiu hoje é bem diferente do que as pessoas imaginavam em 2004/2005), então era difícil ganhar tração com o produto.
 
-We had all sorts of cool things built, many of which are just becoming products now. Things like multi-track mixing on the web, video messaging (like [seesmic](http://www.seesmic.com/)), etc.
+Construímos coisas incríveis, muitas das quais estão só agora virando produtos. Coisas como mixagem multilista na web, mensagens em vídeo (como o [seesmic](http://www.seesmic.com/)), etc.
 
-**AkitaOnRails:** This is an interesting side-subject: podcasting. I do a [Brazilian Rails podcast](http://podcast.rubyonrails.pro.br/) with a friend and nowadays people are very acquainted with podcasts. What was the vision 3, 4 years ago about what podcasting would become?
+**AkitaOnRails:** É um assunto paralelo interessante: podcasting. Faço um [podcast brasileiro de Rails](http://podcast.rubyonrails.pro.br/) com um amigo e hoje em dia as pessoas estão muito acostumadas com podcasts. Qual era a visão 3, 4 anos atrás sobre o que o podcasting se tornaria?
 
-**Blaine Cook:** I think that’s fairly similar, but it seems like most of the traction (i.e., listeners) for podcasting is established thru radio shows that are seeking a wider distribution.
+**Blaine Cook:** Acho que é razoavelmente parecida, mas parece que a maior tração (ou seja, ouvintes) do podcasting veio de programas de rádio que buscavam distribuição mais ampla.
 
-I think there was a sentiment that podcasting would be much more popular amongst bloggers in general. Everyone was going to have a podcast.
+Havia um sentimento de que o podcasting seria muito mais popular entre blogueiros em geral. Todo mundo ia ter um podcast.
 
-But in reality it’s a medium with far fewer publishers than blogging.
+Mas na realidade é um meio com muito menos publicadores do que o blog.
 
 [![](http://s3.amazonaws.com/akitaonrails/assets/2008/6/17/2303816926_beafddbb5c.jpg)](http://www.flickr.com/photos/jolieani/2303816926/)
 
-**AkitaOnRails:** You helped start Odeo, I mean were you one of the creators? Or were you hired to solve their problem? And why did you leave Odeo?
+**AkitaOnRails:** Você ajudou a fundar o Odeo, ou seja, você foi um dos criadores? Ou foi contratado para resolver o problema deles? E por que você saiu do Odeo?
 
-**Blaine Cook:** No – I started at Odeo a few months after development had started. I never really left Odeo – the product was sold, and the company continued on as Obvious. Twitter was a side-project at Odeo.
+**Blaine Cook:** Não — entrei no Odeo alguns meses depois que o desenvolvimento tinha começado. Na verdade nunca saí formalmente do Odeo — o produto foi vendido, e a empresa continuou como Obvious. O Twitter era um projeto paralelo dentro do Odeo.
 
-**AkitaOnRails:** Ok, and Twitter is big nowadays. Could you give us a glimpse of how the whole idea of _“What are you doing”_ started? Did you think at that time that it would become such a success as it is now?
+**AkitaOnRails:** Ok, e o Twitter é enorme hoje. Você pode nos dar uma ideia de como surgiu toda a ideia do _"O que você está fazendo"_? Na época você achava que se tornaria um sucesso tão grande?
 
-**Blaine Cook:** Twitter was started as a side project at Odeo, but really it was an idea that [Jack](http://www.stonetemple.com/articles/interview-jack-dorsey.shtml) had been kicking around in various forms for several years.
+**Blaine Cook:** O Twitter começou como um projeto paralelo no Odeo, mas na verdade era uma ideia que o [Jack](http://www.stonetemple.com/articles/interview-jack-dorsey.shtml) já vinha desenvolvendo de diversas formas há vários anos.
 
-He and **Noah Glass** (the founder of Odeo) created a small sub-company within Odeo to work on it, in spring 2006. Initially, I hated the idea, mostly because it was intended to be SMS-only.
+Ele e **Noah Glass** (o fundador do Odeo) criaram uma subempresa dentro do Odeo para trabalhar nisso, na primavera de 2006. Inicialmente, eu detestei a ideia, principalmente porque era para ser só via SMS.
 
-It’s hard to say looking back, but at the time I’d say Twitter was a long shot; I think that it was successful had a lot to do with luck and openness.
+Olhando para trás, é difícil dizer, mas na época eu diria que o Twitter tinha poucas chances de dar certo. Acho que o sucesso teve muito a ver com sorte e abertura.
 
-**AkitaOnRails:** So, maybe one of the biggest reasons for Twitter’s success was also its Achilles’ heels? I mean the paramount API based access it has today?
+**AkitaOnRails:** Então, talvez um dos maiores motivos para o sucesso do Twitter fosse também seu calcanhar de Aquiles? Ou seja, o acesso via API que ele tem hoje?
 
-**Blaine Cook:** Yes, absolutely.
+**Blaine Cook:** Sim, com certeza.
 
-**AkitaOnRails:** So, getting to the hairy stuff, it quite is obvious that [Michael Arrington](http://www.techcrunch.com/2008/04/23/amateur-hour-over-at-twitter/) dislikes Twitter, period. And specially he has something [against you](http://www.alleyinsider.com/2008/4/lead_architect_blaine_cook_out_at_twitter) personally, at least considering the tone of his articles on Techcrunch. Can you comment on that?
+**AkitaOnRails:** Entrando no assunto espinhoso: é bastante óbvio que o [Michael Arrington](http://www.techcrunch.com/2008/04/23/amateur-hour-over-at-twitter/) não gosta do Twitter. E especialmente parece que ele tem algo [contra você](http://www.alleyinsider.com/2008/4/lead_architect_blaine_cook_out_at_twitter) pessoalmente, pelo menos considerando o tom dos artigos dele no Techcrunch. Você pode comentar isso?
 
-**Blaine Cook:** Not really; I don’t know why he has a grudge. It’s mildly annoying, but in the end it makes Techcrunch look more like a gossip rag and less like a respectable news outlet, so it’s his loss.
+**Blaine Cook:** Não muito — não sei por que ele tem esse ranço. É levemente irritante, mas no fim das contas faz o Techcrunch parecer mais uma fofoqueira do que um veículo de notícias respeitável. Perda dele.
 
-**AkitaOnRails:** And not only that but it also seems that some tech related news media wants to co-relate Twitter’s instability with the fact that part of its front-end is powered by Ruby on Rails, hence the discussion _“Does Rails scale?”_. As a Railer this seems quite obvious that relating Rails and instability generates lots of pageviews. Do you think that’s the case?
+**AkitaOnRails:** E não só isso: parece que parte da mídia de tecnologia quer correlacionar a instabilidade do Twitter com o fato de que parte do front-end é movido a Ruby on Rails, daí a discussão _"Rails Escala?"_. Como Railer, me parece óbvio que relacionar Rails e instabilidade gera muitos pageviews. Você acha que é isso mesmo?
 
-**Blaine Cook:** I think that’s at least part of it. Obviously page views are a huge draw.
+**Blaine Cook:** Acho que é pelo menos parte disso. Pageviews são uma atração enorme, obviamente.
 
-**AkitaOnRails:** Maybe it would be good for someone like you to explain to our audience the difference between **‘performance’** and **‘scalability’** as it seems that most people don’t know the difference between the two.
+**AkitaOnRails:** Talvez fosse útil alguém como você explicar para nossa audiência a diferença entre **'performance'** e **'escalabilidade'**, já que a maioria das pessoas parece não saber a diferença entre as duas.
 
-**Blaine Cook:** Performance and scalability are very different things. Performance is like the speed limit; it’s a question of how quickly you can get from point A to point B. In this case, we’re talking about how quickly you can get a page rendered and delivered to the user.
+**Blaine Cook:** Performance e escalabilidade são coisas muito diferentes. Performance é como o limite de velocidade — é uma questão de quão rápido você vai do ponto A ao ponto B. Nesse caso, estamos falando de quão rápido você consegue renderizar e entregar uma página ao usuário.
 
-Scalability is a question of how many users you can handle. Highways intrinsically don’t scale, for example, because when they’re full, you get traffic jams. In web architectures, what we aim to provide are systems that will expand (usually by adding more hardware) to handle more traffic.
+Escalabilidade é uma questão de quantos usuários você consegue atender. Estradas, por natureza, não escalam — quando estão cheias, você tem engarrafamento. Em arquiteturas web, o que buscamos são sistemas que expandem (geralmente adicionando mais hardware) para lidar com mais tráfego.
 
-Obviously they’re related – if you have a traffic jam, then the effective speed limit is lower than the theoretical limit. But increasing the speed limit won’t make traffic jams any better.
+Obviamente estão relacionadas — se você tem um engarrafamento, o limite de velocidade efetivo é menor que o teórico. Mas aumentar o limite de velocidade não resolve engarrafamentos.
 
-There are a whole bunch of ways to make traffic less congested – adding more lanes to the highway, encouraging people to use public transit, or better yet encouraging people to work closer to home.
+Há várias formas de diminuir o congestionamento — adicionar mais faixas na estrada, incentivar as pessoas a usar transporte público, ou melhor ainda incentivá-las a trabalhar mais perto de casa.
 
-Likewise, there are many techniques for making web sites more scalable, and most of them don’t involve making things much “faster”.
+Da mesma forma, existem muitas técnicas para tornar sites mais escaláveis, e a maioria delas não envolve tornar as coisas muito mais "rápidas".
 
 [![](http://s3.amazonaws.com/akitaonrails/assets/2008/6/17/2476619970_af72edc5ef.jpg)](http://www.flickr.com/photos/gavinbell/2476619970/)
 
-**AkitaOnRails:** Great explanation. Twitter was involved in some not very good controversy since last year, and I think you were not involved in most of them, but maybe you could shed some light on those issues as some people don’t follow every news all the time. The first one being that interview where [Alex Payne](http://www.radicalbehavior.com/5-question-interview-with-twitter-developer-alex-payne/) complained about Rails not supporting multiple databases. **David Hansson** ranted about it. Then [Dr. Nic](http://drnicwilliams.com/2007/04/12/magic-multi-connections-a-facility-in-rails-to-talk-to-more-than-one-database-at-a-time/) came to the beginning of a solution. Can you explain this matter for our audience?
+**AkitaOnRails:** Ótima explicação. O Twitter se envolveu em várias controvérsias desde o ano passado, e acho que você não estava envolvido na maioria delas, mas talvez possa lançar luz sobre essas questões já que nem todo mundo acompanha todas as notícias. A primeira foi aquela entrevista em que [Alex Payne](http://www.radicalbehavior.com/5-question-interview-with-twitter-developer-alex-payne/) reclamou que o Rails não suportava múltiplos bancos de dados. **David Hansson** respondeu irritado. Depois o [Dr. Nic](http://drnicwilliams.com/2007/04/12/magic-multi-connections-a-facility-in-rails-to-talk-to-more-than-one-database-at-a-time/) iniciou uma solução. Você pode explicar esse assunto para nossa audiência?
 
-**Blaine Cook:** Sure – it’s true that Rails doesn’t support multiple databases out of the box, but this is easily fixed. I think the interview with Alex didn’t get into the details very well, and mis-represented our challenges.
+**Blaine Cook:** Claro — é verdade que o Rails não suporta múltiplos bancos de dados out of the box, mas isso é facilmente resolvido. Acho que a entrevista com o Alex não entrou nos detalhes e deturpou nossos desafios.
 
-If it was just a matter of supporting multiple database connections, that’s something that’s easily solved. The real problem was much more complex, and had to do with custom sharding for our particular dataset.
+Se fosse apenas uma questão de suportar múltiplas conexões com banco de dados, isso seria facilmente resolvido. O problema real era muito mais complexo e tinha a ver com sharding customizado para nosso dataset específico.
 
-**Eran Hammer-Lahav** has an excellent series (parts [1](http://www.hueniverse.com/hueniverse/2008/03/on-scaling-a-mi.html), [2](http://www.hueniverse.com/hueniverse/2008/03/scaling-a-micro.html), [3](http://www.hueniverse.com/hueniverse/2008/04/scaling-a-micro.html)) in which he describes some of the challenges associated with building microblogging sites to scale.
+**Eran Hammer-Lahav** tem uma série excelente (partes [1](http://www.hueniverse.com/hueniverse/2008/03/on-scaling-a-mi.html), [2](http://www.hueniverse.com/hueniverse/2008/03/scaling-a-micro.html), [3](http://www.hueniverse.com/hueniverse/2008/04/scaling-a-micro.html)) em que ele descreve alguns dos desafios associados a construir sites de microblogging para escalar.
 
-None of the things he describes in the article are hard to do with Rails. In fact, I think that David (Hansson) is wrong when he says that Rails isn’t flexible – it’s actually much more flexible than most other frameworks.
+Nada do que ele descreve no artigo é difícil de fazer com Rails. De fato, acho que o David (Hansson) está errado quando diz que Rails não é flexível — ele é muito mais flexível do que a maioria dos outros frameworks.
 
-**AkitaOnRails:** That’s right. And then the other recent controversy is, of course, because of [TechCrunch](http://www.techcrunch.com/2008/05/31/hey-twitter-i-have-a-few-questions-too/) again, where they state that Twitter only has like half a dozen servers and that’s why it falls down frequently. Can you roughly describe how is Twitter’s hardware architecture?
+**AkitaOnRails:** Certo. E a outra controvérsia recente é, claro, por causa do [TechCrunch](http://www.techcrunch.com/2008/05/31/hey-twitter-i-have-a-few-questions-too/) de novo, onde dizem que o Twitter tem apenas meia dúzia de servidores e é por isso que cai com frequência. Você pode descrever grosseiramente como é a arquitetura de hardware do Twitter?
 
-**Blaine Cook:** Twitter has a lot of servers, definitely more than half a dozen. I can’t go into more detail about the hardware setup, but I can say that the back end is an asynchronous messaging-based system. [Starling](http://rubyforge.org/projects/starling/) (the queue server that I wrote that Twitter released in January) is the mechanism used to pass messages between processes.
+**Blaine Cook:** O Twitter tem muitos servidores, definitivamente mais do que meia dúzia. Não posso entrar em mais detalhes sobre o hardware, mas posso dizer que o back-end é um sistema assíncrono baseado em mensagens. O [Starling](http://rubyforge.org/projects/starling/) (o servidor de filas que eu escrevi e que o Twitter lançou em janeiro) é o mecanismo usado para passar mensagens entre processos.
 
-The biggest problem is that Twitter deals with many, many often expensive API requests due to the frequent polling required to stay up to date with your friends’ most recent tweets. The big challenge was to come up with an inexpensive way to make those expensive API requests cheap.
+O maior problema é que o Twitter lida com muitas requisições de API caras devido ao polling frequente necessário para manter os tweets dos seus amigos atualizados. O grande desafio era encontrar uma forma barata de tornar essas requisições caras mais baratas.
 
-We used memcache extensively, and had a whole bunch of caching in place well over a year ago, but it wasn’t enough.
+Usamos memcache extensivamente e tínhamos um monte de caching em operação há mais de um ano, mas não era suficiente.
 
-**AkitaOnRails:** Last year Alex and Britt spoke at RailsConf I think about [Scaling Rails](http://www.slideshare.net/eraz/scaling-rails-presentation/) where it felt like Twitter’s problem would end soon. It was mostly about caching and optimizations like that, and one of the main messages was _“cache the hell out of it”_. I saw you speaking this year about database sharding and how different it is to architect for 1k people and for 1 million people and that you can’t predict what to do before that. Twitter still goes down sometimes, so what changed between last year and now about Scaling Rails?
+**AkitaOnRails:** No ano passado, Alex e Britt falaram na RailsConf sobre [Scaling Rails](http://www.slideshare.net/eraz/scaling-rails-presentation/) e parecia que o problema do Twitter logo acabaria. Era principalmente sobre caching e otimizações do tipo, e uma das mensagens principais era _"faça cache de tudo"_. Vi você falando este ano sobre database sharding e como é diferente arquitetar para 1 mil pessoas e para 1 milhão e que não dá pra prever o que fazer antes. O Twitter ainda cai às vezes, então o que mudou entre o ano passado e agora em relação a Scaling Rails?
 
 [![](http://s3.amazonaws.com/akitaonrails/assets/2008/6/17/2329021397_3dde02123a.jpg)](http://www.flickr.com/photos/x180/2329021397/)
 
-**Blaine Cook:** Yes – we knew for a long time that database sharding was important, but for various reasons weren’t able to move forward with it.
+**Blaine Cook:** Sim — sabíamos há muito tempo que o sharding de banco de dados era importante, mas por várias razões não conseguimos avançar nisso.
 
-The thing with sharding is that until someone comes out with something like what Google has (and I don’t mean Bigtable), the sort of shape your application takes before sharding is very different than the shape afterwards. Sharding makes doing some things harder, and is generally expensive.
+O negócio com sharding é que, enquanto alguém não aparecer com algo parecido com o que o Google tem (e não me refiro ao Bigtable), a forma que sua aplicação assume antes do sharding é muito diferente da forma depois. O sharding torna certas coisas mais difíceis e é geralmente caro.
 
-When people say “sharding” or “denormalization”, what they mean is _“duplicating data in particular ways to make certain lookups faster.”_
+Quando as pessoas falam em "sharding" ou "denormalização", o que querem dizer é _"duplicar dados de formas específicas para tornar certas consultas mais rápidas."_
 
-That always involves additional cost. If you’re building a new app that will either never see hundreds of thousands of users, or if you don’t know if it will or not, it’s generally not worth sinking lots of money into hardware and engineering time to build a “scalable” architecture.
+Isso sempre envolve custo adicional. Se você está construindo um app novo que provavelmente nunca verá centenas de milhares de usuários — ou se você não sabe se verá ou não — geralmente não vale investir muito dinheiro em hardware e tempo de engenharia para construir uma arquitetura "escalável".
 
-The reality is that most developers know SQL and can build CGI applications using PHP or Rails or whatever, but relatively few have experience taking those straightforward, normalized data sets and breaking them up into much more complex sharded systems.
+A realidade é que a maioria dos desenvolvedores conhece SQL e consegue construir aplicações CGI com PHP, Rails ou o que for, mas relativamente poucos têm experiência em pegar esses datasets normalizados e diretos e quebrá-los em sistemas sharded muito mais complexos.
 
-**AkitaOnRails:** Of course, sometimes people feel like they will actually build the ‘next’ Twitter. I [interviewed Ezra](/2008/6/5/railsconf-2008-brazil-rails-podcast-special-edition), from Engine Yard, at RailsConf and he seems to acknowledge that the friends-of-friends graph is a problem so complex that whoever figures it out will make a ton of money I mean, isn’t it the case that traditional SQL designs don’t work all the time?
+**AkitaOnRails:** Claro, às vezes as pessoas acham que vão construir o "próximo" Twitter. [Entrevistei o Ezra](/2008/6/5/railsconf-2008-brazil-rails-podcast-special-edition), da Engine Yard, na RailsConf e ele reconhece que o grafo de amigos-de-amigos é um problema tão complexo que quem resolver vai ganhar muito dinheiro. Ou seja, designs SQL tradicionais não funcionam sempre, né?
 
-**Blaine Cook:** Of course – the question is, what else are you going to use? Google has an architecture that lets them spend infinite amounts of money to build denormalized lists of everything, and access those lists quickly. There are a number of projects – HBase, Hypertable, CouchDB, and many others – that aim to solve these problems, but none of them are ready for production use.
+**Blaine Cook:** Claro — a questão é: o que mais você vai usar? O Google tem uma arquitetura que permite gastar quantidades infinitas de dinheiro para construir listas denormalizadas de tudo e acessar essas listas rapidamente. Há vários projetos — HBase, Hypertable, CouchDB e muitos outros — que visam resolver esses problemas, mas nenhum deles está pronto para uso em produção.
 
-The reality is that 10 years ago, people were building web applications with tcsh, and now we have better tools.
+A realidade é que 10 anos atrás as pessoas construíam aplicações web com tcsh, e agora temos ferramentas melhores.
 
-**AkitaOnRails:** Where is Twitter hosted? For some reason I saw Engine Yard pitching a lot about scalability issues throughout the whole RailsConf this year. Do you think this whole “Rails doesn’t scale” meme is making Railers worried about future prospects? Even though it was not supposed to scare that much as we do have higher traffic websites such as Scribd and YellowPages in the top of the list – though the architectures are world apart, of course. What do you think about this issue?
+**AkitaOnRails:** Onde o Twitter está hospedado? Por alguma razão vi a Engine Yard falando muito sobre questões de escalabilidade durante toda a RailsConf deste ano. Você acha que o meme "Rails não escala" está deixando os Railers preocupados com perspectivas futuras? Mesmo que não devesse assustar tanto assim, já que temos sites de alto tráfego como Scribd e YellowPages no topo da lista — embora as arquiteturas sejam completamente diferentes, é claro. O que você acha?
 
-**Blaine Cook:** I’m not sure, but I think Twitter actually does more traffic than YellowPages or Scribd; the API is a really killer.
+**Blaine Cook:** Não tenho certeza, mas acho que o Twitter tem mais tráfego que o YellowPages ou Scribd — a API é realmente poderosa.
 
-**AkitaOnRails:** Ah, I see, Alexa and others don’t account for API request, right?
+**AkitaOnRails:** Ah, entendo. O Alexa e outros não contabilizam requisições de API, né?
 
-**Blaine Cook:** Twitter is hosted at NTT / Verio. I think there was a blog post about it in February. Right, Alexa doesn’t account for API / SMS / XMPP traffic at all.
+**Blaine Cook:** O Twitter está hospedado na NTT/Verio. Acho que houve um post no blog sobre isso em fevereiro. Certo, o Alexa não contabiliza tráfego de API/SMS/XMPP.
 
-As far as the perspective that Rails doesn’t scale – I think it’s an unfortunate side-effect of Twitter’s issues, to be sure, and I think some people worry about it. To put things into perspective, though, Friendster was written in Java to start, and switched to PHP. Myspace was written in ColdFusion and transitioned to ASP.NET.
+Quanto à perspectiva de que Rails não escala — acho que é um efeito colateral infeliz dos problemas do Twitter, com certeza, e acho que algumas pessoas se preocupam com isso. Para contextualizar, porém, o Friendster foi escrito em Java inicialmente e migrou para PHP. O Myspace foi escrito em ColdFusion e migrou para ASP.NET.
 
-When people run into problems scaling sites they often think that the language is the problem, but I think it’s rarely the case.
+Quando as pessoas têm problemas ao escalar sites frequentemente pensam que a linguagem é o problema, mas acho que raramente é o caso.
 
-Ruby is slower than PHP or Java (depending on which framework you use) or, well, most languages, but it’s getting faster. And “slower” really only translates to additional cost.
+Ruby é mais lento que PHP ou Java (dependendo de qual framework você usa) ou, bem, a maioria das linguagens, mas está ficando mais rápido. E "mais lento" se traduz apenas em custo adicional.
 
-**AkitaOnRails:** Which reminds me of the last controversy which was [Twitter switching off from Rails](http://www.techcrunch.com/2008/05/01/twitter-said-to-be-abandoning-ruby-on-rails/). The case is that you already have a mixed environment, right? Most pundits think they ‘know’ how to solve Twitter’s problems, though they have absolutely no idea what they are talking about. Some blame Rails, others blame MySQL (_“go to Oracle”_, they say). Can you elaborate on that?
+**AkitaOnRails:** O que me lembra da última controvérsia: o [Twitter abandonando Rails](http://www.techcrunch.com/2008/05/01/twitter-said-to-be-abandoning-ruby-on-rails/). O fato é que você já tem um ambiente misto, certo? A maioria dos pundits acha que "sabe" resolver os problemas do Twitter, embora não façam ideia do que estão falando. Alguns culpam o Rails, outros culpam o MySQL (_"vá para Oracle"_, dizem). Você pode elaborar sobre isso?
 
-**Blaine Cook:** Right – the majority of our development was in Ruby / Rails, but there was code in other langauges. Python, Java, and there were some experiments with Scala. Which ignores the fact that we ran significant portions of our infrastructure on non-Ruby code – Apache, Mongrel, MySQL, memcached, ejabberd, etc. are all great applications and critical to building scalable sites.
+**Blaine Cook:** Certo — a maior parte do nosso desenvolvimento era em Ruby/Rails, mas havia código em outras linguagens. Python, Java, e alguns experimentos com Scala. O que ignora o fato de que rodávamos partes significativas da nossa infraestrutura com código não-Ruby — Apache, Mongrel, MySQL, memcached, ejabberd, etc., são todas aplicações excelentes e críticas para construir sites escaláveis.
 
-Oracle definitely has some of these things figured out, but it’s much easier to hire for MySQL, and Oracle licensing and support fees are nothing to scoff at.
+O Oracle definitivamente tem algumas dessas coisas resolvidas, mas é muito mais fácil contratar para MySQL, e as taxas de licenciamento e suporte do Oracle não são de se desprezar.
 
-Building your architecture around a system that will only get cheaper with time, rather than more expensive, is always a good idea.
+Construir sua arquitetura em torno de um sistema que só vai ficar mais barato com o tempo, em vez de mais caro, é sempre uma boa ideia.
 
-**AkitaOnRails:** And I have to ask, can you disclose some meaningful numbers, or orders of magnitude, such as tweets per day, average downtime, or something like this, just so we can have an idea of the size of Twitter’s problems? Coming from someone that has actually had to deal with such a huge situation – which most people probably will never have to face -, what would you say are Ruby/Rails’ strongest features for you?
+**AkitaOnRails:** E tenho que perguntar: você pode divulgar alguns números significativos, ou ordens de grandeza, como tweets por dia, tempo médio de inatividade, ou algo assim, só para termos uma ideia do tamanho dos problemas do Twitter? Vindo de alguém que de fato teve que lidar com uma situação tão enorme — que a maioria das pessoas provavelmente nunca vai enfrentar —, o que você diria serem as melhores funcionalidades do Ruby/Rails para você?
 
-**Blaine Cook:** Sadly, no – there are plenty of estimates on the web, most notably compete, and Dave Winer’s fan-out numbers.
+**Blaine Cook:** Infelizmente, não — há muitas estimativas na web, mais notavelmente o compete e os números de fan-out do Dave Winer.
 
-I think Ruby’s best feature is that it’s **fun to develop** with. It never stops being fun, either. It’s an expressive and powerful language. Rails just makes web development painless, compared to doing everything by hand. That’s something that shouldn’t be underestimated, or whose value forgotten.
+Acho que o melhor recurso do Ruby é que é **divertido de desenvolver** com ele. E nunca deixa de ser divertido. É uma linguagem expressiva e poderosa. O Rails torna o desenvolvimento web indolor, comparado a fazer tudo na mão. Isso é algo que não deveria ser subestimado, ou cujo valor deveria ser esquecido.
 
-On top of that, they’re really flexible. We needed to build a denormalization tool, for example, and doing it in Ruby was just as easy / hard as any other language, except when it came to tying it in to the rest of the system – no search and replace, no subclassing or anything. Just turn it on, and it works.
+Além disso, são muito flexíveis. Precisávamos construir uma ferramenta de denormalização, por exemplo, e fazer isso em Ruby era tão fácil/difícil quanto em qualquer outra linguagem, exceto na hora de integrá-la ao restante do sistema — sem busca e substituição, sem subclasses nem nada. É só ligar e funciona.
 
 [![](http://s3.amazonaws.com/akitaonrails/assets/2008/6/17/440202833_77152b8080.jpg)](http://www.flickr.com/photos/niallkennedy/440202833/)
 
-**AkitaOnRails:** Finally can you tell us why you left Twitter? What are you new endeavors? Twitter survived WWDC last week which is saying a lot considering such huge events would usually bring it down in the past.
+**AkitaOnRails:** Por fim, você pode nos contar por que saiu do Twitter? Quais são seus novos projetos? O Twitter sobreviveu à WWDC da semana passada, o que é muito, considerando que eventos tão grandes costumavam derrubá-lo no passado.
 
-**Blaine Cook:** I’m moving to the UK, and Twitter is / has moved into a position where their primary focus is reliability. When I left, the hope was that their system was stabilized, and the roadmap was clear as far as putting them in a better position overall. At the time, they’d had an extended period of uninterrupted uptime, and had survived with flying colours [SXSW](http://sxsw.com/). Unfortunately, it didn’t last, but it looks like things are better again.
+**Blaine Cook:** Estou me mudando para o Reino Unido, e o Twitter entrou/está entrando numa fase em que o foco principal é confiabilidade. Quando saí, a esperança era que o sistema estava estabilizado e o roadmap estava claro para colocá-los em melhor posição. Na época, eles tinham tido um período prolongado de uptime ininterrupto e haviam sobrevivido com louvor à [SXSW](http://sxsw.com/). Infelizmente não durou, mas parece que as coisas estão melhores de novo.
 
-I’m not yet ready to reveal what’s next, but I have a number of exciting things going on. I’ll continue maintaining Starling and [xmpp4r-simple](http://code.google.com/p/xmpp4r-simple/), and I’m still active with the OAuth spec. working group.
+Ainda não estou pronto para revelar o que vem a seguir, mas tenho várias coisas empolgantes acontecendo. Vou continuar mantendo o Starling e o [xmpp4r-simple](http://code.google.com/p/xmpp4r-simple/), e ainda estou ativo no grupo de trabalho da especificação OAuth.
 
-**AkitaOnRails:** In the end, Twitter became almost part of our culture already (at least in our tech world). People complain when it is down because now they depend on it so much. People like Michael Arrington, Robert Scoble, Leo Laporte are always complaining, saying they would move to Pownce or Jaiku, but they are still around. Do you have any guess on why Twitter users are so loyal?
+**AkitaOnRails:** No fim das contas, o Twitter já se tornou quase parte da nossa cultura (pelo menos no nosso mundo tech). As pessoas reclamam quando cai porque agora dependem tanto dele. Pessoas como Michael Arrington, Robert Scoble, Leo Laporte vivem reclamando, dizendo que vão migrar para Pownce ou Jaiku, mas continuam lá. Você tem algum palpite de por que os usuários do Twitter são tão fiéis?
 
-**Blaine Cook:** Nope! I think the really rich landscape of tools that you can use to interact with Twitter on your own terms is a really big part of it. A lot of the users are personally invested, and they want to see that investment pay out.
+**Blaine Cook:** Não! Acho que o rico ecossistema de ferramentas que você pode usar para interagir com o Twitter nos seus próprios termos é uma grande parte disso. Muitos usuários têm um investimento pessoal e querem ver esse investimento retornar.
 
-**AkitaOnRails:** Ok, I think this covers everything Any closing remarks for our young Brazilian Rails community?
+**AkitaOnRails:** Ok, acho que cobrimos tudo. Alguma consideração final para nossa jovem comunidade Rails brasileira?
 
-**Blaine Cook:** The web is remarkably young, and there’s plenty of space for really amazing things to happen. I’m always excited to see what people are working on, and what’s possible with this whole Internet thing. For all of Arrington’s petty and misinformed comments, I think sites like Techcrunch and [Mashable](http://www.mashable.com) and [Silicon Alley Insider](http://www.alleyinsider.com) are interesting because they present a never ending stream of amazing things that people are building on the web.
+**Blaine Cook:** A web é notavelmente jovem, e há muito espaço para acontecerem coisas incríveis. Fico sempre animado ao ver o que as pessoas estão construindo e o que é possível com essa coisa toda chamada Internet. Com todos os comentários mesquinhos e desinformados do Arrington, acho que sites como Techcrunch, [Mashable](http://www.mashable.com) e [Silicon Alley Insider](http://www.alleyinsider.com) são interessantes porque apresentam um fluxo interminável de coisas incríveis que as pessoas estão construindo na web.
 
-The financial focus is unfortunate, as there are plenty of apps that survive and provide income for their founders without ever needing to scale to galactic proportions.
+O foco financeiro é infeliz, já que há muitos apps que sobrevivem e proporcionam renda para seus criadores sem precisar escalar para proporções galácticas.
 
-The bottom line is that there’s plenty to do, and don’t worry about scaling or business model or anything – unless you’re passionate about what you’re doing, none of it matters.
+O ponto principal é que há muito a fazer, e não se preocupe com escalabilidade ou modelo de negócios ou qualquer coisa — a menos que você seja apaixonado pelo que está fazendo, nada disso importa.
 
-If you are passionate about what you’re doing, there’s a really good chance you’ll figure the details out.
+Se você é apaixonado pelo que está fazendo, há uma boa chance de você descobrir os detalhes no caminho.
 
-**AkitaOnRails:** Fantastic! Thank you very much for you kindness, I am sure my audience will enjoy it. And just to let you know that we, Brazilians, **do** tweet a lot! :-) Thanks!
+**AkitaOnRails:** Fantástico! Muito obrigado pela sua gentileza, tenho certeza que minha audiência vai adorar. E só para você saber: nós, brasileiros, **tweetamos** muito sim! :-) Valeu!
 
-**Blaine Cook:** Excellent, glad to hear! No problem, thanks for being a great interviewer.
+**Blaine Cook:** Que ótimo! Não foi nada, obrigado por ser um ótimo entrevistador.
 
 [![](http://s3.amazonaws.com/akitaonrails/assets/2008/6/17/2300104137_96c83ac13d.jpg)](http://www.flickr.com/photos/briandewitt/2300104137/)
-
