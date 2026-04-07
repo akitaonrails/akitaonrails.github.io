@@ -6,6 +6,7 @@ tags:
 - crush
 - zai
 - glm
+translationKey: glm-4-7-flash-review
 ---
 
 Recentemente fiz [um post comparando várias LLMs](https://akitaonrails.com/2026/01/11/ai-agents-comparando-as-principais-llm-no-desafio-de-zig/). A boa notícia é que as LLMs comerciais estão bem impressionantes mesmo. Mas a má notícia é que nenhuma LLM open source foi capaz de realizar meu desafio de programação (leia no post anterior pra entender o desafio).

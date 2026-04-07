@@ -15,6 +15,7 @@ tags:
 - Qwen3
 - MiniMax
 - openrouter
+translationKey: llms-zig-challenge
 ---
 
 Neste começo de 2026 me empolguei em fuçar LLMs de novo. Duas razões pra isso: testar o Charm Crush (alternativa a OpenCode, Cursor, etc) e testar LLMs novas como Claude Opus e GPT Codex pra ver como estão hoje em dia.

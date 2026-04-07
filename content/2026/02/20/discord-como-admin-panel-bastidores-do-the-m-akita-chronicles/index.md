@@ -7,6 +7,7 @@ tags:
 - themakitachronicles
 - rubyonrails
 - discord
+translationKey: discord-as-admin-panel
 ---
 
 Este post vai fazer parte de uma série; acompanhe pela tag [/themakitachronicles](/tags/themakitachronicles). Esta é a parte 6.

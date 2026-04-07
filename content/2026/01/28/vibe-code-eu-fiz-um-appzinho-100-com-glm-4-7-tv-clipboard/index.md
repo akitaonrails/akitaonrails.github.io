@@ -8,6 +8,7 @@ tags:
 - crush
 - glm
 - golang
+translationKey: tv-clipboard-glm-4-7
 ---
 
 Ontem eu postei o seguinte no X:

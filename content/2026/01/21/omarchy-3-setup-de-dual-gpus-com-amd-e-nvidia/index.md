@@ -9,6 +9,7 @@ tags:
 - nvidia
 - wayland
 - hyprland
+translationKey: omarchy-3-dual-gpu-setup
 ---
 
 Mais um post só pra eu não me esquecer destes detalhes na configuração do [Omarchy](https://omarchy.org/):

@@ -7,6 +7,7 @@ tags:
 - hitem3d
 - blender
 - bambulab
+translationKey: ai-3d-modeling-prompts
 ---
 
 Alguns dias atrás eu tinha feito um post sobre como usar Blender com IAs locais usando Blender MCP. E a conclusão era que a qualidade era ruim.

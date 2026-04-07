@@ -6,6 +6,7 @@ draft: false
 tags:
 - vibecode
 - rant
+translationKey: rant-akita-caved-to-ai
 ---
 
 > **TL;DR**: Eu sempre "abri as pernas" pra IA. Mas se você só assistiu clipes dos podcasts, entendo porque está confuso. Vou explicar.

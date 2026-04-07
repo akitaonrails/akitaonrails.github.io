@@ -1,16 +1,17 @@
 ---
-title: "AI Agents: Instalando LSPs pro Crush"
-slug: "ai-agents-instalando-lsps-pro-crush"
+title: "AI Agents: Installing LSPs for Crush"
+slug: "ai-agents-installing-lsps-for-crush"
 date: 2026-01-21T13:14:07-0300
 tags:
 - crush
 - lsp
 translationKey: installing-lsps-for-crush
+description: "My Crush config with LSPs wired in, plus an Arch Linux script that auto-detects installed languages and installs the matching language servers."
 ---
 
-Este post é mais pra eu documentar e não esquecer. Como falei nos últimos posts, tenho usado [Charm's Crush](https://github.com/charmbracelet/crush) como meu agente favorito de IA pra programação. Repetindo: tanto faz se você usa Claude Code ou OpenCode, todos eles são igualmente bons. Minha preferência pessoal ainda é Crush porque acho mais bonito, só isso.
+This post is mostly for me to document things and not forget. As I said in the last few posts, I've been using [Charm's Crush](https://github.com/charmbracelet/crush) as my favorite AI coding agent. Repeating myself: it doesn't matter if you use Claude Code or OpenCode, they're all equally good. My personal preference is still Crush because I think it looks nicer, that's all.
 
-Ainda não entendi o quanto faz diferença ou não, mas tanto OpenCode quanto Crush tem suporte a Language Servers (LSPs) então achei legal deixar configurado. Eis meu `~/.config/crush/crush.json`:
+I still don't fully understand how much of a difference it makes, but both OpenCode and Crush support Language Servers (LSPs), so I thought it'd be cool to have it configured. Here's my `~/.config/crush/crush.json`:
 
 ```json
 {
@@ -218,11 +219,11 @@ Ainda não entendi o quanto faz diferença ou não, mas tanto OpenCode quanto Cr
 }
 ```
 
-Notem que eu uso primariamente Claude Opus 4.5 via OpenRouter e tenho LM Studio e Ollama configurados como providers pra testar outros modelos open source.
+Note that I primarily use Claude Opus 4.5 via OpenRouter and I have LM Studio and Ollama configured as providers for testing other open source models.
 
-Também uso [Mise](/2025/09/07/omarchy-2-0-mise-pra-organizar-ambientes-de-desenvolvimento/) pra organizar as linguagens de programação que uso.
+I also use [Mise](/2025/09/07/omarchy-2-0-mise-pra-organizar-ambientes-de-desenvolvimento/) to organize the programming languages I use.
 
-Porém, agora precisa instalar os LSPs de cada linguagem. Eu não conheço um jeito melhor de gerenciar isso da mesma forma como com um Mason no Neovim. Então fiz um script pra instalar tudo pra mim (no meu Arch Linux). Pra isso criei este script `~/.local/bin/install-lsps.sh`:
+But now you need to install the LSPs for each language. I don't know of a better way to manage this the same way Mason does in Neovim. So I made a script to install everything for me (on my Arch Linux). For that I created this script `~/.local/bin/install-lsps.sh`:
 
 ```bash
 #!/usr/bin/env bash
@@ -734,4 +735,4 @@ main() {
 main "$@"
 ```
 
-Teoricamente é só isso. Se alguém conhecer um jeito melhor, mande nos comentários abaixo.
+In theory that's all there is to it. If anyone knows a better way, drop it in the comments below.

@@ -10,6 +10,7 @@ tags:
 - kimi
 - glm
 - gemini
+translationKey: vibe-code-which-llm-real-talk
 ---
 
 Esta é a pergunta que não quer calar:

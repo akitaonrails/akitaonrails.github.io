@@ -7,6 +7,7 @@ tags:
 - vibecode
 - themakitachronicles
 - rubyonrails
+translationKey: vibe-code-zero-to-prod-6-days
 ---
 
 **ASSINE O NOVO NEWSLETTER:** [The M.Akita Chronicles](https://themakitachronicles.com/)

@@ -4,6 +4,7 @@ slug: "vibe-code-fiz-um-clone-do-mega-em-rails-em-1-dia-pro-meu-home-server"
 date: 2026-02-21T18:48:25+00:00
 draft: false
 tags: ["rails", "ruby", "docker", "cloudflare", "security", "vibe-coding", "homeserver", "claude"]
+translationKey: frankmega-mega-clone-1-day
 ---
 
 Faz tempo que eu queria ter um serviço de file sharing privado no meu home server. Sabe quando precisa mandar um arquivo grande pra alguém? "Ah, usa o Google Drive". Não. "WeTransfer?" Também não. Eu quero controle total. Quero saber onde meus arquivos estão, por quanto tempo existem, quem baixou, e não quero depender de serviço de terceiro pra algo tão simples.

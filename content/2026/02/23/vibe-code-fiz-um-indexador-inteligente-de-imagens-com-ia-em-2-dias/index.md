@@ -9,6 +9,7 @@ tags:
 - rust
 - tauri
 - qwen
+translationKey: frank-sherlock-image-indexer
 ---
 
 Nas últimas 48 horas, construí do zero um aplicativo desktop completo, com binários publicados para Linux, macOS e Windows. 50 commits, ~26 horas de trabalho efetivo, 8.359 linhas de Rust, 5.842 de TypeScript, 338 testes automatizados. Se você me dissesse isso 2 anos atrás, eu chamaria de mentira.

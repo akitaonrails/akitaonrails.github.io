@@ -10,6 +10,7 @@ tags:
 - openai
 - anthropic
 - bolha
+translationKey: rant-ai-killed-programmers
 ---
  
 Quem só acompanhou cortes e comentários, sem assistir aos meus [vídeos sobre IA](https://www.youtube.com/watch?v=UDrDg6uUOVs&list=PLdsnXVqbHDUeowsAO0sChHDY4D65T5s1U&pp=sAgC) no meu canal, ou pelo menos ao [podcast no Flow](https://www.youtube.com/watch?v=sf4Gxf0LiKo), está achando que eu disse o seguinte:

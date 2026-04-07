@@ -9,6 +9,7 @@ tags:
 - claude
 - gpt
 - crush
+translationKey: frankmd-part-2
 ---
 
 Se ainda não leu, veja a [Parte 1](/2026/02/01/vibe-code-fiz-um-editor-de-markdown-do-zero-com-claude-code-frankmd-part-1/) pra entender o que é o aplicativo que eu construí. O **FrankMD** é um editor de Markdown que personalizei pra ser eficaz pro meu caso de uso pessoal: escrever blog posts. Não foi pra ser substituto de Obsidian nem de VS Code.

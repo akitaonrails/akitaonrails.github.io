@@ -7,6 +7,7 @@ tags:
 - claude
 - gpt
 - vibecode
+translationKey: best-language-for-llms
 ---
 
 Resolvi fazer um exercício bem bobo: perguntar ao Claude e ao GPT Codex o que eles consideram que seriam as características de uma linguagem de programação que beneficiaria a edição por LLMs, sem se preocupar em ser amigável para programadores humanos.
