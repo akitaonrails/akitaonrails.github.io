@@ -5,6 +5,9 @@ slug: conversando-com-dr-nic
 tags:
 - interview
 draft: false
+translationKey: chatting-dr-nic
+aliases:
+- "/2007/04/16/chatting-with-dr-nic/"
 ---
 
 **English readers, click [here](/2007/4/16/chatting-with-dr-nic)**

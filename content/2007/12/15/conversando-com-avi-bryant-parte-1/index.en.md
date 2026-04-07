@@ -4,8 +4,8 @@ date: '2007-12-15T12:15:00-02:00'
 slug: chatting-with-avi-bryant-part-1
 tags:
 - interview
-- english
 draft: false
+translationKey: chatting-avi-bryant-part-1
 ---
 
 Someone once challenged all other frameworks implying that no one would get close to what we are doing in Rails … except for Avi.Seaside is such a departure from the status quo that Avi himself describes it of a ‘heretic’ framework. And he is right. He looked back in history and took what is considered ‘the’ father – and arguably ‘the’ best implementaton – of object-oriented languages: Smalltalk.

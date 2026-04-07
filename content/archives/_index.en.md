@@ -190,6 +190,7 @@ Want to see the Akitando Channel transcripts (Portuguese only)? [Click here](/ak
 - [Rubyconf Brasil 2013: Meet Bruno AbstractJ](/en/2013/08/22/rubyconf-brasil-2013-meet-bruno-abstractj/)
 - [Rubyconf Brasil 2013: Meet Danilo Sato](/en/2013/08/15/rubyconf-brasil-2013-meet-danilo-sato/)
 - [Rubyconf Brasil 2013: Meet Eduardo Shiota](/en/2013/08/19/rubyconf-brasil-2013-meet-eduardo-shiota/)
+- [Rubyconf Brasil 2013: Your first time in São Paulo, Brazil](/en/2013/08/15/rubyconf-brasil-2013-your-first-time-in-sao-paulo-brazil/)
 - [Rubyconf Brasil 2013: Meet Hongli Lai](/en/2013/08/14/rubyconf-brasil-2013-meet-hongli-lai/)
 - [Rubyconf Brasil 2013: Jaime Andrés Dávila](/en/2013/08/13/rubyconf-brasil-2013-jaime-andres-davila/)
 - [Rubyconf Brasil 2013: Meet Caike Souza](/en/2013/08/11/rubyconf-brasil-2013-meet-caike-souza/)
@@ -209,11 +210,16 @@ Want to see the Akitando Channel transcripts (Portuguese only)? [Click here](/ak
 
 ## 2012 - July
 
+- [\[English\] Minimal I18n with Rails 3.2](/en/2012/07/24/english-minimal-i18n-with-rails-3-2/)
 - [Registration are Open for Rubyconf Brazil 2012](/en/2012/07/11/registration-are-open-for-rubyconf-brazil-2012/)
 
 ## 2012 - May
 
 - [\[Off-Topic\] Reading with subtitles over Kanjis in Japanese webpages](/en/2012/05/08/off-topic-reading-with-subtitles-over-kanjis-in-japanese-webpages/)
+
+## 2011 - November
+
+- [\[Journey to Japan #3\] Exclusive Video Interviews](/en/2011/11/28/journey-to-japan-3-exclusive-video-interviews/)
 
 ## 2011 - September
 
@@ -259,6 +265,50 @@ Want to see the Akitando Channel transcripts (Portuguese only)? [Click here](/ak
 - [Rails Podcast Brasil, QCon Special - Nick Sieger (JRuby) and Francesco Cesarini (Erlang)](/en/2008/11/21/rails-podcast-brasil-qcon-special-nick-sieger-jruby-and-francesco-cesarini-erlang/)
 - [Rails Podcast Brasil, QCon Special - Jan Lehnardt and Chris Anderson from CouchDB](/en/2008/11/19/rails-podcast-brasil-qcon-special-jan-lenhardt-and-chris-anderson-from-couchdb/)
 - [Rails Podcast Brasil, QCon Special - Yehuda Katz](/en/2008/11/19/rails-podcast-brasil-qcon-special-yehuda-katz/)
+
+## 2008 - September
+
+- [Chatting with Joshua Peek](/en/2008/09/27/chatting-with-joshua-peek/)
+
+## 2008 - February
+
+- [Chatting with Evan Phoenix](/en/2008/02/11/chatting-with-evan-phoenix/)
+
+## 2008 - January
+
+- [Chatting with Peter Cooper](/en/2008/01/09/chatting-with-peter-cooper/)
+- [Chatting with Adrian Holovaty](/en/2008/01/01/chatting-with-adrian-holovaty/)
+
+## 2007 - December
+
+- [Chatting with Avi Bryant - Part 2](/en/2007/12/22/chatting-with-avi-bryant-part-2/)
+- [Chatting with Avi Bryant - Part 1](/en/2007/12/15/chatting-with-avi-bryant-part-1/)
+
+## 2007 - November
+
+- [Chatting with John Lam (IronRuby)](/en/2007/11/12/chatting-with-john-lam-ironruby/)
+
+## 2007 - August
+
+- [Chatting with Jamis Buck](/en/2007/08/06/chatting-with-jamis-buck/)
+
+## 2007 - July
+
+- [Chatting with Carl Youngblood](/en/2007/07/20/chatting-with-carl-youngblood/)
+
+## 2007 - June
+
+- [Chatting with Ola Bini (JRuby Core Team Member)](/en/2007/06/21/chatting-with-ola-bini-jruby-core-team-member/)
+
+## 2007 - May
+
+- [Chatting with David Black](/en/2007/05/11/chatting-with-david-black/)
+- [Chatting with Chad Fowler](/en/2007/05/07/chatting-with-chad-fowler/)
+
+## 2007 - April
+
+- [Chatting with Geoffrey Grosenbach](/en/2007/04/21/chatting-with-geoffrey-grosenbach/)
+- [Chatting with Dr. Nic](/en/2007/04/16/chatting-with-dr-nic/)
 
 ## 2006 - April
 

@@ -6,6 +6,9 @@ tags:
 - interview
 - jruby
 draft: false
+translationKey: chatting-ola-bini
+aliases:
+- "/2007/06/21/chatting-with-ola-bini-jruby-core-team-member/"
 ---
 
 **English readers, click [here](/2007/6/21/chatting-with-ola-bini-jruby-core-team-member)**

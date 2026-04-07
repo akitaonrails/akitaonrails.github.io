@@ -4,8 +4,8 @@ date: '2007-05-11T18:14:00-03:00'
 slug: chatting-with-david-black
 tags:
 - interview
-- english
 draft: false
+translationKey: chatting-david-black
 ---
 
 

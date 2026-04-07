@@ -1,41 +1,42 @@
 ---
-title: "[Journey to Japan #3] Exclusive Video Interviews"
+title: "[Jornada ao Japão #3] Entrevistas Exclusivas em Vídeo"
 date: '2011-11-28T02:40:00-02:00'
-slug: journey-to-japan-3-exclusive-video-interviews
+slug: jornada-ao-japao-3-entrevistas-exclusivas-em-video
+translationKey: journey-to-japan-3
+aliases:
+- /2011/11/28/journey-to-japan-3-exclusive-video-interviews/
 tags:
 - rubykaigi2011
-- english
+- traduzido
 draft: false
 ---
 
-It’s been a while since I’ve written about my [Ruby Kaigi 2011 trip](http://akitaonrails.com/2011/08/05/journey-to-japan-2-the-final-rubykaigi). Since then I’ve been really busy and I left out lots of great material shamelessly accumulating dust in my hard drive, but no more. Today I was finally able to edit some of that and upload the interviews I have recorded with some of the most well known Japanese Ruby contributors. Wonderful people that I was lucky to meet and that were very friendly to me and eager to tell their stories.
+Faz um tempo desde que escrevi sobre a minha [viagem à RubyKaigi 2011](http://akitaonrails.com/2011/08/05/journey-to-japan-2-the-final-rubykaigi). Desde então fiquei muito ocupado e deixei um monte de material ótimo acumulando poeira vergonhosamente no meu HD — mas não mais. Hoje finalmente consegui editar parte disso e subir as entrevistas que fiz com alguns dos mais conhecidos contribuidores japoneses de Ruby. Pessoas maravilhosas que tive a sorte de conhecer, extremamente simpáticas e dispostas a contar suas histórias.
 
-These are the first versions of the edited videos, I still didn’t have time to add English subtitles, but I wanted to upload them as soon as possible so the Japanese community could check them out first. I will try to add the subtitles in the following days (help would be appreciated). The Matz interview in particular has the worst audio as we were in the middle of an after-party in a small bar with very bad acoustics, so I apologize for its quality, I hope you can get most out of it.
+Estas são as primeiras versões dos vídeos editados — ainda não tive tempo de adicionar legendas em inglês, mas quis subir o quanto antes para que a comunidade japonesa pudesse conferir primeiro. Vou tentar adicionar as legendas nos próximos dias (ajuda seria bem-vinda). A entrevista com o Matz em particular tem o pior áudio, pois estávamos no meio de uma festa de encerramento num bar pequeno com acústica horrível, então me desculpem pela qualidade — espero que dê para aproveitar a maior parte.
 
-Alencar Koga helped me out a lot during the interviews. Coincidentally he is a Brazilian just like me, but he’s been living in Japan for a long time and was able to build a great career, being now the CTO of MTI Japan, one of the largest mobile app developers in the country. Akira Matsuda also helped me a lot, and he is also a very well known Rubyist in Japan. Both were edited out of the videos to make them shorter to watch. I appreciate their help a lot as they will be very useful when I do the English subtitles.
+Alencar Koga me ajudou muito durante as entrevistas. Por coincidência, ele é brasileiro como eu, mas mora no Japão há muito tempo e conseguiu construir uma carreira excelente, sendo hoje o CTO da MTI Japan, uma das maiores desenvolvedoras de apps mobile do país. Akira Matsuda também me ajudou muito, sendo um Rubyist muito conhecido no Japão. Ambos foram cortados dos vídeos para deixá-los mais curtos. Agradeço muito a ajuda dos dois, pois será muito útil quando eu fizer as legendas em inglês.
 
+Os três primeiros vídeos foram gravados na festa do primeiro dia da RubyKaigi. Devo admitir que não estava no meu melhor estado depois de algumas doses e de um dia inteiro de evento :-) As entrevistas dois e três foram apresentadas por mim em português em vez de inglês — desculpem a confusão. Em todas elas, faço as perguntas em inglês e os convidados respondem em japonês. Só a entrevista com o Matz é toda em inglês.
 
-The first three videos were recorded at the after-party in the first day of Ruby Kaigi. I have to admit that I was not in my best shape after having a few drinks and after a full day of event :-) By the way, the second and third video interviews were introduced by me in Brazilian Portuguese instead of English, so forgive me for my confusion. All of them have myself making questions in English and the guests replying back in Japanese. Only the Matz interview is all in English.
-
-Shintaro Kakutani-san was the first one I’ve interviewed, being one of the main organizers of the event and a long time Ruby evangelist in Japan. He is a very active community leader, helping maintain the Japanese Ruby ecosystem.
+Shintaro Kakutani-san foi o primeiro entrevistado — um dos principais organizadores do evento e um evangelista de Ruby de longa data no Japão. É um líder comunitário muito ativo, ajudando a manter o ecossistema Ruby japonês.
 
 http://www.youtube.com/embed/npkrGATZYi0
 
-The second one was Gotou Yuzou-san, he is one of the oldest Ruby Core Committers being the author of both Webrick and OpenSSL. He wrote a few books about Ruby in Japan and he works for the Tokyo branch of Nacl, the company from Matsue that has been contributing to Ruby since the beginning, hiring Matz as a fellow researcher.
+O segundo foi Gotou Yuzou-san, um dos mais antigos committers do Ruby Core e autor tanto do Webrick quanto do OpenSSL. Escreveu alguns livros sobre Ruby no Japão e trabalha na filial de Tóquio da Nacl, a empresa de Matsue que contribui com Ruby desde o início, contratando o Matz como pesquisador.
 
 http://www.youtube.com/embed/bpXIIFShCo0
 
-The third one was recorded when the party was over. I was able to reach the couple Yasuko and Koichiro Ohba. Yasuko-san is well known being the president of the consulting company EveryLeaf. She employs several Ruby developers and does Ruby related projects and now mobile development as well. She is an example of entrepreneurship in the community. Koichiro-san works for a Heroku-like company in Japan, managing Cloud based infrastructure using JRuby technology. He contributes and evangelizes JRuby, specially in terms of documentation, localization (internationalization, etc).
+O terceiro foi gravado quando a festa já havia acabado. Consegui chegar até o casal Yasuko e Koichiro Ohba. Yasuko-san é conhecida por ser presidente da empresa de consultoria EveryLeaf. Ela emprega vários desenvolvedores Ruby e faz projetos relacionados à linguagem e agora também desenvolvimento mobile. É um exemplo de empreendedorismo na comunidade. Koichiro-san trabalha numa empresa estilo Heroku no Japão, gerenciando infraestrutura Cloud com tecnologia JRuby. Contribui e evangeliza o JRuby, especialmente em termos de documentação e localização.
 
 http://www.youtube.com/embed/4tBSXYHGtk4
 
-On the second day of the event I was able to catch up with Nobuyoshi Nakada-san. He is “the” oldest Ruby Core Contributor, and he probably touched every single part of Ruby. He is also known as “the patch monster” as he seems to be a coding machine, being more active through out the last 15 years than Matz himself. He deserved to be the first one Matz chose to follow him at SalesForce.com.
+No segundo dia do evento consegui encontrar Nobuyoshi Nakada-san. Ele é "o" contributor mais antigo do Ruby Core e provavelmente mexeu em todas as partes da linguagem. É conhecido como "o monstro de patches" pois parece uma máquina de código, sendo mais ativo nos últimos 15 anos do que o próprio Matz. Merecidamente foi o primeiro que Matz escolheu para segui-lo na Salesforce.com.
 
 http://www.youtube.com/embed/6A9eq3aaDVw
 
-Finally, at the Heroku Drink up in the last day of the event, I was finally able to grab Matz himself for an interview. Having been continuously and consistently on this road for that last few years, you can imagine how thrilled I was for having being able to interview Matz himself in person, at my home land in Japan. But as I’ve warned before, the audio is not good because of all the noise. At least Matz can speak English so everybody will be able to get most of this one.
+Por fim, no Heroku Drink Up no último dia do evento, finalmente consegui pegar o próprio Matz para uma entrevista. Depois de anos seguindo consistentemente essa jornada, podem imaginar o quanto estava entusiasmado por entrevistar o Matz pessoalmente, na terra natal dos meus avós. Mas como já avisei, o áudio não é bom por causa do barulho. Pelo menos o Matz fala inglês, então todo mundo vai conseguir aproveitar esta.
 
 http://www.youtube.com/embed/JBOWc7U2ed8
 
-Enjoy them all. This is for all of my friends in Japan! Thanks again for the hospitality.
-
+Aproveitem todas. Isto é para todos os meus amigos no Japão! Obrigado pela hospitalidade.

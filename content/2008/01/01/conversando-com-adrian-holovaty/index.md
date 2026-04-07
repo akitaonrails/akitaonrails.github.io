@@ -5,6 +5,9 @@ slug: conversando-com-adrian-holovaty
 tags:
 - interview
 draft: false
+translationKey: chatting-adrian-holovaty
+aliases:
+- "/2008/01/01/chatting-with-adrian-holovaty/"
 ---
 
 **English readers, click [here](http://www.akitaonrails.com/2008/1/1/chatting-with-adrian-holovaty)**

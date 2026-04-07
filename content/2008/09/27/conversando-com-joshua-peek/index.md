@@ -5,6 +5,9 @@ slug: conversando-com-joshua-peek
 tags:
 - interview
 draft: false
+translationKey: chatting-joshua-peek
+aliases:
+- "/2008/09/26/chatting-with-joshua-peek/"
 ---
 
 [![](http://s3.amazonaws.com/akitaonrails/assets/2008/8/1/468x60.gif)](http://www.locaweb.com.br/railssummit)

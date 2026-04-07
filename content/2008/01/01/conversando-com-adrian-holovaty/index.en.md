@@ -4,8 +4,8 @@ date: '2008-01-01T02:01:00-02:00'
 slug: chatting-with-adrian-holovaty
 tags:
 - interview
-- english
 draft: false
+translationKey: chatting-adrian-holovaty
 ---
 
 **TraducciÃ³n en [EspaÃ±ol](http://www.marcelor.com/2008/01/conversando-con-adrian-holovaty-creador-del-proyecto-django-traduccion.html)**

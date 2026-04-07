@@ -4,8 +4,8 @@ date: '2007-05-04T07:45:00-03:00'
 slug: chatting-with-chad-fowler
 tags:
 - interview
-- english
 draft: false
+translationKey: chatting-chad-fowler
 ---
 
 

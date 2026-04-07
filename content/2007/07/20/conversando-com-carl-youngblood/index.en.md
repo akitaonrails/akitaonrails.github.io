@@ -4,8 +4,8 @@ date: '2007-07-20T14:36:00-03:00'
 slug: chatting-with-carl-youngblood
 tags:
 - interview
-- english
 draft: false
+translationKey: chatting-carl-youngblood
 ---
 
 

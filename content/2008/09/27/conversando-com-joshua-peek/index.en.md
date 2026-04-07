@@ -4,8 +4,8 @@ date: '2008-09-26T02:32:00-03:00'
 slug: chatting-with-joshua-peek
 tags:
 - interview
-- english
 draft: false
+translationKey: chatting-joshua-peek
 ---
 
 [![](http://s3.amazonaws.com/akitaonrails/assets/2008/8/1/468x60.gif)](http://www.locaweb.com.br/railssummit)

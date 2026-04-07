@@ -4,8 +4,8 @@ date: '2007-04-16T13:01:00-03:00'
 slug: chatting-with-dr-nic
 tags:
 - interview
-- english
 draft: false
+translationKey: chatting-dr-nic
 ---
 
 

@@ -5,6 +5,9 @@ slug: conversando-com-carl-youngblood
 tags:
 - interview
 draft: false
+translationKey: chatting-carl-youngblood
+aliases:
+- "/2007/07/20/chatting-with-carl-youngblood/"
 ---
 
  ![](/files/carl.934570.jpeg)

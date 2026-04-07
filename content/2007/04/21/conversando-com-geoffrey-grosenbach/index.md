@@ -5,6 +5,9 @@ slug: conversando-com-geoffrey-grosenbach
 tags:
 - interview
 draft: false
+translationKey: chatting-geoffrey-grosenbach
+aliases:
+- "/2007/04/19/chatting-with-geoffrey-grosenbach/"
 ---
 
 **English readers, click [here](/2007/4/19/chatting-with-geoffrey-grosenbach)**

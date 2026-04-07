@@ -5,6 +5,9 @@ slug: conversando-com-david-black
 tags:
 - interview
 draft: false
+translationKey: chatting-david-black
+aliases:
+- "/2007/05/11/chatting-with-david-black/"
 ---
 
 **English readers, click [here](/2007/5/11/chatting-with-david-black)**

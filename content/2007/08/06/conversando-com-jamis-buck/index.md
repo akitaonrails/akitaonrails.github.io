@@ -5,6 +5,9 @@ slug: conversando-com-jamis-buck
 tags:
 - interview
 draft: false
+translationKey: chatting-jamis-buck
+aliases:
+- "/2007/08/03/chatting-with-jamis-buck/"
 ---
 
  ![](http://s3.amazonaws.com/akitaonrails/assets/2007/8/3/245186199_71f55cc3c7.jpg)

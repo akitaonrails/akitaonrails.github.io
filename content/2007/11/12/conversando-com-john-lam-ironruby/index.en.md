@@ -4,8 +4,8 @@ date: '2007-11-12T18:37:00-02:00'
 slug: chatting-with-john-lam-ironruby
 tags:
 - interview
-- english
 draft: false
+translationKey: chatting-john-lam
 ---
 
 [![](http://s3.amazonaws.com/akitaonrails/assets/2007/11/12/n685772348_7884.jpg)](http://www.iunknown.com/)

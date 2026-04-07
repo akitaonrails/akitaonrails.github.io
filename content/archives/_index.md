@@ -384,7 +384,7 @@ Quer ver as transcrições do Canal Akitando? [Clique aqui](/akitando/).
 - [Rubyconf Brasil 2013: Conheça Eduardo Shiota](/2013/08/19/rubyconf-brasil-2013-conheca-eduardo-shiota/)
 - [Rubyconf Brasil 2013: Vinheta de Abertura](/2013/08/19/rubyconf-brasil-2013-vinheta-de-abertura/)
 - [Rubyconf Brasil 2013: Conheça Rodrigo Caffo](/2013/08/16/rubyconf-brasil-2013-conheca-rodrigo-caffo/)
-- [Rubyconf Brasil 2013: Your first time in São Paulo, Brazil](/2013/08/15/rubyconf-brasil-2013-your-first-time-in-sao-paulo-brazil/)
+- [Rubyconf Brasil 2013: Sua Primeira Vez em São Paulo, Brasil](/2013/08/15/rubyconf-brasil-2013-sua-primeira-vez-em-sao-paulo-brasil/)
 - [Rubyconf Brasil 2013: Conheça Danilo Sato](/2013/08/15/rubyconf-brasil-2013-conheca-danilo-sato/)
 - [Rubyconf Brasil 2013: Conheça Hongli Lai](/2013/08/14/rubyconf-brasil-2013-conheca-hongli-lai/)
 - [Rubyconf Brasil 2013: Jaime Andrés Dávila](/2013/08/13/rubyconf-brasil-2013-jaime-andres-davila/)
@@ -462,7 +462,7 @@ Quer ver as transcrições do Canal Akitando? [Clique aqui](/akitando/).
 
 ## 2012 - Julho
 
-- [\[English\] Minimal I18n with Rails 3.2](/2012/07/24/english-minimal-i18n-with-rails-3-2/)
+- [\[English\] I18n Mínimo com Rails 3.2 no RubyLearning](/2012/07/24/i18n-minimo-com-rails-3-2-no-rubylearning/)
 - [ActiveAdmin + Best in Place](/2012/07/23/activeadmin-best-in-place/)
 - [Internationalização (I18n) Mínima em Rails 3.2 - Parte 2](/2012/07/14/internationalizacao-i18n-minima-em-rails-3-2-parte-2/)
 - [Internationalização (I18n) Mínima em Rails 3.2 - Parte 1](/2012/07/14/internationalizacao-i18n-minima-em-rails-3-2-parte-1/)
@@ -493,7 +493,7 @@ Quer ver as transcrições do Canal Akitando? [Clique aqui](/akitando/).
 
 ## 2011 - Novembro
 
-- [\[Journey to Japan #3\] Exclusive Video Interviews](/2011/11/28/journey-to-japan-3-exclusive-video-interviews/)
+- [\[Jornada ao Japão #3\] Entrevistas Exclusivas em Vídeo](/2011/11/28/jornada-ao-japao-3-entrevistas-exclusivas-em-video/)
 - [Páginas Estáticas no Rails](/2011/11/11/paginas-estaticas-no-rails/)
 - [RubyConf Brasil 2011 - Grande Sucesso!](/2011/11/07/rubyconf-brasil-2011-grande-sucesso/)
 - [Primeiro Dia de RubyConf Brasil 2011](/2011/11/03/primeiro-dia-de-rubyconf-brasil-2011/)
@@ -737,7 +737,6 @@ Quer ver as transcrições do Canal Akitando? [Clique aqui](/akitando/).
 
 - [Conversando com Joshua Peek](/2008/09/27/conversando-com-joshua-peek/)
 - [Rails Summit: Apoio](/2008/09/26/rails-summit-apoio/)
-- [Chatting with Joshua Peek](/2008/09/26/chatting-with-joshua-peek/)
 - [Off-Topic: O Poder do Mito, Redux](/2008/09/20/off-topic-o-poder-do-mito-redux/)
 - [Rails Summit: Promoção para Estudantes por Tempo Limitado!](/2008/09/10/rails-summit-promo-o-para-estudantes-por-tempo-limitado/)
 - [Palestrante Rails Summit: Danilo Sato](/2008/09/03/palestrante-rails-summit-danilo-sato/)
@@ -806,7 +805,6 @@ Quer ver as transcrições do Canal Akitando? [Clique aqui](/akitando/).
 - [Tradução: Tipagem Dinâmica vs Linguagem Dinâmica Explicado](/2008/02/22/tradu-o-tipagem-din-mica-vs-linguagem-din-mica-explicado/)
 - [Aguri: A Estrutura de Dados mais Legal que Você Nunca Ouviu Falar](/2008/02/21/aguri-a-estrutura-de-dados-mais-legal-que-voc-nunca-ouviu-falar/)
 - [Chatting with Scott Hanselman](/2008/02/18/chatting-with-scott-hanselman/)
-- [Chatting with Evan Phoenix](/2008/02/11/chatting-with-evan-phoenix/)
 - [Conversando com Evan Phoenix](/2008/02/11/conversando-com-evan-phoenix/)
 - [Tradução: De quem é essa variável, afinal?](/2008/02/11/tradu-o-de-quem-essa-vari-vel-afinal/)
 - [Tradução: Não sei o que quero, mas sei como conseguir](/2008/02/10/tradu-o-n-o-sei-o-que-quero-mas-sei-como-conseguir/)
@@ -818,17 +816,13 @@ Quer ver as transcrições do Canal Akitando? [Clique aqui](/akitando/).
 - [Off Topic: "I am Legend" - HORRÍVEL!](/2008/01/19/off-topic-i-am-legend-horrvel/)
 - [Chatting with Hal Fulton](/2008/01/09/chatting-with-hal-fulton/)
 - [Conversando com Peter Cooper](/2008/01/09/conversando-com-peter-cooper/)
-- [Chatting with Peter Cooper](/2008/01/04/chatting-with-peter-cooper/)
 - [Conversando com Adrian Holovaty](/2008/01/01/conversando-com-adrian-holovaty/)
-- [Chatting with Adrian Holovaty](/2008/01/01/chatting-with-adrian-holovaty/)
 
 ## 2007 - Dezembro
 
-- [Chatting with Avi Bryant - Part 2](/2007/12/22/chatting-with-avi-bryant-part-2/)
 - [Conversando com Avi Bryant - Parte 2](/2007/12/22/conversando-com-avi-bryant-parte-2/)
 - [Cuidado com suas Closures](/2007/12/21/cuidado-com-suas-closures/)
 - [Ruby on SimpleDB](/2007/12/16/ruby-on-simpledb/)
-- [Chatting with Avi Bryant - Part 1](/2007/12/15/chatting-with-avi-bryant-part-1/)
 - [Conversando com Avi Bryant - Parte 1](/2007/12/15/conversando-com-avi-bryant-parte-1/)
 - [class Ruby; include Smalltalk; end](/2007/12/02/class-ruby-include-smalltalk-end/)
 
@@ -836,7 +830,6 @@ Quer ver as transcrições do Canal Akitando? [Clique aqui](/akitando/).
 
 - [Anatomia de Ruby Blocks/Closures](/2007/11/30/anatomia-de-ruby-blocks-closures/)
 - [Ruby Symbols](/2007/11/26/ruby-symbols/)
-- [Chatting with John Lam (IronRuby)](/2007/11/12/chatting-with-john-lam-ironruby/)
 - [Conversando com John Lam (IronRuby)](/2007/11/12/conversando-com-john-lam-ironruby/)
 
 ## 2007 - Setembro
@@ -854,19 +847,16 @@ Quer ver as transcrições do Canal Akitando? [Clique aqui](/akitando/).
 - [A Falácia do Custo Perdido](/2007/08/19/a-falcia-do-custo-perdido/)
 - [AkitaOnRails, Retrospectiva 1985-2007](/2007/08/12/akitaonrails-retrospectiva-1984-2007/)
 - [Conversando com Jamis Buck](/2007/08/06/conversando-com-jamis-buck/)
-- [Chatting with Jamis Buck](/2007/08/03/chatting-with-jamis-buck/)
 
 ## 2007 - Julho
 
 - [GoF Design Patterns - Sobreviveu ao teste do tempo?](/2007/07/30/gof-design-patterns-sobreviveu-ao-teste-do-tempo/)
-- [Chatting with Carl Youngblood](/2007/07/20/chatting-with-carl-youngblood/)
 - [Conversando com Carl Youngblood](/2007/07/20/conversando-com-carl-youngblood/)
 - [Hanselminutes: Entrevista com David Hansson e Martin Fowler](/2007/07/08/hanselminutes-entrevista-com-david-hansson-e-martin-fowler/)
 
 ## 2007 - Junho
 
 - [Primeiro Aniversário](/2007/06/30/primeiro-aniversario/)
-- [Chatting with Ola Bini (JRuby Core Team Member)](/2007/06/21/chatting-with-ola-bini-jruby-core-team-member/)
 - [Conversando com Ola Bini (JRuby Core Team Member)](/2007/06/21/conversando-com-ola-bini-jruby-core-team-member/)
 - [Um Desabafo, parte II](/2007/06/19/um-desabafo-parte-ii/)
 - [Off Topic: Steve Jobs, Discurso em Stanford, 2005](/2007/06/13/off-topic-steve-jobs-discurso-em-stanford-2005/)
@@ -875,16 +865,12 @@ Quer ver as transcrições do Canal Akitando? [Clique aqui](/akitando/).
 
 - [Novidade! Akita na Surgeworks](/2007/05/16/novidade-akita-na-surgeworks/)
 - [Conversando com David Black](/2007/05/11/conversando-com-david-black/)
-- [Chatting with David Black](/2007/05/11/chatting-with-david-black/)
 - [Conversando com Chad Fowler](/2007/05/07/conversando-com-chad-fowler/)
-- [Chatting with Chad Fowler](/2007/05/04/chatting-with-chad-fowler/)
 
 ## 2007 - Abril
 
 - [Conversando com Geoffrey Grosenbach](/2007/04/21/conversando-com-geoffrey-grosenbach/)
-- [Chatting with Geoffrey Grosenbach](/2007/04/19/chatting-with-geoffrey-grosenbach/)
 - [Conversando com Dr. Nic](/2007/04/16/conversando-com-dr-nic/)
-- [Chatting with Dr. Nic](/2007/04/16/chatting-with-dr-nic/)
 - [Coluna RubyOnbr: Acampamento de Curiosos](/2007/04/14/coluna-rubyonbr-acampamento-de-curiosos/)
 - [Off Topic: Seja Arrogante!](/2007/04/14/off-topic-seja-arrogante/)
 

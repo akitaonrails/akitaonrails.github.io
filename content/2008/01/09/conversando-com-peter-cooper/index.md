@@ -5,6 +5,9 @@ slug: conversando-com-peter-cooper
 tags:
 - interview
 draft: false
+translationKey: chatting-peter-cooper
+aliases:
+- "/2008/01/04/chatting-with-peter-cooper/"
 ---
 
 **English readers, click [here](http://www.akitaonrails.com/2008/1/4/chatting-with-peter-cooper)**

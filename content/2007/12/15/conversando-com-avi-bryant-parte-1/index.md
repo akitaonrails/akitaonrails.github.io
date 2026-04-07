@@ -5,6 +5,9 @@ slug: conversando-com-avi-bryant-parte-1
 tags:
 - interview
 draft: false
+translationKey: chatting-avi-bryant-part-1
+aliases:
+- "/2007/12/15/chatting-with-avi-bryant-part-1/"
 ---
 
 **Read the Interview in English [here](http://www.akitaonrails.com/2007/12/15/chatting-with-avi-bryant-part-1)**

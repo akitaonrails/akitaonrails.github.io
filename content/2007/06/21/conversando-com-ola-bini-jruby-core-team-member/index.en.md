@@ -4,8 +4,8 @@ date: '2007-06-21T20:58:00-03:00'
 slug: chatting-with-ola-bini-jruby-core-team-member
 tags:
 - interview
-- english
 draft: false
+translationKey: chatting-ola-bini
 ---
 
 

@@ -4,8 +4,8 @@ date: '2008-02-11T22:42:00-02:00'
 slug: chatting-with-evan-phoenix
 tags:
 - interview
-- english
 draft: false
+translationKey: chatting-evan-phoenix
 ---
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2008/2/11/524655980_8e68a871a0.jpg)

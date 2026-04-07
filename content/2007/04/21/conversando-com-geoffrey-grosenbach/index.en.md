@@ -4,8 +4,8 @@ date: '2007-04-19T19:33:00-03:00'
 slug: chatting-with-geoffrey-grosenbach
 tags:
 - interview
-- english
 draft: false
+translationKey: chatting-geoffrey-grosenbach
 ---
 
 

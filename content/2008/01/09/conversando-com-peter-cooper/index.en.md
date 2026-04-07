@@ -4,8 +4,8 @@ date: '2008-01-04T09:30:00-02:00'
 slug: chatting-with-peter-cooper
 tags:
 - interview
-- english
 draft: false
+translationKey: chatting-peter-cooper
 ---
 
 [Ruby Inside](http://www.rubyinside.com/) is one of the greatest Ruby/Rails website available and a great source of news. Its creator is the British entrepreneur [**Peter Cooper**](http://www.petercooper.co.uk/), also the author of the recently published book [Beginning Ruby, from Novice to Professional](http://www.apress.com/book/view/9781590597668), an excellent source for anyone willing to learn the Ruby language.

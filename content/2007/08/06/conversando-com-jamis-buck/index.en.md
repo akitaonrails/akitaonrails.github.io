@@ -4,8 +4,8 @@ date: '2007-08-03T22:46:00-03:00'
 slug: chatting-with-jamis-buck
 tags:
 - interview
-- english
 draft: false
+translationKey: chatting-jamis-buck
 ---
 
 

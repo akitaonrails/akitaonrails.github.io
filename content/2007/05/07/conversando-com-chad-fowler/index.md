@@ -5,6 +5,9 @@ slug: conversando-com-chad-fowler
 tags:
 - interview
 draft: false
+translationKey: chatting-chad-fowler
+aliases:
+- "/2007/05/04/chatting-with-chad-fowler/"
 ---
 
 **English readers, click [here](/2007/5/4/chatting-with-chad-fowler)**

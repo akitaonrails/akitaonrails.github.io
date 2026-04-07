@@ -5,6 +5,9 @@ slug: conversando-com-evan-phoenix
 tags:
 - interview
 draft: false
+translationKey: chatting-evan-phoenix
+aliases:
+- "/2008/02/11/chatting-with-evan-phoenix/"
 ---
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2008/2/11/524655980_8e68a871a0.jpg)

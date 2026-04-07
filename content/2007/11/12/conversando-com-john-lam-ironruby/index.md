@@ -5,6 +5,9 @@ slug: conversando-com-john-lam-ironruby
 tags:
 - interview
 draft: false
+translationKey: chatting-john-lam
+aliases:
+- "/2007/11/12/chatting-with-john-lam-ironruby/"
 ---
 
  **English-version:** [here](/2007/11/12/chatting-with-john-lam-ironruby)
