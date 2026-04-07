@@ -6,7 +6,6 @@ These posts hit API 400 errors or were not reached due to session limits during 
 - content/2009/09/09/off-topic-direitos-do-homem/index.md
 - content/2009/09/12/off-topic-a-argumenta--o-atrav-s-da-intimida--o/index.md
 - content/2009/09/26/off-topic-procurar-raciocionar-faz-bem/index.md
-- content/2009/11/04/off-topic-o-problema-das-credenciais/index.md
 - content/2009/11/08/off-topic-obediencia-a-autoridade/index.md
 - content/2009/12/10/off-topic-voce-nao-entende-nada-de-scrum/index.md
 - content/2010/01/06/off-topic-literatura-para-gerentes-ageis/index.md
