@@ -1,42 +1,46 @@
 ---
-title: Coherence and ExAdmin - Devise and ActiveAdmin for Phoenix
+title: "Coherence e ExAdmin - Devise e ActiveAdmin para Phoenix"
 date: '2016-12-06T18:18:00-02:00'
-slug: coherence-and-exadmin-devise-and-activeadmin-for-phoenix
+slug: coherence-e-exadmin-devise-e-activeadmin-para-phoenix
+translationKey: coherence-exadmin-phoenix
+aliases:
+- /2016/12/06/coherence-and-exadmin-devise-and-activeadmin-for-phoenix/
 tags:
 - elixir
 - phoenix
 - activeadmin
 - devise
+- traduzido
 draft: false
 ---
 
-This is intended for Rubyists researching the possibility of replacing some of Ruby and Rails with Elixir and Phoenix.
+Este post é voltado para Rubyistas pesquisando a possibilidade de substituir parte do Ruby e Rails com Elixir e Phoenix.
 
-Cutting straight to the chase, many small Rails apps that I build start with 2 very simple add-ons: Devise for authentication and ActiveAdmin for basic database management. Then I build up from there.
+Indo direto ao ponto: muitos dos meus apps Rails pequenos começam com 2 add-ons bem simples — Devise para autenticação e ActiveAdmin para gerenciamento básico do banco de dados. A partir daí construo o resto.
 
-Both Elixir and Phoenix are fast moving targets right now, which makes it difficult for a stable set of libraries to solidify properly, but I think that we're finally getting past the early adopters curve already.
+Tanto Elixir quanto Phoenix são alvos em constante movimento hoje em dia, o que dificulta que um conjunto estável de bibliotecas se solidifique direito. Mas acho que estamos finalmente passando da curva dos early adopters.
 
-One big point of contention has been user authentication. Many purists will argue that you need to build your own from scratch or by using low level libraries such as [Guardian](https://github.com/ueberauth/guardian).
+Um ponto de atrito considerável sempre foi a autenticação de usuários. Muitos puristas vão argumentar que você precisa construir a sua do zero ou usar bibliotecas de baixo nível como o [Guardian](https://github.com/ueberauth/guardian).
 
-If you're building an application that just exposes API endpoints, that's probably fine. But for a full-featured web app meant for humans to use, this is hardly a good choice. I will not entertain the discussion today, as it's beyond the point.
+Se você está construindo uma aplicação que só expõe endpoints de API, tudo bem. Mas para um app web completo feito para humanos usarem, essa dificilmente é uma boa escolha. Não vou entrar nessa discussão hoje, pois foge do ponto.
 
-I am assuming that you at least followed both [Elixir](http://elixir-lang.org/getting-started/introduction.html) and [Phoenix](http://www.phoenixframework.org/docs/installation) tutorials by now. If you didn't go ahead and do it, it will take you one or two days to learn the very basics if you're already an experienced rubyist. Then come back and read [my posts on Elixir](/elixir) to understand where it stands out compared to everything else.
+Assumo que você já seguiu os tutoriais tanto do [Elixir](http://elixir-lang.org/getting-started/introduction.html) quanto do [Phoenix](http://www.phoenixframework.org/docs/installation). Se ainda não fez, vá lá e faça — vai levar uns um ou dois dias para aprender o básico se você já é um Rubyista experiente. Depois volta e lê [meus posts sobre Elixir](/elixir) para entender onde ele se destaca em relação ao resto.
 
-That being said, let's get started.
+Dito isso, vamos começar.
 
-### Coherence (Devise alternative)
+### Coherence (alternativa ao Devise)
 
-Finally, I found this project that's been under heavy development for the past 6 months called [Coherence](https://github.com/smpallen99/coherence). For all intents and purposes, it successfully mimics Devise in almost every way. And this is a very good thing for a lot of scenarios.
+Finalmente encontrei este projeto que está em desenvolvimento intenso há 6 meses chamado [Coherence](https://github.com/smpallen99/coherence). Para todos os efeitos práticos, ele imita o Devise em quase todos os aspectos. E isso é muito bom para uma série de cenários.
 
-Their [README](https://github.com/smpallen99/coherence/blob/master/README.md) is well explained enough so I will not copy and paste it here, just read it there to get up and running. But if you want to try out all of their features you can tweak their procedure with this set of options in the installation Mix task:
+O [README](https://github.com/smpallen99/coherence/blob/master/README.md) deles é bem explicado, então não vou copiar e colar aqui — é só ler lá para colocar no ar. Mas se você quiser testar todas as funcionalidades, pode ajustar o procedimento com esse conjunto de opções na task de instalação do Mix:
 
 ```
 mix coherence.install --full --rememberable --invitable --trackable
 ```
 
-Run `mix help coherence.install` to see a description for all the options.
+Execute `mix help coherence.install` para ver a descrição de todas as opções.
 
-And if you're not tweaking the front-end, you can just add the proper sign up, sign in, sign out links by adding the following snippet to the `web/templates/layout/app.html.eex`:
+E se você não for mexer no front-end, pode simplesmente adicionar os links de sign up, sign in e sign out ao layout adicionando o seguinte trecho em `web/templates/layout/app.html.eex`:
 
 ```html
 <header class="header">
@@ -56,31 +60,31 @@ And if you're not tweaking the front-end, you can just add the proper sign up, s
 ...
 ```
 
-(By the way, whenever you see `YourApp` in the code snippets, you must change for your app's module name.)
+(A propósito, sempre que você ver `YourApp` nos trechos de código, troque pelo nome do módulo da sua aplicação.)
 
-If you get lost in their documentation you can check out their [Coherence Demo](https://github.com/smpallen99/coherence_demo) repository for an example of a basic Phoenix app with Coherence already configured and working. You will mostly have to take care of `web/router.ex` to create a `:protected` pipeline and set the scopes accordingly.
+Se você se perder na documentação deles, pode consultar o repositório [Coherence Demo](https://github.com/smpallen99/coherence_demo) para ver um exemplo de app Phoenix básico com Coherence já configurado e funcionando. Você vai precisar principalmente cuidar do `web/router.ex` para criar um pipeline `:protected` e configurar os escopos adequadamente.
 
-If you do it correctly, this is what you will see:
+Se fizer corretamente, é isso que você vai ver:
 
 ![Coherence Navigation Links](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/572/Screen_Shot_2016-12-06_at_17.45.47.png)
 
 ![Coherence Sign In Form](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/573/Screen_Shot_2016-12-06_at_17.45.52.png)
 
-It's been a long while since I got excited by a simple sign in page!
+Faz tempo que eu não ficava animado com uma simples página de login!
 
-### Ex Admin (ActiveAdmin alternative)
+### Ex Admin (alternativa ao ActiveAdmin)
 
-Then, the next step I usually like to do is to add a simple Administration interface. To that end I found the [Ex Admin](https://github.com/smpallen99/ex_admin), that's been under heavy development since at least May of 2015. It's so damn close to ActiveAdmin that it's old theme will make you forget you're not in a Rails application.
+O próximo passo que costumo dar é adicionar uma interface de administração simples. Para isso encontrei o [Ex Admin](https://github.com/smpallen99/ex_admin), que está em desenvolvimento ativo desde pelo menos maio de 2015. É tão parecido com ActiveAdmin que o tema antigo deles vai te fazer esquecer que não está num app Rails.
 
-Again, it's pretty straightforward to set it up by just following their [README](https://github.com/smpallen99/ex_admin) instructions.
+De novo, é bem direto configurar — basta seguir as instruções do [README](https://github.com/smpallen99/ex_admin) deles.
 
-Once you have it installed and configure, you can very quickly expose the User model into the Admin interface like this:
+Com tudo instalado e configurado, você consegue expor o model User na interface Admin rapidamente assim:
 
 ```
 mix admin.gen.resource User
 ```
 
-And we can edit the `web/admin/user.ex` with the following:
+E podemos editar o `web/admin/user.ex` com o seguinte:
 
 ```ruby
 defmodule YourApp.ExAdmin.User do
@@ -127,11 +131,11 @@ defmodule YourApp.ExAdmin.User do
 end
 ```
 
-Yes, this is eerily similar to the ActiveAdmin DSL. Thumbs up for the team responsible, and it really shows how Elixir is well suited for Domain Specific Languages, if you're into that.
+Sim, isso é assustadoramente similar ao DSL do ActiveAdmin. Parabéns para o time responsável — e isso mostra bem como o Elixir é adequado para Domain Specific Languages, se você curte isso.
 
-If you followed the Coherence instructions, it asks you to add a `:protected` pipeline (a set of plugs) for your protected routes. For now you can add the `/admin` route to go through that pipeline. And for the uninitiated, a "plug" is similar in concept to a Rack app, or more specifically, a Rails middleware. But in Rails we only have one pipeline of middlewares. In Phoenix we can configure multiple pipelines for different set of routes (browser and api, for example).
+Se você seguiu as instruções do Coherence, ele pede para adicionar um pipeline `:protected` (um conjunto de plugs) para suas rotas protegidas. Por ora, você pode adicionar a rota `/admin` para passar por esse pipeline. Para os não iniciados, um "plug" é similar em conceito a um app Rack, ou mais especificamente, a um middleware do Rails. Mas no Rails temos apenas um pipeline de middlewares. No Phoenix podemos configurar múltiplos pipelines para diferentes conjuntos de rotas (browser e api, por exemplo).
 
-So we can add the following to `web/router.ex`:
+Então podemos adicionar o seguinte ao `web/router.ex`:
 
 ```ruby
 ...
@@ -142,23 +146,23 @@ end
 ...
 ```
 
-With those simple contraptions in place, you will end up with something like this:
+Com essas configurações simples no lugar, você vai terminar com algo assim:
 
 ![Ex Admin](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/574/Screen_Shot_2016-12-06_at_17.56.17.png)
 
-And if you're still not conviced, how about changing to their old theme?
+E se ainda não estiver convencido, que tal mudar para o tema antigo deles?
 
 ![ActiveAdmin knockoff](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/575/Screen_Shot_2016-12-06_at_17.56.25.png)
 
-Hell yeah! Makes me feel right at home, although I really prefer the new theme. But you could replace your ActiveAdmin-based app for this one and your users would hardly notice the small differences in the interface. The behavior is basically the same.
+Caramba! Me sinto em casa, embora eu prefira bastante o tema novo. Mas você poderia substituir seu app baseado em ActiveAdmin por este e seus usuários dificilmente vão notar as pequenas diferenças na interface. O comportamento é basicamente o mesmo.
 
-If you still have questions on how to properly configure ExAdmin, check out their [Contact Demo](https://github.com/smpallen99/contact_demo) project, where you can find a real example.
+Se ainda tiver dúvidas sobre como configurar o ExAdmin corretamente, confira o projeto [Contact Demo](https://github.com/smpallen99/contact_demo) deles, onde você encontra um exemplo real.
 
-### Stitching a simple Admin role
+### Costurando um papel de Admin simples
 
-Obviously, we don't want to let all authenticated user to access the Admin section.
+Obviamente, não queremos que todos os usuários autenticados tenham acesso à seção de Admin.
 
-So we can add a simple boolean field in the users table to indicate whether a user is an admin or not. You can change your migration to resemble this:
+Podemos adicionar um campo boolean simples na tabela de usuários para indicar se um usuário é admin ou não. Você pode alterar sua migration para ficar assim:
 
 ```ruby
 ...
@@ -175,7 +179,7 @@ end
 ...
 ```
 
-And you can configure the `priv/repos/seeds.exs` file to create 2 users, one admin and one guest:
+E você pode configurar o arquivo `priv/repos/seeds.exs` para criar 2 usuários, um admin e um guest:
 
 ```ruby
 YourApp.Repo.delete_all YourApp.User
@@ -187,11 +191,11 @@ YourApp.User.changeset(%YourApp.User{}, %{name: "Guest", email: "guest@example.o
 |> YourApp.Repo.insert!
 ```
 
-As this is just an exercise, you can drop the database and recreate it, like this: `mix do ecto.drop, ecto.setup`.
+Como é só um exercício, você pode dropar o banco e recriar assim: `mix do ecto.drop, ecto.setup`.
 
-Coherence takes care of **authentication**, but we need to take care of **authorization**. You will find many examples online to something that resembles Rails' Pundit, such as [Bodyguard](https://github.com/schrockwell/bodyguard). But for this post I will stick to a simple Plug and create a new Router pipeline.
+O Coherence cuida da **autenticação**, mas precisamos cuidar da **autorização**. Você vai encontrar muitos exemplos online de algo semelhante ao Pundit do Rails, como o [Bodyguard](https://github.com/schrockwell/bodyguard). Mas neste post vou me limitar a um Plug simples e criar um novo pipeline no Router.
 
-We need to create `lib/your_app/plugs/authorized.ex` and add the following:
+Precisamos criar `lib/your_app/plugs/authorized.ex` com o seguinte conteúdo:
 
 ```ruby
 defmodule YourApp.Plugs.Authorized do
@@ -225,9 +229,9 @@ defmodule YourApp.Plugs.Authorized do
 end
 ```
 
-Once a user signs in, Coherence puts the structure of the authenticated user into the `conn` (a Plug.Conn structure), so we can pattern match from it.
+Quando um usuário faz login, o Coherence coloca a estrutura do usuário autenticado no `conn` (uma estrutura Plug.Conn), então podemos fazer pattern match a partir daí.
 
-Now we need to create the router pipeline in the `web/router.ex` like this:
+Agora precisamos criar o pipeline do router em `web/router.ex` assim:
 
 ```ruby
 ...
@@ -253,18 +257,18 @@ end
 ...
 ```
 
-The `:protected_admin` pipeline is exactly the same as `:protected` but we add the newly created `YourApp.Plugs.Authorized` plug at the end. And then we change the `/admin` scope to go through this new pipeline.
+O pipeline `:protected_admin` é exatamente igual ao `:protected`, mas adicionamos o plug `YourApp.Plugs.Authorized` recém-criado no final. Depois alteramos o escopo `/admin` para passar por esse novo pipeline.
 
-And that's it. If you log in with the `guest@example.org` user, it will be kicked out to the homepage with a message saying that it's not authorized. If you log in with the `admin@example.org` it will be able to access the ExAdmin interface in `/admin`.
+E é isso. Se você logar com o usuário `guest@example.org`, ele será redirecionado para a homepage com uma mensagem dizendo que não está autorizado. Se logar com `admin@example.org`, terá acesso à interface do ExAdmin em `/admin`.
 
-### Wrapping Up
+### Concluindo
 
-Even though it's now super simple to add Authentication, Administration and basic Authorization, don't be fooled, the learning curve is still steep, even if you've been a Rails developer for a while.
+Mesmo que agora seja relativamente simples adicionar Authentication, Administration e Authorization básica, não se engane — a curva de aprendizado ainda é íngreme, mesmo que você seja um desenvolvedor Rails experiente.
 
-Because of what's underneath, the OTP architecture, the concepts of Applications, Supervisors, Workers, etc, it's not immediatelly simple to wrap your head around what's **really** going on. If you're not careful, libraries such as Coherence or ExAdmin will make you feel like it's just as simple as Rails.
+Por causa do que está por baixo — a arquitetura OTP, os conceitos de Applications, Supervisors, Workers, etc — não é imediatamente simples entender o que está **realmente** acontecendo. Se não tomar cuidado, bibliotecas como Coherence ou ExAdmin vão te fazer achar que é tão simples quanto Rails.
 
-And it's not like that. Elixir is a completely different beast. And I mean it in a bad way, on the contrary. It's meant for highly reliable and distributed systems and it demands way more knowledge, patience and training from the programmer.
+E não é assim. Elixir é uma criatura completamente diferente. E digo isso de forma alguma de maneira negativa — pelo contrário. Ele é feito para sistemas altamente confiáveis e distribuídos, e exige muito mais conhecimento, paciência e treinamento do programador.
 
-On the other hand, exactly because libraries such as Coherence makes it a lot easier to get started, you may become more motivated to put something up and running and then investing more time really **understanding** what's going on underneath. So the recommendation is: get your hands dirty, get some quick instant gratification of seeing something running, and then go on and refine your knowledge. It will be way more rewarding if you do so.
+Por outro lado, exatamente porque bibliotecas como o Coherence facilitam bastante o começo, você pode se tornar mais motivado a colocar algo em funcionamento e depois investir mais tempo realmente **entendendo** o que está acontecendo por baixo. Por isso a recomendação é: coloque a mão na massa, consiga aquela gratificação instantânea de ver algo rodando, e então vá refinando seu conhecimento. Vai ser muito mais recompensador assim.
 
-I don't see Phoenix meant to just be a Rails replacement. This would be too easy. I see it more as another piece to make Elixir the best suited set of technologies to build **highly scalable, highly reliable, highly distributed systems**. Stopping at simple web applications would not fulfill Elixir's potential.
+Não vejo o Phoenix como um simples substituto do Rails. Isso seria pouco ambicioso. Vejo ele mais como uma peça para tornar o Elixir o conjunto de tecnologias mais adequado para construir **sistemas altamente escaláveis, altamente confiáveis e altamente distribuídos**. Parar em aplicações web simples não faria jus ao potencial do Elixir.

@@ -1,30 +1,34 @@
 ---
-title: Ex Pusher Lite - Part 3 - A Complete Solution
+title: Ex Pusher Lite - Parte 3 - Uma Solução Completa
 date: '2016-12-30T17:38:00-02:00'
-slug: ex-pusher-lite-part-3-a-complete-solution
+slug: ex-pusher-lite-parte-3-uma-solucao-completa
+translationKey: ex-pusher-lite-3
+aliases:
+- /2016/12/30/ex-pusher-lite-part-3-a-complete-solution/
 tags:
 - expusherlite
 - elixir
 - phoenix
 - websockets
+- traduzido
 draft: false
 ---
 
-It's been over a year since I wrote the 2 pieces about my "Ex Pusher Lite" concept. The code from a year ago is already obsolete as I was still just learning my way through both Elixir and Phoenix.
+Já faz mais de um ano desde que escrevi as 2 partes sobre o meu conceito "Ex Pusher Lite". O código de um ano atrás já está obsoleto, pois eu ainda estava aprendendo Elixir e Phoenix na prática.
 
-I've published an article about [ExAdmin and Coherence](http://www.akitaonrails.com/2016/12/06/coherence-and-exadmin-devise-and-activeadmin-for-phoenix) and another on [Deploying Elixir to DigitalOcean](http://www.akitaonrails.com/2016/12/23/elixir-phoenix-app-deployed-into-a-load-balanced-digitalocean-setup) this month.
+Este mês publiquei um artigo sobre [ExAdmin e Coherence](http://www.akitaonrails.com/2016/12/06/coherence-and-exadmin-devise-and-activeadmin-for-phoenix) e outro sobre [Deploy de Elixir no DigitalOcean](http://www.akitaonrails.com/2016/12/23/elixir-phoenix-app-deployed-into-a-load-balanced-digitalocean-setup).
 
-The idea is very simple, it is a homage to [Pusher](https://pusher.com/). If you used Pusher before, this is very similar (albeit way less feature complete, of course).
+A ideia é bem simples: é uma homenagem ao [Pusher](https://pusher.com/). Se você já usou o Pusher, isso é muito parecido (embora com bem menos funcionalidades, claro).
 
-I built an entire solution inspired by Pusher, using the Phoenix framework, deployed to Digital Ocean and you can test it out right now, just sign up at [expusherlite.cm42.io](http://expusherlite.cm42.io).
+Montei uma solução completa inspirada no Pusher, usando o framework Phoenix, deployada no Digital Ocean — e você já pode testar agora mesmo, é só se cadastrar em [expusherlite.cm42.io](http://expusherlite.cm42.io).
 
-Once you sign up, you will have a secret token (don't disclose that, of course) and you will be below an Organization. Then you can go on and create Applications within that Organization. Each Application will have a unique token to identify it.
+Depois do cadastro, você terá um token secreto (não compartilhe, claro) e estará vinculado a uma Organization. A partir daí pode criar Applications dentro dessa Organization. Cada Application terá um token único para identificá-la.
 
 ![dashboard](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/576/expusherlite_cm42_io_registrations.png)
 
-Now, let's say you want to create a Rails application with a Chat feature. Any version of Rails, you don't need 5.0 and you don't need ActionCable.
+Suponha que você queira criar uma aplicação Rails com uma funcionalidade de Chat. Qualquer versão de Rails serve — não precisa ser 5.0 e nem precisa de ActionCable.
 
-First off, let's configure `config/secrets.yml`:
+Primeiro, vamos configurar o `config/secrets.yml`:
 
 ```
 development:
@@ -42,9 +46,9 @@ production:
   secret_token: <%= ENV["PUSHER_LITE_SECRET_TOKEN"] %>
 ```
 
-Replace the `pusher_host`, `org_id`, `app_key`, and `secret_token` for the ones you created before.
+Substitua `pusher_host`, `org_id`, `app_key` e `secret_token` pelos valores que você criou antes.
 
-Now I want to add a `PageController`:
+Agora quero adicionar um `PageController`:
 
 ```ruby
 require "net/http"
@@ -59,11 +63,11 @@ class PageController < ApplicationController
 end
 ```
 
-(If you're connecting to my online server, you must use SSL, so change the URL above for "https")
+(Se você estiver conectando ao meu servidor online, é obrigatório usar SSL — troque a URL acima por "https")
 
-What this piece does is submit the secret token in the server-side, to my service, to get a JSON Web Token (JWT) back. Now you can pass this JWT to the front-end to enable authentication.
+O que esse trecho faz é enviar o token secreto pelo lado do servidor, para o meu serviço, e receber de volta um JSON Web Token (JWT). Aí você passa esse JWT para o front-end para habilitar a autenticação.
 
-In the front-end we can have this simple `app/views/page/index.html.erb`:
+No front-end podemos ter essa `app/views/page/index.html.erb` bem simples:
 
 ```
 <h1>Ex Pusher Lite - Rails Integration Example</h1>
@@ -84,7 +88,7 @@ In the front-end we can have this simple `app/views/page/index.html.erb`:
 <label for="channel">send through API</label>
 ```
 
-Super simple, we can tweak the CSS (`app/assets/stylesheets/application.css`) just to make it look nicer:
+Bem simples. Podemos ajustar o CSS (`app/assets/stylesheets/application.css`) só para deixar mais apresentável:
 
 ```css
 ...
@@ -102,13 +106,13 @@ body {
 }
 ```
 
-Finally, we need to load the main Javascript from the ExPusherLite server, so edit the layout at `app/views/layouts/application.html.erb` and add this line right after the closing `</body>` tag:
+Por último, precisamos carregar o Javascript principal do servidor ExPusherLite. Edite o layout em `app/views/layouts/application.html.erb` e adicione esta linha logo após a tag de fechamento `</body>`:
 
 ```html
 <script src="http://<%= Rails.application.secrets.pusher_host %>/js/pusher.js"></script>
 ```
 
-And we can now use this Javascript in the `app/assets/javascripts/application.js` to hook everything up. This is the relevant bit:
+Agora podemos usar esse Javascript no `app/assets/javascripts/application.js` para ligar tudo. Esta é a parte relevante:
 
 ```javascript
 $(document).ready(function() {
@@ -131,7 +135,7 @@ $(document).ready(function() {
   pusher.joinAll();
 ```
 
-We can now continue in the same file with the Javascript that binds to the message input field, listening to the "Enter" key press event to send the messages:
+Podemos continuar no mesmo arquivo com o Javascript que se conecta ao campo de mensagem, ouvindo o evento de tecla "Enter" para enviar as mensagens:
 
 ```javascript
   var message_element = $("#message");
@@ -154,7 +158,7 @@ We can now continue in the same file with the Javascript that binds to the messa
 })
 ```
 
-And this is how we send messages to ExPusherLite, either directly through the full-duplex WebSockets:
+E é assim que enviamos mensagens para o ExPusherLite, seja diretamente via WebSockets full-duplex:
 
 ```javascript
 function sendPusher(payload) {
@@ -163,7 +167,7 @@ function sendPusher(payload) {
 }
 ```
 
-Or Posting to the available API:
+Ou fazendo POST para a API disponível:
 
 ```
 function sendAPI(payload) {
@@ -189,30 +193,30 @@ function makeURL(event) {
 }
 ```
 
-By the way, you can send messages using the API from the server-side if you want. Specifically from an ActiveJob process so you can keep your Rails web application fast, and you can use the opportunity to store the message in your database, or apply any filters.
+Vale dizer que você pode enviar mensagens pela API a partir do lado do servidor também. Especialmente de um processo ActiveJob para manter a aplicação web Rails rápida — e aproveitando para salvar a mensagem no banco de dados ou aplicar filtros.
 
-And this is it! You now have a Rails application with WebSockets. You can have your lunch and eat it too.
+E é isso! Sua aplicação Rails agora tem WebSockets. Dá pra ter o melhor dos dois mundos.
 
-If you want to see this example working, I published a demo app [over at Heroku](http://ex-pusher-lite-demo.herokuapp.com/). It's just a demo, it has no authentication, no cross-sripting sanitization, no nothing.
+Se quiser ver o exemplo funcionando, publiquei um app de demo [no Heroku](http://ex-pusher-lite-demo.herokuapp.com/). É só uma demo, sem autenticação, sem sanitização contra cross-scripting, sem nada.
 
 [![chat demo](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/577/Screen_Shot_2016-12-30_at_17.42.22.png)](http://ex-pusher-lite-demo.herokuapp.com/)
 
-In summary: this is a Rails app (you could do it in Django, Laravel, ASP.NET MVC, it doesn't matter) talking through WebSocket + APIs to a Phoenix cluster.
+Resumindo: é uma aplicação Rails (poderia ser Django, Laravel, ASP.NET MVC, tanto faz) se comunicando via WebSocket + APIs com um cluster Phoenix.
 
-### Next Steps
+### Próximos Passos
 
-Keep following my blog (or my Twitter at [@akitaonrails](https://twitter.com/akitaonrails) ) for more posts to come.
+Continue acompanhando meu blog (ou meu Twitter em [@akitaonrails](https://twitter.com/akitaonrails)) para os próximos posts.
 
-I am still considering if I will open the ExPusherLite code as open source, so let me know if you're interested.
+Ainda estou avaliando se vou abrir o código do ExPusherLite como open source — me avise se tiver interesse.
 
-I am also considering if I will keep the current servers online as a cheap service. You can use it for free right now to play with it, but don't use for production-level apps yet. As I am still heavily coding it, I will keep updating the servers, so there is no SLA. Let me know if you're interested in such a service that keeps the code open source so you can trust it better.
+Também estou pensando em manter os servidores online como um serviço barato. Você pode usar de graça agora para brincar, mas não use em produção ainda. Como estou codificando pesado, vou ficar atualizando os servidores frequentemente, então não há SLA. Me avise se tiver interesse em um serviço assim que mantenha o código aberto para você poder confiar nele.
 
-There are important features still missing, such as proper SSL support, encrypted channels, better Presence tracking APIs and so on, but what's available right now already covers most use cases for WebSockets.
+Ainda faltam recursos importantes, como suporte adequado a SSL, canais criptografados, APIs de Presence melhores e por aí vai — mas o que está disponível agora já cobre a maioria dos casos de uso para WebSockets.
 
-And better: because this is Phoenix, because this is Elixir, and because this is Erlang, we get distributed PubSub for "free". As I explained in my [deployment](http://www.akitaonrails.com/2016/12/23/elixir-phoenix-app-deployed-into-a-load-balanced-digitalocean-setup) post, this is a setup with a server in New York and another in London, just to showcase the distributed nature of Erlang.
+E tem mais: por ser Phoenix, por ser Elixir, por ser Erlang, ganhamos PubSub distribuído "de graça". Como expliquei no meu post de [deploy](http://www.akitaonrails.com/2016/12/23/elixir-phoenix-app-deployed-into-a-load-balanced-digitalocean-setup), é um setup com um servidor em Nova York e outro em Londres, só para demonstrar a natureza distribuída do Erlang.
 
-It's been very fun to play with Elixir for the past few days and how fast I was able to put together a full-featured solution like this. There were many puzzles that made me scratch my head, figuring out how to deal with cross origin issues, how to make the nodes find each other through the edeliver deployment, figuring out the missing bits in replacing exrm for distillery (which is a transition still taking place in the community), etc.
+Foi muito divertido brincar com Elixir nos últimos dias e ver com que rapidez consegui montar uma solução completa como essa. Teve muitos quebra-cabeças que me fizeram coçar a cabeça: como lidar com problemas de cross origin, como fazer os nós se encontrarem pelo deploy via edeliver, descobrir as peças faltantes na transição do exrm para o distillery (que ainda está em andamento na comunidade), etc.
 
-Now I am quite comfortable with the basics, from bootstrapping a project all the way to deploying in a cluster scenario. And I hope this service proves useful to more people.
+Agora estou bem confortável com o básico, do bootstrap do projeto até o deploy em cenário de cluster. E espero que esse serviço seja útil para mais pessoas.
 
-As this is possibly my last post of the year: Happy New Year! And I will see you again in 2017!
+Como este é possivelmente meu último post do ano: Feliz Ano Novo! E nos vemos em 2017!
