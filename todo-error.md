@@ -16,8 +16,8 @@ These posts hit API 400 errors or were not reached due to session limits during 
 - content/2011/02/03/off-topic-a-revolta-de-atlas-dinheiro-e-a-raiz-de-todo-o-mal/index.md
 - content/2011/02/04/off-topic-the-fountainhead-defesa-de-howard-roark/index.md
 - content/2011/02/20/off-topic-desmistificando-a-microsoft-do-mal/index.md
-- content/2011/04/25/off-topic-mea-culpa-organizacoes-democraticas-nao-funcionam/index.md
 - content/2011/05/04/off-topic-opinioes-verdades-democracia-e-etica/index.md
+- content/2011/02/20/off-topic-desmistificando-a-microsoft-do-mal/index.md (flagged after API 400)
 - content/2012/08/15/off-topic-o-mito-do-legado/index.md
 - content/2012/12/30/off-topic-um-desabafo-iii-refletindo-sobre-2007/index.md
 - content/2013/01/02/off-topic-o-mundo-hoje-e-muito-bom-feliz-2013/index.md
@@ -28,7 +28,6 @@ These posts hit API 400 errors or were not reached due to session limits during 
 - content/2013/06/21/processos-metodologias-e-o-cerebro-humano/index.md
 - content/2013/07/12/previsivelmente-irracional/index.md
 - content/2013/07/23/off-topic-zona-de-conforto-sair-as-ruas-nao-e-a-unica-solucao/index.md
-- content/2013/08/23/off-topic-estimativas-sao-promessas-promessas-devem-ser-cumpridas/index.md
 - content/2013/10/30/off-topic-matematica-trolls-haters-e-discussoes-de-internet/index.md
 - content/2013/10/31/traducao-carta-para-um-jovem-programador-considerando-uma-startup/index.md
 - content/2013/11/01/off-topic-agile-feito-errado/index.md
@@ -38,6 +37,5 @@ These posts hit API 400 errors or were not reached due to session limits during 
 - content/2014/05/02/off-topic-carreira-em-programacao-codificar-nao-e-programar/index.md
 - content/2014/07/06/off-topic-alguem-importante-deixou-a-comunidade-e-agora/index.md
 - content/2014/09/13/off-topic-nao-faca-o-que-voce-acha-que-ama/index.md
-- content/2014/12/08/off-topic-conversando-com-um-professor-universitario/index.md
 - content/2015/01/07/off-topic-coletanea-processos-e-metodologias-nao-vao-te-ajudar/index.md
 - content/2015/11/10/situacao-brasil-no-macs-for-the-rest-of-us/index.md
