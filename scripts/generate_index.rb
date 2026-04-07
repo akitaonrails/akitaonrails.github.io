@@ -136,6 +136,7 @@ def generate_archives(grouped_posts)
   lines = ["#{FRONTMATTER_DELIMITER}\ntitle: AkitaOnRails Blog - Arquivo\n#{FRONTMATTER_DELIMITER}\n"]
   lines << '{{< lang-toggle >}}'
   lines << ''
+  lines << "Quer ver as transcrições do Canal Akitando? [Clique aqui](/akitando/).\n"
   lines.concat(render_months(grouped_posts))
   lines.join("\n")
 end
@@ -157,6 +158,7 @@ def generate_archives_en(grouped_posts)
   lines = ["#{FRONTMATTER_DELIMITER}\ntitle: AkitaOnRails Blog - Archives\n#{FRONTMATTER_DELIMITER}\n"]
   lines << '{{< lang-toggle >}}'
   lines << ''
+  lines << "Want to see the Akitando Channel transcripts (Portuguese only)? [Click here](/akitando/).\n"
   if grouped_posts.empty?
     lines << "_Older posts are only available in Portuguese. Visit the [Portuguese archive](/archives/) to browse them._\n"
   else

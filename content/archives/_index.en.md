@@ -4,6 +4,8 @@ title: AkitaOnRails Blog - Archives
 
 {{< lang-toggle >}}
 
+Want to see the Akitando Channel transcripts (Portuguese only)? [Click here](/akitando/).
+
 ## 2016 - December
 
 - [Ex Pusher Lite - Part 3 - A Complete Solution](/en/2016/12/30/ex-pusher-lite-part-3-a-complete-solution/)

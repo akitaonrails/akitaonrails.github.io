@@ -4,6 +4,8 @@ title: AkitaOnRails Blog - Arquivo
 
 {{< lang-toggle >}}
 
+Quer ver as transcrições do Canal Akitando? [Clique aqui](/akitando/).
+
 ## 2024 - December
 
 - [Refletindo Sobre Alcance de Redes Sociais](/2024/12/14/refletindo-sobre-alcance-de-redes-sociais-dff9d8fb-b54f-47f8-a013-4e37a54687e3/)
