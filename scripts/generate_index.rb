@@ -10,6 +10,9 @@ INDEX_FILE_EN = "#{CONTENT_DIR}/_index.en.md"
 ARCHIVES_DIR = "#{CONTENT_DIR}/archives"
 ARCHIVES_FILE = "#{ARCHIVES_DIR}/_index.md"
 ARCHIVES_FILE_EN = "#{ARCHIVES_DIR}/_index.en.md"
+AKITANDO_DIR = "#{CONTENT_DIR}/akitando"
+AKITANDO_FILE = "#{AKITANDO_DIR}/_index.md"
+AKITANDO_FILE_EN = "#{AKITANDO_DIR}/_index.en.md"
 FRONTMATTER_DELIMITER = '---'
 
 # Posts from January of last year onward appear on the main index.
@@ -52,11 +55,16 @@ def parse_post(path, lang: :pt)
   url = '/en' + url if lang == :en
 
   has_en = File.exist?("#{base_path}/index.en.md")
+  tags = Array(frontmatter['tags']).map(&:to_s)
 
-  { title: frontmatter['title'], url: url, date: date, has_en: has_en, lang: lang }
+  { title: frontmatter['title'], url: url, date: date, has_en: has_en, lang: lang, tags: tags }
 rescue ArgumentError, Psych::SyntaxError => e
   warn "Error parsing #{path}: #{e.message}"
   nil
+end
+
+def akitando_post?(post)
+  post[:tags].include?('akitando')
 end
 
 def collect_posts(include_future: false)
@@ -64,7 +72,9 @@ def collect_posts(include_future: false)
   Dir.glob("#{CONTENT_DIR}/**/index.md")
      .reject { |path| path == "#{CONTENT_DIR}/index.md" || path == "#{CONTENT_DIR}/_index.md" }
      .reject { |path| path.start_with?("#{ARCHIVES_DIR}/") }
+     .reject { |path| path.start_with?("#{AKITANDO_DIR}/") }
      .filter_map { |path| parse_post(path, lang: :pt) }
+     .reject { |post| akitando_post?(post) }
      .select { |post| include_future || post[:date] <= now }
 end
 
@@ -72,7 +82,19 @@ def collect_posts_en(include_future: false)
   now = DateTime.now
   Dir.glob("#{CONTENT_DIR}/**/index.en.md")
      .reject { |path| path.start_with?("#{ARCHIVES_DIR}/") }
+     .reject { |path| path.start_with?("#{AKITANDO_DIR}/") }
      .filter_map { |path| parse_post(path, lang: :en) }
+     .reject { |post| akitando_post?(post) }
+     .select { |post| include_future || post[:date] <= now }
+end
+
+def collect_akitando_posts(include_future: false)
+  now = DateTime.now
+  Dir.glob("#{CONTENT_DIR}/**/index.md")
+     .reject { |path| path == "#{CONTENT_DIR}/index.md" || path == "#{CONTENT_DIR}/_index.md" }
+     .reject { |path| path.start_with?("#{ARCHIVES_DIR}/") }
+     .filter_map { |path| parse_post(path, lang: :pt) }
+     .select { |post| akitando_post?(post) }
      .select { |post| include_future || post[:date] <= now }
 end
 
@@ -143,6 +165,27 @@ def generate_archives_en(grouped_posts)
   lines.join("\n")
 end
 
+def generate_akitando(grouped_posts)
+  lines = ["#{FRONTMATTER_DELIMITER}\ntitle: Akitando - Transcrições\n#{FRONTMATTER_DELIMITER}\n"]
+  lines << ''
+  lines << 'Transcrições dos episódios do canal [Akitando](https://www.youtube.com/c/akitando) no YouTube.'
+  lines << ''
+  lines.concat(render_months(grouped_posts))
+  lines.join("\n")
+end
+
+def generate_akitando_en
+  <<~MARKDOWN
+    ---
+    title: Akitando - Transcripts
+    ---
+
+    These are transcripts for Akita's YouTube channel [Akitando](https://www.youtube.com/c/akitando).
+
+    _Akitando episodes are produced in Brazilian Portuguese only and are not translated to English._
+  MARKDOWN
+end
+
 include_future = ARGV.include?('--future')
 posts = collect_posts(include_future: include_future)
 grouped = group_by_month(posts)
@@ -173,3 +216,12 @@ archived_en = grouped_en.select { |(year, _month), _| year < CUTOFF_YEAR }
 File.write(ARCHIVES_FILE_EN, generate_archives_en(archived_en))
 archived_en_count = archived_en.values.flatten.size
 puts "Generated #{ARCHIVES_FILE_EN} with #{archived_en_count} posts (before #{CUTOFF_YEAR})."
+
+# Akitando transcripts page
+Dir.mkdir(AKITANDO_DIR) unless Dir.exist?(AKITANDO_DIR)
+akitando_posts = collect_akitando_posts(include_future: include_future)
+grouped_akitando = group_by_month(akitando_posts)
+File.write(AKITANDO_FILE, generate_akitando(grouped_akitando))
+puts "Generated #{AKITANDO_FILE} with #{akitando_posts.size} posts."
+File.write(AKITANDO_FILE_EN, generate_akitando_en)
+puts "Generated #{AKITANDO_FILE_EN} (static EN notice)."

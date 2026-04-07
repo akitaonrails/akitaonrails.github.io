@@ -5,7 +5,7 @@ segments:
   recent:
     includes:
     - kind: '{home,section,taxonomy,term}'
-    - path: '{/2025/**,/2026/**,/2027/**,/about,/archives}'
+    - path: '{/2025/**,/2026/**,/2027/**,/about,/archives,/akitando}'
 
 title: AkitaOnRails.com
 enableEmoji: true
@@ -57,6 +57,11 @@ languages:
           url: "https://themakitachronicles.com"
           params:
             icon: newspaper
+        - name: Akitando - Transcrições
+          weight: 3
+          url: "/akitando/"
+          params:
+            icon: video
   en:
     languageName: "English"
     languageCode: "en"
@@ -104,6 +109,11 @@ languages:
           url: "https://themakitachronicles.com"
           params:
             icon: newspaper
+        - name: Akitando - Transcripts
+          weight: 3
+          url: "/en/akitando/"
+          params:
+            icon: video
 
 outputs:
   home: [HTML, RSS]
