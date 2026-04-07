@@ -1000,14 +1000,14 @@ title: AkitaOnRails Blog - Arquivo
 ## 2009 - May
 
 - [\[Off-Topic\] As 5 disfunções de equipes em código](/2009/05/31/off-topic-as-5-disfun--es-de-equipes-em-c-digo/)
-- [RailsConf 09 - Ninh Grosenbach Bui](/2009/05/11/railsconf-09-ninh-grosenbach-bui/)
-- [RailsConf 09 - Message from Bryan Liles (TATFT) to Brazil](/2009/05/08/railsconf-09-message-from-bryan-liles-tatft-to-brazil/)
-- [RailsConf 09 - Exclusive Audio Interviews](/2009/05/08/railsconf-09-exclusive-audio-interviews/)
-- [RailsConf 09 - Message from Peter Cooper to Ruby Inside Brazil](/2009/05/08/railsconf-09-message-from-peter-cooper-to-ruby-inside-brazil/)
-- [RailsConf 09 - DHH - The Secret of Productivity](/2009/05/08/railsconf-09-dhh-the-secret-of-productivity/)
-- [RailsConf 09 - Uncle Bob - Professionalism](/2009/05/07/railsconf-09-uncle-bob-professionalism/)
-- [RailsConf 09 - Uncle Bob Martin](/2009/05/06/railsconf-09-uncle-bob-martin/)
-- [Going to RailsConf 2009](/2009/05/02/going-to-railsconf-2009/)
+- [RailsConf 09 - Ninh, Grosenbach e Bui](/2009/05/11/railsconf-09-ninh-grosenbach-e-bui/)
+- [RailsConf 09 - Mensagem do Bryan Liles (TATFT) para o Brasil](/2009/05/08/railsconf-09-mensagem-do-bryan-liles-tatft-para-o-brasil/)
+- [RailsConf 09 - Entrevistas Exclusivas em Áudio](/2009/05/08/railsconf-09-entrevistas-exclusivas-em-audio/)
+- [RailsConf 09 - Recado do Peter Cooper para o Ruby Inside Brasil](/2009/05/08/railsconf-09-recado-do-peter-cooper-para-o-ruby-inside-brasil/)
+- [RailsConf 09 - DHH - O Segredo da Produtividade](/2009/05/08/railsconf-09-dhh-o-segredo-da-produtividade/)
+- [RailsConf 09 - Tio Bob - Profissionalismo](/2009/05/07/railsconf-09-tio-bob-profissionalismo/)
+- [RailsConf 09 - Tio Bob Martin](/2009/05/06/railsconf-09-tio-bob-martin/)
+- [Indo para a RailsConf 2009](/2009/05/02/indo-para-a-railsconf-2009/)
 
 ## 2009 - April
 
@@ -1031,7 +1031,7 @@ title: AkitaOnRails Blog - Arquivo
 ## 2008 - November
 
 - [QCon Special - Encerrando os Trabalhos](/2008/11/22/qcon-special-encerrando-os-trabalhos/)
-- [Rails Podcast Brasil, QCon Special - Ola Bini (JRuby, Ioke)](/2008/11/22/rails-podcast-brasil-qcon-special-ola-bini-jruby-ioke-pt/)
+- [Rails Podcast Brasil, Especial QCon - Ola Bini (JRuby, Ioke)](/2008/11/22/rails-podcast-brasil-especial-qcon-ola-bini-jruby-ioke/)
 - [Rails Podcast Brasil, Especial QCon - John Straw (YellowPages.com) e Matt Aimonetti (Merb)](/2008/11/21/rails-podcast-brasil-especial-qcon-john-straw-yellowpages-com-e-matt-aimonetti-merb/)
 - [Rails Podcast Brasil, QCon Special - Nick Sieger (JRuby) e Francesco Cesarini (Erlang)](/2008/11/21/rails-podcast-brasil-qcon-special-nick-sieger-jruby-e-francesco-cesarini-erlang/)
 - [Entrevista com Jan Lehnardt e Chris Anderson do CouchDB](/2008/11/19/entrevista-com-jan-lehnardt-e-chris-anderson-do-couchdb/)

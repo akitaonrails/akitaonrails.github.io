@@ -1,19 +1,22 @@
 ---
-title: RailsConf 09 - Exclusive Audio Interviews
+title: "RailsConf 09 - Entrevistas Exclusivas em Áudio"
 date: '2009-05-08T05:07:00-03:00'
-slug: railsconf-09-exclusive-audio-interviews
+slug: railsconf-09-entrevistas-exclusivas-em-audio
+translationKey: railsconf-2009-exclusive-audio
+aliases:
+- /2009/05/08/railsconf-09-exclusive-audio-interviews/
 tags:
 - railsconf2009
 - interview
-- english
+- traduzido
 draft: false
 ---
 
 
 
-I’ve had a great time interviewing several interesting Rubysts and Railers on their new projects. I think you will like to hear what they have to say.
+Tive a oportunidade de entrevistar vários Rubystas e Railers interessantes sobre seus novos projetos. Acho que vocês vão gostar de ouvir o que eles têm a dizer.
 
-My first guest was Joshua Timberman. He is a fervorous evangelist for the [Chef](http://www.infoq.com/news/2009/01/chef-management-tool-announced) project. Chef could be seen as a more modern Puppet, which by itself, already is a modern systems configuration manager. Chef is composed of several pieces, cookbooks and details that Joshua explains in his interview.
+Meu primeiro convidado foi Joshua Timberman. Ele é um evangelista fervoroso do projeto [Chef](http://www.infoq.com/news/2009/01/chef-management-tool-announced). O Chef pode ser visto como um Puppet mais moderno, sendo que o Puppet por si só já é um gerenciador de configuração de sistemas bastante moderno. O Chef é composto por várias peças, cookbooks e detalhes que o Joshua explica na entrevista.
 
 <object type="application/x-shockwave-flash" data="http://s3.amazonaws.com/akitaonrails/files/player_mp3.swf" width="200" height="20"><br>
     <param name="movie" value="http://s3.amazonaws.com/akitaonrails/files/player_mp3.swf">
@@ -26,7 +29,7 @@ My first guest was Joshua Timberman. He is a fervorous evangelist for the [Chef]
 
 [Download](http://s3.amazonaws.com/akitaonrails/files/Joshua_Timberman_Chef.mp3) (22:24)
 
-One project that I am particularly very interested is [Spree](http://spreeecommerce.com/). Sean Schofield started this Rails based e-commerce system to support developers that had to reinvent the wheel all the time, and e-commerce systems are notoriously not easy to do. Spree is a fairly complete project, with many nice features, including integration with ActiveMerchant, shipping support, tax categories and so on. I helped a bit doing the Brazilian Portuguese internationalization of the project as well. Highly recommended.
+Um projeto pelo qual tenho um interesse particularmente grande é o [Spree](http://spreeecommerce.com/). O Sean Schofield começou esse sistema de e-commerce baseado em Rails para apoiar desenvolvedores que precisavam reinventar a roda toda hora, e sistemas de e-commerce são notoriamente difíceis de fazer. O Spree é um projeto bem completo, com várias funcionalidades legais, incluindo integração com ActiveMerchant, suporte a frete, categorias de impostos e por aí vai. Eu também ajudei um pouco fazendo a internacionalização do projeto para o português brasileiro. Altamente recomendado.
 
 <object type="application/x-shockwave-flash" data="http://s3.amazonaws.com/akitaonrails/files/player_mp3.swf" width="200" height="20"><br>
     <param name="movie" value="http://s3.amazonaws.com/akitaonrails/files/player_mp3.swf">
@@ -39,7 +42,7 @@ One project that I am particularly very interested is [Spree](http://spreeecomme
 
 [Download](http://s3.amazonaws.com/akitaonrails/files/Sean_Schofield_Spree.mp3) (22:15)
 
-By now I think we all know New Relic, Fiveruns and Rails monitoring systems. But there are more competition coming up, from the guys of Highgroove Studios we have [Scout](http://scoutapp.com/) a non-nonsense approach to Rails monitoring and data analysis. They are willing to go an step further: instead of just presenting raw data as reports, they are analyzing this data and giving you relevant recommendations so you can further optimize your application. And more than that: they are highly competitive in price. And the client agent that gathers data and send to their servers is open source and extensible through plugins, so you can add even more to what they already offer. Definitely worth checking out:
+A essa altura, acho que todo mundo já conhece o New Relic, o Fiveruns e os sistemas de monitoramento de Rails. Mas tem mais concorrência aparecendo, e do pessoal da Highgroove Studios temos o [Scout](http://scoutapp.com/), uma abordagem direta ao monitoramento de Rails e análise de dados. Eles querem ir um passo além: em vez de apenas apresentar dados crus na forma de relatórios, eles analisam esses dados e te dão recomendações relevantes para você otimizar ainda mais sua aplicação. E mais que isso: são bem competitivos no preço. E o agente cliente que coleta os dados e envia para os servidores deles é open source e extensível por plugins, então dá para adicionar ainda mais ao que eles já oferecem. Vale muito a pena conferir:
 
 <object type="application/x-shockwave-flash" data="http://s3.amazonaws.com/akitaonrails/files/player_mp3.swf" width="200" height="20"><br>
     <param name="movie" value="http://s3.amazonaws.com/akitaonrails/files/player_mp3.swf">
@@ -52,7 +55,7 @@ By now I think we all know New Relic, Fiveruns and Rails monitoring systems. But
 
 [Download](http://s3.amazonaws.com/akitaonrails/files/Matt_Todd_Highgroove_Studios.mp3) (13:43)
 
-At RailsConf 2008, last year, I interviewed [James Lindenbaum](http://www.akitaonrails.com/2008/6/5/railsconf-2008-brazil-rails-podcast-special-edition) about Heroku. They were still in beta at that time. Now they finally released a commercial version with lots of new features. I was particularly surprised to find Ryan Tomayko at their booth, working for Heroku. I think Heroku really nailed easy deployment for Ruby applications over Amazon EC2. If you don’t want to worry about infrastructure, Heroku may be the answer:
+Na RailsConf 2008, ano passado, entrevistei o [James Lindenbaum](http://www.akitaonrails.com/2008/6/5/railsconf-2008-brazil-rails-podcast-special-edition) sobre o Heroku. Eles ainda estavam em beta naquela época. Agora finalmente lançaram uma versão comercial com várias funcionalidades novas. Fiquei particularmente surpreso de encontrar o Ryan Tomayko no estande deles, trabalhando para o Heroku. Acho que o Heroku acertou em cheio no deploy fácil de aplicações Ruby sobre o Amazon EC2. Se você não quer se preocupar com infraestrutura, o Heroku pode ser a resposta:
 
 <object type="application/x-shockwave-flash" data="http://s3.amazonaws.com/akitaonrails/files/player_mp3.swf" width="200" height="20"><br>
     <param name="movie" value="http://s3.amazonaws.com/akitaonrails/files/player_mp3.swf">
@@ -65,7 +68,7 @@ At RailsConf 2008, last year, I interviewed [James Lindenbaum](http://www.akitao
 
 [Download](http://s3.amazonaws.com/akitaonrails/files/Ryan_Tomayko_Heroku.mp3) (33:49)
 
-Again, last year, everybody was blown away by the announcement of Gemstone – traditional Smalltalk software-house – showing a very preview version of Ruby actually running over a very mature Smalltalk VM. This is the [Maglev](http://maglev.gemstone.com/) project. Since then the development has been quite secretive. But they are finally disclosing more and more information on how the project is going. This year, they were able to show a small Sinatra application already running – albeit, with some tweaks. I think they are evolving very fast. Ruby is notoriously not an easy language to implement and Maglev will be incredible when released. In this interview we have Monty Williams, Peter McLain and Michael Latta discussing about the current development and future roadmap.
+De novo, ano passado, todo mundo ficou impressionado com o anúncio da Gemstone — software-house tradicional de Smalltalk — mostrando uma versão muito preliminar de Ruby rodando de fato sobre uma VM Smalltalk bem madura. Esse é o projeto [Maglev](http://maglev.gemstone.com/). Desde então o desenvolvimento andou bem secreto. Mas eles finalmente estão divulgando cada vez mais informação sobre como o projeto está indo. Esse ano conseguiram mostrar uma pequena aplicação Sinatra já rodando — embora com alguns ajustes. Acho que estão evoluindo muito rápido. Ruby é notoriamente uma linguagem difícil de implementar e o Maglev vai ser incrível quando lançado. Nessa entrevista temos Monty Williams, Peter McLain e Michael Latta falando sobre o desenvolvimento atual e o roadmap futuro.
 
 <object type="application/x-shockwave-flash" data="http://s3.amazonaws.com/akitaonrails/files/player_mp3.swf" width="200" height="20"><br>
     <param name="movie" value="http://s3.amazonaws.com/akitaonrails/files/player_mp3.swf">
@@ -78,7 +81,7 @@ Again, last year, everybody was blown away by the announcement of Gemstone – t
 
 [Download](http://s3.amazonaws.com/akitaonrails/files/Maglev_Team.mp3) (36:42)
 
-Finally, I think everybody knows Ilya Grigorik by now, from [igvita.com](http://www.igvita.com). He received last year’s Ruby Hero Awards, and it was well deserved. He is one of the few developers that can tackle very advanced subjects in a way that anyone can understand. He started a new company recently and they have a very very interesting product called [PostRank](http://www.postrank.com). The overall idea is fairly simple: they went a step further over Google’s own PageRank system. Instead of just considering link tracebacks, they now weigh in social network behavior. For example, a single Digg page traces back to a website with just one link. But this same page at Digg can have something like hundreds of comments, or “engagements” as Ilya calls it. This gives a totally different weigh to this traceback instead of just a simple link. So companies are starting to pay attention to social networks such as Digg, Reddit, Twitter and others and now Ilya comes up with the tool to deliver them the necessary metrics. I highly recommend you to test-drive this site, I think you will be impressed.
+Por fim, acho que todo mundo já conhece o Ilya Grigorik, do [igvita.com](http://www.igvita.com). Ele recebeu o Ruby Hero Awards do ano passado, e foi bem merecido. Ele é um dos poucos desenvolvedores que conseguem encarar assuntos bem avançados de uma forma que qualquer um entende. Recentemente abriu uma nova empresa e eles têm um produto muito muito interessante chamado [PostRank](http://www.postrank.com). A ideia geral é bem simples: eles foram um passo além do próprio sistema PageRank do Google. Em vez de considerar apenas tracebacks de links, agora pesam também o comportamento em redes sociais. Por exemplo, uma única página do Digg gera um traceback para um site com apenas um link. Mas essa mesma página no Digg pode ter algo como centenas de comentários, ou "engajamentos", como o Ilya chama. Isso dá um peso totalmente diferente para esse traceback do que um simples link. Então as empresas estão começando a prestar atenção em redes sociais como Digg, Reddit, Twitter e outras, e agora o Ilya aparece com a ferramenta para entregar a elas as métricas necessárias. Recomendo muito que você dê uma testada no site, acho que vai ficar impressionado.
 
 <object type="application/x-shockwave-flash" data="http://s3.amazonaws.com/akitaonrails/files/player_mp3.swf" width="200" height="20"><br>
     <param name="movie" value="http://s3.amazonaws.com/akitaonrails/files/player_mp3.swf">
@@ -91,5 +94,4 @@ Finally, I think everybody knows Ilya Grigorik by now, from [igvita.com](http://
 
 [Download](http://s3.amazonaws.com/akitaonrails/files/Ilya_Grigorik_PostRank.com.mp3) (21:43)
 
-And this wraps up my series of interviews at RailsConf 2009. I wish I had more time to interview more people. There were very insightful and smart developers there, and I would have to _git clone_ myself many times to be able to talk to all of them. I hope you enjoy this set of interviews.
-
+E assim encerro minha série de entrevistas na RailsConf 2009. Queria ter tido mais tempo para entrevistar mais gente. Tinha desenvolvedores muito perspicazes e inteligentes lá, e eu teria que dar _git clone_ em mim mesmo várias vezes para conseguir falar com todos eles. Espero que vocês curtam esse conjunto de entrevistas.

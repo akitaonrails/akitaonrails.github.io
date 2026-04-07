@@ -50,7 +50,7 @@ Hoje quero "filosofar" um pouco pra dar uma perspectiva diferente de como se dev
 * [The Architecture of Open Source Applications](https://aosabook.org/en/)
 * [Rails Summit 2009 - Ilya Grigorik]()
 * [Chatting with Luke Kanies](https://www.akitaonrails.com/2009/11/18/chatting-with-luke-kaines)
-* [RailsConf 09 - Exclusive Audio Interviews | AkitaOnRails.com](https://www.akitaonrails.com/2009/05/08/railsconf-09-exclusive-audio-interviews)
+* [RailsConf 09 - Exclusive Audio Interviews | AkitaOnRails.com](https://www.akitaonrails.com/2009/05/08/railsconf-09-entrevistas-exclusivas-em-audio/)
 
 
 ## SCRIPT

@@ -1,7 +1,7 @@
 ---
-title: "Rails Podcast Brasil, QCon Special - Ola Bini (JRuby, Ioke)"
+title: "Rails Podcast Brasil, Especial QCon - Ola Bini (JRuby, Ioke)"
 date: '2008-11-22T07:03:00-02:00'
-slug: rails-podcast-brasil-qcon-special-ola-bini-jruby-ioke-pt
+slug: rails-podcast-brasil-especial-qcon-ola-bini-jruby-ioke
 translationKey: rpb-qcon-ola-bini
 aliases:
 - /2008/11/22/rails-podcast-brasil-qcon-special-ola-bini-jruby-ioke/
