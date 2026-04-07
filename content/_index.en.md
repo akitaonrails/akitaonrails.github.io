@@ -61,6 +61,10 @@ title: AkitaOnRails Blog
 - [AI Agents: Locking Down Your System](/en/2026/01/10/ai-agents-locking-down-your-system/)
 - [Omarchy 3 - One of the Best Coding Agents Out There: Crush](/en/2026/01/09/omarchy-3-one-of-the-best-coding-agents-crush/)
 
+## 2025 - June
+
+- [AGI or Skynet Isn't Coming Anytime Soon](/en/2025/06/18/agi-or-skynet-isnt-coming-anytime-soon/)
+
 ## 2025 - May
 
 - [Your Windows May Be Crippled Without You Knowing. Check This!!](/en/2025/05/21/your-windows-may-be-crippled-without-you-knowing-check-this/)

@@ -10,6 +10,7 @@ tags:
 - satya nadella
 - openai
 draft: false
+translationKey: agi-skynet-not-coming-soon
 ---
 
 Se não assistiu, recomendo que assista o episódio que participei na última sexta-feira 13/06/2025, no Flow Podcast:
