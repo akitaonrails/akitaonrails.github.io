@@ -8,7 +8,7 @@ tags:
 draft: false
 ---
 
-I hope you enjoyed my first article in the series [Exploring Tokyo City](http://www.akitaonrails.com/2011/07/26/journey-to-japan-1-exploring-tokyo-city). Now let me tell my impressions of the [RubyKaigi Conference](http://rubykaigi.org/2011/en/) itself.
+I hope you enjoyed my first article in the series [Exploring Tokyo City](http://www.akitaonrails.com/en/2011/07/26/jornada-ao-japao-1-explorando-a-cidade-de-toquio). Now let me tell my impressions of the [RubyKaigi Conference](http://rubykaigi.org/2011/en/) itself.
 
 [![](http://s3.amazonaws.com/akitaonrails/assets/2011/8/3/Screen%20Shot%202011-08-03%20at%201.49.02%20AM_original.png?1312346806)](http://twitter.com/#!/takahashim)
 

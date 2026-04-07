@@ -24,6 +24,6 @@ For the longest time, since I migrated my blog from Mephisto to Enki, I lost a f
 - [Avi Bryant](/2007/12/22/conversando-com-avi-bryant-parte-2 "Part 2")
 - [Adrian Holovaty](/2008/01/01/conversando-com-adrian-holovaty)
 - [Peter Cooper](/2008/01/09/conversando-com-peter-cooper)
-- [Hal Fulton](/2008/01/09/chatting-with-hal-fulton)
+- [Hal Fulton](/2008/01/09/conversando-com-hal-fulton)
 - [Evan Phoenix](/2008/02/11/conversando-com-evan-phoenix)
 

@@ -513,11 +513,11 @@ Quer ver as transcrições do Canal Akitando? [Clique aqui](/akitando/).
 
 ## 2011 - Agosto
 
-- [\[Journey to Japan #2\] The Final RubyKaigi](/2011/08/05/journey-to-japan-2-the-final-rubykaigi/)
+- [\[Jornada ao Japão #2\] A RubyKaigi Final](/2011/08/05/jornada-ao-japao-2-a-rubykaigi-final/)
 
 ## 2011 - Julho
 
-- [\[Journey to Japan #1\] Exploring Tokyo City](/2011/07/26/journey-to-japan-1-exploring-tokyo-city/)
+- [\[Jornada ao Japão #1\] Explorando a Cidade de Tóquio](/2011/07/26/jornada-ao-japao-1-explorando-a-cidade-de-toquio/)
 - [Em breve: Jornada ao Japão](/2011/07/23/em-breve-jornada-ao-japao/)
 - [Indo para a RubyKaigi 2011 - Fechando um Ciclo](/2011/07/11/indo-para-a-rubykaigi-2011-fechando-um-ciclo/)
 
@@ -622,8 +622,8 @@ Quer ver as transcrições do Canal Akitando? [Clique aqui](/akitando/).
 ## 2009 - Novembro
 
 - [\[Off-Topic\] Restaurantes e Tecnologia](/2009/11/18/off-topic-restaurantes-e-tecnologia/)
-- [Chatting with Adam Jacob](/2009/11/18/chatting-with-adam-jacob/)
-- [Chatting with Luke Kanies](/2009/11/18/chatting-with-luke-kaines/)
+- [Conversando com Adam Jacob](/2009/11/18/conversando-com-adam-jacob/)
+- [Conversando com Luke Kanies](/2009/11/18/conversando-com-luke-kanies/)
 - [\[Tradução\] Três Contextos Implícitos em Ruby](/2009/11/16/traducao-tres-contextos-implicitos-em-ruby/)
 - [\[Tradução\] Metaprogramação em Ruby: é tudo sobre Self](/2009/11/16/traducao-metaprogramacao-em-ruby-e-tudo-sobre-self/)
 - [Rubistas.com.br](/2009/11/10/rubistas-com-br/)
@@ -759,7 +759,7 @@ Quer ver as transcrições do Canal Akitando? [Clique aqui](/akitando/).
 - [Off Topic: Por que programadores devem jogar Go](/2008/07/15/off-topic-por-que-programadores-devem-jogar-go/)
 - [RAILS SUMMIT LATIN AMERICA 2008](/2008/07/13/rails-summit-latin-america-2008/)
 - [Está chegando a hora! Rails Summit Brazil 2008!](/2008/07/04/est-chegando-a-hora-rails-summit-brazil-2008/)
-- [Chatting with Luis Lavena (Ruby on Windows)](/2008/07/02/chatting-with-luis-lavena-ruby-on-windows/)
+- [Conversando com Luis Lavena (Ruby no Windows)](/2008/07/02/conversando-com-luis-lavena-ruby-on-windows/)
 
 ## 2008 - Junho
 
@@ -781,11 +781,11 @@ Quer ver as transcrições do Canal Akitando? [Clique aqui](/akitando/).
 - [Minha Carreira Rails - Fase 3](/2008/05/20/minha-carreira-rails-fase-3/)
 - [Off-Topic: Dando o Sangue pelo Rails! Parte 2](/2008/05/16/off-topic-dando-o-sangue-pelo-rails-parte-2/)
 - [Off-Topic: Dando o Sangue pelo Rails!](/2008/05/07/off-topic-dando-o-sangue-pelo-rails/)
-- [Chatting with Hongli Lai and Ninh Bui (Phusion)](/2008/05/06/chatting-with-hongli-lai-and-ninh-bui-phusion/)
+- [Conversando com Hongli Lai e Ninh Bui (Phusion)](/2008/05/06/conversando-com-hongli-lai-e-ninh-bui-phusion/)
 
 ## 2008 - Abril
 
-- [Chatting with Chris Wanstrath (Err the Blog/Github)](/2008/04/21/chatting-with-chris-wanstrath-err-the-blog-github/)
+- [Conversando com Chris Wanstrath (Err the Blog/Github)](/2008/04/21/conversando-com-chris-wanstrath-err-the-blog-github/)
 - [Off Topic: Vamos todos impedir a regulamentação da profissão de analista de sistema](/2008/04/19/off-topic-vamos-todos-impedir-a-regulamenta-o-da-profiss-o-de-analista-de-sistema/)
 - [Off Topic: Nunca confie no TIOBE](/2008/04/13/off-topic-nunca-confie-no-tiobe/)
 - [Off-Topic: Google App Engine e Cloud Computing](/2008/04/13/off-topic-google-app-engine-e-cloud-computing/)
@@ -804,7 +804,7 @@ Quer ver as transcrições do Canal Akitando? [Clique aqui](/akitando/).
 
 - [Tradução: Tipagem Dinâmica vs Linguagem Dinâmica Explicado](/2008/02/22/tradu-o-tipagem-din-mica-vs-linguagem-din-mica-explicado/)
 - [Aguri: A Estrutura de Dados mais Legal que Você Nunca Ouviu Falar](/2008/02/21/aguri-a-estrutura-de-dados-mais-legal-que-voc-nunca-ouviu-falar/)
-- [Chatting with Scott Hanselman](/2008/02/18/chatting-with-scott-hanselman/)
+- [Conversando com Scott Hanselman](/2008/02/18/conversando-com-scott-hanselman/)
 - [Conversando com Evan Phoenix](/2008/02/11/conversando-com-evan-phoenix/)
 - [Tradução: De quem é essa variável, afinal?](/2008/02/11/tradu-o-de-quem-essa-vari-vel-afinal/)
 - [Tradução: Não sei o que quero, mas sei como conseguir](/2008/02/10/tradu-o-n-o-sei-o-que-quero-mas-sei-como-conseguir/)
@@ -814,7 +814,7 @@ Quer ver as transcrições do Canal Akitando? [Clique aqui](/akitando/).
 - [Tradução: Faça uma Apresentação como Steve Jobs](/2008/01/27/traduo-faa-uma-apresentao-como-steve-jobs/)
 - [Tradução: Lisp em Ruby](/2008/01/27/traduo-lisp-em-ruby/)
 - [Off Topic: "I am Legend" - HORRÍVEL!](/2008/01/19/off-topic-i-am-legend-horrvel/)
-- [Chatting with Hal Fulton](/2008/01/09/chatting-with-hal-fulton/)
+- [Conversando com Hal Fulton](/2008/01/09/conversando-com-hal-fulton/)
 - [Conversando com Peter Cooper](/2008/01/09/conversando-com-peter-cooper/)
 - [Conversando com Adrian Holovaty](/2008/01/01/conversando-com-adrian-holovaty/)
 

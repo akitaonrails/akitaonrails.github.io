@@ -8,7 +8,7 @@ tags:
 draft: false
 ---
 
-It's been a while since I've written about my [Ruby Kaigi 2011 trip](http://akitaonrails.com/2011/08/05/journey-to-japan-2-the-final-rubykaigi). Since then I've been really busy and I left out lots of great material shamelessly accumulating dust in my hard drive, but no more. Today I was finally able to edit some of that and upload the interviews I have recorded with some of the most well known Japanese Ruby contributors. Wonderful people that I was lucky to meet and that were very friendly to me and eager to tell their stories.
+It's been a while since I've written about my [Ruby Kaigi 2011 trip](http://akitaonrails.com/en/2011/08/05/jornada-ao-japao-2-a-rubykaigi-final). Since then I've been really busy and I left out lots of great material shamelessly accumulating dust in my hard drive, but no more. Today I was finally able to edit some of that and upload the interviews I have recorded with some of the most well known Japanese Ruby contributors. Wonderful people that I was lucky to meet and that were very friendly to me and eager to tell their stories.
 
 These are the first versions of the edited videos, I still didn't have time to add English subtitles, but I wanted to upload them as soon as possible so the Japanese community could check them out first. I will try to add the subtitles in the following days (help would be appreciated). The Matz interview in particular has the worst audio as we were in the middle of an after-party in a small bar with very bad acoustics, so I apologize for its quality, I hope you can get most out of it.
 

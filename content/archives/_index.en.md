@@ -251,6 +251,11 @@ Want to see the Akitando Channel transcripts (Portuguese only)? [Click here](/ak
 - [\[RailsConf 2010\] - Video Interviews - Part 1](/en/2010/06/17/railsconf-2010-video-interviews-part-1/)
 - [\[RailsConf 2010\] - Video Interview - Robert Martin (English)](/en/2010/06/16/railsconf-2010-video-interview-robert-martin-english/)
 
+## 2009 - November
+
+- [Chatting with Adam Jacob](/en/2009/11/18/chatting-with-adam-jacob/)
+- [Chatting with Luke Kanies](/en/2009/11/18/chatting-with-luke-kaines/)
+
 ## 2009 - May
 
 - [RailsConf 09 - Ninh Grosenbach Bui](/en/2009/05/11/railsconf-09-ninh-grosenbach-bui/)
@@ -275,12 +280,25 @@ Want to see the Akitando Channel transcripts (Portuguese only)? [Click here](/ak
 
 - [Chatting with Joshua Peek](/en/2008/09/27/chatting-with-joshua-peek/)
 
+## 2008 - July
+
+- [Chatting with Luis Lavena (Ruby on Windows)](/en/2008/07/02/chatting-with-luis-lavena-ruby-on-windows/)
+
 ## 2008 - June
 
 - [Chatting with Blaine Cook (Twitter)](/en/2008/06/17/chatting-with-blaine-cook-twitter/)
 
+## 2008 - May
+
+- [Chatting with Hongli Lai and Ninh Bui (Phusion)](/en/2008/05/06/chatting-with-hongli-lai-and-ninh-bui-phusion/)
+
+## 2008 - April
+
+- [Chatting with Chris Wanstrath (Err the Blog/Github)](/en/2008/04/21/chatting-with-chris-wanstrath-err-the-blog-github/)
+
 ## 2008 - February
 
+- [Chatting with Scott Hanselman](/en/2008/02/18/chatting-with-scott-hanselman/)
 - [Chatting with Evan Phoenix](/en/2008/02/11/chatting-with-evan-phoenix/)
 
 ## 2008 - January

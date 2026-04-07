@@ -50,7 +50,7 @@ AkitaOnRails Blog:
 * Micro Tutorial de Git (https://www.akitaonrails.com/2008/04/02/micro-tutorial-de-git)
 * Dicas de Git (https://www.akitaonrails.com/2009/07/05/dicas-de-git)
 * [Screencast] Começando com Git (https://www.akitaonrails.com/2010/08/17/screencast-comecando-com-git)
-* Chatting with Chris Wanstrath (Err the Blog/Github) (http://www.akitaonrails.com/2008/04/21/chatting-with-chris-wanstrath-err-the-blog-github)
+* Chatting with Chris Wanstrath (Err the Blog/Github) (http://www.akitaonrails.com/2008/04/21/conversando-com-chris-wanstrath-err-the-blog-github)
 * Arch Linux - Best distro ever? (http://www.akitaonrails.com/2017/01/10/arch-linux-a-melhor-distro-de-todas)
 * Optimizing Linux for Slow Computers (https://www.akitaonrails.com/2017/01/17/otimizando-o-linux-para-computadores-lentos)
 * From the Macbook Pro to the Dell XPS. Arch Linux for Creative Pro Users (http://www.akitaonrails.com/2017/01/31/do-macbook-pro-para-o-dell-xps-arch-linux-para-usuarios-criativos)
