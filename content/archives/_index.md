@@ -1030,12 +1030,12 @@ title: AkitaOnRails Blog - Arquivo
 
 ## 2008 - November
 
-- [QCon Special - Signing Off](/2008/11/22/qcon-special-signing-off/)
-- [Rails Podcast Brasil, QCon Special - Ola Bini (JRuby, Ioke)](/2008/11/22/rails-podcast-brasil-qcon-special-ola-bini-jruby-ioke/)
-- [Rails Podcast Brasil, QCon Special - John Straw (YellowPages.com) and Matt Aimonetti (Merb)](/2008/11/21/rails-podcast-brasil-qcon-special-john-straw-yellowpages-com-and-matt-aimonetti-merb/)
-- [Rails Podcast Brasil, QCon Special - Nick Sieger (JRuby) and Francesco Cesarini (Erlang)](/2008/11/21/rails-podcast-brasil-qcon-special-nick-sieger-jruby-and-francesco-cesarini-erlang/)
-- [Rails Podcast Brasil, QCon Special - Jan Lehnardt and Chris Anderson from CouchDB](/2008/11/19/rails-podcast-brasil-qcon-special-jan-lenhardt-and-chris-anderson-from-couchdb/)
-- [Rails Podcast Brasil, QCon Special - Yehuda Katz](/2008/11/19/rails-podcast-brasil-qcon-special-yehuda-katz/)
+- [QCon Special - Encerrando os Trabalhos](/2008/11/22/qcon-special-encerrando-os-trabalhos/)
+- [Rails Podcast Brasil, QCon Special - Ola Bini (JRuby, Ioke)](/2008/11/22/rails-podcast-brasil-qcon-special-ola-bini-jruby-ioke-pt/)
+- [Rails Podcast Brasil, Especial QCon - John Straw (YellowPages.com) e Matt Aimonetti (Merb)](/2008/11/21/rails-podcast-brasil-especial-qcon-john-straw-yellowpages-com-e-matt-aimonetti-merb/)
+- [Rails Podcast Brasil, QCon Special - Nick Sieger (JRuby) e Francesco Cesarini (Erlang)](/2008/11/21/rails-podcast-brasil-qcon-special-nick-sieger-jruby-e-francesco-cesarini-erlang/)
+- [Entrevista com Jan Lehnardt e Chris Anderson do CouchDB](/2008/11/19/entrevista-com-jan-lehnardt-e-chris-anderson-do-couchdb/)
+- [Rails Podcast Brasil, Especial QCon - Yehuda Katz](/2008/11/19/rails-podcast-brasil-especial-qcon-yehuda-katz/)
 - [Rails Summit: Blogosfera](/2008/11/12/rails-summit-blogosfera/)
 - [Micro-Tutorial de Ruby](/2008/11/10/micro-tutorial-de-ruby/)
 - [Micro-Tutorial de Ruby - Parte III](/2008/11/10/micro-tutorial-de-ruby-parte-iii/)

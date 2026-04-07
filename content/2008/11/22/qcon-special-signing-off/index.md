@@ -1,10 +1,13 @@
 ---
-title: QCon Special - Signing Off
+title: "QCon Special - Encerrando os Trabalhos"
 date: '2008-11-22T16:03:00-02:00'
-slug: qcon-special-signing-off
+slug: qcon-special-encerrando-os-trabalhos
+translationKey: qcon-special-signing-off-2008
+aliases:
+- /2008/11/22/qcon-special-signing-off/
 tags:
 - qcon2008
-- english
+- traduzido
 draft: false
 ---
 
@@ -14,19 +17,18 @@ draft: false
 <param name="allowscriptaccess" value="always">
 <param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=2312642&server=vimeo.com&show_title=1&show_byline=1&show_portrait=0&color=&fullscreen=1">
 <embed src="http://vimeo.com/moogaloop.swf?clip_id=2312642&server=vimeo.com&show_title=1&show_byline=1&show_portrait=0&color=&fullscreen=1" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="500" height="350"></embed></object>  
-[Myself and the Githubbers](http://vimeo.com/2312642) from [Fabio Akita](http://vimeo.com/akitaonrails) on [Vimeo](http://vimeo.com).
+[Eu e a galera do Github](http://vimeo.com/2312642) por [Fabio Akita](http://vimeo.com/akitaonrails) no [Vimeo](http://vimeo.com).
 
-QCon is finally over, it was a great venue, great people. Thanks to Floyd, InfoQ and all the organizers and sponsors. I think it accomplished it’s goal of discussing the new trends in technology. It is clear that functional programming, non-relational databases and the Agile philosophy are the way to go.
+A QCon finalmente acabou. Foi um evento sensacional, com gente sensacional. Valeu ao Floyd, à InfoQ e a todos os organizadores e patrocinadores. Acho que o evento cumpriu direitinho o objetivo de discutir as novas tendências em tecnologia. Ficou claro pra mim que programação funcional, bancos de dados não-relacionais e a filosofia Agile são o caminho daqui pra frente.
 
-Yesterday I had a great time with the awesome guys from Github. Chris Wanstrath, Scott Chacon and Tom Preston, together with RailsEnvy’s Jason Seifer. We discussed languages, Git, and several geeky stuff :-) Thank you guys, you’re kicking ass, keep going with the great job.
+Ontem passei um tempo ótimo com os caras fantásticos do Github. Chris Wanstrath, Scott Chacon e Tom Preston, junto com o Jason Seifer, do RailsEnvy. Ficamos batendo papo sobre linguagens, Git e várias coisas bem nerds :-) Valeu demais, galera, vocês estão arrebentando, continuem com o trabalho excelente.
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2008/11/22/IMG_0100.JPG)
 
-Ezra Zygmuntowicz was also really nice for inviting me to visit Engine Yard’s headquarter. It was really interesting to finally get to known them. He showed me the new service they’re building on top of Amazon Web Services, a way to easily create your own highly scalable Rails/Merb infrastructure. They are building a very slicky Dashboard so you can control all of your slices, configurations, environments. It is supposed to be released at the end of this year. I know people will love it.
+O Ezra Zygmuntowicz também foi super gente boa e me convidou pra visitar a sede da Engine Yard. Foi muito interessante finalmente conhecê-los pessoalmente. Ele me mostrou o novo serviço que eles estão construindo em cima do Amazon Web Services, uma forma fácil de criar sua própria infraestrutura Rails/Merb altamente escalável. Estão montando um Dashboard bem caprichado pra você controlar todas as suas slices, configurações e ambientes. A previsão é lançar ainda este ano. Tenho certeza que o pessoal vai amar.
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2008/11/22/IMG_0101.JPG)
 
-Now I am preparing to check out and head to the airport, back to Brazil after a busy but very rewarding week. See you all guys at the next conference.
+Agora estou me arrumando pra fazer o check-out e seguir pro aeroporto, de volta ao Brasil depois de uma semana puxada, mas muito recompensadora. Vejo vocês no próximo evento.
 
-Cheers!
-
+Abraços!
