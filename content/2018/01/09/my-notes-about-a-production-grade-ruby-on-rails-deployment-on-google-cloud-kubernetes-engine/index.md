@@ -1,80 +1,83 @@
 ---
-title: My Notes about a Production-grade Ruby on Rails Deployment on Google Cloud
-  Kubernetes Engine
+title: "Minhas Notas sobre Deploy Produção do Ruby on Rails no Google Cloud Kubernetes Engine"
 date: '2018-01-09T20:13:00-02:00'
-slug: my-notes-about-a-production-grade-ruby-on-rails-deployment-on-google-cloud-kubernetes-engine
+slug: minhas-notas-deploy-producao-ruby-on-rails-google-cloud-kubernetes
 tags:
 - googlecloud
 - kubernetes
 - rubyonrails
 - linux
 - nginx
+- traduzido
+translationKey: rails-kubernetes-gke
+aliases:
+- /2018/01/09/my-notes-about-a-production-grade-ruby-on-rails-deployment-on-google-cloud-kubernetes-engine/
 draft: false
 ---
 
-I've been using Google Cloud with Kubernetes Engine for 2 months and change, from zero to production. Actually, it didn't take me a month to put it all together but it did take an extra month to figure out some nasty rough edges.
+Estou usando o Google Cloud com Kubernetes Engine há dois meses e pouco, do zero à produção. Na prática, não levei um mês para montar tudo, mas levei mais um mês para descobrir algumas arestas bem chatas.
 
-TL;DR: Google is actually doing a pretty good job being a counterbalancer so AWS doesn't slack off. If you already know everything about AWS, I'd encourage you to test out Google Cloud. Possibly because of muscle memory, I would still be more comfortable with AWS, but now that I forced myself to suffer the learning process, I am pretty confident with Google Cloud and Kubernetes for most of my scenarios.
+TL;DR: O Google está fazendo um trabalho razoavelmente bom como contrapeso para a AWS não se acomodar. Se você já sabe tudo sobre AWS, eu te encorajo a testar o Google Cloud. Provavelmente por memória muscular, eu ainda me sentisse mais confortável com a AWS, mas agora que me forcei a passar pelo processo de aprendizado, estou bastante confiante com Google Cloud e Kubernetes para a maioria dos meus cenários.
 
-Full disclaimer that I am not an expert, so take what I say with a grain of salt. This is one of those subjects that I am super eager to talk about but I'm also very reluctant on the proper choice of words so you don't get the wrong idea about the proposed solutions.
+Aviso completo: não sou especialista, então leve o que digo com um grão de sal. É um daqueles assuntos que tenho muita vontade de falar, mas também sou muito cuidadoso com a escolha das palavras para você não ter uma ideia errada sobre as soluções propostas.
 
-The goal of this exercise is mainly for me to store some snippets and thoughts for future reference. So keep in mind that this is also not a step-by-step tutorial. My first intention was to go that way, but then I realized that it would be almost like writing an entire book, so not this time.
+O objetivo desse exercício é principalmente guardar alguns trechos e pensamentos para consulta futura. Então tenha em mente que isso também não é um tutorial passo a passo. Minha primeira intenção foi ir por esse caminho, mas aí percebi que seria quase como escrever um livro inteiro, então não dessa vez.
 
-To succeed with something like Google Cloud and Kubernetes you **must** be battle tested in infrastructure. If you never installed server-grade Linux boxes from scratch, if you never did server optimizations, if you're not comfortable with bare server-side components, do not attempt a real production deployment. Your safest bet is still something like Heroku.
+Para ter sucesso com algo como Google Cloud e Kubernetes, você **precisa** ter experiência em infraestrutura. Se você nunca instalou boxes Linux de nível servidor do zero, se nunca fez otimizações de servidor, se não está confortável com componentes bare-metal do lado do servidor, não tente um deploy real em produção. Sua aposta mais segura ainda é algo como o Heroku.
 
-You have to be that kinda person that likes to tinker (as you've probably read me doing in [previous](http://www.akitaonrails.com/linux) blog posts).
+Você tem que ser o tipo de pessoa que gosta de fuçar nas coisas (como provavelmente você já me leu fazendo em [posts anteriores](http://www.akitaonrails.com/linux) do blog).
 
-I don't know everything, but I know enough. So I only had to figure out which of the pieces would closely fit my needs. You **must** outline your needs before attempting to write your first YAML file. Planning is crucial.
+Não sei tudo, mas sei o suficiente. Então só precisei descobrir quais peças se encaixariam melhor nas minhas necessidades. Você **precisa** definir suas necessidades antes de tentar escrever seu primeiro arquivo YAML. Planejamento é crucial.
 
-First things first, this is what I wanted/needed:
+Antes de tudo, isso é o que eu queria/precisava:
 
-* Scalable web application tier, where I could do both rolling updates (for **zero downtime** updates) and automatic and manual horizontal scaling of the servers.
-* Mountable persistent storage **with** automatic snapshots/backups.
-* Managed robust database (Postgresql) with automatic backups and **easy replication** to read-only instances.
-* Managed solution to store secrets (such as Heroku's ENV support). Never store production configuration in the source code.
-* Docker images support without me having to build custom infrastructure to deploy.
-* Static external IP addresses for integrations that required a fixed IP.
-* SSL termination so I could connect to CloudFlare (CDN is mandatory, but not enough, in 2018 we need some level of DDoS protection).
-* Enough security by default, so everything is - in theory - lockdown unless I decide to open it.
-* High-availability in different data center regions and zones.
+* Camada de aplicação web escalável, onde eu pudesse fazer tanto rolling updates (para atualizações com **zero downtime**) quanto escalamento horizontal automático e manual dos servidores.
+* Storage persistente montável **com** snapshots/backups automáticos.
+* Banco de dados robusto gerenciado (Postgresql) com backups automáticos e **replicação fácil** para instâncias somente leitura.
+* Solução gerenciada para armazenar secrets (como o suporte a ENV do Heroku). Nunca armazene configuração de produção no código-fonte.
+* Suporte a imagens Docker sem precisar construir infraestrutura customizada para deploy.
+* Endereços IP externos estáticos para integrações que exigiam IP fixo.
+* Terminação SSL para poder conectar ao CloudFlare (CDN é obrigatório, mas não suficiente — em 2018 precisamos de algum nível de proteção contra DDoS).
+* Segurança suficiente por padrão, para que tudo fique — em teoria — bloqueado a menos que eu decida abrir.
+* Alta disponibilidade em diferentes regiões e zonas de data center.
 
-It's easy to deploy a simple demo web application. But I didn't want a demo, I wanted a production-grade solution for the long-run. Improvements to my implementation are super welcome, so feel free to comment down below.
+É fácil fazer deploy de uma aplicação web demo simples. Mas eu não queria uma demo, queria uma solução de nível produção para o longo prazo. Melhorias na minha implementação são muito bem-vindas, então fique à vontade para comentar abaixo.
 
-Some of the problems for newcomers:
+Alguns dos problemas para quem está começando:
 
-* The documentation is _very_ extensive, and you will find _almost_ everything - if you know what you are looking for. Also bear in mind that Azure and AWS also implement Kubernetes with some differences, so some documentation doesn't apply to Google Cloud and vice-versa.
-* There are many features in alpha, beta, and stable stages. The documentation kinda keeps up well, but most tutorials that are just a couple months old may not work as intended anymore (this one included - I am assuming Kubernetes 1.8.4-gke).
-* There is a whole set of words that apply to concepts you already know but are called different. Getting used to the vocabulary may get in the way at first.
-* It feels like you're playing with Lego. Lots of pieces that you can mix and match. It's easy to mess up. This means that you can build a configuration tailored to your needs. But if you just copy and paste from tutorials you **will** get stuck.
-* You can do _almost_ everything through YAML files and the command line, but it's not trivial to reuse the configuration (for production and staging environments, for example). There are 3rd party tools that deal with parameterizable and reusable YAML bits, but I'd do it all by hand first. Never, ever, try automated templates in infrastructure without knowing exactly what they are doing.
-* You have 2 _fat_ command line tools: `gcloud` and `kubectl`, and the confusing part is that they name some things different even though they are the same "things". At least, `kubectl` is close to `docker`, if you're familiar with that.
+* A documentação é _muito_ extensa, e você vai encontrar _quase_ tudo — se souber o que está procurando. Também tenha em mente que Azure e AWS também implementam Kubernetes com algumas diferenças, então parte da documentação não se aplica ao Google Cloud e vice-versa.
+* Existem muitos recursos em estágios alpha, beta e stable. A documentação acompanha bem, mas a maioria dos tutoriais com alguns meses pode não funcionar mais como esperado (esse aqui incluído — estou assumindo Kubernetes 1.8.4-gke).
+* Existe um conjunto de palavras que se aplicam a conceitos que você já conhece mas têm nomes diferentes. Se acostumar com o vocabulário pode atrapalhar no começo.
+* Parece que você está brincando com Lego. Muitas peças que você pode misturar e combinar. É fácil de bagunçar. Isso significa que você pode construir uma configuração adaptada às suas necessidades. Mas se você só copiar e colar de tutoriais, você **vai** ficar preso.
+* Você pode fazer _quase_ tudo através de arquivos YAML e linha de comando, mas não é trivial reutilizar a configuração (para ambientes de produção e staging, por exemplo). Existem ferramentas de terceiros que lidam com bits YAML parametrizáveis e reutilizáveis, mas eu faria tudo à mão primeiro. Nunca, jamais, tente templates automatizados em infraestrutura sem saber exatamente o que eles fazem.
+* Você tem 2 ferramentas de linha de comando _pesadas_: `gcloud` e `kubectl`, e a parte confusa é que elas nomeiam algumas coisas de forma diferente mesmo sendo as mesmas "coisas". Pelo menos, `kubectl` é próximo do `docker`, se você estiver familiarizado com ele.
 
-Once again, this is **NOT** a step-by-step tutorial. I will annotate a few steps but not everything.
+Mais uma vez, isso **NÃO** é um tutorial passo a passo. Vou anotar alguns passos mas não tudo.
 
-### Scalable Web-Tier (the Web App itself)
+### Camada Web Escalável (a própria aplicação web)
 
-The very first thing you must have is a fully 12-factors compliant web app.
+A primeira coisa que você precisa ter é uma aplicação web totalmente compatível com os 12 fatores.
 
-Be it Ruby on Rails, Django, Laravel, Node.js or whatever. It must be a fully shared-nothing app, that does not depend on writing anything to the local filesystem. One that you can easily shutdown and startup instances independently. No old-style session in local memory or in local files (I prefer to avoid session affinity). No uploads to the local filesystem (if you must, you will have to mount an external persistent storage), always prefer to send binary streams to managed storage services.
+Seja Ruby on Rails, Django, Laravel, Node.js ou o que for. Deve ser uma aplicação totalmente shared-nothing, que não depende de escrever nada no sistema de arquivos local. Uma que você possa facilmente desligar e iniciar instâncias independentemente. Sem sessão no estilo antigo em memória local ou em arquivos locais (prefiro evitar session affinity). Sem uploads para o sistema de arquivos local (se for necessário, você terá que montar um storage persistente externo) — sempre prefira enviar streams binários para serviços de storage gerenciados.
 
-You must have a proper [pipeline that outputs cache-busting through fingerprinting assets](https://tomanistor.com/blog/cache-bust-that-asset/) (and like it or not, Rails still has the best out-of-the-box solution in its Asset Pipeline). You don't want to worry about manually busting caches in CDNs.
+Você precisa ter um [pipeline adequado que produza cache-busting através de fingerprinting de assets](https://tomanistor.com/blog/cache-bust-that-asset/) (e gostando ou não, o Rails ainda tem a melhor solução out-of-the-box no seu Asset Pipeline). Você não quer se preocupar com invalidar caches em CDNs manualmente.
 
-Instrument your app, add [New Relic RPM](https://rpm.newrelic.com), add [Rollbar](https://rollbar.com).
+Instrumente sua aplicação, adicione o [New Relic RPM](https://rpm.newrelic.com), adicione o [Rollbar](https://rollbar.com).
 
-Again, this is 2018, you don't want to deploy naive code with SQL (or any other input) injection, no unchecked `eval` around your code, no room for CSRF or XSS, etc. Go ahead, buy the license for [Brakeman Pro](https://brakemanpro.com/) and add it to your CI pipeline. I can wait ...
+De novo, isso é 2018 — você não quer fazer deploy de código ingênuo com injeção de SQL (ou qualquer outro tipo de input), sem `eval` sem verificação no seu código, sem brecha para CSRF ou XSS, etc. Vá em frente, compre a licença do [Brakeman Pro](https://brakemanpro.com/) e adicione ao seu pipeline de CI. Posso esperar...
 
-As this is not a tutorial, I will assume you're more than able to sign up to Google Cloud and find your way to set up a project, configure your region and zone.
+Como isso não é um tutorial, vou assumir que você é mais do que capaz de se cadastrar no Google Cloud e encontrar seu caminho para configurar um projeto, configurar sua região e zona.
 
-It took me a while to wrap my head around the initial structure in Google Cloud:
+Demorei um pouco para entender a estrutura inicial no Google Cloud:
 
-* You start with a [Project](https://cloud.google.com/resource-manager/docs/creating-managing-projects), which is the umbrella for everything your app needs.
-* Then you create ["clusters"](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture). You can have a production or staging cluster, for example. Or a web cluster and a separated services cluster for non-web stuff, and so on.
-* A cluster has a ["cluster-master"](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture#master), which is the controller of everything else (the `gcloud` and `kubectl` commands talk to its APIs).
-* A cluster has many ["node instances"](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture#nodes), the proper "machines" (or, more accurately, VM instances).
-* Each cluster also has at least one ["node pool"](https://cloud.google.com/kubernetes-engine/docs/concepts/node-pools) (the "default-pool"), which is a set of node instances with the same configuration, the same ["machine-type"](https://cloud.google.com/compute/docs/machine-types).
-* Finally, each node instance runs one or more "pods" which are lightweight containers like LXC. This is where your application actually is.
+* Você começa com um [Projeto](https://cloud.google.com/resource-manager/docs/creating-managing-projects), que é o guarda-chuva para tudo que sua aplicação precisa.
+* Em seguida você cria ["clusters"](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture). Você pode ter um cluster de produção ou staging, por exemplo. Ou um cluster web e um cluster de serviços separado para coisas não-web, e assim por diante.
+* Um cluster tem um ["cluster-master"](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture#master), que é o controlador de tudo o mais (os comandos `gcloud` e `kubectl` falam com suas APIs).
+* Um cluster tem muitas ["node instances"](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture#nodes), as "máquinas" propriamente ditas (ou, mais precisamente, instâncias de VM).
+* Cada cluster também tem pelo menos um ["node pool"](https://cloud.google.com/kubernetes-engine/docs/concepts/node-pools) (o "default-pool"), que é um conjunto de node instances com a mesma configuração, o mesmo ["machine-type"](https://cloud.google.com/compute/docs/machine-types).
+* Por fim, cada node instance executa um ou mais "pods" que são containers leves como LXC. É aqui que sua aplicação realmente vive.
 
-This is an example of [creating a cluster](https://cloud.google.com/sdk/gcloud/reference/container/clusters/create):
+Este é um exemplo de [criação de cluster](https://cloud.google.com/sdk/gcloud/reference/container/clusters/create):
 
 ```
 gcloud container clusters create my-web-production \
@@ -86,9 +89,9 @@ gcloud container clusters create my-web-production \
 --num-nodes 2
 ```
 
-As I mentioned, it also creates a `default-pool` with a [machine-type](https://cloud.google.com/compute/docs/machine-types) of `n1-standard-4`. Choose what combination of CPU/RAM you will need for your particular app beforehand. The type I chose has 4 vCPUs and 15GB of RAM.
+Como mencionei, ele também cria um `default-pool` com um [machine-type](https://cloud.google.com/compute/docs/machine-types) de `n1-standard-4`. Escolha qual combinação de CPU/RAM você vai precisar para sua aplicação específica com antecedência. O tipo que escolhi tem 4 vCPUs e 15GB de RAM.
 
-By default, it starts with 3 nodes, so I chose 2 at first but auto-scalable to 5 (you can update it later if you need to, but make sure you have room for initial growth). And you can keep adding extra node-pools for differently sized node instances, let's say, for Sidekiq workers to do heavy-duty background processing. Then you should create a separated Node Pool with a different machine-type for its set of node instances, for example:
+Por padrão ele começa com 3 nodes, então escolhi 2 inicialmente mas com auto-scaling até 5 (você pode atualizar isso depois se precisar, mas garanta que tem espaço para crescimento inicial). E você pode continuar adicionando node-pools extras para node instances de tamanhos diferentes — digamos, para workers do Sidekiq fazerem processamento pesado em background. Então você deve criar um Node Pool separado com um machine-type diferente para seu conjunto de node instances, por exemplo:
 
 ```
 gcloud container node-pools create large-pool \
@@ -98,27 +101,27 @@ gcloud container node-pools create large-pool \
 --num-nodes 1
 ```
 
-This other pool controls 1 node of type `n1-highcpu-8` which has 8 vCPUs with 7.2 GB of RAM. More CPUs, less memory. You have a category of `highmem` which is less CPUs with a whole lot more memory. Again, know what you want beforehand.
+Esse outro pool controla 1 node do tipo `n1-highcpu-8` que tem 8 vCPUs com 7,2 GB de RAM. Mais CPUs, menos memória. Existe uma categoria `highmem` que tem menos CPUs com muito mais memória. De novo, saiba o que você quer com antecedência.
 
-The important bit here is the `--node-labels` this is how I will map the deployment to choose between Node Pools (in this case, between the `default-pool` and the `large-pool`).
+A parte importante aqui é o `--node-labels` — é assim que vou mapear o deployment para escolher entre Node Pools (neste caso, entre o `default-pool` e o `large-pool`).
 
-Once you create a cluster, you must issue the following command to fetch its credentials:
+Após criar um cluster, você precisa executar o seguinte comando para buscar suas credenciais:
 
 ```
 gcloud container clusters get-credentials my-web-production
 ```
 
-This sets the `kubectl` command as well. If you have more than one cluster (let's say, one `my-web-production` and `my-web-staging`), you must be very careful to always `get-credentials` for the correct cluster first, otherwise, you may end up running a staging deployment on the production cluster.
+Isso configura o comando `kubectl` também. Se você tiver mais de um cluster (digamos, um `my-web-production` e `my-web-staging`), precisa ter muito cuidado de sempre fazer `get-credentials` para o cluster correto primeiro, caso contrário pode acabar executando um deploy de staging no cluster de produção.
 
-Because this is confusing, I modified my ZSH PROMPT to always show which cluster I am dealing with. I adapted from [zsh-kubectl-prompt](https://github.com/superbrothers/zsh-kubectl-prompt):
+Como isso é confuso, modifiquei meu ZSH PROMPT para sempre mostrar com qual cluster estou lidando. Adaptei do [zsh-kubectl-prompt](https://github.com/superbrothers/zsh-kubectl-prompt):
 
 ![zsh kubectl prompt](https://github.com/superbrothers/zsh-kubectl-prompt/raw/master/images/screenshot001.png)
 
-As you will end up having multiple clusters in a big app, I highly recommend you add this PROMPT to your shell.
+Como você acabará tendo múltiplos clusters em uma aplicação grande, recomendo fortemente adicionar esse PROMPT ao seu shell.
 
-Now, how do you deploy your application to the pods within those fancy node instances?
+Agora, como você faz deploy da sua aplicação nos pods dentro dessas node instances?
 
-You must have a `Dockerfile` in your application project repository to generate a Docker image. This is one example for a Ruby on Rails application:
+Você precisa ter um `Dockerfile` no repositório do seu projeto de aplicação para gerar uma imagem Docker. Este é um exemplo para uma aplicação Ruby on Rails:
 
 ```
 FROM ruby:2.4.3
@@ -136,25 +139,25 @@ RUN cp config/database.yml.prod.example config/database.yml && cp config/applica
 RUN RAILS_GROUPS=assets bundle exec rake assets:precompile
 ```
 
-From the Google Cloud Web Console, you will find a ["Container Registry"](https://cloud.google.com/container-registry/), which is a Private Docker Registry.
+No Google Cloud Web Console, você encontrará um ["Container Registry"](https://cloud.google.com/container-registry/), que é um Registry Docker Privado.
 
-You must add the remote URL to your local config like this:
+Você precisa adicionar a URL remota à sua configuração local assim:
 
 ```
 git remote add gcloud https://source.developers.google.com/p/my-project/r/my-app
 ```
 
-Now you can `git push gcloud master`. I recommend you also add [triggers](https://cloud.google.com/container-builder/docs/running-builds/automate-builds) to tag your images. I add 2 triggers: one to tag it with `latest` and another to tag it with a random version number. You will need those later.
+Agora você pode fazer `git push gcloud master`. Recomendo também adicionar [triggers](https://cloud.google.com/container-builder/docs/running-builds/automate-builds) para taggear suas imagens. Adiciono 2 triggers: um para taggeá-la com `latest` e outro para taggeá-la com um número de versão aleatório. Você vai precisar deles mais tarde.
 
-Once you add the registry repository as a remote on your git configuration (`git remote add`) and push to it, it should start building your Docker image with the proper tags you configured with the triggers.
+Depois de adicionar o repositório do registry como um remote na sua configuração git (`git remote add`) e fazer push nele, ele deve começar a construir sua imagem Docker com as tags adequadas que você configurou com os triggers.
 
-Make sure your Ruby on Rails application doesn't have anything in the initializers that require a connection to the database, as it's not available. This is something you might get stuck with when your Docker build fails because of the `assets:precompile` task loaded an initializer that accidentally calls a Model - and that triggers `ActiveRecord::Base` to try to connect.
+Certifique-se de que sua aplicação Ruby on Rails não tem nada nos initializers que exija uma conexão com o banco de dados, pois ele não está disponível. Isso é algo com que você pode travar quando seu build Docker falha por causa da tarefa `assets:precompile` que carregou um initializer que acidentalmente chama um Model — e isso dispara o `ActiveRecord::Base` tentando se conectar.
 
-Also, make sure the Ruby version in the `Dockerfile` matches the one in `Gemfile`, otherwise it will also fail.
+Além disso, certifique-se de que a versão do Ruby no `Dockerfile` corresponde à do `Gemfile`, caso contrário também vai falhar.
 
-Notice the weird `config/application.yml` above? This is from [figaro](https://github.com/laserlemon/figaro). I also recommend you using something to make it easy to configure ENV variable in your system. I don't like Rails secrets, and it's not exactly friendly to most deployment systems after Heroku made ENV vars ubiquitous. Stick to ENV vars. Kubernetes will also thank you for that.
+Reparou no estranho `config/application.yml` acima? Esse é do [figaro](https://github.com/laserlemon/figaro). Também recomendo usar algo para facilitar a configuração de variáveis ENV no seu sistema. Não gosto dos secrets do Rails, e ele não é exatamente amigável para a maioria dos sistemas de deploy depois que o Heroku popularizou as ENV vars. Fique com ENV vars. O Kubernetes também vai agradecer por isso.
 
-Now, you can override any ENV variable from the Kubernetes Deployment YAML file. Now it's a good time to show an example of that. You can name it `deploy/web.yml` or whatever suits your fancy and - of course - check it into your source code repository.
+Agora, você pode sobrescrever qualquer variável ENV do arquivo YAML de Deployment do Kubernetes. Agora é uma boa hora para mostrar um exemplo disso. Você pode nomeá-lo `deploy/web.yml` ou como preferir e — claro — comitá-lo no seu repositório de código-fonte.
 
 ```yaml
 kind: Deployment
@@ -189,7 +192,7 @@ spec:
               value: "true"
             - name: "RAILS_ENV"
               value: "production"
-            # ... obviously reduced the many ENV vars for brevity
+            # ... obviamente reduzi as muitas ENV vars por brevidade
             - name: "REDIS_URL"
               valueFrom:
                 secretKeyRef:
@@ -205,7 +208,7 @@ spec:
                 secretKeyRef:
                   name: my-env
                   key: SMTP_PASSWORD
-            # ... this part below is mandatory for Cloud SQL
+            # ... esta parte abaixo é obrigatória para Cloud SQL
             - name: DB_HOST
               value: 127.0.0.1
             - name: DB_PASSWORD
@@ -243,15 +246,15 @@ spec:
           emptyDir:
 ```
 
-There is a lot going on here. So let me break it down a bit:
+Tem muita coisa acontecendo aqui. Então deixa eu quebrar um pouco:
 
-* The `kind`, and `apiVersion` is important, you have to keep an eye on the documentation if those change. This is what is called a [Deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/). There used to be a Replication Controller (you will find those in old tutorials), but it's no longer in use. The recommendation is to use a [ReplicaSet](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/).
-* Name things correctly, here you have `metadata:name` with `web`. Also pay close attention to `spec:template:metadata:labels` where I am labeling every pod having a label of `app: web`, you will need this to be able to select those pods later in the Service section down below.
-* Then I have `spec:strategy` where we configure the Rolling Update, so if you have 10 pods, it will terminate one, boot up the new one and keep doing that, without never bringing everything down at once.
-* `spec:replicas` declares how many Pods I want at once. You will have to manually calculate the machine-type of the node-pool then divide how many total CPUs/RAM you have by how much you need for each application instance.
-* Remember the Docker image we generated above with the 'latest' tag? You refer to it in `spec:template:spec:containers:image`
-* I am using Passenger with production configuration (check out [Phusion's documentation](https://www.phusionpassenger.com/library/config/reference/), do not just copy this).
-* In the `spec:template:spec:containers:env` section I can override the ENV vars with the real production secrets. And you will notice that I can hard-code values or use this strange contraption:
+* O `kind` e o `apiVersion` são importantes — você precisa ficar de olho na documentação se eles mudarem. Isso é o que chamamos de [Deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/). Antigamente existia um Replication Controller (você encontrará em tutoriais antigos), mas não está mais em uso. A recomendação é usar um [ReplicaSet](https://kubernetes.io/docs/concepts/workloads/controllers/replicaset/).
+* Nomeie as coisas corretamente — aqui você tem `metadata:name` com `web`. Preste muita atenção também ao `spec:template:metadata:labels` onde estou rotulando cada pod com um label de `app: web`, você vai precisar disso para poder selecionar esses pods mais tarde na seção Service abaixo.
+* Em seguida tenho o `spec:strategy` onde configuramos o Rolling Update, então se você tem 10 pods, ele vai terminar um, inicializar o novo e continuar fazendo isso, sem nunca derrubar tudo de uma vez.
+* `spec:replicas` declara quantos Pods quero de uma vez. Você terá que calcular manualmente o machine-type do node-pool e então dividir quantos CPUs/RAM totais você tem pelo quanto precisa para cada instância de aplicação.
+* Lembra da imagem Docker que geramos acima com a tag 'latest'? Você a referencia em `spec:template:spec:containers:image`
+* Estou usando o Passenger com configuração de produção (confira a [documentação do Phusion](https://www.phusionpassenger.com/library/config/reference/), não copie isso só assim).
+* Na seção `spec:template:spec:containers:env` posso sobrescrever as ENV vars com os secrets reais de produção. E você vai notar que posso hard-codar valores ou usar essa estranha construção:
 
 ```yaml
 - name: "SMTP_USERNAME"
@@ -261,7 +264,7 @@ There is a lot going on here. So let me break it down a bit:
       key: SMTP_USERNAME
 ```
 
-Now, it's referencing a ["Secret"](https://kubernetes.io/docs/concepts/configuration/secret/) storage that I named "my-env". And this is how you create your own:
+Aqui está referenciando um armazenamento de ["Secret"](https://kubernetes.io/docs/concepts/configuration/secret/) que nomeei "my-env". E é assim que você cria o seu:
 
 ```
 kubectl create secret generic my-env \
@@ -269,19 +272,19 @@ kubectl create secret generic my-env \
 --from-literal=SMTP_USERNAME=foobar
 ```
 
-Read the documentation as you can load text files instead of declaring everything from the command line.
+Leia a documentação pois você pode carregar arquivos de texto em vez de declarar tudo pela linha de comando.
 
-As I said before, I'd rather use a managed service for a database. You can definitely load your own Docker image, but I really don't recommend it. Same goes for other database-like services such as Redis, Mongo. If you're from AWS, [Google Cloud SQL](https://cloud.google.com/sql/docs/postgres/) is like RDS.
+Como disse antes, prefiro usar um serviço gerenciado para o banco de dados. Você pode definitivamente carregar sua própria imagem Docker, mas realmente não recomendo. O mesmo vale para outros serviços similares a banco de dados como Redis, Mongo. Se você vem da AWS, o [Google Cloud SQL](https://cloud.google.com/sql/docs/postgres/) é como o RDS.
 
-After you create your PostgreSQL instance you can't access it directly from the web application. At the end, you have a boilerplate for a second Docker image, a ["CloudSQL Proxy"](https://cloud.google.com/sql/docs/mysql/connect-kubernetes-engine). 
+Após criar sua instância PostgreSQL você não consegue acessá-la diretamente da aplicação web. No final, você tem um boilerplate para uma segunda imagem Docker, um ["CloudSQL Proxy"](https://cloud.google.com/sql/docs/mysql/connect-kubernetes-engine).
 
-For that to work you must first create a Service Account:
+Para isso funcionar você precisa primeiro criar uma Service Account:
 
 ```
 gcloud sql users create proxyuser host --instance=my-db --password=abcd1234
 ```
 
-After you create the PostgreSQL instance it will prompt you to download a JSON credential, so be careful and save it somewhere safe. I don't have to say that you must generate a strong secure password as well. Then you must create extra secrets:
+Após criar a instância PostgreSQL ela vai pedir para você baixar uma credencial JSON, então tenha cuidado e salve-a em algum lugar seguro. Não preciso dizer que você também deve gerar uma senha forte e segura. Em seguida precisa criar secrets extras:
 
 ```
 kubectl create secret generic cloudsql-instance-credentials \
@@ -291,7 +294,7 @@ kubectl create secret generic cloudsql-db-credentials \
 --from-literal=username=proxyuser --from-literal=password=abcd1234
 ```
 
-These are referenced in this part of the Deployment:
+Esses são referenciados nesta parte do Deployment:
 
 ```yaml
 - image: gcr.io/cloudsql-docker/gce-proxy:latest
@@ -318,13 +321,13 @@ volumes:
   emptyDir:
 ```
 
-See that you must add the database name ("my-db" in this example) in the `-instance` clause in the command.
+Veja que você precisa adicionar o nome do banco de dados ("my-db" neste exemplo) na cláusula `-instance` no comando.
 
-And by the way, the `gce-proxy:latest` refers to version 1.09 at the time when this post was published. But there already was a 1.11 version. That one gave me headaches, dropping connections and adding a super long timeout. So I went back to the 1.09 (latest) and everything worked as expected. So be aware! Not everything that is brand new is good. In infrastructure, you want to stick to stable.
+A propósito, o `gce-proxy:latest` se referia à versão 1.09 na época em que esse post foi publicado. Mas já havia uma versão 1.11. Essa me deu dores de cabeça, derrubando conexões e adicionando um timeout super longo. Então voltei para a 1.09 (latest) e tudo funcionou como esperado. Fique atento! Nem tudo que é novinho é bom. Em infraestrutura, você quer ficar com o que é estável.
 
-You may also want the option to load a separated CloudSQL instance instead of having it in each pod, so the pods could connect to just one proxy. You may want to read [this thread](https://github.com/GoogleCloudPlatform/cloudsql-proxy/issues/49) on the subject.
+Você também pode querer a opção de carregar uma instância CloudSQL separada em vez de tê-la em cada pod, para que os pods pudessem se conectar a apenas um proxy. Pode ser interessante ler [essa thread](https://github.com/GoogleCloudPlatform/cloudsql-proxy/issues/49) sobre o assunto.
 
-It seems that nothing is exposed to anything unless you say so. So we need to expose those pods through what's called a [Node Port Service](https://kubernetes.io/docs/concepts/services-networking/service/#type-nodeport). Let's create a `deploy/web-svc.yaml` file as well:
+Parece que nada é exposto a nada a menos que você diga explicitamente. Então precisamos expor esses pods através do que chamamos de [Node Port Service](https://kubernetes.io/docs/concepts/services-networking/service/#type-nodeport). Vamos criar um arquivo `deploy/web-svc.yaml` também:
 
 ```yaml
 apiVersion: v1
@@ -342,22 +345,22 @@ spec:
     app: web
 ```
 
-This is why I highlighted the importance of the `spec:template:metadata:labels`, so we can use it here in the `spec:selector` to select the proper pods.
+É por isso que destaquei a importância do `spec:template:metadata:labels`, para que possamos usá-lo aqui no `spec:selector` para selecionar os pods corretos.
 
-We can now deploy these 2 like this:
+Agora podemos fazer deploy desses 2 assim:
 
 ```
 kubectl create -f deploy/web.yml
 kubectl create -f deploy/web-svc.yml
 ```
 
-And you can see the pods being created with `kubectl get pods --watch`.
+E você pode ver os pods sendo criados com `kubectl get pods --watch`.
 
-## The Load Balancer
+## O Load Balancer
 
-Many tutorials will expose those pods directly through a different Service, called [Load Balancer](https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/). I am not so sure how well this behaves under pressure and if it has SSL termination, etc. So I decided to go full blown with an [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/) Load Balancer using the [NGINX Controller](https://www.nginx.com/products/nginx/kubernetes-ingress-controller/), instead.
+Muitos tutoriais vão expor esses pods diretamente através de um Service diferente, chamado [Load Balancer](https://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/). Não tenho tanta certeza sobre como isso se comporta sob pressão e se tem terminação SSL, etc. Então decidi ir com tudo com um [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/) Load Balancer usando o [NGINX Controller](https://www.nginx.com/products/nginx/kubernetes-ingress-controller/).
 
-First of all, I decided to create a separated node-pool for it, for example, like this:
+Primeiro de tudo, decidi criar um node-pool separado para ele, por exemplo, assim:
 
 ```
 gcloud container node-pools create web-load-balancer \
@@ -369,7 +372,7 @@ gcloud container node-pools create web-load-balancer \
 --enable-autoscaling 
 ```
 
-As when we created the example `large-pool` here you must take care of adding `--node-labels` to make the controller be installed here instead of the `default-pool`. You will need to know the node instance name, we can do it like this:
+Assim como quando criamos o exemplo de `large-pool`, aqui você precisa cuidar de adicionar `--node-labels` para que o controller seja instalado aqui em vez do `default-pool`. Você vai precisar saber o nome da node instance, podemos fazer isso assim:
 
 ```
 $ gcloud compute instances list
@@ -379,13 +382,13 @@ gke-my-web-production-large-pool-123-123         us-west1-a  n1-highcpu-8       
 gke-my-web-production-web-load-balancer-123-123  us-west1-a  g1-small                    10.128.0.3   70.70.70.70      RUNNING
 ```
 
-Let's save it like this for now:
+Vamos salvar assim por enquanto:
 
 ```
 export LB_INSTANCE_NAME=gke-my-web-production-web-load-balancer-123-123
 ```
 
-You can manually reserve an external IP and give it a name like this:
+Você pode reservar manualmente um IP externo e dar um nome a ele assim:
 
 ```
 gcloud compute addresses create ip-web-production \
@@ -393,13 +396,13 @@ gcloud compute addresses create ip-web-production \
         --global
 ```
 
-For the sake of the example, let's say that it generated a reserved IP "111.111.111.111". Then let's fetch it and save it for now like this:
+Para fins de exemplo, digamos que ele gerou um IP reservado "111.111.111.111". Então vamos buscá-lo e salvá-lo por enquanto assim:
 
 ```
 export LB_ADDRESS_IP=$(gcloud compute addresses list | grep "ip-web-production" | awk '{print $3}')
 ```
 
-Finally, let's hook this address to the load balancer node instance:
+Por fim, vamos vincular esse endereço à node instance do load balancer:
 
 ```
 export LB_INSTANCE_NAT=$(gcloud compute instances describe $LB_INSTANCE_NAME | grep -A3 networkInterfaces: | tail -n1 | awk -F': ' '{print $2}')
@@ -409,7 +412,7 @@ gcloud compute instances add-access-config $LB_INSTANCE_NAME \
     --access-config-name "$LB_INSTANCE_NAT" --address $LB_ADDRESS_IP
 ```
 
-Once we do this, we can add the rest of the Ingress Deployment configuration. This will be kinda long but it's mostly boilerplate. Let's start by defining another web application that we will call `default-http-backend` that will be used to respond to HTTP requests in case our web pods are not available for some reason. Let's call it `deploy/default-web.yml`:
+Feito isso, podemos adicionar o resto da configuração de Deployment do Ingress. Vai ser um pouco longo, mas é basicamente boilerplate. Vamos começar definindo outra aplicação web que chamaremos de `default-http-backend`, usada para responder a requisições HTTP caso nossos pods web não estejam disponíveis por algum motivo. Vamos chamá-la de `deploy/default-web.yml`:
 
 ```yaml
 apiVersion: extensions/v1beta1
@@ -448,7 +451,7 @@ spec:
             memory: 20Mi
 ```
 
-No need to change anything here, and by now you may be familiar with the Deployment template. Again, you now know that you need to expose it through a NodePort, so let's add a `deploy/default-web-svc.yml`:
+Não precisa mudar nada aqui — e a essa altura você já deve estar familiarizado com o template de Deployment. Você já sabe que precisa expô-lo através de um NodePort, então vamos adicionar um `deploy/default-web-svc.yml`:
 
 ```yaml
 kind: Service
@@ -465,7 +468,7 @@ spec:
   type: NodePort
 ```
 
-Again, no need to change anything. The next 3 files are the important parts. First, we will create an NGINX Load Balancer, let's call it `deploy/nginx.yml`:
+De novo, não precisa mudar nada. Os próximos 3 arquivos são as partes importantes. Primeiro, criaremos um NGINX Load Balancer — vamos chamá-lo de `deploy/nginx.yml`:
 
 ```yaml
 apiVersion: extensions/v1beta1
@@ -526,9 +529,9 @@ spec:
             secretName: tls-dhparam
 ```
 
-Notice the `nodeSelector` to make the node label we added when we created the new node-pool.
+Preste atenção ao `nodeSelector` para usar o node label que adicionamos ao criar o novo node-pool.
 
-You may want to tinker with the labels, the number of replicas if you need to. But here you will notice that it mounts a volume that I named as `tls-dhparam-vol`. This is a [Diffie Hellman Ephemeral Parameters](https://raymii.org/s/tutorials/Strong_SSL_Security_On_nginx.html#Forward_Secrecy_&_Diffie_Hellman_Ephemeral_Parameters). This is how we generate it:
+Você pode querer mexer nos labels, no número de réplicas se precisar. Mas aqui você vai notar que ele monta um volume que nomeei como `tls-dhparam-vol`. Esses são os [Parâmetros Efêmeros Diffie Hellman](https://raymii.org/s/tutorials/Strong_SSL_Security_On_nginx.html#Forward_Secrecy_&_Diffie_Hellman_Ephemeral_Parameters). É assim que geramos:
 
 ```
 sudo openssl dhparam -out ~/documents/dhparam.pem 2048
@@ -538,9 +541,9 @@ kubectl create secret generic tls-dhparam --from-file=/home/myself/documents/dhp
 kubectl create secret generic tls-dhparam --from-file=/home/myself/documents/dhparam.pem
 ```
 
-Also, notice that I am using version "0.9.0-beta_5" for the controller image. It works well, no problems so far. But keep an eye on release notes for newer versions as well and do your own testing.
+Note também que estou usando a versão "0.9.0-beta_5" para a imagem do controller. Funciona bem, sem problemas até agora. Mas fique de olho nas release notes para versões mais novas e faça seus próprios testes.
 
-Again, let's expose this Ingress controller through the Load Balancer Service. Let's call it `deploy/nginx-svc.yml`:
+De novo, vamos expor esse controller Ingress através do Load Balancer Service. Vamos chamá-lo de `deploy/nginx-svc.yml`:
 
 ```yaml
 apiVersion: v1
@@ -561,9 +564,9 @@ spec:
     k8s-app: nginx-ingress-lb
 ```
 
-Remember the static external IP we have reserved above and saved in the `LB_INGRESS_IP` ENV var? This is the one we must put in the `spec:loadBalancerIP` section. This is also the IP that you will add as an "A record" in your DNS service (let's say, mapping your "www.my-app.com.br" on CloudFlare).
+Lembra do IP externo estático que reservamos acima e salvamos na ENV var `LB_INGRESS_IP`? Esse é o que precisa colocar na seção `spec:loadBalancerIP`. Esse também é o IP que você vai adicionar como "registro A" no seu serviço DNS (digamos, mapeando seu "www.my-app.com.br" no CloudFlare).
 
-Finally, we can create the Ingress configuration itself, let's create a `deploy/ingress.yml` like this:
+Por fim, podemos criar a configuração do Ingress em si — vamos criar um `deploy/ingress.yml` assim:
 
 ```yaml
 apiVersion: extensions/v1beta1
@@ -591,9 +594,9 @@ spec:
             servicePort: 80
 ```
 
-Be careful with the annotations above that hooks everything up. It binds the NodePort service we created for the web pods with the nginx ingress controller and adds SSL termination through that `spec:tls:secretName`. How do you create that? First, you must purchase an SSL certificate - again, using CloudFlare as the example.
+Cuidado com as annotations acima que conectam tudo. Ele vincula o serviço NodePort que criamos para os pods web com o nginx ingress controller e adiciona terminação SSL através daquele `spec:tls:secretName`. Como você cria isso? Primeiro precisa comprar um certificado SSL — usando o CloudFlare como exemplo novamente.
 
-When you finish buying, the provider should give you the secret files to download (keep them safe! a public dropbox folder is not safe!). Then you have to add it to the infrastructure like this:
+Quando terminar a compra, o provedor deve te dar os arquivos secretos para download (guarde-os em segurança! uma pasta pública do Dropbox não é segura!). Então precisa adicioná-los à infraestrutura assim:
 
 ```
 kubectl create secret tls cloudflare-secret \
@@ -601,7 +604,7 @@ kubectl create secret tls cloudflare-secret \
 --cert ~/downloads/fullchain.pem
 ```
 
-Now that we edited a whole bunch of files, we can deploy the entire load balancer stack:
+Agora que editamos um monte de arquivos, podemos fazer deploy de todo o stack do load balancer:
 
 ```
 kubectl create -f deploy/default-web.yml
@@ -611,59 +614,59 @@ kubectl create -f deploy/nginx-svc.yml
 kubectl create -f deploy/ingress.yml
 ```
 
-This NGINX Ingress configuration is based off of [Zihao Zhang's blog post](https://zihao.me/post/cheap-out-google-container-engine-load-balancer/). There is also examples in the [kubernetes incubator repository](https://github.com/kubernetes-incubator/external-dns/blob/master/docs/tutorials/nginx-ingress.md). You may want to check it out as well.
+Essa configuração do NGINX Ingress é baseada no [post do blog do Zihao Zhang](https://zihao.me/post/cheap-out-google-container-engine-load-balancer/). Existem também exemplos no [repositório kubernetes incubator](https://github.com/kubernetes-incubator/external-dns/blob/master/docs/tutorials/nginx-ingress.md). Vale a pena conferir também.
 
-If you did everything right so far, `https://www.my-app-com.br` should load your web application. You may want to check for Time to First-Byte (TTFB). You can do it going through CloudFlare like this:
+Se você fez tudo certo até aqui, `https://www.my-app-com.br` deve carregar sua aplicação web. Pode ser interessante verificar o Time to First-Byte (TTFB). Você pode fazer isso passando pelo CloudFlare assim:
 
 ```
 curl -vso /dev/null -w "Connect: %{time_connect} \n TTFB: %{time_starttransfer} \n Total time: %{time_total} \n" https://www.my-app.com.br
 ```
 
-Or, if you're having slow TTFB you can bypass CloudFlare doing this:
+Ou, se estiver com TTFB lento, pode contornar o CloudFlare fazendo isso:
 
 ```
 curl --resolve www.my-app.com.br:443:111.111.111.111 https://www.my-app.com.br -svo /dev/null -k -w "Connect: %{time_connect} \n TTFB: %{time_starttransfer} \n Total time: %{time_total} \n"
 ```
 
-TTFB should be in the neighborhood of 1 second or less. Anything far and above could mean a problem in your application. You must check your node instance machine types, the number of workers loaded per pod, the CloudSQL proxy version, the NGINX controller version and so on. This is a trial and error procedure as far as I know. Sign up to services such as [Loader](https://loader.io) or even [Web Page Test](https://www.webpagetest.org) for insight.
+O TTFB deve ficar em torno de 1 segundo ou menos. Qualquer coisa muito acima disso pode indicar um problema na sua aplicação. Verifique os machine types da sua node instance, o número de workers carregados por pod, a versão do CloudSQL proxy, a versão do NGINX controller e assim por diante. Isso é um processo de tentativa e erro, pelo que sei. Cadastre-se em serviços como [Loader](https://loader.io) ou mesmo [Web Page Test](https://www.webpagetest.org) para ter insights.
 
 ## Rolling Updates
 
-Now, that everything is up and running, how do we accomplish the Rolling Update I mentioned in the beginning? First you `git push` to the Container Registry repository and wait for the Docker image to build.
+Agora, com tudo funcionando, como realizamos o Rolling Update que mencionei no início? Primeiro você faz `git push` para o repositório do Container Registry e aguarda a construção da imagem Docker.
 
-Remember that I said to let a trigger tag the image with a random version number? Let's use it (you can see it from the Build History list in the Container Registry, from the Google Cloud console):
+Lembra que disse para deixar um trigger tagear a imagem com um número de versão aleatório? Vamos usá-lo (você pode ver isso na lista de Build History no Container Registry, no console do Google Cloud):
 
 ```
 kubectl set image deployment web my-app=gcr.io/my-project/my-app:1238471234g123f534f543541gf5 --record
 ```
 
-You must use the same name and image that is declared in the `deploy/web.yml` from above. This will start rolling out the update by adding a new pod, then terminating one pod and so on and so forth until all of them are updated, without downtime for your users.
+Você deve usar o mesmo nome e imagem declarados no `deploy/web.yml` acima. Isso vai começar a fazer rollout da atualização adicionando um novo pod, então encerrando um pod e assim por diante, sem downtime para seus usuários.
 
-Rolling updates must be carried out carefully. For example, if your new deployment requires a database migration, then you must add a maintenance window (meaning: do it when there is little to no traffic, such as in the middle of the night). So you can run the migrate command like this:
+Rolling updates precisam ser executados com cuidado. Por exemplo, se seu novo deploy exige uma migração de banco de dados, você precisa adicionar uma janela de manutenção (ou seja: faça isso quando houver pouco ou nenhum tráfego, como de madrugada). Então você pode executar o comando migrate assim:
 
 ```
-kubectl get pods # to get a pod name
+kubectl get pods # para obter o nome de um pod
 
 kubectl exec -it my-web-12324-121312 /app/bin/rails db:migrate
 
-# you can also bash to a pod like this, but remember that this is an ephemeral container, so file you edit and write there disappear on the next restart:
+# você também pode entrar em bash em um pod assim, mas lembre que este é um container efêmero, então arquivos que você editar e escrever ali desaparecem no próximo restart:
 
 kubectl exec -it my-web-12324-121312 bash
 ```
 
-To redeploy everything without resorting to rolling update you must do this:
+Para fazer redeploy de tudo sem recorrer ao rolling update, você precisa fazer isso:
 
 ```
 kubectl delete -f deploy/web.yml && kubectl apply -f deploy/web.yml
 ```
 
-You will find a more thorough explanation in [Ta-Ching's](https://tachingchen.com/blog/Kubernetes-Rolling-Update-with-Deployment/) blog post.
+Você encontrará uma explicação mais completa no [blog do Ta-Ching](https://tachingchen.com/blog/Kubernetes-Rolling-Update-with-Deployment/).
 
-## Bonus: Auto Snapshots
+## Bônus: Auto Snapshots
 
-One item I had in my "I wanted/needed" list, in the beginning, is the ability to have persistent mountable storage with automatic backups/snapshots. Google Cloud provides half of that for the time being. You can create persistent disks to mount in your pods but it doesn't have a feature to automatically backup it. At least it does have APIs to manually snapshot it.
+Um item que tinha na minha lista de "queria/precisava" no início é a capacidade de ter storage persistente montável com backups/snapshots automáticos. O Google Cloud fornece metade disso por enquanto. Você pode criar discos persistentes para montar nos seus pods, mas não tem um recurso para fazer backup automático dele. Pelo menos tem APIs para criar snapshots manualmente.
 
-For this example, let's create a new SSD disk and format it first:
+Para este exemplo, vamos criar um novo disco SSD e formatá-lo primeiro:
 
 ```
 gcloud compute disks create --size 500GB my-data --type pd-ssd
@@ -671,7 +674,7 @@ gcloud compute disks create --size 500GB my-data --type pd-ssd
 gcloud compute instances list
 ```
 
-The last command is so we can copy the name of a node instance. Let's say it's `gke-my-web-app-default-pool-123-123`. We will attach the `my-data` disk to it:
+O último comando é para copiarmos o nome de uma node instance. Digamos que seja `gke-my-web-app-default-pool-123-123`. Vamos anexar o disco `my-data` a ela:
 
 ```
 gcloud compute instances attach-disk gke-my-web-app-default-pool-123-123 --disk my-data --device-name my-data
@@ -679,19 +682,19 @@ gcloud compute instances attach-disk gke-my-web-app-default-pool-123-123 --disk 
 gcloud compute ssh gke-my-web-app-default-pool-123-123
 ```
 
-The last command ssh's in the instance. We can list the attached disks with `sudo lsblk` and you will see the 500GB disk, probably, as `/dev/sdb`, but make sure that's correct because we will format it!
+O último comando faz SSH na instância. Podemos listar os discos anexados com `sudo lsblk` e você verá o disco de 500GB, provavelmente como `/dev/sdb`, mas certifique-se de que está correto porque vamos formatá-lo!
 
 ```
 sudo mkfs.ext4 -m 0 -F -E lazy_itable_init=0,lazy_journal_init=0,discard /dev/sdb
 ```
 
-Now we can exit from the SSH session and detach the disk:
+Agora podemos sair da sessão SSH e desanexar o disco:
 
 ```
 gcloud compute instances detach-disk gke-my-web-app-default-pool-123-123 --disk my-data
 ```
 
-You can mount this disk in your pods by adding the following to your deployment yaml:
+Você pode montar esse disco nos seus pods adicionando o seguinte ao seu yaml de deployment:
 
 ```
 spec:
@@ -710,7 +713,7 @@ spec:
          fsType: ext4
 ```
 
-Now, let's create a CronJob deployment file as `deploy/auto-snapshot.yml`:
+Agora, vamos criar um arquivo de deployment CronJob como `deploy/auto-snapshot.yml`:
 
 ```yaml
 apiVersion: batch/v1beta1
@@ -743,22 +746,22 @@ spec:
                 secretName: editor-credential
 ```
 
-As we already did before, you will need to create another Service Account with editor permissions in the "IAM & admin" section of the Google Cloud console, then download the JSON credential, and finally upload it like this:
+Como já fizemos antes, você precisará criar outra Service Account com permissões de editor na seção "IAM & admin" do console do Google Cloud, depois baixar a credencial JSON e, por fim, fazer upload dela assim:
 
 ```
 kubectl create secret generic editor-credential \
 --from-file=credential.json=/home/myself/download/my-project-1212121.json
 ```
 
-Also notice that, as a normal cron job, there is a schedule parameter that you might want to change. In the example, "0 4 * * *" means that it will run the snapshot every day at 4 AM.
+Note também que, como um cron job normal, existe um parâmetro de schedule que você pode querer alterar. No exemplo, "0 4 * * *" significa que o snapshot vai rodar todo dia às 4h da manhã.
 
-Check out the [original repository](https://github.com/grugnog/google-cloud-auto-snapshot) of this solution for more details.
+Confira o [repositório original](https://github.com/grugnog/google-cloud-auto-snapshot) dessa solução para mais detalhes.
 
 
-And this should be it for now!
+E por agora é isso!
 
-As I said, in the beginning, this is not a complete procedure, just highlights of some of the important parts. If you're new to Kubernetes you just read about Deployment, Service, Ingress, but you have ReplicaSet, DaemonSet, and much more to play with.
+Como disse no início, este não é um procedimento completo, apenas destaques de algumas das partes importantes. Se você é novo no Kubernetes, acabou de ler sobre Deployment, Service, Ingress, mas ainda tem ReplicaSet, DaemonSet e muito mais para explorar.
 
-I think this is also already too long to add a [multi-region High Availability](https://cloud.google.com/sql/docs/mysql/high-availability) setup explanation, so let's leave it at that.
+Acho que já está longo demais para adicionar uma explicação de configuração de [Alta Disponibilidade multi-região](https://cloud.google.com/sql/docs/mysql/high-availability), então vamos deixar por aqui.
 
-Any corrections or suggestions are more than welcome as I am still in the learning process, and there is a ton of things that I still don't know myself.
+Correções ou sugestões são muito bem-vindas, pois ainda estou no processo de aprendizado, e tem um monte de coisas que eu mesmo ainda não sei.

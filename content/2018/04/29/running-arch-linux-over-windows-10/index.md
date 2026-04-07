@@ -1,7 +1,10 @@
 ---
-title: Running Arch Linux over Windows 10!
+title: "Rodando Arch Linux sobre o Windows 10!"
 date: '2018-04-29T22:06:00-03:00'
-slug: running-arch-linux-over-windows-10
+slug: rodando-arch-linux-sobre-o-windows-10
+translationKey: arch-linux-over-windows-10
+aliases:
+- /2018/04/29/running-arch-linux-over-windows-10/
 tags:
 - archlinux
 - wsl
@@ -9,28 +12,29 @@ tags:
 - microsoft
 - windows
 - vmware
+- traduzido
 draft: false
 ---
 
-Ok, anyone that has been reading my blog for the past year or two knows how I [enjoy Arch Linux](http://www.akitaonrails.com/archlinux) (in particular Manjaro Gnome).
+Ok, quem acompanha meu blog há um ano ou dois sabe como eu [curto o Arch Linux](http://www.akitaonrails.com/archlinux) — em particular o Manjaro com GNOME.
 
-I am also still very much intrigued by the idea of Windows Subsystem for Linux (or WSL) which properly debuted in the [Windows 10 Anniversary Edition](http://www.akitaonrails.com/2016/07/26/the-year-of-linux-on-the-desktop-it-s-usable) back in mid-2016.
+Também continuo bastante intrigado com a ideia do Windows Subsystem for Linux (WSL), que estreou de verdade na [Windows 10 Anniversary Edition](http://www.akitaonrails.com/2016/07/26/the-year-of-linux-on-the-desktop-it-s-usable) em meados de 2016.
 
-It's been almost 2 years and we're expecting some significant updates to WSL compatibility and performance for the next [Spring Creators Update](https://winaero.com/blog/command-line-wsl-improvements-windows-10-version-1803/) (or version 1803) scheduled to arrive on April 30, 2018. This brings it closer to make WSL actually usable for professional programmers. Just to give you an idea, right now you will have orders of magnitude better performance if you run your favorite Linux distro inside Virtualbox or VMWare Workstation.
+Já faz quase 2 anos e a expectativa é de atualizações expressivas em compatibilidade e performance do WSL para a próxima [Spring Creators Update](https://winaero.com/blog/command-line-wsl-improvements-windows-10-version-1803/) (versão 1803), prevista para 30 de abril de 2018. Isso aproxima o WSL de algo realmente utilizável por programadores profissionais. Só para ter uma ideia: hoje em dia você consegue desempenho ordens de magnitude superior rodando sua distro favorita dentro do Virtualbox ou do VMWare Workstation.
 
-Moreover, out of the box the "Bash for Windows" proper only officially supports Ubuntu, Fedora, and OpenSuse I guess. Most people will just install Ubuntu. And it works ok. For a toy and cool demonstration purposes, it works. But it really frustrates me that I can do so much but I can't actually use it as my daily driver. It's like being able to carry the fully built prototype of the next iPhone but no 4G support yet. So it's just a toy.
+Além disso, o "Bash for Windows" de fábrica suporta oficialmente apenas Ubuntu, Fedora e OpenSuse, acho. A maioria das pessoas instala o Ubuntu mesmo. E funciona, ok. Para brincar e impressionar nas demonstrações, funciona. Mas me irrita profundamente conseguir fazer tanta coisa e não poder usar isso no meu dia a dia de verdade. É como carregar o protótipo finalizado do próximo iPhone sem suporte a 4G. Um brinquedo, só isso.
 
-Bear with me here, if you want to just see how is the performance compared to my VMWare setup, go straight to the end of the article.
+Mas se você quiser apenas ver como está a performance comparada ao meu setup com VMWare, pule direto para o final do artigo.
 
-Anyway, in the case of distros. Serious Linux users would prefer better alternatives. Enter this GitHub repository:
+Voltando ao assunto das distros: usuários sérios de Linux preferem alternativas melhores. Eis o repositório no GitHub:
 
 [![screenfetch of arch](https://raw.githubusercontent.com/wiki/yuk7/WSL-DistroLauncher/img/Arch_Alpine_Ubuntu.png)](https://github.com/yuk7/ArchWSL)
 
-You just download [this zip file](https://github.com/yuk7/ArchWSL/releases/latest), unzip it and run the included `Arch.exe`. And that's about it!
+Você baixa [esse arquivo zip](https://github.com/yuk7/ArchWSL/releases/latest), descompacta e executa o `Arch.exe` incluso. Só isso!
 
-Now, you can go ahead and open the Windows version of "Bash" and we can bootstrap the rest of the installation setup from there.
+Aí é só abrir o "Bash" na versão Windows e bootstrapar o restante da instalação por lá.
 
-We must get Pacman and some AUR manager. To start Pacman, we must do this:
+Precisamos do Pacman e de algum gerenciador de AUR. Para iniciar o Pacman:
 
 ```
 pacman-key --init
@@ -38,11 +42,11 @@ pacman-key --populate
 pacman -Syu
 ```
 
-Hell yeah, Pacman running natively on Windows!! Who would've known??
+Que delícia, o Pacman rodando nativamente no Windows! Quem diria??
 
-![pacman on windows](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/674/big_IMG_20180429_174518.jpg)
+![pacman no windows](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/674/big_IMG_20180429_174518.jpg)
 
-This will bring everything up to date. Next up, we must create a non-root user:
+Isso vai atualizar tudo. Em seguida, criamos um usuário não-root:
 
 ```
 useradd -m your_user
@@ -50,23 +54,23 @@ passwd your_user
 EDITOR=nano visudo
 ```
 
-Look for the line that says `root   ALL=(ALL) ALL` and add your user right on the next line like this:
+Procure a linha que diz `root   ALL=(ALL) ALL` e adicione o seu usuário logo abaixo:
 
 ```
 your_user   ALL=(ALL) ALL
 ```
 
-Finally, we should login as this user:
+Por último, fazemos login como esse usuário:
 
 ```
 su your_user
 ```
 
-Next up, let's install Yaourt so we can use it to install Pacaur (this is a personal preference, you can just use Yaourt. I think Yaourt prompts too much, that's why I prefer Pacaur).
+Agora vamos instalar o Yaourt para depois instalar o Pacaur (preferência pessoal minha — acho o Yaourt verboso demais com suas confirmações, por isso prefiro o Pacaur).
 
-Start by editing your `/etc/pacman.conf` file with your favorite editors like vim or nano.
+Comece editando o arquivo `/etc/pacman.conf` com seu editor favorito (vim ou nano).
 
-Just add the following section to the very bottom of the file:
+Adicione a seguinte seção no final do arquivo:
 
 ```
 [archlinuxfr]
@@ -74,78 +78,78 @@ SigLevel = Never
 Server = http://repo.archlinux.fr/$arch
 ```
 
-Before we can proceed, we have one small problem. WSL still has no support for SYSV IPC. This is required for [fakeroot](https://unix.stackexchange.com/questions/9714/what-is-the-need-for-fakeroot-command-in-linux), which is required by `makepkg` (which cannot run as root).
+Antes de prosseguir, temos um pequeno problema. O WSL ainda não tem suporte a SYSV IPC, que é necessário para o [fakeroot](https://unix.stackexchange.com/questions/9714/what-is-the-need-for-fakeroot-command-in-linux), que por sua vez é exigido pelo `makepkg` (que não pode rodar como root).
 
-To overcome this problem, this is what we'll have to do:
+Para contornar isso:
 
 ```
 wget https://github.com/yuk7/arch-prebuilt/releases/download/17121600/fakeroot-tcp-1.22-1-x86_64.pkg.tar.xz
 sudo pacman -U fakeroot-tcp-1.22-1-x86_64.pkg.tar.xz
 ```
 
-And that's it for now! Until WSL add proper support for SYSV IPC, we can use this. Yaourt itself will probably prompt you to install `fakeroot-tcp` on top of it, just let it.
+Por enquanto é isso! Até o WSL ter suporte nativo a SYSV IPC, usamos esse workaround. O próprio Yaourt provavelmente vai te pedir para instalar o `fakeroot-tcp` também — pode deixar.
 
-As I said, Yaourt is quite verbose in its many prompts for confirmations. Rule of thumb, whenever it prompts if you want to edit anything, just say "N"(o). Whenever it prompts you if you want to build or install something, just say "Y"(es). If you got annoyed with me, do this:
+Como disse, o Yaourt é bastante verboso nas confirmações. Regra geral: quando perguntar se quer editar algo, responda "N". Quando perguntar se quer compilar ou instalar, responda "Y". Se você quiser se livrar de mim nessa parte, faça logo:
 
 ```
 yaourt -S pacaur
 ```
 
-From now on, I will assume you have Pacaur.
+A partir de agora assumo que você tem o Pacaur instalado.
 
-### Graphical User Interface Support
+### Suporte a Interface Gráfica
 
-Now, let's install some of the basics for a development environment:
+Vamos instalar o básico para um ambiente de desenvolvimento:
 
 ```
 sudo pacman -S base base-devel gvim git
 ```
 
-It will prompt you sometimes "default: all", just install everything. Hard disk space should not be a concern in 2018.
+Quando aparecer "default: all", instale tudo. Espaço em disco não deveria ser preocupação em 2018.
 
-I prefer to have a full-on GNOME 3 environment, so I just do:
+Prefiro ter um ambiente GNOME 3 completo, então:
 
 ```
 sudo pacman -S gnome
 ```
 
-Again, let it install everything it wants. Everybody has a different taste when it comes to GUIs, some prefer KDE5, other prefer XFCE4. Some even go as far as using the tile-based GUI [i3](https://i3wm.org/).
+De novo, deixe instalar tudo que quiser. Cada um tem seu gosto em termos de GUI — uns preferem KDE5, outros XFCE4. Tem quem vá ainda mais longe e use o gerenciador de janelas tileado [i3](https://i3wm.org/).
 
-That requires some serious adapting. It's for people that like to do stuff like using a tenkeyless keyboard with nothing written in the keycaps and using an alien layout like  DVORAK or [Colemak](https://colemak.com/) (yikes!). Taste is taste. And I dare you to become a touch typist using [Maltron](https://www.maltron.com/the-maltron-letter-layout-advantage.html), I double dare ya! :-D
+Isso exige uma adaptação séria. É para quem curte usar teclado tenkeyless sem legenda nas teclas e layouts alienígenas como DVORAK ou [Colemak](https://colemak.com/) (argh!). Gosto é gosto. E que tal se tornar digitador fluente no [Maltron](https://www.maltron.com/the-maltron-letter-layout-advantage.html)? Eu te desafio, e muito! :-D
 
-But, I digress. Now, you can add this to your `/etc/.bashrc` file or the global `/etc/environment` file:
+Mas estou divagando. Adicione isso ao seu `/etc/.bashrc` ou ao `/etc/environment` global:
 
 ```
 echo "export LIBGL_ALWAYS_INDIRECT=1" >> /etc/.bashrc
 echo "export DISPLAY=:0" >> /etc/.bashrc
 ```
 
-Export those to your current shell, or just close and reopen Bash.
+Exporte as variáveis no shell atual ou feche e reabra o Bash.
 
-We can have a full GUI environment by installing a local X Server. You have 2 options, Xming and VcXSrv. I am having trouble resizing windows in Xming, so I am recommending [VcXSrv](https://sourceforge.net/projects/vcxsrv/) instead. Just download and install it as you would with any Windows application and start it up. It will add a Desktop shortcut named "XLaunch", just fire it up.
+Para ter um ambiente gráfico completo, instale um servidor X local. São duas opções: Xming ou VcXSrv. Tenho tido problemas para redimensionar janelas no Xming, então recomendo o [VcXSrv](https://sourceforge.net/projects/vcxsrv/). Baixe e instale como qualquer aplicativo Windows, depois inicie. Ele vai criar um atalho no Desktop chamado "XLaunch" — é só abrir.
 
-And finally, we can install a **PROPER** usable terminal instead of that poor contraption derived from old cmd.exe that WSL provides you out of the box.
+E finalmente, instalamos um terminal **DE VERDADE** no lugar daquela tralha derivada do cmd.exe antigo que o WSL oferece por padrão:
 
 ```
 pacaur -S tilix-bin
 tilix
 ```
 
-If you've been a Mac user, you probably know iTerm2, which is possibly the best Terminal emulator I've ever used. There is nothing else that comes close. Nothing, except possibly [Tilix](https://gnunn1.github.io/tilix-web/) (previously known as Terminix).
+Quem usou Mac provavelmente conhece o iTerm2, possivelmente o melhor emulador de terminal que já usei. Nada chega perto. Nada, exceto talvez o [Tilix](https://gnunn1.github.io/tilix-web/) (antigamente chamado Terminix).
 
-Just for having "Ctrl-Alt-D" to split the terminal horizontally down and "Ctrl-Alt-R" to split it vertically to the right, and using "Alt-1", "Alt-2", and so on to switch between the terminals, it's great for me. It also comes pre-installed with very nice themes such as the now classic Solarized Dark or my current favorite Monokai Dark.
+Só pelo "Ctrl-Alt-D" para dividir o terminal horizontalmente e "Ctrl-Alt-R" para dividir verticalmente, e "Alt-1", "Alt-2" etc. para navegar entre os painéis, já vale a pena. Ainda vem com temas prontos excelentes como o clássico Solarized Dark ou meu favorito atual, Monokai Dark.
 
-Don't curse me, I know. Some will prefer the default terminal app and just add TMUX. Again, taste (it's more useful if I were working on a remote server).
+Não me xingue, eu sei. Alguns preferem o terminal padrão com TMUX. Também é gosto — faz mais sentido quando se trabalha em servidor remoto.
 
-Add the Hack monotype font to make everything more pleasing to the eye:
+Adicione a fonte Hack monotype para um visual mais agradável:
 
 ```
 sudo pacman -S ttf-hack
 ```
 
-### Programming Languages
+### Linguagens de Programação
 
-Let's see if the most important languages out there install correctly. As I always say, look no further than ASDF for that task.
+Vamos ver se as linguagens mais importantes instalam corretamente. Como sempre digo, o ASDF resolve essa questão.
 
 ```
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.4.3
@@ -153,14 +157,14 @@ echo -e '\n. $HOME/.asdf/asdf.sh' >> ~/.bashrc
 echo -e '\n. $HOME/.asdf/completions/asdf.bash' >> ~/.bashrc
 ```
 
-Restart your terminal and continue:
+Reinicie o terminal e continue:
 
 ```
 asdf plugin-add nodejs
 addf plugin-add ruby
 ```
 
-For Node.js you must add the proper GPG keys and only then you can install:
+Para Node.js é preciso adicionar as chaves GPG corretas antes de instalar:
 
 ```
 bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
@@ -168,7 +172,7 @@ asdf install nodejs 10.0.0
 asdf global nodejs 10.0.0
 ```
 
-Ruby benefits with jemalloc to allocate less system memory. I have no idea if it impacts WSL but let's do it anyway:
+Ruby se beneficia do jemalloc para alocar menos memória do sistema. Não sei se impacta no WSL, mas vamos fazer de qualquer forma:
 
 ```
 sudo pacman -S jemalloc
@@ -177,18 +181,18 @@ asdf global ruby 2.5.1
 gem install bundler
 ```
 
-![ruby compiles](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/675/big_IMG_20180429_193432.jpg)
+![ruby compilando](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/675/big_IMG_20180429_193432.jpg)
 
-So far so good, if you need to install an old Ruby (< 2.4) for legacy projects, you must do:
+Até aqui tudo bem. Se precisar instalar um Ruby antigo (< 2.4) para projetos legados:
 
 ```
 pacaur -S openssl-1.0
 PKG_CONFIG_PATH=/usr/lib/openssl-1.0/pkgconfig RUBY_EXTRA_CONFIGURE_OPTIONS="--with-openssl-dir=/usr/lib/openssl-1.0" asdf install ruby 2.3.3
 ```
 
-Unfortunately it needs a version of OpenSSL that you should not be using due to security problems. We all moved on to 1.1. But Ruby 2.3.x reached its EOL (end of line). So it's at your own risk to keep using it.
+Infelizmente precisa de uma versão de OpenSSL que não deveria mais ser usada por questões de segurança. Todo mundo migrou para a 1.1. Além disso, o Ruby 2.3.x chegou ao seu EOL (fim de vida). Use por sua conta e risco.
 
-Well, so far so good. Can we install Go as well? Let's see:
+Mas até aqui tudo funcionando. E o Go? Vamos ver:
 
 ```
 asdf plugin-add golang
@@ -196,17 +200,17 @@ asdf install golang 1.9.5
 asdf global goland 1.9.5
 ```
 
-We can keep going, but I think you got the idea. It just works!
+Poderíamos continuar, mas acho que você já pegou a ideia. Simplesmente funciona!
 
-### Background Jobs
+### Processos em Background
 
-Again, another current limitation of WSL (that we expect to see fixed on the Spring Creators Update) is the ability to start and keep running background jobs (daemons).
+Outra limitação atual do WSL (que esperamos ver resolvida na Spring Creators Update) é a capacidade de iniciar e manter processos em background (daemons).
 
-Just doing `sudo systemctl enable postgresql` and restarting won't automatically start Postgresql in the background as it should. This Arch.exe thing we're using won't even have systemd.
+Fazer `sudo systemctl enable postgresql` e reiniciar não vai iniciar o Postgresql automaticamente em background como deveria. O próprio Arch.exe que estamos usando nem tem systemd.
 
-Fortunately, servers such as Postgresql or Redis do work normally, they can be started as user-level processes, and they do properly bind to their respective TCP ports. But, you will have to manually start them in every session. Close your Bash terminal and they are all killed off.
+Felizmente, servidores como Postgresql ou Redis funcionam normalmente — podem ser iniciados como processos de usuário e se vinculam corretamente às suas portas TCP. Mas você vai ter que iniciá-los manualmente a cada sessão. Feche o terminal Bash e todos morrem.
 
-For example, Postgresql:
+Por exemplo, Postgresql:
 
 ```
 [your_user]# sudo pacman -S postgresql
@@ -230,13 +234,13 @@ Shall the new role be a superuser? (y/n) y
 [your_user]#
 ```
 
-See what I did here? There is a small problem in the install under WSL where the `/run/postgresql` is not created with the correct permissions. Fixing that we can start the server. We can exit out of the `su` session and the postgresql server will keep running. But when we close the first Bash window/session, it will die.
+Viu o que fiz aqui? Tem um problema na instalação sob WSL em que o `/run/postgresql` não é criado com as permissões corretas. Corrigindo isso conseguimos iniciar o servidor. Podemos sair da sessão `su` e o PostgreSQL continua rodando. Mas quando fecharmos a primeira janela/sessão Bash, ele morre.
 
-And another very annoying thing? The `mkdir` and `chown` fixes above? I have to do it every single time I close the Bash for Windows app and start it again!! Super duper annoying if you ask me!
+E tem mais uma coisa irritante: as correções de `mkdir` e `chown` acima? Preciso fazer toda vez que fecho o Bash for Windows e abro novamente!! Absurdamente chato!
 
-But, we can live with it for now. Hopefully, this will be fixed tomorrow (April 30) or in an upcoming upgrade. 
+Mas dá para conviver por enquanto. Esperançosamente isso vai estar resolvido amanhã (30 de abril) ou em uma atualização próxima.
 
-In a Rails development environment, we can take advantage of [Foreman](https://github.com/theforeman/foreman) to help us out. Just edit some `Procfile.dev` file:
+Em um ambiente de desenvolvimento Rails, dá para usar o [Foreman](https://github.com/theforeman/foreman) para ajudar. Basta editar um arquivo `Procfile.dev`:
 
 ```
 web: bundle exec puma -C config/puma.rb -p 3000
@@ -245,13 +249,13 @@ redis: redis-server /usr/local/etc/redis.conf
 mailcatcher: mailcatcher -f
 ```
 
-Now we can do: `foreman start -f Procfile.dev` and all services will start properly at once.
+Aí é só: `foreman start -f Procfile.dev` e todos os serviços sobem de uma vez.
 
-### Real World Performance
+### Performance no Mundo Real
 
-My daily driver is Manjaro GNOME under VMWare Workstation Pro on my Surface Book 2. I give it 6 threads out of the 8 and a hefty 12GB of RAM out of the total 16GB (damn Microsoft, we need more RAM nowadays that the cool kids deploy stupid ass Apps with heavy JS/CSS coating that eats up all available RAM).
+Minha máquina do dia a dia é o Manjaro GNOME rodando no VMWare Workstation Pro no meu Surface Book 2. Dou a ele 6 dos 8 threads e generosos 12GB de RAM dos 16GB totais (Microsoft, precisamos de mais RAM! Os modernos implantam aplicativos estúpidos com camadas pesadas de JS/CSS que comem tudo que tem).
 
-In the project I am currently working, my full RSpec suite is a bit on the slow side. For this comparison, I am skipping all my feature specs as I am in no mood to tweak chrome-driver to work in WSL (probably runs, but let's have it another day).
+No projeto em que estou trabalhando, minha suite RSpec completa é um pouco lenta. Para essa comparação, estou pulando os feature specs porque não tenho paciência agora para configurar o chrome-driver no WSL (provavelmente funciona, mas fica para outra vez).
 
 ```
 Finished in 12 minutes 8 seconds (files took 14.58 seconds to load)
@@ -260,7 +264,7 @@ Finished in 12 minutes 8 seconds (files took 14.58 seconds to load)
 531,34s user 127,56s system 88% cpu 12:24,99 total
 ```
 
-In this comparable WSL environment, I have just installed, I am running the exact same RSpec suite, and this is what I get:
+No ambiente WSL comparável que acabei de instalar, rodando a mesma suite RSpec, obtive:
 
 ```
 Finished in 13 minutes 43 seconds (files took 3 minutes 16.8 seconds to load)
@@ -270,30 +274,30 @@ Finished in 13 minutes 43 seconds (files took 3 minutes 16.8 seconds to load)
 455.80s user 399.14s system 83% cpu 17:04.96 total
 ```
 
-For some reason, my WSL environment is skipping a few examples (seems more like an RSpec counter bug of some sort though), but I think this shouldn't pose too much of a difference in the grand scheme of things here. WSL is losing even if the counter is correct and it's running fewer examples.
+Por algum motivo meu ambiente WSL está pulando alguns exemplos (parece mais um bug de contador do RSpec), mas acho que isso não muda muito o panorama geral. O WSL perde mesmo que o contador esteja correto e ele esteja rodando menos exemplos.
 
-When we start to really exercise the WSL a whole lot of issues start to show up. For example, PostgreSQL goes crazy and keeps stdout'ing "could not flush dirty data: Function not implemented", which is due to [this documented issue](https://github.com/Microsoft/WSL/issues/645) from the WSL! So what ends up happening is that sometimes the RSpec runner just pauses while PG tries to figure out what to do. 
+Quando começamos a exercitar o WSL de verdade, toda sorte de problemas aparece. Por exemplo, o PostgreSQL entra em colapso e fica imprimindo "could not flush dirty data: Function not implemented" no stdout, por causa de [um problema documentado](https://github.com/Microsoft/WSL/issues/645) do WSL! O que acaba acontecendo é que o runner do RSpec simplesmente pausa enquanto o PG tenta se resolver.
 
-You can clearly see that under VMWare files took less than 15 seconds to load. On WSL they took over 3 minutes just on file I/O! It's orders of magnitude slower. This is the bad part. When it's just CPU vs CPU, they are pretty comparable actually.
+No VMWare os arquivos carregaram em menos de 15 segundos. No WSL levou mais de 3 minutos só em I/O de arquivos! Ordens de magnitude mais lento. Esse é o problema grave. Quando é só CPU contra CPU, os dois são bastante comparáveis.
 
-On paper, the total time is actually quite close. And CPU-wise I think WSL has an edge, which is why it's able to recover in the totals even though the I/O is clearly sluggish.
+No total, os tempos ficam próximos no papel. Em CPU o WSL até leva vantagem, o que explica como ele consegue recuperar o tempo total apesar do I/O claramente lento.
 
-In practice what happens in a normal programming situation is that you fire up Vim, or any other text editor of your choice. Any programmer has to keep opening files and going back and forth between a lot of files. Now, I/O being super slow, every file you try to open pauses your action for a split second. And this adds up.
+Na prática, numa situação normal de programação, você abre o Vim ou qualquer editor. Todo programador fica abrindo e alternando entre muitos arquivos o tempo todo. Com o I/O super lento, cada arquivo que você tenta abrir trava sua ação por uma fração de segundo. E isso vai acumulando.
 
-Within VMWare, Vim is super responsive, whenever I need to open a file, it's almost instantaneous. 
+Dentro do VMWare, o Vim responde na hora, abrir um arquivo é quase instantâneo.
 
-The benchmark may be hard to account for this situation. But in a normal scenario, you will end up annoyed. Moreover, running a GUI over X (VcXsrv in my case) slows things down a bit as well. From within VMWare, the normal Xorg can take advantage of being GPU accelerated. So the entire rasterization pipeline is faster.
+O benchmark pode não capturar essa situação. Mas no dia a dia você vai acabar irritado. Além disso, rodar uma GUI sobre o X (VcXsrv no meu caso) também adiciona lentidão. Dentro do VMWare, o Xorg normal aproveita aceleração GPU, então todo o pipeline de rasterização é mais rápido.
 
-You "can" use WSL as your daily driver. But if I can have a smoother experience from within VMWare, that's where I will be for now.
+Dá para usar o WSL como ambiente principal. Mas se consigo uma experiência mais fluida dentro do VMWare, é lá que vou ficar por enquanto.
 
-### Conclusion
+### Conclusão
 
-I will actually hold my conclusions until tomorrow (April 30) or later this week, because if the Spring Creators Update actually fixes some performance issues. Then I can see myself using this instead of my VMWare Workstation install of Manjaro GNOME.
+Vou segurar minhas conclusões até amanhã (30 de abril) ou mais para o final da semana, porque se a Spring Creators Update realmente corrigir os problemas de performance, aí posso me ver usando isso no lugar da minha instalação do Manjaro GNOME no VMWare Workstation.
 
-It may not come in this big update, but I have word that they are working on the outstanding I/O performance issues. So it's right around the corner.
+Pode não vir nessa grande atualização, mas tenho informações de que estão trabalhando nos problemas pendentes de performance de I/O. Então está chegando.
 
-Everything I need just works. Tilix, Vim, Git, Zsh, Ruby, Node.js. Everything installs as expected from Pacman and AUR. Pure Arch Linux glory! So sad the bad performance spoils it.
+Tudo que preciso simplesmente funciona: Tilix, Vim, Git, Zsh, Ruby, Node.js. Tudo instala como esperado pelo Pacman e AUR. Pura glória do Arch Linux! Que pena que a performance ruim estraga tudo.
 
-It's close, it's very close! For the first time in almost 15 years, I can almost see myself returning to 100% Windows (with no VMWare support) and still be able to be fully productive with real, professional, open source tools that "Just Works".
+Está perto, muito perto! Pela primeira vez em quase 15 anos, consigo quase me ver voltando 100% para o Windows (sem VMWare) e ainda sendo totalmente produtivo com ferramentas reais, profissionais e open source que "simplesmente funcionam".
 
-Keep an eye on this blog post for updates this week!
+Fique de olho neste post para atualizações esta semana!

@@ -1,119 +1,123 @@
 ---
-title: THE CONF - 2018 Edition Report
+title: "The Conf 2018 - Relatório da Edição"
 date: '2018-10-31T22:49:00-03:00'
-slug: the-conf-2018-edition-report
+slug: the-conf-2018-relatorio-da-edicao
+translationKey: the-conf-2018-report
+aliases:
+- /2018/10/31/the-conf-2018-edition-report/
 tags:
 - theconf
+- traduzido
 draft: false
 ---
 
-I am very overdue with this report as I ended up making a long trip right after the event. I apologize for that.
+Estou bem atrasado com esse relatório porque acabei fazendo uma longa viagem logo após o evento. Peço desculpas por isso.
 
-The **main** thing about this year's event was undoubtedly the increase in content quality. The [Call for Papers](https://cfp.theconf.club) that I released early this year was very successful, we had more than a **100 proposals** posted, and I had a very tough time selecting just 28 of them. There was no appalling proposal. 
+O ponto **principal** da edição deste ano foi, sem dúvida, o aumento na qualidade do conteúdo. O [Call for Papers](https://cfp.theconf.club) que abri no início do ano foi um sucesso: recebemos mais de **100 propostas** e tive um trabalho e tanto para selecionar apenas 28 delas. Não havia nenhuma proposta de dar vergonha.
 
 ![event](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/678/big_43032684_1069183149928222_6804286390906388480_o.jpg)
 
-After we published the website online in June, we only had 2 people that, unfortunately, had to cancel their participation because of personal matters. We hope they were able to sort out their problems. However, as I said, the event had more than enough proposals to choose. I really can't thank enough everybody that took their time to design and post a good proposal.
+Depois que publicamos o site em junho, apenas 2 pessoas precisaram cancelar a participação por questões pessoais. Espero que tenham conseguido resolver seus problemas. De qualquer forma, como disse, o evento tinha propostas mais do que suficientes para escolher. Não tenho palavras para agradecer a todos que dedicaram tempo para elaborar e enviar uma boa proposta.
 
-Even though this event is primarily intended for Brazilians presenting in English in our home country, this year we had 3 outliers that are worth mentioning.
+Embora o evento seja voltado principalmente para brasileiros apresentando em inglês no próprio país, este ano tivemos 3 casos que merecem destaque.
 
-First of all, Itoyanagi Sakura. He sent his talk proposal through the CFP as anyone else. Moreover, after I selected his talk, I was surprised to see it was from someone from Japan. Many thanks to Itoyanagi-san and his company [Space Pirates LLC](https://space-pirates.co.jp/). I think everybody that attended his talk had an enjoyable time. He is originally from Nagasaki, from a humble family, and humble beginnings and he stepped up to become a Ruby Core Team member, primarily maintaining tools like RDoc.
+O primeiro deles foi Itoyanagi Sakura. Ele enviou a proposta pelo CFP como qualquer outra pessoa. Quando selecionei a palestra, levei um susto ao descobrir que era de alguém do Japão. Muito obrigado a Itoyanagi-san e à sua empresa [Space Pirates LLC](https://space-pirates.co.jp/). Quem assistiu à palestra dele certamente passou um ótimo momento. Ele é de Nagasaki, de origem humilde, e cresceu até se tornar membro do Ruby Core Team, sendo responsável principalmente pela manutenção de ferramentas como o RDoc.
 
-I met a lovely person at [Criciuma Dev](https://criciumadev.com.br/conference) early this year, Carla De Bona. She is an excellent presenter in the UX/UI area and she is always busy teaching and evangelizing everywhere! I don't even know how she manages to do all that she does. I was happily surprised to choose her proposal. Looking at the dates, she was one of the very first to post a proposal to the Call for Papers.  You should follow her work as well.
+Conheci uma pessoa incrível na [Criciuma Dev](https://criciumadev.com.br/conference) no início do ano: Carla De Bona. Ela é uma apresentadora excelente na área de UX/UI e está sempre ensinando e evangelizando por aí. Nem sei como ela dá conta de tudo. Fiquei muito feliz ao selecionar a proposta dela — e olhando as datas, ela foi uma das primeiras a enviar uma proposta ao Call for Papers. Vale muito acompanhar o trabalho dela.
 
-Finally, I had the great luck to be able to bring professor Diego Aranha, well known Brazilian security researcher and one of the few that was able to audit the source code for the Brazilian electronic ballot system. In an election year, it is a crucial subject that very few people are aware of the real details. It was a tight schedule, Diego had a flight back to Dinamarca on the same day he presented at our event. He is now officially retired from the whole Ballot debate, so we were extra lucky to be able to see his last presentation on the subject.
+Por fim, tive a sorte enorme de trazer o professor Diego Aranha, renomado pesquisador de segurança brasileiro e um dos poucos que conseguiu auditar o código-fonte da urna eletrônica brasileira. Em ano de eleições, é um tema crucial que pouquíssimas pessoas conhecem de verdade. A agenda dele estava apertada — Diego tinha um voo de volta à Dinamarca no mesmo dia em que apresentou no evento. Ele já está oficialmente aposentado do debate sobre as urnas, então tivemos uma sorte extra de assistir à sua última apresentação sobre o assunto.
 
-Welcoming foreigners coming to Brazil is nice. Also, also receiving Brazilians living abroad. Marcelo Wiermann was coming from Germany. Gabriel Mazetto was coming from the Netherlands. Additionally, speakers coming from many different places of Brazil such as Rodrigo Urubatan coming from the Rio Grande do Sul. Emerson Macedo came from Rio de Janeiro. Fabio Janiszewski came from Guarapuava. I think I forget other names, but I can't thank all of them enough for all the effort to participate.
+Receber estrangeiros no Brasil é sempre bom. Receber brasileiros que moram fora, também. Marcelo Wiermann veio da Alemanha. Gabriel Mazetto, dos Países Baixos. E ainda tivemos palestrantes de várias regiões do Brasil: Rodrigo Urubatan veio do Rio Grande do Sul, Emerson Macedo do Rio de Janeiro, Fabio Janiszewski de Guarapuava. Tenho certeza de que esqueci outros nomes, mas não consigo agradecer o suficiente a todos pelo esforço de participar.
 
 ![Speakers](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/677/big_42993639_1069205386592665_2306911966444126208_o.jpg)
 
-All speakers had important and interesting subjects, going from GDPR discussions, cryptography, new languages such as Kotlin, Elixir, R, Rust, Ruby, front-end development, UX research, the blockchain, Kubernetes, and "devops." That's what THE CONF is meant to be: a technology discussion with people doing hands-on work on all of those.
+Todos os palestrantes trouxeram temas importantes e instigantes: discussões sobre GDPR, criptografia, linguagens como Kotlin, Elixir, R, Rust e Ruby, desenvolvimento front-end, pesquisa em UX, blockchain, Kubernetes e "devops". É exatamente isso que THE CONF deve ser: uma discussão tecnológica com pessoas que colocam a mão na massa em tudo isso.
 
-I'd be anxious to see all the recordings for all the talks. It takes time to edit everything, but our sponsor and partner [**InfoQ Brasil**](https://www.youtube.com/channel/UCjiSYWQhLi9a4znW2h5pCrg) is hard at work, and I received word that they are about to finish them! Again, I hope everybody appreciates their support for the conference.
+Estou ansioso para ver todas as gravações das palestras. Editar tudo leva tempo, mas nosso patrocinador e parceiro [**InfoQ Brasil**](https://www.youtube.com/channel/UCjiSYWQhLi9a4znW2h5pCrg) está trabalhando duro nisso, e recebi a informação de que estão quase prontas. Mais uma vez, espero que todos reconheçam e valorizem o apoio deles ao evento.
 
-Speaking of support, this year we had a bit more help, from **Impulso, OLX, Plataformatec, and iMasters** that kindly landed their Hub office for the pre-event happy hour. Too bad it was raining that day, but the venue was great to have. Many thanks to my friend Thiago for the support!
+Falando em apoio, neste ano tivemos um suporte um pouco maior da **Impulso, OLX, Plataformatec e iMasters**, que gentilmente cederam o espaço do Hub deles para o happy hour do pré-evento. Pena que estava chovendo naquele dia, mas o espaço era ótimo. Muito obrigado ao meu amigo Thiago pelo suporte!
 
-### So, are we finally rich this year? :-D
+### Então, ficamos ricos este ano? :-D
 
-Moreover, like last year, nope.  `¯_(ツ)_/¯`
+Como no ano passado, não. `¯_(ツ)_/¯`
 
-Again, it's not my primary goal to have a profit with this event.
+Lucro não é o objetivo principal do evento.
 
-For Codeminer, now OmniTrade, it's an investment.
+Para a Codeminer, hoje OmniTrade, é um investimento.
 
-If you're an attendee and didn't know, all the speakers came here on their own volition. They are volunteers that are eager to share their experience with the audience. If you know any of them, make sure you show them your appreciation!
+Se você foi ao evento e não sabia: todos os palestrantes vieram por vontade própria. São voluntários que querem compartilhar sua experiência com o público. Se você conhece algum deles, não deixe de demonstrar sua gratidão!
 
-The same goes for the supporting companies. The sponsorship is not expensive, and it's used to cover some of the costs of the event, so we can keep ticket prices as low as possible. Let's break it down:
+O mesmo vale para as empresas parceiras. O patrocínio não é caro e é usado para cobrir parte dos custos do evento, para que possamos manter os preços dos ingressos os mais baixos possível. Veja o detalhamento:
 
-|Resource|Cost|
+|Recurso|Custo|
 |----------|------:|
-|Renting Rebouças Convention Center|29,331,04|
-|Audio and Visual|27,000.00|
-|Scenography|22,000.00|
-|Audio Receptors|6,000.00|
-|450 T-Shirts|6.000,00|
-|700 Snack Kit|10,000.00|
-|Wifi for Speakers|2,500.00|
-|Security Staff|1,300.00|
-|Designer|2,500.00|
-|Photographer|1,300.00|
-|Organizer|6.000,00|
-|**Total Cost**|**108,931.02**|
-|**Sponsors **|**13,000.00**|
-|**Tickets Revenue**|**36,000.00**|
+|Aluguel do Centro de Convenções Rebouças|29.331,04|
+|Áudio e Visual|27.000,00|
+|Cenografia|22.000,00|
+|Receptores de Áudio|6.000,00|
+|450 Camisetas|6.000,00|
+|700 Kits de Lanche|10.000,00|
+|Wi-Fi para Palestrantes|2.500,00|
+|Equipe de Segurança|1.300,00|
+|Designer|2.500,00|
+|Fotógrafo|1.300,00|
+|Organizador|6.000,00|
+|**Custo Total**|**108.931,02**|
+|**Patrocinadores**|**13.000,00**|
+|**Receita de Ingressos**|**36.000,00**|
 
-We are short BRL 59,931.00, at least. There are other smaller costs involved that I didn't add in the list.
+Ficamos com um déficit de pelo menos R$ 59.931,00. Há outros custos menores que nem incluí na lista.
 
-Again, who's paying this bill? 
+E quem paga essa conta?
 
-I am. More specifically, my company Codeminer 42 and OmniTrade.
+Eu. Mais especificamente, minha empresa Codeminer 42 e a OmniTrade.
 
-Moreover, I intend to keep organizing this event because we think it's important to set a standard and because it personally interests me. There is still no conference held in Brazil where Brazilians speak in English. 
+Mesmo assim, pretendo continuar organizando esse evento porque acreditamos que é importante criar um padrão, e porque é algo que me interessa pessoalmente. Ainda não existe nenhuma conferência no Brasil onde brasileiros falem em inglês.
 
-One example? A couple of people complained a bit (not a serious complaint, more like a remark) that some speakers didn't have excellent English.
+Um exemplo? Algumas pessoas reclamaram um pouco — não foi uma crítica grave, mais uma observação — que certos palestrantes não tinham inglês perfeito.
 
-Of course, they didn't; up to this day, we had no idea what even is a good "Brazilian English" accent. There is no baseline. There is no standard to make comparisons. There is not enough material anywhere. Of course, we should not expect the same accent compared to someone born and raised in the USA; we don't live in the USA. Brazilians naturally have an accent of their own.
+Claro que não tinham. Até hoje não sabemos nem o que seria um bom sotaque "brasileiro" em inglês. Não existe linha de base. Não existe padrão para comparar. Não existe material suficiente em lugar nenhum. Claro que não dá para esperar o mesmo sotaque de quem nasceu e cresceu nos EUA — a gente não mora lá. Brasileiros naturalmente têm sotaque próprio.
 
-When InfoQ Brasil releases the videos, there will be around 60 videos. The very first 60 videos of Brazilian speakers delivering their talks in English while in Brazil. There is no other repository like this in the technology community, which is why we think it's essential to keep up.
+Quando o InfoQ Brasil lançar os vídeos, serão cerca de 60 gravações. Os primeiros 60 vídeos de palestrantes brasileiros apresentando em inglês no Brasil. Não existe outro repositório assim na comunidade de tecnologia, e é por isso que achamos essencial continuar.
 
-Before our event, if anyone suggested doing a meetup all in English, they would have been laughed at, ridiculed. At least now this event as a reference and new standard. I even suggested that every group everywhere starts an #EnglishChallenge in their communities.
+Antes do nosso evento, se alguém sugerisse fazer um meetup inteiramente em inglês, seria motivo de gozação. Pelo menos agora esse evento serve de referência e cria um novo padrão. Cheguei a sugerir que todos os grupos em qualquer lugar iniciem um #EnglishChallenge em suas comunidades.
 
-Already I've seen a few meetups following this model. It's great exercise. Every programmer should invest their time learning English to stay ahead. Also, they shouldn't feel ridiculed for doing so. Who says you need to travel abroad to train your English?
+Já vi alguns meetups seguindo esse modelo. É um excelente exercício. Todo programador deveria investir tempo aprendendo inglês para se manter à frente. E não precisam se sentir ridicularizados por isso. Quem disse que é preciso ir para o exterior para treinar o inglês?
 
-More importantly: almost all attendees of this conference came out of their own volition. They attended because they wanted to, not because someone told them so. When I asked how many people were not from Sao Paulo city, half the audience raised their hands again. 
+Mais importante ainda: quase todos os presentes nesta conferência vieram por vontade própria. Estavam lá porque queriam, não porque alguém mandou. Quando perguntei quantas pessoas não eram de São Paulo, metade da plateia levantou a mão.
 
-These are forward-thinking people. It's the same kind of people that were attending my first Rubyconf Brasil back in 2008. They created an entire market in the following decade.
+São pessoas que pensam à frente. É o mesmo tipo de pessoa que frequentava a minha primeira Rubyconf Brasil em 2008. Elas construíram um mercado inteiro na década seguinte.
 
-How do I know that? Tech events in Brazil have to distribute "certificates" for their audience, so the sponsoring companies know that their employees attended the conference. We don't distribute certificates, because this audience doesn't need them.
+Como sei disso? Eventos de tecnologia no Brasil costumam distribuir "certificados" de presença para que as empresas patrocinadoras saibam que seus funcionários participaram. A gente não distribui certificados, porque esse público não precisa deles.
 
-They invested their money and their time. It's only fair that we do the same.
+Eles investiram seu dinheiro e seu tempo. É justo que a gente faça o mesmo.
 
-### Did it work?
+### Funcionou?
 
-It is working! 
+Está funcionando!
 
-We had more than 300 people last year. We had more than 300 people this year. Imagine this: a very niche, new-tech, and English-only conference with no translations. It's a recipe for failure, and yet it stands strong once again.
+Tivemos mais de 300 pessoas no ano passado. Tivemos mais de 300 pessoas neste ano. Imagine: uma conferência extremamente nichada, focada em novas tecnologias, totalmente em inglês e sem tradução. É receita para o fracasso — e mesmo assim continua de pé.
 
 ![attendees](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/676/big_42943771_1069205006592703_5037535577763741696_o.jpg)
 
-We are already planning for 2019. Yes, we have to plan it almost one year in advance. It's not possible to do an acceptable event with less than that.
+Já estamos planejando a edição de 2019. Sim, é preciso planejar com quase um ano de antecedência. Não dá para fazer um evento decente com menos tempo do que isso.
 
-As this is not a for-profit event, any help is welcome. How can you help?
+Como esse não é um evento com fins lucrativos, qualquer ajuda é bem-vinda. Como você pode ajudar?
 
-1. pay attention to our social networks, Call for Papers should open around March. When you see it, help us **share it** to as many people as possible. The more, the merrier.
+1. Fique de olho nas nossas redes sociais. O Call for Papers deve abrir por volta de março. Quando aparecer, ajude a **divulgar** para o maior número de pessoas possível. Quanto mais, melhor.
 
-2. in 2019 we will probably move the dates from September to August due to venue schedules, so also keep an eye on our updates and again, help us by **sharing** about the conference.
+2. Em 2019, provavelmente moveremos as datas de setembro para agosto por conta da agenda do espaço, então fique atento às novidades e, de novo, ajude **divulgando** o evento.
 
-As you can see: we need more people **talking more** about the event. You have no idea how a simple thing as a retweet helps. Marketing is the one thing that is very expensive and that attendees gain nothing from at the event. Help us spend less on marketing efforts and more in venue goodies.
+Como você pode ver: precisamos de mais gente **falando mais** sobre o evento. Você não tem ideia de como algo simples como um retweet ajuda. Marketing é uma das coisas mais caras e da qual os participantes não levam nada para casa. Ajude-nos a gastar menos com marketing e mais com as coisas do evento em si.
 
-If your company is interested in helping with our costs, please send us [an email](mailto:contact@theconf.club) and let's talk. Our conference is not expensive, and this audience is very promising, one that is worth reaching out.
+Se sua empresa tem interesse em ajudar com os custos, mande um [e-mail](mailto:contact@theconf.club) para conversarmos. Nossa conferência não é cara, e esse público é muito promissor — vale o contato.
 
-To summarize:
+Resumindo:
 
-* Want to sponsor? E-mail us at [contact@theconf.com.br](mailto:contact@theconf.com.br)
-* Want to keep updated? Follow our Twitter account or Facebook Page.
-* Follow us on [Twitter](https://twitter.com/theconf_br) to keep up to date.
-* I posted the photos on our [Facebook Page](https://www.facebook.com/TheConfClub/)
-* Videos are coming!
+* Quer patrocinar? Mande e-mail para [contact@theconf.com.br](mailto:contact@theconf.com.br)
+* Quer ficar por dentro? Siga nossas redes sociais.
+* Acompanhe pelo [Twitter](https://twitter.com/theconf_br).
+* Postei as fotos na nossa [Página do Facebook](https://www.facebook.com/TheConfClub/)
+* Os vídeos estão chegando!
 
-The 2018 edition is a wrap! Preparations for the 2019 edition, already started! Let's make the Third Edition the biggest one!
+A edição de 2018 encerrou! As preparações para a edição de 2019 já começaram. Vamos fazer da Terceira Edição a maior de todas!

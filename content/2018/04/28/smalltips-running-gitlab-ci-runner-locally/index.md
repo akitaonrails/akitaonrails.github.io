@@ -1,38 +1,42 @@
 ---
-title: "[SmallTips] Running GitLab CI Runner Locally"
+title: "SmallTips: Rodando o GitLab CI Runner Localmente"
 date: '2018-04-28T18:35:00-03:00'
-slug: smalltips-running-gitlab-ci-runner-locally
+slug: smalltips-rodando-o-gitlab-ci-runner-localmente
+translationKey: gitlab-ci-runner-locally
+aliases:
+- /2018/04/28/smalltips-running-gitlab-ci-runner-locally/
 tags:
 - smalltips
 - gitlab
+- traduzido
 draft: false
 ---
 
-If there is one thing you should always do is to maintain your test suite. Every bug you fix, every new feature, you should add new tests.
+Se tem uma coisa que você sempre deve fazer é manter sua suíte de testes. A cada bug corrigido, a cada nova funcionalidade, adicione novos testes.
 
-I have been working very hard in past few weeks, quite literally coding non-stop, 7 days a week. Remember that "stop complaining you don't have time, what do you do from midnight to 6 AM?" thing? Yeah, won't apply to me.
+Nas últimas semanas trabalhei muito pesado, literalmente codificando sem parar, sete dias por semana. Lembra daquela história de "para de reclamar que não tem tempo, o que você faz da meia-noite às 6 da manhã?"? Pois é, isso não se aplica a mim.
 
-And it's exactly when you're sleep deprived, exhausted when you start to add mistakes. Even though your code runs, locally, you will shoot yourself in the foot in one of those 3 AM coding spree sessions.
+E é justamente quando você está com sono e exausto que começa a cometer erros. Mesmo que o seu código rode localmente, você vai se ferrar em uma dessas sessões de código às 3 da manhã.
 
-The test suite was really my sidekick, co-pilot, bringing me back to my senses whenever the night got too dark.
+A suíte de testes foi minha salvação nesses momentos — meu copiloto, me trazendo de volta à razão sempre que a noite ficava pesada demais.
 
-I maintain my own GitLab custom server for all my company's client and internal projects. Just a bit of paranoia, to make sure my code is owned by me alone. And GitLab is a fantastic tool. Even more so because it has [its own Continuous Integration companion](https://about.gitlab.com/features/gitlab-ci-cd/).
+Mantenho meu próprio servidor GitLab para todos os projetos de clientes e internos da empresa. É só um pouco de paranoia, para garantir que meu código fica comigo. E o GitLab é uma ferramenta fantástica, ainda mais porque tem [seu próprio sistema de Integração Contínua](https://about.gitlab.com/features/gitlab-ci-cd/).
 
-Just add your `.gitlab-ci.yml` file to your project, create a new branch, push it and create a Merge Request and the CI kicks in, with multiple [parallel jobs](https://docs.gitlab.com/ee/ci/yaml/#jobs)  if you want. Even when I was forgetting to run my tests, the CI would not let me fail.
+Basta adicionar o arquivo `.gitlab-ci.yml` ao projeto, criar uma branch, fazer o push e abrir um Merge Request — o CI entra em ação, com [jobs paralelos](https://docs.gitlab.com/ee/ci/yaml/#jobs) se você quiser. Mesmo quando eu esquecia de rodar os testes localmente, o CI não me deixava passar.
 
-Keeping a CI up and running does require you to stop and maintain your specs though. Sometimes you will wonder, why does a test run on your local machine but keeps failing in the CI server?
+Manter o CI funcionando exige que você pare e cuide das specs periodicamente. Às vezes você vai se perguntar: por que esse teste passa na minha máquina mas continua falhando no servidor de CI?
 
-That's when its super useful to run the CI docker image locally, to iron out remaining environment dependent quircks.
+É aí que fica muito útil rodar a imagem Docker do CI localmente, para resolver de vez aquelas inconsistências de ambiente.
 
-And you can do just that by running the GitLab CI Runner itself. It will pick up your project's `.gitlab-ci.yml` and run it locally through docker. So whatever  problem you're seeing on the server will quite definitely happen locally as well. With the added benefit that you don't need to wait in line in case, there is a queue of jobs waiting to run (many developers working, not as many machines to chew the CI work immediately). And you won't be the one adding useless jobs to the same queue.
+Você consegue fazer isso rodando o próprio GitLab CI Runner. Ele lê o `.gitlab-ci.yml` do seu projeto e executa tudo localmente via Docker. Qualquer problema que aparece no servidor vai se reproduzir localmente também. Com a vantagem de que você não precisa entrar em fila caso haja outros jobs aguardando execução (muitos desenvolvedores trabalhando, poucas máquinas disponíveis para processar tudo na hora). E você não fica poluindo essa fila com jobs desnecessários.
 
-And, if you've followed my recommendations and installed the awesome Arch Linux distro (or my personal favorite derivative, Manjaro Gnome) you can easily install the runner through AUR like this:
+Se você seguiu minhas recomendações e instalou a excelente distro Arch Linux (ou meu derivado favorito, Manjaro Gnome), pode instalar o runner pelo AUR assim:
 
 ```
 pacaur -S gitlab-runner
 ```
 
-Otherwise you will have to check your particular distro repos or download the binary from [here](https://gitlab.com/gitlab-org/gitlab-runner/blob/master/docs/install/bleeding-edge.md#download-the-standalone-binaries). For example:
+Caso contrário, verifique os repositórios da sua distro ou baixe o binário [aqui](https://gitlab.com/gitlab-org/gitlab-runner/blob/master/docs/install/bleeding-edge.md#download-the-standalone-binaries). Por exemplo:
 
 ```
 wget https://gitlab-runner-downloads.s3.amazonaws.com/master/binaries/gitlab-runner-linux-amd64
@@ -40,7 +44,7 @@ sudo mv gitlab-runner-linux-amd64 /usr/local/bin
 sudo chmod +x /usr/local/bin/gitlab-runner
 ```
 
-Once you have it installed, let's say you have a snippet like this in your `.gitlab-ci.yml` configuration:
+Com o runner instalado, suponha que você tenha um trecho assim no seu `.gitlab-ci.yml`:
 
 ```yaml
 backend:
@@ -52,18 +56,18 @@ backend:
     - ./bin/cc-test-reporter after-build --exit-code $? || true
 ```
 
-You can configure many test jobs to run in parallel. I recommend that you separate front-end related JS tests, Rspec/minitest back-end unit tests, Capybara-based feature tests, Brakeman related security checks, for instance. Each will run in parallel and you won't have to wait for everything to run if you're only interested in the JS tests, for example. So you have faster feedback and can start fixing immediately.
+Você pode configurar vários jobs de teste rodando em paralelo. Recomendo separar: testes JS de front-end, testes unitários de back-end com Rspec/minitest, testes de feature com Capybara, verificações de segurança com Brakeman, por exemplo. Cada um roda em paralelo e você não precisa esperar tudo terminar se só quer ver o resultado dos testes de JS. Feedback mais rápido, correção imediata.
 
-Locally, from your project root directory, just run:
+Localmente, a partir da raiz do projeto, basta rodar:
 
 ```
 gitlab-runner exec docker backend
 ```
 
-Of course, this is assuming that you already have Docker installed and properly configured. If you don't make sure you read [Arch Wiki's excellent entry on Docker](https://wiki.archlinux.org/index.php/Docker#Installation) but it's basically installing the Docker package and adding yourself to the docker group.
+Claro, assumindo que você já tem o Docker instalado e configurado. Se não tiver, leia [o excelente artigo do Arch Wiki sobre Docker](https://wiki.archlinux.org/index.php/Docker#Installation) — basicamente é instalar o pacote Docker e se adicionar ao grupo docker.
 
-This is it! Super easy, barely an inconvenience, and runner will do everything your GitLab CI server is doing.
+É isso! Super simples, quase sem fricção, e o runner faz tudo que o servidor GitLab CI faria.
 
-One caveat is that unfortunately, it seems like you [don't have the ability to save cache or artifacts](https://gitlab.com/gitlab-org/gitlab-runner/issues/2409) between job runs (gems, npm packages, etc) so every time this local runner runs, it will start from scratch. This makes it less useful to run all the time, but it's still faster than pushing to the server and wait in line for your turn in a busy server.
+Um porém: infelizmente, parece que você [não consegue salvar cache ou artefatos](https://gitlab.com/gitlab-org/gitlab-runner/issues/2409) entre execuções (gems, pacotes npm, etc.), então toda vez que o runner local roda, ele começa do zero. Isso o torna menos útil para uso contínuo, mas ainda é mais rápido do que fazer push para o servidor e esperar sua vez numa fila cheia.
 
-Saved me a couple times already.
+Já me salvou algumas vezes.

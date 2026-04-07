@@ -1,157 +1,161 @@
 ---
-title: "[Off-Topic] The Pity Evolution of Modern Society"
+title: "Off-Topic: A Lamentável Evolução da Sociedade Moderna"
 date: '2018-07-26T15:28:00-03:00'
-slug: off-topic-the-pity-evolution-of-modern-society
+slug: off-topic-a-lamentavel-evolucao-da-sociedade-moderna
+translationKey: pity-evolution-modern-society
+aliases:
+- /2018/07/26/off-topic-the-pity-evolution-of-modern-society/
 tags:
 - off-topic
 - libertarianism
 - reason
 - freedom
+- traduzido
 draft: false
 ---
 
-The world is perishing in an orgy of self-righteousness.
+O mundo está perecendo numa orgia de autojustiça.
 
-People from Wisecrack always manage to put a smile on my face. They give me hope that there are still people of reason in this world. This essay is inspired by that video and the gathering of complementary thoughts.
+O pessoal do Wisecrack sempre consegue me arrancar um sorriso. Me dão esperança de que ainda existem pessoas com bom senso nesse mundo. Este texto é inspirado naquele vídeo e numa série de pensamentos complementares que fui juntando.
 
 {{< youtube id="Wp7f2ftkybI" >}}
 
-As an engineer, I am always baffled by what we are able to create. No one could ever think that one of humankind's most fabulous creations, the internet, and its most successful streak of hits—ubiquitous mobile access and social networks that can gather a considerable number of people at the same time—could ever be used as weapons of mass destruction.
+Como engenheiro, fico constantemente pasmo com o que somos capazes de criar. Ninguém imaginaria que uma das criações mais fantásticas da humanidade — a internet — e seus maiores sucessos — acesso móvel onipresente e redes sociais capazes de reunir um número absurdo de pessoas ao mesmo tempo — pudessem ser usadas como armas de destruição em massa.
 
-This is far from the only instance of this kind of case, but as an example, a few days ago, I was surprised by a small piece of news. James Gunn, the beloved director of two of the best hits in the MCU with his Guardians of the Galaxy, was fired because of tweets he made 10 years ago.
+Esse caso está longe de ser o único, mas como exemplo: há poucos dias fui pego de surpresa por uma notícia aparentemente pequena. James Gunn, o querido diretor de dois dos maiores sucessos do MCU com seus Guardiões da Galáxia, foi demitido por causa de tweets que fez há 10 anos.
 
-I am not here to judge the merits of the tweets or if his apologies are good enough.
+Não estou aqui para julgar o mérito dos tweets nem se o pedido de desculpas dele foi suficiente.
 
-Actually, by just stating neutrality, I am automatically judged as being in favor. This is the problem here.
+Na verdade, só de dizer que sou neutro já sou automaticamente julgado como favorável. Esse é o problema.
 
-Today, we've seen right-wing-like pages and accounts deleted from Facebook. This is due to Facebook's ongoing efforts to fight "fake news," which is indeed a problem of modern times, where news outlets have become click-bait factories, as Wisecrack's video accurately describes.
+Nos últimos dias, vimos páginas e contas de direita sendo deletadas do Facebook — parte dos esforços contínuos da plataforma para combater "fake news", que de fato é um problema contemporâneo, já que portais de notícia viraram fábricas de clickbait, exatamente como o vídeo do Wisecrack descreve com precisão.
 
-Who decides what "fake news" is? It "offends" a demographic that is loud and generates clicks. Therefore, we must ban the other side.
+Mas quem decide o que é "fake news"? O que "ofende" um grupo barulhento que gera cliques. Portanto, precisamos banir o outro lado.
 
-It reminds me of a cliche phrase from The Lord of the Rings that always resonated with me. When the fellowship is trying to go through Moria, Frodo laments to Gandalf:
+Isso me lembra uma frase clichê de O Senhor dos Anéis que sempre ressoou em mim. Quando a Sociedade tenta atravessar Moria, Frodo lamenta para Gandalf:
 
-> 'What a pity that Bilbo did not stab that vile creature when he had a chance!'
+> "Que pena que Bilbo não matou aquela criatura vil quando teve a chance!"
 
 {{< youtube id="IrOqnZdvI6M" >}}
 
-To which Gandalf replies:
+E Gandalf responde:
 
-> 'Pity? It was Pity that stayed his hand. Pity and Mercy: not to strike without need. And he has been well rewarded, Frodo. Be sure that he took so little hurt from the evil and escaped in the end because he began his ownership of the Ring so. With Pity.'
+> "Pena? Foi a Pena que deteve sua mão. Pena e Misericórdia: não ferir sem necessidade. E ele foi bem recompensado por isso, Frodo. Pode ter certeza de que sofreu tão pouco com o mal e escapou no final justamente porque começou sua posse do Anel dessa forma. Com Pena."
 
-And then concludes:
+E então conclui:
 
-> 'Deserves it! I daresay he does. Many who live deserve death. And some that die deserve life. Can you give it to them? Then, do not be too eager to deal with death in judgment.
+> "Merece! Eu diria que sim. Muitos que vivem merecem a morte. E alguns que morrem merecem a vida. Você pode devolveê-la a eles? Então, não seja tão ansioso para lidar com a morte em julgamento.
+>
+> Pois mesmo os muito sábios não conseguem ver todos os fins. Não tenho esperança de que Gollum seja curado antes de morrer, mas existe uma chance. E ele está ligado ao destino do Anel. Meu coração me diz que ele ainda tem um papel a cumprir, para o bem ou para o mal, antes do fim; e quando isso acontecer, a pena de Bilbo poderá reger o destino de muitos — inclusive o seu."
 
-> For even the very wise cannot see all ends. I do not hope that Gollum can be cured before he dies, but there is a chance of it. And he is bound up with the fate of the Ring. My heart tells me that he has some part to play yet, for good or ill, before the end, and when that comes, the pity of Bilbo may rule the fate of many – yours not least.'
+Voltando ao Gunn: o que me surpreendeu não foi a republicação dos tweets nem a indignação pública (obviamente, nenhuma pessoa sã endossa literalmente o conteúdo específico). O que realmente me impressionou foi a velocidade absurda com que uma megacorporação do tamanho da Disney respondeu com uma guilhotina, destruindo uma grande carreira em questão de horas.
 
-Back to Gunn, what surprised me was not that those tweets were republished or the public outcry (and of course, no sane person supports the specific contents literally). What really surprised me was the incredible velocity with which a mega-corporation the size of Disney responded with a swift beheading, literally terminating a great career in less than a few hours.
+Me lembra de sentenças públicas igualmente rápidas, sem julgamento, sem devido processo. De novo, não estou defendendo essas pessoas — mas lembro dos casos James Damore vs. Google, Brendan Eich vs. Netscape, e James Watson vs. Nobel.
 
-It reminds me of equally quick public sentences without trials or due process. Again, I'm not advocating for these people, but James Damore vs. Google, Brendan Eich vs. Netscape, and James Watson vs. Nobel.
+E a maioria de vocês — ou dos seus amigos — diria: _"claro que foram expulsos, são pessoas ruins, temos que nos policiar para remover esses vilões do nosso meio."_
 
-And most of you or your friends would say, _"of course they were ousted, they are bad people, we must police ourselves to remove these villains from our midst."_
+Será que devemos?
 
-Should we?
+Você consegue devolver o futuro deles se estiver errado? O que te dá o direito de ser juiz e júri?
 
-Can you give back their future if you were wrong? What makes you entitled to be a jury and judge?
+Cuidado. Quando provocada, uma pessoa razoável e normal busca o diálogo em privado, como qualquer sociedade civilizada aprendeu a fazer. Mas as redes sociais motivam as pessoas a fazerem o pior: expor publicamente.
 
-Careful. When antagonized, an average, reasonable person should dialogue in private, as any civilized society learned to do.  But social networks motivate people to do the worst: call out in public.
+Isso é formação de manada. Bullying puro e simples. Sofri bullying a vida inteira — sendo minoria japonesa num país ocidental — e sei exatamente o quanto dói. É por isso que jamais revidar com bullying.
 
-This is Mob Formation. This is plain old bullying. I suffered forms of bullying my entire life - being a Japanese minority in a Western country -I know how bad being bullied feels, which is why I never bully back.
+Se você expõe alguém publicamente, não está praticando "justiça". Você é simplesmente um bully. Independente do assunto.
 
-If you call out someone in public, you're not practicing "justice." You are a mere bully. No matter the subject at hand.
+Você já leu o cabeçalho dos meus perfis no [Facebook](https://www.facebook.com/fabio.akita.profile) e no [Twitter](https://twitter.com/akitaonrails)? Diz:
 
-Have you ever read the image header of my [Facebook](https://www.facebook.com/fabio.akita.profile) and [Twitter](https://twitter.com/akitaonrails) profiles? It reads:
+> "Eu desaprovo o que você diz, mas defenderei até a morte o seu direito de dizê-lo." — Evelyn Beatrice Hall.
 
-> "I Disapprove of What You Say, But I Will Defend to the Death Your Right to Say It." - Evelyn Beatrice Hall.
+E eu acredito nisso de verdade.
 
-And I believe that.
+Nunca vou humilhar alguém publicamente. Só covardes fazem isso. Envergonhar alguém em público tem um único propósito: mobilizar a massa, transformar o rebanho em tropa de choque para executar alguém publicamente — e assim fazer valer seu ponto sem precisar defendê-lo.
 
-I shall never shame someone in public. Only cowards do that. Shaming someone in the open has the sole purpose of mobbing people, transforming the herd in maneuvering mass to swiftly perform a public execution, and thus, make your point without having to defend it.
+_"Mas eu tenho o direito de não ser ofendido."_
 
-_"But I have the right not to be offended."_
+Não. Não tem.
 
-No, you don't.
-
-Another movie I talked about years ago and cropped a segment to upload in my blog is Oliver Stone's masterpiece The People vs. Larry Flynt.
+Outro filme que comentei anos atrás e do qual cortei um trecho para publicar aqui foi a obra-prima de Oliver Stone, Larry Flynt — O Rei do Escândalo.
 
 <div class="video-container">
     <video controls>
         <source src="https://s3.us-east-2.amazonaws.com/blip.tv/Akitaonrails-LarryFlintFreedom513.mp4" type="video/mp4">
-        Your browser does not support the video tag. [Direct Link](https://s3.us-east-2.amazonaws.com/blip.tv/Akitaonrails-LarryFlintFreedom513.mp4)
+        Seu navegador não suporta o elemento de vídeo. [Link direto](https://s3.us-east-2.amazonaws.com/blip.tv/Akitaonrails-LarryFlintFreedom513.mp4)
     </video>
 </div>
 
-It tells the story of the founder of the pornography magazine Hustler. By all means, a despicable person.
+O filme conta a história do fundador da revista pornográfica Hustler. Um sujeito desprezível por praticamente qualquer critério.
 
-But this is precisely the point. Larry did things that most of you would condemn. Not only publishing porn but doing satire out of public people, bad taste jokes, but jokes nonetheless. The segment that really impacted me was the concept that people have no right not to be offended. This is a subjective matter that has no place in court because we can't legally define taste.
+Mas esse é exatamente o ponto. Larry fez coisas que a maioria de vocês condenaria. Não apenas publicar pornografia, mas fazer sátira de figuras públicas, piadas de péssimo gosto — mas piadas, ainda assim. O trecho que mais me impactou foi o conceito de que as pessoas não têm o direito de não serem ofendidas. Isso é uma questão subjetiva que não tem lugar num tribunal, porque gosto não se define juridicamente.
 
-> "Ladies and gentlemen of the jury, you have heard a lot today, and I'm not gonna go back over it, but you have to go into that room and make some decisions. But before you do, there's something you need to know. I am not trying to suggest that you should like what Larry Flynt does. I don't like what Larry Flynt does, but I do like that I live in a country where you and I can make that decision for ourselves. I like that I live in a country where I can pick up Hustler magazine and read it, or throw it in the garbage can if that's where I think it belongs."
+> "Senhoras e senhores do júri, vocês ouviram muito hoje, e não vou revisitar tudo isso, mas precisam entrar naquela sala e tomar algumas decisões. Mas antes, há algo que precisam saber. Não estou tentando sugerir que vocês deveriam gostar do que Larry Flynt faz. Eu não gosto do que Larry Flynt faz. Mas gosto de viver num país onde você e eu podemos tomar essa decisão por conta própria. Gosto de viver num país onde posso pegar a revista Hustler, lê-la, ou jogá-la no lixo se for lá que acho que ela pertence."
 
-Anyone has the right to do and say whatever he or she wants as long as it doesn't harm the other person. This is a delicate matter because my rights should end where your rights start.
+Qualquer pessoa tem o direito de fazer e dizer o que quiser, desde que não cause dano real a outra pessoa. É uma linha tênue, porque meus direitos devem terminar onde os seus começam.
 
-> "If the First Amendment will protect a scumbag like me, it will protect all of you." - Larry Flynt.
+> "Se a Primeira Emenda vai proteger um lixo como eu, vai proteger todos vocês." — Larry Flynt.
 
-But because it can't be decided in court, radical people take matters with their own hands, using the most powerful weapon ever devised: social networks. They can quickly gather a large jury and determine the public execution. It's like handing a loaded gun to a toddler.
+Mas como isso não pode ser resolvido nos tribunais, pessoas radicais tomam a lei nas próprias mãos usando a arma mais poderosa já criada: as redes sociais. Elas conseguem reunir um júri enorme em minutos e decretar a execução pública. É como dar uma arma carregada para uma criança.
 
-This is Inquisition territory. Galileo was judged and sentenced because he offended Catholic society by stating that the Earth and the planets revolve around the Sun and not vice versa. It seems stupidly trivial today, but it was a big deal back then. People would choose to die than accept this offensive statement. That would be trending in the Twitter of the 1600s, and public execution would be quickly demanded.
+Isso é território de Inquisição. Galileu foi julgado e condenado porque ofendeu a sociedade católica ao afirmar que a Terra e os planetas giram em torno do Sol, e não o contrário. Parece trivial hoje, mas era um escândalo monumental na época. Havia gente disposta a morrer a fim de não aceitar essa afirmação ofensiva. Isso estaria em alta no Twitter dos anos 1600, e a execução pública seria exigida em questão de minutos.
 
-This _"I'm offended"_ justification is what ultimately led to assassinations such as Luther King, JFK, Lennon, the arrest of Gandhi, and the genocide of the Jews. Intolerance.
+Essa justificativa do _"estou ofendido"_ é o que levou, em última análise, a assassinatos como os de Luther King, JFK e Lennon, à prisão de Gandhi e ao genocídio dos judeus. Intolerância.
 
-If not being offended is the ultimate goal, intolerance is the only path, and the murder of Freedom is the worst consequence.
+Se não ser ofendido é o objetivo máximo, a intolerância é o único caminho — e o assassinato da Liberdade é a pior consequência.
 
-Every atrocity in humankind starts with mob behavior around the _"I shouldn't feel offended."_
+Toda atrocidade da humanidade começa com o comportamento de manada em torno do _"eu não deveria me sentir ofendido."_
 
-That's the story behind Fahrenheit 451, which Wisecrack explains. At one point, people just started creating an echo chamber. Every Twitter feed and Facebook timeline are, by definition, echo chambers. You only receive content meticulously curated by advanced machine learning, carefully configured to spit out posts with content that will not offend you and that won't ever challenge your points of view.
+Essa é a história por trás de Fahrenheit 451, que o Wisecrack explica muito bem. Em dado momento, as pessoas simplesmente começaram a criar câmaras de eco. Cada feed do Twitter e cada linha do tempo do Facebook são, por definição, câmaras de eco. Você só recebe conteúdo meticulosamente curado por machine learning avançado, configurado com cuidado para cuspir posts que não vão te ofender e que jamais vão desafiar seus pontos de vista.
 
-You create and live in a bubble, and you immediately get outraged when your reality is challenged by any thought-provoking idea. You limit yourself to your personalized and narrow status quo.
+Você cria e vive numa bolha, e fica indignado imediatamente quando sua realidade é desafiada por qualquer ideia que provoque reflexão. Você se limita ao seu status quo personalizado e estreito.
 
-It's a lie when you say _"I'm open-minded, "_ but continuously call out people and whine about how offended you are. You are not open-minded. You can't have your lunch and eat it too. At least admit the truth: that you're narrow-minded and intolerant.
+É mentira quando você diz _"sou de mente aberta"_ mas fica expondo pessoas o tempo todo e reclamando de tudo que te ofende. Você não é de mente aberta. Não dá pra ter o bolo e comer o bolo também. Pelo menos admita a verdade: que você é de mente fechada e intolerante.
 
-Contrary to what many of us believe, the internet was supposed to set us free from governments, authoritarian institutions, and big media channels that supposedly controlled the masses' points of view.
+Ao contrário do que muitos acreditam, a internet deveria nos libertar dos governos, das instituições autoritárias e dos grandes veículos de mídia que supostamente controlavam o ponto de vista das massas.
 
-We were supposed to have access to a broader range of knowledge, without borders, without prejudice, and that would help us advance faster into the future, into more innovation.
+Deveríamos ter acesso a um leque mais amplo de conhecimento, sem fronteiras, sem preconceito, o que nos ajudaria a avançar mais rápido para o futuro, para mais inovação.
 
-Innovation, by definition, is a challenge against the status quo. You can't innovate and please everybody at the same time. That's impossible. Otherwise, it's just more of the same.
+Inovação, por definição, é um desafio ao status quo. Você não consegue inovar e agradar todo mundo ao mesmo tempo. Isso é impossível. Do contrário, é só mais do mesmo.
 
-The invention of fire challenged nature, the invention of heliocentrism questioned God, and the design of natural selection challenged humankind's soul.
+A invenção do fogo desafiou a natureza, o heliocentrismo questionou Deus, a teoria da evolução por seleção natural desafiou a alma humana.
 
-Social networks transformed a free, decentralized internet and put it on a very tight leash, controlled by "Influencers." People with charisma, not righteousness, much less wisdom, just plain charisma. Allure is what attracts large amounts of people as followers. The network effect is vicious.
+As redes sociais pegaram uma internet livre e descentralizada e a colocaram numa coleira bem apertada, controlada por "Influencers" — pessoas com carisma, não com retidão, muito menos com sabedoria. Puro carisma. É o que atrai grandes quantidades de seguidores. O efeito de rede é perverso.
 
-We were supposed to be all **together** collaborating for the betterment of humankind, regardless of race, geography, and political inclinations.
+Deveríamos estar todos **juntos**, colaborando para o bem da humanidade, independente de raça, geografia ou inclinações políticas.
 
-Be warned, you are all falling for the [Eight stages of Genocide](https://en.wikipedia.org/wiki/Eight_stages_of_genocide). Behold:
+Fique atento: você está caindo nas [Oito Etapas do Genocídio](https://en.wikipedia.org/wiki/Eight_stages_of_genocide). Veja:
 
-1. Classification: People are divided into "them and us". 
-2. Symbolization: "When combined with hatred, symbols may be forced upon unwilling members of pariah groups..." 
-3. Dehumanization: "One group denies the humanity of the other group. Members of it are equated with animals, vermin, insects, or diseases." 
-4. Organization: "Genocide is always organized... Special army units or militias are often trained and armed..." 
-5. Polarization:  "Hate groups broadcast polarizing propaganda..." 
-6. Preparation: "Victims are identified and separated out because of their ethnic or religious identity..." 
-7. Extermination: "It is 'extermination' to the killers because they do not believe their victims to be fully human". 
-8. Denial:  "The perpetrators... deny that they committed any crimes..." 
+1. Classificação: As pessoas são divididas em "eles e nós".
+2. Simbolização: "Quando combinados com ódio, símbolos podem ser impostos a membros relutantes de grupos párias..."
+3. Desumanização: "Um grupo nega a humanidade do outro. Os membros são equiparados a animais, vermes, insetos ou doenças."
+4. Organização: "O genocídio é sempre organizado... Unidades especiais do exército ou milícias são frequentemente treinadas e armadas..."
+5. Polarização: "Grupos de ódio disseminam propaganda polarizante..."
+6. Preparação: "As vítimas são identificadas e separadas por sua identidade étnica ou religiosa..."
+7. Extermínio: "É 'extermínio' para os assassinos porque eles não acreditam que suas vítimas sejam plenamente humanas."
+8. Negação: "Os perpetradores... negam que cometeram qualquer crime..."
 
-This is the original Nazi modus operandi, and you are perpetuating those steps. I am not a Jew, but I deeply admire and respect their history and resilience. I have been to the official [Holocaust Institute](http://www.akitaonrails.com/2012/11/21/viagem-a-europa-parte-3-tel-aviv-israel) in Yad Vashem, Israel and went to the Washington D.C. one because I respect the lessons they left behind. And it was supposed to be our duty not to let history repeat itself.
+Esse é o modus operandi nazista original — e você está perpetuando essas etapas. Não sou judeu, mas admiro profundamente e respeito sua história e resiliência. Já fui ao [Instituto do Holocausto](http://www.akitaonrails.com/2012/11/21/viagem-a-europa-parte-3-tel-aviv-israel) oficial em Yad Vashem, Israel, e fui ao de Washington D.C., porque respeito as lições que deixaram para trás. Era nosso dever não deixar a história se repetir.
 
-But, such is the power of blind ideology and the leadership of charismatic celebrities.
+Mas tal é o poder da ideologia cega e da liderança de celebridades carismáticas.
 
-We had charismatic leaders doing good things and bad things, but charismatic nonetheless. For every Lincoln or Churchill, we had a Stalin or  Castro.
+Tivemos líderes carismáticos fazendo coisas boas e ruins — mas carismáticos, de qualquer forma. Para cada Lincoln ou Churchill, tivemos um Stalin ou um Castro.
 
-What's more difficult is that we can only really know that something went horrendously bad in hindsight, from History. There is no such thing as a black-and-white "good" vs. "evil." You always think that you are doing an excellent job by following charismatic people who seem to be only promoting the well-being of a minority group. 
+O mais difícil é que só conseguimos saber, com clareza, que algo deu horrivelmente errado olhando para trás, pela História. Não existe um "bem" versus "mal" em preto e branco. Você sempre acha que está fazendo um excelente trabalho ao seguir pessoas carismáticas que parecem promover apenas o bem-estar de um grupo minoritário.
 
-Ask yourself: are you really following a selfless person, that can treat another person with more humanity than he or she is initially being treated? Or does it sound more like selfish revenge and payback? Hate is always the stuff of evil. A righteous person does not mimic what they are supposedly fighting against. Anyone advocating "let's do to them what they did to us" is most probably Evil. You cite people like Gandhi, and did you learn nothing from what he taught all his life?
+Pergunte a si mesmo: você realmente está seguindo alguém altruísta, capaz de tratar outra pessoa com mais humanidade do que ela está sendo tratada? Ou isso soa mais como vingança egoísta e acerto de contas? O ódio é sempre a matéria do mal. Uma pessoa justa não imita aquilo contra o qual supostamente luta. Qualquer um que advogue "vamos fazer com eles o que fizeram conosco" é provavelmente o Mal. Você cita pessoas como Gandhi — e não aprendeu nada com o que ele ensinou a vida inteira?
 
-Every Fidel, every Mussolini, every Hitler, they all really believed that they were fighting for the well-being of their people. Every Nazi acted thinking they were doing the right thing for the future of their sons and daughters, that the sacrifices would pay off. That they were being Noble for killing people.
+Todo Fidel, todo Mussolini, todo Hitler realmente acreditava que estava lutando pelo bem-estar do seu povo. Todo nazista agiu acreditando que estava fazendo a coisa certa pelo futuro dos seus filhos e filhas, que os sacrifícios valeriam a pena. Que eram Nobres por matar pessoas.
 
-There has never been a better platform to mob people into irrational herds than now. There are YouTubers out there that have millions of more followers than any Hitler ever had.
+Nunca houve uma plataforma melhor para transformar pessoas em manadas irracionais do que agora. Há YouTubers com milhões de seguidores a mais do que qualquer Hitler jamais teve.
 
-And to put injury to misery, we have formed the online consensus that people have a magical inherent right to "never be offended." They shall not be offended by 200-character tweets. That's a capital sin, and the perpetrator must die. Apologies are not enough. The thought police are such that one out of context tweet is already enough to judge and execute the life of a person, without recourse, without parole.
+E para piorar, formamos o consenso online de que as pessoas têm um direito mágico e inerente de "nunca serem ofendidas." Não podem ser ofendidas por tweets de 200 caracteres. Isso é pecado capital, e o perpetrador deve morrer. Pedido de desculpas não basta. A polícia do pensamento é tal que um único tweet fora de contexto já é suficiente para julgar e executar a vida de uma pessoa — sem recurso, sem liberdade condicional.
 
-It's fascinating to see how a series of technologies and innovations supposed to broaden the freedom of everybody would turn to become the most potent weapon of mass destruction ever devised. And it didn't need a newborn Hitler.
+É fascinante ver como uma série de tecnologias e inovações que deveriam ampliar a liberdade de todos acabou se tornando a arma de destruição em massa mais potente já criada. E não precisou de um novo Hitler para isso.
 
-The end of the world doesn't necessarily need to be a catastrophic physical event such as a nuclear blast. I think that even worse is the destruction of the fabric of society itself. It's not a big evil dictator that will kill Freedom, it's the people that don't deserve it. It's way more nefarious and can be even more damning.
+O fim do mundo não precisa necessariamente ser um evento físico catastrófico como uma explosão nuclear. Acho que ainda pior é a destruição do tecido da própria sociedade. Não é um grande ditador malvado que vai matar a Liberdade — são as pessoas que não a merecem. É muito mais nefasto e pode ser ainda mais devastador.
 
-That's the lesson: it's not Omar Bashir, Bashar Al-Assad, or Nicolás Maduro that, alone, will single-handedly be responsible for destroying society.
+Essa é a lição: não é Omar Bashir, Bashar Al-Assad ou Nicolás Maduro que, sozinhos, serão responsáveis por destruir a sociedade.
 
-Every evildoer in history did what they did _"in the name of the people."_
+Todo malfeitor da história fez o que fez _"em nome do povo."_
 
-And it all starts with _"I shouldn't be offended."_
+E tudo começa com _"eu não deveria ser ofendido."_

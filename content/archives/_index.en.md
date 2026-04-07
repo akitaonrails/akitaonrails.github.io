@@ -6,6 +6,23 @@ title: AkitaOnRails Blog - Archives
 
 Want to see the Akitando Channel transcripts (Portuguese only)? [Click here](/akitando/).
 
+## 2018 - October
+
+- [THE CONF - 2018 Edition Report](/en/2018/10/31/the-conf-2018-edition-report/)
+
+## 2018 - July
+
+- [\[Off-Topic\] The Pity Evolution of Modern Society](/en/2018/07/26/off-topic-the-pity-evolution-of-modern-society/)
+
+## 2018 - April
+
+- [Running Arch Linux over Windows 10!](/en/2018/04/29/running-arch-linux-over-windows-10/)
+- [\[SmallTips\] Running GitLab CI Runner Locally](/en/2018/04/28/smalltips-running-gitlab-ci-runner-locally/)
+
+## 2018 - January
+
+- [My Notes about a Production-grade Ruby on Rails Deployment on Google Cloud Kubernetes Engine](/en/2018/01/09/my-notes-about-a-production-grade-ruby-on-rails-deployment-on-google-cloud-kubernetes-engine/)
+
 ## 2017 - December
 
 - [Cryptocurrencies: Is it a Bubble? Does it Matter?](/en/2017/12/05/cryptocurrencies-is-it-a-bubble-does-it-matter/)

@@ -49,20 +49,20 @@ Quer ver as transcrições do Canal Akitando? [Clique aqui](/akitando/).
 
 ## 2018 - Outubro
 
-- [THE CONF - 2018 Edition Report](/2018/10/31/the-conf-2018-edition-report/)
+- [The Conf 2018 - Relatório da Edição](/2018/10/31/the-conf-2018-relatorio-da-edicao/)
 
 ## 2018 - Julho
 
-- [\[Off-Topic\] The Pity Evolution of Modern Society](/2018/07/26/off-topic-the-pity-evolution-of-modern-society/)
+- [Off-Topic: A Lamentável Evolução da Sociedade Moderna](/2018/07/26/off-topic-a-lamentavel-evolucao-da-sociedade-moderna/)
 
 ## 2018 - Abril
 
-- [Running Arch Linux over Windows 10!](/2018/04/29/running-arch-linux-over-windows-10/)
-- [\[SmallTips\] Running GitLab CI Runner Locally](/2018/04/28/smalltips-running-gitlab-ci-runner-locally/)
+- [Rodando Arch Linux sobre o Windows 10!](/2018/04/29/rodando-arch-linux-sobre-o-windows-10/)
+- [SmallTips: Rodando o GitLab CI Runner Localmente](/2018/04/28/smalltips-rodando-o-gitlab-ci-runner-localmente/)
 
 ## 2018 - Janeiro
 
-- [My Notes about a Production-grade Ruby on Rails Deployment on Google Cloud Kubernetes Engine](/2018/01/09/my-notes-about-a-production-grade-ruby-on-rails-deployment-on-google-cloud-kubernetes-engine/)
+- [Minhas Notas sobre Deploy Produção do Ruby on Rails no Google Cloud Kubernetes Engine](/2018/01/09/minhas-notas-deploy-producao-ruby-on-rails-google-cloud-kubernetes/)
 
 ## 2017 - Dezembro
 
