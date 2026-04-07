@@ -24,7 +24,6 @@ These posts hit API 400 errors or were not reached due to session limits during 
 - content/2013/07/12/previsivelmente-irracional/index.md
 - content/2013/10/30/off-topic-matematica-trolls-haters-e-discussoes-de-internet/index.md
 - content/2013/10/31/traducao-carta-para-um-jovem-programador-considerando-uma-startup/index.md
-- content/2013/11/18/off-topic-trabalho-remoto-small-office-home-office-soho/index.md
 - content/2014/03/27/off-topic-lean-esta-morto-longa-vida-a-eficiencia/index.md
 - content/2014/03/30/off-topic-comentando-o-marco-civil-aprovado/index.md
 - content/2014/05/02/off-topic-carreira-em-programacao-codificar-nao-e-programar/index.md
