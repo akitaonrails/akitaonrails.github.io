@@ -21,7 +21,6 @@ These posts hit API 400 errors or were not reached due to session limits during 
 - content/2013/05/14/off-topic-pessoas-animais-racionais-o-id-e-o-ego-no-marketing/index.md
 - content/2013/05/26/off-topic-visao-do-passado-sobre-a-internet/index.md
 - content/2013/05/26/off-topic-visao-do-passado-sobre-a-internet--2/index.md
-- content/2013/06/21/processos-metodologias-e-o-cerebro-humano/index.md
 - content/2013/07/12/previsivelmente-irracional/index.md
 - content/2013/10/30/off-topic-matematica-trolls-haters-e-discussoes-de-internet/index.md
 - content/2013/10/31/traducao-carta-para-um-jovem-programador-considerando-uma-startup/index.md
