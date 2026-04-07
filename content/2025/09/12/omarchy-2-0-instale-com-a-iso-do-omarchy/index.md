@@ -10,6 +10,7 @@ tags:
   - snapper
   - sddm
 draft: false
+translationKey: omarchy-install-with-iso
 ---
 
 Pra finalizar a série de [Omarchy](/tags/omarchy) por enquanto, acho que faltou comentar rapidamente sobre a instalação via a ISO do próprio Omarchy.

@@ -61,6 +61,21 @@ title: AkitaOnRails Blog
 - [AI Agents: Locking Down Your System](/en/2026/01/10/ai-agents-locking-down-your-system/)
 - [Omarchy 3 - One of the Best Coding Agents Out There: Crush](/en/2026/01/09/omarchy-3-one-of-the-best-coding-agents-crush/)
 
+## 2025 - September
+
+- [Omarchy 2.0 - LazyVim Basics](/en/2025/09/12/omarchy-2-0-lazyvim-basics/)
+- [Omarchy 2.0 - Recommended for Beginners?](/en/2025/09/12/omarchy-2-0-recommended-for-beginners/)
+- [Omarchy 2.0 - Install with the Omarchy ISO](/en/2025/09/12/omarchy-2-0-install-with-the-omarchy-iso/)
+- [Omarchy 2.0 - Bitwarden Self-Hosted / VaultWarden](/en/2025/09/10/omarchy-2-0-bitwarden-self-hosted-vaultwarden/)
+- [Installing Grafana on My Home Server](/en/2025/09/10/installing-grafana-on-my-home-server/)
+- [Protecting Your Home Server with Cloudflare Zero Trust](/en/2025/09/10/protecting-your-home-server-with-cloudflare-zero-trust/)
+- [Accessing My Home Server With a Real Domain](/en/2025/09/09/accessing-my-home-server-with-a-real-domain/)
+- [Omarchy 2.0 - Understanding SSH and Yubikeys](/en/2025/09/09/omarchy-2-0-understanding-ssh-and-yubikeys/)
+- [Omarchy 2.0 - TUIs (Terminal User Interface Apps)](/en/2025/09/09/omarchy-2-0-tuis/)
+- [Omarchy 2.0 - Mise for Organizing Development Environments](/en/2025/09/07/omarchy-2-0-mise-for-organizing-dev-environments/)
+- [Omarchy 2.0 - LazyVim - LazyExtras](/en/2025/09/07/omarchy-2-0-lazyvim-lazyextras/)
+- [Omarchy 2.0 - ZSH Configs](/en/2025/09/07/omarchy-2-0-zsh-configs/)
+
 ## 2025 - August
 
 - [How to Contribute to the AkitaOnRails Blog Using Docker](/en/2025/08/29/how-to-contribute-to-the-akitaonrails-blog-using-docker/)

@@ -9,6 +9,7 @@ tags:
   - google oauth
   - segurança
 draft: false
+translationKey: cloudflare-zero-trust-home-server
 ---
 
 No [post anterior](https://akitaonrails.com/2025/09/09/acessando-meu-home-server-com-dominio-de-verdade/) explico como eu registrei um domínio de verdade na Cloudflare e criei túneis seguros encriptados que me permitem acessar até de fora de casa, sem precisar expor portas no roteador ou qualquer coisa assim.

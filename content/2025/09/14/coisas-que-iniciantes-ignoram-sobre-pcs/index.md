@@ -12,6 +12,7 @@ tags:
   - noctua
   - ryzen
 draft: false
+translationKey: things-beginners-ignore-about-pcs
 ---
 
 Faz tempo que eu queria escrever este artigo, mas sempre tive preguiça porque é o tipo de artigo onde algumas partes vão envelhecer logo. Isso porque vou mencionar alguns componentes de 2025, mas daqui 2 ou 5 anos já vai ter mudado, então leiam levando em consideração o ano que estiver lendo, caso esteja no futuro.

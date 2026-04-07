@@ -11,6 +11,7 @@ tags:
   - ssl
   - homeserver
 draft: false
+translationKey: home-server-real-domain
 ---
 
 Agora uma dica avançada que complementa meu artigo sobre meu [Home Server](https://akitaonrails.com/2024/04/03/meu-netflix-pessoal-com-docker-compose/). Em resumo, além do meu desktop PC, que agora roda Omarchy, eu tenho um mini-PC (um simples Intel NUC, não precisa ser muito potente), exclusivamente pra rodar containers Docker.

@@ -9,6 +9,7 @@ tags:
   - cadvisor
   - docker
 draft: false
+translationKey: grafana-home-server
 ---
 
 Este post é pra continuar complementando minha [série sobre meu Home Server](/tags/homeserver), de novo, pra servir de anotação pra mim mesmo no futuro. Como já expliquei, meu home server é um mini-PC Intel NUC que eu só acesso com SSH. Então eu queria uma forma de monitorar o uso dos recursos do sistema sem ter que manualmente logar via SSH e abrir BTOP ou NTOP.

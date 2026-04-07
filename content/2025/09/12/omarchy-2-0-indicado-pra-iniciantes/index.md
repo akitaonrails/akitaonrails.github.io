@@ -9,6 +9,7 @@ tags:
   - balena
   - arch
 draft: false
+translationKey: omarchy-for-beginners
 ---
 
 O video mais importante do meu [canal de YouTube](https://www.youtube.com/@Akitando) é o "Não Terceirize suas Decisões":

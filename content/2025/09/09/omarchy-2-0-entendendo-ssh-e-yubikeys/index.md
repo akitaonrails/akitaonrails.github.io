@@ -11,6 +11,7 @@ tags:
   - ssh-agent
   - segurança
 draft: false
+translationKey: omarchy-ssh-yubikeys
 ---
 
 Este post não tem nada a ver diretamente com Omarchy mas resolvi incluir na [mesma série](/tags/omarchy) porque é uma dica importante pra programadores.

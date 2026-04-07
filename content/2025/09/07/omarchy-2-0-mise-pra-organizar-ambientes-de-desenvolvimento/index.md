@@ -8,6 +8,7 @@ tags:
   - mise
   - docker
 draft: false
+translationKey: omarchy-mise-dev-environments
 ---
 
 Continuando meus posts sobre [Omarchy](https://www.akitaonrails.com/tags/omarchy) mais um post introdutório, mas agora sobre [Mise-en-place](https://mise.jdx.dev/getting-started.html) que já vem pré-instalado. No Omarchy, se digitar "Super+Alt+Espaço" vai abrir o menu principal. Escolha "Install" e depois "Development" e vai aparecer várias linguagens/frameworks que pode instalar, como Ruby on Rails ou Go.

@@ -10,6 +10,7 @@ tags:
   - starship
   - zsh
 draft: false
+translationKey: omarchy-zsh-configs
 ---
 
 Estou gostando bastante de usar [Omarchy](https://omarchy.org/) como meu desktop manager. Leia [meu post anterior](https://akitaonrails.com/2025/08/29/new-omarchy-2-0-install/) pra ver como eu instalei e fiz modificações pra servir o meu setup. Seguindo nessa linha, o Omarchy vem por padrão com shell Bash. Mas eu prefiro ZSH. Bash é perfeitamente usável, é só preferência pessoal mesmo. Tem gente que prefere Fish ou outros. Mas o Omarchy vem só com Bash por enquanto, então resolvi modificar o setup pra suportar meu ZSH.

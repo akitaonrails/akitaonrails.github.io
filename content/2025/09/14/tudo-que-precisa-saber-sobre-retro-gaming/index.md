@@ -12,6 +12,7 @@ tags:
   - nintendo
   - gameboy
 draft: false
+translationKey: everything-about-retro-gaming
 ---
 
 Tá, já que escrevi quase um e-book sobre [tudo que você precisa saber sobre componentes de PCs](/2025/14/coisas-que-iniciantes-ignoram-sobre-pcs/) resolvi que chegou a hora de outro artigo que estou faz anos segurando: **tudo que você precisa saber sobre retro-gaming e handhelds**. É outro artigo que vai envelhecer mal porque saem coisas novas o tempo todo. Tudo que está aqui vale pra 2025. Então vamos lá.

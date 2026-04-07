@@ -12,6 +12,7 @@ tags:
   - cloudflare
   - segurança
 draft: false
+translationKey: omarchy-vaultwarden-self-hosted
 ---
 
 Continuando a [série de Omarchy](/tags/omarchy) e fazendo cross-over com a série de [home server](/tags/homeserver), vamos falar sobre Gerenciador de Senhas e 2FA. Quem me acompanha que eu falo frequentemente sobre segurança digital pessoal, a importância de prestar atenção em links pra não cair em golpes, phishing, nem instalar malware sem querer.

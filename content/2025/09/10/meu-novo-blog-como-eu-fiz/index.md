@@ -11,6 +11,7 @@ tags:
   - grim
   - omarchy
 draft: false
+translationKey: my-new-blog-how-i-built
 ---
 
 Este artigo está alguns meses atrasado, mas resolvi documentar agora porque senão vou esquecer como fiz. Como breve introdução, já digo o maior erro que todo programador que quer tentar começar a escrever comete: perde MUITO tempo tentando criar o blog perfeito.

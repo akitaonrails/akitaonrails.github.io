@@ -8,6 +8,7 @@ tags:
   - lazyvim
   - lazyextras
 draft: false
+translationKey: omarchy-lazyvim-lazyextras
 ---
 
 Continuando meus posts de dicas sobre [Omarchy](https://akitaonrails.com/tags/omarchy/) resolvi postar sobre [LazyVim](https://www.lazyvim.org/) que já vem pré-instalado.

@@ -12,6 +12,7 @@ tags:
   - posting
   - caligula
 draft: false
+translationKey: omarchy-tuis
 ---
 
 Uma das coisas mais frustrantes pra um usuário de Linux é que existem muito poucos Apps gráficos bem feitos. Veja um Gimp ou LibreOffice. São feios, antiquados, muito parecidos com a primeira vez que usei eles mais de 20 anos atrás.

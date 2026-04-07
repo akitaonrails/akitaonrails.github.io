@@ -9,6 +9,7 @@ tags:
   - primeagen
   - taq
 draft: false
+translationKey: omarchy-lazyvim-basics
 ---
 
 Droga, eu falei que o post anterior seria o último da série de [Omarchy](/tags/omarchy), mas achei que a oportunidade é boa pra evangelizar um pouco de Vim também. Já deixei a recomendação pra seguir o canal do [@Taq](https://www.youtube.com/@EustaquioRangel), onde ele explica muito mais a fundo como o NeoVim funciona. Também existe o [tutorial "vim-be-good" do Primeagen](https://github.com/ThePrimeagen/vim-be-good). Esse segundo, em particular, é um tutorial interativo dentro do próprio NeoVim, pra praticar a navegação - que muitos podem achar difícil no começo.
