@@ -11,7 +11,7 @@ aliases:
 - "/2010/06/16/railsconf-2010-video-interview-robert-martin-english/"
 ---
 
- **Obs:** para a versão em Inglês, clique [aqui](/2010/06/16/railsconf-2010-video-interview-robert-martin-english)
+ **Obs:** para a versão em Inglês, clique [aqui](/2010/06/16/railsconf-2010-video-entrevista-robert-martin)
 
 Eu ainda nem terminei de compilar todos os vídeos e nem de escrever o artigo principal do evento, mas já estava ansioso para publicar este vídeo do Robert Martin que consegui gravar, com exclusividade, em Baltimore. É uma conversa de 16 min falando sobre linguagens, carreira, certificações e Agile.
 

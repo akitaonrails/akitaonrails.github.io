@@ -8,7 +8,7 @@ draft: false
 translationKey: chatting-avi-bryant-part-2
 ---
 
-If you didn’t read it, take a look at [Part 1](/2007/12/15/chatting-with-avi-bryant-part-1) where we get to know more about Avi Bryant and his amazing product [Dabble DB](http://www.dabbledb.com). In **Part 2** Avi goes a little bit more in elaborating his technology opinions and points of view. It’s a very insightful reading for every programmer.
+If you didn’t read it, take a look at [Part 1](/en/2007/12/15/conversando-com-avi-bryant-parte-1) where we get to know more about Avi Bryant and his amazing product [Dabble DB](http://www.dabbledb.com). In **Part 2** Avi goes a little bit more in elaborating his technology opinions and points of view. It’s a very insightful reading for every programmer.
 
 As I always say – and Avi is competent pointing out -, Ruby has its drawbacks – most of them being improved on Ruby 1.9, JRuby and Rubinius. Avi gives us good reasons why Smalltalk is yet another great platform to learn, bringing back decades of evolution and maturity. So, here goes, the unabridged version of the interview.
 

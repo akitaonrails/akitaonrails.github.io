@@ -14,7 +14,7 @@ aliases:
 
 **Traducción en [Español](http://www.marcelor.com/2008/01/conversando-con-adrian-holovaty-creador-del-proyecto-django-traduccion.html)**
 
-Como prometi depois da entrevista com [Avi Bryant](http://www.akitaonrails.com/2007/12/15/chatting-with-avi-bryant-part-1) , aqui vai outra grande conversa com [Adrian Holovaty](http://www.holovaty.com/), o conhecido criador do framework web [Django](http://www.djangoproject.com/) escrito em Python.
+Como prometi depois da entrevista com [Avi Bryant](http://www.akitaonrails.com/2007/12/15/conversando-com-avi-bryant-parte-1) , aqui vai outra grande conversa com [Adrian Holovaty](http://www.holovaty.com/), o conhecido criador do framework web [Django](http://www.djangoproject.com/) escrito em Python.
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2007/12/31/387373570_870fa6257c.jpg)
 
@@ -120,7 +120,7 @@ Derek não queria ter que fazer uma nova aplicação Web toda vez que recebesse 
 
 Isso volta para o que eu estava dizendo sobre abstrações de alto-nível. Databrowse é um tipo particular de abstração, e é realmente legal que ele incluiu algo assim para as pessoas usarem, se precisarem.
 
-**AkitaOnRails:** Parece muito legal, espero poder usar isso logo. Até certo ponto se parece um pouco com [Dabble Db](http://dabbledb.com) – apesar que é dentro da sua aplicação. Acho que você conhece [Avi Bryant](http://www.akitaonrails.com/2007/12/15/chatting-with-avi-bryant-part-1) ? Acabei de entrevistá-lo e foi uma conversa muito legal. Você já tentou Seaside? (apenas de curiosidade eu tenho uma foto de você e Avi olhando para o macbook dele sentados na grama, o que foi aquilo?)
+**AkitaOnRails:** Parece muito legal, espero poder usar isso logo. Até certo ponto se parece um pouco com [Dabble Db](http://dabbledb.com) – apesar que é dentro da sua aplicação. Acho que você conhece [Avi Bryant](http://www.akitaonrails.com/2007/12/15/conversando-com-avi-bryant-parte-1) ? Acabei de entrevistá-lo e foi uma conversa muito legal. Você já tentou Seaside? (apenas de curiosidade eu tenho uma foto de você e Avi olhando para o macbook dele sentados na grama, o que foi aquilo?)
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2007/12/19/627957460_48e4181526.jpg)
 

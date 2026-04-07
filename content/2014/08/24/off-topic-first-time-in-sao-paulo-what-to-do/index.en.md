@@ -14,7 +14,7 @@ TL;DR: This is the [Google Maps](https://mapsengine.google.com/map/edit?mid=zj-5
 
 [![All Tourism Points in São Paulo](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/468/Screen_Shot_2014-08-24_at_18.28.09.png)](https://mapsengine.google.com/map/edit?mid=zj-5LpXYiU9E.kMqnmBcUVCvY)
 
-If you read my [mini City Guide](http://www.akitaonrails.com/2013/08/15/rubyconf-brasil-2013-your-first-time-in-sao-paulo-brazil) from last year you're probably already acquainted with the geography of the place. It's always important to be aware of your surroundings when you're in a foreign land.
+If you read my [mini City Guide](http://www.akitaonrails.com/en/2013/08/15/rubyconf-brasil-2013-sua-primeira-vez-em-sao-paulo-brasil) from last year you're probably already acquainted with the geography of the place. It's always important to be aware of your surroundings when you're in a foreign land.
 
 Now you're here, you don't have a lot of time to randomly explore. And that would not be efficient anyway because São Paulo is humongous in size. I've lived here all my life, almost 4 decades, and I haven't explored everything yet.
 

@@ -10,7 +10,7 @@ aliases:
 - "/2007/12/15/chatting-with-avi-bryant-part-1/"
 ---
 
-**Read the Interview in English [here](http://www.akitaonrails.com/2007/12/15/chatting-with-avi-bryant-part-1)**
+**Read the Interview in English [here](http://www.akitaonrails.com/2007/12/15/conversando-com-avi-bryant-parte-1)**
 
 Alguém uma vez desafiou todos os outros frameworks implicando que ninguém conseguiria chegar ao nível de Rails … exceto por Avi. Seaside é tão diferente do status quo que o próprio Avi o descreve como um framework herético. E ele está certo. Ele voltou na história e pegou o que é considerado “o” pai – e provavelmente “a” melhor implementação – das linguagens orientadas a objeto: Smalltalk.
 

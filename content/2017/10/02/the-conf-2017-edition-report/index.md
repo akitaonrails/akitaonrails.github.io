@@ -17,7 +17,7 @@ TL;DR: O evento foi **muito** bem-sucedido!
 
 Antes de tudo, obrigado a todos que não apenas acreditaram no conceito mas participaram ativamente dessa jornada.
 
-Publiquei sobre o conceito em 20 de outubro de 2016, no post ["THE CONF Initiative"](http://www.akitaonrails.com/2016/10/20/the-conf-initiative). Quem acompanha o Twitter, Facebook, LinkedIn, grupos do Facebook (Ruby on Rails, Go, Xamarin, Segurança, etc) viu os VÁRIOS posts que fiz nos últimos meses em múltiplos canais (desculpem o mini-spam).
+Publiquei sobre o conceito em 20 de outubro de 2016, no post ["THE CONF Initiative"](http://www.akitaonrails.com/2016/10/20/iniciativa-the-conf). Quem acompanha o Twitter, Facebook, LinkedIn, grupos do Facebook (Ruby on Rails, Go, Xamarin, Segurança, etc) viu os VÁRIOS posts que fiz nos últimos meses em múltiplos canais (desculpem o mini-spam).
 
 **No mesmo dia** recebi esse e-mail da InfoQ (que eu não conhecia antes):
 

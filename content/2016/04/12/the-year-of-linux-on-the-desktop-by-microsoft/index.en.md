@@ -11,7 +11,7 @@ tags:
 draft: false
 ---
 
-So, it's finally here. I wrote about the announcement at the Build event a few days ago [here](http://www.akitaonrails.com/2016/03/31/war-is-over-or-is-it-a-new-dawn-for-microsoft). Now Microsoft is teasing us a bit more by [releasing the first Insider Build Preview](http://thehackernews.com/2016/04/how-to-run-ubuntu-on-windows-10.html). It is labeled "Build 14316.rs1_release.160402-2217" to be exact, be sure to have this one.
+So, it's finally here. I wrote about the announcement at the Build event a few days ago [here](http://www.akitaonrails.com/en/2016/03/31/off-topic-uma-nova-era-para-a-microsoft). Now Microsoft is teasing us a bit more by [releasing the first Insider Build Preview](http://thehackernews.com/2016/04/how-to-run-ubuntu-on-windows-10.html). It is labeled "Build 14316.rs1_release.160402-2217" to be exact, be sure to have this one.
 
 To get it, you must have the following requirements:
 

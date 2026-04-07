@@ -10,9 +10,9 @@ aliases:
 - "/2007/12/22/chatting-with-avi-bryant-part-2/"
 ---
 
-**For english-speaking readers, click [here](http://www.akitaonrails.com/2007/12/22/chatting-with-avi-bryant-part-2) for the original version**
+**For english-speaking readers, click [here](http://www.akitaonrails.com/2007/12/22/conversando-com-avi-bryant-parte-2) for the original version**
 
-Se ainda não leu, dê uma olhada na [Parte 1](/2007/12/15/chatting-with-avi-bryant-part-1) onde conhecemos mais sobre Avi Bryant e seu incrível produto [Dabble DB](http://www.dabbledb.com). Nesta **Parte 2** Avi elabora um pouco mais suas opiniões e pontos de vista acerca de tecnologia. Uma leitura muito inspiradora para todo programador.
+Se ainda não leu, dê uma olhada na [Parte 1](/2007/12/15/conversando-com-avi-bryant-parte-1) onde conhecemos mais sobre Avi Bryant e seu incrível produto [Dabble DB](http://www.dabbledb.com). Nesta **Parte 2** Avi elabora um pouco mais suas opiniões e pontos de vista acerca de tecnologia. Uma leitura muito inspiradora para todo programador.
 
 Como sempre diso – e Avi é competente em apontar -, Ruby tem seus problemas – muitos sendo melhorados no Ruby 1.9, JRuby e Rubinius. Avi nos dá boas razões de porque Smalltalk é mais uma grande plataforma para se aprender, trazendo décadas de evolução e maturidade. Então, aqui vai, a versão completa da entrevista.
 

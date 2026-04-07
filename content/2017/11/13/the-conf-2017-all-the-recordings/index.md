@@ -19,7 +19,7 @@ Estamos quase encerrando a edição de 2017.
 
 Como já havíamos dito, das 32 palestras, vou selecionar 5 para publicar no InfoQ americano. Você pode ajudar no processo compartilhando a playlist e curtindo as suas favoritas. Vou levar isso em consideração também.
 
-Se você perdeu a edição deste ano, não deixe de ler sobre [a Iniciativa](http://www.akitaonrails.com/2016/10/20/the-conf-initiative) que lancei em outubro de 2016. E também o [relatório da edição 2017](http://www.akitaonrails.com/2017/10/02/the-conf-2017-relatorio-da-edicao).
+Se você perdeu a edição deste ano, não deixe de ler sobre [a Iniciativa](http://www.akitaonrails.com/2016/10/20/iniciativa-the-conf) que lancei em outubro de 2016. E também o [relatório da edição 2017](http://www.akitaonrails.com/2017/10/02/the-conf-2017-relatorio-da-edicao).
 
 A gente realmente conseguiu: 31 palestrantes brasileiros, vindos de várias partes do mundo (sim, tivemos brasileiros morando no Canadá, na Holanda, na Alemanha que também vieram aqui), e todos entregaram ótimas palestras em INGLÊS. Finalmente, uma Conferência de Tecnologia no Brasil que qualquer pessoa no planeta pode assistir, curtir e aprender.
 

@@ -10,7 +10,7 @@ translationKey: chatting-adrian-holovaty
 
 **TraducciÃ³n en [EspaÃ±ol](http://www.marcelor.com/2008/01/conversando-con-adrian-holovaty-creador-del-proyecto-django-traduccion.html)**
 
-As I promised after the [Avi Bryant](http://www.akitaonrails.com/2007/12/15/chatting-with-avi-bryant-part-1) interview, here’s a great conversation with [Adrian Holovaty](http://www.holovaty.com/), well known creator of the [Django](http://www.djangoproject.com/) web framework written in Python.
+As I promised after the [Avi Bryant](http://www.akitaonrails.com/en/2007/12/15/conversando-com-avi-bryant-parte-1) interview, here’s a great conversation with [Adrian Holovaty](http://www.holovaty.com/), well known creator of the [Django](http://www.djangoproject.com/) web framework written in Python.
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2007/12/31/387373570_870fa6257c.jpg)
 
@@ -119,7 +119,7 @@ Derek didn’t want to have to hand-roll a Web app each time he got a new datase
 
 This comes back to what I was saying earlier about high-level abstractions. Databrowse is a particular type of abstraction, and it’s really cool that we include something like that for people to use, if they need it.
 
-**AkitaOnRails:** Sounds great, I am looking forward to use it. In a degree it feels like [Dabble Db](http://dabbledb.com) – albeit inside your own app. I think you already met [Avi Bryant](http://www.akitaonrails.com/2007/12/15/chatting-with-avi-bryant-part-1) ? I just interviewed him and it was a very insightful conversation. Have you ever tried Seaside? (out of curiosity I have a photo of you and Avi looking at his macbook sitting down in the grass, what was that?)
+**AkitaOnRails:** Sounds great, I am looking forward to use it. In a degree it feels like [Dabble Db](http://dabbledb.com) – albeit inside your own app. I think you already met [Avi Bryant](http://www.akitaonrails.com/en/2007/12/15/conversando-com-avi-bryant-parte-1) ? I just interviewed him and it was a very insightful conversation. Have you ever tried Seaside? (out of curiosity I have a photo of you and Avi looking at his macbook sitting down in the grass, what was that?)
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2007/12/19/627957460_48e4181526.jpg)
 

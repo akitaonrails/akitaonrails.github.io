@@ -225,6 +225,10 @@ Want to see the Akitando Channel transcripts (Portuguese only)? [Click here](/ak
 
 - [RubyConf Brazil 2011 is coming!](/en/2011/09/19/rubyconf-brazil-2011-is-coming/)
 
+## 2011 - August
+
+- [\[Journey to Japan #2\] The Final RubyKaigi](/en/2011/08/05/journey-to-japan-2-the-final-rubykaigi/)
+
 ## 2011 - July
 
 - [Upcoming: Journey to Japan](/en/2011/07/23/upcoming-journey-to-japan/)
@@ -270,12 +274,17 @@ Want to see the Akitando Channel transcripts (Portuguese only)? [Click here](/ak
 
 - [Chatting with Joshua Peek](/en/2008/09/27/chatting-with-joshua-peek/)
 
+## 2008 - June
+
+- [Chatting with Blaine Cook (Twitter)](/en/2008/06/17/chatting-with-blaine-cook-twitter/)
+
 ## 2008 - February
 
 - [Chatting with Evan Phoenix](/en/2008/02/11/chatting-with-evan-phoenix/)
 
 ## 2008 - January
 
+- [Chatting with Hal Fulton](/en/2008/01/09/chatting-with-hal-fulton/)
 - [Chatting with Peter Cooper](/en/2008/01/09/chatting-with-peter-cooper/)
 - [Chatting with Adrian Holovaty](/en/2008/01/01/chatting-with-adrian-holovaty/)
 

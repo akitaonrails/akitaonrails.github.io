@@ -10,7 +10,7 @@ translationKey: chatting-evan-phoenix
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2008/2/11/524655980_8e68a871a0.jpg)
 
-It was [Avi](/2007/12/15/chatting-with-avi-bryant-part-1) [Bryant](/2007/12/22/chatting-with-avi-bryant-part-2) that evangelized the neat idea of “turtles all the way”, meaning that for a language to be called ‘complete’ it should be able to extend itself. So, the ideal world would have Ruby being extended in Ruby, not in C. JRuby goes as far as it can building up a sandbox for Ruby code to run under the JVM. As cool as it is, we still rely on Java to fully extend it.
+It was [Avi](/en/2007/12/15/conversando-com-avi-bryant-parte-1) [Bryant](/en/2007/12/22/conversando-com-avi-bryant-parte-2) that evangelized the neat idea of “turtles all the way”, meaning that for a language to be called ‘complete’ it should be able to extend itself. So, the ideal world would have Ruby being extended in Ruby, not in C. JRuby goes as far as it can building up a sandbox for Ruby code to run under the JVM. As cool as it is, we still rely on Java to fully extend it.
 
 Enter [Rubinius](http://rubini.us/) and its author **Evan Phoenix** , currently a full-time employee for [EngineYard](http://www.engineyard.com/). Rubinius borrows heavily from Smalltalk’s concepts of a virtual machine and does as little as possible in C just for the bootstrap and all the rest is developed over pure Ruby.
 

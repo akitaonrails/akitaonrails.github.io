@@ -11,7 +11,7 @@ aliases:
 - "/2016/10/20/the-conf-initiative/"
 ---
 
-Obs: if you don't understand Brazilian Portuguese, please read [this English version](http://www.akitaonrails.com/2016/10/20/the-conf-initiative).
+Obs: if you don't understand Brazilian Portuguese, please read [this English version](http://www.akitaonrails.com/2016/10/20/iniciativa-the-conf).
 
 *Atualização 04/04/2017:* Praticamente toda infraestrutura do evento e fornecedores já estão fechados! O Evento está confirmadíssimo! E o [Call for Papers](http://cfp.theconf.club) está no ar até Maio, mande sua proposta de palestra o quanto antes!
 

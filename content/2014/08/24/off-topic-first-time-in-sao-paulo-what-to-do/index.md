@@ -16,7 +16,7 @@ TL;DR: Este é o [Google Maps](https://mapsengine.google.com/map/edit?mid=zj-5Lp
 
 [![Todos os Pontos Turísticos em São Paulo](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/468/Screen_Shot_2014-08-24_at_18.28.09.png)](https://mapsengine.google.com/map/edit?mid=zj-5LpXYiU9E.kMqnmBcUVCvY)
 
-Se você leu meu [mini City Guide](http://www.akitaonrails.com/2013/08/15/rubyconf-brasil-2013-your-first-time-in-sao-paulo-brazil) do ano passado, provavelmente já está familiarizado com a geografia daqui. É sempre importante estar atento ao que te cerca quando você está em terra estrangeira.
+Se você leu meu [mini City Guide](http://www.akitaonrails.com/2013/08/15/rubyconf-brasil-2013-sua-primeira-vez-em-sao-paulo-brasil) do ano passado, provavelmente já está familiarizado com a geografia daqui. É sempre importante estar atento ao que te cerca quando você está em terra estrangeira.
 
 Agora que você chegou, não tem muito tempo pra sair explorando aleatoriamente. E isso nem seria eficiente, porque São Paulo é gigantesca. Eu moro aqui a vida toda, quase 4 décadas, e ainda não explorei tudo.
 

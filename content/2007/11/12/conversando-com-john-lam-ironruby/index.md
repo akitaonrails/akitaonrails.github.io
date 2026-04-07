@@ -10,7 +10,7 @@ aliases:
 - "/2007/11/12/chatting-with-john-lam-ironruby/"
 ---
 
- **English-version:** [here](/2007/11/12/chatting-with-john-lam-ironruby)
+ **English-version:** [here](/2007/11/12/conversando-com-john-lam-ironruby)
 
 [![](http://s3.amazonaws.com/akitaonrails/assets/2007/11/12/n685772348_7884.jpg)](http://www.iunknown.com/)
 

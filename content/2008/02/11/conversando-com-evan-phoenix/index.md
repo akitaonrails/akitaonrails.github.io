@@ -14,7 +14,7 @@ aliases:
 
 **English Readers:** click [here](/2008/2/11/chatting-with-evan-phoenix)
 
-Foi [Avi](/2007/12/15/chatting-with-avi-bryant-part-1) [Bryant](/2007/12/22/chatting-with-avi-bryant-part-2) que evangelizou a idéia de “tartarugas o caminho todo”, querendo dizer que para uma linguagem se considerar ‘completa’ ela deveria ser capaz de estender a si própria. Então, o mundo ideal teria Ruby sendo estendido por Ruby, não em C. JRuby vai tão longe quanto pode construindo um sandbox para código Ruby rodar sobre a JVM. Por mais legal que seja, ainda precisamos de Java para podermos estendê-la.
+Foi [Avi](/2007/12/15/conversando-com-avi-bryant-parte-1) [Bryant](/2007/12/22/conversando-com-avi-bryant-parte-2) que evangelizou a idéia de “tartarugas o caminho todo”, querendo dizer que para uma linguagem se considerar ‘completa’ ela deveria ser capaz de estender a si própria. Então, o mundo ideal teria Ruby sendo estendido por Ruby, não em C. JRuby vai tão longe quanto pode construindo um sandbox para código Ruby rodar sobre a JVM. Por mais legal que seja, ainda precisamos de Java para podermos estendê-la.
 
 Entra [Rubinius](http://rubini.us/) e seu autor **Evan Phoenix** , atualmente contratado em tempo integral pela [EngineYard](http://www.engineyard.com/). Rubinius pega pesadamente emprestado dos conceitos de virtual machine de Smalltalk e faz o menos possível em C somente para conseguir o boot inicial e todo o resto é desenvolvido em Ruby puro.
 
