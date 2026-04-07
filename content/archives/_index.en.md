@@ -319,7 +319,7 @@ Want to see the Akitando Channel transcripts (Portuguese only)? [Click here](/ak
 ## 2010 - January
 
 - [\[Off-Topic\] Companies, People, Success](/en/2010/01/30/off-topic-empresas-pessoas-sucesso/)
-- [\[Off-Topic\] Who's the Dumb One?](/en/2010/01/08/off-topic-quem-e-o-burro/)
+- [\[Off-Topic\] Who's the Idiot?](/en/2010/01/08/off-topic-quem-e-o-burro/)
 - [\[Off Topic\] Dunbar and Cross Functional Teams](/en/2010/01/02/off-topic-dunbar-e-cross-functional-teams/)
 
 ## 2009 - December
