@@ -17,7 +17,6 @@ These posts hit API 400 errors or were not reached due to session limits during 
 - content/2011/05/04/off-topic-opinioes-verdades-democracia-e-etica/index.md
 - content/2011/02/20/off-topic-desmistificando-a-microsoft-do-mal/index.md (flagged after API 400)
 - content/2012/12/30/off-topic-um-desabafo-iii-refletindo-sobre-2007/index.md
-- content/2013/01/02/off-topic-o-mundo-hoje-e-muito-bom-feliz-2013/index.md
 - content/2013/04/05/traducao-estimativa-o-melhor-que-podemos-fazer/index.md
 - content/2013/05/14/off-topic-pessoas-animais-racionais-o-id-e-o-ego-no-marketing/index.md
 - content/2013/05/26/off-topic-visao-do-passado-sobre-a-internet/index.md
