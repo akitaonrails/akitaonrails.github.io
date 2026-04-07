@@ -1,203 +1,202 @@
 ---
-title: Chatting with Chris Wanstrath (Err the Blog/Github)
+title: Conversando com Chris Wanstrath (Err the Blog/Github)
 date: '2008-04-21T19:12:00-03:00'
-slug: chatting-with-chris-wanstrath-err-the-blog-github
+slug: conversando-com-chris-wanstrath-err-the-blog-github
+translationKey: chatting-chris-wanstrath
 tags:
 - interview
-- english
+- traduzido
+aliases:
+- /2008/04/21/chatting-with-chris-wanstrath-err-the-blog-github/
 draft: false
 ---
 
-Chris is a very accessible and easy-going guy, and I just got him out of AIM and started the interview right away. For those of you who never heard of **‘Chris Wanstrath’** , he is also known for Err the Blog and recently as one of the guys behind the **Github** phenomenon.
+Chris é um cara muito acessível e tranquilo, e bastou pegá-lo pelo AIM para a entrevista começar de cara. Para quem nunca ouviu falar de **Chris Wanstrath**, ele é também conhecido pelo Err the Blog e, mais recentemente, como um dos caras por trás do fenômeno **Github**.
 
-He answered everything in color detail and we speak a lot about his open source projects, performance, scalability and, of course, lots of Git and Github stuff. Hopefully it will make people even more excited with how the Ruby/Rails community is moving things forward all the time.
+Ele respondeu tudo com riqueza de detalhes e conversamos bastante sobre seus projetos open source, performance, escalabilidade e, claro, muito sobre Git e Github. Espero que isso deixe as pessoas ainda mais animadas com o ritmo em que a comunidade Ruby/Rails está movendo as coisas pra frente.
 
-**aos leitores brasileiros:** assim que tiver tempo irei traduzir esta entrevista.
+**AkitaOnRails:** Ok, de onde você é?
 
+**Chris Wanstrath:** Atualmente moro em San Francisco, mas cresci em Cincinnati, Ohio. Me mudei para San Francisco em 2005 para trabalhar na C|NET, onde fiz PHP por um tempo em sites como [gamespot.com](http://gamespot.com), [mp3.com](http://mp3.com) e [tv.com](http://tv.com).
 
- **AkitaOnRails:** Ok, so, where are you from?
+Em 2006 me mudei para o site [chowhound.com](http://chowhound.com) dentro da C|NET para trabalhar com Rails, algo que eu vinha fazendo nas horas vagas há um tempo. Enquanto estava lá, **P.J. Hyett** e eu trabalhamos no chowhound.com e depois construímos o [chow.com](http://chow.com), que lançamos mais tarde naquele ano. Então em abril de 2007 os dois saímos da C|NET para formar nossa empresa de consultoria, Err Free.
 
-**Chris Wanstrath:** Right now I live in San Francisco but I grew up in Cincinnati, Ohio. I moved to San Francisco in 2005 to work for C|NET where I did PHP for a while on sites like [gamespot.com](http://gamespot.com), [mp3.com](http://mp3.com), and [tv.com](http://tv.com)
+Em dezembro de 2007 lançamos o [FamSpam](http://famspam.com/), um site para manter contato com sua família. É basicamente uma versão simplificada do Google Groups com ênfase em participar de uma thread pelo menos uma vez por semana e encontrar facilmente fotos ou outros arquivos enviados.
 
-In 2006 I moved over to the [chowhound.com](http://chowhound.com) site within C|NET to work on Rails, which is something I had been doing on the side for a while. While I was there **P.J. Hyett** and myself worked on chowhound.com then built [chow.com](http://chow.com), which we launched later that year. Then in April of 2007 we both left C|NET to form our consulting company, Err Free.
+Enquanto P.J. e eu trabalhávamos no FamSpam, **Tom Preston-Werner** e eu trabalhávamos no GitHub nas horas vagas. Começamos em outubro trabalhando noites e fins de semana. Queríamos basicamente uma maneira fácil, bonita e cheia de recursos de jogar nossos repositórios Git no ar e compartilhá-los com as pessoas. Conforme fomos nos aprofundando, percebemos como coisas como o dashboard poderiam mudar a forma como lidamos com contribuições open source. Depois disso, todas as funcionalidades sociais começaram a se encaixar. O beta privado do Github foi lançado em janeiro e em abril vimos o lançamento público.
 
-In December of 2007 we launched [FamSpam](http://famspam.com/), which is a site for keeping in touch with your family. It’s basically a simplified version of Google Groups with emphasis on participating in a thread at least once a week and easily finding photos or other file uploads.
+**AkitaOnRails:** Uau, cara, você é muito ocupado mesmo. Quero entrar em detalhes em cada tópico que você mencionou, mas primeiro: eu soube que você trabalhava na C|Net por causa das suas palestras sobre memcached. Tenho 2 perguntas: você era programador PHP, o que te fez mudar para Ruby on Rails? E aí, trabalhar para uma rede de alto perfil como a C|Net te expôs a sites muito exigentes. Como você descobriu como aproveitar o memcached com Rails e depois o plugin cache_fu?
 
-While P.J. and I were working on FamSpam, **Tom Preston-Werner** and I were working on GitHub on the side. We started in October working nights and weekends on it. We basically wanted an easy, pretty, and feature-rich way to throw our Git repos up and share them with people. Then as we got more into it, we realized how things like the dashboard could change the way we deal with open source contributions. After that, all the social features began to fall into place. Github private beta launched in january, and in april we saw the public launch
+**Chris Wanstrath:** Comecei a fazer Rails no início de 2005 e peguei meu primeiro emprego com PHP em fevereiro de 2005 (antes disso eu fazia ASP e Perl, sobre os quais prefiro não falar). Então, honestamente, nunca me considerei um "programador PHP" mais do que um programador Rails. Eu realmente gostava de sites e sabia que podia me pagar fazendo PHP, então foi o que fiz. Enquanto isso, estava constantemente fazendo Ruby nas horas vagas.
 
-**AkitaOnRails:** Wow, Cool, you are a very busy guy indeed, I want to go on in details within each topic you mentioned but first I knew you worked for C|Net because of your memcached keynotes. I have 2 questions: you were a PHP programmer, what made you switch to Ruby on Rails? And then, working for a high profile network like C|Net exposed you to very demanding public websites. How did you figured out about leveraging memcached with Rails and then your cache_fu plugin?
+Quando a C|Net começou a fazer Rails, soube que seria uma combinação perfeita para mim. Eu gostava muito de PHP e adorava Gamespot, mas era simplesmente absurdo passar a noite inteira brincando com Ruby enquanto trabalhava profissionalmente com PHP.
 
-**Chris Wanstrath:** I started doing Rails at the start of 2005 and got my first PHP job in February of 2005. (before that I was doing asp and Perl, which I don’t like to talk about). So really, I never considered myself a “PHP programmer” over a Rails programmer. I really liked websites and I knew I could get paid doing PHP, so that’s what I did. In the meantime, I was constantly doing Ruby on the side.
+Na verdade, uma das coisas que me contrataram no Gamespot foi meu parser de yaml em PHP puro chamado [SPYC](http://spyc.sourceforge.net/) (simple PHP yaml class). Foi inspirado (obviamente) no parser syck yaml do _why. Eu queria uma forma fácil, sem extensões, de lidar com YAML em PHP porque estava muito mimado pelo Ruby.
 
-When C|Net started doing Rails, I knew it would be a perfect fit for me. I really liked PHP and loved Gamespot, but it was just silly for me to spend all night playing with Ruby while doing PHP professionally.
+Acho que hoje os frameworks CakePHP e Symfony o usam e fazem suas configurações em yaml. Mas mesmo escrevendo PHP eu queria estar escrevendo Ruby. O motivo principal pelo qual aprendi Ruby foi que eu conhecia PHP e Perl, mas queria algo que pudesse usar tanto para escrever sites quanto scripts de linha de comando. Perl era ótimo para scripts e PHP era ótimo para sites, mas eu estava simplesmente cansado de usar os dois.
 
-In fact, one of the things that got me hired at Gamespot was my pure PHP yaml parser called [SPYC](http://spyc.sourceforge.net/) (simple PHP yaml class). It was inspired (obviously) by _why’s syck yaml parser. I wanted an easy, extension-free way to deal with YAML in PHP because I was so spoiled by Ruby.
+Então enquanto estava aprendendo Python, o Rails apareceu.
 
-I think today the CakePHP and Symfony frameworks use it, and do their config stuff in yaml. But even when writing PHP I wanted to be writing Ruby. The main reason I picked up ruby in the first place is because I knew PHP, and I knew Perl, but I wanted something I could use to write both websites and command line scripts. Perl was great for scripts, and PHP was great for sites, but I was just tired of using them both
+Quanto ao [cache_fu](http://errtheblog.com/posts/57-kickin-ass-w-cachefu), eu tinha muito interesse nos aspectos de "escalabilidade" de manter um site enquanto trabalhava no Gamespot.
 
-So while I was learning Python, Rails popped up.
+Embora bom design OOP e afins possam ser aprendidos por qualquer um que escreva código suficiente, não dá para aprender sobre escalabilidade a não ser que você esteja trabalhando em um site grande. Há truques demais e partes móveis demais, e é muito difícil simular a carga em um ambiente controlado.
 
-As far as [cache_fu](http://errtheblog.com/posts/57-kickin-ass-w-cachefu) goes, I was very interested in some of the “scaling” aspects of running a website while working at Gamespot.
+Então, enquanto estava no Gamespot, como disse, tentei aprender o máximo possível sobre coisas como replicação MySQL, clustering de bancos de dados, sharding de bancos de dados e memcached com base em como os caras espertos da C|Net configuraram tudo ao longo dos anos. Eles tinham muitas máquinas servindo muito tráfego, então era perfeito.
 
-While good OOP design and stuff like that can be learned by anyone writing enough code, you can’t really learn about scaling unless you’re working on a big website. There are just too many tricks and moving parts, and it’s too hard to simulate the load in a controlled environment.
+No Chowhound, estávamos reescrevendo um antigo site HTML estático em Rails e preocupados com a transição de arquivos planos para chamadas de banco de dados dinâmicas e geração de páginas. Tinha um tráfego considerável de um grupo de fãs fanáticos, e sabíamos que o novo visual "web 2.0" do site não iria agradar os usuários mais antigos, então pelo menos queríamos que o site fosse performático para dar a eles um motivo a menos para reclamar. Então basicamente pegamos muito do que eu aprendi no Gamespot e as informações disponíveis livremente na internet em listas de e-mail e discussões, e tentamos fazer uma forma mais amigável ao Rails de cache de objetos com memcached.
 
-So while at Gamespot, like I said, I tried to learn as much as possible about things like MySQL replication, clustering databases, sharding databases, and memcached based on how the smart guys at C|Net had set it all up over the years. They had a lot of machines serving a lot of traffic so it was perfect
+Ruby é tão bom em eliminar repetição e criar APIs amigáveis. Por isso o cache_fu faz cache de fragmentos e cache de objetos, porque em sites maiores você acaba usando ambos para propósitos diferentes, que foi basicamente como era no Gamespot.
 
-At Chowhound, we were re-writing an old static html site in Rails and were worried about the transition from flat files to dynamic database calls and page generation. It had a fair amount of traffic from a group of rabid fans, and we knew the new “web 2.0” look of the site would not sit well with the old school users, so we at least wanted the site to be performant in order to give them one less thing to complain about. So we basically took a lot of what I had learned at Gamespot, and what information was freely available on the internet in mailing lists and discussions, and tried to do a more Rails friendly way of object caching with memcached.
+**AkitaOnRails:** Interessante. E não é muito comum eu encontrar pessoas que lidaram com sites realmente grandes. Você pode nos dar uma ideia de que tipo de carga seus apps Rails tiveram que suportar? Alguns especialistas que conheço reclamam da distribuição vanilla do Rails e recomendam muitos ajustes como abandonar completamente o ActiveRecord e vários outros hacks. Você precisou hackear muito o Rails para atingir a escalabilidade que precisava, ou acha que a maior parte é boa o suficiente para evitar muito tweaking?
 
-Ruby is just so good at cleaning up repetition and creating friendly apis. So cache_fu does fragment caching and object caching, because in bigger sites you end up using both for different purposes which is how it was at Gamespot too, basically.
+**Chris Wanstrath:** Não consideraria o Chowhound um grande site Rails mais. Agora que temos scribd, twitter, friends for sale e Yellowpages, o Chowhound não entra mais na lista.
 
-**AkitaOnRails:** Nice. And it is not very common for me to find people that have dealt with really big websites. Can you give us a glimpse of what kind of load your Rails apps did have to handle? Some pundits I know complain about the vanilla Rails distribution and recommend lots of tweaks like dumping ActiveRecord altogether and several other hacks. Do you have to hack Rails a lot in order to achieve the scalability you need or do you think most of it is good enough so you can avoid too much tweaking?
+Acabamos fazendo muita otimização prematura naquele site e pouca otimização do mundo real. Aprendi muitas lições lá que apliquei em outros sites pelo caminho. No entanto, recentemente tive a chance de trabalhar com os caras do friends for sale no app deles para Facebook, que recebe milhões de visualizações de página por dia e lida com uma quantidade insana de registros no banco.
 
-**Chris Wanstrath:** I wouldn’t really consider Chowhound to be a big Rails site anymore. Now that you’ve got scribd and twitter and friends for sale and Yellowpages, Chowhound doesn’t really make the list.
+Pelo que sei, o único hack no AR que fizemos foi aplicar o patch de atualizações parciais do Pratik Naik. Isso porque, com tantas linhas e índices tão grandes, você quer evitar modificar índices quando não precisa, então salvar apenas as colunas/atributos alterados pode ter um ganho de performance bem grande. Felizmente, as atualizações parciais agora estão no Rails Core.
 
-We ended up doing a lot of premature optimization on that site, and not enough real world optimization. I learned a lot of lessons there that I’ve applied to other sites along the way. However, I recently had the chance to work with the friends for sale guys on their Facebook app which gets millions of page views a day and handles an insane amount of db records.
+Na minha experiência, você passa muito mais tempo tentando escalar o SQL antes mesmo de precisar endereçar o AR. E quando chega na parte do AR, geralmente é o código da sua aplicação. Buscar e salvar registros demais em callbacks de before/after_save, gravações de linhas completas como eu acabei de descrever, e geralmente não ser um bom cidadão SQL. Só abandonaria o AR completamente se sentisse que não tinha controle sobre o SQL gerado por ele. O que, como qualquer um sabe, não é o caso — você tem muito controle sobre ele.
 
-To my knowledge, the only AR hack we did was apply Pratik Naik’s partial updates patch. This was because, with so many rows and such large indexes, you want to avoid modifying indexes when you don’t need to, so saving only the changed columns/attributes can have a real big performance gain. Luckily, partial updates are now in Rails Core.
+Há momentos, no entanto, em que o AR é exagero e você realmente precisa de velocidade. No Github, precisamos autenticar você toda vez que tenta fazer pull ou push de um repositório via ssh. Carregar um ambiente Rails inteiro, ou mesmo o activerecord, era notavelmente lento, então mudamos para usar sequel em um script ruby simples. Como não precisamos do enorme conjunto de funcionalidades do AR e das boas capacidades de OOP para uma busca de linha única tão simples, fez muito sentido para nós.
 
-In my experience, you spend a lot more time trying to scale SQL before you even need to address AR. And once you get to the AR part, it’s usually your application code. Fetching and saving too many records in before/after_save callbacks, full row writes like I was just describing, and generally not being a good SQL citizen. I would only ditch AR completely if I felt like I had no control over the SQL it generated. Which, as anyone knows, is not the case – you have a lot of control over it.
-
-There are times, however, when AR is overkill and you really do need speed. On Github, we need to authenticate you every time you try and pull or push a repository over ssh. Loading an entire Rails environment, or even activerecord, was noticeably slow, so we switched to using sequel in a simple ruby script. Because we don’t need AR’s massive featureset and nice OOP capabilities for such a simple single row find, this made a lot of sense for us.
-
-**AkitaOnRails:** I agree with that, that’s what I experienced too with regards to AR. So, and you’re also the author of several other famous Rails plugins like will_paginate, Ambition, the original Sexy Migrations. Can you comment briefly about each. Am I forgetting any other plugins? Some of what you did became the ‘de facto’ standards for Rails development, some people here use these plugins without really knowing you made them all.
+**AkitaOnRails:** Concordo com isso, foi o que experimentei também em relação ao AR. Então, você é também autor de vários outros plugins Rails famosos como will_paginate, Ambition, o original Sexy Migrations. Pode comentar brevemente sobre cada um? Estou esquecendo algum outro plugin? Parte do que você fez se tornou o padrão "de facto" para desenvolvimento Rails, algumas pessoas aqui usam esses plugins sem realmente saber que você fez todos eles.
 
  ![](http://s3.amazonaws.com/akitaonrails/assets/2008/4/21/113964679_23c106ba1b.jpg)   
-_P.J Hyett at SXSW’06_
+_P.J Hyett na SXSW'06_
 
-**Chris Wanstrath:** [Err the blog](http://errtheblog.com) is actually two people, P.J. Hyett and myself. I did not write [will_paginate](http://errtheblog.com/posts/56-im-paginating-again) – P.J. wrote the original version then Mislav Marohnić re-wrote it. Mislav is now the maintainer. But I still get all the credit, which is fine by me.
+**Chris Wanstrath:** [Err the blog](http://errtheblog.com) são na verdade duas pessoas, P.J. Hyett e eu. Eu não escrevi o [will_paginate](http://errtheblog.com/posts/56-im-paginating-again) — P.J. escreveu a versão original e depois Mislav Marohnić a reescreveu. Mislav é agora o mantenedor. Mas eu ainda fico com todo o crédito, o que me está bem.
 
-As far as the other plugins go, there’s mofo, ambition, sexy migrations, cache_fu, acts_as_textiled, fixture_scenarios_builder, and gibberish.
+Quanto aos outros plugins, há mofo, ambition, sexy migrations, cache_fu, acts_as_textiled, fixture_scenarios_builder e gibberish.
 
-[Mofo](http://errtheblog.com/posts/35-me-and-uformats) is a microformat parser based on Hpricot. It’s up on Github and unfortunately doesn’t get enough love from me these days, but as far as I know it’s still the gold standard for microformat parsing in Ruby.
+[Mofo](http://errtheblog.com/posts/35-me-and-uformats) é um parser de microformatos baseado em Hpricot. Está no Github e infelizmente não recebe tanto carinho meu ultimamente, mas pelo que sei ainda é o padrão ouro para parsing de microformatos em Ruby.
 
-It was the first gem that I released which doubled as a Rails plugin, which is how I think most plugins should be distributed in the future. Gems already have a solid distribution system and versioning scheme, and if Github becomes a gem source then there’s almost no reason not to release plugins as gems
+Foi o primeiro gem que lancei que também funcionava como plugin Rails, que é como acho que a maioria dos plugins deveria ser distribuída no futuro. Gems já têm um sistema de distribuição sólido e esquema de versionamento, e se o Github se tornar uma fonte de gems então praticamente não há razão para não lançar plugins como gems.
 
-[Sexy migrations](http://errtheblog.com/posts/51-sexy-migrations) were inspired by Hobo. Unfortunately their version was hobo-specific, so I wrote a plugin-friendly version. DHH later wrote his own version and rolled it into core, making a grand total of 3 distinct sexy migration implementations.
+[Sexy migrations](http://errtheblog.com/posts/51-sexy-migrations) foram inspiradas pelo Hobo. Infelizmente a versão deles era específica para Hobo, então escrevi uma versão amigável para plugins. O DHH depois escreveu sua própria versão e incorporou ao core, totalizando 3 implementações distintas de sexy migrations.
 
-[Gibberish](http://errtheblog.com/posts/55-ya-talkin-gibberish) is a pretty fun localization plugin I wrote _pro bono_ for a client, just because I felt like the APIs of all the existing localization plugins were so difficult to work with. Hopefully, with the help of anyone interested, we can begin localizing Github in the near future.
+[Gibberish](http://errtheblog.com/posts/55-ya-talkin-gibberish) é um plugin de localização bem divertido que escrevi _pro bono_ para um cliente, simplesmente porque sentia que as APIs de todos os plugins de localização existentes eram muito difíceis de trabalhar. Esperançosamente, com a ajuda de quem tiver interesse, podemos começar a localizar o Github em breve.
 
-[Ambition](http://errtheblog.com/posts/64-even-more-ambitious) was inspired by dabbling in Erlang. I read a blog post explaining that [mnesia’s](http://www.infoq.com/news/2007/08/mnesia) query syntax, which is all list comprehension (basically Ruby’s version of the Enumerable module), was made possible by the ability to walk the parse tree and build an mnesia query that way.
+[Ambition](http://errtheblog.com/posts/64-even-more-ambitious) foi inspirado por uma incursão no Erlang. Li um post de blog explicando que a sintaxe de consulta do [mnesia](http://www.infoq.com/news/2007/08/mnesia), que é toda compreensão de listas (basicamente a versão Ruby do módulo Enumerable), foi possibilitada pela capacidade de percorrer a árvore de parse e construir uma consulta mnesia dessa forma.
 
-So I started playing with the parse_tree gem to see if I could do the same for Ruby. It’s now, of course, a full fledged framework for generating arbitrary queries for any RubyGem based on Enumerable. For simple queries, I really like treating tables as arrays, it feels very natural.
+Então comecei a brincar com o gem parse_tree para ver se conseguia fazer o mesmo para Ruby. Agora é, claro, um framework completo para gerar consultas arbitrárias para qualquer RubyGem baseado em Enumerable. Para consultas simples, realmente gosto de tratar tabelas como arrays — parece muito natural.
 
-[Acts_as_textiled](http://errtheblog.com/posts/12-actsastextiled) was the first Rails plugin I released. It’s a testament to Rails that the plugin still works on edge today. The only other notable thing that Err started is the “vendor everything” term, which is now a part of Rails through [config.gems](http://ryandaigle.com/articles/2008/4/1/what-s-new-in-edge-rails-gem-dependencies).
+[Acts_as_textiled](http://errtheblog.com/posts/12-actsastextiled) foi o primeiro plugin Rails que lancei. É uma prova do Rails que o plugin ainda funciona na versão edge hoje. A única outra coisa notável que o Err iniciou é o termo "vendor everything", que agora faz parte do Rails através do [config.gems](http://ryandaigle.com/articles/2008/4/1/what-s-new-in-edge-rails-gem-dependencies).
 
-That, and the [Cheat](http://errtheblog.com/posts/21-cheat) gem (and site).
+Isso e o gem [Cheat](http://errtheblog.com/posts/21-cheat) (e o site).
 
  ![](http://s3.amazonaws.com/akitaonrails/assets/2008/4/21/322610984_f5d9e82bda.jpg)   
 _Tom Preston-Werner_
 
-**AkitaOnRails:** (Of course, pardon me P.J.!) And this raises another curiosity of mine: where did the name “Err” come from? It is both for [Err the Blog](http://errtheblog.com/) and [Err Free](http://errfree.com/) which is your company. And you mentioned P.J. and Tom. And you’re all full time Railers, right? How did you teamed up with them and decided starting your own company? Many times people ask me about entrepreneurship and you’re another good example.
+**AkitaOnRails:** (Claro, me desculpe P.J.!) E isso desperta outra curiosidade minha: de onde veio o nome "Err"? É tanto para o [Err the Blog](http://errtheblog.com/) quanto para a [Err Free](http://errfree.com/), que é sua empresa. Você mencionou P.J. e Tom. E vocês três são Railers em tempo integral, certo? Como vocês se uniram e decidiram começar a própria empresa? Muitas pessoas me perguntam sobre empreendedorismo e você é mais um bom exemplo.
 
-**Chris Wanstrath:** “err” is kind of a play on “Typo,” which was the popular Rails blogging engine when we started our blog, so it may be kind of confusing, but I actually am cofounder of two distinct companies.
+**Chris Wanstrath:** "err" é uma espécie de trocadilho com "Typo", que era o motor de blogging em Rails mais popular quando começamos nosso blog, então pode ser um pouco confuso, mas na verdade sou cofundador de duas empresas distintas.
 
-There is **Err Free** and **Logical Awesome**. Err Free is Ruby & Rails consulting and training. P.J. and I own the company, and we use it to do client work, speaking gigs, corporate training, that sort of thing. It also owns and operates FamSpam, which we use with our own families.
+Há a **Err Free** e a **Logical Awesome**. Err Free é consultoria e treinamento em Ruby & Rails. P.J. e eu somos donos da empresa, e a usamos para fazer trabalho de cliente, palestras, treinamento corporativo, esse tipo de coisa. Ela também é dona e operadora do FamSpam, que usamos com nossas próprias famílias.
 
-Logical Awesome, however, was founded by me and Tom. This is because I was developing FamSpam with P.J. and GitHub with Tom at the same time, separately. Today, however, P.J. is a part of Logical Awesome and is one of the GitHub developers.
+Logical Awesome, no entanto, foi fundada por mim e Tom. Isso porque eu estava desenvolvendo FamSpam com P.J. e GitHub com Tom ao mesmo tempo, separadamente. Hoje, no entanto, P.J. faz parte da Logical Awesome e é um dos desenvolvedores do GitHub.
 
-Tom works at **Powerset** and doesn’t actually do much Rails for GitHub, he mainly does flash, haxe, C, css, design, and ruby. And because he’s the author of [God](http://god.rubyforge.org/), I make him write all the config files, too. As far as deciding to start a company, I am someone that needs to be involved in whatever I’m involved with on every level. At C|Net, there is only so much input you can have on a website that employs 30 people especially when there are dedicated product and “vision” people, whereas with Github, it’s just me Tom and P.J.
+Tom trabalha na **Powerset** e na verdade não faz muito Rails para o GitHub — ele faz principalmente flash, haxe, C, css, design e ruby. E porque ele é o autor do [God](http://god.rubyforge.org/), faço ele escrever todos os arquivos de config também. Quanto à decisão de começar uma empresa, sou alguém que precisa estar envolvido em tudo o que faço em todos os níveis. Na C|Net, há um limite de quanto você pode contribuir num site que emprega 30 pessoas, especialmente quando há pessoas dedicadas de produto e "visão", enquanto no Github somos apenas eu, Tom e P.J.
 
-If the site is slow, confusing, sucks, or doesn’t improve your workflow, I can take responsibility for that. But if it’s fast, simple, awesome, and life changing, I get to take responsibility for that, too. Which is very rewarding.
+Se o site for lento, confuso, ruim ou não melhorar seu fluxo de trabalho, posso assumir responsabilidade por isso. Mas se for rápido, simples, incrível e transformador, também fico com essa responsabilidade. O que é muito gratificante.
 
-It also means, when you’re cofounder of a mostly technical company, the discussions are a lot more logical. I saw decisions made at C|Net that directly contradicted a/b statistics we had gathered. At Logical Awesome, that would never happen. It is neither logical nor awesome. Basically: I wanted to find the ideal company so I found good people and started it.
+Também significa que, quando você é cofundador de uma empresa majoritariamente técnica, as discussões são muito mais lógicas. Vi decisões sendo tomadas na C|Net que contradiziam diretamente estatísticas de A/B que tínhamos coletado. Na Logical Awesome, isso nunca aconteceria. Não é nem lógico nem incrível. Basicamente: queria encontrar a empresa ideal, então encontrei boas pessoas e a fundei.
 
-**AkitaOnRails:** Ok, so we come to the main dish of the day: [Github](http://github.com)! I can’t think of a better example of an innovative product that leverages so well the power of Git. I am very curious to understand how did you come with this idea? At the same time, lots of people still can’t understand why Railers as a whole started using Git so massively all of a sudden. Mercurial, Bazaar guys are very uncomfortable. What do you think Git has that attracted Railers in flocks like that? Or at least what do you think Git has that no other have? I started evangelizing Git here in Brazil last year after listening Randall Schwartz, and recently someone asked be about what would me my pick for a Rails killer-app and Github popped out of my mind, right away. So you do have good mind share as well.
+**AkitaOnRails:** Ok, chegamos ao prato principal do dia: o [Github](http://github.com)! Não consigo pensar em melhor exemplo de produto inovador que aproveita tão bem o poder do Git. Estou muito curioso para entender como você teve essa ideia. Ao mesmo tempo, muita gente ainda não consegue entender por que os Railers como um todo começaram a usar Git tão maciçamente de repente. O pessoal do Mercurial e Bazaar está muito desconfortável. O que você acha que o Git tem que atraiu os Railers em bando? Ou pelo menos o que você acha que o Git tem que nenhum outro tem? Comecei a evangelizar Git aqui no Brasil no ano passado depois de ouvir Randall Schwartz, e recentemente alguém me perguntou qual seria minha escolha para um killer-app Rails e Github me veio à mente imediatamente. Então você tem boa presença mental também.
 
 [![](http://s3.amazonaws.com/akitaonrails/assets/2008/4/21/Picture_1.png)](http://github.com)
 
-**Chris Wanstrath:** Github is super exciting to me because it’s really a website just for me. Tom and I are pretty similar in that we both have a fair amount of open source projects, all of which get used and patched by people we’ve never met.
+**Chris Wanstrath:** Github é super emocionante para mim porque é realmente um site feito para mim. Tom e eu somos bem parecidos no sentido de que ambos temos uma quantidade considerável de projetos open source, todos usados e corrigidos por pessoas que nunca conhecemos.
 
-Handling this the old fashion way was fine until me and P.J. started working on FamSpam… as my free time decreased, so did my ability to maintain my open source projects. And really, that’s a definite workflow problem. Sometimes when you can’t find enough time to do something, you just need to make the something take less time.
+Lidar com isso do jeito antigo estava bom até que eu e P.J. começamos a trabalhar no FamSpam... à medida que meu tempo livre diminuía, minha capacidade de manter meus projetos open source diminuía também. E isso é definitivamente um problema de fluxo de trabalho. Às vezes quando você não consegue encontrar tempo suficiente para fazer algo, você só precisa fazer esse algo demorar menos tempo.
 
-Github was literally written for chronic, god, ambition, will_paginate, and the rest of our projects. We wanted to make it dead simple for people to contribute, and really, it’s just not possible without Git.
+Github foi literalmente escrito para chronic, god, ambition, will_paginate e o resto dos nossos projetos. Queríamos tornar muito simples para as pessoas contribuírem, e isso realmente não é possível sem Git.
 
-I had started using Git right after viewing the [Linus tech talk](http://www.youtube.com/watch?v=4XpnKHJAok8) in May 2007, which is really good at explaining Git from a very high conceptual level. So when this time problem came up, I had already been using Git for a few months and Tom had serendipitously been trying to solve the same problem.
+Comecei a usar Git logo depois de assistir à [palestra técnica do Linus](http://www.youtube.com/watch?v=4XpnKHJAok8) em maio de 2007, que é muito boa para explicar Git de um nível conceitual bem alto. Então quando esse problema de tempo surgiu, eu já usava Git há alguns meses e Tom, coincidentemente, estava tentando resolver o mesmo problema.
 
-We talked after a local San Francisco Ruby meetup, at a bar of course (where all great ideas and partnerships begin), and decided to work on the problem together. I’d been playing with an err-specific Gitweb, but Github is obviously much more ambitious in its scope.
+Conversamos depois de um meetup local de Ruby em San Francisco, num bar é claro (onde todas as grandes ideias e parcerias começam), e decidimos trabalhar no problema juntos. Eu estava brincando com um Gitweb específico do Err, mas Github é obviamente muito mais ambicioso em escopo.
 
-As far as the adoption of Git, I have no idea what single thing tipped it. When we began working on the app in October, we were worried about ./script/plugin and tarballs and windows and svn mirroring. we weren’t even sure we could build a business around Git, because subversion was still so utterly dominant.
+Quanto à adoção do Git, não tenho ideia do que foi o ponto de inflexão. Quando começamos a trabalhar no app em outubro, estávamos preocupados com ./script/plugin e tarballs e windows e espelhamento de svn. Não tínhamos nem certeza se conseguiríamos construir um negócio em torno de Git, porque o subversion ainda era tão dominante.
 
-As we all know, however, Git tipped at the start of 2008 and everyone somehow found the time to try it out. It maybe takes, like, two seconds to realize how much faster it is, and then a few more seconds after that to realize how much more awesome it is. So it’s not much of a surprise that it is grabbing converts.
+Como todos sabemos, no entanto, Git chegou ao ponto de inflexão no início de 2008 e todo mundo de alguma forma encontrou tempo para experimentá-lo. Talvez leve uns dois segundos para perceber o quanto é mais rápido, e depois mais alguns segundos para perceber o quanto é mais incrível. Então não é grande surpresa que esteja conquistando convertidos.
 
-As for the Rails community, it’s definitely because of the projects. When Merb, Rubinius, and Ruby on Rails all switch to Git, you have no choice. This is where the community is headed. As for other languages, we have a large number of non-ruby projects on Github. PHP, Java, Javascript, Lisp, Python — there are a handful of Django forks, for instance, the [io](http://www.iolanguage.com/) and [nu](http://programming.nu/) programming languages are also hosted on Github.
+Quanto à comunidade Rails, definitivamente é por causa dos projetos. Quando Merb, Rubinius e Ruby on Rails todos migram para Git, você não tem escolha. É para onde a comunidade está indo. Quanto a outras linguagens, temos um grande número de projetos não-Ruby no Github. PHP, Java, Javascript, Lisp, Python — há alguns forks de Django, por exemplo, as linguagens de programação [io](http://www.iolanguage.com/) e [nu](http://programming.nu/) também estão hospedadas no Github.
 
-So really what it comes down to is early adopters, I think. Nu is a lisp written on Objective-C, very new and very cutting edge. The people using it right now are people who realize how powerful and awesome it is to run such a dynamic language on such a mature and stable platform. And naturally, the forward thinkers behind nu know that Git (and distributed source control) is an equally powerful, equally cutting edge concept.
+Então o que realmente importa são os early adopters, acho. Nu é um lisp escrito em Objective-C, muito novo e muito de ponta. As pessoas que o usam agora são pessoas que percebem o quanto é poderoso e incrível rodar uma linguagem tão dinâmica em uma plataforma tão madura e estável. E naturalmente, os pensadores progressistas por trás do nu sabem que Git (e controle de versão distribuído) é um conceito igualmente poderoso e igualmente de ponta.
 
-With Prototype and Scripatculous moved over, and rumors of other Javascript frameworks switching, it’s only a matter of time before Git becomes even more widespread.
+Com Prototype e Scriptaculous migrados, e rumores de outros frameworks Javascript migrando, é só uma questão de tempo até Git se tornar ainda mais difundido.
 
-I think the Railers just like to blog a lot.
+Acho que os Railers simplesmente gostam muito de blogar.
 
-As far as other solutions go, it’s Rails vs Django all over again. If you use Mercurial, that’s fine. The two are so similar (yes, [Git does work great on Windows](http://kylecordes.com/2008/03/22/git-windows-works/)) that as long as people move to distributed source control, it’s still a win.
+Quanto a outras soluções, é Rails vs Django de novo. Se você usa Mercurial, tudo bem. Os dois são tão parecidos (sim, [Git funciona ótimo no Windows](http://kylecordes.com/2008/03/22/git-windows-works/)) que enquanto as pessoas migrarem para controle de versão distribuído, ainda é uma vitória.
 
-Oh, but wait, Mercurial doesn’t have Github :-)
+Ah, mas espera, Mercurial não tem Github :-)
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2008/4/21/Picture_3.png)
 
-**AkitaOnRails:** There you go :-) And I wonder what were the challenges of putting something as Github together. It is not a simple Rails web app, with very fast, pure Ruby code. You’re probably dealing with thousands of system calls to Git command liners, several background jobs, maintenance, security. What do you think were the biggest challenges while assembling Github before recently releasing it to the public?
+**AkitaOnRails:** Exatamente :-) E me pergunto quais foram os desafios de montar algo como o Github. Não é um simples app Rails, com código Ruby muito rápido e puro. Você provavelmente está lidando com milhares de chamadas de sistema para binários Git, vários jobs em background, manutenção, segurança. O que você acha que foram os maiores desafios ao montar o Github antes de lançá-lo recentemente ao público?
 
-**Chris Wanstrath:** Well you pretty much nailed it right there… scaling Rails is the easy part. scaling sshd, Git, Git-daemon, and our background jobs is the hard part.
+**Chris Wanstrath:** Bem, você acertou em cheio... escalar Rails é a parte fácil. Escalar sshd, Git, Git-daemon e nossos jobs em background é a parte difícil.
 
-We call Git directly many times per page, we need to process jobs that get entered from many different places (create a repo on the website, push a repo through ssh), we need to be secure (ssl and ssh for all private repos at all times), we need to make sure it all runs fast (memcached for both Git calls and the db), we need to make sure you’re _“in the loop”_ with a news feed aggregating information from all different sources within our system (almost 1m rows in the feed table when we launched).
+Chamamos Git diretamente muitas vezes por página, precisamos processar jobs que entram de muitos lugares diferentes (criar um repositório no site, fazer push de um repositório via ssh), precisamos ser seguros (ssl e ssh para todos os repositórios privados o tempo todo), precisamos garantir que tudo rode rápido (memcached tanto para chamadas Git quanto para o banco), precisamos garantir que você esteja _"por dentro"_ com um feed de notícias agregando informações de todas as fontes diferentes dentro do nosso sistema (quase 1 milhão de linhas na tabela de feed quando lançamos).
 
-So it definitely has not been easy. Not to mention that ssl is essentially the “slow flag” for http, so we need to make sure we’re going fast because things like your dashboard already have a speed handicap. As an example, sshd stores its keys in an authorized_keys file. Well, we weren’t even done with our beta yet and the keys file was over 4 megs of just plain text. So we had one of the C gurus at Engine Yard patch sshd for us to do mySQL based lookups, giving us faster searches and no pricey appending / writing of a massive file
+Então definitivamente não foi fácil. Sem mencionar que ssl é essencialmente o "modo lento" para http, então precisamos garantir que estamos indo rápido porque coisas como seu dashboard já têm uma desvantagem de velocidade. Como exemplo, o sshd armazena suas chaves num arquivo authorized_keys. Bem, nem tínhamos terminado nosso beta ainda e o arquivo de chaves tinha mais de 4 megabytes de texto puro. Então tivemos um dos gurus de C da Engine Yard patcheando o sshd para nós para fazer pesquisas baseadas em MySQL, nos dando pesquisas mais rápidas e sem o custo de acrescentar/escrever num arquivo massivo.
 
-Matthew Palmer is the said guru, and we plan to make that code open source in the near future.
+Matthew Palmer é o referido guru, e planejamos tornar esse código open source em breve.
 
-We’ve also got post-receive (when you “Git push”) hooks running that we host and deliver – so if you push, we’ll POST to an arbitrary url for you with json of the commits. But you can also give us some info and we’ll post to campfire, irc, twitter, or lighthouse for you with custom payloads.
+Também temos hooks de post-receive (quando você faz "Git push") rodando que hospedamos e entregamos — então se você fizer push, faremos POST para uma URL arbitrária com JSON dos commits. Mas você também pode nos dar algumas informações e faremos post para campfire, irc, twitter ou lighthouse com payloads customizados.
 
-Since we have flash, flash with haxe, Python, c, ruby, bash scripts, lots of Javascript, and some forthcoming erlang under the hood, it’s definitely an interesting mix.
+Como temos flash, flash com haxe, Python, C, ruby, scripts bash, muito Javascript e algum erlang por vir nos bastidores, é definitivamente uma mistura interessante.
 
-We are fortunate to be hosted on **Engine Yard** , though. If we didn’t have them we’d be screwed. Their awesome cluster setup with GFS means we can host our potentially 100s of gigs of repositories on a shared, raid’d drive with redundancy and backups. If we were running Github on a barebones VPS, I dont even know how we’d share access to those repos. It wouldn’t be fun.
+Temos a sorte de estar hospedados na **Engine Yard**, no entanto. Se não os tivéssemos, estaríamos perdidos. A configuração incrível de cluster deles com GFS significa que podemos hospedar nossos potencialmente centenas de gigabytes de repositórios em um drive compartilhado com RAID, redundância e backups. Se estivéssemos rodando Github em um VPS barebones, nem sei como compartilharíamos acesso a esses repositórios. Não seria divertido.
 
-They also have a lot of experts available 24/7, which is great because I have a tendency to forget to sleep and work until 7am. A lot of the pain of running a heavily unix-dependent site is taken away by those guys.
+Eles também têm muitos especialistas disponíveis 24/7, o que é ótimo porque tenho tendência a esquecer de dormir e trabalhar até as 7 da manhã. Esses caras tiram muito da dor de rodar um site muito dependente de Unix.
 
 [![](http://s3.amazonaws.com/akitaonrails/assets/2008/4/21/Picture_5.png)](http://www.flickr.com/photos/ozmm/487496000/)
 
-**AkitaOnRails:** Interesting, Erlang? I’d like to know what are you up to with it Going back, I think I saw a Rails trunk Git clone at Github way before DHH announced it a few days ago. I think it was Michael Koziarski who first did it, without much fuzz. Were you planning this together with the 37signals guys, or the switch of the Rails Core to Github was something that happened naturally? And do you have any kind of partnership with the Lighthouse guys as well, because you already have some hooks to manage Lighthouse tickets through Github commit messages, right?
+**AkitaOnRails:** Interessante, Erlang? Adoraria saber o que você está fazendo com ele. Voltando, acho que vi um clone Git do trunk do Rails no Github muito antes de o DHH anunciar isso alguns dias atrás. Acho que foi Michael Koziarski quem fez primeiro, sem muito alarde. Vocês estavam planejando isso junto com o pessoal da 37signals, ou a migração do Rails Core para o Github foi algo que aconteceu naturalmente? E vocês têm algum tipo de parceria com o pessoal do Lighthouse também, porque vocês já têm alguns hooks para gerenciar tickets do Lighthouse através de mensagens de commit do Github, certo?
 
-**Chris Wanstrath:** The Erlang stuff will be very cool, I promise. We’ll make a big fuss about it when it’s ready. As far as the Rails thing goes, koz did indeed have a mirror of his Git-svn repo at Github during the beta. It was unofficial. Then in february he wrote a [post explaining](http://www.koziarski.net/archives/2008/2/23/on-Git) that the core was thinking about moving to Git.
+**Chris Wanstrath:** O material de Erlang vai ser muito legal, prometo. Faremos muito barulho sobre isso quando estiver pronto. Quanto ao Rails, o koz de fato tinha um espelho do seu repositório Git-svn no Github durante o beta. Era não oficial. Então em fevereiro ele escreveu um [post explicando](http://www.koziarski.net/archives/2008/2/23/on-Git) que o core estava pensando em migrar para Git.
 
-When I saw the post I emailed him and we talked a bit about what it would take to move Rails to Github, which was obviously something I love on a huge number of levels. He said he would get back to me, and then a few weeks later the Core team contacted us and wanted to discuss the move. The rest is history.
+Quando vi o post, enviei um e-mail para ele e conversamos um pouco sobre o que precisaria ser feito para mover Rails para o Github, que era obviamente algo que amo em um número enorme de níveis. Ele disse que voltaria a falar comigo, e então algumas semanas depois o time Core nos contactou e queria discutir a migração. O resto é história.
 
-I really respect the work the [Lighthouse](http://www.lighthouseapp.com/) team does. The bug tracker is great, and the new redesign is even better, but we don’t have any official partnership with them. We wrote the post-receive lighthouse hook because we wanted it, Rails wanted it, and a huge number of our users wanted it.
+Realmente respeito o trabalho que o time do [Lighthouse](http://www.lighthouseapp.com/) faz. O bug tracker é ótimo, e o novo redesign é ainda melhor, mas não temos nenhuma parceria oficial com eles. Escrevemos o hook post-receive do lighthouse porque queríamos, o Rails queria e um grande número dos nossos usuários queria.
 
-**AkitaOnRails:** Many others started moving to Github during the Beta. I think Merb was more obvious because of Ezra’s being involved in Engine Yard. Dr. Nic started using it for the Textmate bundles. Can you point any other high profile Rails related projects hosted at Github right now?
+**AkitaOnRails:** Muitos outros começaram a migrar para o Github durante o Beta. Acho que o Merb foi mais óbvio por causa do envolvimento do Ezra com a Engine Yard. Dr. Nic começou a usá-lo para os bundles do Textmate. Você pode apontar algum outro projeto relacionado a Rails de alto perfil hospedado no Github agora?
 
-**Chris Wanstrath:** Merb was actually the reason Github went into beta. We launched the beta so they could start using the site for their 0.9 rewrite of merb-core. As far as popular projects, the best thing to do is check [http://Github.com/popular/watched](http://Github.com/popular/watched) and [http://Github.com/popular/forked](http://Github.com/popular/forked). Datamapper, Rspec, and Mephisto are some of the popular ones.
+**Chris Wanstrath:** Merb foi na verdade o motivo pelo qual o Github entrou em beta. Lançamos o beta para que eles pudessem começar a usar o site para a reescrita 0.9 do merb-core. Quanto a projetos populares, a melhor coisa a fazer é verificar [http://Github.com/popular/watched](http://Github.com/popular/watched) e [http://Github.com/popular/forked](http://Github.com/popular/forked). Datamapper, Rspec e Mephisto são alguns dos populares.
 
-**AkitaOnRails:** Are you using vanilla Git code, or did you customize it in anyway to better fit your environment? Have you ever talked to Junio Hamano or any other Git core maintainer? With Github probably eating up a lot of your time, how is Chow and FamSpam going right now? How are you managing all those products all at once?
+**AkitaOnRails:** Você está usando código Git vanilla, ou o customizou de alguma forma para melhor se adaptar ao seu ambiente? Já conversou com Junio Hamano ou algum outro mantenedor do core do Git? Com o Github provavelmente consumindo muito do seu tempo, como estão o Chow e o FamSpam agora? Como você está gerenciando todos esses produtos ao mesmo tempo?
 
-**Chris Wanstrath:** We’ve patched Git-daemon to record statistics, which we’ll soon be surfacing on the website soon in the form of better, more granular activity. You’ll be able to see how many times your project was cloned, popular projects in the last 24 hours, all time most cloned projects, that sort of thing.
+**Chris Wanstrath:** Patcheamos o Git-daemon para registrar estatísticas, que em breve vamos surfacear no site na forma de atividade melhor e mais granular. Você poderá ver quantas vezes seu projeto foi clonado, projetos populares nas últimas 24 horas, projetos mais clonados de todos os tempos, esse tipo de coisa.
 
-We’ve emailed the core Git guys about the site, just to say thanks for writing Git and to let them know about Github, but haven’t really had an occasion to chat with them about anything in particular. If I ever run into any of them, I’ll definitely be buying them a few drinks, though.
+Enviamos e-mail para os caras do core do Git sobre o site, só para dizer obrigado por escreverem o Git e para informá-los sobre o Github, mas na verdade não tivemos ocasião de conversar sobre nada em particular. Se algum dia me cruzar com algum deles, definitivamente vou pagar algumas doses.
 
-I don’t actually work at Chow anymore. My last day at C|NET was almost exactly one year ago, so my Ruby time is spent on FamSpam, Github, open source, and doing occasional client work.
+Na verdade, não trabalho mais no Chow. Meu último dia na C|NET foi há quase exatamente um ano, então meu tempo com Ruby é gasto no FamSpam, Github, open source e fazendo trabalho de cliente ocasionalmente.
 
-FamSpam is going well. Now that Github is launched, there are a handful of features we want to get in and all. Luckily, however, the site is very polished and has been running smoothly without the need for much intervention. What we’d really love to do, because it’s really just a great Rails-based mailing list, is try out some different concepts.
+FamSpam está indo bem. Agora que o Github foi lançado, há alguns recursos que queremos adicionar. Por sorte, no entanto, o site está muito polido e rodando sem precisar de muita intervenção. O que adoraríamos fazer, porque no fundo é uma ótima lista de e-mail baseada em Rails, é experimentar alguns conceitos diferentes.
 
-Maybe one for open source, or a version for little league teams – anyone who needs to keep in touch and have their email workflow and document sharing streamlined. For right now, however, I try to spend as much time as possible on Github. There are so many places we want to take it.
+Talvez um para open source, ou uma versão para times de liga juvenil — qualquer um que precise manter contato e ter seu fluxo de e-mail e compartilhamento de documentos otimizado. Por ora, no entanto, tento gastar o máximo de tempo possível no Github. Há tantos lugares para onde queremos levá-lo.
 
-**AkitaOnRails:** I probably more than exceeded my interview time (sorry about that), but this conversation is super-interesting. One project I just remembered is Sake. To me Sake is very neat because many people complain about “how difficult and complex” the Git command line is, and Sake-like solutions make the workflow a lot easier. For instance, my entire Git workflow for Rails projects are only 4 small sake tasks like Git:update and Git:push. If I am not mistaken someone at Err did Sake, right? Are you still evolving it?
+**AkitaOnRails:** Provavelmente já ultrapassei o tempo da entrevista (me desculpe por isso), mas essa conversa é super interessante. Um projeto que acabei de lembrar é o Sake. Para mim o Sake é muito bacana porque muita gente reclama de quão "difícil e complexa" é a linha de comando do Git, e soluções como Sake facilitam muito o fluxo de trabalho. Por exemplo, meu fluxo de trabalho Git inteiro para projetos Rails são apenas 4 pequenas tarefas sake como Git:update e Git:push. Se não me engano, alguém do Err fez o Sake, certo? Você ainda está evoluindo ele?
 
-**Chris Wanstrath:** Yeah, I wrote [Sake](http://errtheblog.com/posts/60-sake-bomb). It’s not a Rails plugin but it was written to help in Rails development. The “Git tasks” for Sake are becoming quite popular, as Git really just facilitates a better workflow. If you want to implement it, or different branches of that workflow, you can pretty easily just wrap up a few commands into a rake task or bash script.
+**Chris Wanstrath:** Sim, eu escrevi o [Sake](http://errtheblog.com/posts/60-sake-bomb). Não é um plugin Rails, mas foi escrito para ajudar no desenvolvimento Rails. As "tarefas Git" para Sake estão ficando bem populares, pois Git realmente facilita um fluxo de trabalho melhor. Se você quiser implementá-lo, ou diferentes ramificações desse fluxo, você pode facilmente empacotar alguns comandos numa tarefa rake ou script bash.
 
-And while bash scripts are great, sake tasks are portable. A lot of sake was inspired, very loosely, on Git – you can pull in sake tasks from any text file, whether it’s on the web or local, and sake comes with its own daemon for serving your tasks.
+E enquanto scripts bash são ótimos, as tarefas sake são portáteis. Muito do sake foi inspirado, de forma muito livre, no Git — você pode importar tarefas sake de qualquer arquivo de texto, seja na web ou local, e sake vem com seu próprio daemon para servir suas tarefas.
 
-So you could share tasks over wifi, or something, the same way you could share Git repositories over an adhoc network. Sake is up on Github, so feel free to add features you feel should exist.
+Então você poderia compartilhar tarefas via wifi, por exemplo, da mesma forma que poderia compartilhar repositórios Git numa rede adhoc. Sake está no Github, então fique à vontade para adicionar funcionalidades que achar que devem existir.
 
-**AkitaOnRails:** Another thing I would like to hear your opinion about. I recently made a presentation on Rails Deployment strategies for beginners. The most common simple architecture revolves around Apache/Nginx/Litespeed + Mongrel/Evented Mongrel/Thin/Ebb. It is usually a matter of load balancing between a Web server using some kind of IPC to distribute the load back to Ruby VMs running your Rails app.
+**AkitaOnRails:** Outra coisa sobre a qual gostaria de ouvir sua opinião. Recentemente fiz uma apresentação sobre estratégias de deploy Rails para iniciantes. A arquitetura simples mais comum gira em torno de Apache/Nginx/Litespeed + Mongrel/Evented Mongrel/Thin/Ebb. Geralmente é uma questão de balanceamento de carga entre um servidor web usando algum tipo de IPC para distribuir a carga de volta para VMs Ruby rodando sua app Rails.
 
-Now we have mod_Rails. What’s your opinion on having all those choices, do you have any particular recipe you like or it depends on each application’s needs? Did you have time to test mod_Rails? I think Hongli Lai is doing great stuff in regards to things like mongrel_light_cluster and his efforts on making Ruby’s GC more copy-on-write friendly, did you take a look at that?
+Agora temos mod_Rails. Qual é sua opinião sobre ter todas essas escolhas, você tem alguma receita particular que prefere ou depende das necessidades de cada aplicação? Você teve tempo de testar mod_Rails? Acho que Hongli Lai está fazendo um trabalho ótimo em relação a coisas como mongrel_light_cluster e seus esforços para tornar o GC do Ruby mais amigável ao copy-on-write. Você deu uma olhada nisso?
 
-**Chris Wanstrath:** The nice thing about Engine Yard is they get to take care of all that stuff for me. So while I used to spend a lot of time benchmarking and playing with different solutions, like Mongrel vs Emongrel, I just let the experts take care of it so I can focus on Github..
+**Chris Wanstrath:** A coisa boa da Engine Yard é que eles cuidam de tudo isso para mim. Então, enquanto antes passava muito tempo fazendo benchmark e brincando com diferentes soluções, como Mongrel vs Emongrel, agora simplesmente deixo os especialistas cuidarem disso para que eu possa me concentrar no Github.
 
-So no, I haven’t played with mod_Rails yet because I’m not in the situation where I could deploy it even if I wanted to use it. Which is in my opinion the best situation to be in, and pretty much the reason mod_Rails was written.
+Então não, ainda não brinquei com mod_Rails porque não estou numa situação em que pudesse implantá-lo mesmo que quisesse usá-lo. Que na minha opinião é a melhor situação para se estar, e é basicamente a razão pela qual mod_Rails foi escrito.
 
-**AkitaOnRails:** And by the way, are you going to make any presentation at RailsConf this year?
+**AkitaOnRails:** E a propósito, você vai fazer alguma apresentação na RailsConf este ano?
 
-**Chris Wanstrath:** I am. I’ll be talking about _“Beyond cap deploy”_, which will pretty much be an in-depth look at the Github architecture, and then I’ll be on a panel with Ben Curtis, Geoff Grosenbach, P.J., and Tom about being a “profitable programmer” w/ side projects.
+**Chris Wanstrath:** Vou. Vou falar sobre _"Beyond cap deploy"_, que será basicamente um olhar aprofundado na arquitetura do Github, e depois vou estar num painel com Ben Curtis, Geoff Grosenbach, P.J. e Tom sobre ser um "programador lucrativo" com projetos paralelos.
 
-**AkitaOnRails:** I am very pleased to have the opportunity to talk to you.
+**AkitaOnRails:** Estou muito satisfeito por ter tido a oportunidade de conversar com você.
 
-**Chris Wanstrath:** Yes, you too. Thanks!
-
+**Chris Wanstrath:** Eu também. Obrigado!
