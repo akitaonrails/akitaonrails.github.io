@@ -9,3 +9,6 @@
 - content/2011/02/04/off-topic-the-fountainhead-defesa-de-howard-roark/index.md
 - content/2013/07/12/previsivelmente-irracional/index.md
 - content/2015/01/07/off-topic-coletanea-processos-e-metodologias-nao-vao-te-ajudar/index.md
+- content/2013/08/23/off-topic-estimativas-sao-promessas-promessas-devem-ser-cumpridas/index.md
+- content/2014/12/08/off-topic-conversando-com-um-professor-universitario/index.md
+- content/2010/03/07/off-topic-penn-and-teller-e-larry-flynt-sobre-liberdade/index.md
