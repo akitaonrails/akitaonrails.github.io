@@ -48,6 +48,7 @@ Want to see the Akitando Channel transcripts (Portuguese only)? [Click here](/ak
 
 ## 2017 - August
 
+- [\[Off-Topic\] Blockchain and Cryptocurrencies in Brazil](/en/2017/08/28/off-topic-blockchain-e-criptomoedas-no-brasil/)
 - [Why it is just lazy to bad-mouth Ruby on Rails](/en/2017/08/03/why-is-it-just-lazy-to-bad-mouth-ruby-on-rails/)
 
 ## 2017 - July
@@ -62,6 +63,8 @@ Want to see the Akitando Channel transcripts (Portuguese only)? [Click here](/ak
 - [Starting with Blender](/en/2017/06/21/starting-with-blender/)
 - [Ex Manga Downloadr - Part 7: Properly dealing with large Collections](/en/2017/06/16/ex-manga-downloadr-part-7-properly-dealing-with-large-collections/)
 - [Ex Manga Downloadr - Part 6: The Rise of FLOW](/en/2017/06/13/ex-manga-downloadr-part-6-the-rise-of-flow/)
+- [\[Off-Topic\] Talent Is Highly Overrated: Humanizing Einstein and Killing Gods](/en/2017/06/08/off-topic-talento-e-altamente-supervalorizado-humanizando-einstein-e-matando-deuses/)
+- [Appearing on Podcasts](/en/2017/06/02/participando-em-podcasts/)
 - [Conference Talks, Interviews, and the Pen!](/en/2017/06/01/conference-talks-interviews-and-the-pen/)
 
 ## 2017 - May
@@ -71,6 +74,10 @@ Want to see the Akitando Channel transcripts (Portuguese only)? [Click here](/ak
 ## 2017 - March
 
 - [Enabling Optimus NVIDIA GPU on the Dell XPS 15 with Linux, even on Battery](/en/2017/03/14/enabling-optimus-nvidia-gpu-on-the-dell-xps-15-with-linux-even-on-battery/)
+
+## 2017 - February
+
+- [\[Off-Topic\] Carpe Diem and the Myths of Happiness](/en/2017/02/14/off-topic-carpe-diem-e-os-mitos-da-felicidade/)
 
 ## 2017 - January
 
@@ -134,6 +141,8 @@ Want to see the Akitando Channel transcripts (Portuguese only)? [Click here](/ak
 
 ## 2016 - April
 
+- [\[Off-Topic\] Free Software: An Exercise in CAPITALISM](/en/2016/04/22/off-topic-software-livre-exercicio-de-capitalismo/)
+- [\[Off-Topic\] If You Need "Validation," You're Probably Wrong](/en/2016/04/20/off-topic-se-voce-precisa-de-validacao-provavelmente-esta-errado/)
 - [The Year of Linux on the Desktop, by Microsoft??](/en/2016/04/12/the-year-of-linux-on-the-desktop-by-microsoft/)
 
 ## 2016 - March
@@ -169,13 +178,39 @@ Want to see the Akitando Channel transcripts (Portuguese only)? [Click here](/ak
 - [Ex Manga Downloader, an exercise with Elixir](/en/2015/11/18/ex-manga-downloader-an-exercise-with-elixir/)
 - [My first week learning Elixir](/en/2015/11/03/my-first-week-learning-elixir/)
 
+## 2014 - December
+
+- [\[Off-Topic\] Talking with a University Professor](/en/2014/12/08/off-topic-conversando-com-um-professor-universitario/)
+
+## 2014 - November
+
+- [\[Small Bites/Off-Topic\] "People over Processes" — what are "People"?](/en/2014/11/21/small-bites-off-topic-people-over-processes-o-que-sao-people/)
+
 ## 2014 - October
 
 - [The New Kid on the Block for Ruby Servers: Raptor!](/en/2014/10/19/the-new-kid-on-the-block-for-ruby-servers-raptor/)
+- [\[Off-Topic\] 3D Printing, the Legend?](/en/2014/10/07/off-topic-impressao-3d-a-lenda/)
+
+## 2014 - September
+
+- [\[Off-Topic\] Agile: the Truth Behind the Method](/en/2014/09/28/off-topic-agile-a-verdade-por-tras-do-metodo/)
 
 ## 2014 - August
 
 - [\[Off-Topic\] First Time in São Paulo, What to do?](/en/2014/08/24/off-topic-first-time-in-sao-paulo-what-to-do/)
+
+## 2014 - March
+
+- [\[Off-Topic\] Breaking Bad was a very successful startup](/en/2014/03/28/off-topic-breaking-bad-foi-uma-startup-de-muito-sucesso/)
+
+## 2014 - February
+
+- [\[Off-Topic\] The New Generation's Dilemma: start a company or get a job?](/en/2014/02/20/off-topic-o-dilema-da-nova-geracao-empreender-ou-arranjar-um-emprego/)
+
+## 2013 - November
+
+- [\[Off-Topic\] Tech Startups, B2C overcrowding. Boring.](/en/2013/11/14/off-topic-tech-startups-superlotacao-de-b2c-boring/)
+- [\[Off-Topic\] Programmers Are Terrible Communicators (UDP vs TCP)](/en/2013/11/02/off-topic-programadores-sao-pessimos-comunicadores-udp-vs-tcp/)
 
 ## 2013 - October
 
@@ -186,6 +221,7 @@ Want to see the Akitando Channel transcripts (Portuguese only)? [Click here](/ak
 
 - [Rubyconf Brasil 2013: Meet Luis Cipriani](/en/2013/08/27/rubyconf-brasil-2013-meet-luis-cipriani/)
 - [Rubyconf Brasil 2013: Meet Carlos Galdino](/en/2013/08/26/rubyconf-brasil-2013-meet-carlos-galdino/)
+- [\[Off-Topic\] Estimates Are Promises. Promises Must Be Kept.](/en/2013/08/23/off-topic-estimativas-sao-promessas-promessas-devem-ser-cumpridas/)
 - [Rubyconf Brasil 2013: Meet William PotHix](/en/2013/08/23/rubyconf-brasil-2013-meet-william-pothix/)
 - [Rubyconf Brasil 2013: Meet Bruno AbstractJ](/en/2013/08/22/rubyconf-brasil-2013-meet-bruno-abstractj/)
 - [Rubyconf Brasil 2013: Meet Danilo Sato](/en/2013/08/15/rubyconf-brasil-2013-meet-danilo-sato/)
@@ -196,6 +232,21 @@ Want to see the Akitando Channel transcripts (Portuguese only)? [Click here](/ak
 - [Rubyconf Brasil 2013: Meet Caike Souza](/en/2013/08/11/rubyconf-brasil-2013-meet-caike-souza/)
 - [Rubyconf Brasil 2013: Meet Pablo Astigarraga](/en/2013/08/09/rubyconf-brasil-2013-meet-pablo-astigarraga/)
 - [Rubyconf Brasil 2013: Meet Hal Fulton](/en/2013/08/08/rubyconf-brasil-2013-meet-hal-fulton/)
+
+## 2013 - June
+
+- [Introduction to Agility](/en/2013/06/28/introducao-a-agilidade/)
+- [What Does It Mean to Be a Manager?](/en/2013/06/07/o-que-significa-ser-um-gerente/)
+
+## 2013 - May
+
+- [Processes and Methodologies Won't Help You](/en/2013/05/24/processos-e-metodologias-nao-vao-te-ajudar/)
+- [\[Translation\] Standards: excellence vs. mediocrity](/en/2013/05/17/traducao-padroes-excelencia-vs-mediocridade/)
+- [Brazilian Portuguese Can Confuse Us: Standard vs Pattern](/en/2013/05/10/a-lingua-portuguesa-brasileira-e-pessima-standard-vs-pattern/)
+
+## 2013 - March
+
+- [\[Off-Topic\] Most people said they'd use my product. Will it work? No!](/en/2013/03/11/off-topic-a-maioria-disse-que-usaria-meu-produto-vai-dar-certo-nao/)
 
 ## 2012 - November
 
@@ -215,7 +266,12 @@ Want to see the Akitando Channel transcripts (Portuguese only)? [Click here](/ak
 
 ## 2012 - May
 
+- [\[Off-Topic\] Great Artists Steal](/en/2012/05/13/off-topic-grandes-artistas-roubam/)
 - [\[Off-Topic\] Reading with subtitles over Kanjis in Japanese webpages](/en/2012/05/08/off-topic-reading-with-subtitles-over-kanjis-in-japanese-webpages/)
+
+## 2011 - December
+
+- [\[Off-Topic\] New Year's Message — Philosophy](/en/2011/12/31/off-topic-mensagem-de-ano-novo-filosofia/)
 
 ## 2011 - November
 
@@ -246,18 +302,64 @@ Want to see the Akitando Channel transcripts (Portuguese only)? [Click here](/ak
 
 ## 2010 - June
 
+- [\[Off-Topic\] Jeff Patton and Megan Fox in the same post?](/en/2010/06/27/off-topic-jeff-patton-e-megan-fox-no-mesmo-post/)
 - [\[RailsConf 2010\] - Video Interview - David Hansson](/en/2010/06/17/railsconf-2010-video-interview-david-hansson/)
 - [\[RailsConf 2010\] - Video Interviews - Part 2](/en/2010/06/17/railsconf-2010-video-interviews-part-2/)
 - [\[RailsConf 2010\] - Video Interviews - Part 1](/en/2010/06/17/railsconf-2010-video-interviews-part-1/)
 - [\[RailsConf 2010\] - Video Interview - Robert Martin (English)](/en/2010/06/16/railsconf-2010-video-interview-robert-martin-english/)
 
+## 2010 - April
+
+- [\[Off-Topic\] The Humble Programmer, by Edsger W. Dijkstra](/en/2010/04/12/off-topic-o-programador-humilde-por-edsger-w-dijkstra/)
+
+## 2010 - February
+
+- [\[Off-Topic\] Wake up Call](/en/2010/02/14/off-topic-wake-up-call/)
+
+## 2010 - January
+
+- [\[Off-Topic\] Companies, People, Success](/en/2010/01/30/off-topic-empresas-pessoas-sucesso/)
+- [\[Off-Topic\] Who's the Dumb One?](/en/2010/01/08/off-topic-quem-e-o-burro/)
+- [\[Off Topic\] Dunbar and Cross Functional Teams](/en/2010/01/02/off-topic-dunbar-e-cross-functional-teams/)
+
+## 2009 - December
+
+- [\[Off Topic\] Watch Out for Kanban-butt](/en/2009/12/16/off-topic-cuidado-com-o-kanban-butt/)
+
 ## 2009 - November
 
+- [\[Off-Topic\] Restaurants and Technology](/en/2009/11/18/off-topic-restaurantes-e-tecnologia/)
 - [Chatting with Adam Jacob](/en/2009/11/18/chatting-with-adam-jacob/)
 - [Chatting with Luke Kanies](/en/2009/11/18/chatting-with-luke-kaines/)
+- [\[Off-Topic\] Cell Phones and Airplanes](/en/2009/11/08/off-topic-celulares-e-avioes/)
+
+## 2009 - September
+
+- [\[Off-Topic\] The Cult of Gray Morality](/en/2009/09/08/off-topic-o-culto-da-moral-cinzenta/)
+
+## 2009 - August
+
+- [\[Off-Topic\] The Damn Regulation Law Is Back!](/en/2009/08/22/off-topic-maldita-lei-de-regulamenta-o-est-de-volta/)
+
+## 2009 - July
+
+- [\[Off-Topic\] All Marketers Are Liars](/en/2009/07/31/off-topic-todos-os-marketeiros-s-o-mentirosos/)
+- [\[Translation\] What Makes a Good Programmer?](/en/2009/07/23/tradu--o-o-que-faz-um-bom-programador/)
+- [\[Off-Topic\] Bought My First Mac — Now What?](/en/2009/07/19/off-topic-comprei-meu-primeiro-mac-e-agora/)
+- [\[Off-Topic\] Intervene or Not? The "Catch-22" of Co-Pilots](/en/2009/07/18/off-topic-intervir-ou-n-o-intervir-o-catch-22-dos-co-pilotos/)
+- [\[Off-Topic\] Reference Books 2008-2009](/en/2009/07/11/off-topic-livros-de-refer-ncia-2008-2009/)
+- [\[Off-Topic\] Agility, Chaos, Self-Organization](/en/2009/07/08/off-topic-agilidade-caos-auto-organizacao/)
+- [\[Off-Topic\] Negotiable Scope Contract](/en/2009/07/05/off-topic-contrato-de-escopo-negoci-vel/)
+- [\[Off-Topic\] Authority vs. Responsibility](/en/2009/07/05/off-topic-autoridade-vs-responsabilidade/)
+
+## 2009 - June
+
+- [\[Off-Topic\] Standards, Commodities, and Innovations](/en/2009/06/14/off-topic-padr-es-commodities-e-inova--es/)
+- [\[Translation\] Advice for Software Development Managers](/en/2009/06/05/tradu--o-conselhos-para-gerentes-de-desenvolvimento-de-software/)
 
 ## 2009 - May
 
+- [\[Off-Topic\] The 5 Team Dysfunctions in Code](/en/2009/05/31/off-topic-as-5-disfun--es-de-equipes-em-c-digo/)
 - [RailsConf 09 - Ninh Grosenbach Bui](/en/2009/05/11/railsconf-09-ninh-grosenbach-bui/)
 - [RailsConf 09 - Message from Bryan Liles (TATFT) to Brazil](/en/2009/05/08/railsconf-09-message-from-bryan-liles-tatft-to-brazil/)
 - [RailsConf 09 - Exclusive Audio Interviews](/en/2009/05/08/railsconf-09-exclusive-audio-interviews/)
@@ -266,6 +368,23 @@ Want to see the Akitando Channel transcripts (Portuguese only)? [Click here](/ak
 - [RailsConf 09 - Uncle Bob - Professionalism](/en/2009/05/07/railsconf-09-uncle-bob-professionalism/)
 - [RailsConf 09 - Uncle Bob Martin](/en/2009/05/06/railsconf-09-uncle-bob-martin/)
 - [Going to RailsConf 2009](/en/2009/05/02/going-to-railsconf-2009/)
+
+## 2009 - April
+
+- [Off-Topic: Should I Go to College?](/en/2009/04/17/off-topic-devo-fazer-faculdade/)
+
+## 2009 - March
+
+- [\[Off-Topic\] Net Negative Producing Programmer](/en/2009/03/30/off-topic-net-negative-producing-programmer/)
+
+## 2009 - February
+
+- [Translation: Flaccid Scrum](/en/2009/02/03/tradu-o-scrum-fl-cido/)
+
+## 2008 - December
+
+- [Translation: Technical Debt](/en/2008/12/18/tradu-o-d-vida-t-cnica/)
+- [Off-Topic: Scientific Method vs Cargo Cult](/en/2008/12/16/off-topic-m-todo-cient-fico-vs-cargo-cult/)
 
 ## 2008 - November
 
@@ -276,12 +395,19 @@ Want to see the Akitando Channel transcripts (Portuguese only)? [Click here](/ak
 - [Rails Podcast Brasil, QCon Special - Jan Lehnardt and Chris Anderson from CouchDB](/en/2008/11/19/rails-podcast-brasil-qcon-special-jan-lenhardt-and-chris-anderson-from-couchdb/)
 - [Rails Podcast Brasil, QCon Special - Yehuda Katz](/en/2008/11/19/rails-podcast-brasil-qcon-special-yehuda-katz/)
 
+## 2008 - October
+
+- [Off-Topic: Understanding the Economic Crisis](/en/2008/10/09/off-topic-entendendo-a-crise-econ-mica/)
+- [Off-Topic: The Agile Manifesto, or How to Become Google](/en/2008/10/07/off-topic-o-manifesto-gil-ou-como-se-tornar-o-google/)
+
 ## 2008 - September
 
 - [Chatting with Joshua Peek](/en/2008/09/27/chatting-with-joshua-peek/)
+- [Off-Topic: The Power of Myth, Redux](/en/2008/09/20/off-topic-o-poder-do-mito-redux/)
 
 ## 2008 - July
 
+- [Off Topic: Why Programmers Should Play Go](/en/2008/07/15/off-topic-por-que-programadores-devem-jogar-go/)
 - [Chatting with Luis Lavena (Ruby on Windows)](/en/2008/07/02/chatting-with-luis-lavena-ruby-on-windows/)
 
 ## 2008 - June
@@ -290,19 +416,30 @@ Want to see the Akitando Channel transcripts (Portuguese only)? [Click here](/ak
 
 ## 2008 - May
 
+- [Off-Topic: Bleeding for Rails! Part 2](/en/2008/05/16/off-topic-dando-o-sangue-pelo-rails-parte-2/)
+- [Off-Topic: Bleeding for Rails!](/en/2008/05/07/off-topic-dando-o-sangue-pelo-rails/)
 - [Chatting with Hongli Lai and Ninh Bui (Phusion)](/en/2008/05/06/chatting-with-hongli-lai-and-ninh-bui-phusion/)
 
 ## 2008 - April
 
 - [Chatting with Chris Wanstrath (Err the Blog/Github)](/en/2008/04/21/chatting-with-chris-wanstrath-err-the-blog-github/)
+- [Off Topic: Let's All Stop the Regulation of the Systems Analyst Profession](/en/2008/04/19/off-topic-vamos-todos-impedir-a-regulamenta-o-da-profiss-o-de-analista-de-sistema/)
+- [Off Topic: Never Trust TIOBE](/en/2008/04/13/off-topic-nunca-confie-no-tiobe/)
+- [Off-Topic: Google App Engine and Cloud Computing](/en/2008/04/13/off-topic-google-app-engine-e-cloud-computing/)
+
+## 2008 - March
+
+- [Off Topic: We Are Mathematically Illiterate](/en/2008/03/01/off-topic-somos-matematicamente-ignorantes/)
 
 ## 2008 - February
 
 - [Chatting with Scott Hanselman](/en/2008/02/18/chatting-with-scott-hanselman/)
 - [Chatting with Evan Phoenix](/en/2008/02/11/chatting-with-evan-phoenix/)
+- [Translation: I Don't Know What I Want, But I Know How to Get It](/en/2008/02/10/tradu-o-n-o-sei-o-que-quero-mas-sei-como-conseguir/)
 
 ## 2008 - January
 
+- [Off Topic: "I Am Legend" - TERRIBLE!](/en/2008/01/19/off-topic-i-am-legend-horrvel/)
 - [Chatting with Hal Fulton](/en/2008/01/09/chatting-with-hal-fulton/)
 - [Chatting with Peter Cooper](/en/2008/01/09/chatting-with-peter-cooper/)
 - [Chatting with Adrian Holovaty](/en/2008/01/01/chatting-with-adrian-holovaty/)
@@ -316,8 +453,16 @@ Want to see the Akitando Channel transcripts (Portuguese only)? [Click here](/ak
 
 - [Chatting with John Lam (IronRuby)](/en/2007/11/12/chatting-with-john-lam-ironruby/)
 
+## 2007 - September
+
+- [Translation: Counting Is a Waste of Time](/en/2007/09/01/traduo-contar-perda-de-tempo/)
+
 ## 2007 - August
 
+- [Off Topic: Pale Blue Dot](/en/2007/08/29/off-topic-plido-ponto-azul/)
+- [Off Topic: Enemies of Reason](/en/2007/08/23/off-topic-inimigos-da-razo/)
+- [The Sunk Cost Fallacy](/en/2007/08/19/a-falcia-do-custo-perdido/)
+- [AkitaOnRails, Retrospective 1985-2007](/en/2007/08/12/akitaonrails-retrospectiva-1984-2007/)
 - [Chatting with Jamis Buck](/en/2007/08/06/chatting-with-jamis-buck/)
 
 ## 2007 - July
@@ -327,6 +472,7 @@ Want to see the Akitando Channel transcripts (Portuguese only)? [Click here](/ak
 ## 2007 - June
 
 - [Chatting with Ola Bini (JRuby Core Team Member)](/en/2007/06/21/chatting-with-ola-bini-jruby-core-team-member/)
+- [A Rant, Part II](/en/2007/06/19/um-desabafo-parte-ii/)
 
 ## 2007 - May
 
@@ -337,6 +483,29 @@ Want to see the Akitando Channel transcripts (Portuguese only)? [Click here](/ak
 
 - [Chatting with Geoffrey Grosenbach](/en/2007/04/21/chatting-with-geoffrey-grosenbach/)
 - [Chatting with Dr. Nic](/en/2007/04/16/chatting-with-dr-nic/)
+- [Off Topic: Be Arrogant!](/en/2007/04/14/off-topic-seja-arrogante/)
+
+## 2007 - March
+
+- [Off Topic: A Rant](/en/2007/03/14/off-topic-um-desabafo/)
+
+## 2007 - February
+
+- [Getting Real Translation - Release Candidate 2 Launch](/en/2007/02/01/tradução-getting-real-lançamento-release-candidate-2/)
+
+## 2007 - January
+
+- [Off Topic: "Here's to the crazy ones ..."](/en/2007/01/27/off-topic-heres-to-the-crazy-ones/)
+- [Off-topic: MacWorld 2007 - Steve Jobs Announces the Long-Awaited iPhone!](/en/2007/01/09/off-topic-macworld-2007-steve-jobs-anuncia-o-esperado-iphone/)
+- [Off-topic: MacWorld 2007 - Steve Jobs Keynote](/en/2007/01/09/off-topic-macworld-2007-keynote-do-steve-jobs/)
+
+## 2006 - October
+
+- [Kathy Sierra: Dilbert and the Zone of Mediocrity](/en/2006/10/19/kathy-sierra-dilbert-e-a-zona-de-mediocridade/)
+
+## 2006 - September
+
+- [Evolution Through Competition](/en/2006/09/27/evolução-pela-concorrência/)
 
 ## 2006 - April
 
