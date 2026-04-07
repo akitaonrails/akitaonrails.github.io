@@ -61,6 +61,11 @@ title: AkitaOnRails Blog
 - [AI Agents: Locking Down Your System](/en/2026/01/10/ai-agents-locking-down-your-system/)
 - [Omarchy 3 - One of the Best Coding Agents Out There: Crush](/en/2026/01/09/omarchy-3-one-of-the-best-coding-agents-crush/)
 
+## 2025 - August
+
+- [How to Contribute to the AkitaOnRails Blog Using Docker](/en/2025/08/29/how-to-contribute-to-the-akitaonrails-blog-using-docker/)
+- [Installing Omarchy 2.0 from Scratch - Personal Notes](/en/2025/08/29/new-omarchy-2-0-install/)
+
 ## 2025 - June
 
 - [AGI or Skynet Isn't Coming Anytime Soon](/en/2025/06/18/agi-or-skynet-isnt-coming-anytime-soon/)

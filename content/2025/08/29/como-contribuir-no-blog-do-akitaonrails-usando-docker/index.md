@@ -9,6 +9,7 @@ tags:
   - contribuição
   - open-source
 draft: false
+translationKey: contributing-to-blog-with-docker
 ---
 
 Contribuir em projetos open source pode ser um saco quando você precisa configurar um ambiente de desenvolvimento complexo. No blog do AkitaOnRails, isso significava instalar Hugo Extended, Go, Ruby e suas dependências. Mas agora temos uma solução muito mais simples: **Docker**.

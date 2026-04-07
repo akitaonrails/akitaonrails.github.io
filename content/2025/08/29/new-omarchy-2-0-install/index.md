@@ -9,6 +9,7 @@ tags:
   - timeshift
   - lazyvim
 draft: false
+translationKey: new-omarchy-2-install
 ---
 
 Eu tenho recomendado o [Omarchy 2.0](https://omarchy.org/) do DHH pra qualquer um que queira um ambiente de desenvolvimento leve, bonito e totalmente equipado. É um conjunto de configurações pra Hyprland rodando em cima de Arch Linux e vem com padrões inteligentes prontos pra usar. Assista o [video tour](https://www.youtube.com/watch?v=TcHY0AEd2Uw) mostrando as principais funcionalidades.
