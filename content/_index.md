@@ -94,13 +94,8 @@ title: AkitaOnRails Blog
 
 ## 2025 - May
 
-- [Seu Windows pode estar Capado sem Você Saber. Cheque isto!!](/2025/05/21/seu-windows-pode-estar-capado-sem-voce-saber-cheque-isto/)
 - [História da Computação e Retro Dev no YouTube](/2025/05/19/historia-da-computacao-e-retro-dev-no-youtube/)
 - [Último Tentativa de Treinar uma LLM com LoRa. Tiro de canhão, mas errando a mosca.](/2025/05/03/ultimo-tentativa-de-treinar-uma-llm-com-lora-tiro-de-canhao-mas-errando-a-mosca/)
-- [Ensinando Zig mais recente pra sua LLM - Treinando LoRas (quase)](/2025/05/03/ensinando-zig-mais-recente-pra-sua-llm-treinando-loras-quase/)
-- [RANT - LLMs são LOOT BOXES!](/2025/05/02/rant-llms-sao-loot-boxes/)
-- [Quando LLMs não Funcionam pra Programar? Um caso de uso mais real.](/2025/05/01/quando-llms-nao-funcionam-pra-programar-um-caso-de-uso-mais-real/)
-- [Rant - LLMs vão evoluir pra sempre? Desmistificando LLMs na programação](/2025/05/01/rant-llms-vao-evoluir-pra-sempre-desmistificando-llms-na-programacao/)
 
 ## 2025 - April
 

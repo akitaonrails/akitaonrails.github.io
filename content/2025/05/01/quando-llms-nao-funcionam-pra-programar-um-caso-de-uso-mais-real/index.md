@@ -9,6 +9,7 @@ tags:
 - openrouter
 - llm
 draft: false
+translationKey: when-llms-dont-work-for-coding
 ---
 
 

@@ -1,7 +1,7 @@
 ---
-title: História da Computação e Retro Dev no YouTube
+title: Computing History and Retro Dev on YouTube
 date: '2025-05-19T15:19:00-03:00'
-slug: historia-da-computacao-e-retro-dev-no-youtube
+slug: computing-history-and-retro-dev-on-youtube
 tags:
 - história
 - youtube
@@ -9,17 +9,18 @@ tags:
 - recomendações
 draft: false
 translationKey: computing-history-retro-dev-youtube
+description: A curated list of YouTube channels on computing history and retro development that every dev should watch.
 ---
 
 
 
-Eu assisto MUITO YouTube, e fico sempre compartilhando coisas legais que assisto no meu X e Instagram (me sigam lá). Tem vários videos que vira e mexe eu volto atrás.
+I watch a LOT of YouTube, and I'm always sharing cool stuff I watch on my X and Instagram (follow me there). There are several videos I keep coming back to.
 
-Finalmente resolvi compilar uma lista com os canais que eu mais assisto e uma lista das principais playlists e exemplos de videos de cada canal que recomendo assistir.
+I finally decided to compile a list with the channels I watch the most, along with a list of the main playlists and example videos from each channel that I recommend watching.
 
-Provavelmente vou ficar voltando nesta página pra atualizar de tempos em tempos. Se alguém se lembrar de algum que eu esqueci, mandem nos comentários. Tem canais como GameSack ou Sega Lord X ou Retro Game Corp ou Wullfden ou Macho Nacho Productions e vários outros assim que não listei, porque são mais de "reviews" e não cruzam tanto com "dev". Tentei focar em coisas que eu acho que um "dev" deveria saber.
+I'll probably keep coming back to this page to update it from time to time. If anyone remembers one I forgot, send it in the comments. There are channels like GameSack, Sega Lord X, Retro Game Corp, Wullfden, Macho Nacho Productions, and several others I didn't list, because they lean more toward "reviews" and don't overlap as much with "dev". I tried to focus on things I think a "dev" should know.
 
-## Lista (2025-05-19)
+## List (2025-05-19)
 
 * [Usagi Electric](https://www.youtube.com/@UsagiElectric)
 	* Playlists:

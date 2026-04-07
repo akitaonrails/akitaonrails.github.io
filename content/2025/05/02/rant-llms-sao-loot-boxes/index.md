@@ -11,6 +11,7 @@ tags:
 - nvidia
 - mcp
 draft: false
+translationKey: rant-llms-are-loot-boxes
 ---
 
 

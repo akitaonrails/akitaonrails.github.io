@@ -8,6 +8,7 @@ tags:
 - hanging event
 - slow down
 draft: false
+translationKey: windows-might-be-crippled
 ---
 
 

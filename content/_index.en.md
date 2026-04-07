@@ -61,6 +61,16 @@ title: AkitaOnRails Blog
 - [AI Agents: Locking Down Your System](/en/2026/01/10/ai-agents-locking-down-your-system/)
 - [Omarchy 3 - One of the Best Coding Agents Out There: Crush](/en/2026/01/09/omarchy-3-one-of-the-best-coding-agents-crush/)
 
+## 2025 - May
+
+- [Your Windows May Be Crippled Without You Knowing. Check This!!](/en/2025/05/21/your-windows-may-be-crippled-without-you-knowing-check-this/)
+- [Computing History and Retro Dev on YouTube](/en/2025/05/19/computing-history-and-retro-dev-on-youtube/)
+- [Final Attempt to Train an LLM with LoRA. Cannon Shot, But Missing the Fly.](/en/2025/05/03/final-attempt-to-train-an-llm-with-lora-cannon-shot-missing-the-fly/)
+- [Teaching the Latest Zig to Your LLM - Training LoRAs (Sort Of)](/en/2025/05/03/teaching-recent-zig-to-your-llm-training-loras-sort-of/)
+- [RANT - LLMs are LOOT BOXES!](/en/2025/05/02/rant-llms-are-loot-boxes/)
+- [When Do LLMs Fail at Programming? A More Realistic Use Case.](/en/2025/05/01/when-llms-dont-work-for-coding-a-more-realistic-use-case/)
+- [Rant - Will LLMs Evolve Forever? Demystifying LLMs in Programming](/en/2025/05/01/rant-llms-will-evolve-forever-demystifying-llms-in-programming/)
+
 ## 2025 - April
 
 - [Dissecting an Ollama Modelfile - Tuning Qwen3 for Code](/en/2025/04/29/dissecting-an-ollama-modelfile-tuning-qwen3-for-code/)

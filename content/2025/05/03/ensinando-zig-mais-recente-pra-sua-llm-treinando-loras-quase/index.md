@@ -9,6 +9,7 @@ tags:
 - vllm
 - llm
 draft: false
+translationKey: teaching-zig-to-llm-loras
 ---
 
 

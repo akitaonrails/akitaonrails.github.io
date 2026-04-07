@@ -12,6 +12,7 @@ tags:
 - benchmark
 - llm
 draft: false
+translationKey: rant-llms-evolve-forever
 ---
 
 

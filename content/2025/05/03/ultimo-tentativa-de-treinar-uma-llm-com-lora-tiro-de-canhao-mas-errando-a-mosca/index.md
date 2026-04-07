@@ -9,6 +9,7 @@ tags:
 - runpod
 - llm
 draft: false
+translationKey: last-lora-training-attempt
 ---
 
 
