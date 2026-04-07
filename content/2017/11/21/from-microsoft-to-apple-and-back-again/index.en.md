@@ -103,7 +103,7 @@ After a lot of experimentation, I decided to settle on having a native Windows 1
 
 Why not using the brand new [Windows Subsystem for Linux (WSL)](https://msdn.microsoft.com/en-us/commandline/wsl/faq#can-i-run-all-linux-apps-in-wsl) instead?
 
-Because although it's great and all, we will need to wait until they figure out the rough edges. Particularly a better GUI support and faster I/O abstraction. What hurts the most is how **painfully slow** the filesystem layer is right now. It's an [order of magnitude slower](http://www.akitaonrails.com/2017/09/20/windows-subsystem-for-linux-is-good-but-not-enough-yet) than using Linux on Virtualbox.
+Because although it's great and all, we will need to wait until they figure out the rough edges. Particularly a better GUI support and faster I/O abstraction. What hurts the most is how **painfully slow** the filesystem layer is right now. It's an [order of magnitude slower](http://www.akitaonrails.com/en/2017/09/20/windows-subsystem-for-linux-e-bom-mas-ainda-nao-suficiente) than using Linux on Virtualbox.
 
 I could use a Vagrant-like hybrid solution, having a headless Linux distro on Virtualbox and accessing a file through CIFS/NFS. And that should be fine if you like editors like Sublime Text 3, Visual Studio Code or Atom. But I am a Vim guy, and I like GVIM, which works best within GNOME, within a proper GUI-enabled Linux distro.
 

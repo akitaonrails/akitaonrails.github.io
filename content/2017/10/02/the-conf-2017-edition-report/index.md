@@ -43,7 +43,7 @@ Todos os palestrantes foram fenomenais — nenhum deles chegou atrasado (e muito
 
 Claro que não! ¯_(ツ)_/¯ Essa nunca foi a intenção.
 
-Organizo eventos nos últimos 10 anos. Como expliquei no post ["The Next 10 Years"](http://www.akitaonrails.com/2016/09/26/the-next-10-years), nunca tive lucro direto com nenhum evento que organizei. Faço isso porque tenho a convicção de que ajudando outras pessoas a melhorar, aumento minhas próprias chances de crescer nessa indústria.
+Organizo eventos nos últimos 10 anos. Como expliquei no post ["The Next 10 Years"](http://www.akitaonrails.com/2016/09/26/os-proximos-10-anos), nunca tive lucro direto com nenhum evento que organizei. Faço isso porque tenho a convicção de que ajudando outras pessoas a melhorar, aumento minhas próprias chances de crescer nessa indústria.
 
 Meu trabalho em tempo integral é como CTO da [Code Miner 42](http://www.codeminer42.com), minha própria empresa. E minha prioridade principal é o bem-estar das mais de 65 **famílias** que dependem do nosso sucesso. Por isso, cada evento que organizo consome a minha vida particular — eu jamais arriscaria minhas responsabilidades com meus funcionários.
 
@@ -133,7 +133,7 @@ Resumindo:
 * Quer patrocinar? Mande um e-mail para [contact@theconf.com.br](mailto:contact@theconf.com.br)
 * Quer ficar atualizado? Siga nossa [conta no Twitter](https://twitter.com/theconfbr) ou a [Página no Facebook](https://www.facebook.com/TheConfClub/).
 * Estamos criando um [Canal no YouTube](https://www.youtube.com/channel/UCANd_denSjyni5u64KWZcJg) e uma [conta no Instagram](https://www.instagram.com/the.conf/)
-* Todas as [gravações das palestras na InfoQ](http://www.akitaonrails.com/2017/11/13/the-conf-2017-all-the-recordings)
+* Todas as [gravações das palestras na InfoQ](http://www.akitaonrails.com/2017/11/13/the-conf-2017-todas-as-gravacoes)
 
 A edição 2017 foi entregue com sucesso. As preparações para a edição 2018 **começam agora**!
 

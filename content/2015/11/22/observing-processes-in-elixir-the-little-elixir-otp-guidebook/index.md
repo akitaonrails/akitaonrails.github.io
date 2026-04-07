@@ -15,7 +15,7 @@ draft: false
 
 Na minha jornada para entender de verdade como uma aplicação Elixir decente deve ser escrita, estou me exercitando com o excelente [The Little Elixir & OTP Guidebook](https://www.manning.com/books/the-little-elixir-and-otp-guidebook), do Benjamin Tan Wei Hao. Se você está começando agora, é decisão óbvia: compre e estude esse guia. E sim, ajuda muito se você tiver lido antes o [Programming Elixir](https://pragprog.com/book/elixir/programming-elixir) do Dave Thomas.
 
-No meu artigo [Ex Manga Downloadr Parte 2](http://www.akitaonrails.com/2015/11/19/ex-manga-downloadr-part-2-poolboy-to-the-rescue) eu explorei como adicionar um controle melhor de pool de processos usando a excelente e robusta biblioteca Poolboy. Um dos exercícios principais do guia é justamente construir uma versão mais simples do Poolboy em Elixir puro (o Poolboy é escrito no bom e velho Erlang).
+No meu artigo [Ex Manga Downloadr Parte 2](http://www.akitaonrails.com/2015/11/19/ex-manga-downloadr-parte-2-poolboy-ao-resgate) eu explorei como adicionar um controle melhor de pool de processos usando a excelente e robusta biblioteca Poolboy. Um dos exercícios principais do guia é justamente construir uma versão mais simples do Poolboy em Elixir puro (o Poolboy é escrito no bom e velho Erlang).
 
 O objetivo principal deste artigo é introduzir o que **Tolerância a Falhas** significa no Erlang/Elixir, e também é uma desculpa pra eu mostrar o observer do Erlang:
 

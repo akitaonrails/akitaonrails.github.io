@@ -12,7 +12,7 @@ tags:
 draft: false
 ---
 
-[Yesterday I added Mangafox support](http://www.akitaonrails.com/2015/12/02/ex-manga-downloadr-part-3-mangafox-support) to my downloader tool and it also added a bit of dirty code into my already not-so-good coding. It's time for some serious cleanup.
+[Yesterday I added Mangafox support](http://www.akitaonrails.com/en/2015/12/02/ex-manga-downloadr-parte-3-suporte-ao-mangafox) to my downloader tool and it also added a bit of dirty code into my already not-so-good coding. It's time for some serious cleanup.
 
 You can see everything I did since yesterday to clean things up through [Github's awesome compare page](https://github.com/akitaonrails/ex_manga_downloadr/compare/59694565592f8a3bea95115b858dd2ddfdc89873...3ae7dd98a8fd7bae47ffd7a24c0c42a2c3777fad)
 

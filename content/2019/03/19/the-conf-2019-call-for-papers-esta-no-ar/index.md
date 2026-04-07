@@ -20,7 +20,7 @@ Na Codeminer atendemos clientes no Brasil mas muitos nos EUA e também na Europa
 
 O objetivo da THE CONF é incentivar a nova geração de programadores e criar uma plataforma no Brasil para expor os programadores brasileiros ao mundo, mostrar que usar inglês pra nos expressarmos não é um bicho de sete cabeças. E nosso objetivo é ajudar essa nova geração a enxergar horizontes maiores, oferecendo uma evento 100% focado somente no que realmente interessa: tecnologia. 
 
-Pensando nisso, montamos o evento para ser um espaço [sem fins lucrativos](http://www.akitaonrails.com/2018/10/31/the-conf-2018-edition-report) e sem pressões comerciais, um pequeno espaço para prestigiar os melhores desenvolvedores brasileiros que estão já atuando tanto aqui no Brasil quanto lá fora. E este ano decidimos dar mais um passo.
+Pensando nisso, montamos o evento para ser um espaço [sem fins lucrativos](http://www.akitaonrails.com/2018/10/31/the-conf-2018-relatorio-da-edicao) e sem pressões comerciais, um pequeno espaço para prestigiar os melhores desenvolvedores brasileiros que estão já atuando tanto aqui no Brasil quanto lá fora. E este ano decidimos dar mais um passo.
 
 Como a descrição de “sem fins lucrativos” não é só pra inglês ver, este ano decidimos fazer um pouco mais e reverter toda a arrecadação de ingressos para organizações e movimentos sociais. Vocês sabem que não existe como dizer que entidade é mais importante do que outra, todas são importantes. Mas para este ano resolvemos escolher duas. 
 

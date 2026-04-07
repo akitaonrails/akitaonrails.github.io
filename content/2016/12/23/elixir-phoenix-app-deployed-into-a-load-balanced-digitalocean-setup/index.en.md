@@ -16,9 +16,9 @@ draft: false
 
 One of the main advantages of building a Websockets enabled web application using Phoenix is how "easy" it is for Erlang to connect itself into a cluster.
 
-For starters, Erlang does not need multiple processes like Ruby (which is limited to one connection per process, or per thread if you're using a threaded-server like Puma). One single Erlang process will take over the entire machine, if you need to. Internally it will keep one real thread per machine-core. And each thread will have its own Scheduler to manage as many micro-processes as you need. You can read all about it in my post titled ["Yocto Services"](http://www.akitaonrails.com/en/2015/11/25/yocto-services-and-my-first-month-with-elixir/).
+For starters, Erlang does not need multiple processes like Ruby (which is limited to one connection per process, or per thread if you're using a threaded-server like Puma). One single Erlang process will take over the entire machine, if you need to. Internally it will keep one real thread per machine-core. And each thread will have its own Scheduler to manage as many micro-processes as you need. You can read all about it in my post titled ["Yocto Services"](http://www.akitaonrails.com/en/en/2015/11/25/yocto-services-e-meu-primeiro-mes-com-elixir/).
 
-Moreover, Erlang has built-in capabilities to form a cluster, where each Erlang instance acts as a peer-to-peer Node, without the need for a centralized coordinator. You can read all about it in my post about [Nodes](http://www.akitaonrails.com/en/2015/11/25/exmessenger-exercise-understanding-nodes-in-elixir/). The power of Erlang is in how "easy" it is to form reliable distributed systems.
+Moreover, Erlang has built-in capabilities to form a cluster, where each Erlang instance acts as a peer-to-peer Node, without the need for a centralized coordinator. You can read all about it in my post about [Nodes](http://www.akitaonrails.com/en/en/2015/11/25/exercicio-exmessenger-entendendo-nodes-em-elixir/). The power of Erlang is in how "easy" it is to form reliable distributed systems.
 
 You can fire up many Phoenix instances and from one of the instances, it can broadcast messages to Users subscribed in Channels even if their sockets are connected to different instances. It's seamless and you don't need to do anything special in your code. Phoenix, Elixir and Erlang are doing all the heavy lifting for you behind the scenes.
 
@@ -45,7 +45,7 @@ I have created 4 droplets (all using the smallest size of 512Mb of RAM):
 * Goals: configure locale, assure unattended updates are up, upgrade packages, install and configure Elixir and Node.
 * You should also do: change SSH to another port and install [fail2ban](https://www.digitalocean.com/community/tutorials/how-to-protect-ssh-with-fail2ban-on-ubuntu-14-04, disallow login through password.
 
-You will want to read my post about [configuring Ubuntu 16.04](http://www.akitaonrails.com/2016/09/21/ubuntu-16-04-lts-xenial-on-vagrant-on-vmware-fusion). To summarize, start by configuring proper UTF-8:
+You will want to read my post about [configuring Ubuntu 16.04](http://www.akitaonrails.com/en/2016/09/21/ubuntu-16-04-lts-xenial-no-vagrant-com-vmware-fusion). To summarize, start by configuring proper UTF-8:
 
 ```
 sudo locale-gen "en_US.UTF-8"

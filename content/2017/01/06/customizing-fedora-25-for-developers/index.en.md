@@ -10,7 +10,7 @@ tags:
 draft: false
 ---
 
-**Update 01/18/2017:** Right after trying out Fedora for a few days, I decided to [try Arch Linux](http://www.akitaonrails.com/2017/01/10/arch-linux-best-distro-ever) and I couldn't be happier. I recommend you try Arch too, it will probably surprise you. You may be also interested about [advanced Linux tuning for better responsiveness](http://www.akitaonrails.com/2017/01/17/optimizing-linux-for-slow-computers) on the desktop.
+**Update 01/18/2017:** Right after trying out Fedora for a few days, I decided to [try Arch Linux](http://www.akitaonrails.com/en/2017/01/10/arch-linux-a-melhor-distro-de-todas) and I couldn't be happier. I recommend you try Arch too, it will probably surprise you. You may be also interested about [advanced Linux tuning for better responsiveness](http://www.akitaonrails.com/en/2017/01/17/otimizando-o-linux-para-computadores-lentos) on the desktop.
 
 I've been a long time Ubuntu user. Whenever I need to setup a Linux box I go to straight to the latest LTS. Muscle memory, can't avoid it.
 
@@ -348,4 +348,4 @@ You even have built-in [shortcuts](https://wiki.gnome.org/Gnome3CheatSheet) to s
 
 Compared to my Ubuntu configuration, this Fedora 25 is really a pleasure to use. A competent macOS replacement. I highly recommend it!
 
-And as I said at the update in the beginning of the post. Do check out [Arch Linux](http://www.akitaonrails.com/2017/01/10/arch-linux-best-distro-ever) and how to [optimize your distro to be more responsiveness](http://www.akitaonrails.com/2017/01/17/optimizing-linux-for-slow-computers), particularly on old hardware.
+And as I said at the update in the beginning of the post. Do check out [Arch Linux](http://www.akitaonrails.com/en/2017/01/10/arch-linux-a-melhor-distro-de-todas) and how to [optimize your distro to be more responsiveness](http://www.akitaonrails.com/en/2017/01/17/otimizando-o-linux-para-computadores-lentos), particularly on old hardware.

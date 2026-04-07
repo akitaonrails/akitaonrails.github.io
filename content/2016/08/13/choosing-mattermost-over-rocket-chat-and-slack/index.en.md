@@ -50,7 +50,7 @@ I was almost willing to overlook the lack of a proper test suite. I was willing 
 
 But slow responsiveness across many of the members of my team is a no-go, a big show-stopper. We turned the beta videochat feature off (as it always triggers CPU spikes across all users), but many members still had a bad experience with a UI that was too slow and a resource hog.
 
-The React-based, ES6-written, properly structured - with good enough client-side test suites - MatterMost was a more suitable candidate. So I decided to really think about the original problem and I came about with a simple solution: [add a simple PLPGSQL function](http://www.akitaonrails.com/2016/08/12/hacking-mattermost-team-edition) to be triggered whenever someone tried to delete a channel. Sure enough, it worked. And that prompted me to call my team again and propose this new change: I believe everybody was on-board as MatterMost was way faster on their machines.
+The React-based, ES6-written, properly structured - with good enough client-side test suites - MatterMost was a more suitable candidate. So I decided to really think about the original problem and I came about with a simple solution: [add a simple PLPGSQL function](http://www.akitaonrails.com/en/2016/08/12/hackeando-o-mattermost-team-edition) to be triggered whenever someone tried to delete a channel. Sure enough, it worked. And that prompted me to call my team again and propose this new change: I believe everybody was on-board as MatterMost was way faster on their machines.
 
 I know I am sounding really harsh towards Rocket.chat, and it's really not my intention. If we didn't have any other options, we would still move to Rocket.chat. But as Mattermost proved to be the better choice, it was a no-brainer.
 
@@ -228,7 +228,7 @@ func (c *Context) HasPermissionsToTeam(teamId string, where string) bool {
 
 Then change the `webapp/channel_header.jsx` component in the React front-end (as well as proper unit tests to `webapp/tests/client_channel.test.jsx`), make sure the `make test` passes, and then finally create a feature request to the core team.
 
-But the idea here was just to show that it was not so difficult to solve the show-stopper for my particular scenario, both using the [SQL trigger](http://www.akitaonrails.com/2016/08/12/hacking-mattermost-team-edition) to safeguard the database and the hack to fix the Web UI.
+But the idea here was just to show that it was not so difficult to solve the show-stopper for my particular scenario, both using the [SQL trigger](http://www.akitaonrails.com/en/2016/08/12/hackeando-o-mattermost-team-edition) to safeguard the database and the hack to fix the Web UI.
 
 ### Conclusion
 

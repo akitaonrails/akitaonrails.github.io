@@ -59,7 +59,7 @@ Then, I fire up Siege with ten concurrent connections and just one request each,
 Your browser does not support the video tag. [Direct Link](https://s3.us-east-2.amazonaws.com/blip.tv/Elixir/Node+1+x+10+Sleep.mp4)
 </source></video>
 
-This is why in my previous article" Why Elixir?" (http://www.akitaonrails.com/2015/12/01/the-obligatory-why-elixir-personal-take), I repeated many times how **"rudimentary"** a Reactor pattern-based solution is. It is super easy to block a single-threaded event loop.
+This is why in my previous article" Why Elixir?" (http://www.akitaonrails.com/en/2015/12/01/o-obrigatorio-por-que-elixir-visao-pessoal), I repeated many times how **"rudimentary"** a Reactor pattern-based solution is. It is super easy to block a single-threaded event loop.
 
 If you didn't know that already, how does Node.js work? In summary, it is a simple infinite loop. When a Javascript function runs, it blocks that event loop. The function has to explicitly yield control back to the loop for another function to have a chance to run. I/O calls take time and just sit back idly waiting for a response, so it can yield control back and wait for a callback to continue running, which is why you end up with the dreaded _"callback pyramid hell"_.
 

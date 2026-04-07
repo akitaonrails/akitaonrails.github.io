@@ -164,4 +164,4 @@ This approach is useful if your secondary application is akin to an Administrati
 
 This is also useful if you're doing data analysis, and again you can use the same associations, scopes, to build reports and dashboards. Essentially, if you need read-only access, this is a no-brainer.
 
-In the [next article](http://www.akitaonrails.com/2016/10/03/sharing-models-between-rails-apps-part-2) I will explain how I wired a secondary application, using the central-support gem and dealing with 2 different databases at the same time.
+In the [next article](http://www.akitaonrails.com/en/2016/10/03/compartilhando-models-entre-apps-rails-parte-2) I will explain how I wired a secondary application, using the central-support gem and dealing with 2 different databases at the same time.

@@ -9,7 +9,7 @@ tags:
 draft: false
 ---
 
-Let's continue from where I left off in [Part 1](http://www.akitaonrails.com/2016/10/03/sharing-models-between-rails-apps-part-1) where I quickly described how you can extract reusable model logic from a Rails app into a testable Rubygem.
+Let's continue from where I left off in [Part 1](http://www.akitaonrails.com/en/2016/10/03/compartilhando-models-entre-aplicacoes-rails-parte-1) where I quickly described how you can extract reusable model logic from a Rails app into a testable Rubygem.
 
 If I were building a secondary Rails app connecting directly to the same database as the first, I could just add the dependency to the extracted gem:
 
@@ -284,7 +284,7 @@ From here I can just call normal Arel queries such as `Central::Team.not_archive
 
 ### Conclusions
 
-If you didn't already, refer to [Part 1](http://www.akitaonrails.com/2016/10/03/sharing-models-between-rails-apps-part-1) for more details.
+If you didn't already, refer to [Part 1](http://www.akitaonrails.com/en/2016/10/03/compartilhando-models-entre-aplicacoes-rails-parte-1) for more details.
 
 This is a simple recipe to share model logic between a main read-write Rails app and a secondary read-only Rails app. They share most (not all) of the same models, they share the same logic (through some of the Concerns), and they share the same database.
 

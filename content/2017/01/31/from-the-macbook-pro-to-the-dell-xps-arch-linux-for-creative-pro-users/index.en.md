@@ -95,7 +95,7 @@ Manjaro is more of an independent distro, where the main sources point to Manjar
 
 For the most part it did work properly although I still had to tweak the Graphics configuration as it opts for the open source Nouveau drivers first. Trust me: opt for the proprietary binaries.
 
-If you're also a software developer, you will want to read my [previous post on Arch](http://www.akitaonrails.com/2017/01/10/arch-linux-best-distro-ever).
+If you're also a software developer, you will want to read my [previous post on Arch](http://www.akitaonrails.com/en/2017/01/10/arch-linux-a-melhor-distro-de-todas).
 
 ### Optimus Hybrid Graphics
 

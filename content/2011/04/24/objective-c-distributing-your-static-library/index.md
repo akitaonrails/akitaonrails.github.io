@@ -14,9 +14,9 @@ tags:
 draft: false
 ---
 
-Se você não leu meus [dois](http://www.akitaonrails.com/2011/04/23/objective-c-it's-a-unix-system-i-know-this) [últimos artigos](http://www.akitaonrails.com/2011/04/23/objective-c-categories-static-libraries-and-gotchas), recomendo fortemente que leia antes de continuar, porque vou usar o mesmo pet project, [ObjC Rubyfication](http://www.akitaonrails.com/2011/04/23/objective-c-it's-a-unix-system-i-know-this), como exemplo neste artigo. A ideia é simples: você está escrevendo código reutilizável e quer aproveitar isso em mais de um projeto.
+Se você não leu meus [dois](http://www.akitaonrails.com/2011/04/23/objective-c-it's-a-unix-system-i-know-this) [últimos artigos](http://www.akitaonrails.com/2011/04/23/objective-c-categories-static-libraries-e-pegadinhas), recomendo fortemente que leia antes de continuar, porque vou usar o mesmo pet project, [ObjC Rubyfication](http://www.akitaonrails.com/2011/04/23/objective-c-it's-a-unix-system-i-know-this), como exemplo neste artigo. A ideia é simples: você está escrevendo código reutilizável e quer aproveitar isso em mais de um projeto.
 
-A maior parte do que vou mostrar foi baseada no artigo do [Cocoanetics](http://www.cocoanetics.com/2010/04/universal-static-libraries/) sobre universal static libraries. Então, se você prestou atenção no [artigo anterior](http://www.akitaonrails.com/2011/04/23/objective-c-categories-static-libraries-and-gotchas), viu este screenshot:
+A maior parte do que vou mostrar foi baseada no artigo do [Cocoanetics](http://www.cocoanetics.com/2010/04/universal-static-libraries/) sobre universal static libraries. Então, se você prestou atenção no [artigo anterior](http://www.akitaonrails.com/2011/04/23/objective-c-categories-static-libraries-e-pegadinhas), viu este screenshot:
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2011/4/23/Screen%20shot%202011-04-23%20at%2011.41.27%20PM_original.png?1303613619)
 

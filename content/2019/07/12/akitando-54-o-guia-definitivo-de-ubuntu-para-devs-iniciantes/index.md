@@ -78,7 +78,7 @@ Em 00:03:00 eu falo que o Steam roda poucos jogos em Linux mas eu realmente me e
 * Vim cheatsheet (https://devhints.io/vim)
 * Tmux cheatsheet (https://devhints.io/tmux)
 
-* AkitaOnRails: Optimizing Linux for Slow Computers (https://www.akitaonrails.com/2017/01/17/optimizing-linux-for-slow-computers)
+* AkitaOnRails: Optimizing Linux for Slow Computers (https://www.akitaonrails.com/2017/01/17/otimizando-o-linux-para-computadores-lentos)
 
 Olá pessoal, Fabio Akita
 

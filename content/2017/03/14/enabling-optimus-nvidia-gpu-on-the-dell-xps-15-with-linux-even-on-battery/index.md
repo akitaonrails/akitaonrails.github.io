@@ -10,7 +10,7 @@ aliases:
 draft: false
 ---
 
-Já faz mais de um mês desde o meu [último post](http://www.akitaonrails.com/2017/01/31/from-the-macbook-pro-to-the-dell-xps-arch-linux-for-creative-pro-users) sobre como ajustar o Manjaro no Dell XPS 15.
+Já faz mais de um mês desde o meu [último post](http://www.akitaonrails.com/2017/01/31/do-macbook-pro-para-o-dell-xps-arch-linux-para-usuarios-criativos) sobre como ajustar o Manjaro no Dell XPS 15.
 
 O Manjaro lançou sua versão mais recente, a [versão 17](https://manjaro.org/2017/03/07/manjaro-gnome-17-0-released/), e o kernel chegou na 4.10. A atualização do Manjaro 16 com kernel 4.9 foi tranquila.
 

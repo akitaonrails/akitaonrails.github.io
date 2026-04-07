@@ -15,7 +15,7 @@ Obs: se você é brasileiro, leia [esta versão em Português](http://www.akitao
 
 *Update 12/09/2016:* We confirmed the dates of *Sep 29-30 of 2017* at [Centro de Convenções Rebouças](http://www.convencoesreboucas.com.br/espacos/grande-auditorio). Reserve the dates in your calendar!
 
-I was the main curator and organizer of all Rubyconf Brasil events and I have been doing Ruby related events and talks in Brasil for the past 10 years. [My last Rubyconf Brasil](http://www.akitaonrails.com/2016/09/26/the-next-10-years) in 2016 had almost 1,200 attendees coming from all over the country.
+I was the main curator and organizer of all Rubyconf Brasil events and I have been doing Ruby related events and talks in Brasil for the past 10 years. [My last Rubyconf Brasil](http://www.akitaonrails.com/2016/09/26/os-proximos-10-anos) in 2016 had almost 1,200 attendees coming from all over the country.
 
 I also did talks in international events such as Locos x Rails 2009, Railsconf 2010, RubyKaigi 2011, Toster 2012, Bubbleconf 2012, and others. In smaller scale I travelled all over Brasil doing more than 150 talks as well.
 

@@ -20,9 +20,9 @@ Não estou dizendo que o autor escreveu essas falácias de propósito. Infelizme
 
 Sobre o assunto específico de Rails, comece por aqui:
 
-* [Rails has won: The Elephant in the Room](http://www.akitaonrails.com/2016/05/23/rails-has-won-the-elephant-in-the-room)
-* [The Ruby Community and Reputation](http://www.akitaonrails.com/2016/08/19/the-ruby-community-and-reputation)
-* [Programmers Guild - Religion and Sports](http://www.akitaonrails.com/2017/05/14/programmers-guild-religion-and-sports)
+* [Rails has won: The Elephant in the Room](http://www.akitaonrails.com/2016/05/23/rails-venceu-o-elefante-na-sala)
+* [The Ruby Community and Reputation](http://www.akitaonrails.com/2016/08/19/a-comunidade-ruby-e-a-reputacao)
+* [Programmers Guild - Religion and Sports](http://www.akitaonrails.com/2017/05/14/guilda-de-programadores-religiao-e-esportes)
 
 Como regra geral, qualquer pessoa anunciando a morte futura de qualquer coisa está provavelmente errada. É divertido fazer apostas, mas artigos em sites de alto perfil como o TNW deveriam ter mais cuidado, já que muitos iniciantes acabam acreditando piamente nessas opiniões.
 

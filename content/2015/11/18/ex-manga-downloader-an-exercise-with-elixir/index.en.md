@@ -12,7 +12,7 @@ tags:
 draft: false
 ---
 
-**Update 11/19/15:** In this article I mention a few doubts I had, so read this and then follow through [Part 2](http://www.akitaonrails.com/2015/11/19/ex-manga-downloadr-part-2-poolboy-to-the-rescue) to see how I solved it.
+**Update 11/19/15:** In this article I mention a few doubts I had, so read this and then follow through [Part 2](http://www.akitaonrails.com/en/2015/11/19/ex-manga-downloadr-parte-2-poolboy-ao-resgate) to see how I solved it.
 
 As an exercise (and also because I'm obviously an [Otaku](https://en.wikipedia.org/wiki/Otaku)) I [implemented](https://github.com/akitaonrails/ex_manga_downloadr/blob/master/lib/ex_manga_downloadr/mangareader/index_page.ex) a simple Elixir based scrapper for the great [MangaReader](http://www.mangareader.net/) website. One can argue if it's ok to scrap their website, and one might also argue if them providing those mangas is ok in the first place, so let's not go down this path.
 

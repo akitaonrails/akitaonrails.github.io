@@ -26,7 +26,7 @@ Esse é um assunto que todo mundo bate cabeça, mas o básico não é tão compl
 Links:
 
 * AkitaOnRails: [Off-Topic] Lendo os Princípios Ágeis (http://www.akitaonrails.com/2010/01/30/off-topic-lendo-os-principios-ageis)
-* AkitaOnRails: Estimates are Promises - A Better Metaphor (http://www.akitaonrails.com/2017/06/26/estimates-are-promises-a-better-metaphor)
+* AkitaOnRails: Estimates are Promises - A Better Metaphor (http://www.akitaonrails.com/2017/06/26/estimativas-sao-promessas-uma-metafora-melhor)
 
 ## Script
 

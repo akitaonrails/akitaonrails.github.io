@@ -14,7 +14,7 @@ draft: false
 
 It's been over a year since I wrote the 2 pieces about my "Ex Pusher Lite" concept. The code from a year ago is already obsolete as I was still just learning my way through both Elixir and Phoenix.
 
-I've published an article about [ExAdmin and Coherence](http://www.akitaonrails.com/2016/12/06/coherence-and-exadmin-devise-and-activeadmin-for-phoenix) and another on [Deploying Elixir to DigitalOcean](http://www.akitaonrails.com/2016/12/23/elixir-phoenix-app-deployed-into-a-load-balanced-digitalocean-setup) this month.
+I've published an article about [ExAdmin and Coherence](http://www.akitaonrails.com/en/2016/12/06/coherence-e-exadmin-devise-e-activeadmin-para-phoenix) and another on [Deploying Elixir to DigitalOcean](http://www.akitaonrails.com/en/2016/12/23/aplicativo-elixir-phoenix-deploy-balanceamento-carga-digitalocean) this month.
 
 The idea is very simple, it is a homage to [Pusher](https://pusher.com/). If you used Pusher before, this is very similar (albeit way less feature complete, of course).
 
@@ -211,7 +211,7 @@ I am also considering if I will keep the current servers online as a cheap servi
 
 There are important features still missing, such as proper SSL support, encrypted channels, better Presence tracking APIs and so on, but what's available right now already covers most use cases for WebSockets.
 
-And better: because this is Phoenix, because this is Elixir, and because this is Erlang, we get distributed PubSub for "free". As I explained in my [deployment](http://www.akitaonrails.com/2016/12/23/elixir-phoenix-app-deployed-into-a-load-balanced-digitalocean-setup) post, this is a setup with a server in New York and another in London, just to showcase the distributed nature of Erlang.
+And better: because this is Phoenix, because this is Elixir, and because this is Erlang, we get distributed PubSub for "free". As I explained in my [deployment](http://www.akitaonrails.com/en/2016/12/23/aplicativo-elixir-phoenix-deploy-balanceamento-carga-digitalocean) post, this is a setup with a server in New York and another in London, just to showcase the distributed nature of Erlang.
 
 It's been very fun to play with Elixir for the past few days and how fast I was able to put together a full-featured solution like this. There were many puzzles that made me scratch my head, figuring out how to deal with cross origin issues, how to make the nodes find each other through the edeliver deployment, figuring out the missing bits in replacing exrm for distillery (which is a transition still taking place in the community), etc.
 

@@ -14,7 +14,7 @@ tags:
 draft: false
 ---
 
-Se você leu o [meu artigo anterior](http://www.akitaonrails.com/2015/11/18/ex-manga-downloader-an-exercise-with-elixir), eu descrevi rapidamente meu exercício construindo um downloader pro MangaReader. Se ainda não leu, recomendo dar uma olhada antes de continuar.
+Se você leu o [meu artigo anterior](http://www.akitaonrails.com/2015/11/18/ex-manga-downloadr-um-exercicio-com-elixir), eu descrevi rapidamente meu exercício construindo um downloader pro MangaReader. Se ainda não leu, recomendo dar uma olhada antes de continuar.
 
 No meio do artigo, eu falei que ainda estava me coçando pra entender qual seria a melhor forma de lidar com várias requisições HTTP simultâneas contra uma fonte externa instável, onde eu não consigo controlar timeout nem outros problemas de rede.
 

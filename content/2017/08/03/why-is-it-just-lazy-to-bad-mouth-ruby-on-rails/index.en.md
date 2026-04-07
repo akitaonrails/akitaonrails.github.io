@@ -18,9 +18,9 @@ I'm not saying that the author wrote fallacies on purpose. Unfortunately, it's j
 
 On the specific subject of Rails, start here:
 
-* [Rails has won: The Elephant in the Room](http://www.akitaonrails.com/2016/05/23/rails-has-won-the-elephant-in-the-room)
-* [The Ruby Community and Reputation](http://www.akitaonrails.com/2016/08/19/the-ruby-community-and-reputation)
-* [Programmers Guild - Religion and Sports](http://www.akitaonrails.com/2017/05/14/programmers-guild-religion-and-sports)
+* [Rails has won: The Elephant in the Room](http://www.akitaonrails.com/en/2016/05/23/rails-venceu-o-elefante-na-sala)
+* [The Ruby Community and Reputation](http://www.akitaonrails.com/en/2016/08/19/a-comunidade-ruby-e-a-reputacao)
+* [Programmers Guild - Religion and Sports](http://www.akitaonrails.com/en/2017/05/14/guilda-de-programadores-religiao-e-esportes)
 
 As a general rule, anyone announcing the future demise of anything is most probably wrong. It's fun to play guessing games, but articles in high profile websites like TNW should be more careful as many beginners in the field end up trusting their opinions.
 

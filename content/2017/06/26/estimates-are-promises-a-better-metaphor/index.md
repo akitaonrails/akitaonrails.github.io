@@ -122,7 +122,7 @@ O TEMPO TODO.
 
 Isso é o que a "Velocidade" do Ágil (ou qualquer simulação de Monte Carlo mais sofisticada) realmente é: um termômetro.
 
-Se a Velocidade está alta demais, seu time provavelmente está fazendo hora extra ou entregando código de qualidade inferior. Isso vai dar problema — seu time vai estourar rápido demais ou o código está acumulando [dívida técnica](http://www.akitaonrails.com/2017/06/22/the-economics-of-software-development) rápido demais e você não vai conseguir pagar. A Velocidade vai cair até parar se você mantiver esse ritmo (o forno explode).
+Se a Velocidade está alta demais, seu time provavelmente está fazendo hora extra ou entregando código de qualidade inferior. Isso vai dar problema — seu time vai estourar rápido demais ou o código está acumulando [dívida técnica](http://www.akitaonrails.com/2017/06/22/a-economia-do-desenvolvimento-de-software) rápido demais e você não vai conseguir pagar. A Velocidade vai cair até parar se você mantiver esse ritmo (o forno explode).
 
 Se a Velocidade está baixa demais, seu time está enrolando, seu backlog é um lixo inútil que ninguém consegue entender mesmo depois de 10 horas de reunião, ou você já deixou a Velocidade ficar alta demais e agora está pagando a dívida técnica, ou seu time está morto de burnout (o fogo apagou).
 

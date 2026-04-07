@@ -41,7 +41,7 @@ All the speakers were phenomenal, not one of them were late (and many of them tr
 
 Of course not! ¯_(ツ)_/¯ That was never the intention.
 
-I've been organizing events for the past 10 years. As I explained in my ["The Next 10 Years"](http://www.akitaonrails.com/2016/09/26/the-next-10-years) post, I never directly had any profits on any events I delivered. I do them because I have the core belief that by helping others to improve I increase my own chances of growing up in this industry.
+I've been organizing events for the past 10 years. As I explained in my ["The Next 10 Years"](http://www.akitaonrails.com/en/2016/09/26/os-proximos-10-anos) post, I never directly had any profits on any events I delivered. I do them because I have the core belief that by helping others to improve I increase my own chances of growing up in this industry.
 
 My full-time job is CTO of [Code Miner 42](http://www.codeminer42.com), my own company. And my main priority is the well-being of the more than 65 **families** that depend on our success. So every event I organize eats up my own life as I wouldn't risk my responsibilities with my direct employees.
 
@@ -131,7 +131,7 @@ To summarize:
 * Want to sponsor? E-mail us at [contact@theconf.com.br](mailto:contact@theconf.com.br)
 * Want to keep updated? Follow our [Twitter account](https://twitter.com/theconfbr) or [Facebook Page](https://www.facebook.com/TheConfClub/).
 * We are starting a [YouTube Channel](https://www.youtube.com/channel/UCANd_denSjyni5u64KWZcJg) and [Instagram account](https://www.instagram.com/the.conf/)
-* All the [video recordings at InfoQ](http://www.akitaonrails.com/2017/11/13/the-conf-2017-all-the-recordings)
+* All the [video recordings at InfoQ](http://www.akitaonrails.com/en/2017/11/13/the-conf-2017-todas-as-gravacoes)
 
 The 2017 edition was successfully delivered. Preparations for 2018 edition, **starts now**!
 

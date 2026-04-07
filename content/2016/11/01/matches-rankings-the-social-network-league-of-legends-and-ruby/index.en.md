@@ -10,7 +10,7 @@ tags:
 draft: false
 ---
 
-There is a segment in a series of talks that I have been presenting in Brazil for the last 3 years or so that I never blogged about. Yesterday I just [posted about the proper way to rank content by "popularity"](http://www.akitaonrails.com/2016/10/31/ruby-on-rails-implementation-of-a-proper-ranking-popularity-system) so I thought I should revisit the theme.
+There is a segment in a series of talks that I have been presenting in Brazil for the last 3 years or so that I never blogged about. Yesterday I just [posted about the proper way to rank content by "popularity"](http://www.akitaonrails.com/en/2016/10/31/implementacao-ruby-on-rails-sistema-ranking-popularidade-correto) so I thought I should revisit the theme.
 
 To begin, I believe by now most people already watched the movie "The Social Network". It's interesting that I heard many people saying how this movie influenced them to begin their own startups. So I was thinking, "what does this movie actually teach?"
 

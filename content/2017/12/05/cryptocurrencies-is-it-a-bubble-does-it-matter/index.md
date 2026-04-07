@@ -15,7 +15,7 @@ tags:
 draft: false
 ---
 
-Obs: este post é uma continuação do meu artigo anterior ["De 10K pra Frente"](http://www.akitaonrails.com/2017/11/30/from-10k-and-beyond-discussing-crypto-currencies).
+Obs: este post é uma continuação do meu artigo anterior ["De 10K pra Frente"](http://www.akitaonrails.com/2017/11/30/de-10-mil-e-alem-discutindo-criptomoedas).
 
 Essa é a pergunta de um milhão de dólares. Ou de um bilhão!
 
@@ -53,7 +53,7 @@ Aceite que ninguém consegue prever o futuro. Podemos fazer previsões de curto 
 
 E o mais importante: **não importa se o Bitcoin despencar amanhã!**
 
-Programadores de startups de tecnologia são os primeiros a gritar a besteira do _"é a Mania das Tulipas de novo"_, como se isso os fizesse soar sábios. Como disse no meu [artigo anterior](http://www.akitaonrails.com/2017/11/30/from-10k-and-beyond-discussing-crypto-currencies), se você ouvir alguém repetindo essa [fake news](https://www.smithsonianmag.com/history/there-never-was-real-tulip-fever-180964915/), você sabe que essa pessoa não entende nada do assunto.
+Programadores de startups de tecnologia são os primeiros a gritar a besteira do _"é a Mania das Tulipas de novo"_, como se isso os fizesse soar sábios. Como disse no meu [artigo anterior](http://www.akitaonrails.com/2017/11/30/de-10-mil-e-alem-discutindo-criptomoedas), se você ouvir alguém repetindo essa [fake news](https://www.smithsonianmag.com/history/there-never-was-real-tulip-fever-180964915/), você sabe que essa pessoa não entende nada do assunto.
 
 Igualmente desonesto é ouvir pessoas dizendo _"é só acreditar, análise do mundo real não se aplica ao Bitcoin."_ Isso é absurdo. Claro que se aplica. Tanto o mercado de ações quanto as criptomoedas seguem o mesmo comportamento, porque os jogadores são os mesmos. Não só análise técnica, mas também economia comportamental se aplica. Como o Efeito Dotação de Richard Thaler:
 

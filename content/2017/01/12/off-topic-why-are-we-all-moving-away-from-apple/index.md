@@ -50,7 +50,7 @@ E nós também.
 
 As grandes distros Linux, a Microsoft, os fabricantes de hardware para PC, as viradas de grandes empresas (Nokia, Blackberry, Motorola), o começo da era das GPUs, o fim das guerras de clock da Lei de Moore em direção à computação paralela, a ascensão do ARM. Levou dez anos para a poeira baixar, e foi preciso a Apple ficar parada por seis anos para que todos os outros conseguissem alcançá-la.
 
-Ballmer passou o bastão para Satya Nadella. A Microsoft adquiriu a Xamarin, deu passos enormes em direção ao open source e até o [Ubuntu passou a rodar nativamente no Windows 10](http://www.akitaonrails.com/2016/07/26/the-year-of-linux-on-the-desktop-it-s-usable).
+Ballmer passou o bastão para Satya Nadella. A Microsoft adquiriu a Xamarin, deu passos enormes em direção ao open source e até o [Ubuntu passou a rodar nativamente no Windows 10](http://www.akitaonrails.com/2016/07/26/o-ano-do-linux-no-desktop-esta-usavel).
 
 ![Satya Nadella](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/593/THE_END_TIMES_ARE_HERE-399de53540c79757ac9af535579cdad9.jpg)
 

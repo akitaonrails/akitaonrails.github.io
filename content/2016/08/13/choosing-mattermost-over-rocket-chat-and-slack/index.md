@@ -53,7 +53,7 @@ Eu estava quase disposto a relevar a falta de uma suíte de testes decente. Esta
 
 Mas a lentidão na resposta atingindo vários membros do meu time é um show-stopper, um problema gigante. Desligamos a feature beta de videochat (já que ela sempre dispara picos de CPU em todos os usuários), mas vários membros ainda tinham uma experiência ruim com uma UI lenta demais e devoradora de recursos.
 
-O MatterMost, baseado em React, escrito em ES6, devidamente estruturado, com suítes de teste client-side suficientemente boas, era um candidato mais adequado. Então decidi pensar de verdade no problema original e cheguei a uma solução simples: [adicionar uma função PLPGSQL simples](http://www.akitaonrails.com/2016/08/12/hacking-mattermost-team-edition) para ser disparada sempre que alguém tentasse apagar um canal. Funcionou direitinho. E isso me motivou a chamar meu time de novo e propor essa nova mudança: acredito que todo mundo embarcou, já que o MatterMost estava muito mais rápido nas máquinas deles.
+O MatterMost, baseado em React, escrito em ES6, devidamente estruturado, com suítes de teste client-side suficientemente boas, era um candidato mais adequado. Então decidi pensar de verdade no problema original e cheguei a uma solução simples: [adicionar uma função PLPGSQL simples](http://www.akitaonrails.com/2016/08/12/hackeando-o-mattermost-team-edition) para ser disparada sempre que alguém tentasse apagar um canal. Funcionou direitinho. E isso me motivou a chamar meu time de novo e propor essa nova mudança: acredito que todo mundo embarcou, já que o MatterMost estava muito mais rápido nas máquinas deles.
 
 Sei que estou soando muito duro com o Rocket.chat, e essa não é minha intenção. Se não tivéssemos outras opções, ainda iríamos para o Rocket.chat. Mas como o Mattermost provou ser a melhor escolha, foi decisão fácil.
 
@@ -231,7 +231,7 @@ func (c *Context) HasPermissionsToTeam(teamId string, where string) bool {
 
 Depois mudar o componente `webapp/channel_header.jsx` no front-end React (junto com testes unitários decentes em `webapp/tests/client_channel.test.jsx`), garantir que o `make test` passa, e finalmente abrir um feature request para o core team.
 
-Mas a ideia aqui era só mostrar que não foi tão difícil resolver o show-stopper para o meu cenário particular, tanto usando o [trigger SQL](http://www.akitaonrails.com/2016/08/12/hacking-mattermost-team-edition) para proteger o banco quanto o hack para arrumar a Web UI.
+Mas a ideia aqui era só mostrar que não foi tão difícil resolver o show-stopper para o meu cenário particular, tanto usando o [trigger SQL](http://www.akitaonrails.com/2016/08/12/hackeando-o-mattermost-team-edition) para proteger o banco quanto o hack para arrumar a Web UI.
 
 ### Conclusão
 

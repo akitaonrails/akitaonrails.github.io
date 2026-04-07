@@ -105,7 +105,7 @@ Depois de muita experimentação, decidi usar o Windows 10 nativo como host e um
 
 Por que não usar o novíssimo [Windows Subsystem for Linux (WSL)](https://msdn.microsoft.com/en-us/commandline/wsl/faq#can-i-run-all-linux-apps-in-wsl)?
 
-Porque embora seja promissor, ainda precisamos esperar que resolvam as arestas. Em particular, um suporte melhor a GUI e uma abstração de I/O mais rápida. O que dói mais é como a camada de sistema de arquivos é **dolorosamente lenta** agora. É uma [ordem de magnitude mais lenta](http://www.akitaonrails.com/2017/09/20/windows-subsystem-for-linux-is-good-but-not-enough-yet) do que usar Linux no Virtualbox.
+Porque embora seja promissor, ainda precisamos esperar que resolvam as arestas. Em particular, um suporte melhor a GUI e uma abstração de I/O mais rápida. O que dói mais é como a camada de sistema de arquivos é **dolorosamente lenta** agora. É uma [ordem de magnitude mais lenta](http://www.akitaonrails.com/2017/09/20/windows-subsystem-for-linux-e-bom-mas-ainda-nao-suficiente) do que usar Linux no Virtualbox.
 
 Poderia usar uma solução híbrida estilo Vagrant, com uma distribuição Linux headless no Virtualbox e acessando arquivos via CIFS/NFS. Funcionaria bem se você gosta de editores como Sublime Text 3, Visual Studio Code ou Atom. Mas sou do time Vim e gosto do GVIM, que funciona melhor dentro do GNOME, dentro de uma distribuição Linux com GUI de verdade.
 

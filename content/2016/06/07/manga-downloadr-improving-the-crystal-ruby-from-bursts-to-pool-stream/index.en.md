@@ -10,7 +10,7 @@ tags:
 draft: false
 ---
 
-Yesterday [I posted](http://www.akitaonrails.com/2016/06/06/manga-downloadr-porting-from-crystal-to-ruby-and-a-bit-of-jruby) how I built a new implementation of the Manga Reader Downloader in Crystal, ported to Ruby, tested on JRuby and compared against Elixir. Just to recap, these were the results to fetch chapters, pages and image links of a sample manga:
+Yesterday [I posted](http://www.akitaonrails.com/en/2016/06/06/manga-downloadr-portando-de-crystal-para-ruby-e-um-pouco-de-jruby) how I built a new implementation of the Manga Reader Downloader in Crystal, ported to Ruby, tested on JRuby and compared against Elixir. Just to recap, these were the results to fetch chapters, pages and image links of a sample manga:
 
 * MRI Ruby 2.3.1: 57 seconds
 * JRuby 9.1.1.0: 45 seconds

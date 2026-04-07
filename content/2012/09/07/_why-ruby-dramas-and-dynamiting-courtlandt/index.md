@@ -15,7 +15,7 @@ draft: false
 
 ![_Why é o Howard Roark do mundo Ruby](http://s3.amazonaws.com/akitaonrails/assets/image_asset/image/22/why_fountainhead.jpg)
 
-Recentemente escrevi um artigo chamado [_Why Documentary at Rubyconf 2012, Denver](http://www.akitaonrails.com/2012/09/03/why-documentary-at-rubyconf-2012-denver) lembrando as pessoas sobre essa figura que se autodenominava "_Why", que decidiu desaparecer em agosto de 2009, levando consigo todo o seu trabalho, basicamente cometendo um suicídio virtual.
+Recentemente escrevi um artigo chamado [_Why Documentary at Rubyconf 2012, Denver](http://www.akitaonrails.com/2012/09/03/documentario-do-why-na-rubyconf-2012-denver) lembrando as pessoas sobre essa figura que se autodenominava "_Why", que decidiu desaparecer em agosto de 2009, levando consigo todo o seu trabalho, basicamente cometendo um suicídio virtual.
 
 O artigo atraiu muitos trolls e haters na seção de comentários, gerando bem mais discussão do que eu esperava, questionando por que cultuamos alguém louco o suficiente para destruir todo o próprio trabalho, alguém que obviamente não é um bom modelo a ser seguido e que, comparado a outros titãs da programação, fez pouco e com qualidade duvidosa.
 

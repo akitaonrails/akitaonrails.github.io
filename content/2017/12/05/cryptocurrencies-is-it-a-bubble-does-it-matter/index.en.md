@@ -13,7 +13,7 @@ tags:
 draft: false
 ---
 
-Obs: this is a follow up to my previous post ["From 10K and Beyond"](http://www.akitaonrails.com/2017/11/30/from-10k-and-beyond-discussing-crypto-currencies).
+Obs: this is a follow up to my previous post ["From 10K and Beyond"](http://www.akitaonrails.com/en/2017/11/30/de-10-mil-e-alem-discutindo-criptomoedas).
 
 This is the million dollar question. Or billion!
 
@@ -51,7 +51,7 @@ Accept that no one can predict the future. We can forecast the short term. If we
 
 And the most important thing: **It doesn't matter if Bitcoin crashes hard tomorrow!**
 
-Programmers from Tech startups are the very first to shout out the stupid _"It is like Tulip Mania all over again"_ as if this makes them sound wise or something. As I said in my [previous article](http://www.akitaonrails.com/2017/11/30/from-10k-and-beyond-discussing-crypto-currencies), if you hear anyone repeating this [fake news](https://www.smithsonianmag.com/history/there-never-was-real-tulip-fever-180964915/), you know they know nothing.
+Programmers from Tech startups are the very first to shout out the stupid _"It is like Tulip Mania all over again"_ as if this makes them sound wise or something. As I said in my [previous article](http://www.akitaonrails.com/en/2017/11/30/de-10-mil-e-alem-discutindo-criptomoedas), if you hear anyone repeating this [fake news](https://www.smithsonianmag.com/history/there-never-was-real-tulip-fever-180964915/), you know they know nothing.
 
 Equally disingenuous is when I hear people saying _"just believe in it, real-world analysis doesn't apply to Bitcoin."_ This is stupid, of course, it does. Both the stock market and cryptocurrencies follow the same behavior: because the players are the same. Not only technical analysis, but behavioral economics also apply. Like Richard Thaler's Endowment effect:
 

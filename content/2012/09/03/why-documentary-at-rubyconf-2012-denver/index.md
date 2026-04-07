@@ -13,9 +13,9 @@ tags:
 draft: false
 ---
 
-*Update:* Esse artigo gerou alguma polêmica. Publiquei [outro post](http://akitaonrails.com/2012/09/07/_why-ruby-dramas-and-dynamiting-courtlandt) com mais reflexões sobre o assunto depois.
+*Update:* Esse artigo gerou alguma polêmica. Publiquei [outro post](http://akitaonrails.com/2012/09/07/why-dramas-do-ruby-e-dinamitando-courtlandt) com mais reflexões sobre o assunto depois.
 
-A [RubyConf Brasil 2012](http://www.akitaonrails.com/2012/09/01/rubyconf-brasil-2012-it-s-a-wrap) acabou de terminar, mas a Rubyconf americana 2012 vai começar nos dias 1 a 3 de novembro de 2012, em Denver, Colorado. Enquanto eu finalizava meu post sobre o evento, esbarrei [neste trailer do documentário do Why](http://www.youtube.com/watch?v=47LtM830ocE), que deve estrear durante a Rubyconf americana, se eu entendi direito.
+A [RubyConf Brasil 2012](http://www.akitaonrails.com/2012/09/01/rubyconf-brasil-2012-encerramento) acabou de terminar, mas a Rubyconf americana 2012 vai começar nos dias 1 a 3 de novembro de 2012, em Denver, Colorado. Enquanto eu finalizava meu post sobre o evento, esbarrei [neste trailer do documentário do Why](http://www.youtube.com/watch?v=47LtM830ocE), que deve estrear durante a Rubyconf americana, se eu entendi direito.
 
 Agora, se você é novo no ecossistema Ruby, talvez nunca tenha ouvido falar desse personagem chamado "Why, The Lucky Stiff". Acho que dois dos melhores artigos sobre ele foram escritos por um Rubyista brasileiro, [Diogo Terror](http://twitter.com/dterror), para a Smashing Magazine em 2010, intitulado [_Why: A Tale Of A Post-Modern Genius](http://www.smashingmagazine.com/2010/05/15/why-a-tale-of-a-post-modern-genius/), e por Annie Lowrey para a Slate em [Where's _why?](http://www.slate.com/articles/technology/technology/2012/03/ruby_ruby_on_rails_and__why_the_disappearance_of_one_of_the_world_s_most_beloved_computer_programmers_.single.html).
 

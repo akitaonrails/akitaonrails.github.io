@@ -26,8 +26,8 @@ Algum tempo atrás o DHH lançou uma ferramenta open source chamada [Omakub](htt
 Eu gostei bastante das escolhas do DHH, ele sempre foi um cara de Mac, eu também. Mas eu migrei de volta pra Linux quase 10 anos atrás. O motivo foi porque eu evangelizava tech pra desenvolvedores júniors e no Brasil ficou inviável incentivar Macs. E não queria que parecesse que sem usar Macs você estaria automaticamente em grande desvantagem. Então passei a usar exclusivamente Linux e no blog fiz vários posts explicando sobre isso, como estes:
 
 * [2015 - Situação Brasil: No Macs for the Rest of Us](https://www.akitaonrails.com/2015/11/10/situacao-brasil-no-macs-for-the-rest-of-us)
-* [2016 - The Year of Linux on the Desktop, by Microsoft ??](https://www.akitaonrails.com/2016/04/12/the-year-of-linux-on-the-desktop-by-microsoft)
-* [2017 - Off-Topic - Why are we all moving away from Apple?](https://www.akitaonrails.com/2017/01/12/off-topic-why-are-we-all-moving-away-from-apple)
+* [2016 - The Year of Linux on the Desktop, by Microsoft ??](https://www.akitaonrails.com/2016/04/12/o-ano-do-linux-no-desktop-pela-microsoft)
+* [2017 - Off-Topic - Why are we all moving away from Apple?](https://www.akitaonrails.com/2017/01/12/off-topic-por-que-estamos-todos-migrando-para-longe-da-apple)
 
 Sem contar os diversos videos com setups que fiz no meu canal, como estes:
 

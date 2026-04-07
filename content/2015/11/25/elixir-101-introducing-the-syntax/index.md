@@ -147,7 +147,7 @@ iex(9)> ~w(a b c d e f)a
 
 ### Lists, Tuples e Keyword Lists
 
-Bom, isso foi simples demais. Você precisa mesmo ter a ideia de pattern matching e os tipos básicos na cabeça pra fluir. Vamos pegar outro trecho do [Ex Manga Downloadr](http://www.akitaonrails.com/2015/11/18/ex-manga-downloader-an-exercise-with-elixir):
+Bom, isso foi simples demais. Você precisa mesmo ter a ideia de pattern matching e os tipos básicos na cabeça pra fluir. Vamos pegar outro trecho do [Ex Manga Downloadr](http://www.akitaonrails.com/2015/11/18/ex-manga-downloadr-um-exercicio-com-elixir):
 
 ```ruby
 defp parse_args(args) do

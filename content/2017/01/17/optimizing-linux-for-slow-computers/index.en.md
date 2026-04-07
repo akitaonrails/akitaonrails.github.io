@@ -11,7 +11,7 @@ tags:
 draft: false
 ---
 
-I've been researching a lot about Linux on the Desktop these days as you may see from my posts about [Fedora 25](http://www.akitaonrails.com/2017/01/06/customizing-fedora-25-for-developers) and [Arch Linux](http://www.akitaonrails.com/2017/01/10/arch-linux-best-distro-ever) (recommended!).
+I've been researching a lot about Linux on the Desktop these days as you may see from my posts about [Fedora 25](http://www.akitaonrails.com/en/2017/01/06/customizando-o-fedora-25-para-desenvolvedores) and [Arch Linux](http://www.akitaonrails.com/en/2017/01/10/arch-linux-a-melhor-distro-de-todas) (recommended!).
 
 There are some things you must have in mind when migrating to Linux systems.
 

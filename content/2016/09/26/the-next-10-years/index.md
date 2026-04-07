@@ -141,7 +141,7 @@ E esses valores vão continuar, com ou sem Rubyconf ou a linguagem Ruby.
 
 Eu sei, para a maioria ainda vai parecer que estou amarrado ao framework web, mas essa amarra existe só na cabeça dos outros. Talvez um dia eu mude, mas não agora.
 
-[Nem sempre vamos concordar](http://www.akitaonrails.com/2016/05/23/rails-has-won-the-elephant-in-the-room) sobre quais são as técnicas certas, mas sempre vamos nos esforçar em direção aos mesmos objetivos: **escrever código bonito que produza resultados valiosos**.
+[Nem sempre vamos concordar](http://www.akitaonrails.com/2016/05/23/rails-venceu-o-elefante-na-sala) sobre quais são as técnicas certas, mas sempre vamos nos esforçar em direção aos mesmos objetivos: **escrever código bonito que produza resultados valiosos**.
 
 ### Os Próximos 10 Anos
 
@@ -157,7 +157,7 @@ Eu faço tudo guiado por essa ideia:
 
 > "Sou engenheiro de software. Sei o que está por vir pelo princípio sobre o qual se baseia."
 
-Expliquei isso em detalhes no meu artigo ["_Why, Ruby Dramas, and Dynamiting Courtlandt"](http://www.akitaonrails.com/en/2012/09/07/_why-ruby-dramas-and-dynamiting-courtlandt/). De uma forma modesta, quero acreditar que honrei esse princípio.
+Expliquei isso em detalhes no meu artigo ["_Why, Ruby Dramas, and Dynamiting Courtlandt"](http://www.akitaonrails.com/en/2012/09/07/why-dramas-do-ruby-e-dinamitando-courtlandt/). De uma forma modesta, quero acreditar que honrei esse princípio.
 
 Eu escrevo software (e sobre software) porque gosto de software. Sou muito fã de Ruby e vou continuar fazendo o melhor Ruby que conseguir por muitos anos. E também vou escrever bom Elixir, e bom Crystal, e talvez bom Javascript, etc.
 

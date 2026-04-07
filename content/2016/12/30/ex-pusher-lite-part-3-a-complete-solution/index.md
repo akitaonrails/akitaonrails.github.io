@@ -16,7 +16,7 @@ draft: false
 
 Já faz mais de um ano desde que escrevi as 2 partes sobre o meu conceito "Ex Pusher Lite". O código de um ano atrás já está obsoleto, pois eu ainda estava aprendendo Elixir e Phoenix na prática.
 
-Este mês publiquei um artigo sobre [ExAdmin e Coherence](http://www.akitaonrails.com/2016/12/06/coherence-and-exadmin-devise-and-activeadmin-for-phoenix) e outro sobre [Deploy de Elixir no DigitalOcean](http://www.akitaonrails.com/2016/12/23/elixir-phoenix-app-deployed-into-a-load-balanced-digitalocean-setup).
+Este mês publiquei um artigo sobre [ExAdmin e Coherence](http://www.akitaonrails.com/2016/12/06/coherence-e-exadmin-devise-e-activeadmin-para-phoenix) e outro sobre [Deploy de Elixir no DigitalOcean](http://www.akitaonrails.com/2016/12/23/aplicativo-elixir-phoenix-deploy-balanceamento-carga-digitalocean).
 
 A ideia é bem simples: é uma homenagem ao [Pusher](https://pusher.com/). Se você já usou o Pusher, isso é muito parecido (embora com bem menos funcionalidades, claro).
 
@@ -213,7 +213,7 @@ Também estou pensando em manter os servidores online como um serviço barato. V
 
 Ainda faltam recursos importantes, como suporte adequado a SSL, canais criptografados, APIs de Presence melhores e por aí vai — mas o que está disponível agora já cobre a maioria dos casos de uso para WebSockets.
 
-E tem mais: por ser Phoenix, por ser Elixir, por ser Erlang, ganhamos PubSub distribuído "de graça". Como expliquei no meu post de [deploy](http://www.akitaonrails.com/2016/12/23/elixir-phoenix-app-deployed-into-a-load-balanced-digitalocean-setup), é um setup com um servidor em Nova York e outro em Londres, só para demonstrar a natureza distribuída do Erlang.
+E tem mais: por ser Phoenix, por ser Elixir, por ser Erlang, ganhamos PubSub distribuído "de graça". Como expliquei no meu post de [deploy](http://www.akitaonrails.com/2016/12/23/aplicativo-elixir-phoenix-deploy-balanceamento-carga-digitalocean), é um setup com um servidor em Nova York e outro em Londres, só para demonstrar a natureza distribuída do Erlang.
 
 Foi muito divertido brincar com Elixir nos últimos dias e ver com que rapidez consegui montar uma solução completa como essa. Teve muitos quebra-cabeças que me fizeram coçar a cabeça: como lidar com problemas de cross origin, como fazer os nós se encontrarem pelo deploy via edeliver, descobrir as peças faltantes na transição do exrm para o distillery (que ainda está em andamento na comunidade), etc.
 

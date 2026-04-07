@@ -48,7 +48,7 @@ And so are we.
 
 Major Linux distros, Microsoft, PC hardware manufacturers, big industry turnarounds (Nokia, Blackberry, Motorola) the dawn of the GPU era, the end of Moore's Law speed clock wars into parallel computing, the dawn of ARM. It took 10 years for all the smoke to finally settle, and it took having Apple standing still for 6 years for everybody to finally catch up.
 
-Ballmer left the reins to Satya Nadella. Microsoft acquires Xamarin, make huge strides into open source and even [Ubuntu now runs natively on top of Windows 10](http://www.akitaonrails.com/2016/07/26/the-year-of-linux-on-the-desktop-it-s-usable).
+Ballmer left the reins to Satya Nadella. Microsoft acquires Xamarin, make huge strides into open source and even [Ubuntu now runs natively on top of Windows 10](http://www.akitaonrails.com/en/2016/07/26/o-ano-do-linux-no-desktop-esta-usavel).
 
 ![Satya Nadella](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/593/THE_END_TIMES_ARE_HERE-399de53540c79757ac9af535579cdad9.jpg)
 

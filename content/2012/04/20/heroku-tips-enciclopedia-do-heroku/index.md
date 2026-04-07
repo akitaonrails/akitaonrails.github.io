@@ -10,7 +10,7 @@ tags:
 draft: false
 ---
 
- **Atualização Jul/2016:** Sobre uploads e S3, leia meu post mais recente [Updating my Old Posts on Uploads](http://www.akitaonrails.com/2016/07/28/updating-my-old-posts-on-uploads)
+ **Atualização Jul/2016:** Sobre uploads e S3, leia meu post mais recente [Updating my Old Posts on Uploads](http://www.akitaonrails.com/2016/07/28/atualizando-meus-posts-antigos-sobre-uploads)
 
 **Atualização 11/9:** Fiz alguns ajustes (troquei Unicorn por Passenger) e também escrevi [outro post com mais dicas](http://www.akitaonrails.com/2013/09/11/heroku-tips-problemas-iniciais-com-rails-4-no-heroku#.UjDR-WRgZ3Y).
 

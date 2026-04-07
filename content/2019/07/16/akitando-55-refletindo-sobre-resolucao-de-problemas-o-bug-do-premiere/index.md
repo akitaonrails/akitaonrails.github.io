@@ -33,7 +33,7 @@ Se você me mandou mensagens no Insta, talvez veja sua mensagem no video hoje :-
 
 * Screencasts Liberados Gratuitamente! (https://www.akitaonrails.com/2012/04/09/screencasts-liberados-gratuitamente)
 * Iniciando com Git (https://www.youtube.com/watch?v=jdinE9SkUnE&list=PLevVxVF0KI-DZM6IyBXop7FV6nJeC90hd)
-* From the Macbook Pro to the Dell XPS. Arch Linux for Creative Pro Users (https://www.akitaonrails.com/2017/01/31/from-the-macbook-pro-to-the-dell-xps-arch-linux-for-creative-pro-users)
+* From the Macbook Pro to the Dell XPS. Arch Linux for Creative Pro Users (https://www.akitaonrails.com/2017/01/31/do-macbook-pro-para-o-dell-xps-arch-linux-para-usuarios-criativos)
 
 == Videos antigos (em private)
 

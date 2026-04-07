@@ -69,8 +69,8 @@ Links:
 
 * AkitaOnRails: Retrospectiva on Rails - 10 Anos e Muito Mais! (http://www.akitaonrails.com/2014/08/26/retrospectiva-on-rails-10-anos-e-muito-mais)
 * AkitaOnRails: Entrevistas (https://www.akitaonrails.com/interview)
-* AkitaOnRails: _Why, Ruby Dramas, and Dynamiting Courtlandt (http://www.akitaonrails.com/2016/09/26/the-next-10-years)
-* AkitaOnRails: The Next 10 Years (http://www.akitaonrails.com/2016/09/26/the-next-10-years)
+* AkitaOnRails: _Why, Ruby Dramas, and Dynamiting Courtlandt (http://www.akitaonrails.com/2016/09/26/os-proximos-10-anos)
+* AkitaOnRails: The Next 10 Years (http://www.akitaonrails.com/2016/09/26/os-proximos-10-anos)
 
 
 R.I.P.:

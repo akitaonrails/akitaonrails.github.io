@@ -13,7 +13,7 @@ tags:
 draft: false
 ---
 
-Tem um trecho de uma série de palestras que venho apresentando no Brasil há uns 3 anos sobre o qual nunca escrevi no blog. Ontem acabei de [postar sobre a forma correta de ranquear conteúdo por "popularidade"](http://www.akitaonrails.com/2016/10/31/ruby-on-rails-implementation-of-a-proper-ranking-popularity-system) então achei que valia revisitar o tema.
+Tem um trecho de uma série de palestras que venho apresentando no Brasil há uns 3 anos sobre o qual nunca escrevi no blog. Ontem acabei de [postar sobre a forma correta de ranquear conteúdo por "popularidade"](http://www.akitaonrails.com/2016/10/31/implementacao-ruby-on-rails-sistema-ranking-popularidade-correto) então achei que valia revisitar o tema.
 
 Pra começar, acredito que a essa altura quase todo mundo já assistiu ao filme "A Rede Social". É curioso que ouvi várias pessoas dizerem como esse filme as influenciou a começar suas próprias startups. Aí eu fiquei pensando, "o que esse filme realmente ensina?"
 

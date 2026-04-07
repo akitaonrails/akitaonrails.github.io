@@ -18,9 +18,9 @@ draft: false
 
 Uma das principais vantagens de construir uma aplicação web com Websockets usando Phoenix é como é "fácil" para o Erlang se conectar num cluster.
 
-Para começar, Erlang não precisa de múltiplos processos como Ruby (que fica limitado a uma conexão por processo, ou por thread se você usa um servidor com threads como o Puma). Um único processo Erlang vai tomar conta de toda a máquina, se necessário. Internamente ele mantém uma thread real por core da máquina. E cada thread tem seu próprio Scheduler para gerenciar quantos micro-processos você precisar. Você pode ler tudo sobre isso no meu post ["Yocto Services"](http://www.akitaonrails.com/2015/11/25/yocto-services-and-my-first-month-with-elixir).
+Para começar, Erlang não precisa de múltiplos processos como Ruby (que fica limitado a uma conexão por processo, ou por thread se você usa um servidor com threads como o Puma). Um único processo Erlang vai tomar conta de toda a máquina, se necessário. Internamente ele mantém uma thread real por core da máquina. E cada thread tem seu próprio Scheduler para gerenciar quantos micro-processos você precisar. Você pode ler tudo sobre isso no meu post ["Yocto Services"](http://www.akitaonrails.com/2015/11/25/yocto-services-e-meu-primeiro-mes-com-elixir).
 
-Além disso, Erlang tem capacidades nativas de formar um cluster, onde cada instância Erlang age como um Node peer-to-peer, sem precisar de um coordenador centralizado. Você pode ler tudo sobre isso no meu post sobre [Nodes](http://www.akitaonrails.com/2015/11/25/exmessenger-exercise-understanding-nodes-in-elixir). O poder do Erlang está em como é "fácil" formar sistemas distribuídos confiáveis.
+Além disso, Erlang tem capacidades nativas de formar um cluster, onde cada instância Erlang age como um Node peer-to-peer, sem precisar de um coordenador centralizado. Você pode ler tudo sobre isso no meu post sobre [Nodes](http://www.akitaonrails.com/2015/11/25/exercicio-exmessenger-entendendo-nodes-em-elixir). O poder do Erlang está em como é "fácil" formar sistemas distribuídos confiáveis.
 
 Você pode subir várias instâncias Phoenix e, a partir de uma delas, transmitir mensagens para usuários inscritos em Channels mesmo que seus sockets estejam conectados a instâncias diferentes. É transparente e você não precisa fazer nada especial no seu código. Phoenix, Elixir e Erlang fazem todo o trabalho pesado por você nos bastidores.
 
@@ -47,7 +47,7 @@ Criei 4 droplets (todos usando o menor tamanho de 512Mb de RAM):
 * Objetivos: configurar o locale, garantir que as atualizações automáticas estejam ativas, atualizar pacotes, instalar e configurar Elixir e Node.
 * Você também deveria: mudar o SSH para outra porta e instalar [fail2ban](https://www.digitalocean.com/community/tutorials/how-to-protect-ssh-with-fail2ban-on-ubuntu-14-04, desabilitar login por senha.
 
-Recomendo ler meu post sobre [configurar o Ubuntu 16.04](http://www.akitaonrails.com/2016/09/21/ubuntu-16-04-lts-xenial-on-vagrant-on-vmware-fusion). Resumindo, comece configurando o UTF-8 corretamente:
+Recomendo ler meu post sobre [configurar o Ubuntu 16.04](http://www.akitaonrails.com/2016/09/21/ubuntu-16-04-lts-xenial-no-vagrant-com-vmware-fusion). Resumindo, comece configurando o UTF-8 corretamente:
 
 ```
 sudo locale-gen "en_US.UTF-8"

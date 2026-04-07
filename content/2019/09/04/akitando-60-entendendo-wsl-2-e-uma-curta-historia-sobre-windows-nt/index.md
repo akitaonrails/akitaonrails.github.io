@@ -76,8 +76,8 @@ Links:
 * coLinux (não-suportado mais) (http://www.colinux.org)
 * Cygwin (https://cygwin.com/install.html)
 
-* AkitaOnRails: Windows Subsystem for Linux is good, but not enough yet (https://www.akitaonrails.com/2017/09/20/windows-subsystem-for-linux-is-good-but-not-enough-yet)
-* AkitaOnRails: Running Arch Linux over Windows 10! (https://www.akitaonrails.com/2018/04/29/running-arch-linux-over-windows-10)
+* AkitaOnRails: Windows Subsystem for Linux is good, but not enough yet (https://www.akitaonrails.com/2017/09/20/windows-subsystem-for-linux-e-bom-mas-ainda-nao-suficiente)
+* AkitaOnRails: Running Arch Linux over Windows 10! (https://www.akitaonrails.com/2018/04/29/rodando-arch-linux-sobre-o-windows-10)
 
 ## SCRIPT
 

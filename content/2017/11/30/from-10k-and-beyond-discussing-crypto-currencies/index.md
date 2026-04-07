@@ -21,7 +21,7 @@ Como muitos na área de tecnologia, eu experimentei desde o início. Eu mesmo mi
 
 Quando chegou a USD 3.000, meu interesse na plataforma foi totalmente renovado. E foi uma surpresa muito agradável ver o tamanho que isso tomou. Quem me acompanha sabe o quanto sou ávido por aprender coisas novas que têm potencial real. E também como é fácil para mim mergulhar de cabeça em algo.
 
-Só consigo fazer isso porque não sou fiel a nada. Não escolho e defendo uma [única linguagem](http://www.akitaonrails.com/2016/05/31/flirting-with-crystal-a-rubyist-perspective), nem um [único sistema operacional](http://www.akitaonrails.com/2017/01/10/arch-linux-best-distro-ever), nem um [único fabricante](http://www.akitaonrails.com/2017/11/21/from-microsoft-to-apple-and-back-again), nem um [único mercado](http://www.akitaonrails.com/2017/08/28/off-topic-blockchain-e-criptomoedas-no-brasil). Ficar na posição de defender algo por defender me parece extremamente improdutivo.
+Só consigo fazer isso porque não sou fiel a nada. Não escolho e defendo uma [única linguagem](http://www.akitaonrails.com/2016/05/31/flertando-com-crystal-perspectiva-de-um-rubyista), nem um [único sistema operacional](http://www.akitaonrails.com/2017/01/10/arch-linux-a-melhor-distro-de-todas), nem um [único fabricante](http://www.akitaonrails.com/2017/11/21/da-microsoft-para-a-apple-e-de-volta), nem um [único mercado](http://www.akitaonrails.com/2017/08/28/off-topic-blockchain-e-criptomoedas-no-brasil). Ficar na posição de defender algo por defender me parece extremamente improdutivo.
 
 Acredite ou não, as criptomoedas vieram para ficar, pelo menos por alguns anos. Lembro da sensação quando experimentei a internet comercial em 1993. É exatamente isso de novo: um território inexplorado com muito potencial e muita coisa que ainda não conseguimos imaginar.
 
@@ -67,13 +67,13 @@ Não importa. Antes de mais nada, não estão drenando energia de graça. Todo m
 
 E os técnicos deveriam saber disso melhor. Nunca houve banda suficiente nas linhas telefônicas para todo mundo no planeta se conectar à internet. Tivemos que evoluir muito a infraestrutura. Adicionamos cabos submarinos. Saímos dos modems discados para ISDN, para modems a cabo, e assim por diante.
 
-A mineração baseada em [proof of work](http://www.akitaonrails.com/2017/11/01/how-does-bitcoin-force-consensus-among-byzantine-generals) consome uma quantidade enorme de energia, e com razão. Estamos trocando energia por integridade. Mas não é a única alternativa. Existem implementações de [proof of stake](https://github.com/ethereum/wiki/wiki/Proof-of-Stake-FAQ) começando a ser implantadas em outras alt-coins, com eficiência energética muito maior enquanto oferecem níveis similares de confiança no consenso.
+A mineração baseada em [proof of work](http://www.akitaonrails.com/2017/11/01/como-o-bitcoin-forca-consenso-entre-os-generais-bizantinos) consome uma quantidade enorme de energia, e com razão. Estamos trocando energia por integridade. Mas não é a única alternativa. Existem implementações de [proof of stake](https://github.com/ethereum/wiki/wiki/Proof-of-Stake-FAQ) começando a ser implantadas em outras alt-coins, com eficiência energética muito maior enquanto oferecem níveis similares de confiança no consenso.
 
 O ponto é que a tecnologia evolui rápido e não dá para extrapolar o futuro com base no que temos hoje. É como alguém em 1993 dizendo _"a internet comercial não pode acontecer porque as linhas telefônicas são lentas demais se algum dia quisermos streaming de vídeo"_.
 
 > "O Bitcoin é centralizado demais, isso é perigoso!"
 
-Se você é programador e ainda não sabe exatamente o que significa minerar, recomendo que leia primeiro meu [artigo anterior](http://www.akitaonrails.com/2017/11/01/how-does-bitcoin-force-consensus-among-byzantine-generals) sobre o assunto.
+Se você é programador e ainda não sabe exatamente o que significa minerar, recomendo que leia primeiro meu [artigo anterior](http://www.akitaonrails.com/2017/11/01/como-o-bitcoin-forca-consenso-entre-os-generais-bizantinos) sobre o assunto.
 
 A mineração não é determinística. Mesmo com o melhor hardware do mundo, não há garantia de que você vai minerar o bloco primeiro. É mais como uma rifa.
 

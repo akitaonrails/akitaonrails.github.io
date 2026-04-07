@@ -11,7 +11,7 @@ draft: false
 
 07/23/16: coincidentally I posted this review a day before of the final release :-) So the final build is 14393 and [it's available](http://arstechnica.com/information-technology/2016/07/windows-10-anniversary-update-is-ready-to-go-and-free-for-just-a-few-more-days/) for free right now!
 
-It's been 3 months since I posted [my initial impressions](http://www.akitaonrails.com/2016/04/12/the-year-of-linux-on-the-desktop-by-microsoft) on Windows 10 Anniversary Edition most important feature: Bash on Windows. My conclusion at the time was that it was not ready for prime time yet.
+It's been 3 months since I posted [my initial impressions](http://www.akitaonrails.com/en/2016/04/12/o-ano-do-linux-no-desktop-pela-microsoft) on Windows 10 Anniversary Edition most important feature: Bash on Windows. My conclusion at the time was that it was not ready for prime time yet.
 
 My conclusion as of right now, on July 26th is that it's finally usable enough for web developers, particularly for Ruby developers who always suffered through lack of Windows support.
 
@@ -23,7 +23,7 @@ Installation process is the same. You must be signed up to the [Windows Insider]
 
 Once you do all that, you can start the "Bash on Ubuntu on Windows" (a mouth full). The first good surprise is that it prompts you to register a new username instead of just falling back to Root. As I said in my previous post, it's good practice to create a new user and add it to the sudoers group, and this is what it does. So you can install packages using "sudo apt-get install".
 
-You should follow my [previous post](http://www.akitaonrails.com/2016/04/12/the-year-of-linux-on-the-desktop-by-microsoft) for all the packages and configurations I normally do in a development Linux box.
+You should follow my [previous post](http://www.akitaonrails.com/en/2016/04/12/o-ano-do-linux-no-desktop-pela-microsoft) for all the packages and configurations I normally do in a development Linux box.
 
 RVM now works! I was able to install Ruby 2.3.1 through RVM without any problems whatsoever.
 

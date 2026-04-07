@@ -12,9 +12,9 @@ tags:
 draft: false
 ---
 
-If you didn't read my [last](http://www.akitaonrails.com/2011/04/23/objective-c-it's-a-unix-system-i-know-this) [two article](http://www.akitaonrails.com/2011/04/23/objective-c-categories-static-libraries-and-gotchas) I recommend you do so before going any further because I am using the same pet project, [ObjC Rubyfication](http://www.akitaonrails.com/2011/04/23/objective-c-it's-a-unix-system-i-know-this) as an example for this article. The point is: you are writing reusable code that you want in more than one project.
+If you didn't read my [last](http://www.akitaonrails.com/2011/04/23/objective-c-it's-a-unix-system-i-know-this) [two article](http://www.akitaonrails.com/en/2011/04/23/objective-c-categories-static-libraries-e-pegadinhas) I recommend you do so before going any further because I am using the same pet project, [ObjC Rubyfication](http://www.akitaonrails.com/2011/04/23/objective-c-it's-a-unix-system-i-know-this) as an example for this article. The point is: you are writing reusable code that you want in more than one project.
 
-Most of this was based on [Cocoanetics](http://www.cocoanetics.com/2010/04/universal-static-libraries/) article about universal static libraries. So, if you've payed attention to my [previous article](http://www.akitaonrails.com/2011/04/23/objective-c-categories-static-libraries-and-gotchas), you saw this screenshot:
+Most of this was based on [Cocoanetics](http://www.cocoanetics.com/2010/04/universal-static-libraries/) article about universal static libraries. So, if you've payed attention to my [previous article](http://www.akitaonrails.com/en/2011/04/23/objective-c-categories-static-libraries-e-pegadinhas), you saw this screenshot:
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2011/4/23/Screen%20shot%202011-04-23%20at%2011.41.27%20PM_original.png?1303613619)
 

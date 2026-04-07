@@ -17,7 +17,7 @@ tags:
 draft: false
 ---
 
-Em julho de 2016 escrevi um post precipitado intitulado ["The Year of Linux on the Desktop - It's Usable!"](http://www.akitaonrails.com/2016/07/26/the-year-of-linux-on-the-desktop-it-s-usable) e, de fato, ele era (mal e mal) utilizável.
+Em julho de 2016 escrevi um post precipitado intitulado ["The Year of Linux on the Desktop - It's Usable!"](http://www.akitaonrails.com/2016/07/26/o-ano-do-linux-no-desktop-esta-usavel) e, de fato, ele era (mal e mal) utilizável.
 
 O verdadeiro "Ano do Linux no Desktop" ainda não chegou. Mas está chegando, como vou explicar.
 
@@ -67,14 +67,14 @@ Também dá para instalar um servidor X no Windows, como o [xming](https://sourc
 
 Estou usando o [ASDF](https://github.com/asdf-vm/asdf) para instalar e gerenciar múltiplas versões de Ruby, Node.js, Elixir, etc. E também funciona.
 
-Consegui mover minhas chaves SSH da instalação anterior do [Arch Linux](http://www.akitaonrails.com/2017/01/10/arch-linux-best-distro-ever). E aí consigo clonar os repositórios Git normalmente. E aqui vem o **grande problema**. Clonei e configurei um projeto Rails. Este é o melhor resultado que consegui rodando toda a suíte RSpec com testes de aceitação usando PhantomJS:
+Consegui mover minhas chaves SSH da instalação anterior do [Arch Linux](http://www.akitaonrails.com/2017/01/10/arch-linux-a-melhor-distro-de-todas). E aí consigo clonar os repositórios Git normalmente. E aqui vem o **grande problema**. Clonei e configurei um projeto Rails. Este é o melhor resultado que consegui rodando toda a suíte RSpec com testes de aceitação usando PhantomJS:
 
 ```
 Finished in 5 minutes 35 seconds (files took 48.53 seconds to load)
 888 examples, 0 failures
 ```
 
-Isso rodando no meu [Dell XPS 9550](http://www.akitaonrails.com/2017/01/31/from-the-macbook-pro-to-the-dell-xps-arch-linux-for-creative-pro-users) com Core i7 Skylake (4 cores, 8 threads), 16 GB de RAM e SSD NVME2. Pedi a um colega para rodar no Mac Mini dele, de 2012, com Core i5 (provavelmente Haswell), 10 GB de RAM e SSD normal. Este foi o resultado dele:
+Isso rodando no meu [Dell XPS 9550](http://www.akitaonrails.com/2017/01/31/do-macbook-pro-para-o-dell-xps-arch-linux-para-usuarios-criativos) com Core i7 Skylake (4 cores, 8 threads), 16 GB de RAM e SSD NVME2. Pedi a um colega para rodar no Mac Mini dele, de 2012, com Core i5 (provavelmente Haswell), 10 GB de RAM e SSD normal. Este foi o resultado dele:
 
 ```
 Finished in 3 minutes 37.6 seconds (files took 9.73 seconds to load)

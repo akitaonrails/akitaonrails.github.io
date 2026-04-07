@@ -14,7 +14,7 @@ tags:
 draft: false
 ---
 
-Eu achava que a [Parte 2](http://www.akitaonrails.com/2015/11/19/ex-manga-downloadr-part-2-poolboy-to-the-rescue) seria meu último artigo sobre essa ferramentinha, mas no fim das contas é divertido demais para largar tão rápido. Como sempre, todo o código fonte está no meu [repositório do Github](https://github.com/akitaonrails/ex_manga_downloadr). E o resumo do post é que agora dá pra fazer isso:
+Eu achava que a [Parte 2](http://www.akitaonrails.com/2015/11/19/ex-manga-downloadr-parte-2-poolboy-ao-resgate) seria meu último artigo sobre essa ferramentinha, mas no fim das contas é divertido demais para largar tão rápido. Como sempre, todo o código fonte está no meu [repositório do Github](https://github.com/akitaonrails/ex_manga_downloadr). E o resumo do post é que agora dá pra fazer isso:
 
 ```
 git pull

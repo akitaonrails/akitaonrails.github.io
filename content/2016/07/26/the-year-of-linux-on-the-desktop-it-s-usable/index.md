@@ -14,7 +14,7 @@ draft: false
 
 23/07/16: por coincidência, postei esse review um dia antes do release final :-) Então o build final é o 14393 e [já está disponível](http://arstechnica.com/information-technology/2016/07/windows-10-anniversary-update-is-ready-to-go-and-free-for-just-a-few-more-days/) de graça agora mesmo!
 
-Já fazem 3 meses desde que postei [minhas impressões iniciais](http://www.akitaonrails.com/2016/04/12/the-year-of-linux-on-the-desktop-by-microsoft) sobre a feature mais importante do Windows 10 Anniversary Edition: o Bash no Windows. Minha conclusão na época foi que ainda não estava pronto pra produção.
+Já fazem 3 meses desde que postei [minhas impressões iniciais](http://www.akitaonrails.com/2016/04/12/o-ano-do-linux-no-desktop-pela-microsoft) sobre a feature mais importante do Windows 10 Anniversary Edition: o Bash no Windows. Minha conclusão na época foi que ainda não estava pronto pra produção.
 
 Minha conclusão agora, em 26 de julho, é que finalmente está usável o suficiente pra desenvolvedores web, particularmente pra desenvolvedores Ruby que sempre sofreram com a falta de suporte no Windows.
 
@@ -26,7 +26,7 @@ O processo de instalação é o mesmo. Você precisa estar inscrito no programa 
 
 Depois de fazer tudo isso, você pode iniciar o "Bash on Ubuntu on Windows" (que nome enorme). A primeira boa surpresa é que ele pede pra você registrar um novo nome de usuário em vez de cair direto no Root. Como falei no post anterior, é boa prática criar um novo usuário e adicionar ao grupo sudoers, e é isso que ele faz. Então você pode instalar pacotes usando "sudo apt-get install".
 
-Você deveria seguir meu [post anterior](http://www.akitaonrails.com/2016/04/12/the-year-of-linux-on-the-desktop-by-microsoft) pra ver todos os pacotes e configurações que eu normalmente faço numa máquina Linux de desenvolvimento.
+Você deveria seguir meu [post anterior](http://www.akitaonrails.com/2016/04/12/o-ano-do-linux-no-desktop-pela-microsoft) pra ver todos os pacotes e configurações que eu normalmente faço numa máquina Linux de desenvolvimento.
 
 RVM agora funciona! Consegui instalar Ruby 2.3.1 via RVM sem nenhum problema.
 

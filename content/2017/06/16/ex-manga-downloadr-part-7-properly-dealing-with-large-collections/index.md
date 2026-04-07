@@ -14,9 +14,9 @@ tags:
 draft: false
 ---
 
-No [post anterior](http://www.akitaonrails.com/2017/06/13/ex-manga-downloadr-part-6-the-rise-of-flow) consegui simplificar bastante o código original usando [Flow](https://github.com/elixir-lang/flow). Só que o lado negativo foi que o tempo de execução aumentou consideravelmente.
+No [post anterior](http://www.akitaonrails.com/2017/06/13/ex-manga-downloadr-parte-6-a-ascensao-do-flow) consegui simplificar bastante o código original usando [Flow](https://github.com/elixir-lang/flow). Só que o lado negativo foi que o tempo de execução aumentou consideravelmente.
 
-José Valim gentilmente apareceu e deixou um [comentário valioso](http://www.akitaonrails.com/2017/06/13/ex-manga-downloadr-part-6-the-rise-of-flow#comment-3360301947), que vou reproduzir aqui:
+José Valim gentilmente apareceu e deixou um [comentário valioso](http://www.akitaonrails.com/2017/06/13/ex-manga-downloadr-parte-6-a-ascensao-do-flow#comment-3360301947), que vou reproduzir aqui:
 
 > Você tentou reduzir o `@max_demand`? O `@max_demand` é o quanto de dados você troca entre os estágios. Se você colocar 60, isso significa que está mandando 60 itens para um estágio, 60 para outro e assim por diante. Isso gera um balanceamento ruim para coleções pequenas, porque há chance de todos os itens acabarem no mesmo estágio. Na verdade você quer reduzir o `max_demand` para 1 ou 2, para que cada estágio receba lotes pequenos e precise pedir mais. Outro parâmetro que costuma ser ajustado é a opção `stages: ...` — você deveria definir como a quantidade de conexões que tinha no poolboy antes.
 
@@ -36,7 +36,7 @@ Então, tem sistemas distribuídos para construir? Não tem outra opção de ver
 
 Aí o Elixir eleva isso um nível acima, criando uma biblioteca padrão bastante razoável e simples de usar, que torna a parte de escrever código genuinamente agradável. É uma combinação matadora. Precisa fazer o próximo WhatsApp? O próximo Waze? Reconstruir o Cassandra do zero? Criar algo como o Apache Spark? Faça Elixir.
 
-Em Erlang, você resolve tudo usando GenServer. É uma abstração elegante do OTP. Você [precisa entender OTP](http://www.akitaonrails.com/en/2015/11/22/observing-processes-in-elixir-the-little-elixir-otp-guidebook/) de forma íntima. Não tem atalho. Não existe Erlang sem OTP.
+Em Erlang, você resolve tudo usando GenServer. É uma abstração elegante do OTP. Você [precisa entender OTP](http://www.akitaonrails.com/en/2015/11/22/observando-processos-em-elixir-the-little-elixir-otp-guidebook/) de forma íntima. Não tem atalho. Não existe Erlang sem OTP.
 
 Dito isso, dá para começar simples e escalar sem tanto esforço.
 
@@ -87,7 +87,7 @@ Isso é só para exemplo, não compilei esse trecho para verificar se funciona, 
 
 De novo, para listas pequenas isso está ok (milhares de itens) desde que cada item não demore muito para processar.
 
-O problema é que isso não é lá muito bom. Porque cada chunk precisa terminar antes do próximo começar. É por isso que a solução ideal é manter uma quantidade constante de jobs rodando a qualquer momento. Para isso, precisamos de um Pool, como expliquei na [Parte 2: Poolboy ao resgate!](http://www.akitaonrails.com/en/2015/11/19/ex-manga-downloadr-part-2-poolboy-to-the-rescue/).
+O problema é que isso não é lá muito bom. Porque cada chunk precisa terminar antes do próximo começar. É por isso que a solução ideal é manter uma quantidade constante de jobs rodando a qualquer momento. Para isso, precisamos de um Pool, como expliquei na [Parte 2: Poolboy ao resgate!](http://www.akitaonrails.com/en/2015/11/19/ex-manga-downloadr-parte-2-poolboy-ao-resgate/).
 
 Mas implementar do jeito correto para manter o pool sempre cheio exige um malabarismo chato entre transações do Poolboy e `Task.Supervisor.async`. Foi por isso que fiquei interessado no novo uso do `Flow`.
 

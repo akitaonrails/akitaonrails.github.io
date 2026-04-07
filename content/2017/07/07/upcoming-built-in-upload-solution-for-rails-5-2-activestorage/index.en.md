@@ -49,7 +49,7 @@ If you're using something like Heroku, you're basically screwed. The Heroku rout
 
 But file upload is the exception. A big file takes time to transfer over the internet. And then the Heroku timeout kicks in and interrupts the transmission. The end-user retries and if you have a large enough crowd, you will start filling up the HTTP queue until you have cascading timeouts over each other.
 
-Which is why the only solution available for Heroku is to do "Direct Upload" to a cloud service such as AWS S3. You can add the [Carrierwave Direct](https://github.com/dwilkie/carrierwave_direct) add-on, or use a complete 3rd party solution such as [Cloudinary](http://www.akitaonrails.com/2016/07/28/updating-my-old-posts-on-uploads), with its client library Attachinary to make things easy. And that's it!
+Which is why the only solution available for Heroku is to do "Direct Upload" to a cloud service such as AWS S3. You can add the [Carrierwave Direct](https://github.com/dwilkie/carrierwave_direct) add-on, or use a complete 3rd party solution such as [Cloudinary](http://www.akitaonrails.com/en/2016/07/28/atualizando-meus-posts-antigos-sobre-uploads), with its client library Attachinary to make things easy. And that's it!
 
 Active Storage, as it is right now, will work for any good enough custom deploy (NGINX + Rails/Puma) ~~but it won't work at all over Heroku~~ and when the [new branch](https://github.com/rails/activestorage/pull/35) is finished it will be a good choice to use over Heroku as well.
 
@@ -91,7 +91,7 @@ If you don't want to have to manage your own storage, you should use a Cloud Sto
 
 You should perform transformations on your images to send the best-sized image back to your end-users. Again, if you do it in your application consider either an ActiveJob worker or the Rack real-time transform-and-cache solutions available from Refile or Shrine. At least as it is right now, ActiveStorage doesn't provide a solution for the image transformations.
 
-[My recommendation](http://www.akitaonrails.com/2016/07/28/updating-my-old-posts-on-uploads) of previous blog posts on the subject remains, if this is your first time or your business is just beginning, don't sweat it. Use a complete solution like Cloudinary/Attachinary. It will take care of everything in the most optimal way.
+[My recommendation](http://www.akitaonrails.com/en/2016/07/28/atualizando-meus-posts-antigos-sobre-uploads) of previous blog posts on the subject remains, if this is your first time or your business is just beginning, don't sweat it. Use a complete solution like Cloudinary/Attachinary. It will take care of everything in the most optimal way.
 
 But this is NOT a definitive recommendation. If you have custom deploys, and you know your requirements and constraints, a solution like ActiveStorage, vanilla Carrierwave, etc works well. There are always trade-offs, and having so many moving parts always adds up complexity. The Cloudinary recommendation is just so you can start with as few moving parts as possible and then move to more complex scenarios later if you need to.
 

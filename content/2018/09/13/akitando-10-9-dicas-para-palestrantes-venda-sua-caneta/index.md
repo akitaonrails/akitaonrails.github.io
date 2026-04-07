@@ -37,7 +37,7 @@ E o que isso tem a ver com "vender uma caneta"??
 Links:
 
 * AkitaOnRails: [Off-Topic] Dicas de Mac para Palestrantes (http://www.akitaonrails.com/2010/10/31/off-topic-dicas-de-mac-para-palestrantes)
-* AkitaOnRails: Conference Talks, Interviews, and the Pen! (http://www.akitaonrails.com/2017/06/01/conference-talks-interviews-and-the-pen)
+* AkitaOnRails: Conference Talks, Interviews, and the Pen! (http://www.akitaonrails.com/2017/06/01/palestras-em-conferencias-entrevistas-e-a-caneta)
 
 * Garr Reynold's Presentation Zen (http://www.presentationzen.com/)
 

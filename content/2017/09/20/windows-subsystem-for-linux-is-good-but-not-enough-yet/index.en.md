@@ -15,7 +15,7 @@ tags:
 draft: false
 ---
 
-I wrote a premature post in July of 2016 titled ["The Year of Linux on the Desktop - It's Usable!"](http://www.akitaonrails.com/2016/07/26/the-year-of-linux-on-the-desktop-it-s-usable) and, indeed, it was (barely) usable.
+I wrote a premature post in July of 2016 titled ["The Year of Linux on the Desktop - It's Usable!"](http://www.akitaonrails.com/en/2016/07/26/o-ano-do-linux-no-desktop-esta-usavel) and, indeed, it was (barely) usable.
 
 The real "Year of Linux on the Desktop" is still not here. It's getting closer as I will explain.
 
@@ -65,14 +65,14 @@ And now you can install a Windows X Server such as [xming](https://sourceforge.n
 
 I am now using [ASDF](https://github.com/asdf-vm/asdf) to install and manage multiple versions of Ruby, Node.js, Elixir, etc. And it also just works.
 
-I was able to move my SSH keys from my previous [Arch Linux](http://www.akitaonrails.com/2017/01/10/arch-linux-best-distro-ever) install. And then I can clone from my Git repositories. Now, here comes the **big caveat**. I cloned and configured a Rails project. This the fastest I can get running an entire RSpec suite with PhantomJS acceptance tests:
+I was able to move my SSH keys from my previous [Arch Linux](http://www.akitaonrails.com/en/2017/01/10/arch-linux-a-melhor-distro-de-todas) install. And then I can clone from my Git repositories. Now, here comes the **big caveat**. I cloned and configured a Rails project. This the fastest I can get running an entire RSpec suite with PhantomJS acceptance tests:
 
 ```
 Finished in 5 minutes 35 seconds (files took 48.53 seconds to load)
 888 examples, 0 failures
 ```
 
-This is running on my [Dell XPS 9550](http://www.akitaonrails.com/2017/01/31/from-the-macbook-pro-to-the-dell-xps-arch-linux-for-creative-pro-users) with Core i7 Skylake (4 cores, 8 threads), 16 GB of RAM and NVME2 SSD. I asked a co-worker to run it on his very old Mac Mini 2012 with Core i5 (probably Haswell), 10 GB of RAM, normal SSD. And this is his test run:
+This is running on my [Dell XPS 9550](http://www.akitaonrails.com/en/2017/01/31/do-macbook-pro-para-o-dell-xps-arch-linux-para-usuarios-criativos) with Core i7 Skylake (4 cores, 8 threads), 16 GB of RAM and NVME2 SSD. I asked a co-worker to run it on his very old Mac Mini 2012 with Core i5 (probably Haswell), 10 GB of RAM, normal SSD. And this is his test run:
 
 ```
 Finished in 3 minutes 37.6 seconds (files took 9.73 seconds to load)

@@ -62,7 +62,7 @@ Eu falei que Fedora usa Yum, mas não é verdade, eu esqueci que agora ele usam 
 
 * Rocketz Workstations (https://rocketz.com.br/workstation)
 
-* AkitaOnRails - Optimizing Linux for Slow Computers (https://www.akitaonrails.com/2017/01/17/optimizing-linux-for-slow-computers)
+* AkitaOnRails - Optimizing Linux for Slow Computers (https://www.akitaonrails.com/2017/01/17/otimizando-o-linux-para-computadores-lentos)
 
 === Script
 

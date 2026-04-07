@@ -14,7 +14,7 @@ tags:
 draft: false
 ---
 
-Na [Parte 1](http://www.akitaonrails.com/2015/12/09/ex-pusher-lite-part-1-phoenix-channels-and-rails-apps) eu basicamente comecei a partir do tutorial do [Daniel Neighman](https://labs.opendoor.com/phoenix-on-rails-for-client-push-notifications).
+Na [Parte 1](http://www.akitaonrails.com/2015/12/09/ex-pusher-lite-parte-1-phoenix-channels-e-aplicacoes-rails) eu basicamente comecei a partir do tutorial do [Daniel Neighman](https://labs.opendoor.com/phoenix-on-rails-for-client-push-notifications).
 
 Nesta Parte 2 vou adicionar os mecanismos necessários para ter um core mínimo que seja realmente útil e fazer deploy no Heroku. Para isso preciso implementar o seguinte:
 

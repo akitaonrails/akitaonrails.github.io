@@ -12,7 +12,7 @@ tags:
 draft: false
 ---
 
-If you read my [previous article](http://www.akitaonrails.com/2015/11/18/ex-manga-downloader-an-exercise-with-elixir) I briefly described my exercise building a MangaReader downloader. If you didn't read it yet, I recommend you do so before continuing.
+If you read my [previous article](http://www.akitaonrails.com/en/2015/11/18/ex-manga-downloadr-um-exercicio-com-elixir) I briefly described my exercise building a MangaReader downloader. If you didn't read it yet, I recommend you do so before continuing.
 
 In the mid-section of the article I described how I was still puzzled on what would be the best way to handle several HTTP requests to an unstable external source where I can't control timeout or other network problems.
 

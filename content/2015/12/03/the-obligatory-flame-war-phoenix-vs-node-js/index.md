@@ -61,7 +61,7 @@ Daí, disparo o Siege com dez conexões concorrentes e só uma requisição cada
 Your browser does not support the video tag. [Direct Link](https://s3.us-east-2.amazonaws.com/blip.tv/Elixir/Node+1+x+10+Sleep.mp4)
 </source></video>
 
-É por isso que no meu artigo anterior "Why Elixir?" (http://www.akitaonrails.com/2015/12/01/the-obligatory-why-elixir-personal-take), repeti várias vezes o quão **"rudimentar"** é uma solução baseada no padrão Reactor. É facílimo bloquear um event loop single-threaded.
+É por isso que no meu artigo anterior "Why Elixir?" (http://www.akitaonrails.com/2015/12/01/o-obrigatorio-por-que-elixir-visao-pessoal), repeti várias vezes o quão **"rudimentar"** é uma solução baseada no padrão Reactor. É facílimo bloquear um event loop single-threaded.
 
 Se você ainda não sabia, como o Node.js funciona? Em resumo, é um simples loop infinito. Quando uma função Javascript roda, ela bloqueia esse event loop. A função tem que explicitamente devolver o controle para o loop para que outra função tenha a chance de rodar. Chamadas de I/O demoram e ficam paradas esperando uma resposta, então ela pode devolver o controle e esperar um callback para continuar rodando, e é por isso que você acaba na temida _"pirâmide do callback hell"_.
 

@@ -16,7 +16,7 @@ draft: false
 
 Ok, anyone that has been reading my blog for the past year or two knows how I [enjoy Arch Linux](http://www.akitaonrails.com/archlinux) (in particular Manjaro Gnome).
 
-I am also still very much intrigued by the idea of Windows Subsystem for Linux (or WSL) which properly debuted in the [Windows 10 Anniversary Edition](http://www.akitaonrails.com/2016/07/26/the-year-of-linux-on-the-desktop-it-s-usable) back in mid-2016.
+I am also still very much intrigued by the idea of Windows Subsystem for Linux (or WSL) which properly debuted in the [Windows 10 Anniversary Edition](http://www.akitaonrails.com/en/2016/07/26/o-ano-do-linux-no-desktop-esta-usavel) back in mid-2016.
 
 It's been almost 2 years and we're expecting some significant updates to WSL compatibility and performance for the next [Spring Creators Update](https://winaero.com/blog/command-line-wsl-improvements-windows-10-version-1803/) (or version 1803) scheduled to arrive on April 30, 2018. This brings it closer to make WSL actually usable for professional programmers. Just to give you an idea, right now you will have orders of magnitude better performance if you run your favorite Linux distro inside Virtualbox or VMWare Workstation.
 

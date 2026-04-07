@@ -11,7 +11,7 @@ draft: false
 
 In my quest to create my own private infrastructure I've already moved away from Pivotal Tracker (saving this for a future post), Bitbucket, Github, Travis and into GitLab and GitLab Runner. There are more services I will move away from in the future, so expect more posts like this.
 
-In [my previous post](http://www.akitaonrails.com/2016/08/03/moving-to-gitlab-yes-it-s-worth-it) I forgot to mention minimal firewall and SSL configuration, but you can check it here.
+In [my previous post](http://www.akitaonrails.com/2016/08/03/migrando-para-o-gitlab-sim-vale-a-pena) I forgot to mention minimal firewall and SSL configuration, but you can check it here.
 
 One of the most difficult pieces to move away from is Slack. Don't get me wrong, it's a great tool and it gets the job done. The free-tier is really competent but I really want some of the payed features such as history of all conversations with search capabilities and uploads without limit.
 
@@ -136,7 +136,7 @@ Public IP     Private IP    Hostname
 
 In the commands and code snippets below, make sure to replace the fake IPs for your own private IPs.
 
-As I said in [my GitLab post](http://www.akitaonrails.com/2016/08/03/moving-to-gitlab-yes-it-s-worth-it?), create a swap file, configure the locale, set it up for automatic security updates, and do upgrade the Ubuntu packages.
+As I said in [my GitLab post](http://www.akitaonrails.com/2016/08/03/migrando-para-o-gitlab-sim-vale-a-pena?), create a swap file, configure the locale, set it up for automatic security updates, and do upgrade the Ubuntu packages.
 
 The next first thing: configure the firewall in all machines (assuming `ufw` package is already installed):
 

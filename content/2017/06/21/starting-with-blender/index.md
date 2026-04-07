@@ -56,7 +56,7 @@ E sempre inicializo o Blender pelo terminal assim:
 optirun ~/bin/filmic-blender
 ```
 
-Isso faz duas coisas: primeiro, pré-configura o OpenColorIO para usar o substituto Filmic. Segundo, habilita a GPU externa do meu notebook para uso no Blender. Leia meu post ["Enabling Optimus NVIDIA GPU on the Dell XPS 15 with Linux, even on Battery"](http://www.akitaonrails.com/2017/03/14/enabling-optimus-nvidia-gpu-on-the-dell-xps-15-with-linux-even-on-battery) para mais detalhes. No Windows ou Mac isso não é necessário, mas você ainda vai precisar carregar a configuração filmic.
+Isso faz duas coisas: primeiro, pré-configura o OpenColorIO para usar o substituto Filmic. Segundo, habilita a GPU externa do meu notebook para uso no Blender. Leia meu post ["Enabling Optimus NVIDIA GPU on the Dell XPS 15 with Linux, even on Battery"](http://www.akitaonrails.com/2017/03/14/habilitando-a-gpu-optimus-nvidia-no-dell-xps-15-com-linux) para mais detalhes. No Windows ou Mac isso não é necessário, mas você ainda vai precisar carregar a configuração filmic.
 
 Na aba Scene, você deve reconfigurar o "Color Management" assim:
 

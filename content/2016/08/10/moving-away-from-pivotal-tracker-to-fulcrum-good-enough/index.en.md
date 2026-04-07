@@ -11,7 +11,7 @@ tags:
 draft: false
 ---
 
-I've been blogging about how I am building my own internal infrastructure. Already reported on how I moved from [GitHub and Travis to GitLab](http://www.akitaonrails.com/2016/08/03/moving-to-gitlab-yes-it-s-worth-it), then how we moved from [Slack to Rocket.chat](http://www.akitaonrails.com/2016/08/09/moving-away-from-slack-into-rocket-chat-good-enough), but the original first move is the subject of this article.
+I've been blogging about how I am building my own internal infrastructure. Already reported on how I moved from [GitHub and Travis to GitLab](http://www.akitaonrails.com/en/2016/08/03/migrando-para-o-gitlab-sim-vale-a-pena), then how we moved from [Slack to Rocket.chat](http://www.akitaonrails.com/2016/08/09/moving-away-from-slack-into-rocket-chat-good-enough), but the original first move is the subject of this article.
 
 I've been using Pivotal Tracker since 2010 up to 2015 and this is because I believe it is far superior than Trello and other [glorified to-do lists](http://www.akitaonrails.com/2009/12/16/off-topic-cuidado-com-o-kanban-butt) out there.
 
@@ -84,7 +84,7 @@ What the tool will expose:
 
 ### On Estimation
 
-Many people worry too much about "proper estimation" to the point of creating so much tension that developers start screaming about ["no estimates"](http://www.akitaonrails.com/en/2013/10/07/off-topic-noestimates-debunked/). This is nuts. This is why "estimation" is a different word than "prediction", one is uncertain, a ballpark, the other is exact.
+Many people worry too much about "proper estimation" to the point of creating so much tension that developers start screaming about ["no estimates"](http://www.akitaonrails.com/en/en/2013/10/07/off-topic-desmontando-o-noestimates/). This is nuts. This is why "estimation" is a different word than "prediction", one is uncertain, a ballpark, the other is exact.
 
 > There is no such thing as a "correct" estimation.
 

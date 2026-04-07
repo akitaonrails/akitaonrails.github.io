@@ -74,7 +74,7 @@ The dependencies are the pusher gem in your `Gemfile` and the javascript client.
 gem 'pusher'
 ```
 
-In the case of the javascript file you can either add it to your project and rely on [Webpacker](http://www.akitaonrails.com/2017/10/24/beginner-trying-out-rails-5-1-x):
+In the case of the javascript file you can either add it to your project and rely on [Webpacker](http://www.akitaonrails.com/en/2017/10/24/iniciante-experimentando-o-rails-5-1-x):
 
 ```
 yarn add pusher

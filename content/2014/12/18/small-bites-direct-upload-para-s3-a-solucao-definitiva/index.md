@@ -9,7 +9,7 @@ tags:
 draft: false
 ---
 
-**Atualização Jul/2016:** As recomendações mudaram. Leiam este post mas usem o que explico no post mais recente [Updating my Old Posts on Uploads](http://www.akitaonrails.com/2016/07/28/updating-my-old-posts-on-uploads).
+**Atualização Jul/2016:** As recomendações mudaram. Leiam este post mas usem o que explico no post mais recente [Updating my Old Posts on Uploads](http://www.akitaonrails.com/2016/07/28/atualizando-meus-posts-antigos-sobre-uploads).
 
 Um problema que nos persegue há muito tempo são uploads. À primeira vista é algo simples:
 

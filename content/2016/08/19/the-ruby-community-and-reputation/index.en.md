@@ -17,7 +17,7 @@ As a disclaimer, I don't know them, and I respect their points of view. This is 
 
 Both articles represent the point of view of many veteran Ruby developers in this community. Some of whom already left to other technologies or stopped public appearances.
 
-I already made my stand very clear in ["Rails has Won: The Elephant in the Room"](http://www.akitaonrails.com/2016/05/23/rails-has-won-the-elephant-in-the-room). But let me simplify here.
+I already made my stand very clear in ["Rails has Won: The Elephant in the Room"](http://www.akitaonrails.com/en/2016/05/23/rails-venceu-o-elefante-na-sala). But let me simplify here.
 
 There is clearly a faction being formed. Apart from great developers like Solnic (dry-rb), Nick (Trailblazer), and Luca (Hanami), most people are complaining that Rails and some of the closest pieces of the ecosystem around it don't conform to their newly found vision of what "good" should be.
 

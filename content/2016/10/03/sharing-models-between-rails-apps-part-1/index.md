@@ -167,4 +167,4 @@ Essa abordagem é útil quando sua aplicação secundária se parece com um dash
 
 Também é útil quando você está fazendo análise de dados, e novamente pode usar as mesmas associações, scopes, para construir relatórios e dashboards. Essencialmente, quando você precisa de acesso read-only, é decisão fácil.
 
-No [próximo artigo](http://www.akitaonrails.com/2016/10/03/sharing-models-between-rails-apps-part-2) eu vou explicar como liguei uma aplicação secundária, usando a gem central-support e lidando com 2 bancos de dados diferentes ao mesmo tempo.
+No [próximo artigo](http://www.akitaonrails.com/2016/10/03/compartilhando-models-entre-apps-rails-parte-2) eu vou explicar como liguei uma aplicação secundária, usando a gem central-support e lidando com 2 bancos de dados diferentes ao mesmo tempo.

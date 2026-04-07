@@ -14,7 +14,7 @@ tags:
 draft: false
 ---
 
-**Update 19/11/15:** Neste artigo eu menciono algumas dúvidas que tive, então leia este e depois acompanhe na [Parte 2](http://www.akitaonrails.com/2015/11/19/ex-manga-downloadr-part-2-poolboy-to-the-rescue) para ver como resolvi.
+**Update 19/11/15:** Neste artigo eu menciono algumas dúvidas que tive, então leia este e depois acompanhe na [Parte 2](http://www.akitaonrails.com/2015/11/19/ex-manga-downloadr-parte-2-poolboy-ao-resgate) para ver como resolvi.
 
 Como exercício (e também porque, obviamente, sou um [Otaku](https://en.wikipedia.org/wiki/Otaku)) eu [implementei](https://github.com/akitaonrails/ex_manga_downloadr/blob/master/lib/ex_manga_downloadr/mangareader/index_page.ex) um scrapper simples em Elixir para o ótimo site [MangaReader](http://www.mangareader.net/). Dá pra discutir se é certo fazer scrap do site deles, e dá pra discutir também se eles oferecerem esses mangás é certo em primeiro lugar, então vamos deixar essa discussão de lado.
 

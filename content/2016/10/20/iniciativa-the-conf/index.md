@@ -16,7 +16,7 @@ Obs: if you don't understand Brazilian Portuguese, please read [this English ver
 
 Faz algum tempo que venho pensando sobre eventos de desenvolvimento de software no Brasil e o tema me incomoda muito faz alguns anos.
 
-Eu [anunciei minha "aposentadoria"](http://www.akitaonrails.com/2016/09/26/the-next-10-years) da organização da Rubyconf Brasil porque eu queria pensar em como resolver esse meu incômodo.
+Eu [anunciei minha "aposentadoria"](http://www.akitaonrails.com/2016/09/26/os-proximos-10-anos) da organização da Rubyconf Brasil porque eu queria pensar em como resolver esse meu incômodo.
 
 Quando decidi fazer uma "Rubyconf" no Brasil, minha preocupação de 1 década atrás era se o tema em si atrairia número suficiente de pessoas. Eu tinha uma meta em mente: uma conferência de ponta, inspirada na Railsconf norte-americana, que trouxesse mais de 1.000 pessoas.
 

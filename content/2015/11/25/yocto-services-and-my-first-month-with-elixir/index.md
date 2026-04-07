@@ -28,13 +28,13 @@ E, finalmente, documentei tudo o que aprendi quase todo dia nos seguintes artigo
 * [How Fast is Elixir/Phoenix?](http://www.akitaonrails.com/2015/10/27/how-fast-is-elixir-phoenix)
 * [Personal Thoughts on the Current Functional Programming Bandwagon](http://www.akitaonrails.com/2015/10/28/personal-thoughts-on-the-current-functional-programming-bandwagon)
 * [Phoenix Experiment: Holding 2 Million Websocket clients!](http://www.akitaonrails.com/2015/10/29/phoenix-experiment-holding-2-million-websocket-clients)
-* [My first week learning Elixir](http://www.akitaonrails.com/2015/11/03/my-first-week-learning-elixir)
-* [Ex Manga Downloader, an exercise with Elixir](http://www.akitaonrails.com/2015/11/18/ex-manga-downloader-an-exercise-with-elixir)
-* [Ex Manga Downloadr - Part 2: Poolboy to the rescue!](http://www.akitaonrails.com/2015/11/19/ex-manga-downloadr-part-2-poolboy-to-the-rescue)
-* [Phoenix "15 Minute Blog" comparison to Ruby on Rails](http://www.akitaonrails.com/2015/11/20/phoenix-15-minute-blog-comparison-to-ruby-on-rails)
-* [Observing Processes in Elixir - The Little Elixir & OTP Guidebook](http://www.akitaonrails.com/2015/11/22/observing-processes-in-elixir-the-little-elixir-otp-guidebook)
-* [ExMessenger Exercise: Understanding Nodes in Elixir](http://www.akitaonrails.com/2015/11/25/exmessenger-exercise-understanding-nodes-in-elixir)
-* [Elixir 101 - Introducing the Syntax](http://www.akitaonrails.com/2015/11/25/elixir-101-introducing-the-syntax)
+* [My first week learning Elixir](http://www.akitaonrails.com/2015/11/03/minha-primeira-semana-aprendendo-elixir)
+* [Ex Manga Downloader, an exercise with Elixir](http://www.akitaonrails.com/2015/11/18/ex-manga-downloadr-um-exercicio-com-elixir)
+* [Ex Manga Downloadr - Part 2: Poolboy to the rescue!](http://www.akitaonrails.com/2015/11/19/ex-manga-downloadr-parte-2-poolboy-ao-resgate)
+* [Phoenix "15 Minute Blog" comparison to Ruby on Rails](http://www.akitaonrails.com/2015/11/20/phoenix-15-minute-blog-comparacao-com-ruby-on-rails)
+* [Observing Processes in Elixir - The Little Elixir & OTP Guidebook](http://www.akitaonrails.com/2015/11/22/observando-processos-em-elixir-the-little-elixir-otp-guidebook)
+* [ExMessenger Exercise: Understanding Nodes in Elixir](http://www.akitaonrails.com/2015/11/25/exercicio-exmessenger-entendendo-nodes-em-elixir)
+* [Elixir 101 - Introducing the Syntax](http://www.akitaonrails.com/2015/11/25/elixir-101-apresentando-a-sintaxe)
 
 Sim, eu sou prolífico e bastante focado. Estudei e escrevi tudo isso em menos de um mês (teria sido bem menos se eu pudesse ter usado as noites e finais de semana). Então eu diria que o desenvolvedor médio levaria pelo menos 3 a 4 meses para cobrir o mesmo material.
 
@@ -46,7 +46,7 @@ Isso não é novidade nenhuma, claro. Ter APIs HTTP que devolvem estruturas JSON
 
 Se isso é o que as pessoas chamam de serviços "Micro", eu penso nos processos do Elixir como **"Yocto"** Services! (Milli > Micro > Nano > Pico > Femto > Atto > Zepto > Yocto, aliás - eu posso ter acabado de inventar um novo termo aqui!)
 
-Eu já descrevi um pouco da infraestrutura de Processos, como dar spawn neles, como trocar mensagens entre eles e como linkar eles. Então, vai lá ler [meu post anterior](http://www.akitaonrails.com/2015/11/22/observing-processes-in-elixir-the-little-elixir-otp-guidebook) se ainda não leu.
+Eu já descrevi um pouco da infraestrutura de Processos, como dar spawn neles, como trocar mensagens entre eles e como linkar eles. Então, vai lá ler [meu post anterior](http://www.akitaonrails.com/2015/11/22/observando-processos-em-elixir-the-little-elixir-otp-guidebook) se ainda não leu.
 
 Dentro de uma aplicação Elixir você vai encontrar muitos processos, alguns da própria VM tocando o show e outros da sua própria aplicação. Se você arquitetou direito, implementou uma aplicação OTP, com grupos próprios de Supervisors e Children, todos organizados numa Supervision Tree. Um pequeno worker morre, o supervisor dele sabe como lidar com isso.
 
@@ -69,9 +69,9 @@ Pxblog.Supervisor
     + Pxblog.Repo.Pool
 ```
 
-Esse é o Pxblog que eu expliquei no [artigo de comparação entre Phoenix e Rails](http://www.akitaonrails.com/2015/11/20/phoenix-15-minute-blog-comparison-to-ruby-on-rails) que publiquei poucos dias atrás.
+Esse é o Pxblog que eu expliquei no [artigo de comparação entre Phoenix e Rails](http://www.akitaonrails.com/2015/11/20/phoenix-15-minute-blog-comparacao-com-ruby-on-rails) que publiquei poucos dias atrás.
 
-Eu ainda não li o código fonte do Phoenix, mas se eu estou interpretando o Observer corretamente, o Endpoint.Server controla um pool de processos que são listeners TCP que a aplicação está pronta para aceitar requests, concorrentemente, com overflow para aceitar mais conexões (acredito que seja uma implementação de pool tipo Poolboy, que eu expliquei na [Parte 2 do artigo do Ex Manga Downloader](http://www.akitaonrails.com/2015/11/19/ex-manga-downloadr-part-2-poolboy-to-the-rescue)).
+Eu ainda não li o código fonte do Phoenix, mas se eu estou interpretando o Observer corretamente, o Endpoint.Server controla um pool de processos que são listeners TCP que a aplicação está pronta para aceitar requests, concorrentemente, com overflow para aceitar mais conexões (acredito que seja uma implementação de pool tipo Poolboy, que eu expliquei na [Parte 2 do artigo do Ex Manga Downloader](http://www.akitaonrails.com/2015/11/19/ex-manga-downloadr-parte-2-poolboy-ao-resgate)).
 
 Aí você tem as aplicações PubSub.Supervisor e PubSub.Local que eu acredito que dão suporte aos canais WebSocket.
 
@@ -142,7 +142,7 @@ De novo, como disclaimer, ainda sou novo em Elixir, mas a forma que eu acho mais
 
 * Um GenServer pode chamar outros GenServers. Você não quer usar mecanismo de tratamento de exceção do tipo try/catch porque o que você quer é justamente que aquele processo GenServer específico crashe se algo der errado: se o arquivo está corrompido, ou não existe, ou se a rede ficou instável ou caiu. O Supervisor vai substituir aquele processo por um GenServer novo no lugar dele e reabastecer o Pool se for preciso.
 
-* Você pode fazer GenServers [conversarem remotamente](http://www.akitaonrails.com/2015/11/25/exmessenger-exercise-understanding-nodes-in-elixir) usando o recurso de Node que eu expliquei 2 posts atrás, com o exemplo do ExMessenger. Aí seria como uma arquitetura normal de Micro Serviços, mas onde os Yocto Services internos é que estão na verdade fazendo a conversa.
+* Você pode fazer GenServers [conversarem remotamente](http://www.akitaonrails.com/2015/11/25/exercicio-exmessenger-entendendo-nodes-em-elixir) usando o recurso de Node que eu expliquei 2 posts atrás, com o exemplo do ExMessenger. Aí seria como uma arquitetura normal de Micro Serviços, mas onde os Yocto Services internos é que estão na verdade fazendo a conversa.
 
 * Qualquer transformação sem efeitos colaterais (transformar uma entrada simples numa saída simples), tipo pegar uma string com o body de um HTML e fazer parse para uma Lista de tuplas, pode ser organizada num Module normal. Dá uma olhada em bibliotecas como [Floki](https://github.com/philss/floki) para ver como elas estão organizadas.
 
@@ -154,8 +154,8 @@ Cada processo BEAM também tem o seu próprio heap separado e o seu próprio gar
 
 Então, cada VM BEAM pode ser pensada como uma infraestrutura inteira de aplicação, com vários Yocto Services disponíveis para a sua aplicação chamar.
 
-E como eu disse no [artigo anterior](http://www.akitaonrails.com/2015/11/25/exmessenger-exercise-understanding-nodes-in-elixir), cada VM BEAM pode chamar remotamente outras VMs BEAM e trocar mensagens entre elas como se estivessem na mesma VM. As semânticas são quase as mesmas e você tem computação distribuída do jeito mais fácil.
+E como eu disse no [artigo anterior](http://www.akitaonrails.com/2015/11/25/exercicio-exmessenger-entendendo-nodes-em-elixir), cada VM BEAM pode chamar remotamente outras VMs BEAM e trocar mensagens entre elas como se estivessem na mesma VM. As semânticas são quase as mesmas e você tem computação distribuída do jeito mais fácil.
 
-A Erlang implementou um conjunto fantástico de primitivas que escalam rapidamente o quanto você quiser ou precisar, com as ligações certas para não te deixar na mão. E o Elixir conserta o único problema que a maioria das pessoas tem com Erlang: aquela [sintaxe estranha inspirada no velho Prolog](http://www.akitaonrails.com/2015/11/25/elixir-101-introducing-the-syntax). Elixir é uma camada fina e efetiva de design moderno de linguagem, em parte inspirada em Ruby (apesar de estar longe de ser um port, continua sendo Erlang por baixo).
+A Erlang implementou um conjunto fantástico de primitivas que escalam rapidamente o quanto você quiser ou precisar, com as ligações certas para não te deixar na mão. E o Elixir conserta o único problema que a maioria das pessoas tem com Erlang: aquela [sintaxe estranha inspirada no velho Prolog](http://www.akitaonrails.com/2015/11/25/elixir-101-apresentando-a-sintaxe). Elixir é uma camada fina e efetiva de design moderno de linguagem, em parte inspirada em Ruby (apesar de estar longe de ser um port, continua sendo Erlang por baixo).
 
 Eu espero que essa série tenha ajudado a jogar alguma luz sobre por que Elixir é a melhor escolha entre a nova geração de linguagens preparadas para alta concorrência, e também espero ter deixado claro por que só alta concorrência não basta: você quer alta confiabilidade também. E nesse aspecto, a arquitetura OTP, embutida no Erlang, não tem competição.

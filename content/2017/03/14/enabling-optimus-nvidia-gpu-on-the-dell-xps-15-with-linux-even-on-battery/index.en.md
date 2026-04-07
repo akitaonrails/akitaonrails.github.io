@@ -8,7 +8,7 @@ translationKey: enabling-optimus-nvidia
 draft: false
 ---
 
-It's been more than a month since my [last post](http://www.akitaonrails.com/2017/01/31/from-the-macbook-pro-to-the-dell-xps-arch-linux-for-creative-pro-users) on tuning Manjaro for the Dell XPS 15.
+It's been more than a month since my [last post](http://www.akitaonrails.com/en/2017/01/31/do-macbook-pro-para-o-dell-xps-arch-linux-para-usuarios-criativos) on tuning Manjaro for the Dell XPS 15.
 
 Manjaro released it's newest release [version 17](https://manjaro.org/2017/03/07/manjaro-gnome-17-0-released/) and the kernel released 4.10. The upgrade from Manjaro 16 and kernel 4.9 went smoothly.
 

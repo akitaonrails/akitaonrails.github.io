@@ -17,7 +17,7 @@ We're almost done with the 2017 edition.
 
 As we stated before, out of the 32 talks, I will select 5 to showcase in the USA InfoQ website. You can help out in the process by sharing the playlist and liking your favorites. I'll take that into consideration as well.
 
-If you missed this year's edition, don't forget to read about [the Initiative](http://www.akitaonrails.com/2016/10/20/the-conf-initiative) that I kicked off in October of 2016. And also the [report of the 2017 edition](http://www.akitaonrails.com/2017/10/02/the-conf-2017-edition-report).
+If you missed this year's edition, don't forget to read about [the Initiative](http://www.akitaonrails.com/2016/10/20/the-conf-initiative) that I kicked off in October of 2016. And also the [report of the 2017 edition](http://www.akitaonrails.com/en/2017/10/02/the-conf-2017-relatorio-da-edicao).
 
 We actually did it: 31 Brazilian speakers, coming from all around the globe (yes, we had Brazilians living in Canada, the Netherlands, Germany also coming here), and they all delivered great talks in ENGLISH. Finally, a Tech Conference in Brazil that anyone on the planet can consume, enjoy and learn.
 

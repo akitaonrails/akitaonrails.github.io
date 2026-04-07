@@ -19,7 +19,7 @@ Like many in the tech industry, I tried the tech since the very beginning. I mys
 
 When it reached USD 3,000 I had my interest in the platform totally renewed. And it was a very pleasant surprise to see how big it became. If you follow me, you know how eager I am to learn new things that have real potential. And also how easy I am to turn my attention full gear into something.
 
-I can only do that because I am not a loyalist to anything. I don't pick and defend a [single language](http://www.akitaonrails.com/2016/05/31/flirting-with-crystal-a-rubyist-perspective), or a [single OS](http://www.akitaonrails.com/2017/01/10/arch-linux-best-distro-ever), or a [single manufacturer](http://www.akitaonrails.com/2017/11/21/from-microsoft-to-apple-and-back-again), or a [single market](http://www.akitaonrails.com/2017/08/28/off-topic-blockchain-e-criptomoedas-no-brasil). I find it very unproductive if I see myself just defending stuff.
+I can only do that because I am not a loyalist to anything. I don't pick and defend a [single language](http://www.akitaonrails.com/en/2016/05/31/flertando-com-crystal-perspectiva-de-um-rubyista), or a [single OS](http://www.akitaonrails.com/en/2017/01/10/arch-linux-a-melhor-distro-de-todas), or a [single manufacturer](http://www.akitaonrails.com/en/2017/11/21/da-microsoft-para-a-apple-e-de-volta), or a [single market](http://www.akitaonrails.com/2017/08/28/off-topic-blockchain-e-criptomoedas-no-brasil). I find it very unproductive if I see myself just defending stuff.
 
 Believe it or not, Cryptocurrencies are here to stay, for a few years at the very least. I remember the feeling when I tried the commercial Internet back in 1993. It feels like that all over again: an uncharted territory with a lot of potential and a lot of things we can't even imagine right now.
 
@@ -65,13 +65,13 @@ It doesn't matter. First and foremost, they are not draining free energy. Every 
 
 And techies should know this better. There never was enough bandwidth in ground telephone lines for everybody in the planet to connect to the internet. We had to evolve infrastructure, a lot. We had to add submarine lines. We had to go from dialed modems to ISDN, to cable modems, etc.
 
-[Proof of work](http://www.akitaonrails.com/2017/11/01/how-does-bitcoin-force-consensus-among-byzantine-generals) based mining consumes a heck of a lot of energy, and for good reason. We are trading off energy for integrity. But this is not the only alternative. There are [proof of stake](https://github.com/ethereum/wiki/wiki/Proof-of-Stake-FAQ) implementations starting to be deployed in other alt-coins which are super energy efficient while providing similar levels of trust in the consensus.
+[Proof of work](http://www.akitaonrails.com/en/2017/11/01/como-o-bitcoin-forca-consenso-entre-os-generais-bizantinos) based mining consumes a heck of a lot of energy, and for good reason. We are trading off energy for integrity. But this is not the only alternative. There are [proof of stake](https://github.com/ethereum/wiki/wiki/Proof-of-Stake-FAQ) implementations starting to be deployed in other alt-coins which are super energy efficient while providing similar levels of trust in the consensus.
 
 The point is that technology evolves fast, you can't extrapolate into the future based on what we have now. It's like someone in 1993 saying _"the commercial internet can't happen because telephone lines are too slow if we ever want to have video streaming services"_.
 
 > "Bitcoin is too centralized, it is too dangerous!"
 
-If you're a programmer and still don't know exactly what mining means, I recommend you read my [previous article](http://www.akitaonrails.com/2017/11/01/how-does-bitcoin-force-consensus-among-byzantine-generals) about it first.
+If you're a programmer and still don't know exactly what mining means, I recommend you read my [previous article](http://www.akitaonrails.com/en/2017/11/01/como-o-bitcoin-forca-consenso-entre-os-generais-bizantinos) about it first.
 
 Mining is not deterministic. Even if you have the best hardware ever, it's not guaranteed that you will mine the block first. It's more like a raffle.
 

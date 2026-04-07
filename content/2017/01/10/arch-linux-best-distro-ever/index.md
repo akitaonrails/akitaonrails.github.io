@@ -15,7 +15,7 @@ tags:
 draft: false
 ---
 
-**Atualização 18/01/2017:** Se você está num hardware antigo como o meu, talvez queira otimizar a instalação para ter muito mais responsividade. [Leia tudo sobre isso aqui](http://www.akitaonrails.com/2017/01/17/optimizing-linux-for-slow-computers).
+**Atualização 18/01/2017:** Se você está num hardware antigo como o meu, talvez queira otimizar a instalação para ter muito mais responsividade. [Leia tudo sobre isso aqui](http://www.akitaonrails.com/2017/01/17/otimizando-o-linux-para-computadores-lentos).
 
 Quando decidi voltar do macOS para o Linux, não queria simplesmente retornar ao velho Ubuntu (sim, fico entediado fazendo as mesmas coisas por tempo demais). Então experimentei o Fedora 25 e fiquei impressionado com a evolução do Gnome 3.22.
 

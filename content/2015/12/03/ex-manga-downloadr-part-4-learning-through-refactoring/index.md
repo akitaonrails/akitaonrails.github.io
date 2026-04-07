@@ -14,7 +14,7 @@ tags:
 draft: false
 ---
 
-[Ontem adicionei suporte ao Mangafox](http://www.akitaonrails.com/2015/12/02/ex-manga-downloadr-part-3-mangafox-support) na minha ferramenta de download e isso também acabou jogando um pouco de código sujo no meu código que já não estava lá essas coisas. Hora de uma faxina pra valer.
+[Ontem adicionei suporte ao Mangafox](http://www.akitaonrails.com/2015/12/02/ex-manga-downloadr-parte-3-suporte-ao-mangafox) na minha ferramenta de download e isso também acabou jogando um pouco de código sujo no meu código que já não estava lá essas coisas. Hora de uma faxina pra valer.
 
 Você consegue ver tudo o que fiz desde ontem pra limpar a casa através da [excelente página de compare do Github](https://github.com/akitaonrails/ex_manga_downloadr/compare/59694565592f8a3bea95115b858dd2ddfdc89873...3ae7dd98a8fd7bae47ffd7a24c0c42a2c3777fad)
 

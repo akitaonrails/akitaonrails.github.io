@@ -121,7 +121,7 @@ ALL THE FREAKING TIME.
 
 This is what Agile-based "Velocity" (or any of the fancier Monte Carlo simulations) actually is: a thermometer.
 
-If the Velocity is too high, your team is probably working either extra time or delivering lower quality code. This will backfire because either your team will burn out too fast or the code is accumulating [technical debt](http://www.akitaonrails.com/2017/06/22/the-economics-of-software-development) too fast and you won't be able to pay back. Velocity will drop to a halt if you keep this high (furnace explode).
+If the Velocity is too high, your team is probably working either extra time or delivering lower quality code. This will backfire because either your team will burn out too fast or the code is accumulating [technical debt](http://www.akitaonrails.com/en/2017/06/22/a-economia-do-desenvolvimento-de-software) too fast and you won't be able to pay back. Velocity will drop to a halt if you keep this high (furnace explode).
 
 If the Velocity is too low, your team is slacking off, your backlog is a useless piece of shit that no one can understand even after 10 hour meetings, or you already left the Velocity get too high and now you're paying back technical debt or your team is dead after burn out (fire extinguised).
 

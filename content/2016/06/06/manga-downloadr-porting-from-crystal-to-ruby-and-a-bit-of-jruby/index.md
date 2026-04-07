@@ -365,7 +365,7 @@ Pegar uma coleção enorme e fatiar em 'batches' menores é fácil. Agora temos 
 
 Quando terminamos de iterar sobre o batch e disparar todas essas Fibers, podemos "esperar" por elas chamando `channel.receive`, que vai começar a receber os resultados conforme as Fibers vão terminando de requisitar/processar cada URI.
 
-Acumulamos os resultados e seguimos para o próximo batch da coleção até terminar. A quantidade de concorrência é determinada pelo tamanho do batch (é parecido com [o que fiz com 'poolboy' em Elixir](http://www.akitaonrails.com/en/2015/11/19/ex-manga-downloadr-part-2-poolboy-to-the-rescue/) onde iniciamos um número fixo de processos rodando em paralelo para evitar fazer um Denial of Service no Manga Reader).
+Acumulamos os resultados e seguimos para o próximo batch da coleção até terminar. A quantidade de concorrência é determinada pelo tamanho do batch (é parecido com [o que fiz com 'poolboy' em Elixir](http://www.akitaonrails.com/en/2015/11/19/ex-manga-downloadr-parte-2-poolboy-ao-resgate/) onde iniciamos um número fixo de processos rodando em paralelo para evitar fazer um Denial of Service no Manga Reader).
 
 A propósito, essa implementação em Crystal é parecida com o que você faria em Go usando Channels.
 

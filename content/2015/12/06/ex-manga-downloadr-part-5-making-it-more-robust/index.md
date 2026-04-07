@@ -16,7 +16,7 @@ draft: false
 
 E lá vou eu de novo. Sei que alguns de vocês já podem estar entediados com essa ferramenta, mas como projeto de brincadeira, ainda quero deixar o código bom. Só que tem 2 problemas grandes agora.
 
-Quando eu testava só com o MangaReader.net como fonte, tudo funcionava quase sem falhas. Mas ao adicionar o MangaFox na [Parte 3](http://www.akitaonrails.com/2015/12/02/ex-manga-downloadr-part-3-mangafox-support), com suas regras mais restritivas contra ferramentas de scrapping como a minha (timeouts mais frequentes, não permitindo muitas conexões da mesma origem, etc), o processo simplesmente quebrava o tempo todo e eu tinha que reiniciar manualmente (as features de retomada que adicionei na [Parte 4](http://www.akitaonrails.com/2015/12/03/ex-manga-downloadr-part-4-learning-through-refactoring) ajudaram bastante, mas a ferramenta deixou de ser confiável).
+Quando eu testava só com o MangaReader.net como fonte, tudo funcionava quase sem falhas. Mas ao adicionar o MangaFox na [Parte 3](http://www.akitaonrails.com/2015/12/02/ex-manga-downloadr-parte-3-suporte-ao-mangafox), com suas regras mais restritivas contra ferramentas de scrapping como a minha (timeouts mais frequentes, não permitindo muitas conexões da mesma origem, etc), o processo simplesmente quebrava o tempo todo e eu tinha que reiniciar manualmente (as features de retomada que adicionei na [Parte 4](http://www.akitaonrails.com/2015/12/03/ex-manga-downloadr-parte-4-aprendendo-atraves-do-refactoring) ajudaram bastante, mas a ferramenta deixou de ser confiável).
 
 Recapitulando, o Workflow só organiza cada passo do processo. Suas funções são parecidas com isso:
 
@@ -41,7 +41,7 @@ def page_download_image(image_data, directory) do
 end
 ```
 
-Ele retorna uma Task assíncrona esperando por 2 coisas: o Poolboy liberar um processo livre para usar, e a função Worker/GenServer terminar de rodar dentro daquele processo. Como expliquei na [Parte 2](http://www.akitaonrails.com/2015/11/19/ex-manga-downloadr-part-2-poolboy-to-the-rescue), isso é para limitar o número máximo de conexões com a fonte externa. Sem essa restrição, mandando dezenas de milhares de requests assíncronos de uma vez, a fonte externa simplesmente falharia todos.
+Ele retorna uma Task assíncrona esperando por 2 coisas: o Poolboy liberar um processo livre para usar, e a função Worker/GenServer terminar de rodar dentro daquele processo. Como expliquei na [Parte 2](http://www.akitaonrails.com/2015/11/19/ex-manga-downloadr-parte-2-poolboy-ao-resgate), isso é para limitar o número máximo de conexões com a fonte externa. Sem essa restrição, mandando dezenas de milhares de requests assíncronos de uma vez, a fonte externa simplesmente falharia todos.
 
 A primeira coisa para se ter em mente é que um "<tt>Task.async/2</tt>" se linka com o processo chamador, então se algo der errado, o processo pai morre junto.
 
@@ -139,7 +139,7 @@ defmodule ExMangaDownloadr do
 end
 ```
 
-Eu [afirmei](http://www.akitaonrails.com/2015/12/01/the-obligatory-why-elixir-personal-take) com convicção que em Elixir **não** devemos usar blocos "try/catch", mas aí está.
+Eu [afirmei](http://www.akitaonrails.com/2015/12/01/o-obrigatorio-por-que-elixir-visao-pessoal) com convicção que em Elixir **não** devemos usar blocos "try/catch", mas aí está.
 
 Essa é a consequência da falha no meu design inicial do Workflow. Se eu tivesse codificado o módulo Workflow como um GenServer, com cada lista gerenciada por um Agent, cada chamada HTTPotion que falhasse permitiria ao supervisor reiniciá-la e tentar de novo. Sem precisar recorrer ao código feio do "try/catch".
 

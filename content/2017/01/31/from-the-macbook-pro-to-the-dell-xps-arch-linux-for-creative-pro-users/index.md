@@ -97,7 +97,7 @@ O Manjaro é mais uma distro independente, onde as fontes principais apontam par
 
 No geral funcionou bem, embora eu ainda tenha precisado ajustar a configuração gráfica, pois por padrão ele opta pelos drivers open source Nouveau. Confie em mim: vá para os binários proprietários.
 
-Se você também é desenvolvedor de software, vai querer ler meu [post anterior sobre Arch](http://www.akitaonrails.com/2017/01/10/arch-linux-best-distro-ever).
+Se você também é desenvolvedor de software, vai querer ler meu [post anterior sobre Arch](http://www.akitaonrails.com/2017/01/10/arch-linux-a-melhor-distro-de-todas).
 
 ### Gráficos Híbridos Optimus
 

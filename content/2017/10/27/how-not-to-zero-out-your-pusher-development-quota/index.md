@@ -76,7 +76,7 @@ As dependências são a gem pusher no seu `Gemfile` e o cliente javascript.
 gem 'pusher'
 ```
 
-No caso do arquivo javascript, você pode adicioná-lo ao projeto e depender do [Webpacker](http://www.akitaonrails.com/2017/10/24/beginner-trying-out-rails-5-1-x):
+No caso do arquivo javascript, você pode adicioná-lo ao projeto e depender do [Webpacker](http://www.akitaonrails.com/2017/10/24/iniciante-experimentando-o-rails-5-1-x):
 
 ```
 yarn add pusher

@@ -14,7 +14,7 @@ tags:
 draft: false
 ---
 
-Venho escrevendo aqui no blog sobre como estou montando minha própria infraestrutura interna. Já contei como saí do [GitHub e Travis para o GitLab](http://www.akitaonrails.com/2016/08/03/moving-to-gitlab-yes-it-s-worth-it), depois como migramos do [Slack para o Rocket.chat](http://www.akitaonrails.com/2016/08/09/moving-away-from-slack-into-rocket-chat-good-enough), mas a primeira migração de todas é o tema deste artigo.
+Venho escrevendo aqui no blog sobre como estou montando minha própria infraestrutura interna. Já contei como saí do [GitHub e Travis para o GitLab](http://www.akitaonrails.com/2016/08/03/migrando-para-o-gitlab-sim-vale-a-pena), depois como migramos do [Slack para o Rocket.chat](http://www.akitaonrails.com/2016/08/09/moving-away-from-slack-into-rocket-chat-good-enough), mas a primeira migração de todas é o tema deste artigo.
 
 Uso o Pivotal Tracker desde 2010 até 2015, e isso porque eu acredito que ele é muito superior ao Trello e outras [listas de tarefas glorificadas](http://www.akitaonrails.com/2009/12/16/off-topic-cuidado-com-o-kanban-butt) por aí.
 
@@ -87,7 +87,7 @@ O que a ferramenta vai expor:
 
 ### Sobre Estimativa
 
-Muita gente se preocupa demais com "estimativa correta" a ponto de criar tanta tensão que os desenvolvedores começam a gritar por ["no estimates"](http://www.akitaonrails.com/en/2013/10/07/off-topic-noestimates-debunked/). Isso é loucura. Por isso "estimativa" é uma palavra diferente de "previsão": uma é incerta, um chute de grosso calibre, a outra é exata.
+Muita gente se preocupa demais com "estimativa correta" a ponto de criar tanta tensão que os desenvolvedores começam a gritar por ["no estimates"](http://www.akitaonrails.com/en/2013/10/07/off-topic-desmontando-o-noestimates/). Isso é loucura. Por isso "estimativa" é uma palavra diferente de "previsão": uma é incerta, um chute de grosso calibre, a outra é exata.
 
 > Não existe estimativa "correta".
 
