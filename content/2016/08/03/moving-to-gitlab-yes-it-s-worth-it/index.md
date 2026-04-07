@@ -1,136 +1,140 @@
 ---
-title: Moving to GitLab! Yes, it's worth it!
+title: "Migrando para o GitLab! Sim, vale a pena!"
 date: '2016-08-03T14:49:00-03:00'
-slug: moving-to-gitlab-yes-it-s-worth-it
+slug: migrando-para-o-gitlab-sim-vale-a-pena
+translationKey: moving-to-gitlab
+aliases:
+- /2016/08/03/moving-to-gitlab-yes-it-s-worth-it/
 tags:
 - gitlab
 - git
 - self-hosted
 - segurança
+- traduzido
 draft: false
 ---
 
-I [started evangelizing Git in 2007](http://www.akitaonrails.com/2007/9/22/jogar-pedra-em-gato-morto-por-que-subversion-no-presta). It was a very tough sell to make at the time.
+Eu [comecei a evangelizar Git em 2007](http://www.akitaonrails.com/2007/9/22/jogar-pedra-em-gato-morto-por-que-subversion-no-presta). Foi uma venda dificílima de fazer naquela época.
 
-Outside of the kernel development almost no one wanted to learn it and we had very worthy competitors, from Subversion, to Mercurial, to Bazaar, to Darcs, to Perforce, and so on. But those of use that dug deeper knew that Git had the edge and it was a matter of time.
+Fora do desenvolvimento do kernel quase ninguém queria aprender e tínhamos concorrentes bem dignos, de Subversion, Mercurial, Bazaar, Darcs, Perforce, e por aí vai. Mas quem cavou mais fundo sabia que o Git tinha a vantagem e era só uma questão de tempo.
 
-Then GitHub showed up in 2008 and the rest is history. For many years it was just "cool" to be in GitHub. The Ruby community drove GitHub up into the sky. Finally it became the status quo and the one real monopoly in information repositories - not just software source code, but everything.
+Aí o GitHub apareceu em 2008 e o resto é história. Por muitos anos era só "bacana" estar no GitHub. A comunidade Ruby impulsionou o GitHub lá pra cima. No fim virou o status quo e o único monopólio real em repositórios de informação, não só código-fonte, mas tudo.
 
-I always knew that we should have a "local" option, which is why [I tried to contribute to Gitorious](https://gitorious.org/gitorious/oboxodo-gitorious?p=gitorious:oboxodo-gitorious.git;a=search;h=9f6bdf5887c65a440bc3fdc43a14652f42ddf103;s=Fabio+Akita;st=committer) way back in 2009. Other options arose, but eventually GitLab appeared around 2011 and picked up steam in the last couple of years.
+Sempre soube que deveríamos ter uma opção "local", que é por isso que [tentei contribuir com o Gitorious](https://gitorious.org/gitorious/oboxodo-gitorious?p=gitorious:oboxodo-gitorious.git;a=search;h=9f6bdf5887c65a440bc3fdc43a14652f42ddf103;s=Fabio+Akita;st=committer) lá em 2009. Outras opções apareceram, mas eventualmente o GitLab surgiu por volta de 2011 e pegou tração nos últimos dois anos.
 
-GitHub itself raised [USD 350 million in funding](https://www.crunchbase.com/organization/github#/entity) and one of its required goals is to nail the Enterprise Edition for big corporations that don't want their data outside their closed gardens. Although GitHub hosts every single open source project out there, they are themselves closed-source.
+O próprio GitHub levantou [USD 350 milhões em financiamento](https://www.crunchbase.com/organization/github#/entity) e uma das metas obrigatórias é arrasar na Enterprise Edition para grandes corporações que não querem seus dados fora dos jardins fechados. Embora o GitHub hospede cada projeto open source que existe, eles próprios são closed-source.
 
-[GitLab Inc.](http://gitlab.com) started differently with an open source-first approach with their Community Edition (CE) and having both a GitHub-like hosted option as well as a supported Enteprise Edition for fearsome corporations. They already raised [USD 5.62 million in funding](https://www.crunchbase.com/organization/gitlab-com#/entity), and they are the most promising alternative to GitHub so far.
+A [GitLab Inc.](http://gitlab.com) começou diferente, com uma abordagem open source-first com a Community Edition (CE) e tendo tanto uma opção hospedada estilo GitHub quanto uma Enterprise Edition suportada para as corporações temerosas. Já levantaram [USD 5.62 milhões em financiamento](https://www.crunchbase.com/organization/gitlab-com#/entity), e são a alternativa mais promissora ao GitHub até agora.
 
-Of course, there are other platforms such as Atlassian's Bitbucket. But I believe Atlassian's strategy is slower and they have a larger suite of enterprise products to sell first, such as Confluence and Jira. I don't think they ever posed much of a competition against GitHub.
+Claro, existem outras plataformas como o Bitbucket da Atlassian. Mas acredito que a estratégia da Atlassian é mais lenta e eles têm uma suíte maior de produtos enterprise pra vender primeiro, como o Confluence e o Jira. Acho que eles nunca chegaram a representar muita competição contra o GitHub.
 
-GitLab really started accelerating in 2015 as this [commit graph](https://github.com/gitlabhq/gitlabhq/graphs/contributors?from=2015-03-14&to=2016-08-02&type=c) shows:
+O GitLab realmente começou a acelerar em 2015 como mostra este [gráfico de commits](https://github.com/gitlabhq/gitlabhq/graphs/contributors?from=2015-03-14&to=2016-08-02&type=c):
 
 ![contributions](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/545/big_Contributors_to_gitlabhq_gitlabhq.png)
 
-It's been steadily growing since 2011, but they seem to have crossed the first tipping point around late 2014, from early adopters to the early majority. This became more important as GitHub [announced their pricing changes](https://github.com/blog/2164-introducing-unlimited-private-repositories) in May.
+Vem crescendo de forma constante desde 2011, mas parece que cruzaram o primeiro ponto de virada lá por final de 2014, saindo dos early adopters pra early majority. Isso ficou mais importante quando o GitHub [anunciou as mudanças de preço](https://github.com/blog/2164-introducing-unlimited-private-repositories) em maio.
 
-They said they haven't committed to a dead line to enforce the change, so organizations can opt out of the new format for the time being. They are changing from "limited repositories and unlimited users" to "unlimited repositories and limited users".
+Disseram que não se comprometeram com um prazo pra forçar a mudança, então as organizações podem optar por ficar fora do novo formato por enquanto. Eles estão mudando de "repositórios limitados e usuários ilimitados" pra "repositórios ilimitados e usuários limitados".
 
-## The Cost-Benefit Conundrum
+## O Dilema do Custo-Benefício
 
-For example, if you have up to 8 developers in the USD 50/month (20 private repositories), the change won't affect you, as you will pay USD 25/month for 5 users and USD 9 for additional users (total of USD 52/month).
+Por exemplo, se você tem até 8 desenvolvedores no plano de USD 50/mês (20 repositórios privados), a mudança não vai te afetar, já que você vai pagar USD 25/mês por 5 usuários e USD 9 por usuários adicionais (total de USD 52/mês).
 
-Now, if you have a big team of 100 developers currently in the Diamond Plan of USD 450/month (300 private repositories), you would have to pay USD 25/month + 95 times USD 9, which totals a staggering USD 880/month! **Double the amount!**
+Agora, se você tem uma equipe grande de 100 desenvolvedores atualmente no Diamond Plan de USD 450/mês (300 repositórios privados), teria que pagar USD 25/mês + 95 vezes USD 9, o que totaliza impressionantes USD 880/mês! **O dobro do valor!**
 
-This is an extra **USD 10,560 per year**!
+Isso são **USD 10.560 a mais por ano**!
 
-And what does GitLab affords you instead?
+E o que o GitLab te oferece em troca?
 
-You can have way more users and more repositories in a **USD 40/month** virtual box (4GB of RAM, 60GB SSD, 4TB transfer).
+Você pode ter muito mais usuários e mais repositórios numa máquina virtual de **USD 40/mês** (4GB de RAM, 60GB SSD, 4TB de transferência).
 
-And it doesn't stop there. GitLab also has very functional [GitLab Multi Runner](https://gitlab.com/gitlab-org/gitlab-ci-multi-runner) which you can install in a separate box (actually, at least 3 boxes - more on that below).
+E não para por aí. O GitLab também tem o funcionalíssimo [GitLab Multi Runner](https://gitlab.com/gitlab-org/gitlab-ci-multi-runner) que você pode instalar numa máquina separada (na verdade, pelo menos 3 máquinas, mais sobre isso abaixo).
 
-You can easily connect this runner to the build system over GitLab so every new git push trigger the runner to run the automated test suite in a Docker image of your choosing. So it's a fully functional, full featured Continuous Integration system nicely integrated in your GitLab project interface:
+Você pode facilmente conectar esse runner ao sistema de build pelo GitLab de modo que cada novo git push dispara o runner pra rodar a suíte de testes automatizados numa imagem Docker à sua escolha. Então é um sistema de Integração Contínua completo e totalmente funcional integrado na interface do projeto GitLab:
 
 ![Pipeline](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/546/big_Pipelines___cm42-archived___PremiosOnline___GitLab.png)
 
 ![CI Runner](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/547/big_test___144____Builds___cm42-archived___PremiosOnline___GitLab.png)
 
-Reminds of you anything? Yep, it's a fully functional alternative to Travis-CI, Semaphore, CircleCI or any other CI you're using with a very easy to install procedure. Let's say you're paying Travis-CI USD 489/month to have 10 concurrent jobs.
+Lembra de alguma coisa? Sim, é uma alternativa totalmente funcional ao Travis-CI, Semaphore, CircleCI ou qualquer outro CI que você esteja usando com um procedimento de instalação bem fácil. Digamos que você está pagando USD 489/mês ao Travis-CI pra ter 10 jobs concorrentes.
 
-You can install GitLab Runner in 3 boxes of USD 10/month (1GB RAM, 1 Cores, 30GB SSD) and have way more concurrent jobs (20? 50? Auto-Scale!?) that runs **faster** (in a simple test, one build took 15 minutes over Travis took less than 8 minutes at Digital Ocean).
+Você pode instalar o GitLab Runner em 3 máquinas de USD 10/mês (1GB RAM, 1 Core, 30GB SSD) e ter muito mais jobs concorrentes (20? 50? Auto-Scale!?) que rodam **mais rápido** (num teste simples, um build que demorou 15 minutos no Travis demorou menos de 8 minutos no Digital Ocean).
 
-So let's make the math for a year's worth of service. First considering no GitHub plan change:
+Então vamos fazer a conta pra um ano de serviço. Primeiro considerando nenhuma mudança no plano do GitHub:
 
-> USD 5,400 (GitHub) + USD 5,868 (Travis) = USD 11,268 a year.
+> USD 5.400 (GitHub) + USD 5.868 (Travis) = USD 11.268 por ano.
 
-Now, the GitLab + GitLab Runner + Digital Ocean for the same features and unlimited users, unlimited repositores, unlimited concurrent builds:
+Agora, GitLab + GitLab Runner + Digital Ocean pelas mesmas features e usuários ilimitados, repositórios ilimitados, builds concorrentes ilimitados:
 
-> USD 480 (GitLab) + USD 840 (Runner box) = USD 1,320 a year.
+> USD 480 (GitLab) + USD 840 (máquina do Runner) = USD 1.320 por ano.
 
-This is already almost 8.5x cheaper with almost no change in quality.
+Isso já é quase 8,5x mais barato com quase nenhuma mudança de qualidade.
 
-For the worst case scenario, compare it when GitHub decides to enforce the new plans:
+No pior cenário, compare quando o GitHub decidir forçar os novos planos:
 
-> USD 10,560 (GitHub new plans) + USD 5,868 (Travis) = USD 16,428
+> USD 10.560 (novos planos GitHub) + USD 5.868 (Travis) = USD 16.428
 
-Now the GitLab option is 11x cheaper! You're saving almost USD 15,000 a year! This is not something you can ignore in you cost sheet.
+Agora a opção GitLab é 11x mais barata! Você economiza quase USD 15.000 por ano! Isso é algo que você não pode ignorar na sua planilha de custos.
 
-As I said, the calculations above are only significant in a scenario of a 100 developers. You must do your own math taking into account your team size and number of active projects (you can always archive unused projects).
+Como eu disse, os cálculos acima só são significativos num cenário de 100 desenvolvedores. Você tem que fazer sua própria conta considerando o tamanho do seu time e número de projetos ativos (você sempre pode arquivar projetos que não estão sendo usados).
 
-Even if you don't have 100 developers. Let's consider the scenario for **30 developers** in the new GitHub per user plans and a smaller Travis configuration for 5 concurrent jobs:
+Mesmo que você não tenha 100 desenvolvedores. Vamos considerar o cenário pra **30 desenvolvedores** nos novos planos por usuário do GitHub e uma configuração menor de Travis pra 5 jobs concorrentes:
 
-> USD 3,000 (GitHub new plan) + USD 3,000 (Travis) = USD 6,000
+> USD 3.000 (novo plano GitHub) + USD 3.000 (Travis) = USD 6.000
 
-It's 4.5x cheaper in the Digital Ocean + GitLab suite option.
+É 4,5x mais barato na opção suite Digital Ocean + GitLab.
 
-Heck, let's consider the **Current** GitHub plan (the Platinum one, for up to 125 repositories):
+Olha, vamos considerar o plano **Atual** do GitHub (o Platinum, pra até 125 repositórios):
 
-> USD 2,400 (GitHub current plan) + USD 3,000 (Travis) = USD 5,400
+> USD 2.400 (plano atual GitHub) + USD 3.000 (Travis) = USD 5.400
 
-Still at least **4x more expensive** than a GitLab-based solution!
+Ainda é pelo menos **4x mais caro** que uma solução baseada em GitLab!
 
-And how long will it take for a single developer to figure out the set up and migrate everything from GitHub over to the new GitLab installation? I will say that you can reserve 1 week of work for the average programmer to do it following the official documentation and my tips and tricks below.
+E quanto tempo leva pra um único desenvolvedor descobrir o setup e migrar tudo do GitHub pra nova instalação do GitLab? Vou dizer que você pode reservar 1 semana de trabalho pra um programador mediano fazer isso seguindo a documentação oficial e minhas dicas e truques abaixo.
 
-## Installing GitLab CE
+## Instalando o GitLab CE
 
-I will not bore you with what you can readily find over the Web. I highly recommend you start with the easiest solution first: [Digital Ocean's One-Click Automatic Install](https://www.digitalocean.com/features/one-click-apps/gitlab/). Install it in at least a 4GB RAM machine (you will want to keep it if you like it).
+Não vou te encher com o que você encontra facilmente pela Web. Recomendo fortemente que você comece com a solução mais fácil primeiro: [One-Click Automatic Install do Digital Ocean](https://www.digitalocean.com/features/one-click-apps/gitlab/). Instale numa máquina com pelo menos 4GB de RAM (você vai querer mantê-la se gostar).
 
-Of course, there is a number of different installation options, from AWS AMI images to Ubuntu packages you can install manually. Study the [documentation](https://about.gitlab.com/installation/).
+Claro, existem várias opções diferentes de instalação, de imagens AMI da AWS a pacotes Ubuntu que você pode instalar manualmente. Estude a [documentação](https://about.gitlab.com/installation/).
 
-It will cost you USD 40 for a month of trial. If you want to save as much as tens of thousands of dollar, this is a bargain.
+Vai te custar USD 40 por um mês de teste. Se você quiser economizar dezenas de milhares de dólares, isso é uma pechincha.
 
-GitLab has many customization options. You can lock down your private GitLab to allow only users with an official e-mail from your domain, for example. You can configure [OAuth2 providers](http://docs.gitlab.com/ee/integration/omniauth.html) so your users can quickly sign in using their GitHub, Facebook, Google or other accounts.
+O GitLab tem muitas opções de customização. Você pode trancar seu GitLab privado pra permitir só usuários com e-mail oficial do seu domínio, por exemplo. Você pode configurar [provedores OAuth2](http://docs.gitlab.com/ee/integration/omniauth.html) pros seus usuários entrarem rapidamente usando contas do GitHub, Facebook, Google ou outras.
 
-#### A Few Gotchas
+#### Alguns Detalhes
 
-I've stumbled upon a few caveats in the configuration. Which is why I recommend that you plan ahead - study this entire article ahead of time! -, do a quick install that you can blow away, so you can "feel" the environment before trying to migrate all your repos over to your brand new GitLab. As a reference, this is a part of my `/etc/gitlab/gitlab.rb`:
+Tropecei em alguns caveats na configuração. É por isso que recomendo planejar com antecedência, estude este artigo inteiro antes! Faça uma instalação rápida que você pode jogar fora, pra você "sentir" o ambiente antes de tentar migrar todos os seus repositórios pro seu GitLab novinho. Como referência, esta é uma parte do meu `/etc/gitlab/gitlab.rb`:
 
 ```ruby
-# register a domain for your server and place it here:
+# registre um domínio pro seu servidor e coloque aqui:
 external_url "http://my-gitlab-server.com/"
 
-# you will want to enable [LFS](https://git-lfs.github.com)
+# você vai querer habilitar [LFS](https://git-lfs.github.com)
 gitlab_rails['lfs_enabled'] = true
 
-# register your emails
+# registre seus emails
 gitlab_rails['gitlab_email_from'] = "no-reply@my-gitlab-server.com"
 gitlab_rails['gitlab_support_email'] = "contact@my-gitlab-server.com"
 
-# add your email configuration (template for gmail)
+# adicione sua configuração de email (template pra gmail)
 gitlab_rails['smtp_enable'] = true
 gitlab_rails['smtp_address'] = "smtp.gmail.com"
 gitlab_rails['smtp_port'] = 587
-gitlab_rails['smtp_user_name'] = "-- some no-reply email ---"
-gitlab_rails['smtp_password'] = "-- the password ---"
+gitlab_rails['smtp_user_name'] = "-- algum email no-reply ---"
+gitlab_rails['smtp_password'] = "-- a senha ---"
 gitlab_rails['smtp_domain'] = "my-gitlab-server.com"
 gitlab_rails['smtp_authentication'] = "login"
 gitlab_rails['smtp_enable_starttls_auto'] = true
 gitlab_rails['smtp_openssl_verify_mode'] = 'peer'
 
-# this is where you enable oauth2 integration
+# aqui é onde você habilita a integração oauth2
 gitlab_rails['omniauth_enabled'] = true
 
-# CAUTION!
-# This allows users to login without having a user account first. Define the allowed providers
-# using an array, e.g. ["saml", "twitter"], or as true/false to allow all providers or none.
-# User accounts will be created automatically when authentication was successful.
+# CUIDADO!
+# Isso permite usuários logarem sem ter uma conta de usuário primeiro. Defina os providers permitidos
+# usando um array, ex. ["saml", "twitter"], ou como true/false pra permitir todos os providers ou nenhum.
+# Contas de usuário serão criadas automaticamente quando a autenticação for bem-sucedida.
 gitlab_rails['omniauth_allow_single_sign_on'] = ['github', 'google_oauth2', 'bitbucket']
 gitlab_rails['omniauth_block_auto_created_users'] = true
 
@@ -156,42 +160,42 @@ gitlab_rails['omniauth_providers'] = [
   }
 ]
 
-# if you're importing repos from GitHub, Sidekiq workers can grow as high as 2.5GB of RAM and the default [Sidekiq Killer](http://docs.gitlab.com/ee/operations/sidekiq_memory_killer.html) config will cap it down to 1GB, so you want to either disable it by adding '0' or adding a higher limit
+# se você está importando repos do GitHub, os workers do Sidekiq podem crescer até 2.5GB de RAM e a config padrão do [Sidekiq Killer](http://docs.gitlab.com/ee/operations/sidekiq_memory_killer.html) vai limitar em 1GB, então você vai querer ou desabilitar adicionando '0' ou adicionar um limite maior
 gitlab_rails['env'] = { 'SIDEKIQ_MEMORY_KILLER_MAX_RSS' => '3000000' }
 ```
 
-There are [dozens of default variables](https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/files/gitlab-cookbooks/gitlab/attributes/default.rb#L57) you can [override](https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/doc/settings/environment-variables.md), just be careful on your testings.
+Existem [dezenas de variáveis padrão](https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/files/gitlab-cookbooks/gitlab/attributes/default.rb#L57) que você pode [sobrescrever](https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/doc/settings/environment-variables.md), só tome cuidado nos seus testes.
 
-Every time you change a configuration, you can just run the following commands:
+Toda vez que você muda uma configuração, basta rodar os seguintes comandos:
 
 ```
 sudo gitlab-ctl reconfigure
 sudo gitlab-ctl restart
 ```
 
-You can open a Rails console to inspect production objects like this:
+Você pode abrir um console Rails pra inspecionar objetos de produção assim:
 
 ```
 gitlab-rails console
 ```
 
-I had a lot of trouble importing big repos from GitHub, but after a few days debugging the problem with GitLab Core Team developers [Douglas Alexandre](https://gitlab.com/u/dbalexandre), [Gabriel Mazetto](https://gitlab.com/u/brodock), a few Merge Requests and some local patching and I was finally able to import relatively big projects (more than 5,000 commits, more than 1,000 issues, more than 1,200 pull requests with several comments worth of discussion threads). A project of this size can take a couple of hours to complete, mainly because **it's damn slow to use GitHub's public APIs** (they are slow and they have rate limits and abuse detection, so you can't fetch everything as fast as your bandwidth would allow).
+Tive muita dor de cabeça importando repos grandes do GitHub, mas depois de alguns dias debugando o problema com os desenvolvedores do GitLab Core Team [Douglas Alexandre](https://gitlab.com/u/dbalexandre), [Gabriel Mazetto](https://gitlab.com/u/brodock), alguns Merge Requests e algum patching local finalmente consegui importar projetos relativamente grandes (mais de 5.000 commits, mais de 1.000 issues, mais de 1.200 pull requests com várias discussões de comentários). Um projeto desse tamanho pode levar algumas horas pra completar, principalmente porque **é lento demais usar as APIs públicas do GitHub** (são lentas e têm rate limits e detecção de abuso, então você não consegue baixar tudo tão rápido quanto sua banda permitiria).
 
-(By the way, don't miss GitLab will be over at [Rubyconf Brazil 2016](http://www.rubyconf.com.br/pt-BR/speakers#Gabriel%20Gonçalves%20Nunes%20Mazetto), on Sep 23-24)
+(A propósito, não perca o GitLab na [Rubyconf Brasil 2016](http://www.rubyconf.com.br/pt-BR/speakers#Gabriel%20Gonçalves%20Nunes%20Mazetto), nos dias 23 e 24 de setembro)
 
-Migrating all my GitHub projects took a couple of days, but they all went through smoothly and my team didn't have any trouble, just adjusting their git remote URLs and they're done.
+Migrar todos os meus projetos do GitHub levou alguns dias, mas todos passaram sem problemas e meu time não teve nenhuma dificuldade, só ajustar os git remote URLs e pronto.
 
-The import procedure from GitHub is quite complete, it brings not only the git repo per se, but also all the metadata, from labels to comments and pull request history - which is the one that usually takes more time.
+O procedimento de importação do GitHub é bem completo, traz não só o repositório git em si, mas também todos os metadados, de labels a comentários e histórico de pull request, que é justamente o que normalmente leva mais tempo.
 
-But I'd recommend waiting for at least version 8.11 (it's currently 8.10.3) before trying to import large GitHub projects.
+Mas eu recomendaria esperar pelo menos a versão 8.11 (atualmente está na 8.10.3) antes de tentar importar projetos grandes do GitHub.
 
-If you're on Bitbucket, unfortunatelly there are less features in the importer. It will mostly just bring the source code. So be aware of that if you extensively depend on their pull request system and you want to preserve this history. More feature will come and you can even help them out, they are very resourceful and willing to make GitLab better.
+Se você está no Bitbucket, infelizmente tem menos features no importador. Ele vai trazer principalmente só o código-fonte. Então fique atento se você depende bastante do sistema de pull request deles e quer preservar esse histórico. Mais features virão e você até pode ajudá-los, eles são bem desenvoltos e dispostos a melhorar o GitLab.
 
-### Side-track: Customizations for every Digital Ocean box
+### Desvio: Customizações pra cada máquina Digital Ocean
 
-Assume that you should run what's in this section for all new machines you create over Digital Ocean.
+Assuma que você deve rodar o que está nesta seção pra todas as novas máquinas que você criar no Digital Ocean.
 
-First of all, they come without a swap file. No matter how much RAM you have, the Linux OS is meant to work better by combining a swap file. You can [read more about it](https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-ubuntu-14-04) later, for now just run the following as root:
+Primeiro, elas vêm sem arquivo de swap. Não importa quanta RAM você tem, o Linux foi feito pra funcionar melhor combinado com um arquivo de swap. Você pode [ler mais sobre isso](https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-ubuntu-14-04) depois, por enquanto só rode o seguinte como root:
 
 ```
 fallocate -l 4G /swapfile
@@ -203,78 +207,78 @@ sysctl vm.swappiness=10
 sysctl vm.vfs_cache_pressure=50
 ```
 
-Edit the `/etc/fstab` file and add this line:
+Edite o arquivo `/etc/fstab` e adicione esta linha:
 
 ```
 /swapfile   none    swap    sw    0   0
 ```
 
-Finally, edit the `/etc/sysctl.conf` file and add these lines:
+Finalmente, edite o arquivo `/etc/sysctl.conf` e adicione estas linhas:
 
 ```
 vm.swappiness=10
 vm.vfs_cache_pressure = 50
 ```
 
-Don't forget to set the [default locale](http://askubuntu.com/questions/162391/how-do-i-fix-my-locale-issue) of your machine. Start by editing the `/etc/environment` file and adding:
+Não esqueça de configurar o [locale padrão](http://askubuntu.com/questions/162391/how-do-i-fix-my-locale-issue) da sua máquina. Comece editando o arquivo `/etc/environment` e adicionando:
 
 ```
 LC_ALL=en_US.UTF-8
 LANG=en_US.UTF-8
 ```
 
-Then run:
+Então rode:
 
 ```
 sudo locale-gen en_US en_US.UTF-8
 sudo dpkg-reconfigure locales
 ```
 
-Finally, you should have Ubuntu automatically install stable security patches for you. You don't want to forget machines online without the most current security fixes, so just run this:
+Finalmente, você deveria ter o Ubuntu instalando patches de segurança estáveis automaticamente pra você. Você não quer esquecer máquinas online sem as correções de segurança mais atuais, então só rode isto:
 
 ```
 sudo dpkg-reconfigure --priority=low unattended-upgrades
 ```
 
-Choose "yes" and you're done. And of course, for every fresh install, it's always good to run the good old:
+Escolha "yes" e pronto. E claro, pra toda instalação nova, é sempre bom rodar o velho e bom:
 
 ```
 sudo apt-get update && sudo apt-get upgrade
 ```
 
-This is the very basics, I believe it's easier to have an image with all this ready, but if you use the standard Digital Ocean images, these settings should do the trick for now.
+Isso é o básico do básico, acho que é mais fácil ter uma imagem com tudo isso pronto, mas se você usa as imagens padrão do Digital Ocean, estas configurações devem dar conta por enquanto.
 
-## Installing the CI Runner
+## Instalando o CI Runner
 
-Once you finish your GitLab installation, it's [super easy](https://about.gitlab.com/2016/04/19/how-to-set-up-gitlab-runner-on-digitalocean/) to deploy the GitLab Runner. You can use the same machine but I recommend you install it in a separate machine.
+Assim que você terminar sua instalação do GitLab, é [super fácil](https://about.gitlab.com/2016/04/19/how-to-set-up-gitlab-runner-on-digitalocean/) subir o GitLab Runner. Você pode usar a mesma máquina, mas recomendo instalar numa máquina separada.
 
-If you don't know what a runner is, just imagine it like this: It's basically a server connected to the GitLab install. When it's available and online, whenever someone pushes a new commit, merge request, to a repository that has a `gitlab-ci-yml` file present, GitLab will push a command to the runner.
+Se você não sabe o que é um runner, imagina assim: basicamente é um servidor conectado à instalação do GitLab. Quando está disponível e online, sempre que alguém dá push num novo commit, merge request, num repositório que tem um arquivo `gitlab-ci-yml` presente, o GitLab vai empurrar um comando pro runner.
 
-Depending on how you configured the runner, it will receive this command and spawn a new Docker container. Inside the container it will execute whatever you have defined in the `gitlab-ci.yml` file in the project. Usually it's fetching cached files (dependencies, for example), and run your test suite.
+Dependendo de como você configurou o runner, ele vai receber esse comando e criar um novo container Docker. Dentro do container ele vai executar o que você definiu no arquivo `gitlab-ci.yml` do projeto. Normalmente é buscar arquivos em cache (dependências, por exemplo) e rodar sua suíte de testes.
 
-In the most basic setup, you will only have one Runner and any subsequent builds from other users will wait in line until they finish. If you've used external CI services such as Travis-CI or CircleCI, you know that they charge for some number of concurrent builds. And it's **very expensive**.
+No setup mais básico, você só vai ter um Runner e quaisquer builds subsequentes de outros usuários vão esperar na fila até terminarem. Se você já usou serviços externos de CI como Travis-CI ou CircleCI, sabe que eles cobram por um certo número de builds concorrentes. E é **muito caro**.
 
-The less concurrent builds available, the more your users will have to wait for feedback on their changes, and less productive you will become. People may even start to avoid adding new tests, or completely ignore the tests, which will really hurt the quality of your project over time. If there is one thing you **must not** do is not having good automated test suites.
+Quanto menos builds concorrentes disponíveis, mais seus usuários vão ter que esperar por feedback nas mudanças deles, e menos produtivos vocês ficam. As pessoas podem até começar a evitar adicionar novos testes, ou ignorar completamente os testes, o que vai machucar muito a qualidade do seu projeto com o tempo. Se tem uma coisa que você **não pode** deixar de fazer é ter boas suítes de testes automatizados.
 
-Gabriel Mazetto pointed me to a very important GitLab CI Runner feature: [**auto-scaling**](https://about.gitlab.com/2016/03/29/gitlab-runner-1-1-released/). This is what they use in their hosted offering over at GitLab.com.
+O Gabriel Mazetto me apontou pra uma feature muito importante do GitLab CI Runner: [**auto-scaling**](https://about.gitlab.com/2016/03/29/gitlab-runner-1-1-released/). É isso que eles usam na oferta hospedada deles lá no GitLab.com.
 
-You can **easily** set up a runner that can use "docker-machine" and your IaaS provider APIs to spin up machines on the fly to run as many concurrent builds as you want, and it will be super cheap!
+Você pode **facilmente** configurar um runner que pode usar "docker-machine" e as APIs do seu provedor IaaS pra subir máquinas na hora pra rodar quantos builds concorrentes você quiser, e vai ser super barato!
 
-For example, on Digital Ocean you can be charged USD 0.06 (6 cents) per hour of usage of a 4GB machine. Over at AWS EC2 you can be charged USD 0.041 per hour for an m3.medium machine.
+Por exemplo, no Digital Ocean você pode ser cobrado USD 0,06 (6 centavos) por hora de uso numa máquina de 4GB. Na AWS EC2 você pode ser cobrado USD 0,041 por hora numa máquina m3.medium.
 
-There is extensive documentation but I will try to summarize what you have to do. For more details I highly recommend you to study their [official documentation](https://gitlab.com/gitlab-org/gitlab-ci-multi-runner/blob/master/docs/install/autoscaling.md#prepare-the-docker-registry-and-cache-server).
+Tem documentação extensiva mas vou tentar resumir o que você tem que fazer. Pra mais detalhes recomendo fortemente que você estude a [documentação oficial](https://gitlab.com/gitlab-org/gitlab-ci-multi-runner/blob/master/docs/install/autoscaling.md#prepare-the-docker-registry-and-cache-server).
 
-Start by creating 3 new machines at Digital Ocean, all in the same Region with private networking enabled! I will list a fake private IP address just for the sake of advancing in the configuration examples:
+Comece criando 3 novas máquinas no Digital Ocean, todas na mesma Região com rede privada habilitada! Vou listar um endereço IP privado fake só pra avançar nos exemplos de configuração:
 
-* a 1GB machine called "docker-registry-mirror", (ex 10.0.0.1)
-* a 1GB machine called "ci-cache", (ex 10.0.0.2)
-* a 1GB machine called "ci-runner", (ex 10.0.0.3)
+* uma máquina de 1GB chamada "docker-registry-mirror", (ex 10.0.0.1)
+* uma máquina de 1GB chamada "ci-cache", (ex 10.0.0.2)
+* uma máquina de 1GB chamada "ci-runner", (ex 10.0.0.3)
 
-Yeah, they can be small as very little will run on them. You can be conservative and choose the 2GB RAM options just to be on the safe side (and pricing will still be super cheap).
+Sim, podem ser pequenas já que muito pouco vai rodar nelas. Você pode ser conservador e escolher as de 2GB RAM só pra ficar no seguro (e o preço ainda vai ser super barato).
 
-Don't forget to execute the basic configuration I mentioned above to enable a swapfile, auto security update and locale regeneration.
+Não esqueça de executar a configuração básica que mencionei acima pra habilitar swapfile, auto security update e regeneração de locale.
 
-SSH in to "docker-registry-mirror" and just run:
+Faça SSH na "docker-registry-mirror" e rode:
 
 ```
 docker run -d -p 6000:5000 \
@@ -283,9 +287,9 @@ docker run -d -p 6000:5000 \
     --name registry registry:2
 ```
 
-Now you wil have a local Docker images registry proxy and cache at `10.0.0.1:6000` (take note of the real private IP).
+Agora você vai ter um registry proxy e cache local de imagens Docker em `10.0.0.1:6000` (anote o IP privado real).
 
-SSH in to "ci-cache" and run:
+Faça SSH na "ci-cache" e rode:
 
 ```
 mkdir -p /export/runner
@@ -296,21 +300,21 @@ docker run -it --restart always -p 9005:9000 \
         minio/minio:latest /export
 ```
 
-Now you will have an AWS S3 clone called [Minio](https://github.com/minio/minio) running. I didn't know this project even existed, but it is a nifty little service written in Go to clone the AWS S3 behavior and APIs. So now you can have your very own S3 inside your infrastructure!
+Agora você vai ter um clone do AWS S3 chamado [Minio](https://github.com/minio/minio) rodando. Eu nem sabia que esse projeto existia, mas é um serviçozinho legal escrito em Go pra clonar o comportamento e APIs do AWS S3. Então agora você pode ter seu próprio S3 dentro da sua infraestrutura!
 
-After Docker spin ups, it will print out the Access Key and Secret keys, make notes. And this service will be running at `10.0.0.2:9005`.
+Depois que o Docker sobe, ele vai imprimir a Access Key e Secret key, anote. E este serviço vai estar rodando em `10.0.0.2:9005`.
 
-You can even open a browser and see their web interface at `http://10.0.0.2:9005` and use the access and secret keys to login. Make sure you have a bucket named "runner". The files will be stored at the `/export/runner` directory.
+Você até pode abrir um browser e ver a interface web em `http://10.0.0.2:9005` e usar as access e secret keys pra logar. Certifique-se de ter um bucket chamado "runner". Os arquivos serão armazenados no diretório `/export/runner`.
 
 ![Minio Dashboard](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/549/big_Minio_Browser.png)
 
-Make sure the [bucket name is valid](http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html) (it must be a valid DNS naming, for example, DO NOT use underlines).
+Certifique-se de que o [nome do bucket é válido](http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html) (tem que ser um nome DNS válido, por exemplo, NÃO use underlines).
 
-Open this URL from your freshly installed GitLab-CE: `http://yourgitlab.com/admin/runners` and take note of the Registration Token. Let's say it's `1aaaa_Z1AbB2CdefGhij`
+Abra esta URL do seu GitLab-CE recém instalado: `http://yourgitlab.com/admin/runners` e anote o Registration Token. Digamos que seja `1aaaa_Z1AbB2CdefGhij`
 
 ![Admin Area for Runner Registration Token](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/550/big_Admin_Area___GitLab.png)
 
-Finally, SSH in to "ci-runner" and run:
+Finalmente, faça SSH na "ci-runner" e rode:
 
 ```
 curl -L https://github.com/docker/machine/releases/download/v0.7.0/docker-machine-`uname -s`-`uname -m` > /usr/local/bin/docker-machine
@@ -321,22 +325,22 @@ curl -L https://packages.gitlab.com/install/repositories/runner/gitlab-ci-multi-
 
 sudo apt-get install gitlab-ci-multi-runner
 
-rm -Rf ~/.docker # just to make sure
+rm -Rf ~/.docker # só pra garantir
 ```
 
-Now you can register this new runner with your GitLab install, you will need the Registration Token mentioned above.
+Agora você pode registrar este novo runner com sua instalação do GitLab, você vai precisar do Registration Token mencionado acima.
 
 ```
 sudo gitlab-ci-multi-runner register
 ```
 
-You will be asked a few questions, and this is what you can answer:
+Você vai ser perguntado algumas coisas, e isto é o que você pode responder:
 
 ```
 Please enter the gitlab-ci coordinator URL (e.g. https://gitlab.com/ci )
 https://yourgitlab.com/ci
 Please enter the gitlab-ci token for this runner
-1aaaa_Z1AbB2CdefGhij # as in the example above
+1aaaa_Z1AbB2CdefGhij # como no exemplo acima
 Please enter the gitlab-ci description for this runner
 my-autoscale-runner
 INFO[0034] fcf5c619 Registering runner... succeeded
@@ -348,13 +352,13 @@ INFO[0037] Runner registered successfully. Feel free to start it, but if it's
 running already the config should be automatically reloaded!
 ```
 
-Let's make a copy of the original configuration, just to be safe:
+Vamos fazer uma cópia da configuração original, só pra garantir:
 
 ```
 cp /etc/gitlab-runner/config.toml /etc/gitlab-runner/config.bak
 ```
 
-Copy the first few lines of this file (you want the token), it will look like this:
+Copie as primeiras linhas deste arquivo (você quer o token), vai parecer com isto:
 
 ```
 concurrent = 1
@@ -367,9 +371,9 @@ check_interval = 0
   executor = "docker+machine"
 ```
 
-The important part here is the "token". You will want to take note of it. And now you also will want to create a [new API Token over at Digital Ocean](https://cloud.digitalocean.com/settings/api/tokens). Just Generate a New Token and take note.
+A parte importante aqui é o "token". Você vai querer anotar. E agora você também vai querer criar um [novo API Token no Digital Ocean](https://cloud.digitalocean.com/settings/api/tokens). Só Gere um Novo Token e anote.
 
-You can now replace the entire `config.toml` file for this:
+Agora você pode substituir o arquivo `config.toml` inteiro por isto:
 
 ```
 concurrent = 20
@@ -386,42 +390,42 @@ check_interval = 0
     image = "codeminer42/ci-ruby:2.3"
     privileged = false
   [runners.machine]
-    IdleCount = 2                   # There must be 2 machines in Idle state
-    IdleTime = 1800                 # Each machine can be in Idle state up to 30 minutes (after this it will be removed)
-    MaxBuilds = 100                 # Each machine can handle up to 100 builds in a row (after this it will be removed)
-    MachineName = "ci-auto-scale-%s"   # Each machine will have a unique name ('%s' is required)
-    MachineDriver = "digitalocean"  # Docker Machine is using the 'digitalocean' driver
+    IdleCount = 2                   # Tem que ter 2 máquinas em estado Idle
+    IdleTime = 1800                 # Cada máquina pode ficar em estado Idle até 30 minutos (depois disso será removida)
+    MaxBuilds = 100                 # Cada máquina pode lidar com até 100 builds em sequência (depois disso será removida)
+    MachineName = "ci-auto-scale-%s"   # Cada máquina vai ter um nome único ('%s' é obrigatório)
+    MachineDriver = "digitalocean"  # Docker Machine está usando o driver 'digitalocean'
     MachineOptions = [
         "digitalocean-image=coreos-beta",
         "digitalocean-ssh-user=core",
-        "digitalocean-access-token=-- your new Digital Ocean API Token --",
+        "digitalocean-access-token=-- seu novo Digital Ocean API Token --",
         "digitalocean-region=nyc1",
         "digitalocean-size=4gb",
         "digitalocean-private-networking",
         "engine-registry-mirror=http://10.0.0.1:6000"
     ]
   [runners.cache]
-    Type = "s3"   # The Runner is using a distributed cache with Amazon S3 service
+    Type = "s3"   # O Runner está usando um cache distribuído com o serviço Amazon S3
     ServerAddress = "10.0.0.2:9005"  # minio
-    AccessKey = "-- your minio access key --"
-    SecretKey = "-- your minio secret key"
+    AccessKey = "-- sua minio access key --"
+    SecretKey = "-- sua minio secret key"
     BucketName = "runner"
-    Insecure = true # Use Insecure only when using with Minio, without the TLS certificate enabled
+    Insecure = true # Use Insecure só quando usar com Minio, sem o certificado TLS habilitado
 ```
 
-And you can restart the runner to pick up the new configuration like this:
+E você pode reiniciar o runner pra pegar a nova configuração assim:
 
 ```
 gitlab-ci-multi-runner restart
 ```
 
-As I said before, you will want to read the extensive [official documentation](https://gitlab.com/gitlab-org/gitlab-ci-multi-runner/blob/master/docs/configuration/autoscale.md) (and every link within).
+Como eu disse antes, você vai querer ler a [documentação oficial](https://gitlab.com/gitlab-org/gitlab-ci-multi-runner/blob/master/docs/configuration/autoscale.md) extensiva (e todos os links dentro).
 
-If you did everything right, changing the correct private IPs for the docker registry and cache, the correct tokens, and so forth, you can log in to your Digital Ocean dashboard and you will see something like this:
+Se você fez tudo certo, trocando os IPs privados corretos pro docker registry e cache, os tokens corretos, e assim por diante, pode logar no seu dashboard do Digital Ocean e vai ver algo assim:
 
 ![Digital Ocean CI Setup](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/548/big_DigitalOcean_-_Droplets.png)
 
-And from the `ci-runner` machine, you can list them like this:
+E da máquina `ci-runner`, você pode listá-las assim:
 
 ```
 # docker-machine ls
@@ -431,33 +435,33 @@ runner-xxxx-ci-auto-scale-xxxx-xxxx   -        digitalocean   Running   tcp://19
 runner-xxxx-ci-auto-scale-xxxx-xxxx   -        digitalocean   Running   tcp://192.169.0.2:2376           v1.10.3
 ```
 
-They should not list any errors, meaning that they are up and running, waiting for new builds to start.
+Elas não devem listar nenhum erro, significando que estão de pé e rodando, esperando novos builds começarem.
 
-There will be 2 new machines listed in your Digital Ocean dashboard, named "runner-xxxxx-ci-auto-scale-xxxxx". This is what `IdleCount = 2` does. If they stay idle for more than 30 minutes (`IdleTime = 1800`) they will be shut down so you don't get charged.
+Vai ter 2 novas máquinas listadas no seu dashboard do Digital Ocean, chamadas "runner-xxxxx-ci-auto-scale-xxxxx". Isso é o que o `IdleCount = 2` faz. Se ficarem paradas por mais de 30 minutos (`IdleTime = 1800`) serão desligadas pra você não ser cobrado.
 
-You can have several "runner" definitions, each with a `limit` of builds/machines that can be spawned in Digital Ocean. You can have other runner definitions for other providers, for example. But in this example we are limited to at most 15 machines, so 15 concurrent builds.
+Você pode ter várias definições de "runner", cada uma com um `limit` de builds/máquinas que podem ser criadas no Digital Ocean. Você pode ter outras definições de runner pra outros provedores, por exemplo. Mas neste exemplo estamos limitados a no máximo 15 máquinas, então 15 builds concorrentes.
 
-The `concurrent` limit is a global setting. So if I had 3 runner definitions, each with a `limit` of 15, they would still be globally limited to 20 as defined in the `concurrent` global variable.
+O limite `concurrent` é uma configuração global. Então se eu tivesse 3 definições de runner, cada uma com um `limit` de 15, elas ainda seriam globalmente limitadas a 20 como definido na variável global `concurrent`.
 
-You can use different providers for specific needs, for example, to run OS X builds or Rapsberry PI builds or other exotic kinds of builds. In the example I am keeping it simple and just setting many builds in the same provider (Digital Ocean).
+Você pode usar provedores diferentes pra necessidades específicas, por exemplo, pra rodar builds OS X ou builds Raspberry PI ou outros tipos exóticos de build. No exemplo estou mantendo simples e configurando vários builds no mesmo provedor (Digital Ocean).
 
-And don't worry about the monthly fee for each machine. When used in this manner, you will be paying per hour.
+E não se preocupe com a mensalidade de cada máquina. Quando usada dessa forma, você vai pagar por hora.
 
-Also, make sure you spinned up all your machines (docker-registry, minio cache, CI runner) all with **private networking enabled** (so they talk through the internal VLAN instead of having to go all the way through the public internet) and that they are all in the same region data center (NYC1 is New York 1 - New York has 3 sub-regions, for example). Don't start machines in different regions.
+Além disso, certifique-se de ter subido todas as suas máquinas (docker-registry, minio cache, CI runner) todas com **rede privada habilitada** (pra que conversem pela VLAN interna em vez de ter que atravessar toda a internet pública) e que estão todas na mesma região/data center (NYC1 é New York 1, New York tem 3 sub-regiões, por exemplo). Não comece máquinas em regiões diferentes.
 
-Because we have Docker proxy/cache and Minio/S3 cache, your builds will take take longer the first time (let's say, 5 minutes), and then subsequent build will fetch everything from the cache (taking, let's say, 1:30 minute). It's fast and it's convenient.
+Porque temos proxy/cache Docker e cache Minio/S3, seus builds vão demorar mais na primeira vez (digamos, 5 minutos), e aí builds subsequentes vão buscar tudo do cache (levando, digamos, 1:30 minuto). É rápido e é conveniente.
 
-### Setting up each Project for the Runner
+### Configurando cada Projeto pro Runner
 
-The Runner is one of the newest pieces of the GitLab ecosystem so you might have some trouble at first to figure out a decent configuration. But once you have the whole infrastructure figured out as described in the previous section, now it's as easy as adding a `.gitlab-ci.yml` file to your root directory. Something like this:
+O Runner é uma das peças mais novas do ecossistema GitLab então você pode ter algum trabalho no começo pra descobrir uma configuração decente. Mas uma vez que você tem a infraestrutura toda figurada como descrito na seção anterior, agora é tão fácil quanto adicionar um arquivo `.gitlab-ci.yml` no seu diretório raiz. Algo assim:
 
 ```yaml
-# This file is a template, and might need editing before it works on your project.
+# Este arquivo é um template, e pode precisar de edição antes de funcionar no seu projeto.
 image: codeminer42/ci-ruby:2.3
 
-# Pick zero or more services to be used on all builds.
-# Only needed when using a docker container to run your tests in.
-# Check out: http://docs.gitlab.com/ce/ci/docker/using_docker_images.html#what-is-service
+# Escolha zero ou mais serviços pra serem usados em todos os builds.
+# Só necessário quando usar um container docker pra rodar seus testes.
+# Confira: http://docs.gitlab.com/ce/ci/docker/using_docker_images.html#what-is-service
 services:
   - postgres:latest
   - redis:latest
@@ -471,7 +475,7 @@ cache:
 variables:
   RAILS_ENV: 'test'
   DATABASE_URL: postgresql://postgres:@postgres
-  CODECLIMATE_REPO_TOKEN: -- your codeclimate project token --
+  CODECLIMATE_REPO_TOKEN: -- seu token de projeto codeclimate --
 
 before_script:
   - bundle install --without development production -j $(nproc) --path .ci_cache
@@ -484,28 +488,28 @@ test:
     - xvfb-run bundle exec rspec
 ```
 
-My team at [Codeminer 42](http://www.codeminer42.com) prepared a [simple Docker image](https://hub.docker.com/r/codeminer42/ci-ruby/) with useful stuff pre-installed (such as the newest phantomjs, xvfb, etc), so it's now super easy to enable automated builds within GitLab by just adding this file to the repositories. (Thanks to Carlos Lopes, Danilo Resende and Paulo Diovanni - who will be talking [about Docker at Rubyconf Brasil 2016](http://www.rubyconf.com.br/pt-BR/speakers#Paulo%20Diovani%20Gonçalves), by the way)
+Meu time na [Codeminer 42](http://www.codeminer42.com) preparou uma [imagem Docker simples](https://hub.docker.com/r/codeminer42/ci-ruby/) com coisas úteis pré-instaladas (como o phantomjs mais novo, xvfb, etc), então agora é super fácil habilitar builds automatizados dentro do GitLab só adicionando este arquivo aos repositórios. (Obrigado ao Carlos Lopes, Danilo Resende e Paulo Diovanni, que vai estar falando [sobre Docker na Rubyconf Brasil 2016](http://www.rubyconf.com.br/pt-BR/speakers#Paulo%20Diovani%20Gonçalves), a propósito)
 
-GitLab-CI even supports building a pending Merge Request, and you can enforce the request so it can only be merged if builds pass, just like in GitHub + Travis. And as Code Climate is agnostic to Repository host or CI runner, you can easily integrate it as well.
+O GitLab-CI até suporta buildar um Merge Request pendente, e você pode forçar o request pra que ele só possa ser merjado se os builds passarem, assim como no GitHub + Travis. E como o Code Climate é agnóstico a host de repositório ou CI runner, você pode integrá-lo facilmente também.
 
 ![Project Force Successful Build to Merge](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/551/big_Settings___Codeminer42___CM-Fulcrum___GitLab.png)
 
-## Conclusion
+## Conclusão
 
-The math is hard to argue against: the GitLab + GitLab-CI + Digital Ocean combo is a big win. GitLab's interface is very familiar so users from GitHub or Bitbucket will feel quite at home in no time.
+A matemática é difícil de contestar: o combo GitLab + GitLab-CI + Digital Ocean é uma grande vitória. A interface do GitLab é bem familiar, então usuários vindos do GitHub ou Bitbucket vão se sentir em casa rapidinho.
 
-We can use all the [Git flows](https://about.gitlab.com/2014/09/29/gitlab-flow/) we're used to.
+Podemos usar todos os [Git flows](https://about.gitlab.com/2014/09/29/gitlab-flow/) que estamos acostumados.
 
-GitLab-CE is stil a work in progress though, the team is increasing their pace but there are currently more than [4,200 open issues](https://gitlab.com/gitlab-org/gitlab-ce/issues). But as this is all Ruby on Rails and Ruby tooling, you can easily jump in and contribute. No contribution is too small. Just by reporting how to reproduce a bug is help enough to assist the developers to figure out how to improve faster.
+O GitLab-CE ainda é um trabalho em andamento, o time está aumentando o ritmo mas atualmente tem mais de [4.200 issues abertas](https://gitlab.com/gitlab-org/gitlab-ce/issues). Mas como tudo isto é Ruby on Rails e tooling Ruby, você pode facilmente entrar e contribuir. Nenhuma contribuição é pequena demais. Só reportar como reproduzir um bug já é ajuda suficiente pra assistir os desenvolvedores a descobrirem como melhorar mais rápido.
 
-But don't shy away because of the open issues, it's fully functional as of right now and I have not found any bugs that could be considered show stoppers.
+Mas não se assuste com as issues abertas, está totalmente funcional agora e eu não achei nenhum bug que poderia ser considerado show stopper.
 
-They have many things right. First of all, it's a "simple" Ruby on Rails project. It's a no-thrills front-end with plain JQuery. The choice of HAML for the views is questionable but it doesn't hurt. They use good old Sidekiq+Redis for asynchronous jobs. No black magic here. A pure monolith that's not difficult to understand and to contribute.
+Eles têm muita coisa certa. Primeiro de tudo, é um projeto Ruby on Rails "simples". É um front-end sem firulas com jQuery puro. A escolha de HAML pras views é questionável mas não atrapalha. Eles usam o bom e velho Sidekiq+Redis pra jobs assíncronos. Sem mágica negra aqui. Um monólito puro que não é difícil de entender e contribuir.
 
-The APIs are all written using Grape. They have the [GitLab CE](https://gitlab.com/gitlab-org/gitlab-ce) project separated from other components, such as the [GitLab-Shell](https://gitlab.com/gitlab-org/gitlab-shell) and [GitLab-CI-Multi-Runner](https://gitlab.com/gitlab-org/gitlab-ci-multi-runner).
+As APIs são todas escritas usando Grape. Eles têm o projeto [GitLab CE](https://gitlab.com/gitlab-org/gitlab-ce) separado de outros componentes, como o [GitLab-Shell](https://gitlab.com/gitlab-org/gitlab-shell) e o [GitLab-CI-Multi-Runner](https://gitlab.com/gitlab-org/gitlab-ci-multi-runner).
 
-They also forked [Omnibus](https://gitlab.com/gitlab-org/omnibus-gitlab) in order to be able to package the CE Rails project as a ".deb". Everything is orchestrated with Docker. And when a new version is available, you only need to `apt-get update && apt-get ugprade` and it will do all the work of backing up and migratind Postgresql, updating the code, bundling in new dependencies, restarting the services and so forth. It's super convenient and you should take a look at this project if you have complicated Rails deployments into your own infrastructure (out of Heroku, for example).
+Eles também forkaram o [Omnibus](https://gitlab.com/gitlab-org/omnibus-gitlab) pra conseguir empacotar o projeto Rails CE como um ".deb". Tudo é orquestrado com Docker. E quando uma nova versão está disponível, você só precisa rodar `apt-get update && apt-get upgrade` e ele vai fazer todo o trabalho de backup e migração do Postgresql, atualizar o código, incluir novas dependências, reiniciar os serviços e por aí vai. É super conveniente e você deveria dar uma olhada neste projeto se você tem deploys Rails complicados na sua própria infraestrutura (fora do Heroku, por exemplo).
 
-I am almost done moving hundreds of repositories from both BitBucket and GitHub to GitLab right now and the developers from my company are already using it in a daily basis without any problems. We are almost at the point where we can disengage from BitBucket, GitHub and external CIs.
+Estou quase terminando de mover centenas de repositórios tanto do BitBucket quanto do GitHub pro GitLab agora e os desenvolvedores da minha empresa já estão usando no dia a dia sem nenhum problema. Estamos quase no ponto onde podemos nos desengajar do BitBucket, GitHub e CIs externos.
 
-You will be surprised how easy your company can do it too and save a couple thousand dollars in the process, while having fun doing it!
+Você vai se surpreender com o quão fácil sua empresa também pode fazer isso e economizar alguns milhares de dólares no processo, enquanto se diverte fazendo!

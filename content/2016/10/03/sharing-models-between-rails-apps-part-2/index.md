@@ -1,28 +1,32 @@
 ---
-title: Sharing models between Rails Apps - Part 2
+title: Compartilhando models entre apps Rails - Parte 2
 date: '2016-10-03T15:57:00-03:00'
-slug: sharing-models-between-rails-apps-part-2
+slug: compartilhando-models-entre-apps-rails-parte-2
+translationKey: sharing-models-between-rails-apps-2
+aliases:
+- /2016/10/03/sharing-models-between-rails-apps-part-2/
 tags:
 - rails
 - database
+- traduzido
 draft: false
 ---
 
-Let's continue from where I left off in [Part 1](http://www.akitaonrails.com/2016/10/03/sharing-models-between-rails-apps-part-1) where I quickly described how you can extract reusable model logic from a Rails app into a testable Rubygem.
+Vamos continuar de onde parei na [Parte 1](http://www.akitaonrails.com/2016/10/03/sharing-models-between-rails-apps-part-1), onde descrevi rapidamente como extrair lógica reusável de models de uma app Rails para um Rubygem testável.
 
-If I were building a secondary Rails app connecting directly to the same database as the first, I could just add the dependency to the extracted gem:
+Se eu fosse construir uma segunda app Rails conectando direto ao mesmo banco da primeira, bastaria adicionar a dependência do gem extraído:
 
 ```ruby
 gem 'central-support', github: 'Codeminer42/cm42-central-support', branch: 'master', require: 'central/support'
 ```
 
-Then recreate the models including the same Concerns, and make sure I remove the ability to `bin/rails db:migrate` from the secondary app (by creating empty db tasks with the same name, for example).
+Aí recriar os models incluindo os mesmos Concerns, e remover a capacidade de rodar `bin/rails db:migrate` na app secundária (criando tasks vazias com o mesmo nome, por exemplo).
 
-By the way, this is one big caveat that I didn't address in Part 1: up to this point, the schema was **frozen** in the [central-support gem](https://github.com/Codeminer42/cm42-central-support/blob/master/spec/support/rails_app/db/schema.rb).
+Aliás, esse é um grande detalhe que deixei de fora na Parte 1: até aqui, o schema estava **congelado** no [gem central-support](https://github.com/Codeminer42/cm42-central-support/blob/master/spec/support/rails_app/db/schema.rb).
 
-From now on, you must control the evolution of the tables mapped in the gem from within the gem. The best approach is to use the `spec/support/rails_app` and normally create new migration with `bin/rails g migration` from there. Then you must move the migration to the `lib/generators/central/templates/migrations` folder.
+Daqui pra frente, você precisa controlar a evolução das tabelas mapeadas no gem a partir do próprio gem. A melhor abordagem é usar o `spec/support/rails_app` e criar normalmente migrations novas com `bin/rails g migration` por lá. Depois você move a migration para a pasta `lib/generators/central/templates/migrations`.
 
-The [`lib/generators/central/install_generator.rb`](https://github.com/Codeminer42/cm42-central-support/blob/master/lib/generators/central/install_generator.rb) will take care of making a `central:install` task available that will dutifully put new migrations into your application's `db/migrate` folder as usual. You just have to `bundle update central-support` to get the newest changes, run `bin/rails g central:install` to create the new migrations (it will automatically skip existing ones) and run the normal `bin/rails db:migrate`. A migration generator code is very simple, you can do it like this:
+O [`lib/generators/central/install_generator.rb`](https://github.com/Codeminer42/cm42-central-support/blob/master/lib/generators/central/install_generator.rb) cuida de disponibilizar uma task `central:install` que joga as migrations novas na pasta `db/migrate` da sua aplicação como de costume. Basta rodar `bundle update central-support` para pegar as últimas mudanças, rodar `bin/rails g central:install` para criar as migrations novas (ele pula automaticamente as existentes) e rodar o `bin/rails db:migrate` normal. O código de um gerador de migration é bem simples, dá pra fazer assim:
 
 ```ruby
 require 'securerandom'
@@ -49,15 +53,15 @@ module Central
 end
 ```
 
-The `migration_template` will take care of adding the proper timestamp to the migration file, so you don't have to add it manually and the template file name can something plain such as [`migrations/add_role_field_to_user.rb`](https://github.com/Codeminer42/cm42-central-support/blob/master/lib/generators/central/templates/migrations/add_role_field_to_users.rb).
+O `migration_template` cuida de adicionar o timestamp correto no arquivo de migration, então você não precisa colocar manualmente, e o nome do arquivo template pode ser algo simples como [`migrations/add_role_field_to_user.rb`](https://github.com/Codeminer42/cm42-central-support/blob/master/lib/generators/central/templates/migrations/add_role_field_to_users.rb).
 
-All that having being said, there is a second challenge I added to my internal secondary app: I wanted it to have it's own main database and use Central's database as a secondary read-only source.
+Dito isso, tem um segundo desafio que adicionei na minha app secundária interna: eu queria que ela tivesse o seu próprio banco principal e usasse o banco do Central como fonte secundária somente leitura.
 
-So migrations in the secondary app (let's just call it Central-2) will run against it's own main database, not against the main Central's database. This add the following problem: the test suite must be able to create and migrate both test databases, in isolation from Central. Only in production should Central-2 connect to Central's database.
+Então as migrations da app secundária (vamos chamar de Central-2) vão rodar contra o seu próprio banco principal, e não contra o banco principal do Central. Isso traz o seguinte problema: a suíte de testes precisa conseguir criar e migrar os dois bancos de teste, isolados do Central. Só em produção é que o Central-2 deve conectar no banco do Central.
 
-Every Rails application has a `config/database.yml.sample` and a `db/schema.rb`, so I started by creating a `config/database_central.yml.sample` and a `db_central/schema.rb`.
+Toda aplicação Rails tem um `config/database.yml.sample` e um `db/schema.rb`, então comecei criando um `config/database_central.yml.sample` e um `db_central/schema.rb`.
 
-The `config/database_central.yml.sample` is already interesting:
+O `config/database_central.yml.sample` já fica interessante:
 
 ```yaml
 development:
@@ -89,13 +93,13 @@ production:
   pool: <%= ENV['DB_POOL'] || 5 %>
 ```
 
-In production, it will use the `DATABASE_CENTRAL_URL` environment variable to connect to Central's main database.
+Em produção, ele vai usar a variável de ambiente `DATABASE_CENTRAL_URL` para conectar no banco principal do Central.
 
-When running tests locally, it will simply connect to a local database named `central_test`.
+Rodando os testes localmente, ele simplesmente conecta num banco local chamado `central_test`.
 
-Now, while running tests at Gitlab-CI (or any other CI for that matter), I have to configure the `DATABASE_CENTRAL_URL` to point to a secondary Postgresql test database.
+Agora, ao rodar testes no Gitlab-CI (ou qualquer outro CI), eu preciso configurar o `DATABASE_CENTRAL_URL` para apontar para um banco Postgresql secundário de testes.
 
-For Gitlab, this is how I configure the build script:
+No Gitlab, eu configuro o script de build assim:
 
 ```yaml
 image: codeminer42/ci-ruby:2.3
@@ -126,9 +130,9 @@ test:
     - bundle exec rspec
 ```
 
-Notice how I copy the ".sample" config files to make sure they exist. And then how I run tasks you know such as `db:create db:schema:load` to create the normal test database, but tasks you don't know such as `central:db:create central:db:schema:load`.
+Repare como eu copio os arquivos ".sample" para garantir que existam. E como eu rodo tasks que você conhece como `db:create db:schema:load` para criar o banco de teste normal, mas também tasks que você não conhece como `central:db:create central:db:schema:load`.
 
-I defined those tasks in `lib/tasks/db_central.rake` like this:
+Eu defini essas tasks em `lib/tasks/db_central.rake` assim:
 
 ```ruby
 task spec: ["central:db:test:prepare"]
@@ -228,13 +232,13 @@ namespace :central do
 end
 ```
 
-This is how I define a namespace of Rake tasks that start with `central:`, and every one of those connect to the secondary database as described in `database_central.yml`. The weird syntax in line 81 is from my [`chainable_methods`](https://github.com/akitaonrails/chainable_methods), don't mind it too much.
+É assim que defino um namespace de tasks Rake que começam com `central:`, e cada uma delas conecta no banco secundário descrito no `database_central.yml`. A sintaxe estranha vem do meu [`chainable_methods`](https://github.com/akitaonrails/chainable_methods), não dê muita atenção.
 
-The `db_central/schema.rb` is basically a copy of the `spec/support/rails_app/db/schema.rb` from the central-support gem, with the same tables. The spec runner of both the gem and this secondary app will just load the schema into the test database.
+O `db_central/schema.rb` é basicamente uma cópia do `spec/support/rails_app/db/schema.rb` do gem central-support, com as mesmas tabelas. O runner de specs tanto do gem quanto dessa app secundária só carrega o schema no banco de teste.
 
-Now that we have the basic underpinnings for specs in place, we can focus on how the application itself can consume those external models.
+Agora que temos os fundamentos básicos para os specs no lugar, podemos focar em como a aplicação em si consome esses models externos.
 
-We start by adding an initializer like `config/initializer/db_central.rb`:
+Começamos adicionando um initializer como `config/initializer/db_central.rb`:
 
 ```ruby
 DB_CENTRAL = CM(Rails.root)
@@ -246,9 +250,9 @@ DB_CENTRAL = CM(Rails.root)
   .unwrap.freeze
 ```
 
-In this case I am reading from the sample file because different from the CI build, when I deploy to Heroku I don't have a script to copy the sample to the final yaml file. This will populate the constant `DB_CENTRAL` with the database URL stored in the `DATABASE_CENTRAL_URL` environment variable that I have to set.
+Nesse caso eu leio do arquivo sample porque, diferente do build de CI, quando eu faço deploy no Heroku eu não tenho um script para copiar o sample para o yaml final. Isso popula a constante `DB_CENTRAL` com a URL do banco armazenada na variável de ambiente `DATABASE_CENTRAL_URL` que eu preciso configurar.
 
-Then I create a new file called `app/models/remote_application_record.rb` that looks like this:
+Aí crio um arquivo novo chamado `app/models/remote_application_record.rb` mais ou menos assim:
 
 ```ruby
 class RemoteApplicationRecord < ApplicationRecord
@@ -261,11 +265,11 @@ class RemoteApplicationRecord < ApplicationRecord
 end
 ```
 
-This is how you create a new connection pool for the secondary database configuration. You must only have this `establish_connection` in one place and have the models inherit from here. The `abstract_class = true` will make ActiveRecord not try to load from a table of the same name as this class.
+É assim que você cria um novo connection pool para a configuração do banco secundário. Você deve ter esse `establish_connection` em um único lugar e fazer os models herdarem daqui. O `abstract_class = true` faz com que o ActiveRecord deixe de tentar carregar de uma tabela com o mesmo nome dessa classe.
 
-Then we have a `default_scope` locking down the model as `readonly`. We don't want that in the test environment because I still want to have Factory Girl populate the test database with fake data for the specs. But it's good idea to have it in the production environment just to make sure.
+Em seguida temos um `default_scope` travando o model como `readonly`. A gente quer abrir mão disso no ambiente de teste, porque eu ainda quero deixar o Factory Girl popular o banco de teste com dados falsos para os specs. Mas é uma boa ideia ter isso em produção só para garantir.
 
-Finally, I can create all the models I need, such as `app/models/central/team.rb`:
+Por fim, posso criar todos os models que preciso, como `app/models/central/team.rb`:
 
 ```ruby
 module Central
@@ -279,18 +283,18 @@ module Central
 end
 ```
 
-From here I can just call normal Arel queries such as  `Central::Team.not_archived.limit(5)`.
+A partir daqui posso fazer queries Arel normais como `Central::Team.not_archived.limit(5)`.
 
-### Conclusions
+### Conclusões
 
-If you didn't already, refer to [Part 1](http://www.akitaonrails.com/2016/10/03/sharing-models-between-rails-apps-part-1) for more details.
+Se ainda não viu, dá uma olhada na [Parte 1](http://www.akitaonrails.com/2016/10/03/sharing-models-between-rails-apps-part-1) para mais detalhes.
 
-This is a simple recipe to share model logic between a main read-write Rails app and a secondary read-only Rails app. They share most (not all) of the same models, they share the same logic (through some of the Concerns), and they share the same database.
+Essa é uma receita simples para compartilhar lógica de model entre uma app Rails principal de leitura e escrita e uma app Rails secundária de só leitura. Elas compartilham a maioria (não todos) dos mesmos models, compartilham a mesma lógica (através de alguns Concerns) e compartilham o mesmo banco.
 
-In this particular case, the recommended approach is to create a [Follower database](https://devcenter.heroku.com/articles/heroku-postgres-follower-databases), which is how Heroku calls a secondary replicated database and make my secondary application connect to that (as it only needs a read-only source).
+Nesse caso particular, a abordagem recomendada é criar um [Follower database](https://devcenter.heroku.com/articles/heroku-postgres-follower-databases), que é como o Heroku chama um banco secundário replicado, e fazer minha aplicação secundária conectar nele (já que ela só precisa de uma fonte somente leitura).
 
-For more complicated scenarios, you will need a more complicated solution such as an HTTP API layer to make sure only one App manages model migrations and such. But the Rubygem approach should be "good enough" for many cases.
+Para cenários mais complicados, você vai precisar de uma solução mais elaborada como uma camada de API HTTP para garantir que apenas uma App gerencie as migrations dos models. Mas a abordagem do Rubygem deve ser "boa o suficiente" para muitos casos.
 
-If I really need to go that way, it won't be too difficult to transform this small gem into a full blown Rails API app. If you can't even separate the logic as a Concern, you won't be able to separate them as APIs either, so consider this a quick exercise, a first step towards creating an [Anti Corruption Layer](http://programmers.stackexchange.com/questions/184464/what-is-an-anti-corruption-layer-and-how-is-it-used).
+Se eu realmente precisar ir por esse caminho, não vai ser difícil transformar esse pequeno gem numa app Rails API completa. Se você nem consegue separar a lógica em Concern, também não vai conseguir separar como APIs, então encare isso como um exercício rápido, um primeiro passo para criar uma [Anti Corruption Layer](http://programmers.stackexchange.com/questions/184464/what-is-an-anti-corruption-layer-and-how-is-it-used).
 
-And as a bonus, consider contributing to the [Central](https://github.com/Codeminer42/cm42-central) and [central-support](https://github.com/Codeminer42/cm42-central-support) open source projects. I intend to build a competitive Pivotal Tracker/Trello alternative and we are getting there!
+E como bônus, considere contribuir com os projetos open source [Central](https://github.com/Codeminer42/cm42-central) e [central-support](https://github.com/Codeminer42/cm42-central-support). Pretendo construir uma alternativa competitiva ao Pivotal Tracker/Trello e estamos chegando lá!

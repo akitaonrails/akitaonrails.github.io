@@ -1,104 +1,108 @@
 ---
-title: The Ruby Community and Reputation
+title: A Comunidade Ruby e a Reputação
 date: '2016-08-19T11:02:00-03:00'
-slug: the-ruby-community-and-reputation
+slug: a-comunidade-ruby-e-a-reputacao
+translationKey: ruby-community-reputation
+aliases:
+- /2016/08/19/the-ruby-community-and-reputation/
 tags:
 - community
 - rails
 - ruby
 - ranting
+- traduzido
 draft: false
 ---
 
-I've just read the posts from [Adam Hawkins](http://hawkins.io/2015/05/the-ruby-community-the-next-version/) and the support from [Alan Bradburne](http://www.alanbradburne.com/Rubys-reputation) over Ruby Weekly.
+Acabei de ler os posts do [Adam Hawkins](http://hawkins.io/2015/05/the-ruby-community-the-next-version/) e o apoio do [Alan Bradburne](http://www.alanbradburne.com/Rubys-reputation) na Ruby Weekly.
 
-As a disclaimer, I don't know them, and I respect their points of view, it's not supposed to start a flame war, just to paint an alternative point of view.
+Como disclaimer, eu não conheço esses caras pessoalmente e respeito o ponto de vista deles. A intenção aqui não é começar um flame war, é só pintar um ponto de vista alternativo.
 
-Both articles represent the point of view of many veteran Ruby developers in this community. Some of whom already left to other technologies or stopped public appearances.
+Ambos os artigos representam o ponto de vista de muitos desenvolvedores Ruby veteranos dessa comunidade. Vários deles já partiram para outras tecnologias ou pararam de aparecer publicamente.
 
-I already made my stand very clear in the ["Rails has Won: The Elephant in the Room"](http://www.akitaonrails.com/2016/05/23/rails-has-won-the-elephant-in-the-room). But let me simplify here.
+Eu já deixei minha posição bem clara em ["Rails has Won: The Elephant in the Room"](http://www.akitaonrails.com/2016/05/23/rails-has-won-the-elephant-in-the-room). Mas deixa eu simplificar aqui.
 
-There is clearly a faction being formed. Apart from great developers like Solnic (dry-rb), Nick (Trailblazer), and Luca (Hanami), most people are complaining that Rails and some of the closest pieces of the ecosystem around it don't conform to their newly found vision of what "good" should be.
+Tem claramente uma facção se formando. Tirando ótimos desenvolvedores como Solnic (dry-rb), Nick (Trailblazer) e Luca (Hanami), a maioria das pessoas está reclamando que o Rails e algumas das peças mais próximas do ecossistema ao redor dele não se encaixam na visão recém-descoberta deles do que seria o "bom".
 
-In their view of the world, a "better" Rails should be way simpler, way more explicit, composed of super small libraries, super explicit external APIs, and super composability to take it apart back and forth.
+Na visão de mundo deles, um Rails "melhor" seria muito mais simples, muito mais explícito, composto de bibliotecas super pequenas, com APIs externas super explícitas, e super componibilidade pra desmontar e remontar pra todo lado.
 
-And here lies my problem: if DHH complied and took that direction, that would be "Ruby OFF the Rails." The whole point of "Ruby **ON** Rails" is precisely because it is defined by being a coherent, opinionated full stack with coarse-grained libraries that are meant to work together in tandem.
+E é aí que mora meu problema: se o DHH cedesse e tomasse esse caminho, isso seria "Ruby OFF the Rails". O ponto inteiro de "Ruby **ON** Rails" existe justamente porque ele é definido como um full stack coerente, opinativo, com bibliotecas grossas (coarse-grained) feitas pra trabalhar juntas em sintonia.
 
-Let me present the true Elephant in the Room:
+Deixa eu apresentar o verdadeiro Elephant in the Room:
 
-* Discussions like this are just inflammatory link baits. They serve no point but create a cloud of animosity against something without actually presenting an objective good alternative. Writing bullet points is easy, but writing complete solutions and maintaining them is not.
+* Discussões como essa são só link baits inflamatórios. Não servem pra nada além de criar uma nuvem de animosidade contra alguma coisa, sem apresentar de fato uma alternativa boa e objetiva. Escrever bullet points é fácil; escrever soluções completas e mantê-las já é outro departamento.
 
-* There are indeed good alternatives popping up already, such as the aforementioned Trailblazer, Hanami, and the dry-rb collection of libraries, just to name a few. The complaint is that they don't have as much traction right now. What's the solution? Bad-mouthing Rails? Writing ranting articles of how life is unjust? Or, actually, are you writing more tutorials on how to use Trailblazer? Recording screencasts on how to use Hanami? Going to a conference and presenting more talks on importing dry-rb into your projects?
+* Existem sim boas alternativas pipocando, como o já mencionado Trailblazer, o Hanami e a coleção de bibliotecas dry-rb, só pra citar algumas. A reclamação é que elas não têm tanta tração agora. Qual a solução? Falar mal do Rails? Escrever artigos chorosos sobre como a vida é injusta? Ou, melhor, escrever mais tutoriais sobre como usar Trailblazer? Gravar screencasts sobre como usar Hanami? Ir a uma conferência e fazer mais palestras sobre como importar dry-rb nos seus projetos?
 
-* Ruby on Rails was meant for programmers tired of super composability, super configuration, super explicit, super fine-grained libraries. It was meant for Java programmers coming out straight from the nightmare that was J2EE 1.x in 2004, remember that? Now, the "proposal", is to go back to that? Waste enormous amounts of time fine-tuning your tailor-made mini-stack? We have that already. It's called Javascript. And let me tell you: configuring the current breed of `package.json` brings me back really bad memories from `pom.xml`, `hibernate.cfg.xml` to `struts-config.xml`.
+* O Ruby on Rails foi feito pra programadores cansados de super componibilidade, super configuração, super explicitação, super bibliotecas fine-grained. Foi feito pra programadores Java saindo direto do pesadelo que foi o J2EE 1.x em 2004, lembram disso? E agora a "proposta" é voltar pra aquilo? Desperdiçar quantidades enormes de tempo afinando seu mini-stack feito sob medida? A gente já tem isso. Chama Javascript. E deixa eu te falar: configurar a geração atual de `package.json` me traz memórias muito ruins de `pom.xml`, `hibernate.cfg.xml` e `struts-config.xml`.
 
-* Beginners are not interested in fine-grained solutions. Most people forget how it was to be a beginner. Actually, I'd argue that 80% of the world's developers benefit greatly from a Rails-like approach. It's no coincidence that many platforms conformed to an opinionated, convention-over-configuration approach after it proved its point.
+* Iniciantes não estão interessados em soluções fine-grained. A maioria das pessoas esquece como era ser iniciante. Na verdade, eu argumentaria que 80% dos desenvolvedores do mundo se beneficiam muito de uma abordagem como a do Rails. Não é coincidência que muitas plataformas se conformaram a uma abordagem opinativa, convention-over-configuration, depois que ela provou seu valor.
 
-The fact that people are complaining against Rails makes it feel like it is Rails fault somehow. Actually not, it's just a reflection of the frustration of the very people that **failed** (and are failing) to pitch the alternatives. Everybody wants a free lunch.
+O fato das pessoas estarem reclamando contra o Rails dá a sensação de que a culpa, de algum jeito, é do Rails. Na real, isso é só um reflexo da frustração das próprias pessoas que **falharam** (e estão falhando) em vender as alternativas. Todo mundo quer almoço grátis.
 
-Let me tell you a short story.
+Deixa eu contar uma historinha.
 
-Back in 2005 I was the only Rails developer I knew in my country (Brazil). I googled around and found perhaps half a dozen other hobbyists doing Ruby for fun, and a couple are doing it professionally already.
+Lá em 2005, eu era o único desenvolvedor Rails que eu conhecia no meu país (Brasil). Eu googlei por aí e achei uns meia dúzia de outros hobbyists fazendo Ruby por diversão, e um par já fazia profissionalmente.
 
-People would make fun of us everywhere I looked because they thought we were just crazy. _"Of course, J2EE is the way to go." "Of course, every project should conform to Eric Evan's DDD approach." "Of course, every project should conform to all of the Gang of Four's Design Patterns, the more, the merrier." "Of course, we should have very isolated deployment packages with very explicit API boundaries between them, no matter how it makes productivity decrease."_
+As pessoas zoavam a gente em todo lugar que eu olhava porque achavam que a gente era doido. _"Lógico que J2EE é o caminho." "Lógico que todo projeto deveria seguir a abordagem DDD do Eric Evans." "Lógico que todo projeto deveria seguir todos os Design Patterns do Gang of Four, quanto mais melhor." "Lógico que a gente deveria ter pacotes de deploy bem isolados, com fronteiras de API bem explícitas entre eles, não importa o quanto isso derrube a produtividade."_
 
-We've been there before. In 2004, I already had more than ten years of experience in professional programming.
+Já passei por isso antes. Em 2004, eu já tinha mais de dez anos de experiência em programação profissional.
 
-It took me another ten years of pilgrimage. 9 years organizing my own conference. More than 1,000 blog posts. Almost 200 talks, several of which I paid from my own pocket to buy bus and airplane tickets. I put my money where my mouth was.
+Levei mais dez anos de peregrinação. 9 anos organizando minha própria conferência. Mais de 1.000 posts no blog. Quase 200 palestras, várias delas que paguei do meu próprio bolso pra comprar passagens de ônibus e avião. Botei o dinheiro onde minha boca estava.
 
-The promise was to replace all the complexity and bureaucracy with an opinionated stack where most of the basic decisions were already made. It would be out of our way so we could focus on the most important part: the business.
+A promessa era substituir toda a complexidade e burocracia por uma stack opinativa, na qual a maioria das decisões básicas já estavam tomadas. Ela ficaria fora do nosso caminho pra que pudéssemos focar na parte mais importante: o negócio.
 
 <div class="video-container">
     <video controls>
         <source src="https://s3.us-east-2.amazonaws.com/blip.tv/Java_is_not_evil.mp4" type="video/mp4">
-        Your browser does not support the video tag. [Direct Link](https://s3.us-east-2.amazonaws.com/blip.tv/Java_is_not_evil.mp4)
+        Seu navegador não suporta a tag video. [Link Direto](https://s3.us-east-2.amazonaws.com/blip.tv/Java_is_not_evil.mp4)
     </video>
 </div>
 
-Every talk I pitched to Rails since 2006 had the above section. And with every single person who ever watched any of my talks as my witness, I always said:
+Toda palestra de Rails que eu fiz desde 2006 tinha a seção acima. E com cada pessoa que assistiu qualquer uma das minhas palestras como testemunha, eu sempre disse:
 
-> "Many of you have heard that Java is bad because it's so complex and so bureaucratic. And many will try to pitch their alternatives at the expense of Java. Not us. We embrace what Java has to offer. Solr, Elasticsearch, and Hadoop are all made with Java. What will we do? Rewrite everything in Ruby? Of course not. For Rails to Win, Java doesn't have to Lose." (I put the "evil edition" image on fire, on stage).
+> "Muitos de vocês ouviram que Java é ruim porque é muito complexo e burocrático. E muitos vão tentar vender suas alternativas às custas do Java. Nós não. Nós abraçamos o que Java tem a oferecer. Solr, Elasticsearch e Hadoop são todos feitos em Java. O que vamos fazer? Reescrever tudo em Ruby? Claro que não. Pra Rails Vencer, Java não precisa Perder." (E aí eu colocava fogo na imagem da "edição evil", no palco).
 
-I wrote an article (in pt-BR, sorry) in October of 2007 titled ["For me to win, the other has to lose ..."](http://www.akitaonrails.com/2007/10/23/para-eu-ganhar-o-outro-precisa-perder) where I explained why this way of thinking is so lame. I also took inspiration from the famous 1998 Macworld talk by Steve Jobs, where he called Bill Gates on stage, on the big screen, to announce their collaboration. The Apple fans went nuts, they were horrified by that sight, it was like sleeping with Satan.
+Eu escrevi um artigo em outubro de 2007 chamado ["Para eu ganhar, o outro precisa perder ..."](http://www.akitaonrails.com/2007/10/23/para-eu-ganhar-o-outro-precisa-perder), onde expliquei por que esse jeito de pensar é tão tosco. Também me inspirei na famosa palestra de Steve Jobs na Macworld de 1998, onde ele chamou o Bill Gates pro palco, na tela gigante, pra anunciar a colaboração entre eles. Os fanboys da Apple surtaram, ficaram horrorizados com aquela cena, foi como dormir com Satã.
 
-Almost 20 years later, Apple is one of the most valuable companies in the world. Because it didn't matter. Jobs left pure ideology behind and became pragmatic. They needed Microsoft's endorsement, got it, and proved their points by results: they spent the 90s masturbating over why classic OS 7 to 9 were better than Windows 3.1 up to NT 4. But it took them ten years to prove the worth of OS X over the first decade of the 21st century. One step at a time, one release after the other, frequently delivering instead of spending years closed in the labs until the "perfect" solution arose. Baby steps. It culminated when they squeezed OS X into iOS in 2007.
+Quase 20 anos depois, a Apple é uma das empresas mais valiosas do mundo. Porque não importava. Jobs deixou a ideologia pura pra trás e virou pragmático. Eles precisavam do endosso da Microsoft, conseguiram, e provaram seus pontos pelos resultados: passaram os anos 90 se masturbando sobre por que o clássico OS 7 a 9 era melhor que o Windows 3.1 até o NT 4. Mas levou dez anos pra provar o valor do OS X ao longo da primeira década do século XXI. Um passo de cada vez, um release atrás do outro, entregando com frequência, em vez de passar anos trancados nos laboratórios até a solução "perfeita" surgir. Baby steps. Culminou quando eles espremeram o OS X dentro do iOS em 2007.
 
-That's how you prove a point: through sheer pain and sweat, by putting it out there in the streets, pitching it, selling it, and creating true value one small release at a time.
+É assim que se prova um ponto: através de suor e dor, colocando aquilo na rua, vendendo, evangelizando e criando valor real, um pequeno release de cada vez.
 
-And then this happened:
+E aí aconteceu isto:
 
-![Macbooks everywhere](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/559/big_mac-school.jpg)
+![Macbooks por todo lado](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/559/big_mac-school.jpg)
 
-Remember when Apple took over the world? One entire decade to come back from [bleeding 1 billion a year](http://money.cnn.com/1998/10/14/technology/apple/) up until becoming the [most valuable company in the world](http://fortune.com/2016/02/03/apple-facebook-amazon-google/), whose effects are still going on 5 years after Jobs' passing.
+Lembram quando a Apple dominou o mundo? Uma década inteira pra voltar de [sangrar 1 bilhão por ano](http://money.cnn.com/1998/10/14/technology/apple/) até virar a [empresa mais valiosa do mundo](http://fortune.com/2016/02/03/apple-facebook-amazon-google/), cujos efeitos ainda continuam 5 anos depois da morte do Jobs.
 
-Some of us understand that engineers want to masturbate over irrelevant things.
+Alguns de nós entendemos que engenheiros gostam de se masturbar sobre coisas irrelevantes.
 
-> "- My algorithm runs 0.1 milliseconds faster than yours".
+> "- Meu algoritmo roda 0.1 milissegundos mais rápido que o seu".
 
-> "- Ha, but my design has fewer dependency points than yours!"
+> "- Ha, mas meu design tem menos pontos de dependência que o seu!"
 
-Rails did to Ruby what Apple did to Unix and Canonical did to Linux-based distros. People complaining about Rails remind me of people trying to argue why Archlinux is way superior to OS X or Ubuntu, but it's just that people in general are stupid not to perceive that value.
+O Rails fez pelo Ruby o que a Apple fez pelo Unix e o que a Canonical fez pelas distros baseadas em Linux. As pessoas reclamando do Rails me lembram as pessoas tentando argumentar por que o Archlinux é muito superior ao OS X ou ao Ubuntu, mas é só que as pessoas em geral são burras demais pra perceber esse valor.
 
-And for some, it's not exactly flattering to be in the same league as Apple or Canonical, but the results are undeniable.
+E pra alguns, talvez não seja exatamente um elogio estar na mesma liga da Apple ou da Canonical, mas os resultados são inegáveis.
 
-Remember the legendary "15-minute blog"? Why did it surprise us so much in 2005? It was not what Rails could do; it was all the work we didn't need to do. And Rails has stayed true to that until now.
+Lembram do lendário "blog em 15 minutos"? Por que aquilo nos surpreendeu tanto em 2005? Não era o que o Rails podia fazer; era todo o trabalho que a gente não precisava fazer. E o Rails permaneceu fiel a isso até hoje.
 
-If you're a beginner programmer, Rails still has plenty to teach, and you can learn the details later.
+Se você é um programador iniciante, o Rails ainda tem muito o que ensinar, e você pode aprender os detalhes depois.
 
-If you're the average programmer, Rails' ecosystem will take you from point A to point B much faster, with better productivity and maintainability.
+Se você é o programador mediano, o ecossistema do Rails vai te levar do ponto A ao ponto B muito mais rápido, com produtividade e manutenibilidade melhores.
 
-Why are you complaining if you're the tech star programmer funded by a unicorn?
+Por que você está reclamando se você é o programador estrela do tech, financiado por um unicórnio?
 
-Programmers ranting are not following one of our own old favorite quotes: "Premature Optimization is the Root of All Evil." And as the "UNIX way" already had:
+Programadores reclamões estão esquecendo um dos nossos próprios ditados favoritos: "Otimização Prematura é a Raiz de Todo Mal". E como o "UNIX way" já dizia:
 
-> The strategy is definitely:
+> A estratégia é, definitivamente:
 
-> Make it work,
+> Faça funcionar,
 
-> Then make it right,
+> Depois faça do jeito certo,
 
-> and, finally, make it fast.
+> e, por fim, faça rápido.
 
-There is nothing wrong with having alternatives to Rails, but the Rails bashing is getting very old very fast. It's difficult to pitch alternatives, I know. I've spent many show soles in the last 10 years advocating Ruby, so I really know it.
+Não tem nada de errado em ter alternativas ao Rails, mas o bashing contra Rails está ficando muito velho muito rápido. Vender alternativas é difícil, eu sei. Gastei muita sola de sapato nos últimos 10 anos evangelizando Ruby, então eu sei mesmo.
 
-I never believed in free lunch. I believe in targeted, hard work, and that's been my philosophy for the last 25 years in programming.
+Eu nunca acreditei em almoço grátis. Eu acredito em trabalho duro e direcionado, e essa tem sido minha filosofia nos últimos 25 anos de programação.

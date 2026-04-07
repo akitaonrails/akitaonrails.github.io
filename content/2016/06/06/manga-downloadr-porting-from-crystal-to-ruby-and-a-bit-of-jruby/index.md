@@ -1,37 +1,41 @@
 ---
-title: "[Manga-Downloadr] Porting from Crystal to Ruby (and a bit of JRuby)"
+title: "[Manga-Downloadr] Portando de Crystal para Ruby (e um pouco de JRuby)"
 date: '2016-06-06T18:06:00-03:00'
-slug: manga-downloadr-porting-from-crystal-to-ruby-and-a-bit-of-jruby
+slug: manga-downloadr-portando-de-crystal-para-ruby-e-um-pouco-de-jruby
+translationKey: manga-downloadr-crystal-to-ruby
+aliases:
+- /2016/06/06/manga-downloadr-porting-from-crystal-to-ruby-and-a-bit-of-jruby/
 tags:
 - manga-downloadr
 - crystal
 - jruby
+- traduzido
 draft: false
 ---
 
-I have this old pet project of mine called [Manga Downloadr](http://www.akitaonrails.com/2014/12/17/small-bites-downloader-para-mangareader-kindle-edition) that I published in 2014. It was a very rough version. I was experimenting with Typhoeus asynchronous requests and in the end the code ended up becoming super messed up.
+Eu tenho um projetinho pessoal antigo chamado [Manga Downloadr](http://www.akitaonrails.com/2014/12/17/small-bites-downloader-para-mangareader-kindle-edition) que publiquei em 2014. Era uma versão bem tosca. Eu estava experimentando com requisições assíncronas usando Typhoeus e no final o código acabou ficando uma bagunça absurda.
 
-The nature of the original Manga Downloader is no different from a web crawler, it fetches HTML pages, parses them in order to find collections of links and keeps fetching until a set of images are downloaded. Then I organize them in volumes, optimize them to fit the Kindle screen resolution, and compile them down into PDF files. This makes this project an interesting exercise in trying to make concurrent HTTP requests and process the results.
+A natureza do Manga Downloader original é a de um web crawler: ele baixa páginas HTML, faz parse para encontrar coleções de links e segue baixando até que um conjunto de imagens seja salvo. Depois eu organizo tudo em volumes, otimizo para caber na resolução de tela do Kindle e compilo em arquivos PDF. Isso faz desse projeto um exercício interessante para tentar fazer requisições HTTP concorrentes e processar os resultados.
 
-A year later I was learning Elixir. The Manga Downloadr was a nice candidate for me to figure out how to implement the same thing in a different language. You can follow my learning process in [this series of posts](http://www.akitaonrails.com/exmangadownloadr).
+Um ano depois eu estava aprendendo Elixir. O Manga Downloadr era um bom candidato para eu descobrir como implementar a mesma coisa em outra linguagem. Você pode acompanhar o meu processo de aprendizado [nessa série de posts](http://www.akitaonrails.com/exmangadownloadr).
 
-Finally, I've been learning more about Crystal, a Ruby-inspired platform that can compile Ruby-like source code into LLVM-optimized native binaries. And as a bonus it features a Go-like CSP channels and fibers to allow for concurrent code.
+Finalmente, venho aprendendo mais sobre Crystal, uma plataforma inspirada em Ruby que compila código fonte parecido com Ruby em binários nativos otimizados via LLVM. E de bônus oferece canais e fibras no estilo CSP, parecido com Go, para permitir código concorrente.
 
-So I adapted my Elixir version to Crystal and the result is this code you can find over Github as [akitaonrails/cr_manga_downloadr](https://github.com/akitaonrails/cr_manga_downloadr).
+Então adaptei minha versão Elixir para Crystal e o resultado é esse código que você encontra no Github como [akitaonrails/cr_manga_downloadr](https://github.com/akitaonrails/cr_manga_downloadr).
 
-It works very well and performs really fast, limited mainly by how many requests MangaReader can respond concurently and the speed/reliability of the Internet connection. So, as my original Ruby version was terrible code, it was a good time to rewrite it. And as Crystal is surprisingly close to Ruby I decided to port it over.
+Funciona muito bem e roda bem rápido, limitado principalmente por quantas requisições o MangaReader consegue responder concorrentemente e pela velocidade/confiabilidade da conexão de Internet. E como minha versão Ruby original era um código terrível, era uma boa hora para reescrevê-la. E como Crystal é surpreendentemente próximo de Ruby, decidi portar.
 
-> The port was almost too trivial
+> A portagem foi quase trivial demais
 
-It was mostly copying and pasting the Crystal code without the Type annotations. And I had to replace the lightweight Fibers and Channel implementation for concurrency over to traditional Ruby Threads.
+Foi praticamente copiar e colar o código Crystal sem as anotações de tipo. E tive que substituir a implementação leve de Fibers e Channel para concorrência pelas tradicionais Threads de Ruby.
 
-The new version 2.0 for the Ruby version of the tool can be found in this Github repository: [akitaonrails/manga-downloadr](https://github.com/akitaonrails/manga-downloadr).
+A nova versão 2.0 da ferramenta em Ruby pode ser encontrada nesse repositório no Github: [akitaonrails/manga-downloadr](https://github.com/akitaonrails/manga-downloadr).
 
-### Ruby, Ruby everywhere!
+### Ruby, Ruby por todo lado!
 
-Moving between Ruby and Crystal is not so difficult. The Crystal team did a fantastic job implementing a very solid Standard Library (stdlib) that very closely resembles MRI Ruby's.
+Transitar entre Ruby e Crystal não é tão difícil. O time do Crystal fez um trabalho fantástico implementando uma Standard Library (stdlib) muito sólida, que se assemelha bastante à do MRI Ruby.
 
-For example, let's compare a snippet from my Crystal version first:
+Por exemplo, vamos comparar primeiro um trecho da minha versão Crystal:
 
 ```ruby
 def fetch(page_link : String)
@@ -54,7 +58,7 @@ def fetch(page_link : String)
 end
 ```
 
-Now let's check the ported Ruby version:
+Agora vamos olhar a versão portada para Ruby:
 
 ```ruby
 def fetch(page_link)
@@ -80,34 +84,34 @@ def fetch(page_link)
 end
 ```
 
-It's uncanny how similar they are, down to stdlib calls such as `URI.parse` or Array methods such as `split`.
+É impressionante como são parecidos, até mesmo nas chamadas de stdlib como `URI.parse` ou métodos de Array como `split`.
 
-> Once you remove the Type annotations from the Crystal version, it's 99% Ruby.
+> Quando você remove as anotações de tipo da versão Crystal, é 99% Ruby.
 
-Ruby doesn't care if you're trying to call a method in a Nil object - at source code compiling time. Crystal does compile-time checkings and if it feels like the method call will be over Nil, it won't even compile. So this is one big win to avoid subtle bugs.
+Ruby pouco se importa se você está chamando um método em um objeto Nil - em tempo de compilação. Crystal faz checagens em tempo de compilação e, se ele acha que a chamada de método pode acontecer sobre Nil, simplesmente não compila. Isso é uma grande vitória para evitar bugs sutis.
 
-In Rails we are used to the dared `#try` method. Ruby 2.3 introduced the [safe navigation operator](http://mitrev.net/ruby/2015/11/13/the-operator-in-ruby/).
+Em Rails estamos acostumados com o famigerado método `#try`. O Ruby 2.3 introduziu o [safe navigation operator](http://mitrev.net/ruby/2015/11/13/the-operator-in-ruby/).
 
-So, in Ruby 2.3 with Rails, both of the following lines are valid:
+Então, em Ruby 2.3 com Rails, ambas as linhas a seguir são válidas:
 
 ```ruby
 obj.try(:something).try(:something2)
 obj&.something&.something2
 ```
 
-In Crystal we can do the following:
+Em Crystal podemos fazer assim:
 
 ```ruby
 obj.try(&.something).try(&.something2)
 ```
 
-So, it's close. Use with care.
+Então, é parecido. Use com cuidado.
 
-As I mentioned before, Crystal is close to Ruby but it's not meant to be compatible, so we can't just load Rubygems without porting. In this example I don't have Nokogiri to parse the HTML. But this is where the stdlib shines: Crystal comes with a good enough XML/HTML and JSON parsers. So we can parse HTML as XML and use plain XPath instead.
+Como mencionei antes, Crystal é próximo de Ruby, mas a intenção dele é ser uma linguagem própria, então não dá para simplesmente carregar Rubygems sem portar. Nesse exemplo eu não tenho Nokogiri para fazer parse de HTML. E é justamente aí que a stdlib brilha: Crystal vem com parsers de XML/HTML e JSON suficientemente bons. Então podemos fazer parse do HTML como XML e usar XPath puro.
 
-Instead of Ruby's `Net::HTTP` we have `HTTP::Client` (but their methods and semantics are surprisingly similar).
+No lugar do `Net::HTTP` do Ruby temos `HTTP::Client` (mas seus métodos e semântica são surpreendentemente similares).
 
-There are other differences, for example, this is the main file that requires all the others in Ruby:
+Existem outras diferenças, por exemplo, esse é o arquivo principal que faz `require` de todos os outros em Ruby:
 
 ```ruby
 ...
@@ -123,14 +127,14 @@ require "manga-downloadr/image_downloader.rb"
 require "manga-downloadr/workflow.rb"
 ```
 
-And this is the Crystal version of the same manifest:
+E essa é a versão Crystal do mesmo manifesto:
 
 ```ruby
 require "./cr_manga_downloadr/*"
 ...
 ```
 
-On the other hand, we need to be a bit more explicit in each Crystal source code file, and declare the specific dependencies where needed. For example, in the `pages.cr` file it starts like this:
+Por outro lado, precisamos ser um pouco mais explícitos em cada arquivo de código fonte Crystal e declarar as dependências específicas onde forem necessárias. Por exemplo, no arquivo `pages.cr` ele começa assim:
 
 ```ruby
 require "./downloadr_client"
@@ -141,32 +145,32 @@ module CrMangaDownloadr
   ...
 ```
 
-Crystal has less room for "magic" but it's able to maintain a high level of abstraction anyway.
+Crystal tem menos espaço para "mágica", mas ainda assim consegue manter um alto nível de abstração.
 
-### A Word about Types
+### Uma palavra sobre Tipos
 
-> We can spend the next decade masturbating over all there is about Types, and it will be extremelly boring.
+> Podemos passar a próxima década masturbando sobre tudo que existe sobre Tipos, e vai ser extremamente chato.
 
-The only thing you must understand: the compiler must know the method signature of classes before you can use them. There is no Runtime component that can introspect objects on the fly, like in Ruby and other dynamic languages (even Objective-C/Swift can do more dynamic stuff than Crystal).
+A única coisa que você precisa entender: o compilador precisa conhecer a assinatura dos métodos das classes antes de poder usá-las. Não existe um componente em Runtime que possa introspectar objetos em tempo real, como em Ruby e em outras linguagens dinâmicas (até Objective-C/Swift consegue fazer mais coisa dinâmica do que Crystal).
 
-Most of the time the Crystal compiler will be smart enough to infer the types for you, so you don't need to be absolutely explicit. You should follow the compiler's lead to know when to use Type Annotations.
+Na maior parte do tempo o compilador do Crystal é inteligente o bastante para inferir os tipos para você, então você não precisa ser absolutamente explícito. Você deve seguir o que o compilador indica para saber quando usar Type Annotations.
 
-What may really scare you at first is the need for Type Annotations, to understand Generics and so forth. The compiler will print out every scary error dumps that you will need to get used to. Most scary errors will usually be a Type Annotation missing or you trying to call a method over a possible Nil object.
+O que pode te assustar de início é a necessidade de Type Annotations, entender Generics e por aí vai. O compilador vai cuspir cada dump de erro assustador, e você vai precisar se acostumar. A maioria dos erros assustadores costuma ser ou uma Type Annotation faltando, ou você tentando chamar um método em um possível objeto Nil.
 
-For example, if I change the following line in the `page_image_spec.cr` test file:
+Por exemplo, se eu mudar a linha a seguir no arquivo de teste `page_image_spec.cr`:
 
 ```ruby
-# line 8:
+# linha 8:
 image = CrMangaDownloadr::PageImage.new("www.mangareader.net").fetch("/naruto/662/2")
 
-# line 10:
+# linha 10:
 # image.try(&.host).should eq("i8.mangareader.net")
 image.host.should eq("i8.mangareader.net")
 ```
 
-The commented out line recognizes that the `image` instance might come as Nil, so we add an explicit `#try` call in the spec.
+A linha comentada reconhece que a instância `image` pode vir como Nil, então adicionamos uma chamada explícita de `#try` no spec.
 
-If we try to compile without this recognition, this is the error the compiler will dump on you:
+Se tentarmos compilar sem esse reconhecimento, esse é o erro que o compilador vai despejar em você:
 
 ```
 $ crystal spec                                                        [
@@ -185,11 +189,11 @@ Nil trace:
 ...
 ```
 
-There is a large stacktrace dump after that snippet above, but you only need to pay attention to the first few lines that already says what's wrong: "undefined method 'host' for Nil (compile-time type is CrMangaDownloadr::Image?)". If you know how to read, you shouldn't have any problems most of the time.
+Tem um stacktrace gigante depois desse trecho, mas você só precisa prestar atenção nas primeiras linhas, que já dizem o que está errado: "undefined method 'host' for Nil (compile-time type is CrMangaDownloadr::Image?)". Se você sabe ler, na maior parte do tempo não vai ter problema nenhum.
 
-Now, the `Chapters`, `Pages`, `PageImage` (all subclasses of `DownloadrClient`) are basically the same thing: they do `HTTP::Client` requests.
+Agora, `Chapters`, `Pages`, `PageImage` (todos subclasses de `DownloadrClient`) são basicamente a mesma coisa: fazem requisições com `HTTP::Client`.
 
-This is how the `Pages` class is implemented:
+É assim que a classe `Pages` é implementada:
 
 ```ruby
 ...
@@ -205,9 +209,9 @@ module CrMangaDownloadr
 end
 ```
 
-`#get` is a method from the `DownloadrClient` superclass that receives a String `chapter_link` and a block. The block receives a parsed `html` collection of nodes and we can play with it, return an Array of Strings.
+`#get` é um método da superclasse `DownloadrClient` que recebe uma String `chapter_link` e um bloco. O bloco recebe uma coleção de nós `html` já parseada e podemos brincar com ela, retornando um Array de Strings.
 
-That's why we have the `(Array(String))` when inheriting from `DownloadrClient`. Let's see how the `DownloadrClient` superclass is implemented.
+É por isso que temos o `(Array(String))` ao herdar de `DownloadrClient`. Vejamos como a superclasse `DownloadrClient` é implementada.
 
 ```ruby
 module CrMangaDownloadr
@@ -228,11 +232,11 @@ module CrMangaDownloadr
 end
 ```
 
-You can see that this class receives a Generic Type and it uses it as the return type for the yielded block in the `#get` method. The `XML::Node -> T` is the declaration of the signature for the block, sending `XML::Node` and receiving whatever the type `T` is. At compile time, imagine this `T` being replaced by `Array(String)`. That's how you can create classes that can deal with any number of different Types without having to overloading for polymorphism.
+Você pode ver que essa classe recebe um Generic Type e usa ele como o tipo de retorno do bloco yieldado no método `#get`. O `XML::Node -> T` é a declaração da assinatura do bloco, enviando `XML::Node` e recebendo aquilo que `T` for. Em tempo de compilação, imagine esse `T` sendo substituído por `Array(String)`. É assim que dá para criar classes capazes de lidar com qualquer número de Tipos diferentes sem precisar fazer overload para polimorfismo.
 
-If you come from Java, C#, Go or any other modern static typed language, you probably already know what a Generic is.
+Se você vem de Java, C#, Go ou qualquer outra linguagem moderna estaticamente tipada, provavelmente já sabe o que é um Generic.
 
-You can go very far with Generics, check out how our `Concurrency.cr` begins:
+Você pode ir bem longe com Generics, veja como começa o nosso `Concurrency.cr`:
 
 ```ruby
 class Concurrency(A, B, C)
@@ -248,7 +252,7 @@ class Concurrency(A, B, C)
       ...
 ```
 
-And this is how we use it in the `workflow.cr`:
+E é assim que usamos no `workflow.cr`:
 
 ```ruby
 private def fetch_pages(chapters : Array(String)?)
@@ -260,11 +264,11 @@ private def fetch_pages(chapters : Array(String)?)
 end
 ```
 
-In this example, imagine `A` being replaced by `String`, `B` also being replaced by `String` and C being replaced by `Pages` in the `Concurrency` class.
+Nesse exemplo, imagine `A` sendo substituído por `String`, `B` também sendo substituído por `String` e `C` sendo substituído por `Pages` na classe `Concurrency`.
 
-This is the "first-version-that-worked" so it's probably not very idiomatic. Either this could be solved with less Generics exercizing or maybe I could simplify it with the use of Macros. But it's working quite ok as it is.
+Essa é a "primeira-versão-que-funcionou", então provavelmente está pouco idiomática. Talvez dê para resolver com menos exercício de Generics ou, quem sabe, eu pudesse simplificar com o uso de Macros. Mas está funcionando bem assim.
 
-The pure Ruby version ends up just like this:
+A versão pura em Ruby acaba ficando assim:
 
 ```ruby
 class Concurrency
@@ -279,33 +283,33 @@ class Concurrency
       ...
 ```
 
-This version is much "simpler" in terms of source code density. But on the other hand we would have to test this Ruby version a lot more because it has many different permutations (we even inject classes through `engine_klass`) that we must make sure responds correctly. In practice we should add tests for all combinations of the initializer's arguments.
+Essa versão é muito "mais simples" em termos de densidade de código fonte. Em compensação, teríamos que testar essa versão Ruby muito mais, porque ela tem várias permutações diferentes (a gente até injeta classes via `engine_klass`) e precisamos garantir que tudo responda corretamente. Na prática, deveríamos adicionar testes para todas as combinações dos argumentos do inicializador.
 
-In the Crystal version, because all types have been checked at compile-time, it was more demanding in terms of annotations; but we can be pretty sure that if it compiles, it will run as expected.
+Na versão Crystal, como todos os tipos foram checados em tempo de compilação, foi mais exigente em termos de anotações; mas podemos ter bastante certeza de que se compilou, vai rodar como esperado.
 
-> I'm not saying that Crystal doesn't need any specs.
+> Não estou dizendo que Crystal dispensa specs.
 
-Compilers can only go so far. But how much is "so far"? Whenever you're "forced" to add Type Annotations, I will state that those parts are either trying to be too smart or they are intrinsically complex. Those are parts that would require extra levels of tests in Ruby and, if we can add the annotations properly, we can have less tests (we don't need to cover most permutations) in the Crystal version (exponencial complexity of permutations could go down to a linear complexity, I think).
+Compiladores só vão até certo ponto. Mas até onde é "certo ponto"? Sempre que você é "forçado" a adicionar Type Annotations, eu afirmo que essas partes ou estão tentando ser espertas demais, ou são intrinsecamente complexas. Essas são as partes que exigiriam camadas extras de testes em Ruby e, se conseguirmos adicionar as anotações direito, podemos ter menos testes (não precisamos cobrir a maior parte das permutações) na versão Crystal (uma complexidade exponencial de permutações poderia cair para uma complexidade linear, eu acho).
 
-### A Word about Ruby Threads
+### Uma palavra sobre Threads em Ruby
 
-The main concepts you must understand about concurrency in Ruby is this:
+Os principais conceitos que você precisa entender sobre concorrência em Ruby são esses:
 
-* MRI Ruby has a GIL, a Global Interpreter Lock, that forbids code to run concurrently.
-* MRI Ruby does have access and exposes native Threads since version 1.9. But even if you fire up multiple Threads, they will run sequentially because only one thread han hold the Lock at a time.
-* I/O operations are the exception: they do release the Lock for other threads to run while the operation is waiting to complete. The OS will signal the program through OS level poll.
+* MRI Ruby tem um GIL, um Global Interpreter Lock, que proíbe código de rodar concorrentemente.
+* MRI Ruby tem acesso e expõe Threads nativas desde a versão 1.9. Mas mesmo se você disparar várias Threads, elas vão rodar sequencialmente, porque só uma thread pode segurar o Lock por vez.
+* Operações de I/O são a exceção: elas liberam o Lock para que outras threads rodem enquanto a operação está esperando completar. O SO sinaliza o programa via poll de nível de sistema.
 
-This means that if your app is **I/O intensive** (HTTP requests, File reads or writes, socket operations, etc), you will have _some_ concurrency. A web server, such as Puma for example, can take some advantage of Threads because a a big part of the operations are involve receiving HTTP requests and sending HTTP responses over the wire, which would make the Ruby process idle while waiting.
+Isso significa que se sua aplicação é **I/O intensiva** (requisições HTTP, leituras ou escritas em arquivos, operações de socket etc), você terá _alguma_ concorrência. Um servidor web, como Puma por exemplo, pode tirar algum proveito de Threads, porque uma boa parte das operações envolve receber requisições HTTP e mandar respostas HTTP pela rede, o que deixa o processo Ruby ocioso enquanto espera.
 
-If your app is CPU intensive (heavy algorithms, data crunching, stuff that really make the CPU hot) then you can't take advantage of native Threads, only one will run at a time. If you have multiple cores in your CPU, you can Fork your process to the number of cores available.
+Se sua aplicação é CPU intensiva (algoritmos pesados, processamento de dados, coisas que realmente esquentam o CPU), aí Threads nativas não ajudam, só uma roda por vez. Se você tem múltiplos cores no seu CPU, pode dar Fork no seu processo para o número de cores disponíveis.
 
-You should check out [grosser/parallel](https://github.com/grosser/parallel) to make it easy.
+Dê uma olhada em [grosser/parallel](https://github.com/grosser/parallel) para facilitar.
 
-This is why Puma also has a "worker" mode. "Worker" is the name we usually give to forked children of processes.
+É por isso que Puma também tem um modo "worker". "Worker" é o nome que normalmente damos para processos filhos forkados.
 
-In the case of this downloader process, it will perform thousands of HTTP requests to scrap the needed metadata from the MangaReader pages. So it's definitely much more I/O intensive than CPU intensive (the CPU intensive parts are the HTML parsing and later the image resizing and PDF compiling).
+No caso desse processo de download, ele vai fazer milhares de requisições HTTP para raspar os metadados necessários das páginas do MangaReader. Então é muito mais I/O intensivo do que CPU intensivo (as partes CPU intensivas são o parsing do HTML e, mais tarde, o redimensionamento das imagens e a compilação do PDF).
 
-A sequential version of what has to be done, in Ruby, looks like this:
+Uma versão sequencial do que precisa ser feito, em Ruby, fica assim:
 
 ```ruby
 def fetch_sequential(collection, &block)
@@ -321,13 +325,13 @@ def fetch_sequential(collection, &block)
 end
 ```
 
-If we have 10,000 links in the `collection`, we first slice it to what `@config.download_batch_size` and we iterate over those smaller slices, calling some block and accumulating the results. This is naive algorithm, as you will find out in the next section, but bear with me.
+Se temos 10.000 links na `collection`, primeiro fatiamos no tamanho que `@config.download_batch_size` define e iteramos sobre essas fatias menores, chamando algum bloco e acumulando os resultados. Esse é um algoritmo ingênuo, como você vai descobrir na próxima seção, mas vamos seguir.
 
-In Elixir you can fire up micro-processes to make the HTTP requests in parallel. In Crystal you can fire up Fibers and wait for the HTTP requests to complete and signal the results through Channels.
+Em Elixir você pode disparar micro-processos para fazer as requisições HTTP em paralelo. Em Crystal você pode disparar Fibers e esperar as requisições HTTP completarem e sinalizar os resultados via Channels.
 
-Both are lightweight ways and you can have hundreds or even thousands running in parallel. Manga Reader will probably complain if you try that many at once, so the limit is not in the code, but in the external service.
+Os dois são leves e você pode ter centenas ou até milhares rodando em paralelo. O Manga Reader provavelmente vai reclamar se você mandar tudo isso de uma vez, então o limite não está no código, e sim no serviço externo.
 
-To transform the sequential version in a concurrent one, this is what we can do in Crystal:
+Para transformar a versão sequencial em uma concorrente, é isso que podemos fazer em Crystal:
 
 ```ruby
 def fetch(collection : Array(A)?, &block : A, C? -> Array(B)?) : Array(B)?
@@ -357,15 +361,15 @@ def fetch(collection : Array(A)?, &block : A, C? -> Array(B)?) : Array(B)?
 end
 ```
 
-Fetching a huge collection and slicing it in smaller 'batches' is easy. Now we have a smaller `batch` collection. For each item (usually an URI) we `spawn` a Fiber and call a block that will request and process the results. Once it's finished processing it sends the results over a `channel`.
+Pegar uma coleção enorme e fatiar em 'batches' menores é fácil. Agora temos uma coleção `batch` menor. Para cada item (geralmente uma URI) damos `spawn` em uma Fiber e chamamos um bloco que vai requisitar e processar os resultados. Quando termina o processamento, envia os resultados por um `channel`.
 
-Once we finish iterating over the batch and spawning that many Fibers we can "wait" for them by doing `channel.receive`, which will start receiving results as soon as the Fibers finish requesting/processing each URI.
+Quando terminamos de iterar sobre o batch e disparar todas essas Fibers, podemos "esperar" por elas chamando `channel.receive`, que vai começar a receber os resultados conforme as Fibers vão terminando de requisitar/processar cada URI.
 
-We accumulate the results and go over the next batch of the collection until finished. The amount of concurrency is determined by the size of the batch (it's like [what I did with 'poolboy' over Elixir](http://www.akitaonrails.com/en/2015/11/19/ex-manga-downloadr-part-2-poolboy-to-the-rescue/) where we start a fixed number of processes to run in parallel and avoid doing a Denial of Service to Manga Reader).
+Acumulamos os resultados e seguimos para o próximo batch da coleção até terminar. A quantidade de concorrência é determinada pelo tamanho do batch (é parecido com [o que fiz com 'poolboy' em Elixir](http://www.akitaonrails.com/en/2015/11/19/ex-manga-downloadr-part-2-poolboy-to-the-rescue/) onde iniciamos um número fixo de processos rodando em paralelo para evitar fazer um Denial of Service no Manga Reader).
 
-By the way, this Crystal implementation is similar to what you would do if you were in Go, using Channels.
+A propósito, essa implementação em Crystal é parecida com o que você faria em Go usando Channels.
 
-In the Ruby version you can fire up native Threads - which has a lot of overhead to spawn! - and assume the HTTP requests will run almost all in parallel. Because it's I/O intensive, you can have them all in parallel. This is what it looks like:
+Na versão Ruby você pode disparar Threads nativas - que têm bastante overhead para spawnar! - e assumir que as requisições HTTP vão rodar quase todas em paralelo. Como é I/O intensivo, dá para ter todas em paralelo. Fica assim:
 
 ```ruby
 def fetch(collection, &block)
@@ -388,11 +392,11 @@ def fetch(collection, &block)
 end
 ```
 
-Threads are all initialized in a "paused" state. Once we instantiate those many Threads, we can `#join` on each of them and await for them all to finish.
+As Threads são todas inicializadas em estado "pausado". Depois de instanciar todas essas Threads, podemos chamar `#join` em cada uma e esperar todas terminarem.
 
-Once each Thread finishes the same URI request/process, the results must be accumulated in a global storage, in this case a simple array called `results`. But because we might have the chance of 2 or more threads trying to update the same array, we might as well synchronize the access (I'm not sure if Ruby's Array access is already synchronized, but I guess not). To synchronize access we use a Mutex, which is a fine-grained lock, to make sure only 1 thread can modify the global array at once.
+Quando cada Thread termina o mesmo processo de requisição/processamento de URI, os resultados precisam ser acumulados em um armazenamento global, nesse caso um simples array chamado `results`. Mas como existe a chance de duas ou mais threads tentarem atualizar o mesmo array, a gente sincroniza o acesso (não tenho certeza se o acesso a Array em Ruby já é sincronizado, mas acho que não). Para sincronizar o acesso usamos um Mutex, que é um lock fino, garantindo que só 1 thread possa modificar o array global por vez.
 
-To prove that Ruby can support concurrent I/O operations, I have added 2 methods to the `Concurrent` class, the first is just `#fetch` and it's the Thread implementation above. The second is called `#fetch_sequential` and it is the sequential version also shown at the beginning of this section. And I added the following spec:
+Para provar que Ruby suporta operações de I/O concorrentes, adicionei 2 métodos na classe `Concurrent`, o primeiro é só `#fetch` e é a implementação com Threads acima. O segundo se chama `#fetch_sequential` e é a versão sequencial mostrada no início dessa seção. E adicionei o seguinte spec:
 
 ```ruby
 it "should check that the fetch implementation runs in less time than the sequential version" do
@@ -408,7 +412,7 @@ it "should check that the fetch implementation runs in less time than the sequen
     }
     /\((.*?)\)$/.match(concurrent_measurement.to_s) do |cm|
       /\((.*?)\)/.match(sequential_measurement.to_s) do |sm|
-        # expected for the concurrent version to be close to 10 times faster than sequential
+        # esperado que a versao concorrente seja proxima de 10 vezes mais rapida que a sequencial
         expect(sm[1].to_f).to be > ( cm[1].to_f * 9 )
       end
     end
@@ -418,35 +422,35 @@ it "should check that the fetch implementation runs in less time than the sequen
 end
 ```
 
-Because it uses WebMock, I first disable it during this spec. I create a fake collection of 10 real links to MangaReader. And then I benchmark the Thread-based concurrent version and the plain sequential version. Because we have 10 links and they are all the same you can assume that the sequential version will be almost **10 times slower** than the Thread-based version. And this is exactly what this spec compares and proves (the spec fails if the concurrent version is not at least 9x faster).
+Como ele usa WebMock, eu primeiro desabilito durante esse spec. Crio uma coleção falsa de 10 links reais para o MangaReader. E aí faço benchmark da versão concorrente baseada em Threads e da versão sequencial pura. Como temos 10 links e são todos iguais, dá para assumir que a versão sequencial vai ser quase **10 vezes mais lenta** que a versão baseada em Threads. E é exatamente isso que esse spec compara e prova (o spec falha se a versão concorrente não for pelo menos 9x mais rápida).
 
-To compare all versions of the Manga Downloadrs I let download an compile an entire manga collection, in this case one "One-Man Punch", which has almost **1,900 pages/images**. I am just measuring the fetching and scrapping processes and skipping the actual image downloading, image resizing and PDF generation as they take the majority of the time and the resizing and PDF part are all done by ImageMagick's mogrify and convert tools.
+Para comparar todas as versões dos Manga Downloadrs, deixei baixar e compilar uma coleção inteira de mangá, nesse caso "One-Punch Man", que tem quase **1.900 páginas/imagens**. Estou medindo só os processos de fetching e scraping, pulando o download das imagens em si, redimensionamento e geração do PDF, porque eles tomam a maior parte do tempo e o redimensionamento e a parte do PDF são feitos pelo `mogrify` e `convert` do ImageMagick.
 
-This is how long this new Ruby version takes to fetch and scrap almost 1,900 pages (using MRI Ruby 2.3.1):
+Esse é o tempo que essa nova versão Ruby leva para baixar e raspar quase 1.900 páginas (usando MRI Ruby 2.3.1):
 
 ```
 12,42s user 1,33s system 23% cpu 57,675 total
 ```
 
-This is how long the Crystal version takes:
+Esse é o tempo que a versão Crystal leva:
 
 ```
 4,03s user 0,40s system 7% cpu 59,207 total
 ```
 
-Just for fun I tried to run the Ruby version under JRuby 9.1.1.0. To run with JRuby just add the following line in the `Gemfile`:
+Só por diversão tentei rodar a versão Ruby sob JRuby 9.1.1.0. Para rodar com JRuby basta adicionar a linha a seguir no `Gemfile`:
 
 ```ruby
 ruby "2.3.0", :engine => 'jruby', :engine_version => '9.1.1.0'
 ```
 
-Bundle install, run normally, and this is the result:
+Bundle install, roda normalmente, e esse é o resultado:
 
 ```
 47,80s user 1,99s system 108% cpu 45,967 total
 ```
 
-And this is how long the Elixir version takes:
+E esse é o tempo que a versão Elixir leva:
 
 ```
 11,38s user 1,04s system 85% cpu 14,590 total
@@ -454,34 +458,34 @@ And this is how long the Elixir version takes:
 
 ### Reality Check!
 
-If you just look at the times above you might get to the wrong conclusions.
+Se você só olhar os tempos acima, pode chegar a conclusões erradas.
 
-First of all, it's an **unfair comparison**. The Elixir version uses a very different algorithm than the Ruby and Crystal versions.
+Antes de mais nada, é uma **comparação injusta**. A versão Elixir usa um algoritmo bem diferente das versões Ruby e Crystal.
 
-In Elixir I boot up a pool of processes, around 50 of them. Then I start 50 HTTP requests at once. Once each process finishes, it releases itself back to the pool and I can fire up another HTTP request from the queue of links. So it's a **constant stream** of at most 50 HTTP requests, constantly.
+Em Elixir eu subo um pool de processos, mais ou menos 50 deles. Aí disparo 50 requisições HTTP de uma vez. Quando cada processo termina, ele se libera de volta para o pool e eu posso disparar outra requisição HTTP da fila de links. Então é um **fluxo constante** de no máximo 50 requisições HTTP, constantemente.
 
-The Crystal and Ruby/JRuby versions slice the 1,900 links into batches of 40 links and then I fire up 40 requests at once. This implementation waits all 40 to finish and they fire up another 40. So it's never a constant stream, it's bursts of 40 requests. So each batch is slowed down by the slowest request in the batch, not giving a chance for other requests to go through.
+As versões Crystal e Ruby/JRuby fatiam os 1.900 links em batches de 40 links e aí eu disparo 40 requisições de uma vez. Essa implementação espera todas as 40 terminarem para disparar mais 40. Ou seja, nunca é um fluxo constante, são rajadas de 40 requisições. Cada batch é freado pela requisição mais lenta do batch, sem dar chance para as outras requisições passarem.
 
-It's a difference in architecture. Elixir makes it much easier to do streams and Crystal, with it's CSP style, makes it easier to do bursts. A better approach would be to queue up the 1,900 links and use something like Sidekiq.cr to go over one link at a time (spawning 40 fibers to serve as a "pool", for example).
+É uma diferença de arquitetura. Elixir torna muito mais fácil fazer streams e Crystal, com seu estilo CSP, torna mais fácil fazer rajadas. Uma abordagem melhor seria enfileirar os 1.900 links e usar algo como Sidekiq.cr para ir consumindo um link por vez (spawnando 40 fibers para servir como um "pool", por exemplo).
 
-The Elixir version has a better efficient architecture, which is why it takes no more than 15 seconds to fetch all the image links while the Crystal version takes almost a full minute to finish (the accumulation of the slowest requests in each batch).
+A versão Elixir tem uma arquitetura mais eficiente, e é por isso que ela leva no máximo 15 segundos para baixar todos os links de imagens, enquanto a versão Crystal leva quase um minuto inteiro para terminar (a soma das requisições mais lentas em cada batch).
 
-Now, you will be surprised that the Crystal version is actually a bit slower than the Ruby version! And you won't be too surprised to see JRuby being faster at 45 seconds!
+Agora, você vai se surpreender ao ver que a versão Crystal é, na verdade, um pouco mais lenta que a versão Ruby! E você não vai ficar tão surpreso ao ver o JRuby mais rápido aos 45 segundos!
 
-This is another evidence that you should not dismiss Ruby (and that you should try JRuby more often). As I explained before, it does support concurrency in I/O operations and the applications I tested are all I/O heavy.
+Essa é mais uma evidência de que você não deve descartar Ruby (e que deveria experimentar JRuby com mais frequência). Como expliquei antes, ele suporta concorrência em operações de I/O e as aplicações que testei são todas pesadas em I/O.
 
-The difference is probably in the maturity of Ruby's `Net::HTTP` library against Crystal's `HTTP::Client`. I tried many tweaks in the Crystal version but I couldn't get much faster. I tried to do larger batches, but for some reason the applications just hangs, pauses, and never releases. I have to Ctrl-C out of it and retry until it finally goes through. If someone knows what I am doing wrong, please don't forget to write in the comments section below.
+A diferença provavelmente está na maturidade da biblioteca `Net::HTTP` do Ruby contra a `HTTP::Client` do Crystal. Tentei vários ajustes na versão Crystal, mas não consegui ficar muito mais rápido. Tentei batches maiores, mas por algum motivo a aplicação simplesmente trava, pausa, e nunca libera. Tenho que dar Ctrl-C e tentar de novo até finalmente passar. Se alguém souber o que estou fazendo de errado, não se esqueça de escrever na seção de comentários abaixo.
 
-Some of this is probably due to MangaReader's unreliable servers, they probably have some kind of DoS preventions, throttling connections or something like this.
+Parte disso provavelmente é por conta dos servidores instáveis do MangaReader, eles devem ter algum tipo de prevenção contra DoS, throttling de conexões ou algo do tipo.
 
-Anyway, when they go through, because the Ruby and Crystal algorithm are essentially the same, they take roughtly the same time to complete. So what's missing is for me to evolve this algorith to either use something like Sidekiq or implement an internal queue/pool of workers scheme.
+De qualquer forma, quando passam, como o algoritmo do Ruby e do Crystal são essencialmente o mesmo, eles levam aproximadamente o mesmo tempo para completar. O que falta é eu evoluir esse algoritmo para usar algo como Sidekiq ou implementar um esquema interno de fila/pool de workers.
 
-### Conclusion
+### Conclusão
 
-The goal of this experiment was to learn more of Crystal's ability and how easy would it be to go back and forth with Ruby.
+O objetivo desse experimento era aprender mais sobre as capacidades do Crystal e o quão fácil seria ir e voltar com Ruby.
 
-As you can see, there are many differences, but it's not so difficult. I may be missing something, but I stumbled upon some difficulties when pushing `HTTP::Client` + Fibers too hard, as I explained above. If you know what I am doing wrong, please let me know.
+Como você pode ver, existem muitas diferenças, mas não é tão difícil. Posso estar deixando algo passar, mas esbarrei em algumas dificuldades quando empurrei `HTTP::Client` + Fibers para o limite, como expliquei acima. Se você sabe o que estou fazendo de errado, me avise.
 
-The difference between the Elixir vs Ruby/Crystal algorithms shows not just language performance differences, but also the importance of architecture and algorithms in the overall performance. This test was not conclusive, just a hint that my naive Fibers implementation needs some more work, and that Elixir's natural handling of parallel processes make it easier to achieve higher levels of parallelism.
+A diferença entre os algoritmos do Elixir e do Ruby/Crystal mostra mais do que diferenças de performance entre linguagens, mostra também a importância da arquitetura e dos algoritmos na performance geral. Esse teste foi pouco conclusivo, apenas um indício de que minha implementação ingênua de Fibers precisa de mais trabalho, e que a forma natural do Elixir lidar com processos paralelos facilita atingir níveis mais altos de paralelismo.
 
-This serves as a taste of what Crystal can do, and also that Ruby is still in the game. But also that Elixir surely is something to look close.
+Isso serve como um aperitivo do que Crystal pode fazer, e também de que Ruby continua no jogo. E também de que Elixir certamente é algo para se acompanhar de perto.

@@ -1,69 +1,73 @@
 ---
-title: Matches, Rankings, The Social Network, League of Legends, and Ruby?
+title: "Partidas, Rankings, A Rede Social, League of Legends e Ruby?"
 date: '2016-11-01T10:20:00-02:00'
-slug: matches-rankings-the-social-network-league-of-legends-and-ruby
+slug: partidas-rankings-rede-social-league-of-legends-ruby
+translationKey: lol-rankings-social-network-ruby
+aliases:
+- /2016/11/01/matches-rankings-the-social-network-league-of-legends-and-ruby/
 tags:
 - ranking
 - elo
-- algorithm
+- algoritmo
+- traduzido
 draft: false
 ---
 
-There is a segment in a series of talks that I have been presenting in Brazil for the last 3 years or so that I never blogged about. Yesterday I just [posted about the proper way to rank content by "popularity"](http://www.akitaonrails.com/2016/10/31/ruby-on-rails-implementation-of-a-proper-ranking-popularity-system) so I thought I should revisit the theme.
+Tem um trecho de uma série de palestras que venho apresentando no Brasil há uns 3 anos sobre o qual nunca escrevi no blog. Ontem acabei de [postar sobre a forma correta de ranquear conteúdo por "popularidade"](http://www.akitaonrails.com/2016/10/31/ruby-on-rails-implementation-of-a-proper-ranking-popularity-system) então achei que valia revisitar o tema.
 
-To begin, I believe by now most people already watched the movie "The Social Network". It's interesting that I heard many people saying how this movie influenced them to begin their own startups. So I was thinking, "what does this movie actually teach?"
+Pra começar, acredito que a essa altura quase todo mundo já assistiu ao filme "A Rede Social". É curioso que ouvi várias pessoas dizerem como esse filme as influenciou a começar suas próprias startups. Aí eu fiquei pensando, "o que esse filme realmente ensina?"
 
 ![The Social Network Casting](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/567/pasted-image-765.jpg)
 
-Well, from the movie we learn that David Fincher is an fantastic director, that Aaron Sorkin write very sharp dialogue that is very compelling, that Justin Timberlake does a better Sean Parker than the real deal, that Andrew Garfield does an ok Eduardo Saverin, and that Jesse Eisenberg will forever be Mark Zuckerberg.
+Bom, do filme aprendemos que David Fincher é um diretor fantástico, que Aaron Sorkin escreve diálogos afiadíssimos e envolventes, que Justin Timberlake faz um Sean Parker melhor que o real, que Andrew Garfield faz um Eduardo Saverin razoável, e que Jesse Eisenberg vai ser para sempre o Mark Zuckerberg.
 
-And that's it, we can't learn anything else from the movie.
+E é só isso, não dá pra aprender mais nada do filme.
 
-Or can we?
+Ou dá?
 
 ### Facemesh
 
-One of my favorite scenes from the movie is when Zuckerberg/Eisenberg is pissed by the Erica Albright split up and he starts scrapping women photos from the Harvard websites and organizing them into a troll web site called "Facemesh" where he puts them to compete. People can vote on which photo they prefer and it sorts them out in a ranking of popularity.
+Uma das minhas cenas favoritas do filme é quando Zuckerberg/Eisenberg fica puto com o término com a Erica Albright e começa a raspar fotos de mulheres dos sites de Harvard, organizando elas num site trollesco chamado "Facemesh", onde coloca as fotos pra competir entre si. As pessoas votam em qual foto preferem e o site as ordena num ranking de popularidade.
 
-When Eduardo Saverin/Andrew Garfield shows up, Zuckerberg asks him:
+Quando Eduardo Saverin/Andrew Garfield aparece, Zuckerberg pergunta:
 
 {{< youtube id="BzZRr4KV59I" >}}
 
-> "Wardo, I need you (...) I need the algorithm used to rank chess players"
+> "Wardo, preciso de você (...) preciso do algoritmo usado para ranquear jogadores de xadrez"
 
-And he goes ahead and write the following in the dorm room window:
+E ele vai lá e escreve o seguinte na janela do dormitório:
 
 ![Through the Looking Glass](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/569/pasted-image-759.jpg)
 
-Here most people would just think:
+Aqui a maioria das pessoas pensaria:
 
-> "pff, another gibberish formula just to show off that they are little geniuses, but most certainly this formula doesn't even exist"
+> "pff, mais uma fórmula sem sentido só pra mostrar que eles são gênios mirins, mas com certeza essa fórmula nem existe"
 
-Except it does. And this is the one scene in the movie that stuck up in my head as I saw it before. To help you out, let's reverse the mirrored image:
+Só que ela existe. E essa é a única cena do filme que ficou martelando na minha cabeça porque eu já tinha visto isso antes. Pra ajudar, vamos inverter a imagem espelhada:
 
 ![The Algorithm](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/568/pasted-image-761.jpg)
 
-And this is the "algorithm".
+E esse é o "algoritmo".
 
-As I said in my previous article, most developers would create a Facemesh-like website adding integer fields in the table of contestants with the count of upvotes, downvotes and they would do something silly such as:
+Como falei no artigo anterior, a maioria dos desenvolvedores criaria um site tipo Facemesh adicionando campos inteiros na tabela de competidores com a contagem de upvotes, downvotes e fariam alguma bobagem do tipo:
 
 ```ruby
 score = upvotes - downvotes
 ```
 
-Or even sillier:
+Ou algo ainda mais bobo:
 
 ```ruby
 score = upvotes / (upvotes + downvotes)
 ```
 
-And it doesn't work that way, you will get very wrong rankings.
+E não funciona desse jeito, você vai obter rankings completamente errados.
 
-### The Demonstration
+### A Demonstração
 
-To show you how wrong, I created a simple demonstration project called [elo_demo](https://github.com/akitaonrails/elo_demo) which you can git clone and run yourself.
+Pra mostrar o quão errado, criei um projeto simples de demonstração chamado [elo_demo](https://github.com/akitaonrails/elo_demo) que você pode clonar e rodar.
 
-It will create 2,000 random matches against 10 players. This will be the sorted results if we use the wrong methods of subtracting losses from wins and order through that result:
+Ele cria 2.000 partidas aleatórias entre 10 jogadores. Esse vai ser o resultado ordenado se usarmos o método errado de subtrair derrotas das vitórias e ordenar por esse resultado:
 
 ```
    Name        Games  Wins  Losses Points (wins - losses)
@@ -79,7 +83,7 @@ It will create 2,000 random matches against 10 players. This will be the sorted 
 10 Bowser        186    82    104    -22
 ```
 
-Now, let's make the 2nd place Samus win 10 times in a row against the 3rd place Wario, this is the new ranking:
+Agora, vamos fazer com que a Samus (2º lugar) vença 10 vezes seguidas o Wario (3º lugar). Esse é o novo ranking:
 
 ```
    Name        Games  Wins  Losses Points
@@ -95,9 +99,9 @@ Now, let's make the 2nd place Samus win 10 times in a row against the 3rd place 
 10 Bowser        186    82    104    -22
 ```
 
-Sounds fair, Samus jumps to 1st place and Wario goes down to the 8th place.
+Parece justo, Samus pula pro 1º lugar e Wario desce pro 8º.
 
-Now, what if we make the weaker 10th place Bowser win 10 times against the current 2nd place Kong?
+Agora, e se fizermos o fraquinho Bowser (10º lugar) vencer 10 vezes contra o atual 2º lugar, Kong?
 
 ```
    Name        Games  Wins  Losses Points
@@ -113,41 +117,41 @@ Now, what if we make the weaker 10th place Bowser win 10 times against the curre
 10 Fox           208    95    113    -18
 ```
 
-This is where you see how **wrong** this method is. Even though he lost 10 times against the weakest player, Kong still reigns supreme at 2nd place. And poor Bowser, in spite of all his hard work and effort, levels up just 1 meager position from 10th to 9th.
+É aqui que dá pra ver o quão **errado** esse método é. Mesmo perdendo 10 vezes contra o jogador mais fraco, Kong continua reinando absoluto no 2º lugar. E o pobre Bowser, apesar de todo seu esforço e dedicação, sobe apenas 1 mísera posição, do 10º pro 9º.
 
-This is very frustrating and if it feels unfair, it's because it is. This kind of calculation is **wrong**.
+Isso é muito frustrante e parece injusto porque é injusto mesmo. Esse tipo de cálculo é **errado**.
 
-### From Chess to League of Legends
+### Do Xadrez ao League of Legends
 
-If you ever played League of Legends you are probably familiar with something called "ELO Boosts".
+Se você já jogou League of Legends, provavelmente está familiarizado com algo chamado "ELO Boost".
 
 ![Elo Boost](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/570/Screen_Shot_2016-11-01_at_10.19.42.png)
 
-This is a way to level up your account for money. I'd strongly recommend against it if you intend to compete professionally as it's against the rules stipulated by Riot.
+É uma forma de subir de nível sua conta pagando dinheiro. Recomendo fortemente evitar isso se você pretende competir profissionalmente porque é contra as regras da Riot.
 
-Anyway, I wonder if you ever wondered why it's called "ELO".
+De qualquer forma, você já se perguntou por que se chama "ELO"?
 
-This is for Austro-Hungarian professor **Arpad Emmerich Elo**. He is best known for his system of rating chess players. Quoting from Wikipedia:
+É uma homenagem ao professor austro-húngaro **Arpad Emmerich Elo**. Ele é mais conhecido pelo seu sistema de rating de jogadores de xadrez. Citando a Wikipedia:
 
-> The original chess rating system was developed in 1950 by Kenneth Harkness (...). By 1960, using the data developed through the Harkness Rating System, Elo developed his own formula which had a **sound statistical basis** and constituted an improvement on the Harkness System. The new rating system was approved and passed at a meeting of the United States Chess Federation in St. Louis in 1960.
+> O sistema original de rating de xadrez foi desenvolvido em 1950 por Kenneth Harkness (...). Em 1960, usando os dados desenvolvidos pelo Sistema de Rating de Harkness, Elo desenvolveu sua própria fórmula que tinha uma **base estatística sólida** e constituía uma melhoria sobre o Sistema Harkness. O novo sistema de rating foi aprovado em uma reunião da Federação de Xadrez dos Estados Unidos em St. Louis em 1960.
 
-> In 1970, FIDE, the World Chess Federation, agreed to adopt the Elo Rating System. From then on until the mid-1980s, Elo himself made the rating calculations. At the time, the computational task was relatively easy because fewer than 2000 players were rated by FIDE.
+> Em 1970, a FIDE, a Federação Mundial de Xadrez, concordou em adotar o Sistema de Rating Elo. Daquele momento até meados dos anos 80, o próprio Elo fazia os cálculos de rating. Naquela época, a tarefa computacional era relativamente fácil porque menos de 2000 jogadores eram ranqueados pela FIDE.
 
-His system has been refined and evolved to make tournment leaderbords actually fair and competitive. One such evolution is in the form of Microsoft's [TrueSkill Ranking System](https://www.microsoft.com/en-us/research/project/trueskill-ranking-system/) used in all Xbox Live games.
+O sistema dele foi refinado e evoluiu pra tornar os leaderboards de torneios realmente justos e competitivos. Uma dessas evoluções é o [TrueSkill Ranking System](https://www.microsoft.com/en-us/research/project/trueskill-ranking-system/) da Microsoft, usado em todos os jogos do Xbox Live.
 
-That "algorithm" that Eduardo Saverin writes in the window of Harvard's dorm room? It's the **ELO Rating System**!!
+Aquele "algoritmo" que Eduardo Saverin escreve na janela do dormitório de Harvard? É o **Sistema de Rating ELO**!!
 
-I don't know if Zuckerberg actually implemented the ELO rating system equations. If he did, it was the **correct** choice. But the whole Eduardo writing the equations in the window probably didn't happen that way as it would be way easier to Google for it :-)
+Não sei se Zuckerberg de fato implementou as equações do sistema ELO. Se implementou, foi a escolha **correta**. Mas a história toda do Eduardo escrevendo as equações na janela provavelmente não aconteceu desse jeito porque seria muito mais fácil dar um Google :-)
 
-### ELO Rating System Demonstration
+### Demonstração do Sistema de Rating ELO
 
-My pet demonstration project also calculates that exact ELO score. The calculations are done by the [elo](https://github.com/iain/elo) rubygem.
+Meu projetinho de demonstração também calcula esse exato score ELO. Os cálculos são feitos pela rubygem [elo](https://github.com/iain/elo).
 
-The idea is to calculate the probability that one player has to win over the other player. So if a strong player plays against a weak player, he is expected to win, and if this is the outcome, he will not score a lot and the losing player will not fall a lot either. But if the unexpected happens and the strong one loses than it's expected for him to fall down a lot and for the "weaker" player to jump up a lot.
+A ideia é calcular a probabilidade que um jogador tem de vencer o outro. Então, se um jogador forte joga contra um fraco, espera-se que ele vença, e se esse for o resultado, ele vai pontuar pouco e o perdedor também não vai cair muito. Mas se acontecer o inesperado e o forte perder, espera-se que ele caia bastante e que o jogador "mais fraco" suba bastante.
 
-That will make the tournments more competitive and make the new players more motivated to play against the strongest and also make the strongest play harder to hold their positions.
+Isso torna os torneios mais competitivos, motiva os novos jogadores a enfrentar os mais fortes, e força os mais fortes a jogar pesado pra manter suas posições.
 
-From the elo gem documentation, this is how you use it:
+Pela documentação da gem elo, é assim que se usa:
 
 ```ruby
 kong  = Elo::Player.new
@@ -167,12 +171,12 @@ game6 = kong.versus(bowser)
 game6.draw
 
 game7 = kong.versus(bowser)
-game7.result = 1 # result is in perspective of kong, so kong wins
+game7.result = 1 # resultado é na perspectiva do kong, então kong vence
 
-game8 = kong.versus(bowser, :result => 0) # bowser wins
+game8 = kong.versus(bowser, :result => 0) # bowser vence
 ```
 
-And this is how you assess the results:
+E é assim que se acessa os resultados:
 
 ```ruby
 kong.rating       # => 1080
@@ -182,9 +186,9 @@ kong.games_played # => 8
 kong.games        # => [ game1, game2, ... game8 ]
 ```
 
-The gem has more tuning besides that original algorithm, such as the K-factor to reward new players. Those kinds of tunings are what makes matches more competitive today and how you evolve it to TrueSkill levels, but it's beside the point of this article.
+A gem tem mais ajustes além do algoritmo original, como o K-factor pra recompensar novos jogadores. Esses tipos de ajustes são o que torna as partidas mais competitivas hoje e como você evolui pra níveis de TrueSkill, mas isso foge do escopo deste artigo.
 
-Let's see the wrong ranking again:
+Vamos ver o ranking errado de novo:
 
 ```
    Name        Games  Wins  Losses Points (wins - losses)
@@ -200,7 +204,7 @@ Let's see the wrong ranking again:
 10 Bowser        186    82    104    -22
 ```
 
-Now let's see how the **correct** ranking is by calculating the Elo score using the exact same 2,000 matches:
+Agora vamos ver como fica o ranking **correto** calculando o score Elo usando exatamente as mesmas 2.000 partidas:
 
 ```
    Name        Games  Wins  Losses Points  Elo Rating
@@ -216,9 +220,9 @@ Now let's see how the **correct** ranking is by calculating the Elo score using 
 10 Fox           208    95    113    -18         754
 ```
 
-See how different it is? In the wrong ranking, Kong is considered the strongest, but in the Elo ranking he is just 8th place. And reason is that even though he is the one that won most matches (217) he also lost a heck of a lot (117). Someone with less wins such as Zelda in 2nd place (160 wins) lost a heck of a lot less (81), which is why she is higher in the ranking.
+Viu como é diferente? No ranking errado, Kong é considerado o mais forte, mas no ranking Elo ele está apenas em 8º lugar. E a razão é que mesmo sendo quem venceu mais partidas (217), também perdeu pra caramba (117). Alguém com menos vitórias, como a Zelda em 2º lugar (160 vitórias), perdeu muito menos (81), e é por isso que ela está mais alta no ranking.
 
-Now, if we make her win 10 matches in a row against 3rd place Samus, this is the new ranking:
+Agora, se fizermos ela vencer 10 partidas seguidas contra a Samus (3º lugar), esse é o novo ranking:
 
 ```
    Name        Games  Wins  Loses  Points  Elo Rating
@@ -234,7 +238,7 @@ Now, if we make her win 10 matches in a row against 3rd place Samus, this is the
 10 Fox           208    95    113    -18         754
 ```
 
-Again, Zelda jumps up from 2nd to 1st place and Samus fall down from 3rd to 9th. So far so good. But what about the scenario where we make strong 2nd place Pikachu against a much weaker 10th place Fox McCloud?
+De novo, Zelda pula do 2º pro 1º lugar e Samus cai do 3º pro 9º. Até aqui, tudo certo. Mas e o cenário onde fazemos o forte Pikachu (2º lugar) jogar contra o muito mais fraco Fox McCloud (10º lugar)?
 
 ```
    Name        Games  Wins  Loses  Points  Elo Rating
@@ -250,14 +254,14 @@ Again, Zelda jumps up from 2nd to 1st place and Samus fall down from 3rd to 9th.
 10 Pikachu       219   105    114     -9         766
 ```
 
-Now, this is fairness: Pikachu should have won, but losing 10 times in a row against someone considered much weaker makes him fall down from 2nd place all the way to the last place. And noobie Fox, having won 10 times against a much stronger opponent deserves jumping up all the way to 3rd place.
+Agora sim, isso é justiça: Pikachu deveria ter vencido, mas perder 10 vezes seguidas contra alguém considerado muito mais fraco faz ele cair do 2º lugar lá pro último. E o novato Fox, tendo vencido 10 vezes contra um oponente muito mais forte, merece pular lá pro 3º lugar.
 
-This is the kind of dynamic that can make matches and games competitive, which is exactly why every online leaderboard and professional tournment use those kinds of algorithms.
+Esse é o tipo de dinâmica que torna partidas e jogos competitivos, e é exatamente por isso que todo leaderboard online e torneio profissional usa esse tipo de algoritmo.
 
-And it all began in chess, using math that is known since the late 40's!!
+E tudo começou no xadrez, usando matemática conhecida desde o final dos anos 40!!
 
-> This is the point of this post and my previous one: **the math is not new**.
+> Esse é o ponto deste post e do anterior: **a matemática não é nova**.
 
-Developers waste a great amount of time in stupid pissing contests over which language or tool is "shinier", but they ignore the proper math and deliver wrong results. But the math has been around for decades, in some cases, more than a full century already!
+Desenvolvedores perdem uma quantidade enorme de tempo em discussões idiotas sobre qual linguagem ou ferramenta é "mais brilhante", mas ignoram a matemática adequada e entregam resultados errados. E essa matemática existe há décadas, em alguns casos há mais de um século já!
 
-We should strive to earn the title of Computer *Scientists*. There is a lot of **science** lacking from computing nowadays. Pissing contests do not make a programmer any good.
+Deveríamos lutar pra merecer o título de *Cientistas* da Computação. Falta muita **ciência** na computação hoje em dia. Discussões inflamadas não tornam ninguém um bom programador.

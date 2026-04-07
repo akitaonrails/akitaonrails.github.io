@@ -1,22 +1,26 @@
 ---
-title: 'Elixir Pipe Operator for Ruby: Chainable Methods'
+title: 'Operador Pipe do Elixir para Ruby: Chainable Methods'
 date: '2016-02-18T16:28:00-02:00'
-slug: elixir-pipe-operator-for-ruby-chainable-methods
+slug: operador-pipe-do-elixir-para-ruby-chainable-methods
+translationKey: elixir-pipe-for-ruby-chainable
+aliases:
+- /2016/02/18/elixir-pipe-operator-for-ruby-chainable-methods/
 tags:
 - ruby
 - elixir
+- traduzido
 draft: false
 ---
 
-There has been [recent](http://blog.molawson.com/elixir-pipes-in-ruby/) [discussions](https://gist.github.com/pcreux/2f87847e5e4aad37db02) about how nice it would be to have something like the awesome Elixir Pipe Operator for Ruby.
+Rolaram [discussões](http://blog.molawson.com/elixir-pipes-in-ruby/) [recentes](https://gist.github.com/pcreux/2f87847e5e4aad37db02) sobre como seria legal ter algo parecido com o incrível Pipe Operator do Elixir no Ruby.
 
-If you don't know what the "Pipe Operator" is in Elixir, take the following code:
+Se você não sabe o que é o "Pipe Operator" no Elixir, olha esse código aqui:
 
 ```ruby
 Enum.sum(Enum.filter(Enum.map(1..100_000, &(&1 * 3)), odd?))
 ```
 
-It's ugly, we all know that. In an Object Oriented language like Ruby we would do something like this:
+É feio, todo mundo sabe. Numa linguagem orientada a objetos como Ruby, a gente faria algo assim:
 
 ```ruby
 (1..100_000).
@@ -25,7 +29,7 @@ It's ugly, we all know that. In an Object Oriented language like Ruby we would d
   reduce(&:+)
 ```
 
-But Elixir does not have objects, only functions, so how can we code more elegantly? The solution came up in the form of the so called "Pipe Operator" which takes the last returning value and pass it through as the first argument of the next function call, like this:
+Só que Elixir não tem objetos, só funções. Então como escrever código de forma mais elegante? A solução apareceu na forma do tal "Pipe Operator", que pega o último valor retornado e passa ele como primeiro argumento da próxima chamada de função, assim:
 
 ```ruby
 1..100_000
@@ -34,7 +38,7 @@ But Elixir does not have objects, only functions, so how can we code more elegan
   |> Enum.sum
 ```
 
-So Ruby and Elixir "feels" the same when we are able to "chain" methods. In the Ruby world we don't have the "need" for an operator like that. But it would be nice to have a mechanism that we could use to make our codes more expressive, or more testable, or more readable. For example, what if we would write something like this:
+Então Ruby e Elixir "parecem" a mesma coisa quando conseguimos "encadear" métodos. No mundo Ruby a gente não tem a "necessidade" de um operador desses. Mas seria bacana ter um mecanismo para deixar nosso código mais expressivo, mais testável, mais legível. Por exemplo, imagina escrever algo assim:
 
 ```ruby
 (1..100_000).
@@ -43,7 +47,7 @@ So Ruby and Elixir "feels" the same when we are able to "chain" methods. In the 
   give_the_sum_of_all_elements
 ```
 
-Of course, this is a very constrained example with really bad method naming. But if we get Mo Lawson's article I linked above, it becomes more interesting:
+Claro, esse é um exemplo bem limitado com nomes de métodos péssimos. Mas se você pegar o artigo do Mo Lawson que linkei acima, fica bem mais interessante:
 
 ```ruby
 keywords
@@ -53,9 +57,9 @@ keywords
   .reject { |kw| STOP_WORDS.include?(kw) }
 ```
 
-Ruby allows us to chain Enumerable methods one after the other, transforming the initial keywords list into "something" that is very difficult to infer just by looking at this code.
+Ruby permite encadear métodos de Enumerable um atrás do outro, transformando a lista inicial de keywords em "alguma coisa" que fica bem difícil de inferir só olhando para o código.
 
-What about this other version?
+E essa outra versão, o que acha?
 
 ```ruby
 class KeywordNormalizer
@@ -72,11 +76,11 @@ class KeywordNormalizer
 end
 ```
 
-This is where we gets by the end of his article: much more readable and each new isolated method is unit testable, resulting in more robust code.
+É aonde ele chega no fim do artigo: muito mais legível, e cada método isolado fica testável via unit test, resultando em código mais robusto.
 
-The whole idea of this post is to present you to my new little gem ["Chainable Methods"](https://rubygems.org/gems/chainable_methods). The [source code](https://github.com/akitaonrails/chainable_methods) is on Github, as usual, so please contribute.
+A ideia desse post é apresentar minha nova gem ["Chainable Methods"](https://rubygems.org/gems/chainable_methods). O [código-fonte](https://github.com/akitaonrails/chainable_methods) está no Github, como sempre, então por favor contribua.
 
-My gem will allow you to write the Lawson's last code like this:
+Minha gem permite escrever o último código do Lawson assim:
 
 ```ruby
 KeywordNormalizer
@@ -89,7 +93,7 @@ KeywordNormalizer
   .unwrap
 ```
 
-You add the <tt>chainable_methods</tt> to your Gemfile as usual (you know the drill), then you can write Lawson's module like this:
+Você adiciona o <tt>chainable_methods</tt> no seu Gemfile como sempre (já sabe o procedimento), e aí pode escrever o módulo do Lawson desse jeito:
 
 ```ruby
 module KeywordNormalizer
@@ -110,9 +114,9 @@ module KeywordNormalizer
 end
 ```
 
-And that's it, now you can chain everything like I showed previously. The pattern is:
+É isso, agora você pode encadear tudo como mostrei antes. O padrão é:
 
-1) Write a Module with class-level methods that receive at least one argument and extend the 'ChainableMethods' module:
+1) Escreva um Module com métodos de classe que recebam pelo menos um argumento e que extendam o módulo 'ChainableMethods':
 
 ```ruby
 module MyModule
@@ -132,7 +136,7 @@ module MyModule
 end
 ```
 
-2) Wrap an initial state that will be passed to the first method as it's first argument:
+2) Envolva um estado inicial que será passado como primeiro argumento do primeiro método:
 
 ```ruby
 some_initial_state = "Hello World"
@@ -141,7 +145,7 @@ MyModule
   # ...
 ```
 
-3) Chain as many methods from the module or methods that the returning state recognizes:
+3) Encadeie quantos métodos quiser do módulo ou métodos que o estado retornado reconheça:
 
 ```ruby
 MyModule
@@ -155,18 +159,18 @@ MyModule
   .unwrap
 ```
 
-Notice that we do not need to pass the first argument to the methods within the 'MyModule' module, it will get the result from the last call automatically.
+Repare que não precisamos passar o primeiro argumento para os métodos dentro do módulo 'MyModule'. Ele pega o resultado da última chamada automaticamente.
 
-4) Do not forget to call <tt>#unwrap</tt> as the last call to get the last result from the chain.
+4) Não esqueça de chamar <tt>#unwrap</tt> como última chamada para obter o resultado final da cadeia.
 
-### An Experiment
+### Um Experimento
 
-And that's it! I isolated this behavior only into modules that explicitly extend the 'ChainableMethods' module instead of automagically enabling it in the BasicObject level as many would initially think because we don't want a global 'method_missing' dangling around unchecked.
+E é isso! Isolei esse comportamento apenas em módulos que explicitamente extendem o módulo 'ChainableMethods', em vez de habilitar automagicamente no nível de BasicObject como muitos pensariam de primeira, porque queremos evitar um 'method_missing' global solto por aí sem controle.
 
-This behavior makes use of 'method_missing' so it's not going to be fast in a synthetic benchmark against a direct method call, for obvious reasons. The purpose is not to be fast, just expressive. So keep that in mind.
+Esse comportamento usa 'method_missing', então não vai ser rápido num benchmark sintético contra uma chamada direta de método, por razões óbvias. O propósito aqui é expressividade, não velocidade. Tenha isso em mente.
 
-The use case is: whenever you have some kind of transformation, you will want a chain of unit testable, isolated, functions, and this is how you can get it without too much hassle.
+O caso de uso é: sempre que você tiver algum tipo de transformação, vai querer uma cadeia de funções isoladas e testáveis via unit test. E é assim que dá para conseguir isso sem muita dor de cabeça.
 
-This is an experiment. Because I'm using 'method_missing' there may be side-effects I am not seeing right now, so please let me know in the [Github Issues](https://github.com/akitaonrails/chainable_methods/issues) and send feedback if it helped you out in some project.
+Isso é um experimento. Como estou usando 'method_missing', podem rolar efeitos colaterais que ainda não enxerguei, então por favor me avise nas [Github Issues](https://github.com/akitaonrails/chainable_methods/issues) e mande feedback se ajudou em algum projeto.
 
-Pull Requests are most welcome!
+Pull Requests são muito bem-vindos!

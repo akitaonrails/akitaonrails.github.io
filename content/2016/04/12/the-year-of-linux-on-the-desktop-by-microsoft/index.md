@@ -1,35 +1,39 @@
 ---
-title: The Year of Linux on the Desktop, by Microsoft ??
+title: "O Ano do Linux no Desktop, pela Microsoft??"
 date: '2016-04-12T18:33:00-03:00'
-slug: the-year-of-linux-on-the-desktop-by-microsoft
+slug: o-ano-do-linux-no-desktop-pela-microsoft
+translationKey: year-linux-desktop-microsoft
+aliases:
+- /2016/04/12/the-year-of-linux-on-the-desktop-by-microsoft/
 tags:
 - off-topic
 - microsoft
 - ubuntu
+- traduzido
 draft: false
 ---
 
-So, it's finally here. I wrote about the announcement at the Build event a few days ago [here](http://www.akitaonrails.com/2016/03/31/war-is-over-or-is-it-a-new-dawn-for-microsoft). Now Microsoft is teasing us a bit more by [releasing the first Insider Build Preview](http://thehackernews.com/2016/04/how-to-run-ubuntu-on-windows-10.html). It is labeled "Build 14316.rs1_release.160402-2217" to be exact, be sure to have this one.
+Pois é, finalmente chegou. Escrevi sobre o anúncio no evento Build alguns dias atrás [aqui](http://www.akitaonrails.com/2016/03/31/war-is-over-or-is-it-a-new-dawn-for-microsoft). Agora a Microsoft está nos provocando um pouco mais ao [liberar o primeiro Insider Build Preview](http://thehackernews.com/2016/04/how-to-run-ubuntu-on-windows-10.html). Para ser exato, ele tem o rótulo "Build 14316.rs1_release.160402-2217", garanta que seja exatamente esse.
 
-To get it, you must have the following requirements:
+Para conseguir baixar, você precisa atender aos seguintes requisitos:
 
-* Have an activated Windows 10 64-bits
-* Sign up for the [Windows Insider](https://insider.windows.com/) Program. If it's your first time it can take up to 24 hours to activate
-* In your Windows Update Settings, Advanced Options, you must choose to "Get Started" in the Inside option and also choose the "Fast" Ring option. Now, when you Check for Updates, the Preview 14316 should show up. If not, wait until your account is refreshed by Microsoft.
+* Ter um Windows 10 64 bits ativado
+* Inscrever-se no programa [Windows Insider](https://insider.windows.com/). Se for sua primeira vez, pode levar até 24 horas para ativar
+* Nas configurações do Windows Update, em Opções Avançadas, escolha "Get Started" na opção Insider e também escolha o anel "Fast". Agora, ao buscar atualizações, o Preview 14316 deve aparecer. Se não aparecer, espere até a Microsoft atualizar sua conta.
 
-[![windows update settings](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/538/big_windows_update_settings.jpg)](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/538/windows_update_settings.jpg)
+[![configurações do windows update](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/538/big_windows_update_settings.jpg)](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/538/windows_update_settings.jpg)
 
-You must have, at the very least, 10GB of available space in your main partition, so keep that in mind. Another caveat, if you're like me and you're testing under Virtualbox, also bear in mind that to resize a virtual drive you must delete your snapshots, and the merging process can take a ridiculously  long time.
+Você precisa ter, no mínimo, 10GB de espaço livre na sua partição principal, então tenha isso em mente. Outra observação: se você é como eu e está testando no Virtualbox, lembre que para redimensionar um disco virtual é preciso deletar os snapshots, e o processo de merge pode demorar um tempo ridículo.
 
-Once it's installed, you must go to the Developer options in the "Update & Security" Control Panel and change your profile to "Developer Mode". This "Bash on Windows" feature will show up under the Windows Features list. It's intended for **developers only** not to be used in production servers.
+Depois de instalado, vá às opções de Desenvolvedor no Painel de Controle "Update & Security" e mude seu perfil para "Developer Mode". A feature "Bash on Windows" vai aparecer na lista de Windows Features. É voltada **apenas para desenvolvedores**, não deve ser usada em servidores de produção.
 
-Once you have the Preview installed you must be able to fire up the old cmd.exe console (or any other better console such as [ConEmu](https://conemu.github.io/)) and type in "bash", it will prompt you to now install the userland Canonical packaged for Ubuntu. Takes another while. The whole process take a lot of time, by the way, so make sure you reserve half a day at least. Don't do it at work :-)
+Com o Preview instalado, você deve conseguir abrir o velho cmd.exe (ou qualquer console melhor como o [ConEmu](https://conemu.github.io/)) e digitar "bash". Ele vai pedir para instalar o userland do Ubuntu empacotado pela Canonical. Mais um tempinho. Aliás, o processo todo demora bastante, então reserve pelo menos meio dia. Não faça isso no trabalho :-)
 
-One problem I stumbled upon right away is that networking was not working properly. Someone [narrowed it down](https://github.com/Microsoft/BashOnWindows/issues/35) to DNS not being added to <tt>/etc/resolv.conf</tt> so you must add it manually. Just add the Google DNS (8.8.8.8 and 8.8.4.4) to the resolv.conf file and you're up.
+Um problema que esbarrei logo de cara foi que a rede não estava funcionando direito. Alguém [identificou](https://github.com/Microsoft/BashOnWindows/issues/35) que o DNS não estava sendo adicionado em <tt>/etc/resolv.conf</tt>, então é preciso adicionar manualmente. Basta colocar o DNS do Google (8.8.8.8 e 8.8.4.4) no arquivo resolv.conf e pronto.
 
-Finally, you should be inside bash, as a root user. So, if you're a Windows user, you must know right now that it's insecure and an anti-practice to run as root, so don't do it.
+Por fim, você deve estar dentro do bash, como usuário root. Então, se você é um usuário Windows, saiba desde já que rodar como root é inseguro e uma péssima prática, então não faça isso.
 
-The very first thing you **must** do is manually create an unprivileged Linux user and add it to the sudo group as Andrew Malton [blogged](http://blog.greenarrow.me/elixir-with-ubuntu-for-windows/) first:
+A primeira coisa que você **precisa** fazer é criar manualmente um usuário Linux sem privilégios e adicioná-lo ao grupo sudo, como Andrew Malton [publicou](http://blog.greenarrow.me/elixir-with-ubuntu-for-windows/) primeiro:
 
 ```
 useradd new_username -m -s /bin/bash 
@@ -37,9 +41,9 @@ passwd new_username
 usermod -aG sudo new_username
 ```
 
-Then you can log into this user shell with <tt>su - [your user]</tt> everytime!
+Aí você pode logar nesse shell de usuário com <tt>su - [seu usuário]</tt> sempre que quiser!
 
-From here, we can assume it's a plain Ubuntu 14.04 and you should be able to follow [my very old post](http://www.akitaonrails.com/2015/01/28/ruby-e-rails-no-ubuntu-14-04-lts-trusty-tahr) on how to setup a developer Ubuntu environment, or any other tutorial you can find over Google. These basic development packages that I always install first all run:
+A partir daqui, podemos assumir que é um Ubuntu 14.04 comum e você deve conseguir seguir o [meu post bem antigo](http://www.akitaonrails.com/2015/01/28/ruby-e-rails-no-ubuntu-14-04-lts-trusty-tahr) sobre como configurar um ambiente Ubuntu para desenvolvedor, ou qualquer outro tutorial pelo Google. Os pacotes básicos de desenvolvimento que sempre instalo primeiro rodam normalmente:
 
 ```
 sudo apt-get install curl build-essential openssl libcurl4-openssl-dev libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev libgmp-dev autoconf libc6-dev ncurses-dev automake libtool bison subversion redis-server libhiredis-dev memcached libmemcached-dev imagemagick libmagickwand-dev exuberant-ctags ncurses-term ack-grep git git-svn gitk ssh libssh-dev
@@ -47,9 +51,9 @@ sudo apt-get install curl build-essential openssl libcurl4-openssl-dev libreadli
 sudo dpkg-divert --local --divert /usr/bin/ack --rename --add /usr/bin/ack-grep
 ```
 
-This should give you all compilation toolchain essentials as well as some well known command line tools such as ack (way better than grep). It also adds Redis and Memcached. They all run.
+Isso te dá toda a toolchain essencial de compilação além de algumas ferramentas de linha de comando bem conhecidas como o ack (muito melhor que o grep). Também adiciona Redis e Memcached. Todos rodam.
 
-As good practice you should add the following to your <tt>/etc/bash.bashrc</tt> configuration file:
+Como boa prática, adicione o seguinte ao arquivo de configuração <tt>/etc/bash.bashrc</tt>:
 
 ```
 export LANGUAGE=en_US.UTF-8
@@ -57,22 +61,22 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 ```
 
-And after that you should also configure locale to UTF-8:
+E depois disso, configure também o locale para UTF-8:
 
 ```
 sudo locale-gen en_US.UTF-8
 sudo dpkg-reconfigure locales
 ```
 
-Just to warm up a little bit, we can start with one of the things that were impossible in Windows: get a stable Ruby installation. For that, RVM is said to not work (as ZSH is also not working for /dev/pts and symlink problems in this preview, see more below). But RBENV is working! You must [install it](https://github.com/rbenv/rbenv) first and they the [ruby-build](https://github.com/rbenv/ruby-build#readme) plugin:
+Só para esquentar um pouco, podemos começar com uma das coisas que eram impossíveis no Windows: ter uma instalação estável de Ruby. Para isso, dizem que o RVM não funciona (assim como o ZSH também não funciona devido a problemas de /dev/pts e symlinks neste preview, veja mais abaixo). Mas o RBENV funciona! Você precisa [instalá-lo](https://github.com/rbenv/rbenv) primeiro e depois o plugin [ruby-build](https://github.com/rbenv/ruby-build#readme):
 
-[![installing ruby through rbenv](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/536/big_installing_ruby.png)](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/536/installing_ruby.png)
+[![instalando ruby pelo rbenv](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/536/big_installing_ruby.png)](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/536/installing_ruby.png)
 
-Interestingly, it takes a lot of time to complete and during the process CPU usage goes to the roof. Installing Go is even longer! Something is still unstable underneath as it shouldn't take the CPU to 100% for so long.
+Curiosamente, demora bastante para terminar e durante o processo o uso de CPU vai às alturas. Instalar Go é ainda mais demorado! Algo continua instável por baixo dos panos, porque a CPU não deveria ficar a 100% por tanto tempo.
 
-![CPU through the roof](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/537/big_resources.jpg)
+![CPU nas alturas](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/537/big_resources.jpg)
 
-If I check how much memory I have in the system it's more clear:
+Se eu checar quanta memória tenho no sistema fica mais claro:
 
 ```
 root@localhost:/mnt/c/Users/fabio# free -h
@@ -82,7 +86,7 @@ Mem:          1.0G       342M       664M         0B         0B         0B
 Swap:           0B         0B         0B
 ```
 
-I am not sure if this is somehow just a "hard-coded" value for memory as many people are reporting the same "664M" free regardless of what we are running. But something is incomplete here. Swap is also zero and you can't add any as far as I can tell. Swapon, fallocate, none of those work yet.
+Não tenho certeza se esse valor de memória é meio "hard-coded", já que muita gente está reportando os mesmos "664M" livres independente do que esteja rodando. Mas tem algo incompleto aqui. Swap também é zero e você não consegue adicionar nenhum, pelo que pude testar. Swapon, fallocate, nada disso funciona ainda.
 
 ```
 root@localhost:/mnt/c/Users/fabio# swapon -s
@@ -92,7 +96,7 @@ root@localhost:/mnt/c/Users/fabio# fallocate -l 4G swapfile
 fallocate: swapfile: fallocate failed: Invalid argument
 ```
 
-I actually tried to [create a swap file](https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-ubuntu-14-04) using <tt>dd</tt> instead of <tt>fallocate</tt> and add it to the <tt>/etc/fstab</tt> but it didn't work:
+Cheguei a tentar [criar um swap file](https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-ubuntu-14-04) usando <tt>dd</tt> em vez de <tt>fallocate</tt> e adicionar ao <tt>/etc/fstab</tt>, mas não funcionou:
 
 ```
 root@localhost:/mnt/c/Users/fabio# free -m
@@ -106,9 +110,9 @@ LABEL=cloudimg-rootfs   /        ext4   defaults        0 0
 /swapfile       none    swap    sw      0 0
 ```
 
-So it sounds like memory is "hard-coded". Follow [this issue #92](https://github.com/Microsoft/BashOnWindows/issues/92) if you want to know how it develops out.
+Então parece mesmo que a memória está "hard-coded". Acompanhe [esta issue #92](https://github.com/Microsoft/BashOnWindows/issues/92) se quiser ver como vai evoluir.
 
-But worse than that, shared memory has very low limits and strange behavior. Postgresql will install but won't start up at all:
+Mas pior que isso, a memória compartilhada tem limites muito baixos e comportamento estranho. O Postgresql instala mas não sobe de jeito nenhum:
 
 ```
 root@localhost:/mnt/c/Users/fabio# pg_createcluster 9.3 main --start
@@ -125,7 +129,7 @@ initdb: removing contents of data directory "/var/lib/postgresql/9.3/main"
 Error: initdb failed
 ```
 
-And if we try to expand the SHMMAX limit this is what we get:
+E se tentamos expandir o limite SHMMAX, é isso que acontece:
 
 ```
 root@localhost:/mnt/c/Users/fabio# sysctl -w kernel.shmmax=134217728
@@ -135,9 +139,9 @@ root@localhost:/mnt/c/Users/fabio# echo 134217728 >/proc/sys/kernel/shmmax
 bash: /proc/sys/kernel/shmmax: Operation not permitted
 ```
 
-So, no Postgresql for the time being. Some people were able to complete the Go Lang installation (I gave up after a very very long time waiting for apt-get to finish) complained that Go also crashed on shared memory requirements. Follow the [Issue #32](https://github.com/Microsoft/BashOnWindows/issues/32) and [Issue #146](https://github.com/Microsoft/BashOnWindows/issues/146) to see if anyone can make it work.
+Então, sem Postgresql por enquanto. Algumas pessoas que conseguiram completar a instalação do Go Lang (eu desisti depois de muito tempo esperando o apt-get terminar) reclamaram que o Go também quebrou nos requisitos de memória compartilhada. Acompanhe a [Issue #32](https://github.com/Microsoft/BashOnWindows/issues/32) e a [Issue #146](https://github.com/Microsoft/BashOnWindows/issues/146) para ver se alguém consegue fazer rodar.
 
-I also tried to install Node.js. No lucky with package installs:
+Também tentei instalar o Node.js. Sem sorte com a instalação dos pacotes:
 
 ```
 curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
@@ -146,7 +150,7 @@ E: dpkg was interrupted, you must manually run 'sudo dpkg --configure -a' to cor
 Error executing command, exiting
 ```
 
-NVM installs, sort of, with many errors in git:
+O NVM instala, mais ou menos, com vários erros no git:
 
 ```
 ...
@@ -158,7 +162,7 @@ error: unable to create file test/slow/nvm use/Running "nvm use v1.0.0" uses ioj
 error: unable to create file test/slow/nvm use/Running "nvm use" calls "nvm_die_on_prefix" (No such file or directory)
 ```
 
-And this is what happens if I try to install the most recent version:
+E é isso que acontece se eu tento instalar a versão mais recente:
 
 ```
 akitaonrails@localhost:~/.nvm$ nvm install 5.10.1
@@ -177,11 +181,11 @@ Number of CPU thread(s) less or equal to 2 will have only one job a time for 'ma
 Installing node v1.0 and greater from source is not currently supported
 ```
 
-[Issue #9](https://github.com/Microsoft/BashOnWindows/issues/9) points to non-implemented symlink support.
+A [Issue #9](https://github.com/Microsoft/BashOnWindows/issues/9) aponta para a falta de suporte a symlinks.
 
-Another very annoying thing is the lack of Pseudo-Terminals (/dev/pts), this is possibly one of the reasons ZSH won't work. Follow [Issue #80](https://github.com/Microsoft/BashOnWindows/issues/80).
+Outra coisa muito chata é a falta de Pseudo-Terminais (/dev/pts), que é possivelmente uma das razões do ZSH não funcionar. Acompanhe a [Issue #80](https://github.com/Microsoft/BashOnWindows/issues/80).
 
-You should also be able to copy over your SSH private keys to ".ssh" and start git cloning from Github or git push-ing to Heroku in no time.
+Você também deve conseguir copiar suas chaves SSH privadas para ".ssh" e começar a clonar do Github ou dar git push para o Heroku rapidinho.
 
 ```
 akitaonrails@localhost:~$ ssh-keygen  -t rsa
@@ -207,7 +211,7 @@ The key's randomart image is:
 +-----------------+
 ```
 
-At least, Elixir does seem to work:
+Pelo menos o Elixir parece funcionar:
 
 ```
 akitaonrails@localhost:~$ iex
@@ -224,7 +228,7 @@ Hello Fabio
 :ok
 ```
 
-Not so fast ...
+Calma lá...
 
 ```
 akitaonrails@localhost:~$ mix new ex_test
@@ -236,20 +240,20 @@ akitaonrails@localhost:~$ mix new ex_test
     (mix) lib/mix/cli.ex:58: Mix.CLI.run_task/2
 ```
 
-You will find more information on the pseudo-project Microsoft opened over Github to keep track of [Issues](https://github.com/Microsoft/BashOnWindows/issues?q=is%3Aissue+is%3Aclosed) from testers like me. You can follow the list of opened and closed issues there. You will see many things that work, but also many other things that won't work until a new release is available to fix everything I mentioned here.
+Você vai encontrar mais informações no pseudo-projeto que a Microsoft abriu no Github para acompanhar as [Issues](https://github.com/Microsoft/BashOnWindows/issues?q=is%3Aissue+is%3Aclosed) de testers como eu. Dá para acompanhar a lista de issues abertas e fechadas por lá. Você vai ver muita coisa que funciona, mas também muita outra que não vai funcionar até sair uma nova release que conserte tudo o que mencionei aqui.
 
-### Conclusion
+### Conclusão
 
-So, is "Bash on Windows" a good development environment for Linux users to have over Windows?
+Então, o "Bash on Windows" é um bom ambiente de desenvolvimento para usuários Linux terem sobre o Windows?
 
-As far as Preview 14316, not yet. The keyword here is "yet". It's shaping up nicely, if they can actually fix all the issues opened so far, it will be very usable very fast.
+No Preview 14316, ainda não. A palavra-chave aqui é "ainda". Está tomando forma de um jeito legal e, se conseguirem realmente corrigir todas as issues abertas até agora, vai ficar muito utilizável muito rápido.
 
-We need proper memory controls, a well implemented pseudo-terminal support, proper shared memory controls, proper symlinks, proper upstart from Ubuntu so the installed services suchs as Redis or Memcached (which I installed and run) can be properly restarted when I boot the environment (they don't come up if I boot the machine, for example).
+Precisamos de controles de memória adequados, um suporte bem implementado de pseudo-terminal, controles adequados de memória compartilhada, symlinks adequados, upstart adequado do Ubuntu para que serviços instalados como Redis ou Memcached (que instalei e rodam) possam ser reiniciados corretamente quando eu boote o ambiente (eles não sobem se eu reiniciar a máquina, por exemplo).
 
-[Some people](http://www.neowin.net/news/bash-plus-windows-10-equals-linux-gui-apps-on-the-windows-desktop) went as far as being able to trick X11 and run GUI apps such as Firefox and even XFCE over this environment already, so it's really promising. This idea does work.
+[Algumas pessoas](http://www.neowin.net/news/bash-plus-windows-10-equals-linux-gui-apps-on-the-windows-desktop) chegaram a conseguir enganar o X11 e rodar apps GUI como Firefox e até XFCE sobre esse ambiente, então é realmente promissor. Essa ideia funciona.
 
-Once those issues are ironed out, yes, I believe we are closer than ever to finally use Windows as a viable and full featured development environment. Let's see if by the Windows 10 Anniversary Release in June we will have a stable Ubuntu installation.
+Uma vez que essas issues sejam resolvidas, sim, acredito que estamos mais perto do que nunca de finalmente usar Windows como um ambiente de desenvolvimento viável e completo. Vamos ver se até o Anniversary Release do Windows 10 em junho vamos ter uma instalação estável de Ubuntu.
 
-One thing that I think they did very wrong was to tie the Linux Subsystem to the Windows 10 installation. It should've been a separated installer, so the team can release build updates without having to bundle it all together with the entire Windows OS.
+Uma coisa que acho que fizeram muito errado foi amarrar o Linux Subsystem à instalação do Windows 10. Devia ter sido um instalador separado, para que o time pudesse liberar atualizações de build sem ter que empacotar tudo junto com o sistema operacional inteiro.
 
-If you were intending to move to Windows for your Linux-based developments, not yet. Hold your horses a bit longer.
+Se você estava pretendendo migrar para Windows para seus desenvolvimentos baseados em Linux, ainda não. Segure os cavalos um pouco mais.

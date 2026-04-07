@@ -1,38 +1,42 @@
 ---
-title: Hacking Mattermost Team Edition
+title: "Hackeando o Mattermost Team Edition"
 date: '2016-08-12T14:43:00-03:00'
-slug: hacking-mattermost-team-edition
+slug: hackeando-o-mattermost-team-edition
+translationKey: hacking-mattermost-team-edition
+aliases:
+- /2016/08/12/hacking-mattermost-team-edition/
 tags:
 - mattermost
 - postgresql
 - rocket.chat
 - slack
+- traduzido
 draft: false
 ---
 
-In [my previous post](http://www.akitaonrails.com/2016/08/09/moving-away-from-slack-into-rocket-chat-good-enough) I was reporting on my move from Slack to Rocket.chat. But I also mentioned that before Rocket.chat I would rather use Mattermost. First and foremost because it's written in Go (lightweight, highly concurrent, super stable), and because the code base shows much more quality than Rocket.chat (which feels super fragile, with almost no automated tests at all).
+No [meu post anterior](http://www.akitaonrails.com/2016/08/09/moving-away-from-slack-into-rocket-chat-good-enough) contei sobre minha migração do Slack para o Rocket.chat. Mas também mencionei que, antes do Rocket.chat, eu preferiria usar o Mattermost. Primeiro, porque é escrito em Go (leve, altamente concorrente, super estável), e segundo, porque a base de código mostra muito mais qualidade do que a do Rocket.chat (que parece super frágil, com praticamente nenhum teste automatizado).
 
-But my major complaint with MatterMost is because the free, open source, Team Edition, lacks a super important feature: not allowing users to delete private groups.
+Mas minha maior reclamação com o Mattermost é que a Team Edition, gratuita e open source, não tem um recurso super importante: impedir que usuários apaguem grupos privados.
 
-[@iantien commented](http://www.akitaonrails.com/2016/08/09/moving-away-from-slack-into-rocket-chat-good-enough#comment-2832915684) that the private groups are never actually "deleted", they are just marked as deleted, audited, but all data is still in the database. Just the UI has no way to hide the "delete" option from users and there is no Administration UI to unarchive the delete groups.
+O [@iantien comentou](http://www.akitaonrails.com/2016/08/09/moving-away-from-slack-into-rocket-chat-good-enough#comment-2832915684) que na verdade os grupos privados nunca são realmente "apagados", eles só ficam marcados como deletados, auditados, mas todos os dados continuam no banco. Só que a UI não tem como esconder a opção de "delete" dos usuários e não existe uma tela de Administração para desarquivar os grupos apagados.
 
-In fact, you can open a `psql` session in your PostgreSQL database and just do:
+De fato, dá para abrir uma sessão `psql` no seu banco PostgreSQL e simplesmente rodar:
 
 ```
 update channels set deleteat = 0;
 ```
 
-This will unarchive and restore all delete channels. But you can see how this is a hassle.
+Isso vai desarquivar e restaurar todos os canais apagados. Mas dá para ver como isso é um saco.
 
-I strongly disagree when he says that only "10,000 users enterprises" would need such a feature. Even in a small team, any grumpy user can just archive a channel out of the blue and disrupt the entire team communication in private groups. Sure, the "Town Square" and other public channels will still function, but if you have just one external user participating in projects, for example, you want to use private groups to isolate your internal communication from external users.
+Discordo fortemente quando ele diz que só "empresas com 10.000 usuários" precisariam de um recurso desses. Mesmo em um time pequeno, qualquer usuário mal-humorado pode simplesmente arquivar um canal do nada e atrapalhar toda a comunicação do time nos grupos privados. Claro, a "Town Square" e outros canais públicos continuam funcionando, mas se você tem até mesmo um único usuário externo participando de projetos, por exemplo, você quer usar grupos privados para isolar a comunicação interna dos usuários externos.
 
-So, not having the option for very basic permissions (such as disallowing members to delete channels or private groups) is a very big show stopper even for small teams. And sure, the USD 20/user/year fee is not expensive, but as Mattermost still has less features than Rocket.chat, it becomes a very hard to sell proposition.
+Então, não ter a opção de permissões bem básicas (como impedir que membros apaguem canais ou grupos privados) é um baita empecilho mesmo para times pequenos. E sim, a taxa de USD 20/usuário/ano não é cara, mas como o Mattermost ainda tem menos recursos que o Rocket.chat, fica uma proposta difícil de vender.
 
-Also, hacking the code itself and adding a flag to disallow this option, in Go, is actually quite easy, but you would have to maintain your own fork (as I think Mattermost would not accept a pull request from a feature that already is in their payed, Enterprise offering)
+Hackear o código diretamente e adicionar uma flag para desabilitar essa opção, em Go, até que é bem fácil, só que você teria que manter seu próprio fork (porque acho que o Mattermost não aceitaria um pull request de uma feature que já está na oferta paga, Enterprise, deles).
 
-But after @iantien commented that nothing is deleted and it's all audited, I quickly realized that I could use the audit metadata and devise a way to automatically restore the channels (unless it's the system admin doing it). All without altering the source code.
+Mas depois que o @iantien comentou que nada é apagado e tudo fica auditado, rapidamente percebi que eu poderia usar os metadados de auditoria e bolar um jeito de restaurar automaticamente os canais (exceto quando for o system admin fazendo). Tudo isso sem mexer no código-fonte.
 
-One can use the many tools available in PostgreSQL itself, namely: **TRIGGERS**. So, without further ado, just run this in your Mattermost database:
+Dá para usar as várias ferramentas disponíveis no próprio PostgreSQL, a saber: **TRIGGERS**. Então, sem mais delongas, basta rodar isto no seu banco do Mattermost:
 
 ```sql
 CREATE OR REPLACE FUNCTION undelete_channel() RETURNS trigger AS $$
@@ -40,12 +44,12 @@ CREATE OR REPLACE FUNCTION undelete_channel() RETURNS trigger AS $$
         user_counter integer;
         channel_id character varying(26);
     BEGIN
-        -- Only for channel delete operations
+        -- Apenas para operações de delete de canal
         IF NEW.action NOT LIKE '%/channels/%/delete' THEN
             RETURN NEW;
         END IF;
 
-        -- Check if it is the system_admin
+        -- Verifica se é o system_admin
         SELECT count(*) INTO user_counter
         FROM users
         WHERE id = NEW.userid
@@ -70,10 +74,10 @@ CREATE TRIGGER undelete_channel AFTER INSERT ON audits
     FOR EACH ROW EXECUTE PROCEDURE undelete_channel();
 ```
 
-That's it, it will listen to audits new inserts, check if it is a "channel delete" action, check if it is not a 'system_admin', and if so it will automatically grab the channel id from the action REST URL and do the proper UPDATE to get it back.
+É isso, ela vai escutar novos inserts na tabela de audits, checar se é uma ação de "channel delete", checar se não é um 'system_admin', e, sendo o caso, pega automaticamente o id do canal da URL REST da action e faz o UPDATE para trazê-lo de volta.
 
-I tested it already and in my UI users don't even realize something happened. Not even the offending user sees the channel go away, it instantly comes back.
+Já testei e na minha UI os usuários nem percebem que algo aconteceu. Nem o próprio usuário que tentou deletar vê o canal sumir, ele volta instantaneamente.
 
-So, if this was the only thing stopping you to use the free-of-charge, on-premise Team Edition, there you go. And with this you can derive functions to also avoid renaming channels, but I will leave it as an exercise for you (please share in the comments section below if you do it).
+Então, se isso era a única coisa impedindo você de usar a Team Edition on-premise, gratuita, aí está. E com isso você pode derivar funções para também impedir que canais sejam renomeados, mas vou deixar isso como exercício para você (por favor, compartilhe nos comentários abaixo se fizer).
 
 Happy Hacking!

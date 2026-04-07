@@ -1,35 +1,39 @@
 ---
-title: Trying to match C-based Fast Blank with Crystal
+title: "Tentando igualar o Fast Blank em C usando Crystal"
 date: '2016-07-06T17:10:00-03:00'
-slug: trying-to-match-c-based-fast-blank-with-crystal
+slug: tentando-igualar-fast-blank-em-c-usando-crystal
+translationKey: fast-blank-crystal-vs-c
+aliases:
+- /2016/07/06/trying-to-match-c-based-fast-blank-with-crystal/
 tags:
 - crystal
+- traduzido
 draft: false
 ---
 
-In my eyes, Crystal may become the ideal solution to make our beloved Ruby gems faster. Up until now we have been using C-based extensions to accelerate CPU-bound code in Ruby. Nokogiri, for example, is a wrapper to provide a nice API on top of libxml, which is a huge library in C.
+Na minha visão, Crystal pode se tornar a solução ideal para deixar nossas queridas gems de Ruby mais rápidas. Até agora, temos usado extensões em C para acelerar código CPU-bound em Ruby. Nokogiri, por exemplo, é um wrapper que oferece uma API agradável em cima da libxml, que é uma biblioteca enorme escrita em C.
 
-But there are many opportunities to accelerate Rails applications as well. For example, we just saw the release of the [gem "faster_path"](https://github.com/danielpclark/faster_path), this time written in Rust and bridged through FFI (Foreign Function Interface). The author's claim is that Sprockets has to compute lots of paths and making this library, natively compiled and optimized with Rust, added a huge improvement in the asset pipeline task.
+Mas existem várias oportunidades para acelerar aplicações Rails também. Por exemplo, acabamos de ver o lançamento da [gem "faster_path"](https://github.com/danielpclark/faster_path), dessa vez escrita em Rust e conectada via FFI (Foreign Function Interface). O autor afirma que o Sprockets precisa calcular muitos paths e fazer essa biblioteca, compilada nativamente e otimizada com Rust, trouxe uma melhora enorme na tarefa do asset pipeline.
 
-Sam Saffrom, from Discourse, also built a very small gem called ["fast_blank"](https://github.com/SamSaffron/fast_blank) which is a tiny library written in C that reimplements ActiveSupport's `String#blank?` method to be up to 9x faster. Because Rails digests volumes of strings, checking if they are blank everytime, this adds some performance (depends on your app, of course).
+Sam Saffron, do Discourse, também construiu uma gem bem pequena chamada ["fast_blank"](https://github.com/SamSaffron/fast_blank), uma minúscula biblioteca em C que reimplementa o método `String#blank?` do ActiveSupport para ser até 9x mais rápido. Como o Rails digere volumes de strings, checando se elas são "blank" o tempo todo, isso adiciona alguma performance (depende da sua aplicação, claro).
 
-The Holy Grail to native-level performance is to be able to write close-to-Ruby code instead of having to hack low-level C or having the high learning curve of a language such as Rust. More than  that, I'd like to avoid having to use FFI. I am not an expert in FFI but I remember understanding that it adds overhead to make the bindings.
+O Santo Graal da performance em nível nativo é conseguir escrever código próximo de Ruby ao invés de ter que mexer em C de baixo nível ou enfrentar a curva de aprendizado alta de uma linguagem como Rust. Mais que isso, eu gostaria de evitar usar FFI. Eu não sou um expert em FFI, mas lembro de ter entendido que ele adiciona overhead nas bindings.
 
-By the way, it's important to disclose right now: I am not a C expert by any means of the imagination, far from that. So I have very little experience dealing with hard core C development. Which is again, why this possibility of writing in Crystal is even more appealing to me. So if you are a C expert and you spot something silly I am saying about it, please let me know in the comments section below.
+Aliás, é importante deixar claro logo de cara: eu estou bem longe de ser um expert em C. Tenho pouquíssima experiência lidando com desenvolvimento hardcore em C. O que é justamente o motivo de essa possibilidade de escrever em Crystal ser tão atraente para mim. Então, se você é um expert em C e percebe alguma bobagem que estou falando, por favor me avise nos comentários abaixo.
 
-My exercise is to rewrite the C-based Fast Blank gem in Crystal, add it to the same Gem to compile under Crystal if it's available or fallback to C, and make the specs pass so it's a seamless transition for the user.
+Meu exercício é reescrever a gem Fast Blank, originalmente em C, em Crystal, adicioná-la na mesma gem para compilar usando Crystal se estiver disponível ou cair no fallback de C, e fazer os specs passarem para que seja uma transição transparente para o usuário.
 
-To achieve that I had to:
+Para conseguir isso eu tive que:
 
-* Extend the Gem's extconf.rb to generate different Makefiles (for C and Crystal) that are able to compile under OS X or Linux (Ubuntu at least) - OK
-* Make the specs pass in the Crystal version - Almost (it's ok for all intents and purposes but an edge case)
-* Make the performance be faster than Ruby and close to C - Not so much yet (under OS X the performance is quite good, but under Ubuntu it doesn't scale so well for large string)
+* Estender o `extconf.rb` da gem para gerar Makefiles diferentes (para C e Crystal) capazes de compilar em OS X ou Linux (Ubuntu pelo menos) - OK
+* Fazer os specs passarem na versão Crystal - Quase (está ok para a maior parte, exceto um edge case)
+* Fazer a performance ser mais rápida que Ruby e próxima de C - Ainda não tanto (no OS X a performance é bem boa, mas no Ubuntu não escala tão bem para strings grandes)
 
-You can check out the results so far on [my fork over Github](https://github.com/akitaonrails/fast_blank/tree/crystal_version) and follow the [Pull Request discussion as well](https://github.com/SamSaffron/fast_blank/pull/20).
+Você pode conferir os resultados até agora no [meu fork no Github](https://github.com/akitaonrails/fast_blank/tree/crystal_version) e acompanhar a [discussão do Pull Request também](https://github.com/SamSaffron/fast_blank/pull/20).
 
-### Comparing C and Crystal
+### Comparando C e Crystal
 
-Just to have us started, let's check out a snippet of Sam's original C version:
+Só para começar, vamos ver um trecho da versão original em C do Sam:
 
 ```C
 static VALUE
@@ -54,12 +58,12 @@ rb_str_blank(VALUE str)
 }
 ```
 
-Yeah, quite scary, I know. Now let's see the Crystal version:
+Sim, bem assustador, eu sei. Agora vamos ver a versão em Crystal:
 
 ```ruby
 struct Char
   ...
-  # same way C Ruby implements it
+  # mesma forma como o C Ruby implementa
   def is_blank
     self == ' ' || ('\t' <= self <= '\r')
   end
@@ -75,13 +79,13 @@ class String
 end
 ```
 
-Hell yeah! If you're a rubyist I bet you can understand a 100% of the snippet above. It's not "exactly" the same thing (as the specs are not fully passing yet), but it's damn close.
+Caraca! Se você é rubyista, aposto que entende 100% do snippet acima. Não é "exatamente" a mesma coisa (porque os specs ainda não estão passando completamente), mas chega bem perto.
 
-### The Quest for a Makefile to Crystal
+### A busca por um Makefile para Crystal
 
-I've researched many [experimental Github repos](https://github.com/akitaonrails/ruby_ext_in_crystal_math) and Gists out there. But I didn't find one that has it all so I decided to tweak what I found until I got to this version:
+Pesquisei vários [repositórios experimentais no Github](https://github.com/akitaonrails/ruby_ext_in_crystal_math) e Gists por aí. Mas não achei nenhum que tivesse tudo, então decidi adaptar o que encontrei até chegar a essa versão:
 
-Obs: again, I am not a C expert. If you have experience with Makefiles I know this one can be refactored to something nicer than this. Let me know in the comments below.
+Obs: de novo, eu não sou expert em C. Se você tem experiência com Makefiles, sei que esse aqui dá para refatorar para algo mais bonito. Me avise nos comentários.
 
 ```C
 ifeq "$(PLATFORM)" ""
@@ -131,29 +135,29 @@ clean:
 endif
 ```
 
-Most people using Crystal are on OS X, including the creators of Crystal. LLVM is under Apple's umbrella and their entire ecosystem relies heavily on LLVM. They spent many years migrating the C front-end first, then the C back-end away from GNU's standard GCC to Clang. And they were able to make their both Objective-C and Swift compile down to LLVM's IR and that's how both can interact back and forth natively.
+A maioria das pessoas usando Crystal está em OS X, incluindo os criadores de Crystal. LLVM está sob o guarda-chuva da Apple, e todo o ecossistema deles depende muito de LLVM. Eles passaram muitos anos migrando primeiro o front-end de C, depois o back-end de C, do GCC padrão da GNU para o Clang. E conseguiram fazer tanto Objective-C quanto Swift compilarem para o IR do LLVM, e é por isso que ambos conseguem interagir nativamente.
 
-Then, they improved the ARM backend support and that's how they can have an entire iOS "Simulator" (not a dog slow emulator like Android) where the iOS apps are natively compiled to run over Intel's x86_64 processor while in development and then quickly recompile to ARM when ready to package to the App Store.
+Depois, eles melhoraram o suporte ao backend ARM, e é assim que eles conseguem ter um "Simulador" iOS inteiro (não um emulador lento como cachorro tipo o de Android), onde os apps iOS são compilados nativamente para rodar em processador Intel x86_64 durante o desenvolvimento e depois rapidamente recompilam para ARM quando vão empacotar para a App Store.
 
-This way you can run natively, test quickly, without the slowness of an emulated environment. By the way, I will say this once: Google's biggest mistake is not supporting LLVM as they should and reinventing the wheel. If they had, Go could already be used to implement for Android and Chromebooks as well as x86 based servers and they could put away all the Java/Oracle debacle.
+Dessa forma você consegue rodar nativamente, testar rapidamente, sem a lentidão de um ambiente emulado. A propósito, vou dizer isso uma vez: o maior erro do Google é não dar suporte a LLVM como deveria e ficar reinventando a roda. Se tivessem feito isso, Go já poderia ser usado para implementar para Android e Chromebooks, além de servidores baseados em x86, e poderiam jogar fora todo o imbróglio com Java/Oracle.
 
-But I digress.
+Mas estou divagando.
 
-In OS X you can pass a "`-bundle`" link-flag to crystal and it will probably use clang underneath to generate the binary bundle.
+No OS X você pode passar uma link-flag "`-bundle`" para o crystal e ele provavelmente vai usar clang por baixo dos panos para gerar o bundle binário.
 
-On Ubuntu crystal just compiles down to an object file (.o) and you have to manually invoke GCC with the "`-shared`" option to create a shared-object. To do that we have to use the ["--cross-compile"](https://crystal-lang.org/docs/syntax_and_semantics/cross-compilation.html) and pass an LLVM target triplet so it generates the .o (this requires the `llvm-config` tool).
+No Ubuntu, o crystal apenas compila para um arquivo objeto (.o) e você tem que invocar o GCC manualmente com a opção "`-shared`" para criar um shared object. Para fazer isso temos que usar o ["--cross-compile"](https://crystal-lang.org/docs/syntax_and_semantics/cross-compilation.html) e passar um triplet de target do LLVM para gerar o .o (isso requer a ferramenta `llvm-config`).
 
-Shared Libraries (.so) and Loadable Modules (.bundle) are different beasts, check [this documentation](http://docstore.mik.ua/orelly/unix3/mac/ch05_03.htm) out for more details.
+Shared Libraries (.so) e Loadable Modules (.bundle) são bichos diferentes, dê uma olhada [nessa documentação](http://docstore.mik.ua/orelly/unix3/mac/ch05_03.htm) para mais detalhes.
 
-Keep in mind that benchmarking binaries built with different compilers can make a difference. I am not an expert but out of pure anecdote I believe Ruby under RVM on OS X is compiled using OS X's default Clang. On Ubuntu it's compiled under GCC. This seems to make Ruby on OS X "so slightly" inneficient in synthetic benchmarks.
+Tenha em mente que benchmarkar binários compilados com compiladores diferentes pode fazer diferença. Não sou expert mas, por puro empirismo, acredito que Ruby sob RVM no OS X é compilado usando o Clang padrão do OS X. No Ubuntu é compilado com GCC. Isso parece deixar Ruby no OS X "levemente" ineficiente em benchmarks sintéticos.
 
-On the other hand, Crystal binaries linked with GCC feels "so slightly" inneficient on Ubuntu, while Ruby on Ubuntu feels a bit faster, having been compiled and linked with GCC.
+Por outro lado, binários Crystal linkados com GCC parecem "levemente" ineficientes no Ubuntu, enquanto Ruby no Ubuntu parece um pouco mais rápido, tendo sido compilado e linkado com GCC.
 
-So when we compare Fast Blank/OS X/bit faster with Ruby/OS X/slower against Fast Blank/Ubuntu/bit slower with Ruby/Ubuntu/bit faster, it seems to give a wider advantage to the OS X benchmark comparison against the Ubuntu benchmark, even though individual computation times are not so far from each other.
+Então, quando comparamos Fast Blank/OS X/um pouco mais rápido com Ruby/OS X/mais lento contra Fast Blank/Ubuntu/um pouco mais lento com Ruby/Ubuntu/um pouco mais rápido, parece dar uma vantagem maior para a comparação no OS X em relação ao benchmark do Ubuntu, mesmo que os tempos individuais de computação não estejam tão longe entre si.
 
-I will come back to this point in the benchmarks section.
+Vou voltar a esse ponto na seção de benchmarks.
 
-Finally, everytime you have a rubygem with a native extension, you will find this bit in their gemspec files:
+Por fim, toda vez que você tem uma rubygem com extensão nativa, vai encontrar este trecho nos arquivos gemspec:
 
 ```ruby
 Gem::Specification.new do |s|
@@ -163,15 +167,15 @@ Gem::Specification.new do |s|
   ...
 ```
 
-When the gem is installed through `gem install` or `bundle install` it will run this script to generate a proper `Makefile`. In a pure C extension it will use the built-in "mkmf" library to generate it.
+Quando a gem é instalada via `gem install` ou `bundle install`, ela vai rodar esse script para gerar um `Makefile` adequado. Em uma extensão pura em C, ele usa a biblioteca embutida "mkmf" para gerar.
 
-In our case, if we have Crystal installed, we want to use the Crystal version, so I tweaked the `extconf.rb` to be like this:
+No nosso caso, se temos Crystal instalado, queremos usar a versão Crystal, então adaptei o `extconf.rb` para ficar assim:
 
 ```ruby
 require 'mkmf'
 
 if ENV['VERSION'] != "C" && find_executable('crystal') && find_executable('llvm-config')
-  # Very dirty patching
+  # Patch bem porco
   def create_makefile(target, srcprefix = nil)
     mfile = open("Makefile", "wb")
     cr_makefile = File.join(File.dirname(__FILE__), "../src/Makefile")
@@ -185,21 +189,21 @@ end
 create_makefile 'fast_blank'
 ```
 
-So, if it finds `crystal` and `llvm-config` (which in OS X you have to add the proper path like this: `export PATH=$(brew --prefix llvm)/bin:$PATH`).
+Então, se ele encontrar `crystal` e `llvm-config` (que no OS X você precisa adicionar o path apropriado assim: `export PATH=$(brew --prefix llvm)/bin:$PATH`).
 
-The `Rakefile` in this project declares the standard `:compile` task as the first one to run, and it will execute the `extconf.rb`, which will generate the proper `Makefile` and run the `make` command to compile and link the proper library in the proper `lib/` path.
+O `Rakefile` desse projeto declara a task padrão `:compile` como a primeira a rodar, e ela vai executar o `extconf.rb`, que vai gerar o `Makefile` apropriado e rodar o comando `make` para compilar e linkar a biblioteca correta no path `lib/`.
 
-So we will end up with `lib/fast_blank.bundle` on OS X and `lib/fast_blank.so` on Ubuntu. From there we can just have `require "fast_blank"` from any Ruby file in the gem and it will have access to the publicly exported C function mappings from the Crystal library.
+Então acabamos com `lib/fast_blank.bundle` no OS X e `lib/fast_blank.so` no Ubuntu. A partir daí podemos simplesmente fazer `require "fast_blank"` em qualquer arquivo Ruby da gem e ele terá acesso aos mapeamentos das funções C exportadas publicamente da biblioteca Crystal.
 
-### Mapping C-Ruby to Crystal
+### Mapeando C-Ruby para Crystal
 
-Now, any direct C extension - without FFI, fiddle or other "bridges" - will ALWAYS have a much better advantage.
+Bom, qualquer extensão direta em C - sem FFI, fiddle ou outras "pontes" - vai SEMPRE ter uma vantagem muito maior.
 
-The reason is that you literally have to "copy" data from C-Ruby to Crystal/Rust/Go or whatever other language you're binding. While with a C-based extension you can operate directly in the memory space with the data without having to move it or copy it away.
+A razão é que você literalmente tem que "copiar" dados de C-Ruby para Crystal/Rust/Go ou qualquer outra linguagem que você esteja fazendo binding. Já com uma extensão em C você consegue operar diretamente no espaço de memória com os dados, sem ter que mover ou copiar para outro lugar.
 
-For example. First, you have to bind the C functions from C-Ruby to Crystal. And we accomplish that with [Paul Hoffer's Crystalized Ruby](https://github.com/phoffer/crystalized_ruby/blob/master/src/lib_ruby.cr) mappings. It's an experimental repository that I helped a bit to clean up in order for him to later extract this mapping library into its own Shard (shards are the same as gems for Crystal). For now I had to simply copy the file over to my Fast Blank.
+Por exemplo. Primeiro, você precisa fazer o binding das funções C de C-Ruby para Crystal. E fazemos isso com os mapeamentos do [Crystalized Ruby do Paul Hoffer](https://github.com/phoffer/crystalized_ruby/blob/master/src/lib_ruby.cr). É um repositório experimental que ajudei a limpar um pouco para que ele depois extraísse essa biblioteca de mapeamento como uma Shard própria (shards são o mesmo que gems para Crystal). Por enquanto, eu simplesmente copiei o arquivo para o meu Fast Blank.
 
-Some of the relevant bits are like this:
+Algumas das partes relevantes são assim:
 
 ```ruby
 lib LibRuby
@@ -215,7 +219,7 @@ lib LibRuby
   fun rb_utf8_encoding() : VALUE
   fun rb_enc_str_new_cstr(str : UInt8*, enc : VALUE) : VALUE
   ...
-  # exception handling
+  # tratamento de exceções
   fun rb_rescue(func : VALUE -> UInt8*, args : VALUE, callback: VALUE -> UInt8*, value: VALUE) : UInt8*
 end
 ...
@@ -227,9 +231,9 @@ class String
 
   def self.from_ruby(str : LibRuby::VALUE)
     c_str = LibRuby.rb_rescue(->String.cr_str_from_rb_cstr, str, ->String.return_empty_string, 0.to_ruby)
-    # FIXME there is still an unhandled problem: then we receive \u0000 from Ruby it raises "string contains null bytes"
-    # so we catch it with rb_rescue, but then we can't generate a Pointer(UInt8) that represents the unicode 0, instead we return a plain blank string
-    # but then the specs fail
+    # FIXME ainda existe um problema não tratado: quando recebemos \u0000 do Ruby, ele lança "string contains null bytes"
+    # então capturamos com rb_rescue, mas aí não conseguimos gerar um Pointer(UInt8) que represente o unicode 0, ao invés disso retornamos uma string em branco
+    # mas aí os specs falham
     new(c_str)
   ensure
     ""
@@ -247,7 +251,7 @@ class String
 end
 ```
 
-Then I can use these mappings and helpers to build a "Wrapper" class in Crystal:
+Aí posso usar esses mapeamentos e helpers para construir uma classe "Wrapper" em Crystal:
 
 ```ruby
 require "./lib_ruby"
@@ -277,9 +281,9 @@ module StringExtensionWrapper
 end
 ```
 
-And this "Wrapper" depends on the "pure" Crystal library itself like with the snippets for the Char struct and String class extensions I showed in the first section of the article above.
+E esse "Wrapper" depende da própria biblioteca "pura" em Crystal, como nos snippets das extensões da struct Char e da classe String que mostrei na primeira seção do artigo.
 
-Finally, I have a main "fast_blank.cr" file that externs those Wrapper functions so C-Ruby can see them as plain String methods:
+Por fim, tenho um arquivo principal "fast_blank.cr" que faz o extern dessas funções do Wrapper para que o C-Ruby possa enxergá-las como métodos comuns de String:
 
 ```ruby
 require "./string_extension_wrapper.cr"
@@ -295,7 +299,7 @@ fun init = Init_fast_blank
 end
 ```
 
-This is mostly boilerplate. But now check out what I am having to do in the wrapper, in this particular snippet:
+Isso é basicamente boilerplate. Mas agora veja o que estou tendo que fazer no wrapper, neste snippet específico:
 
 ```ruby
 def self.blank?(self : LibRuby::VALUE)
@@ -307,9 +311,9 @@ rescue
 end
 ```
 
-I am receiving a C-Ruby String casted as a pointer (VALUE) then I go through the lib_ruby.cr mappings to get the C-Ruby string data and copy it over into a new instance of Crystal's internal String representation. So at any given time I have 2 copies of the same string, one in the C-Ruby memory space and another in the Crystal memory space.
+Estou recebendo uma String do C-Ruby tipada como ponteiro (VALUE), depois passo pelos mapeamentos do lib_ruby.cr para pegar os dados da string do C-Ruby e copiar para uma nova instância da representação interna de String do Crystal. Então, em qualquer momento eu tenho 2 cópias da mesma string, uma no espaço de memória do C-Ruby e outra no espaço de memória do Crystal.
 
-This happens with all FFI-like extensions but it doesn't happen to the pure C implementation. In Sam Saffrom's C implementation it directly works with the same address in C-Ruby's memory space:
+Isso acontece com todas as extensões tipo FFI, mas não acontece com a implementação pura em C. Na implementação em C do Sam Saffron, ela trabalha diretamente com o mesmo endereço no espaço de memória do C-Ruby:
 
 ```C
 static VALUE
@@ -323,26 +327,26 @@ rb_str_blank(VALUE str)
   ...
 ```
 
-It receives a pointer (direct memory address) and goes. And this is huge advantage for the C version. When you have a big volume of medium to large sized strings being copied over from C-Ruby to Crystal, it adds a noticeable overhead that can't be removed.
+Ela recebe um ponteiro (endereço de memória direto) e segue. E essa é uma vantagem enorme para a versão em C. Quando você tem um grande volume de strings de tamanho médio a grande sendo copiadas de C-Ruby para Crystal, isso adiciona um overhead perceptível que não dá para remover.
 
-### String mapping Caveat
+### Caveat do mapeamento de String
 
-I still have a problem though. There is one edge case I was not able to overcome yet (help is most welcome). When C-Ruby passes a unicode `"\u0000"` I am unable to create the same character in Crystal and I end up passing just an empty string ("") which is not the same thing.
+Ainda tenho um problema. Existe um edge case que não consegui superar ainda (ajuda é mais que bem-vinda). Quando o C-Ruby passa um unicode `"\u0000"`, eu não consigo criar o mesmo caractere em Crystal e acabo passando apenas uma string vazia (""), o que não é a mesma coisa.
 
-The way to deal with it is to receive a Ruby String (VALUE) and get the C-String from it this way:
+A maneira de lidar com isso é receber uma String Ruby (VALUE) e pegar a C-String dela assim:
 
 ```ruby
 rb_str = LibRuby.rb_str_to_str(str)
 c_str  = LibRuby.rb_string_value_cstr(pointerof(rb_str))
 ```
 
-If the "str" is the "\u0000" (under Ruby 2.2.5 at least) C-Ruby raises a "string contains null bytes" exception. Which is why I rescue from this exception like this:
+Se a "str" for o "\u0000" (no Ruby 2.2.5 pelo menos), o C-Ruby lança uma exceção "string contains null bytes". É por isso que eu faço rescue dessa exceção assim:
 
 ```ruby
 c_str = LibRuby.rb_rescue(->String.cr_str_from_rb_cstr, str, ->String.return_empty_string, 0.to_ruby)
 ```
 
-When an exception is triggered I have to pass the pointer to another function to rescue from it:
+Quando uma exceção é disparada, tenho que passar o ponteiro para outra função para fazer o rescue:
 
 ```ruby
 def self.return_empty_string(arg : LibRuby::VALUE)
@@ -351,7 +355,7 @@ def self.return_empty_string(arg : LibRuby::VALUE)
 end
 ```
 
-But this is not correct, I am just passing the pointer to a "0" character, which is "empty". Therefore, specs are not passing correctly:
+Mas isso não está correto, estou apenas passando o ponteiro para um caractere "0", que é "vazio". Por isso, os specs não estão passando corretamente:
 
 ```
 Failures:
@@ -374,18 +378,18 @@ Failures:
      # ./spec/fast_blank_spec.rb:47:in `block (2 levels) in <top (required)>'
 ```
 
-Ary gave a simple tip later, I will add it to the conclusion below.
+O Ary deu uma dica simples depois, vou adicionar na conclusão abaixo.
 
-### The Synthetic Benchmarks (careful on how you interpret them!)
+### Os benchmarks sintéticos (cuidado em como interpretá-los!)
 
-The [original Rails ActiveSupport implementation of String#blank?](https://github.com/rails/rails/blob/2a371368c91789a4d689d6a84eb20b238c37678a/activesupport/lib/active_support/core_ext/object/blank.rb#L101) looks like this:
+A [implementação original de String#blank? do ActiveSupport do Rails](https://github.com/rails/rails/blob/2a371368c91789a4d689d6a84eb20b238c37678a/activesupport/lib/active_support/core_ext/object/blank.rb#L101) é assim:
 
 ```ruby
 class String
   # 0x3000: fullwidth whitespace
   NON_WHITESPACE_REGEXP = %r![^\s#{[0x3000].pack("U")}]!
 
-  # A string is blank if it's empty or contains whitespaces only:
+  # Uma string é blank se for vazia ou contiver só whitespace:
   #
   #   "".blank?                 # => true
   #   "   ".blank?              # => true
@@ -393,7 +397,7 @@ class String
   #   " something here ".blank? # => false
   #
   def blank?
-    # 1.8 does not takes [:space:] properly
+    # 1.8 não trata [:space:] direito
     if encoding_aware?
       self !~ /[^[:space:]]/
     else
@@ -403,17 +407,17 @@ class String
 end
 ```
 
-It's mainly a regular expression comparison, which can be a bit slow. Sam's version is a more straight forward loop through the string to compare each character with what's considered "blank". There are many unicode codepoints that are considered blank, some are not, which is why the C and Crystal versions are similar, but they are different from Rails' version.
+É basicamente uma comparação por expressão regular, o que pode ser meio lento. A versão do Sam é um loop mais direto pela string para comparar cada caractere com o que é considerado "blank". Existem vários codepoints unicode considerados blank, alguns não, e por isso as versões em C e Crystal são parecidas, mas diferentes da versão do Rails.
 
-In the Fast Blank gem there is a `benchmark` Ruby script to compare the C-extension against Rails' Regex based implementation.
+Na gem Fast Blank existe um script Ruby `benchmark` para comparar a extensão em C contra a implementação baseada em Regex do Rails.
 
-The Regex implementation is called **"Slow Blank"**. It's particularly slow if you pass a real empty String, so in the benchmark Sam added a **"New Slow Blank"** that checks through `String#empty?` first, and this version is faster in this edge case.
+A implementação Regex é chamada de **"Slow Blank"**. Ela é particularmente lenta se você passa uma String realmente vazia, então no benchmark o Sam adicionou uma **"New Slow Blank"** que checa primeiro com `String#empty?`, e essa versão é mais rápida nesse edge case.
 
-The fast C version is called **"Fast Blank"** but although you can consider ir "correct" it's not compatible with all the edge cases from Rails. So he implemented a `String#blank_as?` which is compatible with Rails. Sam calls it **"Fast Activesupport"**.
+A versão rápida em C se chama **"Fast Blank"**, mas mesmo que você possa considerá-la "correta", ela não é compatível com todos os edge cases do Rails. Então ele implementou um `String#blank_as?` que é compatível com Rails. O Sam chama de **"Fast Activesupport"**.
 
-In my Crystal version I did the same, having both `String#blank?` and `String#blank_as?`.
+Na minha versão em Crystal eu fiz a mesma coisa, tendo tanto `String#blank?` quanto `String#blank_as?`.
 
-So, without further ado, here is the **C Version over OS X** benchmark for empty strings, and we exercise each function many times within a few seconds to have more accurate results (check out Evan Phoenix's ["benchmark/ips"](https://github.com/evanphx/benchmark-ips) to understand the "iteration per second" methodology).
+Então, sem mais delongas, aqui está o benchmark da **versão em C no OS X** para strings vazias, e exercitamos cada função muitas vezes em poucos segundos para ter resultados mais precisos (confira o ["benchmark/ips"](https://github.com/evanphx/benchmark-ips) do Evan Phoenix para entender a metodologia de "iteration per second").
 
 ```
 ================== Test String Length: 0 ==================
@@ -435,9 +439,9 @@ Comparison:
           Slow Blank:  1059692.6 i/s - 20.65x slower
 ```
 
-It's super fast. Rails' version is 20x slower on my machine.
+Está super rápido. A versão do Rails é 20x mais lenta na minha máquina.
 
-Now, **Crystal version over OS X**
+Agora, **versão Crystal no OS X**
 
 ```
 ================== Test String Length: 0 ==================
@@ -459,9 +463,9 @@ Comparison:
           Slow Blank:  1047465.3 i/s - 18.22x slower
 ```
 
-As I explained before, even checking empty strings, the Crystal version is slower than the Ruby check for `String#empty?` (New Slow Blank) because I have the string copying routine of the Wrapper mappings. This adds overhead that is perceptible over many iterations. It's still 18x faster than Rails, but it loses to C-Ruby.
+Como expliquei antes, mesmo checando strings vazias, a versão Crystal é mais lenta que o check de Ruby por `String#empty?` (New Slow Blank), porque tenho a rotina de cópia de string nos mapeamentos do Wrapper. Isso adiciona overhead perceptível ao longo de muitas iterações. Continua sendo 18x mais rápido que Rails, mas perde para C-Ruby.
 
-Finally, ** Crystal version over Ubuntu**
+Por fim, **versão Crystal no Ubuntu**
 
 ```
 ================== Test String Length: 0 ==================
@@ -483,11 +487,11 @@ Comparison:
           Slow Blank:  1736071.0 i/s - 12.77x slower
 ```
 
-Notice that it's around the same ballpark, but the Rails version on Ubuntu runs almost twice as fast compared to its counterpart in OS X, which makes the comparison against the Crystal library go down from 18x to 12x.
+Note que está na mesma faixa, mas a versão Rails no Ubuntu roda quase duas vezes mais rápido comparada à equivalente no OS X, o que faz a comparação contra a biblioteca Crystal cair de 18x para 12x.
 
-The benchmark keeps comparing agains strings of larger and larger sizes, from 6, to 14, to 24, up to 136 characters in length.
+O benchmark continua comparando contra strings cada vez maiores, de 6, para 14, para 24, até 136 caracteres.
 
-Let's get just the last test case of 136 characters. First with **C version on OS X**:
+Vamos pegar só o último teste, com 136 caracteres. Primeiro com a **versão em C no OS X**:
 
 ```
 ================== Test String Length: 136 ==================
@@ -509,9 +513,9 @@ Comparison:
       New Slow Blank:  1016926.7 i/s - 11.41x slower
 ```
 
-The C-version is consistently much faster in all test cases and in the 136 characters it's still 11x faster than Rails in pure Ruby.
+A versão em C é consistentemente muito mais rápida em todos os casos de teste e nos 136 caracteres ainda está 11x mais rápida que o Rails em Ruby puro.
 
-Now the **Crystal version over OS X**:
+Agora a **versão Crystal no OS X**:
 
 ```
 ================== Test String Length: 136 ==================
@@ -533,9 +537,9 @@ Comparison:
       New Slow Blank:   967950.2 i/s - 3.39x slower
 ```
 
-It's also faster, but just by 2 to 3 times compared to pure Ruby, a far cry from 11x. But my hypothesis is that the mapping and copying of so many string over adds a large overhead that the C version does not have.
+Também é mais rápida, mas só por 2 a 3 vezes comparada ao Ruby puro, bem longe do 11x. Mas minha hipótese é que o mapeamento e cópia de tantas strings adiciona um overhead grande que a versão em C não tem.
 
-And the **Crystal version over OS X**:
+E a **versão Crystal no Ubuntu**:
 
 ```
 ================== Test String Length: 136 ==================
@@ -557,22 +561,22 @@ Comparison:
       New Slow Blank:  1550815.2 i/s - 2.27x slower
 ```
 
-Again, the Ubuntu versions of both Crystal library but also the Ruby binary runs faster and the comparison shows no more than twice as much faster. And the pure Ruby's `String#empty?` is in the same ballpark as Crystal's version.
+Novamente, as versões Ubuntu tanto da biblioteca Crystal quanto do binário Ruby rodam mais rápido, e a comparação mostra no máximo o dobro de velocidade. E o `String#empty?` do Ruby puro está na mesma faixa que a versão Crystal.
 
-### Conclusion
+### Conclusão
 
-The most obvious conclusion is that I probably did a mistake in choosing Fast Blank as my first proof of concept. The algorithm is too trivial and a simple check for `String#empty?` in pure Ruby is orders of magnitude faster than the added overhead of mapping and string copying to Crystal.
+A conclusão mais óbvia é que provavelmente errei ao escolher Fast Blank como minha primeira prova de conceito. O algoritmo é trivial demais e um simples check de `String#empty?` em Ruby puro é ordens de magnitude mais rápido que o overhead adicionado de mapear e copiar strings para Crystal.
 
-Also, any use case where you have a huge amount of small bits of data being transferred from C-Ruby to Crystal or any FFI-based extension will have the overhead of data copying, which a pure C-version will not have. Which is why Fast Blank is better done in C.
+Além disso, qualquer caso de uso onde você tem uma quantidade enorme de pequenos pedaços de dados sendo transferidos de C-Ruby para Crystal, ou qualquer extensão baseada em FFI, vai ter o overhead da cópia de dados, que uma versão pura em C não tem. É por isso que Fast Blank é melhor feito em C.
 
-Any other use case where you have less amounts of data, or data that can be transferred in bulk (less calls from C-Ruby to the extension, with arguments with a larger size, and with more costly processing) are better candidates to benefit from extensions.
+Outros casos de uso, onde você tem menos dados, ou dados que podem ser transferidos em lote (menos chamadas do C-Ruby para a extensão, com argumentos de tamanho maior, e com processamento mais custoso), são candidatos melhores para se beneficiar de extensões.
 
-Again, not everything gets automatically faster, we always have to figure out the use case scenarios first. But because it's so much easier to write in Crystal and benchmark, we can make faster proofs of concepts and scrap the idea if the measurements prove that we won't benefit as much.
+Mais uma vez, nem tudo fica automaticamente mais rápido, sempre temos que entender os cenários de uso primeiro. Mas como é muito mais fácil escrever em Crystal e fazer benchmark, podemos fazer provas de conceito mais rapidamente e descartar a ideia se as medições provarem que não vamos nos beneficiar tanto.
 
-The Crystal documentation recently received a ["Performance Guide"](https://crystal-lang.org/docs/guides/performance.html). It's very useful for you to avoid common pitfalls that harms overall performance. Even though LLVM is quite competent in heavy optimization, it can't do everything. So read it through to improve your general Crystal skills.
+A documentação do Crystal recebeu recentemente um ["Performance Guide"](https://crystal-lang.org/docs/guides/performance.html). É bem útil para você evitar armadilhas comuns que prejudicam a performance geral. Mesmo que LLVM seja bem competente em otimização pesada, ele não pode fazer tudo. Então leia tudo para melhorar suas habilidades gerais em Crystal.
 
-That being said, I still believe that this exercise was well worth it. I will probabaly do some more. I'd really want to thank Ary (Crystal creator) and Paul Hoffer for the patience in helping me out through many of quircks I found along the way.
+Dito isso, ainda acredito que esse exercício valeu muito a pena. Provavelmente vou fazer mais alguns. Eu gostaria muito de agradecer ao Ary (criador do Crystal) e ao Paul Hoffer pela paciência em me ajudar com muitas das peculiaridades que encontrei pelo caminho.
 
-While I was finishing this post, [Ary pointed out](https://github.com/SamSaffron/fast_blank/pull/20#issuecomment-230875300) that I could probably ditch Strings altogether and work directly with an array of bytes, which is a good idea and I will probably try that. I think I made it clear by now that the whole String copying adds a very perceptible overhead as we saw in the benchmarks above. Let me know if someone is interested in contributing as well. With a few more tweaks I believe we can have a Crystal version that can at least compete against the C version while also being more readable and maintainable for most Rubyists, which is my goal.
+Enquanto eu finalizava esse post, [o Ary apontou](https://github.com/SamSaffron/fast_blank/pull/20#issuecomment-230875300) que eu poderia provavelmente abandonar Strings completamente e trabalhar diretamente com um array de bytes, o que é uma boa ideia e provavelmente vou tentar. Acho que já deixei claro que toda a cópia de String adiciona um overhead bem perceptível, como vimos nos benchmarks acima. Me avise se alguém quiser contribuir também. Com mais alguns ajustes, acredito que dá para ter uma versão Crystal que pelo menos compita com a versão em C, sendo também mais legível e fácil de manter para a maioria dos rubyistas, que é o meu objetivo.
 
-I hope the codes I published here will serve as boilerplate examples for more Crystal-based Ruby extensions in the future!
+Espero que os códigos que publiquei aqui sirvam como exemplos de boilerplate para mais extensões Ruby baseadas em Crystal no futuro!

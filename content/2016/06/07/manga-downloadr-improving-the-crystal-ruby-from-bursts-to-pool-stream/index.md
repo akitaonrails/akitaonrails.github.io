@@ -1,64 +1,68 @@
 ---
-title: "[Manga-Downloadr] Improving the Crystal/Ruby from bursts to pool stream"
+title: "[Manga-Downloadr] Melhorando o Crystal/Ruby de rajadas para fluxo de pool"
 date: '2016-06-07T17:13:00-03:00'
-slug: manga-downloadr-improving-the-crystal-ruby-from-bursts-to-pool-stream
+slug: manga-downloadr-melhorando-o-crystal-ruby-de-rajadas-para-fluxo-de-pool
+translationKey: manga-downloadr-bursts-to-pool
+aliases:
+- /2016/06/07/manga-downloadr-improving-the-crystal-ruby-from-bursts-to-pool-stream/
 tags:
 - manga-downloadr
 - crystal
 - jruby
+- traduzido
 draft: false
 ---
 
-Yesterday [I posted](http://www.akitaonrails.com/2016/06/06/manga-downloadr-porting-from-crystal-to-ruby-and-a-bit-of-jruby) how I build a new implementation of the Manga Reader Downloader in Crystal, ported to Ruby, tested on JRuby and compared against Elixir. Just to recap, these were the results to fetch chapters, pages and image links of a sample manga:
+Ontem [eu publiquei](http://www.akitaonrails.com/2016/06/06/manga-downloadr-porting-from-crystal-to-ruby-and-a-bit-of-jruby) como construí uma nova implementação do Manga Reader Downloader em Crystal, portado para Ruby, testado em JRuby e comparado com Elixir. Só pra recapitular, esses foram os resultados pra buscar capítulos, páginas e links de imagens de um mangá de exemplo:
 
-* MRI Ruby 2.3.1: 57 seconds
-* JRuby 9.1.1.0: 45 seconds
-* Crystal 0.17.0: 59 seconds
-* Elixir: 14 seconds
+* MRI Ruby 2.3.1: 57 segundos
+* JRuby 9.1.1.0: 45 segundos
+* Crystal 0.17.0: 59 segundos
+* Elixir: 14 segundos
 
-I also said how it was an unfair comparison as the Elixir version uses a different - and obviously more efficient - algorithm.
+Eu também disse que era uma comparação injusta, já que a versão Elixir usa um algoritmo diferente - e obviamente mais eficiente.
 
-It was the "first-version-that-worked" so I decided to go ahead and improve the implementations. In the Ruby/JRuby version I added the [thread](https://github.com/meh/ruby-thread) gem to have a good enough implementation of a Thread pool that works for Ruby and JRuby. I probably should have used Concurrent-Ruby but I was having some trouble to make FixedThreadPool to work.
+Era a "primeira-versão-que-funcionou", então resolvi ir adiante e melhorar as implementações. Na versão Ruby/JRuby adicionei a gem [thread](https://github.com/meh/ruby-thread) pra ter uma implementação razoável de Thread pool que funciona tanto em Ruby quanto em JRuby. Eu provavelmente deveria ter usado Concurrent-Ruby, mas estava tendo problemas pra fazer o FixedThreadPool funcionar.
 
-Anyway, now all versions will have a constant pool of requests running and we can make a better comparison.
+Enfim, agora todas as versões vão ter um pool constante de requisições rodando e podemos fazer uma comparação melhor.
 
-Another thing that may have skewed the results against Crystal is that it seems to have a [faulty DNS resolver](https://github.com/crystal-lang/crystal/issues/2660) implementation, so for now I just added the Manga Reader IP address directly to my `/etc/hosts` file to avoid `getaddrinfo: Name or service not known` exceptions.
+Outra coisa que pode ter prejudicado os resultados do Crystal é que ele parece ter uma [implementação defeituosa de DNS resolver](https://github.com/crystal-lang/crystal/issues/2660), então por enquanto eu só adicionei o IP do Manga Reader direto no meu `/etc/hosts` pra evitar exceções de `getaddrinfo: Name or service not known`.
 
-To begin, let's test the same Elixir implementation, and as expected the result is still the same:
+Pra começar, vamos testar a mesma implementação Elixir e, como esperado, o resultado continua o mesmo:
 
 ```
 11,49s user 0,82s system 77% cpu 15,827 total
 ```
 
-Now, the MRI Ruby with the "batch burst" algorithm was taking 57 seconds and this new implementation using a ThreadPool runs much better:
+Agora, o MRI Ruby com o algoritmo de "rajada em lote" estava levando 57 segundos e essa nova implementação usando ThreadPool roda muito melhor:
 
 ```
 12,67s user 0,92s system 50% cpu 27,149 total
 ```
 
-In Crystal, it's a bit more complicated as there is no way to implement the equivalent of a "Fiber Pool". What we have to do is do an infinite loop until the last process signals a loop break. Within the loop we create a maximum number of fibers, wait for each one to signal that it finished through an individual channel and loop again to create a new fiber, and so on. Compared to yesterday's 59 seconds, this is much better:
+Em Crystal é um pouco mais complicado, porque não tem como implementar o equivalente a um "Fiber Pool". O que temos que fazer é um loop infinito até o último processo sinalizar a quebra do loop. Dentro do loop criamos um número máximo de fibers, esperamos cada uma sinalizar que terminou através de um channel individual e voltamos ao loop pra criar uma nova fiber, e por aí vai. Comparado aos 59 segundos de ontem, isso é bem melhor:
 
 ```
 5,29s user 0,33s system 26% cpu 21,166 total
 ```
 
-The JRuby version is not so fast though. Still better than yesterday's 45 seconds but now it's losing even to MRI:
+A versão JRuby não está tão rápida. Ainda melhor que os 45 segundos de ontem, mas agora está perdendo até pro MRI:
 
 ```
 49,24s user 1,41s system 146% cpu 34,602 total
 ```
 
-I tried to use the `--dev` flag for [faster start up time](https://github.com/jruby/jruby/wiki/Improving-startup-time) and it does improve a bit, getting it closer to MRI:
+Tentei usar a flag `--dev` pra [tempo de inicialização mais rápido](https://github.com/jruby/jruby/wiki/Improving-startup-time) e melhora um pouco, ficando mais perto do MRI:
 
 ```
 22,26s user 0,99s system 76% cpu 30,320 total
 ```
 
-Not sure if it can be improved more though, any tips are welcome - don't forget to comment below.
+Não sei se dá pra melhorar mais, mas qualquer dica é bem-vinda - não esqueçam de comentar abaixo.
 
-So, Elixir is still at least twice as fast than Crystal at this point. But this also demonstrates how a different algorithm does make a huge difference where it matters. I can probably tweak it a bit more but this should suffice for now.
+Então, Elixir continua pelo menos duas vezes mais rápido que Crystal nesse momento. Mas isso também demonstra como um algoritmo diferente faz uma diferença enorme onde importa. Eu provavelmente consigo ajustar mais um pouco, mas isso já basta por enquanto.
 
-### Changing the Ruby implementation to use ThreadPool
+### Mudando a implementação Ruby pra usar ThreadPool
 
 ```ruby
 require "thread/pool"
@@ -87,15 +91,15 @@ module MangaDownloadr
     ...
 ```
 
-The idea is that we will have a fixed number of spawn native threads (in this case, determined by `@config.download_batch_size`). As one thread finishes it will pop a new link from the `collection` Array, essentially working as a "queue" to be depleted.
+A ideia é que vamos ter um número fixo de threads nativas spawnadas (nesse caso, determinado por `@config.download_batch_size`). Conforme uma thread termina, ela puxa um novo link do Array `collection`, funcionando essencialmente como uma "fila" a ser esvaziada.
 
-The results are accumulated in the `results` Array. Because many threads may want to modify it at once we have to synchronize access through a Mutex.
+Os resultados são acumulados no Array `results`. Como várias threads podem querer modificá-lo ao mesmo tempo, temos que sincronizar o acesso através de um Mutex.
 
-This way we always have a fixed amount of workers performing requests constantly instead of slicing the `collection` Array and doing bursts as in the previous version.
+Dessa forma sempre temos uma quantidade fixa de workers fazendo requisições constantemente em vez de fatiar o Array `collection` e fazer rajadas como na versão anterior.
 
-### Changing the Crystal implementation to simulate a Fibers Pool
+### Mudando a implementação Crystal pra simular um Pool de Fibers
 
-The Crystal version became a bit more complicated as I didn't find a pool library to pull. I found a rough implementation of a pool in [this stackoverflow post](http://stackoverflow.com/a/30854065/1529907) and I was able to implement an improved version into a new shard so you can take advantage of it in your projects. Check out the source code at [akitaonrails/fiberpool](https://github.com/akitaonrails/fiberpool). This is how I added it to my project:
+A versão Crystal ficou um pouco mais complicada porque não achei nenhuma biblioteca de pool pra usar. Encontrei uma implementação rústica de pool [neste post do stackoverflow](http://stackoverflow.com/a/30854065/1529907) e consegui implementar uma versão melhorada num shard novo, pra que vocês possam aproveitar nos seus projetos. Confiram o código fonte em [akitaonrails/fiberpool](https://github.com/akitaonrails/fiberpool). Foi assim que adicionei no meu projeto:
 
 ```yaml
 dependencies:
@@ -104,7 +108,7 @@ dependencies:
     github: akitaonrails/fiberpool
 ```
 
-And this is how I used it. Notice that the logic itself is very close to the MRI Ruby version, but using a "Fiber Pool" instead of a Thread Pool.
+E foi assim que usei. Repare que a lógica em si é bem próxima da versão MRI Ruby, mas usando um "Fiber Pool" em vez de Thread Pool.
 
 ```ruby
 require "fiberpool"
@@ -132,19 +136,19 @@ module CrMangaDownloadr
 end
 ```
 
-But again, this is very I/O intensive and both the Ruby and Crystal versions take advantage of the fact that they can do more work while waiting for one HTTP request to finish.
+Mas, de novo, isso é muito intensivo em I/O e tanto a versão Ruby quanto a Crystal aproveitam o fato de poderem fazer mais trabalho enquanto esperam uma requisição HTTP terminar.
 
 <a name="reproducing-tests"> </a>
 
-### Reproducing the Tests
+### Reproduzindo os Testes
 
-I implemented a "Test Mode" in all 3 implementations. You can clone from my repositories:
+Implementei um "Modo de Teste" nas 3 implementações. Vocês podem clonar dos meus repositórios:
 
-* [Crystal version](https://github.com/akitaonrails/cr_manga_downloadr)
-* [Ruby/JRuby version](https://github.com/akitaonrails/manga-downloadr)
-* [Elixir version](https://github.com/akitaonrails/ex_manga_downloadr)
+* [Versão Crystal](https://github.com/akitaonrails/cr_manga_downloadr)
+* [Versão Ruby/JRuby](https://github.com/akitaonrails/manga-downloadr)
+* [Versão Elixir](https://github.com/akitaonrails/ex_manga_downloadr)
 
-And you can run the test mode like this:
+E vocês podem rodar o modo de teste assim:
 
 ```
 # crystal:
@@ -153,16 +157,16 @@ time ./cr_manga_downloadr --test
 # MRI:
 time bin/manga-downloadr --test
 
-# JRuby (you have to edit Gemfile to uncomment the JRuby engine):
+# JRuby (você precisa editar o Gemfile pra descomentar a engine JRuby):
 time jruby --dev -S bin/manga-downloadr --test
 
 # Elixir:
 time ./ex_manga_downloadr --test
 ```
 
-This will run only the fetching of chapters, pages and image links, skipping the actual downloading of the images, optimization through mogrify and PDF compilation. Those skipped parts take too long and don't say anything about the tested languages.
+Isso vai rodar só o fetch de capítulos, páginas e links de imagens, pulando o download real das imagens, otimização via mogrify e compilação do PDF. Essas partes puladas demoram demais e não dizem nada sobre as linguagens testadas.
 
-And if you want to test just the CPU intensive parts and avoid all networking interference altogether, you can turn on HTTP Cache mode and run the tests twice so the first run will cache everything first, like this:
+E se quiserem testar só as partes intensivas em CPU e evitar qualquer interferência de rede, vocês podem ligar o modo HTTP Cache e rodar os testes duas vezes pra que a primeira execução cacheie tudo, assim:
 
 ```
 # crystal:
@@ -171,14 +175,14 @@ time ./cr_manga_downloadr --test --cache
 # MRI:
 time bin/manga-downloadr --test --cache
 
-# JRuby (you have to edit Gemfile to uncomment the JRuby engine):
+# JRuby (você precisa editar o Gemfile pra descomentar a engine JRuby):
 time jruby --dev -S bin/manga-downloadr --test --cache
 
 # Elixir:
 time CACHE_HTTP=true ./ex_manga_downloadr --test
 ```
 
-So, **with all requests already cached** these are the results:
+Então, **com todas as requisições já cacheadas** esses são os resultados:
 
 Elixir:
 
@@ -207,29 +211,29 @@ Crystal:
 1,62s user 0,06s system 124% cpu 1,350 total
 ```
 
-The Ruby/JRuby/Crystal versions have internal benchmarks to take away startup time (this is why they have 2 lines of times).
+As versões Ruby/JRuby/Crystal têm benchmarks internos pra remover o tempo de startup (por isso elas têm 2 linhas de tempos).
 
-So, Elixir is very fast. It takes roughly 2 seconds to parse all the 1,900 HTML files to find the links.
+Então, Elixir é muito rápido. Leva mais ou menos 2 segundos pra parsear todos os 1.900 arquivos HTML procurando os links.
 
-Ruby is the slowest, obviously. It takes almost 6 seconds.
+Ruby é o mais lento, obviamente. Leva quase 6 segundos.
 
-The JRuby version also takes almost 6 seconds but internally it processes in 3 seconds, the rest is startup time and warming up of the JVM underneath.
+A versão JRuby também leva quase 6 segundos, mas internamente processa em 3 segundos; o resto é tempo de startup e warm up da JVM por baixo.
 
-And Crystal is the fastest, as you would expect because it's  a super otimized binary doing CPU bound operations, clocking in at a bit more than 1 second.
+E Crystal é o mais rápido, como vocês esperariam, porque é um binário super otimizado fazendo operações CPU bound, marcando pouco mais de 1 segundo.
 
-### Conclusion
+### Conclusão
 
-Even though the algorithms are roughly similar, Elixir is still winning by a very large margin in the total process (with the external HTTP requests).
+Mesmo com algoritmos mais ou menos parecidos, Elixir continua ganhando por uma margem muito grande no processo total (com as requisições HTTP externas).
 
-There is more than just interpreter/compiler speeds, there is more than single-thread, multi-thread, fibers infrastructure.
+Tem mais coisa em jogo além de velocidade de interpretador/compilador, além de infraestrutura de single-thread, multi-thread e fibers.
 
-We also have the maturity of the respective standard libraries (including TCP stack, HTTP client libraries, String/Array/Regex operations, etc) and 3d party libraries (libXML, Nokogiri, etc). So there is a lot that can interfere to the tests. I'd guess that Crystal's standard library, specially the networking parts, are not battle tested enough at this point (pre 1.0!).
+Também temos a maturidade das respectivas bibliotecas padrão (incluindo stack TCP, bibliotecas HTTP client, operações de String/Array/Regex, etc.) e bibliotecas de terceiros (libXML, Nokogiri, etc.). Então tem muita coisa que pode interferir nos testes. Eu chutaria que a stdlib do Crystal, especialmente as partes de rede, ainda não está bem testada em batalha nesse momento (pré 1.0!).
 
-So, the summary with the new results is this:
+Então, o resumo com os novos resultados é esse:
 
-* MRI Ruby 2.3.1: 27 seconds
-* JRuby 9.1.1.0: 30 seconds
-* Crystal 0.17.0: 21 seconds
-* Elixir: 15 seconds
+* MRI Ruby 2.3.1: 27 segundos
+* JRuby 9.1.1.0: 30 segundos
+* Crystal 0.17.0: 21 segundos
+* Elixir: 15 segundos
 
-Let me know if you have ideas to make them even faster!
+Me avisem se tiverem ideias pra deixar tudo ainda mais rápido!

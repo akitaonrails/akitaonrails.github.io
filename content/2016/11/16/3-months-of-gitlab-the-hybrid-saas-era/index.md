@@ -1,72 +1,76 @@
 ---
-title: 3 Months of GitLab. The Hybrid-SaaS Era
+title: "3 Meses de GitLab. A Era do SaaS Híbrido"
 date: '2016-11-16T16:44:00-02:00'
-slug: 3-months-of-gitlab-the-hybrid-saas-era
+slug: 3-meses-de-gitlab-a-era-do-saas-hibrido
+translationKey: 3-months-gitlab-hybrid-saas
+aliases:
+- /2016/11/16/3-months-of-gitlab-the-hybrid-saas-era/
 tags:
 - gitlab
 - saas
 - business
+- traduzido
 draft: false
 ---
 
-If you didn't already, maybe it's a good idea to read my previous post on [Moving to GitLab! Yes, it's worth it!](https://about.gitlab.com/2016/08/04/moving-to-gitlab-yes-its-worth-it/).
+Se você ainda não leu, talvez seja uma boa ideia dar uma olhada no meu post anterior [Moving to GitLab! Yes, it's worth it!](https://about.gitlab.com/2016/08/04/moving-to-gitlab-yes-its-worth-it/).
 
-My impressions stem from very specific circumstances, so this is not to be read as a general recommendation for every situation. For example, I didn't review GitLab's hosted options, which may be more compatible with circumstances different than mine.
+Minhas impressões vêm de circunstâncias bem específicas, então isso aqui não deve ser lido como recomendação geral para qualquer situação. Por exemplo, eu não avaliei as opções hospedadas do GitLab, que podem ser mais compatíveis com cenários diferentes do meu.
 
-In my case, the move to GitLab was part of an internal company strategy to have more control over our own data. In that strategy we also moved from using Slack to Mattermost, and from using Pivotal Tracker to my own open source alternative called [Central](https://github.com/Codeminer42/cm42-central), among other things.
+No meu caso, a mudança para o GitLab fez parte de uma estratégia interna da empresa para ter mais controle sobre nossos próprios dados. Nessa mesma estratégia também migramos do Slack para o Mattermost, e do Pivotal Tracker para uma alternativa open source que eu mesmo mantenho, chamada [Central](https://github.com/Codeminer42/cm42-central), entre outras coisas.
 
-Before the migration, I had dozens of active projects over GitHub and lots of archived ones at Bitbucket. I'm the kind that hates to lose data, so I keep redundant backups and try to never erase anything.
+Antes da migração, eu tinha dezenas de projetos ativos no GitHub e uma porção de projetos arquivados no Bitbucket. Sou do tipo que odeia perder dado, então mantenho backups redundantes e tento nunca apagar nada.
 
-I moved almost everything over to my own GitLab server and this is almost **200 repositories**, spread in 4 groups, with almost 80 active users. This accounts for more than 13,500 notes and over 5,200 Merge Requests already, and over 2,500 builds in the CI, and the internal Sidekiq controlling everything has over 51,000 jobs processed.
+Movi praticamente tudo para meu próprio servidor GitLab e isso dá quase **200 repositórios**, espalhados em 4 grupos, com cerca de 80 usuários ativos. Isso representa mais de 13.500 notas, mais de 5.200 Merge Requests, mais de 2.500 builds no CI, e o Sidekiq interno que controla tudo isso já processou mais de 51.000 jobs.
 
-In the last 3 months since the migration, I am paying a Digital Ocean bill of around $140 every month for the exact infrastructure I described in the previous article, with a separated box for the GitLab Core, the CI Runner, the CI Docker Registry Mirror, the CI Cache server and disposable machines for parallel builds, controlled by the Runner.
+Nos últimos 3 meses desde a migração, venho pagando uma conta de Digital Ocean em torno de $140 por mês pela infraestrutura exata que descrevi no artigo anterior, com máquinas separadas para o GitLab Core, o CI Runner, o CI Docker Registry Mirror, o servidor de cache do CI e máquinas descartáveis para builds paralelos, controladas pelo Runner.
 
-Although the reduction in cost is welcome, the whole endeavor was not done because of it. I could easily pay double or triple just for the convenience, but the underlying strategy is more important in this case.
+A redução de custo é bem-vinda, claro, mas não foi por causa dela que fui atrás dessa empreitada toda. Eu pagaria tranquilamente o dobro ou o triplo só pela conveniência, só que a estratégia por trás é o que mais importa nesse caso.
 
-My company has over 60 developers, working from our own offices in 6 different cities in Brazil (no freelancers and no home-office), communicating daily over Mattermost, Code Reviewing through GitLab's Merge Requests, having immediate automated tests feedback from GitLab CI, and project management through our own Central application.
+Minha empresa tem mais de 60 desenvolvedores, trabalhando a partir dos nossos próprios escritórios em 6 cidades diferentes no Brasil (sem freelancers e sem home-office), se comunicando diariamente pelo Mattermost, fazendo Code Review via Merge Requests do GitLab, recebendo feedback automatizado imediato dos testes pelo GitLab CI, e gerenciando projetos através da nossa própria aplicação Central.
 
-The only piece that is currently missing is a good static code analysis tool. We heavily rely on Code Climate, which I strongly believe is one of the best out there from our own experience.
+A única peça que ainda está faltando é uma boa ferramenta de análise estática de código. A gente depende bastante do Code Climate, que na nossa experiência é uma das melhores opções que existem hoje.
 
-I was about to start an endeavor to build a simplified OSS version to integrate into GitLab CI's, but [Bryan Helmkamp recently announced](http://blog.codeclimate.com/blog/2016/10/06/series-a-and-community-edition/) that they would release their own "Community Edition" version of Code Climate in the next few months.
+Eu estava prestes a começar uma empreitada para construir uma versão OSS simplificada para integrar com o GitLab CI, mas o [Bryan Helmkamp anunciou recentemente](http://blog.codeclimate.com/blog/2016/10/06/series-a-and-community-edition/) que eles vão lançar a própria "Community Edition" do Code Climate nos próximos meses.
 
-This is exactly the missing piece in my stack, and it will make my strategy move faster for next year.
+Essa é exatamente a peça que faltava no meu stack, e vai acelerar minha estratégia para o ano que vem.
 
-### Hybrid-SaaS Era
+### A Era do SaaS Híbrido
 
-In the past 5 to 10 years there was a fast move towards 3rd party "micro-services" structure. And this is really great as it allowed many small companies or even independent developers to tap into technology that made them not only move faster, but with increasingly more quality in their delivery.
+Nos últimos 5 a 10 anos houve um movimento rápido em direção a uma estrutura de "micro-serviços" de terceiros. E isso é realmente ótimo, porque permitiu que muitas empresas pequenas ou até desenvolvedores independentes tivessem acesso a tecnologias que os fizeram andar mais rápido e com cada vez mais qualidade na entrega.
 
-It's now super easy to have top-notch upload and storage service through tools like Cloudinary.
+Hoje é super fácil ter um serviço de upload e storage de primeira linha com ferramentas como Cloudinary.
 
-Also very easy to have top-notch relational database, with replication and scalability, such as Heroku Postgres or AWS RDS.
+Também é muito fácil ter um banco relacional de ponta, com replicação e escalabilidade, como Heroku Postgres ou AWS RDS.
 
-Project management as a service with Pivotal Tracker, Trello.
+Gerenciamento de projetos como serviço com Pivotal Tracker, Trello.
 
-Communication as a service with Slack, Hangout, etc.
+Comunicação como serviço com Slack, Hangout, etc.
 
-Knowledge Management as a service with GitHub, Bitbucket, etc.
+Gestão de conhecimento como serviço com GitHub, Bitbucket, etc.
 
-So now many tech companies are a mashup of several different 3rd party services.
+Então hoje muitas empresas de tecnologia são um mashup de vários serviços de terceiros diferentes.
 
-My small beef is that our entire knowledge, experience, portfolio is spread across a dozen or more opaque services, completely out of our control and depending on each company's (or their investors) whim.
+Minha pequena implicância é que todo o nosso conhecimento, experiência, portfólio, fica espalhado por uma dúzia ou mais de serviços opacos, completamente fora do nosso controle e dependendo do capricho de cada empresa (ou dos investidores delas).
 
-Don't get me wrong, I am not against using those services, on the contrary. I use several of them and I will continue to use many of them for the foreseable future. Some endeavors would not even be possible without the efficiency of this sample of a technology-based free market.
+Não me entenda mal, sou a favor de usar esses serviços, pelo contrário. Uso vários e vou continuar usando muitos deles no futuro previsível. Algumas empreitadas nem seriam possíveis sem a eficiência desse pedaço de um mercado livre baseado em tecnologia.
 
-But every now and then you reach a tipping point where it becomes important to have more control over your own data, your own identity. Not only for pure ownership but also to be able to use this data with better intent.
+Só que de vez em quando você chega num ponto de virada onde passa a ser importante ter mais controle sobre seus próprios dados, sua própria identidade. Tanto pela posse em si quanto pela possibilidade de usar esses dados com mais intenção.
 
-And I believe that at that point we should have an option that doesn't cost a couple of limbs to replicate.
+E acredito que, chegado esse ponto, a gente deveria ter uma opção que não custasse um rim e um pulmão pra replicar.
 
-Before an option such as GitLab, we were either limited to choose between walled-gardens such as GitHub or Bitbucket or you could invest a ton of resources trying to use small open sourced components to try to build your own. With GitLab we now have the option to make a smooth transition to its hosted option, so we don't incur in having to deal with infrastructure maintenance or we can choose to have full control. And the users will not suffer in the process.
+Antes de uma opção como o GitLab, estávamos limitados a escolher entre jardins murados como GitHub ou Bitbucket, ou então investir uma tonelada de recursos tentando juntar pequenos componentes open source para construir o seu próprio. Com o GitLab agora temos a opção de fazer uma transição suave para a versão hospedada, sem precisar encarar manutenção de infraestrutura, ou podemos optar por ter controle total. E os usuários não sofrem no processo.
 
-Which is why I believe that the best SaaS to endure the next decade will start to go into **Hybrid-mode**: having a commercial, usually "cheaper", hosted option, and a DIY (do-it-yourself) OSS version.
+Por isso acredito que o melhor SaaS para sobreviver à próxima década vai começar a entrar no **modo Híbrido**: ter uma opção comercial, hospedada, geralmente "mais barata", e uma versão OSS DIY (do-it-yourself).
 
-GitLab is like that. Mattermost is like that. Now Code Climate is getting like that.
+GitLab é assim. Mattermost é assim. Agora o Code Climate está ficando assim.
 
-In that option, companies like GitLab have a win-win situation. Many more people and companies can contribute towards making a mature and robust platform that everybody enjoys using, and at the same time, each participant can extend it to their own particular plans. GitLab can have a sustainable business model serving the long tail of companies and developers that want a reasonably affordable hosted service while the top 20% can pursue more specific endeavors using the same technology.
+Nessa opção, empresas como o GitLab ficam numa situação ganha-ganha. Muito mais gente e empresas podem contribuir para fazer uma plataforma madura e robusta que todo mundo gosta de usar, e ao mesmo tempo cada participante pode estender a ferramenta para seus próprios planos particulares. O GitLab consegue ter um modelo de negócio sustentável atendendo a cauda longa de empresas e desenvolvedores que querem um serviço hospedado razoavelmente acessível, enquanto os 20% do topo podem perseguir empreitadas mais específicas usando a mesma tecnologia.
 
-That way we remove the discussion of confidentiality, the way companies treat our data, and we move forward into more productive actions such as building a tool that benefits both the external public and  each others internal plans.
+Dessa forma tiramos a discussão de confidencialidade, do jeito como as empresas tratam nossos dados, e avançamos para ações mais produtivas como construir uma ferramenta que beneficia tanto o público externo quanto os planos internos de cada um.
 
-Walled gardens are here to stay. Releasing integration - whilst opache - public APIs is not enough. It's very exciting to see those new options arising to fill this gap. The OSS environment along with a sustainable business model makes sense. And I hope to continue to see more and more competitors to closed services following the Hybrid model in the near future.
+Jardins murados vieram para ficar. Liberar integração - ainda que opaca - via APIs públicas não é suficiente. É muito animador ver essas novas opções surgindo para preencher essa lacuna. O ambiente OSS junto de um modelo de negócio sustentável faz sentido. E espero continuar vendo cada vez mais concorrentes de serviços fechados seguindo o modelo Híbrido num futuro próximo.
 
-Why go the trouble to install, maintain and tweak open sourced alternatives to well-established hosted (albeit opaque) services? I believe more than a discussion over convenience, maintenance and cutting costs. We should start small, less risky, but as we grow we should be able to take control back. But we usually can’t get out of walled gardens without a significant - and sometimes impossible - investment in reinventing the wheel. We always had the small open sourced components that those services are built on, but to go from those small components to a full-featured system, it’s an unrealistic path.
+Por que dar o trabalho de instalar, manter e ajustar alternativas open source para serviços hospedados (ainda que opacos) bem estabelecidos? Acredito que seja uma discussão maior do que conveniência, manutenção e corte de custos. A gente deveria começar pequeno, com menos risco, mas à medida que cresce deveria conseguir retomar o controle. Só que normalmente não dá para sair de um jardim murado sem um investimento significativo - e às vezes impossível - em reinventar a roda. Sempre tivemos os pequenos componentes open source sobre os quais esses serviços são construídos, mas ir desses pequenos componentes até um sistema completo é um caminho irrealista.
 
-With this possible trend of post-SaaS, or Hybrid-SaaS as I call it, we may have just gained the missing link to go from just convenience to full control without the inherent costs and risks chasm.
+Com essa tendência possível de pós-SaaS, ou SaaS Híbrido como eu chamo, talvez a gente tenha acabado de ganhar o elo que faltava para ir da mera conveniência ao controle total sem o abismo inerente de custos e riscos.

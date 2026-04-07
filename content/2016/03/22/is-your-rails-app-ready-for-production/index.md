@@ -1,7 +1,10 @@
 ---
-title: Is your Rails app ready for Production?
+title: Sua aplicação Rails está pronta para Produção?
 date: '2016-03-22T15:11:00-03:00'
-slug: is-your-rails-app-ready-for-production
+slug: sua-aplicacao-rails-esta-pronta-para-producao
+translationKey: rails-app-ready-for-production
+aliases:
+- /2016/03/22/is-your-rails-app-ready-for-production/
 tags:
 - learning
 - rails
@@ -10,123 +13,124 @@ tags:
 - optimization
 - security
 - performance
+- traduzido
 draft: false
 ---
 
-This is a checklist. You should follow these instructions if you want some peace of mind after deploying an application to production. If you're experienced, please contribute in the comments section below. But if you're a beginner, you should pay attention.
+Isto aqui é um checklist. Siga estas instruções se você quiser ter um pouco de paz de espírito depois de colocar uma aplicação em produção. Se você tem experiência, contribua nos comentários abaixo. Mas se você é iniciante, preste muita atenção.
 
-### Where to Deploy? TL;DR: Heroku
+### Onde fazer o Deploy? TL;DR: Heroku
 
-Many people will first target the cheap choices. Usually EC2 micro instances or small Digital Ocean droplets. Unless you're aware that you **must** constantly monitor and upgrade those instances, **DON'T** do it.
+Muita gente vai mirar primeiro nas opções baratas. Normalmente instâncias EC2 micro ou pequenos droplets do Digital Ocean. A menos que você tenha consciência de que **precisa** monitorar e atualizar essas instâncias o tempo todo, **NÃO** faça isso.
 
-Instead choose a PaaS solution such as Heroku. It's a no-brainer. Software in production is not a one-off thing. For security alone you should not do it by yourself unless you know how to harden a OS distribution. For example, most people doesn't even know what [fail2ban](http://www.fail2ban.org/wiki/index.php/Main_Page) is. Don't assume that because you use SSH with keypairs you're secure. You're not.
+Em vez disso, escolha uma solução PaaS como o Heroku. É óbvio. Software em produção é coisa séria e contínua. Só pelo lado da segurança, você não deveria fazer isso sozinho a menos que saiba como hardenizar uma distribuição de SO. Por exemplo, a maioria das pessoas nem sabe o que é o [fail2ban](http://www.fail2ban.org/wiki/index.php/Main_Page). Não assuma que, só porque você usa SSH com par de chaves, está seguro. Você não está.
 
-For example, did you know that we just went through a [glibc security crisis](https://blog.heroku.com/archives/2016/3/21/patching-glibc-security-hole)? If you don't and you didn't touch your production servers in some time to upgrade all your components, you're open, wide open. I had many clients that hired freelancers to implement their apps and deploy and then stayed without anyone checking. You're all unsafe.
+Por exemplo, você sabia que a gente acabou de passar por uma [crise de segurança da glibc](https://blog.heroku.com/archives/2016/3/21/patching-glibc-security-hole)? Se você não sabia e há tempos não toca nos seus servidores de produção para atualizar todos os componentes, você está aberto, completamente aberto. Tive vários clientes que contrataram freelancers para implementar e fazer deploy das aplicações e depois ficaram sem ninguém olhando aquilo. Todos vocês estão inseguros.
 
-Heroku is no guarantee either, because app libraries get old, vulnerabilities get discovered, and you should upgrade them. Rails has an [active security team](https://groups.google.com/forum/#!forum/rubyonrails-security) releasing security patches all the time. If you haven't been upgrading, you're unsafe.
+O Heroku também não é garantia, porque as bibliotecas das aplicações ficam velhas, vulnerabilidades são descobertas, e você precisa atualizá-las. O Rails tem um [time de segurança ativo](https://groups.google.com/forum/#!forum/rubyonrails-security) lançando patches o tempo inteiro. Se você não anda atualizando, está inseguro.
 
-But 24x7 support is not cheap, if you have your own infrastructure or use an IaaS platform such as AWS EC2, you should have 24x7 personnel, this means at least 2 full-time system administrators/devops taking care of things. Or, you use a PaaS that at least keep those basic sanitations in check and a part-time developer to at least keep upgrading your apps.
+Mas suporte 24x7 é caro. Se você tem infraestrutura própria ou usa uma plataforma IaaS como AWS EC2, você precisa de pessoal 24x7, ou seja, no mínimo 2 administradores de sistema/devops em tempo integral cuidando das coisas. A alternativa é usar um PaaS que pelo menos mantém essas higienes básicas em dia, mais um desenvolvedor part-time só para manter as suas aplicações atualizadas.
 
-If you don't, you're opening your business to serious liability. And if you're a developer, do the responsible thing: disclose this fact to your clients and let them make an informed choice. They can choose to stay in the cheap, but at least they know what this actually means.
+Se você não fizer isso, está expondo seu negócio a uma responsabilidade enorme. E se você é desenvolvedor, faça a coisa certa: avise seus clientes sobre esse fato e deixe-os tomar uma decisão informada. Eles podem optar por continuar no barato, mas pelo menos sabem o que isso realmente significa.
 
-### Which web server? TL;DR: Passenger or Puma
+### Qual web server? TL;DR: Passenger ou Puma
 
-Most Rails apps lack basic libraries that should be installed to make them work correctly.
+A maioria das aplicações Rails não tem nem as bibliotecas básicas instaladas para funcionar direito.
 
-I've seen people running production apps by just firing up <tt>rails server</tt> and nothing else! This is running the basic Webrick web server, in production! You must choose between Puma, Unicorn, Passenger. Unicorn actually does not protect your app against slow clients, so avoid it if you can.
+Já vi gente rodando aplicação em produção simplesmente subindo o <tt>rails server</tt> e mais nada! Isso roda o Webrick, o web server básico, em produção! Você tem que escolher entre Puma, Unicorn ou Passenger. O Unicorn, na verdade, não protege sua aplicação contra clientes lentos, então evite-o se puder.
 
-If you're in doubt, [install Passenger](https://www.phusionpassenger.com/library/walkthroughs/deploy/ruby/heroku/standalone/oss/deploy_app_main.html) and call it a day.
+Se estiver na dúvida, [instale o Passenger](https://www.phusionpassenger.com/library/walkthroughs/deploy/ruby/heroku/standalone/oss/deploy_app_main.html) e vá tomar um café.
 
-The most common choice nowadays is [using Puma](https://devcenter.heroku.com/articles/deploying-rails-applications-with-the-puma-web-server). But if you're running under Heroku or using small instances, keep in mind your RAM usage. A normal Rails application consumes at least 150Mb to 200Mb or more depending on the size of your app. The smallest Heroku dyno has only 512Mb of RAM, that means you should not configure Puma or Unicorn to have more than 2 instances. I'd recommend going for the 2X Dyno (1GB) and have at most 3 instances (which means 3 possible concurrent requests being processed at once).
+A escolha mais comum hoje em dia é [usar Puma](https://devcenter.heroku.com/articles/deploying-rails-applications-with-the-puma-web-server). Mas se você está rodando no Heroku ou usando instâncias pequenas, tenha em mente o consumo de RAM. Uma aplicação Rails normal consome no mínimo 150Mb a 200Mb ou mais, dependendo do tamanho do seu app. O menor dyno do Heroku tem só 512Mb de RAM, o que significa que você não deve configurar Puma ou Unicorn com mais que 2 instâncias. Eu recomendaria ir de Dyno 2X (1GB) e ter no máximo 3 instâncias (ou seja, 3 requisições concorrentes possíveis sendo processadas ao mesmo tempo).
 
-It's not uncommon for your app to keep increasing RAM usage over time and once every couple of days you see R14 happening, then your dyno reboots and it starts working better for a while until it reaches the ceiling again.
+É comum sua aplicação ir aumentando o consumo de RAM ao longo do tempo, e a cada par de dias você ver um R14 acontecendo. Aí o dyno reinicia e começa a funcionar melhor por um tempo, até bater no teto de novo.
 
-If you don't know why that it's happening, and it's infrequent, you can temporarily use [Puma Worker Killer](https://github.com/schneems/puma_worker_killer) - if you're using Puma, of course - to keep monitoring your instances until they reach a certain lower ceiling and they automatically recycle before your users see the R14 errors.
+Se você não sabe por que isso acontece e é algo infrequente, dá para usar temporariamente o [Puma Worker Killer](https://github.com/schneems/puma_worker_killer) - se você estiver usando Puma, claro - para ficar monitorando suas instâncias até que cheguem a um certo teto mais baixo e reciclem automaticamente antes que seus usuários vejam os erros R14.
 
-You may also have heard of [Out-of-Band GC](http://tmm1.net/ruby21-oobgc). Just [be warned](https://github.com/puma/puma/issues/450) that Puma in threaded mode won't work well with it. If you're using Unicorn, by all means do use it.
+Você também já deve ter ouvido falar do [Out-of-Band GC](http://tmm1.net/ruby21-oobgc). Mas [fique avisado](https://github.com/puma/puma/issues/450) que o Puma em modo threaded não funciona bem com isso. Se você usa Unicorn, então use sem medo.
 
-### Measure, Measure, Measure. TL;DR: New Relic
+### Meça, Meça, Meça. TL;DR: New Relic
 
 ![Heroku Metrics](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/535/big_heroku-metrics.png)
 
-You should **always** monitor your app. Be it with custom installed software such as Nagios, Munin, Zabbix, Zenoss, Ganglia, etc or at the very least the metrics that Heroku provides you, as in the image above.
+Você deve **sempre** monitorar sua aplicação. Seja com software instalado por conta própria como Nagios, Munin, Zabbix, Zenoss, Ganglia etc, ou no mínimo com as métricas que o próprio Heroku fornece, como na imagem acima.
 
-If your instances are behaving strangely, you should take a look at the warnings. A frequent set of [R14](https://devcenter.heroku.com/articles/ruby-memory-use) errors means that your app's memory consumption is growing overtime and blowing the maximum amount of RAM available in your instance (a probable memory leaking). At the very least this means that you should decrease the number of concurrency/workers in your Puma/Unicorn and also increase the number of dynos to compensate if you do have enough traffic to justify it. But this is one metrics-oriented action that you can take because you have the information to make an informed decision.
+Se suas instâncias estão se comportando de forma estranha, dê uma olhada nos avisos. Um conjunto frequente de erros [R14](https://devcenter.heroku.com/articles/ruby-memory-use) significa que o consumo de memória da sua app está crescendo ao longo do tempo e estourando o limite de RAM disponível na instância (provável vazamento de memória). No mínimo, isso significa que você deve diminuir a concorrência/workers no seu Puma/Unicorn e também aumentar o número de dynos para compensar, se tiver tráfego suficiente para justificar. Mas essa é uma ação orientada a métricas que você pode tomar porque tem informação para uma decisão consciente.
 
-But you should also be storing and indexing your logs using custom installed software such as Greylog2 or Logstash or using a SaaS alternative such as [Papertrail](https://elements.heroku.com/addons/papertrail). There are many reasons why an app might be leaking, of why everything seems fine in the metrics but you're having random errors. Always query the logs for answers.
+Você também deve estar armazenando e indexando seus logs usando software instalado como Greylog2 ou Logstash, ou uma alternativa SaaS como o [Papertrail](https://elements.heroku.com/addons/papertrail). Existem várias razões pelas quais uma aplicação pode estar vazando, ou pelas quais tudo parece estar bem nas métricas mas você está tendo erros aleatórios. Sempre consulte os logs para ter respostas.
 
-Better yet, [install New Relic APM](https://docs.newrelic.com/docs/agents/ruby-agent/miscellaneous/ruby-agent-heroku). You will have both the metrics, the automated alerts, the errors measurement and really deep diagnostics to see exactly what line in your source code is guilty for your poor performance or frequent errors or erratic behavior. If you're in doubt, just install it, the basic plan is free anyway.
+Melhor ainda, [instale o New Relic APM](https://docs.newrelic.com/docs/agents/ruby-agent/miscellaneous/ruby-agent-heroku). Você terá métricas, alertas automatizados, medição de erros e diagnósticos realmente profundos para ver exatamente que linha do seu código fonte é a culpada pela performance ruim, pelos erros frequentes ou pelo comportamento errático. Se estiver em dúvida, instale logo, o plano básico é grátis mesmo.
 
-### Some Rails Dependencies
+### Algumas Dependências do Rails
 
-You should **NOT** be using Rails below version 4.0 by now. 3.2 is still widely used but it will stop being supported soon. Do not use Rails 5.0 right now unless you're experienced enough to know what to do. Anything from 4.0 to 4.2 should be ok, but be aware of the minor releases that fixes security vulnerabilities.
+Você **NÃO** deveria estar usando Rails abaixo da versão 4.0 a essa altura. O 3.2 ainda é bastante usado, mas o suporte vai acabar logo. Não use o Rails 5.0 agora a menos que tenha experiência suficiente para saber o que fazer. Qualquer coisa entre 4.0 e 4.2 deve estar ok, mas fique atento aos minor releases que corrigem vulnerabilidades de segurança.
 
-You should **NOT** be using Ruby below version 2.2 by now. Security upgrades for 2.0 ended this February 2016. 2.1 was not a good stable release, but 2.2 and 2.3 are very good and you should be using them.
+Você **NÃO** deveria estar usando Ruby abaixo da versão 2.2 a essa altura. As atualizações de segurança para o 2.0 acabaram em fevereiro de 2016. O 2.1 não foi um release estável bom, mas o 2.2 e o 2.3 estão muito bons e você deveria estar usando eles.
 
-So the combination of Ruby 2.3.0 and Rails 4.2.5.2 (by March 2016) is the optimal choice for best stability, security and ecosystem support.
+Então a combinação Ruby 2.3.0 e Rails 4.2.5.2 (a partir de março de 2016) é a escolha ideal para a melhor estabilidade, segurança e suporte do ecossistema.
 
-You should have at least the following dependencies installed by default:
+Você deveria ter, no mínimo, as seguintes dependências instaladas por padrão:
 
 * [Rails 12 Factor gem](https://github.com/heroku/rails_12factor)
 * [Rack-Cache middleware](http://rtomayko.github.io/rack-cache/)
-    - [Dalli gem with Memcached or Memcachier](https://devcenter.heroku.com/articles/memcachier#rails-3-and-4) - even if you're not using fragment caching or AR caching, this is still useful at least for the [Rack-Cache gem](https://devcenter.heroku.com/articles/rack-cache-memcached-rails31).
-* [Rack-Attack](https://github.com/kickstarter/rack-attack) - read how to properly configure!
-* [Rack-Protection](http://www.sinatrarb.com/rack-protection/) - read how to properly configure and what protections you want to activate, not everything, but at least CSRF and XSS.
-* [Sprockets 3.3+](http://www.schneems.com/blogs/2016-02-18-speeding-up-sprockets/) - make sure you're using the Sprockets version that fixes the slow speeds and makes it reasonably faster
+    - [Gem Dalli com Memcached ou Memcachier](https://devcenter.heroku.com/articles/memcachier#rails-3-and-4) - mesmo se você não estiver usando fragment caching ou AR caching, isso ainda é útil pelo menos para a [gem Rack-Cache](https://devcenter.heroku.com/articles/rack-cache-memcached-rails31).
+* [Rack-Attack](https://github.com/kickstarter/rack-attack) - leia como configurar direito!
+* [Rack-Protection](http://www.sinatrarb.com/rack-protection/) - leia como configurar direito e quais proteções você quer ativar, não tudo, mas pelo menos CSRF e XSS.
+* [Sprockets 3.3+](http://www.schneems.com/blogs/2016-02-18-speeding-up-sprockets/) - garanta que está usando a versão do Sprockets que corrige a lentidão e deixa as coisas razoavelmente mais rápidas
 
-### Which Database? TL;DR: use Postgresql
+### Qual Banco de Dados? TL;DR: use Postgresql
 
-**Do NOT** choose MongoDB or similar unless you have a very strong reason to and you are confident that you're very good at what you're doing and you will be sticking around to maintain what you deploy. Otherwise stick to Postgresql and the "pg" gem, you won't regret it, nor will your client.
+**NÃO** escolha MongoDB ou similar a menos que tenha uma razão muito forte e esteja confiante de que é muito bom no que faz e vai ficar por perto para manter o que colocou em produção. Caso contrário, fique no Postgresql e na gem "pg", você não vai se arrepender, nem o seu cliente.
 
-Do use small Redis instances (particularly SaaS options such as [Heroku Redis](https://elements.heroku.com/addons/heroku-redis) ) with [Sidekiq](https://github.com/mperham/sidekiq/wiki/Deployment). You can choose to use the lighter Sucker Punch but be aware that it will increase the RAM usage of your instances considerably depending on the size of your queues and the serialized input data for the workers. It's now always trivial how many Sidekiq workers you should have, but [this calculator](http://manuel.manuelles.nl/sidekiq-heroku-redis-calc/) could help.
+Use instâncias pequenas de Redis (particularmente opções SaaS como o [Heroku Redis](https://elements.heroku.com/addons/heroku-redis)) com o [Sidekiq](https://github.com/mperham/sidekiq/wiki/Deployment). Você pode optar pelo Sucker Punch, mais leve, mas saiba que ele vai aumentar bastante o consumo de RAM das suas instâncias dependendo do tamanho das filas e dos dados serializados de entrada para os workers. Nem sempre é trivial saber quantos workers Sidekiq você deveria ter, mas [esta calculadora](http://manuel.manuelles.nl/sidekiq-heroku-redis-calc/) pode ajudar.
 
-There are at least 2 big mistakes most people make using Sidekiq:
+Existem pelo menos 2 grandes erros que a maioria das pessoas comete usando Sidekiq:
 
-* Having heavy workers hitting your master database. For example a big analytics procedure fetching large sets of data while your main website also have heavy users usage writing data all the time. Definitely add a [Follower database](https://devcenter.heroku.com/articles/heroku-postgres-follower-databases) and point the Sidekiq workers (read-only) there for analytics, reports and similar workloads.
-* Fetching large datasets in-memory and blowing your worker dynos. If you do anything similar to "YourModel.all.each { |r| ... }" you're shooting yourself in the foot. Rails has easy ways to [fetch small sets in batch](http://api.rubyonrails.org/classes/ActiveRecord/Batches.html) for you to process, use them.
+* Ter workers pesados batendo no seu banco de dados master. Por exemplo, um grande procedimento de analytics buscando grandes conjuntos de dados enquanto seu site principal também tem uso intenso de usuários escrevendo dados o tempo inteiro. Definitivamente adicione um [banco Follower](https://devcenter.heroku.com/articles/heroku-postgres-follower-databases) e aponte os workers Sidekiq (read-only) para lá, para analytics, relatórios e cargas similares.
+* Buscar grandes datasets em memória e estourar seus dynos de worker. Se você fizer qualquer coisa parecida com "YourModel.all.each { |r| ... }", está dando um tiro no próprio pé. O Rails tem formas fáceis de [buscar pequenos conjuntos em batch](http://api.rubyonrails.org/classes/ActiveRecord/Batches.html) para você processar, use-as.
 
-### Are you using a CDN? TL;DR: just do
+### Você está usando um CDN? TL;DR: simplesmente use
 
-This is easy, use [AWS CloudFront](https://devcenter.heroku.com/articles/using-amazon-cloudfront-cdn) or [Fastly](https://devcenter.heroku.com/articles/fastly) or something else, but **USE** a CDN. It's a no-brainer.
+Isso é fácil, use [AWS CloudFront](https://devcenter.heroku.com/articles/using-amazon-cloudfront-cdn) ou [Fastly](https://devcenter.heroku.com/articles/fastly) ou outra coisa, mas **USE** um CDN. É óbvio.
 
-Otherwise your assets will be served by your already small web dyno instances. And this is a heavy lifting that are better served from a much faster CDN. Your users will perceive orders of magnitude in usability by changing just a couple of configuration lines in your code.
+Caso contrário, seus assets vão ser servidos pelas suas instâncias de web dyno, que já são pequenas. E isso é um trabalho pesado que é melhor servido por um CDN muito mais rápido. Seus usuários vão perceber ordens de magnitude em usabilidade só mudando algumas linhas de configuração no seu código.
 
-If you implemented your Rails views, templates, stylesheets using the "image_tag", "asset_path" helpers, it's just automatic. Just do it already.
+Se você implementou suas views, templates e stylesheets do Rails usando os helpers "image_tag" e "asset_path", isso é automático. Faça logo.
 
-And while we're in the subject of assets, if you happen to have image uploading and you're using the simple way of posting a multipart form directly to your Rails app, you will have trouble because Heroku imposes - a correct - maximum of 30 seconds of timeout. If you have many users uploading many high-resolution and heavy sized images, they will see increasing amounts of timeouts.
+E já que estamos falando de assets, se você por acaso tem upload de imagens e está usando o jeito simples de postar um formulário multipart direto para a sua aplicação Rails, vai ter problemas, porque o Heroku impõe - corretamente - um timeout máximo de 30 segundos. Se você tem muitos usuários subindo muitas imagens de alta resolução e tamanho pesado, eles vão ver cada vez mais timeouts.
 
-Use the [Attachinary gem](http://cloudinary.com/documentation/rails_additional_topics) to direct upload via Javascript, from the browser, to the Cloudinary service, completly bypassing your Rails app, which will just receive the ID once the upload finishes. Again, there is a very generous free plan and it's so simple to implement that you must do it right away.
+Use a [gem Attachinary](http://cloudinary.com/documentation/rails_additional_topics) para fazer upload direto via Javascript, do navegador para o serviço Cloudinary, contornando completamente sua aplicação Rails, que vai apenas receber o ID quando o upload terminar. De novo, tem um plano grátis bem generoso e é tão simples de implementar que você precisa fazer isso já.
 
-### You laid off your developer, what to do? TL;DR: revoke accesses!
+### Você demitiu seu desenvolvedor, e agora? TL;DR: revogue os acessos!
 
-This is something that happen a lot: a small company needs to cut costs and lay off developers.
+Isso acontece muito: uma empresa pequena precisa cortar custos e demitir desenvolvedores.
 
-Make sure you revoke accesses. In AWS it's a lot more convoluted if you don't know your way through their IAM authorization tool. Or worse: if they have the private keys (.pem files) to your EC2 instances!! You will have to create new keypairs, deactivate the old EC2 instances and create new ones. A royal PITA.
+Garanta que você revogue os acessos. Na AWS isso é bem mais convoluto se você não conhece bem a ferramenta de autorização IAM deles. Ou pior: se eles têm as chaves privadas (arquivos .pem) para suas instâncias EC2!! Você vai ter que criar novos pares de chaves, desativar as instâncias EC2 antigas e criar novas. Uma puta dor de cabeça.
 
-You must change passwords to your DNS service, Github/Bitbucket organization, remove SSH keys from the .ssh/authorized_keys files in all your servers, etc.
+Você precisa trocar senhas do seu serviço de DNS, da organização no Github/Bitbucket, remover chaves SSH dos arquivos .ssh/authorized_keys em todos os seus servidores etc.
 
-Make sure your company has good legal support and make every collaborator, employee or 3rd party, sign a non-disclosure agreement, non-compete or confidentiality agreements.
+Garanta que sua empresa tem um bom suporte jurídico e faça com que cada colaborador, funcionário ou terceirizado, assine um acordo de confidencialidade, NDA ou non-compete.
 
-You **MUST** have at least one key person in the company that has control over the keys, passwords and access to every service your company depends on to run. Otherwise don't be surprised when your app goes offline.
+Você **PRECISA** ter pelo menos uma pessoa-chave na empresa que tem controle sobre as chaves, senhas e acesso a todo serviço do qual sua empresa depende para funcionar. Caso contrário, não se surpreenda quando sua aplicação ficar fora do ar.
 
-And don't fool yourself into thinking that just because an app is online and running it will keep that way for long. Security vulnerabilities are on the wild, it's just a matter of time until some glitch put your service down and you better have someone to put it back online for you if you don't know how to do it.
+E não se iluda achando que, só porque uma aplicação está online e rodando, vai continuar assim por muito tempo. Vulnerabilidades de segurança estão soltas por aí, é só uma questão de tempo até algum problema derrubar seu serviço, e é melhor você ter alguém para colocá-lo de volta no ar se você mesmo não souber fazer isso.
 
-### Big Site? Congratulations, what to do now? 
+### Site Grande? Parabéns, e agora?
 
-If your business is thriving, blooming, congratulations. You're in the very very small percentage that actually made it.
+Se seu negócio está prosperando, florescendo, parabéns. Você está naquela porcentagem muito muito pequena que realmente conseguiu.
 
-Soon your brand new app will become that ugly, dreaded **Legacy** system. Worse, it's probably one of those feared **monoliths** or even worse, you let a hipster developer create a spaghetti architecture full of unchecked **microservices**. You're doomed either way.
+Em breve sua aplicação novinha em folha vai virar aquele sistema feio e temido chamado **Legacy**. Pior, provavelmente é um daqueles **monolitos** assustadores ou, pior ainda, você deixou um desenvolvedor hipster criar uma arquitetura espaguete cheia de **microserviços** sem controle. Você está condenado de qualquer jeito.
 
-This situation requires you to be grounded: there is no silver bullet, just business as usual.
+Essa situação exige que você fique com os pés no chão: bala de prata não existe, é o trabalho de sempre.
 
-You must keep ahead of the game, and the monitoring part I mentioned plays a big part to steer you through the many possible directions you can go. For example, for a short period of time you can increase the plans of your SaaS services such as databases, caches, queues, and also add more parallel web dynos.
+Você precisa se manter à frente do jogo, e a parte de monitoramento que mencionei tem um papel grande para guiar você pelas várias direções possíveis. Por exemplo, por um curto período de tempo dá para aumentar os planos dos seus serviços SaaS como bancos de dados, caches, filas, e também adicionar mais web dynos paralelos.
 
-While that will hold for a while (your metrics can help you estimate for how long), now you need to come up with a plan to optimize what you have. And no, rewriting everything is that very last thing you want to do, unless you intend to not have a life for the next couple of years.
+Isso vai segurar a onda por um tempo (suas métricas podem ajudar a estimar por quanto), mas agora você precisa montar um plano para otimizar o que tem. E não, reescrever tudo é a última coisa que você quer fazer, a menos que pretenda não ter vida pelos próximos dois anos.
 
-Trust Paretto: in real life, 80% of the main problems can be solved with 20% of the effort. The main big tip: open New Relic - now loaded with real production data - and check the Top worse performers and start from there. The first one you solve (be it an ugly N+1 query to your database, slow web service integration), will give you a lot of room to breath.
+Confie em Pareto: na vida real, 80% dos principais problemas podem ser resolvidos com 20% do esforço. A grande dica: abra o New Relic - agora carregado com dados reais de produção - e olhe os Top piores performers e comece por aí. O primeiro que você resolver (seja uma feia query N+1 no banco, uma integração lenta com web service), vai te dar muito espaço para respirar.
 
-### Conclusion
+### Conclusão
 
-What I just said is nothing but the tip of the iceberg in terms of Rails performance optimization. And I can assure you that there is a lot of room to improve without having to resort to rewriting everything in the next hip language out there. I recommend you buy Nate Berkopec's ["The Complete Guide to Rails Performance"](https://www.railsspeed.com/) to really learn your turf.
+O que eu acabei de dizer é só a ponta do iceberg em termos de otimização de performance Rails. E posso te garantir que existe muito espaço para melhorar sem precisar recorrer a reescrever tudo na próxima linguagem da moda. Recomendo que você compre o ["The Complete Guide to Rails Performance"](https://www.railsspeed.com/) do Nate Berkopec para realmente aprender o terreno.
 
-This is a very quick compilation that I just dumped out of my mind, but there is much more that we can consider. Shoot questions in the comments section and other important items that I may have overlooked.
+Esta é uma compilação muito rápida que despejei da cabeça, mas tem muito mais coisa que podemos considerar. Mande perguntas na seção de comentários e outros itens importantes que eu posso ter deixado passar.

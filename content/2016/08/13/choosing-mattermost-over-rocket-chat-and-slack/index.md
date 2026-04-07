@@ -1,65 +1,69 @@
 ---
-title: Choosing MatterMost over Rocket.chat and Slack
+title: Escolhendo MatterMost no lugar de Rocket.chat e Slack
 date: '2016-08-13T22:41:00-03:00'
-slug: choosing-mattermost-over-rocket-chat-and-slack
+slug: escolhendo-mattermost-no-lugar-de-rocket-chat-e-slack
+translationKey: choosing-mattermost
+aliases:
+- /2016/08/13/choosing-mattermost-over-rocket-chat-and-slack/
 tags:
 - mattermost
 - docker
 - golang
 - rocket.chat
 - slack
+- traduzido
 draft: false
 ---
 
-I am a technologist, basically a nerd. So when I obsess over technical stuff, no matter how small, I just can't sleep calmly until I find reasonable closure.
+Eu sou um tecnólogo, basicamente um nerd. Então, quando fico obcecado com alguma questão técnica, por menor que seja, simplesmente não consigo dormir tranquilo até encontrar uma solução razoável.
 
-My team, my clients, we've been happily using Slack for more than 2 years, as I believe was true for many teams around the world. Although no one ever complained, I was always annoyed by the small things. First of all, as everything of value, it costs. Either I pay USD 6.67/month/user or I live with the restrictions of the free plan. And as most other teams, I lived with the restrictions for as long as I could.
+Meu time, meus clientes, todos nós usamos Slack felizes por mais de 2 anos, como acredito que muitos times pelo mundo também usaram. Apesar de ninguém nunca ter reclamado, eu sempre me incomodava com pequenos detalhes. Em primeiro lugar, como tudo que tem valor, custa. Ou pago USD 6.67/mês/usuário, ou aceito as restrições do plano gratuito. E, como a maioria dos outros times, fui levando com as restrições enquanto deu.
 
-For example, to get rid of the warnings to upgrade because we hit the upload limits, I created a small tool called [slack_cleanup](https://github.com/akitaonrails/slack_cleanup) (first in Elixir, and then in [Crystal](https://github.com/akitaonrails/cr_slack_cleanup) just for exercise). This helped for a while.
+Por exemplo, para me livrar dos avisos para fazer upgrade porque batemos no limite de uploads, criei uma pequena ferramenta chamada [slack_cleanup](https://github.com/akitaonrails/slack_cleanup) (primeiro em Elixir e depois em [Crystal](https://github.com/akitaonrails/cr_slack_cleanup), só por exercício). Isso ajudou por um tempo.
 
-Our team kept growing, steadily, frequently, as well as clients. The more users we add, the more conversations, the faster we hit the restrictions. History gets lost more frequently, we need to clean up uploads more often. It gets old very fast.
+Nosso time foi crescendo, de forma constante e frequente, assim como os clientes. Quanto mais usuários adicionamos, mais conversas, mais rápido batemos nas restrições. Histórico se perde com mais frequência, precisamos limpar uploads com mais frequência. Isso cansa muito rápido.
 
-One thing I value above everything is knowledge. As an small example, I myself keep multiple backups for all my emails, all my projects, all my assets that I produced in the last 20 years. Heck, I have a 6 TB, Raid-5, Drobo system right in my home desk and 3 extra 1TB external drives for backup. I've lost very little over the years.
+Uma coisa que valorizo acima de tudo é conhecimento. Como pequeno exemplo, eu mesmo mantenho múltiplos backups de todos os meus emails, todos os meus projetos, todos os assets que produzi nos últimos 20 anos. Caramba, tenho um sistema Drobo de 6 TB em Raid-5 bem na minha mesa de casa e mais 3 HDs externos de 1TB para backup. Perdi muito pouco ao longo dos anos.
 
-It really annoys me when I lose information.
+Realmente me incomoda quando perco informação.
 
-* Gmail Business, DropBox, AWS S3 buckets, being external services, don't worry me because I keep copies of everything offline. So if those accounts get busted all of a sudden, I have multiple copies.
+* Gmail Business, DropBox, buckets do AWS S3, por serem serviços externos, não me preocupam, pois mantenho cópias de tudo offline. Então, se essas contas forem comprometidas de uma hora para outra, tenho múltiplas cópias.
 
-* GitHub annoyed me a bit because although I have multiple copies of the repositories, I would lose all the Pull Request, Issues history. That's one reason I moved to my own GitLab and helped tweak the import process to grab those Pull Request history.
+* GitHub me incomodava um pouco porque, embora eu tenha múltiplas cópias dos repositórios, perderia todo o histórico de Pull Requests e Issues. Esse é um dos motivos pelos quais migrei para o meu próprio GitLab e ajudei a ajustar o processo de import para puxar esse histórico de Pull Requests.
 
-* Slack annoys me a lot for the aforementioned reasons, which is why last week we tried both MatterMost first, and then we deployed Rocket.chat.
+* O Slack me incomoda muito pelos motivos já mencionados, e por isso na semana passada testamos primeiro o MatterMost e depois subimos o Rocket.chat.
 
 ![Mattermost](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/558/big_8_13_16__22_20.png)
 
 ### There, and Back Again
 
-We moved from Slack to Rocket.chat and a couple of days latter we are moving again, now to Mattermost.
+Saímos do Slack para o Rocket.chat e, alguns dias depois, estamos migrando de novo, agora para o Mattermost.
 
-Yes, this was cumbersome. My team was not very happy for leaving Slack. Slack really is slick, full-featured, good-looking, well-rounded, a proper web product for this generation. Any alternative should be at least almost as good-looking, and at least have bug-free features, including webhooks.
+Sim, isso foi trabalhoso. Meu time não ficou muito feliz em deixar o Slack. O Slack é realmente elegante, completo, bonito, redondinho, um produto web de verdade para esta geração. Qualquer alternativa precisa ser pelo menos quase tão bonita e ter funcionalidades sem bugs, incluindo webhooks.
 
-Mattermost fits the bill almost perfectly but the open sourced Team Edition lacked one important feature for me: the ability to disallow normal members to rename and/or delete private groups. Yes, we expect grown-ups to behave, but when you have remote teams, remote clients, external users with no commitment to the company, it's a hassle.
+O Mattermost atende quase perfeitamente, mas a Team Edition open source carecia de uma funcionalidade importante para mim: a possibilidade de impedir que membros comuns renomeiem e/ou apaguem grupos privados. Sim, esperamos que adultos se comportem, mas quando você tem times remotos, clientes remotos, usuários externos sem nenhum compromisso com a empresa, isso vira uma dor de cabeça.
 
-Yes, I could and I probably should use the payed Enterprise Edition. But for just that small feature, it felt too expensive. So that triggered me to let it go and install Rocket.chat instead. I moved my entire team there (almost 50 people, because I didn't move the clients yet). That would be the end of the story.
+Sim, eu poderia, e provavelmente deveria, usar a Enterprise Edition paga. Mas só por essa pequena funcionalidade, achei caro demais. Isso me motivou a deixar pra lá e instalar o Rocket.chat. Movi todo o meu time pra lá (quase 50 pessoas, porque ainda não migrei os clientes). Esse seria o fim da história.
 
-But Rocket.chat has both a complex infrastructure to deal with (you must have at the very least 3 boxes or pay extra for a proper Mongodb SaaS). Actually, [in my previous post](http://www.akitaonrails.com/2016/08/09/moving-away-from-slack-into-rocket-chat-good-enough) I explained why you MEAN guys should not be careless dealing with Mongodb. In a nutshell: Mongodb was not meant to run in a single instance, you must have a replica set. If you have a single instance Mongodb, you're doing it wrong.
+Mas o Rocket.chat tem uma infraestrutura complexa para lidar (você precisa ter no mínimo 3 máquinas, ou pagar a mais por um SaaS de Mongodb decente). Aliás, [no meu post anterior](http://www.akitaonrails.com/2016/08/09/moving-away-from-slack-into-rocket-chat-good-enough) expliquei por que vocês, pessoal de MEAN, não devem ser desleixados ao lidar com Mongodb. Resumindo: Mongodb não foi pensado para rodar em uma única instância, você precisa ter um replica set. Se você tem um Mongodb em instância única, está fazendo errado.
 
-And the most problematic: the client-side is just too heavy. It frequently spikes out the CPU in not so powerful machines. It's noticeably and measurably slower to navigate in its UI, compared to Slack. MatterMost UI was much faster and way more responsive.
+E o mais problemático: o client-side é simplesmente pesado demais. Frequentemente faz a CPU disparar em máquinas não tão potentes. É notavelmente, e mensuravelmente, mais lento de navegar na UI, comparado ao Slack. A UI do MatterMost era muito mais rápida e muito mais responsiva.
 
-I was almost willing to overlook the lack of a proper test suite. I was willing to try to live with Meteor and CoffeeScript. I was willing to deal with the complex MongoDB maintenance.
+Eu estava quase disposto a relevar a falta de uma suíte de testes decente. Estava disposto a tentar conviver com Meteor e CoffeeScript. Estava disposto a lidar com a manutenção complexa do MongoDB.
 
-But slow responsiviness across many of the members of my team is a no-go, a big show-stopper. We turned the beta videochat feature off (as it always triggers CPU spikes across all users), but many members still had a bad experience with a UI that was too slow and a resource hog.
+Mas a lentidão na resposta atingindo vários membros do meu time é um show-stopper, um problema gigante. Desligamos a feature beta de videochat (já que ela sempre dispara picos de CPU em todos os usuários), mas vários membros ainda tinham uma experiência ruim com uma UI lenta demais e devoradora de recursos.
 
-The React-based, ES6-written, properly structured - with good enough client-side test suites - MatterMost was a more suitable candidate. So I decided to really think about the original problem and I came about with a simple solution: [add a simple PLPGSQL function](http://www.akitaonrails.com/2016/08/12/hacking-mattermost-team-edition) to be triggered whenever someone tried to delete a channel. Sure enough, it worked. And that prompted me to call my team again and propose this new change: I believe everybody was on-board as MatterMost was way faster on their machines.
+O MatterMost, baseado em React, escrito em ES6, devidamente estruturado, com suítes de teste client-side suficientemente boas, era um candidato mais adequado. Então decidi pensar de verdade no problema original e cheguei a uma solução simples: [adicionar uma função PLPGSQL simples](http://www.akitaonrails.com/2016/08/12/hacking-mattermost-team-edition) para ser disparada sempre que alguém tentasse apagar um canal. Funcionou direitinho. E isso me motivou a chamar meu time de novo e propor essa nova mudança: acredito que todo mundo embarcou, já que o MatterMost estava muito mais rápido nas máquinas deles.
 
-I know I am sounding really harsh towards Rocket.chat, and it's really not my intention. If we didn't have any other options, we would still move to Rocket.chat. But as Mattermost proved to be the better choice, it was a no-brainer.
+Sei que estou soando muito duro com o Rocket.chat, e essa não é minha intenção. Se não tivéssemos outras opções, ainda iríamos para o Rocket.chat. Mas como o Mattermost provou ser a melhor escolha, foi decisão fácil.
 
-### MatterMost Install
+### Instalação do MatterMost
 
-As always, I will not bore you with instructions that are already available online. If you want to install everything manually, follow [this tutorial](https://docs.mattermost.com/install/prod-ubuntu.html), but a better option would be [the Docker-based deployment](https://docs.mattermost.com/install/prod-docker.html). You can even install/upgrade it [together with GitLab](http://docs.gitlab.com/omnibus/gitlab-mattermost/).
+Como sempre, não vou cansar você com instruções já disponíveis online. Se quiser instalar tudo manualmente, siga [este tutorial](https://docs.mattermost.com/install/prod-ubuntu.html), mas uma opção melhor seria [o deployment via Docker](https://docs.mattermost.com/install/prod-docker.html). Você pode até instalar/atualizar [junto com o GitLab](http://docs.gitlab.com/omnibus/gitlab-mattermost/).
 
-Make sure you have NGINX in front of the server and that you have both a properly registered domain or sub-domain, and that you have SSL - use Let's Encrypt.
+Garanta que você tenha NGINX na frente do servidor e que tenha tanto um domínio ou subdomínio devidamente registrado, quanto SSL - use Let's Encrypt.
 
-Because I want to keep tweaking and experimenting with the codebase in a live installation, I installed everything manually and I have this directory structure:
+Como quero continuar mexendo e experimentando com o codebase em uma instalação ativa, instalei tudo manualmente e tenho esta estrutura de diretórios:
 
 ```
 -rw-r--r--  1 mattermost mattermost     6504 Aug 13 20:11 config.json
@@ -73,9 +77,9 @@ drwxrwxr-x  3 mattermost mattermost     4096 Aug 13 20:23 platform-dev-3.3.0
 -rw-r--r--  1 mattermost mattermost 18060203 Aug 13 20:22 platform-dev.tar.gz
 ```
 
-So I have a restricted, sudo user `mattermost` and I have a main `mattermost` directory pointing to the binary packages you will find in the [official download page](https://www.mattermost.org/download/).
+Tenho um usuário sudo restrito chamado `mattermost` e tenho um diretório principal `mattermost` apontando para os pacotes binários que você encontra na [página oficial de download](https://www.mattermost.org/download/).
 
-Notice that I have a copy of `mattermost/config/config.json` in the home directory. I leave it there so every time I download a new version and redo the symlink to `mattermost`, I can just do:
+Note que tenho uma cópia de `mattermost/config/config.json` no diretório home. Deixo lá para que, toda vez que eu baixe uma nova versão e refaça o symlink para `mattermost`, eu possa simplesmente fazer:
 
 ```
 rm -Rf ~/mattermost/config/config.json
@@ -83,7 +87,7 @@ cd ~/mattermost/config
 ln -s ~/mattermost/config.json
 ```
 
-Also make sure you change at least the following in the config:
+Garanta também que você ajuste pelo menos o seguinte na config:
 
 ```
 ...
@@ -94,9 +98,9 @@ Also make sure you change at least the following in the config:
 ...
 ```
 
-If you want, you can set file uploads to go to some S3 bucket you have, and just fill in the AWS details. But if you choose to have them locally, change the directory to somewhere outside of the `mattermost` folder, as in every upgrade you will change the folder. With both AWS EC2 or Digital Ocean you can always choose to add a secondary volume that can outlive the virtual boxes, so even if you get to a point where you have hundreds of concurrent users and you want to scale horizontally, you can have all your boxes pointing to a shared volume (AWS EFS, for example).
+Se quiser, você pode mandar os uploads de arquivos para algum bucket S3 que você tenha, e só preencher os detalhes da AWS. Mas se escolher tê-los localmente, mude o diretório para algum lugar fora da pasta `mattermost`, já que a cada upgrade você vai trocar a pasta. Tanto com AWS EC2 quanto com Digital Ocean você sempre pode escolher adicionar um volume secundário que sobreviva às VMs, então mesmo se chegar a um ponto de ter centenas de usuários simultâneos e quiser escalar horizontalmente, pode ter todas as máquinas apontando para um volume compartilhado (AWS EFS, por exemplo).
 
-Speaking of which, in this configuration, upgrading would be like this:
+Por falar nisso, nessa configuração, atualizar seria assim:
 
 ```
 sudo service mattermost stop
@@ -113,11 +117,11 @@ ln -s ~/data
 sudo service mattermost start
 ```
 
-The reason I wanted to have it this way is because I can tweak the code and manually push the changes.
+A razão de eu querer dessa forma é poder ajustar o código e empurrar as alterações manualmente.
 
-For your development machine you should follow [this instruction](https://docs.mattermost.com/developer/developer-setup.html). If you're in OS X and you choose to use Docker Toolbox, remember that you don't need VirtualBox anymore as it will use OS X's native hypervisor now. In my machine, I had to add `dockerhost` manually in my `/etc/hosts` because `boot2docker` was failing to get my ip address.
+Para sua máquina de desenvolvimento, você deve seguir [estas instruções](https://docs.mattermost.com/developer/developer-setup.html). Se você está em OS X e escolhe usar o Docker Toolbox, lembre que você não precisa mais do VirtualBox, pois ele vai usar o hypervisor nativo do OS X agora. Na minha máquina, tive que adicionar `dockerhost` manualmente no meu `/etc/hosts` porque o `boot2docker` estava falhando em obter meu IP.
 
-Then you can just clone the code from Github:
+Aí você pode simplesmente clonar o código do Github:
 
 ```
 mkdir mattermost
@@ -126,14 +130,14 @@ git clone https://github.com/mattermost/platform
 git checkout -b v3.3.0 v3.3.0
 ```
 
-Remember to always checkout the correct stable version (v3.3.0 as of the time when I originally posted this article) that you have installed in your server. Again, I will not bore you with what's already documented in the links above, but you must have Go 1.6(.3), Docker, Docker-Composer, Docker-Machine all installed already.
+Lembre-se de sempre fazer checkout da versão estável correta (v3.3.0 na época em que postei este artigo originalmente) que você tem instalada no seu servidor. De novo, não vou cansar você com o que já está documentado nos links acima, mas você precisa ter Go 1.6(.3), Docker, Docker-Composer, Docker-Machine, tudo já instalado.
 
-You can execute `make run` and after it finishes (and as usual, npm will make sure it takes a very long time) you can open `http://localhost:8065` to play with it locally.
+Você pode executar `make run` e, depois que terminar (e, como sempre, o npm vai garantir que isso demore muito), pode abrir `http://localhost:8065` para brincar localmente.
 
-Most importantly: you can tweak the React JSX components from `platform/webapp/components`, for example, the `channel_header.jsx` and add stuff like this:
+Mais importante: você pode mexer nos componentes JSX do React em `platform/webapp/components`, por exemplo, no `channel_header.jsx`, e adicionar coisas assim:
 
 ```javascript
-# line 493 from v3.3.0
+// linha 493 da v3.3.0
 if(isAdmin || isSystemAdmin) {
     dropdownContents.push(
         <li
@@ -162,9 +166,9 @@ if(isAdmin || isSystemAdmin) {
 }
 ```
 
-And you know what this will do? Remove the "Rename Group" and "Delete Group" options from the channel menu if the user is not a system admin. Now how do you put this in your server?
+E sabe o que isso faz? Remove as opções "Rename Group" e "Delete Group" do menu do canal se o usuário não for um system admin. Agora, como colocar isso no seu servidor?
 
-First of all, you have to edit the `Makefile` at this section:
+Antes de mais nada, você tem que editar o `Makefile` nesta seção:
 
 ```
 @# Make osx package
@@ -192,26 +196,26 @@ tar -C dist -czf $(DIST_PATH)-$(BUILD_TYPE_NAME)-linux-amd64.tar.gz mattermost
 @#rm -f $(DIST_PATH)/bin/platform
 ```
 
-Notice that the developer that made this file is probably using Linux. That's because this file build the Linux-ELF binary as `bin/platform`, while the OS X Mach-O binary will be at `bin/darwin_amd64/platform`. Now, if like me you're on OS X, you have to inverse this and make the Linux version point to `bin/linux_amd64/platform`, otherwise the packages will have the wrong binary.
+Note que o desenvolvedor que fez esse arquivo provavelmente usa Linux. Isso porque esse arquivo gera o binário Linux-ELF como `bin/platform`, enquanto o binário OS X Mach-O fica em `bin/darwin_amd64/platform`. Agora, se como eu você está em OS X, tem que inverter isso e fazer a versão Linux apontar para `bin/linux_amd64/platform`, senão os pacotes vão ter o binário errado.
 
-Then you will notice that there is this section right at the bottom:
+Aí você vai notar que existe esta seção bem no fim:
 
 ```
 setup-mac:
     echo $$(boot2docker ip 2> /dev/null) dockerhost | sudo tee -a /etc/hosts
 ```
 
-If you're on the newest versions of Docker-Toolbox, you don't need boot2docker anymore, it will use docker-machine instead. So this line doesn't work and the easiest way to make `make test` run is to change the `dockerhost` to `localhost` in the `config/config.json`'s PostgreSQL configuration.
+Se você está nas versões mais recentes do Docker-Toolbox, não precisa mais do boot2docker, ele vai usar o docker-machine. Então essa linha não funciona, e a forma mais fácil de fazer o `make test` rodar é trocar o `dockerhost` por `localhost` na configuração de PostgreSQL do `config/config.json`.
 
-If the tests are all passing, you can now run `make package` to make all packages, then you can send the `dist/mattermost-team-edition-linux-amd64.tar.gz` to your server and uncompress to the correct location.
+Se os testes estão todos passando, você pode rodar `make package` para gerar todos os pacotes, e então enviar o `dist/mattermost-team-edition-linux-amd64.tar.gz` para o seu servidor e descompactar no local correto.
 
-As a sidenote for Go noobies like myself, I had my `GOPATH` pointed to `/Users/akitaonrails/.go` and my project was at `/Users/akitaonrails/codeminer42/mattermost/platform`. I was told that this is incorrect and the source of my many hours of frustration. The project MUST BE INSIDE THE GOPATH.
+Como nota pra noobs em Go como eu, eu tinha meu `GOPATH` apontando para `/Users/akitaonrails/.go` e meu projeto estava em `/Users/akitaonrails/codeminer42/mattermost/platform`. Me disseram que isso está incorreto e foi a fonte de muitas horas de frustração minha. O projeto PRECISA ESTAR DENTRO DO GOPATH.
 
-So I changed my `GOPATH` to `/Users/akitaonrails/Sites/go` and the project to `/Users/akitaonrails/Sites/go/src/github.com/mattermost/platform` and now it works. I would probably had symlinked the project path to be inside the GOPATH as well. But now everything compiles and runs just fine.
+Então mudei meu `GOPATH` para `/Users/akitaonrails/Sites/go` e o projeto para `/Users/akitaonrails/Sites/go/src/github.com/mattermost/platform` e agora funciona. Provavelmente eu também teria feito symlink do caminho do projeto para dentro do GOPATH. Mas agora tudo compila e roda direitinho.
 
-This is how I will keep experimenting for the time being, until I feel that I am comfortable enough to automate the whole process later. This should work just fine for my team for the time being.
+É assim que vou continuar experimentando por enquanto, até me sentir confortável o suficiente para automatizar todo o processo depois. Isso deve funcionar bem para meu time por ora.
 
-Of course, the snippet above is nothing but a **dirty hack**, don't try to contribute like this. A proper implementation would require me to at least create a new setting into the `config.json`, for example `TeamSettings.MembersCanManageChannel` to `false`, and change the `api/context.go` around line 347 to be something like this:
+É claro, o snippet acima é apenas um **dirty hack**, não tente contribuir assim. Uma implementação adequada exigiria que eu pelo menos criasse uma nova configuração no `config.json`, por exemplo `TeamSettings.MembersCanManageChannel` como `false`, e mudasse o `api/context.go` por volta da linha 347 para algo como:
 
 ```ruby
 func (c *Context) HasPermissionsToTeam(teamId string, where string) bool {
@@ -225,18 +229,18 @@ func (c *Context) HasPermissionsToTeam(teamId string, where string) bool {
     ...
 ```
 
-Then change the `webapp/channel_header.jsx` component in the React front-end (as well as a proper unit tests to `webapp/tests/client_channel.test.jsx`), make sure the `make test` passes, and then finally create a feature request to the core team.
+Depois mudar o componente `webapp/channel_header.jsx` no front-end React (junto com testes unitários decentes em `webapp/tests/client_channel.test.jsx`), garantir que o `make test` passa, e finalmente abrir um feature request para o core team.
 
-But the idea here was just to show that it was not so difficult to solve the show-stopper for my particular scenario, both using the [SQL trigger](http://www.akitaonrails.com/2016/08/12/hacking-mattermost-team-edition) to safeguard the database and the hack to fix the Web UI.
+Mas a ideia aqui era só mostrar que não foi tão difícil resolver o show-stopper para o meu cenário particular, tanto usando o [trigger SQL](http://www.akitaonrails.com/2016/08/12/hacking-mattermost-team-edition) para proteger o banco quanto o hack para arrumar a Web UI.
 
-### Conclusion
+### Conclusão
 
-But what about the most important feature of all? RightGIF support? There is nothing as simple as a rightgif slack command just yet. Fortunately you can compensate most missing niceties like this by installing a [Hubot server](https://www.npmjs.com/package/hubot-mattermost), and linking it to a user so you can chat with the bot and make it do things for you (set an alarm, fetch a gif, translate text, etc). As a caveat, the hubot adapter requires the use of the [mattermost-client](https://github.com/loafoe/mattermost-client) which must be synced with the server platform version releases to work properly, so be careful when you're upgrading.
+Mas e a feature mais importante de todas? Suporte a RightGIF? Ainda não existe nada tão simples quanto um comando rightgif do Slack. Felizmente, dá pra compensar a maior parte dessas pequenas faltas instalando um [servidor Hubot](https://www.npmjs.com/package/hubot-mattermost), e ligando a um usuário para que você possa conversar com o bot e fazer ele fazer coisas pra você (programar um alarme, buscar um gif, traduzir texto, etc). Como ressalva, o adaptador do hubot exige o uso do [mattermost-client](https://github.com/loafoe/mattermost-client), que precisa ser sincronizado com as releases da plataforma do servidor para funcionar direito, então tome cuidado ao atualizar.
 
-Overall, Mattermost is a great choice. It's not for amateurs as well, the development environment requires you to know your Docker stuff. It requires you to know proper Go-lang configuration. It requires you to follow [proper procedures to contribute](https://docs.mattermost.com/developer/contribution-guide.html), as they should. The project itself is a single codebase divided into roughly 2 applications, a Go-based HTTP API and a React-based front-end to consume the APIs. Everything about the project is automated through the proper usage of Docker images (for mysql, postgresql, openldap instances) and Makefiles to run the test suite, create packages, etc.
+No geral, o Mattermost é uma ótima escolha. Também não é para amadores; o ambiente de desenvolvimento exige que você domine seu Docker. Exige que você saiba configurar Go-lang direito. Exige que você siga os [procedimentos adequados para contribuir](https://docs.mattermost.com/developer/contribution-guide.html), como deveria ser. O projeto em si é um único codebase dividido em aproximadamente 2 aplicações, uma API HTTP em Go e um front-end em React para consumir as APIs. Tudo no projeto é automatizado através do uso adequado de imagens Docker (para mysql, postgresql, instâncias openldap) e Makefiles para rodar a suíte de testes, criar pacotes, etc.
 
-And it has some conveniences from Slack that Rocket.chat doesn't have yet such as a simple shortcut to switch channels (Cmd-K), the ability to reply messages and organize them as threads, proper and more complete Markdown support. Overall, the features are well-rounded, and not half-baked. What is there is solid and works, it's always bad to have half-finished features.
+E ele tem algumas conveniências do Slack que o Rocket.chat ainda não tem, como um atalho simples para trocar de canal (Cmd-K), a capacidade de responder mensagens e organizá-las como threads, suporte a Markdown adequado e mais completo. No geral, as funcionalidades são redondas e bem acabadas. O que está lá é sólido e funciona; é sempre ruim ter funcionalidades pela metade.
 
-With these hacks in mind I can strongly recommend that you use Mattermost. And as I said in previous posts, it's not just a matter of cost. If you're a small team, without internal developers or someone that can maintain your own installation, you should definitely pay Mattermost for the Enterprise support, it's affordable and way cheaper than Slack.
+Com esses hacks em mente, posso recomendar fortemente que você use Mattermost. E como já disse em posts anteriores, isso vai além de uma questão de custo. Se você é um time pequeno, sem desenvolvedores internos ou alguém que possa manter sua própria instalação, definitivamente deveria pagar pelo suporte Enterprise do Mattermost; é acessível e bem mais barato que o Slack.
 
-For now, it's the better choice, both in terms of overall fit-and-finish, well-rounded features, simple and responsive UI, good code quality and overall care on the engineering.
+Por enquanto, é a melhor escolha, tanto em termos de acabamento geral, funcionalidades completas, UI simples e responsiva, qualidade de código e o cuidado geral com a engenharia.

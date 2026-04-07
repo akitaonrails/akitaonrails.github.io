@@ -1,28 +1,32 @@
 ---
-title: Sharing models between Rails Apps - Part 1
+title: "Compartilhando models entre aplicações Rails - Parte 1"
 date: '2016-10-03T15:00:00-03:00'
-slug: sharing-models-between-rails-apps-part-1
+slug: compartilhando-models-entre-aplicacoes-rails-parte-1
+translationKey: sharing-models-between-rails-apps-1
+aliases:
+- /2016/10/03/sharing-models-between-rails-apps-part-1/
 tags:
 - rails
 - database
+- traduzido
 draft: false
 ---
 
-_"Build a microservice and expose an API."_
+_"Cria um microservice e expõe uma API."_
 
-That would be the quick answer if you ask any developer how to share business logic between applications.
+Essa seria a resposta rápida se você perguntar para qualquer desenvolvedor como compartilhar lógica de negócio entre aplicações.
 
-Although it makes sense in many number of situations, it's not a good answer all the time.
+Apesar de fazer sentido em muitas situações, essa resposta deixa a desejar em vários outros casos.
 
-My TL;DR for some situations is that you can organize your models logic as [ActiveSupport::Concerns](http://api.rubyonrails.org/classes/ActiveSupport/Concern.html) (or plain Ruby Modules if you will) and move them out to a Rubygem that your applications can consume.
+Meu TL;DR para algumas situações é o seguinte: você pode organizar a lógica dos seus models como [ActiveSupport::Concerns](http://api.rubyonrails.org/classes/ActiveSupport/Concern.html) (ou Modules Ruby puros, se preferir) e movê-los para uma Rubygem que suas aplicações podem consumir.
 
-Notice that I am only speaking of Models, not Controllers or Views. To share those you would need a full blown Rails Engine instead. But many cases I've seen wanted to just share the business logic between applications while having separated front-end logic.
+Repare que estou falando apenas de Models, não de Controllers ou Views. Para compartilhar essas outras coisas você precisaria de uma Rails Engine completa. Mas em muitos casos que vi a vontade era apenas compartilhar a lógica de negócio entre aplicações, mantendo o front-end separado.
 
-A small example of this scenario is the open sourced project I've been working on in the last few weeks. [Central](https://github.com/Codeminer42/cm42-central), which is a Pivotal Tracker/Trello alternative - if you're interested.
+Um pequeno exemplo desse cenário é o projeto open source em que venho trabalhando nas últimas semanas. [Central](https://github.com/Codeminer42/cm42-central), uma alternativa ao Pivotal Tracker/Trello - caso você se interesse.
 
-A few days ago I started a new project (for internal use only) that would query the same models as Central. I didn't want to implement HTTP APIs at this point, and the new application would itself have models with relationships to the models in Central (while treating them as read-only).
+Há alguns dias comecei um novo projeto (apenas para uso interno) que precisava consultar os mesmos models do Central. Eu não queria implementar APIs HTTP nesse momento, e a nova aplicação teria seus próprios models com relacionamentos com os models do Central (tratando-os como read-only).
 
-After a few refactorings, most of Central's models look like this one:
+Depois de alguns refactorings, a maioria dos models do Central ficou parecida com este:
 
 ```ruby
 class Team < ActiveRecord::Base
@@ -34,33 +38,33 @@ class Team < ActiveRecord::Base
 end
 ```
 
-And I have this dependency in the `Gemfile`:
+E tenho essa dependência no `Gemfile`:
 
 ```ruby
 gem 'central-support', github: 'Codeminer42/cm42-central-support', branch: 'master', require: 'central/support'
 ```
 
-Whenever I change the concerns, I do a `bundle update central-support` in the projects (this is the one caveat to have in mind to avoid dealing with outdated models).
+Sempre que mudo as concerns, rodo um `bundle update central-support` nos projetos (esse é o cuidado que você precisa ter para evitar lidar com models desatualizados).
 
-This was possible because most of those models were mature and stable and I will not be changing them often. I don't recommend exposing unstable dependencies (as gems or APIs, it doesn't matter), because this is a recipe for huge headaches of cascading breaking changes due to outdated dependencies that are changing too often.
+Isso foi possível porque a maioria desses models já estava madura e estável e eu não vou mexer neles com frequência. Eu não recomendo expor dependências instáveis (como gems ou APIs, tanto faz), porque essa é a receita para uma dor de cabeça enorme com breaking changes em cascata por causa de dependências desatualizadas que mudam com frequência demais.
 
-> You should ONLY expose business logic that is reasonably stable (changes only every week or so).
+> Você deve APENAS expor lógica de negócio que esteja razoavelmente estável (mudanças apenas de semana em semana, mais ou menos).
 
-The whole endeavor was to build a certain Rubygems structure, organize the original models into Concerns (which breaks no behavior), make sure specs are still passing, and them move the content (models and specs) over to the new Rubygems and make sure the specs pass there.
+A jornada toda foi montar uma certa estrutura de Rubygems, organizar os models originais em Concerns (o que não quebra nenhum comportamento), garantir que os specs continuassem passando, e então mover o conteúdo (models e specs) para a nova Rubygem e garantir que os specs passassem por lá.
 
-That's how I built a secondary open source dependency for Central, called [Central Support](https://github.com/Codeminer42/cm42-central-support). As many gems, it's main file [lib/central/support.rb](https://github.com/Codeminer42/cm42-central-support/blob/master/lib/central/support.rb) is nothing but a bunch of 'require's to load all the dependencies.
+Foi assim que construí uma dependência open source secundária do Central, chamada [Central Support](https://github.com/Codeminer42/cm42-central-support). Como muitas gems, o arquivo principal [lib/central/support.rb](https://github.com/Codeminer42/cm42-central-support/blob/master/lib/central/support.rb) é só um monte de 'requires' para carregar todas as dependências.
 
-So I methodically organized logic as concerns, such as [lib/central/support/concerns/team_concern/association.rb](https://github.com/Codeminer42/cm42-central-support/blob/master/lib/central/support/concerns/team_concern/associations.rb), which is just the extraction of the Active Record associations from the 'Team' model.
+Então organizei metodicamente a lógica em concerns, como [lib/central/support/concerns/team_concern/association.rb](https://github.com/Codeminer42/cm42-central-support/blob/master/lib/central/support/concerns/team_concern/associations.rb), que é só a extração das associações de Active Record do model 'Team'.
 
-Cut from Central, Paste into Support. When all relevant logic has been moved, I could move the entire Team model spec, mostly without any changes, and make it run. Every time I moved a bit, I `bundle update`d the gem and ran the main spec suite to make sure nothing broke.
+Recortar do Central, colar no Support. Quando toda a lógica relevante já tinha sido movida, consegui mover o spec inteiro do model Team, basicamente sem alterações, e fazê-lo rodar. Toda vez que eu movia um pedacinho, dava `bundle update` na gem e rodava a suíte principal de specs para garantir que nada tinha quebrado.
 
-And this is the difficult part: make a sandbox where those concerns could run and be tested.
+E essa é a parte difícil: montar um sandbox onde essas concerns possam rodar e ser testadas.
 
-To begin, I needed to build a minimal Rails app inside the spec folder, at `spec/support/rails_app`. And there I could put fake models that include the concerns I had just extracted from Central.
+Para começar, precisei construir uma aplicação Rails mínima dentro da pasta de specs, em `spec/support/rails_app`. E ali eu pude colocar models falsos que incluem as concerns que acabei de extrair do Central.
 
-There is scarse documentation on how to do that, but I think you can just do `rails new` and start from there, or copy my `rails_app` folder for the bare minimum. My case is simpler because this gem is not to be general purpose, so I don't need to run it against different Rails versions, for example.
+Existe pouca documentação sobre como fazer isso, mas acho que dá para fazer um `rails new` e começar dali, ou copiar a minha pasta `rails_app` para ter o mínimo necessário. Meu caso é mais simples porque essa gem não é de propósito geral, então não preciso rodá-la contra versões diferentes do Rails, por exemplo.
 
-This internal test app must have a carefully crafted [`Gemfile`](https://github.com/Codeminer42/cm42-central-support/blob/master/spec/support/rails_app/Gemfile):
+Essa app de teste interna precisa ter um [`Gemfile`](https://github.com/Codeminer42/cm42-central-support/blob/master/spec/support/rails_app/Gemfile) cuidadosamente montado:
 
 ```ruby
 ...
@@ -77,9 +81,9 @@ group :test do
 ...
 ```
 
-You don't have to add the gems from the main [gemspec](https://github.com/Codeminer42/cm42-central-support/blob/master/central-support.gemspec). But you can remove the development dependencies that you would put in the gemspec and keep them in the test app Gemfile.
+Você não precisa adicionar as gems do [gemspec](https://github.com/Codeminer42/cm42-central-support/blob/master/central-support.gemspec) principal. Mas você pode remover as dependências de desenvolvimento que iriam para o gemspec e mantê-las no Gemfile da app de teste.
 
-Now, from the [main `Gemfile`](https://github.com/Codeminer42/cm42-central-support/blob/master/Gemfile) you can do:
+Agora, a partir do [`Gemfile` principal](https://github.com/Codeminer42/cm42-central-support/blob/master/Gemfile) você pode fazer:
 
 ```ruby
 source 'https://rubygems.org'
@@ -87,9 +91,9 @@ source 'https://rubygems.org'
 eval_gemfile File.join(File.dirname(__FILE__), "spec/support/rails_app/Gemfile")
 ```
 
-Most tutorials to build a Rubygem will add a line to load dependencies from the gemspec, but here we are replacing it for the test app's Gemfile. This is the manifest that will be loaded when we run `bundle exec rspec`, for example.
+A maioria dos tutoriais de como construir uma Rubygem coloca uma linha para carregar dependências do gemspec, mas aqui estamos substituindo isso pelo Gemfile da app de teste. Esse é o manifest que será carregado quando rodarmos `bundle exec rspec`, por exemplo.
 
-Speaking of which, this is the [`spec/rails_helper.rb`](https://github.com/Codeminer42/cm42-central-support/blob/master/spec/rails_helper.rb):
+Por falar nisso, esse é o [`spec/rails_helper.rb`](https://github.com/Codeminer42/cm42-central-support/blob/master/spec/rails_helper.rb):
 
 ```ruby
 ENV['RAILS_ENV'] ||= 'test'
@@ -111,19 +115,19 @@ require 'support/factories'
 require 'spec_helper'
 ```
 
-To wrap your head around it:
+Para visualizar como tudo se encaixa:
 
-* `bundle exec rspec` will load the main `Gemfile`
-* the main `Gemfile` will load from the internal test app's `Gemfile`
-* that internal test app's `Gemfile` will require the gemspec from `../../../..` and the development and test groups of gems (including Rspec, Factory Girl, etc)
-* the gemspec will require the runtime dependencies such as "activesupport", "enumerize", etc
-* finally, the `rails_helper.rb` listed above will load.
+* `bundle exec rspec` carrega o `Gemfile` principal
+* o `Gemfile` principal carrega a partir do `Gemfile` da app de teste interna
+* esse `Gemfile` da app de teste interna requer o gemspec de `../../../..` e os grupos de gems de development e test (incluindo Rspec, Factory Girl, etc)
+* o gemspec requer as dependências de runtime como "activesupport", "enumerize", etc
+* finalmente, o `rails_helper.rb` listado acima é carregado.
 
-There at line 11, the runner will execute a command to `cd` into the internal test app's root folder and run the `db:schema:load`, therefore you need a `db/schema.rb` ready to load, as well as `config/database.yml`.
+Ali na linha 11, o runner executa um comando para fazer `cd` na pasta raiz da app de teste interna e rodar `db:schema:load`, então você precisa de um `db/schema.rb` pronto para ser carregado, assim como um `config/database.yml`.
 
-The [`spec/spec_helper.rb`](https://github.com/Codeminer42/cm42-central-support/blob/master/spec/spec_helper.rb) is more standard, with optional configurations for test coverage, etc.
+O [`spec/spec_helper.rb`](https://github.com/Codeminer42/cm42-central-support/blob/master/spec/spec_helper.rb) é mais padrão, com configurações opcionais para test coverage, etc.
 
-The models inside the internal test app are the important parts, because they are the means to include the extracted concerns into a runnable format. The ['spec/support/rails_app/app/models/team.rb'](https://github.com/Codeminer42/cm42-central-support/blob/master/spec/support/rails_app/app/models/team.rb) is such an example:
+Os models dentro da app de teste interna são as partes importantes, porque são o meio para incluir as concerns extraídas em um formato executável. O ['spec/support/rails_app/app/models/team.rb'](https://github.com/Codeminer42/cm42-central-support/blob/master/spec/support/rails_app/app/models/team.rb) é um exemplo:
 
 ```ruby
 class Team < ActiveRecord::Base
@@ -134,7 +138,7 @@ class Team < ActiveRecord::Base
 end
 ```
 
-And with that, I could move the unmodified specs directly from the main project (Central), such as [`spec/central/support/team_spec.rb`](https://github.com/Codeminer42/cm42-central-support/blob/master/spec/central/support/team_spec.rb):
+E com isso, consegui mover os specs sem modificações diretamente do projeto principal (Central), como [`spec/central/support/team_spec.rb`](https://github.com/Codeminer42/cm42-central-support/blob/master/spec/central/support/team_spec.rb):
 
 ```ruby
 require 'rails_helper'
@@ -149,18 +153,18 @@ describe Team, type: :model do
 end
 ```
 
-If you go back in the Central project, some commits back, you will find the very same file as [`spec/models/team_spec.rb`](https://github.com/Codeminer42/cm42-central/blob/a80eefadf233f4a8c5f88829836c872b199798cd/spec/models/team_spec.rb). And the main advantage of this approach is exactly being able to move most of the code out of the main project, together with their specs, into a dependency gem, without having to "rewrite" anything.
+Se você voltar no projeto Central, alguns commits atrás, vai encontrar exatamente esse mesmo arquivo como [`spec/models/team_spec.rb`](https://github.com/Codeminer42/cm42-central/blob/a80eefadf233f4a8c5f88829836c872b199798cd/spec/models/team_spec.rb). E a principal vantagem dessa abordagem é justamente conseguir mover a maior parte do código para fora do projeto principal, junto com os specs, para uma gem de dependência, sem precisar "reescrever" nada.
 
-If I had to rewrite all or a big chunk of the code, it would've been a more expensive choice and I would probably have deferred it to another time and focus on more valuable features first.
+Se eu tivesse que reescrever todo ou um pedaço grande do código, teria sido uma escolha bem mais cara e eu provavelmente teria adiado isso para outro momento e focado em features mais valiosas primeiro.
 
-This approach is not perfect but it was super cheap. I could move all the relevant business logic out of the main project without having to rewrite anything but a few wiring code. The new dependency gem received all the relevant bits and specs, and everything just runs.
+Essa abordagem está longe de perfeita, mas saiu super barata. Consegui mover toda a lógica de negócio relevante para fora do projeto principal sem precisar reescrever nada além de algum código de "fiação". A nova gem de dependência recebeu todas as partes relevantes e os specs, e tudo simplesmente roda.
 
-So, if you have 2 or more Rails apps that could share the same models, this is how you can start it. Of course, there are always a lot of caveats to keep in mind.
+Então, se você tem 2 ou mais aplicações Rails que poderiam compartilhar os mesmos models, é assim que você pode começar. Claro, sempre tem um monte de ressalvas para manter em mente.
 
-In my case, the Central project is the one that can read-and-write to the database. My internal secondary app is just using the models as read-only. When 2 different apps write to the same database, you may have a number of conflicts to deal with.
+No meu caso, o projeto Central é o que pode ler e escrever no banco. Minha aplicação secundária interna usa os models apenas como read-only. Quando 2 aplicações diferentes escrevem no mesmo banco, você pode ter vários conflitos para lidar.
 
-This approach is useful if your secondary application is akin of an Administration dashboard, for example. You need to have some of the same associations, scopes, even validations for eventual editing, but it's limited to a few, controlled users.
+Essa abordagem é útil quando sua aplicação secundária se parece com um dashboard de Administração, por exemplo. Você precisa ter algumas das mesmas associações, scopes, e até validações para edição eventual, mas isso fica limitado a poucos usuários controlados.
 
-This is also useful if you're doing data analysis, and again you can use the same associations, scopes, to build reports and dashboards. Essentially, if you need read-only access, this is a no-brainer.
+Também é útil quando você está fazendo análise de dados, e novamente pode usar as mesmas associações, scopes, para construir relatórios e dashboards. Essencialmente, quando você precisa de acesso read-only, é decisão fácil.
 
-In the [next article](http://www.akitaonrails.com/2016/10/03/sharing-models-between-rails-apps-part-2) I will explain how I wired a secondary application, using the central-support gem and dealing with 2 different databases at the same time.
+No [próximo artigo](http://www.akitaonrails.com/2016/10/03/sharing-models-between-rails-apps-part-2) eu vou explicar como liguei uma aplicação secundária, usando a gem central-support e lidando com 2 bancos de dados diferentes ao mesmo tempo.

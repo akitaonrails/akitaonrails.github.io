@@ -1,53 +1,57 @@
 ---
-title: Ruby on Rails implementation of a (proper) Ranking/Popularity system
+title: 'Implementação em Ruby on Rails de um sistema de Ranking/Popularidade (do jeito certo)'
 date: '2016-10-31T16:51:00-02:00'
-slug: ruby-on-rails-implementation-of-a-proper-ranking-popularity-system
+slug: implementacao-ruby-on-rails-sistema-ranking-popularidade-correto
+translationKey: rails-ranking-popularity
+aliases:
+- /2016/10/31/ruby-on-rails-implementation-of-a-proper-ranking-popularity-system/
 tags:
 - ruby
 - ranking
-- algorithm
+- algoritmo
+- traduzido
 draft: false
 ---
 
-I was reading a blog post published recently titled ["Ruby on Rails implementation of a ranking system using PostgreSQL window functions"](http://naturaily.com/blog/post/ruby-on-rails-implementation-of-a-ranking-system-using-postgresql-window-functions) and to be fair the purpose of the post was to introduce [PostgreSQL's "ntile" window function](https://www.postgresql.org/docs/8.4/static/functions-window.html).
+Estava lendo um post publicado recentemente, intitulado ["Ruby on Rails implementation of a ranking system using PostgreSQL window functions"](http://naturaily.com/blog/post/ruby-on-rails-implementation-of-a-ranking-system-using-postgresql-window-functions) e, para ser justo, o objetivo do post era apresentar a [função de janela "ntile" do PostgreSQL](https://www.postgresql.org/docs/8.4/static/functions-window.html).
 
-But in the process, the author made the same mistake I've seen time and time again.
+Acontece que, no caminho, o autor cometeu o mesmo erro que eu vejo se repetir o tempo todo.
 
-Let's assume you have a project with resources that you want to list by "popularity". It can be a Reddit-like site where people like or dislike posts or comments. It can be an e-commerce where people like or dislike products.
+Vamos supor que você tem um projeto com recursos que precisa listar por "popularidade". Pode ser um site estilo Reddit, onde as pessoas curtem ou descurtem posts e comentários. Pode ser um e-commerce onde as pessoas curtem ou descurtem produtos.
 
-It can be anything where people like or dislike something.
+Pode ser qualquer coisa em que as pessoas curtem ou descurtem algo.
 
-The biggest error people make is to consider a simple score like this:
+O maior erro que se comete é considerar um score simplório assim:
 
 ```ruby
 popularity = positive_votes - negative_votes
 ```
 
-There is an old article titled ["How Not To Sort By Average Rating"](http://www.evanmiller.org/how-not-to-sort-by-average-rating.html) and I quote:
+Existe um artigo antigo chamado ["How Not To Sort By Average Rating"](http://www.evanmiller.org/how-not-to-sort-by-average-rating.html) e cito:
 
-> "_Why it is wrong:_ Suppose one item has 600 positive ratings and 400 negative ratings: 60% positive. Suppose item two has 5,500 positive ratings and 4,500 negative ratings: 55% positive. This algorithm puts item two (score = 1000, but only 55% positive) above item one (score = 200, and 60% positive). WRONG."
+> "_Por que está errado:_ Suponha que um item tenha 600 votos positivos e 400 negativos: 60% positivo. Suponha que o item dois tenha 5.500 votos positivos e 4.500 negativos: 55% positivo. Esse algoritmo coloca o item dois (score = 1000, mas só 55% positivo) acima do item um (score = 200, com 60% positivo). ERRADO."
 
-Then you may think, I know how to fix it:
+Aí você pode pensar: já sei como consertar:
 
 ```ruby
 Score = average_rating = positive_votes / total_votes
 ```
 
-Again, this is wrong, and again I quote:
+De novo, está errado, e cito mais uma vez:
 
-> "_Why it is wrong:_ Average rating works fine if you always have a ton of ratings, but suppose item 1 has 2 positive ratings and 0 negative ratings. Suppose item 2 has 100 positive ratings and 1 negative rating. This algorithm puts item two (tons of positive ratings) below item one (very few positive ratings). WRONG."
+> "_Por que está errado:_ A média funciona bem quando sempre se tem uma tonelada de votos, mas suponha que o item 1 tenha 2 votos positivos e 0 negativos. Suponha que o item 2 tenha 100 votos positivos e 1 negativo. Esse algoritmo coloca o item dois (toneladas de votos positivos) abaixo do item um (pouquíssimos votos positivos). ERRADO."
 
-### Correct Solution: Lower Bound of Wilson Score Confidence Interval for a Bernoulli
+### Solução Correta: Limite Inferior do Intervalo de Confiança de Wilson para uma Bernoulli
 
-And I quote again:
+E cito de novo:
 
-> "_Say what:_ We need to balance the proportion of positive ratings with the uncertainty of a small number of observations. Fortunately, the math for this was worked out in 1927 by Edwin B. Wilson. What we want to ask is: Given the ratings I have, there is a 95% chance that the "real" fraction of positive ratings is at least what? Wilson gives the answer. Considering only positive and negative ratings (i.e. not a 5-star scale), the lower bound on the proportion of positive ratings is given by:"
+> "_Como assim:_ Precisamos balancear a proporção de votos positivos com a incerteza de um número pequeno de observações. Felizmente, a matemática para isso já tinha sido resolvida em 1927 por Edwin B. Wilson. O que queremos perguntar é: dadas as avaliações que tenho, existe 95% de chance de que a fração 'real' de avaliações positivas seja, no mínimo, quanto? Wilson dá a resposta. Considerando apenas votos positivos e negativos (ou seja, não uma escala de 5 estrelas), o limite inferior da proporção de avaliações positivas é dado por:"
 
-![Lower Bound Bernoulli equation](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/565/rating-equation.png)
+![Equação do Limite Inferior de Bernoulli](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/565/rating-equation.png)
 
-I recommend you read the [original article](http://www.evanmiller.org/how-not-to-sort-by-average-rating.html) but let's cut to the chase. If we follow the original post I linked in the beginning, I have a simple blog post Rails app, but instead of a `visits_count` field I need to add a `positive:integer` and `negative:integer` fields and user interface to post votes.
+Recomendo que você leia o [artigo original](http://www.evanmiller.org/how-not-to-sort-by-average-rating.html), mas vamos ao que interessa. Seguindo o post original que linkei no começo, eu tenho uma app Rails simples de blog posts, só que em vez de um campo `visits_count` preciso adicionar campos `positive:integer` e `negative:integer`, além da interface para registrar os votos.
 
-And I will replace the `PostWithPopularityQuery` class with the following:
+E vou substituir a classe `PostWithPopularityQuery` pelo seguinte:
 
 ```ruby
 class PostWithPopularityQuery
@@ -64,14 +68,14 @@ class PostWithPopularityQuery
 end
 ```
 
-And this is what I expect to see in a simple scaffold `index.html.erb`:
+E isto é o que eu espero ver num scaffold simples de `index.html.erb`:
 
-![Post index page](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/564/Screen_Shot_2016-10-31_at_16.43.50.png)
+![Página index de Posts](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/564/Screen_Shot_2016-10-31_at_16.43.50.png)
 
-I would even go as far as recommending the `ci_lower_bound` to be a float field in the table and to have an asynchronous ActiveJob to update it in some larger interval of time (every 5 minutes, for example) and then the `PostsController#index` action would perform a straight forward `SELECT` query ordering directly against a real indexed field `ci_lower_bound DESC` without performing the calculations on **every** query.
+Eu iria além e recomendaria que `ci_lower_bound` fosse um campo float na tabela, com um ActiveJob assíncrono atualizando esse valor em intervalos maiores (a cada 5 minutos, por exemplo). Aí a action `PostsController#index` faria um `SELECT` direto, ordenando por um campo real e indexado `ci_lower_bound DESC`, sem refazer as contas a **cada** query.
 
-Now **THIS** is the correct way to implement a simple, naive popularity ranking system that actually works correctly.
+Agora **ESTE** é o jeito correto de implementar um sistema simples e ingênuo de ranking de popularidade que realmente funciona como deveria.
 
-And this is not the only way to do it. There are dozens of good discussions of algorithms online. Every service that depends on content popularity have been refining algorithms like this for years. Facebook used to have an algorithm called "EdgeRank" which relied on variables such as Affinity, Weight, Time Decay, and it seems to have evolved so much that it now calculates popularity against more than [100 thousand variables](http://marketingland.com/edgerank-is-dead-facebooks-news-feed-algorithm-now-has-close-to-100k-weight-factors-55908)!!
+E não é a única forma. Há dezenas de boas discussões sobre algoritmos online. Todo serviço que depende de popularidade de conteúdo vem refinando algoritmos desse tipo há anos. O Facebook tinha um algoritmo chamado "EdgeRank", que dependia de variáveis como Afinidade, Peso, Decaimento Temporal, e parece que evoluiu tanto que hoje calcula popularidade contra mais de [100 mil variáveis](http://marketingland.com/edgerank-is-dead-facebooks-news-feed-algorithm-now-has-close-to-100k-weight-factors-55908)!!
 
-But regardless of the online service, I can assure you that **none** sorts by simple visits count or simple average votes count. That would downright wrong.
+Mas, independente do serviço online, eu garanto que **nenhum** ordena por contagem simples de visitas ou pela média simples dos votos. Isso seria simplesmente errado.

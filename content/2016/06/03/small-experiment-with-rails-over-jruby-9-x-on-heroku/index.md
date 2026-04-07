@@ -1,30 +1,34 @@
 ---
-title: Small Experiment with Rails over JRuby 9.x on Heroku
+title: "Pequeno Experimento com Rails sobre JRuby 9.x no Heroku"
 date: '2016-06-03T18:12:00-03:00'
-slug: small-experiment-with-rails-over-jruby-9-x-on-heroku
+slug: pequeno-experimento-com-rails-sobre-jruby-9-x-no-heroku
+translationKey: rails-jruby-9x-heroku-experiment
+aliases:
+- /2016/06/03/small-experiment-with-rails-over-jruby-9-x-on-heroku/
 tags:
 - jruby
 - heroku
+- traduzido
 draft: false
 ---
 
-After playing around with languages different than Ruby (such as [Elixir](/elixir) or [Crystal](/crystal)), it was time to go back to Ruby and see how JRuby is performing nowadays.
+Depois de brincar com linguagens diferentes de Ruby (como [Elixir](/elixir) ou [Crystal](/crystal)), chegou a hora de voltar para o Ruby e ver como o JRuby está se saindo nos dias de hoje.
 
-JRuby always pursued the goal of being a competent MRI replacement. If you have not followed what's going on, JRuby changed version schemes when they switched from the 1.7 series to the 9.x series. You should read [this blog post](blog post ) that explains it.
+O JRuby sempre perseguiu o objetivo de ser um substituto competente para o MRI. Se você não acompanhou o que andou rolando, o JRuby mudou o esquema de versões quando saiu da série 1.7 para a série 9.x. Vale a pena ler [este post](blog post) que explica isso.
 
-In summary, if you want MRI 2.2 compatibility you must use JRuby 9.0.x and if you want MRI 2.3 compatibility you must use JRuby 9.1.x series. The most current release being 9.1.2.0. Anything prior to that you can refer to this [table of versions](https://devcenter.heroku.com/articles/ruby-support#ruby-versions) from Heroku's documentation.
+Em resumo, se você quer compatibilidade com o MRI 2.2, precisa usar o JRuby 9.0.x; e se quer compatibilidade com o MRI 2.3, precisa usar a série 9.1.x. A versão mais atual é a 9.1.2.0. Para qualquer coisa anterior, dá pra consultar esta [tabela de versões](https://devcenter.heroku.com/articles/ruby-support#ruby-versions) da documentação do Heroku.
 
-There are important recommendations as well:
+Existem algumas recomendações importantes também:
 
-* Ideally you should use Rails 4.2. Try to be at least above 4.0, and you can turn on `config.threadsafe!` by default in the "config/environments/production.rb" file. To understand this subject, refer to [Tenderlove's excellent explanation](http://tenderlovemaking.com/2012/06/18/removing-config-threadsafe.html).
+* O ideal é usar Rails 4.2. Tente ficar pelo menos acima de 4.0, e você pode ligar o `config.threadsafe!` por padrão no arquivo "config/environments/production.rb". Para entender o assunto, dá uma olhada na [excelente explicação do Tenderlove](http://tenderlovemaking.com/2012/06/18/removing-config-threadsafe.html).
 
-* If you're deploying to Heroku, don't bother trying the free or 1X dyno, which only gives you 512Mb of RAM. While it is enough for most small Rails applications (even with 2 or 3 Puma concurrent workers), I found that even the smallest apps can easily go above that. So you must consider at least the 2X dyno. In any server configuration, always consider more than 1Gb of RAM.
+* Se você está fazendo deploy no Heroku, esquece o dyno gratuito ou o 1X, que só te dá 512Mb de RAM. Apesar disso ser suficiente para a maioria das aplicações Rails pequenas (mesmo com 2 ou 3 workers concorrentes do Puma), eu percebi que até as menores apps facilmente passam disso. Então o mínimo que você deve considerar é o dyno 2X. Em qualquer configuração de servidor, pense sempre em mais de 1Gb de RAM.
 
 ### Gems
 
-There are several gems with C extensions that just won't work. Some of them have drop-in replacements, some don't. You should refer to [their Wiki](https://github.com/jruby/jruby/wiki/C-Extension-Alternatives) for a list of cases.
+Existem várias gems com extensões em C que simplesmente não funcionam. Algumas têm substitutas drop-in, outras não. Dá uma olhada no [Wiki deles](https://github.com/jruby/jruby/wiki/C-Extension-Alternatives) para ver a lista de casos.
 
-In my small sample application - which is nothing more than a content website backed by a Postgresql database, ActiveAdmin to manage content, RMagick + Paperclip (yes, it's an old app) to handle image upload and resizing, there was not a lot to change. The important bits of my "Gemfile" end up looking like this:
+No meu pequeno aplicativo de exemplo - que nada mais é do que um site de conteúdo apoiado em um banco Postgresql, com ActiveAdmin para gerenciar o conteúdo, RMagick + Paperclip (sim, é uma app antiga) para upload e redimensionamento de imagens - não havia muito o que mudar. As partes importantes do meu "Gemfile" acabaram ficando assim:
 
 ```ruby
 source 'https://rubygems.org'
@@ -103,11 +107,11 @@ group :production do
 end
 ```
 
-Notice how I paired gems for the `:ruby` and `:jruby` platforms. After doing this change and `bundle install` everything, I ran my Rspec suite and - fortunatelly - they all passed on the first run without any further changes! Your mileage will vary depending on the complexity of your application, so have your tests ready.
+Repare como pareei as gems para as plataformas `:ruby` e `:jruby`. Depois dessa mudança e de rodar `bundle install`, executei minha suíte de Rspec e - felizmente - todos os testes passaram de primeira sem precisar de nenhuma alteração adicional! O resultado vai variar dependendo da complexidade da sua aplicação, então tenha seus testes prontos.
 
 ### Puma
 
-In the case of Puma, the configuration is a bit trickier, mine looks like this:
+No caso do Puma, a configuração é um pouco mais delicada, a minha ficou assim:
 
 ```ruby
 web_concurrency = Integer(ENV['WEB_CONCURRENCY'] || 1)
@@ -130,29 +134,29 @@ on_worker_boot do
 end
 ```
 
-It's a bit different than you might find in other documentations. The important part is to turn off workers and preload_app when loading over JRuby. It will complain and crash. On my original MRI deploy I am using a small 1X dyno and I can leave `WEB_CONCURRENCY=2` and `RAILS_MAX_THREADS=5` but on the JRuby deploy I set it to `WEB_CONCURRENCY=1` (to turn off workers) and `RAILS_MAX_THREADS=16` (because I am assuming JRuby can handle more multithreading than MRI).
+É um pouco diferente do que você vai encontrar em outras documentações. A parte importante é desligar workers e preload_app quando estiver carregando sobre JRuby. Caso contrário ele reclama e quebra. No meu deploy original com MRI estou usando um dyno 1X pequeno e posso deixar `WEB_CONCURRENCY=2` e `RAILS_MAX_THREADS=5`, mas no deploy com JRuby coloquei `WEB_CONCURRENCY=1` (para desligar os workers) e `RAILS_MAX_THREADS=16` (porque parto do princípio que o JRuby aguenta mais multithreading do que o MRI).
 
-Another important bit, most people still assume that MRI can't take advantage of native parallel threads at all because of the dared GIL (Global Interpreter Lock), but this is not entirely true. MRI Ruby can parallelize threads on I/O waits. So, if a part of your app is waiting for database to process and return rows, for example, another thread can take over and do something else, in parallel. It's not totally multi-threaded, but it can do some concurrency so setting a small amount of threads for Puma might help a bit.
+Outro ponto importante: muita gente ainda assume que o MRI não consegue tirar proveito de threads paralelas nativas por causa do tal GIL (Global Interpreter Lock), mas isso é uma meia verdade. O MRI Ruby consegue paralelizar threads em esperas de I/O. Então, se uma parte da sua app está esperando o banco processar e devolver linhas, por exemplo, outra thread pode assumir e fazer outra coisa, em paralelo. O modelo tem alguma concorrência, ainda que limitada, então configurar uma quantidade pequena de threads para o Puma pode ajudar um pouco.
 
-Do not forget to set the Pool size to at least the same number of `RAILS_MAX_THREADS`. You can either use the `config/database.yml` for Rails 4.1+ or add an initializer. Follow [Heroku's documentation](https://devcenter.heroku.com/articles/concurrency-and-database-connections#threaded-servers) on how to do so.
+Não esqueça de configurar o Pool size para pelo menos o mesmo número de `RAILS_MAX_THREADS`. Você pode usar o `config/database.yml` para Rails 4.1+ ou adicionar um initializer. Siga a [documentação do Heroku](https://devcenter.heroku.com/articles/concurrency-and-database-connections#threaded-servers) para ver como fazer.
 
-### Initial Benchmarks
+### Benchmarks Iniciais
 
-So, I was able to successfully deploy a secondary JRuby version of my original MRI-based Rails app.
+Bom, consegui fazer o deploy de uma versão secundária em JRuby da minha app Rails original baseada em MRI.
 
-The original app is still in a Hobby Dyno, sized at 512Mb of RAM. The secondary app needed a Standard 1X Dyno, sized at 1Gb of RAM.
+A app original ainda está em um Hobby Dyno, com 512Mb de RAM. A app secundária precisou de um Standard 1X Dyno, com 1Gb de RAM.
 
-The app itself is super simple and as I'm using caching - [as you always should!](http://www.akitaonrails.com/2015/05/20/dynamic-site-as-fast-as-a-static-generated-one-with-raptor) -, the response time is very low, on the tens of milliseconds.
+A app em si é super simples e como eu uso cache - [como você sempre deveria fazer!](http://www.akitaonrails.com/2015/05/20/dynamic-site-as-fast-as-a-static-generated-one-with-raptor) -, o tempo de resposta é bem baixo, na casa das dezenas de milissegundos.
 
-I tried to use the [Boom](https://github.com/rakyll/boom) tool to benchmark the requests. I did a lot of warming up on the JRuby version, running the benchmarks multiple times and even using Loader.io for added pressure.
+Tentei usar a ferramenta [Boom](https://github.com/rakyll/boom) para fazer benchmark das requisições. Aqueci bastante a versão JRuby, rodei os benchmarks várias vezes e até usei o Loader.io para colocar mais pressão.
 
-I am running this test:
+Estou rodando este teste:
 
 ```
 $ boom -n 200 -c 50 http://foo-my-site/
 ```
 
-The MRI version performs like this:
+A versão MRI se comporta assim:
 
 ```
 Summary:
@@ -191,7 +195,7 @@ Latency distribution:
 
 ```
 
-And the JRuby version performs like this:
+E a versão JRuby se comporta assim:
 
 ```
 Summary:
@@ -229,9 +233,9 @@ Latency distribution:
   99% in 6.7685 secs
 ```
 
-In general, I'd say that they are around the same. As this is not a particularly CPU-intensive processing, and most of the time is spent going through the Rails stack and hitting Memcachier to pull back the same content all the time, maybe it's only fair to expect similar results.
+No geral, eu diria que estão por aí, mais ou menos no mesmo patamar. Como esse não é um processamento particularmente intensivo de CPU, e a maior parte do tempo é gasta atravessando a stack do Rails e batendo no Memcachier para puxar de volta sempre o mesmo conteúdo, talvez seja justo esperar resultados parecidos.
 
-On the other hand, I'm not sure I'm using the tool in the best way possible. The log says something like this for every request:
+Por outro lado, não tenho certeza se estou usando a ferramenta da melhor maneira possível. O log fala algo assim para cada requisição:
 
 ```
 source=rack-timeout id=c8ad5f0c-b5c1-47ec-b88b-3fc597ab01dc wait=29ms timeout=20000ms state=ready
@@ -250,24 +254,24 @@ source=rack-timeout id=a5389dc4-9a1a-46b7-a1e5-53f334ca0941 wait=35ms timeout=20
 at=info method=GET path="/" host=radiant-XXXX-XXXXX.herokuapp.com request_id=a5389dc4-9a1a-46b7-a1e5-53f334ca0941 fwd="XXX.35.10.XXX" dyno=web.1 connect=1ms service=38ms status=200 bytes=144608
 ```
 
-The times reported by the Boom tool are much larger (2 seconds?) than the processing times in the logs (10ms?). Even considering some overhead for the router and so on, still it's a big difference, I wonder if it's being queued for too long because the app is not being able to respond more of the concurrent requests.
+Os tempos reportados pelo Boom são bem maiores (2 segundos?) do que os tempos de processamento nos logs (10ms?). Mesmo considerando algum overhead do roteador e por aí vai, ainda é uma diferença grande, fico me perguntando se as requisições estão ficando tempo demais na fila porque a app não está conseguindo responder mais das requisições concorrentes.
 
-The amount of requests divided by the number of concurrent connections will bring the overall performance and throughput down if you increase it too much, I wasn't able to go too much above 14 rpm with this configuration, though.
+A quantidade de requisições dividida pelo número de conexões concorrentes vai puxar a performance e o throughput geral para baixo se você aumentar demais, e eu não consegui passar muito de 14 rpm com essa configuração.
 
-If you have more experience with http benchmarking and you can spot something wrong I am doing here, please let me know in the comments section below.
+Se você tem mais experiência com benchmark de http e consegue identificar algo errado que estou fazendo aqui, por favor, me avise nos comentários abaixo.
 
-### Conclusion
+### Conclusão
 
-JRuby continues to evolve, and you might benefit if you already have a large set of Dynos of large servers around. I wouldn't recommend it for small to medium applications.
+O JRuby continua evoluindo, e você pode se beneficiar se já tiver um conjunto grande de Dynos ou de servidores robustos. Para aplicações pequenas ou médias, eu não recomendaria.
 
-I've seen many orders of magnitude improvements in specific use cases (I believe it was a very high traffic API endpoint). This particular case I tested is probably not its sweet spot and changing from MRI to JRuby didn't give me too much advantage, so in this case I would recommend sticking to MRI.
+Já vi melhorias de várias ordens de magnitude em casos de uso específicos (acho que era um endpoint de API com tráfego muito alto). Esse caso particular que testei provavelmente não é o ponto forte dele, e mudar do MRI para o JRuby não me deu muita vantagem, então nesse caso eu recomendaria continuar com o MRI.
 
-Startup time is still an issue. There is an entry in [their Wiki](https://github.com/jruby/jruby/wiki/Improving-startup-time) giving some recommendations, but even in the Heroku deploy I ended up having R10 errors (Boot Timeout) every once in a while for this small app.
+Tempo de inicialização ainda é um problema. Existe uma entrada no [Wiki deles](https://github.com/jruby/jruby/wiki/Improving-startup-time) com algumas recomendações, mas mesmo no deploy do Heroku eu acabei tendo erros R10 (Boot Timeout) de vez em quando para essa app pequena.
 
-I didn't try increasing the dynos to the [Performance tier](https://blog.heroku.com/archives/2015/8/20/introducing-improved-performance-dynos) introduced last year. I would bet that JRuby would be better at those and more able to leverage the extra power of having from 2.5GB up to 14GB if you have really big traffic (on the order of thousands or tens of thousands of requests per minute). With MRI the recommendation would be using small-ish dynos (2X or at most Performance-M dynos) and scale horizontally. With JRuby you could have less dynos with larger sizes (Performance-L, for example). Again, depends on your case.
+Não cheguei a tentar aumentar os dynos para a [tier Performance](https://blog.heroku.com/archives/2015/8/20/introducing-improved-performance-dynos) lançada no ano passado. Apostaria que o JRuby se sairia melhor nesses e seria mais capaz de aproveitar o poder extra de ter de 2.5GB até 14GB se você tem tráfego realmente grande (na ordem de milhares ou dezenas de milhares de requisições por minuto). Com MRI, a recomendação seria usar dynos pequenos (2X ou no máximo Performance-M) e escalar horizontalmente. Com JRuby você poderia ter menos dynos com tamanhos maiores (Performance-L, por exemplo). De novo, depende do seu caso.
 
-Don't take the benchmarks above as "facts" to generalize everywhere, they are just there to give you a notion of an specific use case of mine. Your mileage will vary, so you must test it out yourself.
+Não encare os benchmarks acima como "fatos" para generalizar para qualquer lugar, eles estão ali só para te dar uma noção de um caso de uso específico meu. O resultado vai variar, então você precisa testar por si mesmo.
 
-Another use case (that I did not test) is not to just "port" an MRI app to JRuby but leverage JRuby's unique strenghts as [this post](https://blog.heroku.com/archives/2016/5/24/reactive_ruby_building_real_time_apps_with_jruby_and_ratpack) from Heroku explains, in the case of using JRuby with Ratpack, for example.
+Outro caso de uso (que não testei) é, ao invés de simplesmente "portar" uma app MRI para JRuby, alavancar as forças únicas do JRuby como [este post](https://blog.heroku.com/archives/2016/5/24/reactive_ruby_building_real_time_apps_with_jruby_and_ratpack) do Heroku explica, no caso de usar JRuby com Ratpack, por exemplo.
 
-All in all, JRuby is still a great project to experiment. MRI itself came a long way as well and 2.3.1 is not bad at all. Most of the time it's down to your entire architecture choices, not just the language. If you didn't try it yet, you definitely should. It "just works".
+Resumindo, o JRuby continua sendo um ótimo projeto para experimentar. O próprio MRI também avançou bastante e o 2.3.1 é bem decente. Na maior parte do tempo, tudo depende das suas escolhas de arquitetura como um todo, e a linguagem é só uma peça do quebra-cabeça. Se você ainda não experimentou, com certeza deveria. Ele "simplesmente funciona".

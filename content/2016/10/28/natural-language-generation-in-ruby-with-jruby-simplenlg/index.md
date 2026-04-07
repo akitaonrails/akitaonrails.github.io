@@ -1,21 +1,25 @@
 ---
-title: Natural Language Generation in Ruby (with JRuby + SimpleNLG)
+title: "Geração de Linguagem Natural em Ruby (com JRuby + SimpleNLG)"
 date: '2016-10-28T17:53:00-02:00'
-slug: natural-language-generation-in-ruby-with-jruby-simplenlg
+slug: geracao-de-linguagem-natural-em-ruby-com-jruby-simplenlg
+translationKey: nlg-jruby-simplenlg
+aliases:
+- /2016/10/28/natural-language-generation-in-ruby-with-jruby-simplenlg/
 tags:
 - jruby
+- traduzido
 draft: false
 ---
 
-I am building a project which needs to generate proper English sentences. The first version I built used the super naive way of just creating a string template and doing simple sub-string replacements or concatenations.
+Estou tocando um projeto que precisa gerar frases em inglês decentes. A primeira versão que fiz usava o jeito mais ingênuo possível: criar um template de string e ir fazendo substituições e concatenações simples.
 
-But you can imagine that it quickly becomes cumbersome when you have to deal with pluralization, inflection, and it starts to become something like this:
+Mas dá pra imaginar que isso vira uma bagunça rapidamente quando você precisa lidar com pluralização, flexão verbal, e o código começa a ficar parecido com isso:
 
 ```ruby
 "There #{@users.size == 1 ? 'is' : 'are'} #{@users.size} user#{'s' unless @users.size == 1}."
 ```
 
-Or use Rails I18n support like this:
+Ou usar o suporte de I18n do Rails desse jeito:
 
 ```ruby
 I18n.backend.store_translations :en, :user_msg => {
@@ -26,13 +30,13 @@ I18n.translate :user_msg, :count => 2
 # => 'There are 2 users'
 ```
 
-For simple transactional phrases (such as flash messages), this is more than enough.
+Para frases transacionais simples (tipo flash messages), isso resolve de sobra.
 
-But if you want to generate an entire article in plain English from data structures, then the logic becomes very convoluted very fast.
+Mas se você quer gerar um artigo inteiro em inglês a partir de estruturas de dados, a lógica fica convoluta muito rápido.
 
-I looked around and found a few Ruby projects that could help, for example:
+Dei uma olhada em alguns projetos Ruby que poderiam ajudar, por exemplo:
 
-* ["nameable"](https://github.com/chorn/nameable) which can do useful stuff like this:
+* ["nameable"](https://github.com/chorn/nameable) que faz coisas úteis assim:
 
 ```ruby
 Nameable::Latin.new('Chris').gender
@@ -41,7 +45,7 @@ Nameable::Latin.new('Janine').female?
 #=> true
 ```
 
-* ["calyx"](https://github.com/maetl/calyx) which can be used to generate simple phrases like this:
+* ["calyx"](https://github.com/maetl/calyx) que dá pra usar para gerar frases simples desse jeito:
 
 ```ruby
 class GreenBottle < Calyx::Grammar
@@ -54,27 +58,27 @@ end
 # => "Two green bottles."
 ```
 
-Nice and dandy, but still useless for the more complex needs I have in mind.
+Bonitinho, mas ainda inútil para as necessidades mais complexas que tenho em mente.
 
-So I decided to dig a bit deeper, into the dark world of NLG, or **Natural Language Generation** (not to be confused with NLP, which stands for Natural Language Processing, which is the opposite of what I want. NLP gets plain English text and returns a parsed data structure).
+Então resolvi cavar mais fundo, no mundo obscuro do NLG, ou **Natural Language Generation** (Geração de Linguagem Natural). Cuidado para não confundir com NLP, que é Natural Language Processing, justamente o oposto do que eu quero. NLP recebe um texto em inglês e devolve uma estrutura de dados parseada.
 
-For **NLP** (parsing, tokenization, etc) I'd highly recommend ["Stanford CoreNLP"](http://stanfordnlp.github.io/CoreNLP/). It seems to be one of the most robust and comprehensive out there (come on, it's from Stanford). Again a Java project, and a big download (more than 300MB!). Those linguistics projects are super heavy because they have to download entire dictionaries and lexicon databases.
+Para **NLP** (parsing, tokenização, etc), recomendo demais o ["Stanford CoreNLP"](http://stanfordnlp.github.io/CoreNLP/). Parece ser um dos mais robustos e completos por aí (vai, é de Stanford). Também é um projeto Java, e um download enorme (mais de 300MB!). Esses projetos de linguística são pesados pra caramba porque precisam baixar dicionários inteiros e bases de léxico.
 
-But focusing on my problem at hand, **NLG**, there are [several options](https://aclweb.org/aclwiki/index.php?title=Downloadable_NLG_systems) out there. In all honesty, I did not do a very extensive research so if you are aware of which is the most robust and also well maintained and with an easy to use interface, let me know in the comments section below.
+Mas focando no meu problema atual, **NLG**, existem [várias opções](https://aclweb.org/aclwiki/index.php?title=Downloadable_NLG_systems) disponíveis. Sendo bem honesto, não fiz uma pesquisa muito extensa, então se você conhece qual é o mais robusto, bem mantido e com uma interface fácil de usar, deixa nos comentários aí embaixo.
 
-My choice was [SimpleNLG](https://github.com/simplenlg/simplenlg). From it's GitHub page we can see that it seems to be quite well maintained to this day, it's a simple Java library and it is one of the "simpler" alternatives. [KPML](http://www.fb10.uni-bremen.de/anglistik/langpro/kpml/README.html) is on the opposite spectrum: it seems to be one of the oldest (since the 80's!) and most robust one. But seriously, it feels like you need a ph.D to even get started.
+Minha escolha foi o [SimpleNLG](https://github.com/simplenlg/simplenlg). Pela página dele no GitHub dá pra ver que continua sendo bem mantido até hoje, é uma biblioteca Java simples e é uma das alternativas mais "simples". Já o [KPML](http://www.fb10.uni-bremen.de/anglistik/langpro/kpml/README.html) está no extremo oposto: parece ser um dos mais antigos (desde os anos 80!) e robustos. Mas falando sério, você precisa praticamente de um Ph.D. só pra começar.
 
-Reading the SimpleNLG Java source code was boring but easy enough. Give yourself one full day of study to get used to the code and you're in business.
+Ler o código-fonte Java do SimpleNLG foi chato, mas tranquilo o suficiente. Reserva um dia inteiro de estudo para se acostumar com o código e você está pronto.
 
-The main problem is that it's written in Java and I am not intending to write anything in Java (or any derivative) for now. For a short while I considered the endeavour or rewriting the damn thing in something more portable such as Rust, which I could load anywhere through FFI.
+O problema principal é que ele é escrito em Java, e eu não pretendo escrever nada em Java (ou derivados) por enquanto. Por um instante cheguei a considerar a empreitada de reescrever o troço todo em algo mais portátil, tipo Rust, que eu poderia carregar de qualquer lugar via FFI.
 
-But even though SimpleNLG has "Simple" in it's name it has a few hairy dependencies to load the lexicon database. And the database itself is an HSQLDB dump, which is a Java-written database. And then, there would be the issue of maintaining a fork.
+Mas mesmo o SimpleNLG tendo "Simple" no nome, ele tem algumas dependências cabeludas para carregar a base de léxico. E a base em si é um dump de HSQLDB, que é um banco escrito em Java. E ainda haveria a questão de manter um fork.
 
-I quickly gave up on that idea and instead I worked around this by wrapping the library under a simple [Rails-API](https://github.com/rails-api/rails-api) endpoint. I had a few issues because I had Git LFS tracking jar files in my system and Heroku doesn't support it and I ended up with a corrupted deployment (beware of those quircks, by the way!)
+Desisti rápido dessa ideia e contornei o problema embrulhando a biblioteca dentro de um endpoint [Rails-API](https://github.com/rails-api/rails-api) simples. Tive uns problemas porque eu tinha o Git LFS rastreando os arquivos jar no meu sistema e o Heroku não suporta isso, e acabei com um deploy corrompido (cuidado com essas pegadinhas, aliás!).
 
-Finally, I was able to deploy a working JRuby + Rails-API project embedding SimpleNLG at Heroku. You can deploy your own copy by cloning my [nlg_service](https://github.com/Codeminer42/nlg_service). It works fine with the latest JRuby 9.1.5.0. You should pay for at least a Hobby tier over Heroku. Java takes a ridiculous amount of time to start up and more time to warm up. Heroku's free tier shuts down your dyno if it sits idle and a subsequent web request will definitelly time out or take an absurd amount of time to return.
+No fim consegui colocar no ar um projeto JRuby + Rails-API funcionando com SimpleNLG embutido no Heroku. Você pode subir sua própria cópia clonando meu [nlg_service](https://github.com/Codeminer42/nlg_service). Funciona bem com o JRuby 9.1.5.0 mais recente. Você precisa pagar pelo menos um plano Hobby no Heroku. Java leva um tempo ridículo para subir e mais tempo ainda para esquentar. O free tier do Heroku desliga seu dyno se ele ficar parado, e a próxima requisição web vai dar timeout ou levar uma eternidade para responder.
 
-Once deployed it starts up Rails, then loads [this initializer](https://github.com/Codeminer42/nlg_service/blob/master/config/initializers/simple_nlg.rb):
+Uma vez no ar, ele sobe o Rails e carrega [este initializer](https://github.com/Codeminer42/nlg_service/blob/master/config/initializers/simple_nlg.rb):
 
 ```ruby
 require 'java'
@@ -86,7 +90,7 @@ SIMPLE_NLG_PATH                 = Rails.root.join("lib/SimpleNLG").to_s.freeze
 Dir["#{SIMPLE_NLG_PATH}/*.jar"].each { |jar| require jar }
 ```
 
-And then I map the classes [like this](https://github.com/Codeminer42/nlg_service/blob/master/app/models/simple_nlg.rb):
+E depois mapeio as classes [assim](https://github.com/Codeminer42/nlg_service/blob/master/app/models/simple_nlg.rb):
 
 ```ruby
 module SimpleNLG
@@ -107,7 +111,7 @@ module SimpleNLG
 end
 ```
 
-Finally, I have a simple endpoint mapped to a [controller](https://github.com/Codeminer42/nlg_service/blob/master/app/controllers/api/realisers_controller.rb) action:
+Por fim, tenho um endpoint simples mapeado para uma action de [controller](https://github.com/Codeminer42/nlg_service/blob/master/app/controllers/api/realisers_controller.rb):
 
 ```ruby
 class Api::RealisersController < ApplicationController
@@ -127,13 +131,13 @@ class Api::RealisersController < ApplicationController
 end
 ```
 
-The process of generating the final English text is called **"realisation"**. SimpleNLG has a comprehensive Java API but it also exposes it as a simpler XML format. The full [XML Realiser Schema](https://github.com/simplenlg/simplenlg/blob/master/src/main/resources/xml/RealizerSchema.xsd) is available as an XSD.
+O processo de gerar o texto final em inglês se chama **"realisation"** (realização). O SimpleNLG tem uma API Java bem completa, mas também expõe tudo num formato XML mais simples. O [XML Realiser Schema](https://github.com/simplenlg/simplenlg/blob/master/src/main/resources/xml/RealizerSchema.xsd) completo está disponível como XSD.
 
-If I want to write this sentence:
+Se eu quiser escrever esta frase:
 
 > "There are some finished and delivered stories that may not have been tested."
 
-This is the XML that I need to assemble:
+Este é o XML que preciso montar:
 
 ```xml
 <?xml version="1.0"?>
@@ -186,17 +190,17 @@ This is the XML that I need to assemble:
 </NLGSpec>
 ```
 
-Ok, this is preposterous, I know.
+Ok, eu sei, isso é absurdo.
 
-Which is why I decided to go ahead and use one of Ruby's most recognized strengths: creating **DSLs** or **Domain Specific Languages**.
+Por isso resolvi seguir adiante e usar uma das forças mais reconhecidas do Ruby: criar **DSLs**, ou Domain Specific Languages.
 
-The result of my initial endeavor to simplify this process is the [nlg_xml_realiser_builder](https://github.com/Codeminer42/nlg_xml_realiser_builder) ruby gem. Simply add the following to your `Gemfile`:
+O resultado da minha tentativa inicial de simplificar esse processo é a gem [nlg_xml_realiser_builder](https://github.com/Codeminer42/nlg_xml_realiser_builder). Basta adicionar isso ao seu `Gemfile`:
 
 ```
 gem 'nlg_xml_realiser_builder'
 ```
 
-And the humongous XML above becomes something more manageable like this:
+E o XML monstruoso ali em cima vira algo bem mais gerenciável, assim:
 
 ```ruby
 dsl = NlgXmlRealiserBuilder::DSL.new
@@ -218,17 +222,17 @@ dsl.builder(true) do
 end.to_xml
 ```
 
-Understanding the intricasies of an `NPPhraseSpec` vs a `VPPhraseSpec` or the difference between a `WordElement` or `StringElement` are beyond this blog post. But most of the original XSD has been mapped through [this constants file](https://github.com/Codeminer42/nlg_xml_realiser_builder/blob/master/lib/nlg_xml_realiser_builder/consts.rb).
+Entender as nuances de um `NPPhraseSpec` versus um `VPPhraseSpec`, ou a diferença entre um `WordElement` e um `StringElement`, está fora do escopo deste post. Mas a maior parte do XSD original foi mapeada [neste arquivo de constantes](https://github.com/Codeminer42/nlg_xml_realiser_builder/blob/master/lib/nlg_xml_realiser_builder/consts.rb).
 
-I have a [few acceptance specs](https://github.com/Codeminer42/nlg_xml_realiser_builder/blob/master/spec/nlg_xml_realiser_builder_spec.rb) that are generating XMLs like the above, posting to my live online NLG Web Service and fetching the resulting English sentences. I will change this process in the future but you can test it our yourself.
+Tenho [algumas specs de aceitação](https://github.com/Codeminer42/nlg_xml_realiser_builder/blob/master/spec/nlg_xml_realiser_builder_spec.rb) que geram XMLs como o de cima, postam no meu NLG Web Service que está no ar e pegam de volta as frases em inglês resultantes. Vou mudar esse processo no futuro, mas você já pode testar por conta própria.
 
-The advantages start here. Now let's check out the previous example more closely. Again, it renders this phrase:
+As vantagens começam aqui. Vamos olhar o exemplo anterior mais de perto. De novo, ele renderiza esta frase:
 
 > "There are some finished and delivered stories that may not have been tested."
 
-Now, it's in plural form because I am talking about 'stories', but what if I want a singular version?
+Repare que está no plural porque estou falando de 'stories', mas e se eu quiser uma versão no singular?
 
-Below is the new version where I just wrap it around a method and make the attribute 'NUMBER' accept both 'PLURAL' or 'SINGULAR':
+Abaixo está a nova versão, onde eu envolvo o código num método e faço o atributo 'NUMBER' aceitar tanto 'PLURAL' quanto 'SINGULAR':
 
 ```ruby
 def example(plural = 'PLURAL')
@@ -252,25 +256,25 @@ def example(plural = 'PLURAL')
 end
 ```
 
-And I can run the singular version like this:
+E posso rodar a versão singular assim:
 
 ```
 puts example('SINGULAR')
 ```
 
-This is the resulting phrase:
+Esta é a frase resultante:
 
 > "There is a finished and delivered story that may not have been tested."
 
-Check out how it changed the verb from "are" to "is" and the noun determiner from "some" to "a" on its own! And of course, this is a contrived example. Now imagine an entire customizable article, full of paragraphs and sentences that I can customize depending on several variable I have.
+Olha como ele mudou o verbo de "are" para "is" e o determinante do substantivo de "some" para "a" sozinho! E claro, este é um exemplo bobo. Agora imagine um artigo inteiro customizável, cheio de parágrafos e frases que eu posso variar dependendo de várias variáveis que tenho.
 
-While I was studying and writing this DSL I got a good enough grasp of the SimpleNLG structure, but if you have more examples for more complex phrase structures, please let me know in the comments section down below.
+Enquanto eu estudava e escrevia essa DSL, peguei uma compreensão razoável da estrutura do SimpleNLG, mas se você tem mais exemplos para estruturas de frase mais complexas, deixa nos comentários aí embaixo.
 
-Most of the specs were copied from the XML Realiser tests from the original Java project to make sure I am covering most cases.
+A maior parte das specs foi copiada dos testes do XML Realiser do projeto Java original para garantir que estou cobrindo a maioria dos casos.
 
-It will be interesting to see if this DSL makes it easier for more people to experiment with NLG. As usual, send your Pull Requests, ideas and suggestions on my GitHub public repositories:
+Vai ser interessante ver se essa DSL facilita a vida de mais gente que queira experimentar com NLG. Como sempre, mandem seus Pull Requests, ideias e sugestões nos meus repositórios públicos do GitHub:
 
 * [nlg_service](https://github.com/Codeminer42/nlg_service)
 * [nlg_xml_realiser_builder](https://github.com/Codeminer42/nlg_xml_realiser_builder)
 
-And if you're interested in the subject of NLP and NLG I found [this list](https://github.com/diasks2/ruby-nlp) of Ruby related open source projects as well.
+E se você se interessa pelo assunto de NLP e NLG, encontrei [esta lista](https://github.com/diasks2/ruby-nlp) de projetos open source relacionados em Ruby também.

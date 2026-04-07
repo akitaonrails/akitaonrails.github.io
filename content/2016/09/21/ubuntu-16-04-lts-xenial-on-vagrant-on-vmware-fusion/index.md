@@ -1,26 +1,29 @@
 ---
-title: Ubuntu 16.04 LTS Xenial on Vagrant on Vmware Fusion
+title: Ubuntu 16.04 LTS Xenial no Vagrant com Vmware Fusion
 date: '2016-09-21T18:08:00-03:00'
-slug: ubuntu-16-04-lts-xenial-on-vagrant-on-vmware-fusion
+slug: ubuntu-16-04-lts-xenial-no-vagrant-com-vmware-fusion
+translationKey: ubuntu-xenial-vagrant-vmware
+aliases:
+- /2016/09/21/ubuntu-16-04-lts-xenial-on-vagrant-on-vmware-fusion/
 tags:
 - linux
-- install
-- learning
+- aprendizado
 - elixir
 - crystal
 - clojure
 - ruby on rails
 - postgresql
+- traduzido
 draft: false
 ---
 
-I'm old school. I know the cool kids are all playing around with Docker nowadays, but I like to have a full blown linux environment with all dependencies in one place. I will leave volatile boxes for the cloud.
+Sou old school. Sei que a garotada descolada está toda brincando com Docker hoje em dia, mas gosto de ter um ambiente linux completo com todas as dependências num lugar só. Deixo as máquinas voláteis para a nuvem.
 
-I like to keep a Vagrant box around, because no matter how messy an OS upgrade can go (looking at ya macOS), I know my development box will just work.
+Gosto de manter uma box Vagrant por perto, porque por mais bagunçado que um upgrade de sistema operacional possa ser (olhando pra você, macOS), sei que minha máquina de desenvolvimento vai simplesmente funcionar.
 
-But even with everything virtualized and isolated, things can still go wrong. I am currently using [Vagrant 1.8.5](https://www.vagrantup.com/downloads.html), with the [vagrant-vmware-fusion plugin 4.0.11](https://www.vagrantup.com/vmware/) and Vmware Fusion 8.5 on El Capitan (even though macOS Sierra just launched, I will wait at least 1 month before upgrading, there is nothing there that is worth the risk).
+Mas mesmo com tudo virtualizado e isolado, coisas ainda podem dar errado. Atualmente estou usando [Vagrant 1.8.5](https://www.vagrantup.com/downloads.html), com o [plugin vagrant-vmware-fusion 4.0.11](https://www.vagrantup.com/vmware/) e Vmware Fusion 8.5 no El Capitan (mesmo com o macOS Sierra tendo acabado de ser lançado, vou esperar pelo menos 1 mês antes de atualizar, nada ali vale o risco).
 
-If you're installing a brand new box for the first time, this is the bare-bone `Vagrantfile` configuration I am using:
+Se você está instalando uma box novinha pela primeira vez, essa é a configuração mínima do `Vagrantfile` que eu uso:
 
 ```ruby
 # -*- mode: ruby -*-
@@ -47,9 +50,9 @@ Vagrant.configure(2) do |config|
 end
 ```
 
-I usually go in the Vmware settings for the virtual machine and enable an extra processor (as my Macbook has 8 virtual cores to share) and enable hypervisor (support for Intel's VT-x/EPT).
+Normalmente entro nas configurações do Vmware da máquina virtual e habilito um processador extra (já que meu Macbook tem 8 núcleos virtuais pra compartilhar) e habilito o hypervisor (suporte ao VT-x/EPT da Intel).
 
-As a rule of thumb, the very first thing I always do is set the locale to en_US.UTF-8:
+Como regra geral, a primeira coisa que sempre faço é configurar o locale para en_US.UTF-8:
 
 ```
 sudo locale-gen "en_US.UTF-8"
@@ -57,31 +60,31 @@ sudo dpkg-reconfigure locales
 sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
 ```
 
-And just to make sure, add the following to `/etc/environment`:
+E, só pra garantir, adicione o seguinte ao `/etc/environment`:
 
 ```
 LC_ALL=en_US.UTF-8
 LANG=en_US.UTF-8
 ```
 
-You must set UTF-8 before you install packages such as Postgresql.
+Você precisa configurar o UTF-8 antes de instalar pacotes como o Postgresql.
 
-Then I upgrade packages and install the basic:
+Depois eu atualizo os pacotes e instalo o básico:
 
 ```
 sudo apt-get update && sudo apt-get upgrade
 sudo apt-get install open-vm-tools build-essential libssl-dev exuberant-ctags ncurses-term ack-grep silversearcher-ag fontconfig imagemagick libmagickwand-dev python-software-properties redis-server libhiredis-dev memcached libmemcached-dev
 ```
 
-This will install important tools such as Imagemagick, Memcached and Redis for us.
+Isso vai instalar ferramentas importantes como Imagemagick, Memcached e Redis pra gente.
 
-Now, to [install Postgresql](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-16-04):
+Agora, para [instalar o Postgresql](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-16-04):
 
 ```
 sudo apt-get install postgresql-9.5 postgresql-contrib postgresql-server-dev-9.5
 ```
 
-Create the superuser for vagrant:
+Crie o superusuário para o vagrant:
 
 ```
 sudo -i -u postgres
@@ -91,7 +94,7 @@ Enter name of role to add: vagrant
 Shall the new role be a superuser? (y/n) y
 ```
 
-And **only for the development environment** edit `/etc/postgresql/9.5/main/pg_hba.conf` and change the following:
+E **apenas para o ambiente de desenvolvimento** edite o `/etc/postgresql/9.5/main/pg_hba.conf` e altere o seguinte:
 
 ```
 # "local" is for Unix domain socket connections only
@@ -102,9 +105,9 @@ host    all             all             127.0.0.1/32            trust
 host    all             all             ::1/128                 trust
 ```
 
-This is to make your life easier while programming. If you did everything right until now, you will have your PG with proper unicode encoding and without bothering with password when you do `bin/rails db:create`. If you didn't configure your locale properly before, you can follow [this gist](https://gist.github.com/turboladen/6790847) to manually set PG's locale to UTF-8.
+Isso deixa sua vida mais fácil na hora de programar. Se você fez tudo certo até aqui, terá seu PG com encoding unicode adequado e sem incomodar com senha quando rodar `bin/rails db:create`. Se não configurou o locale direito antes, pode seguir [este gist](https://gist.github.com/turboladen/6790847) para setar o locale do PG manualmente para UTF-8.
 
-Installing [Ruby](https://rvm.io/rvm/install) is still better done through RVM:
+Instalar [Ruby](https://rvm.io/rvm/install) ainda é melhor via RVM:
 
 ```
 gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
@@ -114,48 +117,48 @@ rvm install 2.3.1
 rvm use 2.3.1 --default
 ```
 
-And I prefer using [YADR](https://github.com/skwp/dotfiles) as my default dotfiles, replacing Bash for ZSH. And comparing to other dotfiles, I like this one because I usually don't have to tweak it, at all. I won't even configure anything about RVM after installing because YADR takes care of that already.
+E eu prefiro usar o [YADR](https://github.com/skwp/dotfiles) como meus dotfiles padrão, trocando o Bash pelo ZSH. Comparado com outros dotfiles, gosto desse porque normalmente não preciso mexer em nada, ponto. Nem vou configurar nada de RVM depois da instalação porque o YADR já cuida disso.
 
 ```
 sh -c "`curl -fsSL https://raw.githubusercontent.com/skwp/dotfiles/master/install.sh `"
 ```
 
-To update it (or resume in case it breaks for some reason):
+Para atualizar (ou retomar caso quebre por algum motivo):
 
 ```
 cd .yadr
 rake update
 ```
 
-The only 2 tweaks I have to do is change my [iTerm2](https://github.com/altercation/solarized/tree/master/iterm2-colors-solarized) profile to use [Solarized](http://ethanschoonover.com/solarized), and I have to add the following 2 lines to the top of the `.vimrc` file:
+Os únicos 2 ajustes que tenho que fazer são mudar meu perfil do [iTerm2](https://github.com/altercation/solarized/tree/master/iterm2-colors-solarized) para usar [Solarized](http://ethanschoonover.com/solarized), e adicionar as 2 linhas a seguir no topo do arquivo `.vimrc`:
 
 ```
 scriptencoding utf-8
 set encoding=utf-8
 ```
 
-Next step, [install NodeJS](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-16-04):
+Próximo passo, [instalar o NodeJS](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-16-04):
 
 ```
 curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 sudo apt-get install nodejs
 ```
 
-Next step, [install Java](https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-get-on-ubuntu-16-04). You can choose Oracle's installer, but I believe the openjdk should be enough:
+Próximo passo, [instalar o Java](https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-get-on-ubuntu-16-04). Você pode escolher o instalador da Oracle, mas acredito que o openjdk deva ser suficiente:
 
 ```
 sudo apt-get install default-jdk
 ```
 
-We will need Java for [Elasticsearch](https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-elasticsearch-on-ubuntu-16-04) 2.4.0:
+Vamos precisar do Java para o [Elasticsearch](https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-elasticsearch-on-ubuntu-16-04) 2.4.0:
 
 ```
 wget https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/deb/elasticsearch/2.4.0/elasticsearch-2.4.0.deb && sudo dpkg -i elasticsearch-2.4.0.deb
 ```
 
-Now you can start it manually with `sudo /etc/init.d/elasticsearch start`, and you want to leave it that way because it consumes a lot of RAM, so you should only start it when you really need it.
+Agora você pode iniciá-lo manualmente com `sudo /etc/init.d/elasticsearch start`, e é melhor deixar assim porque ele consome bastante RAM, então só inicie quando realmente precisar.
 
-With Java in place, we can also install [Leiningen](http://leiningen.org/) to have Clojure ready.
+Com o Java no lugar, também podemos instalar o [Leiningen](http://leiningen.org/) para ter o Clojure pronto.
 
 ```
 echo "PATH=$PATH:~/bin" >> ~/.zsh.after/bin.zsh
@@ -165,22 +168,22 @@ chmod a+x lein
 lein
 ```
 
-Leiningen will install it's dependencies and you can follow its [tutorial](https://github.com/technomancy/leiningen/blob/stable/doc/TUTORIAL.md) to get started.
+O Leiningen vai instalar suas dependências e você pode seguir o [tutorial](https://github.com/technomancy/leiningen/blob/stable/doc/TUTORIAL.md) dele para começar.
 
-Installing [Rust](https://www.rust-lang.org/en-US/downloads.html) is as easy:
+Instalar [Rust](https://www.rust-lang.org/en-US/downloads.html) é igualmente fácil:
 
 ```
 curl -sSf https://static.rust-lang.org/rustup.sh | sh
 ```
 
-Installing [Crystal](https://crystal-lang.org/docs/installation/on_debian_and_ubuntu.html), also easy:
+Instalar [Crystal](https://crystal-lang.org/docs/installation/on_debian_and_ubuntu.html), também fácil:
 
 ```
 curl https://dist.crystal-lang.org/apt/setup.sh | sudo bash
 sudo apt-get install crystal
 ```
 
-Installing [Go](https://www.digitalocean.com/community/tutorials/how-to-install-go-1-6-on-ubuntu-16-04) is not difficult, but more manual:
+Instalar [Go](https://www.digitalocean.com/community/tutorials/how-to-install-go-1-6-on-ubuntu-16-04) até dá, mas é mais manual:
 
 ```
 wget https://storage.googleapis.com/golang/go1.7.1.linux-amd64.tar.gz
@@ -192,14 +195,14 @@ echo "export GOPATH=$HOME/go" >> ~/.zsh.after/go.zsh
 echo "export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin" >> ~/.zsh.after/go.zsh
 ```
 
-Once you install go and set it's work path, we can install some useful tools such as [forego](https://github.com/ddollar/forego) and [goon](https://github.com/alco/goon#goon) (that Elixir's Hex can optionally use):
+Assim que instalar o go e configurar o work path dele, podemos instalar algumas ferramentas úteis como o [forego](https://github.com/ddollar/forego) e o [goon](https://github.com/alco/goon#goon) (que o Hex do Elixir pode usar opcionalmente):
 
 ```
 go get -u github.com/ddollar/forego
 go get -u github.com/alco/goon
 ```
 
-And speaking of [Elixir](http://elixir-lang.org/install.html), we saved the best for last:
+E falando em [Elixir](http://elixir-lang.org/install.html), deixamos o melhor pro final:
 
 ```
 wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb && sudo dpkg -i erlang-solutions_1.0_all.deb
@@ -207,6 +210,6 @@ sudo apt-get update
 sudo apt-get install esl-erlang elixir
 ```
 
-And this is it, a very straightforward tutorial to have a modern development environment ready to go. These are the basic software development tools that I believe should be in everybody's toolbelts for the following years.
+E é isso, um tutorial bem direto para ter um ambiente de desenvolvimento moderno pronto pra usar. Essas são as ferramentas básicas de desenvolvimento de software que acredito que deveriam estar no cinto de utilidades de todo mundo nos próximos anos.
 
-Honestly, I am not so much into Clojure and Go as I think I should. And I didn't give .NET Core a lot of time yet, but I will explore those in more detail in the future.
+Honestamente, não mexo tanto com Clojure e Go quanto acho que deveria. E ainda não dei muito tempo pro .NET Core, mas vou explorar esses em mais detalhes no futuro.
