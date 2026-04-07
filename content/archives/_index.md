@@ -131,7 +131,7 @@ Quer ver as transcrições do Canal Akitando? [Clique aqui](/akitando/).
 ## 2016 - Dezembro
 
 - [Ex Pusher Lite - Parte 3 - Uma Solução Completa](/2016/12/30/ex-pusher-lite-parte-3-uma-solucao-completa/)
-- [Elixir Phoenix App deployed into a Load Balanced DigitalOcean setup](/2016/12/23/elixir-phoenix-app-deployed-into-a-load-balanced-digitalocean-setup/)
+- [Aplicativo Elixir Phoenix em Deploy num Setup com Balanceamento de Carga no DigitalOcean](/2016/12/23/aplicativo-elixir-phoenix-deploy-balanceamento-carga-digitalocean/)
 - [Coherence e ExAdmin - Devise e ActiveAdmin para Phoenix](/2016/12/06/coherence-e-exadmin-devise-e-activeadmin-para-phoenix/)
 
 ## 2016 - Novembro
@@ -179,7 +179,7 @@ Quer ver as transcrições do Canal Akitando? [Clique aqui](/akitando/).
 ## 2016 - Maio
 
 - [Flertando com Crystal, a Perspectiva de um Rubyista](/2016/05/31/flertando-com-crystal-perspectiva-de-um-rubyista/)
-- [Rails has won: The Elephant in the Room](/2016/05/23/rails-has-won-the-elephant-in-the-room/)
+- [Rails Venceu: O Elefante na Sala](/2016/05/23/rails-venceu-o-elefante-na-sala/)
 
 ## 2016 - Abril
 

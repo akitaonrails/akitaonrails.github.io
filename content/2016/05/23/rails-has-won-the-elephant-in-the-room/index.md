@@ -1,156 +1,153 @@
 ---
-title: 'Rails has won: The Elephant in the Room'
+title: 'Rails Venceu: O Elefante na Sala'
 date: '2016-05-23T17:21:00-03:00'
-slug: rails-has-won-the-elephant-in-the-room
+slug: rails-venceu-o-elefante-na-sala
+translationKey: rails-has-won
+aliases:
+- /2016/05/23/rails-has-won-the-elephant-in-the-room/
 tags:
 - off-topic
 - open source
 - rants
+- traduzido
 draft: false
 ---
 
-I just read a very [well written and important article](http://solnic.eu/2016/05/22/my-time-with-rails-is-up.html) from OSS contributor Solnic and I have to agree with him in almost every technical point.
+Acabei de ler um [artigo muito bem escrito e importante](http://solnic.eu/2016/05/22/my-time-with-rails-is-up.html) do contribuidor OSS Solnic e tenho que concordar com ele em quase todos os pontos técnicos.
 
-First of all, it's inevitable but I still hate dramatic headlines, even though I write like this myself sometimes. "My time with Rails is up" like it's saying "And you should leave Rails now too if you're smart". I dismissed the article entirely because of that. I was about to post a counter-rant to that without reading it properly, but now that I have, I wrote this new article from scratch.
+Antes de mais nada, é inevitável, mas ainda odeio títulos dramáticos, mesmo que eu mesmo escreva assim às vezes. "Meu tempo com Rails acabou" é como dizer "E você também deveria largar Rails se for inteligente". Descartei o artigo por completo por causa disso. Estava prestes a escrever uma contra-rant sem ler direito, mas agora que li, escrevi este artigo novo do zero.
 
-Solnic is right: Ruby, by itself, has little to no future alone. Rails is a real monopoly in this community and most OSS projects are targeting Rails. And yes, Rails do encourage some bad practices and anti-patterns. This can be very discouraging to many OSS contributors, specially because to change the direction of a huge Elephant takes humongous effort.
+Solnic está certo: Ruby, por si só, tem pouco ou nenhum futuro sozinho. Rails é um monopólio real nesta comunidade e a maioria dos projetos OSS mira no Rails. E sim, Rails encoraja algumas práticas ruins e anti-padrões. Isso pode ser muito desanimador para muitos contribuidores OSS, especialmente porque mudar a direção de um Elefante enorme exige um esforço descomunal.
 
-To make it clear, the dialectic technical arguments he makes are all true. But half the article - as he stated himself - is just rant, pure rethoric. And I think it would be good to balance it out, which is what I will try to do in this post.
+Deixando claro: os argumentos técnicos dialéticos que ele apresenta são todos verdadeiros. Mas metade do artigo — como ele mesmo disse — é pura rant, retórica. E acho que seria bom equilibrar isso, que é o que vou tentar fazer neste post.
 
-### Accepting Reality
+### Aceitando a Realidade
 
-The reality is this: Rails is tailor made for Basecamp.
+A realidade é esta: Rails foi feito sob medida para o Basecamp.
 
-We all know that, or we should. Basecamp-like apps are not too difficult to make, at least in terms of architecture. You don't need fancy super performant languages with super duper highly concurrent and parallel primitives. Also a reality is that 80% of the web applications are Basecamp-like (disclosure: my feelings for years of experience in consulting). Which is why Rails has endured so far.
+Todos sabemos disso, ou deveríamos. Apps no estilo Basecamp não são muito difíceis de fazer, pelo menos em termos de arquitetura. Não precisa de linguagens sofisticadas super performáticas com primitivas de concorrência e paralelismo. E a realidade é que 80% das aplicações web são estilo Basecamp (com base na minha experiência em consultoria). É por isso que Rails resistiu até agora.
 
-It's like content management systems, or CMS. Most of them are blog-like systems. And for that you should go ahead and install Wordpress. The very same arguments made against Rails can be done against Wordpress. And you should never, ever, tweak Wordpress to be anything but a blog-system. Try to make it into an e-commerce for high traffic, and you will suffer.
+É como sistemas de gerenciamento de conteúdo, ou CMS. A maioria deles são sistemas de blog. E para isso você pode ir em frente e instalar o Wordpress. Os mesmos argumentos feitos contra o Rails podem ser feitos contra o Wordpress. E você nunca deveria tunar o Wordpress para ser qualquer coisa além de um sistema de blog. Tente transformá-lo num e-commerce de alto tráfego e vai sofrer.
 
-To make it clear: Wordpress has one of the most offensive source codes I've ever seen. I would hate having to maintain that codebase. I'm sorry if anyone from the Wordpress base of contributors is reading this, I say this without malevolence. And you know what? Possibly half of all CMSs in the world are Wordpress. Over a million websites.
+Para deixar claro: Wordpress tem um dos códigos-fonte mais ofensivos que já vi. Odiaria ter que manter aquela base de código. Me desculpo se algum contribuidor do Wordpress estiver lendo isso, digo sem malícia. E sabe o quê? Possivelmente metade de todos os CMSs do mundo é Wordpress. Mais de um milhão de sites.
 
-Then you have the case for Magento2. Big rewrite over the original Magento, written using all the dreaded Zend stuff that everybody else dislikes. But it's huge. If you need a fast turn-key solution for e-commerce, look no further.
+Depois tem o caso do Magento2. Grande reescrita sobre o Magento original, escrito usando toda aquela parafernália do Zend que todo mundo detesta. Mas é enorme. Se você precisa de uma solução rápida e pronta para e-commerce, não precisa procurar mais.
 
-Do Wordpress plugins work with Magento? Nope. They are 2 fragmented, independent and isolated communities. But they both generate a lot of revenue, which is what covers the cost of redundancy between them. And this is not even counting Drupal, Joomla. PHP is one big ocean of disconnected islands. Countries with severe immigration laws.
+Plugins do Wordpress funcionam no Magento? Não. São 2 comunidades fragmentadas, independentes e isoladas. Mas ambas geram muito dinheiro, o que cobre o custo da redundância entre elas. E isso sem contar Drupal, Joomla. PHP é um grande oceano de ilhas desconectadas.
 
-Fragmentation is no stranger to the Javascript world. But it's a different kind of value generation. Facebook, Google, Microsoft, they all want to be the thought-leaders in the fast evolving Millenials generation. It's a long term strategy. And one of the elements of this game is the Browser. But not only in terms of Chrome vs Firefox vs IE, but also on how applications are implemented.
+A fragmentação não é estranha ao mundo Javascript. Mas é um tipo diferente de geração de valor. Facebook, Google, Microsoft, todos querem ser os líderes de pensamento na geração Millennial em rápida evolução. É uma estratégia de longo prazo. E um dos elementos desse jogo é o Browser. Não só em termos de Chrome vs Firefox vs IE, mas também em como as aplicações são implementadas.
 
-Facebook came up with React. Google came up with Polymer and Angular. The Node guys went through a power struggle with Joyent which almost resulted in further fragmentation but they settled for the [Node Foundation](http://readwrite.com/2015/02/10/joyent-node-js-foundation/). 
+Facebook criou o React. Google criou o Polymer e o Angular. O pessoal do Node passou por uma luta de poder com a Joyent que quase resultou em mais fragmentação, mas chegaram a um acordo com a [Node Foundation](http://readwrite.com/2015/02/10/joyent-node-js-foundation/).
 
-Apple went all on war against Adobe's Flash and then only now Google is [turning them off in Chrome](http://www.theinquirer.net/inquirer/news/2458329/googles-chrome-browser-will-switch-off-flash-content-by-default), but they are all looting on the consequences for all the attention it brings in the Web Development communities.
+A Apple foi à guerra total contra o Flash da Adobe e só agora o Google está [desligando-os no Chrome](http://www.theinquirer.net/inquirer/news/2458329/googles-chrome-browser-will-switch-off-flash-content-by-default). A Apple quer que o nativo prospere e que o Swift seja a linguagem que lidere tudo. O Google tem estratégias conflitantes porque quer que os [Instant Apps](http://techcrunch.com/2016/05/18/google-takes-a-new-approach-to-native-apps-with-instant-apps-for-android/) nativos triunfem, mas se falharem, o plano B continua sendo dominar os apps web baseados em HTML5/CSS3 com Angular. O Facebook não quer ter seu destino decidido pela luta de poder entre Apple e Google.
 
-Apple wants native to succeed and Swift to be the one language to lead it all. Google has conflicting strategies because they want native [Instant Apps](http://techcrunch.com/2016/05/18/google-takes-a-new-approach-to-native-apps-with-instant-apps-for-android/) to succeed but if it fails, plan B continues to be for them to dominate HTML5/CSS3 based web apps with Angular. Facebook don't want to have their fate being decided by the power struggle between Apple and Google.
+É uma luta de poder complexa se desenrolando — não é sobre competência técnica, não é sobre geração de valor. É sobre ego, influência e poder. E as tecnologias web estão sendo mantidas como _reféns_ neste cerco.
 
-It's a complex power struggle unfolding, and you can see that it's not about technical prowess, it's not about value generation. It's about ego, influence and power. Very fitting for the YouTuber generation. And the web technologies are being held _hostage_ in this siege, if you havent's noticed.
+Depois tem a questão de que o futuro do Ruby está agora fortemente acoplado ao Rails. Isso é uma realidade e se você é um Rubyista que não gosta de Rails, sinto muito. Mas não tanto. Por exemplo, se Hanami é interessante, acredito que pelo menos uma empresa investiu nele. Se ninguém está usando, então não importa o quão tecnicamente superior ele seja. Se Rom.rb é ótimo, alguém deveria estar usando — caso contrário qual é o ponto? Por que criar uma maravilha técnica que ninguém quer? Mas se há pelo menos uma empresa usando, é **razão suficiente** para continuar, independentemente do que aconteça com Rails ou do que DHH diga ou faça.
 
-Then there is the issue that Ruby's future is now tightly coupled with Rails. This is a reality and if you're a Rubyist that don't like Rails, I feel bad for you. But not so much. For example, if Hanami is interesting I believe at least one company invested on it. If no one is using it, then it doesn't matter how technically superior it is. If Rom.rb is great someone should be using it, otherwise what's the point? Why create a technical marvel that no one wants? But if there is at least one company using it, it's **enough reason** to keep going, regardless of what happens to Rails or what DHH says or does.
+> As pessoas pensam que porque algo é "tecnicamente superior" todos os outros deveriam adotar cegamente. Mas não é assim que o mercado funciona.
 
-> People think that because something is "technically superior" everybody else should blindly adopt. But this is not how the market works.
+De todos os eventos de tamanho cósmico que acontecem por aí, realmente não me preocupo tanto se Ruby continua amarrado ao Rails. O que ele faria sem ele?
 
-Of all the cosmic-size events going on out there, I really don't sweat it that much if Ruby stays tied to Rails. What would it do without it?
+Todas as comunidades enfrentam fragmentação em algum momento. É muito difícil e caro manter coesão por muito tempo. A única comunidade que acho que conseguiu isso por pura força de regulação é a stack .NET da Microsoft. O próprio Rails desempenhou um papel importante em influenciar a mudança do antigo ASP.NET para o ASP.NET MVC. Agora eles finalmente [adquiriram o Xamarin](http://blogs.microsoft.com/blog/2016/02/24/microsoft-to-acquire-xamarin-and-empower-more-developers-to-build-apps-on-any-device/) antes que o .NET pudesse escapar do controle deles em plataformas open source.
 
-All communities face fragmentation at some point. It's very difficult and expensive to maintain cohesiveness for a long time. The only community that I think achieved that through sheer force of regulation is Microsoft's .NET stack. It doesn't mean that there were no pressure from the outside. Rails itself played a big role into influencing the move from old-ASP.NET to ASP.NET MVC. Now they finally [acquired Xamarin](http://blogs.microsoft.com/blog/2016/02/24/microsoft-to-acquire-xamarin-and-empower-more-developers-to-build-apps-on-any-device/) before .NET could steer out of their control in open source platforms they don't control.
+Ruby on Rails é a única outra comunidade "coesa" que já vi. Com a vantagem de que o Basecamp não precisa de centenas de milhares de desenvolvedores para existir. Um nicho de mercado seria suficiente para o framework evoluir gradualmente através de processos OSS. Por isso sempre questiono a história e as origens de ferramentas e tecnologias para tomar minhas decisões sobre onde usá-las, não só a competência técnica.
 
-Ruby on Rails is the only other "cohesive" community I've seen. With the upside that Basecamp doesn't need hundreds of thousands of developers to exist. A niche market would suffice, enough for the framework to evolve gradually through OSS processes. Which is why I always question the history and origins of tools and technologies to make my decisions on where to use them, not just technical prowess.
+Rails funciona porque não precisa fazer política com Apple, Facebook, Microsoft, Google ou qualquer outro comitê (por padrão, nunca confio em comitês). Quem depende do Rails fará a manutenção diretamente. Heroku, Github, New Relic, Shopify e muitos desenvolvedores talentosos.
 
-Rails works because it doesn't have to play politics with Apple, Facebook, Microsoft, Google or any other committees (by the way, by default, I never trust committees). Those who depend on Rails will do the house-keeping, directly. Heroku, Github, New Relic, Shopify, and many talented developers.
+### 3 Leis da Realidade de Mercado
 
-### 3 Laws of Market Reality
+1. É fácil analisar demais algo após o fato. 10 anos depois, consigo traçar facilmente um caminho ótimo, evitando todas as armadilhas. Não me torna gênio nenhum, apenas mostra que consigo conectar os pontos — agora claramente visíveis.
 
-1. It's easy to over-analyse something after the fact. 10 years down the road, I can easily trace back an optimal path, avoiding all boobtraps and obstacles along the way. Doesn't make me any genius, just shows that I can connect the - now clearly visible - dots.
+2. Nenhuma implementação de solução é perfeita. Se ela resolve um problema real, está fadada a ser imperfeita. Se resolve num mercado em rápida mudança, mais imperfeita ainda.
 
-2. No solution implementation is perfect. If it actually solves a real problem it's bound to be imperfect. If it solves a real problem in a fast paced changing market, the more imperfect.
+3. Ou você constrói ferramentas porque suas aplicações de negócio dependem disso, ou constrói ferramentas para vender. As primeiras geralmente serão melhores — em termos de ajuste ao mercado. Então se tiver que escolher às cegas, vá com as primeiras.
 
-3. Either you build tools because your core business applications depend on it or you build tools to sell. The former will usually be better - in terms of market-fit - than the latter. So if you have to blindly choose, go with the former.
+Portanto, sempre preferirei ferramentas que resolvem um problema real feitas por quem realmente depende delas. Caso contrário, o filho do sapateiro ficará descalço. Por exemplo: vou usar Angular se precisar. Mas nunca começaria um novo negócio que dependesse exclusivamente do Angular para sobreviver. Por quê? Porque o Google não precisa dele. Não piscou para abrir mão do GWT, não precisou pensar duas vezes para reescrever o Angular 2 de forma incompatível com o Angular 1.
 
-So, first of all, I will always prefer tools that solve a real problem made by those that actually depend on them. Otherwise, the shoemaker's son will end up barefoot. Case in point: I will definitely use Angular, if I have to. But I would never, ever, begin a new business that depends solely on Angular to survive. Why? Because Google doesn't need it. It didn't blink to give up GWT, it didn't have to think twice to decide to rewrite Angular 2 in an incompatible way to Angular 1, and so on.
+Sempre vejo quais fatores externos vão influenciar o destino da tecnologia. Imagine que passei muito tempo escrevendo scripts para o Grunt. As pessoas decidem que é ruim. Agora o Gulp é a melhor escolha. Você investe tudo migrando para Gulp. Então as pessoas decidem que Webpack é a melhor escolha. Síndrome NIH (Not-invented-here) em abundância.
 
-Second of all, I will always see what other external factors will influence the fate of the technology. Imagine that I spent a whole lot of time writing scripts, libraries, tools for Grunt. Then people decide it's bad. Now Gulp is the better choice - and you will find plenty of technical reasons. Now you invest a lot of time writing everything you had for Grunt to Gulp. Then, for plenty of other reasons people decide that Webpack is the best choice. And there you go again. NIH (Not-invented-here) syndrome gallore.
+Às vezes isso faz o monopólio do ASP.NET no campo Microsoft e o monopólio do Rails no campo Ruby parecerem inócuos. E sim, comparei Rails com .NET. São as 2 stacks mais comparáveis. Comparável à facção Spring no campo Java — Spring se levantou contra a complexidade enorme do J2EE oficial em 2002 e então ele mesmo se tornou o novo gigante estilo J2EE a ser combatido.
 
-This is clearly a small bubble. It's tulips all over again. There are too many big players (Facebook, Google, Apple, Microsoft, Mozilla, etc) with big pockets, plenty of time and resources. This is how an experimental lab works in public. Lots and lots of experimental alternatives and several businesses blindly choosing depending on the best sales pitch of the week.
+Este é um dilema milenar:
 
-Sometimes this kind of situation makes the monopoly of ASP.NET on the Microsoft camp and the Rails monopoly on the Ruby camp seen innocuous. And yes, I compared Rails to .NET here. They are the 2 most comparable stacks. Possibly comparable to Spring faction in the Java camp. If you remember the history, Spring was like Rails in the Java community, rising up against the humongous complexity of the official J2EE stack back in 2002. And then Spring itself became the new J2EE-like behemoth to beat.
+> "Ou você morre como herói, ou vive tempo suficiente para se ver se tornar o vilão."
 
-This is a millenia old dillema:
+### Por que Rails é um problema agora?
 
-> "You either die a hero, or live long enough to see yourself become the villain."
+Como disse antes, concordo com quase todo problema técnico que Solnic apontou.
 
-### Why is Rails a problem now?
+Rails é de fato a criação de David Hansson (DHH). DHH é uma pessoa, com um ego muito grande e um negócio para administrar. Não dá para esperar que qualquer pessoa seja razoável o tempo todo, especialmente uma que empurrou algo do zero, tanto um negócio quanto uma plataforma tecnológica.
 
-As I said before, I agree to almost every technical problem that Solnic outlined.
+Quando começou, as pessoas desertaram de Java, .NET, PHP e até Python em massa. Todos reconheceram como Rails era interessante comparado a J2EE, ASP.NET, Plone. Oferecia não só produtividade, mas prazer técnico. Estávamos discutindo o maravilhoso mundo das linguagens dinâmicas, classes abertas, injetando comportamento em tempo real (aka [monkey patching](https://m.signalvnoise.com/provide-sharp-knives-cc0a22bf7934#.zcxl5lbh8)), aplaudindo o abandono de todas as abstrações desnecessárias.
 
-Rails is indeed the brainchild of David Hansson (DHH). DHH is a person, with a very big ego, and a business to run. You can't expect any person to be reasonable all the time, specially one that pushed something up from zero, both a business and a technology platform.
+A Idade de Ouro de 2004 a 2006 viu um fluxo interminável de celebração da magia Ruby. Aprendemos Ruby através da magia negra mais obscura do [Why, the Lucky Stiff](http://poignant.guide/). Era tudo menos arquiteturas limpas e modulares.
 
-When it started, people defected from Java, .NET, PHP even Python, in droves and they all acknowledged how interesting Rails was compared to J2EE, ASP.NET, Plone. It offered not only productivity but technical enjoyment. We were discussing the wondreous world of dynamic languages, open classes, injecting behavior on the fly (aka [monkey patching](https://m.signalvnoise.com/provide-sharp-knives-cc0a22bf7934#.zcxl5lbh8)), we all stood up and aplauded dropping all unnecessary abstrations.
+Então entramos na Idade de Prata, de 2007 até por volta de 2011. Rails foi longe demais, rápido demais. De repente vimos grandes empresas surgindo de todos os lados! Twitter, Github, Engine Yard, Heroku, Zendesk, Airbnb — todo mundo bebeu o Kool-Aid do Rails. O Merb estava à frente do seu tempo e foi apresentado da maneira errada. Confrontar o todo-poderoso Rails de frente naquele momento não foi inteligente. Fiquei muito apreensivo em 2009 e 2010 para ver se a pseudo-reescrita do Rails 3 realmente se concretizaria.
 
-We could not have enough of our Ruby fix, spitting out all the Perl-like magic we would accomplish in a language that didn't feel ugly as PHP or bureacratic like Java or C#. And they all laughed.
+2011 a 2016 foi a Idade do Bronze, um período agridoce. Muitas linguagens novas surgiram e atingiram o estado "utilizável": V8 e Node.js, Rust, Clojure, Elixir, Scala, Haskell. A mudança mais importante: 2010 viu o advento das App Stores, com aplicativos nativos para smartphones e tablets. Esqueça desenvolvimento web — o mobile estava ganhando tudo.
 
-The Golden Age from 2004 to 2006 saw a never ending stream of celebratory masturbation of Perl-like coding prowess. We learned Ruby through [Why, the Lucky Stiff](http://poignant.guide/) most obscure black magic, remember that? It was everything but clean and modular architectures.
+Foi aí que as grandes empresas mostraram seus bolsos fundos. Apple lançou Swift. Google lançou Dart, Angular, Go. Microsoft lançou TypeScript e ASP.NET MVC. Facebook entrou tarde com React e depois React Native.
 
-Then we entered the Silver Age, from 2007 to around 2011. Rails actually went too far, too fast. Suddenly we saw big companies popping up from everywhere! Twitter, Github, Engine Yard, Heroku, Zendesk, Airbnb, everybody drunk the Rails cool aid. The opportunity was there to offer something for the enterprise. Merb was ahead of its time and it was pitched the wrong way. I do think that confronting the almighty Rails upfront, at that point, was not smart. You should expect overreaction and it did came and it was a swift blow. I will be honest and say that I was very aprehensive in 2009 and 2010 to see if the Rails 3 pseudo-rewrite, pseudo-Merb-merge would actually come through.
+Rails agora pode ser considerado um "problema" pelas mesmas razões que o tornaram popular. Isso está fadado a acontecer com qualquer tecnologia.
 
-2011 to 2016 was the Bronze Age, a bittersweet period. That's because many new languages have emerged and finally reached "usable" state. From JS's V8 and Node.js, to Rust, to Clojure, to Elixir, and even some gems from the past started to get attention, such as Scala and even Haskell. The most important change of all: 2010 saw the advent of the Walled Garden App Store, commercially available native applications for smartphone and tablets. Forget web development: mobile was getting it all.
+Mas não dá para mudar muito a arquitetura do Rails — corre-se o risco de quebrar partes enormes dos projetos em produção. E quando alguém precisa reescrever partes grandes de um projeto, é melhor considerar reescrever em outra coisa completamente.
 
-And that's when all the big companies started to show their deep pockets. Apple releases Swift. Google released Dart, Angular, Go. Microsoft released Typescript, ASP.NET MVC then vNext and had it's hands full working on Windows 10. Facebook entered the game late by releasing React and then React Native.
+Muitas pessoas estão fazendo exatamente isso, especialmente para APIs e SPAs. As APIs podem ser escritas em Go, Elixir, Scala, evitando Ruby. Você perde o giro rápido do ecossistema Rails, mas se puder pagar (Unicórnio com bolsos fundos), por que não?
 
-Rails can now be considered a "problem" for the very same reasons that made it popular in the first place. And this is bound to happen to any technology.
+Mas para os 90% dos projetos pequenos e médios por aí, ainda dá para conseguir o melhor custo-benefício com Rails. É como dizer: para um blog, use Wordpress. Não tente escrever um blog SPA com APIs em Go e React do zero. Factível, mas não vale a pena.
 
-But you can't change the architecture of Rails too much, otherwise you risk breaking down very big chunks of the projects that are deployed in production now. And when someone has to rewrite big chunks of a project you might as well consider rewriting it in something else entirely.
+Se você já usa Rails há algum tempo, siga boas práticas básicas. Adicione testes. Refatore o código, remova duplicações, atualize gems. Considere adicionar uma camada de abstração como o [Trailblazer](http://trailblazer.to/) e componentizar partes da aplicação como [Rails Engines](https://leanpub.com/cbra) ou separar em APIs [Rails-API](https://github.com/rails-api/rails-api). Um passo de cada vez.
 
-Many people are doing exactly that, specially for APIs and web applications implemented as SPAs talking to APIs. The APIs can be written in Go, Elixir, Scala and avoid Ruby altogether. You lose the fast turn around of the Rails ecosystem, but if you can afford it (you're a Unicorn startup with deep pockets), why not?
+> Raramente se beneficia de grandes rewrites do zero.
 
-But again, for the 90% of small to medium projects out there, you can still get the best punch for the buck using Rails and all the libraries available for Rails. It's like saying, if you want to build a blog, go for Wordpress and you will get the best benefit for the limited resources you have. Don't try to be fancy and write an SPA blog using Go APIs with React from scratch. Feasible, but not worth it.
+### Conclusão
 
-If you're a medium company already using Rails for some time, first of all make sure you adhere to basic best practices. Add tests and specs if you haven't already. Steadily refactor code, remove duplication, upgrade gems. Then you should consider adding an abstration layer such as [Trailblazer](http://trailblazer.to/) and possibly consider componentizing parts of your application as [Rails Engines](https://leanpub.com/cbra) or removing those parts into separated [Rails-API](https://github.com/rails-api/rails-api) applications to be consumed, if possible. But do one step at a time, as needed.
+Para desenvolvedores como Solnic a comunidade Rails provavelmente é um lugar frustrante. Mas também é um vício difícil de largar porque Rails é muito maior do que qualquer concorrente, você sempre se sente mal por ser o azarão.
 
-> One rarely benefits from big bang rewrites from scratch.
+Rails foi de azarão ao mainstream em 5 anos. Possivelmente o crescimento mais rápido que qualquer framework web já alcançou. A vida de um desenvolvedor web de 1995 a 2003 não era particularmente interessante. Rails fez muito para melhorá-la.
 
-### Conclusion
+A arquitetura do Active Record vai machucar de verdade talvez 10% dos casos. O Active Support não tem alternativa melhor ainda. Substituir o Active Record por DataMapper ou Rom.rb como padrão não vai trazer tanto valor para as centenas de aplicações existentes. Se eu tivesse que reescrever, faria uma nova aplicação usando Rails + Trailblazer ou iria direto para Hanami. Mas a maioria das pessoas decidiria a favor de abandonar Ruby completamente.
 
-So yes, for developers such as Solnic the Rails community is probably a frustrating place to be. But it's also an addiction that's hard to drop because Rails is so much larger than any other competitor in any other new and fancy platform, you always feel bad for being the underdog.
+O Active Record poderia ser melhor? Claro! Temos Data Mapper, Sequel e ROM.rb para provar. Mas poderia ter sido feito melhor em 2004? Não acho. Em 2004 "NoSQL" nem era uma coisa. O melhor que tínhamos era o Hibernate, muito antes do JPA. E para todos os efeitos práticos, o Active Record ainda faz muito melhor do que a média. Mas se você é grande, deve ter cuidado.
 
-Rails went from underdog to mainstream in 5 years. Possibly the fastest growth any web framework ever achieved. The life of a web developer from 1995 to 2003 was not particularly interesting. Rails did a lot to improve it. And if anyone thinks they can do better, just do it. What's the point of writing about Rails? More than just code competing against code, results should compete against results.
+As outras comunidades vão enfrentar os mesmos problemas. É inevitável. Tudo é muito mais fácil quando você tem uma comunidade pequena que pode quebrar coisas sem grande impacto. É muito mais difícil manter algo que ficou grande além de todos os cenários otimistas.
 
-Active Record's architecture will indeed hurt hard maybe 10% of the cases out there. Active Support does not have a better alternative so far, and just removing it won't bring anything of value for the end user. Replacing a big component such as Active Record for something "better" such as an improved version of DataMapper or Rom.rb as the default again won't bring so much value, specially for the hundreds of applications out there. You're telling everybody to just rewrite everything. And if I would have to rewrite, I would definitely do a new application using Rails + Trailblazer or go straight to Hanami. But most people would decide in favor of ditching Ruby altogether.
+Entendo a abordagem conservadora do DHH ao não fazer grandes perturbações. É um movimento válido — vai alienar desenvolvedores avançados como Solnic, mas ainda vai permitir que iniciantes mergulhem nele sem se preocupar com abstrações demais.
 
-Could Active Record be better? Sure! We have old Data Mapper, Sequel and ROM.rb to prove it. But the real question is: could it be done better back in 2004 when it was first created? I don't think so. Now even the creator of DataMapper advocates for No-ORM. In 2004 "NoSQL" wasn't even a thing. The best we had back then was Hibernate, way before JPA! And for all intents and purposes, Active Record still does much better than average. But if you're big, you should be careful. That's all.
+Atualização: DHH comentou nesta seção depois:
 
-The other communities will face the same predicaments we are now facing in the Rails community. It's inevitable. Everything is so much easier when you have a small community that even if you break things it won't be too bad. It's much harder to maintain something that actually became big beyond your most optimistic scenarios.
+<blockquote class="twitter-tweet" data-partner="tweetdeck"><p lang="en" dir="ltr"><a href="https://twitter.com/AkitaOnRails">@akitaonrails</a> It's not out of conservatism. But a difference of opinion and values. I love Active Record. Love callbacks.</p>&mdash; DHH (@dhh) <a href="https://twitter.com/dhh/status/735051111141396480">May 24, 2016</a></blockquote>
 
-I do understand the conservative approach DHH is taking by not making big disruptions. If this is something he is doing because he believes in conservative moves or because he doesn't understand better architectural options is not up to me to judge, but it's a valid move that will alienate advanced developers like Solnic but still allow for beginners to jump right into it without worrying too much right now about too many abstractions.
-
-Update: DHH commented on this section later:
-
-<blockquote class="twitter-tweet" data-partner="tweetdeck"><p lang="en" dir="ltr"><a href="https://twitter.com/AkitaOnRails">@akitaonrails</a> It’s not out of conservatism. But a difference of opinion and values. I love Active Record. Love callbacks.</p>— DHH (@dhh) <a href="https://twitter.com/dhh/status/735051111141396480">May 24, 2016</a></blockquote>
-
-<blockquote class="twitter-tweet" data-partner="tweetdeck"><p lang="en" dir="ltr"><a href="https://twitter.com/AkitaOnRails">@akitaonrails</a> Will everyone love the same techniques and methods as me? Of course not (see RSpec for just one popular example!). That’s fine</p>— DHH (@dhh) <a href="https://twitter.com/dhh/status/735051237071171584">May 24, 2016</a></blockquote>
+<blockquote class="twitter-tweet" data-partner="tweetdeck"><p lang="en" dir="ltr"><a href="https://twitter.com/AkitaOnRails">@akitaonrails</a> Will everyone love the same techniques and methods as me? Of course not (see RSpec for just one popular example!). That's fine</p>&mdash; DHH (@dhh) <a href="https://twitter.com/dhh/status/735051237071171584">May 24, 2016</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-People forget that abstractions are very nice for advanced developers that had suffered the lack of them. But beginners will always suffer if presented with too many architectural choices upfront. Understanding GoF Design Patterns, Data-Driven Design, SOLID, Enterprise Architectures, etc is very overwhelming. Experienced people often forget the learning curve when they were themselves beginners, and at that time Rails was so attractive, so sexy. Remember that feeling? Of accomplishment in the face of the knowledge that some nice witch left super useful black magic behind?
+As pessoas esquecem que abstrações são muito boas para desenvolvedores avançados que sofreram com a falta delas. Mas iniciantes sempre vão sofrer se apresentados com muitas escolhas arquiteturais logo de cara. Pessoas experientes frequentemente esquecem a curva de aprendizado de quando eram iniciantes, e naquela época Rails era tão atraente. Lembra aquela sensação de realização?
 
-**Rails has won** for it's simplicity for beginners, having a "rails"-like guidance for experienced people as well, and _somewhat acceptable_ flexibility for more advanced developers. Will it be able to maintain another 10 years in face of the many smaller alternatives out there trying to recreate everything from scratch? Time will tell.
+**Rails venceu** pela sua simplicidade para iniciantes, orientação clara para pessoas experientes e flexibilidade razoável para desenvolvedores mais avançados. Conseguirá manter mais 10 anos? O tempo dirá.
 
-I think it would be a good fit to finish with Bob Dylan:
+Para terminar, com Bob Dylan:
 
-> Come gather 'round people
+> Reúnam-se ao redor, pessoas
 
-> Wherever you roam
+> Onde quer que vagueiem
 
-> And admit that the waters
+> E admitam que as águas
 
-> Around you have grown
+> Ao redor de vocês cresceram
 
-> And accept it that soon
+> E aceitem que em breve
 
-> You'll be drenched to the bone.
+> Vocês estarão encharcados até os ossos.
 
-> If your time to you
+> Se o seu tempo para você
 
-> Is worth savin'
+> Vale ser salvo
 
-> Then you better start swimmin'
+> É melhor começar a nadar
 
-> Or you'll sink like a stone
+> Ou vai afundar como uma pedra
 
-> For the times they are a-changin'.
+> Pois os tempos estão mudando.
 
 > ...
-

@@ -1,7 +1,7 @@
 ---
-title: Elixir Phoenix App deployed into a Load Balanced DigitalOcean setup
+title: "Aplicativo Elixir Phoenix em Deploy num Setup com Balanceamento de Carga no DigitalOcean"
 date: '2016-12-23T15:07:00-02:00'
-slug: elixir-phoenix-app-deployed-into-a-load-balanced-digitalocean-setup
+slug: aplicativo-elixir-phoenix-deploy-balanceamento-carga-digitalocean
 tags:
 - elixir
 - phoenix
@@ -9,41 +9,45 @@ tags:
 - edeliver
 - digitalocean
 - websockets
+- traduzido
+translationKey: elixir-phoenix-digitalocean-lb
+aliases:
+- /2016/12/23/elixir-phoenix-app-deployed-into-a-load-balanced-digitalocean-setup/
 draft: false
 ---
 
-One of the main advantages of building a Websockets enabled web application using Phoenix is how "easy" it is for Erlang to connect itself into a cluster.
+Uma das principais vantagens de construir uma aplicação web com Websockets usando Phoenix é como é "fácil" para o Erlang se conectar num cluster.
 
-For starters, Erlang does not need multiple processes like Ruby (which is limited to one connection per process, or per thread if you're using a threaded-server like Puma). One single Erlang process will take over the entire machine, if you need to. Internally it will keep one real thread per machine-core. And each thread will have its own Scheduler to manage as many micro-processes as you need. You can read all about it in my post titled ["Yocto Services"](http://www.akitaonrails.com/en/2015/11/25/yocto-services-and-my-first-month-with-elixir/).
+Para começar, Erlang não precisa de múltiplos processos como Ruby (que fica limitado a uma conexão por processo, ou por thread se você usa um servidor com threads como o Puma). Um único processo Erlang vai tomar conta de toda a máquina, se necessário. Internamente ele mantém uma thread real por core da máquina. E cada thread tem seu próprio Scheduler para gerenciar quantos micro-processos você precisar. Você pode ler tudo sobre isso no meu post ["Yocto Services"](http://www.akitaonrails.com/2015/11/25/yocto-services-and-my-first-month-with-elixir).
 
-Moreover, Erlang has built-in capabilities to form a cluster, where each Erlang instance acts as a peer-to-peer Node, without the need for a centralized coordinator. You can read all about it in my post about [Nodes](http://www.akitaonrails.com/en/2015/11/25/exmessenger-exercise-understanding-nodes-in-elixir/). The power of Erlang is in how "easy" it is to form reliable distributed systems.
+Além disso, Erlang tem capacidades nativas de formar um cluster, onde cada instância Erlang age como um Node peer-to-peer, sem precisar de um coordenador centralizado. Você pode ler tudo sobre isso no meu post sobre [Nodes](http://www.akitaonrails.com/2015/11/25/exmessenger-exercise-understanding-nodes-in-elixir). O poder do Erlang está em como é "fácil" formar sistemas distribuídos confiáveis.
 
-You can fire up many Phoenix instances and from one of the instances, it can broadcast messages to Users subscribed in Channels even if their sockets are connected to different instances. It's seamless and you don't need to do anything special in your code. Phoenix, Elixir and Erlang are doing all the heavy lifting for you behind the scenes.
+Você pode subir várias instâncias Phoenix e, a partir de uma delas, transmitir mensagens para usuários inscritos em Channels mesmo que seus sockets estejam conectados a instâncias diferentes. É transparente e você não precisa fazer nada especial no seu código. Phoenix, Elixir e Erlang fazem todo o trabalho pesado por você nos bastidores.
 
-### No Heroku for You :-(
+### Sem Heroku para você :-(
 
-Because you want to take advantage of this scalability and high availability feature for distributed systems (in the small example of a real-time chat system) you will need to have more control over your infrastructure. This requirement rules out the majority of Platform as a Service (PaaS) offerings out there, such as Heroku. Heroku's model revolves around single, volatile processes in isolated containers. Those jailed processes (dynos) are not aware of other processes or the internal networking, so you can't fire up Dynos and have them form a cluster because they won't be able to find each other.
+Como você quer aproveitar esse recurso de escalabilidade e alta disponibilidade para sistemas distribuídos (no pequeno exemplo de um sistema de chat em tempo real), vai precisar ter mais controle sobre a infraestrutura. Esse requisito descarta a maioria das ofertas de Platform as a Service (PaaS), como o Heroku. O modelo do Heroku gira em torno de processos únicos e voláteis em containers isolados. Esses processos enjaulados (dynos) não têm consciência de outros processos ou da rede interna, então você não consegue subir Dynos e fazer com que formem um cluster porque eles não vão se encontrar.
 
-If you already know how to configure Linux related stuff: Postgresql, HAproxy, etc, go ahead directly to the [Phoenix-specific section](#phoenix-setup).
+Se você já sabe configurar coisas no Linux: Postgresql, HAproxy, etc., vá direto para a [seção específica do Phoenix](#phoenix-setup).
 
-### IaaS (DigitalOcean) to the rescue!
+### IaaS (DigitalOcean) ao resgate!
 
-You want long lived processes in network reachable servers (either through private networking, VPN, or plain simple - insecure! - public networks).
+Você precisa de processos de longa duração em servidores alcançáveis pela rede (seja por rede privada, VPN, ou simplesmente - inseguro! - redes públicas).
 
-In this example I want to walk you through a very simple deployment using DigitalOcean (you can choose any IaaS, such as AWS, Google Cloud, Azure or whatever you feel more comfortable with).
+Neste exemplo quero mostrar um deploy bem simples usando DigitalOcean (você pode escolher qualquer IaaS, como AWS, Google Cloud, Azure ou o que você se sentir mais confortável).
 
-I have created 4 droplets (all using the smallest size of 512Mb of RAM):
+Criei 4 droplets (todos usando o menor tamanho de 512Mb de RAM):
 
-* 1 Postgresql database (single point of failure: it's not the focus of this article to build a highly available, replicated database setup);
-* 1 HAProxy server (single point of failure: again, it's not the focus to create a highly available load balancing scheme);
-* 2 Phoenix servers - one in the NYC datacenter and another in the London datacenter, to demonstrate how easy it is for Erlang to form clusters even with geographically separated boxes.
+* 1 banco de dados Postgresql (ponto único de falha: não é o foco deste artigo construir um setup de banco de dados altamente disponível e replicado);
+* 1 servidor HAProxy (ponto único de falha: novamente, não é o foco criar um esquema de balanceamento de carga altamente disponível);
+* 2 servidores Phoenix - um no datacenter de NYC e outro no de Londres, para demonstrar como é fácil para o Erlang formar clusters mesmo com máquinas geograficamente separadas.
 
-### Basic Ubuntu 16.04 configuration
+### Configuração básica do Ubuntu 16.04
 
-* Goals: configure locale, assure unattended updates are up, upgrade packages, install and configure Elixir and Node.
-* You should also do: change SSH to another port and install [fail2ban](https://www.digitalocean.com/community/tutorials/how-to-protect-ssh-with-fail2ban-on-ubuntu-14-04, disallow login through password.
+* Objetivos: configurar o locale, garantir que as atualizações automáticas estejam ativas, atualizar pacotes, instalar e configurar Elixir e Node.
+* Você também deveria: mudar o SSH para outra porta e instalar [fail2ban](https://www.digitalocean.com/community/tutorials/how-to-protect-ssh-with-fail2ban-on-ubuntu-14-04, desabilitar login por senha.
 
-You will want to read my post about [configuring Ubuntu 16.04](http://www.akitaonrails.com/2016/09/21/ubuntu-16-04-lts-xenial-on-vagrant-on-vmware-fusion). To summarize, start by configuring proper UTF-8:
+Recomendo ler meu post sobre [configurar o Ubuntu 16.04](http://www.akitaonrails.com/2016/09/21/ubuntu-16-04-lts-xenial-on-vagrant-on-vmware-fusion). Resumindo, comece configurando o UTF-8 corretamente:
 
 ```
 sudo locale-gen "en_US.UTF-8"
@@ -53,22 +57,22 @@ echo 'LC_ALL=en_US.UTF-8' | sudo tee -a /etc/environment
 echo 'LANG=en_US.UTF-8' | sudo tee -a /etc/environment
 ```
 
-Make sure you add a proper user into the sudo group and from now on do not use the root user. I will create a user named `pusher` and I will explain in another post why. You should create a username that suits your application.
+Adicione um usuário adequado ao grupo sudo e, a partir de agora, não use mais o usuário root. Vou criar um usuário chamado `pusher` e vou explicar em outro post o porquê. Você deve criar um nome de usuário que faça sentido para a sua aplicação.
 
 ```
 adduser pusher
 usermod -aG sudo pusher
 ```
 
-Now log out and log in again through this user. `ssh pusher@server-ip-address`. If you're on a Mac copy the public key of your SSH certificate like this:
+Agora saia e entre novamente com esse usuário. `ssh pusher@server-ip-address`. Se você estiver num Mac, copie a chave pública do seu certificado SSH assim:
 
 ```
 ssh-copy-id -i ~/.ssh/id_ed25519.pub pusher@server-ip-address
 ```
 
-It creates the `.ssh/authorized_keys` if it doesn't exist, sets the correct permission bits and appends your public key. You can do it manually, of course.
+Isso cria o `.ssh/authorized_keys` se não existir, define as permissões corretas e adiciona sua chave pública. Você pode fazer isso manualmente também, claro.
 
-DigitalOcean's droplets start without a swap file and I'd recomend adding one, specially if you want to start with the smaller boxes with less than 1GB of RAM:
+Os droplets do DigitalOcean não vêm com swap file e eu recomendaria adicionar um, especialmente se você quiser começar com as máquinas menores com menos de 1GB de RAM:
 
 ```
 sudo fallocate -l 2G /swapfile
@@ -83,13 +87,13 @@ echo 'vm.swappiness=10' | sudo tee -a /etc/sysctl.conf
 echo 'vm.vfs_cache_pressure=50' | sudo tee -a /etc/sysctl.conf
 ```
 
-Make sure you have unattended upgrades configured. You will want at least to have security updates automatically installed when available.
+Certifique-se de que as atualizações automáticas estejam configuradas. No mínimo você vai querer que as atualizações de segurança sejam instaladas automaticamente quando disponíveis.
 
 ```
 sudo apt install unattended-upgrades
 ```
 
-Now, let's install Elixir and Node (Phoenix needs Node.js):
+Agora, vamos instalar Elixir e Node (Phoenix precisa de Node.js):
 
 ```
 wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb && sudo dpkg -i erlang-solutions_1.0_all.deb
@@ -99,27 +103,27 @@ sudo apt-get upgrade
 sudo apt-get install build-essential nodejs esl-erlang elixir erlang-eunit erlang-base-hipe
 sudo npm install -g brunch
 mix local.hex
-mix archive.install https://github.com/phoenixframework/archives/raw/master/phoenix_new.ez # this is optional, install if you want to manually test phoenix in your box
+mix archive.install https://github.com/phoenixframework/archives/raw/master/phoenix_new.ez # opcional, instale se quiser testar phoenix manualmente na sua máquina
 ```
 
-Now you have an Elixir capable machine ready. Create a image snapshot over DigitalOcean, move it regions you want to create your other droplets and use this image to create as many droplets as you need.
+Agora você tem uma máquina pronta para Elixir. Crie um snapshot de imagem no DigitalOcean, mova para as regiões onde quer criar seus outros droplets e use essa imagem para criar quantos droplets precisar.
 
-For this example, I created a second droplet in the London region, a third droplet for postgresql in the NYC1 region and a fourth droplet in the NYC3 region for HAProxy.
+Para este exemplo, criei um segundo droplet na região de Londres, um terceiro para postgresql na região NYC1 e um quarto na região NYC3 para o HAProxy.
 
-I will refer to their public IP addresses as **"nyc-ip-address"**, **"lon-ip-address"**, **"pg-ip-address"**, and **"ha-ip-address"**.
+Vou me referir aos endereços IP públicos deles como **"nyc-ip-address"**, **"lon-ip-address"**, **"pg-ip-address"**, e **"ha-ip-address"**.
 
-### Basic PostgreSQL configuration
+### Configuração básica do PostgreSQL
 
-* Goal: basic configuration of Postgresql to allow the Phoenix servers to connect.
-* To do: create a secondary role just to connect to the application database and another superuser role to create the database and migrate the schema. Also lock down the machine and configure SSH tunnels or another secure way, at least a private networking, than allowing plain 5432 TCP port connections from the public Internet.
+* Objetivo: configuração básica do Postgresql para permitir que os servidores Phoenix se conectem.
+* A fazer: criar uma role secundária só para conectar ao banco da aplicação e outra superusuário para criar o banco e migrar o schema. Também trancar a máquina e configurar SSH tunnels ou outro método seguro, pelo menos uma rede privada, em vez de permitir conexões TCP na porta 5432 abertas para a Internet.
 
-Now you can connect to `ssh pusher@pg-ip-address` and follow this:
+Agora conecte em `ssh pusher@pg-ip-address` e siga isso:
 
 ```
 sudo apt-get install postgresql postgresql-contrib
 ```
 
-You should create a new role with the same name of the user you added above ("pusher" in our example):
+Crie uma nova role com o mesmo nome do usuário que você adicionou acima ("pusher" no nosso exemplo):
 
 ```
 $ sudo -u postgres createuser --interactive
@@ -130,26 +134,26 @@ Shall the new role be a superuser? (y/n) y
 $ sudo -u postgres createdb pusher
 ```
 
-Postgresql expects to find a database with the same name as the role and the role should have the same name as the Linux user. Now you can use `psql` to set a password for this new role:
+O Postgresql espera encontrar um banco de dados com o mesmo nome da role e a role deve ter o mesmo nome do usuário Linux. Agora você pode usar `psql` para definir uma senha para essa nova role:
 
 ```
 $ sudo -u postgres psql
 \password pusher
 ```
 
-Register a secure password, take note and let's move on.
+Registre uma senha segura, anote-a e vamos em frente.
 
-Postgresql comes locked down to external connections. One way to connect from the outside is to configure your servers to create an [SSH tunnel](https://www.postgresql.org/docs/9.1/static/ssh-tunnels.html) to the database server and keep external TCP connections through port 5432 disavowed.
+O Postgresql vem bloqueado para conexões externas. Uma forma de conectar de fora é configurar seus servidores para criar um [SSH tunnel](https://www.postgresql.org/docs/9.1/static/ssh-tunnels.html) ao servidor de banco de dados e manter as conexões TCP externas pela porta 5432 proibidas.
 
-But for this example, we will just allow connections from the public Internet to the 5432 TCP port. **Warning:** this is VERY insecure!
+Mas neste exemplo, vamos simplesmente permitir conexões da Internet pública na porta TCP 5432. **Atenção:** isso é MUITO inseguro!
 
-Edit the `/etc/postgresql/9.5/main/postgresql.conf` and find the `listen_addresses` configuration line and allow it:
+Edite o `/etc/postgresql/9.5/main/postgresql.conf` e encontre a linha de configuração `listen_addresses` e permita:
 
 ```
 listen_addresses = '*'    # what IP address(es) to listen on;
 ```
 
-This should bind the server to the TCP port. Now edit `/etc/postgresql/9.5/main/pg_hba.conf` and edit it at the end to looks like this:
+Isso deve vincular o servidor à porta TCP. Agora edite `/etc/postgresql/9.5/main/pg_hba.conf` e edite o final para ficar assim:
 
 ```
 # IPv4 local connections:
@@ -161,15 +165,15 @@ host    all             all             lon-ip-address/24       trust
 host    all             all             ::1/128                 trust
 ```
 
-Save the configuration file and restart the server:
+Salve o arquivo de configuração e reinicie o servidor:
 
 ```
 sudo service postgresql restart
 ```
 
-See what I did there? I only allowed connections coming from the public IPs of the Phoenix servers. This does not make the the server secure, just a little bit less vulnerable. If you're behind a DHCP/NAT based network, just Google for "what's my IP" to see your public facing IP address - which is probably shared by many other users, remember you're allowing connections from an insecure IP to your database server! Once you make initial tests, create your new schema, then you should remove that `your-local-machine-ip-address/24` line from the configuration.
+Viu o que fiz aí? Só permiti conexões vindas dos IPs públicos dos servidores Phoenix. Isso não torna o servidor seguro, só um pouco menos vulnerável. Se você está atrás de uma rede DHCP/NAT, só pesquise "what's my IP" no Google para ver seu IP público - que provavelmente é compartilhado por muitos outros usuários; lembre-se que você está permitindo conexões de um IP inseguro ao seu servidor de banco de dados! Depois de fazer os testes iniciais e criar seu schema, remova a linha `your-local-machine-ip-address/24` da configuração.
 
-From your Phoenix application, you can edit you local `config/prod.secret.exs` file to look like this:
+Na sua aplicação Phoenix, edite o arquivo local `config/prod.secret.exs` para ficar assim:
 
 ```ruby
 # Configure your database
@@ -182,15 +186,15 @@ config :your_app_name, ExPusherLite.Repo,
   pool_size: 20
 ```
 
-Replace the information for your server and database and now you can test it out like this:
+Substitua as informações pelo seu servidor e banco de dados, e agora você pode testar assim:
 
 ```
 MIX_ENV=prod iex -S mix phoenix.server
 ```
 
-If you see a `:econnrefused` message from postgrex, then you're in trouble. Re-check your configuration, restart the server and try again. If everything connects, you can run `MIX_ENV=prod mix do ecto.create, ecto.migrate` to prepare your database.
+Se você ver uma mensagem `:econnrefused` do postgrex, tem algo errado. Revise sua configuração, reinicie o servidor e tente novamente. Se tudo conectar, rode `MIX_ENV=prod mix do ecto.create, ecto.migrate` para preparar seu banco de dados.
 
-Finally, you will want to lock down the rest of your server with UFW, at the very least. UFW should come pre-installed in Ubuntu 16, so you can just do:
+Por fim, você vai querer fechar o restante do seu servidor com UFW, pelo menos. UFW já vem instalado no Ubuntu 16, então basta fazer:
 
 ```
 ufw allow 5432
@@ -198,26 +202,26 @@ ufw allow ssh
 ufw enable
 ```
 
-That's it. And again, this does not make your server secure, it just makes it less insecure. There is a huge difference!
+Pronto. E de novo, isso não torna seu servidor seguro, só o torna menos inseguro. Há uma diferença enorme!
 
-And by the way, if you're a Docket fan:
+E por falar nisso, se você é fã de Docker:
 
-> DO NOT INSTALL A DATABASE INSIDE A DOCKER CONTAINER!
+> NÃO INSTALE UM BANCO DE DADOS DENTRO DE UM CONTAINER DOCKER!
 
-[You have been warned](http://patrobinson.github.io/2016/11/07/thou-shalt-not-run-a-database-inside-a-container/)!
+[Você foi avisado](http://patrobinson.github.io/2016/11/07/thou-shalt-not-run-a-database-inside-a-container/)!
 
-### Basic HAProxy configuration
+### Configuração básica do HAProxy
 
-* Goals: Provide a simple solution to load balance between our 2 Phoenix servers.
-* To do: There is something wrong with session checking or something like that as sometimes I have to refresh my browser so I am not sent back to the login from in my application. Phoenix uses cookie-based sessions so I don't think it is missing sessions.
+* Objetivos: fornecer uma solução simples de balanceamento de carga entre nossos 2 servidores Phoenix.
+* A fazer: há algo errado com a verificação de sessão ou algo assim, pois às vezes preciso atualizar o browser para não ser mandado de volta ao formulário de login na minha aplicação. Phoenix usa sessões baseadas em cookie, então não acho que esteja perdendo sessões.
 
-Now let's `ssh pusher@ha-ip-address`. This one is easy, let's just install HAProxy:
+Agora vamos `ssh pusher@ha-ip-address`. Essa parte é fácil, basta instalar o HAProxy:
 
 ```
 sudo apt-get install haproxy
 ```
 
-Edit `/etc/haproxy/haproxy.cfg`:
+Edite `/etc/haproxy/haproxy.cfg`:
 
 ```
 ...
@@ -237,11 +241,11 @@ listen your-app-name
   server uk your_uk_server_IP:8080 check cookie uk1
 ```
 
-You can avoid the `stats` lines if you have other means of monitoring, otherwise set a secure password for the `admin` user. One very important part is the `option http-server-close` as explained in [this other blog post](http://blog.silverbucket.net/post/31927044856/3-ways-to-configure-haproxy-for-websockets), otherwise you may have trouble with Websockets.
+Você pode omitir as linhas de `stats` se tiver outros meios de monitoramento, caso contrário defina uma senha segura para o usuário `admin`. Uma parte muito importante é o `option http-server-close`, conforme explicado [neste outro post](http://blog.silverbucket.net/post/31927044856/3-ways-to-configure-haproxy-for-websockets), caso contrário você pode ter problemas com Websockets.
 
-For some reason I am having some trouble with my application after I login and it sets the session, sometimes I have to refresh to be sent to the correct page, not sure why yet and I believe it's something in the HAProxy configuration. If anyone knows what it is, let me know in the comments section below. For now, I am just relying to Sticky sessions (server affinity) by making HAProxy write back a cookie with the server.
+Por algum motivo estou tendo problemas com minha aplicação depois de fazer login e ela definir a sessão - às vezes preciso atualizar para ser redirecionado à página correta, ainda não sei o porquê e acredito que seja algo na configuração do HAProxy. Se alguém souber o que é, me avise nos comentários. Por ora, estou recorrendo a Sticky sessions (afinidade de servidor) fazendo o HAProxy escrever um cookie de volta com o servidor.
 
-Now you can restart the server and enable UFW as well:
+Agora reinicie o servidor e habilite o UFW também:
 
 ```
 sudo service haproxy restart
@@ -251,7 +255,7 @@ sudo ufw allow ssh
 sudo ufw enable
 ```
 
-You can easily add SSL support to your application by configure HAProxy (and not the Phoenix nodes). The [DigitalOcean documentation](https://www.digitalocean.com/community/tutorials/how-to-secure-haproxy-with-let-s-encrypt-on-ubuntu-14-04) is comprehensive, so just follow it. At the end, my `haproxy.cfg` looks like this:
+Você pode facilmente adicionar suporte a SSL na sua aplicação configurando o HAProxy (e não os nodes Phoenix). A [documentação do DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-secure-haproxy-with-let-s-encrypt-on-ubuntu-14-04) é abrangente, é só seguir. No fim, meu `haproxy.cfg` ficou assim:
 
 ```
 global
@@ -301,30 +305,30 @@ backend letsencrypt-backend
    server letsencrypt 127.0.0.1:54321
 ```
 
-Finally, I will assume you have a DNS server/service somewhere where you can register the IP of this HAproxy server as an A record so you can access it by a full name such as "your-app-name.mydomain.com".
+Por fim, vou assumir que você tem um servidor/serviço de DNS em algum lugar onde pode registrar o IP deste servidor HAProxy como um registro A para acessá-lo por um nome completo como "your-app-name.mydomain.com".
 
 <a name="phoenix-setup"></a>
 
-### Basic Phoenix Configuration
+### Configuração básica do Phoenix
 
-* Goal: configure the Phoenix app to be deployable. Configure the servers to have the necessary configuration files.
-* To do: find out a way to cut down the super slow deployment times.
+* Objetivo: configurar a app Phoenix para ser deployável. Configurar os servidores com os arquivos de configuração necessários.
+* A fazer: descobrir uma forma de reduzir os tempos absurdamente longos de deploy.
 
-Finally, we have almost everything in place.
+Finalmente, temos quase tudo no lugar.
 
-I will assume that you have a working Phoenix application already in place, otherwise create one from the many number of tutorials out there.
+Vou assumir que você já tem uma aplicação Phoenix funcionando, caso contrário crie uma a partir de qualquer um dos muitos tutoriais disponíveis.
 
-I have assembled this information from [posts](https://medium.com/@diamondgfx/deploying-phoenix-applications-with-exrm-97a3867ebd04#.7qyuplncx) such as [this very helpful one](http://engineering.pivotal.io/post/how-to-set-up-an-elixir-cluster-on-amazon-ec2/) from Pivotal about an AWS-based deployment. In summary you must do a number of changes to your configuration.
+Montei estas informações a partir de [posts](https://medium.com/@diamondgfx/deploying-phoenix-applications-with-exrm-97a3867ebd04#.7qyuplncx) como [este muito útil](http://engineering.pivotal.io/post/how-to-set-up-an-elixir-cluster-on-amazon-ec2/) do Pivotal sobre deploy baseado em AWS. Em resumo, você precisa fazer uma série de alterações na sua configuração.
 
-When you're developing your application, you will notice that whenever you run it, it delta-compiles what changed. The binary bits are in the `_build/dev` or `_build/test` in the form of `.beam` binaries (similar to what `.class` are for Java).
+Quando você está desenvolvendo a aplicação, vai notar que toda vez que roda, ela compila incrementalmente o que mudou. Os binários ficam em `_build/dev` ou `_build/test` na forma de binários `.beam` (similar ao que `.class` são para Java).
 
-Different from Ruby or Python or PHP, you are not deploying source-code to production servers. It's more akin to Java, where you must have everything compiled into binary bits and packaged into what's called a **release**. It's like a ".war" or ".ear" if you're from Java.
+Diferente de Ruby, Python ou PHP, você não está fazendo deploy de código-fonte para servidores de produção. É mais parecido com Java, onde você precisa ter tudo compilado em binários e empacotado no que chamamos de **release**. É como um ".war" ou ".ear" se você vem do mundo Java.
 
-To create this package people usually use "exrm", but it's being replaced by ["distillery"](https://github.com/bitwalker/distillery), so we will use it.
+Para criar esse pacote as pessoas costumavam usar "exrm", mas está sendo substituído por ["distillery"](https://github.com/bitwalker/distillery), então vamos usá-lo.
 
-Then, if you're from Ruby you're familiar with Capistrano. Or if you're from Python, you know Capistrano's clone, Fabric. Elixir has a similar tool (much simpler at this point), called ["edeliver"](https://github.com/boldpoker/edeliver). It's your basic SSH automation tool.
+Aí, se você vem do Ruby está familiarizado com Capistrano. Ou se vem do Python, conhece o clone do Capistrano, Fabric. Elixir tem uma ferramenta similar (bem mais simples por enquanto), chamada ["edeliver"](https://github.com/boldpoker/edeliver). É basicamente uma ferramenta de automação SSH.
 
-You add them to `mix.exs` just like any other dependency:
+Você adiciona eles ao `mix.exs` como qualquer outra dependência:
 
 ```ruby
 ...
@@ -341,7 +345,7 @@ end
 ...
 ```
 
-From the Pivotal blog post, the important thing to not forget is to edit this part in the `config/prod.exs` file:
+Do post do Pivotal, o detalhe importante para não esquecer é editar esta parte no arquivo `config/prod.exs`:
 
 ```ruby
 http: [port: 8080],
@@ -350,9 +354,9 @@ url: [host: "your-app-name.yourdomain.com", port: 80],
 config :phoenix, :serve_endpoints, true
 ```
 
-You MUST hardcode the default PORT of the Phoenix web server and the allowed domain (remember the domain name you associated to your HAProxy server above? That one). And you MUST uncomment the `:serve_endpoints, true` line!
+Você PRECISA deixar fixo o PORT padrão do servidor web Phoenix e o domínio permitido (lembra do nome de domínio que você associou ao seu servidor HAProxy acima? Esse mesmo). E PRECISA descomentar a linha `:serve_endpoints, true`!
 
-For edeliver to work you have to create a `.deliver/config` file like this:
+Para o edeliver funcionar, você precisa criar um arquivo `.deliver/config` assim:
 
 ```
 USING_DISTILLERY=true
@@ -404,9 +408,9 @@ pre_erlang_get_and_update_deps() {
 }
 ```
 
-Remember the information we've been gathering since the beginning of this long recipe? These are the options you MUST change to your own. Just follow the comments in the file content above and add it to your git repository. By the way, your project is in a proper GIT repository, RIGHT??
+Lembra de todas as informações que fomos juntando desde o início desta longa receita? São essas opções que você PRECISA mudar para as suas. Basta seguir os comentários no conteúdo do arquivo acima e adicionar ao seu repositório git. Aliás, seu projeto está num repositório GIT adequado, né??
 
-If you like to use passphrase protected SSH private keys, then it's going to be a huge pain to deploy because for each command, edeliver will issue an SSH command that will keep asking for you passphrase, a dozen times through everything. You've been warned! If you still don't mind that, and you're in a Mac you will have an extra trouble because the Terminal will not be able to create a prompt for you to input your passphrase. You must create an `/usr/local/bin/ssh-askpass` [script](https://github.com/markcarver/mac-ssh-askpass):
+Se você gosta de usar chaves SSH privadas protegidas por passphrase, vai ser uma dor de cabeça enorme para fazer deploy porque, para cada comando, o edeliver vai emitir um comando SSH que vai ficar pedindo sua passphrase, umas dez vezes ao longo de todo o processo. Você foi avisado! Se ainda assim não se importar, e estiver num Mac, vai ter um problema extra porque o Terminal não consegue criar um prompt para você digitar sua passphrase. Você precisa criar um [script](https://github.com/markcarver/mac-ssh-askpass) `/usr/local/bin/ssh-askpass`:
 
 ```
 #!/bin/bash
@@ -444,16 +448,16 @@ done;
 eval "${SCRIPT}";
 ```
 
-Now do this:
+Agora faça isso:
 
 ```
 sudo chmod +x /usr/local/bin/ssh-askpass
 sudo ln -s /usr/local/bin/ssh-askpass /usr/X11R6/bin/ssh-askpass
 ```
 
-Remember, Macs only. And now everytime you try to deploy you will receive a number of graphical prompt windows asking for the SSH private key passphrase. It's freaking annoying! And you must have [XQuartz](https://www.xquartz.org/) installed, by the way.
+Lembre-se, apenas para Macs. E agora toda vez que tentar fazer deploy você vai receber vários prompts gráficos pedindo a passphrase da chave privada SSH. É de enlouquecer! E você precisa ter o [XQuartz](https://www.xquartz.org/) instalado, por sinal.
 
-Now you must manually create 3 files in all Phoenix servers. Start with the `your-app-name/vm.args`:
+Agora você precisa criar manualmente 3 arquivos em todos os servidores Phoenix. Comece com `your-app-name/vm.args`:
 
 ```
 -name us@nyc-ip-address
@@ -463,11 +467,11 @@ Now you must manually create 3 files in all Phoenix servers. Start with the `you
 -smp auto
 ```
 
-The `/home/pusher/your-app-name` is the directory where the release will be uncompressed after edeliver deploys the release tarball.
+O `/home/pusher/your-app-name` é o diretório onde a release vai ser descomprimida depois que o edeliver fizer o deploy do tarball.
 
-You must create this file in all Phoenix machines, by the way, changing the `-name` bit for the same name you declared in the `.deliver/config` file. The `-setcookie` should be any name, as long as it's the same in all servers.
+Você precisa criar este arquivo em todas as máquinas Phoenix, mudando o bit `-name` pelo mesmo nome que declarou no arquivo `.deliver/config`. O `-setcookie` pode ser qualquer nome, desde que seja o mesmo em todos os servidores.
 
-See the `-config /home/pusher/your-app-name.config`? Create that file with the following:
+Viu o `-config /home/pusher/your-app-name.config`? Crie esse arquivo com o seguinte:
 
 ```
 [{kernel,
@@ -478,9 +482,9 @@ See the `-config /home/pusher/your-app-name.config`? Create that file with the f
 ].
 ```
 
-This is an Erlang source-code. On the NYC machine you must declare the London name, and vice-versa. If you have several machines, all of them but the one you're in right now. Get it?
+Isso é código-fonte Erlang. Na máquina de NYC você deve declarar o nome de Londres, e vice-versa. Se você tiver várias máquinas, todas elas exceto a que você está agora. Entendeu?
 
-Finally, for the Phoenix app itself, you always have a `config/prod.secret.exs` that should never be `git add`ed to the repository, remember? This is where you put the Postgresql server information and random secret key to sign the session cookies:
+Por fim, para a própria app Phoenix, você sempre tem um `config/prod.secret.exs` que nunca deve ser adicionado com `git add` ao repositório, lembra? É aqui que você coloca as informações do servidor Postgresql e a chave secreta aleatória para assinar os cookies de sessão:
 
 ```
 use Mix.Config
@@ -502,9 +506,9 @@ config :guardian, Guardian,
   secret_key: "..."
 ```
 
-How do you create a new random secret key? From your development machine just run: `mix phoenix.gen.secret` and copy the generated string into the file above.
+Como você cria uma nova chave secreta aleatória? Na sua máquina de desenvolvimento, basta rodar: `mix phoenix.gen.secret` e copiar a string gerada para o arquivo acima.
 
-So now you must have those 3 files in each Phoenix server, in the `/home/pusher` home folder:
+Então agora você deve ter esses 3 arquivos em cada servidor Phoenix, na pasta home `/home/pusher`:
 
 ```
 ~/your-app-name/vm.args
@@ -512,24 +516,24 @@ So now you must have those 3 files in each Phoenix server, in the `/home/pusher`
 ~/your-app-name.config
 ```
 
-As per [distillery](https://hexdocs.pm/distillery/runtime-configuration.html#vm-args) documentation, you have to set an environment variable to let it know about the `vm.args` file, and this is **SUPER** important otherwise it will generate a default one that doesn't set the proper name and cookie, so the nodes will not find each other after booting up.
+Conforme a [documentação do distillery](https://hexdocs.pm/distillery/runtime-configuration.html#vm-args), você precisa definir uma variável de ambiente para informar a localização do arquivo `vm.args`, e isso é **SUPER** importante - caso contrário ele vai gerar um padrão que não define o nome e cookie corretos, então os nodes não vão se encontrar depois de subir.
 
-Using `sudo`, edit the `/etc/environment` and add the line:
+Usando `sudo`, edite o `/etc/environment` e adicione a linha:
 
 ```
 RELEASE_CONFIG_DIR=/home/pusher/your-app-name
 VMARGS_PATH=/home/pusher/your-app-name/vm.args
 ```
 
-You have to do it in all the phoenix servers.
+Faça isso em todos os servidores phoenix.
 
-In your local development directory you still have to run this:
+No seu diretório de desenvolvimento local você ainda precisa rodar isso:
 
 ```
 mix release.init
 ```
 
-It will generate a standard `rel/config.exs` file that you must add to your git repository with the following changes do the bottom:
+Isso vai gerar um arquivo padrão `rel/config.exs` que você precisa adicionar ao repositório git com as seguintes alterações no final:
 
 ```ruby
 ...
@@ -547,15 +551,15 @@ release :your_app_name do
 end
 ```
 
-The plugin should enable the release to find the local `vm.args` file in the server (this is super important, otherwise the remote commands such as start, stop, ping, etc will not work and the nodes will not load the correct information to boot up and form a cluster).
+O plugin deve habilitar a release a encontrar o arquivo `vm.args` local no servidor (isso é super importante, caso contrário os comandos remotos como start, stop, ping, etc. não vão funcionar e os nodes não vão carregar as informações corretas para subir e formar um cluster).
 
-Finally, all set, you can issue this command:
+Finalmente, tudo pronto, você pode executar este comando:
 
 ```
 $ mix edeliver build release production --skip-mix-clean --verbose
 ```
 
-If it finishes without errors you will have a message like the following in the end:
+Se terminar sem erros você vai ter uma mensagem parecida com esta no final:
 
 ```
 ...
@@ -570,38 +574,38 @@ If it finishes without errors you will have a message like the following in the 
 RELEASE BUILD OF YOUR-APP-NAME WAS SUCCESSFUL!
 ```
 
-Now, this will take an absurdly long time to deploy. That's because it will git clone the source code of your app, fetch all Elixir dependencies (every time!), it will have to compile everything, then it will run the super slow `npm install` (every time!), brunch your assets, create the so-called "release", tar and gzip it, download it and SCP it to the other machines you configured.
+Agora, isso vai demorar um tempo absurdamente longo para fazer o deploy. Isso porque vai clonar o código-fonte da sua app com git, buscar todas as dependências Elixir (toda vez!), compilar tudo, depois rodar o lentíssimo `npm install` (toda vez!), processar os assets com brunch, criar a tal "release", comprimir em tar e gzip, baixar e enviar via SCP para as outras máquinas configuradas.
 
-In the `.deliver/config` file you set a `BUILD_HOST` option. This is the machine where all this process takes place, so you will want to have at least this machine be beefier than the others. As I am using small 512Mb droplets, the process takes forever.
+No arquivo `.deliver/config` você definiu a opção `BUILD_HOST`. É a máquina onde todo esse processo acontece, então você vai querer que pelo menos essa máquina seja mais robusta que as outras. Como estou usando droplets pequenos de 512Mb, o processo leva uma eternidade.
 
-The last command will download the generated tarball. It has to do it to make sure you have the [NIFs](http://erlang.org/doc/tutorial/nif.html) compiled in the native environment where it run, because if you use a Mac, binaries from Macs won't run on Linux.
+O último comando vai baixar o tarball gerado. Ele precisa fazer isso para garantir que os [NIFs](http://erlang.org/doc/tutorial/nif.html) estejam compilados no ambiente nativo onde vai rodar, porque se você usa Mac, binários de Mac não vão rodar no Linux.
 
-Now we must upload and decompress this tarball in each server with the following command:
+Agora precisamos fazer o upload e descompressão desse tarball em cada servidor com o seguinte comando:
 
 ```
 mix edeliver deploy release to production
 ```
 
-The slower your network, the longer this will take, as it's uploading a big tarfile across the public internet, so make sure you're in a fast connection. And when it finishes, we can restart the servers (if you already had instances running):
+Quanto mais lenta sua rede, mais tempo vai levar, já que está enviando um tarfile grande pela internet pública, então certifique-se de estar numa conexão rápida. Quando terminar, podemos reiniciar os servidores (se você já tinha instâncias rodando):
 
 ```
 mix edeliver stop production
 mix edeliver start production
 ```
 
-If you do everything right, the edeliver process finishes without any error and it leaves a daemon running in your server, like this:
+Se você fizer tudo certo, o processo do edeliver termina sem erros e deixa um daemon rodando no seu servidor, assim:
 
 ```
 /home/pusher/your-app-name/erts-8.2/bin/beam -- -root /home/pusher/your-app-name -progname home/pusher/your-app-name/releases/0.0.1/your-app-name.sh -- -home /home/pusher -- -boot /home/pusher/your-app-name/releases/0.0.1/your-app-name -config /home/pusher/your-app-name/running-config/sys.config -boot_var ERTS_LIB_DIR /home/pusher/your-app-name/erts-8.2/../lib -pa /home/pusher/your-app-name/lib/your-app-name-0.0.1/consolidated -name us@nyc-ip-address -setcookie ex-push&r-l!te -kernel inet_dist_listen_min 9100 inet_dist_listen_max 9155 -config /home/pusher/your-app-name.config -mode embedded -user Elixir.IEx.CLI -extra --no-halt +iex -- console
 ```
 
-It will still take a long time, but it should be easier. So this is a pro-tip for you, Linux users. Follow [this Gist](https://gist.github.com/mattweldon/2e8ecb953216438ad168) for more details, you must emulate what's run from the `.deliver/config` file's bottom half.
+Ainda vai demorar bastante, mas deve ser mais fácil. Então aqui vai uma dica pro para usuários Linux. Siga [este Gist](https://gist.github.com/mattweldon/2e8ecb953216438ad168) para mais detalhes; você precisa emular o que é executado na segunda metade do arquivo `.deliver/config`.
 
-Also notice that I ran the migrations manually, but you can do it using `mix edeliver migrate`.
+Note também que rodei as migrations manualmente, mas você pode fazer isso usando `mix edeliver migrate`.
 
-Read their documentation for more commands and configurations.
+Leia a documentação deles para mais comandos e configurações.
 
-Also, do not forget to enable UFW:
+E não esqueça de habilitar o UFW:
 
 ```
 sudo ufw allow ssh
@@ -612,27 +616,27 @@ sudo ufw default allow outgoing
 sudo ufw enable
 ```
 
-### Debugging Production bugs
+### Depurando bugs em produção
 
-Right after I deployed, obviously it failed. And the problem is that the `/home/pusher/your-app-name/log/erlang.log` files (they are automatically rotated so you may find several files ending in a number), you won't see much.
+Logo depois que fiz o deploy, obviamente falhou. E o problema é que os arquivos `/home/pusher/your-app-name/log/erlang.log` (eles são rotacionados automaticamente, então você pode encontrar vários arquivos terminando em número) não vão mostrar muita coisa.
 
-What I recommend you to do is to change the `config/prod.exs` file ONLY in your development machine and change the log setting to `config :logger, level: :debug`, use the same `prod.secret.exs` you edited in the servers above and run it locally with `MIX_ENV=prod iex -S mix phoenix.server`.
+O que eu recomendo é alterar o arquivo `config/prod.exs` APENAS na sua máquina de desenvolvimento e mudar o nível de log para `config :logger, level: :debug`, usar o mesmo `prod.secret.exs` que você editou nos servidores e rodar localmente com `MIX_ENV=prod iex -S mix phoenix.server`.
 
-For example, in development mode I had a code in the controller that was checking the existence of an optional query string parameter like this:
+Por exemplo, em modo de desenvolvimento eu tinha um código no controller que verificava a existência de um parâmetro de query string opcional assim:
 
 ```ruby
 if params["some_parameter"] do
  ...
 ```
 
-That was working fine in development but crashing in production, so I had to change it to:
+Funcionava bem em desenvolvimento mas travava em produção, então tive que mudar para:
 
 ```ruby
 if Map.has_key?(params, "some_parameter") do
  ...
 ```
 
-Another thing was that Guardian was working normally in development, but in production I had to declare its application in the `mix.exs` like this:
+Outro problema foi que Guardian funcionava normalmente em desenvolvimento, mas em produção precisei declarar sua aplicação no `mix.exs` assim:
 
 ```ruby
 def application do
@@ -641,18 +645,18 @@ def application do
 end
 ```
 
-I was getting `:econnrefused` errors because I forgot to run `MIX_ENV=prod mix do ecto.create, ecto.migrate` as I instructed above. Once I figured those out, my application was up and running through the `http://your-app-name.yourdomain.com`, HAProxy was correctly forwarding to the 8080 port in the servers and everything runs fine, including the WebSocket connections.
+Estava recebendo erros `:econnrefused` porque esqueci de rodar `MIX_ENV=prod mix do ecto.create, ecto.migrate` como instruí acima. Depois de resolver essas questões, minha aplicação estava funcionando em `http://your-app-name.yourdomain.com`, o HAProxy estava encaminhando corretamente para a porta 8080 nos servidores e tudo roda bem, incluindo as conexões WebSocket.
 
-### Conclusion
+### Conclusão
 
-As I mentioned above, this kind of procedure makes me really miss an easy to deploy solution such as Heroku.
+Como mencionei acima, esse tipo de procedimento me faz sentir falta de uma solução de deploy fácil como o Heroku.
 
-The only problem I am facing right now is that when I log in through Coherence's sign in page, I am not redirected to the correct URI I am trying ("/admin" in my case), sometimes reloading after sign in works, sometimes it doesn't. Sometimes I am inside a "/admin" page but when I click one of the links it sends me back to the sign in page even though I am already signed in. I am not sure if it's a but in Coherence, ExAdmin, Phoenix itself or an HAProxy misconfiguration. I will update this post if I find out.
+O único problema que estou enfrentando agora é que quando faço login pela página de sign in do Coherence, não sou redirecionado para o URI correto que estava tentando acessar ("/admin" no meu caso) - às vezes recarregar depois do login funciona, às vezes não. Às vezes estou dentro de uma página "/admin" mas quando clico em um dos links ele me manda de volta para a página de login mesmo estando logado. Não sei se é um bug no Coherence, ExAdmin, no próprio Phoenix ou uma configuração errada do HAProxy. Vou atualizar este post se descobrir.
 
-Edeliver also takes an obscene amount of time to deploy. Even waiting for sprockets to process in a `git push heroku master` deploy feels way faster in comparison. And this is for a very bare-bone Phoenix app. Having to fetch everything (because Hex doesn't keep a local global cache, all dependencies are statically vendored in the project directory). Having to run the super slow npm doesn't help either.
+O Edeliver também leva um tempo obsceno para fazer deploy. Até esperar os sprockets processarem num `git push heroku master` parece muito mais rápido em comparação. E isso para uma app Phoenix bem enxuta. Ter que buscar tudo (porque o Hex não mantém um cache global local, todas as dependências são vendorizadas estaticamente no diretório do projeto) e ter que rodar o lentíssimo npm não ajuda em nada.
 
-I still need to research if there are faster options, but for now what I have "works".
+Ainda preciso pesquisar se há opções mais rápidas, mas por ora o que tenho "funciona".
 
-And more importantly, now I have a scalable cluster for real-time bi-directional WebSockets, which is the main reason one might want to use Phoenix in the first place.
+E mais importante: agora tenho um cluster escalável para WebSockets bidirecionais em tempo real, que é a principal razão pela qual alguém pode querer usar Phoenix.
 
-If you want to build a "normal" website, keep it simple and do it in Rails, Django, Express or whatever is your web framework of choice. If you want real-time communications the easy way, I might have a better solution. Keep an eye on my blog for news to come soon! ;-)
+Se você quer construir um site "normal", mantenha simples e faça em Rails, Django, Express ou qual for seu framework web preferido. Se você quer comunicações em tempo real de forma fácil, talvez eu tenha uma solução melhor. Fique de olho no blog para novidades que vêm por aí! ;-)
