@@ -94,12 +94,32 @@ title: AkitaOnRails Blog
 
 ## 2025 - May
 
+- [Seu Windows pode estar Capado sem Você Saber. Cheque isto!!](/2025/05/21/seu-windows-pode-estar-capado-sem-voce-saber-cheque-isto/)
 - [História da Computação e Retro Dev no YouTube](/2025/05/19/historia-da-computacao-e-retro-dev-no-youtube/)
 - [Último Tentativa de Treinar uma LLM com LoRa. Tiro de canhão, mas errando a mosca.](/2025/05/03/ultimo-tentativa-de-treinar-uma-llm-com-lora-tiro-de-canhao-mas-errando-a-mosca/)
+- [Ensinando Zig mais recente pra sua LLM - Treinando LoRas (quase)](/2025/05/03/ensinando-zig-mais-recente-pra-sua-llm-treinando-loras-quase/)
+- [RANT - LLMs são LOOT BOXES!](/2025/05/02/rant-llms-sao-loot-boxes/)
+- [Quando LLMs não Funcionam pra Programar? Um caso de uso mais real.](/2025/05/01/quando-llms-nao-funcionam-pra-programar-um-caso-de-uso-mais-real/)
+- [Rant - LLMs vão evoluir pra sempre? Desmistificando LLMs na programação](/2025/05/01/rant-llms-vao-evoluir-pra-sempre-desmistificando-llms-na-programacao/)
 
 ## 2025 - April
 
+- [Dissecando um Modelfile de Ollama - Ajustando Qwen3 pra código](/2025/04/29/dissecando-um-modelfile-de-ollama-ajustando-qwen3-pra-codigo/)
+- [Testando o Recém Lançado LLM Open Source - Qwen3 (com Aider e Ollama)](/2025/04/28/testando-o-recem-lancado-llm-open-source-qwen3-com-aider-e-ollama/)
+- [Destruindo a "Personalidade" do ChatGPT 4o](/2025/04/28/destruindo-a-personalidade-do-chatgpt-4o/)
+- [Testando LLMs com Aider na RunPod - qual usar pra código?](/2025/04/27/testando-llms-com-aider-na-runpod-qual-usar-pra-codigo/)
+- [Seu Próprio Co-Pilot Gratuito Universal que funciona Local: AIDER-OLLAMA-QWEN](/2025/04/25/seu-proprio-co-pilot-gratuito-universal-que-funciona-local-aider-ollama-qwen/)
+- [Hello World de LLM: criando seu próprio chat de I.A. que roda local](/2025/04/25/hello-world-de-llm-criando-seu-proprio-chat-de-i-a-que-roda-local/)
+- [Acessando seu NAS usando iSCSI em vez de SMB](/2025/04/24/acessando-seu-nas-usando-iscsi-em-vez-de-smb/)
+- [Mudando roupas usando I.A. (ComfyUI)](/2025/04/23/mudando-roupas-usando-i-a-comfyui/)
+- [Usando I.A (ComfyUI) pra gerar NPCs em desenvolvimento de games](/2025/04/23/usando-i-a-comfyui-pra-gerar-npcs-em-desenvolvimento-de-games/)
+- [Entendendo o Básico de ComfyUI pra gerar imagens com I.A.](/2025/04/20/entendendo-o-basico-de-comfyui-pra-gerar-imagens-com-i-a/)
+- [Gerando Imagens com I.A - até estilo Ghibli 😂 - com Docker e CUDA](/2025/04/20/gerando-imagens-com-i-a-ate-estilo-ghibli-com-docker-e-cuda/)
+- [Gerando Videos de até 2 min a partir de uma Foto com I.A.](/2025/04/19/gerando-videos-de-ate-2-min-a-partir-de-uma-foto-com-i-a/)
+- [Aumentando Resolução de Anime velho pra 4K com I.A.](/2025/04/19/aumentando-resolucao-de-anime-velho-pra-4k-com-i-a/)
 - [Colorindo Imagens Preto e Branco com I.A.](/2025/04/19/colorindo-imagens-preto-e-branco-com-i-a/)
+- [Configurando meu NAS Synology com NFS no Linux](/2025/04/17/configurando-meu-nas-synology-com-nfs-no-linux/)
 - [NVIDIA e Wayland - Problemas pra PCI Passthrough em VMs](/2025/04/17/nvidia-e-wayland-problemas-pra-pci-passthrough-em-vms/)
+- [Configuração da BIOS do meu PC - X670E Aorus Xtreme](/2025/04/17/configuracao-da-bios-do-meu-pc-x670e-aorus-xtreme/)
 
 [Arquivo completo →](/archives/)

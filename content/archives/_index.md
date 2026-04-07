@@ -266,6 +266,7 @@ title: AkitaOnRails Blog - Arquivo
 ## 2015 - January
 
 - [Ruby e Rails no Ubuntu 14.04 LTS Trusty Tahr](/2015/01/28/ruby-e-rails-no-ubuntu-14-04-lts-trusty-tahr/)
+- [\[Off-Topic\] Coletânea "Processos e Metodologias Não Vão Te Ajudar!"](/2015/01/07/off-topic-coletanea-processos-e-metodologias-nao-vao-te-ajudar/)
 - [Lembrando os Heróis Ruby que se foram em 2014](/2015/01/02/lembrando-os-herois-ruby-que-se-foram-em-2014/)
 - [Começando o Ano com um Ruby Drama: RubySpec vs MRI Core Team](/2015/01/02/comecando-o-ano-com-um-ruby-drama-rubyspec-vs-mri-core-team/)
 
@@ -309,6 +310,7 @@ title: AkitaOnRails Blog - Arquivo
 - [\[Small Bites\] Vagrant + Ubuntu 14.04 + Chef Solo](/2014/07/28/small-bites-vagrant-ubuntu-14-04-chef-solo/)
 - [\[Off-Topic\] Meu Primeiro "Livro"](/2014/07/22/off-topic-meu-primeiro-livro/)
 - [\[Small Bites\] Tirando Proveito de Threads em Ruby](/2014/07/15/small-bites-tirando-proveito-de-threads-em-ruby/)
+- [Aprendendo Ruby e Rails, Livros e Guias](/2014/07/13/aprendendo-ruby-e-rails-livros-e-guias/)
 - [\[Off-Topic\] Alguém importante deixou a comunidade! E agora??](/2014/07/06/off-topic-alguem-importante-deixou-a-comunidade-e-agora/)
 - [Web Components é uma Revolução?](/2014/07/06/web-components-e-uma-revolucao/)
 
@@ -388,6 +390,7 @@ title: AkitaOnRails Blog - Arquivo
 - [Rubyconf Brasil 2013: Conheça Eduardo Shiota](/2013/08/19/rubyconf-brasil-2013-conheca-eduardo-shiota/)
 - [Rubyconf Brasil 2013: Vinheta de Abertura](/2013/08/19/rubyconf-brasil-2013-vinheta-de-abertura/)
 - [Rubyconf Brasil 2013: Conheça Rodrigo Caffo](/2013/08/16/rubyconf-brasil-2013-conheca-rodrigo-caffo/)
+- [Rubyconf Brasil 2013: Your first time in São Paulo, Brazil](/2013/08/15/rubyconf-brasil-2013-your-first-time-in-sao-paulo-brazil/)
 - [Rubyconf Brasil 2013: Conheça Danilo Sato](/2013/08/15/rubyconf-brasil-2013-conheca-danilo-sato/)
 - [Rubyconf Brasil 2013: Meet Hongli Lai](/2013/08/14/rubyconf-brasil-2013-meet-hongli-lai/)
 - [Rubyconf Brasil 2013: Conheça Hongli Lai](/2013/08/14/rubyconf-brasil-2013-conheca-hongli-lai/)
