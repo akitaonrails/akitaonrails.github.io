@@ -1,32 +1,35 @@
 ---
-title: _Why Documentary at Rubyconf 2012, Denver
+title: "Documentário do _Why na Rubyconf 2012, Denver"
 date: '2012-09-03T00:54:00-03:00'
-slug: why-documentary-at-rubyconf-2012-denver
+slug: documentario-do-why-na-rubyconf-2012-denver
+translationKey: why-documentary-rubyconf-2012
+aliases:
+- /2012/09/03/why-documentary-at-rubyconf-2012-denver/
 tags:
 - philosophy
 - ruby
 - why
-- english
+- traduzido
 draft: false
 ---
 
-*Update:* This article generated some heat. I've published [another post](http://akitaonrails.com/2012/09/07/_why-ruby-dramas-and-dynamiting-courtlandt) with some of my thoughts about the subject later.
+*Update:* Esse artigo gerou alguma polêmica. Publiquei [outro post](http://akitaonrails.com/2012/09/07/_why-ruby-dramas-and-dynamiting-courtlandt) com mais reflexões sobre o assunto depois.
 
-[RubyConf Brazil 2012](http://www.akitaonrails.com/2012/09/01/rubyconf-brasil-2012-it-s-a-wrap) has just finished but the US Rubyconf 2012 will begin on November 1-3, 2012, at Denver, Colorado. While I was finishing my post about the event, I came across [this trailer for Why's Documentary](http://www.youtube.com/watch?v=47LtM830ocE), to be released during the US Rubyconf, if I understood correctly.
+A [RubyConf Brasil 2012](http://www.akitaonrails.com/2012/09/01/rubyconf-brasil-2012-it-s-a-wrap) acabou de terminar, mas a Rubyconf americana 2012 vai começar nos dias 1 a 3 de novembro de 2012, em Denver, Colorado. Enquanto eu finalizava meu post sobre o evento, esbarrei [neste trailer do documentário do Why](http://www.youtube.com/watch?v=47LtM830ocE), que deve estrear durante a Rubyconf americana, se eu entendi direito.
 
-Now, if you're new to the Ruby ecosystem, you may have not heard about this character named "Why, The Lucky Stiff". I think 2 of the best articles about him were written by a fellow Brazilian Rubyist, [Diogo Terror](http://twitter.com/dterror) to Smashing Magazine in 2010, titled [_Why: A Tale Of A Post-Modern Genius](http://www.smashingmagazine.com/2010/05/15/why-a-tale-of-a-post-modern-genius/) and Annie Lowrey for Slate [Where’s _why?](http://www.slate.com/articles/technology/technology/2012/03/ruby_ruby_on_rails_and__why_the_disappearance_of_one_of_the_world_s_most_beloved_computer_programmers_.single.html). 
+Agora, se você é novo no ecossistema Ruby, talvez nunca tenha ouvido falar desse personagem chamado "Why, The Lucky Stiff". Acho que dois dos melhores artigos sobre ele foram escritos por um Rubyista brasileiro, [Diogo Terror](http://twitter.com/dterror), para a Smashing Magazine em 2010, intitulado [_Why: A Tale Of A Post-Modern Genius](http://www.smashingmagazine.com/2010/05/15/why-a-tale-of-a-post-modern-genius/), e por Annie Lowrey para a Slate em [Where's _why?](http://www.slate.com/articles/technology/technology/2012/03/ruby_ruby_on_rails_and__why_the_disappearance_of_one_of_the_world_s_most_beloved_computer_programmers_.single.html).
 
-He inspired an entire first generation of Rubyist around the turn of the century. He wasn't just a programmer, he was a craftsman, literally. The only one I accept calling himself an "artist" within our programming world. His most famous work is the book [Why's Poignant Guide to Ruby](http://mislav.uniqpath.com/poignant-guide/book/) used by many famous Rubyists you know when they first found about Ruby. 
+Ele inspirou toda uma primeira geração de Rubyistas na virada do século. Era um programador, mas era também um artesão, literalmente. O único que eu aceito chamar de "artista" dentro do nosso mundo de programação. Sua obra mais famosa é o livro [Why's Poignant Guide to Ruby](http://mislav.uniqpath.com/poignant-guide/book/), usado por muitos Rubyistas famosos que você conhece quando descobriram Ruby pela primeira vez.
 
-Then in August 19, 2009 he vanished. 
+Aí, no dia 19 de agosto de 2009, ele simplesmente sumiu.
 
 <div class="embed-container">
 {{< youtube id="47LtM830ocE" >}}
 </div>
 
-Some say that great men are recognized only after their passing ("You either die a hero, or live long enough to see yourself becoming the villain"). Maybe his last stroke of genius was to commit "virtual suicide", by erasing every digital trace of his existence - he actually deleted all his work, his projects, his source codes that were available online. Thanks to technologies such as Git (by the way, this was a great showcase of the recovering capabilities of distributed versioning systems) almost all of the deleted material was recovered and you can find them in places such as [here](http://viewsourcecode.org/why/). But the fact that he disappeared and his whereabouts are still unknown kept the myth going and 3 years later he is still remembered.
+Dizem que grandes homens só são reconhecidos depois que se vão ("Você morre como herói ou vive o suficiente para se ver virar o vilão"). Talvez seu último golpe de gênio tenha sido cometer um "suicídio virtual", apagando todos os rastros digitais da sua existência. Ele literalmente deletou todo o seu trabalho, seus projetos, seus códigos-fontes que estavam disponíveis online. Graças a tecnologias como o Git (aliás, foi uma ótima demonstração das capacidades de recuperação de sistemas de versionamento distribuídos), quase todo o material apagado foi recuperado e você encontra tudo em lugares como [aqui](http://viewsourcecode.org/why/). Mas o fato de ter desaparecido e seu paradeiro continuar desconhecido manteve o mito vivo, e três anos depois ele ainda é lembrado.
 
-In 2007 I was conducting a [series of interviews with several famous Rubyists of our community](http://www.akitaonrails.com/English%20Interviews). And of course, I did send an email to Why himself. And he responded in a very unexpected way. I think it's time to disclose the unabridged content of the email so you understand his exotic personality.
+Em 2007 eu estava conduzindo uma [série de entrevistas com vários Rubyistas famosos da nossa comunidade](http://www.akitaonrails.com/English%20Interviews). E claro, mandei um e-mail para o próprio Why. E ele respondeu de um jeito completamente inesperado. Acho que está na hora de divulgar o conteúdo integral do e-mail para vocês entenderem a personalidade exótica dele.
 
 ```
 Date: Thu, 19 Apr 2007 17:38:59 -0500
@@ -86,6 +89,6 @@ of a steep incline somewhere at a higher elevation.
 _why
 ```
 
-Unfortunately I didn't pursue this enough, I was actually planning on sending the interview questions to him, handwritten. :-) In retrospect, I wish I had, it would've been fun.
+Infelizmente eu não fui atrás disso o suficiente. Eu estava planejando de fato mandar as perguntas da entrevista para ele, escritas à mão. :-) Olhando para trás, queria ter feito, teria sido divertido.
 
-And that was Why, an icon for the Ruby community, an original character that can't be copied or replaced and we are very lucky for having here. Explore his material, learn his style, transmit his message of education, entertainment, friendliness, mastery and craftsmanship.
+E esse era o Why, um ícone da comunidade Ruby, um personagem original que não dá para copiar nem substituir, e nós tivemos muita sorte de tê-lo aqui. Explore o material dele, aprenda o estilo dele, transmita a mensagem dele de educação, entretenimento, simpatia, maestria e artesanato.

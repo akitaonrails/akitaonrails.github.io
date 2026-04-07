@@ -154,7 +154,7 @@ I do everything by this idea:
 
 > “I am a software engineer. I know what is to come by the principle on which it is built.
 
-I explained this in detail in my article ["_Why, Ruby Dramas, and Dynamiting Courtlandt"](http://www.akitaonrails.com/2012/09/07/_why-ruby-dramas-and-dynamiting-courtlandt). In a small way, I want to think that I honored this principle.
+I explained this in detail in my article ["_Why, Ruby Dramas, and Dynamiting Courtlandt"](http://www.akitaonrails.com/en/2012/09/07/_why-ruby-dramas-and-dynamiting-courtlandt/). In a small way, I want to think that I honored this principle.
 
 I write software (and about software) because I enjoy software. I am very fond of Ruby and will keep doing the best Ruby I can for many years. And I will also write good Elixir, and good Crystal, and perhaps good Javascript, etc.
 

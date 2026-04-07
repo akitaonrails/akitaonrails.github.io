@@ -1,37 +1,40 @@
 ---
-title: "[Off-Topic] Reading with subtitles over Kanjis in Japanese webpages"
+title: "[Off-Topic] Lendo com legendas sobre Kanjis em páginas japonesas"
 date: '2012-05-08T10:36:00-03:00'
-slug: off-topic-reading-with-subtitles-over-kanjis-in-japanese-webpages
+slug: lendo-com-legendas-sobre-kanjis-em-paginas-japonesas
+translationKey: kanji-subtitles-japanese-webpages
+aliases:
+- /2012/05/08/off-topic-reading-with-subtitles-over-kanjis-in-japanese-webpages/
 tags:
 - off-topic
 - learning
 - mac
-- english
+- traduzido
 draft: false
 ---
 
-This is something I just stumbled upon and because it’s tricky to install the first time I decided to grab the pieces that make it work. It’s so useful I had to post about it.
+Acabei de tropeçar nisso e, como é meio chato de instalar da primeira vez, resolvi juntar as peças que fazem funcionar. É tão útil que eu precisava postar a respeito.
 
-If you’re learning Japanese this will definitely prove to be an invaluable tool. I am Japanese but I didn’t payed attention to proper Kanji training when I was a child. It shows now, as I can read Kanji only to what would be considered below high-school level in Japan. Still very useful, but it means I can’t read most websites in Japanese fast enough.
+Se você está aprendendo japonês, isso vai se mostrar uma ferramenta que vale ouro. Eu sou japonês, mas não dei a devida atenção ao treino de Kanji quando era criança. E hoje aparece a fatura: consigo ler Kanji só até um nível que no Japão seria considerado abaixo do colegial. Ainda é bem útil, mas significa que não consigo ler a maioria dos sites em japonês com velocidade suficiente.
 
-I’ve known of a Firefox add-on I’m very fond of for a long time now called [Rikaichan](https://addons.mozilla.org/pt-BR/firefox/addon/rikaichan/). When enabled, you have hover your mouse over the kanji text and it will popup a box with the translation. You must install the Firefox add-on in the previous link and a proper dictionary to your native language from [Rikaichan’s webpage](http://www.polarcloud.com/rikaichan/). And that’s it.
+Eu já conheço há bastante tempo um add-on do Firefox do qual gosto muito, chamado [Rikaichan](https://addons.mozilla.org/pt-BR/firefox/addon/rikaichan/). Quando habilitado, basta passar o mouse sobre o texto em kanji e ele abre um popup com a tradução. Você precisa instalar o add-on do Firefox no link acima e um dicionário apropriado para o seu idioma nativo a partir da [página do Rikaichan](http://www.polarcloud.com/rikaichan/). E pronto.
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2012/5/8/Screen%20Shot%202012-05-08%20at%2010.30.34%20AM_original.png?1336483998)
 
 
-But if you like to read Manga (Japanese Comics), you’re probably familiar with “Furigana”, which is kind of like “subtitling” over the Kanjis with Hiragana or Katakana, which are the Japanese syllabus based alphabets (the first for Japanese only words, the second for foreign words). That makes reading and understanding the more difficult Kanjis super easy and way faster than hovering over the Kanjis or plain old looking manually into the dictionary for each ideogram.
+Mas se você gosta de ler mangá (quadrinhos japoneses), provavelmente conhece o "Furigana", que é mais ou menos como "legendar" os Kanjis com Hiragana ou Katakana, que são os alfabetos silábicos japoneses (o primeiro para palavras puramente japonesas, o segundo para palavras estrangeiras). Isso torna a leitura e a compreensão dos Kanjis mais difíceis super fáceis e muito mais rápida do que ficar passando o mouse em cima dos Kanjis ou consultando manualmente o dicionário para cada ideograma.
 
-A normal snippet of a Japanese webpage looks like this:
+Um trecho normal de uma página japonesa fica assim:
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2012/5/8/Screen%20Shot%202012-05-08%20at%2010.17.14%20AM_original.png?1336483852)
 
-But with [Furigana Inserter](https://addons.mozilla.org/pt-BR/firefox/addon/furigana-inserter/) the same snippet looks like this:
+Mas com o [Furigana Inserter](https://addons.mozilla.org/pt-BR/firefox/addon/furigana-inserter/) o mesmo trecho fica assim:
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2012/5/8/Screen%20Shot%202012-05-08%20at%2010.17.25%20AM_original.png?1336483884)
 
-To install it, first you install the [add-on](https://addons.mozilla.org/pt-BR/firefox/addon/furigana-inserter/). Then you have to install the [HTML Ruby](https://addons.mozilla.org/firefox/addon/html-ruby/) add-on as well. Finally, you have to install this [dictionary](http://code.google.com/p/itadaki/downloads/detail?name=furiganainserter-dictionary-1.2.7z). It’s a 7-zip file you must decompress and manually drag it over Firefox to install.
+Para instalar, primeiro você instala o [add-on](https://addons.mozilla.org/pt-BR/firefox/addon/furigana-inserter/). Depois precisa instalar também o add-on [HTML Ruby](https://addons.mozilla.org/firefox/addon/html-ruby/). Por fim, precisa instalar este [dicionário](http://code.google.com/p/itadaki/downloads/detail?name=furiganainserter-dictionary-1.2.7z). É um arquivo 7-zip que você precisa descompactar e arrastar manualmente sobre o Firefox para instalar.
 
-If you’re on a Mac, I’m assuming you know what [Homebrew](https://github.com/mxcl/homebrew) is and already have that installed. Because then you can install Mecab like this:
+Se você está num Mac, vou assumir que sabe o que é o [Homebrew](https://github.com/mxcl/homebrew) e que já tem ele instalado. Porque aí dá para instalar o Mecab assim:
 
 * * *
 
@@ -39,16 +42,15 @@ brew install mecab
 brew install mecab-ipadic  
 -
 
-Finally, it seems like you must manually make Furigana Inserter aware of Mecab by adding a symlink into its extension folder:
+Por fim, parece que você precisa avisar manualmente o Furigana Inserter sobre o Mecab, criando um symlink dentro da pasta da extensão:
 
 * * *
 
 ln s /usr/local/lib/libmecab.dylib ~/Library/Application\ Support/Firefox/Profiles/454dy2eg.default/extensions/furiganainserter@zorkzero.net/mecab/libmecab.dylib  
 --
 
-Understand that the Firefox Profile folder will have a different name in your computer. The one in the example is in my Mac. Open the terminal and tab to autocomplete each folder as you type and it should work just fine.
+Tenha em mente que a pasta de Profile do Firefox vai ter um nome diferente no seu computador. A do exemplo é a do meu Mac. Abre o terminal e usa tab para autocompletar cada pasta enquanto digita, que deve funcionar tranquilamente.
 
-Restart Firefox, right-click in Japanese pages and you will have a “Enable Furigana” option waiting for you. Rikaichan seems to misbehave when hovering over Furigana enabled Kanji, so you may need to disable Furigana to use Rikaichan. But it’s a good compromise and may open a whole lot of new content in Japanese for us to consume.
+Reinicia o Firefox, clica com o botão direito em páginas em japonês e vai aparecer uma opção "Enable Furigana" esperando por você. O Rikaichan parece se comportar mal quando você passa o mouse sobre Kanjis com Furigana habilitado, então pode ser necessário desabilitar o Furigana para usar o Rikaichan. Mas é um bom compromisso e pode abrir um monte de conteúdo novo em japonês para a gente consumir.
 
-One reason to use Firefox.
-
+Mais uma razão para usar Firefox.

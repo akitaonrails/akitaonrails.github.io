@@ -17,7 +17,7 @@ Um ano depois ele finalmente está lançando seu trabalho ao mundo! Então, sem 
 
 Ano passado também [escrevi sobre o assunto](http://www.akitaonrails.com/2013/08/24/rubyconf-brasil-2013-lembrando-de-_why), então não vou me repetir.
 
-Em 2012, escrevi um artigo (em inglês), com uma [teoria](http://www.akitaonrails.com/2012/09/07/_why-ruby-dramas-and-dynamiting-courtlandt) pessoal do desaparecimento do _Why. 
+Em 2012, escrevi um artigo (em inglês), com uma [teoria](http://www.akitaonrails.com/en/2012/09/07/_why-ruby-dramas-and-dynamiting-courtlandt/) pessoal do desaparecimento do _Why. 
 
 O Kevin ainda não terminou com o documentário. Ele quer adicionar uma introdução para não-programadores entenderem a significância do Why para a comunidade Ruby e também incluir o lançamento do suposto último trabalho do _Why, o [CLOSURE](http://words.steveklabnik.com/closure), que o Steve Klabnik compilou. Este [review de Kevin Watters](http://kevinw.github.io/2013/04/30/why-did-why-the-lucky-stiff-quit/) trás alguns insights sobre o assunto. Não deixe de ler.
 

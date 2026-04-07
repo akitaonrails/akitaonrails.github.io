@@ -1,48 +1,51 @@
 ---
-title: _Why, Ruby Dramas, and Dynamiting Courtlandt
+title: "_Why, Dramas do Ruby e Dinamitando Courtlandt"
 date: '2012-09-07T14:37:00-03:00'
-slug: _why-ruby-dramas-and-dynamiting-courtlandt
+slug: why-dramas-do-ruby-e-dinamitando-courtlandt
+translationKey: why-ruby-dramas-courtlandt
+aliases:
+- /2012/09/07/_why-ruby-dramas-and-dynamiting-courtlandt/
 tags:
 - philosophy
 - ruby
 - why
-- english
+- traduzido
 draft: false
 ---
 
-![_Why is the Howard Roark of the Ruby world](http://s3.amazonaws.com/akitaonrails/assets/image_asset/image/22/why_fountainhead.jpg)
+![_Why é o Howard Roark do mundo Ruby](http://s3.amazonaws.com/akitaonrails/assets/image_asset/image/22/why_fountainhead.jpg)
 
-I recently wrote an article named [_Why Documentary at Rubyconf 2012, Denver](http://www.akitaonrails.com/2012/09/03/why-documentary-at-rubyconf-2012-denver) reminding people about this person that called himself "_Why", who decided to vanish in August of 2009, taking all his work with him, essentially committing virtual suicide.
+Recentemente escrevi um artigo chamado [_Why Documentary at Rubyconf 2012, Denver](http://www.akitaonrails.com/2012/09/03/why-documentary-at-rubyconf-2012-denver) lembrando as pessoas sobre essa figura que se autodenominava "_Why", que decidiu desaparecer em agosto de 2009, levando consigo todo o seu trabalho, basicamente cometendo um suicídio virtual.
 
-It has attracted lots of trolls and haters at the comments section, more discussion than I anticipated, questioning why we praise someone that was crazy enough to destroy all his work, that is obviously not a good role model, and that compared to other titans of programming has done little and with less quality?
+O artigo atraiu muitos trolls e haters na seção de comentários, gerando bem mais discussão do que eu esperava, questionando por que cultuamos alguém louco o suficiente para destruir todo o próprio trabalho, alguém que obviamente não é um bom modelo a ser seguido e que, comparado a outros titãs da programação, fez pouco e com qualidade duvidosa.
 
-Then, today I heard about this website about Ruby Dramas - that I'm not linking. I don't know the author and I even think this is just for fun, but the reactions from the trolls and haters aren't. Essentially it links a few of what we call "Ruby Dramas", the discussions that trolls and haters call a waste of time, a demonstration of the immaturity and childish behavior of Ruby programmers.
+E aí, hoje, fiquei sabendo desse site sobre Ruby Dramas — que faço questão de não linkar. Não conheço o autor e até acho que é só brincadeira, mas as reações dos trolls e haters não são. Basicamente o site lista algumas das chamadas "Ruby Dramas", as discussões que trolls e haters chamam de perda de tempo, prova da imaturidade e do comportamento infantil dos programadores Ruby.
 
-In 2006, Kathy Sierra wrote an article called [Dilbert and the zone of mediocrity](http://headrush.typepad.com/creating_passionate_users/2006/10/dilbert_and_the.html) where she asserts that if you want to be successful, then you don't want to just please everybody in order to make all of them just like you. You do things in a way that people will love you, but knowing that the consequence is that many others will certainly hate you in the process. It's an all of nothing proposition, if you just make efforts for everybody to like you, you are just being mediocre.
+Em 2006, Kathy Sierra escreveu um artigo chamado [Dilbert and the zone of mediocrity](http://headrush.typepad.com/creating_passionate_users/2006/10/dilbert_and_the.html) onde ela afirma que, se você quer ser bem-sucedido, então você não deve querer agradar todo mundo só para que todos gostem de você. Você faz as coisas de um jeito que algumas pessoas vão amar, sabendo que muitas outras certamente vão odiar nesse processo. É tudo ou nada: se você se esforça apenas para agradar a todos, você está sendo medíocre.
 
-There's a catch. It's not that you make things in order to make people love you. It's just that you should to things in a way that **You Love It**. 
+Tem uma pegadinha aí. A coisa não é fazer com o objetivo de ser amado pelos outros. A coisa é fazer de um jeito que **Você Ame**.
 
-What are trolls and haters? In essence, they come back to you everytime because they care about some of the same things that you do. But they are not producers, they are looters, plunders. What they are actually saying is: __"You're so good, please me, I want the successful ones to please me, because I can't do what you do, as the weaker one, I deserve to be pleased."__
+O que são trolls e haters? Em essência, eles voltam pra você toda vez porque se importam com algumas das mesmas coisas que você. Mas eles não são produtores, são saqueadores, parasitas. O que eles estão dizendo de verdade é: __"Você é tão bom, me agrade, eu quero que os bem-sucedidos me agradem, porque eu não consigo fazer o que você faz, e como o mais fraco eu mereço ser agradado."__
 
-Such is the mentality of altruism and collectivism: people that have less, that can achieve less, deserve what successful people produced, and the successful people must feel guilt for being so much better. The horrible Robin Hood philosophy.
+Essa é a mentalidade do altruísmo e do coletivismo: pessoas que têm menos, que conseguem menos, merecem aquilo que os bem-sucedidos produziram, e os bem-sucedidos devem se sentir culpados por serem tão melhores. A horrenda filosofia Robin Hood.
 
-I will allow myself for some philosophical liberty and the use of metaphors to illustrate my point. I have never talked to other Rubyists that knew _Why personally, so I hope they don't get offended if my personal view differs, but again, this is just my personal opinion. 
+Vou me dar uma liberdade filosófica e usar metáforas para ilustrar meu ponto. Nunca conversei com outros rubistas que conheciam o _Why pessoalmente, então espero que eles não se ofendam se minha visão pessoal divergir, mas, de novo, isso é só minha opinião pessoal.
 
-I learned recently that coincidentally the name **"Why, the Lucky Stiff"** is mentioned in Ayn Rand's famous masterpiece [The Fountainhead](http://en.wikipedia.org/wiki/Talk:Why_the_lucky_stiff#Real_name). -- by the way, as not being a native american, I was just told that this was a very common expression back in the day. But I couldn't resist leaving this coincidence noted anyway :-)
+Recentemente descobri que, por coincidência, o nome **"Why, the Lucky Stiff"** é mencionado na famosa obra-prima de Ayn Rand, [The Fountainhead](http://en.wikipedia.org/wiki/Talk:Why_the_lucky_stiff#Real_name). — A propósito, como não sou nativo americano, acabei de saber que essa era uma expressão bem comum naquela época. Mas não resisti em deixar essa coincidência registrada mesmo assim :-)
 
-This novel illustrates the ideal vision of Ayn Rand's Objectivism philosophy. It tells the story of the ideal man: Howard Roark, a talented architect that lives for the passion of his creative skills. He bows to no one, even if it means his own destruction. He lives by his moral principles of voluntary trade and individual achievement.
+Esse romance ilustra a visão ideal da filosofia Objetivista de Ayn Rand. Ele conta a história do homem ideal: Howard Roark, um arquiteto talentoso que vive pela paixão das próprias habilidades criativas. Ele não se curva a ninguém, mesmo que isso signifique sua própria destruição. Ele vive segundo os princípios morais da troca voluntária e da realização individual.
 
-[Objectivism](http://bit.ly/P1H10f) is the foundation of a more pure version of Capitalism (not the version we current live in), where individual man make voluntary agreements only. 
+[Objetivismo](http://bit.ly/P1H10f) é a base de uma versão mais pura do Capitalismo (não a versão em que vivemos atualmente), na qual os indivíduos fazem apenas acordos voluntários entre si.
 
-So, the trolls and haters, in The Fountainhead, are personified by the looters such as the Peter Keatings and Ellsworth Tooheys of the world. 
+Então, em The Fountainhead, os trolls e haters são personificados pelos saqueadores como os Peter Keatings e Ellsworth Tooheys deste mundo.
 
-## Spoiler Alert!! (do not go forward if you prefer to read the book)
+## Alerta de Spoiler!! (não siga em frente se você prefere ler o livro)
 
-Summarizing, in the book Roark ends up in a project called Courtlandt, a huge complex for the poor and destitute, where no other architect was able to design a complex that would be within requirements and budget. Only Roark was able to solve the puzzle and he agrees to deliver if, and only if, his work is not modified by any means.
+Resumindo, no livro Roark acaba envolvido num projeto chamado Courtlandt, um complexo enorme para os pobres e necessitados, em que nenhum outro arquiteto conseguiu desenhar algo que coubesse nos requisitos e no orçamento. Só Roark conseguiu resolver o quebra-cabeça e ele aceita entregar com uma única condição: que seu trabalho não seja modificado de jeito nenhum.
 
-When he does deliver, the other architects think they have a say in his designs and they modify it according to a committee that think they know better for "the greater good". When Roark knows about it, and see his creation being built in a way that he did not want, he decided to dynamite and bring it down.
+Quando ele entrega, os outros arquitetos acham que têm voz no design dele e modificam tudo conforme um comitê que acha que sabe o que é melhor para "o bem maior". Quando Roark fica sabendo, e vê sua criação sendo construída de um jeito que ele não queria, ele decide dinamitar e botar tudo abaixo.
 
-He goes to court and this is his defense:
+Ele vai a júri e essa é a defesa dele:
 
 <div class="video-container">
     <video controls>
@@ -51,50 +54,50 @@ He goes to court and this is his defense:
     </video>
 </div>
 
-[Read the full novel version of this remarkable defense speech](http://www.nasonart.com/personal/lifelessons/fountainhead.html).
+[Leia a versão completa dessa notável defesa no romance](http://www.nasonart.com/personal/lifelessons/fountainhead.html).
 
-Again, as a metaphor, I can't help myself to picture _Why in Howard's shoes, talking to his detractors, the trolls and haters, the ones naming the so called "Ruby Dramas", the looters, the ones that think they know about "the greater good".
+De novo, como metáfora, não consigo deixar de imaginar o _Why no lugar de Howard, falando para seus detratores, os trolls e haters, aqueles que apontam as ditas "Ruby Dramas", os saqueadores, aqueles que acham que sabem o que é "o bem maior".
 
-Some people question why does "_Why" evoke such "irrational worship" when in the end of the day he didn't even do so much coding, and his coding was not exactly good enough (according to their own views, of course).
+Tem gente que questiona por que "_Why" desperta tamanha "adoração irracional" se, no fim das contas, ele nem programou tanto assim, e o código dele nem era exatamente bom o suficiente (segundo a visão deles, claro).
 
-My personal pet theory is exactly because _Why embodies Howard Roark ideals. He is an artist, just like Roark. He did things in ways that surprised people. He created, he produced, he remained an independent mind. But some contract was breached. I don't know what it is, maybe the agreement was exactly that: "leave me alone", "do not come after my personal identity", "do not tell how I should do my work".
+Minha teoria pessoal é justamente porque _Why encarna os ideais de Howard Roark. Ele é um artista, igual ao Roark. Ele fazia coisas de jeitos que surpreendiam as pessoas. Ele criava, ele produzia, ele se manteve uma mente independente. Mas algum contrato foi quebrado. Eu não sei qual, talvez o acordo fosse exatamente esse: "me deixem em paz", "não venham atrás da minha identidade pessoal", "não me digam como eu devo fazer meu trabalho".
 
-So when the Tooheys ran over him, he literally dynamited Courtlandt. It was his work, his terms, his choice. And his individual choice was to do what Roark defended:
+Então, quando os Tooheys passaram por cima dele, ele literalmente dinamitou Courtlandt. Era o trabalho dele, nos termos dele, escolha dele. E sua escolha individual foi fazer o que Roark defendeu:
 
-> “I am an architect. I know what is to come by the principle on which it is built. **We are approaching a world in which I cannot permit myself to live**.
+> "Sou um arquiteto. Sei o que está por vir pelo princípio sobre o qual está sendo construído. **Estamos nos aproximando de um mundo no qual eu não posso me permitir viver**.
 >
-> “Now you know why I dynamited Cortlandt.
-> 
-> “I designed Cortlandt. I gave it to you. I destroyed it.
+> "Agora você sabe por que eu dinamitei Cortlandt.
 >
-> “I destroyed it because I did not choose to let it exist. It was a double monster. In form and in implication. I had to blast both. The form was mutilated by two second-handers who assumed the right to improve upon that which they had not made and could not equal. They were permitted to do it by the general implication that the altruistic purpose of the building superseded all rights and that I had no claim to stand against it.
+> "Eu projetei Cortlandt. Eu o entreguei a vocês. Eu o destruí.
 >
-> “I agreed to design Cortlandt for the purpose of seeing it erected as I dedigned it and for no other reason. That was the price I set for my work. I was not paid.
-
-So Kathy Sierra was right: if you do something remarkable, that you love, some will also love it, and others will denounce and hate it. Trolls are like leeches, they come crawling fast pursuing other people's success in order to feed from it. They do it not by producing, but by evoking the altruistic principles, all against the individual. And this is the evil in our society: we should be able to understand that individual achievement is not to be shared. An individual that achieved success by his own merits deserve every penny of it without the need to feel guilty.
-
-Trolls and Haters name things such as "Ruby Dramas" because they want your attention. They want the people they quote to be available to please them. And they can't be pleased, so it's an impossible proposition. Trolls exists just for the sake of trolling. That's what Kathy may not have realized when she first wrote her essay: yes, success will attract the haters, but not because they care about what was achieved and want to protect it, but because - like leeches - they want to benefit without producing, on the principle that successful people must please those who cannot achieve.
-
-Roark said: __"We are approaching a world in which I cannot permit myself to live"__, and so _Why deleted his work, even though many others contributed to it. Again, there was a breach of contract and again I quote Roark:
-
-> “I did not receive the payment I asked. But the owners of Cortlandt got what they needed from me. They wanted a scheme devised to build a structure as cheaply as possible. They found no one else who could do it to their satisfaction. I could and did. They took the benefit of my work and made me contribute it as a gift. But I am not an altruist. I do not contribute gifts of this nature.
+> "Eu o destruí porque escolhi não permitir que existisse. Era um monstro duplo. Em forma e em implicação. Tive que destruir os dois. A forma foi mutilada por dois oportunistas que assumiram o direito de melhorar aquilo que não fizeram e que não conseguiriam igualar. Eles foram autorizados a fazer isso pela implicação geral de que o propósito altruísta do prédio se sobrepunha a todos os direitos e que eu não tinha qualquer reivindicação contra isso.
 >
-> “It is said that I have destroyed the home of the destitute. It is forgotten that but for me the destitute could not have had this particular home. Those who were concerned with the poor had to come to me, who have never been concerned, in order to help the poor. It is believed that the poverty of the future tenants gave them the right to my work. That their need constituted a claim on my life. That it was my duty to contribute anything demanded of me. This is the second-hander’s credo now swallowing the world.
->
-> “I came here to say that I do not recognize anyone’s right to one minute of my life. Nor to any part of my energy. Nor to any achievement of mine. No matter who makes the claim, how large their number or how great their need.
->
-> “I wished to come here and say that I am a man who does not exist for others.
->
-> “It had to be said. **The world is perishing from an orgy of self-sacrificing**.
->
-> “I wished to come here and say that the integrity of a man’s creative work is of greater importance than any charitable endeavor. Those of you who do not understand this are the men who’re destroying the world.
->
-> “I wished to come here and state my terms. I do not care to exist on any others.
+> "Concordei em projetar Cortlandt com o propósito de vê-lo erguido como eu o havia projetado e por nenhuma outra razão. Esse foi o preço que estabeleci para o meu trabalho. Não fui pago.
 
-And the point of this article is not to idealize _Why, just to state what it means to value individual achievement.
+Então Kathy Sierra estava certa: se você faz algo notável, algo que você ama, alguns também vão amar, e outros vão denunciar e odiar. Trolls são como sanguessugas, eles vêm rastejando rápido perseguindo o sucesso alheio para se alimentar dele. Eles fazem isso não produzindo, mas evocando os princípios altruístas, todos contra o indivíduo. E esse é o mal da nossa sociedade: deveríamos ser capazes de entender que a realização individual não precisa ser compartilhada. Um indivíduo que conquistou sucesso pelos próprios méritos merece cada centavo dele sem precisar se sentir culpado.
 
-So, many people see value in _Why, enough to forgive him for destroying his Courtlandt and praise him as an inspiration. The trolls and haters are furious, of course, just like Ellsworth Toohey was. It doesn't matter the volume or even the quality of his work. It could've been 6 lines of code, but if those 6 lines have meant plenty to a lot of people, he would still be remembered. Such is the nature of creation.
+Trolls e haters dão nome a coisas como "Ruby Dramas" porque querem sua atenção. Eles querem que as pessoas que citam estejam disponíveis para agradá-los. E eles não podem ser agradados, então é uma proposta impossível. Trolls existem só pelo prazer de trollar. Isso é o que a Kathy talvez não tenha percebido quando escreveu seu ensaio: sim, o sucesso vai atrair os haters, mas não porque eles se importam com o que foi conquistado e querem proteger isso, e sim porque — como sanguessugas — querem se beneficiar sem produzir, no princípio de que pessoas bem-sucedidas devem agradar aqueles que não conseguem realizar.
 
-We can't get rid of the trolls and haters. I myself know that for everything I do that people love, I know some of the haters by name and address. They are there, sneaking, crawling. But it doesn't matter, because I don't do what I do for their sake, I do for my own. And if you're a person that produces, you should too.
+Roark disse: __"Estamos nos aproximando de um mundo no qual eu não posso me permitir viver"__, e foi assim que _Why apagou seu trabalho, mesmo tendo muitos outros contribuído para ele. De novo, houve quebra de contrato e de novo eu cito Roark:
 
-And if anything, to me personally, that's what _Why symbolizes. I don't think we are praising just his person, but what he represented: being a creative individual producing for his own sake.
+> "Eu não recebi o pagamento que pedi. Mas os donos de Cortlandt obtiveram de mim o que precisavam. Eles queriam um esquema desenvolvido para construir uma estrutura o mais barata possível. Não acharam ninguém mais que conseguisse fazer isso a contento. Eu consegui e fiz. Eles pegaram o benefício do meu trabalho e me obrigaram a entregá-lo como um presente. Mas eu não sou um altruísta. Eu não dou presentes desse tipo.
+>
+> "Dizem que destruí o lar dos necessitados. Esquecem que, sem mim, os necessitados nem teriam tido esse lar específico. Aqueles que se preocupavam com os pobres tiveram que vir até mim, que nunca me preocupei, para ajudar os pobres. Acredita-se que a pobreza dos futuros inquilinos lhes dava o direito ao meu trabalho. Que a necessidade deles constituía uma reivindicação sobre a minha vida. Que era meu dever contribuir com qualquer coisa exigida de mim. Esse é o credo do oportunista que agora engole o mundo.
+>
+> "Vim aqui para dizer que não reconheço o direito de ninguém a um minuto da minha vida. Nem a qualquer parte da minha energia. Nem a qualquer realização minha. Não importa quem faça a reivindicação, quão grande seja seu número ou quão grande seja sua necessidade.
+>
+> "Quis vir aqui e dizer que sou um homem que não existe para os outros.
+>
+> "Tinha que ser dito. **O mundo está perecendo numa orgia de auto-sacrifício**.
+>
+> "Quis vir aqui e dizer que a integridade do trabalho criativo de um homem é mais importante do que qualquer empreitada caritativa. Aqueles de vocês que não entendem isso são os homens que estão destruindo o mundo.
+>
+> "Quis vir aqui e estabelecer meus termos. Não me importo em existir sob quaisquer outros.
+
+E o ponto deste artigo não é idealizar o _Why, e sim deixar claro o que significa valorizar a realização individual.
+
+Então, muita gente vê valor no _Why, o suficiente para perdoá-lo por destruir seu Courtlandt e cultuá-lo como inspiração. Os trolls e haters estão furiosos, claro, do mesmo jeito que Ellsworth Toohey ficou. Não importa o volume nem mesmo a qualidade do trabalho dele. Poderiam ser 6 linhas de código, mas se essas 6 linhas significaram muito para muita gente, ele ainda seria lembrado. Essa é a natureza da criação.
+
+Não dá para se livrar dos trolls e haters. Eu mesmo sei que, para tudo que faço e que as pessoas amam, conheço alguns dos haters por nome e endereço. Eles estão lá, espreitando, rastejando. Mas não importa, porque eu não faço o que faço por causa deles, faço por mim mesmo. E se você é uma pessoa que produz, você também deveria fazer assim.
+
+E, se há algo que, para mim pessoalmente, _Why simboliza, é isso. Acho que não estamos cultuando só a pessoa dele, e sim o que ele representou: ser um indivíduo criativo produzindo pelo próprio bem.

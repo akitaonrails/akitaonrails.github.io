@@ -751,7 +751,7 @@ title: AkitaOnRails Blog - Arquivo
 
 ## 2012 - November
 
-- [Startup Journey 2012](/2012/11/21/startup-journey-2012/)
+- [Jornada Startup 2012](/2012/11/21/jornada-startup-2012/)
 - [Viagem à Europa (Parte 3) - Tel Aviv, Israel](/2012/11/21/viagem-a-europa-parte-3-tel-aviv-israel/)
 - [Viagem à Europa (Parte 2) - Berlim, Alemanha](/2012/11/20/viagem-a-europa-parte-2-berlim-alemanha/)
 - [Viagem à Europa (Parte 1) - Amsterdã, Holanda](/2012/11/20/viagem-a-europa-parte-1-amsterda-holanda/)
@@ -761,10 +761,10 @@ title: AkitaOnRails Blog - Arquivo
 
 ## 2012 - September
 
-- [_Why, Ruby Dramas, and Dynamiting Courtlandt](/2012/09/07/_why-ruby-dramas-and-dynamiting-courtlandt/)
-- [_Why Documentary at Rubyconf 2012, Denver](/2012/09/03/why-documentary-at-rubyconf-2012-denver/)
-- [Ruby is Beautiful? What is Beauty?](/2012/09/02/ruby-is-beautiful-what-is-beauty/)
-- [RubyConf Brasil 2012 - It's a Wrap!](/2012/09/01/rubyconf-brasil-2012-it-s-a-wrap/)
+- [_Why, Dramas do Ruby e Dinamitando Courtlandt](/2012/09/07/why-dramas-do-ruby-e-dinamitando-courtlandt/)
+- [Documentário do _Why na Rubyconf 2012, Denver](/2012/09/03/documentario-do-why-na-rubyconf-2012-denver/)
+- [Ruby é Belo? O Que é Beleza?](/2012/09/02/ruby-e-belo-o-que-e-beleza/)
+- [RubyConf Brasil 2012 - Encerramento!](/2012/09/01/rubyconf-brasil-2012-encerramento/)
 
 ## 2012 - August
 
@@ -791,7 +791,7 @@ title: AkitaOnRails Blog - Arquivo
 ## 2012 - May
 
 - [\[Off-Topic\] Grandes Artistas Roubam](/2012/05/13/off-topic-grandes-artistas-roubam/)
-- [\[Off-Topic\] Reading with subtitles over Kanjis in Japanese webpages](/2012/05/08/off-topic-reading-with-subtitles-over-kanjis-in-japanese-webpages/)
+- [\[Off-Topic\] Lendo com legendas sobre Kanjis em páginas japonesas](/2012/05/08/lendo-com-legendas-sobre-kanjis-em-paginas-japonesas/)
 
 ## 2012 - April
 
