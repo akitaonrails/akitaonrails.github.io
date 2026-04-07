@@ -1,18 +1,21 @@
 ---
-title: Elixir 101 - Introducing the Syntax
+title: "Elixir 101 - Apresentando a Sintaxe"
 date: '2015-11-25T17:25:00-02:00'
-slug: elixir-101-introducing-the-syntax
+slug: elixir-101-apresentando-a-sintaxe
+translationKey: elixir-101-syntax
+aliases:
+- /2015/11/25/elixir-101-introducing-the-syntax/
 tags:
 - learning
 - beginner
 - elixir
-- english
+- traduzido
 draft: false
 ---
 
-I've been posting a lot of articles in the last few weeks, check out the ["Elixir" tag](http://www.akitaonrails.com/elixir) to read all of them.
+Venho publicando vários artigos nas últimas semanas, dá uma olhada na [tag "Elixir"](http://www.akitaonrails.com/elixir) pra ler todos eles.
 
-Many tutorial series start introducing a new language by its syntax. I subverted the order. Elixir is not interesting because of its syntax. Erlang is interesting all by itself, because of its very mature, highly reliable, highly concurrent, distributed nature. But its syntax is not for the faint of heart. It's not "ugly", it's just too different for us - from the C school - to easily digest. It derives from Prolog, and this is one small example of a Prolog exercise:
+Muitas séries de tutoriais começam apresentando uma linguagem nova pela sintaxe. Eu inverti a ordem. Elixir não é interessante por causa da sintaxe. Erlang já é interessante por si só, por ser uma plataforma muito madura, altamente confiável, altamente concorrente e distribuída. Mas a sintaxe não é pra qualquer um. Não que seja "feia", ela é só diferente demais pra quem vem da escola C digerir com facilidade. Ela deriva de Prolog, e este é um pequeno exemplo de um exercício em Prolog:
 
 ```prolog
 % P03 (*): Find the K'th element of a list.
@@ -32,9 +35,9 @@ element_at(X,[X|_],1).
 element_at(X,[_|L],K) :- K > 1, K1 is K - 1, element_at(X,L,K1).
 ```
 
-Erlang has a similar syntax, with the idea of phrases divided by commas and ending with a dot.
+Erlang tem uma sintaxe parecida, com a ideia de frases divididas por vírgulas e terminando com um ponto.
 
-José Valim played very smart: he chose the best of the available mature platforms and coated it with a layer of modern syntax and easier to use standard libraries. This is the same problem implemented in Elixir:
+O José Valim foi muito esperto: pegou a melhor das plataformas maduras disponíveis e cobriu com uma camada de sintaxe moderna e bibliotecas padrão mais fáceis de usar. Esse é o mesmo problema implementado em Elixir:
 
 ```ruby
 defmodule Exercise do
@@ -45,36 +48,36 @@ defmodule Exercise do
 end
 ```
 
-If I copy and paste the code above in an IEx shell I can test it out like this:
+Se eu copiar e colar o código acima num shell IEx, posso testar assim:
 
 ```
 iex(7)> Exercise.element_at(["a", "b", "c", "d", "e"], 3)
 "c"
 ```
 
-This simple exercise shows us some of the powerful bits of Erlang that Elixir capitalizes upon, such as pattern matching and recursion.
+Esse exercício simples já mostra alguns dos pontos poderosos de Erlang dos quais o Elixir tira proveito, como pattern matching e recursão.
 
-First of all, every function **must** be defined inside a module, which you name with the <tt>defmodule My.Module do .. end</tt>. Internally it becomes the atom "Elixir.My.Process". Nesting modules is just a larger name concatenated with dots.
+Antes de mais nada, toda função **precisa** ser definida dentro de um módulo, que você nomeia com <tt>defmodule My.Module do .. end</tt>. Internamente, isso vira o atom "Elixir.My.Process". Aninhar módulos é só um nome maior concatenado com pontos.
 
-Then you can define public function with the <tt>def my_function(args) do .. end</tt> block which is just a macro to the same <tt>def my_function(args), do: ...</tt> construct. Private methods are declared with <tt>defp</tt>.
+Daí você define funções públicas com o bloco <tt>def my_function(args) do .. end</tt>, que é só um macro pra mesma construção <tt>def my_function(args), do: ...</tt>. Métodos privados são declarados com <tt>defp</tt>.
 
-A function is actually identified by the pair of its name and its arity. So above we have <tt>element_at/2</tt> which means it accepts 2 arguments. But we have 2 functions with the same arity: the difference is the **pattern matching**.
+Uma função é, na verdade, identificada pelo par nome e aridade. Então acima temos <tt>element_at/2</tt>, o que significa que aceita 2 argumentos. Mas temos 2 funções com a mesma aridade: a diferença é o **pattern matching**.
 
 ```ruby
 def element_at([found|_], 1), do: found
 ```
 
-Here we are saying: the first argument will be an array, decompose it. The first element of the array will be stored in the "found" variable, the rest "_" will be ignored. And the second argument must be the number "1". This is the description of the so called "pattern", it should "match" the input arguments received. This is **"call-by-pattern"** semantics.
+Aqui estamos dizendo: o primeiro argumento será um array, decomponha-o. O primeiro elemento do array será armazenado na variável "found", o resto "_" será ignorado. E o segundo argumento precisa ser o número "1". Essa é a descrição do chamado "padrão" (pattern), que deve "casar" com os argumentos de entrada recebidos. Essa é a semântica do **"call-by-pattern"**.
 
-But what if we want to pass a position different than "1"? That's why we have this second definition:
+Mas e se quisermos passar uma posição diferente de "1"? É pra isso que serve a segunda definição:
 
 ```
 def element_at([_|rest], position) when position > 1 do
 ```
 
-Now, the first argument again **need** to be an array, but this time we don't care about the first element, just the rest of the array without the first element. And any position different than "1" will be stored in the "position" variable.
+Agora, o primeiro argumento de novo **precisa** ser um array, mas dessa vez não nos importamos com o primeiro elemento, só com o resto do array sem o primeiro elemento. E qualquer posição diferente de "1" será armazenada na variável "position".
 
-But this function is special, it is **guarded** to only allow a <tt>position</tt> that is larger than 1. What if we try a negative position?
+Mas essa função é especial, ela tem uma **guarda** que só permite uma <tt>position</tt> maior que 1. E se tentarmos uma posição negativa?
 
 ```
 iex(8)> Exercise.element_at(["a", "b", "c", "d", "e"], -3)
@@ -82,15 +85,15 @@ iex(8)> Exercise.element_at(["a", "b", "c", "d", "e"], -3)
     iex:7: Exercise.element_at(["a", "b", "c", "d", "e"], -3)
 ```
 
-It says that none of the clause we passed doesn't match any of the defined ones above. We could have added a third definition just to catch those cases:
+Ele diz que nenhuma das cláusulas que passamos casa com nenhuma das definidas acima. Poderíamos ter adicionado uma terceira definição justamente pra capturar esses casos:
 
 ```ruby
 def element_at(_list, _position), do: nil
 ```
 
-Adding the underscore "_" before the variable name is the same as having just the underscore but we are naming it just to make it more readable. But any arguments passed will just be ignored. And this is the more generic case if the previous 2 don't match.
+Colocar o underscore "_" antes do nome da variável é o mesmo que ter só o underscore, mas estamos nomeando pra ficar mais legível. Quaisquer argumentos passados serão simplesmente ignorados. E esse é o caso mais genérico, quando os 2 anteriores não casam.
 
-The previous line is the same as writing:
+A linha anterior é o mesmo que escrever:
 
 ```
 def element_at(_list, _position) do
@@ -98,9 +101,9 @@ def element_at(_list, _position) do
 end
 ```
 
-I won't dive into macros for now, just know that there is more than one way of doing things in Elixir and you can define those different ways using Erlang's built-in support for macros, dynamic code that is compiled in runtime. It's the way of doing metaprogramming with Elixir.
+Não vou entrar em macros agora, só saiba que existe mais de uma forma de fazer as coisas em Elixir e que você pode definir essas formas usando o suporte nativo do Erlang a macros, código dinâmico que é compilado em tempo de execução. É a maneira de fazer metaprogramação em Elixir.
 
-Now, going back to the implementation, the first function still can look weird, let's review it:
+Voltando à implementação, a primeira função ainda pode parecer estranha, vamos revisar:
 
 ```ruby
 def element_at([_|rest], position) when position > 1 do
@@ -108,17 +111,17 @@ def element_at([_|rest], position) when position > 1 do
 end
 ```
 
-What happens is: when we call <tt>Exercise.element_at(["a", "b", "c", "d", "e"], 3)</tt> the first argument will pattern match with <tt>[_|rest]</tt>. The first element "a" is disposed and the new list <tt>["b", "c", "d", "e"]</tt> is stored as "<tt>rest</tt>".
+O que acontece é: quando chamamos <tt>Exercise.element_at(["a", "b", "c", "d", "e"], 3)</tt>, o primeiro argumento casa com o padrão <tt>[_|rest]</tt>. O primeiro elemento "a" é descartado e a nova lista <tt>["b", "c", "d", "e"]</tt> é armazenada como "<tt>rest</tt>".
 
-Finally, we recurse the call decrementing from the "<tt>position</tt>" variable. So it becomes <tt>element_at(["b", "c", "d", "e"], 2)</tt>. And it repeats until position becomes "1", in which case the pattern matching falls to the second function defined as: 
+Por fim, recursamos a chamada decrementando a variável "<tt>position</tt>". Então vira <tt>element_at(["b", "c", "d", "e"], 2)</tt>. E isso se repete até position virar "1", quando o pattern matching cai na segunda função, definida assim:
 
 ```
 def element_at([found|_], 1), do: found
 ```
 
-In this case the rest of the array is pattern matched and the first element, "c" is stored in the "<tt>found</tt>" variable, the rest of the array is discarded. It only got here because the position matched as "1", and so it just returns the variable "found", which contains the 3rd element of the original array, "c".
+Nesse caso, o resto do array é casado por padrão e o primeiro elemento, "c", é armazenado na variável "<tt>found</tt>", o resto do array é descartado. Só chegou aqui porque a posição casou como "1", e então a função simplesmente retorna a variável "found", que contém o 3º elemento do array original, "c".
 
-This is all nice and fancy, but in Elixir we could just have done this other version:
+Isso tudo é bonito e elegante, mas em Elixir podíamos só ter feito esta outra versão:
 
 ```ruby
 defmodule Exercise do
@@ -126,25 +129,25 @@ defmodule Exercise do
 end
 ```
 
-And we are done! Several tutorials will talk about how recursion and pattern matching to decompose lists solve a lot of problems, but Elixir gives us the convenience of treating lists as Enumerables and provide us a rich [Enum](http://elixir-lang.org/docs/stable/elixir/Enum.html) module with very useful functions such as <tt>at/2</tt>, <tt>each/2</tt>, <tt>take/2</tt>, and so on. Just pick what you need and you're managing lists like a boss.
+E pronto! Vários tutoriais vão falar como recursão e pattern matching pra decompor listas resolvem um monte de problemas, mas o Elixir nos dá a conveniência de tratar listas como Enumerables e oferece um módulo [Enum](http://elixir-lang.org/docs/stable/elixir/Enum.html) bem rico, com funções muito úteis como <tt>at/2</tt>, <tt>each/2</tt>, <tt>take/2</tt> e por aí vai. É só escolher o que precisa e você manipula listas como um chefe.
 
-Oh, and by the way, there is something called a [Sigil](http://elixir-lang.org/getting-started/sigils.html) in Elixir. Instead of writing the List of String explicitly, we could have done it like this:
+Ah, e por sinal, existe algo chamado [Sigil](http://elixir-lang.org/getting-started/sigils.html) no Elixir. Em vez de escrever a Lista de Strings explicitamente, podíamos ter feito assim:
 
 ```
 iex(8)> ~w(a b c d e f)
 ["a", "b", "c", "d", "e", "f"]
 ```
 
-Or, if we wanted a List of Atoms, we could do it like this:
+Ou, se quiséssemos uma Lista de Atoms, podíamos fazer assim:
 
 ```
 iex(9)> ~w(a b c d e f)a
 [:a, :b, :c, :d, :e, :f]
 ```
 
-### Lists, Tuples and Keyword Lists
+### Lists, Tuples e Keyword Lists
 
-Well, this was too simple. You really need the idea of pattern matching and basic type in your mind to make it flow. Let's get another snippet from the [Ex Manga Downloadr](http://www.akitaonrails.com/2015/11/18/ex-manga-downloader-an-exercise-with-elixir):
+Bom, isso foi simples demais. Você precisa mesmo ter a ideia de pattern matching e os tipos básicos na cabeça pra fluir. Vamos pegar outro trecho do [Ex Manga Downloadr](http://www.akitaonrails.com/2015/11/18/ex-manga-downloader-an-exercise-with-elixir):
 
 ```ruby
 defp parse_args(args) do
@@ -160,7 +163,7 @@ defp parse_args(args) do
 end
 ```
 
-The first part may puzzle you:
+A primeira parte pode confundir você:
 
 ```ruby
 OptionParser.parse(args,
@@ -169,20 +172,20 @@ OptionParser.parse(args,
   )
 ```
 
-The <tt>OptionParser.parse/2</tt> receives just 2 arguments: 2 arrays. If you come from Ruby it feels like it's a Hash with optional brackets, translating to something similar to this:
+O <tt>OptionParser.parse/2</tt> recebe só 2 argumentos: 2 arrays. Se você vem de Ruby, parece um Hash com colchetes opcionais, traduzindo pra algo parecido com isto:
 
 ```ruby
-# this is wrong
+# isto está errado
 OptionParser.parse(args,
     { switches: {name: :string, url: :string, directory: :string},
       aliases: {n: :name, u: :url, d: :directory} }
   )
 ```
 
-This works in Ruby but it is not the case in Elixir, there are optional brackets but not where you think they are:
+Isso funciona em Ruby, mas não é o caso em Elixir; existem colchetes opcionais, só que não onde você imagina:
 
 ```ruby
-# this is the correct, more explicit version
+# esta é a versão correta, mais explícita
 OptionParser.parse(args,
     [
       {
@@ -201,15 +204,15 @@ OptionParser.parse(args,
   )
 ```
 
-WHAT!?!?
+QUE!?!?
 
-Yep, the second argument is actually an array with elements that are **Tuples** paired with an atom key and value, and some of the values are themselves arrays with tuples.
+Isso mesmo, o segundo argumento é, na verdade, um array com elementos que são **Tuples**, pareados com chave atom e valor, e alguns dos valores são, eles próprios, arrays com tuples.
 
-1. in Elixir, Lists are what we usually call an Array, a Linked-List of elements. Linked-Lists, as you know from your Computer Science classes, are easy to insert new elements and remove elements.
+1. em Elixir, Lists são o que normalmente chamamos de Array, uma Linked-List de elementos. Linked-Lists, como você sabe das aulas de Ciência da Computação, são fáceis pra inserir e remover elementos.
 
-2. in Elixir, Tuples are immutable fixed lists with fixed positions, with elements delimited by the brackets "{}"
+2. em Elixir, Tuples são listas fixas e imutáveis com posições fixas, com elementos delimitados pelas chaves "{}"
 
-If the previous example was just too much, let's step back a little:
+Se o exemplo anterior foi demais, vamos dar um passo atrás:
 
 ```ruby
 defmodule Teste do
@@ -220,23 +223,23 @@ defmodule Teste do
 end
 ```
 
-Now we can call it like this:
+Agora podemos chamar assim:
 
 ```
 iex(13)> Teste.teste hello: "world", foo: "bar"
 world bar
 ```
 
-Which is the same as calling like this:
+Que é o mesmo que chamar assim:
 
 ```
 iex(14)> Teste.teste([{:hello, "world"}, {:foo, "bar"}])
 world bar
 ```
 
-This may confuse you, but it's very intuitive. You can just think of this combination of Lists ("[]") with Tuple elements containing a pair of atom and value ("{:key, value}") to behave almost like Ruby Hashes being used for optional named arguments.
+Isso pode confundir, mas é bem intuitivo. Você pode pensar nessa combinação de Lists ("[]") com elementos Tuple contendo um par atom e valor ("{:key, value}") como algo que se comporta quase como Hashes do Ruby usados pra argumentos nomeados opcionais.
 
-Then, we have the Pattern Match section in both previous examples:
+Aí temos a parte de Pattern Match nos dois exemplos anteriores:
 
 ```ruby
 case parse do
@@ -249,32 +252,32 @@ case parse do
 end
 ```
 
-And
+E
 
 ```ruby
 [{:hello, world}, {:foo, bar}] = opts
 ```
 
-The last example is just decomposition. The previous example is pattern match and decomposition. You match based on the atoms and positions within the tuples within the list. You match from the more narrow case to the more generic case. And in the process, the variables in the pattern are available for you to use in the matching case clause.
+O último exemplo é só decomposição. O exemplo anterior é pattern match e decomposição. Você casa com base nos atoms e nas posições dentro das tuples dentro da lista. Você casa do caso mais específico pro mais genérico. E, no processo, as variáveis do padrão ficam disponíveis pra usar dentro da cláusula correspondente do case.
 
-Let's understand the meaning of this line:
+Vamos entender o significado desta linha:
 
 ```ruby
 {[name: manga_name, url: url, directory: directory], _, _} -> process(manga_name, url, directory)
 ```
 
-It is saying: given the results of the <tt>OptionParser.parse/2</tt> function, it must be a tuple with 3 elements. The second and third elements don't matter. But the first element must be a List with at least 3 tuples. And the keys of each tuples must be the atoms <tt>:name</tt>, <tt>:url</tt>, and <tt>:directory</tt>. If they're there, store the values of each tuples in the variables <tt>manga_name</tt>, <tt>url</tt>, and <tt>directory</tt>, respectivelly.
+Ela está dizendo: dado o resultado da função <tt>OptionParser.parse/2</tt>, ele precisa ser uma tuple com 3 elementos. O segundo e o terceiro elementos não importam. Mas o primeiro elemento precisa ser uma List com pelo menos 3 tuples. E as chaves de cada tuple precisam ser os atoms <tt>:name</tt>, <tt>:url</tt> e <tt>:directory</tt>. Se estiverem lá, armazene os valores de cada tuple nas variáveis <tt>manga_name</tt>, <tt>url</tt> e <tt>directory</tt>, respectivamente.
 
-This may really confuse you in the beginning, but this combination of a List of Tuples is what's called a [**Keyword List**](http://elixir-lang.org/getting-started/maps-and-dicts.html#keyword-lists) and you will find this pattern many times, so get used to it.
+Isso pode confundir bastante no início, mas essa combinação de uma List de Tuples é o que se chama [**Keyword List**](http://elixir-lang.org/getting-started/maps-and-dicts.html#keyword-lists) e você vai encontrar esse padrão muitas vezes, então acostume-se.
 
-Keyword List feel like a Map, but a Map has a different syntax:
+Keyword List parece um Map, mas o Map tem uma sintaxe diferente:
 
 ```ruby
 list = [a: 1, b: 2, c: 3]
 map = %{:a => 1, :b => 2, :c => 3}
 ```
 
-This should summarize it:
+Isso deve resumir bem:
 
 ```
 iex(1)> list = [a: 1, b: 2, c: 3]
@@ -299,18 +302,18 @@ iex(7)> list = list2
 [a: 1, b: 2, c: 3]
 ```
 
-Keyword Lists are convenient as function arguments or return values. But if you want to process a collection of key-value pairs, use a dictionary-like structure, in this case, a Map. Specifically if you need to search the collection using the key. They look similar but the internal structures are not the same, a Keyword List is not a Map, it's just a convenience for a static list of tuples.
+Keyword Lists são convenientes como argumentos de função ou valores de retorno. Mas se você quiser processar uma coleção de pares chave-valor, use uma estrutura tipo dicionário, neste caso, um Map. Especialmente se você precisar buscar na coleção pela chave. Eles parecem semelhantes, mas as estruturas internas são diferentes; uma Keyword List não é um Map, é só uma conveniência pra uma lista estática de tuples.
 
-Finally, if this pattern matches the <tt>parse</tt> variable passed in the <tt>case</tt> block, it executes the statement <tt>process(manga_name, url, directory)</tt>, passing the 3 variables captured in the match. Otherwise it proceeds to try the next pattern in the <tt>case</tt> block.
+Por fim, se esse padrão casar com a variável <tt>parse</tt> passada no bloco <tt>case</tt>, ele executa <tt>process(manga_name, url, directory)</tt>, passando as 3 variáveis capturadas no match. Caso contrário, segue tentando o próximo padrão do bloco <tt>case</tt>.
 
-The idea is that the "=" operator is not an "assignment", it's a matcher, you match one side with the other. Read the error message when a pattern is not matched:
+A ideia é que o operador "=" não é uma "atribuição", é um casador, você casa um lado com o outro. Leia a mensagem de erro quando um padrão não casa:
 
 ```
 iex(15)> [a, b, c] = 1
 ** (MatchError) no match of right hand side value: 1
 ```
 
-This is a matching error, not an assignment error. But if it succeeds this is what we have:
+Esse é um erro de matching, não um erro de atribuição. Mas se der certo, isso é o que temos:
 
 ```
 iex(15)> [a, b, c] = [1, 2, 3]
@@ -321,26 +324,26 @@ iex(17)> c
 3
 ```
 
-This is a List decomposition. It so happens that in the simple case, it feels like a variable assignment, but it's much more complex than that.
+Isso é uma decomposição de List. Acontece que, no caso simples, parece uma atribuição de variável, mas é bem mais complexo do que isso.
 
 ### Pipelines
 
-We use exactly those concepts of pattern matching on the returning elements from the HTML parsed by Floki in my Manga Downloadr:
+Usamos exatamente esses conceitos de pattern matching nos elementos retornados do HTML parseado pelo Floki no meu Manga Downloadr:
 
 ```ruby
 Floki.find(html, "#listing a")
 |> Enum.map(fn {"a", [{"href", url}], _} -> url end)
 ```
 
-The <tt>find/2</tt> gets a HTML string from the fetched page and matches against the CSS selectors in the second argument. The result is a List of Tuples representing the structure of each HTML Node found, in this case, this pattern: <tt>{"a", [{"href", url}], _}</tt>
+O <tt>find/2</tt> pega uma string HTML da página baixada e casa com os seletores CSS do segundo argumento. O resultado é uma List de Tuples representando a estrutura de cada Nó HTML encontrado, neste caso, com este padrão: <tt>{"a", [{"href", url}], _}</tt>
 
-We can then <tt>Enum.map/2</tt>. A map is a function that receives each element of a list and returns a new list with new elements. The first argument is the original list and the second argument is a function that receives each element and returns a new one.
+Daí podemos usar <tt>Enum.map/2</tt>. Um map é uma função que recebe cada elemento de uma lista e retorna uma nova lista com novos elementos. O primeiro argumento é a lista original e o segundo é uma função que recebe cada elemento e retorna um novo.
 
-One of the main features of the Elixir language that most languages don't have is the **Pipe** operator ("|>"). It behaves almost like UNIX's pipe operator "|" in any shell.
+Uma das principais features da linguagem Elixir, que a maioria das linguagens não tem, é o operador **Pipe** ("|>"). Ele se comporta quase como o operador pipe "|" do UNIX em qualquer shell.
 
-In UNIX we usually do stuff like "<tt>ps -ef | grep PROCESS | grep -v grep | awk '{print $2}' | xargs kill -9</tt>"
+No UNIX a gente costuma fazer coisas tipo "<tt>ps -ef | grep PROCESS | grep -v grep | awk '{print $2}' | xargs kill -9</tt>"
 
-This is essentially the same as doing:
+Isso é essencialmente o mesmo que fazer:
 
 ```
 ps -ef > /tmp/ps.txt
@@ -350,16 +353,16 @@ awk '{print $2}' /tmp/grep2.txt > /tmp/awk.txt
 xargs kill -9 < /tmp/awk.txt
 ```
 
-Each UNIX process can receive something from the standard input (STDIN) and output something to the standard output (STDOUT). We can redirect the output using ">". But instead of doing all those extra steps, creating all those extra garbage temporary files, we can simply "pipe" the STDOUT of one command to the STDIN of the next command.
+Cada processo UNIX pode receber algo da entrada padrão (STDIN) e enviar algo pra saída padrão (STDOUT). Podemos redirecionar a saída usando ">". Mas, em vez de fazer todos esses passos extras, criando um monte de arquivos temporários inúteis, podemos simplesmente "pipear" o STDOUT de um comando pro STDIN do próximo.
 
-Elixir uses the same principles: we can simply use the returning value of a function as the **first argument** of the next function. So the first example of this section is the same as doing this:
+Elixir usa os mesmos princípios: podemos simplesmente usar o valor de retorno de uma função como o **primeiro argumento** da próxima função. Então o primeiro exemplo desta seção é o mesmo que fazer isto:
 
 ```ruby
 results = Floki.find(html, "#listing a")
 Enum.map(results, fn {"a", [{"href", url}], _} -> url end)
 ```
 
-In the same ExMangaDownloadr project we have this snippet:
+No mesmo projeto ExMangaDownloadr temos este trecho:
 
 ```ruby
 defp process(manga_name, url, directory) do
@@ -375,7 +378,7 @@ defp process(manga_name, url, directory) do
 end
 ```
 
-And we just learned that it's the equivalent of doing the followng (I'm cheating a bit because the 3 final functions of the workflow are not transforming the input "directory", just passing it through):
+E acabamos de aprender que isso é o equivalente a fazer o seguinte (estou trapaceando um pouco porque as 3 funções finais do workflow não estão transformando o "directory" de entrada, só repassando):
 
 ```ruby
   defp process(manga_name, url, directory) do
@@ -391,7 +394,7 @@ And we just learned that it's the equivalent of doing the followng (I'm cheating
   end
 ```
 
-Or this much uglier version that we must read in reverse:
+Ou esta versão muito mais feia, que precisamos ler de trás pra frente:
 
 ```ruby
 defp process(manga_name, url, directory) do
@@ -410,15 +413,15 @@ defp process(manga_name, url, directory) do
 end
 ```
 
-We can easily see how the Pipe Operator "|>" makes any transformation pipeline much easier to read. Anytime you are starting from a value, passing the results through a **chain of transformation**, you will use this operator.
+Dá pra ver facilmente como o operador Pipe "|>" deixa qualquer pipeline de transformação muito mais fácil de ler. Sempre que você está partindo de um valor, passando os resultados por uma **cadeia de transformação**, você vai usar esse operador.
 
-### Next Steps
+### Próximos Passos
 
-The concepts presented in this article are the ones I think most people will find the most challenging upon first glance. If you understand Pattern Matching, Keyword Lists, you will understand all the rest.
+Os conceitos apresentados neste artigo são os que eu acho que a maioria das pessoas vai achar mais desafiadores no primeiro contato. Se você entender Pattern Matching e Keyword Lists, vai entender todo o resto.
 
-The official website offers a great [Getting Started](http://elixir-lang.org/getting-started/introduction.html) that you must read entirely.
+O site oficial oferece um ótimo [Getting Started](http://elixir-lang.org/getting-started/introduction.html) que você precisa ler inteiro.
 
-From intuition you know most things already. You have "do .. end" blocks but you still don't know that they are just convenience macros to pass a list of statements as an argument inside a Keyword List. The following blocks are equivalent:
+Por intuição você já sabe a maior parte das coisas. Você tem blocos "do .. end", mas ainda não sabe que eles são só macros de conveniência pra passar uma lista de instruções como argumento dentro de uma Keyword List. Os blocos a seguir são equivalentes:
 
 ```ruby
 if true do
@@ -437,10 +440,10 @@ if true, [{:do, (
 )}]
 ```
 
-Mind blowing, huh? There are many macros that add syntactic sugar using the primitives behind it.
+De cair o queixo, hein? Existem muitos macros que adicionam açúcar sintático em cima das primitivas.
 
-On the most part, Valim made the powerful Erlang primitives more accessible (Lists, Atoms, Maps, etc) and added higher abstractions using macros (do .. end blocks, the pipe operator, keyword lists, shortcuts for anonymous functions, etc). This precise combination is what makes Elixir very enjoyable to learn. It's like peeling an onion: you start with the higher abstractions and discover macros of simpler structures underneath. You see a Keyword List first and discover Lists of Tuples. You see a block and discover another Keyword List disguised with a macro. And so on.
+Em geral, o Valim tornou as poderosas primitivas do Erlang mais acessíveis (Lists, Atoms, Maps, etc) e adicionou abstrações mais altas usando macros (blocos do .. end, o operador pipe, keyword lists, atalhos pra funções anônimas, etc). Essa combinação precisa é o que torna o Elixir muito gostoso de aprender. É como descascar uma cebola: você começa pelas abstrações mais altas e descobre macros de estruturas mais simples por baixo. Você vê uma Keyword List primeiro e descobre Lists de Tuples. Você vê um bloco e descobre outra Keyword List disfarçada por um macro. E assim vai.
 
-So you have a low curve of entry and you can go as deep as you want in the rabbit hole, until the point you're extending the language.
+Então você tem uma curva de entrada baixa e pode descer fundo na toca do coelho até o ponto em que está estendendo a própria linguagem.
 
-Elixir provides a very clever language design on top of the 25 year old mature Erlang core. This is not just clever, it's the intelligent choice. Keep learning!
+Elixir oferece um design de linguagem muito esperto em cima do núcleo maduro do Erlang, com 25 anos. Isso é mais que esperto, é a escolha inteligente. Continue aprendendo!

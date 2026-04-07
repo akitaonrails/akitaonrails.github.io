@@ -1,25 +1,32 @@
 ---
-title: Phoenix "15 Minute Blog" comparison to Ruby on Rails
+title: 'Phoenix "15 Minute Blog": comparação com Ruby on Rails'
 date: '2015-11-20T17:52:00-02:00'
-slug: phoenix-15-minute-blog-comparison-to-ruby-on-rails
+slug: phoenix-15-minute-blog-comparacao-com-ruby-on-rails
+translationKey: phoenix-15-minute-blog-vs-rails
+aliases:
+- /2015/11/20/phoenix-15-minute-blog-comparison-to-ruby-on-rails/
 tags:
-- learning beginner elixir phoenix english
+- learning
+- beginner
+- elixir
+- phoenix
+- traduzido
 draft: false
 ---
 
-*Update 11/23/15:* Chris McCord, Phoenix creator, just posted an article explaining why ["Phoenix is not Rails"](https://dockyard.com/blog/2015/11/18/phoenix-is-not-rails) It goes in detail in many things I described in this article and I highly recommend you read it too.
+*Update 23/11/15:* Chris McCord, criador do Phoenix, acabou de publicar um artigo explicando por que ["Phoenix is not Rails"](https://dockyard.com/blog/2015/11/18/phoenix-is-not-rails). Ele entra em detalhes sobre várias coisas que descrevo neste artigo e recomendo fortemente que você leia também.
 
-If you've been following the Elixir blogosphere, chances are that you stumbled upon [Brandon Richey's](https://medium.com/@diamondgfx) take on the classic "15 minute blog". If you didn't you must read at least [Part 1](https://medium.com/@diamondgfx/introduction-fe138ac6079d#.ffl48saew) and [Part 2](https://t.co/DjGDek1ZOk). It's a very detailed tutorial that will make it easier to get your fingers wet with Phoenix goodness.
+Se você anda acompanhando a blogosfera de Elixir, é bem provável que tenha esbarrado na versão do clássico "15 minute blog" do [Brandon Richey](https://medium.com/@diamondgfx). Se ainda não viu, você precisa ler pelo menos a [Parte 1](https://medium.com/@diamondgfx/introduction-fe138ac6079d#.ffl48saew) e a [Parte 2](https://t.co/DjGDek1ZOk). É um tutorial bem detalhado que vai facilitar muito a sua entrada nas delícias do Phoenix.
 
-This post is intended for Rails programmers wanting to know how the Phoenix Framework compare. It's not a completely fair comparison as this is just the good old nested resources "hello world" exercise. This will only scratch the surface but should serve as a good introduction.
+Este post é destinado a programadores Rails que querem saber como o Phoenix Framework se compara. Não é uma comparação completamente justa, já que se trata apenas do bom e velho exercício "hello world" com nested resources. Isso só arranha a superfície, mas serve como uma boa introdução.
 
-For better or for worse, many still consider Ruby on Rails to be the best DSL for a web application. Rails was successful in creating a very recognizable vocabulary to describe each component of a web project. And I will argue that one of Phoenix's strenghts is to successfully borrow the same metaphor. This definitely makes the learning curve much smoother.
+Para o bem ou para o mal, muitos ainda consideram o Ruby on Rails como a melhor DSL para uma aplicação web. O Rails teve sucesso ao criar um vocabulário muito reconhecível para descrever cada componente de um projeto web. E eu vou argumentar que uma das forças do Phoenix está justamente em pegar emprestada essa mesma metáfora com sucesso. Isso definitivamente torna a curva de aprendizado bem mais suave.
 
-If you just want to clone the exercises and jump right into the code itself, I have the original [Pxblog in Phoenix](https://github.com/akitaonrails/pxblog_phoenix_exercise) and the comparison [Pxblog in Rails](https://github.com/akitaonrails/pxblog_rails_exercise).
+Se você só quer clonar os exercícios e pular direto para o código, eu tenho o [Pxblog em Phoenix](https://github.com/akitaonrails/pxblog_phoenix_exercise) original e o equivalente [Pxblog em Rails](https://github.com/akitaonrails/pxblog_rails_exercise) para comparação.
 
-### Getting Started: command line and folder structure
+### Começando: linha de comando e estrutura de pastas
 
-Without further ado, let's start comparing the basic console commands:
+Sem mais delongas, vamos começar comparando os comandos básicos do console:
 
 ```
 rails new pxblog
@@ -39,12 +46,12 @@ mix ecto.create
 mix ecto.migrate
 mix ecto.gen.migration add_user_id_to_posts
 mix phoenix.server
-# iex -S mix phoenix.server to start within IEx and be able to IEx.pry
+# iex -S mix phoenix.server para iniciar dentro do IEx e poder usar IEx.pry
 ```
 
-Right off the bat we feel at home. In the Rails world we have both the <tt>rails</tt> command competing with traditional <tt>rake</tt> task managers. At the Phoenix side, they fortunatelly concentrated everything under the Elixir built-in <tt>mix</tt> command. There seems to be discussions for the Rails command tasks to be moved to Rake where they belong, but it's not coming soon.
+De cara já nos sentimos em casa. No mundo Rails temos o comando <tt>rails</tt> competindo com o tradicional gerenciador de tarefas <tt>rake</tt>. No lado do Phoenix, felizmente concentraram tudo sob o comando <tt>mix</tt> nativo do Elixir. Existem discussões para mover as tarefas do comando Rails para o Rake, onde elas pertencem, mas isso não vai acontecer tão cedo.
 
-As it is all under Mix territory, you can list Phoenix related tasks like this:
+Como tudo está sob o domínio do Mix, você pode listar as tarefas relacionadas ao Phoenix assim:
 
 ```
 $ mix help | grep -i phoenix
@@ -60,74 +67,74 @@ mix phoenix.routes      # Prints all routes
 mix phoenix.server      # Starts applications and their servers
 ```
 
-The directory structure that <tt>phoenix.new</tt> generates is slightly different from Rails though:
+A estrutura de diretórios que o <tt>phoenix.new</tt> gera é um pouco diferente do Rails:
 
 ```
-/_build              # binary stuff mix compiles (ignore)
+/_build              # binários que o mix compila (ignore)
 /config
-- config.exs         # think Rails' /config/application.rb
-- dev.exs            # think Rails' /config/environments/development.rb
-- prod.exs           # think Rails' /config/environments/production.rb
-- prod.secret.exs    # think Rails' /config/secrets.yml
-- test.exs           # think Rails' /config/environments/test.rb
-/deps                # where mix deps.get put dependencies
+- config.exs         # pense no /config/application.rb do Rails
+- dev.exs            # pense no /config/environments/development.rb do Rails
+- prod.exs           # pense no /config/environments/production.rb do Rails
+- prod.secret.exs    # pense no /config/secrets.yml do Rails
+- test.exs           # pense no /config/environments/test.rb do Rails
+/deps                # onde o mix deps.get coloca as dependências
 /lib
   /pxblog
-    - endpoint.ex    # a bit like config.ru and application.rb
-    - repo.ex        # setup for Ecto
-  - pxblog.ex        # where you can setup OTP apps supervision tree 
-/node_modules        # Phoenix integrates with Node.js
+    - endpoint.ex    # algo como config.ru e application.rb
+    - repo.ex        # configuração do Ecto
+  - pxblog.ex        # onde você configura a árvore de supervisão das apps OTP
+/node_modules        # Phoenix integra com Node.js
 /priv
   /repo
-    /migrations      # think Rails' /db/migrate
-    - seeds.exs      # think Rails' /db/seeds.rb
-  /static            # think Rails' /public
+    /migrations      # pense no /db/migrate do Rails
+    - seeds.exs      # pense no /db/seeds.rb do Rails
+  /static            # pense no /public do Rails
     /css
     /images
     /js
-/test                # think Rails' /test
+/test                # pense no /test do Rails
   /channels
   /controllers
   /models
   /support
   /views
-  - test_helper.exs  # think Rails' /test/test_helper.rb
-/web                 # think Rails' /app
-  /channels          # think Rails 5's ActionCable channels
+  - test_helper.exs  # pense no /test/test_helper.rb do Rails
+/web                 # pense no /app do Rails
+  /channels          # pense nos channels do ActionCable do Rails 5
   /controllers
   /models
-  /static            # think Rails' /app/assets
+  /static            # pense no /app/assets do Rails
     /assets
       /images
       /css
       /js
       /vendor
-  /templates         # think Rails' /app/views
+  /templates         # pense no /app/views do Rails
     /layout
-  /views             # think Rails' /app/helpers but with Presenters
+  /views             # pense no /app/helpers do Rails, mas com Presenters
     - layout_view.ex
-  - router.ex        # think Rails' /config/routes.rb
-  - web.ex           # macros to configure each MVC component
+  - router.ex        # pense no /config/routes.rb do Rails
+  - web.ex           # macros para configurar cada componente MVC
 - .gitignore
 - README.md
-- brunch-config.js  # front-end dev reloading is controlled with Brunch
-- mix.exs           # think Ruby's Gemfile (with extras)
-- package.json      # Node.js dependencies
+- brunch-config.js  # o reload do front-end em dev é controlado pelo Brunch
+- mix.exs           # pense no Gemfile do Ruby (com extras)
+- package.json      # dependências do Node.js
 ```
 
-In Rails, the starting point is the <tt>config.ru</tt> Rackup application (as Rails became a Rack app since 3.0). It then load the <tt>config/environment.rb</tt>, then <tt>config/application.rb</tt>, then <tt>config/boot.rb</tt> which loads the gems declared in the <tt>Gemfile</tt>, together with <tt>config/initializers/*.rb</tt> and each file in <tt>config/environments</tt> we setup the Rails::Application and plug in configuration, the pipeline of Rack Middlewares.
+No Rails, o ponto de partida é a aplicação Rackup <tt>config.ru</tt> (já que o Rails virou uma aplicação Rack desde a versão 3.0). Ele então carrega o <tt>config/environment.rb</tt>, depois <tt>config/application.rb</tt>, depois <tt>config/boot.rb</tt> que carrega as gems declaradas no <tt>Gemfile</tt>, junto com <tt>config/initializers/*.rb</tt> e cada arquivo em <tt>config/environments</tt>, configurando o Rails::Application e plugando a configuração, o pipeline de Rack Middlewares.
 
-In Phoenix, the starting point - as in any Elixir app -- is the <tt>mix.exs</tt> file. In this case it points to the "Pxblog" OTP/Phoenix app defined in <tt>lib/pxblog/pxblog.ex</tt>. In turn it starts up and supervises the "Pxblog.Endpoint" and "Pxblog.Repo" apps, which are defined in <tt>lib/pxblog/endpoint.ex</tt> and <tt>lib/pxblog/repo.ex</tt>, respectivelly.
+No Phoenix, o ponto de partida — como em qualquer aplicação Elixir — é o arquivo <tt>mix.exs</tt>. Neste caso ele aponta para a app OTP/Phoenix "Pxblog" definida em <tt>lib/pxblog/pxblog.ex</tt>. Por sua vez ela inicia e supervisiona as apps "Pxblog.Endpoint" e "Pxblog.Repo", definidas em <tt>lib/pxblog/endpoint.ex</tt> e <tt>lib/pxblog/repo.ex</tt>, respectivamente.
 
-If you build other OTP apps, this is where you can add to the OTP Supervisor Tree. I could say that it could be something akin of a Rails Engine, although technically it is not the same thing, but possibly this metaphor will do.
+Se você criar outras apps OTP, é aqui que você adiciona à Árvore de Supervisão OTP. Eu diria que é algo parecido com uma Rails Engine, embora tecnicamente não seja a mesma coisa, mas talvez essa metáfora ajude.
 
-One main aspect of Rails is how it divides development, test, and production configuration in different files. Phoenix has the same thing at <tt>dev.exs</tt>, <tt>test.exs</tt>, and <tt>prod.exs</tt>. This is actually a [Mix feature](http://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html#environments). Mix is a more accomplished version of Rake, and it makes sense as José Valim also tried to push Thor to replace Rake, althought it never picked up steam in the Ruby community (Rake being so ingrained everywhere). Web frameworks that don't enforce separation of environments by default, at this day and age, are useless. The cool thing is that every Elixir app generated through Mix get this same useful feature.
+Um aspecto importante do Rails é como ele divide as configurações de development, test e production em arquivos diferentes. O Phoenix faz o mesmo nos arquivos <tt>dev.exs</tt>, <tt>test.exs</tt> e <tt>prod.exs</tt>. Na verdade, isso é uma [feature do Mix](http://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html#environments). O Mix é uma versão mais elaborada do Rake, e faz sentido, já que José Valim também tentou empurrar o Thor para substituir o Rake, embora isso nunca tenha pegado tração na comunidade Ruby (o Rake já está enraizado em todo lugar). Frameworks web que não impõem separação de ambientes por padrão, nessa altura do campeonato, são inúteis. O legal é que toda app Elixir gerada pelo Mix herda essa feature útil.
 
-Instead of having a <tt>database.yml</tt>, the database configuration is spread through the environment configuration files and the production settings are in a separated <tt>prod.secret.exs</tt> file, which is obviously ignored in <tt>.gitignore</tt>, like Rails' <tt>secrets.yml</tt> file.
+Em vez de ter um <tt>database.yml</tt>, a configuração de banco de dados está espalhada pelos arquivos de configuração de ambiente, e as configurações de produção ficam em um arquivo separado <tt>prod.secret.exs</tt>, que obviamente fica ignorado no <tt>.gitignore</tt>, como o arquivo <tt>secrets.yml</tt> do Rails.
 
-### MVC structure
+### Estrutura MVC
 
-You will see that each element of the MVC app in Phoenix start like this:
+Você vai notar que cada elemento do MVC do Phoenix começa assim:
 
 ```ruby
 # web/controllers/page_controller.ex
@@ -151,7 +158,7 @@ defmodule Pxblog.Router do
 end
 ```
 
-This <tt>Pxblog.Web</tt> module is defined in the <tt>web/web.ex</tt> like this:
+Esse módulo <tt>Pxblog.Web</tt> é definido em <tt>web/web.ex</tt> assim:
 
 ```ruby
 # web/web.ex
@@ -182,11 +189,11 @@ defmodule Pxblog.Web do
 end
 ```
 
-If you haven't yet, this is a good time to learn about [Elixir Macros](http://elixir-lang.org/getting-started/meta/macros.html). Think of the code in the <tt>quote</tt> block as being "injected" in each module that calls <tt>use Pxblog.Web</tt>. When you <tt>use</tt> a module it calls the <tt>__using__</tt> macro. Think of it like a Ruby Module Mixin calling the <tt>included</tt> callback and executing a <tt>class_eval</tt>. As there is no concept of Classes and subclasses, we include mixins in each class to acquire the desired behaviours.
+Se você ainda não estudou, esse é um bom momento para aprender sobre [Macros do Elixir](http://elixir-lang.org/getting-started/meta/macros.html). Pense no código dentro do bloco <tt>quote</tt> como sendo "injetado" em cada módulo que chama <tt>use Pxblog.Web</tt>. Quando você dá <tt>use</tt> em um módulo, ele chama o macro <tt>__using__</tt>. Pense nisso como um Module Mixin do Ruby chamando o callback <tt>included</tt> e executando um <tt>class_eval</tt>. Como não existe o conceito de Classes e subclasses, incluímos mixins em cada classe para adquirir os comportamentos desejados.
 
 ### MVC Router
 
-Different from Rails <tt>config/routes.rb</tt> which defines routes, the <tt>web/router.ex</tt> defines not only the routes themselves but also transformation pipelines and routing strategies:
+Diferente do <tt>config/routes.rb</tt> do Rails, que define rotas, o <tt>web/router.ex</tt> define não só as rotas em si, mas também pipelines de transformação e estratégias de roteamento:
 
 ```ruby
 # web/router.ex
@@ -222,17 +229,17 @@ defmodule Pxblog.Router do
 end
 ```
 
-You have to read it like this:
+Você tem que ler assim:
 
-The <tt>pipeline</tt> block plugs "filters". They are similar to Rack middlewares that we define in <tt>config/application.rb</tt> in Rails. This is very clever because one key different between vanilla Ruby on Rails and the [Rails-API project](https://github.com/rails-api/rails-api) is the removal of unneeded Rack middlewares that API endpoints don't need.
+O bloco <tt>pipeline</tt> pluga "filtros". Eles são parecidos com os Rack middlewares que definimos em <tt>config/application.rb</tt> no Rails. Isso é muito esperto, porque uma diferença chave entre o Ruby on Rails padrão e o [projeto Rails-API](https://github.com/rails-api/rails-api) é justamente a remoção de Rack middlewares desnecessários que endpoints de API não precisam.
 
-In Phoenix we can define one pipeline for web browsers and another for API clients, and you see that the difference is the removal of Plugs.
+No Phoenix podemos definir um pipeline para navegadores web e outro para clientes de API, e você vê que a diferença é a remoção de Plugs.
 
-Then we define the scopes based on the root paths. There is one scope "/" which connectes to the <tt>:browser</tt> pipeline and an optional (commented out) scope "/api" which pipes through the <tt>:api</tt> pipeline.
+Depois definimos os scopes baseados nos paths raiz. Tem um scope "/" que se conecta ao pipeline <tt>:browser</tt> e um scope opcional (comentado) "/api" que passa pelo pipeline <tt>:api</tt>.
 
-Inside the scope block, it's very similar to the Restful DSL to define routes, which again is a good adaptation from Rails Routes. [Read the documentation](http://www.phoenixframework.org/docs/routing) to know the details.
+Dentro do bloco scope, é muito parecido com a DSL Restful para definir rotas, que de novo é uma boa adaptação das Rotas do Rails. [Leia a documentação](http://www.phoenixframework.org/docs/routing) para saber os detalhes.
 
-Also similar to Rails Routes, it generates proper URL helpers that become available in Controllers, Views and Templates. Let's start seeing some Rails URL helpers in code:
+Também parecido com as Rotas do Rails, ele gera os URL helpers apropriados que ficam disponíveis nos Controllers, Views e Templates. Vamos começar vendo alguns URL helpers do Rails em código:
 
 ```html
 <!-- app/views/posts/edit.html.erb -->
@@ -241,7 +248,7 @@ Also similar to Rails Routes, it generates proper URL helpers that become availa
 <%= link_to 'Destroy', [@user, post], method: :delete, data: { confirm: 'Are you sure?' } %>
 ```
 
-And in Phoenix:
+E no Phoenix:
 
 ```html
 <!-- web/templates/post/edit.html.eex -->
@@ -250,13 +257,13 @@ And in Phoenix:
 <%= link "Delete", to: user_post_path(@conn, :delete, @user, post), method: :delete, data: [confirm: "Are you sure?"] %>
 ```
 
-The main URL helper in Rails is able to get an Array such as <tt>[@user, post]</tt> and execute it the same way as if we wrote <tt>user_post_path(@user, post)</tt>. One difference from Rails is that instead of creating one helper for each HTTP verb you have just one helper per resource that accepts an extra parameter to indicate the verb. So we have <tt>post_path(@conn, :edit, post)</tt> instead of the Rails way of <tt>edit_post_path(post)</tt>.
+O URL helper principal do Rails consegue receber um Array como <tt>[@user, post]</tt> e executá-lo da mesma forma como se tivéssemos escrito <tt>user_post_path(@user, post)</tt>. Uma diferença em relação ao Rails é que, em vez de criar um helper para cada verbo HTTP, você tem só um helper por recurso que aceita um parâmetro extra para indicar o verbo. Então temos <tt>post_path(@conn, :edit, post)</tt> em vez do jeito Rails <tt>edit_post_path(post)</tt>.
 
-As with Rails middlewares, a pipeline receives the request connection and pipes it through transforming it's metadata so it cleaned up and usable within our controllers.
+Assim como nos middlewares do Rails, um pipeline recebe a conexão da requisição e a passa por um pipe, transformando seus metadados para que ela fique limpa e usável dentro dos nossos controllers.
 
 ### MVC Controller
 
-In Phoenix we start a controller like this:
+No Phoenix começamos um controller assim:
 
 ```ruby
 # web/controllers/post_controller.ex
@@ -270,7 +277,7 @@ defmodule Pxblog.PostController do
   plug :authorize_user when action in [:new, :create, :update, :edit, :delete]
 ```
 
-It's similar to this Rails controller setup:
+É parecido com este setup de controller Rails:
 
 ```ruby
 # app/controllers/posts_controller.rb
@@ -279,9 +286,9 @@ class PostsController < ApplicationController
   before_action :authorize_user, only: [:new, :create, :update, :edit, :destroy]
 ```
 
-As you may have concluded, a <tt>plug</tt> call works a bit like a <tt>before_action</tt> pipeline. The <tt>scrub_params</tt> I believe is similar Rails' <tt>ActionDispatch::ParamParser</tt>, but I'm not sure, I know it clears out empty string values into nils so you don't update your models unnecessarily.
+Como você deve ter concluído, uma chamada <tt>plug</tt> funciona um pouco como um pipeline de <tt>before_action</tt>. O <tt>scrub_params</tt> eu acredito que seja parecido com o <tt>ActionDispatch::ParamParser</tt> do Rails, mas não tenho certeza; sei que ele limpa valores de string vazios, transformando em nil, para que você não atualize seus modelos desnecessariamente.
 
-But different from Rails where a call to <tt>redirect_to</tt> halts the pipeline, we need to explicitly halt the pipeline like this:
+Mas, diferente do Rails, onde uma chamada a <tt>redirect_to</tt> interrompe o pipeline, aqui precisamos parar o pipeline explicitamente assim:
 
 ```ruby
 defp assign_user(conn, _) do
@@ -297,9 +304,9 @@ defp assign_user(conn, _) do
 end
 ```
 
-In Phoenix, everything revolves around a request connection transformation pipeline that you can start configuring in the Router Plugs, Controller Plugs and Controller actions. All of them receive the connection from the previous step and returns a transformed connection to the next step until it becomes a proper HTTP response. Unlike Rails, this path is much more explicit and you know that you will get this connection and you should pipe transformations through it until you render the final HTML or send back some error header.
+No Phoenix, tudo gira em torno de um pipeline de transformação da conexão de requisição que você começa a configurar nos Plugs do Router, nos Plugs do Controller e nas actions do Controller. Todos eles recebem a conexão do passo anterior e devolvem uma conexão transformada para o próximo passo, até que ela se torne uma resposta HTTP apropriada. Diferente do Rails, esse caminho é muito mais explícito, e você sabe que vai receber essa conexão e deve aplicar transformações nela até renderizar o HTML final ou enviar de volta algum header de erro.
 
-To see how explicit, let's start with a normal Rails controller action:
+Para ver o quão explícito, vamos começar com uma action típica de controller Rails:
 
 ```ruby
 def destroy
@@ -312,7 +319,7 @@ def destroy
 end
 ```
 
-Once upon a time, setting the flash notice message and redirecting were 2 different methods, new versions merged them together for convenience. Rails also has the concept of Responders, which Phoenix doesn't have yet (#OpportunityToContribute!).
+Antigamente, definir a mensagem flash e redirecionar eram 2 métodos diferentes; versões mais recentes mesclaram os dois por conveniência. O Rails também tem o conceito de Responders, que o Phoenix ainda não tem (#OpportunityToContribute!).
 
 ```ruby
 def delete(conn, %{"id" => id}) do
@@ -324,9 +331,9 @@ def delete(conn, %{"id" => id}) do
 end
 ```
 
-You can see that, Responsers aside, the Phoenix version is **remarkably** similar. And it goes like this for all Restful actions of the controller. But more similar to the deceased Merb, each Phoenix Controller action has a proper function signature declaring the parameters it expect to receive instead of having a global <tt>params</tt> hash that needs to go through the [Strong Parameters](https://github.com/rails/strong_parameters).
+Você pode ver que, deixando os Responders de lado, a versão Phoenix é **notavelmente** parecida. E é assim para todas as ações Restful do controller. Mas mais parecido com o falecido Merb, cada action de Controller no Phoenix tem uma assinatura de função apropriada declarando os parâmetros que ela espera receber, em vez de ter um hash global <tt>params</tt> que precisa passar pelos [Strong Parameters](https://github.com/rails/strong_parameters).
 
-For different variations of the same parameters, you can declare multiple functions with the same name but different arguments to pattern match, like in the <tt>SessionController</tt> example:
+Para variações diferentes dos mesmos parâmetros, você pode declarar várias funções com o mesmo nome mas com argumentos diferentes para fazer pattern match, como no exemplo do <tt>SessionController</tt>:
 
 ```ruby
 # web/controllers/session_controller.ex
@@ -345,15 +352,15 @@ defmodule Pxblog.SessionController do
 end
 ```
 
-Here we have the same <tt>create/2</tt> function with pattern matching and guards. The second version receives anything, in case the first version fails to pattern match against the incoming parameters. Phoenix expects roughly the same structure of parameters as Rails, so it's very intuitive to follow.
+Aqui temos a mesma função <tt>create/2</tt> com pattern matching e guards. A segunda versão recebe qualquer coisa, caso a primeira versão falhe ao fazer pattern match contra os parâmetros recebidos. O Phoenix espera mais ou menos a mesma estrutura de parâmetros que o Rails, então é bem intuitivo de acompanhar.
 
 ### MVC Models
 
-Instead of the good old ActiveRecord (ActiveModel), in Phoenix we have to deal with [Ecto Models](http://www.phoenixframework.org/docs/ecto-models). It already supports Postgresql, MySQL, Sqlite3, MongoDB, so you're good to go for 99% of the cases.
+Em vez do bom e velho ActiveRecord (ActiveModel), no Phoenix temos que lidar com os [Modelos Ecto](http://www.phoenixframework.org/docs/ecto-models). Ele já suporta Postgresql, MySQL, Sqlite3, MongoDB, então você está coberto em 99% dos casos.
 
-Ecto separates Model Logic from Model Persistence Management. Instead of using the Active Record design pattern, it favors the Data Mapper pattern. This is an old discussion among Railers. Many people dislike that persistence logic is kept together with business logic and the many magic metaprogramming that can make ActiveRecord both very easy to get started but very difficult to properly master.
+O Ecto separa a Lógica do Modelo do Gerenciamento de Persistência. Em vez de usar o padrão de design Active Record, ele prefere o padrão Data Mapper. Essa é uma discussão antiga entre os Railers. Muita gente reclama que a lógica de persistência fica junto com a lógica de negócio, e da quantidade de mágica e metaprogramação que torna o ActiveRecord muito fácil de começar mas muito difícil de dominar de verdade.
 
-You should read José Valim's post about [Ecto Associations](http://blog.plataformatec.com.br/2015/08/working-with-ecto-associations-and-embeds/) to get started. But for now, let's compare a simple Rails and Ecto models:
+Você deve ler o post do José Valim sobre [Associações no Ecto](http://blog.plataformatec.com.br/2015/08/working-with-ecto-associations-and-embeds/) para começar. Mas por enquanto, vamos comparar modelos simples de Rails e Ecto:
 
 ```ruby
 # app/models/user.rb
@@ -367,9 +374,9 @@ class User < ActiveRecord::Base
 end
 ```
 
-In Rails we have the [<tt>ActiveSupport#has_secure_password</tt>](http://api.rubyonrails.org/classes/ActiveModel/SecurePassword/ClassMethods.html) which uses BCrypt underneath to generate a proper password digest. If you're building authentication from scratch you **must** use this construct.
+No Rails temos o [<tt>ActiveSupport#has_secure_password</tt>](http://api.rubyonrails.org/classes/ActiveModel/SecurePassword/ClassMethods.html), que usa BCrypt por baixo dos panos para gerar um digest de senha apropriado. Se você está construindo autenticação do zero, você **deve** usar essa construção.
 
-Phoenix does not have the same feature yet (#OpportunityToContribute!) so its version is a bit more verbose to account for the BCrypt digest logic using the [Comeonin](https://github.com/elixircnx/comeonin) password hashing library. Let's go on in small steps:
+O Phoenix ainda não tem essa mesma feature (#OpportunityToContribute!), então a versão dele é um pouco mais verbosa para dar conta da lógica do digest BCrypt usando a biblioteca de hashing de senhas [Comeonin](https://github.com/elixircnx/comeonin). Vamos por partes:
 
 ```ruby
 # web/models/user.ex
@@ -394,11 +401,11 @@ defmodule Pxblog.User do
 end
 ```
 
-The first part of Ecto Models declare the database fields, virtual fields and associations. Rails ActiveRecord prefer the approach of asking the database to send the table metadata and use metaprogramming to create all the fields later in runtime. Many people dislike this approach and this is the alternative: explicit declaration.
+A primeira parte dos Modelos Ecto declara os campos do banco de dados, campos virtuais e associações. O ActiveRecord do Rails prefere a abordagem de pedir ao banco que envie os metadados da tabela e usa metaprogramação para criar todos os campos depois, em runtime. Muita gente não gosta dessa abordagem, e essa é a alternativa: declaração explícita.
 
-We are mapping the <tt>User</tt> module with the <tt>'users'</tt> database table in the <tt>schema "users" do</tt> statement instead of resorting to pluralization conventions.
+Estamos mapeando o módulo <tt>User</tt> com a tabela <tt>'users'</tt> do banco de dados na declaração <tt>schema "users" do</tt>, em vez de recorrer a convenções de pluralização.
 
-The last line has our well known <tt>has_many</tt> association.
+A última linha tem nossa conhecida associação <tt>has_many</tt>.
 
 ```ruby
 defmodule Pxblog.User do
@@ -409,7 +416,7 @@ defmodule Pxblog.User do
 end
 ```
 
-Here we have declare required fields, this is just a variable with a list of fields not the validations themselves. This will be used in the next step to accomplish something similar to <tt>validates :username, presence: true</tt>. 
+Aqui declaramos os campos obrigatórios; isso é só uma variável com uma lista de campos, e não as validações em si. Isso vai ser usado no próximo passo para fazer algo similar a <tt>validates :username, presence: true</tt>. 
 
 ```ruby
 defmodule Pxblog.User do
@@ -423,11 +430,11 @@ defmodule Pxblog.User do
 end
 ```
 
-Instead of doing something like <tt>Post.create(params)</tt> we first create a changeset and then pass it to the Ecto main Repository. The Repository is then responsible for the persistence part. The Ecto Model is responsible for validating and cleaning up the changeset that the Repository receives.
+Em vez de fazer algo como <tt>Post.create(params)</tt>, primeiro criamos um changeset e depois passamos para o Repositório principal do Ecto. O Repositório então fica responsável pela parte da persistência. O Modelo Ecto fica responsável por validar e limpar o changeset que o Repositório recebe.
 
-The <tt>changeset/2</tt> returns an [Elixir Struct](http://elixir-lang.org/getting-started/structs.html) for us to work with before passing it to the Repository application for persistence.
+O <tt>changeset/2</tt> retorna uma [Struct do Elixir](http://elixir-lang.org/getting-started/structs.html) para trabalharmos antes de passar para a aplicação Repositório fazer a persistência.
 
-In this function we can declare a pipeline of validations, constraints and other attribute transformations. For example, we plug a <tt>hash_password/2</tt> function that will get the value in <tt>password</tt> and use Comeonin.<tt>hashpwsalt/1</tt> to transform the password string in a bcrypt digest and store it in the password_digest attribute:
+Nessa função podemos declarar um pipeline de validações, constraints e outras transformações de atributos. Por exemplo, plugamos uma função <tt>hash_password/2</tt> que vai pegar o valor em <tt>password</tt> e usar o <tt>Comeonin.hashpwsalt/1</tt> para transformar a string da senha em um digest bcrypt e armazenar no atributo password_digest:
 
 ```ruby
 defmodule Pxblog.User do
@@ -443,7 +450,7 @@ defmodule Pxblog.User do
 end
 ```
 
-And we return the transformed changeset so the pipeline can pick it up and pass to other plugs, such as validations. If we wanted to add more validations we could do it like this:
+E retornamos o changeset transformado, para que o pipeline pegue e passe adiante para outros plugs, como validações. Se quiséssemos adicionar mais validações, daria para fazer assim:
 
 ```ruby
 defmodule Pxblog.User do
@@ -461,7 +468,7 @@ defmodule Pxblog.User do
 end
 ```
 
-There you go. And in the controller, the <tt>update/2</tt> function, for example, will use the changeset like this:
+Pronto. E no controller, a função <tt>update/2</tt>, por exemplo, vai usar o changeset assim:
 
 ```ruby
 def update(conn, %{"id" => id, "user" => user_params}) do
@@ -472,15 +479,15 @@ def update(conn, %{"id" => id, "user" => user_params}) do
 end
 ```
 
-In the second line we use the Repository to query the 'users' schema as declared in the <tt>User</tt> model.
+Na segunda linha usamos o Repositório para consultar o schema 'users' como declarado no modelo <tt>User</tt>.
 
-Then, we transform the <tt>user</tt> struct with the <tt>user_params</tt> map that we received from the Router pipeline, as defined in the first line.
+Depois, transformamos o struct <tt>user</tt> com o map <tt>user_params</tt> que recebemos do pipeline do Router, como definido na primeira linha.
 
-The transformation returns a changeset, which will contain error messages. Then we pass the changeset to the Repository again so it updates the record in the table.
+A transformação retorna um changeset, que vai conter as mensagens de erro. Aí passamos o changeset de novo para o Repositório, para que ele atualize o registro na tabela.
 
-### MVC View and Templates
+### MVC View e Templates
 
-In the case of the <tt>edit/2</tt> function we call the <tt>render/3</tt> function like this:
+No caso da função <tt>edit/2</tt>, chamamos a função <tt>render/3</tt> assim:
 
 ```ruby
 # web/views/user_view.ex
@@ -491,7 +498,7 @@ def edit(conn, %{"id" => id}) do
 end
 ```
 
-This first calls the <tt>web/views/user.ex</tt> which import stuff like helpers, transforms the <tt>user</tt> and <tt>changeset</tt> variables into [module attributes](http://elixir-lang.org/getting-started/module-attributes.html) (the ones starting with "@" if you've been wondering what those are). And the View knows to find the <tt>edit.html</tt> template at <tt>web/templates/user/edit.html.eex</tt> because it says so in <tt>web/web.ex</tt>:
+Isso primeiro chama o <tt>web/views/user.ex</tt>, que importa coisas como helpers, transforma as variáveis <tt>user</tt> e <tt>changeset</tt> em [atributos de módulo](http://elixir-lang.org/getting-started/module-attributes.html) (aqueles que começam com "@", caso você estivesse se perguntando o que são). E a View sabe encontrar o template <tt>edit.html</tt> em <tt>web/templates/user/edit.html.eex</tt> porque está dito assim em <tt>web/web.ex</tt>:
 
 ```ruby
 # web/web.ex
@@ -514,9 +521,9 @@ defmodule Pxblog.Web do
 end
 ```
 
-I did not copy and paste all the other macros in <tt>web/web.ex</tt> but check them out to see what models, controllers, router, channel import in each module you create.
+Eu não copiei e colei todos os outros macros em <tt>web/web.ex</tt>, mas dê uma olhada para ver o que models, controllers, router e channel importam em cada módulo que você cria.
 
-In Rails we have the default ERB for "Embedded Ruby" and in Phoenix we have "EEX" for "Embedded Elixir", it's essencially the same thing: an HTML template that accepts snippets of Elixir code enclosed between <tt><%= ... %></tt>. So, the <tt>edit.html.eex</tt> template looks like this:
+No Rails temos o ERB padrão, de "Embedded Ruby", e no Phoenix temos o "EEX", de "Embedded Elixir". É essencialmente a mesma coisa: um template HTML que aceita trechos de código Elixir entre <tt><%= ... %></tt>. Então o template <tt>edit.html.eex</tt> fica assim:
 
 ```html
 <!-- app/views/users/edit.html.erb -->
@@ -529,7 +536,7 @@ In Rails we have the default ERB for "Embedded Ruby" and in Phoenix we have "EEX
 <%= link "Back", to: user_path(@conn, :index) %>
 ```
 
-Which is very similar to the equivalent <tt>edit.html.erb</tt> in Rails:
+Que é muito parecido com o equivalente <tt>edit.html.erb</tt> em Rails:
 
 ```html
 <!-- web/templates/user/edit.html.eex -->
@@ -541,9 +548,9 @@ Which is very similar to the equivalent <tt>edit.html.erb</tt> in Rails:
 <%= link_to 'Back', users_path %>
 ```
 
-The Phoenix version is slightly more verbose in order to not hide too much as Rails does. One can argue if more or less magic makes it more productive or not, but the Phoenix version being more explicit leaves a trail of breadcrumbs that is easier to follow, specially if you're just getting started. Here we have no concept of "partials", every template can render any other template, we just need to pass through the necessary variable for the template to function. But instead of passing a model instance we are passing a changeset.
+A versão Phoenix é um pouco mais verbosa, propositalmente para não esconder tanta coisa quanto o Rails esconde. Dá para discutir se mais ou menos mágica torna o framework mais produtivo, mas a versão Phoenix, sendo mais explícita, deixa um rastro de migalhas mais fácil de seguir, especialmente se você está começando. Aqui não temos o conceito de "partials"; qualquer template pode renderizar qualquer outro template, só precisamos passar a variável necessária para o template funcionar. Mas, em vez de passar uma instância de modelo, estamos passando um changeset.
 
-The "form.html" template is also very similar, let's check out the Phoenix version first:
+O template "form.html" também é bem parecido. Vamos ver primeiro a versão Phoenix:
 
 ```html
 <!-- web/templates/user/edit.html.eex -->
@@ -566,7 +573,7 @@ The "form.html" template is also very similar, let's check out the Phoenix versi
   ...
 ```
 
-And now the Rails ERB version:
+E agora a versão ERB do Rails:
 
 ```html
 <!-- app/views/users/_form.html.erb -->
@@ -590,13 +597,13 @@ And now the Rails ERB version:
   ...
 ```
 
-Remarkably similar. There are language specific stuff like having <tt>label(f, :username)</tt> instead of <tt>f.label :username</tt>. Because in Elixir the parenthesis are also optional and because Phoenix implements helpers that are very similar to the Rails version, like "form_for", we feel very comfortable very fast.
+Notavelmente parecidos. Existem coisas específicas de cada linguagem, como ter <tt>label(f, :username)</tt> em vez de <tt>f.label :username</tt>. Como em Elixir os parênteses também são opcionais e como o Phoenix implementa helpers muito parecidos com a versão Rails, como o "form_for", a gente se sente confortável muito rápido.
 
-Rails has a default layout at <tt>app/views/layouts/application.html.erb</tt> and Phoenix has a default layout at <tt>web/templates/layout/app.html.eex</tt>. The rest is pretty much the same.
+O Rails tem um layout padrão em <tt>app/views/layouts/application.html.erb</tt> e o Phoenix tem um layout padrão em <tt>web/templates/layout/app.html.eex</tt>. O resto é bem a mesma coisa.
 
-The <tt>mix phoenix.gen.html</tt> creates a template structure that is similar to <tt>rails generate scaffold</tt> command.
+O <tt>mix phoenix.gen.html</tt> cria uma estrutura de templates parecida com a do comando <tt>rails generate scaffold</tt>.
 
-What Phoenix calls "views" is more similar to what Rails calls "helpers". We can use them similarly, for example, to access the current user session, we do like this in Phoenix <tt>web/views/layout_view.ex</tt>:
+O que o Phoenix chama de "views" é mais parecido com o que o Rails chama de "helpers". Podemos usá-las de forma semelhante; por exemplo, para acessar a sessão do usuário atual, fazemos assim no Phoenix em <tt>web/views/layout_view.ex</tt>:
 
 ```ruby
 # web/views/layout_view.ex
@@ -609,7 +616,7 @@ defmodule Pxblog.LayoutView do
 end
 ```
 
-Which is almost the same as <tt>app/helpers/application.rb</tt> in Rails:
+Que é praticamente igual ao <tt>app/helpers/application.rb</tt> do Rails:
 
 ```ruby
 # app/helpers/application.rb
@@ -620,15 +627,15 @@ module ApplicationHelper
 end
 ```
 
-Finally, Phoenix default scaffolding already brings in Bootstrap so it looks much nicer than the 10 years old "scaffold.css" that Rails generates by default. There are many gems that override that though.
+Por fim, o scaffolding padrão do Phoenix já vem com Bootstrap, então fica bem mais bonito que o "scaffold.css" de 10 anos atrás que o Rails gera por padrão. Existem várias gems que fazem essa substituição, claro.
 
-### Tests
+### Testes
 
-The last thing is the testing system. Rails uses Minitest, Elixir uses ExUnit. Again, the helpers are so similar that you can translate almost directly from Phoenix to Rails and vice versa.
+A última coisa é o sistema de testes. O Rails usa Minitest, o Elixir usa ExUnit. De novo, os helpers são tão parecidos que você consegue traduzir quase diretamente do Phoenix para o Rails e vice-versa.
 
-As a caveat, Rails tests evolved a lot in the past decade. Even without adding extra features such as Factory Girl, the standard Fixtures still don't have equivalent in Phoenix (#OpportunityToContribute!).
+Como ressalva, os testes do Rails evoluíram muito na última década. Mesmo sem adicionar features extras como o Factory Girl, as Fixtures padrão ainda não têm equivalente no Phoenix (#OpportunityToContribute!).
 
-Let's start seeing a small model test in Phoenix:
+Vamos começar vendo um pequeno teste de modelo no Phoenix:
 
 ```ruby
 # test/models/post_test.ex
@@ -652,7 +659,7 @@ defmodule Pxblog.PostTest do
 end
 ```
 
-And the same unit tests in Rails:
+E os mesmos testes unitários em Rails:
 
 ```ruby
 # test/models/post_test.rb
@@ -676,9 +683,9 @@ class PostTest < ActiveSupport::TestCase
 end
 ```
 
-Remarkably similar. For the test data, in Phoenix we are using simple Elixir's module attributes, in Rails we put in the setup step to create instance variables. They are not the same thing, but the result is similar. Again, in Rails we test the model, in Phoenix we test the changeset.
+Notavelmente parecidos. Para os dados de teste, no Phoenix estamos usando atributos de módulo simples do Elixir; no Rails colocamos no setup para criar variáveis de instância. Eles não são a mesma coisa, mas o resultado é parecido. De novo, no Rails testamos o modelo, no Phoenix testamos o changeset.
 
-Now let's see some bits of a controller test. As I said before, because Phoenix does not have a Fixtures or Factory feature in place (although the nice guys at Thoughtbot just released a Factory Girl-like library for Phoenix called [ExMachina](https://robots.thoughtbot.com/announcing-ex-machina)) we have to do a bit more setup:
+Agora vamos ver um pedaço de um teste de controller. Como falei antes, como o Phoenix não tem uma feature de Fixtures ou Factory disponível (apesar de o pessoal legal da Thoughtbot ter acabado de lançar uma biblioteca estilo Factory Girl para Phoenix chamada [ExMachina](https://robots.thoughtbot.com/announcing-ex-machina)), temos que fazer um pouco mais de setup:
 
 ```ruby
 # test/controllers/session_controller.ex
@@ -708,7 +715,7 @@ defmodule Pxblog.SessionControllerTest do
 end
 ```
 
-The Rails controller test is getting the data from a Fixture, that's why the setup is shorter:
+O teste de controller no Rails está pegando os dados de uma Fixture, por isso o setup é mais curto:
 
 ```ruby
 # test/controllers/session_controller.rb
@@ -733,24 +740,24 @@ class SessionsControllerTest < ActionController::TestCase
   ...
 ```
 
-But as I said before, Phoenix implements similar helpers, so it's very straight forward to port from Rails to Phoenix here.
+Mas como falei antes, o Phoenix implementa helpers parecidos, então é bem direto portar de Rails para Phoenix aqui.
 
-You execute the test runner in Rails with <tt>rake test</tt> and in Phoenix with <tt>mix test</tt>. Not a lot to see here. Tests load very fast, I believe they run in parallel, and it's very fast, which is a good departure from when you have a really large Rails app where a test suite can take minutes to finish.
+Você executa o test runner do Rails com <tt>rake test</tt> e o do Phoenix com <tt>mix test</tt>. Não tem muito o que ver aqui. Os testes carregam muito rápido, eu acredito que rodam em paralelo, e é bem rápido, o que é uma boa diferença em relação a quando você tem uma aplicação Rails grande de verdade, onde a suíte de testes pode levar minutos para terminar.
 
-### Conclusions
+### Conclusões
 
-If you came this far, you may be interested in following Brandon's tutorial and then building your own Rails copy or you can just clone from my Github repositories. [This is the Phoenix exercise](https://github.com/akitaonrails/pxblog_phoenix_exercise) and [this is the Rails exercise](https://github.com/akitaonrails/pxblog_rails_exercise).
+Se você chegou até aqui, talvez se interesse em seguir o tutorial do Brandon e depois construir sua própria cópia em Rails, ou pode simplesmente clonar dos meus repositórios no Github. [Este é o exercício Phoenix](https://github.com/akitaonrails/pxblog_phoenix_exercise) e [este é o exercício Rails](https://github.com/akitaonrails/pxblog_rails_exercise).
 
-What you can conclude thus far is that Phoenix is already a very full featured web framework. And this is not even touching on what I think is its crown achievement: its remarkable Websockets support that recently tested and benchmarked with real machines from Digital Ocean and achieve a peak performance of [**2 million concurrent connections**](http://www.akitaonrails.com/2015/10/29/phoenix-experiment-holding-2-million-websocket-clients).
+O que dá para concluir até aqui é que o Phoenix já é um framework web bem completo. E isso sem nem tocar no que eu considero seu maior feito: o suporte notável a Websockets que recentemente foi testado e benchmarkado com máquinas de verdade da Digital Ocean, alcançando um pico de [**2 milhões de conexões concorrentes**](http://www.akitaonrails.com/2015/10/29/phoenix-experiment-holding-2-million-websocket-clients).
 
-I think this is the real use case for Phoenix: microservices to deliver on Erlang OTP's promise of hiper reliability and hiper concurrency. For that goal it's already production ready and you can use it right now. There is still much to be learned regarging proper tuning, proper monitoring, proper production environment troubleshooting, and so on, but it's getting there.
+Eu acho que esse é o caso de uso real para o Phoenix: microserviços que entreguem a promessa do Erlang OTP de alta confiabilidade e alta concorrência. Para esse objetivo já está pronto para produção, e você pode usá-lo agora mesmo. Ainda há muito a se aprender sobre tuning adequado, monitoramento adequado, troubleshooting adequado em ambiente de produção, e por aí vai, mas está chegando lá.
 
-As a complete Ruby on Rails replacement, it is not on par yet. But it's unfair to say that because a new framework can't compete with 10 years of an entire ecosystem creating all sorts of features, tools and techniques for it. Rails is power house and it will continue to be so.
+Como substituto completo do Ruby on Rails, ainda não está no mesmo nível. Mas é injusto dizer isso, porque um framework novo não consegue competir com 10 anos de um ecossistema inteiro criando todo tipo de feature, ferramenta e técnica. O Rails é uma potência e vai continuar sendo.
 
-In this contrived example we already got one small feature we still don't have in Phoenix: the equivalent of <tt>ActiveSupport#has_secure_password</tt>. But this is not all, we still don't have the equivalents for Devise, Simple Forms, Active Admin or Rails Admin, Refile, Koala, Spree, etc. But we can have those, as the ecosystem starts to fill in the blanks (#OpportunityToContribute!) in this brand new Phoenix ecosystem. And I urge people to do so, as Thoughtbot already delivered their ExMachina so those who like Factory Girl can jump right in.
+Neste exemplo simplificado já notamos uma pequena feature que ainda não temos no Phoenix: o equivalente a <tt>ActiveSupport#has_secure_password</tt>. Mas isso não é tudo: ainda não temos os equivalentes para Devise, Simple Forms, Active Admin ou Rails Admin, Refile, Koala, Spree, etc. Mas podemos ter, à medida que o ecossistema for preenchendo as lacunas (#OpportunityToContribute!) desse novo ecossistema Phoenix. E eu encorajo as pessoas a fazerem isso, já que a Thoughtbot já entregou o ExMachina para quem gosta do Factory Girl entrar de cabeça.
 
-As it stands right now, it feels like the time when Rails 1.2 was just released, many libraries were just too young, we still didn't have mature tools. But the upper hand of Phoenix and Elixir is the decades old and battle tested Erlang core. This is something no one else has and the best way to capitalize it is to go beyond what tools like Node.js had accomplished: a truly **enjoyable** programming environment, with a language that was truly well designed and targets programmer happiness, with a really mature core to boot.
+Do jeito que está agora, parece a época em que o Rails 1.2 acabou de ser lançado: muitas bibliotecas eram jovens demais, ainda não tínhamos ferramentas maduras. Mas o trunfo do Phoenix e do Elixir é o núcleo Erlang, com décadas de uso e testado em batalha. Isso é algo que ninguém mais tem, e a melhor maneira de capitalizar isso é ir além do que ferramentas como Node.js conseguiram: um ambiente de programação realmente **prazeroso**, com uma linguagem que foi muito bem projetada e que mira na felicidade do programador, e ainda por cima com um núcleo muito maduro.
 
-Programmers shouldn't have to be fight for small stuff. Task management? Done, use Mix. Package Management? Done, use Hex. Promises? Don't need. Require semantics? Don't need. You get the gist.
+Programadores não deveriam ter que brigar por coisas pequenas. Gerenciamento de tarefas? Resolvido, use Mix. Gerenciamento de pacotes? Resolvido, use Hex. Promises? Não precisa. Semântica de require? Não precisa. Você entendeu a ideia.
 
-If you're a Rails programmer and you want to find a companion platform to increment your existing Rails solutions with highly reliable and highly concurrent microservices, Phoenix is an option ready to production right now. Jump right into it!
+Se você é programador Rails e quer encontrar uma plataforma companheira para incrementar suas soluções Rails existentes com microserviços de alta confiabilidade e alta concorrência, o Phoenix é uma opção pronta para produção agora mesmo. Pula dentro!

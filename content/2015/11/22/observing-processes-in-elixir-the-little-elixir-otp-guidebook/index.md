@@ -1,28 +1,31 @@
 ---
-title: Observing Processes in Elixir - The Little Elixir & OTP Guidebook
+title: "Observando Processos em Elixir - The Little Elixir & OTP Guidebook"
 date: '2015-11-22T14:57:00-02:00'
-slug: observing-processes-in-elixir-the-little-elixir-otp-guidebook
+slug: observando-processos-em-elixir-the-little-elixir-otp-guidebook
+translationKey: observing-processes-elixir
+aliases:
+- /2015/11/22/observing-processes-in-elixir-the-little-elixir-otp-guidebook/
 tags:
 - learning
 - beginner
 - elixir
-- english
+- traduzido
 draft: false
 ---
 
-In my journey to really understand how a proper Elixir application should be written I am exercising through Benjamin Tan Wei Hao's excelent [The Little Elixir & OTP Guidebook](https://www.manning.com/books/the-little-elixir-and-otp-guidebook). If you're just getting started, this is a no-brainer: buy and study this guidebook. Yes, it will help if you already read Dave Thomas' [Programming Elixir](https://pragprog.com/book/elixir/programming-elixir) book first.
+Na minha jornada para entender de verdade como uma aplicação Elixir decente deve ser escrita, estou me exercitando com o excelente [The Little Elixir & OTP Guidebook](https://www.manning.com/books/the-little-elixir-and-otp-guidebook), do Benjamin Tan Wei Hao. Se você está começando agora, é decisão óbvia: compre e estude esse guia. E sim, ajuda muito se você tiver lido antes o [Programming Elixir](https://pragprog.com/book/elixir/programming-elixir) do Dave Thomas.
 
-In my [Ex Manga Downloadr Part 2](http://www.akitaonrails.com/2015/11/19/ex-manga-downloadr-part-2-poolboy-to-the-rescue) article I explored adding better process pool control using the excelent and robust Poolboy library. One of the guidebook main exercises is to build a simpler version of Poolboy in pure Elixir (Poolboy is written in good, old, Erlang).
+No meu artigo [Ex Manga Downloadr Parte 2](http://www.akitaonrails.com/2015/11/19/ex-manga-downloadr-part-2-poolboy-to-the-rescue) eu explorei como adicionar um controle melhor de pool de processos usando a excelente e robusta biblioteca Poolboy. Um dos exercícios principais do guia é justamente construir uma versão mais simples do Poolboy em Elixir puro (o Poolboy é escrito no bom e velho Erlang).
 
-This main goal of this article is to introduce what **Fault Tolerance** in Erlang/Elixir mean and it is also an excuse for me to show off Erlang's observer:
+O objetivo principal deste artigo é introduzir o que **Tolerância a Falhas** significa no Erlang/Elixir, e também é uma desculpa pra eu mostrar o observer do Erlang:
 
 ![Observer](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/528/big_observer-kill.png)
 
-Yes, Erlang allows us to not just see what's going on inside its runtime environment but we can even take action on individual Processes running inside it! How cool is that?
+Sim, o Erlang permite que a gente veja o que está acontecendo dentro do seu runtime e ainda tome ações sobre Processos individuais rodando lá dentro! Que coisa mais legal, não?
 
-But before we can show Fault Tolerancy and the Observer I need to explain what Processes are, and why they matter. You **must** understand the following concepts to successfully understand Elixir programming:
+Mas antes de mostrar Tolerância a Falhas e o Observer eu preciso explicar o que são Processos e por que eles importam. Você **precisa** entender os seguintes conceitos pra conseguir programar bem em Elixir:
 
-1. You don't have "objects", which are runtime instances of classes (or prototipical objects, which are copies of other objects). Instead of "Classes" you have collections of functions organized in modules, without dependency in internal state. And instead of "objects" we have, roughly speaking, "processes". For example:
+1. Você não tem "objetos", que são instâncias em runtime de classes (ou objetos prototípicos, que são cópias de outros objetos). No lugar de "Classes" você tem coleções de funções organizadas em módulos, sem dependência de estado interno. E no lugar de "objetos" temos, falando grosseiramente, "processos". Por exemplo:
 
 ```ruby
 defmodule MyProcess do
@@ -47,21 +50,21 @@ defmodule MyProcess do
 end
 ```
 
-2. We can execute a function inside another process. This is how we can spawn a brand new, concurrent, lightweight process:
+2. Podemos executar uma função dentro de outro processo. É assim que damos spawn em um processo novo, concorrente e leve:
 
 ```ruby
 iex(2)> pid = spawn fn -> MyProcess.start end
 #PID<0.87.0>
 ```
 
-When the <tt>accepting_messages/1</tt> is called, it stops at the <tt>receive/0</tt> block, waiting to receive a new message. Then we can send messages like this:
+Quando o <tt>accepting_messages/1</tt> é chamado, ele para no bloco <tt>receive/0</tt>, esperando receber uma nova mensagem. Aí podemos enviar mensagens assim:
 
 ```ruby
 iex(3)> send pid, {:hello, "world"}
 Hello, world
 ```
 
-It receives the <tt>{:hello, "world"}</tt> atom message, it pattern matches the value <tt>"world"</tt> into the <tt>message</tt> variable, and concatenates the <tt>"Hello, world"</tt> string, which it prints out with <tt>IO.puts/1</tt> and recurse to itself again. We call the <tt>receive/0</tt> block again, and block, waiting for further messages:
+Ele recebe o átomo <tt>{:hello, "world"}</tt>, faz pattern match do valor <tt>"world"</tt> na variável <tt>message</tt>, concatena a string <tt>"Hello, world"</tt>, imprime com <tt>IO.puts/1</tt> e recursa pra si mesmo. Chamamos o bloco <tt>receive/0</tt> de novo e bloqueamos, esperando novas mensagens:
 
 ```ruby
 iex(4)> send pid, {:counter}
@@ -77,15 +80,15 @@ iex(7)> send pid, {:counter}
 New state is 4
 ```
 
-We send the <tt>{:counter}</tt> message to the same process pid again and when it receive this message, it gets the <tt>state</tt> value from the function argument, increments it by 1, prints out the new state, and calls itself again passing the new state as the new argument. It blocks again, waiting for further messages, and for each time it receives the <tt>{:counter}</tt> message, it increases the previous state by one again and recurses.
+Mandamos a mensagem <tt>{:counter}</tt> pro mesmo pid de novo e, quando ele recebe essa mensagem, pega o valor de <tt>state</tt> do argumento da função, incrementa em 1, imprime o novo estado, e chama a si mesmo passando o novo estado como novo argumento. Ele bloqueia de novo, esperando novas mensagens, e cada vez que recebe a mensagem <tt>{:counter}</tt>, incrementa o estado anterior em mais um e recursa.
 
-This is basically how we can maintain state in Elixir. If we kill this process and spawn a new one, it restarts with zero (which is what the <tt>start/0</tt>) function does.
+É basicamente assim que mantemos estado em Elixir. Se matarmos esse processo e dermos spawn em um novo, ele recomeça do zero (que é o que a função <tt>start/0</tt> faz).
 
-3. So, while you don't have "objects" you do, however, have Processes. Superficially, a process behaves like an "object". Careful not to think that a Process is like a heavyweight Thread though. Erlang has its own internal scheduler that controls the concurrency of parallels and you can load as many as 16 billion lightweight processes if your hardware allows it. Threads are super heavy, Erlang processes are super light.
+3. Então, mesmo sem ter "objetos", você tem Processos. Superficialmente, um processo se comporta como um "objeto". Cuidado pra não pensar que um Processo é como uma Thread pesada. O Erlang tem seu próprio scheduler interno que controla a concorrência dos paralelos e você pode carregar até 16 bilhões de processos leves se o seu hardware permitir. Threads são super pesadas, processos Erlang são super leves.
 
-4. As we saw in the example, each process has its own internal mechanism to receive messages from other processes. Those messages accumulate in an internal "mailbox" and you can choose to <tt>receive</tt> and pattern match through those messages, recursing to itself again in order to receive new messages if you want.
+4. Como vimos no exemplo, cada processo tem seu próprio mecanismo interno pra receber mensagens de outros processos. Essas mensagens se acumulam numa "caixa de mensagens" interna e você pode escolher dar <tt>receive</tt> e fazer pattern match nelas, recursando em si mesmo pra receber novas mensagens, se quiser.
 
-5. Processes can be linked to or monitor other processes, for example, within an IEx shell, we are within an Elixir process, so we could do:
+5. Processos podem ser linkados a outros processos ou monitorá-los. Por exemplo, dentro de um shell IEx, estamos dentro de um processo Elixir, então podemos fazer:
 
 ```ruby
 iex(1)> self
@@ -98,9 +101,9 @@ iex(4)> Process.link(pid)
 true
 ```
 
-With <tt>self</tt> we can see that the current process id for the IEx shell is "0.98.0". Then we spawn a process that calls <tt>Myprocess.start/0</tt> again, it will block in the receive call. This new process has a different id, "0.105.0".
+Com <tt>self</tt> conseguimos ver que o id do processo atual do shell IEx é "0.98.0". Aí damos spawn num processo que chama o <tt>MyProcess.start/0</tt> de novo, ele vai bloquear no receive. Esse processo novo tem um id diferente, "0.105.0".
 
-We can assert that the new process is indeed alive and we can link the IEx shell with the "0.105.0" pid process. Now, whatever happens to this process will cascade to the shell.
+Podemos confirmar que o novo processo está vivo e linkar o shell IEx com o pid "0.105.0". Agora, qualquer coisa que aconteça com esse processo vai cascatear pro shell.
 
 ```ruby
 iex(5)> Process.exit(pid, :kill)
@@ -112,11 +115,11 @@ iex(1)> self
 #PID<0.109.0>
 ```
 
-And indeed, if we forcefully send a kill message to the "0.105.0" process, the IEx shell is also killed in the process. IEx restarts and its new pid is "0.109.0" instead of the old "0.98.0". By the way this is one way a process is different from a normal object. It behaves more like an operating system process where a crash in a process does not affect the whole system as it does not hold external shared state that can corrupt the system's state.
+E de fato, se mandarmos uma mensagem de kill à força pro processo "0.105.0", o shell IEx também é morto no processo. O IEx reinicia e seu novo pid é "0.109.0" no lugar do antigo "0.98.0". A propósito, essa é uma maneira em que um processo difere de um objeto comum. Ele se comporta mais como um processo de sistema operacional, onde um crash em um processo não afeta o sistema inteiro, já que não segura estado externo compartilhado que possa corromper o estado do sistema.
 
-The important concept is that we now have a mechanism to define a Parent Process (IEx in this example) and Children processes linked to it.
+O conceito importante é que agora temos um mecanismo pra definir um Processo Pai (o IEx, neste exemplo) e Processos Filhos linkados a ele.
 
-6. Parent processes don't need to stupidly suicide itself because their children screwed up. Instead, they can trap exits and decide what to do later:
+6. Processos pais não precisam suicidar-se de forma idiota só porque os filhos pisaram na bola. Em vez disso, eles podem capturar exits e decidir o que fazer depois:
 
 ```ruby
 iex(2)> Process.flag(:trap_exit, true)
@@ -128,7 +131,7 @@ New state is 1
 {:counter}
 ```
 
-First, we declare that the IEx shell will trap exists and not just die. Then we spawn a new process and link it. The <tt>spawn_link/1</tt> function has the same effect of <tt>spawn/1</tt> and then <tt>Process.link/1</tt>. We can send a message to the new pid and check that it is indeed still working.
+Primeiro declaramos que o shell IEx vai capturar exits e não simplesmente morrer. Aí damos spawn num novo processo e o linkamos. A função <tt>spawn_link/1</tt> tem o mesmo efeito de fazer <tt>spawn/1</tt> seguido de <tt>Process.link/1</tt>. Mandamos uma mensagem pro novo pid e confirmamos que ele continua funcionando.
 
 ```ruby
 iex(5)> Process.exit(pid, :kill)
@@ -140,17 +143,17 @@ iex(7)> flush
 :ok
 ```
 
-Now we forcefully kill the new process again, but IEx does not crash this time, as it is explicitly trapping those errors. If we check the killed pid, we can assert that it is indeed dead. But now we can also inspect IEx's own process mailbox (in this case, just flushing whats queued in the inbox) and see that it just received a message saying that its child was killed.
+Agora forçamos o kill no novo processo de novo, mas o IEx não trava dessa vez, porque está explicitamente capturando esses erros. Se checarmos o pid morto, confirmamos que ele realmente está morto. E agora também podemos inspecionar a caixa de mensagens do próprio processo do IEx (no caso, só dando flush no que está enfileirado no inbox) e ver que ele acabou de receber uma mensagem dizendo que seu filho foi morto.
 
-From here we could make IEx process treat this message and decide to just mourn for its deceased child and commit suicide itself, or move on and spawn_link a new now. We have **choice** in the face of disaster.
+A partir daí podemos fazer o processo do IEx tratar essa mensagem e decidir só lamentar a morte do seu filho falecido e suicidar-se também, ou seguir em frente e dar spawn_link num novo. Temos **escolha** em meio ao desastre.
 
 ### OTP Workers
 
-Letting aside the grim metaphor, we learned that we have Parent and Child processes, but more importantly they can fit the roles of Supervisors and Workers that are supervised, respectivelly.
+Deixando a metáfora macabra de lado, aprendemos que temos processos Pai e Filho, mas, mais importante, eles podem assumir os papéis de Supervisores e Workers supervisionados, respectivamente.
 
-Workers is where we put our code. This code can have bugs, it can depend on external stuff that can make our code crash for unexpected reasons. In a normal language we would start using the dreaded <tt>try/catch</tt> blocks, which are just ugly and **wrong**! Don't catch errors in Elixir, just let it crash!!
+Workers é onde colocamos nosso código. Esse código pode ter bugs, pode depender de coisas externas que podem fazer nosso código crashar por motivos inesperados. Numa linguagem normal a gente começaria a usar os temidos blocos <tt>try/catch</tt>, que são feios e **errados**! Não capture erros em Elixir, deixe quebrar!!
 
-As I explained in my previous article, everything in Elixir ends up being a so called "OTP application". The example above is just a very simple contraption that we can expand upon. Let's rewrite the same thing as an OTP GenServer:
+Como expliquei no meu artigo anterior, tudo em Elixir acaba sendo o que se chama de "OTP application". O exemplo acima é só uma engenhoca bem simples que podemos expandir. Vamos reescrever a mesma coisa como um OTP GenServer:
 
 ```ruby
 defmodule MyFancyProcess do
@@ -189,17 +192,17 @@ defmodule MyFancyProcess do
 end
 ```
 
-This new <tt>MyFancyProcess</tt> is essentially the same as <tt>MyProcess</tt> but with OTP GenServer on top of it. There are Public API functions and GenServer callbacks.
+Esse novo <tt>MyFancyProcess</tt> é essencialmente o mesmo que o <tt>MyProcess</tt>, só que com OTP GenServer por cima. Tem funções da Public API e callbacks do GenServer.
 
-Benjamin's book go to great lenghts to detail every bit of what I just implemented. But for now just understand some basics:
+O livro do Benjamin se aprofunda em cada bit do que acabei de implementar. Mas por agora entenda algumas coisas básicas:
 
-1. The module does "<tt>use GenServer</tt>" to import all the necessary GenServer bits for your convenience. In essence one of the things it will do is create that <tt>receive</tt> block we did in the first version to wait for messages.
+1. O módulo faz "<tt>use GenServer</tt>" pra importar todas as partes necessárias do GenServer pra sua conveniência. Em essência, uma das coisas que ele faz é criar aquele bloco <tt>receive</tt> que fizemos na primeira versão pra esperar por mensagens.
 
-2. The <tt>start_link/1</tt> function will create the instance of this GenServer and return the linked process. Internally it will call back to the <tt>init/1</tt> function to set the initial state of this worker. This is a flexible language, we have multiple ways of doing the same thing, and this is good, having just a single way of writing code is boring.
+2. A função <tt>start_link/1</tt> vai criar a instância desse GenServer e devolver o processo linkado. Internamente ela faz callback pra função <tt>init/1</tt> pra setar o estado inicial desse worker. Essa é uma linguagem flexível, temos várias maneiras de fazer a mesma coisa, e isso é bom; ter só uma única forma de escrever código é chato.
 
-3. The convention is to have one public function that calls the internal <tt>handle_call/3</tt> (for synchronous calls), <tt>handle_cast/2</tt> (for asynchronous calls), and <tt>handle_info/2</tt>. You could just call <tt>handle_call</tt> from the outside, but it's just ugly, so you will find this convention everywhere.
+3. A convenção é ter uma função pública que chama o <tt>handle_call/3</tt> interno (pra chamadas síncronas), <tt>handle_cast/2</tt> (pra chamadas assíncronas), e <tt>handle_info/2</tt>. Você poderia simplesmente chamar <tt>handle_call</tt> direto de fora, mas é feio, então você vai encontrar essa convenção em todo lugar.
 
-Once we have this in place, we can start calling it directly:
+Com isso no lugar, podemos começar a chamá-lo direto:
 
 ```ruby
 iex(11)> MyFancyProcess.start_link(0)
@@ -218,9 +221,9 @@ New state is 3
 :noproc
 ```
 
-And this is much cleaner than the version where we manually <tt>spawn_link</tt> and <tt>send</tt> messages to a pid. This is all handled nicely by the GenServer underneath it. And as I said, the results are the same as the initial crude <tt>MyProcess</tt> example.
+E isso é muito mais limpo do que a versão onde fizemos <tt>spawn_link</tt> manual e mandamos <tt>send</tt> de mensagens pra um pid. Tudo isso é tratado de forma elegante pelo GenServer por baixo. E como eu disse, os resultados são os mesmos do exemplo cru do <tt>MyProcess</tt>.
 
-In fact, this convention does make us type a lot of boilerplate many times over. There is a library called [ExActor](https://github.com/sasa1977/exactor) that grealy simplifies a GenServer implementation, making our previous code become something like this:
+Na verdade, essa convenção faz a gente digitar muita boilerplate várias vezes. Existe uma biblioteca chamada [ExActor](https://github.com/sasa1977/exactor) que simplifica bastante uma implementação de GenServer, fazendo nosso código anterior virar algo assim:
 
 ```ruby
 defmodule MyFancyProcess do
@@ -239,11 +242,11 @@ defmodule MyFancyProcess do
 end
 ```
 
-This is way cleaner, but as we are just using IEx, I'm not using this version for the next section, stick with the longer version of <tt>MyFancyProcess</tt> listed in the beginning of this section!
+Bem mais limpo, mas como estamos só usando o IEx, não vou usar essa versão na próxima seção. Fique com a versão mais longa do <tt>MyFancyProcess</tt> listada no começo desta seção!
 
 ## OTP Supervisor
 
-Now that we have a worker, we can create a Supervisor to supervise it:
+Agora que temos um worker, podemos criar um Supervisor pra supervisioná-lo:
 
 ```ruby
 defmodule MyFancySupervisor do
@@ -265,9 +268,9 @@ defmodule MyFancySupervisor do
 end
 ```
 
-This is just a simple boilerplace that most Supervisors will have. There are many details you must learn, but for this article's purposes the important bits are, first, the definition of the <tt>children</tt> specification, saying that this Supervisor should start the <tt>MyFancyProcess</tt> GenServer instead of us having to <tt>MyFancyProcess.start_link</tt> manually. And the second important bit is the <tt>opts</tt> list which defines the strategy of <tt>:one_for_one</tt>, meaning that if the Supervisor detects that the child has died, it should restart it.
+Esse é só um boilerplate simples que a maioria dos Supervisors vai ter. Tem muitos detalhes que você precisa aprender, mas pra fins deste artigo as partes importantes são, primeiro, a definição da especificação dos <tt>children</tt>, dizendo que esse Supervisor deve iniciar o GenServer <tt>MyFancyProcess</tt> em vez de termos que fazer <tt>MyFancyProcess.start_link</tt> manualmente. E a segunda parte importante é a lista de <tt>opts</tt> que define a estratégia <tt>:one_for_one</tt>, ou seja, se o Supervisor detecta que o filho morreu, deve reiniciá-lo.
 
-From a clean IEx, we can copy and paste both the <tt>MyFancyProcess</tt> and <tt>MyFancySupervisor</tt> above and start playing with it in the IEx shell:
+A partir de um IEx limpo, podemos copiar e colar tanto o <tt>MyFancyProcess</tt> quanto o <tt>MyFancySupervisor</tt> acima e começar a brincar com isso no shell IEx:
 
 ```ruby
 iex(3)> {:ok, sup_pid} = MyFancySupervisor.start_link   
@@ -283,7 +286,7 @@ New state is 2
 :noproc
 ```
 
-This is how we start the Supervisor and you can see that right away we can start sending messages to the <tt>MyFancyProcess</tt> GenServer because the Supervisor successfully started it for us.
+É assim que iniciamos o Supervisor e dá pra ver que de cara já podemos mandar mensagens pro GenServer <tt>MyFancyProcess</tt>, porque o Supervisor o iniciou pra gente com sucesso.
 
 ```ruby
 iex(7)> Supervisor.count_children(sup_pid)
@@ -292,7 +295,7 @@ iex(8)> Supervisor.which_children(sup_pid)
 [{MyFancyProcess, #PID<0.125.0>, :worker, [MyFancyProcess]}]
 ```
 
-Using the Supervisor PID that we captured right when we started it, we can ask it to count how many children it is monitoring (1, in this example) and we can ask the details of each children as well. We can see that the <tt>MyFancyProcess</tt> started with the pid of "0.125.0"
+Usando o PID do Supervisor que capturamos quando o iniciamos, podemos pedir pra ele contar quantos filhos está monitorando (1, neste exemplo) e podemos pedir os detalhes de cada um também. Dá pra ver que o <tt>MyFancyProcess</tt> começou com o pid "0.125.0".
 
 ```ruby
 iex(9)> [{_, worker_pid, _, _}] = Supervisor.which_children(sup_pid)
@@ -301,7 +304,7 @@ iex(14)> Process.exit(worker_pid, :kill)
 true
 ```
 
-Now, we can grab the Worker pid and manually force it to crash as we did before. We should be screwed, right? Nope:
+Agora, podemos pegar o pid do Worker e forçá-lo a crashar manualmente como fizemos antes. Devíamos estar ferrados, certo? Não:
 
 ```
 iex(15)> Supervisor.which_children(sup_pid)                          
@@ -315,56 +318,56 @@ New state is 2
 :noproc
 ```
 
-If we ask the Supervisor again for the list of its children, we will see that the old "0.125.0" process did indeed vanish but a new one, "0.139.0" was spawned in its place by the Supervisor strategy of <tt>:one_for_one</tt> as we defined before.
+Se perguntarmos ao Supervisor de novo a lista de filhos, vamos ver que o velho processo "0.125.0" sumiu mesmo, mas um novo, "0.139.0", foi spawnado em seu lugar pela estratégia <tt>:one_for_one</tt> do Supervisor que definimos antes.
 
-We can continue making calls do the <tt>MyFancyProcess</tt> but you will see that the previous state was lost and it restarts from zero. We can add state management in the GenServer using a number of different persistent storages such as the built-in [ETS](http://elixir-lang.org/getting-started/mix-otp/ets.html) (think of ETS as a built-in Memcache service), but I think you get the idea by now.
+Podemos continuar fazendo chamadas pro <tt>MyFancyProcess</tt>, mas você vai ver que o estado anterior foi perdido e ele recomeça do zero. Podemos adicionar gerenciamento de estado no GenServer usando vários storages persistentes diferentes, como o [ETS](http://elixir-lang.org/getting-started/mix-otp/ets.html) embutido (pense no ETS como um Memcache embutido), mas acho que você já pegou a ideia.
 
-### Graphically visualizing Processes
+### Visualizando Processos Graficamente
 
-This entire article was motivated by just this simple thing in Benjamin's book: by the end of page 139 of the book you will have built a very simple pool system that is able to start 5 process in the pool, guarded by a supervisor. And from there he goes on to show off the Observer.
+Esse artigo inteiro foi motivado por essa coisinha simples no livro do Benjamin: lá pelo final da página 139 do livro você terá construído um sistema de pool bem simples capaz de iniciar 5 processos no pool, guardados por um supervisor. E daí ele parte pra mostrar o Observer.
 
-Erlang has a built-in inspector tool called Observer. You can use the Supervisor built-in functions to inspect processes as I demonstrated before, but it's much cooler to see it visually. Assuming you installed Erlang Solutions propertly, in Ubuntu you have to:
+O Erlang tem uma ferramenta inspetora embutida chamada Observer. Você pode usar as funções built-in do Supervisor pra inspecionar processos como demonstrei antes, mas é bem mais legal ver isso visualmente. Assumindo que você instalou o Erlang Solutions corretamente, no Ubuntu você precisa:
 
 ```
 wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb && sudo dpkg -i erlang-solutions_1.0_all.deb
 ```
 
-Only then, you can start the observer directly from the IEx shell like this:
+Só então você pode iniciar o observer direto do shell IEx assim:
 
 ```
 :observer.start
 ```
 
-And a graphical window will show up with some stats first.
+E uma janela gráfica vai aparecer com algumas estatísticas pra começar.
 
 ![Observer](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/530/big_observer-system.png)
 
-This is **very** powerful becuase you have insight and control over the entire Erlang runtime! See that this status window even show you "uptime", it's line a UNIX system: it is made to stay up no matter what. Processes have its own garbage collector and they all behave nicely towards the entire system.
+Isso é **muito** poderoso porque você tem visibilidade e controle sobre todo o runtime do Erlang! Veja que essa janela de status mostra até "uptime", é como um sistema UNIX: foi feito pra ficar de pé não importa o que aconteça. Os processos têm seu próprio garbage collector e todos se comportam direitinho dentro do sistema.
 
-You can hook a remote Observer to remote Erlang runtimes as well, if you were wondering. Now you can jump to the Applications tab to see how the "Pooly" exercise looks like with 5 children under its pool:
+Você também pode acoplar um Observer remoto a runtimes Erlang remotos, caso esteja se perguntando. Agora dá pra pular pra aba Applications pra ver como o exercício "Pooly" fica com 5 filhos no pool:
 
 ![Pooly](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/527/big_observer-pooly.png)
 
-Because those children are supervised with proper restart strategies, we can visually kill one of them, the one with the pid labeled "0.389.0":
+Como esses filhos são supervisionados com estratégias de restart corretas, podemos matar visualmente um deles, o que tem o pid rotulado como "0.389.0":
 
 ![Kill process](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/528/big_observer-kill.png)
 
-And as the Observer immediatelly shows, the Supervisor took action, spawned a new child and added it to its pool, bringing the count back to 5:
+E como o Observer mostra na hora, o Supervisor entrou em ação, deu spawn num novo filho e o adicionou ao pool, trazendo a contagem de volta pra 5:
 
 ![Respawn](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/529/big_observer-restart.png)
 
-This is what **Fault Tolerance** with proper controls mean by using OTP!
+É isso que **Tolerância a Falhas** com controles adequados significa usando OTP!
 
-With the bits I explained in this article you should have enough concepts to finally grasp what the Erlang's high reliabiliby fuzz is all about. The basic concepts are very simple, to hook your application to OTP is also a no-brainer, what OTP has implemented under the hood is what makes your application much more reliable.
+Com as partes que expliquei neste artigo você deve ter conceitos suficientes pra finalmente entender do que se trata todo esse alarde sobre alta confiabilidade do Erlang. Os conceitos básicos são bem simples, plugar sua aplicação no OTP também é molezinha; o que o OTP tem implementado por baixo dos panos é o que torna sua aplicação muito mais confiável.
 
-There are clear guidelines on how to design your application. Who supervises what. What should happen to the application state if workers are restarted? How you divide responsabilities between different groups of Supervisor/Children?
+Há diretrizes claras sobre como projetar sua aplicação. Quem supervisiona o quê. O que deve acontecer com o estado da aplicação se workers forem reiniciados? Como dividir responsabilidades entre diferentes grupos de Supervisor/Children?
 
-Your application is supposed to look like a Tree, a **Supervision Tree**, where failure in one leaf does not bring the other branches down and everything knows how to behave and how to recover, elegantly. It's really like a UNIX operating system: when you <tt>kill -9</tt> one process, it doesn't bring your system down, and if it's <tt>initd</tt> monitored service, it gets respawned.
+Sua aplicação deveria parecer uma Árvore, uma **Árvore de Supervisão**, onde uma falha em uma folha não derruba os outros galhos e tudo sabe como se comportar e como se recuperar, com elegância. É realmente como um sistema operacional UNIX: quando você dá <tt>kill -9</tt> num processo, isso não derruba o sistema, e se for um serviço monitorado pelo <tt>initd</tt>, ele é respawnado.
 
-Most important: this is not an optional feature, a 3rd party library, that you choose too use. It's built-in in Erlang, you must use it if you want to play. There is no other choice and this is the best choice. Any such pattern that is not implemented in a concurrent language, to me, represents a big failure of the language. This is Elixir's strength.
+Mais importante: isso não é uma feature opcional, uma biblioteca de terceiros, que você escolhe usar. É embutido no Erlang, você precisa usar se quiser jogar. Não há outra escolha e essa é a melhor escolha. Qualquer padrão desses que não esteja implementado numa linguagem concorrente, pra mim, representa uma grande falha da linguagem. Essa é a força do Elixir.
 
-This is high level control you won't find anywhere else. And we still didn't even talk about how OTP applications can exchange messages across the wire in really distributed systems, and how the Erlang runtime can reload code while an application is running, with zero downtime, akin of what IEx itself is capable of and how Phoenix allow development mode with code reloading! OTP gives all this for free, so it's well worth learning all the details.
+Esse é um nível de controle alto que você não vai encontrar em outro lugar. E ainda nem falamos sobre como aplicações OTP podem trocar mensagens pela rede em sistemas realmente distribuídos, e como o runtime do Erlang consegue recarregar código enquanto a aplicação está rodando, com zero downtime, parecido com o que o próprio IEx é capaz e como o Phoenix permite o modo de desenvolvimento com code reloading! O OTP dá tudo isso de graça, então vale muito a pena aprender todos os detalhes.
 
-We went through processes, pids, send a kill message to a process, trap exits, parent having child processes. Feels very similar to how UNIX works. If you know UNIX, you can easily grasp how all this fit together, including Elixir pipe operator "|>" compared to UNIX's own pipe "|", it's similar.
+Passamos por processos, pids, mandar uma mensagem de kill pra um processo, capturar exits, processo pai tendo processos filhos. Parece bem similar ao funcionamento do UNIX. Se você conhece UNIX, fica fácil entender como tudo isso se encaixa, incluindo o operador pipe do Elixir "|>" comparado ao próprio pipe "|" do UNIX, é parecido.
 
-Finally, The Little Elixir & OTP Guidebook is a very easy to read, very hands-on small book. You can read it all in a couple of days and grasp everything I quickly summarized here and much more. I highly encourage you to buy it right now.
+Pra fechar, o The Little Elixir & OTP Guidebook é um livro bem fácil de ler, bem mão na massa, pequeno. Você consegue ler em alguns dias e absorver tudo que resumi rapidamente aqui e muito mais. Recomendo demais que você compre agora.

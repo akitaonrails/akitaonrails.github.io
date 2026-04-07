@@ -1,38 +1,41 @@
 ---
-title: Ex Manga Downloader, an exercise with Elixir
+title: "Ex Manga Downloadr, um exercício com Elixir"
 date: '2015-11-18T17:26:00-02:00'
-slug: ex-manga-downloader-an-exercise-with-elixir
+slug: ex-manga-downloadr-um-exercicio-com-elixir
+translationKey: ex-manga-downloadr-exercise
+aliases:
+- /2015/11/18/ex-manga-downloader-an-exercise-with-elixir/
 tags:
 - learning
 - beginner
 - elixir
 - exmangadownloadr
-- english
+- traduzido
 draft: false
 ---
 
-**Update 11/19/15:** In this article I mention a few doubts I had, so read this and then follow through [Part 2](http://www.akitaonrails.com/2015/11/19/ex-manga-downloadr-part-2-poolboy-to-the-rescue) to see how I solved it.
+**Update 19/11/15:** Neste artigo eu menciono algumas dúvidas que tive, então leia este e depois acompanhe na [Parte 2](http://www.akitaonrails.com/2015/11/19/ex-manga-downloadr-part-2-poolboy-to-the-rescue) para ver como resolvi.
 
-As an exercise (and also because I'm obviously an [Otaku](https://en.wikipedia.org/wiki/Otaku)) I [implemented](https://github.com/akitaonrails/ex_manga_downloadr/blob/master/lib/ex_manga_downloadr/mangareader/index_page.ex) a simple Elixir based scrapper for the great [MangaReader](http://www.mangareader.net/) website. One can argue if it's ok to scrap their website, and one might also argue if they providing those mangas are ok in the first place, so let's not go down this path.
+Como exercício (e também porque, obviamente, sou um [Otaku](https://en.wikipedia.org/wiki/Otaku)) eu [implementei](https://github.com/akitaonrails/ex_manga_downloadr/blob/master/lib/ex_manga_downloadr/mangareader/index_page.ex) um scrapper simples em Elixir para o ótimo site [MangaReader](http://www.mangareader.net/). Dá pra discutir se é certo fazer scrap do site deles, e dá pra discutir também se eles oferecerem esses mangás é certo em primeiro lugar, então vamos deixar essa discussão de lado.
 
-I had an older version [written in Ruby](https://github.com/akitaonrails/manga-downloadr). It still works but it's in sore need of a good refactoring (sorry about that). The purpose of that version was to see if I could actually do parallel fetching and retry connections using Typhoeus.
+Eu tinha uma versão mais antiga [escrita em Ruby](https://github.com/akitaonrails/manga-downloadr). Ela ainda funciona, mas precisa muito de uma boa refatoração (desculpem por isso). O propósito daquela versão era ver se eu conseguia fazer fetch paralelo e retry de conexões usando Typhoeus.
 
-![OnePunch Man downloaded](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/525/big_ex_manga_downloadr.png)
+![OnePunch Man baixado](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/525/big_ex_manga_downloadr.png)
 
-As I've been evolving in my studies of Elixir that tool felt like a great candidate to test my current knowledge of the platform. It would make me test:
+Conforme fui evoluindo nos meus estudos de Elixir, essa ferramenta pareceu uma ótima candidata para testar meu conhecimento atual da plataforma. Ela me obrigaria a testar:
 
-1. Fetch and parse ad hoc content through HTTP ([HTTPotion](https://github.com/myfreeweb/httpotion) and [Floki](https://github.com/philss/floki)).
-2. Test parallel/asynchronous downloads (Elixir's built-in [Task](http://elixir-lang.org/docs/stable/elixir/Task.html) module).
-3. The build-in command line and [option parser](http://elixir-lang.org/docs/stable/elixir/OptionParser.html) support.
-4. Basic testing through ExUnit and mocking the workflow ([Mock](https://github.com/jjh42/mock)).
+1. Fetch e parse de conteúdo ad hoc via HTTP ([HTTPotion](https://github.com/myfreeweb/httpotion) e [Floki](https://github.com/philss/floki)).
+2. Testar downloads paralelos/assíncronos (módulo [Task](http://elixir-lang.org/docs/stable/elixir/Task.html) embutido no Elixir).
+3. O suporte embutido para linha de comando e [option parser](http://elixir-lang.org/docs/stable/elixir/OptionParser.html).
+4. Testes básicos via ExUnit e mock do workflow ([Mock](https://github.com/jjh42/mock)).
 
-The exercise was very interesting, and a scrapper is also an ideal candidate for TDD. The initial steps had to go like this:
+O exercício foi muito interessante, e um scrapper também é candidato ideal para TDD. Os passos iniciais tinham que ser assim:
 
-1. Parse the main manga page to fetch all the chapter links.
-2. Parse each chapter page to fetch all the individual pages.
-3. Parse each page to parse the main embedded image (the actual manga page).
+1. Fazer parse da página principal do mangá para pegar todos os links dos capítulos.
+2. Fazer parse de cada página de capítulo para pegar todas as páginas individuais.
+3. Fazer parse de cada página para extrair a imagem principal embutida (a página real do mangá).
 
-For each of those initial steps I did a simple unit test and the <tt>IndexPage</tt>, <tt>ChapterPage</tt> and <tt>Page</tt> modules. They have roughly the same structure, this is one example:
+Para cada um desses passos iniciais eu fiz um teste unitário simples e os módulos <tt>IndexPage</tt>, <tt>ChapterPage</tt> e <tt>Page</tt>. Eles têm mais ou menos a mesma estrutura, este é um exemplo:
 
 ```ruby
 defmodule ExMangaDownloadr.MangaReader.IndexPage do
@@ -58,22 +61,22 @@ defmodule ExMangaDownloadr.MangaReader.IndexPage do
 end
 ```
 
-Here I am already exercising some of Elixir's awesome features such as pattern matching the result of the <tt>HTTPotion.get/2</tt> function to extract the body from the returning record.
+Aqui eu já estou exercitando algumas das features mais legais do Elixir, como pattern matching no resultado da função <tt>HTTPotion.get/2</tt> para extrair o body do record que retorna.
 
-Then I pass the HTML body to 2 different functions: <tt>fetch_manga_title</tt> and <tt>fetch_chapters</tt>. They both use the Floki package which can use CSS selectors to return a List. Then I need to walk through the list (using <tt>Enum.map/2</tt> for example) and pattern match on it to extract the values I need.
+Depois eu passo o body do HTML para 2 funções diferentes: <tt>fetch_manga_title</tt> e <tt>fetch_chapters</tt>. As duas usam o pacote Floki, que aceita seletores CSS para retornar uma List. Aí eu preciso percorrer essa lista (usando <tt>Enum.map/2</tt> por exemplo) e fazer pattern match nela para extrair os valores que preciso.
 
-[Pattern Matching](http://elixir-lang.org/getting-started/pattern-matching.html) is one of the most important concepts to learn about Elixir/Erlang. It's different from simply assigning a value to a variable, it can be used to dismount a structure into its components and get their individual parts.
+[Pattern Matching](http://elixir-lang.org/getting-started/pattern-matching.html) é um dos conceitos mais importantes para aprender em Elixir/Erlang. É diferente de simplesmente atribuir um valor a uma variável: dá pra usar para desmontar uma estrutura nos seus componentes e pegar as partes individuais.
 
-Then I just went through building the skeleton for the command line interface. This is already explained in other tutorials such as [this](http://asquera.de/blog/2015-04-10/writing-a-commandline-app-in-elixir/) and [this](https://speakerdeck.com/st23am/writing-command-line-applications-in-elixir), so I won't waste time explaining it again. At the core I needed to have the following workflow:
+Daí eu fui montar o esqueleto da interface de linha de comando. Isso já é explicado em outros tutoriais como [este](http://asquera.de/blog/2015-04-10/writing-a-commandline-app-in-elixir/) e [este](https://speakerdeck.com/st23am/writing-command-line-applications-in-elixir), então não vou perder tempo explicando de novo. No núcleo eu precisava do seguinte workflow:
 
-1. Starting from the Manga main URL at MangaReader, extract the chapters
-2. Then loop through the chapters and fetch all the pages
-3. Then loop through the pages and fetch all the image sources
-4. Then loop through the images and download them all to a temporary directory
-5. Then sort through files in the directory and move them to sub-directories of 250 images each (I think it is a good size for each volume)
-6. Finally, resize and convert all the images of each sub-directory into a PDF file for my Kindle to consume.
+1. Partindo da URL principal do mangá no MangaReader, extrair os capítulos
+2. Depois loopar pelos capítulos e pegar todas as páginas
+3. Depois loopar pelas páginas e pegar todos os sources de imagem
+4. Depois loopar pelas imagens e baixar todas para um diretório temporário
+5. Depois ordenar os arquivos no diretório e movê-los para subdiretórios de 250 imagens cada (acho um bom tamanho para cada volume)
+6. Por fim, redimensionar e converter todas as imagens de cada subdiretório em um arquivo PDF para o meu Kindle consumir.
 
-This workflow is defined like this:
+Esse workflow é definido assim:
 
 ```ruby
 defp process(manga_name, url, directory) do
@@ -90,15 +93,15 @@ defp process(manga_name, url, directory) do
 end
 ```
 
-This is one place where the pipeline notation from Elixir really shines. It's much better than having to write this equivalent:
+Esse é um lugar onde a notação de pipeline do Elixir realmente brilha. Fica muito melhor do que ter que escrever este equivalente:
 
 ```ruby
 Workflow.compile_pdfs(Workflow.optimize_images(directory))
 ```
 
-This notation is just syntatic sugar where the returning value of the previous statement is used as the first argument of the following function. Combine that with other syntatic sugars such as parenthesis being optional (just like beloved Ruby) and you have a clear exposure of "transforming from a URL into compiled PDFs".
+Essa notação é só açúcar sintático onde o valor de retorno do statement anterior é usado como primeiro argumento da função seguinte. Combine isso com outros açúcares sintáticos como parênteses opcionais (assim como o amado Ruby) e você tem uma exposição clara de "transformar uma URL em PDFs compilados".
 
-I separated the Workflow into its own module and each step is very similar, each taking a list and walking through it. This the simplest of them:
+Separei o Workflow no seu próprio módulo e cada passo é bem parecido, cada um pegando uma lista e percorrendo ela. Este é o mais simples deles:
 
 ```ruby
 def pages(chapter_list) do
@@ -109,7 +112,7 @@ def pages(chapter_list) do
 end
 ```
 
-If you're new to Elixir here you will find another oddity, this <tt>"&(x(&1))"</tt>, this is just a shortcut macro to this other similar statement:
+Se você é novo em Elixir, aqui vai encontrar outra esquisitice, esse <tt>"&(x(&1))"</tt>, que é só um macro de atalho para este outro statement equivalente:
 
 ```ruby
 Enum.map(fn (list) ->
@@ -119,13 +122,13 @@ Enum.map(fn (list) ->
 end)
 ```
 
-[Enum](http://elixir-lang.org/docs/stable/elixir/Enum.html) is one of the most useful modules you need to master. If you come from Ruby it feels like home, you must learn all of its functions. You're usually having to transform one collection into another, so it's important to study it throughly.
+[Enum](http://elixir-lang.org/docs/stable/elixir/Enum.html) é um dos módulos mais úteis que você precisa dominar. Se você vem de Ruby vai se sentir em casa, e tem que aprender todas as funções dele. Você normalmente vai estar transformando uma coleção em outra, então é importante estudar a fundo.
 
-### A few problems understanding parallel HTTP processing (W.I.P.)
+### Alguns problemas para entender o processamento HTTP paralelo (W.I.P.)
 
-Then there is this <tt>Task.async/await</tt> deal. If you're from a language that have Threads, it's quite similar: you start several different Threads and await for all of them to return before continuing. But a Task in Elixir is not a real thread, it's ["green thread"](https://en.wikipedia.org/wiki/Green_threads#Green_threads_in_other_languages) or, in Erlang lingo, a very lightweight "process". Erlang uses processes for everything, thus does Elixir. Under the hood, the "Task" module encapsulates the entire OTP framework for supervisors/workers. But instead of having to deal right now with [OTP GenServer](http://elixir-lang.org/getting-started/mix-otp/genserver.html) I decided to go the simpler route for now, and the "Task" module accomplishes just that.
+Aí tem esse lance de <tt>Task.async/await</tt>. Se você vem de uma linguagem que tem Threads, é bem parecido: você inicia várias Threads diferentes e espera todas retornarem antes de continuar. Mas uma Task em Elixir não é uma thread real, é uma ["green thread"](https://en.wikipedia.org/wiki/Green_threads#Green_threads_in_other_languages) ou, no jargão de Erlang, um "process" bem leve. Erlang usa processes para tudo, e Elixir também. Por baixo dos panos, o módulo "Task" encapsula todo o framework OTP de supervisors/workers. Mas em vez de ter que lidar agora com [OTP GenServer](http://elixir-lang.org/getting-started/mix-otp/genserver.html) decidi ir pelo caminho mais simples por enquanto, e o módulo "Task" cumpre essa função.
 
-Then, I ended up with a problem. If I just kept going like this, spawning hundreds of async HTTP calls, I quickly end up with this exception:
+Daí, acabei caindo num problema. Se eu continuasse assim, disparando centenas de chamadas HTTP assíncronas, rapidamente caía nessa exception:
 
 ```
 17:10:55.882 [error] Task #PID<0.2217.0> started from #PID<0.69.0> terminating
@@ -139,7 +142,7 @@ Function: #Function<12.106612505/0 in ExMangaDownloadr.Workflow.images_sources/1
     Args: []
 ```
 
-That's why there is <tt>@maximum_fetches 80</tt> at the top of the <tt>Workflow</tt> module, together with this other odd construction:
+Por isso existe o <tt>@maximum_fetches 80</tt> no topo do módulo <tt>Workflow</tt>, junto com essa outra construção esquisita:
 
 ```ruby
 def images_sources(pages_list) do
@@ -155,13 +158,13 @@ def images_sources(pages_list) do
 end
 ```
 
-This gets a huge list (such as all the pages of a very long manga like Naruto), breaks it down to smaller 80 elements list and then proceed to fire up the asynchronous Tasks, reducing the results back to a plain List. The <tt>chunk/2</tt> private function just get the smaller size between the list length and the maximum fetches value.
+Isso pega uma lista enorme (como todas as páginas de um mangá bem longo tipo Naruto), quebra em listas menores de 80 elementos e aí dispara as Tasks assíncronas, reduzindo os resultados de volta para uma List simples. A função privada <tt>chunk/2</tt> só pega o menor tamanho entre o comprimento da lista e o valor máximo de fetches.
 
-Sometimes it breaks down if the maximum is larger, sometimes it doesn't, so my guess is my code not dealing with network instabilities (with some retry logic) or even the MangaReader site queueing up above my designated timeout (which I set to 30 seconds). Either way, keeping the maximum value lower than 100 seem to be a good balance without crashing the workflow down.
+Às vezes quebra se o máximo é maior, às vezes não, então meu chute é que meu código não está lidando com instabilidades de rede (com alguma lógica de retry) ou então o site MangaReader está enfileirando acima do meu timeout designado (que setei para 30 segundos). De qualquer forma, manter o valor máximo abaixo de 100 parece ser um bom equilíbrio sem derrubar o workflow.
 
-This is one part I am not entirely sure what to do to deal with uncertainties in the external website not responding or network falling down for a little while. HTTPotion has support for asynchronous calls, but I don't know what's the difference between using that or just making synchronous calls within parallel processes with Task, the way I'm doing. And in either case, they are supervised workers, how do I handle the exceptions, how should I implement logic to retry the call once it fails? If anyone has more knowledge about this, a comment below will be really appreciated.
+Essa é uma parte que ainda não tenho certeza do que fazer para lidar com incertezas no site externo não respondendo ou a rede caindo por um tempinho. HTTPotion tem suporte para chamadas assíncronas, mas eu não sei qual a diferença entre usar isso ou só fazer chamadas síncronas dentro de processes paralelos com Task, do jeito que estou fazendo. E em qualquer dos casos, eles são supervised workers, como lidar com as exceptions, como implementar lógica para tentar de novo quando falha? Se alguém tem mais conhecimento sobre isso, um comentário aí embaixo seria bem apreciado.
 
-Finally, there is one dirty trick under the reason of why I like to use MangaReader: it's very friendly to scrappers because on each page of the manga the image is annotated with an "alt" attribute with the format "[manga name] [chapter number] - [page number]". So I just had to reformat it a bit, adding a pad of zeroes before the chapter and page number so a simple sort of the downloaded files will give me the correct order. MangaFox is not so friendly. This is how to reformat it:
+Por fim, tem um truque sujo por trás do motivo pelo qual eu gosto de usar o MangaReader: ele é bem amigável a scrappers porque em cada página do mangá a imagem é anotada com um atributo "alt" no formato "[nome do mangá] [número do capítulo] - [número da página]". Então só tive que reformatar um pouco, adicionando um pad de zeros antes do número do capítulo e da página para que um sort simples dos arquivos baixados me dê a ordem correta. MangaFox não é tão amigável. Assim que reformato:
 
 ```ruby
 defp normalize_metadata(image_src, image_alt) do
@@ -174,31 +177,31 @@ defp normalize_metadata(image_src, image_alt) do
 end
 ```
 
-Once I have all the images, I spawn another external process using [Porcelain](https://github.com/alco/porcelain) to deal with shelling out to run ImageMagick's Mogrify and Convert tools to resize all the images down to 600x800 pixels (Kindle Voyage resolution) and pack them together into a PDF file. This results in PDF files with 250 pages and around 20Mb in size. Now it is just a matter of copying the files to my Kindle through USB.
+Uma vez que tenho todas as imagens, disparo outro processo externo usando [Porcelain](https://github.com/alco/porcelain) para fazer shell out e rodar as ferramentas Mogrify e Convert do ImageMagick para redimensionar todas as imagens para 600x800 pixels (resolução do Kindle Voyage) e empacotá-las num arquivo PDF. O resultado são arquivos PDF com 250 páginas e cerca de 20Mb. Agora é só copiar os arquivos para o meu Kindle via USB.
 
-The ImageMagick code is quite boring, I just generate the commands in the following format for Mogrify:
+O código do ImageMagick é bem chato, eu só gero os comandos no seguinte formato para o Mogrify:
 
 ```
 "mogrify -resize #{@image_dimensions} #{directory}/*.jpg"
 ```
 
-And compile the PDFs with this other command:
+E compilo os PDFs com este outro comando:
 
 ```
 "convert #{volume_directory}/*.jpg #{volume_file}"
 ```
 
-(By the way, notice the Ruby-like String interpolation we're used to.)
+(Aliás, repare na interpolação de strings ao estilo Ruby a que estamos acostumados.)
 
-![OnePunch Man in Kindle](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/526/big_11249911_10153742264949837_7817568172948440418_n.jpg)
+![OnePunch Man no Kindle](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/526/big_11249911_10153742264949837_7817568172948440418_n.jpg)
 
-Technically I could copy the MangaReader module files into a new MangaFox module and repurpose the same Workflow logic once I tweak the parsers to deal with MangaFox page format. But I leave that as an exercise to the reader.
+Tecnicamente eu poderia copiar os arquivos do módulo MangaReader para um novo módulo MangaFox e reaproveitar a mesma lógica de Workflow uma vez que tweaksse os parsers para lidar com o formato de página do MangaFox. Mas deixo isso como exercício para o leitor.
 
-The MangaReader module tests do real calls to their website. I left it that way on purpose because if the test fails it means that they changed the website format and the parser needs tweaking to conform. But after a few years I never saw they changing enough to break my old Ruby parser.
+Os testes do módulo MangaReader fazem chamadas reais ao site deles. Deixei assim de propósito porque se o teste falhar significa que mudaram o formato do site e o parser precisa de ajuste para se adaptar. Mas depois de alguns anos eu nunca vi eles mudarem o suficiente para quebrar o meu velho parser em Ruby.
 
-Just as a final exercise I imported the Mock package, to control how some inner pieces of the Workflow implementation returns. It's called Mock but it's more like stubbing particular functions of a module. I can declare a block where I override the <tt>File.rename/1</tt> so it doesn't actually try to move a file that doesn't exist in the test environment. This makes the test more brittle because it depends on a particular implementation, which is never good, but when we are dealing with external I/O, this might be the only option to isolate. This is how the Workflow test was done. Again, if there is a better way I am eager to learn how, please comment down below.
+Só como exercício final eu importei o pacote Mock, para controlar como algumas peças internas da implementação do Workflow retornam. Chama-se Mock mas é mais como stub de funções específicas de um módulo. Posso declarar um bloco onde sobrescrevo o <tt>File.rename/1</tt> para que ele realmente não tente mover um arquivo que não existe no ambiente de testes. Isso deixa o teste mais frágil porque depende de uma implementação específica, o que nunca é bom, mas quando estamos lidando com I/O externo, pode ser a única opção para isolar. Foi assim que o teste do Workflow foi feito. De novo, se houver um jeito melhor estou ansioso para aprender, por favor comente aí embaixo.
 
-This is how a unit test with Mock looks like, stubbing both the HTTPotion and File modules:
+Assim fica um teste unitário com Mock, fazendo stub dos módulos HTTPotion e File:
 
 ```ruby
 test "workflow tries to download the images" do
@@ -212,24 +215,24 @@ test "workflow tries to download the images" do
 end
 ```
 
-### Conclusion
+### Conclusão
 
-This has been a very fun experience, albeit very short, and good enough to iron out what I have learned so far. Code like this make me smile:
+Tem sido uma experiência muito divertida, ainda que muito curta, e boa o suficiente para colocar em prática o que aprendi até agora. Código como este me faz sorrir:
 
 ```ruby
 [destination_file|_rest] = String.split(file, "/") |> Enum.reverse
 ```
 
-The way I can pattern match to extract the head of a list is a different way of thinking. Then there is the other most important way of thinking: everything is a transformation chain, an application is a way to start from some input argument (such as a URL) and go step by step to "transform" it into a collection of PDF files, for example.
+A forma como posso fazer pattern match para extrair o head de uma lista é uma maneira diferente de pensar. Daí tem a outra forma de pensar mais importante: tudo é uma cadeia de transformação, uma aplicação é uma forma de partir de algum argumento de entrada (como uma URL) e ir passo a passo "transformando" ele em uma coleção de arquivos PDF, por exemplo.
 
-Instead of thinking on how to architect classes and objects, we start thinking about what is the initial arguments and what is the result I want to achieve, and go from there, one small transformation function at a time.
+Em vez de pensar em como arquitetar classes e objetos, começamos a pensar em quais são os argumentos iniciais e qual o resultado que quero atingir, e vamos daí, uma pequena função de transformação por vez.
 
-The Workflow module is an example. I actually started writing everything in a single large function in the CLI module. Then I refactored into smaller function and chained them together to create the Workflow. Finally, I just moved all the functions into the Workflow module and called that from the CLI module.
+O módulo Workflow é um exemplo. Eu na verdade comecei escrevendo tudo numa única função grande no módulo CLI. Aí refatorei em funções menores e encadeei elas para criar o Workflow. Por fim, só movi todas as funções para o módulo Workflow e chamei a partir do módulo CLI.
 
-Because of no global state, thinking in smaller and isolated small functions, both refactoring and test-driven development are much smoother than in OOP languages. This way of thinking is admitedly slow to get a grip, but then it starts to feel very natural and it quickly steers your way of programming into leaner code.
+Por causa da ausência de estado global, pensar em funções pequenas e isoladas, tanto refatorar quanto fazer test-driven development ficam muito mais suaves do que em linguagens OOP. Esse jeito de pensar é, admito, lento de pegar o jeito, mas depois começa a parecer muito natural e rapidamente direciona a sua forma de programar para um código mais enxuto.
 
-And the dynamic aspects of both Erlang and Elixir make me feel right at home, just like having an "improved Ruby".
+E os aspectos dinâmicos tanto de Erlang quanto de Elixir me fazem sentir em casa, como se fosse um "Ruby melhorado".
 
-The code of the downloader is all on [Github, please fork it](https://github.com/akitaonrails/ex_manga_downloadr/blob/master/lib/ex_manga_downloadr/mangareader/index_page.ex).
+O código do downloader está todo no [Github, podem fazer fork](https://github.com/akitaonrails/ex_manga_downloadr/blob/master/lib/ex_manga_downloadr/mangareader/index_page.ex).
 
-I am eager to exercise more. I hope this motivates you to learn Elixir. And if you're already an advanced programmer in Elixir or Erlang, don't forget to comment below and even send me a Pull Request to improve this small exercise. I am still a beginner and there is a lot of room to learn more. All contributions are greatly appreciated.
+Estou ansioso para exercitar mais. Espero que isso motive você a aprender Elixir. E se você já é um programador avançado em Elixir ou Erlang, não esqueça de comentar aí embaixo e até mandar um Pull Request para melhorar este pequeno exercício. Ainda sou iniciante e tem muito espaço para aprender mais. Todas as contribuições são muito apreciadas.

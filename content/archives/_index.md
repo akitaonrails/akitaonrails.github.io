@@ -501,27 +501,27 @@ title: AkitaOnRails Blog - Arquivo
 
 ## 2015 - December
 
-- [Fixing DHH's Rails 5 Chat Demo](/2015/12/28/fixing-dhh-s-rails-5-chat-demo/)
-- [Ex Pusher Lite - Part 2 - First Working Core!](/2015/12/14/ex-pusher-lite-part-2-first-working-core/)
-- [Ex Pusher Lite - Part 1: Phoenix Channels and Rails apps](/2015/12/09/ex-pusher-lite-part-1-phoenix-channels-and-rails-apps/)
-- [Erlang's Ping Pong (tut15) in Clojure and Elixir](/2015/12/09/erlang-s-ping-pong-tut15-in-clojure-and-elixir/)
-- [Ex Manga Downloadr - Part 5: Making it more robust!](/2015/12/06/ex-manga-downloadr-part-5-making-it-more-robust/)
-- [Ex Manga Downloadr - Part 4: Learning through Refactoring](/2015/12/03/ex-manga-downloadr-part-4-learning-through-refactoring/)
-- [The Obligatory "Flame War" Phoenix vs Node.js](/2015/12/03/the-obligatory-flame-war-phoenix-vs-node-js/)
-- [Ex Manga Downloadr - Part 3: Mangafox Support!](/2015/12/02/ex-manga-downloadr-part-3-mangafox-support/)
-- [The Obligatory "Why Elixir?" Personal Take](/2015/12/01/the-obligatory-why-elixir-personal-take/)
+- [Consertando o Demo de Chat do DHH no Rails 5](/2015/12/28/consertando-o-demo-de-chat-do-dhh-no-rails-5/)
+- [Ex Pusher Lite - Parte 2 - O Primeiro Core Funcional!](/2015/12/14/ex-pusher-lite-parte-2-o-primeiro-core-funcional/)
+- [Ex Pusher Lite - Parte 1: Phoenix Channels e aplicações Rails](/2015/12/09/ex-pusher-lite-parte-1-phoenix-channels-e-aplicacoes-rails/)
+- [Ping Pong de Erlang (tut15) em Clojure e Elixir](/2015/12/09/ping-pong-de-erlang-tut15-em-clojure-e-elixir/)
+- [Ex Manga Downloadr - Parte 5: Deixando mais robusto!](/2015/12/06/ex-manga-downloadr-parte-5-deixando-mais-robusto/)
+- [Ex Manga Downloadr - Parte 4: Aprendendo Através do Refactoring](/2015/12/03/ex-manga-downloadr-parte-4-aprendendo-atraves-do-refactoring/)
+- [A Obrigatória "Flame War": Phoenix vs Node.js](/2015/12/03/a-obrigatoria-flame-war-phoenix-vs-nodejs/)
+- [Ex Manga Downloadr - Parte 3: Suporte ao Mangafox!](/2015/12/02/ex-manga-downloadr-parte-3-suporte-ao-mangafox/)
+- [O Obrigatório "Por Que Elixir?" - Visão Pessoal](/2015/12/01/o-obrigatorio-por-que-elixir-visao-pessoal/)
 
 ## 2015 - November
 
-- ["Yocto Services"! And My First Month with Elixir!](/2015/11/25/yocto-services-and-my-first-month-with-elixir/)
-- [Elixir 101 - Introducing the Syntax](/2015/11/25/elixir-101-introducing-the-syntax/)
-- [ExMessenger Exercise: Understanding Nodes in Elixir](/2015/11/25/exmessenger-exercise-understanding-nodes-in-elixir/)
-- [Observing Processes in Elixir - The Little Elixir & OTP Guidebook](/2015/11/22/observing-processes-in-elixir-the-little-elixir-otp-guidebook/)
-- [Phoenix "15 Minute Blog" comparison to Ruby on Rails](/2015/11/20/phoenix-15-minute-blog-comparison-to-ruby-on-rails/)
-- [Ex Manga Downloadr - Part 2: Poolboy to the rescue!](/2015/11/19/ex-manga-downloadr-part-2-poolboy-to-the-rescue/)
-- [Ex Manga Downloader, an exercise with Elixir](/2015/11/18/ex-manga-downloader-an-exercise-with-elixir/)
+- ["Yocto Services"! E o Meu Primeiro Mês com Elixir!](/2015/11/25/yocto-services-e-meu-primeiro-mes-com-elixir/)
+- [Elixir 101 - Apresentando a Sintaxe](/2015/11/25/elixir-101-apresentando-a-sintaxe/)
+- [Exercício ExMessenger: Entendendo Nodes em Elixir](/2015/11/25/exercicio-exmessenger-entendendo-nodes-em-elixir/)
+- [Observando Processos em Elixir - The Little Elixir & OTP Guidebook](/2015/11/22/observando-processos-em-elixir-the-little-elixir-otp-guidebook/)
+- [Phoenix "15 Minute Blog": comparação com Ruby on Rails](/2015/11/20/phoenix-15-minute-blog-comparacao-com-ruby-on-rails/)
+- [Ex Manga Downloadr - Parte 2: Poolboy ao resgate!](/2015/11/19/ex-manga-downloadr-parte-2-poolboy-ao-resgate/)
+- [Ex Manga Downloadr, um exercício com Elixir](/2015/11/18/ex-manga-downloadr-um-exercicio-com-elixir/)
 - [Situação Brasil: No Macs for the Rest of Us](/2015/11/10/situacao-brasil-no-macs-for-the-rest-of-us/)
-- [My first week learning Elixir](/2015/11/03/my-first-week-learning-elixir/)
+- [Minha primeira semana aprendendo Elixir](/2015/11/03/minha-primeira-semana-aprendendo-elixir/)
 
 ## 2015 - October
 

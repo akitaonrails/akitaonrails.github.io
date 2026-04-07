@@ -1,26 +1,30 @@
 ---
-title: Fixing DHH's Rails 5 Chat Demo
+title: Consertando o Demo de Chat do DHH no Rails 5
 date: '2015-12-28T16:11:00-02:00'
-slug: fixing-dhh-s-rails-5-chat-demo
+slug: consertando-o-demo-de-chat-do-dhh-no-rails-5
+translationKey: fixing-dhh-rails-5-chat
+aliases:
+- /2015/12/28/fixing-dhh-s-rails-5-chat-demo/
 tags:
 - pusher
 - rails5
 - actioncable
 - websocket
+- traduzido
 draft: false
 ---
 
-So, Rails 5.0.0 Beta 1 has [just been released](http://weblog.rubyonrails.org/2015/12/18/Rails-5-0-beta1/) and the main new feature is [Action Cable](https://github.com/rails/rails/tree/master/actioncable).
+Pois é, o Rails 5.0.0 Beta 1 [acabou de ser lançado](http://weblog.rubyonrails.org/2015/12/18/Rails-5-0-beta1/) e a grande novidade é o [Action Cable](https://github.com/rails/rails/tree/master/actioncable).
 
-It's basically a complete solution on top of vanilla Rails so you can implement WebSocket based applications (the usual real time chats and notifications) with full access to your Rails assets (models, view templates, etc). For small to medium apps, this is a terrific solution that you might want to use instead of having to go to Node.js.
+Basicamente é uma solução completa em cima do Rails padrão para você implementar aplicações baseadas em WebSocket (os famosos chats e notificações em tempo real) com acesso total ao que o Rails te dá (models, view templates, etc). Para apps pequenos e médios, é uma solução excelente que você pode usar no lugar de ter que partir para Node.js.
 
-In summary you control Cable Channels that can receive messages sent through a WebSocket client wiring. The new Channel generator takes care of the boilerplate and you just have to fill in the blanks for what kinds of messages you want to send from the client, what you want to broadcast from the server, and to what channels that your clients are subscribed to.
+Resumindo, você controla Cable Channels que recebem mensagens enviadas por uma conexão WebSocket no cliente. O novo gerador de Channel cuida do boilerplate e você só precisa preencher os espaços em branco para definir que tipo de mensagem quer enviar do cliente, o que quer transmitir do servidor, e para quais channels seus clientes estão inscritos.
 
-For a more in-depth introduction, DHH himself published a bare bone [Action Cable screencast](https://www.youtube.com/watch?v=n0WUjGkDFS0) that you should watch just to get a feeling of what the fuzz is all about. If you watched it already and have experience in programming, you may have spotted the problem I mention in the title, so just jump to ["The Problem"](#the-problem) section below for a TL;DR.
+Para uma introdução mais detalhada, o próprio DHH publicou um [screencast bem básico de Action Cable](https://www.youtube.com/watch?v=n0WUjGkDFS0) que você deveria assistir só para ter uma ideia do porquê de toda essa empolgação. Se você já assistiu e tem alguma experiência em programação, talvez já tenha percebido o problema que menciono no título, então pula direto para a seção ["O Problema"](#the-problem) abaixo para o TL;DR.
 
-In the end you will end up with a code base like the one I reproduced in my Github repository up until the [tag "end_of_dhh"](https://github.com/akitaonrails/rails5-actioncable-demo/tree/end_of_dhh). You will have a (very) bare bone single-room real time chat app for you to play with the main components.
+No final você acaba com uma base de código como a que reproduzi no meu repositório do Github até a [tag "end_of_dhh"](https://github.com/akitaonrails/rails5-actioncable-demo/tree/end_of_dhh). Você vai ter um chat em tempo real (bem) básico de uma única sala para brincar com os principais componentes.
 
-Let's just list the main components here. First, you will have the ActionCable server mounted in the "routes.rb" file:
+Vamos só listar os principais componentes aqui. Primeiro, você terá o servidor ActionCable montado no arquivo "routes.rb":
 
 ```ruby
 # config/routes.rb
@@ -32,7 +36,7 @@ Rails.application.routes.draw do
 end
 ```
 
-This is the main server component, the channel:
+Este é o componente principal do servidor, o channel:
 
 ```ruby
 # app/channels/room_channel.rb
@@ -51,7 +55,7 @@ class RoomChannel < ApplicationCable::Channel
 end
 ```
 
-Then you have the boilerplace Javascript:
+Depois você tem o Javascript boilerplate:
 
 ```ruby
 # app/assets/javascripts/cable.coffee
@@ -63,7 +67,7 @@ Then you have the boilerplace Javascript:
 App.cable = ActionCable.createConsumer()
 ```
 
-And the main client-side Websocket hooks:
+E os principais hooks de Websocket no lado do cliente:
 
 ```ruby
 # app/assets/javascripts/channels/room.coffee
@@ -87,7 +91,7 @@ $(document).on "keypress", "[data-behavior~=room_speaker]", (event) ->
     event.preventDefault()
 ```
 
-The view template is a bare bone HTML just to hook a simple form and div to list the messages:
+O view template é um HTML básico só para amarrar um formulário simples e uma div para listar as mensagens:
 
 ```html
 <!-- app/views/rooms/show.html.erb -->
@@ -105,9 +109,9 @@ The view template is a bare bone HTML just to hook a simple form and div to list
 
 <a name="the-problem"></a>
 
-### The Problem
+### O Problema
 
-In the "RoomChannel", you have the "<tt>speak</tt>" method that saves a message to the database. This is already a red flag for a WebSocket action that is supposed to have very short lived, light processing. Saving to the database is to be considered heavyweight, specially under load. If this is processed inside EventMachine's reactor loop, it will block the loop and avoid other concurrent processing to take place until the database releases the lock.
+No "RoomChannel", você tem o método "<tt>speak</tt>" que salva uma mensagem no banco de dados. Isso já é um sinal vermelho para uma ação de WebSocket, que deveria ter processamento curto e leve. Salvar no banco é considerado pesado, principalmente sob carga. Se isso for processado dentro do reactor loop do EventMachine, vai travar o loop e impedir que outro processamento concorrente aconteça até o banco soltar o lock.
 
 ```ruby
 # app/channels/room_channel.rb
@@ -119,9 +123,9 @@ class RoomChannel < ApplicationCable::Channel
 end
 ```
 
-I would say that anything that goes inside the channel should be asynchronous!
+Eu diria que tudo que entra dentro do channel deveria ser assíncrono!
 
-To add harm to injury, this is what you have in the "Message" model itself:
+Para piorar a situação, é isso que você tem dentro do próprio model "Message":
 
 ```ruby
 class Message < ApplicationRecord
@@ -129,7 +133,7 @@ class Message < ApplicationRecord
 end
 ```
 
-A model callback (avoid those as the plague!!) to broadcast the received messsage to the subscribed Websocket clients as an ActiveJob that looks like this:
+Um callback de model (fuja desses como da peste!!) para transmitir a mensagem recebida para os clientes Websocket inscritos como um ActiveJob, que se parece com isso:
 
 ```ruby
 class MessageBroadcastJob < ApplicationJob
@@ -147,17 +151,17 @@ class MessageBroadcastJob < ApplicationJob
 end
 ```
 
-It renders the HTML snippet to send back for the Websocket clients to append to their browser DOMs.
+Ele renderiza o trecho de HTML para mandar de volta para os clientes Websocket adicionarem ao DOM dos seus navegadores.
 
-DHH even goes on to say _"I'd like to show it because this is how most apps will end up."_
+O DHH ainda chega a dizer _"Eu queria mostrar isso porque é assim que a maioria dos apps vai acabar ficando."_
 
-Indeed, the **problem** is that most people will just follow this pattern and it's a big trap. So, what's the solution instead?
+E de fato, o **problema** é justamente que a maioria das pessoas vai seguir esse padrão e cair nessa armadilha. Então, qual a solução então?
 
-### The Proper Solution
+### A Solução Correta
 
-For just the purposes of a simple screencast, let's make a quick fix.
+Só para os fins de um screencast simples, vamos fazer um conserto rápido.
 
-First of all, if at all possible you want your channel code to block as little as possible. Waiting for a blocking operation in the database (writing) is definitely not one of them. The Job is underused, it should be called straight from the channel "speak" method, like this:
+Antes de tudo, se for possível, você quer que o código do seu channel bloqueie o mínimo possível. Esperar uma operação bloqueante no banco (gravação) definitivamente não é uma dessas operações. O Job está sendo subutilizado, ele deveria ser chamado direto do método "speak" do channel, assim:
 
 ```ruby
 # app/channels/room_channel.rb
@@ -170,7 +174,7 @@ First of all, if at all possible you want your channel code to block as little a
  end
 ```
 
-Then, we move the model writing to the Job itself:
+Depois, movemos a gravação no model para dentro do próprio Job:
 
 ```ruby
 # app/jobs/message_broadcast_job.rb
@@ -186,7 +190,7 @@ Then, we move the model writing to the Job itself:
    ...
 ```
 
-And finally, we remove that horrible callback from the model and make it bare-bone again:
+E finalmente, removemos aquele callback horrível do model e deixamos ele limpo de novo:
 
 ```ruby
 # app/models/message.rb
@@ -194,12 +198,12 @@ class Message < ApplicationRecord
 end
 ```
 
-This returns quickly, defer processing to a background job and should sustain more concurrency out-of-the-box. The previous, DHH solution, have a built-in bottleneck in the speak method and will choke as soon as the database becomes the bottleneck.
+Isso retorna rápido, joga o processamento para um job em background e deveria suportar mais concorrência de saída. A solução anterior, do DHH, tem um gargalo embutido no método speak e vai engasgar assim que o banco virar o gargalo.
 
-It's by no means a perfect solution yet, but it's less terrible for a very quick demo and the code ends up being simpler as well. You can check out this code in [my Github repo commit](https://github.com/akitaonrails/rails5-actioncable-demo/commit/0aaaaecc46ed14e98086bac5ce087df08d557456).
+Está longe de ser uma solução perfeita ainda, mas é menos terrível para um demo bem rápido e o código fica até mais simples. Você pode conferir esse código no [meu commit no Github](https://github.com/akitaonrails/rails5-actioncable-demo/commit/0aaaaecc46ed14e98086bac5ce087df08d557456).
 
-I may be wrong in the conclusion that the channel will block or if this is indeed harmful for the concurrency. I didn't measure both solutions, it's just a gut feeling from older wounds. If you have more insight into the implementation of Action Cable, leave a comment down below.
+Posso estar errado na conclusão de que o channel vai bloquear ou se isso é mesmo prejudicial para a concorrência. Não medi as duas soluções, é só uma intuição vinda de feridas antigas. Se você tem mais conhecimento sobre a implementação do Action Cable, deixa um comentário aí embaixo.
 
-By the way, be careful before considering migrating your Rails 4.2 app to Rails 5 just yet. Because of the hard coded dependencies on Faye, Eventmachine, Rails 5 right now rules out Unicorn (even Thin seems to be having problem booting up). It also rules out JRuby and MRI on Windows as well because of Eventmachine.
+Aliás, tenha cuidado antes de pensar em migrar seu app de Rails 4.2 para Rails 5 já. Por causa das dependências hard coded em Faye e Eventmachine, o Rails 5 hoje exclui o Unicorn (até o Thin parece estar tendo problema para subir). Também exclui JRuby e MRI no Windows por causa do Eventmachine.
 
-If you want the capabilities of Action Cable without having to migrate, you can use solutions such as ["Pusher.com"](http://developers.planningcenteronline.com/2014/09/23/live-updating-rails-with-react.js-and-pusher.html), or if you want your own in-house solution, follow my evolution on the subject with my [mini-Pusher clone](http://www.akitaonrails.com/pusher) written in Elixir.
+Se você quer as capacidades do Action Cable sem precisar migrar, pode usar soluções como o ["Pusher.com"](http://developers.planningcenteronline.com/2014/09/23/live-updating-rails-with-react.js-and-pusher.html), ou se quer sua própria solução in-house, acompanhe minha evolução no assunto com o meu [mini clone do Pusher](http://www.akitaonrails.com/pusher) escrito em Elixir.

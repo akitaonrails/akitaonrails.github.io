@@ -1,91 +1,94 @@
 ---
-title: The Obligatory "Why Elixir?" Personal Take
+title: 'O Obrigatório "Por Que Elixir?" - Visão Pessoal'
 date: '2015-12-01T13:26:00-02:00'
-slug: the-obligatory-why-elixir-personal-take
+slug: o-obrigatorio-por-que-elixir-visao-pessoal
+translationKey: obligatory-why-elixir
+aliases:
+- /2015/12/01/the-obligatory-why-elixir-personal-take/
 tags:
 - learning
 - beginner
 - elixir
-- english
+- traduzido
 draft: false
 ---
 
-So, I've been studying and exercisizing quite a bit with Elixir. José Valim recently announced the new features of the upcoming [Elixir 1.2](https://twitter.com/josevalim/status/670595716776116224). The language design is already elegant, lean, and it keeps gradually polishing itself.
+Pois é, venho estudando e exercitando bastante com Elixir. O José Valim anunciou recentemente as novidades do futuro [Elixir 1.2](https://twitter.com/josevalim/status/670595716776116224). O design da linguagem já é elegante, enxuto, e continua se polindo aos poucos.
 
-First and foremost, I am a Web Applications Developer. I deal with Ruby on Rails applications and infrastructure. So, I am not a Desktop developer, a Mobile developer, Games developer or a Tools developer. This is very important to get out of the way right from the start.
+Antes de mais nada, sou Desenvolvedor de Aplicações Web. Lido com aplicações Ruby on Rails e infraestrutura. Portanto, não sou desenvolvedor Desktop, Mobile, de Games ou de Ferramentas. Isso é muito importante deixar claro logo de cara.
 
-And by the way, as I will focus my programming efforts more and more into Elixir, and it does not mean I am "switching" from Ruby to Elixir. I don't need to make exclusive choices, and in my mind, at least for a period of time, Rails joining forces with Phoenix will be a very difficult to beat combo for my web development strategies.
+E, a propósito, conforme vou focando meus esforços de programação cada vez mais em Elixir, isso não significa que estou "trocando" de Ruby para Elixir. Não preciso fazer escolhas exclusivas, e na minha cabeça, ao menos por um período de tempo, Rails unindo forças com Phoenix vai ser um combo muito difícil de bater para minhas estratégias de desenvolvimento web.
 
-I know, Phoenix is built like Rails so why not just switch altogether: because most content-based sites don't need the concurrency aspects of Phoenix, and I said "for a period of time" because Rails still has a humongous ecosystem with more mature gems that make development easier and faster. This can change in the future, but for now the combo makes sense as I can build a normal website in Rails as I would normally do (with Devise, ActiveAdmin, Spree or whatever) and add Phoenix for stuff like WebSockets (real-time notifications, real-time chatting, background jobs that can be run more efficient than Sidekiq, etc).
+Eu sei, Phoenix é construído como o Rails, então por que não trocar de vez: porque a maior parte dos sites baseados em conteúdo não precisa dos aspectos de concorrência do Phoenix, e eu falei "por um período de tempo" porque o Rails ainda tem um ecossistema gigantesco com gems mais maduras que tornam o desenvolvimento mais fácil e mais rápido. Isso pode mudar no futuro, mas por enquanto o combo faz sentido porque eu posso construir um site normal em Rails como faria normalmente (com Devise, ActiveAdmin, Spree ou o que for) e adicionar Phoenix para coisas como WebSockets (notificações em tempo real, chat em tempo real, background jobs que podem rodar de forma mais eficiente do que o Sidekiq, etc).
 
-This article will summarize my personal take on 2 fronts: 
+Esse artigo vai resumir minha visão pessoal em 2 frentes:
 
-* [Other Developer Roles than just the Web](#developer-roles)
-* ["Functional" Concepts that Really Matter](#functional-concepts)
-    - [Immutability and Opaque Message Passing are VERY important](#immutability)
-    - [Coroutines and Schedulers](#coroutines)
-    - [Static vs Dynamic Typing is still controversial](#static-dynamic)
-    - [Fault Tolerance: Don't fear your code](#fault-tolerance)
-* [Summary](#summary)
+* [Outras Funções de Desenvolvedor além da Web](#developer-roles)
+* [Conceitos "Funcionais" que Realmente Importam](#functional-concepts)
+    - [Imutabilidade e Passagem de Mensagens Opacas são MUITO importantes](#immutability)
+    - [Coroutines e Schedulers](#coroutines)
+    - [Tipagem Estática vs Dinâmica ainda é controverso](#static-dynamic)
+    - [Tolerância a Falhas: Não tenha medo do seu código](#fault-tolerance)
+* [Resumo](#summary)
 
-As anything that I want to argue about, this is **lengthy**, but it wouldn't be nice to just state something without further elaboration. In this quest for understanding, I may have confused a bit or two, so let me know in the comments section below if there are things to fix or to explain in more detail.
+Como qualquer coisa sobre a qual eu queira argumentar, isso é **longo**, mas não seria legal apenas afirmar algo sem elaborar. Nessa busca por entendimento, eu posso ter confundido uma coisa ou outra, então me avisem na seção de comentários abaixo se houver coisas para corrigir ou explicar com mais detalhes.
 
-Let's get started.
+Vamos começar.
 
 
 <a name="developer-roles"></a>
 
-### Other Developer Roles than just the Web
+### Outras Funções de Desenvolvedor além da Web
 
-In a Desktop environment, you will definitely want to make a combination of [Node-Webkit](https://github.com/nwjs/nw.js/) with native libraries. If you're in specific corporate environments, you won't have any more choices than plain WFC based .NET development of Java Swing. Your options have been set for quite some time, and even Visual Basic.NET still has its place. Specific toolchains will be dictated by Microsoft and Oracle/Java Community Process
+Num ambiente Desktop, você definitivamente vai querer fazer uma combinação de [Node-Webkit](https://github.com/nwjs/nw.js/) com bibliotecas nativas. Se você está em ambientes corporativos específicos, não vai ter outras escolhas além do desenvolvimento .NET baseado em WFC ou Java Swing. Suas opções estão definidas há um bom tempo, e até o Visual Basic.NET ainda tem seu lugar. Toolchains específicas vão ser ditadas pela Microsoft e Oracle/Java Community Process.
 
-In Linux environments you will still use wrappers around GTK+, Qt ot similar toolkits. There is not a lot of ways around this.
+Em ambientes Linux você ainda vai usar wrappers em torno de GTK+, Qt ou toolkits similares. Não há muitas saídas aqui.
 
-If you're a Mobile-first developer, you **do** need to learn your way into Swift and Objective-C (to some extent) for iOS and the specific Java flavor for Android's Dalvik/ART. But I will argue that you have a lot to gain in native development if you use [**RubyMotion**](http://www.rubymotion.com/). Or, you can simply keep following Facebook's [React Native](https://facebook.github.io/react-native/) endeavor. There's a lot of fragmentation in this environment, you can do as little as possible with Web Mobile and Phonegap/Cordova, and build compelling apps with tools such as Ionic Framework. The only consensus is that if you really want to build the advanced next gen stuff, you want to dive deep into the native frameworks each platform has to offer.
+Se você é um desenvolvedor Mobile-first, você **precisa** aprender o caminho do Swift e Objective-C (até certo ponto) para iOS e o sabor específico de Java para o Dalvik/ART do Android. Mas eu vou argumentar que você tem muito a ganhar no desenvolvimento nativo se usar [**RubyMotion**](http://www.rubymotion.com/). Ou, você pode simplesmente acompanhar o esforço do Facebook com [React Native](https://facebook.github.io/react-native/). Há muita fragmentação nesse ambiente, você pode fazer o mínimo possível com Web Mobile e Phonegap/Cordova, e construir apps interessantes com ferramentas como o Ionic Framework. O único consenso é que se você realmente quer construir o que há de mais avançado da próxima geração, vai querer mergulhar fundo nos frameworks nativos que cada plataforma oferece.
 
-If you're a Game Developer you want to be as close to the metal as possible. It's definitelly feasible to write perfectly playable mobile games using any number of Javascript libraries together with HTML 5's technologies such as the Canvas and WebGL. But for the next gen blockbuster you will either use mature engines such as Unity or Unreal or even build your own if you're really invested in this field. This will require you to actually know your way into C/C++ programming. Really depends on how deep you want to go down the rabbit hole.
+Se você é Desenvolvedor de Games você quer estar o mais próximo possível do metal. É perfeitamente viável escrever jogos mobile jogáveis usando qualquer número de bibliotecas Javascript junto com tecnologias do HTML 5 como Canvas e WebGL. Mas para o blockbuster da próxima geração você vai usar engines maduras como Unity ou Unreal ou até construir a sua própria se estiver realmente investido nesse campo. Isso vai te forçar a saber programar em C/C++. Realmente depende de quão fundo você quer ir na toca do coelho.
 
-If you're a Tools Developer you will have the benefits from both old and new generation of languages. If you're closer to the Linux Kernel you will really need C/C++ in your baggage. But for the new generation of light containers (LXC), Docker, you can benefit from **Go**, an application development environment suited to make life easier than having to handle C/C++ idiosyncrasies. **Rust** is another great new choice to make it easier to - among other things - to write memory-leak free small libraries and tools (I am mentioning that in particular because it's important for languages like Ruby or Python to be able to add performance by binding to C-based native libraries and Rust make this task easier).
+Se você é Desenvolvedor de Ferramentas vai ter os benefícios tanto da geração antiga quanto da nova de linguagens. Se você está mais perto do Kernel do Linux vai precisar mesmo de C/C++ na bagagem. Mas para a nova geração de containers leves (LXC), Docker, você pode se beneficiar de **Go**, um ambiente de desenvolvimento de aplicações talhado para tornar a vida mais fácil do que ter que lidar com as idiossincrasias de C/C++. **Rust** é outra excelente escolha nova para tornar mais fácil - entre outras coisas - escrever bibliotecas e ferramentas pequenas livres de vazamentos de memória (estou mencionando isso em particular porque é importante para linguagens como Ruby ou Python conseguirem adicionar performance fazendo binding com bibliotecas nativas em C, e o Rust facilita essa tarefa).
 
-Different languages have different teams and different long term goals, which is why it's not apples and oranges to compare languages. Go, for instance, is heavier than Rust, but both are good for command-line tools, specialized daemons, and in the case of Go, networking-heavy and concurrency-heavy endeavors.
+Linguagens diferentes têm times diferentes e objetivos de longo prazo diferentes, por isso comparar linguagens não é como comparar maçãs e laranjas. Go, por exemplo, é mais pesado que Rust, mas ambos são bons para ferramentas de linha de comando, daemons especializados, e no caso de Go, empreitadas pesadas em rede e concorrência.
 
-In my eyes, Go is a "better" Java or C++. And don't interpret this wrong: Java is still a very fine language and platform. There is hardly anything that come close to the maturity of the JVM and the extensive ecosystem behind it. I would not think for a second in trying to rewrite complex systems written in Java such as the Lucene library or Elasticsearch/SOLR solutions, for example.
+Aos meus olhos, Go é um Java ou C++ "melhor". E não interpretem mal: Java ainda é uma linguagem e plataforma muito boa. Há pouquíssimas coisas que chegam perto da maturidade da JVM e do extenso ecossistema por trás dela. Eu não pensaria nem por um segundo em tentar reescrever sistemas complexos escritos em Java como a biblioteca Lucene ou as soluções Elasticsearch/SOLR, por exemplo.
 
-But the power of Standard Java is difficult to unleash without some warming up for the HotSpot to pick up steam. It makes it not a great solution for command-line tools. But now you have a good middle ground with Go. You also don't have a good time embedding Java into other platforms, and then you would need to go back to C, but now you have another good middle ground with Rust.
+Mas o poder do Java padrão é difícil de ser desencadeado sem um aquecimento para o HotSpot pegar embalo. Isso faz dele uma solução ruim para ferramentas de linha de comando. Mas agora você tem um bom meio-termo com Go. Você também não tem uma boa experiência embarcando Java em outras plataformas, e aí você precisaria voltar para C, mas agora você tem outro bom meio-termo com Rust.
 
-If you want to unleash different programming models, specially those more suited to concurrent abstractions such as the [Hoare's CSP](https://en.wikipedia.org/wiki/Actor_model_and_process_calculi_history) like Actor model, you can try **Scala** with [Akka](http://akka.io/) (which is now the standard actor library) and **Clojure**'s [Pulsar/Quasar](http://blog.paralleluniverse.co/2013/05/02/quasar-pulsar/). Akka and Quasar are the ones that come "close" (but can never match) Erlang's built-in OTP platform.
+Se você quer desencadear modelos diferentes de programação, especialmente os mais adequados a abstrações concorrentes como o modelo de Atores tipo [CSP do Hoare](https://en.wikipedia.org/wiki/Actor_model_and_process_calculi_history), você pode tentar **Scala** com [Akka](http://akka.io/) (que agora é a biblioteca padrão de atores) e o [Pulsar/Quasar](http://blog.paralleluniverse.co/2013/05/02/quasar-pulsar/) do **Clojure**. Akka e Quasar são os que chegam "perto" (mas nunca conseguem igualar) a plataforma OTP nativa do Erlang.
 
-For the Web at large, you can do just fine with the current (ever changing, unstable) Node.js ecosystem, Python (Django, Plone), Ruby (Ruby on Rails, Sinatra), PHP (Zend, Laravel), even Perl has it's place. Combined with mature services in different platforms (Elasticsearch in Java, PostgreSQL in C, RabbitMQ in Erlang), any big and complex Web Application can be written with any number of best-of-breed tools and combinations that best suit your needs.
+Para a Web no geral, você se vira muito bem com o ecossistema atual (em constante mudança, instável) Node.js, Python (Django, Plone), Ruby (Ruby on Rails, Sinatra), PHP (Zend, Laravel), até Perl tem seu lugar. Combinado com serviços maduros em diferentes plataformas (Elasticsearch em Java, PostgreSQL em C, RabbitMQ em Erlang), qualquer aplicação web grande e complexa pode ser escrita com qualquer combinação das melhores ferramentas que melhor atendam às suas necessidades.
 
-This is an unfair, short overview, of course. I didn't cover every aspect of computer science or industry. There are several other active and useful languages such as Lua, Haskell, Fortran, Ada, Julia, R,  The message being: you don't need to choose a single language, it will really depend on what you're going to deliver. And a true craftsman will master many tools to the the job done in the best way possible.
+Essa é uma visão injusta e curta, claro. Eu não cobri todos os aspectos da ciência da computação ou da indústria. Existem várias outras linguagens ativas e úteis como Lua, Haskell, Fortran, Ada, Julia, R. A mensagem é: você não precisa escolher uma única linguagem, vai realmente depender do que você vai entregar. E um verdadeiro artesão vai dominar muitas ferramentas para fazer o trabalho da melhor maneira possível.
 
 <a name="functional-concepts"></a>
 
-### "Functional" Concepts that Really Matter
+### Conceitos "Funcionais" que Realmente Importam
 
-[I wrote about my opinions](http://www.akitaonrails.com/2015/10/28/personal-thoughts-on-the-current-functional-programming-bandwagon) on the current surge in the so called Functional style of programming. I recommend you read it before continuing.
+[Eu escrevi sobre minhas opiniões](http://www.akitaonrails.com/2015/10/28/personal-thoughts-on-the-current-functional-programming-bandwagon) sobre a atual onda do chamado estilo Funcional de programação. Recomendo que leia antes de continuar.
 
-There are some aspects that are adamant if you really want to go beyond the academic research and into the real world of productivity.
+Há alguns aspectos que são intransponíveis se você realmente quer ir além da pesquisa acadêmica e entrar no mundo real da produtividade.
 
 <a name="immutability"></a>
 
-#### Immutability and Opaque Message Passing are VERY important
+#### Imutabilidade e Passagem de Mensagens Opacas são MUITO importantes
 
-In order for computation to be fast, we are used to share data between routines. We move pointers around and change data in place.
+Para que computação seja rápida, estamos acostumados a compartilhar dados entre rotinas. A gente movimenta ponteiros e altera dados no lugar.
 
-It's not particularly fast to make things immutable and not shared. The more you make data mutable and the more you share, the harder it is to make your code run concurrently.
+Não é particularmente rápido tornar as coisas imutáveis e não compartilhadas. Quanto mais você torna os dados mutáveis e quanto mais compartilha, mais difícil fica fazer seu código rodar concorrentemente.
 
-It is an important **trade-off**: if you see mutable data and shared state, you're optimizing for performance.
+É um **trade-off** importante: se você vê dados mutáveis e estado compartilhado, está otimizando para performance.
 
-One can't say that a language is essentially good or bad for having mutable or immutable data. But for what it's worth, my personal opinion is that it's harder to convince users to follow conventions like _"share a little as possible, mutate as little as possible."_ Most will not even know about it if it's not built-in and enforced. I prefer having immutability enforced by default.
+Não dá para dizer que uma linguagem é essencialmente boa ou ruim por ter dados mutáveis ou imutáveis. Mas, valha o que valer, minha opinião pessoal é que é mais difícil convencer usuários a seguir convenções como _"compartilhe o mínimo possível, mute o mínimo possível"_. A maioria nem vai saber sobre isso se não for built-in e forçado. Eu prefiro ter imutabilidade forçada por padrão.
 
-In Erlang, data is **immutable**. Similar to Java it [pass values by reference](http://erlang.org/pipermail/erlang-questions/2013-March/072760.html) in routine calls (it is not copying values between calls, as many misunderstand it). 
+Em Erlang, dados são **imutáveis**. Similar a Java, ele [passa valores por referência](http://erlang.org/pipermail/erlang-questions/2013-March/072760.html) em chamadas de rotinas (não está copiando valores entre chamadas, como muitos confundem).
 
-And in the case of recursion it optimizes through [Tail Cail Optimization](http://learnyousomeerlang.com/recursion) to make it faster. By the way, this is one optimization that the Java VM just can't quite do it yet. Clojure needs special 'recur' and 'trampoline' calls, for example. Scala can rewrite the tail recursion to a loop in compile time, with the '@tailrec' annotation. [Erlang has its own traps](http://ferd.ca/erlang-s-tail-recursion-is-not-a-silver-bullet.html) as well, so not so black and white at the moment.
+E no caso da recursão ele otimiza através do [Tail Call Optimization](http://learnyousomeerlang.com/recursion) para deixar mais rápido. A propósito, essa é uma otimização que a JVM ainda não consegue fazer direito. Clojure precisa de chamadas especiais 'recur' e 'trampoline', por exemplo. Scala consegue reescrever a recursão de cauda para um loop em tempo de compilação, com a anotação '@tailrec'. [Erlang tem suas próprias armadilhas](http://ferd.ca/erlang-s-tail-recursion-is-not-a-silver-bullet.html) também, então não é tão preto no branco no momento.
 
-In Erlang, as I explained before, you run functions within completely isolated processes. If the function recurs or blocks, it stays isolated. Processes can only communicate by sending (immutable and opaque) messages to each other. Messages get queued in a "run queue" or "mailbox" and the function can choose to receive and respond to those messages. That's it.
+Em Erlang, como expliquei antes, você roda funções dentro de processos completamente isolados. Se a função recorre ou bloqueia, ela permanece isolada. Processos só conseguem se comunicar enviando mensagens (imutáveis e opacas) uns aos outros. As mensagens são enfileiradas em uma "run queue" ou "mailbox" e a função pode escolher receber e responder a essas mensagens. É isso.
 
-So, you can pass values by reference between routines, or you can share data in a third party process as the mediator of data. One such infrastructure built-in to Erlang is the **ETS**, the [Erlang Term Storage](http://elixir-lang.org/getting-started/mix-otp/ets.html), which is part of the so called OTP platform. Think of ETS as a very simple and very fast built-in key value storage like Memcached. You use it for the same use cases as a cache and it's as simple as just doing this:
+Então, você pode passar valores por referência entre rotinas, ou pode compartilhar dados em um processo terceiro como mediador dos dados. Uma dessas infraestruturas embutidas no Erlang é o **ETS**, o [Erlang Term Storage](http://elixir-lang.org/getting-started/mix-otp/ets.html), que é parte da chamada plataforma OTP. Pense no ETS como um armazenamento chave-valor embutido muito simples e muito rápido como o Memcached. Você usa ele para os mesmos casos de uso de um cache e é tão simples quanto fazer assim:
 
 ```ruby
 table = :ets.new(:my_fancy_cache, [:set, :protected])
@@ -93,17 +96,17 @@ table = :ets.new(:my_fancy_cache, [:set, :protected])
 :ets.lookup(table, "some_key")
 ```
 
-Many might argue that Erlang's **rigid process isolation** and communication strictly restricted to opaque message passing are overkill and that you can pass by using something akin to Clojure's [MVCC Software Transaction Memory](http://clojure.org/refs), or STM. You do have STM in Erlang, with the other built-in OTP tool, built on top of the ETS, called **Mnesia**. It offer the equivalent of ACID database transactions in-memory. It's not a new concept, but STM is not available as a language feature and it's still uncertain if it really is a good choice to have it.
+Muitos podem argumentar que o **isolamento rígido de processos** do Erlang e a comunicação restrita estritamente à passagem de mensagens opacas é exagero e que dá para passar usando algo parecido com a [MVCC Software Transaction Memory](http://clojure.org/refs) do Clojure, ou STM. Você até tem STM no Erlang, com a outra ferramenta nativa do OTP, construída em cima do ETS, chamada **Mnesia**. Ela oferece o equivalente a transações ACID de banco de dados em memória. Não é um conceito novo, mas STM não está disponível como funcionalidade de linguagem e ainda é incerto se realmente é uma boa escolha tê-lo.
 
-An inspired result, I believe, from Clojure's choice of having transactional memory with history queue and snapshot isolation is shown in its crown jewel, [Datomic](http://www.datomic.com/). The idea is not revolutionary by any stretch of the imagination as you have many other [prior art](http://www.xaprb.com/blog/2013/12/28/immutability-mvcc-and-garbage-collection/) such as RethinkDB, CouchDB, and extensions for existing databases. Good for a service, still I don't think it's a good thing to share state, even if you have a transactor around that state. Erlang's immutability with rigid process isolation still has no match.
+Um resultado inspirado, eu acredito, da escolha do Clojure de ter memória transacional com fila de histórico e isolamento de snapshots é mostrado em sua joia da coroa, [Datomic](http://www.datomic.com/). A ideia não é revolucionária de jeito nenhum, já que você tem muitos outros [trabalhos prévios](http://www.xaprb.com/blog/2013/12/28/immutability-mvcc-and-garbage-collection/) como RethinkDB, CouchDB, e extensões para bancos de dados existentes. Bom para um serviço, ainda assim eu não acho que seja uma boa coisa compartilhar estado, mesmo que você tenha um transactor em volta desse estado. A imutabilidade do Erlang com isolamento rígido de processos ainda não tem páreo.
 
 <a name="coroutines"></a>
 
-#### Coroutines and Schedulers
+#### Coroutines e Schedulers
 
-You already know sub-routines, you do it all the time by partitioning large portions of code into smaller functions or methods that call each other. You may already know about a specialized kind of Coroutines in the form of [Fibers](http://bit.ly/1lVuLFJ) (as first implemented in Windows circa 1997). 
+Você já conhece sub-rotinas, faz isso o tempo todo particionando grandes porções de código em funções ou métodos menores que se chamam. Você talvez já conheça um tipo especializado de Coroutines na forma de [Fibers](http://bit.ly/1lVuLFJ) (como implementado pela primeira vez no Windows por volta de 1997).
 
-Fibers offer a way for your current function execution to "yield" back to its caller, preserving its current state, and then the caller can "resume" the suspended Fiber to continue its execution from where it last yielded. This allows for non-preempted, cooperative multitasking. We have Fibers in Python, Ruby, and other languages and it allows the creation of constructions like Generators. Even Javascript can have some form of Fibers if you add libraries like [node-fibers](https://github.com/laverdet/node-fibers):
+Fibers oferecem um jeito da execução da sua função atual "ceder" (yield) de volta ao seu chamador, preservando seu estado atual, e então o chamador pode "retomar" (resume) a Fiber suspensa para continuar sua execução de onde parou da última vez. Isso permite multitasking cooperativo, não preemptivo. Temos Fibers em Python, Ruby e outras linguagens e isso permite a criação de construções como Generators. Até Javascript pode ter algum tipo de Fibers se você adicionar bibliotecas como [node-fibers](https://github.com/laverdet/node-fibers):
 
 ```javascript
 var Fiber = require('fibers');
@@ -117,9 +120,9 @@ function sleep(ms) {
 }
 ```
 
-The call to 'yield' suspends the current execution until the function in the 'setTimeout' is called. Then it calls 'run', which resumes the previously yielded function. This is still "rudimentary" compared to coroutines: because the function itself has to yield control out to the reactor event loop, in the case of a Node.js application. If you don't, you will block the event loop in a single threaded Node.js process, and therefore you block everything until the function finishes, defeating the whole purpose. And this is one of those "conventions" that "good" programmers should follow, but most will forget.
+A chamada para 'yield' suspende a execução atual até que a função no 'setTimeout' seja chamada. Aí ela chama 'run', que retoma a função previamente cedida. Isso ainda é "rudimentar" comparado a coroutines: porque a própria função tem que ceder controle para o reactor event loop, no caso de uma aplicação Node.js. Se você não fizer isso, vai bloquear o event loop num processo Node.js single threaded, e portanto bloqueia tudo até a função terminar, derrotando todo o propósito. E essa é uma daquelas "convenções" que "bons" programadores deveriam seguir, mas a maioria vai esquecer.
 
-Fibers are useful to make it less ugly to program in a rudimentary Reactor environment, where you depend on callbacks calling callbacks and you end up with the anti-pattern of [callback pyramid of doom](https://bjouhier.wordpress.com/2012/03/11/fibers-and-threads-in-node-js-what-for/). With Fibers you can program as you would in a synchronous imperative language transforming this ugly Javascript code:
+Fibers são úteis para tornar menos feio programar num ambiente Reactor rudimentar, onde você depende de callbacks chamando callbacks e acaba com o anti-padrão da [pirâmide da perdição de callbacks](https://bjouhier.wordpress.com/2012/03/11/fibers-and-threads-in-node-js-what-for/). Com Fibers você pode programar como faria numa linguagem imperativa síncrona, transformando esse código Javascript feio:
 
 ```javascript
 function archiveOrders(date, cb) {
@@ -147,7 +150,7 @@ function archiveOrders(date, cb) {
 }
 ```
 
-Into this more manageable thing:
+Nessa coisa mais gerenciável:
 
 ```javascript
 var archiveOrders = (function(date) {
@@ -163,109 +166,109 @@ var archiveOrders = (function(date) {
 }).future();
 ```
 
-The entire [Promises, Futures](https://en.wikipedia.org/wiki/Futures_and_promises) debacle depends in part on proper Fibers. Javascript, being a very poor design, does not come with anything built-in and hence the proliferation of Fibers, Deferreds, Promises, Futures implementations that can never reach neither consensus nor people actually using them at large.
+A confusão toda das [Promises, Futures](https://en.wikipedia.org/wiki/Futures_and_promises) depende em parte de Fibers adequadas. Javascript, sendo um design muito pobre, não vem com nada built-in e daí a proliferação de implementações de Fibers, Deferreds, Promises, Futures que nunca conseguem alcançar nem consenso nem pessoas realmente usando elas em larga escala.
 
-So, Fibers are ok. Coroutines are better because you have multiple points of suspending a function and more. And even better, in Erlang one doesn't need to even think about rudimentary Reactor loops (yes, reactors are a rudimentary construction for concurrency when you have no other good choice): it has **transparent asynchronous calls**. Everything in Erlang is asynchronous and non-blocking but you don't deal with callback pyramids because there is something better underneath: the **Scheduler**.
+Então, Fibers são ok. Coroutines são melhores porque você tem múltiplos pontos de suspender uma função e mais. E ainda melhor, em Erlang você nem precisa pensar em loops Reactor rudimentares (sim, reactors são uma construção rudimentar para concorrência quando você não tem outra boa escolha): tem **chamadas assíncronas transparentes**. Tudo em Erlang é assíncrono e não-bloqueante, mas você não lida com pirâmides de callback porque tem algo melhor por baixo: o **Scheduler**.
 
-By the way, I find it very frustrating that [Go's "goroutines" **are not** proper "coroutines"](http://stackoverflow.com/questions/18058164/is-golang-goroutine-a-coroutine).
+A propósito, eu acho muito frustrante que [as "goroutines" do Go **não são** "coroutines" propriamente ditas](http://stackoverflow.com/questions/18058164/is-golang-goroutine-a-coroutine).
 
-For each Erlang process with SMP (symmetric multiprocessing) support there will be **one** real thread per CPU core available in your system, and for each thread there will be one single Scheduler to manage the internal green threads (processes) and run-queue.
+Para cada processo Erlang com suporte SMP (multiprocessamento simétrico) vai existir **uma** thread real por núcleo de CPU disponível no seu sistema, e para cada thread vai existir um único Scheduler para gerenciar as green threads internas (processos) e a run-queue.
 
-As a programmer, I don't have to "remember" to yield control back to a passive event loop. The scheduler will take care of balancing computation time to each concurrent process. If a process is taking too long the Scheduler can choose to suspend it and give time to other routines. Erlang defines a ["reduction"](http://erlang.org/pipermail/erlang-questions/2001-April/003132.html) and that there are different priority levels of functions. If a function takes more than 2,000 reductions, the Scheduler can choose to suspend it. If you have 8 CPU cores, but the computation on the processes are not heavy, the VM can choose to just use 1 or 2 Schedulers and leave the other 6 idle so the hardware can turn the cores off to save energy (!!). Yep, Erlang is even Eco Friendly!
+Como programador, eu não preciso "lembrar" de ceder controle de volta a um event loop passivo. O scheduler vai cuidar de balancear o tempo de computação para cada processo concorrente. Se um processo estiver demorando demais, o Scheduler pode escolher suspendê-lo e dar tempo para outras rotinas. Erlang define uma ["redução"](http://erlang.org/pipermail/erlang-questions/2001-April/003132.html) e que existem diferentes níveis de prioridade de funções. Se uma função leva mais que 2.000 reduções, o Scheduler pode escolher suspendê-la. Se você tem 8 núcleos de CPU, mas a computação nos processos não é pesada, a VM pode escolher usar apenas 1 ou 2 Schedulers e deixar os outros 6 ociosos para que o hardware possa desligar os núcleos para economizar energia (!!). Isso mesmo, Erlang até é Eco Friendly!
 
-And we need to repeat this again: because each process is **rigidly isolated**, with immutable data and no shared state, it's easier to suspend a running process. In the case of the JVM this is usually implemented by raising checked exceptions and have everybody implement some Suspendable interface. It can be done using this [3rd party Java continuation library](http://www.matthiasmann.de/content/view/24/26/) where you yield by raising an Exception (!) Nasty stuff.
+E precisamos repetir isso de novo: porque cada processo é **rigidamente isolado**, com dados imutáveis e sem estado compartilhado, fica mais fácil suspender um processo em execução. No caso da JVM isso geralmente é implementado levantando exceções checadas e fazendo todo mundo implementar alguma interface Suspendable. Pode ser feito usando essa [biblioteca de continuation Java de terceiros](http://www.matthiasmann.de/content/view/24/26/) onde você cede levantando uma Exception (!) Coisa nojenta.
 
-Rust is [still implementing](https://github.com/rustcc/coroutine-rs) something for coroutines as well, but still nothing as mature. But again, coroutines is just part of the story, you would need a heavier system with userland schedulers for it to make sense. Go is better candidate to incorporate such a system in its runtime, but it also come short on being able to implement all this. There is [Suture](http://www.jerf.org/iri/post/2930), an attempt to have some of OTP in Go, but it can't be done. Even Akka, the first mainstream OTP clone for Scala, can't come close because of the JVM shortcomings. [Clojure with Pulsar/Quasar](http://blog.paralleluniverse.co/2013/05/02/quasar-pulsar/), come **closer**, but not there yet.
+Rust [ainda está implementando](https://github.com/rustcc/coroutine-rs) algo para coroutines também, mas ainda nada tão maduro. Mas de novo, coroutines é apenas parte da história, você precisaria de um sistema mais pesado com schedulers em userland para fazer sentido. Go é um candidato melhor para incorporar tal sistema em seu runtime, mas também fica devendo em conseguir implementar tudo isso. Há o [Suture](http://www.jerf.org/iri/post/2930), uma tentativa de ter parte do OTP em Go, mas não dá para ser feito. Até Akka, o primeiro clone OTP mainstream para Scala, não consegue chegar perto por causa das limitações da JVM. [Clojure com Pulsar/Quasar](http://blog.paralleluniverse.co/2013/05/02/quasar-pulsar/), chega **mais perto**, mas ainda não chegou lá.
 
-Now, the Erlang Scheduler is not only capable of suspending and resuming processes but it also takes care of message passing between them. So each Scheduler has its own run-queue to queue and dispatch messages. Again, because data is immutable, you only need some form of locking when you want another Scheduler (in another real thread) to take over a few processes in order to balance processing between cores. Erlang support SMP [since OTP R12B](http://erlang.org/pipermail/erlang-questions/2008-September/038231.html) (we are at R18 right now, and still evolving).
+Agora, o Scheduler do Erlang não só é capaz de suspender e retomar processos, mas também cuida da passagem de mensagens entre eles. Então cada Scheduler tem sua própria run-queue para enfileirar e despachar mensagens. De novo, porque os dados são imutáveis, você só precisa de alguma forma de locking quando você quer outro Scheduler (em outra thread real) para tomar conta de alguns processos a fim de balancear o processamento entre os núcleos. Erlang suporta SMP [desde o OTP R12B](http://erlang.org/pipermail/erlang-questions/2008-September/038231.html) (estamos no R18 agora, e ainda evoluindo).
 
-Most languages still rely on the OS real threads preemptive model to do multitasking. And this is heavy and slow because of all the context switching involved and all the locking logic most programmers will do wrong (the best practice for concurrency is: do not use threads, chances are you will screw up). Again, we make the right assumptions first: programmers can't do proper multithreading, so let a Scheduler do it, when necessary, and avoiding slow OS context switching as much as possible. Suspendable green threads combined with a userland Scheduler coordinating cooperative switching is a way faster and safer choice.
+A maioria das linguagens ainda depende do modelo preemptivo de threads reais do SO para fazer multitasking. E isso é pesado e lento por causa de toda a troca de contexto envolvida e toda a lógica de locking que a maioria dos programadores vai fazer errado (a melhor prática para concorrência é: não use threads, é provável que você vá errar). De novo, fazemos as suposições corretas primeiro: programadores não conseguem fazer multithreading direito, então deixe um Scheduler fazer isso, quando necessário, e evitando trocas de contexto lentas do SO o máximo possível. Green threads suspendíveis combinadas com um Scheduler em userland coordenando troca cooperativa é uma escolha muito mais rápida e segura.
 
-If you want to learn more about coroutines this [Lua Paper](http://www.inf.puc-rio.br/~roberto/docs/corosblp.pdf) on the subject explains in more details what I just elaborated:
+Se você quer aprender mais sobre coroutines, esse [paper de Lua](http://www.inf.puc-rio.br/~roberto/docs/corosblp.pdf) sobre o assunto explica em mais detalhes o que eu acabei de elaborar:
 
 <blockquote>
-Implementing a multitasking application with Lua coroutines is straightforward.Concurrent tasks can be modeled by Lua coroutines. When a new task is created, it is inserted in a list of live tasks. A simple task dispatcher can be implemented by a loop that continuously iterates on this list, resuming the live tasks and removing the ones that have finished their work (this condition can be signalled by a predefined value returned by the coroutine main function to the dispatcher). Occasional fairness problems, which are easy to identify, can be solved by adding suspension requests in time-consuming tasks.
+Implementar uma aplicação multitasking com coroutines de Lua é direto. Tarefas concorrentes podem ser modeladas por coroutines de Lua. Quando uma nova tarefa é criada, ela é inserida em uma lista de tarefas vivas. Um simples dispatcher de tarefas pode ser implementado por um loop que continuamente itera sobre essa lista, retomando as tarefas vivas e removendo as que terminaram seu trabalho (essa condição pode ser sinalizada por um valor predefinido retornado pela função main da coroutine ao dispatcher). Eventuais problemas de fairness, que são fáceis de identificar, podem ser resolvidos adicionando pedidos de suspensão em tarefas demoradas.
 </blockquote>
 
 <a name="static-dynamic"></a>
 
-####  Static vs Dynamic Typing is still controversial
+####  Tipagem Estática vs Dinâmica ainda é controverso
 
-We saw a heavier movement from bureacratic static typed systems (mainly Java prior to 6, C# prior to 4, C++) to purely dynamic languages such as Perl in the late 80's, Python in the late 90's, Ruby in mid 2000's. We tried to go from _"making the compiler happy"_ to _"making programmers happy"_, which makes more sense if you ask me.
+Vimos um movimento mais pesado de sistemas de tipagem estática burocráticos (principalmente Java antes do 6, C# antes do 4, C++) para linguagens puramente dinâmicas como Perl no fim dos anos 80, Python no fim dos 90, Ruby em meados de 2000. Tentamos sair do _"deixar o compilador feliz"_ para o _"deixar os programadores felizes"_, o que faz mais sentido se você me perguntar.
 
-Scala, Groovy, Haskell, Swift brought a very practical middle ground with [Hindley-Milner](https://en.wikipedia.org/wiki/Hindley%E2%80%93Milner_type_system) derived **Type Inference** systems, in a way that we can code kinda like in dynamic languages but with the compiler doing more work to infer types for us before generating the final executable bytecode.
+Scala, Groovy, Haskell, Swift trouxeram um meio-termo bem prático com sistemas de **Inferência de Tipos** derivados de [Hindley-Milner](https://en.wikipedia.org/wiki/Hindley%E2%80%93Milner_type_system), de um jeito que podemos codar meio que como em linguagens dinâmicas mas com o compilador fazendo mais trabalho para inferir tipos para nós antes de gerar o bytecode executável final.
 
-But there is a **big** catch: it's very difficult to **hot swap** code inside the runtime if you have static signatures. I'm not saying that it is impossible, but a lot more difficult. You do can reload code in Java (one example being [Spring Loaded](https://github.com/spring-projects/spring-loaded)) or Haskell (there is a hotswap plugin and other alternatives). You don't do granular reloads in a statically typed language because if you want to change the signature of a method, you have to change the graph that depends on that signature. It's doable, albeit, cumbersome.
+Mas tem um **grande** porém: é muito difícil fazer **hot swap** de código dentro do runtime se você tem assinaturas estáticas. Eu não estou dizendo que é impossível, mas é muito mais difícil. Você até consegue recarregar código em Java (um exemplo é o [Spring Loaded](https://github.com/spring-projects/spring-loaded)) ou Haskell (existe um plugin de hotswap e outras alternativas). Você não faz reloads granulares numa linguagem tipada estaticamente porque se quiser mudar a assinatura de um método, precisa mudar o grafo que depende dessa assinatura. É factível, embora chato.
 
-In Erlang, because there is no such hard dependencies, and again because of inherent advantages of it only having immutable data with no shared state, and dependencies limited to opaque message passing, you can granularly reload one single module and most important of all: you can implement simple callbacks to **transform the old state of a process into a new state structure**, because just reloading the code is half the story if you will have hundreds of old processes restarting into the new code but having to deal with previous state. In an Erlang GenServer, you just implement this single callback:
+Em Erlang, porque não há essas dependências duras, e de novo por causa das vantagens inerentes de só ter dados imutáveis sem estado compartilhado, e dependências limitadas a passagem de mensagens opacas, você consegue recarregar granularmente um único módulo e mais importante de tudo: você consegue implementar callbacks simples para **transformar o estado antigo de um processo em uma nova estrutura de estado**, porque só recarregar o código é metade da história se você vai ter centenas de processos antigos reiniciando no novo código mas tendo que lidar com estado anterior. Num GenServer Erlang, você só implementa esse único callback:
 
 ```ruby
 code_change(OldVersion, CurrentState, _Extra) -> {ok, NewState}.
 ```
 
-So, while Type Inference is a nice middle ground, the flexibility of Dynamic Typing goes beyond being easy for programmers to use. As with Python, Ruby, Javascript, Perl and other dynamic typed languages, you will want to cover your code with proper test suites - which should not be optional in strong typed languages anyway. There is no doubt a compiler's static analysis help a lot, but it's my personal take that dynamic typing allows me more flexibility.
+Então, embora Inferência de Tipos seja um meio-termo legal, a flexibilidade da Tipagem Dinâmica vai além de ser fácil para programadores usarem. Como com Python, Ruby, Javascript, Perl e outras linguagens dinamicamente tipadas, você vai querer cobrir seu código com suítes de teste adequadas - o que não deveria ser opcional em linguagens fortemente tipadas de qualquer jeito. Não há dúvidas que a análise estática de um compilador ajuda muito, mas é minha visão pessoal que tipagem dinâmica me permite mais flexibilidade.
 
 <a name="fault-tolerance"></a>
 
-### Fault Tolerance: Don't fear your code
+### Tolerância a Falhas: Não tenha medo do seu código
 
-With Dynamic Typing we will end up again in the endless discussion of _"programmers never do it right, we need a compiler to enforce static rules"_. And you are almost right: programmers screw up, but a compiler will not save you day anyway, and worst: it might give you a false sense of security. There is no worse security hole than false sense of security. A test suite is way better to assert proper implementation, and it's still no hard guarantee.
+Com Tipagem Dinâmica vamos acabar de novo na discussão sem fim de _"programadores nunca fazem certo, precisamos de um compilador para forçar regras estáticas"_. E você está quase certo: programadores erram, mas um compilador não vai te salvar de qualquer jeito, e pior: ele pode te dar uma falsa sensação de segurança. Não há buraco de segurança pior que falsa sensação de segurança. Uma suíte de testes é muito melhor para asseverar implementação adequada, e ainda assim não é garantia firme.
 
-I said that this is controversial, as a more rigid static typing system is more productive than having to unit tests every input and output types of every function. But if you thought that, you're at least wrong in that this is not what unit tests are for: it's for testing unit behaviors, in spite of what the types are. Testing types is what we call "chicken typing" and it's another form of defensive programming. You must test for behavior, not for stuff that a compiler would check. And again, having the static typing hinges my flexibility because now I have to constantly fight the typing, add more boilerplate, and ultimately if the behavior is wrong, the code is wrong, despite the type checks.
+Eu disse que isso é controverso, já que um sistema de tipagem estática mais rígido é mais produtivo do que ter que testar unitariamente todos os tipos de input e output de toda função. Mas se você pensou isso, está pelo menos errado em que isso não é para o que servem os testes unitários: é para testar comportamentos de unidade, independente dos tipos. Testar tipos é o que chamamos de "chicken typing" e é outra forma de programação defensiva. Você deve testar comportamento, não coisas que um compilador checaria. E de novo, ter a tipagem estática trava minha flexibilidade porque agora eu tenho que lutar constantemente contra a tipagem, adicionar mais boilerplate, e em última análise se o comportamento está errado, o código está errado, apesar das checagens de tipo.
 
-For a system to be **"tolerant to buggy code or uncaught failures"** is the opposite of littering your code with guarding statements like "try/catch" or "if err == x" or having some form static level checking with Result monads (that most people will just unwrap anyway). Guards can only go so far. And yes, this is anedoctal as there is not statistics that "everybody will unwrap" and most good programmers won't, but if experience tells me one thing is that bad programmers will fall for "try/catch" the whole thing when they don't know what to do anyway.
+Para um sistema ser **"tolerante a código bugado ou falhas não capturadas"** é o oposto de poluir seu código com declarações de proteção como "try/catch" ou "if err == x" ou ter alguma forma de checagem em nível estático com Result monads (que a maioria das pessoas vai só desempacotar de qualquer jeito). Guards só vão até certo ponto. E sim, isso é anedótico já que não há estatísticas de que "todo mundo vai desempacotar" e a maioria dos bons programadores não vai, mas se a experiência me diz uma coisa é que programadores ruins vão cair no "try/catch" tudo quando eles não sabem o que fazer de qualquer maneira.
 
-You need a system that allows any buggy code to fail and not crash the environment around it, which would bring it into an inconsistent, corrupt, state.
+Você precisa de um sistema que permita que qualquer código bugado falhe e não derrube o ambiente em volta dele, o que o levaria a um estado inconsistente, corrompido.
 
-The problem with faulty code is that it leaves the state in a position where it has nowhere else to go. And if this state is shared, you leave every other bit of code in a position where they can't decide where to go next. You will need to shut everything down and restart from the last known good state. Almost all "continuous delivery" workflows are implemented around restarting everything.
+O problema com código com defeito é que ele deixa o estado numa posição onde não tem para onde ir. E se esse estado for compartilhado, você deixa todo outro pedaço de código numa posição onde eles não conseguem decidir para onde ir em seguida. Você vai precisar desligar tudo e reiniciar a partir do último estado bom conhecido. Quase todos os fluxos de "continuous delivery" são implementados em torno de reiniciar tudo.
 
-Instead of having to bring everything down in case you forget to try/catch something, you can rely on Erlang's underpinnings of not sharing state, having immutable data, and - most importantly - having the rigidly isolated lightweight process system to make the process that is holding the faulty code to **shut down and warn it's Supervisor**. This is the general idea behind the so called OTP in Erlang.
+Em vez de ter que derrubar tudo caso você esqueça de fazer try/catch em alguma coisa, você pode confiar nos alicerces do Erlang de não compartilhar estado, ter dados imutáveis, e - o mais importante - ter o sistema de processos leves rigidamente isolados para fazer com que o processo que está segurando o código com defeito **desligue e avise seu Supervisor**. Essa é a ideia geral por trás do chamado OTP em Erlang.
 
-The idea of a Supervisor is to have a small process that monitors other processes. The Supervisor has as little code as possible in order to rarely (or never) fail (the best kind of code is "no code"). Once a faulty process crashes because of uncaught exception or other underterministic reasons, it  sends a notification message to the Supervisor run-queue mailbox, and then die cleanly. The Supervisor then chooses what to do based on it's underlying restart strategy.
+A ideia de um Supervisor é ter um processo pequeno que monitora outros processos. O Supervisor tem o mínimo possível de código para raramente (ou nunca) falhar (o melhor tipo de código é "nenhum código"). Uma vez que um processo com defeito quebra por causa de exceção não capturada ou outras razões indeterminísticas, ele envia uma mensagem de notificação para o mailbox da run-queue do Supervisor, e então morre limpo. O Supervisor então escolhe o que fazer baseado em sua estratégia de restart subjacente.
 
-Let's say you have a list of URLs you're scrapping. But you didn't anticipate dirty structures in your parsing logic. The process doing the scrapping crashes and dies. The Supervisor is notified and choose to restart the process, giving the new process the previous state - the URL list - and now that the faulty URL is not there anymore, the new process can happily continue the job with the next URL in the list.
+Digamos que você tenha uma lista de URLs que está fazendo scraping. Mas você não antecipou estruturas sujas na sua lógica de parsing. O processo fazendo o scraping quebra e morre. O Supervisor é notificado e escolhe reiniciar o processo, dando ao novo processo o estado anterior - a lista de URLs - e agora que a URL com defeito não está mais ali, o novo processo pode continuar feliz o trabalho com a próxima URL da lista.
 
-This is a simple example of the dynamic between the Erlang VM, the Supervisor and its children workers. You can go further and have several Applications, which in turn start up new Supervisors, which in turn start up children processes. And you have a Supervisor Tree that can trap exits and restart granular bits of your runtime code without bringing the rest of the system into an inconsistent state.
+Esse é um exemplo simples da dinâmica entre a Erlang VM, o Supervisor e seus workers filhos. Você pode ir mais longe e ter várias Applications, que por sua vez sobem novos Supervisors, que por sua vez sobem processos filhos. E você tem uma Árvore de Supervisores que pode capturar exits e reiniciar bits granulares do seu código de runtime sem trazer o resto do sistema para um estado inconsistente.
 
-Such is the beauty of the rigid process isolation concept.
+Tal é a beleza do conceito de isolamento rígido de processos.
 
-Every I/O in the system is wrapped in [Ports](http://www.erlang.org/doc/tutorial/c_port.html), which obeys Async/callback logic transparently without you having to create pyramids of callbacks. The process consuming such ports just gets suspended by the Scheduler until the Async call returns and it can resume work. No callback pyramid hell. No need for rudimentary Fiber implementations to allow for rudimentary Promises/Futures systems. Just coroutines inside processes that can be suspended and resumed by the Scheduler. Less opportunities for programmer errors to stack up.
+Toda I/O no sistema é embrulhada em [Ports](http://www.erlang.org/doc/tutorial/c_port.html), que obedecem à lógica Async/callback transparentemente sem você ter que criar pirâmides de callbacks. O processo consumindo tais ports apenas é suspenso pelo Scheduler até que a chamada Async retorne e ele possa retomar o trabalho. Sem inferno de pirâmide de callback. Sem necessidade de implementações rudimentares de Fibers para permitir sistemas rudimentares de Promises/Futures. Apenas coroutines dentro de processos que podem ser suspensas e retomadas pelo Scheduler. Menos oportunidades para erros de programador se acumularem.
 
-So, a programmer will forget to code every possible branch of execution and because he knows that, the **very worst thing** that can happen is not if he forgets an uncaught exception, but if he decides to program **deffensivelly** and add general conditions to trap **any** error and never raise it. You've seen it before, when you find code that is trapped inside generic try/catch blocks, trying to avoid every error possible. But what really happens is that the system may not crash but your logic and your processing is faulty at its core. And you won't find about it, because it doesn't crash, therefore no one is ever notified! You will not end up with less bugs, you will end up with a mountain of logic bugs that are never noticed because they are all swallowed!!
+Então, um programador vai esquecer de codar todo possível ramo de execução e porque ele sabe disso, a **pior coisa** que pode acontecer não é se ele esquecer uma exceção não capturada, mas se ele decidir programar **defensivamente** e adicionar condições gerais para capturar **qualquer** erro e nunca levantá-lo. Você já viu antes, quando encontra código que está preso dentro de blocos try/catch genéricos, tentando evitar todo erro possível. Mas o que realmente acontece é que o sistema pode não quebrar, mas sua lógica e seu processamento estão com defeito no seu cerne. E você não vai descobrir, porque não quebra, portanto ninguém é nunca notificado! Você não vai acabar com menos bugs, vai acabar com uma montanha de bugs lógicos que nunca são percebidos porque são todos engolidos!!
 
-This is the core of Fault Tolerance: do not fear Erlang, fear the programmers! Instead, we should do what Joe Armstrong presented in his seminal paper ["Making reliable distributed systems in the presence of software errors"](http://www.erlang.org/download/armstrong_thesis_2003.pdf). This is both a detailed guide into Erlang and OTP but also his arguments on how to write fault tolerant systems by making the programmer write code as clearly as he originally intended, without the need to be defensive, with the confidence that if he misses something, OTP will be there to catch it and not let the system die, but instead to give a chance to fix it and reload it without disrupting other good parts of the system.
+Esse é o cerne da Tolerância a Falhas: não tenha medo do Erlang, tenha medo dos programadores! Em vez disso, devemos fazer o que Joe Armstrong apresentou em seu paper seminal ["Making reliable distributed systems in the presence of software errors"](http://www.erlang.org/download/armstrong_thesis_2003.pdf). Esse é tanto um guia detalhado para Erlang e OTP quanto seus argumentos sobre como escrever sistemas tolerantes a falhas fazendo o programador escrever código tão claramente quanto ele originalmente pretendia, sem a necessidade de ser defensivo, com a confiança de que se ele esquecer alguma coisa, OTP vai estar lá para capturar e não deixar o sistema morrer, mas dar uma chance de consertar e recarregar sem disturbar outras partes boas do sistema.
 
-This is the ultimate goal of good programming: not being deffensive, not putting try/catch everywhere because you're afraid.
+Esse é o objetivo último da boa programação: não ser defensivo, não colocar try/catch em todo lugar porque você está com medo.
 
 <a name="summary"></a>
 
-### Summary
+### Resumo
 
-This short summary is the reason why Erlang sounds very compelling for my Web Development needs, or for any scalable complex system, at least for me.
+Esse curto resumo é a razão pela qual Erlang soa muito atraente para minhas necessidades de Desenvolvimento Web, ou para qualquer sistema complexo escalável, ao menos para mim.
 
-Every other language had to make trade-offs. Every new language on top of the JVM has to deal with limitations inherent to how the JVM was originally architected. Rust still can build better abstractions, but it's scope is for smaller tools and libraries, not distributed complex systems. Yes, eventually it can do whatever C/C++ can do, and Mozilla is actually basing the core of its next generation browser core on Rust. This will bootstrap better higher level libraries and frameworks, the same way Apple using Objective-C created the entire set of Core frameworks that make implementing complex applications much easier.
+Toda outra linguagem teve que fazer trade-offs. Toda nova linguagem em cima da JVM tem que lidar com limitações inerentes a como a JVM foi originalmente arquitetada. Rust ainda pode construir abstrações melhores, mas o escopo dele é para ferramentas e bibliotecas menores, não sistemas complexos distribuídos. Sim, eventualmente ele pode fazer o que C/C++ pode, e a Mozilla está realmente baseando o núcleo da próxima geração de seu browser core em Rust. Isso vai dar bootstrap a bibliotecas e frameworks de mais alto nível melhores, da mesma forma que a Apple usando Objective-C criou todo o conjunto de Core frameworks que tornam implementar aplicações complexas muito mais fácil.
 
-Go made a choice for keeping familiarity with its C++ inheritance. Of course, it has tons of useful features, in particular the built-in goroutines that make concurrent coding much easier than in previous languages.
+Go fez uma escolha por manter a familiaridade com sua herança C++. Claro, ele tem toneladas de funcionalidades úteis, em particular as goroutines built-in que tornam o código concorrente muito mais fácil que em linguagens anteriores.
 
-Haskell is too strict for most programmers (yes, Monads, still difficult for the average programmer to fully grasp) and despite contraty opinions, to me it still feel like it appeal more to researchers than everyday developers. Other dynamic languages such as Ruby, Python, may still go the way of Erlang with Ruby adding some immutability ([in 2.3](https://bugs.ruby-lang.org/issues/11473) with immutable String by default), but it's still a long way to go.
+Haskell é muito estrito para a maioria dos programadores (sim, Monads, ainda difícil para o programador médio compreender plenamente) e apesar de opiniões contrárias, para mim ele ainda parece apelar mais a pesquisadores do que a desenvolvedores do dia-a-dia. Outras linguagens dinâmicas como Ruby, Python, podem eventualmente ir pelo caminho de Erlang com Ruby adicionando alguma imutabilidade ([na 2.3](https://bugs.ruby-lang.org/issues/11473) com String imutável por padrão), mas ainda há um longo caminho a percorrer.
 
-Erlang has everything, as Joe Armstrong envisioned a fault tolerant system to be. It started as an exercise implemented in Prolog in 1986. It migrated from the previous JAM compiler to the current BEAM VM in 1998. It added SMP around 2008. It has been gradually evolving, polishing its rough edges, being really battle tested in really mission critical systems for decades. It's ready for us, right now.
+Erlang tem tudo, como Joe Armstrong vislumbrou que um sistema tolerante a falhas deveria ser. Começou como um exercício implementado em Prolog em 1986. Migrou do antigo compilador JAM para a atual VM BEAM em 1998. Adicionou SMP por volta de 2008. Tem evoluído gradualmente, polindo suas arestas, sendo realmente testado em batalha em sistemas realmente de missão crítica por décadas. Está pronto para nós, agora mesmo.
 
-It has Fault Tolerance guaranteed by the principles of immutable data, no shared state, pure opaque message passing, and suspendable processes, all managed by Schedulers. This guarantees that faulty routines can crash one single process but not the entire system and definitely not bringing state of other process to inconsistent, corrupted, states.
+Tem Tolerância a Falhas garantida pelos princípios de dados imutáveis, sem estado compartilhado, passagem pura de mensagens opacas, e processos suspendíveis, todos gerenciados por Schedulers. Isso garante que rotinas com defeito podem quebrar um único processo mas não o sistema inteiro e definitivamente não trazer o estado de outros processos a estados inconsistentes, corrompidos.
 
-Then you can instrument your virtual machine and check that Supervisors are restarting children more than you want and decide to fix the buggy code. And once you do, you can choose **not** to shut down and restart the entire system to reload the code fixes, you can do it granularly, on the fly, with running processes that will pick up the fixes once the Supervisor restarts it. The granular hot swap of code is guaranteed because there is no hierarchy of types to care about.
+Aí você pode instrumentar sua máquina virtual e checar que Supervisors estão reiniciando filhos mais do que você quer e decidir consertar o código com bug. E uma vez que conserta, você pode escolher **não** desligar e reiniciar o sistema inteiro para recarregar as correções de código, você pode fazer isso granularmente, on the fly, com processos rodando que vão pegar as correções uma vez que o Supervisor os reinicie. O hot swap granular de código é garantido porque não há hierarquia de tipos com a qual se preocupar.
 
-And because you have proper coroutines with no hierarchy of shared state dependencies, you can have **asynchronous exceptions** that can forcefully shut down processes without creating side effects to other running processes. A Supervisor may choose to restart its entire children list when one of its child crashes and another of its child depended on that previous process. You can switch from "one for one" restart strategy to "one for all" (like the Musketeers).
+E porque você tem coroutines adequadas sem hierarquia de dependências de estado compartilhado, você pode ter **exceções assíncronas** que podem forçosamente desligar processos sem criar efeitos colaterais a outros processos rodando. Um Supervisor pode escolher reiniciar toda sua lista de filhos quando um de seus filhos quebra e outro de seus filhos dependia desse processo anterior. Você pode trocar de estratégia de restart "one for one" para "one for all" (como os Mosqueteiros).
 
-There is only one problem with Erlang: it was not designed for "programmer happiness", a concept we got used to have for granted because of Ruby and newer languages.
+Há apenas um problema com Erlang: ele não foi desenhado para "felicidade do programador", um conceito que nos acostumamos a ter como certo por causa do Ruby e linguagens mais novas.
 
-Erlang has its roots in Prolog and it shows. Once you step up and really dive deep exercising with the language you can possibly get used to it. But if you came from more modern dynamic languages such as Ruby, Python, Groovy, you will definitely miss the comfortable modern constructions.
+Erlang tem suas raízes em Prolog e isso aparece. Uma vez que você se aprofunda e realmente exercita com a linguagem você possivelmente consegue se acostumar com ele. Mas se você veio de linguagens dinâmicas mais modernas como Ruby, Python, Groovy, com certeza vai sentir falta das construções modernas confortáveis.
 
-Elixir is the missing piece, the Philosopher's Stone if you will, that can unlock all the 30 years of refinements, maturity, industry battle tested technologies in large scales, to the average programmer.
+Elixir é a peça que faltava, a Pedra Filosofal se você quiser, que pode destrancar todos os 30 anos de refinamentos, maturidade, tecnologias industriais testadas em batalha em larga escala, para o programador médio.
 
-It brings many modern construct such as making macros easier in order to allow for Domain Specific Languages, having testable comments in your code, adding a more modern standard library that is easily recognizable from a Ruby or Clojure point of view, polymorphism through Protocols, and so on.
+Ele traz muitas construções modernas como tornar macros mais fáceis para permitir Domain Specific Languages, ter comentários testáveis no seu código, adicionar uma biblioteca padrão mais moderna que é facilmente reconhecível do ponto de vista de Ruby ou Clojure, polimorfismo via Protocols, e por aí vai.
 
-This is one example of Elixir straight from its source code tests:
+Esse é um exemplo de Elixir direto dos testes do código fonte:
 
 ```ruby
 Code.require_file "../test_helper.exs", __DIR__
@@ -295,20 +298,20 @@ defmodule Mix.ArchiveTest do
 end
 ```
 
-Code that can be written like this automatically makes me grin.
+Código que pode ser escrito assim automaticamente me faz sorrir.
 
-This is the perfect combination. Again, it is not without shortcomings. Erlang is by no means a fast language. It is way faster than Ruby, Python, or other interpreted languages. It can be made a bit faster with native compilation through the HIPE compiler, but still nowhere near the speeds of Go, Rust, or any Java derivative such as Scala, Groovy or Clojure.
+Essa é a combinação perfeita. De novo, não é sem deficiências. Erlang de jeito nenhum é uma linguagem rápida. É bem mais rápido que Ruby, Python, ou outras linguagens interpretadas. Pode ser feito um pouco mais rápido com compilação nativa através do compilador HIPE, mas ainda assim nem perto das velocidades de Go, Rust, ou qualquer derivado de Java como Scala, Groovy ou Clojure.
 
-So, if you really need raw power of computation, you will want Go or Java. Again, I'm not saying there are only those 2, but it's the usual choices if you don't want to go down to C/C++. Haskell has terrific performance, but it's learning curve is less than stellar.
+Então, se você realmente precisa de poder bruto de computação, vai querer Go ou Java. De novo, eu não estou dizendo que existem só esses 2, mas são as escolhas usuais se você não quer descer para C/C++. Haskell tem performance excelente, mas a curva de aprendizado dele está longe de ser estelar.
 
-Erlang is a whole system, it has its own scheduling system, it controls living, breathing processes that each has its own garbage collector, it controls system signal trapping and so on. It was designed to be a full server. It is much smaller than a full blown Java Enterprise Edition container, so small that you can actually package command line tools that do start up fast enough. But this is not the sweet spot. For that purpose you will better off with Go or even Rust.
+Erlang é um sistema inteiro, tem seu próprio sistema de scheduling, controla processos vivos, respirando, cada um com seu próprio garbage collector, controla captura de sinais do sistema e por aí vai. Foi desenhado para ser um servidor completo. É muito menor que um container Java Enterprise Edition completo, tão pequeno que você consegue empacotar ferramentas de linha de comando que sobem rápido o bastante. Mas esse não é o ponto forte. Para esse propósito você se sai melhor com Go ou até Rust.
 
-For the same reasons it was not made to be an embeddable language the way Lua is. It was not made to create libraries that can be easily linked to via FFI or C-like function exports, the way Rust can.
+Pelas mesmas razões ele não foi feito para ser uma linguagem embutível do jeito que Lua é. Não foi feito para criar bibliotecas que possam ser facilmente lincadas via FFI ou exports de função tipo C, do jeito que Rust pode.
 
-There are ways to create desktop-class applications, specially with cross-platform [wxWidgets](http://www.erlang.org/doc/apps/wx/chapter.html), the way the built-in Observer intrumentation application is done, but Erlang was not built to be a desktop toolkit.
+Há jeitos de criar aplicações classe-desktop, especialmente com [wxWidgets](http://www.erlang.org/doc/apps/wx/chapter.html) cross-platform, do jeito que a aplicação built-in Observer de instrumentação é feita, mas Erlang não foi construído para ser um toolkit desktop.
 
-Also because it prioritizes correctness, rigidly isolated processes communicating just by opaque messages, immutable and non-shared states, it means that Erlang is not suited to hard data science processing. So I doubt it's the best choice for Big Data analytics, DNA sequencing and other hard stuff that tools like Julia, R, Fortran, are better choices. It's not the same thing to say that it can't be a good database core, Riak and CouchDB proved that already. But complex queries on top of high volumes of data is not the sweet spot as well.
+Também porque ele prioriza correção, processos rigidamente isolados se comunicando só por mensagens opacas, estados imutáveis e não compartilhados, isso significa que Erlang não é adequado para processamento pesado de ciência de dados. Então duvido que seja a melhor escolha para analytics de Big Data, sequenciamento de DNA e outras coisas pesadas em que ferramentas como Julia, R, Fortran, são escolhas melhores. Não é a mesma coisa que dizer que ele não pode ser um bom núcleo de banco de dados, Riak e CouchDB já provaram isso. Mas queries complexas em cima de altos volumes de dados também não é o ponto forte.
 
-So, Erlang is good for distributed systems, with high concurrency of opaque message exchange and proxing. The exact scenario where the Web is. Web Applications heavy load of throughput that need real time chats and notifications, heavy and time consuming payment transactions, gathering of data from many sources in order to reduce them to consumable HTML or JSON responses.
+Então, Erlang é bom para sistemas distribuídos, com alta concorrência de troca de mensagens opacas e proxying. O cenário exato em que a Web está. Aplicações Web com carga pesada de throughput que precisam de chats e notificações em tempo real, transações de pagamento pesadas e demoradas, coleta de dados de muitas fontes a fim de reduzi-los a respostas HTML ou JSON consumíveis.
 
-But for the average Web developer (and by "average" I mean minimally able to architect the kinds of complex systems we deal with everyday in web development, not simple static website contruction), Erlang was a real challenger, and now we can have the comfort of a real modern language with hints of Ruby and Clojure, without the complexities of strong typing but with the security of its built-in Fault Tolerance constructions in order to deliver highly reliable, highly scalable, modern Web applications.
+Mas para o desenvolvedor Web médio (e por "médio" eu quero dizer minimamente capaz de arquitetar os tipos de sistemas complexos com que lidamos todo dia em desenvolvimento web, não construção simples de site estático), Erlang era um desafiante real, e agora podemos ter o conforto de uma linguagem moderna real com toques de Ruby e Clojure, sem as complexidades da tipagem forte mas com a segurança das construções built-in de Tolerância a Falhas para entregar aplicações Web modernas, altamente confiáveis e altamente escaláveis.

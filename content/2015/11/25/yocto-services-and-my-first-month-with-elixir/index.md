@@ -1,26 +1,29 @@
 ---
-title: '"Yocto Services"! And My First Month with Elixir!'
+title: '"Yocto Services"! E o Meu Primeiro Mês com Elixir!'
 date: '2015-11-25T18:04:00-02:00'
-slug: yocto-services-and-my-first-month-with-elixir
+slug: yocto-services-e-meu-primeiro-mes-com-elixir
+translationKey: yocto-services-first-month-elixir
+aliases:
+- /2015/11/25/yocto-services-and-my-first-month-with-elixir/
 tags:
 - learning
 - beginner
 - elixir
-- english
+- traduzido
 draft: false
 ---
 
-Wow, for the past month (almost, from Oct 27 to Nov 25) I decided that it was past time to dive deep and actually learn Elixir. I did just that, I am still a beginner but I feel very confident that I can tackle Elixir based projects now.
+Cara, no último mês (quase, de 27 de outubro a 25 de novembro) eu decidi que já passou da hora de mergulhar fundo e aprender Elixir de verdade. E foi exatamente o que eu fiz. Ainda sou iniciante, mas já me sinto bem confiante de que consigo encarar projetos em Elixir agora.
 
-For my learning process:
+O meu processo de aprendizado:
 
-1. I read the entire [oficial Elixir Documentation](http://elixir-lang.org/getting-started/introduction.html);
-2. I read the entire Dave Thomas' [Programming Elixir](https://pragprog.com/book/elixir/programming-elixir) book;
-3. I watched almost all [Elixir Sips](http://elixirsips.com/) screencats
-4. I read the entire Benjamin Tan Wei Hao's [The Little Elixir & OTP Guidebook](https://www.manning.com/books/the-little-elixir-and-otp-guidebook) book;
-5. I did a number of tutorials and exercises, and 
+1. Li toda a [Documentação oficial do Elixir](http://elixir-lang.org/getting-started/introduction.html);
+2. Li o livro [Programming Elixir](https://pragprog.com/book/elixir/programming-elixir) do Dave Thomas inteiro;
+3. Assisti a quase todos os screencasts do [Elixir Sips](http://elixirsips.com/);
+4. Li o livro [The Little Elixir & OTP Guidebook](https://www.manning.com/books/the-little-elixir-and-otp-guidebook) do Benjamin Tan Wei Hao inteiro;
+5. Fiz uma porção de tutoriais e exercícios.
 
-And finally, I documented everything I learned almost every day in the following articles:
+E, finalmente, documentei tudo o que aprendi quase todo dia nos seguintes artigos:
 
 * [How Fast is Elixir/Phoenix?](http://www.akitaonrails.com/2015/10/27/how-fast-is-elixir-phoenix)
 * [Personal Thoughts on the Current Functional Programming Bandwagon](http://www.akitaonrails.com/2015/10/28/personal-thoughts-on-the-current-functional-programming-bandwagon)
@@ -33,27 +36,27 @@ And finally, I documented everything I learned almost every day in the following
 * [ExMessenger Exercise: Understanding Nodes in Elixir](http://www.akitaonrails.com/2015/11/25/exmessenger-exercise-understanding-nodes-in-elixir)
 * [Elixir 101 - Introducing the Syntax](http://www.akitaonrails.com/2015/11/25/elixir-101-introducing-the-syntax)
 
-Yes, I am prolific, and highly focused. I did the learning and writing all within less than a month (it would've been less if I could have used night time and weekends). So I'd say that the average developer would take at least 3 to 4 months to cover the same material.
+Sim, eu sou prolífico e bastante focado. Estudei e escrevi tudo isso em menos de um mês (teria sido bem menos se eu pudesse ter usado as noites e finais de semana). Então eu diria que o desenvolvedor médio levaria pelo menos 3 a 4 meses para cobrir o mesmo material.
 
-### Initial Thinking: Yocto Services!
+### Pensamento Inicial: Yocto Services!
 
-For good of for worse, we are in the dawn of the Micro Services architecture. In summary it's fragmenting your monolith into smaller applications that responds to HTTP based endpoints - that people call "APIs" - and that are responsible for a very narrow set of responsabilities. Then you create a "front-end" web application that will consume those services, such as analytics, payment methods, user authentication directories, and so on.
+Para o bem ou para o mal, estamos no alvorecer da arquitetura de Micro Serviços. Resumidamente, é fragmentar o seu monolito em aplicações menores que respondem a endpoints HTTP - que as pessoas chamam de "APIs" - e que são responsáveis por um conjunto bem restrito de responsabilidades. Aí você cria uma aplicação web "front-end" que vai consumir esses serviços, como analytics, métodos de pagamento, diretórios de autenticação de usuários, e por aí vai.
 
-This is no novelty, of course, having HTTP APIs that return JSON structures is just a fancier way of doing the same, good, old **Remote Procedure Calls**, or RPCs, a technology we have for decades to interconnect clients and servers in a network. But I digress.
+Isso não é novidade nenhuma, claro. Ter APIs HTTP que devolvem estruturas JSON é só uma forma mais bonitinha de fazer os bons e velhos **Remote Procedure Calls**, ou RPCs, uma tecnologia que temos há décadas para interconectar clientes e servidores numa rede. Mas estou divagando.
 
-If this is what people call "Micro" services, I think of Elixir processes as **"Yocto"** Services! (Milli > Micro > Nano > Pico > Femto > Atto > Zepto > Yocto, by the way - I may have just invented a new term here!)
+Se isso é o que as pessoas chamam de serviços "Micro", eu penso nos processos do Elixir como **"Yocto"** Services! (Milli > Micro > Nano > Pico > Femto > Atto > Zepto > Yocto, aliás - eu posso ter acabado de inventar um novo termo aqui!)
 
-I described a bit of the Processes infrastructure, how to spawn them, how to exchange messages between them, and how to link them together. So, go read [my previous post](http://www.akitaonrails.com/2015/11/22/observing-processes-in-elixir-the-little-elixir-otp-guidebook) if you haven't already.
+Eu já descrevi um pouco da infraestrutura de Processos, como dar spawn neles, como trocar mensagens entre eles e como linkar eles. Então, vai lá ler [meu post anterior](http://www.akitaonrails.com/2015/11/22/observing-processes-in-elixir-the-little-elixir-otp-guidebook) se ainda não leu.
 
-Inside an Elixir app you will find many processes, some from the VM running the show and some from your own app. If you architected it correctly, you've implemented an OTP application, with proper groups of Supervisors and Children, all organized in a Supervision Tree. A small worker dies, its supervisor knows how to deal with it.
+Dentro de uma aplicação Elixir você vai encontrar muitos processos, alguns da própria VM tocando o show e outros da sua própria aplicação. Se você arquitetou direito, implementou uma aplicação OTP, com grupos próprios de Supervisors e Children, todos organizados numa Supervision Tree. Um pequeno worker morre, o supervisor dele sabe como lidar com isso.
 
-Now, here's the mental model: think of an Elixir process as a tiny micro-service - a **Yocto service**, if you will! - inside your application, . In a Phoenix application, for example, you don't import a "database library" you actually spin up a "Database Service" (which is an Ecto Repo) that runs in parallel with the Endpoint application that responds to HTTP requests coming from the internet. The code in your controllers and models "consume" and send messages to the Ecto Repo "Service". This is how you can visualize what's going on.
+Agora, o modelo mental é o seguinte: pense num processo Elixir como um pequeno micro-serviço - um **Yocto service**, se preferir! - dentro da sua aplicação. Numa aplicação Phoenix, por exemplo, você não importa uma "biblioteca de banco de dados", você na verdade dá start num "Database Service" (que é um Ecto Repo) que roda em paralelo com a aplicação Endpoint que responde aos requests HTTP que vêm da internet. O código nos seus controllers e models "consome" e envia mensagens para o "Service" Ecto Repo. É assim que você consegue visualizar o que está acontecendo.
 
-I have shown the Observer in the previous article as well. You will find a large tree if you open it up inside the IEx shell of a Phoenix application:
+Eu mostrei o Observer no artigo anterior também. Você vai encontrar uma árvore grande se abrir ele dentro do shell IEx de uma aplicação Phoenix:
 
 ![Observer Phoenix](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/531/big_phoenix-observer.png)
 
-In summary you will find the following section in the Pxblog Phoenix App Supervision Tree:
+Resumindo, você vai encontrar a seguinte seção na Supervision Tree do Phoenix App Pxblog:
 
 ```
 Pxblog.Supervisor
@@ -66,13 +69,13 @@ Pxblog.Supervisor
     + Pxblog.Repo.Pool
 ```
 
-This is the Pxblog I explained in the [Phoenix and Rails comparison article](http://www.akitaonrails.com/2015/11/20/phoenix-15-minute-blog-comparison-to-ruby-on-rails) I published a few days ago.
+Esse é o Pxblog que eu expliquei no [artigo de comparação entre Phoenix e Rails](http://www.akitaonrails.com/2015/11/20/phoenix-15-minute-blog-comparison-to-ruby-on-rails) que publiquei poucos dias atrás.
 
-I still didn't read the source code of Phoenix, but if I am interpreting the Observer correctly, the Endpoint.Server controls a pool of processes that are TCP listeners that the application is ready to accept requests from, concurrently, with overflowing to accept more connections (I believe it's a pool implementation like Poolboy, which I explained in [Part 2 of the Ex Manga Downloader article](http://www.akitaonrails.com/2015/11/19/ex-manga-downloadr-part-2-poolboy-to-the-rescue)).
+Eu ainda não li o código fonte do Phoenix, mas se eu estou interpretando o Observer corretamente, o Endpoint.Server controla um pool de processos que são listeners TCP que a aplicação está pronta para aceitar requests, concorrentemente, com overflow para aceitar mais conexões (acredito que seja uma implementação de pool tipo Poolboy, que eu expliquei na [Parte 2 do artigo do Ex Manga Downloader](http://www.akitaonrails.com/2015/11/19/ex-manga-downloadr-part-2-poolboy-to-the-rescue)).
 
-Then, you have the PubSub.Supervisor and PubSub.Local applications that I believe support the WebSocket channels.
+Aí você tem as aplicações PubSub.Supervisor e PubSub.Local que eu acredito que dão suporte aos canais WebSocket.
 
-The Repo alone controls 10 initial processes in its pool, possibly a database connection pool. Notice how Endpoint and Repo groups are in parallel branches in the supervision tree. If Repo fails for some external database problems, the Endpoint group does not have to fail. This is what's declared in the Pxblog Application definition at <tt>lib/pxblog.ex</tt>:
+Sozinho, o Repo controla 10 processos iniciais no pool dele, possivelmente um pool de conexões com o banco de dados. Repare como os grupos Endpoint e Repo estão em ramos paralelos da árvore de supervisão. Se o Repo falha por causa de algum problema externo do banco, o grupo do Endpoint não precisa falhar junto. Isso é o que está declarado na definição da Application do Pxblog em <tt>lib/pxblog.ex</tt>:
 
 ```
 defmodule Pxblog do
@@ -101,13 +104,13 @@ defmodule Pxblog do
 end
 ```
 
-See how it defines Endpoint and Repo under the Pxblog.Supervisor.
+Veja como ele define o Endpoint e o Repo debaixo do Pxblog.Supervisor.
 
-I can go on and forcefully kill the entire Pxblog.Repo node from the Supervision Tree using the Observer, like I did in the previous article, and the proper strategy kicks in, the Phoenix Supervisor successfully restarts the Repo, and no one will ever notice something crashed underneath.
+Eu posso ir lá e matar à força o nó inteiro do Pxblog.Repo da Supervision Tree usando o Observer, como fiz no artigo anterior, e a estratégia certa entra em ação, o Phoenix Supervisor reinicia o Repo com sucesso, e ninguém vai perceber que algo quebrou por baixo dos panos.
 
 ![Kill Repo](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/532/big_phoenix_kill_repo.png)
 
-From the IEx I can still make more calls to the Repo like this and it it responds as if it had never crashed:
+Do IEx eu ainda consigo fazer mais chamadas para o Repo desse jeito e ele responde como se nunca tivesse caído:
 
 ```
 iex(4)> Pxblog.Repo.all(Pxblog.User)
@@ -121,38 +124,38 @@ iex(4)> Pxblog.Repo.all(Pxblog.User)
   updated_at: #Ecto.DateTime<2015-11-20T14:01:09Z>, username: "akitaonrails"}]
 ```
 
-And the way I think about this is: my IEx shell is sending a message to the Yocto Service called Pxblog.Repo (in reality it's forwarding messages to the database adapter that then checks out a process from the pool). Just like I would consume external Micro Services through HTTP APIs.
+E a forma como eu penso sobre isso é assim: o meu shell IEx está mandando uma mensagem para o Yocto Service chamado Pxblog.Repo (na verdade ele encaminha mensagens para o adapter de banco de dados que aí faz o checkout de um processo do pool). Exatamente como eu consumiria Micro Serviços externos via APIs HTTP.
 
-So the landscape of your application is comprised of a series of processes and groups of supervised processes all working to compose a larger structure. As I said in previous articles, should one group of process collapse, its Supervisor kicks in, traps the error and uses its strategy to, for example, restart all of its children processes, bringing the app to a consistent state once more, and without you having to restart the entire Elixir application.
+Então o panorama da sua aplicação é composto por uma série de processos e grupos de processos supervisionados, todos trabalhando para compor uma estrutura maior. Como eu disse em artigos anteriores, se um grupo de processos colapsar, o Supervisor dele entra em ação, captura o erro e usa a sua estratégia para, por exemplo, reiniciar todos os processos filhos, trazendo a aplicação de volta para um estado consistente, e sem você ter que reiniciar a aplicação Elixir inteira.
 
-So each process can be a full blown Yocto Service, running online and waiting for other services to consume it, such as the Repo's workers.
+Então cada processo pode ser um Yocto Service completo, rodando online e esperando outros serviços consumirem ele, como os workers do Repo.
 
-### Divide and Conquer
+### Dividir e Conquistar
 
-Again, as a disclaimer, I am still new to Elixir but the way I find easier to understand it, is like this:
+De novo, como disclaimer, ainda sou novo em Elixir, mas a forma que eu acho mais fácil de entender é assim:
 
-* If you must deal with external resources, be it a File, or a Network Connections, or anything outside of the Erlang VM, you will want it to be a GenServer.
+* Se você precisa lidar com recursos externos, seja um arquivo, conexões de rede ou qualquer coisa fora da Erlang VM, você vai querer que isso seja um GenServer.
 
-* Then, if you have a GenServer, you want to start it up under a Supervisor (usually, the simple boilerplate that defines the children and restart strategy).
+* Aí, se você tem um GenServer, você quer dar start nele debaixo de um Supervisor (geralmente, o boilerplate simples que define os filhos e a estratégia de restart).
 
-* The number of GenServer processes you want to start up depends on how many parallel processes you want to have running. For example, if it is a database service, there is no point in starting up more than the available number of maximum connections your database allows. If you have several files to process, you want at most the number of available files or - in practice - just a few process to deal with batches of files. You will usually want a pool of GenServer processes, and in this case you want to use Poolboy.
+* O número de processos GenServer que você quer iniciar depende de quantos processos paralelos você quer ter rodando. Por exemplo, se for um serviço de banco de dados, não tem sentido iniciar mais do que o número máximo de conexões disponíveis que o banco permite. Se você tem vários arquivos para processar, você quer no máximo o número de arquivos disponíveis ou - na prática - só alguns processos para lidar com lotes de arquivos. Geralmente você vai querer um pool de processos GenServer e, nesse caso, você quer usar Poolboy.
 
-* One GenServer may call other GenServers. You don't want to use a try/catch exception handling mechanism because you just need the particular GenServer process to crash if something goes wrong: if the file is corrupted or doesn't exist or if the network goes unstable or disconnects. The Supervisor will replace that process with a new GenServer process in its place and refill the Pool if needed.
+* Um GenServer pode chamar outros GenServers. Você não quer usar mecanismo de tratamento de exceção do tipo try/catch porque o que você quer é justamente que aquele processo GenServer específico crashe se algo der errado: se o arquivo está corrompido, ou não existe, ou se a rede ficou instável ou caiu. O Supervisor vai substituir aquele processo por um GenServer novo no lugar dele e reabastecer o Pool se for preciso.
 
-* You can make GenServers [talk remotely](http://www.akitaonrails.com/2015/11/25/exmessenger-exercise-understanding-nodes-in-elixir) using the Node feature I explained 2 posts ago, with the ExMessenger example. Then it would be like a normal Micro Services architecture, but where the inside Yocto Services are actually doing the talking.
+* Você pode fazer GenServers [conversarem remotamente](http://www.akitaonrails.com/2015/11/25/exmessenger-exercise-understanding-nodes-in-elixir) usando o recurso de Node que eu expliquei 2 posts atrás, com o exemplo do ExMessenger. Aí seria como uma arquitetura normal de Micro Serviços, mas onde os Yocto Services internos é que estão na verdade fazendo a conversa.
 
-* Any transformation with no side-effects (transforming a simple input into a simple output), like getting an HTML body string and parsing into a List of tuples, can be organized in a normal Module. Refer to libraries like [Floki](https://github.com/philss/floki), to see how they are organized.
+* Qualquer transformação sem efeitos colaterais (transformar uma entrada simples numa saída simples), tipo pegar uma string com o body de um HTML e fazer parse para uma Lista de tuplas, pode ser organizada num Module normal. Dá uma olhada em bibliotecas como [Floki](https://github.com/philss/floki) para ver como elas estão organizadas.
 
-Each Erlang VM (called BEAM) is a single OS process, that manages a single real thread per CPU core available in your machine. Each real thread is managed by its own BEAM Scheduler, which will slice processing time between the lightweight processes inside.
+Cada Erlang VM (chamada de BEAM) é um único processo do SO, que gerencia uma única thread real por core de CPU disponível na sua máquina. Cada thread real é gerenciada pelo seu próprio BEAM Scheduler, que vai fatiar tempo de processamento entre os processos leves lá dentro.
 
-Each BEAM process has its own mailbox to receive messages (more correctly called a **run-queue**). I/O operations such as file management will run asynchronously and not block the schedule, which will manage to run other processes while waiting for I/O.
+Cada processo BEAM tem a sua própria caixa de mensagens para receber mensagens (mais corretamente chamada de **run-queue**). Operações de I/O como gerenciamento de arquivos vão rodar de forma assíncrona e não vão bloquear o scheduler, que vai conseguir rodar outros processos enquanto espera o I/O.
 
-Each BEAM process also has its own separated heap and garbage collector (a generational, 2 stage copy collector). Because each process has very little state (variables in a function) each garbage collector stop is super short and runs fast.
+Cada processo BEAM também tem o seu próprio heap separado e o seu próprio garbage collector (um copy collector geracional, de 2 estágios). Como cada processo tem muito pouco estado (variáveis dentro de uma função), cada parada do garbage collector é super curta e roda rápido.
 
-So, each BEAM VM can be thought of as an entire application infrastructure, with many Yocto Services available for your application to call.
+Então, cada VM BEAM pode ser pensada como uma infraestrutura inteira de aplicação, com vários Yocto Services disponíveis para a sua aplicação chamar.
 
-And as I said in the [previous article](http://www.akitaonrails.com/2015/11/25/exmessenger-exercise-understanding-nodes-in-elixir), each BEAM VM can remotelly call other BEAM VMs and exchange messages between them as if they were in the same VM. The semantics are almost the same and you have distributed computing the easier way.
+E como eu disse no [artigo anterior](http://www.akitaonrails.com/2015/11/25/exmessenger-exercise-understanding-nodes-in-elixir), cada VM BEAM pode chamar remotamente outras VMs BEAM e trocar mensagens entre elas como se estivessem na mesma VM. As semânticas são quase as mesmas e você tem computação distribuída do jeito mais fácil.
 
-Erlang implemented a fantastic set of primitives that quickly scale as large as you want or need, with the proper wirings to not let you down. And Elixir fixes the only problem most people have with Erlang: it's [old Prolog-inspired weird syntax](http://www.akitaonrails.com/2015/11/25/elixir-101-introducing-the-syntax). Elixir is a thin and effective coat of modern language design, partly inspired by Ruby (although not a port by any means, it's still Erlang underneath).
+A Erlang implementou um conjunto fantástico de primitivas que escalam rapidamente o quanto você quiser ou precisar, com as ligações certas para não te deixar na mão. E o Elixir conserta o único problema que a maioria das pessoas tem com Erlang: aquela [sintaxe estranha inspirada no velho Prolog](http://www.akitaonrails.com/2015/11/25/elixir-101-introducing-the-syntax). Elixir é uma camada fina e efetiva de design moderno de linguagem, em parte inspirada em Ruby (apesar de estar longe de ser um port, continua sendo Erlang por baixo).
 
-I hope this series helped shed some light on why Elixir is the best choice among the new generation of high concurrency enabled languages and I also hope I made myself clear on why just high concurrency is not enough: you want high reliability as well. And in this aspect, the OTP architecture, built-in with Erlang, has no competition.
+Eu espero que essa série tenha ajudado a jogar alguma luz sobre por que Elixir é a melhor escolha entre a nova geração de linguagens preparadas para alta concorrência, e também espero ter deixado claro por que só alta concorrência não basta: você quer alta confiabilidade também. E nesse aspecto, a arquitetura OTP, embutida no Erlang, não tem competição.

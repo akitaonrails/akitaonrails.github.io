@@ -1,34 +1,37 @@
 ---
-title: 'Ex Manga Downloadr - Part 4: Learning through Refactoring'
+title: 'Ex Manga Downloadr - Parte 4: Aprendendo Através do Refactoring'
 date: '2015-12-03T17:40:00-02:00'
-slug: ex-manga-downloadr-part-4-learning-through-refactoring
+slug: ex-manga-downloadr-parte-4-aprendendo-atraves-do-refactoring
+translationKey: ex-manga-downloadr-part-4
+aliases:
+- /2015/12/03/ex-manga-downloadr-part-4-learning-through-refactoring/
 tags:
 - learning
 - beginner
 - elixir
 - exmangadownloadr
-- english
+- traduzido
 draft: false
 ---
 
-[Yesterday I added Mangafox support](http://www.akitaonrails.com/2015/12/02/ex-manga-downloadr-part-3-mangafox-support) to my downloader tool and it also added a bit of dirty code into my already not-so-good coding. It's time for some serious cleanup.
+[Ontem adicionei suporte ao Mangafox](http://www.akitaonrails.com/2015/12/02/ex-manga-downloadr-part-3-mangafox-support) na minha ferramenta de download e isso também acabou jogando um pouco de código sujo no meu código que já não estava lá essas coisas. Hora de uma faxina pra valer.
 
-You can see everything I did since yesterday to clean things up through [Github's awesome compare page](https://github.com/akitaonrails/ex_manga_downloadr/compare/59694565592f8a3bea95115b858dd2ddfdc89873...3ae7dd98a8fd7bae47ffd7a24c0c42a2c3777fad)
+Você consegue ver tudo o que fiz desde ontem pra limpar a casa através da [excelente página de compare do Github](https://github.com/akitaonrails/ex_manga_downloadr/compare/59694565592f8a3bea95115b858dd2ddfdc89873...3ae7dd98a8fd7bae47ffd7a24c0c42a2c3777fad)
 
-First things first: now the choice to have added a reasonable amount of tests will pay off. In this refactoring I changed function signatures, response formats, moved a fair amount of code around, and without the tests this endeavor would have taken me the entire day or more, rendering the refactor efforts questionable to begin with.
+Antes de mais nada: agora a escolha de ter adicionado uma quantidade razoável de testes vai pagar dividendos. Neste refactoring eu mudei assinaturas de funções, formatos de resposta, movi uma boa quantidade de código de lugar, e sem os testes essa empreitada teria me tomado o dia inteiro ou mais, deixando o esforço de refactor questionável desde o início.
 
-At each step of the refactoring I could run "<tt>mix test</tt>" and work until I ended up with the green status:
+A cada passo do refactoring eu podia rodar "<tt>mix test</tt>" e trabalhar até chegar no status verde:
 
 ```
 Finished in 13.5 seconds (0.1s on load, 13.4s on tests)
 12 tests, 0 failures
 ```
 
-The tests are taking long because I made a choice for the MangaReader and Mangafox unit tests to actually go online and fetch from the sites. It takes longer to run the suite but I know that if it breaks and I didn't touch that code, the source websites changed their formats and I need to change the parser. I could have added fixtures to make the tests run faster, but the point in my parser is for them to be correct.
+Os testes estão demorando bastante porque fiz a escolha de que os testes unitários do MangaReader e do Mangafox fossem de fato online, buscando direto dos sites. Demora mais pra rodar a suíte mas eu sei que se ela quebrar e eu não tiver mexido naquele código, então os sites de origem mudaram seus formatos e eu preciso mudar o parser. Eu poderia ter adicionado fixtures pra fazer os testes rodarem mais rápido, mas o objetivo do meu parser é estar correto.
 
-### Macros to the Rescue!
+### Macros pro Resgate!
 
-Each source module has 3 sub-modules: ChapterPage, IndexPage and Page. All of them have a main function that resembles this piece of code:
+Cada módulo de fonte tem 3 sub-módulos: ChapterPage, IndexPage e Page. Todos eles tem uma função principal que parece com este pedaço de código:
 
 ```ruby
 defmodule ExMangaDownloadr.Mangafox.ChapterPage do
@@ -50,9 +53,9 @@ end
 
 (Listing 1.1)
 
-It calls "<tt>HTTPotion.get/2</tt>" sending a bunch of HTTP options and receives a "<tt>%HTTPotion.Response</tt>" struct that is then decomposed to get the body and headers. It gunzips the body if necessary and goes to parse the HTML itself.
+Ele chama "<tt>HTTPotion.get/2</tt>" mandando um monte de opções HTTP e recebe uma struct "<tt>%HTTPotion.Response</tt>" que então é decomposta pra pegar o body e os headers. Aplica gunzip no body se necessário e vai parsear o HTML em si.
 
-Similar code exists in 6 different modules, with different links and different parser functions. It's a lot of repetition, but what about making the above code look like the snippet below?
+Código parecido existe em 6 módulos diferentes, com links diferentes e funções de parser diferentes. É muita repetição, mas e se a gente fizesse o código acima ficar parecido com o snippet abaixo?
 
 ```ruby
 defmodule ExMangaDownloadr.Mangafox.ChapterPage do
@@ -68,7 +71,7 @@ end
 
 (Listing 1.2)
 
-Changed 9 lines to just 1. And by the way, this same line can be written like this:
+Mudei 9 linhas pra apenas 1. E aliás, essa mesma linha pode ser escrita assim:
 
 ```ruby
 ExMangaDownloadr.fetch chapter_link do
@@ -76,7 +79,7 @@ ExMangaDownloadr.fetch chapter_link do
 end
 ```
 
-Seems familiar? It's like every block in the Elixir language, you can write it in the "do/end" block format or the way it really is under the covers: a keyword list with a key named ":do". And the way this macro is defined is like this:
+Parece familiar? É como todo bloco na linguagem Elixir, você pode escrevê-lo no formato de bloco "do/end" ou da maneira que ele realmente é por baixo dos panos: uma keyword list com uma chave chamada ":do". E a forma como esse macro é definido é assim:
 
 ```ruby
 defmodule ExMangaDownloadr do
@@ -98,15 +101,15 @@ end
 
 (Listing 1.3)
 
-There is a lot of details to consider when writing a macro and I recommend reading the documentation on [Macros](http://elixir-lang.org/getting-started/meta/macros.html). The code is basically copying the function body from the "<tt>ChapterPage.pages/1</tt>" (Listing 1.1) and pasting into the "<tt>quote do .. end</tt>" block (Listing 1.3).
+Tem um monte de detalhes pra considerar quando se escreve um macro e eu recomendo ler a documentação sobre [Macros](http://elixir-lang.org/getting-started/meta/macros.html). O código está basicamente copiando o corpo da função do "<tt>ChapterPage.pages/1</tt>" (Listing 1.1) e colando dentro do bloco "<tt>quote do .. end</tt>" (Listing 1.3).
 
-Inside that code we have "<tt>unquote(link)</tt>" and "<tt>unquote(expression)</tt>". You also must read the documentation on ["Quote and Unquote"](http://elixir-lang.org/getting-started/meta/quote-and-unquote.html). It just expands this "external" code inside the macro code to defer execution until the macro quote code is actually executed, instead of running it at that exact moment. I know, tricky to wrap your head around this the first time.
+Dentro daquele código a gente tem "<tt>unquote(link)</tt>" e "<tt>unquote(expression)</tt>". Você também precisa ler a documentação sobre ["Quote and Unquote"](http://elixir-lang.org/getting-started/meta/quote-and-unquote.html). Ele simplesmente expande esse código "externo" dentro do código do macro pra adiar a execução até o código do quote do macro de fato ser executado, em vez de rodar naquele exato momento. Eu sei, complicado de embrulhar a cabeça em volta disso na primeira vez.
 
-The bottom line is: whatever code is inside the "quote" block will be "inserted" where we called "<tt>ExMangaDownloadr.fetch/2</tt>" in the "pages/1" function in Listing 1.2, together with the unquoted code you passed as a parameter.
+A linha de fundo é: qualquer código que estiver dentro do bloco "quote" vai ser "inserido" onde a gente chamou "<tt>ExMangaDownloadr.fetch/2</tt>" na função "pages/1" da Listing 1.2, junto com o código unquoted que você passou como parâmetro.
 
-The resulting code will resemble the original code in Listing 1.1.
+O código resultante vai parecer com o código original da Listing 1.1.
 
-To make it simpler, if you were in Javascript this would be a similar code:
+Pra simplificar, se você estivesse em Javascript isso seria um código parecido:
 
 ```javascript
 function fetch(url) {
@@ -117,9 +120,9 @@ function pages(page_link) {
 }
 ```
 
-"Quote" would be like the string body in an eval and "unquote" just concatenating the value you passed inside the code being eval-ed. This is a crude metaphor as "quote/unquote" is **way** more powerful and cleaner than ugly "eval" (you shouldn't be using, by the way!) But this metaphor should do to make you understand the code above.
+"Quote" seria como o corpo de string num eval e "unquote" só concatenando o valor que você passou dentro do código que está sendo eval-ado. É uma metáfora grosseira porque "quote/unquote" é **muito** mais poderoso e mais limpo que o feio "eval" (que você não deveria estar usando, aliás!) Mas essa metáfora serve pra você entender o código acima.
 
-Another place I used a macro was to save the images list in a dump file and load it later if the tool crashes for some reason, in order not to have to start over from scratch. The original code was like this:
+Outro lugar onde usei um macro foi pra salvar a lista de imagens num arquivo de dump e carregá-la depois caso a ferramenta dê crash por algum motivo, pra não ter que começar tudo do zero. O código original era assim:
 
 ```ruby
 dump_file = "#{directory}/images_list.dump"
@@ -137,7 +140,7 @@ images_list = if File.exists?(dump_file) do
 
 (Listing 1.4)
 
-And now that you understand macros, you will understand what I did here:
+E agora que você entende macros, vai entender o que eu fiz aqui:
 
 ```ruby
 defmodule ExMangaDownloadr do
@@ -177,7 +180,7 @@ defmodule ExMangaDownloadr.CLI do
 end
 ```
 
-And there you have it! And now you see how "do .. end" blocks are implemented. It just passes the expression as the value in the keyword list of the macro definition. Let's define a dumb macro:
+E pronto! E agora você vê como blocos "do .. end" são implementados. Ele simplesmente passa a expressão como o valor na keyword list da definição do macro. Vamos definir um macro bobo:
 
 ```ruby
 defmodule Foo
@@ -189,7 +192,7 @@ defmodule Foo
 end
 ```
 
-And not the following calls are all equivalent:
+E agora as seguintes chamadas são todas equivalentes:
 
 ```ruby
 require Foo
@@ -202,11 +205,11 @@ Foo.foo([do: IO.puts(1)])
 Foo.foo([{:do, IO.puts(1)}])
 ```
 
-This is macros combined with [Keyword Lists](http://elixir-lang.org/getting-started/maps-and-dicts.html) which I explained in previous articles and it's simply a List with tuples where each tuple has an atom key and a value.
+Isso é macros combinados com [Keyword Lists](http://elixir-lang.org/getting-started/maps-and-dicts.html) que eu expliquei em artigos anteriores e é simplesmente uma List com tuplas onde cada tupla tem uma chave atom e um valor.
 
-### More Macros
+### Mais Macros
 
-Another opportunity to refactor were the "mangareader.ex" and "mangafox.ex" modules that were just used in the unit tests "mangareader_test.ex" and "mangafox_test.ex". This is the old "mangareader.ex" code:
+Outra oportunidade pra refatorar foram os módulos "mangareader.ex" e "mangafox.ex" que eram só usados nos testes unitários "mangareader_test.ex" e "mangafox_test.ex". Esse é o código antigo do "mangareader.ex":
 
 ```ruby
 defmodule ExMangaDownloadr.MangaReader do
@@ -220,7 +223,7 @@ defmodule ExMangaDownloadr.MangaReader do
 end 
 ```
 
-And this is how it was used in "mangareader_test.ex":
+E é assim que ele era usado no "mangareader_test.ex":
 
 ```ruby
 defmodule ExMangaDownloadr.MangaReaderTest do
@@ -229,7 +232,7 @@ defmodule ExMangaDownloadr.MangaReaderTest do
   ...
 ```
 
-It was just a shortcut to alias the modules in order to use them directly inside the tests. I just moved the entire module as a macro in "ex_manga_downloadr.ex" module:
+Era só um atalho pra fazer o alias dos módulos pra usá-los diretamente dentro dos testes. Eu simplesmente movi o módulo inteiro como um macro no módulo "ex_manga_downloadr.ex":
 
 ```ruby
   ...
@@ -251,7 +254,7 @@ It was just a shortcut to alias the modules in order to use them directly inside
 end
 ```
 
-And now I can use it like this in the test file:
+E agora posso usá-lo assim no arquivo de teste:
 
 ```ruby
 defmodule ExMangaDownloadr.MangaReaderTest do
@@ -260,7 +263,7 @@ defmodule ExMangaDownloadr.MangaReaderTest do
   ...
 ```
 
-The special "__using__" macro is called when I "use" a module, and I can even pass arguments to it. The implementation then uses "apply/3" to dynamically call the correct macro. This exactly how Phoenix imports the proper behaviors for Models, Views, Controllers, Router, for example:
+O macro especial "__using__" é chamado quando eu dou "use" num módulo, e eu posso até passar argumentos pra ele. A implementação então usa "apply/3" pra chamar dinamicamente o macro correto. É exatamente assim que o Phoenix importa os behaviors apropriados pra Models, Views, Controllers, Router, por exemplo:
 
 ```ruby
 defmodule Pxblog.PageController do
@@ -268,11 +271,11 @@ defmodule Pxblog.PageController do
   ...
 ```
 
-The macros are open in a Phoenix file and available in the "web/web.ex" module, so I just copied the same behavior. And now I have 2 less files to worry about.
+Os macros estão abertos num arquivo Phoenix e disponíveis no módulo "web/web.ex", então só copiei o mesmo comportamento. E agora tenho 2 arquivos a menos pra me preocupar.
 
-### Tiny refactorings
+### Pequenos refactorings
 
-In the previous code I used the "<tt>String.to_atom/1</tt>" to convert the string of the module name to an atom, to be later used in "apply/3" calls:
+No código anterior eu usava o "<tt>String.to_atom/1</tt>" pra converter a string do nome do módulo num atom, pra ser usado depois em chamadas "apply/3":
 
 ```ruby
 defp manga_source(source, module) do
@@ -283,16 +286,16 @@ defp manga_source(source, module) do
 end
 ```
 
-I changed it to this:
+Mudei pra isto:
 
 ```ruby
     "mangareader" -> :"Elixir.ExMangaDownloadr.MangaReader.#{module}"
     "mangafox"    -> :"Elixir.ExMangaDownloadr.Mangafox.#{module}"
 ```
 
-It's just a shortcut to do the same thing.
+É só um atalho pra fazer a mesma coisa.
 
-In the parser I was also not using [Floki](https://github.com/philss/floki) correctly. So take a look at this piece of old code:
+No parser eu também estava usando o [Floki](https://github.com/philss/floki) de forma errada. Então dá uma olhada nesse pedaço de código antigo:
 
 ```ruby
 defp fetch_manga_title(html) do
@@ -306,7 +309,7 @@ defp fetch_chapters(html) do
 end
 ```
 
-Now using the better helper functions that Floki provides:
+Agora usando as funções helper melhores que o Floki provê:
 
 ```ruby
 defp fetch_manga_title(html) do
@@ -321,9 +324,9 @@ defp fetch_chapters(html) do
 end
 ```
 
-This was a case of not reading the documentation as I should have. Much cleaner!
+Esse foi um caso de não ter lido a documentação como eu deveria. Bem mais limpo!
 
-I did other bits of cleanup but I think this should cover the major changes. And finally, I bumped up the version to "1.0.0" as well!
+Fiz outras pequenas limpezas mas acho que isso cobre as mudanças principais. E finalmente, subi a versão pra "1.0.0" também!
 
 ```ruby
    def project do
@@ -333,7 +336,7 @@ I did other bits of cleanup but I think this should cover the major changes. And
       elixir: "~> 1.1",
 ```
 
-And speaking of versions, I'm using Elixir 1.1 but pay attention as [Elixir 1.2](https://github.com/elixir-lang/elixir/blob/ef5ba3af059f76489631dc26b52ecaeff09af3fe/CHANGELOG.md) is just around the corner and it brings some niceties. For example, that macro that aliased a few modules could be written this way now:
+E falando em versões, estou usando Elixir 1.1 mas preste atenção porque [Elixir 1.2](https://github.com/elixir-lang/elixir/blob/ef5ba3af059f76489631dc26b52ecaeff09af3fe/CHANGELOG.md) está logo aí na esquina e traz algumas gracinhas. Por exemplo, aquele macro que fazia o alias de alguns módulos poderia ser escrito assim agora:
 
 ```ruby
 def mangareader do
@@ -343,4 +346,4 @@ def mangareader do
 end
 ```
 
-And this is just 1 feature between many other syntax improvements and support for the newest [Erlang R18](http://www.erlang.org/news/88). Keep an eye on both!
+E essa é só 1 feature entre muitas outras melhorias de sintaxe e suporte ao mais novo [Erlang R18](http://www.erlang.org/news/88). Fique de olho nos dois!

@@ -33,7 +33,7 @@ So, you have distributed systems to build? There is no other option, really. Do 
 
 Then, Elixir steps this up a notch creating a very reasonable and simple to use standard library that makes the coding part actually enjoyable. This is a killer combo. You need to do the next Whatsapp? You need to do the next Waze? You need to rebuild Cassandra from scratch? You need to create stuff like Apache Spark? Do Elixir.
 
-In Erlang, you need to solve everything using GenServer. It's a neat abstraction from OTP. You are [required to understand OTP](http://www.akitaonrails.com/2015/11/22/observing-processes-in-elixir-the-little-elixir-otp-guidebook) intimately. There is no shortcut here. There is no Erlang without OTP.
+In Erlang, you need to solve everything using GenServer. It's a neat abstraction from OTP. You are [required to understand OTP](http://www.akitaonrails.com/en/2015/11/22/observing-processes-in-elixir-the-little-elixir-otp-guidebook/) intimately. There is no shortcut here. There is no Erlang without OTP.
 
 That said, you can start simple and scale without so much hassle.
 
@@ -84,7 +84,7 @@ This is just for the example, I have not compiled this snippet to see if it work
 
 Again, for small lists, this should be ok (thousands) and where each item does not take too much to process.
 
-Now, this is not very good. Because each chunk must finish before the next chunk begins. Witch is why the ideal solution is to keep a constant amount of jobs running at any given time. To that end, we need a Pool, which is what I explained in [Part 2: Poolboy to the rescue!](http://www.akitaonrails.com/2015/11/19/ex-manga-downloadr-part-2-poolboy-to-the-rescue).
+Now, this is not very good. Because each chunk must finish before the next chunk begins. Witch is why the ideal solution is to keep a constant amount of jobs running at any given time. To that end, we need a Pool, which is what I explained in [Part 2: Poolboy to the rescue!](http://www.akitaonrails.com/en/2015/11/19/ex-manga-downloadr-part-2-poolboy-to-the-rescue/).
 
 But implementing the proper way to keep the pool entirely filled requires some boring juggling between Poolboy transactions and `Task.Supervisor.async`. Which is why I was interested in the new `Flow` usage.
 

@@ -1,21 +1,24 @@
 ---
-title: 'Ex Manga Downloadr - Part 5: Making it more robust!'
+title: 'Ex Manga Downloadr - Parte 5: Deixando mais robusto!'
 date: '2015-12-06T19:20:00-02:00'
-slug: ex-manga-downloadr-part-5-making-it-more-robust
+slug: ex-manga-downloadr-parte-5-deixando-mais-robusto
+translationKey: ex-manga-downloadr-part-5
+aliases:
+- /2015/12/06/ex-manga-downloadr-part-5-making-it-more-robust/
 tags:
 - learning
 - beginner
 - elixir
 - exmangadownloadr
-- english
+- traduzido
 draft: false
 ---
 
-And there I go again. I know some of you may be bored by this tool already, but as a playground project, I still want to make this a good code. But there are 2 big problems right now.
+E lá vou eu de novo. Sei que alguns de vocês já podem estar entediados com essa ferramenta, mas como projeto de brincadeira, ainda quero deixar o código bom. Só que tem 2 problemas grandes agora.
 
-When I was testing only with MangaReader.net as a source, everything worked almost flawlessly. But adding MangaFox in [Part 3](http://www.akitaonrails.com/2015/12/02/ex-manga-downloadr-part-3-mangafox-support), with its more restrictive rules towards scrapper tools like mine (timing out more frequently, not allowing too many connections from the same place, etc), the process just kept crashing and I had to manually restart it (the resuming features I added in [Part 4](http://www.akitaonrails.com/2015/12/03/ex-manga-downloadr-part-4-learning-through-refactoring) payed off, but it's not a reliable tool anymore).
+Quando eu testava só com o MangaReader.net como fonte, tudo funcionava quase sem falhas. Mas ao adicionar o MangaFox na [Parte 3](http://www.akitaonrails.com/2015/12/02/ex-manga-downloadr-part-3-mangafox-support), com suas regras mais restritivas contra ferramentas de scrapping como a minha (timeouts mais frequentes, não permitindo muitas conexões da mesma origem, etc), o processo simplesmente quebrava o tempo todo e eu tinha que reiniciar manualmente (as features de retomada que adicionei na [Parte 4](http://www.akitaonrails.com/2015/12/03/ex-manga-downloadr-part-4-learning-through-refactoring) ajudaram bastante, mas a ferramenta deixou de ser confiável).
 
-To recap, the Workflow just organizes each step of the process. It's functions are similar to this:
+Recapitulando, o Workflow só organiza cada passo do processo. Suas funções são parecidas com isso:
 
 ```ruby
 def process_downloads(images_list, directory) do
@@ -26,7 +29,7 @@ def process_downloads(images_list, directory) do
 end
 ```
 
-It deals with a large list, maps over each element sending it to a Worker function to run, like this:
+Ele lida com uma lista grande, faz um map sobre cada elemento mandando para uma função Worker rodar, assim:
 
 ```ruby
 def page_download_image(image_data, directory) do
@@ -38,11 +41,11 @@ def page_download_image(image_data, directory) do
 end
 ```
 
-It returns an asynchronous Task waiting for 2 things: for Poolboy to release a free process to use, and for the Worker/GenServer function to finish running inside that process. As I explained in [Part 2](http://www.akitaonrails.com/2015/11/19/ex-manga-downloadr-part-2-poolboy-to-the-rescue) this is so we can limit the maximum number of connections to the external source. If we didn't have this restriction, sending tens of thousands of asynchronous requests at once, the external source would just fail them all.
+Ele retorna uma Task assíncrona esperando por 2 coisas: o Poolboy liberar um processo livre para usar, e a função Worker/GenServer terminar de rodar dentro daquele processo. Como expliquei na [Parte 2](http://www.akitaonrails.com/2015/11/19/ex-manga-downloadr-part-2-poolboy-to-the-rescue), isso é para limitar o número máximo de conexões com a fonte externa. Sem essa restrição, mandando dezenas de milhares de requests assíncronos de uma vez, a fonte externa simplesmente falharia todos.
 
-First thing to bear in mind is that a "<tt>Task.async/2</tt>" links itself to the caller process, so if something goes wrong, the parent process dies as well.
+A primeira coisa para se ter em mente é que um "<tt>Task.async/2</tt>" se linka com o processo chamador, então se algo der errado, o processo pai morre junto.
 
-The correct thing to do is to add a [Task.Supervisor](http://elixir-lang.org/docs/stable/elixir/Task.Supervisor.html) and make it deal with each Task child. To do that, we can just add the Supervisor in our supervised tree at "pool_management/supervisor.ex":
+A coisa certa a fazer é adicionar um [Task.Supervisor](http://elixir-lang.org/docs/stable/elixir/Task.Supervisor.html) e deixar ele cuidar de cada Task filha. Para fazer isso, basta adicionar o Supervisor na nossa árvore supervisionada em "pool_management/supervisor.ex":
 
 ```ruby
 defmodule PoolManagement.Supervisor do
@@ -56,7 +59,7 @@ defmodule PoolManagement.Supervisor do
 end
 ```
 
-And we can replace the "<tt>Task.async/2</tt>" calls to "<tt>Task.Supervisor.async(Fetcher.TaskSupervisor, ...)</tt>" like this:
+E podemos substituir as chamadas "<tt>Task.async/2</tt>" por "<tt>Task.Supervisor.async(Fetcher.TaskSupervisor, ...)</tt>" assim:
 
 ```ruby
 def page_download_image(image_data, directory) do
@@ -68,17 +71,17 @@ def page_download_image(image_data, directory) do
 end
 ```
 
-This still creates Tasks that we need to await on, and as before, if the function inside crashes, it still brings down the main process. Now my refactoring found a dead end.
+Isso ainda cria Tasks pelas quais precisamos esperar, e como antes, se a função lá dentro quebrar, ainda derruba o processo principal. Agora minha refatoração chegou num beco sem saída.
 
-This is the 2nd problem I mentioned in the beginning of the article: a **flaw in my design**.
+Esse é o 2º problema que mencionei no início do artigo: uma **falha no meu design**.
 
-Instead of just mapping through each element of a large list, I should have created an Agent based GenServer to keep the list as the state and make the the entire Workflow system a new supervised GenServer. If fetching one URL crashed the GenServer, its supervisor would restart it and pick up the next element in list.
+Em vez de só fazer um map sobre cada elemento de uma lista grande, eu deveria ter criado um GenServer baseado em Agent para manter a lista como estado e transformar todo o sistema do Workflow em um novo GenServer supervisionado. Se buscar uma URL quebrasse o GenServer, seu supervisor o reiniciaria e pegaria o próximo elemento da lista.
 
-But, as I am in no mood for this refactoring right now (it's Sunday afternoon) I will concentrate on a quick fix (yes, jerry-rigged patch), just so the function in the async call does not raise exceptions.
+Mas, como não estou com pique para essa refatoração agora (é tarde de domingo), vou me concentrar num quick fix (sim, uma gambiarra), só para que a função dentro da chamada async não levante exceções.
 
-### OMG! It's a Try/Catch block!
+### OMG! É um bloco Try/Catch!
 
-Turns out that everything I run inside the Poolboy processes are HTTP get requests through HTTPotion. Fortunately I had already refactored every HTTPotion get call into a neat macro:
+Acontece que tudo o que rodo dentro dos processos do Poolboy são requests HTTP get através do HTTPotion. Felizmente eu já tinha refatorado toda chamada HTTPotion get em uma macro elegante:
 
 ```ruby
 defmacro fetch(link, do: expression) do
@@ -94,20 +97,20 @@ defmacro fetch(link, do: expression) do
 end
 ```
 
-Now I only need to replace 1 line in this macro:
+Agora só preciso trocar 1 linha nessa macro:
 
 ```ruby
 -    case HTTPotion.get(unquote(link), ExMangaDownloadr.http_headers) do
 +    case ExMangaDownloadr.retryable_http_get(unquote(link)) do
 ```
 
-And define this new retryable logic in the main module:
+E definir essa nova lógica de retry no módulo principal:
 
 ```ruby
 defmodule ExMangaDownloadr do
   require Logger
 
-  # will retry failed fetches over 50 times, sleeping 1 second between each retry
+  # vai tentar de novo fetches falhos por mais de 50 vezes, dormindo 1 segundo entre cada retry
   @max_retries  50
   @time_to_wait_to_fetch_again 1_000
   ...
@@ -136,14 +139,14 @@ defmodule ExMangaDownloadr do
 end
 ```
 
-I strongly [stated](http://www.akitaonrails.com/2015/12/01/the-obligatory-why-elixir-personal-take) that in Elixir we should **not** use "try/catch" blocks, but there you have it.
+Eu [afirmei](http://www.akitaonrails.com/2015/12/01/the-obligatory-why-elixir-personal-take) com convicção que em Elixir **não** devemos usar blocos "try/catch", mas aí está.
 
-This is the consequence of the flaw in my initial Workflow design. If I had coded the Workflow module to be a GenServer, with each list managed by an Agent, each failed HTTPotion call would allow the supervisor to restart it and try again. Without resorting to the ugly "try/catch" code.
+Essa é a consequência da falha no meu design inicial do Workflow. Se eu tivesse codificado o módulo Workflow como um GenServer, com cada lista gerenciada por um Agent, cada chamada HTTPotion que falhasse permitiria ao supervisor reiniciá-la e tentar de novo. Sem precisar recorrer ao código feio do "try/catch".
 
-Maybe this will force me to write Part 6 as being the code to remove this ugly try/catch later, so consider this a **Technical Debt** to make everything work now so we can refactor later and pay the debt back.
+Talvez isso me force a escrever a Parte 6 sendo o código para remover esse "try/catch" feio depois, então considerem isto uma **Dívida Técnica** para fazer tudo funcionar agora e depois refatorar para pagar a dívida.
 
-"<tt>HTTPotion.get/2</tt>" calls can raise "HTTPotion.HTTPError" exceptions. I am catching those errors for the time being, matching the messages against a list of errors I had already, sleeping for a certain amount of time (just a heuristic to see if the external sources respond better that way) and I recurse to itself through a limited number of "retries", until it reaches zero, in which case it may even be the case that the internet connection is down or some other severe error that we would not be able to recover soon.
+As chamadas "<tt>HTTPotion.get/2</tt>" podem levantar exceções "HTTPotion.HTTPError". Estou capturando esses erros por enquanto, casando as mensagens contra uma lista de erros que eu já tinha, dormindo por um certo tempo (só uma heurística para ver se as fontes externas respondem melhor desse jeito) e recurso na própria função através de um número limitado de "retries", até chegar a zero, caso em que pode até ser que a conexão de internet esteja caída ou algum outro erro grave do qual não conseguiríamos nos recuperar tão cedo.
 
-With this code in place, now even fetching from MangaFox, without tweaking down the POOL_SIZE, will run until the end, and this solves my needs for now. If anyone is interested in suggesting a better, GenServer based Workflow design, I would really appreciate a Pull Request.
+Com esse código no lugar, agora até buscar do MangaFox, sem precisar diminuir o POOL_SIZE, roda até o fim, e isso resolve minhas necessidades por agora. Se alguém tiver interesse em sugerir um design de Workflow melhor, baseado em GenServer, eu agradeceria muito um Pull Request.
 
-Cheers.
+Abraços.

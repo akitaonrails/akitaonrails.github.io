@@ -1,18 +1,21 @@
 ---
-title: Erlang's Ping Pong (tut15) in Clojure and Elixir
+title: Ping Pong de Erlang (tut15) em Clojure e Elixir
 date: '2015-12-09T14:42:00-02:00'
-slug: erlang-s-ping-pong-tut15-in-clojure-and-elixir
+slug: ping-pong-de-erlang-tut15-em-clojure-e-elixir
+translationKey: erlang-ping-pong-tut15
+aliases:
+- /2015/12/09/erlang-s-ping-pong-tut15-in-clojure-and-elixir/
 tags:
 - learning
 - beginner
 - elixir
-- english
+- traduzido
 draft: false
 ---
 
-This is a very short post just because I thought it was fun. I was reading [this very enlightening article](http://blog.paralleluniverse.co/2013/05/02/quasar-pulsar/) on Clojure's Quasar/Pulsar compared to Erlang and how they are trying to plug the holes on the JVM shortcomings.
+Esse vai ser um post bem curto, só porque achei divertido. Eu estava lendo [esse artigo bem esclarecedor](http://blog.paralleluniverse.co/2013/05/02/quasar-pulsar/) sobre o Quasar/Pulsar do Clojure comparado ao Erlang e como eles estão tentando tapar os buracos das limitações da JVM.
 
-When you're learning Erlang through its official documentation, the first thing you build in the [chapters on Processes](http://www.erlang.org/doc/getting_started/conc_prog.html#id67347) is a very simple Ping Pong code that looks like this:
+Quando você está aprendendo Erlang pela documentação oficial, a primeira coisa que você constrói nos [capítulos sobre Processos](http://www.erlang.org/doc/getting_started/conc_prog.html#id67347) é um código bem simples de Ping Pong que se parece com isso:
 
 ```erlang
 -module(tut15).
@@ -46,7 +49,7 @@ start() ->
     spawn(tut15, ping, [3, Pong_PID]).
 ```
 
-It's not pretty, it's Prolog-ish. The Clojure article claims how close they got with lightweight threads (true green threads) and this is the same exercise done in Clojure:
+Não é bonito, tem cara de Prolog. O artigo sobre Clojure afirma o quão perto eles chegaram com lightweight threads (green threads de verdade) e esse é o mesmo exercício feito em Clojure:
 
 ```lisp
 (defsfn pong []
@@ -74,13 +77,13 @@ It's not pretty, it's Prolog-ish. The Clojure article claims how close they got 
   :ok)
 ```
 
-People that like the Lisp-y aesthetics of programming directly in the AST representation through the structure of parenthesis based blocks will find this very pretty.
+Quem curte a estética Lisp de programar diretamente na representação da AST através da estrutura de blocos baseados em parênteses vai achar isso muito bonito.
 
-I personally spent years looking into code like this (Common Lisp, Elisp, Scheme, etc) and I still can't get used to it. Once you have a competent editor such as Emacs, that can deal with the proper parenthesis handling, it's easier, yes, but I still can't find the joy in doing this kind of hackish syntax.
+Eu particularmente passei anos olhando para código desse tipo (Common Lisp, Elisp, Scheme, etc) e ainda não consigo me acostumar. Quando você tem um editor competente como o Emacs, que lida com o casamento adequado de parênteses, fica mais fácil, sim, mas eu ainda não consigo achar graça nesse tipo de sintaxe meio hackeada.
 
-Elixir is not just a new syntax on top of Erlang, as the great book [Metaprogramming Elixir](https://pragprog.com/book/cmelixir/metaprogramming-elixir) will teach you, it opens up the entire Erlang BEAM AST through the usage of the [quote/unquote](http://elixir-lang.org/getting-started/meta/quote-and-unquote.html) mechanics, making programming directly into the AST through ["Hygienic Macros"](http://elixir-lang.org/getting-started/meta/macros.html) a breeze. It's really the best of both worlds of having a modern, good looking, joyful syntax and the same power a Lisp-y language gives you in terms of well behaved macros.
+Elixir vai muito além de só uma sintaxe nova em cima de Erlang, como o ótimo livro [Metaprogramming Elixir](https://pragprog.com/book/cmelixir/metaprogramming-elixir) vai te ensinar. Ele abre toda a AST da BEAM do Erlang através do mecanismo de [quote/unquote](http://elixir-lang.org/getting-started/meta/quote-and-unquote.html), tornando a programação direta na AST através de ["Macros Higiênicas"](http://elixir-lang.org/getting-started/meta/macros.html) algo trivial. Você ganha o melhor dos dois mundos: uma sintaxe moderna, bonita e prazerosa, junto com o mesmo poder que uma linguagem Lisp te dá em termos de macros bem comportadas.
 
-Now, this is the same example as above, in Elixir:
+Agora, esse é o mesmo exemplo acima, em Elixir:
 
 ```ruby
 defmodule ExPingPongTut15 do
@@ -114,6 +117,6 @@ defmodule ExPingPongTut15 do
 end
 ```
 
-Because of the power of pattern matching in the functions arguments signature, you can define 2 separated functions, avoiding the "if" as in the Clojure example. Of course, because it's Clojure and it has a complete macro system, and because it's [core.match](https://github.com/clojure/core.match) has the proper pattern matching mechanisms, you can emulate the same thing through external libraries such as [defun](https://github.com/killme2008/defun) though.
+Por causa do poder do pattern matching na assinatura dos argumentos das funções, dá pra definir 2 funções separadas, evitando o "if" como no exemplo em Clojure. Claro, como é Clojure e tem um sistema completo de macros, e como o [core.match](https://github.com/clojure/core.match) tem mecanismos adequados de pattern matching, dá pra emular a mesma coisa através de bibliotecas externas como o [defun](https://github.com/killme2008/defun).
 
-This was just a simple exercise, I hope it shed some light on the basic similarities between these 3 languages. And as "ugly" as Erlang may feel, I still feel more comfortable with its quirks then nested parenthesis.
+Esse foi só um exercício simples, espero que tenha jogado alguma luz nas semelhanças básicas entre essas 3 linguagens. E por mais "feio" que o Erlang possa parecer, eu ainda me sinto mais confortável com as suas esquisitices do que com parênteses aninhados.

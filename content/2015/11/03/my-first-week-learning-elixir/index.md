@@ -1,52 +1,55 @@
 ---
-title: My first week learning Elixir
+title: "Minha primeira semana aprendendo Elixir"
 date: '2015-11-03T11:07:00-02:00'
-slug: my-first-week-learning-elixir
+slug: minha-primeira-semana-aprendendo-elixir
+translationKey: my-first-week-elixir
+aliases:
+- /2015/11/03/my-first-week-learning-elixir/
 tags:
 - beginner
 - learning
 - elixir
-- english
+- traduzido
 draft: false
 ---
 
-I set myself to try to learn enough Elixir to be comfortable tackling some small projects. After 1 entire week studying close to 6 hours a day (around 42 hours) I'm still not entirely comfortable but I think the main concepts were able to sink in and I can fully appreciate what Elixir has to offer.
+Resolvi me dedicar a aprender Elixir o suficiente para me sentir confortável em encarar alguns projetos pequenos. Depois de uma semana inteira estudando perto de 6 horas por dia (umas 42 horas no total), ainda não estou totalmente confortável, mas acho que os conceitos principais já assentaram e consigo apreciar plenamente o que Elixir tem a oferecer.
 
-This is not my first time touching Erlang though. I was fortunate enough to be able to participate in a small workshop at QCon San Francisco 2009 with no other than [Francesco Cesarini](http://www.oreilly.com/pub/au/3373). Thanks to him I was able to understand some of Erlang's exquisite syntax, the correct concept of Erlang processes, how immutability and pattern matching governs their programming flow. It was very enlightening. Unfortunately I couldn't see myself doing Erlang full time. I just hoped those mechanisms were available in a language such as Ruby ...
+Não é a primeira vez que mexo com Erlang, na verdade. Tive a sorte de participar de um pequeno workshop no QCon San Francisco 2009 com ninguém menos que [Francesco Cesarini](http://www.oreilly.com/pub/au/3373). Graças a ele, consegui entender um pouco da sintaxe peculiar de Erlang, o conceito correto de processos Erlang, como imutabilidade e pattern matching governam o fluxo de programação. Foi muito esclarecedor. Infelizmente, eu não me via fazendo Erlang em tempo integral. Eu só torcia para que aqueles mecanismos estivessem disponíveis em uma linguagem como Ruby...
 
-Between 2007 and 2009 Erlang had a new renaissance between the languages aficionados because of the ["Programming Erlang"](https://pragprog.com/book/jaerlang/programming-erlang) book released by The Pragmatic Programmers, written by no other than Joe Armstrong himself, the Erlang's creator. Dave Thomas [tried to push Erlang](http://pragdave.me/blog/2007/04/15/a-first-erlang-program/) a lot in 2007, but even he wasn't able to sell Erlang's powerful engine because of the strange presentation of the syntax.
+Entre 2007 e 2009, Erlang teve uma nova renascença entre os aficionados por linguagens por causa do livro ["Programming Erlang"](https://pragprog.com/book/jaerlang/programming-erlang) lançado pela The Pragmatic Programmers, escrito por ninguém menos que o próprio Joe Armstrong, criador do Erlang. Dave Thomas [tentou empurrar Erlang](http://pragdave.me/blog/2007/04/15/a-first-erlang-program/) com força em 2007, mas nem ele conseguiu vender o motor poderoso de Erlang por causa da apresentação estranha da sintaxe.
 
-After 2009, José Valim had a long run to release the controversial Rails 3.0 big rewrite (which was fortunately a success) and he decided to step aside and try something else. His own research led him to Erlang for the reasons I mentioned above, but he decided that he could solve the "quirk syntax" problem. You can see some of this very first talks about Elixir in the Rubyconf Brasil [2012](https://www.eventials.com/locaweb/jose-valim-vamos-falar-sobre-concorrencia/) and [2013](https://www.eventials.com/locaweb/elixir-uma-aproximacao-pragmatica-e-concorrente-a-programacao/) recordings. The very early beta was released in 2012 and he finally released the stable 1.0 in 2015. Chris McCord was able to release Phoenix stable soon after.
+Depois de 2009, José Valim teve uma longa jornada para liberar o controverso big rewrite do Rails 3.0 (que felizmente foi um sucesso) e decidiu dar um tempo e tentar algo diferente. A pesquisa dele acabou levando até Erlang pelos motivos que mencionei acima, mas ele decidiu que poderia resolver o problema da "sintaxe esquisita". Você pode ver algumas das primeiras palestras dele sobre Elixir nas gravações do Rubyconf Brasil [2012](https://www.eventials.com/locaweb/jose-valim-vamos-falar-sobre-concorrencia/) e [2013](https://www.eventials.com/locaweb/elixir-uma-aproximacao-pragmatica-e-concorrente-a-programacao/). O beta inicial saiu em 2012 e ele finalmente lançou a 1.0 estável em 2015. Chris McCord conseguiu lançar o Phoenix estável logo em seguida.
 
-When I first heard about this, Elixir found its place under my radar. I didn't jump right in though, between 2009 and 2015 we had a surge in "functional programming" interest because of the Javascript renaissance, the release of Scala, Go Lang, Clojure, the promise of Rust, and so on. So I waited, carefully following every one of them.
+Quando ouvi falar disso pela primeira vez, Elixir entrou no meu radar. Mas eu não pulei de cabeça, entre 2009 e 2015 tivemos uma onda de interesse em "programação funcional" por causa da renascença do Javascript, do lançamento de Scala, Go Lang, Clojure, da promessa de Rust e por aí vai. Então esperei, acompanhando cada um deles com cuidado.
 
-Then, 2014 came and suddenly everybody else found out about Erlang, with their spartan infrastructure that enabled Whatsapp to serve half a billion users with absurdly low costs and made Facebook buy them for a hefty USD 19 billion! We all knew about the Whatsapp case since at least 2011 but it was not until 2014 that everybody noticed. But not even this was able to steer Erlang to the fore front just yet.
+Aí veio 2014 e de repente todo mundo descobriu Erlang, com sua infraestrutura espartana que permitiu que o Whatsapp servisse meio bilhão de usuários com custos absurdamente baixos e fez o Facebook comprá-los por uns gordos USD 19 bilhões! Todo mundo já sabia do caso Whatsapp pelo menos desde 2011, mas só em 2014 que todo mundo se ligou. Mesmo assim, isso ainda não foi suficiente para colocar Erlang nos holofotes.
 
-When Elixir stable was released this year, followed by Phoenix stable, I knew it was time for me to start investing some quality time with it. Erlang's core sell itself: everybody else is doing concurrency by means of immutability and lightweight threads (or green threads, NxM strategy between green threads and real threads). It is actually quite trivial to max out the machine just shooting up millions of light processes nowadays. What makes it difficult is to create a system that has the potential to actually achieve [99.9999999% reliability](http://stackoverflow.com/questions/8426897/erlangs-99-9999999-nine-nines-reliability). Spawning processes is easy, how do you coordinate them in the same machine? How do do you coordinate them between different machines? How do you update a living system without bringing it down? How do you handle failures? How to you supervise everything?
+Quando o Elixir estável foi lançado neste ano, seguido do Phoenix estável, eu sabia que estava na hora de investir um tempo de qualidade nele. O núcleo de Erlang se vende sozinho: todo mundo está fazendo concorrência por meio de imutabilidade e threads leves (ou green threads, estratégia NxM entre green threads e threads reais). Hoje em dia é trivial estourar uma máquina só disparando milhões de processos leves. O difícil mesmo é criar um sistema com potencial de chegar a [99,9999999% de confiabilidade](http://stackoverflow.com/questions/8426897/erlangs-99-9999999-nine-nines-reliability). Disparar processos é fácil, como você coordena eles na mesma máquina? Como você coordena eles entre máquinas diferentes? Como você atualiza um sistema rodando sem derrubar ele? Como você lida com falhas? Como você supervisiona tudo?
 
-These are the questions that Erlang solved decades ago ([20 years ago](http://www.erlang.org/download/armstrong_thesis_2003.pdf)) with the now famous OTP, Ericsson's Open Telecom Platform. Something that was created to meet the performance and reliability needs of telecommunications in large scales. When we say it like this it feels that it will be a royal pain to learn, something akin to the JEE (Java Enterprise Edition), but worse.
+Essas são as perguntas que Erlang resolveu décadas atrás ([20 anos atrás](http://www.erlang.org/download/armstrong_thesis_2003.pdf)) com a hoje famosa OTP, Open Telecom Platform da Ericsson. Algo criado para atender às necessidades de performance e confiabilidade das telecomunicações em larga escala. Quando a gente fala assim, parece que vai ser uma dor de cabeça monumental aprender, algo como o JEE (Java Enterprise Edition), só que pior.
 
-And I can tell you that to learn enough OTP to be productive is actually **very** easy (you won't achieve the legendary 99.9999999% reliability out of the blue, but you'll be able to build something reliable enough). Think of it as a collection of half a dozen modules, with a couple of function interfaces to implement, a few words of configuration and you're basically done. It's so easy and lightweight that in fact many small libraries are written with OTP in mind and it's easy to just "plug and play". It's not a heavyweight server-side only thing.
+E posso garantir que aprender OTP o suficiente para ser produtivo é, na verdade, **muito** fácil (você não vai conquistar a lendária confiabilidade de 99,9999999% do nada, mas vai conseguir construir algo confiável o bastante). Pense nisso como uma coleção de meia dúzia de módulos, com algumas interfaces de função para implementar, algumas linhas de configuração e basicamente acabou. É tão fácil e leve que muitas bibliotecas pequenas são escritas pensando em OTP e dá para fazer "plug and play" tranquilamente. Não é uma coisa pesada só de servidor.
 
-To harness that power you will need to learn Elixir, unofficially, a language that has an uncanny resemblance to Ruby, built to spill out Erlang bytecode for its BEAM virtual machine. You can't find a better combination.
+Para domar esse poder você precisa aprender Elixir, extraoficialmente uma linguagem com uma semelhança incrível com Ruby, feita para cuspir bytecode Erlang para sua máquina virtual BEAM. Não tem combinação melhor.
 
-### One Week
+### Uma Semana
 
-Having said all that, let's cut to the chase. You definitely want to get acquainted with the Functional Programming concepts such as immutability, higher order functions, pattern matching. I made a list of links for those concepts in [my previous post](http://www.akitaonrails.com/2015/10/28/personal-thoughts-on-the-current-functional-programming-bandwagon), I recommend you read it.
+Dito tudo isso, vamos ao que interessa. Você definitivamente quer se familiarizar com os conceitos de Programação Funcional como imutabilidade, higher order functions, pattern matching. Fiz uma lista de links para esses conceitos no [meu post anterior](http://www.akitaonrails.com/2015/10/28/personal-thoughts-on-the-current-functional-programming-bandwagon), recomendo a leitura.
 
-Assuming you're already a programmer in a dynamic language (Ruby, Python, Javascript, etc) and you want the fast crash course. Start buying ["Programming Elixir"](https://pragprog.com/book/elixir/programming-elixir) by Dave Thomas and actually do each piece of code and the exercises in order. It's a book so easy to read that you will be able to finish it in less than a week. I did it in 3 days. The Elixir-Lang official website has a [very good documentation](http://elixir-lang.org/getting-started/introduction.html) as well and they link many [good books](http://elixir-lang.org/learning.html) you want to read later.
+Assumindo que você já é programador em uma linguagem dinâmica (Ruby, Python, Javascript, etc) e quer o crash course rápido. Comece comprando ["Programming Elixir"](https://pragprog.com/book/elixir/programming-elixir) do Dave Thomas e faça cada pedaço de código e cada exercício na ordem. É um livro tão fácil de ler que você consegue terminar em menos de uma semana. Eu fiz em 3 dias. O site oficial do Elixir-Lang tem uma [documentação muito boa](http://elixir-lang.org/getting-started/introduction.html) também e eles linkam vários [bons livros](http://elixir-lang.org/learning.html) que você vai querer ler depois.
 
-Then subscribe to Josh Adam's [Elixir Sips](http://elixirsips.com). If you're a Rubyist, it's like watching Ryan Bates Railscasts from the beginning all over again. Although it's more akin to Avdi Grimm's RubyTapas show, with very short episodes just for you to have your weekly fix on Elixir.
+Depois assine o [Elixir Sips](http://elixirsips.com) do Josh Adams. Se você é Rubyista, é como assistir aos Railscasts do Ryan Bates desde o começo de novo. Embora seja mais parecido com o show RubyTapas do Avdi Grimm, com episódios bem curtos só para você ter sua dose semanal de Elixir.
 
-You can watch some of the episodes for free in low resolution, but I highly recommend you subscribe and watch the HD versions. It's well worth it. But about the episodes, there are more than 200 episodes. I've watched more than 130 in 12 hours :-) So I figure I would take another 2 days to watch everything. 
+Você pode assistir alguns episódios de graça em baixa resolução, mas recomendo fortemente que você assine e assista as versões em HD. Vale muito a pena. Sobre os episódios, são mais de 200. Eu assisti mais de 130 em 12 horas :-) Então calculo mais 2 dias para assistir tudo.
 
-You should definitely watch everything if you can, but if you can't, let me list the ones I think are the essentials. First of all, keep in mind that Josh has been doing this for quite a while, when he started Elixir was version 0.13 or below and Erlang was version 17 or below.
+Você definitivamente deve assistir tudo se conseguir, mas se não conseguir, deixa eu listar os que considero essenciais. Antes de mais nada, lembre-se que o Josh faz isso há um tempão, quando ele começou Elixir estava na versão 0.13 ou abaixo e Erlang na versão 17 ou abaixo.
 
-For example, episode [171 - Erlang 18 and time](https://elixirsips.dpdcart.com/subscriber/post?id=815) highlights the new Time API. You must know about this. Episode [056 - Migrating Records to Maps](https://elixirsips.dpdcart.com/subscriber/post?id=460) shows a new feature in Erlang 17 and Elixir where it makes Maps more preferable than the previous Records. Maps are explained in episodes [054](https://elixirsips.dpdcart.com/subscriber/post?id=453) and [055](https://elixirsips.dpdcart.com/subscriber/post?id=454). If you learn the Phoenix web framework, it used the ORM Ecto underneath and Ecto models are Maps, so you must know this.
+Por exemplo, o episódio [171 - Erlang 18 and time](https://elixirsips.dpdcart.com/subscriber/post?id=815) destaca a nova API de Time. Você precisa saber disso. O episódio [056 - Migrating Records to Maps](https://elixirsips.dpdcart.com/subscriber/post?id=460) mostra um recurso novo do Erlang 17 e Elixir onde Maps passam a ser preferíveis aos antigos Records. Maps são explicados nos episódios [054](https://elixirsips.dpdcart.com/subscriber/post?id=453) e [055](https://elixirsips.dpdcart.com/subscriber/post?id=454). Se você for aprender o framework web Phoenix, ele usa o ORM Ecto por baixo e os models do Ecto são Maps, então você precisa saber disso.
 
-It means that the first 180 episodes, at least, are using previous versions of Erlang, Elixir, Phoenix, etc and you must keep in mind that new versions will have different APIs. This was one of the reasons I waited for the stable releases, because it was only natural that projects evolve and take time to have stable APIs and chasing several moving targets is really difficult for the uninitiated.
+Isso significa que os primeiros 180 episódios, no mínimo, estão usando versões anteriores de Erlang, Elixir, Phoenix, etc, e você precisa ter em mente que versões novas terão APIs diferentes. Esse foi um dos motivos pelos quais esperei pelos releases estáveis, porque era natural que os projetos evoluíssem e levassem tempo para ter APIs estáveis, e correr atrás de vários alvos móveis é realmente difícil para iniciantes.
 
-Having said that, watch this list first:
+Dito isso, assista a esta lista primeiro:
 
 * 001 - Introduction and Installing Elixir.mp4
 * 002 - Basic Elixir.mp4
@@ -152,20 +155,20 @@ Having said that, watch this list first:
 * 203 - plug_auth.mp4
 * 204 - Behaviours.mp4
 
-This is roughly half of what's available in Elixir Sips. All the other episodes are also interesting, but if you're just getting started, this list should be enough to wet your fingers in the language.
+Isso é mais ou menos metade do que tem disponível no Elixir Sips. Todos os outros episódios também são interessantes, mas se você está só começando, essa lista deve ser suficiente para molhar os pés na linguagem.
 
-Railers will enjoy Phoenix and the ecosystem that is growing around it. You can already authenticate through [OAuth2](https://github.com/scrogson/oauth2), do pagination will_paginate style with [Scrivener](https://github.com/drewolson/scrivener), file uploads carrierwave style with [Arc](https://github.com/stavro/arc), deploy to [Heroku](http://wsmoak.net/2015/07/05/phoenix-on-heroku.html).
+Quem vem do Rails vai curtir Phoenix e o ecossistema que está crescendo em volta dele. Você já consegue autenticar via [OAuth2](https://github.com/scrogson/oauth2), fazer paginação no estilo will_paginate com [Scrivener](https://github.com/drewolson/scrivener), upload de arquivos no estilo carrierwave com [Arc](https://github.com/stavro/arc), deploy no [Heroku](http://wsmoak.net/2015/07/05/phoenix-on-heroku.html).
 
-For more exercises, you can easily connect to HTTP endpoints using [HTTPoison](https://github.com/edgurgel/httpoison), parse HTML with [Floki](https://github.com/philss/floki), parse JSON with [Poison](https://github.com/devinus/poison). For more libraries, you can follow this Github page called [Awesome Elixir](https://github.com/h4cc/awesome-elixir) which lists many new Elixir packages that you can use. But make sure you walk yourself through the basic concepts first. Elixir has a Rake-like task management system with built-in Mix, you can add dependencies in a Gemfile-like file called Mix.exs, which every projects has. You can add dependencies through Github urls or from [Hex.pm](https://hex.pm) which is like Rubygems.org.
+Para mais exercícios, você pode conectar facilmente em endpoints HTTP usando [HTTPoison](https://github.com/edgurgel/httpoison), parsear HTML com [Floki](https://github.com/philss/floki), parsear JSON com [Poison](https://github.com/devinus/poison). Para mais bibliotecas, você pode acompanhar a página no Github chamada [Awesome Elixir](https://github.com/h4cc/awesome-elixir) que lista vários pacotes Elixir novos que você pode usar. Mas garanta que você vai passar pelos conceitos básicos primeiro. Elixir tem um sistema de gerenciamento de tarefas estilo Rake embutido com o Mix, você pode adicionar dependências em um arquivo estilo Gemfile chamado Mix.exs, que todo projeto tem. Você pode adicionar dependências por URLs do Github ou via [Hex.pm](https://hex.pm), que é como o Rubygems.org.
 
-In this learning process, the concepts that I find more important to learn first are:
+Nesse processo de aprendizado, os conceitos que considero mais importantes para aprender primeiro são:
 
-* Elixir basic syntax and concepts (pattern matching, loops through recursion, immutable state, primitive types including Maps, the pipe operator)
-* The concept of processes, nodes, and intercommunication between processes and nodes, including Monitors and Links.
-* OTP Basics, learn what GenServer, GenEvent, GenFSM are.
+* Sintaxe e conceitos básicos de Elixir (pattern matching, loops via recursão, estado imutável, tipos primitivos incluindo Maps, o pipe operator)
+* O conceito de processos, nós e a intercomunicação entre processos e nós, incluindo Monitors e Links.
+* Básico de OTP, aprenda o que são GenServer, GenEvent, GenFSM.
 
-After you learn that you can figure out how to build OTP applications and do something practical for the Web using Phoenix, particularly you will want to learn everything about Phoenix's Channels, the infrastructure for robust, fast and [highly concurrent](http://www.akitaonrails.com/2015/10/29/phoenix-experiment-holding-2-million-websocket-clients) WebSockets.
+Depois de aprender isso, você consegue descobrir como construir aplicações OTP e fazer algo prático para a Web usando Phoenix, em particular você vai querer aprender tudo sobre os Channels do Phoenix, a infraestrutura para WebSockets robustos, rápidos e [altamente concorrentes](http://www.akitaonrails.com/2015/10/29/phoenix-experiment-holding-2-million-websocket-clients).
 
-This is it. This is my first week learning Elixir, and my next step is to train myself by doing more exercises and also learning more about Phoenix. Even though Phoenix is inspired by Rails, it is not a clone, it has its own set of unique concepts to learn and this is definitely going to be a very interesting ride.
+É isso. Essa foi a minha primeira semana aprendendo Elixir, e meu próximo passo é me treinar fazendo mais exercícios e também aprendendo mais sobre Phoenix. Mesmo Phoenix sendo inspirado em Rails, ele não é um clone, tem seu próprio conjunto único de conceitos para aprender e isso definitivamente vai ser uma viagem muito interessante.
 
-If you have more tips and tricks for beginners, feel free to comment below.
+Se você tiver mais dicas e truques para iniciantes, fique à vontade para comentar abaixo.

@@ -1,44 +1,47 @@
 ---
-title: Ex Pusher Lite - Part 2 - First Working Core!
+title: "Ex Pusher Lite - Parte 2 - O Primeiro Core Funcional!"
 date: '2015-12-14T15:04:00-02:00'
-slug: ex-pusher-lite-part-2-first-working-core
+slug: ex-pusher-lite-parte-2-o-primeiro-core-funcional
+translationKey: ex-pusher-lite-part-2
+aliases:
+- /2015/12/14/ex-pusher-lite-part-2-first-working-core/
 tags:
 - elixir
 - phoenix
 - pusher
 - expusherlite
-- english
+- traduzido
 draft: false
 ---
 
-In [Part 1](http://www.akitaonrails.com/2015/12/09/ex-pusher-lite-part-1-phoenix-channels-and-rails-apps) I basically started with [Daniel Neighman's](https://labs.opendoor.com/phoenix-on-rails-for-client-push-notifications) tutorial.
+Na [Parte 1](http://www.akitaonrails.com/2015/12/09/ex-pusher-lite-part-1-phoenix-channels-and-rails-apps) eu basicamente comecei a partir do tutorial do [Daniel Neighman](https://labs.opendoor.com/phoenix-on-rails-for-client-push-notifications).
 
-In Part 2 I will add the proper mechanisms to make a minimal core that is actually useful and deploy it to Heroku. In order to do that I need to implement the following:
+Nesta Parte 2 vou adicionar os mecanismos necessários para ter um core mínimo que seja realmente útil e fazer deploy no Heroku. Para isso preciso implementar o seguinte:
 
-* a simple Administration authentication (a hardcoded admin_username and admin_password will do for now)
-* an admin restricted **"/api/admin/apps"** endpoint to manage new Applications. Each Application should have a randomly generated key and secret.
-* the existing "/events" endpoint from Part 1 should be moved to **"/api/apps/:app_id/events"** and have access restricted to the authentication of the key and secret of the Application identified as "app_id".
-* for now, the Event will just broadcast to the appropriate topic. We want to be able to broadcast to everyone from an Application as well to specific topics within the Application scope. 
+* uma autenticação simples de Administração (um admin_username e admin_password hardcoded já resolvem por enquanto)
+* um endpoint **"/api/admin/apps"** restrito ao admin para gerenciar novas Aplicações. Cada Aplicação deve ter uma key e um secret gerados aleatoriamente.
+* o endpoint "/events" da Parte 1 deve ser movido para **"/api/apps/:app_id/events"** e ter o acesso restrito pela autenticação da key e secret da Aplicação identificada como "app_id".
+* por enquanto, o Event vai apenas fazer broadcast no tópico apropriado. Queremos poder fazer broadcast pra todo mundo de uma Aplicação e também pra tópicos específicos dentro do escopo daquela Aplicação.
 
-As usual, the code for this section will be tagged as **v0.2** in both the [client demo](https://github.com/akitaonrails/pusher_lite_demo/tree/v0.2) and [server-side](https://github.com/akitaonrails/ex_pusher_lite/tree/v0.2) Github repositories.
+Como de costume, o código desta seção vai estar marcado com a tag **v0.2** tanto no repositório do [client demo](https://github.com/akitaonrails/pusher_lite_demo/tree/v0.2) quanto no [server-side](https://github.com/akitaonrails/ex_pusher_lite/tree/v0.2) no Github.
 
-### The App Resource
+### O Resource App
 
-If this project of ours is to behave like Pusher.com, we need a way to create new "Applications". Each client connecting to this service will be bound to this Application. Events should be restricted to the Application boundary. This is how we will isolate different clients connecting to the same server. So you can have one core serving several different web applications.
+Se este nosso projeto vai se comportar como o Pusher.com, precisamos de uma forma de criar novas "Aplicações". Cada cliente que se conecta a esse serviço vai estar atrelado a essa Aplicação. Os Events ficam restritos à fronteira da Aplicação. É assim que vamos isolar os diferentes clientes que se conectam ao mesmo servidor. Então você pode ter um único core servindo várias aplicações web diferentes.
 
-Once a new application is created, the client/consumer web app will have the pair of key and secret tokens that it will use to connect both the server-side triggers as well as the client-side Websocket listeners.
+Quando uma nova aplicação é criada, o web app cliente/consumidor recebe o par de tokens key e secret que vai usar tanto para os triggers do lado servidor quanto para os listeners de Websocket no lado cliente.
 
-As a disclaimer, at this stage of development I will not implement any sophisticated authentication system such as OAuth2 or JWT. I will save this for posts to follow. For now I will use the Application's key and secret just as simple username and password in an HTTP Basic Auth. This should be good enough for our purposes for the time being.
+Como aviso prévio, neste estágio do desenvolvimento eu não vou implementar nenhum sistema sofisticado de autenticação como OAuth2 ou JWT. Vou deixar isso pra posts futuros. Por enquanto vou usar a key e o secret da Aplicação como simples username e password num HTTP Basic Auth. Por ora isso já basta pros nossos propósitos.
 
-So, the very first step is to create such an "Application" resource and we can resort to Phoenix's built-in JSON scaffold generator:
+Então, o primeiro passo é criar esse resource "Application" e podemos recorrer ao gerador de scaffold JSON que já vem com o Phoenix:
 
 ```
 mix phoenix.gen.json App apps name:string slug:string key:string secret:string active:boolean
 ```
 
-Most tutorials will show you the "<tt>phoenix.gen.html</tt>" generator, which behaves like Rails's "scaffold", generating HTML templates for each of the CRUD verbs. This is similar but it skips HTML and assumes this is going to be a JSON CRUD API.
+A maioria dos tutoriais mostra o gerador "<tt>phoenix.gen.html</tt>", que se comporta como o "scaffold" do Rails, gerando templates HTML pra cada um dos verbos CRUD. Esse aqui é parecido mas pula o HTML e assume que vai ser uma API CRUD em JSON.
 
-We need to manually update the "<tt>web/router.ex</tt>" file like this:
+Precisamos atualizar manualmente o arquivo "<tt>web/router.ex</tt>" assim:
 
 ```ruby
 # web/router.ex
@@ -51,11 +54,11 @@ scope "/api", ExPusherLite do
 end
 ```
 
-The "<tt>EventsController</tt>" is the one we implemented in Part 1 and that we will overhaul during this Part 2.
+O "<tt>EventsController</tt>" é aquele que implementamos na Parte 1 e que vamos refazer durante esta Parte 2.
 
-The generator gave us this new "<tt>AppController</tt>", and similarly to Rails' routes, the DSL is remarkably similar here. If you're a Railer I bet you can instantly recognize the routes this DSL is generating.
+O gerador nos deu esse novo "<tt>AppController</tt>" e, assim como nas rotas do Rails, a DSL aqui é notavelmente parecida. Se você é um Railer aposto que reconhece de cara as rotas que essa DSL está gerando.
 
-The generator also created a proper migration for us:
+O gerador também criou uma migration apropriada pra gente:
 
 ```ruby
 # priv/repo/migrations/20151210131528_create_app.exs
@@ -78,14 +81,14 @@ defmodule ExPusherLite.Repo.Migrations.CreateApp do
 end
 ```
 
-Again, remarkably similar to ActiveRecord's Migration DSL. Migrations behave as you expect. You must run:
+De novo, notavelmente parecido com a DSL de Migration do ActiveRecord. Migrations se comportam exatamente como você espera. Você precisa rodar:
 
 ```
-mix ecto.create # if you haven't already
+mix ecto.create # se ainda não tiver feito isso
 mix ecto.migrate
 ```
 
-This App resource will need the ability to create slugs out of the names (which we will use as "app_id") and also generate random key and secret values. So we must add these dependencies to the "<tt>mix.exs</tt>" file:
+Este resource App vai precisar gerar slugs a partir dos nomes (que vamos usar como "app_id") e também gerar valores aleatórios para key e secret. Então temos que adicionar essas dependências no arquivo "<tt>mix.exs</tt>":
 
 ```ruby
 # mix.exs
@@ -96,7 +99,7 @@ defp deps do
 end
 ```
 
-The [final App model](https://github.com/akitaonrails/ex_pusher_lite/blob/v0.2/web/models/app.ex) is quite long, so I will break it down for you:
+O [model App final](https://github.com/akitaonrails/ex_pusher_lite/blob/v0.2/web/models/app.ex) é bem grande, então vou destrinchar pra vocês:
 
 ```ruby
 # web/models/app.ex
@@ -119,9 +122,9 @@ defmodule ExPusherLite.App do
   ...
 ```
 
-This block declares the model Schema. Be careful if you generate a migration and then change its fields settings: you must remember to update the schema in the model. In my first attempt I didn't include the "slug" field, so I rolled back the database migration (with "<tt>mix ecto.rollback</tt>"), changed the migration to add the "slug" field and re-ran the "<tt>ecto.migrate</tt>" task.
+Esse bloco declara o Schema do model. Cuidado quando você gera uma migration e depois muda as configurações dos campos: você precisa lembrar de atualizar o schema no model. Na minha primeira tentativa eu não incluí o campo "slug", então fiz rollback da migration ("<tt>mix ecto.rollback</tt>"), mudei a migration pra adicionar o campo "slug" e rodei a task "<tt>ecto.migrate</tt>" de novo.
 
-I was puzzled with the model not picking up the new field; after some time I remembered that Ecto models don't attempt to fetch the real database schema and generate accessors dynamically, instead it relies on the explicitly declared schema block as shown above. After I added the new "slug" field in the schema block, then the model would properly use the new field.
+Fiquei intrigado porque o model não estava pegando o novo campo; depois de um tempo lembrei que models do Ecto não tentam buscar o schema real do banco e gerar accessors dinamicamente, mas dependem do bloco de schema declarado explicitamente como mostrado acima. Depois que adicionei o campo "slug" no bloco de schema, o model passou a usar o novo campo direitinho.
 
 ```ruby
 # web/models/app.ex
@@ -135,9 +138,9 @@ end
 ...
 ```
 
-These are just helper functions to use in the AppController. The odd bit might be "__MODULE__" but this is just a shortcut for the atom representation of the current module, which is "<tt>ExPusherLite.App</tt>". This is how you make a simple query to the model, it resembles Rails' "<tt>App.get_by(slug: slug, active: true)</tt>".
+Essas são apenas funções helper pra usar no AppController. A parte estranha talvez seja "__MODULE__", mas isso é só um atalho pra representação em atom do módulo atual, que é "<tt>ExPusherLite.App</tt>". É assim que se faz uma query simples ao model, lembra muito o "<tt>App.get_by(slug: slug, active: true)</tt>" do Rails.
 
-In Elixir convention, Ecto has functions with and without bangs ("<tt>get_by!</tt>" and "<tt>get_by</tt>"). If you want to catch an error you use the version without bangs and it will return either a "<tt>{:ok, result}</tt>" tuple or a "<tt>{:error, result}</tt>" and you can pattern match them. Or you can use the bang version and it will raise an exception. Depends on what you want to do.
+Por convenção do Elixir, o Ecto tem funções com e sem bang ("<tt>get_by!</tt>" e "<tt>get_by</tt>"). Se você quiser capturar um erro, usa a versão sem bang e ela retorna ou uma tupla "<tt>{:ok, result}</tt>" ou "<tt>{:error, result}</tt>" e você pode fazer pattern match. Ou usa a versão com bang e ela levanta uma exception. Depende do que você quer fazer.
 
 ```ruby
 # web/models/app.ex
@@ -155,15 +158,15 @@ end
 ...
 ```
 
-Second only to the Schema block I mentioned above, this "<tt>changeset/2</tt>" function is the most important part of a Model.
+Atrás apenas do bloco de Schema que mencionei acima, esta função "<tt>changeset/2</tt>" é a parte mais importante de um Model.
 
-In Rails you just have the concept of a "Model" which is considered "Fat" because it deals with database operations, business logic and framework hooks all in the same place. In Phoenix you have to deal with at least 3 different concepts:
+No Rails você tem só o conceito de "Model", que é considerado "Fat" porque cuida de operações de banco, lógica de negócio e hooks do framework tudo no mesmo lugar. No Phoenix você lida com pelo menos 3 conceitos diferentes:
 
-* You have a **Repo**, which receives a Changeset and uses it to insert or update the designated rows in the database table. You will see "<tt>Repo.get</tt>" or "<tt>Repo.insert</tt>", not "<tt>App.find</tt>" or "<tt>App.save</tt>".
-* Then you have the **Changeset** which are just Elixir Maps (the ones with the syntax "%<tt>{key => value}</tt>"). It's just a Hash, a Dictionary, a collection of key-value pairs. A Repo accepts Maps for its operations.
-* Finally, you have the **Model** which actually give meaning and context to the raw Changesets. And the function "<tt>changeset/2</tt>" above is the one responsible for receiving a raw Map, piping it through a validation and transformation chain and return a valid Changeset for the Repo to use.
+* Você tem um **Repo**, que recebe um Changeset e usa pra inserir ou atualizar as linhas designadas na tabela do banco. Você vai ver "<tt>Repo.get</tt>" ou "<tt>Repo.insert</tt>", e não "<tt>App.find</tt>" ou "<tt>App.save</tt>".
+* Aí você tem o **Changeset**, que são apenas Maps do Elixir (aqueles com a sintaxe "%<tt>{key => value}</tt>"). É só um Hash, um Dictionary, uma coleção de pares chave-valor. Um Repo aceita Maps pras suas operações.
+* Por fim, você tem o **Model**, que de fato dá significado e contexto aos Changesets crus. E a função "<tt>changeset/2</tt>" acima é a responsável por receber um Map cru, passá-lo por uma cadeia de validação e transformação e devolver um Changeset válido pro Repo usar.
 
-So, in a controller you will usually find code like this:
+Então, num controller você normalmente vai encontrar código assim:
 
 ```ruby
 # web/controllers/app_controller.ex
@@ -182,7 +185,7 @@ def create(conn, %{"app" => app_params}) do
   ...
 ```
 
-This is how you create a new, validated, changeset and then pass it to the Repo, treating the results in a pattern match block. Just compare the above changeset line with the beginning of the "changeset/2" function:
+É assim que você cria um changeset novo, validado, e passa pro Repo, tratando os resultados num bloco de pattern match. Compare a linha do changeset acima com o início da função "changeset/2":
 
 ```ruby
 ...
@@ -193,9 +196,9 @@ def changeset(model, params \\ :empty) do
 ...
 ```
 
-It maps the "<tt>%App{}</tt>" empty record to the "model" argument and the "app_params" that comes from the request (a map of the format "<tt>%{name => 'foo', active: => 'true'}</tt>") to the argument "params". Then it pipes the model and params to the "<tt>cast/4</tt>" function which will copy the values from the params map to the model map/changeset. And it keep passing the resulting changeset to the following functions, such as "<tt>validated_length/3</tt>" below, and so on. If the chain ends with no exceptions, you end up with a clean, validated changeset that you can just pass to the Repo to blindly insert to the database.
+Ela mapeia o registro vazio "<tt>%App{}</tt>" pro argumento "model" e o "app_params" que vem do request (um map do formato "<tt>%{name => 'foo', active: => 'true'}</tt>") pro argumento "params". Depois encanou o model e os params na função "<tt>cast/4</tt>", que vai copiar os valores do map de params pro map/changeset do model. E vai passando o changeset resultante pras funções seguintes, como o "<tt>validated_length/3</tt>" abaixo, e assim por diante. Se a cadeia termina sem exceptions, você tem no final um changeset limpo, validado, que é só passar pro Repo enfiar no banco sem pensar.
 
-In the above implementation we are chaining filters to generate the key, secret and slug, and this is the implementation as private functions:
+Na implementação acima estamos encadeando filtros pra gerar key, secret e slug, e essa é a implementação como funções privadas:
 
 ```ruby
 # web/models/app.ex
@@ -229,9 +232,9 @@ In the above implementation we are chaining filters to generate the key, secret 
 end
 ```
 
-The logic is set so new key/secret are generated only if the fields are empty and a new slug is generated only if the name has changes. And this is it, I told you the model code would be a bit large. You can see how to use the Slugger and SecureRandom libraries we added in the "mix.exs" before.
+A lógica é tal que key/secret novos são gerados apenas se os campos estiverem vazios e um slug novo é gerado apenas se o name tiver mudado. E é isso, eu disse que o código do model ia ser meio grande. Dá pra ver como usar as bibliotecas Slugger e SecureRandom que adicionamos no "mix.exs" antes.
 
-I also want to add the equivalent of a Rails seed file to create a test application so it's easier for new comers to know what to do. Phoenix has seeds and you can implement it like this:
+Eu também quero adicionar o equivalente de um arquivo de seed do Rails pra criar uma aplicação de teste, assim quem está chegando agora sabe o que fazer. O Phoenix tem seeds e você pode implementar assim:
 
 ```ruby
 # priv/repo/seeds.exs
@@ -239,27 +242,27 @@ I also want to add the equivalent of a Rails seed file to create a test applicat
 alias ExPusherLite.App
 alias ExPusherLite.Repo
 
-# not using the App.changeset should just avoid all validations and generations
+# não usar o App.changeset pula todas as validações e gerações
 Repo.insert! %App{ slug: "test-app", name: "Test App", key: "test-app-fake-key", secret: "test-app-fake-secret", active: true }
 ```
 
-Remember how I detailed the role of the "changeset/2" function in creating a clean and validated changeset, which is just a Map? You can skip that function altogether and hand craft your own final Map and pass it to the Repo. The Repo doesn't care if this is a valid Map or not it will just try to insert it into the database regardless. And in this case the App Model avoids us to hardcode keys and secrets, so this is how we do it in a seed file.
+Lembra como detalhei o papel da função "changeset/2" em criar um changeset limpo e validado, que é só um Map? Você pode pular essa função inteira, montar seu próprio Map final na mão e passar pro Repo. O Repo não liga se o Map é válido ou não, ele simplesmente tenta inserir no banco. E neste caso o Model do App nos impede de hardcodar keys e secrets, então é assim que fazemos num arquivo de seed.
 
-We can just run it directly like this:
+Dá pra rodar diretamente assim:
 
 ```
 mix run priv/repo/seeds.exs
 ```
 
-The AppController just need 2 changes. The first is to search the App through the slug field instead of the default 'id' field. This is simple enough, we just replace all calls to "<tt>app = Repo.get!(App, id)</tt>" to "<tt>app = App.get_by_slug(id)</tt>", which is why we implemented this function in the model above.
+O AppController só precisa de 2 mudanças. A primeira é buscar o App pelo campo slug em vez do campo padrão 'id'. É bem simples, basta substituir todas as chamadas de "<tt>app = Repo.get!(App, id)</tt>" por "<tt>app = App.get_by_slug(id)</tt>", que é justamente por isso que implementamos essa função no model acima.
 
-The second thing is Authentication.
+A segunda coisa é Autenticação.
 
-### Adding Authentication
+### Adicionando Autenticação
 
-Now that we have an App model that can generate secure random UUIDs for key and secret, I will add a second level of authentication for administrators to be able to create such Apps.
+Agora que temos um model App que consegue gerar UUIDs aleatórios seguros pra key e secret, vou adicionar um segundo nível de autenticação pra administradores conseguirem criar esses Apps.
 
-For that I will just hard-code a secret in the config file of the application itself to serve as a development default. Like this:
+Pra isso vou simplesmente hardcodar um secret no arquivo de config da aplicação como default de desenvolvimento. Assim:
 
 ```ruby
 # config/config.exs
@@ -271,7 +274,7 @@ config :ex_pusher_lite, :admin_authentication,
 import_config "#{Mix.env}.exs"
 ```
 
-You must add this block before the "<tt>import_config</tt>" function. Then you can override those values in the "config/prod.secret.exs" file, for example, like this:
+Você precisa adicionar esse bloco antes da função "<tt>import_config</tt>". Aí você pode sobrescrever esses valores no arquivo "config/prod.secret.exs", por exemplo, assim:
 
 ```ruby
 # config/prod.secret.exs
@@ -281,14 +284,14 @@ config :ex_pusher_lite, :admin_authentication,
   password: "2b94ff0f07ce9769567f"
 ```
 
-Of course, generate your own pair of secure username and password and replace it in the production environment if you intend to actually use this. For Heroku, we will still have to tweak this further, so keep this in mind.
+Claro, gere o seu próprio par seguro de username e password e substitua no ambiente de produção, se for usar isso pra valer. Pro Heroku ainda vamos ajustar isso um pouco mais, então fique atento.
 
-Just to make the process easier, I also added the following helper function:
+Pra facilitar o processo, eu também adicionei o seguinte helper:
 
 ```ruby
 # lib/ex_pusher_lite.ex
 ...
-  # Return this applicaton administration Basic HTTP Auth hash
+  # Retorna o hash de Basic HTTP Auth de administração desta aplicação
   def admin_secret do
     admin_username = Application.get_env(:ex_pusher_lite, :admin_authentication)[:username]
     admin_password = Application.get_env(:ex_pusher_lite, :admin_authentication)[:password]
@@ -297,9 +300,9 @@ Just to make the process easier, I also added the following helper function:
 end
 ```
 
-This is how you fetch the configuration values. I am generating a simple Base64 encoded string out of the username concatenated with the password with a comma, which is what Basic HTTP Auth requires. I will use this admin hash for the "AppController" and each client must provide the key/secret in its own App instance to be able to trigger the "EventsController".
+É assim que você busca os valores de configuração. Estou gerando uma string Base64 simples a partir do username concatenado com o password com uma vírgula, que é o que o Basic HTTP Auth requer. Vou usar esse hash de admin pro "AppController" e cada cliente vai precisar fornecer a key/secret da sua própria instância de App pra disparar o "EventsController".
 
-For both controllers I will create a single Authentication Plug, like this:
+Pros dois controllers vou criar um único Plug de Autenticação, assim:
 
 ```ruby
 # lib/ex_pusher_lite/authentication.ex
@@ -329,11 +332,11 @@ defmodule ExPusherLite.Authentication do
 end 
 ```
 
-As I explained in previous articles, a Plug is like a chainable Rails Middleware or even a Rack application. It must have a single "<tt>call/2</tt>" that receives a Plug.Conn structure and returns it back, allowing to form a chain/pipeline of Plugs.
+Como expliquei em artigos anteriores, um Plug é como um Middleware encadeável do Rails ou até uma aplicação Rack. Ele precisa ter uma única "<tt>call/2</tt>" que recebe uma estrutura Plug.Conn e devolve ela de volta, permitindo formar uma cadeia/pipeline de Plugs.
 
-We check if we want to compare with the Admin token or the App token and then retrieve the Basic HTTP authorization token that's in the HTTP request connection structure (we retrive individual header values through the "<tt>get_req_header/2</tt>" function). Finally we make a secure compare between the tokens.
+Verificamos se queremos comparar com o token de Admin ou o token do App e aí pegamos o token de autorização Basic HTTP que está na estrutura de conexão do request HTTP (recuperamos valores individuais do header pela função "<tt>get_req_header/2</tt>"). Por fim, fazemos uma comparação segura entre os tokens.
 
-To enable this plug in the controllers we just add it like this:
+Pra habilitar esse plug nos controllers basta adicionar assim:
 
 ```ruby
 # web/controllers/app_controller.ex
@@ -354,27 +357,27 @@ defmodule ExPusherLite.AppController do
    ...
 ```
 
-In Part 1 we had a simpler "<tt>plug :authenticate</tt>" in the EventsController. We can remove it and also the "<tt>authenticate/2</tt>" function. We just refactored it into a better function that also serves administration authentication now, but the idea is the same.
+Na Parte 1 tínhamos um "<tt>plug :authenticate</tt>" mais simples no EventsController. Podemos remover ele e também a função "<tt>authenticate/2</tt>". Refatoramos tudo pra uma função melhor que agora também serve à autenticação de administração, mas a ideia é a mesma.
 
-This is it: the basics for API authentication. Again, this is not the best solution as the username/password pair goes in the URL and it's open to man-in-the-middle attacks. SSL only encrypts the HTTP body but the URL is still open.
+É isso: o básico de autenticação de API. De novo, esta não é a melhor solução porque o par username/password vai na URL e fica aberto a ataques de man-in-the-middle. SSL só criptografa o body do HTTP mas a URL fica aberta.
 
-For example, if an administrator wants to create a new application, he must do the following:
+Por exemplo, se um administrador quiser criar uma nova aplicação, precisa fazer assim:
 
 ```
 curl --data "app[name]=foo-app" http://pusher_admin_username:pusher_admin_password@localhost:4000/api/admin/apps
 ```
 
-And this would be one example of the resulting JSON representation of the new app:
+E este seria um exemplo da representação JSON resultante do novo app:
 
 ```
 {"data":{"slug":"foo-app","secret":"8ef69064-0d7e-c9ef-ac14-b6b1db303e7a","name":"foo-app","key":"9400ad21-eed8-117a-bce5-845262e0a09e","id":5,"active":true}}%
 ```
 
-With this new key and secret in hand, we can update our client demo to make use of the new app.
+Com essa nova key e secret em mãos, podemos atualizar nosso client demo pra usar o novo app.
 
-### Configuring the Client Demo
+### Configurando o Client Demo
 
-We must start by adding the proper Application details in the "<tt>.env</tt>" file:
+Vamos começar adicionando os detalhes apropriados da Aplicação no arquivo "<tt>.env</tt>":
 
 ```
 PUSHER_URL: "localhost:4000"
@@ -384,7 +387,7 @@ PUSHER_SECRET: "8ef69064-0d7e-c9ef-ac14-b6b1db303e7a"
 PUSHER_CHANNEL: "foo-topic"
 ```
 
-We must also tweak the "<tt>config/secrets.yml</tt>" to reflect the new metadata (development, test, and production must follow this):
+Também temos que ajustar o "<tt>config/secrets.yml</tt>" pra refletir os novos metadados (development, test e production precisam seguir isso):
 
 ```
 development:
@@ -397,7 +400,7 @@ development:
   ...
 ```
 
-And we can create an initializer to make it easier to use this metadata properly:
+E podemos criar um initializer pra facilitar o uso desses metadados:
 
 ```ruby
 # config/initializers/pusher_lite.rb
@@ -414,9 +417,9 @@ module PusherLite
 end 
 ```
 
-Again, the Rails app will trigger the ExPusherLite server using the Basic HTTP Auth. Do not be fooled into thinking this is "secure", it just "feels a bit secure through obscurity". You have been warned, wait for the next articles on this subject. But this is usable in controlled environments.
+De novo, o app Rails vai disparar o servidor ExPusherLite usando o Basic HTTP Auth. Não se iluda achando que isso é "seguro", apenas "parece um pouco seguro pela obscuridade". Você foi avisado, espere os próximos artigos sobre o assunto. Mas isso é utilizável em ambientes controlados.
 
-To finalize the upgrades, we must change the client-side access to the new metadata, first changing the application layout:
+Pra finalizar os upgrades, temos que mudar o acesso do lado cliente aos novos metadados, primeiro mudando o layout da aplicação:
 
 ```html
 <!-- app/views/layouts/application.html.erb -->
@@ -428,7 +431,7 @@ To finalize the upgrades, we must change the client-side access to the new metad
 ...
 ```
 
-The javascript "<tt>index.es6</tt>" fetches from this meta headers, so we must change them there:
+O javascript "<tt>index.es6</tt>" busca esses meta headers, então temos que mudar lá também:
 
 ```javascript
 # app/assets/javascripts/application/pages/home/index.es6
@@ -447,7 +450,7 @@ The javascript "<tt>index.es6</tt>" fetches from this meta headers, so we must c
      })
      socket.connect()
  
-     // Now that you are connected, you can join channels with a topic:
+     // Agora que está conectado, dá pra entrar em canais com um topic:
 -    let channel = socket.channel(pusherChannel, {})
 +    let channel = socket.channel(`public:${pusherApp}`, {})
      channel.join()
@@ -467,15 +470,15 @@ The javascript "<tt>index.es6</tt>" fetches from this meta headers, so we must c
    }
 ```
 
-One important modification from Part 1 is that the WebSocket host was hardcoded to "localhost" and here we are making it configurable through the meta tags. Right now, for localhost tests, we are using the plain "ws://" protocol but when we deploy to Heroku we will change it to "wss://" for SSL. Same thing for the "PusherLite" initializer. Keep that in mind.
+Uma modificação importante em relação à Parte 1 é que o host do WebSocket estava hardcoded em "localhost" e aqui estamos tornando ele configurável via meta tags. No momento, pros testes em localhost, estamos usando o protocolo "ws://" puro, mas quando fizermos deploy no Heroku vamos mudar pra "wss://" pra ter SSL. Mesma coisa pro initializer "PusherLite". Tenha isso em mente.
 
-Now it's subscribing to a different format of topic/channel. In Part 1 it would be something like: "<tt>public:test_channel</tt>" now we are listening to "<tt>public:foo-app</tt>", so the application is the Websocket subscription "topic".
+Agora ele está se inscrevendo num formato diferente de topic/channel. Na Parte 1 era algo como: "<tt>public:test_channel</tt>", e agora estamos escutando em "<tt>public:foo-app</tt>", então a aplicação é o "topic" da inscrição no Websocket.
 
-Then we are changing the socket listener to listen for 2 different events. The first one is in the format "<tt>test_channel:msg</tt>". So this is how we must now send messages to an specific "channel" within an "app/topic".
+Aí estamos mudando o socket listener pra escutar 2 events diferentes. O primeiro está no formato "<tt>test_channel:msg</tt>". É assim que agora temos que enviar mensagens pra um "channel" específico dentro de um "app/topic".
 
-And last we still listen to the old "msg" event, but this serves as a "broadcast" event for all connected clients subscribed to this particular "foo-app" Application. Now web clients can listen to specific "channels" within the "app" but also receive system wide "broadcast" messages. This is a big improvement and it didn't require much on the Javascript side.
+E por último ainda escutamos o velho event "msg", mas ele agora serve como um event de "broadcast" pra todos os clientes conectados inscritos nessa Aplicação "foo-app" em particular. Agora os clientes web podem escutar "channels" específicos dentro do "app" mas também receber mensagens de "broadcast" globais. Isso é uma melhoria grande e quase não exigiu coisa do lado do Javascript.
 
-But what more does it take to make this **"channel-only and broadcast"** system work? First, we start changing the web form to allow a user to choose between sending a channel-only message or a broadcast, like this:
+Mas o que mais é preciso pra fazer esse sistema **"channel-only and broadcast"** funcionar? Primeiro, começamos mudando o formulário web pra deixar o usuário escolher entre enviar uma mensagem só de canal ou um broadcast, assim:
 
 ```html
 <!-- app/views/home/index.html.erb -->
@@ -488,7 +491,7 @@ But what more does it take to make this **"channel-only and broadcast"** system 
 ...
 ```
 
-Now the EventsController must accept this new parameter:
+Agora o EventsController precisa aceitar esse novo parâmetro:
 
 ```ruby
 # app/controllers/events_controller.rb
@@ -499,7 +502,7 @@ Now the EventsController must accept this new parameter:
 end
 ```
 
-Finally, the Model must use this new information before posting to the ExPusherLite server:
+Por fim, o Model precisa usar essa nova informação antes de fazer o post pro servidor ExPusherLite:
 
 ```ruby
 # app/models/pusher_event.rb
@@ -526,9 +529,9 @@ class PusherEvent
 end
 ```
 
-I am just assuming a hard-coded "<tt>#general</tt>" string to serve as the broadcast trigger for the server. Now we must make the server accept this new protocol schema, so let's go back to Elixir.
+Estou apenas assumindo uma string hardcoded "<tt>#general</tt>" pra servir de gatilho de broadcast pro servidor. Agora temos que fazer o servidor aceitar esse novo schema de protocolo, então vamos voltar pro Elixir.
 
-First we must start with the counterpart for the previous POST trigger, <tt>ExPusherLite.EventsController</tt>:
+Primeiro temos que começar com a contraparte do trigger POST anterior, <tt>ExPusherLite.EventsController</tt>:
 
 ```ruby
 # web/controllers/events_controller.ex
@@ -556,9 +559,9 @@ First we must start with the counterpart for the previous POST trigger, <tt>ExPu
    ...
 ```
 
-The first difference is that I am pattern matching from the arguments directly to the "topic" and "event" variables. This function is also aware of the "<tt>#general</tt>" string the client can send to indicate an app-wide broadcast. And the new topic is the concatenation of "topic" and "event" to allow for "channel-only" messages.
+A primeira diferença é que estou fazendo pattern match direto dos argumentos pras variáveis "topic" e "event". Essa função também sabe da string "<tt>#general</tt>" que o cliente pode enviar pra indicar um broadcast global do app. E o novo topic é a concatenação de "topic" e "event" pra permitir mensagens "channel-only".
 
-To connect this all to the WebSocket handler, we must make the following changes:
+Pra ligar tudo isso ao handler de WebSocket, temos que fazer as seguintes mudanças:
 
 ```ruby
 # web/channels/room_channel.ex
@@ -579,22 +582,22 @@ To connect this all to the WebSocket handler, we must make the following changes
    ...
 ```
 
-Now, the Channel does not pattern match on a specific event, it let it through without further validation, trusting that the EventsController is doing the right thing. I will come back to this piece for improvements in the future, possibly.
+Agora o Channel já não faz pattern match num event específico, deixa passar sem mais validação, confiando que o EventsController está fazendo a coisa certa. Talvez eu volte nessa parte pra melhorias no futuro.
 
-### Deploying our first Phoenix app to Heroku!
+### Fazendo deploy do nosso primeiro app Phoenix no Heroku!
 
-In this section we will just follow the [official documentation](http://www.phoenixframework.org/docs/heroku), so read it if you want more details. 
+Nesta seção vamos só seguir a [documentação oficial](http://www.phoenixframework.org/docs/heroku), então leia lá se quiser mais detalhes.
 
-Let's get started:
+Vamos começar:
 
 ```
 heroku apps:create your-expusherlite --buildpack "https://github.com/HashNuke/heroku-buildpack-elixir.git"
 heroku buildpacks:add https://github.com/gjaldon/heroku-buildpack-phoenix-static.git
 ```
 
-I am naming the application "your-expusherlite" but you should change it to your own name, of course. And the rest of the configuration data are all examples that you must change for you own needs.
+Estou nomeando a aplicação como "your-expusherlite" mas você deve trocar pelo seu próprio nome, claro. E o resto dos dados de configuração são todos exemplos que você precisa mudar pras suas próprias necessidades.
 
-Heroku relies on environment variables. So we start by erasing "<tt>config/prod.secret.exs</tt>" and change "<tt>config/prod.exs</tt>" to look like this:
+O Heroku depende de variáveis de ambiente. Então começamos apagando "<tt>config/prod.secret.exs</tt>" e mudando o "<tt>config/prod.exs</tt>" pra ficar assim:
 
 ```ruby
 config :ex_pusher_lite, ExPusherLite.Endpoint,
@@ -603,7 +606,7 @@ config :ex_pusher_lite, ExPusherLite.Endpoint,
   cache_static_manifest: "priv/static/manifest.json",
   secret_key_base: System.get_env("SECRET_KEY_BASE")
 
-# Configure your database
+# Configure seu banco
 config :ex_pusher_lite, ExPusherLite.Repo,
   adapter: Ecto.Adapters.Postgres,
   url: System.get_env("DATABASE_URL"),
@@ -613,11 +616,11 @@ config :ex_pusher_lite, :admin_authentication,
   username: System.get_env("PUSHER_ADMIN_USERNAME"),
   password: System.get_env("PUSHER_ADMIN_PASSWORD")
 
-# remove this line:
+# remova esta linha:
 # import_config "prod.secret.exs"
 ```
 
-Now we must configure the environment variavles "SECRET_KEY_BASE", "PUSHER_ADMIN_USERNAME" and "PUSHER_ADMIN_PASSWORD". Use the included "<tt>mix phoenix.gen.secret</tt>" to generate those.
+Agora temos que configurar as variáveis de ambiente "SECRET_KEY_BASE", "PUSHER_ADMIN_USERNAME" e "PUSHER_ADMIN_PASSWORD". Use o "<tt>mix phoenix.gen.secret</tt>" que já vem incluído pra gerar elas.
 
 ```
 heroku config:set SECRET_KEY_BASE="`mix phoenix.gen.secret`"
@@ -625,25 +628,25 @@ heroku config:set PUSHER_ADMIN_USERNAME="FPO0QUkqbAP6EGjElqBzDQuMs8bhFS3"
 heroku config:set PUSHER_ADMIN_PASSWORD="n78DPGmK3DBQy8YAVyshiGqcXjjSXSD"
 ```
 
-Then it's just a matter of waiting for the good old "<tt>git push heroku master</tt>" to finish compiling everything in the first time. And because this is the first deploy you should not forget to run "<tt>heroku run mix ecto.migrate</tt>" to create the database table.
+Aí é só esperar o velho e bom "<tt>git push heroku master</tt>" terminar de compilar tudo da primeira vez. E como é o primeiro deploy, não esqueça de rodar "<tt>heroku run mix ecto.migrate</tt>" pra criar a tabela do banco.
 
-Now, if I did everything right, as an Administrator that knows the above hardcoded secrets I should be able to create a new Application like this:
+Agora, se eu fiz tudo direito, como Administrador que conhece os secrets hardcoded acima eu deveria conseguir criar uma nova Aplicação assim:
 
 ```
 curl --data "app[name]=shiny-new-app" https://FPO0QUkqbAP6EGjElqBzDQuMs8bhFS3:n78DPGmK3DBQy8YAVyshiGqcXjjSXSD@your-expusherlite.herokuapp.com/api/admin/apps
 ```
 
-And this is the result I got!
+E foi este o resultado que eu obtive!
 
 ```
 {"data":{"slug":"shiny-new-app","secret":"42560373-0fe1-506e-28ca-35ab5221fb3d","name":"shiny-new-app","key":"958c16e7-ab93-dac0-0fc6-6cb864e26358","id":1,"active":true}}
 ```
 
-Great, now that we have a valid Application key and secret we can configure our Rails Client Demo and deploy it to Heroku as well.
+Beleza, agora que temos uma key e secret válidos da Aplicação podemos configurar nosso Rails Client Demo e fazer deploy dele no Heroku também.
 
-### Deploying the Rails Client to Heroku
+### Fazendo deploy do Cliente Rails no Heroku
 
-This is a simple Rails application, we can just create the app and deploy right away:
+Esta é uma aplicação Rails simples, podemos só criar o app e fazer deploy direto:
 
 ```
 heroku create your-expusherlite-client
@@ -655,17 +658,17 @@ heroku config:set PUSHER_CHANNEL=shiny-new-topic
 git push heroku master
 ```
 
-I'm assuming the readers of this post already know how to configure a Rails app properly for Heroku. Just to mention it, I configure this app with the 12 factor and Puma gems and added a proper Procfile. Another very small change was changing the "pusher_lite.rb" initializer to create a URI with "https" because the ExPusherLite we deployed to production requires SSL by default.
+Estou assumindo que os leitores deste post já sabem como configurar uma app Rails apropriadamente pro Heroku. Só pra mencionar, eu configurei essa app com as gems 12 factor e Puma e adicionei um Procfile apropriado. Outra mudança bem pequena foi alterar o initializer "pusher_lite.rb" pra criar uma URI com "https" porque o ExPusherLite que fizemos deploy em produção exige SSL por padrão.
 
-There is one more caveat. Being led by experienced web programmers, they made sure that, unlike this bare bone exercise here, the Phoenix framework itself is secure. One such example is to disallow Websocket connections from different hosts.
+Tem mais um detalhe. Por ser conduzido por programadores web experientes, eles garantiram que, ao contrário deste exercício bem cru aqui, o framework Phoenix em si é seguro. Um exemplo é proibir conexões Websocket vindas de hosts diferentes.
 
-Out of the box, the "phoenix.js" Socket will fail connection when we try to connect from the "your-expusherlite-client.herokuapp.com" Rails app host to the Phoenix app in "your-expusherlite.herokuapp.com" with the following error:
+Por padrão, o Socket do "phoenix.js" vai falhar a conexão quando tentarmos conectar do host do app Rails "your-expusherlite-client.herokuapp.com" pro app Phoenix em "your-expusherlite.herokuapp.com" com o seguinte erro:
 
 ```
 WebSocket connection to 'wss://your-expusherlite.herokuapp.com/socket/websocket?guardian_token=N_YCG6hGK7…iOlsicHVibGljOioiXX0._j6s2LiaKde9rBhnTMxDkm0XV5u89pNh1AdLFY6Rlt8&vsn=1.0.0' failed: Error during WebSocket handshake: Unexpected response code: 403
 ```
 
-And in the Phoenix log we will see this very helpful message:
+E no log do Phoenix vamos ver esta mensagem bem útil:
 
 ```
 [error] Could not check origin for Phoenix.Socket transport.
@@ -688,11 +691,11 @@ to "localhost" but you may be trying to access it from
                        "//another.com:888", "//other.com"]
 ```
 
-Unless you know what a [Cross-Site Web Socket Hijacking](https://www.christian-schneider.net/CrossSiteWebSocketHijacking.html) you will prefer to keep the default settings as they are. In a green-field Phoenix app, the Web part will connect to the Web Socket in the same app and, therefore, in the same host, so this is not an issue.
+A menos que você saiba o que é um [Cross-Site Web Socket Hijacking](https://www.christian-schneider.net/CrossSiteWebSocketHijacking.html), é melhor deixar as configurações padrão como estão. Numa app Phoenix novinha, a parte Web vai conectar no Web Socket dentro da mesma app e, portanto, no mesmo host, então isso não é problema.
 
-In this case I am making a separated micro-service to mimick Pusher.com behavior so it should be able to accept Web Socket connections from different hosts.
+No nosso caso eu estou fazendo um micro-serviço separado pra mimetizar o comportamento do Pusher.com, então ele precisa aceitar conexões de Web Socket de hosts diferentes.
 
-If you control the applications being created, you will likely prefer to make the "<tt>check_origin</tt>" setting read from your database for the exact hosts. As a feature for next time I could add a "host" field in the "App" model and use it to validate connections in the transport configuration. For the time being I will just make it accept any hosts:
+Se você controla as aplicações que vão ser criadas, provavelmente vai preferir fazer a config "<tt>check_origin</tt>" ler do banco os hosts exatos. Como feature pra próxima vez eu poderia adicionar um campo "host" no model "App" e usar pra validar as conexões na configuração do transport. Por enquanto vou só fazer ele aceitar qualquer host:
 
 ```
 # web/channels/user_socket.ex
@@ -707,24 +710,24 @@ defmodule ExPusherLite.UserSocket do
   ...
 ```
 
-And this is it! Now the Rails app should be able to connect and send messages! And you should be able to create any number of new apps and connect all of them to this same service.
+E é isso! Agora a app Rails deve conseguir conectar e enviar mensagens! E você deve conseguir criar quantos apps quiser e ligar todos eles a este mesmo serviço.
 
 ![Final Heroku Client](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/534/big_Screenshot_from_2015-12-14_14_58_22.png)
 
-### Conclusion
+### Conclusão
 
-Right now, we have a functional, albeit bare-bone, Pusher.com clone that will work for any number of use cases where Pusher.com would be used.
+Neste momento, temos um clone funcional, embora bem cru, do Pusher.com que serve pra um monte de casos de uso onde o Pusher.com seria usado.
 
-As I warned many times before, the security part is still flaky and needs working. I will still extend on what Daniel began with Guardian to authenticate Web Socket users to private channels as well. And the core should also receive auditing and reporting capabilities (to be able to report usage, number of active connections, throughput of events, keep at least a short history of events so new connections can retrieve the last sent messages, and so on).
+Como avisei várias vezes, a parte de segurança ainda está bamba e precisa de trabalho. Vou ainda estender o que o Daniel começou com o Guardian pra também autenticar usuários do Web Socket em canais privados. E o core também deve receber capacidades de auditoria e relatório (pra reportar uso, número de conexões ativas, throughput de eventos, manter pelo menos um histórico curto de eventos pras conexões novas conseguirem recuperar as últimas mensagens enviadas, e por aí vai).
 
-But from here it's a matter of adding features to an already working core. And this is nothing more than Phoenix out-of-the-box without too much added on top of it! It says a lot of the current state of maturity of this very capable framework.
+Mas daqui pra frente é só uma questão de adicionar features a um core que já funciona. E isso é nada mais que Phoenix out-of-the-box sem grande coisa adicionada por cima! Diz muito sobre o atual estado de maturidade desse framework tão capaz.
 
-In terms of performance, for this very simple example, I spinned up 1 free Heroku dyno for each app.
+Em termos de performance, pra este exemplo simplíssimo, eu subi 1 dyno free do Heroku pra cada app.
 
-The Rails app is able to respond to the front-end user interface in around 2ms. And the Sucker Punch job - which does the heavy HTTP POST to ExPusherLite - takes in the order of 30ms or less.
+A app Rails consegue responder à interface front-end em torno de 2ms. E o job do Sucker Punch - que faz o HTTP POST pesado pro ExPusherLite - leva na ordem de 30ms ou menos.
 
-The Phoenix server receives the HTTP POST and performs the broadcast in around less than 6ms. Also quite fast. The times will vary a lot because I believe the free dyno is not only slow but also stays in highly shared metal boxes, getting impact from other neighbor apps running in the same box.
+O servidor Phoenix recebe o HTTP POST e faz o broadcast em torno de menos de 6ms. Também bem rápido. Os tempos vão variar bastante porque eu acredito que o dyno free é não só lento mas também fica em metal boxes muito compartilhadas, sofrendo impacto de outras apps vizinhas rodando na mesma máquina.
 
-Because we already have an administrative API to create and manage apps (create new ones, delete, update, etc) we can already create a separated application in any other framework to make a dashboard for admins or for a self-serving front-end for developers to register new apps and receive key/secret pair to add in their own applications.
+Como já temos uma API administrativa pra criar e gerenciar apps (criar novas, deletar, atualizar etc.) já dá pra criar uma aplicação separada em qualquer outro framework pra fazer um dashboard pra admins ou uma front-end self-service pros desenvolvedores registrarem novas apps e receberem o par key/secret pra adicionar nas suas próprias aplicações.
 
-Both the ExPusherLite server and the demo client are deployed in Heroku and you can test the client right now [clicking here](https://expusherlite-client.herokuapp.com/). The admin keys are different from what I showed in this post, of course, so you won't be able to create new apps, but you can deploy it yourself to your own environment.
+Tanto o servidor ExPusherLite quanto o cliente demo estão em deploy no Heroku e você pode testar o cliente agora mesmo [clicando aqui](https://expusherlite-client.herokuapp.com/). As keys de admin são diferentes das que mostrei neste post, claro, então você não vai conseguir criar apps novas, mas pode fazer deploy você mesmo no seu próprio ambiente.

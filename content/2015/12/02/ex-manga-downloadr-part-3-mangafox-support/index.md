@@ -1,17 +1,20 @@
 ---
-title: 'Ex Manga Downloadr - Part 3: Mangafox Support!'
+title: 'Ex Manga Downloadr - Parte 3: Suporte ao Mangafox!'
 date: '2015-12-02T16:27:00-02:00'
-slug: ex-manga-downloadr-part-3-mangafox-support
+slug: ex-manga-downloadr-parte-3-suporte-ao-mangafox
+translationKey: ex-manga-downloadr-part-3
+aliases:
+- /2015/12/02/ex-manga-downloadr-part-3-mangafox-support/
 tags:
 - learning
 - beginner
 - elixir
 - exmangadownloadr
-- english
+- traduzido
 draft: false
 ---
 
-I thought [Part 2](http://www.akitaonrails.com/2015/11/19/ex-manga-downloadr-part-2-poolboy-to-the-rescue) would be my last article about this tool, but turns out its just too much fun to let it go easily. As usual, all the source code is on my [Github repository](https://github.com/akitaonrails/ex_manga_downloadr). And the gist of the post is that now you can do this:
+Eu achava que a [Parte 2](http://www.akitaonrails.com/2015/11/19/ex-manga-downloadr-part-2-poolboy-to-the-rescue) seria meu último artigo sobre essa ferramentinha, mas no fim das contas é divertido demais para largar tão rápido. Como sempre, todo o código fonte está no meu [repositório do Github](https://github.com/akitaonrails/ex_manga_downloadr). E o resumo do post é que agora dá pra fazer isso:
 
 ```
 git pull
@@ -19,13 +22,13 @@ mix escript.build
 ./ex_manga_downloadr -n onepunch -u http://mangafox.me/manga/onepunch_man/ -d /tmp/onepunch -s mangafox
 ```
 
-And there you go: download from Mangafox built-in! \o/
+E pronto: download direto do Mangafox embutido! \o/
 
-It starts when I wanted to download manga that is not available at MangaReader but exists under Mangafox.
+Tudo começou quando eu quis baixar um mangá que não existe no MangaReader mas está disponível no Mangafox.
 
-So, the initial endeavor was to copy the MangaReader parser modules (IndexPage, ChapterPage, and Page) and paste them at a specific "lib/ex_manga_downloadr/mangafox" folder. Same thing done to the unit tests folder. Just a matter of copying and pasting the files and change the "MangaReader" module name to "Mangafox".
+Então a empreitada inicial foi copiar os módulos do parser do MangaReader (IndexPage, ChapterPage e Page) e colar numa pasta específica "lib/ex_manga_downloadr/mangafox". A mesma coisa na pasta de testes unitários. Só copiar e colar os arquivos e trocar o nome do módulo "MangaReader" por "Mangafox".
 
-Of course the URL formats are different, the Floki CSS selectors are a bit different, so that's what have to change in the parser. For example, this is how I parse the chapter links from the main page at MangaReader:
+Claro que os formatos de URL são diferentes, os seletores CSS do Floki são um pouquinho diferentes, então é isso que precisa mudar no parser. Por exemplo, é assim que eu faço o parsing dos links de capítulo da página principal no MangaReader:
 
 ```ruby
 defp fetch_chapters(html) do
@@ -34,7 +37,7 @@ defp fetch_chapters(html) do
 end
 ```
 
-And this is the same thing but for Mangafox:
+E essa é a mesma coisa, só que para o Mangafox:
 
 ```ruby
 defp fetch_chapters(html) do
@@ -44,11 +47,11 @@ defp fetch_chapters(html) do
 end
 ```
 
-Exactly the same logic but the pattern matching structure is different because the returning HTML DOM nodes are different.
+Exatamente a mesma lógica, mas a estrutura de pattern matching muda porque os nodes do DOM HTML retornados são diferentes.
 
-Another difference is that MangaReader returns everything in plain text by default, but Mangafox returns everything Gzipped regardless if I send the "Accept-Encoding" HTTP header (curiously, if I retry several times it changes behavior and sometimes send plain text).
+Outra diferença é que o MangaReader devolve tudo em texto puro por padrão, enquanto o Mangafox devolve tudo Gzipado independente de eu mandar o header HTTP "Accept-Encoding" (curiosamente, se eu tento várias vezes ele muda de comportamento e às vezes manda texto puro).
 
-What I did different was to check if the returned <tt>%HTTPotion.Response{}</tt> structure had a "Content-Encoding" header set to "gzip" and if so, gunzip it using the built-in Erlang "zlib" package (nothing to import!):
+O que eu fiz de diferente foi checar se a estrutura <tt>%HTTPotion.Response{}</tt> retornada tinha o header "Content-Encoding" setado como "gzip" e, se sim, descomprimir usando o pacote "zlib" embutido do Erlang (sem precisar importar nada!):
 
 ```ruby
 def gunzip(body, headers) do
@@ -60,11 +63,11 @@ def gunzip(body, headers) do
 end
 ```
 
-I would've preferred if HTTPotion did that out of the box for me (#OpportunityToContribute!), but this was easy enough.
+Eu teria preferido que o HTTPotion já fizesse isso pronto pra mim (#OpportunityToContribute!), mas foi fácil o suficiente.
 
-Once the unit tests were passing correctly after tuning the scrapper (HTTPotion requests) and parser (Floki selectors) it was time to make my Worker aware of the existence of this new set of modules.
+Depois que os testes unitários começaram a passar corretamente, com o scrapper (requisições HTTPotion) e o parser (seletores Floki) ajustados, chegou a hora de fazer meu Worker reconhecer a existência desse novo conjunto de módulos.
 
-The Workflow module just call the Worker, which in turn does the heavy lifting of fetching pages and downloading images. The Worker called the MangaReader module directly, like this:
+O módulo Workflow só chama o Worker, que por sua vez faz o trabalho pesado de buscar páginas e baixar imagens. O Worker chamava o módulo MangaReader diretamente, assim:
 
 ```ruby
 defmodule PoolManagement.Worker do
@@ -87,7 +90,7 @@ defmodule PoolManagement.Worker do
 end
 ```
 
-That "<tt>use ExMangaDownloadr.MangaReader</tt>" statement up above is just a macro that will alias the corresponding modules:
+Aquele "<tt>use ExMangaDownloadr.MangaReader</tt>" lá em cima é só uma macro que cria os aliases para os módulos correspondentes:
 
 ```ruby
 defmodule ExMangaDownloadr.MangaReader do
@@ -101,9 +104,9 @@ defmodule ExMangaDownloadr.MangaReader do
 end
 ```
 
-So when I call "<tt>ChapterPages.pages(chapter_link)</tt>" it's a shortcut to use the fully qualified module name like this: "<tt>ExMangaDownloadr.MangaReader.ChapterPages.pages(chapter_link)</tt>".
+Então quando eu chamo "<tt>ChapterPages.pages(chapter_link)</tt>" é um atalho pra usar o nome qualificado completo do módulo, tipo: "<tt>ExMangaDownloadr.MangaReader.ChapterPages.pages(chapter_link)</tt>".
 
-An Elixir module namespace is just an Atom. Nested module names have the full, dot-separated name, prefixed with it's parent. For example:
+Um namespace de módulo Elixir é só um Atom. Nomes de módulos aninhados têm o nome completo separado por pontos, prefixado com seu pai. Por exemplo:
 
 ```ruby
 defmodule Foo do
@@ -116,9 +119,9 @@ defmodule Foo do
 end
 ```
 
-You can just call "<tt>Foo.Bar.Xyz.teste()</tt>" and that's it. But there is a small trick. Elixir also transparently prefixes the full module name with "Elixir". So in reality, the full module name is "Elixir.Foo.Bar.Xyz", in order to make sure no Elixir module ever conflicts with an existing Erlang module.
+Você pode chamar "<tt>Foo.Bar.Xyz.teste()</tt>" e pronto. Mas tem uma pequena pegadinha. O Elixir também prefixa transparentemente o nome completo do módulo com "Elixir". Então na real, o nome completo do módulo é "Elixir.Foo.Bar.Xyz", pra garantir que nenhum módulo Elixir conflite com algum módulo Erlang existente.
 
-This is important because of this new function I added to the Worker module first:
+Isso é importante por causa dessa nova função que eu adicionei primeiro no módulo Worker:
 
 ```ruby
 def manga_source(source, module) do
@@ -129,7 +132,7 @@ def manga_source(source, module) do
 end
 ```
 
-This is how I map from "mangafox" to the new "ExMangaDownloadr.Mangafox." namespace. And because of the dynamic, message passing nature of Elixir, I can replace this code:
+É assim que eu mapeio de "mangafox" pro novo namespace "ExMangaDownloadr.Mangafox.". E por causa da natureza dinâmica e baseada em troca de mensagens do Elixir, eu consigo trocar esse código:
 
 ```ruby
 def handle_call({:chapter_page, chapter_link}, _from, state) do
@@ -137,7 +140,7 @@ def handle_call({:chapter_page, chapter_link}, _from, state) do
 end
 ```
 
-With this:
+Por esse:
 
 ```ruby
 def handle_call({:chapter_page, chapter_link, source}, _from, state) do
@@ -148,7 +151,7 @@ def handle_call({:chapter_page, chapter_link, source}, _from, state) do
 end
 ```
 
-I can now choose between the "Elixir.ExMangaDownloadr.Mangafox.ChapterPage" or "Elixir.ExMangaDownloadr.MangaReader.ChapterPage" modules, call the <tt>pages/1</tt> function and send the same argument as before. I just have to make sure I can receive a "source" string from the command line now, so I change the CLI module like this:
+Agora eu posso escolher entre os módulos "Elixir.ExMangaDownloadr.Mangafox.ChapterPage" ou "Elixir.ExMangaDownloadr.MangaReader.ChapterPage", chamar a função <tt>pages/1</tt> e mandar o mesmo argumento de antes. Só preciso garantir que consigo receber a string "source" pela linha de comando agora, então mudo o módulo CLI assim:
 
 ```ruby
 defp parse_args(args) do
@@ -164,9 +167,9 @@ defp parse_args(args) do
 end
 ```
 
-Compared to the previous version I just added the "<tt>:source</tt>" string argument to the OptionParser and passed the captured value to <tt>process/4</tt>. I should add some validation here to avoid strings different than "mangareader" or "mangafox", but I will leave that to another time.
+Comparado com a versão anterior eu só adicionei o argumento string "<tt>:source</tt>" no OptionParser e passei o valor capturado para <tt>process/4</tt>. Eu deveria adicionar alguma validação aqui para evitar strings diferentes de "mangareader" ou "mangafox", mas vou deixar isso pra outro momento.
 
-And in the Workflow module, instead of starting from just the manga URL, now I have to start with both the URL and the manga source:
+E no módulo Workflow, em vez de começar só com a URL do mangá, agora preciso começar com a URL e a fonte do mangá:
 
 ```ruby
 [url, source]
@@ -175,7 +178,7 @@ And in the Workflow module, instead of starting from just the manga URL, now I h
   |> Workflow.images_sources
 ```
 
-Which means that each of the above functions have to not only return the new URL lists but also pass through the source:
+O que significa que cada uma dessas funções precisa não só retornar a nova lista de URLs como também passar a source adiante:
 
 ```ruby
 def chapters([url, source]) do
@@ -186,15 +189,15 @@ def chapters([url, source]) do
 end
 ```
 
-This was the only function in the Workflow module hardcoded to MangaReader so I also make it dynamic using the same <tt>manga_source/2</tt> function from the Worker, and notice the return value being "<tt>[chapter_list, source]</tt>" instead of just "<tt>chapter_list</tt>".
+Essa era a única função do módulo Workflow hardcoded pro MangaReader, então eu também a deixei dinâmica usando a mesma função <tt>manga_source/2</tt> do Worker, e repare que o valor de retorno é "<tt>[chapter_list, source]</tt>" em vez de só "<tt>chapter_list</tt>".
 
-And now, I can finally test with "<tt>mix test</tt>" and create the new executable command line binary with "<tt>mix escript.build</tt>" and run the new version like this:
+E agora eu finalmente posso testar com "<tt>mix test</tt>" e criar o novo binário executável de linha de comando com "<tt>mix escript.build</tt>" e rodar a nova versão assim:
 
 ```
 ./ex_manga_downloadr -n onepunch -u http://mangafox.me/manga/onepunch_man/ -d /tmp/onepunch -s mangafox
 ```
 
-The Mangafox site is very unreliable to several concurrent connections and it quickly timeout sometimes, dumping ugly errors like this:
+O site do Mangafox é bem instável com várias conexões concorrentes e dá timeout rapidinho às vezes, cuspindo erros feios assim:
 
 ```
 15:58:46.637 [error] Task #PID<0.2367.0> started from #PID<0.124.0> terminating
@@ -204,7 +207,7 @@ The Mangafox site is very unreliable to several concurrent connections and it qu
             (httpotion) lib/httpotion.ex:209: HTTPotion.handle_response/1
 ```
 
-I did not figure out how to retry HTTPotion requests properly yet. But one small thing I did was add an availability check in the Worker module. So you can just re-run the same command line and it will resume downloading only the remaining files:
+Ainda não descobri como fazer retry de requisições HTTPotion direito. Mas uma coisinha que eu fiz foi adicionar um check de disponibilidade no módulo Worker. Assim você pode simplesmente rodar o mesmo comando de novo e ele vai retomar baixando só os arquivos que faltam:
 
 ```ruby
 defp download_image({image_src, image_filename}, directory) do
@@ -226,7 +229,7 @@ defp download_image({image_src, image_filename}, directory) do
 end
 ```
 
-This should at least reduce rework. Another thing I am still working on is this other bit at the main "CLI.process" function:
+Isso pelo menos reduz retrabalho. Outra coisa que ainda estou trabalhando é nesse outro pedaço da função principal "CLI.process":
 
 ```ruby
 defp process(manga_name, url, directory, source) do
@@ -250,11 +253,11 @@ defp process(manga_name, url, directory, source) do
 end
 ```
 
-As you can see the idea is to serialize the final images URL links to a file using the built-in serializer "<tt>:erlang.binary_to_term/1</tt>" and check if that dump file exists, and deserialize with "<tt>:erlang.term_to_binary/1</tt>"  before fetching all pages all over again. Now the process can resume directly from the <tt>process_downloads/2</tt> function after.
+Como dá pra ver, a ideia é serializar os links finais das URLs das imagens num arquivo usando o serializador embutido "<tt>:erlang.binary_to_term/1</tt>" e checar se esse arquivo de dump existe, e desserializar com "<tt>:erlang.term_to_binary/1</tt>" antes de buscar todas as páginas de novo. Agora o processo pode retomar direto da função <tt>process_downloads/2</tt>.
 
-Mangafox is terribly unreliable and I will need to figure out a better way to retry timed out connections without having to crash and manually restart from the command line. It's either a bad site or a clever one that shuts down scrappers like me, although I am guessing it's just a bad infrastructure on their side.
+O Mangafox é terrivelmente instável e eu vou precisar descobrir uma forma melhor de fazer retry de conexões que deram timeout, sem precisar quebrar e reiniciar manualmente da linha de comando. Ou é um site ruim ou um site esperto que derruba scrappers como o meu, embora eu chute que seja só infraestrutura ruim do lado deles.
 
-If I downgrade from 50 process to 5 in the pool, it seems to be able to handle it better (but the process slows down, of course):
+Se eu reduzo de 50 processos para 5 no pool, parece que ele consegue lidar melhor (mas o processo fica mais lento, claro):
 
 ```ruby
     pool_options = [
@@ -265,6 +268,6 @@ If I downgrade from 50 process to 5 in the pool, it seems to be able to handle i
     ]
 ```
 
-If you see time out errors, change this parameter. MangaReader still supports 50 or more for concurrency.
+Se você ver erros de timeout, mude esse parâmetro. O MangaReader ainda aguenta 50 ou mais de concorrência.
 
-And now you know how to add support for more manga sources. Feel free to send me a Pull Request! :-)
+E agora você sabe como adicionar suporte pra mais fontes de mangá. Fique à vontade pra mandar um Pull Request! :-)

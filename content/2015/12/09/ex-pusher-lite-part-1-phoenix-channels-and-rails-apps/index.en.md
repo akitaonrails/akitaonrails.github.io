@@ -1,32 +1,30 @@
 ---
-title: 'Ex Pusher Lite - Parte 1: Phoenix Channels e aplicações Rails'
+title: 'Ex Pusher Lite - Part 1: Phoenix Channels and Rails apps'
 date: '2015-12-09T18:39:00-02:00'
-slug: ex-pusher-lite-parte-1-phoenix-channels-e-aplicacoes-rails
+slug: ex-pusher-lite-part-1-phoenix-channels-and-rails-apps
 translationKey: ex-pusher-lite-part-1
-aliases:
-- /2015/12/09/ex-pusher-lite-part-1-phoenix-channels-and-rails-apps/
 tags:
 - elixir
 - phoenix
 - pusher
 - expusherlite
-- traduzido
+- english
 draft: false
 ---
 
-Finalmente, depois de um bom período de exercícios (e muito blog post!) vou começar a implementar a aplicação Elixir que eu queria desde o começo.
+Finally, after a lengthy exercising period (and plenty of blogging!) I will start implementing the Elixir app I wanted from the very beginning.
 
-Como desenvolvedor Rails, existem algumas coisas que a gente simplesmente não consegue fazer em Rails. Uma delas é lidar com mensageria em tempo real.
+As a Rails developer there are a few things we can't do in Rails. One of them is to deal with real-time messaging.
 
-O Rails 5 vai trazer o [Action Cable](https://github.com/rails/actioncable), e talvez seja bom o suficiente para a maioria dos casos. Ele usa o [Faye](https://github.com/faye/faye), que por sua vez é baseado em Eventmachine. Você pode implementar uma solução suficientemente boa para Websockets usando Faye na sua aplicação Rails 4.2 agora mesmo.
+Rails 5 will bring [Action Cable](https://github.com/rails/actioncable), and it might be good enough for most cases. It uses [Faye](https://github.com/faye/faye), which in turn is based on Eventmachine. You can implement a good enough solution for Websockets using Faye in your Rails 4.2 app right now.
 
-Outra opção é evitar o trabalho todo e usar um serviço de mensageria. Uma opção que sempre recomendo, sem fricção nenhuma, é o [Pusher.com](https://pusher.com/).
+Another option is to avoid the trouble altogether and use a messaging service. One option I always recommend for zero friction is to use [Pusher.com](https://pusher.com/).
 
 ![Chat Example](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/533/big_Screenshot_from_2015-12-09_18_41_22.png)
 
-### O Básico
+### The Basics
 
-Você vai querer clonar do meu [repositório de exemplo](https://github.com/akitaonrails/pusher_lite_demo/tree/v0.1), assim:
+You will want to clone from my [example repository](https://github.com/akitaonrails/pusher_lite_demo/tree/v0.1), like this:
 
 ```
 git clone https://github.com/akitaonrails/pusher_lite_demo
@@ -35,9 +33,9 @@ git checkout tags/v0.1 -b v0.1
 bundle
 ```
 
-Esta é uma implementação muito, muito simples de um chat em tempo real, baseado em websocket, usando Pusher. A ideia é a seguinte:
+This is a very very simple implementation of a real-time, websocket-based, chat using Pusher. The idea goes like this:
 
-Começamos tendo um Form no front-end para enviar mensagens
+We start by having a front-end Form to send messages
 
 ```html
 <!-- app/views/home/index.html.erb -->
@@ -51,7 +49,7 @@ Começamos tendo um Form no front-end para enviar mensagens
 <% end %>
 ```
 
-Ele usa o suporte nativo a jQuery do Rails para fazer o post Ajax do form ao método "EventsController#create":
+It's using Rails built-in jQuery support for Ajax posting the form to the "EventsController#create" method:
 
 ```ruby
 # app/controllers/events_controller.rb
@@ -66,7 +64,7 @@ class EventsController < ApplicationController
 end
 ```
 
-Só para anotar o processo, o "routes.rb" fica assim:
+Just to annotate the process, the "routes.rb" looks like this:
 
 ```ruby
 # config/routes.rb
@@ -77,7 +75,7 @@ Rails.application.routes.draw do
 end
 ```
 
-O layout HTML fica assim:
+The HTML layout looks like this:
 
 ```ruby
 <!-- app/views/layout/application.html.erb -->
@@ -113,7 +111,7 @@ O layout HTML fica assim:
 </html>
 ```
 
-Esse layout importa o "application.js" padrão, que configura o Pusher, estabelece a conexão Websocket e se inscreve para receber mensagens em um tópico específico com eventos específicos:
+This layout imports the default "application.js" which configures Pusher, establishes the Websocket connection and subscribes to messages on a specific topic with specific events:
 
 ```javascript
 // app/assets/javascript/application.js
@@ -136,7 +134,7 @@ $(document).on("page:change", function(){
 });
 ```
 
-Ele pega os metadados de configuração das meta tags do layout, que por sua vez pegam os valores do "config/secrets.yml":
+It gets the configuration metadata from the layout meta tags which grabs the values from "config/secrets.yml":
 
 ```yaml
 development:
@@ -160,7 +158,7 @@ production:
   pusher_channel: <%= ENV['PUSHER_CHANNEL'] %>
 ```
 
-E como estou usando dotenv-rails, o ".env" fica assim:
+And as I'm using dotenv-rails, the ".env" looks like this:
 
 ```
 PUSHER_URL: "https://14e86e5fee3335fa88b0:2b94ff0f07ce9769567f@api.pusherapp.com/apps/159621"
@@ -168,7 +166,7 @@ PUSHER_KEY: "14e86e5fee3335fa88b0"
 PUSHER_CHANNEL: "test_chat_channel"
 ```
 
-O Pusher é configurado no lado do servidor através deste initializer:
+Pusher is configured in the server-side through this initializer:
 
 ```ruby
 # config/initializers/pusher.rb
@@ -178,7 +176,7 @@ Pusher.url = Rails.application.secrets.pusher_url
 Pusher.logger = Rails.logger
 ```
 
-Por fim, o "EventsController#create" faz uma chamada assíncrona para um job do [SuckerPunch](https://github.com/brandonhilkert/sucker_punch):
+Finally, the "EventsController#create" actually does an async call to a [SuckerPunch](https://github.com/brandonhilkert/sucker_punch) job:
 
 ```ruby
 class SendEventsJob < ActiveJob::Base
@@ -191,15 +189,15 @@ class SendEventsJob < ActiveJob::Base
 end
 ```
 
-A propósito, abrindo um parêntese, o [SuckerPunch](https://github.com/brandonhilkert/sucker_punch) é uma solução fantástica para tarefas assíncronas dentro do mesmo processo. É uma ótima opção para começar sem precisar montar um sistema separado com workers do Sidekiq.
+By the way, as a segue, [SuckerPunch](https://github.com/brandonhilkert/sucker_punch) is a terrific solution for in-process asynchronous tasks. It's a better option to start with it without having to implement a separated system with Sidekiq workers.
 
-Quando você tiver filas maiores ou jobs que demoram demais, aí sim parta para o Sidekiq. Se você usa ActiveJob, a transição é tão simples quanto mudar a seguinte linha de configuração no arquivo "config/application.rb":
+Once you have larger job queues or jobs that are taking too long, then go to Sidekiq. If you use ActiveJob, the transition is as simple as changing the following configuration line in the "config/application.rb" file:
 
 ```ruby
 config.active_job.queue_adapter = :sucker_punch
 ```
 
-Esse job apenas chama o método "save" no fake-model "PusherEvent":
+This job just calls the "save" method in the fake-model "PusherEvent":
 
 ```ruby
 class PusherEvent
@@ -217,7 +215,7 @@ class PusherEvent
 end
 ```
 
-Como é bem simples, o Gemfile também fica simples:
+As it's a very simple, the Gemfile is equally simple:
 
 ```ruby
 gem 'pusher'
@@ -226,28 +224,28 @@ gem 'purecss-rails'
 gem 'sucker_punch'
 ```
 
-Então o que ele faz é bem simples:
+So what it does is very simple:
 
-1. A aplicação carrega o Pusher e a configuração necessária.
-2. Quando o usuário acessa "http://localhost:3000" ele recebe o Form de mensagem.
-3. Quando o usuário envia a mensagem, ela cai no "EventsController#create", que chama o "SendEventsJob" do SuckerPunch, instancia um novo modelo "PusherEvent" com os params do form recebido e finalmente dispara a mensagem para o servidor do Pusher.
-4. A mesma página do form também carrega o cliente javascript do Pusher e se conecta no tópico "test_chat_channel" e escuta o evento "new_message", que é exatamente o que a chamada "Pusher.trigger" envia junto com os params da mensagem do form.
-5. O servidor Pusher faz broadcast da mensagem recebida para todos os clientes Websocket inscritos.
-6. O cliente javascript do Pusher no navegador do usuário recebe a nova mensagem e simplesmente formata e adiciona ao bloco HTML "message-receiver" na mesma página.
+1. The application loads Pusher and the necessary configuration.
+2. When the user goes to "http://localhost:3000" he is presented with the message Form.
+3. When the user posts the message, it ends in "EventsController#create", which calls SuckerPunch's "SendEventsJob", instantiates a new "PusherEvent" model with the received form params and finally triggers the message to the Pusher server.
+4. The same form page also loads the Pusher javascript client and connects to the "test_chat_channel" topic and listens to the "new_message" event, which is the same thing the "Pusher.trigger" call sends together with the form message params.
+5. The Pusher server broadcasts the received trigger message to all subscribed Websocket clients.
+6. The Pusher javascript client in the user's browser receives the new message and just formats the message and appends to the "message-receiver" div HTML block in the same page.
 
-O Pusher tem suporte para usuários autenticados, canais privados e mais coisas, mas isso aí já cobre 80% dos casos de uso. Você pode implementar isso como sistema de chat, sistema de notificação, ou qualquer coisa do tipo.
+Pusher has support for authenticated users, private channels and more, but this is 80% of the usage for most cases. You can implement this as a chat system, a notification system, or anything like that.
 
-Sua aplicação Rails monta o HTML/Javascript do front-end para conectar no Pusher, escutando certos tópicos e eventos, e a mesma aplicação Rails dispara o Pusher no lado servidor, postando novas mensagens. O Pusher recebe as mensagens e faz o broadcast para os clientes inscritos nos seus tópicos. É isso.
+Your Rails app sets up the front-end HTML/Javascript to connect to Pusher, listening to certain topics and events and the same Rails app triggers Pusher in the server-side, posting new messages. Pusher receives messages and broadcasts to the clients that subscribes to its topics. That's it.
 
-## Ex Pusher Lite - Parte 1: Substituto inicial baseado em Phoenix
+## Ex Pusher Lite - Part 1: Initial Phoenix-based Pusher replacement
 
-A minha ideia original era fazer um drop-in replacement do servidor Pusher, usando o mesmo cliente Pusher, mas por enquanto isso não foi tão fácil de fazer.
+My original idea was to make a drop-in replacement for the Pusher server, using the same Pusher client, but for now it was not easy to do so.
 
-Em vez disso, esta Parte 1 vai focar em implementar um servidor inicial ExPusherLite que também recebe eventos disparados pelo mesmo controller server-side do Rails e faz broadcast para o mesmo componente front-end do Rails através de WebSockets.
+Instead, this Part 1 will focus on implementing an initial server ExPusherLite server that also receives events triggered by the same Rails server-side controller process and broadcasting to the same Rails front-end component through WebSockets.
 
-Eu segui o tutorial do [Daniel Neighman](https://labs.opendoor.com/phoenix-on-rails-for-client-push-notifications). Tive que fazer alguns ajustes para conseguir rodar (e como ainda é só a Parte 1, ainda não é uma solução completa!)
+I followed [Daniel Neighman](https://labs.opendoor.com/phoenix-on-rails-for-client-push-notifications) tutorial. I had to do a few adjustments to have it working (and as this is still Part 1, it's not a complete solution yet!)
 
-Você pode clonar a versão inicial do [meu outro repositório no Github](https://github.com/akitaonrails/ex_pusher_lite) assim:
+You can clone the initial version from [my other Github repository](https://github.com/akitaonrails/ex_pusher_lite) like this:
 
 ```
 git clone https://github.com/akitaonrails/ex_pusher_lite
@@ -255,9 +253,9 @@ cd ex_pusher_lite
 mix deps.get
 ```
 
-O tutorial implementou um setup inicial do [Guardian](https://github.com/hassox/guardian) e do [Joken](https://github.com/bryanjos/joken) para JSON Web Tokens. Ainda estou me acostumando com a forma como os [channels](http://www.phoenixframework.org/docs/channels) são implementados no Phoenix.
+The tutorial implemented initial setup for [Guardian](https://github.com/hassox/guardian) and [Joken](https://github.com/bryanjos/joken) for JSON Web Tokens. I am still getting used to how [channels](http://www.phoenixframework.org/docs/channels) are implemented in Phoenix.
 
-Ele já vem pré-configurado com um único socket handler que faz multiplex das conexões. Você inicia através da aplicação OTP EndPoint:
+It already comes pre-configured with a single socket handler that multiplexes connections. You start through the EndPoint OTP application:
 
 ```ruby
 # lib/ex_pusher_lite/endpoint.ex
@@ -268,7 +266,7 @@ defmodule ExPusherLite.Endpoint do
   ...
 ```
 
-Essa aplicação é iniciada pelo supervisor principal em "lib/ex_pusher_lite.ex". Ele aponta o endpoint "/socket" para o socket handler "UserSocket":
+This application is started by the main supervisor in "lib/ex_pusher_lite.ex". It points the endpoint "/socket" to the socket handler "UserSocket":
 
 ```ruby
 # web/channels/user_socket.ex
@@ -284,7 +282,7 @@ defmodule ExPusherLite.UserSocket do
   ...
 ```
 
-A função "channel" vem comentada, então comecei descomentando ela. Você pode fazer pattern match no nome do tópico tipo "public:*" para diferentes Channel handlers. Para esse teste inicial simples eu estou mandando tudo para o "RoomChannel", que precisei criar:
+The "channel" function comes commented out, so I started by uncommenting it. You can pattern match the topic name like "public:*" to different Channel handlers. For this simple initial test I am sending everything to the "RoomChannel", which I had to create:
 
 ```ruby
 defmodule ExPusherLite.RoomChannel do
@@ -336,9 +334,9 @@ defmodule ExPusherLite.RoomChannel do
 end
 ```
 
-Isso tudo veio direto do tutorial original do Daniel. A parte importante para esse exemplo é a primeira função "join". As outras lidam com permissões e autenticação que vêm através de uma claim JWT. Vou tratar disso na Parte 2.
+This is all straight from Daniel's original tutorial, the important bit for this example is the first "join" function, the others deal with permissions and authentication that came through a JWT claim. I will deal with this in Part 2.
 
-Para fazer isso funcionar, tive que adicionar as dependências em "mix.exs":
+To make this work, I had to add the dependencies in "mix.exs":
 
 ```ruby
 # mix.exs
@@ -359,7 +357,7 @@ defmodule ExPusherLite.Mixfile do
 end
 ```
 
-E adicionar a configuração em "config.exs":
+And add the configuration at "config.exs":
 
 ```ruby
 # config/config.exs
@@ -374,7 +372,7 @@ config :guardian, Guardian,
   atoms: [:listen, :publish, :crews, :email, :name, :id]
 ```
 
-Agora preciso adicionar um endpoint HTTP POST normal, primeiro adicionando ele ao router:
+Now I have to add a normal HTTP POST endpoint, first adding it to the router:
 
 ```ruby
 # web/router.ex
@@ -397,7 +395,7 @@ defmodule ExPusherLite.Router do
   end
 ```
 
-Repare que eu desabilitei totalmente a verificação de CSRF token no pipeline porque eu não estou enviando de volta o CSRF token do Phoenix a partir do controller do Rails. Agora, o "EventsController" também é quase todo do tutorial do Daniel:
+Notice that I totally disabled CSRF token verification in the pipeline because I am not sending back Phoenix CSRF token from the Rails controller. Now, the "EventsController" is also almost all from Daniel's tutorial:
 
 ```ruby
 # web/controllers/events_controller.ex
@@ -426,29 +424,29 @@ defmodule ExPusherLite.EventsController do
 end
 ```
 
-Tive que mudar a função authenticate um pouco porque ou eu não entendi a implementação do Daniel ou ela esperava algo diferente. Mas nesta versão eu só estou esperando uma simples Basic HTTP Authentication no header "authorization", que é uma string com o formato "Basic [base64 username:password]". Olha como estou fazendo pattern match na string, removendo o Base64 e fazendo o ["secure compare"](http://codahale.com/a-lesson-in-timing-attacks/) (uma comparação binária em tempo constante para evitar timing attacks, isso já vem embutido no Phoenix).
+I had to change the authenticate function a bit because either I didn't understand Daniel's implementation or it expected something different. But in this version I am just expecting a simple Basic HTTP Authentication "authorization" header which is a string with the format "Basic [base64 username:password]". Look how I am pattern matching the string, removing the Base64 and ["secure comparing"](http://codahale.com/a-lesson-in-timing-attacks/) it (a constant-time binary compare to avoid timing attacks, this comes built-in with Phoenix).
 
-Essa é uma técnica simples de autenticação para o controller do Rails fazer POST do trigger da mensagem da mesma forma que na versão Pusher.
+This is a simple authentication technique for the Rails controller to POST the message trigger just the same as in the Pusher version.
 
-E é isso, é tudo o que precisa para esse substituto inicial baseado em Phoenix do Pusher.
+And this is it, this is all it takes for this initial Phoenix-based Pusher replacement.
 
-## Ex Pusher Lite - Parte 2: Mudando a aplicação Rails
+## Ex Pusher Lite - Part 2: Changing the Rails application
 
-Agora que temos uma aplicação Phoenix bem básica que podemos iniciar com "mix phoenix.server" e disponibilizar em "localhost:4000", podemos começar a mudar a aplicação Rails.
+Now that we have a bare bone Phoenix app that we can start through "mix phoenix.server" and make it available at "localhost:4000" we can start changing the Rails application.
 
-Como falei no começo, meu desejo original era usar o mesmo cliente javascript do Pusher só mudando o endpoint, acontece que isso é mais difícil do que eu pensava, então vou começar removendo a seguinte linha do layout da aplicação:
+As I said in the beginning, my original wish was to use the same Pusher javascript client but change the endpoint, turns out it's more difficult than I thought, so I will start by removing the following line from the application layout:
 
 ```html
 <script src="//js.pusher.com/3.0/pusher.min.js"></script>
 ```
 
-Podemos nos livrar da gem do Pusher no Gemfile e do initializer "pusher.rb" também.
+We can get rid of the Pusher gem in the Gemfile and the "pusher.rb" initializer as well.
 
-Agora, um substituto para o "pusher.min.js" é o próprio "phoenix.js" do Phoenix, que vem junto em "deps/phoenix/web/static/js/phoenix.js". O problema é que ele é um source javascript ES6 que o Phoenix passa pelo Brunch para ser transpilado de volta para ES5 em toda aplicação Phoenix.
+Now, a replacement for the "pusher.min.js" is Phoenix own "phoenix.js" that comes bundled in "deps/phoenix/web/static/js/phoenix.js". The problem is that it is an ES6 javascript source that Phoenix passes through Brunch to be transpiled back to ES5 in every Phoenix application.
 
-Mas eu estou copiando esse arquivo direto para o repositório do Rails em "app/assets/javascripts/phoenix.es6". Eu poderia ter convertido ele para ES5, mas resolvi seguir o caminho mais difícil e adicionar suporte ao Babel no Asset Pipeline do Rails usando o [tutorial muito útil do Nando](http://nandovieira.com/using-es6-with-asset-pipeline-on-ruby-on-rails) sobre o assunto.
+But I am copying this file directly to the Rails repository at "app/assets/javascripts/phoenix.es6". I could change it to ES5 but I decided to go the more difficult path and just add Babel support to Rails Asset Pipeline using [Nando's very helpful tutorial](http://nandovieira.com/using-es6-with-asset-pipeline-on-ruby-on-rails) on the subject. 
 
-A essência é assim: primeiro adicionamos as dependências no Gemfile:
+The gist goes like this, first we add the dependencies in the Gemfile:
 
 ```ruby
 # Use SCSS for stylesheets
@@ -463,7 +461,7 @@ source 'https://rails-assets.org' do
 end
 ```
 
-O Babel precisa de alguma configuração:
+Babel needs some configuration:
 
 ```ruby
 # config/initializers/babel.rb
@@ -476,7 +474,7 @@ Rails.application.config.assets.configure do |env|
 end
 ```
 
-E por algum motivo eu tive que redeclarar manualmente o application.js e o application.css no initializer de assets:
+And for some reason I had to manually redeclare application.js and application.css in the assets initializer:
 
 ```ruby
 # config/initializers/assets.rb
@@ -484,7 +482,7 @@ E por algum motivo eu tive que redeclarar manualmente o application.js e o appli
 Rails.application.config.assets.precompile += %w( application.css application.js )
 ```
 
-Precisamos do Almond para conseguir importar o módulo Socket do pacote javascript do Phoenix. Agora, mudamos o "application.js":
+We need Almond in order to be able to import the Socket module from the Phoenix javascript package. Now, we change the "application.js":
 
 ```javascript
 //= require almond
@@ -497,7 +495,7 @@ Precisamos do Almond para conseguir importar o módulo Socket do pacote javascri
 require(['application/boot']);
 ```
 
-Ele precisa de um arquivo "app/assets/javascripts/application/boot.es6", que vem direto do tutorial do Nando:
+It requires an "app/assets/javascripts/application/boot.es6" file, this is straight from Nando's tutorial:
 
 ```javascript
 import $ from 'jquery';
@@ -542,7 +540,7 @@ $(window)
   .on('page:load', runner);
 ```
 
-E ele depende de atributos na tag body, então mudamos nosso template de layout:
+And it relies on attributes in the body tag, so we change our layout template:
 
 ```html
 <!-- app/views/layouts/application.html.erb -->
@@ -550,7 +548,7 @@ E ele depende de atributos na tag body, então mudamos nosso template de layout:
 <body data-route="application/pages/<%= controller.controller_name %>/<%= controller.action_name %>">
 ```
 
-Não mencionei antes, mas eu também tenho um "HomeController" só para servir como root path para a página HTML principal, ele tem um único método "index" e o template "index.html.erb" com o form de mensagem. Então vou precisar de um "application/pages/home/index.es6" dentro do path "app/assets/javascripts":
+I didn't mention before but I also have a "HomeController" just to be the root path for the main HTML page, it has a single "index" method and "index.html.erb" template with the message form. So I will have the need for an "application/pages/home/index.es6" inside the "app/assets/javascripts" path:
 
 ```javascript
 import {Socket} from "phoenix"
@@ -594,9 +592,9 @@ export default class Index {
 }
 ```
 
-Esse trecho é parecido com o tratamento do javascript do Pusher, mas estamos pegando um pouco mais de informação das meta tags, os tokens "guardian-token" e "guardian-csrf". Como eu estava seguindo o tutorial do Daniel, também mudei o nome do evento de "new_message" para apenas "msg" e os tópicos agora precisam ter um prefixo "public:" para que o handler RoomChannel do Phoenix consiga fazer match no nome do tópico público corretamente.
+This bit is similar to the Pusher javascript handling, but we are getting a bit more information from the meta tags, the "guardian-token" and "guardian-csrf" tokens. Because I was following Daniel's tutorial I also changed the name of the event from "new_message" to just "msg" and the topics now need to have a "public:" prefix in order for the Phoenix's RoomChannel handler to match the public topic name correctly.
 
-Cada coisa em seu tempo. Para esse novo javascript ter os tokens corretos eu tive que adicionar o seguinte helper no layout das views:
+First things first. In order for this new javascript to have the correct tokens I had to add the following helper in the views layout:
 
 ```html
 ...
@@ -606,7 +604,7 @@ Cada coisa em seu tempo. Para esse novo javascript ter os tokens corretos eu tiv
 ...
 ```
 
-E esse "guardian_token_tags" também vem direto do tutorial do Daniel:
+And this "guardian_token_tags" is again straight from Daniel's tutorial:
 
 ```ruby
 module GuardianHelper
@@ -670,7 +668,7 @@ module GuardianHelper
 end
 ```
 
-Tive que ajustar um pouquinho, principalmente para pegar as chaves certas do arquivo "secrets.yml", que agora fica assim:
+I had to tweak it a bit, specially to get the proper keys from the "secrets.yml" file which now looks like this:
 
 ```yaml
 development:
@@ -697,7 +695,7 @@ production:
   pusher_channel: <%= ENV['PUSHER_CHANNEL'] %>
 ```
 
-Meu arquivo ".env" local fica assim:
+My local ".env" file looks like this:
 
 ```
 PUSHER_URL: "localhost:4000"
@@ -706,9 +704,9 @@ PUSHER_SECRET: "2b94ff0f07ce9769567f"
 PUSHER_CHANNEL: "public:test_chat_channel" 
 ```
 
-Esse trecho ainda precisa de mais trabalho, eu sei. Eu só copiei a key e a senha do Pusher como KEY e SECRET. Esse é o pedaço que eu mencionei que ajustei na função authenticate do RoomChannel no lado do Phoenix.
+This bit needs more working, I know. I just copied Pusher's key and Pusher's password as KEY and SECRET. This is the bit I mentioned I tweaked in the RoomChannel's authenticate function in the Phoenix side.
 
-Agora que tenho isso no lugar, preciso mudar o modelo "PusherEvent" para disparar a mensagem do form para o EventsController do Phoenix, assim:
+Now that I have this in place, I have to change the "PusherEvent" model to trigger the message from the form to the Phoenix's EventsController, like this:
 
 ```ruby
 # app/models/event.rb
@@ -731,16 +729,16 @@ class PusherEvent
 end
 ```
 
-Como estou fazendo isso através do SuckerPunch, estou usando o bom e velho "Net::HTTP.post()" para postar a mensagem para o endpoint "/events" do Phoenix. O Phoenix vai autenticar corretamente porque o "pusher_url" está enviando o "PUSHER_KEY:PUSHER_SECRET" como HTTP Basic Auth. Isso vai parar no header "authorization" e o Phoenix vai autenticar corretamente o lado do servidor, depois ele vai fazer broadcast para as conexões WebSocket inscritas no tópico.
+As I am doing this through SuckerPunch, I am using plain old "Net::HTTP.post()" to post the message to the Phoenix "/events" endpoint. Phoenix will properly authenticate because the "pusher_url" is sending the "PUSHER_KEY:PUSHER_SECRET" as HTTP Basic Auth. It will end up in the "authorization" header and Phoenix will properly authenticate the server side, then it will broadcast to the WebSocket connections subscribed to the topic.
 
-O novo javascript vai se inscrever no tópico "public:test_chat_channel" e escutar o evento "msg". Quando receber o payload, ele formata a mensagem e, novamente, adiciona no mesmo lugar dentro da div "message-receiver".
+The new javascript will subscribe to the "public:test_chat_channel" topic and listen to the "msg" event. Once it receives the payload, it just formats the message and, again, appends to the same place in the "message-receiver" div tag.
 
-### Conclusão: Trabalho Futuro
+### Conclusion: Further Work
 
-Então, com isso temos exatamente o mesmo comportamento da versão com Pusher, só que agora sob meu controle.
+So, with this we have exactly the same behavior than the Pusher version, but now it's under my control.
 
-A ideia é o app Phoenix ter apps, uma autenticação real para diferentes apps. Aí toda aplicação Rails que eu fizer pode simplesmente conectar nesse mesmo serviço Phoenix.
+The idea is for the Phoenix app to have apps, a real authentication for different apps. Then every Rails app I do can just connect to this same Phoenix service.
 
-Os próximos passos incluem implementar direito as partes de Guardian/JWT, depois posso pular para o suporte a canais privados e adicionar APIs HTTP para listar canais nos apps e usuários online nos canais.
+The next steps include properly implementing the Guardian/JWT pieces, then I can jump to private channels support and add HTTP APIs to list channels in apps and users online in channels.
 
-Aí vou criar um segundo app Rails companion como dashboard de administração para consumir essas APIs e poder criar ou revogar apps e fazer manutenção e relatórios básicos. Isso deve ser um substituto bom o suficiente para uma solução de mensageria estilo Pusher que seja realmente rápida.
+I will then create a second companion Rails app as an administration dashboard to consume those APIs and be able to create or revoke apps and basic maintenance and reporting. This should be a good enough replacement for a Pusher-like messaging solution that is really fast.

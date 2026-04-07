@@ -1,25 +1,28 @@
 ---
-title: 'Ex Manga Downloadr - Part 2: Poolboy to the rescue!'
+title: 'Ex Manga Downloadr - Parte 2: Poolboy ao resgate!'
 date: '2015-11-19T14:35:00-02:00'
-slug: ex-manga-downloadr-part-2-poolboy-to-the-rescue
+slug: ex-manga-downloadr-parte-2-poolboy-ao-resgate
+translationKey: ex-manga-downloadr-part-2
+aliases:
+- /2015/11/19/ex-manga-downloadr-part-2-poolboy-to-the-rescue/
 tags:
 - learning
 - beginner
 - elixir
 - exmangadownloadr
-- english
+- traduzido
 draft: false
 ---
 
-If you read my [previous article](http://www.akitaonrails.com/2015/11/18/ex-manga-downloader-an-exercise-with-elixir) I briefly described my exercise building a MangaReader downloader. If you didn't read it yet, I recommend you do so before continuing.
+Se você leu o [meu artigo anterior](http://www.akitaonrails.com/2015/11/18/ex-manga-downloader-an-exercise-with-elixir), eu descrevi rapidamente meu exercício construindo um downloader pro MangaReader. Se ainda não leu, recomendo dar uma olhada antes de continuar.
 
-In the mid-section of the article I described how I was still puzzled on what would be the best way to handle several HTTP requests to an unstable external source where I can't control timeout or other network problems.
+No meio do artigo, eu falei que ainda estava me coçando pra entender qual seria a melhor forma de lidar com várias requisições HTTP simultâneas contra uma fonte externa instável, onde eu não consigo controlar timeout nem outros problemas de rede.
 
-A big Manga such as Naruto or Bleach have dozens of chapters with dozens of pages each, accounting for thousands of necessary HTTP requests. Elixir/Erlang do allow me to fire up as many parallel HTTP requests as I want. But doing that makes the HTTP requests timeout very quickly (it's like doing a distributed denial of service attack against MangaReader).
+Um Mangá grande tipo Naruto ou Bleach tem dezenas de capítulos com dezenas de páginas cada, o que dá milhares de requisições HTTP necessárias. Elixir/Erlang me permitem disparar quantas requisições HTTP em paralelo eu quiser. Só que, fazendo isso, as requisições começam a dar timeout muito rápido (é praticamente um ataque distribuído de negação de serviço contra o MangaReader).
 
-By trial and error I found that firing up less than a 100 HTTP requests at once allows me to finish. I capped it down to 80 to be sure, but it really depends on your environment.
+Por tentativa e erro descobri que disparar menos de 100 requisições HTTP de uma vez me permite terminar o trabalho. Eu travei em 80 só pra garantir, mas isso depende muito do seu ambiente.
 
-Then I had to manually chunk my list of pages to 80 elements and process them in parallel, finally reducing the resulting lists into a larger list again to pass it through to the next steps in the Workflow. The code gets convoluted like this:
+Aí eu tinha que manualmente picar minha lista de páginas em pedaços de 80 elementos e processar em paralelo, depois reduzir as listas resultantes de volta numa lista maior pra repassar pros próximos passos do Workflow. O código fica meio enrolado assim:
 
 ```ruby
 def images_sources(pages_list) do
@@ -35,7 +38,7 @@ def images_sources(pages_list) do
 end
 ```
 
-Now I was able to reimplement this aspect and the same code now looks like this:
+Agora consegui reimplementar essa parte e o mesmo código ficou assim:
 
 ```ruby
 def images_sources(pages_list) do
@@ -46,52 +49,52 @@ def images_sources(pages_list) do
 end
 ```
 
-Wow! Now this is a big improvement and it's way more obvious what it is doing. 
+Uau! Que melhora absurda, e ficou muito mais óbvio o que ele tá fazendo.
 
-Best of all: downloading a Manga the size of Akira (around 2,200 pages long) took less than **50 seconds**. And this is not because Elixir is super fast, it's because MangaReader can't keep up if I extend the Pool size. It's hitting at a constant rate of 50 concurrent connections!
+E o melhor: baixar um Mangá do tamanho de Akira (em torno de 2.200 páginas) levou menos de **50 segundos**. E não é porque Elixir é super rápido, é porque o MangaReader não aguenta o tranco se eu aumentar o tamanho do Pool. Ele tá batendo numa taxa constante de 50 conexões simultâneas!
 
-This just makes my 4 cores machine, sitting down over a connection of 40Mbs use less than 40% ~ 30% of CPU and using no more than around 3,5 Mbs. If MangaReader could keep up we could easily fetch all pages 2 or 3 times faster without breaking a sweat.
+Isso faz minha máquina de 4 cores, sentada numa conexão de 40Mbs, usar menos de 40% ~ 30% de CPU e não mais que uns 3,5 Mbs. Se o MangaReader aguentasse o tranco, daria pra puxar todas as páginas 2 ou 3 vezes mais rápido sem suar a camisa.
 
-It was fast with the previous strategy, but I guess it got at least twice as fast as a bonus. But how did I accomplish that?
+Já era rápido com a estratégia anterior, mas acho que ficou pelo menos duas vezes mais rápido como bônus. E como foi que eu consegui isso?
 
 ### Open Telecom Platform
 
-In the previous article I also said that I didn't want to dive into "OTP and GenServers" just yet. But if you're a beginner like me you probably didn't understand what this means.
+No artigo anterior eu também disse que ainda não queria mergulhar em "OTP e GenServers". Mas, se você é iniciante igual eu, provavelmente ainda nem entendeu direito o que isso quer dizer.
 
-OTP is what makes Erlang (and consequently, Elixir) different from pretty much every other language platform but, maybe, Java.
+OTP é o que torna Erlang (e por consequência, Elixir) diferente de praticamente qualquer outra plataforma de linguagem, com a possível exceção de Java.
 
-Many new languages today make it do many tasks in parallel through convoluted Reactor patterns (Node.js, EventMachine/Ruby, Tornado/Twisted/Python, etc) or through (cleaner) green threads (Scala, Go).
+Muitas linguagens novas hoje em dia tentam fazer várias tarefas em paralelo através de padrões Reactor enrolados (Node.js, EventMachine/Ruby, Tornado/Twisted/Python, etc) ou através de green threads (mais limpas) como em Scala e Go.
 
-But none of this matters. It's not difficult to launch millions of lightweight processes, but it is not trivial to actually **CONTROL** them all. It doesn't matter how fast you can exhaust your hardware if you can't control it. Then you end up with millions of dumb minions wreaking havoc without an adult to coordinate them.
+Mas nada disso importa muito. Lançar milhões de processos leves até é fácil, o difícil é **CONTROLAR** todos eles. Não adianta nada conseguir esgotar seu hardware se você não consegue controlá-lo. Você acaba com milhões de minions burros causando o caos sem nenhum adulto pra coordenar.
 
-Erlang solved this problem decades ago through the development of OTP, initially called Open Systems, within Ericsson in 1995. By itself OTP is a subject that can easilly fill an entire fat book and you will still not be able to call yourself an expert.
+Erlang resolveu esse problema décadas atrás através do desenvolvimento do OTP, inicialmente chamado de Open Systems, dentro da Ericsson em 1995. Por si só, OTP é um assunto que tranquilamente preenche um livro gordo inteiro e mesmo assim você ainda não vai conseguir se chamar de expert.
 
-Just so I don't get too boring here: 
+Só pra eu não ficar chato demais aqui:
 
-* Start with [this very brief summary](http://learnyousomeerlang.com/what-is-otp);
-* Then read [Elixir's tutorial on Supervisors](http://elixir-lang.org/getting-started/mix-otp/supervisor-and-application.html) and the page on [Processes](http://elixir-lang.org/getting-started/processes.html) first if you haven't already;
-* Finally, you can go further with [The Elixir & OTP Guidebook](https://www.manning.com/books/the-little-elixir-and-otp-guidebook) from Manning Publications.
+* Comece com [esse resumo bem curtinho](http://learnyousomeerlang.com/what-is-otp);
+* Depois leia o [tutorial de Supervisores do Elixir](http://elixir-lang.org/getting-started/mix-otp/supervisor-and-application.html) e a página sobre [Processos](http://elixir-lang.org/getting-started/processes.html), se ainda não tiver lido;
+* Por fim, dá pra ir mais fundo com [The Elixir & OTP Guidebook](https://www.manning.com/books/the-little-elixir-and-otp-guidebook) da Manning Publications.
 
-Now, below is my personal point of view. As I am a beginner myself, let me know in the comments section below if I got some concept wrong.
+Agora, segue meu ponto de vista pessoal. Como eu também sou iniciante, me avisem nos comentários abaixo se eu peguei algum conceito errado.
 
-OTP is a collection of technologies and frameworks. The part that interests us the most is to understand that this is a sophisticated collection of patterns to achieve the Nirvana of highly reliable, highly scalable, distributed systems. You know? That thing every new platform promises you but fails to actually deliver.
+OTP é uma coleção de tecnologias e frameworks. A parte que mais nos interessa é entender que isso é uma coleção sofisticada de padrões pra alcançar o Nirvana de sistemas distribuídos altamente confiáveis e altamente escaláveis. Sabe? Aquilo que toda nova plataforma promete pra você e não entrega.
 
-For our very simple intents and purposes, let's pick up what I said before: it's trivial to fire up millions of small processes. We call them "workers". OTP provides the means to control them: Supervisors. And then it also provides the concept of Supervisor Trees (Supervisors that supervise other Supervisor). This is the gist of it.
+Pros nossos propósitos bem simples, vamos retomar o que eu disse antes: é trivial disparar milhões de pequenos processos. Chamamos eles de "workers". O OTP fornece os meios pra controlar esses workers: os Supervisores. E também fornece o conceito de Árvores de Supervisores (Supervisores que supervisionam outros Supervisores). Esse é o ponto central.
 
-Supervisors are responsible for starting up the workers and also to recover from exceptions coming from the workers (which is why in Erlang/Elixir we don't do ugly try/catch stuff: let the error be raised and caught by the Supervisor). Then we can configure the Supervisor to deal with faulty worker by, for example, restarting them.
+Os Supervisores são responsáveis por iniciar os workers e também por se recuperar de exceções vindas dos workers (é por isso que em Erlang/Elixir a gente não fica fazendo aquela coisa feia de try/catch: deixe o erro acontecer e ser capturado pelo Supervisor). Aí dá pra configurar o Supervisor pra lidar com um worker problemático, por exemplo, reiniciando-o.
 
-We already touched this OTP stuff before. An Elixir [Task](https://github.com/elixir-lang/elixir/blob/master/lib/elixir/lib/task.ex) is just a high level abstraction. It internally starts its own [supervisor](https://github.com/elixir-lang/elixir/blob/master/lib/elixir/lib/task/supervisor.ex) and supervised to monitor over asynchronous tasks.
+A gente já tinha tocado nessa coisa de OTP antes. Uma [Task](https://github.com/elixir-lang/elixir/blob/master/lib/elixir/lib/task.ex) do Elixir é só uma abstração de alto nível. Internamente, ela inicia o próprio [supervisor](https://github.com/elixir-lang/elixir/blob/master/lib/elixir/lib/task/supervisor.ex) pra monitorar tarefas assíncronas.
 
-There are so many subjects and details that it's difficult to even get started. One concept that is important to know is about **state**. There is no global state! (Yay, no Javascript globals nightmare.) Each function has its own state and that's it. There is no concept of an "object" that holds state and then methods that can modify that state.
+Tem tantos assuntos e detalhes que fica difícil até começar. Um conceito importante de saber é sobre **estado**. Não existe estado global! (Eba, nada de pesadelo de globais do Javascript.) Cada função tem o próprio estado e pronto. Sem aquele conceito de um "objeto" que segura estado e métodos que modificam esse estado.
 
-But there is the concept of Erlang processes. Now, a process do have state, it's a lightweight piece of state that exists only in runtime. To execute a function in a separated, parallel process, you can just do:
+Mas existe sim o conceito de processos do Erlang. Um processo tem estado, é um pedacinho leve de estado que existe só em runtime. Pra executar uma função num processo separado e paralelo, dá pra fazer só isso:
 
 ```ruby
 iex> spawn fn -> 1 + 2 end
 #PID<0.43.0>
 ```
 
-Different from an object, a process does not have a set of methods that access its inner "this" or "self" states. Instead each process has a **mailbox**. When you start (or "spawn" in Erlang lingo) a new process, it returns a pid (process ID). You can now send messages to the process through its pid. Each process has a mailbox and you can choose to respond to incoming messages and send responses back to the pid that sent the message. This is how you can send a message to the IEx console and receive the messages in its mailbox:
+Diferente de um objeto, um processo não tem um conjunto de métodos que acessam seus estados internos "this" ou "self". Em vez disso, cada processo tem uma **caixa de mensagens** (mailbox). Quando você inicia (ou faz "spawn", no jargão do Erlang) um novo processo, ele retorna um pid (process ID). A partir daí dá pra mandar mensagens pro processo através do pid. Cada processo tem sua mailbox e você pode escolher responder às mensagens que chegam e mandar respostas de volta pro pid que enviou. É assim que dá pra mandar uma mensagem pro console do IEx e receber as mensagens na mailbox dele:
 
 ```ruby
 iex> send self(), {:hello, "world"}
@@ -103,19 +106,19 @@ iex> receive do
 "world"
 ```
 
-In essence, it's almost like an "object" that holds state. Each process has its own garbage collector, so when it dies it's individually collected. And each process is isolated from other processes, they don't bleed state out, which makes them much easier to reason about.
+Em essência, é quase como um "objeto" que segura estado. Cada processo tem seu próprio garbage collector, então quando ele morre é coletado individualmente. E cada processo é isolado dos outros, eles não vazam estado entre si, o que torna tudo bem mais fácil de raciocinar.
 
-The [Getting Started page on Processes](http://elixir-lang.org/getting-started/processes.html) from the Elixir website show examples of what I just explained and I recommend you follow it throughly.
+A [página de Getting Started sobre Processos](http://elixir-lang.org/getting-started/processes.html) do site do Elixir mostra exemplos do que acabei de explicar e recomendo muito que você acompanhe direitinho.
 
-In summary, a process can hold internal state by locking indefinitely waiting for an incoming message in its mailbox and then recursing to itself! This is a mindblowing concept at first.
+Resumindo, um processo pode segurar estado interno travando indefinidamente esperando uma mensagem chegar na mailbox e depois recursando em si mesmo! Esse é um conceito que explode a cabeça à primeira vista.
 
-But, just a simple process is just too dawn weak. This is where you get [OTP's GenServer](http://elixir-lang.org/getting-started/mix-otp/genserver.html), which is a much more accomplished process. OTP exposes Behaviours for you to implement in order to add your own code but it takes care of the dirty infrastructure stuff so you don't have to.
+Mas um processo simples sozinho é fraco demais. É aí que entra o [GenServer do OTP](http://elixir-lang.org/getting-started/mix-otp/genserver.html), que é um processo bem mais completo. O OTP expõe Behaviours pra você implementar com seu próprio código, enquanto ele cuida da parte chata da infraestrutura pra você não ter que se preocupar com isso.
 
-### Deferring the Heavy Workflow calls to a Worker
+### Delegando as Chamadas Pesadas do Workflow pra um Worker
 
-All that having being said, we know that in the Workflow we implemented before, we have trouble with the <tt>Page.image/1</tt> and <tt>Workflow.download_image/2</tt> functions. This is why we made them asynchronous processes and we wait for batches of 80 calls every time.
+Dito tudo isso, sabemos que no Workflow que implementamos antes a gente tem problema com as funções <tt>Page.image/1</tt> e <tt>Workflow.download_image/2</tt>. É por isso que tornamos elas processos assíncronos e esperamos por lotes de 80 chamadas a cada vez.
 
-Now, let's start by moving away this logic to a GenServer Worker, for example, in the <tt>ex_manga_downloadr/pool_management/worker.ex</tt> file:
+Agora, vamos começar movendo essa lógica pra um Worker GenServer, por exemplo, no arquivo <tt>ex_manga_downloadr/pool_management/worker.ex</tt>:
 
 ```ruby
 defmodule PoolManagement.Worker do
@@ -123,7 +126,7 @@ defmodule PoolManagement.Worker do
   use ExMangaDownloadr.MangaReader
 
   @timeout_ms 1_000_000
-  @transaction_timeout_ms 1_000_000 # larger just to be safe
+  @transaction_timeout_ms 1_000_000 # maior só por garantia
 
   def start_link(_) do
     GenServer.start_link(__MODULE__, nil, [])
@@ -139,13 +142,13 @@ defmodule PoolManagement.Worker do
 end
 ```
 
-I first moved the <tt>Workflow.download_image/2</tt> to <tt>Page.download_image/2</tt> just for consistency's sake. But this is a GenServer in a nutshell. We have some setup in the <tt>start_link/1</tt> function and then we have to implement <tt>handle_call/3</tt> functions to handle each kind of arguments it might receive. We separate them through pattern matching the arguments.
+Primeiro movi o <tt>Workflow.download_image/2</tt> pra <tt>Page.download_image/2</tt> só por consistência. Mas esse é um GenServer em poucas palavras. Temos uma configuração inicial na função <tt>start_link/1</tt> e implementamos funções <tt>handle_call/3</tt> pra lidar com cada tipo de argumento que ele pode receber. A separação acontece através de pattern matching dos argumentos.
 
-As a convention, we can add public functions that are just prettier versions that call each <tt>handle_call/3</tt>:
+Por convenção, dá pra adicionar funções públicas que são versões mais bonitinhas que chamam cada <tt>handle_call/3</tt>:
 
 ```ruby
   def page_image(page_link) do
-    Task.async fn -> 
+    Task.async fn ->
       :poolboy.transaction :worker_pool, fn(server) ->
         GenServer.call(server, {:page_image, page_link}, @timeout_ms)
       end, @transaction_timeout_ms
@@ -153,7 +156,7 @@ As a convention, we can add public functions that are just prettier versions tha
   end
 
   def page_download_image(image_data, directory) do
-    Task.async fn -> 
+    Task.async fn ->
       :poolboy.transaction :worker_pool, fn(server) ->
         GenServer.call(server, {:page_download_image, image_data, directory}, @timeout_ms)
       end, @transaction_timeout_ms
@@ -161,19 +164,19 @@ As a convention, we can add public functions that are just prettier versions tha
   end
 ```
 
-But we are not just calling the previous <tt>handle_call/3</tt> functions. First there is the <tt>Task.async/1</tt> we were already using in the Workflow functions to make the parallel batches. But inside the Task calls there is this other strange thing: <tt>:poolboy</tt>.
+Mas a gente não está só chamando os <tt>handle_call/3</tt> anteriores. Primeiro temos o <tt>Task.async/1</tt> que já estávamos usando nas funções do Workflow pra fazer os lotes paralelos. Mas dentro das chamadas Task tem essa outra coisa estranha: <tt>:poolboy</tt>.
 
-### Controlling Pools of Processes through Poolboy
+### Controlando Pools de Processos com Poolboy
 
-The entire OTP ordeal I wrote here was just an introduction so I could show off [Poolboy](https://github.com/devinus/poolboy).
+Toda essa enrolação sobre OTP que escrevi aqui foi só uma introdução pra eu poder mostrar o [Poolboy](https://github.com/devinus/poolboy).
 
-Repeating myself again: its trivial to fire up millions of processes. OTP is how we control failures to those processes. But there is another problem: the computation within each process may be so heavy we can either bring down the machine or, in our case, do a Distributed Denial of Service (DDoS) against poor MangaReader website.
+Repetindo de novo: é trivial disparar milhões de processos. OTP é como controlamos as falhas desses processos. Mas tem outro problema: a computação dentro de cada processo pode ser tão pesada que a gente acaba derrubando a máquina ou, no nosso caso, fazendo um Distributed Denial of Service (DDoS) contra o pobre site do MangaReader.
 
-My initial idea was to just do parallel requests in batches. But the logic is convoluted.
+Minha ideia inicial foi só fazer requisições paralelas em lotes. Mas a lógica fica enrolada.
 
-Instead, we can use a process pool! It queues up our requests for new processes. Whenever a process finishes it is returned to the pool and a new computation can take over the available process. This is how pools work (you probably have an intuition of how it works from traditional database connection pools). Pools and queues are useful software constructs to deal with limited resources.
+Em vez disso, podemos usar um pool de processos! Ele enfileira nossas requisições por novos processos. Sempre que um processo termina, ele é devolvido pro pool e uma nova computação pode tomar o processo disponível. É assim que pools funcionam (você provavelmente tem uma intuição de como funciona pelos pools tradicionais de conexão de banco de dados). Pools e filas são construções de software úteis pra lidar com recursos limitados.
 
-By doing this we can remove the chunking of the large list into batches and do it like we would process every element of the large list in parallel at once, repeating again the initial version:
+Fazendo isso, dá pra remover o picotamento da lista grande em lotes e processar como se fôssemos atacar cada elemento da lista grande em paralelo de uma só vez, repetindo de novo a versão inicial:
 
 ```ruby
 pages_list
@@ -187,7 +190,7 @@ pages_list
   end)
 ```
 
-Now, removing the chunking and reducing logic:
+Agora, removendo o chunking e a lógica de redução:
 
 ```ruby
 pages_list
@@ -196,7 +199,7 @@ pages_list
   |> Enum.map(fn {:ok, image} -> image end)
 ```
 
-And finally, replacing the direct <tt>Task.async/1</tt> call for the GenServer worker we just implemented above:
+E finalmente, substituindo a chamada direta de <tt>Task.async/1</tt> pelo worker do GenServer que acabamos de implementar:
 
 ```ruby
 pages_list
@@ -205,7 +208,7 @@ pages_list
   |> Enum.map(fn {:ok, image} -> image end)
 ```
 
-Now, Poolboy requires will require a Supervisor that monitors our Worker. Let's put it under <tt>ex_manga_downloadr/pool_management/supervisor.ex</tt>:
+Agora, o Poolboy vai exigir um Supervisor que monitore nosso Worker. Vamos colocar ele em <tt>ex_manga_downloadr/pool_management/supervisor.ex</tt>:
 
 ```ruby
 defmodule PoolManagement.Supervisor do
@@ -232,9 +235,9 @@ defmodule PoolManagement.Supervisor do
 end
 ```
 
-More OTP goodness here. We had a rogue Worker, now we have a responsible Supervisor deferring responsability to Poolboy. We start with a pool that can hold a maximum of 50 process within (without overflowing). This number comes from trial and error again. And the Supervisor will use a strategy of <tt>:one_for_one</tt>, which means that if the Worker dies it restarts it.
+Mais bondades do OTP por aqui. Tínhamos um Worker descontrolado, agora temos um Supervisor responsável delegando a responsabilidade pro Poolboy. Começamos com um pool que comporta no máximo 50 processos dentro (sem overflow). Esse número também veio de tentativa e erro. E o Supervisor vai usar uma estratégia <tt>:one_for_one</tt>, o que quer dizer que se o Worker morrer, ele reinicia o coitado.
 
-Now, we must add Poolboy to the <tt>mix.exs</tt> as a dependency and run <tt>mix deps.get</tt> to fetch it:
+Agora, precisamos adicionar o Poolboy no <tt>mix.exs</tt> como dependência e rodar <tt>mix deps.get</tt> pra baixar:
 
 ```ruby
 defp deps do
@@ -246,7 +249,7 @@ defp deps do
 end
 ```
 
-In the same <tt>mix.exs</tt> we make the main Application (surprise: which is [already a supervised OTP application](https://github.com/elixir-lang/elixir/blob/master/lib/elixir/lib/application.ex)) start the PoolManagement.Supervisor for us:
+No mesmo <tt>mix.exs</tt>, fazemos a Application principal (surpresa: que [já é uma aplicação OTP supervisionada](https://github.com/elixir-lang/elixir/blob/master/lib/elixir/lib/application.ex)) iniciar o PoolManagement.Supervisor pra gente:
 
 ```ruby
 def application do
@@ -255,7 +258,7 @@ def application do
 end
 ```
 
-But we also need to have this <tt>PoolManagement</tt> module for it to call. We may call it <tt>pool_management.ex</tt>:
+Mas também precisamos ter esse módulo <tt>PoolManagement</tt> pra ser chamado. Podemos chamá-lo de <tt>pool_management.ex</tt>:
 
 ```ruby
 defmodule PoolManagement do
@@ -267,24 +270,24 @@ defmodule PoolManagement do
 end
 ```
 
-### Summary
+### Resumo
 
-Let's summarize:
+Vamos resumir:
 
-1. the <tt>ExMangaDownloadr</tt> application will start up and fire up the <tt>PoolManagement</tt> application;
-2. the <tt>PoolManagement</tt> application fires up the <tt>PoolManagement.Supervisor</tt>;
-3. the <tt>PoolManagement.Supervisor</tt> fires up Poolboy and assigns <tt>PoolManagement.Worker</tt> to it, configuring it's pool size to 50 and responding to the pool name <tt>:worker_pool</tt>
-4. now we start to fetch and parse through the Manga's chapters and pages until the <tt>ExMangaDownloadr.Workflow.images_sources/1</tt> is called;
-5. it will call the <tt>PoolManagement.Worker.page_image/1</tt> function which in turn fires up a <tt>Task.async/1</tt>, calling <tt>:poolboy.transaction(:worker_pool, fn -> ... end)</tt>;
-6. if a process is available in Poolboy's pool it starts right away, otherwise it awaits for a process to become available, it will wait until the <tt>@transaction_timeout_ms</tt> timeout configuration.
-7. the process maps the entire <tt>pages_list</tt>, creating one async Task for each page in the list, we end up with a ginourmous list of Task pids, then we <tt>Task.await/2</tt> for them all to return.
+1. a aplicação <tt>ExMangaDownloadr</tt> sobe e dispara a aplicação <tt>PoolManagement</tt>;
+2. a aplicação <tt>PoolManagement</tt> dispara o <tt>PoolManagement.Supervisor</tt>;
+3. o <tt>PoolManagement.Supervisor</tt> dispara o Poolboy e atribui o <tt>PoolManagement.Worker</tt> pra ele, configurando o tamanho do pool em 50 e respondendo pelo nome de pool <tt>:worker_pool</tt>;
+4. agora começamos a buscar e fazer parsing dos capítulos e páginas do Mangá até que <tt>ExMangaDownloadr.Workflow.images_sources/1</tt> é chamado;
+5. ele vai chamar a função <tt>PoolManagement.Worker.page_image/1</tt> que por sua vez dispara um <tt>Task.async/1</tt>, chamando <tt>:poolboy.transaction(:worker_pool, fn -> ... end)</tt>;
+6. se tem um processo disponível no pool do Poolboy, ele inicia na hora, senão fica aguardando até que um processo fique disponível, esperando até o timeout configurado em <tt>@transaction_timeout_ms</tt>.
+7. o processo mapeia toda a <tt>pages_list</tt>, criando uma Task assíncrona pra cada página da lista, terminamos com uma lista gigantesca de pids de Task, e aí fazemos <tt>Task.await/2</tt> pra todas elas retornarem.
 
-Now, this application is much more reliable and faster as it fires up a new HTTP connection as soon as the first one responds and it return the process back to the pool. Instead of firing up 80 connections at a time, in batches, we start with 50 at the same time and then we fire up  one at a time for each process returned to the pool.
+Agora, essa aplicação ficou bem mais confiável e mais rápida, já que ela dispara uma nova conexão HTTP assim que a primeira responde e devolve o processo pro pool. Em vez de disparar 80 conexões de uma vez, em lotes, começamos com 50 ao mesmo tempo e depois disparamos uma de cada vez pra cada processo devolvido ao pool.
 
-Through trial and error I set the <tt>@http_timeout</tt> to wait at most 60 seconds. I also set the <tt>timeout_ms</tt> which is the time to wait for the GenServer worker call handle to return and <tt>transaction_timeout_ms</tt> which is the time Poolboy awaits for a new process in the pool, both to around 16 minutes (1,000,000 ms).
+Por tentativa e erro deixei o <tt>@http_timeout</tt> esperando no máximo 60 segundos. Também coloquei o <tt>timeout_ms</tt>, que é o tempo de espera pra chamada handle do worker GenServer retornar, e o <tt>transaction_timeout_ms</tt>, que é o tempo que o Poolboy aguarda por um novo processo no pool, ambos em torno de 16 minutos (1.000.000 ms).
 
-This is putting 25 years of Erlang experience in the Telecom industry to good use!
+É colocar 25 anos de experiência da Ericsson no setor de Telecom pra trabalhar a nosso favor!
 
-And to make it crystal clear: OTP is the thing that sets Erlang/Elixir apart from all the rest. It's not the same thing, but it's like if the standard would be to write everything in Java as an EJB, ready to run inside a JEE Container. What comes to mind is: heavy.
+E pra deixar bem claro: OTP é a coisa que separa Erlang/Elixir de todo o resto. Não é a mesma coisa, mas é como se o padrão fosse escrever tudo em Java como um EJB, pronto pra rodar dentro de um Container JEE. O que vem à mente é: pesado.
 
-In Erlang, an OTP application is lightweight, you can just build and use it ad hoc, without bureacracy, without having to set up complicated servers. As in our case, it's a very simple command line tool, and within it, the entire power of a JEE Container! Think about it.
+Em Erlang, uma aplicação OTP é leve, dá pra simplesmente construir e usar ad hoc, sem burocracia, sem ter que configurar servidores complicados. Como no nosso caso, é uma ferramenta de linha de comando bem simples e, dentro dela, todo o poder de um Container JEE! Pensa comigo.
