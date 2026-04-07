@@ -2,6 +2,7 @@
 title: Rails Manifesto
 date: '2006-04-11T12:09:00-03:00'
 slug: rails-manifesto
+translationKey: rails-manifesto
 tags:
 - narrativa
 - rails

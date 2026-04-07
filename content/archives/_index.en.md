@@ -4,6 +4,11 @@ title: AkitaOnRails Blog - Archives
 
 {{< lang-toggle >}}
 
+## 2016 - December
+
+- [Ex Pusher Lite - Part 3 - A Complete Solution](/en/2016/12/30/ex-pusher-lite-part-3-a-complete-solution/)
+- [Coherence and ExAdmin - Devise and ActiveAdmin for Phoenix](/en/2016/12/06/coherence-and-exadmin-devise-and-activeadmin-for-phoenix/)
+
 ## 2016 - November
 
 - [3 Months of GitLab. The Hybrid-SaaS Era](/en/2016/11/16/3-months-of-gitlab-the-hybrid-saas-era/)
@@ -30,6 +35,7 @@ title: AkitaOnRails Blog - Archives
 - [Hacking Mattermost Team Edition](/en/2016/08/12/hacking-mattermost-team-edition/)
 - [Moving away from Pivotal Tracker to Fulcrum. Good Enough.](/en/2016/08/10/moving-away-from-pivotal-tracker-to-fulcrum-good-enough/)
 - [Moving away from Slack into Rocket.chat. Good Enough.](/en/2016/08/09/moving-away-from-slack-into-rocket-chat-good-enough/)
+- [Moving to GitLab! Yes, it's worth it!](/en/2016/08/03/moving-to-gitlab-yes-it-s-worth-it/)
 
 ## 2016 - July
 
@@ -136,3 +142,8 @@ title: AkitaOnRails Blog - Archives
 - [Rails Podcast Brasil, QCon Special - Nick Sieger (JRuby) and Francesco Cesarini (Erlang)](/en/2008/11/21/rails-podcast-brasil-qcon-special-nick-sieger-jruby-and-francesco-cesarini-erlang/)
 - [Rails Podcast Brasil, QCon Special - Jan Lehnardt and Chris Anderson from CouchDB](/en/2008/11/19/rails-podcast-brasil-qcon-special-jan-lenhardt-and-chris-anderson-from-couchdb/)
 - [Rails Podcast Brasil, QCon Special - Yehuda Katz](/en/2008/11/19/rails-podcast-brasil-qcon-special-yehuda-katz/)
+
+## 2006 - April
+
+- [Rails Manifesto](/en/2006/04/11/rails-manifesto/)
+- [Welcome](/en/2006/04/05/bem-vindos/)

@@ -2,6 +2,7 @@
 title: Bem Vindos
 date: '2006-04-05T01:59:00-03:00'
 slug: bem-vindos
+translationKey: bem-vindos
 tags:
 - narrative
 - first-post

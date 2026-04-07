@@ -431,9 +431,9 @@ title: AkitaOnRails Blog - Arquivo
 
 ## 2016 - December
 
-- [Ex Pusher Lite - Part 3 - A Complete Solution](/2016/12/30/ex-pusher-lite-part-3-a-complete-solution/)
+- [Ex Pusher Lite - Parte 3 - Uma Solução Completa](/2016/12/30/ex-pusher-lite-parte-3-uma-solucao-completa/)
 - [Elixir Phoenix App deployed into a Load Balanced DigitalOcean setup](/2016/12/23/elixir-phoenix-app-deployed-into-a-load-balanced-digitalocean-setup/)
-- [Coherence and ExAdmin - Devise and ActiveAdmin for Phoenix](/2016/12/06/coherence-and-exadmin-devise-and-activeadmin-for-phoenix/)
+- [Coherence e ExAdmin - Devise e ActiveAdmin para Phoenix](/2016/12/06/coherence-e-exadmin-devise-e-activeadmin-para-phoenix/)
 
 ## 2016 - November
 
