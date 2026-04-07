@@ -111,7 +111,7 @@ languages:
             icon: newspaper
         - name: Akitando - Transcripts
           weight: 3
-          url: "/en/akitando/"
+          url: "/akitando/"
           params:
             icon: video
 

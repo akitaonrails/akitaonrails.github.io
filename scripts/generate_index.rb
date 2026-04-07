@@ -12,7 +12,6 @@ ARCHIVES_FILE = "#{ARCHIVES_DIR}/_index.md"
 ARCHIVES_FILE_EN = "#{ARCHIVES_DIR}/_index.en.md"
 AKITANDO_DIR = "#{CONTENT_DIR}/akitando"
 AKITANDO_FILE = "#{AKITANDO_DIR}/_index.md"
-AKITANDO_FILE_EN = "#{AKITANDO_DIR}/_index.en.md"
 FRONTMATTER_DELIMITER = '---'
 
 # Posts from January of last year onward appear on the main index.
@@ -105,12 +104,15 @@ def group_by_month(posts)
     .group_by { |post| [post[:date].year, post[:date].month] }
 end
 
-def render_months(grouped_posts)
+PT_MONTHNAMES = [nil, 'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho',
+                 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'].freeze
+
+def render_months(grouped_posts, lang: :pt)
   sorted_months = grouped_posts.keys.sort.reverse
   lines = []
 
   sorted_months.each do |(year, month)|
-    month_name = Date::MONTHNAMES[month]
+    month_name = lang == :pt ? PT_MONTHNAMES[month] : Date::MONTHNAMES[month]
     lines << "## #{year} - #{month_name}\n"
 
     grouped_posts[[year, month]].each do |post|
@@ -127,7 +129,7 @@ def generate_index(grouped_posts)
   lines = ["#{FRONTMATTER_DELIMITER}\ntitle: AkitaOnRails Blog\n#{FRONTMATTER_DELIMITER}\n"]
   lines << '{{< lang-toggle >}}'
   lines << ''
-  lines.concat(render_months(grouped_posts))
+  lines.concat(render_months(grouped_posts, lang: :pt))
   lines << "[Arquivo completo →](/archives/)\n"
   lines.join("\n")
 end
@@ -137,7 +139,7 @@ def generate_archives(grouped_posts)
   lines << '{{< lang-toggle >}}'
   lines << ''
   lines << "Quer ver as transcrições do Canal Akitando? [Clique aqui](/akitando/).\n"
-  lines.concat(render_months(grouped_posts))
+  lines.concat(render_months(grouped_posts, lang: :pt))
   lines.join("\n")
 end
 
@@ -148,7 +150,7 @@ def generate_index_en(grouped_posts)
   if grouped_posts.empty?
     lines << "_No posts translated to English yet. Check back soon._\n"
   else
-    lines.concat(render_months(grouped_posts))
+    lines.concat(render_months(grouped_posts, lang: :en))
   end
   lines << "[Full archive →](/en/archives/)\n"
   lines.join("\n")
@@ -162,7 +164,7 @@ def generate_archives_en(grouped_posts)
   if grouped_posts.empty?
     lines << "_Older posts are only available in Portuguese. Visit the [Portuguese archive](/archives/) to browse them._\n"
   else
-    lines.concat(render_months(grouped_posts))
+    lines.concat(render_months(grouped_posts, lang: :en))
   end
   lines.join("\n")
 end
@@ -172,20 +174,8 @@ def generate_akitando(grouped_posts)
   lines << ''
   lines << 'Transcrições dos episódios do canal [Akitando](https://www.youtube.com/c/akitando) no YouTube.'
   lines << ''
-  lines.concat(render_months(grouped_posts))
+  lines.concat(render_months(grouped_posts, lang: :pt))
   lines.join("\n")
-end
-
-def generate_akitando_en
-  <<~MARKDOWN
-    ---
-    title: Akitando - Transcripts
-    ---
-
-    These are transcripts for Akita's YouTube channel [Akitando](https://www.youtube.com/c/akitando).
-
-    _Akitando episodes are produced in Brazilian Portuguese only and are not translated to English._
-  MARKDOWN
 end
 
 include_future = ARGV.include?('--future')
@@ -219,11 +209,9 @@ File.write(ARCHIVES_FILE_EN, generate_archives_en(archived_en))
 archived_en_count = archived_en.values.flatten.size
 puts "Generated #{ARCHIVES_FILE_EN} with #{archived_en_count} posts (before #{CUTOFF_YEAR})."
 
-# Akitando transcripts page
+# Akitando transcripts page (PT only — no EN translation, EN sidebar links to /akitando/)
 Dir.mkdir(AKITANDO_DIR) unless Dir.exist?(AKITANDO_DIR)
 akitando_posts = collect_akitando_posts(include_future: include_future)
 grouped_akitando = group_by_month(akitando_posts)
 File.write(AKITANDO_FILE, generate_akitando(grouped_akitando))
 puts "Generated #{AKITANDO_FILE} with #{akitando_posts.size} posts."
-File.write(AKITANDO_FILE_EN, generate_akitando_en)
-puts "Generated #{AKITANDO_FILE_EN} (static EN notice)."
