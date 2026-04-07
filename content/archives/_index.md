@@ -634,7 +634,6 @@ title: AkitaOnRails Blog - Arquivo
 - [\[Off-Topic\] Comentando o Marco Civil Aprovado](/2014/03/30/off-topic-comentando-o-marco-civil-aprovado/)
 - [\[Off-Topic\] Breaking Bad foi uma startup de muito sucesso](/2014/03/28/off-topic-breaking-bad-foi-uma-startup-de-muito-sucesso/)
 - [\[Off-Topic\] Lean está Morto, longa vida à Eficiência](/2014/03/27/off-topic-lean-esta-morto-longa-vida-a-eficiencia/)
-- [\[Off-Topic\] Lean está Morto, longa vida à eficiência](/2014/03/27/off-topic-lean-esta-morto-longa-vida-a-eficiencia-833d3284-08e3-4162-a8d1-b528e71c0616/)
 - [Introdução ao Rails Composer](/2014/03/25/introducao-ao-rails-composer/)
 
 ## 2014 - February
