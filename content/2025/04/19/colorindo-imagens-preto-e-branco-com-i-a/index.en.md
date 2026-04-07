@@ -1,7 +1,7 @@
 ---
-title: Colorindo Imagens Preto e Branco com I.A.
+title: Colorizing Black and White Images with A.I.
 date: '2025-04-19T01:40:00-03:00'
-slug: colorindo-imagens-preto-e-branco-com-i-a
+slug: colorizing-black-and-white-images-with-ai
 tags:
 - ddcolor
 - I.A.
@@ -9,16 +9,17 @@ tags:
 - docker
 draft: false
 translationKey: ai-colorize-black-white
+description: Using DDColor inside Docker to colorize old black and white photos, plus a Reinhard global color transfer hack to bias the result toward a reference image.
 ---
 
-Minha namorada me deu um desafio hoje: ela tinha fotos preto e branco antigas e queria saber se eu conseguia colorizar elas. Se sair procurando na Web esbarra em alguns sites pra isso, como esse: [Palette](https://palette.fm/). Mas é pago, não é barato e acho que ele não consegue uma coisa que ela queria: usar uma outra imagem colorida como referência pra tirar as cores em vez de tentar colorizar por chute do modelo.
+My girlfriend gave me a challenge today: she had old black and white photos and wanted to know if I could colorize them. If you go searching the Web you bump into a few sites for this, like [Palette](https://palette.fm/). But it is paid, it is not cheap, and I do not think it can do something she wanted: use another colored image as a reference to pull the colors instead of letting the model guess.
 
-Saí fuçando GitHub e tem uma página [Awesome Image Colorization](https://github.com/MarkMoHR/Awesome-Image-Colorization) com vários papers de pesquisa. Muito útil pra quem for pesquisador mas totalmente inútil pra mim que não vou fazer um do zero kkkk. Tinha links pra alguns projetos como ChromaGAN, mas que está descontinuado faz uns 5 anos. E vários outros projetos que eu vi foram descontinuados lá atrás mesmo, não sei porque tem tão pouco open source ainda atualizado.
+I went poking around GitHub and there is an [Awesome Image Colorization](https://github.com/MarkMoHR/Awesome-Image-Colorization) page with a bunch of research papers. Very useful for researchers but totally useless for me, since I am not going to build one from scratch lol. There were links to projects like ChromaGAN, but that one has been discontinued for about 5 years. And several other projects I saw were also discontinued ages ago. I do not know why there is so little open source still actively maintained.
 
 
-Mas felizmente esbarrei em um promissor: [DDColor](https://github.com/piddnad/DDColor). 
+Luckily I bumped into a promising one: [DDColor](https://github.com/piddnad/DDColor).
 
-Bora clonar o repositório. E pra continuar, prefiro fazer tudo dentro de Docker. Ficar baixando dependência de python sempre zoa meu sistema e deixa um monte de lixo pra trás, então melhor coisa é isolar tudo. Outra coisa, precisa baixar os binários dos modelos pré-treinados. Só pra isso vou usar um pouco de Python por causa da lib "modelscope" que faz isso:
+Let's clone the repo. And to keep going, I prefer to do everything inside Docker. Downloading Python dependencies always messes up my system and leaves a bunch of garbage behind, so the best thing is to isolate it all. Another thing, you need to download the binaries of the pre-trained models. Just for that I will use a bit of Python because of the "modelscope" lib that handles it:
 
 ```bash
 git clone https://github.com/piddnad/DDColor.git
@@ -26,7 +27,7 @@ cd DDColor
 
 mkdir modelscope
 
-# criar um novo venv dentro do projeto DDColor
+# create a new venv inside the DDColor project
 python -m venv venv
 
 venv/bin/pip3 install modelscope
@@ -34,9 +35,9 @@ venv/bin/pip3 install modelscope
 venv/bin/python3 -c "from modelscope.hub.snapshot_download import snapshot_download; snapshot_download('damo/cv_ddcolor_image-colorization', cache_dir='./modelscope')"
 ```
 
-Boa prática de Python acho que é fazer tudo dentro de uma VENV né? Enfim, isso deve baixar o binário do modelo, que pesa quase 900MB. Não é grande.
+Good Python practice is to do everything inside a VENV, right? Anyway, this should download the model binary, which weighs almost 900MB. Not huge.
 
-Agora precisamos de um Dockerfile:
+Now we need a Dockerfile:
 
 ```
 # Use NVIDIA CUDA base image with cuDNN 8 and Python support
@@ -64,9 +65,9 @@ RUN sed '/dlib/d' requirements.txt > temp-req.txt && pip3 install -r temp-req.tx
 RUN pip3 install modelscope
 ```
 
-Preguiça de abrir um pull request pra isso, se alguém quiser, mande lá.
+Too lazy to open a pull request for this, if anyone wants to, send it over there.
 
-Agora precisamos colocar uma imagem preto e branco em algum lugar:
+Now we need to put a black and white image somewhere:
 
 ```
 mkdir input
@@ -74,11 +75,11 @@ mkdir results
 mv ~/Downloads/bw.jpg input/
 ```
 
-Como as fotos da minha namorada são familiares e particulares, obviamente não vou compartilhar, então peguei uma aleatória qualquer no Google Images:
+Since my girlfriend's photos are family and private, obviously I am not going to share them, so I grabbed a random one from Google Images:
 
-![Foto B&W](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/qgt3lynkp1f5uzkbysyvio2kmq04)
+![B&W Photo](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/qgt3lynkp1f5uzkbysyvio2kmq04)
 
-Agora colocamos em "./input" e rodamos o Docker com este comando:
+Now we drop it in "./input" and run Docker with this command:
 
 ```
 docker run --rm --gpus all \
@@ -92,9 +93,9 @@ docker run --rm --gpus all \
     --output /workspace/results
 ```
 
-Preste atenção no mapeamento de diretórios. E note a opção "--gpus" que só funciona no meu caso porque eu tenho uma RTX 4090 instalada aqui. Não tenho a mínima idéia se é a mesma coisa com AMD, mas como a imagem é baseada em cnDNN/CUDA, acho que não. Pergunte ao ChatGPT.
+Pay attention to the directory mapping. And note the "--gpus" option, which only works in my case because I have an RTX 4090 installed here. I have no idea if it is the same with AMD, but since the image is based on cuDNN/CUDA, I would say no. Ask ChatGPT.
 
-Se estiver tudo certo e rodar com sucesso, vai levar só 1 segundo e ter este output no terminal:
+If everything is right and it runs successfully, it will take just 1 second and produce this output in the terminal:
 
 ```
 ==========
@@ -115,29 +116,29 @@ Output path: /workspace/results
 100%|██████████| 1/1 [00:00<00:00,  4.09it/s]
 ```
 
-E eis o resultado que aparece no diretório `./results":
+And here is the result that shows up in the `./results` directory:
 
-![Foto re-colorizada](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/o2r085pzzpsavbyr39btg1vq0hwp)
+![Re-colorized photo](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/o2r085pzzpsavbyr39btg1vq0hwp)
 
-Sim, eu fiquei impressionado. Mesmo a imagem sendo da Web, com marca d'agua e tudo, ele fez tudo direitinho e funcionou!!
+Yes, I was impressed. Even with the image being from the Web, with watermark and all, it did everything properly and worked!!
 
-Único problema é que ainda falta o problema de conseguir usar uma imagem de referência pra tentar pegar as cores. Esse é um problema mais difícil e eu perguntei ao ChatGPT que me respondeu isto:
+The only problem left is being able to use a reference image to try to pull the colors. That is a harder problem and I asked ChatGPT, which answered me this:
 
-**Sem suporte nativo para imagem de referência:**  
+**No native support for a reference image:**
 
-O modelo DDColor, tanto na versão oficial hospedada no ModelScope quanto no repositório GitHub `piddnad/DDColor`, foi projetado apenas para colorização **automática de imagens em preto e branco**, sem aceitar uma imagem de referência como entrada. A própria descrição oficial deixa claro que o modelo recebe **uma única imagem P&B** e retorna uma imagem colorida.
+The DDColor model, both in the official version hosted on ModelScope and in the `piddnad/DDColor` GitHub repo, was designed only for **automatic colorization of black and white images**, with no option to accept a reference image as input. The official description itself makes it clear that the model takes **a single B&W image** and returns a colored image.
 
-O método `forward` do modelo espera **apenas um tensor**, referente à imagem P&B convertida em RGB artificial (na verdade, a luminância expandida para 3 canais). Ou seja, **não há lugar no modelo para passar uma segunda imagem como referência de cores**.
+The model's `forward` method expects **only one tensor**, the B&W image converted into artificial RGB (actually the luminance expanded into 3 channels). In other words, **there is no place in the model to pass a second image as a color reference**.
 
-Isso também fica evidente no `predict.py` original da biblioteca Cog, que aceita apenas o parâmetro `image` como entrada — sem suporte a `reference`, `ref_image` ou algo do tipo.
+This is also evident in the original `predict.py` from the Cog library, which only accepts the `image` parameter as input — with no support for `reference`, `ref_image` or anything of the kind.
 
-### Como resolver o problema: duas abordagens possíveis
+### How to solve the problem: two possible approaches
 
-Como o DDColor não suporta nativamente uma imagem de referência para guiar as cores, temos duas alternativas:
+Since DDColor does not natively support a reference image to guide the colors, we have two alternatives:
 
-### 🔁 1. Usar um modelo especializado em colorização com referência
+### 🔁 1. Use a model specialized in reference-based colorization
 
-Existem modelos desenvolvidos especificamente para isso, como:
+There are models developed specifically for this, such as:
 
 - **Deep Exemplar-based Colorization** (Zhang et al., CVPR 2018)
     
@@ -148,44 +149,44 @@ Existem modelos desenvolvidos especificamente para isso, como:
 - **UniColor** (Huang et al., 2022)
     
 
-Esses modelos aceitam **duas imagens**:
+These models accept **two images**:
 
-- A imagem em P&B (entrada principal)
+- The B&W image (main input)
     
-- Uma imagem colorida como **referência de cores**
-    
-
-Esses modelos mapeiam similaridades semânticas (ex: “pele aqui deve ter a mesma cor de pele dali”) e fazem uma transferência **baseada no conteúdo da imagem**, obtendo resultados muito mais detalhados e específicos. No entanto, isso exigiria:
-
-- Baixar pesos diferentes
-    
-- Alterar completamente a arquitetura usada
-    
-- Adaptar o pipeline e a inferência
+- A colored image as a **color reference**
     
 
-### 🎯 2. Usar transferência global de cor após a saída do DDColor (nossa abordagem atual)
+These models map semantic similarities (e.g., "skin here should have the same skin color as over there") and do a transfer **based on the image content**, getting much more detailed and specific results. However, this would require:
 
-A solução prática e leve que usamos foi:  
-➡️ Rodar o DDColor normalmente para gerar a imagem colorida automaticamente  
-➡️ Depois, ajustar **globalmente** as cores do resultado para ficarem mais parecidas com as da imagem de referência.
-
-Esse ajuste é feito com o algoritmo de **Reinhard et al. (2001)**:
-
-1. Convertemos tanto a imagem de saída quanto a referência para o espaço de cor Lab.
+- Downloading different weights
     
-2. Calculamos a **média e o desvio padrão** dos canais `a` e `b` (os que representam cor).
+- Completely changing the architecture used
     
-3. Ajustamos o resultado para ter **a mesma distribuição estatística** de cor que a imagem de referência.
-    
-4. Isso tende a deixar a imagem com o mesmo “clima” ou tom geral (mais quente, mais frio, mais vibrante).
+- Adapting the pipeline and inference
     
 
-Esse método é rápido, leve, e funciona **sem alterar o modelo DDColor**.
+### 🎯 2. Use global color transfer after the DDColor output (our current approach)
 
-## Continuando
+The practical and lightweight solution we used was:
+➡️ Run DDColor normally to generate the colored image automatically
+➡️ Then **globally** adjust the colors of the result to look more like the reference image.
 
-Eu usei a modificação que ele sugeriu ao arquivo predict.py:
+This adjustment is done with the **Reinhard et al. (2001)** algorithm:
+
+1. We convert both the output image and the reference to the Lab color space.
+    
+2. We compute the **mean and standard deviation** of the `a` and `b` channels (the ones that represent color).
+    
+3. We adjust the result to have **the same statistical distribution** of color as the reference image.
+    
+4. This tends to leave the image with the same overall "mood" or tone (warmer, cooler, more vibrant).
+    
+
+This method is fast, lightweight, and works **without altering the DDColor model**.
+
+## Continuing
+
+I used the modification it suggested to the predict.py file:
 
 ```python
 import os
@@ -323,7 +324,7 @@ class Predictor(BasePredictor):
         return Path(out_path)
 ```
 
-Com essa modificação posso rodar com esse novo parâmetro, note a opção "--ref" que tem agora e coloque sua imagem no lugar certo:
+With this modification I can run with a new parameter, note the "--ref" option that exists now and place your image in the right spot:
 
 ```
 ❯ docker run --rm --gpus all \
@@ -340,29 +341,29 @@ Com essa modificação posso rodar com esse novo parâmetro, note a opção "--r
     --output /workspace/results
 ```
 
-Passei outra foto colorida de referência mas não dferença no resultado. Novamente, perguntei ao ChatGPT:
-### Por que você não percebeu diferença no resultado?
+I passed in another colored reference photo but saw no difference in the result. Once again, I asked ChatGPT:
+### Why didn't you notice a difference in the result?
 
-A **transferência global de cor** só altera a “paleta geral” — e não as cores de cada objeto.  
+The **global color transfer** only changes the "overall palette" — and not the colors of each object.
 
-Se a imagem de referência tem tons suaves ou parecidos com os que o DDColor já aplicaria automaticamente, o efeito final **vai parecer idêntico**.
+If the reference image has soft tones similar to what DDColor would already apply automatically, the final effect **will look identical**.
 
-Mas se você usar como referência uma imagem bem saturada (por exemplo, um céu alaranjado, ou um ambiente azul escuro), você verá a saída do DDColor ser **puxada visualmente** para aquele estilo.
+But if you use as reference a heavily saturated image (for example, an orange sky, or a deep blue environment), you will see DDColor's output **visually pulled** toward that style.
 
-## Conclusão
+## Conclusion
 
-Segui a sugestão e baixei outra imagem nada a ver, colorida, super saturada com cores vibrantes pra ver se fazia diferença. Esta é a imagem de referência que passei pro Docker:
+I followed the suggestion and downloaded another totally unrelated image, colored, super saturated with vibrant colors to see if it made a difference. This is the reference image I passed to Docker:
 
-![Imagem de Referência](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/ryptql9u8mk04o3r7ah01fk1qz5q)
+![Reference Image](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/ryptql9u8mk04o3r7ah01fk1qz5q)
 
-E eis o novo resultado aplicando ela à imagem anterior em pós-processamento (esse passo não é mais I.A. é pós-processamento de imagem mesmo).
+And here is the new result applying it to the previous image in post-processing (this step is no longer A.I., it really is just image post-processing).
 
-![Foto pós-processada](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/cxcwwnj2ncszvmv4whj4qesafgnm)
+![Post-processed photo](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/cxcwwnj2ncszvmv4whj4qesafgnm)
 
-Comparem com a outra foto re-colorizada, vou colocar aqui embaixo de novo pra dar pra comparar:
+Compare it with the other re-colorized photo, I will put it down here again so you can compare:
 
-![Repetindo a primeira re-colorização](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/o2r085pzzpsavbyr39btg1vq0hwp)
+![Repeating the first re-colorization](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/o2r085pzzpsavbyr39btg1vq0hwp)
 
-Entenderam? Agora precisa ficar testando com referências diferentes pra ver a influência no resultado final, mas de fato, ele consegue aplicar o algoritmo de Reinhard e fazer uma transferência global de cor. Como o nome diz, é "global", não "por objeto", então é difícil conseguir controlar só partes da imagem e sim a imagem toda. Mas em teoria eu acho que você conseguiria fazer uma colorização manual no Photoshop com cores saturadas, perto de onde quer influenciar, pra tentar ajustar, mas eu não tentei isso ainda, depois se alguém fizer, mande nos comentários.
+Got it? Now you have to keep testing with different references to see how they influence the final result, but indeed, it manages to apply the Reinhard algorithm and do a global color transfer. As the name says, it is "global", not "per object", so it is hard to control only parts of the image — it acts on the whole image. But in theory I think you could do a manual colorization in Photoshop with saturated colors, near where you want to influence, to try to nudge it, but I have not tried that yet. Later, if anyone does, drop it in the comments.
 
-Mas é isso. Agora pelo menos eu consigo me divertir pegando fotos antigas de família e re-colorizar.
+But that is it. Now at least I can have fun grabbing old family photos and re-colorizing them.

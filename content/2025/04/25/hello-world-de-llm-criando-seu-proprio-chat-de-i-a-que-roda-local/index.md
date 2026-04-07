@@ -15,6 +15,7 @@ tags:
 - docker
 - pytorch
 draft: false
+translationKey: llm-hello-world-local-chat
 ---
 
 Ando brincando BASTANTE com os diversos derivados de GPT como o próprio ChatGPT, Claude Sonnet, Gemini e depois talvez eu faça um outro post sobre minha experiência, mas hoje eu queria brincar um pouco mais a fundo e fazer um experimento nível "Hello World" pra que vocês, programadores, entendam como que funciona por baixo dos panos.

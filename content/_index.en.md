@@ -61,4 +61,24 @@ title: AkitaOnRails Blog
 - [AI Agents: Locking Down Your System](/en/2026/01/10/ai-agents-locking-down-your-system/)
 - [Omarchy 3 - One of the Best Coding Agents Out There: Crush](/en/2026/01/09/omarchy-3-one-of-the-best-coding-agents-crush/)
 
+## 2025 - April
+
+- [Dissecting an Ollama Modelfile - Tuning Qwen3 for Code](/en/2025/04/29/dissecting-an-ollama-modelfile-tuning-qwen3-for-code/)
+- [Testing the Newly Released Open Source LLM - Qwen3 (with Aider and Ollama)](/en/2025/04/28/testing-the-newly-released-qwen3-open-source-llm-with-aider-and-ollama/)
+- [Destroying the ChatGPT 4o "Personality"](/en/2025/04/28/destroying-the-chatgpt-4o-personality/)
+- [Testing LLMs with Aider on RunPod - which one to use for code?](/en/2025/04/27/testing-llms-with-aider-on-runpod-which-to-use-for-code/)
+- [Your Own Free Universal Co-Pilot Running Local: AIDER-OLLAMA-QWEN](/en/2025/04/25/your-own-free-universal-copilot-running-local-aider-ollama-qwen/)
+- [LLM Hello World: Building Your Own Local AI Chat](/en/2025/04/25/llm-hello-world-building-your-own-local-ai-chat/)
+- [Accessing Your NAS Using iSCSI Instead of SMB](/en/2025/04/24/accessing-your-nas-using-iscsi-instead-of-smb/)
+- [Changing Clothes Using A.I. (ComfyUI)](/en/2025/04/23/changing-clothes-using-ai-comfyui/)
+- [Using A.I. (ComfyUI) to Generate NPCs in Game Development](/en/2025/04/23/using-ai-comfyui-to-generate-npcs-for-game-development/)
+- [Understanding the Basics of ComfyUI to Generate AI Images](/en/2025/04/20/understanding-the-basics-of-comfyui-to-generate-ai-images/)
+- [Generating AI Images - even Ghibli style 😂 - with Docker and CUDA](/en/2025/04/20/generating-ai-images-even-ghibli-style-with-docker-and-cuda/)
+- [Generating Up to 2-Minute Videos from a Photo with A.I.](/en/2025/04/19/generating-up-to-2-minute-videos-from-a-photo-with-ai/)
+- [Upscaling Old Anime to 4K with AI](/en/2025/04/19/upscaling-old-anime-to-4k-with-ai/)
+- [Colorizing Black and White Images with A.I.](/en/2025/04/19/colorizing-black-and-white-images-with-ai/)
+- [Configuring My Synology NAS with NFS on Linux](/en/2025/04/17/configuring-my-synology-nas-with-nfs-on-linux/)
+- [NVIDIA and Wayland - Problems for PCI Passthrough in VMs](/en/2025/04/17/nvidia-and-wayland-problems-for-pci-passthrough-in-vms/)
+- [BIOS Configuration of My PC - X670E Aorus Xtreme](/en/2025/04/17/bios-config-my-pc-x670e-aorus-xtreme/)
+
 [Full archive →](/en/archives/)

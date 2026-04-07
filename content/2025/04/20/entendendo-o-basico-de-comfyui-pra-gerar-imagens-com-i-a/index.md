@@ -12,6 +12,7 @@ tags:
 - controlnet
 - loras
 draft: false
+translationKey: comfyui-basics-ai-images
 ---
 
 No [post anterior](https://www.akitaonrails.com/2025/04/20/gerando-imagens-com-i-a-ate-estilo-ghibli-com-docker-e-cuda) expliquei meu projetinho de como subir ComfyUI pré-configurado e pré-carregado automaticamente usando Docker Compose. Assumindo que você já tem tudo de pé, agora é entender essa desgraça do ComfyUI um pouco.

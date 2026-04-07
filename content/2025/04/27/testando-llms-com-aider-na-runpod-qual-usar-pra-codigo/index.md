@@ -11,6 +11,7 @@ tags:
 - ollama
 - llm
 draft: false
+translationKey: aider-runpod-which-llm-for-code
 ---
 
 Seguindo meu post [sobre Aider](https://www.akitaonrails.com/2025/04/25/seu-proprio-co-pilot-gratuito-universal-que-funciona-local-aider-ollama-qwen) e agora que você entende como LLMs funcionam pra código, resolvi experimentar rodar alguns modelos na minha própria máquina.

@@ -14,6 +14,7 @@ tags:
 - flux
 - comfyui
 draft: false
+translationKey: ai-comfyui-npcs-game-dev
 ---
 
 Eu andei atualizando BASTANTE meu projetinho de Comfyui com Docker Compose. Eu acho que é o setup mais completo e testado de todos, com a vantagem de ser em Docker, então é repetitível com zero setup. Leia [meu post](https://github.com/akitaonrails/ComfyUI-Docker-CUDA-preloaded) pra mais detalhes sobre como ele funciona.

@@ -10,6 +10,7 @@ tags:
 - nas
 - docker
 draft: false
+translationKey: nas-iscsi-instead-of-smb
 ---
 
 

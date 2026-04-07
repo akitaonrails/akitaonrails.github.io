@@ -7,6 +7,7 @@ tags:
 - docker
 - video2k
 draft: false
+translationKey: ai-anime-upscale-4k
 ---
 
 Mais de um ano atrás eu estava brincando com ErsGAN, redes adversariais generativas pra tarefa de fazer "upscaling" (aumentar resolução) de arquivos de animes velhos que eu tenho.

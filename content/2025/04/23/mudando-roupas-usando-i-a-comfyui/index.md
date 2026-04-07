@@ -7,6 +7,7 @@ tags:
 - idm-vton
 - docker
 draft: false
+translationKey: ai-clothes-swap-comfyui
 ---
 
 No [post anterior](https://www.akitaonrails.com/2025/04/23/usando-i-a-comfyui-pra-gerar-npcs-em-desenvolvimento-de-games) mostrei como gerar character sheets pra desenvolvimento de games. Mas alguns me perguntaram "e se eu quiser roupas específicas?".

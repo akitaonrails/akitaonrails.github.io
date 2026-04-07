@@ -11,6 +11,7 @@ tags:
 - libvirt
 - qemu
 draft: false
+translationKey: nvidia-wayland-pci-passthrough
 ---
 
 Mais um artigo que é mais pra eu não me esquecer e servir de anotação pra mim.

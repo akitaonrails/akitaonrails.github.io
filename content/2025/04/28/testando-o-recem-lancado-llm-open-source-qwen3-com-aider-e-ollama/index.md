@@ -8,6 +8,7 @@ tags:
 - aider
 - llm
 draft: false
+translationKey: testing-qwen3-first-aider-ollama
 ---
 
 

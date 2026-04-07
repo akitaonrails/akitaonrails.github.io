@@ -7,6 +7,7 @@ tags:
 - openai
 - llm
 draft: false
+translationKey: destroying-chatgpt-4o-personality
 ---
 
 

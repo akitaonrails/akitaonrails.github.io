@@ -10,6 +10,7 @@ tags:
 - figures
 - 3d print
 draft: false
+translationKey: ai-photo-to-video-2min
 ---
 
 Fácil o melhor canal de tutoriais de ferramentas open source pra I.A. é o [Aitrepreneur](https://www.youtube.com/watch?v=GywyMij88rY). E nesse link ele apresenta uma nova ferramenta chamada [FramePack](https://github.com/lllyasviel/FramePack), que usa o famoso modelo [HunyuanVideo](https://github.com/Tencent/HunyuanVideo) da Tencent pra pegar uma única imagem, uma foto, e conseguir gerar videos de excelente qualidade de até 2 minutos de duração. É realmente impressionante! Assistam o video, mas eis aqui embaixo um video gerado de 10 segundos de uma foto que eu tirei de uma das action figures da minha coleção.

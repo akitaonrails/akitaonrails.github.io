@@ -11,6 +11,7 @@ tags:
 - docker
 - cuda
 draft: false
+translationKey: ai-images-ghibli-docker-cuda
 ---
 
 Este tema vai ser dividido em dois posts. Neste é só técnico de como fazer rodar, no outro vou explicar o que diabos é um ComfyUI e mais ou menos como usar.

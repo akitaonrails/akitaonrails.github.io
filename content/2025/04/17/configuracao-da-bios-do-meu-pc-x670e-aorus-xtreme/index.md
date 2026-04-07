@@ -7,6 +7,7 @@ tags:
 - performance
 - linux
 draft: false
+translationKey: pc-bios-x670e-aorus
 ---
 
 Esta é uma anotação pra mim mesmo, pra eu não esquecer e talvez ajude alguém.

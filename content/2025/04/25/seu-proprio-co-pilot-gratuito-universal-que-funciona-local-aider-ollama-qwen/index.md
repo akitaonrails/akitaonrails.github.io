@@ -11,6 +11,7 @@ tags:
 - llm
 - sdpa
 draft: false
+translationKey: local-copilot-aider-ollama-qwen
 ---
 
 No meu [post anterior](https://www.akitaonrails.com/2025/04/25/hello-world-de-llm-criando-seu-proprio-chat-de-i-a-que-roda-local) eu mostro como fazer um chat LLM do zero com capacidade pra carregar arquivos de código pra refatoração. Eu demonstro os princípios por trás de ferramentas como Co-Pilot, Cursor ou Windsurf. O resumo é simples:

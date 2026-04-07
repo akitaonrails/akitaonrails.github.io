@@ -9,6 +9,7 @@ tags:
 - btrfs
 - autofs
 draft: false
+translationKey: synology-nas-nfs-linux
 ---
 
 3 posts no mesmo dia, mas é que tirei o dia pra resolver meus problemas de Linux hoje, então segue mais uma anotação pra mim mesmo do futuro.
