@@ -131,11 +131,15 @@ def generate_index_en(grouped_posts)
   lines.join("\n")
 end
 
-def generate_archives_en
+def generate_archives_en(grouped_posts)
   lines = ["#{FRONTMATTER_DELIMITER}\ntitle: AkitaOnRails Blog - Archives\n#{FRONTMATTER_DELIMITER}\n"]
   lines << '{{< lang-toggle >}}'
   lines << ''
-  lines << "_Older posts are only available in Portuguese. Visit the [Portuguese archive](/archives/) to browse them._\n"
+  if grouped_posts.empty?
+    lines << "_Older posts are only available in Portuguese. Visit the [Portuguese archive](/archives/) to browse them._\n"
+  else
+    lines.concat(render_months(grouped_posts))
+  end
   lines.join("\n")
 end
 
@@ -165,5 +169,7 @@ File.write(INDEX_FILE_EN, generate_index_en(recent_en))
 recent_en_count = recent_en.values.flatten.size
 puts "Generated #{INDEX_FILE_EN} with #{recent_en_count} posts."
 
-File.write(ARCHIVES_FILE_EN, generate_archives_en)
-puts "Generated #{ARCHIVES_FILE_EN} (placeholder, points back to PT archives)."
+archived_en = grouped_en.select { |(year, _month), _| year < CUTOFF_YEAR }
+File.write(ARCHIVES_FILE_EN, generate_archives_en(archived_en))
+archived_en_count = archived_en.values.flatten.size
+puts "Generated #{ARCHIVES_FILE_EN} with #{archived_en_count} posts (before #{CUTOFF_YEAR})."

@@ -437,67 +437,67 @@ title: AkitaOnRails Blog - Arquivo
 
 ## 2016 - November
 
-- [3 Months of GitLab. The Hybrid-SaaS Era](/2016/11/16/3-months-of-gitlab-the-hybrid-saas-era/)
-- [\[Off-Topic\] Learning Statistics](/2016/11/01/off-topic-learning-statistics/)
-- [Matches, Rankings, The Social Network, League of Legends, and Ruby?](/2016/11/01/matches-rankings-the-social-network-league-of-legends-and-ruby/)
+- [3 Meses de GitLab. A Era do SaaS Híbrido](/2016/11/16/3-meses-de-gitlab-a-era-do-saas-hibrido/)
+- [\[Off-Topic\] Aprendendo Estatística](/2016/11/01/off-topic-aprendendo-estatistica/)
+- [Partidas, Rankings, A Rede Social, League of Legends e Ruby?](/2016/11/01/partidas-rankings-rede-social-league-of-legends-ruby/)
 
 ## 2016 - October
 
-- [Ruby on Rails implementation of a (proper) Ranking/Popularity system](/2016/10/31/ruby-on-rails-implementation-of-a-proper-ranking-popularity-system/)
-- [\[Discussion\] Can we protect our work from DNS providers suffering DDoS attacks?](/2016/10/31/discussion-can-we-protect-our-work-from-dns-providers-suffering-ddos-attacks/)
-- [Natural Language Generation in Ruby (with JRuby + SimpleNLG)](/2016/10/28/natural-language-generation-in-ruby-with-jruby-simplenlg/)
+- [Implementação em Ruby on Rails de um sistema de Ranking/Popularidade (do jeito certo)](/2016/10/31/implementacao-ruby-on-rails-sistema-ranking-popularidade-correto/)
+- [\[Discussão\] Como proteger nosso trabalho de provedores de DNS sofrendo ataques DDoS?](/2016/10/31/discussao-como-proteger-nosso-trabalho-de-provedores-de-dns-sofrendo-ataques-ddos/)
+- [Geração de Linguagem Natural em Ruby (com JRuby + SimpleNLG)](/2016/10/28/geracao-de-linguagem-natural-em-ruby-com-jruby-simplenlg/)
 - [THE CONF Initiative](/2016/10/20/the-conf-initiative/)
 - [Iniciativa THE CONF](/2016/10/20/iniciativa-the-conf/)
-- [Sharing models between Rails Apps - Part 2](/2016/10/03/sharing-models-between-rails-apps-part-2/)
-- [Sharing models between Rails Apps - Part 1](/2016/10/03/sharing-models-between-rails-apps-part-1/)
+- [Compartilhando models entre apps Rails - Parte 2](/2016/10/03/compartilhando-models-entre-apps-rails-parte-2/)
+- [Compartilhando models entre aplicações Rails - Parte 1](/2016/10/03/compartilhando-models-entre-aplicacoes-rails-parte-1/)
 
 ## 2016 - September
 
-- [The Next 10 Years](/2016/09/26/the-next-10-years/)
-- [Ubuntu 16.04 LTS Xenial on Vagrant on Vmware Fusion](/2016/09/21/ubuntu-16-04-lts-xenial-on-vagrant-on-vmware-fusion/)
+- [Os Próximos 10 Anos](/2016/09/26/os-proximos-10-anos/)
+- [Ubuntu 16.04 LTS Xenial no Vagrant com Vmware Fusion](/2016/09/21/ubuntu-16-04-lts-xenial-no-vagrant-com-vmware-fusion/)
 
 ## 2016 - August
 
-- [The Ruby Community and Reputation](/2016/08/19/the-ruby-community-and-reputation/)
-- [Choosing MatterMost over Rocket.chat and Slack](/2016/08/13/choosing-mattermost-over-rocket-chat-and-slack/)
-- [Hacking Mattermost Team Edition](/2016/08/12/hacking-mattermost-team-edition/)
-- [Moving away from Pivotal Tracker to Fulcrum. Good Enough.](/2016/08/10/moving-away-from-pivotal-tracker-to-fulcrum-good-enough/)
+- [A Comunidade Ruby e a Reputação](/2016/08/19/a-comunidade-ruby-e-a-reputacao/)
+- [Escolhendo MatterMost no lugar de Rocket.chat e Slack](/2016/08/13/escolhendo-mattermost-no-lugar-de-rocket-chat-e-slack/)
+- [Hackeando o Mattermost Team Edition](/2016/08/12/hackeando-o-mattermost-team-edition/)
+- [Saindo do Pivotal Tracker para o Fulcrum. Bom o Suficiente.](/2016/08/10/saindo-do-pivotal-tracker-para-o-fulcrum-bom-o-suficiente/)
 - [Moving away from Slack into Rocket.chat. Good Enough.](/2016/08/09/moving-away-from-slack-into-rocket-chat-good-enough/)
-- [Moving to GitLab! Yes, it's worth it!](/2016/08/03/moving-to-gitlab-yes-it-s-worth-it/)
+- [Migrando para o GitLab! Sim, vale a pena!](/2016/08/03/migrando-para-o-gitlab-sim-vale-a-pena/)
 
 ## 2016 - July
 
-- [Updating my Old Posts on Uploads](/2016/07/28/updating-my-old-posts-on-uploads/)
-- [The Year of Linux on the Desktop - It's Usable!](/2016/07/26/the-year-of-linux-on-the-desktop-it-s-usable/)
-- [Trying to match C-based Fast Blank with Crystal](/2016/07/06/trying-to-match-c-based-fast-blank-with-crystal/)
+- [Atualizando Meus Posts Antigos Sobre Uploads](/2016/07/28/atualizando-meus-posts-antigos-sobre-uploads/)
+- [O Ano do Linux no Desktop - Está Usável!](/2016/07/26/o-ano-do-linux-no-desktop-esta-usavel/)
+- [Tentando igualar o Fast Blank em C usando Crystal](/2016/07/06/tentando-igualar-fast-blank-em-c-usando-crystal/)
 
 ## 2016 - June
 
-- [\[Manga-Downloadr\] Improving the Crystal/Ruby from bursts to pool stream](/2016/06/07/manga-downloadr-improving-the-crystal-ruby-from-bursts-to-pool-stream/)
-- [\[Manga-Downloadr\] Porting from Crystal to Ruby (and a bit of JRuby)](/2016/06/06/manga-downloadr-porting-from-crystal-to-ruby-and-a-bit-of-jruby/)
-- [Small Experiment with Rails over JRuby 9.x on Heroku](/2016/06/03/small-experiment-with-rails-over-jruby-9-x-on-heroku/)
+- [\[Manga-Downloadr\] Melhorando o Crystal/Ruby de rajadas para fluxo de pool](/2016/06/07/manga-downloadr-melhorando-o-crystal-ruby-de-rajadas-para-fluxo-de-pool/)
+- [\[Manga-Downloadr\] Portando de Crystal para Ruby (e um pouco de JRuby)](/2016/06/06/manga-downloadr-portando-de-crystal-para-ruby-e-um-pouco-de-jruby/)
+- [Pequeno Experimento com Rails sobre JRuby 9.x no Heroku](/2016/06/03/pequeno-experimento-com-rails-sobre-jruby-9-x-no-heroku/)
 
 ## 2016 - May
 
-- [Flirting with Crystal, a Rubyist Perspective](/2016/05/31/flirting-with-crystal-a-rubyist-perspective/)
+- [Flertando com Crystal, a Perspectiva de um Rubyista](/2016/05/31/flertando-com-crystal-perspectiva-de-um-rubyista/)
 - [Rails has won: The Elephant in the Room](/2016/05/23/rails-has-won-the-elephant-in-the-room/)
 
 ## 2016 - April
 
 - [\[Off-Topic\] Software Livre: Exercício de CAPITALISMO](/2016/04/22/off-topic-software-livre-exercicio-de-capitalismo/)
 - [\[Off-Topic\] Se Você Precisa de "Validação", Provavelmente está Errado](/2016/04/20/off-topic-se-voce-precisa-de-validacao-provavelmente-esta-errado/)
-- [The Year of Linux on the Desktop, by Microsoft ??](/2016/04/12/the-year-of-linux-on-the-desktop-by-microsoft/)
+- [O Ano do Linux no Desktop, pela Microsoft??](/2016/04/12/o-ano-do-linux-no-desktop-pela-microsoft/)
 
 ## 2016 - March
 
 - [War is Over, or is it? A New Dawn for Microsoft](/2016/03/31/war-is-over-or-is-it-a-new-dawn-for-microsoft/)
 - [\[Off-Topic\] Uma Nova Era para a Microsoft](/2016/03/31/off-topic-uma-nova-era-para-a-microsoft/)
-- [Improving your Microservices Integration Performance with Memcache and ETAGs](/2016/03/23/improving-your-microservices-integration-performance-with-memcache-and-etags/)
-- [Is your Rails app ready for Production?](/2016/03/22/is-your-rails-app-ready-for-production/)
+- [Melhorando a Performance de Integração entre Microservices com Memcache e ETAGs](/2016/03/23/melhorando-performance-integracao-microservices-memcache-etags/)
+- [Sua aplicação Rails está pronta para Produção?](/2016/03/22/sua-aplicacao-rails-esta-pronta-para-producao/)
 
 ## 2016 - February
 
-- [Elixir Pipe Operator for Ruby: Chainable Methods](/2016/02/18/elixir-pipe-operator-for-ruby-chainable-methods/)
+- [Operador Pipe do Elixir para Ruby: Chainable Methods](/2016/02/18/operador-pipe-do-elixir-para-ruby-chainable-methods/)
 
 ## 2015 - December
 
