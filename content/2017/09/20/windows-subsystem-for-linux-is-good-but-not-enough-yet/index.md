@@ -1,7 +1,10 @@
 ---
-title: Windows Subsystem for Linux is good, but not enough yet
+title: "Windows Subsystem for Linux é Bom, Mas Ainda Não Suficiente"
 date: '2017-09-20T14:43:00-03:00'
-slug: windows-subsystem-for-linux-is-good-but-not-enough-yet
+slug: windows-subsystem-for-linux-e-bom-mas-ainda-nao-suficiente
+translationKey: windows-subsystem-linux
+aliases:
+- /2017/09/20/windows-subsystem-for-linux-is-good-but-not-enough-yet/
 tags:
 - windows
 - wsl
@@ -10,187 +13,188 @@ tags:
 - mac
 - microsoft
 - apple
+- traduzido
 draft: false
 ---
 
-I wrote a premature post in July of 2016 titled ["The Year of Linux on the Desktop - It's Usable!"](http://www.akitaonrails.com/2016/07/26/the-year-of-linux-on-the-desktop-it-s-usable) and, indeed, it was (barely) usable.
+Em julho de 2016 escrevi um post precipitado intitulado ["The Year of Linux on the Desktop - It's Usable!"](http://www.akitaonrails.com/2016/07/26/the-year-of-linux-on-the-desktop-it-s-usable) e, de fato, ele era (mal e mal) utilizável.
 
-The real "Year of Linux on the Desktop" is still not here. It's getting closer as I will explain.
+O verdadeiro "Ano do Linux no Desktop" ainda não chegou. Mas está chegando, como vou explicar.
 
-**TL;DR** this won't be 'yet-another-WSL-install-blog-post', there are already several out there, for example [this one](https://medium.com/xtrememl/why-how-to-use-windows-10-wsl-built-in-linux-for-machine-learning-6a225f4bbd3a) or [this other one](https://www.neowin.net/news/bash-plus-windows-10-equals-linux-gui-apps-on-the-windows-desktop). And you can always [Google it](http://lmgtfy.com/?q=windows+10+creator+update+install+WSL).
+**TL;DR** este não vai ser 'mais-um-post-de-instalação-do-WSL', já existem vários por aí, por exemplo [este](https://medium.com/xtrememl/why-how-to-use-windows-10-wsl-built-in-linux-for-machine-learning-6a225f4bbd3a) ou [este outro](https://www.neowin.net/news/bash-plus-windows-10-equals-linux-gui-apps-on-the-windows-desktop). E você sempre pode [pesquisar no Google](http://lmgtfy.com/?q=windows+10+creator+update+install+WSL).
 
-Back in early 2016 Microsoft announced and launched a very alpha version of their current Windows Subsystem for Linux (WSL). It booted and ran some software, but it was awfully buggy. Fair enough as it was still an Insider preview only (by the way, avoid Insider Preview builds, they BSOD all the time as it's in active development).
+No início de 2016 a Microsoft anunciou e lançou uma versão bem alpha do que viria a ser o Windows Subsystem for Linux (WSL). Ele inicializava e rodava alguns programas, mas era cheio de bugs. Justo, afinal era ainda apenas um preview para Insiders (aliás, evite builds do Insider Preview, eles travam com tela azul o tempo todo, é desenvolvimento ativo).
 
-A year has passed, and we got to the Windows 10 Anniversary Update and, finally, the so anticipated **Creators Update**. This is very polished in comparison.
+Um ano se passou, chegamos ao Windows 10 Anniversary Update e, finalmente, ao tão esperado **Creators Update**. A evolução foi significativa.
 
-If you're unaware of what the WSL is, I highly recommend that you read the [articles at Microsoft's Developer Blog](https://blogs.msdn.microsoft.com/wsl/) and Jessie Frazelle's awesome [Windows for Linux Nerds blog post](https://blog.jessfraz.com/post/windows-for-linux-nerds/). In a nutshell, WSL wraps the Windows kernel system calls and maps them as Linux Kernel system calls, fooling ELF64 unmodified Linux compatible binaries to run as if they were on a real Linux-based system. The kicker is that there is no Linux kernel running! It also wraps Windows services such as filesystem, networking, into appropriate devices that Linux can access.
+Se você não sabe o que é o WSL, recomendo muito que leia os [artigos no blog de desenvolvedores da Microsoft](https://blogs.msdn.microsoft.com/wsl/) e o excelente post da Jessie Frazelle, [Windows for Linux Nerds](https://blog.jessfraz.com/post/windows-for-linux-nerds/). Em resumo: o WSL intercepta as system calls do kernel do Windows e as mapeia como system calls do kernel Linux, enganando binários ELF64 não modificados para que rodem como se estivessem num sistema Linux de verdade. O detalhe crucial é que não há nenhum kernel Linux rodando! Ele também encapsula serviços do Windows como sistema de arquivos e rede em dispositivos que o Linux consegue acessar.
 
-So, it's not any kind of virtualization. There is no Hyper-V involved. It's enabling Windows to boot ELF64 binaries up directly, without recompilation, without modification.
+Portanto, não é virtualização. Não existe Hyper-V envolvido. É o Windows executando binários ELF64 diretamente, sem recompilação, sem modificação.
 
-Unlike in OS X where we need to tweak source code and recompile to run on Darwin (the Mach/BSD-based operating system layer), we can download Ubuntu binaries (or any other distro for that matter, there are Fedora and Suse coming soon to the Windows App Store) and run them **directly**.
+Diferentemente do OS X, onde é preciso ajustar o código-fonte e recompilar para rodar no Darwin (a camada Mach/BSD do sistema), aqui dá para baixar binários Ubuntu (ou de qualquer outra distro — Fedora e SUSE estão chegando em breve à Windows App Store) e executá-los **diretamente**.
 
-Even more interesting, you can run system level daemons (yes, Postgresql, Memcached, Redis, etc all load and run in the background) and you can even run X (GUI) programs!
+Melhor ainda: dá para rodar daemons de sistema (sim, PostgreSQL, Memcached, Redis, etc. todos carregam e rodam em background) e até programas com interface gráfica via X!
 
-Don't get me wrong, I commend everybody that is working hard at Microsoft to make this happen. It is a technical tour de force in itself.
+Não me entendam mal, tenho o maior respeito por quem trabalha duro na Microsoft para fazer isso acontecer. É um feito técnico notável por si só.
 
-![Windows and X side-by-side](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/657/2017-09-14.png)
+![Windows e X lado a lado](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/657/2017-09-14.png)
 
-Take a good look at the screenshot above. This is a sight to behold: native GNOME-VIM running natively side-by-side with Microsoft Edge loading a web site running out of a Rails app running within WSL, accessing PostgreSQL.
+Olhem bem para esse screenshot. É algo digno de admiração: GNOME-VIM nativo rodando lado a lado com o Microsoft Edge carregando um site servido por uma aplicação Rails dentro do WSL, acessando o PostgreSQL.
 
-But, is it good for real people?
+Mas será que funciona bem para o dia a dia?
 
-### How good is WSL?
+### O WSL é bom de verdade?
 
-**TL;DR** it's not nearly as smooth as running a pure Linux-distro, and the integration is not nearly as good as OS X in terms of usability as Windows was not redesigned in any meaningful way to be a UNIX system like OS X.
+**TL;DR** não chega nem perto de ser tão fluido quanto rodar uma distro Linux pura, e a integração está longe de ser tão boa quanto o OS X em termos de usabilidade — o Windows simplesmente não foi redesenhado de forma significativa para ser um sistema UNIX como o OS X.
 
-In an ideal world, Windows should replace its entire NT underpinnings and either build their own BSD-inspired infrastructure (like Darwin) or create their own Linux distro using off-the-shelf Linux kernel as the main driver (probably can't because of GPL).
+Num mundo ideal, o Windows substituiria toda a base NT e construiria sua própria infraestrutura inspirada em BSD (como o Darwin) ou criaria uma distro Linux própria usando o kernel Linux pronto (provavelmente inviável por causa da GPL).
 
-But this is unrealistic. Apple could do it in a time when the Mac installed base was tiny, so alienating some people wouldn't hurt so much. Windows is just too big to fail. It is and will remain a maintenance nightmare of epic proportions.
+Mas isso é irreal. A Apple conseguiu fazer isso numa época em que a base instalada de Macs era pequena, então alienar alguns usuários não custava tanto. O Windows é grande demais para falhar. É e continuará sendo um pesadelo de manutenção de proporções épicas.
 
-That being said, WSL in itself is a miracle, so I can't complain. Microsoft had a really harsh decade in the turn of the century. Windows 10 is a return to form, and 2 big iterations later, it's finally becoming reasonable again. Maybe we're a couple of upgrades away from a really usable WSL. Remains to be seen.
+Dito isso, o WSL em si é um milagre, então não tenho como reclamar. A Microsoft teve uma década realmente difícil na virada do século. O Windows 10 é uma volta por cima, e depois de duas grandes iterações está finalmente se tornando razoável de novo. Talvez estejamos a mais algumas atualizações de um WSL realmente utilizável. Só o tempo dirá.
 
-Apple had its miracle in the turn of the century, and OS X and iOS are terrific OSes. Best of the breed. And by being able to reboot the entire ecosystem from scratch is not something anyone can do.
+A Apple teve seu milagre na virada do século, e o OS X e o iOS são sistemas operacionais excelentes. Os melhores da categoria. E conseguir reiniciar um ecossistema inteiro do zero não é algo que qualquer empresa consegue fazer.
 
-Linux-distros had their own ups and downs. No ecosystem can evolve healthily and in a cohesive way being that fragmented. But each major distro was able to brute force their own ecosystems. Canonical has prevailed where many failed but they are still not a definitive winner, and it feels like their [losing their steam](https://arstechnica.com/information-technology/2017/04/ubuntu-unity-is-dead-desktop-will-switch-back-to-gnome-next-year/). RedHat enjoyed the craze of the dot-com era and was able to fly high in the Enterprise market. There is no "best" distro. It's again, a matter of taste and ego, most of the time for most of the people.
+As distros Linux tiveram seus altos e baixos. Nenhum ecossistema evolui de forma saudável e coesa sendo tão fragmentado. Mas cada distro principal conseguiu forçar seu próprio ecossistema na marra. A Canonical sobreviveu onde muitas falharam, mas ainda não é a vencedora definitiva, e dá a impressão de que está [perdendo o fôlego](https://arstechnica.com/information-technology/2017/04/ubuntu-unity-is-dead-desktop-will-switch-back-to-gnome-next-year/). A RedHat aproveitou a febre do dot-com e conseguiu voar alto no mercado corporativo. Não existe distro "melhor". É, de novo, uma questão de gosto e ego, na maior parte do tempo para a maior parte das pessoas.
 
-And the OSS community still wastes an insurmountable amount of time in crazy disputes over stuff like the [Systemd controversy](https://www.reddit.com/r/linuxmasterrace/comments/616wxo/what_is_with_all_the_controversy_with_systemd/) or the time it is taking to get over X and finally get into Wayland. OSS has pros and cons, just like everything else.
+E a comunidade OSS ainda desperdiça uma quantidade absurda de tempo em disputas sem sentido, como a [controvérsia do Systemd](https://www.reddit.com/r/linuxmasterrace/comments/616wxo/what_is_with_all_the_controversy_with_systemd/) ou o tempo que está levando para abandonar o X e finalmente migrar para o Wayland. OSS tem prós e contras, como tudo o mais.
 
-But I digress, going back to WSL. Yes, as promised almost anything you can do in a native Ubuntu 16.04 can be done in this new environment. Even the ridiculous `cmd.exe` was heavily upgraded to the 21st century. Still nowhere near a default Terminal on Linux or OS X, but getting close. Actually, I'd recommend installing [WSL Terminal](https://github.com/goreliu/wsl-terminal) as a replacement, and despite the terrible "Bash on Ubuntu on Windows" moniker, I'd recommend installing ZSH instead and launching it over Bash for extra usability features.
+Mas voltando ao WSL, antes que eu me perca. Sim, como prometido, quase tudo que se faz num Ubuntu 16.04 nativo pode ser feito nesse novo ambiente. Até o ridículo `cmd.exe` foi bastante atualizado para o século XXI. Ainda está longe de um Terminal padrão do Linux ou OS X, mas está chegando lá. Na prática, eu recomendaria instalar o [WSL Terminal](https://github.com/goreliu/wsl-terminal) como substituto, e apesar do nome terrível "Bash on Ubuntu on Windows", eu recomendaria instalar o ZSH em vez do Bash para ter mais recursos de usabilidade.
 
-You can Google around for endless tutorials on how to customize your environment, Vim, tweak PostgreSQL and so forth. So again I am not repeating those here. A caveat is that I have to `sudo /etc/init.d/PostgreSQL start` to actually run daemons. They won't autoload on a restart, keep that in mind.
+Dá para pesquisar tutoriais sem fim sobre como personalizar o ambiente, Vim, ajustar o PostgreSQL, etc. Então não vou repetir isso aqui. Um aviso importante: tenho que rodar `sudo /etc/init.d/PostgreSQL start` para iniciar os daemons. Eles não sobem automaticamente depois de reiniciar o sistema — guarde isso.
 
-And now you can install a Windows X Server such as [xming](https://sourceforge.net/projects/xming/) and `export DISPLAY=:0` and you now `sudo apt install gvim` and load the graphical version of Gvim, for instance. Or a full GNOME or XFCE desktop if that's your thing. You can run X based applications side-by-side to Windows apps, and that's super neat. I like to install [YADR](https://github.com/skwp/dotfiles) which is one of those super customized dotfiles collection and it works just fine.
+Também dá para instalar um servidor X no Windows, como o [xming](https://sourceforge.net/projects/xming/), fazer `export DISPLAY=:0` e então `sudo apt install gvim` para carregar a versão gráfica do Gvim, por exemplo. Ou um desktop GNOME ou XFCE completo, se for o seu negócio. Dá para rodar aplicações X lado a lado com apps Windows, e isso é muito legal. Gosto de instalar o [YADR](https://github.com/skwp/dotfiles), aquela coleção de dotfiles supercustomizada, e ele funciona bem.
 
-I am now using [ASDF](https://github.com/asdf-vm/asdf) to install and manage multiple versions of Ruby, Node.js, Elixir, etc. And it also just works.
+Estou usando o [ASDF](https://github.com/asdf-vm/asdf) para instalar e gerenciar múltiplas versões de Ruby, Node.js, Elixir, etc. E também funciona.
 
-I was able to move my SSH keys from my previous [Arch Linux](http://www.akitaonrails.com/2017/01/10/arch-linux-best-distro-ever) install. And then I can clone from my Git repositories. Now, here comes the **big caveat**. I cloned and configured a Rails project. This the fastest I can get running an entire RSpec suite with PhantomJS acceptance tests:
+Consegui mover minhas chaves SSH da instalação anterior do [Arch Linux](http://www.akitaonrails.com/2017/01/10/arch-linux-best-distro-ever). E aí consigo clonar os repositórios Git normalmente. E aqui vem o **grande problema**. Clonei e configurei um projeto Rails. Este é o melhor resultado que consegui rodando toda a suíte RSpec com testes de aceitação usando PhantomJS:
 
 ```
 Finished in 5 minutes 35 seconds (files took 48.53 seconds to load)
 888 examples, 0 failures
 ```
 
-This is running on my [Dell XPS 9550](http://www.akitaonrails.com/2017/01/31/from-the-macbook-pro-to-the-dell-xps-arch-linux-for-creative-pro-users) with Core i7 Skylake (4 cores, 8 threads), 16 GB of RAM and NVME2 SSD. I asked a co-worker to run it on his very old Mac Mini 2012 with Core i5 (probably Haswell), 10 GB of RAM, normal SSD. And this is his test run:
+Isso rodando no meu [Dell XPS 9550](http://www.akitaonrails.com/2017/01/31/from-the-macbook-pro-to-the-dell-xps-arch-linux-for-creative-pro-users) com Core i7 Skylake (4 cores, 8 threads), 16 GB de RAM e SSD NVME2. Pedi a um colega para rodar no Mac Mini dele, de 2012, com Core i5 (provavelmente Haswell), 10 GB de RAM e SSD normal. Este foi o resultado dele:
 
 ```
 Finished in 3 minutes 37.6 seconds (files took 9.73 seconds to load)
 888 examples, 0 failures
 ```
 
-Yep, this is shocking. The filesystem emulation is [notoriously slow](https://meta.discourse.org/t/installation-notes-for-discourse-on-bash-for-windows/48141/3?u=sam) under WSL (at least 4 times slower as you can see in the numbers above).
+Sim, chocante. A emulação do sistema de arquivos é [notoriamente lenta](https://meta.discourse.org/t/installation-notes-for-discourse-on-bash-for-windows/48141/3?u=sam) no WSL (pelo menos 4 vezes mais lenta, como se vê nos números acima).
 
-This other test ran in a slightly newer hardware (still underpowered compared to my Dell XPS) running on Linux Mint:
+Este outro teste rodou num hardware um pouco mais novo (ainda bem inferior ao meu Dell XPS) com Linux Mint:
 
 ```
 Finished in 3 minutes 2.4 seconds (files took 22.69 seconds to load)
 888 examples, 1 failure
 ```
 
-I ran the same suite a couple times to make sure, but it can't go below the 5 minute mark and loading files is always around 1 minute while in other OSes it's 2 to 4 times faster.
+Rodei a mesma suíte algumas vezes para confirmar, mas não consegui passar da marca de 5 minutos, e o carregamento de arquivos fica sempre em torno de 1 minuto, enquanto em outros sistemas operacionais é de 2 a 4 vezes mais rápido.
 
-If your development workflow is I/O bound, you will suffer. Webpack compilation, which is slow, gets even slower. Npm/Yarn installs take forever. Installing stuff from source is super slow.
+Se o seu fluxo de desenvolvimento é intensivo em I/O, você vai sofrer. A compilação do Webpack, que já é lenta, fica ainda mais lenta. Npm/Yarn demora uma eternidade. Instalar coisas a partir do código-fonte é muito devagar.
 
-It's not unusable, but this slowness will get old fast.
+Não chega a ser inutilizável, mas essa lentidão vai cansar rápido.
 
-### What about Virtualization?
+### E a Virtualização?
 
-After I saw the dismal filesystem performance shown above, I wondered _"and what about running everything under good old Virtualbox?"_
+Depois de ver a performance de sistema de arquivos deplorável descrita acima, pensei: _"e quanto a rodar tudo no bom e velho Virtualbox?"_
 
-In theory, WSL "should" be a thinner layer than Virtualbox, but the worst offender in terms of overhead seems to be the filesystem abstraction layer, and not necessarily access to CPU or RAM. My instinct would first suggest that a Virtual Drive, which is a single file mounted as a virtual hard drive, would perform much better.
+Em teoria, o WSL "deveria" ser uma camada mais fina que o Virtualbox, mas o grande vilão em termos de overhead parece ser a camada de abstração do sistema de arquivos, e não necessariamente o acesso a CPU ou RAM. Meu instinto inicial diria que um Virtual Drive — um único arquivo montado como HD virtual — teria um desempenho bem melhor.
 
-So here I go, installing Virtualbox and the same set of tools (asdf, etc).
+Então lá fui eu instalar o Virtualbox com o mesmo conjunto de ferramentas (asdf, etc.).
 
-Mounting a shared folder directly to the one in WSL doesn't work properly, seems like the mounting protocol doesn't understand dot files, so they don't show up. One has to tar the folder and untar within the machine to preserve hidden files and permissions.
+Montar uma pasta compartilhada diretamente para o equivalente no WSL não funciona direito; parece que o protocolo de montagem não entende dot files, então eles simplesmente não aparecem. É preciso compactar a pasta com tar e descompactar dentro da máquina para preservar arquivos ocultos e permissões.
 
-This is running the same Rspec suite over Virtualbox with 4 Cores (out of the 8 my machine has) and 4GB of RAM:
+Rodando a mesma suíte RSpec no Virtualbox com 4 Cores (dos 8 que minha máquina tem) e 4GB de RAM:
 
 ```
 Finished in 2 minutes 3.4 seconds (files took 6.33 seconds to load)
 888 examples, 2 failure
 ```
 
-So, we're down from 5:35 min to 2:03 min and file loading from 49 seconds down to 6 seconds! So around 2.5 times faster execution and a whopping 8 times increase in file loading! This is ridiculous and it makes way more sense. My 2016 machine, within Virtualbox, still outperforms 2011/2012 bare hardware. And WSL is in the bottom of the list.
+Então fomos de 5:35 min para 2:03 min e o carregamento de arquivos de 49 segundos para 6 segundos! Cerca de 2,5 vezes mais rápido na execução e nada menos que 8 vezes mais rápido no carregamento de arquivos! É absurdo, mas faz todo sentido. Minha máquina de 2016, dentro do Virtualbox, ainda supera hardware bare-metal de 2011/2012. E o WSL fica na última posição.
 
-Forget synthetic benchmarks, this is a real-world case mixing CPU and I/O bound executions. Just for the sake of comparison, I tried to see if I could squeeze a bit more performance if I try to run over VMWare Workstation. This is the result:
+Esqueça benchmarks sintéticos — este é um caso real misturando execuções bound em CPU e I/O. Só para comparar, tentei ver se conseguia mais desempenho rodando no VMWare Workstation. O resultado:
 
 ```
 Finished in 2 minutes 3.3 seconds (files took 6.21 seconds to load)
 ```
 
-Almost identical. To me, it says that Virtualbox came a long way in being comparable to commercial, historically more robust solutions such as VMware or Parallels, so I will stick with Virtualbox for the time being.
+Praticamente idêntico. Para mim, isso mostra que o Virtualbox percorreu um longo caminho para se igualar a soluções comerciais historicamente mais robustas como VMware e Parallels, então fico com o Virtualbox por enquanto.
 
-I tried another test. This is `asdf` installing the brand new Ruby 2.4.2 from source. First over WSL (running with `time`):
+Fiz outro teste: instalação do Ruby 2.4.2 a partir do código-fonte usando `asdf`. Primeiro no WSL (rodando com `time`):
 
 ```
 229.38s user 244.59s system 113% CPU 6:57.51 total
 ```
 
-And the same install from Virtualbox:
+E a mesma instalação no Virtualbox:
 
 ```
 295,39s user 22,43s system 135% CPU 3:53,87 total
 ```
 
-Again, a mixed scenario of CPU and I/O bound executions. And I am at least twice as fast on Virtualbox.
+Mais uma vez, cenário misto de CPU e I/O. No Virtualbox sou pelo menos duas vezes mais rápido.
 
-If you do want to see more controlled scenarios running synthetic benchmark comparison, I recommend you read [Phoronix's take on WSL vs Virtualbox](http://www.phoronix.com/scan.php?page=article&item=intel-7900x-wsl&num=1)
+Se quiser ver cenários mais controlados com benchmarks sintéticos, recomendo ler [o artigo do Phoronix sobre WSL vs Virtualbox](http://www.phoronix.com/scan.php?page=article&item=intel-7900x-wsl&num=1).
 
-### The "Year of Linux on the Desktop" Conundrum
+### O Dilema do "Ano do Linux no Desktop"
 
-The Lack of commercial software is one problem but one of the reasons is the lack of backward binary compatibility.
+A falta de software comercial é um problema, e uma das causas é a ausência de compatibilidade binária retroativa.
 
-For all its problems, Microsoft remained committed to a very difficult concept: you can actually run unmodified binaries from Windows 95 in the current Windows 10. Most of the time they "just work". In Linux distros, every binary is compiled against very specific library headers such as the kernel itself, Glibc and many others. Whenever one of those change, all binaries must be recompiled to run. Which is why you have the concept of "distros" where they recompile and test a whole set of software. Long-Term Support (LTS) is basically locking those dependencies versions for a couple of years to have software running without the need to recompile so much. But in bleeding-edge distros, you can't avoid having to recompile a lot of things many times over.
+Apesar de todos os seus problemas, a Microsoft manteve compromisso com um conceito muito difícil: dá para executar binários não modificados do Windows 95 no Windows 10 atual. Na maioria das vezes eles "simplesmente funcionam". Nas distros Linux, todo binário é compilado contra cabeçalhos de biblioteca muito específicos — o próprio kernel, Glibc e muitos outros. Sempre que um desses muda, todos os binários precisam ser recompilados. É por isso que existe o conceito de "distros", onde se recompila e testa um conjunto completo de softwares. O Long-Term Support (LTS) é basicamente travar as versões dessas dependências por alguns anos para que o software rode sem precisar recompilar tanto. Mas em distros de ponta, é inevitável recompilar muita coisa várias vezes.
 
-Windows carries the old dependency binaries around. OS X does the same to a degree. And OS X goes one step further by providing the concept of "fat binaries" (or "Universal Binaries") where you have a package with multiple binaries that target different hardware architectures (32-bit vs 64 bit, Intel vs ARM vs PowerPC).
+O Windows carrega os binários de dependências antigos consigo. O OS X faz o mesmo em certa medida. E o OS X vai além, com o conceito de "fat binaries" (ou "Universal Binaries"), onde um pacote contém múltiplos binários voltados para diferentes arquiteturas de hardware (32-bit vs 64 bit, Intel vs ARM vs PowerPC).
 
-Mostly because of this support, commercial complex applications like Office or Adobe's Creative Suite can run on many different machines, across many different OS versions, over many years without upgrading. In Linux distros, it's a major hassle for binaries. Which is why having source code available is so important and it's a philosophical discussion over the whole "Free Software" concept, as envisioned by Richard Stallman.
+Principalmente por causa desse suporte, aplicações comerciais complexas como o Office ou o Creative Suite da Adobe conseguem rodar em muitas máquinas diferentes, em versões diferentes do sistema operacional, por muitos anos sem precisar atualizar. Nas distros Linux, binários são uma dor de cabeça. É por isso que ter o código-fonte disponível é tão importante — e esse é um debate filosófico sobre o conceito do "Software Livre" como concebido por Richard Stallman.
 
-This is an unsolvable dilemma. Linux distros don't have binary backward compatibility out of the box. Developers must rely on tools such as the [ABI Compliance Checker](https://lvc.github.io/abi-compliance-checker/). Try to use [symbol versioning](http://www.airs.com/blog/archives/220) from glibc and so forth, but it's not realistic to expect volunteers collaborating their free time to open source to keep maintaining old versions of software for many years down the road. It is a fair compromise. Do you want the best, faster, most secure? Upgrade often, but expect old, unmaintained software to break.
+É um dilema sem solução. Distros Linux não têm compatibilidade binária retroativa nativa. Desenvolvedores precisam contar com ferramentas como o [ABI Compliance Checker](https://lvc.github.io/abi-compliance-checker/) e tentar usar [symbol versioning](http://www.airs.com/blog/archives/220) do glibc, entre outros recursos. Mas não é realista esperar que voluntários contribuindo com seu tempo livre para o código aberto mantenham versões antigas de software por muitos anos. É um compromisso justo. Quer o melhor, o mais rápido, o mais seguro? Atualize frequentemente, mas aceite que software antigo e não mantido vai quebrar.
 
-So, without releasing the source code, you can't have good compatible binaries for every single major distribution, across many different versions going back many years.
+Portanto, sem liberar o código-fonte, não dá para ter binários compatíveis e bons em cada grande distribuição, em versões diferentes, ao longo de muitos anos.
 
-### Which is right for you?
+### Qual é o certo para você?
 
-There is no point in trying to benchmark OSes. They are all generally good enough.
+Não adianta tentar fazer benchmark de sistemas operacionais. Todos são geralmente bons o suficiente.
 
-Macs are more expensive (sometimes by a whopping 1 grand or more). There is no denying that. The compromise is that Apple's hardware, OS X and the ecosystem are generally the better all around, and the " fit and finish" of the products are really usually better from a user experience perspective.
+Macs são mais caros (às vezes por uma diferença absurda de mais de um milhão de reais). Não tem como negar. O compromisso é que o hardware da Apple, o OS X e o ecossistema são geralmente os melhores no geral, e o "acabamento" dos produtos costuma ser de fato superior do ponto de vista de experiência de uso.
 
-For the best mix of mainstream software and open source software, you won't find a better alternative. If you can afford a Mac, get a Mac.
+Para a melhor combinação de software mainstream com software open source, não existe alternativa melhor. Se puder comprar um Mac, compre um Mac.
 
-Gamers have to stick with Windows. Again, there is no denying that. The best games are on Windows, period. The best combination of hardware supports Windows. No Linux tweaking will give you the raw juice you need to squeeze out 4K 60fps out of the newest AMD and NVIDIA cards through DirectX. And the Mac hardware is capped, and you can't add the newest GPUs. If you want to play the latest AAA games the way they were envisioned to perform, get custom hardware and Windows 10.
+Quem é gamer precisa ficar com o Windows. Sem discussão. Os melhores jogos estão no Windows, ponto. A melhor combinação de hardware suporta Windows. Nenhum ajuste no Linux vai te dar o desempenho bruto necessário para extrair 4K a 60fps das novas GPUs AMD e NVIDIA via DirectX. O hardware Mac tem limitações e não aceita as GPUs mais novas. Se quer jogar os últimos jogos AAA do jeito que foram projetados para rodar, monte um hardware personalizado com Windows 10.
 
-Web Developers are luckier. You can't go wrong, it's literally a matter of taste which OS you choose. You will be able to deliver the same results using the same tools. And unless you're targeting specific Microsoft infrastructure (SQL Server, Active Directory, etc), you can install any Linux distro and rejoice.
+Desenvolvedores web têm mais sorte. Não tem como errar — é literalmente questão de gosto qual sistema operacional escolher. Dá para entregar os mesmos resultados usando as mesmas ferramentas. E a não ser que você precise de infraestrutura específica Microsoft (SQL Server, Active Directory, etc.), instala qualquer distro Linux e fica feliz.
 
-Desktop App Developers must target their audience. If you want to build Windows desktop apps, you have to be on Windows. You can use.NET/Xamarin or Java to build cross-platform compatible binaries, though. But you guys are out of luck because ideally, you have to have all 3 to ensure your software is performing as you want.
+Desenvolvedores de apps desktop precisam pensar no público-alvo. Se quer construir apps desktop Windows, tem que estar no Windows. Mas dá para usar .NET/Xamarin ou Java para construir binários cross-platform. O problema é que, idealmente, precisam ter os três sistemas para garantir que o software se comporta como esperado.
 
-Mobile App Developers are also out of luck. You can do Android on Windows or Linux, but you have to have a Mac to develop for the Apple App Store. You can't escape that, and good luck waiting for Apple to release their tools for other platforms.
+Desenvolvedores mobile também têm azar. Android dá para fazer no Windows ou Linux, mas para desenvolver para a App Store da Apple é preciso ter Mac. Não tem como escapar disso, e boa sorte esperando a Apple liberar suas ferramentas para outras plataformas.
 
-Creative Professionals can choose either Windows or OS X. That depends on the tooling. If you're an Adobe guy, either will do just fine, but you will probably want a custom workstation. Until Apple remodels the ridiculous Mac Pro, you won't find the best hardware for the buck at Apple. The current iMac 5K is good, but higher than that is not available. For example, if you need the power of 2 NVIDIA Titan or Quadro cards running in parallel, Apple can't help you there.
+Profissionais criativos podem escolher entre Windows e OS X. Depende das ferramentas. Se você usa Adobe, qualquer um serve bem, mas provavelmente vai querer uma workstation personalizada. Até a Apple remodelar o ridículo Mac Pro, não encontrará o melhor hardware pelo preço na Apple. O iMac 5K atual é bom, mas acima disso não tem opção. Por exemplo, se precisar de 2 GPUs NVIDIA Titan ou Quadro rodando em paralelo, a Apple não vai ajudar.
 
-If you do require a Final Cut Pro, Logic Pro, Motion 5 workflow, the best option you will get is the iMac 5K.
+Se o fluxo de trabalho exige Final Cut Pro, Logic Pro, Motion 5, a melhor opção disponível é o iMac 5K.
 
-I am not a full-time developer anymore. And I mix my time running a company, doing presentations, experimenting with tech and doing research. My ideal setup is actually a MacBook Pro. But I am forcing myself to live out of the Apple ecosystems, and it hurts. My web developer side can stay in Linux (Manjaro GNOME is my favorite nowadays) and be happy. But when my Creative side needs tooling, Gimp, Inkscape, Kdenlive, are just not good enough. I am too used to Photoshop, Illustrator, Final Cut/Premiere, Motion 5/After Effects. LibreOffice Impress is terrible to do complex presentations, and  those HTML/JS based slides software are good just for simple stuff. Try to do serious graphics and animation there and you will suffer in hell.
+Eu não sou mais desenvolvedor em tempo integral. Divido meu tempo gerindo uma empresa, fazendo apresentações, experimentando tecnologia e pesquisando. Meu setup ideal seria um MacBook Pro. Mas estou me forçando a viver fora do ecossistema Apple, e dói. Meu lado desenvolvedor web fica feliz no Linux (Manjaro GNOME é meu favorito atualmente). Mas quando o lado criativo precisa de ferramentas, Gimp, Inkscape, Kdenlive simplesmente não chegam lá. Estou muito acostumado com Photoshop, Illustrator, Final Cut/Premiere, Motion 5/After Effects. O LibreOffice Impress é terrível para apresentações complexas, e os slides baseados em HTML/JS servem para coisas simples. Tente fazer gráficos e animações sérias lá e você vai sofrer demais.
 
 {{< youtube id="a59U6kRJHLg" >}}
 
-If you're a Creative, you **need** Color Calibrated screens (Adobe RGB space), you need the raw processing power to do a quick render and advanced post-processing. Adobe video editors will prefer Windows. Final Cut video editors are well served on Macs, even though the new MacBook Pros cooling system is terrible:
+Se você é um criativo, **precisa** de telas com calibração de cores (espaço Adobe RGB), precisa de poder de processamento bruto para renders rápidos e pós-processamento avançado. Editores de vídeo Adobe vão preferir Windows. Editores Final Cut são bem atendidos nos Macs, mesmo que o sistema de refrigeração dos novos MacBook Pros seja terrível:
 
 {{< youtube id="6TWbXV5xeYE" >}}
 
-And if you're a full-time video editor, you can afford either high-end PC or Mac configurations, so there is not much dispute here.
+E se você é editor de vídeo em tempo integral, pode pagar tanto por um PC quanto por um Mac de ponta, então a disputa fica pequena.
 
-If you're a video editor on a budget, you will **not** have a good 4K editing workflow on Linux, period. There is a poor support to unlock the full potential of modern GPUs, no good Cuda or OpenCL support, and most video editing tools don't use them. Blender - which is primarily a 3D modeling and animation tool - is considered one of the best video editing tools available on Linux, which says a lot. The sad state of GPU support on Linux compromises Creative usage. The only other non-linear video editing tool that can achieve professional level workflows is [LightWorks](https://www.linux.com/learn/pro-level-video-editing-lightworks-linux) and it's not open source, requires the proprietary NVIDIA binaries, and [will cost](https://www.lwks.com/index.php?option=com_shop&view=shop&Itemid=205) you.
+Se você é editor de vídeo com orçamento limitado, **não vai** ter um bom fluxo de edição 4K no Linux, ponto. O suporte para explorar o potencial total das GPUs modernas é fraco, não há bom suporte a Cuda ou OpenCL, e a maioria das ferramentas de edição não os utiliza. O Blender — que é primariamente uma ferramenta de modelagem 3D e animação — é considerado uma das melhores ferramentas de edição de vídeo disponíveis no Linux, o que já diz muito. O estado lamentável do suporte a GPU no Linux compromete o uso criativo. A única outra ferramenta de edição não-linear que consegue atingir fluxos de trabalho profissionais é o [LightWorks](https://www.linux.com/learn/pro-level-video-editing-lightworks-linux), que não é open source, requer os binários proprietários da NVIDIA e [custa dinheiro](https://www.lwks.com/index.php?option=com_shop&view=shop&Itemid=205).
 
-If you're going that way, it's probably better to stick with either Windows or OS X at this point.
+Se for por esse caminho, provavelmente é melhor ficar com Windows ou OS X por enquanto.
 
-### Conclusion
+### Conclusão
 
-I digressed quite a bit, but my conclusion is simple:
+Me perdi um pouco no meio do caminho, mas a conclusão é simples:
 
-* WSL is not there yet. We have to wait another couple upgrades. When you hear that they improved the filesystem abstraction by a few orders of magnitude, then we can try again. And keep in mind that there are tons of [open issues](https://github.com/Microsoft/BashOnWindows/issues), so your mileage will vary.
-* If you're a Web Developer, you're safe on any Linux distro.
-* If you're a mixed professional in need of both development toolkits and creative tools, use a Mac or Windows 10 with a fully virtualized Linux distro.
-* If you're a Gamer, Windows.
-* If you're a full-time creative professional, either Macs or PCs will do just fine.
+* O WSL ainda não chegou lá. Precisamos esperar mais algumas atualizações. Quando você ouvir que melhoraram a abstração do sistema de arquivos em algumas ordens de magnitude, aí sim vale tentar de novo. E lembre-se que existem toneladas de [issues abertas](https://github.com/Microsoft/BashOnWindows/issues), então os resultados variam muito.
+* Se você é desenvolvedor web, está seguro em qualquer distro Linux.
+* Se você é um profissional misto, precisando tanto de ferramentas de desenvolvimento quanto de ferramentas criativas, use Mac ou Windows 10 com uma distro Linux totalmente virtualizada.
+* Se é gamer, Windows.
+* Se é profissional criativo em tempo integral, tanto Macs quanto PCs servem bem.
 
-For me, I will stick with my Dell XPS running Windows 10 and Manjaro GNOME over Virtualbox. Virtualbox is fast enough that it won't hurt my workflow. And the creative tools can appreciate the access to my NVIDIA Cuda cores without any problem, so I can render with Blender and make Premiere render 4K video quickly enough.
+Por enquanto vou ficar com meu Dell XPS rodando Windows 10 e Manjaro GNOME no Virtualbox. O Virtualbox é rápido o suficiente para não prejudicar meu fluxo de trabalho. E as ferramentas criativas conseguem aproveitar os núcleos CUDA da minha NVIDIA sem problema, então consigo renderizar no Blender e fazer o Premiere processar vídeo 4K em tempo razoável.

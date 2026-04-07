@@ -1,43 +1,47 @@
 ---
-title: How NOT to zero out your Pusher development quota
+title: "Como Não Zerar sua Cota de Desenvolvimento no Pusher"
 date: '2017-10-27T13:43:00-02:00'
-slug: how-not-to-zero-out-your-pusher-development-quota
+slug: como-nao-zerar-sua-cota-de-desenvolvimento-no-pusher
+translationKey: how-not-to-zero-pusher
+aliases:
+- /2017/10/27/how-not-to-zero-out-your-pusher-development-quota/
 tags:
 - beginner
 - rubyonrails
 - rails51
 - pusher
 - rspec
+- traduzido
 draft: false
 ---
 
-If you're doing development with WebSockets (real-time notifications, real-time chat, etc), one of the best SaaS options out there is still [**Pusher**](pusher.com). It was always reliable.
+Se você está desenvolvendo com WebSockets (notificações em tempo real, chat em tempo real, etc), uma das melhores opções SaaS disponíveis ainda é o [**Pusher**](pusher.com). Sempre foi confiável.
 
-For each application, you create it even offers you separated development, staging, production environments, with separated key/secret tokens.
+Para cada aplicação que você cria, ele oferece ambientes separados de desenvolvimento, staging e produção, com tokens de chave/segredo independentes.
 
-One problem I stumbled upon these days is that I was quickly zero'ing out the free development environment message quota (200,000 messages a day). That's because all my team was using the same key and also the Continuous Integration server was doing live connections whenever it ran in the same environment. That can quickly consume all you have and block both your development and CI.
+Um problema que encontrei esses dias foi que eu estava zerando rapidamente a cota gratuita de mensagens do ambiente de desenvolvimento (200.000 mensagens por dia). O motivo era que toda a minha equipe usava a mesma chave, e o servidor de Integração Contínua fazia conexões reais sempre que rodava no mesmo ambiente. Isso consome tudo rapidamente e bloqueia tanto o desenvolvimento quanto o CI.
 
-It's actually not a good practice to do live connections to external systems in testing situations. The tests can fail randomly for a number of reasons, so we should always mock those. But mocking a complex system (WebSockets and HTTP) like Pusher is not trivial.
+Na verdade, fazer conexões reais a sistemas externos em situações de teste não é boa prática. Os testes podem falhar aleatoriamente por vários motivos, então sempre devemos mockar essas dependências. Mas mockar um sistema complexo (WebSockets e HTTP) como o Pusher não é trivial.
 
-Fortunately, I found this [Pusher Fake](https://github.com/tristandunn/pusher-fake). It basically implements all the necessary APIs and WebSocket endpoints to mimic Pusher and fool both server and js/client to communicate with it.
+Felizmente, encontrei o [Pusher Fake](https://github.com/tristandunn/pusher-fake). Ele basicamente implementa todas as APIs e endpoints WebSocket necessários para imitar o Pusher e enganar tanto o servidor quanto o cliente JS para se comunicar com ele.
 
-The idea is for your Rails app, in development mode, to fork a separated server process for the Pusher client to connect to. This gem is both a simple Pusher-clone server and a series of wrappers to load it up in your setup.
+A ideia é que sua aplicação Rails, em modo de desenvolvimento, faça um fork de um processo separado de servidor para que o cliente Pusher se conecte. Essa gem é ao mesmo tempo um servidor clone do Pusher e uma série de wrappers para carregá-lo no seu setup.
 
-First things first.
+Começando pelo básico.
 
-In your application, you will have both a Ruby side Pusher client connection setup to push messages to a channel in the Pusher server. And a Javascript, client-side, Pusher instance mainly to subscribe to a channel in a WebSocket connection and receive messages.
+Na sua aplicação, você terá tanto uma configuração de conexão do cliente Pusher no lado Ruby (para enviar mensagens a um canal no servidor Pusher) quanto uma instância Pusher do lado Javascript, no cliente, principalmente para assinar um canal em uma conexão WebSocket e receber mensagens.
 
-First we need to setup the Ruby side. Usually it's in a `config/initializers/pusher.rb` configuration like this:
+Primeiro, precisamos configurar o lado Ruby. Geralmente fica em um `config/initializers/pusher.rb` assim:
 
 ```ruby
 Pusher.app_id = ENV['PUSHER_APP']
 Pusher.key    = ENV['PUSHER_KEY']
 Pusher.secret = ENV['PUSHER_SECRET']
 Pusher.cluster = ENV['PUSHER_CLUSTER']
-# never set Pusher.host or Pusher.port
+# nunca defina Pusher.host ou Pusher.port aqui
 ```
 
-Notice that I am using environment variables to hold the configuration. You should use something like the [figaro gem](https://github.com/laserlemon/figaro) or the [dotenv-rails gem](https://github.com/bkeepers/dotenv). For example:
+Note que estou usando variáveis de ambiente para guardar a configuração. Você deve usar algo como a [gem figaro](https://github.com/laserlemon/figaro) ou a [gem dotenv-rails](https://github.com/bkeepers/dotenv). Por exemplo:
 
 ```yaml
 PUSHER_APP: "xpto"
@@ -46,59 +50,59 @@ PUSHER_SECRET: "abcd1234"
 PUSHER_CLUSTER: "us2"
 ```
 
-At the very least you must have an application ID, a key, a secret, and a cluster name. All of these are provided by Pusher whenever you register a new application there.
+No mínimo você precisa de um ID de aplicação, uma chave, um segredo e um nome de cluster. Tudo isso é fornecido pelo Pusher quando você registra uma nova aplicação lá.
 
-Second, we need to setup the Javascript instance. Usually, you have something in the `assets/javascripts` directory like this:
+Segundo, precisamos configurar a instância Javascript. Geralmente você tem algo no diretório `assets/javascripts` assim:
 
 ```javascript
-// .js.erb example
+// exemplo .js.erb
 window.pusher = new Pusher(<%= ENV['PUSHER_APP] %>, {
   cluster: <%= ENV['PUSHER_KEY'] %>,
   encrypted: <%= ENV['PUSHER_ENCRYPTED'] %>})
 ```
 
-In a Chrome Development Console, you can inspect this instance by typing:
+No Console de Desenvolvimento do Chrome, você pode inspecionar essa instância digitando:
 
 ```
 Pusher.instances[0]
 ```
 
-This way you can make it's picking up the correct configurations for the connection and also do debug problems.
+Assim você consegue verificar se está pegando as configurações corretas para a conexão e depurar problemas.
 
-The dependencies are the pusher gem in your `Gemfile` and the javascript client.
+As dependências são a gem pusher no seu `Gemfile` e o cliente javascript.
 
 ```ruby
 # Gemfile
 gem 'pusher'
 ```
 
-In the case of the javascript file you can either add it to your project and rely on [Webpacker](http://www.akitaonrails.com/2017/10/24/beginner-trying-out-rails-5-1-x):
+No caso do arquivo javascript, você pode adicioná-lo ao projeto e depender do [Webpacker](http://www.akitaonrails.com/2017/10/24/beginner-trying-out-rails-5-1-x):
 
 ```
 yarn add pusher
 ```
 
-Then, in your ES6 javascript file, you can do:
+Então, no seu arquivo javascript ES6, você faz:
 
 ```javascript
 const Pusher = require('pusher-js');
 ```
 
-Or you can link it directly in your layout:
+Ou pode linkar diretamente no seu layout:
 
 ```html
 <script src="https://js.pusher.com/4.2/pusher.min.js"></script>
 ```
 
-For more information on the Pusher-js client, read it's [README file](https://github.com/pusher/pusher-js).
+Para mais informações sobre o cliente pusher-js, leia o [arquivo README](https://github.com/pusher/pusher-js).
 
-## Adding Pusher Fake
+## Adicionando o Pusher Fake
 
-At this point, you should be able to connect to the real Pusher account and see the real-time magic happening.
+Nesse ponto, você já deve conseguir se conectar à conta real do Pusher e ver a mágica do tempo real acontecendo.
 
-You're also already consuming the free quota you have available in your development environment on Pusher. For most people, this should suffice.
+E você já está consumindo a cota gratuita disponível no seu ambiente de desenvolvimento no Pusher. Para a maioria das pessoas, isso é suficiente.
 
-But we want to NOT connect to Pusher over the internet and keep everything local for development and testing. Let's start by adding the [Pusher Fake](https://github.com/tristandunn/pusher-fake) to our `Gemfile`:
+Mas o objetivo é NÃO se conectar ao Pusher pela internet e manter tudo local para desenvolvimento e testes. Vamos começar adicionando o [Pusher Fake](https://github.com/tristandunn/pusher-fake) ao nosso `Gemfile`:
 
 ```ruby
 group :development, :test do
@@ -106,9 +110,9 @@ group :development, :test do
 end
 ```
 
-Now, this is where the Pusher Fake setup can get convoluted if you don't understand what's happening. As I said before, PusherFake must fork a new process to load a local server that mimics Pusher.
+Agora é onde a configuração do Pusher Fake pode ficar complicada se você não entender o que está acontecendo. Como disse antes, o PusherFake precisa fazer um fork de um novo processo para carregar um servidor local que imita o Pusher.
 
-To load it up you must point to the local server. Remember our `config/initializers/pusher.rb` ? We just need to require a simple file like this:
+Para carregá-lo, você precisa apontar para o servidor local. Lembra do nosso `config/initializers/pusher.rb`? Basta fazer um require de um arquivo simples assim:
 
 ```ruby
 Pusher.app_id = ENV['PUSHER_APP']
@@ -121,9 +125,9 @@ if Rails.env.development?
 end
 ```
 
-This alone presents a LOT of problems if you're not careful. This `require` will **fork** a new process. If you're using a single-process web server like Webrick or Thin, you should be ok. If you're using Puma, Unicorn, or Passenger with a maximum of just one process, you should also be good. But if you load a web server that itself forks new processes, you will have trouble.
+Só isso já apresenta MUITOS problemas se você não tiver cuidado. Esse `require` vai **fazer um fork** de um novo processo. Se você estiver usando um servidor web de processo único como Webrick ou Thin, tudo bem. Se estiver usando Puma, Unicorn ou Passenger com no máximo um processo, também deve funcionar. Mas se você carregar um servidor web que por si mesmo faz fork de novos processos, vai ter problema.
 
-In practice, I'd rather load the Pusher Fake server separately, in stand-alone more. Fortunately it provides a command line command to start it up. And it's good practice to setup that in a `Procfile.dev` file and use [foreman](https://github.com/ddollar/foreman) to start everything for you. The `Procfile.dev` looks like this:
+Na prática, prefiro carregar o servidor Pusher Fake separadamente, em modo standalone. Felizmente ele fornece um comando de linha de comando para iniciá-lo. E é boa prática configurar isso em um arquivo `Procfile.dev` e usar o [foreman](https://github.com/ddollar/foreman) para iniciar tudo. O `Procfile.dev` fica assim:
 
 ```
 web: bundle exec rails s -p 3000
@@ -133,9 +137,9 @@ mailcatcher: mailcatcher -f
 pusherfake: pusher-fake -i ${PUSHER_APP:-xpto} --socket-host 0.0.0.0 --socket-port ${PUSHER_WS_PORT:-45449} --web-host 0.0.0.0 --web-port ${PUSHER_PORT:-8888} -k ${PUSHER_KEY:-abcd1234} -s ${PUSHER_SECRET:-abcd1234}
 ```
 
-As a bonus, look how I configure other services such as PostgreSQL, Redis, etc.
+De bônus, veja como configuro outros serviços como PostgreSQL, Redis, etc.
 
-If you didn't know, you can use `${VARIABLE_NAME:-default_value}` to use an environment variable or have a default value in case the variable doesn't exist. This means that your environment variable configured with Figaro or Dotenv must have the same values.
+Se você não sabia, pode usar `${VARIABLE_NAME:-default_value}` para usar uma variável de ambiente ou ter um valor padrão caso ela não exista. Isso significa que suas variáveis de ambiente configuradas com Figaro ou Dotenv precisam ter os mesmos valores.
 
 ```yaml
 PUSHER_APP: "xpto"
@@ -148,7 +152,7 @@ PUSHER_WS_HOST: "127.0.0.1"
 PUSHER_WS_PORT: "45449"
 ```
 
-Now your `config/initializers/pusher.rb` should be something like this:
+Agora seu `config/initializers/pusher.rb` deve ficar assim:
 
 ```ruby
 Pusher.app_id = ENV['PUSHER_APP']
@@ -162,7 +166,7 @@ if Rails.env.development?
 end
 ```
 
-And Pusher-js config somewhere in your `app/assets/javascripts/` directory will resemble something like this:
+E a configuração do Pusher-js em algum lugar do seu diretório `app/assets/javascripts/` vai ficar algo assim:
 
 ```javascript
 <% if defined?(PusherFake) %>
@@ -182,20 +186,20 @@ And Pusher-js config somewhere in your `app/assets/javascripts/` directory will 
 <% end %>
 ```
 
-Remember that this is a Javascript+ERB file, so we can fetch the same environment variables for the configuration.
+Lembre que este é um arquivo Javascript+ERB, então podemos buscar as mesmas variáveis de ambiente para a configuração.
 
-Now, whenever you `foreman start -f Procfile.dev -p 3000` it will load the Pusher Fake server with the proper development configurations and both your ruby server-side and javascript client-side should connect to it without any problems.
+Agora, sempre que você executar `foreman start -f Procfile.dev -p 3000`, ele vai carregar o servidor Pusher Fake com as configurações de desenvolvimento corretas, e tanto o seu servidor ruby quanto o cliente javascript devem se conectar a ele sem nenhum problema.
 
-Also, notice the `if Rails.env.test?` bit. This is for your RSpec test suite. In the case of the testing environment, we won't load the fake server manually, instead, we will create something like `spec/support/pusher-fake.rb` with:
+Note também o trecho `if Rails.env.test?`. Isso é para a sua suite de testes RSpec. No caso do ambiente de testes, não vamos carregar o servidor fake manualmente; em vez disso, vamos criar algo como `spec/support/pusher-fake.rb` com:
 
 ```ruby
 require "pusher-fake/support/rspec"
 ```
 
-And that's it. The `PusherFake.javascript` will define default WebSocket connection configuration and the `require` above will both fork the fake server and set Rspec to clean the channels on each test run (through `PusherFake::Channel.reset`).
+E é isso. O `PusherFake.javascript` vai definir a configuração padrão de conexão WebSocket, e o `require` acima vai tanto fazer o fork do servidor fake quanto configurar o RSpec para limpar os canais a cada execução de teste (via `PusherFake::Channel.reset`).
 
-This way your testing environment will also avoid connecting to the external, real, Pusher server.
+Desta forma, seu ambiente de testes também evita se conectar ao servidor Pusher real, externo.
 
-The key to all this are the environment variables. You must make sure that every piece is loading the same configuration, otherwise you will have the fake server binding to a different port than the Pusher-js is connecting to, and you will have errors. Debug with care.
+A chave de tudo isso são as variáveis de ambiente. Você precisa garantir que cada peça esteja carregando a mesma configuração — caso contrário, você terá o servidor fake fazendo bind em uma porta diferente da que o Pusher-js está tentando se conectar, e vai ter erros. Depure com cuidado.
 
-Most importantly: if you did it all correctly, you are now independent of the real Pusher server for development and testing environments, you won't ever reach any quota limits, and your team and your CI will be able to work uninterruptedly, with a deterministic behavior.
+O mais importante: se você fez tudo corretamente, agora é independente do servidor Pusher real para os ambientes de desenvolvimento e testes, nunca vai atingir nenhum limite de cota, e sua equipe e seu CI poderão trabalhar de forma ininterrupta, com comportamento determinístico.

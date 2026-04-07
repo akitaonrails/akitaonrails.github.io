@@ -6,6 +6,63 @@ title: AkitaOnRails Blog - Archives
 
 Want to see the Akitando Channel transcripts (Portuguese only)? [Click here](/akitando/).
 
+## 2017 - December
+
+- [Cryptocurrencies: Is it a Bubble? Does it Matter?](/en/2017/12/05/cryptocurrencies-is-it-a-bubble-does-it-matter/)
+
+## 2017 - November
+
+- [From 10k and Beyond: Discussing Crypto Currencies](/en/2017/11/30/from-10k-and-beyond-discussing-crypto-currencies/)
+- [From Microsoft to Apple, and Back Again](/en/2017/11/21/from-microsoft-to-apple-and-back-again/)
+- [THE CONF 2017 - All the Recordings!](/en/2017/11/13/the-conf-2017-all-the-recordings/)
+- [How does Bitcoin force consensus among Byzantine generals?](/en/2017/11/01/how-does-bitcoin-force-consensus-among-byzantine-generals/)
+
+## 2017 - October
+
+- [\[Beginner\] Long live PhantomJS, let's use Chrome Headless now](/en/2017/10/31/beginner-long-live-phantomjs-let-s-use-chrome-headless-now/)
+- [How NOT to zero out your Pusher development quota](/en/2017/10/27/how-not-to-zero-out-your-pusher-development-quota/)
+- [\[Beginner\] Trying out Rails 5.1.x](/en/2017/10/24/beginner-trying-out-rails-5-1-x/)
+- [Replacing RVM/Rbenv/Nvm/etc for ASDF](/en/2017/10/24/replacing-rvm-rbenv-nvm-etc-for-asdf/)
+- [THE CONF - 2017 Edition Report](/en/2017/10/02/the-conf-2017-edition-report/)
+
+## 2017 - September
+
+- [Windows Subsystem for Linux is good, but not enough yet](/en/2017/09/20/windows-subsystem-for-linux-is-good-but-not-enough-yet/)
+
+## 2017 - August
+
+- [Why it is just lazy to bad-mouth Ruby on Rails](/en/2017/08/03/why-is-it-just-lazy-to-bad-mouth-ruby-on-rails/)
+
+## 2017 - July
+
+- [Upcoming built-in Upload Solution for Rails 5.2 (ActiveStorage)](/en/2017/07/07/upcoming-built-in-upload-solution-for-rails-5-2-activestorage/)
+
+## 2017 - June
+
+- [Rails 5.1  Deployment Checklist for Heroku](/en/2017/06/28/rails-5-1-heroku-deployment-checklist-for-heroku/)
+- [Estimates are Promises - A Better Metaphor](/en/2017/06/26/estimates-are-promises-a-better-metaphor/)
+- [The Economics of Software Development](/en/2017/06/22/the-economics-of-software-development/)
+- [Starting with Blender](/en/2017/06/21/starting-with-blender/)
+- [Ex Manga Downloadr - Part 7: Properly dealing with large Collections](/en/2017/06/16/ex-manga-downloadr-part-7-properly-dealing-with-large-collections/)
+- [Ex Manga Downloadr - Part 6: The Rise of FLOW](/en/2017/06/13/ex-manga-downloadr-part-6-the-rise-of-flow/)
+- [Conference Talks, Interviews, and the Pen!](/en/2017/06/01/conference-talks-interviews-and-the-pen/)
+
+## 2017 - May
+
+- [Programmers Guild - Religion and Sports](/en/2017/05/14/programmers-guild-religion-and-sports/)
+
+## 2017 - March
+
+- [Enabling Optimus NVIDIA GPU on the Dell XPS 15 with Linux, even on Battery](/en/2017/03/14/enabling-optimus-nvidia-gpu-on-the-dell-xps-15-with-linux-even-on-battery/)
+
+## 2017 - January
+
+- [From the Macbook Pro to the Dell XPS. Arch Linux for Creative Pro Users](/en/2017/01/31/from-the-macbook-pro-to-the-dell-xps-arch-linux-for-creative-pro-users/)
+- [Optimizing Linux for Slow Computers](/en/2017/01/17/optimizing-linux-for-slow-computers/)
+- [\[Off-Topic\] Why are we all moving away from Apple?](/en/2017/01/12/off-topic-why-are-we-all-moving-away-from-apple/)
+- [Arch Linux - Best distro ever?](/en/2017/01/10/arch-linux-best-distro-ever/)
+- [Customizing Fedora 25 for Developers](/en/2017/01/06/customizing-fedora-25-for-developers/)
+
 ## 2016 - December
 
 - [Ex Pusher Lite - Part 3 - A Complete Solution](/en/2016/12/30/ex-pusher-lite-part-3-a-complete-solution/)

@@ -1,89 +1,92 @@
 ---
-title: Optimizing Linux for Slow Computers
+title: "Otimizando o Linux para Computadores Lentos"
 date: '2017-01-17T18:15:00-02:00'
-slug: optimizing-linux-for-slow-computers
+slug: otimizando-o-linux-para-computadores-lentos
+translationKey: optimizing-linux-slow-computers
+aliases:
+- /2017/01/17/optimizing-linux-for-slow-computers/
 tags:
 - linux
 - kernel
 - arch
+- traduzido
 draft: false
 ---
 
-I've been researching a lot about Linux on the Desktop these days as you may see from my posts about [Fedora 25](http://www.akitaonrails.com/2017/01/06/customizing-fedora-25-for-developers) and [Arch Linux](http://www.akitaonrails.com/2017/01/10/arch-linux-best-distro-ever) (recommended!).
+Tenho pesquisado bastante sobre Linux no Desktop ultimamente, como você pode ver nos meus posts sobre [Fedora 25](http://www.akitaonrails.com/2017/01/06/customizing-fedora-25-for-developers) e [Arch Linux](http://www.akitaonrails.com/2017/01/10/arch-linux-best-distro-ever) (recomendado!).
 
-There are some things you must have in mind when migrating to Linux systems.
+Há algumas coisas importantes para ter em mente na hora de migrar para sistemas Linux.
 
-Even if you have a top of the line Intel Core i7 Kaby Lake, 32GB of RAM, 2TB M.2 SSDs, you may still benefit from the optimizations I will talk about.
+Mesmo que você tenha um Intel Core i7 Kaby Lake de última geração, 32GB de RAM e SSDs M.2 de 2TB, ainda é possível se beneficiar das otimizações que vou discutir aqui.
 
-One of the best resources is [Arch Linux's Wiki page on "Improving Performance"](https://wiki.archlinux.org/index.php/Improving_performance). You don't need everything there but it's a comprehensive resource that any enthusiast must read.
+Um dos melhores recursos disponíveis é a [página da Wiki do Arch Linux sobre "Improving Performance"](https://wiki.archlinux.org/index.php/Improving_performance). Você não precisa aplicar tudo que está lá, mas é uma referência completa que qualquer entusiasta deveria ler.
 
 ![htop and iotop](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/607/Screenshot_from_2017-01-17_16-55-46.png)
 
-### It's about Responsiveness, not performance!
+### É sobre Responsividade, não performance!
 
-Most people's concerns are first about performance, and this is a mistake. Linux is plenty fast, but for many people it doesn't feel like so in the Desktop.
+A maioria das pessoas se preocupa primeiro com performance, e isso é um erro. O Linux é rápido o suficiente, mas para muita gente ele não parece assim no Desktop.
 
-When tuning a server, you'll really want to tweak for performance and high throughput. That's where most Linux configurations really shine over the competition: they come better tuned to get the most out of server configurations.
+Ao configurar um servidor, faz todo sentido ajustar para performance e alto throughput. É aí que as configurações do Linux realmente se destacam sobre a concorrência: elas já vêm mais ajustadas para extrair o máximo de configurações de servidor.
 
-But in a Desktop you don't want that. For example, you're copying a 20GB file to your old USB thumb drive, or you're unzipping a large file, or you're compiling that large package from source, or you leave Dropbox in the background syncing gigabytes of files from their servers. Or you're doing "nothing" (in the foreground at least, but Gnome Tracker is heavily indexing your files in the background) and your environment stutters, hangs for a few seconds, and keeps doing that every so often.
+Mas num Desktop, você não quer isso. Por exemplo: você está copiando um arquivo de 20GB para um pen drive velho, ou descomprimindo um arquivo grande, ou compilando um pacote pesado do código-fonte, ou deixou o Dropbox sincronizando gigabytes de arquivos em segundo plano. Ou você não está fazendo "nada" (pelo menos no primeiro plano, mas o Gnome Tracker está indexando seus arquivos pesadamente em background) e o ambiente trava, fica pendurado por alguns segundos, e continua fazendo isso de tempos em tempos.
 
-And you're left wondering why Linux is so bad compared to Windows or macOS where you don't see the same behavior on similar hardware.
+E você fica se perguntando por que o Linux é tão ruim comparado ao Windows ou macOS, onde esse comportamento não ocorre em hardware similar.
 
-> There is a term that is still misunderstood: **real-time**.
+> Existe um termo ainda mal compreendido: **tempo real**.
 
-Being real-time does not mean "computing super fast", it means "being predictable". If something needs to happen in a certain frequency, it doesn't matter if each cycle takes 1 second as long as it consistently takes the same 1 second - in all deadlines. If you have a "fast" machine that computes faster at 10 milliseconds every cycle, but every so often, randomly hangs for a couple of seconds, this is not real-time. And for media creation, it's a disaster.
+Ser real-time não significa "computar muito rápido", significa "ser previsível". Se algo precisa acontecer em uma certa frequência, não importa se cada ciclo leva 1 segundo — desde que consistentemente leve sempre esse mesmo 1 segundo, em todos os prazos. Se você tem uma máquina "rápida" que processa em 10 milissegundos por ciclo, mas de vez em quando trava aleatoriamente por alguns segundos, isso não é tempo real. E para criação de mídia, é um desastre.
 
-There is hard real-time where one peak or valley can be considered a catastropic failure, and soft real-time where you can handle a few peaks, but not so much. Hard real time requirements are rare, unless you're developing systems for nuclear plants you may miss a few deadlines.
+Existe o hard real-time, onde um único pico ou vale pode ser considerado uma falha catastrófica, e o soft real-time, onde você consegue tolerar alguns picos, mas não muitos. Requisitos de hard real-time são raros — a menos que você esteja desenvolvendo sistemas para usinas nucleares, você pode perder alguns prazos sem consequências graves.
 
-Most responsiveness issues are related to soft real-time situations. You can handle a few sparse peaks here and there, but no more than a few. And this is how you should do your research: not Googling for "linux performance" but for "linux real-time" or "linux responsiveness".
+A maioria dos problemas de responsividade está relacionada a situações de soft real-time. Você consegue lidar com alguns picos esporádicos aqui e ali, mas não com muitos. E é assim que você deve conduzir sua pesquisa: não procurando "linux performance" no Google, mas sim "linux real-time" ou "linux responsiveness".
 
-You will also find that there are niche professionals with special distros just for audio recording and editing, for example [AVLinux or KXStudio](http://libremusicproduction.com/articles/advantages-choosing-audio-orientated-linux-distribution).
+Você também vai descobrir que existem profissionais de nicho com distros especiais apenas para gravação e edição de áudio, como [AVLinux ou KXStudio](http://libremusicproduction.com/articles/advantages-choosing-audio-orientated-linux-distribution).
 
-macOS is particularly good for media creators precisely because it's highly tuned for soft real-time, which is critical for software such as Logic Pro. And for the same reason, it's poor server OS. You will notice that the default Quicktime screen recording is super smooth, you rarely see stutters.
+O macOS é particularmente bom para criadores de mídia justamente porque é altamente ajustado para soft real-time, algo crítico para softwares como o Logic Pro. E pelo mesmo motivo, é um péssimo sistema operacional para servidores. Você vai notar que a gravação de tela padrão do Quicktime é extremamente fluida, raramente aparece qualquer engasgo.
 
-But you don't need to use an audio specific distro or a hard real-time kernel. Critical audio distros don't use PulseAudio, but normal users will not be so concerned about it. We can tune it to find a good balance between responsiveness and performance. If you really want to go hard-core, you may want to read the [Linux Audio Wiki on Real Time](http://wiki.linuxaudio.org/wiki/real_time_info), but it's out of the scope of this article.
+Mas você não precisa usar uma distro específica para áudio ou um kernel hard real-time. Distros de áudio crítico não usam PulseAudio, mas usuários comuns não precisam se preocupar com isso. Dá para ajustar e encontrar um bom equilíbrio entre responsividade e performance. Se quiser ir fundo no tema, leia o [Linux Audio Wiki sobre Real Time](http://wiki.linuxaudio.org/wiki/real_time_info), mas isso foge do escopo deste artigo.
 
-### What are the real Bottlenecks?
+### Quais são os Gargalos de Verdade?
 
-A "slow" computer is not necessarily sporting old CPUs. I am doing my tests on a very old Lenovo Thinkcentre Edge 71z tower desktop. It has an old 2nd generation Intel Core 2.4Ghz 4 cores SandyBridge CPU. We just saw the release of the 7th generation Kaby Lake processors, so one might assume that nothing would run on such an old CPU, but you would be wrong.
+Um computador "lento" não é necessariamente aquele com CPU antiga. Estou fazendo meus testes em um Lenovo Thinkcentre Edge 71z bem antigo. Ele tem uma CPU Intel Core de 2ª geração, 2.4GHz, 4 núcleos, arquitetura SandyBridge. Acabamos de ver o lançamento dos processadores de 7ª geração Kaby Lake, então alguém poderia imaginar que nada rodaria bem em uma CPU tão antiga — mas estaria errado.
 
-CPU is usually not serious a bottleneck unless you're doing really intensive computation, such as video compression, data sciences, genetics, neural networks, etc.
+A CPU normalmente não é um gargalo sério, a menos que você esteja fazendo computação realmente intensiva, como compressão de vídeo, ciência de dados, genética, redes neurais, etc.
 
-For a casual user or even a heavy-weight developer, any processor better than the 1st generation Intel Core series is plenty.
+Para um usuário casual ou mesmo um desenvolvedor pesado, qualquer processador melhor que a 1ª geração Intel Core já é suficiente.
 
-GPU is also rarely a bottleneck unless you're doing heavy gaming or 4K renderings. Most of the time you don't really need a USD 7000 dedicated GTX 1080.
+A GPU também raramente é gargalo, a menos que você jogue muito ou faça renderizações em 4K. Na maioria das vezes, você não precisa de uma GTX 1080 dedicada de USD 7000.
 
-By the way, this is not necessary for most systems, but just to be on the safe side do this:
+Aliás, isso não é necessário na maioria dos sistemas, mas por precaução, faça o seguinte:
 
 ```
 sudo pacman -S mesa-demos
 glxinfo | grep direct
 ```
 
-You should see `direct rendering: Yes`. If not, refer to your distro documentation, because this means you're not compositing through the GPU and you're wasting CPU cycles rendering your screen!
+Você deve ver `direct rendering: Yes`. Se não aparecer, consulte a documentação da sua distro, pois isso significa que você não está fazendo composição pela GPU e está desperdiçando ciclos de CPU para renderizar a tela!
 
+Se você tentar medir o uso de CPU e GPU, vai perceber que na maior parte do tempo eles estão ociosos! É isso mesmo: você está subutilizando os núcleos da sua máquina.
 
-If you try to measure your CPU and GPU usages, you will realize that most of the time they are actually idle! That's right, you're mostly underusing your machine cores.
-
-The bottleneck usually boils down to I/O.
+O gargalo geralmente se resume a I/O.
 
 ### RAM vs SWAP
 
-Now, you're opening your shiny Chromium browser. Anyone fooling around for a few minutes will open an average of a dozen or more tabs, without breaking a sweat.
+Digamos que você abra o Chromium. Qualquer pessoa navegando por alguns minutos abre uma média de uma dúzia de abas ou mais, sem esforço algum.
 
-It's super easy to eat up all 8GB of the average machines. Whenever that happens, the OS will have to start offloading data to disk, which is orders of magnitude slow.
+É muito fácil consumir todos os 8GB de RAM de uma máquina comum. Quando isso acontece, o sistema operacional precisa começar a descarregar dados para o disco, que é ordens de magnitude mais lento.
 
-If application data is offloaded to disk and you alt-tab to it later, the OS will reach a "page fault", and it will have to load from disk, from the swap file/partition. And again, this will have the effect of blocking your actions. The environment may stutter for a second or more, making it **unresponsive**.
+Se os dados de um aplicativo forem descarregados para o disco e você fizer alt-tab para ele mais tarde, o sistema vai atingir um "page fault" e precisará carregar do disco, da partição ou arquivo de swap. E novamente, isso terá o efeito de bloquear suas ações. O ambiente pode travar por um segundo ou mais, tornando-se **irresponsivo**.
 
-The very first thing you may want to do is install an extension such as [The Great Suspender](https://chrome.google.com/webstore/detail/the-great-suspender/klbibkeccnjlkjkiokjodocebajanakg?hl=en). It will simply close all tabs but the one you're reading right now. When you change to another tab it will reload it. The effect is that you're not using RAM if you really don't need to.
+A primeira coisa que você pode querer fazer é instalar uma extensão como o [The Great Suspender](https://chrome.google.com/webstore/detail/the-great-suspender/klbibkeccnjlkjkiokjodocebajanakg?hl=en). Ela simplesmente fecha todas as abas exceto a que você está lendo agora. Quando você muda para outra aba, ela recarrega. O efeito é que você não está usando RAM para algo que não está usando ativamente.
 
 ![The Great Suspender](https://lh6.googleusercontent.com/PCpWlL8C4bi0yPT1zvOmRwZFd1BaweIiwSw9hmJoUZ4BDA9InMR_fEaC4XNrFTyWW2m_yC8HIw=s640-h400-e365)
 
-This extension alone can save you a couple of GIGABYTES of RAM, which is no small thing if you have 8GB or less.
+Essa extensão sozinha pode economizar alguns GIGABYTES de RAM, o que é bastante significativo se você tem 8GB ou menos.
 
-The other thing to consider is that Linux comes pre-configured to balance out offloading application data to swap to accomodate filesystem cache. So, if you're unzipping a large file, some of that data will go to RAM cache and application data will move to the disk. After you finish unzipping, you alt-tab to applications and boom: page faults, unresponsiveness.
+O outro ponto a considerar é que o Linux vem pré-configurado para equilibrar o descarregamento de dados de aplicativos para o swap com o cache do sistema de arquivos. Então, se você está descomprimindo um arquivo grande, parte desses dados vai para o cache em RAM e os dados dos aplicativos vão para o disco. Quando você termina de descomprimir e faz alt-tab para os aplicativos: page faults, travamentos.
 
-So you want to configure the OS to more aggressively keep your application state in RAM, and [this is how you do it](https://rudd-o.com/linux-and-free-software/tales-from-responsivenessland-why-linux-feels-slow-and-how-to-fix-that):
+A solução é configurar o sistema para manter mais agressivamente o estado dos aplicativos em RAM, e [é assim que se faz](https://rudd-o.com/linux-and-free-software/tales-from-responsivenessland-why-linux-feels-slow-and-how-to-fix-that):
 
 ```
 sudo tee -a /etc/sysctl.d/99-sysctl.conf <<-EOF
@@ -92,7 +95,7 @@ vm.vfs_cache_pressure=50
 EOF
 ```
 
-While on the topic of storage, you will find some older kernels making your machine become unresponsive when dealing with [slower storage](http://unix.stackexchange.com/questions/107703/why-is-my-pc-freezing-while-im-copying-a-file-to-a-pendrive/107722#107722), such as USB drives or SD cards. This is how you tweak it:
+Ainda no tema de armazenamento, alguns kernels mais antigos deixam a máquina irresponsiva ao lidar com [dispositivos de armazenamento lentos](http://unix.stackexchange.com/questions/107703/why-is-my-pc-freezing-while-im-copying-a-file-to-a-pendrive/107722#107722), como pen drives ou cartões SD. Veja como ajustar:
 
 ```
 sudo tee -a /etc/sysctl.d/99-sysctl.conf <<-EOF
@@ -101,7 +104,7 @@ vm.dirty_bytes=50331648
 EOF
 ```
 
-If you don't want to reboot right now, you can run this in a Terminal:
+Se não quiser reiniciar agora, execute isso no terminal:
 
 ```
 sudo sysctl -w vm.swappiness=1
@@ -110,113 +113,113 @@ sudo sysctl -w vm.dirty_background_bytes=16777216
 sudo sysctl -w vm.dirty_bytes=50331648
 ```
 
-Don't go too far on tuning, for example, never disable a file system journaling. It increases performance at the risk of putting your data in risk of corruption.
+Não exagere nos ajustes. Por exemplo, nunca desabilite o journaling do sistema de arquivos. Isso aumenta performance ao custo de colocar seus dados em risco de corrupção.
 
 ### Schedulers
 
-Why was "Linux not ready for the Desktop" years ago?
+Por que o "Linux não estava pronto para o Desktop" há alguns anos?
 
-Because it took too many years to finally start tackling low latency, inexpensive thread switching, better scheduling. You have to thank [Con Kolivas](https://en.wikipedia.org/wiki/Con_Kolivas), [Ingo Molnár, Thomas Gleixner](https://en.wikipedia.org/wiki/Ingo_Moln%C3%A1r). The Linux kernel development is known to be super difficult to deal with and Con Kolivas is one of its victims, but his work live on to allow us to have better Desktop experiences these days.
+Porque demorou tempo demais para começar a tratar latência baixa, troca de threads eficiente e melhor scheduling. Há muito a agradecer a [Con Kolivas](https://en.wikipedia.org/wiki/Con_Kolivas), [Ingo Molnár e Thomas Gleixner](https://en.wikipedia.org/wiki/Ingo_Moln%C3%A1r). O desenvolvimento do kernel Linux é notoriamente difícil e Con Kolivas foi uma de suas vítimas, mas seu trabalho sobreviveu e nos permite ter experiências melhores no Desktop hoje.
 
-There are Process Schedulers and I/O Schedulers. The first is responsible to manage the [Preemption](https://rt.wiki.kernel.org/index.php/RT_PREEMPT_HOWTO) of the kernel, how it switches between different computational tasks, the low-level equivalent of you "alt-tabbing" through apps, so to speak.
+Existem Process Schedulers e I/O Schedulers. O primeiro é responsável por gerenciar a [Preempção](https://rt.wiki.kernel.org/index.php/RT_PREEMPT_HOWTO) do kernel, como ele alterna entre diferentes tarefas computacionais — o equivalente em baixo nível do "alt-tab" entre apps.
 
-I/O Schedulers deal with sharing slow I/O resources with competing processes needing to read from disk, write to RAM, etc.
+Os I/O Schedulers lidam com o compartilhamento de recursos lentos de I/O entre processos concorrentes que precisam ler do disco, escrever na RAM, etc.
 
-The recent history of process scheduler for the Desktop boils down to Con Kolivas' works on fair scheduling, leading to Ingo Mólnar's Completely Fair Scheduler (CFS) which is the default in most distros nowadays and the continuing work of Kolivas on Staircase, Rotating Staircase Deadline, Staircase Deadlineee, Brain Fuck Scheduler (BFS), and the most recent Multiple Queue Skiplist Scheduler (MuQSS).
+A história recente do process scheduler para Desktop se resume ao trabalho de Con Kolivas em fair scheduling, que levou ao Completely Fair Scheduler (CFS) de Ingo Mólnar — padrão na maioria das distros hoje — e ao trabalho contínuo de Kolivas no Staircase, Rotating Staircase Deadline, Staircase Deadlineee, Brain Fuck Scheduler (BFS), e o mais recente Multiple Queue Skiplist Scheduler (MuQSS).
 
-Then there are I/O Schedulers. For the most part you will be dealing with the Completely Fair Queueing (CFQ). Most development on this side is attributed to Jens Axboe, also responsible for the Deadline Scheduler and Noop Scheduler. Then there is the controversial evolution called [Budget Fair Queueing](http://algo.ing.unimo.it/people/paolo/disk_sched/bfq-history.php) (BFQ).
+No lado dos I/O Schedulers, você vai lidar principalmente com o Completely Fair Queueing (CFQ). A maior parte do desenvolvimento nessa área é atribuída a Jens Axboe, também responsável pelo Deadline Scheduler e pelo Noop Scheduler. Depois veio a evolução controversa chamada [Budget Fair Queueing](http://algo.ing.unimo.it/people/paolo/disk_sched/bfq-history.php) (BFQ).
 
-When you have SSDs (and this is why you want SSDs), you will more likely choose NOOP (or [Deadline](https://wiki.debian.org/SSDOptimization#Low-Latency_IO-Scheduler)) just because there is no need to waste computation time managing complex I/O queues for SSDs as they can easily handle up to tens of thousands of I/O operations concurrently without breaking a sweat.
+Com SSDs (e é por isso que você quer SSDs), você provavelmente escolherá NOOP (ou [Deadline](https://wiki.debian.org/SSDOptimization#Low-Latency_IO-Scheduler)), porque não faz sentido desperdiçar tempo de processamento gerenciando filas complexas de I/O para SSDs — eles conseguem lidar facilmente com dezenas de milhares de operações de I/O simultâneas sem dificuldade.
 
-But if you have to use mechanical hard-drives, particularly the old and super slow 5.400rpm ones, you will want to manage the I/O queue efficiently, touching the spinning plates as little as possible. And in this case, you will really want to use something like BFQ (or at least leave it at the default CFQ).
+Mas se você precisa usar HDs mecânicos, especialmente os antigos e lentos de 5.400rpm, vai querer gerenciar a fila de I/O de forma eficiente, tocando os pratos girantes o mínimo possível. Nesse caso, você vai querer usar algo como BFQ (ou pelo menos deixar no CFQ padrão).
 
-You can check which I/O Scheduler you're running like this:
+Você pode verificar qual I/O Scheduler está ativo assim:
 
 ```
 $ cat /sys/block/sda/queue/scheduler
 noop deadline cfq [bfq] 
 ```
 
-In the example above you will see that `[bfq]` is the one active, but you can change it on the fly to test it out if you want.
+No exemplo acima, `[bfq]` é o ativo, mas você pode mudá-lo em tempo real para testar, se quiser.
 
-To take advantage of those newest schedulers to better optimize slow computers, your best bet is to install Linux Zen kernel, a version of [Liquorix](https://liquorix.net/). It includes de MuQSS scheduler instead of CFS and BFQ instead of CFQ, while also adding more tweaks for responsiveness like proper QoS over TCP to avoid TCP congestion.
+Para aproveitar esses schedulers mais modernos e otimizar computadores lentos, a melhor aposta é instalar o kernel Linux Zen, uma versão do [Liquorix](https://liquorix.net/). Ele inclui o scheduler MuQSS em vez do CFS e o BFQ em vez do CFQ, além de outros ajustes de responsividade como QoS adequado sobre TCP para evitar congestionamento.
 
-In Arch Linux it's a simple thing to do:
+No Arch Linux é simples:
 
 ```
 sudo pacman -Sy linux-zen
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-For Ubuntu, you may want to refer to [Liquorix's Install Page](https://liquorix.net/#install) as it depends on your CPU, but most likely you will install on 64-bit machines:
+Para Ubuntu, consulte a [página de instalação do Liquorix](https://liquorix.net/#install), pois depende da sua CPU. Mas na maioria dos casos em máquinas 64-bit:
 
 ```
 sudo apt-get install liquorix-keyring
 apt-get install linux-image-liquorix-amd64 linux-headers-liquorix-amd64
 ```
 
-### Is GNOME 3 too slow?
+### O GNOME 3 é lento demais?
 
-I always heard that GNOME and even KDE are too slow, you should just use XFCE (or LXQt, or MATE).
+Sempre ouvi que GNOME e até o KDE são lentos demais, que você deveria usar XFCE (ou LXQt, ou MATE).
 
-And it always striked me as one of those things people just keep repeating until it becomes the official canon.
+E sempre me pareceu uma daquelas coisas que as pessoas simplesmente repetem até virar cânone oficial.
 
-As an engineer, I dislike thinking that way. Defying the canon is more like what an engineer should do.
+Como engenheiro, não gosto de pensar assim. Questionar o cânone é exatamente o que um engenheiro deveria fazer.
 
-GNOME 3.22 is an ever evolving environment and ecosystem. It's good looking by default, no need to tweak it too much. And it has several built-in conveniences such as GNOME Online Accounts, Tracker for indexing files and making them easily searchable, GNOME Photos that sync from Google Photos, and so on. Every nicety we like about a system like macOS.
+O GNOME 3.22 é um ambiente em constante evolução. Por padrão já tem uma boa aparência, sem necessidade de muito ajuste. E vem com várias comodidades embutidas como GNOME Online Accounts, Tracker para indexar arquivos e facilitar a busca, GNOME Photos que sincroniza do Google Photos, e assim por diante. Tudo aquilo que gostamos num sistema como macOS.
 
-Convenience is a trade-off of performance and responsiveness. So high-end machines will benefit from the convenience and old machines will suffer because of the extra "bloat" in the background.
+Conveniência é um trade-off de performance e responsividade. Máquinas de ponta se beneficiam das comodidades; máquinas antigas sofrem com o "bloat" extra em segundo plano.
 
-How do you maintain some of the convenience on old hardware?
+Como manter parte da conveniência em hardware antigo?
 
-Again, you must understand what's going on. The first thing you must install is **htop** and **iotop**. The first is good to see what processes running in the background may be eating up your CPU or RAM. The second is good to see what processes are bloating your I/O queues doing background file/network operations.
+Novamente, você precisa entender o que está acontecendo. A primeira coisa a instalar é **htop** e **iotop**. O primeiro ajuda a ver quais processos em background estão consumindo CPU ou RAM. O segundo mostra quais processos estão sobrecarregando as filas de I/O com operações de arquivo ou rede em background.
 
-What I found out in my system were 2 main offenders: Dropbox and Tracker.
+No meu sistema, encontrei 2 grandes vilões: Dropbox e Tracker.
 
 ![iotop](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/606/Screenshot_from_2017-01-17_16-15-32.png)
 
-Dropbox is optional, but most people nowadays use it. Out of the box it is a hidious monster, one of the worst pieces of software you're obligated to live with.
+O Dropbox é opcional, mas a maioria das pessoas usa hoje em dia. Por padrão, é um monstro horroroso — um dos piores softwares com os quais você é obrigado a conviver.
 
-The first time you install and it has to download everything, your machine will go down to its knees. Nothing to do about that, just remember to install it Friday night and leave it running in the office over the weekend.
+Na primeira vez que você instala e ele precisa baixar tudo, sua máquina vai aos joelhos. Não há muito o que fazer — lembre-se de instalar na sexta à noite e deixá-lo rodando no escritório durante o fim de semana.
 
-Then, edit the `/usr/share/applications/dropbox.desktop` and replace the `Exec=dropbox` line with this:
+Depois, edite `/usr/share/applications/dropbox.desktop` e substitua a linha `Exec=dropbox` por:
 
 ```
 Exec=ionice -c 3 -n 7 dropbox start -i && cpulimit -b -e dropbox -l 10
 ```
 
-This "should" tune down Dropbox to have the least amount of CPU time and only have I/O when the system is idle.
+Isso "deve" reduzir o Dropbox ao mínimo de tempo de CPU e I/O apenas quando o sistema estiver ocioso.
 
-Another way is to install [Ananicy](https://github.com/Nefelim4ag/Ananicy/blob/master/README.md). It is a daemon that promises to automatically set NICE and IOCLASS of selected processes just like using `ionice` and `cpulimit` above. You can install it in Arch like this:
+Outra opção é instalar o [Ananicy](https://github.com/Nefelim4ag/Ananicy/blob/master/README.md). É um daemon que promete definir automaticamente o NICE e IOCLASS de processos selecionados, exatamente como o `ionice` e `cpulimit` acima. No Arch, instale assim:
 
 ```
 sudo pacaur -S ananicy-git
 ```
 
-And if you `cat /etc/ananicy.d/dropbox.rules` you will see a rule set like this:
+E se você fizer `cat /etc/ananicy.d/dropbox.rules`, verá uma regra assim:
 
 ```
 # Dropbox client: https://www.dropbox.com
 NAME=dropbox       NICE=19     IOCLASS=idle
 ```
 
-Which is basically what we did in the `Exec` line tweak. I didn't test Ananicy enough but if it does what's promised, it's even easier as it comes with pre-configured rules for applications such as make, VLC, transmission, etc.
+Que é basicamente o que fizemos no ajuste da linha `Exec`. Não testei o Ananicy o suficiente, mas se fizer o que promete, é ainda mais fácil — já vem com regras pré-configuradas para aplicações como make, VLC, transmission, etc.
 
-Then, there is **Tracker**. The purpose of this tool is to index your files so you can search them fast and easily through GNOME applications such as the Nautilus File Manager.
+Depois, tem o **Tracker**. A finalidade dessa ferramenta é indexar seus arquivos para que você possa buscá-los rápida e facilmente através de aplicações GNOME como o Nautilus.
 
-Again, the first time you install your new GNOME environment it will be very expensive to build the first index pass, specially if you're downloading tons of files from Dropbox. Do it on a Friday night!
+Novamente, na primeira vez que você instala o ambiente GNOME, será muito custoso construir o índice inicial, especialmente se você estiver baixando toneladas de arquivos do Dropbox. Faça isso numa sexta à noite!
 
-But you should also tune it down to only run when your system is idle. Run Alt-F2 and type `tracker-preferences`, then configure it to look like this:
+Mas você também deve configurá-lo para rodar apenas quando o sistema estiver ocioso. Execute Alt-F2 e digite `tracker-preferences`, então configure conforme a imagem abaixo:
 
 ![tracker-preferences](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/605/Screenshot_from_2017-01-17_15-32-38.png)
 
-In the same applet, also configure it to ignore `log` directories and `*.log` file patterns!
+No mesmo applet, configure-o também para ignorar diretórios `log` e padrões de arquivo `*.log`!
 
-Only those 2 things should make your machine WAY more responsive when using slow mechanical drives. I noticed that `gnome-photos` keeps running in the background and consuming some I/O, it is probably trying to sync your online photos from Google if you set [GNOME Online Accounts](https://wiki.gnome.org/Projects/GnomeOnlineAccounts).
+Só essas 2 coisas já devem deixar sua máquina MUITO mais responsiva ao usar HDs mecânicos lentos. Percebi que o `gnome-photos` fica rodando em background consumindo algum I/O — provavelmente tentando sincronizar suas fotos online do Google se você configurou o [GNOME Online Accounts](https://wiki.gnome.org/Projects/GnomeOnlineAccounts).
 
-> Dropbox, Tracker, Gnome-Photos, will all cause your initial experience to suck. But if you have patience - and a fast internet connection - they should settle down after the initial heavy sync.
+> Dropbox, Tracker e Gnome-Photos vão arruinar sua experiência inicial. Mas se você tiver paciência — e uma conexão rápida com a internet — eles devem se estabilizar após a sincronização pesada inicial.
 
-GNOME has other services in the background, namely:
+O GNOME tem outros serviços em background, como:
 
 ```
 gnome-session
@@ -227,33 +230,33 @@ evolution-data-server
 gjs-console
 ```
 
-There must be more depending on optional apps you installed. Gnome-Shell and GJS are easily the worst of the bunch. You can't do much about them because they're the Core of GNOME. GJS in particular enables Javascript-based extensions and everything Javascript is slow. The only thing you can do is avoid installing too many GNOME Extensions.
+Dependendo dos apps opcionais instalados, pode haver mais. Gnome-Shell e GJS são facilmente os piores da lista. Você não pode fazer muito sobre eles porque são o núcleo do GNOME. O GJS em particular habilita extensões baseadas em Javascript, e tudo em Javascript é lento. A única coisa que você pode fazer é evitar instalar extensões GNOME demais.
 
-By the way, if you install XFCE along-side GNOME, you may be surprised that many of the same background services will start up in the background! Install one or the other, not both in the same system.
+Aliás, se você instalar o XFCE junto com o GNOME, pode se surpreender ao ver que muitos dos mesmos serviços em background vão iniciar mesmo assim! Instale um ou outro, não os dois no mesmo sistema.
 
-On the other hand, a bare-bone Arch install with the XFCE4 package set will start up consuming around 150MB of RAM!! But of course, you lose all the niceties that comes pre-installed with GNOME. And also of course: you start Chromium, open a few tabs, and there goes all the RAM anyway.
+Por outro lado, uma instalação mínima do Arch com o pacote XFCE4 vai iniciar consumindo cerca de 150MB de RAM. Mas claro, você perde todas as comodidades que vêm pré-instaladas no GNOME. E claro também: abra o Chromium, algumas abas, e lá se vai toda a RAM de qualquer jeito.
 
-If your goal is just to save resources, the choice is not between XFCE or LXQt, it is between having Facebook permanently opened in a browser tab or not. The reality is that the main offender of RAM is the Web as a whole. Half a dozen tabs and you eat up more than 1 Gigabyte, and it keeps going up. That's why my main first recommendation is to install The Great Suspender.
+Se o seu objetivo é apenas economizar recursos, a escolha não é entre XFCE ou LXQt — é entre ter o Facebook aberto permanentemente numa aba do navegador ou não. A realidade é que o principal consumidor de RAM é a Web como um todo. Meia dúzia de abas e você consome mais de 1 Gigabyte, e continua subindo. Por isso minha primeira recomendação é instalar o The Great Suspender.
 
-You will run far worst apps in the foreground. For example, Spotify, Franz, Atom, to name a few. If it's a hybrid app that load a browser to load a web application, it is going to be heavy.
+Você vai rodar apps muito piores no primeiro plano. Spotify, Franz, Atom, para citar alguns. Se for um app híbrido que carrega um browser para carregar uma aplicação web, vai ser pesado.
 
-And I'd choose a [forward thinking desktop manager](https://wiki.archlinux.org/index.php/wayland#Window_managers_and_desktop_shells) that already supports Wayland/Weston instead of X11. You do want to throw away the [bad X11 legacy](http://www.phoronix.com/scan.php?page=article&item=x_wayland_situation&num=1) as soon as possible.
+E eu escolheria um [gerenciador de desktop voltado para o futuro](https://wiki.archlinux.org/index.php/wayland#Window_managers_and_desktop_shells) que já suporte Wayland/Weston em vez do X11. Você quer se livrar do [legado ruim do X11](http://www.phoronix.com/scan.php?page=article&item=x_wayland_situation&num=1) o quanto antes.
 
-### Summary
+### Resumo
 
-As a shorter TL;DR remember to do the following:
+Para um TL;DR mais curto, lembre-se de fazer o seguinte:
 
-* Tune your swappiness and cache pressure settings to avoid page faults when using your foreground applications. It's a trade-off of performance vs responsiness.
-* Install the Linux-Zen or Liquorix kernels (depending on your distro) to have access to the better MuQSS process scheduler and BFQ I/O schedulers. If you're using an SSD you will want to check if you're using NOOP or Deadline I/O schedulers instead. Also check for [TRIM support](https://wiki.archlinux.org/index.php/Solid_State_Drives#TRIM).
-* Make Dropbox and Tracker play nice with your system. Configure both to only run when You are not using the system (when idle). Maybe install Ananicy and rejoice.
-* Do not choose a Desktop Manager because of performance concerns. If you're using Chromium or other web based applications, you're already doomed. So don't panic and use GNOME 3.22.
+* Ajuste as configurações de swappiness e pressão de cache para evitar page faults ao usar aplicações em primeiro plano. É um trade-off entre performance e responsividade.
+* Instale os kernels Linux-Zen ou Liquorix (dependendo da sua distro) para ter acesso ao melhor scheduler de processo MuQSS e ao scheduler de I/O BFQ. Se estiver usando SSD, verifique se está usando os schedulers de I/O NOOP ou Deadline. Também verifique o [suporte a TRIM](https://wiki.archlinux.org/index.php/Solid_State_Drives#TRIM).
+* Faça o Dropbox e o Tracker se comportarem. Configure ambos para rodar apenas quando você não estiver usando o sistema (quando ocioso). Instale o Ananicy se quiser facilitar.
+* Não escolha um Desktop Manager por preocupações de performance. Se você usa Chromium ou outras aplicações web, já está "condenado" de qualquer jeito. Então não entre em pânico e use o GNOME 3.22.
 
-When I installed both Fedora 25 and Arch Linux I felt them sluggish. When I used Ubuntu 14.04 for months in a better hardware, I also felt it sluggish compared to macOS in similar hardware, but I never attempted this level of tunig before.
+Quando instalei tanto o Fedora 25 quanto o Arch Linux, os achei lentos. Quando usei Ubuntu 14.04 por meses em hardware melhor, também o achei lento comparado ao macOS em hardware similar — mas nunca tinha tentado esse nível de otimização antes.
 
-The main reason being the heavy initial sync of applications such as Dropbox, Tracker, Gnome-Photos.
+O principal motivo é a sincronização inicial pesada de aplicações como Dropbox, Tracker e Gnome-Photos.
 
-The second reason is the better tuning of I/O scheduling and Swap settings because of the use of a mechanical harddrive. If you use an SSD you probably don't suffer nearly as much.
+O segundo motivo é o melhor ajuste do scheduling de I/O e das configurações de Swap por causa do uso de HD mecânico. Se você usa SSD, provavelmente não sofre nem de perto tanto.
 
-Bottomline: if you can, buy a good SSD. If you have PCI Express x4, then do even better and buy a M.2 SSD such as the [Samsung 950 EVO M.2](http://www.samsung.com/semiconductor/minisite/ssd/product/consumer/950pro.html). The best thing you can do is have more than 8GB of RAM (16GB being a good sweet spot) and a really fast SSD (preferably with a BUS that don't suffer from SATA 3's bottlenecks).
+Conclusão: se puder, compre um bom SSD. Se tiver PCI Express x4, vá além e compre um SSD M.2 como o [Samsung 950 EVO M.2](http://www.samsung.com/semiconductor/minisite/ssd/product/consumer/950pro.html). A melhor coisa que você pode fazer é ter mais de 8GB de RAM (16GB é um bom ponto de equilíbrio) e um SSD realmente rápido (de preferência com um barramento que não sofra os gargalos do SATA 3).
 
-With all the tweaks and tunings, I am happy to report that my years old Lenovo tower is running as smoothly as it can, being responsive enough even in higher loads, with this shit slow mechanical hard drive. And as a bonus, if you choose to stay in GNOME 3, install the nice [Flat Plat](https://github.com/nana-4/Flat-Plat) theme, heavily inspired by Material Design, and the [Paper](https://snwh.org/paper) or [Moka](https://snwh.org/moka) icon sets.
+Com todos esses ajustes e otimizações, fico feliz em reportar que meu velho Lenovo tower está rodando tão bem quanto possível — responsivo o suficiente mesmo em cargas mais altas, com esse HD mecânico lento. E como bônus, se você optar por ficar no GNOME 3, instale o tema [Flat Plat](https://github.com/nana-4/Flat-Plat), fortemente inspirado no Material Design, e os ícones [Paper](https://snwh.org/paper) ou [Moka](https://snwh.org/moka).

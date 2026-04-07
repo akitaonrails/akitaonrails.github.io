@@ -1,40 +1,43 @@
 ---
-title: 'Ex Manga Downloadr - Part 6: The Rise of FLOW'
+title: 'Ex Manga Downloadr - Parte 6: A Ascensão do FLOW'
 date: '2017-06-13T15:59:00-03:00'
-slug: ex-manga-downloadr-part-6-the-rise-of-flow
+slug: ex-manga-downloadr-parte-6-a-ascensao-do-flow
+translationKey: ex-manga-downloadr-6
+aliases:
+- /2017/06/13/ex-manga-downloadr-part-6-the-rise-of-flow/
 tags:
 - beginner
 - learning
 - elixir
-- english
 - exmangadownloadr
+- traduzido
 draft: false
 ---
 
-It's been way more than a year since I posted about my pet project [Ex Manga Downloadr](https://github.com/akitaonrails/ex_manga_downloadr). Since then I just did small updates to keep up with the current Elixir and libraries versions.
+Faz bem mais de um ano desde que escrevi sobre meu projeto pessoal [Ex Manga Downloadr](https://github.com/akitaonrails/ex_manga_downloadr). Desde então fiz apenas pequenas atualizações para acompanhar as versões mais recentes do Elixir e das bibliotecas.
 
-As a quick recap, the exercise is that I want to web scrap from MangaReader.net, a bunch of images, organized in pages and chapters, and in the end it should compile organized PDFs so I can load them on a Kindle device.
+Para recapitular rapidamente: o exercício é fazer web scraping no MangaReader.net, baixar um monte de imagens organizadas em páginas e capítulos e, no final, compilar PDFs organizados para poder ler num Kindle.
 
-Web scrapping, is a simple loop of HTTP GETs over a ton of URLs, scrapping the HTML, and fetching more URLs to download.
+Web scraping é basicamente um loop de HTTP GETs em cima de toneladas de URLs, raspando o HTML e coletando mais URLs para baixar.
 
-In many simple languages, people usually solve this naively in 2 ways:
+Em linguagens mais simples, as pessoas costumam resolver isso de dois jeitos ingênuos:
 
-* A simple nested loop. One single thread, sequencial fetches. So if you have 5,000 links and each links takes 10 seconds to fetch, it's basically 10 * 5,000 = 50,000 seconds, which is a stupid long time.
-* A simple spawn of processes, fibers, threads or parallel I/O in a reactor, all at once. An attempt to paralelize all fetches at once.
+* Um loop aninhado simples. Uma única thread, fetches sequenciais. Se você tem 5.000 links e cada um leva 10 segundos para buscar, são 10 * 5.000 = 50.000 segundos — um tempo ridiculamente longo.
+* Spawn de processos, fibers, threads ou I/O paralelo em um reactor, tudo de uma vez. Uma tentativa de paralelizar todos os fetches simultaneamente.
 
-Everybody probably agree that the first option is stupid. Now, the second one is tricky.
+Todo mundo concorda que a primeira opção é ingênua. Mas a segunda tem seus problemas.
 
-The tricky part is **CONTROL**.
+O ponto complicado é o **CONTROLE**.
 
-Anyone in Go would say _"oh, this is easy, just put a loop and spawn a bunch of goroutines"_ or anyone in Node.js would say _"oh, this is easy, just put a loop, make the fetch - they all will run asynchronously - and add callbacks, a basic async/await."_
+Qualquer pessoa em Go diria _"ah, é fácil, é só fazer um loop e disparar um monte de goroutines"_, ou qualquer pessoa em Node.js diria _"ah, é fácil, é só fazer um loop, chamar o fetch — tudo roda assincronamente — e adicionar callbacks, um async/await básico."_
 
-They're not wrong, but this is still too naive an implementation. It's trivial to trigger hundreds or thousands of parallel requests. Now, what happens if one fails and you have to retry? What happens if the MangaReader has a throttling system that will either start cutting down connections or timing them out? Or if your internet bandwidth is just not enough, and after a certain amount of requests you start having diminishing returns and time outs?
+Não estão errados, mas ainda é uma implementação ingênua demais. Disparar centenas ou milhares de requisições paralelas é trivial. O problema vem depois: o que acontece se uma falha e você precisar fazer retry? E se o MangaReader tiver um sistema de throttling que começa a derrubar ou travar conexões? E se sua banda de internet simplesmente não der conta e, a partir de um certo ponto, você começar a ter retornos decrescentes e timeouts?
 
-The message is: it's damn trivial to spawn parallel stuff. it's damn complicated to control paralle stuff.
+A mensagem é: disparar coisas em paralelo é trivialmente fácil. Controlar coisas em paralelo é complicado de verdade.
 
-This is why, in my first implementation in Elixir, I introduced a complicated implementation using a combination of a custom GenServer, Elixir's own Task infrastructure for async/await pattern, and [Poolboy](https://github.com/devinus/poolboy) to control the rate of the parallelism. This is how you control the bottleneck out to slow resources: using pools and queues (which is why every good database has a connection pool, remember [C3P0](https://sourceforge.net/projects/c3p0/)?)
+Por isso, na minha primeira implementação em Elixir, introduzi uma solução mais elaborada: uma combinação de um GenServer customizado, a infraestrutura de Task do próprio Elixir para o padrão async/await, e o [Poolboy](https://github.com/devinus/poolboy) para controlar a taxa de paralelismo. É assim que você controla o gargalo de recursos lentos: usando pools e filas (por isso todo banco de dados decente tem um connection pool — lembra do [C3P0](https://sourceforge.net/projects/c3p0/)?)
 
-This is one snippet of my older implementation:
+Um trecho da minha implementação mais antiga:
 
 ```ruby
 def chapter_page([chapter_link, source]) do
@@ -46,7 +49,7 @@ def chapter_page([chapter_link, source]) do
 end
 ```
 
-Yes, it's very ugly, and there are boilerplates for the GenServer, the custom Supervisor to initialize Poolboy and so on. And the higher level workflow code looks like this:
+Feio, né? E ainda tem todo o boilerplate do GenServer, do Supervisor customizado para inicializar o Poolboy e por aí vai. O código de workflow de alto nível ficava assim:
 
 ```ruby
 def pages({chapter_list, source}) do
@@ -58,13 +61,13 @@ def pages({chapter_list, source}) do
 end
 ```
 
-So, inside the `Worker` module each public method wraps the GenServer internal calls into a `Task async` and in the collection iteration we add `Task.await` to actually wait for all parallel calls to finish, so we can finally reduce the results.
+Dentro do módulo `Worker`, cada método público encapsulava as chamadas internas ao GenServer em um `Task async`, e na iteração da coleção adicionávamos `Task.await` para aguardar todas as chamadas paralelas terminarem — só então reduziamos os resultados.
 
-Elixir now comes with this very interesting [`GenStage`](https://elixir-lang.org/blog/2016/07/14/announcing-genstage/) infrastructure that promises to replace `GenEvent` and the use case is when you have a producer-consumer situation with back-pressure. Basically when you have slow endpoints and you would end up having to control bottlenecks.
+O Elixir agora vem com uma infraestrutura muito interessante chamada [`GenStage`](https://elixir-lang.org/blog/2016/07/14/announcing-genstage/), que promete substituir o `GenEvent`. O caso de uso ideal é quando você tem uma situação de produtor-consumidor com back-pressure — exatamente quando há endpoints lentos e você precisa controlar gargalos.
 
-Then, [Flow](https://github.com/elixir-lang/flow) is an easier high abstraction that you can use almost the same way you would use `Enum` in your collections, but instead of sequential mapping, it takes care of parallel traversing and control of batches. So the code is very similiar but without you having to control the parallelization controls manually.
+Aí vem o [Flow](https://github.com/elixir-lang/flow), uma abstração de alto nível que você usa de forma quase idêntica ao `Enum` nas suas coleções — mas em vez de mapeamento sequencial, ele cuida do traversal paralelo e do controle de lotes. O código fica muito parecido, só que sem você precisar gerenciar os controles de paralelização na mão.
 
-This is the [full commit](https://github.com/akitaonrails/ex_manga_downloadr/commit/b117f5236098f6d37e332633acb787be46a09d84) where I could remove Poolboy, remove my custom GenServer, reimplement the Worker as simple module of functions and then the workflow could get rid off the async/await pattern and use Flow instead:
+Esse é o [commit completo](https://github.com/akitaonrails/ex_manga_downloadr/commit/b117f5236098f6d37e332633acb787be46a09d84) onde consegui remover o Poolboy, remover o meu GenServer customizado, reimplementar o Worker como um módulo simples de funções e fazer o workflow descartar o padrão async/await em favor do Flow:
 
 ```ruby
 def pages({chapter_list, source}) do
@@ -78,24 +81,24 @@ def pages({chapter_list, source}) do
 end
 ```
 
-The only boilerplate left is the `Flow.from_enumerable()` and `Flow.partition()` wrapping the `Flow.map`, and that's it!
+O único boilerplate que sobrou é o `Flow.from_enumerable()` e o `Flow.partition()` envolvendo o `Flow.map` — e pronto!
 
-Notice I configured `@max_demand` to be 60. You must tweak it to be larger or smaller depending on your internet connection, you have to experiment it. By default, Flow will trigger 500 processes in parallel, which is way too much for a web scrapping on a normal home internet connection and you will suffer diminishing returns. That's what I had to do previously with Poolboy, by initiating a pool of around 60 transactions at most.
+Repara que configurei `@max_demand` como 60. Você precisa ajustar esse valor para mais ou para menos dependendo da sua conexão com a internet — é questão de experimentar. Por padrão, o Flow dispara 500 processos em paralelo, o que é demais para web scraping numa conexão residencial normal: você vai sofrer retornos decrescentes. Era exatamente isso que eu controlava antes com o Poolboy, limitando o pool a cerca de 60 transações simultâneas no máximo.
 
-Unfortunately not everything is as straight forward as it seems. Running this new version on the test mode I get this result:
+Infelizmente, nem tudo é tão simples quanto parece. Rodando essa nova versão no modo de teste, o resultado foi:
 
 ```
 58,85s user 13,93s system 37% cpu 3:13,78 total
 ```
 
-So a total time of more than 3 minutes, using around 37% of the available CPU.
+Mais de 3 minutos no total, usando cerca de 37% da CPU disponível.
 
-My immediate previous version using all the shenanigans of Poolboy, Task.Supervisor, GenServer, etc still gives me this:
+Minha versão anterior imediata, com toda aquela engenharia do Poolboy, Task.Supervisor, GenServer e companhia, ainda me dá isso:
 
 ```
 100,67s user 20,83s system 152% cpu 1:19,92 total
 ```
 
-Less than **HALF** the time, albeit using all my CPU cores. So my custom implementation still uses my resources to the maximum. There is still something in the Flow implementation I didn't quite get right. I already tried to bump up the `max_demand` from 60 up to 100 but that didn't improve anything. Leaving it to the default 500 slows everything down to more than 7 minutes. 
+Menos da **METADE** do tempo, ainda que usando todos os núcleos da CPU. Minha implementação customizada ainda aproveita melhor os recursos disponíveis. Tem algo na implementação com Flow que ainda não acertei. Já tentei aumentar o `max_demand` de 60 para 100 e não melhorou nada. Deixar no padrão 500 piora tudo — mais de 7 minutos.
 
-All in all, at least it makes the implementation far easier on the eyes (hence, way easier to maintain), but either the Flow implementation has bottlenecks or I am using it wrong at this point. If you know what it is, let me know in the comments section below.
+De qualquer forma, pelo menos a implementação ficou muito mais fácil de ler (e consequentemente de manter). Mas ou a implementação com Flow tem gargalos que ainda não identifiquei, ou estou usando ele de forma errada. Se você souber o que é, deixa nos comentários.

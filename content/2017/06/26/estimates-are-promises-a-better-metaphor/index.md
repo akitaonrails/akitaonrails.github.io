@@ -1,226 +1,228 @@
 ---
-title: Estimates are Promises - A Better Metaphor
+title: "Estimativas São Promessas - Uma Metáfora Melhor"
 date: '2017-06-26T17:44:00-03:00'
-slug: estimates-are-promises-a-better-metaphor
+slug: estimativas-sao-promessas-uma-metafora-melhor
+translationKey: estimates-are-promises
+aliases:
+- /2017/06/26/estimates-are-promises-a-better-metaphor/
 tags:
 - off-topic
 - principles
 - management
 - agile
-- english
+- traduzido
 draft: false
 ---
 
-If you didn't know, I am frequently answering questions over Quora. [Follow me there](https://www.quora.com/profile/Fabio-Akita), so far I wrote almost 600 answers, many of which resemble my longest blog posts here.
+Se você não sabia, eu respondo perguntas no Quora com frequência. [Me siga lá](https://www.quora.com/profile/Fabio-Akita) — até agora escrevi quase 600 respostas, muitas delas parecidas com os posts mais longos daqui do blog.
 
-One of the most popular answer regards the subject of ["What is the hardest thing you do as a software engineer?"](https://www.quora.com/What-is-the-hardest-thing-you-do-as-a-software-engineer/answer/Fabio-Akita). I wrote a similar answer in Brazilian Portuguese in the post ["Estimativas são Promessas. Promessas devem ser cumpridas."](http://www.akitaonrails.com/2013/08/23/off-topic-estimativas-sao-promessas-promessas-devem-ser-cumpridas).
+Uma das respostas mais populares trata do assunto ["Qual é a coisa mais difícil que você faz como engenheiro de software?"](https://www.quora.com/What-is-the-hardest-thing-you-do-as-a-software-engineer/answer/Fabio-Akita). Escrevi uma resposta parecida em português no post ["Estimativas são Promessas. Promessas devem ser cumpridas."](http://www.akitaonrails.com/2013/08/23/off-topic-estimativas-sao-promessas-promessas-devem-ser-cumpridas).
 
-> In a nutshell, you can never give an estimate that is "correct". If you could, it would not be an "estimate", it would be a "prediction".
+> Em resumo: você nunca consegue dar uma estimativa "correta". Se conseguisse, não seria uma "estimativa" — seria uma "previsão".
 
-Let us assume that we have neither precognition powers nor magic crystal balls to tell us the future.
+Vamos assumir que não temos poderes de precognição nem bolas de cristal mágicas para prever o futuro.
 
-To estimate something is to "guess" the value of something. It's always a guess. It's the same thing as a valuation. And as any guess, it can never be deemed "correct". It's just a likely candidate among an infinite range of possible values.
+Estimar algo é "chutar" o valor de algo. É sempre um chute. É a mesma coisa que uma avaliação. E como qualquer chute, nunca pode ser considerado "correto". É apenas um candidato provável dentro de uma faixa infinita de valores possíveis.
 
-> There is zero connection between a guess and the outcome. Understand this simple truth: saying something can happen does not MAKE it happen.
+> Não existe nenhuma conexão entre um chute e o resultado. Entenda essa verdade simples: dizer que algo pode acontecer não FAZ com que aconteça.
 
-Estimating tomorrow's weather as rainy does not MAKE it rain. Estimating the results of the Super Ball does not MAKE it happen. Therefore, there is zero correlation between an estimate and the actual outcome.
+Estimar que vai chover amanhã não FAZ chover. Estimar o resultado do Super Bowl não FAZ acontecer. Portanto, não há correlação entre uma estimativa e o resultado real.
 
-I stated in the aforementioned articles that **"Estimates are Promises"**. The intention was to provoke a reaction as most people assume that estimates can never be promises exactly because of what was just explained.
+Eu disse nos artigos mencionados que **"Estimativas são Promessas"**. A intenção era provocar uma reação, já que a maioria das pessoas assume que estimativas jamais podem ser promessas — exatamente pelo que acabei de explicar.
 
-What makes promises special is that once you promise something it is expected that you **ACT** upon realizing it.
+O que torna uma promessa especial é que, ao prometer algo, espera-se que você **AJA** para realizá-la.
 
 ![Skin in the Game](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/643/Skin-in-the-Game.png)
 
-> No one that has no "skin in the game" should give estimates.
+> Ninguém que não tem "skin in the game" deveria dar estimativas.
 
-If you're not an active player in the game, you should not give any guesses. The same way no one makes promises for someone else. 
+Se você não é um jogador ativo no jogo, não deveria dar chutes. Da mesma forma que ninguém faz promessas em nome de outra pessoa.
 
-Can you actually make credible promises and meet them? Yes, you can, but first, you must understand a few more truths about reality.
+Você consegue fazer promessas críveis e cumpri-las? Sim, consegue — mas primeiro precisa entender mais algumas verdades sobre a realidade.
 
-You probably already saw many articles explaining many methodologies and project management techniques. I believe most of them succeed in explaining the Whats and the Hows, but as usual, they all fail in explaining the Whys.
+Você provavelmente já leu muitos artigos explicando metodologias e técnicas de gerenciamento de projetos. A maioria deles até que consegue explicar os "o quês" e os "comos", mas como sempre, falham em explicar os "porquês".
 
-Why do we need those methodologies? Why are they even needed? Why do they work? What are the hidden mechanisms that they put in motion?
+Por que precisamos dessas metodologias? Por que elas são necessárias? Por que funcionam? Quais são os mecanismos ocultos que elas colocam em movimento?
 
-What makes Agile techniques different from your usual Homeopathy or budget Self-Help cliché?
+O que diferencia as técnicas Ágeis da homeopatia ou do clichê de autoajuda barata?
 
-### It's always all about Paretto
+### É sempre sobre Pareto
 
-There is no such thing as a **precise** project scope. There is a limit to add details after which you just get [**diminishing returns**](http://www.investopedia.com/terms/l/lawofdiminishingmarginalreturn.asp).
+Não existe escopo de projeto **preciso**. Existe um limite para adicionar detalhes, depois do qual você passa a ter [**retornos decrescentes**](http://www.investopedia.com/terms/l/lawofdiminishingmarginalreturn.asp).
 
-The most precise level of detail one feature scope can have is the actual coding of the feature. This is important: the lines of code from programming is **NOT** the outcome. The execution of that code in runtime is what end users will actually experience.
+O nível mais preciso de detalhe que o escopo de uma funcionalidade pode ter é o próprio código. Isso é importante: as linhas de código da programação **NÃO** são o produto final. O que os usuários vão de fato experimentar é a execução desse código em tempo de execução.
 
-The programming itself is the **ACTUAL blueprint**. The diagrams, the use cases, the user stories or any other non-programming before that is just draft, a mere sketch.
+A programação em si é o **blueprint real**. Os diagramas, os casos de uso, as user stories ou qualquer outra coisa que vem antes da programação são apenas rascunho — um mero esboço.
 
-A naive architect or designer might think that the detailed diagrams or use case documents, fancy powerpoint slides, have the same worth as an engineering blueprint. But they do not: they're the equivalent **sketch in a napkin**. Volatile, mostly worthless actually.
+Um arquiteto ou designer ingênuo pode achar que diagramas detalhados, documentos de casos de uso e slides bonitos de PowerPoint têm o mesmo valor que um blueprint de engenharia. Mas não têm: são o equivalente a um **rabisco no guardanapo**. Voláteis e, na prática, quase inúteis.
 
 ![Napkin Sketch](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/644/Screenshot_from_2017-06-26_16-19-14.png)
 
-_"But isn't the programming the same as the construction phase itself, laying bricks on top of bricks?¨_ - **NO**, this is not what a programmer does. The brick work is the task of the so-called language interpreter or the compiler spitting out the binary that executes.
+_"Mas a programação não é a mesma coisa que a fase de construção, colocar tijolo sobre tijolo?"_ - **NÃO**, isso não é o que um programador faz. O trabalho de empilhar tijolos cabe ao interpretador da linguagem ou ao compilador que gera o binário executável.
 
-This is the metaphor that make non-programmers crazy: in engineering, the construction itself is the most expensive and time consuming parts. In programming, the blueprinting (the coding) is the expensive part, and the "construction" is actually trivial (just compiling the code, which is automatic).
+Essa é a metáfora que deixa os não-programadores malucos: na engenharia, a construção em si é a parte mais cara e demorada. Na programação, a parte cara é criar o blueprint (escrever o código), e a "construção" é trivial (só compilar, o que é automático).
 
-The same way, a project scope is just a set of sketches. We should dump the notion that there will ever exist a **"complete"** scope of a project. There is no way to say "100% of the scope" or "closed scope", because a software project scope is, by definiton, always incomplete.
+Da mesma forma, o escopo de um projeto é apenas um conjunto de esboços. Precisamos abandonar a ideia de que vai existir um escopo **"completo"** de projeto. Não tem como dizer "100% do escopo" ou "escopo fechado", porque o escopo de um projeto de software é, por definição, sempre incompleto.
 
-Moreover, I will argue that approximately 80% of this so called "scope" - what I prefer to call sketch - is mostly worthless to most of the end users activities (the admin section, institutional pages that no one reads, complicated signing up processes, etc).
+Além disso, vou argumentar que aproximadamente 80% desse tal "escopo" — o que prefiro chamar de esboço — é praticamente inútil para a maioria das atividades dos usuários finais (a seção administrativa, as páginas institucionais que ninguém lê, processos complicados de cadastro, etc).
 
-This is why every feature list MUST be prioritized. You usually can get by with 20% of the features (this is roughly what people mean when they say "MVP
- or "most viable product"). **Release as early as you can,** get user feedback and refine the rest of the "sketch" you call backlog.
+Por isso toda lista de funcionalidades **precisa** ser priorizada. Você geralmente consegue se virar com 20% das funcionalidades (é isso que as pessoas querem dizer quando falam em "MVP" ou "produto mínimo viável"). **Entregue o mais cedo possível**, colete feedback dos usuários e refine o resto do "esboço" que você chama de backlog.
 
-So, instead of aiming for an all-or-nothing proposition of having to find stupid ass complex equations to figure out a "precise" estimate for an incomplete sketch, assume you can actually deliver EARLY, the first 20% that actually matters and figure out the rest in iterations.
+Então, em vez de buscar uma proposição de tudo-ou-nada tentando achar equações complexas e estúpidas para calcular uma estimativa "precisa" de um esboço incompleto, assuma que você consegue entregar CEDO — os primeiros 20% que realmente importam — e descubra o resto em iterações.
 
-Oh yeah, this is what we call "Agile" by the way.
+É isso que chamamos de "Ágil", aliás.
 
-### Agile is about Risk Management
+### Ágil é sobre Gestão de Riscos
 
-People assume Agility is about project management in terms of managing the "project management" instruments themselves: the backlog, the rituals, the metrics.
+As pessoas assumem que Agilidade é sobre gerenciamento de projetos no sentido de gerenciar os próprios instrumentos de gerenciamento: o backlog, os rituais, as métricas.
 
-Having Agile-like instruments don't make you Agile.
+Ter instrumentos parecidos com Ágil não te torna Ágil.
 
-Being Agile is keeping **Risk** under control.
+Ser Ágil é manter o **Risco** sob controle.
 
-Instead of thinking about projects as an all-or-nothing endeavor. You must start thinking about it as an investor would think about his **portfolio of stocks**. You don't expect the entire portfolio to yield profits, you actually assume that some stock will underperform. You just don't know which, so you dillute your risk.
+Em vez de pensar em projetos como uma proposição de tudo-ou-nada, você precisa começar a pensar como um investidor pensa no seu **portfólio de ações**. Você não espera que todo o portfólio dê lucro — na verdade, você assume que alguns ativos vão ter desempenho abaixo do esperado. Só não sabe quais, então você dilui o risco.
 
 ![Portfolio stocks](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/645/635824249336942840-ThinkstockPhotos-152955327.jpg)
 
-Trying to predict the stock market is an exercise in futility.
+Tentar prever o mercado de ações é um exercício de futilidade.
 
-Trying to predict the precise implementation of a project - specially the long ones - is also an exercise in futility.
+Tentar prever a implementação precisa de um projeto — especialmente os longos — também é um exercício de futilidade.
 
-So you must deal with uncertainty the correct way: by becoming [**Antifragile**](https://www.amazon.com/Antifragile-Things-That-Disorder-Incerto/dp/0812979680).
+Então você precisa lidar com a incerteza do jeito certo: tornando-se [**Antifrágil**](https://www.amazon.com/Antifragile-Things-That-Disorder-Incerto/dp/0812979680).
 
-> "Some things benefit from shocks; they thrive and grow when exposed to volatility, randomness, disorder, and stressors and love adventure, risk, and uncertainty. Yet, in spite of the ubiquity of the phenomenon, there is no word for the exact opposite of fragile. Let us call it antifragile. Antifragility is beyond resilience or robustness. The resilient resists shocks and stays the same; the antifragile gets better" - Nassim Taleb
+> "Algumas coisas se beneficiam de choques; elas prosperam e crescem quando expostas à volatilidade, aleatoriedade, desordem e estressores, e adoram aventura, risco e incerteza. No entanto, apesar da ubiquidade do fenômeno, não existe uma palavra para o exato oposto de frágil. Vamos chamá-lo de antifrágil. A antifragilidade vai além da resiliência ou robustez. O resiliente resiste aos choques e permanece igual; o antifrágil melhora." - Nassim Taleb
 
-Instead of the preposterous exercise in futility of trying to predict uncertainty and random events you do the reasonable thing: you assume Black Swans exist and you can't predict them. So you prepare for the uncertainty in the only reasonable way: by not trying to predict them.
+Em vez do exercício absurdo e inútil de tentar prever incertezas e eventos aleatórios, você faz a coisa razoável: assume que Cisnes Negros existem e que você não consegue prevê-los. Então se prepara para a incerteza da única forma razoável: não tentando prevê-los.
 
-Expose the small mistakes early, correct them often. Implementing everything in a black-box and do a Big Bang deployment is the easiest path to **failure**. Delivering often, exposing the bugs and fixing them constantly is accepting that mistakes will happen and gaining strength in the process as you go.
+Exponha os pequenos erros cedo, corrija-os com frequência. Implementar tudo numa caixa-preta e fazer um deploy Big Bang é o caminho mais fácil para o **fracasso**. Entregar com frequência, expor os bugs e corrigi-los constantemente é aceitar que erros vão acontecer e ganhar força no processo.
 
 [![Antifragile](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/646/Antifragile-3.jpg)](https://www.amazon.com/Antifragile-Things-That-Disorder-Incerto/dp/0812979680)
 
-### A Better Metaphor
+### Uma Metáfora Melhor
 
 ![Iron Ore Furnace](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/642/steel_mill_blast_furnace_coking_coal_iron_ore_600.jpg)
 
-Imagine that you - the non-programmer client or you, the programmer that has no clue how to explain the process to your non-programmer client - have an iron ore furnace to manage.
+Imagine que você — seja o cliente não-programador, seja o programador que não faz ideia de como explicar o processo para o cliente não-programador — tem um alto-forno de minério de ferro para gerenciar.
 
-Thing about those furnaces is that if you heat it too much, they can explode in your face. If you cool it down too much, the ore will harden.
+O problema com esses fornos é que, se você aquecer demais, eles podem explodir na sua cara. Se esfriar demais, o minério endurece.
 
-Your job is to add coal to the furnace. You decide in which rate. If you go too fast it gets exploding hot. If you go too slow you may extinguish the fire and lose your furnace.
+Seu trabalho é adicionar carvão ao forno. Você decide o ritmo. Se for rápido demais, fica quente o suficiente para explodir. Se for devagar demais, você pode apagar o fogo e perder o forno.
 
-Now, try to make an estimate of a constant intake of coal to keep your furnace in good shape.
+Agora, tente fazer uma estimativa de uma entrada constante de carvão para manter o forno em bom estado.
 
-You can't.
+Não consegue.
 
-The easiest way out is to install a **thermometer** that keeps track of the current temperature of the furnace.
+A saída mais fácil é instalar um **termômetro** que acompanha a temperatura atual do forno.
 
-You're safe within a certain margin of temperatures and you speed up or slow down the coal intake by check the thermometer all the time.
+Você fica seguro dentro de uma certa margem de temperaturas e acelera ou desacelera a entrada de carvão verificando o termômetro o tempo todo.
 
-ALL THE FREAKING TIME.
+O TEMPO TODO.
 
 ![Iron Furnace](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/647/iron-4.jpg)
 
-This is what Agile-based "Velocity" (or any of the fancier Monte Carlo simulations) actually is: a thermometer.
+Isso é o que a "Velocidade" do Ágil (ou qualquer simulação de Monte Carlo mais sofisticada) realmente é: um termômetro.
 
-If the Velocity is too high, your team is probably working either extra time or delivering lower quality code. This will backfire because either your team will burn out too fast or the code is accumulating [technical debt](http://www.akitaonrails.com/2017/06/22/the-economics-of-software-development) too fast and you won't be able to pay back. Velocity will drop to a halt if you keep this high (furnace explode).
+Se a Velocidade está alta demais, seu time provavelmente está fazendo hora extra ou entregando código de qualidade inferior. Isso vai dar problema — seu time vai estourar rápido demais ou o código está acumulando [dívida técnica](http://www.akitaonrails.com/2017/06/22/the-economics-of-software-development) rápido demais e você não vai conseguir pagar. A Velocidade vai cair até parar se você mantiver esse ritmo (o forno explode).
 
-If the Velocity is too low, your team is slacking off, your backlog is a useless piece of shit that no one can understand even after 10 hour meetings, or you already left the Velocity get too high and now you're paying back technical debt or your team is dead after burn out (fire extinguised).
+Se a Velocidade está baixa demais, seu time está enrolando, seu backlog é um lixo inútil que ninguém consegue entender mesmo depois de 10 horas de reunião, ou você já deixou a Velocidade ficar alta demais e agora está pagando a dívida técnica, ou seu time está morto de burnout (o fogo apagou).
 
-You want to keep Velocity **steady**, constant. This is what being Agile is all about: keeping an eye on the thermometer and responding.
+Você quer manter a Velocidade **estável**, constante. É disso que se trata ser Ágil: ficar de olho no termômetro e responder.
 
-### The Triforce of Projects
+### O Triângulo de Ferro dos Projetos
 
 ![Iron Triangle](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/650/ironTriangle.jpg)
 
-Welcome to the Iron Triagle of Project Management.
+Bem-vindo ao Triângulo de Ferro do Gerenciamento de Projetos.
 
-> Repeat after me: if I want to lock down the time, the cost, and the scope, **I am a moron**.
+> Repita comigo: se eu quero travar o tempo, o custo e o escopo, **sou um idiota**.
 
-Repeat again.
+Repita de novo.
 
-You should lock down time and cost, and if you read this far, you know you can never lock down "scope", you can just make it fat (and not necessarily more valuable). This is why I always say that the very definition of a Product Manager or Product Owner is to be the bastion of ROI (Return on Investment).
+Você deve travar tempo e custo, e se leu até aqui, sabe que nunca consegue travar o "escopo" — só pode engordá-lo (e não necessariamente torná-lo mais valioso). Por isso sempre digo que a própria definição de um Product Manager ou Product Owner é ser o guardião do ROI (Retorno sobre Investimento).
 
-Now, why?
+Por quê?
 
-Because the Iron Triangle has the following corollary:
+Porque o Triângulo de Ferro tem o seguinte corolário:
 
 ![Project Triangle](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/651/320px-Project-triangle.svg.png)
 
-* If you want it fast and good, it can't be cheap
-* If you want it fast and cheap, it can't be good
-* If you want it good and cheap, it can't be fast
+* Se quer rápido e bom, não pode ser barato
+* Se quer rápido e barato, não pode ser bom
+* Se quer bom e barato, não pode ser rápido
 
-This is a Law, you can't fiddle with it. Pick your choice.
+Isso é uma Lei. Não tem como contornar. Escolha o seu.
 
 ![Make your choice](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/652/keep-calm-and-make-your-choice-9.png)
 
-### How do I keep Promises then?
+### Como Cumprir Promessas então?
 
-Now, with those 3 truths in hand:
+Com essas 3 verdades em mãos:
 
-* You can't have your lunch and eat it too (cheap, fast, and good)
-* You're managing the temperature of the furnace
-* You only need 20% of the "sketch" you call "scope"
+* Não dá pra ter tudo ao mesmo tempo (barato, rápido e bom)
+* Você está gerenciando a temperatura do forno
+* Você só precisa de 20% do "esboço" que chama de "escopo"
 
-Yes, any experienced developer can give you a "ballpark" estimate. A ballpark goes like this:
+Sim, qualquer desenvolvedor experiente consegue te dar uma estimativa de "ballpark". Uma estimativa de ballpark vai assim:
 
-* 1 month (maybe 1 month and a half, but definitely less than 2)
-* 3 months (it's more than 2 months, less than 6 months)
-* 6 months (it's more than 4 months, less than 9 months)
-* it's more than 6 months, probably less than 1 year
+* 1 mês (talvez 1 mês e meio, mas definitivamente menos de 2)
+* 3 meses (é mais de 2 meses, menos de 6 meses)
+* 6 meses (é mais de 4 meses, menos de 9 meses)
+* é mais de 6 meses, provavelmente menos de 1 ano
 
-Don't even try to granulate more than that. It's useless.
+Nem tente granular mais do que isso. É inútil.
 
-**Lock the time.** And **lock the cost** (that being the amount of developers times the hourly rate times the total amount of estimated hours). That's it.
+**Trave o tempo.** E **trave o custo** (que é o número de desenvolvedores vezes a taxa horária vezes o total de horas estimadas). Só isso.
 
-Now jot down what the client call "scope" as user stories in a backlog and have him prioritize it.
+Agora anote o que o cliente chama de "escopo" como user stories num backlog e peça pra ele priorizar.
 
-Start the iterations. After each iteration release to a staging environment. Non-programmers, beware: ALWAYS make sure whoever programmer you hire to ALWAYS deliver testable versions of the delivered stories to a publicly available URL that you can actually visit and test.
+Comece as iterações. Após cada iteração, faça o deploy num ambiente de staging. Não-programadores, atenção: SEMPRE garanta que o programador que você contratar entregue versões testáveis das stories entregues em uma URL publicamente disponível que você possa visitar e testar.
 
-If your programmer refuses to do that or give excuses: **FIRE HIM**.
+Se o programador recusar isso ou der desculpas: **DEMITA**.
 
-If your programmer or company or whatever promises you a certain "closed scope" price, promises to do everything and you believe them, you're too gullible.
+Se o programador, empresa ou seja lá o que for te prometer um preço de "escopo fechado", prometer fazer tudo e você acreditar — você é ingênuo demais.
 
-Do you think it's funny to play this stupid game of _"I'll pretend to tell you that I know the truth and you will pretend that you believe what I tell you."_
+Acha engraçado jogar esse jogo idiota de _"vou fingir que sei a verdade e você vai fingir que acredita no que estou dizendo"_?
 
 ![Actions and Words](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/648/e433998315b73da036e65884b67eba43.jpg)
 
-No serious professional has time to play stupid games and the only honest thing anyone can say about any software project is: _"given my experience I believe the ballpark for this kind of project is within X months, given the Y and Z assumptions"._
+Nenhum profissional sério tem tempo para jogar jogos idiotas, e a única coisa honesta que qualquer um pode dizer sobre qualquer projeto de software é: _"com base na minha experiência, acredito que o ballpark para esse tipo de projeto é de X meses, dados os pressupostos Y e Z"._
 
-Now, you don't have to believe him. You just need to start checking the thermometer. Any non-programmer will be able to assess the quality of the delivery based on the frequent deliveries of the prioritized features.
+Você não precisa acreditar nele. Só precisa começar a verificar o termômetro. Qualquer não-programador consegue avaliar a qualidade da entrega com base nas entregas frequentes das funcionalidades priorizadas.
 
-_"But what if after 2 weeks I don't like the results?"_ Easy: **FIRE HIM**.
+_"Mas e se depois de 2 semanas eu não gostar dos resultados?"_ Simples: **DEMITA**.
 
-And sometimes "firing" is not even the correct word. Sometimes the relationship is difficult and the best thing to do is to go separate ways.
+E às vezes "demitir" nem é a palavra certa. Às vezes o relacionamento é difícil e a melhor coisa é seguir caminhos separados.
 
-You need to accept losing 2 weeks - or any short period of time - as part of the Risk Management. It's better to accept losing 2 weeks worth of your project budget than having to blindly believe someone for 6 months and having to lose the entire project budget and some more.
+Você precisa aceitar perder 2 semanas — ou qualquer período curto de tempo — como parte da Gestão de Riscos. É melhor aceitar perder 2 semanas do orçamento do projeto do que ter que acreditar cegamente em alguém por 6 meses e ter que perder o orçamento inteiro do projeto e um pouco mais.
 
-Paretto again: Agility is about Risk Management. You accept that losing 20% of your budget is ok. And you play with that. But that's also okay, because you only actually need a bit more than 20% of the sketchy scope you have.
+Pareto de novo: Agilidade é sobre Gestão de Riscos. Você aceita que perder 20% do orçamento é ok. E joga com isso. Mas tudo bem, porque você só precisa de um pouco mais de 20% do esboço vago que você chama de escopo.
 
-See what I just did with the Math here?
+Viu o que fiz com a matemática aqui?
 
-We stop playing around the pretend game and actually manage the risks of the project. You collaborate on the equivalent thermometer which is a combination of the prioritized backlog (the scale), the velocity (the temperature), and you keep an eye on the partial deliveries on the staging environment.
+Paramos de jogar o jogo do faz-de-conta e de fato gerenciamos os riscos do projeto. Você colabora no termômetro equivalente, que é uma combinação do backlog priorizado (a escala), a velocidade (a temperatura), e fica de olho nas entregas parciais no ambiente de staging.
 
-### Conclusion
+### Conclusão
 
-So yes, Estimates should be taken as seriously as Promises. You can give reasonable Estimates granted that you can manage the Risks and the Client accepts the rules of the game (there is no "closed, complete, scope", and "priorities first", and "testing and accepting delivered features every week").
+Então sim, Estimativas devem ser levadas tão a sério quanto Promessas. Você consegue dar Estimativas razoáveis desde que consiga gerenciar os Riscos e o Cliente aceite as regras do jogo (não existe "escopo fechado e completo", "prioridades primeiro" e "testar e aceitar funcionalidades entregues toda semana").
 
-The idea behind Promises is that you have to **MANAGE** in order to meet them. The best way to do that is to frequently stop, re-assess and then keep going. It feels like you're wasting time, but you're actually saving yourself from wasting time.
+A ideia por trás das Promessas é que você precisa **GERENCIAR** para cumpri-las. A melhor forma de fazer isso é parar com frequência, reavaliar e então continuar. Parece perda de tempo, mas você está se salvando de desperdiçar tempo de verdade.
 
-If you don't have a skin in the game, back off.
+Se você não tem skin in the game, dê um passo atrás.
 
-Velocity is meant to be kept steady. Not always increasing. Not always volatile and unpredictable. Keep velocity in a predictable rate and use the variance as indication of being too fast or too slow, adjust the other variable, measure again and go. Just like a furnace thermometer.
+A Velocidade deve ser mantida estável. Não sempre crescendo. Não sempre volátil e imprevisível. Mantenha a velocidade em um ritmo previsível e use a variância como indicação de estar rápido demais ou devagar demais, ajuste a outra variável, meça de novo e continue. Igual a um termômetro de forno.
 
-There are several versions of "thermometers" from Joel Spolsky's [Evidence Based Scheduling](https://www.joelonsoftware.com/2007/10/26/evidence-based-scheduling/) all the way to fancy Monte Carlo simulations and other stochastic processes (they are all thermometers and NOT estimation tools).
+Existem várias versões de "termômetros", do [Evidence Based Scheduling](https://www.joelonsoftware.com/2007/10/26/evidence-based-scheduling/) do Joel Spolsky até as sofisticadas simulações de Monte Carlo e outros processos estocásticos (todos são termômetros e NÃO ferramentas de estimativa).
 
-What stops you from doing that is using the wrong metaphors and the wrong references.
+O que te impede de fazer isso é usar as metáforas e referências erradas.
 
-Instead of trying to find equivalent metaphors in the construction business, factories and other "hard"-ware assemblies, you should look elsewhere, where you will find other "soft"-ware processes.
+Em vez de tentar encontrar metáforas equivalentes na construção civil, fábricas e outras montagens de "hard"-ware, olhe em outro lugar, onde você vai encontrar outros processos de "soft"-ware.
 
-Musicians have deadlines. Painters have deadlines. Choreographers have deadlines. Sports have deadlines. Research laboratories have deadlines. How do they meet them? By constantly checking the current state and comparing to the goals, assessing if what they are doing is actually working and changing what doesn't work.
+Músicos têm prazos. Pintores têm prazos. Coreógrafos têm prazos. Esportes têm prazos. Laboratórios de pesquisa têm prazos. Como eles os cumprem? Verificando constantemente o estado atual e comparando com os objetivos, avaliando se o que estão fazendo está funcionando e mudando o que não funciona.
 
 ![Conducting Star Wars](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/649/conducting_starwars.jpg)
 
-Hollywood has deadlines. They have far worse variables to control than any software project you might ever encounter, and they manage to deliver. And profit.
+Hollywood tem prazos. Tem variáveis muito piores para controlar do que qualquer projeto de software que você possa encontrar, e consegue entregar. E lucrar.
 
-And accept that you can't control all variables, so stop trying. Think of it as the financial markets. One day you have [Ethereum skyrocketting 4,000%](https://motherboard.vice.com/en_us/article/zme78x/why-the-value-of-ethereum-has-skyrocketed-4000-percent) and the very next day you have it [falling down to ashes in a flash-crash](http://www.cnbc.com/2017/06/22/buyers-beware-lessons-from-the-ethereum-flash-crash.html).
+Aceite que você não consegue controlar todas as variáveis — para de tentar. Pense nisso como os mercados financeiros. Um dia você tem o [Ethereum disparando 4.000%](https://motherboard.vice.com/en_us/article/zme78x/why-the-value-of-ethereum-has-skyrocketed-4000-percent) e no dia seguinte [despencando em um flash-crash](http://www.cnbc.com/2017/06/22/buyers-beware-lessons-from-the-ethereum-flash-crash.html).
 
-Don't aim to become resistent or resilient. Prepare to become Antifragile.
+Não tente se tornar resistente ou resiliente. Prepare-se para se tornar Antifrágil.

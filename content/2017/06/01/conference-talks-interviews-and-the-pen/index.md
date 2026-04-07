@@ -1,92 +1,96 @@
 ---
-title: Conference Talks, Interviews, and the Pen!
+title: "Palestras em Conferências, Entrevistas e a Caneta"
 date: '2017-06-01T13:24:00-03:00'
-slug: conference-talks-interviews-and-the-pen
+slug: palestras-em-conferencias-entrevistas-e-a-caneta
+translationKey: conference-talks-interviews
+aliases:
+- /2017/06/01/conference-talks-interviews-and-the-pen/
 tags:
 - off-topic
 - conferences
+- traduzido
 draft: false
 ---
 
-"Sell me this pen!"
+"Me venda essa caneta!"
 
 ![Sell me this Pen](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/621/sell_me_this_pen.jpg)
 
-This is a very old tricky question used in interviews. And if you at least watched Scorcese's magnificent "Wolf of Wall Street", you will remember this phrase.
+Essa é uma pergunta clássica e capciosa usada em entrevistas. E se você assistiu ao magnífico "O Lobo de Wall Street" do Scorsese, vai se lembrar dessa frase na hora.
 
-But how many of you actually thought through this tricky question?
+Mas quantos de vocês pararam pra pensar de verdade no que essa pergunta implica?
 
-### Introduction
+### Introdução
 
-There are many number of ways you can try to sell me the pen. You can tell me about the tradition of its manufacturer brand. You can tell me about its outstanding smoothness. You can try to persuade me on the availability of different colors and sizes. You can even steer away from the pen and start bragging about how many hundreds of pens you sold already, your tour de force.
+Existem inúmeras formas de tentar me vender uma caneta. Você pode falar sobre a tradição da marca fabricante. Pode exaltar a suavidade excepcional com que ela escreve. Pode tentar me convencer pela variedade de cores e tamanhos disponíveis. Pode até desviar o foco da caneta em si e começar a se gabar de quantas centenas de canetas já vendeu, o seu currículo de guerra.
 
-I will argue that you can do all of those, but you will probably miss the point. And you will not sell the pen most of the time.
+Meu argumento é que você pode fazer tudo isso e ainda assim perder o ponto. E na maioria das vezes não vai vender a caneta.
 
-I've seen this happen many times. Most tech talks I've seen, for example, have this format:
+Já vi isso acontecer muitas vezes. A maioria das palestras técnicas que assisti, por exemplo, segue esse roteiro:
 
-1. Who is the ~~sales person~~ speaker. Achievements. Tour de force.
-2. What is being sold. The Pen.
-3. How good the Pen is or how easy it is to use.
-4. "Buy it" - end of story
+1. Quem é o ~~vendedor~~ palestrante. Realizações. Currículo de guerra.
+2. O que está sendo vendido. A Caneta.
+3. Como a Caneta é boa ou como é fácil de usar.
+4. "Compre" — fim da história.
 
-There is nothing wrong with those points. Sometimes the speaker goes as far as doing "flashy" and "gimmicky" things. Doing a live coding session to demonstrate how good he is (not the pen). Doing a tech demo demonstrating what the pen is. All fireworks and firecrackers. But those dissipate very quickly, and no one talks about it later. It doesn't **stick**.
+Não há nada de errado com esses pontos em si. Às vezes o palestrante vai além e faz coisas "chamativas" e "espetaculosas". Uma sessão de live coding para demonstrar o quanto ele é bom (não a caneta). Uma demo técnica mostrando o que a caneta faz. Fogos de artifício e rojões. Mas tudo isso se dissipa rapidamente, e ninguém fala sobre aquilo depois. Não **gruda**.
 
-> And you **don't** sell the pen.
+> E você **não** vende a caneta.
 
-Sometimes, brute force alone, the strength of the brand behind you, is enough to persuade a lot of people. But not most of them. Instead of selling the pen, the speaker sells the big brand, Microsoft, Google, Facebook. It was ["no one was ever fired for buying IBM"](https://en.wikipedia.org/wiki/Fear,_uncertainty_and_doubt) in 60's. The famous F.U.D. (the triforce of "Fear, Uncertainty, Doubt"). Now it is "no one - usually - gets fired for choosing Facebook or Google".
+Às vezes a força bruta sozinha, o peso da marca por trás de você, é suficiente para persuadir muita gente. Mas não a maioria. Em vez de vender a caneta, o palestrante vende a big brand, Microsoft, Google, Facebook. Era ["ninguém foi demitido por comprar IBM"](https://en.wikipedia.org/wiki/Fear,_uncertainty_and_doubt) nos anos 60. O famoso F.U.D. (a trifeta de "Medo, Incerteza, Dúvida"). Hoje é "ninguém — geralmente — é demitido por escolher Facebook ou Google".
 
-Again, you're not selling the pen.
+De novo, você não está vendendo a caneta.
 
-### Elaboration
+### Desenvolvimento
 
-As any really good sales person will tell you, you're missing the most important point in the sequence above, between items 3 and 4. You wasted an insurmountable amount of time describing the "What". Most tech speakers waste a very long time explaining the "How", with code examples, live coding, trying to convince you how easy it may be.
+Como qualquer bom vendedor vai te dizer, você está perdendo o ponto mais importante da sequência acima, entre os itens 3 e 4. Você desperdiçou uma quantidade absurda de tempo descrevendo o "O Quê". A maioria dos palestrantes técnicos passa um tempo enorme explicando o "Como", com exemplos de código, live coding, tentando te convencer de como aquilo pode ser fácil.
 
-But they often forget to ask the question: "WHY the pen could be important for YOU". "YOU" being the audience. You're not connecting. You're lacking empathy. You're _telling_ them, not _persuading_ them. Telling and Persuading are worlds apart.
+Mas eles frequentemente esquecem de fazer a pergunta: "POR QUE essa caneta pode ser importante pra VOCÊ". O "VOCÊ" sendo a audiência. Você não está conectando. Falta empatia. Você está _dizendo_ pra eles, não _persuadindo_. Dizer e persuadir são coisas completamente diferentes.
 
-The WHY is the most important thing. And the difficult part in large audiences is that each person has a different "WHY" that needs a good answer.
+O POR QUE é o que mais importa. E a parte difícil com audiências grandes é que cada pessoa tem um "POR QUE" diferente que precisa de uma boa resposta.
 
-Whenever I see a speaker/writer/evangelist giving too much time for imaterial stuff like "benchmarks", "performance", "hyper-modularized architectures", I see them missing a large portion of the audience. Because while they have legitimate reasons for worrying about those points - because they experienced it inside Unicorns like Netflix, Facebook or Twitter - I will argue that more than 95% of the audience population will never have those problems.
+Sempre que vejo um palestrante/escritor/evangelista dedicando tempo demais a coisas imateriais como "benchmarks", "performance", "arquiteturas hiper-modulares", vejo alguém perdendo uma fatia enorme da audiência. Porque enquanto essas pessoas têm motivos legítimos para se preocupar com esses pontos — afinal, vivenciaram isso dentro de Unicórnios como Netflix, Facebook ou Twitter — mais de 95% do público nunca vai ter esses problemas.
 
-Therefore, you're trying to push a Lamborghini to people that not only can't afford it, but even if they could, it's not nearly at the top of their priority lists. Yes, the Lamborghini is obviously a fast and fine car. But WHY do I need it? WHY are you trying to push it to me? WHY is this pen even relevant to me?
+Portanto, você está tentando empurrar uma Lamborghini pra pessoas que não só não podem pagar por ela, mas que, mesmo que pudessem, ela não estaria nem perto do topo das prioridades. Sim, a Lamborghini é obviamente um carro rápido e bonito. Mas POR QUE eu preciso dela? POR QUE você está tentando me empurrar isso? POR QUE essa caneta sequer é relevante pra mim?
 
-> Your priority is not my priority!
+> Sua prioridade não é a minha prioridade!
 
-I see an interview as a talk for an audience of one. And I see a blog post as a talk for an audience I can't see. The structure is exactly the same.
+Vejo uma entrevista como uma palestra para uma audiência de uma pessoa. E vejo um post de blog como uma palestra para uma audiência que não consigo ver. A estrutura é exatamente a mesma.
 
-But in a one-to-one interview we all have an extra very important advantage: you get to ask direct questions! Do you realize how important that is? In a talk with an audience you have to make assumptions on what they want to hear. In an interview you get to ask directly and give straightforward answers, closing the gap of assumptions.
+Mas numa entrevista individual temos uma vantagem extra muito importante: você pode fazer perguntas diretas! Você percebe o quanto isso é valioso? Numa palestra com audiência você precisa fazer suposições sobre o que as pessoas querem ouvir. Numa entrevista você pode perguntar diretamente e dar respostas objetivas, eliminando o espaço das suposições.
 
-The irony is that most people don't ask questions on interviews. It's so much easier to make assumptions: "everybody wants to hear what I like to hear, because I know better". This is the utmost lack of empathy. Let's say that you're a top engineer working on performance sensitive tech in your unicorn startup. You tried everything and decided to write key real-time components near the bare bone metal, in C. And now you give talks about how important it is that everybody starts everything in C.
+A ironia é que a maioria das pessoas não faz perguntas em entrevistas. É muito mais fácil assumir: "todo mundo quer ouvir o que eu gosto de ouvir, porque eu entendo mais do assunto". Isso é a falta de empatia no seu nível máximo. Imagine que você é um engenheiro top trabalhando com tecnologia sensível a performance na sua startup unicórnio. Você tentou tudo e decidiu escrever componentes críticos de tempo real próximos ao metal, em C. E agora você dá palestras sobre como é fundamental que todo mundo comece tudo em C.
 
-Now, communication is an art. Requires research, study, practice. You must understand your mother language very well, the grammar, the many subtle phrase constructions that better convey the message. There are several "design patterns" when it comes to [Argumentation Theory](https://en.wikipedia.org/wiki/Argumentation_theory), many [well known traps](https://en.wikipedia.org/wiki/List_of_fallacies), fallacies you want to avoid. Everything to create a rock solid, simple to grasp, and difficult to refute, line of thought.
+Comunicação é uma arte. Exige pesquisa, estudo, prática. Você precisa dominar muito bem sua língua nativa, a gramática, as muitas construções de frase que melhor transmitem a mensagem. Existem vários "padrões de design" quando se trata de [Teoria da Argumentação](https://en.wikipedia.org/wiki/Argumentation_theory), muitas [armadilhas bem conhecidas](https://en.wikipedia.org/wiki/List_of_fallacies), falácias que você quer evitar. Tudo isso para criar uma linha de raciocínio sólida como rocha, simples de entender e difícil de refutar.
 
-You don't want to be easily proven wrong. So each phrase you deliver is like a chess move: you must anticipate 10 different ways it can be refuted and have responses for each. Which is why you need to practice. Write, talk as much as possible, no matter the event. It's not about the size of the audience and your ego, it's the opportunity to get exposed to an audience with little risk. Only tackle a large audience once you're confident that you can defend your arguments. Calibrate your weapons before you use them. When you start tackling the **WHY** you may be provoking open wounds on the audience, so better be prepared.
+Você não quer ser facilmente derrubado. Então cada frase que você entrega é como um movimento de xadrez: você precisa antecipar 10 formas diferentes de ser refutado e ter respostas para cada uma. Por isso você precisa praticar. Escreva, fale o máximo possível, independente do evento. Não é sobre o tamanho da audiência e o seu ego, é a oportunidade de se expor a um público com pouco risco. Só enfrente uma audiência grande quando você estiver confiante de que pode defender seus argumentos. Calibre suas armas antes de usá-las. Quando você começa a tocar nos **POR QUÊs** você pode estar provocando feridas abertas na audiência, então é melhor estar preparado.
 
-But if you don't go for the WHYs, it's way worse: you're **FORGETTABLE**. You get applauses that the end, and after an hour no one remembers your name. What is the purpose of a speaker no one remembers later? Or a speaker that is funny and people remember the jokes, but can't remember the content of the talk? So they sympathize with the speaker, but the message is irrelevant. If you want to be an actor or comedian, that's fine. If you want to convince people of a certain point of view though, that's **failure**.
+Mas se você não for atrás dos POR QUÊs, é muito pior: você se torna **ESQUECÍVEL**. Você recebe aplausos no final, e uma hora depois ninguém lembra seu nome. Qual é o propósito de um palestrante que ninguém lembra depois? Ou de um palestrante que é engraçado e as pessoas lembram das piadas, mas não lembram o conteúdo da palestra? As pessoas simpatizam com o palestrante, mas a mensagem é irrelevante. Se você quer ser ator ou comediante, ótimo. Mas se você quer convencer pessoas de um ponto de vista, isso é **fracasso**.
 
-And the same goes for writing. You should've learned this in school. If you ever went through college and had to defend a thesis you SHOULD KNOW that the dissertation HAS to be divided in at least 3 sections: Introduction, Elaboration and Argumentation, and Conclusion. This is the WHAT, HOW, and WHY parts.
+O mesmo vale para a escrita. Você deveria ter aprendido isso na escola. Se você passou pela faculdade e teve que defender uma dissertação, DEVERIA SABER que ela PRECISA ser dividida em pelo menos 3 seções: Introdução, Desenvolvimento e Argumentação, e Conclusão. Essas são as partes do O QUÊ, COMO e POR QUÊ.
 
-In a similar topic, if you're into Agile techniques. Do you remember the classic [User Story structure](https://www.mountaingoatsoftware.com/agile/user-stories)? Most people find it super annoying. Every other Kanban-like tool forgets that: they just tell you "write here what you want". And most people just want to write the WHAT. Sometimes they write the HOW. But they feel lazy to think about the WHY.
+No mesmo tema, se você tem afinidade com técnicas Ágeis. Você se lembra da clássica [estrutura de User Story](https://www.mountaingoatsoftware.com/agile/user-stories)? A maioria das pessoas acha isso super irritante. Toda ferramenta no estilo Kanban esquece disso: simplesmente te dizem "escreva aqui o que você quer". E a maioria das pessoas só quer escrever o O QUÊ. Às vezes escrevem o COMO. Mas têm preguiça de pensar no POR QUÊ.
 
-> As a X, I want Y, so that Z.
+> Como X, eu quero Y, para que Z.
 
-The 3rd section is elusive, but it's the ONLY section that matter. It's the WHY. Why do YOU want THAT particular feature? The WHY is the acceptance test. The Done Criteria. The only thing you should be looking for. We write what we THINK we want, not what actually NEEDS to be done. The User Story structure is yet another tool to bend your tiny reptile brain to use your more modern gray matter a bit more.
+A 3ª seção é elusiva, mas é a ÚNICA seção que importa. É o POR QUÊ. Por que VOCÊ quer AQUELA funcionalidade específica? O POR QUÊ é o critério de aceitação. O Critério de Conclusão. A única coisa que você deveria estar buscando. Escrevemos o que ACHAMOS que queremos, não o que realmente PRECISA ser feito. A estrutura de User Story é mais uma ferramenta para forçar o seu cérebro reptiliano a usar um pouco mais da sua matéria cinzenta mais moderna.
 
-### Conclusion
+### Conclusão
 
-My goal  is to bring attention to a point many speakers and blog writers are not doing: you're concentrating too much on the WHAT and the HOW alone and not exploring the audience's true concern: the **WHY**!
+Meu objetivo é chamar atenção para um ponto que muitos palestrantes e blogueiros não estão fazendo: vocês estão se concentrando demais no O QUÊ e no COMO e deixando de explorar a verdadeira preocupação da audiência: o **POR QUÊ**!
 
-Again, whenever you see one of those cheap "my language is better than yours" theme and the argument is: "because in the benchmarks we can clearly see that it's 50% faster" or that "we can clearly see that it uses 50% less memory" or that "we can clearly see that it can run more concurrent processes at once". Those are ALL missing the point.
+De novo, sempre que você ver aquele tema barato de "minha linguagem é melhor que a sua" e o argumento é: "porque nos benchmarks podemos ver claramente que é 50% mais rápida" ou "podemos ver claramente que usa 50% menos memória" ou "podemos ver claramente que consegue rodar mais processos concorrentes ao mesmo tempo". Todos esses pontos estão perdendo o alvo.
 
-This is the HOW. It's fine.
+Isso é o COMO. Tudo bem.
 
-But 95% of your audience will rarely empathize with those points. They will agree on a conscious level, but the subconscious will tell them **the truth**: _"you don't have this problem."_ Most of the time their servers are idling, doing nothing. How good a 50% or a 200% performance gain will help them? It will not.
+Mas 95% da sua audiência raramente vai se identificar com esses pontos. Eles vão concordar num nível consciente, mas o subconsciente vai lhes dizer **a verdade**: _"você não tem esse problema."_ Na maioria das vezes os servidores deles estão ociosos, sem fazer nada. De que adianta um ganho de performance de 50% ou 200% pra eles? Não adianta nada.
 
-It's a major lack of empathy when a programmer, working on a big company, with many different teams colliding with big monoliths and legacy code decide that micro-services is the way to go. And now they "know" that if it's good for them, it ought to be good for everybody, right? Therefore, anyone doing differently are dorks.
+É uma falta grave de empatia quando um programador, trabalhando numa empresa grande, com muitos times diferentes colidindo com monólitos enormes e código legado, decide que microsserviços é o caminho. E agora ele "sabe" que se é bom pra ele, deve ser bom pra todo mundo, certo? Portanto, qualquer um fazendo diferente é um idiota.
 
-They're not. Most of the other teams in the world may be small 3 to 5 people with projects that are yet to see the light of day. And here you have it: trying to implement your wonder over-architecture, and not getting any value back, because it delays their time to market.
+Não é. A maioria dos outros times no mundo pode ser de 3 a 5 pessoas com projetos que ainda nem chegaram à luz do dia. E aí está: tentando implementar sua super-arquitetura mirabolante, sem obter nenhum valor de volta, porque isso atrasa o tempo de lançamento no mercado.
 
-Oh hey, their competition caught up, released first, they lost time to market, and all because they trusted your narrow sighted opinion, your lack of empathy with your audience. And this is the case when they listened to you. Most of them already forgot what you said, because it never touched their true concerns anyway.
+Ah, a concorrência os alcançou, lançou primeiro, eles perderam o timing — e tudo porque confiaram na sua opinião de visão estreita, na sua falta de empatia com sua audiência. E isso no caso em que eles te ouviram. A maioria já esqueceu o que você disse, porque nunca tocou nas preocupações reais deles de qualquer forma.
 
-And I am also to blame, I do this sometimes. In the beginning of my career I did it more, and the older I get the more careful I become on how I craft what I want to say. It's very difficult to see beyond our small routines. It's difficult to communicate with a larger and diverse audience. But if this is the role we chose to pursue, we must do better.
+E eu também sou culpado, faço isso às vezes. No começo da minha carreira fazia mais, e quanto mais velho fico, mais cuidadoso me torno com a forma como construo o que quero dizer. É muito difícil enxergar além das nossas pequenas rotinas. É difícil se comunicar com uma audiência maior e diversa. Mas se esse é o papel que escolhemos perseguir, precisamos fazer melhor.
 
-I hope this gave you some insights in how to structure your pitch in small to big talks or individual interviews or writing your blog post. It's all the same: WHAT, HOW, and least but not last, WHY!
+Espero que isso tenha dado a vocês alguma perspectiva sobre como estruturar seu pitch em palestras pequenas ou grandes, entrevistas individuais ou posts de blog. É tudo a mesma coisa: O QUÊ, COMO, e por último mas não menos importante, o POR QUÊ!

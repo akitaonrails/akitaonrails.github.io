@@ -1,32 +1,36 @@
 ---
-title: How does Bitcoin force consensus among Byzantine generals?
+title: "Como o Bitcoin Força Consenso entre os Generais Bizantinos?"
 date: '2017-11-01T14:02:00-02:00'
-slug: how-does-bitcoin-force-consensus-among-byzantine-generals
+slug: como-o-bitcoin-forca-consenso-entre-os-generais-bizantinos
 tags:
 - ruby
 - blockchain
 - cryptocurrency
 - bitcoin
+- traduzido
+translationKey: bitcoin-byzantine-consensus
+aliases:
+- /2017/11/01/how-does-bitcoin-force-consensus-among-byzantine-generals/
 draft: false
 ---
 
-_"Is it possible to break the blockchain?"_
+_"Dá pra quebrar o blockchain?"_
 
-Now, this is a fair question. If you know anything about the blockchain architecture, you instinctively conclude that "no", it's quite improbable that anyone will break it. In practice, it's basically impossible.
+É uma pergunta justa. Quem conhece minimamente a arquitetura do blockchain conclui instintivamente que "não", é praticamente improvável que alguém consiga quebrar. Na prática, é basicamente impossível.
 
-It's quite amazing that most of my peer programmers have a very difficult time overcoming the prejudice against cryptocurrencies. I have no idea where this prejudice comes from, but I know very smart people that can solve the most difficult web scalability problems, but that never once glanced over Satoshi Nakamoto extremely short original paper describing the blockchain.
+O que me espanta é que a maioria dos programadores que conheço tem uma dificuldade enorme de superar o preconceito contra criptomoedas. Não faço ideia de onde vem esse preconceito, mas conheço pessoas muito inteligentes que resolvem os problemas mais difíceis de escalabilidade web e nunca deram uma olhada sequer no paper original de Satoshi Nakamoto — um documento curtíssimo descrevendo o blockchain.
 
-Seriously, the [Bitcoin: A Peer-to-Peer Electronic Cash System](https://bitcoin.org/bitcoin.pdf) paper is so ridiculously small and easy to understand that most computer science students should be able to understand it. So all the smart programmers I know should be able to grasp it in a coffee break. Any average programmer should be able to read and understand this paper in 30 minutes or so.
+Sério, o paper [Bitcoin: A Peer-to-Peer Electronic Cash System](https://bitcoin.org/bitcoin.pdf) é tão ridiculamente pequeno e fácil de entender que qualquer estudante de ciência da computação consegue acompanhar. Qualquer programador mediano lê e entende em uns 30 minutos.
 
-You can simplify a mental model of it as a Linked List, each node of the List is what we call a Block. Each Block is a stupid struct with the usual previous/next pointers and a body comprised of a tree-like structure (a [Merkle Tree](https://brilliant.org/wiki/merkle-tree/), to be more exact).
+O modelo mental mais simples é o de uma Lista Ligada, onde cada nó da lista é o que chamamos de Bloco. Cada Bloco é uma struct simples, com os ponteiros de anterior/próximo de sempre, e um corpo em estrutura de árvore (uma [Merkle Tree](https://brilliant.org/wiki/merkle-tree/), para ser preciso).
 
-The catch is that each block has the hash signature of the previous block, thus creating a secure "chain". Hence "block-chain".
+O detalhe que muda tudo: cada bloco carrega a assinatura hash do bloco anterior, formando uma "cadeia" segura. Daí o nome "block-chain".
 
-Yes, in computer science terms, we're dealing with undergraduate levels of data structures here. If you understand a Linked List and a stupid Binary Tree, plus the easiest crypto thing to understand, a stupid Digest Hash such as SHA256, and boom, you understand the basic backbone of the blockchain database.
+Em termos de ciência da computação, estamos falando de estruturas de dados de primeiro ano. Se você entende Lista Ligada e Árvore Binária, mais a coisa mais simples de criptografia — um Digest Hash como SHA256 —, pronto, você entende a espinha dorsal do banco de dados blockchain.
 
-Yes, it is just a database. A distributed-database to be more exact. Or a very crude and simple distributed database for that matter. It is not very efficient, and it pales in comparison to more serious NoSQL distributed databases such as Redis or Cassandra. So the query-abilities are basically non-existent beyond finding a block by its identity.
+Porque é só um banco de dados. Um banco distribuído, para ser mais exato. Ou melhor: um banco distribuído bastante cru e simples. Não é eficiente, fica atrás de bancos NoSQL distribuídos sérios como Redis ou Cassandra. As capacidades de consulta são praticamente inexistentes além de encontrar um bloco pelo seu identificador.
 
-Of course, the Bitcoin source-code is more sophisticated than that but the basics are really so ridiculous that you don't need more than 20 lines of Ruby code to replicate it. Check out this example implementation from [Gerald Bauer](https://github.com/openblockchains/awesome-blockchains/tree/master/blockchain.rb).
+Claro, o código-fonte do Bitcoin é mais sofisticado do que isso — mas o básico é tão simples que você não precisa de mais de 20 linhas de Ruby para replicar. Veja esta implementação de exemplo do [Gerald Bauer](https://github.com/openblockchains/awesome-blockchains/tree/master/blockchain.rb):
 
 ```ruby
 require "digest"    # for hash checksum digest function SHA256
@@ -66,23 +70,23 @@ class Block
 end
 ```
 
-I know, right!?
+Pois é.
 
-One question remains: how does this stupid structure become a "distributed" database.
+Uma pergunta permanece: como essa estrutura simples vira um banco de dados "distribuído"?
 
-Now, either you need to have a centralized "master-copy" out of which all other copies replicate from. Or you need some form of "consensus" between the different copies.
+Você precisa de uma "cópia-mestra" centralizada da qual todas as outras cópias replicam — ou precisa de alguma forma de "consenso" entre as cópias diferentes.
 
-How do you reach consensus between rogue, random node spread across the globe? This is the problem that is called ["Byzantine Fault Tolerance"](http://pmg.csail.mit.edu/papers/osdi99.pdf), masterfully explained and solved by Barbara Liskov and Miguel Castro, from MIT, in 1999.
+Como chegar a consenso entre nós aleatórios e sem controle espalhados pelo globo? Esse é o problema chamado ["Tolerância a Falhas Bizantinas"](http://pmg.csail.mit.edu/papers/osdi99.pdf), explicado e resolvido brilhantemente por Barbara Liskov e Miguel Castro, do MIT, em 1999.
 
-In a nutshell, imagine that you have Byzantine generals, each with their own armies, surrounding a hostile city. Now, you can either attack or retreat. But all generals must either do one or the other, in consensus. How do you reach consensus when you don't have direct communication with all the generals and, worse, when some of the generals may be traitors or double-agents?
+Em resumo: imagine generais bizantinos, cada um com seu próprio exército, cercando uma cidade hostil. A decisão é atacar ou recuar. Mas todos os generais precisam tomar a mesma decisão, em consenso. Como chegar a esse consenso quando não há comunicação direta com todos os generais e, pior, quando alguns podem ser traidores ou agentes duplos?
 
-That's the kind of problem we face here. Anyone on the internet can download a copy of the blockchain, and they can check that the blocks are valid and unadulterated by recomputing the digest hashes for each block.
+Esse é exatamente o tipo de problema que temos aqui. Qualquer pessoa na internet pode baixar uma cópia do blockchain e verificar que os blocos são válidos e não adulterados, recomputando os hashes de cada bloco.
 
-But how do you add new blocks and make the other nodes accept your new block?
+Mas como adicionar novos blocos e fazer os outros nós aceitarem o seu bloco?
 
-That's why Satoshi added the so-called "Proof of Work" to the equation. Remember that I said that each block is chained together to the previous by containing the hash of the previous block? Computing a digest hash is quite trivial these days.
+Foi por isso que Satoshi adicionou o chamado "Proof of Work" à equação. Cada bloco está encadeado ao anterior por conter o hash do bloco anterior — e computar um hash digest é algo trivial hoje em dia.
 
-In Ruby if you do:
+Em Ruby, por exemplo:
 
 ```ruby
 Digest::SHA256.hexdigest("abcd")
@@ -91,21 +95,21 @@ Digest::SHA256.hexdigest("123")
 # => "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3"
 ```
 
-It takes a **fraction of millisecond** to run.
+Isso roda em uma **fração de milissegundo**.
 
-Now, what if I ask you to find the hash that starts with a certain amount of "zeroes" in the beginning of the hash?
+Agora, e se eu pedir para você encontrar o hash que começa com uma certa quantidade de "zeros" no início?
 
-For example:
+Por exemplo:
 
 ```ruby
-# I want to find 4 zeros ("0000") in the hash:
+# Quero encontrar 4 zeros ("0000") no hash:
 Digest::SHA256.hexdigest("79026" + "123")
 # => "0000559fb4a55f135c7db3d83405b86b4b63cd035993873a5b676bae08b64334"
 ```
 
-How do I know that I had to prepend "79026"? I don't, I have to start from 0 and incrementing one by one until I find the hash with the format I want.
+Como eu sei que preciso acrescentar "79026" antes? Não sei. Preciso começar do zero e incrementar um a um até encontrar o hash no formato desejado.
 
-If we check from [Gerald' example](https://github.com/openblockchains/awesome-blockchains/blob/master/blockchain.rb/blockchain_with_proof_of_work.rb#L29-L45) we would implement this lookup like this:
+Olhando o [exemplo do Gerald](https://github.com/openblockchains/awesome-blockchains/blob/master/blockchain.rb/blockchain_with_proof_of_work.rb#L29-L45), implementaríamos essa busca assim:
 
 ```ruby
 def compute_hash_with_proof_of_work( difficulty="00" )
@@ -127,37 +131,37 @@ def calc_hash_with_nonce( nonce=0 )
 end
 ```
 
-Just a simple SHA256 takes somewhere between 0.000010 to 0.000020 seconds (remember: fractions of milliseconds). Now how long does it take to find that "79026" (which we call a "nonce")?
+Um SHA256 simples leva entre 0.000010 e 0.000020 segundos (lembre: frações de milissegundo). Quanto tempo leva para encontrar aquele "79026" (o que chamamos de "nonce")?
 
 ```
 > puts Benchmark.measure { compute_hash_with_proof_of_work("0000") }
   0.190000   0.000000   0.190000 (  0.189615)
 ```
 
-Yep, considerably more, now it takes 0.18 seconds instead of 0.000020. We can increase the "difficult" variable to make it even more laborious to find the nonce. And that's exactly how Bitcoin is implemented: each block adjusts the difficult so the fastest one can take to find the hash for the next block is around 10 minutes.
+Consideravelmente mais: 0.18 segundos em vez de 0.000020. Podemos aumentar a variável de "dificuldade" para tornar a busca pelo nonce ainda mais trabalhosa. E é exatamente assim que o Bitcoin funciona: cada bloco ajusta a dificuldade de modo que o nó mais rápido leve em torno de 10 minutos para encontrar o hash do próximo bloco.
 
-And this, my friends, is what we call **"MINING"**. What a miner does is compute a loop, incrementing nonces, over the block digest to find the correct nonce.
+E isso, meu caro, é o que chamamos de **"MINERAÇÃO"**. O que um minerador faz é executar um loop, incrementando nonces sobre o digest do bloco, até encontrar o nonce correto.
 
-Once a nonce is found, the miner can add the block to the blockchain and broadcast it to other nodes. The other nodes can then double-check (and now it's just the 0.000020 seconds procedure again, super fast).
+Encontrado o nonce, o minerador adiciona o bloco ao blockchain e o propaga para os outros nós. Os outros nós fazem a verificação (agora de volta ao procedimento de 0.000020 segundos — rapidíssimo).
 
-When the nodes double-check and confirm the nonce, they all add the block to the top of the blockchain. And usually, when the other miners keep adding other blocks on top of that, that block becomes "solidified". The most recent block on the top of the blockchain is usually unstable, but once you have more blocks on top of it, it is said to be more "guaranteed". Which is why most exchanges and other services that accept bitcoin wait for the so-called "6 blocks" confirmation.
+Quando os nós verificam e confirmam o nonce, todos adicionam o bloco ao topo do blockchain. Conforme outros mineradores continuam empilhando blocos sobre ele, o bloco vai se tornando "solidificado". O bloco mais recente no topo é geralmente instável, mas com mais blocos em cima ele é considerado mais "garantido" — por isso a maioria das exchanges e serviços que aceitam Bitcoin aguarda as famosas "6 confirmações de blocos".
 
-And because the difficulty is such that the fastest node takes around "10 minutes" to find that nonce, a block is said to be "secure" when around 1-hour passes and 6 blocks are added after it.
+Como a dificuldade é calibrada para que o nó mais rápido leve cerca de "10 minutos" para encontrar o nonce, um bloco é considerado "seguro" quando cerca de 1 hora passa e 6 blocos são adicionados depois dele.
 
-## Can we break this?
+## Dá pra quebrar isso?
 
-Now, you will understand why we talk about "hash power" when we talk about mining.
+Agora você vai entender por que falamos em "hash power" quando o assunto é mineração.
 
-Mining is the act of signing and confirming blocks to the blockchain. It's a maintenance service, which is why you reward miners with "transaction fees" and a couple of "satoshis" (fractions of 1 Bitcoin), for their work. And also why you call this "Proof of Work" because when someone finds a nonce, we know it had to go through a lot of hash computation to reach it.
+Minerar é assinar e confirmar blocos no blockchain. É um serviço de manutenção — por isso você recompensa os mineradores com "taxas de transação" e alguns "satoshis" (frações de 1 Bitcoin) pelo trabalho. E por isso também o mecanismo se chama "Proof of Work": quando alguém encontra um nonce, sabemos que essa pessoa passou por uma enorme quantidade de computação de hashes para chegar lá.
 
-And also why we talk about CPUs or GPUs that miners use to have "hash rates". You need to have an absurd capacity to be able to mine Bitcoins nowadays. No one will use a home-built rig to do it. One must build special hardware, such as the famous [AntMiners](https://www.cryptocompare.com/mining/bitmain/antminer-s9-miner/). A USD 1,500 AntMiner S9 is able to compute around 14 TH.
+Daí também falamos em "hash rates" quando nos referimos às CPUs ou GPUs dos mineradores. Você precisa de uma capacidade absurda para minerar Bitcoins hoje em dia. Ninguém usa um PC caseiro para isso. É preciso hardware especializado, como os famosos [AntMiners](https://www.cryptocompare.com/mining/bitmain/antminer-s9-miner/). Um AntMiner S9 de USD 1.500 consegue computar em torno de 14 TH/s.
 
-Each crypto-currency different from Bitcoin calculates hashes differently so the hashrate differs from coin to coin.
+Cada criptomoeda diferente do Bitcoin calcula hashes de forma distinta, então o hashrate varia de moeda para moeda.
 
-The current Hash Power of the entire Bitcoin consensus network is almost reaching 14 EH (exa-hashes or millions of tera-hashes).
+O Hash Power total da rede de consenso do Bitcoin estava chegando próximo a 14 EH (exa-hashes, ou seja, milhões de tera-hashes).
 
-So, let's say that I am a billionaire and I want to troll the Bitcoin community by adding enough hash power to surpass the entire hash power of the network. I'd have to buy 1 million AntMiner s9, or an investment of around USD 1.5 billion! And this is without adding the energy required to boot and run those machines, of course.
+Suponha que eu seja bilionário e queira trollar a comunidade Bitcoin adicionando hash power suficiente para superar o hash power total da rede. Precisaria comprar 1 milhão de AntMiner S9, um investimento de aproximadamente USD 1,5 bilhão! E isso sem contar a energia necessária para ligar e manter todas essas máquinas rodando.
 
-But even then, do you know what happens? Remember that difficult variable I mentioned above? It will adjust again, to make sure the next block takes 10 minutes to compute again!
+Mesmo assim, sabe o que aconteceria? Lembra da variável de dificuldade que mencionei? Ela se ajusta novamente, garantindo que o próximo bloco continue levando 10 minutos para ser computado!
 
-Then, no, even if you're willing to put USD 1.5 billion to waste, you won't break it. And that's how Bitcoin deals with Byzantine generals in this consensus network.
+Então não: mesmo disposto a jogar USD 1,5 bilhão fora, você não vai quebrar. E é assim que o Bitcoin lida com os generais bizantinos nessa rede de consenso.

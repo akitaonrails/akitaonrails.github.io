@@ -1,47 +1,50 @@
 ---
-title: 'Ex Manga Downloadr - Part 7: Properly dealing with large Collections'
+title: 'Ex Manga Downloadr - Parte 7: Lidando Corretamente com Grandes Coleções'
 date: '2017-06-16T15:10:00-03:00'
-slug: ex-manga-downloadr-part-7-properly-dealing-with-large-collections
+slug: ex-manga-downloadr-parte-7-lidando-com-grandes-colecoes
+translationKey: ex-manga-downloadr-7
+aliases:
+- /2017/06/16/ex-manga-downloadr-part-7-properly-dealing-with-large-collections/
 tags:
 - beginner
 - learning
 - elixir
-- english
 - exmangadownloadr
+- traduzido
 draft: false
 ---
 
-In my [previous post](http://www.akitaonrails.com/2017/06/13/ex-manga-downloadr-part-6-the-rise-of-flow) I was able to simplify a lot of the original code through the use of [Flow](https://github.com/elixir-lang/flow). But the downside is that the running time actually increased a lot.
+No [post anterior](http://www.akitaonrails.com/2017/06/13/ex-manga-downloadr-part-6-the-rise-of-flow) consegui simplificar bastante o código original usando [Flow](https://github.com/elixir-lang/flow). Só que o lado negativo foi que o tempo de execução aumentou consideravelmente.
 
-José Valim kindly stepped in and posted a [valuable comment](http://www.akitaonrails.com/2017/06/13/ex-manga-downloadr-part-6-the-rise-of-flow#comment-3360301947), which I will paste here:
+José Valim gentilmente apareceu e deixou um [comentário valioso](http://www.akitaonrails.com/2017/06/13/ex-manga-downloadr-part-6-the-rise-of-flow#comment-3360301947), que vou reproduzir aqui:
 
-> Have you tried reducing the `@max_demand` instead? `@max_demand` is how much data you exchange between stages. If you set it to 60, it means you are sending 60 items to one stage, 60 items to the other and so on. That gives you poor balancing for small collections as there is a chance all items end-up in the same stage. You actually want to reduce `max_demand` to 1 or 2 so each stage gets small batches and request more than needed. Another parameter you usually tune is the `stages: ...` option, you should set that to the amount of connections you had in poolboy in the past.
+> Você tentou reduzir o `@max_demand`? O `@max_demand` é o quanto de dados você troca entre os estágios. Se você colocar 60, isso significa que está mandando 60 itens para um estágio, 60 para outro e assim por diante. Isso gera um balanceamento ruim para coleções pequenas, porque há chance de todos os itens acabarem no mesmo estágio. Na verdade você quer reduzir o `max_demand` para 1 ou 2, para que cada estágio receba lotes pequenos e precise pedir mais. Outro parâmetro que costuma ser ajustado é a opção `stages: ...` — você deveria definir como a quantidade de conexões que tinha no poolboy antes.
 
-> However, I believe you don't need to use Flow at all. Elixir v1.4 has something called [`Task.async_stream`](https://hexdocs.pm/elixir/Task.html#async_stream/5) which is a mixture of poolboy + task async, which is a definitely better replacement to what you had. We have added it to Elixir after implementing Flow as we realized you can get a lot of mileage out of `Task.async_stream` without needing to jump to a full solution like Flow. If using `Task.async_stream`, the `max_concurrency` option controls your pool size.
+> No entanto, acredito que você não precisa usar Flow de jeito nenhum. O Elixir v1.4 tem algo chamado [`Task.async_stream`](https://hexdocs.pm/elixir/Task.html#async_stream/5), que é uma mistura de poolboy + task async, e definitivamente é um substituto melhor para o que você tinha. Adicionamos isso ao Elixir depois de implementar o Flow, quando percebemos que dá pra extrair muito valor do `Task.async_stream` sem precisar partir para uma solução completa como o Flow. Usando `Task.async_stream`, a opção `max_concurrency` controla o tamanho do pool.
 
-And, obviously, he is right. I misunderstood how Flow works. It's meant to be used when you have a bazillion items to process in parallel. Particularly processing units that can have high variance and, hence, a lot of back-pressure not only because there is a lot of items to process, but because their running times can vary dramatically. So, it's one of those cases of having a canon, but I only have a fly to kill.
+E, obviamente, ele está certo. Eu tinha entendido errado como o Flow funciona. Ele foi feito para quando você tem uma quantidade absurda de itens para processar em paralelo — especialmente unidades de processamento que podem ter alta variância e, por isso, muita back-pressure, não só pela quantidade de itens, mas porque os tempos de execução podem variar dramaticamente. Então é um daqueles casos de ter um canhão na mão quando só tem uma mosca para matar.
 
-What I wasn't aware is the existence of `Task.async_stream` and it's companion [`Task.Supervisor.async_stream`](https://hexdocs.pm/elixir/Task.Supervisor.html#async_stream/4) if I need to add more control.
+O que eu não sabia era da existência do `Task.async_stream` e seu companheiro [`Task.Supervisor.async_stream`](https://hexdocs.pm/elixir/Task.Supervisor.html#async_stream/4) para quando preciso de mais controle.
 
-Let's backtrack a bit.
+Vamos dar um passo atrás.
 
-### Dealing with collections in Elixir
+### Lidando com coleções em Elixir
 
-Erlang is a beast. It provides all the building blocks of a real-time, highly-concurrent, operating system! Really, what it provides out of the box is way more than any other language/platform/virtual machine, ever. You don't get that much for free on Java, or .NET or anything. You have to assemble the pieces manually, spend hundreds of hours tweaking, and still pray a lot to have everything working seamlessly.
+Erlang é uma fera. Ele fornece todos os blocos de construção de um sistema operacional de tempo real e altamente concorrente! Sério, o que ele entrega out-of-the-box é muito mais do que qualquer outra linguagem/plataforma/máquina virtual, em qualquer época. Em Java, .NET ou qualquer outra coisa, você não tem isso de graça. Precisa montar as peças na mão, gastar centenas de horas ajustando e ainda torcer muito para que tudo funcione de forma integrada.
 
-So, you have distributed systems to build? There is no other option, really. Do Erlang, or suffer in hell.
+Então, tem sistemas distribuídos para construir? Não tem outra opção de verdade. Faça Erlang, ou sofra.
 
-Then, Elixir steps this up a notch creating a very reasonable and simple to use standard library that makes the coding part actually enjoyable. This is a killer combo. You need to do the next Whatsapp? You need to do the next Waze? You need to rebuild Cassandra from scratch? You need to create stuff like Apache Spark? Do Elixir.
+Aí o Elixir eleva isso um nível acima, criando uma biblioteca padrão bastante razoável e simples de usar, que torna a parte de escrever código genuinamente agradável. É uma combinação matadora. Precisa fazer o próximo WhatsApp? O próximo Waze? Reconstruir o Cassandra do zero? Criar algo como o Apache Spark? Faça Elixir.
 
-In Erlang, you need to solve everything using GenServer. It's a neat abstraction from OTP. You are [required to understand OTP](http://www.akitaonrails.com/en/2015/11/22/observing-processes-in-elixir-the-little-elixir-otp-guidebook/) intimately. There is no shortcut here. There is no Erlang without OTP.
+Em Erlang, você resolve tudo usando GenServer. É uma abstração elegante do OTP. Você [precisa entender OTP](http://www.akitaonrails.com/en/2015/11/22/observing-processes-in-elixir-the-little-elixir-otp-guidebook/) de forma íntima. Não tem atalho. Não existe Erlang sem OTP.
 
-That said, you can start simple and scale without so much hassle.
+Dito isso, dá para começar simples e escalar sem tanto esforço.
 
-Usually, everything starts with Collections, or more correctly, some kind of [Enumeration](https://hexdocs.pm/elixir/Enum.html#content).
+Geralmente tudo começa com Coleções, ou mais corretamente, com algum tipo de [Enumeração](https://hexdocs.pm/elixir/Enum.html#content).
 
-Just like my simple `Workflow.pages/1` function which iterates through a list of chapter links, fetch each link, parse the returning HTML and extracts the collection of page links within that chapter, reducing the sub-lists into a full list of page links.
+Assim como minha função simples `Workflow.pages/1`, que itera por uma lista de links de capítulos, busca cada link, faz o parse do HTML retornado e extrai a coleção de links de páginas dentro daquele capítulo, reduzindo as sublistas em uma lista completa de links de páginas.
 
-If I know the collection is small (less than 100 items, for example) I would just do this:
+Se eu sei que a coleção é pequena (menos de 100 itens, por exemplo), simplesmente faria assim:
 
 ```ruby
 def pages({chapter_list, source}) do
@@ -52,15 +55,15 @@ def pages({chapter_list, source}) do
 end
 ```
 
-And that's it. This is linear. It will sequentially process just one link at a time. The more chapter links, the longer it will take. Usually I want to process this in parallel. But I can't fire a parallel process for each chapter link, because if I receive 1,000 chapter links and fire them all, it will be a Denial of Service and I will certainly receive hundreds of time outs.
+Simples assim. É linear. Vai processar um link por vez sequencialmente. Quanto mais links de capítulos, mais tempo demora. Normalmente eu quero processar isso em paralelo. Mas não posso disparar um processo paralelo para cada link de capítulo, porque se receber 1.000 links e disparar todos de uma vez, vira um ataque de negação de serviço e certamente recebo centenas de timeouts.
 
-You can run into 2 main problems when you need to iterate through a big collection.
+Dá para esbarrar em 2 problemas principais quando precisa iterar por uma coleção grande.
 
-* If your collection is humongous (imagine a gigabyte long text file that you need to iterate line by line). For that you use [`Stream`](https://hexdocs.pm/elixir/Stream.html#content) instead of `Enum`. All functions look almost exactly the same, but you will not have to load the entire collection into memory and you will not keep duplicating it.
+* Se a coleção for enorme (imagine um arquivo de texto de um gigabyte que você precisa iterar linha por linha). Para isso usa-se [`Stream`](https://hexdocs.pm/elixir/Stream.html#content) em vez de `Enum`. Todas as funções parecem quase idênticas, mas você não precisará carregar a coleção inteira na memória nem ficará duplicando-a.
 
-* If your processing unit takes a long time. Now that you solved not blowing off your memory usage, what if you have slow jobs while iterating through each item in the collection? That's our case, where the collection is rather small, but the processing time is long as it's fetching from an external source on the internet. It can take milisseconds, it can take a few seconds.
+* Se a unidade de processamento demora muito. Agora que você resolveu não explodir o uso de memória, e se você tiver jobs lentos enquanto itera por cada item da coleção? É exatamente o nosso caso, onde a coleção é bem pequena, mas o tempo de processamento é longo porque está buscando de uma fonte externa na internet. Pode levar milissegundos, pode levar alguns segundos.
 
-One way to control this is through the use of "batches", something along these lines:
+Uma forma de controlar isso é usando "batches", algo assim:
 
 ```ruby
 def pages({chapter_list, source}) do
@@ -80,17 +83,17 @@ def pages_download(chapter_list, source)
 end
 ```
 
-This is just for the example, I have not compiled this snippet to see if it works, but you get the idea of chunking the big list and processing each chunk through `Task.async` and `Task.await`.
+Isso é só para exemplo, não compilei esse trecho para verificar se funciona, mas dá para entender a ideia de dividir a lista grande em chunks e processar cada chunk via `Task.async` e `Task.await`.
 
-Again, for small lists, this should be ok (thousands) and where each item does not take too much to process.
+De novo, para listas pequenas isso está ok (milhares de itens) desde que cada item não demore muito para processar.
 
-Now, this is not very good. Because each chunk must finish before the next chunk begins. Witch is why the ideal solution is to keep a constant amount of jobs running at any given time. To that end, we need a Pool, which is what I explained in [Part 2: Poolboy to the rescue!](http://www.akitaonrails.com/en/2015/11/19/ex-manga-downloadr-part-2-poolboy-to-the-rescue/).
+O problema é que isso não é lá muito bom. Porque cada chunk precisa terminar antes do próximo começar. É por isso que a solução ideal é manter uma quantidade constante de jobs rodando a qualquer momento. Para isso, precisamos de um Pool, como expliquei na [Parte 2: Poolboy ao resgate!](http://www.akitaonrails.com/en/2015/11/19/ex-manga-downloadr-part-2-poolboy-to-the-rescue/).
 
-But implementing the proper way to keep the pool entirely filled requires some boring juggling between Poolboy transactions and `Task.Supervisor.async`. Which is why I was interested in the new `Flow` usage.
+Mas implementar do jeito correto para manter o pool sempre cheio exige um malabarismo chato entre transações do Poolboy e `Task.Supervisor.async`. Foi por isso que fiquei interessado no novo uso do `Flow`.
 
-The code does come clean, but as I explained before, this is not the proper use case for Flow. It's better you have to iterate over tens of thousands of items or even infinite (you have a incoming traffic of requests in need of parallel processing, for example).
+O código até fica limpo, mas como já expliquei antes, esse não é o caso de uso adequado para o Flow. É melhor quando você precisa iterar por dezenas de milhares de itens ou até infinitos (quando você tem um fluxo de entrada de requisições que precisam de processamento paralelo, por exemplo).
 
-So, finally, there is a compromise. The solution between the simple `Task.async` and `Flow` is `Task.async_stream` which works like a pool implementation, where it keeps a `max_concurrency` of jobs running in a stream. The final code becomes way more elegant like this:
+Então, finalmente, existe um meio-termo. A solução entre o simples `Task.async` e o `Flow` é o `Task.async_stream`, que funciona como uma implementação de pool, mantendo uma quantidade `max_concurrency` de jobs rodando em stream. O código final fica muito mais elegante assim:
 
 ```ruby
 def pages({chapter_list, source}) do
@@ -102,22 +105,22 @@ def pages({chapter_list, source}) do
 end
 ```
 
-And this is the [final commit](https://github.com/akitaonrails/ex_manga_downloadr/commit/517183261e998ab40f6e5bc793b4db9adcf899e3) with the aforementioned changes.
+E esse é o [commit final](https://github.com/akitaonrails/ex_manga_downloadr/commit/517183261e998ab40f6e5bc793b4db9adcf899e3) com as mudanças mencionadas.
 
-### Conclusion
+### Conclusão
 
-The implementation with `Task.async_stream` is super simple and the times finally became the same as before.
+A implementação com `Task.async_stream` é super simples e os tempos finalmente voltaram ao que eram antes.
 
 ```
 84,16s user 20,80s system 138% cpu 1:15,94 total
 ```
 
-Way better than the more than 3 minutes it was taking with Flow. And this is not because Flow is slow, it's because I was not using it correctly, probably shooting a big chunk into a single GenStage and creating a bottleneck. Again, only use Flow if you have enough items to put hundreds of them into several parallel GenStages. We are talking about collections with tens of thousands of items, not my meager pages list.
+Muito melhor do que os mais de 3 minutos que estava demorando com Flow. E não é porque o Flow é lento — é porque eu não estava usando corretamente, provavelmente jogando um chunk grande em um único GenStage e criando um gargalo. De novo: só use Flow se tiver itens suficientes para colocar centenas deles em vários GenStages em paralelo. Estamos falando de coleções com dezenas de milhares de itens, não da minha mísera lista de páginas.
 
-There is a small tweak though. To fetch all chapter and page links I am using a `max_concurrency` of 100. Timeout is the default at 5000 (5 seconds). That works because the returning HTML is not so big and we can parallelize that much on a high bandwidth connection.
+Tem um pequeno ajuste, porém. Para buscar todos os links de capítulos e páginas estou usando `max_concurrency` de 100. O timeout padrão é 5000 (5 segundos). Isso funciona porque o HTML retornado não é tão grande e dá para paralelizar tanto assim numa conexão de alta largura de banda.
 
-But the images downloading procedure at `Workflow.process_downloads` I had to cut `max_concurrency` in half and increase the `timeout` up to 30 seconds to make sure it wouldn't crash.
+Mas no procedimento de download de imagens em `Workflow.process_downloads` tive que cortar o `max_concurrency` pela metade e aumentar o `timeout` para 30 segundos para garantir que não travasse.
 
-Because this is a simple implementation there is no crash recovery and no retry routine. I would have to replace this implementation with `Task.Supervisor.async_stream` to regain some control. My original implementation was more cumbersome but I had places to add retry mechanisms. So again, it's a compromise between ease of use and control, always. The more control you have, the worse the code becomes.
+Como é uma implementação simples, não há recuperação de falhas nem rotina de retry. Teria que substituir essa implementação por `Task.Supervisor.async_stream` para retomar algum controle. Minha implementação original era mais trabalhosa, mas eu tinha onde adicionar mecanismos de retry. Então, de novo, é sempre uma troca entre facilidade de uso e controle. Quanto mais controle, pior fica o código.
 
-This is a simple example exercise, so I will keep it at that for the time being.
+Esse é um exercício simples, então vou deixar assim por enquanto.

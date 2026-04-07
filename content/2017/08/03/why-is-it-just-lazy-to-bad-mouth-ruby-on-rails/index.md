@@ -1,169 +1,173 @@
 ---
-title: Why it is just lazy to bad-mouth Ruby on Rails
+title: "Por que Falar Mal do Ruby on Rails é Simplesmente Preguiça"
 date: '2017-08-03T18:01:00-03:00'
-slug: why-is-it-just-lazy-to-bad-mouth-ruby-on-rails
+slug: por-que-falar-mal-do-ruby-on-rails-e-simplesmente-preguica
+translationKey: lazy-to-bad-mouth-rails
+aliases:
+- /2017/08/03/why-is-it-just-lazy-to-bad-mouth-ruby-on-rails/
 tags:
 - ruby
 - rails
+- traduzido
 draft: false
 ---
 
-It's inevitable these days: we will see an article proclaiming the demise of Ruby on Rails every once in a while. It's the easiest click bait, like [this one from TNW](https://thenextweb.com/dd/2017/07/26/ruby-rails-major-coding-bootcamp-ditches-due-waning-interest/#.tnw_kWT917pu).
+É inevitável hoje em dia: de tempos em tempos vai aparecer um artigo proclamando a morte do Ruby on Rails. É o click-bait mais fácil do mundo, como [esse aqui do TNW](https://thenextweb.com/dd/2017/07/26/ruby-rails-major-coding-bootcamp-ditches-due-waning-interest/#.tnw_kWT917pu).
 
-Now, you may say _"another Ruby fanboy."_ That's fair, but a terrible argument, as it's a poor and common [argumentum ad hominem](https://en.wikipedia.org/wiki/Ad_hominem). And on the subject of fallacies, the click-bait article above is wrong exactly because it falls for a blatantly [Post hoc ergo propter hoc](https://en.wikipedia.org/wiki/Post_hoc_ergo_propter_hoc) fallacy plus some more [confirmation bias](https://en.wikipedia.org/wiki/Confirmation_bias) which we are all guilty of falling for all the time.
+Você pode responder _"mais um fanboy de Ruby."_ Tudo bem, é um argumento justo de fazer, mas terrível de sustentar, porque é o clássico e raso [argumentum ad hominem](https://en.wikipedia.org/wiki/Ad_hominem). E já que estamos no assunto de falácias, o artigo click-bait acima está errado exatamente porque cai numa [Post hoc ergo propter hoc](https://en.wikipedia.org/wiki/Post_hoc_ergo_propter_hoc) descarada, temperada com um bom tanto de [viés de confirmação](https://en.wikipedia.org/wiki/Confirmation_bias) — do qual todos nós somos culpados o tempo todo.
 
-I'm not saying that the author wrote fallacies on purpose. Unfortunately, it's just too easy to fall for fallacies. Especially when everybody has an intrinsic desire to confirm one's biases. Even trying to be careful, I end up doing that as well.
+Não estou dizendo que o autor escreveu essas falácias de propósito. Infelizmente, é fácil demais cair nelas. Especialmente quando todo mundo tem um desejo intrínseco de confirmar suas próprias crenças. Mesmo tentando ser cuidadoso, eu mesmo acabo fazendo isso.
 
-On the specific subject of Rails, start here:
+Sobre o assunto específico de Rails, comece por aqui:
 
 * [Rails has won: The Elephant in the Room](http://www.akitaonrails.com/2016/05/23/rails-has-won-the-elephant-in-the-room)
 * [The Ruby Community and Reputation](http://www.akitaonrails.com/2016/08/19/the-ruby-community-and-reputation)
 * [Programmers Guild - Religion and Sports](http://www.akitaonrails.com/2017/05/14/programmers-guild-religion-and-sports)
 
-As a general rule, anyone announcing the future demise of anything is most probably wrong. It's fun to play guessing games, but articles in high profile websites like TNW should be more careful as many beginners in the field end up trusting their opinions.
+Como regra geral, qualquer pessoa anunciando a morte futura de qualquer coisa está provavelmente errada. É divertido fazer apostas, mas artigos em sites de alto perfil como o TNW deveriam ter mais cuidado, já que muitos iniciantes acabam acreditando piamente nessas opiniões.
 
-Which is why I usually tell people to stop trusting opinions. Everybody has an opinion, which is why it's so cheap. Then people artificially grade "celebrities" or "gurus" as having opinions of higher value. I don't buy it, neither should you.
+É por isso que eu sempre digo às pessoas: parem de confiar em opiniões. Todo mundo tem uma opinião, e é exatamente por isso que elas são tão baratas. Aí as pessoas artificialmente elevam "celebridades" ou "gurus" ao status de quem tem opiniões de maior valor. Eu não compro isso, e você também não deveria.
 
-[Black Swans](https://en.wikipedia.org/wiki/Black_swan_theory) do happen. But it's an exercise in futility to try to predict them. You may be lucky, once or twice. But it's useless to attempt. Which is why I am a high proponent of [Antifragility](https://en.wikipedia.org/wiki/Antifragility), so I will give you the general rules to understand what to do.
+[Cisnes Negros](https://en.wikipedia.org/wiki/Black_swan_theory) acontecem. Mas tentar prevê-los é exercício de futilidade. Você pode ter sorte uma ou duas vezes. Mas tentativas sistemáticas são inúteis. Por isso sou um grande defensor da [Antifrabilidade](https://en.wikipedia.org/wiki/Antifragility) — e vou te dar as regras gerais para entender o que fazer.
 
-Am I saying that Ruby on Rails will live on forever? Don't be absurd, of course not. Nothing lasts forever. More than 2 decades actively working in the field taught me that betting everything on one horse is a mistake. It's valid in the financial markets, it's valid in the tech market.
+Estou dizendo que Ruby on Rails vai durar para sempre? Não seja ridículo, claro que não. Nada dura para sempre. Mais de 2 décadas trabalhando ativamente na área me ensinaram que apostar tudo num único cavalo é um erro. Vale no mercado financeiro, vale no mercado de tecnologia.
 
-Instead of stock or bonds, your asset is your knowledge and your practice. Diversification of your portfolio is usually a better bet.
+Em vez de ações ou títulos, o seu ativo é o seu conhecimento e a sua prática. Diversificação de portfólio costuma ser a aposta mais inteligente.
 
-You invested all your 401k in Bitcoins. Now you will try everything to try to confirm your bias by subscribing to every news piece and opinion that confirms your bias, and you will denounce every article that may have an argument against your bet. Am I saying to not invest in Bitcoins? Hell no. Just don't be stupid and invest everything on anything.
+Você colocou todo o seu dinheiro em Bitcoins. Agora vai fazer de tudo para confirmar esse viés, assinando todo noticiário e opinião que confirma sua aposta, e vai atacar qualquer artigo que apresente um argumento contrário. Estou dizendo para não investir em Bitcoins? De forma alguma. Só não seja burro a ponto de colocar tudo num único ativo.
 
-You invested all your time learning [Google Web Toolkit](https://en.wikipedia.org/wiki/Google_Web_Toolkit) in 2006. Good luck for you finding an article to confirm that bias. This is one case, an after-the-fact, that we can't do much but consensually agree on its death.
+Você gastou todo o seu tempo aprendendo [Google Web Toolkit](https://en.wikipedia.org/wiki/Google_Web_Toolkit) em 2006. Boa sorte encontrando artigo que confirme esse viés agora. Esse é um daqueles casos post-factum em que só nos resta concordar consensualmente sobre a morte da coisa.
 
-> The job of a proper professional programmer is not mastery of a single tool or even a single technology stack. Your job is to be as good as possible in learning and practicing in the technology field.
+> O trabalho de um programador profissional de verdade não é dominar uma única ferramenta ou mesmo um único stack tecnológico. Seu trabalho é ser o melhor possível em aprender e praticar na área de tecnologia.
 
-Having said all that, and even though the article structure is innaccurate. The feeling is not wrong. Ruby on Rails no longer represents what it was 10 years ago. Now, before you start freaking out, let's explore it down memory lane.
+Dito isso, e mesmo que a estrutura do artigo seja imprecisa, o sentimento não está de todo errado. Ruby on Rails não representa mais o que representava há 10 anos. Mas antes de entrar em pânico, vamos explorar essa história juntos.
 
-### 2003 - A New Renaissance
+### 2003 - Um Novo Renascimento
 
-As an after-the-fact exercise, one has to realize that a series of events helped unfold the Rails phenomenon between 2003 and 2011. It was not by design. It was not planned. It could've been something else.
+Num exercício retrospectivo, é preciso reconhecer que uma série de eventos ajudou a desdobrar o fenômeno Rails entre 2003 e 2011. Não foi por design. Não foi planejado. Poderia ter sido outra coisa qualquer.
 
-- We were just recovering from the 2001 Internet dot-com Bubble Crash.
-- Social networks were starting to emerge, we had Orkut, MySpace, Friendster. Still no Facebook in the radar.
-- Blogs were starting to pick up steam and competing with traditional news outlets.
-- Big vendors focused solely on the Enterprise market at that point and the rest were deemed amateurish.
-- In the mainstream either you were doing .NET or Java on the Enterprise or doing hotsites in Flash and PHP for ad hoc agencies.
-- Even open source tools like Eclipse were primarily used through enterprisey umbrellas like WebSphere or WebLogic.
-- The Agile Manifesto has just been published in 2001 and the mainstream market didn't pay much attention. PMI and RUP were the order of the day.
+- Estávamos nos recuperando do crash da bolha dot-com de 2001.
+- Redes sociais começavam a emergir: Orkut, MySpace, Friendster. Facebook ainda nem estava no radar.
+- Blogs ganhavam força e competiam com os veículos de notícia tradicionais.
+- Os grandes fornecedores focavam exclusivamente no mercado Enterprise e o resto era considerado amadorismo.
+- No mainstream, ou você fazia .NET ou Java no Enterprise, ou fazia hotsites em Flash e PHP para agências.
+- Até ferramentas open source como o Eclipse eram usadas principalmente dentro de umbrellas enterpriseiras como WebSphere ou WebLogic.
+- O Manifesto Ágil tinha acabado de ser publicado em 2001 e o mercado mainstream não ligou muito. PMI e RUP eram a ordem do dia.
 
-Then we reached 2004.
+Então chegamos a 2004.
 
-- Google successfully launched Gmail to much fanfare. Dynamic HTML and Ajax demoed how we could achieve Desktop-level applications in the Web. This is also where Javascript earns a new role beyond stupid web mini games or ads.
-- Facebook skyrocketed and we were shown glimpses of what granular social networks look like.
-- Apple consolidated its come back as a relevant tech giant with the successful resurrection of OS X, proving that Unix on the consumer desktop was viable.
-- Microsoft entered the 21st century after a super heavy antitrust case that almost obliterated the company. Bill Gates resigned, Steve Ballmer took the reigns and they had their darkest decade
-- Years of vendor lock-in finally started to wear off developers, no one actually wanted to use IBM, BEA, Oracle anymore and the promise of the open source revolution started in the 90's finally started to solidify
-- The dot-com crash left a depression in the tech market but it also left behind an infrastructure that was finally being put to good use
+- O Google lançou o Gmail com grande repercussão. HTML dinâmico e Ajax demonstraram como era possível criar aplicações de nível Desktop na Web. É aí também que o Javascript ganha um novo papel, além de mini jogos burros ou anúncios.
+- O Facebook explodiu e tivemos os primeiros vislumbres do que redes sociais granulares pareciam.
+- A Apple consolidou seu retorno como gigante tech relevante com a ressurreição bem-sucedida do OS X, provando que Unix no desktop do consumidor era viável.
+- A Microsoft entrou no século XXI depois de um pesadíssimo processo antitruste que quase a destruiu. Bill Gates saiu, Steve Ballmer assumiu as rédeas e eles viveram sua pior década.
+- Anos de lock-in de fornecedor finalmente começaram a cansar os desenvolvedores; ninguém de verdade queria mais usar IBM, BEA, Oracle — e a promessa da revolução open source iniciada nos anos 90 finalmente começava a se solidificar.
+- O crash dot-com deixou uma depressão no mercado tech, mas também deixou para trás uma infraestrutura que finalmente estava sendo bem aproveitada.
 
 ![How Bill Blew it](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/654/s-l225.jpg)
 
-Ruby on Rails shows up as a very small curiosity, in an obscure tech conference in Brazil, created by a small but promising agency called 37signals. Signaling something most developers never have seen before: a flexible language - unlike Java or C# or PHP - that could be used to implement Gmail-like web applications with a flavor of the Apple vision and steering away to everything that Microsoft and IBM represented while incorporating Agile-like techniques such as Test-Driven Development in a practical way and out-of-the-box.
+O Ruby on Rails aparece como uma pequena curiosidade, numa conferência tech obscura no Brasil, criado por uma agência pequena mas promissora chamada 37signals. Sinalizando algo que a maioria dos desenvolvedores nunca tinha visto antes: uma linguagem flexível — diferente de Java, C# ou PHP — que podia ser usada para implementar aplicações web estilo Gmail com a estética da Apple, se afastando de tudo que Microsoft e IBM representavam, e incorporando técnicas ágeis como Test-Driven Development de forma prática e já inclusa.
 
 [![15 minute blog](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/655/75879992_fa890a9a07.jpg)](https://www.youtube.com/watch?v=Gzj723LkRJY)
 
-What else could you ask for in 2005?
+O que mais você poderia pedir em 2005?
 
-Then **2006** happens: Amazon AWS release S3 and EC2 and the term "Elastic Cloud" becomes the new hype.
+Então chega **2006**: a Amazon AWS lança S3 e EC2 e o termo "Elastic Cloud" vira o novo hype.
 
-Up to that point, "web development" either meant expensive and bureaucratic IT departments in big corporations or inexpensive but weak shared hosting in services such as Dreamhost, 1&1, Media Temple.
+Até aquele ponto, "desenvolvimento web" significava ou departamentos de TI caros e burocráticos em grandes corporações, ou hospedagem compartilhada barata mas fraca em serviços como Dreamhost, 1&1, Media Temple.
 
-Elastic Cloud holds the key to surpass the enterprise and make it possible for independent developers to build the elusive "web scale".
+A Elastic Cloud tinha a chave para superar o Enterprise e tornar possível que desenvolvedores independentes construíssem a tão sonhada "escala web".
 
-Ruby on Rails is exactly where it should be: started to be adopted by a new crop of Silicon Valley tech start-ups trying to make a dent in the universe in this new Ajax-based Cloud-era. Remember that Rails was first released with RJS, a way to write Javascript through Ruby using Prototype and Scriptaculous. jQuery was not even mainstream yet.
+O Ruby on Rails estava exatamente onde precisava estar: começando a ser adotado por uma nova safra de startups do Vale do Silício tentando fazer a diferença nessa nova era Ajax + Cloud. Lembre que o Rails foi lançado com RJS, uma forma de escrever Javascript via Ruby usando Prototype e Scriptaculous. O jQuery nem era mainstream ainda.
 
-Twitter shows up. Groupon shows up. Engine Yard shows up. And much more follow.
+O Twitter aparece. O Groupon aparece. A Engine Yard aparece. E muito mais vem na sequência.
 
-It's all happening blistering fast, bear in mind that I am only touching the surface here.
+Tudo isso acontecendo numa velocidade absurda — e estou apenas arranhando a superfície aqui.
 
 {{< youtube id="4XpnKHJAok8" >}}
 
-**2007** arrives and at least 3 big things happen:
+**2007** chega e pelo menos 3 coisas grandes acontecem:
 
-- Another Rails-based start-up is born: Heroku. If AWS EC2 coined the term "Infrastructure as a Service" (IaaS) Heroku defined what a "Platform as Service" (PaaS) means. It was able to put EC2 to good use and make its power approachable.
-- At the same time, developers have grown bitter of version control systems such as CVS and again, big vendor options such as Rational ClearCase, Microsoft SourceSafe, and others were just terrible. Subversion had emerged but its many shortcomings would become its demise. Linus Torvald's decides to fix the problem and release Git. Mainstream developers finally learn basic computer science terms such as DAGs ("Directed Acyclic Graphs").
-- The iPhone is released and a new mobile revolution takes place. Dominant players like Nokia and Blackberry were shaken to their core. Developers want a piece of it. Mobile Safari becomes high profile overnight. And it's WebKit core rises to stardom, eclipsing old veterans like Firefox/Gecko and Opera.
+- Nasce outra startup baseada em Rails: Heroku. Se o EC2 da AWS cunhou o termo "Infrastructure as a Service" (IaaS), o Heroku definiu o que "Platform as a Service" (PaaS) significa. Conseguiu aproveitar o EC2 e tornar seu poder acessível.
+- Ao mesmo tempo, desenvolvedores tinham ficado frustrados com sistemas de controle de versão como CVS, e as opções dos grandes fornecedores como Rational ClearCase, Microsoft SourceSafe eram simplesmente terríveis. O Subversion tinha surgido, mas suas muitas limitações seriam sua perdição. Linus Torvalds decide resolver o problema e lança o Git. Desenvolvedores mainstream finalmente aprendem termos básicos de ciência da computação como DAGs ("Directed Acyclic Graphs").
+- O iPhone é lançado e uma nova revolução mobile começa. Players dominantes como Nokia e Blackberry foram abalados até o núcleo. Desenvolvedores queriam uma fatia disso. O Mobile Safari vira destaque da noite para o dia. E o WebKit sobe ao estrelato, eclipsando veteranos como Firefox/Gecko e Opera.
 
-**2008**: the birth of GitHub and the dawn of the DevOps.
+**2008**: o nascimento do GitHub e o alvorecer do DevOps.
 
-Git was great but too low level. Several other contenders tried to become the new standard such as Mercurial and Bazaar. But the birth of GitHub would change all that. Again, another Rails-based start-up making the news.
+O Git era ótimo, mas baixo nível demais. Vários outros concorrentes tentaram se tornar o novo padrão — Mercurial, Bazaar. Mas o nascimento do GitHub mudou tudo isso. E era mais uma startup baseada em Rails nas manchetes.
 
 ![There's an App for that](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/653/Theres-An-App-for-That-Tanglewood-Moms.jpg)
 
-But the honeymoon is showing signs of reaching an end: prominent Ruby developer, Zed Shaw, [loudly leaves the community](https://techcrunch.com/2008/01/01/zed-shaw-puts-the-smack-down-on-the-rails-community/) by January.
+Mas a lua de mel mostrava sinais de esgotamento: o proeminente desenvolvedor Ruby Zed Shaw [saiu da comunidade em alto e bom som](https://techcrunch.com/2008/01/01/zed-shaw-puts-the-smack-down-on-the-rails-community/) em janeiro.
 
-During this year we also had the cold war between Engine Yard's Merb framework and 37signals' Rails, resulting in the [controversial Rails-Merb merge](http://yehudakatz.com/2008/12/23/rails-and-merb-merge/), placing another crack in the community.
+Nesse mesmo ano tivemos a guerra fria entre o framework Merb da Engine Yard e o Rails da 37signals, que resultou no [controverso merge Rails-Merb](http://yehudakatz.com/2008/12/23/rails-and-merb-merge/), abrindo mais uma rachadura na comunidade.
 
-But we still had a lot of work to do, so we moved on.
+Mas ainda tínhamos muito trabalho pela frente, então seguimos em frente.
 
-**2009**: "there's an app for that!"
+**2009**: "tem um app pra isso!"
 
-Apple finally releases a proper native SDK. Developers start building a new generation of productivity apps and games. WebKit starts growing in market share. Apple solidifies the concept of aesthetic in software development and Ruby on Rails is at its high at that point.
+A Apple finalmente lança um SDK nativo de verdade. Desenvolvedores começam a construir uma nova geração de apps de produtividade e jogos. O WebKit cresce em participação de mercado. A Apple solidifica o conceito de estética no desenvolvimento de software e o Ruby on Rails está no seu auge nesse ponto.
 
-We begin the NoSQL era. When data storage and fetch start to really become a bottleneck, we quickly learn that traditional enterprisey databases are not "web scale" enough. MongoDB leads the pack. Web development starts an era of craze over NoSQL.
+Começa a era NoSQL. Quando armazenamento e busca de dados realmente viram um gargalo, rapidamente aprendemos que bancos de dados enterpriseiros tradicionais não são "web scale" o suficiente. O MongoDB lidera o bando. O desenvolvimento web entra numa era de frenesi com NoSQL.
 
-In parallel, Twitter, once the poster-child of the Rails generation creates a crack in the Ruby community when it declared that it's started to use yet another obscure language: [Scala](http://www.artima.com/scalazine/articles/twitter_on_scala.html)!
+Em paralelo, o Twitter, que foi o cartão-postal da geração Rails, abre uma rachadura na comunidade Ruby ao declarar que começou a usar mais uma linguagem obscura: [Scala](http://www.artima.com/scalazine/articles/twitter_on_scala.html)!
 
-This starts the endless obsession era about "concurrency", yet another elusive concept that many talk big and talk a lot but only a few actually grasp its meaning. It's the start of the window of opportunity for Node.js, Scala, Erlang, Clojure, Go.
+Isso dá início à era da obsessão sem fim com "concorrência" — mais um conceito escorregadio sobre o qual muita gente fala bonito mas poucos de fato entendem o que significa. É o início da janela de oportunidade para Node.js, Scala, Erlang, Clojure, Go.
 
-The honeymoon is over.
+A lua de mel acabou.
 
 **2010**:
 
-- The demise of Sun and Oracle as the new stewardship for Java. If things were not playing out cool for Java, that was a heavy nail in the coffin.
-- Apple declares open war against Flash. Another big push for Javascript and front-end heavy web apps.
+- A morte da Sun e a Oracle assumindo o Java. Se as coisas já não estavam boas para o Java, isso foi um prego pesado no caixão.
+- A Apple declara guerra aberta ao Flash. Mais um grande empurrão para Javascript e apps web front-end pesados.
 
 [![Thoughts on Flash](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/656/apple-no-flash-250x376.jpg)](https://www.apple.com/hotnews/thoughts-on-flash/)
 
-In my personal opinion, this is the year when Rails reached its peak in terms of influence. It was the go-to stack for developers in Macs wanting to create their brand new Lean Start-up.
+Na minha opinião pessoal, esse é o ano em que o Rails atingiu seu pico de influência. Era o stack obrigatório para desenvolvedores em Macs que queriam criar sua nova Lean Startup do zero.
 
 {{< youtube id="icMA9rYNmgU" >}}
 
-### 2011: A New Era
+### 2011: Uma Nova Era
 
-In around 6 years the software development market did titanic shifts:
+Em cerca de 6 anos, o mercado de desenvolvimento de software fez mudanças titânicas:
 
-- Distributed development derived from years of Open Source workflow becomes the new standard. Git and GitHub were key players. Big vendors have to play catch-up with their stinky enterprise alternatives such as TFS.
-- Agile is taken seriously in a new crop of tech startups evangelizing proper software development. Tests shift from unproductive obnoxious things into invaluable core technique. Tools like Hudson/Jenkins combined with Git workflow pave the way for what continuous integration and later continuous deployment would become.
-- AWS and the Heroku example pave the way to make old IT obsolete and create a new generation of infrastructure as software, and "DevOps". There is now the urge to deploy super web scale with zero friction. Time to market becomes a key factor: release early, release often.
-- Apple releases the AppStore and helps drive the Software as Service market, with apps requiring live internet to function. The "Cloud" reaches the masses.
-- By making everybody on Earth carry an always-on powerful device, a smartphone, we were never so close to the Orwellian future of 1984. Everything a person does is a data point. Big Data becomes a thing. Data Sciences becomes viable as a mainstream profession. I.A. related disciplines become a necessity to reason about so much data.
+- O desenvolvimento distribuído derivado de anos de workflow Open Source se torna o novo padrão. Git e GitHub foram peças-chave. Os grandes fornecedores precisaram correr atrás com suas alternativas enterprise mal cheirosas como o TFS.
+- O Ágil passa a ser levado a sério por uma nova safra de startups tech que evangelizavam desenvolvimento de software de qualidade. Os testes deixam de ser coisas improdutivas e chatas para se tornarem técnica central e inestimável. Ferramentas como Hudson/Jenkins combinadas com o workflow do Git pavimentam o caminho para o que a integração contínua e depois o deploy contínuo se tornariam.
+- A AWS e o exemplo do Heroku pavimentam o caminho para tornar a TI antiga obsoleta e criar uma nova geração de infraestrutura como software, o "DevOps". Surge a urgência de fazer deploy em escala web com zero atrito. O time-to-market vira fator-chave: release cedo, release com frequência.
+- A Apple lança a AppStore e ajuda a impulsionar o mercado de Software como Serviço, com apps precisando de internet ao vivo para funcionar. A "Cloud" chega às massas.
+- Ao fazer com que todo ser humano no planeta carregasse um dispositivo poderoso e sempre conectado — um smartphone —, nunca estivemos tão perto do futuro orwelliano de 1984. Tudo que uma pessoa faz vira ponto de dados. Big Data se torna uma coisa. Ciência de Dados se torna uma profissão viável no mainstream. Disciplinas relacionadas à IA se tornam necessidade para raciocinar sobre tanto dado.
 
-Android is getting closer to the iPhone. Microsoft is resurrecting from its ashes. In October, Steve Jobs dies, marking the end of the Era of the heavy influence of Apple.
+O Android se aproxima do iPhone. A Microsoft ressurge das cinzas. Em outubro, Steve Jobs morre, marcando o fim da Era de forte influência da Apple.
 
-But around 2011 another thing happened: we win.
+Mas por volta de 2011 outra coisa acontece: nós vencemos.
 
-Independent developers surpassed the status quo of enterprise developers. There is a shift of power. The conventions for the software development field don't come from the old big tool vendors anymore. We are not listening to IDE vendors like Microsoft, BEA, Oracle. We are now listening to the winners of this generation of startups: Apple, Google, Facebook.
+Desenvolvedores independentes superaram o status quo dos desenvolvedores enterprise. Houve uma virada de poder. As convenções para o campo do desenvolvimento de software não vêm mais dos velhos fornecedores de ferramentas. Não estamos mais ouvindo fabricantes de IDEs como Microsoft, BEA, Oracle. Estamos ouvindo os vencedores dessa geração de startups: Apple, Google, Facebook.
 
-The concept of _"one language to rule them all"_ was shattered in the web camp by Ruby on Rails and in the native application space by Apple. 2 very unusual and strange languages, Ruby and Objective-C reached mainstream status. They proved that developers can learn and master exotic languages turning them into profitable products.
+O conceito de _"uma linguagem para governar todas"_ foi destroçado no campo web pelo Ruby on Rails e no espaço de aplicações nativas pela Apple. Duas linguagens muito incomuns e estranhas, Ruby e Objective-C, atingiram o mainstream. Elas provaram que desenvolvedores podem aprender e dominar linguagens exóticas transformando-as em produtos lucrativos.
 
-With those foundations set, a new **gold rush** emerges: new languages galore, free from the notion that to become successful one had to stick to Java, C#, C++ like languages, people finally started looking elsewhere to differentiate themselves, and thus a new generation of exotic languages arrive: Scala, Haskell, Ocaml, F#, Erlang, Clojure, Rust, Elixir, etc. The sky is the limit.
+Com essas bases estabelecidas, uma nova **corrida do ouro** emerge: linguagens novas para todo lado, livres da noção de que para ter sucesso era preciso ficar em Java, C#, C++ — as pessoas finalmente começaram a olhar para outros lados para se diferenciar, e assim uma nova geração de linguagens exóticas chega: Scala, Haskell, Ocaml, F#, Erlang, Clojure, Rust, Elixir, etc. O céu é o limite.
 
-By killing Flash and accelerating HTML 5, ES6, and with all the controversies around concurrency, Javascript gained new life and fast adoption unlike nothing else before.
+Ao matar o Flash e acelerar HTML 5, ES6, e com toda a controvérsia em torno de concorrência, o Javascript ganhou nova vida e uma adoção rápida como nada antes.
 
-### Epilogue
+### Epílogo
 
-Is Ruby on Rails dead? No.
+O Ruby on Rails está morto? Não.
 
-Is Ruby on Rails still the leader of the pack? No.
+O Ruby on Rails ainda é o líder do mercado? Não.
 
-What is the legacy of the Ruby on Rails Generation? It played an important role in defining what we now consider the new status quo for web development: Git, CI, CD, Cloud, Metrics. It brought the Apple aesthetics thinking to the table in a big way.
+Qual é o legado da Geração Ruby on Rails? Ele teve um papel importante em definir o que hoje consideramos o novo status quo do desenvolvimento web: Git, CI, CD, Cloud, Métricas. Trouxe à mesa, com força, o pensamento estético da Apple.
 
-That new crop of tech startups had a serious side-effect though: it put new engineers in the spotlight, elevating them to rock star levels and turning them into Steve Jobs wannabes. They just started taking everything we accomplished for granted. Recipe for disaster.
+Essa nova safra de startups tech teve um efeito colateral sério, porém: colocou novos engenheiros nos holofotes, elevando-os ao nível de rock stars e transformando-os em pretendentes a Steve Jobs. Eles simplesmente começaram a tomar tudo que conquistamos como garantido. Receita para o desastre.
 
-And while the big vendors' influence became thin compared to the 90's, they are not dead. After 2011 we ushered a new era of chaos, an era of dissatisfied developers. Where every couple of years a new derivation emerges and we have that unsatisfying feeling that we need to rewrite everything all the time.
+E embora a influência dos grandes fornecedores tenha ficado rala comparada aos anos 90, eles não estão mortos. Depois de 2011 entramos numa nova era de caos, uma era de desenvolvedores insatisfeitos. Onde a cada dois anos surge uma nova derivação e temos aquela sensação insatisfatória de precisar reescrever tudo o tempo todo.
 
-The Ruby on Rails pool got diluted into smaller niche languages such as Javascript itself, Go, Elixir, Scala.
+O pool do Ruby on Rails se diluiu em linguagens de nicho menores como o próprio Javascript, Go, Elixir, Scala.
 
-The Java/Microsoft mainstream is gaining new traction. Aesthetics also got diluted. Careful engineering is getting diluted. Social networks ubiquity and the easy path of quick cloud deployment is making people less and less patient. Crafting requires patience. People crave Likes, a new generation of vanity metrics arose.
+O mainstream Java/Microsoft está ganhando nova tração. A estética também se diluiu. A engenharia cuidadosa está se diluindo. A ubiquidade das redes sociais e o caminho fácil do deploy rápido na nuvem estão tornando as pessoas cada vez menos pacientes. Artesanato requer paciência. As pessoas anseiam por Likes, uma nova geração de métricas de vaidade surgiu.
 
-We now have a larger number of independent non-enterprise developers with little to no patience, with an exaggerated sense of confidence, and [not-invented-here](https://en.wikipedia.org/wiki/Not_invented_here) syndrome, taking everything from granted and caring less and less about proper value.
+Temos agora um número maior de desenvolvedores independentes não-enterprise com pouca ou nenhuma paciência, com um senso exagerado de confiança, síndrome de [not-invented-here](https://en.wikipedia.org/wiki/Not_invented_here), tomando tudo como garantido e se importando cada vez menos com valor de verdade.
 
-In conclusion, the death of Ruby on Rails is indeed greatly exaggerated, it will keep on going for many years still - especially if the Ruby Core Team can actually deliver on the [3x3 goal](https://blog.heroku.com/ruby-3-by-3). People like to share doomsday articles while optimistic and more realistic reports such as this [Why Ruby on Rails is still the best choice?](https://reinteractive.com/posts/320-why-ruby-on-rails-is-still-the-best-choice) are largely ignored. Such is the way of social networks vanity.
+Concluindo: a morte do Ruby on Rails está sim muito exagerada, ele vai continuar por muitos anos ainda — especialmente se o Ruby Core Team conseguir entregar de fato a [meta 3x3](https://blog.heroku.com/ruby-3-by-3). As pessoas adoram compartilhar artigos de doom enquanto relatórios otimistas e mais realistas como [Por que Ruby on Rails ainda é a melhor escolha?](https://reinteractive.com/posts/320-why-ruby-on-rails-is-still-the-best-choice) são amplamente ignorados. É assim que funciona a vaidade das redes sociais.
 
-But it will not be what it once was because the times have changed. We can now live by the "On Rails" workflow without Ruby on Rails. And it can't go on breaking the status quo, because it became the status quo.
+Mas não vai ser o que foi, porque os tempos mudaram. Hoje podemos viver pelo workflow "On Rails" sem o Ruby on Rails. E ele não pode continuar quebrando o status quo, porque ele se tornou o status quo.
 
-I wonder where that will lead us. I do have a few clues, but as I said, I am not in the game of publishing click-bait headlines.
+Fico curioso sobre para onde isso vai nos levar. Tenho algumas pistas, mas como disse, não estou no negócio de publicar manchetes click-bait.

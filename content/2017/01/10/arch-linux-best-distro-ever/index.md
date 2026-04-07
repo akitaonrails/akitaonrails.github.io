@@ -1,89 +1,93 @@
 ---
-title: Arch Linux - Best distro ever?
+title: "Arch Linux: A Melhor Distro de Todas"
 date: '2017-01-10T14:25:00-02:00'
-slug: arch-linux-best-distro-ever
+slug: arch-linux-a-melhor-distro-de-todas
+translationKey: arch-linux-best-distro
+aliases:
+- /2017/01/10/arch-linux-best-distro-ever/
 tags:
 - linux
 - archlinux
 - pacman
 - pacaur
 - asdf
+- traduzido
 draft: false
 ---
 
-**Update 01/18/2017:** If you're on old hardware like me, you may want to optimize your installation to be way more responsiveness, [read all about it here](http://www.akitaonrails.com/2017/01/17/optimizing-linux-for-slow-computers).
+**Atualização 18/01/2017:** Se você está num hardware antigo como o meu, talvez queira otimizar a instalação para ter muito mais responsividade. [Leia tudo sobre isso aqui](http://www.akitaonrails.com/2017/01/17/optimizing-linux-for-slow-computers).
 
-Since I decided to move back from macOS to Linux, I didn't want to just return to old Ubuntu (yes, I get bored of doing the same things for too long). So I tried out Fedora 25 and I was delighted by how Gnome 3.22 evolved nicely.
+Quando decidi voltar do macOS para o Linux, não queria simplesmente retornar ao velho Ubuntu (sim, fico entediado fazendo as mesmas coisas por tempo demais). Então experimentei o Fedora 25 e fiquei impressionado com a evolução do Gnome 3.22.
 
-Compared to Ubuntu, Fedora's defaults felt nicer. In practice, you can force any distro to become whatever you want, but I'd rather not fight the defaults. Ubuntu is heavily customized for Unity and I really, really dislike it. It feels more like a toy than a serious environment to do work.
+Comparado ao Ubuntu, os padrões do Fedora pareciam melhores. Na prática, dá para forçar qualquer distro a ser o que você quiser, mas prefiro não brigar com os padrões. O Ubuntu é fortemente customizado para o Unity e eu realmente, realmente não gosto. Parece mais um brinquedo do que um ambiente sério para trabalhar.
 
-Fedora 25 looks good with Gnome 3, but it still gave me a few headaches. One thing that didn't work at all was [Gnome's Online Accounts](https://wiki.gnome.org/Projects/GnomeOnlineAccounts). GOA collects authentication tokens after you sign in to your social services like Google. Then compatible apps like Evolution and the built-in Calendar can pick them up. But the tokens were getting expired all the time, so the integration was useless. And manually configuring Evolution for Google wasn't pleasant.
+O Fedora 25 fica bonito com o Gnome 3, mas ainda me deu algumas dores de cabeça. Uma coisa que não funcionou de jeito nenhum foi o [Gnome Online Accounts](https://wiki.gnome.org/Projects/GnomeOnlineAccounts). O GOA coleta tokens de autenticação depois que você faz login nos seus serviços sociais como o Google. Aí aplicativos compatíveis como Evolution e o Calendário integrado conseguem usá-los. Mas os tokens expiravam o tempo todo, então a integração era inútil. E configurar o Evolution manualmente para o Google não é nada agradável.
 
 ![Arch Linux](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/584/Screenshot_from_2017-01-10_14-15-41.png)
 
-Now the surprise: on Arch Linux, I chose Gnome 3.22 as my desktop and manually installed the [gnome-online-account](https://www.archlinux.org/packages/extra/i686/gnome-online-accounts/) package. I signed in to my Google accounts and I am  delighted to report that it's not expiring and it "Just Works"! This is the kind of polish I expect from a major distro, not the fiasco that's labeled as "stable" in Fedora.
+A surpresa: no Arch Linux, escolhi o Gnome 3.22 como desktop e instalei manualmente o pacote [gnome-online-accounts](https://www.archlinux.org/packages/extra/i686/gnome-online-accounts/). Fiz login nas minhas contas Google e posso afirmar com satisfação que os tokens não expiram e tudo "simplesmente funciona"! É esse tipo de polimento que espero de uma distro grande, não a roubada que o Fedora rotula como "estável".
 
-### Why Arch Linux?
+### Por que Arch Linux?
 
-Most major distros are divided between "stable" (but with very old packages) and "unstable" (but with the cutting-edge goodness). If you install the Long-Term Support (LTS) versions, you're doomed to have only old packages from a couple of years ago. If you install the unstable repositories, you're doomed to have stuff exploding in your face without explanation and losing hours browsing through Stackoverflow.
+A maioria das distros importantes se divide entre "estável" (mas com pacotes muito antigos) e "instável" (mas com o que há de mais recente). Se você instala as versões Long-Term Support (LTS), está condenado a ter só pacotes velhos de alguns anos atrás. Se instala os repositórios instáveis, está condenado a ter coisas explodindo na sua cara sem explicação e perdendo horas garimpando no Stackoverflow.
 
-Now, it seems that Arch figured out the exactly "right" level of confidence between stable and cutting-edge. It keeps pushing the most recent version of software without breaking everything else all the time. So, in Ubuntu 16.04 and Fedora 25, if I want to install Postgresql, I am locked in to 9.4 or 9.5, but in Arch I can access 9.6 from the main Pacman repositories. (By the way, "Pac"kage "Man"ager is the most obvious name ever).
+O Arch parece ter encontrado o nível exato de equilíbrio entre estável e cutting-edge. Ele continua empurrando as versões mais recentes dos softwares sem quebrar tudo o mais o tempo todo. No Ubuntu 16.04 e no Fedora 25, se eu quero instalar o Postgresql, fico preso no 9.4 ou 9.5, mas no Arch consigo acessar o 9.6 direto dos repositórios principais do Pacman. (A propósito, "Pac"kage "Man"ager é o nome mais óbvio possível.)
 
-You can easily `pacman -Sy postgresql` and you're in business.
+É só fazer `pacman -Sy postgresql` e pronto.
 
-And if you're on Ubuntu 14.04 and now you want 16.04, good luck on `dist-upgrade` your way. It's easier to start from scratch.
+E se você está no Ubuntu 14.04 e agora quer o 16.04, boa sorte fazendo `dist-upgrade`. É mais fácil começar do zero.
 
-So, it seems that the philosophy of Arch is to have the real most recent version of all software that won't break your system. There is no such thing as a big bang upgrade every 6 months that breaks everything. Instead, you have a constantly **rolling** upgrade system, where you're always on the latest version, without having to wait another year for the next big LTS.
+A filosofia do Arch parece ser ter a versão mais recente de verdade de todo software sem quebrar o sistema. Não existe aquele upgrade big bang a cada 6 meses que quebra tudo. Em vez disso, você tem um sistema de upgrade **rolling** constante, sempre na última versão, sem precisar esperar mais um ano pelo próximo LTS grande.
 
-Every major distro has "unsupported" repositories for proprietary binaries (codecs for example) or 3rd-party software. Then, there is Arch User Repository (AUR): a collection of small Git repositories from users maintaining simple `PKGBUILD` text files.
+Toda distro grande tem repositórios "não suportados" para binários proprietários (codecs, por exemplo) ou software de terceiros. No Arch existe o Arch User Repository (AUR): uma coleção de pequenos repositórios Git de usuários que mantêm simples arquivos de texto `PKGBUILD`.
 
-AUR is clever. If you're from macOS and familiar with Homebrew, you will understand it: it feels like Casks and Formulas. A `PKGBUILD` file can describe a recipe to download an available DEB package or tarball, disassemble it and rebuild it as a Pacman compatible package. It can describe the necessary dependencies and make the installation process super smooth.
+O AUR é inteligente. Se você vem do macOS e conhece o Homebrew, vai entender na hora: parece Casks e Formulas. Um arquivo `PKGBUILD` pode descrever uma receita para baixar um pacote DEB ou tarball disponível, desmontá-lo e reconstruí-lo como um pacote compatível com o Pacman. Ele pode descrever as dependências necessárias e tornar o processo de instalação extremamente tranquilo.
 
-For example, Sublime Text only has an option to download a DEB package or a tarball with the binaries. Same goes for Spotify, Franz, etc. Sometimes you can register Personal Package Archives (PPAs) and then `apt-get` your way in installing them. But you still need someone to build, maintain and distribute those packages properly. It's a lot of work.
+Por exemplo, o Sublime Text só tem a opção de baixar um pacote DEB ou um tarball com os binários. O mesmo vale para Spotify, Franz, etc. Às vezes dá para registrar Personal Package Archives (PPAs) e instalar via `apt-get`. Mas você ainda precisa que alguém construa, mantenha e distribua esses pacotes direito. Dá muito trabalho.
 
-Now, maintaining a simple Git repository with a simple PKGBUILD text file is far easier. `makepkg` does the hard work of build the package you need, in your machine, and then `pacman` can handle installing it like any other package. No more `wget`-ing tarballs and configuring everything manually!
+Manter um repositório Git simples com um arquivo PKGBUILD simples é muito mais fácil. O `makepkg` faz o trabalho pesado de construir o pacote que você precisa, na sua máquina, e então o `pacman` cuida de instalá-lo como qualquer outro pacote. Chega de ficar baixando tarballs com `wget` e configurando tudo na mão!
 
-Maybe I can finally just do `pacman -Syu` and have everything "really" upgraded without having to worry about the next big LTS that will eventually force me to reinstall everything from scratch.
+Talvez eu finalmente consiga só fazer `pacman -Syu` e ter tudo "de verdade" atualizado sem precisar me preocupar com o próximo LTS grande que eventualmente vai me forçar a reinstalar tudo do zero.
 
-### Arch Linux is perfect for "Beginners"
+### Arch Linux é perfeito para "Iniciantes"
 
-I've been hearing about Arch for a long while and their users are very enthusiastic in trying to convince other people to join. Whenever you see such a heavily loyal fanbase there must be something interesting hidden under the hoods. Rolling upgrades, Pacman, AUR are really valuable reasons.
+Faz um bom tempo que ouço falar do Arch e seus usuários são muito entusiastas em tentar convencer outras pessoas a aderir. Quando você vê uma base de fãs tão leal assim, alguma coisa interessante deve estar escondida por baixo. Upgrades rolling, Pacman, AUR são razões realmente valiosas.
 
-After just one day using it, I've come to realize that Arch is good for advanced users, but also for **beginners**. But not because it is easy. On the contrary: it's because it is hard in the right way.
+Depois de apenas um dia usando, percebi que o Arch é bom para usuários avançados, mas também para **iniciantes**. Não porque é fácil. Pelo contrário: porque é difícil do jeito certo.
 
-Most "Linux users" nowadays just get a trivial-to-install distro, such as Ubuntu or Elementary, and they have no idea what goes on underneath. Blindlessly clicking "next" in the graphical installers.
+A maioria dos "usuários Linux" hoje em dia só pega uma distro trivial de instalar, como Ubuntu ou Elementary, e não faz ideia do que acontece por baixo. Ficam clicando cegamente em "próximo" nos instaladores gráficos.
 
-Most people have no idea what TTYs are. That you can probe USB devices with command line tools such as `lsusb` or that you must use tools such as `fdisk` to partition and then `mkfs.ext4` to format them. That memory swap files are partitions with a special format. They are not aware of LVM options for flexible partitioning, or even that LVM exists at all. That the "thing" you choose your kernel from in the boot menu is called Grub and that you can tweak it.
+A maioria das pessoas não sabe o que são TTYs. Que você pode sondar dispositivos USB com ferramentas de linha de comando como `lsusb`, ou que precisa usar ferramentas como `fdisk` para particionar e depois `mkfs.ext4` para formatar. Que arquivos de swap de memória são partições com um formato especial. Não conhecem as opções de LVM para particionamento flexível, nem que o LVM existe. Que o "negócio" que você escolhe o kernel no menu de boot se chama Grub e que dá para tunear.
 
-There is a lot going on in assembling a fully functional Linux-based distribution. But graphical installers hide most of it. Arch Linux forces you to go step by step and really feel like you "own" your machine, not the other way around.
+Montar uma distribuição Linux completamente funcional tem muito envolvido. Mas os instaladores gráficos escondem a maior parte. O Arch Linux te força a ir passo a passo e realmente sentir que você é dono da sua máquina, e não o contrário.
 
-If you're a "beginner", I really urge you to install a distro like Arch a few times, in different configurations of machines, to really understand what an operating system really looks like.
+Se você é um "iniciante", eu realmente te encorajo a instalar uma distro como o Arch algumas vezes, em diferentes configurações de máquinas, para entender de verdade como um sistema operacional funciona.
 
-The [Arch Wiki](https://wiki.archlinux.org/) is a very comprehensive and detailed repository of information for everything you ever need to know about installing and maintaining every component of a proper Linux system. You will learn a lot in the process.
+A [Arch Wiki](https://wiki.archlinux.org/) é um repositório de informações muito abrangente e detalhado sobre tudo que você precisa saber para instalar e manter cada componente de um sistema Linux adequado. Você vai aprender muito no processo.
 
-But if you're like me, and you've been doing that through all the mid 90's and early 2000's (heck, I had to learn my way through Slackware 1.0, I still remember having to use boot and root floppy disks and screwing up my hard-drives not understanding cylinders and sectors through fdisk), you can skip it. For you, advanced/experienced users, I'd recommend you go with [Arch Linux Anywhere](https://arch-anywhere.org/).
+Mas se você é como eu, e passou por tudo isso em meados dos anos 90 e início dos 2000 (puxa, eu tive que aprender Slackware 1.0 na marra, ainda me lembro de usar disquetes de boot e root e estragar meus HDs sem entender cilindros e setores no fdisk), pode pular essa parte. Para você, usuário avançado/experiente, eu recomendo o [Arch Linux Anywhere](https://arch-anywhere.org/).
 
 ![Arch Anywhere](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/586/big_20170109_150742.jpg)
 
-It will custom install Arch but will provide you with enough automation to not waste much time in bringing a properly configured Arch installation up and running, without bloatware.
+Ele instala o Arch de forma customizada mas com automação suficiente para não desperdiçar muito tempo em ter uma instalação Arch devidamente configurada e funcionando, sem bloatware.
 
-### Pacaur - best way to deal with AUR
+### Pacaur - a melhor forma de lidar com o AUR
 
-Arch users are quick to praise Pacman. For the most part, you can basically do:
+Os usuários de Arch são rápidos em elogiar o Pacman. Na maior parte do tempo, você basicamente faz:
 
 ```
 sudo pacman -S chromium
 ```
 
-And that's it. And then you can `sudo pacman -Syu` to upgrade installed packages. This is the basics you need to know.
+E é isso. Depois pode fazer `sudo pacman -Syu` para atualizar os pacotes instalados. Esse é o básico que você precisa saber.
 
-If you're a developer I also recommend you to install the basic development packages:
+Se você é desenvolvedor, recomendo instalar também os pacotes de desenvolvimento básicos:
 
 ```
 sudo pacman -Sy --needed base-devel
 ```
 
-Now, you can manually install AUR packages. You can go to their website and [search for "terminix"](https://aur.archlinux.org/packages/?O=0&K=terminix) (a very nice Terminal replacement, similar to Mac's iTerm2) for example. You will end up in [this page](https://aur.archlinux.org/packages/terminix/) and you will have to manually do the following:
+Você pode instalar pacotes do AUR manualmente. Pode ir ao site deles e [buscar por "terminix"](https://aur.archlinux.org/packages/?O=0&K=terminix) (um substituto bem interessante para o Terminal, parecido com o iTerm2 do Mac), por exemplo. Vai chegar a [esta página](https://aur.archlinux.org/packages/terminix/) e precisará fazer manualmente o seguinte:
 
 ```
 git clone https://github.com/gnunn1/terminix.git
@@ -91,8 +95,8 @@ cd terminix
 makepkg -si
 ```
 
-Feels simple, but you can do better by installing [Pacaur](https://github.com/rmarquis/pacaur), a wrapper on top of Pacman. If you're using a graphical terminal such as Terminal or Terminix DO NOT FORGET to edit the profile to "Run command as login shell", otherwise there will be a PATH problem and Cower will fail to install
-.
+Parece simples, mas dá para fazer melhor instalando o [Pacaur](https://github.com/rmarquis/pacaur), um wrapper em cima do Pacman. Se você estiver usando um terminal gráfico como Terminal ou Terminix, NÃO ESQUEÇA de editar o perfil para "Run command as login shell", caso contrário haverá um problema de PATH e o Cower vai falhar na instalação.
+
 ```
 sudo pacman -S expac yajl --noconfirm
 gpg --recv-keys --keyserver hkp://pgp.mit.edu 1EB2638FF56C0C53
@@ -106,29 +110,29 @@ makepkg -si
 cd ..
 ```
 
-In summary, Pacaur can be used not only as a complement to install AUR packages, but also if you want to use a single tool to manage both AUR and official Pacman packages. All commands `-S` will be Pacman commands. So instead of doing `sudo pacman -Syu` to upgrade all packages, you can replace it for `pacaur -Syu`. Everything else mostly "just works".
+Em resumo, o Pacaur pode ser usado não só como complemento para instalar pacotes do AUR, mas também se você quiser usar uma única ferramenta para gerenciar tanto o AUR quanto os pacotes oficiais do Pacman. Todos os comandos `-S` são comandos do Pacman. Então em vez de fazer `sudo pacman -Syu` para atualizar todos os pacotes, você pode substituir por `pacaur -Syu`. Todo o resto basicamente "funciona".
 
-When you try to install a package with `-S` it will first look into the official repos, if not found then it tries AUR. There's even a nice GUI if you want:
+Quando você tenta instalar um pacote com `-S`, ele primeiro procura nos repositórios oficiais; se não encontrar, tenta o AUR. Tem até uma GUI bem bacana se quiser:
 
 ```
 pacaur -S pamac-pacaur
 ```
 
-Now, to install the same Terminix, you can do just this:
+Para instalar o mesmo Terminix agora, basta fazer:
 
 ```
 pacaur -Sy terminix
 ```
 
-It will ask you simple yes/no questions such as "Do you want to edit the build file?" You can answer "n" to those and confirm "y" when it asks you if you want to install the dependencies or the generated package.
+Ele vai fazer perguntas simples de sim/não como "Quer editar o arquivo de build?" Responda "n" para essas e confirme "y" quando perguntar se quer instalar as dependências ou o pacote gerado.
 
-And that's it! You can search the AUR repositories with:
+E é isso! Você pode buscar nos repositórios do AUR com:
 
 ```
 pacaur -s spotify
 ```
 
-It will give you a lot of options, for example:
+Vai te dar várias opções, por exemplo:
 
 ```
 $ pacaur -s spotify
@@ -141,9 +145,9 @@ aur/blockify 3.6.3-3 (106, 5.61)
 ...
 ```
 
-Common sense, my friends. Read, interpret, choose. Arch requires you to be a **smart** person, and by "smart" I mean: knowing how to read! Most people skip reading things and just click stuff like moron.
+Bom senso, pessoal. Leia, interprete, escolha. O Arch exige que você seja uma pessoa **inteligente**, e por "inteligente" quero dizer: que sabe ler! A maioria das pessoas pula a leitura e fica clicando em tudo como idiota.
 
-Now that you know the exact name of the package you want, just install it normally like this:
+Agora que você sabe o nome exato do pacote que quer, instale normalmente assim:
 
 ```
 pacaur -S spotify
@@ -151,52 +155,52 @@ pacaur -S spotify
 
 ![Pacaur](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/604/Screenshot_from_2017-01-16_14-21-49.png)
 
-Pacaur is one of many [AUR Helpers](https://wiki.archlinux.org/index.php/AUR_helpers). I was initially drawn into Yaourt, but after research, you figure out that you should only try out aurutils, bauerbill or pacaur. I prefer the latter because it's easier to spell out.
+O Pacaur é um dos muitos [AUR Helpers](https://wiki.archlinux.org/index.php/AUR_helpers). Inicialmente fui atraído pelo Yaourt, mas depois de pesquisar, você percebe que deve experimentar apenas aurutils, bauerbill ou pacaur. Prefiro este último porque é mais fácil de falar.
 
 ```
 pacaur -Syua
 ```
 
-This should keep your system up to date, both the official and AUR packages.
+Isso mantém o seu sistema atualizado, tanto os pacotes oficiais quanto os do AUR.
 
-### Asdf - the last languages version manager you'll ever need
+### Asdf - o último gerenciador de versões de linguagens que você vai precisar
 
-If you're a Rubyist, you're familiar with RVM, rbenv, chruby. If you're from Node.js you know the RVM-inspired NVM to manage your different versions of Node. Each new language nowadays needs a version manager as they're evolving quickly and because if you work with client projects you will eventually need to use an old version to deal with legacy software.
+Se você é Rubyist, conhece RVM, rbenv, chruby. Se vem do Node.js, conhece o NVM inspirado no RVM para gerenciar diferentes versões do Node. Cada nova linguagem hoje em dia precisa de um gerenciador de versões porque evoluem rapidamente e porque se você trabalha com projetos de clientes vai eventualmente precisar usar uma versão antiga para lidar com software legado.
 
-So even though you can install the current stable Ruby 2.3.3 by just doing `pacman -S ruby` or `pacaur -S ruby` you will eventually need to switch back to Ruby 2.1 or older for a client project, for example.
+Então, mesmo que você possa instalar o Ruby 2.3.3 estável atual só fazendo `pacman -S ruby` ou `pacaur -S ruby`, vai eventualmente precisar voltar para Ruby 2.1 ou mais antigo para algum projeto de cliente.
 
-Should you install RVM? Or rbenv? And how do you deal with different versions of Clojure, Go, Rust, Elixir?
+Instala RVM? Ou rbenv? E como lidar com diferentes versões de Clojure, Go, Rust, Elixir?
 
-That sounds like yet another maintenance nightmare to deal with. But someone decided to actually solve this problem in an elegant way. Enter [asdf](https://github.com/asdf-vm/asdf) - and if you happen to know [Akash Manohar](https://github.com/HashNuke) give him a big hug.
+Isso soa como mais um pesadelo de manutenção para encarar. Mas alguém decidiu resolver esse problema de forma elegante. Entra o [asdf](https://github.com/asdf-vm/asdf) - e se você por acaso conhecer [Akash Manohar](https://github.com/HashNuke), dê um abraço nele.
 
-Let's install it (from the project's README):
+Vamos instalá-lo (do README do projeto):
 
 ```
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.2.1
 ```
 
-Then edit your shell config files:
+Depois edite seus arquivos de configuração de shell:
 
 ```
-# For Ubuntu or other linux distros
+# Para Ubuntu ou outras distros Linux
 echo -e '\n. $HOME/.asdf/asdf.sh' >> ~/.bashrc
 echo -e '\n. $HOME/.asdf/completions/asdf.bash' >> ~/.bashrc
 
-# OR for Mac OSX
+# OU para Mac OSX
 echo -e '\n. $HOME/.asdf/asdf.sh' >> ~/.bash_profile
 echo -e '\n. $HOME/.asdf/completions/asdf.bash' >> ~/.bash_profile
 
-# For the Fish shell
+# Para o Fish shell
 echo 'source ~/.asdf/asdf.fish' >> ~/.config/fish/config.fish
 mkdir -p ~/.config/fish/completions; and cp ~/.asdf/completions/asdf.fish ~/.config/fish/completions
 
-# If, like me, you like ZSH with YADR (you have to install YADR before this)
+# Se, como eu, você gosta de ZSH com YADR (precisa instalar o YADR antes disso)
 touch ~/.zsh.after/asdf.zsh
 echo -e '\n. $HOME/.asdf/asdf.sh' >> ~/.zsh.after/asdf.zsh
 echo -e '\n. $HOME/.asdf/completions/asdf.bash' >> ~/.zsh.after/asdf.zsh
 ```
 
-This tool is very self explanatory. Let's start by installing a bunch of plugins (full table of links in the README file):
+Essa ferramenta é bem auto-explicativa. Vamos começar instalando um monte de plugins (tabela completa de links no arquivo README):
 
 ```
 asdf plugin-add clojure https://github.com/vic/asdf-clojure.git
@@ -208,10 +212,10 @@ asdf plugin-add rust https://github.com/code-lever/asdf-rust.git
 asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 ```
 
-If you're like me, you must be **super excited** because you already know what we will do next:
+Se você é como eu, deve estar **super animado** porque já sabe o que vamos fazer a seguir:
 
 ```
-sudo pacman -Sy jdk8-openjdk # you need Java for Clojure
+sudo pacman -Sy jdk8-openjdk # precisa de Java para Clojure
 
 asdf install clojure 1.8.0
 asdf global clojure 1.8.0
@@ -219,7 +223,7 @@ mkdir ~/bin
 wget https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein -O ~/bin/lein
 chmod +x ~/bin/lein
 export PATH=$PATH:~/bin
-# echo "PATH=$PATH" > ~/.zsh.after/binpath.zsh # if you use YADR+ZSH
+# echo "PATH=$PATH" > ~/.zsh.after/binpath.zsh # se usar YADR+ZSH
 lein
 
 asdf install erlang 19.0
@@ -245,88 +249,88 @@ asdf global nodejs 7.4.0
 npm -g install brunch phantomjs
 ```
 
-That's it! We now have every language we need installed and ready to use! What if I need Ruby 2.3.1 for a client project?
+Pronto! Agora temos todas as linguagens que precisamos instaladas e prontas para uso! E se eu precisar do Ruby 2.3.1 para um projeto de cliente?
 
 ```
 asdf install ruby 2.3.1
 asdf local ruby 2.3.1
 ```
 
-And now I have 2.3.1 locally (I can change it to be the system default using `global`).
+E agora tenho o 2.3.1 localmente (posso mudar para o padrão do sistema usando `global`).
 
-Most of the maintenance effort summarizes to this:
-
-```
-asdf plugin-update --all # update the individual plugins
-asdf list-all [language] # to list all available versions
-```
-
-And that's basically it! You have almost everything you need to develop software.
-
-### Useful Software to Install
-
-Now, as usual, let me recommend some software:
+A maior parte do esforço de manutenção se resume a isso:
 
 ```
-# make sure you're up to date
+asdf plugin-update --all # atualiza os plugins individuais
+asdf list-all [linguagem] # lista todas as versões disponíveis
+```
+
+E é basicamente isso! Você tem quase tudo que precisa para desenvolver software.
+
+### Software Útil para Instalar
+
+Agora, como de costume, deixa eu recomendar alguns softwares:
+
+```
+# garanta que está atualizado
 sudo pacman -Syu
 
-# install multimedia codecs
+# instale codecs multimídia
 sudo pacman -Sy gstreamer0.10-plugins
 sudo pacman -Sy exfat-utils fuse-exfat a52dec faac faad2 flac jasper lame libdca libdv gst-libav libmad libmpeg2 libtheora libvorbis libxv wavpack x264 xvidcore gstreamer0.10-plugins flashplugin libdvdcss libdvdread libdvdnav gecko-mediaplayer dvd+rw-tools dvdauthor dvgrab pulseaudio-equalizer-
 
-# if you need japanese fonts like me
+# se precisar de fontes japonesas como eu
 sudo pacman -Sy adobe-source-han-sans-otc-fonts otf-ipafont
 
-# some components that you will need
+# alguns componentes que você vai precisar
 sudo pacman -Sy fuse-exfat 
 
-# I personally like the Numix theme and Breeze Icons, change them with the Tweak Tool
+# gosto do tema Numix e ícones Breeze, mude-os com o Tweak Tool
 sudo pacman -Sy numix-themes breeze-icons 
 
-# Ifnstall more good looking fonts
+# instale mais fontes com boa aparência
 sudo pacman -Sy ttf-dejavu 
 pacaur -S ttf-ms-fonts ttf-vista-fonts ttf-liberation adobe-source-sans-pro-fonts ttf-ubuntu-font-family
 
-# Firefox and Java plugin
+# Firefox e plugin Java
 sudo pacman -Sy icedtea-web firefox
 
-# for devs
+# para devs
 sudo pacman -Sy zsh the_silver_searcher gvim imagemagick htop
 pacaur -Sy ttf-hack
 
-# Native wrapper for Web apps such as Slack, Hangout, etc
+# Wrapper nativo para apps Web como Slack, Hangout, etc
 pacaur -Sy franz-bin
 
-# Best native Twitter client for Linux
+# Melhor cliente nativo de Twitter para Linux
 pacaur -Sy corebird
 
-# No need to explain
+# Dispensa explicação
 pacaur -Sy spotify
-pacaur -Sy sublime-text-dev # install these plugins http://www.hongkiat.com/blog/sublime-text-plugins/
+pacaur -Sy sublime-text-dev # instale estes plugins http://www.hongkiat.com/blog/sublime-text-plugins/
 
-# If you like to read RSS
+# Se você gosta de ler RSS
 pacaur -Sy feedreader-beta
 
-# if you need Office-like support
+# se precisar de suporte tipo Office
 sudo pacman -Sy libreoffice-fresh
 
-# if you need Photoshop-like support
+# se precisar de suporte tipo Photoshop
 sudo pacman -Sy gimp
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/doctormo/GimpPs/master/tools/install.sh)"
 
-# if you want a really good video editor
+# se quiser um editor de vídeo realmente bom
 sudo pacman -Sy frei0r-plugins dvdauthor vlc
 pacaur -Sy kdenlive
 
-# this can make CPU-intensive software to behave better and guarantee better user experience
+# isso pode fazer softwares que consomem muito CPU se comportarem melhor e garantir melhor experiência de uso
 pacaur -Sy ananicy-git
 
-# dropbox is the most horrible piece of software, but you may need it:
+# dropbox é o software mais horrível do mundo, mas pode ser que você precise:
 pacaur -Sy dropbox dropbox-cli nautilus-dropbox
 ```
 
-As usual, I like to replace Bash for Zsh and configure Vim with YADR:
+Como sempre, gosto de substituir o Bash pelo Zsh e configurar o Vim com YADR:
 
 ```
 sh -c "`curl -fsSL https://raw.githubusercontent.com/skwp/dotfiles/master/install.sh`"
@@ -337,7 +341,7 @@ echo "let g:yadr_disable_solarized_enhancements = 1" >> ~/.vimrc.after
 echo "colorscheme gruvbox" >> ~/.vimrc.after
 ```
 
-To install and configure Postgresql 9.6:
+Para instalar e configurar o Postgresql 9.6:
 
 ```
 sudo pacman -Sy postgresql
@@ -345,19 +349,19 @@ sudo -u postgres -i
 initdb --locale $LANG -E UTF8 -D '/var/lib/postgres/data'
 exit
 
-# do not do this in Production machines
+# não faça isso em máquinas de Produção
 sudo sed -i.bak 's/ident/trust/' /var/lib/postgres/data/pg_hba.conf
 sudo systemctl start postgresql
 sudo systemctl enable postgresql
 
 sudo -u postgres -i
-createuser --interactive # create with your username and superuser role
+createuser --interactive # crie com seu nome de usuário e papel de superuser
 createdb youruser
 exit
 sudo systemctl restart postgresql
 ```
 
-If you want to install Docker:
+Se quiser instalar o Docker:
 
 ```
 sudo pacman -Sy docker
@@ -367,7 +371,7 @@ sudo systemctl enable docker
 logout
 ```
 
-We always need Redis, Memcached, so let's install them:
+Sempre precisamos de Redis, Memcached, então vamos instalá-los:
 
 ```
 sudo pacman -Sy redis memcached
@@ -377,29 +381,29 @@ sudo systemctl start memcached
 sudo systemctl enable memcached
 ```
 
-After you install and remove a lot of software, you may end up with unnecessary packages eating up disk space. You can clean it up with:
+Depois de instalar e remover muito software, você pode acabar com pacotes desnecessários ocupando espaço em disco. Dá para limpar com:
 
 ```
 sudo pacman -Rns $(pacman -Qtdq)
 ```
 
-And as I said before, the Arch Wiki is super useful for you to keep tweaking your system, so make sure you read articles such as [this "Improving Performance" page](https://wiki.archlinux.org/index.php/Improving_performance).
+E como disse antes, a Arch Wiki é super útil para continuar ajustando o sistema, então leia artigos como [esta página "Improving Performance"](https://wiki.archlinux.org/index.php/Improving_performance).
 
-### Desktop Kernels
+### Kernels para Desktop
 
-One thing to keep in mind about most Linux distros is that the kernel is usually compiled to be better optimized for Servers.
+Uma coisa importante sobre a maioria das distros Linux é que o kernel geralmente é compilado para ser mais otimizado para Servidores.
 
-Modern hardware, especially with lots of RAM and equipped with an SSD "should" work well enough. But not always, you may experience some "stutters" or even total unresponsiveness.
+Hardware moderno, especialmente com bastante RAM e equipado com SSD, "deveria" funcionar bem o suficiente. Mas nem sempre: você pode ter alguns "engasgos" ou até total falta de resposta.
 
-There are many reasons why, but the 2 main culprits are application memory being paged out to disk swap and the I/O scheduler of the Linux kernel.
+Há muitas razões, mas os 2 principais culpados são a memória da aplicação sendo paginada para o swap em disco e o escalonador de I/O do kernel Linux.
 
-In a server scenario, you want processes to have a fair share of resources, which is why a process scheduler such as CFS - Completely Fair Scheduler - and CFQ - Complete Fairness Queueing - for I/O, are fantastic.
+Num cenário de servidor, você quer que os processos tenham uma fatia justa dos recursos, por isso um escalonador de processos como o CFS - Completely Fair Scheduler - e o CFQ - Complete Fairness Queueing - para I/O, são fantásticos.
 
-But in the Desktop the story is totally different. You are willing to trade-off high throughput for lower latency in order to have responsiveness. No one wants to have their UI and mouse pointer frozen while copying large files to USB drives, or while waiting for that nasty `make -j9` to finish compiling your also nasty gcc-gcj. You may end up with a frozen UI for hours! This is just unacceptable!
+Mas no Desktop a história é completamente diferente. Você está disposto a trocar alto throughput por baixa latência para ter responsividade. Ninguém quer ter a UI e o ponteiro do mouse congelados enquanto copia arquivos grandes para drives USB, ou enquanto espera aquele terrível `make -j9` terminar de compilar o seu igualmente terrível gcc-gcj. Pode terminar com a UI congelada por horas! Simplesmente inaceitável!
 
-What you want for Desktop usage, with dozens of random processes doing random operations, is almost "soft real time" configuration. A more aggressive preemption where the Kernel gives some control back to the UI so you can do other stuff - albeit slower. Low latency is the key to have a smooth user experience.
+O que você quer para uso em Desktop, com dezenas de processos aleatórios fazendo operações aleatórias, é uma configuração quase de "soft real time". Uma preempção mais agressiva onde o Kernel devolve algum controle para a UI para que você possa fazer outras coisas - embora mais devagar. Baixa latência é a chave para uma experiência de usuário fluida.
 
-To increase responsiveness, the most important first thing you want to do is configure this:
+Para aumentar a responsividade, a primeira e mais importante coisa a fazer é configurar isto:
 
 ```
 sudo tee -a /etc/sysctl.d/99-sysctl.conf <<-EOF
@@ -410,39 +414,39 @@ vm.dirty_bytes=50331648
 EOF
 ```
 
-Reboot. If you want to know what those settings are, [read this](https://rudd-o.com/linux-and-free-software/tales-from-responsivenessland-why-linux-feels-slow-and-how-to-fix-that).
+Reinicie. Se quiser saber o que são essas configurações, [leia isto](https://rudd-o.com/linux-and-free-software/tales-from-responsivenessland-why-linux-feels-slow-and-how-to-fix-that).
 
-And you may want to install a customized Kernel with a different Scheduler. There are 3 options nowadays: [Zen](https://aur.archlinux.org/packages/linux-zen-git/), [Liquorix](https://liquorix.net/) and [CK](https://aur.archlinux.org/packages/linux-ck/).
+Você pode querer instalar um Kernel customizado com um Scheduler diferente. Existem 3 opções atualmente: [Zen](https://aur.archlinux.org/packages/linux-zen-git/), [Liquorix](https://liquorix.net/) e [CK](https://aur.archlinux.org/packages/linux-ck/).
 
-I am still not 100% sure which one is the best, they have a few maintenance concerns.
+Ainda não tenho 100% de certeza sobre qual é o melhor; todos têm algumas preocupações de manutenção.
 
-Out of the 3, you will want to stick to Zen (which is [basically Liquorix](https://github.com/zen-kernel/zen-kernel/issues/30#issuecomment-142787936)), as it's maintained in the official repositories in binary format (believe me, you don't want to wait for a custom kernel to compile, it takes forever).
+Dos 3, você vai querer ficar com o Zen (que é [basicamente o Liquorix](https://github.com/zen-kernel/zen-kernel/issues/30#issuecomment-142787936)), pois é mantido nos repositórios oficiais em formato binário (acredite, você não quer esperar um kernel customizado compilar, leva uma eternidade).
 
 ```
 sudo pacman -Sy linux-zen
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-Reboot.
+Reinicie.
 
-The main change is probably the I/O Scheduler, upgrading from the standard CFQ to BFQ. If you're using a mechanical hard drive you will want to use the better BFQ (which Zen enables by default). If you're using an SSD you will want 'deadline' instead. 
+A principal mudança é provavelmente o I/O Scheduler, passando do CFQ padrão para o BFQ. Se você usa HD mecânico vai querer usar o BFQ melhorado (que o Zen habilita por padrão). Se usa SSD vai querer 'deadline' em vez disso.
 
-DO NOT INSTALL THOSE KERNELS IN PRODUCTION SERVERS! They are intended for desktop usages only!
+NÃO INSTALE ESSES KERNELS EM SERVIDORES DE PRODUÇÃO! Eles são destinados apenas ao uso em desktop!
 
-For the most part, Zen may have the better balance between stability and tweak set. You may want to use it, especially in older hardware. Modern hardware, as I said, may not notice too much difference.
+De modo geral, o Zen pode ter o melhor equilíbrio entre estabilidade e conjunto de ajustes. Vale usá-lo, especialmente em hardware mais antigo. Hardware moderno, como disse, pode não notar muita diferença.
 
-### Conclusion
+### Conclusão
 
-I am not sure if it is the Arch maintainers that are doing a super job or if it's RedHat and Canonical that are screwing up their distros so badly in comparison.
+Não sei se são os mantenedores do Arch que estão fazendo um trabalho excelente ou se são a RedHat e a Canonical que estão estragando tanto as distros deles em comparação.
 
-I mean, Ubuntu, Fedora, OpenSuse, Elementary, are all fair and nice distros that, most of the time, "just works".
+Quer dizer, Ubuntu, Fedora, OpenSuse, Elementary são todas distros decentes que, na maioria das vezes, "simplesmente funcionam".
 
-But for a distro that many consider targetted to "advanced users", Arch is way more polished. I can't figure out why.
+Mas para uma distro que muitos consideram voltada a "usuários avançados", o Arch é muito mais polido. Não consigo entender o porquê.
 
-In the same hardware, the Gnome 3 experience under Arch is noticeably better than the same Gnome 3 over Fedora. Compared to Unity on Ubuntu, it's miles ahead. It's fast, fluid, good looking, the defaults all work out nicely.
+No mesmo hardware, a experiência com o Gnome 3 no Arch é visivelmente melhor do que o mesmo Gnome 3 no Fedora. Comparado ao Unity no Ubuntu, está milhas à frente. É rápido, fluido, com boa aparência, e os padrões todos funcionam bem.
 
-And all of a sudden I realize that I don't have to worry about major upgrades. Rolling upgrades to the latest continuously brings me another layer of confidence.
+E de repente percebo que não preciso mais me preocupar com grandes atualizações. Os upgrades rolling contínuos para o mais recente me trazem mais uma camada de confiança.
 
-Arch makes me feel like I am in control again without requiring me to waste hours tweaking things to my liking. The defaults are rock solid and I can small improvements over it whenever I need to.
+O Arch me faz sentir que estou no controle novamente sem exigir que eu perca horas ajustando coisas ao meu gosto. Os padrões são sólidos e consigo fazer pequenas melhorias quando preciso.
 
-Kudos to the Arch maintainers, this is the finest Linux distro I've ever had the pleasure to play with. I hope this feeling goes on as I keep using this as my daily driver. But so far I am convinced that this is the right choice.
+Parabéns aos mantenedores do Arch: esta é a melhor distro Linux que já tive o prazer de usar. Espero que essa sensação continue enquanto eu a usar como meu sistema principal. Mas até agora estou convencido de que esta é a escolha certa.

@@ -1,7 +1,10 @@
 ---
-title: From Microsoft to Apple, and Back Again
+title: "Da Microsoft para a Apple e de Volta"
 date: '2017-11-21T21:51:00-02:00'
-slug: from-microsoft-to-apple-and-back-again
+slug: da-microsoft-para-a-apple-e-de-volta
+translationKey: microsoft-to-apple-and-back
+aliases:
+- /2017/11/21/from-microsoft-to-apple-and-back-again/
 tags:
 - mac
 - macos
@@ -10,291 +13,292 @@ tags:
 - microsoft
 - surface
 - dell
+- traduzido
 draft: false
 ---
 
-This is going to be a very lengthy article, buckle up ladies and gentlemen.
+Este vai ser um artigo bem longo, se preparem.
 
-If you're hasty, here's what you need to know:
+Para quem tem pressa, o resumo é este:
 
-* Windows 10 is still Windows, but it's nowhere near the nightmare of the 2000's. It rightfully deserves a new chance.
-* OS X is on its way to becoming no more than an XCode runtime. Rumor says that Apple doesn't even have a dedicated team for the desktop OS anymore. They are entirely focused on iOS and to make the iPad the desktop replacement.
-* Linux is great, if you're a full-time web developer, you can comfortably run something like Ubuntu or Manjaro/Arch (my personal recommendation).
+* Windows 10 ainda é Windows, mas não chega nem perto do pesadelo dos anos 2000. Merece uma segunda chance de verdade.
+* O OS X está a caminho de se tornar apenas um runtime do Xcode. Rumores dizem que a Apple nem tem mais uma equipe dedicada ao SO de desktop. O foco é total no iOS e em transformar o iPad no substituto do computador.
+* Linux é ótimo. Se você é desenvolvedor web em tempo integral, consegue trabalhar confortavelmente com Ubuntu ou Manjaro/Arch (minha recomendação pessoal).
 
-Best cost-benefit: the Dell XPS 13. The Surface Book 2 is totally worth it if you're a nerd like me. But as always, there are caveats to discuss.
+Melhor custo-benefício: o Dell XPS 13. O Surface Book 2 vale cada centavo se você é nerd como eu. Mas, como sempre, há ressalvas a discutir.
 
 ![Book 2](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/663/20171121_111616.jpg)
 
-## The Specs
+## As Especificações
 
-I will definitely not duplicate every [hardware review](https://www.youtube.com/watch?v=-Hh0lZ7Jg4U) you can find out there. They are all true. As [iFixIt says](https://www.ifixit.com/Teardown/Microsoft+Surface+Book+2+Teardown/100364): it's the worst score in repairability. Like a Macbook, the Surface line-up is a statement. It's the best combination of design and functionality. But the trade-off is that it has zero expandability and you should really take care not to break it. If it breaks, make sure you have a warranty and ask for a replacement.
+Não vou duplicar cada [review de hardware](https://www.youtube.com/watch?v=-Hh0lZ7Jg4U) que você encontra por aí. Todos são verdadeiros. Como o [iFixIt diz](https://www.ifixit.com/Teardown/Microsoft+Surface+Book+2+Teardown/100364): é a pior pontuação em reparabilidade. Como o MacBook, a linha Surface é uma declaração. É a melhor combinação de design e funcionalidade. A contrapartida é que tem zero de expansibilidade e você precisa tomar cuidado para não quebrá-lo. Se quebrar, garanta que tem garantia e exija a substituição.
 
-In terms of specs, it is close to other top-of-the-line notebooks.
+Em termos de especificações, fica próximo dos outros notebooks top de linha.
 
-The top of the line Surface Book 2 costs [USD 3,299](https://www.microsoft.com/en-us/surface/devices/surface-book-2/overview) and comes with 1 TB SSD, 16GB RAM, GTX 1060 w/ 6 GB GDDR5,  Intel Core i7 8th Gen Kaby Lake R, 4K display. It is super expensive, but you can easily justify it. More on that below.
+O Surface Book 2 top de linha custa [USD 3.299](https://www.microsoft.com/en-us/surface/devices/surface-book-2/overview) e vem com SSD de 1 TB, 16 GB de RAM, GTX 1060 com 6 GB GDDR5, Intel Core i7 8ª geração Kaby Lake R, display 4K. Caríssimo, mas dá para justificar. Explico mais abaixo.
 
-The top of the line Dell XPS 15" Touch costs [USD 2,459](http://dell.to/2jMDOx5) and comes with 1 TB SSD, **32GB RAM**, GTX 1050 w/ 4 GB GDDR5, Intel Core i7 7th Gen Kaby Lake, 4K display. The design of the XPS is top notch for at least 3 generations now. To me, this is the best cost-benefit.
+O Dell XPS 15" Touch top de linha custa [USD 2.459](http://dell.to/2jMDOx5) e vem com SSD de 1 TB, **32 GB de RAM**, GTX 1050 com 4 GB GDDR5, Intel Core i7 7ª geração Kaby Lake, display 4K. O design do XPS é impecável faz pelo menos 3 gerações. Para mim, é o melhor custo-benefício.
 
-The top of the line Razer Blade costs [USD 2,599](https://www.razerzone.com/gaming-laptops/razer-blade/shop) and comes with 1 TB SSD, 16 GB RAM, GTX 1060 w/ 6 GB, Intel Core i7 7th Gen, 4K display. It's arguably the best industrial design of this bunch, with Razer's impeccable attention to detail. But it's also arguably the one with least available support and more construction problems reported, so be careful to buy it overseas.
+O Razer Blade top de linha custa [USD 2.599](https://www.razerzone.com/gaming-laptops/razer-blade/shop) e vem com SSD de 1 TB, 16 GB de RAM, GTX 1060 com 6 GB, Intel Core i7 7ª geração, display 4K. É provavelmente o melhor design industrial do grupo, com a atenção impecável da Razer aos detalhes. Mas também é o que tem menos suporte disponível e mais problemas de construção relatados, então cuidado ao comprar no exterior.
 
-The top of the line HP Spectre x360 costs [USD 1,499](http://store.hp.com/us/en/pdp/hp-spectre-x360-15-bl152nr) and comes with 512 GB SSD, GeForce MX150 w/ 2GB GDDR5, Intel Core i17 8th Gen, 4K display. The design is awesome, super thin convertible. The specs are not so great, but it's the cheapest of the premium notebooks, so there's that.
+O HP Spectre x360 top de linha custa [USD 1.499](http://store.hp.com/us/en/pdp/hp-spectre-x360-15-bl152nr) e vem com SSD de 512 GB, GeForce MX150 com 2 GB GDDR5, Intel Core i7 8ª geração, display 4K. O design é lindo, super fino e conversível. As especificações não são lá essas coisas, mas é o mais barato entre os notebooks premium.
 
-The top of the line Lenovo Yoga 920 14" Vibe costs [USD 1,899](http://lnv.gy/2A4DjlU) but it only comes with Intel Integrated Graphics (no secondary GPU), 1 TB SSD, 16 GB RAM, Intel Core i7 8th Gen, 4K display, and comes with the Pen. The design, again, is great with an almost 360 degrees hinge so you can flip your screen around and use it as a tablet. A very good 2-in-1.
+O Lenovo Yoga 920 14" Vibe top de linha custa [USD 1.899](http://lnv.gy/2A4DjlU) mas vem apenas com gráficos integrados Intel (sem GPU secundária), SSD de 1 TB, 16 GB de RAM, Intel Core i7 8ª geração, display 4K, e já inclui a Caneta. O design é ótimo, com uma dobradiça de quase 360 graus para usar como tablet. Um bom 2-em-1.
 
-Now, the top of the line MacBook Pro 15" costs [USD 3,399](http://apple.co/2zXSz6d) and comes with 1 TB SSD, Radeon Pro 560 w/ 4GB, Intel Core i7 7th Gen, UHD Display, and the infamous touch bar (50% chance of liking it). And that's it. The industrial design and construction are still top-notch, but the others are nearly as good nowadays.
+Agora, o MacBook Pro 15" top de linha custa [USD 3.399](http://apple.co/2zXSz6d) e vem com SSD de 1 TB, Radeon Pro 560 com 4 GB, Intel Core i7 7ª geração, display UHD e a infame touch bar (50% de chance de gostar). É isso. O design industrial e a construção ainda são excelentes, mas os concorrentes chegaram bem perto.
 
-If you use graphics-intensive applications, the Radeon Pro 560 is good, but the GTX 1060 is [superior](http://bit.ly/2zsIjE5). Apple's UHD IPS (LCD) displays have a maximum resolution of 2560x1060. All premium notebooks nowadays come with full 4K (LED) displays with a maximum resolution of 3840x2160. It is noticeable. If you never saw a modern 4K display the MacBook displays will look good enough. And that's without saying that they are all touchscreens with 4,096 points of sensitivity. And what was once just a gimmick nowadays compare with the best Wacom has to offer. The Surface line up comes close to the top of the line Wacom Cintiq and the new iPad Pro. They are in the same league.
+Se você usa aplicações gráficas intensivas, a Radeon Pro 560 é boa, mas a GTX 1060 é [superior](http://bit.ly/2zsIjE5). Os displays UHD IPS (LCD) da Apple têm resolução máxima de 2560x1060. Todos os notebooks premium hoje vêm com displays 4K completos (LED) com resolução máxima de 3840x2160. A diferença é perceptível. Se você nunca viu um display 4K moderno, o display do MacBook vai parecer bom. E isso sem mencionar que todos são touchscreens com 4.096 pontos de sensibilidade. O que antes era gimmick hoje rivaliza com o melhor que a Wacom tem a oferecer. A linha Surface chega perto do topo da linha Wacom Cintiq e do novo iPad Pro. Estão no mesmo nível.
 
-There are 2 aspects of the Surface Book 2 that are lacking, unfortunately. First is the absence of a proper Thunderbolt 3 port. Without it, you can't connect to modern external storages or external GPUs. The second is the weak power supply. Reports say that in highly demanding games (a.k.a. Destiny 2 not properly configured), the system will throttle down and drain all the battery faster than it can charge from the wall. [The Verge broke this story](https://www.theverge.com/2017/11/21/16685986/microsoft-surface-book-2-power-problem) and Microsoft is yet to unveil a solution if any. So, if gaming is your top priority buy a Razer or any of the gaming specific laptops such as an Alienware. The battery issue is [not as dramatic](https://www.youtube.com/watch?v=imzVR4JSITM&t=1s) as some have previously reported, though.
+Há 2 aspectos do Surface Book 2 que deixam a desejar. Primeiro, a ausência de uma porta Thunderbolt 3 de verdade. Sem ela, você não consegue conectar armazenamentos externos modernos ou GPUs externas. O segundo é a fonte de alimentação fraca. Relatos indicam que em jogos muito exigentes (como Destiny 2 sem configuração adequada), o sistema throttla e drena a bateria mais rápido do que consegue carregar da tomada. [The Verge quebrou essa história](https://www.theverge.com/2017/11/21/16685986/microsoft-surface-book-2-power-problem) e a Microsoft ainda não apresentou solução. Então, se jogos são prioridade máxima, compre um Razer ou qualquer notebook específico para games, como um Alienware. O problema de bateria [não é tão dramático](https://www.youtube.com/watch?v=imzVR4JSITM&t=1s) quanto alguns relataram anteriormente.
 
-In terms of construction. Macs are usually all built with the same aluminum unibody construction. The Book 2 uses Magnesium instead. It makes for a very solid construction but also very lightweight. By the way, after so many years, everybody mastered aluminum. And they are moving in other directions, for example, Dell uses carbon fiber on the palm rests, which I find much comfort. Magnesium is also not so freezing cold as aluminum, again, more comfortable. I like that they are passed just copying and really trying new and interesting materials.
+Em termos de construção: Macs são todos feitos com a mesma construção unibody de alumínio. O Book 2 usa magnésio. Fica muito sólido e bem leve. Aliás, depois de tantos anos, todo mundo dominou o alumínio. E estão indo em outras direções. A Dell, por exemplo, usa fibra de carbono nos apoios de pulso, o que acho muito mais confortável. O magnésio também não é tão gelado quanto o alumínio. Gosto que os fabricantes superaram a fase de copiar e estão experimentando materiais novos e interessantes.
 
 ![it's not as thin](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/664/20171121_111533.jpg)
 
-## Value Proposition
+## A Proposta de Valor
 
-We established that the Surface Book 2 is very expensive, and it's not even good enough for highly demanding games such as Destiny 2.
+Já estabelecemos que o Surface Book 2 é caríssimo e nem é bom o suficiente para jogos muito exigentes como Destiny 2.
 
-Where it really shines is the fact that it's not a convertible 2-in-1 such as the Spectre or Yoga. You already know that it can detach the screen from the base.
+Onde ele realmente brilha é no fato de não ser um 2-em-1 conversível comum como o Spectre ou o Yoga. Você já sabe que a tela pode ser desacoplada da base.
 
-The crown achievement of the Surface team is the **dynamic fulcrum hinge**. It's a marvel of engineering. When it's attached, it doesn't wobble nearly as much as one would expect. It's very solid, you can pick up the entire unit from the screen without worrying that the base might fall down or break.
+A grande conquista da equipe Surface é a **dobradiça fulcrum dinâmica**. Uma maravilha de engenharia. Quando acoplada, não balança nem perto do que se esperaria. É muito sólida — você pode pegar o conjunto inteiro pela tela sem se preocupar que a base vai cair ou quebrar.
 
-When I first heard about it 2 years ago, I thought it was cool but that it could break over time, so I waited. I am all in now because 2 years later you don't see a "hinge-gate" or massive reports of the hinge falling apart, so you know it's solid. And 2 years later, no other manufacturer has it, and if you don't see a cheap knockoff from China, you can tell that this is a very difficult thing to build. Microsoft really nailed this part.
+Quando ouvi falar nisso pela primeira vez, 2 anos atrás, achei legal mas pensei que poderia quebrar com o tempo, então esperei. Agora estou totalmente convencido porque 2 anos depois não se vê nenhum "hinge-gate" ou relatos massivos de dobradiças se desfazendo. E 2 anos depois nenhum outro fabricante tem isso. Se você não vê uma cópia barata vinda da China, é porque é muito difícil de construir. A Microsoft acertou em cheio nessa parte.
 
-By having a detachable screen you also know that the main components are all behind the screen. The CPU, the GPU, the RAM, the SSD. So you have a top-of-the-line Intel i7 in a tablet! The battery is understandably small (no more than 3 hours) to drive a 15" 4K display with touch capabilities and enough precision to rival the iPad Pro and the Wacom Cintiq or Mobile Studio.
+Com a tela removível, os componentes principais ficam todos atrás dela. CPU, GPU, RAM, SSD. Você tem um Intel i7 top de linha em um tablet! A bateria é compreensivelmente pequena (no máximo 3 horas) para alimentar um display 4K de 15" com capacidade touch e precisão suficiente para rivalizar com o iPad Pro e o Wacom Cintiq ou Mobile Studio.
 
-Now, what most people don't report is that because of this, the screen housing is the one that gets warm. The performance base remains cool! So it's super comfortable to have it on your lap for many hours without the risk of getting sterile or getting boiled eggs in the process.
+O que a maioria não menciona é que, por causa disso, é o chassi da tela que esquenta. A base de performance fica fria! É super confortável ficar com ele no colo por muitas horas sem risco de ficar estéril ou cozinhar ovos no processo.
 
-It has enough power to drive 1 external 4K display at 60hz or two 4K displays at 30hz. The MacBook Pro, with its custom port, can drive a 5K display. Something most notebooks still can't. So there's that.
+Tem potência para conectar 1 display 4K externo a 60hz ou dois displays 4K a 30hz. O MacBook Pro, com sua porta customizada, consegue alimentar um display 5K. Algo que a maioria dos notebooks ainda não consegue. Aí vai depender do uso.
 
-I am not a designer by trend, but I am a hobbyist. And after many years working hard, I do believe that I can afford something like this. And don't get me wrong, the Surface Pro is another great option for a designer. The top-of-the-line Surface Pro has everything the Book 2 has, without the GTX 1060 but costing USD 600 less at [USD 2,699](https://www.microsoft.com/en-us/surface/devices/surface-pro/overview#surfaceconfiguration). I think it's a more suitable product for most people interested in having an easy to carry sketch solution around.
+Não sou designer de profissão, mas sou hobbyista. Depois de muitos anos de trabalho duro, acredito que posso me dar ao luxo de ter algo assim. E não me entendam mal, o Surface Pro é outra ótima opção para designers. O Surface Pro top de linha tem tudo que o Book 2 tem, sem a GTX 1060, mas custando USD 600 a menos, em [USD 2.699](https://www.microsoft.com/en-us/surface/devices/surface-pro/overview#surfaceconfiguration). Acho que é um produto mais adequado para a maioria das pessoas que querem uma solução de esboço fácil de carregar.
 
-Creative Professionals are the ones that fully need to be careful on specs. But for the majority of non-demanding professionals, they can pay a lot cheaper. They don't need extra GPU horsepower, or the i7 (an i5 is more than adequate), 8 GB of RAM is enough, even 256 GB of SSD is ok because everything is in the so-called "Cloud" these days. This is the [USD 999](http://www.dell.com/en-us/shop/dell-laptops/new-xps-13/spd/xps-13-9360-laptop/dncwtr744h) Dell XPS 13. Or the only comparable option from Apple is the [USD 1,299](https://www.apple.com/shop/buy-mac/macbook) with a ridiculous Intel m3 processor. For most professionals, the cheaper Dell XPS 13 is a much better value proposition than the Macbook.
+Profissionais criativos são os que precisam ser mais cuidadosos nas especificações. Mas para a maioria dos profissionais sem demandas tão pesadas, dá para pagar bem mais barato. Não precisam de GPU extra, nem do i7 (um i5 já resolve), 8 GB de RAM são suficientes, até 256 GB de SSD já dão conta porque tudo hoje está na "Nuvem". Esse é o [Dell XPS 13 de USD 999](http://www.dell.com/en-us/shop/dell-laptops/new-xps-13/spd/xps-13-9360-laptop/dncwtr744h). Ou a única opção comparável da Apple é o [MacBook de USD 1.299](https://www.apple.com/shop/buy-mac/macbook) com um ridículo processador Intel m3. Para a maioria dos profissionais, o Dell XPS 13 mais barato é uma proposta de valor muito melhor do que o MacBook.
 
-For demanding professionals, the Dell XPS 15 is the best value for the buck. The Surface Book 2 is the best premium one for those that favor the touch screen more than workflow. Meaning: designers, go with the Book 2, video editors or 3D modelers, go with the Dell XPS.
+Para profissionais com demandas pesadas, o Dell XPS 15 é o melhor custo-benefício. O Surface Book 2 é o premium para quem valoriza a touchscreen mais do que o fluxo de trabalho. Em termos práticos: designers vão de Book 2, editores de vídeo ou modeladores 3D vão de Dell XPS.
 
-Oh, and one last thing about price. The MacBook Pro 15" costs USD 3,399 and the Book 2 costs USD 3,299. But if you want a tablet, you still need to add an extra USD 949 for a 12" iPad Pro with Wi-Fi and 256 GB of storage. And you will end up having to carry around a heavier backpack.
+Ah, e mais uma coisa sobre preço. O MacBook Pro 15" custa USD 3.399 e o Book 2 custa USD 3.299. Mas se você quiser um tablet, ainda precisa adicionar USD 949 por um iPad Pro de 12" com Wi-Fi e 256 GB de armazenamento. E vai acabar carregando uma mochila mais pesada.
 
-## Why not install Linux?
+## Por que não instalar Linux?
 
-You don't buy a Surface product unless you're interested in the **Surface Pen** experience and ecosystem. I think this is obvious, otherwise, you're better off buying a Dell XPS or any other cheaper notebook.
+Você não compra um produto Surface a menos que tenha interesse na experiência e no ecossistema da **Surface Pen**. Isso me parece óbvio, caso contrário você está melhor com um Dell XPS ou qualquer outro notebook mais barato.
 
-It's also obvious why it makes no sense to ask _"Why don't you ditch Windows and install Linux on it?"_. Because no Linux distro has Pen support, whatsoever. The performance base also has a physical key that you need to press in order for the hinge to release the display.
+Também é óbvio por que não faz sentido perguntar _"Por que não abandona o Windows e instala Linux nele?"_. Porque nenhuma distribuição Linux tem suporte à Caneta. A base de performance também tem uma tecla física que você precisa pressionar para que a dobradiça libere a tela.
 
-You want to have Adobe Photoshop, or Autodesk Sketchbook, or Sketchable, or any other great software package out there. Again, I don't want to repeat every other [review available](https://www.youtube.com/watch?v=U8cpC2jZdgM) out there showing how great the pen is. I will just confirm that, yes, the pen is super great, precise, accurate, and flows very naturally. It's an entire studio in a box.
+Você vai querer ter Adobe Photoshop, Autodesk Sketchbook, Sketchable ou qualquer outro pacote de software excelente disponível. Não vou repetir cada [review disponível](https://www.youtube.com/watch?v=U8cpC2jZdgM) mostrando quão boa é a caneta. Confirmo apenas que sim, a caneta é excelente, precisa, fiel, e flui de forma muito natural. É um estúdio inteiro numa caixa só.
 
-Software developers by trend should **stay away** from this kind of product because most Linux distros won't have the proper drivers to hook up to so much exclusive hardware solutions. For those situations I highly recommend the Dell XPS 13, specifically the [USD 1,759](http://dell.to/2A3SPOZ) configuration with Windows 10 Pro (or you can save USD 60 and get it with the Home edition if you intend to install Linux on top of it), the great QHD+ (3200x1800) InfinityEdge touch display, 8th Gen Intel Core i17, 16 GB RAM, 512 GB SSD. This is, by far, the best value for the money for a full-time software developer.
+Desenvolvedores de software deveriam **evitar** esse tipo de produto porque a maioria das distribuições Linux não terá os drivers adequados para tantas soluções de hardware exclusivas. Para essas situações, recomendo muito o Dell XPS 13, especificamente [a configuração de USD 1.759](http://dell.to/2A3SPOZ) com Windows 10 Pro (ou economize USD 60 pegando a edição Home se pretende instalar Linux por cima), o ótimo display touch InfinityEdge QHD+ (3200x1800), Intel Core i7 8ª geração, 16 GB de RAM, SSD de 512 GB. É, de longe, o melhor custo-benefício para um desenvolvedor de software em tempo integral.
 
-OS X has a great community **despite** Apple not doing a lot to help them. Historically, the jump from the legacy MacOS to OS X meant having a UNIX-compatible kernel and toolchain available. To this day, it's still not comparable to a modern Linux distro. But OS X makes it up to it by having, by far, the best Graphics Compositor around. The GUI is smooth, responsive.
+O OS X tem uma comunidade excelente **apesar** da Apple não fazer muito para ajudá-la. Historicamente, a transição do MacOS legado para o OS X significou ter um kernel e toolchain compatíveis com UNIX disponíveis. Até hoje, ainda não é comparável a uma distribuição Linux moderna. Mas o OS X compensa isso por ter, de longe, o melhor Compositor Gráfico do mercado. A GUI é fluida, responsiva.
 
-The Darwin Mach kernel supports multiple policies, most important for Creative Professionals, mainly musicians, was the **soft real-time** capabilities of the scheduler. To this day, [Linux Real Time](https://wiki.archlinux.org/index.php/Realtime_kernel) is not the default option, and it's not as well tuned or stable. And the Windows kernel evolved, but again, still not nearly as polished.
+O kernel Darwin Mach suporta múltiplas políticas, e a mais importante para Profissionais Criativos, especialmente músicos, era a capacidade de **soft real-time** do scheduler. Até hoje, o [Linux Real Time](https://wiki.archlinux.org/index.php/Realtime_kernel) não é a opção padrão, e não é tão bem ajustado nem estável. E o kernel do Windows evoluiu, mas ainda está longe de ser tão polido.
 
-Soft Real-Time avoids the stuttering effect we see. And is one factor of why the Mac experience is, overall, superior even on less powerful hardware.
+O Soft Real-Time evita o efeito de travamento que observamos. E é um dos fatores pelo qual a experiência Mac é, no geral, superior mesmo em hardware menos potente.
 
-In particular, everybody around the [Homebrew](https://brew.sh/) community deserves high praise for their efforts of keeping up in bringing open source tools to OS X, **despite** every new Xcode update and OS X upgrade, breaking them.
+Em particular, todos na comunidade do [Homebrew](https://brew.sh/) merecem muito elogio pelo esforço de continuar trazendo ferramentas open source para o OS X, **apesar** de cada nova atualização do Xcode e do OS X quebrar tudo.
 
-## My Environment
+## Meu Ambiente
 
 ![Magnesium Body](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/662/20171121_111546.jpg)
 
-After a lot of experimentation, I decided to settle on having a native Windows 10 to drive the host and having a full-blown Linux distro ([Manjaro GNOME](https://manjaro.org/get-manjaro/)) on a Virtualbox environment where I give 4 of the 8 cores (2 physical cores, each with 2 hyperthreads) and half the memory (8 GB).
+Depois de muita experimentação, decidi usar o Windows 10 nativo como host e uma distribuição Linux completa ([Manjaro GNOME](https://manjaro.org/get-manjaro/)) em um ambiente Virtualbox, alocando 4 dos 8 cores (2 cores físicos, cada um com 2 hyperthreads) e metade da memória (8 GB).
 
-Why not using the brand new [Windows Subsystem for Linux (WSL)](https://msdn.microsoft.com/en-us/commandline/wsl/faq#can-i-run-all-linux-apps-in-wsl) instead?
+Por que não usar o novíssimo [Windows Subsystem for Linux (WSL)](https://msdn.microsoft.com/en-us/commandline/wsl/faq#can-i-run-all-linux-apps-in-wsl)?
 
-Because although it's great and all, we will need to wait until they figure out the rough edges. Particularly a better GUI support and faster I/O abstraction. What hurts the most is how **painfully slow** the filesystem layer is right now. It's an [order of magnitude slower](http://www.akitaonrails.com/2017/09/20/windows-subsystem-for-linux-is-good-but-not-enough-yet) than using Linux on Virtualbox.
+Porque embora seja promissor, ainda precisamos esperar que resolvam as arestas. Em particular, um suporte melhor a GUI e uma abstração de I/O mais rápida. O que dói mais é como a camada de sistema de arquivos é **dolorosamente lenta** agora. É uma [ordem de magnitude mais lenta](http://www.akitaonrails.com/2017/09/20/windows-subsystem-for-linux-is-good-but-not-enough-yet) do que usar Linux no Virtualbox.
 
-I could use a Vagrant-like hybrid solution, having a headless Linux distro on Virtualbox and accessing a file through CIFS/NFS. And that should be fine if you like editors like Sublime Text 3, Visual Studio Code or Atom. But I am a Vim guy, and I like GVIM, which works best within GNOME, within a proper GUI-enabled Linux distro.
+Poderia usar uma solução híbrida estilo Vagrant, com uma distribuição Linux headless no Virtualbox e acessando arquivos via CIFS/NFS. Funcionaria bem se você gosta de editores como Sublime Text 3, Visual Studio Code ou Atom. Mas sou do time Vim e gosto do GVIM, que funciona melhor dentro do GNOME, dentro de uma distribuição Linux com GUI de verdade.
 
-> _"Why not using Docker? It's supposed to be super-fast and all."_
+> _"Por que não usar Docker? É super rápido e tal."_
 
-It surprises me when people ask that because it demonstrates how little they know about the tools they recommend.
+Me surpreende quando as pessoas perguntam isso, porque demonstra como pouco entendem das ferramentas que recomendam.
 
-Docker only really makes sense on a proper Linux distro. On Windows, it will have to run Linux on Virtualbox or Hyper-V. On Mac, it will use the Hypervisor framework, which - like Microsoft's Hyper-V - is a **virtualization** layer. It's just like Virtualbox, for all intents and purposes.
+Docker faz sentido de verdade em uma distribuição Linux nativa. No Windows, precisa rodar Linux no Virtualbox ou Hyper-V. No Mac, usa o framework Hypervisor, que — como o Hyper-V da Microsoft — é uma camada de **virtualização**. É basicamente o mesmo que Virtualbox, para todos os efeitos práticos.
 
-Docker, like LXC, is just making a process "believe" it's running alone on the OS by hiding the other processes from it. So, on Linux, it's super fast. On any other platform, they have to virtualize Linux proper and then run Docker there.
+Docker, como o LXC, apenas faz um processo "acreditar" que está rodando sozinho no SO ao ocultar os outros processos. Então, no Linux, é super rápido. Em qualquer outra plataforma, precisa virtualizar o Linux e então rodar o Docker lá dentro.
 
-The Docker client is actually communicating with a virtualized Linux on Windows or Mac. You've been fooled if you believed it's faster than Virtualbox or Hyper-V in any meaningful way. There is no magic here.
+O cliente Docker está na verdade se comunicando com um Linux virtualizado no Windows ou Mac. Se você acreditou que é mais rápido que Virtualbox ou Hyper-V de forma significativa, foi enganado. Não há mágica aqui.
 
-> _"Why not just dual-booting then?"_
+> _"Por que não dar dual-boot então?"_
 
-Again, this doesn't help my scenario. I want a full GNOME GUI environment. And I don't want to keep Outlook on Windows and Thunderbird or Evolution on Linux for example, and managing different accounts on all sorts of different applications (and yes, I highly prefer native binaries instead of web apps, I am old-school like that). I don't want to reboot when I want to use Photoshop and reboot back to Linux to run Vim.
+Isso também não resolve meu cenário. Quero um ambiente GNOME completo com GUI. E não quero manter Outlook no Windows e Thunderbird ou Evolution no Linux, gerenciando contas diferentes em todo tipo de aplicação (e sim, prefiro muito binários nativos a web apps, sou old-school assim). Não quero reiniciar quando quiser usar o Photoshop e reiniciar de volta para Linux para usar o Vim.
 
-I **want** to have software from both platforms available to me **at the same time**. I don't believe in dual-boot scenarios unless the usages are completely separated. For example, using a Linux distro all day, and at night rebooting into Windows to run Steam and play some games.
+**Quero** ter software de ambas as plataformas disponível **ao mesmo tempo**. Não acredito em cenários de dual-boot a menos que os usos sejam completamente separados. Por exemplo, usar uma distribuição Linux o dia todo e à noite reiniciar no Windows para rodar o Steam e jogar.
 
-Yes, Virtualbox will have a less responsive UI thanks to a virtualized Graphics pipeline. But for software development, it works just fine. I even see people doing gimmicky things such as having a full development environment in an AWS EC2 instance and SSH'ing there to use Vim with Tmux, for example. That is far more convoluted if you ask me. I wouldn't go that far.
+Sim, o Virtualbox terá uma UI menos responsiva por causa do pipeline gráfico virtualizado. Mas para desenvolvimento de software, funciona perfeitamente. Até vejo pessoas fazendo coisas mirabolantes como ter um ambiente de desenvolvimento inteiro em uma instância EC2 da AWS e acessar via SSH com Vim e Tmux. Isso é bem mais complicado, na minha opinião. Não iria tão longe.
 
-All top-of-the-line hardware I listed above have enough Cores and enough RAM so I can afford running 2 OS'es at the same time. Don't do that on budget hardware.
+Todo o hardware top de linha que listei acima tem Cores e RAM suficientes para rodar 2 SOs ao mesmo tempo. Não faça isso em hardware básico.
 
-And if you don't need to carry around a notebook, for the same amount of money you can buy a far superior desktop computer.
+E se não precisar de um notebook para carregar, com o mesmo dinheiro você compra um computador desktop muito superior.
 
-> _"But you have all native on OS X, because it's UNIX and all"_
+> _"Mas no OS X você tem tudo nativo, porque é UNIX e tal"_
 
-Yes, but I really distrust Apple's OS X big upgrades. They always, always screw up something. After I had my fair share of lost work days after upgrades, I moved my development environment to [Vagrant](https://www.vagrantup.com/) at least 5 years ago. So I was using Linux in Virtualbox (or VMWare) all along. I never looked back. I was always reading people complaining after the big upgrades and there I was, unharmed and productive. Virtualbox was way worse back then, it's not so much nowadays. I can't remember the last time it crashed on me, if ever.
+Sim, mas desconfio muito das grandes atualizações do OS X da Apple. Elas sempre, sempre estragam alguma coisa. Depois de ter minha cota de dias de trabalho perdidos pós-atualizações, migrei meu ambiente de desenvolvimento para o [Vagrant](https://www.vagrantup.com/) pelo menos 5 anos atrás. Então já estava usando Linux no Virtualbox (ou VMWare) o tempo todo. Nunca olhei para trás. Ficava lendo as reclamações das pessoas depois das grandes atualizações e eu estava lá, ileso e produtivo. O Virtualbox era muito pior naquela época, hoje não é tanto. Não me lembro da última vez que travou, se é que travou alguma vez.
 
-> _"Well, and why not Hyper-V instead of Virtualbox?"_
+> _"Mas por que não usar Hyper-V em vez do Virtualbox?"_
 
-I did try it. And I do not recommend it right now. It was built so Windows can run Linux boxes in **servers**. So it's super good in partitioning the hardware resources between the different virtual instances. Unless you're a sysadmin in training or in need of a simulated server on your laptop, this is not for you.
+Tentei. E não recomendo agora. Foi construído para que o Windows rode caixas Linux em **servidores**. Então é excelente para particionar recursos de hardware entre diferentes instâncias virtuais. A menos que você seja sysadmin em treinamento ou precise de um servidor simulado no seu notebook, não é para você.
 
-It has very poor support for graphics (headless servers don't need graphics). The maximum resolution in the virtual monitor is a ridiculous 1152x864. My Virtualbox supports my LG Ultrawide 2560x1080 monitor just fine. Hyper-V can't and this is a deal breaker.
+Tem suporte muito ruim para gráficos (servidores headless não precisam de gráficos). A resolução máxima no monitor virtual é um ridículo 1152x864. Meu Virtualbox suporta meu monitor LG Ultrawide 2560x1080 tranquilamente. O Hyper-V não consegue e isso é um dealbreaker.
 
-Virtualbox, VMWare, Parallels, Hyper-V will all use the same VT-X instructions provided by Intel. The base performance will not be so different. Guest tools might differ. Some stability might differ. But all in all, they're basically the same thing from the user's usability standpoint.
+Virtualbox, VMWare, Parallels e Hyper-V vão todos usar as mesmas instruções VT-X fornecidas pela Intel. A performance base não vai ser tão diferente. As ferramentas de guest podem diferir. Alguma estabilidade pode diferir. Mas no geral, são basicamente a mesma coisa do ponto de vista da usabilidade.
 
-I know, it sounds "weird" to run Windows 10 as the primary native host. But it does work generally fine right now.
+Sei que parece "estranho" rodar o Windows 10 como host nativo principal. Mas funciona bem no geral.
 
-And I also know that it sounds weirder to run a Linux distro as a secondary guest OS in Virtualbox. And again, let me tell you that when I am using it in full-screen mode, working, I don't feel like it's slow or unresponsive.
+E também sei que parece ainda mais estranho rodar uma distribuição Linux como SO convidado secundário no Virtualbox. Mas posso dizer que quando estou usando em tela cheia, trabalhando, não tenho a sensação de que está lento ou sem resposta.
 
-## The Software
+## O Software
 
-If you're in OS X you are probably used to a lot of tools. You paid money for some of those. And switching to another OS is always a pain.
+Se você está no OS X, provavelmente está acostumado com muitas ferramentas. Pagou dinheiro por algumas delas. E trocar de SO sempre é uma dor.
 
-In summary, the only piece of software that I really missed, in the beginning, was Keynote. But I went past my prejudice against PowerPoint and I have to say that it does everything I really need right now.
+Em resumo, o único software que realmente senti falta no começo foi o Keynote. Mas superei meu preconceito contra o PowerPoint e tenho que admitir que ele faz tudo que preciso agora.
 
-I always hated Pages and Numbers, they are very good for amateurs. But nothing, not even LibreOffice, and definitely not Google Docs can replace Office. Google Slides is terrible and Impress is beyond useless to me (and it's super slow). Seriously, PowerPoint is now a much better tool.
+Sempre odiei Pages e Numbers — são ótimos para amadores. Mas nada, nem o LibreOffice, muito menos o Google Docs, substitui o Office. O Google Slides é terrível e o Impress é além de inútil para mim (e é super lento). Sério, o PowerPoint hoje é uma ferramenta muito melhor.
 
-Office in the Mac was always "enough", luckily. But Office on Windows is far superior. No doubts in my mind, so one big benefit for me going back to Windows 10 is having the full Office experience.
+O Office no Mac sempre foi "suficiente", felizmente. Mas o Office no Windows é muito superior. Sem dúvida na minha mente. Então um grande benefício de voltar ao Windows 10 é ter a experiência completa do Office.
 
-If you use the Pro line of tools, you will miss Final Cut Pro. If you're a professional musician, you will miss Logic Pro. There is nothing like Garageband if you're a hobbyist musician. There is nothing we can do here. And even though we have better hardware on PC, Apple custom tweaks Final Cut to perform exceedingly better on AMD Radeon Pro. So Final Cut export times are still superior to Adobe Premiere's. Motion 5 is still easier and more responsive than After Effects.
+Se você usa as ferramentas da linha Pro, vai sentir falta do Final Cut Pro. Se é músico profissional, vai sentir falta do Logic Pro. Não há nada como o GarageBand para músicos hobbyistas. Não há nada a fazer aqui. E mesmo tendo hardware melhor no PC, a Apple customiza o Final Cut para render excepcionalmente melhor no AMD Radeon Pro. Então os tempos de exportação do Final Cut ainda são superiores aos do Adobe Premiere. O Motion 5 ainda é mais fácil e responsivo que o After Effects.
 
-That being said, it's not by a huge margin. Adobe Creative Suite is super strong, and unless you're a one-trick pony, any pro can switch to Adobe and get the job done.
+Dito isso, a margem não é enorme. A Adobe Creative Suite é muito forte, e a menos que você seja um one-trick pony, qualquer profissional consegue migrar para a Adobe e fazer o trabalho.
 
-In terms of software development, unless you're a one-trick .NET pony, you will want all the open source shebang. WSL is supposed to provide you that - in the future. Right now your best bet is running Virtualbox and you will not regret it.
+Em termos de desenvolvimento de software, a menos que você seja um one-trick pony do .NET, vai querer toda a parafernália open source. O WSL deveria fornecer isso — no futuro. Agora mesmo, sua melhor aposta é rodar o Virtualbox e você não vai se arrepender.
 
-Yes, yes, you have small exclusive software such as 1Password, Tweetbot, Alfred. I don't miss any of those. Especially because my last iPhone was the 4 back in 2010. Then I switched to Android with the Galaxy S4 and also never looked back. I'm using an S8 and about to receive my Pixel 2, so I am good in terms of Twitter client or password management (I use LastPass and although it's not perfect, it gets the job done).
+Sim, existem pequenos softwares exclusivos como 1Password, Tweetbot, Alfred. Não sinto falta de nenhum deles. Especialmente porque meu último iPhone foi o 4, lá em 2010. Depois migrei para Android com o Galaxy S4 e também nunca olhei para trás. Estou usando um S8 e prestes a receber meu Pixel 2, então estou bem em termos de cliente de Twitter ou gerenciamento de senhas (uso o LastPass e, embora não seja perfeito, resolve).
 
-Either there is a good enough native desktop replacement or a mobile replacement, or there is a Web service. I may feel uncomfortable changing, but in practice, there is nothing in macOS that prohibits me from switching. Even if you bought iTunes songs or movies, there is iTunes for Windows.
+Ou existe um substituto nativo bom o suficiente para desktop ou mobile, ou existe um serviço Web. Posso me sentir desconfortável com a mudança, mas na prática não há nada no macOS que me impeça de trocar. Mesmo que você tenha comprado músicas ou filmes no iTunes, existe iTunes para Windows.
 
-> _"But wait, Windows Update will annoy you!"_
+> _"Mas espera, o Windows Update vai te enlouquecer!"_
 
-I thought as much. Microsoft did finally figure it out. It's still there, you still need to restart. But it's not nearly as annoying as it was before. Most updates will run in the background and you won't even notice. And you have several options such as [scheduling it](https://support.microsoft.com/en-us/help/4028233/windows-10-schedule-or-pause-updates) to run only at night when you're not working.
+Achei o mesmo. A Microsoft finalmente resolveu isso. Ainda existe, você ainda precisa reiniciar. Mas não é nem de longe tão irritante quanto era antes. A maioria das atualizações roda em segundo plano e você nem vai notar. E há várias opções como [agendar](https://support.microsoft.com/en-us/help/4028233/windows-10-schedule-or-pause-updates) para rodar apenas à noite quando você não está trabalhando.
 
-> _"But what about the security issues and viruses!?"_
+> _"E os problemas de segurança e vírus!?"_
 
-Yes, I highly recommend you not to browse the Deep Web on a Windows machine, you will be owned. Not even using a Tor browser. You will be owned.
+Sim, recomendo fortemente não navegar na Deep Web numa máquina Windows, você vai ser comprometido. Nem com um browser Tor. Vai ser comprometido.
 
-I also recommend you to use BitLocker (only available on Windows 10 Pro) to encrypt your partition. And also to backup to external hard drives as frequently as you can. Nothing can save your better than a readily available cold backup.
+Também recomendo usar o BitLocker (disponível apenas no Windows 10 Pro) para criptografar sua partição. E fazer backup em HDs externos com a maior frequência possível. Nada te protege melhor do que um backup frio prontamente disponível.
 
-And yes, install some 3rd party solution such as [Avast antivirus](https://www.avast.com/index). Have healthy web browsing behavior and avoid shady websites. You know what I am talking about. You will be owned.
+E sim, instale alguma solução de terceiros como o [Avast antivírus](https://www.avast.com/index). Tenha comportamento saudável de navegação e evite sites duvidosos. Você sabe do que estou falando. Vai ser comprometido.
 
-If you must, install a secure Linux distro within Virtualbox and open Tor from there.
+Se necessário, instale uma distribuição Linux segura dentro do Virtualbox e abra o Tor de lá.
 
-> _"But what about the mess that is the Registry!?"_
+> _"E a bagunça que é o Registro!?"_
 
-It's still there. If you never experienced it, the Registry is Windows equivalent of "/etc" in Linux distros. It's a binary database. It gets corrupted. It gets dirty entries.
+Ainda existe. Se você nunca experimentou, o Registro é o equivalente Windows do "/etc" nas distribuições Linux. É um banco de dados binário. Fica corrompido. Fica com entradas sujas.
 
-But my recommendation is: forget about it. If you're thinking and tinkering with it, you will get a corrupt system. Do not try to clean it up (never, ever use something like CCleaner). 
+Mas minha recomendação é: esqueça-o. Se você ficar pensando e mexendo nele, vai corromper o sistema. Não tente limpá-lo (nunca, jamais use algo como o CCleaner).
 
-Windows itself now has automatic system restore snapshotting everytime something big happens. And it's mostly reliable. They go as far as duplicating the current "C:\Windows" directory into a "C:\Windows.old" when there is a big Windows Update, just in case. They shot themselves in the foot so many times that they finally learned to have several layers of recovery options.
+O próprio Windows agora tem snapshots automáticos de restauração do sistema toda vez que algo importante acontece. E é bastante confiável. Chegam ao ponto de duplicar o diretório atual "C:\Windows" em um "C:\Windows.old" quando há uma grande atualização do Windows, só por precaução. Se atiraram no próprio pé tantas vezes que finalmente aprenderam a ter várias camadas de opções de recuperação.
 
-Nowadays you can even download the [Media Creation tool](https://www.microsoft.com/en-us/software-download/windows10) from the Windows website itself. You don't even have to sign up anywhere. And the Windows license comes with the machine's firmware (BIOS). You don't even have to remember where your product activation key is. It automatically activates and because every machine comes with a license, the process is seamless. And most manufacturers have automatic updates for drivers and firmware.
+Hoje você pode até baixar a [ferramenta de Criação de Mídia](https://www.microsoft.com/en-us/software-download/windows10) diretamente do site da Windows. Não precisa nem se cadastrar em lugar nenhum. E a licença do Windows vem no firmware (BIOS) da máquina. Não precisa nem lembrar onde está sua chave de ativação do produto. Ativa automaticamente e como cada máquina já vem com uma licença, o processo é transparente. E a maioria dos fabricantes tem atualizações automáticas para drivers e firmware.
 
-So you should have a reasonably smooth experience, no matter what.
+Então você deve ter uma experiência razoavelmente tranquila, aconteça o que acontecer.
 
-> _"But Windows is not open source!"_
+> _"Mas o Windows não é open source!"_
 
-Neither is OS X. And this is a Linux advantage. So, if you must, use just Linux natively. The point of the argument is finding an alternative to the Mac. So we're on the same page.
+O OS X também não. E essa é uma vantagem do Linux. Então, se for obrigatório, use apenas Linux nativamente. O ponto da discussão é encontrar uma alternativa ao Mac. Então estamos alinhados.
 
-## The Ruby on Rails and the Hipsters effect
+## O Efeito Ruby on Rails e os Hipsters
 
-Truth be told. In the software development arena, we switched to the Mac mainly because of Rails and Textmate 2. We had access to some open source tools built-in, we had GCC to compile the rest. Windows XP was way past due. Windows Vista was a terrible experience. The PC hardware manufacturers were not even trying, and Apple was launching good hardware and good experience all the time.
+Sendo honesto: no mundo do desenvolvimento de software, migramos para o Mac principalmente por causa do Rails e do Textmate 2. Tínhamos acesso a algumas ferramentas open source embutidas, tínhamos GCC para compilar o resto. O Windows XP estava bem além da validade. O Windows Vista foi uma experiência horrível. Os fabricantes de hardware para PC nem estavam tentando, e a Apple lançava hardware bom e boa experiência o tempo todo.
 
-Developers switched in drove after the switch from PowerPC to Intel in 2005. My very first Mac was a G4 Mac Mini with OS X 10.4 Tiger. And then I bought the very first Intel White MacBook and I never looked back.
+Os desenvolvedores migraram em massa após a transição de PowerPC para Intel em 2005. Meu primeiro Mac foi um Mac Mini G4 com OS X 10.4 Tiger. Depois comprei o primeiro MacBook branco Intel e nunca olhei para trás.
 
-Software tools on Windows were laughable. Visual Studio.NET was terrible. Eclipse-based IDEs were terrible. We didn't have Powershell yet. And we definitely never had anything like WSL for command-line. You could install Cygwin, but it was a poor experience.
+As ferramentas de software no Windows eram risíveis. O Visual Studio .NET era terrível. IDEs baseadas em Eclipse eram terríveis. Não tínhamos PowerShell ainda. E definitivamente nunca tivemos nada como o WSL para linha de comando. Você podia instalar o Cygwin, mas era uma experiência sofrível.
 
-And running Linux as the primary OS was also terrible. Wine is still terrible, despite its best efforts. Unfortunately, NVIDIA and AMD GPUs will only run at their best on Windows. And Linux was never really good for content creation. It's not even a matter of learning a new workflow, the tools are mediocre. They have to reverse engineer everything, and that takes time. And in the velocity of social media, we don't have enough time, so we need to settle for compromises.
+E rodar Linux como SO principal também era terrível. O Wine ainda é terrível, apesar de seus melhores esforços. Infelizmente, as GPUs da NVIDIA e AMD só rodam no melhor de sua capacidade no Windows. E Linux nunca foi realmente bom para criação de conteúdo. Não é nem questão de aprender um novo fluxo de trabalho — as ferramentas são medíocres. Precisam fazer engenharia reversa de tudo, e isso leva tempo. E na velocidade das redes sociais, não temos tempo suficiente, então precisamos aceitar compromissos.
 
-The Windows ecosystem stopped pretending, and finally embraced everything the open source and Apple ecosystem built. Now we all benefit.
+O ecossistema Windows parou de fingir e finalmente abraçou tudo que o ecossistema open source e da Apple construiu. Agora todos nos beneficiamos.
 
-By the way, if you like iTerm 2, you will be delighted to install [Tilix for Linux](https://gnunn1.github.io/tilix-web/), which is very similar.
+A propósito, se você gosta do iTerm 2, vai adorar instalar o [Tilix para Linux](https://gnunn1.github.io/tilix-web/), que é muito similar.
 
-## As time goes by
+## Com o Passar do Tempo
 
-I have been following the Surface line-up evolution over the years. In the beginning, I was very skeptical. Because it's very easy to launch a gimmicky product and discontinue it. I trust companies that keep evolving their products over the years. Not only an ecosystem form around it, but you have time to put together support services, there are parts available in the official stores and in the aftermarket. After all these years, Microsoft deserves to be called a hardware manufacturer.
+Acompanho a evolução da linha Surface ao longo dos anos. No começo, era muito cético. É muito fácil lançar um produto gimmick e descontinuá-lo. Confio em empresas que continuam evoluindo seus produtos ao longo dos anos. Não só um ecossistema se forma em torno deles, como você tem tempo para montar serviços de suporte, peças disponíveis nas lojas oficiais e no mercado secundário. Depois de todos esses anos, a Microsoft merece ser chamada de fabricante de hardware.
 
-This is Microsoft finally fulfilling what Alan Kay once said: 
+É a Microsoft finalmente cumprindo o que Alan Kay disse uma vez:
 
-> _"People who are really serious about software should make their own hardware."_
+> _"Pessoas que são realmente sérias sobre software deveriam fazer seu próprio hardware."_
 
-They only really failed in the smartphone market, the competition is way more difficult there and because of that margins are super low. But they did nail the tablet market, the desktop, the notebook, the gaming, the servers (with their own Azure services), so now I believe that they really **understand** the specific needs of all those areas, and it shows in the software. They have a far superior understanding of every market - but the smartphone - than Apple. They finally have true skin in the game.
+Só falharam de verdade no mercado de smartphones, onde a competição é muito mais difícil e as margens são super baixas por causa disso. Mas acertaram no mercado de tablets, no desktop, no notebook, nos games, nos servidores (com seus próprios serviços Azure). Então agora acredito que eles realmente **entendem** as necessidades específicas de todas essas áreas, e isso aparece no software. Têm um entendimento muito superior de cada mercado — exceto smartphones — em relação à Apple. Finalmente têm skin no jogo de verdade.
 
-Because now Microsoft builds their own hardware and they made a business out of it, they have real incentive inside the teams in the company for a positive feedback loop that results in more refinements to the Windows codebase.
+Porque agora a Microsoft fabrica seu próprio hardware e fez um negócio disso, há um incentivo real dentro das equipes da empresa para um ciclo de feedback positivo que resulta em mais refinamentos no código do Windows.
 
-They have been trying and failing in the touch-based solutions since the early 2000's. Now the Pen is not a gimmick anymore, it's a real product, with real qualities, and real use cases.
+Ficaram tentando e falhando em soluções touch desde o início dos anos 2000. Agora a Caneta não é mais um gimmick, é um produto real, com qualidades reais e casos de uso reais.
 
-They also kept their vision of playing nice with Open Source. No one can reasonably expect Microsoft to go full-blown open source. But it shows. They are second only to Google on GitHub in terms of open source contributions. They acquired Xamarin and their .NET Core strategy is on-going and strong. Heck, even Visual Studio received the open source treatment. There is still a long road ahead, but one has to recognize the giant steps.
+Também mantiveram sua visão de se dar bem com o Open Source. Ninguém pode razoavelmente esperar que a Microsoft vire totalmente open source. Mas aparece. São os segundos apenas para o Google no GitHub em termos de contribuições open source. Adquiriram a Xamarin e sua estratégia de .NET Core está em andamento e forte. O próprio Visual Studio recebeu tratamento open source. Ainda há um longo caminho, mas é preciso reconhecer os passos gigantescos.
 
-Which is way more than we can say about Apple, where poor guys at [Homebrew suffer](https://github.com/Homebrew/homebrew-core/issues/14418) on each OS X upgrade?
+O que é muito mais do que podemos dizer sobre a Apple, onde os coitados do [Homebrew sofrem](https://github.com/Homebrew/homebrew-core/issues/14418) a cada atualização do OS X.
 
-The Surface RT and Windows Mobile attempt even made possible for Windows to finally be compiled to run on ARM processors. This is a good sign going forward. Reminds me when OS X was first compiled to run on Intel processors (they ran on PowerPC before) in 2005.
+A tentativa do Surface RT e do Windows Mobile até possibilitou que o Windows fosse finalmente compilado para rodar em processadores ARM. É um bom sinal para o futuro. Me lembra quando o OS X foi compilado pela primeira vez para rodar em processadores Intel (antes rodava em PowerPC) em 2005.
 
-And the Macbook? They get a gimmick touch bar. Apple is really out of touch with reality.
+E o MacBook? Ganhou uma touch bar gimmick. A Apple está realmente desconectada da realidade.
 
-## Why am I out from the Apple ecosystem?
+## Por Que Saí do Ecossistema Apple?
 
-Apple's focus is not on the Mac. Worse: the Mac is quickly becoming abandonware, despite the PR statements.
+O foco da Apple não é no Mac. Pior: o Mac está rapidamente se tornando abandonware, apesar dos comunicados de relações públicas.
 
-They are clearly an iPhone company, with a hobbyist side business that builds Macs and MacBooks, which exist mostly to serve as an iPhone app development toolchain. This is the business model.
+São claramente uma empresa de iPhone, com um negócio paralelo hobbyista que fabrica Macs e MacBooks, que existem principalmente para servir como toolchain de desenvolvimento de apps para iPhone. Esse é o modelo de negócios.
 
-Did you see their latest Ad for the iPad?
+Você viu o último anúncio deles para o iPad?
 
 {{< youtube id="sQB2NjhJHvY" >}}
 
-Yes, this is super cute and I dig it.
+Sim, é super fofo e eu curto.
 
-But the message is crystal clear: the vision is for people to use only iPhones and iPads. There is no such thing as a "computer".
+Mas a mensagem é cristalina: a visão é para as pessoas usarem apenas iPhones e iPads. Não existe tal coisa como um "computador".
 
-They are the most valued tech company right now. But since last year, they don't even have a dedicated OS X team anymore. What does that tell you?
+São a empresa de tecnologia mais valiosa no momento. Mas desde o ano passado, não têm mais nem uma equipe dedicada ao OS X. O que isso diz?
 
-The iOS line-up is a "monopoly" within Apple's line up. The Mac can't compete. Steve Jobs himself [warned](https://www.youtube.com/watch?v=ZBma82g3Uag) about what happens to monopolies.
+A linha iOS é um "monopólio" dentro da linha Apple. O Mac não consegue competir. O próprio Steve Jobs [alertou](https://www.youtube.com/watch?v=ZBma82g3Uag) sobre o que acontece com os monopólios.
 
-We are starting to hear the same story all over the industry:
+Estamos começando a ouvir a mesma história por toda a indústria:
 
-* [Apple’s relationship with pro music needs some mending](http://cdm.link/2016/09/apples-relationship-pro-music-needs-mending/) - Sep, 26, 2016
-* [How Apple Alienated Mac Loyalists](https://www.bloomberg.com/news/articles/2016-12-20/how-apple-alienated-mac-loyalists) - Dec, 20, 2016
-* [macOS is becoming legacy software](https://www.theverge.com/2016/12/21/14037686/apple-macbook-macos-focus-mobile-features-ios) - Dec, 21, 2016
-* [Apple Is Dead To Me… I’m Switching To Windows!](https://www.stuckincustoms.com/2017/02/10/switching-from-mac-to-windows/) - Feb, 10, 2017
+* [Apple's relationship with pro music needs some mending](http://cdm.link/2016/09/apples-relationship-pro-music-needs-mending/) - Set, 26, 2016
+* [How Apple Alienated Mac Loyalists](https://www.bloomberg.com/news/articles/2016-12-20/how-apple-alienated-mac-loyalists) - Dez, 20, 2016
+* [macOS is becoming legacy software](https://www.theverge.com/2016/12/21/14037686/apple-macbook-macos-focus-mobile-features-ios) - Dez, 21, 2016
+* [Apple Is Dead To Me… I'm Switching To Windows!](https://www.stuckincustoms.com/2017/02/10/switching-from-mac-to-windows/) - Fev, 10, 2017
 * [Why I left Mac for Windows: Apple has given up](https://char.gd/blog/2017/why-i-left-mac-for-windows-apple-has-given-up) - Mar, 5, 2017
 
-Microsoft played their cards right. It took almost 15 years. But it paid off in spades. Apple really did alienate the loyalists, the ones that used to "Think Different".
+A Microsoft jogou bem suas cartas. Levou quase 15 anos. Mas valeu muito a pena. A Apple realmente alienou os leais, os que costumavam "Think Different".
 
-Apple is a "victim" of Clayton Christensen's ["Innovator's Dilemma"](https://www.amazon.com/Innovators-Dilemma-Revolutionary-Change-Business/dp/0062060244). If they still had vision left, they could reach out and maintain. But instead, they chose to go all-in on a single product line.
+A Apple é "vítima" do ["Dilema do Inovador"](https://www.amazon.com/Innovators-Dilemma-Revolutionary-Change-Business/dp/0062060244) de Clayton Christensen. Se ainda tivessem visão, poderiam se estender e manter. Mas ao invés disso, escolheram apostar tudo em uma única linha de produtos.
 
-Microsoft seems to have read the Clayton's ["Innovator's Solution: Creating and Sustaining Successful Growth"](https://www.amazon.com/Innovators-Solution-Creating-Sustaining-Successful/dp/1422196577/ref=pd_sim_14_4?_encoding=UTF8&psc=1&refRID=CC6NWGVZMEWTTDETMZ8W).
+A Microsoft parece ter lido a ["Solução do Inovador: Criando e Sustentando o Crescimento de Sucesso"](https://www.amazon.com/Innovators-Solution-Creating-Sustaining-Successful/dp/1422196577/ref=pd_sim_14_4?_encoding=UTF8&psc=1&refRID=CC6NWGVZMEWTTDETMZ8W) de Clayton.
 
-When the iPod was at its peak, Microsoft had "lost". They were out of the game. It was a depressing thing to see. Steve Ballmer was a shameful CEO. Windows Vista was a shameful OS. The Zune failed to capture the aura of the iPod. Windows Mobile was a mess. And Sharepoint ... oh Sharepoint. They even celebrated when JQuery was added to ASP.NET! Talk about too little too late.
+Quando o iPod estava no auge, a Microsoft havia "perdido". Estavam fora do jogo. Era deprimente de ver. Steve Ballmer foi um CEO vergonhoso. O Windows Vista foi um SO vergonhoso. O Zune falhou em capturar a aura do iPod. O Windows Mobile era uma bagunça. E o Sharepoint... ah, o Sharepoint. Chegaram a comemorar quando o jQuery foi adicionado ao ASP.NET! Falar em tarde demais.
 
-And Amazon - a retail store - successfully launched the best infrastructure in the world and became synonymous with "Cloud" and Microsoft was still struggling to understand what Linux was.
+E a Amazon — uma loja de varejo — lançou com sucesso a melhor infraestrutura do mundo e se tornou sinônimo de "Nuvem", enquanto a Microsoft ainda estava tentando entender o que era Linux.
 
-Failure after failure, instead of defending their low position, they finally decided to step up and move forward one ahead one step at a time. Refine. Evolve. Sustain.
+Falha após falha, em vez de defender sua posição baixa, finalmente decidiram se erguer e seguir em frente um passo de cada vez. Refinar. Evoluir. Sustentar.
 
-Now, Windows 10 recaptured the aura of XP at its best. It's doing incremental, and solid upgrades. First the Anniversary Edition, then the Creators Update and finally the most recent Fall Creators Update. All solid upgrades.
+Agora, o Windows 10 recapturou a aura do XP no seu melhor. Está fazendo atualizações incrementais e sólidas. Primeiro a Anniversary Edition, depois a Creators Update e finalmente a mais recente Fall Creators Update. Todas atualizações sólidas.
 
-The Surface line-up is going strong as the best reference for industrial design and features on desktops, notebooks, and accessories. Seriously, Apple still sells that terrible slippery, difficult to hold, [Magic Mouse 2](https://www.apple.com/shop/product/MLA02LL/A/magic-mouse-2), but the "magic" is that someone actually buys those. Microsoft has the [Arc Touch](http://amzn.to/2ztHZVv) and the [Precision Mouse](http://amzn.to/2zu8p9o), two of the best ever made.
+A linha Surface está indo forte como a melhor referência de design industrial e funcionalidades em desktops, notebooks e acessórios. Sério, a Apple ainda vende aquele terrível [Magic Mouse 2](https://www.apple.com/shop/product/MLA02LL/A/magic-mouse-2) escorregadio e difícil de segurar, mas a "mágica" é que alguém de fato compra. A Microsoft tem o [Arc Touch](http://amzn.to/2ztHZVv) e o [Precision Mouse](http://amzn.to/2zu8p9o), dois dos melhores já fabricados.
 
-Creative professionals, software developers, we all jumped ship in droves to OS X when it was the "Different Thing" on the "Think Different" campaign. We helped evangelize. We helped build tools. We helped build services. We wrote tons of [blog posts](http://www.akitaonrails.com/2012/04/20/off-topic-comprei-meu-primeiro-mac-e-agora-edicao-2012) and documentation to help out.
+Profissionais criativos, desenvolvedores de software — todos migramos em massa para o OS X quando era a "Coisa Diferente" da campanha "Think Different". Ajudamos a evangelizar. Ajudamos a construir ferramentas. Ajudamos a construir serviços. Escrevemos toneladas de [posts](http://www.akitaonrails.com/2012/04/20/off-topic-comprei-meu-primeiro-mac-e-agora-edicao-2012) e documentação para ajudar.
 
-Steve Jobs died, and Apple died with him. They basically did nothing new ever since, and their once successful products were left to decay and die. The only thing left is the halo effect, the inertia, and their ever-growing hunger for milking the same cow indefinitely, while ditching R&D altogether.
+Steve Jobs morreu e a Apple morreu com ele. Basicamente não fizeram nada novo desde então, e seus produtos antes bem-sucedidos foram deixados para decair e morrer. O que resta é o efeito halo, a inércia, e o crescente apetite por ordenhar a mesma vaca indefinidamente, abandonando todo o P&D.
 
-## Apple doesn't care. Why should I?
+## A Apple Não Liga. Por Que Eu Deveria?
 
-Microsoft played smart, they kept fixing and evolving, year after year. They lost the 90's generation. They recaptured the 2010's generation. And they started early, getting their attention from the Xbox all the way to Windows.
+A Microsoft jogou com inteligência, continuou corrigindo e evoluindo, ano após ano. Perdeu a geração dos anos 90. Recuperou a geração dos anos 2010. E começaram cedo, atraindo atenção pelo Xbox até chegar ao Windows.
 
-Seriously, the XBox Dashboard is better than the PS4's. I highly prefer it.
+Sério, o Dashboard do XBox é melhor do que o do PS4. Prefiro muito mais.
 
-And they are now in a good position. The players are inverted in the game. The "Think Different" now refers to Windows 10 and the PC hardware. Intel is playing conservative. NVIDIA build the best GPUs. There are many great options not available on the Mac.
+E agora estão em boa posição. Os jogadores estão invertidos. O "Think Different" agora se refere ao Windows 10 e ao hardware PC. A Intel está conservadora. A NVIDIA fabrica as melhores GPUs. Há muitas ótimas opções que não estão disponíveis no Mac.
 
-The jump from 32-bits to 64-bits and the necessities of the XBox even helped Microsoft rethink how to isolate and package their software. Even though the Windows Store is still a bad joke at this point.
+A transição de 32 para 64 bits e as necessidades do XBox até ajudaram a Microsoft a repensar como isolar e empacotar seu software. Mesmo que a Windows Store ainda seja uma piada de mau gosto neste ponto.
 
-And Bill Gates was dead right in the mid 90's: the browser would render the Windows monopoly obsolete. And it did. On the bright side, you have the very same Chrome and Firefox browsers available on OS X, Windows 10, and any Linux distro. This means instant access to most of what people need: Gmail, Google Docs, Office 365, Dropbox, LastPass, Spotify, Slack, Discord, Twitter, Netflix, HBO, Hulu, etc.
+E Bill Gates estava absolutamente certo em meados dos anos 90: o browser tornaria o monopólio do Windows obsoleto. E tornou. Do lado bom, você tem os mesmos Chrome e Firefox disponíveis no OS X, Windows 10 e qualquer distribuição Linux. Isso significa acesso imediato a tudo que a maioria das pessoas precisa: Gmail, Google Docs, Office 365, Dropbox, LastPass, Spotify, Slack, Discord, Twitter, Netflix, HBO, Hulu, etc.
 
-I hate Javascript-based desktop wrappers like the plague. Electron is dumb heavy. But, what can I do? At least powerful hardware and RAM come cheap these days, and we can afford browser tabs that eats up 100 MB each.
+Odeio wrappers de desktop baseados em Javascript como a praga. O Electron é pesado demais. Mas o que posso fazer? Pelo menos hardware poderoso e RAM estão baratos hoje em dia, e podemos nos dar ao luxo de abas de browser que consomem 100 MB cada.
 
-The browser is the new OS for the majority of people. Heck, most people can get around using Chromebooks! Everything else is on the phones, not the desktop. So hard tools are needed. Soft tools you already carry in your pocket.
+O browser é o novo SO para a maioria das pessoas. Muita gente se vira com Chromebooks! Todo o resto está nos celulares, não no desktop. Então ferramentas pesadas são necessárias. Ferramentas leves você já carrega no bolso.
 
-The Apple ecosystem is not dead yet. Apple still has time to fix this situation. I've been waiting for the past 3 years, but still zero signs of anything getting better. My very first switching article was [published on Nov 10, 2015](http://www.akitaonrails.com/2015/11/10/situacao-brasil-no-macs-for-the-rest-of-us).
+O ecossistema Apple ainda não está morto. A Apple ainda tem tempo de corrigir a situação. Tenho esperado pelos últimos 3 anos, mas ainda zero sinais de melhora. Meu primeiro artigo sobre a troca foi [publicado em 10 de novembro de 2015](http://www.akitaonrails.com/2015/11/10/situacao-brasil-no-macs-for-the-rest-of-us).
 
-Unlike other "switching" articles, I am not saying this lightly. I have switched already, in the past 2 years.
+Diferente de outros artigos sobre troca de plataforma, não estou dizendo isso de forma leviana. Já fiz a troca, nos últimos 2 anos.
 
-As I say in many of my posts and talks about events: I am not defined by my tools. I don't carry banners. I am not loyal to anyone by default. I was never paid by Apple to defend it. And I am not paid by Microsoft to say good things about them. I just analyze the facts and state the best course of action going forward.
+Como digo em muitos dos meus posts e palestras: não sou definido pelas minhas ferramentas. Não carrego bandeiras. Não sou leal a ninguém por padrão. Nunca fui pago pela Apple para defendê-la. E não sou pago pela Microsoft para dizer coisas boas sobre ela. Apenas analiso os fatos e aponto o melhor caminho a seguir.
 
-And the facts tell me that macOS is no more. It was a good ride. Goodbye to the Mac and thanks for all the fish.
+E os fatos me dizem que o macOS chegou ao fim. Foi uma boa viagem. Adeus ao Mac e obrigado pelos peixes.

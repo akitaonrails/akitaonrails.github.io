@@ -1,52 +1,56 @@
 ---
-title: Customizing Fedora 25 for Developers
+title: Customizando o Fedora 25 para Desenvolvedores
 date: '2017-01-06T17:11:00-02:00'
-slug: customizing-fedora-25-for-developers
+slug: customizando-o-fedora-25-para-desenvolvedores
+translationKey: customizing-fedora-25
+aliases:
+- /2017/01/06/customizing-fedora-25-for-developers/
 tags:
 - linux
 - fedora
+- traduzido
 draft: false
 ---
 
-**Update 01/18/2017:** Right after trying out Fedora for a few days, I decided to [try Arch Linux](http://www.akitaonrails.com/2017/01/10/arch-linux-best-distro-ever) and I couldn't be happier. I recommend you try Arch too, it will probably surprise you. You may be also interested about [advanced Linux tuning for better responsiveness](http://www.akitaonrails.com/2017/01/17/optimizing-linux-for-slow-computers) on the desktop.
+**Atualização 18/01/2017:** Logo depois de experimentar o Fedora por alguns dias, resolvi [testar o Arch Linux](http://www.akitaonrails.com/2017/01/10/arch-linux-best-distro-ever) e não me arrependi nem um pouco. Recomendo que você também experimente, provavelmente vai te surpreender. Pode se interessar também pelo post sobre [tuning avançado de Linux para melhor responsividade](http://www.akitaonrails.com/2017/01/17/optimizing-linux-for-slow-computers) no desktop.
 
-I've been a long time Ubuntu user. Whenever I need to setup a Linux box I go to straight to the latest LTS. Muscle memory, can't avoid it.
+Sou usuário de Ubuntu há muito tempo. Sempre que preciso configurar uma máquina Linux, vou direto para a última LTS. É memória muscular, não tem jeito.
 
-But to replace my macOS, Unity is damn ugly, honest. I tried to customize Cinnamon and I almost liked it, and don't even get me started on KDE or XFCE.
+Mas para substituir o macOS, Unity é feio demais, sendo honesto. Tentei customizar o Cinnamon e quase gostei, e nem me fale de KDE ou XFCE.
 
-[GNOME 3.22](https://www.gnome.org/news/2016/09/gnome-3-22-released-the-future-is-now/), on the other hand, is very handsome. I don't need to tweak it or hack it to make it look good. The default set of global shortcuts are spot on if you're a long term macOS user. I like almost everything about it.
+O [GNOME 3.22](https://www.gnome.org/news/2016/09/gnome-3-22-released-the-future-is-now/), por outro lado, é muito bem feito. Não preciso fuçar nada para deixar com boa aparência. O conjunto padrão de atalhos globais é exatamente o que um usuário antigo de macOS espera. Gosto de quase tudo nele.
 
-I've been curious about all the fuss surrounding the phase out of X.org into Wayland so I wanted to check it out.
+Estava curioso com toda a movimentação em torno da transição do X.org para o Wayland e queria ver como estava.
 
-The best distro I could find with those in mind is good old Fedora. RedHat (4) was the second Linux distro I tried after Slackware 1 back in the mid-90's. I come back and leave every couple of years. It's a good time to try it again.
+A melhor distro que encontrei para isso é o bom e velho Fedora. RedHat (4) foi a segunda distro Linux que experimentei, logo depois do Slackware 1 lá em meados dos anos 90. Volto e saio de tempos em tempos. É uma boa hora de tentar de novo.
 
-The TL;DR is that I am quite delighted with [Fedora 25](https://getfedora.org/en/workstation/download/). It does almost everything I need very right out of the box.
+O resumo é que estou bem satisfeito com o [Fedora 25](https://getfedora.org/en/workstation/download/). Ele faz praticamente tudo que preciso já de cara, sem configuração adicional.
 
 ![Fedora 25](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/578/big_Screenshot_from_2017-01-06_16-58-17.png)
 
-I dusted off a 4 years old Lenovo ThinkCentre Edge 71z Tower desktop and Lenovo IdeaPad G400s notebook. They are, respectivelly, a 2nd generation Core i5 SandyBridge 2.5Ghz and Core i3 2.4Ghz, with 8GB of RAM in the Tower and 4GB of RAM in the notebook. For a developer's routine, they are quite good enough. A better CPU wouldn't do a whole lot.
+Tirei da gaveta um desktop Lenovo ThinkCentre Edge 71z de 4 anos de idade e um notebook Lenovo IdeaPad G400s. São, respectivamente, um Core i5 SandyBridge de 2ª geração a 2,5GHz e um Core i3 a 2,4GHz, com 8GB de RAM no desktop e 4GB no notebook. Para a rotina de um desenvolvedor, são mais que suficientes. Um CPU mais potente não faria grande diferença.
 
-I was very happy to see that this old tower has an old Intel graphics card with a DVI port. Fortunatelly I had an old DVI-to-HDMI cable around and I was able to hook it up to my ultrawide LG monitor 21:9 (2560x180) and it properly scaled everything (macOS Sierra had a regression that required a hack to make it work!)
+Fiquei feliz ao ver que o desktop velho tem uma placa Intel antiga com saída DVI. Por sorte tinha um cabo DVI-to-HDMI por aí e consegui conectar ao meu monitor ultrawide LG 21:9 (2560x1080), que escalou tudo corretamente (o macOS Sierra tinha uma regressão que precisava de hack para funcionar!).
 
-What hurts a lot are the super slow mechanical hard drives (7200rpm and 5400rpm). I just ordered a RAM upgrade and 2 Crucial MX300 compatible SSD drives. When those arrive, I will have the snappiness I need.
+O que pesa mesmo são os HDs mecânicos super lentos (7200rpm e 5400rpm). Já pedi upgrade de RAM e 2 SSDs Crucial MX300 compatíveis. Quando chegarem, vou ter a agilidade que preciso.
 
-That being said, when you have a fresh Fedora 25 install, what to do next?
+Dito isso, o que fazer depois de uma instalação zerada do Fedora 25?
 
-### for Ubuntu users
+### Para usuários de Ubuntu
 
-Just remember this: instead of `apt-get` you get `dnf`. Fedora prior to version 22 used to have `yum`, but `dnf` supercedes it with basically the same command options.
+Lembre disso: em vez de `apt-get`, você usa `dnf`. O Fedora antes da versão 22 usava `yum`, mas o `dnf` o substitui com basicamente as mesmas opções de comando.
 
-You don't have the equivalent of `apt-get update` because it auto-updates. The rest is pretty much the same: `dnf install package` instead of `apt-get install package`, `dnf search package` instead of `apt-cache search package`, and so on. For a global upgrade, do `dnf upgrade` instead of `apt-get update && apt-get upgrade`.
+Não existe equivalente ao `apt-get update` porque ele atualiza automaticamente. O resto é bem parecido: `dnf install pacote` em vez de `apt-get install pacote`, `dnf search pacote` em vez de `apt-cache search pacote`, e assim por diante. Para um upgrade global, use `dnf upgrade` em vez de `apt-get update && apt-get upgrade`.
 
-For services, instead of doing `sudo service restart memcached` you can do `sudo systemctl restart memcached`.
+Para serviços, em vez de `sudo service restart memcached`, use `sudo systemctl restart memcached`.
 
-That's pretty much it for the most part. Read this [wiki page](https://fedoraproject.org/wiki/Differences_to_Ubuntu) for more command differences.
+É basicamente isso. Leia essa [página da wiki](https://fedoraproject.org/wiki/Differences_to_Ubuntu) para mais diferenças de comandos.
 
-### Crystal Language support
+### Suporte à linguagem Crystal
 
-Let's say you want to learn this brand new language called "Crystal": Ruby-like familiar syntax and standard libraries but Go-like native binary generation, with fast concurrency primitives and all the benefits of an LLVM optimized binary.
+Digamos que você queira aprender essa linguagem nova chamada "Crystal": sintaxe e bibliotecas padrão familiares ao Ruby, mas com geração de binários nativos como no Go, primitivas de concorrência rápidas e todos os benefícios de um binário otimizado pelo LLVM.
 
-You should follow [their wiki](https://crystal-lang.org/docs/installation/on_redhat_and_centos.html) [page](https://github.com/crystal-lang/crystal/wiki/All-required-libraries#fedora) but this is what you need:
+Siga a [wiki deles](https://crystal-lang.org/docs/installation/on_redhat_and_centos.html) e também essa [página](https://github.com/crystal-lang/crystal/wiki/All-required-libraries#fedora), mas basicamente é isso:
 
 ```
 sudo dnf -y install \
@@ -67,11 +71,11 @@ sudo dnf -y install gc gc-devel --enablerepo=rawhide --best --allowerasing
 sudo dnf -y install crystal
 ```
 
-And that's it, a lot of dependencies but as it's pre-1.0 I believe they will improve this in the future.
+É isso, muitas dependências, mas como ainda é pré-1.0 acredito que vão melhorar isso no futuro.
 
-### Ruby and Node.js support
+### Suporte a Ruby e Node.js
 
-Rubyists have a number of Rubies version control, but I personally like RVM. First, we need to install some [other requirements](http://www.socialquesting.com/blog/octopress-installation-fedora-25/) and go on with it:
+Rubyistas têm várias opções de gerenciador de versões, mas eu prefiro RVM. Primeiro, precisamos instalar alguns [pré-requisitos](http://www.socialquesting.com/blog/octopress-installation-fedora-25/):
 
 ```
 sudo dnf -y install patch autoconf gcc-c++ patch libffi-devel automake libtool bison sqlite-devel ImageMagick-devel nodejs git gitg
@@ -81,21 +85,21 @@ curl -L https://get.rvm.io | bash -s stable --ruby
 sudo npm -g install brunch phantomjs
 ```
 
-There you go, you should have the lastest stable Ruby, Node, Npm and useful tools such as Brunch (required if you want to build Elixir-Phoenix web apps) and PhantomJS for automated acceptance tests in many languages
+Pronto, você terá o Ruby estável mais recente, Node, Npm e ferramentas úteis como Brunch (necessário para projetos Elixir-Phoenix) e PhantomJS para testes de aceitação automatizados em várias linguagens.
 
-Notice that we're installing Git, the optional [GitG](https://git.gnome.org//browse/gitg) which is a fantastic companion to your Git routine.
+Note que já estamos instalando o Git e o opcional [GitG](https://git.gnome.org//browse/gitg), um companheiro fantástico para a sua rotina com Git.
 
 ![GitG](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/583/big_Screenshot_from_2017-01-06_16-59-05.png)
 
-### Postgresql, Redis, Memcached support
+### Suporte a Postgresql, Redis, Memcached
 
-What's a web app without proper databases and cache services? Let's install them:
+O que é uma aplicação web sem banco de dados e serviços de cache? Vamos instalá-los:
 
 ```
 sudo dnf -y install postgresql-server postgresql-contrib postgresql-devel memcached redis
 
 sudo postgresql-setup --initdb
-sudo sed -i.bak 's/ident/trust/' /var/lib/pgsql/data/pg_hba.conf # NEVER do this in production servers
+sudo sed -i.bak 's/ident/trust/' /var/lib/pgsql/data/pg_hba.conf # NUNCA faça isso em servidores de produção
 sudo systemctl start postgresql
 
 sudo su - postgres
@@ -103,34 +107,34 @@ createuser youruser -p
 createdb youruser --owner=youruser
 ```
 
-Change `youruser` for the username of your current user account, of course.
+Substitua `youruser` pelo nome do seu usuário atual, claro.
 
-### Java support
+### Suporte a Java
 
-This is easy, let's install the lastest [OpenJDK 8](http://www.2daygeek.com/install-java-openjdk-6-7-8-on-ubuntu-centos-debian-fedora-mint-rhel-opensuse-manjaro-archlinux/#) and web browser plugins.
+Fácil, basta instalar o [OpenJDK 8](http://www.2daygeek.com/install-java-openjdk-6-7-8-on-ubuntu-centos-debian-fedora-mint-rhel-opensuse-manjaro-archlinux/#) mais recente e os plugins para o navegador:
 
 ```
 sudo dnf -y install java-1.8.0-openjdk icedtea-web
 ```
 
-### Go Support
+### Suporte a Go
 
-Even easier:
+Ainda mais simples:
 
 ```
 sudo dnf -y install go
 ```
 
-Do not forget to edit your profile, such as `$HOME/.profile` and add the proper environment variables:
+Não esqueça de editar seu perfil, como `$HOME/.profile`, e adicionar as variáveis de ambiente necessárias:
 
 ```
 export GOROOT=$HOME/go
 export PATH=$PATH:$GOROOT/bin
 ```
 
-### Elixir Support
+### Suporte a Elixir
 
-There is an easy way, and a more complicated and time consuming one. Let's start with [the easy one](http://elixir-lang.org/install.html#unix-and-unix-like):
+Tem o jeito fácil e um mais complicado e demorado. Vamos começar com [o fácil](http://elixir-lang.org/install.html#unix-and-unix-like):
 
 ```
 sudo dnf -y install erlang elixir
@@ -139,20 +143,20 @@ mix local.rebar
 mix archive.install https://github.com/phoenixframework/archives/raw/master/phoenix_new.ez
 ```
 
-The problem is that packages for distros such as Fedora can take time to come out. For example, Elixir 1.4 has been out for a couple of days, but no upgrades for Fedora yet.
+O problema é que os pacotes para distros como Fedora demoram para ser atualizados. Por exemplo, o Elixir 1.4 foi lançado há alguns dias, mas ainda não há atualização para o Fedora.
 
-Another problem if you're professionally developing Elixir projects is that you will need an Elixir version control, because you will end up getting client projects in different Elixir versions and you need to setup your environment accordingly. That's where [asdf](https://github.com/asdf-vm/asdf) comes in. You can follow [this gist](https://gist.github.com/rubencaro/6a28138a40e629b06470) but I will paste the important bits here:
+Outro problema, se você desenvolve Elixir profissionalmente, é que vai precisar de um gerenciador de versões, porque vai acabar pegando projetos de clientes em versões diferentes e precisa configurar o ambiente adequadamente. É aí que entra o [asdf](https://github.com/asdf-vm/asdf). Você pode seguir [este gist](https://gist.github.com/rubencaro/6a28138a40e629b06470), mas vou colar os pontos importantes aqui:
 
 ```
 sudo dnf -y install make automake gcc gcc-c++ kernel-devel git wget openssl-devel ncurses-devel wxBase3 wxGTK3-devel m4
 
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.2.1
 
-# For Ubuntu or other linux distros
+# Para Ubuntu ou outras distros Linux
 echo '. $HOME/.asdf/asdf.sh' >> ~/.bashrc
 echo '. $HOME/.asdf/completions/asdf.bash' >> ~/.bashrc
 
-# restart your terminal or source the file above:
+# reinicie o terminal ou faça source do arquivo acima:
 source ~/.bashrc
 
 asdf plugin-add erlang https://github.com/asdf-vm/asdf-erlang.git
@@ -165,36 +169,36 @@ asdf global erlang 19.0
 asdf global elixir 1.4.0
 ```
 
-Compiling Erlang from source will take a humongous ammount of time, specially if you're using old CPUs like me. But this is how you both have access to the latest and greatest Elixir while also having the ability to choose older versions for client projects.
+Compilar o Erlang a partir do código-fonte demora uma eternidade, especialmente com CPUs velhos como os meus. Mas é assim que você tem acesso ao Elixir mais recente e, ao mesmo tempo, a capacidade de usar versões antigas para projetos de clientes.
 
-By the way, you can install additional asdf plugins to version control other platforms such as Go, Rust, Node, Julia and many others. Check out [their project page](https://github.com/asdf-vm/asdf) for more details.
+Por sinal, você pode instalar plugins adicionais do asdf para gerenciar outras plataformas como Go, Rust, Node, Julia e muitas outras. Veja a [página do projeto](https://github.com/asdf-vm/asdf) para mais detalhes.
 
-### Docker Support
+### Suporte a Docker
 
-You will probably want to have access to Docker as well, so [let's do this](https://docs.docker.com/engine/installation/linux/fedora/):
+Provavelmente você vai querer Docker também, então [vamos lá](https://docs.docker.com/engine/installation/linux/fedora/):
 
 ```
 sudo dnf -y install docker docker-compose
 
-# you can test if everything went ok with the infamous hello world
+# você pode testar se funcionou com o famoso hello world
 sudo docker run --rm hello-world
 ```
 
-## Desktop Apps
+## Aplicativos de Desktop
 
-Once you have everything in place, let's configure the non-terminal aspects for a better experience.
+Com tudo instalado, vamos configurar os aspectos não-terminais para uma experiência melhor.
 
-### Terminator (and Terminix)
+### Terminator (e Terminix)
 
 ![Terminator](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/579/Screenshot_from_2017-01-06_16-59-53.png)
 
-Speaking of terminals, you will want to install [Terminator](https://gnometerminator.blogspot.com.br/p/introduction.html). I really don't like using screen or tmux in my local machine (I can't get around those key bindings). I am more used to iTerm2 on macOS and Terminator is pretty much the same thing with similar key bindings. You definitelly need to replace the default terminal for this one.
+Falando em terminais, você vai querer instalar o [Terminator](https://gnometerminator.blogspot.com.br/p/introduction.html). Não gosto de usar screen ou tmux na minha máquina local (não consigo me acostumar com os atalhos). Estou mais habituado ao iTerm2 do macOS, e o Terminator é praticamente a mesma coisa com atalhos similares. Você definitivamente precisa substituir o terminal padrão por ele.
 
 ```
 sudo dnf -y install terminator
 ```
 
-You will also want to edit `~/.config/terminator/config` and add the following to make it better:
+Você também vai querer editar `~/.config/terminator/config` e adicionar o seguinte para melhorar a configuração:
 
 ```
 [global_config]
@@ -222,16 +226,16 @@ You will also want to edit `~/.config/terminator/config` and add the following t
     cursor_color = "#eee8d5"
 ```
 
-Another great options that was recommended to me is [Terminix](https://copr.fedorainfracloud.org/coprs/heikoada/terminix/). This is how you install it:
+Outra ótima opção que me recomendaram é o [Terminix](https://copr.fedorainfracloud.org/coprs/heikoada/terminix/). Para instalar:
 
 ```
 sudo dnf copr enable heikoada/terminix
 sudo dnf -y install terminix
 ```
 
-### Hack font
+### Fonte Hack
 
-You will want to have a nicer font such as [Hack](https://github.com/chrissimpkins/Hack) around as well:
+Você vai querer uma fonte melhor, como [Hack](https://github.com/chrissimpkins/Hack):
 
 ```
 dnf -y install dnf-plugins-core
@@ -242,7 +246,7 @@ dnf -y install hack-fonts
 
 ### Gnome Tweak Tool
 
-Now you will want to install **Gnome Tweak Tool** to be able to setup Hack as the default monospace font:
+Instale o **Gnome Tweak Tool** para poder definir a Hack como fonte monoespaçada padrão:
 
 ```
 sudo dnf -y install gnome-tweak-tool
@@ -252,42 +256,42 @@ sudo dnf -y install gnome-tweak-tool
 
 ![Vim gruvbox](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/582/big_Screenshot_from_2017-01-06_16-59-36.png)
 
-I really like to use Vim so you can install it like this:
+Gosto muito de usar Vim, então instale assim:
 
 ```
 sudo dnf -y install vim-enhanced vim-X11
 ```
 
-And I really like to use [YADR](https://github.com/Codeminer42/dotfiles) to customize all aspects of my ZSH and Vim:
+E gosto de usar o [YADR](https://github.com/Codeminer42/dotfiles) para customizar todos os aspectos do meu ZSH e Vim:
 
 ```
 sh -c "`curl -fsSL https://raw.githubusercontent.com/skwp/dotfiles/master/install.sh `"
 ```
 
-I recommend you have Zsh, Vim, Ruby pre-installed before running the script above. Once you finish, I had to tweak the settings a bit:
+Recomendo ter Zsh, Vim e Ruby instalados antes de rodar o script acima. Depois de concluir, tive que ajustar as configurações um pouco:
 
 ```
 sed 's/gtk2/gtk3' ~/.vim/settings/yadr-appearance.vim
 ```
 
-You'd want to tweak that file as well, to add new fonts such as Hack, and right now I am more in the mood of "gruvbox" instead of "solarized" as Vim theme.
+Você vai querer ajustar esse arquivo também, para adicionar novas fontes como Hack. Atualmente estou mais no mood "gruvbox" do que "solarized" como tema do Vim.
 
 ### GIMP Photoshop
 
 ![Gimp with Photoshop Theme](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/580/big_Screenshot_from_2017-01-06_17-07-14.png)
 
-If you're a web developer you will have to edit a couple of images sometimes. And if you're like me, Gimp is a freaking usability nightmare. But [there are ways](http://www.omgubuntu.co.uk/2016/08/make-gimp-look-like-photoshop-easy) to make it a bit [more palatable](https://github.com/doctormo/GimpPs).
+Se você é desenvolvedor web, vai precisar editar algumas imagens de vez em quando. E se for como eu, o Gimp é um pesadelo de usabilidade. Mas [existem maneiras](http://www.omgubuntu.co.uk/2016/08/make-gimp-look-like-photoshop-easy) de torná-lo um [pouco mais palatável](https://github.com/doctormo/GimpPs).
 
 ```
 sudo dnf -y install gimp
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/doctormo/GimpPs/master/tools/install.sh)"
 ```
 
-There you go, a Photoshop-like theme for Gimp to make it less ugly.
+Pronto, um tema parecido com Photoshop para o Gimp deixar menos feio.
 
 ### Spotify
 
-What would we, developers, be without music to concentrate?
+O que seria de nós, desenvolvedores, sem música para concentrar?
 
 ```
 dnf config-manager --add-repo=http://negativo17.org/repos/fedora-spotify.repo
@@ -298,17 +302,17 @@ dnf -y install spotify-client
 
 ![CoreBird](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/581/big_Screenshot_from_2017-01-06_17-08-43.png)
 
-I am so glad that someone built a very competent and elegant Twitter client for Linux. Install CoreBird:
+Fico feliz que alguém construiu um cliente de Twitter muito competente e elegante para Linux. Instale o CoreBird:
 
 ```
 dnf -y install corebird
 ```
 
-It's probably even better than the official Mac version.
+Provavelmente é até melhor que a versão oficial para Mac.
 
-### Tweaking the title bar
+### Ajustando a barra de título
 
-I found [this hack](http://blog.samalik.com/make-your-gnome-title-bars-smaller/) to try to make the Gnome title bars a bit less fat, which is about the only complaint I have for the look-and-feel so far:
+Encontrei [esse hack](http://blog.samalik.com/make-your-gnome-title-bars-smaller/) para deixar as barras de título do Gnome um pouco menos gordas, que é praticamente a única reclamação que tenho sobre o visual até agora:
 
 ```
 tee ~/.config/gtk-3.0/gtk.css <<-EOF
@@ -324,26 +328,26 @@ tee ~/.config/gtk-3.0/gtk.css <<-EOF
 EOF
 ```
 
-### Conclusion
+### Conclusão
 
-Most of everything you need is web based, so Gmail, Slack, all work just fine. Fire up Chromium, Firefox or install [Franz](http://meetfranz.com/) or [WMail](http://thomas101.github.io/wmail/) if you have to. Unfortunatelly everything that is web based consumes a lot of RAM, and this is really bad. I do miss good old, slim, native apps. Web-based apps are a huge hassle.
+A maioria das coisas que você precisa é web, então Gmail, Slack, tudo funciona bem. Abra o Chromium, Firefox ou instale o [Franz](http://meetfranz.com/) ou [WMail](http://thomas101.github.io/wmail/) se precisar. Infelizmente tudo que é web consome muita RAM, o que é um problema sério. Sinto falta dos bons e velhos aplicativos nativos, leves e rápidos. Aplicativos web são um porre.
 
-They "work", but I'd rather have a good native app. On the other hand, Dropbox and Skype have really terrible client apps. They are very poorly maintained, full of bugs, and terrible support. I'd rather not have them.
+Eles "funcionam", mas prefiro um bom aplicativo nativo. Por outro lado, Dropbox e Skype têm clientes terríveis. São muito mal mantidos, cheios de bugs e com suporte péssimo. Prefiro não usá-los.
 
-I was trying to get used to Thunderbird while on Ubuntu. Geary is still not good enough. But I was surprised when I tried Evolution again. It has the only thing I really want from any email client: a damn shortcut to move emails to folders: Ctrl-Shift-V (!!) How hard can that be??
+Estava tentando me acostumar com o Thunderbird no Ubuntu. O Geary ainda não é bom o suficiente. Mas fiquei surpreso ao tentar o Evolution de novo. Ele tem a única coisa que realmente quero de qualquer cliente de email: um atalho para mover emails para pastas: Ctrl-Shift-V (!!) Será que é tão difícil assim??
 
-Gnome 3 has a global Online Accounts repository in the Settings where you can register social networks such as Facebook and Google, but the Google support is [buggy](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=820913). It expires everytime, so don't use Evolution with it. Add the Imap/Smtp information manually instead. Email and Calendar data is properly synced that way.
+O Gnome 3 tem um repositório global de Contas Online nas Configurações onde você pode cadastrar redes sociais como Facebook e Google, mas o suporte ao Google está [bugado](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=820913). Expira toda hora, então não use o Evolution com ele. Adicione as informações de Imap/Smtp manualmente. Email e dados do Calendar sincronizam corretamente dessa forma.
 
-You should have all your password in a LastPass account by now. Authy is a Chrome extension, so your multi-factor authentication should also just work.
+Você já deve ter todas as suas senhas em uma conta LastPass. O Authy é uma extensão do Chrome, então sua autenticação de múltiplos fatores também deve funcionar.
 
-My personal bank and investment companies, with their ugly Java applets, work just fine with Chromium and IcedTea, so I'm ok there too.
+Meu banco e corretoras, com seus feios applets Java, funcionam bem com Chromium e IcedTea, então estou ok por aí.
 
-I just have to figure out the easiest backup strategy to have everything really secure. On the installation process, do not forget to choose the encrypted partition option - and if you do, definitelly backup your data regularly as I've heard of bugs during upgrades that made the encrypted partitions inaccessible. Be secure and also be careful.
+Só preciso descobrir a estratégia de backup mais fácil para ter tudo realmente seguro. Na instalação, não esqueça de escolher a opção de partição criptografada - e se fizer isso, faça backup dos dados regularmente, pois ouvi relatos de bugs em upgrades que tornaram as partições criptografadas inacessíveis. Seja seguro e cuidadoso.
 
-As usual, from my macOS the only 2 things I will really miss is Apple Keynote (it's really amazing as no one was able to make a slick and fast presentation tool as good as Keynote) and iMovie for quick video editing (although [Kdenlive](https://kdenlive.org/) is a very good alternative).
+Como sempre, do macOS as únicas 2 coisas que vou realmente sentir falta são o Apple Keynote (é incrível, ninguém conseguiu fazer uma ferramenta de apresentação tão elegante e rápida) e o iMovie para edição rápida de vídeo (embora o [Kdenlive](https://kdenlive.org/) seja uma alternativa bem boa).
 
-You even have built-in [shortcuts](https://wiki.gnome.org/Gnome3CheatSheet) to screen capture a window or an area and [record a screencast](https://fedoramagazine.org/taking-screencast-fedora/)!
+Você ainda tem [atalhos](https://wiki.gnome.org/Gnome3CheatSheet) embutidos para capturar uma janela ou área e [gravar um screencast](https://fedoramagazine.org/taking-screencast-fedora/)!
 
-Compared to my Ubuntu configuration, this Fedora 25 is really a pleasure to use. A competent macOS replacement. I highly recommend it!
+Comparado à minha configuração no Ubuntu, esse Fedora 25 é realmente um prazer de usar. Uma boa alternativa ao macOS. Recomendo!
 
-And as I said at the update in the beginning of the post. Do check out [Arch Linux](http://www.akitaonrails.com/2017/01/10/arch-linux-best-distro-ever) and how to [optimize your distro to be more responsiveness](http://www.akitaonrails.com/2017/01/17/optimizing-linux-for-slow-computers), particularly on old hardware.
+E como disse na atualização no início do post: dê uma olhada no [Arch Linux](http://www.akitaonrails.com/2017/01/10/arch-linux-best-distro-ever) e em como [otimizar sua distro para ser mais responsiva](http://www.akitaonrails.com/2017/01/17/optimizing-linux-for-slow-computers), especialmente em hardware antigo.

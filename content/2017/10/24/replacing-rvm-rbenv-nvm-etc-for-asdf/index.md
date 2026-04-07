@@ -1,7 +1,10 @@
 ---
-title: Replacing RVM/Rbenv/Nvm/etc for ASDF
+title: "Substituindo rvm, rbenv, nvm e outros pelo asdf"
 date: '2017-10-24T14:19:00-02:00'
-slug: replacing-rvm-rbenv-nvm-etc-for-asdf
+slug: substituindo-rvm-rbenv-nvm-e-outros-pelo-asdf
+translationKey: replacing-rvm-with-asdf
+aliases:
+- /2017/10/24/replacing-rvm-rbenv-nvm-etc-for-asdf/
 tags:
 - rvm
 - rbenv
@@ -9,53 +12,54 @@ tags:
 - ruby
 - nodejs
 - elixir
+- traduzido
 draft: false
 ---
 
-Many people are using Docker as the means to have different Ruby versions or for any other language. I still think the added overhead both in resources usage and usability friction is simply not worth it. I highly recommend against it. Docker is great as the basis for automated infrastrucutres, but I prefer to have them in servers only.
+Muita gente está usando Docker como meio de ter diferentes versões de Ruby ou de qualquer outra linguagem. Ainda acho que o overhead adicional tanto em uso de recursos quanto em fricção de usabilidade simplesmente não compensa. Recomendo fortemente contra isso. Docker é ótimo como base para infraestruturas automatizadas, mas prefiro tê-lo apenas em servidores.
 
-I've been using [asdf](https://github.com/asdf-vm/asdf) as my main Ruby version manager for a long while now and I am confident that I can recommend it in place of the more well recognized RVM or Rbenv.
+Faz bastante tempo que uso o [asdf](https://github.com/asdf-vm/asdf) como meu gerenciador principal de versões de Ruby, e estou confiante de que posso recomendá-lo no lugar dos mais conhecidos RVM ou Rbenv.
 
-Moreover, it not only can manage Ruby versions, but it can manage almost all languages you might want. With just one command set. So you don't even need virtualenv for Python or NVM for Node.js. Just use ASDF.
+Além disso, ele não gerencia só Ruby — ele gerencia praticamente todas as linguagens que você precisar, com um único conjunto de comandos. Então nem precisa mais de virtualenv para Python ou NVM para Node.js. É só usar o ASDF.
 
-Installing it couldn't be easier. Just follow the [README](https://github.com/asdf-vm/asdf/blob/master/README.md) from the project page.
+A instalação não poderia ser mais simples. Basta seguir o [README](https://github.com/asdf-vm/asdf/blob/master/README.md) na página do projeto.
 
-Don't forget to install the base development tools for your environment. You can follow [ruby-build's wiki page](https://github.com/rbenv/ruby-build/wiki) for example:
+Não esqueça de instalar as ferramentas base de desenvolvimento para o seu ambiente. Você pode seguir a [wiki do ruby-build](https://github.com/rbenv/ruby-build/wiki) como referência:
 
 ```
-## For OS X
-# optional, but recommended:
+## Para OS X
+# opcional, mas recomendado:
 brew install openssl libyaml libffi
 
-# required for building Ruby <= 1.9.3-p0:
+# obrigatório para compilar Ruby <= 1.9.3-p0:
 brew tap homebrew/dupes && brew install apple-gcc42
 
-## For Ubuntu
+## Para Ubuntu
 sudo apt-get install gcc-6 autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm3 libgdbm-dev
 
-## For Arch
+## Para Arch
 sudo pacman -S --needed gcc5 base-devel libffi libyaml openssl zlib
 ```
 
-Then you can install ASDF itself:
+Depois instale o próprio ASDF:
 
 ```
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.4.0
 ```
 
-Then add the proper environment configuration for Path and auto-completion.
+Então adicione a configuração de ambiente para o PATH e o autocomplete:
 
 ```
-# For Ubuntu or other linux distros
+# Para Ubuntu ou outras distros Linux
 echo -e '\n. $HOME/.asdf/asdf.sh' >> ~/.bashrc
 echo -e '\n. $HOME/.asdf/completions/asdf.bash' >> ~/.bashrc
 
-# OR for Mac OSX
+# OU para Mac OSX
 echo -e '\n. $HOME/.asdf/asdf.sh' >> ~/.bash_profile
 echo -e '\n. $HOME/.asdf/completions/asdf.bash' >> ~/.bash_profile
 ```
 
-Finally, you must install one of the dozens of [plugins](https://github.com/asdf-vm/asdf-plugins). In my case, I have these installed:
+Por fim, você precisa instalar um dos dezenas de [plugins](https://github.com/asdf-vm/asdf-plugins) disponíveis. No meu caso, tenho estes instalados:
 
 ```
 asdf plugin-add clojure https://github.com/vic/asdf-clojure.git
@@ -65,19 +69,19 @@ asdf plugin-add golang https://github.com/kennyp/asdf-golang.git
 asdf plugin-add python https://github.com/tuvistavie/asdf-python.git
 asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git
 
-# Imports Node.js release team's OpenPGP keys to main keyring
+# Importa as chaves OpenPGP do time de releases do Node.js para o keyring principal
 bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
 
 asdf plugin-add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 ```
 
-You can update the plugins all at once with this simple command:
+Para atualizar todos os plugins de uma vez, basta rodar:
 
 ```
 asdf plugin-update --all
 ```
 
-You can see what versions are available for a particular language like this:
+Para ver as versões disponíveis de uma linguagem específica:
 
 ```
 asdf list-all ruby
@@ -85,7 +89,7 @@ asdf list-all clojure
 asdf list-all python
 ```
 
-Then you can install any version you need like this:
+Para instalar qualquer versão que você precisar:
 
 ```
 asdf install ruby 2.4.2
@@ -93,30 +97,30 @@ asdf install nodejs 8.7.0
 asdf install erlang 20.1
 ```
 
-After you install a particular language version, I always set one as the system default like this:
+Depois de instalar uma versão, costumo definir uma como padrão global do sistema:
 
 ```
 asdf global ruby 2.4.2
 asdf global elixir 1.5.2
 ```
 
-And in a particular project directory, I can set it to use any other version, just for that project:
+E dentro de um diretório de projeto específico, posso definir outra versão, válida só para aquele projeto:
 
 ```
 asdf local ruby 2.3.4
 ```
 
-The command above will write a `.tool-versions` file to the directory you're at when you ran it. It will contain the language and version you chose, so whenever you go back to that directory ASDF will set the correct version for the language you need. The previous `asdf global <language>` command is actually writing a `.tool-versions` file to your home directory. The local config override the home directory version.
+Esse comando grava um arquivo `.tool-versions` no diretório onde você está quando o executa. Ele contém a linguagem e a versão escolhidas, então sempre que você voltar para aquele diretório o ASDF vai configurar a versão correta automaticamente. O `asdf global <linguagem>` que mencionei antes faz a mesma coisa, só que grava o `.tool-versions` no seu diretório home. A configuração local sobrescreve a do home.
 
-Another important thing to remember, whenever you install libraries which have executable scripts that need to be in the PATH, you must **reshim** them. For example:
+Outro ponto importante: sempre que você instalar bibliotecas que têm scripts executáveis que precisam estar no PATH, você deve fazer o **reshim** deles. Por exemplo:
 
 ```
-npm install -g phantomjs # will install phantomjs
-asdf reshim nodejs # will put the shim for the phantomjs executable in the PATH
-phantomjs # will properly execute it
+npm install -g phantomjs # instala o phantomjs
+asdf reshim nodejs # coloca o shim do executável phantomjs no PATH
+phantomjs # executa corretamente
 ```
 
-If you try to install Ruby versions prior to 2.4 you will find [compilation problems](https://github.com/asdf-vm/asdf-ruby/wiki/Ruby-Installation-Problems) as it depends on gcc5 and openssl-1.0. So you should use the following command (assuming you have already installed the obsolete openssl-1.0 and gcc5):
+Se você tentar instalar versões de Ruby anteriores à 2.4, vai encontrar [problemas de compilação](https://github.com/asdf-vm/asdf-ruby/wiki/Ruby-Installation-Problems), pois elas dependem do gcc5 e do openssl-1.0. Nesse caso, use o seguinte comando (assumindo que você já instalou o openssl-1.0 e o gcc5 obsoletos):
 
 ```
 CC=gcc-5 PKG_CONFIG_PATH=/usr/lib/openssl-1.0/pkgconfig \
@@ -124,18 +128,18 @@ RUBY_EXTRA_CONFIGURE_OPTIONS="--with-openssl-dir=/usr/lib/openssl-1.0" \
 asdf install ruby 2.3.4
 ```
 
-Sometimes, if a dependency is missing and an install fails, you must manually remove it before attempting to reinstall, so you have to do:
+Às vezes, quando uma dependência está faltando e a instalação falha, você precisa remover manualmente a versão antes de tentar reinstalar:
 
 ```
-asdf remove <language> <version>
+asdf remove <linguagem> <versão>
 ```
 
-Finally, if you're used to add something to your bash or zsh files to show the current language version in the command line, you're probably using something like `rvm-prompt`. In the case of ASDF you will need something a bit longer like this:
+Por fim, se você costumava adicionar algo ao seu bash ou zsh para mostrar a versão atual da linguagem na linha de comando — provavelmente usando algo como `rvm-prompt` — no caso do ASDF você vai precisar de algo um pouco mais longo:
 
 ```
 asdf current ruby | awk -F' ' '{print $1}'
 ```
 
-This will get only the version (the `asdf current` command states which `.tool-versions` file it is using, so this is a longer result).
+Isso extrai só a versão (o comando `asdf current` mostra também qual arquivo `.tool-versions` está sendo usado, por isso o resultado é mais longo).
 
-Other than that, you're all set. One version manager to rule them all. No more RVM, no more Virtualenv, no more NVM, etc. You can live happily ever after!
+Fora isso, está tudo pronto. Um gerenciador de versões para governar todos. Sem RVM, sem Virtualenv, sem NVM. Pode viver feliz para sempre!

@@ -1,7 +1,10 @@
 ---
-title: From the Macbook Pro to the Dell XPS. Arch Linux for Creative Pro Users
+title: "Do MacBook Pro para o Dell XPS: Arch Linux para Usuários Criativos"
 date: '2017-01-31T18:26:00-02:00'
-slug: from-the-macbook-pro-to-the-dell-xps-arch-linux-for-creative-pro-users
+slug: do-macbook-pro-para-o-dell-xps-arch-linux-para-usuarios-criativos
+translationKey: macbook-to-dell-xps
+aliases:
+- /2017/01/31/from-the-macbook-pro-to-the-dell-xps-arch-linux-for-creative-pro-users/
 tags:
 - linux
 - archlinux
@@ -9,117 +12,118 @@ tags:
 - blender
 - darktable
 - bumblebee
+- traduzido
 draft: false
 ---
 
-As I've been reporting many posts ago, I'm switching to Linux full-time. In this article I'd like to show how to configure Arch Linux so it's suitable for Creative **Pro** Users, where the access to the secondary GPU is very important.
+Como venho relatando em vários posts anteriores, estou migrando para Linux em tempo integral. Neste artigo quero mostrar como configurar o Arch Linux para que ele seja adequado para Usuários Criativos **Pro**, onde o acesso à GPU secundária é fundamental.
 
-If you're a Creative Pro User, you can't really run Final Cut Pro X (with Motion, Compressor), Logic Pro, Adobe's Photoshop and other apps. So you will have to change your workflow if you want to be in the Linux ecossystem. Fortunatelly, for many workflows Linux apps have matured quite nicely and you don't need to settle for low quality, "hack-ish" software.
+Se você é um Usuário Criativo Pro, não dá para rodar Final Cut Pro X (com Motion e Compressor), Logic Pro, Photoshop da Adobe e afins. Então você vai precisar mudar seu fluxo de trabalho se quiser entrar no ecossistema Linux. Felizmente, para muitos fluxos os aplicativos Linux amadureceram bem e dá para trabalhar sem precisar se contentar com software de baixa qualidade ou gambiarra.
 
-Software developers don't ever need more than the cheap Intel integrated graphics, unless you want to install [Steam through Wine](https://wiki.archlinux.org/index.php/Steam/Wine) to play some demanding games.
+Desenvolvedores de software raramente precisam de mais do que a placa Intel integrada barata, a menos que queiram instalar o [Steam via Wine](https://wiki.archlinux.org/index.php/Steam/Wine) para jogar títulos pesados.
 
-After a lot of research (a.k.a. [YouTube!](https://www.youtube.com/results?search_query=Dell+XPS+15+9550+review)) I've settled for the Dell XPS 15" (9550 model). It's an almost 1 year old SkyLake architecture using the NVIDIA Optimus Hybrid Intel + GTX960M.
+Depois de muita pesquisa (leia-se: [YouTube!](https://www.youtube.com/results?search_query=Dell+XPS+15+9550+review)) fui com o Dell XPS 15" (modelo 9550). É uma máquina com quase um ano de vida, arquitetura SkyLake, usando o NVIDIA Optimus Híbrido Intel + GTX960M.
 
 ![Dell XPS 15" 9550](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/612/20170127_133009.jpg)
 
-To this day, nothing can beat the software+hardware cohesiveness of Apple. This can't be underestimated. The PC/Windows world is a lot better it's still plagued with unstable BIOS, unstable drivers, etc. If you're on Linux, it's even worse.
+Até hoje nada supera a coesão entre software e hardware da Apple. Isso não pode ser subestimado. O mundo PC/Windows melhorou bastante, mas ainda é assombrado por BIOS instável, drivers instáveis etc. No Linux, é ainda pior.
 
-Here's the first **protip**: avoid super brand new models, most of them won't have stable drivers even for Windows 10, let alone Linux. Let the Windows guys suffer the first couple of months; give Dell, [NVIDIA](http://windowsreport.com/nvidia-driver-crash-windows-10/) and Intel time to fix the mess releasing more stable BIOS firmware and drivers. If you really want to buy one of the 2017 brand new Kaby Lake models, you're in a russian roulette situation. Even first generation Macbook models usually [present trouble](http://www.digitaltrends.com/computing/apple-releases-macos-sierra-10123-update/). As a rule of thumb, do not buy on day 1, wait at the very least 3 months. You are warned.
+Aqui vai o primeiro **protip**: evite modelos super novos — a maioria não tem drivers estáveis nem para Windows 10, quanto mais para Linux. Deixe o pessoal do Windows sofrer os primeiros meses; dê tempo à Dell, à [NVIDIA](http://windowsreport.com/nvidia-driver-crash-windows-10/) e à Intel para corrigir o caos com firmware de BIOS e drivers mais estáveis. Se você realmente quiser comprar um dos modelos Kaby Lake de 2017 que acabaram de sair, está numa roleta russa. Até os primeiros MacBooks costumam [dar problema](http://www.digitaltrends.com/computing/apple-releases-macos-sierra-10123-update/). Regra geral: não compre no dia do lançamento, espere pelo menos 3 meses. Você foi avisado.
 
-Out of all the early-2016 machines that most Linux distros can support reasonably well, I believe the [Dell XPS](http://www.anandtech.com/show/10116/the-dell-xps-15-9550-review) series, [Lenovo Thinkpad X1 Yoga](http://www.anandtech.com/show/10697/the-lenovo-thinkpad-x1-yoga-review), and possibly [Asus Zenbook Pro](http://www.digitaltrends.com/computing/dell-xps-15-vs-asus-zenbook-pro-ux501-battle-of-the-plus-sized-premiums/) and [HP ProBook](http://laptopmedia.com/review/hp-probook-450-g3-455-g3-review-what-a-budget-business-notebook-should-look-like/) are quite good nowadays.
+Dentre as máquinas de início de 2016 que a maioria das distros Linux suporta razoavelmente bem, as séries [Dell XPS](http://www.anandtech.com/show/10116/the-dell-xps-15-9550-review), [Lenovo Thinkpad X1 Yoga](http://www.anandtech.com/show/10697/the-lenovo-thinkpad-x1-yoga-review) e possivelmente [Asus Zenbook Pro](http://www.digitaltrends.com/computing/dell-xps-15-vs-asus-zenbook-pro-ux501-battle-of-the-plus-sized-premiums/) e [HP ProBook](http://laptopmedia.com/review/hp-probook-450-g3-455-g3-review-what-a-budget-business-notebook-should-look-like/) estão bem.
 
-But in most categories, the XPS series is the one to beat. Dell really did a pretty good job this time around.
+Mas na maioria das categorias, a série XPS leva vantagem. A Dell fez um trabalho muito bom dessa vez.
 
-The keyboard, as with most PCs, is mediocre, plastic-y, a little bit wobbly, with good enough travel but with a sudden hard click without enough resistence. For 99% of the people I believe it's fairly good, but not so much for really fast touch-typists.
+O teclado, como na maioria dos PCs, é mediano: plástico, um pouco bamboleante, com curso aceitável mas clique duro e sem resistência suficiente. Para 99% das pessoas é bom o suficiente, mas não é o ideal para quem digita muito rápido.
 
-The touchpad is one of the best in any PC notebook, but then again, most PC touchpads are shamelessly bad, specially with gestures more complicated than a 2 finger scroll. This is another area where the Mac is still untouched. That said, the Dell one is serviceable and should work well enough, with a few undetected palm rejection that will annoy you now and then.
+O touchpad é um dos melhores em qualquer notebook PC, mas vale lembrar que a maioria dos touchpads de PC é vergonhosamente ruim, especialmente com gestos mais complexos do que rolar com dois dedos. Essa continua sendo uma área em que o Mac é imbatível. Dito isso, o da Dell é funcional e deve dar conta do recado, embora a rejeição de palma falhe aqui e ali para te irritar de vez em quando.
 
-Display monitor is a different story: the XPS 15's gorgeous 4K IPS display is superb, far surpassing the Macbook's Retina Displays. Samsung PCIe NVMe M.2 SSDs is also the best in it's class. The aluminum enclosure is simple but well machined, and the carbon fiber finish is a welcome addition to make a machine that you can really enjoy and be proud to carry around.
+O monitor é outra história: o deslumbrante display 4K IPS do XPS 15 é excelente, superando de longe os Retina Displays do MacBook. O SSD Samsung PCIe NVMe M.2 também é o melhor da categoria. A carcaça de alumínio é simples mas bem usinada, e o acabamento em fibra de carbono é um bônus bem-vindo que faz da máquina algo que você genuinamente aprecia carregar.
 
 ![Dell XPS Display](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/613/20170124_211855.jpg)
 
-If you don't want to tinker with the hardware configuration too much, usually the safest bet is installing Ubuntu and even then [it's not](https://ubuntuforums.org/showthread.php?t=2317843) going to be perfect.
+Se você não quer mexer muito na configuração de hardware, a aposta mais segura costuma ser o Ubuntu — e mesmo assim [não vai ser perfeito](https://ubuntuforums.org/showthread.php?t=2317843).
 
-Specially with HiDPI displays (over Full-HD) Linux is still lagging behind. GNOME, KDE kinda support it, but other desktop environments have mixed results, and old applications are still not supporting it as they should. If you're using LTS distros with old packages, you will find a few applications doing HiDPI wrong. [Libreoffice](https://bugs.documentfoundation.org/show_bug.cgi?id=99508) and [Spotify](https://community.spotify.com/t5/Desktop-Linux-Windows-Web-Player/Linux-client-barely-usable-on-HiDPI-displays/td-p/1067272) to name a few. And if you're like me, using a multi monitor with different DPIs, you're out of luck. Either you're using the notebook with the lid closed (so you only have one external monitor to worry about) or you will have the texts all super small in the HiDPI primary monitor in order to have the correct DPI in the second external monitor. One fallback is to configure the 4K display to downscale to Full-HD (1080p). And then again, what's the point of having a 4K display if you can't use it properly? So, do not buy the 4K unless you understand this.
+Especialmente com displays HiDPI (acima de Full-HD), o Linux ainda está atrás. GNOME e KDE até suportam, mas outros ambientes desktop têm resultados mistos, e aplicativos mais antigos ainda não se adaptaram direito. Em distros LTS com pacotes velhos, você vai encontrar aplicativos com HiDPI errado. [Libreoffice](https://bugs.documentfoundation.org/show_bug.cgi?id=99508) e [Spotify](https://community.spotify.com/t5/Desktop-Linux-Windows-Web-Player/Linux-client-barely-usable-on-HiDPI-displays/td-p/1067272) são exemplos. E se você for como eu, usando múltiplos monitores com DPIs diferentes, pode esquecer. Ou usa o notebook com a tampa fechada (aí só tem um monitor externo para se preocupar), ou o texto fica minúsculo no monitor HiDPI principal para o DPI ficar certo no segundo monitor externo. Uma saída é configurar o display 4K para escalar para Full-HD (1080p). Mas aí fica a pergunta: qual é o sentido de ter um display 4K se você não consegue usá-lo direito? Então, não compre o 4K sem entender isso.
 
-Both MacOS and Windows handle this situation far better. And in MacOS I never experienced any HiDPI problem. Not once. Apple was much better pushing a higher standard than the rest of the industry, and this cohesiveness and no need to tinker drivers and configuration is super valuable. With Macs, you can really just boot and use. With Windows, you're probably mostly ok unless there are driver issues. And with Linux, you must expect a fair amount of tinkering to have the basis covered.
+MacOS e Windows lidam com essa situação muito melhor. No MacOS nunca tive nenhum problema de HiDPI. Nenhum. A Apple foi muito mais eficaz em empurrar um padrão mais alto do que o resto da indústria, e essa coesão — sem precisar fuçar drivers e configurações — tem um valor enorme. Com Mac, você liga e usa. Com Windows, provavelmente vai ficar bem, a menos que apareça algum problema de driver. Com Linux, espere um volume razoável de ajustes para colocar o básico em ordem.
 
-New PC notebooks are also coming with several weird configurations that makes sense for Windows, but that makes Linux distros struggle a bit. Every time you must start by configuring the BIOS to disable stuff like Secure Boot, changint to AHCI issues, etc. So let's dive right into it.
+Notebooks PC novos também estão vindo com configurações esquisitas que fazem sentido no Windows, mas que dão trabalho para as distros Linux. Toda vez você começa desativando coisas no BIOS como Secure Boot, mudando para AHCI, etc. Então vamos direto ao ponto.
 
-### BIOS Setup
+### Configuração do BIOS
 
-The very first thing you must do is change BIOS settings. F2 your way into the setup when the Dell logo shows up and make the following changes:
+A primeira coisa a fazer é alterar as configurações do BIOS. Pressione F2 na tela do logo Dell para entrar no setup e faça as seguintes mudanças:
 
 * General - Advanced Boot Options - Enable Legacy Option ROMs
-* General - Boot Sequence - Legacy (UEFI is the default)
-* System Configuration - SATA Operation - AHCI (default is RAID On)
-* System Configuration - Touchscreen (disable, as it's mostly unnecessary and it eats up more battery)
+* General - Boot Sequence - Legacy (o padrão é UEFI)
+* System Configuration - SATA Operation - AHCI (o padrão é RAID On)
+* System Configuration - Touchscreen (desabilite, pois é praticamente desnecessário e consome mais bateria)
 * Security - Secure Boot - Secure Boot Enable - Disabled
-* POST Behavior - Fastboot - Through (default is minimal)
+* POST Behavior - Fastboot - Through (o padrão é minimal)
 
-By doing these changes, the pre-installed Windows 10 will not boot anymore, so make sure you don't need it before doing this.
+Ao fazer essas mudanças, o Windows 10 pré-instalado não vai mais iniciar — então certifique-se de que não precisa dele antes de prosseguir.
 
-### Kernel Tweaks
+### Ajustes no Kernel
 
-You should follow the [Dell XPS (9550) Wiki](http://bit.ly/2jzVAxE) Page.
+Siga a página do [Wiki do Dell XPS (9550)](http://bit.ly/2jzVAxE).
 
-The 4K Display may flicker a bit, and to avoid it you must edit Grub configuration file `/boot/grub/grub.cfg` and append the following line with the specific flags:
+O display 4K pode apresentar flickering, e para evitar isso edite o arquivo de configuração do Grub `/boot/grub/grub.cfg` e adicione os seguintes flags à linha existente:
 
 ```
 GRUB_CMDLINE_LINUX_DEFAULT="... i915.edp_vswing=2 i915.preliminary_hw_support=1 intel_idle.max_cstate=1 acpi_backlight=vendor acpi_osi=Linux"
 ```
 
-That line already exists with some flags, don't erase them, just append the additional configuration and don't forget to run the following:
+Essa linha já existe com alguns flags — não apague, apenas adicione os novos — e não se esqueça de rodar em seguida:
 
 ```
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-For the most part, all the rest will work just fine, but just to be safe I installed the [Powertop](https://wiki.archlinux.org/index.php/Powertop) and acpid packages as well.
+No mais, tudo deve funcionar bem, mas por precaução instalei também os pacotes [Powertop](https://wiki.archlinux.org/index.php/Powertop) e acpid:
 
 ```
 sudo pacman -S powertop acpid
 ```
 
-I am happy to report that I can close the notebook's lid and the OS will properly suspend, and when I open it up it comes back from sleep, saving battery and saving me the trouble of having to reboot every day.
+Fico feliz em reportar que consigo fechar a tampa do notebook e o sistema suspende corretamente, e ao abrir volta do sleep sem problemas — economizando bateria e me poupando de reiniciar todo dia.
 
-### Arch Distros - Manjaro to the rescue
+### Distros Arch — Manjaro ao resgate
 
-I am becoming an Arch enthusiast myself, but to tweak it to work on a modern notebook is just too much work. I don't recommend trying if you're in a hurry. I tried [Arch Anywhere](https://arch-anywhere.org/), but it can't even go through the disk partitioning stage (it doesn't like the SSD or SATA setup). I tried [Antergos](https://antergos.com/) but for some reason Gnome Online Accounts didn't work properly there, even if I try to reinstall it. Finally I settled for [Manjaro](https://manjaro.org/), which installed and worked without any major issues.
+Estou me tornando um entusiasta do Arch, mas configurá-lo para funcionar num notebook moderno dá um trabalho absurdo. Não recomendo tentar se você estiver com pressa. Testei o [Arch Anywhere](https://arch-anywhere.org/), mas ele nem consegue passar pelo particionamento do disco (não gosta da configuração de SSD ou SATA). Testei o [Antergos](https://antergos.com/), mas por algum motivo as Contas Online do Gnome não funcionaram lá, mesmo reinstalando. No final fui com o [Manjaro](https://manjaro.org/), que instalou e funcionou sem grandes problemas.
 
-There are several distros based on Arch. Arch Anywhere and Antergos are mostly Arch "installers" where the main repository sources are still vanilla Arch and they try to make the install process easier than you having to find your way through a bare bone command line shell.
+Existem várias distros baseadas em Arch. Arch Anywhere e Antergos são mais "instaladores" do Arch — os repositórios principais ainda são o Arch vanilla, e eles tentam tornar o processo de instalação mais fácil do que você ter de se virar num shell de linha de comando cru.
 
-Manjaro is more of an independent distro, where the main sources point to Manjaro first, so they can test the most recent packages and hold on to them for a bit longer so rogue packages don't break your system too often. But you still have raw access to AUR packages. The main selling point being a **much** better installer with a more sofisticated auto-partitioning software than Arch Anywhere and their own Hardware Detection software [MHWD](https://wiki.manjaro.org/index.php?title=Manjaro_Hardware_Detection_Overview).
+O Manjaro é mais uma distro independente, onde as fontes principais apontam para o Manjaro primeiro, para que possam testar os pacotes mais recentes e segurá-los por um tempo antes de liberar, evitando que pacotes problemáticos quebrem seu sistema com frequência. Mas você ainda tem acesso direto aos pacotes AUR. O grande diferencial é um instalador **muito** melhor, com software de particionamento automático mais sofisticado do que o Arch Anywhere, e o próprio software de detecção de hardware [MHWD](https://wiki.manjaro.org/index.php?title=Manjaro_Hardware_Detection_Overview).
 
-For the most part it did work properly although I still had to tweak the Graphics configuration as it opts for the open source Nouveau drivers first. Trust me: opt for the proprietary binaries.
+No geral funcionou bem, embora eu ainda tenha precisado ajustar a configuração gráfica, pois por padrão ele opta pelos drivers open source Nouveau. Confie em mim: vá para os binários proprietários.
 
-If you're also a software developer, you will want to read my [previous post on Arch](http://www.akitaonrails.com/2017/01/10/arch-linux-best-distro-ever).
+Se você também é desenvolvedor de software, vai querer ler meu [post anterior sobre Arch](http://www.akitaonrails.com/2017/01/10/arch-linux-best-distro-ever).
 
-### Optimus Hybrid Graphics
+### Gráficos Híbridos Optimus
 
-The Dell XPS model 9550 uses the **Optimus** Hybrid architecture. **Prime** drivers are for standalone NVIDIA GPUs. But most notebooks work with the integrated Intel Graphics card as the primary and only card (particularly lightweight ultrabooks) and the more "Pro" models bridge it out to a secondary NVIDIA GTX 960M.
+O Dell XPS modelo 9550 usa a arquitetura Híbrida **Optimus**. Os drivers **Prime** são para GPUs NVIDIA standalone. A maioria dos notebooks funciona com a placa Intel integrada como única e principal (especialmente ultrabooks leves), e os modelos mais "Pro" conectam isso a uma NVIDIA GTX 960M secundária.
 
-If you have only a simple, single Intel graphics, most distros will do the right thing out of the box and install the proper drivers and configuration.
+Se você tem apenas uma placa Intel simples, a maioria das distros vai fazer a coisa certa automaticamente e instalar os drivers e configurações corretas.
 
-Now, if you have a high-end machine like this XPS 9550 or 9560 (Kaby Lake), you will need more configuring. First you need to understand the terminology:
+Agora, se você tem uma máquina de alta performance como este XPS 9550 ou 9560 (Kaby Lake), vai precisar de mais configuração. Primeiro, entenda a terminologia:
 
-- You need to install Bumblebee. This is a daemon that enables access to the secondary GPU. Just installing Bumblebee solves most problems.
-- Then you need to install Primusrun which is a back-end for Bumblebee and you use it to run programs such as Steam in order for it to have access to the secondary GPU.
-- Sometimes you will see about Optirun, which nowadays seems to default to Primusrun (otherwise it originally uses a secondary X framebuffer, adding extra overhead).
+- Você precisa instalar o Bumblebee. É um daemon que habilita o acesso à GPU secundária. Só instalar o Bumblebee já resolve a maioria dos problemas.
+- Depois instale o Primusrun, que é um back-end para o Bumblebee usado para rodar programas como o Steam de forma que tenham acesso à GPU secundária.
+- Às vezes você vai ver referências ao Optirun, que hoje em dia parece usar o Primusrun por padrão (caso contrário, usava um framebuffer X secundário, adicionando overhead extra).
 
-After you have it all installed, it's usually a matter of doing:
+Com tudo instalado, geralmente basta fazer:
 
 ```
 primusrun kdenlive
 ```
 
-For example, to load the video editor Kdenlive to use OpenGL through the Nvidia GPU. Or to run [Steam through Wine](https://forum.manjaro.org/t/newbie-questions-about-hybrid-nvidia-and-intel-gpu-drives-tutorial/2974/26):
+Por exemplo, para carregar o editor de vídeo Kdenlive usando OpenGL pela GPU Nvidia. Ou para rodar o [Steam via Wine](https://forum.manjaro.org/t/newbie-questions-about-hybrid-nvidia-and-intel-gpu-drives-tutorial/2974/26):
 
 ```
 primusrun wine ~/.wine/drive_c/Program\ Files\ (x86)/Steam/Steam.exe
 ```
 
-As I mentioned before, Manjaro will probably install the Nouveau driver, which is the open source driver. You should install the proprietary binaries, like this:
+Como mencionei, o Manjaro provavelmente vai instalar o driver Nouveau, que é open source. Você deve instalar os binários proprietários assim:
 
 ```
 sudo mhwd -a pci nonfree 0300
@@ -127,37 +131,37 @@ sudo mhwd -r pci video-hybrid-intel-nouveau-bumblebee
 sudo mhwd -i pci video-hybrid-intel-nvidia-bumblebee
 ```
 
-Again, I am considering the XPS 9550 which has the Intel-Nvidia Optimus/hybrid configuration. Read Manjaro's [Configuring Graphics](https://wiki.manjaro.org/index.php/Configure_Graphics_Cards) page on the subject.
+Lembrando que estou falando do XPS 9550 com configuração Optimus Intel-Nvidia. Leia a página [Configuring Graphics](https://wiki.manjaro.org/index.php/Configure_Graphics_Cards) do Manjaro sobre o assunto.
 
-I did however stumbled upon a strange problem. I am using **Linux 4.9** kernel:
+Aqui me deparei com um problema estranho. Estou usando o kernel **Linux 4.9**:
 
 ```
 $ uname -a
 Linux arch42 4.9.6-1-MANJARO #1 SMP PREEMPT Thu Jan 26 12:29:20 UTC 2017 x86_64 GNU/Linux
 ```
 
-This is supposedly the `core/linux49 4.9.6-1` package. But for some reason the `mhwd -i` command was installing the `linux44-nvidia` drivers.
+Teoricamente o pacote `core/linux49 4.9.6-1`. Mas por algum motivo o comando `mhwd -i` estava instalando os drivers `linux44-nvidia`.
 
-So the Nvidia GPU modules were never being loaded until I manually removed it:
+Os módulos da GPU Nvidia nunca eram carregados até eu removê-los manualmente:
 
 ```
 sudo pacman -R linux44-nvidia
 ```
 
-And then I manually installed the correct version:
+E então instalar a versão correta manualmente:
 
 ```
 sudo pacman -S linux49-nvidia
 ```
 
-Just to be safe, I uninstalled the `linux44` package and any other `linux44-*` package:
+Por precaução, desinstalei o pacote `linux44` e todos os outros pacotes `linux44-*`:
 
 ```
 sudo pacman -Ss linux44 | grep installed
-# sudo pacman -R linux44-(name of the package)
+# sudo pacman -R linux44-(nome do pacote)
 ```-
 
-Now I have this:
+Agora tenho isso:
 
 ```
 $ sudo pacman -Ss linux4 | grep installed
@@ -167,7 +171,7 @@ extra/linux49-ndiswrapper 1.61-4 (linux49-extramodules) [installed]
 extra/linux49-nvidia 1:375.26-6 (linux49-extramodules) [installed]
 ```
 
-And in the `/etc/bumblebee/bumblebee.conf` I make sure it explicitly loads the proper `nvidia` driver (the aforementioned `linux49-nvidia`), otherwise you have to `sudo vim` and edit it:
+No `/etc/bumblebee/bumblebee.conf` confirmo que está carregando explicitamente o driver `nvidia` correto (o `linux49-nvidia` mencionado acima). Caso contrário, você precisa editar com `sudo vim`:
 
 ```
 $ cat /etc/bumblebee/bumblebee.conf | grep Driver
@@ -175,39 +179,39 @@ $ cat /etc/bumblebee/bumblebee.conf | grep Driver
 Driver=nvidia
 ```
 
-At the end, if you load Manjaro Settings Manager, you should see something like this:
+Ao final, se você abrir o Manjaro Settings Manager, deve ver algo assim:
 
 ![Settings Manager](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/614/Screenshot_from_2017-01-31_18-24-34.png)
 
-### Professional 3D and Video Editing
+### Edição 3D e Vídeo Profissional
 
-To test out this setup, I started out by installing [Blender](https://wiki.archlinux.org/index.php/Blender) (one of the best 3D editing tools in the industry). Then I downloaded a free 3D model and animation, and tried to render cycles through GPU Compute. Just to be safe, I also installed the Cuda package:
+Para testar esse setup, comecei instalando o [Blender](https://wiki.archlinux.org/index.php/Blender) (uma das melhores ferramentas de edição 3D da indústria). Baixei um modelo 3D e animação gratuitos e tentei renderizar cycles via GPU Compute. Por segurança, instalei também o pacote Cuda:
 
 ```
 sudo pacman -S blender cuda
 ```
 
-If the proper drivers are installed, Blender should detect it and enable usage of its CUDA cores:
+Com os drivers corretos instalados, o Blender deve detectá-los e habilitar o uso dos cores CUDA:
 
 ![CUDA GPU Compute](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/608/Screenshot_from_2017-01-31_17-04-58.png)
 
-You can monitor the Nvidia card with the `nvidia-smi` command and it will show something like this:
+Você pode monitorar a placa Nvidia com o comando `nvidia-smi`, que mostra algo assim:
 
 ![nvidia-smi monitoring](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/609/Screenshot_from_2017-01-31_16-43-46.png)
 
-This should cover Pro 3D modelling if you need.
+Isso cobre a modelagem 3D profissional se você precisar.
 
 ![Blender](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/615/Screenshot_from_2017-01-31_17-11-18.png)
 
-Possibly the best video editing tool available for Linux is [Kdenlive](https://kdenlive.org/). It's the closest you will find to Adobe Premiere or Apple Final Cut Pro.
+Possivelmente o melhor editor de vídeo disponível para Linux é o [Kdenlive](https://kdenlive.org/). É o mais próximo que você vai encontrar do Adobe Premiere ou do Apple Final Cut Pro.
 
-This is how you must install it:
+A instalação é assim:
 
 ```
 sudo pacman -S kdenlive ladspa movit sox ffmpeg frei0r-plugins breeze-icons
 ```
 
-And for faster real-time previews, it can be started through Primusrun in a Terminal like this:
+E para previews em tempo real mais rápidos, ele pode ser iniciado via Primusrun num terminal assim:
 
 ```
 $ primusrun kdenlive
@@ -223,7 +227,7 @@ OpenGL ARG_SYNC:  true
 OpenGL OpenGLES:  false
 ```
 
-If I start it without Primerun, it will first detect the Intel graphics:
+Se eu iniciar sem o Primusrun, ele detecta primeiro a placa Intel:
 
 ```
 $ kdenlive
@@ -239,44 +243,44 @@ OpenGL ARG_SYNC:  true
 OpenGL OpenGLES:  false
 ```
 
-I am not entirely sure, but I believe Kdenlive uses OpenGL to show you real-time previews of the effects you're applying to the video tracks, and that can probably be syphoned through primus into the secondary Nvidia card as well.
+Não tenho certeza absoluta, mas acredito que o Kdenlive usa OpenGL para mostrar previews em tempo real dos efeitos aplicados às faixas de vídeo, e isso provavelmente pode ser redirecionado via primus para a placa Nvidia secundária.
 
-Actually Kdenlive, like it's competitor OpenShot, both use the [MLT Multimedia Framework](https://www.mltframework.org/) - the engine for non-linear video editing. Finally, MLT uses [movit](https://movit.sesse.net/), which is a high-performance, high-quality video filters for the GPU. The `pacman` install command I mentioned before takes care of installing those optional packages.
+Na verdade, o Kdenlive, assim como seu concorrente OpenShot, usa o [MLT Multimedia Framework](https://www.mltframework.org/) — o motor de edição de vídeo não-linear. Por sua vez, o MLT usa o [movit](https://movit.sesse.net/), que são filtros de vídeo de alta performance e qualidade para a GPU. O comando de instalação via `pacman` que mencionei já cuida de instalar esses pacotes opcionais.
 
 ![Kdenlive](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/616/Screenshot_from_2017-01-31_18-29-38.png)
 
-And if you want to leverage the Nvidia GPU for even GIMP, there is an ongoing effort to port filters to use [GEGL/OpenCL](https://wiki.gimp.org/wiki/Hacking:Porting_filters_to_GEGL). You can enable GEGL by starting Gimp from the Terminal like this:
+E se você quiser aproveitar a GPU Nvidia até no GIMP, existe um esforço em andamento para portar filtros para usar [GEGL/OpenCL](https://wiki.gimp.org/wiki/Hacking:Porting_filters_to_GEGL). Você pode habilitar o GEGL iniciando o Gimp pelo terminal assim:
 
 ```
 GEGL_USE_OPENCL=yes gimp
 ```
 
-Then, you can use the ported plugins through the `Tools - GEGL Operation`:
+Depois, você pode usar os plugins portados pelo menu `Tools - GEGL Operation`:
 
 ![GEGL Operation](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/610/Screenshot_from_2017-01-31_17-49-30.png)
 
-And if you're a professional photographer, you will want to install [Darktable](http://www.darktable.org/), which is the closest you will get to Apple Aperture or Adobe Lightroom. It's actually quite nice looking and you will be able to properly retouch your photos.
+E se você é fotógrafo profissional, vai querer instalar o [Darktable](http://www.darktable.org/), que é o mais próximo que você vai chegar do Apple Aperture ou Adobe Lightroom. Tem uma aparência bem cuidada e você consegue retocar suas fotos adequadamente.
 
-Darktable automatically detects the Nvidia driver and you don't need to run it through Primerun or using any special flag.
+O Darktable detecta automaticamente o driver Nvidia — não precisa rodar via Primusrun nem passar nenhuma flag especial.
 
 ![Darktable](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/617/Screenshot_from_2017-01-31_18-31-04.png)
 
-### Final Notes
+### Considerações Finais
 
-You can check if the application is using the GPU by monitoring it with `nvidia-smi`:
+Você pode verificar se o aplicativo está usando a GPU monitorando com `nvidia-smi`:
 
 ```
 watch -n 0.5 nvidia-smi
 ```
 
-This will keep monitoring the GPU every half second. And the application will show up in the processes list with a proper PID and you can see the memory usage (my GPU has 2GB of dedicated DRAM), processing usage, temperature (it can get hot at almost 70 degrees Celsius when I was rendering through Blender).
+Isso mantém o monitoramento da GPU a cada meio segundo. O aplicativo aparece na lista de processos com um PID e você consegue ver o uso de memória (minha GPU tem 2GB de DRAM dedicada), uso de processamento e temperatura — pode chegar perto de 70 graus Celsius renderizando pelo Blender.
 
-I think this is the most you can get out of your hardware with Pro-level multimedia applications. I am not a professional using Blender, Kdenlive, Darktable, or Gimp, but it's good to know I can use them for my small needs. Pro users will be able to take more advantage of this machine with this configuration.
+Acredito que isso é o máximo que dá para extrair do hardware com aplicativos multimídia de nível profissional. Não sou profissional de Blender, Kdenlive, Darktable ou Gimp, mas é bom saber que posso usá-los para minhas necessidades pontuais. Usuários Pro vão conseguir aproveitar ainda mais essa máquina com essa configuração.
 
-As I said in the beginning, if you're really a Pro User, always on the move and in need to quickly make changes to you multimedia projects on-the-go, you will probably be better off with Apple's stack, a Macbook Pro with Final Cut Pro. Don't forget that Final Cut Pro and the other Apple Pro software are super optimized for the Mac hardware, being able to export videos orders of magnitude faster than Premiere, for example.
+Como disse no começo: se você é realmente um Usuário Pro, sempre em movimento e precisa fazer mudanças rápidas nos seus projetos multimídia on-the-go, provavelmente vai continuar melhor com o stack da Apple — um MacBook Pro com Final Cut Pro. Não esqueça que o Final Cut Pro e os outros softwares Pro da Apple são super otimizados para o hardware Mac, exportando vídeos em velocidades ordens de magnitude maiores do que o Premiere, por exemplo.
 
-But you may be a Creative Pro User in the Games industry, or even Mobile development, 3D Video Animation or Post Production, or working in a mixed team with software engineers. And having the ability to build your multimedia assets on a Linux platform can make it interesting for future integration workflows.
+Mas você pode ser um Usuário Criativo Pro na indústria de games, desenvolvimento mobile, animação 3D, pós-produção, ou trabalhando num time misto com engenheiros de software. E ter a capacidade de construir seus assets multimídia numa plataforma Linux pode abrir possibilidades interessantes para fluxos de trabalho integrados no futuro.
 
-Even if you're in the Mac or PC world, you will probably want to use software as Blender, which is a respectable competitor or even complement next to award winning tools such as Maya.
+Mesmo que você seja do mundo Mac ou PC, provavelmente vai querer usar software como o Blender, que é um competidor respeitável ou até complemento de ferramentas premiadas como o Maya.
 
-So, even though you have to go through some rough edges in the initial installation and configuration, once it's done it should work just fine.
+Então, mesmo que você tenha que enfrentar algumas arestas na instalação e configuração inicial, uma vez feito isso funciona bem.

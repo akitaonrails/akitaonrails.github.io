@@ -1,16 +1,20 @@
 ---
-title: Enabling Optimus NVIDIA GPU on the Dell XPS 15 with Linux, even on Battery
+title: "Habilitando a GPU Optimus NVIDIA no Dell XPS 15 com Linux (até na Bateria)"
 date: '2017-03-14T14:21:00-03:00'
-slug: enabling-optimus-nvidia-gpu-on-the-dell-xps-15-with-linux-even-on-battery
-tags: []
+slug: habilitando-a-gpu-optimus-nvidia-no-dell-xps-15-com-linux
+tags:
+  - traduzido
+translationKey: enabling-optimus-nvidia
+aliases:
+  - /2017/03/14/enabling-optimus-nvidia-gpu-on-the-dell-xps-15-with-linux-even-on-battery/
 draft: false
 ---
 
-It's been more than a month since my [last post](http://www.akitaonrails.com/2017/01/31/from-the-macbook-pro-to-the-dell-xps-arch-linux-for-creative-pro-users) on tuning Manjaro for the Dell XPS 15.
+Já faz mais de um mês desde o meu [último post](http://www.akitaonrails.com/2017/01/31/from-the-macbook-pro-to-the-dell-xps-arch-linux-for-creative-pro-users) sobre como ajustar o Manjaro no Dell XPS 15.
 
-Manjaro released it's newest release [version 17](https://manjaro.org/2017/03/07/manjaro-gnome-17-0-released/) and the kernel released 4.10. The upgrade from Manjaro 16 and kernel 4.9 went smoothly.
+O Manjaro lançou sua versão mais recente, a [versão 17](https://manjaro.org/2017/03/07/manjaro-gnome-17-0-released/), e o kernel chegou na 4.10. A atualização do Manjaro 16 com kernel 4.9 foi tranquila.
 
-These are the currently installed, kernel specific packages:
+Esses são os pacotes específicos do kernel que estão instalados no momento:
 
 
 ```
@@ -23,41 +27,41 @@ extra/linux410-ndiswrapper 1.61-0.7 (linux410-extramodules) [installed]
 extra/linux410-nvidia 1:375.39-0.7 (linux410-extramodules) [installed]
 ```
 
-And to make sure everything is ok, I removed the old 4.9 related packages:
+Para garantir que tudo estivesse em ordem, removi os pacotes antigos relacionados ao kernel 4.9:
 
 ```
 sudo pacman -R linux49 linux49-headers linux49-acpi_call linux49-bbswitch linux49-ndiswrapper linux49-nvidia
 ```
 
-I also upgraded the system BIOS to the [latest 1.2.19](http://dell.to/2mWmWDg) (although many said to stay at 1.2.18 for now, but I didn't downgrade). The BIOS upgrade is quite easy as you just need to have a FAT formatted USB drive and copy the "XPS_9550_1.2.19.exe" file. On boot, you can press F12 and choose the option to upgrade directly from there.
+Também atualizei o BIOS do sistema para a [versão mais recente, 1.2.19](http://dell.to/2mWmWDg) (muitos recomendavam ficar na 1.2.18 por enquanto, mas não voltei atrás). A atualização do BIOS é bem simples: basta ter um pen drive formatado em FAT e copiar o arquivo "XPS_9550_1.2.19.exe". Na inicialização, você pressiona F12 e escolhe a opção de atualizar diretamente por lá.
 
-One thing that stopped working was the function keys to control screen brightness. I wasn't able to tweak it back but I can still control the brighness manually from the Terminal using commands like this:
+Uma coisa que parou de funcionar foram as teclas de função para controlar o brilho da tela. Não consegui fazer funcionar de volta, mas ainda é possível controlar o brilho manualmente pelo terminal com comandos assim:
 
 ```
-xbacklight -inc 20 # to increment
-xbacklight -dec 20 # to decrement
+xbacklight -inc 20 # para aumentar
+xbacklight -dec 20 # para diminuir
 ```
 
-Then, the most annoying part: the NVIDIA Optimus card.
+Aí vem a parte mais chata: a placa NVIDIA Optimus.
 
-Suspending the OS works flawlessly most of the time. I can just close the lid, open the other day and the battery stays reasonably at the same level. Kudos to the kernel team for supporting it.
+Suspender o sistema funciona bem na maior parte do tempo. Posso fechar a tampa, abrir no dia seguinte e a bateria está razoavelmente no mesmo nível. Créditos ao time do kernel por dar suporte a isso.
 
-But the power management system turns off the NVIDIA GPU and I can't re-enable it after the machine wakes up, even if I reconnect to a power source. Whenever I try to run something through `optirun` (which forces the rendering through the NVIDIA GPU instead of the primary integrated Intel GPU) it errors out with this message:
+Mas o sistema de gerenciamento de energia desliga a GPU NVIDIA e eu não consigo reativá-la depois que a máquina acorda, nem mesmo se eu reconectar à fonte de energia. Toda vez que tento rodar algo via `optirun` (que força o processamento gráfico pela GPU NVIDIA em vez da GPU integrada Intel principal), aparece esse erro:
 
 ```
 Could not enable discrete graphics card
 ```
 
-And the only way to have it running was to connect the power cord and reboot the machine. Then I could use the NVIDIA GPU normally. Rebooting all the time is not slow (thanks to the fast SSD) but it's still annoying to have to reopen every single application every time.
+E a única forma de ter a GPU funcionando era conectar o cabo de energia e reiniciar. Aí conseguia usar a NVIDIA normalmente. Reiniciar não é lento (graças ao SSD rápido), mas é incômodo ter que reabrir cada aplicação toda vez.
 
-Finally, after a lot of research, I found out how to be able to have the NVIDIA GPU enabled even on battery and after suspend. First, you need to know the PCI ID for the card:
+Depois de muita pesquisa, finalmente descobri como manter a GPU NVIDIA habilitada mesmo na bateria e após suspender. Primeiro, você precisa saber o ID PCI da placa:
 
 ```
 $ lspci | grep "NVIDIA" | cut -b -8
 01:00.0
 ```
 
-Then you need to edit `/etc/default/tlp` and add that PCI ID to be blacklisted from power management:
+Depois edite `/etc/default/tlp` e adicione esse ID PCI na lista negra do gerenciamento de energia:
 
 ```
 # Exclude PCI(e) device adresses the following list from Runtime PM
@@ -66,32 +70,32 @@ Then you need to edit `/etc/default/tlp` and add that PCI ID to be blacklisted f
 RUNTIME_PM_BLACKLIST="01:00.0"
 ```
 
-Reboot, and this is it! Now I can run applications through the NVIDIA card even without being connected to the power cord.
+Reinicie e pronto! Agora dá para rodar aplicações pela placa NVIDIA mesmo sem estar conectado à tomada.
 
-It seems that [there is a conflict](https://github.com/linrunner/TLP/issues/244) between TLP and Bumblebee. The solution was listed in [this 2 months old reddit thread](https://www.reddit.com/r/archlinux/comments/5m78zz/bumblebee_nvidia_error_on_optimus_laptop/) and [this 2 weeks old Manjaro forum thread](https://forum.manjaro.org/t/bumblebee-could-not-enable-discrete-graphics-card/16728/12) if you're interested in the discussion around it.
+Parece que [existe um conflito](https://github.com/linrunner/TLP/issues/244) entre o TLP e o Bumblebee. A solução foi descrita [nessa thread do reddit de 2 meses atrás](https://www.reddit.com/r/archlinux/comments/5m78zz/bumblebee_nvidia_error_on_optimus_laptop/) e [nessa thread do fórum do Manjaro de 2 semanas atrás](https://forum.manjaro.org/t/bumblebee-could-not-enable-discrete-graphics-card/16728/12), caso queira acompanhar a discussão completa.
 
-The most difficult part on using NVIDIA on Linux is understanding all the many terminologies around it. I'm not even sure that I got it all already.
+A parte mais difícil de usar NVIDIA no Linux é entender toda a terminologia que envolve isso. Nem tenho certeza se já aprendi tudo.
 
-This is what I figured out so far:
+Aqui está o que entendi até agora:
 
-* [Optimus](https://wiki.archlinux.org/index.php/NVIDIA_Optimus) is the hybrid graphics card technology, which enables a low power Intel GPU as the primary card that you can bridge to the secondary, power demanding, NVIDIA GPU, just when you really need it.
-* `optirun` is the command you use to make this bridge.
-* "NVIDIA" is what we call the official proprietary binaries. On Arch it's available on package "linux410-nvidia".
-* "Nouveau" is the open source driver, it uses Primus to make the bridge instead of `optirun`. I understand that you should avoid this driver for now if you need full performance and full compliance from the GPU.
-* ["Bumblebee"](https://wiki.archlinux.org/index.php/Bumblebee#Power_management) is a daemon used to enable and disable the NVIDIA GPU. You don't want it enabled all the time, specially when running on battery, to avoid draining it too fast.
-* ["bbswitch"](https://github.com/Bumblebee-Project/bbswitch) is the kernel module that does the low level ACPI calls to control the power state of the NVIDIA GPU card.
-* ["TLP"](https://github.com/linrunner/TLP) is the general Linux power management system, which controls every aspect of the machine's hardware, including the PCI devices (one of which is the NVIDIA card).
+* [Optimus](https://wiki.archlinux.org/index.php/NVIDIA_Optimus) é a tecnologia de gráficos híbridos que usa uma GPU Intel de baixo consumo como placa principal, podendo ser ponte para a GPU NVIDIA secundária — mais potente e mais gulosa em energia — quando realmente necessário.
+* `optirun` é o comando usado para fazer essa ponte.
+* "NVIDIA" é como chamamos os binários proprietários oficiais. No Arch está disponível no pacote "linux410-nvidia".
+* "Nouveau" é o driver open source; usa Primus para fazer a ponte em vez do `optirun`. Para quem precisa de desempenho completo e plena compatibilidade da GPU, o ideal é evitar esse driver por enquanto.
+* ["Bumblebee"](https://wiki.archlinux.org/index.php/Bumblebee#Power_management) é um daemon usado para habilitar e desabilitar a GPU NVIDIA. Não faz sentido deixá-la ligada o tempo todo, especialmente na bateria, para não drenar rápido demais.
+* ["bbswitch"](https://github.com/Bumblebee-Project/bbswitch) é o módulo do kernel que faz as chamadas ACPI de baixo nível para controlar o estado de energia da GPU NVIDIA.
+* ["TLP"](https://github.com/linrunner/TLP) é o sistema geral de gerenciamento de energia do Linux, que controla todos os aspectos do hardware da máquina, incluindo os dispositivos PCI (entre eles a placa NVIDIA).
 
-The way I understand it, you don't want TLP to kick in and shut off the card, because if it does, then Bumblebee can't enable it back on when needed (through bbswitch). So you have to blacklist it's PCI device on TLP and let Bumblebee do it's job.
+O que entendi é: você não quer que o TLP intervenha e desligue a placa, porque se fizer isso, o Bumblebee não consegue reativá-la quando necessário (via bbswitch). Então você precisa colocar o dispositivo PCI na lista negra do TLP e deixar o Bumblebee fazer seu trabalho.
 
-If everything is working fine, then the NVIDIA GPU is turned off by default. You can check that it is off through bbswitch:
+Com tudo funcionando corretamente, a GPU NVIDIA fica desligada por padrão. Para confirmar isso via bbswitch:
 
 ```
 $ cat /proc/acpi/bbswitch
 0000:01:00.0 OFF
 ```
 
-Now, let's say you want to force something to use the card, so you do it like this:
+Para forçar alguma aplicação a usar a placa, o comando é:
 
 ```
 $ optirun -vv glxgears
@@ -116,18 +120,18 @@ $ optirun -vv glxgears
 10671 frames in 5.0 seconds = 2134.041 FPS
 ```
 
-This will run `glxgears` (a simple app to test the card) through the Optimus bridge (in verbose mode, which is why you have all this extra information). And if `glxgears` was able to use the NVIDIA GPU it should report FPS (frames per second) higher than 1,000.
+Isso roda o `glxgears` (um app simples para testar a placa) pela ponte Optimus (em modo verboso, por isso toda aquela informação extra). Se o `glxgears` conseguiu usar a GPU NVIDIA, o FPS reportado deve ser maior que 1.000.
 
-And you can check with `bbswitch` like this:
+E para confirmar via `bbswitch`:
 
 ```
 $ cat /proc/acpi/bbswitch
 0000:01:00.0 ON
 ```
 
-When you `Ctrl-C` out of `glxgears` it should report as `OFF` again.
+Quando você sai do `glxgears` com `Ctrl-C`, ele deve voltar a reportar `OFF`.
 
-Just to make sure, it's important to guarantee that `/etc/bumblebee/bumblebee.conf` is customized like this (only important keys are shown below):
+Para garantir, é importante verificar que o `/etc/bumblebee/bumblebee.conf` está configurado assim (apenas as chaves relevantes estão listadas abaixo):
 
 ```
 [bumblebeed]
@@ -142,14 +146,14 @@ PMMethod=bbswitch
 ...
 ```
 
-So far, the only small issues I still have are these:
+Por enquanto, os únicos problemas pequenos que ainda tenho são:
 
-* Function keys don't change screen brightness
-* Bose bluetooth headset connects flawlessly but won't become primary sound output without manually changing to it under the Sound settings (but hardware function keys for volume and media control all work without problems).
-* I had to install Manjaro using the old BIOS boot and MBR partition scheme instead of GPT over UEFI. Not sure how to move to GPT/UEFI now (using a LUKS encrypted partition scheme)
+* As teclas de função não controlam o brilho da tela
+* O headset bluetooth Bose conecta sem problemas, mas não vira a saída de áudio principal automaticamente — é preciso trocar manualmente nas configurações de som (as teclas de função para volume e controles de mídia funcionam normalmente)
+* Tive que instalar o Manjaro usando o boot BIOS antigo com esquema de partição MBR em vez de GPT com UEFI. Não sei ainda como migrar para GPT/UEFI (estou usando partição criptografada com LUKS)
 
-But after fixing the NVIDIA GPU after a suspend or power disconnect, the other issues are just very minor annoyances.
+Mas depois de resolver o problema da GPU NVIDIA após suspensão ou desconexão da energia, os outros problemas são apenas irritações menores.
 
-So far, I am very happy to be using Manjaro over the Dell XPS. I am using a dual monitor setup, and everything is working quite smoothly. If you want to try it out, I recommend you stick to the 9560 (mid 2016 version) Sandy Bridge version, do not go to the new Kaby Lake versions yet as you will find buggy BIOS firmware and many aspects of the hardware won't be properly supported or documented yet.
+Estou muito satisfeito usando o Manjaro no Dell XPS. Uso uma configuração com dois monitores e tudo funciona bem. Para quem quiser experimentar, recomendo ficar na versão 9560 (versão Sandy Bridge de meados de 2016) — não vá para as versões Kaby Lake ainda, pois o firmware do BIOS tem bugs e muitos aspectos do hardware ainda não têm suporte adequado ou documentação suficiente.
 
-And if you're new to Arch, I highly recommend you start with Manjaro GNOME. It's by far the best and most usable Linux desktop I've tried.
+E para quem está começando com Arch, recomendo começar pelo Manjaro GNOME. É de longe a melhor e mais usável área de trabalho Linux que já experimentei.

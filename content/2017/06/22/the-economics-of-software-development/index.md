@@ -1,154 +1,158 @@
 ---
-title: The Economics of Software Development
+title: "A Economia do Desenvolvimento de Software"
 date: '2017-06-22T10:56:00-03:00'
-slug: the-economics-of-software-development
+slug: a-economia-do-desenvolvimento-de-software
+translationKey: economics-software-development
+aliases:
+- /2017/06/22/the-economics-of-software-development/
 tags:
 - off-topic
 - agile
 - lean
 - methodologies
 - startup
+- traduzido
 draft: false
 ---
 
-The software development community is boiling nowadays with so many options all at once. You have dozens of active and very good languages such as Go, [Elixir](/elixir), Clojure. Dozens of very good frameworks, both in the back-end and front-end including React, Elm. Dozens of sound methodologies from good old Agile stuff all the way to Continuous Deployment with microservices.
+A comunidade de desenvolvimento de software está efervescente com tantas opções ao mesmo tempo. Temos dezenas de linguagens ativas e muito boas, como Go, [Elixir](/elixir), Clojure. Dezenas de frameworks excelentes, tanto no back-end quanto no front-end, incluindo React e Elm. Dezenas de metodologias sólidas, desde o bom e velho Agile até Continuous Deployment com microsserviços.
 
-Now, you're a small tech startup or even a small team in a big corporation. How to even start?
+Mas você é uma pequena startup de tecnologia ou uma equipe pequena dentro de uma grande corporação. Por onde começar?
 
-And the recommendation is: do the smallest thing that works first. Always. Of course, avoid "quick and dirty" as much as you can. But don't get paranoid and over-engineer too much.
+A recomendação é simples: faça a menor coisa que funciona primeiro. Sempre. Claro, evite o "rápido e sujo" ao máximo. Mas não seja paranoico nem exagere na engenharia.
 
-Over-engineering is as expensive as doing things "dirty".
+Super-engenharia é tão cara quanto fazer as coisas de forma "suja".
 
-### Add "Time" to your equation
+### Adicione "Tempo" à sua equação
 
-What most people do very wrong is disregarding the variable of "Time".
+O erro mais comum que a maioria das pessoas comete é ignorar a variável "Tempo".
 
-Everybody goes to tech conferences or read fancy blog posts or watch flashy screencasts. Their wrong conclusion is: _"Netflix uses it, therefore it should be good for me, because I want to become Netflix"_.
+Todo mundo vai a conferências de tecnologia, lê posts badalados ou assiste screencasts chamativos. A conclusão errada que tiram é: _"a Netflix usa isso, então deve ser bom pra mim, porque eu quero me tornar a Netflix"_.
 
-The wrong assumption is that Neflix - or Google, or Facebook, or Spotify - is a static system and they always functioned the way they advertise it.
+O pressuposto falso é que a Netflix — ou o Google, ou o Facebook, ou o Spotify — é um sistema estático e sempre funcionou da forma como eles divulgam hoje.
 
-People forget that every unicorn company had a **day-1**. And on day-1 they did not use microservices. They did not had React.js. They did not have Go or Elixir. Some of them didn't even have good programmers to begin with. Netflix started as a VHS renting service, remember that? Google started off in a dorm-room with off-the-shelf hardware components assembled in a [Lego-based rack](http://www.complex.com/pop-culture/2013/02/50-things-you-didnt-know-about-google/lego-server-rack).
+As pessoas esquecem que toda empresa unicórnio teve um **dia 1**. E no dia 1, elas não usavam microsserviços. Não tinham React.js. Não tinham Go nem Elixir. Algumas nem tinham bons programadores de início. A Netflix começou como um serviço de aluguel de VHS, lembra? O Google começou num quarto de dormitório universitário com componentes de hardware montados num [rack de Lego](http://www.complex.com/pop-culture/2013/02/50-things-you-didnt-know-about-google/lego-server-rack).
 
-You are a fan of some celebrity. That celebrity has a Lamborghini car. So you want to be like that celebrity one day. What do you do? Do you buy the same Lamborghini he has?
+Imagine que você é fã de uma celebridade. Essa celebridade tem uma Lamborghini. Você quer ser como essa celebridade um dia. O que você faz? Compra a mesma Lamborghini que ela tem?
 
-If you are that stupid, the only thing you will end up with is a HUGE debt to pay.
+Se você fizer isso, a única coisa que vai conseguir é uma DÍVIDA ENORME para pagar.
 
-Stop envying the rich guy's Lamborghini.
+Pare de invejar a Lamborghini do rico.
 
-### (Technical) Debt
+### Dívida (Técnica)
 
-This is neither a new term nor a new theme. Every decision you make in programming is a **compromise** between what the "future-ideal" should be and what you can actually do right now. Loan to buy the equivalent Lamborghini too soon, and you will have to deal with an unpayable (Technical) Debt. And you will stale, you will stop, you will do nothing BUT pay that debt from now on.
+Esse não é um termo novo nem um tema novo. Cada decisão que você toma em programação é um **compromisso** entre o que o "futuro ideal" deveria ser e o que você consegue fazer agora. Tomar empréstimo para comprar a Lamborghini equivalente cedo demais, e você vai ter que lidar com uma Dívida (Técnica) impagável. E vai travar, vai parar, e vai fazer NADA além de pagar essa dívida daqui pra frente.
 
-You want to "code faster" therefore you skip writing automated tests, because you assume it will slow you down. And you're right. Test-driven development is not about making you fast at first. It's about protecting your future self from your present self. It's about not accumulating Technical Debt.
+Você quer "codar mais rápido", então pula a escrita de testes automatizados, porque acha que vai te atrasar. E você está certo. O desenvolvimento orientado a testes não é para te deixar rápido de início. É para proteger seu eu futuro do seu eu presente. É para não acumular Dívida Técnica.
 
-Again, you forget the "Time" variable.
+De novo: você esqueceu a variável "Tempo".
 
-You write and deliver fast for the 1st month. After the first version is deployed, now you will abliged to start paying the debt. Your productivity will slow down. Regression bugs will show up. Every new feature you try to add breaks something in unexpected ways. Because you don't have automated tests, you will keep fixing the same things many times over. Debt will catch up, and you will pay. One way or the other.
+Você escreve e entrega rápido no primeiro mês. Depois que a primeira versão está em produção, você começa a ser obrigado a pagar a dívida. Sua produtividade cai. Bugs de regressão aparecem. Cada nova funcionalidade que você tenta adicionar quebra algo de forma inesperada. Como não tem testes automatizados, você fica corrigindo as mesmas coisas várias vezes. A dívida vai cobrar, e você vai pagar. De um jeito ou de outro.
 
-Minimal test suites are like **Insurance**. You don't need it right now, on day-1. But on day-100 you will be so glad you have it.
+Suítes mínimas de testes são como um **Seguro**. Você não precisa dele agora, no dia 1. Mas no dia 100 você vai ficar feliz que tem.
 
-Doing too much microservices on day-1 is debt. It feels great that you're doing that fancy thing you read in a blog post. On day-100, with your 3 people team and a dozen microservices, from now on you will do nothing but pay the accumulated debt, with **Interest**. Every new microservices deployment breaks your system. And of course you didn't add monitoring, you didn't add integrated tests. So every time you code something, something else unexpectedly breaks.
+Fazer microsserviços demais no dia 1 é dívida. Parece ótimo estar fazendo aquela coisa bacana que você leu num blog. No dia 100, com sua equipe de 3 pessoas e uma dúzia de microsserviços, você não vai fazer nada além de pagar a dívida acumulada, com **Juros**. Cada novo deploy de microsserviço quebra seu sistema. E claro, você não adicionou monitoramento, não adicionou testes integrados. Então toda vez que você sobe algo, outra coisa quebra de forma inesperada.
 
-Enjoying that early Lamborghini now?
+Ainda está curtindo a Lamborghini antecipada?
 
-### The Mythical Man-Month
+### O Mítico Homem-Mês
 
-Philip Calçado writes very good posts and presents about microservices in the right way. If you're serious about that subject I strongly recommend that you read his posts, such as his ["Prerequisites"](http://philcalcado.com/2017/06/11/calcados_microservices_prerequisites.html) post or his ["Economics"](https://www.infoq.com/news/2017/05/economics-microservices) presentation.
+Philip Calçado escreve ótimos posts e apresentações sobre microsserviços do jeito certo. Se você leva esse assunto a sério, recomendo fortemente que leia seus textos, como o ["Prerequisites"](http://philcalcado.com/2017/06/11/calcados_microservices_prerequisites.html) ou sua apresentação ["Economics"](https://www.infoq.com/news/2017/05/economics-microservices).
 
-He correctly remembers Fred Brooks' **The Mythical Man-Month**. I urge developers to read this small book. It's uncanny how the entire industry is still repeating the very same mistakes Brooks reports in his book from projects in the 60's!
+Ele cita corretamente **O Mítico Homem-Mês**, de Fred Brooks. Insisto que os desenvolvedores leiam esse livro pequeno. É impressionante como a indústria inteira ainda repete exatamente os mesmos erros que Brooks relatou em seu livro, de projetos dos anos 60!
 
-To me, microservices is a by-product of tech companies with too many developers. Once you break through the 5-developers team a "monolithic" system with poor organization and few automated tests can become cumbersome to deal with. So the consequence is the desire to break it down. You make 2 teams and 2 microservices and coordinate. And the teams start to isolate, and play the  finger-pointing sessions when new bugs are reported (_"it's the other team's microservice's fault"_).
+Para mim, microsserviços são um subproduto de empresas de tecnologia com programadores em excesso. Quando você ultrapassa a barreira de 5 desenvolvedores, um sistema "monolítico" com organização ruim e poucos testes automatizados pode ficar difícil de lidar. A consequência natural é a vontade de fragmentar. Você cria 2 equipes e 2 microsserviços e tenta coordenar. As equipes começam a se isolar e a praticar o jogo de culpar o outro quando novos bugs aparecem (_"é culpa do microsserviço da outra equipe"_).
 
-That's [Conway's Law](http://www.melconway.com/Home/Conways_Law.html) if you do it wrong:
+É a [Lei de Conway](http://www.melconway.com/Home/Conways_Law.html) aplicada da forma errada:
 
-> Any organization that designs a system (defined broadly) will produce a design whose structure is a copy of the organization's communication structure.
+> Qualquer organização que projeta um sistema (definido de forma ampla) produzirá um design cuja estrutura é uma cópia da estrutura de comunicação da organização.
 
-Also in play is another chapter in Brooks book: The [Second System Effect](http://wiki.c2.com/?SecondSystemEffect). Every developer, tech startup, has to assume that the first version of anything is not the best design. And the second system (the first big rewrite) is **the most dangerous** system you will write. As Brooks state, it goes like this:
+Também entra em jogo outro capítulo do livro do Brooks: o [Efeito do Segundo Sistema](http://wiki.c2.com/?SecondSystemEffect). Todo desenvolvedor e toda startup precisa assumir que a primeira versão de qualquer coisa não é o melhor design. E o segundo sistema (a primeira grande reescrita) é **o sistema mais perigoso** que você vai construir. Como Brooks descreve:
 
-> An architect’s first work is apt to be spare and clean. He knows he doesn’t know what he’s doing, so he does it carefully and with great restraint.
+> O primeiro trabalho de um arquiteto tende a ser enxuto e limpo. Ele sabe que não sabe o que está fazendo, então procede com cuidado e grande contenção.
 
-> As he designs the first work, frill after frill and embellishment after embellishment occur to him. These get stored away to be used “next time.” Sooner or later the first system is finished, and the architect, with firm confidence and a demonstrated mastery of that class of systems, is ready to build a second system.
+> Enquanto projeta o primeiro trabalho, adornos e embelezamentos vão ocorrendo a ele. Esses ficam guardados para serem usados "na próxima vez." Cedo ou tarde o primeiro sistema está pronto, e o arquiteto, com confiança firme e maestria demonstrada nessa classe de sistemas, está pronto para construir o segundo.
 
-> This second is the most dangerous system a man ever designs. When he does his third and later ones, his prior experiences will confirm each other as to the general characteristics of such systems, and their differences will identify those parts of his experience that are particular and not generalizable.
+> Esse segundo é o sistema mais perigoso que um homem já projeta. Quando faz o terceiro e os posteriores, suas experiências anteriores se confirmarão mutuamente quanto às características gerais de tais sistemas, e as diferenças identificarão as partes de sua experiência que são particulares e não generalizáveis.
 
-> The general tendency is to over-design the second system, using all the ideas and frills that were cautiously sidetracked on the first one. The result, as Ovid says, is a “big pile.”
+> A tendência geral é super-projetar o segundo sistema, usando todas as ideias e adornos que foram cautelosamente deixados de lado no primeiro. O resultado, como diz Ovídio, é uma "grande pilha."
 
-Then, what happens? The CEO, the board, the investors, or whatever, start doing the wrong thing: hiring more and more people. Loan more and more. Instead of paying the debts they end up making more debt. They fell for what Brooks reported in the first chapter and what gives the name to the book: The Mythical Man-Month.
+O que acontece depois? O CEO, o conselho, os investidores — seja lá quem for — começa a fazer a coisa errada: contratar mais e mais pessoas. Tomar mais e mais empréstimos. Em vez de pagar as dívidas, acumulam mais dívida. Caíram na armadilha que Brooks relatou no primeiro capítulo e que dá nome ao livro: O Mítico Homem-Mês.
 
-> Adding manpower to a late software project makes it later.
+> Adicionar mão de obra a um projeto de software atrasado o atrasa ainda mais.
 
-> Complex programming projects cannot be perfectly partitioned into discrete tasks that can be worked on without communication between the workers and without establishing a set of complex interrelationships between tasks and the workers performing them.
+> Projetos de programação complexos não podem ser perfeitamente particionados em tarefas discretas que possam ser executadas sem comunicação entre os trabalhadores e sem estabelecer um conjunto de inter-relações complexas entre as tarefas e os trabalhadores que as executam.
 
-> Therefore, assigning more programmers to a project running behind schedule will make it even later. This is because the time required for the new programmers to learn about the project and the increased communication overhead will consume an ever increasing quantity of the calendar time available. 
+> Portanto, alocar mais programadores a um projeto que está atrasado o atrasará ainda mais. Isso porque o tempo necessário para os novos programadores aprenderem sobre o projeto e a sobrecarga de comunicação aumentada consumirão uma quantidade cada vez maior do tempo disponível no calendário.
 
-Again, it's foregoing the sense of the "Time" variable. And confusing "debt" for "investment".
+De novo: ignorando a variável "Tempo". E confundindo "dívida" com "investimento".
 
-First of all, do yourself a favor and [read the goddawn book](http://amzn.to/2sFbkWq) already, twice.
+Antes de tudo, faça um favor a si mesmo e [leia o maldito livro](http://amzn.to/2sFbkWq) — duas vezes.
 
-### Do Agile right! And no, it's not Kanban!
+### Faça Agile do jeito certo! E não, não é Kanban!
 
-If there is one good thing the whole Lean noise generated is the notion of "Most Viable Product" or MVP. People call it "prototype". Some call it "launching Beta" or simply "version 1.0". Doesn't matter. It's the realization that you don't know much at the beginning so overengineering on the first version is a waste of time. Lean is about controlling "waste", so we do the minimal that work, gauge results and work from there.
+Se há uma coisa boa que todo o barulho do Lean produziu, é a noção de "Produto Mínimo Viável" ou MVP. Alguns chamam de "protótipo". Outros chamam de "lançar em Beta" ou simplesmente "versão 1.0". Não importa o nome. É o reconhecimento de que você não sabe muita coisa no início, então fazer engenharia excessiva na primeira versão é desperdício de tempo. Lean é sobre controlar o "desperdício": fazemos o mínimo que funciona, medimos os resultados e evoluímos a partir daí.
 
-The cynical will say that any prototype that reaches production will never die. And they're not wrong.
+Os cínicos vão dizer que qualquer protótipo que chega a produção nunca morre. E não estão errados.
 
-The balance is to not do the "quick and dirty" version. That's why we have Agile techniques for. Do the minimal, organize the minimal. That's why we have object-oriented design patterns, from GoF to DDD. You don't need to do EVERY pattern - that's what "overenginnering" means. But you can do the minimal monolith that will allow you to evolve later.
+O equilíbrio está em não fazer a versão "rápida e suja". É pra isso que existem as técnicas ágeis. Faça o mínimo, organize o mínimo. É pra isso que existem os padrões de design orientado a objetos, do GoF ao DDD. Você não precisa aplicar TODOS os padrões — isso é o que significa "super-engenharia". Mas dá pra fazer o monolito mínimo que vai te permitir evoluir depois.
 
-People criticize Ruby on Rails for not being organized "enough". [Nick Sutterer](https://apotonick.wordpress.com/2015/09/05/the-only-alternative-to-a-rails-monolith-are-micro-services-bullshit/), the creator of the high-level [Trailblazer](https://github.com/trailblazer/trailblazer) has a good point.
+As pessoas criticam Ruby on Rails por não ser organizado "o suficiente". [Nick Sutterer](https://apotonick.wordpress.com/2015/09/05/the-only-alternative-to-a-rails-monolith-are-micro-services-bullshit/), o criador do [Trailblazer](https://github.com/trailblazer/trailblazer), tem um ponto válido.
 
-Rails done wrong is bad. The conclusion should NOT be: _"let's do microservices"_ though. That jump in faith is idiotic and makes no sense for all the reasons I mentioned above.
+Rails feito errado é ruim. Mas a conclusão NÃO deveria ser: _"vamos fazer microsserviços"_. Esse salto de fé é idiota e não faz sentido por todos os motivos que citei acima.
 
-_"Let's do proper Agile stuff and proper object-oriented stuff"_ should be the initial answer.
+_"Vamos fazer Agile de verdade e orientação a objetos de verdade"_ deveria ser a resposta inicial.
 
-And by "Agile" forget about idiotic post-its, idiotic numerology-based estimation equations (this is a whole post in itself, because story points and velocity are useful, but adding Montecarlo and other Gaussian-based stuff are not). The only "Agile" things you should be concerned about are the [Extreme Programming (XP) techniques](http://www.extremeprogramming.org/), **including** Iteration-based timeboxes.
+E por "Agile", esqueça os post-its idiotas, esqueça as equações de estimativa baseadas em numerologia (isso dá um post inteiro por si só, porque story points e velocity são úteis, mas adicionar Montecarlo e outras coisas baseadas em distribuição Gaussiana não faz sentido). As únicas coisas "Ágeis" com as quais você deveria se preocupar são as [técnicas de Extreme Programming (XP)](http://www.extremeprogramming.org/), **incluindo** os timeboxes baseados em iterações.
 
-You **MUST** do timeboxes. Stop, re-assess, change directions, and then keep going. The model of "Pull" is only reasonable when your directions is very, very clear, written in stone and unchangeable - like in a factory production line! (Where the concept of Pull - and Lean -- was actually born!)
+Você **PRECISA** fazer timeboxes. Pare, reavalie, mude de direção, e então continue. O modelo de "Pull" só faz sentido quando sua direção é muito, muito clara, está escrita em pedra e é imutável — como numa linha de produção de fábrica! (Que é exatamente onde o conceito de Pull — e o Lean — nasceu!)
 
-Iterations, like automated tests, are like Insurance. You can never avoid all waste, but you can minimize it. You can afford to throw away an Iteration-worth of work. After the iteration you measure the results, and throw it way if necessary - changing direction in the process. Throwing useless stuff away is as important as adding new stuff. If you just add, you have a [hoarding disorder](https://en.wikipedia.org/wiki/Compulsive_hoarding)!
+Iterações, como testes automatizados, são como um Seguro. Você nunca consegue evitar todo o desperdício, mas pode minimizá-lo. Você pode se dar ao luxo de jogar fora o trabalho de uma Iteração inteira. Depois da iteração você mede os resultados e descarta se necessário — mudando de direção no processo. Jogar fora o que não serve é tão importante quanto adicionar coisas novas. Se você só acumula, está com um [transtorno de acumulação](https://en.wikipedia.org/wiki/Compulsive_hoarding)!
 
-If in doubt, do XP. Yes, it feels more "difficult", and Kanban is "simpler" to explain. Now, is that a good reason?
+Na dúvida, faça XP. Sim, parece mais "difícil", e o Kanban é "mais simples" de explicar. Mas isso é motivo suficiente?
 
-### Forget about Raw Performance when you DON'T need it!
+### Esqueça Performance Bruta quando você NÃO precisa dela!
 
-Another problem is choosing languages or framework because of performance.
+Outro problema é escolher linguagens ou frameworks por causa de performance.
 
-If you're in the web development business, this is a huge WASTE.
+Se você está no negócio de desenvolvimento web, isso é um DESPERDÍCIO enorme.
 
-Understand this truth: your servers will IDLE most of the time. And if you feel like using your web app is slow, it's not because of the language used, it's because of the POOR programming you did. And no good language will rescue a bad programmer. I always say that if performance was that important, we should all be doing C.
+Entenda essa verdade: seus servidores vão ficar OCIOSOS na maior parte do tempo. E se você acha que seu web app está lento, não é por causa da linguagem usada — é por causa da PROGRAMAÇÃO RUIM que você fez. Nenhuma linguagem boa vai salvar um programador ruim. Sempre digo que se performance fosse assim tão importante, todo mundo deveria estar usando C.
 
-Most of what you serve in an HTTP-based apps, be it user-readable content, be it API GET results, can be **CACHED**! If you're not using a [CDN](http://www.akitaonrails.com/2015/08/25/small-bites-adicionando-um-cdn-ao-seu-site-a-forma-facil), you're doing it wrong.
+A maior parte do que você serve em apps baseados em HTTP — seja conteúdo para o usuário, seja resultado de API GET — pode ser **CACHEADA**! Se você não está usando uma [CDN](http://www.akitaonrails.com/2015/08/25/small-bites-adicionando-um-cdn-ao-seu-site-a-forma-facil), está fazendo errado.
 
-Yeah, yeah, yeah, you think you're building the next Spotify. You're not, at least not 99% of you. And the 1% doing custom engineering, with custom techniques and custom stack,  successfully, you're the 1%. Actually I'd say you're a fraction of the 1%. Do not assume that what you do is good for the rest of the population.
+Sim, sim, sim, você acha que está construindo o próximo Spotify. Não está — pelo menos 99% de vocês não estão. E os 1% que fazem engenharia personalizada, com técnicas e stack próprios, com sucesso — vocês são os 1%. Na verdade, são uma fração dos 1%. Não assuma que o que você faz é bom para o resto da população.
 
-90% of what most small companies and solo web developers need is just a Shopify account and a vanilla Wordpress installation. And that's it.
+90% do que a maioria das pequenas empresas e desenvolvedores web solo precisam é só uma conta no Shopify e uma instalação padrão do WordPress. É isso.
 
-> Are you doing infrastructure development like building custom components to Docker, Kubernetes, Terraform? Command-line tools? Daemons? Then choose GO.
+> Você está fazendo desenvolvimento de infraestrutura, como construir componentes customizados para Docker, Kubernetes, Terraform? Ferramentas de linha de comando? Daemons? Então escolha GO.
 
-> Are you doing embedded libraries? Maybe the next generation OpenSSL? Drivers? Then choose RUST.
+> Está fazendo bibliotecas embutidas? Talvez a próxima geração do OpenSSL? Drivers? Então escolha RUST.
 
-> Are you doing mobile development? Then don't have a lot of choice, do Swift for iOS, do Kotlin/Java for Android. Or do React Native for simpler apps.
+> Está fazendo desenvolvimento mobile? Não tem muita escolha: Swift para iOS, Kotlin/Java para Android. Ou React Native para apps mais simples.
 
-> Are you really doing the next Whatsapp? The next Waze? The next Snap? You have hundreds or thousands of users in need of long-lived connections over unreliable network doing broadcasts of messages? Or you're building the next evolution of distributed NoSQL databases? Or anything that actually has the proper meaning of "Distributed" in it's definition? Then choose ELIXIR.
+> Está realmente construindo o próximo Whatsapp? O próximo Waze? O próximo Snap? Tem centenas ou milhares de usuários precisando de conexões de longa duração em redes não confiáveis fazendo broadcast de mensagens? Ou está construindo a próxima evolução de bancos de dados NoSQL distribuídos? Ou qualquer coisa que tenha o sentido real de "Distribuído" em sua definição? Então escolha ELIXIR.
 
-> Are you doing a CRUD based web application? Go RAILS and never look back.
+> Está fazendo uma aplicação web baseada em CRUD? Vai de RAILS e não olha pra trás.
 
-> Are you doing all of the above? Use all the alternatives then. And I hope you have the budget, because you need a big team.
+> Está fazendo tudo isso ao mesmo tempo? Use todas as alternativas então. E espero que tenha orçamento, porque vai precisar de uma equipe grande.
 
-### Conclusion
+### Conclusão
 
-The Economics only makes sense when you consider the day-1. Do not forget the "Time" variable. It makes all the difference.
+A Economia só faz sentido quando você considera o dia 1. Não esqueça a variável "Tempo". Ela faz toda a diferença.
 
-You will always get Debt to pay. So be smart in which kind of debt you choose. Because you will have to pay it back eventually.
+Você sempre vai ter Dívidas a pagar. Então seja inteligente na escolha de qual tipo de dívida você assume. Porque vai ter que pagar de volta eventualmente.
 
-Again, read Brooks. He said it decades ago: [THERE IS NO SILVER BULLET](http://worrydream.com/refs/Brooks-NoSilverBullet.pdf). Don't bullshit yourself. A new language, a new framework, a new architecture. None of those will save you.
+De novo: leia Brooks. Ele disse isso décadas atrás: [NÃO EXISTE BALA DE PRATA](http://worrydream.com/refs/Brooks-NoSilverBullet.pdf). Não se iluda. Uma nova linguagem, um novo framework, uma nova arquitetura. Nada disso vai te salvar.
 
-In any tech endeavor, code is not the only thing to worry about. I would go as far as to say that in a tech startup, code is only 20% of the problem. A tech startup is just a company, like any other. If you're the founder or CEO, you have to deal with all the remaining 80%: marketing, accounting, human resources, legal, etc. It's already difficult enough without your tech team getting you unwanted Technical Debt - the unneeded Lamborghini - that you won't be able to pay.
+Em qualquer empreitada tecnológica, código não é a única preocupação. Diria até que numa startup de tecnologia, código é apenas 20% do problema. Uma startup de tecnologia é só uma empresa, como qualquer outra. Se você é o fundador ou CEO, tem que lidar com os 80% restantes: marketing, contabilidade, recursos humanos, questões legais, etc. Já é difícil o suficiente sem que sua equipe técnica te traga uma Dívida Técnica indesejada — a Lamborghini desnecessária — que você não vai conseguir pagar.
 
-You can start humble on day-1. Keep evolving, continuously - this is the core of any Agile or Lean process: [KAIZEN](https://www.graphicproducts.com/articles/what-is-kaizen/). Choose smart debts, pay them a small bit at a time, continuously. It's the same reasoning as getting a loan in the bank.
+Você pode começar humilde no dia 1. Continue evoluindo, continuamente — esse é o núcleo de qualquer processo Agile ou Lean: [KAIZEN](https://www.graphicproducts.com/articles/what-is-kaizen/). Escolha dívidas inteligentes, pague-as aos poucos, continuamente. É o mesmo raciocínio de fazer um empréstimo no banco.
 
-> Netflix day-7,200 is NOT your day-1.
+> O dia 7.200 da Netflix NÃO é o seu dia 1.
 
-> Facebook day-4,800 is NOT your day-1.
+> O dia 4.800 do Facebook NÃO é o seu dia 1.
 
-> Goodle day-6,8090 is NOT your day-1.
+> O dia 6.809 do Google NÃO é o seu dia 1.
 
-> Be humble. Deliver fast. Pay your Debts. Keep evolving continuouly. Stop believing in fairy tales and silver bullets.
+> Seja humilde. Entregue rápido. Pague suas Dívidas. Continue evoluindo continuamente. Pare de acreditar em contos de fadas e balas de prata.

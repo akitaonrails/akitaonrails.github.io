@@ -66,55 +66,55 @@ Quer ver as transcrições do Canal Akitando? [Clique aqui](/akitando/).
 
 ## 2017 - Dezembro
 
-- [Cryptocurrencies: Is it a Bubble? Does it Matter?](/2017/12/05/cryptocurrencies-is-it-a-bubble-does-it-matter/)
+- [Criptomoedas: É uma Bolha? Isso Importa?](/2017/12/05/criptomoedas-e-uma-bolha-isso-importa/)
 
 ## 2017 - Novembro
 
-- [From 10k and Beyond: Discussing Crypto Currencies](/2017/11/30/from-10k-and-beyond-discussing-crypto-currencies/)
-- [From Microsoft to Apple, and Back Again](/2017/11/21/from-microsoft-to-apple-and-back-again/)
-- [THE CONF 2017 - All the Recordings!](/2017/11/13/the-conf-2017-all-the-recordings/)
-- [How does Bitcoin force consensus among Byzantine generals?](/2017/11/01/how-does-bitcoin-force-consensus-among-byzantine-generals/)
+- [De 10 Mil e Além: Discutindo Criptomoedas](/2017/11/30/de-10-mil-e-alem-discutindo-criptomoedas/)
+- [Da Microsoft para a Apple e de Volta](/2017/11/21/da-microsoft-para-a-apple-e-de-volta/)
+- [The Conf 2017 - Todas as Gravações](/2017/11/13/the-conf-2017-todas-as-gravacoes/)
+- [Como o Bitcoin Força Consenso entre os Generais Bizantinos?](/2017/11/01/como-o-bitcoin-forca-consenso-entre-os-generais-bizantinos/)
 
 ## 2017 - Outubro
 
-- [\[Beginner\] Long live PhantomJS, let's use Chrome Headless now](/2017/10/31/beginner-long-live-phantomjs-let-s-use-chrome-headless-now/)
-- [How NOT to zero out your Pusher development quota](/2017/10/27/how-not-to-zero-out-your-pusher-development-quota/)
-- [\[Beginner\] Trying out Rails 5.1.x](/2017/10/24/beginner-trying-out-rails-5-1-x/)
-- [Replacing RVM/Rbenv/Nvm/etc for ASDF](/2017/10/24/replacing-rvm-rbenv-nvm-etc-for-asdf/)
-- [THE CONF - 2017 Edition Report](/2017/10/02/the-conf-2017-edition-report/)
+- [Iniciante: Longa Vida ao PhantomJS - Vamos Usar Chrome Headless Agora](/2017/10/31/iniciante-longa-vida-ao-phantomjs-vamos-usar-chrome-headless-agora/)
+- [Como Não Zerar sua Cota de Desenvolvimento no Pusher](/2017/10/27/como-nao-zerar-sua-cota-de-desenvolvimento-no-pusher/)
+- [Iniciante Experimentando o Rails 5.1.x](/2017/10/24/iniciante-experimentando-o-rails-5-1-x/)
+- [Substituindo rvm, rbenv, nvm e outros pelo asdf](/2017/10/24/substituindo-rvm-rbenv-nvm-e-outros-pelo-asdf/)
+- [The Conf 2017 - Relatório da Edição](/2017/10/02/the-conf-2017-relatorio-da-edicao/)
 
 ## 2017 - Setembro
 
-- [Windows Subsystem for Linux is good, but not enough yet](/2017/09/20/windows-subsystem-for-linux-is-good-but-not-enough-yet/)
+- [Windows Subsystem for Linux é Bom, Mas Ainda Não Suficiente](/2017/09/20/windows-subsystem-for-linux-e-bom-mas-ainda-nao-suficiente/)
 
 ## 2017 - Agosto
 
 - [\[Off-Topic\] Blockchain e Criptomoedas no Brasil](/2017/08/28/off-topic-blockchain-e-criptomoedas-no-brasil/)
-- [Why it is just lazy to bad-mouth Ruby on Rails](/2017/08/03/why-is-it-just-lazy-to-bad-mouth-ruby-on-rails/)
+- [Por que Falar Mal do Ruby on Rails é Simplesmente Preguiça](/2017/08/03/por-que-falar-mal-do-ruby-on-rails-e-simplesmente-preguica/)
 
 ## 2017 - Julho
 
-- [Upcoming built-in Upload Solution for Rails 5.2 (ActiveStorage)](/2017/07/07/upcoming-built-in-upload-solution-for-rails-5-2-activestorage/)
+- [A Solução de Upload Nativa do Rails 5.2: ActiveStorage](/2017/07/07/a-solucao-de-upload-nativa-do-rails-5-2-activestorage/)
 
 ## 2017 - Junho
 
-- [Rails 5.1  Deployment Checklist for Heroku](/2017/06/28/rails-5-1-heroku-deployment-checklist-for-heroku/)
-- [Estimates are Promises - A Better Metaphor](/2017/06/26/estimates-are-promises-a-better-metaphor/)
-- [The Economics of Software Development](/2017/06/22/the-economics-of-software-development/)
-- [Starting with Blender](/2017/06/21/starting-with-blender/)
-- [Ex Manga Downloadr - Part 7: Properly dealing with large Collections](/2017/06/16/ex-manga-downloadr-part-7-properly-dealing-with-large-collections/)
-- [Ex Manga Downloadr - Part 6: The Rise of FLOW](/2017/06/13/ex-manga-downloadr-part-6-the-rise-of-flow/)
+- [Checklist de Deploy do Rails 5.1 no Heroku](/2017/06/28/checklist-de-deploy-do-rails-5-1-no-heroku/)
+- [Estimativas São Promessas - Uma Metáfora Melhor](/2017/06/26/estimativas-sao-promessas-uma-metafora-melhor/)
+- [A Economia do Desenvolvimento de Software](/2017/06/22/a-economia-do-desenvolvimento-de-software/)
+- [Começando com Blender](/2017/06/21/comecando-com-blender/)
+- [Ex Manga Downloadr - Parte 7: Lidando Corretamente com Grandes Coleções](/2017/06/16/ex-manga-downloadr-parte-7-lidando-com-grandes-colecoes/)
+- [Ex Manga Downloadr - Parte 6: A Ascensão do FLOW](/2017/06/13/ex-manga-downloadr-parte-6-a-ascensao-do-flow/)
 - [\[Off-Topic\] Talento é Altamente Supervalorizado: Humanizando Einstein e Matando Deuses](/2017/06/08/off-topic-talento-e-altamente-supervalorizado-humanizando-einstein-e-matando-deuses/)
 - [Participando em Podcasts](/2017/06/02/participando-em-podcasts/)
-- [Conference Talks, Interviews, and the Pen!](/2017/06/01/conference-talks-interviews-and-the-pen/)
+- [Palestras em Conferências, Entrevistas e a Caneta](/2017/06/01/palestras-em-conferencias-entrevistas-e-a-caneta/)
 
 ## 2017 - Maio
 
-- [Programmers Guild - Religion and Sports](/2017/05/14/programmers-guild-religion-and-sports/)
+- [Guilda de Programadores - Religião e Esportes](/2017/05/14/guilda-de-programadores-religiao-e-esportes/)
 
 ## 2017 - Março
 
-- [Enabling Optimus NVIDIA GPU on the Dell XPS 15 with Linux, even on Battery](/2017/03/14/enabling-optimus-nvidia-gpu-on-the-dell-xps-15-with-linux-even-on-battery/)
+- [Habilitando a GPU Optimus NVIDIA no Dell XPS 15 com Linux (até na Bateria)](/2017/03/14/habilitando-a-gpu-optimus-nvidia-no-dell-xps-15-com-linux/)
 
 ## 2017 - Fevereiro
 
@@ -122,11 +122,11 @@ Quer ver as transcrições do Canal Akitando? [Clique aqui](/akitando/).
 
 ## 2017 - Janeiro
 
-- [From the Macbook Pro to the Dell XPS. Arch Linux for Creative Pro Users](/2017/01/31/from-the-macbook-pro-to-the-dell-xps-arch-linux-for-creative-pro-users/)
-- [Optimizing Linux for Slow Computers](/2017/01/17/optimizing-linux-for-slow-computers/)
-- [\[Off-Topic\] Why are we all moving away from Apple?](/2017/01/12/off-topic-why-are-we-all-moving-away-from-apple/)
-- [Arch Linux - Best distro ever?](/2017/01/10/arch-linux-best-distro-ever/)
-- [Customizing Fedora 25 for Developers](/2017/01/06/customizing-fedora-25-for-developers/)
+- [Do MacBook Pro para o Dell XPS: Arch Linux para Usuários Criativos](/2017/01/31/do-macbook-pro-para-o-dell-xps-arch-linux-para-usuarios-criativos/)
+- [Otimizando o Linux para Computadores Lentos](/2017/01/17/otimizando-o-linux-para-computadores-lentos/)
+- [Off-Topic: Por que Estamos Todos Migrando para Longe da Apple?](/2017/01/12/off-topic-por-que-estamos-todos-migrando-para-longe-da-apple/)
+- [Arch Linux: A Melhor Distro de Todas](/2017/01/10/arch-linux-a-melhor-distro-de-todas/)
+- [Customizando o Fedora 25 para Desenvolvedores](/2017/01/06/customizando-o-fedora-25-para-desenvolvedores/)
 
 ## 2016 - Dezembro
 

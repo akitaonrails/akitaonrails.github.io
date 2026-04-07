@@ -1,106 +1,110 @@
 ---
-title: "[Off-Topic] Why are we all moving away from Apple?"
+title: "Off-Topic: Por que Estamos Todos Migrando para Longe da Apple?"
 date: '2017-01-12T11:37:00-02:00'
-slug: off-topic-why-are-we-all-moving-away-from-apple
+slug: off-topic-por-que-estamos-todos-migrando-para-longe-da-apple
+translationKey: moving-away-from-apple
+aliases:
+- /2017/01/12/off-topic-why-are-we-all-moving-away-from-apple/
 tags:
 - off-topic
 - apple
 - microsoft
 - future
+- traduzido
 draft: false
 ---
 
-"Anyone that is someone has been following Apple for the past couple of decades. Love them, or hate them, the only thing you can't do is ignore them." - that was always the general thought.
+"Todo mundo que é alguém acompanhou a Apple nas últimas décadas. Ame ou odeie, a única coisa que você não pode fazer é ignorá-la." - esse sempre foi o consenso geral.
 
-"Creative" Professionals (as if "creatives" were only restricted to painters and illustrators)  have always been the most loyal Apple followers, for good reason. It was the cradle for important tools such as Photoshop, QuarkXPress, Postscript and PDF, Quicktime. They really set the standards for media creation. Anyone that was someone used those tools. Windows focused on the corporate, not the creatives. Linux was in its infancy, most developers didn't even know the difference between CMYK and RGB yet, they were content for having a crude bitmap in the screen.
+Os profissionais "criativos" (como se "criativo" fosse restrito apenas a pintores e ilustradores) sempre foram os seguidores mais fiéis da Apple, e com razão. A plataforma foi o berço de ferramentas essenciais como Photoshop, QuarkXPress, PostScript e PDF, QuickTime. A Apple estabeleceu os padrões para criação de mídia. Qualquer um que era alguém usava essas ferramentas. A Microsoft focava no mercado corporativo, não nos criativos. O Linux engatinhava, e a maioria dos desenvolvedores nem sabia a diferença entre CMYK e RGB ainda — ficavam satisfeitos em ter um bitmap tosco na tela.
 
 ![Old Macintosh](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/587/918d80cb21131a7a62e6ccaf71229960.jpg)
 
-I have this theory that we took technology for granted in the late 90's, we thought we were at the top of the world. That's because of the Dotcom Bubble of the late 90's, which burst together with 9/11. The depression made us waste the next 3 to 4 years trying to figure out what we would do next.
+Tenho uma teoria: achamos que dominávamos a tecnologia no final dos anos 90, que estávamos no topo do mundo. Essa euforia era fruto da Bolha da Internet, que estourou junto com o 11 de setembro. A depressão que se seguiu desperdiçou os próximos 3 a 4 anos enquanto todo mundo tentava descobrir o que fazer a seguir.
 
 ![Dotcom burst](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/588/1dot.jpg)
 
-Apple had the luck to dodge the burst. They were already at the rock bottom since 1997. The cleaning up of their hardware lineup and the release of the iPod created their own small bubble. Steve Jobs was back and he brought good developers that made OS X a joy to use not only for creatives, but developers as well.
+A Apple teve a sorte de escapar da explosão. Ela já estava no fundo do poço desde 1997. A reorganização do portfólio de hardware e o lançamento do iPod criaram uma bolhinha própria. Steve Jobs havia voltado e trouxe bons desenvolvedores que fizeram do OS X um prazer de usar, não só para criativos, mas também para desenvolvedores.
 
-The Microsoft Antitrust case of 2000, the Dotcom Bubble burst in 2001, the release of the iPod in 2001, the switch from System 9 to OS X/BSD in 1999, the switch from PowerPC to Intel in 2005, the release of the ultra desirable Titanium Macbook Pro in 2004. All of those contributed to give Apple the edge. And while everybody was down, it made them feel even larger than life.
+O processo antitruste contra a Microsoft em 2000, o estouro da Bolha da Internet em 2001, o lançamento do iPod em 2001, a transição do System 9 para o OS X/BSD em 1999, a troca do PowerPC para Intel em 2005, o lançamento do desejadíssimo Titanium MacBook Pro em 2004. Tudo isso junto deu à Apple uma vantagem enorme. E enquanto todo mundo estava em baixa, a Apple parecia maior do que realmente era.
 
 [![Microsoft Antitrust](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/589/Microsoft.gif)](http://www.economist.com/node/2535519)
 
-Then in 2007/2008 they had a new push: the iPhone, the App Store, and the need to use XCode - available only in Apple computers. Different from being obligated to remain in Windows because of Visual Studio, to use XCode was actually an extra reason to buy a Mac.
+Aí vieram 2007/2008 com um novo impulso: o iPhone, a App Store e a necessidade de usar o Xcode — disponível apenas em computadores Apple. Diferente de ser obrigado a ficar no Windows por causa do Visual Studio, usar o Xcode era um motivo a mais para comprar um Mac.
 
 ![iPhone announcement](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/590/SteveJobsUnveilsiPhone.jpg)
 
-Linux distros were still struggling. To this day, we were obligated to remain with the [stupid X11](https://www.youtube.com/watch?v=RIctzAQOe44). If a Linux-based OS was cutting edge, X11 was the worst possible OS on top of it. Apple were smart enough to not adopt it and instead create Quartz from scratch and improve it step by step on each OS X new release. It took them 5 years to fully stabilize. Only now, in 2017, we are finally moving away from X into Wayland/Weston.
+As distros Linux ainda sofriam. Até então, estávamos presos ao [maldito X11](https://www.youtube.com/watch?v=RIctzAQOe44). Se o núcleo de um sistema Linux era moderno, o X11 em cima era o pior dos mundos. A Apple foi esperta o suficiente para não adotá-lo e criou o Quartz do zero, melhorando-o a cada nova versão do OS X. Levou cinco anos para estabilizar direito. Só agora, em 2017, estamos finalmente saindo do X para o Wayland/Weston.
 
 ![Steve Ballmer](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/591/steve-ballmer.jpg)
 
-Microsoft also struggled after Bill Gates left the reins to Steve Ballmer. The switch from XP all the way to the current Windows 10, going through the disastrous attempts at Windows Vista up to Windows 8, Windows Mobile, then the many attempts to bring new life to the dominant but defunct Internet Explorer - the largest Walking Dead ever in technology. The Ballmer era was a disaster.
+A Microsoft também sofreu depois que Bill Gates passou as rédeas para Steve Ballmer. A trajetória do XP até o Windows 10, passando pelos desastres do Vista, Windows 8, Windows Mobile e pelas inúmeras tentativas de ressuscitar o Internet Explorer — o maior Walking Dead da história da tecnologia — foi deprimente. A era Ballmer foi um desastre.
 
-Then the iPad got released and Steve Jobs died.
+Aí veio o iPad. E Steve Jobs morreu.
 
 ![Jobs Dies](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/592/hi-steve-jobs-memorial-0139.jpg)
 
-### Apple is stuck in 2010.
+### A Apple está presa em 2010.
 
-And so are we.
+E nós também.
 
-Major Linux distros, Microsoft, PC hardware manufacturers, big industry turnarounds (Nokia, Blackberry, Motorola) the dawn of the GPU era, the end of Moore's Law speed clock wars into parallel computing, the dawn of ARM. It took 10 years for all the smoke to finally settle, and it took having Apple standing still for 6 years for everybody to finally catch up.
+As grandes distros Linux, a Microsoft, os fabricantes de hardware para PC, as viradas de grandes empresas (Nokia, Blackberry, Motorola), o começo da era das GPUs, o fim das guerras de clock da Lei de Moore em direção à computação paralela, a ascensão do ARM. Levou dez anos para a poeira baixar, e foi preciso a Apple ficar parada por seis anos para que todos os outros conseguissem alcançá-la.
 
-Ballmer left the reins to Satya Nadella. Microsoft acquires Xamarin, make huge strides into open source and even [Ubuntu now runs natively on top of Windows 10](http://www.akitaonrails.com/2016/07/26/the-year-of-linux-on-the-desktop-it-s-usable).
+Ballmer passou o bastão para Satya Nadella. A Microsoft adquiriu a Xamarin, deu passos enormes em direção ao open source e até o [Ubuntu passou a rodar nativamente no Windows 10](http://www.akitaonrails.com/2016/07/26/the-year-of-linux-on-the-desktop-it-s-usable).
 
 ![Satya Nadella](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/593/THE_END_TIMES_ARE_HERE-399de53540c79757ac9af535579cdad9.jpg)
 
-Ah, and the Asians. Samsung, LG, Huawei, the South Koreans, the Chinese, are all forcing the North Americans to push harder.
+E os asiáticos. Samsung, LG, Huawei, sul-coreanos e chineses forçaram os norte-americanos a se mexerem mais.
 
-One last legacy of the Steve Jobs era was both [killing Adobe Flash](https://www.androidpit.com/adobe-flash-player-not-working) (finally!) and pushing HTML 5 technologies forward, an acceleration of 10 years in 5. It was because of the iPhone that we have the Web as it is.
+Um último legado da era Steve Jobs foi [matar o Adobe Flash](https://www.androidpit.com/adobe-flash-player-not-working) (finalmente!) e impulsionar as tecnologias HTML 5, comprimindo dez anos de evolução em cinco. Foi por causa do iPhone que a Web é o que é hoje.
 
 [![HTML 5 kills Flash](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/594/flash-dead.jpg)](http://www.apple.com/hotnews/thoughts-on-flash/)
 
-Google jumped in, took over the ball that Internet Explorer left behind. WebKit became the quintessential web browser reference. Javascript became the new application platform, pushed by the many evolving Social Networks.
+O Google entrou em campo e assumiu o espaço deixado pelo Internet Explorer. O WebKit se tornou a referência obrigatória de navegadores. O JavaScript se transformou na nova plataforma de aplicações, impulsionado pelas redes sociais em constante evolução.
 
-For better or worse, the social networks forced the new dawn of complex and interactive Web Applications. We got the example of Gmail and Web 2.0 and with the new mobile environment, everything converged into making cross platforms, ubiquitous apps.
+Para o bem ou para o mal, as redes sociais forçaram o surgimento de uma nova geração de aplicações web complexas e interativas. O Gmail e a Web 2.0 serviram de exemplo, e com o novo ambiente mobile, tudo convergiu para aplicações multiplataforma e ubíquas.
 
-It's now easier than ever to switch between desktop OSes because we made it easy to jump around between the desktop and mobile devices already.
+Hoje é mais fácil do que nunca trocar de sistema operacional no desktop, porque já treinamos o hábito de pular entre desktop e dispositivos móveis.
 
 ![All devices](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/599/alldevices.jpg)
 
-Why is it easy now to move between macOS or Windows or Linux distros? Or between macOS and iOS, or between Linux and Android? Because most of the software is in "the cloud". Linux dominates the Cloud world that Amazon debuted in 2006 with S3 and EC2, now closely followed by Google Cloud and Microsoft Azure and other smaller competitors.
+Por que ficou fácil migrar entre macOS, Windows ou distros Linux? Ou entre macOS e iOS, ou entre Linux e Android? Porque a maior parte do software está "na nuvem". O Linux domina o mundo da nuvem que a Amazon estreou em 2006 com S3 e EC2, seguida de perto pelo Google Cloud, Microsoft Azure e outros competidores menores.
 
-Because there is at least a good Chrome browser in every platform.
+Porque em qualquer plataforma existe pelo menos um bom Chrome.
 
-Because the apps we use are mostly web enabled: Gmail, Spotify, Slack, Hangout, Twitter, Facebook, Spotify, YouTube, Netflix, Amazon. The other half are all available natively under iOS or Android: Whatsapp, Waze, Swarm, Snapchat, Instagram.
+Porque os apps que usamos são majoritariamente web: Gmail, Spotify, Slack, Hangout, Twitter, Facebook, YouTube, Netflix, Amazon. E a outra metade está disponível nativamente no iOS ou Android: WhatsApp, Waze, Swarm, Snapchat, Instagram.
 
-10 years ago, with the release of the iPhone, the technology industry finally started to put their shit together.
+Dez anos atrás, com o lançamento do iPhone, a indústria de tecnologia finalmente começou a se organizar.
 
-It was a cat and mouse chase until at least 5 years ago, then everybody started to settle.
+Foi um jogo de gato e rato até uns cinco anos atrás, quando as coisas começaram a se estabilizar.
 
-After Jobs died we still had expectations that Apple would keep pushing forward, albeit in a slower pace without Jobs' whip.
+Depois que Jobs morreu, ainda tínhamos a expectativa de que a Apple continuaria avançando, ainda que num ritmo mais lento sem o chicote do Jobs.
 
-It didn't happen. They made bad decision after bad decision and we keep feeling that we are back in the early 90's, under Scully, Spindler or Amelio.
+Não aconteceu. Foram decisão ruim atrás de decisão ruim, e a sensação é de que voltamos ao início dos anos 90, na era de Scully, Spindler ou Amelio.
 
 [![Apple, Prey](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/595/wired_cover.jpg)](http://uk.businessinsider.com/wired-1997-save-apple-predictions-pray-2015-5)
 
-But now, there are fallbacks readily available: Windows 10 Anniversary Edition is finally a competent Windows, bringing back the glory days of the mid-90's. And major Linux distros are cohesive, requiring little to no nerdy tweaking into obscure config files, pushed by Canonical - for better or worse.
+Mas agora existem alternativas sólidas disponíveis: o Windows 10 Anniversary Edition é finalmente um Windows competente, recuperando a glória dos meados dos anos 90. E as grandes distros Linux são coesas, exigindo pouco ou nenhum ajuste nerd em arquivos de configuração obscuros, empurradas pela Canonical — para o bem ou para o mal.
 
-And most of the apps we use in our routines are available. Heck, you can find a good web-based cross platform text editor in the form of Atom nowadays.
+E a maioria dos apps que usamos no dia a dia está disponível. Dá até para encontrar um bom editor de texto multiplataforma baseado na web na forma do Atom.
 
-Apple also left the legacy of ubiquitous cross platform compilation readily available in the form of [LLVM](https://www.infoq.com/br/presentations/novas-linguagens-o-que-vem-depois-do-ruby). It served their own needs to have Objective-C available in PowerPC, Intel, ARM and Apple Ax processors. But LLVM is now the best backbone to enable languages such as Rust, RubyMotion, Crystal to exist and easily create fast binaries in multiple platforms.
+A Apple também deixou o legado da compilação multiplataforma ubíqua na forma do [LLVM](https://www.infoq.com/br/presentations/novas-linguagens-o-que-vem-depois-do-ruby). Serviu às próprias necessidades deles de ter Objective-C disponível em PowerPC, Intel, ARM e nos processadores Apple Ax. Mas o LLVM é agora a melhor espinha dorsal para permitir que linguagens como Rust, RubyMotion e Crystal existam e criem binários rápidos em múltiplas plataformas.
 
 [![Chris Lattner leaves Apple to Tesla](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/596/11-1484116910-chris-lattner-01.jpg)](https://www.tesla.com/blog/welcome-chris-lattner)
 
-"Apple's current board of directors need to go". "Tim Cook needs to step down". I am sure many are crying out loud like this, but there is no Steve Jobs waiting to return. Apple is so big that the inertia alone will keep them going a few more years, but they are in danger of falling into irrelevance.
+"O conselho da Apple precisa ir embora." "Tim Cook precisa renunciar." Tenho certeza que muita gente grita isso por aí, mas não tem Steve Jobs esperando para voltar. A Apple é grande o suficiente para que a inércia sozinha a mantenha andando por mais alguns anos, mas ela corre o risco real de cair na irrelevância.
 
-Other industries such as energy, health, genetics, are evolving in their own ways, but computer technology is in a dangerous stand still.
+Outras indústrias como energia, saúde e genética evoluem do jeito delas, mas a tecnologia da computação está num perigoso marasmo.
 
-Computer Languages stopped evolving in the mid-90's. All "new" languages are amalgams of language features that were already there since the 70's and 80's. CPU processors are stuck into just making transistors smaller and more energy efficient. And we are already there: [$9 computers](https://www.kickstarter.com/projects/1598272670/chip-the-worlds-first-9-computer) are good enough for trivial tasks such as web browsing. So much that we are putting them everywhere: even a bluetooth toothbrush that keeps track of your brushing sessions.
+As linguagens de programação pararam de evoluir em meados dos anos 90. Todas as linguagens "novas" são amálgamas de recursos que já existiam desde os anos 70 e 80. Os processadores estão presos em fazer transistores menores e mais eficientes em termos de energia. E já chegamos lá: [computadores de US$ 9](https://www.kickstarter.com/projects/1598272670/chip-the-worlds-first-9-computer) são suficientes para tarefas triviais como navegar na web. A ponto de estarmos colocando processadores em tudo: inclusive numa escova de dentes bluetooth que registra suas sessões de escovação.
 
 [![Bluetooth Toothbrush](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/597/smart-video-toothbrush-ces.jpg)](https://www.dezeen.com/2017/01/06/ara-first-toothbrush-artifical-intelligence-kolibree-ces/)
 
-Did you see CES 2017 products? Pillows and beds that track your sleep and sync data to an app. Washing machines. Vaccuum cleaners. Fitness devices. Health devices. Personal assistants such as Alexa. Everything takes data from you and sync them into "the cloud".
+Viu os produtos da CES 2017? Travesseiros e camas que monitoram seu sono e sincronizam com um app. Máquinas de lavar. Aspiradores de pó. Dispositivos fitness. Dispositivos de saúde. Assistentes pessoais como a Alexa. Tudo captura dados seus e sincroniza na nuvem.
 
-"The cloud" also reached peak. It's ubiquitous. It's not only affordable but downright cheap. Technology in general is dirty cheap nowadays.
+A nuvem também chegou ao pico. É ubíqua. Não é só acessível — é barata. A tecnologia em geral está absurdamente barata hoje em dia.
 
-Wearables and VR are good gimmicks, but even if they become ubiquitous, it's not a revolution, just an extension of the use cases that the iPhone revolution bootstrapped.
+Wearables e VR são boas novidades, mas mesmo que se tornem ubíquos, não é uma revolução — é apenas uma extensão dos casos de uso que a revolução do iPhone iniciou.
 
 ![Baby monitor](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/600/3017180-inline-mg5205.jpg)
 
@@ -108,14 +112,14 @@ Wearables and VR are good gimmicks, but even if they become ubiquitous, it's not
 
 ![mobile](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/602/6e752109eac4d37830078517b2aefd583d52722a.jpg)
 
-Mobile, wearables, social networks, only made people more anxious. Allowing everybody have a "voice" online didn't improve things, just made people more anxious. Opinions are in such large supply that they are worth less and less.
+Mobile, wearables, redes sociais, só deixaram as pessoas mais ansiosas. Dar "voz" a todo mundo online não melhorou as coisas, só aumentou a ansiedade geral. Opiniões estão em oferta tão grande que valem cada vez menos.
 
-Every person online is now a source of terabytes of useless information to generate pseudo-statistics that are useless for the most part. [Every person is now defined by a bunch of data in the cloud](http://www.techrepublic.com/article/the-dark-side-of-wearables-how-theyre-secretly-jeopardizing-your-security-and-privacy/).
+Cada pessoa online é agora uma fonte de terabytes de informação inútil para gerar pseudo-estatísticas que não servem para quase nada. [Cada pessoa é agora definida por um monte de dados na nuvem](http://www.techrepublic.com/article/the-dark-side-of-wearables-how-theyre-secretly-jeopardizing-your-security-and-privacy/).
 
 ![Trump](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/603/donald-trump-twitter-president.jpg)
 
-I have no idea where we are going from here, as a witness of history, I'd have to say that I miss the excitement of exploring new frontiers. We had that in the mid-90's onwards. We had a small break after the Dotcom burst but we got it back full blown in 2004. We lost it after 2010.
+Não faço ideia para onde vamos daqui. Como testemunha da história, tenho que dizer que sinto falta da empolgação de explorar novas fronteiras. Tivemos isso a partir dos meados dos anos 90. Demos uma pausa depois do estouro da Bolha da Internet, mas recuperamos com tudo em 2004. Perdemos depois de 2010.
 
 ![Windows 95 launch](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/598/20150824-bill-gates-microsoft-windows-95-launch.0.jpg)
 
-2010 has been the longest year I've ever seem. Maybe settling down is good thing. Who knows?
+2010 foi o ano mais longo que já vivi. Talvez estabilizar seja uma coisa boa. Quem sabe?
