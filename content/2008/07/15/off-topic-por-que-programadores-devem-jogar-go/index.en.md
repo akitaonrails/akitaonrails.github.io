@@ -3,6 +3,7 @@ title: 'Off Topic: Why Programmers Should Play Go'
 date: '2008-07-15T01:07:00-03:00'
 slug: off-topic-por-que-programadores-devem-jogar-go
 tags:
+- off-topic
 - go
 draft: false
 translationKey: why-programmers-should-play-go

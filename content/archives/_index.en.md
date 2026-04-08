@@ -5,6 +5,7 @@ title: AkitaOnRails Blog - Archives
 {{< lang-toggle >}}
 
 Want to see the Akitando Channel transcripts (Portuguese only)? [Click here](/akitando/).
+Want to see only the Off-Topic posts? [Click here](/en/off-topic/).
 
 ## 2018 - October
 
@@ -176,7 +177,12 @@ Want to see the Akitando Channel transcripts (Portuguese only)? [Click here](/ak
 - [Phoenix "15 Minute Blog" comparison to Ruby on Rails](/en/2015/11/20/phoenix-15-minute-blog-comparison-to-ruby-on-rails/)
 - [Ex Manga Downloadr - Part 2: Poolboy to the rescue!](/en/2015/11/19/ex-manga-downloadr-part-2-poolboy-to-the-rescue/)
 - [Ex Manga Downloader, an exercise with Elixir](/en/2015/11/18/ex-manga-downloader-an-exercise-with-elixir/)
+- [Brazil Situation: No Macs for the Rest of Us](/en/2015/11/10/situacao-brasil-no-macs-for-the-rest-of-us/)
 - [My first week learning Elixir](/en/2015/11/03/my-first-week-learning-elixir/)
+
+## 2015 - January
+
+- [\[Off-Topic\] Compilation: "Processes and Methodologies Won't Help You!"](/en/2015/01/07/off-topic-coletanea-processos-e-metodologias-nao-vao-te-ajudar/)
 
 ## 2014 - December
 
@@ -194,14 +200,25 @@ Want to see the Akitando Channel transcripts (Portuguese only)? [Click here](/ak
 ## 2014 - September
 
 - [\[Off-Topic\] Agile: the Truth Behind the Method](/en/2014/09/28/off-topic-agile-a-verdade-por-tras-do-metodo/)
+- [\[Off-Topic\] DO NOT Do What You ("THINK") You Love](/en/2014/09/13/off-topic-nao-faca-o-que-voce-acha-que-ama/)
 
 ## 2014 - August
 
 - [\[Off-Topic\] First Time in São Paulo, What to do?](/en/2014/08/24/off-topic-first-time-in-sao-paulo-what-to-do/)
 
+## 2014 - July
+
+- [\[Off-Topic\] Someone Important Left the Community! Now What??](/en/2014/07/06/off-topic-alguem-importante-deixou-a-comunidade-e-agora/)
+
+## 2014 - May
+
+- [\[Off-Topic\] Career in Programming — Coding Isn't Programming](/en/2014/05/02/off-topic-carreira-em-programacao-codificar-nao-e-programar/)
+
 ## 2014 - March
 
+- [\[Off-Topic\] Commenting on the Approved Marco Civil](/en/2014/03/30/off-topic-comentando-o-marco-civil-aprovado/)
 - [\[Off-Topic\] Breaking Bad was a very successful startup](/en/2014/03/28/off-topic-breaking-bad-foi-uma-startup-de-muito-sucesso/)
+- [\[Off-Topic\] Lean Is Dead, Long Live Efficiency](/en/2014/03/27/off-topic-lean-esta-morto-longa-vida-a-eficiencia/)
 
 ## 2014 - February
 
@@ -209,11 +226,15 @@ Want to see the Akitando Channel transcripts (Portuguese only)? [Click here](/ak
 
 ## 2013 - November
 
+- [\[Off-Topic\] Remote Work — Small Office, Home Office (SoHo)](/en/2013/11/18/off-topic-trabalho-remoto-small-office-home-office-soho/)
 - [\[Off-Topic\] Tech Startups, B2C overcrowding. Boring.](/en/2013/11/14/off-topic-tech-startups-superlotacao-de-b2c-boring/)
 - [\[Off-Topic\] Programmers Are Terrible Communicators (UDP vs TCP)](/en/2013/11/02/off-topic-programadores-sao-pessimos-comunicadores-udp-vs-tcp/)
+- [\[Off-Topic\] Agile Done Wrong](/en/2013/11/01/off-topic-agile-feito-errado/)
 
 ## 2013 - October
 
+- [\[Translation\] Letter to a Young Programmer Considering a Startup](/en/2013/10/31/traducao-carta-para-um-jovem-programador-considerando-uma-startup/)
+- [\[Off-Topic\] Math, Trolls, Haters, and Internet Discussions](/en/2013/10/30/off-topic-matematica-trolls-haters-e-discussoes-de-internet/)
 - [Rubyconf Brasil 2014 - Dates are Set!](/en/2013/10/07/rubyconf-brasil-2014-dates-are-set/)
 - [\[Off-Topic\] #noEstimates Debunked](/en/2013/10/07/off-topic-noestimates-debunked/)
 
@@ -233,20 +254,41 @@ Want to see the Akitando Channel transcripts (Portuguese only)? [Click here](/ak
 - [Rubyconf Brasil 2013: Meet Pablo Astigarraga](/en/2013/08/09/rubyconf-brasil-2013-meet-pablo-astigarraga/)
 - [Rubyconf Brasil 2013: Meet Hal Fulton](/en/2013/08/08/rubyconf-brasil-2013-meet-hal-fulton/)
 
+## 2013 - July
+
+- [\[Off-Topic\] Comfort Zone: Taking to the Streets Isn't the Only Solution](/en/2013/07/23/off-topic-zona-de-conforto-sair-as-ruas-nao-e-a-unica-solucao/)
+- [Predictably Irrational](/en/2013/07/12/previsivelmente-irracional/)
+
 ## 2013 - June
 
 - [Introduction to Agility](/en/2013/06/28/introducao-a-agilidade/)
+- [Processes, Methodologies, and the Human Brain](/en/2013/06/21/processos-metodologias-e-o-cerebro-humano/)
 - [What Does It Mean to Be a Manager?](/en/2013/06/07/o-que-significa-ser-um-gerente/)
 
 ## 2013 - May
 
+- [\[Off-Topic\] A View from the Past About the Internet](/en/2013/05/26/off-topic-visao-do-passado-sobre-a-internet/)
+- [\[Off-Topic\] A View from the Past About the Internet](/en/2013/05/26/off-topic-visao-do-passado-sobre-a-internet--2/)
 - [Processes and Methodologies Won't Help You](/en/2013/05/24/processos-e-metodologias-nao-vao-te-ajudar/)
 - [\[Translation\] Standards: excellence vs. mediocrity](/en/2013/05/17/traducao-padroes-excelencia-vs-mediocridade/)
+- [\[Off-Topic\] People: Rational Animals? The id and ego in marketing](/en/2013/05/14/off-topic-pessoas-animais-racionais-o-id-e-o-ego-no-marketing/)
 - [Brazilian Portuguese Can Confuse Us: Standard vs Pattern](/en/2013/05/10/a-lingua-portuguesa-brasileira-e-pessima-standard-vs-pattern/)
+
+## 2013 - April
+
+- [\[Translation\] Estimation — The Best We Can Do](/en/2013/04/05/traducao-estimativa-o-melhor-que-podemos-fazer/)
 
 ## 2013 - March
 
 - [\[Off-Topic\] Most people said they'd use my product. Will it work? No!](/en/2013/03/11/off-topic-a-maioria-disse-que-usaria-meu-produto-vai-dar-certo-nao/)
+
+## 2013 - January
+
+- [\[Off-Topic\] The World Today Is Very Good! Happy 2013!](/en/2013/01/02/off-topic-o-mundo-hoje-e-muito-bom-feliz-2013/)
+
+## 2012 - December
+
+- [\[Off-Topic\] A Vent III, Reflecting on 2007](/en/2012/12/30/off-topic-um-desabafo-iii-refletindo-sobre-2007/)
 
 ## 2012 - November
 
@@ -258,6 +300,10 @@ Want to see the Akitando Channel transcripts (Portuguese only)? [Click here](/ak
 - [_Why Documentary at Rubyconf 2012, Denver](/en/2012/09/03/why-documentary-at-rubyconf-2012-denver/)
 - [Ruby is Beautiful? What is Beauty?](/en/2012/09/02/ruby-is-beautiful-what-is-beauty/)
 - [RubyConf Brasil 2012 - It's a Wrap!](/en/2012/09/01/rubyconf-brasil-2012-it-s-a-wrap/)
+
+## 2012 - August
+
+- [\[Off-Topic\] The Myth of the "Legacy"](/en/2012/08/15/off-topic-o-mito-do-legado/)
 
 ## 2012 - July
 
@@ -292,9 +338,19 @@ Want to see the Akitando Channel transcripts (Portuguese only)? [Click here](/ak
 
 ## 2011 - April
 
+- [\[Off-Topic\] Mea Culpa: Democratic Organizations Don't Work](/en/2011/04/25/off-topic-mea-culpa-organizacoes-democraticas-nao-funcionam/)
 - [\[Objective-C\] Distributing your Static Library](/en/2011/04/24/objective-c-distributing-your-static-library/)
 - [\[Objective-C\] Categories, Static Libraries and Gotchas](/en/2011/04/23/objective-c-categories-static-libraries-and-gotchas/)
 - [\[Objective-C\] It's a Unix System! I know this!](/en/2011/04/23/objective-c-its-a-unix-system-i-know-this/)
+
+## 2011 - February
+
+- [\[Off-Topic\] Demystifying the "Evil" Microsoft](/en/2011/02/20/off-topic-desmistificando-a-microsoft-do-mal/)
+- [\[Off-Topic\] The Fountainhead: Howard Roark's Defense](/en/2011/02/04/off-topic-the-fountainhead-defesa-de-howard-roark/)
+
+## 2011 - January
+
+- [\[Documentary\] The iPod Revolution](/en/2011/01/30/documentario-the-ipod-revolution/)
 
 ## 2010 - September
 
@@ -312,26 +368,35 @@ Want to see the Akitando Channel transcripts (Portuguese only)? [Click here](/ak
 
 - [\[Off-Topic\] The Humble Programmer, by Edsger W. Dijkstra](/en/2010/04/12/off-topic-o-programador-humilde-por-edsger-w-dijkstra/)
 
+## 2010 - March
+
+- [\[Off-Topic\] Penn & Teller and Larry Flynt, on Freedom](/en/2010/03/07/off-topic-penn-and-teller-e-larry-flynt-sobre-liberdade/)
+
 ## 2010 - February
 
 - [\[Off-Topic\] Wake up Call](/en/2010/02/14/off-topic-wake-up-call/)
 
 ## 2010 - January
 
+- [\[Off-Topic\] Reading the Agile Principles](/en/2010/01/30/off-topic-lendo-os-principios-ageis/)
 - [\[Off-Topic\] Companies, People, Success](/en/2010/01/30/off-topic-empresas-pessoas-sucesso/)
 - [\[Off-Topic\] Who's the Idiot?](/en/2010/01/08/off-topic-quem-e-o-burro/)
+- [Off-Topic: Literature for Agile Managers](/en/2010/01/06/off-topic-literatura-para-gerentes-ageis/)
 - [\[Off Topic\] Dunbar and Cross Functional Teams](/en/2010/01/02/off-topic-dunbar-e-cross-functional-teams/)
 
 ## 2009 - December
 
 - [\[Off Topic\] Watch Out for Kanban-butt](/en/2009/12/16/off-topic-cuidado-com-o-kanban-butt/)
+- [\[Off-Topic\] You Don't Understand Anything About Scrum](/en/2009/12/10/off-topic-voce-nao-entende-nada-de-scrum/)
 
 ## 2009 - November
 
 - [\[Off-Topic\] Restaurants and Technology](/en/2009/11/18/off-topic-restaurantes-e-tecnologia/)
 - [Chatting with Adam Jacob](/en/2009/11/18/chatting-with-adam-jacob/)
 - [Chatting with Luke Kanies](/en/2009/11/18/chatting-with-luke-kaines/)
+- [\[Off-Topic\] Obedience to Authority](/en/2009/11/08/off-topic-obediencia-a-autoridade/)
 - [\[Off-Topic\] Cell Phones and Airplanes](/en/2009/11/08/off-topic-celulares-e-avioes/)
+- [\[Off-Topic\] The Problem of Credentials](/en/2009/11/04/off-topic-o-problema-das-credenciais/)
 
 ## 2009 - September
 

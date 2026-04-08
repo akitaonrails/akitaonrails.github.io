@@ -3,6 +3,7 @@ title: "[Off-Topic] Disney, História do Computador e o Encarte Perdido"
 date: '2011-09-25T02:41:00-03:00'
 slug: off-topic-disney-historia-do-computador-e-o-encarte-perdido
 tags:
+- off-topic
 - biography
 - career
 draft: false

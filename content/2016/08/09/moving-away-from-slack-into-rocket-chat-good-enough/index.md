@@ -6,6 +6,7 @@ tags:
 - slack
 - rocket.chat
 - group chats
+- traduzido
 draft: false
 ---
 

@@ -3,6 +3,7 @@ title: "[Off-Topic] Dicas de Mac para Palestrantes"
 date: '2010-10-31T00:32:00-02:00'
 slug: off-topic-dicas-de-mac-para-palestrantes
 tags:
+- off-topic
 - learning
 - beginner
 - mac

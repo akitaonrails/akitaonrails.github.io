@@ -3,6 +3,7 @@ title: "[Off-Topic] Minha Carreira - Fase 5 - Codeminer 42"
 date: '2011-09-19T01:27:00-03:00'
 slug: off-topic-minha-carreira-fase-5-codeminer-42
 tags:
+- off-topic
 - codeminer42
 draft: false
 ---

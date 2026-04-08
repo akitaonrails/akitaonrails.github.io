@@ -3,6 +3,7 @@ title: "[Off-Topic] Tributo a Steve Jobs"
 date: '2011-10-06T01:41:00-03:00'
 slug: off-topic-tributo-a-steve-jobs
 tags:
+- off-topic
 - steve-jobs
 draft: false
 ---

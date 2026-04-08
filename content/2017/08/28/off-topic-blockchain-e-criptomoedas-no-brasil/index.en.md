@@ -3,6 +3,7 @@ title: "[Off-Topic] Blockchain and Cryptocurrencies in Brazil"
 date: '2017-08-28T13:07:00-03:00'
 slug: off-topic-blockchain-e-criptomoedas-no-brasil
 tags:
+- off-topic
 - blockchain
 - cryptocurrency
 - bitcoin

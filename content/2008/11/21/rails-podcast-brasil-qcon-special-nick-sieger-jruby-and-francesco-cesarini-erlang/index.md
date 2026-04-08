@@ -8,6 +8,7 @@ aliases:
 tags:
 - qcon2008
 - interview
+- traduzido
 draft: false
 ---
 

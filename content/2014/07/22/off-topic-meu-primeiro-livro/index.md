@@ -3,6 +3,7 @@ title: '[Off-Topic] Meu Primeiro "Livro"'
 date: '2014-07-22T20:14:00-03:00'
 slug: off-topic-meu-primeiro-livro
 tags:
+- off-topic
 - biography
 - my-book
 draft: false

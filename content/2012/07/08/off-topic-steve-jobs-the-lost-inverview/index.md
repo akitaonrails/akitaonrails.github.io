@@ -3,6 +3,7 @@ title: "[Off-Topic] Steve Jobs, The Lost Inverview"
 date: '2012-07-08T20:43:00-03:00'
 slug: off-topic-steve-jobs-the-lost-inverview
 tags:
+- off-topic
 - steve-jobs
 draft: false
 ---

@@ -3,6 +3,7 @@ title: "[Off-Topic] Blogs are Obsolete. What's Next?"
 date: '2013-05-04T14:46:00-03:00'
 slug: off-topic-blogs-are-obsolete-what-s-next
 tags:
+- off-topic
 - insights
 - english
 - blog

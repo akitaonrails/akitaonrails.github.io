@@ -3,6 +3,7 @@ title: "[Off-Topic] Comprei meu primeiro Mac, e agora? (Edição 2012)"
 date: '2012-04-20T19:15:46-03:00'
 slug: off-topic-comprei-meu-primeiro-mac-e-agora-edicao-2012
 tags:
+- off-topic
 - learning
 - beginner
 - mac

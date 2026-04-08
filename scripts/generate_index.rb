@@ -12,6 +12,9 @@ ARCHIVES_FILE = "#{ARCHIVES_DIR}/_index.md"
 ARCHIVES_FILE_EN = "#{ARCHIVES_DIR}/_index.en.md"
 AKITANDO_DIR = "#{CONTENT_DIR}/akitando"
 AKITANDO_FILE = "#{AKITANDO_DIR}/_index.md"
+OFF_TOPIC_DIR = "#{CONTENT_DIR}/off-topic"
+OFF_TOPIC_FILE = "#{OFF_TOPIC_DIR}/_index.md"
+OFF_TOPIC_FILE_EN = "#{OFF_TOPIC_DIR}/_index.en.md"
 FRONTMATTER_DELIMITER = '---'
 
 # Posts from January of last year onward appear on the main index.
@@ -66,12 +69,17 @@ def akitando_post?(post)
   post[:tags].include?('akitando')
 end
 
+def off_topic_post?(post)
+  post[:tags].include?('off-topic')
+end
+
 def collect_posts(include_future: false)
   now = DateTime.now
   Dir.glob("#{CONTENT_DIR}/**/index.md")
      .reject { |path| path == "#{CONTENT_DIR}/index.md" || path == "#{CONTENT_DIR}/_index.md" }
      .reject { |path| path.start_with?("#{ARCHIVES_DIR}/") }
      .reject { |path| path.start_with?("#{AKITANDO_DIR}/") }
+     .reject { |path| path.start_with?("#{OFF_TOPIC_DIR}/") }
      .filter_map { |path| parse_post(path, lang: :pt) }
      .reject { |post| akitando_post?(post) }
      .select { |post| include_future || post[:date] <= now }
@@ -82,8 +90,34 @@ def collect_posts_en(include_future: false)
   Dir.glob("#{CONTENT_DIR}/**/index.en.md")
      .reject { |path| path.start_with?("#{ARCHIVES_DIR}/") }
      .reject { |path| path.start_with?("#{AKITANDO_DIR}/") }
+     .reject { |path| path.start_with?("#{OFF_TOPIC_DIR}/") }
      .filter_map { |path| parse_post(path, lang: :en) }
      .reject { |post| akitando_post?(post) }
+     .select { |post| include_future || post[:date] <= now }
+end
+
+def collect_off_topic_posts(include_future: false)
+  now = DateTime.now
+  Dir.glob("#{CONTENT_DIR}/**/index.md")
+     .reject { |path| path == "#{CONTENT_DIR}/index.md" || path == "#{CONTENT_DIR}/_index.md" }
+     .reject { |path| path.start_with?("#{ARCHIVES_DIR}/") }
+     .reject { |path| path.start_with?("#{AKITANDO_DIR}/") }
+     .reject { |path| path.start_with?("#{OFF_TOPIC_DIR}/") }
+     .filter_map { |path| parse_post(path, lang: :pt) }
+     .reject { |post| akitando_post?(post) }
+     .select { |post| off_topic_post?(post) }
+     .select { |post| include_future || post[:date] <= now }
+end
+
+def collect_off_topic_posts_en(include_future: false)
+  now = DateTime.now
+  Dir.glob("#{CONTENT_DIR}/**/index.en.md")
+     .reject { |path| path.start_with?("#{ARCHIVES_DIR}/") }
+     .reject { |path| path.start_with?("#{AKITANDO_DIR}/") }
+     .reject { |path| path.start_with?("#{OFF_TOPIC_DIR}/") }
+     .filter_map { |path| parse_post(path, lang: :en) }
+     .reject { |post| akitando_post?(post) }
+     .select { |post| off_topic_post?(post) }
      .select { |post| include_future || post[:date] <= now }
 end
 
@@ -92,6 +126,7 @@ def collect_akitando_posts(include_future: false)
   Dir.glob("#{CONTENT_DIR}/**/index.md")
      .reject { |path| path == "#{CONTENT_DIR}/index.md" || path == "#{CONTENT_DIR}/_index.md" }
      .reject { |path| path.start_with?("#{ARCHIVES_DIR}/") }
+     .reject { |path| path.start_with?("#{OFF_TOPIC_DIR}/") }
      .filter_map { |path| parse_post(path, lang: :pt) }
      .select { |post| akitando_post?(post) }
      .select { |post| include_future || post[:date] <= now }
@@ -138,7 +173,8 @@ def generate_archives(grouped_posts)
   lines = ["#{FRONTMATTER_DELIMITER}\ntitle: AkitaOnRails Blog - Arquivo\n#{FRONTMATTER_DELIMITER}\n"]
   lines << '{{< lang-toggle >}}'
   lines << ''
-  lines << "Quer ver as transcrições do Canal Akitando? [Clique aqui](/akitando/).\n"
+  lines << 'Quer ver as transcrições do Canal Akitando? [Clique aqui](/akitando/).'
+  lines << "Quer ver só os posts Off-Topic? [Clique aqui](/off-topic/).\n"
   lines.concat(render_months(grouped_posts, lang: :pt))
   lines.join("\n")
 end
@@ -160,7 +196,8 @@ def generate_archives_en(grouped_posts)
   lines = ["#{FRONTMATTER_DELIMITER}\ntitle: AkitaOnRails Blog - Archives\n#{FRONTMATTER_DELIMITER}\n"]
   lines << '{{< lang-toggle >}}'
   lines << ''
-  lines << "Want to see the Akitando Channel transcripts (Portuguese only)? [Click here](/akitando/).\n"
+  lines << 'Want to see the Akitando Channel transcripts (Portuguese only)? [Click here](/akitando/).'
+  lines << "Want to see only the Off-Topic posts? [Click here](/en/off-topic/).\n"
   if grouped_posts.empty?
     lines << "_Older posts are only available in Portuguese. Visit the [Portuguese archive](/archives/) to browse them._\n"
   else
@@ -175,6 +212,30 @@ def generate_akitando(grouped_posts)
   lines << 'Transcrições dos episódios do canal [Akitando](https://www.youtube.com/c/akitando) no YouTube.'
   lines << ''
   lines.concat(render_months(grouped_posts, lang: :pt))
+  lines.join("\n")
+end
+
+def generate_off_topic(grouped_posts)
+  lines = ["#{FRONTMATTER_DELIMITER}\ntitle: Off-Topic\n#{FRONTMATTER_DELIMITER}\n"]
+  lines << '{{< lang-toggle >}}'
+  lines << ''
+  lines << 'Todos os posts Off-Topic do blog — filosofia, carreira, gerenciamento, e outros assuntos fora da programação do dia a dia.'
+  lines << ''
+  lines.concat(render_months(grouped_posts, lang: :pt))
+  lines.join("\n")
+end
+
+def generate_off_topic_en(grouped_posts)
+  lines = ["#{FRONTMATTER_DELIMITER}\ntitle: Off-Topic\n#{FRONTMATTER_DELIMITER}\n"]
+  lines << '{{< lang-toggle >}}'
+  lines << ''
+  lines << "All Off-Topic posts from the blog — philosophy, career, management, and other topics outside of day-to-day programming."
+  lines << ''
+  if grouped_posts.empty?
+    lines << "_No Off-Topic posts translated to English yet. Visit the [Portuguese Off-Topic page](/off-topic/) to browse them._\n"
+  else
+    lines.concat(render_months(grouped_posts, lang: :en))
+  end
   lines.join("\n")
 end
 
@@ -215,3 +276,15 @@ akitando_posts = collect_akitando_posts(include_future: include_future)
 grouped_akitando = group_by_month(akitando_posts)
 File.write(AKITANDO_FILE, generate_akitando(grouped_akitando))
 puts "Generated #{AKITANDO_FILE} with #{akitando_posts.size} posts."
+
+# Off-Topic page (PT + EN)
+Dir.mkdir(OFF_TOPIC_DIR) unless Dir.exist?(OFF_TOPIC_DIR)
+off_topic_posts = collect_off_topic_posts(include_future: include_future)
+grouped_off_topic = group_by_month(off_topic_posts)
+File.write(OFF_TOPIC_FILE, generate_off_topic(grouped_off_topic))
+puts "Generated #{OFF_TOPIC_FILE} with #{off_topic_posts.size} posts."
+
+off_topic_posts_en = collect_off_topic_posts_en(include_future: include_future)
+grouped_off_topic_en = group_by_month(off_topic_posts_en)
+File.write(OFF_TOPIC_FILE_EN, generate_off_topic_en(grouped_off_topic_en))
+puts "Generated #{OFF_TOPIC_FILE_EN} with #{off_topic_posts_en.size} posts."

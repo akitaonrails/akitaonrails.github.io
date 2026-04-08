@@ -3,6 +3,7 @@ title: "[Off-Topic] Adendo à controvérsia HAML, SASS, Coffeescript: Tamanho do
 date: '2011-04-19T19:25:00-03:00'
 slug: off-topic-adendo-a-controversia-haml-sass-coffeescript-tamanho-do-documento
 tags:
+- off-topic
 - javascript
 - fud
 draft: false

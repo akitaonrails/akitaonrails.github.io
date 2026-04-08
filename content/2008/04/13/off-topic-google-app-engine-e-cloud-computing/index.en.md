@@ -3,6 +3,7 @@ title: 'Off-Topic: Google App Engine and Cloud Computing'
 date: '2008-04-13T01:27:00-03:00'
 slug: off-topic-google-app-engine-e-cloud-computing
 tags:
+- off-topic
 - cloud-computing
 - google
 draft: false

@@ -3,6 +3,7 @@ title: 'Off-Topic: Dando o Sangue pelo Rails! Parte 2'
 date: '2008-05-16T12:27:00-03:00'
 slug: off-topic-dando-o-sangue-pelo-rails-parte-2
 tags:
+- off-topic
 - biography
 draft: false
 ---

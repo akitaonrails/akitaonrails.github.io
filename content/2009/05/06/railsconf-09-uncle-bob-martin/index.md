@@ -8,6 +8,7 @@ aliases:
 tags:
 - railsconf2009
 - interview
+- traduzido
 draft: false
 ---
 

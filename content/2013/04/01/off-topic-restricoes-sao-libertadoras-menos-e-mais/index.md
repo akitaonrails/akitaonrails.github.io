@@ -3,6 +3,7 @@ title: "[Off-Topic] Restrições são libertadoras: menos é mais"
 date: '2013-04-01T06:19:00-03:00'
 slug: off-topic-restricoes-sao-libertadoras-menos-e-mais
 tags:
+- off-topic
 - off-topic principles management
 - market
 - insights
