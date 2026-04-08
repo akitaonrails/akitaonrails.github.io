@@ -4,6 +4,7 @@ slug: "software-is-never-done-4-projects-life-after-deploy-one-shot-prompt-myth"
 date: 2026-03-01T12:00:00-03:00
 draft: false
 tags:
+- off-topic
 - themakitachronicles
 - frankmd
 - franksherlock

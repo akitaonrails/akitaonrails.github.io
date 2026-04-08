@@ -628,7 +628,7 @@ Quer ver só os posts Off-Topic? [Clique aqui](/off-topic/).
 ## 2009 - Setembro
 
 - [\[Rails Summit 2009\] Palestrante Ilya Grigorik](/2009/09/27/rails-summit-2009-palestrante-ilya-grigorik/)
-- [\[Off-Topic\] Procurar Raciocionar Faz Bem](/2009/09/26/off-topic-procurar-raciocionar-faz-bem/)
+- [\[Off-Topic\] Procurar Raciocinar Faz Bem](/2009/09/26/off-topic-procurar-raciocionar-faz-bem/)
 - [\[Rails Summit 2009\] Palestrante Matt Aimonetti](/2009/09/23/rails-summit-2009-palestrante-matt-aimonetti/)
 - [\[Rails Summit 2009\] Palestrante Carlos Brando](/2009/09/21/rails-summit-2009-palestrante-carlos-brando/)
 - [\[Rails Summit 2009\] Palestrante Bryan Liles](/2009/09/18/rails-summit-2009-palestrante-bryan-liles/)

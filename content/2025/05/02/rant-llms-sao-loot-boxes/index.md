@@ -3,6 +3,7 @@ title: RANT - LLMs são LOOT BOXES!
 date: '2025-05-02T19:20:00-03:00'
 slug: rant-llms-sao-loot-boxes
 tags:
+- off-topic
 - llm
 - openai
 - microsoft

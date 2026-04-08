@@ -6,6 +6,33 @@ title: Off-Topic
 
 Todos os posts Off-Topic do blog — filosofia, carreira, gerenciamento, e outros assuntos fora da programação do dia a dia.
 
+## 2026 - Abril
+
+- [Meu Cockpit de Sim Racing - Formula FX1](/2026/04/01/meu-cockpit-de-sim-racing-formula-fx1/)
+
+## 2026 - Março
+
+- [37 dias de Imersão em Vibe Coding: Conclusão quanto a Modelos de Negócio](/2026/03/05/37-dias-de-imersão-em-vibe-coding-conclusão-quanto-a-modelos-de-negócio/)
+- [Software Nunca Está 'Pronto' — 4 Projetos, a Vida Pós-Deploy, e Por Que One-Shot Prompt É Mito](/2026/03/01/software-nunca-esta-pronto-4-projetos-a-vida-pos-deploy-e-por-que-one-shot-prompt-e-mito/)
+
+## 2026 - Fevereiro
+
+- [RANT: IA acabou com os programadores?](/2026/02/08/rant-ia-acabou-com-programadores/)
+
+## 2025 - Setembro
+
+- [Tudo que Precisa Saber Sobre Retro-Gaming](/2025/09/14/tudo-que-precisa-saber-sobre-retro-gaming/)
+
+## 2025 - Junho
+
+- [AGI ou Skynet não vão chegar tão cedo](/2025/06/18/agi-ou-skynet-nao-vai-chegar-tao-cedo/)
+
+## 2025 - Maio
+
+- [História da Computação e Retro Dev no YouTube](/2025/05/19/historia-da-computacao-e-retro-dev-no-youtube/)
+- [RANT - LLMs são LOOT BOXES!](/2025/05/02/rant-llms-sao-loot-boxes/)
+- [Rant - LLMs vão evoluir pra sempre? Desmistificando LLMs na programação](/2025/05/01/rant-llms-vao-evoluir-pra-sempre-desmistificando-llms-na-programacao/)
+
 ## 2018 - Julho
 
 - [Off-Topic: A Lamentável Evolução da Sociedade Moderna](/2018/07/26/off-topic-a-lamentavel-evolucao-da-sociedade-moderna/)
@@ -254,7 +281,7 @@ Todos os posts Off-Topic do blog — filosofia, carreira, gerenciamento, e outro
 
 ## 2009 - Setembro
 
-- [\[Off-Topic\] Procurar Raciocionar Faz Bem](/2009/09/26/off-topic-procurar-raciocionar-faz-bem/)
+- [\[Off-Topic\] Procurar Raciocinar Faz Bem](/2009/09/26/off-topic-procurar-raciocionar-faz-bem/)
 - [\[Off-Topic\] A Argumentação através da Intimidação ](/2009/09/12/off-topic-a-argumenta--o-atrav-s-da-intimida--o/)
 - [\[Off-Topic\] Direitos do Homem](/2009/09/09/off-topic-direitos-do-homem/)
 - [\[Off-Topic\] O Culto da Moral Cinzenta](/2009/09/08/off-topic-o-culto-da-moral-cinzenta/)

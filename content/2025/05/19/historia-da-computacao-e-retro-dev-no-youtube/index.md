@@ -3,6 +3,7 @@ title: História da Computação e Retro Dev no YouTube
 date: '2025-05-19T15:19:00-03:00'
 slug: historia-da-computacao-e-retro-dev-no-youtube
 tags:
+- off-topic
 - história
 - youtube
 - links

@@ -4,7 +4,7 @@ slug: "37-dias-de-imersão-em-vibe-coding-conclusão-quanto-a-modelos-de-negóci
 date: 2026-03-05T14:00:00-03:00
 draft: false
 translationKey: 37-days-vibe-coding-business-conclusions
-tags: ["ai", "vibe-coding", "startups", "business", "opinion"]
+tags: ["off-topic", "ai", "vibe-coding", "startups", "business", "opinion"]
 description: "Depois de 37 dias, 650+ commits, ~144K linhas de código e quase 10 projetos publicados, minha conclusão sobre o que vibe coding significa para o futuro de startups e modelos de negócio."
 ---
 

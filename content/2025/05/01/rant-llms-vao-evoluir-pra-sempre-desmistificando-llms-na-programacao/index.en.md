@@ -3,6 +3,7 @@ title: "Rant - Will LLMs Evolve Forever? Demystifying LLMs in Programming"
 date: '2025-05-01T02:30:00-03:00'
 slug: rant-llms-will-evolve-forever-demystifying-llms-in-programming
 tags:
+- off-topic
 - aider
 - gpt
 - gemini

@@ -5,6 +5,7 @@ draft: false
 slug: my-sim-racing-cockpit-formula-fx1
 translationKey: sim-racing-cockpit-formula-fx1
 tags:
+  - off-topic
   - gaming
   - sim-racing
   - cockpit

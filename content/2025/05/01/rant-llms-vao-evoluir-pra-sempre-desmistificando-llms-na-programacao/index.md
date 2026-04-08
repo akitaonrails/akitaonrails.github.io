@@ -3,6 +3,7 @@ title: Rant - LLMs vão evoluir pra sempre? Desmistificando LLMs na programaçã
 date: '2025-05-01T02:30:00-03:00'
 slug: rant-llms-vao-evoluir-pra-sempre-desmistificando-llms-na-programacao
 tags:
+- off-topic
 - aider
 - gpt
 - gemini

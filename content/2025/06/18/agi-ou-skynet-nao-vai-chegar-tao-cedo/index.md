@@ -2,7 +2,8 @@
 title: AGI ou Skynet não vão chegar tão cedo
 date: '2025-06-18T15:00:00-03:00'
 slug: agi-ou-skynet-nao-vai-chegar-tao-cedo
-tags: 
+tags:
+- off-topic
 - agi
 - geoffrey hinton
 - yann lecun

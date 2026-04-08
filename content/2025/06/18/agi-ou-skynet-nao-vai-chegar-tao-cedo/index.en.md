@@ -3,6 +3,7 @@ title: AGI or Skynet Isn't Coming Anytime Soon
 date: '2025-06-18T15:00:00-03:00'
 slug: agi-or-skynet-isnt-coming-anytime-soon
 tags:
+- off-topic
 - agi
 - geoffrey hinton
 - yann lecun

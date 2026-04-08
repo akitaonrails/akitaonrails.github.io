@@ -4,6 +4,7 @@ slug: "rant-ia-acabou-com-programadores"
 date: 2026-02-08T14:29:18+00:00
 draft: false
 tags:
+- off-topic
 - vibecode
 - claude
 - gpt

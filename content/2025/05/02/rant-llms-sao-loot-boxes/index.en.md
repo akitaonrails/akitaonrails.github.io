@@ -4,6 +4,7 @@ date: '2025-05-02T19:20:00-03:00'
 slug: rant-llms-are-loot-boxes
 translationKey: rant-llms-are-loot-boxes
 tags:
+- off-topic
 - llm
 - openai
 - microsoft

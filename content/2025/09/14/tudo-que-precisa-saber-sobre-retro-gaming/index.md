@@ -3,6 +3,7 @@ title: Tudo que Precisa Saber Sobre Retro-Gaming
 date: "2025-09-14T16:00:00-03:00"
 slug: tudo-que-precisa-saber-sobre-retro-gaming
 tags:
+  - off-topic
   - retro
   - retroarch
   - emulationstation

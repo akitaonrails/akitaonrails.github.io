@@ -4,6 +4,7 @@ slug: "software-nunca-esta-pronto-4-projetos-a-vida-pos-deploy-e-por-que-one-sho
 date: 2026-03-01T12:00:00-03:00
 draft: false
 tags:
+- off-topic
 - themakitachronicles
 - frankmd
 - franksherlock

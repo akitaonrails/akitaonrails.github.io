@@ -6,6 +6,29 @@ title: Off-Topic
 
 All Off-Topic posts from the blog — philosophy, career, management, and other topics outside of day-to-day programming.
 
+## 2026 - April
+
+- [My Sim Racing Cockpit - Formula FX1](/en/2026/04/01/my-sim-racing-cockpit-formula-fx1/)
+
+## 2026 - March
+
+- [37 Days of Vibe Coding Immersion: Conclusions on Business Models](/en/2026/03/05/37-days-of-vibe-coding-immersion-conclusions-on-business-models/)
+- [Software Is Never 'Done' — 4 Projects, Life After Deploy, and Why One-Shot Prompting Is a Myth](/en/2026/03/01/software-is-never-done-4-projects-life-after-deploy-one-shot-prompt-myth/)
+
+## 2026 - February
+
+- [RANT: Did AI Kill Programmers?](/en/2026/02/08/rant-ai-killed-programmers/)
+
+## 2025 - June
+
+- [AGI or Skynet Isn't Coming Anytime Soon](/en/2025/06/18/agi-or-skynet-isnt-coming-anytime-soon/)
+
+## 2025 - May
+
+- [Computing History and Retro Dev on YouTube](/en/2025/05/19/computing-history-and-retro-dev-on-youtube/)
+- [RANT - LLMs are LOOT BOXES!](/en/2025/05/02/rant-llms-are-loot-boxes/)
+- [Rant - Will LLMs Evolve Forever? Demystifying LLMs in Programming](/en/2025/05/01/rant-llms-will-evolve-forever-demystifying-llms-in-programming/)
+
 ## 2018 - July
 
 - [\[Off-Topic\] The Pity Evolution of Modern Society](/en/2018/07/26/off-topic-the-pity-evolution-of-modern-society/)
