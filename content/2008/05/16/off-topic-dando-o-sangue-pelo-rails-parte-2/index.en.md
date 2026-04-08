@@ -14,7 +14,7 @@ _"Victorious!"_
 
  ![](http://s3.amazonaws.com/akitaonrails/assets/2008/5/16/IMG_0264.JPG)
 
-A small battle won in the war against THE SYSTEM! As I reported in [last week's post](/2008/5/7/off-topic-dando-o-sangue-pelo-rails), I found a 'gap' in THE SYSTEM thanks to a tip from Vinicius. I went to Niterói and managed to submit my passport renewal — which, if I'd gone through normal channels, wouldn't have been ready until mid-June!
+A small battle won in the war against THE SYSTEM! As I reported in [last week's post](/en/2008/5/7/off-topic-dando-o-sangue-pelo-rails), I found a 'gap' in THE SYSTEM thanks to a tip from Vinicius. I went to Niterói and managed to submit my passport renewal — which, if I'd gone through normal channels, wouldn't have been ready until mid-June!
 
 Yesterday I took the midnight bus to go back to Niterói to pick up the passport on the scheduled date. One detail: they said they'd send a confirmation email two days in advance. Of course, that email never arrived — THE SYSTEM appears to be choking on something.
 

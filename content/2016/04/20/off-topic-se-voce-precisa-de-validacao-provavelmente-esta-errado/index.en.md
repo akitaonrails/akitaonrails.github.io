@@ -156,7 +156,7 @@ It isn't complete ignorance, but rather "a little knowledge," that can be the mo
 
 And one of the things I like to write about is precisely this warning: we don't know everything, we'll never know everything, and everything we know may be wrong. If you live constantly with this in mind, you'll be safe.
 
-The [Root of All Evil](https://www.youtube.com/watch?v=8nAos1M-_Ts), the [Enemies of Reason](http://www.akitaonrails.com/2007/08/23/off-topic-inimigos-da-razo) is what I've been talking about for a long time: "religious" thinking.
+The [Root of All Evil](https://www.youtube.com/watch?v=8nAos1M-_Ts), the [Enemies of Reason](http://www.akitaonrails.com/en/2007/08/23/off-topic-inimigos-da-razo) is what I've been talking about for a long time: "religious" thinking.
 
 And I'm not saying that purely to badmouth others' religions, especially because the "religion" I refer to isn't merely Christianity, Judaism, Shintoism, etc. It's worse: it's the **Religion of Little Knowledge**.
 
@@ -186,7 +186,7 @@ And I think it starts with something very simple: critical reasoning that isn't 
 
 For me, [Karl Popper](https://en.wikipedia.org/wiki/Falsifiability) taught me one of the most valuable things in my way of thinking. I don't look for false-gurus, false-experts, false-leaders, false-heroes, or false-icons.
 
-**I don't need anyone with ["authority"](http://www.akitaonrails.com/2009/11/08/off-topic-obediencia-a-autoridade) to tell me what's right. Nor do I need the consensus of some form of "majority" to validate my actions.**
+**I don't need anyone with ["authority"](http://www.akitaonrails.com/en/2009/11/08/off-topic-obediencia-a-autoridade) to tell me what's right. Nor do I need the consensus of some form of "majority" to validate my actions.**
 
 There are those who advocate an "inviolable affirmation," "the" right way; whether by tradition, by scriptures, by the will of an abstract and amorphous entity like "society," "the people"; or worse, by "inviolable proofs" — so I know they're false prophets.
 
@@ -232,7 +232,7 @@ Disclaimer: do I consider those who fight for social causes perverse people? **N
 
 I'm not against social causes, most civilized people aren't. Certainly there's a lot to do to keep improving the world. And in the last century we certainly improved the world in extraordinary ways, especially compared to the centuries before the 20th.
 
-Contrary to what many say, and something I've been repeating since 2013: ["The World Today Is Better"](http://www.akitaonrails.com/2013/01/02/off-topic-o-mundo-hoje-e-muito-bom-feliz-2013). Believe the world is getting worse and then you'll start to justify perverse acts as morally correct.
+Contrary to what many say, and something I've been repeating since 2013: ["The World Today Is Better"](http://www.akitaonrails.com/en/2013/01/02/off-topic-o-mundo-hoje-e-muito-bom-feliz-2013). Believe the world is getting worse and then you'll start to justify perverse acts as morally correct.
 
 And it wasn't thanks to specific events and movements, but to the continuous progress of people who "produce," not people who "steal." And stealing isn't only directly taking a material good from someone. Someone can steal more than that: your time, your morality, your mind, and your freedom.
 

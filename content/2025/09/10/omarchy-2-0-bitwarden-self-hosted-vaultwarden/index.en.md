@@ -98,7 +98,7 @@ docker compose -f utils-docker-compose.yml up -d
 
 ### Routing the Cloudflared tunnel
 
-As I already showed in the [Cloudflared post](https://akitaonrails.com/2025/09/09/acessando-meu-home-server-com-dominio-de-verdade/) now I want to be able to access it remotely, via secure tunnel, using a public URL like `https://bitwarden.fabioakita.dev`. To do that we have to edit that `/etc/cloudflared/config.yml` file and add this to the end of it:
+As I already showed in the [Cloudflared post](https://akitaonrails.com/en/2025/09/09/acessando-meu-home-server-com-dominio-de-verdade/) now I want to be able to access it remotely, via secure tunnel, using a public URL like `https://bitwarden.fabioakita.dev`. To do that we have to edit that `/etc/cloudflared/config.yml` file and add this to the end of it:
 
 ```yaml
   - hostname: bitwarden.fabioakita.dev

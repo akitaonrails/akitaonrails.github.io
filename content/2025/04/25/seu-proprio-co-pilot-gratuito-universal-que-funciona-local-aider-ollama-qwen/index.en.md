@@ -15,7 +15,7 @@ translationKey: local-copilot-aider-ollama-qwen
 description: "How to run Aider with Ollama and Qwen 2.5 Coder locally to build a free, universal Co-Pilot alternative that works with any editor."
 ---
 
-In my [previous post](https://www.akitaonrails.com/2025/04/25/hello-world-de-llm-criando-seu-proprio-chat-de-i-a-que-roda-local) I show how to build an LLM chat from scratch, capable of loading code files for refactoring. I demonstrate the principles behind tools like Co-Pilot, Cursor or Windsurf. The summary is simple:
+In my [previous post](https://www.akitaonrails.com/en/2025/04/25/hello-world-de-llm-criando-seu-proprio-chat-de-i-a-que-roda-local) I show how to build an LLM chat from scratch, capable of loading code files for refactoring. I demonstrate the principles behind tools like Co-Pilot, Cursor or Windsurf. The summary is simple:
 
 - A GOOD RULES PROMPT
 - SCRIPTS that run locally and add more context to the chat session.

@@ -10,7 +10,7 @@ draft: false
 
 [![](http://s3.amazonaws.com/akitaonrails/assets/2009/6/5/shapeimage_1_original.png)](http://www.geraldmweinberg.com/Site/Home.html)
 
-**Note:** A few days ago I [wrote a rant](http://www.akitaonrails.com/2009/05/31/off-topic-as-5-disfun--es-de-equipes-em-c-digo) about the bad behavior of a project manager. In this translation, we'll look at solutions and the correct scenarios. Here's the translation:
+**Note:** A few days ago I [wrote a rant](http://www.akitaonrails.com/en/2009/05/31/off-topic-as-5-disfun--es-de-equipes-em-c-digo) about the bad behavior of a project manager. In this translation, we'll look at solutions and the correct scenarios. Here's the translation:
 
 In 2004, Software Development Magazine interviewed [**Gerald Weinberg**](http://www.geraldmweinberg.com/). Here are some of his answers (the complete interview is on [his site](http://www.ayeconference.com/advice-for-software-development-managers/)):
 

@@ -13,7 +13,7 @@ translationKey: cloudflare-zero-trust-home-server
 description: How I added a Cloudflare Zero Trust login layer on top of my home server services, using Google OAuth as the identity provider.
 ---
 
-In the [previous post](https://akitaonrails.com/2025/09/09/acessando-meu-home-server-com-dominio-de-verdade/) I explain how I registered a real domain at Cloudflare and created secure encrypted tunnels that let me reach my home server even from outside the house, without exposing ports on the router or anything like that.
+In the [previous post](https://akitaonrails.com/en/2025/09/09/acessando-meu-home-server-com-dominio-de-verdade/) I explain how I registered a real domain at Cloudflare and created secure encrypted tunnels that let me reach my home server even from outside the house, without exposing ports on the router or anything like that.
 
 This way I can access `https://portainer.fabioakita.dev` (fake example domain) from my phone on 5G, and it hits the portainer Docker container sitting on my LAN at `http://192.168.0.200:9000`, which was previously only reachable from home. All through a secure tunnel.
 

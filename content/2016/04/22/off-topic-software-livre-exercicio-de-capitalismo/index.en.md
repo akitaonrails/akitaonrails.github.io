@@ -10,7 +10,7 @@ tags:
 draft: false
 ---
 
-A sentence I said in [my previous article](http://www.akitaonrails.com/2016/04/20/off-topic-se-voce-precisa-de-validacao-provavelmente-esta-errado) may have struck some people as odd:
+A sentence I said in [my previous article](http://www.akitaonrails.com/en/2016/04/20/off-topic-se-voce-precisa-de-validacao-provavelmente-esta-errado) may have struck some people as odd:
 
 > "The basis for this is the open source world — the largest capitalist experiment in software, and a living example for everyone of what a Laissez-faire Free Market looks like. The best place to maintain and improve technology commodities."
 
@@ -80,7 +80,7 @@ There have been several [forks that succeeded](http://royal.pingdom.com/2008/09/
 
 In a Free Market there are no guarantees of success — there are only guarantees that you can try.
 
-Free Market is "fair" (as in "blind justice") and, as a consequence, isn't egalitarian or "moral" depending on your personal point of view. By the way, "point of view" is necessarily biased and personal, not objective, which is why it doesn't serve as a parameter for justice. To understand this, watch [The People vs. Larry Flynt](http://www.akitaonrails.com/2010/03/07/off-topic-penn-and-teller-e-larry-flynt-sobre-liberdade). You can completely disagree with Larry Flynt, but that doesn't mean you can condemn him. And by not condemning him, it doesn't mean you support what Flynt says or does.
+Free Market is "fair" (as in "blind justice") and, as a consequence, isn't egalitarian or "moral" depending on your personal point of view. By the way, "point of view" is necessarily biased and personal, not objective, which is why it doesn't serve as a parameter for justice. To understand this, watch [The People vs. Larry Flynt](http://www.akitaonrails.com/en/2010/03/07/off-topic-penn-and-teller-e-larry-flynt-sobre-liberdade). You can completely disagree with Larry Flynt, but that doesn't mean you can condemn him. And by not condemning him, it doesn't mean you support what Flynt says or does.
 
 Success in code, in general, doesn't depend on any personal characteristic of its authors, only on the technical merit of the result of their code. The beauty of code is that it's anonymous, devoid of personal qualities or political agendas. Even if it ends up temporarily devalued because of political ties, the fewer affiliations a project has, the better its chances of surviving in the long run.
 
@@ -148,7 +148,7 @@ As a consequence, if that intervention continues, the value of the project drops
 
 This has already begun to happen — we haven't yet had cases that went so far, but it's what happens when you add a political layer on top of a project that was purely free. That's how you destroy a Free Market — by giving political power to those who don't agree with voluntary trades, only with removing properties from those who they "judge" don't deserve them, to give to those they "judge" do.
 
-I [posted about this in 2011](http://www.akitaonrails.com/2011/02/04/off-topic-the-fountainhead-defesa-de-howard-roark) if you're interested.
+I [posted about this in 2011](http://www.akitaonrails.com/en/2011/02/04/off-topic-the-fountainhead-defesa-de-howard-roark) if you're interested.
 
 > "I am an architect. I know what is to come by the principles on which it was built. We are approaching a world in which I cannot permit myself to live. My ideas are my property. They were taken from me by force, by breach of contract. No choice was given to me."
 

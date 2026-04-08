@@ -39,7 +39,7 @@ These are all real dangers that happen in our day-to-day:
 
 - People conform very easily
 - People don't like to look wrong, so they don't take risks
-- People obey authorities, whether bosses or [people with higher status](http://www.akitaonrails.com/2009/11/04/off-topic-o-problema-das-credenciais) in some way
+- People obey authorities, whether bosses or [people with higher status](http://www.akitaonrails.com/en/2009/11/04/off-topic-o-problema-das-credenciais) in some way
 
 Which is one of the reasons why many agility projects in particular fail. It's no use simply saying: _"the team decides the best path"_ if there's still someone with veto power. If the veto is used even once, no one else on the team will take anything seriously. Current organizations limit people, limit their possible potential, limit any chance of motivation, limit individualization — in short, they turn people into robots. And the more an individual conforms to this structure, the more they become amorphous, practically a walking piece of meat.
 

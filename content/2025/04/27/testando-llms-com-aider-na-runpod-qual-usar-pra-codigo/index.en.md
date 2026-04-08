@@ -15,7 +15,7 @@ translationKey: aider-runpod-which-llm-for-code
 description: Hands-on testing of Qwen2.5 Coder, DeepSeek, Codestral and others with Aider, locally on an RTX 4090 and on RunPod, comparing them against Claude and Gemini.
 ---
 
-Following my post [about Aider](https://www.akitaonrails.com/2025/04/25/seu-proprio-co-pilot-gratuito-universal-que-funciona-local-aider-ollama-qwen), and now that you understand how LLMs work for code, I decided to try running some models on my own machine.
+Following my post [about Aider](https://www.akitaonrails.com/en/2025/04/25/seu-proprio-co-pilot-gratuito-universal-que-funciona-local-aider-ollama-qwen), and now that you understand how LLMs work for code, I decided to try running some models on my own machine.
 
 
 The setup is very simple. With Aider and Ollama installed, first we have to start ollama (I start it manually; you can create a systemd service to start it automatically):

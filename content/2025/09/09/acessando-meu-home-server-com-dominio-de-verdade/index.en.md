@@ -19,7 +19,7 @@ Now an advanced tip that complements my article about my [Home Server](https://a
 
 I have a nice Synology DS1821+ that also supports running Docker, but I prefer to keep the NAS doing only NAS duties and avoid risking my data by running other stuff on it. Having a single server that does everything isn't a "problem" per se, but since I can, I prefer to separate things.
 
-This Intel NUC runs a headless Ubuntu Server LTS (no desktop manager), which I access only via SSH (as I explained in the [previous post about SSH](https://akitaonrails.com/2025/09/09/omarchy-2-0-entendendo-ssh-e-yubikeys/)). On it I run things like Portainer, Plex, Sonarr, Bazarr, qBitTorrent and much more.
+This Intel NUC runs a headless Ubuntu Server LTS (no desktop manager), which I access only via SSH (as I explained in the [previous post about SSH](https://akitaonrails.com/en/2025/09/09/omarchy-2-0-entendendo-ssh-e-yubikeys/)). On it I run things like Portainer, Plex, Sonarr, Bazarr, qBitTorrent and much more.
 
 The way it's set up, I just added an entry to my desktop's `/etc/hosts` like this:
 

@@ -12,7 +12,7 @@ draft: false
 
 One thing I keep repeating is: don't have idols, don't blindly believe in gurus, and most of all, don't follow false-Gods.
 
-I'm a [longtime proponent](http://www.akitaonrails.com/2007/8/23/off-topic-inimigos-da-razo) of killing gods — it's practically a hobby. They make excellent fiction characters in bedtime stories, but obviously they don't exist. Like the boogeyman, Santa Claus, or the Easter bunny. And no, this isn't another anti-religion-focused article — relax.
+I'm a [longtime proponent](http://www.akitaonrails.com/en/2007/8/23/off-topic-inimigos-da-razo) of killing gods — it's practically a hobby. They make excellent fiction characters in bedtime stories, but obviously they don't exist. Like the boogeyman, Santa Claus, or the Easter bunny. And no, this isn't another anti-religion-focused article — relax.
 
 For the same reasons, I want to dismantle the myth of "Talent" and bring the demigods back to humanity.
 
@@ -150,7 +150,7 @@ More than Einstein, the scientist who published the most significant work for hu
 
 [![Darwin](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/635/big_darwin.jpg)](https://www.theguardian.com/books/2015/nov/10/on-the-origin-of-species-voted-most-influential-academic-book-charles-darwin)
 
-I wrote in part about this in the post ["Processes, Methodologies, and the Human Brain"](http://www.akitaonrails.com/2013/06/21/processos-metodologias-e-o-cerebro-humano) from 2013 and in the post ["We Are Mathematically Ignorant"](http://www.akitaonrails.com/2008/3/1/off-topic-somos-matematicamente-ignorantes) from 2008. I'll try not to repeat myself too much.
+I wrote in part about this in the post ["Processes, Methodologies, and the Human Brain"](http://www.akitaonrails.com/en/2013/06/21/processos-metodologias-e-o-cerebro-humano) from 2013 and in the post ["We Are Mathematically Ignorant"](http://www.akitaonrails.com/en/2008/3/1/off-topic-somos-matematicamente-ignorantes) from 2008. I'll try not to repeat myself too much.
 
 The very story of how we survived and evolved in this world, until reaching the humanoid form we have today, is the result of what we had to face in the natural environment, or we wouldn't be here.
 

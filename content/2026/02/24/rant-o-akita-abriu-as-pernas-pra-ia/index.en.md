@@ -26,7 +26,7 @@ And what about my famous line:
 
 > **"Your hype about AI is inversely proportional to your knowledge of AI"** ?
 
-Still correct. Same as the people who used to say Low Code would replace every programmer. It will not. Same thing now: no matter how good AI gets, it is not going to replace every programmer. Only the bad ones, as I already explained in [this other rant](https://akitaonrails.com/2026/02/08/rant-ia-acabou-com-programadores/).
+Still correct. Same as the people who used to say Low Code would replace every programmer. It will not. Same thing now: no matter how good AI gets, it is not going to replace every programmer. Only the bad ones, as I already explained in [this other rant](https://akitaonrails.com/en/2026/02/08/rant-ia-acabou-com-programadores/).
 
 Programmers like me have zero problem: we are the decision-makers who can decide what AIs cannot today and never will (it is an impossibility baked into the foundations of computing, I will come back to that).
 
@@ -71,7 +71,7 @@ That is why I said they are "glorified," because everyone who has little knowled
 
 Nope, again, you only watched clips. Look at how I open the conversation: I am talking about the hysteria around the ["AI 2027 Report"](https://ai-2027.com/), I am talking about Sam Altman's nonsense that they were very close to hitting "AGI" (General Artificial Intelligence, an intelligence that, like a human, reasons and decides things on its own and is capable of evolving autonomously). And all the controversies about AIs coming up with a "plan" to kill their owner (what I call "fanfics").
 
-Then I spend hours explaining in detail the history and exactly how the "next token calculation" is done, as I also [gave more details](/2025/04/29/dissecando-um-modelfile-de-ollama-ajustando-qwen3-pra-codigo/) here on the blog. And I always say there has to be some "new breakthrough" (that has not happened yet). As long as every new GPT or Claude is just an evolution of the previous one, there are limits. And I explained the limits.
+Then I spend hours explaining in detail the history and exactly how the "next token calculation" is done, as I also [gave more details](/en/2025/04/29/dissecando-um-modelfile-de-ollama-ajustando-qwen3-pra-codigo/) here on the blog. And I always say there has to be some "new breakthrough" (that has not happened yet). As long as every new GPT or Claude is just an evolution of the previous one, there are limits. And I explained the limits.
 
 It is not a "matter of time." That does not exist. Even though we have never been to, say, Saturn, we know what it takes and more importantly: how much it costs. **"WITH TODAY'S TECHNOLOGY"** - which is always the premise - there is no practical way, it does not make sense.
 
@@ -99,7 +99,7 @@ And there are only two ways to do it: the right way and the wrong way. The wrong
 
 The right way: I spent TWO MONTHS writing more than TWENTY POSTS on this blog explaining the right way, which I called "Agile Vibe Code," but it is basically **"Software Engineering applied to AI"** and guess what: you need to have studied and have experience to know it.
 
-It is not 2026 and it will not be 2027 or anywhere near as soon as you think before Claude or Codex "replace ALL programmers." No, they WILL replace all the bad ones and that is excellent! Again, [read this rant](https://akitaonrails.com/2026/02/08/rant-ia-acabou-com-programadores/).
+It is not 2026 and it will not be 2027 or anywhere near as soon as you think before Claude or Codex "replace ALL programmers." No, they WILL replace all the bad ones and that is excellent! Again, [read this rant](https://akitaonrails.com/en/2026/02/08/rant-ia-acabou-com-programadores/).
 
 You are never going to build a "new Linux" and "replace Linus Torvalds" with AI. You will manage to "copy parts," sure. Copying is not enough. Bad programmers were already copying before, and it never made them good.
 

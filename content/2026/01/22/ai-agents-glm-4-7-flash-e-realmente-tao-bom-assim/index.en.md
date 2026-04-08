@@ -11,7 +11,7 @@ translationKey: glm-4-7-flash-review
 description: "Running GLM 4.7 Flash locally on an RTX 5090 via Ollama to see if it can finally match commercial LLMs on a hard coding challenge."
 ---
 
-I recently wrote [a post comparing several LLMs](https://akitaonrails.com/2026/01/11/ai-agents-comparando-as-principais-llm-no-desafio-de-zig/). The good news is that commercial LLMs are genuinely impressive. The bad news is that no open source LLM was able to complete my coding challenge (read the previous post to understand the challenge).
+I recently wrote [a post comparing several LLMs](https://akitaonrails.com/en/2026/01/11/ai-agents-comparando-as-principais-llm-no-desafio-de-zig/). The good news is that commercial LLMs are genuinely impressive. The bad news is that no open source LLM was able to complete my coding challenge (read the previous post to understand the challenge).
 
 Also recently, ZAI released version 4.7 of their famous ["GLM"](https://huggingface.co/zai-org/GLM-4.7) model, a 30 billion parameter model encoded in BF16, needing around 60GB of VRAM to fit entirely on a GPU. So it's heavy.
 

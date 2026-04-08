@@ -71,7 +71,7 @@ See? Same as in Claude Code, the skill is called automatically.
 
 EVERYTHING in agents is based on the **SYSTEM PROMPT**. Those are the instructions agents repeat at every new session. The difference between using agents and using the chat directly on their website is the prompts.
 
-Last year I [explained in this post](https://akitaonrails.com/2025/04/25/hello-world-de-llm-criando-seu-proprio-chat-de-i-a-que-roda-local/) how an agent works from scratch. Read it to understand.
+Last year I [explained in this post](https://akitaonrails.com/en/2025/04/25/hello-world-de-llm-criando-seu-proprio-chat-de-i-a-que-roda-local/) how an agent works from scratch. Read it to understand.
 
 To use skills, the LLM has to know they exist. And for that it has to be told in the SYSTEM PROMPT. This is **not free**.
 

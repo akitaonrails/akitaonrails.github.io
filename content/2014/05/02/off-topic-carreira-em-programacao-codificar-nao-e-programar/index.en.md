@@ -206,7 +206,7 @@ Want to know about the immortal books of Computer Science? Let's see some:
 * [Computer Networks](http://en.wikipedia.org/wiki/Computer_network)
 * [The Art of Computer Programming](http://en.wikipedia.org/wiki/The_Art_of_Computer_Programming) — even I haven't read these books, and I don't know anyone who has read and understood them, but I'll leave it here because of its importance.
 
-[Don't want to go to college?](http://www.akitaonrails.com/2009/04/17/off-topic-devo-fazer-faculdade) No problem, try to follow the material available online from MIT on [Electrical Engineering and Computer Science](http://ocw.mit.edu/courses/#electrical-engineering-and-computer-science). If you're still completely amateur even in the programming world, see this introductory course to Computer Science on [Coursera](https://www.coursera.org/course/cs101).
+[Don't want to go to college?](http://www.akitaonrails.com/en/2009/04/17/off-topic-devo-fazer-faculdade) No problem, try to follow the material available online from MIT on [Electrical Engineering and Computer Science](http://ocw.mit.edu/courses/#electrical-engineering-and-computer-science). If you're still completely amateur even in the programming world, see this introductory course to Computer Science on [Coursera](https://www.coursera.org/course/cs101).
 
 Note that I'm not citing in this article any of the names many might expect, like Martin Fowler, Bruce Eckel, Robert Martin, Michael Feathers, Kent Beck, Steve McConnell, Tom DeMarco, Dave Thomas, etc. Forget them. If you don't see the previous ones, these will make little difference.
 

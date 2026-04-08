@@ -14,7 +14,7 @@ description: "First hands-on impressions of Qwen3 running locally via Ollama and
 
 
 
-I just [posted yesterday about Qwen2.5-Coder](https://www.akitaonrails.com/2025/04/27/testando-llms-com-aider-na-runpod-qual-usar-pra-codigo) and TODAY (2025-04-28) Qwen shows up and drops **QWEN 3** on me, which, obviously, they claim totally smokes the 2.5. And obviously I had my hands dirty already, so I had to test it.
+I just [posted yesterday about Qwen2.5-Coder](https://www.akitaonrails.com/en/2025/04/27/testando-llms-com-aider-na-runpod-qual-usar-pra-codigo) and TODAY (2025-04-28) Qwen shows up and drops **QWEN 3** on me, which, obviously, they claim totally smokes the 2.5. And obviously I had my hands dirty already, so I had to test it.
 
 [![qwen x](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/e1ipve95x7e6nlnf7qffayzsz0ag)](https://x.com/AkitaOnRails/status/1916974917872193780)
 If you're running an ollama installed via packages like Pacman or Apt, it's possible they're not compatible yet. But I saw on Ollama's X that they're already supporting it:

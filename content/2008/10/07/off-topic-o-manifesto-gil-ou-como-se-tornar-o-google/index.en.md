@@ -251,7 +251,7 @@ As a result, customers will be receiving products that add real value, **changin
 It was no accident that I wrote about:
 
 - [Killing the Average](http://www.akitaonrails.com/2008/9/13/off-topic-matando-a-m-dia)
-- [The Power of Myth, Redux](http://www.akitaonrails.com/2008/9/20/off-topic-o-poder-do-mito-redux)
+- [The Power of Myth, Redux](http://www.akitaonrails.com/en/2008/9/20/off-topic-o-poder-do-mito-redux)
 - [Collaborating on Github](http://www.akitaonrails.com/2008/9/21/colaborando-no-github)
 - [Understanding Git and Installing Gitorious](http://www.akitaonrails.com/2008/10/2/entendendo-git-e-instalando-gitorious-git-via-web).
 

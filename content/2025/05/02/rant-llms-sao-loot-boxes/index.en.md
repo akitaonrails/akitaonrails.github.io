@@ -63,7 +63,7 @@ Every incentive, from everyone, is to burn more tokens, not fewer. And in my tes
 
 ### LOOT BOXES
 
-I also explained in the [article about how to build your own Ollama Modelfile](https://www.akitaonrails.com/2025/04/29/dissecando-um-modelfile-de-ollama-ajustando-qwen3-pra-codigo) that, essentially, the text generation process (swallow it, LLMs are next-word generators) has random components. Temperature, Top_P, Top_K. More: the training has non-linear components (e.g. ReLU). It is not deterministic, it is a DRAWING from a probability distribution.
+I also explained in the [article about how to build your own Ollama Modelfile](https://www.akitaonrails.com/en/2025/04/29/dissecando-um-modelfile-de-ollama-ajustando-qwen3-pra-codigo) that, essentially, the text generation process (swallow it, LLMs are next-word generators) has random components. Temperature, Top_P, Top_K. More: the training has non-linear components (e.g. ReLU). It is not deterministic, it is a DRAWING from a probability distribution.
 
 That means, fundamentally, there is no way for an LLM to be 100% right 100% of the time. It is mathematically impossible. It can always be "almost right" or "looking like it is right". But if you diligently double-check everything, all the time, you are going to start finding small mistakes. In the case of code, it is a lot more obvious. It is VERY wrong, MANY times.
 
@@ -117,7 +117,7 @@ Off the top of my head, being naive and amateurish about training, I can see at 
 
 Determining sentiment from text is a well solved problem, there are algorithms with or without neural networks that can tell if a text looks happy, sad, angry, anguished, and so on. They do not need the content of your text, they just need the SENTIMENT you had at that moment.
 
-Add to that the LENGTH of your Chat and as I said [in the previous post](https://www.akitaonrails.com/2025/05/02/rant-llms-sao-loot-boxes), the incentive is to make you burn MORE TOKENS (LONGER chats). IN THE NEXT POST I will show you how they do alignment, the model "fine-tuning". An OpenAI uses thousands of lines of prompt/completion pairs to "force" the model to answer in a certain way. Think of an Excel full of pre-written questions and answers that, according to their metadata, we know are the most POPULAR answers.
+Add to that the LENGTH of your Chat and as I said [in the previous post](https://www.akitaonrails.com/en/2025/05/02/rant-llms-sao-loot-boxes), the incentive is to make you burn MORE TOKENS (LONGER chats). IN THE NEXT POST I will show you how they do alignment, the model "fine-tuning". An OpenAI uses thousands of lines of prompt/completion pairs to "force" the model to answer in a certain way. Think of an Excel full of pre-written questions and answers that, according to their metadata, we know are the most POPULAR answers.
 
 The goal is not to make the model answer more correctly, because sometimes the right answer is very harsh or inconvenient for some people. I am almost certain that the data extracted from millions of people's chats is just that: sentiment and length. It must help craft prompts that force the model to answer "less correctly" but "more pleasantly", encouraging the user to KEEP talking in the chat and BURN MORE TOKENS.
 

@@ -55,7 +55,7 @@ But it's stupid to quote or try to imitate others. _"Let's do X because this suc
 
 And more: retrospective analyses are very dangerous. After the fact it's extremely simple to trace a path backward and see most of the steps that were taken. But the trick is that in the past, at the moment when the decision needed to be taken, we can't know the unfolding of the story. So we can't compare today's critic saying _"oh, but you should have done Y"_ with yesterday's decision-maker, who didn't hold the future knowledge. Even worse: retrospective analyses don't serve as recipes for the future, because the set of variables and circumstances will be totally different.
 
-Heroic stories are part of our folklore, our culture. I already talked about this in the article [The Power of Myth: Redux](http://akitaonrails.com/2008/09/20/off-topic-o-poder-do-mito-redux) and recommend taking a look if you haven't read it.
+Heroic stories are part of our folklore, our culture. I already talked about this in the article [The Power of Myth: Redux](http://akitaonrails.com/en/2008/09/20/off-topic-o-poder-do-mito-redux) and recommend taking a look if you haven't read it.
 
 Given all this, one of the dangers is good old [analysis paralysis](http://en.wikipedia.org/wiki/Analysis_paralysis), where we want to evaluate as many variables as we can before making any decision. Accept that you'll never have all of them, and regardless of the volume of variables you manage to analyze, your chances of hitting don't improve that much. As I said before:
 

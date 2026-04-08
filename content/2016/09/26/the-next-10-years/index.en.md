@@ -76,7 +76,7 @@ Most extreme positions, meant to feel like a solid choice, end up being a very a
 > We live in a society exquisitely dependent on science and technology, in which hardly anyone knows anything about science and technology.
 > ― Carl Sagan
 
-I've been writing about [Critical Thinking](http://www.akitaonrails.com/2008/03/01/off-topic-somos-matematicamente-ignorantes), the [Scientific Method](http://www.akitaonrails.com/2015/01/07/off-topic-coletanea-processos-e-metodologias-nao-vao-te-ajudar) and related topics for many years on my blog and social media.
+I've been writing about [Critical Thinking](http://www.akitaonrails.com/en/2008/03/01/off-topic-somos-matematicamente-ignorantes), the [Scientific Method](http://www.akitaonrails.com/en/2015/01/07/off-topic-coletanea-processos-e-metodologias-nao-vao-te-ajudar) and related topics for many years on my blog and social media.
 
 I've been putting non-Ruby topics in a "Ruby"Conf for many years. We had Node.js in 2010, iOS in 2011, Elixir was introduced by José Valim in 2012's RubyConf. And in 2015 I did yet another big change by introducing 3 parallel tracks (out of 5) dedicated to non-Ruby topics.
 
@@ -86,7 +86,7 @@ This year we put all language logos ([Elixir](http://www.akitaonrails.com/elixir
 
 No rubyist felt that was strange, and this is what I am most proud of in the audience we built: Rubyists in Brazil already find it super natural to talk and use other languages and platforms without feeling like they are **"betraying" a cause** or without feeling the need to **"abandon"** Ruby because they started enjoying something else such as Elixir or Clojure.
 
-Rubyists, in Brazil at least, are less prone to fall for the mistake of _vanity metrics_ such as choosing a language because of the [TIOBE ranking](http://www.akitaonrails.com/2008/04/13/off-topic-nunca-confie-no-tiobe).
+Rubyists, in Brazil at least, are less prone to fall for the mistake of _vanity metrics_ such as choosing a language because of the [TIOBE ranking](http://www.akitaonrails.com/en/2008/04/13/off-topic-nunca-confie-no-tiobe).
 
 There was one last thing I had to do: set the final example.
 

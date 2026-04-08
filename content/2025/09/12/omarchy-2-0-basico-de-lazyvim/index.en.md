@@ -19,7 +19,7 @@ I'll do only this one article about it and I don't intend to cover more than the
 
 ### Initial Commands
 
-As I said in the [previous post about LazyVim](https://akitaonrails.com/2025/09/07/omarchy-2-0-lazyvim-lazyextras/), I'll assume you already understand at least how to install support for your language with **LazyExtras** and already learned to version things using [**Mise**](https://akitaonrails.com/2025/09/07/omarchy-2-0-mise-pra-organizar-ambientes-de-desenvolvimento/).
+As I said in the [previous post about LazyVim](https://akitaonrails.com/en/2025/09/07/omarchy-2-0-lazyvim-lazyextras/), I'll assume you already understand at least how to install support for your language with **LazyExtras** and already learned to version things using [**Mise**](https://akitaonrails.com/en/2025/09/07/omarchy-2-0-mise-pra-organizar-ambientes-de-desenvolvimento/).
 
 Without even getting into LazyVim, the first thing to know is that it installs all the relevant configurations in the `~/.config/nvim` directory. Normally you don't need to touch anything there. Leave files like `lazyvim.json` alone. Notice that it does the same thing as any NPM out there: there's a `lazy-lock.json` file that declares the version/commit of each installed plugin. LazyVim does something similar to an `npm install`. Just a curiosity so you know how it organizes itself.
 

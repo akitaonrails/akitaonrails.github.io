@@ -14,7 +14,7 @@ draft: false
 
 If you didn't know, I am frequently answering questions over Quora. [Follow me there](https://www.quora.com/profile/Fabio-Akita), so far I wrote almost 600 answers, many of which resemble my longest blog posts here.
 
-One of the most popular answers concerns the subject of ["What is the hardest thing you do as a software engineer?"](https://www.quora.com/What-is-the-hardest-thing-you-do-as-a-software-engineer/answer/Fabio-Akita). I wrote a similar answer in Brazilian Portuguese in the post ["Estimativas são Promessas. Promessas devem ser cumpridas."](http://www.akitaonrails.com/2013/08/23/off-topic-estimativas-sao-promessas-promessas-devem-ser-cumpridas).
+One of the most popular answers concerns the subject of ["What is the hardest thing you do as a software engineer?"](https://www.quora.com/What-is-the-hardest-thing-you-do-as-a-software-engineer/answer/Fabio-Akita). I wrote a similar answer in Brazilian Portuguese in the post ["Estimativas são Promessas. Promessas devem ser cumpridas."](http://www.akitaonrails.com/en/2013/08/23/off-topic-estimativas-sao-promessas-promessas-devem-ser-cumpridas).
 
 > In a nutshell, you can never give an estimate that is "correct". If you could, it would not be an "estimate", it would be a "prediction".
 

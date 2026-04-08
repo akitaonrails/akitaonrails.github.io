@@ -12,11 +12,11 @@ tags:
 draft: false
 ---
 
-In [my previous post](http://www.akitaonrails.com/2016/08/09/moving-away-from-slack-into-rocket-chat-good-enough) I was reporting on my move from Slack to Rocket.chat. But I also mentioned that before Rocket.chat I would rather use Mattermost. First and foremost because it's written in Go (lightweight, highly concurrent, super stable), and because the code base shows much more quality than Rocket.chat (which feels super fragile, with almost no automated tests at all).
+In [my previous post](http://www.akitaonrails.com/en/2016/08/09/moving-away-from-slack-into-rocket-chat-good-enough) I was reporting on my move from Slack to Rocket.chat. But I also mentioned that before Rocket.chat I would rather use Mattermost. First and foremost because it's written in Go (lightweight, highly concurrent, super stable), and because the code base shows much more quality than Rocket.chat (which feels super fragile, with almost no automated tests at all).
 
 But my major complaint with Mattermost is that the free, open source, Team Edition lacks a super important feature: not allowing users to delete private groups.
 
-[@iantien commented](http://www.akitaonrails.com/2016/08/09/moving-away-from-slack-into-rocket-chat-good-enough#comment-2832915684) that the private groups are never actually "deleted", they are just marked as deleted, audited, but all data is still in the database. Just the UI has no way to hide the "delete" option from users and there is no Administration UI to unarchive the deleted groups.
+[@iantien commented](http://www.akitaonrails.com/en/2016/08/09/moving-away-from-slack-into-rocket-chat-good-enough#comment-2832915684) that the private groups are never actually "deleted", they are just marked as deleted, audited, but all data is still in the database. Just the UI has no way to hide the "delete" option from users and there is no Administration UI to unarchive the deleted groups.
 
 In fact, you can open a `psql` session in your PostgreSQL database and just do:
 

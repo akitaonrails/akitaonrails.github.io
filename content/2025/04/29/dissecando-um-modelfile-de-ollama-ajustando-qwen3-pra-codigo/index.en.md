@@ -14,7 +14,7 @@ description: A walkthrough of sampling parameters (temperature, top_p, top_k, mi
 
 
 
-The hot news of the day is the release of the new Qwen3 model. I already [posted about it today](https://www.akitaonrails.com/2025/04/28/testando-o-recem-lancado-llm-open-source-qwen3-com-aider-e-ollama) and was quite impressed. I thought I would leave it at that, but then I saw this tweet:
+The hot news of the day is the release of the new Qwen3 model. I already [posted about it today](https://www.akitaonrails.com/en/2025/04/28/testando-o-recem-lancado-llm-open-source-qwen3-com-aider-e-ollama) and was quite impressed. I thought I would leave it at that, but then I saw this tweet:
 
 ![ivan qwen tweaks](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/1jgq3ar5c5l7wfjt9wjfui8l598z)
 

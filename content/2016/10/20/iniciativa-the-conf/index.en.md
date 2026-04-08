@@ -9,7 +9,7 @@ draft: false
 translationKey: theconf-initiative-2016
 ---
 
-Obs: se você é brasileiro, leia [esta versão em Português](http://www.akitaonrails.com/2016/10/20/iniciativa-the-conf).
+Obs: se você é brasileiro, leia [esta versão em Português](http://www.akitaonrails.com/en/2016/10/20/iniciativa-the-conf).
 
 *Update 04/04/2017:* Most of the event infrastructure and suppliers are contracted, the event is a GO! And the [Call for Papers](http://cfp.theconf.club) is up until May, submit your talk proposals as soon as possible.
 

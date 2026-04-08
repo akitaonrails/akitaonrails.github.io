@@ -83,7 +83,7 @@ AkitaOnRails.com [ master][$!?⇡][ v24.7.0][💎 v3.2.3]
 /home/akitaonrails/.local/share/mise/installs/ruby/3.2.3/bin/ruby
 ```
 
-Notice that, if you're using the [Starship](https://akitaonrails.com/2025/09/07/omarchy-2-0-zsh-configs/) prompt I explained in the previous post, with a preset like Pure Prompt, it shows the version of each language in the prompt so it's easy to see if you're on the wrong version.
+Notice that, if you're using the [Starship](https://akitaonrails.com/en/2025/09/07/omarchy-2-0-zsh-configs/) prompt I explained in the previous post, with a preset like Pure Prompt, it shows the version of each language in the prompt so it's easy to see if you're on the wrong version.
 
 In this case, if you read carefully, you've probably already noticed that **YES, I'M ON THE WRONG VERSION** of Node.js. Look how the prompt says I'm using Node 24.7.0 but the `.tool-versions` file asks for 14.21.3.
 

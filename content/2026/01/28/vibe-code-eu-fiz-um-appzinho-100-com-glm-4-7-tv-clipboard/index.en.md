@@ -446,7 +446,7 @@ Every time you load this system on "localhost" and it receives a message to drop
 
 And that's normal and correct: nothing should have access to things outside the browser. That's why the Javascript asks _"send this to the clipboard"_, the browser intercepts it, checks the permission and, if it doesn't have it, asks for it. Every time it will ask. But if you use a real domain (e.g. clip.example.com), it asks once and then remembers per domain. That's one of the reasons I'm going to expose it on the internet: to have a real domain.
 
-> Exposing services on the internet is DANGEROUS. That's why I wrote [this article explaining how to use real domains](https://akitaonrails.com/2025/09/09/acessando-meu-home-server-com-dominio-de-verdade/) and [this other article about using Cloudflare Zero Trust](https://akitaonrails.com/2025/09/10/protegendo-seu-home-server-com-cloudflare-zero-trust/).
+> Exposing services on the internet is DANGEROUS. That's why I wrote [this article explaining how to use real domains](https://akitaonrails.com/en/2025/09/09/acessando-meu-home-server-com-dominio-de-verdade/) and [this other article about using Cloudflare Zero Trust](https://akitaonrails.com/en/2025/09/10/protegendo-seu-home-server-com-cloudflare-zero-trust/).
 
 **f) There was another security factor which is "overkill" but I wanted to implement anyway.**
 

@@ -22,7 +22,7 @@ On Linux, this is a massive pain in the ass, because the SMB protocol (built for
 
 But let's say you want to edit source code in projects with Git. It's going to be a nightmare, because SMB overrides the permissions regardless of what's underneath, and every single time it's going to conflict with Git, which will think files were modified (changing permissions counts as a change it tracks), and it'll keep nagging you to commit that, and that will pollute your whole repository (never use Git projects on SMB over the network).
 
-Instead, I'm on Linux, my NAS is Linux. The right call is to use a Linux protocol. That protocol is NFS and I showed how I set it up in [last week's post](https://www.akitaonrails.com/2025/04/17/configurando-meu-nas-synology-com-nfs-no-linux).
+Instead, I'm on Linux, my NAS is Linux. The right call is to use a Linux protocol. That protocol is NFS and I showed how I set it up in [last week's post](https://www.akitaonrails.com/en/2025/04/17/configurando-meu-nas-synology-com-nfs-no-linux).
 
 Anyway, I'm using NFS and I have way fewer headaches around file permissions. But then I hit another problem: if you saw my recent posts, you saw I've been experimenting A LOT with Docker. Spinning up new images like there's no tomorrow. My local 2 TB NVMe filled up fast and started complaining about lack of space. So I thought, _"Ah, I'll just move the Docker storage directory, /var/lib/docker, to a directory mounted via NFS on my NAS"_
 

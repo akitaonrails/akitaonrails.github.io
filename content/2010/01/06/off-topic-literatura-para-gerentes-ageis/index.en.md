@@ -12,11 +12,11 @@ draft: false
 
 **Update: 01/06:** The goal of the article when I started writing it was to be really assertive. It still frustrates me to research current material, blogs, articles, and not see any Agility-related topic going deeper into the principles. Besides that, I'm a little anxious with my own research, which still seems to have missing pieces, and since there's almost no one to talk to about it, I get even more frustrated. That's why right at the beginning of the article I was already out of patience and started abusing the first and third person, practically in a 1-to-1 dialogue. Since that doesn't help the main objective of the article, I decided to trim the most aggressive parts. Let's see if now it's more "digestible" :-)
 
-Last year I compiled a [list of books](/2009/07/11/off-topic-livros-de-refer-ncia-2008-2009) that I read in my search for the essence of **true** management. The difference is that instead of going through the more trivial ones like Peter Drucker, I went after the principles of Agility.
+Last year I compiled a [list of books](/en/2009/07/11/off-topic-livros-de-refer-ncia-2008-2009) that I read in my search for the essence of **true** management. The difference is that instead of going through the more trivial ones like Peter Drucker, I went after the principles of Agility.
 
 There are a few categories of managers: those who are "agile" — in the broadest sense of the word — and the "traditional." The second group — who tend to not want to change or learn anything — is sad, period. The first is on the right path, but there's still a lot missing. The discussions I see today in agile communities, unfortunately, also still fall into the inertia of "good sense," of "common sense," and end up being superficial.
 
-An agile manager should want to dedicate themselves much more. Scrum itself is an example of this. As I said in my article [You Don't Understand Anything About Scrum](/2009/12/10/off-topic-voce-nao-entende-nada-de-scrum): Jeff Sutherland and Ken Schwaber really researched the pertinent subjects long ago and give the tips, although few follow them.
+An agile manager should want to dedicate themselves much more. Scrum itself is an example of this. As I said in my article [You Don't Understand Anything About Scrum](/en/2009/12/10/off-topic-voce-nao-entende-nada-de-scrum): Jeff Sutherland and Ken Schwaber really researched the pertinent subjects long ago and give the tips, although few follow them.
 
 If you really want to understand Scrum, this literature can help a lot. To start, there are the [Scrum Papers](http://scrumtraininginstitute.com/home/stream_download/scrumpapers), which give the introduction.
 

@@ -11,7 +11,7 @@ translationKey: ai-clothes-swap-comfyui
 description: "A walkthrough of a ComfyUI workflow using IDM-VTON and IPAdapter to swap clothing on photos while preserving the original face and pose."
 ---
 
-In the [previous post](https://www.akitaonrails.com/2025/04/23/usando-i-a-comfyui-pra-gerar-npcs-em-desenvolvimento-de-games) I showed how to generate character sheets for game development. But some folks asked me "what if I want specific clothes?".
+In the [previous post](https://www.akitaonrails.com/en/2025/04/23/usando-i-a-comfyui-pra-gerar-npcs-em-desenvolvimento-de-games) I showed how to generate character sheets for game development. But some folks asked me "what if I want specific clothes?".
 
 **Hold my Beer**
 

@@ -11,7 +11,7 @@ draft: false
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2009/11/4/logical-fallacy1_original.jpg?1257376626)
 
-It's not news that everyone knows I'm a strong proponent [against certifications](/2008/04/19/off-topic-vamos-todos-impedir-a-regulamenta-o-da-profiss-o-de-analista-de-sistema), specifically in the IT area. Despite the intention itself being good, the practical effect is more harmful than the benefits. As they say, _"the road to hell is paved with good intentions."_
+It's not news that everyone knows I'm a strong proponent [against certifications](/en/2008/04/19/off-topic-vamos-todos-impedir-a-regulamenta-o-da-profiss-o-de-analista-de-sistema), specifically in the IT area. Despite the intention itself being good, the practical effect is more harmful than the benefits. As they say, _"the road to hell is paved with good intentions."_
 
 However, I'd go further and put an umbrella term on it. In reality, I'm totally against _"Credentials"_ in general, particularly out of context. And beyond that, I also like to argue about argumentation. For a while now I've been mentioning fallacies whenever I can. I'm very far from a broader understanding, but I'm always trying to expand it, and I think everyone should.
 

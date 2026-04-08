@@ -145,7 +145,7 @@ If, like me, you already have a service sitting on port 8080, cAdvisor will fail
 
 Another detail: by default, Grafana comes up on port 3000, but I changed it to 3001 because I already had another service on that port. So once it's up, I can access it at `http://192.168.0.200:3001`.
 
-As I explained in the [Cloudflared article](/2025/09/09/acessando-meu-home-server-com-dominio-de-verdade/), I route this address through Cloudflare to get a nice domain like `https://grafana.fabioakita.dev` to access it both locally and remotely, if I want. Go read those other articles afterward to understand how.
+As I explained in the [Cloudflared article](/en/2025/09/09/acessando-meu-home-server-com-dominio-de-verdade/), I route this address through Cloudflare to get a nice domain like `https://grafana.fabioakita.dev` to access it both locally and remotely, if I want. Go read those other articles afterward to understand how.
 
 And that's it, now just spin up the containers:
 

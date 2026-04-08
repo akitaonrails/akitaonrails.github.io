@@ -53,4 +53,4 @@ Companies that have departments whose job is to create new standards, processes,
 
 Lean companies, on the other hand, value [meritocracy](http://en.wikipedia.org/wiki/Meritocracy). They value space for mistakes which, in the correct process of [Hansei](http://en.wikipedia.org/wiki/Hansei) and [Kaizen](http://en.wikipedia.org/wiki/Kaizen), lead to continuous improvement. In turn, this cumulatively raises standards.
 
-This post follows the line of the previous one, [Advice for Managers](http://www.akitaonrails.com/2009/06/05/tradu--o-conselhos-para-gerentes-de-desenvolvimento-de-software) — I suggest reading that one too.
+This post follows the line of the previous one, [Advice for Managers](http://www.akitaonrails.com/en/2009/06/05/tradu--o-conselhos-para-gerentes-de-desenvolvimento-de-software) — I suggest reading that one too.

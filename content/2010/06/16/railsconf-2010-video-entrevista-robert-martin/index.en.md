@@ -9,7 +9,7 @@ draft: false
 translationKey: railsconf-2010-robert-martin
 ---
 
- **Obs:** for the Brazilian Portuguese version, click [here](/2010/06/16/railsconf-2010-video-entrevista-robert-martin).
+ **Obs:** for the Brazilian Portuguese version, click [here](/en/2010/06/16/railsconf-2010-video-entrevista-robert-martin).
 
 I still didn’t finish compiling all the videos or even writing the main article of the event, but I was getting anxious to publish this video with Robert Martin, that I was able to record in Baltimore. It is a 16 min long conversation about languages, career, certifications and Agile.
 

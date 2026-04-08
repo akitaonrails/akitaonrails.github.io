@@ -91,9 +91,9 @@ Again, it's a matter of communication, negotiation, and cost-benefit based on th
 
 > "The best architectures, requirements, and designs emerge from self-organizing teams."
 
-This topic in particular I've already explained dozens of times in various ways, but I recommend reading this previous article of mine about [Agility, Chaos, Self-Organization](/2009/07/08/off-topic-agilidade-caos-auto-organizacao).
+This topic in particular I've already explained dozens of times in various ways, but I recommend reading this previous article of mine about [Agility, Chaos, Self-Organization](/en/2009/07/08/off-topic-agilidade-caos-auto-organizacao).
 
-If you don't understand Emergence and Self-Organization, you don't understand Agility. And this, by the way, also brings me back to my article [You Don't Understand Anything About Scrum](/2009/12/10/off-topic-voce-nao-entende-nada-de-scrum) which I also recommend reading now.
+If you don't understand Emergence and Self-Organization, you don't understand Agility. And this, by the way, also brings me back to my article [You Don't Understand Anything About Scrum](/en/2009/12/10/off-topic-voce-nao-entende-nada-de-scrum) which I also recommend reading now.
 
 As you can see, the world of Agility is founded on very important principles. None of them should be considered in isolation — either you consider them all together or you will never have any of them.
 

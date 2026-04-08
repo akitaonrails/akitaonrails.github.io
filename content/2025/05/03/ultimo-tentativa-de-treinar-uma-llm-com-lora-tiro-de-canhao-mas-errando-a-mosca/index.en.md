@@ -14,7 +14,7 @@ description: Renting an 80GB H100 on RunPod to fine-tune Qwen3-32B with a LoRA o
 
 
 
-Ok, I'm stubborn. In the [previous post](https://www.akitaonrails.com/2025/05/03/ensinando-zig-mais-recente-pra-sua-llm-treinando-loras-quase) I explained everything I knew about trying to fine-tune a model with LoRA. But it's a tedious, slow process, limited by the "poverty" of my RTX 4090. In 24GB of VRAM you have to fit the model, things like the KV cache, the training dataset and room to process it all. Squeezing hard, the Qwen3-8B model and 1MB of dataset fit and that's it. It'll use 21GB constantly for more than an hour and the end result, even though the model manages to answer "yes, I know Zig 0.14", isn't good — because the 8B base model wasn't great to begin with.
+Ok, I'm stubborn. In the [previous post](https://www.akitaonrails.com/en/2025/05/03/ensinando-zig-mais-recente-pra-sua-llm-treinando-loras-quase) I explained everything I knew about trying to fine-tune a model with LoRA. But it's a tedious, slow process, limited by the "poverty" of my RTX 4090. In 24GB of VRAM you have to fit the model, things like the KV cache, the training dataset and room to process it all. Squeezing hard, the Qwen3-8B model and 1MB of dataset fit and that's it. It'll use 21GB constantly for more than an hour and the end result, even though the model manages to answer "yes, I know Zig 0.14", isn't good — because the 8B base model wasn't great to begin with.
 
 The way out: migrate my training to a bigger machine. I started by trying an A40, to see if 40GB was enough to fit the Qwen3-32B model for this training. And no, it didn't fit.
 

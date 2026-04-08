@@ -22,7 +22,7 @@ My answer two years ago and still today is:
 
 > **NONE!**
 
-Yesterday I wrote [a LONG article](/2026/01/28/vibe-code-eu-fiz-um-appzinho-100-com-glm-4-7-tv-clipboard/) where I DEMONSTRATE what it's like to build a tiny app from scratch using only Vibe Coding. Something with a smaller scope than a "to-do list" exercise.
+Yesterday I wrote [a LONG article](/en/2026/01/28/vibe-code-eu-fiz-um-appzinho-100-com-glm-4-7-tv-clipboard/) where I DEMONSTRATE what it's like to build a tiny app from scratch using only Vibe Coding. Something with a smaller scope than a "to-do list" exercise.
 
 Getting it to "just work" was easy: in 1 hour I had the app. That "total zero" above would stop right there.
 
@@ -74,7 +74,7 @@ This whole game of Opus ➡️ GPT 5.2 ➡️ Kimi 2.5 ➡️ Gemini 3 Pro ➡�
 
 Let's quickly take a look at what the LLMs did after my tiny app was already done.
 
-For anyone who didn't see the [previous article](/2026/01/28/vibe-code-eu-fiz-um-appzinho-100-com-glm-4-7-tv-clipboard/), the final code is [on this GitHub](https://github.com/akitaonrails/tvclipboard).
+For anyone who didn't see the [previous article](/en/2026/01/28/vibe-code-eu-fiz-um-appzinho-100-com-glm-4-7-tv-clipboard/), the final code is [on this GitHub](https://github.com/akitaonrails/tvclipboard).
 
 ### 1. Opus 4.5
 

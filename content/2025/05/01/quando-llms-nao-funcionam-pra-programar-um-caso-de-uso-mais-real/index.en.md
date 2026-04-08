@@ -15,7 +15,7 @@ description: "A real-world attempt to build a Zig program using llama.cpp with G
 
 
 
-As I said in my previous rant post about [Demystifying A.I. for programming](https://www.akitaonrails.com/2025/05/01/rant-llms-vao-evoluir-pra-sempre-desmistificando-llms-na-programacao), I can confirm that many synthetic benchmarks that claim to measure coding ability are LIES.
+As I said in my previous rant post about [Demystifying A.I. for programming](https://www.akitaonrails.com/en/2025/05/01/rant-llms-vao-evoluir-pra-sempre-desmistificando-llms-na-programacao), I can confirm that many synthetic benchmarks that claim to measure coding ability are LIES.
 
 And I'm not saying it's a deliberate attempt to lie, but the people doing the research and compiling rankings and leaderboards don't publish the actual details and just drop the result without context. Here's an example I found today: [LiveBench](https://github.com/LiveBench/LiveBench), yet another "programming" benchmark package. Look at what's actually being tested:
 

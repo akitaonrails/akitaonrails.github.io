@@ -28,7 +28,7 @@ Adding here in the post: many who haven't learned to program professionally thin
 
 **AkitaOnRails:** Design Patterns are important, but as a reference. They exist, are possible solutions but should be evaluated case by case. As for Agile techniques, only worry about Extreme Programming. All XP techniques are important. Scrum, Kanban, can be introduced but are unnecessary. About patterns:
 
-* [Brazilian Portuguese Can Confuse Us: Standard vs Pattern](http://www.akitaonrails.com/2013/05/10/a-lingua-portuguesa-brasileira-e-pessima-standard-vs-pattern)
+* [Brazilian Portuguese Can Confuse Us: Standard vs Pattern](http://www.akitaonrails.com/en/2013/05/10/a-lingua-portuguesa-brasileira-e-pessima-standard-vs-pattern)
 * [GoF Design Patterns - Did it survive the test of time?](http://www.akitaonrails.com/2007/07/30/gof-design-patterns-sobreviveu-ao-teste-do-tempo)
 * [Design Patterns represent defects in Languages](http://www.akitaonrails.com/2006/10/30/design-patterns-representam-defeitos-nas-linguagens)
 
@@ -36,8 +36,8 @@ Adding here in the post: the important thing is to teach that you don't need to 
 
 And speaking of Agile, I recommend reading these posts of mine:
 
-* [Lean is Dead, Long Live Efficiency](http://www.akitaonrails.com/2014/03/27/off-topic-lean-esta-morto-longa-vida-a-eficiencia)
-* [Agile: the Truth Behind the Method](http://www.akitaonrails.com/2014/09/28/off-topic-agile-a-verdade-por-tras-do-metodo)
+* [Lean is Dead, Long Live Efficiency](http://www.akitaonrails.com/en/2014/03/27/off-topic-lean-esta-morto-longa-vida-a-eficiencia)
+* [Agile: the Truth Behind the Method](http://www.akitaonrails.com/en/2014/09/28/off-topic-agile-a-verdade-por-tras-do-metodo)
 
 **Professor:** 3) Does the OO Analysis and Design discipline still make sense today? What would be interesting to be addressed in it?
 
@@ -53,9 +53,9 @@ Adding to the post, I believe Academia, especially in Computer Science chairs, m
 
 Let me leave posts I wrote about university and career topics:
 
-* [Should I go to college?](http://www.akitaonrails.com/2009/04/17/off-topic-devo-fazer-faculdade)
-* [Career in Programming - Coding isn't Programming](http://www.akitaonrails.com/2014/05/02/off-topic-carreira-em-programacao-codificar-nao-e-programar)
-* [Letter to a Young Programmer Considering a Startup](http://www.akitaonrails.com/2013/10/31/traducao-carta-para-um-jovem-programador-considerando-uma-startup#.VIYdkNYkMvs)
+* [Should I go to college?](http://www.akitaonrails.com/en/2009/04/17/off-topic-devo-fazer-faculdade)
+* [Career in Programming - Coding isn't Programming](http://www.akitaonrails.com/en/2014/05/02/off-topic-carreira-em-programacao-codificar-nao-e-programar)
+* [Letter to a Young Programmer Considering a Startup](http://www.akitaonrails.com/en/2013/10/31/traducao-carta-para-um-jovem-programador-considerando-uma-startup#.VIYdkNYkMvs)
 
 **Professor:** Sorry for the long email, but unfortunately there was no opportunity for us to talk at the event...
 

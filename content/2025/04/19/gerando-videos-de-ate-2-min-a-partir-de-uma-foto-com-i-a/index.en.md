@@ -73,7 +73,7 @@ To animate in Blender and render also takes a lot of processing and time. But wi
 
 As impressive as this seems, it doesn't do **JUST ANYTHING**, I had several experiments that went wrong and the movement it makes is quite limited, after all it only has a single photo to use as a reference and you can't make movements that are too abrupt, there are limits. Even so it's very fun to play with. The fact that it can identify more than just human beings is a big "plus" in my opinion, because that's what got me more interested.
 
-**OH YES!** Remember the [other blog post](https://www.akitaonrails.com/2025/04/19/aumentando-resolucao-de-anime-velho-pra-4k-com-i-a) I published today about doing **UPSCALE TO 4K**?? You can use it here too, take a video that FramePack generated that you really liked and upscale it to 4K to have even more definition! Then it's at quality you can even use in video editing.
+**OH YES!** Remember the [other blog post](https://www.akitaonrails.com/en/2025/04/19/aumentando-resolucao-de-anime-velho-pra-4k-com-i-a) I published today about doing **UPSCALE TO 4K**?? You can use it here too, take a video that FramePack generated that you really liked and upscale it to 4K to have even more definition! Then it's at quality you can even use in video editing.
 
 2-minute videos must take hours to make. 30 seconds took almost 1 hour. The best thing is to stick with 5-second videos to play and experiment, just that already takes nearly half an hour. Here are some more examples taken from photos of items in my collection (the ones you used to see in the background of my videos). Have fun!
 

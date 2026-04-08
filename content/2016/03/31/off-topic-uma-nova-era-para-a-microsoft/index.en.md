@@ -11,7 +11,7 @@ translationKey: nova-era-microsoft-2016
 
 Update 04/07: [the preview is already out](http://thehackernews.com/2016/04/how-to-run-ubuntu-on-windows-10.html) ahead of the June release. If you're an Insider member, try it.
 
-This is the translation of my [original post](http://www.akitaonrails.com/2016/03/31/off-topic-uma-nova-era-para-a-microsoft) in Brazilian Portuguese.
+This is the translation of my [original post](http://www.akitaonrails.com/en/2016/03/31/off-topic-uma-nova-era-para-a-microsoft) in Brazilian Portuguese.
 
 Yesterday was a pretty remarkable and historical day for Microsoft, I even think it might be an Era dividing moment, at least from my personal perspective. Since then I was trying to figure out a way to register this moment for posterity.
 

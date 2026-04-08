@@ -22,7 +22,7 @@ Just head to the [official site](https://omarchy.org/) and click "ISO" to downlo
 
 ![Omarchy install](https://learn.omacom.io/u/configurator-iGH96F.png)
 
-As I explained in the [first article](https://akitaonrails.com/2025/08/29/new-omarchy-2-0-install/), I did it differently: I installed pure [Arch Linux](https://archlinux.org/download/), Desktop style, with Hyprland + SDDM. Then I installed Omarchy using the manual command line:
+As I explained in the [first article](https://akitaonrails.com/en/2025/08/29/new-omarchy-2-0-install/), I did it differently: I installed pure [Arch Linux](https://archlinux.org/download/), Desktop style, with Hyprland + SDDM. Then I installed Omarchy using the manual command line:
 
 ```bash
 curl -fsSL https://omarchy.org/install | bash

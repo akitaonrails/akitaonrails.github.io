@@ -221,7 +221,7 @@ I still don't fully understand how much of a difference it makes, but both OpenC
 
 Note that I primarily use Claude Opus 4.5 via OpenRouter and I have LM Studio and Ollama configured as providers for testing other open source models.
 
-I also use [Mise](/2025/09/07/omarchy-2-0-mise-pra-organizar-ambientes-de-desenvolvimento/) to organize the programming languages I use.
+I also use [Mise](/en/2025/09/07/omarchy-2-0-mise-pra-organizar-ambientes-de-desenvolvimento/) to organize the programming languages I use.
 
 But now you need to install the LSPs for each language. I don't know of a better way to manage this the same way Mason does in Neovim. So I made a script to install everything for me (on my Arch Linux). For that I created this script `~/.local/bin/install-lsps.sh`:
 

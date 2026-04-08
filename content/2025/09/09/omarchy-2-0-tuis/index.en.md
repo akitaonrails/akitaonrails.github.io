@@ -90,7 +90,7 @@ In my opinion, since there are no pretty GUI apps for Linux, it's really better 
 
 TUIs are lightweight, use few machine resources, they're easy for any programmer to build, and you can have a home server or a server in some cloud, SSH in, and access the TUI, without having to deal with X11 or RDP or anything heavier just to get a GUI.
 
-Some TUIs are obvious: in the [previous post](https://akitaonrails.com/2025/09/07/omarchy-2-0-lazyvim-lazyextras/) I already talked about [**LazyVim**](https://www.lazyvim.org/) and how it's a text editor as competent and complete as VS Code, using only a fraction of the machine's resources. Everyone should know tools like HTOP or BTOP. Plus [LazyGit](https://github.com/jesseduffield/lazygit) or [LazyDocker](https://github.com/jesseduffield/lazydocker). All of these already come in Omarchy.
+Some TUIs are obvious: in the [previous post](https://akitaonrails.com/en/2025/09/07/omarchy-2-0-lazyvim-lazyextras/) I already talked about [**LazyVim**](https://www.lazyvim.org/) and how it's a text editor as competent and complete as VS Code, using only a fraction of the machine's resources. Everyone should know tools like HTOP or BTOP. Plus [LazyGit](https://github.com/jesseduffield/lazygit) or [LazyDocker](https://github.com/jesseduffield/lazydocker). All of these already come in Omarchy.
 
 But there's much more, for example, [**dblab**](https://github.com/danvergara/dblab) which is a TUI database client for MySQL or Postgres:
 

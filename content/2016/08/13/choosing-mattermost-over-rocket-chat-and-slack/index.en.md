@@ -42,7 +42,7 @@ Mattermost fits the bill almost perfectly but the open sourced Team Edition lack
 
 Yes, I could and I probably should use the paid Enterprise Edition. But for just that small feature, it felt too expensive. So that triggered me to let it go and install Rocket.chat instead. I moved my entire team there (almost 50 people, because I didn't move the clients yet). That would be the end of the story.
 
-But Rocket.chat has a complex infrastructure to deal with (you must have at the very least 3 boxes or pay extra for a proper Mongodb SaaS). Actually, [in my previous post](http://www.akitaonrails.com/2016/08/09/moving-away-from-slack-into-rocket-chat-good-enough) I explained why you MEAN guys should not be careless dealing with Mongodb. In a nutshell: Mongodb was not meant to run in a single instance, you must have a replica set. If you have a single instance Mongodb, you're doing it wrong.
+But Rocket.chat has a complex infrastructure to deal with (you must have at the very least 3 boxes or pay extra for a proper Mongodb SaaS). Actually, [in my previous post](http://www.akitaonrails.com/en/2016/08/09/moving-away-from-slack-into-rocket-chat-good-enough) I explained why you MEAN guys should not be careless dealing with Mongodb. In a nutshell: Mongodb was not meant to run in a single instance, you must have a replica set. If you have a single instance Mongodb, you're doing it wrong.
 
 And the most problematic: the client-side is just too heavy. It frequently spikes out the CPU in not so powerful machines. It's noticeably and measurably slower to navigate its UI, compared to Slack. MatterMost's UI was much faster and way more responsive.
 

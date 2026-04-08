@@ -17,7 +17,7 @@ _"And neither do I. But I keep studying :-P"_
 
 My research style is quite _Web-like_, I'd say :-) For example, by some cosmic accident, only this week did I decide to read about the origin of Scrum, the Agile methodology that ended up becoming the most well-known today. I was very surprised by what I found.
 
-I always defend that people need to constantly, obsessively research and never accept anything without argument. We should all already know that there are no silver bullets. Simply quoting someone to justify something is a fallacy I **don't accept**, as I already said in my article [Obedience to Authority](http://akitaonrails.com/2009/11/08/off-topic-obediencia-a-autoridade).
+I always defend that people need to constantly, obsessively research and never accept anything without argument. We should all already know that there are no silver bullets. Simply quoting someone to justify something is a fallacy I **don't accept**, as I already said in my article [Obedience to Authority](http://akitaonrails.com/en/2009/11/08/off-topic-obediencia-a-autoridade).
 
 That is, even to defend agile methodologies I need a better argument than saying _"Kent Beck is awesome, Kent Beck invented XP, so I should use XP."_ Or something like _"Toyota is awesome, Toyota uses Lean, so I should use Lean."_ That's not an argument.
 
@@ -35,7 +35,7 @@ Carl Sagan popularized:
 
 > Extraordinary claims require extraordinary evidence.
 
-Given that I think this way, I need much more. I can even use something based on my intuition that it works, but it can't become a comfort zone. This has led me to a reverse engineering and a research path that has lasted more than a year — represented [dozens of books](http://www.akitaonrails.com/2009/07/11/off-topic-livros-de-refer-ncia-2008-2009), dozens of [technical papers](http://harvardbusiness.org/), multidisciplinary research among the history of management, production engineering, psychology, sociology, physics, etc. It's a search for the roots of what should constitute a true "agile organization." For me, agile methodologies are the current stage in the evolution of project management, but they're not the last! That is, implementing an agile methodology isn't a goal, it's a means.
+Given that I think this way, I need much more. I can even use something based on my intuition that it works, but it can't become a comfort zone. This has led me to a reverse engineering and a research path that has lasted more than a year — represented [dozens of books](http://www.akitaonrails.com/en/2009/07/11/off-topic-livros-de-refer-ncia-2008-2009), dozens of [technical papers](http://harvardbusiness.org/), multidisciplinary research among the history of management, production engineering, psychology, sociology, physics, etc. It's a search for the roots of what should constitute a true "agile organization." For me, agile methodologies are the current stage in the evolution of project management, but they're not the last! That is, implementing an agile methodology isn't a goal, it's a means.
 
 And actually, the last few months have only been the most constant. Don't forget that I certified as a PMP in 2005, and back then I was already studying PMBOK and OPM3. Two years before, my research line was RUP, SW-CMM (before CMMi), and Indian software factories. My first contact with agile methodologies was in 2003 with an introduction to Extreme Programming. In the 90s I followed the evolution of UML and RUP. Coad & Yourdon, Rumbaugh, Booch, Jacobson, etc.
 
@@ -64,7 +64,7 @@ Your browser does not support the video tag. [Direct Link](https://s3.us-east-2.
 
 This excerpt is from the talk [Self-Organization: The Secret Sauce for Improving Your Scrum Team](http://jeffsutherland.com/scrum/2009/04/self-organization-secret-sauce-for.html), which he recently presented at Google Tech Talk.
 
-I confess it was very strange to hear that reaction since I'm talking about people who — theoretically — should be agilists, since they claim to know how to implement Scrum. That's why I published the article [The Agile Manifesto, or How to Become Google](/2008/10/7/off-topic-o-manifesto-gil-ou-como-se-tornar-o-google) where I started to interpret what everyone should have already memorized: the [Agile Manifesto](http://agilemanifesto.org/):
+I confess it was very strange to hear that reaction since I'm talking about people who — theoretically — should be agilists, since they claim to know how to implement Scrum. That's why I published the article [The Agile Manifesto, or How to Become Google](/en/2008/10/7/off-topic-o-manifesto-gil-ou-como-se-tornar-o-google) where I started to interpret what everyone should have already memorized: the [Agile Manifesto](http://agilemanifesto.org/):
 
 > "The best architectures, requirements, and designs **emerge** from **self-organizing** teams."
 

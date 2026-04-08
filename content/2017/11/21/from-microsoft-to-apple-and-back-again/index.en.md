@@ -293,7 +293,7 @@ I hate Javascript-based desktop wrappers like the plague. Electron is dumb heavy
 
 The browser is the new OS for the majority of people. Heck, most people can get around using Chromebooks! Everything else is on the phones, not the desktop. So hard tools are needed. Soft tools you already carry in your pocket.
 
-The Apple ecosystem is not dead yet. Apple still has time to fix this situation. I've been waiting for the past 3 years, but still zero signs of anything getting better. My very first switching article was [published on Nov 10, 2015](http://www.akitaonrails.com/2015/11/10/situacao-brasil-no-macs-for-the-rest-of-us).
+The Apple ecosystem is not dead yet. Apple still has time to fix this situation. I've been waiting for the past 3 years, but still zero signs of anything getting better. My very first switching article was [published on Nov 10, 2015](http://www.akitaonrails.com/en/2015/11/10/situacao-brasil-no-macs-for-the-rest-of-us).
 
 Unlike other "switching" articles, I am not saying this lightly. I have switched already, in the past 2 years.
 

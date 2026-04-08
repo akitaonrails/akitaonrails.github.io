@@ -15,7 +15,7 @@ description: A hands-on walkthrough of training a LoRA adapter on Qwen3-8B to te
 
 
 
-[Two posts ago](https://www.akitaonrails.com/2025/05/01/quando-llms-nao-funcionam-pra-programar-um-caso-de-uso-mais-real) I demonstrated the Achilles' heel of LLMs for programming: they weren't trained on the most recent data available. So if you ask about changes that came out last month in your favorite library, language or framework, they won't know.
+[Two posts ago](https://www.akitaonrails.com/en/2025/05/01/quando-llms-nao-funcionam-pra-programar-um-caso-de-uso-mais-real) I demonstrated the Achilles' heel of LLMs for programming: they weren't trained on the most recent data available. So if you ask about changes that came out last month in your favorite library, language or framework, they won't know.
 
 Note: all the code I'm going to show below is available [in this repository on my GitHub](https://github.com/akitaonrails/qwen3-zig-lora-training). Go poke around after reading to the end.
 
@@ -370,7 +370,7 @@ At the end, a `qwen3-zig-lora` directory will appear more or less like this:
 It records a checkpoint per epoch or something like that, from what I understand. Which means that depending on the strategy, if needed you can stop training and then continue from where you left off. I haven't tried to do this, but I imagine in a real training, which takes MONTHS, this is essential.
 ### Another Problem - Ollama's Limitations
 
-To use a local model, as I already showed [in this other article](https://www.akitaonrails.com/2025/04/25/seu-proprio-co-pilot-gratuito-universal-que-funciona-local-aider-ollama-qwen), we can load an LLM like Qwen3 with the Ollama server, which will spin up a web server and serve APIs in the OpenAI standard. Then just point a tool like Aider at it and done, we have a code assistant running locally.
+To use a local model, as I already showed [in this other article](https://www.akitaonrails.com/en/2025/04/25/seu-proprio-co-pilot-gratuito-universal-que-funciona-local-aider-ollama-qwen), we can load an LLM like Qwen3 with the Ollama server, which will spin up a web server and serve APIs in the OpenAI standard. Then just point a tool like Aider at it and done, we have a code assistant running locally.
 
 The problem: LoRA support in Ollama is limited (it may be lack of research on my part, but I didn't find a quick solution). They use a proprietary format for the models, and not `.safetensors` files like those on Hugging Face. Anyway, I hit that problem and I think it's not easy to proceed with Ollama.
 

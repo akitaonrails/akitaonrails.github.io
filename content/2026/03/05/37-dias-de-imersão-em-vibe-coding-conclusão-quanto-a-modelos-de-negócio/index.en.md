@@ -14,20 +14,20 @@ The result was 653 commits, ~144K lines of code across 8 projects published on G
 
 ## The articles
 
-- [Vibe Code: I built a small app 100% with GLM 4.7 (TV Clipboard)](/2026/01/28/vibe-code-eu-fiz-um-appzinho-100-com-glm-4-7-tv-clipboard/)
-- [Vibe Code: Which LLM is the BEST?? Let's get real](/2026/01/29/vibe-code-qual-llm-é-a-melhor-vamos-falar-a-real/)
-- [Vibe Code: I built a Markdown editor from scratch with Claude Code (FrankMD) PART 1](/2026/02/01/vibe-code-fiz-um-editor-de-markdown-do-zero-com-claude-code-frankmd-part-1/)
-- [Vibe Code: I built a Markdown editor from scratch with Claude Code (FrankMD) PART 2](/2026/02/01/vibe-code-fiz-um-editor-de-markdown-do-zero-com-claude-code-frankmd-parte-2/)
-- [RANT: Did AI kill programmers?](/2026/02/08/rant-ia-acabou-com-programadores/)
-- [Vibe Code: From Zero to Production in 6 DAYS - The M.Akita Chronicles](/2026/02/16/vibe-code-do-zero-a-producao-em-6-dias-the-m-akita-chronicles/)
-- [From Zero to Post-Production in 1 Week - How to Use AI on Real Projects](/2026/02/20/do-zero-a-pos-producao-em-1-semana-como-usar-ia-em-projetos-de-verdade-bastidores-do-the-m-akita-chronicles/)
-- [Vibe Code: I built a Mega clone in Rails in 1 day for my Home Server](/2026/02/21/vibe-code-fiz-um-clone-do-mega-em-rails-em-1-dia-pro-meu-home-server/)
-- [Vibe Code: I built an Intelligent Image Indexer with AI in 2 days - Frank Sherlock](/2026/02/23/vibe-code-fiz-um-indexador-inteligente-de-imagens-com-ia-em-2-dias/)
-- [RANT: Did Akita open his legs to AI??](/2026/02/24/rant-o-akita-abriu-as-pernas-pra-ia/)
-- [ai-jail: Sandbox for AI Agents](/2026/03/01/ai-jail-sandbox-para-agentes-de-ia-de-shell-script-a-ferramenta-real/)
-- [Software Is Never 'Done' - 4 Projects, the Life After Deploy](/2026/03/01/software-nunca-esta-pronto-4-projetos-a-vida-pos-deploy-e-por-que-one-shot-prompt-e-mito/)
-- [I Built a Data Mining System for My Influencer Girlfriend](/2026/03/04/eu-fiz-um-sistema-de-data-mining-pra-minha-namorada-influencer-dicas-e-truques/)
-- [My First Vibe Code Failure and How I Fixed It - Frank Yomik](/2026/03/05/meu-primeiro-fracasso-com-vibe-code-e-como-consertei-frank-yomik/)
+- [Vibe Code: I built a small app 100% with GLM 4.7 (TV Clipboard)](/en/2026/01/28/vibe-code-eu-fiz-um-appzinho-100-com-glm-4-7-tv-clipboard/)
+- [Vibe Code: Which LLM is the BEST?? Let's get real](/en/2026/01/29/vibe-code-qual-llm-é-a-melhor-vamos-falar-a-real/)
+- [Vibe Code: I built a Markdown editor from scratch with Claude Code (FrankMD) PART 1](/en/2026/02/01/vibe-code-fiz-um-editor-de-markdown-do-zero-com-claude-code-frankmd-part-1/)
+- [Vibe Code: I built a Markdown editor from scratch with Claude Code (FrankMD) PART 2](/en/2026/02/01/vibe-code-fiz-um-editor-de-markdown-do-zero-com-claude-code-frankmd-parte-2/)
+- [RANT: Did AI kill programmers?](/en/2026/02/08/rant-ia-acabou-com-programadores/)
+- [Vibe Code: From Zero to Production in 6 DAYS - The M.Akita Chronicles](/en/2026/02/16/vibe-code-do-zero-a-producao-em-6-dias-the-m-akita-chronicles/)
+- [From Zero to Post-Production in 1 Week - How to Use AI on Real Projects](/en/2026/02/20/do-zero-a-pos-producao-em-1-semana-como-usar-ia-em-projetos-de-verdade-bastidores-do-the-m-akita-chronicles/)
+- [Vibe Code: I built a Mega clone in Rails in 1 day for my Home Server](/en/2026/02/21/vibe-code-fiz-um-clone-do-mega-em-rails-em-1-dia-pro-meu-home-server/)
+- [Vibe Code: I built an Intelligent Image Indexer with AI in 2 days - Frank Sherlock](/en/2026/02/23/vibe-code-fiz-um-indexador-inteligente-de-imagens-com-ia-em-2-dias/)
+- [RANT: Did Akita open his legs to AI??](/en/2026/02/24/rant-o-akita-abriu-as-pernas-pra-ia/)
+- [ai-jail: Sandbox for AI Agents](/en/2026/03/01/ai-jail-sandbox-para-agentes-de-ia-de-shell-script-a-ferramenta-real/)
+- [Software Is Never 'Done' - 4 Projects, the Life After Deploy](/en/2026/03/01/software-nunca-esta-pronto-4-projetos-a-vida-pos-deploy-e-por-que-one-shot-prompt-e-mito/)
+- [I Built a Data Mining System for My Influencer Girlfriend](/en/2026/03/04/eu-fiz-um-sistema-de-data-mining-pra-minha-namorada-influencer-dicas-e-truques/)
+- [My First Vibe Code Failure and How I Fixed It - Frank Yomik](/en/2026/03/05/meu-primeiro-fracasso-com-vibe-code-e-como-consertei-frank-yomik/)
 
 ## The projects
 

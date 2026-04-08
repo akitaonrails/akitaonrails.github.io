@@ -22,7 +22,7 @@ It's in the [news](http://www.tiinside.com.br/News.aspx?ID=143390&C=265):
 > 
 > Under the substitute bill previously approved by the Committee on Science, Technology, Innovation, Communication and Information Technology (CCT) and adopted by the CCJ rapporteur, Senator [Marconi Perillo](http://g1.globo.com/Noticias/Politica/0,,MUL67360-5601,00.html "PSDB-GO"), only professionals with a university degree in systems analysis, computer science or data processing will be allowed to practice the systems analyst profession.
 
-I recommend everyone reread [my article from last year](/2008/04/19/off-topic-vamos-todos-impedir-a-regulamenta-o-da-profiss-o-de-analista-de-sistema) on this topic. This law is a complete farce, created by this [Expedito Júnior](http://www1.folha.uol.com.br/folha/brasil/ult96u582101.shtml "PR-RO"), embraced by this [Marconi Perillo](http://g1.globo.com/Noticias/Politica/0,,MUL67360-5601,00.html "PSDG-GO").
+I recommend everyone reread [my article from last year](/en/2008/04/19/off-topic-vamos-todos-impedir-a-regulamenta-o-da-profiss-o-de-analista-de-sistema) on this topic. This law is a complete farce, created by this [Expedito Júnior](http://www1.folha.uol.com.br/folha/brasil/ult96u582101.shtml "PR-RO"), embraced by this [Marconi Perillo](http://g1.globo.com/Noticias/Politica/0,,MUL67360-5601,00.html "PSDG-GO").
 
 
 ## The Text of the Proposed Law
@@ -47,7 +47,7 @@ To be clear, art. 2 states the following:
 > 
 > III – those who, at the time this Law takes effect, can demonstrate that they have practiced the role of Systems Analyst for a minimum of five years
 
-In other words, the interpretation completely excludes self-taught individuals and researchers who chose not to get a formal degree for various reasons (see my article [Should I Get a Degree?](/2009/04/17/off-topic-devo-fazer-faculdade)). This article clearly excludes a large number of the most qualified professionals. Even item III doesn't clarify what "demonstrated five or more years of practice" means. Does it refer to employment records? Does it refer to invoices to clients who purchased IT services? What are the criteria?
+In other words, the interpretation completely excludes self-taught individuals and researchers who chose not to get a formal degree for various reasons (see my article [Should I Get a Degree?](/en/2009/04/17/off-topic-devo-fazer-faculdade)). This article clearly excludes a large number of the most qualified professionals. Even item III doesn't clarify what "demonstrated five or more years of practice" means. Does it refer to employment records? Does it refer to invoices to clients who purchased IT services? What are the criteria?
 
 The analysis continues with the assertion:
 
@@ -61,7 +61,7 @@ I may be misreading this, but it seems clearly exclusive to me and, once again, 
 
 > One cannot imagine that the data processing center of a public body, financial system institutions, or even private companies could do without the technical accountability of a professional character, given the interface and synergy created with citizens, clients and consumers.
 
-In my opinion, this is precisely the wrong justification being used in the vast majority of arguments in favor of the law: that a formally trained professional is necessarily far superior to a more experienced self-taught professional. And this is the entire basis of my argument in [my article from last year](/2008/04/19/off-topic-vamos-todos-impedir-a-regulamenta-o-da-profiss-o-de-analista-de-sistema) on the subject. I recommend reading it carefully.
+In my opinion, this is precisely the wrong justification being used in the vast majority of arguments in favor of the law: that a formally trained professional is necessarily far superior to a more experienced self-taught professional. And this is the entire basis of my argument in [my article from last year](/en/2008/04/19/off-topic-vamos-todos-impedir-a-regulamenta-o-da-profiss-o-de-analista-de-sistema) on the subject. I recommend reading it carefully.
 
 Not to say the analysis is entirely bad — at least the removal of the most offensive parts was suggested:
 
@@ -81,7 +81,7 @@ To be clear, this **removes** the chapters that define the oversight bodies, the
 
 Since 08/20/2009 the substitute bill has been in process awaiting a rapporteur at the Committee on Social Affairs, where it can be approved or shelved. The way things are going, it looks like it will be approved without major problems, which is **terrible**!
 
-My arguments in the article [Let's Stop the Regulation](http://www.akitaonrails.com/2008/04/19/off-topic-vamos-todos-impedir-a-regulamenta-o-da-profiss-o-de-analista-de-sistema) from last year still hold. Despite the removal of the articles creating the entire governmental bureaucratic machinery and penalties, it's still a very bad law for the entire market. Worse, art. 7 of the current substitute bill makes me **very** uneasy:
+My arguments in the article [Let's Stop the Regulation](http://www.akitaonrails.com/en/2008/04/19/off-topic-vamos-todos-impedir-a-regulamenta-o-da-profiss-o-de-analista-de-sistema) from last year still hold. Despite the removal of the articles creating the entire governmental bureaucratic machinery and penalties, it's still a very bad law for the entire market. Worse, art. 7 of the current substitute bill makes me **very** uneasy:
 
 > **Art. 7.** The Executive Branch will be responsible for supervising and overseeing the practice of the Systems Analyst profession, and for the registration of IT professionals.
 

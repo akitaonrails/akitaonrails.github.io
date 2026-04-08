@@ -132,7 +132,7 @@ Today Carlos Eduardo, from [e-Genial](http://www.egenial.com.br), proposed that 
 
 **Dr Nic** : So, just pretend you are American and ask for American rates.
 
-**AkitaOnRails** : Good advice. I just [wrote an article](http://www.akitaonrails.com/2007/04/14/off-topic-seja-arrogante) about the importance of being fluent in english at my blog. That’s one compelling reason.
+**AkitaOnRails** : Good advice. I just [wrote an article](http://www.akitaonrails.com/en/2007/04/14/off-topic-seja-arrogante) about the importance of being fluent in english at my blog. That’s one compelling reason.
 
 **Dr Nic** : Absolutely. Clients don’t pay per line of code. They kind of pay for results, and kind of pay for working with people they like and trust. I think.
 

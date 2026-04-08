@@ -76,7 +76,7 @@ When I first released Capistrano, a year and a half ago or so, it was called Swi
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2007/8/3/building_djd.jpg)
 
-**AkitaOnRails:** I hear you’re from Provo, Utah? It is a coincidence as my current boss, [Carl Youngblood](/2007/7/20/conversando-com-carl-youngblood), is also from there and also studied at BYU :-) You don’t possibly know each other, do you?
+**AkitaOnRails:** I hear you’re from Provo, Utah? It is a coincidence as my current boss, [Carl Youngblood](/en/2007/7/20/conversando-com-carl-youngblood), is also from there and also studied at BYU :-) You don’t possibly know each other, do you?
 
 **Jamis Buck:** I actually live in Caldwell, Idaho now, but I was in Provo for about 8 years and yes, I do know Carl! We were both in the [Utah Ruby Users Group](http://groups.google.com/group/urug?hl=en). He’s a great guy.
 
@@ -92,7 +92,7 @@ When I first released Capistrano, a year and a half ago or so, it was called Swi
 
 **Jamis Buck:** Honestly, I’m a bit ashamed to admit that I don’t keep up on other frameworks as much as I should. Seaside has some neat ideas and my desire to improve my Smalltalk programming skills has made me want to poke into that further. But other than that, I haven’t shopped around much (to my own personal detriment, I’m sure).
 
-**AkitaOnRails:** And still about Java, I am very excited nowadays about JRuby. I interviewed [Ola Bini](/2007/06/21/conversando-com-ola-bini-jruby-core-team-member) and I’m also kind of stalking Charles Nutter. Did you know the guys? Did you got interested in trying it?
+**AkitaOnRails:** And still about Java, I am very excited nowadays about JRuby. I interviewed [Ola Bini](/en/2007/06/21/conversando-com-ola-bini-jruby-core-team-member) and I’m also kind of stalking Charles Nutter. Did you know the guys? Did you got interested in trying it?
 
 **Jamis Buck:** I know who they are, and I’ve met Charles at a few conferences, but I’ve never really had a chance to talk to them in depth. JRuby definitely sounds exciting. I’m very curious, in fact, to know whether it can support Net::SSH or not since that would mean you could run Capistrano under it. But I’ve not had a chance to actually try it out.
 

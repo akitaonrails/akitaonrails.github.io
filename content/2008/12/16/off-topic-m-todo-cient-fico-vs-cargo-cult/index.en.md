@@ -142,7 +142,7 @@ Most people can be described as follows:
 
 ![](/files/20081216/funny-dog-pictures-praying-dogma.jpg)
 
-- **Don't like new things** — there's another very wrong concept of "cost." Many think that because they invested time studying a particular subject, that invested time/money "cannot be lost" and therefore they need to persist with the same subject. This is what I've written about before as [The Sunk Cost Fallacy](http://www.akitaonrails.com/2007/08/19/a-falcia-do-custo-perdido). If you already have a loss, the biggest stupidity is persisting with the same loss. It's far more intelligent to write off that cost as lost and simply change direction and move forward.
+- **Don't like new things** — there's another very wrong concept of "cost." Many think that because they invested time studying a particular subject, that invested time/money "cannot be lost" and therefore they need to persist with the same subject. This is what I've written about before as [The Sunk Cost Fallacy](http://www.akitaonrails.com/en/2007/08/19/a-falcia-do-custo-perdido). If you already have a loss, the biggest stupidity is persisting with the same loss. It's far more intelligent to write off that cost as lost and simply change direction and move forward.
 
 - **Only do what they're told to do** — if nobody orders testing, they don't test. If nobody orders a proof of concept, they don't create one. If nobody tells them to worry about security, the code ships full of holes. If nobody tells them to automate tests, nobody automates. The quantity of Lemmings we have on projects is impressive. First because everything that should be an obligation isn't done; second because if the boss tells them to shoot their own foot, they shoot! Again, lack of reasoning.
 
@@ -176,8 +176,8 @@ Part of this type of question is the behavior I mentioned above — that people 
 
 I've talked about Reason in some other posts like:
 
-- [Be Arrogant](http://akitaonrails.com/2007/4/14/off-topic-seja-arrogante)
-- [Enemies of Reason](http://akitaonrails.com/2007/8/23/off-topic-inimigos-da-razo)
+- [Be Arrogant](http://akitaonrails.com/en/2007/4/14/off-topic-seja-arrogante)
+- [Enemies of Reason](http://akitaonrails.com/en/2007/8/23/off-topic-inimigos-da-razo)
 - [100% pure Object-Oriented: The Fallacy](http://www.akitaonrails.com/2007/9/4/100-pure-object-oriented-the-fallacy)
 
 ## Conclusions

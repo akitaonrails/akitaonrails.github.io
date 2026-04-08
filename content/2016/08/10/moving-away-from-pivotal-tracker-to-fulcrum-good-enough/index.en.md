@@ -11,9 +11,9 @@ tags:
 draft: false
 ---
 
-I've been blogging about how I am building my own internal infrastructure. Already reported on how I moved from [GitHub and Travis to GitLab](http://www.akitaonrails.com/en/2016/08/03/migrando-para-o-gitlab-sim-vale-a-pena), then how we moved from [Slack to Rocket.chat](http://www.akitaonrails.com/2016/08/09/moving-away-from-slack-into-rocket-chat-good-enough), but the original first move is the subject of this article.
+I've been blogging about how I am building my own internal infrastructure. Already reported on how I moved from [GitHub and Travis to GitLab](http://www.akitaonrails.com/en/2016/08/03/migrando-para-o-gitlab-sim-vale-a-pena), then how we moved from [Slack to Rocket.chat](http://www.akitaonrails.com/en/2016/08/09/moving-away-from-slack-into-rocket-chat-good-enough), but the original first move is the subject of this article.
 
-I've been using Pivotal Tracker since 2010 up to 2015 and this is because I believe it is far superior to Trello and other [glorified to-do lists](http://www.akitaonrails.com/2009/12/16/off-topic-cuidado-com-o-kanban-butt) out there.
+I've been using Pivotal Tracker since 2010 up to 2015 and this is because I believe it is far superior to Trello and other [glorified to-do lists](http://www.akitaonrails.com/en/2009/12/16/off-topic-cuidado-com-o-kanban-butt) out there.
 
 [![Cm42-Central](https://raw.githubusercontent.com/Codeminer42/cm42-central/master/doc/cm42-central-screenshot.png)](https://github.com/Codeminer42/cm42-central)
 

@@ -19,17 +19,17 @@ On top of that we also have the [myth of "motivation"](http://www.huffingtonpost
 
 > "People have two ways of thinking, she says. Those with a 'fixed mindset' believe that their talents or abilities are set in stone. Those with a 'growth mindset' believe their talents and abilities can be developed. Fixed mindsets see every conflict as a test of their worth. Growth mindsets see those same conflicts as opportunities to improve." - Daniel H. Pink, [Drive: The Surprising Truth About What Motivates Us](https://www.goodreads.com/work/quotes/6643001)
 
-And to make it worse, the repeated mantra of "do what you love" which, as I [discussed back in 2014](http://www.akitaonrails.com/2014/09/13/off-topic-nao-faca-o-que-voce-acha-que-ama), is a petty way of devaluing other people's work.
+And to make it worse, the repeated mantra of "do what you love" which, as I [discussed back in 2014](http://www.akitaonrails.com/en/2014/09/13/off-topic-nao-faca-o-que-voce-acha-que-ama), is a petty way of devaluing other people's work.
 
 > "..., the big problem with the 'love what you do' narrative is that it's tied to a discourse of happiness that means 'being on top of the rollercoaster all the time.' As if a normal, day-to-day, routine life couldn't be a life of satisfaction. All of that makes this scenario worrying." - Bárbara Castro - ["5 Reasons why 'do what you love' isn't the solution"](http://exame.abril.com.br/carreira/noticias/5-razoes-pelas-quais-o-faca-o-que-ama-nao-e-uma-solucao)
 
-In our small big world of tech, this leads many people to conclude: "I'm going to work at a startup or start my own," which by itself obviously isn't wrong, but reaching that conclusion motivated by the previous myths is a huge source of unnecessary frustration, as I [already explained in 2013](http://www.akitaonrails.com/2013/10/31/traducao-carta-para-um-jovem-programador-considerando-uma-startup).
+In our small big world of tech, this leads many people to conclude: "I'm going to work at a startup or start my own," which by itself obviously isn't wrong, but reaching that conclusion motivated by the previous myths is a huge source of unnecessary frustration, as I [already explained in 2013](http://www.akitaonrails.com/en/2013/10/31/traducao-carta-para-um-jovem-programador-considerando-uma-startup).
 
 > "I won't mince words: I'm deeply skeptical of this system. I'm skeptical of the slavery of this system, the self-congratulatory fetishization of 'disruption' while at the same time becoming so obviously the kind of impassive institution it wants to replace. I'm skeptical of the short-term vision of the startup community. And I'm particularly skeptical of its disregard for the lives of the people who participate in it and the lives of those who live in the world startups seek to reshape. Let's not even get started on the collusion, cartelization, and other market-corruption activities that are so common in the VC world. The point being: it's a bad game, and a fraudulent one." - Alex Payne
 
 And to make everything worse, there's a "consensus" on social media that the world keeps getting worse. Everything today is worse. People are worse. Jobs are worse. The environment is destroyed. Everything offends everyone all the time and nobody can stop judging others all the time.
 
-And I disagree, as I've [explained back in 2013](http://www.akitaonrails.com/2013/01/02/off-topic-o-mundo-hoje-e-muito-bom-feliz-2013) and repeat every year: the world is better, constantly improving, and the future will be even better! I'd like to take this chance to honor one of the men who helped change my perspective on the world, the recently deceased Dr. Hans Rosling.
+And I disagree, as I've [explained back in 2013](http://www.akitaonrails.com/en/2013/01/02/off-topic-o-mundo-hoje-e-muito-bom-feliz-2013) and repeat every year: the world is better, constantly improving, and the future will be even better! I'd like to take this chance to honor one of the men who helped change my perspective on the world, the recently deceased Dr. Hans Rosling.
 
 ![Hans Rosling](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/619/quote-i-have-a-neighbor-who-knows-200-types-of-wine-i-only-know-two-types-of-wine-red-and-hans-rosling-79-96-23.jpg)
 
@@ -101,10 +101,10 @@ Coincidentally, while I was researching for this post, the [Hipsters Ponto Tech]
 
 And reread my old posts mentioned above, related to these topics:
 
-* [The World Today Is Very Good! Happy 2013!](http://www.akitaonrails.com/2013/01/02/off-topic-o-mundo-hoje-e-muito-bom-feliz-2013)
-* [Letter to a Young Programmer Considering a Startup](http://www.akitaonrails.com/2013/10/31/traducao-carta-para-um-jovem-programador-considerando-uma-startup)
+* [The World Today Is Very Good! Happy 2013!](http://www.akitaonrails.com/en/2013/01/02/off-topic-o-mundo-hoje-e-muito-bom-feliz-2013)
+* [Letter to a Young Programmer Considering a Startup](http://www.akitaonrails.com/en/2013/10/31/traducao-carta-para-um-jovem-programador-considerando-uma-startup)
 * [Constraints are liberating: less is more](http://www.akitaonrails.com/2013/04/01/off-topic-restricoes-sao-libertadoras-menos-e-mais)
-* [Don't Do What You ("THINK") You Love](http://www.akitaonrails.com/2014/09/13/off-topic-nao-faca-o-que-voce-acha-que-ama)
+* [Don't Do What You ("THINK") You Love](http://www.akitaonrails.com/en/2014/09/13/off-topic-nao-faca-o-que-voce-acha-que-ama)
 
 TL;DR: Learn how to learn, and make better use of your life.
 

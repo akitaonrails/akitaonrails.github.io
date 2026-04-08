@@ -14,7 +14,7 @@ translationKey: omarchy-zsh-configs
 description: How I swapped Omarchy's default Bash for ZSH and wired up Atuin, Starship, secrets, and handy aliases to match my workflow.
 ---
 
-I've been really enjoying [Omarchy](https://omarchy.org/) as my desktop manager. Read [my previous post](https://akitaonrails.com/2025/08/29/new-omarchy-2-0-install/) to see how I installed it and tweaked it for my setup. Following that thread, Omarchy ships with Bash as the default shell. I prefer ZSH. Bash is perfectly usable, this is just personal preference. Some people prefer Fish or others. But Omarchy only ships with Bash for now, so I decided to modify the setup to support my ZSH.
+I've been really enjoying [Omarchy](https://omarchy.org/) as my desktop manager. Read [my previous post](https://akitaonrails.com/en/2025/08/29/new-omarchy-2-0-install/) to see how I installed it and tweaked it for my setup. Following that thread, Omarchy ships with Bash as the default shell. I prefer ZSH. Bash is perfectly usable, this is just personal preference. Some people prefer Fish or others. But Omarchy only ships with Bash for now, so I decided to modify the setup to support my ZSH.
 
 ![My ZSH](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/screenshot-2025-09-07_15-16-57.png)
 

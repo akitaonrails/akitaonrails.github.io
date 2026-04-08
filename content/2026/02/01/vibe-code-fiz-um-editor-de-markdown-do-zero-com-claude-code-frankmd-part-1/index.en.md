@@ -14,13 +14,13 @@ description: "How I vibe-coded FrankMD, a self-hosted Markdown editor tailored t
 ---
 
 
-In the last [two](https://akitaonrails.com/2026/01/28/vibe-code-eu-fiz-um-appzinho-100-com-glm-4-7-tv-clipboard/) [posts](https://akitaonrails.com/2026/01/29/vibe-code-qual-llm-%c3%a9-a-melhor-vamos-falar-a-real/) I just wanted to beat up on LLMs to show how hard it is to build something simple from scratch, let alone *"build GTA 6 from scratch"*, as some idiots believe.
+In the last [two](https://akitaonrails.com/en/2026/01/28/vibe-code-eu-fiz-um-appzinho-100-com-glm-4-7-tv-clipboard/) [posts](https://akitaonrails.com/2026/01/29/vibe-code-qual-llm-%c3%a9-a-melhor-vamos-falar-a-real/) I just wanted to beat up on LLMs to show how hard it is to build something simple from scratch, let alone *"build GTA 6 from scratch"*, as some idiots believe.
 
 I've been saying this for years: I LIKE LLMs, I use them a lot since they came out, and I've never had a problem with them. My problem is calibrating the UNREALISTIC expectations of "normies", non-programmers: you're never going to get an app like this with a handful of prompts without knowing exactly which components and techniques to use underneath.
 
 This time, I decided to tackle another little problem that had been sitting on my todo-list for a while: having a self-hosted note-taking web app (to put on my [home-server](/tags/home-server). Over the years I've used everything: Evernote, Notion, Obsidian, among others, but none of them really pleased me. So why not build my own exactly the way I want?
 
-I'm going to split this topic into 2 articles: in this first one, I'll talk exclusively about my application; [in the second one](/2026/02/01/vibe-code-fiz-um-editor-de-markdown-do-zero-com-claude-code-frankmd-parte-2/), I'll talk about the process of vibe coding with Claude. Spoilers: it took 3 full days (roughly **30 hours**). 137 pull requests! Wait for the post-mortem.
+I'm going to split this topic into 2 articles: in this first one, I'll talk exclusively about my application; [in the second one](/en/2026/02/01/vibe-code-fiz-um-editor-de-markdown-do-zero-com-claude-code-frankmd-parte-2/), I'll talk about the process of vibe coding with Claude. Spoilers: it took 3 full days (roughly **30 hours**). 137 pull requests! Wait for the post-mortem.
 
 ## The Problem
 
@@ -213,5 +213,5 @@ To make sure everything is working, this very article was written entirely with 
 
 Considering it cost me **3 days of work** and that I didn't write a single line of code, the result is impressive. Yes, text editors are very well documented applications with tons of training material — that's why Claude managed to build it without trouble. Don't get too impressed. That said, yes, I wanted a custom editor for my personal use, one that would be beautiful to use, and it managed to deliver, so I'm satisfied.
 
-Don't miss [PART 2](/2026/02/01/vibe-code-fiz-um-editor-de-markdown-do-zero-com-claude-code-frankmd-parte-2/) for the details of how this was built.
+Don't miss [PART 2](/en/2026/02/01/vibe-code-fiz-um-editor-de-markdown-do-zero-com-claude-code-frankmd-parte-2/) for the details of how this was built.
 

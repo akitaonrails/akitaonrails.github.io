@@ -22,7 +22,7 @@ See this excerpt from [The Black Swan](http://www.amazon.com/Black-Swan-Impact-H
 > 
 > The government-sponsored institution, [Fannie Mae](http://en.wikipedia.org/wiki/Fannie_Mae), when I look at its risks, seems to be sitting on a barrel of dynamite, vulnerable to the slightest hiccup. But not to worry: their large teams of scientists deem these events "unlikely."
 
-No, Nassim is not a prophet, a fortune-teller, or a guru. He'd actually hate being called a guru. He simply made an observation based on what all of us ignore: unfortunately our human machinery is very poor at handling abstractions, such as [Randomness](http://www.akitaonrails.com/2008/3/1/off-topic-somos-matematicamente-ignorantes).
+No, Nassim is not a prophet, a fortune-teller, or a guru. He'd actually hate being called a guru. He simply made an observation based on what all of us ignore: unfortunately our human machinery is very poor at handling abstractions, such as [Randomness](http://www.akitaonrails.com/en/2008/3/1/off-topic-somos-matematicamente-ignorantes).
 
 This isn't an argument against globalization or other pseudo-socialist nonsense either. The really important part is the second paragraph of the quote.
 
@@ -137,6 +137,6 @@ Don't let your decision be biased by non-scientific theories (pseudo-science, su
 
 Again, read Taleb: what he says is **obvious**, but for some reason we all ignore it. Few people truly understand what randomness is. Stop frenetically watching Bloomberg, stop refreshing your browser every 5 seconds to check financial indices — none of that will help you: you've already ignored the Black Swan, you've already lost.
 
-Just to give a _hint_ about Agile philosophy: it seems quite intelligent, for example, why Agile methodologies insist so much on **short** Sprints/Iterations. They know it's impossible to predict the long-term future, and that's precisely why they prioritize what's truly important and try to plan only the short term — only what's effectively possible. Agile methodologies seem especially designed to defend against the Black Swans that still haunt _traditional_ software development teams, as I explained in my [previous](http://www.akitaonrails.com/2008/10/7/off-topic-o-manifesto-gil-ou-como-se-tornar-o-google) article.
+Just to give a _hint_ about Agile philosophy: it seems quite intelligent, for example, why Agile methodologies insist so much on **short** Sprints/Iterations. They know it's impossible to predict the long-term future, and that's precisely why they prioritize what's truly important and try to plan only the short term — only what's effectively possible. Agile methodologies seem especially designed to defend against the Black Swans that still haunt _traditional_ software development teams, as I explained in my [previous](http://www.akitaonrails.com/en/2008/10/7/off-topic-o-manifesto-gil-ou-como-se-tornar-o-google) article.
 
 Everyone has only known white swans in the past and infers that Black Swans don't exist. That's where the danger lies!
