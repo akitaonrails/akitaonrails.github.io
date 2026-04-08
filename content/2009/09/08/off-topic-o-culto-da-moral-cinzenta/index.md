@@ -19,7 +19,7 @@ Estou lendo o excelente livro [The Virtue of Selfishness](http://www.aynrandbook
 > 
 > Esse conceito não inclui avaliação moral; ele não nos diz se se preocupar com seus próprios interesses é bom ou mau; nem nos diz o que constitui os reais interesses do homem. É a tarefa da ética responder essas questões.
 > 
-> A ética do altruísmo criou a imagem do bruto, como sua resposta, de forma a fazer os homens aceitar dois princípios inhumanos: (a) que qualquer preocupação com seus próprios interesses é mal, seja lá quais sejam esses interesses, e (b) que as atividades dos brutos são de fato para seus próprios interesses (o qual o altruísmo encoraja o homem a renunciar pelo seu próprio bem e a de seus vizinhos).
+> A ética do altruísmo criou a imagem do bruto, como sua resposta, de forma a fazer os homens aceitar dois princípios inumanos: (a) que qualquer preocupação com seus próprios interesses é mal, seja lá quais sejam esses interesses, e (b) que as atividades dos brutos são de fato para seus próprios interesses (o qual o altruísmo encoraja o homem a renunciar pelo seu próprio bem e a de seus vizinhos).
 
 Isso dito, não recomendo a leitura do livro, pois ela lida justamente com a quebra dos conceitos conhecidos como “senso comum” atualmente, coisa que a maioria das pessoas simplesmente não tem vontade de mudar :-D Mas falando sério, se você gosta de pensar, esta coletânea é muito interessante.
 
@@ -36,7 +36,7 @@ Antes que alguém consiga identificar qualquer coisa como “cinza”, ela tem q
 
 …
 
-Se, num assunto complexo de moral, um homem tem dificuldades em determinar o que é certo, e falha ou faz um erro honesto, ele não pode ser colocado como “cinza”; moralmente, ele é “branco”. Erros de conhecimento não são brechas morais; nenhum código moral decente pode exigir infalabilidade ou omnisciência.
+Se, num assunto complexo de moral, um homem tem dificuldades em determinar o que é certo, e falha ou faz um erro honesto, ele não pode ser colocado como “cinza”; moralmente, ele é “branco”. Erros de conhecimento não são brechas morais; nenhum código moral decente pode exigir infalibilidade ou onisciência.
 
 Mas se, para escapar da responsabilidade do julgamento moral, um homem fecha seus olhos e sua mente, se ele se esquiva dos fatos do problema e se esforça para não saber, ele não pode ser colocado como “cinza”; moralmente, ele é tão “preto” como se deve ser.
 
@@ -48,11 +48,11 @@ Se o homem é “cinza” por natureza, nenhum conceito moral é aplicável a el
 
 …
 
-Uma noção similar, envolvendo erros similares, é dito por algumas pessoas que acreditam que a doutrina da moralidade cinzenta é meramente a repetição da proposição: _“Existem sempre dois lados para a mesma história.”_, o que eles querem dizer é que ninguém está totalmente certo ou totalmente errado. Mas não é isso que essa proposição significa ou quer dizer. Isso não significa que os clamores de ambos os lados serão necessariamente igualmente válidas, nem mesmo que existirá uma pequena parcela de justiça em ambos os lados. Mais frequentemente, a justiça ficará de um dos lados, e premissa desqualificada (ou pior) do outro.
+Uma noção similar, envolvendo erros similares, é dita por algumas pessoas que acreditam que a doutrina da moralidade cinzenta é meramente a repetição da proposição: _“Existem sempre dois lados para a mesma história.”_, o que eles querem dizer é que ninguém está totalmente certo ou totalmente errado. Mas não é isso que essa proposição significa ou quer dizer. Isso não significa que os clamores de ambos os lados serão necessariamente igualmente válidos, nem mesmo que existirá uma pequena parcela de justiça em ambos os lados. Mais frequentemente, a justiça ficará de um dos lados, e premissa desqualificada (ou pior) do outro.
 
-Existem, claro, problemas complexos onde ambos os lados estão certos em algumas partes e erradas em outras – e é aqui que o esquema de pronunciar ambos os lados como “cinza” é menos permitível. É nesse tipo de problema que a precisão rigorosa do julgamento moral é necessário para identificar e avaliar os vários aspectos – que pode ser feito apenas desmontando os elementos misturados de “preto” e “branco”.
+Existem, claro, problemas complexos onde ambos os lados estão certos em algumas partes e errados em outras – e é aqui que o esquema de pronunciar ambos os lados como “cinza” é menos permitível. É nesse tipo de problema que a precisão rigorosa do julgamento moral é necessária para identificar e avaliar os vários aspectos – que pode ser feito apenas desmontando os elementos misturados de “preto” e “branco”.
 
-O erro básico em todas essas várias confusões é a mesma: ele consiste de esquecer que moralidade lida somente com assuntos abertos à escolha dos homens – o que significa: esquecer a diferença entre “não conseguir” e “não querer”. Isso permite às pessoas traduzir a frase-feita _“Não existem preto e branco”_ em: _“Os homens não conseguem ser totalmente bons ou maus”_ – o que eles aceitam, em obscura resignação, sem questionar as contradições metafísicas que isso trás.
+O erro básico em todas essas várias confusões é o mesmo: ele consiste de esquecer que moralidade lida somente com assuntos abertos à escolha dos homens – o que significa: esquecer a diferença entre “não conseguir” e “não querer”. Isso permite às pessoas traduzir a frase-feita _“Não existem preto e branco”_ em: _“Os homens não conseguem ser totalmente bons ou maus”_ – o que eles aceitam, em obscura resignação, sem questionar as contradições metafísicas que isso traz.
 
 Mas não muitas pessoas aceitariam isso, se essa frase-feita fosse traduzida no significado real em que ela foi intencionada para adentrar em suas mentes: _“Os homens não querem ser totalmente bons ou maus.”_
 
@@ -62,7 +62,7 @@ A primeira coisa que alguém diria para quem repetisse a afirmação acima é: _
 
 Observe a forma que as pessoas se encontram com essa doutrina: quase nunca é apresentada como algo positivo, como uma teoria ética ou um assunto de discussão; predominantemente, se escuta como algo negativo, como uma rápida objeção ou reprovação, de uma maneira a implicar a culpa de alguém ou quebra de algo absoluto tão óbvio que não precisa de discussão. Em tons que vão de surpresa ao sarcasmo à raiva à indignação para ódio histérico, a doutrina é jogada a você na forma de uma acusação: _“Obviamente, você não pensa em termos de preto-e-branco, não é?”_
 
-Levado pela confusão, incapacidade de se defender e medo do assunto inteiro de moralidade, a maioria das pessoas rapidamente respondem de forma culpada: _“Não, claro que não”_, sem qualquer idéia clara da natureza da acusação. Eles não páram para pensar que a acusação está dizendo, na verdade: _“Obviamente você não é tão injusto a ponto de discriminar entre bem e mal, não é?”_ – ou: _“Obviamente você não é tão mal de forma a procurar o bem, não é?”_ – ou: _“Obviamente você não é tão imoral a ponto de acreditar em moralidade!”_
+Levado pela confusão, incapacidade de se defender e medo do assunto inteiro de moralidade, a maioria das pessoas rapidamente respondem de forma culpada: _“Não, claro que não”_, sem qualquer ideia clara da natureza da acusação. Eles não param para pensar que a acusação está dizendo, na verdade: _“Obviamente você não é tão injusto a ponto de discriminar entre bem e mal, não é?”_ – ou: _“Obviamente você não é tão mal de forma a procurar o bem, não é?”_ – ou: _“Obviamente você não é tão imoral a ponto de acreditar em moralidade!”_
 
 …
 

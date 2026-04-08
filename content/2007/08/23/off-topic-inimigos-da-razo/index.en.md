@@ -2,7 +2,6 @@
 title: 'Off Topic: Enemies of Reason'
 date: '2007-08-23T17:37:00-03:00'
 slug: off-topic-inimigos-da-razo
-translationKey: enemies-of-reason
 tags:
 - off-topic
 - principles

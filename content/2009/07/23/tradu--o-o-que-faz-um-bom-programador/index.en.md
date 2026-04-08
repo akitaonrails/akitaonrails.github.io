@@ -5,7 +5,6 @@ slug: tradu--o-o-que-faz-um-bom-programador
 tags:
 - off-topic
 - career
-translationKey: what-makes-a-good-programmer
 draft: false
 ---
 

@@ -7,7 +7,6 @@ tags:
 - apple
 - marketing
 draft: false
-translationKey: heres-to-the-crazy-ones
 ---
 
 **Source: [Blog.MacMagazine.com](http://macmagazine.com.br/blog/page/54/)**

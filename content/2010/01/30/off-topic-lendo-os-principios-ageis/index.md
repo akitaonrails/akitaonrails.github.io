@@ -37,7 +37,7 @@ A mesma coisa dita com outras palavras: software que não está entregue é soft
 
 Não consigo deixar de imaginar que foi o Martin Fowler um dos que devem ter sugerido esse princípio, especialmente por causa do seu artigo [Cannot Measure Productivity](http://martinfowler.com/bliki/CannotMeasureProductivity.html). Software não se mede em função de produtividade, ele se mede em função de valor. E quem define o valor a ser atingido via desenvolvimento de software é o cliente/empresa. Se o software desenvolvido não trás valor, isso não é culpa do software, mas culpa da definição de valor do software. Uma ferramenta, por si só, não tem valor nenhum.
 
-Por isso que eu disse que LOC e pontos de função não servem para nada. Posso ter uma equipe que entrega 10 mil pontos de função por Sprint. Não significa nada se o que foi pedido para se desenvolvido não trás nenhum valor para o cliente. Essa é uma das funções de um Product Owner: garantir que o que está sendo priorizado para desenvolvimento é algo que efetivamente trará valor, seja no curto prazo, seja no longo prazo, dependendo da visão de futuro que ele tenha. Se o PO não tem visão, não tem estratégia e não tem direção clara, ele terá exatamente isso como resultado: muito software e pouco valor, e a culpa disso nunca é da equipe técnica, é da falta de visão e, consequentemente, problema do PO e/ou da empresa.
+Por isso que eu disse que LOC e pontos de função não servem para nada. Posso ter uma equipe que entrega 10 mil pontos de função por Sprint. Não significa nada se o que foi pedido para ser desenvolvido não trás nenhum valor para o cliente. Essa é uma das funções de um Product Owner: garantir que o que está sendo priorizado para desenvolvimento é algo que efetivamente trará valor, seja no curto prazo, seja no longo prazo, dependendo da visão de futuro que ele tenha. Se o PO não tem visão, não tem estratégia e não tem direção clara, ele terá exatamente isso como resultado: muito software e pouco valor, e a culpa disso nunca é da equipe técnica, é da falta de visão e, consequentemente, problema do PO e/ou da empresa.
 
 E falando em POs, não podemos deixar de falar de stakeholders em geral, os interessados no valor a ser gerado pelo projeto:
 
@@ -47,7 +47,7 @@ Pessoalmente eu detestaria burocratas todos os dias num ambiente de desenvolvime
 
 Equipes são um reflexo da organização da empresa. Se as camadas mais altas são desorganizadas, indecisas, incomunicáveis e irresponsáveis, as equipes serão da mesma forma. O que são equipes se não sub-sistemas, cópias do sistema complexo adaptativo mais chamado “empresa”?
 
-Uma empresa pode contratar 100 Linus Torvalds, 100 Guido Von Rossum, 100 Jonh Resig, mas não espere que eles sozinhos saiam com iPods, com iPhones e outros grandes produtos que venderão milhões. A Apple funciona porque – eu especulo – um Steve Jobs sai da sua cadeira e se envolve no dia a dia das equipes de pesquisa e desenvolvimento pessoalmente, mesmo sendo o CEO.
+Uma empresa pode contratar 100 Linus Torvalds, 100 Guido Von Rossum, 100 John Resig, mas não espere que eles sozinhos saiam com iPods, com iPhones e outros grandes produtos que venderão milhões. A Apple funciona porque – eu especulo – um Steve Jobs sai da sua cadeira e se envolve no dia a dia das equipes de pesquisa e desenvolvimento pessoalmente, mesmo sendo o CEO.
 
 Falando dessa forma parece que um lado se isenta da responsabilidade do outro. É claro que não, a melhor forma de trabalho é **colaborativa** , porém a responsabilidade de chegar com as melhores soluções tecnológicas, de qualidade técnica e eficiência, a equipe técnica é quem tem que se virar. Por outro lado os stakeholders são os responsáveis em fazer estudos mercadológicos, pesquisas de marketing, visão de produtos. Um lado pode e deve colaborar com o outro, mas infelizmente todo mundo não pode igualmente fazer tudo. Dado que os stakeholders tragam a visão, a equipe técnica vai fazer o possível para cumprir essa visão. Mas a visão não é autoritária, da mesma forma como algumas decisões tecnológicas não devem ser. A crítica fica porque normalmente as ordens vêm de uma direção só, sem discussão, e a equipe técnica, mesmo performando seu trabalho corretamente, pode estar seguindo uma direção errada e no final a crítica se volta a ela mesma pelo fracasso de uma visão que sequer foi discutida.
 
@@ -61,11 +61,11 @@ Finalmente, não existe nada pior que um stakeholder ausente que só dá as cara
 
 > “Em intervalos regulares, a equipe reflete sobre como se tornar mais efetiva, então refina e ajusta seu comportamento de acordo.”
 
-Toda metodologia ágil possui uma fase de “Retrospectiva”, um dos rituais para equipes que não estavam acostumadas a conversar. Nenhum processo é uma bala de prata e ela precisa ser refinada constantemente. Aliás, o ideal é que toda retrospectiva ao final de todo sprint tenha algo a ser mudado. Não existem cenário perfeito, existe sim melhoria contínua e ininterrupta. Se nada muda depois de cada retrospectiva, se ninguem sugere mudanças ao final de cada sprint, alguma coisa está errada.
+Toda metodologia ágil possui uma fase de “Retrospectiva”, um dos rituais para equipes que não estavam acostumadas a conversar. Nenhum processo é uma bala de prata e ela precisa ser refinada constantemente. Aliás, o ideal é que toda retrospectiva ao final de todo sprint tenha algo a ser mudado. Não existe cenário perfeito, existe sim melhoria contínua e ininterrupta. Se nada muda depois de cada retrospectiva, se ninguém sugere mudanças ao final de cada sprint, alguma coisa está errada.
 
 Os outros princípios acho que falam por si só:
 
-> “Receba mudanças de requerimento, mesmo tarde no desenvolvimento. Processos Ágeis esperam mudança que tragam mais vantagem competitiva ao cliente.”
+> “Receba mudanças de requerimento, mesmo tarde no desenvolvimento. Processos Ágeis esperam mudanças que tragam mais vantagem competitiva ao cliente.”
 
 Mudanças são bem vindas, mas somente mudanças que tragam vantagens competitivas ao cliente, e não mudanças aleatórias baseadas no humor dos envolvidos.
 
@@ -103,7 +103,7 @@ Mas cuidado, muitos confundem Agilidade, e os conceitos de Auto-Organização e 
 
 > “Finalmente, medo de rejeição e uma forte tendência em direção à conformidade entre membros de um sistema social e outros obstáculos a mudanças sociais. Um exemplo é o experimento em uma cidade com lei-seca (que não permite venda de álcool) cujos constituintes deveriam votar sobre a banição contra o álcool. Uma pesquisa pré-votação indicou que 75% dos eleitores eram a favor de abolir o banimento. Entretanto, cada um dos eleitores achavam que a maioria preferia a lei-seca. Quando os resultados foram tabulados, 60% dos eleitores votaram para manter a lei-seca. Não surpreendentemente, depois que a pesquisa foi publicada, a próxima eleição sobre o assunto produziu 65% de maioria em favor da abolição do banimento.”
 
-Democracia baseada em [Tirania da Maioria](http://en.wikipedia.org/wiki/Tyranny_of_the_majority) não é útil. Esse assunto é bem mais complicado do que simplesmente fazer as pessoas votarem as opções e não deve ser tratada de forma leviana. Cientistas Políticos, Filósofos e diversos pesquisadores vem estudando esse assunto e garanto que existem ampla literatura a respeito.
+Democracia baseada em [Tirania da Maioria](http://en.wikipedia.org/wiki/Tyranny_of_the_majority) não é útil. Esse assunto é bem mais complicado do que simplesmente fazer as pessoas votarem as opções e não deve ser tratado de forma leviana. Cientistas Políticos, Filósofos e diversos pesquisadores vêm estudando esse assunto e garanto que existe ampla literatura a respeito.
 
 Aliás, esse assunto todo é mais complexo do que meramente ler os 12 princípios. Um Engenheiro, um Médico, um Advogado, estudam anos e estão sempre longe de serem mestres nas suas áreas. Um Gerente, por outro lado, estuda muito pouco sobre o assunto, e por isso decidem baseados mais em folclore do que qualquer outra coisa. Isso é péssimo e, principalmente nesses casos, quando acertam é por sorte e quando erram é nada mais do que o esperado.
 

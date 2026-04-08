@@ -17,13 +17,13 @@ Sim, eu sou consultor. Se existe um conselho que gosto de dar é esse: mantenham
 Em 10 anos eu mudei de empresa umas 5 vezes, e de dentro da consultoria eu pulei dentro de vários clientes. Isso é estressante, concordo, mas vale a pena. Se você estiver aberto a aprender, vai tirar muitas boas lições para o futuro.
 
 
-Consultorias são particularmente mais perigosas, principalmente as pequenas, mais ainda se forem como meu contratente anterior. Um dos motivos (foram vários) que me levaram a sair foram os atrasos de salário. Opa, _salário_ não, _pagamento_. Lembrem-se que quando se trabalha como pessoa jurídica, não é mais um relacionamento entre patrão e funcionário, mas sim entre cliente e fornecedor. Você fornece um serviço pelo qual emite nota fiscal faturando o pagamento.
+Consultorias são particularmente mais perigosas, principalmente as pequenas, mais ainda se forem como meu contratante anterior. Um dos motivos (foram vários) que me levaram a sair foram os atrasos de salário. Opa, _salário_ não, _pagamento_. Lembrem-se que quando se trabalha como pessoa jurídica, não é mais um relacionamento entre patrão e funcionário, mas sim entre cliente e fornecedor. Você fornece um serviço pelo qual emite nota fiscal faturando o pagamento.
 
-Enfim, em 2004 já passamos por crise parecida. Não há como perder dinheiro em consultoria. Eles te contraram a R$ 50 por hora e te vendem ao cliente por até R$ 100. São _markups_ de até 100%. Já vi peões que eu sei que não recebem mais do que R$ 40 por hora sendo vendidos a R$ 250. É muita coisa.
+Enfim, em 2004 já passamos por crise parecida. Não há como perder dinheiro em consultoria. Eles te contratam a R$ 50 por hora e te vendem ao cliente por até R$ 100. São _markups_ de até 100%. Já vi peões que eu sei que não recebem mais do que R$ 40 por hora sendo vendidos a R$ 250. É muita coisa.
 
 Para nós, consultores, funciona como um _seguro_: você terceiriza à consultoria a responsabilidade de lidar com clientes, procurar projetos, cuidar das alocações, etc. É como um plano de saúde: você paga uma _mensalidade_ e em contrapartida eles tem a obrigação de te manter estável, pagando em dia, alocando em bons projetos.
 
-Fazendo a lição de casa, a consultoria sempre tem uma boa reserva, o fluxo de caixa não é complicado. É um negócio da China. Principalmente em um mundo como a SAP, onde os consultores tem taxas artificialmente elevadas, graças à limitação e custo pornográfico na formação de consultores – e de baixíssima qualidade, diga-se de passagem. Hoje, os cliente pagam muito caro para receber serviços ruins e não reclamam, é o cenário ideal.
+Fazendo a lição de casa, a consultoria sempre tem uma boa reserva, o fluxo de caixa não é complicado. É um negócio da China. Principalmente em um mundo como a SAP, onde os consultores têm taxas artificialmente elevadas, graças à limitação e custo pornográfico na formação de consultores – e de baixíssima qualidade, diga-se de passagem. Hoje, os clientes pagam muito caro para receber serviços ruins e não reclamam, é o cenário ideal.
 
 ![Dilbert2061101070619](/files/dilbert2061101070619.gif)
 
@@ -45,7 +45,7 @@ Não há problema nenhum nisso contanto que você se coloque nessa posição: vo
 
 ![Dilbert2004073370613](/files/dilbert2004073370613.gif)
 
-Já contei isso há algumas pessoas, mas conto novamente. Eu queria ter dado entrada num apartamento ano passado. Em não confiando na integridade da consultoria, não fiz isso. Também troquei de carro ano passado, poderia ter pago à vista. Depois de uma hora calculando (aprendam a usar a HP-12C!) decidi financiar. Tudo isso deu resultado: eu mantive minha liquidez. Isso foi essencial para suportar a decisão que tomei mês passado: abandonar o barco furado.
+Já contei isso a algumas pessoas, mas conto novamente. Eu queria ter dado entrada num apartamento ano passado. Como não confiava na integridade da consultoria, não fiz isso. Também troquei de carro ano passado, poderia ter pago à vista. Depois de uma hora calculando (aprendam a usar a HP-12C!) decidi financiar. Tudo isso deu resultado: eu mantive minha liquidez. Isso foi essencial para suportar a decisão que tomei mês passado: abandonar o barco furado.
 
 Por muita sorte, a [Surgeworks](http://www.surgeworks.com) cruzou meu caminho exatamente na mesma época. Mas eu não estava contando com isso. Sempre devemos considerar o pior cenário: ficar desempregado por vários meses. Você precisa de reservas, em forma de investimento com boa liquidez, para esses momentos.
 
@@ -55,7 +55,7 @@ Obviamente precisamos minimizar o pior cenário, por isso que meus artigos anter
 
 ![Dilbert2007062036616](/files/dilbert2007062036616.gif)
 
-Mesmo se não for consultor, mas se for empregado de uma empresa que comece a apresentar alguns dos sintomas acima prepare sua saída. Deixem se ser deslumbrados, não se endividem em grandes valores sem precisar. E o principal: não se deixem levar por discursos. Quando a situação está boa, você é “bem considerado”, te tratam bem, eventualmente até te dêem um pequeno aumento ou alguma lambuja.
+Mesmo se não for consultor, mas se for empregado de uma empresa que comece a apresentar alguns dos sintomas acima prepare sua saída. Deixem de ser deslumbrados, não se endividem em grandes valores sem precisar. E o principal: não se deixem levar por discursos. Quando a situação está boa, você é “bem considerado”, te tratam bem, eventualmente até te deem um pequeno aumento ou alguma lambuja.
 
 Mesmo assim você estará trabalhando por menos do que merece. E quando a situação ficar feia, será chamado para “ajudar”, mesmo sem receber, mesmo sacrificando sua vida pessoal novamente. E se escolher sair, toda aquela “consideração” vai por água abaixo: você passará a ser o **traíra** , aquele que deixou na mão quando mais se precisava, blá blá blá. Não se intimidem. Se a empresa vai mal, a culpa não é sua. Muito pelo contrário: é a empresa que quebrou o elo de confiança primeiro.
 
@@ -65,7 +65,7 @@ Saí com mais de um mês e meio de atraso. Mando e-mails de cobrança e sabem o 
 
 ![Dilbert2004887970523](/files/dilbert2004887970523.gif)
 
-Depois de 5 anos, entregando todos os projetos com sucesso, deixando todos os cliente satisfeitos, varando noites, trabalhando feriados, não visitando os parentes nos fins de semana, não levando a esposa para viajar nos últimos 4 anos, sequer indo ao enterro do avô. No fim das contas, é assim que um “recurso” é tratado: como mais um “recurso”.
+Depois de 5 anos, entregando todos os projetos com sucesso, deixando todos os clientes satisfeitos, varando noites, trabalhando feriados, não visitando os parentes nos fins de semana, não levando a esposa para viajar nos últimos 4 anos, sequer indo ao enterro do avô. No fim das contas, é assim que um “recurso” é tratado: como mais um “recurso”.
 
 Usem as consultorias assim como elas o usam. Elas ainda são “portas de entrada” para vários clientes, principalmente os de bons nomes e que normalmente são retrógrados, cabideiros e altamente ineficientes. Mas nomes assim contam pontos no seu currículo e todo mundo precisa sofrer empresas ineficientes para aprender “como não se deve fazer”.
 

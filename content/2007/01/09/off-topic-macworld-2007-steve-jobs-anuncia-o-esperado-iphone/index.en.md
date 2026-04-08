@@ -7,7 +7,6 @@ tags:
 - apple
 - iphone
 draft: false
-translationKey: macworld-2007-iphone-announcement
 ---
 
 

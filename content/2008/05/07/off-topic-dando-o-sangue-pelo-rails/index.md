@@ -26,7 +26,7 @@ Ledo engano. E eis que minha saga começa. Aliás, cá estou eu, escrevendo este
 
 ### O preço da “modernidade” – Parte 3
 
-Aproximadamente no fim de março eu tentei ir à uma das agências da PF em São Paulo, daqueles que atendem em Shopping Center. Separei os documentos, paguei a GRU e fui, na inocência. Eis que nem pude entrar. A resposta foi: _“agora precisa agendar via internet.”_
+Aproximadamente no fim de março eu tentei ir a uma das agências da PF em São Paulo, daqueles que atendem em Shopping Center. Separei os documentos, paguei a GRU e fui, na inocência. Eis que nem pude entrar. A resposta foi: _“agora precisa agendar via internet.”_
 
 Ok, tentei agendar via internet. Porém, no sistema (novamente, o temido SISTEMA), não havia nenhuma data disponível para agendamento. Eu achei que deveria ser problema no SISTEMA, como sempre.
 

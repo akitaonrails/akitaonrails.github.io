@@ -26,11 +26,11 @@ Sinto muito, eu gosto da língua portuguesa, sempre vai ser minha primeira líng
 
 A primeira razão é que no mundo Ocidental (estou excluindo o que acontece no Oriente, porque eu não sei ler Chinês e o mercado lá também é gigantesco) tudo que sai de novo sai primeiro em inglês. Se for esperar alguém se interessar em traduzir, pense no trabalho que isso dá e o tempo que leva. Você vai estar necessariamente vendo material defasado se esperar sair em português. E quando começar a se interessar pelo material pode ser que ele já esteja inclusive obsoleto. Você não vai estar um passo atrás, vai estar centenas de quilômetros atrás.
 
-A segunda razão é que o mundo da internet é globalizado. Não é incomum pegar código feito em outros países para continuar e não é incomum o código que você fizer ter que ser dividido com programadores de outros países. Se faça um favor: não passe vergonha.
+A segunda razão é que o mundo da internet é globalizado. Não é incomum pegar código feito em outros países para continuar e não é incomum o código que você fizer ter que ser dividido com programadores de outros países. Faça-se um favor: não passe vergonha.
 
 ## Guerras Religiosas
 
-Programação não é torcida de futebol, nem numerologia, nem astrologia. Não tem horóscopo, não tem guru. Lembre-se isso se chama **CIÊNCIA** da Computação, não **Astrologia** da Computação.
+Programação não é torcida de futebol, nem numerologia, nem astrologia. Não tem horóscopo, não tem guru. Lembre-se: isso se chama **CIÊNCIA** da Computação, não **Astrologia** da Computação.
 
 Todo mundo tem gostos subjetivos, só que é estupidez transformar gosto em dogma. A preguiça de ter que aprender algo novo faz o famoso _"Sou bom em Clipper, essa linguagem vai evoluir no futuro e sempre vai existir, basta eu defender com unhas e dentes que não importa o que surgir depois."_
 
@@ -52,7 +52,7 @@ Vamos dar alguns exemplos. Se eu perguntar a um iniciante como procurar por pala
 * usar uma expressão regular ou num banco de dados usar um "LIKE" (solução genérica)
 * instalar um SOLR ou Elasticsearch (solução correta em muitos casos, mas "magia negra" no entendimento)
 
-A maioria nem pensaria na 3a solução. E se pensar não sabe porque. E se eu disser que - obviamente de forma absolutamente crú e resumida - a solução está em transformar um documento e os termos de pesquisa em vetores e calcular a relevância entre os termos de procura e os documentos por [similaridade de cosseno](http://en.wikipedia.org/wiki/Cosine_similarity)? Pois é exatamente isso que significa [Vector Space Model](http://en.wikipedia.org/wiki/Vector_space_model) (VSM) que você vai encontrar em diversas engines de procura.
+A maioria nem pensaria na 3a solução. E se pensar não sabe porque. E se eu disser que - obviamente de forma absolutamente crua e resumida - a solução está em transformar um documento e os termos de pesquisa em vetores e calcular a relevância entre os termos de procura e os documentos por [similaridade de cosseno](http://en.wikipedia.org/wiki/Cosine_similarity)? Pois é exatamente isso que significa [Vector Space Model](http://en.wikipedia.org/wiki/Vector_space_model) (VSM) que você vai encontrar em diversas engines de procura.
 
 <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'>{{< youtube id="ZEkO8QSlynY" >}}</div>
 
@@ -66,7 +66,7 @@ Como você já deve imaginar, a resposta mais "óbvia" ou "simples" (considerand
 
 Conheça sobre machine learning e uma das formas mais simples disso chamada [Classificador Bayesiano Ingênuo](http://en.wikipedia.org/wiki/Naive_Bayes_classifier). Alguém pode pensar _"puts, mas isso de machine learning é avançado demais pro dia a dia."_ De maneira alguma. Aliás, qualquer filtro anti-spam vagabundo que  você encontra num site de downloads gratuitos usa um classificador.
 
-A idéia é que simplesmente palavras simples não são suficiente para determinar se um conteúdo é impróprio ou não. A forma da construção de frases, o "tom" da forma de se escrever. Tudo isso forma um padrão que pode ser classificado e aprendido. Quanto mais conteúdo impróprio é classificado mais eficiente o algoritmo fica. Se quiser experimentar uma forma simples [em Ruby veja este blog](http://blog.logankoester.com/bayesian-classification-on-rails). Se quiser aprender sobre classificadores mais avançados, veja o projeto [Apache Mahout](https://mahout.apache.org/).
+A ideia é que simplesmente palavras simples não são suficientes para determinar se um conteúdo é impróprio ou não. A forma da construção de frases, o "tom" da forma de se escrever. Tudo isso forma um padrão que pode ser classificado e aprendido. Quanto mais conteúdo impróprio é classificado mais eficiente o algoritmo fica. Se quiser experimentar uma forma simples [em Ruby veja este blog](http://blog.logankoester.com/bayesian-classification-on-rails). Se quiser aprender sobre classificadores mais avançados, veja o projeto [Apache Mahout](https://mahout.apache.org/).
 
 {{< youtube id="DdYSMwEWbd4" >}}
 

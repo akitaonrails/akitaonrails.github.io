@@ -23,7 +23,7 @@ A imagem enigmática acima foi publicada em seu [website](http://www.apple.com/)
 
 Na WWDC 2006, no ano passado, Steve anunciou algumas das principais funcionalidades do próximo sistema operacional, **Mac OS X 10.5 Leopard** , que deve ser lançado ainda este trimestre. Durante aquele keynote ele mostrou o famoso slide “Top Secret”, dizendo que existiam novidades incríveis mas que eles ainda não iriam mostrá-la para evitar que a Microsoft copiasse antes do tempo. Será que chegou a hora de conhecermos esses segredos?
 
-Enquanto isso os [rumores](http://daringfireball.net/2007/01/macworld_expo_predictions) continuam. Será que Steve vai anunciar sua aposentadoria? Será um novo Mac para comemorar o aniversário de 30 anos da Apple? Será um novo Macbook no formato de sub-notebook com solid-state storage? Será o tão badalado **iPhone** , a combinação entre iPod+celular? Será o anúncio do lançamento imediado do Leopard?
+Enquanto isso os [rumores](http://daringfireball.net/2007/01/macworld_expo_predictions) continuam. Será que Steve vai anunciar sua aposentadoria? Será um novo Mac para comemorar o aniversário de 30 anos da Apple? Será um novo Macbook no formato de sub-notebook com solid-state storage? Será o tão badalado **iPhone** , a combinação entre iPod+celular? Será o anúncio do lançamento imediato do Leopard?
 
 Ou serão apenas pequenas coisas mesmo, como o anúncio do já conhecido iTV, de novas versões do iTunes, iLife, mais funcionalidades não importantes do Leopard? Ou o padrão: um Mac Mini com processador Core 2 Duo e um Mac Pro com os novos Dual Quad Xeon?
 

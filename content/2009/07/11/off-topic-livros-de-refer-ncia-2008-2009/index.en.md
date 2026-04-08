@@ -6,7 +6,6 @@ tags:
 - off-topic
 - management
 - career
-translationKey: reference-books-2008-2009
 draft: false
 ---
 

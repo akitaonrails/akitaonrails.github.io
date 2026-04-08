@@ -12,7 +12,7 @@ tags:
 draft: false
 ---
 
-Hoje eu li uma [série de tweets de Marc Andressen](http://www.businessinsider.com/andreessen-whatever-you-do-dont-follow-your-passion-2014-5) onde ele começa dizendo o seguinte:
+Hoje eu li uma [série de tweets de Marc Andreessen](http://www.businessinsider.com/andreessen-whatever-you-do-dont-follow-your-passion-2014-5) onde ele começa dizendo o seguinte:
 
 <blockquote>
 "Faça o que ama"/"Siga sua paixão" é um conselho perigoso e pode destruir sua carreira.
@@ -24,15 +24,15 @@ Outra celebridade reconhecida nos EUA é Mark Cuban, dono do Dallas Mavericks qu
 "Não siga sua paixão, siga seu esforço."
 </blockquote>
 
-Ao que indica, o famoso Confucious disse pela primeira vez a frase que se tornaria um dos maiores clichês para jovens, saindo da adolescência e tendo que encarar a vida adulta de responsabilidades reais:
+Ao que indica, o famoso Confúcio disse pela primeira vez a frase que se tornaria um dos maiores clichês para jovens, saindo da adolescência e tendo que encarar a vida adulta de responsabilidades reais:
 
 <blockquote>
 "Faça o que você ama e o dinheiro vem em seguida."
 </blockquote>
 
-Aliás, Confucious é meio que um genérico pra tudo: não sabe quem disse? Diga que é de Confucius. (Aliás, o disclaimer de sempre: só porque eu citei pessoas não significa que concordo com elas ou com tudo que dizem, são meras referências!)
+Aliás, Confúcio é meio que um genérico pra tudo: não sabe quem disse? Diga que é de Confucius. (Aliás, o disclaimer de sempre: só porque eu citei pessoas não significa que concordo com elas ou com tudo que dizem, são meras referências!)
 
-Além de Mark Cuban, Marc Andressen, diversos outros já levantaram o assunto antes - e recomendo que você leia o ["Don’t do what you love."](https://medium.com/@rachelnabors/dont-do-what-you-love-41312c943e2) da cartunista Rachel Nabor, onde ela conclui como uma nova frase:
+Além de Mark Cuban, Marc Andreessen, diversos outros já levantaram o assunto antes - e recomendo que você leia o ["Don’t do what you love."](https://medium.com/@rachelnabors/dont-do-what-you-love-41312c943e2) da cartunista Rachel Nabors, onde ela conclui como uma nova frase:
 
 <blockquote>
 "Apenas não faça o que você odeia."
@@ -109,7 +109,7 @@ Frases como essa levam naturalmente a outras falácias da auto-ajuda. Uma das ma
 
 The Secret afirma que a lei da atração é uma lei natural que determina a ordem completa do universo e de nossas vidas pessoais através do processo de "igual atrai igual". A autora afirma a forma como pensamos e sentimos, uma frequência correspondente é enviada ao universo e isso atrai de volta eventos e circunstâncias da mesma frequência. (...) e você pensar positivamente, vai atrair eventos e circunstâncias positivas. Os proponentes clamam que resultados desejáveis como saúde, riqueza e felicidade podem ser atraídos mudando seus pensamentos e sentimentos.
 
-A idéia de "fazer o que ama" está inequivocadamente interligado com o "pensar positivo para atrair positivo", mesmo que racionalmente tentar coisas como "largar tudo pra perseguir o que ama", pra dar certo, tem as mesmas chances de ganhar na loteria. E quem pensa desta forma, deveria olhar pra criança da foto abaixo e dizer a ela:
+A idéia de "fazer o que ama" está inequivocadamente interligada com o "pensar positivo para atrair positivo", mesmo que racionalmente tentar coisas como "largar tudo pra perseguir o que ama", pra dar certo, tem as mesmas chances de ganhar na loteria. E quem pensa desta forma, deveria olhar pra criança da foto abaixo e dizer a ela:
 
 <blockquote>"Você certamente não está pensando positivo o suficiente."</blockquote>
 
@@ -141,7 +141,7 @@ Mas isso significa que deveríamos ignorar nossas paixões? Claro que não. Apen
 
 <div class='embed-container'>{{< youtube id="pFlcqWQVVuU" >}}</div>
 
-Fazer "SOMENTE" o que "ACHA" que "AMA" (veja as ênfases nesta frase), significa simplemente ignorar o mundo real. Ignorar escovar os dentes, ignorar ir pra escola, ignorar trabalhar, ignorar responsabilidades, que é o que todo adulto chamaria de "ainda é uma criança". 
+Fazer "SOMENTE" o que "ACHA" que "AMA" (veja as ênfases nesta frase), significa simplesmente ignorar o mundo real. Ignorar escovar os dentes, ignorar ir pra escola, ignorar trabalhar, ignorar responsabilidades, que é o que todo adulto chamaria de "ainda é uma criança". 
 
 ## Terceiro, o que Eu amo?
 

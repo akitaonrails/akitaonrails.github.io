@@ -13,7 +13,7 @@ draft: false
 
 Se existe uma história recorrente em qualquer desenvolvimento de software é o que eu chamo de "Mito do Legado". Se você é programador, já passou por isso: herdou código feito por outra pessoa ou outra equipe, vê que está tudo muito mal feito, e sua recomendação é jogar tudo fora e começar tudo de novo. Você tem certeza que esta é a única alternativa sadia e não fazer isso seria um enorme erro.
 
-Esse comportamento é o que eu também chamo de "Histeria do Amador". E digo isso com total tranquilidade porque eu mesmo já tive momentos desse.
+Esse comportamento é o que eu também chamo de "Histeria do Amador". E digo isso com total tranquilidade porque eu mesmo já tive momentos desses.
 
 Antes de mais nada, vamos definir o que comumente é chamado de "Legado": basicamente todo código feito até ontem, especialmente se não foi você quem fez, é considerado um "Legado". 
 
@@ -52,7 +52,7 @@ O processo que facilita equipes a gerar código ruim sempre é um dos problemas 
 
 Não vou repetir tudo que as comunidades Ágeis já disseram até hoje, mas o "conserto" na maior parte das vezes não envolve apenas técnicas de programação, mas sim programadores que consigam ver além do código e entender como ajudar a consertar o ambiente ao seu redor. Isso inclui os colegas programadores ao redor, os chefes acima, as demandas vindas de departamentos ao redor e todo o feedback vindo do mercado no mundo exterior.
 
-No mundo real, software é feito por pessoas para pessoas. Entender que pessoas não díficeis significa que o desafio para um profissional é muito maior do que seguir boas práticas ou ser especializado nesta ou naquela técnica. Um bom profissional sabe que apenas reclamar e ficar emburrado não leva a lugar algum.
+No mundo real, software é feito por pessoas para pessoas. Entender que pessoas não são fáceis significa que o desafio para um profissional é muito maior do que seguir boas práticas ou ser especializado nesta ou naquela técnica. Um bom profissional sabe que apenas reclamar e ficar emburrado não leva a lugar algum.
 
 ### Oportunidades
 

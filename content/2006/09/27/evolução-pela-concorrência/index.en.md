@@ -2,7 +2,6 @@
 title: Evolution Through Competition
 date: '2006-09-27T16:13:00-03:00'
 slug: evolução-pela-concorrência
-translationKey: evolution-through-competition
 tags:
 - off-topic
 - principles

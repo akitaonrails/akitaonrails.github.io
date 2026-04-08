@@ -9,7 +9,6 @@ tags:
 - management
 - career
 draft: false
-translationKey: i-dont-know-what-i-want
 ---
 
  ![](http://s3.amazonaws.com/akitaonrails/assets/2008/2/10/patton_headshot_small.jpg)

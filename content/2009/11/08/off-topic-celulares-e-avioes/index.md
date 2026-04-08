@@ -16,9 +16,9 @@ Eu estou para escrever sobre isso faz alguns meses. Por acaso surgiu no [Twitter
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2009/11/8/plane_wideweb__470x316_0_original.jpg)
 
-Alguns meses atrás, enquanto estava indo para mais um evento, eu – de propósito, como sempre – mantenho meu iPhone ligado. Normalmente coloco em Air Mode enquanto no ar para economizar bateria, mas antes da decolagem eu estava assintindo um video podcast. Aí uma senhora do meu lado resolveu encrencar comigo mandando eu desligar. Obviamente eu ignorei ela. Daí o que ela fez? Chamou um comissário de vôo. Afe.
+Alguns meses atrás, enquanto estava indo para mais um evento, eu – de propósito, como sempre – mantenho meu iPhone ligado. Normalmente coloco em Air Mode enquanto no ar para economizar bateria, mas antes da decolagem eu estava assistindo um video podcast. Aí uma senhora do meu lado resolveu encrencar comigo mandando eu desligar. Obviamente eu ignorei ela. Daí o que ela fez? Chamou um comissário de vôo. Afe.
 
-Ela ainda soltou o que muitos ignoramentemente ainda acreditam: _“este ‘senhor’ está arriscando a minha vida!”_ Imaginem minha vontade de soltar um _“shut the fuck up!”_, claro não soltei :-)
+Ela ainda soltou o que muitos ignorantemente ainda acreditam: _“este ‘senhor’ está arriscando a minha vida!”_ Imaginem minha vontade de soltar um _“shut the fuck up!”_, claro não soltei :-)
 
 
 Imagino que leitores do meu blog não acreditam nisso, mesmo assim muitos não devem saber porque esse aviso existe nos aviões. É só raciocinar. Se um eletrônico wireless pudesse realmente ter alguma mínima chance de interferir com a comunicação do avião, a ponto de derrubá-lo, você, se fosse o dono da companhia aérea, permitiria que alguém entrasse com um celular no seu avião??

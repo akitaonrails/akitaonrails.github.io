@@ -7,7 +7,6 @@ tags:
 - principles
 - philosophy
 draft: false
-translationKey: the-cult-of-gray-morality
 ---
 
  ![](http://s3.amazonaws.com/akitaonrails/assets/2009/9/8/The_Virtue_of_Selfishness_Ayn_Rand_unabridged_M_original.jpg)

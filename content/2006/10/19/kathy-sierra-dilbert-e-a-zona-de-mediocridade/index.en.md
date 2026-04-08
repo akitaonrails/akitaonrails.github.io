@@ -2,7 +2,6 @@
 title: 'Kathy Sierra: Dilbert and the Zone of Mediocrity'
 date: '2006-10-19T09:53:34-03:00'
 slug: kathy-sierra-dilbert-e-a-zona-de-mediocridade
-translationKey: kathy-sierra-zone-of-mediocrity
 tags:
 - off-topic
 - principles

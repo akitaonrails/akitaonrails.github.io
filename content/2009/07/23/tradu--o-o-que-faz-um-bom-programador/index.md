@@ -17,13 +17,13 @@ O primeiro artigo é o [What makes a good programmer?](http://www.techfounder.ne
 
 ### Um pensador analítico
 
-Programadores precisam ser solucionadores de problemas. O processo de programação requer que nós sistematicamente quebremos problemas complicados, planejemos e implementemos solução e encontremos/eliminemos pequenas inconsistências no código (bugs).
+Programadores precisam ser solucionadores de problemas. O processo de programação requer que nós sistematicamente quebremos problemas complicados, planejemos e implementemos soluções e encontremos/eliminemos pequenas inconsistências no código (bugs).
 
-Pensamento analítico também se manifesta na habilidade de seguir e entender lógicas complicadas através de segmentos disparates de código. Isso nos permite alcançar conceitos abstratos como metodologias de Orientação a Objetos e design patterns e implementemos na prática.
+Pensamento analítico também se manifesta na habilidade de seguir e entender lógicas complicadas através de segmentos disparates de código. Isso nos permite alcançar conceitos abstratos como metodologias de Orientação a Objetos e design patterns e implementá-los na prática.
 
 ### Tem suas prioridades claras
 
-Se eu lhe pedisse para ordenar os ítens seguintes por prioridade, como você os ordenaria?
+Se eu lhe pedisse para ordenar os itens seguintes por prioridade, como você os ordenaria?
 
 - Segurança
 - Mantenabilidade
@@ -37,9 +37,9 @@ Pare um momento para pensar a respeito, e então considere:
 2. Se você pegou **performance** primeiro, você provavelmente é o cara que fica escrevendo artigos sobre porque se deveria usar loop _while_ em vez de _for_ já que ele foi alguns milissegundos mais rápido em seus benchmarks. Você pode sofrer com casos de otimização prematura.  
   
 
-> Nós devemos esquecer sobre pequenas ineficiências, digamos, cerca de 97% do tempo: otimização prematura é a raíz de todo mal. – [Donald Knuth](http://en.wikipedia.org/wiki/Optimization_%28computer_science%29#When_to_optimize)
+> Nós devemos esquecer sobre pequenas ineficiências, digamos, cerca de 97% do tempo: otimização prematura é a raiz de todo mal. – [Donald Knuth](http://en.wikipedia.org/wiki/Optimization_%28computer_science%29#When_to_optimize)
 
-Performance deve ser bom o suficiente para satisfazer os requerimentos da aplicação. Fora casos de armadilha bem conhecidos (cmo executar queries em cada interação de um loop longo), otimizações de performance devem ser deixados para o fim e mesmo assim devem ser feitas quando apropriado (medir … medir … medir … otimizar).
+Performance deve ser boa o suficiente para satisfazer os requerimentos da aplicação. Fora casos de armadilha bem conhecidos (como executar queries em cada interação de um loop longo), otimizações de performance devem ser deixadas para o fim e mesmo assim devem ser feitas quando apropriado (medir … medir … medir … otimizar).
 
 A única exceção a isso é se você está primariamente desenvolvendo aplicações dependentes de performance (como drivers de baixo nível de sistema).
 
@@ -71,7 +71,7 @@ No fim do dia você definitivamente quer desenvolvedores altamente produtivos ma
 
 Terminar as coisas é importante. Terminar as coisas “do jeito certo” é ainda mais importante.
 
-Pagar constante seu débito técnico é crucial – se você continuar acumulando débito fazendo “gambiarras” de correções rápidas que funcionam mas não são bons de mantenabilidade, você apenas está criando a aparência de progresso. Na realidade, o custo de se livrar do grande débito técnico poderia se tornar proibitivo antes de você perceber.
+Pagar constante seu débito técnico é crucial – se você continuar acumulando débito fazendo “gambiarras” de correções rápidas que funcionam mas não são boas de mantenabilidade, você apenas está criando a aparência de progresso. Na realidade, o custo de se livrar do grande débito técnico poderia se tornar proibitivo antes de você perceber.
 
 Gastar um tempo para constantemente refatorar código para uma forma com mais mantenabilidade é a melhor forma de prevenir a espiral que leva um projeto a desaparecer.
 
@@ -103,24 +103,24 @@ Você pode conseguir bons resultados independente da linguagem de programação 
 
 **Fonte:** [blogoscoped](http://blogoscoped.com/archive/2005-08-24-n14.html)
 
-Eu percebi, paradoxialmente o suficiente, que bons programadores precisam ser tanto _preguiçosos_ quanto _idiotas._
+Eu percebi, paradoxalmente o suficiente, que bons programadores precisam ser tanto _preguiçosos_ quanto _idiotas._
 
 **Preguiçosos** , porque apenas programadores preguiçosos irão querer escrever os tipos de ferramentas que podem substituí-los no final. Preguiçosos, porque somente um programador preguiçoso vai evitar escrever código monótono e repetitivo – assim evitando redundância, o inimigo da mantenabilidade e flexibilidade de software. No mais, as ferramentas e processos que vêm disso, disparados pela _preguiça_, irão aumentar a produção.
 
-Claro, essa é apenas meia verdade. para um programador preguiço para ser um bom programador, ele (ou ela) também devem ser extremamente _não-preguiçosos_ quando é hora de aprender como ser _preguiçoso_, ou seja, quais ferramentas de software tornam seu trabalho mais fácil, quais técnicas evitam redundância, e como ele pode fazer seu trabalho ter mais mantenabilidade e ser facilmente refatorado.
+Claro, essa é apenas meia verdade. para um programador preguiçoso ser um bom programador, ele (ou ela) também deve ser extremamente _não-preguiçosos_ quando é hora de aprender como ser _preguiçoso_, ou seja, quais ferramentas de software tornam seu trabalho mais fácil, quais técnicas evitam redundância, e como ele pode fazer seu trabalho ter mais mantenabilidade e ser facilmente refatorado.
 
-Segundo (e vou elaborar mais sobre isso porque acho que esse conceito é menos conhecido que o primeiro) um bom programador precisar ser **idiota.** Por que? Porque se ele é esperto, e ele sabe que é esperto, ele vai:
+Segundo (e vou elaborar mais sobre isso porque acho que esse conceito é menos conhecido que o primeiro) um bom programador precisa ser **idiota.** Por que? Porque se ele é esperto, e ele sabe que é esperto, ele vai:
 
 1. parar de aprender
 2. parar de ser crítico a respeito do seu trabalho
 
-Ponto a) tornará mais difícil para ele tentar encontrar novas técnicas para permití-lo trabalhar mais rápido. Ponto b) tornará difícl a ele debugar seu próprio trabalho, e refatorá-lo. Na batalha interminável entre um programador e o compilador, é melhor para o programador desistir rápido e admitir que é sempre _ele_ e nunca o compilador o culpado (a menos que seja codificação de caracteres, que é a parte que até mesmo compiladores erram.)
+Ponto a) tornará mais difícil para ele tentar encontrar novas técnicas para permitir-lhe trabalhar mais rápido. Ponto b) tornará difícil a ele debugar seu próprio trabalho, e refatorá-lo. Na batalha interminável entre um programador e o compilador, é melhor para o programador desistir rápido e admitir que é sempre _ele_ e nunca o compilador o culpado (a menos que seja codificação de caracteres, que é a parte que até mesmo compiladores erram.)
 
 Mas existe um ponto mais crucial de porque bons programadores precisam ser idiotas. Isso porque para ele encontrar as melhores soluções a um problema, precisa manter uma mente aberta e pensar fora da caixa (ou melhor, conhecer seu _formato_ real). De certa forma, isso leva à mentalidade de uma criança; incrivelmente criativa porque ele nunca ouviu “não” como resposta.
 
 O direto oposto não seria muito construtivo; ser conhecedor dos parâmetros à mão e aceitá-los. Porque quem sabe quantos limites você acha que existem, na _real_? Quanto menos você souber, mais radical serão suas escolhas; melhores as ferramentas que você desenvolve, e melhor o produto que você desenvolve _com_ elas.
 
-Eu conheço do meu trabalho um bom programador, quando confrontado com um problemas da gerência, adotará essa mentalidade de ser _idiota_; ele começará a perguntar as questões mais simples e infantis. Porque ele não aceita os parâmetros sugeridos a ele que alguém _acha_ que definem o problema. Aqui está uma típica conversa da terra perdida do desenvolvimento web:
+Eu conheço do meu trabalho um bom programador, quando confrontado com um problema da gerência, adotará essa mentalidade de ser _idiota_; ele começará a perguntar as questões mais simples e infantis. Porque ele não aceita os parâmetros sugeridos a ele que alguém _acha_ que definem o problema. Aqui está uma típica conversa da terra perdida do desenvolvimento web:
 
 - “Desde ontem, nosso cliente não consegue ver o logotipo no web site.”
 - “Ele reiniciou o browser?”
@@ -140,15 +140,15 @@ Eu conheço do meu trabalho um bom programador, quando confrontado com um proble
 - “Ele também não viu outras imagens além do logo?”
 - “O que? Bem, vou perguntar a ele.”
 
-Apenas para a argumentação (isso foi inteiramente hipotético) vamos dizer que o cliente de fato desligou as imagens do seu browser. Ou seu filho desligou. Seja qual for o caso, essa resposta não seria encontrada se você trabalhasse com um programador em modo<sup class="footnote" id="fnr1"><a href="#fn1">1</a></sup> “esperto”. Nenhuma das perguntas perguntadas pelo programador requerem qualquer habilidade de programação. Não, simplesmente porque o problema é tão estúpido, apenas estupidez pode resolvê-la.
+Apenas para a argumentação (isso foi inteiramente hipotético) vamos dizer que o cliente de fato desligou as imagens do seu browser. Ou seu filho desligou. Seja qual for o caso, essa resposta não seria encontrada se você trabalhasse com um programador em modo<sup class="footnote" id="fnr1"><a href="#fn1">1</a></sup> “esperto”. Nenhuma das perguntas perguntadas pelo programador requerem qualquer habilidade de programação. Não, simplesmente porque o problema é tão estúpido, apenas estupidez pode resolvê-lo.
 
 > <sup class="footnote" id="fnr1"><a href="#fn1">1</a></sup> alguns anos atrás, eu tive uma longa discussão no telefone sobre o web site ter quebrado desde minha última atualização … acabou que a pessoa desabilitou os stylesheets em seu browser. Na época eu teria suspeitado de tudo **menos** numa solução tão simples e fiquei escutando meia hora de reclamações sobre padrões de qualidade, etc. No final, a premissa que minha atualização foi culpada era apenas isso … uma premissa. Melhor você ouvir **apenas os fatos** se começar a debugar, e nunca no que as pessoas **acham** que pode ser a razão.
 
 De forma similar, quando um dos meus colegas programadores me pergunta: “Por que isso não está funcionando?” na maioria das vezes é porque ele está trabalhando no arquivo errado (ex. ele linkou na biblioteca 1, mas alterou na biblioteca 2, e sua revisão não aparece ou simplesmente não linkou na biblioteca.) Quando você pede ajuda a seu colega, particularmente sobre programação, você espera que ele saiba menos sobre o projeto … então ele faz perguntas estúpidas que você evitou perguntar a si mesmo de forma sub-consciente, porque você achava que sabia as respostas, quando de fato não sabia.
 
-Existe outro lado nisso. A pessoa idiota-demais vai somente sair correndo e, sem pensar duas vezes, fazer algo errado. A pessoa esperta-demais vai se sentar e planejar algo certo, sem tomar nenhuma ação. Um programdor pragmático está mais ou menos no meio; ele sabe que tomar a decisão errada 1 vez em 10 não machuca os objetivos tão mal quanto 5 decisões certas de 10, e _não decidir nada_ nas outras 5 vezes.
+Existe outro lado nisso. A pessoa idiota-demais vai somente sair correndo e, sem pensar duas vezes, fazer algo errado. A pessoa esperta-demais vai se sentar e planejar algo certo, sem tomar nenhuma ação. Um programador pragmático está mais ou menos no meio; ele sabe que tomar a decisão errada 1 vez em 10 não machuca os objetivos tão mal quanto 5 decisões certas de 10, e _não decidir nada_ nas outras 5 vezes.
 
-É como a história da centopéia. A centopéia era muito boa em andar com suas cem pernas. Ela nunca pensou em como conseguia andar. Até que um dia, quando um inseto preto grande perguntou a ela “Como você consegue _andar_ com tantos pés? Não acha difícil coordenar seu ritmo?” O inseto grande preto já tinha ido embora, enquanto a centopéia ainda estava sentada, ponderando _como_ ela conseguia andar, se perguntando e (pela primeira vez na vida) até mesmo se preocupando um pouco. Desse dia em diante, a centopéia não conseguia andar mais.
+É como a história da centopeia. A centopeia era muito boa em andar com suas cem pernas. Ela nunca pensou em como conseguia andar. Até que um dia, quando um inseto preto grande perguntou a ela “Como você consegue _andar_ com tantos pés? Não acha difícil coordenar seu ritmo?” O inseto grande preto já tinha ido embora, enquanto a centopeia ainda estava sentada, ponderando _como_ ela conseguia andar, se perguntando e (pela primeira vez na vida) até mesmo se preocupando um pouco. Desse dia em diante, a centopeia não conseguia andar mais.
 
 Então, melhor não pensar demais se quiser conquistar alguma coisa. E, claro, essa é somente meia verdade também …
 

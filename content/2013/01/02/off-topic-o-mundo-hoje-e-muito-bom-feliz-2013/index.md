@@ -18,7 +18,7 @@ Resolvi começar este ano de 2013 com um artigo que espero que ressoe como uma m
 
 Por outro lado fico frustrado toda vez que vejo gente teoricamente "estudada" que prefere acreditar que o mundo está piorando, que estamos pior hoje do que estávamos ontem. Hoje somos "impessoais", não brincamos mais na rua, não temos mais solidariedade, queimamos nossas florestas, todas as corporações são vilãs, o povo sofre mais. 
 
-Deixe-me dizer que eu, respeitosamente, discordo de todas essas e todas as outras idéias de que estamos piorando. Um dos motivos simbólicos deste artigo hoje é porque passamos por 2012, uma das últimas profecias conhecidas de "Fim dos Tempos" e passamos por ela como se não fosse nada (aliás, nunca foi nada mesmo).
+Deixe-me dizer que eu, respeitosamente, discordo de todas essas e todas as outras ideias de que estamos piorando. Um dos motivos simbólicos deste artigo hoje é porque passamos por 2012, uma das últimas profecias conhecidas de "Fim dos Tempos" e passamos por ela como se não fosse nada (aliás, nunca foi nada mesmo).
 
 É claro, qualquer um que lê as notícias sabe que temos metrópoles cada vez mais superlotadas, surtos de violência acontecendo o tempo todo em várias partes do mundo, ainda temos diversas guerras acontecendo no Oriente Médio, intolerância religiosa e terrorismo, desastres naturais que "parecem" resultado do famigerado "Aquecimento Global". 
 
@@ -28,19 +28,19 @@ Tudo isso verdade. Nada disso é sintoma algum de que o mundo está piorando.
 
 ## O Mundo está melhor
 
-A despeito de todas as profecias cataclísmicas, vou resumir rapidamente: o mundo é melhor hoje do que já foi 50 anos atrás, 100 anos atrás ou milênia atrás. Felizmente existe gente de ciência, fazendo pesquisa e trabalho sério, que conseguiu acumular dados durante anos e anos e hoje temos como comparar ítem a ítem. Uma dessas organizações é a [Gapminder](http://www.gapminder.org/) que disponibiliza todos esses dados para vocês podem ver com os próprios olhos.
+A despeito de todas as profecias cataclísmicas, vou resumir rapidamente: o mundo é melhor hoje do que já foi 50 anos atrás, 100 anos atrás ou milênios atrás. Felizmente existe gente de ciência, fazendo pesquisa e trabalho sério, que conseguiu acumular dados durante anos e anos e hoje temos como comparar ítem a ítem. Uma dessas organizações é a [Gapminder](http://www.gapminder.org/) que disponibiliza todos esses dados para vocês possam ver com os próprios olhos.
 
-Recomendo assistir as palestras no [TED de Hans Rosling](http://www.ted.com/speakers/hans_rosling.html) interpretando esses dados. Ele vai demonstrar como nas últimas décadas nós de fato aumentamos a expectativa de vida da maioria das pessoas do mundo, melhoramos a qualidade de vida, diminuímos drasticamente os níveis de pobreza, diminuímos a malnutrição, diminuímos as diferenças. Em resumo, a grande maioria das pessoas hoje vive melhor, com mais conforto e por mais tempo. A violência também está diminuindo como mostra [essa palestra do Steven Pinker pro TED](http://www.ted.com/talks/steven_pinker_on_the_myth_of_violence.html). O livro [Abundance](http://www.thedailybeast.com/articles/2012/02/21/the-world-is-getting-better-argues-new-book-abundance.html) de Peter H. Diamandis também vai lhe dar mais dados dessa nossa era de abundância.
+Recomendo assistir às palestras no [TED de Hans Rosling](http://www.ted.com/speakers/hans_rosling.html) interpretando esses dados. Ele vai demonstrar como nas últimas décadas nós de fato aumentamos a expectativa de vida da maioria das pessoas do mundo, melhoramos a qualidade de vida, diminuímos drasticamente os níveis de pobreza, diminuímos a malnutrição, diminuímos as diferenças. Em resumo, a grande maioria das pessoas hoje vive melhor, com mais conforto e por mais tempo. A violência também está diminuindo como mostra [essa palestra do Steven Pinker pro TED](http://www.ted.com/talks/steven_pinker_on_the_myth_of_violence.html). O livro [Abundance](http://www.thedailybeast.com/articles/2012/02/21/the-world-is-getting-better-argues-new-book-abundance.html) de Peter H. Diamandis também vai lhe dar mais dados dessa nossa era de abundância.
 
-E mesmo o tão temido Aquecimento Global é [constantemente questionado](http://www.globalclimatescam.com/). Muitos cientistas não estão convencidos com os dados que temos. E não é importante se o Aquecimento Global é "real", claramente existe gente ganhando muito [dinheiro](http://www.akitaonrails.com/2011/02/03/off-topic-a-revolta-de-atlas-dinheiro-e-a-raiz-de-todo-o-mal) e notoriedade a partir do "medo" causado por esse possível fenômeno natural. Assista ao documentário [Cool It](http://coolit-themovie.com/) onde o pesquisador Bjorn Lomborg desmistificará cada um dos ítens que você - leitor deste blog - certamente não parou para pensar até agora.
+E mesmo o tão temido Aquecimento Global é [constantemente questionado](http://www.globalclimatescam.com/). Muitos cientistas não estão convencidos com os dados que temos. E não é importante se o Aquecimento Global é "real", claramente existe gente ganhando muito [dinheiro](http://www.akitaonrails.com/2011/02/03/off-topic-a-revolta-de-atlas-dinheiro-e-a-raiz-de-todo-o-mal) e notoriedade a partir do "medo" causado por esse possível fenômeno natural. Assista ao documentário [Cool It](http://coolit-themovie.com/) onde o pesquisador Bjorn Lomborg desmistificará cada um dos itens que você - leitor deste blog - certamente não parou para pensar até agora.
 
 <div class="embed-container">
 {{< youtube id="kQToxsLYm0M" >}}
 </div>
 
-Exemplo: se o protocolo de Kyoto tivesse tido sucesso como os lobistas queriam, ela apenas diminuiria a temperatura do mundo em 0.008 graus Fahrenheit até o ano de 2100! E se a política climática da União Européia diminuiria a temperatura em somente 0.1 graus Fahrenheit ao custo de ridículos USD 250 bilhões anualmente pelo próximo século! Com metade desse dinheiro poderíamos acabar com a pobreza, a fome e as doenças do mundo.
+Exemplo: se o protocolo de Kyoto tivesse tido sucesso como os lobistas queriam, ele apenas diminuiria a temperatura do mundo em 0.008 graus Fahrenheit até o ano de 2100! E a política climática da União Europeia diminuiria a temperatura em somente 0.1 graus Fahrenheit ao custo de ridículos USD 250 bilhões anualmente pelo próximo século! Com metade desse dinheiro poderíamos acabar com a pobreza, a fome e as doenças do mundo.
 
-Mesmo se todo mundo dos Estados Unidos passasse a dirigir Prius, isso não colaboraria com 0.5% do carbono que tecnicamente deveria ser cortado até o meio do século. E mesmo se todo mundo nos Estados Unidos passassem a usar somente lâmpadas que economizam energia, isso não colaboraria com 0.2% do carbono a ser cortado. 
+Mesmo se todo mundo dos Estados Unidos passasse a dirigir Prius, isso não colaboraria com 0.5% do carbono que tecnicamente deveria ser cortado até o meio do século. E mesmo se todo mundo nos Estados Unidos passasse a usar somente lâmpadas que economizam energia, isso não colaboraria com 0.2% do carbono a ser cortado. 
 
 O comediante George Carlin foi quem explicou isso da forma mais clara que já vi:
 
@@ -125,7 +125,7 @@ Só que esse grupo está cada vez mais incômodo, mais chato. Se não ficou clar
 
 Aliás, isso vale para causas sociais mas também para qualquer tipo de "causa". Fiquem espertos pra variar, tem muita gente esperta querendo que você faça o trabalho sujo por eles. Suspeite de qualquer um que fale por _"nós"_, pelo _"bem de todos"_ ou qualquer demagogia barata desse tipo.
 
-O mundo hoje é melhor, verifique os dados, ela está cada vez melhor e tudo que precisamos fazer é trabalhar e produzir mais e mais riquezas. É assim que o mundo chegou ao ponto de hoje e é assim que ele vai continuar melhorando. Não é retirando (pejorativamente também dito como "compartilhando") riqueza dos outros, é produzindo mais.
+O mundo hoje é melhor, verifique os dados, ele está cada vez melhor e tudo que precisamos fazer é trabalhar e produzir mais e mais riquezas. É assim que o mundo chegou ao ponto de hoje e é assim que ele vai continuar melhorando. Não é retirando (pejorativamente também dito como "compartilhando") riqueza dos outros, é produzindo mais.
 
 ![Silicon Valey](http://s3.amazonaws.com/akitaonrails/assets/image_asset/image/325/1.jpeg)
 

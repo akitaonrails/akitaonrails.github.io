@@ -37,14 +37,14 @@ Finalmente, existe [Joseki](http://en.wikipedia.org/wiki/Joseki). Joseki são pa
 
 Cada um desses padrões de Go tem, mais ou menos, um análogo em programação.
 
-Formas em Go não são como [design patterns](http://c2.com/cgi/wiki?DesignPatterns) em software. Enquanto não há nada que o previna de colocar lógica em suas views, essa forma é [reconhecida](http://www.vimeo.com/1050804) como uma forma fraca. Pense em design patterns do Gang-of-Four: os padrões MVC, Adapter e Factory são reconhecidas como úteis em algumas circunstâncias (e não apropriadas em outras). Em um nível mais baixo, iteração e recursão tem formas comumente reconhecidas, assim como normalização de bancos de dados vs. denormalização. Mesmo que você não possa ter um programa inteiro ou algoritmo de cabeça de uma vez, reconhecer formas padrão ajuda a entender o que está acontecendo.
+Formas em Go não são como [design patterns](http://c2.com/cgi/wiki?DesignPatterns) em software. Enquanto não há nada que o previna de colocar lógica em suas views, essa forma é [reconhecida](http://www.vimeo.com/1050804) como uma forma fraca. Pense em design patterns do Gang-of-Four: os padrões MVC, Adapter e Factory são reconhecidos como úteis em algumas circunstâncias (e não apropriadas em outras). Em um nível mais baixo, iteração e recursão têm formas comumente reconhecidas, assim como normalização de bancos de dados vs. denormalização. Mesmo que você não possa ter um programa inteiro ou algoritmo de cabeça de uma vez, reconhecer formas padrão ajuda a entender o que está acontecendo.
 
-Provérbios de Go são como outras formas de padrões em software: CapitalizedPrinciples (por falta de um termo melhor) que se tornou popular graças a Extreme Programming. Pense em DontRepeatYourself, YouArentGonnaNeedIt, CollectiveCodeOwnership, DailyBuild, TestFirst. Eles não são “formas” de código, como uma classe singleton – são princípios gerais que guiam a prática de programação.
+Provérbios de Go são como outras formas de padrões em software: CapitalizedPrinciples (por falta de um termo melhor) que se tornaram populares graças a Extreme Programming. Pense em DontRepeatYourself, YouArentGonnaNeedIt, CollectiveCodeOwnership, DailyBuild, TestFirst. Eles não são “formas” de código, como uma classe singleton – são princípios gerais que guiam a prática de programação.
 
 Como joseki é sobre troca entre pares competidores, seu paralelo de programação é um pouco menos claro. A comparação mais próxima, na minha cabeça, são exercícios de programação. [Este artigo](http://binstock.blogspot.com/2008/04/perfecting-oos-small-classes-and-short.html), por exemplo, sugere 9 exercícios para ajudá-lo a se tornar um melhor programador OO, como:
 
 - use apenas um ponto por linha
-- use apenas um nível de identação por método
+- use apenas um nível de indentação por método
 - não use setters, getters ou propriedades
 
 Em um programa real, você não seguirá esses princípios 100% do tempo. Mas se forçar a escrever dessa maneira pode ser uma experiência de abrir os olhos e pode torná-lo um desenvolvedor melhor.
@@ -59,7 +59,7 @@ Eu acho que pode, e vou mais fundo. Acho que Go pode torná-lo mais esperto. Exi
 
 A pesquisa mencionada não tem bibliografia, infelizmente, portanto não leve esse tipo de afirmação ao pé-da-letra.
 
-Mas faz muito sentido: como xadrez, Go requer reconhecimento de padrões, uma mistura de estratégia e pensamento tático, e compreensão de estruturas complexas, embora em Go os padrões são maiores e muito mais complexos. Uma mente treinada a pensar dessa maneira terá mais facilidade em atacar problemas similares em outras esferas.
+Mas faz muito sentido: como xadrez, Go requer reconhecimento de padrões, uma mistura de estratégia e pensamento tático, e compreensão de estruturas complexas, embora em Go os padrões sejam maiores e muito mais complexos. Uma mente treinada a pensar dessa maneira terá mais facilidade em atacar problemas similares em outras esferas.
 
 Como desenvolvimento de software.
 
@@ -71,7 +71,7 @@ Particularmente o interesse se renovou quando li a série [Hikaru no Go](http://
 
 [![](http://s3.amazonaws.com/akitaonrails/assets/2008/7/15/1hikaru800.jpg)](http://www.onemanga.com/Hikaru_no_Go/)
 
-Não lembro onde li isso, mas alguém chegou a mencionar uma coisa que interessante: xadrez é um jogo primordialmente de destruição. Go é um jogo essencialmente de conquista e expansão. Não é literalmente verdade, mas há nuances em Go que me remetem a isso. E no paralelo a desenvolvimento de software, design patterns não são apenas estrutura que você copia e cola onde “acha” que são necessários. Um punhado de design patterns não faz um bom software.
+Não lembro onde li isso, mas alguém chegou a mencionar uma coisa interessante: xadrez é um jogo primordialmente de destruição. Go é um jogo essencialmente de conquista e expansão. Não é literalmente verdade, mas há nuances em Go que me remetem a isso. E no paralelo a desenvolvimento de software, design patterns não são apenas estruturas que você copia e cola onde “acha” que são necessários. Um punhado de design patterns não faz um bom software.
 
 O que o Jon quis dizer faz muito sentido. Assim como um jogador de Go, um desenvolvedor de software precisa ser um artista. Jogar é uma atividade criativa. Estratégia é uma atividade criativa. Dada uma série de limitações, qual o melhor caminho a seguir?
 

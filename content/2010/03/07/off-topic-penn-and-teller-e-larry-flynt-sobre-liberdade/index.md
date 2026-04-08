@@ -9,7 +9,7 @@ tags:
 draft: false
 ---
 
-Estava assistindo o canal FX ontem e por acaso esbarrei numa reprise do excelente show [Penn & Teller, Bullshit!](http://www.sho.com/site/ptbs/home.do). Eles são mágicos famosos que se apresentam em Las Vegas, já apareceram em diversos programas de TV e tem se próprio programa, o Bullshit!, que discute política, disputa o status quo, quebra falácias e folclores populares. Nesse episódio eles terminaram com um truque de mágica, queimando a bandeira americana e falando sobre Liberdade de Expressão. Assistam este trecho antes de continuar:
+Estava assistindo o canal FX ontem e por acaso esbarrei numa reprise do excelente show [Penn & Teller, Bullshit!](http://www.sho.com/site/ptbs/home.do). Eles são mágicos famosos que se apresentam em Las Vegas, já apareceram em diversos programas de TV e tem seu próprio programa, o Bullshit!, que discute política, disputa o status quo, quebra falácias e folclores populares. Nesse episódio eles terminaram com um truque de mágica, queimando a bandeira americana e falando sobre Liberdade de Expressão. Assistam este trecho antes de continuar:
 
 <video controls>
 <source src="https://s3.us-east-2.amazonaws.com/blip.tv/Akitaonrails-PennTeller285.mp4">
@@ -57,11 +57,11 @@ Para que uma sociedade floresça e se sustente, ela precisa de fundações sóli
 
 No caso, todo esse pensamento para mim se mistura com o pensamento de [Organizações](http://en.wikipedia.org/wiki/Organizations), no sentido amplo da palavra, e Empresas, no sentido mais restrito. Em uma escala miniaturizada, uma empresa é uma comunidade, com sua própria cultura, regras, leis e governos. E nesse sentido me espanta como a fundação ideológica dessas comunidades ainda é muito primitiva. A maioria ainda se assemelha a [Governos Totalitários](http://en.wikipedia.org/wiki/Totalitarianism), segundo a definição:
 
-> Totalitarismo é um sistema político onde o estado, normalmente sob o controle de uma única organização política, facção ou classe, não reconhece limites à sua autoridade e se esforça para regular cada aspecto da vida pública e privada onde quiser. Totalitarismo é geralmente caracterizado pela coincidência do autoritarismo (onde cidadãos ordinários não tem parte significativa nas tomadas de decisão do estado) e ideologia (um esquema perverso de valores promulgados por meios de instituições para dirigir a maioria dos aspectos da vida pública e privada).  
+> Totalitarismo é um sistema político onde o estado, normalmente sob o controle de uma única organização política, facção ou classe, não reconhece limites à sua autoridade e se esforça para regular cada aspecto da vida pública e privada onde quiser. Totalitarismo é geralmente caracterizado pela coincidência do autoritarismo (onde cidadãos ordinários não têm parte significativa nas tomadas de decisão do estado) e ideologia (um esquema perverso de valores promulgados por meios de instituições para dirigir a maioria dos aspectos da vida pública e privada).  
 >   
 > Regimes ou Movimentos Totalitários se mantém no poder político por meio de uma ideologia oficial e propaganda disseminada por mídia controlada pelo estado, um único partido que controla o estado, cultos de personalidade, controle sobre a economia, regulação e restrições de discussões livres e críticas, o uso de vigilância em massa e uso de terrorismo do estado.
 
-Soa familar? Garanto que você consegue descrever muitas empresas com a definição acima. Você tem direito à “liberdade de expressão”? Ou algumas opiniões são passíveis de punição, especialmente se forem semelhantes ao caso Falwell?
+Soa familiar? Garanto que você consegue descrever muitas empresas com a definição acima. Você tem direito à “liberdade de expressão”? Ou algumas opiniões são passíveis de punição, especialmente se forem semelhantes ao caso Falwell?
 
 Na minha opinião, um documento de Missão e Valores de uma empresa, para não ser totalmente imprestável, deveria ser semelhante ao _Bill of Rights_ e começar pelo menos com a mesma coisa que a Primeira Emenda.
 

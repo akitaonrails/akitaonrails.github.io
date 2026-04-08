@@ -17,7 +17,7 @@ Acredito que é a primeira vez que fiquei chocado e momentaneamente sem reação
 Pessoalmente, me sinto contente e com muita sorte de ter tido a oportunidade de ter vivido a geração seguinte a nomes como Steve Jobs. A Apple foi fundada em 1976 e incorporada em 1977. Quando o iPhone original foi lançado pela primeira vez, tanto a Apple quanto eu mesmo estávamos comemorando 30 anos. Da mesma forma, minha história com computadores e tecnologia se iniciava em 1984, ao mesmo tempo em que o Macintosh original estava nascendo.
 
 
-Assim como Steve Jobs subiu no ombro de gigantes como Robert Noyce, Hewlett Packard e outros das primeiras gerações da informática, nós desta geração tivemos a chance de observar um gigante trabalhando. É muito tentador tentar reduzir os feitos de Steve em “receitas mágicas”, como todos gostam de fazer com grandes biografias. Porém nenhuma das conclusões que todos querem tirar farão muito sentido.
+Assim como Steve Jobs subiu nos ombros de gigantes como Robert Noyce, Hewlett Packard e outros das primeiras gerações da informática, nós desta geração tivemos a chance de observar um gigante trabalhando. É muito tentador tentar reduzir os feitos de Steve em “receitas mágicas”, como todos gostam de fazer com grandes biografias. Porém nenhuma das conclusões que todos querem tirar farão muito sentido.
 
 Talvez a mensagem que melhor resume a filosofia que Steve Jobs popularizou com a Apple é o que foi ilustrado no icônico comercial de 1997 ([bloguei sobre isso em 2007](http://akitaonrails.com/2007/01/27/off-topic-heres-to-the-crazy-ones)):
 
@@ -52,7 +52,7 @@ Que, para mim, é a contra-forma de dizer outra famosa frase comum (autoria desc
 
 > “A definição de insanidade é repetir as mesmas coisas dia após dia e esperar resultados diferentes.”
 
-Steve Jobs foi o exemplo moderno dos grandes exploradores, os navegantes que atravessaram oceanos para encontrar o novo mundo, os cientistas que quebraram as antigas crenças, e assim por diante. E eles não fizeram isso porque alguém os mandou fazer. Eles fizeram por eles mesmos, para suportar crenças que na época apenas eles acreditavam, mesmo que outros os chamassem de loucos, transgressores. E o tempo provou que os que o chamavam de louco é que eram os loucos.
+Steve Jobs foi o exemplo moderno dos grandes exploradores, os navegantes que atravessaram oceanos para encontrar o novo mundo, os cientistas que quebraram as antigas crenças, e assim por diante. E eles não fizeram isso porque alguém os mandou fazer. Eles fizeram por eles mesmos, para suportar crenças que na época apenas eles acreditavam, mesmo que outros os chamassem de loucos, transgressores. E o tempo provou que os que os chamavam de loucos é que eram os loucos.
 
 Steve Jobs foi um exemplo moderno genial de como a visão exclusiva de um indivíduo tem a capacidade de moldar grandes porções de uma sociedade inteira, como [expliquei em fevereiro](http://www.akitaonrails.com/2011/02/04/off-topic-the-fountainhead-defesa-de-howard-roark). Steve Jobs foi um dos candidatos mais próximos de um [Howard Roarke](http://fvdb.wordpress.com/2011/08/25/steve-jobs-the-howard-roark-in-business/) moderno.
 

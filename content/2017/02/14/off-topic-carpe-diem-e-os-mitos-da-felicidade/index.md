@@ -35,11 +35,11 @@ E eu discordo, como [já expliquei também em 2013](http://www.akitaonrails.com/
 
 ### A Perpetuação dos Mitos
 
-Não faltam livros, palestras, programas de TV, filmes e tudo mais feito ao redor da idéia de que todos "Devem" ser felizes, o tempo todo. E que se você não está feliz, você está fazendo alguma coisa muito errada. A incessante busca e obsessão pela "felicidade ideal" se tornou uma das coisas mais insalubres e cruéis dos últimos 2 séculos - junto com o [consumo excessivo de açúcar](https://www.youtube.com/watch?v=f_4Q9Iv7_Ao), mas isso é outro assunto, embora açúcar e felicidade costumam ser correlacionados.
+Não faltam livros, palestras, programas de TV, filmes e tudo mais feito ao redor da ideia de que todos "Devem" ser felizes, o tempo todo. E que se você não está feliz, você está fazendo alguma coisa muito errada. A incessante busca e obsessão pela "felicidade ideal" se tornou uma das coisas mais insalubres e cruéis dos últimos 2 séculos - junto com o [consumo excessivo de açúcar](https://www.youtube.com/watch?v=f_4Q9Iv7_Ao), mas isso é outro assunto, embora açúcar e felicidade costumem ser correlacionados.
 
 Existem 2 conceitos que todos precisam entender:
 
-1) Você provavelmente [não tem depressão](https://www.youtube.com/watch?v=ykvC3QXJb18). Hoje em dia todo mundo "está deprimido" - obviamente, porque "descobrir o que ama fazer" dá muito trabalho e trás muito "sofrimento"...
+1) Você provavelmente [não tem depressão](https://www.youtube.com/watch?v=ykvC3QXJb18). Hoje em dia todo mundo "está deprimido" - obviamente, porque "descobrir o que ama fazer" dá muito trabalho e traz muito "sofrimento"...
 
 Não, você só está **entediado**, momentaneamente.
 
@@ -69,9 +69,9 @@ No mundo moderno, eu reduziria isso à "Cultura do Like". Triste.
 
 ### Conclusão
 
-Essa busca incessante pela "felicidade ideal", "fazer somente o que você ama", e achar "que o mundo vai acabar" tornam as pessoas muito fracas, com baixa auto-estima, baixa empatia, altíssimo narcisismo e uma sensação de "depressão" que chega a paralizá-la e a simplesmente atirarem para todos os lados por causa da falta de "propósito" e constante frustração com tudo e com todos.
+Essa busca incessante pela "felicidade ideal", "fazer somente o que você ama", e achar "que o mundo vai acabar" tornam as pessoas muito fracas, com baixa auto-estima, baixa empatia, altíssimo narcisismo e uma sensação de "depressão" que chega a paralisá-la e a simplesmente atirarem para todos os lados por causa da falta de "propósito" e constante frustração com tudo e com todos.
 
-Felizmente, eu nunca tive esse problema, só conheci pessoas que tem, e este artigo é dedicada a elas - como um "wake up call". Não quer dizer que não tive meus momentos infelizes e minhas crises pessoais. Já perdi muita coisa, financeiramente, pessoalmente. Negócios, amigos, relacionamentos. Não estou exagerando. Mas eu aceito meus prejuízos e pago por eles, como parte da vida: No Pain, No Gain.
+Felizmente, eu nunca tive esse problema, só conheci pessoas que têm, e este artigo é dedicado a elas - como um "wake up call". Não quer dizer que não tive meus momentos infelizes e minhas crises pessoais. Já perdi muita coisa, financeiramente, pessoalmente. Negócios, amigos, relacionamentos. Não estou exagerando. Mas eu aceito meus prejuízos e pago por eles, como parte da vida: No Pain, No Gain.
 
 Ambiente de trabalho "fancy" nunca foi uma preocupação. Já trabalhei embaixo de uma lona (!) quando pintaram o pequeno escritório onde eu era estagiário, no verão, sem ar condicionado, porque iam dar uma festa mas o trabalho não podia parar. Já trabalhei dentro do ambiente de um armazém de logística, com teto de zinco, só com ventilador e com caminhões entrando e saindo ao lado. Já dormi no chão do escritório, dezenas de vezes. Já carreguei móveis pelo meio da rua para mudar de escritório. Já varei muitas noites não pagas. Já tomei esporro na cara de coisas que nem eram minha responsabilidade (eu era estagiário). Já tive que fazer várias coisas não relacionadas ao meu trabalho de verdade, brigar com gerentes, brigar com "colegas de trabalho", brigar com fornecedor.
 
@@ -83,7 +83,7 @@ Não existe "trabalho que me desvaloriza". Se eu precisar recortar um Photoshop,
 
 > "O inventor da Coca-Cola não era um grande homem de negócios, um vendedor de doces, ou um sonhador buscando revolucionar a indústria de bebidas. John Pemberton só queria uma cura para dores de cabeça. Um farmacista por profissão, Pemberton usou dois ingredientes que achou que curariam a dor de cabeça: folhas de coca e nozes de coca. Quando seu assistente de laboratório acidentalmente misturou os dois com água carbonada, o resultado foi a primeira Coca-Cola." - [10 Awesome Accidental Discoveries](http://www.popularmechanics.com/science/health/g1216/10-awesome-accidental-discoveries/)
 
-Muitos desses narcisistas, na sua aura de auto-importância, acreditam que precisam do ambiente perfeito, que lhes **dêem** as condições para realizar coisas grandiosas (ênfase no "dêem" porque elas se recusam a conquistar o que precisam sozinhas). Isso é uma grande besteira. Ainda estou para ver alguém que pensa dessa maneira realizar qualquer coisa de relevância para alguém.
+Muitos desses narcisistas, na sua aura de auto-importância, acreditam que precisam do ambiente perfeito, que lhes **deem** as condições para realizar coisas grandiosas (ênfase no "deem" porque elas se recusam a conquistar o que precisam sozinhas). Isso é uma grande besteira. Ainda estou para ver alguém que pensa dessa maneira realizar qualquer coisa de relevância para alguém.
 
 Na minha experiência, todas as grandes descobertas tiveram condições humildes, mas tiveram pessoas que tinham real interesse no que estavam fazendo, apenas isso. Profissionais - "craftsmen" - interessados em aperfeiçoar seus próprios conhecimentos e, por consequência, saíram com grandes coisas que beneficiaram mais gente. Você não planeja algo revolucionário ou inovador: elas acontecem por acidente - dadas as condições ideais de temperatura e pressão naquele momento.
 
@@ -91,13 +91,13 @@ Na minha experiência, todas as grandes descobertas tiveram condições humildes
 
 Eu **não** sou programador com o intuito de um dia superar Bill Gates ou Linus Torvalds ou algo assim. Não é necessário ser cegamente arrogante para se fazer alguma coisa. 30 anos depois, eu ainda me divirto com coisas triviais: um código novo que compila, uma configuração nova que otimiza minha GPU, configurar um Raspberry Pi, testar uma nova linguagem, configurar meu editor de textos, pesquisar, aprender, evoluir e assim vai. "Fazer o que ama" não é fazer coisas grandiosas. E "ser feliz" não é um estado constante e imutável a ser atingido. É um processo, tentativas e erros.
 
-E somente quem aproveita o **presente**, o que existe ao seu redor e ao seu alcance neste momento - em vez de perder tempo pensando no "e se no futuro ..." - é quem tem mais chances de fazer o que os outros nao conseguem, cegos pela jornada da felicidade impossível. [Restrições levam à Inovação](http://www.akitaonrails.com/2013/04/01/off-topic-restricoes-sao-libertadoras-menos-e-mais), como venho repetindo faz anos.
+E somente quem aproveita o **presente**, o que existe ao seu redor e ao seu alcance neste momento - em vez de perder tempo pensando no "e se no futuro ..." - é quem tem mais chances de fazer o que os outros não conseguem, cegos pela jornada da felicidade impossível. [Restrições levam à Inovação](http://www.akitaonrails.com/2013/04/01/off-topic-restricoes-sao-libertadoras-menos-e-mais), como venho repetindo faz anos.
 
 > "carpe diem, quam minimum credula postero" - ["Faça o melhor possível com o tempo (limitado) que você tem"](http://www.phrases.org.uk/meanings/carpe-diem.html).
 
-> "Quem vive de passado é museu. E quem sofre com o futuro longínguo é um doente mental." - Desconhecido.
+> "Quem vive de passado é museu. E quem sofre com o futuro longínquo é um doente mental." - Desconhecido.
 
-Coincidentemente, enquanto estava pesquisando para escrever este post, saiu o podcast do [Hipsters Ponto Tech](http://hipsters.tech/carreira-em-tecnologia-hipsters-31) onde fiz uma pequena particípação justamente para falar sobre o assunto de Carreiras em tecnologia.
+Coincidentemente, enquanto estava pesquisando para escrever este post, saiu o podcast do [Hipsters Ponto Tech](http://hipsters.tech/carreira-em-tecnologia-hipsters-31) onde fiz uma pequena participação justamente para falar sobre o assunto de Carreiras em tecnologia.
 
 E releiam meus antigos posts mencionados acima, relacionado a estes assuntos:
 

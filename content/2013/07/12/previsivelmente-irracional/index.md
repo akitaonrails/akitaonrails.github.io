@@ -13,7 +13,7 @@ draft: false
 
 Existe um ramo de pesquisa conhecido como “Economia Comportamental”, uma vertente um pouco diferente da Economia tradicional. Enquanto esta última assume um mundo com pessoas racionais, que tomam decisões baseadas em análises de custo-benefício, o primeiro leva em consideração fatores sociais, cognitivos e emocionais que influenciam nossas decisões do dia-a-dia.
 
-Nós acreditamos que todos os dias tomamos decisões racionais, mas a verdade é que na maior parte do tempo nós damos chutes, decidimos baseados em emoção, e isso trás resultados muito interessantes. Um dos pesquisadores mais famosos é o Prof. Dan Ariely, escritor do livro “Previsivelmente Irracional”.
+Nós acreditamos que todos os dias tomamos decisões racionais, mas a verdade é que na maior parte do tempo nós damos chutes, decidimos baseados em emoção, e isso traz resultados muito interessantes. Um dos pesquisadores mais famosos é o Prof. Dan Ariely, escritor do livro “Previsivelmente Irracional”.
 
 Nesse livro ele analisa tópicos sobre como enxergamos preços, porque preços não são baseados em “oferta e procura”, por que somos desonestos, como funciona o efeito Placebo. Estamos falando de anos de experiência empírica.
 

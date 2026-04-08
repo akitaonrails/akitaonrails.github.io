@@ -2,7 +2,6 @@
 title: 'Translation: Counting Is a Waste of Time'
 date: '2007-09-01T13:08:00-03:00'
 slug: traduo-contar-perda-de-tempo
-translationKey: counting-is-waste-of-time
 tags:
 - off-topic
 - career

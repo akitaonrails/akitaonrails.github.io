@@ -26,11 +26,11 @@ E aqui vai minha tradução do artigo em questão:
 
 [![](http://s3.amazonaws.com/akitaonrails/assets/2008/2/10/johnny_rotten.jpg)](http://en.wikipedia.org/wiki/John_Lydon)
 
-Tudo começou com um desses estranhos treinamentos de pensamento que vêm a você quando está na metade do caminho entre dormir e acordar. As primeiras linhas da música [Anarchy in the UK](http://www.lyricsfreak.com/s/sex+pistols/anarchy+in+the+uk_20123592.html), do Sex Pistols, estava tocando na minha cabeça. (Isso pode ser uma dica tanto da minha idade, e do tipo e volume da música que ouço). Nessa manhã, [Johnny Rotten’s word](http://www.lyricsfreak.com/s/sex+pistols/anarchy+in+the+uk_20123592.html) pareciam particularmente sábias – e pareciam descrever perfeitamente um problema recorrente que tenho sofrido ajudando pessoas a realmente [entender](http://en.wikipedia.org/wiki/Grok) desenvolvimento Ágil. Brevemente, depois de se declarar um anti-cristo, Johnny diz:
+Tudo começou com um desses estranhos treinamentos de pensamento que vêm a você quando está na metade do caminho entre dormir e acordar. As primeiras linhas da música [Anarchy in the UK](http://www.lyricsfreak.com/s/sex+pistols/anarchy+in+the+uk_20123592.html), do Sex Pistols, estavam tocando na minha cabeça. (Isso pode ser uma dica tanto da minha idade, e do tipo e volume da música que ouço). Nessa manhã, as [palavras de Johnny Rotten](http://www.lyricsfreak.com/s/sex+pistols/anarchy+in+the+uk_20123592.html) pareciam particularmente sábias – e pareciam descrever perfeitamente um problema recorrente que tenho sofrido ajudando pessoas a realmente [entender](http://en.wikipedia.org/wiki/Grok) desenvolvimento Ágil. Brevemente, depois de se declarar um anti-cristo, Johnny diz:
 
 **“Não sei o que quero, mas sei como conseguir.”**
 
-E, isso é relevante porque eu constantemente caio em alguns problemas que fazem meu [sentido aranha](http://en.wikipedia.org/wiki/Spider-Man's_powers_and_equipment#Spider-sense) apitar. Em desenvolvimento de software Já ouviu algo parecido com isso?
+E, isso é relevante porque eu constantemente caio em alguns problemas que fazem meu [sentido aranha](http://en.wikipedia.org/wiki/Spider-Man's_powers_and_equipment#Spider-sense) apitar. Em desenvolvimento de software, já ouviu algo parecido com isso?
 
 **“Sabemos o que queremos. Poderia estimar quanto tempo vai levar para construir?”**
 
@@ -38,9 +38,9 @@ Se sentiu um frio na espinha, isso foi seu sentido aranha apitando. O outro prob
 
 **“Precisamos finalizar o detalhamento desses requerimentos antes de começar o desenvolvimento.”**
 
-Em resumo, eu caio em situações onde as pessoas do lado de especificação de desenvolvimento de software, “clientes” ou “donos do produto” em termos Ágeis, ou acreditam que sabem o que precisam, ou sentem que precisam saber antes de podermos começar a desenvolver. Mais ainda, eu ainda esbarro em vários ambiente Ágeis com a mesma antiga e chata reclamação sobre “clientes que não sabem o que querem” ou “clientes sempre mudando de idéia”.
+Em resumo, eu caio em situações onde as pessoas do lado de especificação de desenvolvimento de software, “clientes” ou “donos do produto” em termos Ágeis, ou acreditam que sabem o que precisam, ou sentem que precisam saber antes de podermos começar a desenvolver. Mais ainda, eu ainda esbarro em vários ambientes Ágeis com a mesma antiga e chata reclamação sobre “clientes que não sabem o que querem” ou “clientes sempre mudando de idéia”.
 
-Todos esses sentimentos para mim parecem surgir do não saber o que “iteração” significa, e é usada em desenvolvimento Ágil.
+Todos esses sentimentos para mim parecem surgir do não saber o que “iteração” significa, e como é usada em desenvolvimento Ágil.
 
 ### Iterar e Incrementar são idéias separadas.
 
@@ -54,7 +54,7 @@ Por desenvolvimento iterativo quero dizer que construímos alguma coisa, então 
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2008/2/10/iterating.jpg)
 
-Usei as duas figuras acima por vários anos para ajudar a ilustrar o conceito. Artistar trabalham iterativamente. Eles normalmente criam rascunhos, decidem criar uma pintura, criar uma sobre-pintura mostrando as cores e formas, então eventualmente começam a terminar de pintar. Eles param quando está “bom o suficiente” ou esgotam o tempo ou interesse.
+Usei as duas figuras acima por vários anos para ajudar a ilustrar o conceito. Artistas trabalham iterativamente. Eles normalmente criam rascunhos, decidem criar uma pintura, criar uma sobre-pintura mostrando as cores e formas, então eventualmente começam a terminar de pintar. Eles param quando está “bom o suficiente” ou esgotam o tempo ou interesse.
 
  ![](http://s3.amazonaws.com/akitaonrails/assets/2008/2/10/rembrandt_paint_by_number.jpg)
 
@@ -90,9 +90,9 @@ Talvez você tenha estado em projetos Ágeis:
 
 Os clientes se encontram com a equipe e escrevem várias user stories com sucesso. Depois de muita conversa entre desenvolvedores e clientes, os desenvolvedores estimam as histórias. Os clientes as priorizam, os de maior valor primeiro, e escolhem as histórias mais importantes para o primeiro lançamento estimado para daqui seis iterações.
 
-O desenvolvimento começa, e as coisas parecem ir muito bem. Num mundo de fantasia essa história poderia ocorrer, todas as estimativas de desenvolvimento estavam precisas. Nas primeira iterações todas as histórias agendadas são finalizadas. Mas, é quando as coisas vão errado.
+O desenvolvimento começa, e as coisas parecem ir muito bem. Num mundo de fantasia essa história poderia ocorrer, todas as estimativas de desenvolvimento estavam precisas. Nas primeiras iterações todas as histórias agendadas são finalizadas. Mas é quando as coisas dão errado.
 
-Depois de olhar para o software o cliente diz “Agora que vejo isso, está faltando algumas coisas. E, embora as coisas que tenha construído batem com os critérios de aceitação, nós, bem .. hum … não estávamos muito certos sobre critérios de aceitação e agora que vemos isso, isso precisa mudar.”
+Depois de olhar para o software o cliente diz “Agora que vejo isso, está faltando algumas coisas. E, embora as coisas que vocês construíram batam com os critérios de aceitação, nós, bem .. hum … não estávamos muito certos sobre critérios de aceitação e agora que vemos isso, isso precisa mudar.”
 
 “Sem problema” diz a equipe. “Apenas escreva mais user stories. Mas, vocês terão que retirar algumas das outras deste lançamento para que possamos acabar no tempo.”
 
@@ -100,7 +100,7 @@ O cliente está chocado e nervoso. “O que você está dizendo é que eu precis
 
 Eu trabalhei com essas equipes e clientes muitas vezes. Conheço muitas organizações onde “Desenvolvimento Ágil” foi etiquetado como um processo que simplesmente não funciona e foi ejetado da organização.
 
-Conheço outros clientes que adaptaram gastando mais e mais tempo em requerimentos. Eles introduziram fases de “Iteração 0” ou “Sprint 0” mais prologadas onde eles de fato escrevem esses grandes requerimentos. Eles trabalham, 1, 2 ou 3 iterações à frente para realmente conseguir os detalhes de suas histórias antes delas serem introduzidas. Eles tentam duro conseguí-las certo. E, quando inevitavelmente eles falham em conseguí-las certo, eles ficam murchos, desiludidos, desapontados – e vários outros “des-” que você pode imaginar.
+Conheço outros clientes que adaptaram gastando mais e mais tempo em requerimentos. Eles introduziram fases de “Iteração 0” ou “Sprint 0” mais prolongadas onde eles de fato escrevem esses grandes requerimentos. Eles trabalham, 1, 2 ou 3 iterações à frente para realmente conseguir os detalhes de suas histórias antes delas serem introduzidas. Eles se esforçam para conseguí-las certas. E, quando inevitavelmente eles falham em conseguí-las certo, eles ficam murchos, desiludidos, desapontados – e vários outros “des-” que você pode imaginar.
 
 Não é culpa deles. Eles foram mal direcionados.
 
@@ -117,29 +117,29 @@ No filme “Princess Bribe” um dos vilões exclama “Inconcebível!” cada v
 _“Entregável”. Você sempre fala essa palavra.   
 Eu não acho que isso significa o que você acha que significa._
 
-Para um cliente, alguém que pretende vender ou usar o software, ‘entregável’ significa que eles poderiam de fato vender ou usar o software. Isso significa que o número mínimo de funcionalidades estão todos presentes. O software precisa ser útil para os propósitos intencionados – pelo menos tão útil quanto o software antigo ou processo em papel que ele substitui. O software precisa parecer e se comportar bem – ter alta qualidade de acabamento – particularmente se isso é software comercial e você tem concorrentes baforando no seu cangote.
+Para um cliente, alguém que pretende vender ou usar o software, ‘entregável’ significa que eles poderiam de fato vender ou usar o software. Isso significa que o número mínimo de funcionalidades está todo presente. O software precisa ser útil para os propósitos intencionados – pelo menos tão útil quanto o software antigo ou processo em papel que ele substitui. O software precisa parecer e se comportar bem – ter alta qualidade de acabamento – particularmente se isso é software comercial e você tem concorrentes baforando no seu cangote.
 
 Entregável significa finalizado. Completamente feito e limpo. Não há necessidade de iterar em algo pronto – realmente pronto e entregável.
 
 Dizer “entregável” para pessoas no papel de clientes significa lhes dizer que é bom que tenham os requerimentos certos porque é dessa forma que desenvolvimento Ágil funciona.
 
-Agora, eu acredito que as pessoas Ágeis tinham outra coisa em mente quando disseram isso. Acho que eles queriam dizer sobre mante a qualidade do código bastante alta. Manter o código suportado com testes unitários e de aceitação. Tomar o cuidado de validar cada uma das user story. Isso diz aos testadores para se manterem envolvidos desde cedo e mais continuamente. Isso diz a desenvolvedores para desenvolver com alta atenção à qualidade. (Aparentemente desenvolvedores construiríam porcaria caso contrário?)
+Agora, eu acredito que as pessoas Ágeis tinham outra coisa em mente quando disseram isso. Acho que eles queriam dizer sobre manter a qualidade do código bastante alta. Manter o código suportado com testes unitários e de aceitação. Tomar o cuidado de validar cada uma das user story. Isso diz aos testadores para se manterem envolvidos desde cedo e mais continuamente. Isso diz a desenvolvedores para desenvolver com alta atenção à qualidade. (Aparentemente desenvolvedores construiriam porcaria caso contrário?)
 
 ### YAGRI: You Aint Gunna Release It (Você Não Vai Lançar Isso)
 
-Eu proponho que nós, da comunidade Ágil, sejamos claros sobre o que queremos dizer por iterativo e incremental. Precisamos explicar a esses clientes e donos de produtos que é importante escrever user stories que não tem a intenção de serem lançados. Para escrever histórias que eles intencionam avaliar, aprender, melhorar ou jogar fora como experimentos falhos.
+Eu proponho que nós, da comunidade Ágil, sejamos claros sobre o que queremos dizer por iterativo e incremental. Precisamos explicar a esses clientes e donos de produtos que é importante escrever user stories que não têm a intenção de serem lançadas. Para escrever histórias que eles intencionam avaliar, aprender, melhorar ou jogar fora como experimentos falhos.
 
 Em conversas com meu amigo Alistair, ele propôs [escrever três cartões de user stories em vez de apenas um](http://alistair.cockburn.us/index.php/Three_cards_for_user_rights). O primeiro cartão tem a história de fato nela. O segundo é um espaço para as inevitáveis mudanças à história depois de a vermos. A terceira para os refinamentos depois de vermos as mudanças.
 
-Esse é um exemplo de planejamento para iterar. Isso poderiar tirar muito stress das mãos trêmulas dos clientes apreensivos preocupados sobre fazer certo porque a história precisa ser “entregável”.
+Esse é um exemplo de planejamento para iterar. Isso poderia tirar muito estresse das mãos trêmulas dos clientes apreensivos preocupados sobre fazer certo porque a história precisa ser “entregável”.
 
 ### Você sempre pode ter o que quer, mas é o que você precisa?
 
-Onde aplicamos lírica do Sex Pistols a desenvolvimento de software, não podemos necessariamente aplicar os Rolling Stones.
+Onde aplicamos a lírica do Sex Pistols a desenvolvimento de software, não podemos necessariamente aplicar os Rolling Stones.
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2008/2/10/mick_jagger.jpg)
 
-_“Você não pode ter sempre o quer. Mas se algum dia tentar,  
+_“Você não pode ter sempre o que quer. Mas se algum dia tentar,  
  talvez encontre, terá o que precisa.”_
 
 Em desenvolvimento de software, infelizmente se você especificar alguma coisa, e todos fizerem seu melhor, terá o que quer – pelo menos o que foi especificado. Mas, é isso que precisa? Você somente saberá depois que olhar para isso e experimentá-lo.
@@ -170,7 +170,7 @@ As idéias gerais aqui estão escritas em um [artigo na StickyMinds.com](http://
 <param name="wmode" value="transparent">
 <embed src="http://www.youtube.com/v/4bM_l443VV4&rel=1&border=1" type="application/x-shockwave-flash" wmode="transparent" width="425" height="373"></embed></object>
 
-Se quiserem saber mais sobre estratégias específicas para iterar sensivelmente em desenvolvimento Ágil, por favor me visitem em um tutorial que estarei ensinando em uma conferência. Também prestem atenção a este site e bloguem enquanto ressucito meu antigo livro do purgatório.
+Se quiserem saber mais sobre estratégias específicas para iterar sensivelmente em desenvolvimento Ágil, por favor me visitem em um tutorial que estarei ensinando em uma conferência. Também prestem atenção a este site e bloguem enquanto ressuscito meu antigo livro do purgatório.
 
 Finalmente, se leu este blog no [ThoughtBlogs](http://blogs.thoughtworks.com/) (e meu web analytics me diz que muitos de vocês vieram de lá) esta pode ser a última vez que meu blog aparece por lá. Por favor assinem diretamente, ou me procurem na [ThoughtWorks alumni blogs](http://blogs.thoughtworks.com/alumni/). Eu tive uma ótima estadia na ThoughtWorks pelos últimos anos, mas é hora de andar sozinho.
 

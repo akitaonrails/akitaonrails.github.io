@@ -6,7 +6,6 @@ tags:
 - off-topic
 - career
 draft: false
-translationKey: all-marketers-are-liars
 ---
 
 [![](http://s3.amazonaws.com/akitaonrails/assets/2009/7/31/the_book_original.gif)](http://sethgodin.typepad.com/all_marketers_are_liars/)

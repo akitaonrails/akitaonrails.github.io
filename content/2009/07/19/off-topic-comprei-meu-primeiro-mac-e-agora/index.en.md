@@ -8,7 +8,6 @@ tags:
 - apple
 - learning
 - beginner
-translationKey: bought-my-first-mac
 draft: false
 ---
 

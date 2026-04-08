@@ -6,7 +6,6 @@ tags:
 - off-topic
 - go
 draft: false
-translationKey: why-programmers-should-play-go
 ---
 
 It's been a while since I did a translation, but this article was quite nostalgic for me, so I made a point of sharing it. It's by [Jon Dahl](http://railspikes.com/2008/7/14/why-programmers-should-play-go) from the **RailSpikes** blog. Read my [notes](#akita_go) at the end. Here it is:

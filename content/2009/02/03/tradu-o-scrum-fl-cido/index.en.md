@@ -6,7 +6,6 @@ tags:
 - off-topic
 - agile
 - management
-translationKey: flaccid-scrum
 draft: false
 ---
 

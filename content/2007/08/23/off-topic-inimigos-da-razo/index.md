@@ -20,13 +20,13 @@ Nesse sentido, religiões, superstições, tem alguns problemas. Não quer dizer
 
 Interessante notar como muitas discussões no mundo de tecnologia tem muito de não-racional: _minha linguagem é melhor do que a sua_, _meu processo é melhor do que o seu_, _meu Linux é melhor que seu Mac_, _meu Ruby é melhor que seu Java_. As pessoas assumem que existe Certo e Errado absoluto. Para um ganhar o outro tem que perder. _Se o meu é obviamente o Certo, o do outro é, obviamente, o Errado._ Como diria Einstein (em outro contexto, eu sei), _tudo é relativo_.
 
-Vocês devem ter notado em artigos mais antigos onde menciono várias vezes que eu não torço para nenhum time: sou um programador Ruby, mas não tenho nenhum problema em abrir um Visual Studio e codificar um pouco de C#. Tenho vários Macs, não não tenho problemas em otimizar um Windows ou um Linux. E assim por diante: tudo que puder me ajudar a melhorar meu conhecimento, é bem vindo. Qual o sentido prático de você se auto-limitar?
+Vocês devem ter notado em artigos mais antigos onde menciono várias vezes que eu não torço para nenhum time: sou um programador Ruby, mas não tenho nenhum problema em abrir um Visual Studio e codificar um pouco de C#. Tenho vários Macs, mas não tenho problemas em otimizar um Windows ou um Linux. E assim por diante: tudo que puder me ajudar a melhorar meu conhecimento, é bem vindo. Qual o sentido prático de você se auto-limitar?
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2007/8/23/Picture_1.png)
 
 E a motivação de falar sobre isso foram dois vídeos do Channel 4 da Inglaterra, um documentário em dois episódios chamado “Enemies of Reason”, que podem ser assistidos na íntegra pelo Google Video (episódio [1](http://video.google.com/videoplay?docid=8669488783707640763) e [2](http://video.google.com/videoplay?docid=-4720837385783230047)). O apresentador é ninguém menos que um dos meus autores favoritos de livros de não-tecnologia: o [Dr. Richard Dawkins](http://en.wikipedia.org/wiki/Richard_Dawkins). Biólogo, feroz defensor do evolucionismo, criador do termo [Meme](http://en.wikipedia.org/wiki/Meme) – cunhado pela primeira vez no excelente livro [The Selfish Gene](http://www.rubinghscience.org/memetics/dawkinsmemes.html).
 
-Ele também é autor do meu livro favorito recente: [The God Delusion](http://en.wikipedia.org/wiki/The_God_Delusion), que está para ser lançado no Brasil como [Deus, um Delírio](http://www.submarino.com.br/books_productdetails.asp?Query=ProductPage&ProdTypeId=1&ProdId=1972799&ST=SR). Esse livro deu origem a outro documentário do Channel 4 – que também recomendo muito – chamado [The Root of All Evil?](http://en.wikipedia.org/wiki/The_Root_of_All_Evil%3F), que também está no Google Video [aqui](http://video.google.com/videoplay?docid=9002284641446868316) e [aqui](http://video.google.com/videoplay?docid=-7619161192220036050) (o segundo episódio é entitulado “The Virus of Faith”).
+Ele também é autor do meu livro favorito recente: [The God Delusion](http://en.wikipedia.org/wiki/The_God_Delusion), que está para ser lançado no Brasil como [Deus, um Delírio](http://www.submarino.com.br/books_productdetails.asp?Query=ProductPage&ProdTypeId=1&ProdId=1972799&ST=SR). Esse livro deu origem a outro documentário do Channel 4 – que também recomendo muito – chamado [The Root of All Evil?](http://en.wikipedia.org/wiki/The_Root_of_All_Evil%3F), que também está no Google Video [aqui](http://video.google.com/videoplay?docid=9002284641446868316) e [aqui](http://video.google.com/videoplay?docid=-7619161192220036050) (o segundo episódio é intitulado “The Virus of Faith”).
 
  ![](http://s3.amazonaws.com/akitaonrails/assets/2007/8/23/9018277.jpg)
 
@@ -48,7 +48,7 @@ Outra coisa que me incomoda: todos os materiais que menciono acima, serão altam
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2007/8/23/csagan.jpg)
 
-Como Richard Dawkins disse, sintimos falta de [Carl Sagan](http://en.wikipedia.org/wiki/Carl_Sagan). Para mim, ele fez dois dos trabalhos mais inspiradores: a série “Cosmos” e o livro [The Demon-Haunted World: Science as a Candle in the Dark](http://en.wikipedia.org/wiki/The_Demon-Haunted_World). Toda criança deveria ser encorajada a assistir a série inteira de Cosmos e aprender a pensar por si própria, verdadeiramente, livre de dogmas e superstições.
+Como Richard Dawkins disse, sentimos falta de [Carl Sagan](http://en.wikipedia.org/wiki/Carl_Sagan). Para mim, ele fez dois dos trabalhos mais inspiradores: a série “Cosmos” e o livro [The Demon-Haunted World: Science as a Candle in the Dark](http://en.wikipedia.org/wiki/The_Demon-Haunted_World). Toda criança deveria ser encorajada a assistir a série inteira de Cosmos e aprender a pensar por si própria, verdadeiramente, livre de dogmas e superstições.
 
 Como disse Dawkins no documentário: os livros de astrologia e outras superstições, ultrapassam numa taxa de 4 para 1 os livros de ciências. Até em documentários temos produções supersticiosas que pregam histórias da carochinha usando a ciência como pretexto, como no horroroso DVD “What the Bleep do We Know?”.
 
@@ -56,13 +56,13 @@ Num mundo competitivo, com diversos problemas a serem resolvidos, como doenças,
 
 * * *
 
-Definição de **[Ciência](http://en.wikipedia.org/wiki/Science)**: vêm do Latin “scientia” ou “conhecimento”. Segundo o Webster’s New Collegiate Dictionary: “conhecimento adquirido através do estudo ou prática”, ou “conhecimento que cobre certas verdades da operação de leis gerais, como as obtidas e testadas através do [método científico](http://www.sciencemadesimple.com/scientific_method.html) e que se preocupam com o mundo físico.”
+Definição de **[Ciência](http://en.wikipedia.org/wiki/Science)**: vem do Latim “scientia” ou “conhecimento”. Segundo o Webster’s New Collegiate Dictionary: “conhecimento adquirido através do estudo ou prática”, ou “conhecimento que cobre certas verdades da operação de leis gerais, como as obtidas e testadas através do [método científico](http://www.sciencemadesimple.com/scientific_method.html) e que se preocupam com o mundo físico.”
 
 **Ciência** se refere a um sistema para se adquirir conhecimento. Esse sistema usa observação e experimentação para descrever e explicar fenômenos naturais. O termo ciência também se refere ao corpo organizado de conhecimento que as pessoas ganharam usando esse sistema.
 
 **Ciência** é um sistema elegante porque o **[método científico](http://en.wikipedia.org/wiki/Scientific_method)** é simples e coerente (Observação/Pesquisa, Hipótese, Predição, Experimentação e Conclusão), porém é rigoroso o suficiente para ser confiável principalmente porque, por definição, possui mecanismos de auto-correção. Independe de opinião pessoal, crença ou ponto de vista. A Lei da Gravidade é a mesma para todos, independente de raça, cultura, ideologia, idade ou condição social.
 
-Nenhuma hipótese ganha o caráter de “Lei” a menos que se tenha evidência sólidas o suficiente para tal. Além disso toda teoria (ou [hipótese](http://en.wikipedia.org/wiki/Hypothesis) – definição: sugestão de explicação) pode ser descartada caso evidências sólidas em contrário apareçam.
+Nenhuma hipótese ganha o caráter de “Lei” a menos que se tenha evidências sólidas o suficiente para tal. Além disso toda teoria (ou [hipótese](http://en.wikipedia.org/wiki/Hypothesis) – definição: sugestão de explicação) pode ser descartada caso evidências sólidas em contrário apareçam.
 
 Definição de **[superstição](http://en.wikipedia.org/wiki/Superstition)** é: (1) uma crença irracional sobre um objeto, ação ou circunstância não logicamente relacionada a um curso de eventos influencia seu resultado. (a) Uma crença, prática ou ritual irracional mantido por ignorância das leis da natureza ou por fé em mágica ou acaso. (b) Um estado mental de medo ou rejeição resultado de tal ignorância ou irracionalidade. © Idolatria.
 

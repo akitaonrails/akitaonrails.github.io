@@ -5,7 +5,6 @@ slug: off-topic-as-5-disfun--es-de-equipes-em-c-digo
 tags:
 - off-topic
 - management
-translationKey: 5-team-dysfunctions-in-code
 draft: false
 ---
 

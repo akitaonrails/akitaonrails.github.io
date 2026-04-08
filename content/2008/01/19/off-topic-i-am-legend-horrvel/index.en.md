@@ -6,7 +6,6 @@ tags:
 - off-topic
 - leisure
 draft: false
-translationKey: i-am-legend-terrible
 ---
 
 **DISCLAIMER:** This article has **SPOILERS**. If that bothers you, don't read it. I think it's silly to worry about, but either way, you've been warned.

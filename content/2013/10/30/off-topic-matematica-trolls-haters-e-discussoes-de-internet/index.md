@@ -9,7 +9,7 @@ tags:
 draft: false
 ---
 
-Em tempos de redes sociais e discussões abertas em timelines, foruns, etc, já nos acostumamos com o fato de nunca existir consenso em nada. E em tempos de Twitter onde 140 caracteres definem o que vamos dizer, soltar algo como _"X funciona"_, _"Y não funciona"_, _"concordo com A"_ ou _"discordo de B"_ é garantia de um longo e inacabável flame war.
+Em tempos de redes sociais e discussões abertas em timelines, fóruns, etc, já nos acostumamos com o fato de nunca existir consenso em nada. E em tempos de Twitter onde 140 caracteres definem o que vamos dizer, soltar algo como _"X funciona"_, _"Y não funciona"_, _"concordo com A"_ ou _"discordo de B"_ é garantia de um longo e inacabável flame war.
 
 E o que eu posso fazer, também sou culpado, viciado em argumentar tanto em assuntos sérios quanto assuntos irrelevantes - faz parte do entretenimento, eu acho -, mas devo concordar que algumas vezes falta paciência mesmo. Quem assistiu minhas [palestras](http://www.youtube.com/watch?v=Oiu-EhaLA4s) mais recentes deve lembrar de uma parte que digo o seguinte: que as pessoas buscam "validação" de suas idéias e argumentos, parece que quanto mais gente concorda, mais a idéia é válida. O tal processo "democrático" onde 50% + 1 garante vitória.
 
@@ -47,11 +47,11 @@ Cito isso porque já faz parte da nossa cultura atual assumir que esse tipo de p
 
 Isso tudo dito, vem a parte que mais me incomoda: as fórmulas mágicas, balas de prata. Dentro do contexto do mercado de auto-ajuda até que eu não me incomodo tanto. Afinal, que mal tem alguém ler ["Quem Mexeu no Meu Queijo"](http://franklysaurkraut.blogspot.com.br/2007/03/debunking-management-fads.html) para se entreter?
 
-O problema é quando pseudo-ciência é tomado como ciência real.
+O problema é quando pseudo-ciência é tomada como ciência real.
 
 É o que eu chamo de _"porque funcionou pra X deve funcionar pra Y"_, ou o que mais gente já me ouviu repetir ad nauseaum que [**"correlação não é causalidade"**](http://en.wikipedia.org/wiki/Correlation_does_not_imply_causation).
 
-Toda auto-ajuda são uma ou mais fórmulas, devidamente embrulhadas em pacotes de muito marketing e vendidas como soluções universais.
+Toda auto-ajuda é uma ou mais fórmulas, devidamente embrulhadas em pacotes de muito marketing e vendidas como soluções universais.
 
 ["Basta pensar positivo."](http://www.debunkingskeptics.com/LawofAttraction.htm)
 
@@ -73,7 +73,7 @@ dado x pertencente ao domínio dos números reais, e dado x diferente de zero, f
 
 Agora esta fórmula, no campo da Álgebra, está bem definida e é incontestável. Notem o que eu fiz com este simples exemplo: dei uma fórmula incompleta e imediatamente gerei uma discussão sobre ela. É exatamente isso que acontece em toda discussão em redes sociais e temas de auto-ajuda.
 
-Repetindo: toda auto-ajuda são uma ou mais fórmulas, que não definem o domínio e nem a imagem dessa fórmula. Cada pessoa que lê essa fórmula incompleta, tenta completá-la com seu próprio domínio _"para mim funciona"_ ou _"para mim não funciona"_ e acabamos de encontrar a origem mais simples de todo flame war, todo hater, todo troll da internet.
+Repetindo: toda auto-ajuda é uma ou mais fórmulas, que não definem o domínio e nem a imagem dessa fórmula. Cada pessoa que lê essa fórmula incompleta, tenta completá-la com seu próprio domínio _"para mim funciona"_ ou _"para mim não funciona"_ e acabamos de encontrar a origem mais simples de todo flame war, todo hater, todo troll da internet.
 
 Por outro lado também encontramos a primeira forma de distinguir uma fórmula inválida de uma "possivelmente" válida. Com a inválida você vai ter uma enorme dificuldade de definir o domínio. Partimos sempre do domínio maior, que funciona para todo mundo em todos os cenários. Imediatamente a fórmula quebra, agora começamos a reduzir esse domínio e, invariavelmente, ela vai se reduzir até chegar a um único caso que alguma vez funcionou.
 
@@ -89,7 +89,7 @@ Claro, dado alguns limites de espaço, tempo, margens de erro, sabemos prever mu
 
 Agora, dado um certo resultado, em muitos casos podemos olhar para trás, para o passado, e rastrear a cadeia de eventos até chegar às condições iniciais. Se alguém já assistiu [CSI](http://www.imdb.com/title/tt0247082/) ou algum programa de detetives sabe que podemos coletar evidências e usar de dedução para conectar eventos até chegar a um ponto de origem. É assim que todas as "fórmulas" são criadas. A cadeia de eventos já aconteceu, ela não vai mais mudar. Dentro do nosso Universo, o passado é imutável porque o tempo só tem uma direção.
 
-[George Santayana](http://en.wikipedia.org/wiki/George_Santayana) uma vez disse que _"quem não aprende com a História está destinado a repetí-la."_ Se levarmos o que eu disse até agora ao pé-da-letra, vamos concluir que a História raramente se repete. Só porque as condições iniciais e o resultado são parecidos com de outro evento, a cadeia de acontecimentos no meio é raramente a mesma. O fato de interpretarmos com a "História se repetindo" é mera coincidência e uma série de enganos que nosso cérebro faz o tempo todo, incluindo [Confirmation Bias](http://en.wikipedia.org/wiki/Confirmation_bias).
+[George Santayana](http://en.wikipedia.org/wiki/George_Santayana) uma vez disse que _"quem não aprende com a História está destinado a repeti-la."_ Se levarmos o que eu disse até agora ao pé-da-letra, vamos concluir que a História raramente se repete. Só porque as condições iniciais e o resultado são parecidos com de outro evento, a cadeia de acontecimentos no meio é raramente a mesma. O fato de interpretarmos com a "História se repetindo" é mera coincidência e uma série de enganos que nosso cérebro faz o tempo todo, incluindo [Confirmation Bias](http://en.wikipedia.org/wiki/Confirmation_bias).
 
 Sei que esse trecho pode ser complexo, mas o ponto que quero chegar é o seguinte: só porque aconteceu uma vez não significa que a mesma cadeia vai acontecer de novo.
 
@@ -103,7 +103,7 @@ _"Mas há vários bons exemplos de pequenas startups que seguiram o Lean Startup
 
 Como [Carl Sagan](http://www.youtube.com/watch?v=mRaXvPQ-ayk) diria _"alegações extraordinárias exigem evidências extraordinárias."_ E isso depende de trabalho exaustivo de testes para quebrar a hipótese. Um medicamente, feito de forma séria, leva anos, até décadas, até chegar às farmácias, mas balas de prata se tornam virais em questão de horas ou dias. E dependendo de quem fala e como fala, ganha status de "verdade inquestionável" muito rápido. Valdomiro da Mundial que o diga.
 
-Porque "parece" que funcionou para 1, 2, 10 casos, não é suficiente para tornar algo uma verdade. A "Teoria" da Evolução das espécies, de Charles Darwin, que tem toneladas de evidências concretas e sólidas, que vem sendo questionada, atacada, dilacerada minuciosamente por mais de 150 anos e que para todos os efeitos e propósitos já é praticamente uma verdade absoluta, ainda não ganhou o status de "Lei", porque qualquer outra coisa menos rigorosamente testado poderia ser diferente? 
+Porque "parece" que funcionou para 1, 2, 10 casos, não é suficiente para tornar algo uma verdade. A "Teoria" da Evolução das espécies, de Charles Darwin, que tem toneladas de evidências concretas e sólidas, que vem sendo questionada, atacada, dilacerada minuciosamente por mais de 150 anos e que para todos os efeitos e propósitos já é praticamente uma verdade absoluta, ainda não ganhou o status de "Lei", porque qualquer outra coisa menos rigorosamente testada poderia ser diferente? 
 
 ## Conclusão
 

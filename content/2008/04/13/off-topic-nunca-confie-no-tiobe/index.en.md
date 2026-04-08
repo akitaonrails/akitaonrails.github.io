@@ -8,7 +8,6 @@ tags:
 - fallacies
 - tiobe
 draft: false
-translationKey: never-trust-tiobe
 ---
 
 I have used TIOBE numbers in my presentations. I've used those numbers in articles on this blog. I had a vague notion of how they formed those numbers, but never stopped to think about them. Does anyone here know how the TIOBE "Language Popularity" index is actually formed?

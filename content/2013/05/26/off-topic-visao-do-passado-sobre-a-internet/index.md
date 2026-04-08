@@ -17,15 +17,15 @@ draft: false
 
 
 
-A verdadeira _Guerra Fria_, nos anos 60, não estava sendo travada em campo, com soldados e aviões, e sim nos laboratórios de pesquisa, financiados pelo governo e universidades já estavam equipados com os melhores recursos computacionais disponíveis. Achava-se que a habilidade de criar e manter vantagens tecnológicas sobre o adversário determinaria o vencedor do conflito.
+A verdadeira _Guerra Fria_, nos anos 60, não estava sendo travada em campo, com soldados e aviões, e sim nos laboratórios de pesquisa, financiados pelo governo e universidades já estavam equipadas com os melhores recursos computacionais disponíveis. Achava-se que a habilidade de criar e manter vantagens tecnológicas sobre o adversário determinaria o vencedor do conflito.
 
 
 
-A idéia de conectar esses centros, objetivando a troca de informações começou a ser desenvolvida. Porém, foi atribuído um fator determinante na escolha da tecnologia de rede que viria a viabilizar a conexão dos centros estratégicos: a informação deveria continuar a fluir, mesmo sob as piores condições, tal como um ataque nuclear.
+A idéia de conectar esses centros, objetivando a troca de informações, começou a ser desenvolvida. Porém, foi atribuído um fator determinante na escolha da tecnologia de rede que viria a viabilizar a conexão dos centros estratégicos: a informação deveria continuar a fluir, mesmo sob as piores condições, tal como um ataque nuclear.
 
 
 
-Foi delegada à **ARPA **( Advanced Research Projects Agency ) e ao **DoD** ( Departament of Defense ) a responsabilidade de desenvolverem a melhor alternativa para a integração dos centros de informação.
+Foi delegada à **ARPA **( Advanced Research Projects Agency ) e ao **DoD** ( Department of Defense ) a responsabilidade de desenvolverem a melhor alternativa para a integração dos centros de informação.
 
 
 
@@ -80,19 +80,19 @@ Depois da revolução dos microcomputadores na década de 80 e da disseminação
 
 
 
-Com os microcomputadores e a Internet as fronteiras físicas foram apagadas, num lugar onde "países" e "oceanos" não têm mais significado e onde as distâncias físicas não fazem mais sentido. A **virtualização **evoluiu a tal ponto que uma pessoa que mora num país como o Brasil já pode conhecer a fazer amizade com pessoas de qualquer parte do mundo, como da Austrália, por exemplo. Ferramentas como o **CoolTalk **da Netscape Inc. ( **http://www.netscape.com **) que substitui o telefone ou o **TimedVideo Grabber** ( **http://www.avernus.com/~allan **) que possibilita a transmissão de imagens em _real-time _com o uso de câmera, torna possível pessoas se conhecerem sem nunca precisarem realmente se encontrarem em "carne-e-osso".
+Com os microcomputadores e a Internet as fronteiras físicas foram apagadas, num lugar onde "países" e "oceanos" não têm mais significado e onde as distâncias físicas não fazem mais sentido. A **virtualização **evoluiu a tal ponto que uma pessoa que mora num país como o Brasil já pode conhecer e fazer amizade com pessoas de qualquer parte do mundo, como da Austrália, por exemplo. Ferramentas como o **CoolTalk **da Netscape Inc. ( **http://www.netscape.com **) que substitui o telefone ou o **TimedVideo Grabber** ( **http://www.avernus.com/~allan **) que possibilita a transmissão de imagens em _real-time _com o uso de câmera, tornam possível pessoas se conhecerem sem nunca precisarem realmente se encontrarem em "carne-e-osso".
 
 
 
-E falando em evolução, depois de 500 anos de reinado absoluto das mídias impressas como difusor de informação, esta está sendo rapidamente sendo substituído por publicações digitais na **World Wide Web**, a parte da Internet que mais chama a atenção atualmente.
+E falando em evolução, depois de 500 anos de reinado absoluto das mídias impressas como difusor de informação, esta está sendo rapidamente substituída por publicações digitais na **World Wide Web**, a parte da Internet que mais chama a atenção atualmente.
 
 
 
-Com trabalhos pioreiros como a **Enciclopédia Britannica **( **http://www.eb.com **), que foi absolutamente abalada depois que as enciclopédias impressas caíram em total desuso depois do surgimento das enciclopédias digitais como a **Encarta **da **Microsoft **( **http://www.microsoft.com **), e também de serviços de procura do tipo "páginas amarelas"  como as oferecidas por sites como o **Yahoo! **( **http://www.yahoo.com **) ou **Lycos **( **http://www.lycos.com **), tornaram a Internet também o maior repositórios de dados já feito, o melhor lugar para pesquisas que se pode encontrar.
+Com trabalhos pioneiros como a **Enciclopédia Britannica **( **http://www.eb.com **), que foi absolutamente abalada depois que as enciclopédias impressas caíram em total desuso depois do surgimento das enciclopédias digitais como a **Encarta **da **Microsoft **( **http://www.microsoft.com **), e também de serviços de procura do tipo "páginas amarelas"  como as oferecidas por sites como o **Yahoo! **( **http://www.yahoo.com **) ou **Lycos **( **http://www.lycos.com **), tornaram a Internet também o maior repositório de dados já feito, o melhor lugar para pesquisas que se pode encontrar.
 
 
 
-Revistas mundiamente famosas como a **PC Magazine **( **http://www.pcmag.com **) da **Ziff Davis Publishing **( **http://www.ziff.com **) ou a **Playboy **( **http://www.playboy.com **) já tem suas publicações exibidas e atualizadas periodicamente na **WWW**.
+Revistas mundialmente famosas como a **PC Magazine **( **http://www.pcmag.com **) da **Ziff Davis Publishing **( **http://www.ziff.com **) ou a **Playboy **( **http://www.playboy.com **) já têm suas publicações exibidas e atualizadas periodicamente na **WWW**.
 
 
 
@@ -108,11 +108,11 @@ Falando em jornais, estes também não ficam atrás, colocando na WWW, muito das
 
 
 
-A **Agência Estado**, que publica jornais famosos como o **Estado de São Paulo**, também já distribui seu jornal via internet ( **http://www.agestado.com.br **) com as principais chamadas do dia e informações diversas, incluindo seu classificados e, num período de olimpíadas, com áreas especiais para os esportes em Atlanta.
+A **Agência Estado**, que publica jornais famosos como o **Estado de São Paulo**, também já distribui seu jornal via internet ( **http://www.agestado.com.br **) com as principais chamadas do dia e informações diversas, incluindo seus classificados e, num período de olimpíadas, com áreas especiais para os esportes em Atlanta.
 
 
 
-Outro conceito que se tornou famoso com a Internet é a dos **serviços on-line **como as gigantes **Compuserve **e **America On-line **que atendem a pessoas do mundo todo e tem aliados como Netscape e Microsoft. Esse tipo de organização é baseada em "serviços" que incluem fóruns de discussão; bibliotecas com informações atualizadas; revistas, jornais e outros periódicos; lojas virtuais que vendem desde CDs a roupas; dicas de lazer e negócios; e também serviços comuns à Internet como e-mail e WWW.
+Outro conceito que se tornou famoso com a Internet é a dos **serviços on-line **como as gigantes **Compuserve **e **America On-line **que atendem a pessoas do mundo todo e têm aliados como Netscape e Microsoft. Esse tipo de organização é baseada em "serviços" que incluem fóruns de discussão; bibliotecas com informações atualizadas; revistas, jornais e outros periódicos; lojas virtuais que vendem desde CDs a roupas; dicas de lazer e negócios; e também serviços comuns à Internet como e-mail e WWW.
 
 
 
@@ -120,11 +120,11 @@ No Brasil também começou a se disseminar tais tipos de serviço, com destaque 
 
 
 
-Tais serviços tem faturamentos muito altos principalmente por causa da empolgação atual do mundo em torno da virtualização de serviços e pelo aluguel do espaço digital para empresas que se interessam em colocar "out-doors virtuais" ou mesmo acrescentar outros serviços como lojas digitais nas páginas principais, visto que o número de pessoas que trafegam pelas linhas digitais todos os dias é muito grande. Para ver isso basta entrar na página do _Brasil Online_, por exemplo, e se deparar com chamadas de publicidade de empresas como a **Sun **ou a **Credicard**. Essas chamadas são links que levam às homepages das respectivas empresas.
+Tais serviços têm faturamentos muito altos principalmente por causa da empolgação atual do mundo em torno da virtualização de serviços e pelo aluguel do espaço digital para empresas que se interessam em colocar "out-doors virtuais" ou mesmo acrescentar outros serviços como lojas digitais nas páginas principais, visto que o número de pessoas que trafegam pelas linhas digitais todos os dias é muito grande. Para ver isso basta entrar na página do _Brasil Online_, por exemplo, e se deparar com chamadas de publicidade de empresas como a **Sun **ou a **Credicard**. Essas chamadas são links que levam às homepages das respectivas empresas.
 
 
 
-E falando em propaganda, alguém deve estar confeccionando tais pages e anúncios. Essas empresas estão se especializando em desenhar páginas específicas e criativas para um tipo de mídia que sai das limitações do papel e possibilita coisas como **Hypertext **( palavras dentro de um texto que levam a outras páginas ), **Marquees **( frases que se movimentam na linha ), músicas ( através de arquivos **WAVE **ou da nova tecnologia **Real Audio **), animações ( via imagens **GIF **animadas ou então utilizando recursos da linguagem **Java **) ou ainda ambientes totalmente tridimensionais ( utilizando a tecnologia **VRML - Virtual Reallity Markup Language **) e muito mais. Nesse filão mercadológico estão empresas como a **Vivid Studio **( **http://www.vivid.com **) que tem como clientes as gigantes **Silicon Graphics **e Microsoft ou a **Razorfish **( **http://www.razorfish.com **) que desenha para a **Time-Warner **e a **Pepsi**.
+E falando em propaganda, alguém deve estar confeccionando tais pages e anúncios. Essas empresas estão se especializando em desenhar páginas específicas e criativas para um tipo de mídia que sai das limitações do papel e possibilita coisas como **Hypertext **( palavras dentro de um texto que levam a outras páginas ), **Marquees **( frases que se movimentam na linha ), músicas ( através de arquivos **WAVE **ou da nova tecnologia **Real Audio **), animações ( via imagens **GIF **animadas ou então utilizando recursos da linguagem **Java **) ou ainda ambientes totalmente tridimensionais ( utilizando a tecnologia **VRML - Virtual Reality Markup Language **) e muito mais. Nesse filão mercadológico estão empresas como a **Vivid Studio **( **http://www.vivid.com **) que tem como clientes as gigantes **Silicon Graphics **e Microsoft ou a **Razorfish **( **http://www.razorfish.com **) que desenha para a **Time-Warner **e a **Pepsi**.
 
 
 **
@@ -136,7 +136,7 @@ O principal ponto de atrito quando se fala em comércio digital é a **seguranç
 
 
 
-Um dos mais antigos é o **cybercash **( **http://www.cybercash.com **) com mais ou menos um ano de idade. Por enquanto, a empresa só trabalha com serviços de cartões de crédito, mas em breve promete oferecer serviços de pagamentos monetários. Atualmente, com um browser ligado à rede pode-se comprar com segurança em shoppings virtuais. Através do protocolo **SIPS **( Secure Internet Payment Service ), segundo a empresa, é tão fácil quanto apontar e clickar. Nesse tipo de transação, compra-se quantos cybercashes quantos desejados e debita-se no cartão de crédito.
+Um dos mais antigos é o **cybercash **( **http://www.cybercash.com **) com mais ou menos um ano de idade. Por enquanto, a empresa só trabalha com serviços de cartões de crédito, mas em breve promete oferecer serviços de pagamentos monetários. Atualmente, com um browser ligado à rede pode-se comprar com segurança em shoppings virtuais. Através do protocolo **SIPS **( Secure Internet Payment Service ), segundo a empresa, é tão fácil quanto apontar e clicar. Nesse tipo de transação, compra-se quantos cybercashes quantos desejados e debita-se no cartão de crédito.
 
 
 
@@ -152,7 +152,7 @@ A Netscape desenvolve o protocolo aberto de segurança **SSL **( Secure Sockets 
 
 
 
-Praticamente todas as empresas do setor financeiro vem investindo muito no desenvolvimento de uma plataforma segura e confiável suficiente para transações financeiras de todos os níveis de importância. Hackers à parte, os negócios via Internet não diferem muito dos efetuados fora dela. Ou seja, a melhor forma de estar livre de problemas é confiar na credibilidade das empresas sérias. Dificilmente alguém vai querer comprometer seu bom nome deixando de entregar a mercadoria no prazo ou "negociando" o número do cartão de crédito.
+Praticamente todas as empresas do setor financeiro vêm investindo muito no desenvolvimento de uma plataforma segura e confiável suficiente para transações financeiras de todos os níveis de importância. Hackers à parte, os negócios via Internet não diferem muito dos efetuados fora dela. Ou seja, a melhor forma de estar livre de problemas é confiar na credibilidade das empresas sérias. Dificilmente alguém vai querer comprometer seu bom nome deixando de entregar a mercadoria no prazo ou "negociando" o número do cartão de crédito.
 
 
 
@@ -160,7 +160,7 @@ No Brasil, o **Mappin **( **http://www.mappin.com.br **) foi a primeira grande e
 
 
 
-Se há alguém de mudança para os Estados Unidos ou precisando simplesmente comprar preços, poderá consultar o **For Sail By Owner Connection**. Trata-se de umsite especializado em vendas de casas, com fotos e especificações. Se na verdade você precisa vender a sua casa, também poderá anunciar nesta page : **http://www.cracker.com/byowner**.
+Se há alguém de mudança para os Estados Unidos ou precisando simplesmente comprar preços, poderá consultar o **For Sail By Owner Connection**. Trata-se de um site especializado em vendas de casas, com fotos e especificações. Se na verdade você precisa vender a sua casa, também poderá anunciar nesta page : **http://www.cracker.com/byowner**.
 
 
 

@@ -2,7 +2,6 @@
 title: 'Getting Real Translation - Release Candidate 2 Launch'
 date: '2007-02-01T12:58:25-02:00'
 slug: tradução-getting-real-lançamento-release-candidate-2
-translationKey: getting-real-translation-rc2
 tags:
 - off-topic
 - 37signals

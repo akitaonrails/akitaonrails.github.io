@@ -5,7 +5,6 @@ slug: off-topic-padr-es-commodities-e-inova--es
 tags:
 - off-topic
 - management
-translationKey: standards-commodities-and-innovations
 draft: false
 ---
 

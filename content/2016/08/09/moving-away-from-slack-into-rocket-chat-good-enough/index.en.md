@@ -2,7 +2,6 @@
 title: Moving away from Slack into Rocket.chat. Good Enough.
 date: '2016-08-09T16:21:00-03:00'
 slug: moving-away-from-slack-into-rocket-chat-good-enough
-translationKey: slack-to-rocket-chat
 tags:
 - slack
 - rocket.chat

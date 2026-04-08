@@ -33,7 +33,7 @@ Veja esta lista de acidentes fatais da aviação civil:
 15. Lear Jet out of Palm Springs, CA, (NTSB, 1967);
 16. F-27 into Las Vegas, NV, (CAB, 1965).
 
-Cada um desses acidentes é um exemplo de subordinados que sabiam que o Capitão estava ignorando sérios riscos e demonstrando comportamento contra-produtivo e não razoável. Esses subordinados todos sabiam que seus respectivos capitães ou estavam negando, descontando ou ignorantes aos perigos letais. Infelizmente, nenhum deles foi capaz de fazer qualquer coisa para mudar a performance, ações ou estratégias do Capitão; a maioria não conseguiu sequer fazer o Capitão se tocar do problema.
+Cada um desses acidentes é um exemplo de subordinados que sabiam que o Capitão estava ignorando sérios riscos e demonstrando comportamento contra-produtivo e não razoável. Esses subordinados todos sabiam que seus respectivos capitães estavam negando, descontando ou ignorantes aos perigos letais. Infelizmente, nenhum deles foi capaz de fazer qualquer coisa para mudar a performance, ações ou estratégias do Capitão; a maioria não conseguiu sequer fazer o Capitão se tocar do problema.
 
 
 Talvez isso não faça sentido, então vamos colocar em perspectiva. No mundo da aviação, a hierarquia é bastante rígida, o Piloto/Capitão é a autoridade máxima, o co-piloto e o resto da tripulação jamais devem discordar deles. Eis o “Catch-22” dos Co-Pilotos. Definindo, Catch-22 significa “dilema” :
@@ -64,9 +64,9 @@ Regras de Sobrevivência:
 - Fale muito, muito levemente quando falar com seu Capitão;
 - Não faça aterrissagens melhor do que seu Capitão até a última viagem do mês.
 
-Com tudo isso, não estou brincando, as análises das caixas-pretas dos aviões acidentados nas últimas décadas demonstrou que os Capitães às vezes estão sob stress, cansados, irritados, ou qualquer coisa assim, acabam ignorando situações de perigo. Os co-pilotos, sabendo da situação não tinham nenhuma idéia de como abordar o assunto, com medo de retaliações caso estivessem errados, por exemplo. Por alguma razão, nem o pior caso, que é literalmente cair para a morte, conseguiu quebrar a barreira da hierarquia.
+Com tudo isso, não estou brincando, as análises das caixas-pretas dos aviões acidentados nas últimas décadas demonstraram que os Capitães às vezes, sob stress, cansados, irritados, ou qualquer coisa assim, acabam ignorando situações de perigo. Os co-pilotos, sabendo da situação não tinham nenhuma ideia de como abordar o assunto, com medo de retaliações caso estivessem errados, por exemplo. Por alguma razão, nem o pior caso, que é literalmente cair para a morte, conseguiu quebrar a barreira da hierarquia.
 
-Por causa disso pesquisadores como [Dr. Robert O. Besco](http://www.crm-devel.org/resources/paper/PACE.PDF) chegaram a modelos de procedimento especificamente para esse Cockpit Resource Management (CRM), ou gestão dos pessoas da aeronave. Um deles foi o P.A.C.E.
+Por causa disso pesquisadores como [Dr. Robert O. Besco](http://www.crm-devel.org/resources/paper/PACE.PDF) chegaram a modelos de procedimento especificamente para esse Cockpit Resource Management (CRM), ou gestão das pessoas da aeronave. Um deles foi o P.A.C.E.
 
 - (P)robing
 - (A)lerting
@@ -91,7 +91,7 @@ _“Capitão, é minha função e responsabilidade proteger seus pontos cegos. E
 
 ### CHALLENGING
 
-_“Capitão, você está colocando os passegeiros e a aeronave em perigo imediato e irreversível. Você deve escolher imediatamente um curso de ação que irá reduzir nossos níveis inaceitáveis de alto risco.”_
+_“Capitão, você está colocando os passageiros e a aeronave em perigo imediato e irreversível. Você deve escolher imediatamente um curso de ação que irá reduzir nossos níveis inaceitáveis de alto risco.”_
 
 Você já tentou entender, já tentou avisar, agora é hora de desafiá-lo e confrontá-lo a enfrentar a realidade. Nessa penúltima etapa, o co-piloto deve ainda dar a chance do capitão cair em si e fazer a coisa certa.
 
@@ -117,7 +117,7 @@ Um terceiro membro da tripulação, se presente, pode usar terminologia como:
 
 Co-Piloto 2: _“Capitão, você deve dar o controle da aeronave ao Barry imediatamente!”_
 
-Quando o co-piloto já está pilotando a aeronave, os passos de intervenção do PACE devem ser sados pelo co-piloto para anunciar a intenção de implementar uma estratégia não iniciada pelo Capitão. Embora o co-piloto tenha o controle da aeronave, o Capitão ainda tem a responsabilidade de comando para o plano de vôo básico e controle da missão. Esses mesmos quatro passos de progressão para estratégia de intervenção devem ser seguidas pelo co-piloto em vôo para formalizar a mudança em comando e retornar a aeronave às margens de segurança planejadas anteriormente.
+Quando o co-piloto já está pilotando a aeronave, os passos de intervenção do PACE devem ser usados pelo co-piloto para anunciar a intenção de implementar uma estratégia não iniciada pelo Capitão. Embora o co-piloto tenha o controle da aeronave, o Capitão ainda tem a responsabilidade de comando para o plano de voo básico e controle da missão. Esses mesmos quatro passos de progressão para estratégia de intervenção devem ser seguidos pelo co-piloto em voo para formalizar a mudança em comando e retornar a aeronave às margens de segurança planejadas anteriormente.
 
 ## Conclusão
 
@@ -127,7 +127,7 @@ Os arcaicos sistemas hierárquicos usados até hoje assumem que os ditos “Gere
 
 Ou **pior** : o gerente é exatamente o tipo coercivo, que usa de medo, intimidação, literalmente “carteirada” para mandar e desmandar. _“Você trabalha para mim, cale sua boca e faça o que estou mandando!”_ Normalmente ninguém diz assim tão explicitamente, mas é o que acontece, especialmente a portas fechadas. Seu gerente é assim? Prepare-se, seu avião está prestes a cair.
 
-Diria que 99% dos gerentes da atualidade são os Capitães de vôo que vão levar o avião ao fundo do Triângulo das Bermudas. As primeiras pessoas que devem evitar isso é a Equipe!
+Diria que 99% dos gerentes da atualidade são os Capitães de voo que vão levar o avião ao fundo do Triângulo das Bermudas. As primeiras pessoas que devem evitar isso são a Equipe!
 
 Sim, você mesmo, membro acomodado e conformado de uma equipe de produtos ou projetos! Você é o co-piloto nessa história. Quando o projeto/produto falha, não pense apenas que é culpa do gerente, a culpa é sua! E se isso fosse um avião você estaria igualmente morto, um presunto. Portanto, faça a sua parte.
 

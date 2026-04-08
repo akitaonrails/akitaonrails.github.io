@@ -8,7 +8,6 @@ tags:
 - market
 - regulation
 draft: false
-translationKey: stop-systems-analyst-regulation
 ---
 
 **Update 25/08/2009:** The law [has already been approved](/2009/08/22/off-topic-maldita-lei-de-regulamenta--o-est--de-volta) by the CCJ and is heading to the CAS. This is going too far!

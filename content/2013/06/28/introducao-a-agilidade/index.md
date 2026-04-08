@@ -16,7 +16,7 @@ Eu retornei no último fim de semana de uma viagem à Baltimore, Maryland, onde 
 
 Recomendo assistir à palestra na íntegra.
 
-Desde que comecei este blog, tento explicar as condições e dificuldades que um Gestor de Projetos enfrenta. Porém também estava tomando cuidado para não mencionar o termos “Agile” muitas vezes. Atualmente estamos sofrendo uma febre de “agilidade”. Todo CIO, CTO, Gerente, Consultor, para parecer “moderno” diz que sabe “Scrum”, que é “ágil”. Isso é por um lado bom, porque finalmente algumas empresas talvez consigam adotar da forma correta, mas por outro lado é muito ruim, porque estamos queimando o nome “Agile” por causa de consultorias ruins implementando isso errado no cliente. Daí a percepção que muitos desavisados ficam é que “Agile não funciona”.
+Desde que comecei este blog, tento explicar as condições e dificuldades que um Gestor de Projetos enfrenta. Porém também estava tomando cuidado para não mencionar o termo “Agile” muitas vezes. Atualmente estamos sofrendo uma febre de “agilidade”. Todo CIO, CTO, Gerente, Consultor, para parecer “moderno” diz que sabe “Scrum”, que é “ágil”. Isso é por um lado bom, porque finalmente algumas empresas talvez consigam adotar da forma correta, mas por outro lado é muito ruim, porque estamos queimando o nome “Agile” por causa de consultorias ruins implementando isso errado no cliente. Daí a percepção que muitos desavisados ficam é que “Agile não funciona”.
 
 Pois bem, durante a RailsConf, eu tive a oportunidade de conversar e entrevistar o Robert Martin, cuja gravação você pode assistir no Blip.TV:
 
@@ -33,7 +33,7 @@ Diversos grandes nomes começaram a sugerir formas mais inteligentes de desenvol
 
 A lendária reunião se deu na estação de ski de Snowbird, em Utah, entre os dias 21 e 23 de Fevereiro de 2001. O resultado dessa reunião foi a criação do “Manifesto Ágil”. Ela delineia **4 valores** e **12 princípios** que todos os participantes concordaram como o mínimo denominador comum na prática de desenvolvimento de software. O manifesto diz:
 
-> Estamos descobrindo melhores maneiras de desenvolver software ao fazendo e ajudando os outros a fazer. Através desse trabalho nós chegamos a valorizar:
+> Estamos descobrindo melhores maneiras de desenvolver software fazendo e ajudando os outros a fazer. Através desse trabalho nós chegamos a valorizar:
 
 > Indivíduos e Interações mais do que Processos e Ferramentas
 
@@ -43,7 +43,7 @@ A lendária reunião se deu na estação de ski de Snowbird, em Utah, entre os d
 
 > Responder a mudanças mais do que seguir um plano
 
-> Ou seja, enquanto existe valor nos ítens da direita, nós valorizamos os ítens da esquerda muito mais.
+> Ou seja, enquanto existe valor nos itens da direita, nós valorizamos os itens da esquerda muito mais.
 
 Como disse antes, atualmente existe uma certa febre crescente em adoção de metodologias ágeis. Pior do que isso, existe uma tendência de expropriar o termo “Ágil” ou seus derivados como “XP” e “Scrum”, criando literalmente frankensteins mesclando o jeito antigo com o jeito novo. Frankensteins como tentar misturar RUP com Scrum, ou PMI com Scrum e assim por diante.
 

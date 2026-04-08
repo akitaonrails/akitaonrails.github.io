@@ -10,7 +10,7 @@ tags:
 draft: false
 ---
 
-Essa frase aparece bastante no mundo ágil. A interpretação correta para os 4 princípios do Manifesto Ágil é o que ele mesmo diz: "Embora saibamos que exista valor no ítem da direita, valorizamos mais o da esquerda".
+Essa frase aparece bastante no mundo ágil. A interpretação correta para os 4 princípios do Manifesto Ágil é o que ele mesmo diz: "Embora saibamos que exista valor no item da direita, valorizamos mais o da esquerda".
 
 Mas essa frase é usada para justificar "não precisamos ter processos, basta deixar as pessoas escolherem" ou então "as pessoas escolhem, então vamos ter consenso pra tudo" - a falácia da [organização democrática](http://www.akitaonrails.com/2011/04/25/off-topic-mea-culpa-organizacoes-democraticas-nao-funcionam) -, enfim, desculpas para justificar o não entendimento do valor de se ter processos.
 
@@ -18,9 +18,9 @@ Agile, derivado de Lean, é inteiramente baseado em processos. E o principal dos
 
 Agora vem a parte ruim: como falar sobre pessoas? Ou mais especificamente, sobre comportamento de pessoas?
 
-Como nós todos somos "pessoas" temos a certeza que sabemos como pessoas pensam. E nada poderia estar mais longe da verdade. Temos idéias pré-concebidas falaciosas, supersticiosas, preconceituosas, há tempos ultrapassadas mas que de tanto serem repetidas como clichês ainda acreditamos que é verdade, da mesma forma como ainda muitos acreditam que só usamos [10% do nosso cérebro](http://en.wikipedia.org/wiki/Ten_percent_of_brain_myth) ou mesmo que [não podemos tomar manga com leite](http://www.akitaonrails.com/2008/12/16/off-topic-m-todo-cient-fico-vs-cargo-cult).
+Como nós todos somos "pessoas" temos a certeza que sabemos como pessoas pensam. E nada poderia estar mais longe da verdade. Temos ideias pré-concebidas falaciosas, supersticiosas, preconceituosas, há tempos ultrapassadas mas que de tanto serem repetidas como clichês ainda acreditamos que é verdade, da mesma forma como ainda muitos acreditam que só usamos [10% do nosso cérebro](http://en.wikipedia.org/wiki/Ten_percent_of_brain_myth) ou mesmo que [não podemos tomar manga com leite](http://www.akitaonrails.com/2008/12/16/off-topic-m-todo-cient-fico-vs-cargo-cult).
 
-E não precisamos adivinhar, assim como no caso de processos, existe sim uma longa literatura sobre pessoas. Você vai encontrar a psicologia, a sociologia (que evoluiu muito a partir dos anos 90 graças ao entendimento a área de redes), a economia comportamental, dentre outras. Claro, é impossível para nós, da área de tecnologia, nos tornamos especialistas na área de Humanas, mas se temos como responsabilidade de priorizar pessoas em vez de apenas processos, é melhor que nos equipemos o suficiente.
+E não precisamos adivinhar, assim como no caso de processos, existe sim uma longa literatura sobre pessoas. Você vai encontrar a psicologia, a sociologia (que evoluiu muito a partir dos anos 90 graças ao entendimento da área de redes), a economia comportamental, dentre outras. Claro, é impossível para nós, da área de tecnologia, nos tornarmos especialistas na área de Humanas, mas se temos como responsabilidade priorizar pessoas em vez de apenas processos, é melhor que nos equipemos o suficiente.
 
 Este é um Small Bite porque não pretendo, desta vez, discorrer em detalhes sobre o assunto, mas sim deixar livros que gosto muito para dar um pouco de base.
 
@@ -42,7 +42,7 @@ Daí podemos ir para Economia Comportamental, Psicologia:
 * [The Black Swan](http://www.amazon.com/The-Black-Swan-Improbable-Robustness/dp/081297381X/ref=pd_sim_b_7?ie=UTF8&refRID=01PP6NAYRAERT8RE7N4J) do Nassim Taleb
 * [Fooled by Randomness](http://www.amazon.com/Fooled-Randomness-Hidden-Markets-Incerto/dp/0812975219/ref=pd_sim_b_20?ie=UTF8&refRID=01PP6NAYRAERT8RE7N4J) do Nassim Taleb
 
-E mais especificamente sobre o compartamento de diversos agentes em grupos (teoria de redes):
+E mais especificamente sobre o comportamento de diversos agentes em grupos (teoria de redes):
 
 * [Linked, the New Science of Networks](http://en.wikipedia.org/wiki/Linked:_The_New_Science_of_Networks) do Albert-László Barabási
 * [Six Degrees: The Science of a Connected Age](http://www.amazon.com/Six-Degrees-Science-Connected-Age/dp/0393325423/ref=asap_B001ILHHR4_1_2?s=books&ie=UTF8&qid=1416580003&sr=1-2) do Duncan Watts

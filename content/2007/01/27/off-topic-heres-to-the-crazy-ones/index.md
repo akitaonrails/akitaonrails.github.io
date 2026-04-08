@@ -64,13 +64,13 @@ Os cilindros nos buracos quadrados.
 Os que vêem as coisas de maneira diferente.
 
 Eles não gostam de regras.  
-E não tem respeito pelo status quo.
+E não têm respeito pelo status quo.
 
-Você pode admirá-los, descordar deles, mencioná-los,  
+Você pode admirá-los, discordar deles, mencioná-los,  
 desacreditar deles, glorificá-los ou vilificá-los.  
 Somente uma coisa não pode fazer, que é ignorá-los.
 
-Porque eles mudam as coisa.
+Porque eles mudam as coisas.
 
 Eles inventam. Eles imaginam. Eles curam.  
 Eles exploram. Eles criam. Eles inspiram.  

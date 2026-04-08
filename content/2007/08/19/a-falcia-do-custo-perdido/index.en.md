@@ -2,7 +2,6 @@
 title: The Sunk Cost Fallacy
 date: '2007-08-19T00:16:00-03:00'
 slug: a-falcia-do-custo-perdido
-translationKey: the-sunk-cost-fallacy
 tags:
 - off-topic
 - management

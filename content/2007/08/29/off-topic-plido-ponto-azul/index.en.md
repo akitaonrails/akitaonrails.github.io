@@ -2,7 +2,6 @@
 title: 'Off Topic: Pale Blue Dot'
 date: '2007-08-29T02:59:00-03:00'
 slug: off-topic-plido-ponto-azul
-translationKey: pale-blue-dot
 tags:
 - off-topic
 - science

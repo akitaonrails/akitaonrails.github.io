@@ -5,7 +5,6 @@ slug: off-topic-autoridade-vs-responsabilidade
 tags:
 - off-topic
 - management
-translationKey: authority-vs-responsibility
 draft: false
 ---
 

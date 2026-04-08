@@ -7,7 +7,6 @@ tags:
 - principles
 - career
 - management
-translationKey: net-negative-producing-programmer
 draft: false
 ---
 

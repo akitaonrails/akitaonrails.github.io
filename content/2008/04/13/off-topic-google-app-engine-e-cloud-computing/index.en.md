@@ -7,7 +7,6 @@ tags:
 - cloud-computing
 - google
 draft: false
-translationKey: google-app-engine-cloud-computing
 ---
 
 Just like _Web 2.0_, another term thrown around constantly is **Cloud Computing**. A lot of people use it to mean a lot of different things. Another term used as a synonym — but not exactly the same thing — is **Web Services** (not the XML standard), which in reality is nothing new: it's what we used to call ASPs (Application Service Providers). Examples include services like Basecamp for project management, where companies don't need to worry about maintenance, or your favorite Webmail. These are online services where you pay so you don't have to worry about infrastructure. It's a form of service outsourcing.

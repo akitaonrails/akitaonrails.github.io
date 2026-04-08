@@ -6,7 +6,6 @@ tags:
 - off-topic
 - biography
 draft: false
-translationKey: bleeding-for-rails-part-2
 ---
 
 

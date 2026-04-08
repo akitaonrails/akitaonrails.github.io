@@ -50,9 +50,9 @@ Meu objetivo é muito simples: eu só quero o direito de poder **produzir**, nos
 
 No caminho, o que eu fizer deixará efeitos colaterais, como ajudar os outros. Por exemplo, hoje tenho uma pequena empresa chamada [Codeminer 42](http://www.codeminer42.com) que emprega mais de 60 pessoas. Pessoas com famílias, que encontram não só seu sustento mas sua própria auto-melhoria, através dos resultados que eu e meus amigos buscamos e conseguimos conquistar juntos. E isso é um efeito colateral direto.
 
-Eu organizo a [Rubyconf Brasil](http://www.rubyconf.com.br), faz 9 anos junto com a Locaweb. Os palestrantes, patrocinadores, eu, a própria Locaweb, têm um ponto de encontro anual onde empresas conhecem novas pessoas pra contratar, profissionais encontram seu próximo emprego, empreendedores se juntam para testar idéias que depois podem gerar valor a mais pessoas, e assim por diante. É uma oportunidade de mais de **1.200 participantes todo ano** de produzir alguma coisa. Isso é um efeito colateral indireto.
+Eu organizo a [Rubyconf Brasil](http://www.rubyconf.com.br), faz 9 anos junto com a Locaweb. Os palestrantes, patrocinadores, eu, a própria Locaweb, têm um ponto de encontro anual onde empresas conhecem novas pessoas pra contratar, profissionais encontram seu próximo emprego, empreendedores se juntam para testar ideias que depois podem gerar valor a mais pessoas, e assim por diante. É uma oportunidade de mais de **1.200 participantes todo ano** de produzir alguma coisa. Isso é um efeito colateral indireto.
 
-Um grupo como o [Ruby on Rails Brasil](https://www.facebook.com/groups/rubyonrailsbrasil/) no Facebook - que não fui eu quem criou - tem mais de **8.500 participantes** trocando idéias, aprendizados, experiências.
+Um grupo como o [Ruby on Rails Brasil](https://www.facebook.com/groups/rubyonrailsbrasil/) no Facebook - que não fui eu quem criou - tem mais de **8.500 participantes** trocando ideias, aprendizados, experiências.
 
 A base disso é o mundo open source - a maior experiência capitalista do mundo do software e um exemplo vivo para todos do que é um [Mercado Livre Laissez-faire](https://en.wikipedia.org/wiki/Free_market). O melhor lugar para manter e melhorar [commodities](https://en.wikipedia.org/wiki/Commodity) de tecnologia.
 
@@ -126,15 +126,15 @@ Mas eles são apenas algumas pessoas. A questão principal é mais importante e 
 
 Existem [muitas teorias](http://www.las.illinois.edu/news/2014/nazis/) para o que realmente aconteceu durante a Segunda Guerra Mundial e é um assunto até hoje delicado, mas eu tenho uma pequena teoria pessoal (não é suportada por evidências, por isso este 'disclaimer'):
 
-Apesar de saber que muitos devem ter cometido esses atos com intenções puramente maléficas, é muito difícil de acreditar que num curto espaço de tempo, milhares de alemães de repente se tornaram transformaram automaticamente em agentes do Mal.
+Apesar de saber que muitos devem ter cometido esses atos com intenções puramente maléficas, é muito difícil de acreditar que num curto espaço de tempo, milhares de alemães de repente se transformaram automaticamente em agentes do Mal.
 
-Naquela época, a Alemanha havia sofrido a humilhação pós-Primeira Guerra, a economia estava em frangalhos após terem sofrido a Grande Depressão pós-1929. Num contexto desse, uma ideologia política populista, pelo bem social da nação do Partido Nacional Socialista ganhou força. A idéia do "Terceiro Reich" era sedutora por trazer de volta a esperança do futuro brilhante de uma "Nova Alemanha".
+Naquela época, a Alemanha havia sofrido a humilhação pós-Primeira Guerra, a economia estava em frangalhos após terem sofrido a Grande Depressão pós-1929. Num contexto desse, uma ideologia política populista, pelo bem social da nação do Partido Nacional Socialista ganhou força. A ideia do "Terceiro Reich" era sedutora por trazer de volta a esperança do futuro brilhante de uma "Nova Alemanha".
 
-E eles encontraram alguém para realmente odiar, no caso, os Judeus. E a idéia anti-semita pegou tração no discurso populista.
+E eles encontraram alguém para realmente odiar, no caso, os Judeus. E a ideia antissemita pegou tração no discurso populista.
 
 Agora, em nome do "futuro brilhante da Nova Alemanha" pode ter levado até o extremo do Holocausto. E mesmo assim, como isso se justifica?
 
-Se vocês não conhecem as teorias psicológicas de Stanley Migram, recomendo que assistam ao filme [The Experimenter (2015)](http://www.imdb.com/title/tt3726704/) para entender.
+Se vocês não conhecem as teorias psicológicas de Stanley Milgram, recomendo que assistam ao filme [The Experimenter (2015)](http://www.imdb.com/title/tt3726704/) para entender.
 
 <div class="video-container">
     <video controls>
@@ -143,7 +143,7 @@ Se vocês não conhecem as teorias psicológicas de Stanley Migram, recomendo qu
     </video>
 </div>
 
-Em resumo, o Experimento da Autoridade de Migram - que foi repetido inúmeras vezes ao longo dos anos - demonstra como não é tão difícil como o senso comum imagina, que um grupo de pessoas executem a coisa errada - mesmo tendo consciência disso - em nome de um "bem maior".
+Em resumo, o Experimento da Autoridade de Milgram - que foi repetido inúmeras vezes ao longo dos anos - demonstra como não é tão difícil como o senso comum imagina, que um grupo de pessoas execute a coisa errada - mesmo tendo consciência disso - em nome de um "bem maior".
 
 Obviamente estou sendo simplista na explicação, mas vale ter isso em mente: a maioria das pessoas reage com [comportamento de rebanho](https://en.wikipedia.org/wiki/Herd_behavior) (Herd Behavior).
 
@@ -160,7 +160,7 @@ Não é completa ignorância, mas sim "um pouco de conhecimento", que pode ser a
 
 E uma das coisas que eu gosto de escrever é justamente este alerta: não sabemos tudo, nunca saberemos tudo, e tudo que sabemos pode estar errado. Se você viver constantemente com isso em mente, estará seguro.
 
-A [Raíz de Todo o Mal](https://www.youtube.com/watch?v=8nAos1M-_Ts), os [Inimigos da Razão](http://www.akitaonrails.com/2007/08/23/off-topic-inimigos-da-razo) é o que eu falo faz tempo: o pensamento "religioso".
+A [Raiz de Todo o Mal](https://www.youtube.com/watch?v=8nAos1M-_Ts), os [Inimigos da Razão](http://www.akitaonrails.com/2007/08/23/off-topic-inimigos-da-razo) é o que eu falo faz tempo: o pensamento "religioso".
 
 E não digo isso puramente para falar mal da religião dos outros, mesmo porque a "religião" a que me refiro não é meramente Cristianismo, Judaísmo, Xintoísmo, etc. É pior: é a **Religião do Pouco Conhecimento**.
 
@@ -174,7 +174,7 @@ Vemos exemplos desse tipo de coisa todos os dias, basta ler as notícias:
 
 Basta procurar por "morte" nas notícias e muitas delas são, infelizmente, resultado da ignorância ou pior, "pouco conhecimento" das pessoas. Não é algo que vai se resolver automaticamente, mas nós já resolvemos milhares desses problemas. Felizmente, o século XX em diante foi um grande avanço para eliminar todos os preconceitos, conhecimentos ultrapassados, e ignorância geral da população global.
 
-O problema: nenhuma dessas pessoas tem dúvidas se está errado. Todos tem certeza que estão certos, fazendo o que é moralmente correto - dado o pouco que sabem.
+O problema: nenhuma dessas pessoas tem dúvidas se está errado. Todos têm certeza que estão certos, fazendo o que é moralmente correto - dado o pouco que sabem.
 
 Dogmatização é a consequência. E Dogmas são Inquestionáveis. Você segue uma cartilha inquestionável? Você provavelmente já foi dogmatizado. Ninguém gosta de ser provado errado, especialmente se acreditar em alguma mentira com muito afinco por muito tempo, isso se torna sua identidade. E quem quer ter sua própria identidade quebrada?
 
@@ -212,13 +212,13 @@ _"Eu sei que remédios não funcionam mas homeopatia funciona, porque minhas tia
 
 _"Eu sei que o capitalismo é coisa de gente maléfica, porque eu conheci empresários na minha cidade que exploravam meus amigos e vizinhos, portanto o sistema capitalista tem que cair."_
 
-_"Eu sei que o socialismo funciona, porque meus amigos que visitaram Cuba ficaram muito impressionado com o que ouviram dos hospitais de lá, e por isso acho que tinha que usar em todo lugar."_
+_"Eu sei que o socialismo funciona, porque meus amigos que visitaram Cuba ficaram muito impressionados com o que ouviram dos hospitais de lá, e por isso acho que tinha que usar em todo lugar."_
 
 Você faz isso todos os dias: vê uma notícia com título chamativo, vê dezenas de "Likes" e concorda que está certo e, pior, ainda compartilha para mais gente, disseminando mentiras. 
 
 > "Uma mentira repetida mil vezes torna-se verdade" - Joseph Goebbels, Ministro da Propaganda Nazista
 
-O problema é a "procura da verdade". A grande maioria das coisas - tirando teoremas matemáticos - raramente é possível mostrar a prova correta. E muitas vezes recorremos ao reverso, mostrar que é incorreto. Nenhuma quantidade de evidências é suficiente para provar qualquer teoria como absolutamente verdade. O máximo que podemos fazer é **"desprovar"** uma teoria, porque para isso bastar uma única evidência que a refute.
+O problema é a "procura da verdade". A grande maioria das coisas - tirando teoremas matemáticos - raramente é possível mostrar a prova correta. E muitas vezes recorremos ao reverso, mostrar que é incorreto. Nenhuma quantidade de evidências é suficiente para provar qualquer teoria como absolutamente verdade. O máximo que podemos fazer é **"desprovar"** uma teoria, porque para isso basta uma única evidência que a refute.
 
 > "Afirmações extraordinárias exigem evidências extraordinárias." - Carl Sagan, Cosmos
 
@@ -230,7 +230,7 @@ Qualquer teoria que não dá formas claras de desprová-la não é uma boa teori
 
 ### A Moral Cinzenta dos "Justiceiros Sociais"
 
-Esse é um assunto que evito ao máximo me envolver porque esta geração dos chamados Justiceiros Sociais (Social Justice Warriors - SJW) é particulamente perversa. **Não todos!** Apenas uma pequena minoria muito influentes. Verdadeiros lobos em pele de cordeiro.
+Esse é um assunto que evito ao máximo me envolver porque esta geração dos chamados Justiceiros Sociais (Social Justice Warriors - SJW) é particularmente perversa. **Não todos!** Apenas uma pequena minoria muito influente. Verdadeiros lobos em pele de cordeiro.
 
 Disclaimer: considero quem luta por causas sociais uma pessoa perversa? **NÃO** Existem diversas iniciativas sociais legítimas, com excelentes resultados, com pessoas com real afinco em resolver um problema legítimo. Espero somente coisas boas a essas pessoas. Aqui estou falando somente de quem está desvalorizando essas pessoas. O objetivo desta seção é justamente separar o real do ilegítimo.
 
@@ -271,7 +271,7 @@ Quer reconhecer um real justiceiro social dos parasitas sociais? Procure por **N
 O objetivo deste longo artigo? Apenas expor conceitos universais, meus princípios pessoais, que são invioláveis e incorruptíveis. Os principais pontos:
 
 * A única coisa realmente moral são as trocas voluntárias. Nunca forçar a escravidão, física ou moral, de qualquer indivíduo.
-* Não existe "verdade" decretada por algum grupo ou maioria. Existem idéias, algumas válidas outras inválidas. Mas se não forem idéias falseáveis, refutáveis, provavelmente são falsas por premissa, não importa a aparente moral que representam ou a quantidade de "evidências" que existam.
+* Não existe "verdade" decretada por algum grupo ou maioria. Existem ideias, algumas válidas outras inválidas. Mas se não forem ideias falseáveis, refutáveis, provavelmente são falsas por premissa, não importa a aparente moral que representam ou a quantidade de "evidências" que existam.
 * Não existe "autoridade moral", isso é o domínio dos charlatães. Duvide de qualquer um que force sua propriedade (sua ação é sua propriedade, sua liberdade é sua propriedade) em nome de qualquer tipo de "causa", não importa quão justa ela pareça. Não procure por heróis.
 * A única coisa que realmente nos tirou da Idade Média e nos lançou à modernidade foi graças às mentes que produziram para benefício próprio (sem exigir unilateralmente a tomada da propriedade de ninguém, seja material ou mental).
  

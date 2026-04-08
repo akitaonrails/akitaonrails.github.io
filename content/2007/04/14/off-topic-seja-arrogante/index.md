@@ -8,7 +8,7 @@ tags:
 draft: false
 ---
 
-Acho triste ver como as pessoas desperdiçam muito do que a comunidade mundial na Internet têm a oferecer. Eu sei, eu sei, é o inglês. Sempre o inglês.
+Acho triste ver como as pessoas desperdiçam muito do que a comunidade mundial na Internet tem a oferecer. Eu sei, eu sei, é o inglês. Sempre o inglês.
 
 O tema do meu artigo de hoje começa com a dificuldade de aprender inglês. Pretendo divagar um bocado na minha própria experiência e tentar provocar vocês.
 
@@ -19,7 +19,7 @@ O tema do meu artigo de hoje começa com a dificuldade de aprender inglês. Pret
 - _Não consigo entender inglês direito, por isso só ouço programas em português_
 - _Tenho preguiça de ler as legendas, por isso só assisto filme dublado_
 
-Às vezes vejo por aí essas manifestações infantis e sem sentido de anti-americanismo, normalmente de garotos usando Nike, que assistem ESPN, que comem com frequência no McDonald’s, que ouvem Coldplay Dream Theater. Penso com meus botões: _por que eu sinto, no meio de tanta fúria, uma ponta de **inveja** , **insegurança** e **falta de auto-estima**?_
+Às vezes vejo por aí essas manifestações infantis e sem sentido de anti-americanismo, normalmente de garotos usando Nike, que assistem ESPN, que comem com frequência no McDonald’s, que ouvem Coldplay e Dream Theater. Penso com meus botões: _por que eu sinto, no meio de tanta fúria, uma ponta de **inveja** , **insegurança** e **falta de auto-estima**?_
 
  ![](/files/mrbean.jpg)
 
@@ -48,7 +48,7 @@ Você precisa ser arrogante, mas muito arrogante. A única forma de ser arrogant
 
  ![](/files/pointing.jpg)
 
-Se alguém me pergunta: _Você saber X?_. Tenho apenas duas respostas diretas: **Sim** ou **Não**. Dizer _não_ apenas de vez em quando, é até perdoável, passável. Dizer _não_ com frequência é derrotista. _Como assim você não sabe algo simples como X!?_. Dizer _não_ o tempo todo é admitir uma fraqueza. Dizer não sempre é assumir a própria incompetência.
+Se alguém me pergunta: _Você sabe X?_. Tenho apenas duas respostas diretas: **Sim** ou **Não**. Dizer _não_ apenas de vez em quando, é até perdoável, passável. Dizer _não_ com frequência é derrotista. _Como assim você não sabe algo simples como X!?_. Dizer _não_ o tempo todo é admitir uma fraqueza. Dizer não sempre é assumir a própria incompetência.
 
 Por isso ninguém diz simplesmente _Não_. Em vez disso preferem dizer, _mais ou menos_, _acho que sim_, _quase lá_. Eu vejo da seguinte forma: _não_ e _talvez_ são a mesma coisa: nenhuma delas é _Sim_.
 
@@ -66,11 +66,11 @@ _E qual o problema de ser a média? Por que preciso ser diferente de todo mundo?
 
 Ótima pergunta. Desde bebês, somos treinados a sermos iguais. É o modelo de civilização que deu certo. Cada um é igual ao outro. Todos nascemos, crescemos e morremos iguais. Somos todos irmãos. Somos a média. Estudamos em classes com dezenas de alunos, juntos, iguais. Usamos os mesmos uniformes. Lemos os mesmos livros. Temos os mesmos professores. Praticamos as mesmas atividades. Fazemos exatamente as mesmas coisas, desde o jardim da infância até a graduação universitária ou mais. Um longo percurso de uns 15 anos. Pelo menos 1/6 de sua vida, condicionada à média.
 
-Basta tirar nota média para passar de ano. Você passa de ano com a média. Média, média, média, sempre a média. Por que todos tem dificuldades com o Vestibular? Por que nesse caso a média não funciona: só a nata da nata pode passar. Aqueles que foram desafiados a infância inteira a pensar sempre acima da média, nunca terão dificuldade em coisas triviais como um vestibular.
+Basta tirar nota média para passar de ano. Você passa de ano com a média. Média, média, média, sempre a média. Por que todos tem dificuldades com o Vestibular? Por que nesse caso a média não funciona: só a nata da nata pode passar. Aqueles que foram desafiados na infância inteira a pensar sempre acima da média, nunca terão dificuldade em coisas triviais como um vestibular.
 
 E por que esta minha insistência em falar de _média_? Porque ninguém parece dar importância. Porque parece que todos acham que é **bom** estar na média.
 
-Quero que todos lembrem de uma coisa: a palavra _média_ é raíz para outra: **Medíocre** e garanto que ninguém se sente lisonjeado em ser chamado de medíocre. Lembrem-se disso da próxima vez que pensarem que está tudo bem em se considerarem parte da _média_.
+Quero que todos lembrem de uma coisa: a palavra _média_ é raiz para outra: **Medíocre** e garanto que ninguém se sente lisonjeado em ser chamado de medíocre. Lembrem-se disso da próxima vez que pensarem que está tudo bem em se considerarem parte da _média_.
 
  ![](/files/Graduation.jpg)
 
@@ -84,7 +84,7 @@ Mas já larguei muita coisa no meio também. Larguei o curso de japonês que faz
 
 Falo mais japonês que muita gente que terminou seus cursos. Falo mais inglês que muitos que se diplomaram em cursos renomados. E, com certeza, programo melhor que muitos que fizeram pós-graduação e tem vários certificados. Foram 3 _Sim_ em sequência. Minha arrogância está afinada hoje. Agora preciso defender essa palavra.
 
-Um arrogante tem que ser insistente. Não basta dizer _Sim_ hoje e mudar de idéia amanhã. Um arrogante tem que defender sua posição com unhas e dentes. Um arrogante que consegue isso ganha respeito. Mas alguém que apenas se _acha_ um arrogante e não consegue entregar a promessa apenas cava sua cova mais fundo. E alguém que além disso ainda não se enxerga, cava mais rápido. Não dá para viver de ilusões: cedo ou tarde aparecerá alguém que irá desmascará-lo e então, a cova já estará pronta. A lápide é por minha conta.
+Um arrogante tem que ser insistente. Não basta dizer _Sim_ hoje e mudar de ideia amanhã. Um arrogante tem que defender sua posição com unhas e dentes. Um arrogante que consegue isso ganha respeito. Mas alguém que apenas se _acha_ um arrogante e não consegue entregar a promessa apenas cava sua cova mais fundo. E alguém que além disso ainda não se enxerga, cava mais rápido. Não dá para viver de ilusões: cedo ou tarde aparecerá alguém que irá desmascará-lo e então, a cova já estará pronta. A lápide é por minha conta.
 
  ![](/files/imagem_nike_just_do_it_peopleware.jpg)
 
@@ -120,7 +120,7 @@ Depois de alguns anos e centenas – literalmente – de filmes, finalmente cheg
 
 No ano passado comecei a ouvir audiobooks. Uma coisa óbvia me passou pela cabeça: o tempo que gastava no trânsito, entre o trabalho e minha casa, era uma grande perda de tempo. Num dia de 24 horas, eu estava sistematicamente perdendo mais de 8% do dia. Se considerarmos apenas as 16 ~ 17hs que passo acordado, estava perdendo quase 12%! É muita coisa. São pelo menos 2 horas todos os dias, 5 dias por semana. É mais que as 2 horas em 2 dias de um curso qualquer de esquina.
 
-Graças à internet, ao [BitTorrent](http://btjunkie.org), baixei dezenas de livros. Li todos os livros da moda. No carro. Li todos os livros do Dan Brown, J.K. Rowling, J.R.R. Tolkien. Li clássicos como Neuromancer, 1984. Li grandes obras como os de Richard Dawkins, Sam Harris, saudoso Carl Sagan. E muito mais. Foram facilmente 500 horas de audio-book em 1 ano. E tenho mais da fila ara ouvir.
+Graças à internet, ao [BitTorrent](http://btjunkie.org), baixei dezenas de livros. Li todos os livros da moda. No carro. Li todos os livros do Dan Brown, J.K. Rowling, J.R.R. Tolkien. Li clássicos como Neuromancer, 1984. Li grandes obras como os de Richard Dawkins, Sam Harris, saudoso Carl Sagan. E muito mais. Foram facilmente 500 horas de audio-book em 1 ano. E tenho mais na fila para ouvir.
 
 [![](/files/podcast_hero_mac20060912.jpg)](http://www.apple.com/itunes/store/podcasts.html)
 
@@ -134,11 +134,11 @@ E falando de John Dvorak, suas polêmicas também estão em seu próprio program
 
 [![](/files/logo_grey.gif)](http://www.pixelcorps.com/)
 
-E não podemos deixar de mencionar: muitos dos podcasts que acompanho diariamente tem produção com qualidade de TV. Na TWiT os video podcasts são em alta definição. As trilhas de áudio tem uma excelente qualidade de produção, mixagem. Os apresentadores tem ótima dicção, falam muito bem, os assuntos são muito bem selecionados, a edição é muito boa. Quase não se sente aquele ar de amador – que eu pessoalmente detesto. Existem hoje produtoras profissionais como a Pixel Corps, com Alex Lindsay.
+E não podemos deixar de mencionar: muitos dos podcasts que acompanho diariamente tem produção com qualidade de TV. Na TWiT os video podcasts são em alta definição. As trilhas de áudio tem uma excelente qualidade de produção, mixagem. Os apresentadores têm ótima dicção, falam muito bem, os assuntos são muito bem selecionados, a edição é muito boa. Quase não se sente aquele ar de amador – que eu pessoalmente detesto. Existem hoje produtoras profissionais como a Pixel Corps, com Alex Lindsay.
 
 [![](/files/diggnation.png)](http://www.businessweek.com/magazine/content/06_33/b3997002.htm)
 
-O canal [Revision3](http://revision3.com) também não fica atrás com o grande [Diggnation](http://revision3.com/diggnation) de Kevin Rose comentando as notícias da página principal do excelente [Digg.com](http://www.digg.com). Todos que são bem informados tem praticamente obrigação de acompanhar Digg. Aliás, mais uma vez muita gente me frustra. Como podem sair por aí tentando falar de Web 2.0 e todo esse blá blá blá e não ter noção do que está acontecendo no Vale do Silício? Ninguém leu a Business Week do ano passado, [Valley Boys](http://www.businessweek.com/magazine/content/06_33/b3997001.htm)? Kevin Rose é um dos representantes da nova geração de jovens interneteiros milionários e o Podcasting é um dos maiores canais de comunicação Tech da atualidade.
+O canal [Revision3](http://revision3.com) também não fica atrás com o grande [Diggnation](http://revision3.com/diggnation) de Kevin Rose comentando as notícias da página principal do excelente [Digg.com](http://www.digg.com). Todos que são bem informados têm praticamente obrigação de acompanhar Digg. Aliás, mais uma vez muita gente me frustra. Como podem sair por aí tentando falar de Web 2.0 e todo esse blá blá blá e não ter noção do que está acontecendo no Vale do Silício? Ninguém leu a Business Week do ano passado, [Valley Boys](http://www.businessweek.com/magazine/content/06_33/b3997001.htm)? Kevin Rose é um dos representantes da nova geração de jovens interneteiros milionários e o Podcasting é um dos maiores canais de comunicação Tech da atualidade.
 
 Finalmente, voltando um pouco à parte da leitura, minha rotina envolve [Google Reader](http://reader.google.com). Como disse antes, acho que tenho cerca de 90 websites que disponibilizam RSS, agregados no Reader. Durante o dia, em uma hora chegam entre 50 a 100 novas notícias. Não leio todas. Em um dia talvez leia uma dúzia de boas matérias. Primeiro, envolve sua experiência e conhecimento para discernir entre lixo e coisas úteis. Segundo, envolve leitura dinâmica para apenas bater o olho em cima e partir para a próxima. Eu consigo passar rapidamente por 100 notícias em 15 minutos, e garanto que não deixo passar nada importante.
 
@@ -169,7 +169,7 @@ Por que tanta _propaganda_ em cima de podcasts? Simples: porque é a forma mais 
 
 Meus próximos passos: continuar aprimorando meu inglês todos os dias e pular para outra coisa. Quero aprender chinês, mandarim, o próximo grande pré-requisito no futuro depois do inglês. O interessante? Só achei bons materiais para aprender chinês escritos em inglês! Virtualmente não existe nada decente para aprender chinês escrito em português.
 
-Inglês é o ponto de partida para tudo, não adianta espernear, não adianta enrolar. Todos A maioria dos melhores materiais, principalmente na nossa área de tecnologia, são escritos APENAS em inglês. Não se iludam, todo o resto são cópias pálidas do original.
+Inglês é o ponto de partida para tudo, não adianta espernear, não adianta enrolar. A maioria dos melhores materiais, principalmente na nossa área de tecnologia, são escritos APENAS em inglês. Não se iludam, todo o resto são cópias pálidas do original.
 
 _Você é exatamente o que você se faz_
 

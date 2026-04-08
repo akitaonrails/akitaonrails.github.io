@@ -44,7 +44,7 @@ E Gandalf responde:
 
 E então conclui:
 
-> "Merece! Eu diria que sim. Muitos que vivem merecem a morte. E alguns que morrem merecem a vida. Você pode devolveê-la a eles? Então, não seja tão ansioso para lidar com a morte em julgamento.
+> "Merece! Eu diria que sim. Muitos que vivem merecem a morte. E alguns que morrem merecem a vida. Você pode devolvê-la a eles? Então, não seja tão ansioso para lidar com a morte em julgamento.
 >
 > Pois mesmo os muito sábios não conseguem ver todos os fins. Não tenho esperança de que Gollum seja curado antes de morrer, mas existe uma chance. E ele está ligado ao destino do Anel. Meu coração me diz que ele ainda tem um papel a cumprir, para o bem ou para o mal, antes do fim; e quando isso acontecer, a pena de Bilbo poderá reger o destino de muitos — inclusive o seu."
 
@@ -60,7 +60,7 @@ Você consegue devolver o futuro deles se estiver errado? O que te dá o direito
 
 Cuidado. Quando provocada, uma pessoa razoável e normal busca o diálogo em privado, como qualquer sociedade civilizada aprendeu a fazer. Mas as redes sociais motivam as pessoas a fazerem o pior: expor publicamente.
 
-Isso é formação de manada. Bullying puro e simples. Sofri bullying a vida inteira — sendo minoria japonesa num país ocidental — e sei exatamente o quanto dói. É por isso que jamais revidar com bullying.
+Isso é formação de manada. Bullying puro e simples. Sofri bullying a vida inteira — sendo minoria japonesa num país ocidental — e sei exatamente o quanto dói. É por isso que jamais revido com bullying.
 
 Se você expõe alguém publicamente, não está praticando "justiça". Você é simplesmente um bully. Independente do assunto.
 

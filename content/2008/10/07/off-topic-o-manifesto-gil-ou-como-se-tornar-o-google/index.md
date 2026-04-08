@@ -27,7 +27,7 @@ O importante não é o “como” e sim o “porquê”. O [Manifesto Ágil](htt
 > - Colaboração do cliente mais que negociação de contratos
 > - Responder à mudança mais que seguir um plano
 > 
-> Quer dizer, mesmo que exista valor nos ítens da direita, nós valorizamos mais os ítens da esquerda.
+> Quer dizer, mesmo que exista valor nos itens da direita, nós valorizamos mais os itens da esquerda.
 
 O primeiro valor já diz tudo: _indivíduos_ mais que _processos_.
 
@@ -36,7 +36,7 @@ Neste artigo quero mostrar porque a grande maioria das empresas não é efetivam
 
 ## Princípios por trás do Manifesto Ágil
 
-Para recapitular, será útil citar os 12 Princípios por trás do Manifesto de Valores. Muita gente já leu todos esses ítens. Mas “ler” e “entender” são duas coisas completamente diferentes. Para efeitos da minha explicação, vou colocar algumas palavras-chave em negrito para me referir a elas mais tarde.
+Para recapitular, será útil citar os 12 Princípios por trás do Manifesto de Valores. Muita gente já leu todos esses itens. Mas “ler” e “entender” são duas coisas completamente diferentes. Para efeitos da minha explicação, vou colocar algumas palavras-chave em negrito para me referir a elas mais tarde.
 
 Nós seguimos estes princípios:
 
@@ -80,7 +80,7 @@ Esse PDF discute as diferenças entre **Feature Teams** e **Component Teams**. D
 
 Um Componente Team é o estilo tradicional e departamental. Cada equipe é responsável apenas por um trecho de vários produtos. Equipe de interfaces, equipe de infra-estrutura, equipe de arquitetura, equipe de componentes visuais, equipe de banco de dados, equipe de qualidade e assim por diante.
 
-Uma Feature Team é uma equipe cross-funcional, normalmente formada por generalistas. Uma Component Team é uma equipe limitada, formada normalmente por especialistas. Uma **Equipe Scrum** é, **por definição** , uma Feature Team, capaz de realizar todo o trabalho de um ítem de um Product Backlog.
+Uma Feature Team é uma equipe cross-funcional, normalmente formada por generalistas. Uma Component Team é uma equipe limitada, formada normalmente por especialistas. Uma **Equipe Scrum** é, **por definição** , uma Feature Team, capaz de realizar todo o trabalho de um item de um Product Backlog.
 
 Como eu disse antes, esqueça o “como” por enquanto.
 
@@ -90,7 +90,7 @@ Como eu disse antes, esqueça o “como” por enquanto.
 
 > “Qualquer organização que faz design de sistemas (definição ampla) produzirá um design cuja estrutura é uma cópia da estrutura de comunicação da empresa”
 
-Como está explicado em [seu site](http://www.melconway.com/law/index.html), o famoso [Frederick Brooks](http://en.wikipedia.org/wiki/Fred_Brooks) citou essa pesquisa e sua idéia no clássico (que **todo** profissional da área de tecnologia deveria ler) [The Mythical Man Month](http://www.amazon.com/Mythical-Man-Month-Software-Engineering-Anniversary/dp/0201835959), chamando essa idéia de **Lei de Conway**. Brooks reconheceu que a lei tinha corolários importantes em teorias de gestão. Aqui vai uma afirmação sua:
+Como está explicado em [seu site](http://www.melconway.com/law/index.html), o famoso [Frederick Brooks](http://en.wikipedia.org/wiki/Fred_Brooks) citou essa pesquisa e sua ideia no clássico (que **todo** profissional da área de tecnologia deveria ler) [The Mythical Man Month](http://www.amazon.com/Mythical-Man-Month-Software-Engineering-Anniversary/dp/0201835959), chamando essa ideia de **Lei de Conway**. Brooks reconheceu que a lei tinha corolários importantes em teorias de gestão. Aqui vai uma afirmação sua:
 
 > “Como o design que acontece primeiro quase **nunca** é o melhor possível, o conceito de sistema que permanece pode precisar de **mudanças**. Portanto, flexibilidade da organização é importante para design efetivo.”
 
@@ -144,9 +144,9 @@ E eles deveriam mesmo ter horror ao caos. Mas o que elas precisam entender é qu
 
 Estamos acostumados a pensar em eventos isolados, em resultados baseados na soma de eventos independentes. Coloque uma colher de açúcar e o chá fica doce. Coloque duas colheres de açúcar e o chá fica duas vezes mais doce.
 
-Porém, sistemas dinâmicos não podem ser definidas dessa forma. Certos sistemas são muito sensitivos a condições iniciais, dando resultados [não lineares](http://en.wikipedia.org/wiki/Nonlinearity). Em particular, fenômenos naturais como relacionamentos sociais, cadeias alimentares, eventos econômicos, são todos sistemas não lineares.
+Porém, sistemas dinâmicos não podem ser definidos dessa forma. Certos sistemas são muito sensitivos a condições iniciais, dando resultados [não lineares](http://en.wikipedia.org/wiki/Nonlinearity). Em particular, fenômenos naturais como relacionamentos sociais, cadeias alimentares, eventos econômicos, são todos sistemas não lineares.
 
-Isso retorna à minha palestra sobre [Distribuições Power Law](http://en.wikipedia.org/wiki/Power_law), ou [Distribuições de Pareto](http://en.wikipedia.org/wiki/Pareto_distribution). Recapitulando, um mundo platônico e linear pode ser modelado segundo [Gauss](http://en.wikipedia.org/wiki/Normal_distribution). Esse tipo de distribuição é extremamente confortável para os analistas pois possui **média definida** e **desvio padrão constante, estável**. Power Laws, por sua vez, são caracterizados pela **ausência** de média e desvio padrão que tende ao infinito!
+Isso retorna à minha palestra sobre [Distribuições Power Law](http://en.wikipedia.org/wiki/Power_law), ou [Distribuições de Pareto](http://en.wikipedia.org/wiki/Pareto_distribution). Recapitulando, um mundo platônico e linear pode ser modelado segundo [Gauss](http://en.wikipedia.org/wiki/Normal_distribution). Esse tipo de distribuição é extremamente confortável para os analistas pois possui **média definida** e **desvio padrão constante, estável**. Power Laws, por sua vez, são caracterizadas pela **ausência** de média e desvio padrão que tende ao infinito!
 
 O ponto mais óbvio é que _“Bell Curves”_ (curvas em forma de sino) como a Normal/Gauss, exigem eventos **independentes** , **isolados** , como jogar dados ou tirar cara ou coroa em uma moeda não viciada. Não é difícil ver, por exemplo, que comportamento de seres humanos pode ser tudo, menos independentes: por definição, humanos se relacionam entre si, logo formamos sistemas altamente dependentes.
 
@@ -164,7 +164,7 @@ Assumindo que todos estudem mais um pouco sobre Barabási, Poincaré, Mandelbrot
 
 ## 80/20
 
-A famosa regra 80/20 de Pareto não veio a partir do nada. Num estudo na Itália muitos anos atrás, Wilfredo Pareto constatou que 80% do território italiano esta nas mãos de não mais do que 20% da população. Daí o “80/20”.
+A famosa regra 80/20 de Pareto não veio a partir do nada. Num estudo na Itália muitos anos atrás, Wilfredo Pareto constatou que 80% do território italiano estava nas mãos de não mais do que 20% da população. Daí o “80/20”.
 
 Essa divisão é justamente o que mostra uma distribuição de Pareto, conforme figura abaixo:
 
@@ -172,9 +172,9 @@ Essa divisão é justamente o que mostra uma distribuição de Pareto, conforme 
 
 Como **Chris Anderson** explica em seu livro [The Long Tail](http://www.changethis.com/pdf/10.01.LongTail.pdf), pensa na famosa [Wikipedia](http://wikipedia.org). Na época da publicação de seu livro em 2006 a Wikipedia já tinha 860 mil artigos, contra 80 mil da Enciclopédia Britannica.
 
-A idéia de [Jimmy Wales](http://en.wikipedia.org/wiki/Jimmy_Wales) foi ousada e bastante controversa apesar da boa intenção de fornecer uma rica e extensa enciclopédia gratuita a todas as pessoas do mundo, incluindo crianças pobres em países sub-desenvolvidos que de outra forma talvez nunca tivessem acesso à informação.
+A ideia de [Jimmy Wales](http://en.wikipedia.org/wiki/Jimmy_Wales) foi ousada e bastante controversa apesar da boa intenção de fornecer uma rica e extensa enciclopédia gratuita a todas as pessoas do mundo, incluindo crianças pobres em países sub-desenvolvidos que de outra forma talvez nunca tivessem acesso à informação.
 
-Wales começou com o projeto Nupedia em 2000, com apenas alguns poucos verbetes e uma idéia que na realidade se popularizou antes disso, com Linus Torvalds e seu Linux: criar uma plataforma totalmente aberta (livre, liberdade) onde qualquer pessoa que quisesse poderia contribuir, revisar, refinar.
+Wales começou com o projeto Nupedia em 2000, com apenas alguns poucos verbetes e uma ideia que na realidade se popularizou antes disso, com Linus Torvalds e seu Linux: criar uma plataforma totalmente aberta (livre, liberdade) onde qualquer pessoa que quisesse poderia contribuir, revisar, refinar.
 
 Olhando hoje, em 2008, todos diriam que Jimbo (como é conhecido) é um gênio. Mas no ano 2000, ele foi considerado um louco. Quando vemos as coisas em retrospectiva sempre é muito mais simples de criar uma narrativa que encaixa-se perfeitamente nos eventos que já aconteceram. Como [Nassim Nicholas Taleb](http://www.fooledbyrandomness.com/ARTE.pdf) diria: depois que um **Cisne Negro** acontece, é fácil explicá-lo, mas antes que ele aconteça é impossível prevê-lo.
 
@@ -216,17 +216,17 @@ Acredito que não seja necessário explicar muito mais sobre projetos open sourc
 
 Novamente, estamos falando de Pareto, talvez apenas 20% dos projetos open source realmente tenham grande sucesso. Porém, os outros 80% são identificados como fracasso muito mais rapidamente, alguns se mesclam em projetos maiores, alguns simplesmente páram. A decisão de parada é muito mais rápida e efetiva do que em projetos tradicionais corporativos que já investiram recursos (tempo e dinheiro, além da reputação de alguns dos envolvidos).
 
-Com tudo que expliquei acima, fica fácil entender que projetos Open Source começam com condições iniciais simples: uma idéia, uma pequena implementação, poucas pessoas. Também começa a fazer sentido entender como elas evoluem do _caos_ para redes scale-free através de **auto-organização**.
+Com tudo que expliquei acima, fica fácil entender que projetos Open Source começam com condições iniciais simples: uma ideia, uma pequena implementação, poucas pessoas. Também começa a fazer sentido entender como elas evoluem do _caos_ para redes scale-free através de **auto-organização**.
 
 Não é difícil entender que esses projetos não tem como ser implementados através de consenso prévio muito rígido, só poderia evoluir para Feature Teams onde os colaboradores normalmente tem habilidades diferentes e complementares.
 
-Também não é difícil entender que, como na Wikipedia, os verbetes mais importantes e/ou mais conhecidos são preenchidos primeiros, depois os mais obscuros são preenchidos com o tempo. No melhor estilo Pareto, 20% das prioridades acontecem primeiro. Num ambiente onde os recursos costumam ser escassos (não existe presença física, os colaboradores são voluntários, motivas as pessoas é ainda mais importante), realmente as prioridades – que dão mais valor ao grupo como um todo – são implementadas primeiro.
+Também não é difícil entender que, como na Wikipedia, os verbetes mais importantes e/ou mais conhecidos são preenchidos primeiro, depois os mais obscuros são preenchidos com o tempo. No melhor estilo Pareto, 20% das prioridades acontecem primeiro. Num ambiente onde os recursos costumam ser escassos (não existe presença física, os colaboradores são voluntários, motivar as pessoas é ainda mais importante), realmente as prioridades – que dão mais valor ao grupo como um todo – são implementadas primeiro.
 
 Em se entendendo Software como Arte, também fica simples entender que desenvolvedores que participam de vários projetos open source estão automaticamente expostos a muitas diferentes expressões de arte e, como tal, a diferentes maneiras de se implementar software. Um bom desenvolvedor começará a incorporar essas diferenças em seu próprio estilo, automaticamente melhorando muito a qualidade do seu trabalho.
 
 Um desenvolvedor, sozinho, ou numa equipe conhecida, tem muito pouco motivo para criar testes do seu próprio código. Mas quando se vê numa situação onde está colaborando numa comunidade onde qualquer desconhecido poderá ver seu código e, portanto, aferir sua reputação, a motivação para criar código de boa qualidade, decentemente coberta com testes, fica mais óbvio. Daí porque eu disse antes que Test-Driven Development começa a fazer não só mais sentido como se torna uma real necessidade.
 
-O idealizador do projeto, o desenvolvedor ou grupo de programadores que iniciou o projeto, necessariamente serão obrigados a gerenciá-lo. E num ambiente aberto, onde as pessoas não tem cargos, não tem salários, não tem chefes nem clientes diretos, vai por baixo qualquer tentativa de se usar técnicas gaussianas de gerenciamento tradicional de projetos. Agora estamos falando de projetos de verdade, sem a zona de conforto do cubículo. O **mantenedor** do projeto se verá numa posição onde será obrigado a tomar decisões. Entenderá rapidamente que é impossível obter unanimidade em todos impasses e por isso vestirá o chapéu de **ditador benevolente** , ou seja, um ditador que se for rígido e autoritário demais irá afastar todos os seus colaboradores (que não tem obrigação nenhuma de seguí-lo) e que se for flexível demais se arriscará a demonstrar insegurança, indecisão, morosidade e por fim poderá motivar um _coup_ um tipo de “golpe de estado”, onde seu projeto será clonado e outro mantenedor mais carismático e efetivo poderá tomar seu lugar. Ou pior: seu projeto pode simplesmente parar e deixar de existir.
+O idealizador do projeto, o desenvolvedor ou grupo de programadores que iniciou o projeto, necessariamente serão obrigados a gerenciá-lo. E num ambiente aberto, onde as pessoas não tem cargos, não tem salários, não tem chefes nem clientes diretos, vai por baixo qualquer tentativa de se usar técnicas gaussianas de gerenciamento tradicional de projetos. Agora estamos falando de projetos de verdade, sem a zona de conforto do cubículo. O **mantenedor** do projeto se verá numa posição onde será obrigado a tomar decisões. Entenderá rapidamente que é impossível obter unanimidade em todos impasses e por isso vestirá o chapéu de **ditador benevolente** , ou seja, um ditador que se for rígido e autoritário demais irá afastar todos os seus colaboradores (que não tem obrigação nenhuma de segui-lo) e que se for flexível demais se arriscará a demonstrar insegurança, indecisão, morosidade e por fim poderá motivar um _coup_, um tipo de “golpe de estado”, onde seu projeto será clonado e outro mantenedor mais carismático e efetivo poderá tomar seu lugar. Ou pior: seu projeto pode simplesmente parar e deixar de existir.
 
 Não existe ambiente mais hostil mas ao mesmo tempo mais recompensador para um verdadeiro gerente de projetos do que projetos open source. Tire de um Gerente o seu cargo e seu poder e só então poderá avaliar se ele realmente sabe o que significa “gerenciar”.
 
@@ -244,7 +244,7 @@ Os outros princípios são consequência:
 
 Dado um **ambiente** adequado, com profissionais efetivamente elevados acima da média, **motivados** podemos realmente **confiar** em suas capacidades de **auto-organização** , onde a própria estrutura orgânica e não hierarquizada naturalmente levará seus membros a **reajustarem** sua rotina de acordo com os problemas enfrentados, levando-os a gerar código de qualidade, onde apenas o essencial está realmente sendo produzido, com alta qualidade, atenção à refatoração, testes, integração contínua, o que leva também naturalmente às **melhores arquiteturas** , e o sistema como um todo se retro-alimenta num ciclo contínuo de feedback positivo, criando um ambiente **sustentável** , sempre produtivo, com profissionais pesquisando e implementando inovações tecnológicas que de tempos em tempos dão saltos de qualidade e produtividade para a empresa como um todo.
 
-Como resultado, o cliente estará recebendo produtos que lhe agregam real valor, **mudanças de requerimentos** podem efetivamente ser aceitos sem maiores problemas, uma vez que a organização é flexível e cada membro se sente responsável pelo todo. Além disso nesse tipo de ciclo virtuoso, os profissionais estão em constante aprendizado, aumentando suas habilidades em ritmo crescente indeterminado, gerando uma empresa inovadora, acima da média, que não se baseia no passado para tentar, futilmente, prever o futuro: eles não precisam mais pois os profissionais finalmente estão preparados para seja lá qual for o futuro que chegar. Em vez de tentar prever o futuro, as pessoas estarão capacitadas para qualquer futuro, e isso é fundamental: mudanças constantes não os assusta mais, pelo contrário, eles querem mudanças.
+Como resultado, o cliente estará recebendo produtos que lhe agregam real valor, **mudanças de requerimentos** podem efetivamente ser aceitas sem maiores problemas, uma vez que a organização é flexível e cada membro se sente responsável pelo todo. Além disso nesse tipo de ciclo virtuoso, os profissionais estão em constante aprendizado, aumentando suas habilidades em ritmo crescente indeterminado, gerando uma empresa inovadora, acima da média, que não se baseia no passado para tentar, futilmente, prever o futuro: eles não precisam mais pois os profissionais finalmente estão preparados para seja lá qual for o futuro que chegar. Em vez de tentar prever o futuro, as pessoas estarão capacitadas para qualquer futuro, e isso é fundamental: mudanças constantes não os assusta mais, pelo contrário, eles querem mudanças.
 
 ## Como chegar Lá?
 
@@ -289,9 +289,9 @@ Porém, assumindo que você leu todo meu artigo, imagine o **Orkut Büyükkökte
 
 Ele tem um local onde colocar seu código. Também entende que deve se desapegar dele. Entende naturalmente como funciona a colaboração no estilo “open source”. Por causa disso sabe como se comunicar.
 
-Ele divulga seu projeto internamento. Os membros de sua equipe ou de outras, também todos sintonizados na cultura correta de pró-atividade, inovação, aceitação de mudanças e colaboração, imediatamente entendem o valor da idéia. Mais do que isso: sabem de onde baixar o código e como começar a colaborar.
+Ele divulga seu projeto internamente. Os membros de sua equipe ou de outras, também todos sintonizados na cultura correta de pró-atividade, inovação, aceitação de mudanças e colaboração, imediatamente entendem o valor da ideia. Mais do que isso: sabem de onde baixar o código e como começar a colaborar.
 
-Eu não sei realmente como funciona o Google, nunca trabalhei lá e provavelmente ela deve ter tantos problemas quanto qualquer empresa normal. Mesmo assim eu fantasio que muitos produtos deles começaram dessa forma: num ambiente permissivo, voltado à inovação. Não basta apenas apenas contratar phds. do MIT ou de Stanford se não houver ambiente e cultura adequadas para realmente fazê-los produzir de verdade. Como Larry e Sergey tiveram um começo nesse mundo permissivo de open source eu fico imaginando se eles não criaram uma organização que segue exatamente esse modelo, mesmo que tenha sido de forma instintiva.
+Eu não sei realmente como funciona o Google, nunca trabalhei lá e provavelmente ela deve ter tantos problemas quanto qualquer empresa normal. Mesmo assim eu fantasio que muitos produtos deles começaram dessa forma: num ambiente permissivo, voltado à inovação. Não basta apenas contratar PhDs do MIT ou de Stanford se não houver ambiente e cultura adequadas para realmente fazê-los produzir de verdade. Como Larry e Sergey tiveram um começo nesse mundo permissivo de open source eu fico imaginando se eles não criaram uma organização que segue exatamente esse modelo, mesmo que tenha sido de forma instintiva.
 
 Muitas empresas querem ser o próximo Google. Porém, quero lembrá-los que é preciso muito mais do que sofás confortáveis, mesas de pebolim, salas de videogame e restaurantes de comida japonesa dentro da empresa para se tornar um Google. Isso é fácil: basta comprar.
 
@@ -326,5 +326,5 @@ Leiam com outros olhos minhas recomendações de leitura:
 
 Dica: A maioria desses livros tem traduções em português.
 
-Sei que alguns desses livros não tem a ver diretamente com este assunto (como os de Carl Sagan), mas acredite: faz muita diferença para a maneira como formamos nossas **idéias**.
+Sei que alguns desses livros não tem a ver diretamente com este assunto (como os de Carl Sagan), mas acredite: faz muita diferença para a maneira como formamos nossas **ideias**.
 

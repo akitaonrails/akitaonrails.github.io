@@ -36,7 +36,7 @@ Digo isso com “agressividade” mas certa relutância porque eu mesmo já pens
 
 - [The Greatest Show on Earth: The Evidence for Evolution](http://www.amazon.com/Greatest-Show-Earth-Evidence-Evolution/dp/1416594787/ref=sr_1_1?ie=UTF8&s=books&qid=1262753713&sr=8-1) – um dos exemplos mais claros de Sistemas Complexos Adaptativos é a natureza ao nosso redor. Você precisa entender o que é a Teoria da Evolução de Darwin. A maioria “acha” que entende isso, mas cuidado, muito é folclore e muitos ainda duvidam disso. Se você ainda tem dúvidas sobre Evolução, nem comece.
 
-Mais do que isso? Por experiência, toda vez que alguém me fala palavras como “caos”, “equilíbrio” percebo que elas estão baseadas na definição casual e não técnica delas. Primeiro, muitos acham que “caos” é simplesmente bagunça, ao totalmente indesejado. Pior ainda: acreditam que o “segredo” está em atingir **equilíbrio** e ficar nele, confundem a meta como sendo buscar equilíbrio. Não é bem isso.
+Mais do que isso? Por experiência, toda vez que alguém me fala palavras como “caos”, “equilíbrio” percebo que elas estão baseadas na definição casual e não técnica delas. Primeiro, muitos acham que “caos” é simplesmente bagunça, algo totalmente indesejado. Pior ainda: acreditam que o “segredo” está em atingir **equilíbrio** e ficar nele, confundem a meta como sendo buscar equilíbrio. Não é bem isso.
 
 Segundo a introdução do livro Surfing the Edge of Chaos, veja:
 

@@ -11,11 +11,11 @@ draft: false
 
 
 
- **Este keynote entrará para história, definivamente!**
+ **Este keynote entrará para história, definitivamente!**
 
  ![](/files/dsc_0159.jpg)
 
-Como eu sei que todo Railer que se preze gosta da Apple, acredito que todos saibam que acabou de terminar (17:07) o keynote do Steve Jobs em São Francisco, na MacWorld 2007. Os rumores foram enormes nos últimos dias, não houve keynote mais esperado e Steve Jobs não decepcionou. Vejam os detalhes, transcript e fotos no site ao vido da [Engadget](http://www.engadget.com/2007/01/09/live-from-macworld-2007-steve-jobs-keynote/).
+Como eu sei que todo Railer que se preze gosta da Apple, acredito que todos saibam que acabou de terminar (17:07) o keynote do Steve Jobs em São Francisco, na MacWorld 2007. Os rumores foram enormes nos últimos dias, não houve keynote mais esperado e Steve Jobs não decepcionou. Vejam os detalhes, transcript e fotos no site ao vivo da [Engadget](http://www.engadget.com/2007/01/09/live-from-macworld-2007-steve-jobs-keynote/).
 
  ![](/files/dsc_0182.jpg)
 

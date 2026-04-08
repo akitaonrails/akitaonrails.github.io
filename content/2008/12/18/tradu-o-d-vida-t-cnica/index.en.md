@@ -8,7 +8,6 @@ tags:
 - career
 - management
 draft: false
-translationKey: technical-debt
 ---
 
 I came to know **Steve McConnell** many years ago, first through the books [After the Gold Rush](http://www.stevemcconnell.com/gr.htm) and [Software Project Survival Guide](http://www.stevemcconnell.com/sg.htm). Many people know him more from [Code Complete](http://www.stevemcconnell.com/cc1.htm). Last year he wrote an excellent article on the subject of **Technical Debt**. While discussing this topic recently, I decided to revisit this text and translate it. Again, after years of experience I'm still surprised that this is yet another concept that few people discuss — and everyone keeps making the same mistakes over and over.

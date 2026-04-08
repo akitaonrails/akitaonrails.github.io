@@ -7,7 +7,6 @@ tags:
 - management
 - agile
 - chaos
-translationKey: agility-chaos-self-organization
 draft: false
 ---
 

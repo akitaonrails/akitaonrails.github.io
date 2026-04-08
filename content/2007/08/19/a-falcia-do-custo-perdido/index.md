@@ -11,7 +11,7 @@ draft: false
 
  ![](http://s3.amazonaws.com/akitaonrails/assets/2007/8/19/donkey.jpg)
 
-Estou totalmente atolado de trabalho (são 2 da manhã de domingo) mas este pequeno pensamento me chamou a atenção porque é simples e, mesmo assim, a maioria das pessoas ainda cai nessa. O [post original](http://jchyip.blogspot.com/2007/08/sunk-cost-fallacy-for-architects.html) é _Custo Perdido para Arquitetos_, mas eu acho que deveria ser _Custo Perdido para Gerentes_. Segue a traducão:
+Estou totalmente atolado de trabalho (são 2 da manhã de domingo) mas este pequeno pensamento me chamou a atenção porque é simples e, mesmo assim, a maioria das pessoas ainda cai nessa. O [post original](http://jchyip.blogspot.com/2007/08/sunk-cost-fallacy-for-architects.html) é _Custo Perdido para Arquitetos_, mas eu acho que deveria ser _Custo Perdido para Gerentes_. Segue a tradução:
 
 Digamos que você comprou um ticket de cinema mas então percebe a partir de críticas da mídia que o filme é uma droga. Assumindo que você não tem nenhum amigo idiota que compraria seu ticket, você tem duas soluções:
 
@@ -33,7 +33,7 @@ Então, em vez de um ticket de cinema, digamos que é a licença de algum softwa
 
 Será que existe alguma razão para considerar quanto foi pago pela licença ou hardware como tendo qualquer peso, por menor que seja, na decisão de qual é a melhor escolha arquitetural ou de projeto futuro?
 
-Bem, a menos que o sistema de gerenciamento em que você opera pune comportamento racional e recompensa comportamentos irracionais.
+Bem, a menos que o sistema de gerenciamento em que você opera puna comportamento racional e recompensa comportamentos irracionais.
 
 Total bom senso. Economistas estão mais acostumados a estudar e catalogar comportamentos desse tipo. Recomendo ler sobre outros conceitos como o bom e velho [Custo da Oportunidade](http://en.wikipedia.org/wiki/Opportunity_Cost). A [Lei de Parkinson](http://en.wikipedia.org/wiki/Parkinson%27s_Law) para mim é o corolário da Lei de Expansão dos Gases e que todo desenvolvedor (eu incluso) já sofreu.
 

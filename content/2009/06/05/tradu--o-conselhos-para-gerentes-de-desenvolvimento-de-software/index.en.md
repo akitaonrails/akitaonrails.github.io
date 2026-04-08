@@ -5,7 +5,6 @@ slug: tradu--o-conselhos-para-gerentes-de-desenvolvimento-de-software
 tags:
 - off-topic
 - management
-translationKey: advice-for-software-managers
 draft: false
 ---
 

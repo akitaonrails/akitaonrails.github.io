@@ -16,7 +16,7 @@ Não é de hoje que todos sabem que eu sou um forte proponente [contra certifica
 
 Porém, eu iria mais longe e colocaria um termo guarda-chuva. Na realidade eu sou totalmente contra _“Credenciais”_, em geral, particularmente fora de contexto. E além disso, eu também gosto de argumentar sobre argumentação. Não é de hoje que menciono sobre falácias sempre que posso. Estou muito longe de um entendimento mais amplo, mas estou sempre tentando expandir essa compreensão e acho que todos deveriam.
 
-Um exemplo simples: eu adoro o trabalho de um Martin Fowler, ou de um Robert Martin. Acho que seus insights são muito valiosos, suas recomendações são excelentes. Com certeza são pessoas que se esforçam para serem acima da média. Porém – e aqui vem o problema – eles também são seres humanos e, como tais, tem defeitos. Isso é um fato, indiscutível, que precisamos assumir em toda argumentação. Simplesmente porque um Uncle Bob disse alguma coisa, isso não configura automaticamente verdade.
+Um exemplo simples: eu adoro o trabalho de um Martin Fowler, ou de um Robert Martin. Acho que seus insights são muito valiosos, suas recomendações são excelentes. Com certeza são pessoas que se esforçam para serem acima da média. Porém – e aqui vem o problema – eles também são seres humanos e, como tais, têm defeitos. Isso é um fato, indiscutível, que precisamos assumir em toda argumentação. Simplesmente porque um Uncle Bob disse alguma coisa, isso não configura automaticamente verdade.
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2009/11/4/circular-reasoning1_original.jpg?1257376638)
 
@@ -33,7 +33,7 @@ O contrário também é verdade, só porque o Philippe Kruchten ajudou a criar o
 
 Ambos os casos são ruins. Isso nos leva à tendência também de ignorar as pessoas sem renome, seu funcionário mais experiente, que efetivamente entende do problema, às vezes é ignorado, porque alguém de mais renome – mas totalmente fora do contexto – lançou certas “verdades”. Agora essa “verdade” é a lei. Sem mais perguntas. E, claro, o contrário também existe: você só acredita no seu funcionário mais antigo justamente porque é o mais antigo. Nada disso são boas justificativas. O importante sempre é: não interessa a pessoa, interessa sim seus argumentos. E argumentos que sigam o método científico.
 
-O fato é que a maioria de nós temos preguiça de pensar. Pura e simples preguiça. Além disso, a forma como fomos criados sempre trás figuras de autoridade e essa figura sempre tem mais razão do que nós – um sinal de baixa auto-estima, eu diria. Portanto, quando vemos alguém em posição de autoridade, a tendência é aceitar o que vem dela, especialmente se estamos confortáveis com seu entendimento – o velho problema de sair da zona de conforto. A maioria das pessoas não foi treinada para mudanças, foi treinada para estabilidade, por isso qualquer coisa diferente sempre é vista com maus olhos. A maioria apenas ouve aquilo que quer ouvir, só vê aquilo que quer ver. Ninguém de fora consegue mudar isso facilmente em outra pessoa, o que é bem triste.
+O fato é que a maioria de nós tem preguiça de pensar. Pura e simples preguiça. Além disso, a forma como fomos criados sempre traz figuras de autoridade e essa figura sempre tem mais razão do que nós – um sinal de baixa auto-estima, eu diria. Portanto, quando vemos alguém em posição de autoridade, a tendência é aceitar o que vem dela, especialmente se estamos confortáveis com seu entendimento – o velho problema de sair da zona de conforto. A maioria das pessoas não foi treinada para mudanças, foi treinada para estabilidade, por isso qualquer coisa diferente sempre é vista com maus olhos. A maioria apenas ouve aquilo que quer ouvir, só vê aquilo que quer ver. Ninguém de fora consegue mudar isso facilmente em outra pessoa, o que é bem triste.
 
 [![](http://s3.amazonaws.com/akitaonrails/assets/2009/11/4/TaxonomyC_original.png?1257376665)](http://www.fallacyfiles.org/taxonomy.html)
 
@@ -46,7 +46,7 @@ Veja alguns artigos da Wikipedia sobre o assunto de argumentação:
 
 Uma pessoa que não gosta de argumentar, por definição, não pode jamais ser tomadora de decisões. Muitos usam de credibilidade dos outros de forma inadequada (_“porque fulano disse – fora de contexto, mas disse …”_). Mas o pior é quando uma decisão é tomada no grito, por força do cargo, por exemplo. Essa é a atitude de um indivíduo com claras incapacidades de argumentação e, portanto, de compreensão do assunto.
 
-Claro, em muitas ocasiões somos forçados a decidir alguma coisa “por instinto”. Se ficássemos o dia todo argumentando cada pequena decisão realmente não faríamos nada. Imagine argumentar se devo vestir a camisa vermelha ou amarela e porque. Não estou falando de micro-argumentação (que, assim como micro-gerenciamento, não funciona). Porém, decisões que envolvem pessoas, pontos de vista divergentes, devem ser analisados com mais calma. Se mesmo depois da argumentação ainda não for possível tirar uma conclusão lógica de nenhuma das duas premissas, no fim é o instinto que vai acabar guiando a possível solução. Argumentação não é uma ciência-exata, é humanas utilizando princípios científicos para uma melhor formulação de argumentos.
+Claro, em muitas ocasiões somos forçados a decidir alguma coisa “por instinto”. Se ficássemos o dia todo argumentando cada pequena decisão realmente não faríamos nada. Imagine argumentar se devo vestir a camisa vermelha ou amarela e porque. Não estou falando de micro-argumentação (que, assim como micro-gerenciamento, não funciona). Porém, decisões que envolvem pessoas, pontos de vista divergentes, devem ser analisadas com mais calma. Se mesmo depois da argumentação ainda não for possível tirar uma conclusão lógica de nenhuma das duas premissas, no fim é o instinto que vai acabar guiando a possível solução. Argumentação não é uma ciência-exata, é uma humana, utilizando princípios científicos para uma melhor formulação de argumentos.
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2009/11/4/humor-penguin-logic_original.jpg?1257376650)
 
@@ -58,13 +58,13 @@ Portanto, também não é _“em todos os casos a maioria vence”_ mas sim _“
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2009/11/4/sci_original.gif?1257376644)
 
-Pensar é difícil, demanda estudo, demanda cultura, demanda prática. Pensar com afinco não é algo que a maioria das pessoas “ocupadas” tem vontade de fazer. A maioria prefere que lhe dêem as respostas prontas e enlatadas, ou então prefere escolher qualquer coisa rapidamente “por instinto”, ou _“porque eu já escolhi certo antes, portanto vou escolher certo sempre”_ ou ainda _“porque já funcionou antes em algum lugar, deve funcionar aqui também”, o que, obviamente é uma falácia, a boa e valha [Post hoc ergo propter hoc](http://en.wikipedia.org/wiki/Post_hoc_ergo)propter_hoc
+Pensar é difícil, demanda estudo, demanda cultura, demanda prática. Pensar com afinco não é algo que a maioria das pessoas “ocupadas” tem vontade de fazer. A maioria prefere que lhe deem as respostas prontas e enlatadas, ou então prefere escolher qualquer coisa rapidamente “por instinto”, ou _“porque eu já escolhi certo antes, portanto vou escolher certo sempre”_ ou ainda _“porque já funcionou antes em algum lugar, deve funcionar aqui também”, o que, obviamente é uma falácia, a boa e velha [Post hoc ergo propter hoc](http://en.wikipedia.org/wiki/Post_hoc_ergo)propter_hoc
 
 Aliás, a “Post hoc ergo propter hoc” é o motivo de porque livros de auto-ajuda, livros com metodologias mágicas, receitas “avançadas” e todo tipo de procedimento enlatado vende tanto: porque retira o trabalho de pensar das pessoas, lhes dando respostas prontas, “que já funcionaram em dúzias de lugares”, ou coisa parecida.
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2009/11/4/I_detect_fail-1_original.jpg?1257376676)
 
-Algumas efetivamente, depois de pesquisa e experimentação prudente, são boas mesmo. A maioria, no entanto, me lembra uma alegoria, sobre de medicina. Imagine, se todos os médicos agissem assim. Você entra no consultório do médico e diz:
+Algumas efetivamente, depois de pesquisa e experimentação prudente, são boas mesmo. A maioria, no entanto, me lembra uma alegoria sobre medicina. Imagine, se todos os médicos agissem assim. Você entra no consultório do médico e diz:
 
 - - Doutor, estou com muitas dores.
 - - Meu filho, tome este remédio todos os dias e a dor acaba. Pode ir embora.

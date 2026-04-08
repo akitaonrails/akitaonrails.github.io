@@ -6,7 +6,6 @@ tags:
 - off-topic
 - career
 draft: false
-translationKey: a-rant-2007
 ---
 
 

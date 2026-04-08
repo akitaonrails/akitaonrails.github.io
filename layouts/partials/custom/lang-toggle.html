@@ -10,11 +10,13 @@
 */}}
 
 {{- $isHome := .IsHome -}}
-{{- $isArchives := and .IsPage (eq .RelPermalink "/archives/") -}}
+{{- $relPerm := .RelPermalink -}}
+{{- $isArchives := or (eq $relPerm "/archives/") (eq $relPerm "/en/archives/") -}}
+{{- $isOffTopic := or (eq $relPerm "/off-topic/") (eq $relPerm "/en/off-topic/") -}}
 {{- $isPost := .IsPage -}}
 {{- $hasTranslations := gt (len .Translations) 0 -}}
 {{- $showOnPost := and $isPost $hasTranslations -}}
-{{- $show := or $isHome $isArchives $showOnPost -}}
+{{- $show := or $isHome $isArchives $isOffTopic $showOnPost -}}
 
 {{- if $show -}}
   {{- $currentLang := .Site.Language.Lang -}}
@@ -37,6 +39,9 @@
   {{- else if $isArchives -}}
     {{- $ptUrl = "/archives/" -}}
     {{- $enUrl = "/en/archives/" -}}
+  {{- else if $isOffTopic -}}
+    {{- $ptUrl = "/off-topic/" -}}
+    {{- $enUrl = "/en/off-topic/" -}}
   {{- end -}}
 
   <div class="lang-toggle hx:text-sm hx:text-gray-500 hx:dark:text-gray-400 hx:text-center hx:mt-2 hx:mb-4">

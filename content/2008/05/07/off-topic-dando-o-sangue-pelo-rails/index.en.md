@@ -6,7 +6,6 @@ tags:
 - off-topic
 - biography
 draft: false
-translationKey: bleeding-for-rails
 ---
 
 Let me add one more episode to the saga inspired by the blog posts of Vinicius and Tapajós from Improve It, respectively:

@@ -18,9 +18,9 @@ draft: false
 
 Veja este trecho do livro [The Black Swan](http://www.amazon.com/Black-Swan-Impact-Highly-Improbable/dp/1400063515/ref=sr_1_1?ie=UTF8&s=books&qid=1223360749&sr=1-1), de 2006, de Nassim Taleb:
 
-> A Globalização cria fragilidade interligada, ao mesmo tempo que reduz a volatilidade e dá aparência de estabilidade. Em outras palavras isso cria Cisnes Negros devastadores. Nunca antes vivemos sob a ameaça de colapso global. Instituições Financeiras continuam se mesclando em um número menor de bancos muito grandes. Quase todos os bancos estão inter-relacionados. Então a ecologia financeira está se acumulando em bancos gigantes, incestuosos, burocráticos – quando um cai, todos caem. O aumento da concentração entre bancos parece ter o efeito de fazer crises financeiras parecerem menos prováveis, mas quando acontecem eles tem efeitos muito mais globais em escala e nos atingem duramente. Nos movemos de uma ecologia diversificada de pequenos bancos, com políticas variadas de empréstimos, para um framework mais homogêneo de firmas onde todas se parecem umas com as outras. Verdade, agora temos menos defeitos, mas quando eles acontecem … eu tremo só de pensar.
+> A Globalização cria fragilidade interligada, ao mesmo tempo que reduz a volatilidade e dá aparência de estabilidade. Em outras palavras isso cria Cisnes Negros devastadores. Nunca antes vivemos sob a ameaça de colapso global. Instituições Financeiras continuam se mesclando em um número menor de bancos muito grandes. Quase todos os bancos estão inter-relacionados. Então a ecologia financeira está se acumulando em bancos gigantes, incestuosos, burocráticos – quando um cai, todos caem. O aumento da concentração entre bancos parece ter o efeito de fazer crises financeiras parecerem menos prováveis, mas quando acontecem eles têm efeitos muito mais globais em escala e nos atingem duramente. Nos movemos de uma ecologia diversificada de pequenos bancos, com políticas variadas de empréstimos, para um framework mais homogêneo de firmas onde todas se parecem umas com as outras. Verdade, agora temos menos defeitos, mas quando eles acontecem … eu tremo só de pensar.
 > 
-> A instituição patrocinada pelo governo, [Fannie Mae](http://en.wikipedia.org/wiki/Fannie_Mae), quando eu olhos seus riscos, parece estar montada num barril de dinamite, vulnerável ao menor soluço. Mas não se preocupem: eles tem grandes equipes de cientistas que consideram esses eventos “improváveis”.
+> A instituição patrocinada pelo governo, [Fannie Mae](http://en.wikipedia.org/wiki/Fannie_Mae), quando eu olho seus riscos, parece estar montada num barril de dinamite, vulnerável ao menor soluço. Mas não se preocupem: eles têm grandes equipes de cientistas que consideram esses eventos “improváveis”.
 
 Não, Nassim não é um profeta, um adivinho, bidu ou guru. Aliás, ele odiaria ser chamado de guru. Ele apenas fez uma observação baseada no que todos nós ignoramos: infelizmente nossa máquina humana é muito pobre para lidar com abstrações, por exemplo, com [Aleatoriedade](http://www.akitaonrails.com/2008/3/1/off-topic-somos-matematicamente-ignorantes)
 
@@ -29,13 +29,13 @@ Também não se trata de um argumento contra globalização ou outras baboseiras
 
 ## Isso já aconteceu antes
 
-A [Long Term Capital Management](http://en.wikipedia.org/wiki/Long-Term_Capital_Management) era a menina dos olhos do mundo financeiro. Um hedge fund americano formado em 1997, que tinha entre seus fundadores não apenas um, mas **dois** prêmios Nobel de Economia, Robert C. Merton e Myron Scholes. Eles acreditavam que tinham a matemática (cof gaussiana cof) que era capaz de prever qualquer tipo de eventos. Em 1998, a LTCM já devia USD 4.6 bilhões. A [Crise Russa](http://en.wikipedia.org/wiki/Russian_financial_crises) destruiu suas teorias gaussianas, que ignorava e subestimava completamente Cisnes Negros.
+A [Long Term Capital Management](http://en.wikipedia.org/wiki/Long-Term_Capital_Management) era a menina dos olhos do mundo financeiro. Um hedge fund americano formado em 1997, que tinha entre seus fundadores não apenas um, mas **dois** prêmios Nobel de Economia, Robert C. Merton e Myron Scholes. Eles acreditavam que tinham a matemática (cof gaussiana cof) que era capaz de prever qualquer tipo de evento. Em 1998, a LTCM já devia USD 4.6 bilhões. A [Crise Russa](http://en.wikipedia.org/wiki/Russian_financial_crises) destruiu suas teorias gaussianas, que ignoravam e subestimava completamente Cisnes Negros.
 
 E você acha que as pessoas aprenderam a lição? Infelizmente nós somos mais teimosos do que isso: as teorias de Scholes e Merton são ensinadas nos cursos de economia até hoje.
 
 Isso não é uma qualidade apenas do mundo econômico: **diversas** outras áreas aceitam e empregam teorias absurdas, sem fundamentos, sem resultados, e ainda assim tratados como se fossem as próximas grandes revoluções. As pessoas comuns se deixam enganar facilmente simplesmente por nomes, por credenciais. Enfim, se credencial valesse alguma coisa, um Nobel destruído em 1998 deveria querer dizer alguma coisa.
 
-Eu costumo dizer o seguinte: empresas e charlatães que vendem metodologias (de qualquer tipo: financeira, recursos humanos, gestão, etc) tem o emprego mais fácil do mundo, basta serem bons vendedores.
+Eu costumo dizer o seguinte: empresas e charlatães que vendem metodologias (de qualquer tipo: financeira, recursos humanos, gestão, etc) têm o emprego mais fácil do mundo, basta serem bons vendedores.
 
 Se seu cliente teve sucesso depois de implementar a tal metodologia: _“viu só, vocês tiveram sucesso porque implementaram nossa metodologia revolucionária.”_ É claro que esse cliente passa a figurar como “case de sucesso” nos seus portfolios.
 
@@ -47,7 +47,7 @@ Se seu cliente fracassa depois de implementar a tal metodologia: _“é claro qu
 
 [![](http://s3.amazonaws.com/akitaonrails/assets/2008/10/9/41nirFmqcwL._SL500_BO2_204_203_200_AA219_PIsitb-sticker-dp-arrow_TopRight_-24_-23_SH20_OU01_.jpg)](http://www.amazon.com/Fooled-Randomness-Hidden-Chance-Markets/dp/1400067936/ref=pd_bbs_2?ie=UTF8&s=books&qid=1223532769&sr=8-2)
 
-As pessoas tem a péssima mania de fazer as perguntas erradas: _“como saber se uma teoria é verdadeira?”_ Por isso mesmo também recebem as respostas erradas e isso leva à decisões mais erradas ainda.
+As pessoas têm a péssima mania de fazer as perguntas erradas: _“como saber se uma teoria é verdadeira?”_ Por isso mesmo também recebem as respostas erradas e isso leva a decisões mais erradas ainda.
 
 Mais uma vez, como já disse inúmeras vezes em artigos anteriores, nós somos feitos para sermos enganados. Pior do que isso: conscientemente não exercemos nossas habilidades **céticas**.
 
@@ -83,7 +83,7 @@ Ultimamente já dei várias dicas sobre coisas que vocês devem evitar: se estam
 
 Se o assunto oferece uma teoria mas não tem margens para avaliar sua falseabilidade, é charlatanismo, joguem fora.
 
-Livros de auto-ajuda são assim mesmo: oferecem teorias floridas, cobertas de mel, empacotadas de forma atraentes. Mas ao contrário de teorias científicas, elas não nos deixam tentar provar que elas não funcionam, apenas afirmam que funcionam, citam vários “casos de sucesso” e escondem todas as tentativas fracassadas.
+Livros de auto-ajuda são assim mesmo: oferecem teorias floridas, cobertas de mel, empacotadas de forma atraente. Mas ao contrário de teorias científicas, elas não nos deixam tentar provar que elas não funcionam, apenas afirmam que funcionam, citam vários “casos de sucesso” e escondem todas as tentativas fracassadas.
 
 Desde o começo do mês passado tenho viajado para dar palestras toda semana e eu sempre passo na livraria do aeroporto ou da rodoviária. Prestando mais atenção, os livros que estão em destaque são exatamente desse tipo: charlatanismo barato. Se não todas, quase todas.
 
@@ -103,11 +103,11 @@ Essa última leva em consideração:
 
 - é impossível ter **todas** as informações
 - variações muito pequenas nos dados podem levar a um impacto enorme ([Efeito Borboleta](http://en.wikipedia.org/wiki/Butterfly_effect), sim ele acontece o **tempo todo** )
-- teorias/modelos baseados em dados empíricos são falhos, já que eventos que ainda não aconteceram não tem como ser levados em consideração
+- teorias/modelos baseados em dados empíricos são falhos, já que eventos que ainda não aconteceram não têm como ser levados em consideração
 
 É o exemplo que Taleb explica: digamos que você está tirando bolinhas coloridas a partir de uma caixa tampada – sem que você veja. Você tira 5 bolinhas brancas e 5 bolinhas vermelhas e, a partir desses dados empíricos, chega à conclusão que _“ **sempre** vai sair 1 bolinha vermelha para cada 2 bolinhas retiradas.”_ Mas mal sabe você que no fundo da mesa existe um buraco e lá está um menino escondido. Ao ouvir você afirmar isso, ele começa a te dar mais bolinhas brancas que vermelhas. Essa é a realidade.
 
-Exercitamos **muito** pouco nosso ceticismo. Não se trata de virar paranóico, mas sim de avaliar só um pouco melhor do que a forma medíocre que fazemos hoje.
+Exercitamos **muito** pouco nosso ceticismo. Não se trata de virar paranoico, mas sim de avaliar só um pouco melhor do que a forma medíocre que fazemos hoje.
 
 ## Emoções
 
@@ -117,11 +117,11 @@ Como Malcolm Gladwell diz em [Blink](http://www.amazon.com/Blink-Power-Thinking-
 
 Taleb descreve uma experiência que foi realizada com uma pessoa que precisou operar o cérebro – por causa de um tumor – e por causa disso foi necessário retirar o trecho do cérebro que é responsável pelas nossas emoções. Todo o resto permaneceu intacto.
 
-_“Excelente!”_ – alguém poderia pensar: esta é uma pessoa 100% **racional** , que não deixará as emoções esbarrarem na razão. Você poderia deduzir que essa pessoa seria capaz de tomar decisões inteligentes e racionais.
+_“Excelente!”_ – alguém poderia pensar: esta é uma pessoa 100% **racional**, que não deixará as emoções esbarrarem na razão. Você poderia deduzir que essa pessoa seria capaz de tomar decisões inteligentes e racionais.
 
 Surpresa: essa pessoa se tornou totalmente **incapaz** de tomar qualquer decisão. Sequer conseguia se decidir levantar da cama. Os estudos feitos mostram que talvez nossas decisões sejam muito mais realizadas pela parte emocional do que racional, ao contrário do que imaginamos.
 
-Quem já lidou com inteligência artificial chega à conclusão que nós, humanos, provavelmente temos que ter um mecanismo de **aproximação** , pois é simplesmente impossível levar todas as variáveis em consideração. O tempo para avaliar **tudo** que sabemos levaria tanto tempo que já teríamos sido extintos por outros predadores milênios atrás.
+Quem já lidou com inteligência artificial chega à conclusão que nós, humanos, provavelmente temos que ter um mecanismo de **aproximação**, pois é simplesmente impossível levar todas as variáveis em consideração. O tempo para avaliar **tudo** que sabemos levaria tanto tempo que já teríamos sido extintos por outros predadores milênios atrás.
 
 Decidir num piscar de olhos ou pior, tentar ser “racional”, tem suas vantagens e desvantagens. Pessoas de mente aberta, extremamente estudiosas, muito experientes em muitas áreas, com muitas habilidades e capacidades, provavelmente serão capazes de tomar muitas decisões certas muito rápido (algumas na sorte, algumas erradas). Mas pessoas de mente fechada, medíocres, tomarão muitas decisões erradas.
 
@@ -137,7 +137,7 @@ Não deixe sua decisão ser viciada por teorias não-científicas (pseudo-ciênc
 
 Novamente, leiam Taleb: o que ele diz é **óbvio** , mas por alguma razão todos nós ignoramos. Pouca gente de fato entende o que é aleatoriedade. Parem de ficar freneticamente assistindo a Bloomberg, de ficar atualizando seu navegador a cada 5 segundos para ver os índices financeiros, nada disso vai te ajudar: você já ignorou o Cisne Negro, você já perdeu.
 
-Apenas para dar uma _pontinha_ sobre filosofia Ágil, me parece bastante inteligente, por exemplo, de porque as metodologias Ágeis insistem tanto em Sprints/Iterações **curtas**. Eles sabem que é impossível prever o futuro de longo prazo, por isso mesmo prioriza-se o que é realmente importante e se tenta planejar apenas o curto prazo, apenas o que é efetivamente possível. As metodologias Ágeis me parecem especialmente feitos para se defender dos Cisnes Negros que ainda assombram as equipes de desenvolvimento _tradicional_ de software, como expliquei no meu artigo [anterior](http://www.akitaonrails.com/2008/10/7/off-topic-o-manifesto-gil-ou-como-se-tornar-o-google).
+Apenas para dar uma _pontinha_ sobre filosofia Ágil, me parece bastante inteligente, por exemplo, de porque as metodologias Ágeis insistem tanto em Sprints/Iterações **curtas**. Eles sabem que é impossível prever o futuro de longo prazo, por isso mesmo prioriza-se o que é realmente importante e se tenta planejar apenas o curto prazo, apenas o que é efetivamente possível. As metodologias Ágeis me parecem especialmente feitas para se defender dos Cisnes Negros que ainda assombram as equipes de desenvolvimento _tradicional_ de software, como expliquei no meu artigo [anterior](http://www.akitaonrails.com/2008/10/7/off-topic-o-manifesto-gil-ou-como-se-tornar-o-google).
 
 Todo mundo conheceu apenas cisnes brancos no passado e induz que não existem Cisnes Negros. Eis onde mora o perigo!
 

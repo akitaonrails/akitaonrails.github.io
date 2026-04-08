@@ -12,7 +12,7 @@ draft: false
 
 Um dos artigos mais lidos do meu blog é o [Comprei meu primeiro Mac, e agora?](http://akitaonrails.com/2009/07/19/off-topic-comprei-meu-primeiro-mac-e-agora). Escrevi em Setembro de 2009. Já atualizei uma vez mas eu sempre achei que precisava atualizar novamente. Veja o artigo inteiro atualizado no link original acima. Mas para quem já havia lido, a seguir está somente o que acrescentei de novo hoje.
 
-Se você tem outras boas dicas como essa, não deixem de comentar para compartilhar com todos. A idéia não é um artigo para desenvolvedores (eu assumo que bons desenvolvedores sabem encontrar seu caminho sozinhos) mas para usuários normais e mesmo Power Users. Outra boa utilidade: seu amigo não-desenvolvedor comprou um Mac e fica te perturbando toda hora _“como faz isso? como faz aquilo?”_, agora você pode passar o link acima para o artigo inteiro para auxiliá-lo :-)
+Se você tem outras boas dicas como essa, não deixem de comentar para compartilhar com todos. A ideia não é um artigo para desenvolvedores (eu assumo que bons desenvolvedores sabem encontrar seu caminho sozinhos) mas para usuários normais e mesmo Power Users. Outra boa utilidade: seu amigo não-desenvolvedor comprou um Mac e fica te perturbando toda hora _“como faz isso? como faz aquilo?”_, agora você pode passar o link acima para o artigo inteiro para auxiliá-lo :-)
 
 Aproveitem!
 
@@ -23,7 +23,7 @@ Aproveitem!
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2012/4/20/Screen%20Shot%202012-04-20%20at%206.02.32%20PM_original.png?1334956028)
 
-- Antes do Lion, existia uma função de encriptar seus arquivos em tempo real. Essa funcionalidade se chamava FileVault e era ruim o suficiente para ser ignorada. Porém a partir do Lion, surgiu o **FileVault 2** e ela é completamente diferente e desta vez é tão boa que seria estupidez não usá-la. Abra o “System Preferences, Security & Privacy”, aba “FileVault” e abilite a encriptação total do seu HD. **MUITO CUIDADO:** ele irá gerar chaves seguras que permitem descriptografar os dados. Anote num local seguro e **nunca perca**. Uma dica é ligar seu iPhone ou qualquer smartphone com câmera e tirar uma foto da tela quando ele fornecer as chaves.
+- Antes do Lion, existia uma função de encriptar seus arquivos em tempo real. Essa funcionalidade se chamava FileVault e era ruim o suficiente para ser ignorada. Porém a partir do Lion, surgiu o **FileVault 2** e ela é completamente diferente e desta vez é tão boa que seria estupidez não usá-la. Abra o “System Preferences, Security & Privacy”, aba “FileVault” e habilite a encriptação total do seu HD. **MUITO CUIDADO:** ele irá gerar chaves seguras que permitem descriptografar os dados. Anote num local seguro e **nunca perca**. Uma dica é ligar seu iPhone ou qualquer smartphone com câmera e tirar uma foto da tela quando ele fornecer as chaves.
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2012/4/20/Screen%20Shot%202012-04-20%20at%206.29.06%20PM_original.png?1334957491)
 

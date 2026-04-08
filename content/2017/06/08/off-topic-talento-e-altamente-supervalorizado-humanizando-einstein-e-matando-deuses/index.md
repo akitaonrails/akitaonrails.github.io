@@ -19,11 +19,11 @@ Pelas mesmas razões, eu quero desmantelar o mito do "Talento" e trazer os semi-
 
 ### Talento é Altamente Supervalorizado
 
-Eu realmente detesto o uso da palavra "Talento". Ele deveria ser usado como um elogio, uma qualidade, mas é muito usado como uma desculpa. A raíz em latim da palavra significa simplesmente uma grande quantidade de dinheiro. O uso errôneo e comum de hoje em dia desvaloriza os reais esforços das pessoas realmente "talentosas".
+Eu realmente detesto o uso da palavra "Talento". Ele deveria ser usado como um elogio, uma qualidade, mas é muito usado como uma desculpa. A raiz em latim da palavra significa simplesmente uma grande quantidade de dinheiro. O uso errôneo e comum de hoje em dia desvaloriza os reais esforços das pessoas realmente "talentosas".
 
 Toda vez ele é usado para denotar algo do tipo _"eu nunca vou ser um Einstein, nem vou me incomodar em tentar"._ É a desculpa preferida das pessoas preguiçosas.
 
-Embora fatores ambientais, circunstanciais, tenham um papel crucial, não existe ABSOLUTAMENTE NADA, em nosso material biológico - como um gene - que, dadas as mesmas circunstâncias - não permitiriam alguém de atingir níveis similares de sucesso.
+Embora fatores ambientais, circunstanciais, tenham um papel crucial, não existe ABSOLUTAMENTE NADA, em nosso material biológico - como um gene - que, dadas as mesmas circunstâncias - não permitiria alguém atingir níveis similares de sucesso.
 
 Sim, algumas pessoas acabam, aleatoriamente, por estar no lugar certo na hora certa. É como se ganha uma loteria. E infelizmente, é impossível recriar a mesma rede de circunstâncias para todo mundo e replicar níveis de sucesso (mais sobre isso no fim do artigo).
 
@@ -53,7 +53,7 @@ Filmes de ficção recentes como ["Lucy", de Luc Besson](http://gizmodo.com/wher
 
 > "O cérebro humano constitui 1/40 do total da massa do corpo humano, em média, mas consome 1/5 de todas as calorias que absorvemos. De um ponto de vista evolucionário, onde cada órgão do nosso corpo foi criado e naturalmente selecionado por eras por eficiência, ter um cérebro que suga 20% de toda nossa reserva de energia diária por meros 10% de eficiência simplesmente não tem sentido nenhum."
 
-> Pense em você mesmo neste instante. Você está usando seus músculos para ficar sentado agora? Usando suas mãos para scrolar o mouse do seu computador (ou dedo na tela do seu celular)? Talvez comendo ou tomando alguma coisa? Ouvindo alguma música? Respirando? Pode ficar tranquilo, você está usando mais de 10% do seu cérebro neste instante - [Nature](https://www.nature.com/scitable/blog/mind-read/lucy_is_wrong_we_use)
+> Pense em você mesmo neste instante. Você está usando seus músculos para ficar sentado agora? Usando suas mãos para scrollar o mouse do seu computador (ou dedo na tela do seu celular)? Talvez comendo ou tomando alguma coisa? Ouvindo alguma música? Respirando? Pode ficar tranquilo, você está usando mais de 10% do seu cérebro neste instante - [Nature](https://www.nature.com/scitable/blog/mind-read/lucy_is_wrong_we_use)
 
 [![10% do cérebro](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/624/big_10percent_brain.jpg)](https://www.youtube.com/watch?v=YxIS3XxfFS0)
 
@@ -65,7 +65,7 @@ No geral, eu não respeito biografias. Raramente perco meu tempo lendo algum. N�
 
 Na verdade, eu considero biografias como qualquer outro tipo de história de entretenimento. Exatamente na mesma categoria que assistir Capitão América ou Super Homem. Porque é exatamente assim que os escritores e diretores produzem os filmes de "baseado em fatos reais".
 
-Aliás, palmas aos irmãos Cohen pelo filme ["Fargo"](http://www.sbs.com.au/guide/article/2017/05/23/how-much-fargo-actually-based-true-story) que inicia com a frase "isto é uma história real". E muitas pessoas até hoje, acreditam que é real. Uma trolada em todo filme que começa com o famigerado "baseado numa história real" e todos acham que estão assistindo fatos, e não entretenimento.
+Aliás, palmas aos irmãos Coen pelo filme ["Fargo"](http://www.sbs.com.au/guide/article/2017/05/23/how-much-fargo-actually-based-true-story) que inicia com a frase "isto é uma história real". E muitas pessoas até hoje, acreditam que é real. Uma trolada em todo filme que começa com o famigerado "baseado numa história real" e todos acham que estão assistindo fatos, e não entretenimento.
 
 ![Fargo](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/625/fargo.jpg)
 
@@ -75,9 +75,9 @@ Mas se eu perguntar a qualquer pessoa do mundo, quem foi o maior super gênio ci
 
 [![Einstein, debunked](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/626/einstein_debunked.jpg)](https://www.sott.net/article/251049-New-Book-Says-Einstein-Highly-Overrated-and-Ruined-Physics)
 
-Mas por que?
+Mas por quê?
 
-O físico Roger Schlafly, em seu livro ["How Einstein Ruined Physics: Motion, Symmetry, and Revolution in Science"](http://www.darkbuzz.com/herp/) trás uma tonelada de evidências ao contrário.
+O físico Roger Schlafly, em seu livro ["How Einstein Ruined Physics: Motion, Symmetry, and Revolution in Science"](http://www.darkbuzz.com/herp/) traz uma tonelada de evidências ao contrário.
 
 Em resumo, sim Einstein realmente publicou muitas coisas muito interessantes, mas o super inflado mito criado ao redor de sua figura é muito mais danoso do que proveitoso para o futuro da física e seus sucessores. E continua a incentivar o mercado criador de mitos.
 
@@ -87,17 +87,17 @@ Mark Green, em seu artigo ["New Book Says Einstein Highly-Overrated and Ruined P
 
 > "O que torna Einstein tão grande? A história oficial começa assim: Albert Einstein, um jovem funcionário num escritório de patentes suíço, sozinho transformou a física de uma ciência estática e tridimensional em um universo espaço-temporal quadri-dimensional de explodir as cabeças e 'experimentos de pensamento' solitários envolvendo gravidade, movimento, espaço e tempo. Einstein também fez progressos sem precedentes em entender a natureza da luz e energia e foi o primeiro a compreender a equivalência de energia e massa. As descobertas de Einstein não só transformaram a física moderna mas a forma como vemos o universo"
 
-É o que todos nós sabemos. E eu fortemente recomendo que leiam o artigo completo de Mark Green, mas vamos aos pontos que interesssam.
+É o que todos nós sabemos. E eu fortemente recomendo que leiam o artigo completo de Mark Green, mas vamos aos pontos que interessam.
 
 > E=MC2 - Não foi inventado por Einstein!
 
 ![mind blow](https://media.giphy.com/media/DqSw5gyRQ5yPC/giphy.gif)
 
-A equação foi publicado 2 anos antes por Olin to de Pretto. Como Schlafly diz em seu livro "o entendimento da relatividade especial por Einstein ... era inferior a de (Henri) Poincare". Aliás, se nunca ouviu falar do físico francês Poincare, recomendo ler o livro ["Chaos: Making a New Science"](https://www.amazon.com/Chaos-Making-Science-James-Gleick/dp/0143113453/ref=lp_13567_1_3?s=books&ie=UTF8&qid=1496941237&sr=1-3) de James Gleick.
+A equação foi publicada 2 anos antes por Olinto de Pretto. Como Schlafly diz em seu livro "o entendimento da relatividade especial por Einstein ... era inferior à de (Henri) Poincaré". Aliás, se nunca ouviu falar do físico francês Poincaré, recomendo ler o livro ["Chaos: Making a New Science"](https://www.amazon.com/Chaos-Making-Science-James-Gleick/dp/0143113453/ref=lp_13567_1_3?s=books&ie=UTF8&qid=1496941237&sr=1-3) de James Gleick.
 
 > A noção de movimento e tempo como uma 4a dimensão separada do espaço tridimensional.
 
-H.G. Well especulou o conceito na famosa peça de ficção "The Time Machine" em 1894. Nesse mesmo anos Lorentz escreveu o paper científico onde ele "propõe o conceito de tempo local em um objeto móvel". Poincare escreveu em 1898 e outro em 1900 explorando o relacionamento entre movimento e tempo.
+H.G. Wells especulou o conceito na famosa peça de ficção "The Time Machine" em 1894. Nesse mesmo ano Lorentz escreveu o paper científico onde ele "propõe o conceito de tempo local em um objeto móvel". Poincaré escreveu em 1898 e outro em 1900 explorando o relacionamento entre movimento e tempo.
 
 > E a relação do E=MC2 e a bomba atômica?
 
@@ -107,11 +107,11 @@ E, pra completar, também foi H.G. Wells que publicou primeiro sobre o conceito 
 
 [![H.G. Wells](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/627/wells.jpg)](http://www.bbc.com/news/magazine-33365776)
 
-Existiram muitos cientistas excepcionais, que trabalharam duro, antes e durante a era de Einstein. O nobel Henri Poincare (que o filósofo britânico Bertrand Russell - lembram da [chaleira de Russell](http://rationalwiki.org/wiki/Russell's_Teapot)? - chamou de o maior homem que a França já produziu), o outro nobel e físico holandês Hendrik Lorentz; outro nobel e físico e matemático escocês James Clerk Maxwell.
+Existiram muitos cientistas excepcionais, que trabalharam duro, antes e durante a era de Einstein. O nobel Henri Poincaré (que o filósofo britânico Bertrand Russell - lembram da [chaleira de Russell](http://rationalwiki.org/wiki/Russell's_Teapot)? - chamou de o maior homem que a França já produziu), o outro nobel e físico holandês Hendrik Lorentz; outro nobel e físico e matemático escocês James Clerk Maxwell.
 
 De acordo com Schlafly, Maxwell foi quem primeiro cunhou o termo "relatividade" e criou a primeira verdadeira teoria da relatividade de massa e energia. O Eletromagnetismo gerou as mais importantes equações na história da ciência.
 
-O subsequente trabalho de Poincare em relatividade providenciou os teoremas que eram "matematicamente idênticos aos de Einstein" e a maioria do seu trabalho veio antes de Einstein. Lorentz e Poincare tinham todos os principais aspectos da teoria da relatividade, e publicaram antes de Einstein.
+O subsequente trabalho de Poincaré em relatividade providenciou os teoremas que eram "matematicamente idênticos aos de Einstein" e a maioria do seu trabalho veio antes de Einstein. Lorentz e Poincaré tinham todos os principais aspectos da teoria da relatividade, e publicaram antes de Einstein.
 
 [![Poincare](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/628/poincare.jpg)](https://en.wikipedia.org/wiki/Relativity_priority_dispute)
 
@@ -131,9 +131,9 @@ Entenda que hoje, Teoria da Relatividade é material básico de qualquer estudan
 
 Tudo que temos hoje é o resultado de centenas de indivíduos e grupos, que ao longo da história vieram usando o que se sabia antes, jogando fora o que não funciona mais, refinando o que funciona e adicionando novas peças para as gerações seguintes.
 
-Nada do que fazemos hoje é verdadeiramente feito "do zero". Tudo que temos à nossa disposição na atualidade, nos torna ordens de grandeza superiores, mais eficientes, mais rápidos, do que a geração que viveu 200 anos atrás, milênia atrás.
+Nada do que fazemos hoje é verdadeiramente feito "do zero". Tudo que temos à nossa disposição na atualidade, nos torna ordens de grandeza superiores, mais eficientes, mais rápidos, do que a geração que viveu 200 anos atrás, milênios atrás.
 
-Não criamos nada baseados em verdades absolutas escritas em pedra milênio atrás. Evolução existe porque tudo é volátil. Tudo que vem se provando correto dado escrutínio de anos, séculos, se tornam as ferramentas mais fortes para criar as coisas novas. Engenharia, Medicina, etc.
+Não criamos nada baseados em verdades absolutas escritas em pedra milênios atrás. Evolução existe porque tudo é volátil. Tudo que vem se provando correto dado escrutínio de anos, séculos, se torna as ferramentas mais fortes para criar as coisas novas. Engenharia, Medicina, etc.
 
 Graças a isso saímos da era da subsistência para a agricultura. Para a Revolução Industrial. Para a Era da Informação. E para onde estamos caminhando para a Era da Inteligência Artificial, e assim por diante.
 
@@ -147,13 +147,13 @@ Graças a isso saímos da era da subsistência para a agricultura. Para a Revolu
 
 Infelizmente nós, seres humanos, somos péssimos em entender aleatoriedade. O mundo é altamente aleatório.
 
-Do que Einstein, o cientista que publicou o trabalho mais significativo para a humanidade foi Charles Darwin e seu magnum-opus ["On the Origin of Species"](https://www.theguardian.com/books/2015/nov/10/on-the-origin-of-species-voted-most-influential-academic-book-charles-darwin) onde ele explica como complexidade emerge num mundo de eventos aleatórios através de seleção natural.
+Mais do que Einstein, o cientista que publicou o trabalho mais significativo para a humanidade foi Charles Darwin e seu magnum-opus ["On the Origin of Species"](https://www.theguardian.com/books/2015/nov/10/on-the-origin-of-species-voted-most-influential-academic-book-charles-darwin) onde ele explica como complexidade emerge num mundo de eventos aleatórios através de seleção natural.
 
 [![Darwin](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/635/big_darwin.jpg)](https://www.theguardian.com/books/2015/nov/10/on-the-origin-of-species-voted-most-influential-academic-book-charles-darwin)
 
 Eu escrevi em parte sobre isso no post ["Processos, Metodologias e o Cérebro Humano"](http://www.akitaonrails.com/2013/06/21/processos-metodologias-e-o-cerebro-humano) de 2013 e no post ["Somos Matematicamente Ignorantes"](http://www.akitaonrails.com/2008/3/1/off-topic-somos-matematicamente-ignorantes) de 2008. Vou tentar não me repetir muito.
 
-A própria história de como sobrevivemos e evoluímos neste mundo, até chegar à forma humanóide que temos hoje, é o resultado do que tivemos que enfrentar no meio ambiente natural, ou não estaríamos aqui.
+A própria história de como sobrevivemos e evoluímos neste mundo, até chegar à forma humanoide que temos hoje, é o resultado do que tivemos que enfrentar no meio ambiente natural, ou não estaríamos aqui.
 
 E um fator crucial no nosso cérebro primitivo é encontrar **padrões**, coisas que se repetem - muito rápido. Se na calada da noite, no meio de uma floresta, se virmos um pequeno par de círculos brilhantes se movimentando ao nosso redor, se não associarmos imediatamente com os olhos de um lobo à espreita e fugirmos o quanto antes, não estaríamos aqui.
 
@@ -173,11 +173,11 @@ O mundo real é "complexo", no sentido matemático, que descreve a exponencialid
 
 Quem me conhece sabe que faz uma década que sou fascinado por esse tema e já recomendei todos os livros desses autores, inclusive foi o tema da minha primeira palestra pública em 2008, ["Matando a Média"](http://www.akitaonrails.com/2008/09/13/off-topic-matando-a-m-dia)
 
-Além das tais 10 mil horas de treino deliberado obsessivo em direção à melhoria contínua, você ainda precisa estar exposto ao máximo de situações e pessoas possíveis para aumentar suas probabilidades de **"serendípede"** que é a combinação do _"estar no lugar certo, na certa e com a capacidade para agarrar a oportunidade"_.
+Além das tais 10 mil horas de treino deliberado obsessivo em direção à melhoria contínua, você ainda precisa estar exposto ao máximo de situações e pessoas possíveis para aumentar suas probabilidades de **"serendipidade"** que é a combinação do _"estar no lugar certo, na hora certa e com a capacidade para agarrar a oportunidade"_.
 
 ![Serendípede](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/630/serendipity.jpg)
 
-Isto é o que pode levar ao tal "sucesso". Não há receita simples, apenas trabalho árduo e uma boa dose de aleatoriedade. E, quando todos esses fatores são alinhados, os resultados podem realmente _parecer_ "milagrosos" ou "super-humanos" e - dado uma longa quantidade de tempo e a capacidade dos humanos de aumentar as histórias cada vez que são repetidas - e em alguns anos criamos novos Semi-Deuses.
+Isto é o que pode levar ao tal "sucesso". Não há receita simples, apenas trabalho árduo e uma boa dose de aleatoriedade. E, quando todos esses fatores são alinhados, os resultados podem realmente _parecer_ "milagrosos" ou "super-humanos" e - dada uma longa quantidade de tempo e a capacidade dos humanos de aumentar as histórias cada vez que são repetidas - e em alguns anos criamos novos Semi-Deuses.
 
 ### Matando Deuses
 
@@ -201,17 +201,17 @@ Os últimos 200 anos foram fantásticos, porque viemos matando deuses em taxas n
 
 ### Conclusão
 
-As circunstâncias de porque certos indivíduos são alçados ao status de semi-deuses não é uma resposta fácil. Muito menos uma sequência linear de eventos. Muito menos um filme de entretenimento, com altas doses de ficção e drama, que clama ser "baseado em fatos reais".
+As circunstâncias de por que certos indivíduos são alçados ao status de semi-deuses não têm uma resposta fácil. Muito menos uma sequência linear de eventos. Muito menos um filme de entretenimento, com altas doses de ficção e drama, que clama ser "baseado em fatos reais".
 
 Todos nós vivemos num mundo complexo - quero dizer, onde tudo é entrelaçado numa rede infinita de possibilidades. Cada indivíduo tem circunstâncias muito diferentes.
 
 ![Complex System](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/633/protein_network.gif)
 
-Muitos não tem condição nenhuma e mesmo assim superam as expectativas, com determinação superior, com dedicação superior, com paciência superiores, e alguns realmente chegam ao sucesso.
+Muitos não têm condição nenhuma e mesmo assim superam as expectativas, com determinação superior, com dedicação superior, com paciência superior, e alguns realmente chegam ao sucesso.
 
 > Talento "natural"?
 
-Muitos tem as condições, mas não tem dedicação, não tem paciência, não tem determinação. E fracassam. Quantas histórias de herdeiros de grandes fortunas destróem o legado de seus antepassados?
+Muitos têm as condições, mas não têm dedicação, não têm paciência, não têm determinação. E fracassam. Quantas histórias de herdeiros de grandes fortunas destroem o legado de seus antepassados?
 
 > Falta de Talento?
 
@@ -221,4 +221,4 @@ Mas não há respostas simples, nem receitas, nem milagres, e nem talentos natur
 
 Agora, se você tem as condições e não recebe o sucesso no colo, não é o "azar" de ter nascido sem o gene do talento. É pura **preguiça**. Simples assim.
 
-> Não tenha ídolos. Tenha referência.
+> Não tenha ídolos. Tenha referências.

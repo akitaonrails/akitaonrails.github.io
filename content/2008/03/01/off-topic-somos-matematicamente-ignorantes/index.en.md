@@ -8,7 +8,6 @@ tags:
 - science
 - fallacies
 draft: false
-translationKey: mathematically-illiterate
 ---
 
 Unless you've already studied Statistics and Probability, or are a math enthusiast, you're probably a true naïve in mathematical terms — to put it politely.

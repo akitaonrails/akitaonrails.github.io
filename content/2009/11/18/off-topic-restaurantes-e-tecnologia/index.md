@@ -8,7 +8,7 @@ tags:
 draft: false
 ---
 
-Existem desenvolvedores e desenvolvedores. Existem empresas e empresas. Apenas para efeitos ilustrativos deste post eu vou separar pelo menos dois tipos de empresa: onde tecnologia faz parte ou é o _core business_, onde o gasto relacionado a tecnologia é considerado de fato “investimento”; ou empresas onde tecnologia é apenas acessória, considerada meramente parte do “custo operacional”, onde apenas somente para suportar o negócio, que é muito do que chamamos de “backoffice”. Na falta de termos melhores, chamarei empresas onde tecnologia é _core business_ de **“empresas de tecnologia”** e os outros de **“enterpriseys”** para facilitar.
+Existem desenvolvedores e desenvolvedores. Existem empresas e empresas. Apenas para efeitos ilustrativos deste post eu vou separar pelo menos dois tipos de empresa: onde tecnologia faz parte ou é o _core business_, onde o gasto relacionado a tecnologia é considerado de fato “investimento”; ou empresas onde tecnologia é apenas acessória, considerada meramente parte do “custo operacional”, onde está apenas para suportar o negócio, que é muito do que chamamos de “backoffice”. Na falta de termos melhores, chamarei empresas onde tecnologia é _core business_ de **“empresas de tecnologia”** e os outros de **“enterpriseys”** para facilitar.
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2009/11/18/A_Busy_Restaurant_Kitchen.JPG_original.jpeg)
 
@@ -17,7 +17,7 @@ Por que estou dizendo isso? Porque muitas decisões são tomadas fora desse cont
 
  ![](http://s3.amazonaws.com/akitaonrails/assets/2009/11/18/cheftony_original.jpg)
 
-O mesmo não pode ser dito de “empresas de tecnologia”. Nesse contexto, tentar usar o que há de mais novo e mais avançado deveria ser o normal. Mais do que isso: criar as próprias tecnologias deveria ser o normal. Agora, a preocupação é que isso fique aleatório, desordenado e leve ao caos. Não se trata disso. É justamente por isso que empresas de tecnologia como Google, Microsoft, Novell, RedHat e diversos outros menores tem algo que se assemelha a um departamento de “Research & Development” (pesquisa e desenvolvimento), ou no mínimo a noção de “pesquisar e experimentar”. É por isso que eles se esforçam em contratar os profissionais do mercado que estão na ponta das novas tecnologias, coisa que não faz sentido por exemplo em um banco, ou uma seguradora, ou uma empresa de transportes.
+O mesmo não pode ser dito de “empresas de tecnologia”. Nesse contexto, tentar usar o que há de mais novo e mais avançado deveria ser o normal. Mais do que isso: criar as próprias tecnologias deveria ser o normal. Agora, a preocupação é que isso fique aleatório, desordenado e leve ao caos. Não se trata disso. É justamente por isso que empresas de tecnologia como Google, Microsoft, Novell, RedHat e diversos outros menores têm algo que se assemelha a um departamento de “Research & Development” (pesquisa e desenvolvimento), ou no mínimo a noção de “pesquisar e experimentar”. É por isso que eles se esforçam em contratar os profissionais do mercado que estão na ponta das novas tecnologias, coisa que não faz sentido por exemplo em um banco, ou uma seguradora, ou uma empresa de transportes.
 
 Esse pensamento parece óbvio e realmente é, mas por alguma razão eu vejo pessoas decidindo e discutindo coisas fora desses contextos, coisa que é particularmente irritante. Tecnologias mais recentes de código aberto, por exemplo, fazem total sentido em empresas de tecnologias. Mais do que isso: ter funcionários contribuindo para projetos de código aberto faz mais sentido ainda.
 

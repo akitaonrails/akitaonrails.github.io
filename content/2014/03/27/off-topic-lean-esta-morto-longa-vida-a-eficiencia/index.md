@@ -10,7 +10,7 @@ tags:
 draft: false
 ---
 
-**Atualização (29/03/14):** Publiquei um post em Outubro de 2013 que colocar argumentos muito mais detalhados sobre este tema. Leia ["Matemática, Trolls, Haters e Discussões de Internet"](http://www.akitaonrails.com/2013/10/30/off-topic-matematica-trolls-haters-e-discussoes-de-internet#.UzWnjtxiazB).
+**Atualização (29/03/14):** Publiquei um post em Outubro de 2013 que coloca argumentos muito mais detalhados sobre este tema. Leia ["Matemática, Trolls, Haters e Discussões de Internet"](http://www.akitaonrails.com/2013/10/30/off-topic-matematica-trolls-haters-e-discussoes-de-internet#.UzWnjtxiazB).
 
 O ano foi 2001. Um grupo de programadores sêniores se reuniu numa estação de
 esqui em Snowbird, Utah. Estavam ali os principais nomes da programação dos
@@ -33,7 +33,7 @@ agile/).
 
 A intenção dos agilistas originais foi causar uma quebra na forma antiquada de
 se pensar e executar a engenharia de software - o mesmo tipo obsoleto que
-ainda é ensinado hoje na maioria da Universidades do país. Isso causou um
+ainda é ensinado hoje na maioria das Universidades do país. Isso causou um
 enorme furor na indústria. Criaram-se derivações, treinamentos, ferramentas,
 certificações, conferências, consultorias. Um enorme portfolio de opções para
 qualquer tamanho a qualquer preço. E no meio de todo esse **circo** esqueceu-
@@ -95,7 +95,7 @@ Agora vamos sair um pouco de software e entrar no mundo de "startups". Esse mund
 próprio "Agile" no que se chamou de "Lean Startup". Eric Ries, tornou o termo
 famoso em 2009, em seu livro de mesmo nome, e é derivado direto dos princípios
 de Lean da Toyota. Não é uma idéia nova, só uma nova embalagem. Esse Lean tem
-origem nas mesmas ideia de W. Edwards Deming sobre [PDCA - "Plan, Do, Check,
+origem nas mesmas ideias de W. Edwards Deming sobre [PDCA - "Plan, Do, Check,
 Act" - "Planejar, Fazer, Checar, Agir"](http://en.wikipedia.org/wiki/PDCA).
 Você vai notar a semelhança com os 4 princípios de Dave Thomas que citei
 acima.

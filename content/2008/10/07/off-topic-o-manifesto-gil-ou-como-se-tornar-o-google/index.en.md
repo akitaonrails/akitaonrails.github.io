@@ -10,7 +10,6 @@ tags:
 - management
 - chaos
 draft: false
-translationKey: agile-manifesto-or-how-to-become-google
 ---
 
 [![](http://s3.amazonaws.com/akitaonrails/assets/2008/8/1/468x60.gif)](http://www.locaweb.com.br/railssummit)

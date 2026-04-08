@@ -29,7 +29,7 @@ Outra técnica é oferecer dois contratos: um fixo e outro negociável. A difere
 
 Talvez a principal dúvida de um cliente é em relação à ausência do escopo fixo: _“mas se o escopo não for fixo, quer dizer que vou ter menos pelo que estou pagando.”_ Isso exige mais argumentação. A principal é convencer que nem você, nem o cliente tem a mínima noção do que efetivamente se precisa. Por começar o projeto exatamente pelo que é mais prioritário, você garante que tudo que é importante será entregue primeiro.
 
-Muitas pesquisas mostram que até 60% do software entregue não é usado pelo cliente, indicando a quantidade mostruosa de funcionalidades que achava-se que era importante mas provou-se não ser.
+Muitas pesquisas mostram que até 60% do software entregue não é usado pelo cliente, indicando a quantidade monstruosa de funcionalidades que se achava que era importante mas se provou não ser.
 
 Os clientes que estão mais abertos a isso são os que valorizam seu próprio dinheiro. Por isso empresas menores devem ter menos resistências, pois eles não tem tempo nem dinheiro para ficar com palhaçadas de seis meses de ‘levantamento de requisitos’, eles precisam de valor entregue depressa e com o melhor custo-benefício. Outro dia ouvi falar de uma certa consultoria que fazia sprints de seis meses e justamente o primeiro “sprint” era de levantamento de requisito … pois é, hilário :-)
 

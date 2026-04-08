@@ -7,7 +7,6 @@ tags:
 - principles
 - management
 - career
-translationKey: intervene-or-not-the-catch-22-of-copilots
 draft: false
 ---
 

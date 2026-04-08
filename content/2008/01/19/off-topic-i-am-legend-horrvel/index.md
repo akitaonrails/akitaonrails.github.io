@@ -17,7 +17,7 @@ Faz tempo que não faço um off topic como esse, mas hoje estou tão indignado q
 Depois de ler boas críticas (preciso mudar minhas fontes) resolvi arriscar e assistir o filme [I am Legend](http://en.wikipedia.org/wiki/I_Am_Legend_%28film%29), que estreou recentemente por aqui. Gostei muito do último filme do Will Smith [The Pursue of Happyness](http://en.wikipedia.org/wiki/Pursuit_of_happyness) e disseram que ele faz a linha dramática novamente. Por isso me motivei a tentar ver.
 
 
-O começo do filme é muito bom. A fotografia é muito boa. A edição é rápida, dinâmica. E apesar do Will Smith se o único ator em cena durante a maior parte do filme, ele realmente faz um bom trabalho. A equipe técnica fez um ótimo trabalho recriando uma Nova Iorque deserta. Os momentos de tensão são bem feitos. Enfim, todos os truques do manual foram usados.
+O começo do filme é muito bom. A fotografia é muito boa. A edição é rápida, dinâmica. E apesar do Will Smith ser o único ator em cena durante a maior parte do filme, ele realmente faz um bom trabalho. A equipe técnica fez um ótimo trabalho recriando uma Nova Iorque deserta. Os momentos de tensão são bem feitos. Enfim, todos os truques do manual foram usados.
 
 Porém, quando um dos monstros aparece pela primeira vez, já começou a decepcionar: me recordou os horrorosos efeitos especiais de filmes como O Retorno da Múmia. Numa época pós-Matrix, pós-Lord of the Rings, não há mais desculpas para criar monstros tão ruins. Mesmo assim isso ainda é perdoável.
 
@@ -25,7 +25,7 @@ A outra coisa ruim é que a narração do filme se baseia superficialmente no li
 
 Começa com uma piadinha que até agora não entendi. A personagem de Alice, Anna, diz no filme ter vindo de São Paulo (Brasil). Em seguida, no meio da conversa, o personagem de Will, Robert, pergunta se ela conhecia Bob Marley. E ela faz uma cara do tipo: _“nunca ouvi falar”_. Ela diz isso com todas as letras!
 
-Ok, vamos lá, a história de filme se passa em 2012, não é tão longe assim. Até mesmo eu – que sou praticamente um analfabeto em termos de música – conheço Bob Marley e a música que tocou no filme. O que eles querem dizer com isso? _“No Brasil só tem floresta e por isso ninguém aqui nunca ouviu falar em Bob Marley?”_ De qualquer forma isso não é importante, mas achei esquisito. Dou o benefício da dúvida porque pode ser que eu não tenha entendido a piada. Vai saber.
+Ok, vamos lá, a história do filme se passa em 2012, não é tão longe assim. Até mesmo eu – que sou praticamente um analfabeto em termos de música – conheço Bob Marley e a música que tocou no filme. O que eles querem dizer com isso? _“No Brasil só tem floresta e por isso ninguém aqui nunca ouviu falar em Bob Marley?”_ De qualquer forma isso não é importante, mas achei esquisito. Dou o benefício da dúvida porque pode ser que eu não tenha entendido a piada. Vai saber.
 
 Agora, a parte do _“Deus me enviou”_ … não, não, so fucking sorry! Não deu pra engolir. O que isso tem a ver com a história?? Pior, a história levou isso a sério!! A tal Anna _“passou a ouvir melhor os sinais dos céus”_. Ela apareceu na história para salvar o Robert no instante em que ele iria ser morto. Ela ouviu a mensagem de rádio do Robert _porque ouviu um sinal divino_, e ela _sabe_, simplesmente _sabe_ que existe uma colônia de sobreviventes (com endereço e tudo, mais eficiente que o Google Maps!) porque _Deus lhe disse_ … oh well …
 
@@ -37,9 +37,9 @@ Me deu um gosto mais ruim do que outro horroroso: “Signs”, do M. Night Shyam
 
 God damn! Ok, I am Legend não tem nada a ver com o livro de mesmo nome. A história do livro termina completamente diferente. O tema é completamente diferente e mais interessante. Se for assistir o filme, quando a Anna aparecer, saia do cinema. Até esse ponto é um filme razoável, depois disso prepare-se para uma grande decepção. Eu estou chocado, tamanha a falta de qualidade da história. Akiva Goldsman trabalhou no screenplay, o que explica muita coisa – foi a mesma pessoa que conseguiu estragar a adaptação do Código Da Vinci.
 
-Já vi filme ruins, às dezenas. Porém, sabemos que são ruins e eles também não se levam muito a sério. Veja “Resident Evil”. Medíocre, mas ele sabe disso, e pelo menos é divertido pra assistir domingo à tarde. Já esse filme promete um bocado no começo, e no final parece aquele cara que se vira e diz _“nhé, nhé, nhé, te enganei!”_
+Já vi filmes ruins, às dezenas. Porém, sabemos que são ruins e eles também não se levam muito a sério. Veja “Resident Evil”. Medíocre, mas ele sabe disso, e pelo menos é divertido pra assistir domingo à tarde. Já esse filme promete um bocado no começo, e no final parece aquele cara que se vira e diz _“nhé, nhé, nhé, te enganei!”_
 
-A equipe de marketing desse filme é muito bom! Conseguiu extrair muitas boas críticas de muitos lugares. Mesmo no [Rotten Tomato](http://www.rottentomatoes.com/m/i_am_legend/) ele conseguiu 68% de aceitação! Muito mais do que merece. Qualquer coisa acima de 1 dígito (numa escala de 0 a 100) é demais.
+A equipe de marketing desse filme é muito boa! Conseguiu extrair muitas boas críticas de muitos lugares. Mesmo no [Rotten Tomato](http://www.rottentomatoes.com/m/i_am_legend/) ele conseguiu 68% de aceitação! Muito mais do que merece. Qualquer coisa acima de 1 dígito (numa escala de 0 a 100) é demais.
 
 O próximo filme que estão falando bem e está gerando certo hype é [Cloverfield](http://www.cloverfieldmovie.com/). Vejamos se ele é tão bom assim quanto dizem.
 

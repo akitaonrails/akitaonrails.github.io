@@ -23,17 +23,17 @@ Antes de mais nada, vale a pena nomear o autor da frase, o grande artista [Pablo
 
 Quem me conhece há algum tempo e assiste minhas palestras sabe que eu particularmente gasto muito tempo tentando explicar a associação do termo “artista” aplicado a “desenvolvedor de software”, “software craftsmanship” e mais especificamente à “prática de programação”.
 
-Programação não é algo que você lê um livro, exercita uma vez e _“boom”_, você já sabe programar. Assim como qualquer tipo de arte, pintura, música, dança, programação depende de disciplina e muita prática. Mais do que isso, qualquer um que se dedica a algum tipo de arte sabe muito bem que repetição é uma técnica mas repetir a mesma coisa não leva a lugar algum. O processo de “prática” depende de dominar uma técnica, repetí-la muitas vezes, entender onde está errando, refiná-la e quando estiver dominada, rapidamente seguir para novas técnicas mais difíceis. Continuamente, sem um “fim”. Não existe “ponto de chegada” para quem pratica qualquer tipo de arte. Mesmo lutadores de artes marciais sabem que faixa preta não significa “fim”.
+Programação não é algo que você lê um livro, exercita uma vez e _“boom”_, você já sabe programar. Assim como qualquer tipo de arte, pintura, música, dança, programação depende de disciplina e muita prática. Mais do que isso, qualquer um que se dedica a algum tipo de arte sabe muito bem que repetição é uma técnica mas repetir a mesma coisa não leva a lugar algum. O processo de “prática” depende de dominar uma técnica, repeti-la muitas vezes, entender onde está errando, refiná-la e quando estiver dominada, rapidamente seguir para novas técnicas mais difíceis. Continuamente, sem um “fim”. Não existe “ponto de chegada” para quem pratica qualquer tipo de arte. Mesmo lutadores de artes marciais sabem que faixa preta não significa “fim”.
 
 Se eu fosse resumir o que acabei de dizer, seria exatamente com a frase de Picasso:
 
-> “Bons Artistas Copiam, Grande Artistas Roubam Tomam para Si”
+> “Bons Artistas Copiam, Grandes Artistas Roubam Tomam para Si”
 
 Note que eu retirei o termo “roubar” para o sentido mais literal “tomar para si”. E aqui é a “pegadinha” que muda o sentido pra mim.
 
-Tudo que temos no mundo hoje, conhecimento, cultura, técnica, tecnologia se deve há séculos de acúmulo meticuloso e refinamento cuidadoso desse material por centenas de grandes homens e mulheres que contribuíram para chegar onde estamos. Literalmente, somos pequenos duendes de pé [sobre o ombro de gigantes](http://en.wikipedia.org/wiki/Standing_on_the_shoulders_of_giants).
+Tudo que temos no mundo hoje, conhecimento, cultura, técnica, tecnologia se deve a séculos de acúmulo meticuloso e refinamento cuidadoso desse material por centenas de grandes homens e mulheres que contribuíram para chegar onde estamos. Literalmente, somos pequenos duendes de pé [sobre o ombro de gigantes](http://en.wikipedia.org/wiki/Standing_on_the_shoulders_of_giants).
 
-Uma propriedade material, algo físico, quando tomado de uma pessoa, constitui roubo. Para que você tenha, alguém teve que ficar sem. Quando alguém copia uma propriedade, constitui plágio. Porém, com conhecimento, idéias, o “copiar” ou “roubar” tem diversos significados mais abstratos e quero expôr um deles aqui.
+Uma propriedade material, algo físico, quando tomado de uma pessoa, constitui roubo. Para que você tenha, alguém teve que ficar sem. Quando alguém copia uma propriedade, constitui plágio. Porém, com conhecimento, ideias, o “copiar” ou “roubar” tem diversos significados mais abstratos e quero expor um deles aqui.
 
 Qualquer artista, de qualquer ramo, precisa começar de algum lugar. Um pintor contemporâneo, já inicia anos-luz à frente de seus colegas de prática de alguns séculos atrás. Naquela época, conseguir acesso a tintas não era algo óbvio. De que material da natureza podemos extrair amarelo? Talvez da gema de ovo. E azul ultramarinho? A coisa vai se complicando. Anos e anos de conhecimento acumulados hoje nos dão acesso a todas as tonalidades possíveis de cores sem precisarmos pensar nisso.
 
@@ -61,7 +61,7 @@ Codificadores não entendem seu papel nessa história. Entendem como copiar algu
 
 Desenvolvedores, como gosto de chamar, entendem melhor seu papel na história. Entendem a riqueza do material pré-existente, praticam sem limites e sem acreditar em um fim, dominam técnica atrás de técnica, tentando sempre atingir um nível mais alto do que o que existe atualmente, mas nunca se acharão na posição de querer pintar uma Mona Lisa sem aperfeiçoar o _sfumato_. Esses são pintores de quadros.
 
-Envergonha-me programadores que leram pouco, praticaram miseravelmente pouco, se achar numa posição de mestre. Assim como envergonharia um pintor ouvir alguém dizer que sabe pintar um afresco sem sequer saber diluir uma base de gesso.
+Envergonha-me programadores que leram pouco, praticaram miseravelmente pouco, se acharem numa posição de mestre. Assim como envergonharia um pintor ouvir alguém dizer que sabe pintar um afresco sem sequer saber diluir uma base de gesso.
 
 Resumindo minha versão pessoal:
 

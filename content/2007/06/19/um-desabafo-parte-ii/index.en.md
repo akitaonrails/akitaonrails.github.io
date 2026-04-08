@@ -2,7 +2,6 @@
 title: A Rant, Part II
 date: '2007-06-19T15:30:00-03:00'
 slug: um-desabafo-parte-ii
-translationKey: a-rant-part-ii
 tags:
 - off-topic
 - career

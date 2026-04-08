@@ -8,7 +8,6 @@ tags:
 - science
 - career
 draft: false
-translationKey: scientific-method-vs-cargo-cult
 ---
 
 After several years I've noticed that a large number of programmers simply don't understand the Scientific Method. These days we discuss agility a great deal, how to write tests, why TDD matters. In "testing" there's something that should be **obvious** but apparently isn't. There's a step I consider very important: **experimentation**.

@@ -15,7 +15,7 @@ Se você é um programador experiente, certamente não precisa de mim para ouvir
 
 Antes, quero compartilhar com vocês outros artigos que li poucos dias atrás:
 
-* [My Next Chapter](http://www.mikeperham.com/2014/07/02/my-next-chapter/) - eu achei que isso fosse gerar alguma discussão extra, mas é a declaração e [Mike Perham](https://plus.google.com/118252393888359805350), um dos mais conhecidos rubistas desta geração e criador do ubíquito e excepcional Sidekiq declarou não que está abandonando o projeto ou algo assim, mas que está trabalhando num novo produto e que ele não envolve Ruby.
+* [My Next Chapter](http://www.mikeperham.com/2014/07/02/my-next-chapter/) - eu achei que isso fosse gerar alguma discussão extra, mas é a declaração e [Mike Perham](https://plus.google.com/118252393888359805350), um dos mais conhecidos rubistas desta geração e criador do ubíquo e excepcional Sidekiq declarou não que está abandonando o projeto ou algo assim, mas que está trabalhando num novo produto e que ele não envolve Ruby.
 
 * [Saying Goodbye To Python](http://www.ianbicking.org/blog/2014/02/saying-goodbye-to-python.html) - neste caso foi o pythonista Ian Bicking, que declarou deixar o Python pelo Javascript, seguindo a onda atual. Importante entender que a bolha de Javascript atual não "requer" você "deixar" nada por ele. Novamente o caso em que você pode tranquilamente ser pythonista e usar javascript, não há conflito.
 
@@ -63,7 +63,7 @@ Uma comunidade é formada por indivíduos. Indivíduos atuam no seu melhor quand
 
 Essa é a pergunta errada. E a pergunta errada, obviamente, leva à resposta errada. Alguns começam a acreditar que os outros devem alguma coisa a ele, já que ele dedicou tanto do seu tempo livre (especialmente no mundo open source) para "ajudar os outros". E "os outros" acreditam que não devem nada, já que ninguém pediu para eles fazerem esse esforço em primeiro lugar (e "os outros", na prática, estão certos).
 
-Se você participa de uma comunidade, não o faz pelos outros, faz por si mesmo. Seja porque você entende que ajudar os outros faz parte da sua recompensa pessoal. Seja simplesmente porque isso te trás paz de espírito ou consciência limpa. Ou seja porque você é um bom estrategista e sabe que determinadas contribuições vão lhe abrir portas no futuro. Não importa o motivo, desde que exista uma recompensa que você não cobra obrigatoriamente dos outros. Cobrar respeito, cobrar educação, cobrar compaixão, nada disso faz sentido sem contrapartida: ninguém pediu para você fazer o que está fazendo, se está, entenda que é por você mesmo. É a definição de trabalho <strong>voluntário</strong>.
+Se você participa de uma comunidade, não o faz pelos outros, faz por si mesmo. Seja porque você entende que ajudar os outros faz parte da sua recompensa pessoal. Seja simplesmente porque isso te traz paz de espírito ou consciência limpa. Ou seja porque você é um bom estrategista e sabe que determinadas contribuições vão lhe abrir portas no futuro. Não importa o motivo, desde que exista uma recompensa que você não cobra obrigatoriamente dos outros. Cobrar respeito, cobrar educação, cobrar compaixão, nada disso faz sentido sem contrapartida: ninguém pediu para você fazer o que está fazendo, se está, entenda que é por você mesmo. É a definição de trabalho <strong>voluntário</strong>.
 
 Aliás, para deixar bem claro: Trabalho Voluntário significa trabalho sem <strong>remuneração financeira</strong> e não sem benefícios ou altruísta. Se seu Trabalho é Financeiramente Remunerado, nesse caso a discussão é outra e o melhor conselho é de Don Draper:
 
@@ -71,7 +71,7 @@ Aliás, para deixar bem claro: Trabalho Voluntário significa trabalho sem <stro
 
 Voltando ao assunto em questão, eu imagino que os nomes que mencionei acima que se retiraram parcialmente ou silenciosamente provavelmente entendem isso. Eles foram buscar satisfação pessoal em outro lugar. Eles não devem nada a ninguém e nem ninguém lhes deve nada.
 
-Os que saem com declarações bombásticas estão, consciente ou inconscientemente, jogando na cara dos outros _"você não me valorizou, agora perdeu sua chance, e eu sei que você vai sentir minha falta!"_ Não está escrito desta forma, mas é o que faz sentido, do contrário, porque jogar no ventilador e tornar isso uma controvérsia pública? Qualquer argumento por escrito é apenas parte da razão, e não "a" razão.
+Os que saem com declarações bombásticas estão, consciente ou inconscientemente, jogando na cara dos outros _"você não me valorizou, agora perdeu sua chance, e eu sei que você vai sentir minha falta!"_ Não está escrito desta forma, mas é o que faz sentido, do contrário, por que jogar no ventilador e tornar isso uma controvérsia pública? Qualquer argumento por escrito é apenas parte da razão, e não "a" razão.
 
 ## Você, Indivíduo
 
@@ -81,7 +81,7 @@ O outro lado da moeda é quem segue, admira, idolatra uma dessas pessoas que dei
 
 Pare de achar que você deve fazer alguma coisa pelos outros e, por consequência, pare de ficar jogando nos outros a responsabilidade de ajudar outros também. É isso que está acontecendo: você não entende seu <strong>propósito</strong> e acredita que os outros devem fazer o que você mesmo não faz. E pior, deixa os outros decidirem que caminho você deve tomar. Se você é tão inseguro assim, pare um instante e reflita o que você "é" primeiro.
 
-Seu único propósito na vida é cuidar de si mesmo e produzir. E isso sem atrapalhar o caminho dos outros. Fazendo isso, o efeito natural é que colaborações expontâneas surgem, comunidades evoluem e todos saem ganhando. Uma comunidade onde todos cobram todos não cresce bem, cresce sem propósito.
+Seu único propósito na vida é cuidar de si mesmo e produzir. E isso sem atrapalhar o caminho dos outros. Fazendo isso, o efeito natural é que colaborações espontâneas surgem, comunidades evoluem e todos saem ganhando. Uma comunidade onde todos cobram todos não cresce bem, cresce sem propósito.
 
 Em particular sobre tecnologias, opiniões, propostas e promessas também lembre-se: você <strong>quer</strong> estar sob constante "ataque/restrições". Não há nada pior do que ser ignorado. Escrevi outro artigo, tradução de uma pessoa mais sábia do que eu, Kathy Sierra chamado [Dilbert e a zona de mediocridade](http://www.akitaonrails.com/2006/10/19/kathy-sierra-dilbert-e-a-zona-de-mediocridade), onde eu cito:
 

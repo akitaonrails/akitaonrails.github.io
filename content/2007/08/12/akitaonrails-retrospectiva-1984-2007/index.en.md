@@ -2,7 +2,6 @@
 title: AkitaOnRails, Retrospective 1985-2007
 date: '2007-08-12T02:02:00-03:00'
 slug: akitaonrails-retrospectiva-1984-2007
-translationKey: akitaonrails-retrospective-1985-2007
 tags:
 - off-topic
 - insight

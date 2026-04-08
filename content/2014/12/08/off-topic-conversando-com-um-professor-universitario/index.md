@@ -8,7 +8,7 @@ tags:
 draft: false
 ---
 
-Alguns dias atrás o professor Rosenclever Gazono, do Centro Universitário de Volta Redonda, me enviou um email pedindo algumas opiniões que achei interessante compartilhar. Já conheci muitos professores durante minhas visitas a diversas faculdades do país e muitos tem as mesmas dúvidas, então espero que isso ajude um pouco.
+Alguns dias atrás o professor Rosenclever Gazono, do Centro Universitário de Volta Redonda, me enviou um email pedindo algumas opiniões que achei interessante compartilhar. Já conheci muitos professores durante minhas visitas a diversas faculdades do país e muitos têm as mesmas dúvidas, então espero que isso ajude um pouco.
 
 A seguir, vou transcrever as perguntas do professor e minhas respostas.
 
@@ -22,7 +22,7 @@ Desta forma, gostaria de pedir sua contribuição no sentido de que eu possa aju
 
 **AkitaOnRails:** “Dominar” talvez não (no sentido de saber cada detalhezinho de cada diagrama). Mas saber que existem, ter uma noção geral de cada um, e saber os mais úteis como Casos de Uso, Diagrama de Sequência, Diagrama de Estado, Diagrama de Classes, acho adequado e útil. E nunca como uma forma de desenhar TODO o software, mas algumas partes que talvez fiquem mais claras se diagramar primeiro.
 
-Acrescendo aqui no post que muitos que não aprenderam a programar profissionalmente achem que "todo e qualquer" tipo de diagramação e planejamento seja desnecessário, e ainda acreditam (sem saber) que o tal mundo "corporativo" é todo dirigido por montanhas de diagramas e planos. E isso não é verdade. Claro que existem exceções mas no caso comum um programador precisa conseguir comunicar uma idéia mais do que somente por código, especialmente ao tentar explicar uma arquitetura complexa para uma equipe antes de começar a codificar. Não significa fazer diagramas pra 100% das classes, 100% dos estados, 100% das sequências, etc, mas sim diagramar o que for o mais crítico, o mais difícil de entender, e deixar o resto que vai emergir naturalmente durante a programação.
+Acrescendo aqui no post que muitos que não aprenderam a programar profissionalmente achem que "todo e qualquer" tipo de diagramação e planejamento seja desnecessário, e ainda acreditam (sem saber) que o tal mundo "corporativo" é todo dirigido por montanhas de diagramas e planos. E isso não é verdade. Claro que existem exceções mas no caso comum um programador precisa conseguir comunicar uma ideia mais do que somente por código, especialmente ao tentar explicar uma arquitetura complexa para uma equipe antes de começar a codificar. Não significa fazer diagramas pra 100% das classes, 100% dos estados, 100% das sequências, etc, mas sim diagramar o que for o mais crítico, o mais difícil de entender, e deixar o resto que vai emergir naturalmente durante a programação.
 
 **Professor:** 2) Quais Design Patterns e conceitos de agile considera fundamentais para serem ministrados na academia? Ou isso também não é considerado importante?
 
@@ -43,7 +43,7 @@ E falando de Agile, recomendo ler estes meus posts:
 
 **AkitaOnRails:** Claro que sim, mas hoje em dia tem que ressaltar que OO (orientação a objetos) não é a única e nem necessariamente a “melhor”. Aliás OO só é interessante na academia se for pelos olhos de linguagens que de verdade exploram OO (Smalltalk, Ruby), programação orientada a classes é Java e C#, programação funcional (Lisp, Scheme), programação orientada a protótipos (parte de Javascript, IO), programação com aspectos de concorrência e atores (Go, Scala, Elixir/Erlang).
 
-Acrescentando ao post, devo dizer que esse é o tipo de tema que não tem uma resposta "certa", qualquer tentativa de medir forças de uma lado ou de outro sempre vai virar meramente flamewar ou um medíocre bikeshedding. A realidade é que as fábricas de software vão continuar usando linguagens que tem bom suporte ferramental comercial como IBM Websphere, Microsoft Visual Studio.NET, etc. Tech startups, ou empresas menores e mais orientadas a tecnologias "best of breed" vão preferir soluções open source que, por muitas vezes, pode parecer até uma "colcha de retalhos". Agências e pequenas produtoras vão continuar usando o que oferecer o menor tempo possível de entrega, mesmo que seja sujo (pois campanhas publicitárias duram muito pouco), "quick and dirty", derivados de Wordpress e assim por diante. 
+Acrescentando ao post, devo dizer que esse é o tipo de tema que não tem uma resposta "certa", qualquer tentativa de medir forças de um lado ou de outro sempre vai virar meramente flamewar ou um medíocre bikeshedding. A realidade é que as fábricas de software vão continuar usando linguagens que têm bom suporte ferramental comercial como IBM Websphere, Microsoft Visual Studio.NET, etc. Tech startups, ou empresas menores e mais orientadas a tecnologias "best of breed" vão preferir soluções open source que, por muitas vezes, pode parecer até uma "colcha de retalhos". Agências e pequenas produtoras vão continuar usando o que oferecer o menor tempo possível de entrega, mesmo que seja sujo (pois campanhas publicitárias duram muito pouco), "quick and dirty", derivados de Wordpress e assim por diante. 
 
 **Professor:** 4) Definitivamente, ainda vale a pena ensinar Java na academia? Acha que Ruby e Rails ou mesmo Python e Django são mais adequados?
 
@@ -59,4 +59,4 @@ Aproveito para deixar posts que escrevi sobre os assuntos de faculdade e carreir
 
 **Professor:** Desculpe-me pelo longo email, mas infelizmente não houve oportunidade de conversarmos no evento...
 
-**AkitaOnRails:** De forma nenhuma, se o assunto é relevante, vale a pena discutí-lo. E incentivo todos que forem em eventos que eu estiver, que me chamem se quiserem discutir formas que podemos ajudar a melhorar o ensino. Esse assunto nunca vai ser irrelevante.
+**AkitaOnRails:** De forma nenhuma, se o assunto é relevante, vale a pena discuti-lo. E incentivo todos que forem em eventos que eu estiver, que me chamem se quiserem discutir formas que podemos ajudar a melhorar o ensino. Esse assunto nunca vai ser irrelevante.

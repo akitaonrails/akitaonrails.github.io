@@ -121,5 +121,5 @@ Complementando: isso que eu li reconheço que é **muito pouco** ainda. Ainda te
 
 Eu diria que as pessoas deveriam ler **no mínimo** perto do que tem nesta lista. Não estou contando livros e artigos técnicos nessa lista, apenas os de conhecimento geral.
 
-Meu interesse em particular: começar a entender a cultura Agile e Lean levam a conceitos como qualidade integrada, zero defeitos e o que se lê em The Goal. Especialmente [auto-organização](http://www.akitaonrails.com/2009/07/08/off-topic-agilidade-caos-auto-organizacao). Isso leva a Open Book Management e The Great Game que, por sua vez, leva ao End of Management e organizações democráticas. Tudo isso é fundamentado pelo que você lê em Linked e livros como The Fabric of Cosmos. A teoria completa se fecha de forma muito simples e elegante no final.
+Meu interesse em particular: começar a entender como a cultura Agile e Lean levam a conceitos como qualidade integrada, zero defeitos e o que se lê em The Goal. Especialmente [auto-organização](http://www.akitaonrails.com/2009/07/08/off-topic-agilidade-caos-auto-organizacao). Isso leva a Open Book Management e The Great Game que, por sua vez, leva ao End of Management e organizações democráticas. Tudo isso é fundamentado pelo que você lê em Linked e livros como The Fabric of Cosmos. A teoria completa se fecha de forma muito simples e elegante no final.
 

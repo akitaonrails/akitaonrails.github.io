@@ -8,7 +8,6 @@ tags:
 - market
 - regulation
 draft: false
-translationKey: damn-regulation-law-is-back
 ---
 
 **Update 09/08/2009:** A brief mention in a [Yahoo! News](http://br.noticias.yahoo.com/s/02092009/25/tecnologia-projeto-quer-exigir-diploma-profissao.html) story on this subject.

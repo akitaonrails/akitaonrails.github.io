@@ -5,7 +5,6 @@ slug: off-topic-contrato-de-escopo-negoci-vel
 tags:
 - off-topic
 - management
-translationKey: negotiable-scope-contract
 draft: false
 ---
 

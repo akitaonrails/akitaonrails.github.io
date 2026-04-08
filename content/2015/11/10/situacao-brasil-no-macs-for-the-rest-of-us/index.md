@@ -34,7 +34,7 @@ Na faixa dos R$ 5.000 esqueçam SSD, não existe. O que achei com um custo-benef
 
 Se alguém tiver boas opções nesta faixa para: no mínimo Core i5 3a geração, 8GB de RAM, 256GB de SSD, não deixe de compartilhar nos comentários.
 
-Em termos de hardware, se puder comprar um Lenovo Thinkpad ou mesmo um Sony Vaio (que também deve estar proibitivamente caro), acredito terem acabamentos de hardware melhores que a Dell. Asus, Acer, eu não considero como boas opções que vão durar muito tempo e o acabamento também não é grande coisa.
+Em termos de hardware, se puder comprar um Lenovo Thinkpad ou mesmo um Sony Vaio (que também deve estar proibitivamente caro), acredito que tenham acabamentos de hardware melhores que a Dell. Asus, Acer, eu não considero como boas opções que vão durar muito tempo e o acabamento também não é grande coisa.
 
 Já adianto que teclado e trackpad de PCs são terríveis. Se possível use um teclado e trackpad externos da Apple. Especialmente o modelo da Dell que estou testando tem um teclado horrível (fora o layout brasileiro que eu detesto), plástico leve que tem feedback de clique muito ruim para quem digita rápido e um trackpad que interrompe a digitação o tempo todo com qualquer leve toque, tem dificuldade de registrar corretamente múltiplos cliques e no geral dá mais dor de cabeça do que ajuda.
 
@@ -44,7 +44,7 @@ A intenção é uma máquina para desenvolvedores. E a menos que você seja um d
 
 Windows está fora de cogitação, sinto muito, eu fui usuário de Windows por quase 15 anos antes de migrar para Macs em 2004. Sou muito experiente com Windows, conheço todos os meus caminhos tortuosos pelo Registry e a bagunça que é o famigerado C:\WINDOWS. Experimentei todos os últimos Windows (7, 8, 8.1, 10) e a conclusão é a mesma: não faço nenhuma questão de voltar. Novamente, se tivesse que desenvolver em .NET, não tentaria emular o ambiente, apenas usaria Windows mesmo, numa máquina virtual. A única solução se seu ambiente de desenvolvimento exige um híbrido de .NET com open source é rodar Linux com virtualização.
 
-O ciclo de desenvolvimento open source num Mac não é exatamente simples também. Você precisa entender o XCode, precisa entender que GCC não é a escolha default faz tempo (a Apple migrou para LLVM-Clang faz tempo) e por conta disso muita coisa pode quebrar. Mesmo assim o pessoal do [Homebrew](http://brew.sh/) fez um excelente trabalho em remover a maior parte dos problemas. Então, sim, dá pra desenvolver confortavemente se você não for um desenvolvedor system/low level.
+O ciclo de desenvolvimento open source num Mac não é exatamente simples também. Você precisa entender o XCode, precisa entender que GCC não é a escolha default faz tempo (a Apple migrou para LLVM-Clang faz tempo) e por conta disso muita coisa pode quebrar. Mesmo assim o pessoal do [Homebrew](http://brew.sh/) fez um excelente trabalho em remover a maior parte dos problemas. Então, sim, dá pra desenvolver confortavelmente se você não for um desenvolvedor system/low level.
 
 Para desenvolvimento de iOS, você precisa do XCode. Não há alternativa. Dá para desenvolver em outras linguagens com relativa facilidade, seja Python, Ruby ou as novas como Rust, Elixir ou Go. Java é mais ou menos simples no Mac também então Java 8, Clojure, Scala, Groovy, estão à disposição.
 
@@ -60,19 +60,19 @@ No OS X temos Keynote, iMovies e Garageband que não tem iguais em termos de usa
 
 No Windows, podemos escolher o pacote da Adobe, que vai de Photoshop e Illustrator até Premiere Pro e After Effects - que também tem versões para Mac.
 
-No mundo de produtividade, esqueçam LibreOffice ou mesmo Google Docs, o pacote Microsoft Office (em particular Word, Excel) ainda são imbatíveis e sem iguais. Dá pra fazer parecido, dá pra editar parecido, ainda não é perto da mesma coisa, especialmente em planilhas mais complexas e cheias de fórmulas, pivot tables, etc.
+No mundo de produtividade, esqueçam LibreOffice ou mesmo Google Docs, o pacote Microsoft Office (em particular Word, Excel) ainda é imbatível e sem iguais. Dá pra fazer parecido, dá pra editar parecido, ainda não é perto da mesma coisa, especialmente em planilhas mais complexas e cheias de fórmulas, pivot tables, etc.
 
 Todos eles custam, e custam caro. Obviamente não é justo comparar com opções open source. Mas eu gostaria muito de ter a opção de pagar para ter funcionando numa distro Linux. O problema é que distros Linux não são amigáveis para software proprietário. Vai ser sempre o dilema do 100% aberto vs híbrido ou 100% fechado. Que diga o pessoal do Ubuntu.
 
 Um pequeno exemplo é o 1Password, que eu uso no Mac, no Android, usava no iOS (quando tinha iPhone) e tem versão pra Windows. Tudo, menos pra Linux. Fui obrigado a usar 1Password de Windows via Wine para conseguir acessar minhas senhas de novo. "Bem feito, quem mandou usar software proprietário."
 
-Pelo bem ou pelo mal o ideal de software 100% aberto nunca esteve mais longe. Especialmente hoje que todo app tem um componente online. Existe agora muito "client" open source, mas o back-end é totalmente closed-source. Pior: nem é um binário na sua máquina, está no "cloud". Ninguém nunca vai aderir ao ideal ao [Aphero GPL](http://www.gnu.org/licenses/why-affero-gpl.en.html) onde o código no cloud deveria ser aberto também. E mesmo se fosse, não seria prático pra ninguém simular o mesmo ambiente cloud de todo mundo.
+Pelo bem ou pelo mal o ideal de software 100% aberto nunca esteve mais longe. Especialmente hoje que todo app tem um componente online. Existe agora muito "client" open source, mas o back-end é totalmente closed-source. Pior: nem é um binário na sua máquina, está no "cloud". Ninguém nunca vai aderir ao ideal ao [Affero GPL](http://www.gnu.org/licenses/why-affero-gpl.en.html) onde o código no cloud deveria ser aberto também. E mesmo se fosse, não seria prático pra ninguém simular o mesmo ambiente cloud de todo mundo.
 
 Atualmente, o mundo open source não é um mundo de liberdade absoluta. Eu costumo sintetizar como o mundo open source sendo o melhor custo-benefício que as empresas já tiveram para manter software comoditizado.
 
 Linguagens, frameworks, toolkits, ferramentas de desenvolvimento, bibliotecas de criptografia, são softwares comoditizados.
 
-Pacote Adobe, Office, etc não são commodities ainda. Continuam à todo vapor, com feature nova atrás de feature nova, todo semestre. É impossível um copy-cat open source, sem recursos, conseguir atingir o mesmo nível. Nem há o interesse.
+Pacote Adobe, Office, etc não são commodities ainda. Continuam a todo vapor, com feature nova atrás de feature nova, todo semestre. É impossível um copy-cat open source, sem recursos, conseguir atingir o mesmo nível. Nem há o interesse.
 
 Para quem precisa de software proprietário como ferramenta do dia a dia, não saia do Windows, não saia do Mac.
 
@@ -94,7 +94,7 @@ Se você for do estilo mais "seja estável sem mexer muito mas não seja comum" 
 
 E independente da distro sempre haverá a eterna briga entre Window Managers. O Pessoal do KDE com seu Plasma falando mal do antiquado Gnome ou o XFCE afirmando sua posição de "simples e estável" ou então uma distro nova como o Elementary OS criando seu novo Pantheon. Isso não tem fim.
 
-A maioria dos novos programadores, que usam Linux a 5 anos ou menos, não consegue entender como alguém pode usar um Linux e não customizá-lo totalmente a seu gosto. Editar cada arquivo do X11, editar cada tema e pacote de ícones pra ficar um "Windows-alternativo" um "OS X-rebelde".
+A maioria dos novos programadores, que usam Linux há 5 anos ou menos, não consegue entender como alguém pode usar um Linux e não customizá-lo totalmente a seu gosto. Editar cada arquivo do X11, editar cada tema e pacote de ícones pra ficar um "Windows-alternativo" um "OS X-rebelde".
 
 No meu caso, o que muitos podem não entender, é que eu sou usuário Linux das antigas. Meu primeiro Linux foi o Slackware 1.0 em 1996. Eu instalei RedHat pré 4. Depois vieram distros como Mandrake, muito antes de um Kurumin. Eu instalei as primeiras versões da maioria das distros de hoje. Eu já varei noites e noites customizando meu X. Noites e noites baixando temas, baixando widgets, customizando cada parte do meu sistema. Depois eu fazia alguma coisa errada e resolvia formatar tudo e começar tudo de novo. Muito tempo checando flag de compilação dos kernel pra fazer meu kernel mais customizado possível.
 
@@ -104,7 +104,7 @@ Mas não é saudável fazer isso por mais de 5 anos. Depois disso você quer rea
 
 É por isso que eu gosto de OS X: não precisa customizar nada. Tudo está do jeito certo "out-of-the-box", o melhor Window Manager, em cima de um dos melhores sabores de Unix tradicionais e com acesso razoavelmente simples tanto ao mundo open source quanto ao melhor do mundo closed source. É o melhor dos dois mundos.
 
-No mundo Linux você tem que lidar com a ideologia do GPL. Eu entendo perfeitamente os argumentos do Stallman, li e reli o site inúmeras vezes.Quantas vezes você **realmente** leu o [gnu.org](http://www.gnu.org/philosophy/philosophy.html) inteiro?  Infelizmente não existe almoço grátis, ficar na ideologia significa abrir mão de muita coisa que eu realmente não tenho disposição para abrir.
+No mundo Linux você tem que lidar com a ideologia do GPL. Eu entendo perfeitamente os argumentos do Stallman, li e reli o site inúmeras vezes. Quantas vezes você **realmente** leu o [gnu.org](http://www.gnu.org/philosophy/philosophy.html) inteiro?  Infelizmente não existe almoço grátis, ficar na ideologia significa abrir mão de muita coisa que eu realmente não tenho disposição para abrir.
 
 Em particular, o Dell que eu comprei veio com Ubuntu pré-instalado. É o que ele tem suporte, o que significa que o hardware todo funciona, tem drivers atualizados. Pretendo ficar dentro do ecossistema Ubuntu, incluindo o Unity que eu sei que muitos não gostam por questões de ideologia ou porque acham que XFCE ou Gnome ou KDE ou XXX funciona melhor para seus gostos.
 
@@ -116,7 +116,7 @@ De novo: o custo de customizar simplesmente não compensa. Software não se inst
 
 Vou continuar usando Ubuntu como máquina principal? Não sei ainda. Estou mantendo minhas opções abertas para tempos mais difíceis onde o dólar custa acima de R$ 2,50. Para abaixo desse patamar, definitivamente fico com um Mac.
 
-Para usuários domésticos, um Linux funciona bem, é a idéia do Chrome OS que é um Linux rodando basicamente Web Apps como Google Docs, Gmail, etc. E nesse nível tanto faz mesmo qual OS ou qual configuração. A vantagem de um Linux para o uso Web de 90% da população é não ficar vulnerável aos malwares mais óbvios.
+Para usuários domésticos, um Linux funciona bem, é a ideia do Chrome OS que é um Linux rodando basicamente Web Apps como Google Docs, Gmail, etc. E nesse nível tanto faz mesmo qual OS ou qual configuração. A vantagem de um Linux para o uso Web de 90% da população é não ficar vulnerável aos malwares mais óbvios.
 
 Para usuários de escritório, um Linux funciona razoavelmente bem mas como eu disse, o Office ainda não dá pra substituir. A única forma é a empresa inteira adotando um formato mais simples de documentos e não fazer nada muito complexo com Excel por exemplo. No geral, um Google Docs e Google Drive ou Dropbox, Gmail Business, funcionam bem o suficiente.
 
