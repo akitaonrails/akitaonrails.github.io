@@ -110,3 +110,14 @@ The site is bilingual with Portuguese as the canonical language. Hugo's native m
 - Netlify deploy is in `netlify.toml`; the multilingual setup adds nothing to the build pipeline (Hugo handles it)
 
 See `WRITER.md` for the translation workflow and English voice rules.
+
+### Bilingual editing workflow (important)
+
+**Editing existing articles:** whenever you modify an article that has a language sibling (`index.md` ↔ `index.en.md`), you MUST apply the equivalent change to the sibling in the same edit turn to keep the two languages in sync. Typo fixes, content additions, frontmatter changes, tag changes — all of them. Never leave the pair drifting out of sync, even temporarily.
+
+**Writing new articles:** the workflow is different. When asked to write a new article:
+
+1. Write it in the user's requested language only (usually PT-BR).
+2. **Stop and wait for the user to review.** Do NOT immediately translate to the other language, and do NOT commit anything yet.
+3. Only after the user has reviewed the first-language draft and explicitly approved it (or declared it finished), translate it to the sibling language.
+4. Only git commit after the user has approved the work — either by saying it's done, asking for the commit, or similar. Never auto-commit a brand-new article on your own initiative.
