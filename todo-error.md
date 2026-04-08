@@ -7,7 +7,6 @@ These posts hit API 400 errors or were not reached due to session limits during 
 - content/2009/09/12/off-topic-a-argumenta--o-atrav-s-da-intimida--o/index.md
 - content/2009/09/26/off-topic-procurar-raciocionar-faz-bem/index.md
 - content/2009/11/08/off-topic-obediencia-a-autoridade/index.md
-- content/2009/12/10/off-topic-voce-nao-entende-nada-de-scrum/index.md
 - content/2010/01/30/off-topic-lendo-os-principios-ageis/index.md
 - content/2011/02/03/off-topic-a-revolta-de-atlas-dinheiro-e-a-raiz-de-todo-o-mal/index.md
 - content/2012/12/30/off-topic-um-desabafo-iii-refletindo-sobre-2007/index.md
@@ -16,5 +15,4 @@ These posts hit API 400 errors or were not reached due to session limits during 
 - content/2013/05/26/off-topic-visao-do-passado-sobre-a-internet/index.md
 - content/2013/05/26/off-topic-visao-do-passado-sobre-a-internet--2/index.md
 - content/2014/03/30/off-topic-comentando-o-marco-civil-aprovado/index.md
-- content/2014/05/02/off-topic-carreira-em-programacao-codificar-nao-e-programar/index.md
 - content/2015/11/10/situacao-brasil-no-macs-for-the-rest-of-us/index.md
