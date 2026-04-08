@@ -7,7 +7,7 @@ tags:
 - principles
 - management
 - agile
-- carreira
+- career
 draft: false
 ---
 

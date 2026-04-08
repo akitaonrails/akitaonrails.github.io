@@ -192,6 +192,10 @@ All Off-Topic posts from the blog — philosophy, career, management, and other 
 
 - [\[Off-Topic\] New Year's Message — Philosophy](/en/2011/12/31/off-topic-mensagem-de-ano-novo-filosofia/)
 
+## 2011 - May
+
+- [\[Off-Topic\] Opinions, Truths, Democracy and Ethics](/en/2011/05/04/off-topic-opinioes-verdades-democracia-e-etica/)
+
 ## 2011 - April
 
 - [\[Off-Topic\] Mea Culpa: Democratic Organizations Don't Work](/en/2011/04/25/off-topic-mea-culpa-organizacoes-democraticas-nao-funcionam/)
@@ -200,6 +204,7 @@ All Off-Topic posts from the blog — philosophy, career, management, and other 
 
 - [\[Off-Topic\] Demystifying the "Evil" Microsoft](/en/2011/02/20/off-topic-desmistificando-a-microsoft-do-mal/)
 - [\[Off-Topic\] The Fountainhead: Howard Roark's Defense](/en/2011/02/04/off-topic-the-fountainhead-defesa-de-howard-roark/)
+- [\[Off-Topic\] Atlas Shrugged: Is Money the Root of All Evil?](/en/2011/02/03/off-topic-a-revolta-de-atlas-dinheiro-e-a-raiz-de-todo-o-mal/)
 
 ## 2011 - January
 
@@ -243,6 +248,9 @@ All Off-Topic posts from the blog — philosophy, career, management, and other 
 
 ## 2009 - September
 
+- [\[Off-Topic\] Thinking Makes You Better](/en/2009/09/26/off-topic-procurar-raciocionar-faz-bem/)
+- [\[Off-Topic\] The Argument from Intimidation](/en/2009/09/12/off-topic-a-argumenta--o-atrav-s-da-intimida--o/)
+- [\[Off-Topic\] Man's Rights](/en/2009/09/09/off-topic-direitos-do-homem/)
 - [\[Off-Topic\] The Cult of Gray Morality](/en/2009/09/08/off-topic-o-culto-da-moral-cinzenta/)
 
 ## 2009 - August
@@ -336,6 +344,7 @@ All Off-Topic posts from the blog — philosophy, career, management, and other 
 ## 2007 - June
 
 - [A Rant, Part II](/en/2007/06/19/um-desabafo-parte-ii/)
+- [Off Topic: Steve Jobs, Stanford Commencement Speech, 2005](/en/2007/06/13/off-topic-steve-jobs-discurso-em-stanford-2005/)
 
 ## 2007 - April
 

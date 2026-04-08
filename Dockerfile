@@ -24,16 +24,11 @@ ENV PATH=$PATH:/usr/local/go/bin
 ENV GOPATH=/go
 ENV PATH=$PATH:$GOPATH/bin
 
+ARG HUGO_VERSION=0.159.1
 RUN ARCH=$(dpkg --print-architecture) && \
-  if [ "$ARCH" = "arm64" ]; then \
-  wget https://github.com/gohugoio/hugo/releases/download/v0.145.0/hugo_extended_0.145.0_linux-arm64.deb && \
-  dpkg -i hugo_extended_0.145.0_linux-arm64.deb && \
-  rm hugo_extended_0.145.0_linux-arm64.deb; \
-  else \
-  wget https://github.com/gohugoio/hugo/releases/download/v0.146.3/hugo_0.146.3_linux-amd64.deb && \
-  dpkg -i hugo_0.146.3_linux-amd64.deb && \
-  rm hugo_0.146.3_linux-amd64.deb; \
-  fi
+  wget https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-${ARCH}.deb && \
+  dpkg -i hugo_extended_${HUGO_VERSION}_linux-${ARCH}.deb && \
+  rm hugo_extended_${HUGO_VERSION}_linux-${ARCH}.deb
 
 WORKDIR /app
 
