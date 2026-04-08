@@ -8,18 +8,18 @@ draft: false
 translationKey: chatting-avi-bryant-part-1
 ---
 
-Someone once challenged all other frameworks implying that no one would get close to what we are doing in Rails … except for Avi.Seaside is such a departure from the status quo that Avi himself describes it of a ‘heretic’ framework. And he is right. He looked back in history and took what is considered ‘the’ father – and arguably ‘the’ best implementaton – of object-oriented languages: Smalltalk.
+Someone once challenged all other frameworks implying that no one would get close to what we are doing in Rails … except for Avi. Seaside is such a departure from the status quo that Avi himself describes it as a ‘heretic’ framework. And he is right. He looked back in history and took what is considered ‘the’ father – and arguably ‘the’ best implementation – of object-oriented languages: Smalltalk.
 
-Taking clues from the venerable Apple WebObjects he set his way to implement Seaside and his very successful web product, [Dabble DB](http://www.dabbledb.com). Check it out who is the man, what are his opinions and why he is so relevant to the Ruby and Rails community even though he advocates another language and another framework. Sounds strange, but when Avi speaks, you listen.
+Taking clues from the venerable Apple WebObjects he set his way to implement Seaside and his very successful web product, [Dabble DB](http://www.dabbledb.com). Check out who the man is, what are his opinions and why he is so relevant to the Ruby and Rails community even though he advocates another language and another framework. Sounds strange, but when Avi speaks, you listen.
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2007/12/15/n517961878_373676_1188.jpg)
 
-He was very kind to provide me a very long interview. It is so long I divided it in 2 parts. This is the first Part. I will release the second one in a few days. Hope you all enjoy it.
+He was very kind to provide me a very long interview. It is so long I divided it into 2 parts. This is the first Part. I will release the second one in a few days. Hope you all enjoy it.
 
 
  **AkitaOnRails:** Great. I am kind of nervous. Up until now I only interviewed Ruby and Rails advocates including Matz and DHH, this is the first time I am looking for an outside point of view.
 
-And I know you’re very opinionated about Smalltalk and Seaside, but at the same time you have very strong binds to the Ruby community. May I start asking you more about Avi Bryant, the person? Meaning, what’s your history in the programming field?
+And I know you’re very opinionated about Smalltalk and Seaside, but at the same time you have very strong ties to the Ruby community. May I start asking you more about Avi Bryant, the person? Meaning, what’s your history in the programming field?
 
 **Avi Bryant:** I started programming quite young; it was something I did with my brother and father for fun, mostly writing games in C on the early Mac. As I got closer to college age, my interests turned more to theatre and film, and so when I started university it was essentially as a film major.
 
@@ -33,19 +33,19 @@ At the same time, I was doing some web consulting on the side for some extra mon
 
 I was still enamored with all things NeXT and Objective-C, and so when I started to work on web tools for Ruby I took NeXT’s WebObjects framework as my model, and ended up with IOWA, which is very close to being a port of WebObjects to Ruby. I presented that at the first RubyConf, which was, I think, in 2000.
 
-RubyConf was collocated with OOPSLA that year, which I was also attending to give a talk on my research from the software engineering lab. Now, when OOPSLA started out, it was full of Smalltalkers, and even though the mainstream of OO software development – and thus the main focus of OOPSLA – moved on to Java and C#, the Smalltalkers kept coming. But instead of participating in the rest of the conference, they’d just set of a semi-official “Camp Smalltalk” with their own projector and their own schedule and hack and demo Smalltalk stuff all day.
+RubyConf was collocated with OOPSLA that year, which I was also attending to give a talk on my research from the software engineering lab. Now, when OOPSLA started out, it was full of Smalltalkers, and even though the mainstream of OO software development – and thus the main focus of OOPSLA – moved on to Java and C#, the Smalltalkers kept coming. But instead of participating in the rest of the conference, they’d just set up a semi-official “Camp Smalltalk” with their own projector and their own schedule and hack and demo Smalltalk stuff all day.
 
 I had of course been aware of Smalltalk, as the source of a lot of the ideas behind things I was interested in – Objective-C and Ruby, obviously, but also TDD, wikis, even the Mac to some extent – but I had never gotten anywhere with actually using it; the environments were too different, the documentation too sparse, etc.
 
 Sitting for a day at Camp Smalltalk was the boost I needed to get past that. And once I got a taste of Smalltalk, I couldn’t let go – I started right away on a port of IOWA to Smalltalk, and convinced my next couple of clients on web projects that I should use Smalltalk instead of Ruby. This port became Seaside, and over the next several years I built up a consulting business around Seaside training and development.
 
-Smalltalk web development may seem like a small niche to build a business around, but the fact is that **nobody** else was doing it at the time (for that matter, nobody else was doing web development in Ruby at the time either – that situation is a little different now.
+Smalltalk web development may seem like a small niche to build a business around, but the fact is that **nobody** else was doing it at the time (for that matter, nobody else was doing web development in Ruby at the time either – that situation is a little different now).
 
 Some people to mention in this history – Julian Fitzell was my early partner on the web projects, and we worked together on the first version of Seaside. Colin Putney was one of my early clients, who had come to me based on my work in Ruby and I had to work hard to convince to use Smalltalk; he’s now a confirmed Smalltalker and works with me on Dabble DB. Andrew Catton worked with me at the software engineering lab, and was a frequent collaborator on various other projects over the years.
 
 A few years in, a little fed up with consulting, Andrew and I started to work on a product on the side, and that project became Dabble DB. Last summer, we were lucky enough to get funded to work on that full time, and that’s what I’ve been doing since.
 
-**AkitaOnRails:** I see that you like the fact that Smalltalk is not “mainstream” in the Java-sense of the word. I can see the advantages and I agree with it. It’s like _“we are a small group of very smart people”_. Much like Apple’s own _“Think Different”_ campaign. On the other hand the masses tend to like big bang marketing and support. What do you think of this culture clash? The most important part is: here in Brazil the market is very closed to non-widely-commercially-supported tech. Meaning most of them don’t like anything different than Java or .NET. How do you convince your customers about using Smalltalk – if this is actually a matter there in the US?
+**AkitaOnRails:** I see that you like the fact that Smalltalk is not “mainstream” in the Java-sense of the word. I can see the advantages and I agree with it. It’s like _“we are a small group of very smart people”_. Much like Apple’s own _“Think Different”_ campaign. On the other hand the masses tend to like big bang marketing and support. What do you think of this culture clash? The most important part is: here in Brazil the market is very closed off to non-widely-commercially-supported tech. Meaning most of them don’t like anything different than Java or .NET. How do you convince your customers about using Smalltalk – if this is actually a matter there in the US?
 
 **Avi Bryant:** Yes, that’s a tricky balance. Some of the people I knew in the early days of Ruby’s popularity – post-Pickaxe, but pre-Rails – have complained about how much more popular Ruby has gotten lately, because inevitably the signal-to-noise ratio goes down on the mailing lists and at the conferences. Smalltalk doesn’t have that problem – in particular, Smalltalk has a nice mix of very experienced hackers – people like Dan Ingalls, who has been writing language implementations for more than 30 years, and has just an amazing depth of knowledge to share – and young troublemakers like myself. When you get too popular too quickly, you get a huge influx of young, inexperienced, energetic people, and the voice of experience tends to get drowned out. Not that new ideas aren’t valuable – they’re essential – but I think in this field we tend to overlook history far too much.
 
@@ -73,7 +73,7 @@ So it was a fairly gradual transition, which made it a lot easier to do.
 
  ![](http://s3.amazonaws.com/akitaonrails/assets/2007/12/15/dabbledb.gif)
 
-**AkitaOnRails:** But even then, were you doing Smalltalk/Seaside consulting only? Or you were working on different languages/frameworks for customers and Smalltalk afterwork? And for non-starters how would you briefly describe [Dabble DB](http://www.dabbledb.com)? I hear that you’re about to release a companion product for it, isn’t it? Can you describe them?
+**AkitaOnRails:** But even then, were you doing Smalltalk/Seaside consulting only? Or were you working on different languages/frameworks for customers and Smalltalk afterwork? And for non-starters how would you briefly describe [Dabble DB](http://www.dabbledb.com)? I hear that you’re about to release a companion product for it, right? Can you describe them?
 
 **Avi Bryant:** During that period, the consulting was all around Seaside, yes – there were some dark times earlier when I had to take some Java work :-)
 
@@ -85,7 +85,7 @@ It makes Dabble DB **almost** into a web development tool, in the sense that the
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2007/12/15/Picture_2.png)
 
-**AkitaOnRails:** Changing subjects a lil’ bit, one thing that I do admire about you is your relationship with the Ruby/Rails community. Those are different paradigms and technologies, but you never dive in flame wars like ‘Smalltalk is better than Ruby’ just for the sake of it. On the contrary, to me it feels like you do like Ruby, as you presented at RailsConf about the possibility of running Ruby empowered by a modern VM like GemStone’s. But, you did switch from Ruby to Smalltalk. What was it the ‘clicked’ for you about Smalltalk? Continuations? The whole coding-in-runtime? The tighter environment integration?
+**AkitaOnRails:** Changing subjects a little bit, one thing that I do admire about you is your relationship with the Ruby/Rails community. Those are different paradigms and technologies, but you never dive in flame wars like ‘Smalltalk is better than Ruby’ just for the sake of it. On the contrary, to me it feels like you do like Ruby, as you presented at RailsConf about the possibility of running Ruby empowered by a modern VM like GemStone’s. But, you did switch from Ruby to Smalltalk. What was it that ‘clicked’ for you about Smalltalk? Continuations? The whole coding-in-runtime? The tighter environment integration?
 
 **Avi Bryant:** So, first of all, I very much do like Ruby, and Dabble DB includes about 3000 lines of Ruby code (I just checked) along with however much Smalltalk (and a sprinkling of Python).
 

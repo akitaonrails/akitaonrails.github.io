@@ -30,13 +30,13 @@ I don't have any contract with any sponsor. I don't have a salary, profit-sharin
 
 That was by design, a principle.
 
-I tried to guarantee as much fair game as possible. Which is also why I always limited myself from speaking at my own event. The only times I did speak were to fill in a gap (a speaker who couldn't make it at the last minute) or at very specific moments (at the 1st Rails Summits, or the 10th anniversary of Ruby on Rails in 2014).
+I tried to guarantee as much fair game as possible. Which is also why I always limited my own speaking at my own event. The only times I did speak were to fill in a gap (a speaker who couldn't make it at the last minute) or at very specific moments (at the 1st Rails Summits, or the 10th anniversary of Ruby on Rails in 2014).
 
 My main concern with the conference has always been the program curation. I handpicked talks by technical merit, as much as I could. They always reflected what I personally think is worth watching. That's why I always avoided public voting (as it unbalances towards celebrities), never a committee (as it forces politics), no blind choosing (as I believe a conference program is like storytelling and I wanted coherency).
 
 As we were not profit-oriented, I never worried about lame things such as choosing topics just for the sake of increasing audience. It doesn't mean I always chose right, mistakes happen, but they were the exception. For the most part I believe I did the best I could.
 
-It was always what I personally believed made sense for the audience. I am very proud of the speakers we were able to foster, and equally proud of the audience that followed them. If you look at Rubyconf Brazil's registered attendees, most of them are not in any other of the big events in the country. It's an exclusive group of people that meet once a year.
+It was always what I personally believed made sense for the audience. I am very proud of the speakers we were able to foster, and equally proud of the audience that followed them. If you look at Rubyconf Brazil's registered attendees, most of them don't attend any of the other big events in the country. It's an exclusive group of people that meet once a year.
 
 More than that: every year, in the last 10 years, half of the attendees were new to the conference, and more than half come from all over the country (not just from Sao Paulo City).
 
@@ -44,9 +44,9 @@ More than that: every year, in the last 10 years, half of the attendees were new
 
 My very first "official" event was called RejectConf SP, in 2007. It had around 150 registrations and less than 100 people actually attended. Almost all of [the speakers](http://www.akitaonrails.com/2007/11/14/rejectconf-sp-07-palestrantes) are still around and doing very well.
 
-It was named like that because in 2007, Ruby was the ugly duck, especially in Brazil. No one in their right minds would ever think how big this community would become. So it was the rejected language.
+It was named like that because in 2007, Ruby was the ugly duckling, especially in Brazil. No one in their right minds would ever think how big this community would become. So it was the rejected language.
 
-The ugly duck ended up being a [Black Swan](http://www.akitaonrails.com/2008/09/13/off-topic-matando-a-m-dia).
+The ugly duckling ended up being a [Black Swan](http://www.akitaonrails.com/2008/09/13/off-topic-matando-a-m-dia).
 
 The next 2 years I didn't try to make a "Ruby"Conf, because most people didn't even know what "Ruby" was, but everybody was aware of "Rails" as there was a period of "Rails-bashing" in all the other communities. So I called my next events "Rails Summit".
 
@@ -84,7 +84,7 @@ This year we put all language logos ([Elixir](http://www.akitaonrails.com/elixir
 
 <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Flocaweb%2Fphotos%2Fa.360313600678286.84555.206944852681829%2F1129258497117122%2F%3Ftype%3D3&width=500" width="500" height="295" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
 
-No rubyist felt that was strange, and this is what I am most proud of in the audience we built: Rubyists in Brazil already feel super natural to talk and use other languages and platforms without feeling like they are **"betraying" a cause** or without feeling the need to **"abandon"** Ruby because they started enjoying something else such as Elixir or Clojure.
+No rubyist felt that was strange, and this is what I am most proud of in the audience we built: Rubyists in Brazil already find it super natural to talk and use other languages and platforms without feeling like they are **"betraying" a cause** or without feeling the need to **"abandon"** Ruby because they started enjoying something else such as Elixir or Clojure.
 
 Rubyists, in Brazil at least, are less prone to fall for the mistake of _vanity metrics_ such as choosing a language because of the [TIOBE ranking](http://www.akitaonrails.com/2008/04/13/off-topic-nunca-confie-no-tiobe).
 
@@ -100,7 +100,7 @@ When things start to get too comfortable you know it's possibly not entirely rig
 
 This was the final message, the story I wanted to tell, and it was 10 years in the making.
 
-I spent 10 years building a healthy audience that is unlike any other in the domain of technology: a highly agnostic, rational, critical-thinking-aware, results-oriented crowd. We really believe in "best-of-breed" and "best-tools-for-the-job".
+I spent 10 years building a healthy audience that is unlike any other in the technology world: a highly agnostic, rational, critical-thinking-aware, results-oriented crowd. We really believe in "best-of-breed" and "best-tools-for-the-job".
 
 But it couldn't be just small talk, demagogic speech. And the most uncomfortable thing I could do was to let it go.
 
@@ -153,7 +153,7 @@ I do everything by this idea:
 
 > "I never live for the sake of another person and I never ask anyone to live for the sake of mine. I only accept voluntary trade for mutual benefit."
 
-> "I am a software engineer. I know what is to come by the principle on which it is built."
+> "I am a software engineer. I know what is to come from the principle on which it is built."
 
 I explained this in detail in my article ["_Why, Ruby Dramas, and Dynamiting Courtlandt"](http://www.akitaonrails.com/en/en/2012/09/07/why-dramas-do-ruby-e-dinamitando-courtlandt/). In a small way, I want to think that I honored this principle.
 

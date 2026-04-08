@@ -16,7 +16,7 @@ If you're a seasoned Ruby web developer you're probably familiar and comfortable
 
 And even though it feels like we are already at the peak of what's possible with Ruby, we do want more. Ruby 2.1.3 was just released, 3.0 is in development. But until then it should be possible to squeeze some more performance out of your boxes.
 
-In fact, a new contender, with some new approaches just showed up. I have little details so far, but it's a brand new product - not derived from the others - from an unknown team. This product is named ["Raptor"](http://www.rubyraptor.org) and they claim that it can squeeze the extra juice out of our boxes.
+In fact, a new contender with some new approaches just showed up. I have few details so far, but it's a brand new product - not derived from the others - from an unknown team. This product is named ["Raptor"](http://www.rubyraptor.org) and they claim that it can squeeze the extra juice out of our boxes.
 
 And this is their claim:
 
@@ -61,7 +61,7 @@ Now, this sounds very impressive indeed! And what about a more complex example: 
     Raptor (JRuby)             : 73948.59 req/sec
 ```
 
-Again, **super** impressive. My first impression when reading these numbers is that Raptor must have builtin response caching (which is great!). So I tweaked the example to make it much heavier than what's considered "normal" for a small cache, rendering a table of 100 rows from the database in the index page, and the results are still competitive:
+Again, **super** impressive. My first impression when reading these numbers is that Raptor must have built-in response caching (which is great!). So I tweaked the example to make it much heavier than what's considered "normal" for a small cache, rendering a table of 100 rows from the database in the index page, and the results are still competitive:
 
 ```
 ==> Benchmark summary:
@@ -73,19 +73,19 @@ Again, **super** impressive. My first impression when reading these numbers is t
     Raptor (JRuby)             : 88.92 req/sec
 ```
 
-This could mean that at the best case scenario, you could get almost **4 times** the throughput from your application, and in the worst case scenario, you're still getting similar throughputs. This means that Raptor is adaptable and reasonably "smart". So overall it's a win-win situation!
+This could mean that in the best case scenario, you could get almost **4 times** the throughput from your application, and in the worst case scenario, you're still getting similar throughputs. This means that Raptor is adaptable and reasonably "smart". So overall it's a win-win situation!
 
 The way they are able to achieve these superior numbers can be explained by the way they approached the implementation. This is the breakdown that they have released so far:
 
 * **Protection against slow clients**: Slow clients on the Internet can block your app, like people standing still in front of your door. Unicorn only has a single small door, so it [requires](http://unicorn.bogomips.org/PHILOSOPHY.html) you to attach a buffering reverse proxy in front of it, like Nginx. Puma has as many small doors as you configure threads, so you still need to attach Nginx in front to be safe. But Raptor has a door that's almost infinitely wide, and fully protects your app against slow clients without additional software.
 * **Optional integration with Nginx**. Nginx is a great web server and provides useful features like compression, security, etc. But using Puma and Unicorn with Nginx requires you to configure Puma/Unicorn separately, to configure Nginx separately, to configure monitoring separately, and to manage each component separately. Doesn't it make sense to consolidate all these moving parts into a single package? Enter Raptor's optional Nginx integration mode: configuration, management and daemon monitoring all directly from Nginx.
-* **Multitenancy**. If you run multiple apps on a same server, then managing all those Puma and Unicorn instances quickly becomes tedious. Raptor's Nginx integration mode allows you to manage all your apps from a single Nginx instance.
+* **Multitenancy**. If you run multiple apps on the same server, then managing all those Puma and Unicorn instances quickly becomes tedious. Raptor's Nginx integration mode allows you to manage all your apps from a single Nginx instance.
 * **Security**. Improve your server's security by easily running multiple apps under multiple user accounts. This way, a vulnerability in one app won't affect all your other apps.
 * **JRuby support**. Like Puma (and unlike Unicorn), Raptor has great JRuby support.
 
-So it's a different implementation and also brings features for the future, supporting transparently handling slow clients without causing bottlenecks to your application and avoiding having extra layers of protection. And everything in an easy to use package (according to their release: you will be able to replace your current server in the Gemfile and bundle install it!)
+So it's a different implementation and also brings features for the future, transparently handling slow clients without causing bottlenecks for your application and avoiding extra layers of protection. And everything in an easy-to-use package (according to their release: you will be able to replace your current server in the Gemfile and bundle install it!)
 
-Raptor is about to be released, so keep tuned for more news and when it's available for everybody to test their applications with. From what we have seen so far, this one looks like a winner!
+Raptor is about to be released, so stay tuned for more news and for when it's available for everybody to test their applications with. From what we have seen so far, this one looks like a winner!
 
 Go to [their website](http://www.rubyraptor.org) to know more about it and if you're like me and feel like this is the real deal, [Thunderclap it!](https://www.thunderclap.it/projects/17748-raptor-fast-ruby-web-server)
 

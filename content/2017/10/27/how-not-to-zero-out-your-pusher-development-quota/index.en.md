@@ -15,21 +15,21 @@ draft: false
 
 If you're doing development with WebSockets (real-time notifications, real-time chat, etc), one of the best SaaS options out there is still [**Pusher**](pusher.com). It was always reliable.
 
-For each application, you create it even offers you separated development, staging, production environments, with separated key/secret tokens.
+For each application you create, it even offers you separate development, staging, and production environments, with separate key/secret tokens.
 
-One problem I stumbled upon these days is that I was quickly zero'ing out the free development environment message quota (200,000 messages a day). That's because all my team was using the same key and also the Continuous Integration server was doing live connections whenever it ran in the same environment. That can quickly consume all you have and block both your development and CI.
+One problem I stumbled upon these days is that I was quickly zeroing out the free development environment message quota (200,000 messages a day). That's because all my team was using the same key and also the Continuous Integration server was doing live connections whenever it ran in the same environment. That can quickly consume all the quota you have and block both your development and CI.
 
 It's actually not a good practice to do live connections to external systems in testing situations. The tests can fail randomly for a number of reasons, so we should always mock those. But mocking a complex system (WebSockets and HTTP) like Pusher is not trivial.
 
 Fortunately, I found this [Pusher Fake](https://github.com/tristandunn/pusher-fake). It basically implements all the necessary APIs and WebSocket endpoints to mimic Pusher and fool both server and js/client to communicate with it.
 
-The idea is for your Rails app, in development mode, to fork a separated server process for the Pusher client to connect to. This gem is both a simple Pusher-clone server and a series of wrappers to load it up in your setup.
+The idea is for your Rails app, in development mode, to fork a separate server process for the Pusher client to connect to. This gem is both a simple Pusher-clone server and a series of wrappers to load it up in your setup.
 
 First things first.
 
 In your application, you will have both a Ruby side Pusher client connection setup to push messages to a channel in the Pusher server. And a Javascript, client-side, Pusher instance mainly to subscribe to a channel in a WebSocket connection and receive messages.
 
-First we need to setup the Ruby side. Usually it's in a `config/initializers/pusher.rb` configuration like this:
+First we need to set up the Ruby side. Usually it's in a `config/initializers/pusher.rb` configuration like this:
 
 ```ruby
 Pusher.app_id = ENV['PUSHER_APP']
@@ -50,7 +50,7 @@ PUSHER_CLUSTER: "us2"
 
 At the very least you must have an application ID, a key, a secret, and a cluster name. All of these are provided by Pusher whenever you register a new application there.
 
-Second, we need to setup the Javascript instance. Usually, you have something in the `assets/javascripts` directory like this:
+Second, we need to set up the Javascript instance. Usually, you have something in the `assets/javascripts` directory like this:
 
 ```javascript
 // .js.erb example
@@ -65,7 +65,7 @@ In a Chrome Development Console, you can inspect this instance by typing:
 Pusher.instances[0]
 ```
 
-This way you can make it's picking up the correct configurations for the connection and also do debug problems.
+This way you can make sure it's picking up the correct configurations for the connection and also debug problems.
 
 The dependencies are the pusher gem in your `Gemfile` and the javascript client.
 
@@ -92,7 +92,7 @@ Or you can link it directly in your layout:
 <script src="https://js.pusher.com/4.2/pusher.min.js"></script>
 ```
 
-For more information on the Pusher-js client, read it's [README file](https://github.com/pusher/pusher-js).
+For more information on the Pusher-js client, read its [README file](https://github.com/pusher/pusher-js).
 
 ## Adding Pusher Fake
 
@@ -125,7 +125,7 @@ end
 
 This alone presents a LOT of problems if you're not careful. This `require` will **fork** a new process. If you're using a single-process web server like Webrick or Thin, you should be ok. If you're using Puma, Unicorn, or Passenger with a maximum of just one process, you should also be good. But if you load a web server that itself forks new processes, you will have trouble.
 
-In practice, I'd rather load the Pusher Fake server separately, in stand-alone more. Fortunately it provides a command line command to start it up. And it's good practice to setup that in a `Procfile.dev` file and use [foreman](https://github.com/ddollar/foreman) to start everything for you. The `Procfile.dev` looks like this:
+In practice, I'd rather load the Pusher Fake server separately, in stand-alone mode. Fortunately it provides a command line command to start it up. And it's good practice to set that up in a `Procfile.dev` file and use [foreman](https://github.com/ddollar/foreman) to start everything for you. The `Procfile.dev` looks like this:
 
 ```
 web: bundle exec rails s -p 3000
@@ -198,6 +198,6 @@ And that's it. The `PusherFake.javascript` will define default WebSocket connect
 
 This way your testing environment will also avoid connecting to the external, real, Pusher server.
 
-The key to all this are the environment variables. You must make sure that every piece is loading the same configuration, otherwise you will have the fake server binding to a different port than the Pusher-js is connecting to, and you will have errors. Debug with care.
+The key to all this is the environment variables. You must make sure that every piece is loading the same configuration, otherwise you will have the fake server binding to a different port than the Pusher-js is connecting to, and you will have errors. Debug with care.
 
 Most importantly: if you did it all correctly, you are now independent of the real Pusher server for development and testing environments, you won't ever reach any quota limits, and your team and your CI will be able to work uninterruptedly, with a deterministic behavior.

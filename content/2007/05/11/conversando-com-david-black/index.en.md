@@ -16,11 +16,11 @@ translationKey: chatting-david-black
 
 As I reported on my last [post](/pages/chadfowler), on April 24th I was very fortunate to interview two great celebrities from the Ruby world: [Chad Fowler](/pages/chadfowler) and **David Black**. I love to chat with experienced people because I learn so much.
 
-David Black was a great guest, we had a very nice conversation where I pushed a little bit more of the subject that I like to discuss: programmers careers. David is one of the founders of Ruby Central and he as his own company called Ruby Power and Light which offers training and consulting services. He is also the author of the excelent [Ruby for Rails](http://www.manning.com/black/) book, from Manning.
+David Black was a great guest, we had a very nice conversation where I pushed a little bit more of the subject that I like to discuss: programmers careers. David is one of the founders of Ruby Central and he has his own company called Ruby Power and Light which offers training and consulting services. He is also the author of the excellent [Ruby for Rails](http://www.manning.com/black/) book, from Manning.
 
 So, here goes:
 
-**AkitaOnRails** : Once again, I’d like to start with the usual questions of all interviews: how did you got into computer stuff? What hooked you up into programming? It is curious because I learned that [Geoffrey Grosenbach](/pages/peepcode) was graduated in philosophy and [Chad](/pages/chadfowler) was a musician!
+**AkitaOnRails** : Once again, I’d like to start with the usual questions of all interviews: how did you get into computer stuff? What hooked you up into programming? It is curious because I learned that [Geoffrey Grosenbach](/pages/peepcode) was graduated in philosophy and [Chad](/pages/chadfowler) was a musician!
 
 **David** : I’m a musician too (I play the cello). I’ve got an undergraduate degree in Art History and German, and a Ph.D. in Cinema Studies as for how I got into programming….
 
@@ -36,7 +36,7 @@ It was when I was 13 (which was 1972). My school had a [PDP-8](http://en.wikiped
 
 **David** : I still have paper tapes in my basement.
 
-**AkitaOnRails** : I am assuming that you, Chad, Dave Thomas are very close friends. Are you? Or do you only work together organizing the conferences at RubyCentral? I understand that all of you started RubyCentral back in what, 2001? I heard that you kind of inherited it. Did you met them at that time or you’re long time friends?
+**AkitaOnRails** : I am assuming that you, Chad, Dave Thomas are very close friends. Are you? Or do you only work together organizing the conferences at RubyCentral? I understand that all of you started RubyCentral back in what, 2001? I heard that you kind of inherited it. Did you meet them at that time or you’re long time friends?
 
 [![](/files/trwnew2.jpg)](http://rubyhacker.com/coralbook/)
 
@@ -44,7 +44,7 @@ It was when I was 13 (which was 1972). My school had a [PDP-8](http://en.wikiped
 
 But Dave didn’t want it to be cancelled, since it was going to be the first such Ruby event and having it actually happen was important. He didn’t have a lot of time for it, though, so he asked me and Chad to take it over and see it through to completion, which we did.
 
-Then we decided that we should have a parent organization for future conferences. For the first conference, I just deposited the money in my bank account and kept track of it (separately!). There that was not a very scaleable approach to handling finances so we created Ruby Central in 2002.
+Then we decided that we should have a parent organization for future conferences. For the first conference, I just deposited the money in my bank account and kept track of it (separately!). That was not a very scalable approach to handling finances so we created Ruby Central in 2002.
 
 **AkitaOnRails** : Yeah, Chad mentioned that. I already knew some of this (it’s kind of a legend by now). But do you hang around together? Do you work together? For some reason I see the 3 of you more like the “Founding Fathers” of Ruby outside Japan.
 
@@ -58,7 +58,7 @@ Then we decided that we should have a parent organization for future conferences
 
 **David** : I don’t know. I don’t think you can explain love. I think I was kind of getting tired of Perl… and Python wasn’t really attracting me but I didn’t anticipate finding Ruby — it was a very pleasant surprise.
 
-**AkitaOnRails** : Yes, that’s my point: you were experienced in other stuff that made you “feel” something for Ruby. Many young programmers I met can’t understand this. Many of them think that they only have to learn one language only. Do you met this kind of programmers there?
+**AkitaOnRails** : Yes, that’s my point: you were experienced in other stuff that made you “feel” something for Ruby. Many young programmers I met can’t understand this. Many of them think that they only have to learn one language only. Do you meet this kind of programmers there?
 
 **David** : Interesting question. I think most of the programmers I meet know more than one language — because a lot of people are just starting with Ruby, and most of them have done some programming before. Actually I think it’s too bad that people seem to think that for every language you love, you have to hate ten. In recent years, I’ve probably become too specialized. Ruby has given me so much to do!
 
@@ -86,7 +86,7 @@ Then we decided that we should have a parent organization for future conferences
 
 **David** : See, he doesn’t do Rails, so he’s not as well known to the younger generation as he should be. He was working on ‘the Ruby way’ by the time I discovered Ruby, I believe (or close to it).
 
-**AkitaOnRails** : You’re right. I know the ‘Ruby Way’ book, but its on my queue of to-read books yet.
+**AkitaOnRails** : You’re right. I know the ‘Ruby Way’ book, but it’s on my queue of to-read books yet.
 
 Ah ha, I just found the foreword for your book, from DHH: _“As I was learning the language, I often consulted the Ruby-talk mailing list. One voice in particular seemed to know Ruby well and appeared to have the ambition as well as the ability to help others understand it more fully. That voice belonged to David A. Black, the author of this book.”_
 
@@ -128,13 +128,13 @@ By the way, you might find it interesting to look at some of the talks from [ear
 
 As for 1.9: I don’t follow it as closely as I should. I compile it now and then to have a recent one available, but to be honest 1.8 and Rails are keeping me very busy!
 
-**AkitaOnRails** : I think Matz and DHH are very interestng personas. Being a japanese myself I can understand Matz and his careful evolution around Ruby. And being raised in the West I can understand DHH’s rants and ‘opinionated’ stuff. This community have very interesting and conflicting founders. What do you think of our current community, do you follow all the new developments? Gems, plugins, and so on?
+**AkitaOnRails** : I think Matz and DHH are very interesting personalities. Being Japanese myself I can understand Matz and his careful evolution around Ruby. And being raised in the West I can understand DHH’s rants and ‘opinionated’ stuff. This community have very interesting and conflicting founders. What do you think of our current community, do you follow all the new developments? Gems, plugins, and so on?
 
 **David** : Well, that’s several different questions (community, plugins, gems) I love our community. I love it for many reasons, but mostly because I think people are really nice and very interested in what others are doing.
 
 **AkitaOnRails** : I meant that many of the developments do reflect the characteristics of their authors. [WhyTheLuckyStiff](http://whytheluckystiff.net) for example.
 
-**David** : Yes, definitely — we have lots of people with interesting backgrounds (like musicians and styles. By the way, have you ever seen [this picture](http://pablotron.org/gallery/20021101-Rubyconf2002/?g_show=1&g_num=1&g_ofs=28) ? That’s from Rubyconf 2002. It’s all the japanese Ruby books that were in print at the time. **Masayoshi Takahashi** brought them over (creator of the [Takahashi Method](http://redhanded.hobix.com/inspect/takahashiMethodSpreads.html) for presentations).
+**David** : Yes, definitely — we have lots of people with interesting backgrounds (like musicians) and styles. By the way, have you ever seen [this picture](http://pablotron.org/gallery/20021101-Rubyconf2002/?g_show=1&g_num=1&g_ofs=28) ? That’s from Rubyconf 2002. It’s all the japanese Ruby books that were in print at the time. **Masayoshi Takahashi** brought them over (creator of the [Takahashi Method](http://redhanded.hobix.com/inspect/takahashiMethodSpreads.html) for presentations).
 
 **AkitaOnRails** : I didn’t know about this particular picture. Very nice.
 
@@ -142,7 +142,7 @@ As for 1.9: I don’t follow it as closely as I should. I compile it now and the
 
  ![](/files/dhh-matz-babie.jpg)
 
-**AkitaOnRails** : Haha. For me, I am very proud that at least in the US, Ruby has grown very fast and strongly. But I do have a small fear that its another bubble. Many say that Ruby can become the next Smalltalk.
+**AkitaOnRails** : Haha. For me, I am very proud that at least in the US, Ruby has grown very fast and strongly. But I do have a small fear that its another bubble. Many say that Ruby could become the next Smalltalk.
 
 **David** : It’s not. It’s the first Ruby. People are always trying to figure out what Ruby “really” is. A new Perl, the next Smalltalk, a Lisp dialect, Python with ‘end’ statements….. it’s just Ruby. It has a style all of its own.
 

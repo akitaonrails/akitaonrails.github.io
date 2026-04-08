@@ -22,11 +22,11 @@ Now you're here, you don't have a lot of time to randomly explore. And that woul
 
 But if you're near a Subway station (Metro) you're in luck as many of the staples of the city are at walking distance from the many stations or not far by taxi from one of them. So let me pinpoint a few must-go places.
 
-For the Feijoada you will go to [Bolinha](http://www.bolinha.com.br/) and for great barbecue you will choose [Vento Haragano](http://www.ventoharagano.com.br/) or [Fogo de Chão](http://www.fogodechao.com/). Unfortunately none of them are at walking distance from Paulista Ave, but they are close by taxi and I recommend you do so. They are definitely not on the cheap side, but if you're here, you should try our best.
+For the Feijoada you will go to [Bolinha](http://www.bolinha.com.br/) and for great barbecue you will choose [Vento Haragano](http://www.ventoharagano.com.br/) or [Fogo de Chão](http://www.fogodechao.com/). Unfortunately none of them are within walking distance of Paulista Ave, but they are close by taxi and I recommend you take one. They are definitely not on the cheap side, but if you're here, you should try our best.
 
 Another staple of São Paulo: its intense night life. You will want to try it at least once. After sunset, all kinds of tribes spread around the city. If you're staying on Paulista Ave, you're already next to some of those places: Augusta St.
 
-At Augusta and nearby streets such as Bela Cintra, you will find [Beco 203](http://www.beco203.com.br/) if you like disco, rock, some alternative bands and indie music. [FunHouse](http://funhouse.com.br/), if you're young as the population is just above teenagers. [D-Edge](http://www.d-edge.com.br/) is a 3 story high warehouse with great decoration, rock and international DJs. [Lab Club](http://www.labclub.com.br/) for pop, electronic, and enjoy the molecular drinks.
+At Augusta and nearby streets such as Bela Cintra, you will find [Beco 203](http://www.beco203.com.br/) if you like disco, rock, some alternative bands and indie music. [FunHouse](http://funhouse.com.br/), if you're young, as the crowd is just above teenager age. [D-Edge](http://www.d-edge.com.br/) is a 3 story high warehouse with great decoration, rock and international DJs. [Lab Club](http://www.labclub.com.br/) for pop and electronic, and enjoy the molecular drinks.
 
 ![The Week](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/466/theweek.jpg)
 
@@ -34,7 +34,7 @@ If you're looking for the popular Brazilian country music, Sertanejo, try [Villa
 
 Just don't party too hard on the conference days :-)
 
-So, you did party hard. Now it's time to fix your hangover. And for that, I recommend you go to [Bella Paulista](http://www.bellapaulista.com/) which is a 24-hours super bakery with everything you need, from bread, to sandwiches, soups, and everything to calm you down.
+So, you did party hard. Now it's time to fix your hangover. And for that, I recommend you go to [Bella Paulista](http://www.bellapaulista.com/) which is a 24-hour super bakery with everything you need, from bread, to sandwiches, soups, and everything to calm you down.
 
 ![Bella Paulista](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/459/462061_3700729435480_1192746863_33596730_658820397_o.jpg)
 
@@ -42,9 +42,9 @@ If you're more on the intellectual side, you're also in luck, because [MASP - Th
 
 ![MASP](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/461/DSC05269_2048x1536.jpg)
 
-There are theaters around but unfortunately you would need to understand Brazilian Portuguese to appreciate it, such as [Comedians Comedy Club](http://www.comedians.com.br/).
+There are theaters around but unfortunately you would need to understand Brazilian Portuguese to appreciate them, such as [Comedians Comedy Club](http://www.comedians.com.br/).
 
-Now, you can go to Old Downtown to appreciate some of the classics. First stop is very early in the morning at **Metro São Bento**. From there you can reach [Mercado Municipal](http://www.oportaldomercadao.com.br/), our humongous central market, to try fresh ingredients, spices, and everything a high end, high quality, one of a kind market has to offer. Definitely visit it if you can, try the sandwiches and other food there. You can learn a lot about the culture of any place by visiting its central market.
+Now, you can go to Old Downtown to appreciate some of the classics. First stop is very early in the morning at **Metro São Bento**. From there you can reach [Mercado Municipal](http://www.oportaldomercadao.com.br/), our humongous central market, to try fresh ingredients, spices, and everything a high-end, high-quality, one-of-a-kind market has to offer. Definitely visit it if you can, try the sandwiches and other food there. You can learn a lot about the culture of any place by visiting its central market.
 
 ![Mercado Municipal](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/460/6680763851_9ac92c0b76_b.jpg)
 
@@ -56,13 +56,13 @@ If you're into history, go to Metro Ipiranga and get a bus or taxi to the [Parqu
 
 ![Museu do Ipiranga](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/463/museu.jpg)
 
-If you're staying during the weekend, I recommend going to **Metro Liberdade** on Sunday. Liberdade is the Asian neighborhood of São Paulo. Some may be surprised that it's smaller than you might think given how well known the place is. The main places are near the Metro and Galvão Bueno Ave. There are several Japanese restaurants, stores that sell Japanese ingredients and foods and on Sunday they have an outdoor fair. Quite hidden around there you can also find the [Busshinji Temple](http://www.sotozen.org.br/templo.php) and the [Museu Histórico da Imigração Japonesa](http://www.museubunkyo.org.br/), the museum about the century old immigration of Japanese to Brazil.
+If you're staying during the weekend, I recommend going to **Metro Liberdade** on Sunday. Liberdade is the Asian neighborhood of São Paulo. Some may be surprised that it's smaller than you might think given how well known the place is. The main places are near the Metro and Galvão Bueno Ave. There are several Japanese restaurants, stores that sell Japanese ingredients and foods and on Sunday they have an outdoor fair. Quite hidden around there you can also find the [Busshinji Temple](http://www.sotozen.org.br/templo.php) and the [Museu Histórico da Imigração Japonesa](http://www.museubunkyo.org.br/), the museum about the century-old immigration of Japanese to Brazil.
 
 Now, if you're into being healthy, going to relax in a park is another great option. Again, right next to Paulista Ave, you will find [Parque Trianon](https://plus.google.com/100573972023720439815/about?gl=br&hl=en). But of course, the staple of the city is [Parque do Ibirapuera](http://www.prefeitura.sp.gov.br/cidade/secretarias/meio_ambiente/parques/regiao_sul/index.php?p=14062). You can go to **Metro Vila Mariana** and get a bus or taxi to the park. It's huge, although just half the size of New York's Central Park. But you will find museums, expositions and other activities around, it also rents bikes so you can have a ride inside the park if you want.
 
 ![Parque Trianon](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/462/IMG_5283.JPG)
 
-To wrap it up, night is approaching, the sun is setting down, so you will go to **Metro Vila Madalena** which is the traditional region for bars and bohemians. [Bar Astor](http://www.barastor.com.br/), [Boteco São Bento](http://botecosaobento.com.br/sb/maim.html), [Bar Filial](http://www.barfilial.com.br/). Particularly you want to go straight to [Aspicuelta Street](http://goo.gl/maps/mI3Kq) where you will find many of the great bars next to each other such as [Melograno Bar](http://www.melograno.com.br/), [Mercearia São Pedro](https://foursquare.com/v/mercearia-s%C3%A3o-pedro/4b18539cf964a520eed023e3), [Salve Jorge](http://barsalvejorge.com.br/), [São Cristóvão](https://www.facebook.com/saocristovao.bar).
+To wrap it up, night is approaching, the sun is setting, so you will go to **Metro Vila Madalena** which is the traditional region for bars and bohemians. [Bar Astor](http://www.barastor.com.br/), [Boteco São Bento](http://botecosaobento.com.br/sb/maim.html), [Bar Filial](http://www.barfilial.com.br/). Particularly you want to go straight to [Aspicuelta Street](http://goo.gl/maps/mI3Kq) where you will find many of the great bars next to each other such as [Melograno Bar](http://www.melograno.com.br/), [Mercearia São Pedro](https://foursquare.com/v/mercearia-s%C3%A3o-pedro/4b18539cf964a520eed023e3), [Salve Jorge](http://barsalvejorge.com.br/), [São Cristóvão](https://www.facebook.com/saocristovao.bar).
 
 There are several places I didn't even attempt to mention such as Memorial da América Latina, Berrini, Cidade Jardim, Edifício Itália, Museu do Teatro Municipal, Edifício Matarazzo, Pateo do Colegio, Espaço Cultural Catarse, Centro Cultural Fiesp, Instituto Cervantes, Teatro Eva Herz, Galeria Vermelho, Mosteiro de São Bento, 25 de Março and so many more places.
 

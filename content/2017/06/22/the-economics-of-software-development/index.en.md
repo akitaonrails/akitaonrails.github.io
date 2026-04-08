@@ -25,11 +25,11 @@ Over-engineering is as expensive as doing things "dirty".
 
 What most people do very wrong is disregarding the variable of "Time".
 
-Everybody goes to tech conferences or read fancy blog posts or watch flashy screencasts. Their wrong conclusion is: _"Netflix uses it, therefore it should be good for me, because I want to become Netflix"_.
+Everybody goes to tech conferences or read fancy blog posts, or watch flashy screencasts. Their wrong conclusion is: _"Netflix uses it, therefore it should be good for me, because I want to become Netflix"_.
 
-The wrong assumption is that Neflix - or Google, or Facebook, or Spotify - is a static system and they always functioned the way they advertise it.
+The wrong assumption is that Netflix - or Google, or Facebook, or Spotify - is a static system and they always functioned the way they advertise it.
 
-People forget that every unicorn company had a **day-1**. And on day-1 they did not use microservices. They did not had React.js. They did not have Go or Elixir. Some of them didn't even have good programmers to begin with. Netflix started as a VHS renting service, remember that? Google started off in a dorm-room with off-the-shelf hardware components assembled in a [Lego-based rack](http://www.complex.com/pop-culture/2013/02/50-things-you-didnt-know-about-google/lego-server-rack).
+People forget that every unicorn company had a **day-1**. And on day-1 they did not use microservices. They did not have React.js. They did not have Go or Elixir. Some of them didn't even have good programmers to begin with. Netflix started as a VHS renting service, remember that? Google started off in a dorm-room with off-the-shelf hardware components assembled in a [Lego-based rack](http://www.complex.com/pop-culture/2013/02/50-things-you-didnt-know-about-google/lego-server-rack).
 
 You are a fan of some celebrity. That celebrity has a Lamborghini car. So you want to be like that celebrity one day. What do you do? Do you buy the same Lamborghini he has?
 
@@ -45,7 +45,7 @@ You want to "code faster" therefore you skip writing automated tests, because yo
 
 Again, you forget the "Time" variable.
 
-You write and deliver fast for the 1st month. After the first version is deployed, now you will abliged to start paying the debt. Your productivity will slow down. Regression bugs will show up. Every new feature you try to add breaks something in unexpected ways. Because you don't have automated tests, you will keep fixing the same things many times over. Debt will catch up, and you will pay. One way or the other.
+You write and deliver fast for the 1st month. After the first version is deployed, now you will be obliged to start paying the debt. Your productivity will slow down. Regression bugs will show up. Every new feature you try to add breaks something in unexpected ways. Because you don't have automated tests, you will keep fixing the same things many times over. Debt will catch up, and you will pay. One way or the other.
 
 Minimal test suites are like **Insurance**. You don't need it right now, on day-1. But on day-100 you will be so glad you have it.
 
@@ -55,17 +55,17 @@ Enjoying that early Lamborghini now?
 
 ### The Mythical Man-Month
 
-Philip Calçado writes very good posts and presents about microservices in the right way. If you're serious about that subject I strongly recommend that you read his posts, such as his ["Prerequisites"](http://philcalcado.com/2017/06/11/calcados_microservices_prerequisites.html) post or his ["Economics"](https://www.infoq.com/news/2017/05/economics-microservices) presentation.
+Philip Calçado writes very good posts and presentations about microservices in the right way. If you're serious about that subject I strongly recommend that you read his posts, such as his ["Prerequisites"](http://philcalcado.com/2017/06/11/calcados_microservices_prerequisites.html) post or his ["Economics"](https://www.infoq.com/news/2017/05/economics-microservices) presentation.
 
 He correctly remembers Fred Brooks' **The Mythical Man-Month**. I urge developers to read this small book. It's uncanny how the entire industry is still repeating the very same mistakes Brooks reports in his book from projects in the 60's!
 
-To me, microservices is a by-product of tech companies with too many developers. Once you break through the 5-developers team a "monolithic" system with poor organization and few automated tests can become cumbersome to deal with. So the consequence is the desire to break it down. You make 2 teams and 2 microservices and coordinate. And the teams start to isolate, and play the  finger-pointing sessions when new bugs are reported (_"it's the other team's microservice's fault"_).
+To me, microservices is a by-product of tech companies with too many developers. Once you break through the 5-developers team a "monolithic" system with poor organization and few automated tests can become cumbersome to deal with. So the consequence is the desire to break it down. You make 2 teams and 2 microservices and coordinate. And the teams start to isolate, and play the  finger-pointing when new bugs are reported (_"it's the other team's microservice's fault"_).
 
 That's [Conway's Law](http://www.melconway.com/Home/Conways_Law.html) if you do it wrong:
 
 > Any organization that designs a system (defined broadly) will produce a design whose structure is a copy of the organization's communication structure.
 
-Also in play is another chapter in Brooks book: The [Second System Effect](http://wiki.c2.com/?SecondSystemEffect). Every developer, tech startup, has to assume that the first version of anything is not the best design. And the second system (the first big rewrite) is **the most dangerous** system you will write. As Brooks state, it goes like this:
+Also in play is another chapter in Brooks' book: The [Second System Effect](http://wiki.c2.com/?SecondSystemEffect). Every developer, tech startup, has to assume that the first version of anything is not the best design. And the second system (the first big rewrite) is **the most dangerous** system you will write. As Brooks states, it goes like this:
 
 > An architect's first work is apt to be spare and clean. He knows he doesn't know what he's doing, so he does it carefully and with great restraint.
 
@@ -85,15 +85,15 @@ Then, what happens? The CEO, the board, the investors, or whatever, start doing 
 
 Again, it's foregoing the sense of the "Time" variable. And confusing "debt" for "investment".
 
-First of all, do yourself a favor and [read the goddawn book](http://amzn.to/2sFbkWq) already, twice.
+First of all, do yourself a favor and [read the goddamn book](http://amzn.to/2sFbkWq) already, twice.
 
 ### Do Agile right! And no, it's not Kanban!
 
-If there is one good thing the whole Lean noise generated is the notion of "Most Viable Product" or MVP. People call it "prototype". Some call it "launching Beta" or simply "version 1.0". Doesn't matter. It's the realization that you don't know much at the beginning so overengineering on the first version is a waste of time. Lean is about controlling "waste", so we do the minimal that work, gauge results and work from there.
+If there is one good thing the whole Lean noise generated is the notion of "Minimum Viable Product" or MVP. People call it "prototype". Some call it "launching Beta" or simply "version 1.0". Doesn't matter. It's the realization that you don't know much at the beginning so overengineering on the first version is a waste of time. Lean is about controlling "waste", so we do the minimal that works, gauge results and work from there.
 
 The cynical will say that any prototype that reaches production will never die. And they're not wrong.
 
-The balance is to not do the "quick and dirty" version. That's why we have Agile techniques for. Do the minimal, organize the minimal. That's why we have object-oriented design patterns, from GoF to DDD. You don't need to do EVERY pattern - that's what "overenginnering" means. But you can do the minimal monolith that will allow you to evolve later.
+The balance is to not do the "quick and dirty" version. That's what we have Agile techniques for. Do the minimal, organize the minimal. That's why we have object-oriented design patterns, from GoF to DDD. You don't need to do EVERY pattern - that's what "overengineering" means. But you can do the minimal monolith that will allow you to evolve later.
 
 People criticize Ruby on Rails for not being organized "enough". [Nick Sutterer](https://apotonick.wordpress.com/2015/09/05/the-only-alternative-to-a-rails-monolith-are-micro-services-bullshit/), the creator of the high-level [Trailblazer](https://github.com/trailblazer/trailblazer) has a good point.
 
@@ -103,7 +103,7 @@ _"Let's do proper Agile stuff and proper object-oriented stuff"_ should be the i
 
 And by "Agile" forget about idiotic post-its, idiotic numerology-based estimation equations (this is a whole post in itself, because story points and velocity are useful, but adding Montecarlo and other Gaussian-based stuff are not). The only "Agile" things you should be concerned about are the [Extreme Programming (XP) techniques](http://www.extremeprogramming.org/), **including** Iteration-based timeboxes.
 
-You **MUST** do timeboxes. Stop, re-assess, change directions, and then keep going. The model of "Pull" is only reasonable when your directions is very, very clear, written in stone and unchangeable - like in a factory production line! (Where the concept of Pull - and Lean -- was actually born!)
+You **MUST** do timeboxes. Stop, re-assess, change directions, and then keep going. The model of "Pull" is only reasonable when your direction is very, very clear, written in stone and unchangeable - like in a factory production line! (Where the concept of Pull - and Lean -- was actually born!)
 
 Iterations, like automated tests, are like Insurance. You can never avoid all waste, but you can minimize it. You can afford to throw away an Iteration-worth of work. After the iteration you measure the results, and throw it way if necessary - changing direction in the process. Throwing useless stuff away is as important as adding new stuff. If you just add, you have a [hoarding disorder](https://en.wikipedia.org/wiki/Compulsive_hoarding)!
 
@@ -117,7 +117,7 @@ If you're in the web development business, this is a huge WASTE.
 
 Understand this truth: your servers will IDLE most of the time. And if you feel like using your web app is slow, it's not because of the language used, it's because of the POOR programming you did. And no good language will rescue a bad programmer. I always say that if performance was that important, we should all be doing C.
 
-Most of what you serve in an HTTP-based apps, be it user-readable content, be it API GET results, can be **CACHED**! If you're not using a [CDN](http://www.akitaonrails.com/2015/08/25/small-bites-adicionando-um-cdn-ao-seu-site-a-forma-facil), you're doing it wrong.
+Most of what you serve in HTTP-based apps, be it user-readable content, be it API GET results, can be **CACHED**! If you're not using a [CDN](http://www.akitaonrails.com/2015/08/25/small-bites-adicionando-um-cdn-ao-seu-site-a-forma-facil), you're doing it wrong.
 
 Yeah, yeah, yeah, you think you're building the next Spotify. You're not, at least not 99% of you. And the 1% doing custom engineering, with custom techniques and custom stack,  successfully, you're the 1%. Actually I'd say you're a fraction of the 1%. Do not assume that what you do is good for the rest of the population.
 
@@ -127,9 +127,9 @@ Yeah, yeah, yeah, you think you're building the next Spotify. You're not, at lea
 
 > Are you doing embedded libraries? Maybe the next generation OpenSSL? Drivers? Then choose RUST.
 
-> Are you doing mobile development? Then don't have a lot of choice, do Swift for iOS, do Kotlin/Java for Android. Or do React Native for simpler apps.
+> Are you doing mobile development? Then don't have a lot of choice: do Swift for iOS, do Kotlin/Java for Android. Or do React Native for simpler apps.
 
-> Are you really doing the next Whatsapp? The next Waze? The next Snap? You have hundreds or thousands of users in need of long-lived connections over unreliable network doing broadcasts of messages? Or you're building the next evolution of distributed NoSQL databases? Or anything that actually has the proper meaning of "Distributed" in it's definition? Then choose ELIXIR.
+> Are you really doing the next Whatsapp? The next Waze? The next Snap? You have hundreds or thousands of users in need of long-lived connections over unreliable network doing broadcasts of messages? Or you're building the next evolution of distributed NoSQL databases? Or anything that actually has the proper meaning of "Distributed" in its definition? Then choose ELIXIR.
 
 > Are you doing a CRUD based web application? Go RAILS and never look back.
 
@@ -151,6 +151,6 @@ You can start humble on day-1. Keep evolving, continuously - this is the core of
 
 > Facebook day-4,800 is NOT your day-1.
 
-> Goodle day-6,8090 is NOT your day-1.
+> Google day-6,890 is NOT your day-1.
 
-> Be humble. Deliver fast. Pay your Debts. Keep evolving continuouly. Stop believing in fairy tales and silver bullets.
+> Be humble. Deliver fast. Pay your Debts. Keep evolving continuously. Stop believing in fairy tales and silver bullets.

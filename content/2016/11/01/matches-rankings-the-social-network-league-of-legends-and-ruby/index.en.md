@@ -24,7 +24,7 @@ Or can we?
 
 ### Facemesh
 
-One of my favorite scenes from the movie is when Zuckerberg/Eisenberg is pissed by the Erica Albright split up and he starts scraping women photos from the Harvard websites and organizing them into a troll website called "Facemesh" where he puts them to compete. People can vote on which photo they prefer and it sorts them out in a ranking of popularity.
+One of my favorite scenes from the movie is when Zuckerberg/Eisenberg is pissed by the Erica Albright split up and he starts scraping photos of women from Harvard websites and organizing them into a troll website called "Facemesh" where he puts them to compete. People can vote on which photo they prefer and it sorts them out in a ranking of popularity.
 
 When Eduardo Saverin/Andrew Garfield shows up, Zuckerberg asks him:
 
@@ -40,7 +40,7 @@ Here most people would just think:
 
 > "pff, another gibberish formula just to show off that they are little geniuses, but most certainly this formula doesn't even exist"
 
-Except it does. And this is the one scene in the movie that stuck in my head as I had seen it before. To help you out, let's reverse the mirrored image:
+Except it does. And this is the one scene in the movie that stuck in my head as I had seen it before. To help you out, let's un-mirror the mirrored image:
 
 ![The Algorithm](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/568/pasted-image-761.jpg)
 
@@ -253,7 +253,7 @@ Again, Zelda jumps up from 2nd to 1st place and Samus falls down from 3rd to 9th
 
 Now, this is fairness: Pikachu should have won, but losing 10 times in a row against someone considered much weaker makes him fall down from 2nd place all the way to the last place. And noobie Fox, having won 10 times against a much stronger opponent, deserves jumping up all the way to 3rd place.
 
-This is the kind of dynamic that can make matches and games competitive, which is exactly why every online leaderboard and professional tournament use those kinds of algorithms.
+This is the kind of dynamic that can make matches and games competitive, which is exactly why every online leaderboard and professional tournament uses those kinds of algorithms.
 
 And it all began in chess, using math that has been known since the late 40's!!
 

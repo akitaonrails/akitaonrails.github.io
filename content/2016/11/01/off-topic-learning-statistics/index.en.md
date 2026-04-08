@@ -25,9 +25,9 @@ We live in the 21st century. [Every 60 seconds](http://www.smartinsights.com/int
 
 > – Various authors, original probably John Naisbitt
 
-I will spend a few weeks diving into [R](https://www.r-project.org/). Yes, many people will talk about Julia, but we can't deny the amazing body of knowledge, the experience, and the robust and extensive set of packages available for R, including learning material. There's a great tool [RStudio](https://blog.rstudio.org/2016/11/01/announcing-rstudio-v1-0/) which just saw its 1.0 release.
+I will spend a few weeks diving into [R](https://www.r-project.org/). Yes, many people will talk about Julia, but we can't deny the amazing body of knowledge, the experience, and the robust and extensive set of packages available for R, including learning material. There's a great tool called [RStudio](https://blog.rstudio.org/2016/11/01/announcing-rstudio-v1-0/) which just saw its 1.0 release.
 
-And within the many materials I gathered, one stood out just for its introduction (I am still to review the book as a whole). It's called ["Learning Statistics with R"](http://health.adelaide.edu.au/psychology/ccs/teaching/lsr/), by Daniel Navarro from the University of Adelaide, Australia. I find it interesting because it's a psychology professor teaching proper statistics through the basics of R, which is exactly what I wanted. You can purchase a hardcopy or download the free PDF.
+And within the many materials I gathered, one stood out just for its introduction (I still have to review the book as a whole). It's called ["Learning Statistics with R"](http://health.adelaide.edu.au/psychology/ccs/teaching/lsr/), by Daniel Navarro from the University of Adelaide, Australia. I find it interesting because it's a psychology professor teaching proper statistics through the basics of R, which is exactly what I wanted. You can purchase a hardcopy or download the free PDF.
 
 I like the introduction so much that I wanted to share a few paragraphs to motivate you to join me in learning better statistics. So let's dive right into it:
 

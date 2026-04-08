@@ -10,7 +10,7 @@ draft: false
 
 It's been more than a month since my [last post](http://www.akitaonrails.com/en/2017/01/31/do-macbook-pro-para-o-dell-xps-arch-linux-para-usuarios-criativos) on tuning Manjaro for the Dell XPS 15.
 
-Manjaro released it's newest release [version 17](https://manjaro.org/2017/03/07/manjaro-gnome-17-0-released/) and the kernel released 4.10. The upgrade from Manjaro 16 and kernel 4.9 went smoothly.
+Manjaro released its newest release [version 17](https://manjaro.org/2017/03/07/manjaro-gnome-17-0-released/) and the kernel released 4.10. The upgrade from Manjaro 16 and kernel 4.9 went smoothly.
 
 These are the currently installed, kernel specific packages:
 
@@ -33,7 +33,7 @@ sudo pacman -R linux49 linux49-headers linux49-acpi_call linux49-bbswitch linux4
 
 I also upgraded the system BIOS to the [latest 1.2.19](http://dell.to/2mWmWDg) (although many said to stay at 1.2.18 for now, but I didn't downgrade). The BIOS upgrade is quite easy as you just need to have a FAT formatted USB drive and copy the "XPS_9550_1.2.19.exe" file. On boot, you can press F12 and choose the option to upgrade directly from there.
 
-One thing that stopped working was the function keys to control screen brightness. I wasn't able to tweak it back but I can still control the brighness manually from the Terminal using commands like this:
+One thing that stopped working was the function keys to control screen brightness. I wasn't able to tweak it back but I can still control the brightness manually from the Terminal using commands like this:
 
 ```
 xbacklight -inc 20 # to increment
@@ -42,7 +42,7 @@ xbacklight -dec 20 # to decrement
 
 Then, the most annoying part: the NVIDIA Optimus card.
 
-Suspending the OS works flawlessly most of the time. I can just close the lid, open the other day and the battery stays reasonably at the same level. Kudos to the kernel team for supporting it.
+Suspending the OS works flawlessly most of the time. I can just close the lid, open it the next day and the battery stays reasonably at the same level. Kudos to the kernel team for supporting it.
 
 But the power management system turns off the NVIDIA GPU and I can't re-enable it after the machine wakes up, even if I reconnect to a power source. Whenever I try to run something through `optirun` (which forces the rendering through the NVIDIA GPU instead of the primary integrated Intel GPU) it errors out with this message:
 
@@ -62,8 +62,8 @@ $ lspci | grep "NVIDIA" | cut -b -8
 Then you need to edit `/etc/default/tlp` and add that PCI ID to be blacklisted from power management:
 
 ```
-# Exclude PCI(e) device adresses the following list from Runtime PM
-# (separate with spaces). Use lspci to get the adresses (1st column).
+# Exclude PCI(e) device addresses the following list from Runtime PM
+# (separate with spaces). Use lspci to get the addresses (1st column).
 #RUNTIME_PM_BLACKLIST="bb:dd.f 11:22.3 44:55.6"
 RUNTIME_PM_BLACKLIST="01:00.0"
 ```
@@ -80,11 +80,11 @@ This is what I figured out so far:
 * `optirun` is the command you use to make this bridge.
 * "NVIDIA" is what we call the official proprietary binaries. On Arch it's available on package "linux410-nvidia".
 * "Nouveau" is the open source driver, it uses Primus to make the bridge instead of `optirun`. I understand that you should avoid this driver for now if you need full performance and full compliance from the GPU.
-* ["Bumblebee"](https://wiki.archlinux.org/index.php/Bumblebee#Power_management) is a daemon used to enable and disable the NVIDIA GPU. You don't want it enabled all the time, specially when running on battery, to avoid draining it too fast.
+* ["Bumblebee"](https://wiki.archlinux.org/index.php/Bumblebee#Power_management) is a daemon used to enable and disable the NVIDIA GPU. You don't want it enabled all the time, especially when running on battery, to avoid draining it too fast.
 * ["bbswitch"](https://github.com/Bumblebee-Project/bbswitch) is the kernel module that does the low level ACPI calls to control the power state of the NVIDIA GPU card.
 * ["TLP"](https://github.com/linrunner/TLP) is the general Linux power management system, which controls every aspect of the machine's hardware, including the PCI devices (one of which is the NVIDIA card).
 
-The way I understand it, you don't want TLP to kick in and shut off the card, because if it does, then Bumblebee can't enable it back on when needed (through bbswitch). So you have to blacklist it's PCI device on TLP and let Bumblebee do it's job.
+The way I understand it, you don't want TLP to kick in and shut off the card, because if it does, then Bumblebee can't enable it back on when needed (through bbswitch). So you have to blacklist its PCI device on TLP and let Bumblebee do its job.
 
 If everything is working fine, then the NVIDIA GPU is turned off by default. You can check that it is off through bbswitch:
 

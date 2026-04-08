@@ -8,7 +8,7 @@ tags:
 draft: false
 ---
 
-Ruby on Rails is **big**. Twitter is **big**. And because of that they became easy targets for the media and the frustrated pundits wanting a few more pageviews. "Blaine Cook" was one of Twitter's developers and he kindly agreed to participate on one of my interviews. And, of course, he will answer the question _"Does Rails Scale?"_
+Ruby on Rails is **big**. Twitter is **big**. And because of that they became easy targets for the media and the frustrated pundits wanting a few more pageviews. "Blaine Cook" was one of Twitter's developers, and he kindly agreed to participate in one of my interviews. And, of course, he will answer the question _"Does Rails Scale?"_
 
 [![](http://s3.amazonaws.com/akitaonrails/assets/2008/6/17/2299866775_385f7af555.jpg)](http://www.flickr.com/photos/hyku/2299866775/)
 
@@ -53,17 +53,17 @@ But in reality it's a medium with far fewer publishers than blogging.
 
 He and **Noah Glass** (the founder of Odeo) created a small sub-company within Odeo to work on it, in spring 2006. Initially, I hated the idea, mostly because it was intended to be SMS-only.
 
-It's hard to say looking back, but at the time I'd say Twitter was a long shot; I think that it was successful had a lot to do with luck and openness.
+It's hard to say looking back, but at the time I'd say Twitter was a long shot; I think that its success had a lot to do with luck and openness.
 
 **AkitaOnRails:** So, maybe one of the biggest reasons for Twitter's success was also its Achilles' heels? I mean the paramount API based access it has today?
 
 **Blaine Cook:** Yes, absolutely.
 
-**AkitaOnRails:** So, getting to the hairy stuff, it quite is obvious that [Michael Arrington](http://www.techcrunch.com/2008/04/23/amateur-hour-over-at-twitter/) dislikes Twitter, period. And specially he has something [against you](http://www.alleyinsider.com/2008/4/lead_architect_blaine_cook_out_at_twitter) personally, at least considering the tone of his articles on Techcrunch. Can you comment on that?
+**AkitaOnRails:** So, getting to the hairy stuff, it is quite obvious that [Michael Arrington](http://www.techcrunch.com/2008/04/23/amateur-hour-over-at-twitter/) dislikes Twitter, period. And especially he has something [against you](http://www.alleyinsider.com/2008/4/lead_architect_blaine_cook_out_at_twitter) personally, at least considering the tone of his articles on Techcrunch. Can you comment on that?
 
 **Blaine Cook:** Not really; I don't know why he has a grudge. It's mildly annoying, but in the end it makes Techcrunch look more like a gossip rag and less like a respectable news outlet, so it's his loss.
 
-**AkitaOnRails:** And not only that but it also seems that some tech related news media wants to co-relate Twitter's instability with the fact that part of its front-end is powered by Ruby on Rails, hence the discussion _"Does Rails scale?"_. As a Railer this seems quite obvious that relating Rails and instability generates lots of pageviews. Do you think that's the case?
+**AkitaOnRails:** And not only that but it also seems that some tech related news media wants to correlate Twitter's instability with the fact that part of its front-end is powered by Ruby on Rails, hence the discussion _"Does Rails scale?"_. As a Railer this seems quite obvious that relating Rails and instability generates lots of pageviews. Do you think that's the case?
 
 **Blaine Cook:** I think that's at least part of it. Obviously page views are a huge draw.
 
@@ -81,7 +81,7 @@ Likewise, there are many techniques for making web sites more scalable, and most
 
 [![](http://s3.amazonaws.com/akitaonrails/assets/2008/6/17/2476619970_af72edc5ef.jpg)](http://www.flickr.com/photos/gavinbell/2476619970/)
 
-**AkitaOnRails:** Great explanation. Twitter was involved in some not very good controversy since last year, and I think you were not involved in most of them, but maybe you could shed some light on those issues as some people don't follow every news all the time. The first one being that interview where [Alex Payne](http://www.radicalbehavior.com/5-question-interview-with-twitter-developer-alex-payne/) complained about Rails not supporting multiple databases. **David Hansson** ranted about it. Then [Dr. Nic](http://drnicwilliams.com/2007/04/12/magic-multi-connections-a-facility-in-rails-to-talk-to-more-than-one-database-at-a-time/) came to the beginning of a solution. Can you explain this matter for our audience?
+**AkitaOnRails:** Great explanation. Twitter was involved in some not very good controversy since last year, and I think you were not involved in most of them, but maybe you could shed some light on those issues as some people don't follow every news story all the time. The first one being that interview where [Alex Payne](http://www.radicalbehavior.com/5-question-interview-with-twitter-developer-alex-payne/) complained about Rails not supporting multiple databases. **David Hansson** ranted about it. Then [Dr. Nic](http://drnicwilliams.com/2007/04/12/magic-multi-connections-a-facility-in-rails-to-talk-to-more-than-one-database-at-a-time/) came to the beginning of a solution. Can you explain this matter for our audience?
 
 **Blaine Cook:** Sure – it's true that Rails doesn't support multiple databases out of the box, but this is easily fixed. I think the interview with Alex didn't get into the details very well, and mis-represented our challenges.
 
@@ -121,7 +121,7 @@ The reality is that 10 years ago, people were building web applications with tcs
 
 **AkitaOnRails:** Where is Twitter hosted? For some reason I saw Engine Yard pitching a lot about scalability issues throughout the whole RailsConf this year. Do you think this whole "Rails doesn't scale" meme is making Railers worried about future prospects? Even though it was not supposed to scare that much as we do have higher traffic websites such as Scribd and YellowPages in the top of the list – though the architectures are world apart, of course. What do you think about this issue?
 
-**Blaine Cook:** I'm not sure, but I think Twitter actually does more traffic than YellowPages or Scribd; the API is a really killer.
+**Blaine Cook:** I'm not sure, but I think Twitter actually does more traffic than YellowPages or Scribd; the API is a real killer.
 
 **AkitaOnRails:** Ah, I see, Alexa and others don't account for API request, right?
 
@@ -151,7 +151,7 @@ On top of that, they're really flexible. We needed to build a denormalization to
 
 [![](http://s3.amazonaws.com/akitaonrails/assets/2008/6/17/440202833_77152b8080.jpg)](http://www.flickr.com/photos/niallkennedy/440202833/)
 
-**AkitaOnRails:** Finally can you tell us why you left Twitter? What are you new endeavors? Twitter survived WWDC last week which is saying a lot considering such huge events would usually bring it down in the past.
+**AkitaOnRails:** Finally can you tell us why you left Twitter? What are your new endeavors? Twitter survived WWDC last week which is saying a lot considering such huge events would usually bring it down in the past.
 
 **Blaine Cook:** I'm moving to the UK, and Twitter is / has moved into a position where their primary focus is reliability. When I left, the hope was that their system was stabilized, and the roadmap was clear as far as putting them in a better position overall. At the time, they'd had an extended period of uninterrupted uptime, and had survived with flying colours [SXSW](http://sxsw.com/). Unfortunately, it didn't last, but it looks like things are better again.
 
@@ -161,7 +161,7 @@ I'm not yet ready to reveal what's next, but I have a number of exciting things 
 
 **Blaine Cook:** Nope! I think the really rich landscape of tools that you can use to interact with Twitter on your own terms is a really big part of it. A lot of the users are personally invested, and they want to see that investment pay out.
 
-**AkitaOnRails:** Ok, I think this covers everything Any closing remarks for our young Brazilian Rails community?
+**AkitaOnRails:** Ok, I think this covers everything. Any closing remarks for our young Brazilian Rails community?
 
 **Blaine Cook:** The web is remarkably young, and there's plenty of space for really amazing things to happen. I'm always excited to see what people are working on, and what's possible with this whole Internet thing. For all of Arrington's petty and misinformed comments, I think sites like Techcrunch and [Mashable](http://www.mashable.com) and [Silicon Alley Insider](http://www.alleyinsider.com) are interesting because they present a never ending stream of amazing things that people are building on the web.
 
@@ -171,7 +171,7 @@ The bottom line is that there's plenty to do, and don't worry about scaling or b
 
 If you are passionate about what you're doing, there's a really good chance you'll figure the details out.
 
-**AkitaOnRails:** Fantastic! Thank you very much for you kindness, I am sure my audience will enjoy it. And just to let you know that we, Brazilians, **do** tweet a lot! :-) Thanks!
+**AkitaOnRails:** Fantastic! Thank you very much for your kindness, I am sure my audience will enjoy it. And just to let you know that we, Brazilians, **do** tweet a lot! :-) Thanks!
 
 **Blaine Cook:** Excellent, glad to hear! No problem, thanks for being a great interviewer.
 

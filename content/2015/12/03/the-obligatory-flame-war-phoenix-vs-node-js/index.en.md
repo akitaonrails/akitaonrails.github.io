@@ -15,7 +15,7 @@ draft: false
 
 I'll warn you upfront: this will be a very unfair post. Not only am I biased for disliking Javascript and Node.js, but at this moment, I am very excited and fascinated by Elixir and Erlang.
 
-Comparisons are always unfair. There is no such a thing as a "fair" synthetic benchmark comparison, the author is **always** biased towards some targetted result. It's the old pseudo-science case of having a conclusion and picking and choosing data that backs those conclusions. There are just too many different variables. People think it's fair when you run it in the same machine against 2 "similar" kinds of applications, but it is not. Please don't trust me on this as well, do your own tests.
+Comparisons are always unfair. There is no such thing as a "fair" synthetic benchmark comparison, the author is **always** biased towards some targeted result. It's the old pseudo-science case of having a conclusion and picking and choosing data that backs those conclusions. There are just too many different variables. People think it's fair when you run it in the same machine against 2 "similar" kinds of applications, but it is not. Please don't trust me on this as well, do your own tests.
 
 All that being said, let's have some fun, shall we?
 
@@ -50,7 +50,7 @@ Oh, and by the way, notice how Phoenix logs show the request processing times in
 
 ### The Real Fun
 
-Now comes the real fun. In this second run, I added a blocking "sleep" call to both projects, so each request will sleep for one full second, and this is not absurd. Many programmers will use poor code that blocks for that time, process too much data from the database, render templates that are too complex, and so on. Never trust a programmer to do the right best practices all the time.
+Now comes the real fun. In this second run, I added a blocking "sleep" call to both projects, so each request will sleep for one full second, and this is not absurd. Many programmers will use poor code that blocks for that time, process too much data from the database, render templates that are too complex, and so on. Never trust a programmer to follow best practices all the time.
 
 Then, I fire up Siege with ten concurrent connections and just one request each, for starters.
 
@@ -59,7 +59,7 @@ Then, I fire up Siege with ten concurrent connections and just one request each,
 Your browser does not support the video tag. [Direct Link](https://s3.us-east-2.amazonaws.com/blip.tv/Elixir/Node+1+x+10+Sleep.mp4)
 </source></video>
 
-This is why in my previous article" Why Elixir?" (http://www.akitaonrails.com/en/2015/12/01/o-obrigatorio-por-que-elixir-visao-pessoal), I repeated many times how **"rudimentary"** a Reactor pattern-based solution is. It is super easy to block a single-threaded event loop.
+This is why in my previous article "Why Elixir?" (http://www.akitaonrails.com/en/2015/12/01/o-obrigatorio-por-que-elixir-visao-pessoal), I repeated many times how **"rudimentary"** a Reactor pattern-based solution is. It is super easy to block a single-threaded event loop.
 
 If you didn't know that already, how does Node.js work? In summary, it is a simple infinite loop. When a Javascript function runs, it blocks that event loop. The function has to explicitly yield control back to the loop for another function to have a chance to run. I/O calls take time and just sit back idly waiting for a response, so it can yield control back and wait for a callback to continue running, which is why you end up with the dreaded _"callback pyramid hell"_.
 

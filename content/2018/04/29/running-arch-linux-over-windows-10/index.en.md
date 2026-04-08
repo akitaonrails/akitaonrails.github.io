@@ -18,11 +18,11 @@ Ok, anyone that has been reading my blog for the past year or two knows how I [e
 
 I am also still very much intrigued by the idea of Windows Subsystem for Linux (or WSL) which properly debuted in the [Windows 10 Anniversary Edition](http://www.akitaonrails.com/en/2016/07/26/o-ano-do-linux-no-desktop-esta-usavel) back in mid-2016.
 
-It's been almost 2 years and we're expecting some significant updates to WSL compatibility and performance for the next [Spring Creators Update](https://winaero.com/blog/command-line-wsl-improvements-windows-10-version-1803/) (or version 1803) scheduled to arrive on April 30, 2018. This brings it closer to make WSL actually usable for professional programmers. Just to give you an idea, right now you will have orders of magnitude better performance if you run your favorite Linux distro inside Virtualbox or VMWare Workstation.
+It's been almost 2 years and we're expecting some significant updates to WSL compatibility and performance for the next [Spring Creators Update](https://winaero.com/blog/command-line-wsl-improvements-windows-10-version-1803/) (or version 1803) scheduled to arrive on April 30, 2018. This brings it closer to making WSL actually usable for professional programmers. Just to give you an idea, right now you will have orders of magnitude better performance if you run your favorite Linux distro inside Virtualbox or VMWare Workstation.
 
-Moreover, out of the box the "Bash for Windows" proper only officially supports Ubuntu, Fedora, and OpenSuse I guess. Most people will just install Ubuntu. And it works ok. For a toy and cool demonstration purposes, it works. But it really frustrates me that I can do so much but I can't actually use it as my daily driver. It's like being able to carry the fully built prototype of the next iPhone but no 4G support yet. So it's just a toy.
+Moreover, out of the box the "Bash for Windows" proper only officially supports Ubuntu, Fedora, and OpenSuse I guess. Most people will just install Ubuntu. And it works ok. For toy and cool demonstration purposes, it works. But it really frustrates me that I can do so much but I can't actually use it as my daily driver. It's like being able to carry the fully built prototype of the next iPhone but no 4G support yet. So it's just a toy.
 
-Bear with me here, if you want to just see how is the performance compared to my VMWare setup, go straight to the end of the article.
+Bear with me here, if you just want to see how the performance compares to my VMWare setup, go straight to the end of the article.
 
 Anyway, in the case of distros. Serious Linux users would prefer better alternatives. Enter this GitHub repository:
 
@@ -66,7 +66,7 @@ su your_user
 
 Next up, let's install Yaourt so we can use it to install Pacaur (this is a personal preference, you can just use Yaourt. I think Yaourt prompts too much, that's why I prefer Pacaur).
 
-Start by editing your `/etc/pacman.conf` file with your favorite editors like vim or nano.
+Start by editing your `/etc/pacman.conf` file with your favorite editor like vim or nano.
 
 Just add the following section to the very bottom of the file:
 
@@ -85,7 +85,7 @@ wget https://github.com/yuk7/arch-prebuilt/releases/download/17121600/fakeroot-t
 sudo pacman -U fakeroot-tcp-1.22-1-x86_64.pkg.tar.xz
 ```
 
-And that's it for now! Until WSL add proper support for SYSV IPC, we can use this. Yaourt itself will probably prompt you to install `fakeroot-tcp` on top of it, just let it.
+And that's it for now! Until WSL adds proper support for SYSV IPC, we can use this. Yaourt itself will probably prompt you to install `fakeroot-tcp` on top of it, just let it.
 
 As I said, Yaourt is quite verbose in its many prompts for confirmations. Rule of thumb, whenever it prompts if you want to edit anything, just say "N"(o). Whenever it prompts you if you want to build or install something, just say "Y"(es). If you got annoyed with me, do this:
 
@@ -111,7 +111,7 @@ I prefer to have a full-on GNOME 3 environment, so I just do:
 sudo pacman -S gnome
 ```
 
-Again, let it install everything it wants. Everybody has a different taste when it comes to GUIs, some prefer KDE5, other prefer XFCE4. Some even go as far as using the tile-based GUI [i3](https://i3wm.org/).
+Again, let it install everything it wants. Everybody has a different taste when it comes to GUIs, some prefer KDE5, others prefer XFCE4. Some even go as far as using the tile-based GUI [i3](https://i3wm.org/).
 
 That requires some serious adapting. It's for people that like to do stuff like using a tenkeyless keyboard with nothing written in the keycaps and using an alien layout like  DVORAK or [Colemak](https://colemak.com/) (yikes!). Taste is taste. And I dare you to become a touch typist using [Maltron](https://www.maltron.com/the-maltron-letter-layout-advantage.html), I double dare ya! :-D
 
@@ -170,7 +170,7 @@ asdf install nodejs 10.0.0
 asdf global nodejs 10.0.0
 ```
 
-Ruby benefits with jemalloc to allocate less system memory. I have no idea if it impacts WSL but let's do it anyway:
+Ruby benefits from jemalloc to allocate less system memory. I have no idea if it impacts WSL but let's do it anyway:
 
 ```
 sudo pacman -S jemalloc
@@ -253,7 +253,7 @@ Now we can do: `foreman start -f Procfile.dev` and all services will start prope
 
 My daily driver is Manjaro GNOME under VMWare Workstation Pro on my Surface Book 2. I give it 6 threads out of the 8 and a hefty 12GB of RAM out of the total 16GB (damn Microsoft, we need more RAM nowadays that the cool kids deploy stupid ass Apps with heavy JS/CSS coating that eats up all available RAM).
 
-In the project I am currently working, my full RSpec suite is a bit on the slow side. For this comparison, I am skipping all my feature specs as I am in no mood to tweak chrome-driver to work in WSL (probably runs, but let's have it another day).
+In the project I am currently working on, my full RSpec suite is a bit on the slow side. For this comparison, I am skipping all my feature specs as I am in no mood to tweak chrome-driver to work in WSL (probably runs, but let's have it another day).
 
 ```
 Finished in 12 minutes 8 seconds (files took 14.58 seconds to load)
@@ -262,7 +262,7 @@ Finished in 12 minutes 8 seconds (files took 14.58 seconds to load)
 531,34s user 127,56s system 88% cpu 12:24,99 total
 ```
 
-In this comparable WSL environment, I have just installed, I am running the exact same RSpec suite, and this is what I get:
+In this comparable WSL environment I have just installed, I am running the exact same RSpec suite, and this is what I get:
 
 ```
 Finished in 13 minutes 43 seconds (files took 3 minutes 16.8 seconds to load)
@@ -290,7 +290,7 @@ You "can" use WSL as your daily driver. But if I can have a smoother experience 
 
 ### Conclusion
 
-I will actually hold my conclusions until tomorrow (April 30) or later this week, because if the Spring Creators Update actually fixes some performance issues. Then I can see myself using this instead of my VMWare Workstation install of Manjaro GNOME.
+I will actually hold my conclusions until tomorrow (April 30) or later this week, because if the Spring Creators Update actually fixes some performance issues, then I can see myself using this instead of my VMWare Workstation install of Manjaro GNOME.
 
 It may not come in this big update, but I have word that they are working on the outstanding I/O performance issues. So it's right around the corner.
 

@@ -46,18 +46,18 @@ Some of the problems for newcomers:
 
 * The documentation is _very_ extensive, and you will find _almost_ everything - if you know what you are looking for. Also bear in mind that Azure and AWS also implement Kubernetes with some differences, so some documentation doesn't apply to Google Cloud and vice-versa.
 * There are many features in alpha, beta, and stable stages. The documentation kinda keeps up well, but most tutorials that are just a couple months old may not work as intended anymore (this one included - I am assuming Kubernetes 1.8.4-gke).
-* There is a whole set of words that apply to concepts you already know but are called different. Getting used to the vocabulary may get in the way at first.
+* There is a whole set of words that apply to concepts you already know but are called differently. Getting used to the vocabulary may get in the way at first.
 * It feels like you're playing with Lego. Lots of pieces that you can mix and match. It's easy to mess up. This means that you can build a configuration tailored to your needs. But if you just copy and paste from tutorials you **will** get stuck.
 * You can do _almost_ everything through YAML files and the command line, but it's not trivial to reuse the configuration (for production and staging environments, for example). There are 3rd party tools that deal with parameterizable and reusable YAML bits, but I'd do it all by hand first. Never, ever, try automated templates in infrastructure without knowing exactly what they are doing.
-* You have 2 _fat_ command line tools: `gcloud` and `kubectl`, and the confusing part is that they name some things different even though they are the same "things". At least, `kubectl` is close to `docker`, if you're familiar with that.
+* You have 2 _fat_ command line tools: `gcloud` and `kubectl`, and the confusing part is that they name some things differently even though they are the same "things". At least, `kubectl` is close to `docker`, if you're familiar with that.
 
 Once again, this is **NOT** a step-by-step tutorial. I will annotate a few steps but not everything.
 
 ### Scalable Web-Tier (the Web App itself)
 
-The very first thing you must have is a fully 12-factors compliant web app.
+The very first thing you must have is a fully 12-factor compliant web app.
 
-Be it Ruby on Rails, Django, Laravel, Node.js or whatever. It must be a fully shared-nothing app, that does not depend on writing anything to the local filesystem. One that you can easily shutdown and startup instances independently. No old-style session in local memory or in local files (I prefer to avoid session affinity). No uploads to the local filesystem (if you must, you will have to mount an external persistent storage), always prefer to send binary streams to managed storage services.
+Be it Ruby on Rails, Django, Laravel, Node.js or whatever. It must be a fully shared-nothing app, that does not depend on writing anything to the local filesystem. One where you can easily shut down and start up instances independently. No old-style session in local memory or in local files (I prefer to avoid session affinity). No uploads to the local filesystem (if you must, you will have to mount an external persistent storage), always prefer to send binary streams to managed storage services.
 
 You must have a proper [pipeline that outputs cache-busting through fingerprinting assets](https://tomanistor.com/blog/cache-bust-that-asset/) (and like it or not, Rails still has the best out-of-the-box solution in its Asset Pipeline). You don't want to worry about manually busting caches in CDNs.
 
@@ -154,7 +154,7 @@ Make sure your Ruby on Rails application doesn't have anything in the initialize
 
 Also, make sure the Ruby version in the `Dockerfile` matches the one in `Gemfile`, otherwise it will also fail.
 
-Notice the weird `config/application.yml` above? This is from [figaro](https://github.com/laserlemon/figaro). I also recommend you using something to make it easy to configure ENV variable in your system. I don't like Rails secrets, and it's not exactly friendly to most deployment systems after Heroku made ENV vars ubiquitous. Stick to ENV vars. Kubernetes will also thank you for that.
+Notice the weird `config/application.yml` above? This is from [figaro](https://github.com/laserlemon/figaro). I also recommend you using something to make it easy to configure ENV variables in your system. I don't like Rails secrets, and it's not exactly friendly to most deployment systems after Heroku made ENV vars ubiquitous. Stick to ENV vars. Kubernetes will also thank you for that.
 
 Now, you can override any ENV variable from the Kubernetes Deployment YAML file. Now it's a good time to show an example of that. You can name it `deploy/web.yml` or whatever suits your fancy and - of course - check it into your source code repository.
 
@@ -275,7 +275,7 @@ Read the documentation as you can load text files instead of declaring everythin
 
 As I said before, I'd rather use a managed service for a database. You can definitely load your own Docker image, but I really don't recommend it. Same goes for other database-like services such as Redis, Mongo. If you're from AWS, [Google Cloud SQL](https://cloud.google.com/sql/docs/postgres/) is like RDS.
 
-After you create your PostgreSQL instance you can't access it directly from the web application. At the end, you have a boilerplate for a second Docker image, a ["CloudSQL Proxy"](https://cloud.google.com/sql/docs/mysql/connect-kubernetes-engine). 
+After you create your PostgreSQL instance you can't access it directly from the web application. In the end, you have a boilerplate for a second Docker image, a ["CloudSQL Proxy"](https://cloud.google.com/sql/docs/mysql/connect-kubernetes-engine). 
 
 For that to work you must first create a Service Account:
 
@@ -613,7 +613,7 @@ kubectl create -f deploy/nginx-svc.yml
 kubectl create -f deploy/ingress.yml
 ```
 
-This NGINX Ingress configuration is based off of [Zihao Zhang's blog post](https://zihao.me/post/cheap-out-google-container-engine-load-balancer/). There is also examples in the [kubernetes incubator repository](https://github.com/kubernetes-incubator/external-dns/blob/master/docs/tutorials/nginx-ingress.md). You may want to check it out as well.
+This NGINX Ingress configuration is based off of [Zihao Zhang's blog post](https://zihao.me/post/cheap-out-google-container-engine-load-balancer/). There are also examples in the [kubernetes incubator repository](https://github.com/kubernetes-incubator/external-dns/blob/master/docs/tutorials/nginx-ingress.md). You may want to check it out as well.
 
 If you did everything right so far, `https://www.my-app-com.br` should load your web application. You may want to check for Time to First-Byte (TTFB). You can do it going through CloudFlare like this:
 
@@ -648,7 +648,7 @@ kubectl get pods # to get a pod name
 
 kubectl exec -it my-web-12324-121312 /app/bin/rails db:migrate
 
-# you can also bash to a pod like this, but remember that this is an ephemeral container, so file you edit and write there disappear on the next restart:
+# you can also bash to a pod like this, but remember that this is an ephemeral container, so files you edit and write there disappear on the next restart:
 
 kubectl exec -it my-web-12324-121312 bash
 ```
@@ -663,7 +663,7 @@ You will find a more thorough explanation in [Ta-Ching's](https://tachingchen.co
 
 ## Bonus: Auto Snapshots
 
-One item I had in my "I wanted/needed" list, in the beginning, is the ability to have persistent mountable storage with automatic backups/snapshots. Google Cloud provides half of that for the time being. You can create persistent disks to mount in your pods but it doesn't have a feature to automatically backup it. At least it does have APIs to manually snapshot it.
+One item I had in my "I wanted/needed" list, in the beginning, is the ability to have persistent mountable storage with automatic backups/snapshots. Google Cloud provides half of that for the time being. You can create persistent disks to mount in your pods but it doesn't have a feature to automatically back it up. At least it does have APIs to manually snapshot it.
 
 For this example, let's create a new SSD disk and format it first:
 
@@ -763,4 +763,4 @@ As I said, in the beginning, this is not a complete procedure, just highlights o
 
 I think this is also already too long to add a [multi-region High Availability](https://cloud.google.com/sql/docs/mysql/high-availability) setup explanation, so let's leave it at that.
 
-Any corrections or suggestions are more than welcome as I am still in the learning process, and there is a ton of things that I still don't know myself.
+Any corrections or suggestions are more than welcome as I am still in the learning process, and there are a ton of things that I still don't know myself.

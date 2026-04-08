@@ -14,7 +14,7 @@ As I promised after the [Avi Bryant](http://www.akitaonrails.com/en/2007/12/15/c
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2007/12/31/387373570_870fa6257c.jpg)
 
-For me this is an important piece because I always say that technology doesn’t have to be about divorce. Technology is about integration. I am a full-time Ruby on Rails developer and evangelist, but above all, I try to be a ‘good’ programmer. And good programmers acknowledge good technology and their creators achievements. And Adrian’s Django is such a remarkable achievement that deserves the attention and success.
+For me this is an important piece because I always say that technology doesn’t have to be about divorce. Technology is about integration. I am a full-time Ruby on Rails developer and evangelist, but above all, I try to be a ‘good’ programmer. And good programmers acknowledge good technology and their creators’ achievements. And Adrian’s Django is such a remarkable achievement that deserves its attention and success.
 
 So, as my very first post of the year (published at 0:01hs!), I would like to celebrate the great minds of our ‘development’ community, wishing that the good developers use their time creating great technology instead of wasting it in useless flame wars.
 
@@ -37,7 +37,7 @@ So I ended up finding a way to combine journalism/news and computer programming,
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2007/12/31/247456700_94dbcdbf86.jpg)
 
-**AkitaOnRails:** And, of course, how did you met and fell in love with Python?
+**AkitaOnRails:** And, of course, how did you meet and fall in love with Python?
 
 **Adrian:** My Web development path was (I think) pretty typical, at least based on the experiences of my friends and colleagues. I originally learned how to write Perl CGI scripts in a college Web development course. Then I taught myself PHP because somebody recommended it to me.
 
@@ -47,13 +47,13 @@ We immediately fell in love with Python. And when I say “immediately,” I rea
 
 So Simon and I decided that, from then on, we were going to code everything in Python. That’s one of the perks of working for a small Web development shop — we could make those kinds of snap decisions! ï¿¼
 
-**AkitaOnRails:** I was first introduced to Python around 2000 as well. But it was through web development using [Zope](http://www.zope.org/). I think it got a lot of attention at the time. Did you ever tried it?
+**AkitaOnRails:** I was first introduced to Python around 2000 as well. But it was through web development using [Zope](http://www.zope.org/). I think it got a lot of attention at the time. Did you ever try it?
 
 **Adrian:** No, I never tried Zope. Still, to this day, I’ve never tried it. And I’ve been told that’s a good thing, because evidently it turned some people off of Python back then, for whatever reason. (Their newest version is supposed to be a ton better, but I haven’t tinkered with it, either.)
 
-**AkitaOnRails:** You’re right, and it is kind of amusing because a lot of pythonists from Brazil still use [Plone](http://plone.org/) (I think it evolved from Zope but I didn’t try it as well). So, We all know that Django was born out of necessity when you were developing websites for World Online. Please describe how did you begin there and how is the everyday work there. Maybe what led you to Django during your work day?
+**AkitaOnRails:** You’re right, and it is kind of amusing because a lot of pythonists from Brazil still use [Plone](http://plone.org/) (I think it evolved from Zope but I haven’t tried it either). So, We all know that Django was born out of necessity when you were developing websites for World Online. Please describe how you began there and what the everyday work is like. Maybe what led you to Django during your work day?
 
-**Adrian:** Sure! Well, generally when people think of newspapers, they think of crotchety, old-fashioned editors and reporters scribbling in paper notebooks with pencils. This Kansas newspaper that I worked at was the completely opposite of that. It’s beyond the scope of this interview, but for a number of reasons that newspaper Web site attracted (and still attracts, to this day) a really great development team – one that I would stack up against any team 10 times its size.
+**Adrian:** Sure! Well, generally when people think of newspapers, they think of crotchety, old-fashioned editors and reporters scribbling in paper notebooks with pencils. This Kansas newspaper that I worked at was the complete opposite of that. It’s beyond the scope of this interview, but for a number of reasons that newspaper Web site attracted (and still attracts, to this day) a really great development team — one that I would stack up against any team 10 times its size.
 
 We were doing “Web 2.0” stuff back in 2002 and 2003, and we were building Web apps in days, not weeks or months. This was mostly due to the journalism environment – newspaper people like deadlines. ï¿¼
 
@@ -63,7 +63,7 @@ We didn’t set about to make a framework – it was a very classic, clichÃ©d 
 
 We kept doing this – extracting and extracting, based on each new Web application that we created – and eventually we had a framework.
 
-**AkitaOnRails:** As a side-note, actually this is kind of interesting! I would love to hear what do you think World Online has that attracts good developers like yourself there! Just a summary would be ok. That’s the kind of insight brazilian companies have to learn better. Letting you do Python is probably one of them ï¿¼
+**AkitaOnRails:** As a side-note, actually this is kind of interesting! I would love to hear what do you think World Online has that attracts good developers like yourself! Just a summary would be ok. That’s the kind of insight brazilian companies have to learn better. Letting you do Python is probably one of them ï¿¼
 
 **Adrian:** Yeah, it kind of comes down to **empowering the employees**. My boss, who led the Web team, delegated all the technology decisions to me and Simon. That kind of culture really encourages quality work, because it makes everybody on the team more invested.
 
@@ -79,7 +79,7 @@ Let me give you an example of an abstraction: creating an RSS feed.
 
 When you create an RSS feed, you don’t want to have to deal with remembering angle brackets, and the exact formatting of the feed — you just care about the items in the feed. So Django provides a very simple library that lets you give it a bunch of items and creates a feed from them.
 
-So that’s an obvious example, but what really excite me are the higher-level abstractions, like the concept of an “admin site.” Django comes with a completely dynamic application that makes a beautiful, production-ready CRUD site for your database. There’s no code to write – it’s only a small bit of optional configuration.  
+So that’s an obvious example, but what really excites me are the higher-level abstractions, like the concept of an “admin site.” Django comes with a completely dynamic application that makes a beautiful, production-ready CRUD site for your database. There’s no code to write – it’s only a small bit of optional configuration.  
 There’s also something called [**Databrowse**](http://www.djangoproject.com/documentation/databrowse/), which is an abstraction of the concept _“Show me my data, as intelligent hypertext.”_
 
 So whenever I’m explaining Django to someone, I always end up saying, _“It’s just a bunch of abstractions of common Web development tasks”_ – from low-level HTTP wrapping to higher – and higher-level concepts. The higher you get, the more productive you can be. I apologize if this is too conceptual!
@@ -107,7 +107,7 @@ Here are your current options: You can drop into the psql or mysql prompts and r
 
 Databrowse automatically creates a Web site that displays your data, so you can click around to your heart’s content.
 
-The other thing it does is pointing out interesting, non-obvious queries. For example, if you have a table that has a DATE column in it, it will automatically create a calendar view of that table.
+The other thing it does is point out interesting, non-obvious queries. For example, if you have a table that has a DATE column in it, it will automatically create a calendar view of that table.
 
 The point isn’t for people to use this to make public-facing sites – the point is for people to use this to explore their own data, with no effort required.
 
@@ -119,7 +119,7 @@ Derek didn’t want to have to hand-roll a Web app each time he got a new datase
 
 This comes back to what I was saying earlier about high-level abstractions. Databrowse is a particular type of abstraction, and it’s really cool that we include something like that for people to use, if they need it.
 
-**AkitaOnRails:** Sounds great, I am looking forward to use it. In a degree it feels like [Dabble Db](http://dabbledb.com) – albeit inside your own app. I think you already met [Avi Bryant](http://www.akitaonrails.com/en/2007/12/15/conversando-com-avi-bryant-parte-1) ? I just interviewed him and it was a very insightful conversation. Have you ever tried Seaside? (out of curiosity I have a photo of you and Avi looking at his macbook sitting down in the grass, what was that?)
+**AkitaOnRails:** Sounds great, I am looking forward to using it. In a degree it feels like [Dabble Db](http://dabbledb.com) – albeit inside your own app. I think you already met [Avi Bryant](http://www.akitaonrails.com/en/2007/12/15/conversando-com-avi-bryant-parte-1) ? I just interviewed him and it was a very insightful conversation. Have you ever tried Seaside? (out of curiosity I have a photo of you and Avi looking at his macbook sitting down in the grass, what was that?)
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2007/12/19/627957460_48e4181526.jpg)
 

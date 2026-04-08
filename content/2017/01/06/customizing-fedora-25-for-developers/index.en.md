@@ -12,7 +12,7 @@ draft: false
 
 **Update 01/18/2017:** Right after trying out Fedora for a few days, I decided to [try Arch Linux](http://www.akitaonrails.com/en/2017/01/10/arch-linux-a-melhor-distro-de-todas) and I couldn't be happier. I recommend you try Arch too, it will probably surprise you. You may be also interested about [advanced Linux tuning for better responsiveness](http://www.akitaonrails.com/en/2017/01/17/otimizando-o-linux-para-computadores-lentos) on the desktop.
 
-I've been a long time Ubuntu user. Whenever I need to setup a Linux box I go to straight to the latest LTS. Muscle memory, can't avoid it.
+I've been a long time Ubuntu user. Whenever I need to set up a Linux box I go straight to the latest LTS. Muscle memory, can't avoid it.
 
 But to replace my macOS, Unity is damn ugly, honest. I tried to customize Cinnamon and I almost liked it, and don't even get me started on KDE or XFCE.
 
@@ -22,13 +22,13 @@ I've been curious about all the fuss surrounding the phase out of X.org into Way
 
 The best distro I could find with those in mind is good old Fedora. RedHat (4) was the second Linux distro I tried after Slackware 1 back in the mid-90's. I come back and leave every couple of years. It's a good time to try it again.
 
-The TL;DR is that I am quite delighted with [Fedora 25](https://getfedora.org/en/workstation/download/). It does almost everything I need very right out of the box.
+The TL;DR is that I am quite delighted with [Fedora 25](https://getfedora.org/en/workstation/download/). It does almost everything I need right out of the box.
 
 ![Fedora 25](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/578/big_Screenshot_from_2017-01-06_16-58-17.png)
 
-I dusted off a 4 years old Lenovo ThinkCentre Edge 71z Tower desktop and Lenovo IdeaPad G400s notebook. They are, respectivelly, a 2nd generation Core i5 SandyBridge 2.5Ghz and Core i3 2.4Ghz, with 8GB of RAM in the Tower and 4GB of RAM in the notebook. For a developer's routine, they are quite good enough. A better CPU wouldn't do a whole lot.
+I dusted off a 4-year-old Lenovo ThinkCentre Edge 71z Tower desktop and Lenovo IdeaPad G400s notebook. They are, respectively, a 2nd generation Core i5 SandyBridge 2.5Ghz and Core i3 2.4Ghz, with 8GB of RAM in the Tower and 4GB of RAM in the notebook. For a developer's routine, they are quite good enough. A better CPU wouldn't do a whole lot.
 
-I was very happy to see that this old tower has an old Intel graphics card with a DVI port. Fortunatelly I had an old DVI-to-HDMI cable around and I was able to hook it up to my ultrawide LG monitor 21:9 (2560x180) and it properly scaled everything (macOS Sierra had a regression that required a hack to make it work!)
+I was very happy to see that this old tower has an old Intel graphics card with a DVI port. Fortunately I had an old DVI-to-HDMI cable around and I was able to hook it up to my ultrawide LG monitor 21:9 (2560x180) and it properly scaled everything (macOS Sierra had a regression that required a hack to make it work!)
 
 What hurts a lot are the super slow mechanical hard drives (7200rpm and 5400rpm). I just ordered a RAM upgrade and 2 Crucial MX300 compatible SSD drives. When those arrive, I will have the snappiness I need.
 
@@ -73,7 +73,7 @@ And that's it, a lot of dependencies but as it's pre-1.0 I believe they will imp
 
 ### Ruby and Node.js support
 
-Rubyists have a number of Rubies version control, but I personally like RVM. First, we need to install some [other requirements](http://www.socialquesting.com/blog/octopress-installation-fedora-25/) and go on with it:
+Rubyists have a number of Ruby version managers, but I personally like RVM. First, we need to install some [other requirements](http://www.socialquesting.com/blog/octopress-installation-fedora-25/) and go on with it:
 
 ```
 sudo dnf -y install patch autoconf gcc-c++ patch libffi-devel automake libtool bison sqlite-devel ImageMagick-devel nodejs git gitg
@@ -83,7 +83,7 @@ curl -L https://get.rvm.io | bash -s stable --ruby
 sudo npm -g install brunch phantomjs
 ```
 
-There you go, you should have the lastest stable Ruby, Node, Npm and useful tools such as Brunch (required if you want to build Elixir-Phoenix web apps) and PhantomJS for automated acceptance tests in many languages
+There you go, you should have the latest stable Ruby, Node, Npm and useful tools such as Brunch (required if you want to build Elixir-Phoenix web apps) and PhantomJS for automated acceptance tests in many languages.
 
 Notice that we're installing Git, the optional [GitG](https://git.gnome.org//browse/gitg) which is a fantastic companion to your Git routine.
 
@@ -109,7 +109,7 @@ Change `youruser` for the username of your current user account, of course.
 
 ### Java support
 
-This is easy, let's install the lastest [OpenJDK 8](http://www.2daygeek.com/install-java-openjdk-6-7-8-on-ubuntu-centos-debian-fedora-mint-rhel-opensuse-manjaro-archlinux/#) and web browser plugins.
+This is easy, let's install the latest [OpenJDK 8](http://www.2daygeek.com/install-java-openjdk-6-7-8-on-ubuntu-centos-debian-fedora-mint-rhel-opensuse-manjaro-archlinux/#) and web browser plugins.
 
 ```
 sudo dnf -y install java-1.8.0-openjdk icedtea-web
@@ -143,7 +143,7 @@ mix archive.install https://github.com/phoenixframework/archives/raw/master/phoe
 
 The problem is that packages for distros such as Fedora can take time to come out. For example, Elixir 1.4 has been out for a couple of days, but no upgrades for Fedora yet.
 
-Another problem if you're professionally developing Elixir projects is that you will need an Elixir version control, because you will end up getting client projects in different Elixir versions and you need to setup your environment accordingly. That's where [asdf](https://github.com/asdf-vm/asdf) comes in. You can follow [this gist](https://gist.github.com/rubencaro/6a28138a40e629b06470) but I will paste the important bits here:
+Another problem if you're professionally developing Elixir projects is that you will need an Elixir version manager, because you will end up getting client projects in different Elixir versions and you need to setup your environment accordingly. That's where [asdf](https://github.com/asdf-vm/asdf) comes in. You can follow [this gist](https://gist.github.com/rubencaro/6a28138a40e629b06470) but I will paste the important bits here:
 
 ```
 sudo dnf -y install make automake gcc gcc-c++ kernel-devel git wget openssl-devel ncurses-devel wxBase3 wxGTK3-devel m4
@@ -167,9 +167,9 @@ asdf global erlang 19.0
 asdf global elixir 1.4.0
 ```
 
-Compiling Erlang from source will take a humongous ammount of time, specially if you're using old CPUs like me. But this is how you both have access to the latest and greatest Elixir while also having the ability to choose older versions for client projects.
+Compiling Erlang from source will take a humongous amount of time, especially if you're using old CPUs like me. But this is how you both have access to the latest and greatest Elixir while also having the ability to choose older versions for client projects.
 
-By the way, you can install additional asdf plugins to version control other platforms such as Go, Rust, Node, Julia and many others. Check out [their project page](https://github.com/asdf-vm/asdf) for more details.
+By the way, you can install additional asdf plugins to manage versions of other platforms such as Go, Rust, Node, Julia and many others. Check out [their project page](https://github.com/asdf-vm/asdf) for more details.
 
 ### Docker Support
 
@@ -190,7 +190,7 @@ Once you have everything in place, let's configure the non-terminal aspects for 
 
 ![Terminator](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/579/Screenshot_from_2017-01-06_16-59-53.png)
 
-Speaking of terminals, you will want to install [Terminator](https://gnometerminator.blogspot.com.br/p/introduction.html). I really don't like using screen or tmux in my local machine (I can't get around those key bindings). I am more used to iTerm2 on macOS and Terminator is pretty much the same thing with similar key bindings. You definitelly need to replace the default terminal for this one.
+Speaking of terminals, you will want to install [Terminator](https://gnometerminator.blogspot.com.br/p/introduction.html). I really don't like using screen or tmux in my local machine (I can't get around those key bindings). I am more used to iTerm2 on macOS and Terminator is pretty much the same thing with similar key bindings. You definitely need to replace the default terminal for this one.
 
 ```
 sudo dnf -y install terminator
@@ -224,7 +224,7 @@ You will also want to edit `~/.config/terminator/config` and add the following t
     cursor_color = "#eee8d5"
 ```
 
-Another great options that was recommended to me is [Terminix](https://copr.fedorainfracloud.org/coprs/heikoada/terminix/). This is how you install it:
+Another great option that was recommended to me is [Terminix](https://copr.fedorainfracloud.org/coprs/heikoada/terminix/). This is how you install it:
 
 ```
 sudo dnf copr enable heikoada/terminix
@@ -328,24 +328,24 @@ EOF
 
 ### Conclusion
 
-Most of everything you need is web based, so Gmail, Slack, all work just fine. Fire up Chromium, Firefox or install [Franz](http://meetfranz.com/) or [WMail](http://thomas101.github.io/wmail/) if you have to. Unfortunatelly everything that is web based consumes a lot of RAM, and this is really bad. I do miss good old, slim, native apps. Web-based apps are a huge hassle.
+Most of everything you need is web based, so Gmail, Slack, all work just fine. Fire up Chromium, Firefox or install [Franz](http://meetfranz.com/) or [WMail](http://thomas101.github.io/wmail/) if you have to. Unfortunately everything that is web based consumes a lot of RAM, and this is really bad. I do miss good old, slim, native apps. Web-based apps are a huge hassle.
 
 They "work", but I'd rather have a good native app. On the other hand, Dropbox and Skype have really terrible client apps. They are very poorly maintained, full of bugs, and terrible support. I'd rather not have them.
 
 I was trying to get used to Thunderbird while on Ubuntu. Geary is still not good enough. But I was surprised when I tried Evolution again. It has the only thing I really want from any email client: a damn shortcut to move emails to folders: Ctrl-Shift-V (!!) How hard can that be??
 
-Gnome 3 has a global Online Accounts repository in the Settings where you can register social networks such as Facebook and Google, but the Google support is [buggy](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=820913). It expires everytime, so don't use Evolution with it. Add the Imap/Smtp information manually instead. Email and Calendar data is properly synced that way.
+Gnome 3 has a global Online Accounts repository in the Settings where you can register social networks such as Facebook and Google, but the Google support is [buggy](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=820913). It expires every time, so don't use Evolution with it. Add the Imap/Smtp information manually instead. Email and Calendar data is properly synced that way.
 
-You should have all your password in a LastPass account by now. Authy is a Chrome extension, so your multi-factor authentication should also just work.
+You should have all your passwords in a LastPass account by now. Authy is a Chrome extension, so your multi-factor authentication should also just work.
 
 My personal bank and investment companies, with their ugly Java applets, work just fine with Chromium and IcedTea, so I'm ok there too.
 
-I just have to figure out the easiest backup strategy to have everything really secure. On the installation process, do not forget to choose the encrypted partition option - and if you do, definitelly backup your data regularly as I've heard of bugs during upgrades that made the encrypted partitions inaccessible. Be secure and also be careful.
+I just have to figure out the easiest backup strategy to have everything really secure. On the installation process, do not forget to choose the encrypted partition option - and if you do, definitely back up your data regularly as I've heard of bugs during upgrades that made the encrypted partitions inaccessible. Be secure and also be careful.
 
-As usual, from my macOS the only 2 things I will really miss is Apple Keynote (it's really amazing as no one was able to make a slick and fast presentation tool as good as Keynote) and iMovie for quick video editing (although [Kdenlive](https://kdenlive.org/) is a very good alternative).
+As usual, from my macOS the only 2 things I will really miss are Apple Keynote (it's really amazing as no one was able to make a slick and fast presentation tool as good as Keynote) and iMovie for quick video editing (although [Kdenlive](https://kdenlive.org/) is a very good alternative).
 
 You even have built-in [shortcuts](https://wiki.gnome.org/Gnome3CheatSheet) to screen capture a window or an area and [record a screencast](https://fedoramagazine.org/taking-screencast-fedora/)!
 
 Compared to my Ubuntu configuration, this Fedora 25 is really a pleasure to use. A competent macOS replacement. I highly recommend it!
 
-And as I said at the update in the beginning of the post. Do check out [Arch Linux](http://www.akitaonrails.com/en/2017/01/10/arch-linux-a-melhor-distro-de-todas) and how to [optimize your distro to be more responsiveness](http://www.akitaonrails.com/en/2017/01/17/otimizando-o-linux-para-computadores-lentos), particularly on old hardware.
+And as I said at the update in the beginning of the post. Do check out [Arch Linux](http://www.akitaonrails.com/en/2017/01/10/arch-linux-a-melhor-distro-de-todas) and how to [optimize your distro to be more responsive](http://www.akitaonrails.com/en/2017/01/17/otimizando-o-linux-para-computadores-lentos), particularly on old hardware.

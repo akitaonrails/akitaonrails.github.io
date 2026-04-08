@@ -23,7 +23,7 @@ The real "Year of Linux on the Desktop" is still not here. It's getting closer a
 
 Back in early 2016 Microsoft announced and launched a very alpha version of their current Windows Subsystem for Linux (WSL). It booted and ran some software, but it was awfully buggy. Fair enough as it was still an Insider preview only (by the way, avoid Insider Preview builds, they BSOD all the time as it's in active development).
 
-A year has passed, and we got to the Windows 10 Anniversary Update and, finally, the so anticipated **Creators Update**. This is very polished in comparison.
+A year has passed, and we got to the Windows 10 Anniversary Update and, finally, the much-anticipated **Creators Update**. This is very polished in comparison.
 
 If you're unaware of what the WSL is, I highly recommend that you read the [articles at Microsoft's Developer Blog](https://blogs.msdn.microsoft.com/wsl/) and Jessie Frazelle's awesome [Windows for Linux Nerds blog post](https://blog.jessfraz.com/post/windows-for-linux-nerds/). In a nutshell, WSL wraps the Windows kernel system calls and maps them as Linux Kernel system calls, fooling ELF64 unmodified Linux compatible binaries to run as if they were on a real Linux-based system. The kicker is that there is no Linux kernel running! It also wraps Windows services such as filesystem, networking, into appropriate devices that Linux can access.
 
@@ -53,7 +53,7 @@ That being said, WSL in itself is a miracle, so I can't complain. Microsoft had 
 
 Apple had its miracle in the turn of the century, and OS X and iOS are terrific OSes. Best of the breed. And by being able to reboot the entire ecosystem from scratch is not something anyone can do.
 
-Linux-distros had their own ups and downs. No ecosystem can evolve healthily and in a cohesive way being that fragmented. But each major distro was able to brute force their own ecosystems. Canonical has prevailed where many failed but they are still not a definitive winner, and it feels like their [losing their steam](https://arstechnica.com/information-technology/2017/04/ubuntu-unity-is-dead-desktop-will-switch-back-to-gnome-next-year/). RedHat enjoyed the craze of the dot-com era and was able to fly high in the Enterprise market. There is no "best" distro. It's again, a matter of taste and ego, most of the time for most of the people.
+Linux-distros had their own ups and downs. No ecosystem can evolve healthily and in a cohesive way being that fragmented. But each major distro was able to brute force their own ecosystems. Canonical has prevailed where many failed but they are still not a definitive winner, and it feels like they're [losing their steam](https://arstechnica.com/information-technology/2017/04/ubuntu-unity-is-dead-desktop-will-switch-back-to-gnome-next-year/). RedHat enjoyed the craze of the dot-com era and was able to fly high in the Enterprise market. There is no "best" distro. It's again, a matter of taste and ego, most of the time for most of the people.
 
 And the OSS community still wastes an insurmountable amount of time in crazy disputes over stuff like the [Systemd controversy](https://www.reddit.com/r/linuxmasterrace/comments/616wxo/what_is_with_all_the_controversy_with_systemd/) or the time it is taking to get over X and finally get into Wayland. OSS has pros and cons, just like everything else.
 
@@ -65,7 +65,7 @@ And now you can install a Windows X Server such as [xming](https://sourceforge.n
 
 I am now using [ASDF](https://github.com/asdf-vm/asdf) to install and manage multiple versions of Ruby, Node.js, Elixir, etc. And it also just works.
 
-I was able to move my SSH keys from my previous [Arch Linux](http://www.akitaonrails.com/en/2017/01/10/arch-linux-a-melhor-distro-de-todas) install. And then I can clone from my Git repositories. Now, here comes the **big caveat**. I cloned and configured a Rails project. This the fastest I can get running an entire RSpec suite with PhantomJS acceptance tests:
+I was able to move my SSH keys from my previous [Arch Linux](http://www.akitaonrails.com/en/2017/01/10/arch-linux-a-melhor-distro-de-todas) install. And then I can clone from my Git repositories. Now, here comes the **big caveat**. I cloned and configured a Rails project. This is the fastest I can get running an entire RSpec suite with PhantomJS acceptance tests:
 
 ```
 Finished in 5 minutes 35 seconds (files took 48.53 seconds to load)
@@ -88,7 +88,7 @@ Finished in 3 minutes 2.4 seconds (files took 22.69 seconds to load)
 888 examples, 1 failure
 ```
 
-I ran the same suite a couple times to make sure, but it can't go below the 5 minute mark and loading files is always around 1 minute while in other OSes it's 2 to 4 times faster.
+I ran the same suite a couple of times to make sure, but it can't go below the 5 minute mark and loading files is always around 1 minute while in other OSes it's 2 to 4 times faster.
 
 If your development workflow is I/O bound, you will suffer. Webpack compilation, which is slow, gets even slower. Npm/Yarn installs take forever. Installing stuff from source is super slow.
 
@@ -108,7 +108,7 @@ This is running the same Rspec suite over Virtualbox with 4 Cores (out of the 8 
 
 ```
 Finished in 2 minutes 3.4 seconds (files took 6.33 seconds to load)
-888 examples, 2 failure
+888 examples, 2 failures
 ```
 
 So, we're down from 5:35 min to 2:03 min and file loading from 49 seconds down to 6 seconds! So around 2.5 times faster execution and a whopping 8 times increase in file loading! This is ridiculous and it makes way more sense. My 2016 machine, within Virtualbox, still outperforms 2011/2012 bare hardware. And WSL is in the bottom of the list.
@@ -163,7 +163,7 @@ Gamers have to stick with Windows. Again, there is no denying that. The best gam
 
 Web Developers are luckier. You can't go wrong, it's literally a matter of taste which OS you choose. You will be able to deliver the same results using the same tools. And unless you're targeting specific Microsoft infrastructure (SQL Server, Active Directory, etc), you can install any Linux distro and rejoice.
 
-Desktop App Developers must target their audience. If you want to build Windows desktop apps, you have to be on Windows. You can use.NET/Xamarin or Java to build cross-platform compatible binaries, though. But you guys are out of luck because ideally, you have to have all 3 to ensure your software is performing as you want.
+Desktop App Developers must target their audience. If you want to build Windows desktop apps, you have to be on Windows. You can use .NET/Xamarin or Java to build cross-platform compatible binaries, though. But you guys are out of luck because ideally, you have to have all 3 to ensure your software is performing as you want.
 
 Mobile App Developers are also out of luck. You can do Android on Windows or Linux, but you have to have a Mac to develop for the Apple App Store. You can't escape that, and good luck waiting for Apple to release their tools for other platforms.
 
@@ -175,13 +175,13 @@ I am not a full-time developer anymore. And I mix my time running a company, doi
 
 {{< youtube id="a59U6kRJHLg" >}}
 
-If you're a Creative, you **need** Color Calibrated screens (Adobe RGB space), you need the raw processing power to do a quick render and advanced post-processing. Adobe video editors will prefer Windows. Final Cut video editors are well served on Macs, even though the new MacBook Pros cooling system is terrible:
+If you're a Creative, you **need** Color Calibrated screens (Adobe RGB space), you need the raw processing power to do a quick render and advanced post-processing. Adobe video editors will prefer Windows. Final Cut video editors are well served on Macs, even though the new MacBook Pro's cooling system is terrible:
 
 {{< youtube id="6TWbXV5xeYE" >}}
 
 And if you're a full-time video editor, you can afford either high-end PC or Mac configurations, so there is not much dispute here.
 
-If you're a video editor on a budget, you will **not** have a good 4K editing workflow on Linux, period. There is a poor support to unlock the full potential of modern GPUs, no good Cuda or OpenCL support, and most video editing tools don't use them. Blender - which is primarily a 3D modeling and animation tool - is considered one of the best video editing tools available on Linux, which says a lot. The sad state of GPU support on Linux compromises Creative usage. The only other non-linear video editing tool that can achieve professional level workflows is [LightWorks](https://www.linux.com/learn/pro-level-video-editing-lightworks-linux) and it's not open source, requires the proprietary NVIDIA binaries, and [will cost](https://www.lwks.com/index.php?option=com_shop&view=shop&Itemid=205) you.
+If you're a video editor on a budget, you will **not** have a good 4K editing workflow on Linux, period. There is poor support to unlock the full potential of modern GPUs, no good Cuda or OpenCL support, and most video editing tools don't use them. Blender - which is primarily a 3D modeling and animation tool - is considered one of the best video editing tools available on Linux, which says a lot. The sad state of GPU support on Linux compromises Creative usage. The only other non-linear video editing tool that can achieve professional level workflows is [LightWorks](https://www.linux.com/learn/pro-level-video-editing-lightworks-linux) and it's not open source, requires the proprietary NVIDIA binaries, and [will cost](https://www.lwks.com/index.php?option=com_shop&view=shop&Itemid=205) you.
 
 If you're going that way, it's probably better to stick with either Windows or OS X at this point.
 

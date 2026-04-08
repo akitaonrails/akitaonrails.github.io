@@ -18,13 +18,13 @@ draft: false
 
 If you do Feature Specs, the act of loading up a real app server and then a real headless browser to do real user feature testing, then you know [Capybara](https://github.com/teamcapybara/capybara/issues/1860) and one of its most well-known drivers, [Poltergeist](https://github.com/teampoltergeist/poltergeist/issues/882). Poltergeist wraps up PhantomJS, which is a well known WebKit-based headless browser.
 
-But WebKit is known for being **very** complicated to deal with. So I can only imagine the nightmare to maintain PhantomJS, which is akin to main a full-blown web browser like Chrome or Safari.
+But WebKit is known for being **very** complicated to deal with. So I can only imagine the nightmare to maintain PhantomJS, which is akin to maintaining a full-blown web browser like Chrome or Safari.
 
 So it's no wonder that when the Chrome team announced the availability of the [Chrome Driver](https://developers.google.com/web/updates/2017/04/headless-chrome), then the maintainer of PhantomJS [decided to step down](https://github.com/teampoltergeist/poltergeist/issues/882).
 
-If you know the contributors of PhantomJS, say thank you, as it helped as build more solid user features.
+If you know the contributors of PhantomJS, say thank you, as it helped us build more solid user features.
 
-That being said, fear not. You can easily replace Poltergeist/PhantomJS for Selenium WebDriver/Chrome Driver in your RSpec/Capybara setup.
+That being said, fear not. You can easily replace Poltergeist/PhantomJS with Selenium WebDriver/Chrome Driver in your RSpec/Capybara setup.
 
 My friend [Lucas Caton](https://www.lucascaton.com.br/2017/06/22/how-to-run-your-feature-specs-using-capybara-and-headless-chrome/) wrote about it in June this year. Follow his blog as well.
 
@@ -81,7 +81,7 @@ Capybara.server = :puma, { Silent: true } # To clean up your test output
 Capybara.default_max_wait_time = 5 # you may want to increase this timeout if your app is heavy to load
 ```
 
-In feature specs, sometimes either Rails itself takes a long while to load up, compile assets, etc and the first features spec may timeout. To avoid a failure in the test run, it's recommended to add the `rspec-retry` gem, as I did above, and add the following to your `spec/rails_helper.rb`:
+In feature specs, sometimes Rails itself takes a long while to load up, compile assets, etc., and the first feature spec may time out. To avoid a failure in the test run, it's recommended to add the `rspec-retry` gem, as I did above, and add the following to your `spec/rails_helper.rb`:
 
 ```ruby
 require 'rspec/retry'
@@ -100,7 +100,7 @@ end
 
 And that should be it. I didn't have to touch any of my feature specs and they all ran beautifully. So kudos to the respective teams that maintain Capybara, Selenium-WebDriver for supporting this.
 
-If you're a Node.js developer as well, you probably used something like Casper, which is said to support Chrome Headless as well. But while we're at it, you should check out [Puppeteer](https://github.com/GoogleChrome/puppeteer) as well, from the Google team itself. It is a promise based library where you can code like this:
+If you're a Node.js developer as well, you probably used something like Casper, which is said to support Chrome Headless as well. But while we're at it, you should check out [Puppeteer](https://github.com/GoogleChrome/puppeteer) as well, from the Google team itself. It is a promise-based library where you can code like this:
 
 ```javascript
 const puppeteer = require('puppeteer');

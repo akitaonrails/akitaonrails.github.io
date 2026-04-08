@@ -43,7 +43,7 @@ I have created 4 droplets (all using the smallest size of 512Mb of RAM):
 ### Basic Ubuntu 16.04 configuration
 
 * Goals: configure locale, assure unattended updates are up, upgrade packages, install and configure Elixir and Node.
-* You should also do: change SSH to another port and install [fail2ban](https://www.digitalocean.com/community/tutorials/how-to-protect-ssh-with-fail2ban-on-ubuntu-14-04, disallow login through password.
+* You should also do: change SSH to another port and install [fail2ban](https://www.digitalocean.com/community/tutorials/how-to-protect-ssh-with-fail2ban-on-ubuntu-14-04, disallow login through password).
 
 You will want to read my post about [configuring Ubuntu 16.04](http://www.akitaonrails.com/en/2016/09/21/ubuntu-16-04-lts-xenial-no-vagrant-com-vmware-fusion). To summarize, start by configuring proper UTF-8:
 
@@ -70,7 +70,7 @@ ssh-copy-id -i ~/.ssh/id_ed25519.pub pusher@server-ip-address
 
 It creates the `.ssh/authorized_keys` if it doesn't exist, sets the correct permission bits and appends your public key. You can do it manually, of course.
 
-DigitalOcean's droplets start without a swap file and I'd recomend adding one, specially if you want to start with the smaller boxes with less than 1GB of RAM:
+DigitalOcean's droplets start without a swap file and I'd recommend adding one, especially if you want to start with the smaller boxes with less than 1GB of RAM:
 
 ```
 sudo fallocate -l 2G /swapfile
@@ -104,7 +104,7 @@ mix local.hex
 mix archive.install https://github.com/phoenixframework/archives/raw/master/phoenix_new.ez # this is optional, install if you want to manually test phoenix in your box
 ```
 
-Now you have an Elixir capable machine ready. Create a image snapshot over DigitalOcean, move it regions you want to create your other droplets and use this image to create as many droplets as you need.
+Now you have an Elixir capable machine ready. Create a image snapshot over DigitalOcean, move it to the regions where you want to create your other droplets and use this image to create as many droplets as you need.
 
 For this example, I created a second droplet in the London region, a third droplet for postgresql in the NYC1 region and a fourth droplet in the NYC3 region for HAProxy.
 
@@ -113,7 +113,7 @@ I will refer to their public IP addresses as **"nyc-ip-address"**, **"lon-ip-add
 ### Basic PostgreSQL configuration
 
 * Goal: basic configuration of Postgresql to allow the Phoenix servers to connect.
-* To do: create a secondary role just to connect to the application database and another superuser role to create the database and migrate the schema. Also lock down the machine and configure SSH tunnels or another secure way, at least a private networking, than allowing plain 5432 TCP port connections from the public Internet.
+* To do: create a secondary role just to connect to the application database and another superuser role to create the database and migrate the schema. Also lock down the machine and configure SSH tunnels or another secure way, at least private networking, rather than allowing plain 5432 TCP port connections from the public Internet.
 
 Now you can connect to `ssh pusher@pg-ip-address` and follow this:
 
@@ -151,7 +151,7 @@ Edit the `/etc/postgresql/9.5/main/postgresql.conf` and find the `listen_address
 listen_addresses = '*'    # what IP address(es) to listen on;
 ```
 
-This should bind the server to the TCP port. Now edit `/etc/postgresql/9.5/main/pg_hba.conf` and edit it at the end to looks like this:
+This should bind the server to the TCP port. Now edit `/etc/postgresql/9.5/main/pg_hba.conf` and edit the end to look like this:
 
 ```
 # IPv4 local connections:
@@ -169,9 +169,9 @@ Save the configuration file and restart the server:
 sudo service postgresql restart
 ```
 
-See what I did there? I only allowed connections coming from the public IPs of the Phoenix servers. This does not make the the server secure, just a little bit less vulnerable. If you're behind a DHCP/NAT based network, just Google for "what's my IP" to see your public facing IP address - which is probably shared by many other users, remember you're allowing connections from an insecure IP to your database server! Once you make initial tests, create your new schema, then you should remove that `your-local-machine-ip-address/24` line from the configuration.
+See what I did there? I only allowed connections coming from the public IPs of the Phoenix servers. This does not make the server secure, just a little bit less vulnerable. If you're behind a DHCP/NAT based network, just Google for "what's my IP" to see your public facing IP address - which is probably shared by many other users, remember you're allowing connections from an insecure IP to your database server! Once you make initial tests, create your new schema, then you should remove that `your-local-machine-ip-address/24` line from the configuration.
 
-From your Phoenix application, you can edit you local `config/prod.secret.exs` file to look like this:
+From your Phoenix application, you can edit your local `config/prod.secret.exs` file to look like this:
 
 ```ruby
 # Configure your database
@@ -202,7 +202,7 @@ ufw enable
 
 That's it. And again, this does not make your server secure, it just makes it less insecure. There is a huge difference!
 
-And by the way, if you're a Docket fan:
+And by the way, if you're a Docker fan:
 
 > DO NOT INSTALL A DATABASE INSIDE A DOCKER CONTAINER!
 
@@ -211,7 +211,7 @@ And by the way, if you're a Docket fan:
 ### Basic HAProxy configuration
 
 * Goals: Provide a simple solution to load balance between our 2 Phoenix servers.
-* To do: There is something wrong with session checking or something like that as sometimes I have to refresh my browser so I am not sent back to the login from in my application. Phoenix uses cookie-based sessions so I don't think it is missing sessions.
+* To do: There is something wrong with session checking or something like that as sometimes I have to refresh my browser so I am not sent back to the login form in my application. Phoenix uses cookie-based sessions so I don't think it is missing sessions.
 
 Now let's `ssh pusher@ha-ip-address`. This one is easy, let's just install HAProxy:
 
@@ -241,7 +241,7 @@ listen your-app-name
 
 You can avoid the `stats` lines if you have other means of monitoring, otherwise set a secure password for the `admin` user. One very important part is the `option http-server-close` as explained in [this other blog post](http://blog.silverbucket.net/post/31927044856/3-ways-to-configure-haproxy-for-websockets), otherwise you may have trouble with Websockets.
 
-For some reason I am having some trouble with my application after I login and it sets the session, sometimes I have to refresh to be sent to the correct page, not sure why yet and I believe it's something in the HAProxy configuration. If anyone knows what it is, let me know in the comments section below. For now, I am just relying to Sticky sessions (server affinity) by making HAProxy write back a cookie with the server.
+For some reason I am having some trouble with my application after I login and it sets the session, sometimes I have to refresh to be sent to the correct page, not sure why yet and I believe it's something in the HAProxy configuration. If anyone knows what it is, let me know in the comments section below. For now, I am just relying on Sticky sessions (server affinity) by making HAProxy write back a cookie with the server.
 
 Now you can restart the server and enable UFW as well:
 
@@ -253,7 +253,7 @@ sudo ufw allow ssh
 sudo ufw enable
 ```
 
-You can easily add SSL support to your application by configure HAProxy (and not the Phoenix nodes). The [DigitalOcean documentation](https://www.digitalocean.com/community/tutorials/how-to-secure-haproxy-with-let-s-encrypt-on-ubuntu-14-04) is comprehensive, so just follow it. At the end, my `haproxy.cfg` looks like this:
+You can easily add SSL support to your application by configuring HAProxy (and not the Phoenix nodes). The [DigitalOcean documentation](https://www.digitalocean.com/community/tutorials/how-to-secure-haproxy-with-let-s-encrypt-on-ubuntu-14-04) is comprehensive, so just follow it. At the end, my `haproxy.cfg` looks like this:
 
 ```
 global
@@ -314,7 +314,7 @@ Finally, I will assume you have a DNS server/service somewhere where you can reg
 
 Finally, we have almost everything in place.
 
-I will assume that you have a working Phoenix application already in place, otherwise create one from the many number of tutorials out there.
+I will assume that you have a working Phoenix application already in place, otherwise create one from the many tutorials out there.
 
 I have assembled this information from [posts](https://medium.com/@diamondgfx/deploying-phoenix-applications-with-exrm-97a3867ebd04#.7qyuplncx) such as [this very helpful one](http://engineering.pivotal.io/post/how-to-set-up-an-elixir-cluster-on-amazon-ec2/) from Pivotal about an AWS-based deployment. In summary you must do a number of changes to your configuration.
 
@@ -453,7 +453,7 @@ sudo chmod +x /usr/local/bin/ssh-askpass
 sudo ln -s /usr/local/bin/ssh-askpass /usr/X11R6/bin/ssh-askpass
 ```
 
-Remember, Macs only. And now everytime you try to deploy you will receive a number of graphical prompt windows asking for the SSH private key passphrase. It's freaking annoying! And you must have [XQuartz](https://www.xquartz.org/) installed, by the way.
+Remember, Macs only. And now every time you try to deploy you will receive a number of graphical prompt windows asking for the SSH private key passphrase. It's freaking annoying! And you must have [XQuartz](https://www.xquartz.org/) installed, by the way.
 
 Now you must manually create 3 files in all Phoenix servers. Start with the `your-app-name/vm.args`:
 
@@ -531,7 +531,7 @@ In your local development directory you still have to run this:
 mix release.init
 ```
 
-It will generate a standard `rel/config.exs` file that you must add to your git repository with the following changes do the bottom:
+It will generate a standard `rel/config.exs` file that you must add to your git repository with the following changes to the bottom:
 
 ```ruby
 ...
@@ -576,7 +576,7 @@ Now, this will take an absurdly long time to deploy. That's because it will git 
 
 In the `.deliver/config` file you set a `BUILD_HOST` option. This is the machine where all this process takes place, so you will want to have at least this machine be beefier than the others. As I am using small 512Mb droplets, the process takes forever.
 
-The last command will download the generated tarball. It has to do it to make sure you have the [NIFs](http://erlang.org/doc/tutorial/nif.html) compiled in the native environment where it run, because if you use a Mac, binaries from Macs won't run on Linux.
+The last command will download the generated tarball. It has to do it to make sure you have the [NIFs](http://erlang.org/doc/tutorial/nif.html) compiled in the native environment where they run, because if you use a Mac, binaries from Macs won't run on Linux.
 
 Now we must upload and decompress this tarball in each server with the following command:
 
@@ -649,7 +649,7 @@ I was getting `:econnrefused` errors because I forgot to run `MIX_ENV=prod mix d
 
 As I mentioned above, this kind of procedure makes me really miss an easy to deploy solution such as Heroku.
 
-The only problem I am facing right now is that when I log in through Coherence's sign in page, I am not redirected to the correct URI I am trying ("/admin" in my case), sometimes reloading after sign in works, sometimes it doesn't. Sometimes I am inside a "/admin" page but when I click one of the links it sends me back to the sign in page even though I am already signed in. I am not sure if it's a but in Coherence, ExAdmin, Phoenix itself or an HAProxy misconfiguration. I will update this post if I find out.
+The only problem I am facing right now is that when I log in through Coherence's sign in page, I am not redirected to the correct URI I am trying ("/admin" in my case), sometimes reloading after sign in works, sometimes it doesn't. Sometimes I am inside a "/admin" page but when I click one of the links it sends me back to the sign in page even though I am already signed in. I am not sure if it's a bug in Coherence, ExAdmin, Phoenix itself or an HAProxy misconfiguration. I will update this post if I find out.
 
 Edeliver also takes an obscene amount of time to deploy. Even waiting for sprockets to process in a `git push heroku master` deploy feels way faster in comparison. And this is for a very bare-bone Phoenix app. Having to fetch everything (because Hex doesn't keep a local global cache, all dependencies are statically vendored in the project directory). Having to run the super slow npm doesn't help either.
 

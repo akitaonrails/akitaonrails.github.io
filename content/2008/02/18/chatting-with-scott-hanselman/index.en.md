@@ -19,7 +19,7 @@ He also posted a great [screencast](http://www.hanselman.com/blog/ASPNET35Extens
 
 **Scott Hanselman:** I'm working for Simon Muzio who runs [www.asp.net](http://www.asp.net), [www.iis.net](http://www.iis.net) and large content-packed sites like that. I like to think my job is writing a book that will never end, where that book is blog posts, articles, screencasts, videos, talks, etc. I'm a teacher at heart, so while I took the title "Community Liaison" I like "Teacher."
 
-**AkitaOnRails:** Tell us about your history. How did you start in the computer world? Did you always develop more toward Windows or did you have a background in the Unix world as well? And before you recent departure to Microsoft you worked for [Corillian](http://www.hanselman.com/blog/CheckFreeClosesDealToAcquireCorillianNowTheRealWorkBegins.aspx). What was your role there?
+**AkitaOnRails:** Tell us about your history. How did you start in the computer world? Did you always develop more toward Windows or did you have a background in the Unix world as well? And before your recent departure to Microsoft you worked for [Corillian](http://www.hanselman.com/blog/CheckFreeClosesDealToAcquireCorillianNowTheRealWorkBegins.aspx). What was your role there?
 
  ![](http://s3.amazonaws.com/akitaonrails/assets/2008/2/18/computerolympics.jpg)
 
@@ -29,7 +29,7 @@ He also posted a great [screencast](http://www.hanselman.com/blog/ASPNET35Extens
 
 And a VERY [influential teacher](http://www.hanselman.com/blog/MrsMayfieldHillMyFifthGradeTeacher.aspx) that set me on the right track.
 
-> Marianne Mayfield is my fifth-grade teacher and the reason I'm in computers today. She was at my wedding, at graduations, at family events. Twenty years later and we are still close. When I was young, she recognized that I was "at risk for trouble" and sat down with my family in order to find a way to get me back on track. She saw that I was transfixed by the Apple II in our classroom and set it up so we could sneak the computer out of the school as long as it was back by Sunday Night and noone noticed.
+> Marianne Mayfield is my fifth-grade teacher and the reason I'm in computers today. She was at my wedding, at graduations, at family events. Twenty years later and we are still close. When I was young, she recognized that I was "at risk for trouble" and sat down with my family in order to find a way to get me back on track. She saw that I was transfixed by the Apple II in our classroom and set it up so we could sneak the computer out of the school as long as it was back by Sunday night and no one noticed.
 
 (click links above for more details)
 
@@ -49,11 +49,11 @@ The campaign ended up raising over USD$30,000, and that money will be applied to
 
 **AkitaOnRails:** _"What in the world were you doing at a RailsConf?"_ That's what I think people from outside of the Microsoft blogosphere would ask you :-) So, are you just curious about Rails, or do you actually develop Rails-based apps? I am very interested to learn your opinions about Rails. How did you find it? What do you think is best about Rails? And more importantly, what do you think Rails could have improved?
 
-**Scott Hanselman:** I'm always trying different programming languages and frameworks. I've been doing Rails on and off for about 18 months, but it hasn't clicked for me yet. I'm sure it will soon. The MVC pattern is very old…I was doing it in Java over 10 years ago, and certainly the pattern goes back 30 years. I think that Rails is a good framework considering it's young age. I think it's Ruby that is the real magic though and I find the Ruby aesthetic to be very in line with my own.
+**Scott Hanselman:** I'm always trying different programming languages and frameworks. I've been doing Rails on and off for about 18 months, but it hasn't clicked for me yet. I'm sure it will soon. The MVC pattern is very old…I was doing it in Java over 10 years ago, and certainly the pattern goes back 30 years. I think that Rails is a good framework considering its young age. I think it's Ruby that is the real magic though and I find the Ruby aesthetic to be very in line with my own.
 
 **AkitaOnRails:** Then, following my biased preferences, the next article I like is your [screencast](http://www.hanselman.com/blog/ASPNET35ExtensionsPlusMVCHowToScreencast.aspx) over the CTP ASP.NET MVC framework. I see that this new framework resembles Rails a lot. Of course, it may just look like that because both implement MVC2. But on the other hand, it uses very similar Rails idioms everywhere. It lacks a little bit of 'convention-over-configuration magic' but from what I saw, it looks much better than doing conventional ASP.NET. What do you think about it? Can you summarize it a little bit for those that don't know this product yet? And what do you think will still improve in it?
 
-**Scott Hanselman:** If one points at Rails and says "that's MVC" then everything else looks like Rails, sure. Any good MVC framework needs to not only follow the pattern as appropriate but also abstract away HTTP (assuming it's a web framework) in a clean, but not complete, way. The ASP.NET MVC implementation still has some baggage that it will always have to carry because ASP.NET WebForms came first and wasn't design from scratch for testability in mind. That said, it's all about alternatives. Use the framework that makes you happy and you feel most productive in. Some fraction, maybe 20%, of ASP.NET devs will prefer MVC. Now they have a MS support choice with good integration with C# 3.0
+**Scott Hanselman:** If one points at Rails and says "that's MVC" then everything else looks like Rails, sure. Any good MVC framework needs to not only follow the pattern as appropriate but also abstract away HTTP (assuming it's a web framework) in a clean, but not complete, way. The ASP.NET MVC implementation still has some baggage that it will always have to carry because ASP.NET WebForms came first and wasn't designed from scratch with testability in mind. That said, it's all about alternatives. Use the framework that makes you happy and you feel most productive in. Some fraction, maybe 20%, of ASP.NET devs will prefer MVC. Now they have a MS support choice with good integration with C# 3.0
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2008/2/18/505403549_2ad6d13ce7.jpg)  
 at RailsConf'07
@@ -87,19 +87,19 @@ with John Lam
 
 **AkitaOnRails:** I am not against technical comparisons, we have to do such things to decide our steps in projects. But I am against pointless challenges. Rails is far from perfect and I am the first say it. That said, it is great for an specific niche of web development. I usually recommend that good programmers should expand their horizons and learn as much new stuff as possible. You can't know everything perfectly but it's always good to be aware of the possibilities. You [wrote something](http://www.hanselman.com/blog/TheProgrammingLanguageExplosion.aspx) around these lines. What do you think about it?
 
-**Scott Hanselman:** Rails is good for what it does in it's niche. You don't create Windows Desktop apps with Rails and that's fine. That's why we don't compare Rails to WPF, we compare it to Web Frameworks. Comparison is good and there's always good to be found on either side. I avoid flame wars as well. It's pointless. If the shoe pinches, don't wear it. But, try as many shoes as you can!
+**Scott Hanselman:** Rails is good for what it does in its niche. You don't create Windows Desktop apps with Rails and that's fine. That's why we don't compare Rails to WPF, we compare it to Web Frameworks. Comparison is good and there's always good to be found on either side. I avoid flame wars as well. It's pointless. If the shoe pinches, don't wear it. But, try as many shoes as you can!
 
 **AkitaOnRails:** Last year you wrote an [interesting post](http://www.hanselman.com/blog/TheSkynetComputeCloudIThinkThereIsAWorldMarketForMaybeFiveComputers.aspx) about the future. Google is this big giant, Amazon released surprisingly good products in the last few months like S3, EC2, SimpleDb. I am not well aware of the current Microsoft Live's strategy. Can you say something about where is it heading to?
 
 **Scott Hanselman:** I'm not in that group so I have no insight outside of what's already been said. However, I do still hold to my predictions in that post!
 
-> Computing will be moved into the Cloud. It's already happening, we're 20% there. The idea has been around since the beginning, and it will, in my opinion, continue come up until it actually happens and we build Skynet. One of these compute clouds will no doubt end up in orbit.
+> Computing will be moved into the Cloud. It's already happening, we're 20% there. The idea has been around since the beginning, and it will, in my opinion, continue to come up until it actually happens and we build Skynet. One of these compute clouds will no doubt end up in orbit.
 
-**AkitaOnRails:** And of course, I kind of 'have' to ask you this: do you use Windows Vista? How has it been for you given that there's a huge underground campaign against it? Do you think it is as bad as everybody else says? I can't comment because I never tried it outside of my virtual machine (I am a Mac guy), but they did sold 100 million licenses.
+**AkitaOnRails:** And of course, I kind of 'have' to ask you this: do you use Windows Vista? How has it been for you given that there's a huge underground campaign against it? Do you think it is as bad as everybody else says? I can't comment because I never tried it outside of my virtual machine (I am a Mac guy), but they did sell 100 million licenses.
 
 **Scott Hanselman:** Sure. I run Vista 64-bit on 3 machines, and Vista 32-bit on 2 machines. It was rough for the first 3 months while the driver support sucked, but now it's fine. I've got 2 vista machines that haven't been rebooted in months, just put to sleep and woken up. Once you get good video drivers, you're usually cool.
 
-Folks give Vista a hard time but they forget the wide range of hardware it has to run on. OS X only has to run on Macs, and a narrow range at that. Vista has to run on millions of combinations of hardware. Third Party Drivers are by FAR the thing that crashes Vista the most and it gets blamed. That's why I run 64-bit and used only signed drivers. I've been thrilled with 64-bit. Works great.
+Folks give Vista a hard time but they forget the wide range of hardware it has to run on. OS X only has to run on Macs, and a narrow range at that. Vista has to run on millions of combinations of hardware. Third Party Drivers are by FAR the thing that crashes Vista the most and it gets blamed. That's why I run 64-bit and use only signed drivers. I've been thrilled with 64-bit. Works great.
 
 **AkitaOnRails:** Ok, this is it :-) Thanks a lot!
 

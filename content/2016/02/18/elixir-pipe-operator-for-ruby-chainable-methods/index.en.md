@@ -9,7 +9,7 @@ tags:
 draft: false
 ---
 
-There has been [recent](http://blog.molawson.com/elixir-pipes-in-ruby/) [discussions](https://gist.github.com/pcreux/2f87847e5e4aad37db02) about how nice it would be to have something like the awesome Elixir Pipe Operator for Ruby.
+There have been [recent](http://blog.molawson.com/elixir-pipes-in-ruby/) [discussions](https://gist.github.com/pcreux/2f87847e5e4aad37db02) about how nice it would be to have something like the awesome Elixir Pipe Operator for Ruby.
 
 If you don't know what the "Pipe Operator" is in Elixir, take the following code:
 
@@ -44,7 +44,7 @@ So Ruby and Elixir "feel" the same when we are able to "chain" methods. In the R
   give_the_sum_of_all_elements
 ```
 
-Of course, this is a very constrained example with really bad method naming. But if we get Mo Lawson's article I linked above, it becomes more interesting:
+Of course, this is a very constrained example with really bad method naming. But if we look at Mo Lawson's article I linked above, it becomes more interesting:
 
 ```ruby
 keywords
@@ -73,9 +73,9 @@ class KeywordNormalizer
 end
 ```
 
-This is where he gets by the end of his article: much more readable and each new isolated method is unit testable, resulting in more robust code.
+This is where he ends up by the end of his article: much more readable and each new isolated method is unit testable, resulting in more robust code.
 
-The whole idea of this post is to present you to my new little gem ["Chainable Methods"](https://rubygems.org/gems/chainable_methods). The [source code](https://github.com/akitaonrails/chainable_methods) is on Github, as usual, so please contribute.
+The whole idea of this post is to introduce you to my new little gem ["Chainable Methods"](https://rubygems.org/gems/chainable_methods). The [source code](https://github.com/akitaonrails/chainable_methods) is on Github, as usual, so please contribute.
 
 My gem will allow you to write Lawson's last code like this:
 

@@ -17,9 +17,9 @@ draft: false
 
 Now, if you're new to the Ruby ecosystem, you may have not heard about this character named "Why, The Lucky Stiff". I think 2 of the best articles about him were written by a fellow Brazilian Rubyist, [Diogo Terror](http://twitter.com/dterror) to Smashing Magazine in 2010, titled [_Why: A Tale Of A Post-Modern Genius](http://www.smashingmagazine.com/2010/05/15/why-a-tale-of-a-post-modern-genius/) and Annie Lowrey for Slate [Where's _why?](http://www.slate.com/articles/technology/technology/2012/03/ruby_ruby_on_rails_and__why_the_disappearance_of_one_of_the_world_s_most_beloved_computer_programmers_.single.html).
 
-He inspired an entire first generation of Rubyist around the turn of the century. He wasn't just a programmer, he was a craftsman, literally. The only one I accept calling himself an "artist" within our programming world. His most famous work is the book [Why's Poignant Guide to Ruby](http://mislav.uniqpath.com/poignant-guide/book/) used by many famous Rubyists you know when they first found about Ruby.
+He inspired an entire first generation of Rubyists around the turn of the century. He wasn't just a programmer, he was a craftsman, literally. The only one I accept calling himself an "artist" within our programming world. His most famous work is the book [Why's Poignant Guide to Ruby](http://mislav.uniqpath.com/poignant-guide/book/) used by many famous Rubyists you know when they first found out about Ruby.
 
-Then in August 19, 2009 he vanished.
+Then on August 19, 2009 he vanished.
 
 <div class="embed-container">
 {{< youtube id="47LtM830ocE" >}}
@@ -89,4 +89,4 @@ _why
 
 Unfortunately I didn't pursue this enough, I was actually planning on sending the interview questions to him, handwritten. :-) In retrospect, I wish I had, it would've been fun.
 
-And that was Why, an icon for the Ruby community, an original character that can't be copied or replaced and we are very lucky for having here. Explore his material, learn his style, transmit his message of education, entertainment, friendliness, mastery and craftsmanship.
+And that was Why, an icon for the Ruby community, an original character that can't be copied or replaced and we are very lucky for having had him here. Explore his material, learn his style, transmit his message of education, entertainment, friendliness, mastery and craftsmanship.

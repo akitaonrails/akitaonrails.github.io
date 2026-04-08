@@ -17,6 +17,6 @@ RailsConf is not your "normal" tech conference. You will have people ranting, do
 Your browser does not support the video tag. [Direct Link](https://s3.us-east-2.amazonaws.com/blip.tv/Akitaonrails-RailsConf2009NinhGrosenbachBui178.mp4)
 </source></video>
 
-And don't miss the awesome [Rubystein](http://www.rubyinside.com/rubystein-wolfenstein-3d-recreated-in-ruby-1751.html), Phusion's reimplementation of Wolfenstein 3D in Ruby. They wanted to prove that Ruby is fast enough even to write games on it, and they succeeded in spades!
+And don't miss the awesome [Rubystein](http://www.rubyinside.com/rubystein-wolfenstein-3d-recreated-in-ruby-1751.html), Phusion's reimplementation of Wolfenstein 3D in Ruby. They wanted to prove that Ruby is fast enough even to write games in it, and they succeeded in spades!
 
 {{< youtube id="ZHv8fm_a0QM" >}}

@@ -16,9 +16,9 @@ Sam Saffron, from Discourse, also built a very small gem called ["fast_blank"](h
 
 The Holy Grail to native-level performance is to be able to write close-to-Ruby code instead of having to hack low-level C or having the high learning curve of a language such as Rust. More than that, I'd like to avoid having to use FFI. I am not an expert in FFI but I remember understanding that it adds overhead to make the bindings.
 
-By the way, it's important to disclose right now: I am not a C expert by any means of the imagination, far from that. So I have very little experience dealing with hard core C development. Which is again, why this possibility of writing in Crystal is even more appealing to me. So if you are a C expert and you spot something silly I am saying about it, please let me know in the comments section below.
+By the way, it's important to disclose right now: I am not a C expert by any means of the imagination, far from that. So I have very little experience dealing with hardcore C development. Which is again, why this possibility of writing in Crystal is even more appealing to me. So if you are a C expert and you spot something silly I am saying about it, please let me know in the comments section below.
 
-My exercise is to rewrite the C-based Fast Blank gem in Crystal, add it to the same Gem to compile under Crystal if it's available or fallback to C, and make the specs pass so it's a seamless transition for the user.
+My exercise is to rewrite the C-based Fast Blank gem in Crystal, add it to the same Gem to compile under Crystal if it's available or fall back to C, and make the specs pass so it's a seamless transition for the user.
 
 To achieve that I had to:
 
@@ -30,7 +30,7 @@ You can check out the results so far on [my fork over Github](https://github.com
 
 ### Comparing C and Crystal
 
-Just to have us started, let's check out a snippet of Sam's original C version:
+Just to get us started, let's check out a snippet of Sam's original C version:
 
 ```C
 static VALUE
@@ -136,7 +136,7 @@ Most people using Crystal are on OS X, including the creators of Crystal. LLVM i
 
 Then, they improved the ARM backend support and that's how they can have an entire iOS "Simulator" (not a dog slow emulator like Android) where the iOS apps are natively compiled to run over Intel's x86_64 processor while in development and then quickly recompile to ARM when ready to package to the App Store.
 
-This way you can run natively, test quickly, without the slowness of an emulated environment. By the way, I will say this once: Google's biggest mistake is not supporting LLVM as they should and reinventing the wheel. If they had, Go could already be used to implement for Android and Chromebooks as well as x86 based servers and they could put away all the Java/Oracle debacle.
+This way you can run natively, test quickly, without the slowness of an emulated environment. By the way, I will say this once: Google's biggest mistake is not supporting LLVM as they should, and reinventing the wheel instead. If they had, Go could already be used to implement for Android and Chromebooks as well as x86 based servers and they could put away all the Java/Oracle debacle.
 
 But I digress.
 
@@ -404,7 +404,7 @@ class String
 end
 ```
 
-It's mainly a regular expression comparison, which can be a bit slow. Sam's version is a more straight forward loop through the string to compare each character with what's considered "blank". There are many unicode codepoints that are considered blank, some are not, which is why the C and Crystal versions are similar, but they are different from Rails' version.
+It's mainly a regular expression comparison, which can be a bit slow. Sam's version is a more straightforward loop through the string to compare each character with what's considered "blank". There are many unicode codepoints that are considered blank, some are not, which is why the C and Crystal versions are similar, but they are different from Rails' version.
 
 In the Fast Blank gem there is a `benchmark` Ruby script to compare the C-extension against Rails' Regex based implementation.
 
@@ -566,9 +566,9 @@ The most obvious conclusion is that I probably made a mistake in choosing Fast B
 
 Also, any use case where you have a huge amount of small bits of data being transferred from C-Ruby to Crystal or any FFI-based extension will have the overhead of data copying, which a pure C-version will not have. Which is why Fast Blank is better done in C.
 
-Any other use case where you have less amounts of data, or data that can be transferred in bulk (less calls from C-Ruby to the extension, with arguments with a larger size, and with more costly processing) are better candidates to benefit from extensions.
+Any other use case where you have smaller amounts of data, or data that can be transferred in bulk (less calls from C-Ruby to the extension, with arguments with a larger size, and with more costly processing) is a better candidate to benefit from extensions.
 
-Again, not everything gets automatically faster, we always have to figure out the use case scenarios first. But because it's so much easier to write in Crystal and benchmark, we can make faster proofs of concepts and scrap the idea if the measurements prove that we won't benefit as much.
+Again, not everything gets automatically faster, we always have to figure out the use case scenarios first. But because it's so much easier to write in Crystal and benchmark, we can make faster proofs of concept and scrap the idea if the measurements prove that we won't benefit as much.
 
 The Crystal documentation recently received a ["Performance Guide"](https://crystal-lang.org/docs/guides/performance.html). It's very useful for you to avoid common pitfalls that harm overall performance. Even though LLVM is quite competent in heavy optimization, it can't do everything. So read it through to improve your general Crystal skills.
 

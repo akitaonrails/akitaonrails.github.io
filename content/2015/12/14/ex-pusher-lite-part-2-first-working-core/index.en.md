@@ -232,7 +232,7 @@ end
 
 The logic is set so new key/secret are generated only if the fields are empty and a new slug is generated only if the name has changes. And this is it, I told you the model code would be a bit large. You can see how to use the Slugger and SecureRandom libraries we added in the "mix.exs" before.
 
-I also want to add the equivalent of a Rails seed file to create a test application so it's easier for new comers to know what to do. Phoenix has seeds and you can implement it like this:
+I also want to add the equivalent of a Rails seed file to create a test application so it's easier for newcomers to know what to do. Phoenix has seeds and you can implement it like this:
 
 ```ruby
 # priv/repo/seeds.exs
@@ -244,7 +244,7 @@ alias ExPusherLite.Repo
 Repo.insert! %App{ slug: "test-app", name: "Test App", key: "test-app-fake-key", secret: "test-app-fake-secret", active: true }
 ```
 
-Remember how I detailed the role of the "changeset/2" function in creating a clean and validated changeset, which is just a Map? You can skip that function altogether and hand craft your own final Map and pass it to the Repo. The Repo doesn't care if this is a valid Map or not it will just try to insert it into the database regardless. And in this case the App Model avoids us to hardcode keys and secrets, so this is how we do it in a seed file.
+Remember how I detailed the role of the "changeset/2" function in creating a clean and validated changeset, which is just a Map? You can skip that function altogether and hand craft your own final Map and pass it to the Repo. The Repo doesn't care if this is a valid Map or not it will just try to insert it into the database regardless. And in this case the App Model prevents us from hardcoding keys and secrets, so this is how we do it in a seed file.
 
 We can just run it directly like this:
 
@@ -252,7 +252,7 @@ We can just run it directly like this:
 mix run priv/repo/seeds.exs
 ```
 
-The AppController just need 2 changes. The first is to search the App through the slug field instead of the default 'id' field. This is simple enough, we just replace all calls to "<tt>app = Repo.get!(App, id)</tt>" to "<tt>app = App.get_by_slug(id)</tt>", which is why we implemented this function in the model above.
+The AppController just needs 2 changes. The first is to search the App through the slug field instead of the default 'id' field. This is simple enough, we just replace all calls to "<tt>app = Repo.get!(App, id)</tt>" to "<tt>app = App.get_by_slug(id)</tt>", which is why we implemented this function in the model above.
 
 The second thing is Authentication.
 
@@ -332,7 +332,7 @@ end
 
 As I explained in previous articles, a Plug is like a chainable Rails Middleware or even a Rack application. It must have a single "<tt>call/2</tt>" that receives a Plug.Conn structure and returns it back, allowing to form a chain/pipeline of Plugs.
 
-We check if we want to compare with the Admin token or the App token and then retrieve the Basic HTTP authorization token that's in the HTTP request connection structure (we retrive individual header values through the "<tt>get_req_header/2</tt>" function). Finally we make a secure compare between the tokens.
+We check if we want to compare with the Admin token or the App token and then retrieve the Basic HTTP authorization token that's in the HTTP request connection structure (we retrieve individual header values through the "<tt>get_req_header/2</tt>" function). Finally we make a secure compare between the tokens.
 
 To enable this plug in the controllers we just add it like this:
 
@@ -472,7 +472,7 @@ One important modification from Part 1 is that the WebSocket host was hardcoded 
 
 Now it's subscribing to a different format of topic/channel. In Part 1 it would be something like: "<tt>public:test_channel</tt>" now we are listening to "<tt>public:foo-app</tt>", so the application is the Websocket subscription "topic".
 
-Then we are changing the socket listener to listen for 2 different events. The first one is in the format "<tt>test_channel:msg</tt>". So this is how we must now send messages to an specific "channel" within an "app/topic".
+Then we are changing the socket listener to listen for 2 different events. The first one is in the format "<tt>test_channel:msg</tt>". So this is how we must now send messages to a specific "channel" within an "app/topic".
 
 And last we still listen to the old "msg" event, but this serves as a "broadcast" event for all connected clients subscribed to this particular "foo-app" Application. Now web clients can listen to specific "channels" within the "app" but also receive system wide "broadcast" messages. This is a big improvement and it didn't require much on the Javascript side.
 
@@ -580,7 +580,7 @@ To connect this all to the WebSocket handler, we must make the following changes
    ...
 ```
 
-Now, the Channel does not pattern match on a specific event, it let it through without further validation, trusting that the EventsController is doing the right thing. I will come back to this piece for improvements in the future, possibly.
+Now, the Channel does not pattern match on a specific event, it lets it through without further validation, trusting that the EventsController is doing the right thing. I will come back to this piece for improvements in the future, possibly.
 
 ### Deploying our first Phoenix app to Heroku!
 
@@ -593,7 +593,7 @@ heroku apps:create your-expusherlite --buildpack "https://github.com/HashNuke/he
 heroku buildpacks:add https://github.com/gjaldon/heroku-buildpack-phoenix-static.git
 ```
 
-I am naming the application "your-expusherlite" but you should change it to your own name, of course. And the rest of the configuration data are all examples that you must change for you own needs.
+I am naming the application "your-expusherlite" but you should change it to your own name, of course. And the rest of the configuration data are all examples that you must change for your own needs.
 
 Heroku relies on environment variables. So we start by erasing "<tt>config/prod.secret.exs</tt>" and change "<tt>config/prod.exs</tt>" to look like this:
 
@@ -618,7 +618,7 @@ config :ex_pusher_lite, :admin_authentication,
 # import_config "prod.secret.exs"
 ```
 
-Now we must configure the environment variavles "SECRET_KEY_BASE", "PUSHER_ADMIN_USERNAME" and "PUSHER_ADMIN_PASSWORD". Use the included "<tt>mix phoenix.gen.secret</tt>" to generate those.
+Now we must configure the environment variables "SECRET_KEY_BASE", "PUSHER_ADMIN_USERNAME" and "PUSHER_ADMIN_PASSWORD". Use the included "<tt>mix phoenix.gen.secret</tt>" to generate those.
 
 ```
 heroku config:set SECRET_KEY_BASE="`mix phoenix.gen.secret`"
@@ -626,7 +626,7 @@ heroku config:set PUSHER_ADMIN_USERNAME="FPO0QUkqbAP6EGjElqBzDQuMs8bhFS3"
 heroku config:set PUSHER_ADMIN_PASSWORD="n78DPGmK3DBQy8YAVyshiGqcXjjSXSD"
 ```
 
-Then it's just a matter of waiting for the good old "<tt>git push heroku master</tt>" to finish compiling everything in the first time. And because this is the first deploy you should not forget to run "<tt>heroku run mix ecto.migrate</tt>" to create the database table.
+Then it's just a matter of waiting for the good old "<tt>git push heroku master</tt>" to finish compiling everything for the first time. And because this is the first deploy you should not forget to run "<tt>heroku run mix ecto.migrate</tt>" to create the database table.
 
 Now, if I did everything right, as an Administrator that knows the above hardcoded secrets I should be able to create a new Application like this:
 
@@ -658,7 +658,7 @@ git push heroku master
 
 I'm assuming the readers of this post already know how to configure a Rails app properly for Heroku. Just to mention it, I configure this app with the 12 factor and Puma gems and added a proper Procfile. Another very small change was changing the "pusher_lite.rb" initializer to create a URI with "https" because the ExPusherLite we deployed to production requires SSL by default.
 
-There is one more caveat. Being led by experienced web programmers, they made sure that, unlike this bare bone exercise here, the Phoenix framework itself is secure. One such example is to disallow Websocket connections from different hosts.
+There is one more caveat. Being led by experienced web programmers, they made sure that, unlike this bare-bones exercise here, the Phoenix framework itself is secure. One such example is to disallow Websocket connections from different hosts.
 
 Out of the box, the "phoenix.js" Socket will fail connection when we try to connect from the "your-expusherlite-client.herokuapp.com" Rails app host to the Phoenix app in "your-expusherlite.herokuapp.com" with the following error:
 
@@ -689,9 +689,9 @@ to "localhost" but you may be trying to access it from
                        "//another.com:888", "//other.com"]
 ```
 
-Unless you know what a [Cross-Site Web Socket Hijacking](https://www.christian-schneider.net/CrossSiteWebSocketHijacking.html) you will prefer to keep the default settings as they are. In a green-field Phoenix app, the Web part will connect to the Web Socket in the same app and, therefore, in the same host, so this is not an issue.
+Unless you know what a [Cross-Site Web Socket Hijacking](https://www.christian-schneider.net/CrossSiteWebSocketHijacking.html) is, you will prefer to keep the default settings as they are. In a green-field Phoenix app, the Web part will connect to the Web Socket in the same app and, therefore, in the same host, so this is not an issue.
 
-In this case I am making a separated micro-service to mimick Pusher.com behavior so it should be able to accept Web Socket connections from different hosts.
+In this case I am making a separate micro-service to mimic Pusher.com behavior so it should be able to accept Web Socket connections from different hosts.
 
 If you control the applications being created, you will likely prefer to make the "<tt>check_origin</tt>" setting read from your database for the exact hosts. As a feature for next time I could add a "host" field in the "App" model and use it to validate connections in the transport configuration. For the time being I will just make it accept any hosts:
 
@@ -714,18 +714,18 @@ And this is it! Now the Rails app should be able to connect and send messages! A
 
 ### Conclusion
 
-Right now, we have a functional, albeit bare-bone, Pusher.com clone that will work for any number of use cases where Pusher.com would be used.
+Right now, we have a functional, albeit bare-bones, Pusher.com clone that will work for any number of use cases where Pusher.com would be used.
 
-As I warned many times before, the security part is still flaky and needs working. I will still extend on what Daniel began with Guardian to authenticate Web Socket users to private channels as well. And the core should also receive auditing and reporting capabilities (to be able to report usage, number of active connections, throughput of events, keep at least a short history of events so new connections can retrieve the last sent messages, and so on).
+As I warned many times before, the security part is still flaky and needs work. I will still extend on what Daniel began with Guardian to authenticate Web Socket users to private channels as well. And the core should also receive auditing and reporting capabilities (to be able to report usage, number of active connections, throughput of events, keep at least a short history of events so new connections can retrieve the last sent messages, and so on).
 
-But from here it's a matter of adding features to an already working core. And this is nothing more than Phoenix out-of-the-box without too much added on top of it! It says a lot of the current state of maturity of this very capable framework.
+But from here it's a matter of adding features to an already working core. And this is nothing more than Phoenix out-of-the-box without too much added on top of it! It says a lot about the current state of maturity of this very capable framework.
 
-In terms of performance, for this very simple example, I spinned up 1 free Heroku dyno for each app.
+In terms of performance, for this very simple example, I spun up 1 free Heroku dyno for each app.
 
 The Rails app is able to respond to the front-end user interface in around 2ms. And the Sucker Punch job - which does the heavy HTTP POST to ExPusherLite - takes in the order of 30ms or less.
 
 The Phoenix server receives the HTTP POST and performs the broadcast in around less than 6ms. Also quite fast. The times will vary a lot because I believe the free dyno is not only slow but also stays in highly shared metal boxes, getting impact from other neighbor apps running in the same box.
 
-Because we already have an administrative API to create and manage apps (create new ones, delete, update, etc) we can already create a separated application in any other framework to make a dashboard for admins or for a self-serving front-end for developers to register new apps and receive key/secret pair to add in their own applications.
+Because we already have an administrative API to create and manage apps (create new ones, delete, update, etc) we can already create a separate application in any other framework to make a dashboard for admins or for a self-serving front-end for developers to register new apps and receive key/secret pair to add in their own applications.
 
 Both the ExPusherLite server and the demo client are deployed in Heroku and you can test the client right now [clicking here](https://expusherlite-client.herokuapp.com/). The admin keys are different from what I showed in this post, of course, so you won't be able to create new apps, but you can deploy it yourself to your own environment.

@@ -20,9 +20,9 @@ José Valim kindly stepped in and posted a [valuable comment](http://www.akitaon
 
 > However, I believe you don't need to use Flow at all. Elixir v1.4 has something called [`Task.async_stream`](https://hexdocs.pm/elixir/Task.html#async_stream/5) which is a mixture of poolboy + task async, which is a definitely better replacement to what you had. We have added it to Elixir after implementing Flow as we realized you can get a lot of mileage out of `Task.async_stream` without needing to jump to a full solution like Flow. If using `Task.async_stream`, the `max_concurrency` option controls your pool size.
 
-And, obviously, he is right. I misunderstood how Flow works. It's meant to be used when you have a bazillion items to process in parallel. Particularly processing units that can have high variance and, hence, a lot of back-pressure not only because there is a lot of items to process, but because their running times can vary dramatically. So, it's one of those cases of having a canon, but I only have a fly to kill.
+And, obviously, he is right. I misunderstood how Flow works. It's meant to be used when you have a bazillion items to process in parallel. Particularly processing units that can have high variance and, hence, a lot of back-pressure not only because there is a lot of items to process, but because their running times can vary dramatically. So, it's one of those cases of bringing a cannon to kill a fly.
 
-What I wasn't aware is the existence of `Task.async_stream` and it's companion [`Task.Supervisor.async_stream`](https://hexdocs.pm/elixir/Task.Supervisor.html#async_stream/4) if I need to add more control.
+What I wasn't aware is the existence of `Task.async_stream` and its companion [`Task.Supervisor.async_stream`](https://hexdocs.pm/elixir/Task.Supervisor.html#async_stream/4) if I need to add more control.
 
 Let's backtrack a bit.
 
@@ -85,11 +85,11 @@ This is just for the example, I have not compiled this snippet to see if it work
 
 Again, for small lists, this should be ok (thousands) and where each item does not take too much to process.
 
-Now, this is not very good. Because each chunk must finish before the next chunk begins. Witch is why the ideal solution is to keep a constant amount of jobs running at any given time. To that end, we need a Pool, which is what I explained in [Part 2: Poolboy to the rescue!](http://www.akitaonrails.com/en/en/2015/11/19/ex-manga-downloadr-parte-2-poolboy-ao-resgate/).
+Now, this is not very good. Because each chunk must finish before the next chunk begins. Which is why the ideal solution is to keep a constant amount of jobs running at any given time. To that end, we need a Pool, which is what I explained in [Part 2: Poolboy to the rescue!](http://www.akitaonrails.com/en/en/2015/11/19/ex-manga-downloadr-parte-2-poolboy-ao-resgate/).
 
 But implementing the proper way to keep the pool entirely filled requires some boring juggling between Poolboy transactions and `Task.Supervisor.async`. Which is why I was interested in the new `Flow` usage.
 
-The code does come clean, but as I explained before, this is not the proper use case for Flow. It's better you have to iterate over tens of thousands of items or even infinite (you have a incoming traffic of requests in need of parallel processing, for example).
+The code does come clean, but as I explained before, this is not the proper use case for Flow. It's better when you have to iterate over tens of thousands of items or even an infinite stream (you have incoming traffic of requests in need of parallel processing, for example).
 
 So, finally, there is a compromise. The solution between the simple `Task.async` and `Flow` is `Task.async_stream` which works like a pool implementation, where it keeps a `max_concurrency` of jobs running in a stream. The final code becomes way more elegant like this:
 

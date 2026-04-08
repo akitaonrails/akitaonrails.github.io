@@ -61,13 +61,13 @@ So I decided to dig a bit deeper, into the dark world of NLG, or **Natural Langu
 
 For **NLP** (parsing, tokenization, etc) I'd highly recommend ["Stanford CoreNLP"](http://stanfordnlp.github.io/CoreNLP/). It seems to be one of the most robust and comprehensive out there (come on, it's from Stanford). Again a Java project, and a big download (more than 300MB!). Those linguistics projects are super heavy because they have to download entire dictionaries and lexicon databases.
 
-But focusing on my problem at hand, **NLG**, there are [several options](https://aclweb.org/aclwiki/index.php?title=Downloadable_NLG_systems) out there. In all honesty, I did not do a very extensive research so if you are aware of which is the most robust and also well maintained and with an easy to use interface, let me know in the comments section below.
+But focusing on my problem at hand, **NLG**, there are [several options](https://aclweb.org/aclwiki/index.php?title=Downloadable_NLG_systems) out there. In all honesty, I did not do very extensive research, so if you are aware of which is the most robust and also well maintained and with an easy to use interface, let me know in the comments section below.
 
-My choice was [SimpleNLG](https://github.com/simplenlg/simplenlg). From its GitHub page we can see that it seems to be quite well maintained to this day, it's a simple Java library and it is one of the "simpler" alternatives. [KPML](http://www.fb10.uni-bremen.de/anglistik/langpro/kpml/README.html) is on the opposite spectrum: it seems to be one of the oldest (since the 80's!) and most robust one. But seriously, it feels like you need a ph.D to even get started.
+My choice was [SimpleNLG](https://github.com/simplenlg/simplenlg). From its GitHub page we can see that it seems to be quite well maintained to this day, it's a simple Java library and it is one of the "simpler" alternatives. [KPML](http://www.fb10.uni-bremen.de/anglistik/langpro/kpml/README.html) is on the opposite spectrum: it seems to be one of the oldest (since the 80's!) and most robust ones. But seriously, it feels like you need a Ph.D to even get started.
 
 Reading the SimpleNLG Java source code was boring but easy enough. Give yourself one full day of study to get used to the code and you're in business.
 
-The main problem is that it's written in Java and I am not intending to write anything in Java (or any derivative) for now. For a short while I considered the endeavour of rewriting the damn thing in something more portable such as Rust, which I could load anywhere through FFI.
+The main problem is that it's written in Java and I don't intend to write anything in Java (or any derivative) for now. For a short while I considered the endeavor of rewriting the damn thing in something more portable such as Rust, which I could load anywhere through FFI.
 
 But even though SimpleNLG has "Simple" in its name it has a few hairy dependencies to load the lexicon database. And the database itself is an HSQLDB dump, which is a Java-written database. And then, there would be the issue of maintaining a fork.
 

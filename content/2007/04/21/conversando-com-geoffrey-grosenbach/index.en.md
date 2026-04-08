@@ -14,11 +14,11 @@ translationKey: chatting-geoffrey-grosenbach
 
  ![](/files/geoffrey.gif)
 
-The [Dr Nic](/pages/drnic) interview was a huge success and getting to know and exchange ideas with people as smart and intelligent is very addicting. So, I was again very fortunate to get in touch with **Geoffrey Grosenbach** , from [Topfunky Corporation](http://www.topfunky.com/). He was very kind accepting my invitation for this interview and sharing some of his experiences with us, Brazilians.
+The [Dr Nic](/pages/drnic) interview was a huge success and getting to know and exchange ideas with people as smart and intelligent is very addicting. So, I was again very fortunate to get in touch with **Geoffrey Grosenbach** , from [Topfunky Corporation](http://www.topfunky.com/). He was very kind in accepting my invitation for this interview and sharing some of his experiences with us, Brazilians.
 
 I am trying hard to get to know and interview more celebrities from our industry, so hang on there, because we may have more surprises.
 
-It was a very long conversation, which I enjoyed a lot. We discussed a lot about himself, his projects, the Ruby on Rails community and things to come. So, let’s get started.
+It was a very long conversation, which I enjoyed a lot. We discussed a lot about him, his projects, the Ruby on Rails community and things to come. So, let’s get started.
 
 ### Who’s Geoffrey?
 
@@ -68,7 +68,7 @@ So I forget the exact series of events, but I started my [blog](http://nubyonrai
 
 **Geoffrey** : The blog first. I wrote the [Sparklines library](http://nubyonrails.com/pages/sparklines), inspired by a handout left on the table at Amazon. Then I did a few interviews for the podcast and eventually took that over. PeepCode is only about 6 months old, but has done much better than I ever expected it would.
 
-**AkitaOnRails** : I didn’t listen to all of the [Rails Podcast](http://podcast.rubyonrails.org/) yet. Who was your first guest? Where did this interview idea came from?
+**AkitaOnRails** : I haven’t listened to all of the [Rails Podcast](http://podcast.rubyonrails.org/) yet. Who was your first guest? Where did this interview idea come from?
 
 **Geoffrey** : I didn’t start it, actually. [Scott Barron](http://rubyi.st/), of the Rails core team did, based on a dare from Heinemeier Hansson. He interviewed DHH and then Dave Thomas, and then a month went by. I wrote to him and asked if he would publish an interview if I did one.
 
@@ -88,7 +88,7 @@ I’ve always been interested in recording and audio. Then I ended up doing 43 m
 
 **AkitaOnRails** : And abruptly changing subjects, what about the conferences. RubyConf, RailsConf, US, EU, have you attended all of them?
 
-**Geoffrey** : I’ve been fortunate to have attended many of them. yes. RubyConf 2005 and 6. RailsConf Chicago and London. I’ll be at Rails Conf Portland this year, and also Berlin. And I am going to [GoRuCo](http://www.goruco.com) in NYC tomorrow. I’ve missed some of the regional ones, such as the one in Salt Lake City and the SDForum.
+**Geoffrey** : I’ve been fortunate to have attended many of them, yes. RubyConf 2005 and 6. RailsConf Chicago and London. I’ll be at Rails Conf Portland this year, and also Berlin. And I am going to [GoRuCo](http://www.goruco.com) in NYC tomorrow. I’ve missed some of the regional ones, such as the one in Salt Lake City and the SDForum.
 
 **AkitaOnRails** : That’s the occasion where you do the podcasts? You hunt them all down and record them? Is that how it works? :-)
 
@@ -98,7 +98,7 @@ I’ve always been interested in recording and audio. Then I ended up doing 43 m
 
 **Geoffrey** : Well, if someone is paying US$1000 or more to fly to a conference, buy admission, and hotel, they are probably not going to be a skeptic. But there is a great mix of people, some of whom are just learning about Rails. There are definitely some difficult parts of learning Rails, or at least parts that are unconventional. That’s what I try to cover on PeepCode.
 
-**AkitaOnRails** : Are most of the programmers that attended to the conferences switchers, or do you see people starting their career going directly into Rails? Does Rails still hold the novelty status or is it well established already there in the US?
+**AkitaOnRails** : Are most of the programmers attending the conferences switchers, or do you see people starting their career going directly into Rails? Does Rails still hold the novelty status or is it well established already there in the US?
 
 **Geoffrey** : Still novelty, I think. I’ve written to a local college and offered to give a presentation to their CS classes on Rails. They never wrote back. I think a lot of it is up to students to stay current and learn it on their own. Students write to me and say “Instead of going to a movie on Friday night, I bought a PeepCode and learned about Rails”. Which is kind of surprising! I also think that there are a lot of people who want to use it but are in a job where they can’t. But there is definitely more demand than there are programmers. So at least for now, people who know Rails can benefit from the novelty status.
 
@@ -125,15 +125,15 @@ I’ve always been interested in recording and audio. Then I ended up doing 43 m
 
 **Geoffrey** : Well, I’m interested in seeing other perspectives on languages and frameworks. I think that’s part of what attracted me to Ruby. Previously, one of the most popular interviews was with [Avi Bryant](http://smallthought.com/avi/), of [Seaside](http://www.seaside.st/) and [DabbleDB](http://www.dabbledb.com/). So I think people like hearing from someone outside Rails every once in a while. I was in Chicago for RailsConf, and knew that Adrian lived there. So I met him at his office on Sunday morning. It was a great chat, although I understand Django a bit better now so I would ask different questions if I did it again. That’s still the most-downloaded interview, after the one with DHH.
 
-**AkitaOnRails** : No kidding! I tell colleagues all the time: _“don’t be limited to one thing only. Most of all, don’t be religious trolls!”_ I once made a joke: _“you all sound like Sauron, one framework to rule them all, and in the darkness, bind them!”_ :-) Do you see people like that there as well? I hope they are diminishing for a most open-minded generation.
+**AkitaOnRails** : No kidding! I tell colleagues all the time: _“don’t be limited to one thing only. Most of all, don’t be religious trolls!”_ I once made a joke: _“you all sound like Sauron, one framework to rule them all, and in the darkness, bind them!”_ :-) Do you see people like that there as well? I hope they are diminishing in favor of a more open-minded generation.
 
 **Geoffrey** : Strangely, many open source programmers approach software like a marketing department would. _“We need market share!”_ Or religiously, thinking that you have to choose one and stick with it. But fortunately web services and remote API’s are changing that.
 
 **AkitaOnRails** : Yes, it’s all about the APIs, _“if it’s not an open API, I’m not using it”_. Don’t remember where I heard that motto.
 
-**Geoffrey** : Many people have a blog in Rails that imports delicious links from their servers running PHP, that tracks it’s stats from Google, running Python or whatever Google Analytics runs on. So there are many tools and they are good at different things. And by using others, you can loot their best ideas!
+**Geoffrey** : Many people have a blog in Rails that imports delicious links from their servers running PHP, that tracks its stats from Google, running Python or whatever Google Analytics runs on. So there are many tools and they are good at different things. And by using others, you can loot their best ideas!
 
-**AkitaOnRails** : I guess, it’s one of the most compelling things about all this “Web 2.0” talking. Not only the social networking aspect, but also the easy of **interoperability**.
+**AkitaOnRails** : I guess, it’s one of the most compelling things about all this “Web 2.0” talking. Not only the social networking aspect, but also the ease of **interoperability**.
 
 **Geoffrey** : I’ve been using [HAML](http://haml.hamptoncatlin.com) for the last week, and I love the syntax, which is very YAML-like. Culturally, we do that, so it shouldn’t be a surprise that programming languages can do it, too.
 
@@ -251,7 +251,7 @@ The early culture around Ruby in Japan involved a lot of experimentation and hac
 
 **AkitaOnRails** : And what’s the size of each episode? How many episodes do you have so far? You mentioned Zed, so you’re not the loner host anymore?
 
-**Geoffrey** : I have only 7 episodes so far. Most are over an hour, but all are at least 45 minutes. I was going to work with other authors who would do an entire screencast, but it ended up being too difficult for now. So Iâ€™m doing more of a collaboration where I do the screencast, but someone else is the technical editor and helps with the content. The good part of that is that I learn as much as the people who buy the screencasts! I’ve learned a ton about JavaScript in the last few weeks, and I’m working with [Justin Palmer](http://encytemedia.com).
+**Geoffrey** : I have only 7 episodes so far. Most are over an hour, but all are at least 45 minutes. I was going to work with other authors who would do an entire screencast, but it ended up being too difficult for now. So I’m doing more of a collaboration where I do the screencast, but someone else is the technical editor and helps with the content. The good part of that is that I learn as much as the people who buy the screencasts! I’ve learned a ton about JavaScript in the last few weeks, and I’m working with [Justin Palmer](http://encytemedia.com).
 
 **AkitaOnRails** : Nice. PeepCode is only the name of the site? Is it a Topfunky related project? Or are both separated things?
 

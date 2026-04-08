@@ -14,7 +14,7 @@ draft: false
 
 "Anyone that is someone has been following Apple for the past couple of decades. Love them, or hate them, the only thing you can't do is ignore them." - that was always the general thought.
 
-"Creative" Professionals (as if "creatives" were only restricted to painters and illustrators)  have always been the most loyal Apple followers, for good reason. It was the cradle for important tools such as Photoshop, QuarkXPress, Postscript and PDF, Quicktime. They really set the standards for media creation. Anyone that was someone used those tools. Windows focused on the corporate, not the creatives. Linux was in its infancy, most developers didn't even know the difference between CMYK and RGB yet, they were content for having a crude bitmap in the screen.
+"Creative" Professionals (as if "creatives" were only restricted to painters and illustrators) have always been the most loyal Apple followers, for good reason. It was the cradle for important tools such as Photoshop, QuarkXPress, Postscript and PDF, Quicktime. They really set the standards for media creation. Anyone that was someone used those tools. Windows focused on the corporate, not the creatives. Linux was in its infancy, most developers didn't even know the difference between CMYK and RGB yet, they were content with having a crude bitmap on the screen.
 
 ![Old Macintosh](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/587/918d80cb21131a7a62e6ccaf71229960.jpg)
 
@@ -28,11 +28,11 @@ The Microsoft Antitrust case of 2000, the Dotcom Bubble burst in 2001, the relea
 
 [![Microsoft Antitrust](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/589/Microsoft.gif)](http://www.economist.com/node/2535519)
 
-Then in 2007/2008 they had a new push: the iPhone, the App Store, and the need to use XCode - available only in Apple computers. Different from being obligated to remain in Windows because of Visual Studio, to use XCode was actually an extra reason to buy a Mac.
+Then in 2007/2008 they had a new push: the iPhone, the App Store, and the need to use XCode - available only in Apple computers. Unlike being forced to stay on Windows because of Visual Studio, using XCode was actually an extra reason to buy a Mac.
 
 ![iPhone announcement](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/590/SteveJobsUnveilsiPhone.jpg)
 
-Linux distros were still struggling. To this day, we were obligated to remain with the [stupid X11](https://www.youtube.com/watch?v=RIctzAQOe44). If a Linux-based OS was cutting edge, X11 was the worst possible OS on top of it. Apple were smart enough to not adopt it and instead create Quartz from scratch and improve it step by step on each OS X new release. It took them 5 years to fully stabilize. Only now, in 2017, we are finally moving away from X into Wayland/Weston.
+Linux distros were still struggling. To this day, we were stuck with the [stupid X11](https://www.youtube.com/watch?v=RIctzAQOe44). If a Linux-based OS was cutting edge, X11 was the worst possible OS on top of it. Apple was smart enough to not adopt it and instead create Quartz from scratch and improve it step by step on each OS X new release. It took them 5 years to fully stabilize. Only now, in 2017, we are finally moving away from X into Wayland/Weston.
 
 ![Steve Ballmer](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/591/steve-ballmer.jpg)
 
@@ -48,7 +48,7 @@ And so are we.
 
 Major Linux distros, Microsoft, PC hardware manufacturers, big industry turnarounds (Nokia, Blackberry, Motorola) the dawn of the GPU era, the end of Moore's Law speed clock wars into parallel computing, the dawn of ARM. It took 10 years for all the smoke to finally settle, and it took having Apple standing still for 6 years for everybody to finally catch up.
 
-Ballmer left the reins to Satya Nadella. Microsoft acquires Xamarin, make huge strides into open source and even [Ubuntu now runs natively on top of Windows 10](http://www.akitaonrails.com/en/2016/07/26/o-ano-do-linux-no-desktop-esta-usavel).
+Ballmer left the reins to Satya Nadella. Microsoft acquires Xamarin, makes huge strides into open source and even [Ubuntu now runs natively on top of Windows 10](http://www.akitaonrails.com/en/2016/07/26/o-ano-do-linux-no-desktop-esta-usavel).
 
 ![Satya Nadella](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/593/THE_END_TIMES_ARE_HERE-399de53540c79757ac9af535579cdad9.jpg)
 
@@ -60,7 +60,7 @@ One last legacy of the Steve Jobs era was both [killing Adobe Flash](https://www
 
 Google jumped in, took over the ball that Internet Explorer left behind. WebKit became the quintessential web browser reference. Javascript became the new application platform, pushed by the many evolving Social Networks.
 
-For better or worse, the social networks forced the new dawn of complex and interactive Web Applications. We got the example of Gmail and Web 2.0 and with the new mobile environment, everything converged into making cross platforms, ubiquitous apps.
+For better or worse, the social networks forced the new dawn of complex and interactive Web Applications. We got the example of Gmail and Web 2.0 and with the new mobile environment, everything converged into making cross-platform, ubiquitous apps.
 
 It's now easier than ever to switch between desktop OSes because we made it easy to jump around between the desktop and mobile devices already.
 
@@ -76,7 +76,7 @@ Because the apps we use are mostly web enabled: Gmail, Spotify, Slack, Hangout, 
 
 It was a cat and mouse chase until at least 5 years ago, then everybody started to settle.
 
-After Jobs died we still had expectations that Apple would keep pushing forward, albeit in a slower pace without Jobs' whip.
+After Jobs died we still had expectations that Apple would keep pushing forward, albeit at a slower pace without Jobs' whip.
 
 It didn't happen. They made bad decision after bad decision and we keep feeling that we are back in the early 90's, under Scully, Spindler or Amelio.
 
@@ -86,21 +86,21 @@ But now, there are fallbacks readily available: Windows 10 Anniversary Edition i
 
 And most of the apps we use in our routines are available. Heck, you can find a good web-based cross platform text editor in the form of Atom nowadays.
 
-Apple also left the legacy of ubiquitous cross platform compilation readily available in the form of [LLVM](https://www.infoq.com/br/presentations/novas-linguagens-o-que-vem-depois-do-ruby). It served their own needs to have Objective-C available in PowerPC, Intel, ARM and Apple Ax processors. But LLVM is now the best backbone to enable languages such as Rust, RubyMotion, Crystal to exist and easily create fast binaries in multiple platforms.
+Apple also left the legacy of ubiquitous cross platform compilation readily available in the form of [LLVM](https://www.infoq.com/br/presentations/novas-linguagens-o-que-vem-depois-do-ruby). It served their own needs to have Objective-C available on PowerPC, Intel, ARM and Apple Ax processors. But LLVM is now the best backbone to enable languages such as Rust, RubyMotion, Crystal to exist and easily create fast binaries on multiple platforms.
 
 [![Chris Lattner leaves Apple to Tesla](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/596/11-1484116910-chris-lattner-01.jpg)](https://www.tesla.com/blog/welcome-chris-lattner)
 
 "Apple's current board of directors need to go". "Tim Cook needs to step down". I am sure many are crying out loud like this, but there is no Steve Jobs waiting to return. Apple is so big that the inertia alone will keep them going a few more years, but they are in danger of falling into irrelevance.
 
-Other industries such as energy, health, genetics, are evolving in their own ways, but computer technology is in a dangerous stand still.
+Other industries such as energy, health, genetics, are evolving in their own ways, but computer technology is in a dangerous standstill.
 
 Computer Languages stopped evolving in the mid-90's. All "new" languages are amalgams of language features that were already there since the 70's and 80's. CPU processors are stuck into just making transistors smaller and more energy efficient. And we are already there: [$9 computers](https://www.kickstarter.com/projects/1598272670/chip-the-worlds-first-9-computer) are good enough for trivial tasks such as web browsing. So much that we are putting them everywhere: even a bluetooth toothbrush that keeps track of your brushing sessions.
 
 [![Bluetooth Toothbrush](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/597/smart-video-toothbrush-ces.jpg)](https://www.dezeen.com/2017/01/06/ara-first-toothbrush-artifical-intelligence-kolibree-ces/)
 
-Did you see CES 2017 products? Pillows and beds that track your sleep and sync data to an app. Washing machines. Vaccuum cleaners. Fitness devices. Health devices. Personal assistants such as Alexa. Everything takes data from you and sync them into "the cloud".
+Did you see CES 2017 products? Pillows and beds that track your sleep and sync data to an app. Washing machines. Vacuum cleaners. Fitness devices. Health devices. Personal assistants such as Alexa. Everything takes data from you and syncs it into "the cloud".
 
-"The cloud" also reached peak. It's ubiquitous. It's not only affordable but downright cheap. Technology in general is dirty cheap nowadays.
+"The cloud" has also reached peak. It's ubiquitous. It's not only affordable but downright cheap. Technology in general is dirt cheap nowadays.
 
 Wearables and VR are good gimmicks, but even if they become ubiquitous, it's not a revolution, just an extension of the use cases that the iPhone revolution bootstrapped.
 
@@ -110,7 +110,7 @@ Wearables and VR are good gimmicks, but even if they become ubiquitous, it's not
 
 ![mobile](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/602/6e752109eac4d37830078517b2aefd583d52722a.jpg)
 
-Mobile, wearables, social networks, only made people more anxious. Allowing everybody have a "voice" online didn't improve things, just made people more anxious. Opinions are in such large supply that they are worth less and less.
+Mobile, wearables, social networks, only made people more anxious. Allowing everybody to have a "voice" online didn't improve things, just made people more anxious. Opinions are in such large supply that they are worth less and less.
 
 Every person online is now a source of terabytes of useless information to generate pseudo-statistics that are useless for the most part. [Every person is now defined by a bunch of data in the cloud](http://www.techrepublic.com/article/the-dark-side-of-wearables-how-theyre-secretly-jeopardizing-your-security-and-privacy/).
 
@@ -120,4 +120,4 @@ I have no idea where we are going from here, as a witness of history, I'd have t
 
 ![Windows 95 launch](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/598/20150824-bill-gates-microsoft-windows-95-launch.0.jpg)
 
-2010 has been the longest year I've ever seem. Maybe settling down is good thing. Who knows?
+2010 has been the longest year I've ever seen. Maybe settling down is a good thing. Who knows?

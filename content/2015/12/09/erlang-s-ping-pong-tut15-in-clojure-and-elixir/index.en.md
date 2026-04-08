@@ -115,6 +115,6 @@ defmodule ExPingPongTut15 do
 end
 ```
 
-Because of the power of pattern matching in the functions arguments signature, you can define 2 separated functions, avoiding the "if" as in the Clojure example. Of course, because it's Clojure and it has a complete macro system, and because it's [core.match](https://github.com/clojure/core.match) has the proper pattern matching mechanisms, you can emulate the same thing through external libraries such as [defun](https://github.com/killme2008/defun) though.
+Because of the power of pattern matching in the function argument signatures, you can define 2 separated functions, avoiding the "if" as in the Clojure example. Of course, because it's Clojure and it has a complete macro system, and because its [core.match](https://github.com/clojure/core.match) has the proper pattern matching mechanisms, you can emulate the same thing through external libraries such as [defun](https://github.com/killme2008/defun) though.
 
-This was just a simple exercise, I hope it shed some light on the basic similarities between these 3 languages. And as "ugly" as Erlang may feel, I still feel more comfortable with its quirks then nested parenthesis.
+This was just a simple exercise, I hope it shed some light on the basic similarities between these 3 languages. And as "ugly" as Erlang may feel, I still feel more comfortable with its quirks than nested parenthesis.

@@ -10,29 +10,29 @@ tags:
 draft: false
 ---
 
-Blender is a beast. A true marvel of open source technology achievement, you should applaud everyone that have been involved in making this thing work as well as it does. It rivals the most expensive commercial options out there, from Maya to the venerable Pixar's Renderman.
+Blender is a beast. A true marvel of open source technology achievement, you should applaud everyone who has been involved in making this thing work as well as it does. It rivals the most expensive commercial options out there, from Maya to the venerable Pixar's Renderman.
 
-The Blender community is so passionate and committed that they frequently produce high quality, almost hollywood grade, [short movies](http://archive.blender.org/features-gallery/movies/) within Blender in order to stress test the tool, fix bottlenecks and usability issues in a real world workflow.
+The Blender community is so passionate and committed that they frequently produce high quality, almost Hollywood grade, [short movies](http://archive.blender.org/features-gallery/movies/) within Blender in order to stress test the tool, fix bottlenecks and usability issues in a real world workflow.
 
-This is primarily a post intended for "future me" to be able to jump back into a single resource list. As being a 3D modeler is not my full time job, I will have large hiatus between Blender sessions and I know I will regret if I don't dump by brain into a post while  still fresh :-)
+This is primarily a post intended for "future me" to be able to jump back into a single resource list. As being a 3D modeler is not my full time job, I will have large gaps between Blender sessions and I know I will regret it if I don't dump my brain into a post while it's still fresh :-)
 
 ### Beginner First Steps
 
-First things first. If you're in this blog, you're probably a programmer. And let me tell you that the Graphics folks have things very different from what we, programmers, usually think of as "usability". The sheer ammount of customization, options, shortcuts and combinations will rival even Vim and Emacs users out there.
+First things first. If you're in this blog, you're probably a programmer. And let me tell you that the Graphics folks have things very different from what we, programmers, usually think of as "usability". The sheer amount of customization, options, shortcuts and combinations will rival even Vim and Emacs users out there.
 
-Oh, by the way, you're required to have a proper 3-button mouse. Touchpads are useless with Blender. The Mac mouse is terrible with Blender. [Any cheap PC mouse will do.](http://www.dell.com/br/mouse) And out of the box, the main button is the right-sided one, not our usual left-sided button! You should change that in the [user preferences](https://docs.blender.org/manual/en/dev/preferences/input.html) to select with Left. Now, things start to work. While on that, you should also enable the Numpad emulation. Oh yeah, you should get a keyboard with a numpad or even a separated numpad for extra smoothness. You can use the number row on top of your normal keyboard, but Blender was built with both an inverted 3-button mouse and 
+Oh, by the way, you're required to have a proper 3-button mouse. Touchpads are useless with Blender. The Mac mouse is terrible with Blender. [Any cheap PC mouse will do.](http://www.dell.com/br/mouse) And out of the box, the main button is the right-sided one, not our usual left-sided button! You should change that in the [user preferences](https://docs.blender.org/manual/en/dev/preferences/input.html) to select with Left. Now, things start to work. While on that, you should also enable the Numpad emulation. Oh yeah, you should get a keyboard with a numpad or even a separated numpad for extra smoothness. You can use the number row on top of your normal keyboard, but Blender was built assuming both an inverted 3-button mouse and a numpad.
 
 [![Input User Preferences](https://docs.blender.org/manual/en/dev/_images/preferences_input_tab.png)](https://docs.blender.org/manual/en/dev/preferences/input.html)
 
 If you have never studied Blender before, you will not figure things out just by randomly exploring the UI. The UI is useless until someone teaches you the ins and outs. There are hundreds of terms you just have no idea what they mean, such as Meshes, Edges, Seams, Nodes, Viewport, Subsurface, Modifiers, etc.
 
-The main thing you MUST do before proceding is watching this entire 9 part series from Blender Guru, called [Blender Beginner Tutorial Series](https://www.youtube.com/watch?v=VT5oZndzj68&list=PLjEaoINr3zgHs8uzT3yqe4iHGfkCmMJ0P). Optionally you can slowly do the [Intermediate Blender Tutorials](https://www.youtube.com/watch?v=Mwzz-Y6t-v8&list=PLjEaoINr3zgEgoyYWE0Yit-cVoZ60WGtt) later.
+The main thing you MUST do before proceeding is watching this entire 9 part series from Blender Guru, called [Blender Beginner Tutorial Series](https://www.youtube.com/watch?v=VT5oZndzj68&list=PLjEaoINr3zgHs8uzT3yqe4iHGfkCmMJ0P). Optionally you can slowly do the [Intermediate Blender Tutorials](https://www.youtube.com/watch?v=Mwzz-Y6t-v8&list=PLjEaoINr3zgEgoyYWE0Yit-cVoZ60WGtt) later.
 
-The Beginner Series will teach you enough so you will finally start feeling confident with the UI and tools. And don't forget to print and hang this useful ["cheat sheet"](https://www.blenderguru.com/articles/free-blender-keyboard-shortcut-pdf), you won't believe how easier your life becomes once you get used to the most important keyboard shortcuts.
+The Beginner Series will teach you enough so you will finally start feeling confident with the UI and tools. And don't forget to print and hang this useful ["cheat sheet"](https://www.blenderguru.com/articles/free-blender-keyboard-shortcut-pdf), you won't believe how much easier your life becomes once you get used to the most important keyboard shortcuts.
 
 ### Better Defaults
 
-For historical reasons, somethings are not how they should be. Knowledge in the 3D rendering field is evolving very fast.
+For historical reasons, some things are not how they should be. Knowledge in the 3D rendering field is evolving very fast.
 
 The very first thing to do: [change](https://wiki.blender.org/index.php/Doc:2.6/Tutorials/Rendering/Cycles) the default render engine from Blender Render to the Cycles Raytracing Engine.
 
@@ -54,7 +54,7 @@ And I always start Blender from the terminal like this:
 optirun ~/bin/filmic-blender
 ```
 
-This does 2 things: first pre-configure the OpenColorIO to use the Filmic replacement. Second it enabled the external GPU of my notebook to be availble to Blender. Read my post on ["Enabling Optimus NVIDIA GPU on the Dell XPS 15 with Linux, even on Battery"](http://www.akitaonrails.com/en/2017/03/14/habilitando-a-gpu-optimus-nvidia-no-dell-xps-15-com-linux) for more details. On Windows or Mac, this is not necessary but you will still need to load the filmic configuration though.
+This does 2 things: first pre-configure the OpenColorIO to use the Filmic replacement. Second, it enables the external GPU of my notebook to be available to Blender. Read my post on ["Enabling Optimus NVIDIA GPU on the Dell XPS 15 with Linux, even on Battery"](http://www.akitaonrails.com/en/2017/03/14/habilitando-a-gpu-optimus-nvidia-no-dell-xps-15-com-linux) for more details. On Windows or Mac, this is not necessary but you will still need to load the filmic configuration though.
 
 Then, on the Scene tab you must reconfigure "Color Management" to be like this:
 
@@ -70,7 +70,7 @@ In the Render tab, you should have something like this:
 
 In the Dimensions section, you will notice that it has the Full HD (1920x1080 px) size but only 50% (so it will only render half the size). Increase it to 100%. If you want a 4K shot, increase the dimensions to 3840x2160 px. 4K makes it 4 times slower to render than 1080p, obviously.
 
-In the Performance section you will see 2 input fields for "Tile size". Blender will slice your full image into tiles. Each tile will render in parallel in a available CPU or GPU core. My notebook has 8 CPU cores. 64 is a good size because it will render 8 tiles of 64 pixels each in parallel. The less cores you have, the larger you should make the tile sizes. For my NVIDIA GPU, I only have 2 available cores (and not a lot of video memory as well!), you should increase both fields to 512. On the GPU it will only render 2 tiles at once, so increasing it will optimize the render.
+In the Performance section you will see 2 input fields for "Tile size". Blender will slice your full image into tiles. Each tile will render in parallel on an available CPU or GPU core. My notebook has 8 CPU cores. 64 is a good size because it will render 8 tiles of 64 pixels each in parallel. The fewer cores you have, the larger you should make the tile sizes. For my NVIDIA GPU, I only have 2 available cores (and not a lot of video memory as well!), you should increase both fields to 512. On the GPU it will only render 2 tiles at once, so increasing it will optimize the render.
 
 As you probably guessed, Blender Guru has a very useful ["18 ways to speed up Cycles Rendering"](https://www.youtube.com/watch?v=8gSyEpt4-60&t=204s) tutorial.
 
@@ -100,7 +100,7 @@ You really should dive deep into the field of Photography to improve the final r
 
 The golden standard in 3D modeling and rendering is certainly [Disney/Pixar RenderMan](https://renderman.pixar.com/view/renderman). Every award winning Pixar movie was made with it.
 
-But Blender learns fast. Every Pixar paper eventually becomes part of Blender itself. For example, material design is one aspect that has been quite cumbersome in Blender. I did some of the tutorials myself and to create the materials with the proper real world characteristics such as proper Fresnel, proper dialectric x metallic, etc was a challenge.
+But Blender learns fast. Every Pixar paper eventually becomes part of Blender itself. For example, material design is one aspect that has been quite cumbersome in Blender. I did some of the tutorials myself and to create the materials with the proper real world characteristics such as proper Fresnel, proper dielectric vs metallic, etc was a challenge.
 
 If you subscribed to Blender Guru's channel you should really watch the tutorials ["How to Make Photorealistic PBR Materials - Part 1"](https://www.youtube.com/watch?v=V3wghbZ-Vh4&t=2668s) and ["Part 2"](https://www.youtube.com/watch?v=m1PkSViBi-M). And you will end up with this complicated Nodes configuration for PBR materials:
 
@@ -114,7 +114,7 @@ I am still a beginner at Blender, there is a very long road to walk here. But it
 
 Over time I hope I find the time to integrate the Blender workflow with other tools such as Unreal Engine or Unity3D to create interactive stuff as well.
 
-This is by no means a complete tutorial or reference. The idea was to highlight a few things that are not immediatelly obvious when you start with Blender and that can give you a broader sense of what Blender can do.
+This is by no means a complete tutorial or reference. The idea was to highlight a few things that are not immediately obvious when you start with Blender and that can give you a broader sense of what Blender can do.
 
 If you want to go really in-depth in the customization, watch this CG Master setup video:
 

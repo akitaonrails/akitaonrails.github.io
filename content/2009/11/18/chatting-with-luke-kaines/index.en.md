@@ -10,13 +10,13 @@ draft: false
 
 Configuration Management is a tricky subject. For non-starters, when you're a developer and you have few boxes to take care of, you can usually get away with just managing them manually. People are probably just used to pop in a CD, double-click the "install" program and click "next", "next" until the end, then you manually log in to backup (when you remember it), and sometimes you do apply some security updates when you remember about them.
 
-But then you have more than a dozen machines, things start to get uglier, you end up making more mistakes, forgetting important steps, and all of a sudden managing machines become a nightmare. You end up being woken up in the middle of the night because you forgot to install some crucial component, and so on and so forth.
+But then you have more than a dozen machines, things start to get uglier, you end up making more mistakes, forgetting important steps, and all of a sudden managing machines becomes a nightmare. You end up being woken up in the middle of the night because you forgot to install some crucial component, and so on and so forth.
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2009/11/18/pic2_original.jpg)
 
 The same way you need testing, continuous integration tools when you're a developer, you also need automated, reliable and flexible tools for the system administrator role. That's where tools such as **Puppet** kick in to help.
 
-This time I've interviewed [Luke Kanies](http://twitter.com/puppetmasterd), from [Reductive Labs](http://reductivelabs.com/), former contributor to the famous CFEngine tool and creator of [Puppet](http://github.com/reductivelabs/puppet), one of the most acclaimed configuration management tool for 21st century datacenters.
+This time I've interviewed [Luke Kanies](http://twitter.com/puppetmasterd), from [Reductive Labs](http://reductivelabs.com/), former contributor to the famous CFEngine tool and creator of [Puppet](http://github.com/reductivelabs/puppet), one of the most acclaimed configuration management tools for 21st century datacenters.
 
 
  **AkitaOnRails:** To kick start this interview, it would be great to have more background info about you. So, how did you end up in the configuration management field? I understand that you have a long history with CFEngine development, right?
@@ -33,11 +33,11 @@ I got frustrated enough that I stopped consulting and looked for other options. 
 
 **AkitaOnRails:** I'd like to say that only amateur sysadmins do everything manually, but I think most small to medium corporations at least still do everything manually or with random scripts spread all over the place. The notion of "configuration management" is still new to a lot of people. Could you briefly explain what it is, and why it is important?
 
-**Luke:** It's surprisingly difficult to describe it succintly, but for me, there are two key rules: You shouldn't need to connect directly to a given machine to change its configuration, and you should be able to redeploy any machine on your network very quickly.
+**Luke:** It's surprisingly difficult to describe it succinctly, but for me, there are two key rules: You shouldn't need to connect directly to a given machine to change its configuration, and you should be able to redeploy any machine on your network very quickly.
 
 These two rules combine to require comprehensive automation and/or centralization for everything that goes into making a machine work. Annoyingly, they also immediately introduce dependency cycles, because your automation server needs to be able to build itself, which is always a bit of a challenge.
 
-**AkitaOnRails:** I think one of the most widely used system is CFEngine2. How does Puppet compare with it? Meaning, what do I have as value added when switching to Puppet, and what are the known caveats?
+**AkitaOnRails:** I think one of the most widely used systems is CFEngine2. How does Puppet compare with it? Meaning, what do I have as value added when switching to Puppet, and what are the known caveats?
 
 **Luke:** There are multiple important functional differences. The biggest is Puppet's **Resource Abstraction Layer** , which allows Puppet users to avoid a lot of the detail they don't really care about, like how rpm, adduser, or init scripts work – they talk about users, groups, and packages, and Puppet figures out the details.
 
@@ -65,7 +65,7 @@ In general the APIs are quite stable, and we've done quite well, I think, at mai
 
 **AkitaOnRails:** Puppet has its own language and you can use Ruby for the advanced cases. It's probably perfect for Rubists, but I feel that most sysadmins are used to Bash, Python and are not very flexible on change. Why did you choose to use Ruby instead of a more widespread language? What do sysadmins need to realize to shift paradigms?
 
-**Luke:** Part of it is that most people don't really need to know any ruby to be effective with Puppet. Sure, you can get some more power if you do, but if you're not a language person, you're perfectively functional with just Puppet.
+**Luke:** Part of it is that most people don't really need to know any ruby to be effective with Puppet. Sure, you can get some more power if you do, but if you're not a language person, you're perfectly functional with just Puppet.
 
 Another nice thing is that we have a pretty smooth scale in terms of Ruby knowledge – you can start out writing ERB templates or five line extensions to [Facter](http://github.com/reductivelabs/facter), which is our client-side querying system, and grow smoothly through to writing custom resource types.
 
@@ -81,7 +81,7 @@ Now that my company, Reductive Labs, has some investment, we've been able to add
 
 As to dependencies, this is one area we break strongly from the Ruby community – we don't require a single gem, other than our own Facter tool (and it's usually not shipped as a gem). Rubyists tend not to worry too much about package dependencies – they just put it in vendor, as I'm fond of saying – but that doesn't work when you have to deploy thousands of copies. So yes, you might have to install Ruby, but there won't be any other dependencies you have to deal with, which greatly simplifies it.
 
-It's generally as tough to know how you'll need to size your puppetmaster as it would be to size a web server – it depends on how complicated the workload is. In general, somewhere between 500 and 5000 clients, you'll need to have a second server, but most people probably find it closer to 500. Really, though, if you've got 3000 clients hitting a service, you probably want to make it horizontally scalable for stability in additional to performance.
+It's generally as tough to know how you'll need to size your puppetmaster as it would be to size a web server – it depends on how complicated the workload is. In general, somewhere between 500 and 5000 clients, you'll need to have a second server, but most people probably find it closer to 500. Really, though, if you've got 3000 clients hitting a service, you probably want to make it horizontally scalable for stability in addition to performance.
 
 **AkitaOnRails:** Security is a big concern nowadays, Puppet was worried from the beginning on the handshake procedure between clients and server, can you describe it a little bit? Also, is there any built-in recipes for hardening machines, for example? Or at least any desires to add such tools in the future?
 
@@ -95,13 +95,13 @@ As to automatic hardening, there aren't any recipes that I'm aware of right now,
 
 **Luke:** Holy cow Webrick is slow. It's really fantastic for proof of concepts – get up and running in minutes. Once you get beyond that proof of concept, though, you really need to switch to Mongrel or Passenger. If you get more than one concurrent connection in webrick, your clients start to suffer, but you can scale to far more with the other solutions out there.
 
-**AkitaOnRails:** Are there any clients case you are allowed to talk about? Meaning, more details on the kind of infrastructure, difficulties, caveats, best practices?
+**AkitaOnRails:** Are there any client cases you are allowed to talk about? Meaning, more details on the kind of infrastructure, difficulties, caveats, best practices?
 
 **Luke:** The possibilities here are pretty open ended. Google uses Puppet to maintain their corporate IT, which means they're running it on thousands of laptops and desktops which is pretty different. MessageOne, a division of Dell, is really interesting in that their developers have to ship Puppet code to manage the applications that they ship, so if an app isn't trimming its logs or backing itself up, it's a bug that the app developer has to fix rather than the sysadmin. This really helps to bridge the divide between dev and ops, which has worked out really well for them.
 
-Otherwise, there are lots of stores and best practices, but I'm afraid that would be a whole second article. :)
+Otherwise, there are lots of stories and best practices, but I'm afraid that would be a whole second article. :)
 
-**AkitaOnRails:** I've seen Andrew Shaffer talk about [Agile Infrastructure](http://www.slideshare.net/littleidea/agile-infra-agileroots-2009) for a couple of years now, but I still think most IT organizations are unaware of this concept. Can you elaborate on what does it mean to be Agile outside of the development field?
+**AkitaOnRails:** I've seen Andrew Shaffer talk about [Agile Infrastructure](http://www.slideshare.net/littleidea/agile-infra-agileroots-2009) for a couple of years now, but I still think most IT organizations are unaware of this concept. Can you elaborate on what it means to be Agile outside of the development field?
 
 <embed src="http://agileroots2009.confreaks.com/player.swf" height="380" width="640" allowscriptaccess="always" allowfullscreen="true" flashvars="image=images%2F15-jun-2009-14-30-agile-infrastructure-andrew-shafer-preview.png&file=http%3A%2F%2Fagileroots2009.confreaks.com%2Fvideos%2F15-jun-2009-14-30-agile-infrastructure-andrew-shafer-small.mp4&plugins=viral-1"></embed>
 

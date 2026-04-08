@@ -20,15 +20,15 @@ For example, to get rid of the warnings to upgrade because we hit the upload lim
 
 Our team kept growing, steadily, frequently, as well as clients. The more users we add, the more conversations, the faster we hit the restrictions. History gets lost more frequently, we need to clean up uploads more often. It gets old very fast.
 
-One thing I value above everything is knowledge. As a small example, I myself keep multiple backups for all my emails, all my projects, all my assets that I produced in the last 20 years. Heck, I have a 6 TB, Raid-5, Drobo system right in my home desk and 3 extra 1TB external drives for backup. I've lost very little over the years.
+One thing I value above everything is knowledge. As a small example, I keep multiple backups of all my emails, all my projects, all my assets that I produced in the last 20 years. Heck, I have a 6 TB, Raid-5, Drobo system right in my home desk and 3 extra 1TB external drives for backup. I've lost very little over the years.
 
 It really annoys me when I lose information.
 
 * Gmail Business, DropBox, AWS S3 buckets, being external services, don't worry me because I keep copies of everything offline. So if those accounts get busted all of a sudden, I have multiple copies.
 
-* GitHub annoyed me a bit because although I have multiple copies of the repositories, I would lose all the Pull Request, Issues history. That's one reason I moved to my own GitLab and helped tweak the import process to grab those Pull Request history.
+* GitHub annoyed me a bit because although I have multiple copies of the repositories, I would lose all the Pull Request and Issues history. That's one reason I moved to my own GitLab and helped tweak the import process to grab that Pull Request history.
 
-* Slack annoys me a lot for the aforementioned reasons, which is why last week we tried both MatterMost first, and then we deployed Rocket.chat.
+* Slack annoys me a lot for the aforementioned reasons, which is why last week we tried MatterMost first, and then we deployed Rocket.chat.
 
 ![Mattermost](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/558/big_8_13_16__22_20.png)
 
@@ -36,7 +36,7 @@ It really annoys me when I lose information.
 
 We moved from Slack to Rocket.chat and a couple of days later we are moving again, now to Mattermost.
 
-Yes, this was cumbersome. My team was not very happy for leaving Slack. Slack really is slick, full-featured, good-looking, well-rounded, a proper web product for this generation. Any alternative should be at least almost as good-looking, and at least have bug-free features, including webhooks.
+Yes, this was cumbersome. My team was not very happy about leaving Slack. Slack really is slick, full-featured, good-looking, well-rounded, a proper web product for this generation. Any alternative should be at least almost as good-looking, and at least have bug-free features, including webhooks.
 
 Mattermost fits the bill almost perfectly but the open sourced Team Edition lacked one important feature for me: the ability to disallow normal members to rename and/or delete private groups. Yes, we expect grown-ups to behave, but when you have remote teams, remote clients, external users with no commitment to the company, it's a hassle.
 
@@ -44,13 +44,13 @@ Yes, I could and I probably should use the paid Enterprise Edition. But for just
 
 But Rocket.chat has a complex infrastructure to deal with (you must have at the very least 3 boxes or pay extra for a proper Mongodb SaaS). Actually, [in my previous post](http://www.akitaonrails.com/2016/08/09/moving-away-from-slack-into-rocket-chat-good-enough) I explained why you MEAN guys should not be careless dealing with Mongodb. In a nutshell: Mongodb was not meant to run in a single instance, you must have a replica set. If you have a single instance Mongodb, you're doing it wrong.
 
-And the most problematic: the client-side is just too heavy. It frequently spikes out the CPU in not so powerful machines. It's noticeably and measurably slower to navigate in its UI, compared to Slack. MatterMost UI was much faster and way more responsive.
+And the most problematic: the client-side is just too heavy. It frequently spikes out the CPU in not so powerful machines. It's noticeably and measurably slower to navigate its UI, compared to Slack. MatterMost's UI was much faster and way more responsive.
 
 I was almost willing to overlook the lack of a proper test suite. I was willing to try to live with Meteor and CoffeeScript. I was willing to deal with the complex MongoDB maintenance.
 
 But slow responsiveness across many of the members of my team is a no-go, a big show-stopper. We turned the beta videochat feature off (as it always triggers CPU spikes across all users), but many members still had a bad experience with a UI that was too slow and a resource hog.
 
-The React-based, ES6-written, properly structured - with good enough client-side test suites - MatterMost was a more suitable candidate. So I decided to really think about the original problem and I came about with a simple solution: [add a simple PLPGSQL function](http://www.akitaonrails.com/en/2016/08/12/hackeando-o-mattermost-team-edition) to be triggered whenever someone tried to delete a channel. Sure enough, it worked. And that prompted me to call my team again and propose this new change: I believe everybody was on-board as MatterMost was way faster on their machines.
+The React-based, ES6-written, properly structured - with good enough client-side test suites - MatterMost was a more suitable candidate. So I decided to really think about the original problem and I came up with a simple solution: [add a simple PLPGSQL function](http://www.akitaonrails.com/en/2016/08/12/hackeando-o-mattermost-team-edition) to be triggered whenever someone tried to delete a channel. Sure enough, it worked. And that prompted me to call my team again and propose this new change: I believe everybody was on-board as MatterMost was way faster on their machines.
 
 I know I am sounding really harsh towards Rocket.chat, and it's really not my intention. If we didn't have any other options, we would still move to Rocket.chat. But as Mattermost proved to be the better choice, it was a no-brainer.
 
@@ -95,7 +95,7 @@ Also make sure you change at least the following in the config:
 ...
 ```
 
-If you want, you can set file uploads to go to some S3 bucket you have, and just fill in the AWS details. But if you choose to have them locally, change the directory to somewhere outside of the `mattermost` folder, as in every upgrade you will change the folder. With both AWS EC2 or Digital Ocean you can always choose to add a secondary volume that can outlive the virtual boxes, so even if you get to a point where you have hundreds of concurrent users and you want to scale horizontally, you can have all your boxes pointing to a shared volume (AWS EFS, for example).
+If you want, you can set file uploads to go to some S3 bucket you have, and just fill in the AWS details. But if you choose to have them locally, change the directory to somewhere outside of the `mattermost` folder, as on every upgrade you will change the folder. With both AWS EC2 or Digital Ocean you can always choose to add a secondary volume that can outlive the virtual boxes, so even if you get to a point where you have hundreds of concurrent users and you want to scale horizontally, you can have all your boxes pointing to a shared volume (AWS EFS, for example).
 
 Speaking of which, in this configuration, upgrading would be like this:
 
@@ -116,7 +116,7 @@ sudo service mattermost start
 
 The reason I wanted to have it this way is because I can tweak the code and manually push the changes.
 
-For your development machine you should follow [this instruction](https://docs.mattermost.com/developer/developer-setup.html). If you're in OS X and you choose to use Docker Toolbox, remember that you don't need VirtualBox anymore as it will use OS X's native hypervisor now. In my machine, I had to add `dockerhost` manually in my `/etc/hosts` because `boot2docker` was failing to get my ip address.
+For your development machine you should follow [this instruction](https://docs.mattermost.com/developer/developer-setup.html). If you're in OS X and you choose to use Docker Toolbox, remember that you don't need VirtualBox anymore as it will use OS X's native hypervisor now. On my machine, I had to add `dockerhost` manually in my `/etc/hosts` because `boot2docker` was failing to get my ip address.
 
 Then you can just clone the code from Github:
 
@@ -193,7 +193,7 @@ tar -C dist -czf $(DIST_PATH)-$(BUILD_TYPE_NAME)-linux-amd64.tar.gz mattermost
 @#rm -f $(DIST_PATH)/bin/platform
 ```
 
-Notice that the developer that made this file is probably using Linux. That's because this file builds the Linux-ELF binary as `bin/platform`, while the OS X Mach-O binary will be at `bin/darwin_amd64/platform`. Now, if like me you're on OS X, you have to inverse this and make the Linux version point to `bin/linux_amd64/platform`, otherwise the packages will have the wrong binary.
+Notice that the developer that made this file is probably using Linux. That's because this file builds the Linux-ELF binary as `bin/platform`, while the OS X Mach-O binary will be at `bin/darwin_amd64/platform`. Now, if like me you're on OS X, you have to invert this and make the Linux version point to `bin/linux_amd64/platform`, otherwise the packages will have the wrong binary.
 
 Then you will notice that there is this section right at the bottom:
 
@@ -234,9 +234,9 @@ But the idea here was just to show that it was not so difficult to solve the sho
 
 But what about the most important feature of all? RightGIF support? There is nothing as simple as a rightgif slack command just yet. Fortunately you can compensate most missing niceties like this by installing a [Hubot server](https://www.npmjs.com/package/hubot-mattermost), and linking it to a user so you can chat with the bot and make it do things for you (set an alarm, fetch a gif, translate text, etc). As a caveat, the hubot adapter requires the use of the [mattermost-client](https://github.com/loafoe/mattermost-client) which must be synced with the server platform version releases to work properly, so be careful when you're upgrading.
 
-Overall, Mattermost is a great choice. It's not for amateurs as well, the development environment requires you to know your Docker stuff. It requires you to know proper Go-lang configuration. It requires you to follow [proper procedures to contribute](https://docs.mattermost.com/developer/contribution-guide.html), as they should. The project itself is a single codebase divided into roughly 2 applications, a Go-based HTTP API and a React-based front-end to consume the APIs. Everything about the project is automated through the proper usage of Docker images (for mysql, postgresql, openldap instances) and Makefiles to run the test suite, create packages, etc.
+Overall, Mattermost is a great choice. It's not for amateurs either, the development environment requires you to know your Docker stuff. It requires you to know proper Go-lang configuration. It requires you to follow [proper procedures to contribute](https://docs.mattermost.com/developer/contribution-guide.html), as they should. The project itself is a single codebase divided into roughly 2 applications, a Go-based HTTP API and a React-based front-end to consume the APIs. Everything about the project is automated through the proper usage of Docker images (for mysql, postgresql, openldap instances) and Makefiles to run the test suite, create packages, etc.
 
-And it has some conveniences from Slack that Rocket.chat doesn't have yet such as a simple shortcut to switch channels (Cmd-K), the ability to reply messages and organize them as threads, proper and more complete Markdown support. Overall, the features are well-rounded, and not half-baked. What is there is solid and works, it's always bad to have half-finished features.
+And it has some conveniences from Slack that Rocket.chat doesn't have yet such as a simple shortcut to switch channels (Cmd-K), the ability to reply to messages and organize them as threads, proper and more complete Markdown support. Overall, the features are well-rounded, and not half-baked. What is there is solid and works, it's always bad to have half-finished features.
 
 With these hacks in mind I can strongly recommend that you use Mattermost. And as I said in previous posts, it's not just a matter of cost. If you're a small team, without internal developers or someone that can maintain your own installation, you should definitely pay Mattermost for the Enterprise support, it's affordable and way cheaper than Slack.
 

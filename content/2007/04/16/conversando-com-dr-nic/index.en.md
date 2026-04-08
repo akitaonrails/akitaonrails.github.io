@@ -14,7 +14,7 @@ translationKey: chatting-dr-nic
 
  ![](/files/130749539_89959dd059.jpg)
 
-Today Carlos Eduardo, from [e-Genial](http://www.egenial.com.br), proposed me to interview Dr. Nic Williams himself. The man of the hour. And I accepted right away and we started ‘skyping’ for a couple of hours. He is a nice guy and as educated and well informed as I expected. So, with no further ado, here it goes:
+Today Carlos Eduardo, from [e-Genial](http://www.egenial.com.br), proposed that I interview Dr. Nic Williams himself. The man of the hour. And I accepted right away and we started ‘skyping’ for a couple of hours. He is a nice guy and as educated and well informed as I expected. So, with no further ado, here it goes:
 
 #### Who is Dr. Nic?
 
@@ -36,7 +36,7 @@ Today Carlos Eduardo, from [e-Genial](http://www.egenial.com.br), proposed me to
 
 **Dr Nic** : At Railsconf 2006, [Dave Thomas](http://pragdave.pragprog.com/) outlined a bunch of things he saw as _“things we can work on”_ in Rails. One was lack of Composite Keys, another was the mysterious lack of DRYness in model files. I’d never released code to the Ruby community before (nor any community), but a few weeks later I just had these ideas for how to solve those two problems – both in the same week. I have no idea what possessed me to call the Magic Models that name. But I still like it. I just envisioned a magic show whereby you made the Model file disappear piece by piece yet it still worked. Thus the name. Ok, so I do know why I called it that. :-)
 
-**AkitaOnRails** : From a marketing stand point, I find it fantastic. You could call it something fancy as ‘Houdini’ but Magic Models does the job. I have a feeling that this is your most famous open source Rails project. Am I right or is there any other plugin of yours that is more compeling to the community right now?
+**AkitaOnRails** : From a marketing stand point, I find it fantastic. You could call it something fancy as ‘Houdini’ but Magic Models does the job. I have a feeling that this is your most famous open source Rails project. Am I right or is there any other plugin of yours that is more compelling to the community right now?
 
 **Dr Nic** : I don’t think many people actually.. you know.. use the Magic Models. Deep down you need a model file as a placeholder for other functionality. So its more of a show-case of a concept. I have a 200 table schema that I use for a work. I use hooks to include additional stuff in the generated models. I hope that the [New Gem Generator](http://newgem.rubyforge.org) becomes popular. I’d like to see more people sharing code.
 
@@ -58,7 +58,7 @@ Today Carlos Eduardo, from [e-Genial](http://www.egenial.com.br), proposed me to
 
 **Dr Nic** : Help + patches – that has turned out to be the best thing about open source (OSS) – people fix your code, or at the very least ask _“why didn’t you do it [an alternate] way?”_
 
-**AkitaOnRails** : Hm, let me digress a little bit. I have mixed feelings about merging and forking. I usually don’t like forking unless the original team have gone numb like what happened to the [XFree86](http://pt.wikipedia.org/wiki/Fork) project. Alternatives should really be very different like KDE and Gnome, and they are fine. But components that does most of the same things or complement each other like the current [beryl and compiz](http://lwn.net/Articles/229690/) discussion, maybe it’s ok for them to merge and focus effort on a single direction. What do you think? For instance, I think that a multi connection support like yours or Rev.Health’s one should be in the main Rails tree. It’s as important as the database adapters. Or maybe not?
+**AkitaOnRails** : Hm, let me digress a little bit. I have mixed feelings about merging and forking. I usually don’t like forking unless the original team have gone numb like what happened to the [XFree86](http://pt.wikipedia.org/wiki/Fork) project. Alternatives should really be very different like KDE and Gnome, and they are fine. But components that do most of the same things or complement each other like the current [beryl and compiz](http://lwn.net/Articles/229690/) discussion, maybe it’s ok for them to merge and focus effort on a single direction. What do you think? For instance, I think that a multi connection support like yours or Rev.Health’s one should be in the main Rails tree. It’s as important as the database adapters. Or maybe not?
 
 **Dr Nic** : There is a project [DRYSql](http://drysql.rubyforge.org/) that is for all intents and purposes similar to the Magic Models. It’s not a fork, but the code would be similar. But I’m glad he did it. I think OSS is driven by inspiration – and people like to have their name attached to code. If he writes more code because it has his name on it, then that’s great. Regarding more vs. less in Rails – I think more code should be extracted from Rails, rather than more code added to Rails. Unfortunately if you take things out, then the anti-rails movement say stupid things like _“Oh rails can’t do XXX”_ even if there is a plugin/gem that can do it, or even if you could do it in 5-100 lines of purpose built code. But we’re not here to make the anti-railers happy, just ourselves. So, extract code out of rails-core and set it free.
 
@@ -66,7 +66,7 @@ Today Carlos Eduardo, from [e-Genial](http://www.egenial.com.br), proposed me to
 
 **Dr Nic** : Let people choose prototype/scriptaculous vs. jquery for example. But, no one will do that – not worth the effort. And right – no need for AWS anymore – its already packaged as a separate gem. You just stop making it a dependency in the rails gem. So that’s an easy one. But my attitude is that Rails is perfect given that it’s only a few years old, completely Open Source, and has a wonderful community of intelligent, caring developers who can _“scratch their own itches”_ and then share the results via blogs + forums.
 
-**AkitaOnRails** : I am personally a little bit worried about this because Rails is becoming something as the Linux kernel. Linux doesn’t have an specific set of [stable APIs](http://www.kroah.com/log/linux/ols_2006_keynote.html), so each new version has to tweak some of it’s drivers. It works because all of the drivers’ source code are in the main tree. Rails is like the same: I asked DHH (refer to my book’s interview) about stable APIs and he is not very fond of limiting what he wants by providing stable APIs through out newer versions. So plugins are destined to fail someday unless they are delivered along side the main distribution. Maybe we’re going to see _‘Rails Distros’_ in long run?
+**AkitaOnRails** : I am personally a little bit worried about this because Rails is becoming something as the Linux kernel. Linux doesn’t have a specific set of [stable APIs](http://www.kroah.com/log/linux/ols_2006_keynote.html), so each new version has to tweak some of its drivers. It works because all of the drivers’ source code are in the main tree. Rails is like the same: I asked DHH (refer to my book’s interview) about stable APIs and he is not very fond of limiting what he wants by providing stable APIs through out newer versions. So plugins are destined to fail someday unless they are delivered along side the main distribution. Maybe we’re going to see _‘Rails Distros’_ in long run?
 
 **Dr Nic** : Fragmented rails – yep that’s a valid concern. I think you will see “rails distros”. I think they already exist. But they aren’t called that. [Hobo](http://hobocentral.net/) for example could be a rails distro. So one day we could have a HoboConf.
 
@@ -76,7 +76,7 @@ Today Carlos Eduardo, from [e-Genial](http://www.egenial.com.br), proposed me to
 
 #### Twitter vs. DHH – Round 2
 
-**AkitaOnRails** : Speaking of which, support, plugins, I have to ask you something delicate (_I don’t want it to become an excuse for another flame-war_): what do you think about the current [Twitter vs DHH](http://www.akitaonrails.com/2007/04/15/a-polemica-twitter) discussion? Twitter says: _Rails should have given us the solution_. DHH says: _Twitter could have contributed back with a solution_. I think this kind of arguments doesn’t do any good for the community, as I [posted](http://www.akitaonrails.com/2007/04/15/a-polemica-twitter) at my blog yesterday. What are your insights about it?
+**AkitaOnRails** : Speaking of which, support, plugins, I have to ask you something delicate (_I don’t want it to become an excuse for another flame-war_): what do you think about the current [Twitter vs DHH](http://www.akitaonrails.com/2007/04/15/a-polemica-twitter) discussion? Twitter says: _Rails should have given us the solution_. DHH says: _Twitter could have contributed back with a solution_. I think this kind of argument doesn’t do any good for the community, as I [posted](http://www.akitaonrails.com/2007/04/15/a-polemica-twitter) at my blog yesterday. What are your insights about it?
 
 **Dr Nic** : The guys at Twitter have already contributed code to Ruby community ([Jabber API](http://romeda.org/blog/2006/11/announcing-jabbersimple.html)), and when they settle on a solution for their situation, I think they will be very happy to share it with us. That will be great. Remember: Rails is 2 years old. .NET + ISS is 7+ years old. Java is 10 years old. LAMP is very old. So, its all in front of us. Exciting times.
 
@@ -120,7 +120,7 @@ Today Carlos Eduardo, from [e-Genial](http://www.egenial.com.br), proposed me to
 
 #### Dr. Nic’s Career Advice
 
-**AkitaOnRails** : Nice proposition. I am thinking about it. By the way. At the beggining of this conversation you told us that you’ve been working at India? How come? Any kind of consultancy work for any of the major companies like Tata, Wipro, Satyam? What are your opinions about the recent discussions and worries, like the Chad Fowler’s book [My Job web to India](http://www.rubyonbr.org/articles/2006/10/18/por-que-aprender-ruby-o-torna-um-programador-pior-por-akita/)?
+**AkitaOnRails** : Nice proposition. I am thinking about it. By the way. At the beginning of this conversation you told us that you’ve been working in India? How come? Any kind of consultancy work for any of the major companies like Tata, Wipro, Satyam? What are your opinions about the recent discussions and worries, like the Chad Fowler’s book [My Job web to India](http://www.rubyonbr.org/articles/2006/10/18/por-que-aprender-ruby-o-torna-um-programador-pior-por-akita/)?
 
 **Dr Nic** : I went to India for the same project I’m on now with the Swedish company. Back then it was for Accenture, who were doing the work at the time out of India. I have a copy of Chad’s e-book… damn, haven’t read it yet. But thanks for the reminder. I have lots of thoughts about _“outsourcing to India”_. But they aren’t positive, so I’ll take a pass. They are more the topic of conversation when alcohol is involved. :-)
 
@@ -128,15 +128,15 @@ Today Carlos Eduardo, from [e-Genial](http://www.egenial.com.br), proposed me to
 
 **Dr Nic** : Never. People who I hear talking about outsourcing mention “India”, several asian countries, and eastern european countries. Never Brazil.
 
-**AkitaOnRails** : Dawn, I knew it :-)
+**AkitaOnRails** : Damn, I knew it :-)
 
 **Dr Nic** : So, just pretend you are American and ask for American rates.
 
-**AkitaOnRails** : Good advice. I just [wrote an article](http://www.akitaonrails.com/2007/04/14/off-topic-seja-arrogante) about the importance of being fluent in english at my blog. That’s one compeling reason.
+**AkitaOnRails** : Good advice. I just [wrote an article](http://www.akitaonrails.com/2007/04/14/off-topic-seja-arrogante) about the importance of being fluent in english at my blog. That’s one compelling reason.
 
 **Dr Nic** : Absolutely. Clients don’t pay per line of code. They kind of pay for results, and kind of pay for working with people they like and trust. I think.
 
-**AkitaOnRails** : And I agree with that statement: people hire compentecy, in general. And have you ever consider flying down on vacation to Brazil?
+**AkitaOnRails** : And I agree with that statement: people hire competency, in general. And have you ever considered flying down on vacation to Brazil?
 
 **Dr Nic** : Absolutely, its on our list of places to visit.
 
@@ -156,5 +156,5 @@ Today Carlos Eduardo, from [e-Genial](http://www.egenial.com.br), proposed me to
 
 **Dr Nic** : Correct. PhD in Computer Science. I just use the _Dr Nic_ name ‘cause it’s a bit different. I don’t mean to show off the “Dr” part.
 
-**AkitaOnRails** : Very nice! Dr. Nic, then :-) Very glad for this opportunity. I look forward for more conversations like this. Too bad we can’t do it in a bar with beers.
+**AkitaOnRails** : Very nice! Dr. Nic, then :-) Very glad for this opportunity. I look forward to more conversations like this. Too bad we can’t do it in a bar with beers.
 

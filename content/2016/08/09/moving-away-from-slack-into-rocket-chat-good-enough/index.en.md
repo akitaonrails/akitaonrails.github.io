@@ -20,11 +20,11 @@ One of the most difficult pieces to move away from is Slack. Don't get me wrong,
 
 ## The Cost Conundrum
 
-But then you have to commit to pay USD 8/month per user (USD 6.67 if you pay ahead of time). If you're a small team (around a dozen people) it's well worth it and you should definitely pay and get over with.
+But then you have to commit to pay USD 8/month per user (USD 6.67 if you pay ahead of time). If you're a small team (around a dozen people) it's well worth it and you should definitely pay and be done with it.
 
 If you have more than 20 people then it starts to become a conundrum. On my GitLab cost calculations, some people argued that saving USD 15k yearly is not such a big deal, and they're not wrong.
 
-If you're from outside of the US coastal cities, especially from countries in South America or Asia where currency can be more than 3 times devalued, then it quickly starts to become a big deal.
+If you're from outside of the US coastal cities, especially from countries in South America or Asia where currency can be more than 3 times weaker, then it quickly starts to become a big deal.
 
 Apart from that, we are currently offloading a whole lot of our IPs and knowledge into the care of companies we don't really know and where we don't hold any real stakes.
 
@@ -34,7 +34,7 @@ What I will argue is that if you have **150 people** or more, and you're still g
 
 > You avoid paying around [**USD 12,000 a year**](https://codeminer42.slack.com/pricing) or more, and instead you will pay **USD 960 a year** in Digital Ocean boxes and MMS plus a few hours every month in basic maintenance. That's 12 times cheaper.
 
-Again, you shouldn't do it just for the cost savings as the maintenance burden can easily not be worth it if you or your team are not devops savvy and you don't have anyone to keep monitoring it. For most companies, the conversation history is not so important and even the free-tier will be more than enough.
+Again, you shouldn't do it just for the cost savings as the maintenance burden can easily outweigh the savings if you or your team are not devops savvy and you don't have anyone to keep monitoring it. For most companies, the conversation history is not so important and even the free-tier will be more than enough.
 
 Cost is less relevant depending on your context, and there are many different uses for group chats. For example, if you're an [open source community](https://news.ycombinator.com/item?id=9754626), you would try [Gitter](https://gitter.im) instead.
 
@@ -52,11 +52,11 @@ Unfortunately, it has an important **show-stopper** for my needs. You can create
 
 > It's still at least **3 times cheaper** than Slack, so it may be a good option for you.
 
-I really want to have full-control, not just make it cheaper. I could pay Slack already if I didn't care, so I would not just pay an alternative and not have full-control (including the ability to tweak and improve the entire code base).
+I really want to have full-control, not just make it cheaper. I could pay Slack already if I didn't care, so I would not just pay an alternative and not have full control (including the ability to tweak and improve the entire code base).
 
 Then, it took me back to [Rocket.chat](https://rocket.chat/). Its feature set also rivals Slack, it's good looking enough. But, it's made in Meteor. Now, I don't have anything against Meteor and I really think a Slack-clone is exactly the kind of use case where you could use Meteor to its full potential.
 
-Technically I really think it's a downside to be forced to use MongoDB (Meteor requires Mongo). For small installations I really prefer to have PostgreSQL. MongoDB is competent, but for medium to big installations, and I will show you why below.
+Technically I really think it's a downside to be forced to use MongoDB (Meteor requires Mongo). For small installations I really prefer to have PostgreSQL. MongoDB is competent, but for medium to big installations there are caveats, and I will show you why below.
 
 I **strongly dislike** the [culture of writing software without _minimal care_](https://medium.com/friendship-dot-js/i-peeked-into-my-node-modules-directory-and-you-wont-believe-what-happened-next-b89f63d21558#.8jd3z3n6u) such as having a reasonably complete test suite. You browse through the many packages that comprise Rocket.chat and several of them have no tests whatsoever. Some packages do have jasmine tests, but the majority is lacking.
 
@@ -80,7 +80,7 @@ describe 'rocketchat:markdown Client', ->
 
 Really?
 
-So, the code itself is not so pretty, you have to keep this in mind. I'd much rather use Mattermost (which is much better structured and with enough tests), but it's not entirely free, so it's not an option to me. For my scenario, I'd rather have sloppy code (that minimally "works") that I can tweak than code I can't see, for this particular venture. Many inexperienced developers may argue about the necessity of having automated tests, but not having them also impacts this:
+So, the code itself is not so pretty, you have to keep this in mind. I'd much rather use Mattermost (which is much better structured and with enough tests), but it's not entirely free, so it's not an option for me. For my scenario, I'd rather have sloppy code (that minimally "works") that I can tweak than code I can't see, for this particular venture. Many inexperienced developers may argue about the necessity of having automated tests, but not having them also impacts this:
 
 ![Rocket.chat contribution graph](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/552/big_Contributors_to_RocketChat_Rocket_Chat.png)
 
@@ -92,15 +92,15 @@ Doing a few days of testing through the administration settings, user interface,
 
 I am using [Franz](http://meetfranz.com) to open Slack, Rocket.chat, Hangouts, Messenger and any number of other communicators in one single app, which is great. And Rocket.chat does provide [mobile](https://itunes.apple.com/us/app/rocket.chat/id1028869439?mt=8) [apps](https://play.google.com/store/apps/details?id=com.konecty.rocket.chat&hl=en) based off PhoneGap. Again, it's good, not great.
 
-Many people have heavy bots or integrations into their Slack configuration. The alternatives such as Rocket.chat do support incoming and outgoing webhooks and most of the integrations should be possible (with some tweaking and hacking such as this [Giphy example](https://github.com/FinndropStudios/GifRocket)), so make a list of all important integrations and do a Google research on that before continuing.
+Many people have heavy bots or integrations into their Slack configuration. The alternatives such as Rocket.chat do support incoming and outgoing webhooks and most of the integrations should be possible (with some tweaking and hacking such as this [Giphy example](https://github.com/FinndropStudios/GifRocket)), so make a list of all important integrations and do some Google research on that before continuing.
 
 ## Planning the Infrastructure
 
-All that having been said, I'd recommend you try Rocket.chat's [demo server](https://demo.rocket.chat) first to see if it has the minimal features you need. And also that you install a dry-run in a small Digital Ocean box with the intention to blow it off later.
+All that having been said, I'd recommend you try Rocket.chat's [demo server](https://demo.rocket.chat) first to see if it has the minimal features you need. And also that you install a dry-run in a small Digital Ocean box with the intention of blowing it away later.
 
 For a single-instance, stand-alone installation, temporary dry-run, I recommend you start by installing the [MongoDB One-Click Application](https://www.digitalocean.com/community/tutorials/how-to-use-the-mongodb-one-click-application) and follow [this instruction](https://www.digitalocean.com/community/tutorials/how-to-install-configure-and-deploy-rocket-chat-on-ubuntu-14-04) to install everything in one machine.
 
-This is the worst possible production environment, which is why I am being so repetitive into saying that you should destroy this box after you do your testing.
+This is the worst possible production environment, which is why I am being so repetitive in saying that you should destroy this box after you do your testing.
 
 As I've said before, I am assuming a scenario where you have 50 or more people, with real clients, important communication going on. You don't want to keep a simple installation like this for production usage.
 
@@ -116,13 +116,13 @@ More than that:
 
 So, the minimal setup for MongoDB is a [Three-member Replica Set](https://docs.mongodb.com/manual/core/replica-set-architecture-three-members/), no less!
 
-The article ["MongoDB Gotchas & How To Avoid Them"](https://www.rainforestqa.com/blog/2012-11-05-mongodb-gotchas-and-how-to-avoid-them/) is a little bit old but you should be aware of several of the documented gotchas, including adding replica sets and avoid waiting too long to start sharding your data.
+The article ["MongoDB Gotchas & How To Avoid Them"](https://www.rainforestqa.com/blog/2012-11-05-mongodb-gotchas-and-how-to-avoid-them/) is a little bit old but you should be aware of several of the documented gotchas, including adding replica sets and avoiding waiting too long to start sharding your data.
 
 The most important part of making Rocket.chat reliable is to make your MongoDB minimally reliable, and this is a hidden cost you must consider.
 
 #### Installing a Three-Member Replica Set
 
-For the sake of this article I will assume that you created 3 (three) MongoDB One-Click Applications on Digital Ocean's at the very least 1 GB RAM boxes (2 GB RAM machines are a good choice if you're in doubt, but never the 512 Mb) and another bare Ubuntu 14.04 box to be the web server. Create all machines in the same sub-region, all of them with private networking and backup enabled.
+For the sake of this article I will assume that you created 3 (three) MongoDB One-Click Applications on Digital Ocean's, at the very least with 1 GB RAM boxes (2 GB RAM machines are a good choice if you're in doubt, but never the 512 Mb) and another bare Ubuntu 14.04 box to be the web server. Create all machines in the same sub-region, all of them with private networking and backup enabled.
 
 Take note of the public IPs and private IPs, for the sake of this article let's say you have this:
 
@@ -135,9 +135,9 @@ Public IP     Private IP    Hostname
 192.160.10.4  10.0.0.4      yourdomain.com
 ```
 
-In the commands and code snippets below, make sure to replace the fake IPs for your own private IPs.
+In the commands and code snippets below, make sure to replace the fake IPs with your own private IPs.
 
-As I said in [my GitLab post](http://www.akitaonrails.com/en/2016/08/03/migrando-para-o-gitlab-sim-vale-a-pena?), create a swap file, configure the locale, set it up for automatic security updates, and do upgrade the Ubuntu packages.
+As I said in [my GitLab post](http://www.akitaonrails.com/en/2016/08/03/migrando-para-o-gitlab-sim-vale-a-pena?), create a swap file, configure the locale, set it up for automatic security updates, and upgrade the Ubuntu packages.
 
 The next first thing: configure the firewall in all machines (assuming `ufw` package is already installed):
 
@@ -151,7 +151,7 @@ sudo ufw allow in on eth1 to any port 27017
 sudo ufw enable
 ```
 
-We are allowing MongoDB's 27017 port only for machines in the same private networking (through eth1, the public IP go through eth0). We're also allowing port 22 for SSH and although I am not listing it here in this article you should also consider installing and configuring [fail2ban](https://www.digitalocean.com/community/tutorials/how-to-protect-ssh-with-fail2ban-on-ubuntu-14-04). Digital Ocean also has a [good post on UFW](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu-14-04) for more details.
+We are allowing MongoDB's 27017 port only for machines in the same private networking (through eth1, the public IP goes through eth0). We're also allowing port 22 for SSH and although I am not listing it here in this article you should also consider installing and configuring [fail2ban](https://www.digitalocean.com/community/tutorials/how-to-protect-ssh-with-fail2ban-on-ubuntu-14-04). Digital Ocean also has a [good post on UFW](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu-14-04) for more details.
 
 Next thing to do on the MongoDB machines is to [Disable Transparent Huge Pages (THP)](https://docs.mongodb.com/manual/tutorial/transparent-huge-pages/). For that create a file `/etc/init.d/disable-transparent-hugepages`, with this content:
 
@@ -322,7 +322,7 @@ Each box should be syncing data to another box, one of them will be marked "PRIM
 
 #### Adding your MongoDB environment to MMS
 
-Another thing beginners will not realise is that it's a good idea to monitor your services. At the very least you should install MongoDB Cloud Manager agents into your servers. Just set up an account at [MongoDB Atlas](https://www.mongodb.com/cloud).
+Another thing beginners will not realize is that it's a good idea to monitor your services. At the very least you should install MongoDB Cloud Manager agents into your servers. Just set up an account at [MongoDB Atlas](https://www.mongodb.com/cloud).
 
 It's beyond the point of this article to explain Atlas, but you should have no trouble installing the agents with the Group ID and API Key provided. Then install the monitoring agent and have the Manager figure out your existing deployment and replica set.
 
@@ -334,7 +334,7 @@ The basic subscription for monitoring will cost you an extra USD 39 a month, but
 
 #### Installing a multi-instance Node.js service
 
-Another mistake beginners in the MEAN stack do is to start up a single Node.js instance. Yes, Node.js asynchronous I/O nature makes it "concurrent enough" in 1 single thread. But you do want to maximize the rented machine so you should spin up at least one Node.js instance for each CPU core. A 1 GB RAM machine has just 1 core, but you can spin up at least 2 instances.
+Another mistake beginners in the MEAN stack make is to start up a single Node.js instance. Yes, Node.js's asynchronous I/O nature makes it "concurrent enough" in 1 single thread. But you do want to maximize the rented machine so you should spin up at least one Node.js instance for each CPU core. A 1 GB RAM machine has just 1 core, but you can spin up at least 2 instances.
 
 First of all, we must set up the `yourdomain.com` (`192.160.10.4` or `10.0.0.4` in the example) to support Node.js, let's do it:
 
@@ -465,7 +465,7 @@ server {
 }
 ```
 
-Just for the sake of completeness, again: replace `yourdomain.com` for your domain. Usually the `/etc/nginx/sites-enabled/default` is a symlink to `/etc/nginx/sites-available/default`, just check that as well. This configuration will load balance between the 2 node.js instances we configured and started before. And you can add as many as you want following the same `forever-install` procedure and adding the new instances to the `upstream` section in the nginx configuration above.
+Just for the sake of completeness, again: replace `yourdomain.com` with your domain. Usually the `/etc/nginx/sites-enabled/default` is a symlink to `/etc/nginx/sites-available/default`, just check that as well. This configuration will load balance between the 2 node.js instances we configured and started before. And you can add as many as you want following the same `forever-install` procedure and adding the new instances to the `upstream` section in the nginx configuration above.
 
 If everything is correct, you can restart nginx again: `sudo service nginx restart`.
 
@@ -473,16 +473,16 @@ And now you should have `https://yourdomain.com` already up and running. The fir
 
 ## Conclusion
 
-As you can see, this is not a simple procedure to follow and I am assuming you have experience managing your own infrastructure. If you don't you definitely should NOT do this by yourself.
+As you can see, this is not a simple procedure to follow and I am assuming you have experience managing your own infrastructure. If you don't, you definitely should NOT do this by yourself.
 
 If you do it correctly, you should have a functional Slack-clone with minimal reliability (thanks in large part to Digital Ocean) and minimal cost (USD 80/month in the configuration I described that should be enough for more than 100 users). Rocket.chat also offers more [documentation](https://rocket.chat/docs/installation/) for other environments including Docker configurations you might want to try. But the procedure above is sufficient for my needs.
 
 I said it already but it's better to repeat it: don't fall for the trap of installing everything in a single box, with single instance MongoDB, and without proper monitoring. It's asking for trouble.
 
-For now I am in the middle of the roll out. All developers in my company are already in the new deployment and soon half of the clients should also migrate (some will not be able to leave Slack just yet), but with Franz and the ability of full history and searchability this shouldn't be a concern even if a developer stays offline for some period of time.
+For now I am in the middle of the rollout. All developers in my company are already in the new deployment and soon half of the clients should also migrate (some will not be able to leave Slack just yet), but with Franz and the ability of full history and searchability this shouldn't be a concern even if a developer stays offline for some period of time.
 
-I also don't advocate that everybody should be online and responding in real-time. It's unfeasible, unproductive, creates unnecessary tension. People should participate when they have free time, and they should be able to concentrate without worrying that they are missing something. That's why they should opt-out of being notified in the more busy channels and just enable notification on the private groups that matter.
+I also don't advocate that everybody should be online and responding in real-time. It's infeasible, unproductive, creates unnecessary tension. People should participate when they have free time, and they should be able to concentrate without worrying that they are missing something. That's why they should opt-out of being notified in the more busy channels and just enable notification on the private groups that matter.
 
-Coincidentally Jason Fried just posted about concerns over group chats at [Signal v. Noise](https://m.signalvnoise.com/is-group-chat-making-you-sweat-744659addf7d#.3qxe09una), but the gist is that group chat should be purposeful and not yet another tool to create tension. People should definitely get offline when they need to fully concentrate in their work and have the opportunity to catch up with interesting conversations later. And really important communication should go through e-mail or other traditional ways, a simple `@all` doesn't cut it for company-wide announcements for example.
+Coincidentally Jason Fried just posted about concerns over group chats at [Signal v. Noise](https://m.signalvnoise.com/is-group-chat-making-you-sweat-744659addf7d#.3qxe09una), but the gist is that group chat should be purposeful and not yet another tool to create tension. People should definitely get offline when they need to fully concentrate on their work and have the opportunity to catch up with interesting conversations later. And really important communication should go through e-mail or other traditional ways, a simple `@all` doesn't cut it for company-wide announcements for example.
 
-I hope this exercise gives you more perspective on what you can have and also raises awareness on the need for companies to regain more control over their own data, particularly knowledge. Erase your communication channels and you're losing years-worth of knowledge that can be invaluable.
+I hope this exercise gives you more perspective on what you can have and also raises awareness on the need for companies to regain more control over their own data, particularly knowledge. Erase your communication channels and you're losing years' worth of knowledge that can be invaluable.

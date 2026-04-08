@@ -9,9 +9,9 @@ tags:
 draft: false
 ---
 
-Finally, InfoQ Brasil has been posting the edited talks to their new YouTube! channel. They created a [playlist with all 32 talks](https://www.infoq.com/br/the_conf2017) available right now! And, as promised, everything available for FREE!
+Finally, InfoQ Brasil has been posting the edited talks to their new YouTube channel. They created a [playlist with all 32 talks](https://www.infoq.com/br/the_conf2017) available right now! And, as promised, everything available for FREE!
 
-Not only that, also as promised, the best talks were also published in the [USA InfoQ website](https://www.infoq.com/the-conf-2017) fulfilling our mission of trying to showcase more Brazilians to the world wide audience!
+Not only that, also as promised, the best talks were also published in the [USA InfoQ website](https://www.infoq.com/the-conf-2017) fulfilling our mission of trying to showcase more Brazilians to the worldwide audience!
 
 We're almost done with the 2017 edition.
 
@@ -25,7 +25,7 @@ It was a long year, we did the "M.V.P." style, a spartan planning. Some people d
 
 Against all odds, we pulled it off.
 
-And I am committing myself to try and improve the 2nd edition, already confirmed for 2018, Sep 21-22. Follow our [Facebook Page](https://www.facebook.com/TheConfClub/) and our [Twitter account](https://twitter.com/theconfbr). A simple share, retweet, really help a lot, please contribute!
+And I am committing myself to try and improve the 2nd edition, already confirmed for 2018, Sep 21-22. Follow our [Facebook Page](https://www.facebook.com/TheConfClub/) and our [Twitter account](https://twitter.com/theconfbr). A simple share, retweet, really helps a lot, please contribute!
 
 Also, watch my opening keynote to understand more of the event rationale.
 

@@ -10,7 +10,7 @@ draft: false
 
 Chris is a very accessible and easy-going guy, and I just got him out of AIM and started the interview right away. For those of you who never heard of **'Chris Wanstrath'** , he is also known for Err the Blog and recently as one of the guys behind the **Github** phenomenon.
 
-He answered everything in color detail and we speak a lot about his open source projects, performance, scalability and, of course, lots of Git and Github stuff. Hopefully it will make people even more excited with how the Ruby/Rails community is moving things forward all the time.
+He answered everything in colorful detail and we speak a lot about his open source projects, performance, scalability and, of course, lots of Git and Github stuff. Hopefully it will make people even more excited about how the Ruby/Rails community is moving things forward all the time.
 
 **aos leitores brasileiros:** assim que tiver tempo irei traduzir esta entrevista.
 
@@ -87,7 +87,7 @@ That, and the [Cheat](http://errtheblog.com/posts/21-cheat) gem (and site).
  ![](http://s3.amazonaws.com/akitaonrails/assets/2008/4/21/322610984_f5d9e82bda.jpg)   
 _Tom Preston-Werner_
 
-**AkitaOnRails:** (Of course, pardon me P.J.!) And this raises another curiosity of mine: where did the name "Err" come from? It is both for [Err the Blog](http://errtheblog.com/) and [Err Free](http://errfree.com/) which is your company. And you mentioned P.J. and Tom. And you're all full time Railers, right? How did you teamed up with them and decided starting your own company? Many times people ask me about entrepreneurship and you're another good example.
+**AkitaOnRails:** (Of course, pardon me P.J.!) And this raises another curiosity of mine: where did the name "Err" come from? It is both for [Err the Blog](http://errtheblog.com/) and [Err Free](http://errfree.com/) which is your company. And you mentioned P.J. and Tom. And you're all full time Railers, right? How did you team up with them and decide to start your own company? Many times people ask me about entrepreneurship and you're another good example.
 
 **Chris Wanstrath:** "err" is kind of a play on "Typo," which was the popular Rails blogging engine when we started our blog, so it may be kind of confusing, but I actually am cofounder of two distinct companies.
 
@@ -101,7 +101,7 @@ If the site is slow, confusing, sucks, or doesn't improve your workflow, I can t
 
 It also means, when you're cofounder of a mostly technical company, the discussions are a lot more logical. I saw decisions made at C|Net that directly contradicted a/b statistics we had gathered. At Logical Awesome, that would never happen. It is neither logical nor awesome. Basically: I wanted to find the ideal company so I found good people and started it.
 
-**AkitaOnRails:** Ok, so we come to the main dish of the day: [Github](http://github.com)! I can't think of a better example of an innovative product that leverages so well the power of Git. I am very curious to understand how did you come with this idea? At the same time, lots of people still can't understand why Railers as a whole started using Git so massively all of a sudden. Mercurial, Bazaar guys are very uncomfortable. What do you think Git has that attracted Railers in flocks like that? Or at least what do you think Git has that no other have? I started evangelizing Git here in Brazil last year after listening Randall Schwartz, and recently someone asked be about what would me my pick for a Rails killer-app and Github popped out of my mind, right away. So you do have good mind share as well.
+**AkitaOnRails:** Ok, so we come to the main dish of the day: [Github](http://github.com)! I can't think of a better example of an innovative product that leverages so well the power of Git. I am very curious to understand how did you come up with this idea? At the same time, lots of people still can't understand why Railers as a whole started using Git so massively all of a sudden. Mercurial, Bazaar guys are very uncomfortable. What do you think Git has that attracted Railers in flocks like that? Or at least what do you think Git has that no other have? I started evangelizing Git here in Brazil last year after listening Randall Schwartz, and recently someone asked me what would be my pick for a Rails killer-app and Github popped out of my mind, right away. So you do have good mind share as well.
 
 [![](http://s3.amazonaws.com/akitaonrails/assets/2008/4/21/Picture_1.png)](http://github.com)
 
@@ -153,7 +153,7 @@ They also have a lot of experts available 24/7, which is great because I have a 
 
 [![](http://s3.amazonaws.com/akitaonrails/assets/2008/4/21/Picture_5.png)](http://www.flickr.com/photos/ozmm/487496000/)
 
-**AkitaOnRails:** Interesting, Erlang? I'd like to know what are you up to with it Going back, I think I saw a Rails trunk Git clone at Github way before DHH announced it a few days ago. I think it was Michael Koziarski who first did it, without much fuzz. Were you planning this together with the 37signals guys, or the switch of the Rails Core to Github was something that happened naturally? And do you have any kind of partnership with the Lighthouse guys as well, because you already have some hooks to manage Lighthouse tickets through Github commit messages, right?
+**AkitaOnRails:** Interesting, Erlang? I'd like to know what you are up to with it. Going back, I think I saw a Rails trunk Git clone at Github way before DHH announced it a few days ago. I think it was Michael Koziarski who first did it, without much fuzz. Were you planning this together with the 37signals guys, or the switch of the Rails Core to Github was something that happened naturally? And do you have any kind of partnership with the Lighthouse guys as well, because you already have some hooks to manage Lighthouse tickets through Github commit messages, right?
 
 **Chris Wanstrath:** The Erlang stuff will be very cool, I promise. We'll make a big fuss about it when it's ready. As far as the Rails thing goes, koz did indeed have a mirror of his Git-svn repo at Github during the beta. It was unofficial. Then in february he wrote a [post explaining](http://www.koziarski.net/archives/2008/2/23/on-Git) that the core was thinking about moving to Git.
 
@@ -161,11 +161,11 @@ When I saw the post I emailed him and we talked a bit about what it would take t
 
 I really respect the work the [Lighthouse](http://www.lighthouseapp.com/) team does. The bug tracker is great, and the new redesign is even better, but we don't have any official partnership with them. We wrote the post-receive lighthouse hook because we wanted it, Rails wanted it, and a huge number of our users wanted it.
 
-**AkitaOnRails:** Many others started moving to Github during the Beta. I think Merb was more obvious because of Ezra's being involved in Engine Yard. Dr. Nic started using it for the Textmate bundles. Can you point any other high profile Rails related projects hosted at Github right now?
+**AkitaOnRails:** Many others started moving to Github during the Beta. I think Merb was more obvious because of Ezra's being involved in Engine Yard. Dr. Nic started using it for the Textmate bundles. Can you point to any other high profile Rails related projects hosted at Github right now?
 
 **Chris Wanstrath:** Merb was actually the reason Github went into beta. We launched the beta so they could start using the site for their 0.9 rewrite of merb-core. As far as popular projects, the best thing to do is check [http://Github.com/popular/watched](http://Github.com/popular/watched) and [http://Github.com/popular/forked](http://Github.com/popular/forked). Datamapper, Rspec, and Mephisto are some of the popular ones.
 
-**AkitaOnRails:** Are you using vanilla Git code, or did you customize it in anyway to better fit your environment? Have you ever talked to Junio Hamano or any other Git core maintainer? With Github probably eating up a lot of your time, how is Chow and FamSpam going right now? How are you managing all those products all at once?
+**AkitaOnRails:** Are you using vanilla Git code, or did you customize it in any way to better fit your environment? Have you ever talked to Junio Hamano or any other Git core maintainer? With Github probably eating up a lot of your time, how is Chow and FamSpam going right now? How are you managing all those products all at once?
 
 **Chris Wanstrath:** We've patched Git-daemon to record statistics, which we'll soon be surfacing on the website soon in the form of better, more granular activity. You'll be able to see how many times your project was cloned, popular projects in the last 24 hours, all time most cloned projects, that sort of thing.
 
@@ -177,7 +177,7 @@ FamSpam is going well. Now that Github is launched, there are a handful of featu
 
 Maybe one for open source, or a version for little league teams – anyone who needs to keep in touch and have their email workflow and document sharing streamlined. For right now, however, I try to spend as much time as possible on Github. There are so many places we want to take it.
 
-**AkitaOnRails:** I probably more than exceeded my interview time (sorry about that), but this conversation is super-interesting. One project I just remembered is Sake. To me Sake is very neat because many people complain about "how difficult and complex" the Git command line is, and Sake-like solutions make the workflow a lot easier. For instance, my entire Git workflow for Rails projects are only 4 small sake tasks like Git:update and Git:push. If I am not mistaken someone at Err did Sake, right? Are you still evolving it?
+**AkitaOnRails:** I probably more than exceeded my interview time (sorry about that), but this conversation is super-interesting. One project I just remembered is Sake. To me Sake is very neat because many people complain about "how difficult and complex" the Git command line is, and Sake-like solutions make the workflow a lot easier. For instance, my entire Git workflow for Rails projects is only 4 small sake tasks like Git:update and Git:push. If I am not mistaken someone at Err did Sake, right? Are you still evolving it?
 
 **Chris Wanstrath:** Yeah, I wrote [Sake](http://errtheblog.com/posts/60-sake-bomb). It's not a Rails plugin but it was written to help in Rails development. The "Git tasks" for Sake are becoming quite popular, as Git really just facilitates a better workflow. If you want to implement it, or different branches of that workflow, you can pretty easily just wrap up a few commands into a rake task or bash script.
 

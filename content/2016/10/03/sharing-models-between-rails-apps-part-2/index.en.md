@@ -21,7 +21,7 @@ Then recreate the models including the same Concerns, and make sure I remove the
 
 By the way, this is one big caveat that I didn't address in Part 1: up to this point, the schema was **frozen** in the [central-support gem](https://github.com/Codeminer42/cm42-central-support/blob/master/spec/support/rails_app/db/schema.rb).
 
-From now on, you must control the evolution of the tables mapped in the gem from within the gem. The best approach is to use the `spec/support/rails_app` and normally create new migration with `bin/rails g migration` from there. Then you must move the migration to the `lib/generators/central/templates/migrations` folder.
+From now on, you must control the evolution of the tables mapped in the gem from within the gem. The best approach is to use the `spec/support/rails_app` and normally create new migrations with `bin/rails g migration` from there. Then you must move the migration to the `lib/generators/central/templates/migrations` folder.
 
 The [`lib/generators/central/install_generator.rb`](https://github.com/Codeminer42/cm42-central-support/blob/master/lib/generators/central/install_generator.rb) will take care of making a `central:install` task available that will dutifully put new migrations into your application's `db/migrate` folder as usual. You just have to `bundle update central-support` to get the newest changes, run `bin/rails g central:install` to create the new migrations (it will automatically skip existing ones) and run the normal `bin/rails db:migrate`. A migration generator code is very simple, you can do it like this:
 
@@ -127,7 +127,7 @@ test:
     - bundle exec rspec
 ```
 
-Notice how I copy the ".sample" config files to make sure they exist. And then how I run tasks you know such as `db:create db:schema:load` to create the normal test database, but tasks you don't know such as `central:db:create central:db:schema:load`.
+Notice how I copy the ".sample" config files to make sure they exist. And then how I run tasks you know such as `db:create db:schema:load` to create the normal test database, but also tasks you don't know such as `central:db:create central:db:schema:load`.
 
 I defined those tasks in `lib/tasks/db_central.rake` like this:
 
@@ -247,7 +247,7 @@ DB_CENTRAL = CM(Rails.root)
   .unwrap.freeze
 ```
 
-In this case I am reading from the sample file because, different from the CI build, when I deploy to Heroku I don't have a script to copy the sample to the final yaml file. This will populate the constant `DB_CENTRAL` with the database URL stored in the `DATABASE_CENTRAL_URL` environment variable that I have to set.
+In this case I am reading from the sample file because, unlike the CI build, when I deploy to Heroku I don't have a script to copy the sample to the final yaml file. This will populate the constant `DB_CENTRAL` with the database URL stored in the `DATABASE_CENTRAL_URL` environment variable that I have to set.
 
 Then I create a new file called `app/models/remote_application_record.rb` that looks like this:
 
@@ -292,6 +292,6 @@ In this particular case, the recommended approach is to create a [Follower datab
 
 For more complicated scenarios, you will need a more complicated solution such as an HTTP API layer to make sure only one App manages model migrations and such. But the Rubygem approach should be "good enough" for many cases.
 
-If I really need to go that way, it won't be too difficult to transform this small gem into a full blown Rails API app. If you can't even separate the logic as a Concern, you won't be able to separate them as APIs either, so consider this a quick exercise, a first step towards creating an [Anti Corruption Layer](http://programmers.stackexchange.com/questions/184464/what-is-an-anti-corruption-layer-and-how-is-it-used).
+If I really need to go that way, it won't be too difficult to transform this small gem into a full-blown Rails API app. If you can't even separate the logic as a Concern, you won't be able to separate them as APIs either, so consider this a quick exercise, a first step towards creating an [Anti Corruption Layer](http://programmers.stackexchange.com/questions/184464/what-is-an-anti-corruption-layer-and-how-is-it-used).
 
 And as a bonus, consider contributing to the [Central](https://github.com/Codeminer42/cm42-central) and [central-support](https://github.com/Codeminer42/cm42-central-support) open source projects. I intend to build a competitive Pivotal Tracker/Trello alternative and we are getting there!

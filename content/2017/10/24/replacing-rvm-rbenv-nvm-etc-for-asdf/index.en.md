@@ -14,7 +14,7 @@ tags:
 draft: false
 ---
 
-Many people are using Docker as the means to have different Ruby versions or for any other language. I still think the added overhead both in resources usage and usability friction is simply not worth it. I highly recommend against it. Docker is great as the basis for automated infrastrucutres, but I prefer to have them in servers only.
+Many people are using Docker as the means to have different Ruby versions or for any other language. I still think the added overhead both in resources usage and usability friction is simply not worth it. I highly recommend against it. Docker is great as the basis for automated infrastructures, but I prefer to have them in servers only.
 
 I've been using [asdf](https://github.com/asdf-vm/asdf) as my main Ruby version manager for a long while now and I am confident that I can recommend it in place of the more well recognized RVM or Rbenv.
 
@@ -108,7 +108,7 @@ And in a particular project directory, I can set it to use any other version, ju
 asdf local ruby 2.3.4
 ```
 
-The command above will write a `.tool-versions` file to the directory you're at when you ran it. It will contain the language and version you chose, so whenever you go back to that directory ASDF will set the correct version for the language you need. The previous `asdf global <language>` command is actually writing a `.tool-versions` file to your home directory. The local config override the home directory version.
+The command above will write a `.tool-versions` file to the directory you're at when you ran it. It will contain the language and version you chose, so whenever you go back to that directory ASDF will set the correct version for the language you need. The previous `asdf global <language>` command is actually writing a `.tool-versions` file to your home directory. The local config overrides the home directory version.
 
 Another important thing to remember, whenever you install libraries which have executable scripts that need to be in the PATH, you must **reshim** them. For example:
 

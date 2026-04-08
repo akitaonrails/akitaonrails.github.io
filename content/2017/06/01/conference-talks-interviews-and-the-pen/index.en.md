@@ -20,7 +20,7 @@ But how many of you actually thought through this tricky question?
 
 ### Introduction
 
-There are many number of ways you can try to sell me the pen. You can tell me about the tradition of its manufacturer brand. You can tell me about its outstanding smoothness. You can try to persuade me on the availability of different colors and sizes. You can even steer away from the pen and start bragging about how many hundreds of pens you sold already, your tour de force.
+There are any number of ways you can try to sell me the pen. You can tell me about the tradition of its manufacturer brand. You can tell me about its outstanding smoothness. You can try to persuade me on the availability of different colors and sizes. You can even steer away from the pen and start bragging about how many hundreds of pens you sold already, your tour de force.
 
 I will argue that you can do all of those, but you will probably miss the point. And you will not sell the pen most of the time.
 
@@ -47,7 +47,7 @@ But they often forget to ask the question: "WHY the pen could be important for Y
 
 The WHY is the most important thing. And the difficult part in large audiences is that each person has a different "WHY" that needs a good answer.
 
-Whenever I see a speaker/writer/evangelist giving too much time for imaterial stuff like "benchmarks", "performance", "hyper-modularized architectures", I see them missing a large portion of the audience. Because while they have legitimate reasons for worrying about those points - because they experienced it inside Unicorns like Netflix, Facebook or Twitter - I will argue that more than 95% of the audience population will never have those problems.
+Whenever I see a speaker/writer/evangelist giving too much time for immaterial stuff like "benchmarks", "performance", "hyper-modularized architectures", I see them missing a large portion of the audience. Because while they have legitimate reasons for worrying about those points - because they experienced it inside Unicorns like Netflix, Facebook or Twitter - I will argue that more than 95% of the audience population will never have those problems.
 
 Therefore, you're trying to push a Lamborghini to people that not only can't afford it, but even if they could, it's not nearly at the top of their priority lists. Yes, the Lamborghini is obviously a fast and fine car. But WHY do I need it? WHY are you trying to push it to me? WHY is this pen even relevant to me?
 
@@ -63,7 +63,7 @@ Now, communication is an art. Requires research, study, practice. You must under
 
 You don't want to be easily proven wrong. So each phrase you deliver is like a chess move: you must anticipate 10 different ways it can be refuted and have responses for each. Which is why you need to practice. Write, talk as much as possible, no matter the event. It's not about the size of the audience and your ego, it's the opportunity to get exposed to an audience with little risk. Only tackle a large audience once you're confident that you can defend your arguments. Calibrate your weapons before you use them. When you start tackling the **WHY** you may be provoking open wounds on the audience, so better be prepared.
 
-But if you don't go for the WHYs, it's way worse: you're **FORGETTABLE**. You get applauses that the end, and after an hour no one remembers your name. What is the purpose of a speaker no one remembers later? Or a speaker that is funny and people remember the jokes, but can't remember the content of the talk? So they sympathize with the speaker, but the message is irrelevant. If you want to be an actor or comedian, that's fine. If you want to convince people of a certain point of view though, that's **failure**.
+But if you don't go for the WHYs, it's way worse: you're **FORGETTABLE**. You get applause at the end, and after an hour no one remembers your name. What is the purpose of a speaker no one remembers later? Or a speaker that is funny and people remember the jokes, but can't remember the content of the talk? So they sympathize with the speaker, but the message is irrelevant. If you want to be an actor or comedian, that's fine. If you want to convince people of a certain point of view though, that's **failure**.
 
 And the same goes for writing. You should've learned this in school. If you ever went through college and had to defend a thesis you SHOULD KNOW that the dissertation HAS to be divided in at least 3 sections: Introduction, Elaboration and Argumentation, and Conclusion. This is the WHAT, HOW, and WHY parts.
 
@@ -71,11 +71,11 @@ In a similar topic, if you're into Agile techniques. Do you remember the classic
 
 > As a X, I want Y, so that Z.
 
-The 3rd section is elusive, but it's the ONLY section that matter. It's the WHY. Why do YOU want THAT particular feature? The WHY is the acceptance test. The Done Criteria. The only thing you should be looking for. We write what we THINK we want, not what actually NEEDS to be done. The User Story structure is yet another tool to bend your tiny reptile brain to use your more modern gray matter a bit more.
+The 3rd section is elusive, but it's the ONLY section that matters. It's the WHY. Why do YOU want THAT particular feature? The WHY is the acceptance test. The Done Criteria. The only thing you should be looking for. We write what we THINK we want, not what actually NEEDS to be done. The User Story structure is yet another tool to bend your tiny reptile brain to use your more modern gray matter a bit more.
 
 ### Conclusion
 
-My goal  is to bring attention to a point many speakers and blog writers are not doing: you're concentrating too much on the WHAT and the HOW alone and not exploring the audience's true concern: the **WHY**!
+My goal is to bring attention to a point many speakers and blog writers are not doing: you're concentrating too much on the WHAT and the HOW alone and not exploring the audience's true concern: the **WHY**!
 
 Again, whenever you see one of those cheap "my language is better than yours" theme and the argument is: "because in the benchmarks we can clearly see that it's 50% faster" or that "we can clearly see that it uses 50% less memory" or that "we can clearly see that it can run more concurrent processes at once". Those are ALL missing the point.
 
@@ -83,7 +83,7 @@ This is the HOW. It's fine.
 
 But 95% of your audience will rarely empathize with those points. They will agree on a conscious level, but the subconscious will tell them **the truth**: _"you don't have this problem."_ Most of the time their servers are idling, doing nothing. How good a 50% or a 200% performance gain will help them? It will not.
 
-It's a major lack of empathy when a programmer, working on a big company, with many different teams colliding with big monoliths and legacy code decide that micro-services is the way to go. And now they "know" that if it's good for them, it ought to be good for everybody, right? Therefore, anyone doing differently are dorks.
+It's a major lack of empathy when a programmer, working on a big company, with many different teams colliding with big monoliths and legacy code decides that micro-services is the way to go. And now they "know" that if it's good for them, it ought to be good for everybody, right? Therefore, anyone doing differently is a dork.
 
 They're not. Most of the other teams in the world may be small 3 to 5 people with projects that are yet to see the light of day. And here you have it: trying to implement your wonder over-architecture, and not getting any value back, because it delays their time to market.
 

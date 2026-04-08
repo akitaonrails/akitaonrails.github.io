@@ -12,7 +12,7 @@ draft: false
 ---
 I [started evangelizing Git in 2007](http://www.akitaonrails.com/2007/9/22/jogar-pedra-em-gato-morto-por-que-subversion-no-presta). It was a very tough sell to make at the time.
 
-Outside of the kernel development almost no one wanted to learn it and we had very worthy competitors, from Subversion, to Mercurial, to Bazaar, to Darcs, to Perforce, and so on. But those of use that dug deeper knew that Git had the edge and it was a matter of time.
+Outside of the kernel development almost no one wanted to learn it and we had very worthy competitors, from Subversion, to Mercurial, to Bazaar, to Darcs, to Perforce, and so on. But those of us who dug deeper knew that Git had the edge and it was a matter of time.
 
 Then GitHub showed up in 2008 and the rest is history. For many years it was just "cool" to be in GitHub. The Ruby community drove GitHub up into the sky. Finally it became the status quo and the one real monopoly in information repositories - not just software source code, but everything.
 
@@ -20,7 +20,7 @@ I always knew that we should have a "local" option, which is why [I tried to con
 
 GitHub itself raised [USD 350 million in funding](https://www.crunchbase.com/organization/github#/entity) and one of its required goals is to nail the Enterprise Edition for big corporations that don't want their data outside their closed gardens. Although GitHub hosts every single open source project out there, they are themselves closed-source.
 
-[GitLab Inc.](http://gitlab.com) started differently with an open source-first approach with their Community Edition (CE) and having both a GitHub-like hosted option as well as a supported Enteprise Edition for fearsome corporations. They already raised [USD 5.62 million in funding](https://www.crunchbase.com/organization/gitlab-com#/entity), and they are the most promising alternative to GitHub so far.
+[GitLab Inc.](http://gitlab.com) started differently with an open source-first approach with their Community Edition (CE) and having both a GitHub-like hosted option as well as a supported Enterprise Edition for risk-averse corporations. They already raised [USD 5.62 million in funding](https://www.crunchbase.com/organization/gitlab-com#/entity), and they are the most promising alternative to GitHub so far.
 
 Of course, there are other platforms such as Atlassian's Bitbucket. But I believe Atlassian's strategy is slower and they have a larger suite of enterprise products to sell first, such as Confluence and Jira. I don't think they ever posed much of a competition against GitHub.
 
@@ -30,37 +30,37 @@ GitLab really started accelerating in 2015 as this [commit graph](https://github
 
 It's been steadily growing since 2011, but they seem to have crossed the first tipping point around late 2014, from early adopters to the early majority. This became more important as GitHub [announced their pricing changes](https://github.com/blog/2164-introducing-unlimited-private-repositories) in May.
 
-They said they haven't committed to a dead line to enforce the change, so organizations can opt out of the new format for the time being. They are changing from "limited repositories and unlimited users" to "unlimited repositories and limited users".
+They said they haven't committed to a deadline to enforce the change, so organizations can opt out of the new format for the time being. They are changing from "limited repositories and unlimited users" to "unlimited repositories and limited users".
 
 ## The Cost-Benefit Conundrum
 
-For example, if you have up to 8 developers in the USD 50/month (20 private repositories), the change won't affect you, as you will pay USD 25/month for 5 users and USD 9 for additional users (total of USD 52/month).
+For example, if you have up to 8 developers on the USD 50/month plan (20 private repositories), the change won't affect you, as you will pay USD 25/month for 5 users and USD 9 for additional users (total of USD 52/month).
 
 Now, if you have a big team of 100 developers currently in the Diamond Plan of USD 450/month (300 private repositories), you would have to pay USD 25/month + 95 times USD 9, which totals a staggering USD 880/month! **Double the amount!**
 
 This is an extra **USD 10,560 per year**!
 
-And what does GitLab affords you instead?
+And what does GitLab afford you instead?
 
 You can have way more users and more repositories in a **USD 40/month** virtual box (4GB of RAM, 60GB SSD, 4TB transfer).
 
 And it doesn't stop there. GitLab also has very functional [GitLab Multi Runner](https://gitlab.com/gitlab-org/gitlab-ci-multi-runner) which you can install in a separate box (actually, at least 3 boxes - more on that below).
 
-You can easily connect this runner to the build system over GitLab so every new git push trigger the runner to run the automated test suite in a Docker image of your choosing. So it's a fully functional, full featured Continuous Integration system nicely integrated in your GitLab project interface:
+You can easily connect this runner to the build system over GitLab so every new git push triggers the runner to run the automated test suite in a Docker image of your choosing. So it's a fully functional, full featured Continuous Integration system nicely integrated in your GitLab project interface:
 
 ![Pipeline](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/546/big_Pipelines___cm42-archived___PremiosOnline___GitLab.png)
 
 ![CI Runner](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/547/big_test___144____Builds___cm42-archived___PremiosOnline___GitLab.png)
 
-Reminds of you anything? Yep, it's a fully functional alternative to Travis-CI, Semaphore, CircleCI or any other CI you're using with a very easy to install procedure. Let's say you're paying Travis-CI USD 489/month to have 10 concurrent jobs.
+Remind you of anything? Yep, it's a fully functional alternative to Travis-CI, Semaphore, CircleCI or any other CI you're using with a very easy to install procedure. Let's say you're paying Travis-CI USD 489/month to have 10 concurrent jobs.
 
-You can install GitLab Runner in 3 boxes of USD 10/month (1GB RAM, 1 Cores, 30GB SSD) and have way more concurrent jobs (20? 50? Auto-Scale!?) that runs **faster** (in a simple test, one build took 15 minutes over Travis took less than 8 minutes at Digital Ocean).
+You can install GitLab Runner in 3 boxes of USD 10/month (1GB RAM, 1 Cores, 30GB SSD) and have way more concurrent jobs (20? 50? Auto-Scale!?) that run **faster** (in a simple test, one build that took 15 minutes over Travis took less than 8 minutes at Digital Ocean).
 
-So let's make the math for a year's worth of service. First considering no GitHub plan change:
+So let's do the math for a year's worth of service. First considering no GitHub plan change:
 
 > USD 5,400 (GitHub) + USD 5,868 (Travis) = USD 11,268 a year.
 
-Now, the GitLab + GitLab Runner + Digital Ocean for the same features and unlimited users, unlimited repositores, unlimited concurrent builds:
+Now, the GitLab + GitLab Runner + Digital Ocean for the same features and unlimited users, unlimited repositories, unlimited concurrent builds:
 
 > USD 480 (GitLab) + USD 840 (Runner box) = USD 1,320 a year.
 
@@ -70,9 +70,9 @@ For the worst case scenario, compare it when GitHub decides to enforce the new p
 
 > USD 10,560 (GitHub new plans) + USD 5,868 (Travis) = USD 16,428
 
-Now the GitLab option is 11x cheaper! You're saving almost USD 15,000 a year! This is not something you can ignore in you cost sheet.
+Now the GitLab option is 11x cheaper! You're saving almost USD 15,000 a year! This is not something you can ignore in your cost sheet.
 
-As I said, the calculations above are only significant in a scenario of a 100 developers. You must do your own math taking into account your team size and number of active projects (you can always archive unused projects).
+As I said, the calculations above are only significant in a scenario with 100 developers. You must do your own math taking into account your team size and number of active projects (you can always archive unused projects).
 
 Even if you don't have 100 developers. Let's consider the scenario for **30 developers** in the new GitHub per user plans and a smaller Travis configuration for 5 concurrent jobs:
 
@@ -94,13 +94,13 @@ I will not bore you with what you can readily find over the Web. I highly recomm
 
 Of course, there is a number of different installation options, from AWS AMI images to Ubuntu packages you can install manually. Study the [documentation](https://about.gitlab.com/installation/).
 
-It will cost you USD 40 for a month of trial. If you want to save as much as tens of thousands of dollar, this is a bargain.
+It will cost you USD 40 for a month of trial. If you want to save as much as tens of thousands of dollars, this is a bargain.
 
 GitLab has many customization options. You can lock down your private GitLab to allow only users with an official e-mail from your domain, for example. You can configure [OAuth2 providers](http://docs.gitlab.com/ee/integration/omniauth.html) so your users can quickly sign in using their GitHub, Facebook, Google or other accounts.
 
 #### A Few Gotchas
 
-I've stumbled upon a few caveats in the configuration. Which is why I recommend that you plan ahead - study this entire article ahead of time! -, do a quick install that you can blow away, so you can "feel" the environment before trying to migrate all your repos over to your brand new GitLab. As a reference, this is a part of my `/etc/gitlab/gitlab.rb`:
+I've stumbled upon a few caveats in the configuration. Which is why I recommend that you plan ahead - study this entire article ahead of time! - do a quick install that you can blow away, so you can "feel" the environment before trying to migrate all your repos over to your brand new GitLab. As a reference, this is a part of my `/etc/gitlab/gitlab.rb`:
 
 --- ruby
 # register a domain for your server and place it here:
@@ -175,9 +175,9 @@ You can open a Rails console to inspect production objects like this:
 gitlab-rails console
 ---
 
-I had a lot of trouble importing big repos from GitHub, but after a few days debugging the problem with GitLab Core Team developers [Douglas Alexandre](https://gitlab.com/u/dbalexandre), [Gabriel Mazetto](https://gitlab.com/u/brodock), a few Merge Requests and some local patching and I was finally able to import relatively big projects (more than 5,000 commits, more than 1,000 issues, more than 1,200 pull requests with several comments worth of discussion threads). A project of this size can take a couple of hours to complete, mainly because **it's damn slow to use GitHub's public APIs** (they are slow and they have rate limits and abuse detection, so you can't fetch everything as fast as your bandwidth would allow).
+I had a lot of trouble importing big repos from GitHub, but after a few days debugging the problem with GitLab Core Team developers [Douglas Alexandre](https://gitlab.com/u/dbalexandre), [Gabriel Mazetto](https://gitlab.com/u/brodock), a few Merge Requests and some local patching, I was finally able to import relatively big projects (more than 5,000 commits, more than 1,000 issues, more than 1,200 pull requests with several comments worth of discussion threads). A project of this size can take a couple of hours to complete, mainly because **it's damn slow to use GitHub's public APIs** (they are slow and they have rate limits and abuse detection, so you can't fetch everything as fast as your bandwidth would allow).
 
-(By the way, don't miss GitLab will be over at [Rubyconf Brazil 2016](http://www.rubyconf.com.br/pt-BR/speakers#Gabriel%20Gonçalves%20Nunes%20Mazetto), on Sep 23-24)
+(By the way, don't miss that GitLab will be over at [Rubyconf Brazil 2016](http://www.rubyconf.com.br/pt-BR/speakers#Gabriel%20Gonçalves%20Nunes%20Mazetto), on Sep 23-24)
 
 Migrating all my GitHub projects took a couple of days, but they all went through smoothly and my team didn't have any trouble, just adjusting their git remote URLs and they're done.
 
@@ -185,7 +185,7 @@ The import procedure from GitHub is quite complete, it brings not only the git r
 
 But I'd recommend waiting for at least version 8.11 (it's currently 8.10.3) before trying to import large GitHub projects.
 
-If you're on Bitbucket, unfortunatelly there are less features in the importer. It will mostly just bring the source code. So be aware of that if you extensively depend on their pull request system and you want to preserve this history. More feature will come and you can even help them out, they are very resourceful and willing to make GitLab better.
+If you're on Bitbucket, unfortunately there are fewer features in the importer. It will mostly just bring the source code. So be aware of that if you extensively depend on their pull request system and you want to preserve this history. More features will come and you can even help them out, they are very resourceful and willing to make GitLab better.
 
 ### Side-track: Customizations for every Digital Ocean box
 
@@ -283,7 +283,7 @@ docker run -d -p 6000:5000 \
     --name registry registry:2
 ---
 
-Now you wil have a local Docker images registry proxy and cache at `10.0.0.1:6000` (take note of the real private IP).
+Now you will have a local Docker images registry proxy and cache at `10.0.0.1:6000` (take note of the real private IP).
 
 SSH in to "ci-cache" and run:
 
@@ -298,7 +298,7 @@ docker run -it --restart always -p 9005:9000 \
 
 Now you will have an AWS S3 clone called [Minio](https://github.com/minio/minio) running. I didn't know this project even existed, but it is a nifty little service written in Go to clone the AWS S3 behavior and APIs. So now you can have your very own S3 inside your infrastructure!
 
-After Docker spin ups, it will print out the Access Key and Secret keys, make notes. And this service will be running at `10.0.0.2:9005`.
+After Docker spins up, it will print out the Access Key and Secret keys, make notes. And this service will be running at `10.0.0.2:9005`.
 
 You can even open a browser and see their web interface at `http://10.0.0.2:9005` and use the access and secret keys to login. Make sure you have a bucket named "runner". The files will be stored at the `/export/runner` directory.
 
@@ -439,13 +439,13 @@ You can have several "runner" definitions, each with a `limit` of builds/machine
 
 The `concurrent` limit is a global setting. So if I had 3 runner definitions, each with a `limit` of 15, they would still be globally limited to 20 as defined in the `concurrent` global variable.
 
-You can use different providers for specific needs, for example, to run OS X builds or Rapsberry PI builds or other exotic kinds of builds. In the example I am keeping it simple and just setting many builds in the same provider (Digital Ocean).
+You can use different providers for specific needs, for example, to run OS X builds or Raspberry Pi builds or other exotic kinds of builds. In the example I am keeping it simple and just setting many builds in the same provider (Digital Ocean).
 
 And don't worry about the monthly fee for each machine. When used in this manner, you will be paying per hour.
 
-Also, make sure you spinned up all your machines (docker-registry, minio cache, CI runner) all with **private networking enabled** (so they talk through the internal VLAN instead of having to go all the way through the public internet) and that they are all in the same region data center (NYC1 is New York 1 - New York has 3 sub-regions, for example). Don't start machines in different regions.
+Also, make sure you spun up all your machines (docker-registry, minio cache, CI runner) all with **private networking enabled** (so they talk through the internal VLAN instead of having to go all the way through the public internet) and that they are all in the same region data center (NYC1 is New York 1 - New York has 3 sub-regions, for example). Don't start machines in different regions.
 
-Because we have Docker proxy/cache and Minio/S3 cache, your builds will take take longer the first time (let's say, 5 minutes), and then subsequent build will fetch everything from the cache (taking, let's say, 1:30 minute). It's fast and it's convenient.
+Because we have Docker proxy/cache and Minio/S3 cache, your builds will take longer the first time (let's say, 5 minutes), and then subsequent builds will fetch everything from the cache (taking, let's say, 1:30 minute). It's fast and it's convenient.
 
 ### Setting up each Project for the Runner
 
@@ -496,16 +496,16 @@ The math is hard to argue against: the GitLab + GitLab-CI + Digital Ocean combo 
 
 We can use all the [Git flows](https://about.gitlab.com/2014/09/29/gitlab-flow/) we're used to.
 
-GitLab-CE is stil a work in progress though, the team is increasing their pace but there are currently more than [4,200 open issues](https://gitlab.com/gitlab-org/gitlab-ce/issues). But as this is all Ruby on Rails and Ruby tooling, you can easily jump in and contribute. No contribution is too small. Just by reporting how to reproduce a bug is help enough to assist the developers to figure out how to improve faster.
+GitLab-CE is still a work in progress though, the team is increasing their pace but there are currently more than [4,200 open issues](https://gitlab.com/gitlab-org/gitlab-ce/issues). But as this is all Ruby on Rails and Ruby tooling, you can easily jump in and contribute. No contribution is too small. Just reporting how to reproduce a bug is help enough to assist the developers to figure out how to improve faster.
 
 But don't shy away because of the open issues, it's fully functional as of right now and I have not found any bugs that could be considered show stoppers.
 
-They have many things right. First of all, it's a "simple" Ruby on Rails project. It's a no-thrills front-end with plain JQuery. The choice of HAML for the views is questionable but it doesn't hurt. They use good old Sidekiq+Redis for asynchronous jobs. No black magic here. A pure monolith that's not difficult to understand and to contribute.
+They have many things right. First of all, it's a "simple" Ruby on Rails project. It's a no-frills front-end with plain jQuery. The choice of HAML for the views is questionable but it doesn't hurt. They use good old Sidekiq+Redis for asynchronous jobs. No black magic here. A pure monolith that's not difficult to understand and to contribute.
 
 The APIs are all written using Grape. They have the [GitLab CE](https://gitlab.com/gitlab-org/gitlab-ce) project separated from other components, such as the [GitLab-Shell](https://gitlab.com/gitlab-org/gitlab-shell) and [GitLab-CI-Multi-Runner](https://gitlab.com/gitlab-org/gitlab-ci-multi-runner).
 
-They also forked [Omnibus](https://gitlab.com/gitlab-org/omnibus-gitlab) in order to be able to package the CE Rails project as a ".deb". Everything is orchestrated with Docker. And when a new version is available, you only need to `apt-get update && apt-get ugprade` and it will do all the work of backing up and migratind Postgresql, updating the code, bundling in new dependencies, restarting the services and so forth. It's super convenient and you should take a look at this project if you have complicated Rails deployments into your own infrastructure (out of Heroku, for example).
+They also forked [Omnibus](https://gitlab.com/gitlab-org/omnibus-gitlab) in order to be able to package the CE Rails project as a ".deb". Everything is orchestrated with Docker. And when a new version is available, you only need to `apt-get update && apt-get upgrade` and it will do all the work of backing up and migrating Postgresql, updating the code, bundling in new dependencies, restarting the services and so forth. It's super convenient and you should take a look at this project if you have complicated Rails deployments into your own infrastructure (out of Heroku, for example).
 
-I am almost done moving hundreds of repositories from both BitBucket and GitHub to GitLab right now and the developers from my company are already using it in a daily basis without any problems. We are almost at the point where we can disengage from BitBucket, GitHub and external CIs.
+I am almost done moving hundreds of repositories from both BitBucket and GitHub to GitLab right now and the developers from my company are already using it on a daily basis without any problems. We are almost at the point where we can disengage from BitBucket, GitHub and external CIs.
 
-You will be surprised how easy your company can do it too and save a couple thousand dollars in the process, while having fun doing it!
+You will be surprised how easily your company can do it too and save a couple thousand dollars in the process, while having fun doing it!

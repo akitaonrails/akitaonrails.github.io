@@ -15,15 +15,15 @@ tags:
 draft: false
 ---
 
-**Update 07/11/2017**: Just after our twitter brainstorm, DHH and @gauravtiwari stepped up and started a [new branch](https://github.com/rails/activestorage/pull/35) to add Direct Upload to Cloud support right away. Of course, it's still work in progress but it will be great that it will come with the support out of the box.
+**Update 07/11/2017**: Just after our twitter brainstorm, DHH and @gauravtiwari stepped up and started a [new branch](https://github.com/rails/activestorage/pull/35) to add Direct Upload to Cloud support right away. Of course, it's still work in progress but it will be great to have that support come out of the box.
 
-**Update 07/20/2017:** I need to clarify a few points. First, I am recommending Cloudinary's proprietary solution, but there are caveats. You're trading off ease of use for vendor lock-in. And I only recommend it for photos/images. If you need to upload super-large files (videos, or arbitrary binaries such as big tarballs) you need to research more and perhaps build a custom solution with Shrine or similar. Another statement I make is that if you use Heroku your only option is Direct Upload to Cloud services such as AWS S3. I delivered several apps which did hit the [H12 Routing Timeout](https://devcenter.heroku.com/articles/request-timeout#uploading-large-files). It's in the official documentation. But right now I deployed a simple dumb Rails 5.1 app with vanilla Carrierwave and an HTML form multipart. I was able to upload a 2+GB video file and it went through Heroku's routing layer. It seems the router picks up the file and lets it finish then passes the finished uploaded file to the Rails app. Now, if you block the request (such as uploading from the Rails app to S3 or doing something else that is time intensive) then the routing layer will H12/timeout the request after 30sec. So you will eventually hit random disconnects if you allow any kind of large file to be uploaded. Even though you can receive it, you can't keep it in the file system (as it's volatile in a Heroku Dyno), so you still need to upload it somewhere and that is the part that can hit the timeout. So Direct Upload is still the way to go on Heroku.
+**Update 07/20/2017:** I need to clarify a few points. First, I am recommending Cloudinary's proprietary solution, but there are caveats. You're trading off ease of use for vendor lock-in. And I only recommend it for photos/images. If you need to upload super-large files (videos, or arbitrary binaries such as big tarballs) you need to research more and perhaps build a custom solution with Shrine or similar. Another statement I make is that if you use Heroku your only option is Direct Upload to Cloud services such as AWS S3. I delivered several apps that did hit the [H12 Routing Timeout](https://devcenter.heroku.com/articles/request-timeout#uploading-large-files). It's in the official documentation. But right now I deployed a simple dumb Rails 5.1 app with vanilla Carrierwave and an HTML form multipart. I was able to upload a 2+GB video file and it went through Heroku's routing layer. It seems the router picks up the file and lets it finish then passes the finished uploaded file to the Rails app. Now, if you block the request (such as uploading from the Rails app to S3 or doing something else that is time intensive) then the routing layer will H12/timeout the request after 30sec. So you will eventually hit random disconnects if you allow any kind of large file to be uploaded. Even though you can receive it, you can't keep it in the file system (as it's volatile in a Heroku Dyno), so you still need to upload it somewhere and that is the part that can hit the timeout. So Direct Upload is still the way to go on Heroku.
 
 DHH just announced a brand new feature for the upcoming Rails 5.2. This is [ActiveStorage](https://github.com/rails/activestorage).
 
 It should become the default solution to support file uploads. It basically supersedes Paperclip, or Carrierwave, or some features of Dragonfly and Shrine (they do a lot more).
 
-I am writing this small post not to introduce the solution but to clarify a few criticisms I did over Twitter. But Twitter is a terrible platform for more in-depth discussions, hence this post.
+I am writing this small post not to introduce the solution but to clarify a few criticisms I made on Twitter. But Twitter is a terrible platform for more in-depth discussions, hence this post.
 
 The original Twitter thread can be found [here](https://twitter.com/AkitaOnRails/status/882998977754537984).
 
@@ -39,7 +39,7 @@ Most simple upload solutions - such as ActiveStorage, and old ones such as the o
 
 Naively deployed, this will **block** the MRI through the entirety of the upload. If the file is very big, it can block any other incoming request for the duration of this upload. (Technically, because Rails supports MRI threads and MRI threads are theoretically non-blocking for IO operations, it shouldn't be as bad as it sounds.)
 
-Fortunately, I believe no one in their right minds exposes an MRI process directly to the internet. We are usually behind a [reverse proxy](https://www.digitalocean.com/community/tutorials/how-to-deploy-a-rails-app-with-puma-and-nginx-on-ubuntu-14-04), such as Haproxy, NGINX, Apache HTTPD or something similar.
+Fortunately, I believe no one in their right mind exposes an MRI process directly to the internet. We are usually behind a [reverse proxy](https://www.digitalocean.com/community/tutorials/how-to-deploy-a-rails-app-with-puma-and-nginx-on-ubuntu-14-04), such as Haproxy, NGINX, Apache HTTPD or something similar.
 
 And usually those reverse proxies are the ones that receive the upload and they only proxy the request when the upload is finished. So the MRI/Rails application can continue to respond to requests in the meantime.
 
@@ -61,7 +61,7 @@ The first one can be done synchronously or asynchronously.
 
 Synchronously is "bad" (I mean, in the controller action itself, because this step is CPU-intensive and takes time). It's basically transforming the image (using something like Rmagick or MiniMagick) into other versions of different sizes (thumbnail, mobile version, high-dpi version, etc) and storing the paths to the different versions in the storage.
 
-Asynchronously is deferring this costly transformation to ActiveJob so something like a Sidekiq worker picks up later and do the processing. Meanwhile, you can serve a placeholder if the particular version is not ready yet.
+Asynchronously is deferring this costly transformation to ActiveJob so something like a Sidekiq worker picks it up later and does the processing. Meanwhile, you can serve a placeholder if the particular version is not ready yet.
 
 A caveat is that if you have cloud storage and an asynchronous job transformation, you will have lots of traffic because you will spend time uploading to a cloud storage, then the job will have to download from there, do the transformation and do new uploads.
 

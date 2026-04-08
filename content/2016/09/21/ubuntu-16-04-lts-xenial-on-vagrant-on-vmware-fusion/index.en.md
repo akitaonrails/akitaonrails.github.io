@@ -15,13 +15,13 @@ tags:
 draft: false
 ---
 
-I'm old school. I know the cool kids are all playing around with Docker nowadays, but I like to have a full blown linux environment with all dependencies in one place. I will leave volatile boxes for the cloud.
+I'm old school. I know the cool kids are all playing around with Docker nowadays, but I like to have a full-blown linux environment with all dependencies in one place. I will leave volatile boxes for the cloud.
 
 I like to keep a Vagrant box around, because no matter how messy an OS upgrade can go (looking at ya macOS), I know my development box will just work.
 
 But even with everything virtualized and isolated, things can still go wrong. I am currently using [Vagrant 1.8.5](https://www.vagrantup.com/downloads.html), with the [vagrant-vmware-fusion plugin 4.0.11](https://www.vagrantup.com/vmware/) and Vmware Fusion 8.5 on El Capitan (even though macOS Sierra just launched, I will wait at least 1 month before upgrading, there is nothing there that is worth the risk).
 
-If you're installing a brand new box for the first time, this is the bare-bone `Vagrantfile` configuration I am using:
+If you're installing a brand new box for the first time, this is the bare-bones `Vagrantfile` configuration I am using:
 
 ```ruby
 # -*- mode: ruby -*-
@@ -103,7 +103,7 @@ host    all             all             127.0.0.1/32            trust
 host    all             all             ::1/128                 trust
 ```
 
-This makes your life easier while programming. If you did everything right until now, you will have your PG with proper unicode encoding and without bothering with password when you do `bin/rails db:create`. If you didn't configure your locale properly before, you can follow [this gist](https://gist.github.com/turboladen/6790847) to manually set PG's locale to UTF-8.
+This makes your life easier while programming. If you did everything right until now, you will have your PG with proper unicode encoding and without bothering with passwords when you do `bin/rails db:create`. If you didn't configure your locale properly before, you can follow [this gist](https://gist.github.com/turboladen/6790847) to manually set PG's locale to UTF-8.
 
 Installing [Ruby](https://rvm.io/rvm/install) is still better done through RVM:
 
@@ -115,7 +115,7 @@ rvm install 2.3.1
 rvm use 2.3.1 --default
 ```
 
-And I prefer using [YADR](https://github.com/skwp/dotfiles) as my default dotfiles, replacing Bash for ZSH. Compared to other dotfiles, I like this one because I usually don't have to tweak it at all. I won't even configure anything about RVM after installing because YADR takes care of that already.
+And I prefer using [YADR](https://github.com/skwp/dotfiles) as my default dotfiles, replacing Bash with ZSH. Compared to other dotfiles, I like this one because I usually don't have to tweak it at all. I won't even configure anything about RVM after installing because YADR takes care of that already.
 
 ```
 sh -c "`curl -fsSL https://raw.githubusercontent.com/skwp/dotfiles/master/install.sh `"
@@ -208,6 +208,6 @@ sudo apt-get update
 sudo apt-get install esl-erlang elixir
 ```
 
-And this is it, a very straightforward tutorial to have a modern development environment ready to go. These are the basic software development tools that I believe should be in everybody's toolbelts for the following years.
+And this is it, a very straightforward tutorial to have a modern development environment ready to go. These are the basic software development tools that I believe should be in everybody's toolbelt for the following years.
 
-Honestly, I am not so much into Clojure and Go as I think I should. And I didn't give .NET Core a lot of time yet, but I will explore those in more detail in the future.
+Honestly, I am not so much into Clojure and Go as I think I should be. And I didn't give .NET Core a lot of time yet, but I will explore those in more detail in the future.

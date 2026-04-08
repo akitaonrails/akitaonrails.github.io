@@ -16,14 +16,14 @@ As some of you may know, I have this small pet project called [ObjC Rubyfication
 
 The idea of this pet project is to be a Static Library that I can easily add to any other project and have all of its features. In this article I'd like to present how I am organizing its many subprojects within one project (and I am accepting any suggestions and tips to make it better as I am just learning how to organize things within Obj-C projects) and talk about a gotcha that took me hours to figure out and might help someone else.
 
-To make this exercise even more fun, I also added a separated target for my unit testing suite (and see how XCode supports tests), then another target for the [Kiwi](http://kiwi-lib.info/) BDD testing framework for Obj-C, and another one for [CocoaOniguruma](http://limechat.net/cocoaoniguruma/) as I have just explained in my [previous article](http://www.akitaonrails.com/2011/04/23/objective-c-it's-a-unix-system-i-know-this).
+To make this exercise even more fun, I also added a separate target for my unit testing suite (and see how XCode supports tests), then another target for the [Kiwi](http://kiwi-lib.info/) BDD testing framework for Obj-C, and another one for [CocoaOniguruma](http://limechat.net/cocoaoniguruma/) as I have just explained in my [previous article](http://www.akitaonrails.com/2011/04/23/objective-c-it's-a-unix-system-i-know-this).
 
 I've been playing with ways of reorganizing my project and I realized that I was doing it wrong. I was adding all the source files from my "Rubyfication" target into my Specs target. So everything was compiling fine, the specs were all passing, but the way I defined dependencies was wrong. It is kind of complicated to understand at first, but it should be something like this:
 
 - CocoaOniguruma Target: should be a static library, with no target dependencies and no binary libraries to link against, just a dependency to the standard Foundation framework. It exposes the OnigRegexp.h, OnigRegexpUtility.h and oniguruma.h as public headers.
 - Kiwi Target: should be another static library, with no target dependencies and no binary libraries to link against, just having the Foundation and UIKit framework dependencies.
 - Rubyfication: should be another static library, with CocoaOniguruma as a target dependency, linking against the libCocoaOniguruma.a binary and depending on the Foundation framework as well. It exposes all of its <tt>.h</tt> files as public headers.
-- RubyficationTests: should be a Bundle which were created together with the Rubyfication target (you can specify whether you want a unit test target when you create new targets), with both Kiwi and Rubyfication targets as dependencies, linking against the libKiwi.a and libRubyfication.a binaries, and the Foundation and UIKit frameworks as well.
+- RubyficationTests: should be a Bundle which was created together with the Rubyfication target (you can specify whether you want a unit test target when you create new targets), with both Kiwi and Rubyfication targets as dependencies, linking against the libKiwi.a and libRubyfication.a binaries, and the Foundation and UIKit frameworks as well.
 
 If you keep creating new targets manually, XCode 4 will also create a bunch of Schemes that you don't really need. I keep mine clean with just the Rubyfication scheme. You can access the "Product" menu and the "Edit Scheme" option. Then my Scheme looks like this:
 
@@ -100,4 +100,4 @@ So every target that depends on external static libraries that loads Categories 
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2011/4/23/Screen%20shot%202011-04-23%20at%2011.41.27%20PM_original.png?1303613619)
 
-So both my <tt>RubyficationTests</tt> and <tt>Rubyfication</tt> targets had to receive this new flag. And not the Tests all pass flawlessly!
+So both my <tt>RubyficationTests</tt> and <tt>Rubyfication</tt> targets had to receive this new flag. And now the Tests all pass flawlessly!

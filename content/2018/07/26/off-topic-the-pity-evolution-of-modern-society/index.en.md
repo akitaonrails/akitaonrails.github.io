@@ -58,7 +58,7 @@ Can you give back their future if you were wrong? What makes you entitled to be 
 
 Careful. When antagonized, an average, reasonable person should dialogue in private, as any civilized society learned to do.  But social networks motivate people to do the worst: call out in public.
 
-This is Mob Formation. This is plain old bullying. I suffered forms of bullying my entire life - being a Japanese minority in a Western country -I know how bad being bullied feels, which is why I never bully back.
+This is Mob Formation. This is plain old bullying. I suffered forms of bullying my entire life - being a Japanese minority in a Western country - I know how bad being bullied feels, which is why I never bully back.
 
 If you call out someone in public, you're not practicing "justice." You are a mere bully. No matter the subject at hand.
 
@@ -68,7 +68,7 @@ Have you ever read the image header of my [Facebook](https://www.facebook.com/fa
 
 And I believe that.
 
-I shall never shame someone in public. Only cowards do that. Shaming someone in the open has the sole purpose of mobbing people, transforming the herd in maneuvering mass to swiftly perform a public execution, and thus, make your point without having to defend it.
+I shall never shame someone in public. Only cowards do that. Shaming someone in the open has the sole purpose of mobbing people, transforming the herd into a maneuvering mass to swiftly perform a public execution, and thus, make your point without having to defend it.
 
 _"But I have the right not to be offended."_
 

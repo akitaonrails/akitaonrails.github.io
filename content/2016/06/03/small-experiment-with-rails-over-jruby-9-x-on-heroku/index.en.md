@@ -12,9 +12,9 @@ draft: false
 
 After playing around with languages different than Ruby (such as [Elixir](/elixir) or [Crystal](/crystal)), it was time to go back to Ruby and see how JRuby is performing nowadays.
 
-JRuby always pursued the goal of being a competent MRI replacement. If you have not followed what's going on, JRuby changed version schemes when they switched from the 1.7 series to the 9.x series. You should read [this blog post](blog post) that explains it.
+JRuby always pursued the goal of being a competent MRI replacement. If you have not followed what's going on, JRuby changed version schemes when they switched from the 1.7 series to the 9.x series. You should read this blog post that explains it.
 
-In summary, if you want MRI 2.2 compatibility you must use JRuby 9.0.x and if you want MRI 2.3 compatibility you must use JRuby 9.1.x series. The most current release being 9.1.2.0. Anything prior to that you can refer to this [table of versions](https://devcenter.heroku.com/articles/ruby-support#ruby-versions) from Heroku's documentation.
+In summary, if you want MRI 2.2 compatibility you must use JRuby 9.0.x and if you want MRI 2.3 compatibility you must use the JRuby 9.1.x series. The most current release being 9.1.2.0. Anything prior to that you can refer to this [table of versions](https://devcenter.heroku.com/articles/ruby-support#ruby-versions) from Heroku's documentation.
 
 There are important recommendations as well:
 
@@ -132,7 +132,7 @@ on_worker_boot do
 end
 ```
 
-It's a bit different than you might find in other documentations. The important part is to turn off workers and preload_app when loading over JRuby. Otherwise it will complain and crash. On my original MRI deploy I am using a small 1X dyno and I can leave `WEB_CONCURRENCY=2` and `RAILS_MAX_THREADS=5` but on the JRuby deploy I set it to `WEB_CONCURRENCY=1` (to turn off workers) and `RAILS_MAX_THREADS=16` (because I am assuming JRuby can handle more multithreading than MRI).
+It's a bit different from what you might find in other documentation. The important part is to turn off workers and preload_app when loading over JRuby. Otherwise it will complain and crash. On my original MRI deploy I am using a small 1X dyno and I can leave `WEB_CONCURRENCY=2` and `RAILS_MAX_THREADS=5` but on the JRuby deploy I set it to `WEB_CONCURRENCY=1` (to turn off workers) and `RAILS_MAX_THREADS=16` (because I am assuming JRuby can handle more multithreading than MRI).
 
 Another important bit: most people still assume that MRI can't take advantage of native parallel threads at all because of the dreaded GIL (Global Interpreter Lock), but that's only half true. MRI Ruby can parallelize threads on I/O waits. So, if a part of your app is waiting for the database to process and return rows, for example, another thread can take over and do something else, in parallel. There is some concurrency available, even if limited, so setting a small amount of threads for Puma might help a bit.
 
@@ -272,4 +272,4 @@ Don't take the benchmarks above as "facts" to generalize everywhere, they are ju
 
 Another use case (that I did not test) is, instead of just "porting" an MRI app to JRuby, leveraging JRuby's unique strengths as [this post](https://blog.heroku.com/archives/2016/5/24/reactive_ruby_building_real_time_apps_with_jruby_and_ratpack) from Heroku explains, in the case of using JRuby with Ratpack, for example.
 
-All in all, JRuby is still a great project to experiment with. MRI itself has come a long way as well and 2.3.1 is quite decent. Most of the time it's down to your entire architecture choices, and the language is just one piece of the puzzle. If you didn't try it yet, you definitely should. It "just works".
+All in all, JRuby is still a great project to experiment with. MRI itself has come a long way as well and 2.3.1 is quite decent. Most of the time it's down to your overall architecture choices, and the language is just one piece of the puzzle. If you didn't try it yet, you definitely should. It "just works".

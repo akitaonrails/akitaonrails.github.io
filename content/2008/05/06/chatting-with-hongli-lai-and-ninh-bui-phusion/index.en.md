@@ -10,7 +10,7 @@ draft: false
 
  ![](http://s3.amazonaws.com/akitaonrails/assets/2008/5/7/Picture_4.png)
 
-**Hongli Lai** and **Ninh Bui** , from Phusion, shaked the Rails world a few days ago. They unleashed the Holy Grail of Rails deployment: **mod_rails** which was received with much fanfare, and they deserved it.
+**Hongli Lai** and **Ninh Bui** , from Phusion, shook the Rails world a few days ago. They unleashed the Holy Grail of Rails deployment: **mod_rails** which was received with much fanfare, and they deserved it.
 
 They finally settled the big issue that [embarrassed](http://www.rubyinside.com/no-true-mod_ruby-is-damaging-rubys-viability-on-the-web-693.html) Railers in the past. This will also relieve dozens of hosting services that were clueless on how to solve this equation. Now, those two computer science students are above them all with this clever solution. And they have more to come.
 
@@ -60,7 +60,7 @@ Also, setting up a Mongrel-like cluster requires quite some resources on a share
 
 If we consider these factors, it becomes apparent that Passenger (in conjunction with Ruby Enterprise Edition) has the potential to unleash a revolution within shared hosting. Not only in cost-reduction for hosting companies (and hopefully consumers), but also in increasing the popularity of Ruby on Rails.
 
-**AkitaOnRails:** mod_ruby seems to be staled for a long time and needs some love. It is said that it works reasonably well for small websites but lots of 'black magic' in Rails makes it not suitable for mod_ruby. What makes mod_rails different than mod_ruby, in the fundamental way they operate with complex frameworks as Rails?
+**AkitaOnRails:** mod_ruby seems to have stalled for a long time and needs some love. It is said that it works reasonably well for small websites but lots of 'black magic' in Rails makes it not suitable for mod_ruby. What makes mod_rails different than mod_ruby, in the fundamental way they operate with complex frameworks as Rails?
 
 **Phusion:** We're not really able to comment on that, because we're not intimately familiar with mod_ruby. However, mod_ruby is not actively maintained, and there are a lot of negative comments about mod_ruby in general (such as on the Ruby on Rails wiki). It also seems that nobody really uses it. It is for these reasons that we've never really given mod_ruby a try.
 
@@ -80,7 +80,7 @@ The most challenging aspect is probably cross-platform support and to elaborate 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2008/5/7/134717629_6_Q1hc.jpeg)  
 Ninh Bui
 
-**AkitaOnRails:** the usual Shared Hosting approach with Rails involves FastCGI, I think that's where mod_rails will make a big impact first. In the VPS arena people are usually more comfortable just loading up a mongrel cluster, maybe a monit or god to monitor them or even use Swiftply to better control mongrel instances. There's some tweaking involved in having permanent Ruby interpretors running, that's mainly because of the fact that if at some point the VM needs more memory, it will allocate as much as it needs, but not return it back to the OS. Does mod_rails has some thing to avoid a monitoring system like Monit or it is still needed?
+**AkitaOnRails:** the usual Shared Hosting approach with Rails involves FastCGI, I think that's where mod_rails will make a big impact first. In the VPS arena people are usually more comfortable just loading up a mongrel cluster, maybe a monit or god to monitor them or even use Swiftply to better control mongrel instances. There's some tweaking involved in having permanent Ruby interpretors running, that's mainly because of the fact that if at some point the VM needs more memory, it will allocate as much as it needs, but not return it back to the OS. Does mod_rails have something to avoid a monitoring system like Monit or is it still needed?
 
 **Phusion:** We've taken this challenge into account as well. Rails applications that have been idle for a while are shut down, thereby releasing all of their resources to the operating system. Furthermore, it is possible to use Passenger in conjunction with monitoring tools such as Monit. If Monit kills a Rails process, then Passenger will automatically (re)start it when needed, as if nothing bad ever happened.
 
@@ -92,7 +92,7 @@ Of course, not having a minimum amount of processes will mean that the first req
 
 Much of the magic that resides in Passenger still needs to be unveiled and we've only just started, but this is mainly for the interested people out there, i.e. the tech savvy. There is a saying in Dutch that summarizes the thought behind why we haven't done this up till now: _"Goede wijn behoeft geen krans"_, which would roughly translate to that a good product does not need any supporting elaboration. A scientific publication on the other hand does need this kind of elaboration and it is also for this reason that we're writing these articles as well.
 
-**AkitaOnRails:** By staying in the same memory space as Apache itself you don't have the overhead of a FastCGI or HTTP call over to a mongrel instance. Does this difference account for much in your benchmarks? Usually, in your experience, how much faster is mod_rails right now compared to a bare bone mongrel cluster running the same apps? Are the gainings in speed a constant or it varies enough that it is not really measurable?
+**AkitaOnRails:** By staying in the same memory space as Apache itself you don't have the overhead of a FastCGI or HTTP call over to a mongrel instance. Does this difference account for much in your benchmarks? Usually, in your experience, how much faster is mod_rails right now compared to a bare bone mongrel cluster running the same apps? Are the gains in speed constant or it varies enough that it is not really measurable?
 
 **Phusion:** This is actually not true: the Rails processes don't reside in the same memory space as Apache. Instead, they really are separate processes, that each can be individually shut down without affecting all the others. It is not a very good idea to embed a Ruby interpreter in Apache because of various issues, such as stability, heap fragmentation and unnecessary bloating of a process's VM size. From what we understand, mod_ruby takes the approach of embedding Ruby inside Apache, and we suspect that this is one of the reasons why people are reporting so many problems with it.
 
@@ -124,7 +124,7 @@ Passenger being installed!
 
 **AkitaOnRails:** The way it is right now, it feels like mod_rails is a drop-in replacement for whatever strategy we had before using Apache. Are there any gotchas worth mentioning for anyone planning to migrate? I think complicated mod_rewrite rules would be the first thing?
 
-**Phusion:** There's a minor gotcha. By default we override mod_rewrite the best we can. This is because Rails project come with a .htaccess file by default, and this .htaccess contains mod_rewrite rules, which result in all requests being forwarded to CGI or FastCGI.
+**Phusion:** There's a minor gotcha. By default we override mod_rewrite the best we can. This is because Rails projects come with a .htaccess file by default, and this .htaccess contains mod_rewrite rules, which result in all requests being forwarded to CGI or FastCGI.
 
 This is trivially solved by deleting the default .htaccess and by enabling a configuration option which tells Passenger not to override mod_rewrite. This allows the developer to use arbitrary mod_rewrite rules to his liking.
 

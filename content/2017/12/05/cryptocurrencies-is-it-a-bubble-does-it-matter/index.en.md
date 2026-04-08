@@ -19,7 +19,7 @@ This is the million dollar question. Or billion!
 
 If you watched the legendary movie "The Social Network", you know about the romanticized version of the equally legendary creation of Facebook. And you probably know all about the movie antagonists, the Winklevoss Twins.
 
-But as the movie closes in the first years of Facebook way back more than 10 years ago you probably won't know that those same Twins heavily ventured into cryptocurrencies, and while influencing NYC legislation they also invested USD 11 million out of the USD 65 million from the Facebook settlement. In 2013 this allowed them to buy into 1% of the available coins. Which means that they are now the very first [Cryptocurrency Billionaires](https://www.theverge.com/2017/12/4/16732952/winklevoss-twins-bitcoin-billionaires-surge) (with a "B"!)
+But since the movie closes on the first years of Facebook, way back more than 10 years ago, you probably don't know that those same Twins heavily ventured into cryptocurrencies, and while influencing NYC legislation they also invested USD 11 million out of the USD 65 million from the Facebook settlement. In 2013 this allowed them to buy into 1% of the available coins. Which means that they are now the very first [Cryptocurrency Billionaires](https://www.theverge.com/2017/12/4/16732952/winklevoss-twins-bitcoin-billionaires-surge) (with a "B"!)
 
 [![A billion dollars](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/666/1_jAbJ-MalRwmEYpae6FdZ1A.jpeg)](https://www.youtube.com/watch?v=4e0n7vTLz1U)
 
@@ -27,11 +27,11 @@ So, this is "The Social Network Part 2: Rise of the Cryptocurrency"
 
 2017 has been a pretty crazy ride for cryptocurrencies in general, Bitcoin in particular.
 
-It is not 10 days ago when we reached "over 9000!"
+It was not 10 days ago that we reached "over 9000!"
 
 ![Over 9000](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/668/It_s_over_9000.jpg)
 
-And just over a couple days later, Bitcoin crossed the elusive 10,000! And when everybody thought that was it, it keeps going up, in the largest and fastest bullish run in cryptocurrency history.
+And just a couple of days later, Bitcoin crossed the elusive 10,000! And when everybody thought that was it, it keeps going up, in the largest and fastest bullish run in cryptocurrency history.
 
 As of the time of this article writing, we are consolidating around the 11,700 mark, going after the 12,000 as we approach 2018 and the entrance of the CME Futures, Nasdaq, and many other big endeavors.
 
@@ -47,13 +47,13 @@ Traders love their indicators. In computer science, we are getting more and more
 
 This is the mistake that leads to unbelievable things in humanity. From extremist religions to people selling houses to buy Bitcoins.
 
-Accept that no one can predict the future. We can forecast the short term. If we look hard enough we can find any number of indicators that feel "Sciency" and "Math-y" enough to believe, but at the end of the day, they are as good as lucky tokens, four-leaf clovers.
+Accept that no one can predict the future. We can forecast the short term. If we look hard enough we can find any number of indicators that feel "Sciency" and "Math-y" enough to believe, but at the end of the day, they are as good as lucky tokens or four-leaf clovers.
 
 And the most important thing: **It doesn't matter if Bitcoin crashes hard tomorrow!**
 
 Programmers from Tech startups are the very first to shout out the stupid _"It is like Tulip Mania all over again"_ as if this makes them sound wise or something. As I said in my [previous article](http://www.akitaonrails.com/en/2017/11/30/de-10-mil-e-alem-discutindo-criptomoedas), if you hear anyone repeating this [fake news](https://www.smithsonianmag.com/history/there-never-was-real-tulip-fever-180964915/), you know they know nothing.
 
-Equally disingenuous is when I hear people saying _"just believe in it, real-world analysis doesn't apply to Bitcoin."_ This is stupid, of course, it does. Both the stock market and cryptocurrencies follow the same behavior: because the players are the same. Not only technical analysis, but behavioral economics also apply. Like Richard Thaler's Endowment effect:
+Equally disingenuous is when I hear people saying _"just believe in it, real-world analysis doesn't apply to Bitcoin."_ This is stupid, of course, it does. Both the stock market and cryptocurrencies follow the same behavior: because the players are the same. Not only technical analysis, but behavioral economics also applies. Like Richard Thaler's Endowment effect:
 
 > "People ascribe more value to things merely because they own them."
 
@@ -61,11 +61,11 @@ If programmers are so honest and wise, why not remind us all of the irrational e
 
 ![Dot-com Crash](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/670/dotcomcrash.png)
 
-I was 24 years old back then, and having around 4 years in my career, it was a crazy time to work. I worked in 3 different companies in that period of time. I saw all of them explode. And damn, I was so eager and so excited, and at the same time so frustrated.
+I was 24 years old back then, and having around 4 years in my career, it was a crazy time to work. I worked in 3 different companies in that period. I saw all of them explode. And damn, I was so eager and so excited, and at the same time so frustrated.
 
 I was frustrated that I lacked the experience, the knowledge, and the capital to pursue those endeavors and ride the big waves.
 
-And when it all went down in 2001, it feels like I lost the chance. It's not a pleasant feeling. Rationally I knew that I didn't miss anything. I lived through it, I experienced it, and as I didn't have the capital to invest, I also didn't lose anything when it exploded. But I promised myself that I would take my time to study, get experience, accumulate capital. And when another opportunity like that shows itself to me, I would grab it.
+And when it all went down in 2001, it felt like I had lost the chance. It's not a pleasant feeling. Rationally I knew that I didn't miss anything. I lived through it, I experienced it, and as I didn't have the capital to invest, I also didn't lose anything when it exploded. But I promised myself that I would take my time to study, get experience, accumulate capital. And when another opportunity like that shows itself to me, I would grab it.
 
 Most importantly. The bubble crashed, and it was spectacular. I never got desperate, or had feelings of "end of the world". The world never ends, we are too ingenious for that.
 
@@ -77,11 +77,11 @@ Now, consider the following graph of the Nasdaq-100 from 1999 to today (2017):
 
 Yes, we had a period of depression and very slow recovery. Then the economic crisis of 2008 shot us in the face. But we recovered. Give it 10 years after a crash, and I promise you that we will reach levels above and beyond the previous crisis. That's how we function. Over time we innovate, we adjust rough edges, we make things more efficient and streamlined.
 
-Now, the Nasdaq-100 is valued at 6,263.70. At the peak of the 2001 bubble crash, the index was at 4,691.60. So we are 50% above the bubble fever of the 2000's. And it all happened in my lifetime.
+Now, the Nasdaq-100 is valued at 6,263.70. At the peak of the 2001 bubble, the index was at 4,691.60. So we are 50% above the bubble fever of the 2000s. And it all happened in my lifetime.
 
 And also as I planned in 2001, I was not ready back then. I am now.
 
-Antifragility works like this: you can gamble an amount that, if you lose it, you won't regret it. But if you win, you win big. Bitcoin is like that. I can invest - let's say - USD 10,000. If I lose it, yeah, it will hurt but I won't die because of it. But if it keeps it's exponential growth, and doubles in the next 2 months, I will have USD 20,000. And those USD 20,000, 6 months from now, can become USD 50,000, or more.
+Antifragility works like this: you can gamble an amount that, if you lose it, you won't regret it. But if you win, you win big. Bitcoin is like that. I can invest - let's say - USD 10,000. If I lose it, yeah, it will hurt but I won't die because of it. But if it keeps its exponential growth, and doubles in the next 2 months, I will have USD 20,000. And those USD 20,000, 6 months from now, can become USD 50,000, or more.
 
 But it all goes down to: if it crashes, I lose the USD 10,000. That's fine. And if I want to be really risky, I can apply trading techniques, do swing trading, margin trading, leverage myself, and so forth.
 

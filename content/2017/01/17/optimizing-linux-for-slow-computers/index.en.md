@@ -23,7 +23,7 @@ One of the best resources is [Arch Linux's Wiki page on "Improving Performance"]
 
 ### It's about Responsiveness, not performance!
 
-Most people's concerns are first about performance, and this is a mistake. Linux is plenty fast, but for many people it doesn't feel like so in the Desktop.
+Most people's concerns are first about performance, and this is a mistake. Linux is plenty fast, but for many people it doesn't feel that way on the Desktop.
 
 When tuning a server, you'll really want to tweak for performance and high throughput. That's where most Linux configurations really shine over the competition: they come better tuned to get the most out of server configurations.
 
@@ -35,13 +35,13 @@ And you're left wondering why Linux is so bad compared to Windows or macOS where
 
 Being real-time does not mean "computing super fast", it means "being predictable". If something needs to happen in a certain frequency, it doesn't matter if each cycle takes 1 second as long as it consistently takes the same 1 second - in all deadlines. If you have a "fast" machine that computes faster at 10 milliseconds every cycle, but every so often, randomly hangs for a couple of seconds, this is not real-time. And for media creation, it's a disaster.
 
-There is hard real-time where one peak or valley can be considered a catastropic failure, and soft real-time where you can handle a few peaks, but not so much. Hard real time requirements are rare, unless you're developing systems for nuclear plants you may miss a few deadlines.
+There is hard real-time where one peak or valley can be considered a catastrophic failure, and soft real-time where you can handle a few peaks, but not so much. Hard real time requirements are rare, unless you're developing systems for nuclear plants you may miss a few deadlines.
 
 Most responsiveness issues are related to soft real-time situations. You can handle a few sparse peaks here and there, but no more than a few. And this is how you should do your research: not Googling for "linux performance" but for "linux real-time" or "linux responsiveness".
 
 You will also find that there are niche professionals with special distros just for audio recording and editing, for example [AVLinux or KXStudio](http://libremusicproduction.com/articles/advantages-choosing-audio-orientated-linux-distribution).
 
-macOS is particularly good for media creators precisely because it's highly tuned for soft real-time, which is critical for software such as Logic Pro. And for the same reason, it's poor server OS. You will notice that the default Quicktime screen recording is super smooth, you rarely see stutters.
+macOS is particularly good for media creators precisely because it's highly tuned for soft real-time, which is critical for software such as Logic Pro. And for the same reason, it's a poor server OS. You will notice that the default Quicktime screen recording is super smooth, you rarely see stutters.
 
 But you don't need to use an audio specific distro or a hard real-time kernel. Critical audio distros don't use PulseAudio, but normal users will not be so concerned about it. We can tune it to find a good balance between responsiveness and performance. If you really want to go hard-core, you may want to read the [Linux Audio Wiki on Real Time](http://wiki.linuxaudio.org/wiki/real_time_info), but it's out of the scope of this article.
 
@@ -49,7 +49,7 @@ But you don't need to use an audio specific distro or a hard real-time kernel. C
 
 A "slow" computer is not necessarily sporting old CPUs. I am doing my tests on a very old Lenovo Thinkcentre Edge 71z tower desktop. It has an old 2nd generation Intel Core 2.4Ghz 4 cores SandyBridge CPU. We just saw the release of the 7th generation Kaby Lake processors, so one might assume that nothing would run on such an old CPU, but you would be wrong.
 
-CPU is usually not serious a bottleneck unless you're doing really intensive computation, such as video compression, data sciences, genetics, neural networks, etc.
+CPU is usually not a serious bottleneck unless you're doing really intensive computation, such as video compression, data sciences, genetics, neural networks, etc.
 
 For a casual user or even a heavy-weight developer, any processor better than the 1st generation Intel Core series is plenty.
 
@@ -73,7 +73,7 @@ The bottleneck usually boils down to I/O.
 
 Now, you're opening your shiny Chromium browser. Anyone fooling around for a few minutes will open an average of a dozen or more tabs, without breaking a sweat.
 
-It's super easy to eat up all 8GB of the average machines. Whenever that happens, the OS will have to start offloading data to disk, which is orders of magnitude slow.
+It's super easy to eat up all 8GB of the average machine. Whenever that happens, the OS will have to start offloading data to disk, which is orders of magnitude slower.
 
 If application data is offloaded to disk and you alt-tab to it later, the OS will reach a "page fault", and it will have to load from disk, from the swap file/partition. And again, this will have the effect of blocking your actions. The environment may stutter for a second or more, making it **unresponsive**.
 
@@ -112,19 +112,19 @@ sudo sysctl -w vm.dirty_background_bytes=16777216
 sudo sysctl -w vm.dirty_bytes=50331648
 ```
 
-Don't go too far on tuning, for example, never disable a file system journaling. It increases performance at the risk of putting your data in risk of corruption.
+Don't go too far on tuning, for example, never disable a file system journaling. It increases performance at the risk of putting your data at risk of corruption.
 
 ### Schedulers
 
 Why was "Linux not ready for the Desktop" years ago?
 
-Because it took too many years to finally start tackling low latency, inexpensive thread switching, better scheduling. You have to thank [Con Kolivas](https://en.wikipedia.org/wiki/Con_Kolivas), [Ingo Molnár, Thomas Gleixner](https://en.wikipedia.org/wiki/Ingo_Moln%C3%A1r). The Linux kernel development is known to be super difficult to deal with and Con Kolivas is one of its victims, but his work live on to allow us to have better Desktop experiences these days.
+Because it took too many years to finally start tackling low latency, inexpensive thread switching, better scheduling. You have to thank [Con Kolivas](https://en.wikipedia.org/wiki/Con_Kolivas), [Ingo Molnár, Thomas Gleixner](https://en.wikipedia.org/wiki/Ingo_Moln%C3%A1r). The Linux kernel development is known to be super difficult to deal with and Con Kolivas is one of its victims, but his work lives on to allow us to have better Desktop experiences these days.
 
 There are Process Schedulers and I/O Schedulers. The first is responsible to manage the [Preemption](https://rt.wiki.kernel.org/index.php/RT_PREEMPT_HOWTO) of the kernel, how it switches between different computational tasks, the low-level equivalent of you "alt-tabbing" through apps, so to speak.
 
 I/O Schedulers deal with sharing slow I/O resources with competing processes needing to read from disk, write to RAM, etc.
 
-The recent history of process scheduler for the Desktop boils down to Con Kolivas' works on fair scheduling, leading to Ingo Mólnar's Completely Fair Scheduler (CFS) which is the default in most distros nowadays and the continuing work of Kolivas on Staircase, Rotating Staircase Deadline, Staircase Deadlineee, Brain Fuck Scheduler (BFS), and the most recent Multiple Queue Skiplist Scheduler (MuQSS).
+The recent history of process scheduler for the Desktop boils down to Con Kolivas' works on fair scheduling, leading to Ingo Molnár's Completely Fair Scheduler (CFS) which is the default in most distros nowadays and the continuing work of Kolivas on Staircase, Rotating Staircase Deadline, Staircase Deadline, Brain Fuck Scheduler (BFS), and the most recent Multiple Queue Skiplist Scheduler (MuQSS).
 
 Then there are I/O Schedulers. For the most part you will be dealing with the Completely Fair Queueing (CFQ). Most development on this side is attributed to Jens Axboe, also responsible for the Deadline Scheduler and Noop Scheduler. Then there is the controversial evolution called [Budget Fair Queueing](http://algo.ing.unimo.it/people/paolo/disk_sched/bfq-history.php) (BFQ).
 
@@ -141,7 +141,7 @@ noop deadline cfq [bfq]
 
 In the example above you will see that `[bfq]` is the one active, but you can change it on the fly to test it out if you want.
 
-To take advantage of those newest schedulers to better optimize slow computers, your best bet is to install Linux Zen kernel, a version of [Liquorix](https://liquorix.net/). It includes de MuQSS scheduler instead of CFS and BFQ instead of CFQ, while also adding more tweaks for responsiveness like proper QoS over TCP to avoid TCP congestion.
+To take advantage of those newest schedulers to better optimize slow computers, your best bet is to install Linux Zen kernel, a version of [Liquorix](https://liquorix.net/). It includes the MuQSS scheduler instead of CFS and BFQ instead of CFQ, while also adding more tweaks for responsiveness like proper QoS over TCP to avoid TCP congestion.
 
 In Arch Linux it's a simple thing to do:
 
@@ -177,7 +177,7 @@ What I found out in my system were 2 main offenders: Dropbox and Tracker.
 
 ![iotop](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/606/Screenshot_from_2017-01-17_16-15-32.png)
 
-Dropbox is optional, but most people nowadays use it. Out of the box it is a hidious monster, one of the worst pieces of software you're obligated to live with.
+Dropbox is optional, but most people nowadays use it. Out of the box it is a hideous monster, one of the worst pieces of software you're forced to live with.
 
 The first time you install and it has to download everything, your machine will go down to its knees. Nothing to do about that, just remember to install it Friday night and leave it running in the office over the weekend.
 
@@ -206,7 +206,7 @@ Which is basically what we did in the `Exec` line tweak. I didn't test Ananicy e
 
 Then, there is **Tracker**. The purpose of this tool is to index your files so you can search them fast and easily through GNOME applications such as the Nautilus File Manager.
 
-Again, the first time you install your new GNOME environment it will be very expensive to build the first index pass, specially if you're downloading tons of files from Dropbox. Do it on a Friday night!
+Again, the first time you install your new GNOME environment it will be very expensive to build the first index pass, especially if you're downloading tons of files from Dropbox. Do it on a Friday night!
 
 But you should also tune it down to only run when your system is idle. Run Alt-F2 and type `tracker-preferences`, then configure it to look like this:
 
@@ -231,13 +231,13 @@ gjs-console
 
 There must be more depending on optional apps you installed. Gnome-Shell and GJS are easily the worst of the bunch. You can't do much about them because they're the Core of GNOME. GJS in particular enables Javascript-based extensions and everything Javascript is slow. The only thing you can do is avoid installing too many GNOME Extensions.
 
-By the way, if you install XFCE along-side GNOME, you may be surprised that many of the same background services will start up in the background! Install one or the other, not both in the same system.
+By the way, if you install XFCE alongside GNOME, you may be surprised that many of the same background services will start up in the background! Install one or the other, not both in the same system.
 
 On the other hand, a bare-bone Arch install with the XFCE4 package set will start up consuming around 150MB of RAM!! But of course, you lose all the niceties that comes pre-installed with GNOME. And also of course: you start Chromium, open a few tabs, and there goes all the RAM anyway.
 
 If your goal is just to save resources, the choice is not between XFCE or LXQt, it is between having Facebook permanently opened in a browser tab or not. The reality is that the main offender of RAM is the Web as a whole. Half a dozen tabs and you eat up more than 1 Gigabyte, and it keeps going up. That's why my main first recommendation is to install The Great Suspender.
 
-You will run far worst apps in the foreground. For example, Spotify, Franz, Atom, to name a few. If it's a hybrid app that load a browser to load a web application, it is going to be heavy.
+You will run far worse apps in the foreground. For example, Spotify, Franz, Atom, to name a few. If it's a hybrid app that loads a browser to load a web application, it is going to be heavy.
 
 And I'd choose a [forward thinking desktop manager](https://wiki.archlinux.org/index.php/wayland#Window_managers_and_desktop_shells) that already supports Wayland/Weston instead of X11. You do want to throw away the [bad X11 legacy](http://www.phoronix.com/scan.php?page=article&item=x_wayland_situation&num=1) as soon as possible.
 
@@ -245,17 +245,17 @@ And I'd choose a [forward thinking desktop manager](https://wiki.archlinux.org/i
 
 As a shorter TL;DR remember to do the following:
 
-* Tune your swappiness and cache pressure settings to avoid page faults when using your foreground applications. It's a trade-off of performance vs responsiness.
+* Tune your swappiness and cache pressure settings to avoid page faults when using your foreground applications. It's a trade-off of performance vs responsiveness.
 * Install the Linux-Zen or Liquorix kernels (depending on your distro) to have access to the better MuQSS process scheduler and BFQ I/O schedulers. If you're using an SSD you will want to check if you're using NOOP or Deadline I/O schedulers instead. Also check for [TRIM support](https://wiki.archlinux.org/index.php/Solid_State_Drives#TRIM).
-* Make Dropbox and Tracker play nice with your system. Configure both to only run when You are not using the system (when idle). Maybe install Ananicy and rejoice.
+* Make Dropbox and Tracker play nice with your system. Configure both to only run when you are not using the system (when idle). Maybe install Ananicy and rejoice.
 * Do not choose a Desktop Manager because of performance concerns. If you're using Chromium or other web based applications, you're already doomed. So don't panic and use GNOME 3.22.
 
-When I installed both Fedora 25 and Arch Linux I felt them sluggish. When I used Ubuntu 14.04 for months in a better hardware, I also felt it sluggish compared to macOS in similar hardware, but I never attempted this level of tunig before.
+When I installed both Fedora 25 and Arch Linux I felt them sluggish. When I used Ubuntu 14.04 for months in a better hardware, I also felt it sluggish compared to macOS in similar hardware, but I never attempted this level of tuning before.
 
 The main reason being the heavy initial sync of applications such as Dropbox, Tracker, Gnome-Photos.
 
 The second reason is the better tuning of I/O scheduling and Swap settings because of the use of a mechanical harddrive. If you use an SSD you probably don't suffer nearly as much.
 
-Bottomline: if you can, buy a good SSD. If you have PCI Express x4, then do even better and buy a M.2 SSD such as the [Samsung 950 EVO M.2](http://www.samsung.com/semiconductor/minisite/ssd/product/consumer/950pro.html). The best thing you can do is have more than 8GB of RAM (16GB being a good sweet spot) and a really fast SSD (preferably with a BUS that don't suffer from SATA 3's bottlenecks).
+Bottomline: if you can, buy a good SSD. If you have PCI Express x4, then do even better and buy a M.2 SSD such as the [Samsung 950 EVO M.2](http://www.samsung.com/semiconductor/minisite/ssd/product/consumer/950pro.html). The best thing you can do is have more than 8GB of RAM (16GB being a good sweet spot) and a really fast SSD (preferably with a BUS that doesn't suffer from SATA 3's bottlenecks).
 
 With all the tweaks and tunings, I am happy to report that my years old Lenovo tower is running as smoothly as it can, being responsive enough even in higher loads, with this shit slow mechanical hard drive. And as a bonus, if you choose to stay in GNOME 3, install the nice [Flat Plat](https://github.com/nana-4/Flat-Plat) theme, heavily inspired by Material Design, and the [Paper](https://snwh.org/paper) or [Moka](https://snwh.org/moka) icon sets.

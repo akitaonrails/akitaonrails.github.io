@@ -26,7 +26,7 @@ It starts when I wanted to download manga that is not available at MangaReader b
 
 So, the initial endeavor was to copy the MangaReader parser modules (IndexPage, ChapterPage, and Page) and paste them at a specific "lib/ex_manga_downloadr/mangafox" folder. Same thing done to the unit tests folder. Just a matter of copying and pasting the files and change the "MangaReader" module name to "Mangafox".
 
-Of course the URL formats are different, the Floki CSS selectors are a bit different, so that's what have to change in the parser. For example, this is how I parse the chapter links from the main page at MangaReader:
+Of course the URL formats are different, the Floki CSS selectors are a bit different, so that's what had to change in the parser. For example, this is how I parse the chapter links from the main page at MangaReader:
 
 ```ruby
 defp fetch_chapters(html) do
@@ -47,9 +47,9 @@ end
 
 Exactly the same logic but the pattern matching structure is different because the returning HTML DOM nodes are different.
 
-Another difference is that MangaReader returns everything in plain text by default, but Mangafox returns everything Gzipped regardless if I send the "Accept-Encoding" HTTP header (curiously, if I retry several times it changes behavior and sometimes send plain text).
+Another difference is that MangaReader returns everything in plain text by default, but Mangafox returns everything Gzipped regardless of whether I send the "Accept-Encoding" HTTP header (curiously, if I retry several times it changes behavior and sometimes sends plain text).
 
-What I did different was to check if the returned <tt>%HTTPotion.Response{}</tt> structure had a "Content-Encoding" header set to "gzip" and if so, gunzip it using the built-in Erlang "zlib" package (nothing to import!):
+What I did differently was to check if the returned <tt>%HTTPotion.Response{}</tt> structure had a "Content-Encoding" header set to "gzip" and if so, gunzip it using the built-in Erlang "zlib" package (nothing to import!):
 
 ```ruby
 def gunzip(body, headers) do
@@ -65,7 +65,7 @@ I would've preferred if HTTPotion did that out of the box for me (#OpportunityTo
 
 Once the unit tests were passing correctly after tuning the scrapper (HTTPotion requests) and parser (Floki selectors) it was time to make my Worker aware of the existence of this new set of modules.
 
-The Workflow module just call the Worker, which in turn does the heavy lifting of fetching pages and downloading images. The Worker called the MangaReader module directly, like this:
+The Workflow module just calls the Worker, which in turn does the heavy lifting of fetching pages and downloading images. The Worker called the MangaReader module directly, like this:
 
 ```ruby
 defmodule PoolManagement.Worker do
@@ -176,7 +176,7 @@ And in the Workflow module, instead of starting from just the manga URL, now I h
   |> Workflow.images_sources
 ```
 
-Which means that each of the above functions have to not only return the new URL lists but also pass through the source:
+Which means that each of the above functions has to not only return the new URL lists but also pass through the source:
 
 ```ruby
 def chapters([url, source]) do
@@ -187,7 +187,7 @@ def chapters([url, source]) do
 end
 ```
 
-This was the only function in the Workflow module hardcoded to MangaReader so I also make it dynamic using the same <tt>manga_source/2</tt> function from the Worker, and notice the return value being "<tt>[chapter_list, source]</tt>" instead of just "<tt>chapter_list</tt>".
+This was the only function in the Workflow module hardcoded to MangaReader so I also made it dynamic using the same <tt>manga_source/2</tt> function from the Worker, and notice the return value being "<tt>[chapter_list, source]</tt>" instead of just "<tt>chapter_list</tt>".
 
 And now, I can finally test with "<tt>mix test</tt>" and create the new executable command line binary with "<tt>mix escript.build</tt>" and run the new version like this:
 
@@ -195,7 +195,7 @@ And now, I can finally test with "<tt>mix test</tt>" and create the new executab
 ./ex_manga_downloadr -n onepunch -u http://mangafox.me/manga/onepunch_man/ -d /tmp/onepunch -s mangafox
 ```
 
-The Mangafox site is very unreliable to several concurrent connections and it quickly timeout sometimes, dumping ugly errors like this:
+The Mangafox site is very unreliable with several concurrent connections and it quickly times out sometimes, dumping ugly errors like this:
 
 ```
 15:58:46.637 [error] Task #PID<0.2367.0> started from #PID<0.124.0> terminating
@@ -205,7 +205,7 @@ The Mangafox site is very unreliable to several concurrent connections and it qu
             (httpotion) lib/httpotion.ex:209: HTTPotion.handle_response/1
 ```
 
-I did not figure out how to retry HTTPotion requests properly yet. But one small thing I did was add an availability check in the Worker module. So you can just re-run the same command line and it will resume downloading only the remaining files:
+I haven't figured out how to retry HTTPotion requests properly yet. But one small thing I did was add an availability check in the Worker module. So you can just re-run the same command line and it will resume downloading only the remaining files:
 
 ```ruby
 defp download_image({image_src, image_filename}, directory) do
@@ -253,9 +253,9 @@ end
 
 As you can see the idea is to serialize the final images URL links to a file using the built-in serializer "<tt>:erlang.binary_to_term/1</tt>" and check if that dump file exists, and deserialize with "<tt>:erlang.term_to_binary/1</tt>" before fetching all pages all over again. Now the process can resume directly from the <tt>process_downloads/2</tt> function after.
 
-Mangafox is terribly unreliable and I will need to figure out a better way to retry timed out connections without having to crash and manually restart from the command line. It's either a bad site or a clever one that shuts down scrappers like me, although I am guessing it's just a bad infrastructure on their side.
+Mangafox is terribly unreliable and I will need to figure out a better way to retry timed out connections without having to crash and manually restart from the command line. It's either a bad site or a clever one that shuts down scrapers like me, although I am guessing it's just bad infrastructure on their side.
 
-If I downgrade from 50 process to 5 in the pool, it seems to be able to handle it better (but the process slows down, of course):
+If I downgrade from 50 processes to 5 in the pool, it seems to be able to handle it better (but the process slows down, of course):
 
 ```ruby
     pool_options = [

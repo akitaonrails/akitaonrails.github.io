@@ -16,7 +16,7 @@ _"Is it possible to break the blockchain?"_
 
 Now, this is a fair question. If you know anything about the blockchain architecture, you instinctively conclude that "no", it's quite improbable that anyone will break it. In practice, it's basically impossible.
 
-It's quite amazing that most of my peer programmers have a very difficult time overcoming the prejudice against cryptocurrencies. I have no idea where this prejudice comes from, but I know very smart people that can solve the most difficult web scalability problems, but that never once glanced over Satoshi Nakamoto extremely short original paper describing the blockchain.
+It's quite amazing that most of my peer programmers have a very difficult time overcoming the prejudice against cryptocurrencies. I have no idea where this prejudice comes from, but I know very smart people that can solve the most difficult web scalability problems, but that never once glanced over Satoshi Nakamoto's extremely short original paper describing the blockchain.
 
 Seriously, the [Bitcoin: A Peer-to-Peer Electronic Cash System](https://bitcoin.org/bitcoin.pdf) paper is so ridiculously small and easy to understand that most computer science students should be able to understand it. So all the smart programmers I know should be able to grasp it in a coffee break. Any average programmer should be able to read and understand this paper in 30 minutes or so.
 
@@ -24,7 +24,7 @@ You can simplify a mental model of it as a Linked List, each node of the List is
 
 The catch is that each block has the hash signature of the previous block, thus creating a secure "chain". Hence "block-chain".
 
-Yes, in computer science terms, we're dealing with undergraduate levels of data structures here. If you understand a Linked List and a stupid Binary Tree, plus the easiest crypto thing to understand, a stupid Digest Hash such as SHA256, and boom, you understand the basic backbone of the blockchain database.
+Yes, in computer science terms, we're dealing with undergraduate levels of data structures here. If you understand a Linked List and a stupid Binary Tree, plus the easiest crypto thing to understand, a simple digest hash such as SHA256, and boom, you understand the basic backbone of the blockchain database.
 
 Yes, it is just a database. A distributed-database to be more exact. Or a very crude and simple distributed database for that matter. It is not very efficient, and it pales in comparison to more serious NoSQL distributed databases such as Redis or Cassandra. So the query-abilities are basically non-existent beyond finding a block by its identity.
 
@@ -70,11 +70,11 @@ end
 
 I know, right!?
 
-One question remains: how does this stupid structure become a "distributed" database.
+One question remains: how does this simple structure become a "distributed" database?
 
 Now, either you need to have a centralized "master-copy" out of which all other copies replicate from. Or you need some form of "consensus" between the different copies.
 
-How do you reach consensus between rogue, random node spread across the globe? This is the problem that is called ["Byzantine Fault Tolerance"](http://pmg.csail.mit.edu/papers/osdi99.pdf), masterfully explained and solved by Barbara Liskov and Miguel Castro, from MIT, in 1999.
+How do you reach consensus between rogue, random nodes spread across the globe? This is the problem that is called ["Byzantine Fault Tolerance"](http://pmg.csail.mit.edu/papers/osdi99.pdf), masterfully explained and solved by Barbara Liskov and Miguel Castro, from MIT, in 1999.
 
 In a nutshell, imagine that you have Byzantine generals, each with their own armies, surrounding a hostile city. Now, you can either attack or retreat. But all generals must either do one or the other, in consensus. How do you reach consensus when you don't have direct communication with all the generals and, worse, when some of the generals may be traitors or double-agents?
 
@@ -93,7 +93,7 @@ Digest::SHA256.hexdigest("123")
 # => "a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3"
 ```
 
-It takes a **fraction of millisecond** to run.
+It takes a **fraction of a millisecond** to run.
 
 Now, what if I ask you to find the hash that starts with a certain amount of "zeroes" in the beginning of the hash?
 
@@ -107,7 +107,7 @@ Digest::SHA256.hexdigest("79026" + "123")
 
 How do I know that I had to prepend "79026"? I don't, I have to start from 0 and incrementing one by one until I find the hash with the format I want.
 
-If we check from [Gerald' example](https://github.com/openblockchains/awesome-blockchains/blob/master/blockchain.rb/blockchain_with_proof_of_work.rb#L29-L45) we would implement this lookup like this:
+If we check [Gerald's example](https://github.com/openblockchains/awesome-blockchains/blob/master/blockchain.rb/blockchain_with_proof_of_work.rb#L29-L45) we would implement this lookup like this:
 
 ```ruby
 def compute_hash_with_proof_of_work( difficulty="00" )
@@ -136,7 +136,7 @@ Just a simple SHA256 takes somewhere between 0.000010 to 0.000020 seconds (remem
   0.190000   0.000000   0.190000 (  0.189615)
 ```
 
-Yep, considerably more, now it takes 0.18 seconds instead of 0.000020. We can increase the "difficult" variable to make it even more laborious to find the nonce. And that's exactly how Bitcoin is implemented: each block adjusts the difficult so the fastest one can take to find the hash for the next block is around 10 minutes.
+Yep, considerably more, now it takes 0.18 seconds instead of 0.000020. We can increase the "difficult" variable to make it even more laborious to find the nonce. And that's exactly how Bitcoin is implemented: each block adjusts the difficulty so that the fastest time to find the hash for the next block is around 10 minutes.
 
 And this, my friends, is what we call **"MINING"**. What a miner does is compute a loop, incrementing nonces, over the block digest to find the correct nonce.
 
@@ -144,7 +144,7 @@ Once a nonce is found, the miner can add the block to the blockchain and broadca
 
 When the nodes double-check and confirm the nonce, they all add the block to the top of the blockchain. And usually, when the other miners keep adding other blocks on top of that, that block becomes "solidified". The most recent block on the top of the blockchain is usually unstable, but once you have more blocks on top of it, it is said to be more "guaranteed". Which is why most exchanges and other services that accept bitcoin wait for the so-called "6 blocks" confirmation.
 
-And because the difficulty is such that the fastest node takes around "10 minutes" to find that nonce, a block is said to be "secure" when around 1-hour passes and 6 blocks are added after it.
+And because the difficulty is such that the fastest node takes around "10 minutes" to find that nonce, a block is said to be "secure" when around 1 hour passes and 6 blocks are added after it.
 
 ## Can we break this?
 
@@ -160,6 +160,6 @@ The current Hash Power of the entire Bitcoin consensus network is almost reachin
 
 So, let's say that I am a billionaire and I want to troll the Bitcoin community by adding enough hash power to surpass the entire hash power of the network. I'd have to buy 1 million AntMiner s9, or an investment of around USD 1.5 billion! And this is without adding the energy required to boot and run those machines, of course.
 
-But even then, do you know what happens? Remember that difficult variable I mentioned above? It will adjust again, to make sure the next block takes 10 minutes to compute again!
+But even then, do you know what happens? Remember that difficulty variable I mentioned above? It will adjust again, to make sure the next block takes 10 minutes to compute again!
 
 Then, no, even if you're willing to put USD 1.5 billion to waste, you won't break it. And that's how Bitcoin deals with Byzantine generals in this consensus network.

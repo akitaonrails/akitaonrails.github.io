@@ -17,9 +17,9 @@ It's basically a complete solution on top of vanilla Rails so you can implement 
 
 In summary you control Cable Channels that can receive messages sent through a WebSocket client wiring. The new Channel generator takes care of the boilerplate and you just have to fill in the blanks for what kinds of messages you want to send from the client, what you want to broadcast from the server, and to what channels that your clients are subscribed to.
 
-For a more in-depth introduction, DHH himself published a bare bone [Action Cable screencast](https://www.youtube.com/watch?v=n0WUjGkDFS0) that you should watch just to get a feeling of what the fuzz is all about. If you watched it already and have experience in programming, you may have spotted the problem I mention in the title, so just jump to ["The Problem"](#the-problem) section below for a TL;DR.
+For a more in-depth introduction, DHH himself published a bare-bones [Action Cable screencast](https://www.youtube.com/watch?v=n0WUjGkDFS0) that you should watch just to get a feeling of what the fuzz is all about. If you watched it already and have experience in programming, you may have spotted the problem I mention in the title, so just jump to ["The Problem"](#the-problem) section below for a TL;DR.
 
-In the end you will end up with a code base like the one I reproduced in my Github repository up until the [tag "end_of_dhh"](https://github.com/akitaonrails/rails5-actioncable-demo/tree/end_of_dhh). You will have a (very) bare bone single-room real time chat app for you to play with the main components.
+In the end you will end up with a code base like the one I reproduced in my Github repository up until the [tag "end_of_dhh"](https://github.com/akitaonrails/rails5-actioncable-demo/tree/end_of_dhh). You will have a (very) bare-bones single-room real time chat app for you to play with the main components.
 
 Let's just list the main components here. First, you will have the ActionCable server mounted in the "routes.rb" file:
 
@@ -88,7 +88,7 @@ $(document).on "keypress", "[data-behavior~=room_speaker]", (event) ->
     event.preventDefault()
 ```
 
-The view template is a bare bone HTML just to hook a simple form and div to list the messages:
+The view template is a bare-bones HTML just to hook a simple form and div to list the messages:
 
 ```html
 <!-- app/views/rooms/show.html.erb -->
@@ -108,7 +108,7 @@ The view template is a bare bone HTML just to hook a simple form and div to list
 
 ### The Problem
 
-In the "RoomChannel", you have the "<tt>speak</tt>" method that saves a message to the database. This is already a red flag for a WebSocket action that is supposed to have very short lived, light processing. Saving to the database is to be considered heavyweight, specially under load. If this is processed inside EventMachine's reactor loop, it will block the loop and avoid other concurrent processing to take place until the database releases the lock.
+In the "RoomChannel", you have the "<tt>speak</tt>" method that saves a message to the database. This is already a red flag for a WebSocket action that is supposed to have very short-lived, light processing. Saving to the database is to be considered heavyweight, specially under load. If this is processed inside EventMachine's reactor loop, it will block the loop and prevent other concurrent processing from taking place until the database releases the lock.
 
 ```ruby
 # app/channels/room_channel.rb
@@ -122,7 +122,7 @@ end
 
 I would say that anything that goes inside the channel should be asynchronous!
 
-To add harm to injury, this is what you have in the "Message" model itself:
+To add insult to injury, this is what you have in the "Message" model itself:
 
 ```ruby
 class Message < ApplicationRecord
@@ -130,7 +130,7 @@ class Message < ApplicationRecord
 end
 ```
 
-A model callback (avoid those as the plague!!) to broadcast the received messsage to the subscribed Websocket clients as an ActiveJob that looks like this:
+A model callback (avoid those as the plague!!) to broadcast the received message to the subscribed Websocket clients as an ActiveJob that looks like this:
 
 ```ruby
 class MessageBroadcastJob < ApplicationJob
@@ -195,12 +195,12 @@ class Message < ApplicationRecord
 end
 ```
 
-This returns quickly, defer processing to a background job and should sustain more concurrency out-of-the-box. The previous, DHH solution, have a built-in bottleneck in the speak method and will choke as soon as the database becomes the bottleneck.
+This returns quickly, defers processing to a background job and should sustain more concurrency out-of-the-box. The previous, DHH solution, has a built-in bottleneck in the speak method and will choke as soon as the database becomes the bottleneck.
 
 It's by no means a perfect solution yet, but it's less terrible for a very quick demo and the code ends up being simpler as well. You can check out this code in [my Github repo commit](https://github.com/akitaonrails/rails5-actioncable-demo/commit/0aaaaecc46ed14e98086bac5ce087df08d557456).
 
-I may be wrong in the conclusion that the channel will block or if this is indeed harmful for the concurrency. I didn't measure both solutions, it's just a gut feeling from older wounds. If you have more insight into the implementation of Action Cable, leave a comment down below.
+I may be wrong in the conclusion that the channel will block or if this is indeed harmful to concurrency. I didn't measure both solutions, it's just a gut feeling from older wounds. If you have more insight into the implementation of Action Cable, leave a comment down below.
 
-By the way, be careful before considering migrating your Rails 4.2 app to Rails 5 just yet. Because of the hard coded dependencies on Faye, Eventmachine, Rails 5 right now rules out Unicorn (even Thin seems to be having problem booting up). It also rules out JRuby and MRI on Windows as well because of Eventmachine.
+By the way, be careful before considering migrating your Rails 4.2 app to Rails 5 just yet. Because of the hard coded dependencies on Faye, Eventmachine, Rails 5 right now rules out Unicorn (even Thin seems to be having problems booting up). It also rules out JRuby and MRI on Windows as well because of Eventmachine.
 
 If you want the capabilities of Action Cable without having to migrate, you can use solutions such as ["Pusher.com"](http://developers.planningcenteronline.com/2014/09/23/live-updating-rails-with-react.js-and-pusher.html), or if you want your own in-house solution, follow my evolution on the subject with my [mini-Pusher clone](http://www.akitaonrails.com/pusher) written in Elixir.

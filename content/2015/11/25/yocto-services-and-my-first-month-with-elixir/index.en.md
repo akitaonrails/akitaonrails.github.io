@@ -40,7 +40,7 @@ Yes, I am prolific, and highly focused. I did the learning and writing all withi
 
 For good or for worse, we are in the dawn of the Micro Services architecture. In summary it's fragmenting your monolith into smaller applications that respond to HTTP based endpoints - that people call "APIs" - and that are responsible for a very narrow set of responsibilities. Then you create a "front-end" web application that will consume those services, such as analytics, payment methods, user authentication directories, and so on.
 
-This is no novelty, of course, having HTTP APIs that return JSON structures is just a fancier way of doing the same, good, old **Remote Procedure Calls**, or RPCs, a technology we have for decades to interconnect clients and servers in a network. But I digress.
+This is no novelty, of course, having HTTP APIs that return JSON structures is just a fancier way of doing the same, good, old **Remote Procedure Calls**, or RPCs, a technology we have had for decades to interconnect clients and servers in a network. But I digress.
 
 If this is what people call "Micro" services, I think of Elixir processes as **"Yocto"** Services! (Milli > Micro > Nano > Pico > Femto > Atto > Zepto > Yocto, by the way - I may have just invented a new term here!)
 
@@ -69,7 +69,7 @@ Pxblog.Supervisor
 
 This is the Pxblog I explained in the [Phoenix and Rails comparison article](http://www.akitaonrails.com/en/2015/11/20/phoenix-15-minute-blog-comparacao-com-ruby-on-rails) I published a few days ago.
 
-I still didn't read the source code of Phoenix, but if I am interpreting the Observer correctly, the Endpoint.Server controls a pool of processes that are TCP listeners that the application is ready to accept requests from, concurrently, with overflowing to accept more connections (I believe it's a pool implementation like Poolboy, which I explained in [Part 2 of the Ex Manga Downloader article](http://www.akitaonrails.com/en/2015/11/19/ex-manga-downloadr-parte-2-poolboy-ao-resgate)).
+I still haven't read the source code of Phoenix, but if I am interpreting the Observer correctly, the Endpoint.Server controls a pool of processes that are TCP listeners that the application is ready to accept requests from, concurrently, with overflowing to accept more connections (I believe it's a pool implementation like Poolboy, which I explained in [Part 2 of the Ex Manga Downloader article](http://www.akitaonrails.com/en/2015/11/19/ex-manga-downloadr-parte-2-poolboy-ao-resgate)).
 
 Then, you have the PubSub.Supervisor and PubSub.Local applications that I believe support the WebSocket channels.
 
@@ -132,21 +132,21 @@ So each process can be a full blown Yocto Service, running online and waiting fo
 
 Again, as a disclaimer, I am still new to Elixir but the way I find easier to understand it, is like this:
 
-* If you must deal with external resources, be it a File, or a Network Connections, or anything outside of the Erlang VM, you will want it to be a GenServer.
+* If you must deal with external resources, be it a File, or a Network Connection, or anything outside of the Erlang VM, you will want it to be a GenServer.
 
 * Then, if you have a GenServer, you want to start it up under a Supervisor (usually, the simple boilerplate that defines the children and restart strategy).
 
-* The number of GenServer processes you want to start up depends on how many parallel processes you want to have running. For example, if it is a database service, there is no point in starting up more than the available number of maximum connections your database allows. If you have several files to process, you want at most the number of available files or - in practice - just a few process to deal with batches of files. You will usually want a pool of GenServer processes, and in this case you want to use Poolboy.
+* The number of GenServer processes you want to start up depends on how many parallel processes you want to have running. For example, if it is a database service, there is no point in starting up more than the available number of maximum connections your database allows. If you have several files to process, you want at most the number of available files or - in practice - just a few processes to deal with batches of files. You will usually want a pool of GenServer processes, and in this case you want to use Poolboy.
 
 * One GenServer may call other GenServers. You don't want to use a try/catch exception handling mechanism because you just need the particular GenServer process to crash if something goes wrong: if the file is corrupted or doesn't exist or if the network goes unstable or disconnects. The Supervisor will replace that process with a new GenServer process in its place and refill the Pool if needed.
 
 * You can make GenServers [talk remotely](http://www.akitaonrails.com/en/2015/11/25/exercicio-exmessenger-entendendo-nodes-em-elixir) using the Node feature I explained 2 posts ago, with the ExMessenger example. Then it would be like a normal Micro Services architecture, but where the inside Yocto Services are actually doing the talking.
 
-* Any transformation with no side-effects (transforming a simple input into a simple output), like getting an HTML body string and parsing into a List of tuples, can be organized in a normal Module. Refer to libraries like [Floki](https://github.com/philss/floki), to see how they are organized.
+* Any transformation with no side-effects (transforming a simple input into a simple output), like getting an HTML body string and parsing it into a List of tuples, can be organized in a normal Module. Refer to libraries like [Floki](https://github.com/philss/floki), to see how they are organized.
 
 Each Erlang VM (called BEAM) is a single OS process, that manages a single real thread per CPU core available in your machine. Each real thread is managed by its own BEAM Scheduler, which will slice processing time between the lightweight processes inside.
 
-Each BEAM process has its own mailbox to receive messages (more correctly called a **run-queue**). I/O operations such as file management will run asynchronously and not block the schedule, which will manage to run other processes while waiting for I/O.
+Each BEAM process has its own mailbox to receive messages (more correctly called a **run-queue**). I/O operations such as file management will run asynchronously and not block the scheduler, which will manage to run other processes while waiting for I/O.
 
 Each BEAM process also has its own separated heap and garbage collector (a generational, 2 stage copy collector). Because each process has very little state (variables in a function) each garbage collector stop is super short and runs fast.
 

@@ -14,14 +14,14 @@ This time I had some time with [**Joshua Peek**](http://joshpeek.com/). He was r
 
 He got the honor because of his hard work for the upcoming Rails 2.2, solving the **thread-safety** issue within Rails. Because of his Google Summer of Code project, guided by Michael Koziarski, they were able to make Ruby on Rails truly Thread-Safe, which could be a great boost for virtual machines with native-threading support, such as JRuby.
 
-The interesting bit: he is just 19 years old and 4 years ago he wasn’t a programmer. He started on Ruby with [Learn to Program](http://pine.fm/LearnToProgram/) and he is now a Rails Core member. Let’s get to know him.
+The interesting bit: he is just 19 years old and 4 years ago he wasn’t even a programmer. He started on Ruby with [Learn to Program](http://pine.fm/LearnToProgram/) and he is now a Rails Core member. Let’s get to know him.
 
 
  **AkitaOnRails:** Ok, so let’s get started. First of all, it would be good to know more about yourself. Like how did you find Ruby, why you got hooked by it, and what are your “hobbies” in the tech area ￼
 
 **Josh Peek:** Like most people, I originally found Ruby through Rails. At the time, I was only doing simple web design like html, css, js. I had no programming experience. I think I bought some php book, but I could never get into it. So I heard about this “Rails” thing and looked into it. I learned quickly that I really needed to learn how to program and learn Ruby, so I got the [Pickaxe](http://pragprog.com/titles/ruby/programming-ruby) and [Agile Web Development with Rails](http://pragprog.com/titles/rails3/agile-web-development-with-rails-third-edition) book and went from there.
 
-**AkitaOnRails:** This is interesting, one of my goals of interviewing you is because I figured you are pretty young and there are lots of young programmers that feels that learning Ruby is difficult. And you say you never programmed before Ruby, so how was this learning curve for you?
+**AkitaOnRails:** This is interesting, one of my goals of interviewing you is because I figured you are pretty young and there are lots of young programmers who feel that learning Ruby is difficult. And you say you never programmed before Ruby, so how was this learning curve for you?
 
 **Josh Peek:** Yeah, I’m currently **19** and I started programming Ruby about 3 years ago. Before I read the pickaxe, I found this little Ruby programming book by [Chris Pine](http://pine.fm/LearnToProgram/). It was really helpful to get into programming. The hardest thing about programming for me, was wrapping my head around OOP. It’s really something you just need to work with to truly understand.
 
@@ -39,7 +39,7 @@ The interesting bit: he is just 19 years old and 4 years ago he wasn’t a progr
 
 Right now, all my current plugins and code are at [github.com/josh](http://github.com/josh). I tend to just post any personal project I’m working on, on Github even if it’s not done or I think it will be useful at all.
 
-**AkitaOnRails:** Ok, so the main dish Thread-safety! You said you were not particularly ‘annoyed’ by anything about Rails, but you decided to tackle on this challenge anyway, how did it all started?
+**AkitaOnRails:** Ok, so the main dish Thread-safety! You said you were not particularly ‘annoyed’ by anything about Rails, but you decided to tackle on this challenge anyway, how did it all start?
 
  ![](http://s3.amazonaws.com/akitaonrails/assets/2008/9/26/TwextGoogleSOC2008.png)
 

@@ -14,20 +14,20 @@ draft: false
 
 **Update 11/19/15:** In this article I mention a few doubts I had, so read this and then follow through [Part 2](http://www.akitaonrails.com/en/2015/11/19/ex-manga-downloadr-parte-2-poolboy-ao-resgate) to see how I solved it.
 
-As an exercise (and also because I'm obviously an [Otaku](https://en.wikipedia.org/wiki/Otaku)) I [implemented](https://github.com/akitaonrails/ex_manga_downloadr/blob/master/lib/ex_manga_downloadr/mangareader/index_page.ex) a simple Elixir based scrapper for the great [MangaReader](http://www.mangareader.net/) website. One can argue if it's ok to scrap their website, and one might also argue if them providing those mangas is ok in the first place, so let's not go down this path.
+As an exercise (and also because I'm obviously an [Otaku](https://en.wikipedia.org/wiki/Otaku)) I [implemented](https://github.com/akitaonrails/ex_manga_downloadr/blob/master/lib/ex_manga_downloadr/mangareader/index_page.ex) a simple Elixir-based scraper for the great [MangaReader](http://www.mangareader.net/) website. One can argue whether it's OK to scrape their website, and one might also argue whether their providing those mangas is OK in the first place, so let's not go down this path.
 
 I had an older version [written in Ruby](https://github.com/akitaonrails/manga-downloadr). It still works but it's in sore need of a good refactoring (sorry about that). The purpose of that version was to see if I could actually do parallel fetching and retry connections using Typhoeus.
 
 ![OnePunch Man downloaded](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/525/big_ex_manga_downloadr.png)
 
-As I've been evolving in my studies of Elixir that tool felt like a great candidate to test my current knowledge of the platform. It would make me test:
+As I've been progressing in my studies of Elixir, that tool felt like a great candidate to test my current knowledge of the platform. It would make me test:
 
 1. Fetch and parse ad hoc content through HTTP ([HTTPotion](https://github.com/myfreeweb/httpotion) and [Floki](https://github.com/philss/floki)).
 2. Test parallel/asynchronous downloads (Elixir's built-in [Task](http://elixir-lang.org/docs/stable/elixir/Task.html) module).
 3. The built-in command line and [option parser](http://elixir-lang.org/docs/stable/elixir/OptionParser.html) support.
 4. Basic testing through ExUnit and mocking the workflow ([Mock](https://github.com/jjh42/mock)).
 
-The exercise was very interesting, and a scrapper is also an ideal candidate for TDD. The initial steps had to go like this:
+The exercise was very interesting, and a scraper is also an ideal candidate for TDD. The initial steps had to go like this:
 
 1. Parse the main manga page to fetch all the chapter links.
 2. Parse each chapter page to fetch all the individual pages.
@@ -63,7 +63,7 @@ Here I am already exercising some of Elixir's awesome features such as pattern m
 
 Then I pass the HTML body to 2 different functions: <tt>fetch_manga_title</tt> and <tt>fetch_chapters</tt>. They both use the Floki package which can use CSS selectors to return a List. Then I need to walk through the list (using <tt>Enum.map/2</tt> for example) and pattern match on it to extract the values I need.
 
-[Pattern Matching](http://elixir-lang.org/getting-started/pattern-matching.html) is one of the most important concepts to learn about Elixir/Erlang. It's different from simply assigning a value to a variable, it can be used to dismount a structure into its components and get their individual parts.
+[Pattern Matching](http://elixir-lang.org/getting-started/pattern-matching.html) is one of the most important concepts to learn about Elixir/Erlang. It's different from simply assigning a value to a variable, it can be used to destructure a value into its components and get their individual parts.
 
 Then I just went through building the skeleton for the command line interface. This is already explained in other tutorials such as [this](http://asquera.de/blog/2015-04-10/writing-a-commandline-app-in-elixir/) and [this](https://speakerdeck.com/st23am/writing-command-line-applications-in-elixir), so I won't waste time explaining it again. At the core I needed to have the following workflow:
 
@@ -97,7 +97,7 @@ This is one place where the pipeline notation from Elixir really shines. It's mu
 Workflow.compile_pdfs(Workflow.optimize_images(directory))
 ```
 
-This notation is just syntactic sugar where the returning value of the previous statement is used as the first argument of the following function. Combine that with other syntactic sugars such as parenthesis being optional (just like beloved Ruby) and you have a clear exposure of "transforming from a URL into compiled PDFs".
+This notation is just syntactic sugar where the returning value of the previous statement is used as the first argument of the following function. Combine that with other syntactic sugars such as parentheses being optional (just like beloved Ruby) and you have a clear exposure of "transforming from a URL into compiled PDFs".
 
 I separated the Workflow into its own module and each step is very similar, each taking a list and walking through it. This is the simplest of them:
 
@@ -124,9 +124,9 @@ end)
 
 ### A few problems understanding parallel HTTP processing (W.I.P.)
 
-Then there is this <tt>Task.async/await</tt> deal. If you're from a language that has Threads, it's quite similar: you start several different Threads and await for all of them to return before continuing. But a Task in Elixir is not a real thread, it's a ["green thread"](https://en.wikipedia.org/wiki/Green_threads#Green_threads_in_other_languages) or, in Erlang lingo, a very lightweight "process". Erlang uses processes for everything, thus does Elixir. Under the hood, the "Task" module encapsulates the entire OTP framework for supervisors/workers. But instead of having to deal right now with [OTP GenServer](http://elixir-lang.org/getting-started/mix-otp/genserver.html) I decided to go the simpler route for now, and the "Task" module accomplishes just that.
+Then there is this <tt>Task.async/await</tt> deal. If you're from a language that has Threads, it's quite similar: you start several different Threads and await all of them returning before continuing. But a Task in Elixir is not a real thread, it's a ["green thread"](https://en.wikipedia.org/wiki/Green_threads#Green_threads_in_other_languages) or, in Erlang lingo, a very lightweight "process". Erlang uses processes for everything, and so does Elixir. Under the hood, the "Task" module encapsulates the entire OTP framework for supervisors/workers. But instead of having to deal right now with [OTP GenServer](http://elixir-lang.org/getting-started/mix-otp/genserver.html) I decided to go the simpler route for now, and the "Task" module accomplishes just that.
 
-Then, I ended up with a problem. If I just kept going like this, spawning hundreds of async HTTP calls, I quickly end up with this exception:
+Then I ended up with a problem. If I just kept going like this, spawning hundreds of async HTTP calls, I quickly ended up with this exception:
 
 ```
 17:10:55.882 [error] Task #PID<0.2217.0> started from #PID<0.69.0> terminating
@@ -156,13 +156,13 @@ def images_sources(pages_list) do
 end
 ```
 
-This gets a huge list (such as all the pages of a very long manga like Naruto), breaks it down to smaller 80 elements lists and then proceeds to fire up the asynchronous Tasks, reducing the results back to a plain List. The <tt>chunk/2</tt> private function just gets the smaller size between the list length and the maximum fetches value.
+This gets a huge list (such as all the pages of a very long manga like Naruto), breaks it down into smaller lists of 80 elements and then proceeds to fire up the asynchronous Tasks, reducing the results back to a plain List. The <tt>chunk/2</tt> private function just gets the smaller size between the list length and the maximum fetches value.
 
-Sometimes it breaks down if the maximum is larger, sometimes it doesn't, so my guess is my code not dealing with network instabilities (with some retry logic) or even the MangaReader site queueing up above my designated timeout (which I set to 30 seconds). Either way, keeping the maximum value lower than 100 seems to be a good balance without crashing the workflow down.
+Sometimes it breaks down if the maximum is larger, sometimes it doesn't, so my guess is that my code isn't dealing with network instabilities (with some retry logic) or that the MangaReader site is queueing up above my designated timeout (which I set to 30 seconds). Either way, keeping the maximum value lower than 100 seems to be a good balance without crashing the workflow.
 
-This is one part I am not entirely sure what to do to deal with uncertainties in the external website not responding or network falling down for a little while. HTTPotion has support for asynchronous calls, but I don't know what's the difference between using that or just making synchronous calls within parallel processes with Task, the way I'm doing. And in either case, they are supervised workers, how do I handle the exceptions, how should I implement logic to retry the call once it fails? If anyone has more knowledge about this, a comment below will be really appreciated.
+This is one part where I'm not entirely sure what to do to deal with uncertainties like the external website not responding or the network going down for a little while. HTTPotion has support for asynchronous calls, but I don't know what the difference is between using that and just making synchronous calls within parallel processes with Task, the way I'm doing. And in either case, they are supervised workers, how do I handle the exceptions, how should I implement logic to retry the call once it fails? If anyone has more knowledge about this, a comment below will be really appreciated.
 
-Finally, there is one dirty trick under the reason of why I like to use MangaReader: it's very friendly to scrappers because on each page of the manga the image is annotated with an "alt" attribute with the format "[manga name] [chapter number] - [page number]". So I just had to reformat it a bit, adding a pad of zeroes before the chapter and page number so a simple sort of the downloaded files will give me the correct order. MangaFox is not so friendly. This is how to reformat it:
+Finally, there is one dirty trick behind why I like to use MangaReader: it's very friendly to scrapers because on each page of the manga the image is annotated with an "alt" attribute with the format "[manga name] [chapter number] - [page number]". So I just had to reformat it a bit, adding a pad of zeroes before the chapter and page number so a simple sort of the downloaded files gives me the correct order. MangaFox is not so friendly. This is how to reformat it:
 
 ```ruby
 defp normalize_metadata(image_src, image_alt) do
@@ -195,9 +195,9 @@ And compile the PDFs with this other command:
 
 Technically I could copy the MangaReader module files into a new MangaFox module and repurpose the same Workflow logic once I tweak the parsers to deal with MangaFox page format. But I leave that as an exercise to the reader.
 
-The MangaReader module tests do real calls to their website. I left it that way on purpose because if the test fails it means that they changed the website format and the parser needs tweaking to conform. But after a few years I never saw them changing enough to break my old Ruby parser.
+The MangaReader module tests do real calls to their website. I left it that way on purpose because if the test fails it means that they changed the website format and the parser needs tweaking to conform. But after a few years, I never saw them change enough to break my old Ruby parser.
 
-Just as a final exercise I imported the Mock package, to control how some inner pieces of the Workflow implementation return. It's called Mock but it's more like stubbing particular functions of a module. I can declare a block where I override the <tt>File.rename/1</tt> so it doesn't actually try to move a file that doesn't exist in the test environment. This makes the test more brittle because it depends on a particular implementation, which is never good, but when we are dealing with external I/O, this might be the only option to isolate. This is how the Workflow test was done. Again, if there is a better way I am eager to learn how, please comment down below.
+Just as a final exercise I imported the Mock package, to control what some inner pieces of the Workflow implementation return. It's called Mock but it's more like stubbing particular functions of a module. I can declare a block where I override the <tt>File.rename/1</tt> so it doesn't actually try to move a file that doesn't exist in the test environment. This makes the test more brittle because it depends on a particular implementation, which is never good, but when we are dealing with external I/O, this might be the only way to isolate it. This is how the Workflow test was done. Again, if there is a better way I am eager to learn it, please comment down below.
 
 This is how a unit test with Mock looks like, stubbing both the HTTPotion and File modules:
 
@@ -223,11 +223,11 @@ This has been a very fun experience, albeit very short, and good enough to iron 
 
 The way I can pattern match to extract the head of a list is a different way of thinking. Then there is the other most important way of thinking: everything is a transformation chain, an application is a way to start from some input argument (such as a URL) and go step by step to "transform" it into a collection of PDF files, for example.
 
-Instead of thinking on how to architect classes and objects, we start thinking about what is the initial arguments and what is the result I want to achieve, and go from there, one small transformation function at a time.
+Instead of thinking about how to architect classes and objects, we start thinking about what the initial arguments are and what result we want to achieve, and go from there, one small transformation function at a time.
 
 The Workflow module is an example. I actually started writing everything in a single large function in the CLI module. Then I refactored into smaller functions and chained them together to create the Workflow. Finally, I just moved all the functions into the Workflow module and called that from the CLI module.
 
-Because of no global state, thinking in smaller and isolated small functions, both refactoring and test-driven development are much smoother than in OOP languages. This way of thinking is admittedly slow to get a grip, but then it starts to feel very natural and it quickly steers your way of programming into leaner code.
+Because of no global state, and thinking in smaller, isolated functions, both refactoring and test-driven development are much smoother than in OOP languages. This way of thinking is admittedly slow to get a grip on, but then it starts to feel very natural and it quickly steers your way of programming into leaner code.
 
 And the dynamic aspects of both Erlang and Elixir make me feel right at home, just like having an "improved Ruby".
 

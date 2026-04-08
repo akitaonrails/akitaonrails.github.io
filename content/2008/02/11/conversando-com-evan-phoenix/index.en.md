@@ -33,31 +33,31 @@ As for Ruby, I got into it in about 2002, when I first moved to Seattle. A frien
 
 **Evan Phoenix:** The relationship started mainly with them approaching me about working for them, on Rubinius. So they saw promise in Rubinius on their own, from my presentations and such, and approached me.
 
-Their expectations are that I make Rubinius the best Ruby VM it can be. Thats my basic mandate with them. They’re pretty much the ideal stewards of the project. They allow me to work at the pace I want, they understand the rigors of the work I’m doing, and give me a lot of freedom.
+Their expectations are that I make Rubinius the best Ruby VM it can be. That’s my basic mandate with them. They’re pretty much the ideal stewards of the project. They allow me to work at the pace I want, they understand the rigors of the work I’m doing, and give me a lot of freedom.
 
 **AkitaOnRails:** Now let’s get into Rubinius. For non-starters how would you define Rubinius? We all know that this is an alternative Ruby implementation, so maybe it would be good to point out what makes it different than the MRI. What are the project main goals?
 
-**Evan Phoenix:** One of the primary goals is to have as much of the system written in Ruby itself. With MRI, none of the core class are implemented in Ruby, all are in C. So we wanted a system that was easier to work with, and thus written in Ruby itself.
+**Evan Phoenix:** One of the primary goals is to have as much of the system written in Ruby itself. With MRI, none of the core classes are implemented in Ruby, all are in C. So we wanted a system that was easier to work with, and thus written in Ruby itself.
 
-Another thing we’ve done is enrich the number of things which are objects, which adds considerable power. An easy example is the CompiledMethod class which Rubinius has. It contains the bytecode representation of a method and can be inspect, manipulated, etc, just like any other object. This opens a lot of new doors with regard to how problems can be solved.
+Another thing we’ve done is enrich the number of things which are objects, which adds considerable power. An easy example is the CompiledMethod class which Rubinius has. It contains the bytecode representation of a method and can be inspected, manipulated, etc, just like any other object. This opens a lot of new doors with regard to how problems can be solved.
 
  ![](http://s3.amazonaws.com/akitaonrails/assets/2008/2/11/Picture_1_1.png)
 
-**AkitaOnRails:** It is not so obvious for the brazilian audience to speak of “Squeak”, “Garnet”. Smalltalk is probably less known here than Ruby. The point is that it is well known that you were inspired by the way Squeak is implemented. This led to features like “Cuby”. Can you explain what is so great about the way Squeak is implemented and how it is helping you in the Rubinius project?
+**AkitaOnRails:** It’s not so obvious to the brazilian audience when we speak of “Squeak”, “Garnet”. Smalltalk is probably less known here than Ruby. The point is that it is well known that you were inspired by the way Squeak is implemented. This led to features like “Cuby”. Can you explain what is so great about the way Squeak is implemented and how it is helping you in the Rubinius project?
 
 **Evan Phoenix:** Well, we’re currently in the process of developing Garnet/Cuby, so those tools aren’t in use really yet. But almost the entire system architecture of Rubinius is modeled off the original Smalltalk-80 Virtual Machine. It defined things like CompiledMethod, etc, which I took name for name into Rubinius.
 
-In addition, the execution model of Rubinius is almost identical to Squeak. A good example is the way in which the system calls methods and figures out how to keep track of where to return control to when a method call returns. All that information is kept in first class objects called MethodContexts. In a language such as C, that information is stored on a processes memory stack. By keeping the data in first class objects, we’re able to query them directly to find out information about the running system. It also vastly simplifies how the garbage collector works.
+In addition, the execution model of Rubinius is almost identical to Squeak. A good example is the way in which the system calls methods and figures out how to keep track of where to return control to when a method call returns. All that information is kept in first class objects called MethodContexts. In a language such as C, that information is stored on a process’s memory stack. By keeping the data in first class objects, we’re able to query them directly to find out information about the running system. It also vastly simplifies how the garbage collector works.
 
 **AkitaOnRails:** Today you have shotgun. I read somewhere that you consider it ‘cheating’ because this is not an interpreter for Ruby written in Ruby, which will lead to Cuby. It’s more kind of a bootstrapping to ease development. What’s the current state of shotgun, can we use it outside its purpose of developing Rubinius?
 
 **Evan Phoenix:** Shotgun is a virtual machine written in C that provides instructions and primitive operations for running a Ruby-like language. Shotgun itself actually has no knowledge of parsing, compiling etc. It has a very simple way to load code in, and a way to execute it. You could easily write a new language which targets shotgun, in fact, [Ola Bini](/2007/6/21/chatting-with-ola-bini-jRuby-core-team-member) and I have talked a few times about writing a simple lisp-style language that would run directly on shotgun.
 
-The primitive operations it provides are kinda like syscalls in a unix system. They provide very low level operations which are built on. For example, there is an add primitive which adds to Fixnum objects together and puts the result on the stack.
+The primitive operations it provides are kinda like syscalls in a unix system. They provide very low level operations which are built on. For example, there is an add primitive which adds two Fixnum objects together and puts the result on the stack.
 
 **AkitaOnRails:** This is a personal curiosity. The MRI today uses a simple mark and sweep garbage collector (GC) whereas Java uses a highly customizable generational GC. What did you choose for memory management on the Rubinius VM?
 
-**Evan Phoenix:** Rubinius uses a generational GC, combining a copy collector for the young objects, with a mark/sweep collector for the old. It’s proved to work quite well for us. The trick has been tuning how long an object exists before it is promoted to the old object space. We’ve only tuned it a little. There is a lot more work that could be put into the GC, and it’s architected to only interact with the rest of the system at a few places, so it’s logic can be completely replaced if need be without disturbing anything else.
+**Evan Phoenix:** Rubinius uses a generational GC, combining a copy collector for the young objects, with a mark/sweep collector for the old. It’s proved to work quite well for us. The trick has been tuning how long an object exists before it is promoted to the old object space. We’ve only tuned it a little. There is a lot more work that could be put into the GC, and it’s architected to only interact with the rest of the system at a few places, so its logic can be completely replaced if need be without disturbing anything else.
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2008/2/11/421875792_79acde1fba.jpg)
 
@@ -81,13 +81,13 @@ We aren’t currently working toward a common bytecode format between Rubinius a
 
 **AkitaOnRails:** Performance is always subject for a lot of discussion and it is still premature to talk about performance under Rubinius, as it is still work in progress. But I read in your blog that it is quite fast already, even surpassing MRI in many tests. How is performance evolving?
 
-**Evan Phoenix:** Currently, our performance is evolving slowly. This is mainly because it’s not a priority for people writing the kernel of Rubinius (the majority of the Ruby code which makes it up). As we get closer and closer to being compliant, we’ll begin tuning things. That being said, I do write code to make Rubinius faster here and there. We went ahead and implement fast math operations to speed of the simple math that people commonly do. We have a simple profiler which can easily be turned on to give developers feedback about how their code is run.
+**Evan Phoenix:** Currently, our performance is evolving slowly. This is mainly because it’s not a priority for people writing the kernel of Rubinius (the majority of the Ruby code which makes it up). As we get closer and closer to being compliant, we’ll begin tuning things. That being said, I do write code to make Rubinius faster here and there. We went ahead and implement fast math operations to speed up the simple math that people commonly do. We have a simple profiler which can easily be turned on to give developers feedback about how their code is run.
 
 **AkitaOnRails:** One of the main problems for any alternative implementation to Ruby is that it has a lot of C-based extensions, including a handful of core libraries. So if you want to stay “pure-Ruby” you have to re-implement all of them in Ruby. The JRuby guys had to go through something similar. Are there any cross-project collaborations already in this regard?
 
-**Evan Phoenix:** Actually, thats not entirely true. We also saw that the landscape of Ruby includes a lot of C extensions. To make migration to Rubinius faster, we’re written a layer into Rubinius which allows all those C extensions to run (nearly) unmodified, only requiring a simple recompile. These are so that things such as ImageScience, RMagick, postgres bindings, etc can all be used under Rubinius without having to be rewritten.
+**Evan Phoenix:** Actually, that’s not entirely true. We also saw that the landscape of Ruby includes a lot of C extensions. To make migration to Rubinius faster, we’ve written a layer into Rubinius which allows all those C extensions to run (nearly) unmodified, only requiring a simple recompile. These are so that things such as ImageScience, RMagick, postgres bindings, etc can all be used under Rubinius without having to be rewritten.
 
-**AkitaOnRails:** Still about C code, I know it is difficult to deliver a bytecode virtual machine and still be dependent on non-managed C code. Java has some jury rigging toward JNA, .NET as pinvoke. Do you plan something similar for Rubinius so that it can more or less easily speak with C libraries?
+**AkitaOnRails:** Still about C code, I know it is difficult to deliver a bytecode virtual machine and still be dependent on non-managed C code. Java has some jury rigging toward JNA, .NET has pinvoke. Do you plan something similar for Rubinius so that it can more or less easily speak with C libraries?
 
 **Evan Phoenix:** We actually directly support a mechanism called FFI (Foreign Function Interface), which allows a developer to bind a C function directly as a method call. Here is a simple example:
 
@@ -97,7 +97,7 @@ end<br>
 <br>
 LibC.puts “hello!”</macro:code>
 
-The attach_function line is the primary interface into FFI. You simple indicate which library the function is in (in this case, nil is used because it’s include in the existing process), the name of the function (puts), the types of arguments it takes (just 1, a string), and finally, the type it returns (void, ie, nothing).
+The attach_function line is the primary interface into FFI. You simply indicate which library the function is in (in this case, nil is used because it’s included in the existing process), the name of the function (puts), the types of arguments it takes (just 1, a string), and finally, the type it returns (void, ie, nothing).
 
 Using this, you can tie directly to C functions without having to write C wrapper code.
 
@@ -133,7 +133,7 @@ We haven’t yet, but we plan to exercise the great merge / public branch capabi
 
 **AkitaOnRails:** We heard from Ezra’s [recent interviews](http://podcast.RubyonRails.org/programs/1/episodes/ezra-zygmuntowicz) about your new experiment on multi-VM. That would be a blessing for deployment without we having to deal with several processes in a mongrel cluster. Can you describe this feature and pin point its advantages?
 
-**Evan Phoenix:** It’s pretty experimental currently, but it will only get more stable over time. The idea is that you can spin up a whole new VM in the current process. This new VM is completely separate from other VMs, living in it’s own native thread and having it’s own garbage collector, etc.
+**Evan Phoenix:** It’s pretty experimental currently, but it will only get more stable over time. The idea is that you can spin up a whole new VM in the current process. This new VM is completely separate from other VMs, living in its own native thread and having its own garbage collector, etc.
 
 There is a mechanism for VMs to communicate with each other though, and this allows them to coordinate work. This would mean that a primary thread could accept new connections, then pass them off to a new VM to actually process. This allows you to process connections in actual parallel, in addition, because the VMs are completely separated, this even works for non-thread safe applications like Rails.
 
@@ -143,7 +143,7 @@ There is a mechanism for VMs to communicate with each other though, and this all
 
 **AkitaOnRails:** How long do you guess we are from a fully MRI-1.8 compatible release?
 
-**Evan Phoenix:** We still don’t have a firm date, mainly because what fully complaint MRI-1.8 is is still unknown. We are still adding specs, working to properly define 1.8. That being said, we’re really hitting a stride and progress is advancing rapidly. We’re very close to properly running Rubygems. Ezra recently was able to run Merb on top of Rubinius, running under webrick.
+**Evan Phoenix:** We still don’t have a firm date, mainly because what fully compliant MRI-1.8 is is still unknown. We are still adding specs, working to properly define 1.8. That being said, we’re really hitting a stride and progress is advancing rapidly. We’re very close to properly running Rubygems. Ezra recently was able to run Merb on top of Rubinius, running under webrick.
 
 I’m going to be doing a 0.9 release this week, because we’ve made so much progress since 0.8. My big hope is that by RailsConf in May, we’ll be running Rails. But don’t hold me to that. This is open source after all. :)
 

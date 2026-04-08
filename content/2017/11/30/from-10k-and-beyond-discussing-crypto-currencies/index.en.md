@@ -15,9 +15,9 @@ draft: false
 
 After the [historical USD 10,000 break](https://www.coindesk.com/10000-bitcoins-price-makes-history/) a day ago, Bitcoin and cryptocurrencies in general finally reached the mainstream media in a bombastic way.
 
-Like many in the tech industry, I tried the tech since the very beginning. I myself mined a couple bitcoins back in 2009, then lost my wallet private key, totally forgot about it, and many years later here I am, kicking myself in the butt :-)
+Like many in the tech industry, I tried the tech since the very beginning. I mined a couple of bitcoins myself back in 2009, then lost my wallet private key, totally forgot about it, and many years later here I am, kicking myself in the butt :-)
 
-When it reached USD 3,000 I had my interest in the platform totally renewed. And it was a very pleasant surprise to see how big it became. If you follow me, you know how eager I am to learn new things that have real potential. And also how easy I am to turn my attention full gear into something.
+When it reached USD 3,000 I had my interest in the platform totally renewed. And it was a very pleasant surprise to see how big it became. If you follow me, you know how eager I am to learn new things that have real potential. And also how easily I turn my attention full gear into something.
 
 I can only do that because I am not a loyalist to anything. I don't pick and defend a [single language](http://www.akitaonrails.com/en/2016/05/31/flertando-com-crystal-perspectiva-de-um-rubyista), or a [single OS](http://www.akitaonrails.com/en/2017/01/10/arch-linux-a-melhor-distro-de-todas), or a [single manufacturer](http://www.akitaonrails.com/en/2017/11/21/da-microsoft-para-a-apple-e-de-volta), or a [single market](http://www.akitaonrails.com/2017/08/28/off-topic-blockchain-e-criptomoedas-no-brasil). I find it very unproductive if I see myself just defending stuff.
 
@@ -55,15 +55,15 @@ It may be. As I said, the tech industry is a bubble for all we know. It only req
 
 How do you operate in a bubble? In an antifragile way. First of all, if you're uninitiated, never, ever invest everything you have. Only invest an amount that, if you lose everything, you won't be left to die. This is Investment-101.
 
-Try to buy in the lows, and perhaps sell in the highs. Or plan long-term and [HODL](https://coinsutra.com/hodl-popular-cryptocurrency-terms/) for a few years. If you need quick returns, learn how to deal with [stop-loss orders](https://www.investopedia.com/terms/s/stop-lossorder.asp), for example. Don't try to up smart the market if you don't have trading experience. Or do, but don't complain when you lose.
+Try to buy at the lows, and perhaps sell at the highs. Or plan long-term and [HODL](https://coinsutra.com/hodl-popular-cryptocurrency-terms/) for a few years. If you need quick returns, learn how to deal with [stop-loss orders](https://www.investopedia.com/terms/s/stop-lossorder.asp), for example. Don't try to outsmart the market if you don't have trading experience. Or do, but don't complain when you lose.
 
 Losses or profits, it's all on you and you alone, not "the market" or "the speculators". Everybody is an adult. Adults should take responsibility for their own acts. If they lost money in a gamble they didn't understand, it's their fault.
 
 > "Mining consumes more energy than certain small countries!"
 
-It doesn't matter. First and foremost, they are not draining free energy. Every miner is paying for it. Now you will see why it's so bad when governments interfere with free markets. If some country subsidizes the energy than the supply and demand formula will fail. Obviously.
+It doesn't matter. First and foremost, they are not draining free energy. Every miner is paying for it. Now you will see why it's so bad when governments interfere with free markets. If some country subsidizes the energy, then the supply and demand formula will fail. Obviously.
 
-And techies should know this better. There never was enough bandwidth in ground telephone lines for everybody in the planet to connect to the internet. We had to evolve infrastructure, a lot. We had to add submarine lines. We had to go from dialed modems to ISDN, to cable modems, etc.
+And techies should know this better. There never was enough bandwidth in ground telephone lines for everybody on the planet to connect to the internet. We had to evolve infrastructure, a lot. We had to add submarine lines. We had to go from dialed modems to ISDN, to cable modems, etc.
 
 [Proof of work](http://www.akitaonrails.com/en/2017/11/01/como-o-bitcoin-forca-consenso-entre-os-generais-bizantinos) based mining consumes a heck of a lot of energy, and for good reason. We are trading off energy for integrity. But this is not the only alternative. There are [proof of stake](https://github.com/ethereum/wiki/wiki/Proof-of-Stake-FAQ) implementations starting to be deployed in other alt-coins which are super energy efficient while providing similar levels of trust in the consensus.
 
@@ -77,13 +77,13 @@ Mining is not deterministic. Even if you have the best hardware ever, it's not g
 
 Which is why miners organize into pools, which share the gains between the members.
 
-The concern is that [4 of the biggest pools](https://blockchain.info/pools), AntPool, ViaBTC, BTC.com, and BTC.TOP "control" 62% of the world's hashpower.
+The concern is that [4 of the biggest pools](https://blockchain.info/pools), AntPool, ViaBTC, BTC.com, and BTC.TOP "control" 62% of the world's hashpower..
 
-It's said that anyone with 51% of the hashpower control could launch a hack attack against the blockchain, being able to rewrite blocks in the recent past and allowing double-spend, for example.
+It's said that anyone controlling 51% of the hashpower could launch a hack attack against the blockchain, being able to rewrite blocks in the recent past and allowing double-spend, for example.
 
 But [in practice](https://bitcoinmagazine.com/articles/problems-associated-with-bitcoin-mining-centralization-may-be-overstated-1474917259/), it's not that easy.
 
-It is expensive to mine. USD 20,000 equipment can only mine around USD 11 per day, without subtracting all the costs including the depreciation of the machines. Anything other than mining is very risky and unprofitable. The system is built in a way that hackers would have to spend so much money at such high risks that it's easier to just follow the rules.
+It is expensive to mine. USD 20,000 in equipment can only mine around USD 11 per day, without subtracting all the costs including the depreciation of the machines. Anything other than mining is very risky and unprofitable. The system is built in a way that hackers would have to spend so much money at such high risks that it's easier to just follow the rules.
 
 And again, the alt-coins and forks are experimenting into new ways to make it even harder in the future.
 
@@ -95,17 +95,17 @@ We already have several alt-coins such as Litecoin and others trying to solve th
 
 Visa doesn't transact dollar "bills", they make virtual transactions in their internal databases. Only when the merchant withdraws, it's converted to fiat dollars.
 
-You can easily add Bitcoin to the mix of options in a Visa transaction system. That's how a credit card work today. You only pay 30 days later. And it works. What's the matter?
+You can easily add Bitcoin to the mix of options in a Visa transaction system. That's how a credit card works today. You only pay 30 days later. And it works. What's the matter?
 
-And again, we will solve this in time. Let the technologies mature and demand start to need it and the solution will come up.
+And again, we will solve this in time. Let the technologies mature and demand starts to need it and the solution will come up.
 
 > "It doesn't serve any social function."
 
-Most of the criticism against cryptocurrencies come from the "elite" population in first world countries. If you're a white person in the USA, with a good income in dollars or someone similar in Europe, with lots of Euro. You are mostly concerned with _"Bitcoin is too slow for me to buy goods on the shopping mall"_ or _"the transaction fees are too high for my daily Starbuck's coffee"_. And you start shouting that _"Bitcoin serves no social function"_.
+Most of the criticism against cryptocurrencies comes from the "elite" population in first world countries. If you're a white person in the USA, with a good income in dollars or someone similar in Europe, with lots of Euro. You are mostly concerned with _"Bitcoin is too slow for me to buy goods at the shopping mall"_ or _"the transaction fees are too high for my daily Starbuck's coffee"_. And you start shouting that _"Bitcoin serves no social function"_.
 
 But this is absurd. You don't live in South America, Africa, Southeast Asia. You are not in Venezuela where their currency was broken by the current dictatorship. Can you imagine your beloved dollar bill worth less than toilet paper?
 
-You don't live in Zimbabwe where the army [seized power](http://www.telegraph.co.uk/technology/2017/11/20/bitcoin-has-become-zimbabwes-crisis-currency/). You don't live in Asia, a place in constant threat of [nuclear missiles](https://www.express.co.uk/news/world/886680/North-Korea-news-North-Korea-update-World-War-3-Donald-Trump-Kim-Jong-un-missile-test) on their heads coming from crazy dictator Kim Jong-Un.
+You don't live in Zimbabwe where the army [seized power](http://www.telegraph.co.uk/technology/2017/11/20/bitcoin-has-become-zimbabwes-crisis-currency/). You don't live in Asia, a place under constant threat of [nuclear missiles](https://www.express.co.uk/news/world/886680/North-Korea-news-North-Korea-update-World-War-3-Donald-Trump-Kim-Jong-un-missile-test) on their heads coming from crazy dictator Kim Jong-Un.
 
 So, yeah it doesn't serve a social function in your daily sugar intake from 7-eleven. It's too slow to buy 2 gallon super gulps and the fees are too high. But if you live anywhere in the world where the government poses a threat to their citizens, having an unregulated, decentralized, **store of value**, which you can easily take out of the offending country, is a **life saver**. Even in countries like mine, Brazil, you don't want to have everything in Reais in case dictator-wannabes like Lula or Bolsonaro actually go crazy and coup.
 
@@ -117,12 +117,12 @@ And there is a good reason for that. In terms of tech, the USA follows what Sili
 
 Now, the blockchain technology didn't come from them directly. It's not a Google product. And worse, it touches their fragile moral beliefs. They think it's ok to receive huge amounts of VC money as a "reward" for what they "believe", their "culture", their arbitrary "values". They don't believe in making their own money. And even though VCs are from the financial market, techies despise Wall Street and the financials. The Starbuck's hipsters hate the suit and tie traders and their so-called "dirty tactics" to make money.
 
-It's hilarious actually, in the end, they all want one thing, and one thing only: more money. But hipsters are very hypocrite when it comes to saying that. _"I don't want money, I want to disrupt the market"_. Yeah, right, keep saying yourself that.
+It's hilarious actually; in the end, they all want one thing, and one thing only: more money. But hipsters are very hypocritical when it comes to saying that. _"I don't want money, I want to disrupt the market"_. Yeah, right, keep telling yourself that.
 
-Now, consider that this whole cryptocurrency buzz is not coming from the Western. It's all from Asia. Japan, South Korea, Singapore, China, they are the ones steering the market. Japan, as a country, has already regulated and accepted Bitcoin as proper currency and they have [60% of the market share](https://cointelegraph.com/news/bitcoin-price-surpasses-1000000-yen-as-japan-seizes-nearly-60-market-share), alone.
+Now, consider that this whole cryptocurrency buzz is not coming from the West. It's all from Asia. Japan, South Korea, Singapore, China, they are the ones steering the market. Japan, as a country, has already regulated and accepted Bitcoin as proper currency and they have [60% of the market share](https://cointelegraph.com/news/bitcoin-price-surpasses-1000000-yen-as-japan-seizes-nearly-60-market-share), alone.
 
 This is a heavily Asian driven phenomenon. And we are just getting started.
 
-So this is not, a _"if it happens"_ scenario. It already did. Biggies like the [CME Group](https://seekingalpha.com/article/4128569-5-things-aware-cme-bitcoin-futures), [Nasdaq](https://www.bloomberg.com/news/articles/2017-11-29/nasdaq-is-said-to-plan-bitcoin-futures-joining-biggest-rivals) will start having Bitcoin offerings. We are lagging behind discussing stupid trivial issues that will be fixed in the long run.
+So this is not an _"if it happens"_ scenario. It already did. Biggies like the [CME Group](https://seekingalpha.com/article/4128569-5-things-aware-cme-bitcoin-futures), [Nasdaq](https://www.bloomberg.com/news/articles/2017-11-29/nasdaq-is-said-to-plan-bitcoin-futures-joining-biggest-rivals) will start having Bitcoin offerings. We are lagging behind discussing stupid trivial issues that will be fixed in the long run.
 
 Cryptocurrencies are here to stay. My recommendation if you are truly someone that values knowledge: learn about it.

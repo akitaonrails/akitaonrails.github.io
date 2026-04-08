@@ -19,7 +19,7 @@ This is going to be a very lengthy article, buckle up ladies and gentlemen.
 
 If you're hasty, here's what you need to know:
 
-* Windows 10 is still Windows, but it's nowhere near the nightmare of the 2000's. It rightfully deserves a new chance.
+* Windows 10 is still Windows, but it's nowhere near the nightmare of the 2000s. It rightfully deserves a new chance.
 * OS X is on its way to becoming no more than an XCode runtime. Rumor says that Apple doesn't even have a dedicated team for the desktop OS anymore. They are entirely focused on iOS and to make the iPad the desktop replacement.
 * Linux is great, if you're a full-time web developer, you can comfortably run something like Ubuntu or Manjaro/Arch (my personal recommendation).
 
@@ -39,17 +39,17 @@ The top of the line Dell XPS 15" Touch costs [USD 2,459](http://dell.to/2jMDOx5)
 
 The top of the line Razer Blade costs [USD 2,599](https://www.razerzone.com/gaming-laptops/razer-blade/shop) and comes with 1 TB SSD, 16 GB RAM, GTX 1060 w/ 6 GB, Intel Core i7 7th Gen, 4K display. It's arguably the best industrial design of this bunch, with Razer's impeccable attention to detail. But it's also arguably the one with least available support and more construction problems reported, so be careful to buy it overseas.
 
-The top of the line HP Spectre x360 costs [USD 1,499](http://store.hp.com/us/en/pdp/hp-spectre-x360-15-bl152nr) and comes with 512 GB SSD, GeForce MX150 w/ 2GB GDDR5, Intel Core i17 8th Gen, 4K display. The design is awesome, super thin convertible. The specs are not so great, but it's the cheapest of the premium notebooks, so there's that.
+The top of the line HP Spectre x360 costs [USD 1,499](http://store.hp.com/us/en/pdp/hp-spectre-x360-15-bl152nr) and comes with 512 GB SSD, GeForce MX150 w/ 2GB GDDR5, Intel Core i7 8th Gen, 4K display. The design is awesome, super thin convertible. The specs are not so great, but it's the cheapest of the premium notebooks, so there's that.
 
-The top of the line Lenovo Yoga 920 14" Vibe costs [USD 1,899](http://lnv.gy/2A4DjlU) but it only comes with Intel Integrated Graphics (no secondary GPU), 1 TB SSD, 16 GB RAM, Intel Core i7 8th Gen, 4K display, and comes with the Pen. The design, again, is great with an almost 360 degrees hinge so you can flip your screen around and use it as a tablet. A very good 2-in-1.
+The top of the line Lenovo Yoga 920 14" Vibe costs [USD 1,899](http://lnv.gy/2A4DjlU) but it only comes with Intel Integrated Graphics (no secondary GPU), 1 TB SSD, 16 GB RAM, Intel Core i7 8th Gen, 4K display, and comes with the Pen. The design, again, is great with an almost 360-degree hinge so you can flip your screen around and use it as a tablet. A very good 2-in-1.
 
 Now, the top of the line MacBook Pro 15" costs [USD 3,399](http://apple.co/2zXSz6d) and comes with 1 TB SSD, Radeon Pro 560 w/ 4GB, Intel Core i7 7th Gen, UHD Display, and the infamous touch bar (50% chance of liking it). And that's it. The industrial design and construction are still top-notch, but the others are nearly as good nowadays.
 
-If you use graphics-intensive applications, the Radeon Pro 560 is good, but the GTX 1060 is [superior](http://bit.ly/2zsIjE5). Apple's UHD IPS (LCD) displays have a maximum resolution of 2560x1060. All premium notebooks nowadays come with full 4K (LED) displays with a maximum resolution of 3840x2160. It is noticeable. If you never saw a modern 4K display the MacBook displays will look good enough. And that's without saying that they are all touchscreens with 4,096 points of sensitivity. And what was once just a gimmick nowadays compare with the best Wacom has to offer. The Surface line up comes close to the top of the line Wacom Cintiq and the new iPad Pro. They are in the same league.
+If you use graphics-intensive applications, the Radeon Pro 560 is good, but the GTX 1060 is [superior](http://bit.ly/2zsIjE5). Apple's UHD IPS (LCD) displays have a maximum resolution of 2560x1600. All premium notebooks nowadays come with full 4K (LED) displays with a maximum resolution of 3840x2160. It is noticeable. If you've never seen a modern 4K display, the MacBook displays will look good enough. And that's without mentioning that they are all touchscreens with 4,096 points of sensitivity. What was once just a gimmick nowadays compares with the best Wacom has to offer. The Surface line-up comes close to the top of the line Wacom Cintiq and the new iPad Pro. They are in the same league.
 
-There are 2 aspects of the Surface Book 2 that are lacking, unfortunately. First is the absence of a proper Thunderbolt 3 port. Without it, you can't connect to modern external storages or external GPUs. The second is the weak power supply. Reports say that in highly demanding games (a.k.a. Destiny 2 not properly configured), the system will throttle down and drain all the battery faster than it can charge from the wall. [The Verge broke this story](https://www.theverge.com/2017/11/21/16685986/microsoft-surface-book-2-power-problem) and Microsoft is yet to unveil a solution if any. So, if gaming is your top priority buy a Razer or any of the gaming specific laptops such as an Alienware. The battery issue is [not as dramatic](https://www.youtube.com/watch?v=imzVR4JSITM&t=1s) as some have previously reported, though.
+There are 2 aspects of the Surface Book 2 that are lacking, unfortunately. First is the absence of a proper Thunderbolt 3 port. Without it, you can't connect to modern external storage or external GPUs. The second is the weak power supply. Reports say that in highly demanding games (a.k.a. Destiny 2 not properly configured), the system will throttle down and drain all the battery faster than it can charge from the wall. [The Verge broke this story](https://www.theverge.com/2017/11/21/16685986/microsoft-surface-book-2-power-problem) and Microsoft is yet to unveil a solution if any. So, if gaming is your top priority buy a Razer or any of the gaming specific laptops such as an Alienware. The battery issue is [not as dramatic](https://www.youtube.com/watch?v=imzVR4JSITM&t=1s) as some have previously reported, though.
 
-In terms of construction. Macs are usually all built with the same aluminum unibody construction. The Book 2 uses Magnesium instead. It makes for a very solid construction but also very lightweight. By the way, after so many years, everybody mastered aluminum. And they are moving in other directions, for example, Dell uses carbon fiber on the palm rests, which I find much comfort. Magnesium is also not so freezing cold as aluminum, again, more comfortable. I like that they are passed just copying and really trying new and interesting materials.
+In terms of construction. Macs are usually all built with the same aluminum unibody construction. The Book 2 uses Magnesium instead. It makes for a very solid construction but also very lightweight. By the way, after so many years, everybody mastered aluminum. And they are moving in other directions, for example, Dell uses carbon fiber on the palm rests, which I find much more comfortable. Magnesium is also not as freezing cold as aluminum, again, more comfortable. I like that they are past just copying and really trying new and interesting materials.
 
 ![it's not as thin](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/664/20171121_111533.jpg)
 
@@ -69,9 +69,9 @@ Now, what most people don't report is that because of this, the screen housing i
 
 It has enough power to drive 1 external 4K display at 60hz or two 4K displays at 30hz. The MacBook Pro, with its custom port, can drive a 5K display. Something most notebooks still can't. So there's that.
 
-I am not a designer by trend, but I am a hobbyist. And after many years working hard, I do believe that I can afford something like this. And don't get me wrong, the Surface Pro is another great option for a designer. The top-of-the-line Surface Pro has everything the Book 2 has, without the GTX 1060 but costing USD 600 less at [USD 2,699](https://www.microsoft.com/en-us/surface/devices/surface-pro/overview#surfaceconfiguration). I think it's a more suitable product for most people interested in having an easy to carry sketch solution around.
+I am not a designer by trade, but I am a hobbyist. And after many years working hard, I do believe that I can afford something like this. And don't get me wrong, the Surface Pro is another great option for a designer. The top-of-the-line Surface Pro has everything the Book 2 has, without the GTX 1060 but costing USD 600 less at [USD 2,699](https://www.microsoft.com/en-us/surface/devices/surface-pro/overview#surfaceconfiguration). I think it's a more suitable product for most people interested in having an easy to carry sketch solution around.
 
-Creative Professionals are the ones that fully need to be careful on specs. But for the majority of non-demanding professionals, they can pay a lot cheaper. They don't need extra GPU horsepower, or the i7 (an i5 is more than adequate), 8 GB of RAM is enough, even 256 GB of SSD is ok because everything is in the so-called "Cloud" these days. This is the [USD 999](http://www.dell.com/en-us/shop/dell-laptops/new-xps-13/spd/xps-13-9360-laptop/dncwtr744h) Dell XPS 13. Or the only comparable option from Apple is the [USD 1,299](https://www.apple.com/shop/buy-mac/macbook) with a ridiculous Intel m3 processor. For most professionals, the cheaper Dell XPS 13 is a much better value proposition than the Macbook.
+Creative Professionals are the ones that fully need to be careful about specs. But for the majority of non-demanding professionals, they can pay a lot cheaper. They don't need extra GPU horsepower, or the i7 (an i5 is more than adequate), 8 GB of RAM is enough, even 256 GB of SSD is ok because everything is in the so-called "Cloud" these days. This is the [USD 999](http://www.dell.com/en-us/shop/dell-laptops/new-xps-13/spd/xps-13-9360-laptop/dncwtr744h) Dell XPS 13. Or the only comparable option from Apple is the [USD 1,299](https://www.apple.com/shop/buy-mac/macbook) with a ridiculous Intel m3 processor. For most professionals, the cheaper Dell XPS 13 is a much better value proposition than the Macbook.
 
 For demanding professionals, the Dell XPS 15 is the best value for the buck. The Surface Book 2 is the best premium one for those that favor the touch screen more than workflow. Meaning: designers, go with the Book 2, video editors or 3D modelers, go with the Dell XPS.
 
@@ -85,7 +85,7 @@ It's also obvious why it makes no sense to ask _"Why don't you ditch Windows and
 
 You want to have Adobe Photoshop, or Autodesk Sketchbook, or Sketchable, or any other great software package out there. Again, I don't want to repeat every other [review available](https://www.youtube.com/watch?v=U8cpC2jZdgM) out there showing how great the pen is. I will just confirm that, yes, the pen is super great, precise, accurate, and flows very naturally. It's an entire studio in a box.
 
-Software developers by trend should **stay away** from this kind of product because most Linux distros won't have the proper drivers to hook up to so much exclusive hardware solutions. For those situations I highly recommend the Dell XPS 13, specifically the [USD 1,759](http://dell.to/2A3SPOZ) configuration with Windows 10 Pro (or you can save USD 60 and get it with the Home edition if you intend to install Linux on top of it), the great QHD+ (3200x1800) InfinityEdge touch display, 8th Gen Intel Core i17, 16 GB RAM, 512 GB SSD. This is, by far, the best value for the money for a full-time software developer.
+Software developers by trade should **stay away** from this kind of product because most Linux distros won't have the proper drivers to hook up to so much exclusive hardware solutions. For those situations I highly recommend the Dell XPS 13, specifically the [USD 1,759](http://dell.to/2A3SPOZ) configuration with Windows 10 Pro (or you can save USD 60 and get it with the Home edition if you intend to install Linux on top of it), the great QHD+ (3200x1800) InfinityEdge touch display, 8th Gen Intel Core i7, 16 GB RAM, 512 GB SSD. This is, by far, the best value for the money for a full-time software developer.
 
 OS X has a great community **despite** Apple not doing a lot to help them. Historically, the jump from the legacy MacOS to OS X meant having a UNIX-compatible kernel and toolchain available. To this day, it's still not comparable to a modern Linux distro. But OS X makes it up to it by having, by far, the best Graphics Compositor around. The GUI is smooth, responsive.
 
@@ -101,13 +101,13 @@ In particular, everybody around the [Homebrew](https://brew.sh/) community deser
 
 After a lot of experimentation, I decided to settle on having a native Windows 10 to drive the host and having a full-blown Linux distro ([Manjaro GNOME](https://manjaro.org/get-manjaro/)) on a Virtualbox environment where I give 4 of the 8 cores (2 physical cores, each with 2 hyperthreads) and half the memory (8 GB).
 
-Why not using the brand new [Windows Subsystem for Linux (WSL)](https://msdn.microsoft.com/en-us/commandline/wsl/faq#can-i-run-all-linux-apps-in-wsl) instead?
+Why not use the brand new [Windows Subsystem for Linux (WSL)](https://msdn.microsoft.com/en-us/commandline/wsl/faq#can-i-run-all-linux-apps-in-wsl) instead?
 
 Because although it's great and all, we will need to wait until they figure out the rough edges. Particularly a better GUI support and faster I/O abstraction. What hurts the most is how **painfully slow** the filesystem layer is right now. It's an [order of magnitude slower](http://www.akitaonrails.com/en/2017/09/20/windows-subsystem-for-linux-e-bom-mas-ainda-nao-suficiente) than using Linux on Virtualbox.
 
 I could use a Vagrant-like hybrid solution, having a headless Linux distro on Virtualbox and accessing a file through CIFS/NFS. And that should be fine if you like editors like Sublime Text 3, Visual Studio Code or Atom. But I am a Vim guy, and I like GVIM, which works best within GNOME, within a proper GUI-enabled Linux distro.
 
-> _"Why not using Docker? It's supposed to be super-fast and all."_
+> _"Why not use Docker? It's supposed to be super-fast and all."_
 
 It surprises me when people ask that because it demonstrates how little they know about the tools they recommend.
 
@@ -125,7 +125,7 @@ I **want** to have software from both platforms available to me **at the same ti
 
 Yes, Virtualbox will have a less responsive UI thanks to a virtualized Graphics pipeline. But for software development, it works just fine. I even see people doing gimmicky things such as having a full development environment in an AWS EC2 instance and SSH'ing there to use Vim with Tmux, for example. That is far more convoluted if you ask me. I wouldn't go that far.
 
-All top-of-the-line hardware I listed above have enough Cores and enough RAM so I can afford running 2 OS'es at the same time. Don't do that on budget hardware.
+All top-of-the-line hardware I listed above has enough Cores and enough RAM so I can afford running 2 OSes at the same time. Don't do that on budget hardware.
 
 And if you don't need to carry around a notebook, for the same amount of money you can buy a far superior desktop computer.
 
@@ -149,7 +149,7 @@ And I also know that it sounds weirder to run a Linux distro as a secondary gues
 
 If you're in OS X you are probably used to a lot of tools. You paid money for some of those. And switching to another OS is always a pain.
 
-In summary, the only piece of software that I really missed, in the beginning, was Keynote. But I went past my prejudice against PowerPoint and I have to say that it does everything I really need right now.
+In summary, the only piece of software that I really missed, at first, was Keynote. But I went past my prejudice against PowerPoint and I have to say that it does everything I really need right now.
 
 I always hated Pages and Numbers, they are very good for amateurs. But nothing, not even LibreOffice, and definitely not Google Docs can replace Office. Google Slides is terrible and Impress is beyond useless to me (and it's super slow). Seriously, PowerPoint is now a much better tool.
 
@@ -173,7 +173,7 @@ I thought as much. Microsoft did finally figure it out. It's still there, you st
 
 Yes, I highly recommend you not to browse the Deep Web on a Windows machine, you will be owned. Not even using a Tor browser. You will be owned.
 
-I also recommend you to use BitLocker (only available on Windows 10 Pro) to encrypt your partition. And also to backup to external hard drives as frequently as you can. Nothing can save your better than a readily available cold backup.
+I also recommend you to use BitLocker (only available on Windows 10 Pro) to encrypt your partition. And also to backup to external hard drives as frequently as you can. Nothing can save you better than a readily available cold backup.
 
 And yes, install some 3rd party solution such as [Avast antivirus](https://www.avast.com/index). Have healthy web browsing behavior and avoid shady websites. You know what I am talking about. You will be owned.
 
@@ -181,7 +181,7 @@ If you must, install a secure Linux distro within Virtualbox and open Tor from t
 
 > _"But what about the mess that is the Registry!?"_
 
-It's still there. If you never experienced it, the Registry is Windows equivalent of "/etc" in Linux distros. It's a binary database. It gets corrupted. It gets dirty entries.
+It's still there. If you never experienced it, the Registry is Windows' equivalent of "/etc" in Linux distros. It's a binary database. It gets corrupted. It gets dirty entries.
 
 But my recommendation is: forget about it. If you're thinking and tinkering with it, you will get a corrupt system. Do not try to clean it up (never, ever use something like CCleaner). 
 
@@ -199,7 +199,7 @@ Neither is OS X. And this is a Linux advantage. So, if you must, use just Linux 
 
 Truth be told. In the software development arena, we switched to the Mac mainly because of Rails and Textmate 2. We had access to some open source tools built-in, we had GCC to compile the rest. Windows XP was way past due. Windows Vista was a terrible experience. The PC hardware manufacturers were not even trying, and Apple was launching good hardware and good experience all the time.
 
-Developers switched in drove after the switch from PowerPC to Intel in 2005. My very first Mac was a G4 Mac Mini with OS X 10.4 Tiger. And then I bought the very first Intel White MacBook and I never looked back.
+Developers switched in droves after the switch from PowerPC to Intel in 2005. My very first Mac was a G4 Mac Mini with OS X 10.4 Tiger. And then I bought the very first Intel White MacBook and I never looked back.
 
 Software tools on Windows were laughable. Visual Studio.NET was terrible. Eclipse-based IDEs were terrible. We didn't have Powershell yet. And we definitely never had anything like WSL for command-line. You could install Cygwin, but it was a poor experience.
 
@@ -211,7 +211,7 @@ By the way, if you like iTerm 2, you will be delighted to install [Tilix for Lin
 
 ## As time goes by
 
-I have been following the Surface line-up evolution over the years. In the beginning, I was very skeptical. Because it's very easy to launch a gimmicky product and discontinue it. I trust companies that keep evolving their products over the years. Not only an ecosystem form around it, but you have time to put together support services, there are parts available in the official stores and in the aftermarket. After all these years, Microsoft deserves to be called a hardware manufacturer.
+I have been following the Surface line-up evolution over the years. In the beginning, I was very skeptical. Because it's very easy to launch a gimmicky product and discontinue it. I trust companies that keep evolving their products over the years. Not only does an ecosystem form around it, but you have time to put together support services, there are parts available in the official stores and in the aftermarket. After all these years, Microsoft deserves to be called a hardware manufacturer.
 
 This is Microsoft finally fulfilling what Alan Kay once said: 
 
@@ -221,13 +221,13 @@ They only really failed in the smartphone market, the competition is way more di
 
 Because now Microsoft builds their own hardware and they made a business out of it, they have real incentive inside the teams in the company for a positive feedback loop that results in more refinements to the Windows codebase.
 
-They have been trying and failing in the touch-based solutions since the early 2000's. Now the Pen is not a gimmick anymore, it's a real product, with real qualities, and real use cases.
+They have been trying and failing in the touch-based solutions since the early 2000s. Now the Pen is not a gimmick anymore, it's a real product, with real qualities, and real use cases.
 
 They also kept their vision of playing nice with Open Source. No one can reasonably expect Microsoft to go full-blown open source. But it shows. They are second only to Google on GitHub in terms of open source contributions. They acquired Xamarin and their .NET Core strategy is on-going and strong. Heck, even Visual Studio received the open source treatment. There is still a long road ahead, but one has to recognize the giant steps.
 
-Which is way more than we can say about Apple, where poor guys at [Homebrew suffer](https://github.com/Homebrew/homebrew-core/issues/14418) on each OS X upgrade?
+Which is way more than we can say about Apple, where the poor guys at [Homebrew suffer](https://github.com/Homebrew/homebrew-core/issues/14418) on each OS X upgrade.
 
-The Surface RT and Windows Mobile attempt even made possible for Windows to finally be compiled to run on ARM processors. This is a good sign going forward. Reminds me when OS X was first compiled to run on Intel processors (they ran on PowerPC before) in 2005.
+The Surface RT and Windows Mobile attempt even made it possible for Windows to finally be compiled to run on ARM processors. This is a good sign going forward. Reminds me when OS X was first compiled to run on Intel processors (they ran on PowerPC before) in 2005.
 
 And the Macbook? They get a gimmick touch bar. Apple is really out of touch with reality.
 
@@ -267,7 +267,7 @@ When the iPod was at its peak, Microsoft had "lost". They were out of the game. 
 
 And Amazon - a retail store - successfully launched the best infrastructure in the world and became synonymous with "Cloud" and Microsoft was still struggling to understand what Linux was.
 
-Failure after failure, instead of defending their low position, they finally decided to step up and move forward one ahead one step at a time. Refine. Evolve. Sustain.
+Failure after failure, instead of defending their low position, they finally decided to step up and move forward one step at a time. Refine. Evolve. Sustain.
 
 Now, Windows 10 recaptured the aura of XP at its best. It's doing incremental, and solid upgrades. First the Anniversary Edition, then the Creators Update and finally the most recent Fall Creators Update. All solid upgrades.
 
@@ -279,17 +279,17 @@ Steve Jobs died, and Apple died with him. They basically did nothing new ever si
 
 ## Apple doesn't care. Why should I?
 
-Microsoft played smart, they kept fixing and evolving, year after year. They lost the 90's generation. They recaptured the 2010's generation. And they started early, getting their attention from the Xbox all the way to Windows.
+Microsoft played smart, they kept fixing and evolving, year after year. They lost the 90s generation. They recaptured the 2010s generation. And they started early, getting their attention from the Xbox all the way to Windows.
 
 Seriously, the XBox Dashboard is better than the PS4's. I highly prefer it.
 
-And they are now in a good position. The players are inverted in the game. The "Think Different" now refers to Windows 10 and the PC hardware. Intel is playing conservative. NVIDIA build the best GPUs. There are many great options not available on the Mac.
+And they are now in a good position. The players are inverted in the game. The "Think Different" now refers to Windows 10 and the PC hardware. Intel is playing conservative. NVIDIA builds the best GPUs. There are many great options not available on the Mac.
 
 The jump from 32-bits to 64-bits and the necessities of the XBox even helped Microsoft rethink how to isolate and package their software. Even though the Windows Store is still a bad joke at this point.
 
-And Bill Gates was dead right in the mid 90's: the browser would render the Windows monopoly obsolete. And it did. On the bright side, you have the very same Chrome and Firefox browsers available on OS X, Windows 10, and any Linux distro. This means instant access to most of what people need: Gmail, Google Docs, Office 365, Dropbox, LastPass, Spotify, Slack, Discord, Twitter, Netflix, HBO, Hulu, etc.
+And Bill Gates was dead right in the mid-90s: the browser would render the Windows monopoly obsolete. And it did. On the bright side, you have the very same Chrome and Firefox browsers available on OS X, Windows 10, and any Linux distro. This means instant access to most of what people need: Gmail, Google Docs, Office 365, Dropbox, LastPass, Spotify, Slack, Discord, Twitter, Netflix, HBO, Hulu, etc.
 
-I hate Javascript-based desktop wrappers like the plague. Electron is dumb heavy. But, what can I do? At least powerful hardware and RAM come cheap these days, and we can afford browser tabs that eats up 100 MB each.
+I hate Javascript-based desktop wrappers like the plague. Electron is dumb heavy. But, what can I do? At least powerful hardware and RAM come cheap these days, and we can afford browser tabs that eat up 100 MB each.
 
 The browser is the new OS for the majority of people. Heck, most people can get around using Chromebooks! Everything else is on the phones, not the desktop. So hard tools are needed. Soft tools you already carry in your pocket.
 

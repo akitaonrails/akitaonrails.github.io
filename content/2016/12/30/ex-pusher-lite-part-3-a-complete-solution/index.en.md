@@ -20,7 +20,7 @@ The idea is very simple, it is a homage to [Pusher](https://pusher.com/). If you
 
 I built an entire solution inspired by Pusher, using the Phoenix framework, deployed to Digital Ocean and you can test it out right now, just sign up at [expusherlite.cm42.io](http://expusherlite.cm42.io).
 
-Once you sign up, you will have a secret token (don't disclose that, of course) and you will be below an Organization. Then you can go on and create Applications within that Organization. Each Application will have a unique token to identify it.
+Once you sign up, you will have a secret token (don't disclose that, of course) and you will be under an Organization. Then you can go on and create Applications within that Organization. Each Application will have a unique token to identify it.
 
 ![dashboard](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/576/expusherlite_cm42_io_registrations.png)
 
@@ -195,7 +195,7 @@ By the way, you can send messages using the API from the server-side if you want
 
 And this is it! You now have a Rails application with WebSockets. You can have your lunch and eat it too.
 
-If you want to see this example working, I published a demo app [over at Heroku](http://ex-pusher-lite-demo.herokuapp.com/). It's just a demo, it has no authentication, no cross-sripting sanitization, no nothing.
+If you want to see this example working, I published a demo app [over at Heroku](http://ex-pusher-lite-demo.herokuapp.com/). It's just a demo, it has no authentication, no cross-scripting sanitization, no nothing.
 
 [![chat demo](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/577/Screen_Shot_2016-12-30_at_17.42.22.png)](http://ex-pusher-lite-demo.herokuapp.com/)
 

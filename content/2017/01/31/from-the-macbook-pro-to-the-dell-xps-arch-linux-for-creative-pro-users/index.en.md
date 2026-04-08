@@ -16,37 +16,37 @@ draft: false
 
 As I've been reporting many posts ago, I'm switching to Linux full-time. In this article I'd like to show how to configure Arch Linux so it's suitable for Creative **Pro** Users, where the access to the secondary GPU is very important.
 
-If you're a Creative Pro User, you can't really run Final Cut Pro X (with Motion, Compressor), Logic Pro, Adobe's Photoshop and other apps. So you will have to change your workflow if you want to be in the Linux ecossystem. Fortunatelly, for many workflows Linux apps have matured quite nicely and you don't need to settle for low quality, "hack-ish" software.
+If you're a Creative Pro User, you can't really run Final Cut Pro X (with Motion, Compressor), Logic Pro, Adobe's Photoshop and other apps. So you will have to change your workflow if you want to be in the Linux ecosystem. Fortunately, for many workflows Linux apps have matured quite nicely and you don't need to settle for low quality, "hack-ish" software.
 
 Software developers don't ever need more than the cheap Intel integrated graphics, unless you want to install [Steam through Wine](https://wiki.archlinux.org/index.php/Steam/Wine) to play some demanding games.
 
-After a lot of research (a.k.a. [YouTube!](https://www.youtube.com/results?search_query=Dell+XPS+15+9550+review)) I've settled for the Dell XPS 15" (9550 model). It's an almost 1 year old SkyLake architecture using the NVIDIA Optimus Hybrid Intel + GTX960M.
+After a lot of research (a.k.a. [YouTube!](https://www.youtube.com/results?search_query=Dell+XPS+15+9550+review)) I've settled for the Dell XPS 15" (9550 model). It's an almost 1-year-old SkyLake architecture using the NVIDIA Optimus Hybrid Intel + GTX960M.
 
 ![Dell XPS 15" 9550](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/612/20170127_133009.jpg)
 
-To this day, nothing can beat the software+hardware cohesiveness of Apple. This can't be underestimated. The PC/Windows world is a lot better it's still plagued with unstable BIOS, unstable drivers, etc. If you're on Linux, it's even worse.
+To this day, nothing can beat the software+hardware cohesiveness of Apple. This can't be underestimated. The PC/Windows world is a lot better, but it's still plagued with unstable BIOS, unstable drivers, etc. If you're on Linux, it's even worse.
 
-Here's the first **protip**: avoid super brand new models, most of them won't have stable drivers even for Windows 10, let alone Linux. Let the Windows guys suffer the first couple of months; give Dell, [NVIDIA](http://windowsreport.com/nvidia-driver-crash-windows-10/) and Intel time to fix the mess releasing more stable BIOS firmware and drivers. If you really want to buy one of the 2017 brand new Kaby Lake models, you're in a russian roulette situation. Even first generation Macbook models usually [present trouble](http://www.digitaltrends.com/computing/apple-releases-macos-sierra-10123-update/). As a rule of thumb, do not buy on day 1, wait at the very least 3 months. You are warned.
+Here's the first **protip**: avoid super brand new models, most of them won't have stable drivers even for Windows 10, let alone Linux. Let the Windows guys suffer the first couple of months; give Dell, [NVIDIA](http://windowsreport.com/nvidia-driver-crash-windows-10/) and Intel time to fix the mess releasing more stable BIOS firmware and drivers. If you really want to buy one of the 2017 brand new Kaby Lake models, you're in a Russian roulette situation. Even first generation Macbook models usually [present trouble](http://www.digitaltrends.com/computing/apple-releases-macos-sierra-10123-update/). As a rule of thumb, do not buy on day 1, wait at the very least 3 months. You are warned.
 
 Out of all the early-2016 machines that most Linux distros can support reasonably well, I believe the [Dell XPS](http://www.anandtech.com/show/10116/the-dell-xps-15-9550-review) series, [Lenovo Thinkpad X1 Yoga](http://www.anandtech.com/show/10697/the-lenovo-thinkpad-x1-yoga-review), and possibly [Asus Zenbook Pro](http://www.digitaltrends.com/computing/dell-xps-15-vs-asus-zenbook-pro-ux501-battle-of-the-plus-sized-premiums/) and [HP ProBook](http://laptopmedia.com/review/hp-probook-450-g3-455-g3-review-what-a-budget-business-notebook-should-look-like/) are quite good nowadays.
 
 But in most categories, the XPS series is the one to beat. Dell really did a pretty good job this time around.
 
-The keyboard, as with most PCs, is mediocre, plastic-y, a little bit wobbly, with good enough travel but with a sudden hard click without enough resistence. For 99% of the people I believe it's fairly good, but not so much for really fast touch-typists.
+The keyboard, as with most PCs, is mediocre, plastic-y, a little bit wobbly, with good enough travel but with a sudden hard click without enough resistance. For 99% of the people I believe it's fairly good, but not so much for really fast touch-typists.
 
-The touchpad is one of the best in any PC notebook, but then again, most PC touchpads are shamelessly bad, specially with gestures more complicated than a 2 finger scroll. This is another area where the Mac is still untouched. That said, the Dell one is serviceable and should work well enough, with a few undetected palm rejection that will annoy you now and then.
+The touchpad is one of the best in any PC notebook, but then again, most PC touchpads are shamelessly bad, especially with gestures more complicated than a 2 finger scroll. This is another area where the Mac is still untouched. That said, the Dell one is serviceable and should work well enough, with a few palm-rejection misses that will annoy you now and then.
 
-Display monitor is a different story: the XPS 15's gorgeous 4K IPS display is superb, far surpassing the Macbook's Retina Displays. Samsung PCIe NVMe M.2 SSDs is also the best in it's class. The aluminum enclosure is simple but well machined, and the carbon fiber finish is a welcome addition to make a machine that you can really enjoy and be proud to carry around.
+Display monitor is a different story: the XPS 15's gorgeous 4K IPS display is superb, far surpassing the Macbook's Retina Displays. Samsung PCIe NVMe M.2 SSDs is also the best in its class. The aluminum enclosure is simple but well machined, and the carbon fiber finish is a welcome addition to make a machine that you can really enjoy and be proud to carry around.
 
 ![Dell XPS Display](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/613/20170124_211855.jpg)
 
 If you don't want to tinker with the hardware configuration too much, usually the safest bet is installing Ubuntu and even then [it's not](https://ubuntuforums.org/showthread.php?t=2317843) going to be perfect.
 
-Specially with HiDPI displays (over Full-HD) Linux is still lagging behind. GNOME, KDE kinda support it, but other desktop environments have mixed results, and old applications are still not supporting it as they should. If you're using LTS distros with old packages, you will find a few applications doing HiDPI wrong. [Libreoffice](https://bugs.documentfoundation.org/show_bug.cgi?id=99508) and [Spotify](https://community.spotify.com/t5/Desktop-Linux-Windows-Web-Player/Linux-client-barely-usable-on-HiDPI-displays/td-p/1067272) to name a few. And if you're like me, using a multi monitor with different DPIs, you're out of luck. Either you're using the notebook with the lid closed (so you only have one external monitor to worry about) or you will have the texts all super small in the HiDPI primary monitor in order to have the correct DPI in the second external monitor. One fallback is to configure the 4K display to downscale to Full-HD (1080p). And then again, what's the point of having a 4K display if you can't use it properly? So, do not buy the 4K unless you understand this.
+Especially with HiDPI displays (over Full-HD) Linux is still lagging behind. GNOME, KDE kinda support it, but other desktop environments have mixed results, and old applications are still not supporting it as they should. If you're using LTS distros with old packages, you will find a few applications doing HiDPI wrong. [Libreoffice](https://bugs.documentfoundation.org/show_bug.cgi?id=99508) and [Spotify](https://community.spotify.com/t5/Desktop-Linux-Windows-Web-Player/Linux-client-barely-usable-on-HiDPI-displays/td-p/1067272) to name a few. And if you're like me, using a multi monitor with different DPIs, you're out of luck. Either you're using the notebook with the lid closed (so you only have one external monitor to worry about) or you will have the texts all super small in the HiDPI primary monitor in order to have the correct DPI in the second external monitor. One fallback is to configure the 4K display to downscale to Full-HD (1080p). And then again, what's the point of having a 4K display if you can't use it properly? So, do not buy the 4K unless you understand this.
 
 Both MacOS and Windows handle this situation far better. And in MacOS I never experienced any HiDPI problem. Not once. Apple was much better pushing a higher standard than the rest of the industry, and this cohesiveness and no need to tinker drivers and configuration is super valuable. With Macs, you can really just boot and use. With Windows, you're probably mostly ok unless there are driver issues. And with Linux, you must expect a fair amount of tinkering to have the basis covered.
 
-New PC notebooks are also coming with several weird configurations that makes sense for Windows, but that makes Linux distros struggle a bit. Every time you must start by configuring the BIOS to disable stuff like Secure Boot, changint to AHCI issues, etc. So let's dive right into it.
+New PC notebooks are also coming with several weird configurations that make sense for Windows, but that make Linux distros struggle a bit. Every time you must start by configuring the BIOS to disable stuff like Secure Boot, changing to AHCI issues, etc. So let's dive right into it.
 
 ### BIOS Setup
 
@@ -91,7 +91,7 @@ I am becoming an Arch enthusiast myself, but to tweak it to work on a modern not
 
 There are several distros based on Arch. Arch Anywhere and Antergos are mostly Arch "installers" where the main repository sources are still vanilla Arch and they try to make the install process easier than you having to find your way through a bare bone command line shell.
 
-Manjaro is more of an independent distro, where the main sources point to Manjaro first, so they can test the most recent packages and hold on to them for a bit longer so rogue packages don't break your system too often. But you still have raw access to AUR packages. The main selling point being a **much** better installer with a more sofisticated auto-partitioning software than Arch Anywhere and their own Hardware Detection software [MHWD](https://wiki.manjaro.org/index.php?title=Manjaro_Hardware_Detection_Overview).
+Manjaro is more of an independent distro, where the main sources point to Manjaro first, so they can test the most recent packages and hold on to them for a bit longer so rogue packages don't break your system too often. But you still have raw access to AUR packages. The main selling point being a **much** better installer with a more sophisticated auto-partitioning software than Arch Anywhere and their own Hardware Detection software [MHWD](https://wiki.manjaro.org/index.php?title=Manjaro_Hardware_Detection_Overview).
 
 For the most part it did work properly although I still had to tweak the Graphics configuration as it opts for the open source Nouveau drivers first. Trust me: opt for the proprietary binaries.
 
@@ -131,7 +131,7 @@ sudo mhwd -i pci video-hybrid-intel-nvidia-bumblebee
 
 Again, I am considering the XPS 9550 which has the Intel-Nvidia Optimus/hybrid configuration. Read Manjaro's [Configuring Graphics](https://wiki.manjaro.org/index.php/Configure_Graphics_Cards) page on the subject.
 
-I did however stumbled upon a strange problem. I am using **Linux 4.9** kernel:
+I did however stumble upon a strange problem. I am using **Linux 4.9** kernel:
 
 ```
 $ uname -a
@@ -157,7 +157,7 @@ Just to be safe, I uninstalled the `linux44` package and any other `linux44-*` p
 ```
 sudo pacman -Ss linux44 | grep installed
 # sudo pacman -R linux44-(name of the package)
-```-
+```
 
 Now I have this:
 
@@ -197,7 +197,7 @@ You can monitor the Nvidia card with the `nvidia-smi` command and it will show s
 
 ![nvidia-smi monitoring](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/609/Screenshot_from_2017-01-31_16-43-46.png)
 
-This should cover Pro 3D modelling if you need.
+This should cover Pro 3D modeling if you need.
 
 ![Blender](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/615/Screenshot_from_2017-01-31_17-11-18.png)
 
@@ -275,7 +275,7 @@ This will keep monitoring the GPU every half second. And the application will sh
 
 I think this is the most you can get out of your hardware with Pro-level multimedia applications. I am not a professional using Blender, Kdenlive, Darktable, or Gimp, but it's good to know I can use them for my small needs. Pro users will be able to take more advantage of this machine with this configuration.
 
-As I said in the beginning, if you're really a Pro User, always on the move and in need to quickly make changes to you multimedia projects on-the-go, you will probably be better off with Apple's stack, a Macbook Pro with Final Cut Pro. Don't forget that Final Cut Pro and the other Apple Pro software are super optimized for the Mac hardware, being able to export videos orders of magnitude faster than Premiere, for example.
+As I said in the beginning, if you're really a Pro User, always on the move and in need to quickly make changes to your multimedia projects on-the-go, you will probably be better off with Apple's stack, a Macbook Pro with Final Cut Pro. Don't forget that Final Cut Pro and the other Apple Pro software are super optimized for the Mac hardware, being able to export videos orders of magnitude faster than Premiere, for example.
 
 But you may be a Creative Pro User in the Games industry, or even Mobile development, 3D Video Animation or Post Production, or working in a mixed team with software engineers. And having the ability to build your multimedia assets on a Linux platform can make it interesting for future integration workflows.
 

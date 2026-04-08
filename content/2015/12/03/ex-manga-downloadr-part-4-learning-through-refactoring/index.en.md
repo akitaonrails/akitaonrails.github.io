@@ -25,7 +25,7 @@ Finished in 13.5 seconds (0.1s on load, 13.4s on tests)
 12 tests, 0 failures
 ```
 
-The tests are taking long because I made a choice for the MangaReader and Mangafox unit tests to actually go online and fetch from the sites. It takes longer to run the suite but I know that if it breaks and I didn't touch that code, the source websites changed their formats and I need to change the parser. I could have added fixtures to make the tests run faster, but the point in my parser is for them to be correct.
+The tests take a long time because I made a choice for the MangaReader and Mangafox unit tests to actually go online and fetch from the sites. It takes longer to run the suite but I know that if it breaks and I didn't touch that code, the source websites changed their formats and I need to change the parser. I could have added fixtures to make the tests run faster, but the point of my parser is for them to be correct.
 
 ### Macros to the Rescue!
 
@@ -99,7 +99,7 @@ end
 
 (Listing 1.3)
 
-There are a lot of details to consider when writing a macro and I recommend reading the documentation on [Macros](http://elixir-lang.org/getting-started/meta/macros.html). The code is basically copying the function body from the "<tt>ChapterPage.pages/1</tt>" (Listing 1.1) and pasting into the "<tt>quote do .. end</tt>" block (Listing 1.3).
+There are a lot of details to consider when writing a macro and I recommend reading the documentation on [Macros](http://elixir-lang.org/getting-started/meta/macros.html). The code is basically copying the function body from the "<tt>ChapterPage.pages/1</tt>" (Listing 1.1) and pasting it into the "<tt>quote do .. end</tt>" block (Listing 1.3).
 
 Inside that code we have "<tt>unquote(link)</tt>" and "<tt>unquote(expression)</tt>". You also must read the documentation on ["Quote and Unquote"](http://elixir-lang.org/getting-started/meta/quote-and-unquote.html). It just expands this "external" code inside the macro code to defer execution until the macro quote code is actually executed, instead of running it at that exact moment. I know, tricky to wrap your head around this the first time.
 
@@ -107,7 +107,7 @@ The bottom line is: whatever code is inside the "quote" block will be "inserted"
 
 The resulting code will resemble the original code in Listing 1.1.
 
-To make it simpler, if you were in Javascript this would be a similar code:
+To make it simpler, if you were in Javascript this would be similar code:
 
 ```javascript
 function fetch(url) {
@@ -118,7 +118,7 @@ function pages(page_link) {
 }
 ```
 
-"Quote" would be like the string body in an eval and "unquote" just concatenating the value you passed inside the code being eval-ed. This is a crude metaphor as "quote/unquote" is **way** more powerful and cleaner than ugly "eval" (you shouldn't be using, by the way!) But this metaphor should do to make you understand the code above.
+"Quote" would be like the string body in an eval and "unquote" just concatenating the value you passed inside the code being eval-ed. This is a crude metaphor as "quote/unquote" is **way** more powerful and cleaner than ugly "eval" (which you shouldn't be using, by the way!) But this metaphor should do to make you understand the code above.
 
 Another place I used a macro was to save the images list in a dump file and load it later if the tool crashes for some reason, in order not to have to start over from scratch. The original code was like this:
 
@@ -207,7 +207,7 @@ This is macros combined with [Keyword Lists](http://elixir-lang.org/getting-star
 
 ### More Macros
 
-Another opportunity to refactor were the "mangareader.ex" and "mangafox.ex" modules that were just used in the unit tests "mangareader_test.ex" and "mangafox_test.ex". This is the old "mangareader.ex" code:
+Another opportunity to refactor was the "mangareader.ex" and "mangafox.ex" modules that were just used in the unit tests "mangareader_test.ex" and "mangafox_test.ex". This is the old "mangareader.ex" code:
 
 ```ruby
 defmodule ExMangaDownloadr.MangaReader do
@@ -269,7 +269,7 @@ defmodule Pxblog.PageController do
   ...
 ```
 
-The macros are open in a Phoenix file and available in the "web/web.ex" module, so I just copied the same behavior. And now I have 2 less files to worry about.
+The macros are open in a Phoenix file and available in the "web/web.ex" module, so I just copied the same behavior. And now I have 2 fewer files to worry about.
 
 ### Tiny refactorings
 
@@ -344,4 +344,4 @@ def mangareader do
 end
 ```
 
-And this is just 1 feature between many other syntax improvements and support for the newest [Erlang R18](http://www.erlang.org/news/88). Keep an eye on both!
+And this is just 1 feature among many other syntax improvements and support for the newest [Erlang R18](http://www.erlang.org/news/88). Keep an eye on both!

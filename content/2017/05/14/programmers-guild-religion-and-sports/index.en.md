@@ -8,17 +8,17 @@ tags:
 draft: false
 ---
 
-DHH did a very good opening keynote to RailsConf'17 explaining about how bullshitty is the current trend of the developers' delusion that they are making "rational", "fact-based" choices when in reality they are mostly attaching to the underlying "values" of some community. Something more akin of "religion" (faith-based choices) than proper science.
+DHH did a very good opening keynote to RailsConf'17 explaining about how bullshitty the current trend of developers' delusion is — that they are making "rational", "fact-based" choices when in reality they are mostly attaching to the underlying "values" of some community. Something more akin to "religion" (faith-based choices) than proper science.
 
 {{< youtube id="Cx6aGMC6MjU" >}}
 
 My language is "faster". My framework is "more elegant". My tool is "more productive". My community is "more friendly". All **bullshitty** reasons to choose something because those reasons don't really matter.
 
-Although DHH did a good job describing the reality of the developers choices, he didn't go as far as to explain **why** we all do it this way. Including himself. Including myself.
+Although DHH did a good job describing the reality of developers' choices, he didn't go as far as to explain **why** we all do it this way. Including himself. Including myself.
 
 The religion framework theory does explain some of the behaviors, I'd go farther still.
 
-Most developers are more akin of sports fans (or **fanatics**, as is the root of the word "fan").
+Most developers are more akin to sports fans (or **fanatics**, as is the root of the word "fan").
 
 Check out some items from the article ["Why Sports Fans are Sports Fans"](http://waitbutwhy.com/2014/03/sports-fans-sports-fans.html):
 
@@ -36,9 +36,9 @@ Developer niches feel more like sports teams in competition. There must be "winn
 
 Fans of losing teams feel like they need to have increased loyalty to get the utmost reward.
 
-Testosterone levels rise when discussing nonsense over Hackenews. Threads get really deep, each person shooting bullshitty "evidence" to "prove" their point. And every argument has an easy counter-argument, and the threads go on and on indefinitely. And every person writing will never agree to the contrary. And no one will ever switch sides based on the arguments laid out on those threads. Yet, they still waste lots of time writing anyway. Madness.
+Testosterone levels rise when discussing nonsense over Hacker News. Threads get really deep, each person shooting bullshitty "evidence" to "prove" their point. And every argument has an easy counter-argument, and the threads go on and on indefinitely. And every person writing will never agree to the contrary. And no one will ever switch sides based on the arguments laid out on those threads. Yet, they still waste lots of time writing anyway. Madness.
 
-People - specially young people - like to have a sense of belonging, a sense of desindividualization, dissolved responsabilities. Which is some of what I wrote a couple years ago on the [current nonsense trend on functional languages](http://www.akitaonrails.com/2015/10/28/personal-thoughts-on-the-current-functional-programming-bandwagon).
+People - especially young people - like to have a sense of belonging, a sense of deindividuation, dissolved responsibilities. Which is some of what I wrote a couple years ago on the [current nonsense trend on functional languages](http://www.akitaonrails.com/2015/10/28/personal-thoughts-on-the-current-functional-programming-bandwagon).
 
 > As Mike Perry describes in this post the most passionate fans tend to identify themselves as an integral part of the team they are supporting, with some of them – clearly – feeling less responsible for their individual behaviour. When disinhibition is combined with deindividuation – a loss of self-awareness and a sense of diffused responsibility – fans simply don't care anymore about what anyone else might think or feel. Deindividuation weakens normal restraints without which, fans are more easily influenced by their surroundings; this is when fans start acting – really – weird, in either a pleasant or less pleasant way.
 
@@ -48,7 +48,7 @@ People - specially young people - like to have a sense of belonging, a sense of 
 
 Tech conferences are like the weekend sports games. People like to feel validated being in the middle of equal-minded groups.
 
-Same as with sports, developers feel that their "teams" (technologies, companies) are extensions of themselves. Worse, they feel like they describe their personalities. Which is why developers response so passioantely to contrary arguments: it feels like an aggression to their own selves.
+Same as with sports, developers feel that their "teams" (technologies, companies) are extensions of themselves. Worse, they feel like they describe their personalities. Which is why developers respond so passionately to contrary arguments: it feels like an aggression to their own selves.
 
 > "When we look at motivation for following a sport team, group affiliation is one of the top ones," says Wann. "Identifying strongly with a salient local team where other fans are in the environment — that's a benefit to social-psychological well-being."
 
@@ -56,15 +56,15 @@ Same as with sports, developers feel that their "teams" (technologies, companies
 
 > Psychological Science - [Read More](https://www.psychologicalscience.org/observer/sports-complex-the-science-behind-fanatic-behavior#.WRm0CHVierx)
 
-It's all a big show, you're the audience. Just don't fool yourself thinking that you're been "scientifical" in your choices.
+It's all a big show, you're the audience. Just don't fool yourself thinking that you've been "scientific" in your choices.
 
 We are all victims of heavy **Cognitive Bias**, which blinds us to the truth:
 
->  [Here's a great post](http://blogs.scientificamerican.com/guest-blog/2011/09/22/cognitive-biases-in-sports-the-irrationality-of-coaches-commentators-and-fans/) by Sam McNerney ([@WhyWeReason](http://twitter.com/WhyWeReason)) explaining cognitive bias. This is the phenomenon where all of us only look for what confirms their intuitions and ignore what contradictions their intuitions, what psychologists call confirmation bias. Confirmation bias helps explain why some fans will boo every single referee call against their team and English soccer fans will – still – argue with Germans about [whether the ball did or did not pass the line in 1966](http://www.youtube.com/watch?v=__MJV11nRqU)(!). Fans automatically see the world as they want to, not how it is.
+>  [Here's a great post](http://blogs.scientificamerican.com/guest-blog/2011/09/22/cognitive-biases-in-sports-the-irrationality-of-coaches-commentators-and-fans/) by Sam McNerney ([@WhyWeReason](http://twitter.com/WhyWeReason)) explaining cognitive bias. This is the phenomenon where all of us only look for what confirms their intuitions and ignore what contradicts their intuitions, what psychologists call confirmation bias. Confirmation bias helps explain why some fans will boo every single referee call against their team and English soccer fans will – still – argue with Germans about [whether the ball did or did not pass the line in 1966](http://www.youtube.com/watch?v=__MJV11nRqU)(!). Fans automatically see the world as they want to, not how it is.
 
 > Sports Networker - [Read more](http://www.sportsnetworker.com/2012/02/15/the-psychology-of-sports-fans-what-makes-them-so-crazy/)
 
-More interestingly, the same way with sports fans of losing teams, people find ways to cope. And superstition is one them.
+More interestingly, the same way with sports fans of losing teams, people find ways to cope. And superstition is one of them.
 
 > Superstitions are an integral part of sports, and they may also be yet another way fans cope with their team's performance.
 
@@ -82,7 +82,7 @@ What I always have to say of all the nonsense is:
 
 * If being the "most elegant" was really a real concern, we would not be concerned about being the fastest or the most secure, as they usually go in opposite directions.
 
-The craft of an engineer, or any professional by that matter, is being able to choose between different compromises, and keep balancing out. Never blindly committing loyalty to a specific group or thinking. Amateurs commit loyalty to someone else. Professionals hold themselves responsibles for their own choices, and they compromise.
+The craft of an engineer, or any professional for that matter, is being able to choose between different compromises, and keep balancing out. Never blindly committing loyalty to a specific group or way of thinking. Amateurs commit loyalty to someone else. Professionals hold themselves responsible for their own choices, and they compromise.
 
 Scalability, Maintainability, Reliability, every "-ability" we add to the list is a compromise. You can't have your cake and eat it too. You want more, you pay for more. Because every technology is a combination of compromises, you can't have a clear single winner or loser. Everything will win in some aspects and lose in others.
 
@@ -96,6 +96,6 @@ Clear "good guys" and "bad guys" only exist in fairy tales and bed-time stories 
 
 At the end of the day, DHH is right. It doesn't matter the tech specs of [PS4 Pro vs Xbox One S vs Nintendo Switch](http://www.techradar.com/news/xbox-one-s-vs-ps4-pro-vs-nintendo-switch-which-is-better). It doesn't matter the amount of teraflops. It doesn't matter the bandwidth. It doesn't matter native 4K or checkerboarding 4K. If I like Zelda, I will play in the Switch. If I like Forza I will play an XBox. If I like Uncharted I will play a PS4. And if I can afford it, I will have all of them. If I can't afford it, I will choose whatever I want to play right now knowing that I can switch to another platform without having to justify myself through tech specs.
 
-Either I subscribe to the [Rails Doctrine](http://rubyonrails.org/doctrine/) or to [The Zen of Python](https://www.python.org/dev/peps/pep-0020/). It doesn't matter. Will I make Zelda out of it? Otherwise, any "evidence" you think you have to counter argue my choice is utter bullshit. Don't even try.
+Either I subscribe to the [Rails Doctrine](http://rubyonrails.org/doctrine/) or to [The Zen of Python](https://www.python.org/dev/peps/pep-0020/). It doesn't matter. Can I play Zelda on it? Otherwise, any "evidence" you think you have to counter argue my choice is utter bullshit. Don't even try.
 
 But of course, you should use Ruby if you're a rational developer ;-)

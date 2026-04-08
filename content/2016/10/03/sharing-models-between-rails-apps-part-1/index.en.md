@@ -15,9 +15,9 @@ That would be the quick answer if you ask any developer how to share business lo
 
 Although it makes sense in many situations, it's not a good answer all the time.
 
-My TL;DR for some situations is that you can organize your models logic as [ActiveSupport::Concerns](http://api.rubyonrails.org/classes/ActiveSupport/Concern.html) (or plain Ruby Modules if you will) and move them out to a Rubygem that your applications can consume.
+My TL;DR for some situations is that you can organize your model logic as [ActiveSupport::Concerns](http://api.rubyonrails.org/classes/ActiveSupport/Concern.html) (or plain Ruby Modules if you will) and move them out to a Rubygem that your applications can consume.
 
-Notice that I am only speaking of Models, not Controllers or Views. To share those you would need a full blown Rails Engine instead. But many cases I've seen wanted to just share the business logic between applications while having separated front-end logic.
+Notice that I am only speaking of Models, not Controllers or Views. To share those you would need a full-blown Rails Engine instead. But in many cases I've seen, the goal was to just share the business logic between applications while having separate front-end logic.
 
 A small example of this scenario is the open sourced project I've been working on in the last few weeks. [Central](https://github.com/Codeminer42/cm42-central), which is a Pivotal Tracker/Trello alternative - if you're interested.
 
@@ -41,25 +41,25 @@ And I have this dependency in the `Gemfile`:
 gem 'central-support', github: 'Codeminer42/cm42-central-support', branch: 'master', require: 'central/support'
 ```
 
-Whenever I change the concerns, I do a `bundle update central-support` in the projects (this is the one caveat to have in mind to avoid dealing with outdated models).
+Whenever I change the concerns, I do a `bundle update central-support` in the projects (this is the one caveat to keep in mind to avoid dealing with outdated models).
 
 This was possible because most of those models were mature and stable and I will not be changing them often. I don't recommend exposing unstable dependencies (as gems or APIs, it doesn't matter), because this is a recipe for huge headaches of cascading breaking changes due to outdated dependencies that are changing too often.
 
 > You should ONLY expose business logic that is reasonably stable (changes only every week or so).
 
-The whole endeavor was to build a certain Rubygems structure, organize the original models into Concerns (which breaks no behavior), make sure specs are still passing, and them move the content (models and specs) over to the new Rubygems and make sure the specs pass there.
+The whole endeavor was to build a certain Rubygems structure, organize the original models into Concerns (which breaks no behavior), make sure specs are still passing, and then move the content (models and specs) over to the new Rubygems and make sure the specs pass there.
 
-That's how I built a secondary open source dependency for Central, called [Central Support](https://github.com/Codeminer42/cm42-central-support). As many gems, its main file [lib/central/support.rb](https://github.com/Codeminer42/cm42-central-support/blob/master/lib/central/support.rb) is nothing but a bunch of 'require's to load all the dependencies.
+That's how I built a secondary open source dependency for Central, called [Central Support](https://github.com/Codeminer42/cm42-central-support). Like many gems, its main file [lib/central/support.rb](https://github.com/Codeminer42/cm42-central-support/blob/master/lib/central/support.rb) is nothing but a bunch of 'require's to load all the dependencies.
 
 So I methodically organized logic as concerns, such as [lib/central/support/concerns/team_concern/association.rb](https://github.com/Codeminer42/cm42-central-support/blob/master/lib/central/support/concerns/team_concern/associations.rb), which is just the extraction of the Active Record associations from the 'Team' model.
 
-Cut from Central, Paste into Support. When all relevant logic has been moved, I could move the entire Team model spec, mostly without any changes, and make it run. Every time I moved a bit, I `bundle update`d the gem and ran the main spec suite to make sure nothing broke.
+Cut from Central, Paste into Support. When all relevant logic has been moved, I could move the entire Team model spec, mostly without any changes, and make it run. Every time I moved a piece, I `bundle update`d the gem and ran the main spec suite to make sure nothing broke.
 
 And this is the difficult part: make a sandbox where those concerns could run and be tested.
 
 To begin, I needed to build a minimal Rails app inside the spec folder, at `spec/support/rails_app`. And there I could put fake models that include the concerns I had just extracted from Central.
 
-There is scarce documentation on how to do that, but I think you can just do `rails new` and start from there, or copy my `rails_app` folder for the bare minimum. My case is simpler because this gem is not to be general purpose, so I don't need to run it against different Rails versions, for example.
+There is scarce documentation on how to do that, but I think you can just do `rails new` and start from there, or copy my `rails_app` folder for the bare minimum. My case is simpler because this gem is not meant to be general-purpose, so I don't need to run it against different Rails versions, for example.
 
 This internal test app must have a carefully crafted [`Gemfile`](https://github.com/Codeminer42/cm42-central-support/blob/master/spec/support/rails_app/Gemfile):
 
@@ -88,7 +88,7 @@ source 'https://rubygems.org'
 eval_gemfile File.join(File.dirname(__FILE__), "spec/support/rails_app/Gemfile")
 ```
 
-Most tutorials to build a Rubygem will add a line to load dependencies from the gemspec, but here we are replacing it for the test app's Gemfile. This is the manifest that will be loaded when we run `bundle exec rspec`, for example.
+Most tutorials to build a Rubygem will add a line to load dependencies from the gemspec, but here we are replacing it with the test app's Gemfile. This is the manifest that will be loaded when we run `bundle exec rspec`, for example.
 
 Speaking of which, this is the [`spec/rails_helper.rb`](https://github.com/Codeminer42/cm42-central-support/blob/master/spec/rails_helper.rb):
 
@@ -154,7 +154,7 @@ If you go back in the Central project, some commits back, you will find the very
 
 If I had to rewrite all or a big chunk of the code, it would've been a more expensive choice and I would probably have deferred it to another time and focus on more valuable features first.
 
-This approach is not perfect but it was super cheap. I could move all the relevant business logic out of the main project without having to rewrite anything but a few wiring code. The new dependency gem received all the relevant bits and specs, and everything just runs.
+This approach is not perfect but it was super cheap. I could move all the relevant business logic out of the main project without having to rewrite anything but a few lines of wiring code. The new dependency gem received all the relevant bits and specs, and everything just runs.
 
 So, if you have 2 or more Rails apps that could share the same models, this is how you can start it. Of course, there are always a lot of caveats to keep in mind.
 

@@ -11,7 +11,7 @@ draft: false
 
 **Update 08/05:** Bob Martin's full keynote is now available at RailsConf's [Blip.TV](http://railsconf.blip.tv/file/2089545/) page. Definitely go check it out!
 
-It seems that O'Reilly promised to deliver – at the very least – the main keynote recordings, so unfortunately we will have Tim Ferris, but much fortunately we will have Uncle Bob. Definitely the best talk I've seen in eons. This particular snippet comes from the Q/A session, where Bob answers the question: _"can you be too professional?"_ Where many would be discussing for hours, he was able to distill it in a very simple and elegant way. Check it out:
+It seems that O'Reilly promised to deliver – at the very least – the main keynote recordings, so unfortunately we will have Tim Ferris, but much fortunately we will have Uncle Bob. Definitely the best talk I've seen in eons. This particular snippet comes from the Q/A session, where Bob answers the question: _"can you be too professional?"_ Where many would be debating for hours, he was able to distill it in a very simple and elegant way. Check it out:
 
 <video controls>
 <source src="https://s3.us-east-2.amazonaws.com/blip.tv/Akitaonrails-UncleBobMartinKeynoteRailsConf2009128.mp4">

@@ -12,15 +12,15 @@ translationKey: chatting-jamis-buck
 
  ![](http://s3.amazonaws.com/akitaonrails/assets/2007/8/3/245186199_71f55cc3c7.jpg)
 
-This is another big interview. This time with Jamis Buck, the programmer that helped David Hansson himself right at the beggining of Rails, at 37signals.
+This is another big interview. This time with Jamis Buck, the programmer that helped David Hansson himself right at the beginning of Rails, at 37signals.
 
 Today most renowned for his achievements in Capistrano and a lot of other Ruby libraries as sqlite-ruby bindings and Net::SSH. Jamis was very kind to give us the opportunity to know more about his career and the beginnings of the Ruby on Rails story.
 
-**AkitaOnRails:** Ok, so let’s get started. first thing I always ask my guests: what’s your background? I mean, when, how, why did you start on computer programming? Did it began the classic way, as a hobby, or was it a more recent thing because of career or something else?
+**AkitaOnRails:** Ok, so let’s get started. first thing I always ask my guests: what’s your background? I mean, when, how, why did you start on computer programming? Did it begin the classic way, as a hobby, or was it a more recent thing because of career or something else?
 
 **Jamis Buck:** I started programming when I was in the 10th grade, when my mom got a brand-spanking-new Tandy personal computer. It had all of 20 megs of disk space, and came with [GW-BASIC](http://en.wikipedia.org/wiki/GW-BASIC). I’d done some programming before, turtle-graphics and a bit of BASIC, but that Tandy was when I got serious about it. I taught myself GW-BASIC from the little reference book the computer came with and wrote a few simple games and utilities. Then I taught myself Turbo Pascal and Turbo C++ in 11th and 12th grades, and it’s gone from there :)
 
-**AkitaOnRails:** Then you decided to go for CS in college? I read at your profile in [WorkingWithRails](http://www.workingwithrails.com/person/5309-jamis-buck) that you’re a repentant Java programmer? How long have you programming in Java?
+**AkitaOnRails:** Then you decided to go for CS in college? I read at your profile in [WorkingWithRails](http://www.workingwithrails.com/person/5309-jamis-buck) that you’re a repentant Java programmer? How long have you been programming in Java?
 
 **Jamis Buck:** Yeah, I then jumped into Computer Science when I got to college. I graduated a bit late, in 1999, after working full-time for the university ([BYU](http://www.byu.edu/webapp/home/index.jsp)) as a programmer for a couple of years. That was where I did all my Java work. We were actually doing web-apps in C, which was not as insane as it sounds! But then we had a change of leadership when a new CIO came in, and he basically issued a blind mandate: _“learn Java, ditch C!”_ So we had to massively retool and get certified and so forth. I was on the team that led the research into what Java tools we should use, and so got a lot of experience that way. I did Java work full-time there for about 2 years, until [37signals](http://37signals.com/) came along in Feb 2005 and made me a better offer, and I’ve never looked back!
 
@@ -128,7 +128,7 @@ When I first released Capistrano, a year and a half ago or so, it was called Swi
 
 **Jamis Buck:** I hear some news, but I’ve trimmed my newsfeed quite a bit. I think I only subscribe to 30 or 40 feeds these days. It was really exciting to go to the Czech Republic and see the excitement there about Rails. It reminded me a lot of how things were in the US a couple of years ago.
 
-The rise of Rails has been incredible. There have been growing pains, of course. With wider adoption you begin to accumulate people who aren’t passionate about the tool, and only want to learn it for the resumÃ©, or because a client has asked for it, and I think that dilutes the waters quite a bit. But there will always be a core of passionate users and that’s what makes the community so wonderful. It’s been a really amazing experience to have been a part of that core, almost since the beginning of Rails.
+The rise of Rails has been incredible. There have been growing pains, of course. With wider adoption you begin to accumulate people who aren’t passionate about the tool, and only want to learn it for the resumé, or because a client has asked for it, and I think that dilutes the waters quite a bit. But there will always be a core of passionate users and that’s what makes the community so wonderful. It’s been a really amazing experience to have been a part of that core, almost since the beginning of Rails.
 
 **AkitaOnRails:** You have the rare opportunity of seeing all this from a VIP perspective near Jason and David. And of course, yourself, being one the propellers of the community. Many people think of David as an [arrogant](http://www.flickr.com/photos/eugevon/130610241/) :-) I can perfectly understand his opinionated point of view. What do you think of it, from the perspective of someone who actually know the man?
 
@@ -156,7 +156,7 @@ The rise of Rails has been incredible. There have been growing pains, of course.
 
 **AkitaOnRails:** Couldn’t be better. Any plans for coming here?
 
-**Jamis Buck:** Ha, none in the immediately future :) I’ve got a baby coming in September, which puts a damper on travel plans :) I’d love to visit Brazil someday, though.
+**Jamis Buck:** Ha, none in the immediate future :) I’ve got a baby coming in September, which puts a damper on travel plans :) I’d love to visit Brazil someday, though.
 
 **AkitaOnRails:** Didn’t know that. Congratulations!
 

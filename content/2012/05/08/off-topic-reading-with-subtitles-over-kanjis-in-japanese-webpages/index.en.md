@@ -47,8 +47,8 @@ Finally, it seems like you must manually make Furigana Inserter aware of Mecab b
 ln s /usr/local/lib/libmecab.dylib ~/Library/Application\ Support/Firefox/Profiles/454dy2eg.default/extensions/furiganainserter@zorkzero.net/mecab/libmecab.dylib  
 --
 
-Understand that the Firefox Profile folder will have a different name in your computer. The one in the example is in my Mac. Open the terminal and tab to autocomplete each folder as you type and it should work just fine.
+Understand that the Firefox Profile folder will have a different name on your computer. The one in the example is in my Mac. Open the terminal and tab to autocomplete each folder as you type and it should work just fine.
 
-Restart Firefox, right-click in Japanese pages and you will have a "Enable Furigana" option waiting for you. Rikaichan seems to misbehave when hovering over Furigana enabled Kanji, so you may need to disable Furigana to use Rikaichan. But it's a good compromise and may open a whole lot of new content in Japanese for us to consume.
+Restart Firefox, right-click in Japanese pages and you will have an "Enable Furigana" option waiting for you. Rikaichan seems to misbehave when hovering over Furigana enabled Kanji, so you may need to disable Furigana to use Rikaichan. But it's a good compromise and may open a whole lot of new content in Japanese for us to consume.
 
 One reason to use Firefox.

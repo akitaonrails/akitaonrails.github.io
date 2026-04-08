@@ -15,7 +15,7 @@ This morning I interviewed [**Nick Sieger**](http://blog.nicksieger.com/), core 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2008/11/20/IMG_0093.JPG)  
 Nick, Matt, Chris and Jan
 
-After that I was able to interview [**Francesco Cesarini**](http://www.erlang-consulting.com/). He gave us an introductory tutorial on Erlang early this week. He’s been working with Erlang for the last 15 years and he is also writing a new book for O’Reilly, called [Erlang Programming](http://www.amazon.com/dp/0596518188). This is a very insightful conversation on functional programming, scalability, concurrency and why all these subjects matter today and how Erlang fits in.
+After that I was able to interview [**Francesco Cesarini**](http://www.erlang-consulting.com/). He gave us an introductory tutorial on Erlang earlier this week. He’s been working with Erlang for the last 15 years and he is also writing a new book for O’Reilly, called [Erlang Programming](http://www.amazon.com/dp/0596518188). This is a very insightful conversation on functional programming, scalability, concurrency and why all these subjects matter today and how Erlang fits in.
 
 It was interesting because both Kent Beck and Tim Bray were talking about future trends in their keynotes and both mentioned CouchDB and Erlang as great stuff. You want to stay ahead of the curve? Learn Erlang.
 

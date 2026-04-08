@@ -19,7 +19,7 @@ Yesterday [I posted](http://www.akitaonrails.com/en/2016/06/06/manga-downloadr-p
 
 I also said how it was an unfair comparison as the Elixir version uses a different - and obviously more efficient - algorithm.
 
-It was the "first-version-that-worked" so I decided to go ahead and improve the implementations. In the Ruby/JRuby version I added the [thread](https://github.com/meh/ruby-thread) gem to have a good enough implementation of a Thread pool that works for Ruby and JRuby. I probably should have used Concurrent-Ruby but I was having some trouble to make FixedThreadPool to work.
+It was the "first-version-that-worked" so I decided to go ahead and improve the implementations. In the Ruby/JRuby version I added the [thread](https://github.com/meh/ruby-thread) gem to have a good enough implementation of a Thread pool that works for Ruby and JRuby. I probably should have used Concurrent-Ruby but I was having some trouble making FixedThreadPool work.
 
 Anyway, now all versions will have a constant pool of requests running and we can make a better comparison.
 
@@ -37,7 +37,7 @@ Now, the MRI Ruby with the "batch burst" algorithm was taking 57 seconds and thi
 12,67s user 0,92s system 50% cpu 27,149 total
 ```
 
-In Crystal, it's a bit more complicated as there is no way to implement the equivalent of a "Fiber Pool". What we have to do is do an infinite loop until the last process signals a loop break. Within the loop we create a maximum number of fibers, wait for each one to signal that it finished through an individual channel and loop again to create a new fiber, and so on. Compared to yesterday's 59 seconds, this is much better:
+In Crystal, it's a bit more complicated as there is no way to implement the equivalent of a "Fiber Pool". What we have to do is run an infinite loop until the last process signals a loop break. Within the loop we create a maximum number of fibers, wait for each one to signal that it finished through an individual channel and loop again to create a new fiber, and so on. Compared to yesterday's 59 seconds, this is much better:
 
 ```
 5,29s user 0,33s system 26% cpu 21,166 total
@@ -96,7 +96,7 @@ This way we always have a fixed amount of workers performing requests constantly
 
 ### Changing the Crystal implementation to simulate a Fibers Pool
 
-The Crystal version became a bit more complicated as I didn't find a pool library to pull. I found a rough implementation of a pool in [this stackoverflow post](http://stackoverflow.com/a/30854065/1529907) and I was able to implement an improved version into a new shard so you can take advantage of it in your projects. Check out the source code at [akitaonrails/fiberpool](https://github.com/akitaonrails/fiberpool). This is how I added it to my project:
+The Crystal version became a bit more complicated as I didn't find a pool library to pull in. I found a rough implementation of a pool in [this stackoverflow post](http://stackoverflow.com/a/30854065/1529907) and I was able to implement an improved version into a new shard so you can take advantage of it in your projects. Check out the source code at [akitaonrails/fiberpool](https://github.com/akitaonrails/fiberpool). This is how I added it to my project:
 
 ```yaml
 dependencies:
@@ -224,7 +224,7 @@ Even though the algorithms are roughly similar, Elixir is still winning by a ver
 
 There is more than just interpreter/compiler speeds, there is more than single-thread, multi-thread, fibers infrastructure.
 
-We also have the maturity of the respective standard libraries (including TCP stack, HTTP client libraries, String/Array/Regex operations, etc) and 3rd party libraries (libXML, Nokogiri, etc). So there is a lot that can interfere with the tests. I'd guess that Crystal's standard library, especially the networking parts, are not battle tested enough at this point (pre 1.0!).
+We also have the maturity of the respective standard libraries (including TCP stack, HTTP client libraries, String/Array/Regex operations, etc) and 3rd party libraries (libXML, Nokogiri, etc). So there is a lot that can interfere with the tests. I'd guess that Crystal's standard library, especially the networking parts, are not battle-tested enough at this point (pre 1.0!).
 
 So, the summary with the new results is this:
 

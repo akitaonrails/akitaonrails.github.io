@@ -13,7 +13,7 @@ tags:
 draft: false
 ---
 
-**Update 01/18/2017:** If you're on old hardware like me, you may want to optimize your installation to be way more responsiveness, [read all about it here](http://www.akitaonrails.com/en/2017/01/17/otimizando-o-linux-para-computadores-lentos).
+**Update 01/18/2017:** If you're on old hardware like me, you may want to optimize your installation to be way more responsive, [read all about it here](http://www.akitaonrails.com/en/2017/01/17/otimizando-o-linux-para-computadores-lentos).
 
 Since I decided to move back from macOS to Linux, I didn't want to just return to old Ubuntu (yes, I get bored of doing the same things for too long). So I tried out Fedora 25 and I was delighted by how Gnome 3.22 evolved nicely.
 
@@ -23,17 +23,17 @@ Fedora 25 looks good with Gnome 3, but it still gave me a few headaches. One thi
 
 ![Arch Linux](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/584/Screenshot_from_2017-01-10_14-15-41.png)
 
-Now the surprise: on Arch Linux, I chose Gnome 3.22 as my desktop and manually installed the [gnome-online-account](https://www.archlinux.org/packages/extra/i686/gnome-online-accounts/) package. I signed in to my Google accounts and I am  delighted to report that it's not expiring and it "Just Works"! This is the kind of polish I expect from a major distro, not the fiasco that's labeled as "stable" in Fedora.
+Now the surprise: on Arch Linux, I chose Gnome 3.22 as my desktop and manually installed the [gnome-online-account](https://www.archlinux.org/packages/extra/i686/gnome-online-accounts/) package. I signed in to my Google accounts and I am delighted to report that it's not expiring and it "Just Works"! This is the kind of polish I expect from a major distro, not the fiasco that's labeled as "stable" in Fedora.
 
 ### Why Arch Linux?
 
 Most major distros are divided between "stable" (but with very old packages) and "unstable" (but with the cutting-edge goodness). If you install the Long-Term Support (LTS) versions, you're doomed to have only old packages from a couple of years ago. If you install the unstable repositories, you're doomed to have stuff exploding in your face without explanation and losing hours browsing through Stackoverflow.
 
-Now, it seems that Arch figured out the exactly "right" level of confidence between stable and cutting-edge. It keeps pushing the most recent version of software without breaking everything else all the time. So, in Ubuntu 16.04 and Fedora 25, if I want to install Postgresql, I am locked in to 9.4 or 9.5, but in Arch I can access 9.6 from the main Pacman repositories. (By the way, "Pac"kage "Man"ager is the most obvious name ever).
+Now, it seems that Arch figured out the exact "right" level of confidence between stable and cutting-edge. It keeps pushing the most recent version of software without breaking everything else all the time. So, in Ubuntu 16.04 and Fedora 25, if I want to install Postgresql, I am locked in to 9.4 or 9.5, but in Arch I can access 9.6 from the main Pacman repositories. (By the way, "Pac"kage "Man"ager is the most obvious name ever).
 
 You can easily `pacman -Sy postgresql` and you're in business.
 
-And if you're on Ubuntu 14.04 and now you want 16.04, good luck on `dist-upgrade` your way. It's easier to start from scratch.
+And if you're on Ubuntu 14.04 and now you want 16.04, good luck `dist-upgrade`-ing your way. It's easier to start from scratch.
 
 So, it seems that the philosophy of Arch is to have the real most recent version of all software that won't break your system. There is no such thing as a big bang upgrade every 6 months that breaks everything. Instead, you have a constantly **rolling** upgrade system, where you're always on the latest version, without having to wait another year for the next big LTS.
 
@@ -43,17 +43,17 @@ AUR is clever. If you're from macOS and familiar with Homebrew, you will underst
 
 For example, Sublime Text only has an option to download a DEB package or a tarball with the binaries. Same goes for Spotify, Franz, etc. Sometimes you can register Personal Package Archives (PPAs) and then `apt-get` your way in installing them. But you still need someone to build, maintain and distribute those packages properly. It's a lot of work.
 
-Now, maintaining a simple Git repository with a simple PKGBUILD text file is far easier. `makepkg` does the hard work of build the package you need, in your machine, and then `pacman` can handle installing it like any other package. No more `wget`-ing tarballs and configuring everything manually!
+Now, maintaining a simple Git repository with a simple PKGBUILD text file is far easier. `makepkg` does the hard work of building the package you need, in your machine, and then `pacman` can handle installing it like any other package. No more `wget`-ing tarballs and configuring everything manually!
 
 Maybe I can finally just do `pacman -Syu` and have everything "really" upgraded without having to worry about the next big LTS that will eventually force me to reinstall everything from scratch.
 
 ### Arch Linux is perfect for "Beginners"
 
-I've been hearing about Arch for a long while and their users are very enthusiastic in trying to convince other people to join. Whenever you see such a heavily loyal fanbase there must be something interesting hidden under the hoods. Rolling upgrades, Pacman, AUR are really valuable reasons.
+I've been hearing about Arch for a long while and their users are very enthusiastic in trying to convince other people to join. Whenever you see such a heavily loyal fanbase there must be something interesting hidden under the hood. Rolling upgrades, Pacman, AUR are really valuable reasons.
 
 After just one day using it, I've come to realize that Arch is good for advanced users, but also for **beginners**. But not because it is easy. On the contrary: it's because it is hard in the right way.
 
-Most "Linux users" nowadays just get a trivial-to-install distro, such as Ubuntu or Elementary, and they have no idea what goes on underneath. Blindlessly clicking "next" in the graphical installers.
+Most "Linux users" nowadays just get a trivial-to-install distro, such as Ubuntu or Elementary, and they have no idea what goes on underneath. Blindly clicking "next" in the graphical installers.
 
 Most people have no idea what TTYs are. That you can probe USB devices with command line tools such as `lsusb` or that you must use tools such as `fdisk` to partition and then `mkfs.ext4` to format them. That memory swap files are partitions with a special format. They are not aware of LVM options for flexible partitioning, or even that LVM exists at all. That the "thing" you choose your kernel from in the boot menu is called Grub and that you can tweak it.
 
@@ -143,7 +143,7 @@ aur/blockify 3.6.3-3 (106, 5.61)
 ...
 ```
 
-Common sense, my friends. Read, interpret, choose. Arch requires you to be a **smart** person, and by "smart" I mean: knowing how to read! Most people skip reading things and just click stuff like moron.
+Common sense, my friends. Read, interpret, choose. Arch requires you to be a **smart** person, and by "smart" I mean: knowing how to read! Most people skip reading things and just click stuff like morons.
 
 Now that you know the exact name of the package you want, just install it normally like this:
 
@@ -437,14 +437,14 @@ For the most part, Zen may have the better balance between stability and tweak s
 
 I am not sure if it is the Arch maintainers that are doing a super job or if it's RedHat and Canonical that are screwing up their distros so badly in comparison.
 
-I mean, Ubuntu, Fedora, OpenSuse, Elementary, are all fair and nice distros that, most of the time, "just works".
+I mean, Ubuntu, Fedora, OpenSuse, Elementary, are all fair and nice distros that, most of the time, "just work".
 
-But for a distro that many consider targetted to "advanced users", Arch is way more polished. I can't figure out why.
+But for a distro that many consider targeted to "advanced users", Arch is way more polished. I can't figure out why.
 
 In the same hardware, the Gnome 3 experience under Arch is noticeably better than the same Gnome 3 over Fedora. Compared to Unity on Ubuntu, it's miles ahead. It's fast, fluid, good looking, the defaults all work out nicely.
 
 And all of a sudden I realize that I don't have to worry about major upgrades. Rolling upgrades to the latest continuously brings me another layer of confidence.
 
-Arch makes me feel like I am in control again without requiring me to waste hours tweaking things to my liking. The defaults are rock solid and I can small improvements over it whenever I need to.
+Arch makes me feel like I am in control again without requiring me to waste hours tweaking things to my liking. The defaults are rock solid and I can make small improvements over it whenever I need to.
 
 Kudos to the Arch maintainers, this is the finest Linux distro I've ever had the pleasure to play with. I hope this feeling goes on as I keep using this as my daily driver. But so far I am convinced that this is the right choice.

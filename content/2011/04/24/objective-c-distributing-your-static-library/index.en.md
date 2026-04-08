@@ -12,9 +12,9 @@ tags:
 draft: false
 ---
 
-If you didn't read my [last](http://www.akitaonrails.com/2011/04/23/objective-c-it's-a-unix-system-i-know-this) [two article](http://www.akitaonrails.com/en/2011/04/23/objective-c-categories-static-libraries-e-pegadinhas) I recommend you do so before going any further because I am using the same pet project, [ObjC Rubyfication](http://www.akitaonrails.com/2011/04/23/objective-c-it's-a-unix-system-i-know-this) as an example for this article. The point is: you are writing reusable code that you want in more than one project.
+If you didn't read my [last](http://www.akitaonrails.com/2011/04/23/objective-c-it's-a-unix-system-i-know-this) [two articles](http://www.akitaonrails.com/en/2011/04/23/objective-c-categories-static-libraries-e-pegadinhas) I recommend you do so before going any further because I am using the same pet project, [ObjC Rubyfication](http://www.akitaonrails.com/2011/04/23/objective-c-it's-a-unix-system-i-know-this) as an example for this article. The point is: you are writing reusable code that you want in more than one project.
 
-Most of this was based on [Cocoanetics](http://www.cocoanetics.com/2010/04/universal-static-libraries/) article about universal static libraries. So, if you've payed attention to my [previous article](http://www.akitaonrails.com/en/2011/04/23/objective-c-categories-static-libraries-e-pegadinhas), you saw this screenshot:
+Most of this was based on [Cocoanetics](http://www.cocoanetics.com/2010/04/universal-static-libraries/) article about universal static libraries. So, if you've paid attention to my [previous article](http://www.akitaonrails.com/en/2011/04/23/objective-c-categories-static-libraries-e-pegadinhas), you saw this screenshot:
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2011/4/23/Screen%20shot%202011-04-23%20at%2011.41.27%20PM_original.png?1303613619)
 
@@ -28,15 +28,15 @@ I said that I only had these targets configured: CocoaOniguruma, Kiwi, Rubyficat
 
 ## Concepts and History
 
-Some explanation is in order. When you're developing iOS applications, you can test it directly in your iPhone device or within the Simulator. Now, Apple was very clever: any other vendor in the market will try to first create an ARM processor emulator to run on top of your i386 processor. Then it will get all the binaries for ARM and run within this emulator. The OS itself will remain compiled for ARM processors and run within the emulator.
+Some explanation is in order. When you're developing iOS applications, you can test it directly on your iPhone device or within the Simulator. Now, Apple was very clever: any other vendor in the market will try to first create an ARM processor emulator to run on top of your i386 processor. Then it will get all the binaries for ARM and run within this emulator. The OS itself will remain compiled for ARM processors and run within the emulator.
 
-Now, this is dead slow, impractical. Anyone that experimented an emulation environment like this knows how ridiculous it is. Don't confuse it for VMWare or Parallels solutions, which are fast because they are an emulated environment for **the same processor** , so you can run Windows on top of your Mac because the processors and operating systems now support VT-x, which means you mostly don't have to emulate the processor. Now, every smartphone and tablet on the market uses an ARM processor, which has nothing to do with i386.
+Now, this is dead slow, impractical. Anyone that has experienced an emulation environment like this knows how ridiculous it is. Don't confuse it for VMWare or Parallels solutions, which are fast because they are an emulated environment for **the same processor** , so you can run Windows on top of your Mac because the processors and operating systems now support VT-x, which means you mostly don't have to emulate the processor. Now, every smartphone and tablet on the market uses an ARM processor, which has nothing to do with i386.
 
-So, how did Apple delivered a super-fast iPhone/iPad emulator that runs at real-time speed on your Mac? Simple, it didn't. It is called "Simulator" and not "Emulator" for a reason: everything that runs within the Simulator is compiled for i386, not for ARM. So what you're running is an actual binary that runs natively over your Mac! No emulation required. The iOS is very portable. The same way Mac OS X was able to transition from the Power PC to Intel back in 2005, the iOS can do the same trick as they are basically the very same operating system.
+So, how did Apple deliver a super-fast iPhone/iPad emulator that runs at real-time speed on your Mac? Simple, it didn't. It is called "Simulator" and not "Emulator" for a reason: everything that runs within the Simulator is compiled for i386, not for ARM. So what you're running is an actual binary that runs natively over your Mac! No emulation required. The iOS is very portable. The same way Mac OS X was able to transition from the Power PC to Intel back in 2005, the iOS can do the same trick as they are basically the very same operating system.
 
-When you choose the iPhone scheme in XCode, it compiles for ARM and uploads the bits to your iPhone device to run the application. When you choose the Simulator scheme in XCode, it compiles for i386, upload the bits in your Simulator and runs natively as any other application in your Mac.
+When you choose the iPhone scheme in XCode, it compiles for ARM and uploads the bits to your iPhone device to run the application. When you choose the Simulator scheme in XCode, it compiles for i386, uploads the bits to your Simulator and runs natively as any other application in your Mac.
 
-Now, going back to the main issue: when I distribute a binary of my Static Library, I have to remember that the developer will be linking against my library to deploy for both the ARM device (iPhone/iPad) and the Simulator (i386). So I would have to deliver at least 2 binary files. But Apple is even smarter than that. Actually, NeXT was. When they first transitioned the NeXTStep operating system from Motorola to Intel processors back in the late 80's, they created [Fat Binaries](http://en.wikipedia.org/wiki/Fat_binary), which is essentially one binary that contains both processor-specific bits in one single package. When Apple transitione from the Power PC to Intel they renamed it to [Universal Binaries](http://en.wikipedia.org/wiki/Universal_binary). And that's essentially what we need to build now.
+Now, going back to the main issue: when I distribute a binary of my Static Library, I have to remember that the developer will be linking against my library to deploy for both the ARM device (iPhone/iPad) and the Simulator (i386). So I would have to deliver at least 2 binary files. But Apple is even smarter than that. Actually, NeXT was. When they first transitioned the NeXTStep operating system from Motorola to Intel processors back in the late 80's, they created [Fat Binaries](http://en.wikipedia.org/wiki/Fat_binary), which is essentially one binary that contains both processor-specific bits in one single package. When Apple transitioned from the Power PC to Intel they renamed it to [Universal Binaries](http://en.wikipedia.org/wiki/Universal_binary). And that's essentially what we need to build now.
 
 ## Operations
 
@@ -74,7 +74,7 @@ mkdir -p ${TARGET_BUILD_DIR}/../Rubyfication
 lipo create "${TARGET_BUILD_DIR}/../Debug-iphoneos/libRubyfication.a" "${TARGET_BUILD_DIR}/../Debug-iphonesimulator/libRubyfication.a" -output "${TARGET_BUILD_DIR}/../Rubyfication/libRubyfication${BUILD_STYLE}.a"
 ```
 
-The first thing it does it create this new "Rubyfication" directory. The second command uses the [lipo](http://developer.apple.com/library/mac/#documentation/Darwin/Reference/ManPages/man1/lipo.1.html) command that merges 2 processor-dependent binaries into a universal binary. Pay attention to the PATHs if you're reusing this script somewhere else. At least with XCode 4 that's where it creates the binaries of each target:
+The first thing it does is create this new "Rubyfication" directory. The second command uses the [lipo](http://developer.apple.com/library/mac/#documentation/Darwin/Reference/ManPages/man1/lipo.1.html) command that merges 2 processor-dependent binaries into a universal binary. Pay attention to the PATHs if you're reusing this script somewhere else. At least with XCode 4 that's where it creates the binaries of each target:
 
 - ${TARGET_BUILD_DIR}/../Debug-iphoneos/libRubyfication.a – the ARM version
 - ${TARGET_BUILD_DIR}/../Debug-iphonesimulator/libRubyfication.a – the i386 version
@@ -98,7 +98,7 @@ And there you go: there's your ZIP file with your brand new redistributable univ
 
 ## Using the Universal Binary
 
-In order to demonstrate how to use this distributable ZIP file. I have created a very simple, bare-bone iOS project called [ObjC_OnigurumaDemo](https://github.com/akitaonrails/ObjC_OnigurumaDemo) that you can download from Github and run in your own iOS device.
+In order to demonstrate how to use this distributable ZIP file, I have created a very simple, bare-bone iOS project called [ObjC_OnigurumaDemo](https://github.com/akitaonrails/ObjC_OnigurumaDemo) that you can download from Github and run in your own iOS device.
 
 As you can see in the screenshot below, I just unzipped the ZIP within a "Dependencies" folder in my iOS project and added the universal binary "libRubyfication-Debug.a" within the Library Linking Build Phase:
 
@@ -122,7 +122,7 @@ This allows me to just use anything from this library in my project, in particul
 }
 ```
 
-This demonstration application has a text-field called "initialText", where you can type any string. Then you can prepare a Regular Expression in the "regexPattern" text-field and when you hit the "Run" button, it will trigget the action above that will run the Regular Expression againt the initial text and write the matches within parenthesis in the "result" text view. The applications looks like this:
+This demonstration application has a text-field called "initialText", where you can type any string. Then you can prepare a Regular Expression in the "regexPattern" text-field and when you hit the "Run" button, it will trigger the action above that will run the Regular Expression against the initial text and write the matches within parenthesis in the "result" text view. The application looks like this:
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2011/4/24/Screen%20shot%202011-04-24%20at%2012.46.19%20AM_original.png?1303616748)
 

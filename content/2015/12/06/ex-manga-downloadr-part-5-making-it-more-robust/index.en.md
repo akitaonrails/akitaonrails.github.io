@@ -12,11 +12,11 @@ tags:
 draft: false
 ---
 
-And there I go again. I know some of you may be bored by this tool already, but as a playground project, I still want to make this a good code. But there are 2 big problems right now.
+And there I go again. I know some of you may be bored by this tool already, but as a playground project, I still want to make this good code. But there are 2 big problems right now.
 
-When I was testing only with MangaReader.net as a source, everything worked almost flawlessly. But adding MangaFox in [Part 3](http://www.akitaonrails.com/en/2015/12/02/ex-manga-downloadr-parte-3-suporte-ao-mangafox), with its more restrictive rules towards scrapper tools like mine (timing out more frequently, not allowing too many connections from the same place, etc), the process just kept crashing and I had to manually restart it (the resuming features I added in [Part 4](http://www.akitaonrails.com/en/2015/12/03/ex-manga-downloadr-parte-4-aprendendo-atraves-do-refactoring) payed off, but it's not a reliable tool anymore).
+When I was testing only with MangaReader.net as a source, everything worked almost flawlessly. But adding MangaFox in [Part 3](http://www.akitaonrails.com/en/2015/12/02/ex-manga-downloadr-parte-3-suporte-ao-mangafox), with its more restrictive rules towards scraper tools like mine (timing out more frequently, not allowing too many connections from the same place, etc), the process just kept crashing and I had to manually restart it (the resuming features I added in [Part 4](http://www.akitaonrails.com/en/2015/12/03/ex-manga-downloadr-parte-4-aprendendo-atraves-do-refactoring) paid off, but it's not a reliable tool anymore).
 
-To recap, the Workflow just organizes each step of the process. It's functions are similar to this:
+To recap, the Workflow just organizes each step of the process. Its functions are similar to this:
 
 ```ruby
 def process_downloads(images_list, directory) do
@@ -41,7 +41,7 @@ end
 
 It returns an asynchronous Task waiting for 2 things: for Poolboy to release a free process to use, and for the Worker/GenServer function to finish running inside that process. As I explained in [Part 2](http://www.akitaonrails.com/en/2015/11/19/ex-manga-downloadr-parte-2-poolboy-ao-resgate) this is so we can limit the maximum number of connections to the external source. If we didn't have this restriction, sending tens of thousands of asynchronous requests at once, the external source would just fail them all.
 
-First thing to bear in mind is that a "<tt>Task.async/2</tt>" links itself to the caller process, so if something goes wrong, the parent process dies as well.
+The first thing to bear in mind is that a "<tt>Task.async/2</tt>" links itself to the caller process, so if something goes wrong, the parent process dies as well.
 
 The correct thing to do is to add a [Task.Supervisor](http://elixir-lang.org/docs/stable/elixir/Task.Supervisor.html) and make it deal with each Task child. To do that, we can just add the Supervisor in our supervised tree at "pool_management/supervisor.ex":
 

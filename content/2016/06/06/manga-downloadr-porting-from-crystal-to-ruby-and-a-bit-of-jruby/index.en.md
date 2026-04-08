@@ -12,7 +12,7 @@ draft: false
 
 I have this old pet project of mine called [Manga Downloadr](http://www.akitaonrails.com/2014/12/17/small-bites-downloader-para-mangareader-kindle-edition) that I published in 2014. It was a very rough version. I was experimenting with Typhoeus asynchronous requests and in the end the code ended up becoming super messed up.
 
-The nature of the original Manga Downloader is no different from a web crawler: it fetches HTML pages, parses them in order to find collections of links and keeps fetching until a set of images are downloaded. Then I organize them in volumes, optimize them to fit the Kindle screen resolution, and compile them down into PDF files. This makes this project an interesting exercise in trying to make concurrent HTTP requests and process the results.
+The nature of the original Manga Downloader is no different from a web crawler: it fetches HTML pages, parses them in order to find collections of links and keeps fetching until a set of images is downloaded. Then I organize them in volumes, optimize them to fit the Kindle screen resolution, and compile them down into PDF files. This makes this project an interesting exercise in trying to make concurrent HTTP requests and process the results.
 
 A year later I was learning Elixir. The Manga Downloadr was a nice candidate for me to figure out how to implement the same thing in a different language. You can follow my learning process in [this series of posts](http://www.akitaonrails.com/exmangadownloadr).
 
@@ -24,7 +24,7 @@ It works very well and performs really fast, limited mainly by how many requests
 
 > The port was almost too trivial
 
-It was mostly copying and pasting the Crystal code without the Type annotations. And I had to replace the lightweight Fibers and Channel implementation for concurrency over to traditional Ruby Threads.
+It was mostly copying and pasting the Crystal code without the Type annotations. And I had to replace the lightweight Fibers and Channel implementation for concurrency with traditional Ruby Threads.
 
 The new version 2.0 for the Ruby version of the tool can be found in this Github repository: [akitaonrails/manga-downloadr](https://github.com/akitaonrails/manga-downloadr).
 
@@ -87,7 +87,7 @@ It's uncanny how similar they are, down to stdlib calls such as `URI.parse` or A
 
 Ruby doesn't care if you're trying to call a method on a Nil object - at source code compiling time. Crystal does compile-time checks and if it feels like the method call will be over Nil, it won't even compile. So this is one big win to avoid subtle bugs.
 
-In Rails we are used to the dared `#try` method. Ruby 2.3 introduced the [safe navigation operator](http://mitrev.net/ruby/2015/11/13/the-operator-in-ruby/).
+In Rails we are used to the `#try` method. Ruby 2.3 introduced the [safe navigation operator](http://mitrev.net/ruby/2015/11/13/the-operator-in-ruby/).
 
 So, in Ruby 2.3 with Rails, both of the following lines are valid:
 
@@ -104,7 +104,7 @@ obj.try(&.something).try(&.something2)
 
 So, it's close. Use with care.
 
-As I mentioned before, Crystal is close to Ruby but it's not meant to be compatible, so we can't just load Rubygems without porting. In this example I don't have Nokogiri to parse the HTML. But this is where the stdlib shines: Crystal comes with a good enough XML/HTML and JSON parsers. So we can parse HTML as XML and use plain XPath instead.
+As I mentioned before, Crystal is close to Ruby but it's not meant to be compatible, so we can't just load Rubygems without porting. In this example I don't have Nokogiri to parse the HTML. But this is where the stdlib shines: Crystal comes with good enough XML/HTML and JSON parsers. So we can parse HTML as XML and use plain XPath instead.
 
 Instead of Ruby's `Net::HTTP` we have `HTTP::Client` (but their methods and semantics are surprisingly similar).
 
@@ -152,7 +152,7 @@ The only thing you must understand: the compiler must know the method signature 
 
 Most of the time the Crystal compiler will be smart enough to infer the types for you, so you don't need to be absolutely explicit. You should follow the compiler's lead to know when to use Type Annotations.
 
-What may really scare you at first is the need for Type Annotations, to understand Generics and so forth. The compiler will print out every scary error dump that you will need to get used to. Most scary errors will usually be a Type Annotation missing or you trying to call a method over a possible Nil object.
+What may really scare you at first is the need for Type Annotations, to understand Generics and so forth. The compiler will print out every scary error dump that you will need to get used to. Most scary errors will usually be a Type Annotation missing or you trying to call a method on a possibly Nil object.
 
 For example, if I change the following line in the `page_image_spec.cr` test file:
 
@@ -186,7 +186,7 @@ Nil trace:
 ...
 ```
 
-There is a large stacktrace dump after that snippet above, but you only need to pay attention to the first few lines that already say what's wrong: "undefined method 'host' for Nil (compile-time type is CrMangaDownloadr::Image?)". If you know how to read, you shouldn't have any problems most of the time.
+There is a large stack trace dump after that snippet above, but you only need to pay attention to the first few lines that already say what's wrong: "undefined method 'host' for Nil (compile-time type is CrMangaDownloadr::Image?)". If you know how to read, you shouldn't have any problems most of the time.
 
 Now, the `Chapters`, `Pages`, `PageImage` (all subclasses of `DownloadrClient`) are basically the same thing: they do `HTTP::Client` requests.
 
@@ -231,7 +231,7 @@ end
 
 You can see that this class receives a Generic Type and it uses it as the return type for the yielded block in the `#get` method. The `XML::Node -> T` is the declaration of the signature for the block, sending `XML::Node` and receiving whatever the type `T` is. At compile time, imagine this `T` being replaced by `Array(String)`. That's how you can create classes that can deal with any number of different Types without having to overload for polymorphism.
 
-If you come from Java, C#, Go or any other modern static typed language, you probably already know what a Generic is.
+If you come from Java, C#, Go or any other modern statically typed language, you probably already know what a Generic is.
 
 You can go very far with Generics, check out how our `Concurrency.cr` begins:
 
@@ -286,7 +286,7 @@ In the Crystal version, because all types have been checked at compile-time, it 
 
 > I'm not saying that Crystal doesn't need any specs.
 
-Compilers can only go so far. But how much is "so far"? Whenever you're "forced" to add Type Annotations, I will state that those parts are either trying to be too smart or they are intrinsically complex. Those are parts that would require extra levels of tests in Ruby and, if we can add the annotations properly, we can have less tests (we don't need to cover most permutations) in the Crystal version (exponential complexity of permutations could go down to a linear complexity, I think).
+Compilers can only go so far. But how much is "so far"? Whenever you're "forced" to add Type Annotations, I will state that those parts are either trying to be too smart or they are intrinsically complex. Those are parts that would require extra levels of tests in Ruby and, if we can add the annotations properly, we can have fewer tests (we don't need to cover most permutations) in the Crystal version (exponential complexity of permutations could go down to a linear complexity, I think).
 
 ### A Word about Ruby Threads
 
@@ -296,7 +296,7 @@ The main concepts you must understand about concurrency in Ruby are these:
 * MRI Ruby does have access and exposes native Threads since version 1.9. But even if you fire up multiple Threads, they will run sequentially because only one thread can hold the Lock at a time.
 * I/O operations are the exception: they do release the Lock for other threads to run while the operation is waiting to complete. The OS will signal the program through OS-level poll.
 
-This means that if your app is **I/O intensive** (HTTP requests, File reads or writes, socket operations, etc), you will have _some_ concurrency. A web server, such as Puma for example, can take some advantage of Threads because a big part of the operations involve receiving HTTP requests and sending HTTP responses over the wire, which would make the Ruby process idle while waiting.
+This means that if your app is **I/O intensive** (HTTP requests, File reads or writes, socket operations, etc), you will have _some_ concurrency. A web server, such as Puma for example, can take some advantage of Threads because a big part of the operations involves receiving HTTP requests and sending HTTP responses over the wire, which would make the Ruby process idle while waiting.
 
 If your app is CPU intensive (heavy algorithms, data crunching, stuff that really makes the CPU hot) then you can't take advantage of native Threads, only one will run at a time. If you have multiple cores in your CPU, you can Fork your process to the number of cores available.
 
@@ -389,7 +389,7 @@ def fetch(collection, &block)
 end
 ```
 
-Threads are all initialized in a "paused" state. Once we instantiate those many Threads, we can `#join` on each of them and await for them all to finish.
+Threads are all initialized in a "paused" state. Once we instantiate those many Threads, we can `#join` on each of them and wait for them all to finish.
 
 Once each Thread finishes the same URI request/process, the results must be accumulated in a global storage, in this case a simple array called `results`. But because we might have the chance of 2 or more threads trying to update the same array, we might as well synchronize the access (I'm not sure if Ruby's Array access is already synchronized, but I guess not). To synchronize access we use a Mutex, which is a fine-grained lock, to make sure only 1 thread can modify the global array at once.
 
@@ -473,7 +473,7 @@ This is more evidence that you should not dismiss Ruby (and that you should try 
 
 The difference is probably in the maturity of Ruby's `Net::HTTP` library against Crystal's `HTTP::Client`. I tried many tweaks in the Crystal version but I couldn't get much faster. I tried to do larger batches, but for some reason the application just hangs, pauses, and never releases. I have to Ctrl-C out of it and retry until it finally goes through. If someone knows what I am doing wrong, please don't forget to write in the comments section below.
 
-Some of this is probably due to MangaReader's unreliable servers, they probably have some kind of DoS preventions, throttling connections or something like this.
+Some of this is probably due to MangaReader's unreliable servers, they probably have some kind of DoS protection, throttling connections or something like this.
 
 Anyway, when they go through, because the Ruby and Crystal algorithms are essentially the same, they take roughly the same time to complete. So what's missing is for me to evolve this algorithm to either use something like Sidekiq or implement an internal queue/pool of workers scheme.
 

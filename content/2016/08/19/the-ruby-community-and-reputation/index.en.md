@@ -15,7 +15,7 @@ I've just read the posts from [Adam Hawkins](http://hawkins.io/2015/05/the-ruby-
 
 As a disclaimer, I don't know them, and I respect their points of view. This is not supposed to start a flame war, just to paint an alternative point of view.
 
-Both articles represent the point of view of many veteran Ruby developers in this community. Some of whom already left to other technologies or stopped public appearances.
+Both articles represent the point of view of many veteran Ruby developers in this community. Some of whom already left for other technologies or stopped public appearances.
 
 I already made my stand very clear in ["Rails has Won: The Elephant in the Room"](http://www.akitaonrails.com/en/2016/05/23/rails-venceu-o-elefante-na-sala). But let me simplify here.
 
@@ -35,7 +35,7 @@ Let me present the true Elephant in the Room:
 
 * Beginners are not interested in fine-grained solutions. Most people forget how it was to be a beginner. Actually, I'd argue that 80% of the world's developers benefit greatly from a Rails-like approach. It's no coincidence that many platforms conformed to an opinionated, convention-over-configuration approach after it proved its point.
 
-The fact that people are complaining against Rails makes it feel like it is Rails fault somehow. Actually not, it's just a reflection of the frustration of the very people that **failed** (and are failing) to pitch the alternatives. Everybody wants a free lunch.
+The fact that people are complaining against Rails makes it feel like it is Rails' fault somehow. Actually not, it's just a reflection of the frustration of the very people that **failed** (and are failing) to pitch the alternatives. Everybody wants a free lunch.
 
 Let me tell you a short story.
 
@@ -78,7 +78,7 @@ Some of us understand that engineers want to masturbate over irrelevant things.
 
 > "- Ha, but my design has fewer dependency points than yours!"
 
-Rails did to Ruby what Apple did to Unix and Canonical did to Linux-based distros. People complaining about Rails remind me of people trying to argue why Archlinux is way superior to OS X or Ubuntu, but it's just that people in general are stupid not to perceive that value.
+Rails did to Ruby what Apple did to Unix and Canonical did to Linux-based distros. People complaining about Rails remind me of people trying to argue why Archlinux is way superior to OS X or Ubuntu, but it's just that people in general are too stupid to perceive that value.
 
 And for some, it's not exactly flattering to be in the same league as Apple or Canonical, but the results are undeniable.
 
@@ -100,6 +100,6 @@ Programmers ranting are not following one of our own old favorite quotes: "Prema
 
 > and, finally, make it fast.
 
-There is nothing wrong with having alternatives to Rails, but the Rails bashing is getting very old very fast. It's difficult to pitch alternatives, I know. I've spent many show soles in the last 10 years advocating Ruby, so I really know it.
+There is nothing wrong with having alternatives to Rails, but the Rails bashing is getting very old very fast. It's difficult to pitch alternatives, I know. I've spent many shoe soles in the last 10 years advocating Ruby, so I really know it.
 
 I never believed in free lunch. I believe in targeted, hard work, and that's been my philosophy for the last 25 years in programming.

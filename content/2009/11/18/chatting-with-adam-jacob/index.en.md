@@ -12,11 +12,11 @@ draft: false
 
 Configuration Management is a tricky subject. For non-starters, when you're a developer and you have few boxes to take care of, you can usually get away with just managing them manually. People are probably just used to pop in a CD, double-click the "install" program and click "next", "next" until the end, then you manually log in to backup (when you remember it), and sometimes you do apply some security updates when you remember about them.
 
-But then you have more than a dozen machines, things start to get uglier, you end up making more mistakes, forgetting important steps, and all of a sudden managing machines become a nightmare. You end up being woken up in the middle of the night because you forgot to install some crucial component, and so on and so forth.
+But then you have more than a dozen machines, things start to get uglier, you end up making more mistakes, forgetting important steps, and all of a sudden managing machines becomes a nightmare. You end up being woken up in the middle of the night because you forgot to install some crucial component, and so on and so forth.
 
 The same way you need testing, continuous integration tools when you're a developer, you also need automated, reliable and flexible tools for the system administrator role. That's where tools such as **Chef** kick in to help.
 
-From [Opscode Inc.](http://opscode.com/), we have [Adam Jacob](http://twitter.com/adamhjk) (CTO) and [Jesse Robbins](http://twitter.com/jesserobbins) (CEO) to talk about the new contender in the automated system administration field, [Chef](http://www.opscode.com/chef/), already in use by many companies which are striving with the cutting edge to maintain their datacenters.
+From [Opscode Inc.](http://opscode.com/), we have [Adam Jacob](http://twitter.com/adamhjk) (CTO) and [Jesse Robbins](http://twitter.com/jesserobbins) (CEO) to talk about the new contender in the automated system administration field, [Chef](http://www.opscode.com/chef/), already in use by many companies which are pushing the cutting edge to maintain their datacenters.
 
 
  **AkitaOnRails:** To kick start this interview, it would be great to have more background info about you guys. So, how did you end up in the configuration management space?
@@ -45,7 +45,7 @@ We tried to recruit Jesse during this period, since he was one of those rare peo
 
 So we started looking at what was stopping us from being able to get that initial part of the engagement done as quickly as possible. What was stopping us from literally having a customer fill out a questionnaire, and letting that data drive 95% of the decisions about the infrastructure?
 
-It turned out the answer was, in a word, "everything". The entire stack of open source tools we were using had been built in a different era, and they saw the world through a very different lens. We needed everything to have an API, we needed everything to be more open with it's data, and we needed everything to be flexible enough to handle the next evolution of application architectures (whatever that may be.)
+It turned out the answer was, in a word, "everything". The entire stack of open source tools we were using had been built in a different era, and they saw the world through a very different lens. We needed everything to have an API, we needed everything to be more open with its data, and we needed everything to be flexible enough to handle the next evolution of application architectures (whatever that may be.)
 
 Once we had that revelation, the next step was figuring out what a 'new stack' would really look like. If we could start from scratch, what would we take with us, and what would we leave behind? Amazon had done such a great job showing us what an API over the bootstrapping process could look like, and the kind of benefits that could be had from the approach. So assuming something like that existed for bootstrapping, what about the next layer of the stack (configuration)?
 
@@ -57,11 +57,11 @@ We raised 2.5 million from DFJ in January of 2009 on that vision, and have been 
 
 **AkitaOnRails:** I'd like to say that only amateur sysadmins do everything manually, but I think most small to medium corporations at least still do everything manually or with random scripts spread all over the place. The notion of "configuration management" is still new to a lot of people. Could you briefly explain what it is, and why it is important?
 
-**Opscode:** To me, "Configuration Management", at it's core, is all the stuff you have to do to take a system from "running an operating system" to "doing it's job". When a systems administrator configures a system by hand, and posts her notes on a Wiki, she's practicing the most primitive form of Configuration Management.
+**Opscode:** To me, "Configuration Management", at its core, is all the stuff you have to do to take a system from "running an operating system" to "doing its job". When a systems administrator configures a system by hand, and posts her notes on a Wiki, she's practicing the most primitive form of Configuration Management.
 
 Now, having those notes is better than nothing – when she needs to do that task again, she can at least go back and read them to remember what she did last time. She still has to do it over again, though – and the repetition gets tiresome. So she starts writing scripts that encapsulate that knowledge in code, so that now she only has to run a series of smaller commands.
 
-Time passes, though, and entropy sets in. The systems begin to drift from where they were when the systems administrator wrote the scripts. Next thing you know, the scripts don't run anymore, or if they did, the configuration they build is wrong. Our intrepid admin then starts editing the scripts, or making new ones, to deal with the system when it's in this new state. This is the stage we call "tool sprawl" – you have a tool for each different phase of a systems observable life-cycle.
+Time passes, though, and entropy sets in. The systems begin to drift from where they were when the systems administrator wrote the scripts. Next thing you know, the scripts don't run anymore, or if they did, the configuration they build is wrong. Our intrepid admin then starts editing the scripts, or making new ones, to deal with the system when it's in this new state. This is the stage we call "tool sprawl" – you have a tool for each different phase of a system's observable life-cycle.
 
 Modern configuration management tools solve this problem by providing a framework for describing the final state a system should be in, rather than the discrete steps we should take to get there at any given time. Rather than writing a script that lists the commands to install Apache, write the configuration file, and start the service, you would describe that "apache should be installed", the configuration file "should look like this", and the service "should be running".
 
@@ -71,7 +71,7 @@ This means that you can describe your systems once in code, and as they change o
 
 It also has huge impacts outside the systems administrators world. You now have a living document that describes how all your servers are configured – you can share it, you can put it in revision control, you can print it out for an auditor. Business processes that previously required manual intervention frequently can be boiled down to discrete changes. The more you work in this way, the more the impacts spread throughout the organization.
 
-**AkitaOnRails:** Even though the Ruby community probably compares Chef to Puppet, I think one of the most widely used system is CFEngine2. How does Chef compare with CFEngine2?
+**AkitaOnRails:** Even though the Ruby community probably compares Chef to Puppet, I think one of the most widely used systems is CFEngine2. How does Chef compare with CFEngine2?
 
 **Opscode:** Cfengine 2 is where almost everyone in the configuration management world cut their teeth. Mark Burgess is responsible for the academic papers that outlined the idea that each part of the system should be idempotent, and his work in studying how real-world systems can be managed at scale has done more to impact the evolution of configuration management than any other individual.
 
@@ -168,7 +168,7 @@ packages:
 
 While all of these systems require learning the syntax, at a base level, there isn't much difference between them in terms of raw learning required. The difference is that when you hit a limitation in Chef, you have the ability to innovate easily, and when you hit those same limitations in other tools, you do not.
 
-We chose Ruby because of it's fairly unique ability to create new syntax easily. Tools like Rspec are fine examples of ways you can manipulate Ruby for fun and profit that are very difficult to duplicate in other tools. We wanted to make sure that, even though you were "in" a 3GL, you didn't have to go through any extra hoops to make the simple things work. Ruby was the language that I was comfortable enough in, that I knew had the ability, to make that a reality.
+We chose Ruby because of its fairly unique ability to create new syntax easily. Tools like Rspec are fine examples of ways you can manipulate Ruby for fun and profit that are very difficult to duplicate in other tools. We wanted to make sure that, even though you were "in" a 3GL, you didn't have to go through any extra hoops to make the simple things work. Ruby was the language that I was comfortable enough in, that I knew had the ability, to make that a reality.
 
 That said, one of our goals is to extend the ability to write Chef recipes into other 3GL's. We have an example of doing this already with Perl – and we made no changes to the Chef source to accomplish it. You can see the [demo here on CPAN](http://search.cpan.org/~holoway/Chef-0.01/lib/Chef.pm). It works by using Chef's JSON API to ship the compiled resources over to the Ruby library for execution, and over time we'll be extending those interfaces. You'll be able to have recipes written in Python interoperating with recipes written in Ruby and Perl.
 
@@ -180,7 +180,7 @@ We think this is a better practice in general, as it ensures that all the system
 
 **AkitaOnRails:** Sysadmins used to CFEngine complain about Ruby's dependencies and overall weight. Because for Chef to run you need Ruby installed. Not all distros have Ruby in the same version (although most already migrated to 1.8.7). Then you have the problem of weight. I am not familiar with Chef, but Puppet can grow to hundreds of megabytes. What they don't want is to have clusters of Chef machines (which, by themselves, also need maintenance, adding to the overall complexity). How do you deal with datacenters with thousands of servers? I know it's difficult to measure precisely, but what would be a reasonable ratio between Chef servers x managed servers?
 
-**Opscode:** When you are evaluating the scalability of configuration management systems, you want to look at two different axis. The horizontal one, which is the number of systems that can be managed by a single configuration management server at a particular rate of change, and the vertical, which is how much of your infrastructure can be automated by the tool.
+**Opscode:** When you are evaluating the scalability of configuration management systems, you want to look at two different axes. The horizontal one, which is the number of systems that can be managed by a single configuration management server at a particular rate of change, and the vertical, which is how much of your infrastructure can be automated by the tool.
 
 On the vertical axis, I think Chef is the clear winner, for reasons I think are pretty well summed up by my answer to question 7. I would put Puppet second, and Cfengine last.
 
@@ -204,7 +204,7 @@ With Chef 0.7, you should be able to support thousands of clients at a half-hour
 
 The same thing applies to ITIL – the larger the concern, and the more stringent the requirements, and the longer the lead time, the more the processes they describe start to make sense. Like all large process, though, they tend to de-emphasize the human element – people have roles to play, and forms to file. :)
 
-In the Web Ops culture, things are different. I've never seen a successful marriage of ITIL and Web Ops, and the reason is that the domains are so very different. If there is a bug on the website, it's better to ship the fix now than wait for a release management process to ensure that the site won't have any more issues based on your fix, for example. It's also a bad cultural fit – in the best Web Ops teams, the focus is heavy on communication, agility, and respect, rather than process, formalism, and tooling. The shift you start too see in the really great Web Ops companies is that their operations personel become enablers of the organization, rather than end-line blockers of change (to keep stability high.)
+In the Web Ops culture, things are different. I've never seen a successful marriage of ITIL and Web Ops, and the reason is that the domains are so very different. If there is a bug on the website, it's better to ship the fix now than wait for a release management process to ensure that the site won't have any more issues based on your fix, for example. It's also a bad cultural fit – in the best Web Ops teams, the focus is heavy on communication, agility, and respect, rather than process, formalism, and tooling. The shift you start too see in the really great Web Ops companies is that their operations personnel become enablers of the organization, rather than end-line blockers of change (to keep stability high.)
 
 In general, I think the 4 steps outlined in visible ops for emergency management are not bad ones, but the devil is always in the details. The guy you should really ask about this is Jesse – he's largely responsible for Amazon's operational culture, and knows what it means to start hacking on that sort of thing from within huge organizations.
 

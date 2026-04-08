@@ -14,7 +14,7 @@ tags:
 draft: false
 ---
 
-One thing that is not so great about having to deal with client projects is that most of them take their time before doing a full framework upgrade. And you can't blame them, as many of the dependencies in the ecosystem take their sweet, sweet time to upgrade either.
+One thing that is not so great about having to deal with client projects is that most of them take their time before doing a full framework upgrade. And you can't blame them, as many of the dependencies in the ecosystem take their sweet, sweet time to upgrade as well.
 
 [Rails 5.2 Beta](http://weblog.rubyonrails.org/2017/9/29/this-week-in-rails-getting-closer-to-rails-5-2-beta/) is almost upon us, and I would bet that most of the Rails projects out there are in the 4.2 version, still thinking about doing the jump to 5.0 (which is not so bad an upgrade).
 
@@ -36,7 +36,7 @@ The `rails new` command has a lot of new flags. And I think these are the ones m
 rails new --skip-action-mailer --skip-coffee --webpack=react my_fancy_new_project
 ```
 
-You can disable features you don't need such as ActionMailer or actionable. You can disable CoffeeScript. It was cool for a while but now that ES6 exists we should just use it.
+You can disable features you don't need such as ActionMailer or ActionCable. You can disable CoffeeScript. It was cool for a while but now that ES6 exists we should just use it.
 
 Rails 5.1 comes with the support for webpack. But until Rails 5.2 comes up, we need to use the `webpack-dev-server` manually in development mode so we can hot reload assets. For that end, I recommend installing good old [Foreman](https://github.com/ddollar/foreman). Install it like this:
 
@@ -63,7 +63,7 @@ In production, you don't need the `webpack-dev-server` as the `bin/rails assets:
 
 Now, you can rejoice with Yarn, Webpack, and no more jQuery pre-installed. Samuel Muller has a [nice article](http://samuelmullen.com/articles/embracing-change-rails51-adopts-yarn-webpack-and-the-js-ecosystem/) that summarizes most of these changes in more detail.
 
-Now Ruby on Rails officially supports every bells and whistle from the Javascript ecosystem. There is nothing left behind that you might miss.
+Now Ruby on Rails officially supports every bell and whistle from the Javascript ecosystem. There is nothing left behind that you might miss.
 
 No more manually vendoring JS assets in `vendor/assets/javascripts` directory. No more need to use [Rails Assets](https://rails-assets.org/), which was a secondary RubyGems source specific to package JS libraries into RubyGems.
 
@@ -125,9 +125,9 @@ You now have a whole lot more options for Javascript, as Rails 5.1 fully embrace
 
 Once upon a time, no one properly knew how to streamline an [Asset Pipeline](http://guides.rubyonrails.org/asset_pipeline.html). It was very messy to compile all your assets in a single file with proper cache busting timestamps, but the **Sprockets** gem did it.
 
-Once upon a time, Javascript 5 was a damn mess. Libraries such as JQuery actually "fixed" most of the browsers DOM situation, and CoffeeScript normalized the language in a way that made it enjoyable. ES6 came to take over the reigns but it's very unfair to criticize JQuery and Coffee as neither ES6 nor HTML5 were there to solve the situation almost 10 years ago. JQuery and Coffee were there, and they solved it.
+Once upon a time, Javascript 5 was a damn mess. Libraries such as jQuery actually "fixed" most of the browser DOM situation, and CoffeeScript normalized the language in a way that made it enjoyable. ES6 came to take over the reins but it's very unfair to criticize jQuery and Coffee as neither ES6 nor HTML5 were there to solve the situation almost 10 years ago. jQuery and Coffee were there, and they solved it.
 
-When Angular, Ember, React was starting, we already had a good enough solution javascript heavy website with [Turbolinks](https://github.com/turbolinks/turbolinks). This is still a very good solution that you should consider using instead of adding a full-blown (and sometimes unnecessary) React/Redux solution at once.
+When Angular, Ember, and React were starting, we already had a good enough solution for javascript-heavy websites with [Turbolinks](https://github.com/turbolinks/turbolinks). This is still a very good solution that you should consider using instead of adding a full-blown (and sometimes unnecessary) React/Redux solution at once.
 
 CSS is another matter entirely. The Rails community also created Sass (which then Twitter envied and copied to Less for the Bootstrap framework).
 

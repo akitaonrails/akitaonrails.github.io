@@ -166,7 +166,7 @@ PUSHER_KEY: "14e86e5fee3335fa88b0"
 PUSHER_CHANNEL: "test_chat_channel"
 ```
 
-Pusher is configured in the server-side through this initializer:
+Pusher is configured on the server-side through this initializer:
 
 ```ruby
 # config/initializers/pusher.rb
@@ -189,7 +189,7 @@ class SendEventsJob < ActiveJob::Base
 end
 ```
 
-By the way, as a segue, [SuckerPunch](https://github.com/brandonhilkert/sucker_punch) is a terrific solution for in-process asynchronous tasks. It's a better option to start with it without having to implement a separated system with Sidekiq workers.
+By the way, as a segue, [SuckerPunch](https://github.com/brandonhilkert/sucker_punch) is a terrific solution for in-process asynchronous tasks. It's a better option to start with it without having to implement a separate system with Sidekiq workers.
 
 Once you have larger job queues or jobs that are taking too long, then go to Sidekiq. If you use ActiveJob, the transition is as simple as changing the following configuration line in the "config/application.rb" file:
 
@@ -215,7 +215,7 @@ class PusherEvent
 end
 ```
 
-As it's a very simple, the Gemfile is equally simple:
+As it's very simple, the Gemfile is equally simple:
 
 ```ruby
 gem 'pusher'
@@ -235,15 +235,15 @@ So what it does is very simple:
 
 Pusher has support for authenticated users, private channels and more, but this is 80% of the usage for most cases. You can implement this as a chat system, a notification system, or anything like that.
 
-Your Rails app sets up the front-end HTML/Javascript to connect to Pusher, listening to certain topics and events and the same Rails app triggers Pusher in the server-side, posting new messages. Pusher receives messages and broadcasts to the clients that subscribes to its topics. That's it.
+Your Rails app sets up the front-end HTML/Javascript to connect to Pusher, listening to certain topics and events and the same Rails app triggers Pusher on the server-side, posting new messages. Pusher receives messages and broadcasts to the clients that subscribe to its topics. That's it.
 
 ## Ex Pusher Lite - Part 1: Initial Phoenix-based Pusher replacement
 
 My original idea was to make a drop-in replacement for the Pusher server, using the same Pusher client, but for now it was not easy to do so.
 
-Instead, this Part 1 will focus on implementing an initial server ExPusherLite server that also receives events triggered by the same Rails server-side controller process and broadcasting to the same Rails front-end component through WebSockets.
+Instead, this Part 1 will focus on implementing an initial ExPusherLite server that also receives events triggered by the same Rails server-side controller process and broadcasting to the same Rails front-end component through WebSockets.
 
-I followed [Daniel Neighman](https://labs.opendoor.com/phoenix-on-rails-for-client-push-notifications) tutorial. I had to do a few adjustments to have it working (and as this is still Part 1, it's not a complete solution yet!)
+I followed [Daniel Neighman](https://labs.opendoor.com/phoenix-on-rails-for-client-push-notifications)'s tutorial. I had to do a few adjustments to have it working (and as this is still Part 1, it's not a complete solution yet!)
 
 You can clone the initial version from [my other Github repository](https://github.com/akitaonrails/ex_pusher_lite) like this:
 
@@ -432,7 +432,7 @@ And this is it, this is all it takes for this initial Phoenix-based Pusher repla
 
 ## Ex Pusher Lite - Part 2: Changing the Rails application
 
-Now that we have a bare bone Phoenix app that we can start through "mix phoenix.server" and make it available at "localhost:4000" we can start changing the Rails application.
+Now that we have a bare-bones Phoenix app that we can start through "mix phoenix.server" and make it available at "localhost:4000" we can start changing the Rails application.
 
 As I said in the beginning, my original wish was to use the same Pusher javascript client but change the endpoint, turns out it's more difficult than I thought, so I will start by removing the following line from the application layout:
 
@@ -442,7 +442,7 @@ As I said in the beginning, my original wish was to use the same Pusher javascri
 
 We can get rid of the Pusher gem in the Gemfile and the "pusher.rb" initializer as well.
 
-Now, a replacement for the "pusher.min.js" is Phoenix own "phoenix.js" that comes bundled in "deps/phoenix/web/static/js/phoenix.js". The problem is that it is an ES6 javascript source that Phoenix passes through Brunch to be transpiled back to ES5 in every Phoenix application.
+Now, a replacement for the "pusher.min.js" is Phoenix's own "phoenix.js" that comes bundled in "deps/phoenix/web/static/js/phoenix.js". The problem is that it is an ES6 javascript source that Phoenix passes through Brunch to be transpiled back to ES5 in every Phoenix application.
 
 But I am copying this file directly to the Rails repository at "app/assets/javascripts/phoenix.es6". I could change it to ES5 but I decided to go the more difficult path and just add Babel support to Rails Asset Pipeline using [Nando's very helpful tutorial](http://nandovieira.com/using-es6-with-asset-pipeline-on-ruby-on-rails) on the subject. 
 
@@ -704,7 +704,7 @@ PUSHER_SECRET: "2b94ff0f07ce9769567f"
 PUSHER_CHANNEL: "public:test_chat_channel" 
 ```
 
-This bit needs more working, I know. I just copied Pusher's key and Pusher's password as KEY and SECRET. This is the bit I mentioned I tweaked in the RoomChannel's authenticate function in the Phoenix side.
+This bit needs more work, I know. I just copied Pusher's key and Pusher's password as KEY and SECRET. This is the bit I mentioned I tweaked in the RoomChannel's authenticate function in the Phoenix side.
 
 Now that I have this in place, I have to change the "PusherEvent" model to trigger the message from the form to the Phoenix's EventsController, like this:
 
@@ -735,7 +735,7 @@ The new javascript will subscribe to the "public:test_chat_channel" topic and li
 
 ### Conclusion: Further Work
 
-So, with this we have exactly the same behavior than the Pusher version, but now it's under my control.
+So, with this we have exactly the same behavior as the Pusher version, but now it's under my control.
 
 The idea is for the Phoenix app to have apps, a real authentication for different apps. Then every Rails app I do can just connect to this same Phoenix service.
 

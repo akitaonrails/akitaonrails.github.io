@@ -16,7 +16,7 @@ draft: false
 
 I released [THE CONF](http://www.theconf.club) yesterday. I hope you enjoy the conference program and take advantage of the limited early-bird discount!
 
-Anyway, the website itself is super simple. A single page site. I chose to use Rails 5.1 as the site structure because it takes care of all the stuff I'd have to add manually in any other framework. Specially now that that it brings native Yarn and Webpack support it's a breeze to use by any competent front-end developer.
+Anyway, the website itself is super simple. A single page site. I chose to use Rails 5.1 as the site structure because it takes care of all the stuff I'd have to add manually in any other framework. Especially now that it brings native Yarn and Webpack support it's a breeze to use by any competent front-end developer.
 
 But even with the many built-in niceties, a full production setup still requires extra steps that most beginners will not know. So I decided to compile a small checklist of things you must take care of before deploying to production. It's not an extensive and complete list for all use cases, but this should be enough for most small cases.
 
@@ -28,7 +28,7 @@ But even with the many built-in niceties, a full production setup still requires
 
 ## Setting up the project
 
-One thing that most people forget, even experienced developers is that the `rails new` command used to bootstrap the initial project structure accepts many option flags. Instead of having to manually tweak files later, you can start like this:
+One thing that most people forget, even experienced developers, is that the `rails new` command used to bootstrap the initial project structure accepts many option flags. Instead of having to manually tweak files later, you can start like this:
 
 ```
 rails new your_project \
@@ -41,7 +41,7 @@ rails new your_project \
 
 If you're building with React or another full-featured javascript framework, you will probably want to skip Turbolinks. Otherwise, if it's a simple site, do use [Turbolinks](https://sevos.io/2017/02/27/turbolinks-lifecycle-explained.html).
 
-Start using Postgresql from the get go, don't use Sqlite3.
+Start using PostgreSQL from the get-go, don't use Sqlite3.
 
 Skip Action Cable. Prefer a real solution such as [Pusher.com](https://pusher.com/). If you really need something done in-house, consider something like my solution with Elixir, the [Ex Pusher Lite](http://expusherlite.cm42.io/). Take this recommendation with a grain of salt, of course, for small things Action Cable is more than enough. I may write another post just elaborating on this point if people indicate they want to in the comments section.
 
@@ -75,7 +75,7 @@ So, for Heroku, you basically don't have to do anything. And in a custom deploym
 
 This is really super easy. There is no reason why anyone wouldn't add a CDN to any website. Please just do it.
 
-Open your AWS Management Console and [open CloudFront](https://console.aws.amazon.com/cloudfront/). From there click on "Create Distribution" and just follow the defaults in the Wizard. The requirement is that you MUST know that domain and sub-domain you want to point to (for example "www.theconf.club") in the "Origin Domain Name" field.
+Open your AWS Management Console and [open CloudFront](https://console.aws.amazon.com/cloudfront/). From there click on "Create Distribution" and just follow the defaults in the Wizard. The requirement is that you MUST know the domain and sub-domain you want to point to (for example "www.theconf.club") in the "Origin Domain Name" field.
 
 The only customization you MUST do is to change the ["Forward Headers"](http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/header-caching.html#header-caching-web-cors) option to "Whitelist" in the "Default Cache Behavior Settings". Then you need to add "Origin", "Access-Control-Request-Headers", and "Access-Control-Request-Method" to the Whitelist. And that's it, now your distribution is CORS enabled.
 
@@ -91,9 +91,9 @@ Now, edit your `config/environments/production.rb` and add the following:
 config.action_controller.asset_host = ENV['CDN_URL'] if ENV['CDN_URL']
 ```
 
-To actually use the CDN you must declare every asset you use across your view templates using Rails View Helpers such as `image_tag`, `asset_path`, `javascript_pack_tag`, `stylesheed_pack_tag`, `stylesheet_link_tag`, etc. The Rails bootstrap will already create layout template with such helpers, you just need to follow them.
+To actually use the CDN you must declare every asset you use across your view templates using Rails View Helpers such as `image_tag`, `asset_path`, `javascript_pack_tag`, `stylesheet_pack_tag`, `stylesheet_link_tag`, etc. The Rails bootstrap already creates layout templates with such helpers, you just need to follow them.
 
-When webpack runs, it will generate all static, optimized and pre-compiled assets in the `public/packs` with a manifest file declaring the full URL pointing to the CDN. For example, if I fetch the `/app/public/packs/manifest.json` from the Heroku dyno directly, I will get something like this:
+When webpack runs, it will generate all static, optimized and pre-compiled assets in `public/packs` with a manifest file declaring the full URL pointing to the CDN. For example, if I fetch the `/app/public/packs/manifest.json` from the Heroku dyno directly, I will get something like this:
 
 ```
 {
@@ -116,9 +116,9 @@ When webpack runs, it will generate all static, optimized and pre-compiled asset
 }
 ```
 
-So, if for some reason I had to create a new CDN distribution, you have to remember to update the `CDN_URL` variable on Heroku and redeploy your app so it regenerates the assets and this manifest file. It will just those URLs when rendering the final HTMLs.
+So, if for some reason I had to create a new CDN distribution, you have to remember to update the `CDN_URL` variable on Heroku and redeploy your app so it regenerates the assets and this manifest file. It will just use those URLs when rendering the final HTML.
 
-When a user opens your site, it will receive the HTML with URLs pointing to the CDN. The very first time it won't have any cached assets, so it will ask your site for them. Your site must return the assets WITH the correct CORSs headers so the CDN caches them with the headers and forward those headers to the browser. The browser needs those headers because it will open from domain `www.theconf.club`, for example, but fonts are loading from `doz7rtw2u3wg4.cloudfront.net`, so it would raise a security warning and not load the fonts because they are in different domains. Hence the CORS headers the font provides indicating that they are safe to load.
+When a user opens your site, it will receive the HTML with URLs pointing to the CDN. The very first time it won't have any cached assets, so it will ask your site for them. Your site must return the assets WITH the correct CORS headers so the CDN caches them with the headers and forwards those headers to the browser. The browser needs those headers because it will open from domain `www.theconf.club`, for example, but fonts are loading from `doz7rtw2u3wg4.cloudfront.net`, so it would raise a security warning and not load the fonts because they are in different domains. Hence the CORS headers the font provides, indicating that they are safe to load.
 
 For your Rails app to return the proper headers, you need to add the `rack-cors` gem to your Gemfile. Then you must add a new configuration file at `config/initializers/rack-cors.rb` with:
 
@@ -184,9 +184,9 @@ X-Cache: Miss from cloudfront
 X-Amz-Cf-Id: tVkZ41RRr66iBT6atWTO_oeTY_jG0zCBFuXU8bKyClZDQ8kl-hDegA==
 ```
 
-A CDN is the secret sauce that allows any content-based website to scale way beyond what your server can provide. It's a huge cost-saving and it also makes for a way more smooth user experience for your users.
+A CDN is the secret sauce that allows any content-based website to scale way beyond what your server can provide. It's a huge cost-saving and it also makes for a much smoother user experience for your users.
 
-One last caveat. The many Rails View Helpers such as `image_tag` allows you to add the image file name without an extension in development and it will correctly find the image. But on the server it will fail to render the template this way. As a rule of thumb **ALWAYS** fill in the entire filename and extension, for example `image_tag("logo.png")` instead of just `image_tag("logo")`.
+One last caveat. The many Rails View Helpers such as `image_tag` allow you to add the image file name without an extension in development and they will correctly find the image. But on the server it will fail to render the template this way. As a rule of thumb **ALWAYS** fill in the entire filename and extension, for example `image_tag("logo.png")` instead of just `image_tag("logo")`.
 
 You can see how this fails if you open a console in Heroku and check out how it fails to derive the full image URL:
 
@@ -207,7 +207,7 @@ irb(main):002:0> ActionController::Base.helpers.asset_path("icon-goals.png")
 
 ### Adding Memcached
 
-Talking about cache is always a complicated thing. Which is the reason many people avoid even trying. Even though you can go really crazy with super granular configurations such as using [Russian Doll Caching](http://edgeguides.rubyonrails.org/caching_with_rails.html#russian-doll-caching), just adding cache in a few spots can greatly benefit you. And it's super easy to boot.
+Talking about caching is always a complicated thing, which is why many people avoid even trying. Even though you can go really crazy with super granular configurations such as using [Russian Doll Caching](http://edgeguides.rubyonrails.org/caching_with_rails.html#russian-doll-caching), just adding cache in a few spots can greatly benefit you. And it's super easy to boot.
 
 The first thing to do is add [Memcachier](https://devcenter.heroku.com/articles/memcachier) to your Heroku application. It has a free-tier and for most small apps it should be enough.
 
@@ -241,7 +241,7 @@ config.action_dispatch.rack_cache = {
 }
 ```
 
-Now, let's say you have a block in your template that requires a bunch of records from your database. But you know that those records barely change. What can you do? One alternative is cache the ActiveRecord query entirely like this:
+Now, let's say you have a block in your template that requires a bunch of records from your database. But you know that those records barely change. What can you do? One alternative is to cache the ActiveRecord query entirely like this:
 
 ```ruby
 class HomePageController < ApplicationController
@@ -259,7 +259,7 @@ I could also have added a `cache do ... end` block in the template itself. There
 
 What makes caching difficult is adding expiration logic. And the rule of thumb is: never try to manually expire any cache. Just change the lookup key for something else and let the old data just die (memcached will take care of getting rid of unused old data).
 
-You really want to read the [Rails Guides on Caching](http://edgeguides.rubyonrails.org/caching_with_rails.html). It really is not as difficult as you think and you can cache only the few snippets where you know is performance-sensitive and leave the other parts that are highly dynamic and you're unsure how to properly cache.
+You really want to read the [Rails Guides on Caching](http://edgeguides.rubyonrails.org/caching_with_rails.html). It really is not as difficult as you think and you can cache only the few snippets you know are performance-sensitive and leave the other parts that are highly dynamic and you're unsure how to properly cache.
 
 But as it's super cheap, just use it right now.
 
@@ -267,7 +267,7 @@ But as it's super cheap, just use it right now.
 
 ### Adding SSL support
 
-If you have any security sensitive transaction going on (ex. purchases) you want to use SSL. Again, many people avoid it because it's usually difficult to even understand how to properly get a certificate.
+If you have any security-sensitive transactions going on (ex. purchases) you want to use SSL. Again, many people avoid it because it's usually difficult to even understand how to properly get a certificate.
 
 [Let's Encrypt](https://letsencrypt.org/) made the process super trivial. Kudos to them! And even better: it's free! So, you don't have any excuses to not have SSL.
 
@@ -289,6 +289,6 @@ We used to have to use the complicated gem [letsencrypt-rails-heroku](https://gi
 
 ### Conclusion
 
-I believe this cover the very basics of stuff you should be doing before deploying your small app to Heroku. For larger apps there are many more concerns that are beyond the scope of this post.
+I believe this covers the very basics of stuff you should be doing before deploying your small app to Heroku. For larger apps there are many more concerns that are beyond the scope of this post.
 
 If you remember about more tips and tricks, please share in the comments section below.

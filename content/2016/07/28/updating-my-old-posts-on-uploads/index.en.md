@@ -28,11 +28,11 @@ They are still good posts to understand the mechanics of what I will propose her
 
 **TL;DR** is: use Cloudinary (with Attachinary) and install a CDN (Cloudfront) right now as it's super trivial to do.
 
-> Uploading files is not a task to be taken lightly. It's one of those tasks that you must not consider that it "works" just because it works in your development machine, for a few trivial uploads. Production level behavior changes drastically and it can bring your entire project down depending on how heavy it depends on user generated content.
+> Uploading files is not a task to be taken lightly. It's one of those tasks that you must not consider that it "works" just because it works in your development machine, for a few trivial uploads. Production level behavior changes drastically and it can bring your entire project down depending on how heavily it depends on user-generated content.
 
 There are a lot of moving parts to understand. But in the most basic solutions you just create an HTML multipart form with a file input field and submit it to some controller endpoint directly. This controller receives the blob binary and you save it to some local directory in the server.
 
-This is the **worst possible solution** and unfortunately this is the one you will find the most through the web.
+This is the **worst possible solution** and unfortunately this is the one you will find the most across the web.
 
 There are many problems to deal with this simple implementation:
 
@@ -40,11 +40,11 @@ There are many problems to deal with this simple implementation:
 
 Once the user's browser connects to the web application it will hold that connection and block the entire process through the duration of the request-response cycle. Making this simple to understand, if you only have 1 single process in the server, it will be unable to respond to any other request until the upload finishes.
 
-Fortunately most deployments will use NGINX at the front of the web application - as they should -, so this effect is minimized as NGINX will receive the entire blob before passing it to the web application process underneath, making it not so problematic in most cases.
+Fortunately most deployments will use NGINX in front of the web application - as they should - so this effect is minimized as NGINX will receive the entire blob before passing it to the web application process underneath, making it not so problematic in most cases.
 
 But if you're on Heroku, the router layer has a **30 seconds timeout** limit. If the upload takes more than that (which is common with users in unreliable networks) this layer will cut the connection down before it finishes. Users will retry and this can cause your request queues to grow very fast.
 
-Avoid uploading anything to Heroku. I consider this a **feature** as it forces application deployed on Heroku to use **good practices** as I will explain below.
+Avoid uploading anything to Heroku. I consider this a **feature** as it forces applications deployed on Heroku to use **good practices** as I will explain below.
 
 * You should also NOT save files to the local filesystem if you want to scale horizontally, as one server will not be able to see what's in the other server unless you're in AWS EC2 or other IaaS, with shared mounted volumes, for example. In Heroku, you can't rely on anything in the filesystem as the machines are volatile and whenever a dyno restarts it loses whatever was not there during the deployment.
 
@@ -54,7 +54,7 @@ The next option you think of is to add Sidekiq or some other Async Job mechanism
 
 The last option, if you dig deeper, is browser-based **direct uploads to S3** and just posting the URLs to your web application. This is the ideal solution, but it's not easy to implement in your stack.
 
-* Once you nail everything above, you still do the mistake of putting the S3 URLs directly in the IMG tags in your HTML, which is not recommended by Amazon as S3 is recommended just for "storage" purposes. This is the easy part to fix, but most projects forget about that.
+* Once you nail everything above, you still make the mistake of putting the S3 URLs directly in the IMG tags in your HTML, which is not recommended by Amazon as S3 is recommended just for "storage" purposes. This is the easy part to fix, but most projects forget about that.
 
 ### Cloudinary or Carrierwave Direct
 
@@ -62,11 +62,11 @@ In my previous posts I explained each of the above issues in more detail and I o
 
 Nowadays the solution is actually super easy and this is what I recommend: go straight to [Cloudinary](http://cloudinary.com/documentation/rails_integration). This is a Software as a Service solution for proper direct uploads and dynamic image processing. You should definitely explore the [Attachinary](https://github.com/assembler/attachinary) gem to make the process easier.
 
-If you have legacy Carrierwave, Paperclip, Shrine, Dragonfly, Refile or others, one jerry rigged - but reasonable - alternative is to just add Attachinary to the mix.
+If you have legacy Carrierwave, Paperclip, Shrine, Dragonfly, Refile or others, one jerry-rigged - but reasonable - alternative is to just add Attachinary to the mix.
 
 Let's say you have an old `user.avatar` uploader. You can just create a new `user.new_avatar` with Attachinary/Cloudinary. In the HTML form upload you start using just the Attachinary helpers. And in the HTML where you show the image itself, you can make a helper to check for `@user.new_avatar?` and show using `cl_image_tag(@user.avatar.path` instead, otherwise you show the old URLs.
 
-You don't need to totally migrate everything to Cloudinary, just keep the old assets where they are and start putting the new assets in the Cloudinary configuration. It has a Free tier that can hold up to 75 thousand images and allow a traffic of up to 5GB. And with just USD 44 a month you have 10 times that. So it's really cheap if your application is serious about file uploading.
+You don't need to totally migrate everything to Cloudinary, just keep the old assets where they are and start putting the new assets in the Cloudinary configuration. It has a Free tier that can hold up to 75 thousand images and allows traffic of up to 5GB. And with just USD 44 a month you have 10 times that. So it's really cheap if your application is serious about file uploading.
 
 If you don't want to commit to an external service yet, and you're using Carrierwave, another option you must consider is testing out [CarrierwaveDirect](https://github.com/dwilkie/carrierwave_direct) to test direct uploading to S3 from the browser. This will at least avoid the complexities of setting up async uploads from the web application to S3.
 
@@ -78,7 +78,7 @@ Update: [Janko Marohnić](https://github.com/janko-m) posted a very good comment
 
 > As for CarrierwaveDirect, I don't think it's actually very useful, because backgrounding you need to do all by yourself anyway, so basically all it gives you is the ability to generate a direct-upload form to S3. But generating request parameters and URL to S3 is something that's already built in into the official [aws-sdk](https://github.com/aws/aws-sdk-ruby) gem, CarrierwaveDirect just seems to be reimplementing that logic. And the advantage of generating this through aws-sdk is that it's not HTML-specific, so you could setup an endpoint which returns this information as JSON, and now you have your multiple file uploads directly to S3 :)
 
-As a disclaimer I didn't test CarrierwaveDirect myself and I remember it being quite broken 2 years ago. And I've heard good things about Shrine along the way but never did a proper testing. I'd recommend giving it a try if you want to migrate away from Carrierwave.
+As a disclaimer I didn't test CarrierwaveDirect myself and I remember being quite broken 2 years ago. And I've heard good things about Shrine along the way but never did proper testing. I'd recommend giving it a try if you want to migrate away from Carrierwave.
 
 ### Don't serve assets from S3, use a CDN, any CDN
 

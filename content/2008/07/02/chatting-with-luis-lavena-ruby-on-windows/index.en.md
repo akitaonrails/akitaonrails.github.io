@@ -8,7 +8,7 @@ tags:
 draft: false
 ---
 
-This time I interviewed [**Luis Lavena**](http://blog.mmediasys.com/). If you're a Ruby developer working on Windows, you owe him a lot! After all he is the maintainer of [One-Click Ruby Installer](http://github.com/luislavena/rubyinstaller/tree), the main Windows Ruby distribution. It is a lot of work to maintain such a distro and Luis explains all the hoops necessary to achieve this. The main message: we need more collaborators! Anyone can rant, but there are a few that actually step down from the pedestal and get their hands dirty.
+This time I interviewed [**Luis Lavena**](http://blog.mmediasys.com/). If you're a Ruby developer working on Windows, you owe him a lot! After all he is the maintainer of [One-Click Ruby Installer](http://github.com/luislavena/rubyinstaller/tree), the main Windows Ruby distribution. It is a lot of work to maintain such a distro and Luis explains all the hoops necessary to achieve this. The main message: we need more collaborators! Anyone can rant, but there are a few who actually step down from the pedestal and get their hands dirty.
 
 [![](http://s3.amazonaws.com/akitaonrails/assets/2008/7/2/325572435_f1f1382372.jpg)](http://www.flickr.com/photos/diegal/325572435/)
 
@@ -17,26 +17,26 @@ This time I interviewed [**Luis Lavena**](http://blog.mmediasys.com/). If you're
 
 **Luis Lavena:** Yeah, funny indeed. Right now I'm Technical director of an interactive and design agency with offices in NY and Paris. My job is to bridge the design field with the technology one, mostly on web based application development.
 
-I'm from Argentina, live there, family and friends. Now moved a few months to boost some developments and get first steps of the new organization in place.
+I'm from Argentina, live there, family and friends. I moved a few months ago to boost some developments and get first steps of the new organization in place.
 
 I'm from a small province named Tucuman, northwest area of Argentina (1200 kms from Buenos Aires to be exact)
 
 **AkitaOnRails:** Awesome, have you ever been in Brazil? Do you have contact with other Latin America Railers?
 
-**Luis Lavena:** Even though Brazil is so close from Argentina I had never been there, which is bad. I have several friends that lived there over the years.
+**Luis Lavena:** Even though Brazil is so close from Argentina I have never been there, which is a shame. I have several friends that lived there over the years.
 
 I keep in touch with several Rubists and Railers of Latin America, but most with the ones in Argentina due to several meetings we had during the years [RubyArg](http://lista.rubyargentina.com.ar) mailing list has been working.
 
 **AkitaOnRails:** I am very interested in understanding how the Railers are organizing themselves in Argentina as we, in Brazil, are a growing community as well. Do you see new programmers going straight to Rails or is it the usual move from Java/others to Rails? Are companies adopting it, or Rails (and Ruby in general) still has a long way to go there as well?
 
 **Luis Lavena:** Well, there is a huge number of developers that came from Java and dotNET stuff (mostly Java) and they are playing with Rails, there is also lot of developers that do Ruby for administrative stuff or even creating games with it.  
-Companies that develops software still need to adopt Ruby/Rails for their business, the biggest problem with that is the lack of support shaped as companies like Sun or some consulting services for Java. (or even Microsoft).
+Companies that develop software still need to adopt Ruby/Rails for their business, the biggest problem with that is the lack of support shaped as companies like Sun or some consulting services for Java. (or even Microsoft).
 
 **AkitaOnRails:** Going back to the past, how did you start in programming in general? Did you study computer science, or were you dragged in there in some other way? And, finally, how did you stumble upon Ruby and Rails?
 
 **Luis Lavena:** It's funny, I started programming back in 1989, playing with sprites and GOTO's with BASIC on a Z80 computer.
 
-I officially didn't finish my degree on CS, since job and fun stuff distracted me away from it. I firstly meet Ruby back in 2001, loved its syntax, enjoyed it's verbosity but it was not mature enough for my needs, at least not in Windows.
+I officially didn't finish my degree on CS, since job and fun stuff distracted me away from it. I first met Ruby back in 2001, loved its syntax, enjoyed its verbosity but it was not mature enough for my needs, at least not in Windows.
 
 Even though I was using Python for so many years, I internally used Ruby to manage several stuff, from simple scripts to later rake tasks that helped us build our tools.
 
@@ -58,13 +58,13 @@ Banks and such can pay the luxury of have everything running with J2EE, but that
 **Luis Lavena:** I've been forced to use Windows for many years, mostly related to hardware development in the video broadcast field. Moreover, I'm a BSD user and Linux one, even played some years with Macs and lately with OSX.
 
 So that restriction forced me to build most of my tools around that limitation.  
-Ruby allowed me to enjoy that limitation by been expressive, which made me more productive in that field.
+Ruby allowed me to enjoy that limitation by being expressive, which made me more productive in that field.
 
-Ruby is not capable to handle my main requirements for video processing, but it still powers 70% of my environment, along with Open Source Software and Freeware.
+Ruby is not capable of handling my main requirements for video processing, but it still powers 70% of my environment, along with Open Source Software and Freeware.
 
-I've been using Ruby for so long, that I thought the community, now that it's growing, would maybe value the experience and the willing to help in this particular scenario.
+I've been using Ruby for so long, that I thought the community, now that it's growing, would maybe value the experience and the willingness to help in this particular scenario.
 
-So instead of keep scratching my itch in the shadow, I decided to contribute back and help others that search for the same stuff. So you can say I'm trying to balance my karma.
+So instead of just scratching my itch in the shadow, I decided to contribute back and help others that search for the same stuff. So you can say I'm trying to balance my karma.
 
 **AkitaOnRails:** Americans probably don't understand this but in emerging countries such as Brazil, people don't actually have much choice, most are not educated enough (_cof_ english _cof_) and so they find lots of barriers. The last resort for everybody is Windows. I think it is the same thing in Argentina. Railers here don't simply migrate to Macs or Linux, I would say that at least 90% of all developers are locked in to Windows for one reason or another. Is it the same in Argentina, I presume?
 
@@ -74,9 +74,9 @@ Still, there are plenty of users and developer that are locked in to some corpor
 
 So, we (as the community) can't get to those developers without being more open minded or provide tools that ease the path between their current environment and alternative tools.
 
-**AkitaOnRails:** But for some reason there seems to be near to zero interest from the community on supporting Ruby on Windows. I mean, there are people like you, some RubyGem developers that go through all the trouble of making available a binary for win32, but it is not enough it seems. How did the [One-Click Ruby Installer](http://rubyforge.org/projects/rubyinstaller/) began, did you create it or you inherited it?
+**AkitaOnRails:** But for some reason there seems to be near to zero interest from the community on supporting Ruby on Windows. I mean, there are people like you, some RubyGem developers who go through all the trouble of making available a binary for win32, but it is not enough it seems. How did the [One-Click Ruby Installer](http://rubyforge.org/projects/rubyinstaller/) begin, did you create it or you inherited it?
 
-**Luis Lavena:** Yeah, I agree with you, but I cannot blame them, after all, everybody just scratch it's own itch ;-)
+**Luis Lavena:** Yeah, I agree with you, but I cannot blame them, after all, everybody just scratches their own itch ;-)
 
 I've inherited One-Click Installer from [Curt Hibbs](http://curthibbs.wordpress.com/), who also inherited from [Andy Hunt](http://en.wikipedia.org/wiki/Andy_Hunt_(author)) and other contributors.
 
@@ -86,7 +86,7 @@ One-Click Installer, on the other hand, relies on some builds made by the curren
 
 **AkitaOnRails:** Haha, I want to dive in to the more technical stuff so people can better understand the current situation on Windows. How different is Ruby on Windows compared to Ruby on Linux, for instance? The most obvious thing is that any Gem with C Extensions without proper binaries for Windows will fail. Trying to execute shell commands will fail and [RubyInline](http://www.zenspider.com/ZSS/Products/RubyInline/) as well. What else?
 
-**Luis Lavena:** Hehe, that's just the tip of the iceberg, let me show you one example. Let's say that you have a package ABC that was build for your current distribution of Linux. That specific version of Linux links to a common runtime that handles the basic commands like file handling, console, etc. That is often called CRT (C Runtime) and on Linux, glibc.
+**Luis Lavena:** Hehe, that's just the tip of the iceberg, let me show you one example. Let's say that you have a package ABC that was built for your current distribution of Linux. That specific version of Linux links to a common runtime that handles the basic commands like file handling, console, etc. That is often called CRT (C Runtime) and on Linux, glibc.
 
 So, your distro of Linux is linked to this glibc version A.B.C. If your distribution upgrades glibc version (like from 2.2 to 2.5) then you're forced to:
 
@@ -109,7 +109,7 @@ Thankfully in the latest versions you don't need to install Platform SDK kit, wh
 
 Also, Ruby doesn't use the safe CRT version of string copy functions, so you need to use a compiler flags just to avoid them… So after weeks of hard work getting it built with VC8 and every dependency, you end with something that performs almost the same, since there is no performance gain (but now you have less hair).
 
-MinGW, on the other hand, was closer to a Linux environment, so most of the tools worked out of the box. The good part was that we didn't require to build all the dependencies with it, since by default everything links with MSVCRT (the default CRT on Windows). MinGW also provides some cross-compilation tools that lets you build, using Linux environment, share libraries (dll) and executables for Windows.  
+MinGW, on the other hand, was closer to a Linux environment, so most of the tools worked out of the box. The good part was that we didn't need to build all the dependencies with it, since by default everything links with MSVCRT (the default CRT on Windows). MinGW also provides some cross-compilation tools that lets you build, using Linux environment, shared libraries (dll) and executables for Windows.  
 I can consider that a plus, dunno what others think about it
 
 **AkitaOnRails:** Wow, this is really overwhelming and I recommend anyone interested in the details to take a look at your [blog](http://blog.mmediasys.com/). But all that said, you now have everything in place, a proper process and such, I assume. If I am a Windows C developer and I want to contribute, where should I go first, I mean, so I can know what tools to use, how to build stuff and so on?
@@ -120,7 +120,7 @@ Runtime ships the minimum Ruby+RubyGems so you get started, and it can also be u
 
 This DevKit will not only let you get easily working with Ruby on Windows (and have access to some great and cool Rubygems) but also lets you contribute back to Ruby project. How? Easily, the Ruby Installer project (on [Github](http://github.com/luislavena/rubyinstaller/tree/master)) is self-hosted. What does it mean? It is possible for you to replicate our development environment anywhere, hack your changes or even debug Ruby's own C code and contribute back to the community. We have been doing that for several months, and it's working, how cool is that?
 
-**AkitaOnRails:** That sounds awesome, I didn't know that, and I bet lots of developers didn't also. So I hope C developers reading this can get up to speed with this now. Another detail: RubyGems. How difficult it is to port a Gem with C Extensions to provide a Windows binary when you install it?
+**AkitaOnRails:** That sounds awesome, I didn't know that, and I bet lots of developers didn't also. So I hope C developers reading this can get up to speed with this now. Another detail: RubyGems. How difficult is it to port a Gem with C Extensions to provide a Windows binary when you install it?
 
 **Luis Lavena:** Oh, that requires that some developers don't fall into platform specific tricks to make their tools work. One example, that is also a bad practice, is to use hardcoded paths…
 
@@ -185,7 +185,7 @@ require 'some_gem'<br>
 <p><strong>Luis Lavena:</strong> Dunno if Ruby "core" will accept that, I lately only hear the fork word around <span class="caps">MRI</span> ruby. Moreover, we can squash bugs in the Ruby for Windows implementation, but we cannot improve the quality too much since those changes would affect other platforms too.</p>
 <p>The bad thing is that there is no clear separation by platform of specific code, everything is around a series of macros and compilation conditions that makes it hard to track (for the non-sadistic developers).</p>
 <p><strong>AkitaOnRails:</strong> Which reminds me of the Phusion guys with their <a href="http://www.rubyenterpriseedition.com/">Enterprise Edition</a> which is a fork of <span class="caps">MRI</span>. Did you try to take a look on the copy-on-write GC patches from them? Maybe have it on the Windows version? Ruby on Windows itself is a 'fork'. You end up having to synchronize your trunk with theirs, is that how it works?</p>
-<p><strong>Luis Lavena:</strong> Honestly I didn't had time to look at Enterprise Edition, even though I followed all the posts and the discussion of those patches in ruby-core. The funny thing is that the latest releases of the Ruby 1.8.6 branch are giving me headaches (more than looking at the C code). They cannot even complete the self-tests and segfault with some extensions like the mysql gem.</p>
+<p><strong>Luis Lavena:</strong> Honestly I didn't have time to look at Enterprise Edition, even though I followed all the posts and the discussion of those patches in ruby-core. The funny thing is that the latest releases of the Ruby 1.8.6 branch are giving me headaches (more than looking at the C code). They cannot even complete the self-tests and segfault with some extensions like the mysql gem.</p>
 <p><strong>AkitaOnRails:</strong> Yes, it has been causing a lot of fuzz around the community, and it should. Hope they can get around it soon. Well, I think I already took a lot of your time. Is there any subject you would like to tackle, or at least some message for your younger brazilian community?</p>
 <p><strong>Luis Lavena:</strong> Yeah, don't be afraid to ask questions, don't feel ashamed for using Windows as Platform. You can accomplish great applications using Windows, and you can infiltrate more easily into corporate environments with it.</p>
 <p><strong>AkitaOnRails:</strong> Oh, which reminds me of one last question that everybody asks me all the time – and I shall forward it to you, as you're a Windows developer: what are your tools of choice to edit Ruby/Rails projects?</p>

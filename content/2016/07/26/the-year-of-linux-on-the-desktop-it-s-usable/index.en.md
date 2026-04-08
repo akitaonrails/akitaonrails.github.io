@@ -9,9 +9,9 @@ tags:
 draft: false
 ---
 
-07/23/16: coincidentally I posted this review a day before of the final release :-) So the final build is 14393 and [it's available](http://arstechnica.com/information-technology/2016/07/windows-10-anniversary-update-is-ready-to-go-and-free-for-just-a-few-more-days/) for free right now!
+07/23/16: coincidentally I posted this review a day before the final release :-) So the final build is 14393 and [it's available](http://arstechnica.com/information-technology/2016/07/windows-10-anniversary-update-is-ready-to-go-and-free-for-just-a-few-more-days/) for free right now!
 
-It's been 3 months since I posted [my initial impressions](http://www.akitaonrails.com/en/2016/04/12/o-ano-do-linux-no-desktop-pela-microsoft) on Windows 10 Anniversary Edition most important feature: Bash on Windows. My conclusion at the time was that it was not ready for prime time yet.
+It's been 3 months since I posted [my initial impressions](http://www.akitaonrails.com/en/2016/04/12/o-ano-do-linux-no-desktop-pela-microsoft) on Windows 10 Anniversary Edition's most important feature: Bash on Windows. My conclusion at the time was that it was not ready for prime time yet.
 
 My conclusion as of right now, on July 26th is that it's finally usable enough for web developers, particularly for Ruby developers who always suffered through lack of Windows support.
 
@@ -19,9 +19,9 @@ My conclusion as of right now, on July 26th is that it's finally usable enough f
 
 Installation process is the same. You must be signed up to the [Windows Insider](http://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/) program, wait at least one day if this is your first time. Enable the **Fast ring** of updates, install the Preview edition from normal Windows Update and then turn on the "Windows Subsystem for Linux (Beta)" feature.
 
-> Last time I was testing Windows 10 over Virtualbox over Ubuntu 14.04 on a Dell Inspiron notebook (8 cores i7 with 16GB of RAM). It was super slow, I don't recommend at all. Now I am back on my trustworthy Macbook Pro 2013 with 16GB of RAM and SSD running VMWare Fusion, and Windows 10 flies here. Super recommended.
+> Last time I was testing Windows 10 over Virtualbox over Ubuntu 14.04 on a Dell Inspiron notebook (8 cores i7 with 16GB of RAM). It was super slow, I don't recommend it at all. Now I am back on my trustworthy Macbook Pro 2013 with 16GB of RAM and SSD running VMWare Fusion, and Windows 10 flies here. Super recommended.
 
-Once you do all that, you can start the "Bash on Ubuntu on Windows" (a mouth full). The first good surprise is that it prompts you to register a new username instead of just falling back to Root. As I said in my previous post, it's good practice to create a new user and add it to the sudoers group, and this is what it does. So you can install packages using "sudo apt-get install".
+Once you do all that, you can start the "Bash on Ubuntu on Windows" (a mouthful). The first good surprise is that it prompts you to register a new username instead of just falling back to Root. As I said in my previous post, it's good practice to create a new user and add it to the sudoers group, and this is what it does. So you can install packages using "sudo apt-get install".
 
 You should follow my [previous post](http://www.akitaonrails.com/en/2016/04/12/o-ano-do-linux-no-desktop-pela-microsoft) for all the packages and configurations I normally do in a development Linux box.
 
@@ -31,9 +31,9 @@ I was able to `git clone` a small Rails project and properly `bundle install`. A
 
 Some things still don't work. For example, you won't be able to finish the Postgresql 9.3 installation. It will download and install but the cluster setup fails as you can follow through [this issue](https://github.com/Microsoft/BashOnWindows/issues/61) thread.
 
-But you don't need to have **everything** installed under Ubuntu, you can just fallback to the native [Postgresql for Windows](https://www.postgresql.org/download/windows/) and edit your `config/database.yml` to point to server `127.0.0.1` and port `5432`. On the Ubuntu side you just need to install `libpq-dev` so the `pg` gem can compile its native extensions and that's it.
+But you don't need to have **everything** installed under Ubuntu, you can just fall back to the native [Postgresql for Windows](https://www.postgresql.org/download/windows/) and edit your `config/database.yml` to point to server `127.0.0.1` and port `5432`. On the Ubuntu side you just need to install `libpq-dev` so the `pg` gem can compile its native extensions and that's it.
 
-Smaller services such as Memcached or Redis install properly with `apt-get` but they won't auto-start through Upstart. But you can start them up manually and use something as [Foreman](https://github.com/ddollar/foreman) to control the processes. They both start and work good enough, so you can test caching in your Rails projects and also test Sidekiq workers.
+Smaller services such as Memcached or Redis install properly with `apt-get` but they won't auto-start through Upstart. But you can start them up manually and use something like [Foreman](https://github.com/ddollar/foreman) to control the processes. They both start and work well enough, so you can test caching in your Rails projects and also test Sidekiq workers.
 
 I know that this is still a Preview, so there are bug fixes and possibly some new features that might be included in the final release in August. One nitpick I have is that every command I run with `sudo` takes a few seconds to start, so it's annoying, but it works in the end.
 
@@ -57,7 +57,7 @@ Actually, Erlang itself crashes by just trying to run `erl`. None of the Elixir 
 
 ### "The Best Environment for Rails on Windows"
 
-I have [this very old 2009 post](http://www.akitaonrails.com/2009/1/13/the-best-environment-for-rails-on-windows) to guide developers that are locked on Windows to implement Rails projects. The first advice is to avoid Ruby for Windows. I really commend the efforts of great developers such as Luis Lavena, who invested a lot of time to make it work well enough. But unfortunately the reality is that Ruby is made for Linux environments, it binds to native extensions in C that has lots of dependencies that are not easy to make available on Windows.
+I have [this very old 2009 post](http://www.akitaonrails.com/2009/1/13/the-best-environment-for-rails-on-windows) to guide developers that are locked on Windows to implement Rails projects. The first advice is to avoid Ruby for Windows. I really commend the efforts of great developers such as Luis Lavena, who invested a lot of time to make it work well enough. But unfortunately the reality is that Ruby is made for Linux environments, it binds to native extensions in C that have lots of dependencies that are not easy to make available on Windows.
 
 So the best option up until now was to install Vagrant (through Virtualbox or, even better, VMWare) as the runtime and use Windows-available editors such as Sublime Text 3 or Atom.
 

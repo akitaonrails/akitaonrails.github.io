@@ -14,13 +14,13 @@ translationKey: chatting-chad-fowler
 
  ![](/files/chadfowler.jpg)
 
-Last Tuesday (April, 24th) was a memorable day for me. I was able to have not only one, but two celebrities from the Ruby community. I interviewed Chad Fowler in the morning and then David Black in the evening. The original founders of the Ruby Central and two of the main responsibles for evangelizing Ruby back in 2001.
+Last Tuesday (April, 24th) was a memorable day for me. I was able to have not only one, but two celebrities from the Ruby community. I interviewed Chad Fowler in the morning and then David Black in the evening. The original founders of the Ruby Central and two of the people most responsible for evangelizing Ruby back in 2001.
 
-Both are veterans of our community and they were very kind. As you well know, I am a brazilian Rails advocate and our local community is still small, but I believe the turn of the tide is not so far ahead.
+Both are veterans of our community and they were very kind. As you well know, I am a Brazilian Rails advocate and our local community is still small, but I believe the turn of the tide is not so far ahead.
 
 My goal is to have known people speak to our local community so they can be inspired and motivated to not just jump into Ruby or Rails, but to aim for a higher level on their personal careers.
 
-So, I will first present Chad Fowler’s interview, and on the next time I will publish David’s. Without further ado, here’s Chad:
+So, I will first present Chad Fowler’s interview, and next time I will publish David’s. Without further ado, here’s Chad:
 
 **AkitaOnRails** : Well, not only software but I guess interviews have their own set of ‘Design Patterns’ as well. So, let me get rid of the ‘usual suspects’ before we get to the real juice. I personally like background history. How did you start in the computer world? I would guess you’re a self-learner programmer, one of the early hackers, is that right?
 

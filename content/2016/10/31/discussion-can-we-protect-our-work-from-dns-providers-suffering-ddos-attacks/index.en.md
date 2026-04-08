@@ -17,7 +17,7 @@ Bottom line is that attacks like this will probably [happen again, more often](h
 
 Now, how does one mitigate this kind of problem?
 
-What I will suggest now is not the be-all and end-all solution. As a disclaimer, I am neither a whitehat hacker nor a fully experienced systems administrator. If you are, please by all means let me know in the comments section below if what I am saying is total busted or if it actually works the way I am describing.
+What I will suggest now is not the be-all and end-all solution. As a disclaimer, I am neither a whitehat hacker nor a fully experienced systems administrator. If you are, please by all means let me know in the comments section below if what I am saying is totally busted or if it actually works the way I am describing.
 
 I have a small company where up to 100 people work every day, either as software developers or performing administrative back-office work. We need access to a number of services such as GitHub, CodeClimate, Google Apps, Dropbox, and a number of internal services such as GitLab, Mattermost and so on.
 
@@ -37,13 +37,13 @@ In practice I believe most services are stable enough to not be changing servers
 
 Actually, I believe that if I had my own DNS server, caching DNS results and overriding the TTLs from 60 seconds/15 minutes to a larger extent (let's say, 1 full day) before expiring and requiring a new query, we would have passed through that DDoS episode without noticing it.
 
-In fact, I manually inserted GitHub web address in my local `/etc/hosts` file and I was able to browse through GitHub in the midst of the DDoS attacks.
+In fact, I manually inserted GitHub's web address in my local `/etc/hosts` file and I was able to browse through GitHub in the midst of the DDoS attacks.
 
 For most people, that whole apocalyptic episode felt like "the internet fell", but in reality only the authoritative DynDNS servers went down and every other recursive DNS, obeying the TTLs, also failed to get responses.
 
 The cascading effect was that we were just unable to translate domain name queries such as spotify.com or heroku.com into their static IP addresses. But if we had those addresses in local caches, we wouldn't feel it because Spotify's, ZenDesk's, Heroku's servers were all online and fine.
 
-It's different than when [AWS's Sydney data center suffered an outage](http://www.theregister.co.uk/2016/06/05/aws_oz_downed_by_weather/). That's way more rare and I've seen it happen just once every couple of years.
+It's different from when [AWS's Sydney data center suffered an outage](http://www.theregister.co.uk/2016/06/05/aws_oz_downed_by_weather/). That's way more rare and I've seen it happen just once every couple of years.
 
 ### Unbound
 
@@ -119,7 +119,7 @@ server:
     forward-addr: 8.8.4.4
 ```
 
-Replace the `<your public IP>` for whatever IP you get when you Google for "what's my IP", it's better to whitelist every IP you want to enable access to query this server.
+Replace the `<your public IP>` with whatever IP you get when you Google for "what's my IP", it's better to whitelist every IP you want to enable access to query this server.
 
 Unbound comes pre-configured for DNSSEC and it seems to work out of the box (or at least this is what [this test](https://dnssec.vs.uni-due.de/) says).
 

@@ -16,7 +16,7 @@ This is intended for Rubyists researching the possibility of replacing some of R
 
 Cutting straight to the chase, many small Rails apps that I build start with 2 very simple add-ons: Devise for authentication and ActiveAdmin for basic database management. Then I build up from there.
 
-Both Elixir and Phoenix are fast moving targets right now, which makes it difficult for a stable set of libraries to solidify properly, but I think that we're finally getting past the early adopters curve already.
+Both Elixir and Phoenix are fast moving targets right now, which makes it difficult for a stable set of libraries to solidify properly, but I think that we're finally getting past the early adopters curve.
 
 One big point of contention has been user authentication. Many purists will argue that you need to build your own from scratch or by using low level libraries such as [Guardian](https://github.com/ueberauth/guardian).
 
@@ -58,7 +58,7 @@ And if you're not tweaking the front-end, you can just add the proper sign up, s
 ...
 ```
 
-(By the way, whenever you see `YourApp` in the code snippets, you must change for your app's module name.)
+(By the way, whenever you see `YourApp` in the code snippets, you must change it to your app's module name.)
 
 If you get lost in their documentation you can check out their [Coherence Demo](https://github.com/smpallen99/coherence_demo) repository for an example of a basic Phoenix app with Coherence already configured and working. You will mostly have to take care of `web/router.ex` to create a `:protected` pipeline and set the scopes accordingly.
 
@@ -72,11 +72,11 @@ It's been a long while since I got excited by a simple sign in page!
 
 ### Ex Admin (ActiveAdmin alternative)
 
-Then, the next step I usually like to do is to add a simple Administration interface. To that end I found the [Ex Admin](https://github.com/smpallen99/ex_admin), that's been under heavy development since at least May of 2015. It's so damn close to ActiveAdmin that it's old theme will make you forget you're not in a Rails application.
+Then, the next step I usually like to do is to add a simple Administration interface. To that end I found the [Ex Admin](https://github.com/smpallen99/ex_admin), that's been under heavy development since at least May of 2015. It's so damn close to ActiveAdmin that its old theme will make you forget you're not in a Rails application.
 
 Again, it's pretty straightforward to set it up by just following their [README](https://github.com/smpallen99/ex_admin) instructions.
 
-Once you have it installed and configure, you can very quickly expose the User model into the Admin interface like this:
+Once you have it installed and configured, you can very quickly expose the User model into the Admin interface like this:
 
 ```
 mix admin.gen.resource User
@@ -131,7 +131,7 @@ end
 
 Yes, this is eerily similar to the ActiveAdmin DSL. Thumbs up for the team responsible, and it really shows how Elixir is well suited for Domain Specific Languages, if you're into that.
 
-If you followed the Coherence instructions, it asks you to add a `:protected` pipeline (a set of plugs) for your protected routes. For now you can add the `/admin` route to go through that pipeline. And for the uninitiated, a "plug" is similar in concept to a Rack app, or more specifically, a Rails middleware. But in Rails we only have one pipeline of middlewares. In Phoenix we can configure multiple pipelines for different set of routes (browser and api, for example).
+If you followed the Coherence instructions, it asks you to add a `:protected` pipeline (a set of plugs) for your protected routes. For now you can add the `/admin` route to go through that pipeline. And for the uninitiated, a "plug" is similar in concept to a Rack app, or more specifically, a Rails middleware. But in Rails we only have one pipeline of middlewares. In Phoenix we can configure multiple pipelines for different sets of routes (browser and api, for example).
 
 So we can add the following to `web/router.ex`:
 
@@ -148,7 +148,7 @@ With those simple contraptions in place, you will end up with something like thi
 
 ![Ex Admin](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/574/Screen_Shot_2016-12-06_at_17.56.17.png)
 
-And if you're still not conviced, how about changing to their old theme?
+And if you're still not convinced, how about changing to their old theme?
 
 ![ActiveAdmin knockoff](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/575/Screen_Shot_2016-12-06_at_17.56.25.png)
 
@@ -158,7 +158,7 @@ If you still have questions on how to properly configure ExAdmin, check out thei
 
 ### Stitching a simple Admin role
 
-Obviously, we don't want to let all authenticated user to access the Admin section.
+Obviously, we don't want to let all authenticated users access the Admin section.
 
 So we can add a simple boolean field in the users table to indicate whether a user is an admin or not. You can change your migration to resemble this:
 
@@ -263,10 +263,10 @@ And that's it. If you log in with the `guest@example.org` user, it will be kicke
 
 Even though it's now super simple to add Authentication, Administration and basic Authorization, don't be fooled, the learning curve is still steep, even if you've been a Rails developer for a while.
 
-Because of what's underneath, the OTP architecture, the concepts of Applications, Supervisors, Workers, etc, it's not immediatelly simple to wrap your head around what's **really** going on. If you're not careful, libraries such as Coherence or ExAdmin will make you feel like it's just as simple as Rails.
+Because of what's underneath, the OTP architecture, the concepts of Applications, Supervisors, Workers, etc, it's not immediately simple to wrap your head around what's **really** going on. If you're not careful, libraries such as Coherence or ExAdmin will make you feel like it's just as simple as Rails.
 
 And it's not like that. Elixir is a completely different beast. And I mean it in a bad way, on the contrary. It's meant for highly reliable and distributed systems and it demands way more knowledge, patience and training from the programmer.
 
-On the other hand, exactly because libraries such as Coherence makes it a lot easier to get started, you may become more motivated to put something up and running and then investing more time really **understanding** what's going on underneath. So the recommendation is: get your hands dirty, get some quick instant gratification of seeing something running, and then go on and refine your knowledge. It will be way more rewarding if you do so.
+On the other hand, exactly because libraries such as Coherence make it a lot easier to get started, you may become more motivated to put something up and running and then investing more time really **understanding** what's going on underneath. So the recommendation is: get your hands dirty, get some quick instant gratification of seeing something running, and then go on and refine your knowledge. It will be way more rewarding if you do so.
 
-I don't see Phoenix meant to just be a Rails replacement. This would be too easy. I see it more as another piece to make Elixir the best suited set of technologies to build **highly scalable, highly reliable, highly distributed systems**. Stopping at simple web applications would not fulfill Elixir's potential.
+I don't see Phoenix as meant to just be a Rails replacement. This would be too easy. I see it more as another piece to make Elixir the best suited set of technologies to build **highly scalable, highly reliable, highly distributed systems**. Stopping at simple web applications would not fulfill Elixir's potential.

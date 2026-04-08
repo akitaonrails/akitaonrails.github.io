@@ -13,7 +13,7 @@ tags:
 draft: false
 ---
 
-Everybody is into microservices. There is no way around it. In the Rails world we are well equipped to satisfy any trending Javascript Framework's crave for API consumption.
+Everybody is into microservices. There is no way around it. In the Rails world we are well equipped to satisfy any trending Javascript Framework's craving for API consumption.
 
 In summary, most people are just exposing their contents through simple JSON API endpoints and consuming them from other microservices through simple HTTP GETs. The more microservices they add to the chain, the longer the last endpoint takes to return. There are many techniques to improve this situation, but I want to show just a simple one that can solve many common situations without too much hassle.
 
@@ -21,7 +21,7 @@ First of all, if you're dealing with caching, never try to expire cache entries.
 
 Second, if you're using HTTP, try to use everything you can from it, instead of reinventing the wheel.
 
-The "TL;DR" version is: make your APIs return proper ETAGs and handle "If-None-Match" headers properly, return the correct 304 status code instead of full blown 200 with full content body in the responses everytime. And in the consumer end, cache the ETAG with the corresponding response body and use it from cache when you receive 304s. You will save at least expensive rendering time in the consumed end and slow bandwidth from the consumer end. In the end you should be able to at least be 100% faster, or more, with just a few tweaks.
+The "TL;DR" version is: make your APIs return proper ETAGs and handle "If-None-Match" headers properly, return the correct 304 status code instead of full blown 200 with full content body in the responses every time. And in the consumer end, cache the ETAG with the corresponding response body and use it from cache when you receive 304s. You will save at least expensive rendering time in the consumed end and slow bandwidth from the consumer end. In the end you should be able to at least be 100% faster, or more, with just a few tweaks.
 
 ### The Example Applications
 
@@ -89,9 +89,9 @@ In a nutshell, we can tag any HTTP response with an ETAG, an identifier for the 
 
 An ETAG can be as complicated as an entire SHA256 hexdigest of the entire response content or as simple as just the "updated_at" timestamp if this indicates that the record has changed (in a "show" controller action, for example). It must be a digest that represents the content and it must change if the content changes.
 
-Rails has support for ETAGs for a long time in the [ActionController::ConditionalGet](http://api.rubyonrails.org/classes/ActionController/ConditionalGet.html) API.
+Rails has had support for ETAGs for a long time in the [ActionController::ConditionalGet](http://api.rubyonrails.org/classes/ActionController/ConditionalGet.html) API.
 
-In our contrived example, the 1st application on port 3001 fetches a page of ActiveRecord objects and send back an array represented in JSON format. If we choose to digest the final content we would have to let ActionView do it's job, but it is by far the most expensive operation so we want to avoid it.
+In our contrived example, the 1st application on port 3001 fetches a page of ActiveRecord objects and sends back an array represented in JSON format. If we choose to digest the final content we would have to let ActionView do its job, but it is by far the most expensive operation so we want to avoid it.
 
 One thing that we could do is just check the "updated_at" fields of all the records and see if they changed. If any one of them changed, we would need to re-render everything and send a new ETAG and a new response body. So the code could be like this:
 
@@ -253,7 +253,7 @@ end
 
 I know, feels overwhelming, but it's actually quite simple. Let's go over it step-by-step:
 
-1. First we see if we already have an ETAG associated to the URL we want to fetch (be aware of query parameters!)
+1. First we see if we already have an ETAG associated with the URL we want to fetch (be aware of query parameters!)
 
 2. Now we call the separated "fetch_with_etag" method
 
@@ -261,7 +261,7 @@ I know, feels overwhelming, but it's actually quite simple. Let's go over it ste
 
 4. After we make the external call we can have 2 responses. The first being the very very short, body-less, header-only, "304 Not Modified". In this case, it means that we already have the full content in the internal cache and it is still valid, so we use it.
 
-5. In case we receive the normal HTTP "200" status code, we either didn't send any ETAG or the one we sent was invalidated and a new ETAG and content body was returned, so we must update them in our internal cache before exiting.
+5. In case we receive the normal HTTP "200" status code, we either didn't send any ETAG or the one we sent was invalidated and a new ETAG and content body were returned, so we must update them in our internal cache before exiting.
 
 Now, the first time we call "curl http://localhost:3000/api/products\?page\=1" for the 2nd application endpoint we will see this log:
 
@@ -320,7 +320,7 @@ A cache hit! Content is stale and valid, so return just 304, the 2nd application
 
 If you remove ETAGs from the 1st application, the 2nd one will not break and vice-versa, because it's optional. If "ETAG" and "If-None-Match" headers are present in received HTTP response, we can use them, otherwise they will work as before.
 
-If the 2nd application is itself another API you should also add ETAGs for it, and so on. In this example we didn't, just because I wanted to simplify the scenario. But instead of being just a simple one-to-one proxy, it could be one of those "porcelain" APIs that fetch data from several other smaller microservices, compile down in a single structure and return it. You should create ETAGs that could be the returning ETAGs from all the other microservices digested together in a single ETAG, for example. Because you're just receiving headers and fetching their content from an internal cache, it's quite cheap. Something like this pseudo-code:
+If the 2nd application is itself another API you should also add ETAGs for it, and so on. In this example we didn't, just because I wanted to simplify the scenario. But instead of being just a simple one-to-one proxy, it could be one of those "porcelain" APIs that fetch data from several other smaller microservices, compile them down into a single structure and return it. You should create ETAGs that could be the returning ETAGs from all the other microservices digested together in a single ETAG, for example. Because you're just receiving headers and fetching their content from an internal cache, it's quite cheap. Something like this pseudo-code:
 
 ```ruby
 def index
@@ -342,7 +342,7 @@ Another thing: you can add any vanilla HTTP Cache between your microservices, to
 
 And if you're creating heavy Javascript apps that also consume those APIs, I "believe" the Ajax calls properly cache HTTP content and send back the correct "If-None-Match" and in case they receive 304s, your application should get the normal "success" triggers. I didn't test this when I was writing this post but I think this is the case indeed. So you should automatically get better performance in your front-end application for free if you add proper ETAGs in your APIs.
 
-This is particularly useful for APIs that return data that don't change too often. If it changes every second, or every minute, you should not see too much gains. But if it's something like this example: products lists that only change once every day or every week, or ZIP code lists, or Previous Orders in an e-commerce. Any data that change infrequently is a good candidate. And the larger the dataset, the larger the benefits you will see (if it's a megabyte long listing, for example). As usual, this is also no Silver Bullet, but in this case it is not so much work to add ETAGs and there are near to zero side-effects, so why not?
+This is particularly useful for APIs that return data that doesn't change too often. If it changes every second, or every minute, you should not see too much gains. But if it's something like this example: products lists that only change once every day or every week, or ZIP code lists, or Previous Orders in an e-commerce. Any data that changes infrequently is a good candidate. And the larger the dataset, the larger the benefits you will see (if it's a megabyte long listing, for example). As usual, this is also no Silver Bullet, but in this case it is not so much work to add ETAGs and there are near-zero side-effects, so why not?
 
 ETAG is just one of many other HTTP features you should be using, CORS is another one (Research [Rack Cors](https://github.com/cyu/rack-cors)).
 

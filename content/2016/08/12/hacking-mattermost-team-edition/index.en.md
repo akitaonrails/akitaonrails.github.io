@@ -72,7 +72,7 @@ CREATE TRIGGER undelete_channel AFTER INSERT ON audits
     FOR EACH ROW EXECUTE PROCEDURE undelete_channel();
 ```
 
-That's it, it will listen to new audits inserts, check if it is a "channel delete" action, check that it is not a 'system_admin', and if so it will automatically grab the channel id from the action REST URL and do the proper UPDATE to bring it back.
+That's it, it will listen for new audit inserts, check if it is a "channel delete" action, check that it is not a 'system_admin', and if so it will automatically grab the channel id from the action REST URL and do the proper UPDATE to bring it back.
 
 I tested it already and in my UI users don't even realize something happened. Not even the offending user sees the channel go away, it instantly comes back.
 

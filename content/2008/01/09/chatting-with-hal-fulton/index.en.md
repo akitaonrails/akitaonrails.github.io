@@ -14,14 +14,14 @@ draft: false
 
 Today I am very happy being able to engage in a conversation with one of my favorite authors, **Hal Fulton**. This was a great chat and I know people will be delighted as well. He is one of the Ruby veterans and certainly has a lot of experience to share. So, let's start:
 
-**AkitaOnRails:** First of all, it is a tradition at my blog to ask for the guest's background. How long you've been at the programming career? How did you first get there? What inspires you about the computer world?
+**AkitaOnRails:** First of all, it is a tradition at my blog to ask for the guest's background. How long have you been in the programming career? How did you first get there? What inspires you about the computer world?
 
 **Hal Fulton:** I started college as a physics major, but I found that I was taking computer courses for fun. I switched to computer science and the rest was history.
 
 Unlike most younger people now, I never was really exposed to computers until I was sixteen, because personal computers were much less common then. I was hooked right away. I saw the computer as a "magic box" that could do anything I was smart enough to instruct it to do. Really I still feel that way about it.
 
 
- **AkitaOnRails:** This is almost a cliché already but I have to ask: you were one of the 'first generation' rubyist. How did you come to find Ruby and what was it that 'clicked' for you about the language?
+ **AkitaOnRails:** This is almost a cliché already but I have to ask: you were one of the 'first generation' Rubyists. How did you come to find Ruby and what was it that 'clicked' for you about the language?
 
 **Hal:** I was on a contract at IBM in Austin in the fall of '99. In a conversation with a friend across the hall, I complained that I was never on the "ground floor" of any new technology — I was always a late adopter. And he said, _"Well, you should learn Ruby then."_ And I said: _"What's that?"_ So I got on the English mailing list and started to learn Ruby (version 1.4).
 
@@ -60,7 +60,7 @@ types to these? Now you have to get into overloading. It quickly becomes a night
 
 **Hal:** One of the best features about Ruby is dynamic typing. Variables don't have types; only objects have types (or should I say, classes). Static typing was so ingrained in me that I **assumed** it was the right way. But when I gave it up, I felt as if I had removed weights that I didn't know I was wearing.
 
-Its **regularity** is also an appealing feature. For example, a class is Ruby is in a sense a "special" thing – but not nearly so special as in (for example) C++. A class is "just an object," so you can do things to classes that you can do to other objects – such as pass them around, store them in arrays, test their values, and so on.
+Its **regularity** is also an appealing feature. For example, a class in Ruby is in a sense a "special" thing – but not nearly so special as in (for example) C++. A class is "just an object," so you can do things to classes that you can do to other objects – such as pass them around, store them in arrays, test their values, and so on.
 
 **AkitaOnRails:** And what would you improve if you were the guardian of it?
 
@@ -135,7 +135,7 @@ As for metaprogramming – well, I think those capabilities are in Ruby for a re
 
 As for Rails itself, I have no doubt there is both good and bad code in it. I suspect the developers working on it would admit as much. And it is possible that they have used "too much magic" here and there, though I couldn't say specifically where. But could Rails exist without metaprogramming features? Not in its current sense — not in any meaningful sense, I would argue.
 
-**AkitaOnRails:** I interviewed Avi Bryant, from Seaside fame, and one of his mottos is that 'a language is not finished until it can extend itself' or 'turtles all the way down' as he says. Meaning, that Ruby still relies a lot on C extensions to this day. Of course, the initial motivations for Ruby are different than Smalltalk. On the other hand people like Evan Phoenix is pursuing this very goal: make Ruby be extensible using pure Ruby. What do you think about this new direction?
+**AkitaOnRails:** I interviewed Avi Bryant, from Seaside fame, and one of his mottos is that 'a language is not finished until it can extend itself' or 'turtles all the way down' as he says. Meaning, that Ruby still relies a lot on C extensions to this day. Of course, the initial motivations for Ruby are different than Smalltalk. On the other hand people like Evan Phoenix are pursuing this very goal: make Ruby be extensible using pure Ruby. What do you think about this new direction?
 
 **Hal:** I like the idea of "Ruby in Ruby" in general, though Matz does not. And I am impressed with what I have seen of Rubinius so far – I think it is an important project and will grow more important.
 

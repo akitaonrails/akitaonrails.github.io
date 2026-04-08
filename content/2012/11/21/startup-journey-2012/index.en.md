@@ -10,7 +10,7 @@ draft: false
 
 
 
-This year I had the opportunity to visit 4 fantastic cities across the USA and Europe/Asia. It all started in this [first post](http://akitaonrails.com/2012/08/29/getting-to-know-the-international-ruby-communities#.UKzPmqX6Qco). There were several goals including getting to know those cities personally as I've never been there before, then meet great people and great companies, and finally try to understand more about this fledgeling new tech startup world.
+This year I had the opportunity to visit 4 fantastic cities across the USA and Europe/Asia. It all started in this [first post](http://akitaonrails.com/2012/08/29/getting-to-know-the-international-ruby-communities#.UKzPmqX6Qco). There were several goals including getting to know those cities personally as I'd never been there before, then meet great people and great companies, and finally try to understand more about this fledgling new tech startup world.
 
 I wrote about my journey in 6 articles, originally in Brazilian Portuguese. You can use Google Translate that's available in all of them, I'm curious to see if they work well enough. The journey starts in September 2012 and ends in October 2012. Here are the articles:
 
@@ -22,7 +22,7 @@ I wrote about my journey in 6 articles, originally in Brazilian Portuguese. You 
 * [Trip to Europe - Part 2 - Berlin, Germany](http://akitaonrails.com/2012/11/20/viagem-a-europa-parte-2-berlim-alemanha)
 * [Trip to Europe - Part 3 - Tel-Aviv, Israel](http://akitaonrails.com/2012/11/21/viagem-a-europa-parte-3-tel-aviv-israel)
 
-PS: I was in doubt about considering Israel in "Europe", seems like it's actually Asia but it's [considered in Europe](http://wiki.answers.com/Q/Is_Israel_in_Europe) for sports :-)
+PS: I was in doubt about considering Israel in "Europe", seems like it's actually Asia but it's [considered part of Europe](http://wiki.answers.com/Q/Is_Israel_in_Europe) for sports :-)
 
 I also posted hundreds of photos organized in Facebook Albums that you can access here:
 

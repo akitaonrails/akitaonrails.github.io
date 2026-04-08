@@ -57,7 +57,7 @@ But every now and then you reach a tipping point where it becomes important to h
 
 And I believe that at that point we should have an option that doesn't cost a couple of limbs to replicate.
 
-Before an option such as GitLab, we were either limited to choose between walled-gardens such as GitHub or Bitbucket or you could invest a ton of resources trying to use small open sourced components to try to build your own. With GitLab we now have the option to make a smooth transition to its hosted option, so we don't incur in having to deal with infrastructure maintenance or we can choose to have full control. And the users will not suffer in the process.
+Before an option such as GitLab, we were either limited to choose between walled-gardens such as GitHub or Bitbucket or you could invest a ton of resources trying to use small open sourced components to try to build your own. With GitLab we now have the option to make a smooth transition to its hosted option, so we don't have to deal with infrastructure maintenance or we can choose to have full control. And the users will not suffer in the process.
 
 Which is why I believe that the best SaaS to endure the next decade will start to go into **Hybrid-mode**: having a commercial, usually "cheaper", hosted option, and a DIY (do-it-yourself) OSS version.
 
@@ -67,8 +67,8 @@ In that option, companies like GitLab have a win-win situation. Many more people
 
 That way we remove the discussion of confidentiality, the way companies treat our data, and we move forward into more productive actions such as building a tool that benefits both the external public and each other's internal plans.
 
-Walled gardens are here to stay. Releasing integration - while opaque - public APIs is not enough. It's very exciting to see those new options arising to fill this gap. The OSS environment along with a sustainable business model makes sense. And I hope to continue to see more and more competitors to closed services following the Hybrid model in the near future.
+Walled gardens are here to stay. Releasing integration — while opaque — public APIs is not enough. It's very exciting to see those new options arising to fill this gap. The OSS environment along with a sustainable business model makes sense. And I hope to continue to see more and more competitors to closed services following the Hybrid model in the near future.
 
-Why go the trouble to install, maintain and tweak open sourced alternatives to well-established hosted (albeit opaque) services? I believe it's more than a discussion over convenience, maintenance and cutting costs. We should start small, less risky, but as we grow we should be able to take control back. But we usually can't get out of walled gardens without a significant - and sometimes impossible - investment in reinventing the wheel. We always had the small open sourced components that those services are built on, but to go from those small components to a full-featured system, it's an unrealistic path.
+Why go through the trouble to install, maintain and tweak open sourced alternatives to well-established hosted (albeit opaque) services? I believe it's more than a discussion over convenience, maintenance and cutting costs. We should start small, less risky, but as we grow we should be able to take control back. But we usually can't get out of walled gardens without a significant - and sometimes impossible - investment in reinventing the wheel. We always had the small open sourced components that those services are built on, but to go from those small components to a full-featured system, it's an unrealistic path.
 
 With this possible trend of post-SaaS, or Hybrid-SaaS as I call it, we may have just gained the missing link to go from just convenience to full control without the inherent costs and risks chasm.

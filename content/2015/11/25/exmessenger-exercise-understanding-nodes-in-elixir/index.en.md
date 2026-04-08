@@ -11,19 +11,19 @@ tags:
 draft: false
 ---
 
-I was exercising through this [2014's old blog post](http://drew.kerrigan.io/ditributed-elixir/) by Drew Kerrigan where he builds a bare bones, command line-based, chat application, with a client that send messages and commands to a server.
+I was working through this [old 2014 blog post](http://drew.kerrigan.io/ditributed-elixir/) by Drew Kerrigan where he builds a bare-bones, command-line-based chat application, with a client that sends messages and commands to a server.
 
 This is Elixir pre-1.0, and because it's an exercise I refactored the original code and merged the server (ex_messenger) and client (ex_messenger_client) projects into an [Elixir Umbrella](http://elixir-lang.org/getting-started/mix-otp/dependencies-and-umbrella-apps.html) project and you can find my code on [Github here](https://github.com/akitaonrails/ex_messenger_exercise/blob/master/apps/ex_messenger_client/lib/ex_messenger_client.ex).
 
-If you have multiple applications that work together and share the same dependencies you can use the Umbrella convention to have them all in the same code base. If you <tt>mix compile</tt> from the umbrella root, it compiles all the apps (which are independent Elixir mix projects as well), it's just a way to have related apps in the same place instead of in multiple different repositories.
+If you have multiple applications that work together and share the same dependencies you can use the Umbrella convention to have them all in the same codebase. If you <tt>mix compile</tt> from the umbrella root, it compiles all the apps (which are independent Elixir mix projects as well). It's just a way to have related apps in the same place instead of in multiple different repositories.
 
 The code shown here is in [my personal Github repository](https://github.com/akitaonrails/ex_messenger_exercise) if you want to clone it.
 
 ### Nodes 101
 
-Before we check out the exercise, there is one more concept I need to clear out. In the previous article I explained about how you can start processes and exchange messages and how you can use the OTP GenServer and Supervisor to create more robust and fault tolerant processes.
+Before we check out the exercise, there is one more concept I need to clear up. In the previous article I explained how you can start processes and exchange messages, and how you can use the OTP GenServer and Supervisor to create more robust and fault-tolerant processes.
 
-But this is just the beginning of the story. You probably heard how Erlang is great for distributed computing as well. Each Erlang VM (or BEAM) is network enabled.
+But this is just the beginning of the story. You've probably heard how Erlang is great for distributed computing as well. Each Erlang VM (or BEAM) is network-enabled.
 
 Again, this is one more concept I am still just beginning to properly learn, and you will want to read Elixir's website documentation on [Distributed tasks and configuration](http://elixir-lang.org/getting-started/mix-otp/distributed-tasks-and-configuration.html), that does an excellent job explaining how all this works.
 
@@ -56,7 +56,7 @@ iex(akita@Hal9000u)2> Node.ping(:"fabio@Hal9000u")
 :pong
 ```
 
-If the name is correct and the other instance is indeed up, it responds the ping with a <tt>:pong</tt>. This is correct just for nodes in the same machine, but what if I need to connect to an instance in a remote machine?
+If the name is correct and the other instance is indeed up, it responds to the ping with a <tt>:pong</tt>. This works only for nodes on the same machine, but what if I need to connect to an instance on a remote machine?
 
 ```
 iex(akita@Hal9000u)3> Node.ping(:"fabio@192.168.1.13")
@@ -65,7 +65,7 @@ iex(akita@Hal9000u)3> Node.ping(:"fabio@192.168.1.13")
 ** Hostname 192.168.1.13 is illegal **
 ```
 
-The <tt>--sname</tt> option sets a name only reachable within the same subnet, for a fully qualified domain name you need to use the <tt>--name</tt>, for example, like this:
+The <tt>--sname</tt> option sets a name only reachable within the same subnet; for a fully qualified domain name you need to use <tt>--name</tt>, for example like this:
 
 ```
 iex  --name fabio@192.168.1.13 --cookie chat
@@ -97,7 +97,7 @@ iex(john@192.168.1.13)1> Node.ping(:"fabio@192.168.1.13")
 :pang
 ```
 
-The cookie is just an atom to identify relationship between nodes. In a pool of several servers you can make sure you're not trying to connect different applications between each other. And as a result you get a <tt>:pang</tt>. Instead of an IP address you can use a fully qualified domain name instead.
+The cookie is just an atom to identify relationships between nodes. In a pool of several servers you can make sure you're not trying to connect different applications to each other. And as a result you get a <tt>:pang</tt>. Instead of an IP address you can use a fully qualified domain name.
 
 And just by having the node "akita@" pinging "fabio@" we can see that they are aware of each other:
 
@@ -113,17 +113,17 @@ iex(akita@192.168.1.13)2> Node.list
 [:"fabio@192.168.1.13"]
 ```
 
-If one of the node crashes or quits, the Node list is automatically refreshed to reflect only nodes that are actually alive and responding.
+If one of the nodes crashes or quits, the Node list is automatically refreshed to reflect only nodes that are actually alive and responding.
 
 You can check the official API Reference for the [Node](http://elixir-lang.org/docs/stable/elixir/Node.html#summary) for more information. But this should give you a hint for the next section.
 
 ### Creating a Chat Client
 
-Back to the exercise, the ExMessenger server has "ExMessenger.Server", which is a GenServer and the "ExMessenger.Supervisor" that starts it up. The ExMessenger.Server is globally registered as <tt>:message_server</tt>, started and supervised by the "ExMessenger.Supervisor".
+Back to the exercise: the ExMessenger server has "ExMessenger.Server", which is a GenServer, and the "ExMessenger.Supervisor" that starts it up. The ExMessenger.Server is globally registered as <tt>:message_server</tt>, started and supervised by the "ExMessenger.Supervisor".
 
 The "ExMessengerClient" starts up the unsupervised "ExMessengerClient.MessageHandler", which is also a GenServer, and globally registered as <tt>:message_handler</tt>.
 
-The Tree for both apps look roughly like this:
+The Tree for both apps looks roughly like this:
 
 ```
 ExMessenger
@@ -149,9 +149,9 @@ cd apps/ex_messenger_client
 server=server@Hal9000u nick=john elixir --sname client -S mix run
 ```
 
-Here we are setting 2 environment variables (that we can retrieve inside the app using <tt>System.get_env/1</tt>) and also setting a local node name "client". You can spin up more client nodes using a different "sname" and a different "nick" from another terminal, as many as you want, linking to the same "server@Hal9000u" message server.
+Here we are setting 2 environment variables (that we can retrieve inside the app using <tt>System.get_env/1</tt>) and also setting a local node name "client". You can spin up more client nodes using a different "sname" and a different "nick" from another terminal, as many as you want, all linking to the same "server@Hal9000u" message server.
 
-I'm starting up like this instead of a command line escript like I did in the ExMangaDownloadr because I didn't find any way to set the <tt>--sname</tt> or <tt>--name</tt> the same way I can set <tt>--cookie</tt> using <tt>Node.set_cookie</tt>. If anyone knows how to set it up differently, let me know in the comments section down below.
+I'm starting up like this instead of using a command-line escript like I did in ExMangaDownloadr because I didn't find any way to set the <tt>--sname</tt> or <tt>--name</tt> the same way I can set <tt>--cookie</tt> using <tt>Node.set_cookie</tt>. If anyone knows how to set it up differently, let me know in the comments section down below.
 
 Notice that I said "linking" and not "connecting". From the "ExMessengerClient" we start like this:
 
@@ -172,7 +172,7 @@ defmodule ExMessengerClient do
 end
 ```
 
-The <tt>get_env</tt> private function is just a wrapper to treat the environment variable "server" and "nick" that we passed:
+The <tt>get_env</tt> private function is just a wrapper to handle the "server" and "nick" environment variables that we passed:
 
 ```ruby
 defp get_env do
@@ -201,7 +201,7 @@ defp connect({server, nick}) do
 end
 ```
 
-The important piece here is that we are setting the client's instance cookie with <tt>Node.set_cookie/1</tt> (notice that we didn't pass it in the command line options like we did with the server instance). Without setting the cookie the next line with <tt>Node.connect(server)</tt> would fail to connect, as I explained in the previous section.
+The important piece here is that we are setting the client instance's cookie with <tt>Node.set_cookie/1</tt> (notice that we didn't pass it in the command-line options like we did with the server instance). Without setting the cookie, the next line with <tt>Node.connect(server)</tt> would fail to connect, as I explained in the previous section.
 
 Then, we start the "ExMessengerClient.MessageHandler" GenServer, linking with the Message Server instance:
 
@@ -213,7 +213,7 @@ defp start_message_handler({server, nick}) do
 end
 ```
 
-The Message Handler GenServer itself is very simple, it just sets the server as the state and handle incoming messages from the server and prints out in the client's terminal:
+The Message Handler GenServer itself is very simple. It just sets the server as the state, handles incoming messages from the server and prints them out in the client's terminal:
 
 ```ruby
 defmodule ExMessengerClient.MessageHandler do
@@ -253,7 +253,7 @@ defp join_chatroom({server, nick}) do
 end
 ```
 
-I defined this "ServerProcotol" module which is just a convenience wrapper for <tt>GenServer.call/3</tt> and <tt>GenServer.cast/2</tt> calls, to send messages for the remote GenServer called <tt>:message_server</tt>:
+I defined this "ServerProcotol" module, which is just a convenience wrapper for <tt>GenServer.call/3</tt> and <tt>GenServer.cast/2</tt> calls, to send messages to the remote GenServer called <tt>:message_server</tt>:
 
 ```ruby
 defmodule ExMessengerClient.ServerProcotol do
@@ -287,7 +287,7 @@ defmodule ExMessengerClient.ServerProcotol do
 end
 ```
 
-Pretty straight forward. Then, the main ExMessengerClient calls the recursive <tt>input_loop/1</tt> function from the CLI module, which just receives user input and handles the proper commands using pattern matching, like this:
+Pretty straightforward. Then, the main ExMessengerClient calls the recursive <tt>input_loop/1</tt> function from the CLI module, which just receives user input and handles the proper commands using pattern matching, like this:
 
 ```ruby
 defmodule ExMessengerClient.CLI do
@@ -380,7 +380,7 @@ defmodule ExMessenger.Server do
 end
 ```
 
-And this is it, when the "ExMessenger.Supervisor" starts this GenServer it registers globally in this instance as <tt>:message_server</tt>. And this is how we address messages from what we called "clients" (the ExMessengerClient application).
+And that's it. When the "ExMessenger.Supervisor" starts this GenServer it registers it globally in this instance as <tt>:message_server</tt>. And this is how we address messages from what we called "clients" (the ExMessengerClient application).
 
 When the ExMessengerClient calls the <tt>ServerProtocol.connect/1</tt>, it sends the <tt>{:connect, nick}</tt> message to the server. In the Server we handle it like this:
 
@@ -399,9 +399,9 @@ def handle_call({ :connect, nick }, {from, _} , users) do
 end
 ```
 
-First, it checks if the nick is "server" and disallows it. Second, it checks if the nickname already exists in the internal [HashDict](http://elixir-lang.org/docs/stable/elixir/HashDict.html) (a key/value dictionary) and refuses if it already exists. Finally, in third, it puts the pair of nickname and node name (like "client@Hal9000u") in the HashDict and broadcasts through the <tt>log/3</tt> private function to all other nodes in the HashDict dictionary.
+First, it checks if the nick is "server" and disallows it. Second, it checks if the nickname already exists in the internal [HashDict](http://elixir-lang.org/docs/stable/elixir/HashDict.html) (a key/value dictionary) and refuses if it already exists. Finally, third, it puts the pair of nickname and node name (like "client@Hal9000u") in the HashDict and broadcasts through the <tt>log/3</tt> private function to all other nodes in the HashDict dictionary.
 
-The <tt>log/3</tt> is just to create a log message concatenating the nick names of all clients and printing it out, then broadcasting this to the Message Handler of all the clients listed in the HashDict:
+The <tt>log/3</tt> just creates a log message concatenating the nicknames of all clients and prints it out, then broadcasts it to the Message Handler of all the clients listed in the HashDict:
 
 ```ruby
 defp log(users, nick, message) do
@@ -423,7 +423,7 @@ def handle_cast({ :say, nick, message }, users) do
 end
 ```
 
-Up to this point it just casts a message to itself, the <tt>{:say, nick, message}</tt> tuple, that is handled by the GenServer and calling the <tt>broadcast/3</tt> function defined like this:
+Up to this point it just casts a message to itself, the <tt>{:say, nick, message}</tt> tuple, which is handled by the GenServer and calls the <tt>broadcast/3</tt> function defined like this:
 
 ```ruby
 defp broadcast(users, nick, message) do
@@ -440,23 +440,23 @@ defp send_message_to_client(client_node, nick, message) do
 end
 ```
 
-It maps the list of users and fires up an asynchronous Elixir <tt>Task</tt> (that is itself just a GenServer as I explained before in the Ex Manga Downloader series). Because it's a broadcast it makes sense to make all of them parallel.
+It maps the list of users and fires up an asynchronous Elixir <tt>Task</tt> (which is itself just a GenServer, as I explained before in the Ex Manga Downloader series). Because it's a broadcast, it makes sense to make all of them parallel.
 
-The important bit is the <tt>send_message_to_client/3</tt> which casts a message to the tuple <tt>{ :message_handler, client_node }</tt> where "client_node" is just "client@Hal9000u" or any other "--sname" you used to start up each client node.
+The important bit is the <tt>send_message_to_client/3</tt> which casts a message to the tuple <tt>{ :message_handler, client_node }</tt> where "client_node" is just "client@Hal9000u" or whatever "--sname" you used to start up each client node.
 
-Now, this is how the clients send GenServer message calls/casts to <tt>{:message_server, server}</tt> and it sends messages back to <tt>{:message_handler, client</tt>.
+Now, this is how the clients send GenServer message calls/casts to <tt>{:message_server, server}</tt> and it sends messages back to <tt>{:message_handler, client}</tt>.
 
 ### This is not your traditional TCP Client/Server example!
 
-Now, we are calling the "ExMessenger.Server" a Chat "Server" and the "ExMessengerClient" a Chat "Client". Although we have been calling them as  "Server" and "Client" they don't refer to the usual "TCP Server" and "TCP Client" examples you may be familiar with!
+Now, we are calling the "ExMessenger.Server" a Chat "Server" and the "ExMessengerClient" a Chat "Client". Although we have been calling them "Server" and "Client", they don't refer to the usual "TCP Server" and "TCP Client" examples you may be familiar with!
 
-The ExMessenger.Server is indeed a Server (an OTP GenServer) but the ExMessengerClient.MessageHandler is also a Server (another OTP GenServer)! But because they **both** have Node behavior, it's more like they are 2 peer-to-peer nodes instead of your old school, simple client->server relationship. They can have client behavior (the Server sends messages to the MessageHandler) and server behavior (the Server receiving messages from ExMessengerClient).
+The ExMessenger.Server is indeed a Server (an OTP GenServer) but the ExMessengerClient.MessageHandler is also a Server (another OTP GenServer)! Because they **both** have Node behavior, it's more like they are 2 peer-to-peer nodes instead of your old-school, simple client-server relationship. They can have client behavior (the Server sends messages to the MessageHandler) and server behavior (the Server receives messages from ExMessengerClient).
 
-Let this concept sink in for a moment, built-in with the language you get a full blown, easy to use, peer-to-peer network distribution model. You don't need to have one single node to be elected as the sole "node", you could have all nodes in a ring to coordinate between them, avoiding single points of failure.
+Let this concept sink in for a moment: built into the language you get a full-blown, easy-to-use, peer-to-peer network distribution model. You don't need to have one single node elected as the sole "master"; you could have all nodes in a ring coordinating between them, avoiding single points of failure.
 
-I believe this is maybe how Erlang based services such as [ejabberd](http://manpages.ubuntu.com/manpages/hardy/man8/ejabberd.8.html) and [RabbitMQ](https://www.rabbitmq.com/clustering.html) work.
+I believe this is maybe how Erlang-based services such as [ejabberd](http://manpages.ubuntu.com/manpages/hardy/man8/ejabberd.8.html) and [RabbitMQ](https://www.rabbitmq.com/clustering.html) work.
 
-In the [case of ejabberd](https://github.com/processone/ejabberd/blob/master/src/ejabberd_cluster.erl), I can see that it keeps the state of the cluster in Mnesia tables (Mnesia being one other component of OTP, it's a distributed NoSQL database built-in!) and it indeed uses the Node facilities to coordinate distributed nodes:
+In the [case of ejabberd](https://github.com/processone/ejabberd/blob/master/src/ejabberd_cluster.erl), I can see that it keeps the state of the cluster in Mnesia tables (Mnesia being another component of OTP, a built-in distributed NoSQL database!) and it indeed uses the Node facilities to coordinate distributed nodes:
 
 ```erlang
 ...
@@ -483,7 +483,7 @@ join(Node) ->
     end.
 ```
 
-This is how a snippet of pure Erlang source code looks like, by the way. You should have enough Elixir in your head right now to be able to abstract away the ugly Erlang syntax and see that it's a <tt>case</tt> pattern matching on the <tt>{_, :pong}</tt> tuple, using Node's ping facilities to assert the connectiveness of the node and updating the Mnesia table and other setups.
+This is what a snippet of pure Erlang source code looks like, by the way. You should have enough Elixir in your head right now to be able to abstract away the ugly Erlang syntax and see that it's a <tt>case</tt> pattern matching on the <tt>{_, :pong}</tt> tuple, using Node's ping facilities to assert the connectivity of the node and updating the Mnesia table and other setups.
 
 Also in the [source code of the RabbitMQ-Server](https://github.com/rabbitmq/rabbitmq-server/blob/6f70dcbe05dbba35f7d950674d293a4c7d867d44/src/rabbit_control_main.erl) you will find a similar thing:
 
@@ -501,6 +501,6 @@ become(BecomeNode) ->
     end.
 ```
 
-Again, pinging nodes, using Mnesia for the server state. Erlang's syntax is uncommon for most of us: variables start with a capitalized letter (we intuitively think it's a constant instead), statements end with a dot, instead of the dot-notation to call function from a module it uses a colon ":", different from Elixir the parenthesis are not optional, and so on. Trying to read code like this shows the value of having Elixir to unleash Erlang's hidden powers.
+Again, pinging nodes, using Mnesia for the server state. Erlang's syntax is uncommon for most of us: variables start with a capitalized letter (we intuitively think they're constants instead), statements end with a dot, instead of dot-notation to call a function from a module it uses a colon ":", unlike Elixir the parentheses are not optional, and so on. Trying to read code like this shows the value of having Elixir to unleash Erlang's hidden powers.
 
-So, up to this point, you know how internally processes are spawned, how they are orchestrated within the OTP framework, and now how they can interact remotely through the **Node** peer-to-peer abstraction. And again, this is all built-in to the language. No other language comes even close.
+So, up to this point, you know how processes are spawned internally, how they are orchestrated within the OTP framework, and now how they can interact remotely through the **Node** peer-to-peer abstraction. And again, this is all built into the language. No other language comes even close.

@@ -10,9 +10,9 @@ translationKey: chatting-ola-bini
 
 
 
-Its been a few days already, since the historical release of JRuby 1.0, the first stable implementation of an alternative Ruby interpreter. And what other platform than Java to hold the power of Ruby?
+It’s been a few days already, since the historical release of JRuby 1.0, the first stable implementation of an alternative Ruby interpreter. And what other platform than Java to hold the power of Ruby?
 
-Meet **Ola Bini** , a young, dynamic and important contributor to this amazing project. Ola is member of the JRuby Core Team and currently work at ThoughtWorks to help assure the continuing success of JRuby.
+Meet **Ola Bini** , a young, dynamic and important contributor to this amazing project. Ola is member of the JRuby Core Team and currently works at ThoughtWorks to help assure the continuing success of JRuby.
 
 I had the opportunity to chat for more than an hour with him. So, another great interview for our website.
 
@@ -100,7 +100,7 @@ I had the opportunity to chat for more than an hour with him. So, another great 
 
 **Ola Bini** : So, Java: I think the language overly verbose, the type system is inconsistent and quite annoying at times, and there is no way to compress code. When refactoring, you end up with more lines of code for the same functionality. Also, there is lot of clutter in a typical program.
 
-I don’t think [generics](http://weblogs.java.net/blog/arnold/archive/2005/06/generics_consid_1.html) have improved this situation. I think that Ruby have almost all the power I’m used to from Common Lisp. In some cases you can do amazing things with the [metaprogramming](http://ola-bini.blogspot.com/2006/09/ruby-metaprogramming-techniques.html) capabilities. Ruby is like clay, it can be formed into whatever you want, and Java is marble. Also, I like that Ruby have enough of a heritage from Perl to be pragmatic and easy to use; it’s fast to get started with and you are productive in a very short ammount of time.
+I don’t think [generics](http://weblogs.java.net/blog/arnold/archive/2005/06/generics_consid_1.html) have improved this situation. I think that Ruby have almost all the power I’m used to from Common Lisp. In some cases you can do amazing things with the [metaprogramming](http://ola-bini.blogspot.com/2006/09/ruby-metaprogramming-techniques.html) capabilities. Ruby is like clay, it can be formed into whatever you want, and Java is marble. Also, I like that Ruby have enough of a heritage from Perl to be pragmatic and easy to use; it’s fast to get started with and you are productive in a very short amount of time.
 
 **AkitaOnRails** : Ruby is an excellent language, no doubt. Ruby 1.9 is growing to become better. Are you updated in their development? I personally have a few things I’d like to have in a new version, as native UTF-16 top to bottom, a better and unified Datetime handling, at least less C dependency, a generational garbage collector, a better way for IDEs to introspect and debug into the code maybe as Smalltalk does. Now that you touched most of the language, what do you think you’d change if you had the opportunity? Or you’re satisfied with its current state?
 
@@ -220,19 +220,19 @@ Organization is harder. I usually keep lists on [tadalist](http://www.tadalist.c
 
 **Ola Bini** : This shouldn’t come as a big surprise after this interview: my advice would be to learn more than one language. Simple enough. Something functional, or with a desperately different concurrency model. Lisp, Smalltalk, Erlang and Ruby are all good choices for a Java/C/C++ programmer to learn. And yeah, I guess I am. I’m 25 now.
 
-**AkitaOnRails** : As Dave Thomas said in the Pragmatic Programmer: leart at least one [new language every year](http://www.pragmaticprogrammer.com/loty/).
+**AkitaOnRails** : As Dave Thomas said in the Pragmatic Programmer: learn at least one [new language every year](http://www.pragmaticprogrammer.com/loty/).
 
 **Ola Bini** : Absolutely. That’s good advice. I can’t top it. =)
 
-**AkitaOnRails** : By the way, out of curiosity, do you speak english in Sweden?
+**AkitaOnRails** : By the way, out of curiosity, do you speak English in Sweden?
 
-**Ola Bini** : No, not very much. I speak english when the other person doesn’t understand Swedish, or if someone in our company doesn’t understand Swedish (out of courtesy).
+**Ola Bini** : No, not very much. I speak English when the other person doesn’t understand Swedish, or if someone in our company doesn’t understand Swedish (out of courtesy).
 
-**AkitaOnRails** : I thought so, you have a very good english.
+**AkitaOnRails** : I thought so, you have very good English.
 
-**Ola Bini** : Thanks. We work with english from the 4th grade in Sweden, so most have a passing ability at least.
+**Ola Bini** : Thanks. We work with English from the 4th grade in Sweden, so most have a passing ability at least.
 
-**AkitaOnRails** : That’s another thing I [evangelize](/articles/2007/04/14/off-topic-seja-arrogante) here in Brazil: to learn english as best as you can. Liking it or not, english is the language of the technology world.
+**AkitaOnRails** : That’s another thing I [evangelize](/articles/2007/04/14/off-topic-seja-arrogante) here in Brazil: to learn English as best as you can. Liking it or not, English is the language of the technology world.
 
 **Ola Bini** : Yes, without question. English is very important. And after that, I guess Chinese is. Based on simple numbers.
 

@@ -20,15 +20,15 @@ This is a checklist. You should follow these instructions if you want some peace
 
 Many people will first target the cheap choices. Usually EC2 micro instances or small Digital Ocean droplets. Unless you're aware that you **must** constantly monitor and upgrade those instances, **DON'T** do it.
 
-Instead choose a PaaS solution such as Heroku. It's a no-brainer. Software in production is not a one-off thing. For security alone you should not do it by yourself unless you know how to harden a OS distribution. For example, most people don't even know what [fail2ban](http://www.fail2ban.org/wiki/index.php/Main_Page) is. Don't assume that because you use SSH with keypairs you're secure. You're not.
+Instead choose a PaaS solution such as Heroku. It's a no-brainer. Software in production is not a one-off thing. For security alone you should not do it by yourself unless you know how to harden an OS distribution. For example, most people don't even know what [fail2ban](http://www.fail2ban.org/wiki/index.php/Main_Page) is. Don't assume that because you use SSH with keypairs you're secure. You're not.
 
-For example, did you know that we just went through a [glibc security crisis](https://blog.heroku.com/archives/2016/3/21/patching-glibc-security-hole)? If you don't and you didn't touch your production servers in some time to upgrade all your components, you're open, wide open. I had many clients that hired freelancers to implement their apps and deploy and then stayed without anyone checking. You're all unsafe.
+For example, did you know that we just went through a [glibc security crisis](https://blog.heroku.com/archives/2016/3/21/patching-glibc-security-hole)? If you don't and you haven't touched your production servers in some time to upgrade all your components, you're open, wide open. I had many clients who hired freelancers to implement and deploy their apps and then went without anyone checking. You're all unsafe.
 
 Heroku is no guarantee either, because app libraries get old, vulnerabilities get discovered, and you should upgrade them. Rails has an [active security team](https://groups.google.com/forum/#!forum/rubyonrails-security) releasing security patches all the time. If you haven't been upgrading, you're unsafe.
 
-But 24x7 support is not cheap, if you have your own infrastructure or use an IaaS platform such as AWS EC2, you should have 24x7 personnel, this means at least 2 full-time system administrators/devops taking care of things. Or, you use a PaaS that at least keep those basic sanitations in check and a part-time developer to at least keep upgrading your apps.
+But 24x7 support is not cheap, if you have your own infrastructure or use an IaaS platform such as AWS EC2, you should have 24x7 personnel, this means at least 2 full-time system administrators/devops taking care of things. Or, you use a PaaS that at least keeps those basic sanitations in check and a part-time developer to at least keep upgrading your apps.
 
-If you don't, you're opening your business to serious liability. And if you're a developer, do the responsible thing: disclose this fact to your clients and let them make an informed choice. They can choose to stay in the cheap, but at least they know what this actually means.
+If you don't, you're opening your business to serious liability. And if you're a developer, do the responsible thing: disclose this fact to your clients and let them make an informed choice. They can choose to stay cheap, but at least they know what this actually means.
 
 ### Which web server? TL;DR: Passenger or Puma
 
@@ -42,7 +42,7 @@ The most common choice nowadays is [using Puma](https://devcenter.heroku.com/art
 
 It's not uncommon for your app to keep increasing RAM usage over time and once every couple of days you see R14 happening, then your dyno reboots and it starts working better for a while until it reaches the ceiling again.
 
-If you don't know why that it's happening, and it's infrequent, you can temporarily use [Puma Worker Killer](https://github.com/schneems/puma_worker_killer) - if you're using Puma, of course - to keep monitoring your instances until they reach a certain lower ceiling and they automatically recycle before your users see the R14 errors.
+If you don't know why that's happening, and it's infrequent, you can temporarily use [Puma Worker Killer](https://github.com/schneems/puma_worker_killer) - if you're using Puma, of course - to keep monitoring your instances until they reach a certain lower ceiling and they automatically recycle before your users see the R14 errors.
 
 You may also have heard of [Out-of-Band GC](http://tmm1.net/ruby21-oobgc). Just [be warned](https://github.com/puma/puma/issues/450) that Puma in threaded mode won't work well with it. If you're using Unicorn, by all means do use it.
 
@@ -52,7 +52,7 @@ You may also have heard of [Out-of-Band GC](http://tmm1.net/ruby21-oobgc). Just 
 
 You should **always** monitor your app. Be it with custom installed software such as Nagios, Munin, Zabbix, Zenoss, Ganglia, etc or at the very least the metrics that Heroku provides you, as in the image above.
 
-If your instances are behaving strangely, you should take a look at the warnings. A frequent set of [R14](https://devcenter.heroku.com/articles/ruby-memory-use) errors means that your app's memory consumption is growing overtime and blowing the maximum amount of RAM available in your instance (a probable memory leaking). At the very least this means that you should decrease the number of concurrency/workers in your Puma/Unicorn and also increase the number of dynos to compensate if you do have enough traffic to justify it. But this is one metrics-oriented action that you can take because you have the information to make an informed decision.
+If your instances are behaving strangely, you should take a look at the warnings. A frequent set of [R14](https://devcenter.heroku.com/articles/ruby-memory-use) errors means that your app's memory consumption is growing over time and blowing the maximum amount of RAM available in your instance (a probable memory leaking). At the very least this means that you should decrease the number of concurrency/workers in your Puma/Unicorn and also increase the number of dynos to compensate if you do have enough traffic to justify it. But this is one metrics-oriented action that you can take because you have the information to make an informed decision.
 
 But you should also be storing and indexing your logs using custom installed software such as Greylog2 or Logstash or using a SaaS alternative such as [Papertrail](https://elements.heroku.com/addons/papertrail). There are many reasons why an app might be leaking, or why everything seems fine in the metrics but you're having random errors. Always query the logs for answers.
 
@@ -60,7 +60,7 @@ Better yet, [install New Relic APM](https://docs.newrelic.com/docs/agents/ruby-a
 
 ### Some Rails Dependencies
 
-You should **NOT** be using Rails below version 4.0 by now. 3.2 is still widely used but it will stop being supported soon. Do not use Rails 5.0 right now unless you're experienced enough to know what to do. Anything from 4.0 to 4.2 should be ok, but be aware of the minor releases that fixes security vulnerabilities.
+You should **NOT** be using Rails below version 4.0 by now. 3.2 is still widely used but it will stop being supported soon. Do not use Rails 5.0 right now unless you're experienced enough to know what to do. Anything from 4.0 to 4.2 should be ok, but be aware of the minor releases that fix security vulnerabilities.
 
 You should **NOT** be using Ruby below version 2.2 by now. Security upgrades for 2.0 ended this February 2016. 2.1 was not a good stable release, but 2.2 and 2.3 are very good and you should be using them.
 
@@ -83,26 +83,26 @@ Do use small Redis instances (particularly SaaS options such as [Heroku Redis](h
 
 There are at least 2 big mistakes most people make using Sidekiq:
 
-* Having heavy workers hitting your master database. For example a big analytics procedure fetching large sets of data while your main website also have heavy users usage writing data all the time. Definitely add a [Follower database](https://devcenter.heroku.com/articles/heroku-postgres-follower-databases) and point the Sidekiq workers (read-only) there for analytics, reports and similar workloads.
+* Having heavy workers hitting your master database. For example a big analytics procedure fetching large sets of data while your main website also has heavy user activity writing data all the time. Definitely add a [Follower database](https://devcenter.heroku.com/articles/heroku-postgres-follower-databases) and point the Sidekiq workers (read-only) there for analytics, reports and similar workloads.
 * Fetching large datasets in-memory and blowing your worker dynos. If you do anything similar to "YourModel.all.each { |r| ... }" you're shooting yourself in the foot. Rails has easy ways to [fetch small sets in batch](http://api.rubyonrails.org/classes/ActiveRecord/Batches.html) for you to process, use them.
 
 ### Are you using a CDN? TL;DR: just do
 
 This is easy, use [AWS CloudFront](https://devcenter.heroku.com/articles/using-amazon-cloudfront-cdn) or [Fastly](https://devcenter.heroku.com/articles/fastly) or something else, but **USE** a CDN. It's a no-brainer.
 
-Otherwise your assets will be served by your already small web dyno instances. And this is a heavy lifting that are better served from a much faster CDN. Your users will perceive orders of magnitude in usability by changing just a couple of configuration lines in your code.
+Otherwise your assets will be served by your already small web dyno instances. And this is heavy lifting that's better served from a much faster CDN. Your users will perceive orders of magnitude in usability by changing just a couple of configuration lines in your code.
 
 If you implemented your Rails views, templates, stylesheets using the "image_tag", "asset_path" helpers, it's just automatic. Just do it already.
 
-And while we're in the subject of assets, if you happen to have image uploading and you're using the simple way of posting a multipart form directly to your Rails app, you will have trouble because Heroku imposes - a correct - maximum of 30 seconds of timeout. If you have many users uploading many high-resolution and heavy sized images, they will see increasing amounts of timeouts.
+And while we're on the subject of assets, if you happen to have image uploading and you're using the simple way of posting a multipart form directly to your Rails app, you will have trouble because Heroku imposes - a correct - maximum of 30 seconds of timeout. If you have many users uploading many high-resolution and heavy sized images, they will see increasing amounts of timeouts.
 
 Use the [Attachinary gem](http://cloudinary.com/documentation/rails_additional_topics) to direct upload via Javascript, from the browser, to the Cloudinary service, completely bypassing your Rails app, which will just receive the ID once the upload finishes. Again, there is a very generous free plan and it's so simple to implement that you must do it right away.
 
-### You laid off your developer, what to do? TL;DR: revoke accesses!
+### You laid off your developer, what to do? TL;DR: revoke access!
 
 This is something that happens a lot: a small company needs to cut costs and lay off developers.
 
-Make sure you revoke accesses. In AWS it's a lot more convoluted if you don't know your way through their IAM authorization tool. Or worse: if they have the private keys (.pem files) to your EC2 instances!! You will have to create new keypairs, deactivate the old EC2 instances and create new ones. A royal PITA.
+Make sure you revoke access. In AWS it's a lot more convoluted if you don't know your way through their IAM authorization tool. Or worse: if they have the private keys (.pem files) to your EC2 instances!! You will have to create new keypairs, deactivate the old EC2 instances and create new ones. A royal PITA.
 
 You must change passwords to your DNS service, Github/Bitbucket organization, remove SSH keys from the .ssh/authorized_keys files in all your servers, etc.
 
@@ -110,7 +110,7 @@ Make sure your company has good legal support and make every collaborator, emplo
 
 You **MUST** have at least one key person in the company that has control over the keys, passwords and access to every service your company depends on to run. Otherwise don't be surprised when your app goes offline.
 
-And don't fool yourself into thinking that just because an app is online and running it will keep that way for long. Security vulnerabilities are on the wild, it's just a matter of time until some glitch put your service down and you better have someone to put it back online for you if you don't know how to do it.
+And don't fool yourself into thinking that just because an app is online and running it will keep that way for long. Security vulnerabilities are in the wild, it's just a matter of time until some glitch puts your service down and you better have someone to put it back online for you if you don't know how to do it.
 
 ### Big Site? Congratulations, what to do now?
 
@@ -122,9 +122,9 @@ This situation requires you to be grounded: there is no silver bullet, just busi
 
 You must keep ahead of the game, and the monitoring part I mentioned plays a big part to steer you through the many possible directions you can go. For example, for a short period of time you can increase the plans of your SaaS services such as databases, caches, queues, and also add more parallel web dynos.
 
-While that will hold for a while (your metrics can help you estimate for how long), now you need to come up with a plan to optimize what you have. And no, rewriting everything is that very last thing you want to do, unless you intend to not have a life for the next couple of years.
+While that will hold for a while (your metrics can help you estimate for how long), now you need to come up with a plan to optimize what you have. And no, rewriting everything is the very last thing you want to do, unless you intend to not have a life for the next couple of years.
 
-Trust Pareto: in real life, 80% of the main problems can be solved with 20% of the effort. The main big tip: open New Relic - now loaded with real production data - and check the Top worse performers and start from there. The first one you solve (be it an ugly N+1 query to your database, slow web service integration), will give you a lot of room to breath.
+Trust Pareto: in real life, 80% of the main problems can be solved with 20% of the effort. The main big tip: open New Relic - now loaded with real production data - and check the top worst performers and start from there. The first one you solve (be it an ugly N+1 query to your database, slow web service integration), will give you a lot of room to breathe.
 
 ### Conclusion
 

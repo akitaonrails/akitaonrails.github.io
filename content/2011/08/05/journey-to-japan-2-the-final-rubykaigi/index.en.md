@@ -12,11 +12,11 @@ I hope you enjoyed my first article in the series [Exploring Tokyo City](http://
 
 [![](http://s3.amazonaws.com/akitaonrails/assets/2011/8/3/Screen%20Shot%202011-08-03%20at%201.49.02%20AM_original.png?1312346806)](http://twitter.com/#!/takahashim)
 
-What many may not know is that RubyKaigi is in its 6th iteration and it has always been organized by [volunteers](http://rubykaigi.org/2011/en/team) effort. Their leader is [Masayoshi Takahashi-san](http://twitter.com/#!/takahashim). He is also the founder of [Nihon Ruby-no-kai](https://github.com/ruby-no-kai) (Japan Ruby Group) which also helds the e-zine [Rubyist Magazine](http://jp.rubyist.net/magazine/). You should check those resources out to see what the Japanese Rubyists are doing. Great resource.
+What many may not know is that RubyKaigi is in its 6th iteration and it has always been organized by [volunteer](http://rubykaigi.org/2011/en/team) effort. Their leader is [Masayoshi Takahashi-san](http://twitter.com/#!/takahashim). He is also the founder of [Nihon Ruby-no-kai](https://github.com/ruby-no-kai) (Japan Ruby Group) which also runs the e-zine [Rubyist Magazine](http://jp.rubyist.net/magazine/). You should check those resources out to see what the Japanese Rubyists are doing. Great resource.
 
  ![](http://s3.amazonaws.com/akitaonrails/assets/2011/8/3/Screen%20Shot%202011-08-03%20at%201.53.25%20AM_original.png?1312347512)
 
-The main group seems to surround around Takahashi-san and then [Shintaro Kakutani-san](http://kakutani.com/) who works for [Eiwa System Management](http://www.esm.co.jp/) and he is the main Ruby Evangelist in Japan, doing talks all around the country, helping create and organize [Regional RubyKaigi](http://regional.rubykaigi.org/), translating books such as the recently released [Agile Samurai](http://ssl.ohmsha.co.jp/cgi-bin/menu.cgi?ISBN=978-4-274-06856-0) (from Pragmatic Programmers). As an Evangelist myself, I have to honestly say that Kakutani-san puts me to shame (which inspires me to try harder!). He is doing a remarkable work and if you didn't know him, you should.
+The main group seems to revolve around Takahashi-san and then [Shintaro Kakutani-san](http://kakutani.com/) who works for [Eiwa System Management](http://www.esm.co.jp/) and he is the main Ruby Evangelist in Japan, doing talks all around the country, helping create and organize [Regional RubyKaigi](http://regional.rubykaigi.org/), translating books such as the recently released [Agile Samurai](http://ssl.ohmsha.co.jp/cgi-bin/menu.cgi?ISBN=978-4-274-06856-0) (from Pragmatic Programmers). As an Evangelist myself, I have to honestly say that Kakutani-san puts me to shame (which inspires me to try harder!). He is doing remarkable work and if you didn't know him, you should.
 
 [![](http://s3.amazonaws.com/akitaonrails/assets/2011/8/3/Screen%20Shot%202011-08-03%20at%202.11.57%20AM_original.png?1312348131)](http://www.ci.i.u-tokyo.ac.jp/~sasada/index.en.html)
 
@@ -35,9 +35,9 @@ So, it's a bit difficult to understand some of the most interesting talks presen
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2011/8/3/Screen%20Shot%202011-08-03%20at%202.17.43%20AM_original.png?1312348538)
 
-This is a clever idea for community driven real time translation. When a foreigner speaker is presenting on stage, the staff would write translations of some of the key phrases at the official IRC stream and anyone could contribute tweeting at an specific hall room channel, which shows in the other screen.
+This is a clever idea for community driven real time translation. When a foreigner speaker is presenting on stage, the staff would write translations of some of the key phrases at the official IRC stream and anyone could contribute tweeting at a specific hall room channel, which shows in the other screen.
 
-More than that, there was another staff volunteer, [Makoto Inoue](http://twitter.com/#!/makoto_inoue) who helped us, foreigner speakers to place proper Japanese subtitles in our English-written slides, which really helps a lot. I will come back to Makoto in the last section, hold on.
+More than that, there was another staff volunteer, [Makoto Inoue](http://twitter.com/#!/makoto_inoue) who helped us foreign speakers to place proper Japanese subtitles in our English-written slides, which really helps a lot. I will come back to Makoto in the last section, hold on.
 
 Unfortunately, though it does help, it's still difficult to follow more technical talks, such as the talk about [ThreadGroup class](http://rubykaigi.org/2011/en/schedule/details/17S05) that I tried to attend. But again, this is something that I want to try in our own RubyConf Brazil. Here in Brazil, because we have [Locaweb](http://www.locaweb.com) organizing the difficult logistics of the event, we're able to contract professional narrators to deliver voiced real-time English to Brazilian Portuguese and vice-versa through wireless earphones, and I can say that this is an expensive investment. I'll talk more about RubyConf Brazil in another article.
 
@@ -95,7 +95,7 @@ http://player.vimeo.com/video/26507951?portrait=0
 
 [[16M01] Ruby Ruined My Life. (en)](http://vimeo.com/26507951) from [ogi](http://vimeo.com/iogi) on [Vimeo](http://vimeo.com).
 
-The gist of his talk was about the differences in organization between the Ruby and Rails Core teams. The Ruby Core Team is sort of role oriented, where each committer usually has very specific responsabilities, being the maintainer of certain features of Ruby. There's even the important role of a "Release Manager" currently held by ms. "Yuki Sonoda", a.k.a. [@yugui](http://yugui.jp/), who's been doing a great job. You can see the [list of maintainers](http://redmine.ruby-lang.org/projects/ruby/wiki/Maintainers) in the official Wiki.
+The gist of his talk was about the differences in organization between the Ruby and Rails Core teams. The Ruby Core Team is sort of role oriented, where each committer usually has very specific responsibilities, being the maintainer of certain features of Ruby. There's even the important role of a "Release Manager" currently held by ms. "Yuki Sonoda", a.k.a. [@yugui](http://yugui.jp/), who's been doing a great job. You can see the [list of maintainers](http://redmine.ruby-lang.org/projects/ruby/wiki/Maintainers) in the official Wiki.
 
 Aaron himself is responsible for the YAML parser, Psych, Fiddle, DL. He notes that this kind of organization makes you take more care when messing around someone else's area. It's not a deterrent, but you have to be more careful. On the other hand, there are areas that are lacking a full time maintainer. And the other thing is that the release cycle is long, so it takes time for changes and even fixes to reach a broader audience sooner.
 
@@ -105,27 +105,27 @@ The Rails Core, on the other hand, doesn't have very specific roles, so everybod
 
 But he's not stating that one of them is better than the other but instead that they can learn from each other. For example, he made the case that the Ruby Core could be less ceremonious about commits and specially about reverts, people should be able to touch the code without getting afraid of offending anyone. And also that the Ruby Core could put more thought in deciding what should be maintained inside Ruby's subversion repo and what should be removed and maintained separately as gems, to make it easier for parallel features to evolve independently.
 
-[Watch his presentation](http://vimeo.com/26507951), he goes on several ideas and also talks about DTrace, other tech stuff and lot's of funny jokes.
+[Watch his presentation](http://vimeo.com/26507951), he goes on several ideas and also talks about DTrace, other tech stuff and lots of funny jokes.
 
 ## [TL;DR] The Language Barrier
 
-Aaron reminded us again that many people still complain that there are two distinct Ruby development mailing lists, [ruby-core](http://groups.google.com/group/ruby-core-google) and [ruby-dev](http://blade.nagaokaut.ac.jp/ruby/ruby-dev/index.shtml). The first in English, the other in Japanese. A few paranoid developers even go crazy enough to think that there are some kind of "conspiracy" going on in the Japanese list, stuff that's decided without never showing up in the English list. As Aaron said, there's no such thing going on.
+Aaron reminded us again that many people still complain that there are two distinct Ruby development mailing lists, [ruby-core](http://groups.google.com/group/ruby-core-google) and [ruby-dev](http://blade.nagaokaut.ac.jp/ruby/ruby-dev/index.shtml). The first in English, the other in Japanese. A few paranoid developers even go crazy enough to think that there are some kind of "conspiracy" going on in the Japanese list, stuff that's decided without ever showing up in the English list. As Aaron said, there's no such thing going on.
 
-The more usual complaint is always the same _"why don't the Japanese people communicate in English?"_ And again, the old bad habit of "taking things for granted". The ignored reality is that the Japanese people, in general, doesn't have good English skills. It's not arrogancy, lack of effort, it's a simple lack of skills.
+The more usual complaint is always the same _"why don't the Japanese people communicate in English?"_ And again, the old bad habit of "taking things for granted". The ignored reality is that the Japanese people, in general, don't have good English skills. It's not arrogance, lack of effort, it's a simple lack of skills.
 
-I'm from Brazil and here people don't usually speak good English as well. For me, it feels like Brazilians and Japaneses have a similar level of English understanding. It's very frustrating. But on the other hand, it's also frustrating to see Americans taking for granted that everybody else in the world understands English. It reminds me of that memorable scene from the fantastic movie [Inglourious Basterds](http://www.imdb.com/title/tt0361748/) where Diane Kruger's character [Bridget von Hammersmark](http://www.imdb.com/name/nm1208167/) sarcasticaly says:
+I'm from Brazil and here people don't usually speak good English as well. For me, it feels like Brazilians and Japanese have a similar level of English understanding. It's very frustrating. But on the other hand, it's also frustrating to see Americans taking for granted that everybody else in the world understands English. It reminds me of that memorable scene from the fantastic movie [Inglourious Basterds](http://www.imdb.com/title/tt0361748/) where Diane Kruger's character [Bridget von Hammersmark](http://www.imdb.com/name/nm1208167/) sarcastically says:
 
 [![](http://s3.amazonaws.com/akitaonrails/assets/2011/7/31/Screen%20Shot%202011-07-31%20at%208.00.22%20AM_original.png?1312109869)](http://www.youtube.com/watch?v=o-5JSX7jk5I)
 
 Gotta love Tarantino :-)
 
-I can't tell the American's reaction to that scene, but I'm pretty sure everybody else had a good laugh. Now, seriously, I shouldn't laugh because we usually only speak Brazilian-Portuguese, which is a language that almost no other country use. The same for Japanese. But the sarcasm was just to raise the discussion.
+I can't tell the American's reaction to that scene, but I'm pretty sure everybody else had a good laugh. Now, seriously, I shouldn't laugh because we usually only speak Brazilian-Portuguese, which is a language that almost no other country uses. The same for Japanese. But the sarcasm was just to raise the discussion.
 
 It doesn't feel good when a foreigner expects us to talk his language instead of the other way around. But it's also not good that we don't increase our efforts to learn more languages, like Europeans seem to do. I'll talk more about this in another article.
 
 That said, my point is that there are too many assumptions in communications, and I don't mean only different grammar or vocabulary. More importantly, there are particular protocols in each culture that we also take for granted and expect that everybody else will comply. But communication between people from different cultures can lead to a lot of misunderstandings. Being geeky, it's the same as an MSN Client trying to connect to an XMPP-based server :-)
 
-After lunch we had the [Ruby Core Team on stage](http://vimeo.com/26508997) discussing what's going on in the current Ruby development afairs. Sonoda-san confirmed 1.9.3 for August, with not so many new features, more bug fixes, security updates, stability in general. But they presented a few small controversial features. One in particular was interesting.
+After lunch we had the [Ruby Core Team on stage](http://vimeo.com/26508997) discussing what's going on in the current Ruby development affairs. Sonoda-san confirmed 1.9.3 for August, with not so many new features, more bug fixes, security updates, stability in general. But they presented a few small controversial features. One in particular was interesting.
 
 [![](http://s3.amazonaws.com/akitaonrails/assets/2011/8/5/IMG_0486_original.jpg?1312540424)](http://gihyo.jp/news/report/01/rubykaigi2011/0001?page=2)
 
@@ -143,7 +143,7 @@ The sense of humor of the Ruby Core was also interesting to see. Yuki Sonoda-san
 
 [![](http://s3.amazonaws.com/akitaonrails/assets/2011/8/5/IMG_0520_original.jpg?1312539925)](http://gihyo.jp/news/report/01/rubykaigi2011/0001?page=2)
 
-The only other news around Ruby is that Kirk Haines, the brave maintainer of the venerable 1.8.6 version said that there will be just one more release in the next couple of months to close most outstanding bugs remaining, then 1.8.6 will finally reach its end of life. Rest in piece!
+The only other news around Ruby is that Kirk Haines, the brave maintainer of the venerable 1.8.6 version said that there will be just one more release in the next couple of months to close most outstanding bugs remaining, then 1.8.6 will finally reach its end of life. Rest in peace!
 
 And the last bit is that Ruby will change its license to become BSDL + Ruby. There's a [discussion around this topic](http://www.ruby-forum.com/topic/216010) if you are interested in license stuff.
 
@@ -167,7 +167,7 @@ That was great, I had my book signed by all four of them (yay!). And they have s
 
 ## (TL;DR) Lightning Talks
 
-Special remarks goes for the _YamiRubyKaigi_ (something like "Dark RubyKaigi") and the next two Lightning Talk sessions. Because it was three days long, there were plenty of time for several quick (5 min long) talks. I was surprised by how many people did talk about many different – and sometimes just funny – subjects. That's something that unfortunately in Brazil, we are still lacking behind, I have a hard time with lightning talk sessions because they usually have very few people willing to talk and usually the topics are still basic in content. After seeing so many lightning talk sessions from RailsConf and RubyKaigi, I know that we still have work to do here.
+Special remarks goes for the _YamiRubyKaigi_ (something like "Dark RubyKaigi") and the next two Lightning Talk sessions. Because it was three days long, there was plenty of time for several quick (5 min long) talks. I was surprised by how many people did talk about many different – and sometimes just funny – subjects. That's something that unfortunately in Brazil, we are still lagging behind, I have a hard time with lightning talk sessions because they usually have very few people willing to talk and usually the topics are still basic in content. After seeing so many lightning talk sessions from RailsConf and RubyKaigi, I know that we still have work to do here.
 
 A few highlights and examples from those lightning talks are:
 
@@ -178,7 +178,7 @@ A few highlights and examples from those lightning talks are:
 
 There are several other interesting talks that I recommend you to watch. Some are just funny, some are motivational, but it can't be denied that **39** lightning talks (17 YamiRubyKaigi Talks, 11 lightning talks on the 2nd day, 11 lightning talks on the 3rd day), accounting for around **3 hours and 15 minutes** of content is a lot. Congratulations to the community for spending time assembling slides and interesting content and showing up on stage to present them.
 
-And as I promised to my new good friends from Australia, [Andy Kitchen](http://twitter.com/#!/auastro) and [Jonathan Cheng](http://twitter.com/#!/jonochang), I will give my support to their brand new and revolutionary software development technique, introduced at YamiRubyKaigi, that would make even Kent Bech rethink his concepts! :-) I present to you: **V.D.D**
+And as I promised to my new good friends from Australia, [Andy Kitchen](http://twitter.com/#!/auastro) and [Jonathan Cheng](http://twitter.com/#!/jonochang), I will give my support to their brand new and revolutionary software development technique, introduced at YamiRubyKaigi, that would make even Kent Beck rethink his concepts! :-) I present to you: **V.D.D**
 
 http://www.youtube.com/embed/lW16ykQ-heg
 
@@ -202,15 +202,15 @@ http://player.vimeo.com/video/26633560?portrait=0
 
 [[18M10] Pendulum, PG, and the hundred year language](http://vimeo.com/26633560) from [rubykaigi](http://vimeo.com/rubykaigi) on [Vimeo](http://vimeo.com).
 
-As you all know, Matz is now a member of Heroku. He'll have official support to hire some Ruby committers and assemble a full time team to maintain the development of the Ruby platform. He confirmed that he'll not move to San Francisco and that the pace of development of Ruby should not change that much, at least not at first. He'll do his work as he has always done it, from Matsue, his home town, and he'll remain a fellow researcher at NaCl, the Japanese company where he has been working for from the last 10 years or so.
+As you all know, Matz is now a member of Heroku. He'll have official support to hire some Ruby committers and assemble a full time team to maintain the development of the Ruby platform. He confirmed that he'll not move to San Francisco and that the pace of development of Ruby should not change that much, at least not at first. He'll do his work as he has always done it, from Matsue, his home town, and he'll remain a fellow researcher at NaCl, the Japanese company where he has been working for over the last 10 years or so.
 
-The first developer hired to be a full time employee on that team was the remarkable **mr. Nakata Nobuyoshi** , the top committer, surpassing even Matz in commits into the Ruby trunk, and one of the oldest and most senior developer of Ruby. Great choice, and expect to watch an interview I recorded with him. He has been contributing on his free time from the last 15 years, a very committed developer that you rarely see nowadays.
+The first developer hired to be a full time employee on that team was the remarkable **mr. Nakata Nobuyoshi** , the top committer, surpassing even Matz in commits into the Ruby trunk, and one of the oldest and most senior developers of Ruby. Great choice, and expect to watch an interview I recorded with him. He has been contributing in his free time for the last 15 years, a very committed developer that you rarely see nowadays.
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2011/8/5/Screen%20Shot%202011-08-05%20at%207.25.12%20AM_original.png?1312539731)
 
 Then Matz explained that Japanese programmers like to build their own small languages, something like a hobby. Lightweight Language events have been going on for a long while now. Even highschool students attempt to build their own languages. And he's been seeing lots of attempts in several places. It would be interesting if the next mainstream language comes out of this. But he also mentioned one of his personal characteristics: "負けず嫌い", meaning that he hates to lose. Speaking just like this it may sound kind of harsh, but it just means that he is not the kind of person that will sit tight and wait. He will always be looking for new ways to improve his language design. He welcomes the challenge with open arms, that's what he means, in general terms.
 
-He actually first mentioned that he is "大人げない" literally meaning "immature" but more like "not acting like an adult is supposed to" or just being plain "childish". It was fun when he dived into the "PG" section of his talk, mentioning the famous essayist and entrepreneur [Paul Graham](http://www.paulgraham.com/articles.html), whose fantastic essays are a must-read to every serious programmer. Matz reminded that Paul Graham created a Lisp-ish language called Arc, but it was not very popular. But imagining the 100 year language, we can improve on current languages, to get to the taste of Paul Graham's. And there's this Lisp-ish language called Ruby, invented by a guy named Matz, and this language is popular. So, maybe as a language designer, Matz is better than Paul Graham?? Of course he was kidding, but it was very interesting to listen Matz himself saying this particular remark, showing his "大人げない" and "負けず嫌い" sides.
+He actually first mentioned that he is "大人げない" literally meaning "immature" but more like "not acting like an adult is supposed to" or just being plain "childish". It was fun when he dived into the "PG" section of his talk, mentioning the famous essayist and entrepreneur [Paul Graham](http://www.paulgraham.com/articles.html), whose fantastic essays are a must-read to every serious programmer. Matz reminded that Paul Graham created a Lisp-ish language called Arc, but it was not very popular. But imagining the 100 year language, we can improve on current languages, to get to the taste of Paul Graham's. And there's this Lisp-ish language called Ruby, invented by a guy named Matz, and this language is popular. So, maybe as a language designer, Matz is better than Paul Graham?? Of course he was kidding, but it was very interesting to listen to Matz himself saying this particular remark, showing his "大人げない" and "負けず嫌い" sides.
 
 [![](http://s3.amazonaws.com/akitaonrails/assets/2011/8/5/Screen%20Shot%202011-08-05%20at%207.04.39%20AM_original.png?1312539570)](http://vimeo.com/26633560)
 
@@ -218,7 +218,7 @@ He kept saying about his thoughts of the 100 year language, that something like 
 
 Just before that, he mentioned again that _"Rivals are always welcome, of course"_ … _"But I will crush you!"_ :-) Again, don't take this seriously, it was explicitly intended to sound comical.
 
-And it was interesting because for the longest time people in the Ruby community have been hearding the meme _"Matz is nice and so we are nice."_ I don't recall where this started, but I think everybody that has been at the community for some time knows this. Which is why it was fun to see this other _"dark side"_ from Matz, being "immature" and "hating to lose". This is great, I think that this side doesn't contradict the other, it's just that we can be fiercer without losing kindness.
+And it was interesting because for the longest time people in the Ruby community have been hearing the meme _"Matz is nice and so we are nice."_ I don't recall where this started, but I think everybody that has been in the community for some time knows this. Which is why it was fun to see this other _"dark side"_ from Matz, being "immature" and "hating to lose". This is great, I think that this side doesn't contradict the other, it's just that we can be fiercer without losing kindness.
 
 [![](http://s3.amazonaws.com/akitaonrails/assets/2011/8/5/matz_is_nice_original.jpeg?1312539523)](http://codezine.jp/article/detail/4194)
 
@@ -230,9 +230,9 @@ After Matz closing keynote, Takahashi-san made a small closing speech. He thanke
 
 http://www.youtube.com/embed/vaKfDkU6i0g
 
-But this year's conference was born from a seed planted last year. I don't know how far have Takahashi-san and the other leaders thought about this, but if it's half of what I speculate, I think it's a bold move.
+But this year's conference was born from a seed planted last year. I don't know how far Takahashi-san and the other leaders have thought about this, but if it's half of what I speculate, I think it's a bold move.
 
-Before I start, let me introduce you to another Ruby developer from Japan, [Makoto Inoue](http://twitter.com/#!/makoto_inoue). This year he volunteered to help the foreigner speakers to have their slides translated to japanese, to make it easy on the real time translators during the talks (Thanks for the help, Makoto-san!). He started his Ruby career because of Rails a few years ago and now he got himself a good position at [New Bamboo](http://new-bamboo.co.uk/), in London, the company that also delivered the very awesome [Pusher](http://pusher.com/) service.
+Before I start, let me introduce you to another Ruby developer from Japan, [Makoto Inoue](http://twitter.com/#!/makoto_inoue). This year he volunteered to help the foreigner speakers to have their slides translated to Japanese, to make it easy on the real time translators during the talks (Thanks for the help, Makoto-san!). He started his Ruby career because of Rails a few years ago and now he got himself a good position at [New Bamboo](http://new-bamboo.co.uk/), in London, the company that also delivered the very awesome [Pusher](http://pusher.com/) service.
 
 Makoto attended last year as well and wrote his thoughts in two articles that you should read before going on ([Part 1](http://blog.new-bamboo.co.uk/2010/9/14/ruby-divide-at-rubykaigi-2010-and-what-can-you-do-as-a-rubyist-part-1), [Part 2](http://blog.new-bamboo.co.uk/2010/9/19/ruby-divide-at-rubykaigi-2010-and-what-can-you-do-as-a-rubyist-part-2)). In the second part he mentions another article originally wrote by [Shyouhei Urabe](http://twitter.com/shyouhei), a Ruby Core developer. This article is titled [RubyKaigi must die](https://github.com/makoto/japanese_fine_software_writings/wiki/Rubykaigi-must-die "once at least") and it seemed to have inspired Takahashi-san on the theme for RubyKaigi 2011. Because I feel it's important to point out, I will quote the article here:
 
@@ -260,15 +260,15 @@ Makoto attended last year as well and wrote his thoughts in two articles that yo
 >   
 > That's all. If you keep saying "It is too hard (to organise)" or "(RubyKaigi organisation) is so fragile", then you should stop now. RubyKaigi is not all of your life, isn't it?
 
-So at the closing speech from RubyKaigi 2010, they announced that 2011 would be The Final RubyKaigi. The idea is close this cycle, reorganize and come back. Takahashi-san will found a proper organization to be the stewardship of an yet unnamed new conference that will come back probably in 2013. So 2012 will be the first gap in 6 years of RubyKaigi. It is still unknown how this will be reorganized, but it seems clear that it's not the end.
+So at the closing speech from RubyKaigi 2010, they announced that 2011 would be The Final RubyKaigi. The idea is close this cycle, reorganize and come back. Takahashi-san will found a proper organization to be the stewardship of a yet unnamed new conference that will come back probably in 2013. So 2012 will be the first gap in 6 years of RubyKaigi. It is still unknown how this will be reorganized, but it seems clear that it's not the end.
 
 [![](http://s3.amazonaws.com/akitaonrails/assets/2011/8/5/Screen%20Shot%202011-08-05%20at%208.46.54%20AM_original.png?1312544851)](http://rubycentral.org/)
 
-Don't take everything literally, those are wise word that deserve some reflection. So pay attention.
+Don't take everything literally, those are wise words that deserve some reflection. So pay attention.
 
 It's already a great achievement to be able to deliver six consecutive conferences like this. I was involved in three consecutive conferences of similar sizes and I can appreciate the effort. I said it's a bold move because it takes courage to dismantle something like this. Once you start and you really like it, it's difficult to let go. But on the other hand you need to step up to the next level once you reach the first ceiling, and I think RubyKaigi served its purpose.
 
-In the US, Chad Fowler, Rich Kilmer, David Black organized the first RubyConf back in 2001 and just after that they founded RubyCentral, a non-profit organization, to organize the next conferences and support regional events. It was very "American" and a smart move that payed off in spades, specially with the following support from O'Reilly and other companies. They are delivering the 11th RubyConf and they just delivered the 6th RailsConf. The "founding fathers" of the American Ruby Community were able to foster a sustainable **ecosystem**. I'll come back to this subject in another article.
+In the US, Chad Fowler, Rich Kilmer, David Black organized the first RubyConf back in 2001 and just after that they founded RubyCentral, a non-profit organization, to organize the next conferences and support regional events. It was very "American" and a smart move that paid off in spades, specially with the following support from O'Reilly and other companies. They are delivering the 11th RubyConf and they just delivered the 6th RailsConf. The "founding fathers" of the American Ruby Community were able to foster a sustainable **ecosystem**. I'll come back to this subject in another article.
 
 [![](http://s3.amazonaws.com/akitaonrails/assets/2011/8/5/4935820587_2169342225_b_original.jpg?1312544730)](http://blog.new-bamboo.co.uk/2010/9/14/ruby-divide-at-rubykaigi-2010-and-what-can-you-do-as-a-rubyist-part-1)
 

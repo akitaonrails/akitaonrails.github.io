@@ -19,21 +19,21 @@ It has attracted lots of trolls and haters at the comments section, more discuss
 
 Then, today I heard about this website about Ruby Dramas - that I'm not linking. I don't know the author and I even think this is just for fun, but the reactions from the trolls and haters aren't. Essentially it links a few of what we call "Ruby Dramas", the discussions that trolls and haters call a waste of time, a demonstration of the immaturity and childish behavior of Ruby programmers.
 
-In 2006, Kathy Sierra wrote an article called [Dilbert and the zone of mediocrity](http://headrush.typepad.com/creating_passionate_users/2006/10/dilbert_and_the.html) where she asserts that if you want to be successful, then you don't want to just please everybody in order to make all of them just like you. You do things in a way that people will love you, but knowing that the consequence is that many others will certainly hate you in the process. It's an all of nothing proposition, if you just make efforts for everybody to like you, you are just being mediocre.
+In 2006, Kathy Sierra wrote an article called [Dilbert and the zone of mediocrity](http://headrush.typepad.com/creating_passionate_users/2006/10/dilbert_and_the.html) where she asserts that if you want to be successful, then you don't want to just please everybody in order to make all of them just like you. You do things in a way that people will love you, but knowing that the consequence is that many others will certainly hate you in the process. It's an all or nothing proposition, if you just make efforts for everybody to like you, you are just being mediocre.
 
-There's a catch. It's not that you make things in order to make people love you. It's just that you should to things in a way that **You Love It**.
+There's a catch. It's not that you make things in order to make people love you. It's just that you should do things in a way that **You Love It**.
 
-What are trolls and haters? In essence, they come back to you everytime because they care about some of the same things that you do. But they are not producers, they are looters, plunders. What they are actually saying is: __"You're so good, please me, I want the successful ones to please me, because I can't do what you do, as the weaker one, I deserve to be pleased."__
+What are trolls and haters? In essence, they come back to you every time because they care about some of the same things that you do. But they are not producers, they are looters, plunderers. What they are actually saying is: __"You're so good, please me, I want the successful ones to please me, because I can't do what you do, as the weaker one, I deserve to be pleased."__
 
 Such is the mentality of altruism and collectivism: people that have less, that can achieve less, deserve what successful people produced, and the successful people must feel guilt for being so much better. The horrible Robin Hood philosophy.
 
 I will allow myself for some philosophical liberty and the use of metaphors to illustrate my point. I have never talked to other Rubyists that knew _Why personally, so I hope they don't get offended if my personal view differs, but again, this is just my personal opinion.
 
-I learned recently that coincidentally the name **"Why, the Lucky Stiff"** is mentioned in Ayn Rand's famous masterpiece [The Fountainhead](http://en.wikipedia.org/wiki/Talk:Why_the_lucky_stiff#Real_name). -- by the way, as not being a native american, I was just told that this was a very common expression back in the day. But I couldn't resist leaving this coincidence noted anyway :-)
+I learned recently that coincidentally the name **"Why, the Lucky Stiff"** is mentioned in Ayn Rand's famous masterpiece [The Fountainhead](http://en.wikipedia.org/wiki/Talk:Why_the_lucky_stiff#Real_name). -- by the way, as a non-native English speaker, I was just told that this was a very common expression back in the day. But I couldn't resist leaving this coincidence noted anyway :-)
 
 This novel illustrates the ideal vision of Ayn Rand's Objectivism philosophy. It tells the story of the ideal man: Howard Roark, a talented architect that lives for the passion of his creative skills. He bows to no one, even if it means his own destruction. He lives by his moral principles of voluntary trade and individual achievement.
 
-[Objectivism](http://bit.ly/P1H10f) is the foundation of a more pure version of Capitalism (not the version we current live in), where individual man make voluntary agreements only.
+[Objectivism](http://bit.ly/P1H10f) is the foundation of a more pure version of Capitalism (not the version we currently live in), where individual men make voluntary agreements only.
 
 So, the trolls and haters, in The Fountainhead, are personified by the looters such as the Peter Keatings and Ellsworth Tooheys of the world.
 
@@ -41,7 +41,7 @@ So, the trolls and haters, in The Fountainhead, are personified by the looters s
 
 Summarizing, in the book Roark ends up in a project called Courtlandt, a huge complex for the poor and destitute, where no other architect was able to design a complex that would be within requirements and budget. Only Roark was able to solve the puzzle and he agrees to deliver if, and only if, his work is not modified by any means.
 
-When he does deliver, the other architects think they have a say in his designs and they modify it according to a committee that think they know better for "the greater good". When Roark knows about it, and see his creation being built in a way that he did not want, he decided to dynamite and bring it down.
+When he does deliver, the other architects think they have a say in his designs and they modify it according to a committee that thinks they know better for "the greater good". When Roark knows about it, and sees his creation being built in a way that he did not want, he decides to dynamite and bring it down.
 
 He goes to court and this is his defense:
 
@@ -54,11 +54,11 @@ He goes to court and this is his defense:
 
 [Read the full novel version of this remarkable defense speech](http://www.nasonart.com/personal/lifelessons/fountainhead.html).
 
-Again, as a metaphor, I can't help myself to picture _Why in Howard's shoes, talking to his detractors, the trolls and haters, the ones naming the so called "Ruby Dramas", the looters, the ones that think they know about "the greater good".
+Again, as a metaphor, I can't help picturing _Why in Howard's shoes, talking to his detractors, the trolls and haters, the ones naming the so called "Ruby Dramas", the looters, the ones that think they know about "the greater good".
 
-Some people question why does "_Why" evoke such "irrational worship" when in the end of the day he didn't even do so much coding, and his coding was not exactly good enough (according to their own views, of course).
+Some people question why "_Why" evokes such "irrational worship" when at the end of the day he didn't even do so much coding, and his coding was not exactly good enough (according to their own views, of course).
 
-My personal pet theory is exactly because _Why embodies Howard Roark ideals. He is an artist, just like Roark. He did things in ways that surprised people. He created, he produced, he remained an independent mind. But some contract was breached. I don't know what it is, maybe the agreement was exactly that: "leave me alone", "do not come after my personal identity", "do not tell how I should do my work".
+My personal pet theory is exactly because _Why embodies Howard Roark's ideals. He is an artist, just like Roark. He did things in ways that surprised people. He created, he produced, he remained an independent mind. But some contract was breached. I don't know what it is, maybe the agreement was exactly that: "leave me alone", "do not come after my personal identity", "do not tell me how I should do my work".
 
 So when the Tooheys ran over him, he literally dynamited Courtlandt. It was his work, his terms, his choice. And his individual choice was to do what Roark defended:
 
@@ -72,9 +72,9 @@ So when the Tooheys ran over him, he literally dynamited Courtlandt. It was his 
 >
 > "I agreed to design Cortlandt for the purpose of seeing it erected as I designed it and for no other reason. That was the price I set for my work. I was not paid.
 
-So Kathy Sierra was right: if you do something remarkable, that you love, some will also love it, and others will denounce and hate it. Trolls are like leeches, they come crawling fast pursuing other people's success in order to feed from it. They do it not by producing, but by evoking the altruistic principles, all against the individual. And this is the evil in our society: we should be able to understand that individual achievement is not to be shared. An individual that achieved success by his own merits deserve every penny of it without the need to feel guilty.
+So Kathy Sierra was right: if you do something remarkable, that you love, some will also love it, and others will denounce and hate it. Trolls are like leeches, they come crawling fast pursuing other people's success in order to feed from it. They do it not by producing, but by evoking the altruistic principles, all against the individual. And this is the evil in our society: we should be able to understand that individual achievement is not to be shared. An individual that achieved success by his own merits deserves every penny of it without the need to feel guilty.
 
-Trolls and Haters name things such as "Ruby Dramas" because they want your attention. They want the people they quote to be available to please them. And they can't be pleased, so it's an impossible proposition. Trolls exists just for the sake of trolling. That's what Kathy may not have realized when she first wrote her essay: yes, success will attract the haters, but not because they care about what was achieved and want to protect it, but because - like leeches - they want to benefit without producing, on the principle that successful people must please those who cannot achieve.
+Trolls and Haters name things such as "Ruby Dramas" because they want your attention. They want the people they quote to be available to please them. And they can't be pleased, so it's an impossible proposition. Trolls exist just for the sake of trolling. That's what Kathy may not have realized when she first wrote her essay: yes, success will attract the haters, but not because they care about what was achieved and want to protect it, but because - like leeches - they want to benefit without producing, on the principle that successful people must please those who cannot achieve.
 
 Roark said: __"We are approaching a world in which I cannot permit myself to live"__, and so _Why deleted his work, even though many others contributed to it. Again, there was a breach of contract and again I quote Roark:
 

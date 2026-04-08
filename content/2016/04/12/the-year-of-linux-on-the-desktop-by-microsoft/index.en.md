@@ -25,7 +25,7 @@ You must have, at the very least, 10GB of available space in your main partition
 
 Once it's installed, you must go to the Developer options in the "Update & Security" Control Panel and change your profile to "Developer Mode". This "Bash on Windows" feature will show up under the Windows Features list. It's intended for **developers only**, not to be used in production servers.
 
-Once you have the Preview installed you must be able to fire up the old cmd.exe console (or any other better console such as [ConEmu](https://conemu.github.io/)) and type in "bash"; it will prompt you to install the userland Canonical packaged for Ubuntu. Takes another while. The whole process takes a lot of time, by the way, so make sure you reserve half a day at least. Don't do it at work :-)
+Once you have the Preview installed you must be able to fire up the old cmd.exe console (or any other better console such as [ConEmu](https://conemu.github.io/)) and type in "bash"; it will prompt you to install the userland Canonical packaged for Ubuntu. This takes another while. The whole process takes a lot of time, by the way, so make sure you reserve half a day at least. Don't do it at work :-)
 
 One problem I stumbled upon right away is that networking was not working properly. Someone [narrowed it down](https://github.com/Microsoft/BashOnWindows/issues/35) to DNS not being added to <tt>/etc/resolv.conf</tt> so you must add it manually. Just add the Google DNS (8.8.8.8 and 8.8.4.4) to the resolv.conf file and you're up.
 
@@ -43,13 +43,14 @@ Then you can log into this user shell with <tt>su - [your user]</tt> every time!
 
 From here, we can assume it's a plain Ubuntu 14.04 and you should be able to follow [my very old post](http://www.akitaonrails.com/2015/01/28/ruby-e-rails-no-ubuntu-14-04-lts-trusty-tahr) on how to setup a developer Ubuntu environment, or any other tutorial you can find over Google. These basic development packages that I always install first all run:
 
+
 ```
 sudo apt-get install curl build-essential openssl libcurl4-openssl-dev libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev libgmp-dev autoconf libc6-dev ncurses-dev automake libtool bison subversion redis-server libhiredis-dev memcached libmemcached-dev imagemagick libmagickwand-dev exuberant-ctags ncurses-term ack-grep git git-svn gitk ssh libssh-dev
 
 sudo dpkg-divert --local --divert /usr/bin/ack --rename --add /usr/bin/ack-grep
 ```
 
-This should give you all compilation toolchain essentials as well as some well known command line tools such as ack (way better than grep). It also adds Redis and Memcached. They all run.
+This should give you all the compilation toolchain essentials as well as some well known command line tools such as ack (way better than grep). It also adds Redis and Memcached. They all run.
 
 As good practice you should add the following to your <tt>/etc/bash.bashrc</tt> configuration file:
 
@@ -74,7 +75,7 @@ Interestingly, it takes a lot of time to complete and during the process CPU usa
 
 ![CPU through the roof](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/537/big_resources.jpg)
 
-If I check how much memory I have in the system it's more clear:
+If I check how much memory I have in the system it becomes clearer:
 
 ```
 root@localhost:/mnt/c/Users/fabio# free -h
@@ -250,7 +251,7 @@ We need proper memory controls, well implemented pseudo-terminal support, proper
 
 [Some people](http://www.neowin.net/news/bash-plus-windows-10-equals-linux-gui-apps-on-the-windows-desktop) went as far as being able to trick X11 and run GUI apps such as Firefox and even XFCE over this environment already, so it's really promising. This idea does work.
 
-Once those issues are ironed out, yes, I believe we are closer than ever to finally use Windows as a viable and full featured development environment. Let's see if by the Windows 10 Anniversary Release in June we will have a stable Ubuntu installation.
+Once those issues are ironed out, yes, I believe we are closer than ever to finally using Windows as a viable and full-featured development environment. Let's see if by the Windows 10 Anniversary Release in June we will have a stable Ubuntu installation.
 
 One thing that I think they did very wrong was to tie the Linux Subsystem to the Windows 10 installation. It should've been a separate installer, so the team could release build updates without having to bundle it all together with the entire Windows OS.
 
