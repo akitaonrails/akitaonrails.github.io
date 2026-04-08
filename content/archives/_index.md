@@ -20,18 +20,6 @@ Quer ver só os posts Off-Topic? [Clique aqui](/off-topic/).
 
 - [Meu "Netflix Pessoal" com Docker Compose](/2024/04/03/meu-netflix-pessoal-com-docker-compose/)
 
-## 2023 - Abril
-
-- [\[Akitando #140\] Desbloqueando o "Algoritmo" do Twitter - Introdução a Grafos](/2023/04/11/akitando-140-desbloqueando-o-algoritmo-do-twitter-introducao-a-grafos/)
-
-## 2022 - Dezembro
-
-- [\[Akitando\] #134 - Top 3 Distros Linux | Qual Recomendo?](/2022/12/23/akitando-134-top-3-distros-linux-qual-recomendo/)
-
-## 2022 - Fevereiro
-
-- [\[Akitando\] #114 - O Melhor Setup Dev com Arch e WSL2](/2022/02/15/akitando-114-o-melhor-setup-dev-com-arch-e-wsl2/)
-
 ## 2020 - Maio
 
 - [O Resultado do Modelo do Imperial College sobre a COVID-19 pode estar ERRADO](/2020/05/07/o-modelo-do-imperial-college-sobre-a-covid-19-pode-estar-errado/)
@@ -39,10 +27,6 @@ Quer ver só os posts Off-Topic? [Clique aqui](/off-topic/).
 ## 2019 - Outubro
 
 - [The Conf 2019 Edition Report](/2019/10/25/the-conf-2019-edition-report/)
-
-## 2019 - Julho
-
-- [\[Akitando\] #53 - 10 Mitos sobre Tech Startups | Parte 2 \[Rated R\]](/2019/07/02/akitando-53-10-mitos-sobre-tech-startups-parte-2-rated-r/)
 
 ## 2019 - Março
 

@@ -37,6 +37,7 @@ Transcrições dos episódios do canal [Akitando](https://www.youtube.com/c/akit
 ## 2023 - Abril
 
 - [\[Akitando #141\] Conversando sobre TDAH, Autismo, Ansiedade e Depressão | Tirando a Camisa de Força](/2023/04/25/akitando-141-conversando-sobre-tdah-autismo-ansiedade-e-depressao-tirando-a-camisa-de-forca/)
+- [\[Akitando #140\] Desbloqueando o "Algoritmo" do Twitter - Introdução a Grafos](/2023/04/11/akitando-140-desbloqueando-o-algoritmo-do-twitter-introducao-a-grafos/)
 
 ## 2023 - Março
 
@@ -54,6 +55,7 @@ Transcrições dos episódios do canal [Akitando](https://www.youtube.com/c/akit
 
 ## 2022 - Dezembro
 
+- [\[Akitando\] #134 - Top 3 Distros Linux | Qual Recomendo?](/2022/12/23/akitando-134-top-3-distros-linux-qual-recomendo/)
 - [\[Akitando\] #133 - Tornando sua App Web Mais Rápida! | 4 Técnicas de Otimização](/2022/12/12/akitando-133-tornando-sua-app-web-mais-rapida-4-tecnicas-de-otimizacao/)
 
 ## 2022 - Novembro
@@ -100,6 +102,10 @@ Transcrições dos episódios do canal [Akitando](https://www.youtube.com/c/akit
 
 - [\[Akitando\] #116 - De 5 Tera a 25 Giga | Compressão de Dados e Multimídia](/2022/03/23/akitando-116-de-5-tera-a-25-giga-compressao-de-dados-e-multimidia/)
 - [\[Akitando\] #115 - Caminho pro Melhor Teclado do Mundo!](/2022/03/07/akitando-115-caminho-pro-melhor-teclado-do-mundo/)
+
+## 2022 - Fevereiro
+
+- [\[Akitando\] #114 - O Melhor Setup Dev com Arch e WSL2](/2022/02/15/akitando-114-o-melhor-setup-dev-com-arch-e-wsl2/)
 
 ## 2022 - Janeiro
 
@@ -246,6 +252,7 @@ Transcrições dos episódios do canal [Akitando](https://www.youtube.com/c/akit
 - [\[Akitando\] #56 - Falando um pouco de MAC, LINUX e WINDOWS | Qual eu devo escolher?](/2019/07/24/akitando-56-falando-um-pouco-de-mac-linux-e-windows-qual-eu-devo-escolher/)
 - [\[Akitando\] #55 - Refletindo sobre RESOLUÇÃO de Problemas | O bug do Premiere](/2019/07/16/akitando-55-refletindo-sobre-resolucao-de-problemas-o-bug-do-premiere/)
 - [\[Akitando\] #54 - O Guia DEFINITIVO de UBUNTU para Devs Iniciantes](/2019/07/12/akitando-54-o-guia-definitivo-de-ubuntu-para-devs-iniciantes/)
+- [\[Akitando\] #53 - 10 Mitos sobre Tech Startups | Parte 2 \[Rated R\]](/2019/07/02/akitando-53-10-mitos-sobre-tech-startups-parte-2-rated-r/)
 
 ## 2019 - Junho
 

@@ -3,6 +3,7 @@ title: '[Akitando #140] Desbloqueando o "Algoritmo" do Twitter - Introdução a 
 date: '2023-04-11T08:00:00-03:00'
 slug: akitando-140-desbloqueando-o-algoritmo-do-twitter-introducao-a-grafos
 tags:
+- akitando
 - grafos
 - twitter
 - the-algorithm

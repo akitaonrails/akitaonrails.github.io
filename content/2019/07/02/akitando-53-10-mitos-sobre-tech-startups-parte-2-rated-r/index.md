@@ -3,6 +3,7 @@ title: "[Akitando] #53 - 10 Mitos sobre Tech Startups | Parte 2 [Rated R]"
 date: '2019-07-02T17:00:00-03:00'
 slug: akitando-53-10-mitos-sobre-tech-startups-parte-2-rated-r
 tags:
+- akitando
 - Bill Gates
 - networking
 - business plan

@@ -3,6 +3,7 @@ title: "[Akitando] #134 - Top 3 Distros Linux | Qual Recomendo?"
 date: '2022-12-23T09:18:00-03:00'
 slug: akitando-134-top-3-distros-linux-qual-recomendo
 tags:
+- akitando
 - mandrake
 - mandriva
 - conectiva

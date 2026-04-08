@@ -2,7 +2,8 @@
 title: "[Akitando] #114 - O Melhor Setup Dev com Arch e WSL2"
 date: '2022-02-15T12:52:00-03:00'
 slug: akitando-114-o-melhor-setup-dev-com-arch-e-wsl2
-tags: []
+tags:
+- akitando
 draft: false
 ---
 
