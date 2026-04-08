@@ -7,6 +7,7 @@ tags:
 - claude
 - gpt
 - vibecode
+  - AI
 translationKey: best-language-for-llms
 ---
 

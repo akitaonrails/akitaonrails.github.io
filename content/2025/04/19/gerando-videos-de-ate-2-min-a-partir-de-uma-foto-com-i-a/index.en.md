@@ -9,6 +9,7 @@ tags:
 - docker
 - figures
 - 3d print
+  - AI
 draft: false
 translationKey: ai-photo-to-video-2min
 description: Using FramePack with Tencent's HunyuanVideo in Docker on an RTX 4090 to animate photos of action figures and drawings into videos up to two minutes long.

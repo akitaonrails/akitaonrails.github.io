@@ -3,7 +3,7 @@ title: "Vibe Code: Fiz um clone do Mega em Rails em 1 dia pro meu Home Server"
 slug: "vibe-code-fiz-um-clone-do-mega-em-rails-em-1-dia-pro-meu-home-server"
 date: 2026-02-21T18:48:25+00:00
 draft: false
-tags: ["rails", "ruby", "docker", "cloudflare", "security", "vibe-coding", "homeserver", "claude"]
+tags: ["rails", "ruby", "docker", "cloudflare", "security", "vibe-coding", "homeserver", "claude", "AI"]
 translationKey: frankmega-mega-clone-1-day
 ---
 

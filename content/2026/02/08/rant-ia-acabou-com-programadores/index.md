@@ -11,6 +11,7 @@ tags:
 - openai
 - anthropic
 - bolha
+  - AI
 translationKey: rant-ai-killed-programmers
 ---
  

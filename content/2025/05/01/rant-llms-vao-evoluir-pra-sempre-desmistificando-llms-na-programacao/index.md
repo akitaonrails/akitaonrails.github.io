@@ -12,6 +12,7 @@ tags:
 - mcp
 - benchmark
 - llm
+  - AI
 draft: false
 translationKey: rant-llms-evolve-forever
 ---

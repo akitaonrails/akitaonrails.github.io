@@ -9,6 +9,7 @@ tags:
 - claude
 - gpt
 - crush
+  - AI
 translationKey: frankmd-part-2
 ---
 

@@ -12,6 +12,7 @@ tags:
 - mcp
 - benchmark
 - llm
+  - AI
 draft: false
 translationKey: rant-llms-evolve-forever
 description: A hype-busting rant on LLM benchmarks, the myth of exponential AI progress, and my hands-on experience showing why Vibe Coding does not work.

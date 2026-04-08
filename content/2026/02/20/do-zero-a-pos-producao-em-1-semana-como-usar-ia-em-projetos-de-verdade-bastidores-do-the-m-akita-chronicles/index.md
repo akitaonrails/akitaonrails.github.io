@@ -10,6 +10,7 @@ tags:
 - extremeprogramming
 - agile
 - frankmd
+  - AI
 translationKey: zero-to-post-production-1-week
 ---
 

@@ -10,6 +10,7 @@ tags:
 - dalle
 - docker
 - cuda
+  - AI
 draft: false
 translationKey: ai-images-ghibli-docker-cuda
 ---

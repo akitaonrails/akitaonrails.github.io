@@ -7,6 +7,7 @@ tags:
 - ollama
 - aider
 - llm
+  - AI
 draft: false
 translationKey: testing-qwen3-first-aider-ollama
 ---

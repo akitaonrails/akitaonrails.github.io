@@ -8,6 +8,7 @@ tags:
 - runpod
 - vibecode
 - qwen3-tts
+  - AI
 translationKey: serving-ai-cloud-personal-tts
 ---
 

@@ -7,6 +7,7 @@ tags:
 - modelfile
 - qwen3
 - llm
+  - AI
 draft: false
 translationKey: dissecting-ollama-modelfile-qwen3
 description: A walkthrough of sampling parameters (temperature, top_p, top_k, min_p, repeat_penalty) and how to build a custom Ollama Modelfile to tune Qwen3 for software development tasks.

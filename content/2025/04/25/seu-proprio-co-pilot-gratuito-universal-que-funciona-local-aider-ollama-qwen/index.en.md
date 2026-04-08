@@ -10,6 +10,7 @@ tags:
 - docker
 - llm
 - sdpa
+  - AI
 draft: false
 translationKey: local-copilot-aider-ollama-qwen
 description: "How to run Aider with Ollama and Qwen 2.5 Coder locally to build a free, universal Co-Pilot alternative that works with any editor."

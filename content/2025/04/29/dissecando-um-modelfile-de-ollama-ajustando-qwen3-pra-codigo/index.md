@@ -7,6 +7,7 @@ tags:
 - modelfile
 - qwen3
 - llm
+  - AI
 draft: false
 translationKey: dissecting-ollama-modelfile-qwen3
 ---

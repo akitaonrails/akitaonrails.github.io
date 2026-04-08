@@ -8,6 +8,7 @@ tags:
 - ollama
 - vllm
 - llm
+  - AI
 draft: false
 translationKey: teaching-zig-to-llm-loras
 description: A hands-on walkthrough of training a LoRA adapter on Qwen3-8B to teach it about Zig 0.14, covering datasets, fine-tuning, vLLM serving, and the limits of the experiment.

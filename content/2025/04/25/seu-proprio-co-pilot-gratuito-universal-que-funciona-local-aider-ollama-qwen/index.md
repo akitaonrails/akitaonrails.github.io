@@ -10,6 +10,7 @@ tags:
 - docker
 - llm
 - sdpa
+  - AI
 draft: false
 translationKey: local-copilot-aider-ollama-qwen
 ---

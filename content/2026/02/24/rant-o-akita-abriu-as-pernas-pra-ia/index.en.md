@@ -7,6 +7,7 @@ draft: false
 tags:
 - vibecode
 - rant
+  - AI
 description: "I have been 'bending over' for AI since 2023. If you only watch out-of-context podcast clips, let me spell it out for you."
 ---
 

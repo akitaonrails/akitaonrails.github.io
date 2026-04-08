@@ -6,6 +6,7 @@ tags:
 - ersgan
 - docker
 - video2k
+  - AI
 draft: false
 translationKey: ai-anime-upscale-4k
 ---

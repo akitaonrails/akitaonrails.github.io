@@ -13,6 +13,7 @@ tags:
 - ipadapter
 - flux
 - comfyui
+  - AI
 draft: false
 translationKey: ai-comfyui-npcs-game-dev
 description: A walkthrough of Mickmumpitz's ComfyUI workflow for generating coherent NPC character sheets from scratch, running on my Docker Compose setup.

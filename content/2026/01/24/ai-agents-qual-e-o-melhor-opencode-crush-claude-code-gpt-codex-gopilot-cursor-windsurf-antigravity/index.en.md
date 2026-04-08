@@ -9,6 +9,7 @@ tags:
 - codex
 - opencode
 - crush
+  - AI
 translationKey: ai-agents-which-is-best
 description: "A practical take on the current state of AI coding agents, why proprietary harnesses matter, and why I am sticking with Crush."
 ---

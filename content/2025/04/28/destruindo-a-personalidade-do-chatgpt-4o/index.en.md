@@ -6,6 +6,7 @@ tags:
 - chatgpt
 - openai
 - llm
+  - AI
 draft: false
 translationKey: destroying-chatgpt-4o-personality
 description: How to disable ChatGPT's pseudo-human chatter and get straight, dry technical answers by tweaking the custom traits settings.

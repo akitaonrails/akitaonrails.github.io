@@ -8,6 +8,7 @@ tags:
   - llm
   - homeserver
   - amd
+  - AI
   - review
 ---
 

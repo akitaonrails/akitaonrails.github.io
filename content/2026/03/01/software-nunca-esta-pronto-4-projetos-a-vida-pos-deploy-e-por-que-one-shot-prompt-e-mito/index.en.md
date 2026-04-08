@@ -12,6 +12,7 @@ tags:
 - agile
 - xp
 - extremeprogramming
+  - AI
 translationKey: software-never-done
 description: "125 post-production commits across 4 projects in 10 days. Real bugs, real users, real iteration. Why one-shot prompting is a myth and software is never 'done'."
 ---

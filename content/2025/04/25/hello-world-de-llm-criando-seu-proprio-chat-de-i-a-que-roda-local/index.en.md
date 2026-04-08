@@ -14,6 +14,7 @@ tags:
 - python
 - docker
 - pytorch
+  - AI
 draft: false
 translationKey: llm-hello-world-local-chat
 description: A hands-on Hello World experiment explaining how LLMs actually work under the hood, building a tiny local chat CLI with Qwen 2.5 Coder running on a single GPU.

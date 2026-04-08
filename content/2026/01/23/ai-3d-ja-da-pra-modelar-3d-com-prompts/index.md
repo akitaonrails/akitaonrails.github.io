@@ -7,6 +7,7 @@ tags:
 - hitem3d
 - blender
 - bambulab
+  - AI
 translationKey: ai-3d-modeling-prompts
 ---
 

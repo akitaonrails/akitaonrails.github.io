@@ -6,6 +6,7 @@ tags:
 - crush
 - zai
 - glm
+  - AI
 translationKey: glm-4-7-flash-review
 ---
 

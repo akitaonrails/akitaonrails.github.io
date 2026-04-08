@@ -3,7 +3,7 @@ title: "Vibe Code: I Built a Mega Clone in Rails in 1 Day for My Home Server"
 slug: vibe-code-built-a-mega-clone-in-rails-in-1-day-frankmega
 date: 2026-02-21T18:48:25+00:00
 draft: false
-tags: ["rails", "ruby", "docker", "cloudflare", "security", "vibe-coding", "homeserver", "claude"]
+tags: ["rails", "ruby", "docker", "cloudflare", "security", "vibe-coding", "homeserver", "claude", "AI"]
 translationKey: frankmega-mega-clone-1-day
 description: "Building FrankMega, a self-hosted Mega.nz clone in Rails 8, in a single day with Claude Code, and why experience still matters in vibe coding."
 ---

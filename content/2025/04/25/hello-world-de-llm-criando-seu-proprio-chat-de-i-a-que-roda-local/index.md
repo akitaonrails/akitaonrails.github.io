@@ -14,6 +14,7 @@ tags:
 - python
 - docker
 - pytorch
+  - AI
 draft: false
 translationKey: llm-hello-world-local-chat
 ---

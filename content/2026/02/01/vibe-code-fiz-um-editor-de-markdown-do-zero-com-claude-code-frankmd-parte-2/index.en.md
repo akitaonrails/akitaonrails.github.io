@@ -9,6 +9,7 @@ tags:
 - claude
 - gpt
 - crush
+  - AI
 translationKey: frankmd-part-2
 description: "Part 2 of the FrankMD story: refactoring, i18n, syntax highlighting, tests, and the hard-earned lessons from 30 hours of vibe coding with Claude."
 ---

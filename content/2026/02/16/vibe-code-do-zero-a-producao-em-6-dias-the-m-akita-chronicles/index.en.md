@@ -7,6 +7,7 @@ tags:
 - vibecode
 - themakitachronicles
 - rubyonrails
+  - AI
 translationKey: vibe-code-zero-to-prod-6-days
 description: "How I shipped a full newsletter, blog, podcast, and Discord bot to production in six days using vibe coding the right way."
 ---

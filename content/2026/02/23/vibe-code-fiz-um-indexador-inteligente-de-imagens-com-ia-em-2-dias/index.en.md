@@ -9,6 +9,7 @@ tags:
 - rust
 - tauri
 - qwen
+  - AI
 translationKey: frank-sherlock-image-indexer
 description: "How I built Frank Sherlock, a local AI-powered image catalog desktop app, in a weekend using Agile Vibe Coding with Claude Code."
 ---

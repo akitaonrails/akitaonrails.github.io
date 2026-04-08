@@ -12,6 +12,7 @@ tags:
 - meta
 - nvidia
 - mcp
+  - AI
 draft: false
 description: Why LLMs for real coding behave like gacha loot boxes, and why every incentive in the industry pushes you to burn more tokens.
 ---

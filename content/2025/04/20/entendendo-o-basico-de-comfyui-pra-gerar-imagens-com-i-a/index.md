@@ -11,6 +11,7 @@ tags:
 - diffusion models
 - controlnet
 - loras
+  - AI
 draft: false
 translationKey: comfyui-basics-ai-images
 ---

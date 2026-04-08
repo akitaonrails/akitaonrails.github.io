@@ -9,6 +9,7 @@ tags:
 - codemirror
 - hugo
 - obsidian
+  - AI
 translationKey: frankmd-part-1
 description: "How I vibe-coded FrankMD, a self-hosted Markdown editor tailored to my blogging workflow, in three days with Claude Code."
 ---

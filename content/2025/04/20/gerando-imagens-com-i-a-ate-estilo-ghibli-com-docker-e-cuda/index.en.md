@@ -10,6 +10,7 @@ tags:
 - dalle
 - docker
 - cuda
+  - AI
 draft: false
 translationKey: ai-images-ghibli-docker-cuda
 description: "A technical walkthrough of running ComfyUI locally with Docker and CUDA to generate AI images, including anime and Ghibli styles, with full control over models, extensions, and workflows."

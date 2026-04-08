@@ -10,6 +10,7 @@ tags:
 - deepseek
 - ollama
 - llm
+  - AI
 draft: false
 translationKey: aider-runpod-which-llm-for-code
 description: Hands-on testing of Qwen2.5 Coder, DeepSeek, Codestral and others with Aider, locally on an RTX 4090 and on RunPod, comparing them against Claude and Gemini.

@@ -13,6 +13,7 @@ tags:
 - ipadapter
 - flux
 - comfyui
+  - AI
 draft: false
 translationKey: ai-comfyui-npcs-game-dev
 ---

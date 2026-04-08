@@ -10,6 +10,7 @@ tags:
 - kimi
 - glm
 - gemini
+  - AI
 translationKey: vibe-code-which-llm-real-talk
 ---
 

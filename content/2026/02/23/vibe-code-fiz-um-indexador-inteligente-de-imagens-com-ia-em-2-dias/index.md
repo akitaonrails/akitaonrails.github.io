@@ -9,6 +9,7 @@ tags:
 - rust
 - tauri
 - qwen
+  - AI
 translationKey: frank-sherlock-image-indexer
 ---
 

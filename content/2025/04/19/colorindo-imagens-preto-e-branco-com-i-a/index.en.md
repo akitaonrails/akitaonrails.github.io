@@ -7,6 +7,7 @@ tags:
 - I.A.
 - github
 - docker
+  - AI
 draft: false
 translationKey: ai-colorize-black-white
 description: Using DDColor inside Docker to colorize old black and white photos, plus a Reinhard global color transfer hack to bias the result toward a reference image.

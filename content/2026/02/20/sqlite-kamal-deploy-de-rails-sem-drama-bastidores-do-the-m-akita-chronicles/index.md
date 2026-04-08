@@ -8,6 +8,7 @@ tags:
 - kamel
 - rubyonrails
 - themakitachronicles
+  - AI
 translationKey: sqlite-kamal-rails-deploy
 ---
 

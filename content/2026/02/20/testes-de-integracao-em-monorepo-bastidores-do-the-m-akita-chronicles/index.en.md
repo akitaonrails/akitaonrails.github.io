@@ -10,6 +10,7 @@ tags:
 - integration
 - monorepo
 - vibecode
+  - AI
 translationKey: integration-tests-monorepo
 description: "How a monorepo running three apps that share a filesystem uses a dedicated integration environment, DevCache, rsynced production data, and preflight checks to catch the bugs unit tests never see."
 ---

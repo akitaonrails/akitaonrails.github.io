@@ -7,6 +7,7 @@ tags:
 - I.A.
 - github
 - docker
+  - AI
 draft: false
 translationKey: ai-colorize-black-white
 ---

@@ -8,6 +8,7 @@ tags:
 - kamel
 - rubyonrails
 - themakitachronicles
+  - AI
 translationKey: sqlite-kamal-rails-deploy
 description: "How Rails 8 with SQLite and Kamal lets you run a full production app on a $12/month VPS with zero external services."
 ---

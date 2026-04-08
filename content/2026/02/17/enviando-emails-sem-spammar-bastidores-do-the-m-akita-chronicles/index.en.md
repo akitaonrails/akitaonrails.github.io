@@ -10,6 +10,7 @@ tags:
 - amazon
 - ses
 - email
+  - AI
 translationKey: sending-emails-without-spam
 description: "How to build a reliable newsletter sending pipeline on Amazon SES, covering atomic claiming, terminal states, DKIM/SPF/DMARC, List-Unsubscribe and the silent SES suppression list."
 ---

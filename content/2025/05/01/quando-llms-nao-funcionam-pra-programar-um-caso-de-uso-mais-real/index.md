@@ -8,6 +8,7 @@ tags:
 - aider
 - openrouter
 - llm
+  - AI
 draft: false
 translationKey: when-llms-dont-work-for-coding
 ---

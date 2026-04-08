@@ -7,6 +7,7 @@ tags:
 - themakitachronicles
 - rubyonrails
 - activejob
+  - AI
 translationKey: async-jobs-chaos-survival
 ---
 

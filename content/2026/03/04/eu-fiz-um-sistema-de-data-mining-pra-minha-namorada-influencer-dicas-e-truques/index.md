@@ -8,6 +8,7 @@ tags:
   - Discord
   - Docker
   - SQLite
+  - AI
 draft: false
 translationKey: data-mining-influencer-girlfriend
 ---

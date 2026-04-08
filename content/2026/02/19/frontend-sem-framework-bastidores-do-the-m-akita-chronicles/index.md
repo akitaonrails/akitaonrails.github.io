@@ -7,6 +7,7 @@ tags:
 - themakitachronicles
 - tailwind
 - hugo
+  - AI
 translationKey: frontend-without-framework
 ---
 

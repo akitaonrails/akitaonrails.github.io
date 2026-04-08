@@ -7,6 +7,7 @@ tags:
 - crush
 - zai
 - glm
+  - AI
 translationKey: glm-4-7-flash-review
 description: "Running GLM 4.7 Flash locally on an RTX 5090 via Ollama to see if it can finally match commercial LLMs on a hard coding challenge."
 ---

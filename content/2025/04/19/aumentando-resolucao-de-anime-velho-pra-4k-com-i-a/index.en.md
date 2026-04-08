@@ -6,6 +6,7 @@ tags:
 - ersgan
 - docker
 - video2k
+  - AI
 draft: false
 translationKey: ai-anime-upscale-4k
 description: Using Real-ESRGAN and Video2X inside a CUDA Docker container to upscale old anime files to 4K on an NVIDIA RTX 4090.

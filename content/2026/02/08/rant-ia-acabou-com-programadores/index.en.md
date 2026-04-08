@@ -11,6 +11,7 @@ tags:
 - openai
 - anthropic
 - bolha
+  - AI
 translationKey: rant-ai-killed-programmers
 description: "Akita's rant on why AI won't replace real programmers, why the programming bubble already popped, the S-curve ceiling of current LLM architecture, and what actually changes for engineers in the LLM era."
 ---

@@ -10,6 +10,7 @@ tags:
 - integration
 - monorepo
 - vibecode
+  - AI
 translationKey: integration-tests-monorepo
 ---
 

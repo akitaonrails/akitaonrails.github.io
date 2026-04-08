@@ -8,6 +8,7 @@ tags:
 - runpod
 - vibecode
 - qwen3-tts
+  - AI
 translationKey: serving-ai-cloud-personal-tts
 description: "Behind the scenes of putting Qwen3-TTS in production on a serverless GPU to auto-generate a weekly podcast: cold starts, voice cloning, sampling, loudness, and prompt engineering."
 ---

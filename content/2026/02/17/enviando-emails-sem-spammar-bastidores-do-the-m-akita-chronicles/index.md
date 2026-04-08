@@ -10,6 +10,7 @@ tags:
 - amazon
 - ses
 - email
+  - AI
 translationKey: sending-emails-without-spam
 ---
 

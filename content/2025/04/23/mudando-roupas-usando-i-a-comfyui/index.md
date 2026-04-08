@@ -6,6 +6,7 @@ tags:
 - comfyui
 - idm-vton
 - docker
+  - AI
 draft: false
 translationKey: ai-clothes-swap-comfyui
 ---

@@ -4,7 +4,7 @@ date: 2026-03-07T18:00:00-03:00
 draft: false
 slug: easy-ffmpeg-smart-wrapper-in-crystal
 translationKey: easy-ffmpeg-crystal-wrapper
-tags: ["crystal", "ffmpeg", "cli", "vibe-coding", "open-source"]
+tags: ["crystal", "ffmpeg", "cli", "vibe-coding", "open-source", "AI"]
 description: "I wanted to convert videos without memorizing FFmpeg flags. Out came a smart CLI in Crystal with presets, interactive mode and static compilation for Linux and macOS, in 3 hours of vibe coding."
 ---
 

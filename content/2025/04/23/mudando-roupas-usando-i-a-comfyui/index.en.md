@@ -6,6 +6,7 @@ tags:
 - comfyui
 - idm-vton
 - docker
+  - AI
 draft: false
 translationKey: ai-clothes-swap-comfyui
 description: "A walkthrough of a ComfyUI workflow using IDM-VTON and IPAdapter to swap clothing on photos while preserving the original face and pose."

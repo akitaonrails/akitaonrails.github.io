@@ -8,6 +8,7 @@ tags:
 - crush
 - glm
 - golang
+  - AI
 translationKey: tv-clipboard-glm-4-7
 description: "A full walkthrough of vibe coding a tiny Go WebSocket app with GLM 4.7, showing in practice what the 80/20 rule really costs in time, tokens and intervention."
 ---

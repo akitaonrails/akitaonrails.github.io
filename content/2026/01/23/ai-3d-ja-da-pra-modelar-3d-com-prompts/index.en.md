@@ -8,6 +8,7 @@ tags:
 - hitem3d
 - blender
 - bambulab
+  - AI
 translationKey: ai-3d-modeling-prompts
 description: "A practical walkthrough of generating high-quality 3D models from prompts and images using Nano Banana, Hunyuan, Hitem3D, and Blender, all the way to a physical Bambulab print."
 ---

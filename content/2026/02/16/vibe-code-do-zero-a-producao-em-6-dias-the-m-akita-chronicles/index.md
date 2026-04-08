@@ -7,6 +7,7 @@ tags:
 - vibecode
 - themakitachronicles
 - rubyonrails
+  - AI
 translationKey: vibe-code-zero-to-prod-6-days
 ---
 

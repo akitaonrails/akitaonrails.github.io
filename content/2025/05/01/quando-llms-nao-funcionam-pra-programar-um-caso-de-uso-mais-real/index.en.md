@@ -8,6 +8,7 @@ tags:
 - aider
 - openrouter
 - llm
+  - AI
 draft: false
 translationKey: when-llms-dont-work-for-coding
 description: "A real-world attempt to build a Zig program using llama.cpp with Gemini 2.5 Pro and Aider, showing where LLMs crumble on new languages and libraries."

@@ -7,6 +7,7 @@ tags:
 - ollama
 - aider
 - llm
+  - AI
 draft: false
 translationKey: testing-qwen3-first-aider-ollama
 description: "First hands-on impressions of Qwen3 running locally via Ollama and remotely via OpenRouter, tested with Aider on real refactoring tasks."

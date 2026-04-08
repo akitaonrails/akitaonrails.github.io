@@ -10,6 +10,7 @@ tags:
 - kimi
 - glm
 - gemini
+  - AI
 translationKey: vibe-code-which-llm-real-talk
 description: "I ran the same extensive analysis pass through Opus 4.5, GPT 5.2 Codex, Kimi 2.5, Gemini 3 Pro and MiniMax v2.1 on a tiny app, and every single one still left things on the table."
 ---

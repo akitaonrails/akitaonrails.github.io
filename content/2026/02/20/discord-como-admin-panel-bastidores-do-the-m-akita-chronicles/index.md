@@ -7,6 +7,7 @@ tags:
 - themakitachronicles
 - rubyonrails
 - discord
+  - AI
 translationKey: discord-as-admin-panel
 ---
 

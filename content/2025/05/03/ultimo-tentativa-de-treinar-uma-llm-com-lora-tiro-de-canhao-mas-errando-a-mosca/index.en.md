@@ -7,6 +7,7 @@ tags:
 - vllm
 - runpod
 - llm
+  - AI
 draft: false
 translationKey: last-lora-training-attempt
 description: Renting an 80GB H100 on RunPod to fine-tune Qwen3-32B with a LoRA on Zig 0.14, and discovering that even cannon-class hardware can still miss the target.

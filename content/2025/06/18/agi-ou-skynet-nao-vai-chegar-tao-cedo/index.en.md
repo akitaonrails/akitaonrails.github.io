@@ -10,6 +10,7 @@ tags:
 - sundar pichai
 - satya nadella
 - openai
+  - AI
 draft: false
 translationKey: agi-skynet-not-coming-soon
 description: Why the current LLM architecture cannot reach AGI, and why the hype from Big Tech CEOs and media-anointed experts is mostly backroom negotiation noise.

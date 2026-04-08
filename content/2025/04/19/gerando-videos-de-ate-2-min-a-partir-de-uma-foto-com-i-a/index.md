@@ -9,6 +9,7 @@ tags:
 - docker
 - figures
 - 3d print
+  - AI
 draft: false
 translationKey: ai-photo-to-video-2min
 ---

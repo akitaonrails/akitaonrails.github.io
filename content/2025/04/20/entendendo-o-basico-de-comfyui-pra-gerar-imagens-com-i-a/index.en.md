@@ -11,6 +11,7 @@ tags:
 - diffusion models
 - controlnet
 - loras
+  - AI
 draft: false
 translationKey: comfyui-basics-ai-images
 description: A hands-on, no-nonsense walkthrough of ComfyUI's core concepts (checkpoints, LoRAs, ControlNet, VAEs, samplers) and a real workflow for turning a photo into anime-style art.

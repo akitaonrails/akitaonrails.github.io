@@ -7,6 +7,7 @@ tags:
 - claude
 - gpt
 - vibecode
+  - AI
 translationKey: best-language-for-llms
 description: "A thought experiment on what a programming language designed for LLM coding agents, rather than human programmers, would look like."
 ---

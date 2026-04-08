@@ -10,6 +10,7 @@ tags:
 - sundar pichai
 - satya nadella
 - openai
+  - AI
 draft: false
 translationKey: agi-skynet-not-coming-soon
 ---

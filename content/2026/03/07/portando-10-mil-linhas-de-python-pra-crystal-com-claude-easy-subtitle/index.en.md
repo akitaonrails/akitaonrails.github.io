@@ -9,6 +9,7 @@ tags:
   - python
   - claude
   - vibe-coding
+  - AI
   - subtitle
 ---
 

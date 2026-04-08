@@ -5,6 +5,7 @@ date: 2026-01-21T13:14:07-0300
 tags:
 - crush
 - lsp
+  - AI
 translationKey: installing-lsps-for-crush
 ---
 

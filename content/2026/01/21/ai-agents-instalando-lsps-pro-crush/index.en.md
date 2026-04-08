@@ -5,6 +5,7 @@ date: 2026-01-21T13:14:07-0300
 tags:
 - crush
 - lsp
+  - AI
 translationKey: installing-lsps-for-crush
 description: "My Crush config with LSPs wired in, plus an Arch Linux script that auto-detects installed languages and installs the matching language servers."
 ---

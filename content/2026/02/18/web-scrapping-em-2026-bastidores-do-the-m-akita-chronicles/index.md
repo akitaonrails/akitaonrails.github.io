@@ -9,6 +9,7 @@ tags:
 - webscrapping
 - chromium
 - datadome
+  - AI
 translationKey: web-scraping-in-2026
 ---
 

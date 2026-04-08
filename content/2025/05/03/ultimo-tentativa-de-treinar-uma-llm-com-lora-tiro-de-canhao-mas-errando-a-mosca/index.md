@@ -8,6 +8,7 @@ tags:
 - vllm
 - runpod
 - llm
+  - AI
 draft: false
 translationKey: last-lora-training-attempt
 ---

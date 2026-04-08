@@ -7,6 +7,7 @@ tags:
 - themakitachronicles
 - tailwind
 - hugo
+  - AI
 translationKey: frontend-without-framework
 description: "How I built a modern, responsive, dark-mode, email-compatible, multi-platform frontend for The M.Akita Chronicles without a single line of JavaScript framework."
 ---

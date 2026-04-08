@@ -3,7 +3,7 @@ title: "Crystal e um wrapper inteligente pro FFmpeg feito em 3 horas | easy-ffmp
 date: 2026-03-07T18:00:00-03:00
 draft: false
 translationKey: easy-ffmpeg-crystal-wrapper
-tags: ["crystal", "ffmpeg", "cli", "vibe-coding", "open-source"]
+tags: ["crystal", "ffmpeg", "cli", "vibe-coding", "open-source", "AI"]
 description: "Eu queria converter vídeos sem decorar flags do FFmpeg. Saiu uma CLI inteligente em Crystal com presets, modo interativo e compilação estática pra Linux e macOS, em 3 horas de vibe coding."
 ---
 

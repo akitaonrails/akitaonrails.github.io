@@ -10,6 +10,7 @@ tags:
 - extremeprogramming
 - agile
 - frankmd
+  - AI
 translationKey: zero-to-post-production-1-week
 description: "How 274 commits in 8 days shipped a full newsletter, podcast, blog, and Discord bot to production using Extreme Programming with Claude Code as the pair."
 ---

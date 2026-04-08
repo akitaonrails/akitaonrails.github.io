@@ -9,6 +9,7 @@ tags:
 - webscrapping
 - chromium
 - datadome
+  - AI
 translationKey: web-scraping-in-2026
 description: "How I went from a four-line HTTP GET to packing a full Chromium into Docker just to read the news for my newsletter in 2026."
 ---

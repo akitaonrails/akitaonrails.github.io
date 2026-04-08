@@ -9,6 +9,7 @@ tags:
   - opensuse
   - microos
   - claude-code
+  - AI
   - vibe-coding
 ---
 

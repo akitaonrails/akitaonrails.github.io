@@ -7,6 +7,7 @@ tags:
 - themakitachronicles
 - rubyonrails
 - discord
+  - AI
 translationKey: discord-as-admin-panel
 description: "How I replaced the classic Rails admin panel with a Discord bot: parser/dispatcher patterns, embeds, reactions, tool-calling LLMs, and the lessons from failing silently in production."
 ---

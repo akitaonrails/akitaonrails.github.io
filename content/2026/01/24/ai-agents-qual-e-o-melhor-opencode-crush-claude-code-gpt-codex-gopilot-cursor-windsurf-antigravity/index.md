@@ -9,6 +9,7 @@ tags:
 - codex
 - opencode
 - crush
+  - AI
 translationKey: ai-agents-which-is-best
 ---
 

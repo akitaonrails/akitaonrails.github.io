@@ -10,6 +10,7 @@ tags:
   - email
   - fraud-detection
   - open-source
+  - AI
   - vibe-coding
 ---
 

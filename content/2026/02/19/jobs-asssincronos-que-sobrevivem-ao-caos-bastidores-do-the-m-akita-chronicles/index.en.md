@@ -7,6 +7,7 @@ tags:
 - themakitachronicles
 - rubyonrails
 - activejob
+  - AI
 translationKey: async-jobs-chaos-survival
 description: "Production-grade patterns for Rails 8 ActiveJob and SolidQueue: retries, distributed locks, atomic email claiming, orchestrators, cron safety nets, and status notifications."
 ---

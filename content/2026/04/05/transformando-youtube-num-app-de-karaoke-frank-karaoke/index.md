@@ -9,6 +9,7 @@ tags:
   - karaoke
   - audio
   - pitch-detection
+  - AI
   - open-source
 ---
 

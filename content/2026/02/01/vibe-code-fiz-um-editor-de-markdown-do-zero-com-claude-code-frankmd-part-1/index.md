@@ -9,6 +9,7 @@ tags:
 - codemirror
 - hugo
 - obsidian
+  - AI
 translationKey: frankmd-part-1
 ---
 

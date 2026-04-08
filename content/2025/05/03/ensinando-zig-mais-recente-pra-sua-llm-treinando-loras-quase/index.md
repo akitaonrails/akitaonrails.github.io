@@ -8,6 +8,7 @@ tags:
 - ollama
 - vllm
 - llm
+  - AI
 draft: false
 translationKey: teaching-zig-to-llm-loras
 ---

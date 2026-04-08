@@ -6,6 +6,7 @@ draft: false
 tags:
 - vibecode
 - rant
+  - AI
 translationKey: rant-akita-caved-to-ai
 ---
 

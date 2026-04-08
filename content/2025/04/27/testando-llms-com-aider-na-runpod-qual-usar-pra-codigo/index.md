@@ -10,6 +10,7 @@ tags:
 - deepseek
 - ollama
 - llm
+  - AI
 draft: false
 translationKey: aider-runpod-which-llm-for-code
 ---
