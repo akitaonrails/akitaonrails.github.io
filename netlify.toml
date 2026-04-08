@@ -1,7 +1,21 @@
 [build]
 publish = "public"
-command = "hugo --gc --minify -b ${DEPLOY_PRIME_URL}"
+# Drop --gc so the cache plugin can reuse processed assets between builds.
+command = "hugo --minify -b ${DEPLOY_PRIME_URL}"
 
 [build.environment]
 HUGO_VERSION = "0.159.1"
 GO_VERSION = "1.22"
+
+# Persist Hugo's processed-assets cache (resources/_gen) and module/remote
+# resource cache across builds. First build after enabling is cold; every
+# subsequent build reuses resized images, compiled SCSS, fetched modules,
+# etc. Typically cuts 50-80% off build time for content-heavy sites.
+[[plugins]]
+  package = "netlify-plugin-cache"
+
+  [plugins.inputs]
+    paths = [
+      "resources/_gen",
+      "/opt/build/cache/hugo_cache"
+    ]
