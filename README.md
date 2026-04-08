@@ -61,15 +61,22 @@ nvim content/2025/08/29/hello/index.md
 # gerar índice (gera _index.md + archives/_index.md)
 ./scripts/generate_index.rb
 
-# build completo (produção)
-hugo --gc --minify
+# build completo (produção) — sem --gc para não invalidar o cache do Netlify
+hugo --minify
 
-# dev server rápido (só renderiza 2025+ via renderSegments)
-hugo server --renderSegments recent --logLevel debug --disableFastRender -p 1313
+# dev server rápido (só renderiza 2025+ via renderSegments + in-memory + fast render)
+hugo server --renderSegments recent --renderToMemory -p 1313
 
 # dev server completo (se precisar ver posts antigos)
-hugo server --logLevel debug --disableFastRender -p 1313
+hugo server --renderToMemory -p 1313
 ```
+
+> **Performance do build no Netlify:** o `netlify.toml` está configurado com
+> o `netlify-plugin-cache` persistindo `resources/_gen` e o cache de módulos
+> do Hugo entre builds. O primeiro deploy depois de habilitar o cache é
+> frio; os seguintes reusam imagens processadas, SCSS compilado e módulos
+> remotos (~50–80% mais rápido). Por isso o build command não usa `--gc`:
+> isso limparia exatamente o que queremos cachear.
 
 ## Como Contribuir
 
