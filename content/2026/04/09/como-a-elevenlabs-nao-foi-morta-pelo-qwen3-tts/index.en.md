@@ -185,6 +185,56 @@ When a generated chunk comes out shorter than the target window, the pipeline sl
 
 On a big episode, 95 minutes, 194 chunks, the total cumulative drift came out to -0.7%. About 43 seconds of drift across the entire episode, imperceptible while you're watching.
 
+### When `atempo` can't save you: rewriting cues before TTS
+
+Not everything is about window alignment. There's a kind of cue that breaks the whole pipeline, where neither preemptive `speed` nor post-process `atempo` can save it, and I only ran into it once I started running the batch over the more technical episodes of the channel.
+
+The problem is this. The v3 reads at about 16 characters per second when you hand it normal conversational text. But when you hand it a cue stuffed with a literal URL, a hex hash, a binary string, a long sorted number list, or a shell code block, the model shifts into "spelling it out letter by letter" mode and drops to about 9 characters per second. A 500-character cue that was supposed to turn into 30 seconds of audio comes out at 55. The sanity check rejects it (because it's past 1.8×), the automatic retry tries the same 500 characters again, the five retries all fail in a row, and the chunk gets stuck.
+
+I hit this first on ep052, the Ubuntu beginner's guide, where two cues carried `github.com` URLs, `hkp://keyserver.ubuntu.com` URLs, and a 40-character GPG hash. Trying to fix that in post-processing is a waste of time. The 1.20× `atempo` ceiling will never compress 55 seconds into 30, and even if it did, the result would be an unlistenable chipmunk. The fix has to land upstream, in the text itself.
+
+The solution was to rewrite the cue so it describes what the command does instead of showing the literal command:
+
+```diff
+- Run: apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 \
+-   --recv-keys 0A6A3E7F79F93EF8AAB9E92BAEBB74C8B5A1E44D
++ Run the full command in the video description to import the
++ signing key from the Ubuntu keyserver.
+```
+
+The on-screen English caption still shows the full command, so anyone reading the caption sees exactly what they need to type. The dubbed audio describes the intent in spoken language, which is what the TTS can deliver without choking. The instruction to the viewer stays intact, the characters-per-second ratio goes back to the expected 16, and the generated audio fits the original window without needing any stretch or compression in post.
+
+I went hunting for cues like this across the whole batch. I scanned from ep091 through ep146 looking for cues with a high density of "hard" characters (digits, brackets, operators, long URLs, binary, hex) and ended up rewriting 17 cues across 7 episodes:
+
+- ep091 Hello World in C: binary examples
+- ep095 640kB memory: address wrap, segment-offset
+- ep113 Compression: pure binary strings, 75% hard characters
+- ep115 SQL Server: long sorted number list
+- ep121 Sockets: two JavaScript code blocks
+- ep122 Proxies: Chrome User-Agent headers
+- ep123 Secure networking: shell one-liners, Docker flags
+- ep126 Gentoo: C `chroot` demo
+
+The pattern was always the same: keep the caption showing the code, URL, or hash verbatim, and rewrite the spoken text so the narrator describes what it does. I could have automated the rewrite by letting an LLM read each cue and propose a substitution on the fly, but it felt safer to review them all by hand. It's exactly the kind of thing where the model decides to "improve" a command to make it cleaner and ships with broken shell. The manual sweep took about two hours. The automated version would have cost the same time in review, with the bonus anxiety of having shipped a mangled command by accident.
+
+There was also one weird structural case on ep146, about Docker Compose. Two cues had glued themselves together because of a missing blank line in the SRT, and `pysrt` was treating them as one giant cue. The TTS never even got to process it — the chunker choked first. I fixed it by hand, adding the missing blank line. One-character fix, half an hour to track down.
+
+### Reconstructing truncated SRTs
+
+Another trap showed up when I went to run the full batch: three episodes had English captions that were too short relative to the actual video length. Ep056, the Rails episode, was the most absurd case. Nineteen minutes of caption for an 80-minute video. Sixty-two minutes of content with no caption at all. Ep057 (WSL 2) was missing 14 minutes, and ep068 (Git Direito) was missing 2.
+
+This is a leftover from my old translation workflow. At some point I started hand-revising the caption, stopped partway through, and the `.en.srt` file got saved truncated at the spot where I stopped. You can't dub an 80-minute video with a 19-minute caption. The chunker produces audio up to where it can read and then simply has no idea what to do with the rest of the video.
+
+The fix became a new script. It diffs the truncated `.en.srt` against the `.pt-orig.srt` (the raw YouTube auto-caption, which always covers the whole video), picks up the cues that only exist in Portuguese, sends them to Claude Sonnet 4.6 with a strict JSON schema asking for cue-by-cue translation, and pastes the result back at the tail of the English file. The schema is the detail that matters. When I tried asking for the response as plain text in `N|text` format, Claude was dropping about 20% of the cues along the way. With a strict JSON schema, the drop rate fell to zero across the three repairs.
+
+The numbers:
+
+- ep068 Git Direito: +50 cues / 2 minutes reconstructed
+- ep057 WSL 2: +368 cues / 14 minutes
+- ep056 Rails: +1445 cues / 62 minutes (plus dropping 5 fake cues the old translator had invented at the tail to plug the gap)
+
+After the repairs, the three episodes joined the batch normally and got dubbed like any other. The kind of tool you hope you never need, but when you need it, it's worth writing once and closing the problem for good.
+
 ### Automatic emotion tags
 
 While I was testing, I decided to add one more step to the pipeline: an "emotion tagger" that reads the English SRT before it goes to TTS and inserts tags like `[sarcastic]`, `[thoughtful]`, `[emphatic]`, `[deadpan]` at spots where a human narrator would naturally shift tone. The idea is to mimic what a professional voice actor would do — hit the emphasis at the right moments — without turning the video into a theater of overblown emotions.

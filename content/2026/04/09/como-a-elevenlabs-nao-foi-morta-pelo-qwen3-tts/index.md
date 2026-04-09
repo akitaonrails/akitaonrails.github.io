@@ -184,6 +184,56 @@ Quando um chunk gerado fica mais curto que a janela alvo, o pipeline estende o �
 
 Num episódio grande, 95 minutos, 194 chunks, o desvio cumulativo total ficou em -0,7%. Uns 43 segundos de drift ao longo do episódio inteiro, imperceptível enquanto você assiste.
 
+### Quando o `atempo` não salva: reescrevendo cue antes do TTS
+
+Nem tudo é questão de alinhamento de janela. Tem um tipo de cue que quebra o pipeline inteiro, onde nem `speed` preventivo nem `atempo` no pós-processo resolvem, e eu só esbarrei nisso quando comecei a rodar o batch nos episódios mais técnicos do canal.
+
+O problema é o seguinte. O v3 lê a uns 16 caracteres por segundo quando você entrega texto normal de conversa. Mas quando você entrega uma cue recheada de URL literal, hash hexadecimal, string binária, uma lista de números ordenados ou um bloco de código shell, o modelo entra em modo "soletrar letra por letra" e despenca pra uns 9 caracteres por segundo. Uma cue de 500 caracteres que devia virar 30 segundos de áudio vira 55. A checagem de sanidade derruba (porque passou de 1.8×), o retry automático tenta de novo com os mesmos 500 caracteres, os cinco retries falham seguidos, e o chunk fica preso.
+
+Peguei isso primeiro no ep052, o guia de Ubuntu pra devs iniciantes, onde duas cues traziam URLs do `github.com`, URLs `hkp://keyserver.ubuntu.com` e um hash GPG de 40 caracteres. Tentar resolver no pós-processo seria perda de tempo. O teto de 1.20× do `atempo` nunca vai comprimir 55 segundos em 30, e mesmo se conseguisse ia sair num chipmunk ilegível. A saída é atacar antes, no texto.
+
+A solução foi reescrever a cue dizendo o que o comando faz, em vez de mostrar o comando literal:
+
+```diff
+- Rode: apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 \
+-   --recv-keys 0A6A3E7F79F93EF8AAB9E92BAEBB74C8B5A1E44D
++ Rode o comando completo que tá na descrição do vídeo pra importar
++ a chave de assinatura do repositório do keyserver do Ubuntu.
+```
+
+A legenda em inglês no vídeo continua mostrando o comando inteiro na tela, então quem lê a legenda vê o que precisa digitar. O áudio dublado descreve a intenção em linguagem falada, que é o que o TTS entrega sem engasgar. A instrução pro ouvinte fica intacta, e o caractere-por-segundo volta pros 16 esperados, então o áudio gerado cabe na janela original sem precisar esticar nem comprimir nada no pós.
+
+Saí caçando cue assim em todos os episódios do batch. Varri do ep091 ao ep146 procurando cues com densidade alta de caractere "duro" (dígitos, colchetes, operadores, URLs longas, binário, hex) e acabei reescrevendo 17 cues em 7 episódios:
+
+- ep091 Hello World em C: exemplos binários
+- ep095 Memória 640kB: wrap de endereço, segment-offset
+- ep113 Compressão: strings de binário puro, 75% de caractere duro
+- ep115 SQL Server: lista longa de números ordenados
+- ep121 Sockets: dois blocos de código JavaScript
+- ep122 Proxies: headers User-Agent do Chrome
+- ep123 Rede segura: one-liners shell, flags do Docker
+- ep126 Gentoo: demo de `chroot` em C
+
+O padrão foi sempre o mesmo: mantém a legenda exibindo o código, a URL ou o hash na íntegra, e reescreve o texto pro narrador descrever o que aquilo faz. Eu podia ter automatizado a reescrita, deixando um LLM ler a cue e propor uma substituição no voo, só que achei mais seguro revisar tudo manualmente. É exatamente o tipo de coisa onde o modelo resolve "melhorar" um comando pra deixá-lo mais limpo e sai com shell errado. A varredura manual levou umas duas horas. A automática teria custado o mesmo tempo em revisão, com o bônus da ansiedade de ter deixado passar algum comando mutilado.
+
+Teve também um caso estrutural esquisito no ep146, sobre Docker Compose. Duas cues ficaram grudadas por causa de uma linha em branco faltando no SRT, e o `pysrt` tratava as duas como uma única cue gigante. O TTS nem chegava a processar, o chunker engasgava antes. Corrigi à mão adicionando a linha em branco que faltava. Fix de um caractere, meia hora pra rastrear.
+
+### Reconstruindo SRTs truncadas
+
+Outra armadilha apareceu quando fui rodar o batch completo: três episódios tinham legendas em inglês curtas demais em relação à duração real do vídeo. O ep056, sobre Rails, era o caso mais absurdo. Dezenove minutos de legenda pra um vídeo de 80 minutos. Sessenta e dois minutos de conteúdo sem legenda nenhuma. O ep057 (WSL 2) tinha 14 minutos faltando, e o ep068 (Git Direito) tinha 2.
+
+Isso é rastro do meu fluxo de tradução antigo. Em algum momento eu comecei a revisar a legenda manualmente, parei no meio, e o arquivo `.en.srt` ficou salvo truncado no ponto onde eu parei. Não dá pra dublar um vídeo de 80 minutos com legenda de 19. O chunker gera áudio até onde consegue ler e simplesmente não sabe o que fazer com o resto do vídeo.
+
+A solução virou um script novo. Ele faz diff entre o `.en.srt` truncado e o `.pt-orig.srt` (o auto-caption bruto do YouTube, que sempre cobre o vídeo inteiro), pega as cues que existem só em português, manda pro Claude Sonnet 4.6 com um schema JSON rígido pedindo tradução cue a cue, e cola o resultado de volta no fim do arquivo em inglês. O schema é o detalhe que importa. Quando eu tentei pedir a resposta em texto no formato `N|texto`, o Claude deixava cair umas 20% das cues no caminho. Com um schema JSON estrito, a taxa de drop caiu pra zero nos três reparos.
+
+O resultado em números:
+
+- ep068 Git Direito: +50 cues / 2 minutos reconstruídos
+- ep057 WSL 2: +368 cues / 14 minutos
+- ep056 Rails: +1445 cues / 62 minutos (e ainda drop de 5 cues falsas que o tradutor antigo tinha inventado no fim pra tampar a saída)
+
+Depois dos reparos, os três episódios entraram no batch normalmente e foram dublados como qualquer outro. Tipo de ferramenta que você espera nunca precisar, só que quando precisa, compensa escrever uma vez e resolver o problema inteiro de uma vez.
+
 ### Tags de emoção automáticas
 
 Enquanto eu tava testando, resolvi adicionar mais um passo no pipeline: um "emotion tagger" que lê o SRT em inglês antes de mandar pro TTS e insere tags tipo `[sarcastic]`, `[thoughtful]`, `[emphatic]`, `[deadpan]` em pontos onde um narrador humano naturalmente mudaria o tom. A ideia é imitar o que um ator profissional faria, colocar ênfase nos momentos certos, sem transformar o vídeo num teatro de emoções exageradas.
