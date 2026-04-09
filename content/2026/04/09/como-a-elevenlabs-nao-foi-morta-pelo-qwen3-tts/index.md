@@ -274,9 +274,18 @@ O outro problema é o tempo. Cada episódio leva uns 20 minutos pra rodar, mesmo
 
 ## O primeiro teste, assista
 
-Fiz um vídeo teste pra provar que funciona. Dá pra clicar no ícone de engrenagem do player do YouTube, entrar em "Faixa de áudio" e trocar de Português pra English pra ouvir a dublagem nova. Também dá pra habilitar a legenda em inglês se quiser acompanhar pelo texto:
+Fiz um vídeo teste pra provar que funciona. Dois avisos antes: primeiro, o embed abaixo já carrega com a legenda em inglês ligada por padrão, então esse lado dá pra resolver via URL. Segundo, o áudio é chato: o YouTube removeu o seletor de faixa de áudio dos players embedados lá por março desse ano. Então dentro do embed você não vai encontrar essa opção no menu de engrenagem mesmo, só roda em português. Pra ouvir a dublagem em inglês de verdade, clica em **[assistir direto no YouTube](https://www.youtube.com/watch?v=QNLd8TZ_JQc)**, que a página principal do YouTube ainda tem o seletor de faixa de áudio no menu de engrenagem.
 
-{{< youtube id="QNLd8TZ_JQc" >}}
+<div class="embed-container">
+  <iframe
+    src="https://www.youtube.com/embed/QNLd8TZ_JQc?cc_load_policy=1&amp;cc_lang_pref=en&amp;hl=en"
+    title="Akitando dublado em inglês (teste)"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen>
+  </iframe>
+</div>
 
 Se você tá acostumado com a dublagem automática do YouTube ou com as dublagens de IA de TikTok, compara. A diferença é gritante. A voz é a minha, com sotaque americano trabalhado, e a sincronização com o vídeo original fica dentro de 1 a 2% de desvio cumulativo, praticamente imperceptível em 95 minutos de vídeo.
 

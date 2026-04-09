@@ -275,9 +275,18 @@ The other issue is time. Each episode takes around 20 minutes, even with several
 
 ## The first test, watch it
 
-I made a test video to prove the thing works. You can click the gear icon in the YouTube player, go to "Audio track", and switch from Portuguese to English to hear the new dubbing. You can also enable the English subtitles if you want to follow along with the text:
+I made a test video to prove the thing works. Two caveats up front: first, the embed below already loads with English captions on by default, so that side is solvable via URL. Second, the audio is annoying: YouTube removed the audio track selector from embedded players back around March of this year. So inside the embed you won't find that option in the gear menu at all, it just plays in Portuguese. To actually hear the English dub, click **[watch directly on YouTube](https://www.youtube.com/watch?v=QNLd8TZ_JQc)** — the main YouTube watch page still has the audio track switcher in the gear menu.
 
-{{< youtube id="QNLd8TZ_JQc" >}}
+<div class="embed-container">
+  <iframe
+    src="https://www.youtube.com/embed/QNLd8TZ_JQc?cc_load_policy=1&amp;cc_lang_pref=en&amp;hl=en"
+    title="Akitando dubbed in English (test)"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen>
+  </iframe>
+</div>
 
 If you're used to YouTube's automatic dubbing or to the AI dubbing on TikTok, compare them. The difference is glaring. The voice is mine, with a worked-over American accent, and the sync with the original video stays within 1 to 2% cumulative drift, practically imperceptible over 95 minutes of video.
 
