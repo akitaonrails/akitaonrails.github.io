@@ -169,5 +169,7 @@ WRITER.md
 .fed
 mise.toml
 .ai-jail
-todo-error.md
 .codex
+
+# Scratch / local notes (briefs, todo files, translation plans)
+tmp/
