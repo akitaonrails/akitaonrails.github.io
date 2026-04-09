@@ -6,6 +6,8 @@ title: AkitaOnRails Blog
 
 ## 2026 - Abril
 
+- [Como a ElevenLabs Não Foi Morta pelo Qwen3 TTS](/2026/04/09/como-a-elevenlabs-nao-foi-morta-pelo-qwen3-tts/)
+- [20 Anos de Blog: Traduzindo Tudo pra Inglês](/2026/04/09/20-anos-de-blog-o-ano-em-que-a-ia-finalmente-me-deixou-traduzir-tudo/)
 - [RAG Está Morto? Contexto Longo, Grep e o Fim do Vector DB Obrigatório](/2026/04/06/rag-esta-morto-contexto-longo/)
 - [Testando LLMs Open Source e Comerciais - Quem Consegue Bater o Claude Opus?](/2026/04/05/testando-llms-open-source-e-comerciais-quem-consegue-bater-o-claude-opus/)
 - [Transformando YouTube num App de Karaoke | Frank Karaoke](/2026/04/05/transformando-youtube-num-app-de-karaoke-frank-karaoke/)

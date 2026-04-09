@@ -8,6 +8,7 @@ Todos os posts Off-Topic do blog — filosofia, carreira, gerenciamento, e outro
 
 ## 2026 - Abril
 
+- [20 Anos de Blog: Traduzindo Tudo pra Inglês](/2026/04/09/20-anos-de-blog-o-ano-em-que-a-ia-finalmente-me-deixou-traduzir-tudo/)
 - [Meu Cockpit de Sim Racing - Formula FX1](/2026/04/01/meu-cockpit-de-sim-racing-formula-fx1/)
 
 ## 2026 - Março
