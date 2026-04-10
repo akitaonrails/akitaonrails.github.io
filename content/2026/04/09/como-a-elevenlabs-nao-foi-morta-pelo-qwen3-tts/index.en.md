@@ -111,6 +111,8 @@ The channel has 146 episodes, around 96 hours of technical content in Portuguese
 
 I tested ElevenLabs' three voice approaches and only one worked. Speech-to-Speech converts a voice but doesn't translate. The Dubbing API does translate but creates the voice on its own, with no way to force a specific clone. Only Text-to-Speech could solve this: take the English `.srt` I already had, send each block to the TTS endpoint with my cloned voice, and assemble the audio aligned to the original video.
 
+But having a translated `.srt` is not enough. Raw subtitle translation doesn't survive TTS. Passages with source code, URLs, hex hashes, lists of shell commands — the model switches to spelling mode and the audio comes out at twice the expected duration. Translations that run too long blow past the time window and need to be condensed so the voice doesn't sound like an auctioneer. Truncated SRTs need to be completed. And after each fix, you re-run the pipeline, listen, find the next problem, fix it, re-run. The whole thing was a cycle of interruptions, manual corrections, and re-runs — a far cry from the "press a button and get a dub" fantasy.
+
 The big challenge was the accent. My cloned voice was trained on Brazilian Portuguese audio, so when it tries to speak English, the thick accent comes through. ElevenLabs has an `[American accent]` tag that works on v3, but on top of a voice trained in another language it's weak — the Brazilian accent still bleeds through. The fix was to train a second voice of mine, English only. I recorded a few minutes in my best American accent, uploaded it as a separate Instant Voice Clone in my account, named it "Akita English", and set the pipeline to use that voice by default. The result comes out more natural, no tag needed, and the voice identity is still mine.
 
 ### The honest ceiling on my English voice quality
@@ -184,6 +186,10 @@ if ratio > FIT_TOLERANCE:       # 1.02
 When a generated chunk comes out shorter than the target window, the pipeline slightly stretches the audio (without affecting pitch) to reduce the ugly silence after it ends. The goal isn't to fill the whole window — a natural pause between sentences is fine — just to smooth over the worst offenders that would feel like "cut audio".
 
 On a big episode, 95 minutes, 194 chunks, the total cumulative drift came out to -0.7%. About 43 seconds of drift across the entire episode, imperceptible while you're watching.
+
+What saved the budget on this architecture is that each chunk lives on disk as its own `.mp3`. The pipeline keeps a manifest with the normalized text of every chunk, and before calling the ElevenLabs API, it compares the current text against the cache. If the text hasn't changed, it reuses the existing audio without spending a single credit. If I rewrite a problematic cue, only the chunks affected by that cue get regenerated — the rest of the episode stays untouched.
+
+This is what made the iterations viable. I'd run the batch, listen to sections, spot a problem (translation too long, a code snippet the TTS couldn't pronounce, a chunk boundary that landed at a bad spot), fix the SRT or tweak the chunker parameters, and re-run. Each re-run consumed a fraction of the credits and time of the original run, because only the changed chunks were regenerated. Without this cache, every iteration would have cost nearly as much as the first pass, and the total batch cost would have been two or three times higher.
 
 ### When `atempo` can't save you: rewriting cues before TTS
 
@@ -313,15 +319,31 @@ ffmpeg -i final_en.mp3 \
 
 Two passes instead of one because single-pass mode runs in dynamic compression and ends up "pumping" the gain during silent stretches. With `linear=true` on pass 2, the gain stays static on top of the pass-1 measurements, so no pumping. The result lands within ±0.1 LU of the target, which is effectively inaudible. The `highpass=f=80` filter in front kills HVAC rumble and mains hum below 80 Hz, which the human ear doesn't catch but will move peak measurements around.
 
+### Detecting and splicing the intro jingles
+
+A problem I didn't anticipate: most Akitando episodes open with an intro jingle, that 3-to-6-second instrumental clip before the presenter starts talking. In the original video, the jingle is baked into the audio track. In the dubbed version, the pipeline generates only voice — the jingle just vanishes.
+
+The fix was to automate detection and splicing. The pipeline has three reference jingles on file (the original jingle from the earliest episodes, a variant from ep143, and the newer jingle from ep121 onward) and uses normalized FFT cross-correlation to find where each jingle appears in the first 450 seconds of the source video's audio. The algorithm applies a sliding-window energy mask to silence regions below 1% of the mean energy, preventing silent stretches from producing false positives with correlation above 1.0. A match is accepted only when the peak correlation reaches at least 0.5.
+
+Once the jingle is detected, the splice has to land in the right spot. The naive approach would be cutting the audio at the exact position from the original, but that would slice through the narrator's voice mid-sentence. The trick is to exploit the natural silences that already exist between generated chunks — the assembler always leaves at least a 0.3-to-0.6-second gap between chunks whenever the TTS finishes earlier than the target window. The pipeline searches for a silence window of at least 0.3 seconds within ±8 seconds of the detected position and replaces that silence with the jingle. The voice-jingle and jingle-voice boundaries get 80 ms crossfades to avoid clicks. The duration difference (the jingle is usually longer than the silence it replaces) gets absorbed by the final `atempo` pass that already runs as the last mastering step. Out of 146 episodes, 121 use the original jingle, 23 use the newer one, 1 uses the variant, and 1 has no jingle at all.
+
 ## The dubbing batch numbers (my initial math was wrong)
 
 I have to correct myself. When I started writing this post, I did the math assuming Pro ($99/month, 500k credits included, overage at $0.24 per thousand characters) across a batch of 5.5 million characters, and landed on ~$1,313. That was the naive estimate.
 
-The bill came in pretty different. I started on Pro yesterday afternoon, burned through the 500k credits in the first few hours, and the overage started climbing fast. I bumped up to Scale ($330/month, 2 million credits, overage at $0.18). A few hours later, **Scale depleted too**. Jumped straight to Business ($1,320/month, 11 million credits, overage at $0.12), which is what's running right now. Adding up the three monthly fees (or the equivalent prorated math, depending on how ElevenLabs books it at the end of the cycle), the real cost is going to land somewhere between **$1,500 and $1,800 to dub the entire channel**. Substantially more than I'd estimated.
+The bill came in pretty different. I started on Pro yesterday afternoon, burned through the 500k credits in the first few hours, and the overage started climbing fast. I bumped up to Scale ($330/month, 2 million credits, overage at $0.18). A few hours later, **Scale depleted too**. Jumped straight to Business ($1,320/month, 11 million credits, overage at $0.12), which is where the batch finished. Adding up the three monthly fees, the total came to **$1,749** ($99 + $330 + $1,320), subject to how ElevenLabs prorates the mid-cycle upgrades. The batch consumed 3.67 million credits out of the Business plan's 11 million, on top of having burned through Pro's 500k and Scale's 2 million — 6.17 million credits total:
+
+![ElevenLabs dashboard showing 3,669,304 credits consumed out of 11,000,000](elevenlabs-credits-dashboard.png)
+
+Substantially more than I'd estimated.
+
+And the cost doesn't stop at ElevenLabs. All the subtitle curation, problematic cue rewrites, truncated SRT reconstruction, and the emotion tagger ran through Claude Code on the Claude Max 20× plan. Combined with the mass blog translation to English that I described in the [anniversary post](/en/2026/04/09/20-years-of-blogging-ai-finally-translated-everything/), the Claude Max 20× weekly limit hit 100%, with extra usage above BRL 300 on top. If you think generative AI is free once you've signed up for the plan, the invoices beg to differ.
 
 Looking on the bright side, this is 96 hours of technical content — my accumulated archive of **5 years of channel**. That's $10 to $12 per one-hour episode. For hand-dubbing at a professional studio with a voice actor, the same amount of content would run tens of thousands of dollars just for the narration. If the bill were $1,800 for a single new season, I'd think twice. But to convert 5 years of archive in one go and open the channel to international audiences, worth every penny.
 
-The other issue is time. Each episode takes around 20 minutes, even with several concurrent calls (I bumped concurrency up once I moved to Business, which allows more). The batch is running in the background while I write this post. Around 70 of the 146 episodes are already finished, with the rest grinding through the day. I'll finish by manually uploading the `.mp4` files with the English audio track for each video, using YouTube's support for [multiple audio tracks per video](https://support.google.com/youtube/answer/13338784).
+The other issue is time. Each episode takes around 20 minutes, even with several concurrent calls (I bumped concurrency up once I moved to Business, which allows more). The full batch took just under two days to finish. Final tally: **146 out of 146 episodes within ±1 second of the original YouTube duration**, all upload-ready. Of those, 144 were handled automatically by the pipeline's length-fit logic with zero intervention. Three (ep006, ep009, ep020) hit the old 1.05× `atempo` ceiling and had to be manually time-stretched to the exact video length — I bumped `MAX_ATEMPO_RATIO` to 1.08 after that so future runs won't hit the same wall. Zero chunks failed across the entire batch: no hallucination retries, no audio rejected by the sanity check.
+
+Next step is uploading the English audio files for each video, using YouTube's support for [multiple audio tracks per video](https://support.google.com/youtube/answer/13338784).
 
 ## The first test, watch it
 
