@@ -6,6 +6,7 @@ title: AkitaOnRails Blog
 
 ## 2026 - April
 
+- [VS Code Is the New Punch Card](/en/2026/04/11/vs-code-is-the-new-punch-card/)
 - [How ElevenLabs Was Not Killed by Qwen3 TTS](/en/2026/04/09/how-elevenlabs-was-not-killed-by-qwen3-tts/)
 - [20 Years of Blogging: Translating Everything to English](/en/2026/04/09/20-years-of-blogging-ai-finally-translated-everything/)
 - [Is RAG Dead? Long Context, Grep, and the End of the Mandatory Vector DB](/en/2026/04/06/rag-is-dead-long-context/)
