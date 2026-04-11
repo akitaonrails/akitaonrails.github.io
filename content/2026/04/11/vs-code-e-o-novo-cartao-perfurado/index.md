@@ -204,6 +204,22 @@ Quem não entende nada disso vai usar agente como muleta.
 Exoesqueleto amplia força.
 Muleta só tenta esconder fraqueza.
 
+## "Mas isso não é sustentável"
+
+Sempre aparece alguém com a mesma desculpa: "ah, mas eu não acho que isso seja sustentável, os data centers não vão aguentar, os preços estão subsidiados demais, não tem como isso continuar assim."
+
+E olha, essa pessoa não está completamente errada.
+
+Só que isso não muda em nada o que eu tenho pra fazer amanhã de manhã.
+
+Esse tipo de preocupação pode até render papo de bar ou thread no X, mas não me ajuda a decidir nada útil. Eu, você, nenhum de nós vai sentar com a diretoria da Anthropic ou da OpenAI pra redesenhar capex de data center, renegociar contrato de energia, decidir margem de subsídio ou planejar a próxima geração de GPU. Não tem nenhuma ação concreta que saia disso pra nós além de ficar repetindo que "um dia vai dar problema".
+
+É a mesma mentalidade de quem olhava pra internet nos anos 90 e falava: "vamos não usar muito isso, é lento demais, o limite é ridículo, o preço por kilobyte é absurdo, melhor esperar arrumarem." Ou de quem, no começo dos anos 2000, olhava pra dados móveis e dizia: "2G é lento demais, é limitado demais, melhor não depender disso." Por que exatamente você ia querer ser essa pessoa?
+
+Ainda bem que OpenAI, Anthropic e o resto estão se estapeando e subsidiando pesado essa corrida. Eu estou aproveitando sem o menor pudor. Já torrei meu Claude Max 20x inteiro, já bati no limite de extra usage, já torrei meu plano do Codex, e subi pra Pro pra continuar usando neste fim de semana. Quem paga mensalidade e usa pouco está, na prática, me subsidiando pra eu usar tudo o que consigo. Eu não tenho a menor intenção de desacelerar. Por que você teria?
+
+Se amanhã os preços mudarem, a infraestrutura apertar ou o jogo virar, eu reavalio amanhã. É assim que tecnologia sempre funcionou. Enquanto a janela está aberta, o racional não é frear por antecipação. O racional é aprender o máximo, extrair o máximo, ganhar vantagem enquanto o resto está ocupado explicando por que ainda não começou.
+
 ## A decisão continua sendo humana
 
 No fim do dia, nada do que importa mudou.

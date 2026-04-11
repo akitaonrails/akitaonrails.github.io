@@ -204,6 +204,22 @@ People who understand none of that will use agents as a crutch.
 An exoskeleton amplifies strength.
 A crutch only tries to hide weakness.
 
+## "But this isn't sustainable"
+
+There is always someone with the same excuse: "well, I don't think this is sustainable, the data centers can't keep up, the prices are too heavily subsidized, there's no way this can keep going like this."
+
+And to be fair, that person is not entirely wrong.
+
+It just doesn't change a thing about what I have to do tomorrow morning.
+
+This kind of concern might be great for bar talk or an X thread, but it doesn't help me decide anything useful. Me, you, none of us are going to sit down with Anthropic or OpenAI leadership and redesign data-center capex, renegotiate power contracts, decide subsidy margins, or plan the next GPU generation. There is no concrete action for us that comes out of this besides repeating that "someday this will be a problem."
+
+It's the same mindset as the person in the 1990s saying, "let's not use the internet too much, it's too slow, the limits are too low, the price per kilobyte is absurd, better wait until someone fixes it." Or the person in the early 2000s looking at mobile data and saying, "2G is too slow, too limited, better not depend on it." Why exactly would you want to be that person?
+
+Thank God OpenAI, Anthropic, and the rest are fighting like hell and heavily subsidizing this race. I'm taking full advantage of it. I've already burned through my entire Claude Max 20x, already hit the extra-usage ceiling, already burned through my Codex plan, and upgraded to Pro so I can keep using it this weekend. People paying a monthly subscription and barely touching it are, in practice, subsidizing me to use as much as I can. I have no intention of slowing down. Why would you?
+
+If prices change tomorrow, if infrastructure gets tighter, if the game changes, then I reassess tomorrow. That's how technology has always worked. While the window is open, the rational move is not to slow yourself down in advance. The rational move is to learn as much as possible, extract as much as possible, and build an advantage while everybody else is busy explaining why they still haven't started.
+
 ## The decision is still human
 
 At the end of the day, nothing that matters actually changed.
