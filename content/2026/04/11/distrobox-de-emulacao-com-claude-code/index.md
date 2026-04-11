@@ -69,6 +69,8 @@ Então pensei: por que não fazer a mesma coisa aqui?
 
 Foi exatamente o que eu fiz. Eu comecei com uma sequência de prompts bem objetivos, sempre pedindo duas coisas ao mesmo tempo: fazer o trabalho e documentar o suficiente pra eu poder reconstruir tudo depois. O histórico mais importante disso ficou em [`docs/distrobox-gaming-prompts.md`](https://github.com/akitaonrails/distrobox-gaming/blob/master/docs/distrobox-gaming-prompts.md).
 
+Mas vale um esclarecimento importante: aqueles prompts no GitHub não são as minhas mensagens cruas, do jeito que saíram na hora. Depois que tudo funcionou, eu pedi pro próprio Claude reescrever os prompts de forma muito mais organizada e detalhada, só pra fins de documentação. Os prompts originais eram bem mais simples e bem menos específicos. Na prática, eu pedia o objetivo e deixava o Claude descobrir sozinho paths, arquivos de configuração, formatos e comandos necessários.
+
 O primeiro prompt já criou a box com `--nvidia`, `--home` separado e os mounts corretos. O segundo resolveu os três problemas clássicos do Arch dentro de Distrobox: `sudo`, `multilib` e o dummy package de `nvidia-utils`. O terceiro instalou a base de gaming, inclusive um detalhe que eu teria esquecido fácil se estivesse fazendo na mão: `pipewire-pulse`, necessário pra vários emuladores não ficarem mudos nem perderem sincronia.
 
 Aqui está um trecho real do tipo de prompt que usei:
