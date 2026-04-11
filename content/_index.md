@@ -6,6 +6,7 @@ title: AkitaOnRails Blog
 
 ## 2026 - Abril
 
+- [Distrobox de Emulação com Claude Code](/2026/04/11/distrobox-de-emulacao-com-claude-code/)
 - [VS Code é o novo Cartão Perfurado](/2026/04/11/vs-code-e-o-novo-cartao-perfurado/)
 - [Como a ElevenLabs Não Foi Morta pelo Qwen3 TTS](/2026/04/09/como-a-elevenlabs-nao-foi-morta-pelo-qwen3-tts/)
 - [20 Anos de Blog: Traduzindo Tudo pra Inglês](/2026/04/09/20-anos-de-blog-o-ano-em-que-a-ia-finalmente-me-deixou-traduzir-tudo/)

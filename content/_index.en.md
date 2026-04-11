@@ -6,6 +6,7 @@ title: AkitaOnRails Blog
 
 ## 2026 - April
 
+- [An Emulation Distrobox with Claude Code](/en/2026/04/11/emulation-distrobox-with-claude-code/)
 - [VS Code Is the New Punch Card](/en/2026/04/11/vs-code-is-the-new-punch-card/)
 - [How ElevenLabs Was Not Killed by Qwen3 TTS](/en/2026/04/09/how-elevenlabs-was-not-killed-by-qwen3-tts/)
 - [20 Years of Blogging: Translating Everything to English](/en/2026/04/09/20-years-of-blogging-ai-finally-translated-everything/)
