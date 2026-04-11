@@ -341,7 +341,7 @@ I have to correct myself. When I started writing this post, I did the math assum
 
 The bill came in pretty different. I started on Pro yesterday afternoon, burned through the 500k credits in the first few hours, and the overage started climbing fast. I bumped up to Scale ($330/month, 2 million credits, overage at $0.18). A few hours later, **Scale depleted too**. Jumped straight to Business ($1,320/month, 11 million credits, overage at $0.12), which is where the batch finished. Adding up the three monthly fees, the total came to **$1,749** ($99 + $330 + $1,320), subject to how ElevenLabs prorates the mid-cycle upgrades. The batch consumed 3.67 million credits out of the Business plan's 11 million, on top of having burned through Pro's 500k and Scale's 2 million — 6.17 million credits total:
 
-![ElevenLabs dashboard showing 3,669,304 credits consumed out of 11,000,000](elevenlabs-credits-dashboard.png)
+![ElevenLabs dashboard showing 3,669,304 credits consumed out of 11,000,000](/2026/04/09/como-a-elevenlabs-nao-foi-morta-pelo-qwen3-tts/elevenlabs-credits-dashboard.png)
 
 Substantially more than I'd estimated.
 
