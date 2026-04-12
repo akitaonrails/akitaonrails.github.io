@@ -13,13 +13,13 @@ translationKey: omarchy-lazyvim-basics
 description: A hands-on introduction to LazyVim for people coming from VS Code or Sublime Text, covering the essential Vim navigation, editing, and block commands to get productive fast.
 ---
 
-Damn it, I said the previous post would be the last one in the [Omarchy](/tags/omarchy) series, but I figured this was a good chance to evangelize a bit about Vim too. I've already recommended following [@Taq's channel](https://www.youtube.com/@EustaquioRangel), where he explains in much more depth how NeoVim works. There's also [Primeagen's "vim-be-good" tutorial](https://github.com/ThePrimeagen/vim-be-good). That second one in particular is an interactive tutorial inside NeoVim itself, to practice navigation - which many people find hard at first.
+Damn it, I said the previous post would be the last one in the [Omarchy](/en/tags/omarchy/) series, but I figured this was a good chance to evangelize a bit about Vim too. I've already recommended following [@Taq's channel](https://www.youtube.com/@EustaquioRangel), where he explains in much more depth how NeoVim works. There's also [Primeagen's "vim-be-good" tutorial](https://github.com/ThePrimeagen/vim-be-good). That second one in particular is an interactive tutorial inside NeoVim itself, to practice navigation - which many people find hard at first.
 
 I'll do only this one article about it and I don't intend to cover more than the tip of the iceberg. The idea is to serve whoever is coming from other editors like Sublime Text or VS Code and can't even start navigating or even quit Vim lol 🤣.
 
 ### Initial Commands
 
-As I said in the [previous post about LazyVim](https://akitaonrails.com/en/2025/09/07/omarchy-2-0-lazyvim-lazyextras/), I'll assume you already understand at least how to install support for your language with **LazyExtras** and already learned to version things using [**Mise**](https://akitaonrails.com/en/2025/09/07/omarchy-2-0-mise-pra-organizar-ambientes-de-desenvolvimento/).
+As I said in the [previous post about LazyVim](https://akitaonrails.com/en/2025/09/07/omarchy-2-0-lazyvim-lazyextras/), I'll assume you already understand at least how to install support for your language with **LazyExtras** and already learned to version things using [**Mise**](https://akitaonrails.com/en/2025/09/07/omarchy-2-0-mise-for-organizing-dev-environments/).
 
 Without even getting into LazyVim, the first thing to know is that it installs all the relevant configurations in the `~/.config/nvim` directory. Normally you don't need to touch anything there. Leave files like `lazyvim.json` alone. Notice that it does the same thing as any NPM out there: there's a `lazy-lock.json` file that declares the version/commit of each installed plugin. LazyVim does something similar to an `npm install`. Just a curiosity so you know how it organizes itself.
 

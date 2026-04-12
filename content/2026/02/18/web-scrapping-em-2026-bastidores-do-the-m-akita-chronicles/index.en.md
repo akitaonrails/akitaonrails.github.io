@@ -14,7 +14,7 @@ translationKey: web-scraping-in-2026
 description: "How I went from a four-line HTTP GET to packing a full Chromium into Docker just to read the news for my newsletter in 2026."
 ---
 
-This post is part of a series; follow along via the tag [/themakitachronicles](/tags/themakitachronicles). This is part 2.
+This post is part of a series; follow along via the tag [/themakitachronicles](/en/tags/themakitachronicles/). This is part 2.
 
 And don't forget to subscribe to my new newsletter [The M.Akita Chronicles](https://themakitachronicles.com/)!
 

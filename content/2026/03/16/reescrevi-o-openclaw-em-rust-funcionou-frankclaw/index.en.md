@@ -343,7 +343,7 @@ FrankClaw doesn't replace OpenClaw today. OpenClaw has more channels, more featu
 
 But I'll be honest: as fun as it was to build, I personally don't know if I need this. FrankClaw is a generic gateway, designed to be flexible, to connect any channel to any provider, with an agent runtime, tools, subagents, jobs, hooks. It's a lot of infrastructure.
 
-What I've discovered over the last few months is that I can build custom bots for specific tasks much faster. In 1 day I have a bot working, focused on what I need, without carrying the weight of a generic framework. That's what I did with [Marvin](/en/2026/02/20/discord-como-admin-panel-bastidores-do-the-m-akita-chronicles/) on the newsletter project, for instance. A custom-built Discord bot that does exactly what I need and nothing else.
+What I've discovered over the last few months is that I can build custom bots for specific tasks much faster. In 1 day I have a bot working, focused on what I need, without carrying the weight of a generic framework. That's what I did with [Marvin](/en/2026/02/20/discord-as-an-admin-panel-behind-the-m-akita-chronicles/) on the newsletter project, for instance. A custom-built Discord bot that does exactly what I need and nothing else.
 
 A generic gateway like FrankClaw makes more sense for someone who wants a unified interface between several chat channels and several AI models without coding. If that's your case, give it a shot. If you're a developer and you know what you want, maybe a custom bot will serve you better. Up to you.
 

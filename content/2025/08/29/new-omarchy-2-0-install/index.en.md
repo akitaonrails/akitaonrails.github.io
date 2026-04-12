@@ -43,11 +43,11 @@ But I also have a separate discrete GPU, the **NVIDIA RTX 4090** (no, I don't ne
 
 Since I no longer edit videos, I don't need this complicated setup, so I won't bother installing Libvirt back. If I need Windows, I'll leave it in dual boot. If I need to edit video, these days we have DaVinci Resolve Studio which runs natively on Linux (a thousand times better than Adobe Premiere). For games I have a separate mini PC with an RTX 4060 hooked up to my TV. The best thing is to have a totally separate PC for games.
 
-So this setup is meant to be pure Linux, with access to my **Synology DS 1821+ NAS** with 100TB. The only extra thing I'll need is to configure NFS mounts, as I've already detailed in [this other post](https://akitaonrails.com/en/2025/04/17/configurando-meu-nas-synology-com-nfs-no-linux/).
+So this setup is meant to be pure Linux, with access to my **Synology DS 1821+ NAS** with 100TB. The only extra thing I'll need is to configure NFS mounts, as I've already detailed in [this other post](https://akitaonrails.com/en/2025/04/17/configuring-my-synology-nas-with-nfs-on-linux/).
 
 One detail is that I have **4 NVMEs** in this PC. 2TB for my old Linux. 2 TB for dual boot/Windows VM. 2 TB just as a Steam drive and 1 TB for random stuff. Since I'm wiping the Steam VM, I also no longer need to dedicate an entire NVME just for that. Instead, I'll make the new Linux's "/home" directory this entire 2 TB.
 
-This will let me stop worrying about Docker filling my drive and freezing my entire system from lack of space. Last time I had "solved" this by making a [remote drive with iSCSI](https://akitaonrails.com/en/2025/04/17/configurando-meu-nas-synology-com-nfs-no-linux/) on my NAS (which has infinite space). Since removing my Steam VM will give me 2TB back, I'll solve the problem locally and with fewer configurations.
+This will let me stop worrying about Docker filling my drive and freezing my entire system from lack of space. Last time I had "solved" this by making a [remote drive with iSCSI](https://akitaonrails.com/en/2025/04/17/configuring-my-synology-nas-with-nfs-on-linux/) on my NAS (which has infinite space). Since removing my Steam VM will give me 2TB back, I'll solve the problem locally and with fewer configurations.
 
 RAM I have in spades, **96GB of DDR5**. With that, I also don't need to worry about a swap partition. Swap only matters if you have less than 32GB of RAM, if you're running lots of Docker and keep hitting the max RAM consumption very fast. Or if you're on a laptop and want the option of hibernation (being able to record RAM to disk, fully power off the machine, and come back later exactly where you left off — which is different from suspend, which still uses power).
 
@@ -509,7 +509,7 @@ But beware that some NAS have a characteristic that can be annoying: your user o
 
 When you create a user on any Linux, the default is to assign UID 1000 to the first user, 1001 to the second, and so on. But since on the Synology NAS the first user receives UID 1026, if I mount with NFS (which passes through UNIX permissions), I'll have authorization problems.
 
-There are two solutions: try to change the UID on the NAS from 1026 to 1000. [I tried that](https://akitaonrails.com/en/2025/04/17/configurando-meu-nas-synology-com-nfs-no-linux/) and I'll tell you up front it's a waste of time, you can end up breaking your NAS's configurations catastrophically.
+There are two solutions: try to change the UID on the NAS from 1026 to 1000. [I tried that](https://akitaonrails.com/en/2025/04/17/configuring-my-synology-nas-with-nfs-on-linux/) and I'll tell you up front it's a waste of time, you can end up breaking your NAS's configurations catastrophically.
 
 It's much easier to change the user of your new local Linux to be 1026 and that's it. It's pretty easy.
 

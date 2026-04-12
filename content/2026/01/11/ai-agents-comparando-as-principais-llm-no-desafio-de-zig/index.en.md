@@ -206,7 +206,7 @@ In these scenarios, the model can enter a semantic recursion: it recognizes the 
 
 Commercial models seem much better trained and tuned to avoid this, but the open source ones, with few parameters and little post-alignment, don't have this well tuned, so we can try tuning by hand to see if it helps.
 
-> I explained this last year in the article [Dissecting an Ollama Modelfile](https://akitaonrails.com/en/2025/04/29/dissecando-um-modelfile-de-ollama-ajustando-qwen3-pra-codigo/). But remember the process: for each new round to generate the **next token** it will calculate and find several candidates, each with a certain probability.
+> I explained this last year in the article [Dissecting an Ollama Modelfile](https://akitaonrails.com/en/2025/04/29/dissecting-an-ollama-modelfile-tuning-qwen3-for-code/). But remember the process: for each new round to generate the **next token** it will calculate and find several candidates, each with a certain probability.
 
 If the **temperature** is zero, it will always respond the same thing. It becomes practically deterministic. If the answer is wrong, it will always return the same error and never get out of it. That's why you never use temperature near zero.
 

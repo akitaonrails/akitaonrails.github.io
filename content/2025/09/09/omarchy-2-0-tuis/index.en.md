@@ -45,7 +45,7 @@ gum input --placeholder "scope"
 gum confirm "Commit changes?" && git commit -m "$SUMMARY" -m "$DESCRIPTION"
 ```
 
-And if you use [**Omarchy**](https://akitaonrails.com/tags/omarchy/) they ship an extra feature for TUIs. Just hit "SUPER+ALT+SPACE" to bring up the main menu, then pick "INSTALL" and "TUI". Or simply open the terminal and run:
+And if you use [**Omarchy**](https://akitaonrails.com/en/tags/omarchy/) they ship an extra feature for TUIs. Just hit "SUPER+ALT+SPACE" to bring up the main menu, then pick "INSTALL" and "TUI". Or simply open the terminal and run:
 
 ```
 $OMARCHY_PATH/bin/omarchy-tui-install

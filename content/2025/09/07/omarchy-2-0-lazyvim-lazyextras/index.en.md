@@ -12,7 +12,7 @@ translationKey: omarchy-lazyvim-lazyextras
 description: A practical walkthrough of LazyVim and the :LazyExtras command that ships pre-installed with Omarchy, covering the basic hotkeys and how to enable language support.
 ---
 
-Continuing my series of tips about [Omarchy](https://akitaonrails.com/tags/omarchy/), I decided to write about [LazyVim](https://www.lazyvim.org/), which comes pre-installed.
+Continuing my series of tips about [Omarchy](https://akitaonrails.com/en/tags/omarchy/), I decided to write about [LazyVim](https://www.lazyvim.org/), which comes pre-installed.
 
 ![LazyVim](https://user-images.githubusercontent.com/292349/213447056-92290767-ea16-430c-8727-ce994c93e9cc.png)
 

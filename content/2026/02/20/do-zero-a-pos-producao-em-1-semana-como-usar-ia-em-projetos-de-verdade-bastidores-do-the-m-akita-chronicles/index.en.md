@@ -15,7 +15,7 @@ translationKey: zero-to-post-production-1-week
 description: "How 274 commits in 8 days shipped a full newsletter, podcast, blog, and Discord bot to production using Extreme Programming with Claude Code as the pair."
 ---
 
-This post is part of a series; follow along via the tag [/themakitachronicles](/tags/themakitachronicles). This is part 9 and the Finale!
+This post is part of a series; follow along via the tag [/themakitachronicles](/en/tags/themakitachronicles/). This is part 9 and the Finale!
 
 And make sure you subscribe to my new newsletter [The M.Akita Chronicles](https://themakitachronicles.com/)!
 

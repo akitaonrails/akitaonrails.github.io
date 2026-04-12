@@ -13,7 +13,7 @@ translationKey: serving-ai-cloud-personal-tts
 description: "Behind the scenes of putting Qwen3-TTS in production on a serverless GPU to auto-generate a weekly podcast: cold starts, voice cloning, sampling, loudness, and prompt engineering."
 ---
 
-This post is part of a series; follow along via the tag [/themakitachronicles](/tags/themakitachronicles). This is part 3.
+This post is part of a series; follow along via the tag [/themakitachronicles](/en/tags/themakitachronicles/). This is part 3.
 
 And make sure to subscribe to my new newsletter [The M.Akita Chronicles](https://themakitachronicles.com/)!
 

@@ -13,7 +13,7 @@ translationKey: sqlite-kamal-rails-deploy
 description: "How Rails 8 with SQLite and Kamal lets you run a full production app on a $12/month VPS with zero external services."
 ---
 
-This post is part of a series; follow along via the tag [/themakitachronicles](/tags/themakitachronicles). This is part 7.
+This post is part of a series; follow along via the tag [/themakitachronicles](/en/tags/themakitachronicles/). This is part 7.
 
 And make sure to subscribe to my new newsletter [The M.Akita Chronicles](https://themakitachronicles.com/)!
 

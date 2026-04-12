@@ -12,7 +12,7 @@ translationKey: omarchy-mise-dev-environments
 description: How to use Mise on Omarchy (or any Linux distro) to pin language versions per project and stop breaking your apps on every system update.
 ---
 
-Continuing my posts about [Omarchy](https://www.akitaonrails.com/tags/omarchy), here's another introductory post, this time about [Mise-en-place](https://mise.jdx.dev/getting-started.html), which already comes pre-installed. On Omarchy, if you press "Super+Alt+Space" the main menu will open. Pick "Install" and then "Development" and you'll see several languages/frameworks you can install, like Ruby on Rails or Go.
+Continuing my posts about [Omarchy](https://www.akitaonrails.com/en/tags/omarchy/), here's another introductory post, this time about [Mise-en-place](https://mise.jdx.dev/getting-started.html), which already comes pre-installed. On Omarchy, if you press "Super+Alt+Space" the main menu will open. Pick "Install" and then "Development" and you'll see several languages/frameworks you can install, like Ruby on Rails or Go.
 
 But you don't need to use these menus. Let me explain.
 

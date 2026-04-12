@@ -246,7 +246,7 @@ Be very careful with programs that run random commands on your system. Nothing i
 
 This isn't just for AI agents, obviously. Any time you're about to run any command you're not sure about or that looks fishy, run it inside this jail.
 
-As a bonus, note that I also map [Mise](https://akitaonrails.com/en/2025/09/07/omarchy-2-0-mise-pra-organizar-ambientes-de-desenvolvimento/) into the container. If you're on Omarchy, you should be using Mise too.
+As a bonus, note that I also map [Mise](https://akitaonrails.com/en/2025/09/07/omarchy-2-0-mise-for-organizing-dev-environments/) into the container. If you're on Omarchy, you should be using Mise too.
 
 Specifically for Claude Code, which is what I use the most, I don't like to leave everything authorized in automatic mode with `--allow-dangerously-skip-permissions`, but I also don't like having to keep authorizing dumb stuff like every single domain it wants to search the web for (just searching is no problem at all) or any command that just lists things like `ls` or `grep`. So you can improve things by configuring directly in `~/.claude/settings.json`:
 

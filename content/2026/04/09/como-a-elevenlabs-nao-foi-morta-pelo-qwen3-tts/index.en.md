@@ -21,13 +21,13 @@ description: "When Qwen3 TTS dropped, half the internet called it an 'ElevenLabs
   Your browser doesn't support the audio element. <a href="https://makita-news.s3.amazonaws.com/podcasts/episodes/2026-04-06.mp3">Download the mp3 here.</a>
 </audio>
 
-That's the April 6th episode of the [The M.Akita Chronicles](/tags/themakitachronicles) podcast, already generated with the new ElevenLabs v3 pipeline. Subscribe to the show on [Spotify](https://open.spotify.com/show/7MzG2UB7IAkC3GAwEXEIVD) so you don't miss new episodes like this one.
+That's the April 6th episode of the [The M.Akita Chronicles](/en/tags/themakitachronicles/) podcast, already generated with the new ElevenLabs v3 pipeline. Subscribe to the show on [Spotify](https://open.spotify.com/show/7MzG2UB7IAkC3GAwEXEIVD) so you don't miss new episodes like this one.
 
 ---
 
 When Qwen3 TTS dropped, back around January this year, everyone on Twitter/X and on the AI newsletter circuit was shouting "ElevenLabs killer". There's a [Medium piece](https://medium.com/@warpie/qwen3-tts-is-the-first-real-open-source-threat-to-elevenlabs-56ba200ab5ee) claiming it's the first real open source threat to ElevenLabs. There's a [post on byteiota](https://byteiota.com/qwen3-tts-3-second-voice-cloning-beats-elevenlabs/) saying 3-second voice cloning beats ElevenLabs. There's an [analysis on Analytics Vidhya](https://www.analyticsvidhya.com/blog/2025/12/qwen3-tts-flash-review/) calling it the most realistic open source TTS released so far. The enthusiast internet consensus was: we finally have open source that can go toe-to-toe with ElevenLabs, the tables have turned, it's just a matter of time.
 
-I decided to test it on my own production pipeline, as usual. I built out a whole pipeline on top of Qwen3 TTS 1.7B to generate the weekly podcast for [The M.Akita Chronicles](/tags/themakitachronicles), and I documented the behind-the-scenes on the [serving-AI-in-the-cloud post](/en/2026/02/18/serving-ai-in-the-cloud-my-personal-tts-behind-the-m-akita-chronicles/). Anyone who wants the detail on cold starts, voice cloning, and sampling parameters that change from one mode to another, that's the place. I'm not repeating it all here.
+I decided to test it on my own production pipeline, as usual. I built out a whole pipeline on top of Qwen3 TTS 1.7B to generate the weekly podcast for [The M.Akita Chronicles](/en/tags/themakitachronicles/), and I documented the behind-the-scenes on the [serving-AI-in-the-cloud post](/en/2026/02/18/serving-ai-in-the-cloud-my-personal-tts-behind-the-m-akita-chronicles/). Anyone who wants the detail on cold starts, voice cloning, and sampling parameters that change from one mode to another, that's the place. I'm not repeating it all here.
 
 This post asks a different question. After almost two months running that setup in production, shipping an episode every Monday, last night I finally pulled the plug on Qwen3 and switched the whole thing to ElevenLabs v3. Let me tell you why.
 

@@ -15,7 +15,7 @@ translationKey: omarchy-ssh-yubikeys
 description: A practical guide to SSH keys, Yubikey 5 hardware-backed keys, and ssh-agent on Arch Linux and Omarchy.
 ---
 
-This post has nothing directly to do with Omarchy, but I decided to include it in the [same series](/tags/omarchy) because it's an important tip for programmers.
+This post has nothing directly to do with Omarchy, but I decided to include it in the [same series](/en/tags/omarchy/) because it's an important tip for programmers.
 
 **Every programmer needs to know how to manage their SSH keys.** At the very least because every GitHub account requires one.
 

@@ -43,7 +43,7 @@ How do you want to become a "DEVOPS" (who has to know EVERYTHING about Linux) st
 
 ### Linux for Beginners?
 
-That said, watch my video. But since I've been talking a lot about [Omarchy](/tags/omarchy) already, I'll say that yes, this is what I use in my day to day and it's the only one I'll recommend for the near future (I may change my mind later). Having used distros ever since Linux was invented in the early 90s, I know there are dozens of distros and even I don't have the patience to try them all.
+That said, watch my video. But since I've been talking a lot about [Omarchy](/en/tags/omarchy/) already, I'll say that yes, this is what I use in my day to day and it's the only one I'll recommend for the near future (I may change my mind later). Having used distros ever since Linux was invented in the early 90s, I know there are dozens of distros and even I don't have the patience to try them all.
 
 _Why Omarchy?_
 
@@ -51,7 +51,7 @@ First, because it made the right choice of base distro: **Arch Linux**. I consid
 
 Second, Arch Linux has the AUR, which is a repository of user-made packages that has basically everything. You don't need to go hunting for third-party repositories or install things manually. With a single command, `yay`, you install everything. There's none of that `apt-repository add` nonsense or having to `make install` or anything like that. The AUR manages all of it for you.
 
-Third, it installs Hyprland (which I was already using and liked), with very good configs, and a very good package selection. Everything I would install manually myself. So it's a thousand times easier to get what would take me much more work to do on my own. Check my [series of posts about Omarchy](/tags/omarchy) to see those options.
+Third, it installs Hyprland (which I was already using and liked), with very good configs, and a very good package selection. Everything I would install manually myself. So it's a thousand times easier to get what would take me much more work to do on my own. Check my [series of posts about Omarchy](/en/tags/omarchy/) to see those options.
 
 ### Linux for Beginners?
 

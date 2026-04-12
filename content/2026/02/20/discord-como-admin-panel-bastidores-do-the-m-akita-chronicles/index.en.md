@@ -12,7 +12,7 @@ translationKey: discord-as-admin-panel
 description: "How I replaced the classic Rails admin panel with a Discord bot: parser/dispatcher patterns, embeds, reactions, tool-calling LLMs, and the lessons from failing silently in production."
 ---
 
-This post is part of a series; follow along via the tag [/themakitachronicles](/tags/themakitachronicles). This is part 6.
+This post is part of a series; follow along via the tag [/themakitachronicles](/en/tags/themakitachronicles/). This is part 6.
 
 And don't forget to subscribe to my new newsletter [The M.Akita Chronicles](https://themakitachronicles.com/)!
 

@@ -21,11 +21,11 @@ And don't forget to subscribe to my newsletter [The M.Akita Chronicles](https://
 
 --
 
-I published the "final post" of the [Behind The M.Akita Chronicles](/en/2026/02/20/do-zero-a-pos-producao-em-1-semana-como-usar-ia-em-projetos-de-verdade-bastidores-do-the-m-akita-chronicles/) series 10 days ago. 274 commits, 1,323 tests, deployed to production. I wrote down the lessons, did the conclusion, dropped the quote at the end. Done.
+I published the "final post" of the [Behind The M.Akita Chronicles](/en/2026/02/20/zero-to-post-production-in-1-week-using-ai-on-real-projects-behind-the-m-akita-chronicles/) series 10 days ago. 274 commits, 1,323 tests, deployed to production. I wrote down the lessons, did the conclusion, dropped the quote at the end. Done.
 
 125 post-production commits later, I can confirm: **software *"done"* doesn't exist.**
 
-Today the M.Akita Chronicles repo has 335 commits and 1,422 tests. Tomorrow, Monday, subscribers get the 3rd consecutive newsletter — generated, reviewed, and sent by a system that won't stop evolving. Meanwhile, [Frank Sherlock](/en/2026/02/23/vibe-code-fiz-um-indexador-inteligente-de-imagens-com-ia-em-2-dias/) went from 50 commits and v0.1 to 103 commits and v0.7 with face detection. [FrankMD](/en/2026/02/01/vibe-code-fiz-um-editor-de-markdown-do-zero-com-claude-code-frankmd-part-1/) got 3 external contributors and shipped v0.2.0. And even [FrankMega](/en/2026/02/21/vibe-code-fiz-um-clone-do-mega-em-rails-em-1-dia-pro-meu-home-server/) — a project built in 1 day — needed fixes when real users showed up.
+Today the M.Akita Chronicles repo has 335 commits and 1,422 tests. Tomorrow, Monday, subscribers get the 3rd consecutive newsletter — generated, reviewed, and sent by a system that won't stop evolving. Meanwhile, [Frank Sherlock](/en/2026/02/23/vibe-code-built-a-smart-image-indexer-with-ai-in-2-days-frank-sherlock/) went from 50 commits and v0.1 to 103 commits and v0.7 with face detection. [FrankMD](/en/2026/02/01/frankmd-markdown-editor-vibe-code-part-1/) got 3 external contributors and shipped v0.2.0. And even [FrankMega](/en/2026/02/21/vibe-code-built-a-mega-clone-in-rails-in-1-day-frankmega/) — a project built in 1 day — needed fixes when real users showed up.
 
 Throughout February, I published more than a dozen posts detailing the build of each project. This post is different. It isn't about building from scratch, I covered that already. It's about what happens **after**. And what happens after destroys the one-shot prompt narrative. Software needs an experienced human at the wheel. Iterative development is the only thing that works. Anyone who disagrees hasn't put a system in production yet.
 
@@ -119,7 +119,7 @@ This kind of refactoring only shows up in operation. When you start the project,
 
 ## Frank Sherlock: From v0.1 to v0.7 in 4 Days
 
-The [Frank Sherlock post](/en/2026/02/23/vibe-code-fiz-um-indexador-inteligente-de-imagens-com-ia-em-2-dias/) covered the first 2 days and ~50 commits: the benchmark research, the Tauri app scaffold (Rust + React), the classification pipeline with Ollama, and the v0.1.0 release with binaries for Linux, macOS and Windows.
+The [Frank Sherlock post](/en/2026/02/23/vibe-code-built-a-smart-image-indexer-with-ai-in-2-days-frank-sherlock/) covered the first 2 days and ~50 commits: the benchmark research, the Tauri app scaffold (Rust + React), the classification pipeline with Ollama, and the v0.1.0 release with binaries for Linux, macOS and Windows.
 
 What the post didn't cover: the next 53 commits, in 4 days, that took the project from v0.3 to v0.7:
 
@@ -160,7 +160,7 @@ The CI/CD cross-platform part is where the *"works on my machine"* fantasy dies.
 
 ## FrankMD: Real Open Source
 
-FrankMD was the first project in this saga, a self-hosted Markdown editor with Rails 8. The [February posts](/en/2026/02/01/vibe-code-fiz-um-editor-de-markdown-do-zero-com-claude-code-frankmd-part-1/) covered the build. What happened after is more interesting: other people started contributing.
+FrankMD was the first project in this saga, a self-hosted Markdown editor with Rails 8. The [February posts](/en/2026/02/01/frankmd-markdown-editor-vibe-code-part-1/) covered the build. What happened after is more interesting: other people started contributing.
 
 14 commits since February 20. 3 external contributors. 4 PRs merged. v0.2.0 release on the 28th:
 
@@ -185,7 +185,7 @@ FrankMD today has 226 commits, 1,804 tests (425 Ruby + 1,379 JavaScript), and ac
 
 ## FrankMega: Even the Smallest Project Needs Post-Production
 
-FrankMega was built in [1 day](/en/2026/02/21/vibe-code-fiz-um-clone-do-mega-em-rails-em-1-dia-pro-meu-home-server/). 26 commits, secure file sharing with Rails 8, 210 tests, deploy via Docker + Cloudflare Tunnel. Post published the same day. Done, right?
+FrankMega was built in [1 day](/en/2026/02/21/vibe-code-built-a-mega-clone-in-rails-in-1-day-frankmega/). 26 commits, secure file sharing with Rails 8, 210 tests, deploy via Docker + Cloudflare Tunnel. Post published the same day. Done, right?
 
 Three days later, 2 commits:
 
@@ -294,7 +294,7 @@ Now do the math in your head. How long would it take you to build Frank Sherlock
 
 To be honest: without AI, a good senior dev would take at least 3-4 weeks on this, probably more. I did it in 7 days, alone, and every release is published with binaries anyone can download and install.
 
-I already estimated The M.Akita Chronicles in the [previous post](/en/2026/02/20/do-zero-a-pos-producao-em-1-semana-como-usar-ia-em-projetos-de-verdade-bastidores-do-the-m-akita-chronicles/): ~200 user stories. In Scrum with a senior team of 2-3 devs, no impediments, that would be 10-15 weeks. I did it in 8 days. Today, 3 weeks later, the system keeps running, evolving, with 99 more tests than when it *"was done"*.
+I already estimated The M.Akita Chronicles in the [previous post](/en/2026/02/20/zero-to-post-production-in-1-week-using-ai-on-real-projects-behind-the-m-akita-chronicles/): ~200 user stories. In Scrum with a senior team of 2-3 devs, no impediments, that would be 10-15 weeks. I did it in 8 days. Today, 3 weeks later, the system keeps running, evolving, with 99 more tests than when it *"was done"*.
 
 FrankMega is more modest, but secure file sharing with Rails 8, I18n in 2 languages, 22 security issues fixed, Docker deploy, 210 tests. I did it in 1 day. A good senior, without AI, would do it in 1-2 weeks at best.
 

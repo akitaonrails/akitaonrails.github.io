@@ -15,7 +15,7 @@ translationKey: integration-tests-monorepo
 description: "How a monorepo running three apps that share a filesystem uses a dedicated integration environment, DevCache, rsynced production data, and preflight checks to catch the bugs unit tests never see."
 ---
 
-This post is part of a series; follow along via the tag [/themakitachronicles](/tags/themakitachronicles). This is part 8.
+This post is part of a series; follow along via the tag [/themakitachronicles](/en/tags/themakitachronicles/). This is part 8.
 
 And make sure to subscribe to my new newsletter [The M.Akita Chronicles](https://themakitachronicles.com/)!
 

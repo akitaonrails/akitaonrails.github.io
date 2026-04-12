@@ -14,7 +14,7 @@ translationKey: frankmd-part-2
 description: "Part 2 of the FrankMD story: refactoring, i18n, syntax highlighting, tests, and the hard-earned lessons from 30 hours of vibe coding with Claude."
 ---
 
-If you haven't read it yet, check out [Part 1](/en/2026/02/01/vibe-code-fiz-um-editor-de-markdown-do-zero-com-claude-code-frankmd-part-1/) to understand the app I built. **FrankMD** is a Markdown editor that I customized to be effective for my personal use case: writing blog posts. It wasn't meant to be a replacement for Obsidian or VS Code.
+If you haven't read it yet, check out [Part 1](/en/2026/02/01/frankmd-markdown-editor-vibe-code-part-1/) to understand the app I built. **FrankMD** is a Markdown editor that I customized to be effective for my personal use case: writing blog posts. It wasn't meant to be a replacement for Obsidian or VS Code.
 
 [![FrankMD](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/frankmd/2026/02/screenshot-2026-02-01_18-49-26.jpg)](https://github.com/akitaonrails/FrankMD)
 

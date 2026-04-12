@@ -112,17 +112,17 @@ What I call "chat" is just to make it easier to visualize. Think of the simple c
 
 I've documented this in several posts on this blog:
 
-* [LLM Hello World: building your own AI chat that runs locally](/en/2025/04/25/hello-world-de-llm-criando-seu-proprio-chat-de-i-a-que-roda-local/)
-* [Rant — Will LLMs evolve forever? Demystifying LLMs in programming](/en/2025/05/01/rant-llms-vao-evoluir-pra-sempre-desmistificando-llms-na-programacao/)
-* [When Don't LLMs Work for Programming? A more realistic use case.](/en/2025/05/01/quando-llms-nao-funcionam-pra-programar-um-caso-de-uso-mais-real/)
+* [LLM Hello World: building your own AI chat that runs locally](/en/2025/04/25/llm-hello-world-building-your-own-local-ai-chat/)
+* [Rant — Will LLMs evolve forever? Demystifying LLMs in programming](/en/2025/05/01/rant-llms-will-evolve-forever-demystifying-llms-in-programming/)
+* [When Don't LLMs Work for Programming? A more realistic use case.](/en/2025/05/01/when-llms-dont-work-for-coding-a-more-realistic-use-case/)
 * [AI Agents: Locking Down Your System](/en/2026/01/10/ai-agents-locking-down-your-system/)
-* [AI Agents: Comparing the main 2026 LLMs on the Zig Challenge](/en/2026/01/11/ai-agents-comparando-as-principais-llm-no-desafio-de-zig/)
-* [AI Agents: Installing LSPs for Crush](/en/2026/01/21/ai-agents-instalando-lsps-pro-crush/)
-* [AI Agents: Which one is best? OpenCode, Crush, Claude Code, GPT Codex, GoPilot, Cursor, WindSurf, AntiGravity?](/en/2026/01/24/ai-agents-qual-e-o-melhor-opencode-crush-claude-code-gpt-codex-gopilot-cursor-windsurf-antigravity/)
-* [Vibe Code: I built a little app 100% with GLM 4.7 (TV Clipboard)](/en/2026/01/28/vibe-code-eu-fiz-um-appzinho-100-com-glm-4-7-tv-clipboard/)
+* [AI Agents: Comparing the main 2026 LLMs on the Zig Challenge](/en/2026/01/11/ai-agents-comparing-top-llms-on-the-zig-challenge/)
+* [AI Agents: Installing LSPs for Crush](/en/2026/01/21/ai-agents-installing-lsps-for-crush/)
+* [AI Agents: Which one is best? OpenCode, Crush, Claude Code, GPT Codex, GoPilot, Cursor, WindSurf, AntiGravity?](/en/2026/01/24/ai-agents-which-is-best-opencode-crush-claude-code-codex-copilot-cursor-windsurf-antigravity/)
+* [Vibe Code: I built a little app 100% with GLM 4.7 (TV Clipboard)](/en/2026/01/28/vibe-code-built-a-little-app-fully-with-glm-4-7-tv-clipboard/)
 * [Vibe Code: Which LLM is the BEST?? Let's talk for REAL](/2026/01/29/vibe-code-qual-llm-%c3%a9-a-melhor-vamos-falar-a-real/)
-* [Vibe Code: I built a Markdown Editor from scratch with Claude Code (FrankMD) PART 1](/en/2026/02/01/vibe-code-fiz-um-editor-de-markdown-do-zero-com-claude-code-frankmd-part-1/)
-* [Vibe Code: I built a Markdown Editor from scratch with Claude Code (FrankMD) PART 2](/en/2026/02/01/vibe-code-fiz-um-editor-de-markdown-do-zero-com-claude-code-frankmd-parte-2/)
+* [Vibe Code: I built a Markdown Editor from scratch with Claude Code (FrankMD) PART 1](/en/2026/02/01/frankmd-markdown-editor-vibe-code-part-1/)
+* [Vibe Code: I built a Markdown Editor from scratch with Claude Code (FrankMD) PART 2](/en/2026/02/01/frankmd-markdown-editor-vibe-code-part-2/)
 
 ## The End of Stack Overflow
 

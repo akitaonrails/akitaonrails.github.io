@@ -39,7 +39,7 @@ You can get a sense of the size from the photo. The NUC is the tiny cube on the 
 
 The chip is the AMD Ryzen AI Max+ 395: 16 cores / 32 threads Zen 5, with an integrated Radeon 8060S iGPU and 128GB of unified LPDDR5X. In the BIOS, I set the UMA Frame Buffer Size to 96GB, which leaves ~30GB of RAM for the operating system and containers. Plus the kernel parameters for TTM (without them, ROCm only sees 15.5GB even with the BIOS allocation in place).
 
-The operating system is openSUSE MicroOS (more on that in the [next post](/en/2026/03/31/migrando-meu-home-server-com-claude-code/)). The whole machine pulls under 100W, which is absurd if you're used to dedicated GPUs that draw 450W+ on their own.
+The operating system is openSUSE MicroOS (more on that in the [next post](/en/2026/03/31/migrating-my-home-server-with-claude-code/)). The whole machine pulls under 100W, which is absurd if you're used to dedicated GPUs that draw 450W+ on their own.
 
 ## Minisforum vs my desktop: benchmarks
 

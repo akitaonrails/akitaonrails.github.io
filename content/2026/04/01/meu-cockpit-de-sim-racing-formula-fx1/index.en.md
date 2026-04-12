@@ -134,7 +134,7 @@ In January 2026, after years of kludges, I finally ordered a dedicated cockpit. 
 
 The FX1 is very different from traditional cockpits. The whole structure is welded thick steel tubing. When I say it doesn't shake, I mean it doesn't shake at all. Zero wobble. It's a brutal difference compared to a stand in front of the couch. The driving position is reclined, F1-style — your feet are at the same height or higher than your hips. You'd think it would be uncomfortable, but it isn't. You can sit there for hours without complaining. It comes with a padded adjustable seat, an articulating monitor mount, a tilt-adjustable pedal mount, and a height-adjustable wheel mount.
 
-I had to wait about a month for delivery. In the meantime, as anyone who follows my blog knows, I dove into a 16-hour-a-day marathon testing the new AI agents from Anthropic and OpenAI — check the [#vibecoding](/tags/vibe-coding/) and [#agents](/tags/ai/) tags to see everything I built. After about 30 days of that insane marathon, my lower back gave out and I started developing what looks like a herniated disc. I had to see a doctor and take heavy anti-inflammatories.
+I had to wait about a month for delivery. In the meantime, as anyone who follows my blog knows, I dove into a 16-hour-a-day marathon testing the new AI agents from Anthropic and OpenAI — check the [#vibecoding](/en/en/tags/vibe-coding/) and [#agents](/en/en/tags/ai/) tags to see everything I built. After about 30 days of that insane marathon, my lower back gave out and I started developing what looks like a herniated disc. I had to see a doctor and take heavy anti-inflammatories.
 
 And right that week, the cockpit decided to arrive.
 

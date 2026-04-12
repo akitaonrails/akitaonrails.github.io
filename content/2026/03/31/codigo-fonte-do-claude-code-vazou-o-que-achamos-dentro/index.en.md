@@ -180,7 +180,7 @@ The most viral reaction came from [@thekitze](https://x.com/thekitze/status/2038
 
 [@thekitze](https://x.com/thekitze/status/2038986445839622405) also elaborated in another thread on how the code shows a lack of basic engineering practices. And this is where I feel vindicated.
 
-I've been repeating in several posts on [vibe coding](/tags/vibe-coding/) that speed without discipline produces exactly this. The principles I defend, small increments, tests at every step, review before committing, continuous refactoring, CI that rejects high cyclomatic complexity, are the same Extreme Programming principles that have worked since the early 2000s. Anthropic apparently didn't follow any of them on their own product.
+I've been repeating in several posts on [vibe coding](/en/en/tags/vibe-coding/) that speed without discipline produces exactly this. The principles I defend, small increments, tests at every step, review before committing, continuous refactoring, CI that rejects high cyclomatic complexity, are the same Extreme Programming principles that have worked since the early 2000s. Anthropic apparently didn't follow any of them on their own product.
 
 A 3,167-line function with 12 levels of nesting isn't something that appears overnight. It's accumulation. It's the result of dozens of additions where nobody stopped to refactor because "it works, don't touch it." It's the classic anti-pattern of vibe coding without discipline: generate code with AI, see that it compiles, commit, repeat. Without rigorous review. Without complexity limits in CI. Without the basic rule that if a function passes 50 lines, it needs to be broken up.
 
@@ -226,7 +226,7 @@ What bothers me isn't the leak itself. Bugs happen. What bothers me is that this
 3. Have a CI check that rejects publication if the package contains `.map`. A 5-line script.
 4. Have a release pipeline with manual review before publishing to npm. Process, not code.
 
-None of these are hard. They're all the kind of thing that gets dropped when you're moving too fast and don't have discipline in the release process. It's exactly what I preach as [disciplined vibe coding](/tags/vibe-coding/): moving fast doesn't mean skipping the guardrails.
+None of these are hard. They're all the kind of thing that gets dropped when you're moving too fast and don't have discipline in the release process. It's exactly what I preach as [disciplined vibe coding](/en/en/tags/vibe-coding/): moving fast doesn't mean skipping the guardrails.
 
 And the second failure: the quality of the code itself. 512,000 lines with 3,000-line functions and 12 levels of nesting isn't engineering. It's accumulation. It's what happens when you generate code with AI without rigorous review, without continuous refactoring, without CI that rejects high cyclomatic complexity. The irony of being precisely the company that sells the most popular vibe coding tool in the world doesn't go unnoticed.
 

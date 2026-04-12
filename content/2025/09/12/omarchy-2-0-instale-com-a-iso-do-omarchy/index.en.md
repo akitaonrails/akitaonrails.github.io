@@ -14,7 +14,7 @@ translationKey: omarchy-install-with-iso
 description: Why the official Omarchy ISO is the easiest way to install Omarchy, with LUKS encryption, Limine+Snapper rollback, and Hyprland+UWSM auto-login out of the box.
 ---
 
-To wrap up the [Omarchy](/tags/omarchy) series for now, I think I still owe a quick word on installing via the official Omarchy ISO.
+To wrap up the [Omarchy](/en/tags/omarchy/) series for now, I think I still owe a quick word on installing via the official Omarchy ISO.
 
 ![ISO](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/20250912093827_screenshot-2025-09-12_09-38-05.png)
 

@@ -16,7 +16,7 @@ translationKey: omarchy-vaultwarden-self-hosted
 description: Self-hosting a Bitwarden-compatible password manager with VaultWarden on a home server, routed through a Cloudflare tunnel, with 2FA via Aegis.
 ---
 
-Continuing the [Omarchy series](/tags/omarchy) and doing a cross-over with the [home server series](/tags/homeserver), let's talk about Password Managers and 2FA. Anyone who follows me knows I talk often about personal digital security, the importance of paying attention to links so you don't fall for scams, phishing, or accidentally install malware.
+Continuing the [Omarchy series](/en/tags/omarchy/) and doing a cross-over with the [home server series](/en/tags/homeserver/), let's talk about Password Managers and 2FA. Anyone who follows me knows I talk often about personal digital security, the importance of paying attention to links so you don't fall for scams, phishing, or accidentally install malware.
 
 More important: having a strong, random, exclusive and different password for **EACH** site, app or service you use. Never, ever, reuse a password. Why? Because every day one of these sites gets breached and passwords get leaked. If you search for yourself on [Have I Been Pwned](https://haveibeenpwned.com/) you'll surely find accounts of yours that have already leaked. And if you share that same password across 10 other sites, someone has probably already gotten into your account by now.
 
@@ -98,7 +98,7 @@ docker compose -f utils-docker-compose.yml up -d
 
 ### Routing the Cloudflared tunnel
 
-As I already showed in the [Cloudflared post](https://akitaonrails.com/en/2025/09/09/acessando-meu-home-server-com-dominio-de-verdade/) now I want to be able to access it remotely, via secure tunnel, using a public URL like `https://bitwarden.fabioakita.dev`. To do that we have to edit that `/etc/cloudflared/config.yml` file and add this to the end of it:
+As I already showed in the [Cloudflared post](https://akitaonrails.com/en/2025/09/09/accessing-my-home-server-with-a-real-domain/) now I want to be able to access it remotely, via secure tunnel, using a public URL like `https://bitwarden.fabioakita.dev`. To do that we have to edit that `/etc/cloudflared/config.yml` file and add this to the end of it:
 
 ```yaml
   - hostname: bitwarden.fabioakita.dev

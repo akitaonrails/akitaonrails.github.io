@@ -15,7 +15,7 @@ translationKey: sending-emails-without-spam
 description: "How to build a reliable newsletter sending pipeline on Amazon SES, covering atomic claiming, terminal states, DKIM/SPF/DMARC, List-Unsubscribe and the silent SES suppression list."
 ---
 
-This post is part of a series; follow along via the tag [/themakitachronicles](/tags/themakitachronicles). This is part 1.
+This post is part of a series; follow along via the tag [/themakitachronicles](/en/tags/themakitachronicles/). This is part 1.
 
 And make sure to subscribe to my new newsletter [The M.Akita Chronicles](https://themakitachronicles.com/)!
 
