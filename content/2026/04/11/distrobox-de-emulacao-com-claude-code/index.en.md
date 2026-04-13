@@ -9,6 +9,7 @@ tags:
   - emulation
   - linux
   - distrobox
+  - ansible
   - claude-code
   - AI
 ---
@@ -37,7 +38,7 @@ But that was before Valve's work, Proton, modern Wine and the broader open sourc
 
 My dedicated gaming mini-PC with an RTX 4090 is still my main Steam machine, especially now that I have a [proper sim racing cockpit](/en/2026/04/01/my-sim-racing-cockpit-formula-fx1/). On that machine I use [EmuDeck](https://www.emudeck.com/), which was originally built to automate emulator installation and configuration on the Steam Deck, later added Windows support, and helps a lot in reducing the pain of assembling this kind of setup. But my main desktop is far too powerful to leave idle. It has an RTX 5090, and these days I mostly use that GPU to test LLMs and run benchmarks, as I explained in [Testing Open Source and Commercial LLMs](/en/2026/04/05/testing-llms-open-source-and-commercial-can-anyone-beat-claude-opus/). It would be a waste not to use it for gaming too.
 
-But on Linux I wanted something else. I didn't want a black box doing everything for me without me knowing exactly what had been changed, especially on my main PC, which is my work machine. I wanted a setup of my own, "done by hand" in the right sense of the phrase: not clicking through one GUI after another, but actually understanding what is being configured, keeping the files under my control, and being able to rebuild everything the way I like it. I know the NixOS crowd will jump in here to say "just use Nix", but I'm still not convinced I need yet another layer of complication in my life. And now, with Claude Code, I honestly think I need that even less. I also didn't want to turn my work machine into a carnival of emulator packages, GTK themes, wrappers, launchers, odd runtimes and configs buried all over `~/.config`. I didn't want dual boot or a VM either. In 2026, the best answer for this, in my opinion, is [Distrobox](https://distrobox.it/).
+But on Linux I wanted something else. I didn't want a black box doing everything for me without me knowing exactly what had been changed, especially on my main PC, which is my work machine. I wanted a setup of my own, "done by hand" in the right sense of the phrase: not clicking through one GUI after another, but actually understanding what is being configured, keeping the files under my control, and being able to rebuild everything the way I like it. I know the NixOS crowd will jump in here to say "just use Nix" — I explain below why I ruled that out. I also didn't want to turn my work machine into a carnival of emulator packages, GTK themes, wrappers, launchers, odd runtimes and configs buried all over `~/.config`. I didn't want dual boot or a VM either. In 2026, the best answer for this, in my opinion, is [Distrobox](https://distrobox.it/).
 
 As the project itself explains, Distrobox is a wrapper around `podman`, `docker` or `lilipod` to create containers that are tightly integrated with the host, with access to `HOME`, Wayland/X11, audio, USB devices, external storage and GPU. In other words: exactly the kind of pragmatic isolation I wanted. It is not a security boundary, and the official site is explicit about that. Don't use it expecting a high-security sandbox. Use it when you want separate environments without paying the cost of a VM.
 
@@ -87,39 +88,52 @@ with archlinux:latest in distrobox, IN THIS ORDER...
 
 The point is not the exact wording. The point is the method. I didn't have to remember the exact order, the exact flags, or where the documentation for each detail lived. I described the objective and let the agent carry the weight. I stayed in the tech lead role: watching, reviewing, correcting direction when needed, and telling it to continue.
 
-## From prompts to reusable scripts
+## From prompts to scripts — and from scripts to Ansible
 
 Once the setup stopped being an experiment and became a known-good configuration, I turned it into a public project: [akitaonrails/distrobox-gaming](https://github.com/akitaonrails/distrobox-gaming).
 
-The entry point is intentionally boring:
+The first version was a handful of numbered shell scripts in POSIX `sh`, orchestrated by a dispatcher called `bin/dg`. Each phase had its own script: `00-check-host.sh` validated paths and permissions, `01-create-box.sh` created the distrobox, `02-bootstrap-packages.sh` installed packages, and so on through `08-verify.sh` which ran regression checks. The idea was sound: a deterministic process I could run from scratch on a new machine. It worked.
+
+But imperative shell scripts hit limits fast once you try to evolve the automation. The biggest one is idempotency. In shell, to know whether an action has already been performed, you have to check manually: "does this directory exist?", "does this INI already have this key?", "is this package already installed?". The logic fills up with `if/then/fi` that basically reimplements, poorly, what configuration management tools have been doing for decades. Another problem: when I wanted to run just the config phase without reinstalling the whole box, the sequential flow of `bin/dg` didn't help. And backing up / restoring the container for destructive rebuild testing was something I was doing by hand with `podman commit`.
+
+So I converted the project to [Ansible](https://docs.ansible.com/). The structure ended up like this: 10 roles mapped 1:1 to the original scripts (`check_host`, `create_box`, `bootstrap_packages`, `link_storage`, `seed_configs`, `desktop_apps`, `configure_esde`, `verify`, `refresh_shadps4`, `install_xenia`) and 6 playbooks with clear purposes:
 
 ```bash
-cp config/distrobox-gaming.env.example config/distrobox-gaming.env
-$EDITOR config/distrobox-gaming.env
-./bin/dg check
-./bin/dg create
-./bin/dg bootstrap
-./bin/dg configure
-./bin/dg verify
+cd ansible
+ansible-playbook site.yml               # full setup from scratch
+ansible-playbook reset-configs.yml       # reset configs without reinstalling the box
+ansible-playbook backup.yml              # container snapshot + home tarball
+ansible-playbook restore.yml             # restore from backup
+ansible-playbook refresh-shadps4.yml     # update shadPS4 builds
+ansible-playbook install-xenia.yml       # install/update Xenia Manager
 ```
 
-Or, if you want the straight path:
+Tags let you run subsets: `--tags esde` applies only ES-DE, `--tags configs` only emulator configs, `--tags desktop` only launchers. That kind of granularity simply didn't exist in the shell script flow.
 
-```bash
-./bin/dg all
-```
+The variables that used to live scattered across `lib/paths.sh` as 70+ `DG_*` exports are now organized under `group_vars/all/`: `main.yml` (paths, box identity, UID/GID), `packages.yml` (pacman and AUR lists), `emulators.yml` (per-emulator configs), `shadps4.yml`, `xenia.yml`, `esde.yml`. Each concern in its own file. If you need to override something on your machine, create a `host_vars/localhost.yml` and you're done — no playbook edits needed.
 
-The [`bin/dg`](https://github.com/akitaonrails/distrobox-gaming/blob/master/bin/dg) script only orchestrates the phases. The real work lives in the scripts and docs:
+The part that gained the most was ES-DE configuration. Before, it was a sed template with `@DG_*@` placeholders that I substituted using a `render_template` function from `common.sh`. Now the ES-DE systems are data in YAML — name, extensions, command, ROM path — and a Jinja2 template renders the final XML via a loop. Adding a new system means adding a YAML block, not hand-editing a giant XML file.
 
-- [`docs/distrobox-gaming-prompts.md`](https://github.com/akitaonrails/distrobox-gaming/blob/master/docs/distrobox-gaming-prompts.md)
-- [`docs/rebuild-runbook.md`](https://github.com/akitaonrails/distrobox-gaming/blob/master/docs/rebuild-runbook.md)
-- [`docs/controller-hotkeys.md`](https://github.com/akitaonrails/distrobox-gaming/blob/master/docs/controller-hotkeys.md)
-- [`docs/flycast-resolution.md`](https://github.com/akitaonrails/distrobox-gaming/blob/master/docs/flycast-resolution.md)
-- [`docs/driveclub-shadps4.md`](https://github.com/akitaonrails/distrobox-gaming/blob/master/docs/driveclub-shadps4.md)
+The shell scripts are still in the repo and they still work. If you'd rather not install Ansible, `./bin/dg all` still does everything. But going forward, Ansible is the preferred path.
 
-If you want to see where the practical part actually lives, the files that matter most are [`scripts/05-seed-configs.sh`](https://github.com/akitaonrails/distrobox-gaming/blob/master/scripts/05-seed-configs.sh), [`scripts/07-configure-es-de.sh`](https://github.com/akitaonrails/distrobox-gaming/blob/master/scripts/07-configure-es-de.sh) and [`scripts/08-verify.sh`](https://github.com/akitaonrails/distrobox-gaming/blob/master/scripts/08-verify.sh). That's where muscle memory turns into code.
+The documentation is also still there:
 
-That was the real gain. Instead of an artisanal setup that only exists in my head, I ended up with a reproducible process.
+- [`docs/distrobox-gaming-prompts.md`](https://github.com/akitaonrails/distrobox-gaming/blob/master/docs/distrobox-gaming-prompts.md) — the prompt history that generated everything
+- [`docs/rebuild-runbook.md`](https://github.com/akitaonrails/distrobox-gaming/blob/master/docs/rebuild-runbook.md) — step-by-step rebuild guide
+- [`docs/controller-hotkeys.md`](https://github.com/akitaonrails/distrobox-gaming/blob/master/docs/controller-hotkeys.md) — controller mappings
+- [`docs/flycast-resolution.md`](https://github.com/akitaonrails/distrobox-gaming/blob/master/docs/flycast-resolution.md) — the Flycast trap
+- [`docs/driveclub-shadps4.md`](https://github.com/akitaonrails/distrobox-gaming/blob/master/docs/driveclub-shadps4.md) — Driveclub config
+- [`docs/distrobox-gaming-packages.md`](https://github.com/akitaonrails/distrobox-gaming/blob/master/docs/distrobox-gaming-packages.md) — package decisions, why AUR and not Flatpak
+
+### Why not Nix?
+
+Someone's going to ask. "You're building a reproducible environment. Why not use NixOS, or at least `nix-shell` / flakes?"
+
+I considered it and ruled it out. The emulator ecosystem I need lives in the AUR. AUR `-bin` packages are AppImage wrappers that package the official upstream binary without compiling anything. `rpcs3-bin`, `pcsx2-latest-bin`, `eden-bin`, `duckstation-qt-bin`, `shadps4-bin` — these binaries track upstream practically on release day. In Nixpkgs, many of these emulators lag weeks or months behind, and some don't exist at all. Building a Nix overlay for every emulator I need, maintaining it, and dealing with compatibility patches when upstream changes, is work I don't want to take on.
+
+There's also the mental model. I don't want to learn the Nix language, the derivation system and the evaluation model just to assemble a personal gaming environment. I already know Ansible, the roles are folders with tasks in YAML, and debugging is `ansible-playbook -vvv`. When something breaks, I read the error message, open the failed task, and know exactly where to fix it. If I needed this level of reproducibility at scale, on a cluster, with atomic rollback, then yes, Nix would have a case. For a distrobox with emulators on my personal machine, Ansible solves it with much less friction.
+
+Flatpak was also tested and discarded. Flatpak's `bwrap` (bubblewrap) doesn't nest cleanly inside Docker's mount namespaces, so Flatpak apps simply don't run inside distrobox. The alternative would be installing Flatpak on the host, but then you're back to polluting your work machine with gaming packages. On top of that, Flatpak emulator versions lag well behind AUR — PCSX2 on Flathub as of April 2026 was still on v2.6.3, about 250 commits behind the master branch that AUR's `pcsx2-latest-bin` already packaged.
 
 ## What used to be manual GUI work is now automation
 
@@ -169,9 +183,18 @@ I tell the agent the objective. It searches the files, reads the logs, finds the
 
 That's the part that interests me most about coding agents on Linux. They drastically reduce the entry friction. A lot of people give up on desktop Linux not because the system is incapable, but because the tuning curve has historically been too annoying. Having an assistant that can read docs, cross-reference configs, propose automation and execute under supervision changes that.
 
-## If you prefer scripts, they are there
+## If you want to reproduce this
 
-If you're the kind of person who prefers traditional automation with no agent involved, fine. The repo was published exactly for that. The idea is that anyone should be able to clone it, adjust the environment file, and run the process:
+The repo was published for exactly that. You have two routes. Via Ansible (recommended):
+
+```bash
+git clone https://github.com/akitaonrails/distrobox-gaming.git
+cd distrobox-gaming/ansible
+# edit group_vars/all/main.yml with your paths, or create host_vars/localhost.yml
+ansible-playbook site.yml
+```
+
+Or via shell scripts, if you'd rather not install Ansible:
 
 ```bash
 git clone https://github.com/akitaonrails/distrobox-gaming.git

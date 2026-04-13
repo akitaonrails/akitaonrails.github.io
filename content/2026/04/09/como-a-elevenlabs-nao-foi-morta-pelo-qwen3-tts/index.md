@@ -215,16 +215,21 @@ A solução foi reescrever a cue dizendo o que o comando faz, em vez de mostrar 
 
 A legenda em inglês no vídeo continua mostrando o comando inteiro na tela, então quem lê a legenda vê o que precisa digitar. O áudio dublado descreve a intenção em linguagem falada, que é o que o TTS entrega sem engasgar. A instrução pro ouvinte fica intacta, e o caractere-por-segundo volta pros 16 esperados, então o áudio gerado cabe na janela original sem precisar esticar nem comprimir nada no pós.
 
-Saí caçando cue assim em todos os episódios do batch. Varri do ep091 ao ep146 procurando cues com densidade alta de caractere "duro" (dígitos, colchetes, operadores, URLs longas, binário, hex) e acabei reescrevendo 17 cues em 7 episódios:
+Saí caçando cue assim em todos os episódios do batch. Varri do ep052 ao ep146 procurando cues com densidade alta de caractere "duro" (dígitos, colchetes, operadores, URLs longas, binário, hex) e acabei reescrevendo umas 30 cues em 13 episódios:
 
+- ep052 Ubuntu pra devs: URLs do GitHub e hash GPG de 40 caracteres
 - ep091 Hello World em C: exemplos binários
 - ep095 Memória 640kB: wrap de endereço, segment-offset
+- ep106 CodeMiner: endereço de e-mail soletrado
 - ep113 Compressão: strings de binário puro, 75% de caractere duro
 - ep115 SQL Server: lista longa de números ordenados
+- ep120 Internet: endereços IP com pontos
 - ep121 Sockets: dois blocos de código JavaScript
 - ep122 Proxies: headers User-Agent do Chrome
 - ep123 Rede segura: one-liners shell, flags do Docker
 - ep126 Gentoo: demo de `chroot` em C
+- ep136 Containers: URL de release do GitHub
+- ep144 Criptografia: endereço de signing key
 
 O padrão foi sempre o mesmo: mantém a legenda exibindo o código, a URL ou o hash na íntegra, e reescreve o texto pro narrador descrever o que aquilo faz. Eu podia ter automatizado a reescrita, deixando um LLM ler a cue e propor uma substituição no voo, só que achei mais seguro revisar tudo manualmente. É exatamente o tipo de coisa onde o modelo resolve "melhorar" um comando pra deixá-lo mais limpo e sai com shell errado. A varredura manual levou umas duas horas. A automática teria custado o mesmo tempo em revisão, com o bônus da ansiedade de ter deixado passar algum comando mutilado.
 
@@ -293,7 +298,7 @@ A documentação oficial da ElevenLabs recomenda manter cada chamada abaixo de 8
 ```python
 DEFAULT_VOICE_SETTINGS = {
     "stability": 0.9,          # modo Robust
-    "similarity_boost": 0.85,
+    "similarity_boost": 0.95,
     "style": 0.0,
     "use_speaker_boost": True,
 }

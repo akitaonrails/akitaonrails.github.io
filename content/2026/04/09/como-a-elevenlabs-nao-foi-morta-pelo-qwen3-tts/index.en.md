@@ -216,16 +216,21 @@ The solution was to rewrite the cue so it describes what the command does instea
 
 The on-screen English caption still shows the full command, so anyone reading the caption sees exactly what they need to type. The dubbed audio describes the intent in spoken language, which is what the TTS can deliver without choking. The instruction to the viewer stays intact, the characters-per-second ratio goes back to the expected 16, and the generated audio fits the original window without needing any stretch or compression in post.
 
-I went hunting for cues like this across the whole batch. I scanned from ep091 through ep146 looking for cues with a high density of "hard" characters (digits, brackets, operators, long URLs, binary, hex) and ended up rewriting 17 cues across 7 episodes:
+I went hunting for cues like this across the whole batch. I scanned from ep052 through ep146 looking for cues with a high density of "hard" characters (digits, brackets, operators, long URLs, binary, hex) and ended up rewriting around 30 cues across 13 episodes:
 
+- ep052 Ubuntu for devs: GitHub URLs and a 40-character GPG hash
 - ep091 Hello World in C: binary examples
 - ep095 640kB memory: address wrap, segment-offset
+- ep106 CodeMiner: spelled-out email address
 - ep113 Compression: pure binary strings, 75% hard characters
 - ep115 SQL Server: long sorted number list
+- ep120 Internet: dotted IP addresses
 - ep121 Sockets: two JavaScript code blocks
 - ep122 Proxies: Chrome User-Agent headers
 - ep123 Secure networking: shell one-liners, Docker flags
 - ep126 Gentoo: C `chroot` demo
+- ep136 Containers: GitHub release URL
+- ep144 Cryptography: signing key address
 
 The pattern was always the same: keep the caption showing the code, URL, or hash verbatim, and rewrite the spoken text so the narrator describes what it does. I could have automated the rewrite by letting an LLM read each cue and propose a substitution on the fly, but it felt safer to review them all by hand. It's exactly the kind of thing where the model decides to "improve" a command to make it cleaner and ships with broken shell. The manual sweep took about two hours. The automated version would have cost the same time in review, with the bonus anxiety of having shipped a mangled command by accident.
 
@@ -294,7 +299,7 @@ The official ElevenLabs docs recommend keeping each call under 800 characters to
 ```python
 DEFAULT_VOICE_SETTINGS = {
     "stability": 0.9,          # Robust mode
-    "similarity_boost": 0.85,
+    "similarity_boost": 0.95,
     "style": 0.0,
     "use_speaker_boost": True,
 }
