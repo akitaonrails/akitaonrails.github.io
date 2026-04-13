@@ -204,6 +204,8 @@ Nem tudo é questão de alinhamento de janela. Tem um tipo de cue que quebra o p
 
 O problema é o seguinte. O v3 lê a uns 16 caracteres por segundo quando você entrega texto normal de conversa. Mas quando você entrega uma cue recheada de URL literal, hash hexadecimal, string binária, uma lista de números ordenados ou um bloco de código shell, o modelo entra em modo "soletrar letra por letra" e despenca pra uns 9 caracteres por segundo. Uma cue de 500 caracteres que devia virar 30 segundos de áudio vira 55. A checagem de sanidade derruba (porque passou de 1.8×), o retry automático tenta de novo com os mesmos 500 caracteres, os cinco retries falham seguidos, e o chunk fica preso.
 
+E isso não aconteceu por acaso. Eu escrevia desse jeito porque sabia que esses mesmos roteiros depois virariam post no blog, então fazia sentido deixar a URL crua, o comando completo, o hash inteiro, o detalhe técnico todo mastigado pro leitor. Em português isso funcionava bem porque era exatamente o meu fluxo original: gravar o vídeo e depois publicar o texto correspondente no blog. O que eu nunca tinha preparado era a etapa seguinte, de transformar esse mesmo material em dublagem automatizada pra inglês. Eu só fui perceber esse conflito quando a pipeline começou a falhar de verdade.
+
 Peguei isso primeiro no ep052, o guia de Ubuntu pra devs iniciantes, onde duas cues traziam URLs do `github.com`, URLs `hkp://keyserver.ubuntu.com` e um hash GPG de 40 caracteres. Tentar resolver no pós-processo seria perda de tempo. O teto de 1.20× do `atempo` nunca vai comprimir 55 segundos em 30, e mesmo se conseguisse ia sair num chipmunk ilegível. A saída é atacar antes, no texto.
 
 A solução foi reescrever a cue dizendo o que o comando faz, em vez de mostrar o comando literal:
