@@ -6,6 +6,26 @@
   rel="stylesheet"
 />
 <style>
+  /* Paper palette — warm light + warm charcoal dark.
+     Overrides Hextra's Tailwind color variables so navbar, sidebar, footer,
+     TOC, dropdowns and search all follow the theme automatically. */
+  :root {
+    --hx-color-white: #faf7f0;
+    --hx-color-gray-100: #f1ece0;
+    --hx-color-gray-200: #e8e2d2;
+  }
+  .dark {
+    --hx-color-dark: #1a1714;
+    --hx-color-neutral-800: #2a2520;
+    --hx-color-neutral-900: #23201c;
+  }
+  body {
+    color: #2a2622;
+  }
+  .dark body {
+    color: #e8e2d6;
+  }
+
   .embed-container {
     position: relative;
     width: 100%;
@@ -62,12 +82,12 @@
   .hextra-code-block pre:not(.lntable pre) {
     font-size: 0.9em;
     line-height: 1.65;
-    background: #f8f7f5;
-    border: 1px solid rgba(0, 0, 0, 0.06);
+    background: #f1ece0;
+    border: 1px solid rgba(0, 0, 0, 0.08);
   }
 
   .hextra-code-block pre:not(.lntable pre):where(.dark, .dark *) {
-    background: #1c1c1c;
+    background: #23201c;
     border-color: rgba(255, 255, 255, 0.08);
   }
 
