@@ -91,38 +91,11 @@ O ponto não é o texto em si. O ponto é o método. Eu não precisei lembrar a 
 
 Depois que a configuração parou de ser experimento e virou setup conhecido, converti tudo num projeto público: [akitaonrails/distrobox-gaming](https://github.com/akitaonrails/distrobox-gaming).
 
-A primeira versão era um punhado de shell scripts numerados em POSIX `sh`, orquestrados por um dispatcher chamado `bin/dg`. Cada fase tinha seu script: `00-check-host.sh` validava paths e permissões, `01-create-box.sh` criava o distrobox, `02-bootstrap-packages.sh` instalava pacotes, e assim por diante até o `08-verify.sh` que rodava regressão. A ideia era boa: um processo determinístico que eu pudesse rodar do zero numa máquina nova. Funcionou.
+Começou em prompts soltos, um problema de cada vez. Depois virou shell script numerado em POSIX `sh`, orquestrado por um dispatcher `bin/dg`. Funcionou, mas shell imperativo tem teto baixo: idempotência vira labirinto de `if/then/fi`, não dá pra rodar só a parte de configs sem reinstalar a box inteira, e backup/restore do container pra testar rebuilds destrutivos era feito na mão com `podman commit`. Então migrei tudo pra [Ansible](https://docs.ansible.com/), com roles mapeados 1:1 pros scripts antigos e playbooks dedicados pra cada fluxo (`site.yml`, `reset-configs.yml`, `backup.yml`, `restore.yml`, `refresh-shadps4.yml`).
 
-Só que shell script imperativo tem limites que aparecem rápido quando você tenta evoluir a automação. O maior deles é idempotência. Em shell, pra saber se uma ação já foi executada, você precisa checar manualmente: "esse diretório já existe?", "esse INI já tem essa chave?", "esse pacote já foi instalado?". A lógica fica cheia de `if/then/fi` que basicamente reimplementa, mal, o que ferramentas de gerenciamento de configuração já fazem há décadas. Outro problema: quando eu queria rodar só a parte de configs sem reinstalar a box inteira, o fluxo sequencial do `bin/dg` não ajudava. E backup/restore do container pra testar rebuilds destrutivos era algo que eu fazia na mão com `podman commit`.
+O teste real veio depois. Destruí o distrobox inteiro e recriei do zero a partir do repo, dessa vez em Docker em vez de Podman. O rebuild expôs uma série de assumptions que eu nunca ia pegar só lendo o código — mount duplicado rejeitado pelo Docker, `printf` comendo o `%` do `%wheel` no sudoers, assets do shadPS4 que upstream trocou de AppImage pra zip, symlinks do xemu que precisavam de `force:true`. Todas as correções ficaram no commit [`18215d4`](https://github.com/akitaonrails/distrobox-gaming/commit/18215d4004dad4f2d1b3260b599ac310e3cfdcdb). Sem esse rebuild, metade desses problemas teria passado despercebida até a próxima máquina.
 
-Então converti o projeto pra [Ansible](https://docs.ansible.com/). A estrutura ficou assim: 10 roles mapeados 1:1 pros scripts originais (`check_host`, `create_box`, `bootstrap_packages`, `link_storage`, `seed_configs`, `desktop_apps`, `configure_esde`, `verify`, `refresh_shadps4`, `install_xenia`) e 6 playbooks com propósitos claros:
-
-```bash
-cd ansible
-ansible-playbook site.yml               # setup completo do zero
-ansible-playbook reset-configs.yml       # reseta configs sem reinstalar a box
-ansible-playbook backup.yml              # snapshot do container + tarball do home
-ansible-playbook restore.yml             # restaura do backup
-ansible-playbook refresh-shadps4.yml     # atualiza builds do shadPS4
-ansible-playbook install-xenia.yml       # instala/atualiza Xenia Manager
-```
-
-Tags permitem rodar subconjuntos: `--tags esde` aplica só o ES-DE, `--tags configs` só as configs de emulador, `--tags desktop` só os launchers. Essa granularidade simplesmente não existia no fluxo de shell scripts.
-
-As variáveis que antes viviam espalhadas em `lib/paths.sh` como 70+ `DG_*` exports agora estão organizadas em `group_vars/all/`: `main.yml` (paths, identidade da box, UID/GID), `packages.yml` (listas de pacman e AUR), `emulators.yml` (configs por emulador), `shadps4.yml`, `xenia.yml`, `esde.yml`. Cada concern no seu arquivo. Se você quiser sobrescrever alguma coisa na sua máquina, cria um `host_vars/localhost.yml` e pronto — sem editar playbook nenhum.
-
-A parte que mais ganhou foi a configuração do ES-DE. Antes era um template sed com placeholders `@DG_*@` que eu substituía com a função `render_template` do `common.sh`. Agora os sistemas do ES-DE são dados em YAML — nome, extensões, comando, path de ROMs — e um template Jinja2 renderiza o XML final via loop. Adicionar um sistema novo é adicionar um bloco de YAML, não editar um XML gigante à mão.
-
-Os shell scripts continuam no repo e funcionam. Se você preferir não instalar Ansible, `./bin/dg all` ainda faz tudo. Mas o caminho preferido daqui pra frente é o Ansible.
-
-A documentação também continua lá:
-
-- [`docs/distrobox-gaming-prompts.md`](https://github.com/akitaonrails/distrobox-gaming/blob/master/docs/distrobox-gaming-prompts.md) — o histórico dos prompts que geraram tudo
-- [`docs/rebuild-runbook.md`](https://github.com/akitaonrails/distrobox-gaming/blob/master/docs/rebuild-runbook.md) — passo a passo de rebuild
-- [`docs/controller-hotkeys.md`](https://github.com/akitaonrails/distrobox-gaming/blob/master/docs/controller-hotkeys.md) — mapeamento de controles
-- [`docs/flycast-resolution.md`](https://github.com/akitaonrails/distrobox-gaming/blob/master/docs/flycast-resolution.md) — armadilha do Flycast
-- [`docs/driveclub-shadps4.md`](https://github.com/akitaonrails/distrobox-gaming/blob/master/docs/driveclub-shadps4.md) — config do Driveclub
-- [`docs/distrobox-gaming-packages.md`](https://github.com/akitaonrails/distrobox-gaming/blob/master/docs/distrobox-gaming-packages.md) — decisões de pacotes, por que AUR e não Flatpak
+Os shell scripts continuam no repo como alternativa. O caminho preferido daqui pra frente é o Ansible, com passo a passo em [`docs/rebuild-runbook.md`](https://github.com/akitaonrails/distrobox-gaming/blob/master/docs/rebuild-runbook.md). As decisões de pacote (por que AUR em vez de Flatpak, por exemplo) estão em [`docs/distrobox-gaming-packages.md`](https://github.com/akitaonrails/distrobox-gaming/blob/master/docs/distrobox-gaming-packages.md).
 
 ### Por que não Nix?
 
@@ -147,6 +120,8 @@ python3 /mnt/data/distrobox/gaming/scripts/extract_ps3_dlc.py \
 ```
 
 Resultado: em vez de clicar em dezenas de janelas, o processo virou batch. Mais importante: repetível.
+
+Mais recente: um verificador de updates. O `check_ps3_updates.py` percorre os jogos instalados em `dev_hdd0/game`, parseia o `PARAM.SFO` pra pegar a versão atual de cada título, consulta o servidor de updates da PSN (`a0.ww.np.dl.playstation.net`) e compara com o cache local de patches. `--list` mostra o diff; `--download` baixa o que falta. O primeiro scan na minha biblioteca achou 51 de 72 jogos com update disponível, 69 patches faltando localmente, uns 24 GB no total. Só o GT6 sozinho tinha 16 patches faltando, da 1.07 até 1.22. Os patches chegam como pacotes PSN tipo 0x0001 sem criptografia, então o próprio `extract_ps3_dlc.py` consegue instalar depois de jogar no `ps3-DLC`. Acompanhar versão de DLC de PS3 manualmente, jogo por jogo no RPCS3, é inviável — vira lista de tarefas eterna e você só descobre que tinha patch 1.22 quando o jogo crasha.
 
 No caso do Switch, a história era parecida. Antigamente eu abriria `Ryujinx`, hoje `Eden`, e iria jogo por jogo instalando update, DLC, cheat, arrumando pasta de `keys`, conferindo firmware, e assim por diante. Agora isso está descrito em prompts e convertido em passos automatizados. `prod.keys` e `title.keys` vão pro lugar certo, os cheats em formato Atmosphere são ligados em `~/.local/share/eden/load/<TITLE_ID>/cheats/`, e o `ES-DE` já sobe chamando o wrapper certo, inclusive com o detalhe de desarmar `QT_STYLE_OVERRIDE` porque o `eden-bin` conflita com `Kvantum`.
 
@@ -184,22 +159,15 @@ Esse é o ponto que mais me interessa no uso de coding agents em Linux. Eles red
 
 ## Se você quiser reproduzir
 
-O repo foi publicado pra isso. Você tem duas rotas. Via Ansible (recomendado):
+O repo foi publicado pra isso:
 
 ```bash
 git clone https://github.com/akitaonrails/distrobox-gaming.git
 cd distrobox-gaming/ansible
-# edite group_vars/all/main.yml com seus paths, ou crie host_vars/localhost.yml
+ansible-galaxy collection install -r collections/requirements.yml
+cp host_vars/localhost.yml.example host_vars/localhost.yml
+$EDITOR host_vars/localhost.yml  # ajuste paths da sua máquina
 ansible-playbook site.yml
-```
-
-Ou via shell scripts, se preferir não instalar Ansible:
-
-```bash
-git clone https://github.com/akitaonrails/distrobox-gaming.git
-cd distrobox-gaming
-cp config/distrobox-gaming.env.example config/distrobox-gaming.env
-./bin/dg all
 ```
 
 Leia o [`README.md`](https://github.com/akitaonrails/distrobox-gaming/blob/master/README.md) e o [`docs/rebuild-runbook.md`](https://github.com/akitaonrails/distrobox-gaming/blob/master/docs/rebuild-runbook.md) antes. Eu não distribuo ROM, BIOS, firmware nem chaves. O repo só detecta, linka e configura o que você já tem na sua própria máquina.
