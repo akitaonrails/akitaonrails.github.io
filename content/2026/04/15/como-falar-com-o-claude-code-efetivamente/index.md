@@ -58,6 +58,18 @@ E essa quarta parte é traiçoeira. A maioria dos clientes com quem trabalhei no
 
 Quando eu entrego esses quatro blocos pro modelo, ele quase nunca falha. E quando ele realmente não consegue, porque a tarefa é impossível dada as minhas restrições ou porque falta informação que eu esqueci de passar, ele não tenta adivinhar. Ele me responde: "dadas as suas restrições, não consigo seguir porque X ou Y". Aí eu ajusto, ou eu relaxo a restrição, ou eu percebo que eu mesmo não sabia o que queria. Tudo funciona.
 
+## Depois que o contexto está firme, pergunte em vez de mandar
+
+Tem uma virada que eu sempre faço depois dos primeiros prompts bem detalhados. Nos turnos iniciais eu despejo muito: objetivo, restrição, método, validação, todo o contexto que o modelo precisa pra entender o terreno. É muito detalhe, é trabalho meu, e eu já expliquei por que não tem como ser diferente.
+
+Mas uma vez que esse chão ficou firme, eu paro de prescrever solução e começo a pedir sugestão. Em vez de dizer "implementa dessa e dessa forma, usando essa biblioteca, com esse padrão", eu mudo pra "dado tudo que a gente já conversou, qual seria a melhor abordagem aqui? Pesquisa online se precisar, compara as opções, e me apresenta a solução que você acharia mais adequada pro objetivo".
+
+Essa é a parte que mais gente não faz, e é justamente aí que o LLM ganha autonomia útil. Ele tem muito mais vocabulário do que eu em uma porção de assuntos. Ele leu a internet inteira; eu leio o que dá tempo. Se eu prescrevo linha a linha, eu estou jogando essa vantagem fora. Se eu estruturo o contexto e pergunto, ele volta com opção que eu não tinha considerado, comparando trade-off, às vezes melhor do que minha ideia original, e aí eu escolho.
+
+A chave é simples: **perguntar bem exige ter contextualizado bem antes**. Pergunta seca, sem chão, volta com resposta genérica ou com a primeira ideia que colou. Pergunta apoiada em cima de contexto já estabelecido volta com proposta de verdade, com comparação entre caminhos, com referência. O modelo está pronto pra esse tipo de contribuição, só que só entrega isso depois que você gastou o tempo de montar o palco.
+
+E olha: esse método não foi inventado pra LLM. É o mesmo jeito que eu trato qualquer desenvolvedor humano, sênior ou não. Dou o contexto, dou o objetivo, explico o que eu considero importante, e aí pergunto "qual seria o melhor caminho?" em vez de sair ditando solução. A única diferença é que o LLM devolve em segundos o que um humano levaria dias pra te trazer. O método de conversar é o mesmo.
+
 ## Não é spec de 10 páginas
 
 E aqui vem uma parte importante: isso que eu descrevo não é um formalismo. Não é uma spec longa, não é um documento em Confluence, não é um template. É só como eu converso com qualquer pessoa que precisa entregar algo pra mim. Aprendi a fazer isso tocando projeto, gerenciando terceirizado, integrando time que não era meu, e levando porrada quando minha comunicação foi ruim. Com o tempo vira segunda natureza.

@@ -58,6 +58,18 @@ And that fourth part is a killer. Most of the clients I've worked with over the 
 
 When I hand the model all four blocks, it almost never fails. And when it actually can't do the thing, because the task is impossible given my constraints or because there's information I forgot to pass along, it doesn't try to guess. It tells me: "given your constraints, I can't proceed because of X or Y." Then I adjust, or I loosen a constraint, or I realize I didn't actually know what I wanted. It all works.
 
+## Once the context is solid, ask instead of prescribe
+
+There's a shift I make after the first few well-loaded prompts. In the opening turns I pour in a ton: goal, constraints, method, validation, all the context the model needs to understand the terrain. It's a lot of detail, it's my job to front-load it, and I already explained why there's no way around that.
+
+But once that ground is solid, I stop prescribing solutions and start asking for suggestions. Instead of saying "implement it this way, with that library, following this pattern," I switch to "given everything we've already covered, what's the best approach here? Research online if you need to, compare the options, and come back with the solution you'd pick for this goal."
+
+That's the step most people skip, and it's exactly where the LLM earns useful autonomy. It's got way more vocabulary than I do across a pile of topics. It read the whole internet; I read whatever I had time for. If I prescribe line by line, I'm throwing that edge away. If I set the context and then ask, it comes back with options I hadn't considered, with trade-offs laid out, sometimes better than my original idea, and I get to pick.
+
+The trick is simple: **asking well requires having set the context well first**. A dry question with no ground gets back a generic answer, or the first idea that seemed to fit. A question resting on ground you already laid comes back with a real proposal, alternatives compared, references cited. The model is ready for that kind of contribution, it just won't give it to you until you've spent the time setting the stage.
+
+And look: this method wasn't invented for LLMs. It's the same way I'd work with any human developer, senior or not. Give them the context, give them the goal, explain what I care about, then ask "what's the best way to do this?" instead of dictating the solution. The only difference is the LLM gives it back in seconds when a human would take days. The way you run the conversation is the same.
+
 ## It's not a 10-page spec
 
 And here's the important bit: what I'm describing is not a formalism. It's not a long spec, it's not a Confluence doc, it's not a template. It's just how I talk to anyone who has to deliver something to me. I picked it up running projects, managing contractors, integrating teams that weren't mine, and getting knocked around every time my communication was bad. After a while it becomes second nature.
