@@ -14,6 +14,8 @@ tags:
 description: "Toda semana alguém me diz 'cancelei o Claude, não performa tanto quanto o GPT'. Eu estou com 500+ horas no Claude Code e no Codex, 400 mil linhas geradas, e os dois entregam. A diferença não é o modelo. É como a pessoa está conversando com ele."
 ---
 
+![Ilustração editorial comparando GPT-coding e Claude-coding: de um lado um ambiente com geração rápida e repertório amplo, do outro uma arquitetura estruturada com árvore de conceitos e depuração contextual](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/04/15/talk-to-claude/hero-gpt-vs-claude.png)
+
 Toda vez que eu entro numa discussão online sobre LLMs eu escuto alguma variação da mesma ladainha. "O Claude não performou tão bem quanto o GPT pra mim". "O GPT fez um trabalho muito melhor que o Claude, vou cancelar minha assinatura do Claude". "Pra mim o Kimi ou o MiniMax já dão conta, não preciso pagar nada". Anedota atrás de anedota de "funciona pra mim" versus "não funciona pra mim". Isso me soa muito estranho.
 
 Eu já benchmarquei boa parte dos modelos open source e comerciais relevantes no [post sobre testar LLMs](/2026/04/05/testando-llms-open-source-e-comerciais-quem-consegue-bater-o-claude-opus/), então não é que eu esteja falando sem base. E além dos benchmarks, eu estou com mais de 500 horas acumuladas usando Claude Code e Codex em projetos reais. Em ritmo de 16 horas por dia, há dois meses e meio direto, gerando algo na ordem de 400 mil linhas de código efetivas.
@@ -133,3 +135,5 @@ Pra quem não conhece a piada, a história é assim. Uma civilização inteira c
 Essa é a lição mais precisa sobre engenharia que eu já li em ficção. Toda expectativa que se quebra, quebra porque a pergunta estava errada, não porque a resposta foi mal executada. É pra isso que a Codeminer 42 existe, e é exatamente isso que eu pratico no meu dia a dia, com cliente humano ou com LLM. Antes de entregar o que você me pediu, meu trabalho é te fazer descobrir que o que você acha que quer provavelmente está errado, te forçar a repensar as suposições que você trouxe pra conversa, e só depois que a pergunta estiver afinada eu consigo te devolver o melhor resultado possível. Sem essa etapa, tudo que eu te entregar vai ser um 42.
 
 Então da próxima vez que você ler alguém falando que "cancelou o Claude porque ele não entrega", ou "o GPT é muito melhor", ou o inverso, lembra de olhar com carinho pra pergunta que a pessoa estava fazendo. Nove em cada dez vezes, o problema não é o modelo. É a pergunta. E nove em cada dez vezes, a resposta que essa pessoa recebeu foi 42.
+
+![A Resposta pra Vida, o Universo e Tudo Mais, segundo o supercomputador Pensador Profundo do Guia do Mochileiro das Galáxias: 42](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/04/15/talk-to-claude/answer-42.png)

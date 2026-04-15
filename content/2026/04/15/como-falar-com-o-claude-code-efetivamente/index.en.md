@@ -14,6 +14,8 @@ tags:
 description: "Every week somebody tells me 'I canceled my Claude plan, it just doesn't perform as well as GPT for me.' I've got 500+ hours in Claude Code and Codex, 400k lines generated, and both deliver. The difference isn't the model. It's how people are talking to it."
 ---
 
+![Editorial illustration contrasting GPT-coding and Claude-coding: one side showing rapid generation and broad repertoire, the other a structured architecture with a concept tree and context-aware debugging](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/04/15/talk-to-claude/hero-gpt-vs-claude.png)
+
 Every time I get pulled into an online thread about LLMs I hear the same chorus, in slightly different keys. "Claude didn't perform as well as GPT for me." "GPT did a way better job than Claude, I'm canceling my sub." "Honestly, Kimi or MiniMax does the job for me just fine, I'm not paying for anything." Anecdote piled on anecdote, each one a variation of "works on my machine" vs. "doesn't work on my machine." It sounds off to me.
 
 I've already benchmarked most of the relevant open source and commercial models in my [LLM testing post](/en/2026/04/05/testing-llms-open-source-and-commercial-can-anyone-beat-claude-opus/), so I'm not pulling this out of thin air. And beyond the benchmarks, I've got 500+ hours in Claude Code and Codex on real projects. 16 hours a day, two and a half months straight, something in the neighborhood of 400,000 effective lines of code generated.
@@ -133,3 +135,5 @@ If you don't know the bit, here's how it goes. An entire civilization builds a p
 That's the sharpest lesson about engineering I've ever read in fiction. Every expectation that breaks, breaks because the question was wrong, not because the answer was badly executed. That's what Codeminer 42 exists for, and it's exactly what I practice day to day, whether the other side is a human client or an LLM. Before I deliver what you asked for, my job is to make you discover that what you think you want is probably wrong, to force you to rethink the assumptions you walked in with, and only once the question is sharpened do I get to hand you the best possible result. Skip that step and anything I deliver is going to be a 42.
 
 So next time you read somebody saying "I canceled Claude because it doesn't deliver," or "GPT is way better," or the other way around, take a closer look at the question the person was asking. Nine times out of ten, the problem isn't the model. It's the question. And nine times out of ten, the answer that person got back was 42.
+
+![The Answer to Life, the Universe, and Everything, as computed by the Deep Thought supercomputer from The Hitchhiker's Guide to the Galaxy: 42](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/04/15/talk-to-claude/answer-42.png)
