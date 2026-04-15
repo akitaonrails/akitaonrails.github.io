@@ -6,6 +6,7 @@ title: AkitaOnRails Blog
 
 ## 2026 - Abril
 
+- [Como Falar com o Claude Code Efetivamente](/2026/04/15/como-falar-com-o-claude-code-efetivamente/)
 - [Seedance 2.0 finalmente foi lançado: Primeiras Impressões](/2026/04/15/seedance-2-0-finalmente-foi-lancado-primeiras-impressoes/)
 - [Distrobox de Emulação com Claude Code](/2026/04/11/distrobox-de-emulacao-com-claude-code/)
 - [VS Code é o novo Cartão Perfurado](/2026/04/11/vs-code-e-o-novo-cartao-perfurado/)
