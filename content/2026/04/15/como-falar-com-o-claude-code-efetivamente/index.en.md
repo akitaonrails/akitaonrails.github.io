@@ -110,6 +110,20 @@ That's exactly why I say, with full conviction, that AI agents aren't going to r
 
 The good professional, meanwhile, got more productive. Uses the LLM as a pair programming partner at 2 a.m., no complaints, no union, no ego clash. Ships in a week what used to take a month. And is still the same good professional they were, because the skill that mattered, knowing what to ask for, what not to accept, and how to measure, is still 100% theirs. The tool just executes.
 
+## Stark + Jarvis = Iron Man
+
+Let me drop a metaphor that I think wraps the whole thing up. Think about Tony Stark, in the MCU. He's got Jarvis, probably the most advanced fictional AI pop culture has produced in the last two decades. Voice control, context awareness, planning, parallel execution, even a sharp personality. Technologically, Jarvis would easily be the best AI agent you could imagine today.
+
+And even so, Jarvis on his own doesn't build an Iron Man suit. Doesn't build the Arc reactor. Doesn't build any of the gear that makes Stark be Stark. All that advanced tech, with no Stark to guide it, just sits there. It's Stark's genius, his vision, his stubbornness, his engineer's intuition about where to push next, that makes any of it real. Jarvis executes. Stark thinks.
+
+![Tony Stark iterating on a 3D model of the Mark III at one of his workbenches, surrounded by monitors with design variants: this is literally how real engineering work happens, AI or no AI](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/04/15/talk-to-claude/stark-iterating.jpg)
+
+There's another detail in that story almost nobody remembers: not even Stark, with all his genius and with Jarvis riding shotgun, nails the perfect suit on the first try. He spends movie after movie iterating. The Mark I was literally bolted together in a cave out of scrap. The Mark II could fly, but iced over at altitude. The Mark III fixed the ice but weighed too much. And on it goes, each iteration fixing a specific flaw in the last, all the way to the Mark LXXXV in Endgame, his 85th suit. **Eighty-five**. The whole MCU Iron Man arc is basically a ten-year campaign of iterative development on one extremely complicated product.
+
+That's exactly the mental model I think we should be using when we work with AI today. You don't fire off a prompt and wait for the definitive solution to pop out. You, sitting in the Stark chair, use the AI (your own Jarvis) as an accelerator on each lap of the cycle: propose, test, see what broke, fix it, propose again. The AI speeds up every lap, it doesn't erase the laps. If someone swapped iteration for "one magic final answer," they never understood that engineering was never like that, human or no human.
+
+Put Stark and Jarvis together and now you've got Iron Man. Take either one away and the half that actually matters is missing.
+
 ## Claude Code vs. Codex: my pick today (April 2026)
 
 A quick aside so this doesn't go unsaid: these days I'm alternating between Claude Code and Codex, but I've been leaning into Claude Code. Let me spell out why, because it's not about the LLM itself.
@@ -136,4 +150,4 @@ That's the sharpest lesson about engineering I've ever read in fiction. Every ex
 
 So next time you read somebody saying "I canceled Claude because it doesn't deliver," or "GPT is way better," or the other way around, take a closer look at the question the person was asking. Nine times out of ten, the problem isn't the model. It's the question. And nine times out of ten, the answer that person got back was 42.
 
-![The Answer to Life, the Universe, and Everything, as computed by the Deep Thought supercomputer from The Hitchhiker's Guide to the Galaxy: 42](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/04/15/talk-to-claude/answer-42.png)
+![Deep Thought from The Hitchhiker's Guide to the Galaxy revealing the Answer to Life, the Universe, and Everything to a crowd that waited millions of years: 42](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/04/15/talk-to-claude/deep-thought-42.webp)

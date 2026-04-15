@@ -110,6 +110,20 @@ A frustração de quem chega aqui cansado do Claude ou do Codex é quase sempre 
 
 O bom profissional, ao contrário, virou mais produtivo. Usa o LLM como assistente de pair programming a 2h da manhã, sem reclamar, sem sindicato, sem disputa de ego. Entrega em uma semana o que antes levava um mês. E continua sendo o bom profissional que era, porque a habilidade que importava, ou seja, saber o que pedir, o que não aceitar e como medir, continua sendo 100% dele. A ferramenta só executa.
 
+## Stark + Jarvis = Homem de Ferro
+
+Deixa eu trazer uma metáfora que eu acho que resume isso tudo. Pensa no Tony Stark, do MCU. Ele tem o Jarvis, provavelmente a IA fictícia mais avançada que a cultura pop produziu nas últimas duas décadas. Controle por voz, entendimento de contexto, planejamento, execução em paralelo, até uma personalidade afiada. Tecnologicamente, Jarvis seria facilmente o melhor agente de IA que você conseguiria imaginar hoje.
+
+E mesmo assim, Jarvis sozinho não constrói uma armadura do Homem de Ferro. Não constrói o reator Arc. Não constrói nada dos equipamentos que fazem o Stark ser o Stark. Toda essa tecnologia avançada, sem um Stark pra conduzir, fica parada. É o gênio do Stark, a visão dele, a teimosia dele, a intuição de engenheiro que aponta o caminho, que faz tudo aquilo virar realidade. Jarvis executa. Stark pensa.
+
+![Tony Stark iterando em cima do modelo 3D do Mark III numa das suas bancadas, cercado de monitores com variações do design: é literalmente assim que trabalho de engenharia de verdade acontece, com IA ou sem](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/04/15/talk-to-claude/stark-iterating.jpg)
+
+Tem outro detalhe dessa história que pouca gente lembra: nem mesmo o Stark, com todo o gênio dele e com o Jarvis do lado, acerta a armadura perfeita na primeira tentativa. Ele passa filme atrás de filme melhorando. A Mark I foi literalmente parafusada numa caverna com sucata. A Mark II já voava, mas congelava em altitude. A Mark III resolveu o gelo, mas pesava demais. E assim vai, cada iteração consertando um defeito específico da anterior, até chegar na Mark LXXXV em Endgame, a 85ª armadura. **Oitenta e cinco**. O arco inteiro do Homem de Ferro no MCU é, no fundo, uma campanha de dez anos de desenvolvimento iterativo em cima de um produto complexo.
+
+Esse é exatamente o modelo mental que eu acho que a gente deveria usar trabalhando com IA hoje. Você não dispara um prompt e espera a solução definitiva sair pronta. Você, no papel do Stark, usa a IA (o seu Jarvis) como acelerador de cada volta do ciclo: propõe, testa, vê o que quebrou, conserta, propõe de novo. A IA acelera cada volta, ela não elimina as voltas. Se alguém trocou iteração por "uma resposta mágica final", é porque nunca entendeu que engenharia nunca foi assim, com humano ou sem.
+
+Junta Stark com Jarvis e aí sim você tem Homem de Ferro. Sem um dos dois, falta a metade que importa.
+
 ## Claude Code vs Codex: minha preferência hoje (abril de 2026)
 
 Só pra não passar batido: hoje em dia eu uso Claude Code e Codex intercalando, mas tenho preferido o Claude Code. Deixa eu explicar o motivo, porque não tem a ver com o LLM em si.
@@ -136,4 +150,4 @@ Essa é a lição mais precisa sobre engenharia que eu já li em ficção. Toda 
 
 Então da próxima vez que você ler alguém falando que "cancelou o Claude porque ele não entrega", ou "o GPT é muito melhor", ou o inverso, lembra de olhar com carinho pra pergunta que a pessoa estava fazendo. Nove em cada dez vezes, o problema não é o modelo. É a pergunta. E nove em cada dez vezes, a resposta que essa pessoa recebeu foi 42.
 
-![A Resposta pra Vida, o Universo e Tudo Mais, segundo o supercomputador Pensador Profundo do Guia do Mochileiro das Galáxias: 42](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/04/15/talk-to-claude/answer-42.png)
+![O Pensador Profundo do Guia do Mochileiro das Galáxias revelando a Resposta pra Vida, o Universo e Tudo Mais pra multidão que esperou milhões de anos: 42](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/04/15/talk-to-claude/deep-thought-42.webp)
