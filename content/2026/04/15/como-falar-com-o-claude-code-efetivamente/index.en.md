@@ -1,5 +1,5 @@
 ---
-title: "How to Talk to Claude Code Effectively"
+title: "Why LLMs Aren't Giving You the Result You Expect | Why I Prefer Claude Code Today"
 slug: "how-to-talk-to-claude-code-effectively"
 date: '2026-04-15T13:00:00-03:00'
 draft: false
@@ -95,6 +95,22 @@ The frustration of people showing up here burned out on Claude or Codex is almos
 That's exactly why I say, with full conviction, that AI agents aren't going to replace good professionals. They're going to replace people who can't frame their own question properly, who don't know what they want, who don't know how to validate a result, who need somebody to think for them. And look, those people were always replaceable, it's just that now the replacement is cheaper. The market is doing the math.
 
 The good professional, meanwhile, got more productive. Uses the LLM as a pair programming partner at 2 a.m., no complaints, no union, no ego clash. Ships in a week what used to take a month. And is still the same good professional they were, because the skill that mattered, knowing what to ask for, what not to accept, and how to measure, is still 100% theirs. The tool just executes.
+
+## Claude Code vs. Codex: my pick today (April 2026)
+
+A quick aside so this doesn't go unsaid: these days I'm alternating between Claude Code and Codex, but I've been leaning into Claude Code. Let me spell out why, because it's not about the LLM itself.
+
+Claude Opus and GPT-5.4 xHigh, to me, are basically tied as models. On the hard tasks, when one of them can't pull it off, I swap over to the other and the other usually does. Head to head, both are strong. What separates them today is the harness, not the model.
+
+And the Claude Code harness, right now, is flat-out better. Two concrete reasons: planning and parallel execution.
+
+**Planning.** Claude Code breaks a long task into subtasks, keeps a visible to-do list I can actually watch on screen, tries to run things in parallel when it can, and doesn't drop items. When it tells me "done," I know the full list got executed, because it's right there for me to check. Sounds like a small detail, but it completely changes how much I can trust what it's handing me without having to chase every single item with "hey, did you actually do that other one?".
+
+**Parallel execution.** This one is clean-cut. If Claude Code is mid-task and I hit `ESC` to throw in something else, it typically **keeps the first task running and kicks off the second in parallel**, unless the new request actually requires cancelling the first. Codex, same situation, stops the first to deal with the second, and doesn't always know how to resume the first from where it left off without me prodding it manually. In practice that means Claude Code lets me actually flow, opening new fronts while old ones keep running. With Codex I have to go serial, be patient, and be more deliberate about every request, because interrupting is expensive.
+
+None of which means Codex is bad. It's good. Plenty of times when Claude Code gets jammed on a hairy task I pop over to Codex and it unjams it immediately. But then my way of working shifts: smaller requests, more focused, one at a time, wait for it, move on. Works fine, it's just not the flow I prefer.
+
+Codex is probably going to catch up on the harness side over the next few months, and the conversation will shift. But today, April 15th, 2026, if I have to pick one as my daily driver, it's Claude Code, and the reason is the harness, not because OpenAI's LLM is somehow inferior. Writing this down so that six months from now I can reread it and laugh.
 
 ## Which is why my company is called Codeminer 42
 
