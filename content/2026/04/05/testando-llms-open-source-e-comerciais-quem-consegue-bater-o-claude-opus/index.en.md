@@ -13,7 +13,11 @@ tags:
   - self-hosting
 ---
 
-**TL;DR:** If you don't want to read the whole analysis: the only models that produced code that actually works in our benchmark were Claude Sonnet 4.6, Claude Opus 4.6, GLM 5 and GLM 5.1 (from Z.AI, ~89% cheaper than Opus), and GPT 5.4 (which failed the benchmark due to runner incompatibility but which I tested extensively in Codex and works as well as Opus). Everything else — Kimi, DeepSeek, MiniMax, Qwen, Gemini, Grok 4.20 — invented APIs that don't exist or ignored the gem we asked for.
+**Update April 16, 2026:** Added Claude Opus 4.7, Qwen 3.6 and GPT 5.4 via Codex CLI (xHigh reasoning). Opus 4.7 is an incremental improvement over 4.6 (28 tests vs 16, same correct API) and becomes the new baseline. GPT 5.4, previously Tier 1 based on my personal vouch, now has objective data and dropped to Tier 2 — burned 7.6M tokens (~$16/run, 15x more expensive than Opus) and got the `add_message` calling convention wrong on multi-turn. Qwen 3.6 Plus remains Tier 3 with the same API hallucination as 3.5. The conclusion stands: if you want safety, pick Opus.
+
+---
+
+**TL;DR:** If you don't want to read the whole analysis: the only models that produced code that actually works in our benchmark were Claude Opus 4.7, Claude Opus 4.6, GLM 5 and GLM 5.1 (from Z.AI, ~89% cheaper than Opus). Sonnet works in this benchmark too, but in practice it falls short on projects requiring deeper reasoning — details in the conclusion. GPT 5.4, previously Tier 1 based on my personal vouch, now has objective data via Codex CLI: it burned 7.6M tokens ($16/run) and got the `add_message` calling convention wrong — works on the first message, breaks on multi-turn. Dropped to Tier 2. Everything else — Kimi, DeepSeek, MiniMax, Qwen, Gemini, Grok 4.20 — invented APIs that don't exist or ignored the gem we asked for.
 
 There's a new wrinkle in this update: I redid the local part of the benchmark on an RTX 5090 (instead of the AMD Strix Halo) and added a fresh batch of Qwen models, including a Qwen 3.5 27B distilled directly from Claude 4.6 Opus. That reopened the conversation on running open source models locally. The 5090's memory bandwidth flips the game from "unworkable" to "workable with 1-2 follow-up prompts." The bottleneck for open source models has moved to a lack of factual knowledge about specific libraries, which I unpack in detail in the new section on the Qwen family. The Claude distillation gamble, by the way, gave a pretty frustrating result that I haven't seen documented in these terms before.
 
@@ -163,7 +167,13 @@ GPT 5.4 is heavily trained for OpenAI's native function calling format — `tool
 
 The evidence: every other cloud model (Claude Opus, Claude Sonnet, Kimi K2.5, DeepSeek V3.2, MiniMax M2.7, GLM 5, Qwen 3.6 Plus, Step 3.5 Flash) ended on `finish_reason: stop`. Only GPT ends on `finish_reason: tool-calls`.
 
-A fair comparison for GPT 5.4 would require running it in its native environment — Codex or ChatGPT Pro ($200/month). On opencode through OpenRouter, this isn't a fair test of GPT's coding ability. That said, I used Codex extensively during my vibe coding marathon and I can vouch that GPT 5.4 is as good as Opus for real projects. In some ways I actually prefer Codex: it tends to think more "outside the box" and arrives at more creative solutions than Opus. On the other hand, it's less disciplined — tends to forget previous instructions in long sessions and sometimes wanders off scope. Opus is more predictable and methodical. For me, that predictability is worth more day to day.
+A fair comparison for GPT 5.4 would require running it in its native environment. And now we have that comparison: we built support to automate the Codex CLI (`codex exec` with `--dangerously-bypass-approvals-and-sandbox` and reasoning effort `xhigh`) and ran the same benchmark. GPT 5.4 completed in 22 minutes, generated all 9 artifacts, wrote 22 tests with the most sophisticated architecture in the entire benchmark: dependency injection of the RubyLLM client, PORO models for `ChatMessage` and `PromptSubmission`, session-backed `ChatSession` with TTL and message trimming, bin/ci script.
+
+But the code breaks on the second message. GPT 5.4 uses `chat.add_message(role:, content:)` with keyword arguments instead of a positional hash `chat.add_message({role:, content:})` — this causes `ArgumentError: wrong number of arguments (given 0, expected 1)` on the first multi-turn exchange. The first message works (uses `chat.ask` directly), multi-turn doesn't.
+
+And the cost: **7.6 million tokens** on xHigh reasoning effort. That's 65x more tokens than Opus 4.7 (118K) for the same benchmark. Estimated cost of ~$16 per run, versus ~$1.10 for Opus. Spent 15x more and still got the calling convention wrong. A massive token budget and maximum reasoning effort still can't guarantee factual correctness on a gem API. API knowledge is binary recall in the weights, not a function of how hard the model "thinks."
+
+With objective data in hand, GPT 5.4 moves from Tier 1 to Tier 2. The architecture it generates is better than Opus in terms of design patterns. But the code needs a fix for multi-turn to work, and the per-token cost is prohibitive.
 
 Sonnet and Opus through opencode/OpenRouter were probably also not pushed to their limits. Claude Code offers native tool support that opencode doesn't replicate — meaning the benchmark results represent a floor, not a ceiling, for those models.
 
@@ -270,10 +280,12 @@ And the tests? Only Opus, Sonnet, GLM 5 and GLM 5.1 did proper mocking of the LL
 
 | Model | Correct API? | Runs? | Test Mocking? | Problem |
 |---|:---:|:---:|:---:|---|
+| **Claude Opus 4.7** | Yes | **Yes** | Yes (FakeChat) | Clean implementation, 28 tests |
 | **Claude Sonnet 4.6** | Yes | **Yes** | Yes (mocha) | Clean implementation |
 | **Claude Opus 4.6** | Yes | **Yes** | Yes (mocha) | Clean implementation |
 | **GLM 5** | Yes | **Yes** | Yes (mocha) | Correct API, works |
 | **GLM 5.1** | Yes | **Yes** | Yes | Correct API, works |
+| GPT 5.4 (Codex) | Partial | 1st msg only | Yes (FakeChat) | `add_message(role:, content:)` with keyword args instead of positional hash — breaks multi-turn |
 | Step 3.5 Flash | N/A | **Yes*** | No | Bypasses RubyLLM, uses HTTP directly |
 | Grok 4.20 | N/A | **Yes*** | No | Bypasses RubyLLM, uses `OpenAI::Client` directly |
 | Qwen 3.6 Plus | Partial | Only 1st msg | No | `add_message()` doesn't exist |
@@ -297,8 +309,9 @@ You save dollars, you spend time. And time is money. For someone learning or exp
 
 | Model | Provider | Time | Tests | Cost/Run | vs Opus |
 |---|---|---:|---:|---:|---|
+| Claude Opus 4.7 | OpenRouter | 18m | 28 | ~$1.10 | New baseline |
 | Claude Sonnet 4.6 | OpenRouter | 16m | 30 | ~$0.63 | 40% cheaper, more tests |
-| Claude Opus 4.6 | OpenRouter | 16m | 16 | ~$1.05 | Baseline |
+| Claude Opus 4.6 | OpenRouter | 16m | 16 | ~$1.05 | Previous baseline |
 | GLM 5 | OpenRouter | 17m | 7 | ~$0.11 | 89% cheaper |
 | GLM 5.1 | Z.AI direct | 22m | 24 | ~$0.13 | ~88% cheaper, more tests than GLM 5 |
 
@@ -315,7 +328,9 @@ You save dollars, you spend time. And time is money. For someone learning or exp
 | Claude Sonnet 4.6 | OpenRouter | 16m | 127,067 | 532.26 | ~$0.63 |
 | GLM 5 | OpenRouter | 17m | 59,378 | 400.01 | ~$0.11 |
 | Qwen 3.6 Plus | OpenRouter | 17m | 88,940 | 182.91 | Free |
+| Claude Opus 4.7 | OpenRouter | 18m | 118,216 | 328.24 | ~$1.10 |
 | GLM 5.1 | Z.AI direct | 22m | 81,666 | 166.62 | ~$0.13 |
+| GPT 5.4 (Codex) | Codex CLI | 22m | 7,643,800 | 5,824.56 | ~$16.00 |
 | Qwen 3 Coder Next | Local | 17m | 39,054 | 37.49 | Electricity |
 | Qwen 3.5 35B | Local | 28m | 76,919 | 46.03 | Electricity |
 | Kimi K2.5 | OpenRouter | 29m | 63,638 | 160.14 | ~$0.07 |
@@ -334,11 +349,13 @@ Models with prompt caching pay much less in effective tokens:
 | Model | Total Tokens | Cache Read | Effective New Tokens |
 |---|---:|---:|---:|
 | Claude Sonnet 4.6 | 127,067 | 126,429 | 638 |
+| Claude Opus 4.7 | 118,216 | 116,824 | 1,392 |
 | Claude Opus 4.6 | 136,806 | 135,976 | 830 |
 | GLM 5 | 59,378 | 58,240 | 1,138 |
 | GLM 5.1 | 81,666 | 81,216 | 450 |
 | Grok 4.20 | 63,457 | 62,400 | 1,057 |
 | Gemini 3.1 Pro | 104,034 | 98,129 | 5,905 |
+| GPT 5.4 (Codex) | 7,643,800 | 0 | 7,643,800 |
 | DeepSeek V3.2 | 115,278 | 0 | 115,278 |
 | Kimi K2.5 | 63,638 | 0 | 63,638 |
 
@@ -486,6 +503,23 @@ The honest answer is: only Qwen 3.5 35B-A3B, and maybe the Claude-distilled if y
 
 For folks with hardware in this category who want to escape Anthropic vendor lock-in, it now works. It didn't work on the 5090 from last year, and forget about it on the Strix Halo. In 2026, on NVIDIA Blackwell, with the right model, it works. For folks with low-bandwidth hardware (LPDDR5x, DDR4, DDR5), it's still a waste of time: the clock alone takes down any plan to make this practical.
 
+### Qwen 3.6: what changed from 3.5
+
+We tested two flavors of Qwen 3.6: the **3.6 Plus** (cloud, OpenRouter, free) and the **3.6 35B** (local, NVIDIA 5090, Q3_K_M).
+
+Qwen 3.6 Plus (cloud) completed in 17 minutes with 88,940 tokens and 9/9 on the artifact checklist. Completed fast and for free. But the generated service uses `chat.add_message()`, a method that doesn't exist in RubyLLM. First message works, second one crashes. Same problem as 3.5.
+
+Qwen 3.6 35B (local, 5090) is more interesting. Completed in 4.7 minutes at 240 tok/s, 169 files, correct entry point `RubyLLM.chat(model:, provider:)` and correct `chat.ask(message)`. The bug is subtler: it returns `response` instead of `response.content` and doesn't do history replay. One-line fix. That's a real improvement over Qwen 3.5 35B-A3B (which hallucinated `add_message` and `complete`). It's the cleanest Qwen result we've seen.
+
+| Model | Version | Hardware | Correct API? | Multi-turn works? | Time | Tok/s |
+|---|---|---|:---:|:---:|---:|---:|
+| Qwen 3.5 35B-A3B | 3.5 | NVIDIA 5090 | Entry point yes, `add_message`/`complete` no | No | 5m | 273 |
+| Qwen 3.5 27B Claude-distilled | 3.5 | NVIDIA 5090 | No (entry point invented) | No | 12m | 129 |
+| Qwen 3.6 35B | 3.6 | NVIDIA 5090 | Entry point yes, `chat.ask` yes, missing `.content` | No (no replay) | 5m | 240 |
+| Qwen 3.6 Plus | 3.6 | Cloud | Entry point yes, `add_message` no | No | 17m | 183 |
+
+The gap shrank but didn't close. The 3.6 35B local is closer to working than any previous Qwen — the bug is a forgotten `.content`, not an entirely invented API. But it still doesn't do multi-turn out of the box. In practice, Qwen 3.6 35B local moves up from Tier 3 to Tier 2: it's the local open source model that comes closest to delivering correct code on the first try, one fix away from working.
+
 ## The Deep Code Review: Sonnet vs GLM 5 vs Gemini vs Kimi vs MiniMax
 
 The tables above measure structural completeness. But does the project work? I did detailed code review of the models that completed the benchmark.
@@ -574,20 +608,20 @@ Tier 1 (works plug and play):
 
 | Model | Quality | Cost/Run | Trade-off |
 |---|---|---:|---|
-| Claude Sonnet 4.6 | Better than Opus on opencode (30 vs 16 tests) | ~$0.63 | Cheaper, but on Claude Code Opus might do better |
-| Claude Opus 4.6 | Gold standard | ~$1.05 | Baseline |
-| GPT 5.4 Pro | Practically equivalent to Opus | ~$7.20* | Failed the benchmark due to opencode incompatibility, but I tested extensively in Codex and it works as well as Opus |
+| Claude Opus 4.7 | New baseline (28 tests, FakeChat, 96.7% coverage) | ~$1.10 | Incremental over 4.6, new gold standard |
+| Claude Sonnet 4.6 | Better than Opus 4.6 on opencode (30 vs 16 tests) | ~$0.63 | Cheaper, but fails on deeper reasoning in real projects |
+| Claude Opus 4.6 | Previous gold standard | ~$1.05 | Previous baseline |
 | GLM 5 | Good (7 tests, correct API) | ~$0.11 | 89% cheaper, non-Anthropic/OpenAI alternative that works |
 | GLM 5.1 | Good (24 tests, history, correct API) | ~$0.13 | ~88% cheaper, more complete project than GLM 5 |
-
-*GPT 5.4 Pro failed the automated benchmark because opencode doesn't support OpenAI's native tool calling format. Through Codex or ChatGPT Pro ($200/month with unlimited use), it works without problems.
 
 Tier 2 (works with caveats):
 
 | Model | Hardware | Cost/Run | Caveat |
 |---|:---:|---:|---|
+| GPT 5.4 (Codex) | Cloud | ~$16.00 | Impressive architecture (22 tests, dependency injection, PORO models), but `add_message` with keyword args instead of positional hash breaks multi-turn. 7.6M tokens, 15x more expensive than Opus |
 | Step 3.5 Flash | Cloud | ~$0.02 | Bypasses the requested gem, slow (38m) |
 | Grok 4.20 | Cloud | ~$0.04 | Bypasses the requested gem (goes straight to `OpenAI::Client`), but it's the fastest in the benchmark |
+| Qwen 3.6 35B | NVIDIA 5090 | Free | Entry point and `chat.ask` correct, missing `.content`. One-line fix. ~10-15 min total |
 | Qwen 3.5 35B-A3B | NVIDIA 5090 | Free | Correct entry point, hallucinates `add_message`/`complete`. Fixable in 1-2 follow-ups. ~15-20 min total |
 | Qwen 3.5 27B Claude-distilled | NVIDIA 5090 | Free | Claude style, complete API hallucination. 2-3 follow-ups to fix. ~25-30 min total |
 | Qwen 3.5 35B (local) | AMD Strix | Free | Works if default is configured, no mocking, and slow |
@@ -606,11 +640,13 @@ For folks who only want the report-card summary. Quality is whether the code run
 
 | Model | Type | Hardware | Quality | Time | Price |
 |---|:---:|:---:|:---:|:---:|:---:|
+| Claude Opus 4.7 | Commercial | Cloud | A+ | A | D |
 | Claude Sonnet 4.6 | Commercial | Cloud | A+ | A | C |
 | Claude Opus 4.6 | Commercial | Cloud | A+ | A | D |
-| GPT 5.4 Pro | Commercial | Cloud | A+ | — | F |
+| GPT 5.4 (Codex) | Commercial | Cloud | B+ | B | F |
 | GLM 5.1 | OSS | Cloud | A | B | A |
 | GLM 5 | OSS | Cloud | A− | A | A |
+| Qwen 3.6 35B | OSS | 5090 | B+ | A+ | A+ (free) |
 | Qwen 3.5 35B-A3B | OSS | 5090 | B | A+ | A+ (free) |
 | Qwen 3.5 27B Claude-distilled | OSS | 5090 | C+ | B | A+ (free) |
 | Gemini 3.1 Pro | Commercial | Cloud | C | A+ | B |
@@ -633,19 +669,19 @@ For folks who only want the report-card summary. Quality is whether the code run
 | GPT OSS 20B | OSS | Strix | F | — | A+ (free) |
 | Qwen 3 32B | OSS | Strix | F | — | A+ (free) |
 
-Quality criteria: A+ works and the code is well structured. A/B works with small to medium caveats. C runs but skips a prompt requirement or has a serious structural issue. D breaks on the first message because of an invented API. F didn't complete the benchmark or produced garbage. GPT 5.4 Pro stays at A+ for real use in Codex, but didn't run in this benchmark, hence the dash in time. "Type" separates commercial models (closed weights) from OSS (open weights, even when used through a hosted API). Some Qwens appear twice when they ran on both hardware profiles, because the results are different enough to justify it — Qwen 3.5 35B-A3B on the 5090 jumps to Tier B, on the Strix it stays at Tier C because of the wait time. Of the 33 models configured across both runs, some don't appear in this table because they never even executed (no quota, broken runner, infra failure, or timeout before the first message).
+Quality criteria: A+ works and the code is well structured. A/B works with small to medium caveats. C runs but skips a prompt requirement or has a serious structural issue. D breaks on the first message because of an invented API. F didn't complete the benchmark or produced garbage. GPT 5.4 via Codex dropped from A+ to B+: the architecture is the most sophisticated in the benchmark (dependency injection, PORO models, 22 tests), but the first message works and multi-turn breaks due to a wrong calling convention on `add_message`. Burned 7.6M tokens (~$16/run) without reaching Opus-level correctness. "Type" separates commercial models (closed weights) from OSS (open weights, even when used through a hosted API). Some Qwens appear twice when they ran on both hardware profiles, because the results are different enough to justify it — Qwen 3.5 35B-A3B on the 5090 jumps to Tier B, on the Strix it stays at Tier C because of the wait time. Of the 33 models configured across both runs, some don't appear in this table because they never even executed (no quota, broken runner, infra failure, or timeout before the first message).
 
 ### The verdict
 
+If you want the best result and don't want to think about it: **Claude Opus**. Opus 4.7 is the new baseline — 28 tests, correct API, 96.7% coverage, FakeChat pattern in the tests. It's an incremental improvement over 4.6 (which had 16 tests), not a revolution. But it doesn't need to be a revolution. 4.6 already worked, 4.7 works the same and delivers a slightly more polished project. If you were on 4.6, upgrading to 4.7 means switching to a model that does the same thing with more care in the tests and structure.
+
+A word about Sonnet: it beat Opus in this benchmark (30 tests vs 16 for Opus 4.6, vs 28 for Opus 4.7). But this benchmark is a small, well-defined web app. In my real-world experience with bigger projects, Sonnet fails when the reasoning needs to go deeper. I'm not talking about massive projects — just going a bit further than this benchmark (more controllers, more integrations, architectural decisions that depend on each other) is enough for Sonnet to lose the thread. Opus has a 128K max output token ceiling vs Sonnet's 64K, and its training was specifically aimed at long-horizon tasks, multi-step planning and deep reasoning over complex code. On a small project like the benchmark, those muscles stay idle, and in that scenario Sonnet wins by being faster and cheaper. But if you extrapolate that to "Sonnet is better than Opus," you'll get a surprise on the first task that requires sustained reasoning. You can try Sonnet — it's cheaper and for small projects it works. But for real projects, you'll probably end up on Opus anyway.
+
+On GPT 5.4: we now have objective data. Ran it via Codex CLI with xHigh reasoning effort. The architecture it generates is the most sophisticated in the benchmark — dependency injection, PORO models, session management with TTL. But it burned 7.6M tokens (~$16/run, 15x more expensive than Opus) and got the `add_message` calling convention wrong (keyword args instead of positional hash), breaking multi-turn. Spent more, got it wrong. Dropped from Tier 1 to Tier 2. Same pattern: API correctness is binary recall in the weights. It doesn't scale with token budget or reasoning effort.
+
 If cost matters and you want to leave Anthropic: **GLM 5 or GLM 5.1** are the plug-and-play alternatives that work. Correct API, mocking in the tests, ~$0.11-$0.13 per run, ~88-89% cheaper than Opus. GLM 5.1 delivered a more complete project (24 tests, chat history) at the cost of about 5 more minutes.
 
-If you want the best result regardless of cost: **Claude Sonnet 4.6** beat Opus in this benchmark — cheaper, same speed, more tests, code that works. But there are two important caveats before you generalize that conclusion.
-
-First, this result is on opencode, not on Claude Code. In the native environment (Claude Code), where Opus and Sonnet have access to Anthropic's full tool support, Opus might do better. In my 500-hour Claude Code marathon, I used Opus and the experience was consistently good.
-
-Second, and this is the bigger one: our test is a small, well-defined web app. Sonnet 4.6 and Opus 4.6 share the [same 1M token context window](https://platform.claude.com/docs/en/about-claude/models/whats-new-claude-4-6), so what separates the two is the reasoning capacity they can apply inside that context. Opus 4.6 has a 128K max output token ceiling vs Sonnet's 64K, and its training was specifically aimed at long-horizon tasks, multi-step planning and deep reasoning over complex code. On a small project like ours, those muscles stay idle, and in that scenario it's either a tie or Sonnet wins by being faster. In larger projects, with weeks of work, big monorepos, architectural decisions that carry real consequences, that's where the actual difference between Opus and Sonnet shows up. You can't conclude that Sonnet is better than Opus in general just from this benchmark.
-
-If you want to avoid total vendor lock-in and you have decent hardware: **Qwen 3.5 35B-A3B** running locally on an NVIDIA RTX 5090. Five minutes of execution at 273 tok/s, a Rails project that boots, and the API error fixes itself in 1-2 follow-ups. Realistic total until it works: ~15-20 minutes. Beats Sonnet on cost (zero) and lands close on total time. This option simply didn't exist in the previous round of the benchmark, and it marks the point where "running OSS local" stops being a toy and becomes a real alternative. Important: this is specific to hardware with high memory bandwidth. On an RTX 4090 it should work similarly. On a laptop with LPDDR5x or a desktop with DDR4, forget it — you'll wait 10x longer and the total time kills the argument.
+If you want to avoid total vendor lock-in and you have decent hardware: **Qwen 3.6 35B** running locally on an NVIDIA RTX 5090. Under 5 minutes of execution at 240 tok/s, correct entry point and `chat.ask`, just missing `.content` extraction — a 1-line fix. That's better than the Qwen 3.5 35B-A3B which hallucinated entire API methods. The 3.6 generation is the first Qwen that's genuinely one fix away from working, not a rewrite away. Realistic total: ~10-15 minutes with one follow-up.
 
 If you want to avoid vendor lock-in but you're on weak hardware: **GLM 5 or GLM 5.1** remain the choice. They're cloud, true, but at $0.11-$0.13 per run it's basically the price of electricity.
 

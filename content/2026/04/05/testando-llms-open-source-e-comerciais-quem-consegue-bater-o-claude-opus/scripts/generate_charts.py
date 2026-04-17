@@ -162,7 +162,9 @@ BENCH = [
     ("Claude Sonnet 4.6",   "anthropic",  16, 127067, 126429, 532.26, 0.63, "ok",   True),
     ("GLM 5",               "openrouter", 17, 59378,  58240, 400.01, 0.11, "ok",   False),
     ("Qwen 3.6 Plus",       "openrouter", 17, 88940,  0,    182.91, 0.0,  "broken", True),
+    ("Claude Opus 4.7",     "anthropic",  18, 118216, 116824, 328.24, 1.10, "ok",   True),
     ("GLM 5.1",             "zai",        22, 81666,  81216, 166.62, 0.13, "ok",   False),
+    ("GPT 5.4 (Codex)",     "openrouter", 22, 7643800, 0,   5824.56, 16.0, "broken", True),
     ("Kimi K2.5",           "openrouter", 29, 63638,  0,    160.14, 0.07, "broken", False),
     ("Step 3.5 Flash",      "openrouter", 38, 156267, 0,    242.11, 0.02, "bypass", True),
     ("DeepSeek V3.2",       "openrouter", 60, 115278, 0,    53.37,  0.04, "broken", False),
@@ -174,6 +176,7 @@ BENCH = [
     ("Qwen 3.5 27B Claude (Strix)","amd_strix",90, 80000, 0, 14.81,  0.0, "broken", False),
 
     # NVIDIA RTX 5090 (GDDR7, 1792 GB/s)
+    ("Qwen 3.6 35B (5090)",       "nvidia_5090", 5, 67800, 0, 240.68, 0.0, "bypass", False),
     ("Qwen 3.5 35B-A3B (5090)",   "nvidia_5090", 5, 84158, 0, 273.52, 0.0, "broken", False),
     ("Qwen 3.5 27B Claude (5090)","nvidia_5090",12, 94865, 0, 128.98, 0.0, "broken", False),
     ("Qwen 3 Coder 30B (5090)",   "nvidia_5090", 6, 50609, 0, 145.23, 0.0, "broken", False),
@@ -360,7 +363,7 @@ def chart_cost_vs_quality():
     ax.grid(True, linestyle="--", alpha=0.4)
     ax.legend(loc="upper right", framealpha=0.95, fontsize=10)
     ax.set_xlim(0, 65)
-    ax.set_ylim(0.005, 3)
+    ax.set_ylim(0.005, 25)
     save(fig, "cost-vs-quality.png")
 
 
@@ -371,6 +374,7 @@ def chart_token_pricing():
     # input $ / M, output $ / M
     pricing = [
         ("GPT 5.4 Pro",       15.0, 180.0),
+        ("Claude Opus 4.7",   5.0,  25.0),
         ("Claude Opus 4.6",   15.0, 75.0),
         ("Gemini 3.1 Pro",    2.0,  12.0),
         ("Grok 4.20",         2.0,  6.0),
