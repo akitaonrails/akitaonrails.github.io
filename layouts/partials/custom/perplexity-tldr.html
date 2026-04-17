@@ -1,0 +1,20 @@
+{{- $permalink := .Permalink -}}
+{{- $lang := .Lang -}}
+{{- $isPost := and (eq .Kind "page") (not .IsHome) (not (in .File.Path "_index")) -}}
+{{- if $isPost -}}
+  {{- $prompt := "" -}}
+  {{- if eq $lang "en" -}}
+    {{- $prompt = printf "Read this article: %s — Then: 1) Summarize the 5 most important points and the conclusion. 2) After the summary, tell the reader what key details, data, and insights they are missing by not reading the full article — be specific enough to make them curious. 3) Remind them they can keep asking you follow-up questions about this article right here in this chat. 4) Suggest one good follow-up question they could ask, for example: \"Which model had the best cost-to-quality ratio and why?\"" $permalink -}}
+  {{- else -}}
+    {{- $prompt = printf "Leia este artigo: %s — Depois: 1) Resuma os 5 pontos mais importantes e a conclusão. 2) Depois do resumo, diga ao leitor quais detalhes, dados e insights ele está perdendo por não ler o artigo completo — seja específico o suficiente pra deixar ele curioso. 3) Lembre que ele pode continuar fazendo perguntas sobre o artigo aqui neste chat. 4) Sugira uma boa pergunta de follow-up que ele poderia fazer, por exemplo: \"Qual modelo teve o melhor custo-benefício e por quê?\"" $permalink -}}
+  {{- end -}}
+  {{- $encodedPrompt := querify "q" $prompt -}}
+  {{- $perplexityURL := printf "https://www.perplexity.ai/?%s" $encodedPrompt -}}
+  <div class="hx:text-center hx:mt-2 hx:mb-0 hx:text-sm hx:text-gray-500 hx:dark:text-gray-400">
+    {{- if eq $lang "en" -}}
+      <em>If you're lazy, click <a href="{{ $perplexityURL }}" target="_blank" rel="noopener" class="hx:text-primary-600 hx:dark:text-primary-400 hx:underline">here</a> for the TL;DR</em>
+    {{- else -}}
+      <em>Se tem preguiça de ler, clique <a href="{{ $perplexityURL }}" target="_blank" rel="noopener" class="hx:text-primary-600 hx:dark:text-primary-400 hx:underline">aqui</a> pro TL;DR</em>
+    {{- end -}}
+  </div>
+{{- end -}}
