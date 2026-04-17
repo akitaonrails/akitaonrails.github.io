@@ -1,6 +1,6 @@
 ---
-title: "AI Agents: Qual é o melhor? OpenCode, Crush, Claude Code, GPT Codex, GoPilot, Cursor, WindSurf, AntiGravity?"
-slug: "ai-agents-qual-e-o-melhor-opencode-crush-claude-code-gpt-codex-gopilot-cursor-windsurf-antigravity"
+title: "AI Agents: Qual é o melhor? OpenCode, Crush, Claude Code, GPT Codex, Copilot, Cursor, Windsurf, Antigravity?"
+slug: "ai-agents-qual-e-o-melhor-opencode-crush-claude-code-gpt-codex-copilot-cursor-windsurf-antigravity"
 date: 2026-01-24T09:00:31-0300
 tags:
 - agents
@@ -168,7 +168,7 @@ Lembram do "Browser Wars" dos anos 90 e anos 2000? É a mesma coisa:
 Os princípios são os mesmos:
 
 * cada modelo LLM de código foi treinado num "harness" diferente
-* teoricamente, somente a OpenAI e parceiros licenciados da OpenAI tem acesso à especificação exata desse harness. Por isso Codex ou Cursor ou CoPilot vão se comportar diferente de OpenCode quando usam modelos da OpenAI.
+* teoricamente, somente a OpenAI e parceiros licenciados da OpenAI tem acesso à especificação exata desse harness. Por isso Codex ou Cursor ou Copilot vão se comportar diferente de OpenCode quando usam modelos da OpenAI.
 * tudo são prompts: se soubermos os prompts de instrução exatos, podemos replicar isso no mundo open source - já deve ter gente fazendo
 * mas é perseguição de gato e rato. toda vez vai sair versão nova. É o mesmo problema de LibreOffice vs Microsoft Office, que depois de décadas, continua não sendo 100% compatível
 
@@ -183,7 +183,7 @@ Por isso modelos "abertos" são importantes: pra ajudar a forçar um padrão abe
 
 ### Conclusão
 
-Na prática, pra variar, **DEPENDE** do seu uso. Se GPT dá melhores resultados pro seu tipo de projeto, use Codex CLI ou parceiros da OpenAI como CoPilot ou Cursor que - provavelmente - usam o mesmo harness.
+Na prática, pra variar, **DEPENDE** do seu uso. Se GPT dá melhores resultados pro seu tipo de projeto, use Codex CLI ou parceiros da OpenAI como Copilot ou Cursor que - provavelmente - usam o mesmo harness.
 
 Se Claude dá melhores resultados pra você, use Claude Code.
 
