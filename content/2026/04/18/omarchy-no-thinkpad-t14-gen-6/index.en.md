@@ -265,6 +265,33 @@ sudo localectl set-x11-keymap br thinkpad thinkpad60
 
 I wrote a small Python that reads raw scancodes from `/dev/input/event*` to diagnose these quirks. Useful when a key decides not to work and you need to find out if it's hardware, kernel, or xkb.
 
+### Input method: fcitx5
+
+Complementing the layout, I install fcitx5. For those who don't know, an input method is the layer that turns a key sequence into characters. It handles deadkeys (tilde for nasalization, acute accent, circumflex), composing characters that aren't on the keyboard (ç, Ç, uppercase accented letters), and emoji/unicode support. In Qt or GTK apps, the input method also drives context menus for cedilla, accented letters, and so on.
+
+Base packages:
+
+```bash
+sudo pacman -S --needed fcitx5 fcitx5-configtool fcitx5-gtk fcitx5-qt
+```
+
+And the environment variables for toolkits to find fcitx5. I created `~/.config/environment.d/fcitx.conf`:
+
+```
+INPUT_METHOD=fcitx
+QT_IM_MODULE=fcitx
+XMODIFIERS=@im=fcitx
+SDL_IM_MODULE=fcitx
+```
+
+systemd's `environment.d` is loaded before graphical sessions, so Brave, Alacritty, VS Code and any GTK/Qt app pick it up automatically. I enable autostart in Hyprland:
+
+```
+exec-once = fcitx5 -d
+```
+
+Practical result: typing `~a` produces `ã`, `'e` produces `é`, `ç` works as it should in every app. In 2026, on a Brazilian Thinkpad keyboard, this is the difference between typing Portuguese naturally or not.
+
 ### SOF audio
 
 Realtek ALC3306/ALC287 codec via Sound Open Firmware. Without `sof-firmware`, the kernel module loads but the DSP never boots and PipeWire silently falls back to `auto_null`. Result: you think the speaker is on mute, but actually PipeWire has no device at all.
@@ -421,6 +448,63 @@ sudo ufw --force enable
 SSH server is already off by default on Omarchy. Nothing listening. Even if the firewall leaks, there's no surface.
 
 All of it rolls into a single initial setup ritual.
+
+### SSH agent persistence (keyring + keychain)
+
+If you use SSH seriously, you want to type the passphrase once per boot and have `ssh`, `git push`, `scp` stay silent for the rest of the day. On current Arch there's a catch: `gnome-keyring` 50 dropped its SSH component, and the replacement (`gcr-ssh-agent`) is a plain in-memory agent with no passphrase persistence. The "remember this key" checkbox you saw in old guides simply doesn't exist anymore.
+
+The practical solution is to combine three things:
+
+1. `gcr-ssh-agent.socket` managed by systemd serves `SSH_AUTH_SOCK` at `$XDG_RUNTIME_DIR/gcr/ssh`
+2. `pam_gnome_keyring` on SDDM login unlocks the keyring with the login password (used by GUI apps like Brave, not by SSH)
+3. `keychain` (wrapper) keeps an `ssh-agent` alive across logouts, overrides `SSH_AUTH_SOCK` to point at that persistent agent, and caches the PID in `~/.keychain/<host>-sh`
+
+First, install the keyring:
+
+```bash
+sudo pacman -S --needed gnome-keyring seahorse keychain
+```
+
+Then edit `/etc/pam.d/sddm` so the login password unlocks the keyring automatically. Add at the top:
+
+```
+-auth      optional    pam_gnome_keyring.so
+```
+
+And at the end:
+
+```
+-session   optional    pam_gnome_keyring.so    auto_start
+```
+
+The leading hyphen (`-auth`, `-session`) marks it optional, so if the module fails to load, login doesn't break.
+
+Pin `SSH_AUTH_SOCK` for graphical and TTY sessions via `~/.config/environment.d/ssh-agent.conf`:
+
+```
+SSH_AUTH_SOCK=%t/gcr/ssh
+```
+
+`%t` resolves to `$XDG_RUNTIME_DIR`, something like `/run/user/1026`. Enable the gcr socket and user linger (so user daemons survive logout):
+
+```bash
+systemctl --user enable --now gcr-ssh-agent.socket
+sudo loginctl enable-linger $USER
+```
+
+Finally, in `~/.config/bash/init.sh`, keychain starts or reuses the agent:
+
+```bash
+if command -v keychain &>/dev/null && [[ -r ~/.ssh/id_ed25519 ]]; then
+  eval "$(keychain --eval --quiet ~/.ssh/id_ed25519)"
+fi
+```
+
+`--eval` emits shell assignments (`SSH_AUTH_SOCK`, `SSH_AGENT_PID`) pointing to keychain's agent, overriding the gcr path set by environment.d. `--quiet` silences the banner once the key is loaded.
+
+Flow in practice: boot → first terminal → keychain prompts for the passphrase once → key stays loaded. Logout → login again → new shells reattach to the same agent (via `~/.keychain/<host>-sh`) → zero prompts. `ssh-add -l` confirms the key is there, `echo $SSH_AUTH_SOCK` confirms it's at keychain's path.
+
+When you'll re-enter the passphrase: reboot, `ssh-add -D`, or `keychain --clear`. In normal use, once a day.
 
 ### Bash instead of ZSH
 
