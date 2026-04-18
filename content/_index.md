@@ -6,6 +6,7 @@ title: AkitaOnRails Blog
 
 ## 2026 - Abril
 
+- [Omarchy no Thinkpad T14 Gen 6: Mini-Review e Setup Completo](/2026/04/18/omarchy-no-thinkpad-t14-gen-6/)
 - [Por que as LLMs não te dão o resultado esperado | Por que eu prefiro Claude Code hoje](/2026/04/15/como-falar-com-o-claude-code-efetivamente/)
 - [Seedance 2.0 finalmente foi lançado: Primeiras Impressões](/2026/04/15/seedance-2-0-finalmente-foi-lancado-primeiras-impressoes/)
 - [Distrobox de Emulação com Claude Code](/2026/04/11/distrobox-de-emulacao-com-claude-code/)
