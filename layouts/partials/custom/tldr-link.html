@@ -1,0 +1,20 @@
+{{- $permalink := .Permalink -}}
+{{- $lang := .Lang -}}
+{{- $isPost := and (eq .Kind "page") (not .IsHome) (not (in .File.Path "_index")) -}}
+{{- if $isPost -}}
+  {{- $prompt := "" -}}
+  {{- if eq $lang "en" -}}
+    {{- $prompt = printf "Please open this URL with web search and read the full article: %s\n\nAfter reading the real content of that article, do the following:\n1) Summarize the 5 most important points and the conclusion.\n2) After the summary, tell the reader what key details, data and insights they are missing by not reading the full article. Be specific enough to make them curious.\n3) Remind them they can keep asking follow-up questions about this article right here in this chat.\n4) Suggest one good follow-up question they could ask as a starter." $permalink -}}
+  {{- else -}}
+    {{- $prompt = printf "Por favor, abra esta URL com busca na web e leia o artigo completo: %s\n\nDepois de ler o conteúdo real do artigo, faça o seguinte:\n1) Resuma os 5 pontos mais importantes e a conclusão.\n2) Depois do resumo, diga ao leitor quais detalhes, dados e insights ele está perdendo por não ler o artigo completo. Seja específico o suficiente pra deixar ele curioso.\n3) Lembre que ele pode continuar fazendo perguntas sobre o artigo aqui neste chat.\n4) Sugira uma boa pergunta de follow-up que ele poderia fazer pra começar." $permalink -}}
+  {{- end -}}
+  {{- $encodedPrompt := querify "q" $prompt "hints" "search" -}}
+  {{- $chatgptURL := printf "https://chatgpt.com/?%s" $encodedPrompt -}}
+  <div class="hx:text-center hx:mt-2 hx:mb-0 hx:text-sm hx:text-gray-500 hx:dark:text-gray-400">
+    {{- if eq $lang "en" -}}
+      <em>If you're lazy, click <a href="{{ $chatgptURL }}" target="_blank" rel="noopener" class="hx:text-primary-600 hx:dark:text-primary-400 hx:underline">here</a> for the TL;DR</em>
+    {{- else -}}
+      <em>Se tem preguiça de ler, clique <a href="{{ $chatgptURL }}" target="_blank" rel="noopener" class="hx:text-primary-600 hx:dark:text-primary-400 hx:underline">aqui</a> pro TL;DR</em>
+    {{- end -}}
+  </div>
+{{- end -}}
