@@ -44,6 +44,39 @@ The notebook exists to cover the remaining 1%: sitting on the couch, taking it t
 
 In practice it looks like this: open the notebook, split the Hyprland layout, left pane SSHs into the main desktop, right pane is the notebook itself. Same Omarchy on both, same keybindings, same bash. The notebook becomes an extension of the desktop, not a parallel environment I have to re-learn in my head every time I switch.
 
+### SSH from outside the house: Tailscale
+
+Inside the local network, SSH is trivial, the notebook talks to the desktop through the internal IP. Outside the house is another story. My home IP is dynamic, opening port 22 to the internet is a terrible idea, and even with DDNS and port forwarding you're putting SSH on the public internet for any scanner to find.
+
+The solution I use is [Tailscale](https://tailscale.com/). For those who don't know: Tailscale is a mesh VPN built on WireGuard that creates a private network between your devices (the "tailnet"). Each machine runs the agent, authenticates once, and gets a fixed IP on the private network (something like 100.x.y.z). Traffic between your own devices goes peer-to-peer, encrypted by WireGuard. It doesn't route through Tailscale's central server, they only coordinate NAT traversal. Result: from my notebook in a café anywhere in the world, I run `ssh hal9000` and land on my home desktop as if I were on the same network.
+
+![Tailscale admin panel showing my two tailnet machines, hal9000 (desktop) and hal9666 (thinkpad), both with SSH enabled](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/04/18/thinkpad/tailscale-machines.png)
+
+More sophisticated options exist: [Cloudflare Tunnel](https://developers.cloudflare.com/cloudflare-one/connections/connect-networks/) with Zero Trust to expose services publicly with SSO auth, self-hosted headscale, raw WireGuard with manual config, Nebula, OpenVPN. Each has its use case. If you need to expose services to third parties, control granular per-identity access, or run the whole infrastructure at home without depending on anyone, those options win. In my case, it's just notebook talking to desktop, for short periods (it's not a full week of work, it's a weekend debug session), so free Tailscale covers it. The free tier accepts up to 100 devices and 3 users, way more than I need.
+
+Setup is as simple as it gets:
+
+```bash
+# On Arch/Omarchy
+sudo pacman -S tailscale
+sudo systemctl enable --now tailscaled.service
+sudo tailscale up --ssh
+```
+
+The `--ssh` flag enables [Tailscale SSH](https://tailscale.com/kb/1193/tailscale-ssh/), which authenticates via tailnet identity instead of a local SSH key. Once you log in through the browser to tailscale, each registered machine can SSH into the others based on ACL policy defined in the admin panel. Zero key management.
+
+I repeat the same on the desktop, log in with the same account, done. Both machines show up in the panel (hal9000 and hal9666 in the screenshot above, both with SSH enabled). From the notebook: `ssh hal9000`. From the desktop to the notebook: `ssh hal9666`. No port forwarding, no public IP, no port 22 exposed to the internet. If the notebook is stolen, I remove it from the tailnet with one click.
+
+A practical detail: since the tailnet gives stable names, I added entries to `~/.ssh/config` to use these short names:
+
+```
+Host hal9000
+  HostName hal9000
+  User akitaonrails
+```
+
+Now `ssh hal9000` works from anywhere that has Tailscale connected. It's the closest thing to "it just works" I've seen for remote SSH.
+
 So why not a Mac? I have no use for macOS. As a dev, I live better in native Linux. Every tool I need has a first-class Linux version, and on macOS I'd get a second-class version via Homebrew. I don't do iOS, so I don't need XCode. For mobile I use Flutter or Hotwire Native, which run on any OS. iTerm2 and Ghostty on Mac are fine, but Alacritty, Kitty and Ghostty itself on Linux work just as well. Every good piece of software lands on Linux first and gets ported afterwards. Arch with AUR covers everything in a single `yay`.
 
 For creative work, I haven't done it professionally in years. DaVinci Resolve Studio on Linux is better than Final Cut Pro. Krita or Affinity Photo replace Photoshop for most cases. Clip Studio Paint on Android is better than Procreate. I simply don't have a workflow that depends on Apple, and the App Store annoys me.
