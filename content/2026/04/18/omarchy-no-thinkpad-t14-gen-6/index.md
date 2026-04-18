@@ -109,7 +109,18 @@ else
 fi
 ```
 
-No waybar, um módulo custom `custom/perf` mostra o estado atual (󰓅 PERF, 󰌪 ECO, ou vazio pra balanced) e aceita clique pra alternar.
+No waybar, um módulo custom `custom/perf` mostra o estado atual (󰓅 PERF, 󰌪 ECO, ou vazio pra balanced) e aceita clique pra alternar. O script de output é bem curto:
+
+```bash
+#!/bin/bash
+p=$(cat /sys/firmware/acpi/platform_profile 2>/dev/null)
+case "$p" in
+  performance) printf '󰓅 PERF' ;;
+  low-power)   printf '󰌪 ECO'  ;;
+  balanced|"") printf ''       ;;
+  *)           printf '%s' "$p" ;;
+esac
+```
 
 ### Suspend, hibernate, e tampa
 
@@ -390,7 +401,24 @@ source ~/.config/bash/secrets    # gitignored, chmod 600
 
 `envs.sh` tem o que é meu: OpenRouter base URL, Ollama apontando pro GPU box da rede local (192.168.0.14), AWS region, analytics do Hugo, configs de zoxide e SSH agent. `aliases.sh` tem os atalhos de TLP, um alias pra `shell-gpt` via Docker, e functions pra hardenar o PATH quando rodo `makepkg` ou `yay` (prevenir injeção de binário via user config malicioso).
 
-`init.sh` faz o trabalho de integração. Atuin com bind manual do Ctrl-R (pra deixar a seta pra cima com o history-search padrão do bash, que eu uso mais). Keychain carregando `~/.ssh/id_ed25519` uma vez por boot e reusando nos shells seguintes (sem ter que re-autenticar SSH toda hora). Blesh se estiver instalado (autosuggestion estilo ZSH pra Bash). E uma função que manda o PROMPT_COMMAND ajustar o título da janela com o pwd atual e o comando em execução.
+`init.sh` faz o trabalho de integração. Atuin com bind manual do Ctrl-R (pra deixar a seta pra cima com o history-search padrão do bash, que eu uso mais). Keychain carregando `~/.ssh/id_ed25519` uma vez por boot e reusando nos shells seguintes (sem ter que re-autenticar SSH toda hora). Blesh se estiver instalado (autosuggestion estilo ZSH pra Bash). E uma função que manda o PROMPT_COMMAND ajustar o título da janela com o pwd atual e o comando em execução:
+
+```bash
+__title_idle() { printf '\033]2;%s\007' "${PWD/#$HOME/~}"; }
+__title_busy() {
+  local cmd="${BASH_COMMAND}"
+  [[ "$cmd" == "__title_"* || "$cmd" == *"PROMPT_COMMAND"* ]] && return
+  printf '\033]2;%s — %s\007' "${PWD/#$HOME/~}" "$cmd"
+}
+if [[ -n "${PROMPT_COMMAND-}" ]]; then
+  PROMPT_COMMAND="__title_idle; ${PROMPT_COMMAND}"
+else
+  PROMPT_COMMAND="__title_idle"
+fi
+trap '__title_busy' DEBUG
+```
+
+No idle, título mostra só o pwd. Com um comando rodando, `trap DEBUG` pega o `BASH_COMMAND` em execução e atualiza o título. Integra com o `hyprland/window` do waybar pra mostrar tudo lá.
 
 Pro toolbelt Rust moderno, a lista:
 
