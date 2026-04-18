@@ -76,7 +76,9 @@ Host hal9000
 
 Assim `ssh hal9000` funciona de qualquer lugar que tenha Tailscale conectado. É a solução mais próxima de "it just works" que já vi pra SSH remoto.
 
-Então por que não um Mac? Eu não tenho uso pro macOS. Como dev, eu vivo melhor em Linux nativo. Toda ferramenta que eu preciso tem versão Linux de primeira, e no macOS eu teria versão de segunda via Homebrew. Não faço iOS, então não preciso do XCode. Pra mobile uso Flutter ou Hotwire Native, que rodam em qualquer OS. iTerm2 e Ghostty no Mac são bons, mas Alacritty, Kitty e o próprio Ghostty no Linux me atendem igual. Todo software bom chega primeiro no Linux, daí é portado pros outros. Arch com AUR cobre tudo num único `yay`.
+### Por que não um Mac
+
+Eu não tenho uso pro macOS. Como dev, eu vivo melhor em Linux nativo. Toda ferramenta que eu preciso tem versão Linux de primeira, e no macOS eu teria versão de segunda via Homebrew. Não faço iOS, então não preciso do XCode. Pra mobile uso Flutter ou Hotwire Native, que rodam em qualquer OS. iTerm2 e Ghostty no Mac são bons, mas Alacritty, Kitty e o próprio Ghostty no Linux me atendem igual. Todo software bom chega primeiro no Linux, daí é portado pros outros. Arch com AUR cobre tudo num único `yay`.
 
 Pra trabalho criativo, faz anos que não faço profissionalmente. DaVinci Resolve Studio no Linux é superior ao Final Cut Pro. Krita ou Affinity Photo substituem Photoshop na maioria dos casos. Clip Studio Paint no Android é superior ao Procreate. Eu simplesmente não tenho um workflow que depende da Apple, e a App Store me irrita.
 
