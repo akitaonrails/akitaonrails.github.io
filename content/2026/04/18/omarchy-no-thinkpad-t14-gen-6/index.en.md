@@ -464,7 +464,7 @@ sudo pacman -S --needed \
 
 `eza` replaces `ls`. `bat` replaces `cat` with syntax highlighting. `fd` replaces `find`. `ripgrep` replaces `grep`. `sd` replaces `sed`. `delta` plugs into git for colored side-by-side diff. `dust` for visual `du`. `procs` for `ps`. `btm` (bottom) for `top`. `duf` for `df`. `tokei` counts lines of code. `hyperfine` for command benchmarking. `zoxide` is `cd` with memory (very useful). `atuin` is shell history with encrypted sync (I point it to my home server via `sync_address = "http://192.168.0.90:8888"`). `starship` is the prompt. `tldr` is a man page in 10 lines.
 
-The `atuin key` has to be backed up offline. If you lose it, you lose the encrypted history. I saved mine in 1Password.
+The `atuin key` has to be backed up offline. If you lose it, you lose the encrypted history. I saved mine in my self-hosted Bitwarden (Vaultwarden), documented in the [Bitwarden self-hosted article](/en/2025/09/10/omarchy-2-0-bitwarden-self-hosted-vaultwarden/).
 
 Git pipes diff through delta:
 

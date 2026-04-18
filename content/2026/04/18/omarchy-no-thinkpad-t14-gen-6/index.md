@@ -463,7 +463,7 @@ sudo pacman -S --needed \
 
 `eza` substitui `ls`. `bat` substitui `cat` com syntax highlight. `fd` substitui `find`. `ripgrep` substitui `grep`. `sd` substitui `sed`. `delta` pluga no git pra diff side-by-side colorido. `dust` pro `du` visual. `procs` pro `ps`. `btm` (bottom) pro `top`. `duf` pro `df`. `tokei` conta linhas de código. `hyperfine` pra benchmark de comando. `zoxide` é `cd` com memória (muito útil). `atuin` é history do shell com sync criptografado (aponto pro meu home server via `sync_address = "http://192.168.0.90:8888"`). `starship` é o prompt. `tldr` é man page em 10 linhas.
 
-O `atuin key` tem que ser backupeado offline. Se você perde, perde o histórico criptografado. Salvei no 1Password.
+O `atuin key` tem que ser backupeado offline. Se você perde, perde o histórico criptografado. Salvei no meu Bitwarden self-hosted (Vaultwarden), que eu documentei no [artigo sobre Bitwarden self-hosted](/2025/09/10/omarchy-2-0-bitwarden-self-hosted-vaultwarden/).
 
 O git passa diff pelo delta:
 
