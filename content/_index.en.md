@@ -6,6 +6,7 @@ title: AkitaOnRails Blog
 
 ## 2026 - April
 
+- [LLM Benchmarks Part 2: Is It Worth Combining Multiple Models in the Same Project? Claude + GLM??](/en/2026/04/18/llm-benchmarks-part-2-multi-model/)
 - [Omarchy on the Thinkpad T14 Gen 6: Mini-Review and Full Setup](/en/2026/04/18/omarchy-on-thinkpad-t14-gen-6/)
 - [Why LLMs Aren't Giving You the Result You Expect | Why I Prefer Claude Code Today](/en/2026/04/15/how-to-talk-to-claude-code-effectively/)
 - [Seedance 2.0 Is Finally Out: First Impressions](/en/2026/04/15/seedance-2-0-public-launch-first-impressions/)
