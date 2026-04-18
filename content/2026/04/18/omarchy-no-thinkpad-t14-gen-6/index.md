@@ -266,9 +266,9 @@ Escrevi um pequeno Python que lê scancodes brutos de `/dev/input/event*` pra di
 
 ### Input method: fcitx5
 
-Complementando o layout, instalo fcitx5. Pra quem não conhece, input method é a camada que transforma sequência de teclas em caracteres, onde entram deadkeys (til pra nasalizar, acento agudo, circunflexo), composição de caracteres que não estão no teclado (ç, Ç, letras acentuadas em maiúscula), e suporte a emoji/unicode. Em app Qt ou GTK, o input method também é responsável por menus de contexto pra cedilha, letras com acento, etc.
+Junto com o layout eu instalo fcitx5. Input method, pra quem não conhece, é a camada que transforma sequência de teclas em caracteres. É onde entram deadkeys (til pra nasalizar, acento agudo, circunflexo), composição de caracteres que não estão no teclado (ç, Ç, letras acentuadas em maiúscula), suporte a emoji. Em app Qt ou GTK, o input method também cuida dos menus de contexto pra cedilha e acentos.
 
-Pacotes básicos:
+Pacotes:
 
 ```bash
 sudo pacman -S --needed fcitx5 fcitx5-configtool fcitx5-gtk fcitx5-qt
@@ -289,7 +289,7 @@ O `environment.d` do systemd é carregado antes das sessões gráficas, então B
 exec-once = fcitx5 -d
 ```
 
-O resultado prático: digitando `~a` vira `ã`, `'e` vira `é`, `ç` funciona como deveria em toda aplicação. Em 2026, em teclado Thinkpad brasileiro, isso é diferença entre conseguir escrever em português com naturalidade ou não.
+Digitando `~a` vira `ã`, `'e` vira `é`, `ç` funciona como deveria em toda aplicação. Num teclado Thinkpad brasileiro, isso é a diferença entre conseguir escrever em português com naturalidade ou ficar catando letra.
 
 ### Áudio SOF
 
@@ -452,7 +452,7 @@ Tudo isso entra num único ritual de setup inicial.
 
 Se você usa SSH sério, quer digitar a passphrase uma vez por boot e ter `ssh`, `git push`, `scp` mudos pelo resto do dia. No Arch atual isso tem uma pegadinha: o `gnome-keyring` 50 deixou de oferecer componente SSH, e o substituto (`gcr-ssh-agent`) é um agente plain em memória, sem persistência de passphrase. A caixa "lembrar esta chave" que você viu em guias antigos simplesmente não existe mais.
 
-A solução prática é combinar três coisas:
+A combinação que funciona tem três peças:
 
 1. `gcr-ssh-agent.socket` gerenciado pelo systemd serve o `SSH_AUTH_SOCK` em `$XDG_RUNTIME_DIR/gcr/ssh`
 2. `pam_gnome_keyring` no login SDDM destrava o keyring com a senha de login (usado por apps GUI tipo Brave, não pelo SSH)

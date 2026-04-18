@@ -267,9 +267,9 @@ I wrote a small Python that reads raw scancodes from `/dev/input/event*` to diag
 
 ### Input method: fcitx5
 
-Complementing the layout, I install fcitx5. For those who don't know, an input method is the layer that turns a key sequence into characters. It handles deadkeys (tilde for nasalization, acute accent, circumflex), composing characters that aren't on the keyboard (ç, Ç, uppercase accented letters), and emoji/unicode support. In Qt or GTK apps, the input method also drives context menus for cedilla, accented letters, and so on.
+Alongside the layout I install fcitx5. Input method, for those who don't know, is the layer that turns a key sequence into characters. It handles deadkeys (tilde for nasalization, acute accent, circumflex), composing characters that aren't on the keyboard (ç, Ç, uppercase accented letters), emoji support. In Qt or GTK apps, the input method also drives context menus for cedilla and accents.
 
-Base packages:
+Packages:
 
 ```bash
 sudo pacman -S --needed fcitx5 fcitx5-configtool fcitx5-gtk fcitx5-qt
@@ -290,7 +290,7 @@ systemd's `environment.d` is loaded before graphical sessions, so Brave, Alacrit
 exec-once = fcitx5 -d
 ```
 
-Practical result: typing `~a` produces `ã`, `'e` produces `é`, `ç` works as it should in every app. In 2026, on a Brazilian Thinkpad keyboard, this is the difference between typing Portuguese naturally or not.
+Typing `~a` produces `ã`, `'e` produces `é`, `ç` works as it should in every app. On a Brazilian Thinkpad keyboard, this is the difference between typing Portuguese naturally or hunting for each character.
 
 ### SOF audio
 
@@ -453,7 +453,7 @@ All of it rolls into a single initial setup ritual.
 
 If you use SSH seriously, you want to type the passphrase once per boot and have `ssh`, `git push`, `scp` stay silent for the rest of the day. On current Arch there's a catch: `gnome-keyring` 50 dropped its SSH component, and the replacement (`gcr-ssh-agent`) is a plain in-memory agent with no passphrase persistence. The "remember this key" checkbox you saw in old guides simply doesn't exist anymore.
 
-The practical solution is to combine three things:
+The combination that works has three pieces:
 
 1. `gcr-ssh-agent.socket` managed by systemd serves `SSH_AUTH_SOCK` at `$XDG_RUNTIME_DIR/gcr/ssh`
 2. `pam_gnome_keyring` on SDDM login unlocks the keyring with the login password (used by GUI apps like Brave, not by SSH)
