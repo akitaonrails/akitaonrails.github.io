@@ -2,11 +2,16 @@
 {{- if not $id }}
   {{ errorf "youtube shortcode: parâmetro 'id' é obrigatório" }}
 {{- end }}
-{{- $title := $.Get "title" | default "YouTube video player" }}              
+{{- $title := $.Get "title" | default "YouTube video player" }}
+{{- $start := $.Get "start" }}
+{{- $src := printf "https://www.youtube.com/embed/%s" $id }}
+{{- with $start }}
+  {{- $src = printf "%s?start=%s" $src . }}
+{{- end }}
 
 <div class="embed-container">
   <iframe
-    src="https://www.youtube.com/embed/{{ $id }}"
+    src="{{ $src }}"
     title="{{ $title }}"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

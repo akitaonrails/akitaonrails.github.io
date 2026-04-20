@@ -24,6 +24,14 @@ Teve uma época em que programar significava saber converter números pra binár
 
 *Painel frontal e switches: antes de editor, antes de IDE, antes de terminal confortável.*
 
+E olha, tem fase da computação que foi ainda pior que cartão perfurado. Esse vídeo abaixo mostra alguém programando num LGP-21, um dos computadores pessoais mais antigos do mundo (o segundo mais velho, depois do Bendix G15 dos anos 50). Começa a partir do minuto 5:
+
+{{< youtube id="TJjRCCetyo4" start="300" >}}
+
+Imagina o que isso era: você digitava o programa em binário direto numa máquina de escrever, olhando pro acumulador, instrução por instrução, depois virava uma alavanca fisicamente pra executar, e o resultado era datilografado de volta em papel. A métrica não era framerate. Era caractere por minuto. Uma operação que hoje você faz num piscar de olho dentro de qualquer aplicativo, ali demorava horas de trabalho humano, digitando bit a bit, conferindo, testando, conferindo de novo.
+
+É a mesma coisa que tá acontecendo com digitar código em editor de texto hoje versus agente de IA rodando no seu lugar. O jeito manual continua funcionando, do mesmo jeito que o painel do Altair continuou funcionando por anos depois que compilador ficou comum. Mas a ferramenta de escolha virou outra, e a diferença de velocidade e esforço é exatamente a mesma ordem de magnitude que separava o LGP-21 do editor de texto moderno. A nossa geração tá vendo essa transição acontecer em câmera lenta, e muita gente não quer ver.
+
 Depois vieram compiladores melhores. Veio C. Vieram máquinas mais gordas, consoles 32/64 bits, PCs mais decentes, e Assembly deixou de ser o centro de tudo pra virar ferramenta de baixo nível, otimização localizada, rotina crítica, inicialização, driver, essas coisas. Ninguém sério olhou pra essa transição e falou: "pronto, agora acabou a programação porque o compilador escreve as instruções de máquina pra você."
 
 No século 21 veio a Web e empurrou uma geração inteira pra HTML, CSS e um monte de burocracia de markup que agrega pouco valor intelectual e exige muito trabalho braçal pra ficar minimamente certo. Eu continuo achando que a indústria estendeu demais a vida útil desse modelo. Por anos demais, programador virou operador de formulário glorificado, montador de CRUD, alinhador de `div`, sacerdote de framework de front-end que faz a mesma coisa com sintaxe diferente.

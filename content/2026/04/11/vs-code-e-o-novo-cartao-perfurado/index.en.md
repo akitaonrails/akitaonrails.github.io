@@ -24,6 +24,14 @@ There was a time when programming meant knowing how to convert numbers into bina
 
 *Front panel and switches: before editors, before IDEs, before comfortable terminals.*
 
+And there were phases of computing that were even worse than punch cards. The video below shows someone programming an LGP-21, one of the oldest personal computers ever made (the second oldest, after the 1950s Bendix G15). Starts at the 5-minute mark:
+
+{{< youtube id="TJjRCCetyo4" start="300" >}}
+
+Imagine what that was: you typed the program in binary directly on a typewriter, looking at the accumulator, instruction by instruction, then physically flipped a switch to execute, and the result got typed back onto paper. The metric wasn't framerate. It was characters per minute. An operation you can do today in the blink of an eye inside any app used to take hours of human work, typing bit by bit, verifying, testing, verifying again.
+
+It's the same thing happening with typing code in a text editor today versus an AI agent running in your place. The manual way still works, the same way the Altair front panel kept working for years after compilers became common. But the tool of choice shifted, and the gap in speed and effort is the same order of magnitude that separated the LGP-21 from a modern text editor. Our generation is watching this transition happen in slow motion, and a lot of people don't want to see it.
+
 Then compilers got better. C showed up. Machines got fatter, consoles moved into the 32/64-bit era, PCs got more decent, and Assembly stopped being the center of everything. It became what it should be: a low-level tool, local optimization, critical routines, bootstrapping, drivers, that sort of thing. Nobody serious looked at that transition and said, "well, that's it, programming is over because the compiler writes machine instructions for you now."
 
 The 21st century brought the Web and shoved an entire generation into HTML, CSS, and a pile of markup bureaucracy that adds very little intellectual value while demanding a ton of manual labor just to get it mostly right. I still think the industry dragged that model out way too long. For way too many years, programmers became glorified form operators, CRUD assemblers, `div` aligners, priests of front-end frameworks that all do the same thing with slightly different syntax.
