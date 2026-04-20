@@ -403,9 +403,9 @@ But that doesn't mean you shouldn't try. It means you need to treat shadPS4 as a
 
 Driveclub is my Moby Dick of emulation. It's the only PS4 game I really want to run. Released in 2014 by Evolution Studios, had a catastrophic launch (online servers collapsed on day one), got patched over two years until it became one of the best racing games of the generation, and was discontinued by Sony when Evolution was closed in 2016. No PC port. No remaster. No sequel. Only exists on PS4.
 
-And today, after literal hours of debugging, **it's running here**. Main menu loads, intro plays, races start, controller responds, audio works. It's not perfect (SDR dim because the game was tonemapped for HDR TV, runs at native 30 FPS, occasional dither on shiny surfaces on NVIDIA), but it's **playable**. I pole-positioned a race while validating the setup to record the video above.
+And today, after many hours of debugging, **it's running here**. Main menu loads, intro plays, races start, controller responds, audio works, daytime tracks visible, night tracks with headlights lighting the road. The video above is real gameplay, stable 30 FPS, v1.28 with DLC content accessible.
 
-Getting here required dismantling several traps. Worth documenting every one, because most online guides don't mention any of them.
+Getting here required dismantling several traps. Worth documenting, because most online guides don't mention any of them.
 
 ### Trap 1: the FMOD loop error that wasn't FMOD
 
@@ -417,33 +417,39 @@ When you try to boot Driveclub on shadPS4 straight from the retail PKG, the log 
 
 The first reaction is to investigate FMOD. Some people online spent hours messing with sceFont, libtbb, sceNgs2, convinced it was an audio or HLE lib problem. **None of that is the cause**. The `masterbank.bank` file literally doesn't exist on disk, because it's packed inside the `gameNNN.dat` files in a custom Evolution Studios archive format that shadPS4's VFS can't read.
 
-The only public tool that parses that format is **[Nenkai's DriveClubFS](https://github.com/Nenkai/DriveClubFS)**. It's a .NET app that walks the `game.ndx` (index) and decompresses the `.dat` files into loose files. You extract the PKG with [ShadPKG](https://github.com/shadps4-emu/ShadPKG), then run DriveClubFS on top, and end up with 5343 loose files (~25 GB). Then shadPS4 can read it.
+The only public tool that parses that format is **[Nenkai's DriveClubFS](https://github.com/Nenkai/DriveClubFS)**. It's a .NET app that walks the `game.ndx` (index) and decompresses the `.dat` files into loose files. You extract the PKG with [ShadPKG](https://github.com/shadps4-emu/ShadPKG), then run DriveClubFS on top, and end up with 8018 loose files (~47 GB for v1.28). Then shadPS4 can read it.
 
 Trap inside the trap: the DriveClubFS project targets `net9.0`, and Arch has `net8` and `net10`. You need to retarget the csproj to `net10.0` before building. The exact command is documented in the repo's [`docs/driveclub-shadps4.md`](https://github.com/akitaonrails/distrobox-gaming/blob/master/docs/driveclub-shadps4.md).
 
-### Trap 2: v1.00 vs v1.28
+### Trap 2: v1.28 is a cumulative patch and strips metadata
 
-Driveclub had patches up to 1.28. The intuition is to use the most recent. Wrong. **Only v1.00 works** with DriveClubFS. When you try to merge the v1.00 base with the v1.28 patch, DriveClubFS crashes with `EndOfStreamException` on file 12 of 8018. v1.28 has a `.dat` format that DriveClubFS (current v1.1.0) doesn't process.
+The v1.28 PKG is a cumulative patch, not a full disc. When you extract it, you get patch content (`sce_sys/about/right.sprx` among others), but **you don't get `param.sfo`, `disc_info.dat`, or `keystone`**. Those are metadata files that the v1.00 base PKG has, and that v1.28 assumes you already have alongside.
 
-The consequence is accepting v1.00 as the entry point. No patches, no additional content, no Japan maps, no VR-sourced tracks from the final 2016 update. It's the bare game. In exchange, you have the game running.
+The symptom of that gap is cruel: the game boots on v1.28, the Qt Launcher shows the tile, you click, the loading screen comes up. Then the game decides that no content "has been released yet" and asks you to download. Download obviously isn't happening because PSN for PS4 isn't accessible. You get stuck thinking it's a network bug, when actually it's missing metadata.
 
-### Trap 3: the 60fps XML patch corrupts v1.00
+The workaround is to extract the v1.00 PKG separately (into a `CUSA00003.v100-working-backup/` dir), grab `param.sfo`, `disc_info.dat`, and `keystone` from there, copy them into the v1.28 `CUSA00003/` tree. The v1.00 `param.sfo` already has `APP_VER = 01.28` recorded (because it was the version that originally received the patch), so there's no version conflict. The v1.28 eboot reads those files and unlocks the content.
 
-There's a famous `Driveclub.xml` patch that makes the game run at 60fps. Its byte offsets target the v1.28 eboot. If you apply it to v1.00, it corrupts live code and the game crashes right after boot.
+Keeping the `.v100-working-backup/` intact also gives you a one-command rollback if some experiment breaks the live install.
 
-Fix: disable the XML patch (rename to `.disabled-for-v1.0`). You stay at 30 FPS native. That's the trade-off. If a v1.00-compatible 60fps patch appears in the future, great. Until then, 30 FPS is what we get.
+### Trap 3: the 60fps XML patch produces slow-motion
 
-### Trap 4: the `fontlib` PR that looked like the solution and wasn't
+There's a community `Driveclub.xml` patch that makes the game render at 60fps. Intuitively, it looks like pure upside. In practice, the patch rewrites the render rate but doesn't touch the game's fixed logic tickrate, which is locked at 30fps. On a real PS4 Pro, the hardware reconciles the mismatch. On shadPS4, it doesn't.
 
-The `0x29` crash during boot made Claude suggest it was a font HLE problem. I burned two to three hours on that. Went after [PR #3772](https://github.com/shadps4-emu/shadPS4/pull/3772) which adds fontlib, compiled a shadPS4 fork with it, tried to dump SST* PS4 fonts (which requires jailbroken hardware, as I found out later), experimented with font substitution using Adobe Source Han Sans renamed to the names shadPS4 expects. All of it ignored on main: font HLE had already been merged into main via [PR #2761](https://github.com/shadps4-emu/shadPS4/pull/2761) in November 2025, and the `0x29` crash wasn't font-related anyway.
+Result: the game renders smoothly at 60fps, but the physics, AI, audio, race timing all run in slow motion. You press the throttle and the car takes a perceptible two seconds to launch. Looks like a random bug until you understand the mismatch.
 
-Moral: **use the stock main branch**. No fork, no compiling, no unmerged PR. The stock CI AppImage is enough.
+Disabling the XML patch is the move (I renamed it to `.disabled-for-v1.0`, historical name kept from earlier debugging). Without the patch, the game runs at native 30 FPS, same speed as a stock PS4 base. Which is what we want. If someone in the future produces a patch that moves both rates (render + logic), we'll flip it back on.
+
+### Trap 4: pipeline cache has to be on
+
+shadPS4's default ships with `pipeline_cache_enabled = false`. On a large game like Driveclub, which has hundreds of Vulkan shaders and pipelines, that means every cold launch recompiles everything. My first launch counted ~864 shaders and ~590 pipelines being compiled in real time. The menu animated at 2-3 fps. A minute later, with everything compiled, it snapped to normal fluidity. Next launch, same from-scratch compilation cycle.
+
+Just enable `"pipeline_cache_enabled": true` in the global `config.json`. The first session pays the one-time compilation cost, subsequent sessions read from cache and start up instantly.
 
 ### Trap 5: TOML silently ignored
 
 shadPS4 migrated from TOML to JSON for per-game configs in late 2025. If you have an old `CUSA00003.toml` in the `custom_configs/` folder, it's silently ignored, no warning in the log. You think your config is active, in reality you're running all defaults.
 
-Fix: delete any TOML and use `CUSA00003.json`. The per-game configs that work for Driveclub are specific and detailed, all documented in the [`docs/driveclub-shadps4.md`](https://github.com/akitaonrails/distrobox-gaming/blob/master/docs/driveclub-shadps4.md) of the repo.
+Delete any TOML and use `CUSA00003.json`. The per-game configs that work for Driveclub are specific and detailed, all documented in the [`docs/driveclub-shadps4.md`](https://github.com/akitaonrails/distrobox-gaming/blob/master/docs/driveclub-shadps4.md) of the repo.
 
 ### Trap 6: controller not detected without hidapi hints
 
@@ -451,35 +457,43 @@ shadPS4's Qt Launcher calls an internal `Shadps4-sdl.AppImage`. Without specific
 
 Plugging the controller in **before** opening the Qt Launcher also helps. Hot-plug works during the game, not before.
 
-### What finally worked
+### Trap 7: night tracks are pitch black on upstream
 
-After all those traps, the recipe is:
+This one needed a code patch, not just config. On upstream shadPS4, Driveclub night tracks came out pitch black. The HUD rendered on top, but the track, the car, everything hidden in absolute black. Not even the car's own headlights lit anything up.
+
+Investigation pointed at the log repeating 1325 times the message `ResolveDepthOverlap: Unimplemented depth overlap copy`. The cause: Driveclub uses a forward+ renderer, which writes scene depth into a 4x MSAA D32Sfloat buffer, then reads that same buffer as `R32G32B32A32Sfloat` 1x for effects like SSAO, volumetrics, and dynamic lighting (headlights). shadPS4 upstream has a path for MSAA → MSAA and for color → color as MSAA depth, but **it didn't have a path for "MSAA depth 4x becomes color 1x"** in that specific format. It falls into the final `else`, frees the buffer, and the shader reads uninitialized memory — i.e., black.
+
+I implemented in my local shadPS4 fork a `ReinterpretMsDepthAsColor` symmetric to the existing `ReinterpretColorAsMsDepth`. It's a tiny fragment shader (`ms_depth_to_color.frag`) that does `texelFetch` of sample 0's depth and writes it as `vec4(depth, 0, 0, 1)` to the color attachment. Plus a `BlitHelper` helper and a new `else if` branch in `TextureCache::ResolveDepthOverlap`. With that, night tracks light up properly, opponent headlights appear, AO and volumetrics on day scenes get more precise too.
+
+The fix lives on a `gamma-debug` branch of my fork, ready to become an upstream PR. Until it merges, anyone who wants to race at night on Driveclub on shadPS4 needs to build from that branch. Anyone sticking to daytime can use upstream nightly directly.
+
+### What finally worked
 
 | Component | Value |
 |---|---|
-| shadPS4 | main branch, commit `90b75ea` or newer, stock CI AppImage |
-| Driveclub | **v1.00 base PKG only** (no patches) |
+| shadPS4 | Upstream Pre-release (nightly) for daytime; `gamma-debug` fork for night (until MSAA depth fix lands upstream) |
+| Driveclub | **v1.28 base** (cumulative patch, ~47 GB, 8018 files) |
 | Extraction | [ShadPKG](https://github.com/shadps4-emu/ShadPKG) → [DriveClubFS](https://github.com/Nenkai/DriveClubFS) (retargeted to net10.0) |
-| Structure | loose files, 5343 files, ~25 GB (can delete original `.dat` files after) |
-| Per-game config | JSON at `custom_configs/CUSA00003.json` (not TOML) |
-| `readbacks_mode` | 0 (mandatory, [issue #3210](https://github.com/shadps4-emu/shadPS4/issues/3210)) |
+| Metadata | Restore `param.sfo`, `disc_info.dat`, `keystone` from the v1.00 PKG |
+| Global config | `pipeline_cache_enabled: true`, `readbacks_mode: 0` |
+| Per-game config | JSON at `custom_configs/CUSA00003.json` |
 | `vblank_frequency` | 60 |
 | `gpu_id` | 0 (NVIDIA dGPU hardforced) |
-| `Driveclub.xml` patch | **Disabled** (not compatible with v1.00) |
+| `Driveclub.xml` patch | **Disabled** (60fps produces slow-motion, root cause: fixed logic tickrate) |
 | Controller | AppImage wrapper with `SDL_JOYSTICK_HIDAPI=1` + variants |
 | Qt Launcher | `checkForUpdates=false` to avoid GitHub rate-limit dialog |
 
-All of this is encapsulated in [`docs/driveclub-shadps4.md`](https://github.com/akitaonrails/distrobox-gaming/blob/master/docs/driveclub-shadps4.md) in the repo, with the exact step-by-step for extraction, config, and wrapper.
+All of this is encapsulated in [`docs/driveclub-shadps4.md`](https://github.com/akitaonrails/distrobox-gaming/blob/master/docs/driveclub-shadps4.md) in the repo, with the exact step-by-step for extraction, config, and wrapper. The full technical investigation (5 phases, detailed engineering log) lives in the fork's [`driveclub-v128-investigation.md`](https://github.com/akitaonrails/shadPS4/blob/gamma-debug/docs/driveclub-v128-investigation.md).
 
 ### How playable it is today
 
-Honestly good. The video above is real gameplay, stable 30 FPS, physics responding, audio in sync, HUD correct. What's still missing:
+Good. The video above is real gameplay, stable 30 FPS, physics responding, audio in sync, HUD correct, v1.28 with DLC accessible. Day races and night races both work (with the MSAA depth fork for night). What's left as limitation:
 
-- **SDR dim:** Driveclub was tonemapped for PS4 HDR TV. Without HDR on the monitor + no ShadeBoost internal in shadPS4, the game looks visually dark. Like the game in permanent night. vkBasalt tried to help and broke the image on RTX 5090 / Vulkan 1.4. Hyprland `screen_shader` works but has its own bugs. **Accepted the dim look**. That's what community footage looks like too.
-- **30 FPS:** no 60fps patch exists for v1.00. Accepted.
-- **Dither on shiny surfaces:** shiny reflections have a dither pattern on NVIDIA. Reportedly better on AMD. Minor.
+- **Daytime brightness sits a bit below what the PS4 delivered.** Not an emulator bug. I spent hours testing tonemap, auto-exposure, gamma curves, ACES, various post-processing shaders, and in the end discovered the game **writes already-correct SDR** to the framebuffer. What was missing was the display-calibration pipeline that PS4 firmware 4.0+ applied on the outside, and that Linux doesn't have. The in-game brightness slider (which on shadPS4 maps to `sceVideoOutAdjustColor`) works, but only up to the point where the game expected the firmware to pick up the rest. The 5-second dim at the start of a race is also the game's own cinematic fade-in VFX, not an emulator fault. Accepted.
+- **Native 30 FPS.** No viable 60fps patch (due to the fixed logic tickrate explained above). Stock PS4 speed.
+- **MSAA depth fix still on the fork.** PR candidate ready, awaiting upstream merge.
 
-**"Achievement Unlocked".** Not a perfect state, but **the game runs**, with sound, with controller, with gameplay, and I can complete a whole race without crashing. That's a personal milestone. I spent years trying to get this game running on Linux and would always hit a point where I just gave up. Now it's part of my ES-DE, shortcut on the desktop, sitting there waiting for me to play.
+**"Achievement Unlocked".** The game runs, with sound, controller, gameplay, day and night, and I complete a whole race without crashing. That's a personal milestone. I spent years trying to get this game running on Linux and would always hit a point where I just gave up. Now it's part of my ES-DE, shortcut on the desktop, sitting there waiting for me to play.
 
 If you want to replicate, the repo is public. Good luck. You're going to need patience.
 
