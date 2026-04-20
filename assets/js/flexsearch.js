@@ -254,6 +254,35 @@ document.addEventListener("DOMContentLoaded", function () {
     return documents;
   }
 
+  function getCrumb(route, data) {
+    const urlParts = route.split('/').filter(x => x != "" && !x.startsWith('#'));
+    let crumb = '';
+    let searchUrl = '/';
+
+    for (let i = 0; i < urlParts.length; i++) {
+      const urlPart = urlParts[i];
+      searchUrl += urlPart + '/';
+
+      const crumbData = data[searchUrl];
+      if (!crumbData) {
+        console.warn('Excluded page', searchUrl, '- will not be included for search result breadcrumb for', route);
+        continue;
+      }
+
+      let title = data[searchUrl].title;
+      if (title == "_index") {
+        title = urlPart.split("-").map(x => x).join(" ");
+      }
+      crumb += title;
+
+      if (i < urlParts.length - 1) {
+        crumb += ' > ';
+      }
+    }
+
+    return crumb;
+  }
+
   /**
    * Preloads the search index by fetching data and adding it to the FlexSearch index.
    * @returns {Promise<void>} A promise that resolves when the index is preloaded.
@@ -300,30 +329,7 @@ document.addEventListener("DOMContentLoaded", function () {
     for (const route in data) {
       let pageContent = '';
       ++pageId;
-      const urlParts = route.split('/').filter(x => x !== '' && !x.startsWith('#'));
-
-      let crumb = '';
-      let searchUrl = '/';
-      for (let i = 0; i < urlParts.length; i++) {
-        const urlPart = urlParts[i];
-        searchUrl += urlPart + '/';
-
-        const crumbData = data[searchUrl];
-        if (!crumbData) {
-          console.warn('Excluded page', searchUrl, '- will not be included for search result breadcrumb for', route);
-          continue;
-        }
-
-        let title = data[searchUrl].title;
-        if (title === '_index') {
-          title = urlPart.split('-').map(x => x).join(' ');
-        }
-        crumb += title;
-
-        if (i < urlParts.length - 1) {
-          crumb += ' > ';
-        }
-      }
+      const crumb = getCrumb(route, data);
 
       for (const heading in data[route].data) {
         const [hash, text] = heading.split('#');
@@ -332,6 +338,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const content = data[route].data[heading] || '';
         const paragraphs = content.split('\n').filter(Boolean);
+
         const titleDoc = {
           id: url,
           url,
