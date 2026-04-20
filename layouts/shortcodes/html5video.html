@@ -1,0 +1,12 @@
+{{- $src := .Get "src" -}}
+{{- $poster := .Get "poster" -}}
+<video
+  controls
+  preload="metadata"
+  playsinline
+  class="html5-video"
+  style="width:100%; max-width:960px; display:block; margin:1.25em auto; border-radius:8px; background:#000;"
+  {{ with $poster }}poster="{{ . }}"{{ end }}>
+  <source src="{{ $src }}" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
