@@ -414,21 +414,23 @@ Quando você tenta bootar Driveclub no shadPS4 direto da PKG retail, o log estou
 /app0/audio/fmodstudio/masterbank.bank failed, file does not exist
 ```
 
-A primeira reação é investigar FMOD. Tem gente na internet que passou horas mexendo em sceFont, libtbb, sceNgs2, convencidos que era problema de áudio ou lib HLE. **Nada disso é a causa**. O arquivo `masterbank.bank` literalmente não existe no disco, porque ele tá empacotado dentro dos arquivos `gameNNN.dat` num formato de archive customizado da Evolution Studios que o VFS do shadPS4 não sabe ler.
+A primeira reação é investigar FMOD. Tem gente na internet que passou horas mexendo em sceFont, libtbb, sceNgs2, convencidos que era problema de áudio ou lib HLE. **Nada disso é a causa**. O arquivo `masterbank.bank` literalmente não existe no disco, porque ele tá empacotado dentro dos arquivos `gameNNN.dat` num formato de archive customizado da Evolution Studios que o VFS do shadPS4 não sabe ler. A mesma história vale pra fontes, modelos, shaders. O conteúdo todo do jogo mora dentro dos `.dat`.
 
-A única ferramenta pública que parse esse formato é o **[DriveClubFS do Nenkai](https://github.com/Nenkai/DriveClubFS)**. É uma app .NET que walk o `game.ndx` (índice) e decomprime os `.dat` em arquivos soltos. Você extrai a PKG com [ShadPKG](https://github.com/shadps4-emu/ShadPKG), depois passa o DriveClubFS por cima, e fica com 8018 arquivos soltos (~47 GB pra v1.28). Aí o shadPS4 consegue ler.
+A única ferramenta pública que parse esse formato é o **[DriveClubFS do Nenkai](https://github.com/Nenkai/DriveClubFS)**. É uma app .NET que lê o `game.ndx` (o índice) e decomprime os `.dat` em arquivos soltos. Sem esse unpack, o shadPS4 não consegue abrir nada.
 
-Armadilha dentro da armadilha: o projeto DriveClubFS tá em `net9.0`, e o Arch tem `net8` e `net10`. Precisa retarget o csproj pra `net10.0` antes de buildar. O comando exato tá documentado no [`docs/driveclub-shadps4.md`](https://github.com/akitaonrails/distrobox-gaming/blob/master/docs/driveclub-shadps4.md) do repo.
+Detalhe de build: o projeto DriveClubFS tá em `net9.0`, e o Arch tem `net8` e `net10`. Precisa retargetar o csproj pra `net10.0` antes de buildar. O comando exato tá documentado no [`docs/driveclub-shadps4.md`](https://github.com/akitaonrails/distrobox-gaming/blob/master/docs/driveclub-shadps4.md) do repo.
 
-### Armadilha 2: v1.28 é cumulative-patch e strip metadata
+### Armadilha 2: v1.28 é patch, não instalador base
 
-A PKG do v1.28 é um cumulative-patch, não um disco completo. Quando você extrai, vem conteúdo do patch (`sce_sys/about/right.sprx` entre outros), mas **não vem o `param.sfo`, nem o `disc_info.dat`, nem o `keystone`**. São arquivos de metadata que a PKG base de v1.00 tem e que o v1.28 assume que você já tem.
+Como em qualquer PS4, update é patch que vai em cima de uma install base. A PKG do v1.28 traz o eboot atualizado, `.dat` com conteúdo novo e patch content (`sce_sys/about/right.sprx`), mas **não traz `param.sfo`, `disc_info.dat` nem `keystone`**. Esses metadata ficam na base de v1.00 — num PS4 real já estariam gravados do install original.
 
-O sintoma desse gap é cruel: o jogo boota no v1.28, a Qt Launcher mostra o tile, você clica, a tela carrega. Aí o jogo decide que nenhum conteúdo "foi lançado ainda" e pede pra você fazer download. Download obviamente não vai acontecer porque PSN pra PS4 não tá acessível. Você fica travado achando que é bug de rede, quando na verdade é metadata faltando.
+E tem mais: o `game.ndx` do v1.28 referencia tanto os `.dat` da base quanto os novos. Rodar o DriveClubFS contra só o v1.28 faz o índice apontar pra arquivos que não tão ali.
 
-O caminho é extrair a PKG de v1.00 separadamente (pra um dir `CUSA00003.v100-working-backup/`), pegar o `param.sfo`, `disc_info.dat` e `keystone` de lá, e copiar pra dentro do `CUSA00003/` do v1.28. O `param.sfo` do v1.00 já tem `APP_VER = 01.28` gravado (porque ele era da versão que recebeu o patch original), então não tem conflito de versão. O eboot v1.28 lê esses arquivos e libera o conteúdo.
+O sintoma mais cruel vem depois: o jogo boota, a Qt Launcher mostra o tile, você clica, a tela carrega. Aí o jogo decide que nenhum conteúdo "foi lançado ainda" e pede pra fazer download. Download obviamente não vai acontecer porque PSN pra PS4 não tá acessível. Você fica travado achando que é bug de rede, quando na verdade é metadata faltando.
 
-Manter o `.v100-working-backup/` intacto também serve como rollback de um comando se algum experimento quebrar a instalação viva.
+O fluxo correto é tratar v1.28 como overlay sobre a base. Primeiro, extrai a PKG de v1.00 pra um dir dedicado (`CUSA00003.v100-working-backup/` funciona bem, e dobra como snapshot de rollback se algum experimento quebrar a instalação viva). Depois extrai o v1.28 pra staging e linka os `.dat` de índice baixo da base dentro do staging pra o DriveClubFS enxergar o set completo. Roda o unpack. Sai com 8018 arquivos soltos, ~47 GB.
+
+Move pra `CUSA00003/` final, copia o eboot e conteúdo novo do v1.28 por cima, e puxa `param.sfo`, `disc_info.dat` e `keystone` da base de v1.00. O `param.sfo` da base já vem com `APP_VER = 01.28` gravado (porque ela recebeu o patch original), então não tem conflito de versão. O eboot v1.28 lê esses arquivos e libera o conteúdo.
 
 ### Armadilha 3: o patch XML de 60fps gera slow-motion
 
@@ -436,7 +438,7 @@ Tem um `Driveclub.xml` patch comunitário que faz o jogo renderizar a 60fps. Int
 
 Resultado: o jogo renderiza liso a 60fps, mas toda a física, AI, áudio, timing de corrida roda em câmera lenta. Você aperta acelerador e o carro leva dois segundos perceptíveis pra sair. Parece bug aleatório até você entender o mismatch.
 
-Desabilitar o patch XML resolve (renomeei pra `.disabled-for-v1.0`, nome histórico que sobrou do debugging). Sem o patch, o jogo fica a 30 FPS nativos, mesma velocidade do PS4 base stock. Que é o que a gente quer. Se alguém conseguir no futuro fazer um patch que mexa nos dois rates (render + logic), a gente religa.
+Desabilitar o patch XML resolve (basta renomear o arquivo pra algo como `.disabled`). Sem o patch, o jogo fica a 30 FPS nativos, mesma velocidade do PS4 base stock. Que é o que a gente quer. Se alguém conseguir no futuro fazer um patch que mexa nos dois rates (render + logic), a gente religa.
 
 ### Armadilha 4: pipeline cache precisa estar ligado
 
