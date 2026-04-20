@@ -509,6 +509,6 @@ What changed in the last year is that Claude Code can be my aggregator. I tell C
 
 This Sunday is the consolidated result of all that work. [distrobox-gaming](https://github.com/akitaonrails/distrobox-gaming) is that knowledge turned into code, reproducible, automated. Starting on a fresh machine, one `ansible-playbook site.yml` puts me back in this state in under two hours. Fewer than 10 commands separate "vanilla Arch Linux" from "Driveclub running".
 
-If anyone wants to contribute, test on different hardware, report a bug, or send a config that's missing, the repo is open. The more people test on different setups, the more resilient the project gets. If you improve the Driveclub situation (internal ShadeBoost, DLC working on v1.00, v1.00-compatible 60fps patch, font dumps that don't need jailbroken hardware), send a PR and I'll embrace it.
+If anyone wants to contribute, test on different hardware, report a bug, or send a config that's missing, the repo is open. The more people test on different setups, the more resilient the project gets. If you improve the Driveclub situation (get the MSAA depth fix merged upstream, a 60fps patch that also fixes the logic tickrate, font dumps that don't need jailbroken hardware), send a PR and I'll embrace it.
 
 For now, I'm going to do a race in Iceland on Driveclub. Good Sunday night.
