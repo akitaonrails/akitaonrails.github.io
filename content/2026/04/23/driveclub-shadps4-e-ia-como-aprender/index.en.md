@@ -105,6 +105,18 @@ The way to discover is to **dive into the chain**, phase by phase, ruling out wr
 
 That's where a lot of people misread me. "Akita is already a senior, he has 25+ years of experience, of course he knows." **False.** A senior is someone who has been a junior in every topic they master. And they keep becoming a junior every time they pick up a new domain. I have 25 years of web programming, distributed systems, Ruby, Erlang, Go. But **I've never programmed for PS4**. I'd never looked at the shadPS4 codebase. I didn't know PS4's graphics architecture. On Sunday I was an absolute junior in this domain.
 
+But junior doesn't mean totally green. A while back I had explored on my YouTube channel the low-level architecture of older consoles (from the NES's 6502 onward) and how emulators work internally in general. The two videos below helped build the basic vocabulary for how a game console works under the hood, and made sure I wouldn't trip on concepts like fetch-decode-execute, opcode, interrupt, or HLE vs LLE.
+
+{{< youtube id="hYJ3dvHjeOE" >}}
+
+{{< youtube id="vUqLLpUJ47s" >}}
+
+I had also made an older video on the evolution of CPUs, GPUs, DirectX, and Vulkan, so at least the vocabulary of "modern graphics pipeline" and "shading language" wasn't alien.
+
+{{< youtube id="JEp7ozWqIps" >}}
+
+Knowing that `VkCommandBuffer` exists is very different from knowing where in shadPS4 a readback `vkCmdCopyBuffer` fires. But it gives you a base. That kind of old curiosity paid interest now.
+
 ## The rotation: Claude Code and Codex
 
 AI (in my case [Claude Code](https://claude.com/claude-code)) didn't "know" more than I did. It has the same dated forum text you'd find on Reddit. What it did well was **aggregate**: read shadPS4 source code in parallel with me, index comments, cross-reference between phase docs, compile, run probes, parse 61 MB logs, compare decompiled binary against UBO diffs, shine light on corners of the system faster than I could alone.

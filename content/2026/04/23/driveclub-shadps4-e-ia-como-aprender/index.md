@@ -105,6 +105,18 @@ O caminho pra descobrir é **mergulhar na cadeia**, fase por fase, descartando h
 
 E é aí que muita gente se confunde comigo. "O Akita já é senior, ele tem 25+ anos de experiência, claro que ele sabe." **Falso.** Profissional senior é alguém que já foi junior em cada tópico que domina. E continua virando junior toda vez que pega um domínio novo. Eu tenho 25 anos de programação web, sistemas distribuídos, Ruby, Erlang, Go. Mas **eu nunca programei pra PS4**. Nunca tinha olhado o codebase do shadPS4. Não conhecia a arquitetura gráfica do PS4. Domingo eu era um absoluto junior nesse domínio.
 
+Junior não é o mesmo que totalmente cru. Em anos anteriores eu já tinha explorado no meu canal a arquitetura low-level de consoles antigos (do 6502 do NES pra cima) e como emuladores funcionam internamente em geral. Os dois vídeos abaixo ajudaram a construir o vocabulário básico de como videogame funciona por dentro, e garantiram que eu não ia tropeçar em conceitos tipo fetch-decode-execute, opcode, interrupt, ou HLE vs LLE.
+
+{{< youtube id="hYJ3dvHjeOE" >}}
+
+{{< youtube id="vUqLLpUJ47s" >}}
+
+Eu também já tinha feito outro vídeo, mais antigo, sobre a evolução de CPUs, GPUs, DirectX e Vulkan, então pelo menos o vocabulário de "pipeline gráfico moderno" e "shading language" não era estranho pra mim.
+
+{{< youtube id="JEp7ozWqIps" >}}
+
+Saber que existe `VkCommandBuffer` é bem diferente de saber onde no shadPS4 um `vkCmdCopyBuffer` de readback dispara. Mas dá uma base. Esse tipo de curiosidade antiga rendeu juros agora.
+
 ## O rodízio: Claude Code e Codex
 
 A IA (no meu caso o [Claude Code](https://claude.com/claude-code)) não "sabia" mais que eu. Ela tem o mesmo texto de fórum datado que você achou no Reddit. O que ela fazia bem era **agregar**: ler o código do shadPS4 em paralelo comigo, indexar os comentários, cruzar referências entre phase docs, compilar, rodar probes, parsear logs de 61 MB, comparar binário decompilado com o diff de UBO, jogar luz em cantos do sistema mais rápido do que eu sozinho conseguiria.
