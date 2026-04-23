@@ -6,6 +6,7 @@ title: AkitaOnRails Blog
 
 ## 2026 - April
 
+- [How DriveClub and shadPS4 Almost Defeated AI and Me: How to Learn](/en/2026/04/23/driveclub-shadps4-e-ia-como-aprender/)
 - [Clean Code for AI Agents](/en/2026/04/20/clean-code-for-ai-agents/)
 - [My Favorite Retro Racing Games Running on My Distrobox](/en/2026/04/19/my-favorite-retro-racing-games-on-distrobox/)
 - [LLM Benchmarks Part 2: Is It Worth Combining Multiple Models in the Same Project? Claude + GLM??](/en/2026/04/18/llm-benchmarks-part-2-multi-model/)
