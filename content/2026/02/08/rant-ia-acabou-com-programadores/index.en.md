@@ -118,7 +118,7 @@ I've documented this in several posts on this blog:
 * [AI Agents: Locking Down Your System](/en/2026/01/10/ai-agents-locking-down-your-system/)
 * [AI Agents: Comparing the main 2026 LLMs on the Zig Challenge](/en/2026/01/11/ai-agents-comparing-top-llms-on-the-zig-challenge/)
 * [AI Agents: Installing LSPs for Crush](/en/2026/01/21/ai-agents-installing-lsps-for-crush/)
-* [AI Agents: Which one is best? OpenCode, Crush, Claude Code, GPT Codex, GoPilot, Cursor, WindSurf, AntiGravity?](/en/2026/01/24/ai-agents-which-is-best-opencode-crush-claude-code-codex-copilot-cursor-windsurf-antigravity/)
+* [AI Agents: Which one is best? OpenCode, Crush, Claude Code, GPT Codex, Copilot, Cursor, Windsurf, Antigravity?](/en/2026/01/24/ai-agents-which-is-best-opencode-crush-claude-code-codex-copilot-cursor-windsurf-antigravity/)
 * [Vibe Code: I built a little app 100% with GLM 4.7 (TV Clipboard)](/en/2026/01/28/vibe-code-built-a-little-app-fully-with-glm-4-7-tv-clipboard/)
 * [Vibe Code: Which LLM is the BEST?? Let's talk for REAL](/2026/01/29/vibe-code-qual-llm-%c3%a9-a-melhor-vamos-falar-a-real/)
 * [Vibe Code: I built a Markdown Editor from scratch with Claude Code (FrankMD) PART 1](/en/2026/02/01/frankmd-markdown-editor-vibe-code-part-1/)
