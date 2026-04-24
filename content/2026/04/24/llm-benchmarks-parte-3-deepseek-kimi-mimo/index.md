@@ -13,7 +13,7 @@ tags:
   - self-hosting
 ---
 
-**TL;DR:** Essa é a versão canônica (e definitiva por enquanto) do meu benchmark de LLMs pra coding. Substitui os [artigos anteriores](https://github.com/akitaonrails/akitaonrails.github.io) de Abril que agora estão deprecados. Re-auditei os 22 modelos contra o código-fonte do gem `ruby_llm` em vez de memória, e vários que eu tinha tachado de "inventar API" na verdade escrevem código correto. Kimi K2.6 virou Tier A. Gemini 3.1 Pro também. GLM 5.1 caiu pra Tier C. MiMo V2.5 Pro caiu de "primeiro Tier 1 não-Anthropic" pra Tier B. Opus 4.7 e GPT 5.4 xHigh empatam no topo (94/100). Opus 4.6 continua sendo minha escolha diária por **comportamento**, não por código. Detalhes longos abaixo.
+**TL;DR:** Essa é a versão canônica (e definitiva por enquanto) do meu benchmark de LLMs pra coding. Substitui os [artigos anteriores](https://github.com/akitaonrails/akitaonrails.github.io) de Abril que agora estão deprecados. Re-auditei os 23 modelos contra o código-fonte do gem `ruby_llm` em vez de memória (GPT 5.5 foi adicionado hoje), e vários que eu tinha tachado de "inventar API" na verdade escrevem código correto. Kimi K2.6 virou Tier A. Gemini 3.1 Pro também. GLM 5.1 caiu pra Tier C. MiMo V2.5 Pro caiu de "primeiro Tier 1 não-Anthropic" pra Tier B. Opus 4.7 e GPT 5.4 xHigh empatam no topo (97/100), GPT 5.5 entra terceiro com 96/100 (40% mais barato que o 5.4 com a mesma qualidade). Opus 4.6 continua sendo minha escolha diária por **comportamento**, não por código. Detalhes longos abaixo.
 
 **Disclaimer importante**: todos os rankings, tiers e conclusões aqui só valem **dentro da metodologia específica desse benchmark**, que é construir um app Rails + RubyLLM + Hotwire + Docker a partir de um prompt fixo. Modelos que caem pra Tier B ou C aqui podem brilhar em outros tipos de tarefa (completamento de função isolada, geração de snippet curto, raciocínio sobre problema matemático). Ninguém deve ler isso como julgamento universal de capacidade.
 
@@ -63,32 +63,35 @@ Score 0-100 → Tier A (80+) / B (60-79) / C (40-59) / D (<40).
 - **Tier C**: rework grande. Core bugs ou deliverables faltando
 - **Tier D**: joga fora, só serve pra inspiração arquitetural
 
-## Ranking final (22 modelos)
+## Ranking final (23 modelos)
+
+> **Update 2026-04-24:** adicionei GPT 5.5 e corrigi um bug no critério. Ruby 4.0.2 existe e é a versão estável atual (saiu em 2026-03-17), então a penalização de -3 que eu aplicava em todos os modelos que usavam o default do generator do Rails 8.1 era errada. Todos os scores subiram +3, exceto o Gemini 3.1 Pro que tinha optado pelo Ruby 3.4.1 e tinha recebido bônus que agora virou neutro.
 
 | Rank | Modelo | Score | Tier | RubyLLM OK | Tempo | Custo |
 |---:|---|---:|:---:|:---:|---|---|
-| 1 | Claude Opus 4.7 | **94** | A | ✅ | 18m | ~$1.10 |
-| 1 | GPT 5.4 xHigh (Codex) | **94** | A | ✅ | 22m | ~$16 |
-| 3 | Kimi K2.6 | **84** | A | ✅ | 20m | ~$0.30 |
-| 4 | Gemini 3.1 Pro | **82** | A | ✅ | 14m | ~$0.40 |
-| 5 | Claude Opus 4.6 | 80 | A | ✅ | 16m | ~$1.10 |
-| 6 | Claude Sonnet 4.6 | 75 | B | ✅ | 16m | ~$0.63 |
-| 6 | DeepSeek V4 Flash | 75 | B | ✅ | 3m | ~$0.01 |
-| 8 | Qwen 3.6 Plus | 68 | B | ✅ | 17m | ~$0.15 |
-| 9 | DeepSeek V4 Pro | 66 | B | ✅ | 22m (DNF) | ~$0.50 |
-| 9 | Kimi K2.5 | 66 | B | ✅ | 29m | ~$0.10 |
-| 11 | Xiaomi MiMo V2.5 Pro | 64 | B | ✅ | 11m | ~$0.14 |
-| 12 | GLM 5 | 61 | B | ✅ | 17m | ~$0.11 |
-| 13 | Step 3.5 Flash | 53 | C | ⚠️ bypass | 38m | ~$0.02 |
-| 14 | Qwen 3.5 35B (local) | 52 | C | ✅ | 28m | grátis |
-| 15 | GLM 4.7 Flash bf16 (local) | 49 | C | ✅ | falhou | grátis |
-| 16 | GLM 5.1 (Z.ai) | 43 | C | ❌ | 22m | subscription |
-| 17 | DeepSeek V3.2 | 40 | C | ❌ | 60m | ~$0.07 |
-| 18 | MiniMax M2.7 | 38 | D | ❌ | 14m | ~$0.30 |
-| 19 | Qwen 3.5 122B (local) | 34 | D | ❌ | 43m | grátis |
-| 20 | Qwen 3 Coder Next (local) | 29 | D | ❌ | 17m | grátis |
-| 21 | Grok 4.20 | 22 | D | ❌ | 8m | ~$0.60 |
-| 22 | GPT OSS 20B (local) | 8 | D | ❌ | falhou | grátis |
+| 1 | Claude Opus 4.7 | **97** | A | ✅ | 18m | ~$1.10 |
+| 1 | GPT 5.4 xHigh (Codex) | **97** | A | ✅ | 22m | ~$16 |
+| 3 | **GPT 5.5 xHigh (Codex)** | **96** | A | ✅ | 18m | ~$10 |
+| 4 | Kimi K2.6 | **87** | A | ✅ | 20m | ~$0.30 |
+| 5 | Claude Opus 4.6 | 83 | A | ✅ | 16m | ~$1.10 |
+| 6 | Gemini 3.1 Pro | 82 | A | ✅ | 14m | ~$0.40 |
+| 7 | Claude Sonnet 4.6 | 78 | B | ✅ | 16m | ~$0.63 |
+| 7 | DeepSeek V4 Flash | 78 | B | ✅ | 3m | ~$0.01 |
+| 9 | Qwen 3.6 Plus | 71 | B | ✅ | 17m | ~$0.15 |
+| 10 | DeepSeek V4 Pro | 69 | B | ✅ | 22m (DNF) | ~$0.50 |
+| 10 | Kimi K2.5 | 69 | B | ✅ | 29m | ~$0.10 |
+| 12 | Xiaomi MiMo V2.5 Pro | 67 | B | ✅ | 11m | ~$0.14 |
+| 13 | GLM 5 | 64 | B | ✅ | 17m | ~$0.11 |
+| 14 | Step 3.5 Flash | 56 | C | ⚠️ bypass | 38m | ~$0.02 |
+| 15 | Qwen 3.5 35B (local) | 55 | C | ✅ | 28m | grátis |
+| 16 | GLM 4.7 Flash bf16 (local) | 52 | C | ✅ | falhou | grátis |
+| 17 | GLM 5.1 (Z.ai) | 46 | C | ❌ | 22m | subscription |
+| 18 | DeepSeek V3.2 | 43 | C | ❌ | 60m | ~$0.07 |
+| 19 | MiniMax M2.7 | 41 | C | ❌ | 14m | ~$0.30 |
+| 20 | Qwen 3.5 122B (local) | 37 | D | ❌ | 43m | grátis |
+| 21 | Qwen 3 Coder Next (local) | 32 | D | ❌ | 17m | grátis |
+| 22 | Grok 4.20 | 25 | D | ❌ | 8m | ~$0.60 |
+| 23 | GPT OSS 20B (local) | 11 | D | ❌ | falhou | grátis |
 
 ## Correção de rota: o que mudou no critério
 
@@ -137,7 +140,7 @@ Tier C geralmente tem pelo menos um bug estrutural: fluent DSL inventada, histó
 
 ## Família Claude: Opus 4.6 vs 4.7, Sonnet 4.6
 
-Opus 4.7 lidera com 94/100. Código exemplar:
+Opus 4.7 lidera com 97/100. Código exemplar:
 
 ```ruby
 chat = @client.chat(model:, provider:)
@@ -149,11 +152,11 @@ response.content
 
 `FakeChat` com assinatura real. Testes verificam replay de histórico, error wrapping, model/provider override, system prompt. Session cookie com `to_a`/`from_session` multi-worker safe. Rescue de `RubyLLM::Error + StandardError` → balão de erro amigável na UI.
 
-Dedução menor: Dockerfile gerado com `ARG RUBY_VERSION=4.0.2`, que é o default do generator do Rails 8.1 e a versão estável atual do Ruby. Gemini 3.1 Pro foi o único modelo que substituiu pelo 3.4.1 (mais antigo), o que a auditoria original contou a favor dele por engano.
+Sem deduções relevantes nessa rodada. Dockerfile usa `ARG RUBY_VERSION=4.0.2`, que é o default do generator do Rails 8.1 e a versão estável atual do Ruby (lançada em 2026-03-17). A auditoria inicial tinha penalizado isso como "artefato fake do generator" por engano.
 
-Opus 4.6 tem código correto também (80/100 Tier A) mas menos disciplinado. Controller sem rescue em volta do `chat_service.ask`: um 5xx transiente vira stack trace. Service acessa `Chat#messages` via `attr_reader` direto, violação de Demeter. Diferença material entre 4.6 (Tier A baixo) e 4.7 (Tier A alto).
+Opus 4.6 tem código correto também (83/100 Tier A) mas menos disciplinado. Controller sem rescue em volta do `chat_service.ask`: um 5xx transiente vira stack trace. Service acessa `Chat#messages` via `attr_reader` direto, violação de Demeter. Diferença material entre 4.6 (Tier A baixo) e 4.7 (Tier A alto).
 
-Sonnet 4.6 é Tier B (75). UI mais rica de todo o benchmark (sidebar multi-conversation). Mas `LlmChatService#call` só chama `ask` se a última mensagem do histórico for do usuário, senão retorna `""` silenciosamente. Os testes carimbam sem checar o bug. E a conversa inteira cabe num cookie de 4KB, que estoura depois de ~10 turnos.
+Sonnet 4.6 é Tier B (78). UI mais rica de todo o benchmark (sidebar multi-conversation). Mas `LlmChatService#call` só chama `ask` se a última mensagem do histórico for do usuário, senão retorna `""` silenciosamente. Os testes carimbam sem checar o bug. E a conversa inteira cabe num cookie de 4KB, que estoura depois de ~10 turnos.
 
 ### O downgrade de comportamento do 4.7
 
@@ -165,9 +168,9 @@ A reclamação da comunidade no [Reddit e DEV.to](https://dev.to/vibeagentmaking
 
 Eu tenho centenas de horas com 4.6 e tô testando 4.7 desde o lançamento. O código que 4.7 produz é Tier A, igual ou melhor que 4.6. Mas no uso diário, o comportamento mais direto do 4.6 é mais produtivo. 4.6 continua sendo minha escolha default no Claude Code, quando o Claude Code me deixa escolher (desde o lançamento do 4.7, [Claude Code mudou o default pra xHigh reasoning](https://code.claude.com/docs/en/model-config) e tá mais restritivo em downgrade pra 4.6).
 
-## GPT via Codex: 5.4 xHigh hoje, 5.5 chegando
+## GPT via Codex: 5.4 e 5.5 no topo
 
-GPT 5.4 xHigh via Codex CLI empata com Opus 4.7 em primeiro (94/100). Usa o `RubyLLM.chat(model:, provider: :openrouter, assume_model_exists: true)` + `with_instructions` + `add_message(role:, content:)` + `chat.ask` + `response.content`. Textbook, com provider pinning e registry-skip.
+GPT 5.4 xHigh via Codex CLI empata com Opus 4.7 em primeiro (97/100). Usa `RubyLLM.chat(model:, provider: :openrouter, assume_model_exists: true)` + `with_instructions` + `add_message(role:, content:)` + `chat.ask` + `response.content`. Exemplar, com provider pinning e registry-skip.
 
 É o único modelo com:
 
@@ -180,15 +183,53 @@ GPT 5.4 xHigh via Codex CLI empata com Opus 4.7 em primeiro (94/100). Usa o `Rub
 
 **Ponto fraco crítico**: 7.6M tokens totais → ~$16/run. 15× o custo do Opus pra qualidade essencialmente empatada. Difícil justificar a não ser que você não possa iterar na primeira tentativa.
 
-### GPT 5.5: chegou ontem (23 de Abril)
+### GPT 5.5 xHigh (Codex): 96/100, mais barato e mais rápido que 5.4
 
-A OpenAI [lançou o GPT 5.5 ontem](https://openai.com/index/introducing-gpt-5-5/), já [disponível no Codex](https://community.openai.com/t/gpt-5-5-is-here-available-in-codex-and-chatgpt-today/1379630). Ainda não tá na API pública com API key, só com ChatGPT sign-in. [Simon Willison já começou a testar](https://simonwillison.net/2026/Apr/23/gpt-5-5/). Vou rodar o benchmark contra GPT 5.5 via Codex essa semana. Update em artigo separado.
+A OpenAI [lançou o GPT 5.5 ontem (23 de Abril)](https://openai.com/index/introducing-gpt-5-5/), já [disponível no Codex](https://community.openai.com/t/gpt-5-5-is-here-available-in-codex-and-chatgpt-today/1379630). Rodei o benchmark hoje. Resultado: 96/100, Tier A, rank #3.
+
+A boa notícia é que 5.5 entrega **a mesma qualidade de código do 5.4** nesse benchmark, com economia real de tempo e tokens.
+
+| | GPT 5.4 xHigh | GPT 5.5 xHigh | Δ |
+|---|---|---|---|
+| Score | 97/100 | 96/100 | empate (ruído de 1 ponto) |
+| Tempo | 22m | 18m | **20% mais rápido** |
+| Tokens totais | 7.6M | 4.9M | **35% menos** |
+| Tokens de saída | 63K | 29K | **54% menos** |
+| Custo estimado | ~$16 | ~$10 | **40% mais barato** |
+
+A integração com RubyLLM é idêntica ao 5.4 na estrutura:
+
+```ruby
+chat = RubyLLM.chat(model:, provider: :openrouter, assume_model_exists: true)
+chat.with_instructions(SYSTEM_PROMPT)
+history.each { |m| chat.add_message(role: m.role.to_sym, content: m.content) }
+response = chat.ask(prompt)
+response.content.to_s.strip
+```
+
+Entrega os mesmos padrões defensivos que o 5.4 tem:
+
+- **Dependency-injected `client_factory:`**: permite que os testes exercitem o caminho completo de seed-history-then-ask via `FakeClient`, sem precisar de WebMock
+- **`rescue_from RubyLLM::Error, RubyLLM::ConfigurationError`**: ambas as classes de erro reais, capturadas separadamente
+- **Session cookie com cap de 20 mensagens**
+- **Turbo Streams de verdade** (`turbo_stream.replace "chat-thread"` + composer)
+- **Stimulus composer controller** com lifecycle correto (disable-on-submit, reset, auto-scroll)
+
+### O que muda pro usuário: nada em qualidade, tudo em custo/velocidade
+
+Essa é uma coisa interessante pra registrar. Em benchmark sintético de capacidade, 5.5 e 5.4 empatam. Mesma arquitetura entregue, mesmos padrões defensivos, mesmo rescue de erros, mesma persistência. Code review lado a lado não mostra diferença material entre os dois.
+
+Onde 5.5 realmente ganha é em **eficiência de geração**: 35% menos tokens totais, 54% menos tokens de saída, 20% de tempo a menos. Pros mesmos $16/run do 5.4, você paga $10. Em uso contínuo, a economia acumula.
+
+**Não é geração nova de capacidade.** É otimização de custo sobre uma arquitetura que já tava no topo. Pra quem já tá no Codex, 5.5 substitui 5.4 sem regressão. Pra quem não estava, a 15× (e agora 10×) o custo do Opus por qualidade empatada, ainda é difícil justificar pra uso contínuo.
+
+**Ponto fraco crítico**: nenhum defeito significativo nesse run. Mesma forma do 5.4 a custo menor. O padrão DI-injetado + rescue de classes reais + session cookie = **melhores padrões defensivos do benchmark inteiro**.
 
 ## DeepSeek: o padrão de overhype
 
 Toda geração do DeepSeek vem com propaganda pesada ("competitive with Claude Opus") e termina com o mesmo padrão: **tool support fica pra trás**.
 
-### V4 Pro: código limpo, deliverables meia-boca (66/100 Tier B)
+### V4 Pro: código limpo, deliverables meia-boca (69/100 Tier B)
 
 O código RubyLLM é Tier A:
 
@@ -211,7 +252,7 @@ Mas o run DNF em opencode. DeepSeek V4 Pro usa thinking mode por default e retor
 
 E os deliverables antes do crash são fracos: README stock ("This README would normally document..."), **sem `docker-compose.yml`** (requisito explícito do prompt), bundle-audit faltando. Score 66/100 Tier B.
 
-### V4 Flash: cheapest viable option (75/100 Tier B)
+### V4 Flash: cheapest viable option (78/100 Tier B)
 
 $0.01/run, 2m 35s, corrige o bug crítico do V3.2 (que inventava `RubyLLM::Client`). API toda correta. WebMock testa endpoint real do OpenRouter. Session-replay multi-turn via `session[:messages]`.
 
@@ -221,7 +262,7 @@ $0.01/run, 2m 35s, corrige o bug crítico do V3.2 (que inventava `RubyLLM::Clien
 
 | | V4 Flash | V4 Pro | V3.2 |
 |---|---|---|---|
-| Score | 75 | 66 | 40 |
+| Score | 78 | 69 | 43 |
 | Tier | B | B | C |
 | Harness | completa | DNF | completa |
 | Custo | ~$0.01 | ~$0.50 | ~$0.07 |
@@ -232,7 +273,7 @@ V4 é upgrade real em correção de API sobre V3.2. V4 Flash é a opção barata
 
 ## Kimi: K2.5 → K2.6
 
-### K2.6 (84/100, Tier A)
+### K2.6 (87/100, Tier A)
 
 Surpresa positiva. Único modelo não-ocidental Tier A. Código exemplar:
 
@@ -252,7 +293,7 @@ Dedução só pelo replay completo de histórico a cada turn, que usa mais token
 
 A $0.30/run, Kimi K2.6 é o **mais barato Tier A do benchmark**. 3 a 50× mais barato que Opus 4.7 e GPT 5.4 xHigh.
 
-### K2.5 (66/100 Tier B, não Tier 3 como eu tinha dito)
+### K2.5 (69/100 Tier B, não Tier 3 como eu tinha dito)
 
 Na primeira versão eu catalogava K2.5 como Tier 3 por supostamente inventar `chat.complete` e usar kwargs no `add_message`. Ambos são API pública real. K2.5 volta pra Tier B.
 
@@ -262,7 +303,7 @@ K2.6 adiciona o que K2.5 não tinha: FakeChat de assinatura correta, rescue, ses
 
 ## Xiaomi MiMo V2.5 Pro: parecia Tier 1, mas os gaps são reais
 
-MiMo V2.5 Pro (Abril 2026) gerou o maior hype da rodada. Na primeira análise eu promovi como "primeiro não-Anthropic Tier 1". Depois da nova rubrica, cai pra Tier B (64/100).
+MiMo V2.5 Pro (Abril 2026) gerou o maior hype da rodada. Na primeira análise eu promovi como "primeiro não-Anthropic Tier 1". Depois da nova rubrica, cai pra Tier B (67/100).
 
 Código RubyLLM continua limpo:
 
@@ -289,6 +330,8 @@ Vantagem genuína: abordagem idiomática da biblioteca. Pra app greenfield singl
 
 ## Gemini 3.1 Pro: a surpresa discreta (82/100 Tier A)
 
+(Único modelo que não ganhou os +3 da correção de Ruby: ele tinha optado por Ruby 3.4.1 no Dockerfile, que a primeira auditoria contava como vantagem. Com Ruby 4.0.2 sendo a versão atual, vira escolha neutra em vez de bônus.)
+
 Eu tinha classificado como Tier 3. Re-audit revelou que `Chat.new` e `add_message` com hash keyword são API real.
 
 Características fortes: Turbo Streams reais (não fetch + innerHTML), Rails.cache-backed persistence com 2h expiry, FakeChat mocks que casam com API real, error path testado. O Dockerfile opta por Ruby 3.4.1 em vez do 4.0.2 padrão do Rails 8.1. A primeira auditoria dava isso como vantagem, mas 4.0.2 é a versão estável atual, então é mais neutro que ganho.
@@ -303,10 +346,10 @@ Testei vários Qwens:
 
 | Modelo | Tipo | Tier | Detalhe |
 |---|---|:---:|---|
-| Qwen 3.6 Plus | Cloud, OpenRouter | B (68) | API RubyLLM correta; testes fazem chamadas reais (sem WebMock); histórico client-side JS |
-| Qwen 3.5 35B | Local NVIDIA | C (52) | Entry point correto; sem multi-turn; teste encapsula chamada real em `rescue => e; assert true` |
-| Qwen 3.5 122B | Local NVIDIA | D (34) | Não usa ruby_llm; usa `Openrouter::Client` (casing errado) |
-| Qwen 3 Coder Next | Local NVIDIA | D (29) | Inventa `RubyLLM::Client.new`; commit de `.env` placeholder |
+| Qwen 3.6 Plus | Cloud, OpenRouter | B (71) | API RubyLLM correta; testes fazem chamadas reais (sem WebMock); histórico client-side JS |
+| Qwen 3.5 35B | Local NVIDIA | C (55) | Entry point correto; sem multi-turn; teste encapsula chamada real em `rescue => e; assert true` |
+| Qwen 3.5 122B | Local NVIDIA | D (37) | Não usa ruby_llm; usa `Openrouter::Client` (casing errado) |
+| Qwen 3 Coder Next | Local NVIDIA | D (32) | Inventa `RubyLLM::Client.new`; commit de `.env` placeholder |
 | Qwen 3.5 27B Claude-distilado | Local NVIDIA | ainda Tier 3 em reavaliação | Código parece Claude, mas API toda inventada |
 
 ### A descoberta: distilação de Claude não transfere conhecimento de biblioteca
@@ -341,17 +384,17 @@ Enquanto o geral Qwen 3.5 35B-A3B completou em 5 minutos com projeto Rails recon
 
 ### Qwen 3.6 Plus: o cloud que quase chegou
 
-O Qwen 3.6 Plus no OpenRouter completou o benchmark em 17 minutos e é o Qwen mais limpo que medi (68/100 Tier B). API RubyLLM correta. Stimulus controller bem-construído. Mas os testes fazem chamadas reais ao OpenRouter (sem WebMock), e o histórico é só client-side JS (perdido no refresh). Usa `fetch` + `innerHTML` em vez de Turbo Streams.
+O Qwen 3.6 Plus no OpenRouter completou o benchmark em 17 minutos e é o Qwen mais limpo que medi (71/100 Tier B). API RubyLLM correta. Stimulus controller bem-construído. Mas os testes fazem chamadas reais ao OpenRouter (sem WebMock), e o histórico é só client-side JS (perdido no refresh). Usa `fetch` + `innerHTML` em vez de Turbo Streams.
 
 ## Família GLM: 5, 5.1, 4.7 Flash local
 
-### GLM 5 (61/100 Tier B)
+### GLM 5 (64/100 Tier B)
 
 `RubyLLM.chat(model: "anthropic/claude-sonnet-4")` + `chat.ask` + `response.content` correto. Mocha stubs casam com API real. Único teste, só happy path.
 
 **Ponto fraco crítico**: zero multi-turn state. Todo POST cria um `RubyLLM.chat` fresco sem histórico. "Chat app" é echo service stateless. "O que eu acabei de falar?" → "não sei."
 
-### GLM 5.1 (43/100 Tier C, caiu)
+### GLM 5.1 (46/100 Tier C, caiu)
 
 Essa é a queda mais dolorosa da re-audit. `RubyLLM.chat(model:, provider:)` correto, mas o histórico é replayado via `c.user(msg)` / `c.assistant(msg)`, fluent DSL que **não existe** no RubyLLM (grep confirmado no código do gem).
 
@@ -361,7 +404,7 @@ Stimulus controller usa `fetch` + manual `innerHTML`. Feito em SSE mas sem Turbo
 
 Segundo a própria [Z.ai](https://www.buildfastwithai.com/blogs/glm-5-1-open-source-review-2026), o [GLM 5.1 bate GPT 5.4 e Opus 4.6 em SWE-Bench Pro](https://openrouter.ai/z-ai/glm-5.1/benchmarks). No meu benchmark específico (Rails + RubyLLM + deliverables completos), cai pra Tier C. Mais uma evidência de que benchmark é específico.
 
-### GLM 4.7 Flash bf16 local (49/100 Tier C)
+### GLM 4.7 Flash bf16 local (52/100 Tier C)
 
 O modelo local do benchmark que mais domina a API do RubyLLM. Usa a fluent chain `.with_model().with_temperature().with_params().with_instructions().complete(&block)`, tudo API real conforme o código do gem.
 
@@ -371,17 +414,17 @@ O modelo local do benchmark que mais domina a API do RubyLLM. Usa a fluent chain
 
 | Modelo | Score | Tier | Razão |
 |---|---:|:---:|---|
-| DeepSeek V3.2 | 40 | C | Inventa `RubyLLM::Client.new` e `client.chat(messages: [...])`; testes mockam classe que não existe |
-| Step 3.5 Flash | 53 | C | Bypassa `ruby_llm` inteiro com `Net::HTTP` direto; não compliant com prompt |
-| MiniMax M2.7 | 38 | D | Inventa `RubyLLM.chat(model:, messages: [...])` batch signature; crash na primeira chamada |
-| Qwen 3.5 122B | 34 | D | Usa `Openrouter::Client` (casing errado); chama `client.chat` em gem que não existe |
-| Qwen 3 Coder Next | 29 | D | Inventa `RubyLLM::Client.new` + `client.chat(messages:)` + OpenAI-shaped response |
-| Grok 4.20 | 22 | D | `ruby-openai` em `:development, :test` com `require: false` → NameError em produção; Stimulus JS uncompilable |
-| GPT OSS 20B | 8 | D | Sem pasta de testes; `app/app/` aninhado; inventa `RubyLLM::Client.new` |
+| Step 3.5 Flash | 56 | C | Bypassa `ruby_llm` inteiro com `Net::HTTP` direto; não compliant com prompt |
+| DeepSeek V3.2 | 43 | C | Inventa `RubyLLM::Client.new` e `client.chat(messages: [...])`; testes mockam classe que não existe |
+| MiniMax M2.7 | 41 | C | Inventa `RubyLLM.chat(model:, messages: [...])` batch signature; crash na primeira chamada |
+| Qwen 3.5 122B | 37 | D | Usa `Openrouter::Client` (casing errado); chama `client.chat` em gem que não existe |
+| Qwen 3 Coder Next | 32 | D | Inventa `RubyLLM::Client.new` + `client.chat(messages:)` + OpenAI-shaped response |
+| Grok 4.20 | 25 | D | `ruby-openai` em `:development, :test` com `require: false` → NameError em produção; Stimulus JS uncompilable |
+| GPT OSS 20B | 11 | D | Sem pasta de testes; `app/app/` aninhado; inventa `RubyLLM::Client.new` |
 
 ## Modelos que não completaram o benchmark
 
-O ranking acima lista os 22 modelos que **completaram** o benchmark o suficiente pra serem auditados. Mas o benchmark cobre mais modelos do que isso. No total, 33 foram configurados, 27 foram executados, e só 16-22 (dependendo do critério) completaram o suficiente pra virar código auditável. Os que falharam merecem registro:
+O ranking acima lista os 23 modelos que **completaram** o benchmark o suficiente pra serem auditados. Mas o benchmark cobre mais modelos do que isso. No total, 34+ foram configurados, 28+ foram executados, e só 17-23 (dependendo do critério) completaram o suficiente pra virar código auditável. Os que falharam merecem registro:
 
 | Modelo | Harness | Problema | Causa raiz |
 |---|---|---|---|
@@ -402,20 +445,20 @@ O benchmark cobre basicamente todas as famílias chinesas de LLM com lançamento
 
 ### Distribuição por tier
 
-- **Tier A (80+)**: apenas **Kimi K2.6** (84). Nenhum outro modelo chinês.
-- **Tier B (60-79)**: Kimi K2.5 (66), DeepSeek V4 Pro (66), DeepSeek V4 Flash (75), Xiaomi MiMo V2.5 Pro (64), Qwen 3.6 Plus (68), GLM 5 (61).
-- **Tier C (40-59)**: Step 3.5 Flash (53), GLM 4.7 Flash local (49), GLM 5.1 (43), DeepSeek V3.2 (40).
-- **Tier D (<40)**: MiniMax M2.7 (38), Qwen 3.5 122B local (34), Qwen 3 Coder Next local (29).
+- **Tier A (80+)**: apenas **Kimi K2.6** (87). Nenhum outro modelo chinês.
+- **Tier B (60-79)**: Kimi K2.5 (69), DeepSeek V4 Pro (69), DeepSeek V4 Flash (78), Xiaomi MiMo V2.5 Pro (67), Qwen 3.6 Plus (71), GLM 5 (64).
+- **Tier C (40-59)**: Step 3.5 Flash (56), GLM 4.7 Flash local (52), GLM 5.1 (46), DeepSeek V3.2 (43), MiniMax M2.7 (41).
+- **Tier D (<40)**: Qwen 3.5 122B local (37), Qwen 3 Coder Next local (32).
 
 Dos 13 modelos chineses testados (contando locais e cloud), **apenas um** chega em Tier A. Esse é o tamanho da penetração atual nesse benchmark específico.
 
 ### O gap em pontos
 
-**Kimi K2.6 vs Opus 4.7 (Tier A vs Tier A)**: 84 vs 94. 10 pontos de gap. Em prática, os dois entregam RubyLLM correto, FakeChat com assinatura real, rescue de erro, session cookie multi-worker safe, Gemfile completo. O que Opus 4.7 tem a mais são dimensões secundárias que somam: testes que cobrem error wrapping, model/provider override e aplicação explícita de system prompt; rescue redundante no controller além do service; separação de concerns levemente melhor. Diferenças perceptíveis lado a lado, mas não tier separado.
+**Kimi K2.6 vs Opus 4.7 (Tier A vs Tier A)**: 87 vs 97. 10 pontos de gap. Em prática, os dois entregam RubyLLM correto, FakeChat com assinatura real, rescue de erro, session cookie multi-worker safe, Gemfile completo. O que Opus 4.7 tem a mais são dimensões secundárias que somam: testes que cobrem error wrapping, model/provider override e aplicação explícita de system prompt; rescue redundante no controller além do service; separação de concerns levemente melhor. Diferenças perceptíveis lado a lado, mas não tier separado.
 
 Custo: K2.6 $0.30/run vs Opus 4.7 $1.10/run. **3.6× mais barato.** Em runs contínuos de produção, essa diferença acumula.
 
-**Chineses Tier B vs Claude Opus 4.6 (80 Tier A)**: gap de 5 a 20 pontos. Os Tier B chineses (MiMo, DeepSeek V4 Flash, Kimi K2.5, Qwen 3.6 Plus, GLM 5) têm o código RubyLLM correto ou quase correto, mas falham em componentes específicos:
+**Chineses Tier B vs Claude Opus 4.6 (83 Tier A)**: gap de 5 a 20 pontos. Os Tier B chineses (MiMo, DeepSeek V4 Flash, Kimi K2.5, Qwen 3.6 Plus, GLM 5) têm o código RubyLLM correto ou quase correto, mas falham em componentes específicos:
 
 - **Test quality** é o ponto mais fraco universal. Chineses Tier B frequentemente escrevem muitos testes (K2.5 escreveu 37, o maior do benchmark) mas não mockam RubyLLM. Teatro de cobertura.
 - **Persistência** frequentemente usa Singleton process-local (MiMo) ou class-var (K2.5) em vez de session cookie ou Rails.cache. Morre em restart, não é multi-worker safe.
@@ -533,7 +576,7 @@ Pra coding agent interativo em projeto real, a regra de bolso é: escolhe um mod
 
 ### Commercial
 
-**Tier A premium**: Claude Opus 4.7, GPT 5.4 xHigh (Codex), Claude Opus 4.6. Escolha por preferência de comportamento; qualidade de código tá lá em todos.
+**Tier A premium**: Claude Opus 4.7, GPT 5.4 xHigh (Codex), GPT 5.5 xHigh (Codex), Claude Opus 4.6. Escolha por preferência de comportamento; qualidade de código tá lá em todos. Dentre os GPTs, 5.5 custa 40% menos que o 5.4 com a mesma saída.
 
 **Tier A cost-effective**: Kimi K2.6 ($0.30/run), Gemini 3.1 Pro ($0.40/run). 3-4× mais baratos que Opus/GPT com qualidade comparable dentro desse benchmark.
 
@@ -555,9 +598,9 @@ Pra coding agent interativo em projeto real, a regra de bolso é: escolhe um mod
 
 Claude Opus 4.6 continua sendo a minha escolha diária pra coding agent em projetos reais. Comportamento previsível, código defensivo, mocks de verdade, persistência sensata, error handling.
 
-Opus 4.7 tá no topo do benchmark objetivo (94/100) mas tem downgrade de comportamento (tokenizer mais pesado, otimização agressiva de recursos). Em benchmark entrega. Na prática diária eu prefiro 4.6.
+Opus 4.7 tá no topo do benchmark objetivo (97/100) mas tem downgrade de comportamento (tokenizer mais pesado, otimização agressiva de recursos). Em benchmark entrega. Na prática diária eu prefiro 4.6.
 
-GPT 5.4 xHigh via Codex empata no topo (94/100), mas a 15× o preço do Opus pra qualidade essencialmente tied, difícil justificar continuous use. GPT 5.5 chegou [ontem no Codex](https://community.openai.com/t/gpt-5-5-is-here-available-in-codex-and-chatgpt-today/1379630), testo essa semana.
+GPT 5.4 xHigh via Codex empata no topo (97/100), e **GPT 5.5 xHigh pegou o terceiro lugar com 96/100**: mesma qualidade do 5.4, mas 40% mais barato e 20% mais rápido. Pra quem já usa Codex, 5.5 substitui 5.4 sem regressão. A 10× o preço do Opus (antes era 15×) pra qualidade essencialmente tied, continua caro pra uso contínuo.
 
 O sweet spot cost-effective agora é **Kimi K2.6 a $0.30/run** ou **Gemini 3.1 Pro a $0.40/run**. Ambos Tier A. 3-4× mais baratos que Opus.
 
