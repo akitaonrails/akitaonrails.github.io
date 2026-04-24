@@ -12,6 +12,10 @@ tags:
   - vibecoding
 ---
 
+> ⚠️ **Obsolete article (updated 2026-04-24).** The conclusions and rankings in this post were superseded after I re-audited the benchmark against the `ruby_llm` gem source. The core finding (multi-model is not worth it for greenfield coding) still holds and has been folded into the canonical post. **The canonical version lives at [LLM Coding Benchmark (April 2026)](/en/2026/04/24/llm-benchmarks-parte-3-deepseek-kimi-mimo/).** This post stays as a historical record.
+
+---
+
 **TL;DR:** Yes, the title is clickbait. The answer is no, it's not worth it. Keep using Claude Code with Opus 4.6 or 4.7. Details below.
 
 ---

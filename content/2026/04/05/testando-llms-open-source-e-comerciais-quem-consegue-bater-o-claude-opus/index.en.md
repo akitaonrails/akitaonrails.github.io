@@ -13,6 +13,10 @@ tags:
   - self-hosting
 ---
 
+> ⚠️ **Obsolete article (updated 2026-04-24).** The conclusions and rankings in this post were superseded after I re-audited the benchmark against the `ruby_llm` gem source and restructured the evaluation criteria. Several "hallucinations" I had cataloged were actually valid API. Kimi K2.6 and Gemini 3.1 Pro moved up to Tier A. GLM 5.1 dropped to Tier C. MiMo V2.5 Pro fell from "first non-Anthropic Tier 1" to Tier B. **The canonical version lives at [LLM Coding Benchmark (April 2026)](/en/2026/04/24/llm-benchmarks-parte-3-deepseek-kimi-mimo/).** This post stays as a historical record of what I concluded before the re-audit.
+
+---
+
 **Update April 16, 2026:** Added Claude Opus 4.7, Qwen 3.6 and GPT 5.4 via Codex CLI (xHigh reasoning). Opus 4.7 is an incremental improvement over 4.6 (28 tests vs 16, same correct API) and becomes the new baseline. GPT 5.4, previously Tier 1 based on my personal vouch, now has objective data and dropped to Tier 2 — burned 7.6M tokens (~$16/run, 15x more expensive than Opus) and got the `add_message` calling convention wrong on multi-turn. Qwen 3.6 Plus remains Tier 3 with the same API hallucination as 3.5. The conclusion stands: if you want safety, pick Opus.
 
 ---

@@ -11,6 +11,10 @@ tags:
   - vibecoding
 ---
 
+> ⚠️ **Artigo obsoleto (atualização de 2026-04-24).** As conclusões e rankings desse artigo foram superados depois do re-audit contra o gem `ruby_llm`. A descoberta principal (multi-model não vale pra coding greenfield) se mantém e foi integrada no post canônico. **A versão canônica está em [Benchmark de LLMs pra Coding (Abril 2026)](/2026/04/24/llm-benchmarks-parte-3-deepseek-kimi-mimo/).** Esse artigo fica aqui como registro histórico.
+
+---
+
 **TL;DR:** Sim, o título é clickbait. A resposta é não, não vale. Continue usando Claude Code com Opus 4.6 ou 4.7. Detalhes abaixo.
 
 ---

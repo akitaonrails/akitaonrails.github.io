@@ -6,6 +6,7 @@ title: AkitaOnRails Blog
 
 ## 2026 - April
 
+- [LLM Coding Benchmark (April 2026): DeepSeek v4, Kimi v2.6, MiMo, and the State of the Art](/en/2026/04/24/llm-benchmarks-parte-3-deepseek-kimi-mimo/)
 - [How DriveClub and shadPS4 Almost Defeated AI and Me: How to Learn](/en/2026/04/23/driveclub-shadps4-e-ia-como-aprender/)
 - [Clean Code for AI Agents](/en/2026/04/20/clean-code-for-ai-agents/)
 - [My Favorite Retro Racing Games Running on My Distrobox](/en/2026/04/19/my-favorite-retro-racing-games-on-distrobox/)
