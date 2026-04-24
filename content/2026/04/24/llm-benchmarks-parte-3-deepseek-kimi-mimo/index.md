@@ -1,5 +1,5 @@
 ---
-title: "Benchmark de LLMs pra Coding (Abril 2026): DeepSeek v4, Kimi v2.6, MiMo, e o Estado da Arte"
+title: "Benchmark de LLMs pra Coding (Abril 2026): GPT 5.5, DeepSeek v4, Kimi v2.6, MiMo, e o Estado da Arte"
 date: '2026-04-24T13:00:00-03:00'
 draft: false
 translationKey: llm-coding-benchmark-canonical-2026-04
