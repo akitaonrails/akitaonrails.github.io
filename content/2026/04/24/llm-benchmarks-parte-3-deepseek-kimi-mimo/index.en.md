@@ -65,8 +65,6 @@ Score 0-100 → Tier A (80+) / B (60-79) / C (40-59) / D (<40).
 
 ## Final ranking (23 models)
 
-> **Update 2026-04-24:** added GPT 5.5 and fixed a rubric bug. Ruby 4.0.2 exists and is the current stable release (shipped 2026-03-17), so the -3 penalty I was applying to every model that used the Rails 8.1 generator default was wrong. All scores went up +3, except Gemini 3.1 Pro, which had opted for Ruby 3.4.1 and had received a bonus that now becomes neutral.
-
 | Rank | Model | Score | Tier | RubyLLM OK | Time | Cost |
 |---:|---|---:|:---:|:---:|---|---|
 | 1 | Claude Opus 4.7 | **97** | A | ✅ | 18m | ~$1.10 |
@@ -152,7 +150,7 @@ response.content
 
 `FakeChat` with real signature. Tests verify history replay, error wrapping, model/provider override, system prompt. Session cookie with `to_a`/`from_session` is multi-worker safe. Rescue of `RubyLLM::Error + StandardError` → friendly error bubble.
 
-No relevant deductions this round. Dockerfile uses `ARG RUBY_VERSION=4.0.2`, which is the Rails 8.1 generator's default and the current stable Ruby (released 2026-03-17). The initial audit had wrongly penalized this as "fake generator artifact".
+No relevant deductions this round.
 
 Opus 4.6 has correct code too (83/100 Tier A) but less disciplined. Controller without rescue around `chat_service.ask`: a transient 5xx becomes a stack trace page. Service reaches into `Chat#messages` via `attr_reader` directly, Demeter violation. Material difference between 4.6 (low Tier A) and 4.7 (high Tier A).
 
@@ -342,8 +340,6 @@ At $0.14/run in 11 minutes, it's **8× cheaper and faster than Opus**. For throw
 **Verdict**: MiMo is ~70% of Opus quality at 12.5% of the price. For throwaway prototype, worth it. For production, ~2 engineer-hours adding rescue + Rails.cache + FakeChat + WebMock + system prompt. At that point Opus at $1.10 comes out cheaper overall.
 
 ## Gemini 3.1 Pro: the quiet surprise (82/100 Tier A)
-
-(The one model that did not get the +3 Ruby correction bump: it opted for Ruby 3.4.1 in the Dockerfile, which the first audit counted as an advantage. With Ruby 4.0.2 being the current stable, that becomes a neutral choice instead of a bonus.)
 
 I had classified it as Tier 3. Re-audit showed `Chat.new` and `add_message` kwargs form are real API.
 
