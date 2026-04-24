@@ -225,6 +225,12 @@ Where 5.5 really wins is **generation efficiency**: 35% fewer total tokens, 54% 
 
 **Critical weakness**: no significant defect on this run. Same shape as 5.4 at lower cost. The DI-injected pattern + real error class rescue + session cookie = **best defensive patterns in the whole benchmark**.
 
+### A caveat on price
+
+The ~$16/run for GPT 5.4 and ~$10/run for GPT 5.5 in the table are direct API token costs (pay-as-you-go). In April 2026, OpenAI [switched Codex to use the same API token accounting](https://chatgpt.com/codex/pricing/) inside the Plus, Pro, Business and Enterprise subscriptions. In practice, most Codex CLI users access it via [ChatGPT Plus ($20/mo) or Pro ($200/mo)](https://chatgpt.com/pricing/), where Codex usage falls under the subscription quota (Pro gets [20× Plus's limit](https://help.openai.com/en/articles/20001106-codex-rate-card)). For a Pro subscriber already paying $200/month, a benchmark run adds no marginal cost until they saturate their monthly quota.
+
+So "GPT 5.4 is the most expensive in the ranking" is true under pay-as-you-go and changes under subscription. Anyone already on Pro for everything probably isn't thinking of this in "cost per run" terms. That said, in terms of tokens spent per delivered quality, 5.5 is simply more efficient than 5.4. Even inside the subscription it burns 35% less of the quota.
+
 ## DeepSeek: the overhype pattern
 
 Every DeepSeek generation ships with heavy marketing ("competitive with Claude Opus") and ends with the same pattern: **tool support lags behind**.
