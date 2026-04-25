@@ -6,6 +6,7 @@ title: AkitaOnRails Blog
 
 ## 2026 - April
 
+- [LLM Benchmarks: Is It Worth ($$) Mixing 2 Models? (Planner + Executor)](/en/2026/04/25/llm-benchmarks-vale-a-pena-misturar-2-modelos/)
 - [LLM Coding Benchmark (April 2026): GPT 5.5, DeepSeek v4, Kimi v2.6, MiMo, and the State of the Art](/en/2026/04/24/llm-benchmarks-parte-3-deepseek-kimi-mimo/)
 - [How DriveClub and shadPS4 Almost Defeated AI and Me: How to Learn](/en/2026/04/23/driveclub-shadps4-e-ia-como-aprender/)
 - [Clean Code for AI Agents](/en/2026/04/20/clean-code-for-ai-agents/)
