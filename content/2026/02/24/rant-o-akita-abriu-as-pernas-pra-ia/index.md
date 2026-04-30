@@ -139,13 +139,13 @@ Eu CANSEI de pedir pra cobrir um bug fix com teste de regressão pra não vermos
 
 Eu CANSEI de pedir pra seguir as convenções que concordamos no projeto e não fazer código diferente, com outros padrões. Todo mundo ignora.
 
-Eu CANSEI de pedir pra ajustar scripts de deploy, CI ou coisas assim quando ca pedaços que afetam a infra: todo mundo ignora.
+Eu CANSEI de pedir pra ajustar scripts de deploy, CI ou coisas assim quando caem pedaços que afetam a infra: todo mundo ignora.
 
 Eu CANSEI de pedir pra não acumular um monte de código que não faz sentido junto e não dar `git add .` no final e só escrever "nova feature" e comitar tudo junto. Todo mundo ignora.
 
 Esses são só alguns exemplos. Sabe qual a novidade: o Claude e o Codex não ignoram. Tudo isso que listei, que acontece em TODO projeto com humanos, não importa o tamanho do projeto, não acontece mais pra mim com Claude.
 
-Entendam: isso tudo deveria ser o básico do básico, nível estag. Mas eu CANSEI de pedir pra sênior tomar mais cuidado, pra não dar mau exemplo pros júniors: TODO MUNDO IGNORA.
+Entendam: isso tudo deveria ser o básico do básico, nível estagiário. Mas eu CANSEI de pedir pra sênior tomar mais cuidado, pra não dar mau exemplo pros júniors: TODO MUNDO IGNORA.
 
 E agora, todos esses que ME CANSARAM, são justamente os que se tornaram "Haters de IA". Mas é lógico, a IA faz tudo que eles NÃO FAZEM. Olhem no espelho e reflitam se seu código era tão bom assim (Spoiler: não era).
 
