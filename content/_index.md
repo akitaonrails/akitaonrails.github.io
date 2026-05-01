@@ -4,6 +4,10 @@ title: AkitaOnRails Blog
 
 {{< lang-toggle >}}
 
+## 2026 - Maio
+
+- [NW-Omarchy: Trazendo Omarchy pro X11 com XLibre](/2026/05/01/omarchy-no-xlibre/)
+
 ## 2026 - Abril
 
 - [LLM Benchmarks: Vale a Pena ($$) Misturar 2 Modelos? (Planner + Executor)](/2026/04/25/llm-benchmarks-vale-a-pena-misturar-2-modelos/)
