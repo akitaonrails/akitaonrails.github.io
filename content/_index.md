@@ -6,6 +6,7 @@ title: AkitaOnRails Blog
 
 ## 2026 - Maio
 
+- [LLM Benchmarks: DeepSeek Destravado! Use DeepClaude](/2026/05/04/llm-benchmarks-deepseek-unlocked-deepclaude/)
 - [NW-Omarchy: Trazendo Omarchy pro X11 com XLibre](/2026/05/01/omarchy-no-xlibre/)
 
 ## 2026 - Abril
