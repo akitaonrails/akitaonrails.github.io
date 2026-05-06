@@ -22,7 +22,7 @@ Quem chegou agora, vale o contexto. Esse experimento de benchmark começou em ab
 
 2. [LLM Benchmarks Parte 2: Vale Combinar Múltiplos Modelos no Mesmo Projeto? Claude + GLM??](/2026/04/18/llm-benchmarks-parte-2-multiplos-modelos/) (18 de abril). Primeira tentativa de orquestração: deixar um planner forte (Opus) chamando subagents mais baratos (Kimi, Qwen, GLM, DeepSeek). Resultado: zero delegações em sete variantes free-choice. Modelos fortes preferiram fazer tudo sozinhos.
 
-3. [Benchmark de LLMs pra Coding (Abril 2026): GPT 5.5, DeepSeek v4, Kimi v2.6, MiMo, e o Estado da Arte](/2026/04/24/llm-benchmarks-parte-3-deepseek-kimi-mimo/) (24 de abril). Versão canônica com 23 modelos, rubrica padronizada de 0-100 em 8 dimensões, tiers A/B/C/D. É a referência atual de "quem é o que" no ranking.
+3. [Benchmark de LLMs pra Coding (Maio 2026): DeepSeek v4, Kimi v2.6, Grok 4.3, GPT 5.5](/2026/04/24/llm-benchmarks-parte-3-deepseek-kimi-mimo/) (24 de abril, atualizado em maio). Versão canônica com 24 modelos, rubrica padronizada de 0-100 em 8 dimensões, tiers A/B/C/D. É a referência atual de "quem é o que" no ranking.
 
 4. [LLM Benchmarks: Vale a pena ($) misturar 2 Modelos? (Planner + Executor)](/2026/04/25/llm-benchmarks-vale-a-pena-misturar-2-modelos/) (25 de abril). Três rodadas de orquestração multi-modelo: free-choice, forced delegation, e orquestração manual cross-process. Resposta curta: pra tarefa coesa de Rails greenfield, Opus 4.7 solo no opencode (97/100, $4, 18m) bate todas as combinações. Foi nesse post que documentei o protocolo de incompatibilidade do DeepSeek V4 Pro com qualquer harness baseado em ai-sdk.
 

@@ -1,5 +1,5 @@
 ---
-title: "LLM Coding Benchmark (April 2026): GPT 5.5, DeepSeek v4, Kimi v2.6, MiMo, and the State of the Art"
+title: "LLM Coding Benchmark (May 2026): DeepSeek v4, Kimi v2.6, Grok 4.3, GPT 5.5"
 date: '2026-04-24T13:00:00-03:00'
 draft: false
 translationKey: llm-coding-benchmark-canonical-2026-04
