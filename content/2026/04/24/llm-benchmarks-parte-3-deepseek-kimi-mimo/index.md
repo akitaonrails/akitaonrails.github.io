@@ -13,7 +13,9 @@ tags:
   - self-hosting
 ---
 
-**TL;DR:** Essa é a versão canônica (e definitiva por enquanto) do meu benchmark de LLMs pra coding. Substitui os [artigos anteriores](https://github.com/akitaonrails/akitaonrails.github.io) de Abril que agora estão deprecados. Re-auditei os 23 modelos contra o código-fonte do gem `ruby_llm` em vez de memória (GPT 5.5 foi adicionado hoje), e vários que eu tinha tachado de "inventar API" na verdade escrevem código correto. Kimi K2.6 virou Tier A. Gemini 3.1 Pro também. GLM 5.1 caiu pra Tier C. MiMo V2.5 Pro caiu de "primeiro Tier 1 não-Anthropic" pra Tier B. Opus 4.7 e GPT 5.4 xHigh empatam no topo (97/100), GPT 5.5 entra terceiro com 96/100 (40% mais barato que o 5.4 com a mesma qualidade). Opus 4.6 continua sendo minha escolha diária por **comportamento**, não por código. Detalhes longos abaixo.
+> **Atualização (6 de maio de 2026)**: dois ajustes pós-publicação que reorganizam o ranking. **DeepSeek V4 Pro destravou** — o que figurava aqui como "não-mensurável em opencode" subiu pra **Tier A com 89/100** rodando via DeepClaude, um shim que troca o endpoint que o Claude Code consulta. Detalhes técnicos no [post dedicado de 4 de maio](/2026/05/04/llm-benchmarks-deepseek-unlocked-deepclaude/). E **Grok 4.3 entrou no benchmark** com 72/100 Tier B, salto grande sobre o 25/100 do Grok 4.20 (que continua no fim da lista). Tabela, comparações e seções dedicadas do DeepSeek e do Grok foram atualizadas abaixo.
+
+**TL;DR:** Essa é a versão canônica do meu benchmark de LLMs pra coding. Substitui os [artigos anteriores](https://github.com/akitaonrails/akitaonrails.github.io) de Abril que agora estão deprecados. Re-auditei 24 modelos contra o código-fonte do gem `ruby_llm` em vez de memória, e vários que eu tinha tachado de "inventar API" na verdade escrevem código correto. Kimi K2.6 virou Tier A. Gemini 3.1 Pro também. DeepSeek V4 Pro só entrega Tier A via DeepClaude (89/100); em opencode continua não-mensurável. Grok 4.3 estreia em Tier B (72/100). GLM 5.1 caiu pra Tier C. MiMo V2.5 Pro caiu de "primeiro Tier 1 não-Anthropic" pra Tier B. Opus 4.7 e GPT 5.4 xHigh empatam no topo (97/100), GPT 5.5 entra terceiro com 96/100 (40% mais barato que o 5.4 com a mesma qualidade). Opus 4.6 continua sendo minha escolha diária por **comportamento**, não por código. Detalhes longos abaixo.
 
 **Disclaimer importante**: todos os rankings, tiers e conclusões aqui só valem **dentro da metodologia específica desse benchmark**, que é construir um app Rails + RubyLLM + Hotwire + Docker a partir de um prompt fixo. Modelos que caem pra Tier B ou C aqui podem brilhar em outros tipos de tarefa (completamento de função isolada, geração de snippet curto, raciocínio sobre problema matemático). Ninguém deve ler isso como julgamento universal de capacidade.
 
@@ -63,35 +65,36 @@ Score 0-100 → Tier A (80+) / B (60-79) / C (40-59) / D (<40).
 - **Tier C**: rework grande. Core bugs ou entregas faltando
 - **Tier D**: joga fora, só serve pra inspiração arquitetural
 
-## Ranking final (23 modelos)
+## Ranking final (24 modelos)
 
 | Rank | Modelo | Score | Tier | RubyLLM OK | Tempo | Custo |
 |---:|---|---:|:---:|:---:|---|---|
 | 1 | Claude Opus 4.7 | **97** | A | ✅ | 18m | ~$1.10 |
 | 1 | GPT 5.4 xHigh (Codex) | **97** | A | ✅ | 22m | ~$16 |
 | 3 | **GPT 5.5 xHigh (Codex)** | **96** | A | ✅ | 18m | ~$10 |
-| 4 | Kimi K2.6 | **87** | A | ✅ | 20m | ~$0.30 |
-| 5 | Claude Opus 4.6 | 83 | A | ✅ | 16m | ~$1.10 |
-| 6 | Gemini 3.1 Pro | 82 | A | ✅ | 14m | ~$0.40 |
-| 7 | Claude Sonnet 4.6 | 78 | B | ✅ | 16m | ~$0.63 |
-| 7 | DeepSeek V4 Flash | 78 | B | ✅ | 3m | ~$0.01 |
-| 9 | Qwen 3.6 Plus | 71 | B | ✅ | 17m | ~$0.15 |
-| 10\* | DeepSeek V4 Pro | 69\* | B | ⚠️ reroute | 22m | ~$0.50 |
-| 10 | Kimi K2.5 | 69 | B | ✅ | 29m | ~$0.10 |
-| 12 | Xiaomi MiMo V2.5 Pro | 67 | B | ✅ | 11m | ~$0.14 |
-| 13 | GLM 5 | 64 | B | ✅ | 17m | ~$0.11 |
-| 14 | Step 3.5 Flash | 56 | C | ⚠️ bypass | 38m | ~$0.02 |
-| 15 | Qwen 3.5 35B (local) | 55 | C | ✅ | 28m | grátis |
-| 16 | GLM 4.7 Flash bf16 (local) | 52 | C | ✅ | falhou | grátis |
-| 17 | GLM 5.1 (Z.ai) | 46 | C | ❌ | 22m | subscription |
-| 18 | DeepSeek V3.2 | 43 | C | ❌ | 60m | ~$0.07 |
-| 19 | MiniMax M2.7 | 41 | C | ❌ | 14m | ~$0.30 |
-| 20 | Qwen 3.5 122B (local) | 37 | D | ❌ | 43m | grátis |
-| 21 | Qwen 3 Coder Next (local) | 32 | D | ❌ | 17m | grátis |
-| 22 | Grok 4.20 | 25 | D | ❌ | 8m | ~$0.60 |
-| 23 | GPT OSS 20B (local) | 11 | D | ❌ | falhou | grátis |
+| 4\* | DeepSeek V4 Pro (DeepClaude) | **89** | A | ✅ | 18m | ~$3.14 |
+| 5 | Kimi K2.6 | **87** | A | ✅ | 20m | ~$0.30 |
+| 6 | Claude Opus 4.6 | 83 | A | ✅ | 16m | ~$1.10 |
+| 7 | Gemini 3.1 Pro | 82 | A | ✅ | 14m | ~$0.40 |
+| 8 | Claude Sonnet 4.6 | 78 | B | ✅ | 16m | ~$0.63 |
+| 8 | DeepSeek V4 Flash | 78 | B | ✅ | 3m | ~$0.01 |
+| 10 | Grok 4.3 | 72 | B | ✅ | 15m | ~$1.74 |
+| 11 | Qwen 3.6 Plus | 71 | B | ✅ | 17m | ~$0.15 |
+| 12 | Kimi K2.5 | 69 | B | ✅ | 29m | ~$0.10 |
+| 13 | Xiaomi MiMo V2.5 Pro | 67 | B | ✅ | 11m | ~$0.14 |
+| 14 | GLM 5 | 64 | B | ✅ | 17m | ~$0.11 |
+| 15 | Step 3.5 Flash | 56 | C | ⚠️ bypass | 38m | ~$0.02 |
+| 16 | Qwen 3.5 35B (local) | 55 | C | ✅ | 28m | grátis |
+| 17 | GLM 4.7 Flash bf16 (local) | 52 | C | ✅ | falhou | grátis |
+| 18 | GLM 5.1 (Z.ai) | 46 | C | ❌ | 22m | subscription |
+| 19 | DeepSeek V3.2 | 43 | C | ❌ | 60m | ~$0.07 |
+| 20 | MiniMax M2.7 | 41 | C | ❌ | 14m | ~$0.30 |
+| 21 | Qwen 3.5 122B (local) | 37 | D | ❌ | 43m | grátis |
+| 22 | Qwen 3 Coder Next (local) | 32 | D | ❌ | 17m | grátis |
+| 23 | Grok 4.20 | 25 | D | ❌ | 8m | ~$0.60 |
+| 24 | GPT OSS 20B (local) | 11 | D | ❌ | falhou | grátis |
 
-\*DeepSeek V4 Pro: opencode (e qualquer harness baseado em ai-sdk) é incompatível com o thinking mode do DeepSeek. A run roda, mas a maior parte do output vem do fallback `general` (que é o Opus 4.7), não do DeepSeek. Score 69 reflete output misto. Detalhes na seção dedicada.
+\*DeepSeek V4 Pro só atinge esse score via DeepClaude (Claude Code com env-vars apontando pro OpenRouter). Em opencode (e em qualquer harness baseado em ai-sdk) o modelo continua não-mensurável por causa do bug de protocolo no `reasoning_content`. O número 89 acima é a variante `claude_code_deepseek_v4_pro_or_sonnet` com `sonnet-coder` registrado mas nunca invocado; a variante solo (sem subagent registrado) entrega 84/100, ainda Tier A. Cobertura completa no [post de 4 de maio sobre o unlock](/2026/05/04/llm-benchmarks-deepseek-unlocked-deepclaude/).
 
 ## Correção de rota: o que mudou no critério
 
@@ -117,7 +120,7 @@ A rubrica nova distribui peso e isso mudou o ranking:
 - **Kimi K2.5** voltou pra Tier B (66) de Tier 3. API que chamei de inventada é real. Cai por outro motivo: 37 testes que nunca mockam RubyLLM.
 - **Gemini 3.1 Pro** pulou pra Tier A (82). Turbo Streams reais, cache-backed persistence com TTL, FakeChat com assinatura correta.
 - **GPT 5.4 xHigh** empata em primeiro com Opus 4.7 (94/100). Arquitetura impecável + entregas completas.
-- **DeepSeek V4 Pro** caiu de "Tier 1 code" pra não-mensurável. O snippet RubyLLM que ele entrega é Tier A, mas em opencode (e qualquer harness ai-sdk) ele bate em incompatibilidade de protocolo de thinking mode e o output cai pro fallback Opus.
+- **DeepSeek V4 Pro** tem dois pontos. Em opencode (e qualquer harness ai-sdk) é não-mensurável: bate em incompatibilidade de protocolo de thinking mode e o output cai pro fallback Opus. Via DeepClaude (Claude Code com endpoint trocado pro OpenRouter), entrega Tier A com 89/100 — o modelo é capaz, o harness anterior é que não suportava o protocolo. Atualização de maio, ver post dedicado.
 - **MiMo V2.5 Pro** caiu de "primeiro Tier 1 não-Anthropic" pra Tier B (64). Testes não exercitam o LLM + Singleton process-local + sem rescue + sem system prompt.
 - **GLM 5.1** caiu feio pra Tier C (43). A fluent DSL dele (`c.user()`, `c.assistant()`) é mesmo inventada, grep confirma. E cada request reconstrói `ChatSession.new`, descartando histórico. Dois bugs compostos.
 
@@ -125,7 +128,7 @@ Lição: contar arquivos e testes mede zero se o código tá errado. Mas RubyLLM
 
 ## Tier A: o que faz eles funcionarem
 
-Pra entender o que separa Tier A de Tier B, olha o que Opus 4.7, Kimi K2.6 e Gemini 3.1 Pro fazem e que MiMo e DeepSeek V4 Pro não fazem.
+Pra entender o que separa Tier A de Tier B, olha o que Opus 4.7, Kimi K2.6 e Gemini 3.1 Pro fazem e que MiMo, Sonnet 4.6 e Grok 4.3 não fazem.
 
 **Todos os Tier A têm essas 4 coisas:**
 
@@ -134,7 +137,7 @@ Pra entender o que separa Tier A de Tier B, olha o que Opus 4.7, Kimi K2.6 e Gem
 3. **Persistência que sobrevive restart** e funciona multi-worker. Session cookie (Opus, K2.6) ou Rails.cache com TTL (Gemini, GPT 5.4).
 4. **System prompt via `with_instructions`.** O modelo sabe o papel dele.
 
-Tier B geralmente falha em 2-3 dessas dimensões. MiMo falha em todas as 4. DeepSeek V4 Pro tem o código RubyLLM mais limpo (persistente `@chat`) no snippet que produz, mas em qualquer harness ai-sdk a run cai pro Opus fallback antes de cobrir o checklist (detalhes na seção dedicada). Sonnet 4.6 tem arquitetura ambiciosa (multi-conversation sidebar) com um bug sutil de control-flow que os testes carimbam sem checar.
+Tier B geralmente falha em 2-3 dessas dimensões. MiMo falha em todas as 4. Sonnet 4.6 tem arquitetura ambiciosa (multi-conversation sidebar) com um bug sutil de control-flow que os testes carimbam sem checar. Grok 4.3 escreve o controller mais limpo do benchmark mas o pipeline de Stimulus tá morto em runtime, então metade da UI não responde aos eventos. DeepSeek V4 Pro tem o código RubyLLM mais limpo (persistente `@chat`) no snippet que produz; em opencode a run cai pro Opus fallback antes de cobrir o checklist, mas via DeepClaude o mesmo modelo cobre o checklist e entrega Tier A.
 
 Tier C geralmente tem pelo menos um bug estrutural: fluent DSL inventada, histórico descartado a cada request, gem ruby_llm no grupo `:test` com `require: false`, ou bypass completo do gem usando `Net::HTTP` direto.
 
@@ -235,7 +238,7 @@ Então "GPT 5.4 é o mais caro do ranking" é verdade no modo pay-as-you-go e mu
 
 Toda geração do DeepSeek vem com propaganda pesada ("competitive with Claude Opus") e termina com o mesmo padrão: **tool support fica pra trás**.
 
-### V4 Pro: código limpo no snippet, harness incompatível na prática
+### V4 Pro: código limpo no snippet, harness incompatível em opencode
 
 O snippet de RubyLLM que ele produz, isolado, é Tier A:
 
@@ -254,11 +257,32 @@ end
 
 Instância persistente de `@chat`, delega multi-turn pro RubyLLM. Padrão correto.
 
-O problema é que esse snippet é a única coisa que dá pra atribuir ao DeepSeek com confiança. Em opencode, V4 Pro bate numa incompatibilidade de protocolo. O modelo usa thinking mode por default e retorna `reasoning_content` em toda resposta. **A API do DeepSeek exige que o client ecoe esse `reasoning_content` de volta no histórico da próxima request**, ou ela responde 400 com `"reasoning_content must be passed back to the API"`. O ai-sdk que opencode usa por baixo strippa esse campo na construção das próximas requests. Toda chamada multi-turn pra V4 Pro via opencode falha no turno 2.
+Em opencode, V4 Pro bate numa incompatibilidade de protocolo. O modelo usa thinking mode por default e retorna `reasoning_content` em toda resposta. **A API do DeepSeek exige que o client ecoe esse `reasoning_content` de volta no histórico da próxima request**, ou ela responde 400 com `"reasoning_content must be passed back to the API"`. O ai-sdk que opencode usa por baixo strippa esse campo na construção das próximas requests. Toda chamada multi-turn pra V4 Pro via opencode falha no turno 2.
 
-E o que torna isso traiçoeiro: opencode não levanta esse 400 pro usuário. Soterra o erro no event stream e cai pro `general` fallback agent — que é o Opus 4.7. A run "completa", arquivos são escritos, tarefas são marcadas como ok. Mas se você inspeciona o trace, descobre que **a maior parte dos arquivos foi escrita pelo Opus, não pelo DeepSeek**. As entregas meia-boca (README stock, sem `docker-compose.yml`, bundle-audit faltando) que pesam o score são output do Opus em modo fallback agindo sem o contexto do agente principal. Score 69/100 reflete autoria mista, não V4 Pro de verdade.
+E o que torna isso traiçoeiro: opencode não levanta esse 400 pro usuário. Soterra o erro no event stream e cai pro `general` fallback agent — que é o Opus 4.7. A run "completa", arquivos são escritos, tarefas são marcadas como ok. Mas se você inspeciona o trace, descobre que **a maior parte dos arquivos foi escrita pelo Opus, não pelo DeepSeek**. As entregas meia-boca (README stock, sem `docker-compose.yml`, bundle-audit faltando) que pesam o score são output do Opus em modo fallback agindo sem o contexto do agente principal. Score 69/100 do registro antigo reflete autoria mista, não V4 Pro de verdade.
 
-Não é específico do opencode. **Qualquer harness baseado em ai-sdk** tem o mesmo bug, porque o SDK é quem strippa o `reasoning_content`. As únicas formas de usar V4 Pro em coding agent são: API direta com handling correto do thinking mode, harness customizado que faça o echo do `reasoning_content`, ou trocar pra V4 Flash (que não usa thinking mode).
+Não é específico do opencode. **Qualquer harness baseado em ai-sdk** tem o mesmo bug, porque o SDK é quem strippa o `reasoning_content`.
+
+### V4 Pro destravado: DeepClaude entrega Tier A com 89/100
+
+Em maio rodei a Round 4 do benchmark de orquestração e descobri uma forma de medir o V4 Pro de verdade. Existe um shim de shell chamado [DeepClaude](https://github.com/aattaran/deepclaude) que troca o endpoint que o Claude Code consulta. Em vez de bater em `api.anthropic.com`, o Claude Code passa a chamar `openrouter.ai/api/anthropic`, que é a rota compatível-com-Anthropic do OpenRouter. Essa rota trata o conteúdo de thinking corretamente no formato que o Claude Code emite (o ai-sdk do opencode não trata). Resultado: o loop autônomo do Claude Code roda inteiro em cima do DeepSeek V4 Pro sem o bug de protocolo.
+
+Os números de duas variantes que rodei:
+
+| Variante | Score | Tempo | Custo | Observação |
+|---|---:|---:|---:|---|
+| Claude Code via DeepClaude → V4 Pro (solo) | 84 | 21m | $3.38 | Sem subagent registrado |
+| Claude Code via DeepClaude → V4 Pro + Sonnet registrado | **89** | 18m | $3.14 | Sonnet registrado mas nunca invocado |
+
+O lift de 15-20 pontos sobre o resultado opencode é puramente efeito de troca de harness. Mesmo modelo, mesmo prompt, sem orquestração nova, só um loop de agente diferente. E a variante com Sonnet registrado mas nunca invocado pontuou +5 sobre a sister sem subagent. Mera disponibilidade de delegate fez o planner DeepSeek decompor melhor (seams menores, DI mais limpa, system prompt via `with_instructions`). Detalhes técnicos completos no [post dedicado](/2026/05/04/llm-benchmarks-deepseek-unlocked-deepclaude/).
+
+Onde isso deixa o V4 Pro:
+
+- Em opencode (e qualquer ai-sdk): não-mensurável. Continua valendo o que escrevi acima.
+- Em Claude Code com DeepClaude: Tier A com 89/100, $3.14 em 18 minutos.
+- Em Claude Code direto na API Anthropic com `DEEPSEEK_API_KEY`: não testei, mas a rota nativa também trata thinking content.
+
+Pra quem não tem assinatura Anthropic e quer Tier A coding, a variante DeepClaude rodando inteira no `OPENROUTER_API_KEY` é a primeira resposta real do benchmark.
 
 ### V4 Flash: a opção viável mais barata (78/100 Tier B)
 
@@ -268,16 +292,16 @@ $0.01/run, 2m 35s, corrige o bug crítico do V3.2 (que inventava `RubyLLM::Clien
 
 ### V4 vs V3.2
 
-| | V4 Flash | V4 Pro | V3.2 |
-|---|---|---|---|
-| Score | 78 | 69 (autoria mista) | 43 |
-| Tier | B | não-mensurável | C |
-| Harness | completa | reroute pro Opus fallback | completa |
-| Custo | ~$0.01 | ~$0.50 (Opus por baixo) | ~$0.07 |
-| RubyLLM | correto | correto (snippet isolado) | inventou `RubyLLM::Client` |
-| Entregas | OK | escritas pelo Opus fallback | razoáveis |
+| | V4 Flash | V4 Pro (DeepClaude) | V4 Pro (opencode) | V3.2 |
+|---|---|---|---|---|
+| Score | 78 | **89** | 69 (autoria mista) | 43 |
+| Tier | B | **A** | não-mensurável | C |
+| Harness | completa | completa | reroute pro Opus fallback | completa |
+| Custo | ~$0.01 | ~$3.14 | ~$0.50 (Opus por baixo) | ~$0.07 |
+| RubyLLM | correto | correto | correto (snippet isolado) | inventou `RubyLLM::Client` |
+| Entregas | OK | completas | escritas pelo Opus fallback | razoáveis |
 
-V4 Flash é a opção barata que funciona. V4 Pro tem código bom no snippet mas é incompatível com qualquer harness ai-sdk; pra usar de verdade precisa de API direta com handling de thinking mode ou harness customizado.
+V4 Flash é a opção barata que funciona. V4 Pro precisa do DeepClaude (Claude Code com env-vars apontando pro OpenRouter) pra entregar todo o potencial; em opencode continua não-mensurável.
 
 ## Kimi: K2.5 → K2.6
 
@@ -416,7 +440,30 @@ O modelo local do benchmark que mais domina a API do RubyLLM. Usa a fluent chain
 
 **Bug fatal**: `gem "ruby_llm"` tá em `group :development, :test` com `require: false`. Não carrega em produção. `NameError` no boot. Usa class-var `Message.all` (process-local).
 
-## Os perdedores (Tier C/D): MiniMax, Grok, Step, DeepSeek V3.2, GPT OSS
+## Grok: do Tier D pro Tier B (4.20 → 4.3)
+
+Grok 4.3 entrou no benchmark em maio de 2026 e merece registro separado, porque é a maior evolução intra-família do benchmark inteiro. Grok 4.20 marcou 25/100 Tier D (continua na seção dos perdedores logo abaixo). Grok 4.3 marca **72/100 Tier B**, ranking entre Qwen 3.6 Plus (71) e Kimi K2.5 (69). 47 pontos de salto. Custo $1.74 por run (15m wall time, 1.0M input + 18K output + 2.2M cache_read tokens, 102 step finishes).
+
+O que ele faz bem (e bem feito):
+
+- **API RubyLLM correta em todas as cinco chamadas**: `RubyLLM::Chat.new(model:)` + `add_message(role:, content:)` + `chat.ask` + `response.content` + rescue de `RubyLLM::Error`. Verifiquei contra o source do gem 1.14.1, sem hallucination. Counter-grep zerado: `grep -nE "RubyLLM::Client|chat\.complete|chat\.send_message|chat\.user|chat\.assistant"` retorna 0 hits.
+- **Controller mais limpo do benchmark**: 48 linhas, sem service-object over-engineering, sem fluent-DSL inventado.
+- **Turbo Streams de verdade**: a parte server-side reativa funciona.
+- **Entregas materiais**: README real, `compose.yaml` real, Dockerfile multi-stage funcional, persistência de sessão via cookie.
+
+A killer weakness é embaraçosa de descrever: **Stimulus está morto em runtime**. O `app/javascript/application.js` é um one-liner de comentário, sem `import "./controllers"`, sem `Application.start()`. O `app/assets/builds/application.js` compilado pesa 48 bytes (só um sourcemap pointer). O `controllers/index.js` faz import de `./application` que não existe. Resultado: todo `data-controller="chat"` é inerte. Enter pra enviar, autoresize, autoscroll, clear-input — tudo silenciosamente quebrado. A fase 2 do benchmark (validação de boot) reportou "local boot OK" sem exercitar a camada JS, então o gap passou batido.
+
+Outros problemas menores:
+
+- Os testes mockam `RubyLLM.stub :chat` mas o controller chama `RubyLLM::Chat.new`. O stub é bypassado, então o teste de verdade ou bate na rede ou falha por falta de key.
+- Pin de modelo stale: `anthropic/claude-3.7-sonnet` no código, README dizendo "latest Claude Sonnet" (atual é 4.7).
+- Sem `with_instructions` pra system prompt.
+
+A comparação direta de custo é desfavorável: $1.74/run pra Grok 4.3 vs $0.30/run pra Kimi K2.6 (Tier A, 87/100). Ou seja, **5× mais caro pra um resultado pior**. Grok 4.3 ocupa um slot de preço/qualidade esquisito: bom o suficiente pra Tier B, mas em Tier B existem opções 5× mais baratas (Kimi K2.5 a $0.10) e em Tier A existem opções praticamente do mesmo preço (Kimi K2.6 a $0.30). A xAI ainda precisa achar a faixa onde o Grok faz sentido econômico.
+
+A leitura geral: Grok 4.3 mostra que a família melhorou de geração pra geração de forma material (47 pontos é um salto enorme). Mas não chegou ainda no nível dos modelos que dominam o topo. Vale ficar de olho na próxima geração.
+
+## Os perdedores (Tier C/D): MiniMax, Grok 4.20, Step, DeepSeek V3.2, GPT OSS
 
 | Modelo | Score | Tier | Razão |
 |---|---:|:---:|---|
@@ -430,7 +477,7 @@ O modelo local do benchmark que mais domina a API do RubyLLM. Usa a fluent chain
 
 ## Modelos que não completaram o benchmark
 
-O ranking acima lista os 23 modelos que **completaram** o benchmark o suficiente pra serem auditados. Mas o benchmark cobre mais modelos do que isso. No total, 34+ foram configurados, 28+ foram executados, e só 17-23 (dependendo do critério) completaram o suficiente pra virar código auditável. Os que falharam merecem registro:
+O ranking acima lista os 24 modelos que **completaram** o benchmark o suficiente pra serem auditados. Mas o benchmark cobre mais modelos do que isso. No total, 34+ foram configurados, 28+ foram executados, e só 17-24 (dependendo do critério) completaram o suficiente pra virar código auditável. Os que falharam merecem registro:
 
 | Modelo | Harness | Problema | Causa raiz |
 |---|---|---|---|
@@ -451,12 +498,12 @@ O benchmark cobre basicamente todas as famílias chinesas de LLM com lançamento
 
 ### Distribuição por tier
 
-- **Tier A (80+)**: apenas **Kimi K2.6** (87). Nenhum outro modelo chinês.
-- **Tier B (60-79)**: Kimi K2.5 (69), DeepSeek V4 Flash (78), Xiaomi MiMo V2.5 Pro (67), Qwen 3.6 Plus (71), GLM 5 (64). DeepSeek V4 Pro pontuou 69 mas com autoria mista (reroute pro Opus fallback), então não-mensurável.
+- **Tier A (80+)**: **Kimi K2.6** (87) e **DeepSeek V4 Pro** via DeepClaude (89, com a ressalva de exigir harness customizado).
+- **Tier B (60-79)**: Kimi K2.5 (69), DeepSeek V4 Flash (78), Xiaomi MiMo V2.5 Pro (67), Qwen 3.6 Plus (71), GLM 5 (64). DeepSeek V4 Pro em opencode pontuou 69 mas com autoria mista (reroute pro Opus fallback), então não-mensurável nesse harness.
 - **Tier C (40-59)**: Step 3.5 Flash (56), GLM 4.7 Flash local (52), GLM 5.1 (46), DeepSeek V3.2 (43), MiniMax M2.7 (41).
 - **Tier D (<40)**: Qwen 3.5 122B local (37), Qwen 3 Coder Next local (32).
 
-Dos 13 modelos chineses testados (contando locais e cloud), **apenas um** chega em Tier A. Esse é o tamanho da penetração atual nesse benchmark específico.
+Dos 13 modelos chineses testados (contando locais e cloud), **dois** chegam em Tier A: Kimi K2.6 sem caveats e DeepSeek V4 Pro só via DeepClaude. Esse é o tamanho da penetração atual nesse benchmark específico.
 
 ### O gap em pontos
 
@@ -474,7 +521,7 @@ Custo: K2.6 $0.30/run vs Opus 4.7 $1.10/run. **3.6× mais barato.** Em runs cont
 
 **Moonshot (Kimi)**: a família chinesa mais disciplinada. K2.5 em Tier B e K2.6 em Tier A. Evolução real de uma geração pra outra em dimensões que importam (testes, rescue, persistência). Única família que entregou Tier A.
 
-**DeepSeek**: padrão de tool support atrás. Cada geração tem código RubyLLM melhor que a anterior (V3.2 inventava tudo, V4 Flash escreve correto, V4 Pro escreve perfeito em snippet), mas integração em ferramentas abertas vai mal. V4 Pro é fundamentalmente incompatível com qualquer harness baseado em ai-sdk por causa do protocolo de echo do `reasoning_content` no thinking mode. A propaganda é consistentemente mais forte que o produto final em uso prático.
+**DeepSeek**: padrão de tool support atrás. Cada geração tem código RubyLLM melhor que a anterior (V3.2 inventava tudo, V4 Flash escreve correto, V4 Pro escreve perfeito). Em harness ai-sdk (opencode incluso), V4 Pro continua incompatível por causa do protocolo de echo do `reasoning_content`. Mas via DeepClaude (Claude Code com env-vars trocando o endpoint) o mesmo modelo entrega Tier A com 89/100. A propaganda combina com o produto, desde que você use o harness certo.
 
 **Xiaomi (MiMo)**: escreve o código RubyLLM mais **idiomático** do benchmark (persistente `@chat`, zero `add_message` manual). Mas esquece testes reais, rescue, persistência robusta. Vira Tier B com demo de protótipo, não produção.
 
@@ -488,11 +535,11 @@ Custo: K2.6 $0.30/run vs Opus 4.7 $1.10/run. **3.6× mais barato.** Em runs cont
 
 Pra esse benchmark específico (app Rails + RubyLLM + entregas completas):
 
-- **Um** modelo chinês entrega Tier A como substituto direto pro Opus: **Kimi K2.6**. Gap de 10 pontos vs Opus, 3.6× mais barato.
+- **Dois modelos chineses** entregam Tier A: **Kimi K2.6** (87/100, gap de 10 pontos vs Opus, 3.6× mais barato) e **DeepSeek V4 Pro** (89/100 via DeepClaude — exige harness customizado, mas dentro do orçamento de quem já tem `OPENROUTER_API_KEY`).
 - **Cinco modelos chineses** entregam Tier B usável com 1-2h de patching: K2.5, V4 Flash, MiMo, Qwen 3.6 Plus, GLM 5.
 - **Resto não é usável** em produção pra esse tipo de tarefa.
 
-A narrativa de "a China já alcançou o Ocidente em LLM coding" precisa ser lida com ressalvas. Em benchmark sintético de raciocínio, talvez. Em benchmark de entregar um app Rails completo com todas as partes funcionais? Um modelo alcançou. Os outros ainda estão a uma geração de distância.
+A narrativa de "a China já alcançou o Ocidente em LLM coding" precisa ser lida com ressalvas. Em benchmark sintético de raciocínio, talvez. Em benchmark de entregar um app Rails completo com todas as partes funcionais? Dois modelos alcançaram, com a ressalva de que um deles (V4 Pro) só funciona em harness não-padrão. Os outros ainda estão a uma geração de distância.
 
 ## A realidade de rodar open source localmente
 
@@ -612,7 +659,7 @@ O sweet spot cost-effective agora é **Kimi K2.6 a $0.30/run** ou **Gemini 3.1 P
 
 Open source local ainda não chegou em Tier A. O melhor é Qwen 3.5 35B-A3B em Tier C com correções. Pra experimentação, vale. Pra produção, não.
 
-A lição maior da re-audit é sobre processo: **quando você começa a classificar modelos baseado em "hallucinations" que você acha que encontrou, vai no código-fonte da biblioteca e checa diretamente**. Eu tava descartando modelos por API calls válidas. Uma vez que checou contra o gem, Kimi, Gemini, DeepSeek V4 Flash e GPT 5.4 todos melhoraram. E uma vez que o critério incluiu entregas (docker-compose, README substantivo, bundle-audit), modelos que pareciam limpos mas entregaram projeto incompleto (Step 3.5 Flash via bypass) caíram pro tier que refletia isso. DeepSeek V4 Pro saiu do ranking principal porque a run nele em opencode é autoria mista — o fallback `general` (Opus 4.7) escreveu a maior parte e mascarou como sendo do DeepSeek.
+A lição maior da re-audit é sobre processo: **quando você começa a classificar modelos baseado em "hallucinations" que você acha que encontrou, vai no código-fonte da biblioteca e checa diretamente**. Eu tava descartando modelos por API calls válidas. Uma vez que checou contra o gem, Kimi, Gemini, DeepSeek V4 Flash e GPT 5.4 todos melhoraram. E uma vez que o critério incluiu entregas (docker-compose, README substantivo, bundle-audit), modelos que pareciam limpos mas entregaram projeto incompleto (Step 3.5 Flash via bypass) caíram pro tier que refletia isso. E o caso DeepSeek V4 Pro mostrou que a escolha de harness pode ser tão decisiva quanto o modelo: em opencode a run é autoria mista (fallback Opus por baixo) e fica não-mensurável; via DeepClaude o mesmo modelo entrega Tier A.
 
 Benchmark é ferramenta, não verdade. O que eu testo aqui é um app Rails específico com uma biblioteca específica. Modelos podem performar diferente em outras tarefas. A metodologia é explícita em [`audit_prompt_template.md`](https://github.com/akitaonrails/llm-coding-benchmark/blob/master/docs/audit_prompt_template.md) pra quem quiser replicar, adaptar, ou contestar.
 
