@@ -16,9 +16,15 @@ RUN apt-get update && apt-get install -y \
   ruby-bundler \
   && rm -rf /var/lib/apt/lists/*
 
-RUN wget https://go.dev/dl/go1.21.5.linux-amd64.tar.gz && \
-  tar -C /usr/local -xzf go1.21.5.linux-amd64.tar.gz && \
-  rm go1.21.5.linux-amd64.tar.gz
+RUN GO_ARCH=$(dpkg --print-architecture) && \
+  case "$GO_ARCH" in \
+    amd64) GO_ARCH=amd64 ;; \
+    arm64) GO_ARCH=arm64 ;; \
+    *) echo "Unsupported Go architecture: $GO_ARCH" && exit 1 ;; \
+  esac && \
+  wget https://go.dev/dl/go1.21.5.linux-${GO_ARCH}.tar.gz && \
+  tar -C /usr/local -xzf go1.21.5.linux-${GO_ARCH}.tar.gz && \
+  rm go1.21.5.linux-${GO_ARCH}.tar.gz
 
 ENV PATH=$PATH:/usr/local/go/bin
 ENV GOPATH=/go
