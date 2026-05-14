@@ -233,7 +233,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     for (const result of directResults) {
       const { doc } = result;
-      const key = `${doc.url}@@${doc.display || doc.content}`;
+      const key = doc.url.split('#')[0];
       if (seen.has(key)) continue;
       seen.add(key);
       documents.push(doc);
@@ -244,7 +244,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     for (const doc of fallbackSearch(query, limit * 2)) {
-      const key = `${doc.url}@@${doc.display || doc.content}`;
+      const key = doc.url.split('#')[0];
       if (seen.has(key)) continue;
       seen.add(key);
       documents.push(doc);
@@ -411,16 +411,20 @@ document.addEventListener("DOMContentLoaded", function () {
     const results = [];
     const seenPages = new Set();
     for (const doc of documents) {
+      const pageKey = doc.url.split('#')[0];
+      if (seenPages.has(pageKey)) {
+        continue;
+      }
       const content = doc.display || doc.content;
       results.push({
         route: doc.url,
-        prefix: seenPages.has(doc.url) ? undefined : doc.crumb,
+        prefix: doc.crumb,
         children: {
           title: doc.title,
           content
         }
       });
-      seenPages.add(doc.url);
+      seenPages.add(pageKey);
     }
 
     displayResults(results, query);
