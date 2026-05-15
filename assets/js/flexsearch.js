@@ -228,23 +228,27 @@ document.addEventListener("DOMContentLoaded", function () {
       suggest: query.length > 1
     })[0]?.result || [];
 
-    const documents = [];
-    const seen = new Set();
-
+    // Group sections by base URL, keeping the highest-scoring section per article
+    // so the route anchor points to the most relevant section, not an arbitrary one.
+    const bestByPage = new Map();
     for (const result of directResults) {
       const { doc } = result;
-      const key = `${doc.url}@@${doc.display || doc.content}`;
-      if (seen.has(key)) continue;
-      seen.add(key);
-      documents.push(doc);
+      const key = doc.url.split('#')[0];
+      const score = rankDocument(doc, query);
+      if (!bestByPage.has(key) || score > bestByPage.get(key).score) {
+        bestByPage.set(key, { doc, score });
+      }
     }
+
+    const documents = [...bestByPage.values()].map(({ doc }) => doc);
+    const seen = new Set(bestByPage.keys());
 
     if (documents.length >= limit) {
       return documents;
     }
 
     for (const doc of fallbackSearch(query, limit * 2)) {
-      const key = `${doc.url}@@${doc.display || doc.content}`;
+      const key = doc.url.split('#')[0];
       if (seen.has(key)) continue;
       seen.add(key);
       documents.push(doc);
@@ -409,18 +413,16 @@ document.addEventListener("DOMContentLoaded", function () {
       .sort((a, b) => rankDocument(b, normalizedQuery) - rankDocument(a, normalizedQuery));
 
     const results = [];
-    const seenPages = new Set();
     for (const doc of documents) {
       const content = doc.display || doc.content;
       results.push({
         route: doc.url,
-        prefix: seenPages.has(doc.url) ? undefined : doc.crumb,
+        prefix: doc.crumb,
         children: {
           title: doc.title,
           content
         }
       });
-      seenPages.add(doc.url);
     }
 
     displayResults(results, query);
