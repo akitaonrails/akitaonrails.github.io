@@ -2,7 +2,7 @@
 title: "Pablo Winter"
 name: "Pablo Winter"
 role: "Partner · Engineering"
-avatar: brand/autores/pablo-winter.svg
+avatar: brand/autores/pablo-winter.jpg
 bio: "Nextside partner. 15+ years of engineering. Straight to the point. Hype-skeptic."
 translationKey: autor-pablo-winter
 links:
