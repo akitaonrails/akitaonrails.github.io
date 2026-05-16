@@ -18,9 +18,9 @@ canonical: ""
 
 Cenário recorrente: você termina uma feature de frontend, dá `git diff`, parece tudo certo, comita. Cinco minutos depois alguém abre PR e diz "o botão sumiu em mobile". Bem-vindo ao buraco da regressão visual. Pergunta: dá pra pegar isso antes do PR? Resposta seca: dá. E o caminho mais barato hoje passa por MCP + Playwright.
 
-Antes de pedir review humano, o Claude com MCP Playwright já abriu seu app, navegou pela página nova, tirou screenshot em mobile e desktop, conferiu console por erro JavaScript, e flagrou se algum elemento sumiu. Tudo local, no seu próprio dev, em segundos. Sem CI. Sem servidor externo. Sem deploy de preview.
+**TL;DR:** MCP Playwright não é um framework de teste novo. Não substitui CI/CD. Não substitui o suite de E2E que seu engenheiro escreveu. **É o seu jeito de pedir pra Claude testar local pra você** — e te entregar screenshots de prova.
 
-E o melhor: você nem programa nada. Só pede.
+O fluxo de dev sempre foi: codar, escrever unit, rodar a aplicação local e testar à mão, abrir PR. O passo "rodar e testar à mão" era o que mais era pulado. "Ah, unit passou, manda pra CI." Aí cai em produção bug que CI não pegou porque CI não cobre todo path. Com MCP Playwright, esse passo deixa de ser seu — vira a IA navegando seu app, validando o fluxo, tirando print de cada estado relevante. Você ganha tempo. O PR ganha evidência. O CI continua fazendo o trabalho dele.
 
 ## O que é MCP, sem o palavreado
 
@@ -85,6 +85,29 @@ E aqui mora o ganho real. Não é velocidade — é **consistência**. O Claude 
 
 **Disciplina automatizada bate disciplina humana cansada.**
 
+## Antes vs depois: o que muda no fluxo do dev
+
+Olha o fluxo tradicional. O que a gente sempre fez:
+
+1. Coda a feature
+2. Escreve teste unitário
+3. **Roda a aplicação local e testa à mão** — clica, navega, valida visualmente
+4. Abre o PR
+5. CI roda Playwright + unit completos
+6. Reviewer humano olha o código
+
+O passo 3 é onde o tempo evapora. E é o mais pulado — "ah, unit passou, manda pra CI". Aí cai em produção um bug que CI não pegou porque CI não cobre todo path possível.
+
+Com MCP Playwright, o passo 3 vira:
+
+> 3\. **Peço pra Claude testar:** "valida o fluxo de checkout com cupom no localhost:3000, me dá screenshots de cada etapa"
+
+E a Claude abre o browser via MCP, navega, preenche, clica, verifica, tira screenshot de cada estado, reporta erro de console se houver. Você recebe: "funcionou. Evidências em `/tmp/checkout-*.png`". Anexa as screenshots no PR. **Reviewer humano abre o PR com prova visual na mão.** CI continua rodando o suite completo — esse não muda. O que muda é o seu passo manual de teste local.
+
+> "Então isso não substitui meus testes E2E?"
+
+Não. E nem deveria. Seu E2E tradicional roda em CI sem precisar de IA, vive bem, valida regressão com determinismo. Esse é trabalho que engenheiro escreve uma vez e roda mil vezes. MCP Playwright é diferente: é o seu **teste exploratório local**, automatizado pela IA, com prova visual. É o passo que você fazia clicando, agora delegado.
+
 ## Cenário concreto: PO escreve, IA valida
 
 Olha como isso vira fluxo real. Quinta de manhã, o PO escreve no Notion um cenário em Gherkin:
@@ -105,7 +128,7 @@ Funcionalidade: Checkout com cupom de desconto
     E o botão "Finalizar pedido" deve continuar habilitado
 ```
 
-A dev abre o terminal, e em vez de escrever teste E2E no Playwright manualmente (15-30min), passa pra IA:
+A dev abre o terminal, e em vez de rodar o app e clicar ela mesma em cada passo pra confirmar que o cenário passa (aquele clique manual de pré-PR que todo mundo pula), passa pra IA:
 
 ```
 Valida o cenário Gherkin abaixo no app rodando em http://localhost:3000.
@@ -152,7 +175,11 @@ O Gherkin do PO virou input executável. **A documentação de aceitação virou
 
 ## O que muda vs teste E2E tradicional
 
-Aqui um ponto importante pra não confundir. MCP Playwright não substitui sua suíte E2E em CI. ABSOLUTAMENTE NÃO. Os dois resolvem coisas diferentes.
+Aqui um ponto importante pra não confundir. MCP Playwright não substitui sua suíte E2E em CI. ABSOLUTAMENTE NÃO. Os dois resolvem coisas diferentes — e a confusão costuma nascer porque o nome "Playwright" aparece nos dois.
+
+O E2E tradicional é o que o **engenheiro escreve em código, versiona no repositório, e que o CI roda em todo PR automaticamente**. Esse não muda. Esse continua lá.
+
+MCP Playwright é o **passo 3 do fluxo do dev** — aquele clique manual que você fazia (ou pulava) antes de abrir o PR. Só que agora a IA faz no lugar de você.
 
 E2E tradicional (Playwright spec rodando em CI):
 - **Roda automático em todo PR** — bloqueia merge se quebrar

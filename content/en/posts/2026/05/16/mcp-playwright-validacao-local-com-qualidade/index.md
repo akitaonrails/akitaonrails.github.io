@@ -18,9 +18,9 @@ canonical: ""
 
 Recurring scenario: you finish a frontend feature, run `git diff`, everything looks fine, you commit. Five minutes later someone opens a PR and says "the button disappeared on mobile." Welcome to the visual regression hole. Question: can you catch this before the PR? Dry answer: yes. And the cheapest path today runs through MCP + Playwright.
 
-Before asking for a human review, Claude with MCP Playwright has already opened your app, navigated the new page, taken screenshots on mobile and desktop, checked the console for JavaScript errors, and flagged whether any element disappeared. All local, on your own dev machine, in seconds. No CI. No external server. No preview deploy.
+**TL;DR:** MCP Playwright is not a new testing framework. It doesn't replace CI/CD. It doesn't replace the E2E suite your engineer wrote. **It's your way of asking Claude to test locally for you** — and hand you screenshots as proof.
 
-And the best part: you don't write a single line of code. You just ask.
+The dev flow has always been: code, write unit tests, run the app locally and click through it manually, open the PR. The "run the app and click through it" step was the one that got skipped most. "Unit passed, ship it to CI." Then a bug hits production that CI didn't catch because CI doesn't cover every possible path. With MCP Playwright, that step is no longer yours — it becomes the AI navigating your app, validating the flow, taking a screenshot of each relevant state. You gain time. The PR gains evidence. CI keeps doing its job.
 
 ## What MCP is, without the jargon
 
@@ -85,6 +85,29 @@ And here's the real gain. It's not speed — it's **consistency**. Claude doesn'
 
 **Automated discipline beats tired human discipline.**
 
+## Before vs after: what changes in the dev flow
+
+Look at the traditional flow. What we've always done:
+
+1. Code the feature
+2. Write unit tests
+3. **Run the app locally and click through it** — navigate, click, validate visually
+4. Open the PR
+5. CI runs full Playwright + unit suite
+6. Human reviewer looks at the code
+
+Step 3 is where time evaporates. And it's the most skipped — "unit passed, ship to CI." Then a bug hits production that CI didn't catch because CI doesn't cover every possible path.
+
+With MCP Playwright, step 3 becomes:
+
+> 3\. **Ask Claude to test it:** "validate the checkout flow with a coupon on localhost:3000, give me screenshots of each step"
+
+And Claude opens the browser via MCP, navigates, fills in, clicks, verifies, takes a screenshot of each state, reports console errors if any. You get back: "it worked. Evidence in `/tmp/checkout-*.png`." You attach the screenshots in the PR. **The human reviewer opens the PR with visual proof already in hand.** CI keeps running the full suite — that doesn't change. What changes is your manual test step before the PR.
+
+> "So this doesn't replace my E2E tests?"
+
+No. And it shouldn't. Your traditional E2E runs in CI without needing AI, works fine, validates regression deterministically. That's work the engineer writes once and runs a thousand times. MCP Playwright is different: it's your **local exploratory testing**, automated by AI, with visual proof. It's the step you used to do by clicking, now delegated.
+
 ## Concrete scenario: PO writes, AI validates
 
 Look at how this turns into a real flow. Thursday morning, the PO writes a Gherkin scenario in Notion:
@@ -105,7 +128,7 @@ Feature: Checkout with discount coupon
     And the "Place order" button should remain enabled
 ```
 
-The dev opens the terminal, and instead of writing an E2E Playwright test by hand (15-30min), hands it to the AI:
+The dev opens the terminal, and instead of running the app and clicking through each step herself to confirm the scenario passes (that manual pre-PR click-through everyone skips), she hands it to the AI:
 
 ```
 Validate the Gherkin scenario below against the app running at http://localhost:3000.
@@ -152,7 +175,11 @@ The PO's Gherkin became executable input. **Acceptance documentation became runn
 
 ## What changes vs traditional E2E testing
 
-Here's an important point so you don't get confused. MCP Playwright doesn't replace your E2E suite in CI. ABSOLUTELY NOT. They solve different things.
+Here's an important point so you don't get confused. MCP Playwright doesn't replace your E2E suite in CI. ABSOLUTELY NOT. They solve different things — and the confusion usually starts because the name "Playwright" shows up in both.
+
+Traditional E2E is what the **engineer writes in code, versions in the repository, and CI runs automatically on every PR**. That doesn't change. That's still there.
+
+MCP Playwright is **step 3 in the dev flow** — that manual click-through you used to do (or skip) before opening the PR. Except now the AI does it in your place.
 
 Traditional E2E (Playwright spec running in CI):
 - **Runs automatically on every PR** — blocks the merge if it fails
