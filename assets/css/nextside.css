@@ -1324,3 +1324,13 @@ h3 {
   border-color: var(--border) !important;
   font-family: var(--font-ui) !important;
 }
+
+/* === Mobile: padding lateral do corpo do post === */
+@media (max-width: 720px) {
+  .prose,
+  .ns-post-hero .prose,
+  .ns-post-body {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+}
