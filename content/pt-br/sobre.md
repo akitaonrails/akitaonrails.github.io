@@ -3,6 +3,7 @@ title: "Sobre este blog"
 url: /sobre/
 translationKey: sobre
 description: "Por que este blog existe, quem escreve, com quem falar."
+type: page
 ---
 
 ## Por que este blog existe

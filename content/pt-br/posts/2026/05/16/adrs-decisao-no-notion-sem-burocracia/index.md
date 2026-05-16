@@ -106,6 +106,36 @@ Quem quiser ir além — e [codificar o processo em skill que a IA executa](/pos
 
 Por isso eu nem ligo se ninguém ler depois. Já valeu pelo ato de escrever.
 
+## INDEX dos ADRs: o ponto que ninguém ainda fala
+
+Aqui vai a parte que mudou pra mim em 2026.
+
+ADR é ótimo pro humano. Sócio entra no time, abre `docs/adr/0042-prisma-vs-sequelize.md`, entende a decisão em 5min. Bom.
+
+Mas agora a IA também lê seu repo. E ela precisa de **índice**, não de busca por força bruta.
+
+> "Mas a IA não consegue só grep no diretório?"
+
+Consegue. E enche o contexto com 47 ADRs irrelevantes pra responder uma pergunta. Custa token, custa qualidade, custa tempo.
+
+A solução veio do próprio Claude Code: o sistema de auto-memória dele usa um arquivo `MEMORY.md` que é só **index** — cada linha aponta pra um arquivo de memória detalhado com uma descrição de 1 linha. Quando o Claude precisa decidir algo, ele lê o `MEMORY.md` (200 linhas máximo), escolhe a memória relevante, e só aí abre o arquivo detalhado.
+
+O paralelo pra ADRs é exato. No nosso Notion (ou em `docs/adr/INDEX.md` se você usa repo), faz uma página `INDEX` no mesmo nível dos ADRs:
+
+```
+- [ADR-0042 — Prisma sobre Sequelize](./0042-prisma-vs-sequelize.md) — Postgres com tipagem forte; rejeita Sequelize por dor de migração
+- [ADR-0043 — Server Components no Next 15](./0043-rsc-next-15.md) — Default; só "use client" onde tem interação real
+- [ADR-0044 — Sem Redux](./0044-sem-redux.md) — Zustand pra estado global pequeno; URL state pro resto
+```
+
+Uma linha por ADR. Descrição que cabe em search.
+
+Agora o Claude (ou qualquer outra IA) chega no seu repo, lê o `INDEX.md` em 2s, decide quais 2-3 ADRs são relevantes pro problema em mãos, e carrega só esses no contexto. **A diferença entre 3 ADRs lidos e 47 é a diferença entre IA útil e IA confusa.**
+
+E o melhor: você ganha o índice de graça. Humano novo também usa. Sem custo adicional.
+
+Sem INDEX, seus ADRs viram cemitério de documentação ótima que ninguém lê — nem humano, nem IA.
+
 ## O que o ADR realmente protege
 
 O ADR não protege você de tomar decisão errada. ABSOLUTAMENTE NÃO. Você vai tomar decisão errada de qualquer jeito — todo time toma. O ADR protege você de tomar a MESMA decisão errada duas vezes. Que é coisa diferente.

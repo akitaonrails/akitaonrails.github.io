@@ -106,6 +106,36 @@ For those who want to go further — and [encode the process into a skill that A
 
 That's why I don't even mind if nobody reads it afterward. It was already worth it just for the act of writing.
 
+## The ADR INDEX: the part nobody talks about yet
+
+Here's what changed for me in 2026.
+
+ADRs are great for humans. New partner joins the team, opens `docs/adr/0042-prisma-vs-sequelize.md`, gets the decision in 5min. Good.
+
+But now AI also reads your repo. And it needs an **index**, not brute-force search.
+
+> "Can't AI just grep the directory?"
+
+It can. And fills the context with 47 irrelevant ADRs to answer one question. Costs tokens, costs quality, costs time.
+
+The solution came from Claude Code itself: its auto-memory system uses a `MEMORY.md` file that's just an **index** — each line points to a detailed memory file with a 1-line description. When Claude needs to decide something, it reads `MEMORY.md` (200 lines max), picks the relevant memory, and only then opens the detailed file.
+
+The parallel for ADRs is exact. In your Notion (or `docs/adr/INDEX.md` if you use a repo), create an `INDEX` page at the same level as the ADRs:
+
+```
+- [ADR-0042 — Prisma over Sequelize](./0042-prisma-vs-sequelize.md) — Postgres with strong typing; rejects Sequelize over migration pain
+- [ADR-0043 — Server Components on Next 15](./0043-rsc-next-15.md) — Default; "use client" only where real interaction exists
+- [ADR-0044 — No Redux](./0044-sem-redux.md) — Zustand for small global state; URL state for the rest
+```
+
+One line per ADR. Description that fits in search.
+
+Now Claude (or any AI) hits your repo, reads `INDEX.md` in 2s, picks which 2-3 ADRs are relevant to the problem at hand, loads only those in context. **The difference between 3 ADRs read and 47 is the difference between useful AI and confused AI.**
+
+And the best part: you get the index for free. New humans use it too. No extra cost.
+
+Without an INDEX, your ADRs become a cemetery of great documentation nobody reads — neither human, nor AI.
+
 ## What ADR actually protects you from
 
 ADR doesn't protect you from making the wrong decision. ABSOLUTELY NOT. You're going to make the wrong decision anyway — every team does. What ADR protects you from is making the SAME wrong decision twice. Which is a different thing.
