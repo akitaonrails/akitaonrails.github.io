@@ -1,0 +1,18 @@
+<header class="ns-header">
+  <div class="ns-header-inner">
+    <a href="{{ "/" | relLangURL }}" class="ns-wordmark">
+      <img src="/brand/wordmark-color.svg" alt="Nextside" height="28">
+    </a>
+
+    <nav class="ns-nav">
+      <a href="{{ "/posts/" | relLangURL }}">{{ i18n "nav_posts" }}</a>
+      <a href="{{ "/tags/" | relLangURL }}">{{ i18n "nav_tags" }}</a>
+      <a href="{{ "/sobre/" | relLangURL }}">{{ i18n "nav_about" }}</a>
+    </nav>
+
+    <div class="ns-header-actions">
+      {{- partial "custom/lang-switcher.html" . -}}
+      {{- partial "custom/search-trigger.html" . -}}
+    </div>
+  </div>
+</header>

@@ -1,5 +1,7 @@
-copyright: "© 2006-2026 Fabio Akita - All Rights Reserved"
-joinDiscussion: "💬 Join the Discussion"
-pageNotFound: "This page could not be found."
-backToHome: "Back to home"
-
+nav_posts: Posts
+nav_tags: Tags
+nav_about: About
+reading_time: "{{ .Count }} min read"
+read_more: "read →"
+related_posts: Read next
+back_to_posts: ← All posts

@@ -174,3 +174,49 @@ h2::before {
   h1 { font-size: 40px; }
   h2 { font-size: 28px; }
 }
+
+.ns-header {
+  border-bottom: 1px solid var(--ns-ink-600);
+  background: rgba(2, 2, 2, 0.9);
+  backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.ns-header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.ns-nav {
+  display: flex;
+  gap: 32px;
+  font-family: var(--font-display-tight);
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+}
+
+.ns-nav a {
+  color: var(--ns-cream);
+  text-decoration: none;
+}
+
+.ns-nav a:hover { color: var(--ns-amber); }
+
+.ns-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+@media (max-width: 720px) {
+  .ns-nav { display: none; }
+  .ns-header-inner { padding: 12px 16px; }
+}
