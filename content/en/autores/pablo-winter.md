@@ -3,18 +3,21 @@ title: "Pablo Winter"
 name: "Pablo Winter"
 role: "Partner · Engineering"
 avatar: brand/autores/pablo-winter.jpg
-bio: "Nextside partner. 15+ years of engineering. Straight to the point. Hype-skeptic."
+bio: "Nextside partner. CTO of digital products in mobility and revenue collection. 10+ years of engineering."
 translationKey: autor-pablo-winter
 links:
-  linkedin: https://linkedin.com/in/pablowinter
+  linkedin: https://www.linkedin.com/in/pablowinck/
   github: https://github.com/pablowinck
-  email: pablo.winter@movvia.com.br
+  email: contato@pablowinter.com.br
 sameAs:
-  - https://linkedin.com/in/pablowinter
+  - https://www.linkedin.com/in/pablowinck/
   - https://github.com/pablowinck
 ---
 
-I'm a partner and tech lead at Nextside. I've been building software for 15+ years —
-Ruby, Go, TypeScript, Python — and grew up shipping things to production,
-not slides. Here on the blog I write about AI applied with judgment, managing
-small teams, and why fast delivery isn't magic.
+I'm a Nextside partner and CTO of digital products for mobility and revenue
+collection. 10+ years of engineering — Java/Spring Boot, Node.js, Next.js,
+Python. Focus on hexagonal architecture, event-driven systems (SQS, SNS,
+RabbitMQ, Kafka), and senior integrations with ERPs and gateways.
+
+Here on the blog I write about AI applied with judgment, managing small
+teams, and why fast delivery isn't magic.
