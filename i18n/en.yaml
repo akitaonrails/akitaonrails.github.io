@@ -41,3 +41,4 @@ rss_description: "Posts by Nextside — technology, management, fast shipping. N
 # Ask AI button (post hero)
 ask_ai_label: "Too lazy to read? Ask AI"
 ask_ai_prompt: "Please open this URL with web search and read the full content: {{ .URL }}\n\nThen do the following:\n1) Summarize the post \"{{ .Title }}\" in 3-5 bullets, highlighting the central thesis.\n2) List 2-3 practical and actionable points the author defends.\n3) Point out 1 controversial or counterintuitive claim from the post.\n4) Suggest 2 critical questions a reader could ask the author."
+searchPlaceholder: "Search..."

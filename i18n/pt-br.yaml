@@ -45,3 +45,4 @@ ask_ai_prompt: "Por favor, abra esta URL com busca na web e leia o conteúdo com
 # Hextra TOC sidebar — tradução pt-BR
 onThisPage: "Nesta página"
 backToTop: "Voltar ao topo"
+searchPlaceholder: "Buscar..."

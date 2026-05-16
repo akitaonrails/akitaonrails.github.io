@@ -82,17 +82,26 @@ h3 {
 
 /* blockquote (voz do crítico) */
 .prose blockquote {
-  border-left: 3px solid var(--accent);
-  background: linear-gradient(
-    to right,
-    rgba(221, 46, 3, 0.06),
-    transparent 60%
-  );
-  padding: 18px 24px;
+  border-left: 4px solid var(--accent);
+  background: var(--bg-surface);
+  padding: 20px 26px;
   margin: 2em 0;
   font-style: italic;
   color: var(--fg);
+  border-radius: 0 6px 6px 0;
+  position: relative;
 }
+
+.prose blockquote::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(221, 46, 3, 0.08), transparent 70%);
+  pointer-events: none;
+  border-radius: 0 6px 6px 0;
+}
+
+.prose blockquote > * { position: relative; z-index: 1; }
 
 .prose blockquote p {
   margin: 0.5em 0;
@@ -1277,4 +1286,53 @@ h3 {
     background-color: var(--bg) !important;
     box-shadow: 0 -12px 16px var(--bg) !important;
   }
+}
+
+/* === Scroll-to-top override em LIGHT mode (Hextra default branco vs nosso creme) === */
+/* O agente anterior cobriu dark; aqui cobre light explicitamente */
+:root .hextra-scrollbar [class*="hx:bg-white"],
+:root .hextra-scrollbar [class*="hx-bg-white"],
+:root [class*="hx:bg-white"]:has(a[href*="#top"]),
+:root [class*="hx:bg-white"]:has([aria-label*="topo" i]) {
+  background-color: var(--bg) !important;
+  box-shadow: 0 -12px 16px var(--bg) !important;
+}
+
+/* Caso genérico: qualquer container que tenha "from-white" ou "to-white" do Tailwind */
+[class*="from-white"],
+[class*="hx:from-white"] {
+  --tw-gradient-from: var(--bg) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, transparent) !important;
+}
+
+[class*="shadow-[0_-12px_16px_white]"],
+[class*="hx:shadow-[0_-12px_16px_white]"] {
+  box-shadow: 0 -12px 16px var(--bg) !important;
+}
+
+/* Defensivo: blockquote em dark mode (Hextra .content override) */
+:root[data-theme="dark"] .content blockquote,
+:root.dark .content blockquote {
+  color: var(--fg) !important;
+  background: var(--bg-surface) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .content blockquote {
+    color: var(--fg) !important;
+    background: var(--bg-surface) !important;
+  }
+}
+
+/* === Search input — kbd indicator: Hextra já posiciona absolute dentro do input ===
+ * O <kbd> do Hextra usa hx:absolute com hx:bg-white / hx:dark:bg-dark/50.
+ * Aqui sobrescrevemos só as cores pra usar tokens Nextside.
+ * O posicionamento já é correto no markup do Hextra (absolute right-1.5).
+ */
+.hextra-search-wrapper kbd,
+[class*="hextra-search"] kbd {
+  background: var(--bg-elevated) !important;
+  color: var(--fg-muted) !important;
+  border-color: var(--border) !important;
+  font-family: var(--font-ui) !important;
 }

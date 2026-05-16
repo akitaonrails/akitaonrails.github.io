@@ -62,7 +62,7 @@ For those who haven't used it: it feels like magic. For those who have: it becom
 
 ## Real flow: validating post UX before committing
 
-To illustrate, here's the flow the Nextside team uses on this blog. Every time a new post comes out of the [revisor-akita agent encoded via Claude Code superpowers](/en/posts/2026/05/16/claude-code-superpowers-plugin-na-pratica/) ready to commit, a dedicated **UX review** agent launches using MCP Playwright. Sequence:
+To illustrate, here's the flow the Nextside team uses on this blog. Every time a new post comes out of the [revisor agent encoded via Claude Code superpowers](/en/posts/2026/05/16/claude-code-superpowers-plugin-na-pratica/) ready to commit, a dedicated **UX review** agent launches using MCP Playwright. Sequence:
 
 - **Start Hugo locally** — `hugo server -D --port 1313`
 - **Launch the agent** — describe the task: "validate post X in light/dark and at mobile 375px/desktop 1280px"

@@ -62,7 +62,7 @@ Pra quem nunca usou: parece feitiço. Pra quem usou: vira hábito em 3 dias.
 
 ## Fluxo real: validar UX de um post antes do commit
 
-Pra ilustrar, fluxo que a gente da Nextside usa nesse próprio blog. Toda vez que um post novo sai do [agent revisor-akita codificado via Claude Code superpowers](/posts/2026/05/16/claude-code-superpowers-plugin-na-pratica/) pronto pro commit, lança um agent dedicado de **UX review** que usa MCP Playwright. Sequência:
+Pra ilustrar, fluxo que a gente da Nextside usa nesse próprio blog. Toda vez que um post novo sai do [agent revisor codificado via Claude Code superpowers](/posts/2026/05/16/claude-code-superpowers-plugin-na-pratica/) pronto pro commit, lança um agent dedicado de **UX review** que usa MCP Playwright. Sequência:
 
 - **Sobe Hugo local** — `hugo server -D --port 1313`
 - **Lança o agent** — descreve a tarefa: "valide o post X em light/dark e em mobile 375px/desktop 1280px"
