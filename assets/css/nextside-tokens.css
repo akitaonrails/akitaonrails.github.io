@@ -1,31 +1,102 @@
+/* Paleta Nextside (cores absolutas — usadas em pontos de marca) */
 :root {
-  /* cores */
+  /* identidade nextside */
   --ns-red-flare: #FA4616;
   --ns-red-deep: #DD2E03;
   --ns-amber: #FDBF0F;
   --ns-amber-light: #FFD86B;
-  --ns-cream: #FFFAEE;
-  --ns-ink-1000: #020202;
-  --ns-ink-900: #0A0A0A;
-  --ns-ink-800: #141414;
-  --ns-ink-600: #4C4C4C;
-  --ns-ink-300: #B9B9B9;
 
   /* tipografia */
-  --font-display: "ABC Favorit Expanded", system-ui, sans-serif;
-  --font-display-tight: "ABC Favorit", system-ui, sans-serif;
-  --font-body: "Neue Haas Grotesk Display", system-ui, sans-serif;
+  --font-display: "ABC Favorit Expanded", Georgia, serif;
+  --font-display-tight: "ABC Favorit", "Inter", system-ui, sans-serif;
+  --font-body: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --font-ui: "ABC Favorit", "Inter", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SF Mono, Menlo, monospace;
 
-  /* espaçamento de leitura */
+  /* espaçamento */
   --reading-width: 680px;
   --content-padding: 20px;
 }
 
+/* === LIGHT THEME (default) === */
+:root,
+:root[data-theme="light"] {
+  --bg: #FBF7EE;
+  --bg-surface: #FFFFFF;
+  --bg-elevated: #FFFDF8;
+  --fg: #1A1A1A;
+  --fg-muted: #5A5A5A;
+  --fg-soft: #888888;
+  --border: #E5E0D2;
+  --border-strong: #C7C0AE;
+  --accent: var(--ns-red-deep);
+  --accent-hover: var(--ns-red-flare);
+  --link: #B22305;
+  --link-hover: var(--ns-red-flare);
+  --selection-bg: rgba(221, 46, 3, 0.18);
+  --code-bg: #F2EEDF;
+  --shadow: rgba(40, 28, 12, 0.08);
+}
+
+/* === DARK THEME (opcional via toggle ou prefers-color-scheme) === */
+:root[data-theme="dark"] {
+  --bg: #10131A;
+  --bg-surface: #181C24;
+  --bg-elevated: #1E222B;
+  --fg: #E8E4D8;
+  --fg-muted: #A8A398;
+  --fg-soft: #6F6B62;
+  --border: #2A2E36;
+  --border-strong: #3A3E48;
+  --accent: var(--ns-red-flare);
+  --accent-hover: var(--ns-amber);
+  --link: #FF8966;
+  --link-hover: var(--ns-amber-light);
+  --selection-bg: rgba(250, 70, 22, 0.28);
+  --code-bg: #1F232C;
+  --shadow: rgba(0, 0, 0, 0.5);
+}
+
+/* === AUTO (sistema) — se user não escolheu manual === */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --bg: #10131A;
+    --bg-surface: #181C24;
+    --bg-elevated: #1E222B;
+    --fg: #E8E4D8;
+    --fg-muted: #A8A398;
+    --fg-soft: #6F6B62;
+    --border: #2A2E36;
+    --border-strong: #3A3E48;
+    --accent: var(--ns-red-flare);
+    --accent-hover: var(--ns-amber);
+    --link: #FF8966;
+    --link-hover: var(--ns-amber-light);
+    --selection-bg: rgba(250, 70, 22, 0.28);
+    --code-bg: #1F232C;
+    --shadow: rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* baseline */
 html, body {
-  background: var(--ns-ink-1000);
-  color: var(--ns-cream);
+  background: var(--bg);
+  color: var(--fg);
   font-family: var(--font-body);
-  font-size: 18px;
-  line-height: 1.7;
+  font-size: 19px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--selection-bg);
+  color: var(--fg);
+}
+
+@media (max-width: 720px) {
+  html, body {
+    font-size: 18px;
+    line-height: 1.7;
+  }
 }
