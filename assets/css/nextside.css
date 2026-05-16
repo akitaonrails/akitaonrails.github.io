@@ -328,3 +328,47 @@ h3 {
   h2 { margin-top: 2rem; }
   h2::before { width: 20px; margin-bottom: 12px; }
 }
+
+/* === Theme toggle === */
+.ns-theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 2px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--bg-surface);
+}
+
+.ns-theme-toggle button {
+  background: transparent;
+  border: none;
+  color: var(--fg-muted);
+  padding: 6px;
+  cursor: pointer;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 150ms ease;
+}
+
+.ns-theme-toggle button:hover {
+  color: var(--fg);
+  background: var(--bg-elevated);
+}
+
+.ns-theme-toggle button.is-active {
+  background: var(--accent);
+  color: #FFFAEE;
+}
+
+.ns-theme-toggle button.is-active:hover {
+  background: var(--accent-hover);
+}
+
+@media (max-width: 480px) {
+  .ns-theme-toggle button[data-theme-set="system"] {
+    display: none;
+  }
+}

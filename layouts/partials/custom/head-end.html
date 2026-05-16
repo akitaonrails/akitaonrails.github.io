@@ -1,3 +1,16 @@
+<script>
+(function(){
+  try {
+    var m = document.cookie.match(/(?:^|; )theme_pref=([^;]*)/);
+    if (m) {
+      var v = decodeURIComponent(m[1]);
+      if (v === 'light' || v === 'dark') {
+        document.documentElement.setAttribute('data-theme', v);
+      }
+    }
+  } catch(e) {}
+})();
+</script>
 {{- with resources.Get "css/nextside-tokens.css" }}
   {{- $css := . | resources.Fingerprint -}}
   <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">

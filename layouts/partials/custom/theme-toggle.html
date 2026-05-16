@@ -1,0 +1,56 @@
+<div class="ns-theme-toggle" role="group" aria-label="Tema">
+  <button type="button" data-theme-set="light" aria-label="Tema claro" title="Tema claro">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+    </svg>
+  </button>
+  <button type="button" data-theme-set="system" aria-label="Tema do sistema" title="Sistema">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <rect x="3" y="4" width="18" height="13" rx="2"/>
+      <path d="M8 21h8M12 17v4"/>
+    </svg>
+  </button>
+  <button type="button" data-theme-set="dark" aria-label="Tema escuro" title="Tema escuro">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+    </svg>
+  </button>
+</div>
+<script>
+(function(){
+  // estado inicial baseado em cookie ou null (sistema)
+  function getThemePref(){
+    var m = document.cookie.match(/(?:^|; )theme_pref=([^;]*)/);
+    return m ? decodeURIComponent(m[1]) : 'system';
+  }
+  function setThemePref(v){
+    if (v === 'system') {
+      document.cookie = 'theme_pref=; Path=/; Max-Age=0; SameSite=Lax';
+      document.documentElement.removeAttribute('data-theme');
+    } else {
+      document.cookie = 'theme_pref=' + encodeURIComponent(v) + '; Path=/; Max-Age=31536000; SameSite=Lax';
+      document.documentElement.setAttribute('data-theme', v);
+    }
+    updateActiveButton(v);
+  }
+  function updateActiveButton(v){
+    var btns = document.querySelectorAll('.ns-theme-toggle [data-theme-set]');
+    btns.forEach(function(b){
+      var active = b.getAttribute('data-theme-set') === v;
+      b.setAttribute('aria-pressed', active ? 'true' : 'false');
+      b.classList.toggle('is-active', active);
+    });
+  }
+  // wire up
+  document.addEventListener('DOMContentLoaded', function(){
+    var initial = getThemePref();
+    updateActiveButton(initial);
+    document.querySelectorAll('.ns-theme-toggle [data-theme-set]').forEach(function(b){
+      b.addEventListener('click', function(){
+        setThemePref(b.getAttribute('data-theme-set'));
+      });
+    });
+  });
+})();
+</script>
