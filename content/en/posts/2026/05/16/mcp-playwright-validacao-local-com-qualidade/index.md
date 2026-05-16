@@ -1,0 +1,148 @@
+---
+title: "MCP Playwright: real-quality local validation before the PR"
+date: 2026-05-16T12:00:00-03:00
+draft: true
+translationKey: mcp-playwright-validacao-local-com-qualidade
+category: tecnologia
+tags: [mcp, playwright, claude-code, quality, testing]
+author: pablo-winter
+description: "Before asking for a human review, Claude with MCP Playwright has already navigated your app, taken screenshots, and flagged regressions. Local, on your dev, in seconds."
+cover: covers/mcp-playwright-validacao-local-com-qualidade.png
+cover_alt: "Nextside symbol in red on cream background, placeholder cover illustration."
+cta:
+  servico: discovery
+  posicao: ambos
+  contexto: "Validate new tech before buying into the idea? We do that in a Discovery."
+canonical: ""
+---
+
+Recurring scenario: you finish a frontend feature, run `git diff`, everything looks fine, you commit. Five minutes later someone opens a PR and says "the button disappeared on mobile." Welcome to the visual regression hole. Question: can you catch this before the PR? Dry answer: yes. And the cheapest path today runs through MCP + Playwright.
+
+Before asking for a human review, Claude with MCP Playwright has already opened your app, navigated the new page, taken screenshots on mobile and desktop, checked the console for JavaScript errors, and flagged whether any element disappeared. All local, on your own dev machine, in seconds. No CI. No external server. No preview deploy.
+
+And the best part: you don't write a single line of code. You just ask.
+
+## What MCP is, without the jargon
+
+MCP — **Model Context Protocol** — is an open protocol created by Anthropic to connect LLMs to external tools. Think of it as USB for AI: one standard, plug in, and any compatible LLM talks to any "MCP server" on the market.
+
+Before MCP, integrating AI with external tools was artisanal. Each client (Claude Code, Cursor, Continue) had its own way of invoking tools. Each tool needed a specific adapter. Chaos.
+
+MCP standardizes that. There are three pieces:
+
+- **Client** — the app where the AI runs (Claude Code, Claude Desktop, etc.)
+- **MCP server** — a separate process that exposes tools via protocol. Can run locally, remote, in containers, anywhere.
+- **Tools/Resources** — what the server exposes. "Navigate to URL X", "read this file", "execute this query."
+
+The client asks the server what it offers. The server responds with a list of tools. The AI picks a tool, sends parameters, the server executes, responds. Simple. Standardized. Universal.
+
+There's an MCP server for practically everything today: GitHub, Linear, Notion, Postgres, browser via Playwright, filesystem, Slack. You plug in what you need. The AI then operates those tools as if they were native extensions of the client itself.
+
+## Playwright as an MCP server: why it matters
+
+Playwright is Microsoft's browser automation stack. Headless or not. Cross-browser (Chromium, Firefox, WebKit). Consistent API, performant, excellent DX. What Selenium always wanted to be and never managed.
+
+When someone packages Playwright as an MCP server, the following happens: Claude gets **eyes in the browser**. Literally. It can:
+
+- Open a page at a URL
+- Take screenshots
+- Read the DOM via accessibility snapshot
+- Click an element
+- Fill a form
+- Wait for an element to appear
+- Check the console for errors
+- Inspect network requests
+- Execute arbitrary JavaScript in the page context
+
+All of this through commands the LLM picks based on context. You don't need to write a test spec. You describe in natural language — "validate that the post card opens correctly on mobile at 375px" — and Claude assembles the sequence: navigate, resize viewport, click, wait, screenshot, verify.
+
+For those who haven't used it: it feels like magic. For those who have: it becomes a habit in 3 days.
+
+> "But isn't this just another Playwright wrapper?" — no. A wrapper requires you to write code. MCP Playwright lets the AI choose the right step based on the task context. The difference isn't technical — it's abstraction. You move from "how" and stay at "what."
+
+## Real flow: validating post UX before committing
+
+To illustrate, here's the flow the Nextside team uses on this blog. Every time a new post comes out of the [revisor-akita agent encoded via Claude Code superpowers](/en/posts/2026/05/16/claude-code-superpowers-plugin-na-pratica/) ready to commit, a dedicated **UX review** agent launches using MCP Playwright. Sequence:
+
+- **Start Hugo locally** — `hugo server -D --port 1313`
+- **Launch the agent** — describe the task: "validate post X in light/dark and at mobile 375px/desktop 1280px"
+- **Claude navigates via MCP Playwright** — opens `localhost:1313/posts/.../{slug}/`, waits for load, takes screenshot
+- **Inspect console** — checks for JS errors, font warnings, or broken image notices
+- **Toggle dark mode** — clicks the theme toggle, waits for transition, takes screenshot
+- **Resize to mobile** — resizes viewport to 375px, screenshot
+- **Reports** — markdown with embedded screenshots + checklist (✓ contrast, ✓ typography, ⚠ long code overflows on mobile, ✓ ember glow only in CTA)
+
+Total time: 30 to 90 seconds. Cost: zero extra infra. Output: a report I, as a human, read in 2 minutes and decide whether to commit or fix.
+
+Compare with the old flow:
+- Open manually in Chrome: 15s
+- Open DevTools, simulate mobile: 20s
+- Check dark mode: 10s
+- Check console: 10s
+- Forget to test at least one combination at least once a week: guaranteed
+
+And here's the real gain. It's not speed — it's **consistency**. Claude doesn't forget to test dark mode. Doesn't skip mobile in a rush. Doesn't say "oh, I'll check the console later." Every time it runs, it runs everything.
+
+**Automated discipline beats tired human discipline.**
+
+## What changes vs traditional E2E testing
+
+Here's an important point so you don't get confused. MCP Playwright doesn't replace your E2E suite in CI. ABSOLUTELY NOT. They solve different things.
+
+Traditional E2E (Playwright spec running in CI):
+- **Runs automatically on every PR** — blocks the merge if it fails
+- **Specified in code** — explicit assertion, versioned, reviewed
+- **Covers the full regression suite** — doesn't depend on you remembering
+- **Slow** — minutes per execution, requires CI infra
+
+MCP Playwright in Claude locally:
+- **Runs when you ask** — blocks nothing by default
+- **Specified in natural language** — flexible but not versioned
+- **Covers what you describe in the moment** — depends on the instruction
+- **Fast** — seconds per execution, zero infra
+
+Ideal use case: **MCP Playwright is for the first validation layer, BEFORE you ask for human review.** It's the sanity check you'd do with your own hands, automated. It's not the CI safety net. It's the pre-flight check.
+
+A real E2E suite is still needed for:
+- Blocking regression on PR
+- Critical coverage of payment flows, auth, etc.
+- Executable documentation of expected behavior
+
+MCP Playwright is needed for:
+- Quick sanity check during development
+- Visual validation of a feature under active change
+- "Did I break anything?" before asking for review
+
+They're complementary, not rivals. Whoever replaces their E2E suite with MCP Playwright will miss it the moment a big refactor happens and nothing breaks in CI but everything breaks in production.
+
+## Limits and pitfalls
+
+Hold on. There are pitfalls:
+
+- **Not deterministic like code-based tests** — you describe "validate the card," Claude interprets. Two runs may check slightly different things. For sanity check: fine. For blocking regression: no.
+- **Token cost** — each screenshot Claude consumes becomes input. In a long session, that adds up. Curate what you send it to inspect.
+- **Silent failures** — if Claude didn't see something, it doesn't report it. False negative. You need to instruct it well on what to look for.
+- **MCP server setup** — installing the local MCP server, configuring it in Claude Code, making sure the browser is available. The first time takes effort. After that, you forget it's there.
+- **Local-only** — MCP Playwright in Claude Code runs on your machine. Not a solution for QA in a shared environment. For that, you still need traditional Playwright in CI.
+
+And there's a culture pitfall: **devs get lazy writing real tests because "Claude tests for me."** That's a trap. MCP Playwright complements testing, it doesn't replace it. Whoever uses it as a substitute will learn the hard way — when a critical feature breaks in production with no test covering it.
+
+> "But if MCP Playwright is so good, why do we need CI?" — because CI blocks what humans forget. MCP Playwright only runs when you ask. CI runs always. CI is the insurance, MCP is the pre-flight. Remove the insurance, and the first crash will remind you.
+
+## What this says about the future of local QA
+
+Here's what matters.
+
+For a long time, local frontend validation was bad. You opened the browser, opened DevTools, remembered (or didn't) to test mobile, remembered (or didn't) to test dark mode, remembered (or didn't) to check the console. Every time. Manually. Getting tired.
+
+Result: visual bug became production bug. Not because the dev is bad — because the human brain is not a reliable checklist machine after 4 hours of pair programming.
+
+MCP Playwright changes that because it lets the **checklist become code** that another entity — the AI — runs for you. You never forget to test dark mode again. You never commit without seeing the console. Not because you got better — because the process now runs itself. It's the same logic we apply to [documenting technical decisions in ADRs in Notion](/en/posts/2026/05/16/adrs-decisao-no-notion-sem-burocracia/): take it out of human memory, put it in a format that survives fatigue.
+
+That's what excites me most about MCP in general: it's the first time I see automation of tedious tasks with AI delivering REAL results, not promises. Playwright is just the most mature example. There will be MCP servers for everything you hate doing but have to do. And when you can evaluate new tech in 2 weeks instead of buying the whole idea, [Discovery is the right format](https://nextside.tech/#discovery) — you don't need to bet 6 months to know if MCP fits your pipeline.
+
+And the team that adopts it first will gain consistency that the team that doesn't adopt will never be able to replicate through sheer willpower.
+
+That's why the Nextside team runs MCP Playwright in every UX review agent. Not as an AI gimmick. As a **way of ensuring the boring checklist happens every time, without depending on me to remember at 11pm on a Friday.**
+
+The AI gets tired less than you. Use that to your advantage.
