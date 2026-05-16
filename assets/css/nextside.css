@@ -531,13 +531,28 @@ h3 {
   font-style: italic;
 }
 
+/* Régua de utilidade no rodapé do hero: byline esquerda + ask-ai direita.
+   Border-top vive aqui (não no byline) pra fechar o bloco inteiro.
+   line-height: 0 zera o whitespace text-node que .prose (line-height 1.75)
+   transforma em flex-item fantasma e estica a row pra ~120px. */
+.ns-post-hero-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  line-height: 0;
+}
+
 .ns-post-byline {
   display: flex;
   align-items: center;
   gap: 14px;
-  margin-top: 2rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--border);
+  line-height: 1; /* neutraliza line-height herdado da .prose (1.75) que esticava o bloco */
+  /* margin-top + border-top moveram pro .ns-post-hero-footer (composição) */
 }
 
 .ns-byline-avatar {
@@ -1184,9 +1199,10 @@ h3 {
   font-size: 13px !important;
 }
 
-/* === Ask AI button (post hero) === */
+/* === Ask AI button (post hero) ===
+   Vive dentro de .ns-post-hero-footer ao lado do byline.
+   margin-top removido: o wrapper pai já espaça o bloco inteiro. */
 .ns-ask-ai-wrap {
-  margin-top: 2rem;
   display: flex;
 }
 
@@ -1202,13 +1218,22 @@ h3 {
   opacity: 0.7;
 }
 
+/* Mobile: empilha byline em cima, ask-ai ocupa linha cheia em baixo.
+   Mantém a régua (border-top) mas vira coluna pra dar respiro em 360px. */
 @media (max-width: 720px) {
+  .ns-post-hero-footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
   .ns-ask-ai-wrap {
-    margin-top: 1.5rem;
+    width: 100%;
   }
   .ns-ask-ai {
     font-size: 12px;
     padding: 8px 14px;
+    width: 100%;
+    justify-content: center;
   }
 }
 
