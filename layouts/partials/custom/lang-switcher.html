@@ -1,0 +1,22 @@
+{{- $current := .Lang -}}
+{{- $translations := .Translations -}}
+<div class="ns-lang-switcher">
+  {{- range hugo.Sites -}}
+    {{- $targetLang := .Language.Lang -}}
+    {{- $targetCode := .Language.Lang | upper -}}
+    {{- if eq $targetLang $current -}}
+      <span class="ns-lang-current">{{ $targetCode }}</span>
+    {{- else -}}
+      {{- $found := false -}}
+      {{- range $translations -}}
+        {{- if eq .Language.Lang $targetLang -}}
+          <a href="{{ .RelPermalink }}" class="ns-lang">{{ $targetCode }}</a>
+          {{- $found = true -}}
+        {{- end -}}
+      {{- end -}}
+      {{- if not $found -}}
+        <a href="{{ .Home.RelPermalink }}" class="ns-lang">{{ $targetCode }}</a>
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+</div>
