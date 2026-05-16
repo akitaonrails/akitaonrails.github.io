@@ -1,0 +1,37 @@
+{{- $title := .Title | default .Site.Title -}}
+{{- if .IsPage -}}{{- $title = printf "%s — %s" .Title .Site.Title -}}{{- end -}}
+{{- $desc := .Params.description | default .Description | default .Site.Params.description | default "Tecnologia, gestão e entregas rápidas pela Nextside — sem corporativês." -}}
+{{- $image := .Params.cover | default "brand/wordmark-color.svg" -}}
+{{- $imageURL := printf "https://blog.nextside.tech/%s" $image -}}
+{{- $locale := replace .Language.LanguageCode "-" "_" -}}
+
+<meta property="og:title" content="{{ $title }}">
+<meta property="og:description" content="{{ $desc }}">
+<meta property="og:image" content="{{ $imageURL }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+<meta property="og:site_name" content="Blog Nextside">
+<meta property="og:locale" content="{{ $locale }}">
+
+{{- if and (eq .Section "posts") .IsPage -}}
+<meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05-07:00" }}">
+<meta property="article:modified_time" content="{{ .Lastmod.Format "2006-01-02T15:04:05-07:00" }}">
+{{- with .Params.category -}}
+<meta property="article:section" content="{{ . }}">
+{{- end -}}
+{{- range .Params.tags -}}
+<meta property="article:tag" content="{{ . }}">
+{{- end -}}
+{{- with .Params.author -}}
+{{- $authorPage := $.Site.GetPage (printf "/autores/%s" .) -}}
+{{- with $authorPage -}}
+<meta property="article:author" content="{{ .Permalink }}">
+{{- end -}}
+{{- end -}}
+{{- end -}}
+
+<meta name="twitter:card" content="summary_large_image">
+{{- /* twitter:site omitido — adicionar quando handle @nextside-tech estiver reservado */ -}}
+<meta name="twitter:title" content="{{ $title }}">
+<meta name="twitter:description" content="{{ $desc }}">
+<meta name="twitter:image" content="{{ $imageURL }}">
