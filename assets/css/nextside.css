@@ -1134,18 +1134,17 @@ h3 {
   color: var(--fg) !important;
   border: 1px solid var(--border) !important;
   border-radius: 8px !important;
-  padding: 7px 36px 7px 12px !important;
+  padding: 7px 40px 7px 12px !important;
   font-family: var(--font-ui) !important;
   font-size: 14px !important;
   transition: border-color 150ms ease, box-shadow 150ms ease !important;
-  width: 200px !important;
+  width: 100% !important;
 }
 
 .hextra-search-input:focus {
   border-color: var(--accent) !important;
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 15%, transparent) !important;
   outline: none !important;
-  width: 280px !important;
 }
 
 .hextra-search-input::placeholder {
