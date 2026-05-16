@@ -66,7 +66,7 @@ h3 {
   margin: 1.5em 0;
 }
 
-.prose a {
+.prose a:not(.btn) {
   color: var(--link);
   text-decoration: underline;
   text-decoration-thickness: 1px;
@@ -74,7 +74,7 @@ h3 {
   transition: color 150ms ease;
 }
 
-.prose a:hover { color: var(--link-hover); }
+.prose a:not(.btn):hover { color: var(--link-hover); }
 
 /* blockquote (voz do crítico) */
 .prose blockquote {
