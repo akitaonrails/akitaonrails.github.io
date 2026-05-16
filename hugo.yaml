@@ -5,132 +5,33 @@ segments:
   recent:
     includes:
     - kind: '{home,section,taxonomy,term}'
-    - path: '{/2025/**,/2026/**,/2027/**,/about,/archives,/akitando,/off-topic}'
+    - path: '{/pt-br/**,/en/**,/about}'
 
-title: AkitaOnRails.com
+title: 'Blog Nextside'
 enableEmoji: true
 languageCode: "pt-BR"
 defaultContentLanguage: "pt-br"
-baseURL: "https://www.akitaonrails.com/"
+defaultContentLanguageInSubdir: false
+baseURL: 'https://blog.nextside.tech/'
 
 languages:
   pt-br:
-    languageName: "Português"
-    languageCode: "pt-BR"
+    languageCode: pt-BR
+    languageName: 'Português'
     weight: 1
-    menu:
-      main:
-        - name: Tema
-          weight: 0
-          params:
-            type: theme-toggle
-        - name: Sobre
-          pageRef: /about
-          weight: 1
-        - name: GitHub ↗
-          url: "https://github.com/akitaonrails"
-          weight: 2
-          params:
-            icon: github
-        - name: Buscar
-          weight: 3
-          params:
-            type: search
-        - name: RSS
-          weight: 4
-          url: "/index.xml"
-          params:
-            icon: rss
-      sidebar:
-        - name: GitHub
-          weight: 1
-          url: "https://github.com/akitaonrails/akitaonrails.github.io"
-          params:
-            icon: github
-        - name: Twitter
-          weight: 1
-          url: "https://x.com/AkitaOnRails"
-          params:
-            icon: x-twitter
-        - name: The M.Akita Chronicles
-          weight: 2
-          url: "https://themakitachronicles.com"
-          params:
-            icon: newspaper
-        - name: Akitando - Transcrições
-          weight: 3
-          url: "/akitando/"
-          params:
-            icon: video
-        - name: Posts Off-Topic
-          weight: 4
-          url: "/off-topic/"
-          params:
-            icon: chat-bubble-left-right
+    title: 'Blog Nextside'
   en:
-    languageName: "English"
-    languageCode: "en"
+    languageCode: en
+    languageName: 'English'
     weight: 2
-    title: "AkitaOnRails.com"
-    contentDir: "content"
-    params:
-      description: "Fabio Akita's blog — tech, career, and assorted geek topics. English edition."
-    menu:
-      main:
-        - name: Theme
-          weight: 0
-          params:
-            type: theme-toggle
-        - name: About
-          pageRef: /en/about
-          weight: 1
-        - name: GitHub ↗
-          url: "https://github.com/akitaonrails"
-          weight: 2
-          params:
-            icon: github
-        - name: Search
-          weight: 3
-          params:
-            type: search
-        - name: RSS
-          weight: 4
-          url: "/en/index.xml"
-          params:
-            icon: rss
-      sidebar:
-        - name: GitHub
-          weight: 1
-          url: "https://github.com/akitaonrails/akitaonrails.github.io"
-          params:
-            icon: github
-        - name: Twitter
-          weight: 1
-          url: "https://x.com/AkitaOnRails"
-          params:
-            icon: x-twitter
-        - name: The M.Akita Chronicles
-          weight: 2
-          url: "https://themakitachronicles.com"
-          params:
-            icon: newspaper
-        - name: Akitando - Transcripts
-          weight: 3
-          url: "/akitando/"
-          params:
-            icon: video
-        - name: Off-Topic Posts
-          weight: 4
-          url: "/en/off-topic/"
-          params:
-            icon: chat-bubble-left-right
+    title: 'Nextside Blog'
 
 outputs:
   home: [HTML, RSS]
 
 services:
   disqus:
-    shortname: akitaonrails
+    shortname: nextside-blog
 
 # import hextra as module
 module:
@@ -158,7 +59,7 @@ params:
 
   editURL:
     enable: false
-    base: "https://github.com/imfing/hextra-starter-template/edit/main/content"
+    base: "https://github.com/nextside-tech/blog/edit/master/content"
 
   # Keep default youtube shortcode as configurable
   youtubeDefaults:
@@ -170,7 +71,7 @@ params:
     default: light
 
   author:
-    name: Fabio Akita
-    email: fabioakita@gmail.com
+    name: Nextside
+    email: contato@nextside.tech
 
-  description: "Blog do Fabio Akita do Canal do YouTube 'Akitando' falando sobre tecnologia, carreira e coisas geek."
+  description: "Blog da Nextside — tecnologia, engenharia de software, produto e carreira."
