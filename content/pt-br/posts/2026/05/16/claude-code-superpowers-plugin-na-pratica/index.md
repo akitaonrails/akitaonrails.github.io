@@ -16,11 +16,37 @@ cta:
 canonical: ""
 ---
 
-Pergunta direta: dá pra entregar feature pronta de verdade usando Claude Code? Resposta seca: dá. Mas não com Claude Code puro. Dá com Claude Code + plugin **superpowers** instalado. E essa diferença não é cosmética — muda a forma como o time inteiro entrega.
+**TL;DR:** dá pra entregar software de qualidade só com Claude Code puro? Dá. Mas tem letra miúda.
+
+A letra miúda é: depende do seu nível de senioridade pra cobrir o que a IA não cobre, e da metodologia que você consegue manter na cabeça. Pra 1-2 tarefas em paralelo, vibe coding com Claude Code resolve. Pra 5-6 tarefas simultâneas — onde a Nextside vive — a cabeça humana não aguenta. Aí entra metodologia codificada.
+
+Superpowers é a metodologia codificada num plugin: skills, agents, slash commands, hooks. Em vez de você reinventar SDD (Spec-Driven Development) e harness engineering próprios — o que custa semanas de R&D — você usa o que milhares de devs estão validando em paralelo. Bug fix do plugin chega pra você de graça. Feature nova chega pra você de graça. É open-source funcionando do jeito que open-source deveria.
 
 Eu testei. A gente testou. Esse blog que você está lendo foi construído com Claude Code + superpowers do começo ao fim — design system, layouts Hugo, pipeline de agents, frontmatter, esse próprio post. E o que mais me chamou atenção não foi velocidade. Foi disciplina.
 
-Superpowers não é "mais um plugin de IA". É a forma como a gente codifica conhecimento de time num lugar que a máquina lê — e executa.
+## Claude Code puro com Vibe Coding funciona — até quebrar
+
+O [Fabio Akita escreveu sobre Agile Vibe Coding](https://akitaonrails.com/2026/02/23/vibe-code-fiz-um-indexador-inteligente-de-imagens-com-ia-em-2-dias/) e tem razão. Você pode entregar feature inteira em 30min usando Claude Code puro, conversando com a IA, iterando rápido. Vibe.
+
+E funciona. Pra 1 tarefa. Pra 2 tarefas.
+
+> "Então pra que o plugin?"
+
+Porque o trabalho real da Nextside não é 1 tarefa. É 5. Às vezes 6.
+
+Vibe coding com 1 contexto = produtivo. Vibe coding mudando de contexto a cada 15min = sua cabeça em pedaços às 17h, sem entregar nada sólido.
+
+Quando o paralelismo entra, vibe não basta. Você precisa de:
+
+- **Brainstorming forçado antes de codificar** — pra não começar a tarefa errada
+- **Testes obrigatórios na hora do código** — pra não voltar pra debugar em 2 dias
+- **Plano escrito por agent** — pra você ler depois e lembrar onde estava
+- **UX-review automático** — pra não esquecer de checar o resultado visual
+- **Skill com checklist** — pra cada tipo de tarefa rodar do mesmo jeito
+
+Você pode construir tudo isso sozinho. Vai gastar 2-3 semanas, validar com seu time, debugar a primeira iteração. **Ou usar o plugin superpowers que já tem isso — e ganhar features novas que outros engenheiros já validaram.**
+
+Plugin não te tira a vibe. Tira a **bagunça da paralelização**. Continua sendo você no comando — só com guarda-corpo onde a fadiga humana já trairia o resultado.
 
 ## O que é superpowers, sem hype
 

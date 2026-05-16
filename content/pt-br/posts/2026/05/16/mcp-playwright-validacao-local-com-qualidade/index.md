@@ -85,6 +85,71 @@ E aqui mora o ganho real. Não é velocidade — é **consistência**. O Claude 
 
 **Disciplina automatizada bate disciplina humana cansada.**
 
+## Cenário concreto: PO escreve, IA valida
+
+Olha como isso vira fluxo real. Quinta de manhã, o PO escreve no Notion um cenário em Gherkin:
+
+```gherkin
+Funcionalidade: Checkout com cupom de desconto
+  Como cliente
+  Quero aplicar um cupom no checkout
+  Para pagar menos no pedido
+
+  Cenário: Cupom válido aplica desconto
+    Dado que estou na página de checkout
+    E meu carrinho tem 2 itens somando R$ 200
+    Quando eu insiro o cupom "NEXTSIDE10" no campo de desconto
+    E clico em "Aplicar"
+    Então o total deve cair para R$ 180
+    E uma mensagem "Cupom aplicado: 10% off" deve aparecer
+    E o botão "Finalizar pedido" deve continuar habilitado
+```
+
+A dev abre o terminal, e em vez de escrever teste E2E no Playwright manualmente (15-30min), passa pra IA:
+
+```
+Valida o cenário Gherkin abaixo no app rodando em http://localhost:3000.
+Use o MCP Playwright. Reporta cada Then com ✅ ou ❌ + screenshot 
+quando algo falhar. Não corrija o código — só audita.
+
+<cola o Gherkin aqui>
+```
+
+A IA com MCP Playwright:
+
+1. Abre o browser em `http://localhost:3000/checkout`
+2. Valida que está na página de checkout (`networkidle` + `<h1>Checkout</h1>` visível)
+3. Lê o DOM e confirma 2 itens no carrinho somando R$ 200
+4. Preenche o campo "cupom" com `NEXTSIDE10`
+5. Clica no botão "Aplicar"
+6. Aguarda mudança no DOM (`expect(total).toContain('180')`)
+7. Verifica visibilidade da mensagem "Cupom aplicado: 10% off"
+8. Verifica que o botão "Finalizar pedido" continua `enabled`
+
+Reporte de volta:
+
+```
+✅ Cenário: Cupom válido aplica desconto
+  ✅ Dado: na página de checkout (h1 visível, URL correta)
+  ✅ E: 2 itens, total R$ 200 (lido do .cart-total)
+  ✅ Quando: cupom NEXTSIDE10 aplicado
+  ✅ Então: total atualizou pra R$ 180
+  ✅ E: mensagem de sucesso visível
+  ❌ E: botão "Finalizar pedido" está DISABLED
+
+Screenshot do estado final: /tmp/checkout-disabled-btn.png
+Suspeita: regressão no cupom-success-handler que setou disabled=true 
+por engano após aplicar desconto.
+```
+
+Tempo total: **35 segundos**. Sem teste E2E escrito, sem stub, sem mock. **Validou contra o app de verdade, no seu localhost, antes do PR ir pra review.**
+
+> "Mas isso não substitui CI/CD com Playwright real?"
+
+Não substitui. CI/CD continua rodando o suite completo no PR. Esse fluxo é o **pre-flight**: antes de você abrir o PR, antes do CI gastar 6min, antes do reviewer humano abrir tab pra ver, você já sabe que o cenário do PO passa ou falha. A regressão acima — botão DISABLED por engano — é exatamente o tipo de bug que aparece em produção 2 sprints depois porque ninguém testou esse path manual.
+
+O Gherkin do PO virou input executável. **A documentação de aceitação virou teste de aceitação rodando.** Sem ninguém escrever código de teste.
+
 ## O que muda vs teste E2E tradicional
 
 Aqui um ponto importante pra não confundir. MCP Playwright não substitui sua suíte E2E em CI. ABSOLUTAMENTE NÃO. Os dois resolvem coisas diferentes.

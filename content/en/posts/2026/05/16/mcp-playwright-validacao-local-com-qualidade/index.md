@@ -85,6 +85,71 @@ And here's the real gain. It's not speed — it's **consistency**. Claude doesn'
 
 **Automated discipline beats tired human discipline.**
 
+## Concrete scenario: PO writes, AI validates
+
+Look at how this turns into a real flow. Thursday morning, the PO writes a Gherkin scenario in Notion:
+
+```gherkin
+Feature: Checkout with discount coupon
+  As a customer
+  I want to apply a coupon at checkout
+  So I can pay less for the order
+
+  Scenario: Valid coupon applies discount
+    Given I am on the checkout page
+    And my cart has 2 items totaling R$ 200
+    When I enter the coupon "NEXTSIDE10" in the discount field
+    And I click "Apply"
+    Then the total should drop to R$ 180
+    And a message "Coupon applied: 10% off" should appear
+    And the "Place order" button should remain enabled
+```
+
+The dev opens the terminal, and instead of writing an E2E Playwright test by hand (15-30min), hands it to the AI:
+
+```
+Validate the Gherkin scenario below against the app running at http://localhost:3000.
+Use MCP Playwright. Report each Then with ✅ or ❌ + a screenshot 
+when something fails. Don't fix the code — just audit.
+
+<paste the Gherkin here>
+```
+
+The AI with MCP Playwright:
+
+1. Opens the browser at `http://localhost:3000/checkout`
+2. Confirms it's on the checkout page (`networkidle` + `<h1>Checkout</h1>` visible)
+3. Reads the DOM and confirms 2 items in the cart totaling R$ 200
+4. Fills the "coupon" field with `NEXTSIDE10`
+5. Clicks the "Apply" button
+6. Waits for DOM change (`expect(total).toContain('180')`)
+7. Checks visibility of the "Coupon applied: 10% off" message
+8. Verifies the "Place order" button remains `enabled`
+
+Reports back:
+
+```
+✅ Scenario: Valid coupon applies discount
+  ✅ Given: on the checkout page (h1 visible, correct URL)
+  ✅ And: 2 items, total R$ 200 (read from .cart-total)
+  ✅ When: coupon NEXTSIDE10 applied
+  ✅ Then: total updated to R$ 180
+  ✅ And: success message visible
+  ❌ And: "Place order" button is DISABLED
+
+Final state screenshot: /tmp/checkout-disabled-btn.png
+Suspicion: regression in coupon-success-handler that set disabled=true 
+by mistake after applying the discount.
+```
+
+Total time: **35 seconds**. No E2E test written, no stub, no mock. **It validated against the real app, on your localhost, before the PR went to review.**
+
+> "But doesn't this replace real Playwright in CI/CD?"
+
+It doesn't. CI/CD keeps running the full suite on every PR. This flow is the **pre-flight**: before you open the PR, before CI spends 6min, before the human reviewer opens a tab to look, you already know whether the PO's scenario passes or fails. The regression above — button DISABLED by mistake — is exactly the kind of bug that hits production 2 sprints later because nobody tested that manual path.
+
+The PO's Gherkin became executable input. **Acceptance documentation became running acceptance test.** Without anyone writing test code.
+
 ## What changes vs traditional E2E testing
 
 Here's an important point so you don't get confused. MCP Playwright doesn't replace your E2E suite in CI. ABSOLUTELY NOT. They solve different things.
