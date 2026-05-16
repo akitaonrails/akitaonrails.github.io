@@ -1,0 +1,13 @@
+DirectoryPath: "public"
+IgnoreURLs:
+  - "^https://localhost"
+  - "^http://localhost"
+  - "^https://blog.nextside.tech"
+  - "^https://nextside.tech"
+  - "^https://linkedin.com/company/nextside-tech"
+  - "^https://github.com/nextside-tech"
+CheckExternal: false
+CheckImages: true
+CheckLinks: true
+CheckScripts: false
+LogLevel: 2

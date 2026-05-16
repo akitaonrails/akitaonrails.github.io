@@ -1,0 +1,44 @@
+name: check
+
+on:
+  pull_request:
+  push:
+    branches: [master]
+
+# Uses same Hugo install approach as pages.yaml (wget .deb) for consistency.
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    env:
+      HUGO_VERSION: 0.161.1
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.24'
+
+      - name: Setup Hugo
+        run: |
+          wget -O ${{ runner.temp }}/hugo.deb \
+            https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
+          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
+
+      - name: Validate frontmatter
+        run: bash scripts/validate-frontmatter.sh
+
+      - name: Build Hugo (sanity)
+        env:
+          HUGO_ENVIRONMENT: production
+          HUGO_ENV: production
+        run: hugo --gc --minify
+
+      - name: Check broken links
+        uses: wjdp/htmltest-action@master
+        with:
+          config: .htmltest.yml
+        continue-on-error: true

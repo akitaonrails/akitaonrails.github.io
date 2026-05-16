@@ -7,6 +7,7 @@ category: tecnologia
 tags: [teste, layout]
 author: pablo-winter
 description: "Post temporário só para validar o single layout — você pode deletar este arquivo depois."
+cover: covers/post-de-teste-do-layout.png
 cta:
   servico: sprint
   posicao: ambos
