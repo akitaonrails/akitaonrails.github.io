@@ -35,3 +35,5 @@ list_empty: "No posts here yet — coming soon."
 
 author_posts: "Posts by this author"
 author_no_posts: "No posts by this author yet."
+
+rss_description: "Posts by Nextside — technology, management, fast shipping. No hype."

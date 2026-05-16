@@ -1,29 +1,46 @@
+{{- $pctx := . -}}
+{{- if .IsHome -}}{{ $pctx = .Site }}{{- end -}}
+{{- $pages := slice -}}
+{{- if or $.IsHome $.IsSection -}}
+  {{- $pages = $pctx.RegularPages -}}
+{{- else -}}
+  {{- $pages = $pctx.Pages -}}
+{{- end -}}
+{{- $limit := .Site.Config.Services.RSS.Limit -}}
+{{- if ge $limit 1 -}}{{- $pages = $pages | first $limit -}}{{- end -}}
+{{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
 <rss version="2.0"
+     xmlns:atom="http://www.w3.org/2005/Atom"
      xmlns:content="http://purl.org/rss/1.0/modules/content/"
-     xmlns:atom="http://www.w3.org/2005/Atom">
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
-    <title>{{ .Site.Title }}</title>
-    <link>{{ .Site.BaseURL | absURL }}</link>
-    <description>{{ .Site.Params.description }}</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>{{ .Site.LanguageCode | default "en" }}</language>
-    <lastBuildDate>{{ now.Format "Mon, 02 Jan 2006 15:04:05 GMT" }}</lastBuildDate>
-    <atom:link href="{{ "index.xml" | absURL }}" rel="self" type="application/rss+xml"/>
-    {{ range first 20 .Site.RegularPages.ByDate.Reverse }}
-      <item>
-        <title>{{ .Title | html }}</title>
-        <link>{{ .Permalink | absURL }}</link>
-        <guid isPermaLink="true">{{ .Permalink | absURL }}</guid>
-        <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 GMT" }}</pubDate>
-        <description>{{ .Summary | html }}</description>
-        <content:encoded>{{ (printf "<![CDATA[%s]]>" .Content) | safeHTML }}</content:encoded>
-        {{ with .Params.tags }}
-          {{- range . }}
-            <category>{{ . }}</category>
-          {{- end }}
-        {{ end }}
-      </item>
+    <title>{{ if eq .Title .Site.Title }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{ . }} on {{ end }}{{ .Site.Title }}{{ end }}</title>
+    <link>{{ .Permalink }}</link>
+    <description>{{ i18n "rss_description" | default "Posts da Nextside — tecnologia, gestão e entregas rápidas, sem hype." }}</description>
+    <generator>Hugo</generator>
+    <language>{{ .Site.LanguageCode | default "pt-BR" }}</language>
+    <lastBuildDate>{{ now.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</lastBuildDate>
+    <atom:link href="{{ .Permalink }}index.xml" rel="self" type="application/rss+xml" />
+    {{ range $pages }}
+    <item>
+      <title>{{ .Title }}</title>
+      <link>{{ .Permalink }}</link>
+      <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
+      <guid>{{ .Permalink }}</guid>
+      {{- with .Params.author -}}
+        {{- $authorPage := $.Site.GetPage (printf "/autores/%s" .) -}}
+        {{- with $authorPage -}}
+      <dc:creator>{{ .Params.name | default .Title }}</dc:creator>
+        {{- end -}}
+      {{- end -}}
+      {{- range .Params.tags -}}
+      <category>{{ . }}</category>
+      {{- end -}}
+      {{- with .Params.description -}}
+      <description>{{ . | html }}</description>
+      {{- end -}}
+      <content:encoded>{{ (printf "<![CDATA[%s]]>" .Content) | safeHTML }}</content:encoded>
+    </item>
     {{ end }}
   </channel>
 </rss>
-
