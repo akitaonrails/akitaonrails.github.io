@@ -1,0 +1,31 @@
+:root {
+  /* cores */
+  --ns-red-flare: #FA4616;
+  --ns-red-deep: #DD2E03;
+  --ns-amber: #FDBF0F;
+  --ns-amber-light: #FFD86B;
+  --ns-cream: #FFFAEE;
+  --ns-ink-1000: #020202;
+  --ns-ink-900: #0A0A0A;
+  --ns-ink-800: #141414;
+  --ns-ink-600: #4C4C4C;
+  --ns-ink-300: #B9B9B9;
+
+  /* tipografia */
+  --font-display: "ABC Favorit Expanded", system-ui, sans-serif;
+  --font-display-tight: "ABC Favorit", system-ui, sans-serif;
+  --font-body: "Neue Haas Grotesk Display", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SF Mono, Menlo, monospace;
+
+  /* espaçamento de leitura */
+  --reading-width: 680px;
+  --content-padding: 20px;
+}
+
+html, body {
+  background: var(--ns-ink-1000);
+  color: var(--ns-cream);
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.7;
+}
