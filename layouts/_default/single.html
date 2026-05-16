@@ -1,0 +1,48 @@
+{{ define "main" }}
+<article class="ns-post">
+  <header class="ns-post-hero">
+    <div class="prose">
+      <p class="eyebrow">
+        {{- with index .Params.tags 0 -}}{{ . }} ·{{- end -}}
+        {{ dateFormat "2 Jan 2006" .Date }} ·
+        {{ i18n "reading_time" .ReadingTime }}
+      </p>
+
+      <h1>{{ .Title }}</h1>
+
+      {{- with .Params.description -}}
+        <p class="ns-post-deck">{{ . }}</p>
+      {{- end -}}
+
+      {{- with .Params.author -}}
+        {{- $authorPage := $.Site.GetPage (printf "/autores/%s" .) -}}
+        {{- with $authorPage -}}
+          <div class="ns-post-byline">
+            {{- if .Params.avatar -}}
+              <img src="/{{ .Params.avatar }}" alt="{{ .Params.name }}" class="ns-byline-avatar">
+            {{- end -}}
+            <a href="{{ .RelPermalink }}">
+              <span class="ns-byline-name">{{ .Params.name }}</span>
+              {{- with .Params.role -}}<span class="ns-byline-role">{{ . }}</span>{{- end -}}
+            </a>
+          </div>
+        {{- end -}}
+      {{- end -}}
+    </div>
+  </header>
+
+  <div class="prose ns-post-body">
+    {{ .Content }}
+  </div>
+
+  {{- if and .Params.cta (not (eq .Params.cta.servico "none")) -}}
+    {{- if or (eq .Params.cta.posicao "bottom") (eq .Params.cta.posicao "ambos") -}}
+      {{- /* placeholder para Task 10 — CTA bottom */ -}}
+      {{- /* {{ partial "custom/cta-block.html" (dict "page" . "variante" "bottom") }} */ -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- /* placeholder para Task 13 — related posts */ -}}
+  {{- /* {{- partial "custom/related-posts.html" . -}} */ -}}
+</article>
+{{ end }}
