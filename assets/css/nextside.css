@@ -372,3 +372,114 @@ h3 {
     display: none;
   }
 }
+
+/* === Footer === */
+.ns-footer {
+  border-top: 1px solid var(--border);
+  margin-top: 6rem;
+  padding: 4rem 24px 2rem;
+  background: var(--bg-surface);
+}
+
+.ns-footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 64px;
+}
+
+.ns-footer-brand img {
+  display: block;
+  margin-bottom: 1.25rem;
+}
+
+.ns-footer-brand p {
+  max-width: 340px;
+  color: var(--fg-muted);
+  margin: 0 0 1.5rem;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.ns-footer-cta {
+  display: inline-block;
+  padding: 8px 18px;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  border-radius: 6px;
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 150ms ease, color 150ms ease;
+}
+
+.ns-footer-cta:hover {
+  background: var(--accent);
+  color: #FFFAEE;
+}
+
+.ns-footer-col .eyebrow {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-soft);
+  margin: 0;
+}
+
+.ns-footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+}
+
+.ns-footer-col li {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.ns-footer-col a {
+  color: var(--fg);
+  text-decoration: none;
+  font-family: var(--font-ui);
+  font-size: 14px;
+  transition: color 150ms ease;
+}
+
+.ns-footer-col a:hover {
+  color: var(--accent);
+}
+
+.ns-footer-bottom {
+  border-top: 1px solid var(--border);
+  padding-top: 1.5rem;
+  margin-top: 3rem;
+  text-align: center;
+  color: var(--fg-soft);
+  font-size: 13px;
+  font-family: var(--font-ui);
+}
+
+.ns-footer-bottom a {
+  color: var(--fg-muted);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.ns-footer-bottom a:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 720px) {
+  .ns-footer-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .ns-footer {
+    padding: 3rem 20px 1.5rem;
+  }
+}

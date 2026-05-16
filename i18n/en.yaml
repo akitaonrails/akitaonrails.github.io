@@ -5,3 +5,11 @@ reading_time: "{{ .Count }} min read"
 read_more: "read →"
 related_posts: Read next
 back_to_posts: ← All posts
+footer_tagline: "Senior software consulting, with AI as leverage — not a shortcut."
+footer_visit_site: "nextside.tech"
+footer_how_we_work: "How we work"
+footer_follow: "Follow"
+footer_about_link: "About this blog"
+service_sprint_short: "Sprint — 4 weeks, fixed scope"
+service_discovery_short: "Discovery — technical validation"
+service_auditoria_short: "Audit — independent assessment"

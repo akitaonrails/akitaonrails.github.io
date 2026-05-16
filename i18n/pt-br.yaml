@@ -5,3 +5,11 @@ reading_time: "{{ .Count }} min de leitura"
 read_more: "ler →"
 related_posts: Leia também
 back_to_posts: ← Todos os posts
+footer_tagline: "Consultoria sênior em software, com IA aplicada como alavanca — não como atalho."
+footer_visit_site: "nextside.tech"
+footer_how_we_work: "Como trabalhamos"
+footer_follow: "Acompanhe"
+footer_about_link: "Sobre este blog"
+service_sprint_short: "Sprint — 4 semanas, escopo fechado"
+service_discovery_short: "Discovery — validação técnica"
+service_auditoria_short: "Auditoria — diagnóstico independente"
