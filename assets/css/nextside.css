@@ -406,9 +406,16 @@ h3 {
   gap: 64px;
 }
 
-.ns-footer-brand img {
-  display: block;
+.ns-footer-logo {
+  display: inline-block;
+  color: var(--fg);
   margin-bottom: 1.25rem;
+}
+
+.ns-footer-logo .ns-wordmark-svg {
+  height: 22px;
+  width: auto;
+  display: block;
 }
 
 .ns-footer-brand p {
