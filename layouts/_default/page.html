@@ -7,6 +7,21 @@
       {{- with .Params.description -}}
         <p class="ns-page-deck">{{ . }}</p>
       {{- end -}}
+
+      {{- with .Params.author -}}
+        {{- $authorPage := $.Site.GetPage (printf "/autores/%s" .) -}}
+        {{- with $authorPage -}}
+          <div class="ns-post-byline">
+            {{- if .Params.avatar -}}
+              <img src="/{{ .Params.avatar }}" alt="{{ .Params.name }}" class="ns-byline-avatar">
+            {{- end -}}
+            <a href="{{ .RelPermalink }}">
+              <span class="ns-byline-name">{{ .Params.name }}</span>
+              {{- with .Params.role -}}<span class="ns-byline-role">{{ . }}</span>{{- end -}}
+            </a>
+          </div>
+        {{- end -}}
+      {{- end -}}
     </div>
   </header>
 

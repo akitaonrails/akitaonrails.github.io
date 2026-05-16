@@ -1,0 +1,61 @@
+{{ define "main" }}
+<section class="ns-author-hero">
+  <div class="ns-author-hero-inner">
+    {{- if .Params.avatar -}}
+      <img src="/{{ .Params.avatar }}" alt="{{ .Params.name }}" class="ns-author-avatar">
+    {{- end -}}
+    <div class="ns-author-meta">
+      {{- with .Params.role -}}<p class="eyebrow">{{ . }}</p>{{- end -}}
+      <h1>{{ .Params.name | default .Title }}</h1>
+      {{- with .Params.bio -}}<p class="ns-author-bio">{{ . }}</p>{{- end -}}
+
+      <div class="ns-author-links">
+        {{- with .Params.links -}}
+          {{- with .linkedin -}}<a href="{{ . }}" rel="me">LinkedIn</a>{{- end -}}
+          {{- with .github -}}<a href="{{ . }}" rel="me">GitHub</a>{{- end -}}
+          {{- with .twitter -}}<a href="{{ . }}" rel="me">X</a>{{- end -}}
+          {{- with .email -}}<a href="mailto:{{ . }}">Email</a>{{- end -}}
+        {{- end -}}
+      </div>
+    </div>
+  </div>
+</section>
+
+{{- with .Content -}}
+<section class="ns-author-about">
+  <div class="prose">
+    {{ . }}
+  </div>
+</section>
+{{- end -}}
+
+<section class="ns-author-posts">
+  <div class="ns-author-posts-inner">
+    {{- $slug := .File.ContentBaseName -}}
+    {{- $posts := where (where .Site.RegularPages "Section" "posts") "Params.author" $slug -}}
+    {{- if $posts -}}
+      <p class="eyebrow">{{ i18n "author_posts" }}</p>
+      <ul class="ns-post-list">
+        {{- range $posts -}}
+          <li class="ns-card ns-post-card">
+            {{- with index .Params.tags 0 -}}
+              <p class="eyebrow ns-post-card-tag">{{ . }}</p>
+            {{- end -}}
+            <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+            <p class="ns-post-card-meta">{{ dateFormat "2 Jan 2006" .Date }} · {{ i18n "reading_time" .ReadingTime }}</p>
+            {{- with .Params.description -}}
+              <p class="ns-post-card-desc">{{ . }}</p>
+            {{- end -}}
+            <a href="{{ .RelPermalink }}" class="ns-post-card-link">{{ i18n "read_more" }}</a>
+          </li>
+        {{- end -}}
+      </ul>
+    {{- else -}}
+      <p class="ns-author-empty">{{ i18n "author_no_posts" }}</p>
+    {{- end -}}
+    <p class="ns-author-back">
+      <a href="{{ "/posts/" | relLangURL }}" class="btn btn-ghost">{{ i18n "back_to_posts" }}</a>
+    </p>
+  </div>
+</section>
+{{ end }}

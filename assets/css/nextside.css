@@ -1005,3 +1005,109 @@ h3 {
   .ns-page-hero { padding: 2.5rem 0 1rem; }
   .ns-page-deck { font-size: 18px; }
 }
+
+/* === Author page === */
+.ns-author-hero {
+  padding: 4rem 24px 2.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.ns-author-hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.ns-author-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.ns-author-meta {
+  flex: 1;
+  min-width: 0;
+}
+
+.ns-author-meta .eyebrow {
+  margin-bottom: 0.5rem;
+}
+
+.ns-author-meta h1 {
+  font-size: clamp(36px, 5vw, 52px);
+  line-height: 1.05;
+  margin: 0.25rem 0 1rem;
+}
+
+.ns-author-bio {
+  font-family: var(--font-body);
+  font-size: 20px;
+  line-height: 1.55;
+  color: var(--fg-muted);
+  margin: 0 0 1.5rem;
+  max-width: 580px;
+  font-style: italic;
+}
+
+.ns-author-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.ns-author-links a {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent);
+  padding-bottom: 2px;
+  transition: all 150ms ease;
+}
+
+.ns-author-links a:hover {
+  color: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+.ns-author-about {
+  padding: 2rem 0 1rem;
+}
+
+.ns-author-posts {
+  padding: 3rem 24px 4rem;
+}
+
+.ns-author-posts-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.ns-author-posts .eyebrow {
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.ns-author-empty {
+  color: var(--fg-muted);
+  font-style: italic;
+  padding: 1rem 0;
+}
+
+.ns-author-back {
+  margin: 2.5rem 0 0;
+}
+
+@media (max-width: 720px) {
+  .ns-author-hero { padding: 2.5rem 20px 1.5rem; }
+  .ns-author-hero-inner { flex-direction: column; gap: 20px; }
+  .ns-author-avatar { width: 96px; height: 96px; }
+  .ns-author-bio { font-size: 18px; }
+  .ns-author-posts { padding: 2rem 20px 3rem; }
+}

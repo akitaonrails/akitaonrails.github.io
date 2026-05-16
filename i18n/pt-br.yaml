@@ -32,3 +32,6 @@ cta_auditoria_meta: "Auditoria independente · 1-2 semanas · Sem amarras comerc
 home_latest_posts: "Últimos posts"
 list_term_deck: "{{ .Count }} posts com este tema."
 list_empty: "Ainda sem posts por aqui — em breve."
+
+author_posts: "Posts deste autor"
+author_no_posts: "Ainda sem posts deste autor."

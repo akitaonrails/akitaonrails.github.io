@@ -5,6 +5,7 @@ draft: false
 translationKey: post-de-teste-do-layout
 category: tecnologia
 tags: [teste, layout]
+author: pablo-winter
 description: "Post temporário só para validar o single layout — você pode deletar este arquivo depois."
 cta:
   servico: sprint
