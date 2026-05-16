@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "Bash(hugo:*)",
+      "Bash(git status)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push origin master)",
+      "Bash(git mv:*)",
+      "Bash(ls:*)",
+      "Bash(grep:*)",
+      "Bash(find:*)",
+      "Bash(cat docs/*)",
+      "Bash(cat CLAUDE.md)",
+      "Bash(curl -sI:*)",
+      "Bash(export PATH=*)",
+      "Read(*)",
+      "Write(content/**)",
+      "Write(static/covers/**)",
+      "Edit(content/**)",
+      "Edit(layouts/**)"
+    ]
+  }
+}
