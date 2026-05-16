@@ -1,0 +1,39 @@
+{{ define "main" }}
+<section class="ns-home-hero ember-glow">
+  <div class="ns-home-hero-inner">
+    <div class="ns-home-hero-copy">
+      <p class="eyebrow">Blog Nextside</p>
+      <h1 class="ns-home-title">
+        Software sênior,<br>
+        sem hype.
+      </h1>
+      <p class="ns-home-deck">
+        Tecnologia, gestão de time e entregas rápidas — pela mesma turma que entrega
+        seus Sprints. Sem corporativês.
+      </p>
+    </div>
+    <img src="/brand/symbol-color.svg" alt="" class="ns-home-symbol" aria-hidden="true">
+  </div>
+</section>
+
+<section class="ns-home-posts">
+  <div class="ns-home-posts-inner">
+    <p class="eyebrow">{{ i18n "home_latest_posts" }}</p>
+    <ul class="ns-post-list">
+      {{- range first 12 (where .Site.RegularPages "Section" "posts") -}}
+        <li class="ns-card ns-post-card">
+          {{- with index .Params.tags 0 -}}
+            <p class="eyebrow ns-post-card-tag">{{ . }}</p>
+          {{- end -}}
+          <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+          <p class="ns-post-card-meta">{{ dateFormat "2 Jan 2006" .Date }} · {{ i18n "reading_time" .ReadingTime }}</p>
+          {{- with .Params.description -}}
+            <p class="ns-post-card-desc">{{ . }}</p>
+          {{- end -}}
+          <a href="{{ .RelPermalink }}" class="ns-post-card-link">{{ i18n "read_more" }}</a>
+        </li>
+      {{- end -}}
+    </ul>
+  </div>
+</section>
+{{ end }}
