@@ -1,123 +1,114 @@
-# CLAUDE.md
+# CLAUDE.md — Blog Nextside
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+Este arquivo orienta o Claude Code (claude.ai/code) ao trabalhar neste repo.
 
-## Project Overview
+## O que é este repo
 
-Hugo static site using the [Hextra](https://github.com/imfing/hextra) theme (v0.11.1) for Fabio Akita's blog at akitaonrails.com. Content is in Brazilian Portuguese.
+Blog técnico e editorial da Nextside, hospedado em `blog.nextside.tech`.
+Fork do `akitaonrails/akitaonrails.github.io` com upstream tracking — herda
+a stack mas tem identidade visual e conteúdo 100% Nextside.
 
-## Essential Commands
+## Stack
+
+- **Hugo extended** (v0.161+) + tema **Hextra** (vendored como Go Module)
+- **Netlify** para build e deploy (branch `master` → produção)
+- Markdown + frontmatter YAML
+- **Bilíngue** pt-BR (canônico) + EN (via `translationKey`)
+- Tokens semânticos CSS com `--bg`, `--fg`, `--accent`, etc.
+- Auto-mode editorial (light default + dark via toggle + sistema)
+- Body em **Source Serif 4** 19px / line-height 1.75
+- Sem analytics, sem comentários (MVP)
+
+## Pipeline canônico de um post novo
+
+```
+/novo-post  →  edição humana  →  revisor-akita  →  seo-cta  →  tradutor-en  →  ux-review  →  commit
+```
+
+1. `/novo-post` — orquestra brainstorm → outline → draft pt-BR
+2. Autor humano edita o draft
+3. Agent `revisor-akita` — valida tom/estilo contra `docs/ESTILO-AKITA.md`
+4. Agent `seo-cta` — valida frontmatter, sugere keywords e CTA
+5. Agent `tradutor-en` — gera versão EN
+6. Agent `ux-review` — audita layout, contraste, mobile (**SEMPRE roda**)
+7. Commit: `post: <slug>`
+
+## Documentos de verdade (em `docs/`)
+
+- `docs/ESTILO-AKITA.md` — bíblia de tom/voz (cheat-sheet do estilo Akita destilado pro Nextside)
+- `docs/WRITER.md` — playbook operacional do framework
+- `docs/CATALOGO-SERVICOS.md` — descrição dos serviços (Sprint/Discovery/Auditoria) pra CTAs
+- `docs/SYNC-ASSETS.md` — como sincronizar com `nextside/institucional`
+
+## Convenções de commit
+
+Conventional Commits, prefixos aceitos:
+- `post:` — novo post ou edição de conteúdo
+- `chore:` — manutenção (merge upstream, deps, assets)
+- `theme:` — mudança visual / layout
+- `framework:` — mudança em `.claude/`
+- `feat:` `fix:` `docs:` `refactor:` — convencional
+
+## Regras invioláveis
+
+- **Agent `ux-review` sempre roda** antes do commit de qualquer post novo
+- Posts nascem com `draft: true` e ficam assim até revisão completa
+- Versão EN é obrigatória pra todo post (gerada pelo `tradutor-en`, revisada por humano)
+- Frontmatter sempre tem `category` (uma de: `tecnologia | gestao | entregas-rapidas | cases`) e `tags` (3-6, kebab-case sem acento)
+- Cover image em `static/covers/{slug}.png` (1200×630) é obrigatória pra cada post
+
+## Estrutura de conteúdo
+
+```
+content/
+├── pt-br/
+│   ├── posts/YYYY/MM/DD/slug/index.md
+│   ├── sobre.md
+│   └── autores/{slug}.md
+└── en/
+    ├── posts/YYYY/MM/DD/slug/index.md
+    ├── sobre.md  (vira /about/ via url override)
+    └── autores/{slug}.md
+```
+
+URLs canônicas (sem prefixo `pt-br`) graças a `contentDir` por idioma no `hugo.yaml` + `defaultContentLanguageInSubdir: false`.
+
+## Comandos essenciais
 
 ```bash
-# Development (Docker - recommended)
-./scripts/dev.sh start           # Start server at http://localhost:1313
-./scripts/dev.sh stop            # Stop server
-./scripts/dev.sh logs            # View logs
-./scripts/dev.sh generate-index  # Regenerate homepage index
+# Garantir Hugo no PATH (instalado via brew)
+export PATH=/opt/homebrew/bin:$PATH
 
-# Development (local - requires Hugo Extended, Go 1.21+, Ruby)
-./scripts/generate_index.rb
-hugo server --renderSegments recent --renderToMemory -p 1313
+# Dev server
+hugo server -D --port 1313
 
-# Production build (renders ALL content - do NOT add --renderSegments)
-# Note: --gc is intentionally omitted so netlify-plugin-cache can reuse
-# processed assets across builds. Use `hugo --gc --minify` only for local
-# full rebuilds when you want to clean stale cached assets.
-hugo --minify
+# Build de produção
+hugo --gc --minify
 
-# Create new post
-./scripts/dev.sh new-post "Title"
+# Limpar e rebuildar
+rm -rf public/ && hugo --gc --minify
 ```
 
-## Content Structure
+## Workflow bilíngue (regras críticas)
 
-Posts use the path pattern: `content/YYYY/MM/DD/slug-name/index.md`
+**Editando artigos existentes:** se o post tem irmão de idioma (`index.md` ↔ `index.en.md`), aplique a mudança equivalente no irmão na mesma rodada. Typo, conteúdo, frontmatter — sempre. Nunca deixe drifting.
 
-Required frontmatter:
-```yaml
----
-title: "Post Title"
-date: '2024-12-14T16:48:00-03:00'  # ISO 8601 with timezone (-03:00 Brazil)
-draft: false
----
-```
+**Escrevendo artigos novos:**
+1. Escreva no idioma pedido (geralmente pt-BR)
+2. **Pare e aguarde review** — não traduza imediatamente, não commite
+3. Só depois do humano aprovar, traduza para o idioma irmão
+4. Só commite quando o autor pedir explicitamente
 
-Optional: `slug`, `tags`, `description`
+## Identidade visual
 
-**Critical**: The files `content/_index.md`, `content/archives/_index.md`, `content/akitando/_index.md`, and `content/off-topic/_index.md` (plus their `.en.md` siblings) are auto-generated by `generate_index.rb`. Never edit them manually.
+- Cores light: bg `#FBF7EE` (creme), fg `#1A1A1A`, accent `#DD2E03` (vermelho Nextside)
+- Cores dark: bg `#10131A`, fg `#E8E4D8`, accent `#FA4616`
+- Fontes: ABC Favorit Expanded (H1/H2), Source Serif 4 (body), ABC Favorit (UI), JetBrains Mono (code)
+- Ember glow restrito a home hero + CTA box (nunca no corpo do post)
+- Wordmark via inline SVG com `currentColor` (adapta ao tema)
 
-## Architecture
+## Cross-link Nextside
 
-- **Theme**: Hextra v0.11.1 (via Hugo modules in `go.mod`, vendored in `_vendor/`)
-- **Base URL**: `https://www.akitaonrails.com/`
-- **Fonts**: Source Serif 4 (body), Source Sans 3 (headings) — loaded in `layouts/partials/custom/head-end.html`
-- **Index generation**: `scripts/generate_index.rb` generates `_index.md` (recent posts, rolling 2-year window), `archives/_index.md` (older posts), `akitando/_index.md` (posts tagged `akitando`), and `off-topic/_index.md` + `.en.md` (posts tagged `off-topic`). Cutoff is `Date.today.year - 1`.
-- **Dev performance**: `hugo.yaml` defines a `recent` render segment (2025+ content + `/about` + `/archives`). Dev server uses `--renderSegments recent --renderToMemory` and leaves Fast Render Mode on (default). With segments + fast-render + in-memory serving, reloads are near-instant.
-- **Deployment**: Netlify (`netlify.toml`) with `netlify-plugin-cache` persisting `resources/_gen` and `/opt/build/cache/hugo_cache` across builds. First deploy after enabling cache is cold; subsequent builds reuse resized images, compiled SCSS, and fetched modules (~50–80% faster). The build command intentionally omits `--gc` so the cache isn't wiped. GitHub Pages workflow also exists (`.github/workflows/pages.yaml`) but Netlify is the primary deployment.
-- **Docker**: Ubuntu 22.04 base, architecture-aware Hugo install (arm64/amd64). `docker-compose.yml` mounts content, layouts, assets, scripts, config for live editing.
-
-## Custom Layouts
-
-| File | Purpose |
-|------|---------|
-| `layouts/single.html` | Post template: centered content (max-w-6xl), TOC enabled, sidebar disabled, Disqus comments |
-| `layouts/_default/list.rss.xml` | RSS 2.0 feed, 20 most recent posts with full content |
-| `layouts/partials/custom/head-end.html` | Google Fonts, custom CSS (typography, code blocks, social icons, responsive embeds, dark mode) |
-| `layouts/partials/components/comments.html` | Disqus in sandboxed iframe with auto-height adjustment (500ms interval) |
-| `layouts/partials/schema.html` | Schema.org JSON-LD (BlogPosting for posts, WebSite for pages) |
-| `layouts/partials/twitter_cards.html` | Twitter/X summary_large_image cards, @AkitaOnRails |
-| `layouts/shortcodes/youtube.html` | Custom YouTube embed, required `id` param, 16:9 responsive |
-
-## Key Configuration
-
-- Hugo Extended required (SCSS support)
-- Raw HTML enabled in markdown (`goldmark.renderer.unsafe: true`)
-- Disqus comments configured with shortname `akitaonrails`
-- Emoji support enabled
-- Default branch: `master`
-
-## Custom Shortcodes
-
-```markdown
-{{< youtube id="VIDEO_ID" >}}
-```
-
-## Utility Scripts
-
-| Script | Purpose |
-|--------|---------|
-| `scripts/generate_index.rb` | Regenerates `_index.md` homepage and `archives/_index.md` (rolling window: current year - 1) |
-| `scripts/dev.sh` | Docker orchestration: start, stop, restart, rebuild, logs, exec, generate-index, new-post |
-| `scripts/fix_images.rb` | Migration: resolves CloudFront redirects to final S3 URLs |
-| `scripts/fix_html_entities.rb` | Migration: converts HTML entities to Unicode in markdown files |
-| `scripts/fix-old-code-blocks.rb` | Migration: converts old `---lang` to fenced code blocks |
-| `scripts/fix-s3-params.rb` | Migration: strips query params from S3 URLs |
-
-## Writing Blog Posts
-
-See `WRITER.md` for detailed blog writing rules (language, voice, fact-checking, images, humanizer workflow).
-
-## Multilingual (PT-BR canonical, EN translations)
-
-The site is bilingual with Portuguese as the canonical language. Hugo's native multilingual mode is configured in `hugo.yaml` (`pt-br` is `defaultContentLanguage`, `en` is the secondary language). EN content lives in sibling files named `index.en.md` next to the existing `index.md`, sharing the same directory and assets.
-
-- PT-BR posts stay at `/YYYY/MM/DD/slug/`
-- EN translations live at `/en/YYYY/MM/DD/slug/` (same slug)
-- The PT | EN toggle is rendered by `layouts/partials/custom/lang-toggle.html`
-- The toggle only appears on individual posts when an `index.en.md` sibling exists; on the homepage and archives it always appears
-- `scripts/generate_index.rb` generates both `_index.md` (PT) and `_index.en.md` (EN), with the EN index only including posts that have an `index.en.md` sibling
-- First-visit auto-redirect from `/` based on browser locale is in `layouts/partials/custom/head-end.html`; choice is persisted in the `lang_pref` cookie
-- Netlify deploy is in `netlify.toml`; the multilingual setup adds nothing to the build pipeline (Hugo handles it)
-
-See `WRITER.md` for the translation workflow and English voice rules.
-
-### Bilingual editing workflow (important)
-
-**Editing existing articles:** whenever you modify an article that has a language sibling (`index.md` ↔ `index.en.md`), you MUST apply the equivalent change to the sibling in the same edit turn to keep the two languages in sync. Typo fixes, content additions, frontmatter changes, tag changes — all of them. Never leave the pair drifting out of sync, even temporarily.
-
-**Writing new articles:** the workflow is different. When asked to write a new article:
-
-1. Write it in the user's requested language only (usually PT-BR).
-2. **Stop and wait for the user to review.** Do NOT immediately translate to the other language, and do NOT commit anything yet.
-3. Only after the user has reviewed the first-language draft and explicitly approved it (or declared it finished), translate it to the sibling language.
-4. Only git commit after the user has approved the work — either by saying it's done, asking for the commit, or similar. Never auto-commit a brand-new article on your own initiative.
+- Footer sempre linka pra `nextside.tech` (institucional)
+- `/sobre/` reforça links pro institucional
+- CTAs internos usam shortcode `{{< cta servico="sprint|discovery|auditoria" variante="mid|bottom" >}}` com UTM tracking
