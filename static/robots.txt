@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /admin/
 
-Sitemap: https://www.akitaonrails.com/sitemap.xml
+Sitemap: https://blog.nextside.tech/sitemap.xml
