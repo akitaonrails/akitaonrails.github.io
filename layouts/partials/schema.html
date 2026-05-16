@@ -1,33 +1,99 @@
-{{- $iso8601 := "2006-01-02T15:04:05-07:00" -}}
-{{- $description := partial "utils/page-description.html" . -}}
-{{- if .IsPage -}}
-{{- $schema := dict
-  "@context" "https://schema.org"
-  "@type" "BlogPosting"
-  "headline" .Title
-  "description" $description
-  "url" .Permalink
-  "datePublished" (.PublishDate.Format $iso8601)
-  "dateModified" (.Lastmod.Format $iso8601)
-  "author" (dict "@type" "Person" "name" .Site.Params.author.name "url" .Site.BaseURL)
-  "publisher" (dict "@type" "Organization" "name" .Site.Title "url" .Site.BaseURL)
-  "mainEntityOfPage" (dict "@type" "WebPage" "@id" .Permalink)
--}}
-{{- with $.Params.images -}}
-  {{- $schema = merge $schema (dict "image" (index . 0 | absURL)) -}}
-{{- end -}}
-{{- with $.Params.tags -}}
-  {{- $schema = merge $schema (dict "keywords" .) -}}
-{{- end -}}
-{{ printf `<script type="application/ld+json">%s</script>` ($schema | jsonify) | safeHTML }}
-{{- else -}}
-{{- $schema := dict
-  "@context" "https://schema.org"
-  "@type" "WebSite"
-  "name" .Site.Title
-  "description" $description
-  "url" .Site.BaseURL
-  "author" (dict "@type" "Person" "name" .Site.Params.author.name)
--}}
-{{ printf `<script type="application/ld+json">%s</script>` ($schema | jsonify) | safeHTML }}
+{{- /* === Organization (sempre presente em todas as páginas) === */ -}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Nextside",
+  "url": "https://nextside.tech",
+  "logo": "https://blog.nextside.tech/brand/wordmark-color.svg",
+  "sameAs": [
+    "https://linkedin.com/company/nextside-tech",
+    "https://github.com/nextside-tech"
+  ]
+}
+</script>
+
+{{- if and (eq .Section "posts") .IsPage -}}
+  {{- $author := "" -}}
+  {{- $authorUrl := "" -}}
+  {{- $authorSame := slice -}}
+  {{- with .Params.author -}}
+    {{- $authorPage := $.Site.GetPage (printf "/autores/%s" .) -}}
+    {{- with $authorPage -}}
+      {{- $author = .Params.name | default .Title -}}
+      {{- $authorUrl = .Permalink -}}
+      {{- with .Params.sameAs -}}{{- $authorSame = . -}}{{- end -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- $cover := .Params.cover | default "brand/wordmark-color.svg" -}}
+  {{- $imageURL := printf "https://blog.nextside.tech/%s" $cover -}}
+  {{- $category := .Params.category | default "" -}}
+  {{- $catName := $category | humanize -}}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ .Title | jsonify }},
+  "image": {{ $imageURL | jsonify }},
+  "datePublished": {{ (.Date.Format "2006-01-02T15:04:05-07:00") | jsonify }},
+  "dateModified": {{ (.Lastmod.Format "2006-01-02T15:04:05-07:00") | jsonify }},
+  "author": {
+    "@type": "Person",
+    "name": {{ $author | jsonify }}
+    {{- with $authorUrl -}}, "url": {{ . | jsonify }}{{- end -}}
+    {{- if $authorSame -}}, "sameAs": {{ $authorSame | jsonify }}{{- end -}}
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Nextside",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://blog.nextside.tech/brand/wordmark-color.svg"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": {{ .Permalink | jsonify }}
+  }
+  {{- with $category -}},
+  "articleSection": {{ $catName | jsonify }}
+  {{- end -}}
+  {{- with .Params.tags -}},
+  "keywords": {{ delimit . ", " | jsonify }}
+  {{- end -}}
+  {{- with .Params.description -}},
+  "description": {{ . | jsonify }}
+  {{- end -}}
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://blog.nextside.tech/"
+    }
+    {{- with $category -}},
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": {{ $catName | jsonify }},
+      "item": {{ printf "https://blog.nextside.tech/categories/%s/" $category | jsonify }}
+    }
+    {{- end -}},
+    {
+      "@type": "ListItem",
+      "position": {{ if $category }}3{{ else }}2{{ end }},
+      "name": {{ .Title | jsonify }}
+    }
+  ]
+}
+</script>
 {{- end -}}
