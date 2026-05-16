@@ -1,0 +1,38 @@
+{{- $category := .Params.category -}}
+{{- $currentPermalink := .Permalink -}}
+{{- $allPosts := where (where .Site.RegularPages "Section" "posts") "Permalink" "!=" $currentPermalink -}}
+{{- $related := slice -}}
+{{- if $category -}}
+  {{- $sameCategory := where $allPosts "Params.category" $category -}}
+  {{- $related = first 3 $sameCategory -}}
+{{- end -}}
+{{- if lt (len $related) 3 -}}
+  {{- /* fallback: completa com posts mais recentes de qualquer category */ -}}
+  {{- $needed := sub 3 (len $related) -}}
+  {{- $fallback := first $needed $allPosts -}}
+  {{- $related = $related | append $fallback -}}
+{{- end -}}
+
+{{- if $related -}}
+<aside class="ns-related">
+  <div class="ns-related-inner">
+    <p class="eyebrow">{{ i18n "related_posts" }}</p>
+    <ul class="ns-related-list">
+      {{- range $related -}}
+        <li>
+          <a href="{{ .RelPermalink }}">
+            {{- with index .Params.tags 0 -}}
+              <span class="ns-related-tag">{{ . }}</span>
+            {{- end -}}
+            <h3>{{ .Title }}</h3>
+            <span class="ns-related-meta">{{ dateFormat "2 Jan 2006" .Date }} · {{ i18n "reading_time" .ReadingTime }}</span>
+            {{- with .Params.description -}}
+              <p class="ns-related-desc">{{ . }}</p>
+            {{- end -}}
+          </a>
+        </li>
+      {{- end -}}
+    </ul>
+  </div>
+</aside>
+{{- end -}}
