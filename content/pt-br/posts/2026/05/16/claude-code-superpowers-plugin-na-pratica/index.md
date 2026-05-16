@@ -1,7 +1,7 @@
 ---
 title: "Claude Code superpowers: o plugin que muda o time"
 date: 2026-05-16T11:00:00-03:00
-draft: true
+draft: false
 translationKey: claude-code-superpowers-plugin-na-pratica
 category: entregas-rapidas
 tags: [claude-code, superpowers, ia, produtividade, skills]

@@ -1,7 +1,7 @@
 ---
 title: "ADRs no Notion, sem burocracia"
 date: 2026-05-16T10:00:00-03:00
-draft: true
+draft: false
 translationKey: adrs-decisao-no-notion-sem-burocracia
 category: gestao
 tags: [adr, decisao-tecnica, notion, processo, time-pequeno]

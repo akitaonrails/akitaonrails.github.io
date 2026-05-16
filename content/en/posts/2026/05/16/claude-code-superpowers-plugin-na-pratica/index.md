@@ -1,7 +1,7 @@
 ---
 title: "Claude Code superpowers: the plugin that changes how a team ships"
 date: 2026-05-16T11:00:00-03:00
-draft: true
+draft: false
 translationKey: claude-code-superpowers-plugin-na-pratica
 category: entregas-rapidas
 tags: [claude-code, superpowers, ai, productivity, skills]

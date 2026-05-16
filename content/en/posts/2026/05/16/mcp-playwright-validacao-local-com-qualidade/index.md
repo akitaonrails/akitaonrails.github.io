@@ -1,7 +1,7 @@
 ---
 title: "MCP Playwright: real-quality local validation before the PR"
 date: 2026-05-16T12:00:00-03:00
-draft: true
+draft: false
 translationKey: mcp-playwright-validacao-local-com-qualidade
 category: tecnologia
 tags: [mcp, playwright, claude-code, quality, testing]
