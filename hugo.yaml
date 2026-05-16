@@ -34,8 +34,6 @@ outputs:
   taxonomy: [HTML, RSS]
 
 services:
-  disqus:
-    shortname: nextside-blog
   rss:
     limit: 20
 

@@ -82,26 +82,17 @@ h3 {
 
 /* blockquote (voz do crítico) */
 .prose blockquote {
-  border-left: 4px solid var(--accent);
-  background: var(--bg-surface);
-  padding: 20px 26px;
+  border-left: 3px solid var(--accent);
+  background: linear-gradient(
+    to right,
+    rgba(221, 46, 3, 0.06),
+    transparent 60%
+  );
+  padding: 18px 24px;
   margin: 2em 0;
   font-style: italic;
   color: var(--fg);
-  border-radius: 0 6px 6px 0;
-  position: relative;
 }
-
-.prose blockquote::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to right, rgba(221, 46, 3, 0.08), transparent 70%);
-  pointer-events: none;
-  border-radius: 0 6px 6px 0;
-}
-
-.prose blockquote > * { position: relative; z-index: 1; }
 
 .prose blockquote p {
   margin: 0.5em 0;
@@ -1310,17 +1301,15 @@ h3 {
   box-shadow: 0 -12px 16px var(--bg) !important;
 }
 
-/* Defensivo: blockquote em dark mode (Hextra .content override) */
+/* Defensivo: cor do texto do blockquote em dark mode (Hextra override) — preserva gradient */
 :root[data-theme="dark"] .content blockquote,
 :root.dark .content blockquote {
   color: var(--fg) !important;
-  background: var(--bg-surface) !important;
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) .content blockquote {
     color: var(--fg) !important;
-    background: var(--bg-surface) !important;
   }
 }
 
