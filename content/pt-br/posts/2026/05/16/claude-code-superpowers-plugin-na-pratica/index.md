@@ -1,5 +1,5 @@
 ---
-title: "Claude Code superpowers: o plugin que muda como o time entrega"
+title: "Claude Code superpowers: o plugin que muda o time"
 date: 2026-05-16T11:00:00-03:00
 draft: true
 translationKey: claude-code-superpowers-plugin-na-pratica
@@ -58,7 +58,7 @@ Fluxo típico de uma feature do design system:
 1. **Brainstorming session** — eu descrevo "preciso de hover state pro card de post". Claude (via skill brainstorming) faz 3-4 perguntas: "ember glow ou só elevation?", "mobile também ou só desktop?", "comportamento em dark mode?". Só depois disso propõe abordagem.
 2. **Plano escrito** — skill `writing-plans` força Claude a escrever plano detalhado antes de codar. Plano vai pra um arquivo de spec. Eu reviso. Aprovo ou peço ajuste.
 3. **Execução com TDD** — skill `executing-plans` segue o plano. Cada passo do plano vira checkpoint. Skill TDD força teste antes de código (quando aplicável — em CSS puro, vira verificação visual).
-4. **UX review automática** — antes do commit, lança um agent dedicado de revisão UX que abre o site no browser, navega, tira screenshot, e flagra problema.
+4. **UX review automática** — antes do commit, lança um [agent dedicado de revisão UX que abre o site no browser via MCP Playwright](/posts/2026/05/16/mcp-playwright-validacao-local-com-qualidade/), navega, tira screenshot, e flagra problema.
 5. **Commit + push** — só depois de tudo verde.
 
 Notem: zero "vibe coding" desorganizado. Zero "deixa eu tentar uma coisa". Zero "deve funcionar". É um pipeline.
@@ -97,7 +97,7 @@ E o ponto crítico: **superpowers é alavanca, não autopilot**. Você ainda pre
 
 Aqui o ponto que mais importa.
 
-Por anos, processo de time foi documento. ADR no Notion. Checklist no Confluence. Playbook no Google Doc. Tudo passivo. Tudo ignorado depois da segunda semana.
+Por anos, processo de time foi documento. [ADR no Notion](/posts/2026/05/16/adrs-decisao-no-notion-sem-burocracia/). Checklist no Confluence. Playbook no Google Doc. Tudo passivo. Tudo ignorado depois da segunda semana.
 
 Superpowers muda isso porque transforma processo em **código executável pela IA**. A skill não é doc — é instrução que dispara toda vez que a tarefa começa. Ninguém precisa lembrar de "rodar o playbook". A IA roda sozinha.
 
@@ -105,8 +105,8 @@ Isso tem implicação grande: o conhecimento de engenharia que ficava nas cabeç
 
 Não é mágica. Não substitui senioridade. Mas é a primeira vez que eu vejo "processo de time" sair do papel e virar comportamento real e repetível, sem depender de alguém policiar.
 
-E isso é VALIOSO demais pra ignorar.
+E isso muda jogo. Ponto.
 
-Por isso a gente da Nextside roda Claude Code + superpowers em todo Sprint. Não como ferramenta de produtividade. Como **forma de garantir que o jeito Nextside de trabalhar acontece toda vez, sem precisar do humano lembrar**.
+Por isso a gente da Nextside roda Claude Code + superpowers em [todo Sprint de 4 semanas](https://nextside.tech/#sprint). Não como ferramenta de produtividade. Como **forma de garantir que o jeito Nextside de trabalhar acontece toda vez, sem precisar do humano lembrar**.
 
 Quem documenta processo em PDF tá lutando guerra antiga. Quem codifica processo em skill tá entregando enquanto o outro escreve playbook.

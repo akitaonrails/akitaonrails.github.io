@@ -10,9 +10,9 @@ description: "Antes de pedir review humano, o Claude com MCP Playwright já nave
 cover: covers/mcp-playwright-validacao-local-com-qualidade.png
 cover_alt: "Symbol Nextside em vermelho sobre fundo creme, ilustração placeholder da capa do post."
 cta:
-  servico: auditoria
+  servico: discovery
   posicao: ambos
-  contexto: "Validação local independente é o tipo de qualidade que a gente embute em toda Auditoria — sem amarras."
+  contexto: "Validar tech nova antes de comprar a ideia? A gente faz num Discovery."
 canonical: ""
 ---
 
@@ -62,7 +62,7 @@ Pra quem nunca usou: parece feitiço. Pra quem usou: vira hábito em 3 dias.
 
 ## Fluxo real: validar UX de um post antes do commit
 
-Pra ilustrar, fluxo que a gente da Nextside usa nesse próprio blog. Toda vez que um post novo sai do agent revisor-akita pronto pro commit, lança um agent dedicado de **UX review** que usa MCP Playwright. Sequência:
+Pra ilustrar, fluxo que a gente da Nextside usa nesse próprio blog. Toda vez que um post novo sai do [agent revisor-akita codificado via Claude Code superpowers](/posts/2026/05/16/claude-code-superpowers-plugin-na-pratica/) pronto pro commit, lança um agent dedicado de **UX review** que usa MCP Playwright. Sequência:
 
 - **Sobe Hugo local** — `hugo server -D --port 1313`
 - **Lança o agent** — descreve a tarefa: "valide o post X em light/dark e em mobile 375px/desktop 1280px"
@@ -83,7 +83,7 @@ Compara com o fluxo antigo:
 
 E aqui mora o ganho real. Não é velocidade — é **consistência**. O Claude não esquece de testar dark mode. Não pula mobile na pressa. Não diz "ah, depois eu vejo o console". Toda vez que roda, roda tudo.
 
-Frase-martelo: **disciplina automatizada bate disciplina humana cansada.**
+**Disciplina automatizada bate disciplina humana cansada.**
 
 ## O que muda vs teste E2E tradicional
 
@@ -98,7 +98,7 @@ E2E tradicional (Playwright spec rodando em CI):
 MCP Playwright no Claude local:
 - **Roda quando você pede** — não bloqueia nada por padrão
 - **Especificado em linguagem natural** — flexível mas não versionado
-- **Cobre o que você descrevê na hora** — depende da instrução
+- **Cobre o que você descreve na hora** — depende da instrução
 - **Rápido** — segundos por execução, zero infra
 
 Caso de uso ideal: **MCP Playwright é pra a primeira camada de validação, ANTES de você pedir review humano**. É o sanity check que você faria com as mãos, automatizado. Não é a rede de segurança da CI. É o pré-voo.
@@ -137,9 +137,9 @@ Por muito tempo, validação local de frontend foi ruim. Você abria browser, ab
 
 Resultado: bug visual virava bug de produção. Não porque o dev é ruim — porque o cérebro humano não é máquina de checklist confiável depois de 4 horas de pair programming.
 
-MCP Playwright muda esse jogo porque deixa o **checklist virar código** que outra entidade — a IA — executa por você. Você nunca mais esquece de testar dark mode. Você nunca mais comita sem ver o console. Não porque você ficou melhor — porque o processo agora roda sozinho.
+MCP Playwright muda esse jogo porque deixa o **checklist virar código** que outra entidade — a IA — executa por você. Você nunca mais esquece de testar dark mode. Você nunca mais comita sem ver o console. Não porque você ficou melhor — porque o processo agora roda sozinho. É a mesma lógica que aplicamos pra [documentar decisão técnica em ADRs no Notion](/posts/2026/05/16/adrs-decisao-no-notion-sem-burocracia/): tira da memória humana, bota num formato que sobrevive ao cansaço.
 
-Isso é o que mais me empolga em MCP de modo geral: é a primeira vez que vejo automação de tarefas chatas com IA dando resultado REAL, não promessa. Playwright é só o exemplo mais maduro. Vai ter MCP server pra tudo que você odeia fazer mas precisa fazer.
+Isso é o que mais me empolga em MCP de modo geral: é a primeira vez que vejo automação de tarefas chatas com IA dando resultado REAL, não promessa. Playwright é só o exemplo mais maduro. Vai ter MCP server pra tudo que você odeia fazer mas precisa fazer. E quando dá pra avaliar tech nova em 2 semanas em vez de comprar a ideia inteira, [Discovery é o formato certo](https://nextside.tech/#discovery) — não precisa apostar 6 meses pra saber se MCP cabe no seu pipeline.
 
 E o time que adotar primeiro vai ganhar consistência que time que não adotar nunca vai conseguir replicar com força de vontade.
 

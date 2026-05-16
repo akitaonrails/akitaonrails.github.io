@@ -84,9 +84,9 @@ Pior: às vezes a conclusão é diferente — porque alguém esqueceu o argument
 
 Isso é a pior coisa que pode acontecer em time pequeno: **repetir burrice porque ninguém anotou a burrice anterior**. Empresa grande aguenta. Time de 4 pessoas, não.
 
-Frase-martelo: **memória institucional num time pequeno não é Confluence. É hábito.**
+**Memória institucional num time pequeno não é Confluence. É hábito.**
 
-ADR não substitui conversa. Não substitui pair programming. Não substitui RFC pra coisa grande. Mas substitui o "espera, deixa eu lembrar por que a gente decidiu isso..." — e esse "espera, deixa eu lembrar" custa mais caro do que parece. Custa contexto interrompido, custa retrabalho, e custa confiança no histórico do time.
+ADR não substitui conversa. Não substitui pair programming. Não substitui [RFC pra coisa grande — que cabe melhor num Discovery dedicado](https://nextside.tech/#discovery). Mas substitui o "espera, deixa eu lembrar por que a gente decidiu isso..." — e esse "espera, deixa eu lembrar" custa mais caro do que parece. Custa contexto interrompido, custa retrabalho, e custa confiança no histórico do time.
 
 > "Mas ninguém vai voltar ler ADR depois!" — vão sim. Eu volto. Toda vez que entro num projeto antigo e me pergunto "por quê?". O ADR é o atalho pro porquê. Sem ele, atalho some.
 
@@ -102,13 +102,15 @@ Em 3 meses, o time tem 10-15 ADRs. Em 1 ano, 30-40. Não é volume. É **densida
 
 E aqui mora o detalhe que ninguém fala: o valor real do ADR não tá no documento. Tá no **ato de escrever**. Quando você senta pra explicar a decisão em 3 parágrafos, você descobre que metade da decisão tava implícita e mal formada. O ADR força clareza. É o pair-programming da decisão técnica.
 
+Quem quiser ir além — e [codificar o processo em skill que a IA executa](/posts/2026/05/16/claude-code-superpowers-plugin-na-pratica/), pra que o ato de escrever ADR vire gatilho automático — esse é o próximo passo natural. Mas começa pelo hábito humano. Skill sem hábito por trás é teatro.
+
 Por isso eu nem ligo se ninguém ler depois. Já valeu pelo ato de escrever.
 
 ## O que o ADR realmente protege
 
 O ADR não protege você de tomar decisão errada. ABSOLUTAMENTE NÃO. Você vai tomar decisão errada de qualquer jeito — todo time toma. O ADR protege você de tomar a MESMA decisão errada duas vezes. Que é coisa diferente.
 
-Time bom não é o time que acerta sempre. É o time que erra menos a cada iteração. ADR é o registro que permite saber qual erro você cometeu e por quê — pra não cometer outra vez na próxima decisão parecida.
+Time bom não é o time que acerta sempre. É o time que erra menos a cada iteração. ADR é o registro que permite saber qual erro você cometeu e por quê — pra não cometer outra vez na próxima decisão parecida. É o equivalente, em decisão de produto, da [validação local com qualidade real que a gente faz via MCP Playwright em frontend](/posts/2026/05/16/mcp-playwright-validacao-local-com-qualidade/): você não previne todo erro, mas garante que erros viram aprendizado registrado.
 
 Em time pequeno, a margem pra repetir burrice é zero. Cada semana queimada em decisão refeita é semana que você não tinha. Discovery, MVP, refatoração — não tem folga.
 
