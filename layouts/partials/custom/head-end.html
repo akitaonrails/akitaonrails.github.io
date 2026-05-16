@@ -26,6 +26,11 @@
   <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
 {{- end }}
 
+{{- with resources.Get "css/chroma/chroma-combined.css" }}
+  {{- $css := . | resources.Fingerprint -}}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+{{- end }}
+
 <!-- preload fontes críticas -->
 <link rel="preload" href="/fonts/NeueHaasDisplay-Roman.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/ABCFavoritExpandedVariable.woff2" as="font" type="font/woff2" crossorigin>

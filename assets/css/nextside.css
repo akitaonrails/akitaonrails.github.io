@@ -1359,3 +1359,36 @@ h3 {
     padding-right: 8px !important;
   }
 }
+
+/* === Chroma syntax highlight: fundo e borda casam com tokens Nextside ===
+ * O tema Chroma (tango/nord) hardcoda background no .chroma.
+ * Este bloco garante que o container usa --code-bg do tema ativo,
+ * independentemente do que o Hextra ou o Chroma CSS injetou antes.
+ * border-radius e overflow ficam aqui pra não depender do tema upstream.
+ */
+.chroma,
+.highlight,
+.highlight pre {
+  background: var(--code-bg) !important;
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+/* Texto não-tokenizado dentro do bloco precisa ser legível em ambos os temas.
+ * .err no Chroma é "token de erro" (lexer não reconheceu) — em Gherkin isso
+ * acontece com keywords em PT. Sobrescrevemos pro fg padrão evitar vermelho #a40000
+ * sobre fundo escuro. .x é "token genérico" sem classe específica.
+ */
+:root[data-theme="dark"] .chroma .err,
+:root[data-theme="dark"] .chroma .x {
+  color: var(--fg) !important;
+  background: transparent !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) .chroma .err,
+  :root:not([data-theme]) .chroma .x {
+    color: var(--fg) !important;
+    background: transparent !important;
+  }
+}
