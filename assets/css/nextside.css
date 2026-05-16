@@ -1184,3 +1184,31 @@ h3 {
   color: var(--fg-muted) !important;
   font-size: 13px !important;
 }
+
+/* === Ask AI button (post hero) === */
+.ns-ask-ai-wrap {
+  margin-top: 2rem;
+  display: flex;
+}
+
+.ns-ask-ai {
+  font-size: 13px;
+  padding: 10px 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ns-ask-ai svg {
+  opacity: 0.7;
+}
+
+@media (max-width: 720px) {
+  .ns-ask-ai-wrap {
+    margin-top: 1.5rem;
+  }
+  .ns-ask-ai {
+    font-size: 12px;
+    padding: 8px 14px;
+  }
+}

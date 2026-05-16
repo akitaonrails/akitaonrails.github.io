@@ -1,0 +1,17 @@
+{{- $url := .Permalink -}}
+{{- $title := .Title -}}
+{{- $prompt := i18n "ask_ai_prompt" (dict "URL" $url "Title" $title) -}}
+{{- $chatUrl := printf "https://chatgpt.com/?hints=search&q=%s" ($prompt | urlquery) -}}
+<a
+  href="{{ $chatUrl }}"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="btn btn-ghost ns-ask-ai"
+  data-event="ask_ai_click"
+>
+  {{ i18n "ask_ai_label" }}
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M7 17L17 7"/>
+    <path d="M7 7h10v10"/>
+  </svg>
+</a>
