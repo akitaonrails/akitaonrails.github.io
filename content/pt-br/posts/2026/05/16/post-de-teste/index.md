@@ -1,7 +1,7 @@
 ---
 title: "Post de teste do layout"
 date: 2026-05-16T09:00:00-03:00
-draft: true
+draft: false
 translationKey: post-de-teste-do-layout
 category: tecnologia
 tags: [teste, layout]
