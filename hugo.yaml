@@ -55,6 +55,13 @@ markup:
     noClasses: false
 
 params:
+  search:
+    enable: true
+    type: flexsearch
+    flexsearch:
+      index: content
+      tokenize: forward
+
   navbar:
     displayTitle: true
     displayLogo: false

@@ -1111,3 +1111,72 @@ h3 {
   .ns-author-bio { font-size: 18px; }
   .ns-author-posts { padding: 2rem 20px 3rem; }
 }
+
+/* === Hextra search — Nextside token overrides === */
+
+/* Wrapper integrado ao header */
+.ns-search-wrapper {
+  position: relative;
+}
+
+/* Oculta a Hextra search em mobile (ícone de busca reservado para fase futura) */
+@media (max-width: 720px) {
+  .ns-search-wrapper { display: none; }
+}
+
+/* Input principal */
+.hextra-search-input {
+  background: var(--bg-surface) !important;
+  color: var(--fg) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 8px !important;
+  padding: 7px 36px 7px 12px !important;
+  font-family: var(--font-ui) !important;
+  font-size: 14px !important;
+  transition: border-color 150ms ease, box-shadow 150ms ease !important;
+  width: 200px !important;
+}
+
+.hextra-search-input:focus {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 15%, transparent) !important;
+  outline: none !important;
+  width: 280px !important;
+}
+
+.hextra-search-input::placeholder {
+  color: var(--fg-muted) !important;
+}
+
+/* Kbd hint (Ctrl K / ⌘K) */
+.hextra-search-wrapper kbd {
+  background: var(--bg-elevated) !important;
+  border: 1px solid var(--border) !important;
+  color: var(--fg-muted) !important;
+  font-family: var(--font-ui) !important;
+}
+
+/* Dropdown de resultados */
+.hextra-search-results {
+  background: var(--bg) !important;
+  border: 1px solid var(--border-strong) !important;
+  border-radius: 10px !important;
+  box-shadow: 0 16px 48px -8px var(--shadow) !important;
+  color: var(--fg) !important;
+}
+
+.hextra-search-results li a {
+  color: var(--fg) !important;
+  transition: background 120ms ease !important;
+}
+
+.hextra-search-results li a:hover {
+  background: var(--bg-elevated) !important;
+  color: var(--accent) !important;
+}
+
+/* Título do resultado */
+.hextra-search-results li .excerpt {
+  color: var(--fg-muted) !important;
+  font-size: 13px !important;
+}

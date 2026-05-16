@@ -13,7 +13,11 @@
     <div class="ns-header-actions">
       {{- partial "custom/theme-toggle.html" . -}}
       {{- partial "custom/lang-switcher.html" . -}}
-      {{- partial "custom/search-trigger.html" . -}}
+      {{- if (site.Params.search.enable | default true) -}}
+        <div class="ns-search-wrapper">
+          {{- partial "search.html" . -}}
+        </div>
+      {{- end -}}
     </div>
   </div>
 </header>
