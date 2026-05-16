@@ -1,0 +1,4 @@
+{{- $servico := .Get "servico" | default "sprint" -}}
+{{- $variante := .Get "variante" | default "mid" -}}
+{{- $texto := trim .Inner " \n\t" -}}
+{{- partial "custom/cta-block.html" (dict "page" .Page "servico" $servico "variante" $variante "contexto" $texto) -}}

@@ -7,8 +7,9 @@ category: tecnologia
 tags: [teste, layout]
 description: "Post temporário só para validar o single layout — você pode deletar este arquivo depois."
 cta:
-  servico: none
-  posicao: none
+  servico: sprint
+  posicao: ambos
+  contexto: "Esse problema é típico de um Sprint de 4 semanas — escopo fechado, preço fixo."
 ---
 
 ## Primeiro H2
@@ -18,6 +19,10 @@ Parágrafo de teste com **bold** e *italic* e `inline code`. Uma frase normal pr
 > Blockquote com a "voz do crítico" — "isso aqui presta mesmo?"
 
 Mais um parágrafo. Olha como o blockquote acima fica destacado: borda esquerda vermelha e gradiente sutil em vermelho. Hoje, em fundo claro, fica como um aside elegante; em dark, mantém a hierarquia.
+
+{{< cta servico="discovery" variante="mid" >}}
+Cansou de gastar 6 meses pra entregar um MVP?
+{{< /cta >}}
 
 ```bash
 echo "code block deve ficar visível em ambos os temas"

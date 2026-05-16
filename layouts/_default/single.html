@@ -37,8 +37,7 @@
 
   {{- if and .Params.cta (not (eq .Params.cta.servico "none")) -}}
     {{- if or (eq .Params.cta.posicao "bottom") (eq .Params.cta.posicao "ambos") -}}
-      {{- /* placeholder para Task 10 — CTA bottom */ -}}
-      {{- /* {{ partial "custom/cta-block.html" (dict "page" . "variante" "bottom") }} */ -}}
+      {{ partial "custom/cta-block.html" (dict "page" . "variante" "bottom") }}
     {{- end -}}
   {{- end -}}
 

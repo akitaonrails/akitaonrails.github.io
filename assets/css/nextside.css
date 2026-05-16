@@ -570,3 +570,86 @@ h3 {
   .ns-post-hero { padding: 2.5rem 0 1.5rem; }
   .ns-post-deck { font-size: 19px; margin: 1rem 0 1.5rem; }
 }
+
+/* === CTA boxes (mid + bottom) === */
+.ns-cta {
+  max-width: var(--reading-width);
+  margin: 3.5rem auto;
+  padding: 32px 32px 28px;
+  background:
+    radial-gradient(circle at top right, rgba(253, 191, 15, 0.08), transparent 60%),
+    radial-gradient(circle at bottom left, rgba(221, 46, 3, 0.10), transparent 60%),
+    var(--bg-elevated);
+  border: 1px solid var(--border-strong);
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+:root[data-theme="dark"] .ns-cta {
+  background:
+    radial-gradient(circle at top right, rgba(253, 191, 15, 0.12), transparent 60%),
+    radial-gradient(circle at bottom left, rgba(250, 70, 22, 0.18), transparent 60%),
+    var(--bg-elevated);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) .ns-cta {
+    background:
+      radial-gradient(circle at top right, rgba(253, 191, 15, 0.12), transparent 60%),
+      radial-gradient(circle at bottom left, rgba(250, 70, 22, 0.18), transparent 60%),
+      var(--bg-elevated);
+  }
+}
+
+.ns-cta::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("/textures/grain.png");
+  opacity: 0.07;
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+  border-radius: 10px;
+}
+
+.ns-cta > * { position: relative; z-index: 1; }
+
+.ns-cta .eyebrow {
+  margin-bottom: 0.75rem;
+}
+
+.ns-cta-title {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2.6vw, 28px);
+  line-height: 1.2;
+  margin: 0.5rem 0 0.75rem;
+  color: var(--fg);
+  letter-spacing: -0.01em;
+}
+
+.ns-cta-title::before { display: none; }
+
+.ns-cta-meta {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  color: var(--fg-muted);
+  margin: 0 0 1.5rem;
+  line-height: 1.5;
+}
+
+.ns-cta-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.ns-cta-mid .ns-cta-title {
+  font-size: clamp(20px, 2.4vw, 24px);
+}
+
+@media (max-width: 720px) {
+  .ns-cta { padding: 24px 20px; margin: 2.5rem auto; }
+  .ns-cta-actions { gap: 8px; }
+  .ns-cta-actions .btn { flex: 1; justify-content: center; }
+}

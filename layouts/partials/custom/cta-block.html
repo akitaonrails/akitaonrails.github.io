@@ -1,0 +1,33 @@
+{{- $servico := default "sprint" (.servico | default .page.Params.cta.servico) -}}
+{{- $variante := default "bottom" .variante -}}
+{{- $contextoInner := default "" .contexto -}}
+{{- $contextoFront := "" -}}
+{{- with .page.Params.cta -}}{{- with .contexto -}}{{- $contextoFront = . -}}{{- end -}}{{- end -}}
+{{- $contextoFallback := i18n (printf "cta_%s_default" $servico) -}}
+{{- $contexto := $contextoInner -}}
+{{- if eq $contexto "" -}}{{- $contexto = $contextoFront -}}{{- end -}}
+{{- if eq $contexto "" -}}{{- $contexto = $contextoFallback -}}{{- end -}}
+{{- $slug := .page.File.ContentBaseName -}}
+{{- $utm := printf "?utm_source=blog&utm_medium=cta&utm_campaign=%s&utm_content=%s-%s" $servico $slug $variante -}}
+{{- $url := printf "https://nextside.tech/#%s%s" $servico $utm -}}
+
+<aside class="ns-cta ns-cta-{{ $variante }}" data-servico="{{ $servico }}">
+  <p class="eyebrow">
+    {{- if eq $variante "bottom" -}}
+      {{ i18n "cta_eyebrow_bottom" }}
+    {{- else -}}
+      {{ i18n "cta_eyebrow_mid" }}
+    {{- end -}}
+  </p>
+
+  <h3 class="ns-cta-title">{{ $contexto }}</h3>
+
+  <p class="ns-cta-meta">{{ i18n (printf "cta_%s_meta" $servico) }}</p>
+
+  <div class="ns-cta-actions">
+    <a href="{{ $url }}" class="btn btn-primary">{{ i18n "cta_button_primary" }} →</a>
+    {{- if eq $variante "bottom" -}}
+      <a href="https://nextside.tech/#{{ $servico }}" class="btn btn-ghost">{{ i18n "cta_button_secondary" }}</a>
+    {{- end -}}
+  </div>
+</aside>

@@ -13,3 +13,18 @@ footer_about_link: "About this blog"
 service_sprint_short: "Sprint — 4 weeks, fixed scope"
 service_discovery_short: "Discovery — technical validation"
 service_auditoria_short: "Audit — independent assessment"
+
+# CTAs
+cta_eyebrow_mid: "● Nextside"
+cta_eyebrow_bottom: "Ready to ship?"
+cta_button_primary: "Talk to Nextside"
+cta_button_secondary: "How it works"
+
+cta_sprint_default: "This is exactly the kind of problem a 4-week Sprint solves."
+cta_sprint_meta: "Fixed scope · Fixed price · 4 weeks · 100% senior team."
+
+cta_discovery_default: "Worth validating before you build? That's what we do."
+cta_discovery_meta: "Technical validation · 2-3 weeks · Outcome: roadmap + prototype."
+
+cta_auditoria_default: "Need an independent technical audit?"
+cta_auditoria_meta: "Independent audit · 1-2 weeks · No commercial strings attached."

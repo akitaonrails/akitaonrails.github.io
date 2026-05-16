@@ -13,3 +13,18 @@ footer_about_link: "Sobre este blog"
 service_sprint_short: "Sprint — 4 semanas, escopo fechado"
 service_discovery_short: "Discovery — validação técnica"
 service_auditoria_short: "Auditoria — diagnóstico independente"
+
+# CTAs
+cta_eyebrow_mid: "● Nextside"
+cta_eyebrow_bottom: "Pronto pra resolver?"
+cta_button_primary: "Fale com a Nextside"
+cta_button_secondary: "Como funciona"
+
+cta_sprint_default: "Esse problema é típico de um Sprint de 4 semanas."
+cta_sprint_meta: "Escopo fechado · Preço fixo · 4 semanas · Time 100% sênior."
+
+cta_discovery_default: "Vale validar antes de gastar? A gente faz isso."
+cta_discovery_meta: "Validação técnica · 2-3 semanas · Entrega: roadmap + protótipo."
+
+cta_auditoria_default: "Quer um diagnóstico técnico sem amarras?"
+cta_auditoria_meta: "Auditoria independente · 1-2 semanas · Sem amarras comerciais."
