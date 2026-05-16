@@ -30,3 +30,5 @@ cta_auditoria_default: "Need an independent technical audit?"
 cta_auditoria_meta: "Independent audit · 1-2 weeks · No commercial strings attached."
 
 home_latest_posts: "Latest posts"
+list_term_deck: "{{ .Count }} posts on this topic."
+list_empty: "No posts here yet — coming soon."

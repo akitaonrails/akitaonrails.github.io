@@ -1,0 +1,58 @@
+{{ define "main" }}
+<section class="ns-list-hero">
+  <div class="ns-list-hero-inner">
+    {{- $kind := .Kind -}}
+    {{- $eyebrow := "" -}}
+    {{- if eq $kind "section" -}}{{ $eyebrow = .Title }}{{- end -}}
+    {{- if eq $kind "term" -}}{{ $eyebrow = .Type | humanize }}{{- end -}}
+    {{- if eq $kind "taxonomy" -}}{{ $eyebrow = .Title }}{{- end -}}
+    <p class="eyebrow">{{ $eyebrow | default "Blog Nextside" }}</p>
+    <h1 class="ns-list-title">{{ .Title }}</h1>
+    {{- with .Description -}}
+      <p class="ns-list-deck">{{ . }}</p>
+    {{- else -}}
+      {{- if eq $kind "term" -}}
+        <p class="ns-list-deck">{{ i18n "list_term_deck" (dict "Count" (len .Pages) "Type" .Type) }}</p>
+      {{- end -}}
+    {{- end -}}
+  </div>
+</section>
+
+<section class="ns-list-posts">
+  <div class="ns-list-posts-inner">
+    {{- $pages := .Pages -}}
+    {{- if eq .Kind "taxonomy" -}}
+      <ul class="ns-tag-list">
+        {{- range .Data.Terms.Alphabetical -}}
+          <li>
+            <a href="{{ .Page.RelPermalink }}" class="ns-tag-chip">
+              <span class="ns-tag-name">{{ .Page.Title }}</span>
+              <span class="ns-tag-count">{{ .Count }}</span>
+            </a>
+          </li>
+        {{- end -}}
+      </ul>
+    {{- else -}}
+      {{- if not $pages -}}
+        <p class="ns-list-empty">{{ i18n "list_empty" }}</p>
+      {{- else -}}
+        <ul class="ns-post-list">
+          {{- range $pages -}}
+            <li class="ns-card ns-post-card">
+              {{- with index .Params.tags 0 -}}
+                <p class="eyebrow ns-post-card-tag">{{ . }}</p>
+              {{- end -}}
+              <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+              <p class="ns-post-card-meta">{{ dateFormat "2 Jan 2006" .Date }} · {{ i18n "reading_time" .ReadingTime }}</p>
+              {{- with .Params.description -}}
+                <p class="ns-post-card-desc">{{ . }}</p>
+              {{- end -}}
+              <a href="{{ .RelPermalink }}" class="ns-post-card-link">{{ i18n "read_more" }}</a>
+            </li>
+          {{- end -}}
+        </ul>
+      {{- end -}}
+    {{- end -}}
+  </div>
+</section>
+{{ end }}

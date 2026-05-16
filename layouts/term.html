@@ -1,0 +1,37 @@
+{{ define "main" }}
+<section class="ns-list-hero">
+  <div class="ns-list-hero-inner">
+    <p class="eyebrow">{{ .Type | humanize }}</p>
+    <h1 class="ns-list-title">{{ .Title }}</h1>
+    {{- with .Description -}}
+      <p class="ns-list-deck">{{ . }}</p>
+    {{- else -}}
+      <p class="ns-list-deck">{{ i18n "list_term_deck" (dict "Count" (len .Pages) "Type" .Type) }}</p>
+    {{- end -}}
+  </div>
+</section>
+
+<section class="ns-list-posts">
+  <div class="ns-list-posts-inner">
+    {{- if not .Pages -}}
+      <p class="ns-list-empty">{{ i18n "list_empty" }}</p>
+    {{- else -}}
+      <ul class="ns-post-list">
+        {{- range .Pages -}}
+          <li class="ns-card ns-post-card">
+            {{- with index .Params.tags 0 -}}
+              <p class="eyebrow ns-post-card-tag">{{ . }}</p>
+            {{- end -}}
+            <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+            <p class="ns-post-card-meta">{{ dateFormat "2 Jan 2006" .Date }} · {{ i18n "reading_time" .ReadingTime }}</p>
+            {{- with .Params.description -}}
+              <p class="ns-post-card-desc">{{ . }}</p>
+            {{- end -}}
+            <a href="{{ .RelPermalink }}" class="ns-post-card-link">{{ i18n "read_more" }}</a>
+          </li>
+        {{- end -}}
+      </ul>
+    {{- end -}}
+  </div>
+</section>
+{{ end }}

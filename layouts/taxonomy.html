@@ -1,0 +1,23 @@
+{{ define "main" }}
+<section class="ns-list-hero">
+  <div class="ns-list-hero-inner">
+    <p class="eyebrow">{{ .Title }}</p>
+    <h1 class="ns-list-title">{{ .Title }}</h1>
+  </div>
+</section>
+
+<section class="ns-list-posts">
+  <div class="ns-list-posts-inner">
+    <ul class="ns-tag-list">
+      {{- range .Data.Terms.Alphabetical -}}
+        <li>
+          <a href="{{ .Page.RelPermalink }}" class="ns-tag-chip">
+            <span class="ns-tag-name">{{ .Page.Title }}</span>
+            <span class="ns-tag-count">{{ .Count }}</span>
+          </a>
+        </li>
+      {{- end -}}
+    </ul>
+  </div>
+</section>
+{{ end }}

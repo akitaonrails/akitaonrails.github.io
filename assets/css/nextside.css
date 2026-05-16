@@ -793,3 +793,97 @@ h3 {
   .ns-home-posts { padding: 3rem 20px; }
   .ns-post-list { grid-template-columns: 1fr; }
 }
+
+/* === List page === */
+.ns-list-hero {
+  padding: 4rem 24px 2rem;
+}
+
+.ns-list-hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.ns-list-title {
+  font-size: clamp(40px, 6vw, 64px);
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  margin: 0.75rem 0 1rem;
+}
+
+.ns-list-title::before { display: none; }
+
+.ns-list-deck {
+  font-family: var(--font-body);
+  font-size: 20px;
+  color: var(--fg-muted);
+  max-width: 640px;
+  margin: 0.5rem 0 0;
+  font-style: italic;
+}
+
+.ns-list-posts {
+  padding: 2rem 24px 5rem;
+}
+
+.ns-list-posts-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.ns-list-empty {
+  color: var(--fg-muted);
+  font-style: italic;
+  text-align: center;
+  padding: 4rem 0;
+}
+
+/* === Tag list (taxonomy index) === */
+.ns-tag-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.ns-tag-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--fg);
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 150ms ease;
+}
+
+.ns-tag-chip:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.ns-tag-count {
+  font-size: 12px;
+  color: var(--fg-soft);
+  background: var(--bg-elevated);
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+.ns-tag-chip:hover .ns-tag-count {
+  color: var(--accent);
+}
+
+@media (max-width: 720px) {
+  .ns-list-hero { padding: 2.5rem 20px 1.5rem; }
+  .ns-list-deck { font-size: 18px; }
+  .ns-list-posts { padding: 1.5rem 20px 3rem; }
+}
