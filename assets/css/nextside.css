@@ -1212,3 +1212,31 @@ h3 {
     padding: 8px 14px;
   }
 }
+
+/* === Fix: Hextra prose headings em dark mode ===
+ * O Hextra (main.css) define .content :where(hN) { color: var(--hx-color-slate-900) }
+ * e só troca pra slate-100 quando <html> tem a classe .dark.
+ * Nosso sistema usa data-theme="dark" (não a classe .dark), então os H2-H6
+ * do corpo do post ficam quase-pretos sobre fundo escuro — ilegíveis.
+ * Este bloco no final do cascade ganha por ordem e corrige todos os níveis.
+ * Cobre: data-theme="dark" (toggle manual) e prefers-color-scheme: dark (sistema).
+ */
+:root[data-theme="dark"] .content h1,
+:root[data-theme="dark"] .content h2,
+:root[data-theme="dark"] .content h3,
+:root[data-theme="dark"] .content h4,
+:root[data-theme="dark"] .content h5,
+:root[data-theme="dark"] .content h6 {
+  color: var(--fg);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) .content h1,
+  :root:not([data-theme]) .content h2,
+  :root:not([data-theme]) .content h3,
+  :root:not([data-theme]) .content h4,
+  :root:not([data-theme]) .content h5,
+  :root:not([data-theme]) .content h6 {
+    color: var(--fg);
+  }
+}
