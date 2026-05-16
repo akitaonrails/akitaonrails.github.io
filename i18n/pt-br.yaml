@@ -41,3 +41,7 @@ rss_description: "Posts da Nextside — tecnologia, gestão e entregas rápidas,
 # Ask AI button (post hero)
 ask_ai_label: "Preguiça de ler? Pergunte à IA"
 ask_ai_prompt: "Por favor, abra esta URL com busca na web e leia o conteúdo completo: {{ .URL }}\n\nDepois de ler, faça o seguinte:\n1) Resuma o post \"{{ .Title }}\" em 3-5 bullets, destacando a tese central.\n2) Liste 2-3 pontos práticos e acionáveis que o autor defende.\n3) Aponte 1 ponto polêmico ou contraintuitivo do post.\n4) Sugira 2 perguntas críticas que o leitor poderia fazer ao autor."
+
+# Hextra TOC sidebar — tradução pt-BR
+onThisPage: "Nesta página"
+backToTop: "Voltar ao topo"

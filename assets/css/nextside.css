@@ -1240,3 +1240,41 @@ h3 {
     color: var(--fg);
   }
 }
+
+/* === Fix: Hextra TOC sidebar — Nextside overrides
+ * Hextra hardcodes hx:bg-white + hx:shadow-[0_-12px_16px_white] no wrapper
+ * do scroll-to-top. O dark override do Hextra usa hx:dark:bg-dark (#111) mas
+ * o bg do Nextside dark é #10131A — gera leakage do branco nas bordas.
+ * Solução: forçar bg e shadow a usar o token --bg do Nextside em modo dark.
+ * Os seletores `.dark` funcionam porque Hextra adiciona a classe .dark ao <html>.
+ */
+
+/* Links do TOC — usa tokens Nextside em vez dos cinzas hardcoded do Hextra */
+.hextra-toc a {
+  color: var(--fg-muted);
+  transition: color 150ms ease;
+}
+
+.hextra-toc a:hover {
+  color: var(--fg);
+}
+
+/* Wrapper do scroll-to-top: substitui bg-white + shadow white pelo token --bg */
+.dark .hextra-toc .hextra-scrollbar > div:last-child {
+  background-color: var(--bg) !important;
+  box-shadow: 0 -12px 16px var(--bg) !important;
+}
+
+/* Fallback via data-theme (Nextside toggle) */
+:root[data-theme="dark"] .hextra-toc .hextra-scrollbar > div:last-child {
+  background-color: var(--bg) !important;
+  box-shadow: 0 -12px 16px var(--bg) !important;
+}
+
+/* Fallback via prefers-color-scheme (modo sistema sem data-theme definido) */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) .hextra-toc .hextra-scrollbar > div:last-child {
+    background-color: var(--bg) !important;
+    box-shadow: 0 -12px 16px var(--bg) !important;
+  }
+}
