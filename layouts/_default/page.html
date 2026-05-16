@@ -1,0 +1,17 @@
+{{ define "main" }}
+<article class="ns-page">
+  <header class="ns-page-hero">
+    <div class="prose">
+      <p class="eyebrow">Nextside</p>
+      <h1>{{ .Title }}</h1>
+      {{- with .Params.description -}}
+        <p class="ns-page-deck">{{ . }}</p>
+      {{- end -}}
+    </div>
+  </header>
+
+  <div class="prose ns-page-body">
+    {{ .Content }}
+  </div>
+</article>
+{{ end }}

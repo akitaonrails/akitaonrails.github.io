@@ -975,3 +975,33 @@ h3 {
   .ns-related { padding: 2rem 0 0.5rem; margin-top: 3rem; }
   .ns-related-list { grid-template-columns: 1fr; gap: 16px; }
 }
+
+/* === Standalone pages (/sobre/, /about/) === */
+.ns-page-hero {
+  padding: 4rem 0 1.5rem;
+}
+
+.ns-page-hero .eyebrow {
+  margin-bottom: 1rem;
+}
+
+.ns-page-hero h1 {
+  font-size: clamp(36px, 5.5vw, 56px);
+  line-height: 1.05;
+}
+
+.ns-page-deck {
+  font-family: var(--font-body);
+  font-size: 20px;
+  color: var(--fg-muted);
+  margin: 1rem 0 0;
+  max-width: 580px;
+  font-style: italic;
+}
+
+.ns-page-body { padding: 2rem 0 4rem; }
+
+@media (max-width: 720px) {
+  .ns-page-hero { padding: 2.5rem 0 1rem; }
+  .ns-page-deck { font-size: 18px; }
+}
