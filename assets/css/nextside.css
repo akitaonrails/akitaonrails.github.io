@@ -261,8 +261,25 @@ h3 {
   gap: 32px;
 }
 
-.ns-wordmark img {
+.ns-wordmark {
+  display: inline-flex;
+  align-items: center;
+  color: var(--fg);
+  transition: color 200ms ease;
+}
+
+.ns-wordmark:hover {
+  color: var(--accent);
+}
+
+.ns-wordmark-svg {
+  height: 22px;
+  width: auto;
   display: block;
+}
+
+@media (max-width: 720px) {
+  .ns-wordmark-svg { height: 20px; }
 }
 
 .ns-nav {

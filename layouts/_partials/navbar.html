@@ -1,7 +1,7 @@
 <header class="ns-header">
   <div class="ns-header-inner">
-    <a href="{{ "/" | relLangURL }}" class="ns-wordmark">
-      <img src="/brand/wordmark-color.svg" alt="Nextside" height="28">
+    <a href="{{ "/" | relLangURL }}" class="ns-wordmark" aria-label="Nextside">
+      {{- partial "custom/wordmark.html" . -}}
     </a>
 
     <nav class="ns-nav">
