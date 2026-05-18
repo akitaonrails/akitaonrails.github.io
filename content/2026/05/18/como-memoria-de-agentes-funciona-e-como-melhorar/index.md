@@ -50,13 +50,13 @@ if token_limit_reached && needs_follow_up {
 
 O limite é por modelo (`auto_compact_token_limit` vem de `ModelProviderInfo`). Quando bate, o Codex chama o próprio LLM com um prompt específico de compaction (em `codex-rs/core/templates/compact/prompt.md`):
 
-> You are performing a CONTEXT CHECKPOINT COMPACTION. Create a handoff summary for another LLM that will resume the task.
+> Você está executando um CHECKPOINT DE COMPACTAÇÃO DE CONTEXTO. Crie um resumo de handoff pra outro LLM que vai retomar a tarefa.
 >
-> Include:
-> - Current progress and key decisions made
-> - Important context, constraints, or user preferences
-> - What remains to be done (clear next steps)
-> - Any critical data, examples, or references needed to continue
+> Inclua:
+> - Progresso atual e principais decisões tomadas
+> - Contexto importante, restrições ou preferências do usuário
+> - O que ainda falta ser feito (próximos passos claros)
+> - Quaisquer dados críticos, exemplos ou referências necessárias pra continuar
 
 A resposta vira o novo contexto, prefixada com um preâmbulo que diz literalmente "another language model started to solve this problem and produced a summary of its thinking process". O Codex emite eventos `pre_compact` e `post_compact` que hooks podem interceptar (rodam em [`codex-rs/core/src/hook_runtime.rs`](https://github.com/openai/codex/blob/main/codex-rs/core/src/hook_runtime.rs)). Esses hooks são o ponto onde ferramentas externas (como o agentmemory) se plugam pra salvar o estado antes da compaction destruir o histórico.
 
@@ -86,11 +86,11 @@ export function isOverflow(input) {
 
 Por padrão, opencode reserva 20K tokens como buffer entre o conteúdo e o limite da janela. Quando o total de tokens passa de `usable()`, marca a sessão como `needsCompaction = true` e dispara o fluxo de compaction no próximo turno. O prompt de summarization (em `packages/opencode/src/agent/prompt/compaction.txt`) é mais cirúrgico que o do Codex:
 
-> You are an anchored context summarization assistant for coding sessions.
+> Você é um assistente de sumarização de contexto ancorado pra sessões de coding.
 >
-> Summarize only the conversation history you are given. The newest turns may be kept verbatim outside your summary, so focus on the older context that still matters for continuing the work.
+> Resuma apenas o histórico de conversa que recebeu. Os turnos mais recentes podem ser mantidos verbatim fora do seu resumo, então foque no contexto mais antigo que ainda importa pra continuar o trabalho.
 >
-> If the prompt includes a `<previous-summary>` block, treat it as the current anchored summary. Update it with the new history by preserving still-true details, removing stale details, and merging in new facts.
+> Se o prompt incluir um bloco `<previous-summary>`, trate ele como o resumo ancorado atual. Atualize com o histórico novo preservando detalhes que continuam verdadeiros, removendo detalhes obsoletos e mesclando fatos novos.
 
 Repare na diferença: o opencode mantém um "anchored summary" que é **atualizado** a cada compaction, não regenerado do zero. Os turnos mais recentes ficam verbatim, e só o histórico antigo é colapsado. É um meio-termo entre o handoff completo do Codex e manter tudo cru.
 
@@ -127,15 +127,15 @@ O terceiro nível é o `sessionMemoryCompact` em `sessionMemoryCompact.ts`, marc
 
 A diferença mais visível em comparação com Codex e opencode está no prompt de summarization. Onde o Codex pede 4 bullets curtos e o opencode pede um update do "anchored summary", o Claude Code pede uma estrutura de 9 seções explícitas (`src/services/compact/prompt.ts`):
 
-> 1. Primary Request and Intent: Capture all of the user's explicit requests and intents in detail
-> 2. Key Technical Concepts: List all important technical concepts, technologies, and frameworks discussed.
-> 3. Files and Code Sections: Enumerate specific files and code sections examined, modified, or created...
-> 4. Errors and fixes: List all errors that you ran into, and how you fixed them...
-> 5. Problem Solving: Document problems solved and any ongoing troubleshooting efforts.
-> 6. All user messages: List ALL user messages that are not tool results. These are critical...
-> 7. Pending Tasks: Outline any pending tasks that you have explicitly been asked to work on.
-> 8. Current Work: Describe in detail precisely what was being worked on immediately before this summary request...
-> 9. Optional Next Step: List the next step that you will take...
+> 1. Pedido e Intenção Primária: Capture todos os pedidos e intenções explícitas do usuário em detalhe
+> 2. Conceitos Técnicos-Chave: Liste todos os conceitos técnicos, tecnologias e frameworks discutidos.
+> 3. Arquivos e Trechos de Código: Enumere arquivos e trechos específicos que foram examinados, modificados ou criados...
+> 4. Erros e correções: Liste todos os erros que apareceram e como foram corrigidos...
+> 5. Resolução de Problemas: Documente problemas resolvidos e investigações em andamento.
+> 6. Todas as mensagens do usuário: Liste TODAS as mensagens do usuário que não são resultados de ferramentas. São críticas...
+> 7. Tarefas Pendentes: Liste tarefas pendentes que foram explicitamente solicitadas.
+> 8. Trabalho Atual: Descreva em detalhe precisamente o que estava sendo feito imediatamente antes desse pedido de resumo...
+> 9. Próximo Passo Opcional: Liste o próximo passo que você vai tomar...
 
 A seção 6 ("All user messages") é a mais incomum: o resumo precisa conter a lista verbatim de cada mensagem do usuário que não seja resultado de ferramenta. Ou seja, mesmo depois da compaction, o Claude Code preserva o que você pediu, literal. Isso explica por que sessões compactadas no Claude Code parecem manter o tom da conversa melhor que as do Codex (onde o handoff é mais executivo e menos narrativo).
 
