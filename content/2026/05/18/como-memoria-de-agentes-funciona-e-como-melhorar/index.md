@@ -16,6 +16,8 @@ tags:
   - agentmemory
 ---
 
+> **Atualização (23 de maio de 2026)**: depois de uma semana rodando o agentmemory em produção pessoal, voltei atrás. A arquitetura escolhida acumula uma classe de bug que não fecha sem reescrever metade do sistema (BM25 reindex a cada restart, janela de 5s de perda de dados, hook errado em ~47% das tool calls do Claude Code, etc). Comecei um substituto em Rust chamado **ai-memory** que resolve esses problemas. Veja [Criei um Sistema de Memória pra Agentes de Código: ai-memory](/2026/05/23/criei-sistema-memoria-agentes-codigo-ai-memory/) com o relato completo, o ranking das alternativas e como instalar. O resto desse post continua válido como background sobre como compaction funciona nos três agentes, o padrão LLM Wiki do Karpathy, e por que memória externa importa.
+
 Todo mundo que mexe com Claude Code, Codex CLI ou opencode em sessões longas em algum momento topou com a mensagem "context approaching limit" ou viu o agente "esquecer" decisões tomadas três horas atrás. Esse post é um mergulho em como funciona a memória desses agentes hoje, onde ela quebra, e o que dá pra fazer pra ter algo mais parecido com memória de longo prazo. Olhei o código-fonte direto do Codex (Rust), do opencode (TypeScript) e do Claude Code (TypeScript, via o vazamento que circulou recentemente), e fechei testando o [agentmemory](https://github.com/rohitg00/agentmemory), um servidor MCP open source que tenta resolver o problema de forma sistemática.
 
 ## Antes de tudo: o que é "contexto"
