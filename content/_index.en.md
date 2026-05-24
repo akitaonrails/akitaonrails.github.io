@@ -6,6 +6,7 @@ title: AkitaOnRails Blog
 
 ## 2026 - May
 
+- [I Built a CLI to Check My GitHub Pending Stuff: ghpending](/en/2026/05/23/i-built-a-cli-to-check-my-github-pending-stuff-ghpending/)
 - [I Built a Memory System for Coding Agents: ai-memory](/en/2026/05/23/i-built-memory-system-for-coding-agents-ai-memory/)
 - [AI Agent Memory: Karpathy LLM Wiki and agentmemory in Practice](/en/2026/05/18/ai-agent-memory-karpathy-llm-wiki-agentmemory/)
 - [Wrapping Up My AI Marathon: Success or Failure?](/en/2026/05/14/wrapping-up-my-ai-marathon-success-or-failure/)
