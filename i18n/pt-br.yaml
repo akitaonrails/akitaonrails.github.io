@@ -29,6 +29,8 @@ cta_discovery_meta: "Validação técnica · 2-3 semanas · Entrega: roadmap + p
 cta_auditoria_default: "Quer um diagnóstico técnico sem amarras?"
 cta_auditoria_meta: "Auditoria independente · 1-2 semanas · Sem amarras comerciais."
 
+hero_title: "Trade-offs<br>explícitos."
+hero_description: "O blog da Nextside sobre tecnologia, gestão e entregas rápidas — pelos engenheiros que decidem o que entra no Sprint e o que fica de fora."
 home_latest_posts: "Últimos posts"
 list_term_deck: "{{ .Count }} posts com este tema."
 list_empty: "Ainda sem posts por aqui — em breve."

@@ -29,6 +29,8 @@ cta_discovery_meta: "Technical validation · 2-3 weeks · Outcome: roadmap + pro
 cta_auditoria_default: "Need an independent technical audit?"
 cta_auditoria_meta: "Independent audit · 1-2 weeks · No commercial strings attached."
 
+hero_title: "Explicit<br>trade-offs."
+hero_description: "Nextside's blog on technology, management, and rapid delivery — by the engineers who decide what goes into the Sprint and what stays out."
 home_latest_posts: "Latest posts"
 list_term_deck: "{{ .Count }} posts on this topic."
 list_empty: "No posts here yet — coming soon."
