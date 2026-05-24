@@ -4,9 +4,9 @@ date: 2026-05-16T10:00:00-03:00
 draft: false
 translationKey: adrs-decisao-no-notion-sem-burocracia
 category: gestao
-tags: [adr, decisao-tecnica, notion, processo, time-pequeno]
+tags: [adr, decisao-tecnica, notion, processo, time-pequeno, claude-code]
 author: pablo-winter
-description: "ADR não é cerimônia corporativa — é a forma mais barata de não repetir burrice em time pequeno. Como a gente da Nextside faz no Notion."
+description: "ADR não é cerimônia corporativa. É a forma mais barata de não repetir burrice — e de fazer Claude Code consultar suas decisões antes de codar."
 cover: covers/adrs-decisao-no-notion-sem-burocracia.png
 cover_alt: "Symbol Nextside em vermelho sobre fundo creme, ilustração placeholder da capa do post."
 cta:
@@ -122,7 +122,7 @@ A solução veio do próprio Claude Code: o sistema de auto-memória dele usa um
 
 O paralelo pra ADRs é exato. No nosso Notion (ou em `docs/adr/INDEX.md` se você usa repo), faz uma página `INDEX` no mesmo nível dos ADRs:
 
-```
+```markdown
 - [ADR-0042 — Prisma sobre Sequelize](./0042-prisma-vs-sequelize.md) — Postgres com tipagem forte; rejeita Sequelize por dor de migração
 - [ADR-0043 — Server Components no Next 15](./0043-rsc-next-15.md) — Default; só "use client" onde tem interação real
 - [ADR-0044 — Sem Redux](./0044-sem-redux.md) — Zustand pra estado global pequeno; URL state pro resto
@@ -135,6 +135,97 @@ Agora o Claude (ou qualquer outra IA) chega no seu repo, lê o `INDEX.md` em 2s,
 E o melhor: você ganha o índice de graça. Humano novo também usa. Sem custo adicional.
 
 Sem INDEX, seus ADRs viram cemitério de documentação ótima que ninguém lê — nem humano, nem IA.
+
+## Configurando ADRs no seu Claude
+
+Tem o INDEX. Humano usa. Ótimo. Mas o pulo do gato é fazer **a IA usar do jeito certo, sem você lembrar de mandar**.
+
+Esse blog roda em Claude Code + superpowers. Quando a gente executa [um spec do superpowers — a skill que força brainstorming, plano escrito, TDD, verification](/posts/2026/05/16/claude-code-superpowers-plugin-na-pratica/) — decisões arquiteturais aparecem naturalmente no meio do caminho. "Vai ser Drizzle ou Prisma?" "Server Component default?" Cada uma é candidata a ADR.
+
+Mas IA esquece.
+
+Pede pra anotar uma vez, ela anota. Próxima sessão, esqueceu. Por isso a anotação precisa virar **instrução de sistema**, não pedido.
+
+### CLAUDE.md aponta pra ADR (e pro INDEX)
+
+Claude Code carrega um arquivo `CLAUDE.md` na raiz do projeto em TODA sessão. É a memória padrão do projeto — o equivalente em IA do "leia isso antes de tudo". Você não manda. Ela lê sozinha.
+
+Lá embaixo, sem ritual:
+
+```markdown
+## Architecture Decision Records
+
+Consulte `docs/adr/INDEX.md` antes de tomar qualquer decisão técnica significativa.
+- Se uma ADR existente cobre o assunto, siga.
+- Se a decisão é nova e cara de reverter, proponha nova ADR ao final do plano.
+- Toda nova ADR entra no INDEX no mesmo PR.
+```
+
+Pronto. 4 linhas. A IA passa a consultar o INDEX sempre que entra em modo de planejamento.
+
+O detalhe que importa: não enche o CLAUDE.md com 47 ADRs in-line. Aponta pro INDEX. CLAUDE.md é carregado em TODA sessão — cada token gasto ali rouba contexto de coisa útil. Mantém leve. Aponta. Confia no INDEX pra fazer o resto.
+
+> "E se a IA ignorar a instrução?"
+
+Vai ignorar uma ou outra vez, sim. Por isso entra o segundo pilar.
+
+### Slash command `/adr` pra forçar o ritual
+
+CLAUDE.md é leitura passiva — a IA usa se lembrar. Slash command é ATIVO — você dispara, ela executa. No Claude Code, basta criar `.claude/commands/adr.md` no repo:
+
+```markdown
+Planeje uma nova tarefa:
+
+- Leia `docs/adr/INDEX.md` e identifique ADRs relevantes a: $ARGUMENTS
+- Carregue só os ADRs relevantes no contexto (não todos)
+- Se a tarefa introduz decisão arquitetural NOVA, proponha rascunho de ADR antes do plano técnico
+- Se a tarefa muda ou supersede ADR existente, sinalize explicitamente
+- Toda ADR nova precisa ser confirmada por mim antes de virar arquivo em `docs/adr/`
+```
+
+Daí o fluxo diário vira:
+
+```bash
+/adr Migrar autenticação de JWT pra session cookie
+```
+
+Claude lê o INDEX, identifica a ADR-0023 (que escolheu JWT originalmente), carrega só ela, e propõe ADR-0044 supersedindo. Você revisa. Aprova. Vai pra implementação.
+
+Sem `/adr`, você dependeria de lembrar de mandar a IA consultar histórico. Com `/adr`, o ritual está no slash command. **A IA não pula. Você não esquece.**
+
+### Integrando com superpowers
+
+E aqui mora a beleza. Se você já roda superpowers, a skill `writing-plans` força plano escrito antes de código. A skill `brainstorming` força exploração antes de implementação. Encaixar ADR nesse fluxo é uma linha no `CLAUDE.md`:
+
+```markdown
+## Regras invioláveis
+- Todo plano gerado pela skill `writing-plans` referencia ADRs relevantes no início.
+- Toda decisão arquitetural detectada por `brainstorming` vira candidata a ADR — propõe rascunho ao usuário.
+```
+
+A skill superpowers já tem o gatilho de "antes de codar, planeje". Agora o plano sai com ADRs citados. E decisão nova já sai com rascunho de ADR pronto pro humano aprovar.
+
+ADR deixa de ser tarefa separada que você esquece. Vira **subproduto natural do fluxo de spec → plano → código**. Vem de graça.
+
+### Onde colocar o quê
+
+Claude Code carrega `CLAUDE.md` em três níveis: global (`~/.claude/CLAUDE.md`), projeto (`./CLAUDE.md`) e subdiretório (`./modulo/CLAUDE.md`). Mais específico ganha de mais geral.
+
+Pra ADR, a regra que eu uso:
+
+- **Global** — nada de ADR aqui. Suas convenções pessoais de código, sim. ADR é do time, não seu.
+- **Projeto** — referencia `docs/adr/INDEX.md`. Lista as 3-5 ADRs mais críticas (banco, framework, padrão de auth) explicitamente, pra IA não precisar abrir o INDEX em 90% dos casos.
+- **Subdiretório** — só se um módulo tem decisões que só valem ali. Raro. Não force.
+
+Maioria dos times só precisa do nível projeto. Não complica.
+
+### Três armadilhas
+
+- **Não cole ADRs in-line no CLAUDE.md** — Vira arquivo de 800 linhas, performance da IA cai, e você perdeu o ganho do INDEX.
+- **Não deixe a IA escrever ADR sozinha sem aprovação humana** — ADR é decisão. Decisão exige humano. IA propõe rascunho, humano aprova. Sempre.
+- **Não esqueça de atualizar o INDEX quando criar ADR nova** — O INDEX é o contrato. Se a ADR existe mas não tá no INDEX, ela não existe pra IA.
+
+Skill sem ritual humano é teatro. Ritual humano sem skill é fadiga. Os dois juntos é como ADR fica vivo num time pequeno usando IA pesada.
 
 ## O que o ADR realmente protege
 
