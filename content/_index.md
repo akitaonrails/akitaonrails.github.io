@@ -6,6 +6,7 @@ title: AkitaOnRails Blog
 
 ## 2026 - Maio
 
+- [Criei um Widget de Waybar pra Omarchy pra Monitorar Uso de Planos de LLM: ai-usagebar](/2026/05/24/criei-widget-waybar-omarchy-monitorar-uso-llms-ai-usagebar/)
 - [Criei um CLI pra Checar Pendências no Meu GitHub: ghpending](/2026/05/23/criei-cli-pra-checar-pendencias-github-ghpending/)
 - [Criei um Sistema de Memória pra Agentes de Código: ai-memory](/2026/05/23/criei-sistema-memoria-agentes-codigo-ai-memory/)
 - [Memória de Agentes IA: Karpathy LLM Wiki e agentmemory na Prática](/2026/05/18/memoria-agentes-karpathy-llm-wiki-agentmemory/)
