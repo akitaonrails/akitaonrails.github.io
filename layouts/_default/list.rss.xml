@@ -6,7 +6,7 @@
     <link>{{ .Site.BaseURL | absURL }}</link>
     <description>{{ .Site.Params.description }}</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>{{ .Site.LanguageCode | default "en" }}</language>
+    <language>{{ .Site.Language.Locale | default "en" }}</language>
     <lastBuildDate>{{ now.Format "Mon, 02 Jan 2006 15:04:05 GMT" }}</lastBuildDate>
     <atom:link href="{{ "index.xml" | absURL }}" rel="self" type="application/rss+xml"/>
     {{ range first 20 .Site.RegularPages.ByDate.Reverse }}

@@ -9,14 +9,14 @@ segments:
 
 title: AkitaOnRails.com
 enableEmoji: true
-languageCode: "pt-BR"
+locale: "pt-BR"
 defaultContentLanguage: "pt-br"
 baseURL: "https://www.akitaonrails.com/"
 
 languages:
   pt-br:
-    languageName: "Português"
-    languageCode: "pt-BR"
+    label: "Português"
+    locale: "pt-BR"
     weight: 1
     menu:
       main:
@@ -68,8 +68,8 @@ languages:
           params:
             icon: chat-bubble-left-right
   en:
-    languageName: "English"
-    languageCode: "en"
+    label: "English"
+    locale: "en"
     weight: 2
     title: "AkitaOnRails.com"
     contentDir: "content"
