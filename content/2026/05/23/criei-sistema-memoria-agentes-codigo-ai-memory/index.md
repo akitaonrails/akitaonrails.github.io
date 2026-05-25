@@ -55,7 +55,7 @@ Karpathy resolveu o conceito da coisa no [LLM Wiki dele](https://gist.github.com
 
 > O `index.md` é "surpreendentemente bom — em ~100 fontes e algumas centenas de páginas, sem precisar de embeddings".
 
-Aquela linha resume o que eu queria. **Não precisa de tecnologia complicada.** Storage simples (markdown em git), index simples (SQLite com FTS5), instalação simples (um binário ou container), uso automático (hooks que disparam sozinhos), zero manutenção (memória decai sem o usuário mexer).
+Aquela linha resume o que eu queria. **Não precisa de tecnologia complicada.** Storage simples (markdown em git), índice simples (SQLite com FTS5 e links), instalação simples (um binário ou container), uso automático (hooks que disparam sozinhos), zero manutenção (memória decai sem o usuário mexer).
 
 Foi por isso que comecei o ai-memory.
 
@@ -79,27 +79,28 @@ No ai-memory eu mantive essa estrutura mas troquei a engenharia por baixo:
 - **Writer único em thread dedicada via mpsc.** Sem janela de perda de 5s, sem timeout de 30s estourando.
 - **Markdown puro no disco como source of truth.** SQLite é só índice derivado. Você pode abrir o wiki no Obsidian. Pode dar `grep`. Pode versionar com git (e ele versiona automaticamente).
 - **Isolamento por projeto na estrutura física do disco.** `<wiki_root>/<workspace_id>/<project_id>/...` chaveado por UUIDs estáveis. Renomear projeto é update de uma coluna. Apagar projeto é `rm -rf` de um subdir. Mesmo nome de página em dois projetos não colide.
-- **Embedding e LLM são opcionais.** Sem chave de provedor, o sistema ainda funciona com busca FTS5 e summarização baseada em regra. Adicione uma chave Claude Haiku ou GPT-5.4-mini quando você quer páginas consolidadas com qualidade.
+- **Embedding e LLM são opcionais.** Sem chave de provedor, o sistema ainda funciona com FTS5, expansão por links e fallback nas observações brutas. Adicione embeddings quando quiser re-ranking vetorial, e Claude Haiku ou GPT-5.4-mini quando quiser páginas consolidadas com qualidade.
 
 ## Como funciona no dia a dia
 
-A interação com os agentes é por dois mecanismos: **hooks** (captura automática) e **MCP** (consulta sob demanda).
+A interação com os agentes é por dois mecanismos: **hooks/extensões** (captura automática) e **MCP** (consulta sob demanda).
 
-Cada agente CLI (Claude Code, Codex, opencode) tem um sistema de hooks que dispara eventos em momentos específicos: `SessionStart`, `UserPromptSubmit`, `PreToolUse`, `PostToolUse`, `PreCompact`, `Stop`, `SessionEnd`. O ai-memory instala scripts pequenos pra cada um desses pontos. Quando o evento dispara, o script faz um POST fire-and-forget pro servidor HTTP do ai-memory (rodando em `127.0.0.1:49374` por padrão). O agente nunca espera. Se o ai-memory tiver fora do ar, a sessão continua normal, só sem captura.
+Claude Code e Codex usam shell hooks. OpenCode usa plugin TypeScript. OMP/Pi usa extensão TypeScript. Cursor e Gemini CLI usam configurações JSON de lifecycle. Todos mandam eventos equivalentes (`SessionStart`, `UserPromptSubmit`, `PreToolUse`, `PostToolUse`, `PreCompact`, `Stop`, `SessionEnd`) como POST fire-and-forget pro servidor HTTP do ai-memory (rodando em `127.0.0.1:49374` por padrão). O agente nunca espera. Se o ai-memory tiver fora do ar, a sessão continua normal, só sem captura. Claude Desktop e OpenClaw entram como MCP-only: consultam memória, mas não capturam ciclo de vida automaticamente.
 
 Do lado do agente, o MCP server expõe ferramentas que o LLM pode chamar quando achar útil:
 
 | Você diz... | Agente chama... | O que acontece |
 |---|---|---|
-| "Já discutimos X antes?" | `memory_query` | FTS5 sobre páginas consolidadas, retorna trechos com highlights |
+| "Já discutimos X antes?" | `memory_query` | FTS5 + vizinhos por link/graph RRF sobre páginas compiladas, re-ranking vetorial opcional e fallback em observações brutas quando o wiki não acha nada |
 | (antes de propor arquitetura) implícito | `memory_query` | Snippet de routing instrui o agente a checar decisões anteriores antes de propor algo novo |
 | "Me coloca a par" / "fiquei fora um tempo" | `memory_explore` | Digest em prosa. Verbosidade escala com tempo desde última atividade |
 | "Onde paramos?" | (handoff já no contexto) | Hook `SessionStart` já adicionou o handoff antes do primeiro prompt |
 | "Salva contexto pra próxima sessão" | `memory_handoff_begin` | Escreve um handoff terso com `open_questions` + `next_steps` |
 | "Consolida essa sessão" | `memory_consolidate` | Trigger manual do que o SessionEnd faz automaticamente |
 | "Audita o wiki" | `memory_lint` | Detecta páginas obsoletas, contradições, sugere regras |
+| "Quais são os stats?" | `memory_status` / `memory_briefing` | Conta páginas, sessões, observações e atividade recente |
 
-O snippet de routing que vai no `CLAUDE.md` (ou `AGENTS.md` pra Codex/opencode) é o que faz o agente saber quando chamar qual ferramenta. Ele se instala com um comando: peça pro agente "instala o routing do ai-memory neste projeto" e ele invoca a tool MCP `memory_install_self_routing`, recebe o snippet canônico, e escreve no arquivo certo. Idempotente.
+O snippet de routing que vai no `CLAUDE.md` (ou `AGENTS.md` pra Codex/OpenCode/Cursor/Gemini/OMP) é o que faz o agente saber quando chamar qual ferramenta. Ele se instala com um comando: peça pro agente "instala o routing do ai-memory neste projeto" e ele invoca a tool MCP `memory_install_self_routing`, recebe o snippet canônico, e escreve no arquivo certo. Idempotente.
 
 ## Exemplo de handoff entre agentes
 
@@ -124,7 +125,7 @@ Mesmo cenário se você abandona o projeto por dois meses e volta. O `memory_exp
 
 ## Adotando ai-memory num projeto que já existe
 
-Se você instalar o ai-memory num projeto que já tem meses de história, o wiki começa vazio e as primeiras sessões são saldo zero. Você tá populando, não recuperando. O comando `ai-memory bootstrap` resolve isso. Ele coleta seu `git log`, README, `docs/`, cabeçalhos de módulo, e manda pro servidor que usa o LLM pra gerar páginas-semente do wiki:
+Se você instalar o ai-memory num projeto que já tem meses de história, o wiki começa vazio e as primeiras sessões são saldo zero. Você tá populando, não recuperando. O comando `ai-memory bootstrap` resolve isso. Ele coleta seu `git log`, README, `docs/`, cabeçalhos de módulo e arquivos de regras do projeto (`CLAUDE.md` / `AGENTS.md`), e manda pro servidor que usa o LLM pra gerar páginas-semente do wiki:
 
 ```bash
 cd ~/Projects/meu-projeto
@@ -160,7 +161,7 @@ ai-memory install-hooks --agent  claude-code --apply
 
 Pronto. Abra o Claude Code como sempre. Cada prompt e tool call agora aterrissam no ai-memory, e a próxima sessão que você abrir no projeto vai ver um handoff com onde você parou.
 
-Repita o passo 3 com `--agent codex`, `--agent opencode`, `--client cursor` pra outros agentes. Idempotente: re-rodar substitui só a entrada do ai-memory, preserva qualquer outro hook que você tenha. Faz backup `.bak-<timestamp>` antes de cada escrita.
+Repita o passo 3 com `--agent codex`, `--agent opencode`, `--agent omp`/`pi`, `--client cursor`, `--client gemini-cli`, `--client pi`/`omp`, etc. pra outros agentes. Claude Desktop e OpenClaw são MCP-only. Idempotente: re-rodar substitui só a entrada do ai-memory, preserva qualquer outro hook/MCP que você tenha. Faz backup `.bak-<timestamp>` antes de cada escrita.
 
 O README do projeto cobre as variações ([Docker compose](https://github.com/akitaonrails/ai-memory#quick-start), homelab no LAN com bearer token, [instalação sem Docker](https://github.com/akitaonrails/ai-memory/blob/main/docs/install.md), build do fonte). Recomendo seguir o [docs/install.md](https://github.com/akitaonrails/ai-memory/blob/main/docs/install.md) se seu setup foge do caminho padrão.
 
@@ -168,17 +169,17 @@ O README do projeto cobre as variações ([Docker compose](https://github.com/ak
 
 Depois de instalado, o dia a dia normal é só usar os agentes. Mas vale conhecer alguns comandos pra quando precisar:
 
-- **`ai-memory upgrade`** — auto-atualização do wrapper + `docker pull` da imagem nova + re-instalação dos hook scripts. Idempotente. Se você tem servidor remoto separado, refresca só o cliente local; o servidor você atualiza separadamente.
-- **`ai-memory bootstrap`** — semeia o wiki a partir de git log + README + docs/. Pra projetos que já existem antes do ai-memory entrar.
+- **`ai-memory upgrade`** — auto-atualização do wrapper + `docker pull` da imagem nova + re-instalação dos hook scripts/plugins/extensões. Idempotente. Se você tem servidor remoto separado, refresca só o cliente local; o servidor você atualiza separadamente.
+- **`ai-memory bootstrap`** — semeia o wiki a partir de git log + README + docs/ + regras do projeto. Pra projetos que já existem antes do ai-memory entrar.
 - **`ai-memory purge-project --project <nome> --confirm`** — apaga um projeto inteiro. Atômico: linhas do SQLite, subdir do wiki, sem tocar nos vizinhos.
-- **`ai-memory rename-project --from <nome> --to <novo>`** — renomeia. Uma coluna no DB, um `mv` no disco. Sem efeito colateral.
+- **`ai-memory rename-project --from <nome> --to <novo>`** — renomeia. Uma coluna no DB, sem mover arquivo no disco. Sem efeito colateral.
 - **`ai-memory backup`** — snapshot do diretório de dados (wiki + SQLite). `ai-memory restore` desfaz.
-- **`ai-memory lint`** — passa o `memory_lint` por fora do agente. Detecta contradições, páginas obsoletas, sugere regras pra promover pro `CLAUDE.md`.
+- **`ai-memory lint` / `ai-memory forget-sweep` / `ai-memory embed`** — manutenção manual. Lint e forget-sweep também rodam no agendamento do servidor por padrão; embedding backfill existe mas fica desligado por default porque pode chamar provedor pago.
 - **`ai-memory generate-auth-token`** — quando você for expor o servidor além do loopback (ver `docs/deploy.md`).
 
 ## Explorando o wiki no navegador
 
-O servidor também serve uma UI web read-only em `http://127.0.0.1:49374/web`. Mesmo binário, mesma porta, sem processo extra. Serve pra três coisas práticas: auditar o que o agente vem salvando, conferir se as páginas consolidadas tão coerentes, e compartilhar uma página avulsa com alguém do time sem precisar dar acesso ao agente.
+O servidor também pode montar uma UI web read-only em `http://127.0.0.1:49374/web` quando sobe com `--enable-web`. Mesmo binário, mesma porta, sem processo extra. Serve pra três coisas práticas: auditar o que o agente vem salvando, conferir se as páginas consolidadas tão coerentes, e compartilhar uma página avulsa com alguém do time sem precisar dar acesso ao agente.
 
 A homepage lista os projetos detectados, cada um com contagem de páginas e tempo desde a última atividade:
 
@@ -196,7 +197,7 @@ Clicando em qualquer página, você cai no markdown renderizado:
 
 ![Página individual "Per-project UUID-namespaced disk layout" renderizada: badges "semantic" e "fact" no topo, timestamps "updated just now" e "created 1 hour ago", corpo em markdown com bloco de código ASCII mostrando a árvore de diretório.](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/05/23/ai-memory/ai-memory-web-page.png)
 
-O rendering tem syntax highlighting, badges de tier (`working`/`episodic`/`semantic`/`procedural`) e kind (`decision`/`gotcha`/`rule`/`fact`), breadcrumbs, supersession chain visível. Busca FTS5 no canto superior direito. Modo claro/escuro segue a preferência do sistema via `prefers-color-scheme`.
+O rendering tem syntax highlighting, badges de tier (`working`/`episodic`/`semantic`/`procedural`) e kind (`decision`/`gotcha`/`rule`/`fact`), breadcrumbs, supersession chain visível. A busca combina FTS5, expansão por links e, se configurado, embeddings; modo claro/escuro segue a preferência do sistema via `prefers-color-scheme`.
 
 Pra editar o wiki você abre os arquivos direto em qualquer editor de markdown (Obsidian funciona bem). A interface web é read-only por design: o LLM consolidador é quem escreve, humanos só leem.
 
@@ -204,7 +205,7 @@ Pra editar o wiki você abre os arquivos direto em qualquer editor de markdown (
 
 A escolha de Docker como caminho recomendado foi deliberada. Algumas vantagens práticas:
 
-- **Atualização é uma linha.** `ai-memory upgrade` puxa a imagem nova, refresca o wrapper, re-instala os hooks. Você não compila Rust, não cuida de versão de libsqlite, não briga com mise/Node version churn como acontece com soluções baseadas em Node.
+- **Atualização é uma linha.** `ai-memory upgrade` puxa a imagem nova, refresca o wrapper, re-instala hooks/plugins/extensões. Você não compila Rust, não cuida de versão de libsqlite, não briga com mise/Node version churn como acontece com soluções baseadas em Node.
 - **Isolamento real.** O servidor roda no container, lê só `/data` (volume nomeado), não polui seu sistema. Se quiser limpar, é `docker volume rm`.
 - **Mesma imagem em vários setups.** Laptop, desktop, homelab. Mesma imagem amd64 ou arm64.
 - **Restart automático.** `--restart unless-stopped` faz o servidor voltar quando você reinicia o Docker, ou quando liga a máquina (assumindo `systemctl enable docker`).
@@ -239,9 +240,9 @@ Quem quiser testar outros modelos, o harness de avaliação tá em [`evals/`](ht
 
 ## Status: beta, falta usuário
 
-O ai-memory tá nas tags `v0.2-complete` no GitHub. As funcionalidades principais funcionam: hooks, MCP, web UI, bootstrap, purge/rename/backup, bearer auth, browse, FTS5 search, consolidação, decay, handoff entre Claude Code / Codex / opencode. Eu rodo em produção pessoal há algumas semanas.
+O ai-memory tá nas tags `v0.2-complete` no GitHub. As funcionalidades principais funcionam: captura automática, MCP, web UI opcional, bootstrap, purge/rename/backup, bearer auth, browse, busca FTS5 + graph/link-neighbour RRF, embeddings opcionais, consolidação, decay, manutenção agendada e handoff entre Claude Code / Codex / OpenCode / Cursor / Gemini CLI / OMP-Pi. Eu rodo em produção pessoal há algumas semanas.
 
-Mas é beta. Precisa de muito mais usuário batendo nele pra eu encontrar os bugs que ainda não aparecem na minha máquina. Tem coisas que ainda não suporto: Gemini CLI, Crush, alguns clientes MCP exóticos. A integração mais polida hoje é Claude Code, seguida de Codex e opencode.
+Mas é beta. Precisa de muito mais usuário batendo nele pra eu encontrar os bugs que ainda não aparecem na minha máquina. Claude Desktop e OpenClaw funcionam como MCP-only; alguns clientes MCP exóticos ainda precisam de teste real. A integração mais polida hoje é Claude Code, seguida de Codex, OpenCode e OMP/Pi.
 
 Se você tá lendo até aqui, considera instalar e me mandar feedback. Issues no [github.com/akitaonrails/ai-memory/issues](https://github.com/akitaonrails/ai-memory/issues). PRs são muito bem-vindos — o código é Rust, MIT, e a arquitetura tá documentada em [`docs/ARCHITECTURE.md`](https://github.com/akitaonrails/ai-memory/blob/main/docs/ARCHITECTURE.md) e [`docs/design-decisions.md`](https://github.com/akitaonrails/ai-memory/blob/main/docs/design-decisions.md). Mesmo bug report de "instalei, não rodou no meu setup" ajuda — significa que tem algo que assumi sobre ambientes que não bate com o seu.
 
