@@ -131,7 +131,7 @@ Mas OpenCode parece mais coeso. Mais produto. Mais polido. O Oh-My-Pi parece mai
 
 ## O que eu fui checar no código
 
-Pra não ficar só em impressão visual, pedi uma análise comparando OpenCode, Pi e Oh-My-Pi, e depois conferi partes do código-fonte. O resumo está em `~/Projects/analysis-pi-opencode`, especialmente no arquivo `harness-tooling-comparison.md`.
+Pra não ficar só em impressão visual, pedi uma análise comparando OpenCode, Pi e Oh-My-Pi, e depois conferi partes do código-fonte.
 
 O resultado bate com a intuição.
 

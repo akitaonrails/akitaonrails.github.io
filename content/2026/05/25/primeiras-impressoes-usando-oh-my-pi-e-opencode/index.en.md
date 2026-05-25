@@ -131,7 +131,7 @@ But OpenCode feels more cohesive. More product. More polished. Oh-My-Pi feels mo
 
 ## What I checked in the code
 
-To avoid relying only on visual impressions, I asked for an analysis comparing OpenCode, Pi and Oh-My-Pi, then checked parts of the source code myself. The summary lives in `~/Projects/analysis-pi-opencode`, especially `harness-tooling-comparison.md`.
+To avoid relying only on visual impressions, I asked for an analysis comparing OpenCode, Pi and Oh-My-Pi, then checked parts of the source code myself.
 
 The result matches the intuition.
 
