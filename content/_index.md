@@ -6,6 +6,7 @@ title: AkitaOnRails Blog
 
 ## 2026 - Maio
 
+- [Backup de Gmail pra Maildir em Linux](/2026/05/28/backup-gmail-maildir-linux/)
 - [Primeiras Impressões usando Oh-My-Pi e OpenCode](/2026/05/25/primeiras-impressoes-usando-oh-my-pi-e-opencode/)
 - [Dicas e Toolkit de IA do Akita: ai-jail, ai-memory, ai-usagebar](/2026/05/24/dicas-e-toolkit-de-ia-do-akita-ai-jail-ai-memory-ai-usagebar/)
 - [Criei um Widget de Waybar pra Omarchy pra Monitorar Uso de Planos de LLM: ai-usagebar](/2026/05/24/criei-widget-waybar-omarchy-monitorar-uso-llms-ai-usagebar/)
