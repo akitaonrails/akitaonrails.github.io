@@ -61,6 +61,12 @@ Num monitor de 32 polegadas, página única desperdiça metade da tela. Por isso
 
 O `D` cicla por três layouts: **single** (uma página por vez), **double** (pares sequenciais a partir da página 1) e **double-cover** (a primeira página de cada capítulo sozinha e o resto em pares, que é como mangá impresso encaderna a capa solta antes da primeira dobra). A escolha persiste entre capítulos e sessões, então você configura uma vez e esquece.
 
+Tem também um filtro de leitura noturna. Aperta `F` (ou clica no ícone de lua no cabeçalho) e os brancos da página esquentam pro sépia. Branco de LCD castiga a vista no escuro, e isso suaviza sem achatar o contraste:
+
+![Frank Manga+ com o filtro de leitura noturna ativo: uma página dupla em preto e branco ganha um tom âmbar quente, com vários quadros e balões de diálogo em inglês.](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/05/30/manga-plus/reader-eye-protection.png)
+
+O `F` cicla por quatro níveis: **off → low → med → high → off**. O botão fica âmbar e mostra de um a três pontinhos pro nível ativo, e a escolha fica salva no `localStorage` igual às outras preferências do leitor. Por baixo é um filtro CSS de `sepia + brightness + saturate` na pilha inteira de páginas: o sépia empurra a cor pro âmbar mas preserva a faixa de luminância, então preto continua preto e o contraste da arte fica intacto.
+
 Estado de leitura (último capítulo, página corrente) fica no `localStorage` do WebView. Cache de imagens em `~/.cache/mangaplus-reader/`. O `deviceSecret` extraído fica em `~/.config/mangaplus-reader/secret` (Linux/macOS) ou `%APPDATA%\mangaplus-reader\secret` (Windows). Dá pra sobrescrever com a variável de ambiente `MANGAPLUS_SECRET` se preferir.
 
 ## Instalação
