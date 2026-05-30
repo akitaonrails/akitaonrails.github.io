@@ -6,6 +6,7 @@ title: AkitaOnRails Blog
 
 ## 2026 - May
 
+- [Manga Plus (Shueisha) on the Desktop: Frank Manga+](/en/2026/05/30/manga-plus-shueisha-on-the-desktop-frank-manga-plus/)
 - [Backing Up Gmail to Maildir on Linux](/en/2026/05/28/backing-up-gmail-to-maildir-on-linux/)
 - [First Impressions Using Oh-My-Pi and OpenCode](/en/2026/05/25/first-impressions-using-oh-my-pi-and-opencode/)
 - [Akita's AI Tips and Toolkit: ai-jail, ai-memory, ai-usagebar](/en/2026/05/24/akita-ai-tips-toolkit-ai-jail-ai-memory-ai-usagebar/)
