@@ -6,6 +6,7 @@ title: AkitaOnRails Blog
 
 ## 2026 - May
 
+- [Open Source Best Practices with LLMs - The Bare Minimum](/en/2026/05/30/open-source-best-practices-llm-the-minimum/)
 - [Manga Plus (Shueisha) on the Desktop: Frank Manga+](/en/2026/05/30/manga-plus-shueisha-on-the-desktop-frank-manga-plus/)
 - [Backing Up Gmail to Maildir on Linux](/en/2026/05/28/backing-up-gmail-to-maildir-on-linux/)
 - [First Impressions Using Oh-My-Pi and OpenCode](/en/2026/05/25/first-impressions-using-oh-my-pi-and-opencode/)
