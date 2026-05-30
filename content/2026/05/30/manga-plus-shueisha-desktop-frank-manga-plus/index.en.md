@@ -51,9 +51,15 @@ Clicking a title takes you to a detail page with the full chapter list and a "Co
 
 ![Kagurabachi detail page in Frank Manga+: large cover on the left, synopsis, and a virtualized list of numbered chapters on the right with a Continue button at the top.](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/05/30/manga-plus/title-detail.png)
 
-And the reader itself has snap-per-page, keyboard navigation, click on the bottom to advance, and prefetch of the next chapter while you read the current one. For huge series like One Piece (1100+ chapters), the list is virtualized, so it opens instantly:
+The reader opens in single-page, with snap-per-page and manga-style click zones: click the **left half** of the page to advance and the **right half** to go back (Japanese right-to-left reading direction). If you'd rather use the keyboard, arrows, Space, `j`/`k`, and PageUp/PageDown all work. When you hit the end of a chapter, the next one prefetches and gets appended to the scroll, so you don't have to bounce back to the chapter list every time. And resume is per-chapter: leave mid-read and the next time you open that chapter you land on the exact page you stopped at. For huge series like One Piece (1100+ chapters), the list is virtualized, so it opens instantly:
 
-![Frank Manga+ reader showing page 12 of 19 of a Kagurabachi chapter: dramatic black-and-white scene of Chihiro wielding his sword, with a page indicator at the top and a progress bar at the bottom.](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/05/30/manga-plus/reader.png)
+![Frank Manga+ reader in single-page showing page 12 of 19 of a Kagurabachi chapter: dramatic black-and-white scene of Chihiro wielding his sword, with a page indicator at the top and a progress bar at the bottom.](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/05/30/manga-plus/reader.png)
+
+On a 32-inch monitor, single-page wastes half the screen. That's why there's **double-page mode**: hit `D` (or click the layout icon in the header) and the reader starts pairing facing pages, so the whole spread fills the screen the way the author drew it. It's how manga was meant to be read:
+
+![Frank Manga+ in double-page mode on a widescreen monitor: a dramatic black-and-white scene fills the entire screen, with a pigtailed character crying and the speech bubbles "I...." and "...WANT TO GET STRONGER.".](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/05/30/manga-plus/reader-double-page.png)
+
+`D` cycles through three layouts: **single** (one page at a time), **double** (sequential pairs starting from page 1), and **double-cover** (the first page of each chapter solo, the rest in pairs, the way printed manga binds the cover singly before the first spread). The choice persists across chapters and sessions, so you set it once and forget it.
 
 Reading state (last chapter, current page) lives in the WebView's `localStorage`. Image cache at `~/.cache/mangaplus-reader/`. The extracted `deviceSecret` lives in `~/.config/mangaplus-reader/secret` (Linux/macOS) or `%APPDATA%\mangaplus-reader\secret` (Windows). You can override it with the `MANGAPLUS_SECRET` environment variable if you prefer.
 
@@ -69,7 +75,7 @@ All artifacts come out on the [GitHub Releases](https://github.com/akitaonrails/
 
 ## Status and contributions
 
-This is **beta**. It works fine for my use (I read several series a week with no headaches), but it's missing features: reverse pagination for traditional Japanese manga, genre filters in search, real offline mode (today it only caches what you've already read), and a smoother secret-extraction path for less technical users.
+This is **beta**. It works fine for my use (I read several series a week with no headaches), but it's missing features: genre filters in search, real offline mode (today it only caches what you've already read), and a smoother secret-extraction path for less technical users.
 
 If you subscribe to MANGA Plus and want to test it, send an issue or PR. The code is Rust + Svelte, MIT, contributions welcome: [github.com/akitaonrails/frank_mangaplus](https://github.com/akitaonrails/frank_mangaplus).
 

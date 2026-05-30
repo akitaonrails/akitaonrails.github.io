@@ -51,9 +51,15 @@ Clicando num título você vai pra página de detalhe com a lista completa de ca
 
 ![Página de detalhe do Kagurabachi no Frank Manga+: capa grande à esquerda, sinopse, e lista virtualizada de capítulos numerados à direita com botão Continue no topo.](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/05/30/manga-plus/title-detail.png)
 
-E o leitor em si tem snap por página, navegação por teclado, clique no rodapé pra avançar, e prefetch do próximo capítulo enquanto você lê o atual. Pra séries gigantes como One Piece (1100+ capítulos), a lista é virtualizada, então abre instantâneo:
+O leitor abre em página única, com snap por página e as zonas de clique no estilo mangá: clica na **metade esquerda** da página pra avançar e na **direita** pra voltar (sentido de leitura japonês, da direita pra esquerda). Quem prefere teclado tem seta, espaço, `j`/`k` e PageUp/PageDown, tudo funciona. Quando você chega no fim de um capítulo, o próximo já vem em prefetch e é anexado no scroll, então não precisa voltar pra lista de capítulos toda hora. E o resume é por capítulo: se você sai no meio, da próxima vez que abrir aquele capítulo cai exatamente na página onde parou. Pra séries gigantes como One Piece (1100+ capítulos), a lista é virtualizada, então abre instantâneo:
 
-![Leitor do Frank Manga+ mostrando página 12 de 19 do capítulo de Kagurabachi: cena dramática em preto e branco do Chihiro empunhando a espada, com indicador de página no topo e barra de progresso no rodapé.](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/05/30/manga-plus/reader.png)
+![Leitor do Frank Manga+ em página única mostrando página 12 de 19 do capítulo de Kagurabachi: cena dramática em preto e branco do Chihiro empunhando a espada, com indicador de página no topo e barra de progresso no rodapé.](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/05/30/manga-plus/reader.png)
+
+Num monitor de 32 polegadas, página única desperdiça metade da tela. Por isso tem o **modo página dupla**: aperta `D` (ou clica no ícone de layout no cabeçalho) e o leitor junta as páginas que formam par: a dobra inteira preenche a tela do jeito que o autor desenhou. É como mangá foi feito pra ser lido:
+
+![Frank Manga+ em modo página dupla num monitor widescreen: uma cena dramática em preto e branco preenche a tela inteira, com uma personagem de maria-chiquinha chorando e os balões "I...." e "...WANT TO GET STRONGER.".](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/05/30/manga-plus/reader-double-page.png)
+
+O `D` cicla por três layouts: **single** (uma página por vez), **double** (pares sequenciais a partir da página 1) e **double-cover** (a primeira página de cada capítulo sozinha e o resto em pares, que é como mangá impresso encaderna a capa solta antes da primeira dobra). A escolha persiste entre capítulos e sessões, então você configura uma vez e esquece.
 
 Estado de leitura (último capítulo, página corrente) fica no `localStorage` do WebView. Cache de imagens em `~/.cache/mangaplus-reader/`. O `deviceSecret` extraído fica em `~/.config/mangaplus-reader/secret` (Linux/macOS) ou `%APPDATA%\mangaplus-reader\secret` (Windows). Dá pra sobrescrever com a variável de ambiente `MANGAPLUS_SECRET` se preferir.
 
@@ -69,7 +75,7 @@ Todos os artefatos saem nos [Releases do GitHub](https://github.com/akitaonrails
 
 ## Status e contribuições
 
-Isso é **beta**. Funciona pro meu uso (leio várias séries por semana sem dor de cabeça), mas tem features que faltam: paginação invertida pra mangá tradicional japonês, filtros de gênero na busca, modo offline real (hoje guarda em cache só o que já foi lido), e o caminho de extração do segredo pra usuários menos técnicos.
+Isso é **beta**. Funciona pro meu uso (leio várias séries por semana sem dor de cabeça), mas tem features que faltam: filtros de gênero na busca, modo offline real (hoje guarda em cache só o que já foi lido), e o caminho de extração do segredo pra usuários menos técnicos.
 
 Se você assina o MANGA Plus e topa testar, manda issue ou PR. O código é Rust + Svelte, MIT, contribuição bem-vinda: [github.com/akitaonrails/frank_mangaplus](https://github.com/akitaonrails/frank_mangaplus).
 
