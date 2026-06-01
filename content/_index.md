@@ -4,6 +4,10 @@ title: AkitaOnRails Blog
 
 {{< lang-toggle >}}
 
+## 2026 - Junho
+
+- [LLM Benchmarks - Atualizando sobre Grok 4.3, MiniMax v3 e Opus 4.8](/2026/06/01/llm-benchmarks-grok-4-3-minimax-m3-opus-4-8/)
+
 ## 2026 - Maio
 
 - [Boas práticas de projetos de código aberto com LLM - O Mínimo](/2026/05/30/boas-praticas-projetos-codigo-aberto-llm-o-minimo/)
