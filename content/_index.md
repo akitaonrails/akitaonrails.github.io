@@ -11,7 +11,7 @@ title: AkitaOnRails Blog
 ## 2026 - Maio
 
 - [Boas práticas de projetos de código aberto com LLM - O Mínimo](/2026/05/30/boas-praticas-projetos-codigo-aberto-llm-o-minimo/)
-- [Manga Plus (Shueisha) no Desktop: Frank Manga+](/2026/05/30/manga-plus-shueisha-desktop-frank-manga-plus/)
+- [Solução Completa de Mangá: Frank Manga+, Frank Yomik, extensão Prettify-Manga](/2026/05/30/manga-plus-shueisha-desktop-frank-manga-plus/)
 - [Backup de Gmail pra Maildir em Linux](/2026/05/28/backup-gmail-maildir-linux/)
 - [Primeiras Impressões usando Oh-My-Pi e OpenCode](/2026/05/25/primeiras-impressoes-usando-oh-my-pi-e-opencode/)
 - [Dicas e Toolkit de IA do Akita: ai-jail, ai-memory, ai-usagebar](/2026/05/24/dicas-e-toolkit-de-ia-do-akita-ai-jail-ai-memory-ai-usagebar/)

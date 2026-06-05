@@ -1,5 +1,5 @@
 ---
-title: "Manga Plus (Shueisha) on the Desktop: Frank Manga+"
+title: "Complete Manga Solution: Frank Manga+, Frank Yomik, and the Prettify-Manga Extension"
 slug: "manga-plus-shueisha-on-the-desktop-frank-manga-plus"
 date: '2026-05-30T09:00:00-03:00'
 draft: false
@@ -22,6 +22,8 @@ I own a Samsung ZFold 7, one of the few phones that's actually good for reading 
 The problem is that **MANGA Plus has no official website for reading**. The subscription is locked to Android. There's an iOS version too, but no web. A tablet helps, but nothing beats the comfort of a big, static screen when you want to read a whole One Piece arc in one go.
 
 For context, I caught up on a lot recently: I finally finished Chainsaw Man, Dan Da Dan, Jujutsu Kaisen, Kagurabachi, Akane-banashi, Sakamoto Days and, of course, One Piece. There's a lot more I want to follow, and the comfort of the big monitor became a real problem worth solving.
+
+The main act here is **Frank Manga+**, which fixes Shueisha's desktop gap. At the end I also cover two pieces of my setup: [Prettify Manga Reader](#prettify-manga), for turning fansub sites and Kindle Web into tolerable readers, and [Frank Yomik in the browser](#frank-yomik), for furigana/translation on Kindle Japan and Naver.
 
 ## Decompiling the app
 
@@ -55,9 +57,13 @@ The reader opens in single-page, with snap-per-page and manga-style click zones:
 
 ![Frank Manga+ reader in single-page showing page 12 of 19 of a Kagurabachi chapter: dramatic black-and-white scene of Chihiro wielding his sword, with a page indicator at the top and a progress bar at the bottom.](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/05/30/manga-plus/reader.png)
 
-On a 32-inch monitor, single-page wastes half the screen. That's why there's **double-page mode**: hit `D` (or click the layout icon in the header) and the reader starts pairing facing pages, so the whole spread fills the screen the way the author drew it. It's how manga was meant to be read:
+On a 32-inch monitor, single-page wastes half the screen. That's why there's **double-page mode**: hit `D` (or click the layout icon in the header) and the reader starts pairing facing pages, so the whole spread fills the screen the way the author drew it. It's how manga was meant to be read.
 
-![Frank Manga+ in double-page mode on a widescreen monitor: a dramatic black-and-white scene fills the entire screen, with a pigtailed character crying and the speech bubbles "I...." and "...WANT TO GET STRONGER.".](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/05/30/manga-plus/reader-double-page.png)
+You can see why that matters when you compare it with cheap binding. Bad paperbacks swallow the middle of the fold, exactly where the art is supposed to connect. In digital, when the reader joins it properly, the scene gets room to breathe:
+
+| Frank Manga+ joining the spread | Cheap paperback swallowing the fold |
+| --- | --- |
+| ![Frank Manga+ in double-page mode on a widescreen monitor: a dramatic black-and-white scene fills the entire screen, with a pigtailed character crying and the speech bubbles "I...." and "...WANT TO GET STRONGER.".](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/05/30/manga-plus/reader-double-page.png) | ![A Kaiju No. 8 paperback opened on a Kikoru two-page spread, with the art swallowed and distorted by the spine in the center.](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/05/30/manga-plus/kikoru-paperback-spread.jpeg) |
 
 `D` cycles through three layouts: **single** (one page at a time), **double** (sequential pairs starting from page 1), and **double-cover** (the first page of each chapter solo, the rest in pairs, the way printed manga binds the cover singly before the first spread). The choice persists across chapters and sessions, so you set it once and forget it.
 
@@ -87,11 +93,43 @@ If you subscribe to MANGA Plus and want to test it, send an issue or PR. The cod
 
 Now I finally read One Piece on the big monitor, without having to hold a phone or twist my neck. The work paid off.
 
-## Bonus: Frank Yomik now on the desktop too via extension
+<a id="prettify-manga"></a>
 
-Anyone who read the [AI marathon recap](/en/2026/05/14/wrapping-up-my-ai-marathon-success-or-failure/) remembers [Frank Yomik](https://github.com/akitaonrails/FrankYomik), my self-hosted project that takes a manga or webtoon page, detects the bubbles with RT-DETR-v2, runs OCR, sends it to a local Ollama (`qwen3:14b`) for translation, and returns the page with the translated text in place. Originally it had only a Flutter client for Android and Linux, which opened Kindle Japan and Naver Webtoon inside a WebView.
+## Bonus: Prettify Manga Reader for fansub sites
 
-The thing is, running a Flutter app inside a WebView on the desktop just to read Kindle is using a sledgehammer to crack a nut. On the desktop you already have Chromium open. What was missing was a browser extension.
+Besides the desktop app, I keep a simpler extension around: [Prettify Manga Reader](https://github.com/akitaonrails/prettify-manga). It does not translate anything. Its job is to fix the reading experience.
+
+Most fansub sites are ugly, packed with banners, and obviously built for phones: one page under the next, endless vertical scroll, good luck. That's practical on a phone, but manga was not drawn like an Instagram feed. Manga was drawn for page turns. Two pages open at once. The reading rhythm, the reveal, the pause between panels, all of it assumes that pair.
+
+And many authors use that to draw two-page spreads. **Kaiju No. 8** does it several times. If the site stacks one page under the other, you can still read the speech bubbles, but the full composition is gone. You're seeing half the art at a time and thinking you saw the whole thing.
+
+The usual site looks like this:
+
+![A typical fansub page before enabling the extension, with the manga page surrounded by the original site layout.](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/05/30/manga-plus/prettify-manga-reader-before.webp)
+
+Prettify opens a dark overlay, fits the art to the screen, and joins pages at the center seam when **Book** or **Double** mode is active. The spread looks like a real two-page spread again:
+
+![Prettify Manga Reader showing a two-page spread correctly joined at the center seam, full-screen on a dark background.](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/05/30/manga-plus/prettify-manga-reader-spread.webp)
+
+It has three modes: **Single** (one page per screen), **Double** (pairs from the start), and **Book** (first page alone, then pairs, like binding). It opens in Book by default. If an image is already horizontal, it stays as a full-width spread. It has scroll snap so every page lands in the right place, keyboard shortcuts, small mouse controls, help with `?`, and an end-of-chapter card that tries to find previous/next chapter links when the site makes them obvious.
+
+It also has a three-level night filter. Hit `N` and it warms the page with sepia, brightness, and contrast without turning the art into dead gray. A white manga page on a big monitor at night is a flashlight to the face. This fixes it.
+
+To install it, go to the [Prettify Manga Reader GitHub repo](https://github.com/akitaonrails/prettify-manga), download the zip from **Releases**, unzip it into a permanent directory, open `chrome://extensions` or `brave://extensions`, enable **Developer mode**, click **Load unpacked**, and select the unzipped folder. If you want to build from source, clone the repo, run `npm test`, then `npm run package`, unzip the package generated under `dist/`, and load that folder.
+
+On Kindle Web Reader, Prettify deliberately does less. On URLs like `read.amazon.com/manga/...`, `read.amazon.co.jp/manga/...`, `read.amazon.co.uk/manga/...`, and `read.kindle.*` domains, it doesn't try to rebuild the book inside its own overlay. Amazon's reader already handles account, pages, and DRM; the extension only adds a discreet bottom-right toolbar and keyboard shortcuts on top of the native reader.
+
+![Kindle Web Reader with Prettify Manga Reader's discreet toolbar in the bottom-right corner, showing the Night button active to soften the manga page.](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/05/30/manga-plus/prettify-manga-reader-kindle.webp)
+
+Space, PageDown, and arrows advance the page; Shift+Space, PageUp, and the opposite arrows go back; Home/End jump to the beginning or end when the native reader accepts them, with a scroll fallback; `N` cycles the night filter. It doesn't store Amazon credentials, doesn't touch sessions, and needs no token in the code. It's just visual comfort and keyboard control on top of the Kindle Web that already exists.
+
+<a id="frank-yomik"></a>
+
+## Bonus 2: Frank Yomik now on the desktop too via extension
+
+Anyone who read the [AI marathon recap](/en/2026/05/14/wrapping-up-my-ai-marathon-success-or-failure/) remembers [Frank Yomik](https://github.com/akitaonrails/FrankYomik), my self-hosted project that takes a manga or webtoon page, detects the bubbles with RT-DETR-v2, runs OCR, sends it to a local Ollama (`qwen3:14b`) for translation, and returns the page with the translated text in place. I already covered the story and the technical details in [My First Vibe Code Failure and How I Fixed It | Frank Yomik](/en/2026/03/05/my-first-vibe-code-failure-frank-yomik/). The point here is the new desktop piece.
+
+Originally it had only a Flutter client for Android and Linux, which opened Kindle Japan and Naver Webtoon inside a WebView. The thing is, running a Flutter app inside a WebView on the desktop just to read Kindle is using a sledgehammer to crack a nut. On the desktop you already have Chromium open. What was missing was a browser extension.
 
 Over the past few weeks I added exactly that. A Manifest V3 extension for Chromium/Brave/Edge, talking to the same self-hosted Yomik server. It runs on [read.amazon.co.jp](https://read.amazon.co.jp), [read.kindle.co.jp](https://read.kindle.co.jp), [comic.naver.com](https://comic.naver.com), and Naver's mobile version. The page stays visually identical to the original, with no injected buttons or HUD in the reader's face. All configuration lives in the popup:
 
@@ -99,6 +137,6 @@ Over the past few weeks I added exactly that. A Manifest V3 extension for Chromi
 
 The content script grabs the current page image and sends it to the server. The bearer token sits in the service worker, so it never leaks to the page's JS. When the translation comes back, the image gets swapped in place of the original. There's a local cache to avoid re-translating pages you've already seen, a "force reprocess" button for when you need to file a bug report, and autosave for the config. Details in the [extension README](https://github.com/akitaonrails/FrankYomik/tree/main/extension), and the Load Unpacked zip ships with the repo's Releases.
 
-In practice, the 32" monitor is now my reading desk. Frank Manga+ opens Shueisha's official catalog in English (One Piece, Chainsaw Man, and whatever else Shonen Jump publishes). When I feel like reading something Japanese that doesn't have an official translation, I open Kindle Japan in another tab and Yomik renders furigana or an LLM translation on top of the page. For Korean Naver webtoons, same story, same extension.
+In practice, the 32" monitor is now my reading desk. Frank Manga+ opens Shueisha's official catalog in English (One Piece, Chainsaw Man, and whatever else Shonen Jump publishes). When it's fansub or Kindle Web and all I want is visual comfort, Prettify handles the reader, keyboard, and night filter. When I want to read something Japanese with no official translation, I open Kindle Japan in another tab and Yomik renders furigana or an LLM translation on top of the page. For Korean Naver webtoons, same story, same extension.
 
-The nice part is that the two projects solve different problems and complement each other. Frank Manga+ exists because Shueisha has no website. Yomik exists because the rest of the manga I read doesn't have a decent official translation in any reasonable timeframe. For a manga addict like me, it's the setup I'd been wanting for years.
+The nice part is that each project solves a different piece and they complement each other. Frank Manga+ exists because Shueisha has no website. Prettify makes browser readers less miserable. Yomik exists because the rest of the manga I read doesn't have a decent official translation in any reasonable timeframe. For a manga addict like me, it's the setup I'd been wanting for years.
