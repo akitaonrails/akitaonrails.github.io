@@ -6,6 +6,7 @@ title: AkitaOnRails Blog
 
 ## 2026 - June
 
+- [AI Controversy in Open Source Project Contributions - My Take](/en/2026/06/05/ai-controversy-open-source-project-contributions-my-take/)
 - [LLM Benchmarks - An Update on Grok 4.3, MiniMax v3, and Opus 4.8](/en/2026/06/01/llm-benchmarks-grok-4-3-minimax-m3-opus-4-8/)
 
 ## 2026 - May
