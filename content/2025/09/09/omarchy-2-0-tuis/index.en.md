@@ -118,7 +118,7 @@ If you use Discord, there's [**discordo**](https://github.com/ayn2op/discordo):
 
 Anyone who does a lot of Linux ricing has had to burn ISOs to USB sticks dozens of times; for that there's `dd` on the command line, but there's a cooler TUI called [**Caligula**](https://github.com/ifd3f/caligula):
 
-![Caligula](https://github.com/ifd3f/caligula/raw/main/images/verifying.png)
+![Caligula burning a disk image in the terminal: a "Burning... 251.7 MB" bar at the top, a write-speed graph oscillating up to 32 MB/s over ~12 seconds, and a Stats panel showing input `my_cool.img.lz4`, output `/dev/sdb`, average write of 20.2 MB/s, and an ETA of 24 seconds.](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2025/09/09/omarchy-2-0-tuis/caligula-burning.png)
 
 If your SSD is filling up and you have no idea where the hell all that space is going, there are several tools to analyze and show you. One of them is [**gdu**](https://github.com/dundee/gdu):
 
@@ -132,7 +132,7 @@ Why open Google Spreadsheets just to make a Todo list if you can do it in the Te
 
 If you want to discover more TUIs check out [**awesome-tuis**](https://github.com/rothgar/awesome-tuis/?tab=readme-ov-file) on GitHub:
 
-[![awesome tuis](https://github.com/rothgar/awesome-tuis/raw/master/img/banner.png)](https://github.com/rothgar/awesome-tuis/?tab=readme-ov-file)
+[![awesome tuis](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2025/09/09/omarchy-2-0-tuis/awesome-tuis-banner.png)](https://github.com/rothgar/awesome-tuis/?tab=readme-ov-file)
 Again: zero need for heavy web front-ends for simple things. Nothing beats the simplicity of a command line. And with libraries like BubbleTea or Gum, it's now very easy for anyone to make a pretty app. And with Hyprland and Omarchy, everything stays integrated side-by-side with any other GUI app.
 
 Getting a bit philosophical, the history of GUIs starts with _skeuomorphic_ graphical interfaces that try to imitate objects from our daily life, particularly looking pseudo-3D, like Windows 95 was. The 2000s arrived and they started migrating to _flat_ or _minimalist_ interfaces, completely removing the skeuomorphism, making everything flat. That came mainly from Windows 8's Metro. And I think that's converging toward a more TUI-like style, coming full circle, going back to how it was on 70s terminals. Personally, I find that fascinating.

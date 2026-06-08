@@ -117,7 +117,7 @@ Se usar Discord, tem o [**discordo**](https://github.com/ayn2op/discordo):
 
 Quem faz muito ricing de Linux já teve que gravar ISOs em Pen Drives dezenas de vezes, pra isso tem o `dd` na linha de comando, mas tem um TUI mais legal que é o [**Caligula**](https://github.com/ifd3f/caligula):
 
-![Caligula](https://github.com/ifd3f/caligula/raw/main/images/verifying.png)
+![Caligula gravando uma imagem de disco no terminal: barra "Burning... 251.7 MB" no topo, um gráfico de velocidade de escrita oscilando até 32 MB/s ao longo de ~12 segundos, e um painel de Stats mostrando entrada `my_cool.img.lz4`, saída `/dev/sdb`, média de escrita de 20.2 MB/s e ETA de 24 segundos.](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2025/09/09/omarchy-2-0-tuis/caligula-burning.png)
 
 Se seu SSD está ficando cheio e você não sabe onde diabos que tá ocupando tanto espaço, tem várias ferramentas pra analisar e te mostrar, um deles é o [**gdu**](https://github.com/dundee/gdu):
 
@@ -131,7 +131,7 @@ Pra que abrir Google Spreadsheets só pra fazer um Todo list se dá pra fazer no
 
 Se quiser conhecer mais TUIs olhe o [**awesome-tuis**](https://github.com/rothgar/awesome-tuis/?tab=readme-ov-file) no GitHub:
 
-[![awesome tuis](https://github.com/rothgar/awesome-tuis/raw/master/img/banner.png)](https://github.com/rothgar/awesome-tuis/?tab=readme-ov-file)
+[![awesome tuis](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2025/09/09/omarchy-2-0-tuis/awesome-tuis-banner.png)](https://github.com/rothgar/awesome-tuis/?tab=readme-ov-file)
 De novo: zero necessidade de front-ends web pesadas pra coisas simples. Nada supera a simplicidade de uma linha de comando. E com bibliotecas como BubbleTea ou Gum, está muito fácil pra qualquer um fazer um app bonito. E com Hyprland e Omarchy, fica tudo integrado lado-a-lado de qualquer outro app com GUI.
 
 Filosofando um pouco, a história das GUIs começa com interfaces gráficas _skeumorphic_ que tentam imitar objetos do nosso dia a dia, em particular parecendo pseudo-3D, como era um Windows 95. Chegou nos anos 2000 e começaram a migrar pra interfaces _flat_ ou _minimalistas_, tirando completamente o skeumorphismo, deixando tudo plano. Foi a partir do Metro do Windows 8, principalmente. E eu acho que isso converge pra estilo mais de TUI, dando uma volta completa, voltando a como era nos terminais dos anos 70. Eu particularmente acho isso fascinante.
