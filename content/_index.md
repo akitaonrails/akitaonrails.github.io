@@ -6,6 +6,7 @@ title: AkitaOnRails Blog
 
 ## 2026 - Junho
 
+- [Burlando o bloqueio à API do GitHub no Brasil](/2026/06/11/burlando-bloqueio-api-github-brasil/)
 - [LLM Benchmark: Fable 5 e a novela da Anthropic](/2026/06/11/llm-benchmark-fable-5-e-a-novela-da-anthropic/)
 - [Brincando de TUI com LLMs - Ratatui+Bubbletea](/2026/06/08/brincando-tui-llms-ratatui-bubbletea/)
 - [Controvérsia de IA em contribuições de projetos de código aberto - minha opinião](/2026/06/05/controversia-ia-contribuicoes-projetos-codigo-aberto-minha-opiniao/)
