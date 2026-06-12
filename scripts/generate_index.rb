@@ -17,6 +17,34 @@ OFF_TOPIC_FILE = "#{OFF_TOPIC_DIR}/_index.md"
 OFF_TOPIC_FILE_EN = "#{OFF_TOPIC_DIR}/_index.en.md"
 FRONTMATTER_DELIMITER = '---'
 
+FEATURED_POSTS = [
+  ['2026-06-11', 'LLM Benchmark: Fable 5 e a novela da Anthropic', '/2026/06/11/llm-benchmark-fable-5-e-a-novela-da-anthropic/'],
+  ['2026-06-05', 'Controvérsia de IA em contribuições de projetos de código aberto - minha opinião', '/2026/06/05/controversia-ia-contribuicoes-projetos-codigo-aberto-minha-opiniao/'],
+  ['2026-05-30', 'Boas práticas de projetos de código aberto com LLM - O Mínimo', '/2026/05/30/boas-praticas-projetos-codigo-aberto-llm-o-minimo/'],
+  ['2026-04-25', 'LLM Benchmarks: Vale a Pena ($$) Misturar 2 Modelos? (Planner + Executor)', '/2026/04/25/llm-benchmarks-vale-a-pena-misturar-2-modelos/'],
+  ['2026-04-20', 'Clean Code pra Agentes de IA', '/2026/04/20/clean-code-para-agentes-de-ia/'],
+  ['2026-04-11', 'VS Code é o novo Cartão Perfurado', '/2026/04/11/vs-code-e-o-novo-cartao-perfurado/'],
+  ['2026-02-24', 'RANT: o Akita abriu as pernas pra IA??', '/2026/02/24/rant-o-akita-abriu-as-pernas-pra-ia/'],
+  ['2026-02-16', 'Vibe Code: Do Zero à Produção em 6 DIAS | The M.Akita Chronicles', '/2026/02/16/vibe-code-do-zero-a-producao-em-6-dias-the-m-akita-chronicles/'],
+  ['2026-02-08', 'RANT: IA acabou com os programadores?', '/2026/02/08/rant-ia-acabou-com-programadores/'],
+  ['2025-06-18', 'AGI ou Skynet não vão chegar tão cedo', '/2025/06/18/agi-ou-skynet-nao-vai-chegar-tao-cedo/'],
+  ['2025-05-02', 'RANT - LLMs são LOOT BOXES!', '/2025/05/02/rant-llms-sao-loot-boxes/']
+].freeze
+
+FEATURED_POSTS_EN = [
+  ['2026-06-11', 'LLM Benchmark: Fable 5 and the Anthropic Soap Opera', '/en/2026/06/11/llm-benchmark-fable-5-anthropic-soap-opera/'],
+  ['2026-06-05', 'AI Controversy in Open Source Project Contributions - My Take', '/en/2026/06/05/ai-controversy-open-source-project-contributions-my-take/'],
+  ['2026-05-30', 'Open Source Best Practices with LLMs - The Bare Minimum', '/en/2026/05/30/open-source-best-practices-llm-the-minimum/'],
+  ['2026-04-25', 'LLM Benchmarks: Is It Worth ($$) Mixing 2 Models? (Planner + Executor)', '/en/2026/04/25/llm-benchmarks-vale-a-pena-misturar-2-modelos/'],
+  ['2026-04-20', 'Clean Code for AI Agents', '/en/2026/04/20/clean-code-for-ai-agents/'],
+  ['2026-04-11', 'VS Code Is the New Punch Card', '/en/2026/04/11/vs-code-is-the-new-punch-card/'],
+  ['2026-02-24', 'RANT: Did Akita Bend Over for AI??', '/en/2026/02/24/rant-akita-caved-to-ai/'],
+  ['2026-02-16', 'Vibe Code: From Zero to Production in 6 DAYS | The M.Akita Chronicles', '/en/2026/02/16/vibe-code-zero-to-production-in-6-days-the-m-akita-chronicles/'],
+  ['2026-02-08', 'RANT: Did AI Kill Programmers?', '/en/2026/02/08/rant-ai-killed-programmers/'],
+  ['2025-06-18', "AGI or Skynet Isn't Coming Anytime Soon", '/en/2025/06/18/agi-or-skynet-isnt-coming-anytime-soon/'],
+  ['2025-05-02', 'RANT - LLMs are LOOT BOXES!', '/en/2025/05/02/rant-llms-are-loot-boxes/']
+].freeze
+
 # Posts from January of last year onward appear on the main index.
 # Everything older goes to the archives page.
 CUTOFF_YEAR = Date.today.year - 1
@@ -160,10 +188,33 @@ def render_months(grouped_posts, lang: :pt)
   lines
 end
 
+def render_featured_posts
+  lines = ["## Destaques\n"]
+
+  FEATURED_POSTS.each do |date, title, url|
+    lines << "- `#{date}` — [#{escape_markdown(title)}](#{url})"
+  end
+
+  lines << ''
+  lines
+end
+
+def render_featured_posts_en
+  lines = ["## Featured\n"]
+
+  FEATURED_POSTS_EN.each do |date, title, url|
+    lines << "- `#{date}` — [#{escape_markdown(title)}](#{url})"
+  end
+
+  lines << ''
+  lines
+end
+
 def generate_index(grouped_posts)
   lines = ["#{FRONTMATTER_DELIMITER}\ntitle: AkitaOnRails Blog\n#{FRONTMATTER_DELIMITER}\n"]
   lines << '{{< lang-toggle >}}'
   lines << ''
+  lines.concat(render_featured_posts)
   lines.concat(render_months(grouped_posts, lang: :pt))
   lines << "[Arquivo completo →](/archives/)\n"
   lines.join("\n")
@@ -183,6 +234,7 @@ def generate_index_en(grouped_posts)
   lines = ["#{FRONTMATTER_DELIMITER}\ntitle: AkitaOnRails Blog\n#{FRONTMATTER_DELIMITER}\n"]
   lines << '{{< lang-toggle >}}'
   lines << ''
+  lines.concat(render_featured_posts_en)
   if grouped_posts.empty?
     lines << "_No posts translated to English yet. Check back soon._\n"
   else

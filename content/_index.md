@@ -4,6 +4,20 @@ title: AkitaOnRails Blog
 
 {{< lang-toggle >}}
 
+## Destaques
+
+- `2026-06-11` — [LLM Benchmark: Fable 5 e a novela da Anthropic](/2026/06/11/llm-benchmark-fable-5-e-a-novela-da-anthropic/)
+- `2026-06-05` — [Controvérsia de IA em contribuições de projetos de código aberto - minha opinião](/2026/06/05/controversia-ia-contribuicoes-projetos-codigo-aberto-minha-opiniao/)
+- `2026-05-30` — [Boas práticas de projetos de código aberto com LLM - O Mínimo](/2026/05/30/boas-praticas-projetos-codigo-aberto-llm-o-minimo/)
+- `2026-04-25` — [LLM Benchmarks: Vale a Pena ($$) Misturar 2 Modelos? (Planner + Executor)](/2026/04/25/llm-benchmarks-vale-a-pena-misturar-2-modelos/)
+- `2026-04-20` — [Clean Code pra Agentes de IA](/2026/04/20/clean-code-para-agentes-de-ia/)
+- `2026-04-11` — [VS Code é o novo Cartão Perfurado](/2026/04/11/vs-code-e-o-novo-cartao-perfurado/)
+- `2026-02-24` — [RANT: o Akita abriu as pernas pra IA??](/2026/02/24/rant-o-akita-abriu-as-pernas-pra-ia/)
+- `2026-02-16` — [Vibe Code: Do Zero à Produção em 6 DIAS | The M.Akita Chronicles](/2026/02/16/vibe-code-do-zero-a-producao-em-6-dias-the-m-akita-chronicles/)
+- `2026-02-08` — [RANT: IA acabou com os programadores?](/2026/02/08/rant-ia-acabou-com-programadores/)
+- `2025-06-18` — [AGI ou Skynet não vão chegar tão cedo](/2025/06/18/agi-ou-skynet-nao-vai-chegar-tao-cedo/)
+- `2025-05-02` — [RANT - LLMs são LOOT BOXES!](/2025/05/02/rant-llms-sao-loot-boxes/)
+
 ## 2026 - Junho
 
 - [Burlando o bloqueio à API do GitHub no Brasil](/2026/06/11/burlando-bloqueio-api-github-brasil/)

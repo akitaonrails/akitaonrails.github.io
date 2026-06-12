@@ -4,6 +4,20 @@ title: AkitaOnRails Blog
 
 {{< lang-toggle >}}
 
+## Featured
+
+- `2026-06-11` — [LLM Benchmark: Fable 5 and the Anthropic Soap Opera](/en/2026/06/11/llm-benchmark-fable-5-anthropic-soap-opera/)
+- `2026-06-05` — [AI Controversy in Open Source Project Contributions - My Take](/en/2026/06/05/ai-controversy-open-source-project-contributions-my-take/)
+- `2026-05-30` — [Open Source Best Practices with LLMs - The Bare Minimum](/en/2026/05/30/open-source-best-practices-llm-the-minimum/)
+- `2026-04-25` — [LLM Benchmarks: Is It Worth ($$) Mixing 2 Models? (Planner + Executor)](/en/2026/04/25/llm-benchmarks-vale-a-pena-misturar-2-modelos/)
+- `2026-04-20` — [Clean Code for AI Agents](/en/2026/04/20/clean-code-for-ai-agents/)
+- `2026-04-11` — [VS Code Is the New Punch Card](/en/2026/04/11/vs-code-is-the-new-punch-card/)
+- `2026-02-24` — [RANT: Did Akita Bend Over for AI??](/en/2026/02/24/rant-akita-caved-to-ai/)
+- `2026-02-16` — [Vibe Code: From Zero to Production in 6 DAYS | The M.Akita Chronicles](/en/2026/02/16/vibe-code-zero-to-production-in-6-days-the-m-akita-chronicles/)
+- `2026-02-08` — [RANT: Did AI Kill Programmers?](/en/2026/02/08/rant-ai-killed-programmers/)
+- `2025-06-18` — [AGI or Skynet Isn't Coming Anytime Soon](/en/2025/06/18/agi-or-skynet-isnt-coming-anytime-soon/)
+- `2025-05-02` — [RANT - LLMs are LOOT BOXES!](/en/2025/05/02/rant-llms-are-loot-boxes/)
+
 ## 2026 - June
 
 - [Bypassing the GitHub API Block in Brazil](/en/2026/06/11/bypassing-github-api-block-brazil/)
