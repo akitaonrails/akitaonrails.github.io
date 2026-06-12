@@ -10,6 +10,7 @@ title: AkitaOnRails Blog
 - `2026-06-05` — [Controvérsia de IA em contribuições de projetos de código aberto - minha opinião](/2026/06/05/controversia-ia-contribuicoes-projetos-codigo-aberto-minha-opiniao/)
 - `2026-05-30` — [Boas práticas de projetos de código aberto com LLM - O Mínimo](/2026/05/30/boas-praticas-projetos-codigo-aberto-llm-o-minimo/)
 - `2026-04-25` — [LLM Benchmarks: Vale a Pena ($$) Misturar 2 Modelos? (Planner + Executor)](/2026/04/25/llm-benchmarks-vale-a-pena-misturar-2-modelos/)
+- `2026-04-24` — [Benchmark de LLMs pra Coding (Maio 2026): DeepSeek v4, Kimi v2.6, Grok 4.3, GPT 5.5](/2026/04/24/llm-benchmarks-parte-3-deepseek-kimi-mimo/)
 - `2026-04-20` — [Clean Code pra Agentes de IA](/2026/04/20/clean-code-para-agentes-de-ia/)
 - `2026-04-11` — [VS Code é o novo Cartão Perfurado](/2026/04/11/vs-code-e-o-novo-cartao-perfurado/)
 - `2026-02-24` — [RANT: o Akita abriu as pernas pra IA??](/2026/02/24/rant-o-akita-abriu-as-pernas-pra-ia/)
