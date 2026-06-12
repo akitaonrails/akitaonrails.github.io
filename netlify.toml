@@ -6,6 +6,7 @@ command = "hugo --minify -b ${DEPLOY_PRIME_URL}"
 [build.environment]
 HUGO_VERSION = "0.161.1"
 GO_VERSION = "1.22"
+HUGO_CACHEDIR = "/opt/build/cache/hugo_cache"
 
 # Persist Hugo's processed-assets cache (resources/_gen) and module/remote
 # resource cache across builds. First build after enabling is cold; every

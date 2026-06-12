@@ -1,0 +1,5 @@
+{{- $context := .context -}}
+
+{{- range $tag := $context.Params.tags -}}
+  <span class="hx:inline-block hx:whitespace-nowrap hx:mr-2 hx:text-gray-500 hx:dark:text-gray-400 hx:contrast-more:text-gray-800 hx:contrast-more:dark:text-gray-50">#{{ $tag }}</span>
+{{- end -}}

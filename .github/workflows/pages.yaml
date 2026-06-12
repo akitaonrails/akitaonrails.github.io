@@ -36,7 +36,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # fetch all history for .GitInfo and .Lastmod
+          fetch-depth: 1
           submodules: recursive
       - name: Setup Go
         uses: actions/setup-go@v5
@@ -49,15 +49,25 @@ jobs:
         run: |
           wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
           && sudo dpkg -i ${{ runner.temp }}/hugo.deb
+      - name: Cache Hugo build artifacts
+        uses: actions/cache@v4
+        with:
+          path: |
+            resources/_gen
+            /tmp/hugo_cache
+          key: ${{ runner.os }}-hugo-${{ hashFiles('go.mod', 'go.sum', 'hugo.yaml', 'assets/**', 'layouts/**', '_vendor/**') }}
+          restore-keys: |
+            ${{ runner.os }}-hugo-
       - name: Build with Hugo
         env:
           # For maximum backward compatibility with Hugo modules
           HUGO_ENVIRONMENT: production
           HUGO_ENV: production
+          HUGO_CACHEDIR: /tmp/hugo_cache
         run: |
           hugo \
-            --gc --minify \
-          --baseURL "https://${{ github.repository_owner }}.github.io/"
+            --minify \
+            --baseURL "https://${{ github.repository_owner }}.github.io/"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
