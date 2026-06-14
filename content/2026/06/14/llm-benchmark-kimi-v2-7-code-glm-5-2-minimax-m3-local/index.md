@@ -64,7 +64,7 @@ A leitura geral: GLM 5.1 → 5.2 é o exemplo mais claro de que open source não
 
 Aqui a história é diferente, e é a que mais interessa pro argumento de futuro. A MiniMax soltou **pesos abertos** do M3: existe um [`unsloth/MiniMax-M3-GGUF`](https://huggingface.co/unsloth/MiniMax-M3-GGUF) e uma entrada [`ollama.com/library/minimax-m3`](https://ollama.com/library/minimax-m3). Disponibilidade não é o problema. **Memória é.**
 
-O M3 é um MoE de **230 bilhões de parâmetros totais e 9,8 bilhões ativos** (algumas contagens chegam a ~426B) espalhados por 256 experts. E aqui mora a pegadinha do MoE: mesmo que só ~10B ativem por token, o conjunto **inteiro** de pesos precisa estar residente em memória. Não dá pra paginar expert ocioso pra CPU sem introduzir latência que mata a inferência interativa. Ou seja, o número que importa é o tamanho total, não o ativo:
+O M3 é um MoE/MSA de **~428 bilhões de parâmetros totais e ~23 bilhões ativos por token** (~427B nos safetensors; a NVIDIA lista ~22B ativos, por diferença de arredondamento/contagem) espalhados por **128 experts, com 4 ativos por token**. E aqui mora a pegadinha do MoE: mesmo que só ~23B ativem por token, o conjunto **inteiro** de pesos precisa estar residente em memória. Não dá pra paginar expert ocioso pra CPU sem introduzir latência que mata a inferência interativa. Ou seja, o número que importa é o tamanho total, não o ativo:
 
 | Quantização | Tamanho GGUF | RTX 5090 (32 GB) | Strix Halo (≤128 GB) |
 |---|---|:---:|:---:|
