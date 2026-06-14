@@ -21,6 +21,7 @@ title: AkitaOnRails Blog
 
 ## 2026 - June
 
+- [LLM Benchmark: Kimi v2.7 Code, GLM 5.2, MiniMax M3 Local](/en/2026/06/14/llm-benchmark-kimi-2-7-code-glm-5-2-minimax-m3-local/)
 - [Bypassing the GitHub API Block in Brazil](/en/2026/06/11/bypassing-github-api-block-brazil/)
 - [LLM Benchmark: Fable 5 and the Anthropic Soap Opera](/en/2026/06/11/llm-benchmark-fable-5-anthropic-soap-opera/)
 - [Playing with TUIs and LLMs - Ratatui+Bubbletea](/en/2026/06/08/playing-with-tuis-llms-ratatui-bubbletea/)
