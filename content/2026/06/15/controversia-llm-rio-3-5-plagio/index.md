@@ -16,7 +16,7 @@ tags:
 ---
 
 <figure>
-  <img src="rio35.png" alt="Meme do Scooby-Doo removendo a máscara de Rio-3.5-Open-397B e revelando Nex-N2-Pro" />
+  <img src="https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/06/15/rio-3-5/rio35.png" alt="Meme do Scooby-Doo removendo a máscara de Rio-3.5-Open-397B e revelando Nex-N2-Pro" />
   <figcaption>O meme é engraçado porque resume a acusação inteira. Mas vamos separar piada, evidência técnica e licença.</figcaption>
 </figure>
 
@@ -107,7 +107,7 @@ O ponto fraco: até alguém reproduzir independentemente, isso continua sendo um
 ## O tweet da Nex
 
 <figure>
-  <img src="nex-tweet-rio35.png" alt="Screenshot do tweet da Nex dizendo que Rio 3.5 é essencialmente Nex N2 Pro com outro chapéu" />
+  <img src="https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/06/15/rio-3-5/nex-tweet-rio35.png" alt="Screenshot do tweet da Nex dizendo que Rio 3.5 é essencialmente Nex N2 Pro com outro chapéu" />
   <figcaption>Screenshot do tweet da Nex. Link original: <a href="https://x.com/NexEcosystem/status/2066180407100571714">x.com/NexEcosystem/status/2066180407100571714</a>.</figcaption>
 </figure>
 

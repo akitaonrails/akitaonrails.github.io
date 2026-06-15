@@ -16,7 +16,7 @@ tags:
 ---
 
 <figure>
-  <img src="rio35.png" alt="Scooby-Doo meme unmasking Rio-3.5-Open-397B and revealing Nex-N2-Pro" />
+  <img src="https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/06/15/rio-3-5/rio35.png" alt="Scooby-Doo meme unmasking Rio-3.5-Open-397B and revealing Nex-N2-Pro" />
   <figcaption>The meme is funny because it summarizes the accusation. But let's separate the joke, the technical evidence, and the license question.</figcaption>
 </figure>
 
@@ -107,7 +107,7 @@ The weak point: until someone reproduces it independently, this is still an anal
 ## Nex's tweet
 
 <figure>
-  <img src="nex-tweet-rio35.png" alt="Screenshot of Nex's tweet saying Rio 3.5 is essentially Nex N2 Pro wearing a different hat" />
+  <img src="https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/06/15/rio-3-5/nex-tweet-rio35.png" alt="Screenshot of Nex's tweet saying Rio 3.5 is essentially Nex N2 Pro wearing a different hat" />
   <figcaption>Screenshot of Nex's tweet. Original link: <a href="https://x.com/NexEcosystem/status/2066180407100571714">x.com/NexEcosystem/status/2066180407100571714</a>.</figcaption>
 </figure>
 
