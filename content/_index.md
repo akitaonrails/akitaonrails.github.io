@@ -4,23 +4,105 @@ title: AkitaOnRails Blog
 
 {{< lang-toggle >}}
 
-## Destaques
+<section id="aor-featured-posts" class="aor-featured" data-button-open="Esconder" data-button-closed="Mostrar">
+  <div class="aor-featured__header">
+    <h2>Destaques</h2>
+    <button class="aor-featured__toggle" type="button" aria-expanded="true" aria-controls="aor-featured-posts-body">Esconder</button>
+  </div>
+  <div id="aor-featured-posts-body" class="aor-featured__body">
+    <ul>
+          <li><code>2026-06-11</code> — <a href="/2026/06/11/llm-benchmark-fable-5-e-a-novela-da-anthropic/">LLM Benchmark: Fable 5 e a novela da Anthropic</a></li>
+          <li><code>2026-06-05</code> — <a href="/2026/06/05/controversia-ia-contribuicoes-projetos-codigo-aberto-minha-opiniao/">Controvérsia de IA em contribuições de projetos de código aberto - minha opinião</a></li>
+          <li><code>2026-05-30</code> — <a href="/2026/05/30/boas-praticas-projetos-codigo-aberto-llm-o-minimo/">Boas práticas de projetos de código aberto com LLM - O Mínimo</a></li>
+          <li><code>2026-04-25</code> — <a href="/2026/04/25/llm-benchmarks-vale-a-pena-misturar-2-modelos/">LLM Benchmarks: Vale a Pena ($$) Misturar 2 Modelos? (Planner + Executor)</a></li>
+          <li><code>2026-04-24</code> — <a href="/2026/04/24/llm-benchmarks-parte-3-deepseek-kimi-mimo/">Benchmark de LLMs pra Coding (Maio 2026): DeepSeek v4, Kimi v2.6, Grok 4.3, GPT 5.5</a></li>
+          <li><code>2026-04-20</code> — <a href="/2026/04/20/clean-code-para-agentes-de-ia/">Clean Code pra Agentes de IA</a></li>
+          <li><code>2026-04-11</code> — <a href="/2026/04/11/vs-code-e-o-novo-cartao-perfurado/">VS Code é o novo Cartão Perfurado</a></li>
+          <li><code>2026-02-24</code> — <a href="/2026/02/24/rant-o-akita-abriu-as-pernas-pra-ia/">RANT: o Akita abriu as pernas pra IA??</a></li>
+          <li><code>2026-02-16</code> — <a href="/2026/02/16/vibe-code-do-zero-a-producao-em-6-dias-the-m-akita-chronicles/">Vibe Code: Do Zero à Produção em 6 DIAS | The M.Akita Chronicles</a></li>
+          <li><code>2026-02-08</code> — <a href="/2026/02/08/rant-ia-acabou-com-programadores/">RANT: IA acabou com os programadores?</a></li>
+          <li><code>2025-06-18</code> — <a href="/2025/06/18/agi-ou-skynet-nao-vai-chegar-tao-cedo/">AGI ou Skynet não vão chegar tão cedo</a></li>
+          <li><code>2025-05-02</code> — <a href="/2025/05/02/rant-llms-sao-loot-boxes/">RANT - LLMs são LOOT BOXES!</a></li>
+    </ul>
+  </div>
+</section>
 
-- `2026-06-11` — [LLM Benchmark: Fable 5 e a novela da Anthropic](/2026/06/11/llm-benchmark-fable-5-e-a-novela-da-anthropic/)
-- `2026-06-05` — [Controvérsia de IA em contribuições de projetos de código aberto - minha opinião](/2026/06/05/controversia-ia-contribuicoes-projetos-codigo-aberto-minha-opiniao/)
-- `2026-05-30` — [Boas práticas de projetos de código aberto com LLM - O Mínimo](/2026/05/30/boas-praticas-projetos-codigo-aberto-llm-o-minimo/)
-- `2026-04-25` — [LLM Benchmarks: Vale a Pena ($$) Misturar 2 Modelos? (Planner + Executor)](/2026/04/25/llm-benchmarks-vale-a-pena-misturar-2-modelos/)
-- `2026-04-24` — [Benchmark de LLMs pra Coding (Maio 2026): DeepSeek v4, Kimi v2.6, Grok 4.3, GPT 5.5](/2026/04/24/llm-benchmarks-parte-3-deepseek-kimi-mimo/)
-- `2026-04-20` — [Clean Code pra Agentes de IA](/2026/04/20/clean-code-para-agentes-de-ia/)
-- `2026-04-11` — [VS Code é o novo Cartão Perfurado](/2026/04/11/vs-code-e-o-novo-cartao-perfurado/)
-- `2026-02-24` — [RANT: o Akita abriu as pernas pra IA??](/2026/02/24/rant-o-akita-abriu-as-pernas-pra-ia/)
-- `2026-02-16` — [Vibe Code: Do Zero à Produção em 6 DIAS | The M.Akita Chronicles](/2026/02/16/vibe-code-do-zero-a-producao-em-6-dias-the-m-akita-chronicles/)
-- `2026-02-08` — [RANT: IA acabou com os programadores?](/2026/02/08/rant-ia-acabou-com-programadores/)
-- `2025-06-18` — [AGI ou Skynet não vão chegar tão cedo](/2025/06/18/agi-ou-skynet-nao-vai-chegar-tao-cedo/)
-- `2025-05-02` — [RANT - LLMs são LOOT BOXES!](/2025/05/02/rant-llms-sao-loot-boxes/)
+<style>
+  .aor-featured {
+    margin: 1.5rem 0;
+    padding: 0.75rem 1rem;
+    border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+    border-radius: 0.75rem;
+  }
+
+  .aor-featured__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .aor-featured__header h2 {
+    margin: 0;
+  }
+
+  .aor-featured__toggle {
+    cursor: pointer;
+    border: 1px solid color-mix(in srgb, currentColor 25%, transparent);
+    border-radius: 999px;
+    padding: 0.25rem 0.7rem;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    font-size: 0.9rem;
+  }
+
+  .aor-featured__body {
+    overflow: hidden;
+    transition: max-height 220ms ease, opacity 160ms ease, margin-top 220ms ease;
+    max-height: 40rem;
+    opacity: 1;
+    margin-top: 0.75rem;
+  }
+
+  .aor-featured.is-collapsed .aor-featured__body {
+    max-height: 0;
+    opacity: 0;
+    margin-top: 0;
+  }
+</style>
+
+<script>
+  (function () {
+    var box = document.getElementById('aor-featured-posts');
+    if (!box) return;
+
+    var button = box.querySelector('.aor-featured__toggle');
+    var interacted = false;
+    var openLabel = box.getAttribute('data-button-open') || 'Hide';
+    var closedLabel = box.getAttribute('data-button-closed') || 'Show';
+
+    function setCollapsed(collapsed) {
+      box.classList.toggle('is-collapsed', collapsed);
+      button.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
+      button.textContent = collapsed ? closedLabel : openLabel;
+    }
+
+    button.addEventListener('click', function () {
+      interacted = true;
+      setCollapsed(!box.classList.contains('is-collapsed'));
+    });
+
+    window.setTimeout(function () {
+      if (interacted) return;
+      setCollapsed(true);
+    }, 1000);
+  }());
+</script>
 
 ## 2026 - Junho
 
+- [A Controvérsia da LLM Rio 3.5. Plágio?](/2026/06/15/controversia-llm-rio-3-5-plagio/)
 - [ai-memory: arquitetura emergente e software maleável](/2026/06/14/ai-memory-arquitetura-emergente-e-software-maleavel/)
 - [LLM Benchmark: Kimi v2.7 code, GLM 5.2, Minimax M3 local](/2026/06/14/llm-benchmark-kimi-v2-7-code-glm-5-2-minimax-m3-local/)
 - [Burlando o bloqueio à API do GitHub no Brasil](/2026/06/11/burlando-bloqueio-api-github-brasil/)

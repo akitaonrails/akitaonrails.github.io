@@ -3,6 +3,7 @@
 
 require 'yaml'
 require 'date'
+require 'cgi'
 
 CONTENT_DIR = 'content'
 INDEX_FILE = "#{CONTENT_DIR}/_index.md"
@@ -53,6 +54,10 @@ CUTOFF_YEAR = Date.today.year - 1
 
 def escape_markdown(text)
   text.to_s.gsub('[', '\\[').gsub(']', '\\]')
+end
+
+def escape_html(text)
+  CGI.escapeHTML(text.to_s)
 end
 
 def extract_frontmatter(content)
@@ -191,22 +196,120 @@ def render_months(grouped_posts, lang: :pt)
 end
 
 def render_featured_posts
-  lines = ["## Destaques\n"]
-
-  FEATURED_POSTS.each do |date, title, url|
-    lines << "- `#{date}` — [#{escape_markdown(title)}](#{url})"
-  end
-
-  lines << ''
-  lines
+  render_featured_section(
+    id: 'aor-featured-posts',
+    title: 'Destaques',
+    button_open: 'Esconder',
+    button_closed: 'Mostrar',
+    posts: FEATURED_POSTS
+  )
 end
 
 def render_featured_posts_en
-  lines = ["## Featured\n"]
+  render_featured_section(
+    id: 'aor-featured-posts-en',
+    title: 'Featured',
+    button_open: 'Hide',
+    button_closed: 'Show',
+    posts: FEATURED_POSTS_EN
+  )
+end
 
-  FEATURED_POSTS_EN.each do |date, title, url|
-    lines << "- `#{date}` — [#{escape_markdown(title)}](#{url})"
+def render_featured_section(id:, title:, button_open:, button_closed:, posts:)
+  lines = []
+
+  lines << <<~HTML.chomp
+    <section id="#{id}" class="aor-featured" data-button-open="#{button_open}" data-button-closed="#{button_closed}">
+      <div class="aor-featured__header">
+        <h2>#{title}</h2>
+        <button class="aor-featured__toggle" type="button" aria-expanded="true" aria-controls="#{id}-body">#{button_open}</button>
+      </div>
+      <div id="#{id}-body" class="aor-featured__body">
+        <ul>
+  HTML
+
+  posts.each do |date, post_title, url|
+    lines << "          <li><code>#{escape_html(date)}</code> — <a href=\"#{escape_html(url)}\">#{escape_html(post_title)}</a></li>"
   end
+
+  lines << <<~HTML.chomp
+        </ul>
+      </div>
+    </section>
+
+    <style>
+      .aor-featured {
+        margin: 1.5rem 0;
+        padding: 0.75rem 1rem;
+        border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+        border-radius: 0.75rem;
+      }
+
+      .aor-featured__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+
+      .aor-featured__header h2 {
+        margin: 0;
+      }
+
+      .aor-featured__toggle {
+        cursor: pointer;
+        border: 1px solid color-mix(in srgb, currentColor 25%, transparent);
+        border-radius: 999px;
+        padding: 0.25rem 0.7rem;
+        background: transparent;
+        color: inherit;
+        font: inherit;
+        font-size: 0.9rem;
+      }
+
+      .aor-featured__body {
+        overflow: hidden;
+        transition: max-height 220ms ease, opacity 160ms ease, margin-top 220ms ease;
+        max-height: 40rem;
+        opacity: 1;
+        margin-top: 0.75rem;
+      }
+
+      .aor-featured.is-collapsed .aor-featured__body {
+        max-height: 0;
+        opacity: 0;
+        margin-top: 0;
+      }
+    </style>
+
+    <script>
+      (function () {
+        var box = document.getElementById('#{id}');
+        if (!box) return;
+
+        var button = box.querySelector('.aor-featured__toggle');
+        var interacted = false;
+        var openLabel = box.getAttribute('data-button-open') || 'Hide';
+        var closedLabel = box.getAttribute('data-button-closed') || 'Show';
+
+        function setCollapsed(collapsed) {
+          box.classList.toggle('is-collapsed', collapsed);
+          button.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
+          button.textContent = collapsed ? closedLabel : openLabel;
+        }
+
+        button.addEventListener('click', function () {
+          interacted = true;
+          setCollapsed(!box.classList.contains('is-collapsed'));
+        });
+
+        window.setTimeout(function () {
+          if (interacted) return;
+          setCollapsed(true);
+        }, 1000);
+      }());
+    </script>
+  HTML
 
   lines << ''
   lines
