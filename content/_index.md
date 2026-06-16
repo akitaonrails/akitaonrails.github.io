@@ -102,6 +102,7 @@ title: AkitaOnRails Blog
 
 ## 2026 - Junho
 
+- [ai-memory: memória de longo prazo (Karpathy Wiki) e auto-aprendizado (Hermes) pros seus projetos](/2026/06/16/ai-memory-memoria-longo-prazo-karpathy-wiki-auto-aprendizado-hermes-projetos/)
 - [A Controvérsia da LLM Rio 3.5. Plágio?](/2026/06/15/controversia-llm-rio-3-5-plagio/)
 - [ai-memory: arquitetura emergente e software maleável](/2026/06/14/ai-memory-arquitetura-emergente-e-software-maleavel/)
 - [LLM Benchmark: Kimi v2.7 code, GLM 5.2, Minimax M3 local](/2026/06/14/llm-benchmark-kimi-v2-7-code-glm-5-2-minimax-m3-local/)
