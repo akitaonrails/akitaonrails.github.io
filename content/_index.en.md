@@ -102,6 +102,7 @@ title: AkitaOnRails Blog
 
 ## 2026 - June
 
+- [Why LLMs Will Fail at Your Company](/en/2026/06/24/why-llms-will-fail-at-your-company/)
 - [ai-memory: long-term memory (Karpathy Wiki) and self-improvement (Hermes) for your projects](/en/2026/06/16/ai-memory-long-term-memory-karpathy-wiki-self-improvement-hermes-projects/)
 - [The Rio 3.5 LLM Controversy. Plagiarism?](/en/2026/06/15/rio-3-5-llm-controversy-plagiarism/)
 - [ai-memory: Emergent Architecture and Malleable Software](/en/2026/06/14/ai-memory-emergent-architecture-malleable-software/)
