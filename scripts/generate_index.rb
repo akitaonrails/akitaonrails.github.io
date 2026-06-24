@@ -19,6 +19,7 @@ OFF_TOPIC_FILE_EN = "#{OFF_TOPIC_DIR}/_index.en.md"
 FRONTMATTER_DELIMITER = '---'
 
 FEATURED_POSTS = [
+  ['2026-06-24', 'Por que LLMs vão falhar na Sua Empresa?', '/2026/06/24/por-que-llms-vao-falhar-na-sua-empresa/'],
   ['2026-06-11', 'LLM Benchmark: Fable 5 e a novela da Anthropic', '/2026/06/11/llm-benchmark-fable-5-e-a-novela-da-anthropic/'],
   ['2026-06-05', 'Controvérsia de IA em contribuições de projetos de código aberto - minha opinião', '/2026/06/05/controversia-ia-contribuicoes-projetos-codigo-aberto-minha-opiniao/'],
   ['2026-05-30', 'Boas práticas de projetos de código aberto com LLM - O Mínimo', '/2026/05/30/boas-praticas-projetos-codigo-aberto-llm-o-minimo/'],
@@ -34,6 +35,7 @@ FEATURED_POSTS = [
 ].freeze
 
 FEATURED_POSTS_EN = [
+  ['2026-06-24', 'Why LLMs Will Fail at Your Company', '/en/2026/06/24/why-llms-will-fail-at-your-company/'],
   ['2026-06-11', 'LLM Benchmark: Fable 5 and the Anthropic Soap Opera', '/en/2026/06/11/llm-benchmark-fable-5-anthropic-soap-opera/'],
   ['2026-06-05', 'AI Controversy in Open Source Project Contributions - My Take', '/en/2026/06/05/ai-controversy-open-source-project-contributions-my-take/'],
   ['2026-05-30', 'Open Source Best Practices with LLMs - The Bare Minimum', '/en/2026/05/30/open-source-best-practices-llm-the-minimum/'],

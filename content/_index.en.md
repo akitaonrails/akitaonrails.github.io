@@ -11,6 +11,7 @@ title: AkitaOnRails Blog
   </div>
   <div id="aor-featured-posts-en-body" class="aor-featured__body">
     <ul>
+          <li><code>2026-06-24</code> — <a href="/en/2026/06/24/why-llms-will-fail-at-your-company/">Why LLMs Will Fail at Your Company</a></li>
           <li><code>2026-06-11</code> — <a href="/en/2026/06/11/llm-benchmark-fable-5-anthropic-soap-opera/">LLM Benchmark: Fable 5 and the Anthropic Soap Opera</a></li>
           <li><code>2026-06-05</code> — <a href="/en/2026/06/05/ai-controversy-open-source-project-contributions-my-take/">AI Controversy in Open Source Project Contributions - My Take</a></li>
           <li><code>2026-05-30</code> — <a href="/en/2026/05/30/open-source-best-practices-llm-the-minimum/">Open Source Best Practices with LLMs - The Bare Minimum</a></li>

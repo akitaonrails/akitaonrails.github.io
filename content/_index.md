@@ -11,6 +11,7 @@ title: AkitaOnRails Blog
   </div>
   <div id="aor-featured-posts-body" class="aor-featured__body">
     <ul>
+          <li><code>2026-06-24</code> — <a href="/2026/06/24/por-que-llms-vao-falhar-na-sua-empresa/">Por que LLMs vão falhar na Sua Empresa?</a></li>
           <li><code>2026-06-11</code> — <a href="/2026/06/11/llm-benchmark-fable-5-e-a-novela-da-anthropic/">LLM Benchmark: Fable 5 e a novela da Anthropic</a></li>
           <li><code>2026-06-05</code> — <a href="/2026/06/05/controversia-ia-contribuicoes-projetos-codigo-aberto-minha-opiniao/">Controvérsia de IA em contribuições de projetos de código aberto - minha opinião</a></li>
           <li><code>2026-05-30</code> — <a href="/2026/05/30/boas-praticas-projetos-codigo-aberto-llm-o-minimo/">Boas práticas de projetos de código aberto com LLM - O Mínimo</a></li>
