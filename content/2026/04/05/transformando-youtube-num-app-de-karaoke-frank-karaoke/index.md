@@ -171,7 +171,7 @@ O README tem o resto.
 
 Stack: Flutter + Riverpod pra state management, `webview_flutter` pro YouTube, `youtube_explode_dart` pra extração de áudio, `record` pra captura PCM do microfone, `audio_decoder` pra decodificação de referência via Android MediaCodec, e o algoritmo YIN implementado em Dart puro.
 
-A documentação técnica do sistema de pontuação está em [`docs/scoring.md`](https://github.com/akitaonrails/frank_karaoke/blob/main/docs/scoring.md) no repositório. Cobre como SingStar, Joysound e DAM funcionam, os papers acadêmicos, a arquitetura do pitch oracle, os problemas de isolamento de voz no Android, e o roadmap.
+A documentação técnica do sistema de pontuação está em [`docs/scoring.md`](https://github.com/akitaonrails/frank_karaoke/blob/master/docs/scoring.md) no repositório. Cobre como SingStar, Joysound e DAM funcionam, os papers acadêmicos, a arquitetura do pitch oracle, os problemas de isolamento de voz no Android, e o roadmap.
 
 ## A pontuação é experimental
 
