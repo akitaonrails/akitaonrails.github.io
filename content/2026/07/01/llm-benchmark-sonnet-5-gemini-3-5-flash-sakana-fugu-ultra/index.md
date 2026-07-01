@@ -16,17 +16,21 @@ tags:
   - vibecoding
 ---
 
-Mais uma rodada do meu benchmark de coding. Os três nomes da vez são **Sonnet 5**, **Gemini 3.5 Flash** e **Sakana Fugu Ultra**. O Sonnet 5 é o nome que chama atenção, mas a história da rodada não favorece a Anthropic. Ele entrou, rodou, passou no Docker, subiu no Compose, e mesmo assim terminou em **58/100, Tier C**. A primeira conversa real quebraria antes de chamar o modelo.
+Mais uma rodada do meu benchmark de coding. E desta vez tem aquele tipo de resultado que incomoda marketing.
+
+Os três nomes da vez são **Sonnet 5**, **Gemini 3.5 Flash** e **Sakana Fugu Ultra**. O Sonnet 5 é o nome que chama atenção. Modelo novo, marca forte, expectativa alta. Só que expectativa não compila. Ele rodou, passou no Docker, subiu no Compose, e mesmo assim terminou em **58/100, Tier C**. A primeira conversa real quebraria antes de chamar o modelo.
 
 O susto bom veio de outro lado: **Gemini 3.5 Flash** fez **93/100, Tier A, #6**. Um Flash. Acima de Kimi K2.6, GLM 5.2 e Gemini 3.1 Pro.
 
-E teve **Sakana Fugu Ultra**, que ficou no limite: **79/100, Tier B**, praticamente batendo na porta do Tier A. Qwen3.7 Max e Step 3.7 Flash também entraram, mas como elenco de apoio da rodada. O Nex é importante, só que eu já destrinchei o caso dele no post sobre a [controvérsia da Rio 3.5](/2026/06/15/controversia-llm-rio-3-5-plagio/), então aqui ele fica mais como linha de ranking e referência.
+E teve **Sakana Fugu Ultra**, que ficou no limite: **79/100, Tier B**, batendo na porta do Tier A. Qwen3.7 Max e Step 3.7 Flash também entraram, mas como elenco de apoio. Nex é importante, só que já destrinchei o caso dele no post sobre a [controvérsia da Rio 3.5](/2026/06/15/controversia-llm-rio-3-5-plagio/). Aqui ele fica como linha de ranking e referência.
 
-Desde o [último benchmark](/2026/06/14/llm-benchmark-kimi-v2-7-code-glm-5-2-minimax-m3-local/) não mudou minha recomendação prática: se é programação séria, sessão longa, mexendo em projeto real, continuo em **Opus 4.8** ou **GPT 5.5**, usando Claude Code, Codex ou OpenCode. Mas o ranking mexeu bastante no meio da tabela. E o meio da tabela é onde dá pra enxergar a direção da indústria.
+Desde o [último benchmark](/2026/06/14/llm-benchmark-kimi-v2-7-code-glm-5-2-minimax-m3-local/) minha recomendação prática não mudou: programação séria, sessão longa, projeto real, hoje ainda é **Opus 4.8** ou **GPT 5.5**, usando Claude Code, Codex ou OpenCode. O que mudou foi o miolo da tabela. E é no miolo que dá pra ver quem está aprendendo e quem só trocou o número da versão.
 
 ## Pra quem caiu de paraquedas
 
-Esse benchmark dá o mesmo prompt pra cada modelo e pede pra ele construir, sozinho, um app de chat estilo ChatGPT em Rails 8 + RubyLLM + Hotwire + Docker, com testes e CI. A nota vai de 0 a 100, em tiers A/B/C/D, lendo o código gerado na mão. Não é benchmark sintético de múltipla escolha. É um agente tentando entregar um projetinho Rails inteiro.
+O teste é simples de explicar e chato de fazer. Dou o mesmo prompt pra cada modelo e peço pra construir, sozinho, um app de chat estilo ChatGPT em Rails 8 + RubyLLM + Hotwire + Docker, com testes e CI. Depois leio o código na mão e dou nota de 0 a 100, em tiers A/B/C/D.
+
+Não é múltipla escolha. Não é puzzle. Não é "complete esta função". É um agente tentando entregar um projetinho Rails inteiro. Ou entrega, ou tropeça.
 
 A série até agora:
 
@@ -36,15 +40,15 @@ A série até agora:
 4. [Fable 5 e a novela da Anthropic](/2026/06/11/llm-benchmark-fable-5-e-a-novela-da-anthropic/).
 5. [Kimi v2.7 code, GLM 5.2, MiniMax M3 local](/2026/06/14/llm-benchmark-kimi-v2-7-code-glm-5-2-minimax-m3-local/).
 
-A armadilha continua a mesma: a coluna "RubyLLM OK" não é detalhe cosmético. Se o modelo inventa uma API que não existe, o app morre no recurso principal. Às vezes tudo em volta parece bonito: Tailwind, Turbo, Docker, README, testes verdes. Aí você clica em "Enviar" e toma `NoMethodError`.
+A armadilha continua a mesma: a coluna "RubyLLM OK" não é enfeite. Se o modelo inventa uma API que não existe, o app morre no recurso principal. Às vezes tudo em volta parece bonito: Tailwind, Turbo, Docker, README, testes verdes. Aí você clica em "Enviar" e toma `NoMethodError`.
 
 ## A novela dos modelos fechados
 
-A Anthropic tinha colocado controles do governo americano em cima do **Claude Fable 5** e **Claude Mythos 5** em 12 de junho. A justificativa era a impossibilidade prática de verificar nacionalidade em tempo real em todos os canais globais. Em 30 de junho, esses controles foram suspensos para o Fable 5, e a Anthropic anunciou a volta gradual dele para Claude Platform, Claude.ai, Claude Code e Claude Cowork. Mythos 5 continua mais restrito, disponível para organizações americanas aprovadas, coordenado via Project Glasswing.
+A Anthropic tinha colocado controles do governo americano em cima do **Claude Fable 5** e **Claude Mythos 5** em 12 de junho. Motivo: não dava pra verificar nacionalidade em tempo real em todos os canais globais. Em 30 de junho, suspenderam os controles do Fable 5, e a Anthropic anunciou a volta gradual para Claude Platform, Claude.ai, Claude Code e Claude Cowork. Mythos 5 continua mais restrito, só para organizações americanas aprovadas via Project Glasswing.
 
 Fontes: [post da Anthropic sobre a volta do Fable 5](https://www.anthropic.com/news/redeploying-fable-5), [post original de Fable 5 e Mythos 5](https://www.anthropic.com/news/claude-fable-5-mythos-5), e [The Verge sobre a suspensão dos controles](https://www.theverge.com/ai-artificial-intelligence/958964/anthropic-claude-fable-5-is-back).
 
-Do lado da OpenAI, o **GPT-5.6** também apareceu oficialmente, mas ainda em preview limitado. Tem página da OpenAI e artigo no help center, mas não é algo amplamente disponível pra eu colocar no benchmark como coloco GPT 5.5 hoje. Então fica registrado, mas sem número ainda: [preview do GPT-5.6 Sol](https://openai.com/index/previewing-gpt-5-6-sol/) e [help center do GPT-5.6 Sol, Terra e Luna](https://help.openai.com/en/articles/20001325-a-preview-of-gpt-56-sol-terra-and-luna).
+Do lado da OpenAI, o **GPT-5.6** apareceu oficialmente, mas ainda em preview limitado. Tem página da OpenAI e artigo no help center. Não está disponível o bastante pra eu colocar no benchmark como coloco GPT 5.5 hoje. Então fica registrado, sem número ainda: [preview do GPT-5.6 Sol](https://openai.com/index/previewing-gpt-5-6-sol/) e [help center do GPT-5.6 Sol, Terra e Luna](https://help.openai.com/en/articles/20001325-a-preview-of-gpt-56-sol-terra-and-luna).
 
 ## Ranking atualizado
 
@@ -91,7 +95,7 @@ Os modelos novos desta rodada estão em negrito. Nex-N2-Pro e Qwen 3.5 397B base
 
 ## Sonnet 5: passou no Docker, falhou no coração
 
-O Sonnet 5 fez **58/100, Tier C, #25**. Parece estranho quando você lê que a fase 2 passou: boot local, Docker build e Docker Compose. O projeto tinha Rails 8, Turbo, Stimulus, Tailwind, README, CI, SimpleCov, Brakeman, RuboCop, bundler-audit. Em volta, tudo parecia no lugar.
+O Sonnet 5 fez **58/100, Tier C, #25**. E aqui está a parte que engana: a fase 2 passou. Boot local. Docker build. Docker Compose. O projeto tinha Rails 8, Turbo, Stimulus, Tailwind, README, CI, SimpleCov, Brakeman, RuboCop, bundler-audit. A casca estava bonita.
 
 O problema estava exatamente onde não podia estar: no caminho do LLM.
 
@@ -103,17 +107,17 @@ RubyLLM.chat(model: MODEL, provider: PROVIDER).tap do |chat|
 end
 ```
 
-Só que o RubyLLM 1.16 tem `messages`, `add_message`, `ask` e `with_instructions`. Ele não tem `messages=`. A primeira conversa real levanta `NoMethodError` antes de chegar no modelo. O teste não pega porque o `FakeChat` do próprio projeto define `attr_accessor :messages`, justamente o writer que não existe em produção.
+Só que o RubyLLM 1.16 tem `messages`, `add_message`, `ask` e `with_instructions`. Não tem `messages=`. A primeira conversa real levanta `NoMethodError` antes de chegar no modelo. O teste não pega porque o `FakeChat` do próprio projeto define `attr_accessor :messages`, justamente o writer que não existe em produção.
 
-Esse é o tipo de bug que me faz continuar lendo benchmark na mão. Build verde não garante integração correta. Teste verde pode ser pior que inútil quando o fake ensina uma mentira pro teste.
+Esse é o tipo de bug que me faz continuar lendo benchmark na mão. Build verde não prova integração correta. Teste verde pode ser pior que inútil quando o fake ensina uma mentira pro teste.
 
 Tem mais: o app gerado ainda defaultava para `anthropic/claude-sonnet-4.6`, não Sonnet 5, e deixava o system prompt sem `with_instructions`. A casca estava completa. O recurso principal estava quebrado.
 
-Resumo cruel: **Sonnet 5 passou no Docker e falhou no coração**. Se você paga Anthropic pra programar hoje, meu conselho continua sendo Opus 4.8, não Sonnet 5.
+Resumo cruel: **Sonnet 5 passou no Docker e falhou no coração**. Se você paga Anthropic pra programar hoje, continuo recomendando Opus 4.8. Não Sonnet 5.
 
 ## Gemini 3.5 Flash: o susto bom
 
-O Gemini 3.5 Flash foi o maior susto positivo da rodada: **93/100, Tier A, #6**. Melhor resultado não-Anthropic/não-OpenAI do benchmark até agora, 14 pontos acima do Gemini 3.1 Pro.
+O Gemini 3.5 Flash foi o tapa na cara da rodada: **93/100, Tier A, #6**. Melhor resultado não-Anthropic/não-OpenAI do benchmark até agora. Quatorze pontos acima do Gemini 3.1 Pro.
 
 A integração RubyLLM foi exemplar:
 
@@ -125,33 +129,35 @@ response = chat.complete
 @conversation.add_message(role: :assistant, content: response.content)
 ```
 
-Ele usou `with_instructions`, replay de histórico com `add_message`, `complete` e `response.content`. Tudo real. A suíte de testes foi a melhor desse grupo: `FakeChat` com assinatura compatível, stub no ponto certo (`RubyLLM.chat`), assert de parâmetros, replay de histórico e teste de erro.
+Ele usou `with_instructions`, replay de histórico com `add_message`, `complete` e `response.content`. Tudo real. A suíte de testes foi a melhor desse grupo: `FakeChat` com assinatura compatível, stub no ponto certo (`RubyLLM.chat`), assert de parâmetros, replay de histórico e teste de erro. Parece básico. Não é. A tabela inteira prova que não é.
 
-Também gostei da persistência. Ele grava em arquivo, em `tmp/chats/<id>.json`, com cap de 50 mensagens e preservando a mensagem de sistema. Sobrevive restart no mesmo host e é melhor que singleton em memória. Não é perfeito: falta lock de arquivo, `tmp/` é efêmero em container, e uma conversa concorrente pode gerar race. Também não tem preflight bonito de API key. Mas isso é detalhe corrigível perto do que ele acertou.
+Também gostei da persistência. Ele grava em arquivo, em `tmp/chats/<id>.json`, com cap de 50 mensagens e preservando a mensagem de sistema. Sobrevive restart no mesmo host e é melhor que singleton em memória. Falta lock de arquivo, `tmp/` é efêmero em container, e conversa concorrente pode dar race. Também não tem preflight bonito de API key. Tudo consertável.
 
-O custo incomoda. Mesmo sendo Flash, o run saiu por volta de **US$3,50**, mais caro que Opus 4.8 nesse benchmark, por churn alto de token. Então não dá pra vender como "baratinho". Mas como sinal de qualidade, é forte. Um Flash entrando em #6 muda minha intuição sobre a família Gemini.
+O custo incomoda. Mesmo sendo Flash, o run saiu por volta de **US$3,50**, mais caro que Opus 4.8 neste benchmark, por churn alto de token. Então não dá pra vender como "baratinho". Mas como sinal de qualidade é forte. Um Flash em #6 muda minha intuição sobre Gemini.
 
 ## Sakana Fugu Ultra: quase Tier A, faltou memória
 
-O **Sakana Fugu Ultra** entrou com **79/100, Tier B, #12 empatado**. Pra um provedor novo, foi uma estreia limpa. O harness funcionou, o app subiu, Docker/Compose passaram, RubyLLM era real (`chat`, `with_instructions`, `ask`, `response.content`), os testes usavam `FakeChat` correto, Turbo/Stimulus estavam bons.
+O **Sakana Fugu Ultra** entrou com **79/100, Tier B, #12 empatado**. Pra um provedor novo, foi uma estreia limpa. O harness funcionou. O app subiu. Docker/Compose passaram. RubyLLM era real (`chat`, `with_instructions`, `ask`, `response.content`). Os testes usavam `FakeChat` correto. Turbo/Stimulus estavam bons.
 
-O problema: o modelo só enxerga a última mensagem. O histórico é salvo e exibido, só não é replayado para o RubyLLM. Então a UI parece chat multi-turn. O LLM trabalha como se cada mensagem fosse a primeira. É quase Tier A, faltando justamente a parte que faz um chat ser chat.
+O problema é pequeno de explicar e grande de consequência: o modelo só enxerga a última mensagem. O histórico é salvo e exibido, só não é replayado para o RubyLLM. A UI parece chat multi-turn. O LLM trabalha como se cada mensagem fosse a primeira.
 
-Esse é o tipo de resultado que eu gosto de ver, mesmo quando não passa de Tier. Não é um desastre. Não é API inventada. É um app quase correto com uma falha específica, pequena de explicar e relativamente pequena de consertar. Trocar o repositório process-local por algo decente e replayar histórico com `add_message` já mudaria bastante a avaliação.
+Faltou justamente a parte que faz um chat ser chat.
+
+Mesmo assim, esse é o tipo de resultado que eu gosto de ver. Não é desastre. Não é API inventada. É um app quase correto com uma falha específica. Trocar o repositório process-local por algo decente e replayar histórico com `add_message` já mudaria bastante a avaliação.
 
 ## Qwen3.7, Step 3.7 e o rodapé do Qwen 3.6
 
-O **Qwen3.7 Max** fez **78/100, Tier B, #14 empatado**. A API RubyLLM estava correta, inclusive streaming e `reset_messages!`, e a fase 2 passou. Só que ele ignorou Turbo Streams e implementou SSE cru com `ActionController::Live`. Isso pode ser legítimo num app real; o prompt pedia Hotwire/Turbo Streams. Também usou `anthropic/claude-sonnet-4` em vez do Sonnet mais novo e guardou conversas num hash class-level sem limite. Processo reinicia, perde tudo. Processo longo, vaza memória.
+O **Qwen3.7 Max** fez **78/100, Tier B, #14 empatado**. API RubyLLM correta, inclusive streaming e `reset_messages!`. Fase 2 passou. Só que ignorou Turbo Streams e implementou SSE cru com `ActionController::Live`. Num app real, talvez ok. Neste benchmark, o prompt pedia Hotwire/Turbo Streams. Também usou `anthropic/claude-sonnet-4` em vez do Sonnet mais novo e guardou conversas num hash class-level sem limite. Reiniciou processo? Perdeu tudo. Rodou tempo suficiente? Vazou memória.
 
-O **Step 3.7 Flash** fez **69/100, Tier B, #20 empatado**. Ele corrigiu o erro grande do Step 3.5: agora usa `ruby_llm` de verdade, não bypass com `ruby-openai`. A parte ruim lembra Sakana. Ele cria um `RubyLLM.chat` novo por request e manda só a mensagem atual. O histórico fica num `@@all` class var, só nunca chega ao modelo. Saiu do bypass errado e esqueceu de dar memória ao LLM.
+O **Step 3.7 Flash** fez **69/100, Tier B, #20 empatado**. Corrigiu o erro grande do Step 3.5: agora usa `ruby_llm` de verdade, não bypass com `ruby-openai`. Bom. Só que cria um `RubyLLM.chat` novo por request e manda só a mensagem atual. O histórico fica num `@@all` class var, mas nunca chega ao modelo. Saiu do bypass errado e esqueceu de dar memória ao LLM.
 
 E sim, teve Qwen 3.6 no histórico recente de commits. Dois runs locais do **Qwen 3.6 35B A3B** entraram via PR #9 (`cccc118` e `f06ddd0`), com perfil `ik_llama.cpp` local, mas o merge foi revertido em `d5f9195`. Por isso eles não entram na tabela principal desta rodada.
 
-O dado útil de Qwen 3.6 local continua no relatório separado da RTX 5090: ele foi o primeiro modelo local daquele perfil a acertar o entry point `RubyLLM.chat` + `chat.ask`, mas ainda retornava o objeto inteiro em vez de `response.content` e não fazia multi-turn. Eu já tinha comentado essa linha nos posts anteriores de benchmark: perto de funcionar, mas ainda não pronto pra ranking principal junto com os runs cloud/AMD.
+O dado útil de Qwen 3.6 local continua no relatório separado da RTX 5090: foi o primeiro modelo local daquele perfil a acertar `RubyLLM.chat` + `chat.ask`, mas ainda retornava o objeto inteiro em vez de `response.content` e não fazia multi-turn. Perto de funcionar. Ainda fora do ranking principal cloud/AMD.
 
 ## Nex e Qwen base: já cobri no caso Rio 3.5
 
-O **Nex-N2-Pro** fez **83/100, Tier A, #10**, usando o endpoint grátis do OpenRouter. A base crua **Qwen 3.5 397B A17B** fez **42/100, Tier C, #31**. Essa diferença de 41 pontos é importante, mas repetir tudo aqui seria encher linguiça.
+O **Nex-N2-Pro** fez **83/100, Tier A, #10**, usando o endpoint grátis do OpenRouter. A base crua **Qwen 3.5 397B A17B** fez **42/100, Tier C, #31**. Essa diferença de 41 pontos é importante. Repetir tudo aqui seria encher linguiça.
 
 Eu já usei esses números no post sobre a [controvérsia da LLM Rio 3.5](/2026/06/15/controversia-llm-rio-3-5-plagio/), porque a acusação pública era justamente que o checkpoint da Rio parecia uma mescla de Nex-N2-Pro com Qwen3.5-397B-A17B. Lá está a explicação do que é Nex, por que a fine-tune importa, e por que uma Rio que herdasse ganho da Nex não deveria ser vendida como avanço óbvio sobre Nex puro sem benchmark reproduzível.
 
@@ -159,11 +165,11 @@ O resumo técnico é simples: a base Qwen inventou RubyLLM (`chat.system`, `chat
 
 ## Meu uso real hoje
 
-Na prática, eu tenho usado muito **OpenCode + [oh-my-opencode-slim](https://github.com/alvinunreal/oh-my-opencode-slim) + GPT 5.5** pra manter meus projetos open source. É um fork slim, limpo e mais econômico do oh-my-opencode, justamente o tipo de ajuste que combina com uso diário. O resto do meu [toolkit de IA com ai-jail, ai-memory e ai-usagebar](/2026/05/24/dicas-e-toolkit-de-ia-do-akita-ai-jail-ai-memory-ai-usagebar/) eu já expliquei em post separado.
+Na prática, tenho usado muito **OpenCode + [oh-my-opencode-slim](https://github.com/alvinunreal/oh-my-opencode-slim) + GPT 5.5** pra manter meus projetos open source. É um fork slim, limpo e mais econômico do oh-my-opencode. Exatamente o tipo de ajuste que combina com uso diário. O resto do meu [toolkit de IA com ai-jail, ai-memory e ai-usagebar](/2026/05/24/dicas-e-toolkit-de-ia-do-akita-ai-jail-ai-memory-ai-usagebar/) já expliquei em post separado.
 
-É um fluxo chato de explicar pra quem só quer saber "qual modelo é melhor", porque o modelo sozinho não carrega o trabalho. O harness importa. O prompt de sistema importa. A memória do projeto importa. A qualidade dos testes importa. O mesmo modelo, num harness ruim, vira um gerador de patch aleatório.
+É chato explicar isso pra quem só quer saber "qual modelo é melhor". Modelo sozinho não carrega trabalho. Harness importa. Prompt de sistema importa. Memória do projeto importa. Qualidade dos testes importa. O mesmo modelo, num harness ruim, vira gerador de patch aleatório.
 
-Tenho usado isso em coisas pequenas e reais, tipo extensões do Geary: [geary-email-autocomplete](https://github.com/akitaonrails/geary-email-autocomplete) e [geary-hide-sidebar-module](https://github.com/akitaonrails/geary-hide-sidebar-module). Nada disso é revolução. É manutenção, bugfix, refactor, teste, documentação. Exatamente o tipo de trabalho onde agente de código precisa ser confiável por horas, não por uma demo de 90 segundos.
+Tenho usado isso em coisas pequenas e reais, tipo extensões do Geary: [geary-email-autocomplete](https://github.com/akitaonrails/geary-email-autocomplete) e [geary-hide-sidebar-module](https://github.com/akitaonrails/geary-hide-sidebar-module). Nada disso é revolução. É manutenção, bugfix, refactor, teste, documentação. Trabalho normal. Justamente onde agente precisa ser confiável por horas, não por uma demo de 90 segundos.
 
 Por isso eu continuo repetindo: benchmark de modelo é útil, benchmark de fluxo é mais útil ainda. Sonnet 5 com API alucinada não me ajuda. Gemini Flash surpreendendo com RubyLLM correto me interessa. Sakana e Step acertando a gem mas esquecendo multi-turn mostram exatamente onde esses modelos ainda quebram em produto real.
 
@@ -171,10 +177,10 @@ Por isso eu continuo repetindo: benchmark de modelo é útil, benchmark de fluxo
 
 A rodada deixou um recado simples: nome forte não salva integração quebrada. Sonnet 5 entrou com aura de modelo novo e saiu em Tier C porque chamou uma API que não existe.
 
-Gemini 3.5 Flash merece atenção. Não por ser barato, porque neste run nem foi tão barato assim. Ele merece atenção por ter entregue um app Rails/RubyLLM muito mais correto do que eu esperava de um Flash.
+Gemini 3.5 Flash merece atenção. Não por ser barato; neste run nem foi tão barato. Merece atenção porque entregou um app Rails/RubyLLM muito mais correto do que eu esperava de um Flash.
 
-No lado open source/provedor alternativo, a história é mais mista. Sakana Fugu Ultra quase chegou em Tier A, Qwen3.7 Max acertou a API mas errou o produto, e Step 3.7 Flash corrigiu o bypass do 3.5 mas esqueceu de dar memória ao chat. O avanço existe, só ainda vem cheio de arestas.
+No lado open source/provedor alternativo, a história é mais mista. Sakana Fugu Ultra quase chegou em Tier A. Qwen3.7 Max acertou a API e errou o produto. Step 3.7 Flash corrigiu o bypass do 3.5 e esqueceu de dar memória ao chat. Tem avanço. Tem aresta.
 
-Minha recomendação prática continua igual: **Opus 4.8 ou GPT 5.5** pra programação séria hoje. Use modelos Tier B pra tarefa pequena, barata, revisada. Use open source/local pra estudar e experimentar. E não confie em teste verde se o fake não imita a biblioteca real.
+Minha recomendação prática continua igual: **Opus 4.8 ou GPT 5.5** pra programação séria hoje. Use Tier B pra tarefa pequena, barata, revisada. Use open source/local pra estudar e experimentar. E não confie em teste verde se o fake não imita a biblioteca real.
 
 O benchmark é aberto: [github.com/akitaonrails/llm-coding-benchmark](https://github.com/akitaonrails/llm-coding-benchmark). Quer ver outro modelo aí? Fork, adiciona no `config/models.json`, roda e manda o PR.
