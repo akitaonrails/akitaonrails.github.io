@@ -1,5 +1,5 @@
 ---
-title: "RANT: Não tenha esperança com Política - Como se tornar imune"
+title: "Off-Topic: Não tenha esperança com Política - Como se tornar imune"
 slug: "rant-nao-tenha-esperanca-com-politica-como-se-tornar-imune"
 date: '2026-07-01T11:00:00-03:00'
 draft: false

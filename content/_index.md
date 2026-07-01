@@ -104,7 +104,7 @@ title: AkitaOnRails Blog
 ## 2026 - Julho
 
 - [LLM Benchmark: Sonnet 5 falha, Gemini Flash surpreende, Sakana Fugu quase chega ao Tier A](/2026/07/01/llm-benchmark-sonnet-5-gemini-3-5-flash-sakana-fugu-ultra/)
-- [RANT: Não tenha esperança com Política - Como se tornar imune](/2026/07/01/rant-nao-tenha-esperanca-com-politica-como-se-tornar-imune/)
+- [Off-Topic: Não tenha esperança com Política - Como se tornar imune](/2026/07/01/rant-nao-tenha-esperanca-com-politica-como-se-tornar-imune/)
 
 ## 2026 - Junho
 

@@ -1,5 +1,5 @@
 ---
-title: "RANT: Do Not Put Hope in Politics - How to Become Immune"
+title: "Off-Topic: Do Not Put Hope in Politics - How to Become Immune"
 slug: "rant-do-not-put-hope-in-politics-how-to-become-immune"
 date: '2026-07-01T11:00:00-03:00'
 draft: false
