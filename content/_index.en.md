@@ -101,6 +101,10 @@ title: AkitaOnRails Blog
   }());
 </script>
 
+## 2026 - July
+
+- [RANT: Do Not Put Hope in Politics - How to Become Immune](/en/2026/07/01/rant-do-not-put-hope-in-politics-how-to-become-immune/)
+
 ## 2026 - June
 
 - [Why LLMs Will Fail at Your Company](/en/2026/06/24/why-llms-will-fail-at-your-company/)

@@ -101,6 +101,10 @@ title: AkitaOnRails Blog
   }());
 </script>
 
+## 2026 - Julho
+
+- [RANT: Não tenha esperança com Política - Como se tornar imune](/2026/07/01/rant-nao-tenha-esperanca-com-politica-como-se-tornar-imune/)
+
 ## 2026 - Junho
 
 - [Por que LLMs vão falhar na Sua Empresa?](/2026/06/24/por-que-llms-vao-falhar-na-sua-empresa/)
