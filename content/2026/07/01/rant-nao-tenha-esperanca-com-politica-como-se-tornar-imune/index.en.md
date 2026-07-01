@@ -169,7 +169,7 @@ At Bretton Woods, in 1944, 44 countries created a system where currencies were l
 
 In the 80s, the Plaza Accord showed how major economies coordinated a **devaluation of the dollar** against currencies like the yen and the Deutsche mark. It was not "devaluing the yen"; it was the opposite: the yen appreciated against the dollar. [FOMC materials from 1985](https://www.federalreserve.gov/monetarypolicy/files/FOMC19851105material.pdf) already recorded the dollar about 14% lower against the yen weeks later. That adjustment was part of a context that, together with monetary policy, credit, and asset dynamics in Japan, preceded the bubble and the decades of stagnation. It's not a simple little story of "US imperialism". It's a game of currency, interest rates, trade, geopolitics, and debt.
 
-When a geopolitical crisis increases the price of oil, for example, importing countries need more dollars to buy energy. If the local currency weakens, the central bank may raise interest rates, sell reserves, sell Treasuries, or intervene in other ways to defend its own currency. Sanctions against countries like Iran encourage alternative mechanisms in specific cases, but that does not prove the "end of the dollar". On the contrary: it shows how the dollar is still the dominant network everyone needs to route around when they want to escape it.
+When a geopolitical crisis increases the price of oil, for example, importing countries need more dollars to buy energy. Reuters showed this during the US-Iran war: [the dollar rose on safe-haven demand, higher oil, and Strait of Hormuz risk](https://www.marketscreener.com/news/us-dollar-gains-as-iran-conflict-fuels-safe-haven-demand-higher-oil-ce7e5cdcdf81f324); Barclays estimated the greenback could strengthen **0.5% to 1%** for every **10%** increase in oil, precisely because an energy shock hurts Japan and Europe, which depend on imported crude, more than it hurts the US. If the local currency weakens, the central bank may raise interest rates, sell reserves, sell Treasuries, or intervene in other ways to defend its own currency. Sanctions against countries like Iran encourage alternative mechanisms in specific cases, but that does not prove the "end of the dollar". On the contrary: it shows how the dollar is still the dominant network everyone needs to route around when they want to escape it.
 
 You don't need to like it. You need to understand it.
 
@@ -262,6 +262,24 @@ I know this sentence irritates people. But it's better to get irritated now than
 A child is the biggest patrimonial, emotional, and logistical responsibility of your life. It's not an adult accessory. It's not an Instagram project. It's not "we'll see later".
 
 If you want children, plan. Health insurance, school, housing, reserve, language, safety, time, family nearby. If you still can't, work so you can.
+
+## Fifth: keep optionality
+
+This may be the simplest rule of all: don't leave your life hanging from a single point of failure.
+
+One currency. One bank. One employer. One country. An expired document. One career plan. One platform that can ban you. One broker that can freeze. One account that can go under review. One income source that can disappear.
+
+That's fragility pretending to be simplicity.
+
+Having a valid passport, a visa when it makes sense, a declared international account, reserves in hard currency, a résumé you can sell abroad, a network outside your bubble, and the ability to work remotely does not mean you are leaving tomorrow. It only means you can choose.
+
+No government needs to persecute you to wreck your life. Sometimes changing one rule is enough. Freezing one account. Raising one tax. Closing one border. Creating one new obligation. Delaying one document. Slowly breaking the currency.
+
+Whoever has only one option obeys.
+
+Whoever has several options negotiates.
+
+Don't confuse this with paranoia. It's just redundancy. Every programmer understands backups. Many people back up databases and never back up their own life.
 
 ## "So why not leave?"
 

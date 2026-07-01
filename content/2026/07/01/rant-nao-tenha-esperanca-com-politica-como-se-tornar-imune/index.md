@@ -169,7 +169,7 @@ Em Bretton Woods, em 1944, 44 países criaram um sistema em que moedas ficavam l
 
 Nos anos 80, o Acordo Plaza mostrou como grandes economias coordenaram uma **desvalorização do dólar** frente a moedas como o iene e o marco alemão. Não foi "desvalorizar o iene"; foi o contrário: o iene se valorizou contra o dólar. Materiais do [FOMC de 1985](https://www.federalreserve.gov/monetarypolicy/files/FOMC19851105material.pdf) já registravam o dólar cerca de 14% abaixo contra o iene semanas depois. Aquele ajuste fez parte de um contexto que, junto com política monetária, crédito e dinâmica de ativos no Japão, precedeu a bolha e as décadas de estagnação. Não é uma historinha simples de "EUA imperialista". É jogo de moeda, juros, comércio, geopolítica e dívida.
 
-Quando uma crise geopolítica aumenta preço de petróleo, por exemplo, países importadores precisam de mais dólares pra comprar energia. Se a moeda local enfraquece, o banco central pode subir juros, vender reservas, vender Treasuries ou intervir de outras formas pra defender a própria moeda. Sanções contra países como o Irã incentivam mecanismos alternativos em casos específicos, mas isso não prova o "fim do dólar". Pelo contrário: mostra como o dólar ainda é a rede dominante que todo mundo precisa contornar quando quer fugir dela.
+Quando uma crise geopolítica aumenta preço de petróleo, por exemplo, países importadores precisam de mais dólares pra comprar energia. A Reuters mostrou isso durante a guerra Irã-EUA: [o dólar subiu com demanda por safe haven, petróleo mais caro e risco no Estreito de Ormuz](https://www.marketscreener.com/news/us-dollar-gains-as-iran-conflict-fuels-safe-haven-demand-higher-oil-ce7e5cdcdf81f324); Barclays estimou que o dólar poderia se fortalecer **0,5% a 1%** para cada alta de **10%** no petróleo, justamente porque o choque de energia machuca mais Japão e Europa, que dependem de petróleo importado, do que os EUA. Se a moeda local enfraquece, o banco central pode subir juros, vender reservas, vender Treasuries ou intervir de outras formas pra defender a própria moeda. Sanções contra países como o Irã incentivam mecanismos alternativos em casos específicos, mas isso não prova o "fim do dólar". Pelo contrário: mostra como o dólar ainda é a rede dominante que todo mundo precisa contornar quando quer fugir dela.
 
 Você não precisa gostar. Precisa entender.
 
@@ -262,6 +262,24 @@ Eu sei que essa frase irrita. Mas é melhor se irritar agora do que descobrir ta
 Filho é a maior responsabilidade patrimonial, emocional e logística da sua vida. Não é acessório de adulto. Não é projeto de Instagram. Não é "depois a gente vê".
 
 Se você quer filhos, planeje. Plano de saúde, escola, moradia, reserva, idioma, segurança, tempo, família por perto. Se ainda não dá, trabalhe pra dar.
+
+## Quinto: mantenha opcionalidade
+
+Essa talvez seja a regra mais simples de todas: não deixe sua vida pendurada num único ponto de falha.
+
+Uma moeda só. Um banco só. Um empregador só. Um país só. Um documento vencido. Um plano de carreira. Uma plataforma que pode te banir. Uma corretora que pode travar. Uma conta que pode cair em análise. Uma fonte de renda que pode desaparecer.
+
+Isso tudo é fragilidade disfarçada de simplicidade.
+
+Ter passaporte válido, visto quando fizer sentido, conta internacional declarada, reserva em moeda forte, currículo vendável fora, rede de contatos fora da sua bolha e capacidade de trabalhar remoto não significa que você vai embora amanhã. Só significa que você pode escolher.
+
+Governo nenhum precisa te perseguir pra destruir sua vida. Às vezes basta mudar uma regra, travar uma conta, aumentar um imposto, fechar uma fronteira, criar uma obrigação nova, atrasar um documento ou quebrar a moeda devagar.
+
+Quem só tem uma opção obedece.
+
+Quem tem várias opções negocia.
+
+Não confunda isso com paranoia. É só redundância. Todo programador entende backup. Só que muita gente faz backup de banco de dados e não faz backup da própria vida.
 
 ## "Então por que não ir embora?"
 
