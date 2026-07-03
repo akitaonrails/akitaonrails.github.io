@@ -100,7 +100,21 @@ Eu cresci nos anos 80. Vi hiperinflação. Preço mudava no mesmo dia. Dinheiro 
 
 Pra quem é jovem, parece história antiga. Pra mim é memória.
 
-O [Senado resume o Plano Collor](https://www12.senado.leg.br/noticias/materias/2007/03/15/plano-collor-abertura-de-mercados-e-impeachment-marcaram-primeiro-governo-eleito-apos-o-regime-militar): a MP 168/1990 bloqueou valores acima de NCz$ 50 mil por 18 meses. Décadas depois, Collor voltou à política e foi [senador por Alagoas](https://www25.senado.leg.br/web/senadores/senador/-/perfil/4525).
+Hiperinflação não cai do céu. Não é castigo divino. Normalmente começa com governo gastando mais do que pode, dívida que ninguém quer encarar e a tentação de cobrir buraco imprimindo dinheiro. Parece esperto por cinco minutos. Depois vira imposto invisível em cima de todo mundo.
+
+Mas mesmo no caos tem gente ganhando dinheiro. Não porque é mais virtuosa. Porque entende a mecânica.
+
+Pensa num comércio simples. Ele recebe à vista hoje e paga fornecedor em 30 dias. Se compra **Cr$ 1 milhão** em mercadoria e só paga o fornecedor no mês seguinte, com inflação de **30% no mês**, aqueles **Cr$ 1 milhão** pagos depois já compram muito menos. Enquanto isso, ele vende o estoque a preço reajustado. O cliente acha que o comerciante ficou rico porque "subiu preço". Às vezes ele só sobreviveu no intervalo. Às vezes ganhou muito no intervalo.
+
+Agora pensa no dinheiro parado por alguns dias. Empresa recebe boletos no dia 5 e paga folha no dia 30. Se ficam **Cr$ 10 milhões** no caixa por 25 dias e o overnight rende perto de **1% ao dia**, isso vira mais ou menos **Cr$ 12,8 milhões** antes da folha. A folha nominal continua ali. O ganho veio do tempo. Do float.
+
+Banco fazia isso em escala muito maior. Captava dinheiro pagando uma taxa, emprestava ou aplicava cobrando outra, e girava volumes enormes todos os dias. Se a diferença parecia pequena, tipo alguns pontos no mês, em cima de bilhões virava fortuna. Spread e float. Nome feio pra uma coisa simples: quem recebia antes, pagava depois e sabia estacionar o dinheiro no meio ganhava. Quem recebia salário no fim do mês e corria pro supermercado perdia.
+
+E nem precisa ser banco. Um indivíduo organizado também podia jogar melhor. Se sabe que a moeda está derretendo, não deixa tudo parado em cruzeiro esperando virar pó. Compra dólar quando consegue. Compra ação de exportadora que ganha em dólar. Usa futuro ou opção pra se proteger, não pra brincar de cassino. Exemplo simples: você tem dinheiro que só vai usar em 30 dias. Se deixa parado em moeda podre, perde. Se compra proteção em dólar e o câmbio explode, você não "ficou rico por sorte". Você entendeu o jogo antes. Claro: opção, forex e alavancagem quebram amador mais rápido que inflação. Não é recomendação pra brincar de trader. É só o ponto óbvio: conhecimento financeiro transforma caos em oportunidade. Ignorância transforma salário em pó.
+
+É por isso que inflação destrói pobre e desorganizado primeiro. Quem vive de salário fixo chega atrasado na corrida. Quem entende prazo, estoque, dívida, caixa e moeda joga outro jogo.
+
+Foi nesse ambiente que veio o Plano Collor. Pra tentar controlar a hiperinflação na marra, o governo fez algo brutal: tirou liquidez das pessoas à força. O [Senado resume](https://www12.senado.leg.br/noticias/materias/2007/03/15/plano-collor-abertura-de-mercados-e-impeachment-marcaram-primeiro-governo-eleito-apos-o-regime-militar): a MP 168/1990 bloqueou por 18 meses valores acima de NCz$ 50 mil em contas, poupanças e aplicações financeiras. Na prática, famílias e empresas acordaram com o próprio dinheiro preso pelo Estado. Décadas depois, Collor voltou à política e foi [senador por Alagoas](https://www25.senado.leg.br/web/senadores/senador/-/perfil/4525).
 
 Essa é uma aula que brasileiro deveria tatuar na testa: não espere que "a justiça" venha. Não espere que quem destruiu vidas pague proporcionalmente. Não espere que o sistema reconheça seu esforço e te proteja.
 

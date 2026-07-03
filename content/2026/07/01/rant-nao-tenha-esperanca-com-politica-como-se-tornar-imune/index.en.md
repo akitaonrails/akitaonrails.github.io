@@ -100,7 +100,21 @@ I grew up in the 80s. I saw hyperinflation. Prices changed the same day. Money m
 
 For young people, that sounds like ancient history. For me it is memory.
 
-The [Senate summarizes the Collor Plan](https://www12.senado.leg.br/noticias/materias/2007/03/15/plano-collor-abertura-de-mercados-e-impeachment-marcaram-primeiro-governo-eleito-apos-o-regime-militar): MP 168/1990 blocked amounts above NCz$ 50 thousand for 18 months. Decades later, Collor returned to politics and served as [senator for Alagoas](https://www25.senado.leg.br/web/senadores/senador/-/perfil/4525).
+Hyperinflation does not fall from the sky. It is not divine punishment. It usually starts with a government spending more than it can, debt nobody wants to face, and the temptation to cover the hole by printing money. Looks clever for five minutes. Then it becomes an invisible tax on everybody.
+
+But even in chaos, some people make money. Not because they are more virtuous. Because they understand the mechanics.
+
+Think of a simple store. It receives cash today and pays the supplier in 30 days. If it buys **Cr$ 1 million** in inventory and only pays the supplier next month, with **30% monthly inflation**, that **Cr$ 1 million** paid later buys much less. Meanwhile, it sells the inventory at adjusted prices. The customer thinks the merchant got rich because "prices went up." Sometimes the merchant merely survived the interval. Sometimes he made a lot in the interval.
+
+Now think about money sitting for a few days. A company receives payment slips on day 5 and pays payroll on day 30. If **Cr$ 10 million** stays in the cash account for 25 days and overnight yields close to **1% per day**, that becomes roughly **Cr$ 12.8 million** before payroll. Payroll's nominal amount is still there. The gain came from time. From float.
+
+Banks did this at a much larger scale. They captured money paying one rate, lent or invested it charging another, and turned huge volumes every day. If the difference looked small, a few points per month, on billions it became a fortune. Spread and float. Ugly names for something simple: whoever received before paying, and knew where to park the money in the middle, won. Whoever received a salary at the end of the month and ran to the supermarket lost.
+
+And it did not have to be a bank. An organized individual could also play a better game. If he knows the currency is melting, he does not leave everything sitting in cruzeiros waiting for it to turn into dust. He buys dollars when he can. He buys shares of exporters that earn in dollars. He uses futures or options to hedge, not to play casino. Simple example: you have money you will only use in 30 days. If you leave it in rotten currency, you lose. If you buy dollar protection and the exchange rate explodes, you did not "get rich by luck." You understood the game earlier. Of course: options, forex, and leverage break amateurs faster than inflation. This is not a recommendation to play trader. It is just the obvious point: financial knowledge turns chaos into opportunity. Ignorance turns salary into dust.
+
+That is why inflation destroys the poor and the disorganized first. Whoever lives on a fixed salary arrives late to the race. Whoever understands payment terms, inventory, debt, cash, and currency plays another game.
+
+That was the environment where the Collor Plan arrived. To try to control hyperinflation by force, the government did something brutal: it forcibly removed liquidity from people's hands. The [Senate summarizes it](https://www12.senado.leg.br/noticias/materias/2007/03/15/plano-collor-abertura-de-mercados-e-impeachment-marcaram-primeiro-governo-eleito-apos-o-regime-militar): MP 168/1990 blocked, for 18 months, amounts above NCz$ 50 thousand in accounts, savings, and financial investments. In practice, families and companies woke up with their own money locked by the State. Decades later, Collor returned to politics and served as [senator for Alagoas](https://www25.senado.leg.br/web/senadores/senador/-/perfil/4525).
 
 This is a lesson Brazilians should tattoo on their foreheads: do not wait for "justice" to come. Do not expect the people who destroyed lives to pay proportionally. Do not expect the system to recognize your effort and protect you.
 
