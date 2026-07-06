@@ -70,7 +70,9 @@ That was my problem with every Go software I ever tried: they're tools built by 
 
 ![Frank GO's practice panel greeting you and suggesting the ten-problem rank test to find your level.](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/07/06/frank-go/practice-panel.jpg)
 
-The idea is to be a one-stop shop, zero configuration, for beginners and students to learn Go at their own pace. Install it (there's an [AUR package](https://github.com/akitaonrails/frank_go): `yay -S frank-go`, or `npm install` from source on any platform), the app downloads a small CPU engine with one click, no GPU, no account, no server, fully offline. Your progress stays on your machine.
+The idea is to be a one-stop shop, zero configuration, for beginners and students to learn Go at their own pace. And there's a build for everywhere. On Arch Linux it's `yay -S frank-go` via AUR. On **Windows** there's an installer and a portable build on the [Releases page](https://github.com/akitaonrails/frank_go/releases); the installer has no code signing, so SmartScreen complains on first run — just click "More info → Run anyway" ([I explain why I don't sign Windows builds in the best-practices post](/en/2026/05/30/open-source-best-practices-llm-the-minimum/)). On **macOS** it's `brew install --cask akitaonrails/tap/frank-go`, or the `.dmg` for Apple Silicon and Intel; that build is signed with a Developer ID and notarized by Apple, opens with zero drama. And on any platform you can run from source with `npm install`.
+
+In every case the app downloads a small CPU engine with one click, no GPU, no account, no server, fully offline. The exception is macOS, where KataGo has no official binary: a `brew install katago` unlocks play-vs-AI, and everything else (tsumego, study, drills, area painting) works without it. Your progress stays on your machine.
 
 ![Frank GO's study and drills menu: study a famous game, Hikaru no Go games, joseki dictionary, who-is-winning drill, ladder drill, and rank test.](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/07/06/frank-go/study-and-drills.jpg)
 
