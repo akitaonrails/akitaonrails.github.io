@@ -103,6 +103,7 @@ title: AkitaOnRails Blog
 
 ## 2026 - July
 
+- [I Had Fable 5 Analyze the Code of TikTok, Clash of Kings and Gov.br - Understanding Fingerprinting](/en/2026/07/08/fable-5-analyze-tiktok-clash-of-kings-govbr-fingerprint/)
 - [Frank GO: Playing Go with AI](/en/2026/07/06/frank-go-playing-go-with-ai/)
 - [LLM Benchmark: Sonnet 5 Fails, Gemini Flash Surprises, Sakana Fugu Almost Reaches Tier A](/en/2026/07/01/llm-benchmark-sonnet-5-fails-gemini-flash-surprises-sakana-fugu-almost-tier-a/)
 - [Off-Topic: Do Not Put Hope in Politics - How to Become Immune](/en/2026/07/01/rant-do-not-put-hope-in-politics-how-to-become-immune/)
