@@ -11,6 +11,7 @@ title: AkitaOnRails Blog
   </div>
   <div id="aor-featured-posts-en-body" class="aor-featured__body">
     <ul>
+          <li><code>2026-07-09</code> — <a href="/en/2026/07/09/llm-benchmark-grok-4-5-gpt-5-6-sol/">LLM Benchmarks: Grok 4.5 and GPT 5.6 Sol</a></li>
           <li><code>2026-06-24</code> — <a href="/en/2026/06/24/why-llms-will-fail-at-your-company/">Why LLMs Will Fail at Your Company</a></li>
           <li><code>2026-06-11</code> — <a href="/en/2026/06/11/llm-benchmark-fable-5-anthropic-soap-opera/">LLM Benchmark: Fable 5 and the Anthropic Soap Opera</a></li>
           <li><code>2026-06-05</code> — <a href="/en/2026/06/05/ai-controversy-open-source-project-contributions-my-take/">AI Controversy in Open Source Project Contributions - My Take</a></li>
@@ -103,6 +104,7 @@ title: AkitaOnRails Blog
 
 ## 2026 - July
 
+- [LLM Benchmarks: Grok 4.5 and GPT 5.6 Sol](/en/2026/07/09/llm-benchmark-grok-4-5-gpt-5-6-sol/)
 - [I Had Fable 5 Analyze the Code of TikTok, Clash of Kings and Gov.br - Understanding Fingerprinting](/en/2026/07/08/fable-5-analyze-tiktok-clash-of-kings-govbr-fingerprint/)
 - [Frank GO: Playing Go with AI](/en/2026/07/06/frank-go-playing-go-with-ai/)
 - [LLM Benchmark: Sonnet 5 Fails, Gemini Flash Surprises, Sakana Fugu Almost Reaches Tier A](/en/2026/07/01/llm-benchmark-sonnet-5-fails-gemini-flash-surprises-sakana-fugu-almost-tier-a/)
