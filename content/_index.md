@@ -104,6 +104,7 @@ title: AkitaOnRails Blog
 
 ## 2026 - Julho
 
+- [A Resposta sobre Bun em Rust que Andrew Kelly deveria ter feito](/2026/07/09/resposta-sobre-bun-em-rust-que-andrew-kelly-deveria-ter-feito/)
 - [LLM Benchmarks: Grok 4.5 e GPT 5.6 Sol](/2026/07/09/llm-benchmark-grok-4-5-gpt-5-6-sol/)
 - [Fiz o Fable 5 analisar código do TikTok, Clash of Kings e Gov.br - Entendendo Fingerprint](/2026/07/08/fable-5-analisar-codigo-tiktok-clash-of-kings-govbr-fingerprint/)
 - [Frank GO: brincando de GO com IA](/2026/07/06/frank-go-brincando-de-go-com-ia/)
