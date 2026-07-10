@@ -278,3 +278,291 @@
   }
 })();
 </script>
+
+{{ if .IsHome }}
+{{/*
+  Homepage easter egg: start typing anywhere on the homepage to fuzzy-filter
+  the ENTIRE article archive (not just the recent posts the homepage lists).
+  The index is the per-language /search-index.json produced by the SearchIndex
+  output format; it's fetched lazily on the first keystroke, so normal visits
+  pay nothing. Gated to the homepage only.
+*/}}
+<style>
+  .aor-omni-backdrop {
+    position: fixed; inset: 0; z-index: 9999;
+    background: rgba(0,0,0,.45);
+    display: flex; justify-content: center; align-items: flex-start;
+    padding: 12vh 16px 16px;
+  }
+  .aor-omni-backdrop[hidden] { display: none; }
+  .aor-omni {
+    width: 100%; max-width: 640px;
+    background: #ffffff; color: #18181b;
+    border: 1px solid #e4e4e7; border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0,0,0,.35);
+    overflow: hidden; font-family: inherit;
+  }
+  html.dark .aor-omni { background: #1b1b1f; color: #ededed; border-color: #33333a; }
+  .aor-omni__input {
+    width: 100%; box-sizing: border-box;
+    padding: 14px 16px; border: 0; outline: 0;
+    font-size: 1.05rem; background: transparent; color: inherit;
+    border-bottom: 1px solid #e4e4e7;
+  }
+  html.dark .aor-omni__input { border-bottom-color: #33333a; }
+  .aor-omni__hint {
+    padding: 6px 16px; font-size: .72rem; opacity: .6;
+    display: flex; justify-content: space-between; gap: 12px;
+  }
+  .aor-omni__list { max-height: 52vh; overflow-y: auto; margin: 0; padding: 4px 0; list-style: none; }
+  .aor-omni__row { display: block; padding: 9px 16px; text-decoration: none; color: inherit; }
+  .aor-omni__row small { display: block; opacity: .55; font-size: .72rem; margin-top: 2px; }
+  .aor-omni__row.is-active,
+  .aor-omni__row:hover { background: #f4f4f5; }
+  html.dark .aor-omni__row.is-active,
+  html.dark .aor-omni__row:hover { background: #2a2a31; }
+  .aor-omni__empty { padding: 16px; opacity: .6; font-size: .9rem; }
+</style>
+<script>
+(function () {
+  try {
+    var p = window.location.pathname;
+    var isHome = p === "/" || p === "/index.html" || p === "/en/" || p === "/en/index.html";
+    if (!isHome) return;
+
+    var isEn = p.indexOf("/en/") === 0;
+    var INDEX_URL = isEn ? "/en/search-index.json" : "/search-index.json";
+    var L = isEn
+      ? { ph: "Type to filter every article…", esc: "Esc to close", loading: "loading…", empty: "no articles found", count: function (n) { return n + " result" + (n === 1 ? "" : "s"); } }
+      : { ph: "Digite pra filtrar todos os artigos…", esc: "Esc pra fechar", loading: "carregando…", empty: "nenhum artigo encontrado", count: function (n) { return n + " resultado" + (n === 1 ? "" : "s"); } };
+
+    var data = null;    // [{t,u,d}]
+    var norm = null;    // normalized titles, same order
+    var loading = false;
+    var el = {};        // dom refs
+    var results = [];
+    var active = 0;
+
+    function normalize(s) {
+      return (s || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    }
+    function isSubseq(needle, hay) {
+      var i = 0;
+      for (var j = 0; j < hay.length && i < needle.length; j++) if (hay[j] === needle[i]) i++;
+      return i === needle.length;
+    }
+    // Higher = better. Substring hits and early positions win; subsequence still counts.
+    function tokenScore(tok, nt) {
+      var idx = nt.indexOf(tok);
+      if (idx === 0) return 1000 - 0;
+      if (idx > 0) return 700 - Math.min(idx, 200);
+      return isSubseq(tok, nt) ? 120 : -1;
+    }
+
+    function buildDom() {
+      var back = document.createElement("div");
+      back.className = "aor-omni-backdrop"; back.hidden = true;
+      back.setAttribute("role", "dialog"); back.setAttribute("aria-label", L.ph);
+      var box = document.createElement("div"); box.className = "aor-omni";
+      var input = document.createElement("input");
+      input.className = "aor-omni__input"; input.type = "text";
+      input.setAttribute("autocomplete", "off"); input.setAttribute("spellcheck", "false");
+      input.setAttribute("aria-label", L.ph); input.placeholder = L.ph;
+      var hint = document.createElement("div"); hint.className = "aor-omni__hint";
+      var hintL = document.createElement("span"); var hintR = document.createElement("span");
+      hintR.textContent = L.esc; hint.appendChild(hintL); hint.appendChild(hintR);
+      var list = document.createElement("ul"); list.className = "aor-omni__list";
+      box.appendChild(input); box.appendChild(hint); box.appendChild(list);
+      back.appendChild(box);
+      document.body.appendChild(back);
+
+      back.addEventListener("mousedown", function (e) { if (e.target === back) close(); });
+      input.addEventListener("input", function () { filter(input.value); });
+      input.addEventListener("keydown", onInputKey);
+      el = { back: back, input: input, list: list, hintL: hintL };
+    }
+
+    function open(seed) {
+      if (!el.back) buildDom();
+      el.back.hidden = false;
+      el.input.value = seed || "";
+      el.input.focus();
+      ensureData();
+      filter(el.input.value);
+    }
+    function close() {
+      if (el.back) { el.back.hidden = true; el.input.value = ""; el.list.innerHTML = ""; }
+      results = []; active = 0;
+    }
+
+    function ensureData() {
+      if (data || loading) return;
+      loading = true;
+      el.hintL.textContent = L.loading;
+      fetch(INDEX_URL, { credentials: "same-origin" })
+        .then(function (r) { return r.json(); })
+        .then(function (json) {
+          data = json || [];
+          norm = data.map(function (it) { return normalize(it.t); });
+          loading = false; el.hintL.textContent = "";
+          if (!el.back.hidden) filter(el.input.value);
+        })
+        .catch(function () { loading = false; el.hintL.textContent = ""; });
+    }
+
+    function filter(q) {
+      var query = normalize(q).trim();
+      if (!data) { render([], query); return; }
+      if (!query) { render([], query); return; }
+      var tokens = query.split(/\s+/);
+      var scored = [];
+      for (var i = 0; i < data.length; i++) {
+        var nt = norm[i], total = 0, ok = true;
+        for (var k = 0; k < tokens.length; k++) {
+          var s = tokenScore(tokens[k], nt);
+          if (s < 0) { ok = false; break; }
+          total += s;
+        }
+        if (ok) scored.push({ it: data[i], s: total - i * 0.01 }); // date-desc tiebreak
+      }
+      scored.sort(function (a, b) { return b.s - a.s; });
+      render(scored.slice(0, 25).map(function (x) { return x.it; }), query);
+    }
+
+    function render(items, query) {
+      results = items; active = 0;
+      el.hintL.textContent = query ? L.count(items.length) : "";
+      el.list.innerHTML = "";
+      if (query && items.length === 0 && data) {
+        var em = document.createElement("li"); em.className = "aor-omni__empty";
+        em.textContent = L.empty; el.list.appendChild(em); return;
+      }
+      for (var i = 0; i < items.length; i++) {
+        var it = items[i];
+        var a = document.createElement("a");
+        a.className = "aor-omni__row" + (i === 0 ? " is-active" : "");
+        a.href = it.u; a.setAttribute("data-i", i);
+        a.appendChild(document.createTextNode(it.t));
+        var sm = document.createElement("small"); sm.textContent = it.d; a.appendChild(sm);
+        a.addEventListener("mouseenter", setActiveFromEvent);
+        el.list.appendChild(a);
+      }
+    }
+
+    function setActiveFromEvent(e) {
+      var i = parseInt(e.currentTarget.getAttribute("data-i"), 10);
+      setActive(i);
+    }
+    function setActive(i) {
+      var rows = el.list.querySelectorAll(".aor-omni__row");
+      if (!rows.length) return;
+      active = (i + rows.length) % rows.length;
+      for (var j = 0; j < rows.length; j++) rows[j].classList.toggle("is-active", j === active);
+      rows[active].scrollIntoView({ block: "nearest" });
+    }
+
+    function onInputKey(e) {
+      if (e.key === "Escape") { e.preventDefault(); close(); return; }
+      if (e.key === "Enter") {
+        var rows = el.list.querySelectorAll(".aor-omni__row");
+        if (rows[active]) { e.preventDefault(); window.location.href = rows[active].href; }
+        return;
+      }
+      if (e.key === "ArrowDown") { e.preventDefault(); setActive(active + 1); return; }
+      if (e.key === "ArrowUp") { e.preventDefault(); setActive(active - 1); return; }
+      if (e.key === "Backspace" && el.input.value === "") { close(); }
+    }
+
+    function isEditable(node) {
+      if (!node || node === document.body) return false;
+      if (node.isContentEditable) return true;
+      var t = (node.tagName || "").toLowerCase();
+      return t === "input" || t === "textarea" || t === "select";
+    }
+
+    document.addEventListener("keydown", function (e) {
+      if (el.back && !el.back.hidden) return;              // overlay handles its own keys
+      if (e.ctrlKey || e.metaKey || e.altKey || e.isComposing) return;
+      if (isEditable(e.target) || isEditable(document.activeElement)) return;
+      if (e.key && e.key.length === 1 && e.key !== " ") {  // any printable char, not a bare space
+        e.preventDefault();
+        open(e.key);
+      }
+    });
+  } catch (err) {
+    // never break the page on the easter egg
+  }
+})();
+</script>
+
+{{ end }}
+
+{{/*
+  Wire the navbar search box to a DuckDuckGo site: query.
+  Hextra's local FlexSearch index is disabled (params.search.enable=false), so
+  nothing heavy loads. This just redirects the existing input on Enter, keeps
+  Ctrl/Cmd+K focusing it, and relabels the placeholder. Site-wide, tiny, safe.
+*/}}
+<script>
+(function () {
+  try {
+    var isEn = window.location.pathname.indexOf("/en/") === 0;
+    var PH = isEn ? "Search the site (DuckDuckGo)…" : "Buscar no site (DuckDuckGo)…";
+    var SITE = "akitaonrails.com";
+
+    function inputs() { return document.querySelectorAll(".hextra-search-input"); }
+
+    function go(q) {
+      q = (q || "").trim();
+      if (!q) return;
+      var url = "https://duckduckgo.com/?q=" + encodeURIComponent("site:" + SITE + " " + q);
+      window.open(url, "_blank", "noopener");
+    }
+
+    function wire() {
+      var list = inputs();
+      for (var i = 0; i < list.length; i++) {
+        var el = list[i];
+        if (el.getAttribute("data-ddg")) continue;
+        el.setAttribute("data-ddg", "1");
+        el.setAttribute("placeholder", PH);
+        el.setAttribute("enterkeyhint", "search");
+        el.addEventListener("keydown", function (e) {
+          if (e.key === "Enter") { e.preventDefault(); go(e.currentTarget.value); e.currentTarget.blur(); }
+        });
+      }
+    }
+
+    // Global Ctrl/Cmd+K to focus the first visible search box (parity with Hextra).
+    document.addEventListener("keydown", function (e) {
+      if ((e.ctrlKey || e.metaKey) && (e.key === "k" || e.key === "K")) {
+        var list = inputs();
+        for (var i = 0; i < list.length; i++) {
+          if (list[i].offsetParent !== null) { e.preventDefault(); list[i].focus(); return; }
+        }
+      }
+    });
+
+    if (document.readyState !== "loading") wire();
+    else document.addEventListener("DOMContentLoaded", wire);
+  } catch (err) {
+    // never break the page over the search box
+  }
+})();
+</script>
+
+{{/*
+  Clean up the TOC "Back to top" footer. Hextra decorates that sticky container
+  with a top border + upward box-shadow + opaque bg (to hide list content
+  scrolling under it). Against the paper-dark palette this rendered as an ugly
+  partial box (a shaded top + edge line). Blend it in instead.
+*/}}
+<style>
+  div:has(> #backToTop) {
+    border-top: 0 !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    padding-top: 0 !important;
+    margin-top: 1.25rem !important;
+  }
+</style>

@@ -132,7 +132,14 @@ languages:
             icon: chat-bubble-left-right
 
 outputs:
-  home: [HTML, RSS]
+  home: [HTML, RSS, SearchIndex]
+
+outputFormats:
+  SearchIndex:
+    mediaType: application/json
+    baseName: search-index
+    isPlainText: true
+    notAlternative: true
 
 services:
   disqus:
@@ -154,6 +161,14 @@ markup:
     noClasses: false
 
 params:
+  # Disable Hextra's built-in FlexSearch: it shipped a ~14 MB client index
+  # (full text of 760+ posts) and rebuilt it on the main thread on first
+  # keystroke, which is what made the search box feel slow. The navbar search
+  # input still renders (it's menu-driven); custom JS in head-end.html wires it
+  # to a DuckDuckGo `site:` query instead — zero payload, full-text, instant.
+  search:
+    enable: false
+
   navbar:
     displayTitle: true
     displayLogo: false

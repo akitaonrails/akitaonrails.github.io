@@ -1,0 +1,9 @@
+{{- /* Client-side search index for the homepage type-to-filter easter egg.
+       Emits every regular post of the CURRENT language as compact JSON so the
+       filter can reach the full archive, not just the recent posts shown on the
+       homepage. Keys kept short (t/u/d) to keep the payload small. */ -}}
+{{- $items := slice -}}
+{{- range .Site.RegularPages -}}
+  {{- $items = $items | append (dict "t" .Title "u" .RelPermalink "d" (.Date.Format "2006-01-02")) -}}
+{{- end -}}
+{{- $items | jsonify (dict "noHTMLEscape" true) -}}
