@@ -566,3 +566,113 @@
     margin-top: 1.25rem !important;
   }
 </style>
+
+{{/*
+  Subtle "warm editorial" refinements on top of the paper palette. Goal:
+  make it feel intentionally designed, not default-theme, while staying light
+  and readable. Warm ink accent replaces Hextra's clashing bright-blue links,
+  plus small touches on selection, the Destaques index, blockquotes and rules.
+*/}}
+<style>
+  :root {
+    --aor-accent: #a63a1e;          /* burnt terracotta — 5.4:1 on the paper bg */
+    --aor-accent-strong: #7f2a12;
+    --aor-accent-soft: rgba(166, 58, 30, 0.13);
+    /* Warm the theme's active-state accents (nav, TOC, focus ring). */
+    --primary-hue: 20deg;
+    --primary-saturation: 62%;
+    --primary-lightness: 44%;
+  }
+  html.dark {
+    --aor-accent: #e2a05a;          /* warm amber — reads clean on warm charcoal */
+    --aor-accent-strong: #f2bd82;
+    --aor-accent-soft: rgba(226, 160, 90, 0.16);
+    --primary-hue: 32deg;
+    --primary-saturation: 68%;
+    --primary-lightness: 62%;
+  }
+
+  /* Prose + index links: warm ink with a refined, quieter underline. */
+  .content a:not(.lang-toggle-link):not(.aor-featured__toggle) {
+    color: var(--aor-accent);
+    text-decoration-color: color-mix(in srgb, var(--aor-accent) 32%, transparent);
+    text-underline-offset: 0.15em;
+    text-decoration-thickness: 0.06em;
+    transition: color 0.15s ease, text-decoration-color 0.15s ease;
+  }
+  .content a:not(.lang-toggle-link):not(.aor-featured__toggle):hover {
+    color: var(--aor-accent-strong);
+    text-decoration-color: currentColor;
+  }
+  .content a:not(.lang-toggle-link):focus-visible {
+    outline: 2px solid var(--aor-accent);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  ::selection { background: var(--aor-accent-soft); }
+
+  /* Destaques index: turn the code-chip dates into quiet monospace labels
+     and soften the frame so the box reads as an editorial list, not a widget. */
+  .aor-featured { border-color: color-mix(in srgb, var(--aor-accent) 18%, transparent); }
+  .aor-featured li code {
+    background: transparent !important;
+    border: 0 !important;
+    padding: 0 !important;
+    font-size: 0.78em;
+    letter-spacing: 0.01em;
+    color: color-mix(in srgb, currentColor 48%, transparent);
+  }
+  .aor-featured li { transition: transform 0.12s ease; }
+  .aor-featured li:hover { transform: translateX(2px); }
+
+  /* Blockquote: a warm hairline rule, lightly recessed — editorial, not boxed. */
+  .content blockquote {
+    border-inline-start: 2px solid color-mix(in srgb, var(--aor-accent) 55%, transparent);
+    color: color-mix(in srgb, currentColor 78%, transparent);
+    font-style: italic;
+  }
+
+  /* Horizontal rule: a soft centered fade instead of a hard line. */
+  .content hr {
+    border: 0;
+    height: 1px;
+    width: 60%;
+    margin-inline: auto;
+    background: linear-gradient(90deg, transparent, color-mix(in srgb, currentColor 24%, transparent), transparent);
+  }
+</style>
+<style>
+  /* Elegant list markers: a small warm diamond in the gutter instead of the
+     stock disc, with a proper hanging indent so wrapped lines align. */
+  .content ul:not(.contains-task-list) {
+    list-style: none;
+    padding-inline-start: 1.4em;
+  }
+  .content ul:not(.contains-task-list) > li {
+    position: relative;
+  }
+  .content ul:not(.contains-task-list) > li::before {
+    content: "";
+    position: absolute;
+    inset-inline-start: -1.15em;
+    top: 0.7em;
+    width: 0.4em;
+    height: 0.4em;
+    background: var(--aor-accent);
+    border-radius: 0.5px;
+    transform: rotate(45deg);
+    opacity: 0.9;
+  }
+  /* Nested lists: a hollow, quieter diamond. */
+  .content ul:not(.contains-task-list) ul > li::before {
+    background: transparent;
+    border: 1px solid var(--aor-accent);
+    opacity: 0.7;
+  }
+  /* Destaques index is date-led — no marker there. */
+  .aor-featured ul { list-style: none; padding-inline-start: 0; }
+  .aor-featured ul > li::before { content: none; }
+  /* Ordered lists keep their numerals, just warmed. */
+  .content ol > li::marker { color: var(--aor-accent); font-weight: 600; }
+</style>
