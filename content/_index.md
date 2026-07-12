@@ -105,6 +105,7 @@ title: AkitaOnRails Blog
 
 ## 2026 - Julho
 
+- [Notícias Quânticas: Majorana 2 e entendendo Shor](/2026/07/12/noticias-quanticas-majorana-2-e-entendendo-shor/)
 - [Usando IA pra resolver meus probleminhas do dia-a-dia](/2026/07/12/usando-ia-pra-resolver-meus-probleminhas-do-dia-a-dia/)
 - [Como me precaver pros meus agentes não apagarem minhas coisas?](/2026/07/11/como-me-precaver-pros-meus-agentes-nao-apagarem-minhas-coisas/)
 - [A Resposta sobre Bun em Rust que Andrew Kelly deveria ter feito](/2026/07/09/resposta-sobre-bun-em-rust-que-andrew-kelly-deveria-ter-feito/)

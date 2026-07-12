@@ -105,6 +105,7 @@ title: AkitaOnRails Blog
 
 ## 2026 - July
 
+- [Quantum News: Majorana 2 and Understanding Shor](/en/2026/07/12/quantum-news-majorana-2-and-understanding-shor/)
 - [Using AI to Solve My Little Day-to-Day Problems](/en/2026/07/12/using-ai-to-solve-my-little-day-to-day-problems/)
 - [How Do I Protect Myself From My Agents Deleting My Stuff?](/en/2026/07/11/how-to-protect-yourself-from-agents-deleting-your-stuff/)
 - [The Bun in Rust Response Andrew Kelly Should Have Written](/en/2026/07/09/the-bun-in-rust-response-andrew-kelly-should-have-written/)
