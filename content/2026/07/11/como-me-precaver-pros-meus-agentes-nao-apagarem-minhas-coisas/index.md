@@ -117,6 +117,22 @@ O caso do goodalexander foi além de perder arquivos: o agente varreu `/var` e `
 
 Sistema não sobe mais? Reinicia, segura o menu do GRUB, escolhe "snapshots" e dá boot direto num snapshot de ontem, read-only. De dentro dele, roda `timeshift --restore`, escolhe o snapshot bom, reinicia de novo. Sistema inteiro de volta ao estado de antes do desastre, em menos tempo do que você levaria pra achar o pendrive de instalação. No pior caso absoluto (o próprio GRUB foi junto), um live USB qualquer monta a partição BTRFS, aponta o subvolume padrão de volta pro snapshot bom e resolve.
 
+### E no macOS? E no Windows?
+
+Usuário de Mac tem o equivalente direto: o **APFS**, filesystem padrão desde o High Sierra (2017), também é copy-on-write e também tem snapshots leves. Quem gerencia é o Time Machine: com ele ativado, o macOS tira snapshots locais automáticos de hora em hora e guarda as últimas 24 horas no próprio disco, independente do backup externo. E dá pra criar um na mão antes de soltar o agente:
+
+```bash
+# criar um snapshot local do APFS agora
+tmutil localsnapshot
+
+# listar os snapshots existentes
+tmutil listlocalsnapshots /
+```
+
+Pra recuperar, abre o próprio Time Machine ("Browse Time Machine Backups" na barra de menu): ele navega pelos snapshots locais mesmo sem nenhum disco externo plugado, e você restaura o arquivo dali. Quem prefere terminal monta o snapshot read-only com `mount_apfs -s` e copia de volta. Ou seja, o caso do Matt Shumer lá do começo tinha solução nativa no próprio Mac dele: um snapshot de uma hora antes teria devolvido quase tudo.
+
+No Windows a história é mais fraca. O NTFS tem o Volume Shadow Copy (VSS), que alimenta os restore points e a aba "Versões Anteriores", mas é voltado pra arquivos de sistema e raramente está cobrindo seus dados na hora que você precisa. Nada com a leveza e a previsibilidade de um snapshot CoW agendado. Se você desenvolve no Windows, trate backup externo como obrigatório, sem discussão (e o restic da próxima seção roda em Windows numa boa).
+
 ## Camada 3: backup externo com restic
 
 Snapshot mora no mesmo disco que os dados. Se o NVMe morrer, morrem os dois juntos. Por isso a outra coisa que eu repito há anos: **todo mundo precisa de backup externo**, seja num HD externo, seja num NAS. Eu uso um Synology na rede local, montado via NFS, e [documentei o setup completo aqui](/2025/04/17/configurando-meu-nas-synology-com-nfs-no-linux/).
@@ -240,6 +256,8 @@ E monitoramento é tão parte da disciplina que eu aplico até na minha máquina
 Uma linha de veredito ("all systems healthy") e o estado de tudo que este post descreveu: o backup do restic rodou há 19 horas e o próximo é às 03:03; o Timeshift mantém 23 snapshots; a limpeza de caches de desenvolvimento rodou há 32 horas; o scrub do BTRFS está em dia em cada filesystem, com trim recente, alocação saudável e zero erros de I/O; mais zumbis, load, memória e ocupação de cada disco. O widget (`tclock-system-health`) vem junto no repositório e no pacote do AUR, e detecta a maior parte disso sozinho.
 
 Por trás dele estão as manutenções automatizadas, todas em timers do systemd: o restic diário às 3h; o `dev-cache-clean` (dia 1 e dia 15) varrendo `target/` órfãos de Rust e cache do yay, que juntos devolvem dezenas de gigas; o `btrfs-scrub` mensal por filesystem validando checksums; o `fstrim` semanal. Nada disso exige que eu lembre de nada. Quando algum atrasar ou falhar, o widget muda de cor na minha cara.
+
+Esse é o nível caseiro, proporcional a um PC pessoal. Numa empresa você vai de full-blown: Prometheus coletando métricas, Grafana desenhando os dashboards, Alertmanager acordando o plantonista às 3 da manhã. A escala muda, o princípio é o mesmo: o estado do sistema visível o tempo todo, e alguém (ou alguma coisa) sendo avisado quando sai do trilho.
 
 ## Conclusão: disciplina
 
