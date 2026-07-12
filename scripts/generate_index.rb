@@ -19,6 +19,7 @@ OFF_TOPIC_FILE_EN = "#{OFF_TOPIC_DIR}/_index.en.md"
 FRONTMATTER_DELIMITER = '---'
 
 FEATURED_POSTS = [
+  ['2026-07-11', 'Como me precaver pros meus agentes não apagarem minhas coisas?', '/2026/07/11/como-me-precaver-pros-meus-agentes-nao-apagarem-minhas-coisas/'],
   ['2026-07-09', 'LLM Benchmarks: Grok 4.5 e GPT 5.6 Sol', '/2026/07/09/llm-benchmark-grok-4-5-gpt-5-6-sol/'],
   ['2026-06-24', 'Por que LLMs vão falhar na Sua Empresa?', '/2026/06/24/por-que-llms-vao-falhar-na-sua-empresa/'],
   ['2026-06-11', 'LLM Benchmark: Fable 5 e a novela da Anthropic', '/2026/06/11/llm-benchmark-fable-5-e-a-novela-da-anthropic/'],
@@ -36,6 +37,7 @@ FEATURED_POSTS = [
 ].freeze
 
 FEATURED_POSTS_EN = [
+  ['2026-07-11', 'How Do I Protect Myself From My Agents Deleting My Stuff?', '/en/2026/07/11/how-to-protect-yourself-from-agents-deleting-your-stuff/'],
   ['2026-07-09', 'LLM Benchmarks: Grok 4.5 and GPT 5.6 Sol', '/en/2026/07/09/llm-benchmark-grok-4-5-gpt-5-6-sol/'],
   ['2026-06-24', 'Why LLMs Will Fail at Your Company', '/en/2026/06/24/why-llms-will-fail-at-your-company/'],
   ['2026-06-11', 'LLM Benchmark: Fable 5 and the Anthropic Soap Opera', '/en/2026/06/11/llm-benchmark-fable-5-anthropic-soap-opera/'],

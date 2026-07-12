@@ -11,6 +11,7 @@ title: AkitaOnRails Blog
   </div>
   <div id="aor-featured-posts-body" class="aor-featured__body">
     <ul>
+          <li><code>2026-07-11</code> — <a href="/2026/07/11/como-me-precaver-pros-meus-agentes-nao-apagarem-minhas-coisas/">Como me precaver pros meus agentes não apagarem minhas coisas?</a></li>
           <li><code>2026-07-09</code> — <a href="/2026/07/09/llm-benchmark-grok-4-5-gpt-5-6-sol/">LLM Benchmarks: Grok 4.5 e GPT 5.6 Sol</a></li>
           <li><code>2026-06-24</code> — <a href="/2026/06/24/por-que-llms-vao-falhar-na-sua-empresa/">Por que LLMs vão falhar na Sua Empresa?</a></li>
           <li><code>2026-06-11</code> — <a href="/2026/06/11/llm-benchmark-fable-5-e-a-novela-da-anthropic/">LLM Benchmark: Fable 5 e a novela da Anthropic</a></li>
