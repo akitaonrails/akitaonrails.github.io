@@ -11,6 +11,8 @@ title: AkitaOnRails Blog
   </div>
   <div id="aor-featured-posts-en-body" class="aor-featured__body">
     <ul>
+          <li><code>2026-07-12</code> — <a href="/en/2026/07/12/quantum-news-majorana-2-and-understanding-shor/">Quantum News: Majorana 2 and Understanding Shor</a></li>
+          <li><code>2026-07-12</code> — <a href="/en/2026/07/12/using-ai-to-solve-my-little-day-to-day-problems/">Using AI to Solve My Little Day-to-Day Problems</a></li>
           <li><code>2026-07-11</code> — <a href="/en/2026/07/11/how-to-protect-yourself-from-agents-deleting-your-stuff/">How Do I Protect Myself From My Agents Deleting My Stuff?</a></li>
           <li><code>2026-07-09</code> — <a href="/en/2026/07/09/llm-benchmark-grok-4-5-gpt-5-6-sol/">LLM Benchmarks: Grok 4.5 and GPT 5.6 Sol</a></li>
           <li><code>2026-06-24</code> — <a href="/en/2026/06/24/why-llms-will-fail-at-your-company/">Why LLMs Will Fail at Your Company</a></li>
