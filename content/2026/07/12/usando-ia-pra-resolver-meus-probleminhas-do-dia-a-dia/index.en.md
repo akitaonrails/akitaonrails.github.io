@@ -21,7 +21,7 @@ The pattern repeats in all of them: I run into a small friction in daily life, t
 
 Everything below is on [my GitHub](https://github.com/akitaonrails), with binaries, releases and install instructions.
 
-In this post: [clock-tui](#clock-tui-a-desk-clock-that-became-a-panel) (with the [google-calendar-tui](#clock-tui-a-desk-clock-that-became-a-panel) and [ghpending](#clock-tui-a-desk-clock-that-became-a-panel) widgets), [github-visualize](#github-visualize-useless-but-pretty), [frank_geary](#frank-geary-email-the-way-i-wanted-it), [frank_scanlation](#japanese-manga-frankyomik-frank-manga-and-frank-scanlation), [frank_lyrics](#frank-lyrics-memorizing-songs-line-by-line), [frank_type](#frank-type-typing-practice-with-actual-prose) and [aitrepreneur-docker](#aitrepreneur-docker-comfyui-without-dirtying-the-system).
+In this post: [clock-tui](#clock-tui-a-desk-clock-that-became-a-panel) (with the [google-calendar-tui](#clock-tui-a-desk-clock-that-became-a-panel) and [ghpending](#clock-tui-a-desk-clock-that-became-a-panel) widgets), [github-visualize](#github-visualize-useless-but-pretty), [frank_geary](#frank-geary-email-the-way-i-wanted-it), [frank_scanlation](#japanese-manga-frankyomik-frank-manga-and-frank-scanlation), [frank_lyrics](#frank-lyrics-memorizing-songs-line-by-line), [frank_type](#frank-type-typing-practice-with-actual-prose), [distrobox-gaming](#distrobox-gaming-a-library-of-how-to-install-games-on-linux) and [aitrepreneur-docker](#aitrepreneur-docker-comfyui-without-dirtying-the-system).
 
 ## clock-tui: a desk clock that became a panel
 
@@ -131,6 +131,26 @@ Install: it's a Docker container published as `akitaonrails/frank_type`. One com
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/akitaonrails/frank_type/master/bin/docker-run.sh | bash
+```
+
+## distrobox-gaming: a library of how to install games on Linux
+
+I game on the same PC I work on, but I refuse to mix emulator packages and Wine hackery with my development environment. The solution was to isolate gaming entirely inside a [distrobox](https://github.com/89luca89/distrobox) (containers that integrate with your desktop as if they were native), and [distrobox-gaming](https://github.com/akitaonrails/distrobox-gaming) is the repository of Ansible playbooks that builds that Arch box from scratch: ES-DE as the frontend, standalone emulators, RetroArch cores, per-game configs. My Arch/Omarchy host stays clean.
+
+The rule I imposed on myself: every new game I install has to become a reproducible Ansible recipe. I confess I haven't tested the full rebuild from scratch yet, but that's the idea: any trick or hack required gets documented in code instead of lost in shell history.
+
+And there's no shortage of tricks, because I've been installing old abandonware: the Colin McRae Rally series (from the PS1 version with a 60 fps patch up to 2007's DiRT), Sega Rally Revo, OutRun 2006 Coast 2 Coast, among others. Each with its own Wine quirks, patches and configs. Without meaning to, the repository is becoming a library of documentation on how to install games, emulators and retro games on Linux.
+
+Along the same lines there's [distrobox-llm](https://github.com/akitaonrails/distrobox-llm), which does the same isolation for my local LLM environment (CUDA, Ollama, LM Studio and friends), leaving only the NVIDIA driver on the host.
+
+Install: clone the repository and run the playbooks:
+
+```sh
+cd ansible
+ansible-galaxy collection install -r collections/requirements.yml
+cp host_vars/localhost.yml.example host_vars/localhost.yml
+$EDITOR host_vars/localhost.yml
+ansible-playbook site.yml
 ```
 
 ## aitrepreneur-docker: ComfyUI without dirtying the system
