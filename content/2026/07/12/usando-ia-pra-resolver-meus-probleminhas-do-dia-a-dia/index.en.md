@@ -141,6 +141,8 @@ The rule I imposed on myself: every new game I install has to become a reproduci
 
 And there's no shortage of tricks, because I've been installing old abandonware: the Colin McRae Rally series (from the PS1 version with a 60 fps patch up to 2007's DiRT), Sega Rally Revo, OutRun 2006 Coast 2 Coast, among others. Each with its own Wine quirks, patches and configs. Without meaning to, the repository is becoming a library of documentation on how to install games, emulators and retro games on Linux.
 
+![Colin McRae Rally 04 running in the gaming box: the Service Area screen with the Mitsubishi Lancer Evolution before the next stage.](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/07/12/probleminhas/distrobox-gaming-cmr04.webp)
+
 Along the same lines there's [distrobox-llm](https://github.com/akitaonrails/distrobox-llm), which does the same isolation for my local LLM environment (CUDA, Ollama, LM Studio and friends), leaving only the NVIDIA driver on the host.
 
 Install: clone the repository and run the playbooks:
