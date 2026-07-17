@@ -145,7 +145,37 @@ K3 costs **3.16× more for input** and **3.75× more for output** than K2.6/2.7.
 
 Even so, K3 costs 40% less than Opus 4.8 at official rates ($5/$25) and 70% less than Fable ($10/$50). On the **$19 Kimi Moderato plan**, this is excellent for interactive solo coding. Just do not automate recklessly: we observed around two heavy rounds per five-hour window and quota recovery in 4h16. For unsupervised batch work, a mid-run 403 throws away work and time.
 
-My practical take: K2.6 remains the best raw-API option for high-volume automation with human review. K3 is a very good option for those coding interactively. Opus 4.8 remains my choice for complex refactors, concurrency, security, and autonomous changes where correctness matters more than the bill. Fable, in this slice, is economically dominated.
+### Moderato is too small for serious work
+
+This is the part the monthly price hides. I used the $19/month Moderato. Its quota is organized in rolling five-hour windows: use a lot now, then wait for the window to slide forward before capacity returns. A benchmark run is not one loose prompt. It is exactly two prompts/phases: build the app, then resume the same session to validate and fix it.
+
+K3 completed that whole run in 26 minutes and 4.83 million tokens, almost all cache-read, about $2.10 API-equivalent. K2.7 Coding completed the same two prompts in 16 minutes and 9.25 million tokens. In the benchmark record, approximately two complete runs at that scale fit before a third received a hard 403 partway through. The partial build was lost. Recovery took 4h16, with seven blocked probes at 20-minute intervals.
+
+One caveat: I did not commit the raw 403/probe transcript. This chronology is a recorded benchmark observation, not something another person can independently audit from raw logs. The documentation says already-running tasks normally finish; our third one did not. That is what I saw in use, not an accusation that the documentation is lying.
+
+Official plans are on the [membership page](https://www.kimi.com/help/membership/membership-pricing):
+
+| Plan | Monthly / annual equivalent | Credits | Concurrent tasks | Verdict |
+|---|---:|---:|---:|---|
+| Adagio | free | — | — | To try it out, not for a heavy session |
+| Moderato | $19 / $15 ($180/year) | 1x | 2 | One or, at most, around two heavy sessions per window; too small for a serious routine |
+| Allegretto | $39 / $31 | 5x | 2 | The sensible minimum for lighter daily interactive use |
+| Allegro | $99 / $79 | 15x | 4 | The first plan I recommend for sustained professional use, at least 5h/day |
+| Vivace | $199 / $159 | 30x | 4 | Parallel agents or near-continuous heavy use; probably overkill for one person |
+
+K3 on Moderato is limited to 256K context. Allegretto and above unlock up to 1M. Allegretto+ also unlocks HighSpeed, but that mode burns roughly 3x the quota. The 5x/15x/30x are relative credits, not a promise of 5/15/30 times more linear runs. The documentation discloses weekly refresh, the rolling five-hour window, and shared quota across CLI, VS Code, and API-key tools, but does not publish the exact formula for a heavy session or token. Cache, output, and agent behavior change the math a lot.
+
+Moderato is good for one, maybe two heavy sessions in five hours. For five hours of coding a day, it is too small: in a sequence of these tiny benchmark runs, with only two prompts per model, the third attempt already hit cooldown. Cooldown is the wait for the quota window to open again. Allegretto is the minimum upgrade for lighter daily interaction and gets 1M context, but 5x can leave little headroom for someone driving the agent continuously or enabling HighSpeed. For sustained professional use, at least five hours a day, I would go with **Allegro**: 15x credits and four concurrent tasks. There is still no official guarantee of uninterrupted execution. Vivace is for multiple agents or near-continuous load; for one developer, it is generally overkill.
+
+The other choice is subscription or direct API. The K3 API charges $0.30/M cached input, $3/M uncached input, and $15/M output. It provides explicit accounting, the full 1M context, and does not have the membership weekly quota, although normal API limits still apply. It is the better route for CI, batch work, and long runs worth real money.
+
+A subscription buys something else: fixed monthly cost, convenient OAuth/CLI, near-zero marginal cost within the caps, and a predictable bill. In return, you accept a hidden token envelope, rolling/weekly caps, shared allowance, the risk of stopping midway, and no SLA for unattended automation. The K3 ~$2.10 is only a rough API-equivalent. At that run shape, the Moderato monthly fee arithmetically equals around 9 runs, Allegretto 19, Allegro 47, and Vivace 95 per month. That is invoice arithmetic, not a quota guarantee: real workloads vary wildly with cache and output.
+
+Kimi also offers [Extra Usage](https://www.kimi.com/code/docs/en/kimi-code/membership.html), which can fall back to paid balance under a spending cap. It helps prevent an abrupt quota stop. The exact USD rate is not published, and it does not turn a consumer membership into an automation SLA.
+
+My plain recommendation: for 5h/day, Allegro. For lighter interaction, Allegretto. For automation and CI, pay-as-you-go API. If you stay on subscription and the work cannot stop, enable Extra Usage with a spending cap.
+
+Separating plan from model: K2.6 remains the best raw-API option for high-volume automation with human review. K3 is a very good option for those coding interactively. Opus 4.8 remains my choice for complex refactors, concurrency, security, and autonomous changes where correctness matters more than the bill. Fable, in this slice, is economically dominated.
 
 ## Bonus: GLM 5.2 versus Opus
 
@@ -163,4 +193,4 @@ In this greenfield Rails project, K3 is a good replacement for Opus 4.6 and offe
 
 There is one run per model and there is harness effect, especially with K3. The benchmark also does not cover database migrations, background jobs, or product tool calls. There is no data here to make promises about those.
 
-My map today: K2.6 for reviewed-volume API automation; K3/Moderato for interactive solo work; Opus 4.8 when the patch is sensitive; GLM 5.2 as a good subscription default for routine reviewed work. No hype. Read the code, run the tests, and treat every ranking as limited evidence, not religion.
+My map today: K2.6 for reviewed-volume API automation; K3/Allegretto for lighter interactive solo work and Allegro for a sustained professional routine; Opus 4.8 when the patch is sensitive; GLM 5.2 as a good subscription default for routine reviewed work. No hype. Read the code, run the tests, and treat every ranking as limited evidence, not religion.
