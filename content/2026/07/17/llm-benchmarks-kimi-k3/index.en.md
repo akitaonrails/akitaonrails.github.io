@@ -1,5 +1,5 @@
 ---
-title: "LLM Benchmarks: Kimi K3"
+title: "LLM Benchmark: Has Kimi K3 Reached Claude Opus Level?"
 slug: "llm-benchmarks-kimi-k3"
 date: '2026-07-17T12:00:00-03:00'
 draft: false
