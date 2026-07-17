@@ -11,6 +11,7 @@ title: AkitaOnRails Blog
   </div>
   <div id="aor-featured-posts-body" class="aor-featured__body">
     <ul>
+          <li><code>2026-07-17</code> — <a href="/2026/07/17/llm-benchmarks-kimi-k3/">LLM Benchmarks: Kimi K3</a></li>
           <li><code>2026-07-12</code> — <a href="/2026/07/12/noticias-quanticas-majorana-2-e-entendendo-shor/">Notícias Quânticas: Majorana 2 e entendendo Shor</a></li>
           <li><code>2026-07-12</code> — <a href="/2026/07/12/usando-ia-pra-resolver-meus-probleminhas-do-dia-a-dia/">Usando IA pra resolver meus probleminhas do dia-a-dia</a></li>
           <li><code>2026-07-11</code> — <a href="/2026/07/11/como-me-precaver-pros-meus-agentes-nao-apagarem-minhas-coisas/">Como me precaver pros meus agentes não apagarem minhas coisas?</a></li>
@@ -107,6 +108,7 @@ title: AkitaOnRails Blog
 
 ## 2026 - Julho
 
+- [LLM Benchmarks: Kimi K3](/2026/07/17/llm-benchmarks-kimi-k3/)
 - [Notícias Quânticas: Majorana 2 e entendendo Shor](/2026/07/12/noticias-quanticas-majorana-2-e-entendendo-shor/)
 - [Usando IA pra resolver meus probleminhas do dia-a-dia](/2026/07/12/usando-ia-pra-resolver-meus-probleminhas-do-dia-a-dia/)
 - [Como me precaver pros meus agentes não apagarem minhas coisas?](/2026/07/11/como-me-precaver-pros-meus-agentes-nao-apagarem-minhas-coisas/)
