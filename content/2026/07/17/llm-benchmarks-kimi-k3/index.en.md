@@ -18,7 +18,7 @@ tags:
 
 I am always testing new LLMs. It is the only way to separate a release note from code that actually goes up. In the two most recent posts, [Grok 4.5 and GPT 5.6 Sol](/en/2026/07/09/llm-benchmark-grok-4-5-gpt-5-6-sol/) and [Sonnet 5, Gemini 3.5 Flash and Sakana](/en/2026/07/01/llm-benchmark-sonnet-5-fails-gemini-flash-surprises-sakana-fugu-almost-tier-a/), the table moved around quite a bit. Now it is Moonshot's turn.
 
-The focus is **Kimi K3**, an alternative that is becoming more and more like Claude in the kind of work it can finish. And a silly but important detail when looking for documentation: its official name is **Kimi K3**, not “Kimi v3”.
+The focus is **Kimi K3**, an alternative that is becoming more and more like Claude in the kind of work it can finish.
 
 ## For those who just landed here
 

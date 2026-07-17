@@ -18,7 +18,7 @@ tags:
 
 Eu estou sempre testando LLM nova. É a única forma de separar release note de código que sobe. Nos dois posts mais recentes, [Grok 4.5 e GPT 5.6 Sol](/2026/07/09/llm-benchmark-grok-4-5-gpt-5-6-sol/) e [Sonnet 5, Gemini 3.5 Flash e Sakana](/2026/07/01/llm-benchmark-sonnet-5-gemini-3-5-flash-sakana-fugu-ultra/), a tabela mexeu bastante. Agora é a vez da Moonshot.
 
-O foco é o **Kimi K3**, alternativa que está ficando cada vez mais parecida com Claude no tipo de trabalho que consegue terminar. E um detalhe bobo, mas importante para procurar documentação: o nome oficial é **Kimi K3**, não “Kimi v3”.
+O foco é o **Kimi K3**, alternativa que está ficando cada vez mais parecida com Claude no tipo de trabalho que consegue terminar.
 
 ## Pra quem caiu de paraquedas
 
