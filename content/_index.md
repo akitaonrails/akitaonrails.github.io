@@ -108,6 +108,7 @@ title: AkitaOnRails Blog
 
 ## 2026 - Julho
 
+- [LLM Benchmark: Devo usar o que tem nota maior?](/2026/07/19/llm-benchmark-devo-usar-o-que-tem-nota-maior/)
 - [LLM Benchmark: Kimi K3 chegou no nível do Claude Opus?](/2026/07/17/llm-benchmarks-kimi-k3/)
 - [Notícias Quânticas: Majorana 2 e entendendo Shor](/2026/07/12/noticias-quanticas-majorana-2-e-entendendo-shor/)
 - [Usando IA pra resolver meus probleminhas do dia-a-dia](/2026/07/12/usando-ia-pra-resolver-meus-probleminhas-do-dia-a-dia/)

@@ -108,6 +108,7 @@ title: AkitaOnRails Blog
 
 ## 2026 - July
 
+- [LLM Benchmark: Should I Use the Highest-Scoring Model?](/en/2026/07/19/llm-benchmark-should-i-use-the-highest-scoring-model/)
 - [LLM Benchmark: Has Kimi K3 Reached Claude Opus Level?](/en/2026/07/17/llm-benchmarks-kimi-k3/)
 - [Quantum News: Majorana 2 and Understanding Shor](/en/2026/07/12/quantum-news-majorana-2-and-understanding-shor/)
 - [Using AI to Solve My Little Day-to-Day Problems](/en/2026/07/12/using-ai-to-solve-my-little-day-to-day-problems/)
