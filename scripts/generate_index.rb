@@ -19,6 +19,7 @@ OFF_TOPIC_FILE_EN = "#{OFF_TOPIC_DIR}/_index.en.md"
 FRONTMATTER_DELIMITER = '---'
 
 FEATURED_POSTS = [
+  ['2026-07-19', 'LLM Benchmark: Devo usar o que tem nota maior?', '/2026/07/19/llm-benchmark-devo-usar-o-que-tem-nota-maior/'],
   ['2026-07-17', 'LLM Benchmark: Kimi K3 chegou no nível do Claude Opus?', '/2026/07/17/llm-benchmarks-kimi-k3/'],
   ['2026-07-12', 'Notícias Quânticas: Majorana 2 e entendendo Shor', '/2026/07/12/noticias-quanticas-majorana-2-e-entendendo-shor/'],
   ['2026-07-12', 'Usando IA pra resolver meus probleminhas do dia-a-dia', '/2026/07/12/usando-ia-pra-resolver-meus-probleminhas-do-dia-a-dia/'],
@@ -40,6 +41,7 @@ FEATURED_POSTS = [
 ].freeze
 
 FEATURED_POSTS_EN = [
+  ['2026-07-19', 'LLM Benchmark: Should I Use the Highest-Scoring Model?', '/en/2026/07/19/llm-benchmark-should-i-use-the-highest-scoring-model/'],
   ['2026-07-17', 'LLM Benchmark: Has Kimi K3 Reached Claude Opus Level?', '/en/2026/07/17/llm-benchmarks-kimi-k3/'],
   ['2026-07-12', 'Quantum News: Majorana 2 and Understanding Shor', '/en/2026/07/12/quantum-news-majorana-2-and-understanding-shor/'],
   ['2026-07-12', 'Using AI to Solve My Little Day-to-Day Problems', '/en/2026/07/12/using-ai-to-solve-my-little-day-to-day-problems/'],

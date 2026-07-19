@@ -11,6 +11,7 @@ title: AkitaOnRails Blog
   </div>
   <div id="aor-featured-posts-body" class="aor-featured__body">
     <ul>
+          <li><code>2026-07-19</code> — <a href="/2026/07/19/llm-benchmark-devo-usar-o-que-tem-nota-maior/">LLM Benchmark: Devo usar o que tem nota maior?</a></li>
           <li><code>2026-07-17</code> — <a href="/2026/07/17/llm-benchmarks-kimi-k3/">LLM Benchmark: Kimi K3 chegou no nível do Claude Opus?</a></li>
           <li><code>2026-07-12</code> — <a href="/2026/07/12/noticias-quanticas-majorana-2-e-entendendo-shor/">Notícias Quânticas: Majorana 2 e entendendo Shor</a></li>
           <li><code>2026-07-12</code> — <a href="/2026/07/12/usando-ia-pra-resolver-meus-probleminhas-do-dia-a-dia/">Usando IA pra resolver meus probleminhas do dia-a-dia</a></li>
