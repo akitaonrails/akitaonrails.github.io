@@ -158,6 +158,7 @@ This site uses the Hextra theme with customizations:
 
 - **`layouts/partials/custom/head-end.html`**: Custom CSS for embeds and typography
 - **`layouts/partials/components/comments.html`**: Disqus integration
+- **`layouts/term.html`**: Tag pages using the shared list/grid post views
 - **`layouts/_default/list.rss.xml`**: Custom RSS feed (includes full content, limited to 20 items)
 
 Hextra provides hooks in `layouts/_partials/custom/` for safe customization.

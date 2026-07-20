@@ -67,7 +67,7 @@ Before choosing tags, run `./scripts/tag_catalog.rb --search "article title and 
 | File | Purpose |
 |------|---------|
 | `layouts/single.html` | Post template: centered content (max-w-6xl), TOC enabled, sidebar disabled, Disqus comments |
-| `layouts/term.html` | Literal localized tag-term page titles and post listings |
+| `layouts/term.html` | Localized tag pages with the shared list/grid control, month groups, tags, and description cards |
 | `layouts/_partials/tags.html` | Clickable tags below article titles and in generated listings |
 | `layouts/_default/list.rss.xml` | RSS 2.0 feed, 20 most recent posts with full content |
 | `layouts/partials/custom/head-end.html` | Google Fonts, custom CSS (typography, code blocks, social icons, responsive embeds, dark mode) |

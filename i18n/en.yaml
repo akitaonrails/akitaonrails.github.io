@@ -2,4 +2,9 @@ copyright: "© 2006-2026 Fabio Akita - All Rights Reserved"
 joinDiscussion: "💬 Join the Discussion"
 pageNotFound: "This page could not be found."
 backToHome: "Back to home"
-
+listView: "List"
+gridView: "Grid"
+postView: "Post view"
+postCount:
+  one: "{{ .Count }} post"
+  other: "{{ .Count }} posts"

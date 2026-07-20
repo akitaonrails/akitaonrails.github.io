@@ -99,8 +99,9 @@ PT-BR e mapeadas para os nomes EN pela taxonomia controlada em
 ./scripts/tag_catalog.rb --check
 ```
 
-As tags aparecem abaixo dos títulos na lista, nos cards e dentro dos artigos,
-e levam às páginas de agrupamento do Hugo.
+As tags aparecem abaixo dos títulos na lista, nos cards e dentro dos artigos.
+Cada página de tag reaproveita a mesma visualização persistente de lista/grade,
+com agrupamento mensal, TL;DRs nos cards e descrições completas no hover.
 
 ## Como Contribuir
 
