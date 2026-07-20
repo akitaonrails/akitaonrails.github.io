@@ -2,13 +2,11 @@
 title: Acessando seu NAS usando iSCSI em vez de SMB
 date: '2025-04-24T01:00:00-03:00'
 slug: acessando-seu-nas-usando-iscsi-em-vez-de-smb
+description: "Mover o Docker para NFS deixou os builds lentos por causa das chamadas RPC arquivo a arquivo. Com um disco iSCSI em bloco no Synology, os comandos caíram de centenas de segundos para menos de um."
 tags:
-- nfs
-- smb
-- iscsi
-- synology
-- nas
-- docker
+- homelab
+- armazenamento-e-backup
+- performance
 draft: false
 translationKey: nas-iscsi-instead-of-smb
 ---

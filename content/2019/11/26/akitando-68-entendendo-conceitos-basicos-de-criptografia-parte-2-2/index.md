@@ -2,19 +2,10 @@
 title: "[Akitando] #68 - Entendendo Conceitos Básicos de CRIPTOGRAFIA | Parte 2/2"
 date: '2019-11-26T11:00:00-03:00'
 slug: akitando-68-entendendo-conceitos-basicos-de-criptografia-parte-2-2
+description: "A segunda parte mostra como PBKDF2, bcrypt, scrypt e Argon2 protegem senhas e como Diffie-Hellman, RSA e curvas elípticas se combinam em TLS e SSH."
 tags:
-- PBKDF2
-- bcrypt
-- scrypt
-- argon2
-- PKI
-- diffie-hellman
-- RSA
-- elliptic-curve
-- shor
-- TLS
-- SSH
-- segurança
+- seguranca
+- ciencia-da-computacao
 - akitando
 draft: false
 ---

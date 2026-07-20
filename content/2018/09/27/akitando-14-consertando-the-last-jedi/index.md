@@ -2,18 +2,10 @@
 title: "[Akitando] #14 - Consertando The Last Jedi"
 date: '2018-09-27T17:00:00-03:00'
 slug: akitando-14-consertando-the-last-jedi
+description: "Akita examina por que The Last Jedi divide os fãs e apresenta a reedição de Ivan Ortega, que corrige problemas com montagem. O caso reforça como cortar e reorganizar cenas pode salvar uma obra."
 tags:
-- star wars
-- the last jedi
-- force awakens
-- george lucas
-- rian johnson
-- kathleen kennedy
-- j.j. abrams
-- despecialized
-- dc comics
-- warner bros
-- disney
+- cinema-e-cultura-pop
+- reviews
 - akitando
 draft: false
 ---

@@ -5,10 +5,9 @@ slug: rails-podcast-brasil-especial-qcon-yehuda-katz
 translationKey: qcon-special-yehuda-katz
 aliases:
 - /2008/11/19/rails-podcast-brasil-qcon-special-yehuda-katz/
+description: "Em episódio especial na QCon, entrevistei Yehuda Katz sobre Merb, DataMapper e modularidade. Ele contrapõe a arquitetura do Merb à visão de Rails, mas vê a divergência como debate produtivo."
 tags:
 - qcon2008
-- interview
-- traduzido
 draft: false
 ---
 

@@ -3,8 +3,11 @@ title: Chatting with Scott Hanselman
 date: '2008-02-18T09:45:00-03:00'
 slug: chatting-with-scott-hanselman
 translationKey: chatting-scott-hanselman
+description: "Scott Hanselman talks about his career, diabetes, and Microsoft tools. He sees ASP.NET MVC as a testable alternative to WebForms and attributes most Vista crashes to third-party drivers."
 tags:
-- interview
+- interviews
+- microsoft
+- web-development
 draft: false
 ---
 

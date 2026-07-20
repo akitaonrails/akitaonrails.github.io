@@ -5,10 +5,10 @@ slug: customizando-o-fedora-25-para-desenvolvedores
 translationKey: customizing-fedora-25
 aliases:
 - /2017/01/06/customizing-fedora-25-for-developers/
+description: "O autor transforma o Fedora 25 em uma estação de desenvolvimento com Crystal, Ruby, Node, Elixir, Go, Docker e ferramentas de desktop. Mesmo em hardware antigo, considera a experiência uma alternativa competente ao macOS."
 tags:
 - linux
-- fedora
-- traduzido
+- ferramentas-de-desenvolvimento
 draft: false
 ---
 

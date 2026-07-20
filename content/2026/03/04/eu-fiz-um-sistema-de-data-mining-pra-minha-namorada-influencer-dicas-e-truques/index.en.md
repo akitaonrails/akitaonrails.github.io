@@ -2,13 +2,9 @@
 title: "I Built a Data Mining System for My Influencer Girlfriend — Tips and Tricks"
 date: '2026-03-04T10:00:00-03:00'
 tags:
-  - Ruby on Rails
-  - Data Mining
-  - LLM
-  - Discord
-  - Docker
-  - SQLite
-  - AI
+- rails
+- backend
+- llms
 draft: false
 slug: data-mining-system-for-my-influencer-girlfriend
 translationKey: data-mining-influencer-girlfriend

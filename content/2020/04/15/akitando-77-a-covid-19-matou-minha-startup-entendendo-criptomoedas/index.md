@@ -2,14 +2,11 @@
 title: "[Akitando] #77 - A COVID-19 matou minha Startup? | Entendendo Criptomoedas"
 date: '2020-04-15T10:30:00-03:00'
 slug: akitando-77-a-covid-19-matou-minha-startup-entendendo-criptomoedas
+description: "Akita revisita a crise econômica, dólar, bitcoin e blockchain ao contar como construiu e encerrou a corretora OmniTrade. A decisão foi cortar custos e fazer caixa, não abandonar as criptomoedas."
 tags:
-- criptomoedas
-- FED
-- covid-19
-- Bretton Woods
-- Gold Standard
-- Bitcoin
-- OmniTrade
+- bitcoin-e-criptomoedas
+- economia
+- startups
 - akitando
 draft: false
 ---

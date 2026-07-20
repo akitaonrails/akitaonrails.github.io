@@ -2,11 +2,10 @@
 title: "[Akitando] #85 - Monetizar? Bloquear ADs? O que Fazer?"
 date: '2020-10-09T17:15:00-03:00'
 slug: akitando-85-monetizar-bloquear-ads-o-que-fazer
+description: "Como o YouTube já exibia anúncios sem remunerar o canal, Akita decide ativar a monetização e doar toda a receita a projetos educacionais, com contrapartida da própria empresa por alguns meses."
 tags:
-- youtube
-- monetização
-- patrocínio
-- doação
+- negocios
+- blog
 - akitando
 draft: false
 ---

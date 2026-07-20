@@ -2,11 +2,12 @@
 title: "[Off-Topic] Estimates Are Promises. Promises Must Be Kept."
 date: '2013-08-23T16:15:00-03:00'
 slug: off-topic-estimativas-sao-promessas-promessas-devem-ser-cumpridas
+description: "The author argues that software estimates are promises, not predictions, and that keeping them requires responsibility for communication, negotiation, time, and obstacles, as well as code."
 tags:
-- off-topic
-- principles
 - career
 - management
+- software-engineering
+- off-topic
 draft: false
 ---
 

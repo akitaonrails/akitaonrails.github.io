@@ -2,9 +2,12 @@
 title: 'Off Topic: Be Arrogant!'
 date: '2007-04-14T13:19:00-03:00'
 slug: off-topic-seja-arrogante
+description: "The author turns “be arrogant” into a demand for competence: saying yes means studying and delivering. His journey with English, movies, audiobooks, podcasts, and feeds shows how he practices it."
 tags:
-- off-topic
 - career
+- learning
+- productivity
+- off-topic
 draft: false
 ---
 

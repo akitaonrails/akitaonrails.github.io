@@ -3,10 +3,9 @@ title: RailsConf 09 - Uncle Bob Martin
 date: '2009-05-06T22:26:00-03:00'
 slug: railsconf-09-uncle-bob-martin
 translationKey: railsconf-2009-uncle-bob-martin
+description: "Robert Martin closes the day at RailsConf with a keynote, and Akita records part of it before asking Uncle Bob for quick advice to Brazilians who still do not understand TDD."
 tags:
 - railsconf2009
-- interview
-- english
 draft: false
 ---
 

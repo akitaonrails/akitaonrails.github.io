@@ -2,6 +2,7 @@
 title: "[Prévia] Rubyconf Brasil 2015 - Call for Papers e Novo Formato!"
 date: '2015-04-28T16:35:00-03:00'
 slug: previa-rubyconf-brasil-2015-call-for-papers-e-novo-formato
+description: "A Rubyconf Brasil 2015 testaria um novo formato: dois tracks avançados e um Open Floor com workshops, cases e várias atividades. A proposta buscava acomodar iniciantes, experientes e outras tecnologias Web."
 tags:
 - rubyconfbr2015
 draft: false

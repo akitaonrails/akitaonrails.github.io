@@ -3,14 +3,10 @@ title: "[Akitando] #76 - Guia DEFINITIVO de Aprendendo a Aprender | A maior BRON
   da sua vida [RATED R]"
 date: '2020-04-01T10:41:00-03:00'
 slug: akitando-76-guia-definitivo-de-aprendendo-a-aprender-a-maior-bronca-da-sua-vida-rated-r
+description: "Akita questiona atalhos de cursos e certificados e defende aprender programação com fundamentos, problemas reais, autonomia e prática. Na 42 SP, encontra esse modelo aplicado numa escola gratuita e seletiva."
 tags:
-- covid-19
-- 42sp
-- École 42
-- Codeminer
 - aprendizado
-- programação
-- cursos
+- programacao
 - akitando
 draft: false
 ---

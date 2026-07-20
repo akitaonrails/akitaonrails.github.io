@@ -2,6 +2,7 @@
 title: 'Palestrante Rails Summit: Vinicius Teles'
 date: '2008-08-29T17:47:00-03:00'
 slug: palestrante-rails-summit-vinicius-teles
+description: "Akita apresenta Vinicius Teles, um dos primeiros divulgadores de métodos Ágeis, XP e Ruby on Rails no Brasil. O post recomenda seu texto sobre fazer o que se ama e anuncia sua participação no Rails Summit."
 tags:
 - railssummit2008
 draft: false

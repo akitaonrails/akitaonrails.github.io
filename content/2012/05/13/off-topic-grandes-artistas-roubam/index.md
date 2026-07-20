@@ -2,11 +2,11 @@
 title: "[Off-Topic] Grandes Artistas Roubam"
 date: '2012-05-13T11:00:00-03:00'
 slug: off-topic-grandes-artistas-roubam
+description: "A partir da frase de Picasso, o autor defende que artistas e desenvolvedores começam copiando técnicas, mas só avançam quando as adaptam, refinam e tornam suas por meio da prática."
 tags:
+- filosofia
+- aprendizado
 - off-topic
-- principles
-- career
-- philosophy
 draft: false
 ---
 

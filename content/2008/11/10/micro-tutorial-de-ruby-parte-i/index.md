@@ -2,11 +2,11 @@
 title: Micro-Tutorial de Ruby - Parte I
 date: '2008-11-10T01:41:00-02:00'
 slug: micro-tutorial-de-ruby-parte-i
+description: "A Parte I apresenta Ruby pelo IRB e explica objetos, classes abertas, monkey patching e módulos. A ideia é entender o dinamismo da linguagem sem tentar programar como em Java ou C#."
 tags:
-- learning
-- beginner
+- tutoriais
 - ruby
-- tutorial
+- aprendizado
 draft: false
 ---
 

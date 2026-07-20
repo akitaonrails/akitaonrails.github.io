@@ -3,14 +3,9 @@ title: 'Your Own Free Universal Co-Pilot Running Local: AIDER-OLLAMA-QWEN'
 date: '2025-04-25T13:40:00-03:00'
 slug: your-own-free-universal-copilot-running-local-aider-ollama-qwen
 tags:
-- aider
-- ollama
-- qwen
-- python
-- docker
-- llm
-- sdpa
-  - AI
+- coding-agents
+- local-models
+- llms
 draft: false
 translationKey: local-copilot-aider-ollama-qwen
 description: "How to run Aider with Ollama and Qwen 2.5 Coder locally to build a free, universal Co-Pilot alternative that works with any editor."

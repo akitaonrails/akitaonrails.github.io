@@ -2,8 +2,10 @@
 title: Conversando com Avi Bryant - Parte 1
 date: '2007-12-15T10:18:00-02:00'
 slug: conversando-com-avi-bryant-parte-1
+description: "Avi Bryant conta como passou por Objective-C e Ruby até criar Seaside e Dabble DB, e explica por que a maturidade e o ambiente Smalltalk aumentam sua produtividade."
 tags:
-- interview
+- entrevistas
+- ruby
 draft: false
 translationKey: chatting-avi-bryant-part-1
 aliases:

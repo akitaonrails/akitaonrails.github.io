@@ -2,10 +2,9 @@
 title: AkitaOnRails na RailsConf 2008 - Preview
 date: '2008-06-02T05:16:00-03:00'
 slug: akitaonrails-na-railsconf-2008-preview
+description: "Antes de voltar a São Paulo e compilar toneladas de material da RailsConf 2008, o autor oferece um breve preview do evento e esclarece que não foi ele quem codificou o Passenger."
 tags:
-- biography
 - railsconf2008
-- phusion
 draft: false
 ---
 

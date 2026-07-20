@@ -5,12 +5,10 @@ slug: discussao-como-proteger-nosso-trabalho-de-provedores-de-dns-sofrendo-ataqu
 translationKey: protecting-from-dns-ddos
 aliases:
 - /2016/10/31/discussion-can-we-protect-our-work-from-dns-providers-suffering-ddos-attacks/
+description: "Para testar uma defesa contra novas falhas de DNS, o autor configura o Unbound como recursivo local e estende o cache para 172.800 segundos, mas admite que a solução é experimental e viola TTLs."
 tags:
-- security
-- ddos
-- devops
-- whitehat
-- traduzido
+- seguranca
+- redes
 draft: false
 ---
 

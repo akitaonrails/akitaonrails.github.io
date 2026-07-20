@@ -2,11 +2,11 @@
 title: "[Akitando] #29 - O que eu devo estudar? Vou conseguir emprego?"
 date: '2018-11-27T17:00:00-02:00'
 slug: akitando-29-o-que-eu-devo-estudar-vou-conseguir-emprego
+description: "Akita discute como equilibrar empregabilidade e estudo de novas linguagens, defendendo domínio técnico no trabalho e aprendizado de longo prazo. Um legado em ASP abriu caminho para seu maior projeto Java."
 tags:
-- elixir
-- java
-- ".net"
-- legado
+- carreira
+- aprendizado
+- linguagens-de-programacao
 - akitando
 draft: false
 ---

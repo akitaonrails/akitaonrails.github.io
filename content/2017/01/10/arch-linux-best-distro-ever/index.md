@@ -5,13 +5,10 @@ slug: arch-linux-a-melhor-distro-de-todas
 translationKey: arch-linux-best-distro
 aliases:
 - /2017/01/10/arch-linux-best-distro-ever/
+description: "Depois de se frustrar com o Fedora, o autor instala Arch com GNOME 3.22 e encontra padrões mais polidos, upgrades rolling e um AUR prático. Ele termina convencido de que é a melhor distro Linux que já usou."
 tags:
 - linux
-- archlinux
-- pacman
-- pacaur
-- asdf
-- traduzido
+- reviews
 draft: false
 ---
 

@@ -2,19 +2,11 @@
 title: "[Akitando] #61 - Meus Primeiros 5 Anos | 1990-1995"
 date: '2019-09-12T11:03:00-03:00'
 slug: akitando-61-meus-primeiros-5-anos-1990-1995
+description: "Dos 13 aos 18 anos, Akita aprendeu Basic, dBase, Clipper, CorelDraw e UNIX movido por curiosidade e projetos banais. A trajetória mostra como uma coisa levou à outra sem um plano fixo."
 tags:
-- unix
-- warez
-- bbs
-- usenet
-- telnet
-- coreldraw
-- dbase
-- clipper
-- borland
-- nantucket
-- fenasoft
-- brasoftgames
+- pessoal
+- historia-da-computacao
+- retrocomputacao
 - akitando
 draft: false
 ---

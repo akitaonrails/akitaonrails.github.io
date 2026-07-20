@@ -2,12 +2,12 @@
 title: "[Off-Topic] Comprei meu primeiro Mac, e agora?"
 date: '2009-07-19T22:01:00-03:00'
 slug: off-topic-comprei-meu-primeiro-mac-e-agora
+description: "O autor reúne orientações para quem comprou o primeiro Mac, de atalhos e Finder a aplicativos, segurança, virtualização e desenvolvimento. A adaptação exige abandonar hábitos do Windows."
 tags:
-- off-topic
-- mac
 - apple
-- learning
-- beginner
+- ferramentas-de-desenvolvimento
+- aprendizado
+- off-topic
 draft: false
 ---
 

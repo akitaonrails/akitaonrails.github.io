@@ -2,9 +2,10 @@
 title: Por que Testar?
 date: '2007-08-25T20:04:00-03:00'
 slug: por-que-testar
+description: "O Problema da Parada mostra por que nenhum algoritmo pode garantir o comportamento de todo programa. Testes unitários, funcionais e integrados reduzem riscos sem oferecer certeza absoluta."
 tags:
-- principles
-- tests
+- testes
+- ciencia-da-computacao
 draft: false
 ---
 

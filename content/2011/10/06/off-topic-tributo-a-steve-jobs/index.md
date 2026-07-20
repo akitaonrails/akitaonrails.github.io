@@ -2,9 +2,12 @@
 title: "[Off-Topic] Tributo a Steve Jobs"
 date: '2011-10-06T01:41:00-03:00'
 slug: off-topic-tributo-a-steve-jobs
+description: "Fabio homenageia Steve Jobs relembrando sua relação com o Macintosh e lendo sua trajetória como uma jornada do herói, da fundação da Apple ao retorno em 1997 e além."
 tags:
+- apple
+- historia-da-computacao
+- biografias
 - off-topic
-- steve-jobs
 draft: false
 ---
 

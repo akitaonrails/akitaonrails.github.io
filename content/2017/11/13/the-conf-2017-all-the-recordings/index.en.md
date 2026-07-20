@@ -3,9 +3,9 @@ title: THE CONF 2017 - All the Recordings!
 date: '2017-11-13T16:55:00-02:00'
 slug: the-conf-2017-all-the-recordings
 translationKey: the-conf-2017-recordings
+description: "All 32 talks from The Conf 2017 are free in an InfoQ Brasil playlist, with the best ones also on the U.S. site. The event brought together 31 Brazilians presenting in English to a global audience."
 tags:
 - theconf
-- english
 draft: false
 ---
 

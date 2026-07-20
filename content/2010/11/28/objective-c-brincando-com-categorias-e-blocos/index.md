@@ -2,11 +2,11 @@
 title: "[Objective-C] Brincando com Categorias e Blocos"
 date: '2010-11-28T18:58:00-02:00'
 slug: objective-c-brincando-com-categorias-e-blocos
+description: "Com categorias e blocos, o autor estende NSArray em Objective-C com um método each inspirado no Ruby, mostrando captura de variáveis externas e como aproximar a linguagem de APIs mais dinâmicas."
 tags:
-- learning
-- beginner
 - apple
-- objective-c
+- programacao
+- tutoriais
 draft: false
 ---
 

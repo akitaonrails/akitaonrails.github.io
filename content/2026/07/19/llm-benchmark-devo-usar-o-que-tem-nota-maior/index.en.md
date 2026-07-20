@@ -6,14 +6,8 @@ draft: false
 translationKey: llm-benchmark-devo-usar-o-que-tem-nota-maior
 description: "Why the top entry in an LLM ranking is not necessarily the best model, why 90+ is a cluster, and how to use benchmarks without outsourcing your technical judgment."
 tags:
-  - llm
-  - benchmark
-  - claude
-  - gpt
-  - openai
-  - anthropic
-  - ai
-  - vibecoding
+- llm-benchmarks
+- llms
 ---
 
 Every time I publish another round of my benchmark, someone opens the table, looks at the first few rows, and asks:

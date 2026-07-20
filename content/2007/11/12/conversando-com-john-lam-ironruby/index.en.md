@@ -2,8 +2,11 @@
 title: Chatting with John Lam (IronRuby)
 date: '2007-11-12T18:37:00-02:00'
 slug: chatting-with-john-lam-ironruby
+description: "John Lam explains how IronRuby uses the DLR to run Ruby on .NET, prioritizes compatibility with MRI 1.8 and Rails, seeks CLR interoperability, and beats MRI in benchmarks."
 tags:
-- interview
+- interviews
+- ruby
+- programming-languages
 draft: false
 translationKey: chatting-john-lam
 ---

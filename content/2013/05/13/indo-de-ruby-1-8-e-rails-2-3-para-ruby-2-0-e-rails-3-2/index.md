@@ -2,9 +2,11 @@
 title: Indo de Ruby 1.8 e Rails 2.3 para Ruby 2.0 e Rails 3.2
 date: '2013-05-13T17:37:00-03:00'
 slug: indo-de-ruby-1-8-e-rails-2-3-para-ruby-2-0-e-rails-3-2
+description: "Uma aplicação Ruby 1.8 e Rails 2.3 foi atualizada passo a passo para Ruby 2.0 e Rails 3.2 em menos de três semanas, enquanto os testes passaram de zero a mais de 50% e as requisições caíram de 15 segundos para 400 ms."
 tags:
-- learning
 - rails
+- ruby
+- performance
 draft: false
 ---
 

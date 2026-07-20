@@ -3,16 +3,11 @@ title: "[Akitando] #43 - Concorrência e Paralelismo (Parte 1) | Entendendo Back
   para Iniciantes (Parte 3)"
 date: '2019-03-13T17:00:00-03:00'
 slug: akitando-43-concorrencia-e-paralelismo-parte-1-entendendo-back-end-para-iniciantes-parte-3
+description: "Akita explica como processos, threads, locks, schedulers e I/O assíncrono evoluíram até soluções como C10K, NGINX e Twisted. A escolha depende do problema."
 tags:
-- concorrência
-- paralelismo
-- multi-core
-- multi-tarefa
-- threads
-- reactor
-- async
-- twisted
-- nginx
+- sistemas-distribuidos
+- backend
+- performance
 - akitando
 draft: false
 ---

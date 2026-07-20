@@ -3,8 +3,11 @@ title: Trying to match C-based Fast Blank with Crystal
 date: '2016-07-06T17:10:00-03:00'
 slug: trying-to-match-c-based-fast-blank-with-crystal
 translationKey: fast-blank-crystal-vs-c
+description: "Rewriting Fast Blank in Crystal and comparing it with C and Ruby, the author finds string copying expensive. For this trivial algorithm, the C version remains the best choice."
 tags:
 - crystal
+- performance
+- algorithms-and-data-structures
 draft: false
 ---
 

@@ -4,10 +4,9 @@ slug: "frontend-without-a-framework-behind-the-m-akita-chronicles"
 date: 2026-02-19T01:08:23+00:00
 draft: false
 tags:
-- themakitachronicles
-- tailwind
-- hugo
-  - AI
+- the-m-akita-chronicles
+- frontend
+- web-development
 translationKey: frontend-without-framework
 description: "How I built a modern, responsive, dark-mode, email-compatible, multi-platform frontend for The M.Akita Chronicles without a single line of JavaScript framework."
 ---

@@ -3,8 +3,11 @@ title: Chatting with Luke Kanies
 date: '2009-11-18T11:45:00-02:00'
 slug: chatting-with-luke-kaines
 translationKey: chatting-luke-kanies
+description: "Luke Kanies explains why he created Puppet, how its abstraction of resources and dependencies simplifies heterogeneous configurations, and why ITIL can become a checklist without solving problems."
 tags:
-- interview
+- interviews
+- devops
+- automation
 draft: false
 ---
 

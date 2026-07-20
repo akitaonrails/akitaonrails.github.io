@@ -2,11 +2,11 @@
 title: "[Akitando] #27 - Talento: Matando Semi-Deuses (Parte 2)"
 date: '2018-11-15T17:00:00-02:00'
 slug: akitando-27-talento-matando-semi-deuses-parte-2
+description: "Akita desmonta o mito do talento natural com a história de Mozart e apresenta a prática deliberada: treino focado, repetição difícil, auto-observação e avaliação contra padrões relevantes."
 tags:
-- geoff colvin
-- noel tichy
-- mozart
-- deliberate practice
+- aprendizado
+- psicologia
+- biografias
 - akitando
 draft: false
 ---

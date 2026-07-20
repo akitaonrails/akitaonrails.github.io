@@ -3,11 +3,11 @@ title: 'Rails has won: The Elephant in the Room'
 date: '2016-05-23T17:21:00-03:00'
 slug: rails-has-won-the-elephant-in-the-room
 translationKey: rails-has-won
+description: "The defense of Rails admits its anti-patterns and monopoly in Ruby, but argues that focus, adoption, and cost-effectiveness still make it the pragmatic choice for most small and medium projects."
 tags:
+- rails
+- ruby
 - off-topic
-- open source
-- rants
-- english
 draft: false
 ---
 

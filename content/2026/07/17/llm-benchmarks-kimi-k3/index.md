@@ -4,16 +4,11 @@ slug: "llm-benchmarks-kimi-k3"
 date: '2026-07-17T12:00:00-03:00'
 draft: false
 translationKey: llm-benchmarks-kimi-k3
+description: "Coloquei o Kimi K3 para criar sozinho um chat em Rails 8: fez 89/A, superou o Opus 4.6 e foi uma alternativa mais barata ao Opus 4.8. Ainda ficou atrás dele em arquitetura, hardening e testes."
 tags:
-  - llm
-  - benchmark
-  - kimi
-  - moonshot
-  - claude
-  - glm
-  - pricing
-  - ai
-  - vibecoding
+- benchmarks-de-llm
+- llms
+- agentes-de-codigo
 ---
 
 Eu estou sempre testando LLM nova. É a única forma de separar release note de código que sobe. Nos dois posts mais recentes, [Grok 4.5 e GPT 5.6 Sol](/2026/07/09/llm-benchmark-grok-4-5-gpt-5-6-sol/) e [Sonnet 5, Gemini 3.5 Flash e Sakana](/2026/07/01/llm-benchmark-sonnet-5-gemini-3-5-flash-sakana-fugu-ultra/), a tabela mexeu bastante. Agora é a vez da Moonshot.

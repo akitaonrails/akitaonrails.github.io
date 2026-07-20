@@ -3,11 +3,9 @@ title: Installing Grafana on My Home Server
 date: "2025-09-10T16:00:00-03:00"
 slug: installing-grafana-on-my-home-server
 tags:
-  - homeserver
-  - grafana
-  - prometheus
-  - cadvisor
-  - docker
+- homelab
+- containers
+- devops
 draft: false
 translationKey: grafana-home-server
 description: How I set up Grafana, Prometheus, and cAdvisor with Docker Compose to monitor my Intel NUC home server.

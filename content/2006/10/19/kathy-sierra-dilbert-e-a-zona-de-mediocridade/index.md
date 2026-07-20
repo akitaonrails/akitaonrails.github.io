@@ -2,10 +2,12 @@
 title: 'Kathy Sierra: Dilbert e a zona de mediocridade'
 date: '2006-10-19T09:53:34-03:00'
 slug: kathy-sierra-dilbert-e-a-zona-de-mediocridade
+description: "Kathy Sierra descreve a zona de mediocridade como o espaço dos produtos seguros que ninguém ama, e defende aceitar o risco de provocar paixão. Para sair dela, é preciso suspender a voz que bloqueia ideias antes de testá-las."
 tags:
+- psicologia
+- negocios
+- filosofia
 - off-topic
-- principles
-- mediocrity
 draft: false
 ---
 

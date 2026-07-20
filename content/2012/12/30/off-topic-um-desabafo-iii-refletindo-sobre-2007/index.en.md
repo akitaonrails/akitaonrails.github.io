@@ -2,12 +2,12 @@
 title: "[Off-Topic] A Vent III, Reflecting on 2007"
 date: '2012-12-30T21:30:00-02:00'
 slug: off-topic-um-desabafo-iii-refletindo-sobre-2007
+description: "Revisiting his 2007 writing, the author argues that consulting requires continuous learning, autonomy, responsibility, and financial health. The problems of 2012 put that model to the test."
 tags:
-- off-topic
-- principles
 - career
-- insights
-- biography
+- personal
+- business
+- off-topic
 draft: false
 ---
 

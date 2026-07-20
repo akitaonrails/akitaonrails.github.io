@@ -1,14 +1,11 @@
 ---
 title: "Eu Fiz um Sistema de Data Mining pra Minha Namorada Influencer — Dicas e Truques"
 date: '2026-03-04T10:00:00-03:00'
+description: "Em três dias, construí um sistema Rails que coleta dados de redes sociais, eventos e concorrentes e os transforma em consultas num bot Discord. A influencer recebe cinco digests diários em português, baseados em dados reais."
 tags:
-  - Ruby on Rails
-  - Data Mining
-  - LLM
-  - Discord
-  - Docker
-  - SQLite
-  - AI
+- rails
+- backend
+- llms
 draft: false
 translationKey: data-mining-influencer-girlfriend
 ---

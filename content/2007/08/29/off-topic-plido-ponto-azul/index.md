@@ -2,9 +2,11 @@
 title: 'Off Topic: Pálido Ponto Azul'
 date: '2007-08-29T02:59:00-03:00'
 slug: off-topic-plido-ponto-azul
+description: "A imagem da Terra capturada pela Voyager I inspira Carl Sagan a refletir sobre nossa fragilidade e responsabilidade, enquanto o autor recomenda Cosmos como legado para formar crianças curiosas."
 tags:
+- ciencia
+- filosofia
 - off-topic
-- science
 draft: false
 ---
 

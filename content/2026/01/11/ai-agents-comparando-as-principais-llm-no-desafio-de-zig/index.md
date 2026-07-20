@@ -3,18 +3,11 @@ title: "AI Agents: Comparando as principais LLM de 2026 no Desafio de Zig"
 slug: 'ai-agents-comparando-as-principais-llm-no-desafio-de-zig'
 date: 2026-01-11T19:22:37-0300
 draft: false
+description: "Testei LLMs comerciais e open source numa migração difícil de Zig 0.15 com llama.cpp. Só as comerciais concluíram, e Claude Opus venceu por resolver tudo mais rápido e com menos insistência."
 tags:
-- ai
-- Agents
-- crush
-- GPT
-- Gemini
-- Codex
-- Claude
-- Opus
-- Qwen3
-- MiniMax
-- openrouter
+- benchmarks-de-llm
+- agentes-de-codigo
+- llms
 translationKey: llms-zig-challenge
 ---
 

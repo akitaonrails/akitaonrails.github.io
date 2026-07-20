@@ -4,15 +4,11 @@ slug: "ai-controversy-open-source-project-contributions-my-take"
 date: '2026-06-05T11:00:00-03:00'
 draft: false
 translationKey: controversia-ia-contribuicoes-projetos-codigo-aberto-minha-opiniao
+description: "AI in open source contributions is here to stay, even with AI slop, regressions, and false bugs. The practical answer is to automate triage and auditing without taking the final decision away from humans."
 tags:
-  - ai
-  - opensource
-  - vibe-coding
-  - llm
-  - github
-  - ai-memory
-  - ai-jail
-  - ai-usagebar
+- open-source
+- coding-agents
+- software-engineering
 ---
 
 Over the last few days, the discussion around **AI slop** in open source projects came back. Maintainers complaining that AI-generated PRs are garbage. Projects banning AI-assisted contributions. Bug bounty programs getting flooded with fake reports. Users angry because a release that used AI broke something. And, of course, the internet doing what the internet does best: turning one specific case into a holy war.

@@ -3,6 +3,7 @@ title: "[Journey to Japan #2] The Final RubyKaigi"
 date: '2011-08-05T09:13:00-03:00'
 slug: journey-to-japan-2-the-final-rubykaigi
 translationKey: journey-to-japan-2
+description: "Fabio recounts how RubyKaigi 2011 exceeded his expectations with community translation, sessions, and keynotes by Aaron Patterson and Matz, before pausing to reorganize the event."
 tags:
 - rubykaigi2011
 draft: false

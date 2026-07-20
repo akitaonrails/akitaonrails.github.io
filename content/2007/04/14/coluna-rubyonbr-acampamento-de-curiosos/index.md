@@ -2,8 +2,11 @@
 title: 'Coluna RubyOnbr: Acampamento de Curiosos'
 date: '2007-04-14T14:45:00-03:00'
 slug: coluna-rubyonbr-acampamento-de-curiosos
+description: "A coluna usa o Camping como ponto de partida para entender ou criar um framework web mínimo. O desafio é aprender como essas ferramentas funcionam, não provar que sua implementação é melhor."
 tags:
-- rubyonbr
+- desenvolvimento-web
+- ruby
+- aprendizado
 draft: false
 ---
 

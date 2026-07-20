@@ -3,11 +3,10 @@ title: "[Criptografia] Não use TripleDES/ECB - e uma curiosidade sobre Cipher K
   do .Net"
 date: '2014-01-13T13:01:00-02:00'
 slug: criptografia-nao-use-tripledes-ecb-e-uma-curiosidade-sobre-cipher-key-do-net
+description: "Uma integração entre C# e Ruby expõe os riscos do TripleDES em ECB e mostra por que AES é preferível. O texto também explica como o .NET completa uma chave MD5 curta para reproduzir o resultado."
 tags:
-- learning
-- beginner
-- security
-- segurança
+- seguranca
+- programacao
 draft: false
 ---
 

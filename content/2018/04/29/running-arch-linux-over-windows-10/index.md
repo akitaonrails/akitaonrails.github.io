@@ -5,14 +5,11 @@ slug: rodando-arch-linux-sobre-o-windows-10
 translationKey: arch-linux-over-windows-10
 aliases:
 - /2018/04/29/running-arch-linux-over-windows-10/
+description: "Akita instala Arch Linux no WSL do Windows 10 e testa ferramentas como Pacman, AUR, GNOME, Tilix, Ruby, Node.js e Go. Tudo funciona, mas o I/O lento mantém o VMware mais fluido."
 tags:
-- archlinux
-- wsl
-- asdf
+- linux
 - microsoft
-- windows
-- vmware
-- traduzido
+- ferramentas-de-desenvolvimento
 draft: false
 ---
 

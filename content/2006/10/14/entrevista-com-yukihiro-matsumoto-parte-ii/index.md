@@ -2,10 +2,11 @@
 title: 'Entrevista com Yukihiro Matsumoto: parte II'
 date: '2006-10-14T15:22:24-03:00'
 slug: entrevista-com-yukihiro-matsumoto-parte-ii
+description: "Matz mostra como Ruby usa métodos dinâmicos, proxies, callbacks e mix-ins para adaptar bibliotecas e manter o código conciso. A robustez, diz ele, depende de testes e do interpretador."
 tags:
-- interview
-- matz
-- translation
+- entrevistas
+- ruby
+- linguagens-de-programacao
 draft: false
 ---
 

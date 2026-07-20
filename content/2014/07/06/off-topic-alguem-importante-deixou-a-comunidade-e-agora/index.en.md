@@ -2,10 +2,12 @@
 title: "[Off-Topic] Someone Important Left the Community! Now What??"
 date: '2014-07-06T20:38:00-03:00'
 slug: off-topic-alguem-importante-deixou-a-comunidade-e-agora
+description: "TJ Holowaychuk’s departure does not determine Node.js’s future. Resilient communities renew themselves when established figures make room for new contributors, without turning people into idols."
 tags:
-- off-topic
+- open-source
 - philosophy
-- insights
+- management
+- off-topic
 draft: false
 ---
 

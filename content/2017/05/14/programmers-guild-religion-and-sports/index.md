@@ -5,8 +5,11 @@ slug: guilda-de-programadores-religiao-e-esportes
 translationKey: programmers-guild-religion
 aliases:
 - /2017/05/14/programmers-guild-religion-and-sports/
+description: "Akita compares technology communities to religions and sports teams, showing how identity and confirmation bias distort technical choices. Professionals accept trade-offs and own their decisions."
 tags:
-- traduzido
+- psicologia
+- filosofia
+- engenharia-de-software
 draft: false
 ---
 

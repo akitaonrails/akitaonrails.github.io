@@ -2,6 +2,7 @@
 title: Inscrições Abertas para a Rubyconf Brasil 2012!
 date: '2012-07-11T14:03:00-03:00'
 slug: inscricoes-abertas-para-a-rubyconf-brasil-2012
+description: "A RubyConf Brasil 2012 abriu inscrições por R$ 150 até 31 de julho, ou R$ 120 na promoção da Locaweb. O evento terá 33 palestrantes em São Paulo, em 30 e 31 de agosto."
 tags:
 - rubyconfbr2012
 draft: false

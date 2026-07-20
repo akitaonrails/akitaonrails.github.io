@@ -2,11 +2,12 @@
 title: "[Tradução] Carta para um Jovem Programador Considerando uma Startup"
 date: '2013-10-31T15:25:00-02:00'
 slug: traducao-carta-para-um-jovem-programador-considerando-uma-startup
+description: "Nesta tradução de Alex Payne, startups aparecem como meio, não destino: a cultura se padroniza, o VC busca retornos e o trabalho pode cobrar um preço alto nas relações. Propósito deve orientar a escolha."
 tags:
-- off-topic
-- career
 - startups
 - carreira
+- negocios
+- off-topic
 draft: false
 ---
 

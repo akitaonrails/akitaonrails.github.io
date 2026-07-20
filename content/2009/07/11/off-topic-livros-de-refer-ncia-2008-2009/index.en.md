@@ -2,10 +2,12 @@
 title: "[Off-Topic] Reference Books 2008-2009"
 date: '2009-07-11T01:06:00-03:00'
 slug: off-topic-livros-de-refer-ncia-2008-2009
+description: "A reading list on Lean, Agile, management, complexity, and science reveals the path that led the author to connect self-organization, continuous learning, and democratic organizations."
 tags:
-- off-topic
+- learning
 - management
-- career
+- agile
+- off-topic
 draft: false
 ---
 

@@ -2,10 +2,11 @@
 title: "[Off-Topic] Remote Work — Small Office, Home Office (SoHo)"
 date: '2013-11-18T19:11:00-02:00'
 slug: off-topic-trabalho-remoto-small-office-home-office-soho
+description: "Remote work can work, but it is not a universal solution. The text argues that structures between centralization and isolation support collaboration, mentoring, and career development."
 tags:
-- off-topic
 - career
-- insights
+- management
+- off-topic
 draft: false
 ---
 

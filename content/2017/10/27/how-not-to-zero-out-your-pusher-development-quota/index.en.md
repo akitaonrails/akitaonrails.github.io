@@ -3,13 +3,11 @@ title: How NOT to zero out your Pusher development quota
 date: '2017-10-27T13:43:00-02:00'
 slug: how-not-to-zero-out-your-pusher-development-quota
 translationKey: how-not-to-zero-pusher
+description: "Pusher Fake keeps Rails development and tests connected to a local server without using Pusher's free quota. Fabio explains the setup with Foreman, matching variables, and RSpec."
 tags:
-- beginner
-- rubyonrails
-- rails51
-- pusher
-- rspec
-- english
+- rails
+- testing
+- tutorials
 draft: false
 ---
 

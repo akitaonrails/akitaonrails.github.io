@@ -2,9 +2,10 @@
 title: 'Tradução: Por que você não deve codificar em Português'
 date: '2008-07-31T16:41:00-03:00'
 slug: tradu-o-por-que-voc-n-o-deve-codificar-em-portugu-s
+description: "A tradução defende nomes em inglês para variáveis, funções, classes, campos, bancos e comentários, porque isso facilita manutenção e colaboração internacional. O argumento é pragmático."
 tags:
-- career
-- translation
+- engenharia-de-software
+- comunicacao
 draft: false
 ---
 

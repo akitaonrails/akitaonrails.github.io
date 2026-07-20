@@ -2,15 +2,10 @@
 title: Coisas que "Iniciantes" Ignoram sobre PCs
 date: "2025-09-14T01:00:00-03:00"
 slug: coisas-que-iniciantes-ignoram-sobre-pcs
+description: "Expliquei como CPU, placa-mãe, RAM, GPU, armazenamento, USB, fonte e refrigeração afetam um PC. A recomendação final é aprender os componentes e comprar o melhor computador que seu orçamento permitir."
 tags:
-  - cpu
-  - gpu
-  - nvme
-  - microSD
-  - nvidia
-  - amd
-  - noctua
-  - ryzen
+- hardware
+- performance
 draft: false
 translationKey: things-beginners-ignore-about-pcs
 ---

@@ -2,12 +2,11 @@
 title: Colorindo Imagens Preto e Branco com I.A.
 date: '2025-04-19T01:40:00-03:00'
 slug: colorindo-imagens-preto-e-branco-com-i-a
+description: "Coloquei o DDColor em Docker e colorizei uma foto preto e branco em cerca de um segundo. A transferência de Reinhard usa uma referência para mudar a paleta geral, não objetos específicos."
 tags:
-- ddcolor
-- I.A.
-- github
-- docker
-  - AI
+- midia-generativa
+- containers
+- tutoriais
 draft: false
 translationKey: ai-colorize-black-white
 ---

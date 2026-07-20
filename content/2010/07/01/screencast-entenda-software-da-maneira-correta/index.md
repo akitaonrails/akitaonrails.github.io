@@ -2,8 +2,9 @@
 title: "[Screencast] Entenda Software da Maneira Correta"
 date: '2010-07-01T00:25:00-03:00'
 slug: screencast-entenda-software-da-maneira-correta
+description: "Nesta palestra na USP, o autor usa Open Source, Darwin, Galvão Bueno e Dwayne Johnson para questionar por que processos não garantem software de qualidade."
 tags:
-- screencast
+- engenharia-de-software
 - agile
 draft: false
 ---

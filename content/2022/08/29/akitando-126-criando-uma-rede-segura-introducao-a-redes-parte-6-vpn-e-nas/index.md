@@ -3,24 +3,11 @@ title: "[Akitando] #126 - Criando uma Rede Segura | Introdução a Redes Parte 6
   e NAS"
 date: '2022-08-29T10:01:00-03:00'
 slug: akitando-126-criando-uma-rede-segura-introducao-a-redes-parte-6-vpn-e-nas
+description: "Montei um NAS Synology rápido o bastante para editar vídeos pesados pela rede de 10 Gb. Com ZeroTier, também acesso o Plex remotamente sem expor minha rede doméstica."
 tags:
-- nas
-- synology
-- drobo
-- pi-hole
-- dns
-- plex
-- jellyfin
-- radarr
-- sonarr
-- prowlarr
-- vpn
-- openvpn
-- wireguard
-- zerotier
-- tailscale
-- nordvpn
-- segurança
+- homelab
+- redes
+- armazenamento-e-backup
 - akitando
 draft: false
 ---

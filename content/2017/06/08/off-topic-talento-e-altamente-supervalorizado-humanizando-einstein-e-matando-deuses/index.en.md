@@ -2,11 +2,11 @@
 title: "[Off-Topic] Talent Is Highly Overrated: Humanizing Einstein and Killing Gods"
 date: '2017-06-08T21:23:00-03:00'
 slug: off-topic-talento-e-altamente-supervalorizado-humanizando-einstein-e-matando-deuses
+description: "The piece questions the myth of natural talent and humanizes Einstein by highlighting deliberate practice, chance, and complex systems. Success has no recipe. It depends on effort and circumstances."
 tags:
+- psychology
+- learning
 - off-topic
-- science
-- religion
-- principles
 draft: false
 ---
 

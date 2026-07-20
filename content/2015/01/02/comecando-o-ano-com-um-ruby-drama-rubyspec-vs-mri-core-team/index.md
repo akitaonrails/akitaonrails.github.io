@@ -2,9 +2,11 @@
 title: 'Começando o Ano com um Ruby Drama: RubySpec vs MRI Core Team'
 date: '2015-01-02T12:10:00-02:00'
 slug: comecando-o-ano-com-um-ruby-drama-rubyspec-vs-mri-core-team
+description: "Ao analisar o conflito entre RubySpec, Rubinius e o time do MRI, o autor rejeita as acusações de Brian Shirai e defende colaboração com a suíte de testes já existente."
 tags:
-- rspec
-- fud
+- ruby
+- testes
+- open-source
 draft: false
 ---
 

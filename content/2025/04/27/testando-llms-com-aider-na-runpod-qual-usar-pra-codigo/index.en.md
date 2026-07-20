@@ -3,14 +3,9 @@ title: Testing LLMs with Aider on RunPod - which one to use for code?
 date: '2025-04-27T11:30:00-03:00'
 slug: testing-llms-with-aider-on-runpod-which-to-use-for-code
 tags:
-- runpod
-- aider
-- gemini
-- qwen
-- deepseek
-- ollama
-- llm
-  - AI
+- llm-benchmarks
+- llms
+- coding-agents
 draft: false
 translationKey: aider-runpod-which-llm-for-code
 description: Hands-on testing of Qwen2.5 Coder, DeepSeek, Codestral and others with Aider, locally on an RTX 4090 and on RunPod, comparing them against Claude and Gemini.

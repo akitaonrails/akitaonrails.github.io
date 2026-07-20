@@ -3,14 +3,9 @@ title: "Vibe Code: Which LLM Is the BEST?? Let's Talk for REAL"
 slug: "vibe-code-which-llm-is-best-lets-be-real"
 date: '2026-01-29T10:43:16-03:00'
 tags:
-- vibecode
-- agents
-- llm
-- gpt
-- kimi
-- glm
-- gemini
-  - AI
+- llm-benchmarks
+- llms
+- vibe-coding
 translationKey: vibe-code-which-llm-real-talk
 description: "I ran the same extensive analysis pass through Opus 4.5, GPT 5.2 Codex, Kimi 2.5, Gemini 3 Pro and MiniMax v2.1 on a tiny app, and every single one still left things on the table."
 ---

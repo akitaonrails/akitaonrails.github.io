@@ -2,11 +2,10 @@
 title: Internationalização (I18n) Mínima em Rails 3.2 - Parte 1
 date: '2012-07-14T22:39:00-03:00'
 slug: internationalizacao-i18n-minima-em-rails-3-2-parte-1
+description: "A Parte 1 monta uma aplicação Rails 3.2 em inglês e pt-BR, configura UTF-8, Devise e Globalize 3 e usa Friendly Id para traduzir conteúdo e manter URLs com slugs estáveis."
 tags:
-- learning
 - rails
-- i18n
-- tutorial
+- tutoriais
 draft: false
 ---
 

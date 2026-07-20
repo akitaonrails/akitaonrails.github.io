@@ -2,11 +2,11 @@
 title: 'Off Topic: Nunca confie no TIOBE'
 date: '2008-04-13T14:40:00-03:00'
 slug: off-topic-nunca-confie-no-tiobe
+description: "Ao examinar a fórmula do TIOBE, o autor mostra como hits de buscadores, duplicatas e ruído distorcem a medida. Por isso, o índice não sustenta conclusões confiáveis sobre o crescimento das linguagens."
 tags:
+- linguagens-de-programacao
+- ciencia
 - off-topic
-- principles
-- fallacies
-- tiobe
 draft: false
 ---
 

@@ -2,10 +2,10 @@
 title: Ruby on SimpleDB
 date: '2007-12-16T10:06:00-02:00'
 slug: ruby-on-simpledb
+description: "O texto apresenta o SimpleDB da Amazon, compara suas APIs e limitações ao CouchDB e mostra como usá-los com Ruby, concluindo que o CouchDB é mais flexível."
 tags:
-- nosql
-- insight
-- biography
+- bancos-de-dados
+- ruby
 draft: false
 ---
 

@@ -3,12 +3,9 @@ title: Accessing Your NAS Using iSCSI Instead of SMB
 date: '2025-04-24T01:00:00-03:00'
 slug: accessing-your-nas-using-iscsi-instead-of-smb
 tags:
-- nfs
-- smb
-- iscsi
-- synology
-- nas
-- docker
+- homelab
+- storage-and-backup
+- performance
 draft: false
 translationKey: nas-iscsi-instead-of-smb
 description: Why I moved my Docker data-root off NFS and onto an iSCSI virtual drive served from my Synology NAS, and how block-level storage crushes file-based protocols for high-churn workloads.

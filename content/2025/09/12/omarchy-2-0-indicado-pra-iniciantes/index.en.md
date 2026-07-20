@@ -3,11 +3,9 @@ title: Omarchy 2.0 - Recommended for Beginners?
 date: "2025-09-12T12:00:00-03:00"
 slug: omarchy-2-0-recommended-for-beginners
 tags:
-  - omarchy
-  - distrobox
-  - ventoy
-  - balena
-  - arch
+- omarchy
+- linux
+- tutorials
 draft: false
 translationKey: omarchy-for-beginners
 description: Why Omarchy is my daily driver, why there is no such thing as a "distro for beginners", and how to use Ventoy and Distrobox to test distros yourself instead of outsourcing your decisions.

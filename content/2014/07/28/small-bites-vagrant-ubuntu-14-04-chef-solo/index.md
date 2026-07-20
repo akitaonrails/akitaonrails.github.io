@@ -2,10 +2,11 @@
 title: "[Small Bites] Vagrant + Ubuntu 14.04 + Chef Solo"
 date: '2014-07-28T20:22:00-03:00'
 slug: small-bites-vagrant-ubuntu-14-04-chef-solo
+description: "Um cookbook Chef cria no Vagrant um Ubuntu 14.04 com Ruby, bancos, Redis, Elasticsearch, Node e ferramentas de desenvolvimento. Provisionar, destruir e recriar funciona, mas as senhas expostas são só para desenvolvimento."
 tags:
-- learning
-- beginner
+- devops
 - linux
+- automacao
 draft: false
 ---
 

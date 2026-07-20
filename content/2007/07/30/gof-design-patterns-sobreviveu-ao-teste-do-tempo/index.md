@@ -2,8 +2,10 @@
 title: GoF Design Patterns - Sobreviveu ao teste do tempo?
 date: '2007-07-30T18:45:00-03:00'
 slug: gof-design-patterns-sobreviveu-ao-teste-do-tempo
+description: "A discussão sobre o livro GoF contrapõe críticas à complexidade e à relevância dos patterns com sua utilidade como exemplos de design, desde que não sejam copiados como receitas ou dogmas."
 tags:
-- design-patterns
+- arquitetura-de-software
+- engenharia-de-software
 draft: false
 ---
 

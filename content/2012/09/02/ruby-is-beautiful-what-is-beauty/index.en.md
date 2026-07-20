@@ -3,12 +3,11 @@ title: Ruby is Beautiful? What is Beauty?
 date: '2012-09-02T21:46:00-03:00'
 slug: ruby-is-beautiful-what-is-beauty
 translationKey: ruby-is-beautiful-what-is-beauty
+description: "Based on a talk by Richard Seymour, the author argues that beauty isn't a choice between form and function: it's felt, and depends on knowledge and experience."
 tags:
-- off-topic
-- principles
-- career
 - philosophy
-- english
+- ruby
+- off-topic
 draft: false
 ---
 

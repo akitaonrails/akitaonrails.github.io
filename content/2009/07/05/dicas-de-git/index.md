@@ -2,10 +2,11 @@
 title: Dicas de Git
 date: '2009-07-05T14:56:08-03:00'
 slug: dicas-de-git
+description: "Dicas práticas de Git mostram como desfazer mudanças, usar o index, reverter commits remotos, recuperar históricos com reflog, criar branches antigos, rastrear alterações e corrigir mensagens."
 tags:
-- learning
-- beginner
-- git
+- controle-de-versao
+- tutoriais
+- aprendizado
 draft: false
 ---
 

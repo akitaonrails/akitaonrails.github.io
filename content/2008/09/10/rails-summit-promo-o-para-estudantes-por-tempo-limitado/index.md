@@ -2,6 +2,7 @@
 title: 'Rails Summit: Promoção para Estudantes por Tempo Limitado!'
 date: '2008-09-10T15:43:00-03:00'
 slug: rails-summit-promo-o-para-estudantes-por-tempo-limitado
+description: "O Rails Summit oferece até 26 de setembro ingressos promocionais de R$ 300 para não estudantes e R$ 100 para estudantes, mediante comprovação. Depois, os valores sobem para R$ 400 e R$ 150."
 tags:
 - railssummit2008
 draft: false

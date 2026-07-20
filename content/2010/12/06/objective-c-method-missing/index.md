@@ -2,11 +2,11 @@
 title: "[Objective-C] Method Missing!"
 date: '2010-12-06T02:55:00-02:00'
 slug: objective-c-method-missing
+description: "O autor reproduz em Objective-C uma API inspirada no Builder::XmlMarkup, usando message forwarding, seletores, NSInvocation e blocos para gerar XML indentado, ainda sem suporte a atributos."
 tags:
-- learning
-- beginner
 - apple
-- objective-c
+- programacao
+- tutoriais
 draft: false
 ---
 

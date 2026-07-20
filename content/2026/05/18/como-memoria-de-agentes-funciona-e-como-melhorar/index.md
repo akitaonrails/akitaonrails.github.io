@@ -4,16 +4,11 @@ slug: "memoria-agentes-karpathy-llm-wiki-agentmemory"
 date: '2026-05-18T15:00:00-03:00'
 draft: false
 translationKey: memoria-agentes-karpathy-llm-wiki-agentmemory
+description: "Akita compara a compaction de Claude Code, Codex e opencode, explica a LLM Wiki de Karpathy e testa o agentmemory antes de retirar a recomendação por bugs estruturais e apontar o ai-memory."
 tags:
-  - ia
-  - agentes
-  - claude-code
-  - codex
-  - opencode
-  - mcp
-  - memoria
-  - karpathy-llm-wiki
-  - agentmemory
+- ai-memory
+- agentes-de-codigo
+- llms
 ---
 
 > **Atualização (23 de maio de 2026)**: depois de uma semana rodando o agentmemory em produção pessoal, voltei atrás. A arquitetura escolhida acumula uma classe de bug que não fecha sem reescrever metade do sistema (BM25 reindex a cada restart, janela de 5s de perda de dados, hook errado em ~47% das tool calls do Claude Code, etc). Comecei um substituto em Rust chamado **ai-memory** que resolve esses problemas. Veja [Criei um Sistema de Memória pra Agentes de Código: ai-memory](/2026/05/23/criei-sistema-memoria-agentes-codigo-ai-memory/) com o relato completo, o ranking das alternativas e como instalar. O resto desse post continua válido como background sobre como compaction funciona nos três agentes, o padrão LLM Wiki do Karpathy, e por que memória externa importa.

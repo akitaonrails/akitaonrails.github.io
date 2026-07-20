@@ -2,9 +2,12 @@
 title: 'Off Topic: Seja Arrogante!'
 date: '2007-04-14T13:19:00-03:00'
 slug: off-topic-seja-arrogante
+description: "O autor transforma “seja arrogante” em uma cobrança por competência: dizer sim exige estudar e entregar. Sua jornada com inglês, filmes, audiobooks, podcasts e feeds mostra como pratica isso."
 tags:
+- carreira
+- aprendizado
+- produtividade
 - off-topic
-- career
 draft: false
 ---
 

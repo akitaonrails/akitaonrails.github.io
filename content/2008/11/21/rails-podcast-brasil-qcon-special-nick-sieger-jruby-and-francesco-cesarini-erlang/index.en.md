@@ -3,10 +3,9 @@ title: Rails Podcast Brasil, QCon Special - Nick Sieger (JRuby) and Francesco Ce
 date: '2008-11-21T03:11:00-02:00'
 slug: rails-podcast-brasil-qcon-special-nick-sieger-jruby-and-francesco-cesarini-erlang
 translationKey: qcon2008-nick-francesco
+description: "Nick Sieger explains Rails on JRuby and Rails 2.2’s connection pool. Francesco Cesarini introduces Erlang, functional programming, concurrency, and scalability, topics Fabio considers important to the future."
 tags:
 - qcon2008
-- interview
-- english
 draft: false
 ---
 

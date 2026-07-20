@@ -2,12 +2,11 @@
 title: Protegendo seu Home Server com Cloudflare Zero Trust
 date: "2025-09-10T02:00:00-03:00"
 slug: protegendo-seu-home-server-com-cloudflare-zero-trust
+description: "Protegi meus serviços do home server com Cloudflare Zero Trust e login via Google OAuth. Agora o acesso passa por uma autenticação extra, com sessão compartilhada por 24 horas."
 tags:
-  - homeserver
-  - cloudflare
-  - zero trust
-  - google oauth
-  - segurança
+- homelab
+- seguranca
+- cloud
 draft: false
 translationKey: cloudflare-zero-trust-home-server
 ---

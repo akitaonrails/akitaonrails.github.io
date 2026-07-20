@@ -3,9 +3,11 @@ title: Conversando com Luis Lavena (Ruby no Windows)
 date: '2008-07-02T14:16:00-03:00'
 slug: conversando-com-luis-lavena-ruby-on-windows
 translationKey: chatting-luis-lavena
+description: "Luis Lavena explica por que manter Ruby no Windows envolve CRT, MinGW, extensões C e RubySpecs. O RubyInstaller já permite rodar Rails, mas o projeto precisa de mais colaboradores."
 tags:
-- interview
-- traduzido
+- entrevistas
+- ruby
+- microsoft
 aliases:
 - /2008/07/02/chatting-with-luis-lavena-ruby-on-windows/
 draft: false

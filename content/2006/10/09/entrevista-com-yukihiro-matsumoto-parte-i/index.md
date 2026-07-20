@@ -2,10 +2,11 @@
 title: 'Entrevista com Yukihiro Matsumoto: parte I'
 date: '2006-10-09T05:03:04-03:00'
 slug: entrevista-com-yukihiro-matsumoto-parte-i
+description: "Matz explica por que Ruby privilegia harmonia, liberdade de escolha e código conciso em vez de uma linguagem perfeita. Seu objetivo é reduzir a frustração e tornar a programação mais prazerosa."
 tags:
-- interview
-- matz
-- translation
+- entrevistas
+- ruby
+- linguagens-de-programacao
 draft: false
 ---
 

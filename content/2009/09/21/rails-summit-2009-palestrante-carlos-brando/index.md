@@ -2,6 +2,7 @@
 title: "[Rails Summit 2009] Palestrante Carlos Brando"
 date: '2009-09-21T07:18:00-03:00'
 slug: rails-summit-2009-palestrante-carlos-brando
+description: "Carlos Brando relata sua migração das tecnologias Microsoft para Ruby e explica como está construindo um framework, usando renderização, helpers, geradores e banco de dados para examinar o Rails por dentro."
 tags:
 - railssummit2009
 draft: false

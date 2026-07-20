@@ -3,12 +3,11 @@ title: 'Ex Pusher Lite - Part 1: Phoenix Channels and Rails apps'
 date: '2015-12-09T18:39:00-02:00'
 slug: ex-pusher-lite-part-1-phoenix-channels-and-rails-apps
 translationKey: ex-pusher-lite-part-1
+description: "Part 1 replaces Pusher with a Phoenix server using Channels, WebSockets, and Basic Auth while keeping the Rails client and SuckerPunch. The clone works under your control, but remains incomplete."
 tags:
-- elixir
-- phoenix
-- pusher
-- expusherlite
-- english
+- elixir-and-erlang
+- rails
+- distributed-systems
 draft: false
 ---
 

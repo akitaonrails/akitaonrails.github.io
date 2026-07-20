@@ -2,12 +2,12 @@
 title: "[Tradução] Padrões: excelência vs. mediocridade"
 date: '2013-05-17T19:25:00-03:00'
 slug: traducao-padroes-excelencia-vs-mediocridade
+description: "Ao relatar um exercício na Toyota, Jason Yip mostra que o padrão era o tempo do campeão, quatro segundos. O texto contrapõe padrões que limitam a padrões que impulsionam a excelência."
 tags:
-- off-topic
-- management
+- engenharia-de-software
 - agile
-- translation
-- carreira
+- gestao
+- off-topic
 draft: false
 ---
 

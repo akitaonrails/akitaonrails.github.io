@@ -3,8 +3,11 @@ title: The Year of Linux on the Desktop - It's Usable!
 date: '2016-07-26T14:13:00-03:00'
 slug: the-year-of-linux-on-the-desktop-it-s-usable
 translationKey: year-linux-desktop-usable
+description: "Testing Bash on Ubuntu on Windows, the author successfully runs Rails, Ruby, Node, Crystal, and Go. PostgreSQL requires a native Windows server, while Elixir and Erlang still lock up."
 tags:
 - microsoft
+- linux
+- developer-tools
 - off-topic
 draft: false
 ---

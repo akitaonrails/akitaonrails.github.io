@@ -2,10 +2,11 @@
 title: "AI Agents: Instalando LSPs pro Crush"
 slug: "ai-agents-instalando-lsps-pro-crush"
 date: 2026-01-21T13:14:07-0300
+description: "Documentei meu Crush com Claude, Ollama e LM Studio e criei um script para Arch Linux que usa o Mise para detectar linguagens e instalar automaticamente os LSPs correspondentes."
 tags:
-- crush
-- lsp
-  - AI
+- agentes-de-codigo
+- automacao
+- ferramentas-de-desenvolvimento
 translationKey: installing-lsps-for-crush
 ---
 

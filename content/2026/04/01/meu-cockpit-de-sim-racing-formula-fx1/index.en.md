@@ -4,14 +4,11 @@ date: '2026-04-01T17:00:00-03:00'
 draft: false
 slug: my-sim-racing-cockpit-formula-fx1
 translationKey: sim-racing-cockpit-formula-fx1
+description: "I replaced years of unstable stands with a Formula FX1 cockpit featuring Fanatec direct drive, PS5, RTX 4090, and a 4K OLED. It doesn’t wobble and is ready in 30 seconds for my single-player use."
 tags:
-  - off-topic
-  - gaming
-  - sim-racing
-  - cockpit
-  - fanatec
-  - gran-turismo
-  - initial-d
+- gaming
+- hardware
+- off-topic
 ---
 
 I've loved cars for as long as I can remember. My first real contact with racing games was at the arcades of the 80s and 90s. And when I say "real," I mean sitting at a cabinet with a wheel, pedals, a hard plastic seat and the screen wrapping in front of you. [OutRun](https://en.wikipedia.org/wiki/Out_Run) (1986), [Rad Mobile](https://en.wikipedia.org/wiki/Rad_Mobile) (1991), [Virtua Racing](https://en.wikipedia.org/wiki/Virtua_Racing) (1992), [Ridge Racer](https://en.wikipedia.org/wiki/Ridge_Racer) (1993), [Daytona USA](https://en.wikipedia.org/wiki/Daytona_USA_(video_game)) (1994), [Scud Race](https://en.wikipedia.org/wiki/Scud_Race) (1996). Every one of those games left a mark on me. But Daytona USA stuck in a different way. That twin cabinet, two machines side by side, the "DAYTONAAA, let's go away" track blasting through the arcade, the wheel rumbling in your hand. I still remember it.

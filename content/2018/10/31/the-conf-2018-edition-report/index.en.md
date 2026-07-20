@@ -3,9 +3,9 @@ title: THE CONF - 2018 Edition Report
 date: '2018-10-31T22:49:00-03:00'
 slug: the-conf-2018-edition-report
 translationKey: the-conf-2018-report
+description: "THE CONF 2018 received over 100 proposals, selected 28 talks, and brought together more than 300 people, but ran a deficit of at least R$59,931. Still, it remains an investment in an English-language technical conference in Brazil."
 tags:
 - theconf
-- english
 draft: false
 ---
 

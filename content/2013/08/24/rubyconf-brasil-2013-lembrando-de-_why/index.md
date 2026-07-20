@@ -2,6 +2,7 @@
 title: 'Rubyconf Brasil 2013: Lembrando de _Why. Engenharia vs Arte'
 date: '2013-08-24T22:26:00-03:00'
 slug: rubyconf-brasil-2013-lembrando-de-_why
+description: "Ao revisitar _Why e seu guia poético de Ruby, o autor defende a programação como arte, interpreta a remoção dos projetos como uma escolha legítima e anuncia um documentário traduzido para abrir a Rubyconf."
 tags:
 - rubyconfbr2013
 draft: false

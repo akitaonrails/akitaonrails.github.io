@@ -5,11 +5,11 @@ slug: elixir-101-apresentando-a-sintaxe
 translationKey: elixir-101-syntax
 aliases:
 - /2015/11/25/elixir-101-introducing-the-syntax/
+description: "Com exemplos do ExMangaDownloadr, apresento pattern matching, recursão, Lists, Tuples, Keyword Lists e o pipe operator para mostrar como Elixir torna as primitivas do Erlang acessíveis."
 tags:
-- learning
-- beginner
-- elixir
-- traduzido
+- tutoriais
+- elixir-e-erlang
+- programacao
 draft: false
 ---
 

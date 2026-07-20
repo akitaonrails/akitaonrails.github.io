@@ -2,6 +2,7 @@
 title: "[Rails Summit 2009] Palestrante Ilya Grigorik"
 date: '2009-09-27T20:18:00-03:00'
 slug: rails-summit-2009-palestrante-ilya-grigorik
+description: "Ilya Grigorik explica por que Ruby facilita protótipos e apresenta tecnologias da Real-Time Web, como XMPP, AMQP, PSHB e Webhooks, baseadas em interfaces push."
 tags:
 - railssummit2009
 draft: false

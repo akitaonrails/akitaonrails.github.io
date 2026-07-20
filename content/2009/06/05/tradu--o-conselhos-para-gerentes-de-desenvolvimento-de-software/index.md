@@ -2,10 +2,12 @@
 title: "[Tradução] Conselhos para Gerentes de Desenvolvimento de Software"
 date: '2009-06-05T00:35:00-03:00'
 slug: tradu--o-conselhos-para-gerentes-de-desenvolvimento-de-software
+description: "Gerald Weinberg mostra como a cultura de culpa e a comunicação incongruente sabotam projetos, enquanto a congruência melhora a resolução de problemas. A mudança passa por seis etapas."
 tags:
+- gestao
+- comunicacao
+- engenharia-de-software
 - off-topic
-- management
-- carreira
 draft: false
 ---
 

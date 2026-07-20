@@ -3,14 +3,10 @@ title: Omarchy 2.0 - Bitwarden Self-Hosted / VaultWarden
 date: "2025-09-10T20:00:00-03:00"
 slug: omarchy-2-0-bitwarden-self-hosted-vaultwarden
 tags:
-  - homeserver
-  - omarchy
-  - bitwarden
-  - vaultwarden 
-  - aegis
-  - docker
-  - cloudflare
-  - segurança
+- omarchy
+- homelab
+- containers
+- security
 draft: false
 translationKey: omarchy-vaultwarden-self-hosted
 description: Self-hosting a Bitwarden-compatible password manager with VaultWarden on a home server, routed through a Cloudflare tunnel, with 2FA via Aegis.

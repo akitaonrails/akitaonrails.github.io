@@ -3,9 +3,11 @@ title: Conversando com Scott Hanselman
 date: '2008-02-18T09:45:00-03:00'
 slug: conversando-com-scott-hanselman
 translationKey: chatting-scott-hanselman
+description: "Scott Hanselman fala sobre carreira, diabetes e ferramentas Microsoft. Ele vê o ASP.NET MVC como alternativa testável ao WebForms e atribui a maior parte dos travamentos do Vista a drivers de terceiros."
 tags:
-- interview
-- traduzido
+- entrevistas
+- microsoft
+- desenvolvimento-web
 aliases:
 - /2008/02/18/chatting-with-scott-hanselman/
 draft: false

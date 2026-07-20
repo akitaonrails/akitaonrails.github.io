@@ -2,8 +2,11 @@
 title: Conversando com Peter Cooper
 date: '2008-01-09T11:24:00-02:00'
 slug: conversando-com-peter-cooper
+description: "Peter Cooper conta como criou o Ruby Inside, vendeu Code Snippets e Feed Digest e escreveu Beginning Ruby. Ele defende a ferramenta certa para cada trabalho e vê verdade nas críticas de Zed Shaw."
 tags:
-- interview
+- entrevistas
+- ruby
+- blog
 draft: false
 translationKey: chatting-peter-cooper
 aliases:

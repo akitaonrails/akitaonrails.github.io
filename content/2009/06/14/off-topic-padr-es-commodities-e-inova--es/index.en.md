@@ -2,9 +2,11 @@
 title: "[Off-Topic] Standards, Commodities, and Innovations"
 date: '2009-06-14T19:17:00-03:00'
 slug: off-topic-padr-es-commodities-e-inova--es
+description: "Apple and Zara illustrate a Lean view: rethinking standards, reducing waste, and producing to demand can increase delivered value and reduce stuck inventory."
 tags:
-- off-topic
 - management
+- business
+- off-topic
 draft: false
 ---
 

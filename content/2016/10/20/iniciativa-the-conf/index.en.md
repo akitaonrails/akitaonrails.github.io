@@ -2,9 +2,9 @@
 title: THE CONF Initiative
 date: '2016-10-20T12:00:00-02:00'
 slug: the-conf-initiative
+description: "I propose THE CONF, a Brazilian conference held entirely in English and focused on code, to give Latin American developers an international stage and reach an audience beyond Brazil."
 tags:
 - theconf
-- conference
 draft: false
 translationKey: theconf-initiative-2016
 ---

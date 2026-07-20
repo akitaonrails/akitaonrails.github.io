@@ -3,12 +3,11 @@ title: "Servindo IA na Nuvem: Meu TTS pessoal | Bastidores do The M.Akita Chroni
 slug: "servindo-ia-na-nuvem-meu-tts-pessoal-bastidores-do-the-m-akita-chronicles"
 date: 2026-02-18T15:28:46+00:00
 draft: false
+description: "Coloquei Qwen3-TTS numa GPU serverless da RunPod para gerar podcasts semanais de 30 minutos. Cold starts, volumes, sampling, referências de voz, loudness e prompts em duas passadas definiram a qualidade."
 tags:
-- themakitachronicles
-- runpod
-- vibecode
-- qwen3-tts
-  - AI
+- the-m-akita-chronicles
+- midia-generativa
+- cloud
 translationKey: serving-ai-cloud-personal-tts
 ---
 

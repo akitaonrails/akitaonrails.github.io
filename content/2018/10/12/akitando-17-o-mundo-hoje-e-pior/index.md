@@ -2,11 +2,10 @@
 title: "[Akitando] #17 - O Mundo Hoje É PIOR?"
 date: '2018-10-12T17:00:00-03:00'
 slug: akitando-17-o-mundo-hoje-e-pior
+description: "Com dados de Hans Rosling e Gapminder, Akita confronta o pessimismo das redes sociais: pobreza extrema, vacinação e escolaridade melhoraram, embora o futuro ainda exija trabalho e não permita acomodação."
 tags:
-- hans rosling
-- population
-- thanos
-- gapminder
+- ciencia
+- economia
 - akitando
 draft: false
 ---

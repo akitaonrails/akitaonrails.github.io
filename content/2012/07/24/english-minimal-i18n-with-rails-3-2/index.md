@@ -5,12 +5,10 @@ slug: i18n-minimo-com-rails-3-2-no-rubylearning
 translationKey: minimal-i18n-rails-3-2-rubylearning
 aliases:
 - /2012/07/24/english-minimal-i18n-with-rails-3-2/
+description: "O autor adapta para o inglês seu tutorial em duas partes sobre i18n mínimo com Rails 3.2, usando uma aplicação demonstrativa hospedada no Heroku e código publicado no GitHub."
 tags:
-- learning
 - rails
-- tutorial
-- i18n
-- traduzido
+- tutoriais
 draft: false
 ---
 

@@ -2,10 +2,11 @@
 title: "[Off-Topic] The Argument from Intimidation"
 date: '2009-09-12T09:40:00-03:00'
 slug: off-topic-a-argumenta--o-atrav-s-da-intimida--o
+description: "Ayn Rand's translation identifies argument from intimidation as a fallacy that replaces reasons with fear and guilt, defending evidence and carefully examined premises."
 tags:
+- philosophy
+- learning
 - off-topic
-- principles
-- fallacies
 draft: false
 ---
 

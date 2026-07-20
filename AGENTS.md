@@ -10,19 +10,25 @@ This is a Hugo static site using the [Hextra](https://github.com/imfing/hextra) 
 | Start dev server (local) | `hugo server --logLevel debug --disableFastRender -p 1313` |
 | Build for production | `hugo --gc --minify` |
 | Generate index | `./scripts/generate_index.rb` |
+| Search canonical tags | `./scripts/tag_catalog.rb --search "title and central subjects"` |
+| Validate all tags | `./scripts/tag_catalog.rb --check` |
 | Create new post | `./scripts/dev.sh new-post "Title"` |
 | View logs | `./scripts/dev.sh logs` |
 | Stop server | `./scripts/dev.sh stop` |
 
 ## Project Structure
 
-```
+```text
 akitaonrails-hugo/
 ├── content/                    # All blog posts and pages (Markdown)
-│   ├── _index.md               # Auto-generated homepage index
+│   ├── _index.md               # Auto-generated PT homepage index
+│   ├── _index.en.md            # Auto-generated EN homepage index
 │   ├── about.md                # About page
 │   └── YYYY/MM/DD/slug/        # Blog posts organized by date
-│       └── index.md
+│       ├── index.md             # Canonical PT-BR article
+│       └── index.en.md          # Optional English sibling
+├── data/
+│   └── tag_taxonomy.yml         # Controlled PT/EN tag taxonomy
 ├── layouts/                    # Hugo template overrides
 │   ├── shortcodes/             # Custom shortcodes (youtube.html)
 │   ├── partials/               # Custom partials
@@ -31,7 +37,9 @@ akitaonrails-hugo/
 │   └── _default/               # Default template overrides (RSS)
 ├── scripts/                    # Utility scripts
 │   ├── dev.sh                  # Docker development helper
-│   └── generate_index.rb       # Generates _index.md from all posts
+│   ├── generate_index.rb       # Generates homepage, archive, and section indexes
+│   └── tag_catalog.rb          # Searches, documents, and validates tags
+├── TAGGING.md                  # Generated human-readable tag catalog
 ├── _vendor/                    # Vendored Hextra theme (go mod vendor)
 ├── hugo.yaml                   # Main Hugo configuration
 ├── go.mod / go.sum             # Hugo module dependencies
@@ -54,8 +62,9 @@ akitaonrails-hugo/
 ### Local Installation
 
 Requirements:
-- **Hugo Extended** v0.145.0+ (must be Extended version for SCSS support)
-- **Go** 1.21+
+
+- **Hugo Extended** v0.161.1+ (must be Extended version for SCSS support)
+- **Go** 1.22+
 - **Ruby** (for index generation scripts)
 
 ```bash
@@ -79,6 +88,7 @@ Example: `content/2024/12/14/my-post-title/index.md`
 title: "Post Title"
 date: '2024-12-14T16:48:00-03:00'
 slug: my-post-title
+description: "Concrete TL;DR of the finished article."
 tags:
 - tag1
 - tag2
@@ -87,14 +97,20 @@ draft: false
 ```
 
 Required fields:
+
 - `title`: Post title (used in listings and SEO)
 - `date`: ISO 8601 format with timezone (typically -03:00 for Brazil)
+- `description`: Concrete TL;DR, generated or reviewed against the final article immediately before publication
+- `tags`: Two to four central tags from `data/tag_taxonomy.yml`
 - `draft`: Set to `false` for published posts
 
 Optional fields:
+
 - `slug`: URL slug (defaults to directory name if omitted)
-- `tags`: Array of tags
-- `description`: Meta description for SEO
+
+Do not publish a new article without `description` in every available language. Generate it once from the final PT-BR article, then translate that description faithfully and naturally to EN instead of summarizing the English article independently. Follow the description and humanizer rules in `WRITER.md`.
+
+Before choosing tags, run `./scripts/tag_catalog.rb --search "article title and central subjects"` and consult `TAGGING.md`. Reuse canonical project, series, event-edition, and topic tags; never create spelling, pluralization, casing, or translation variants of an existing tag. Use only the controlled tags in `data/tag_taxonomy.yml`. Tag the article's central subjects, not every person, vendor, or technology mentioned. Preserve named event-edition tags and recurring project-series tags when applicable. Translate PT tags through the taxonomy's fixed EN mapping; never invent a second EN taxonomy independently. Add a taxonomy entry only for a genuinely reusable grouping, then regenerate the catalog with `./scripts/tag_catalog.rb --write TAGGING.md` and run `./scripts/tag_catalog.rb --check` before publishing.
 
 ### Creating New Posts
 
@@ -110,16 +126,19 @@ mkdir -p content/2025/01/15/my-new-post
 ### Images in Posts
 
 Images can be referenced from:
+
 - Same directory as `index.md` (relative paths)
 - External URLs (legacy posts use S3: `s3.amazonaws.com/akitaonrails/assets/`)
 
 ## Index Generation
 
-The homepage (`content/_index.md`) is **auto-generated** by `scripts/generate_index.rb`. This script:
-- Scans all `index.md` files in `content/`
-- Extracts title and date from frontmatter
-- Groups posts by year and month
-- Generates a chronological listing
+The homepage and section indexes are **auto-generated** by `scripts/generate_index.rb`. This script:
+
+- Scans published PT-BR posts and available EN siblings
+- Extracts title, date, description, and controlled tags
+- Generates PT/EN homepage, archive, Akitando, and Off-Topic indexes
+- Emits the default chronological list and responsive card-grid data
+- Rejects unknown tags before writing generated files
 
 **IMPORTANT**: Run `./scripts/generate_index.rb` after adding new posts (Docker mode runs this automatically on startup).
 
@@ -159,26 +178,31 @@ Hextra provides hooks in `layouts/_partials/custom/` for safe customization.
 
 ## Deployment
 
-### GitHub Pages (Primary)
-
-Configured in `.github/workflows/pages.yaml`:
-- Triggers on push to `master` branch
-- Uses Hugo v0.145.0
-- Builds with `hugo --gc --minify`
-- Deploys to GitHub Pages automatically
-
-### Netlify (Alternative)
+### Netlify (Primary)
 
 Configured in `netlify.toml`:
-- Uses Hugo v0.152.2
-- Builds with `hugo --gc --minify`
+
+- Uses Hugo v0.161.1
+- Builds with `hugo --minify`
+- Preserves Hugo caches between builds; do not add `--gc` to the production command
+
+### GitHub Pages (Alternative)
+
+Configured in `.github/workflows/pages.yaml`:
+
+- Triggers on push to `master` branch
+- Uses Hugo v0.161.1
+- Validates the tag taxonomy before building
+- Builds with `hugo --minify`
+- Deploys to GitHub Pages automatically
 
 ## Utility Scripts
 
 | Script | Purpose |
 |--------|---------|
 | `scripts/dev.sh` | Docker development helper (start/stop/logs/new-post) |
-| `scripts/generate_index.rb` | Regenerates `_index.md` homepage listing |
+| `scripts/generate_index.rb` | Regenerates PT/EN homepage, archive, and section indexes |
+| `scripts/tag_catalog.rb` | Searches, documents, and validates the controlled tag taxonomy |
 | `scripts/fix-old-code-blocks.rb` | Migration script: converts `---lang` to ````lang` |
 | `scripts/fix_images.rb` | Migration script for image URLs |
 | `scripts/fix_html_entities.rb` | Migration script for HTML entities |
@@ -190,8 +214,8 @@ Migration scripts are for one-time content fixes - typically not needed for new 
 
 | Tool | Version |
 |------|---------|
-| Hugo | 0.145.0+ (Extended) |
-| Go | 1.21+ |
+| Hugo | 0.161.1+ (Extended) |
+| Go | 1.22+ |
 | Ruby | Any modern version (for scripts) |
 
 ## Gotchas and Notes

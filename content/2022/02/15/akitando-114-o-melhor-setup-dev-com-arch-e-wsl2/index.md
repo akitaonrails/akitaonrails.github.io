@@ -2,7 +2,11 @@
 title: "[Akitando] #114 - O Melhor Setup Dev com Arch e WSL2"
 date: '2022-02-15T12:52:00-03:00'
 slug: akitando-114-o-melhor-setup-dev-com-arch-e-wsl2
+description: "Akita configura um ambiente de desenvolvimento web com Arch Linux no WSL2, ferramentas modernas e discos virtuais VHDX compartilhados entre distribuições, aproveitando uma máquina potente."
 tags:
+- linux
+- ferramentas-de-desenvolvimento
+- microsoft
 - akitando
 draft: false
 ---

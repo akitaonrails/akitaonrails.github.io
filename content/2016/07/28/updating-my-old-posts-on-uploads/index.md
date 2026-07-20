@@ -5,14 +5,10 @@ slug: atualizando-meus-posts-antigos-sobre-uploads
 translationKey: updating-old-posts-on-uploads
 aliases:
 - /2016/07/28/updating-my-old-posts-on-uploads/
+description: "Atualizei minhas recomendações de upload: Cloudinary com Attachinary simplifica direct upload e processamento de imagens, enquanto um CDN como o CloudFront deve servir os assets do S3."
 tags:
-- uploads
-- carrierwave
-- cdn
-- cloudfront
-- cloudinary
-- heroku
-- traduzido
+- cloud
+- desenvolvimento-web
 draft: false
 ---
 

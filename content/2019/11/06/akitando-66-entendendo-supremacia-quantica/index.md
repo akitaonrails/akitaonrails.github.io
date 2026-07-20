@@ -2,15 +2,10 @@
 title: "[Akitando] #66 - Entendendo Supremacia Quântica"
 date: '2019-11-06T11:00:00-03:00'
 slug: akitando-66-entendendo-supremacia-quantica
+description: "Akita explica o experimento de supremacia quântica do Google, a contestação da IBM e os limites atuais de ruído e decoerência, que ainda deixam aplicações úteis a décadas de distância."
 tags:
-- Google
-- IBM
-- Supremacia Quântica
-- Computação Quântica
-- Mecânica Quântica
-- Shor
-- Criptografia
-- Criptomoedas
+- computacao-quantica
+- ciencia
 - akitando
 draft: false
 ---

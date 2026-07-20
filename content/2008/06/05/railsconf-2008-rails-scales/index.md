@@ -2,9 +2,9 @@
 title: RailsConf 2008 - Rails Scales!
 date: '2008-06-05T16:41:00-03:00'
 slug: railsconf-2008-rails-scales
+description: "Na RailsConf 2008, os relatos sobre escalar Rails apontaram para a arquitetura completa do sistema: medir gargalos, aplicar cache e ganhar tempo antes de refatorar com base em dados reais."
 tags:
 - railsconf2008
-- english
 draft: false
 ---
 

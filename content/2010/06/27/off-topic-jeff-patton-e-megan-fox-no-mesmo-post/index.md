@@ -2,11 +2,11 @@
 title: "[Off-Topic] Jeff Patton e Megan Fox no mesmo post?"
 date: '2010-06-27T09:30:00-03:00'
 slug: off-topic-jeff-patton-e-megan-fox-no-mesmo-post
+description: "Para sua palestra na Wire 2010, o autor recriou em vídeo o exemplo de iteração e incremento de Jeff Patton, trocando a imagem pixelada do artigo por uma versão mais caprichada."
 tags:
-- off-topic
-- principles
-- management
 - agile
+- gestao
+- off-topic
 draft: false
 ---
 

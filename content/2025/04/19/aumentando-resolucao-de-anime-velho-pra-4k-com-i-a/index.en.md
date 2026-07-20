@@ -3,10 +3,9 @@ title: Upscaling Old Anime to 4K with AI
 date: '2025-04-19T15:30:00-03:00'
 slug: upscaling-old-anime-to-4k-with-ai
 tags:
-- ersgan
-- docker
-- video2k
-  - AI
+- generative-media
+- performance
+- containers
 draft: false
 translationKey: ai-anime-upscale-4k
 description: Using Real-ESRGAN and Video2X inside a CUDA Docker container to upscale old anime files to 4K on an NVIDIA RTX 4090.

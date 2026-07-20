@@ -2,6 +2,7 @@
 title: Registration are Open for Rubyconf Brazil 2012
 date: '2012-07-11T14:13:01-03:00'
 slug: registration-are-open-for-rubyconf-brazil-2012
+description: "RubyConf Brazil 2012 opened registration at R$150 through July 31, or R$120 in Locaweb's promotion. The event will have 33 speakers in São Paulo on August 30 and 31."
 tags:
 - rubyconfbr2012
 draft: false

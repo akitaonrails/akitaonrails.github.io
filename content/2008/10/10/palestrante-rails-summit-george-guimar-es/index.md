@@ -2,6 +2,7 @@
 title: 'Palestrante Rails Summit: George Guimarães'
 date: '2008-10-10T11:02:00-03:00'
 slug: palestrante-rails-summit-george-guimar-es
+description: "George Guimarães conta como cuida da infraestrutura do Pagestacker e antecipa uma palestra sobre escalabilidade e capacity planning. Para ele, desenvolvedores precisam pensar na aplicação inteira."
 tags:
 - railssummit2008
 draft: false

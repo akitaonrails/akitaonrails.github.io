@@ -2,10 +2,11 @@
 title: "[Documentary] The iPod Revolution"
 date: '2011-01-30T12:23:00-02:00'
 slug: documentario-the-ipod-revolution
+description: "The author subtitles The iPod Revolution, a documentary summarizing Apple's recovery from 1997 to 2006, Steve Jobs's return, the iPod, and iTunes, and compiles videos on the iPhone, iPad, and other milestones."
 tags:
-- off-topic
 - apple
-- screencast
+- computing-history
+- off-topic
 draft: false
 ---
 

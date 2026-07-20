@@ -2,10 +2,12 @@
 title: AkitaOnRails, Retrospective 1985-2007
 date: '2007-08-12T02:02:00-03:00'
 slug: akitaonrails-retrospectiva-1984-2007
+description: "The author revisits his path through computers, languages, and projects before reaching Rails and working for himself, arguing for continuous learning, curiosity, and non-dogmatic decisions."
 tags:
+- personal
+- learning
+- computing-history
 - off-topic
-- insight
-- biography
 draft: false
 ---
 

@@ -2,11 +2,12 @@
 title: "[Off-Topic] The Damn Regulation Law Is Back!"
 date: '2009-08-22T17:01:00-03:00'
 slug: off-topic-maldita-lei-de-regulamenta-o-est-de-volta
+description: "The author criticizes PLS 607/07 for restricting systems analyst jobs to degree holders, leaving enforcement unclear, and threatening self-taught developers and the free market."
 tags:
+- law-and-regulation
+- career
+- tech-market
 - off-topic
-- principles
-- market
-- regulation
 draft: false
 ---
 

@@ -5,9 +5,9 @@ slug: railsconf-09-dhh-o-segredo-da-produtividade
 translationKey: railsconf-2009-dhh-productivity
 aliases:
 - /2009/05/08/railsconf-09-dhh-the-secret-of-productivity/
+description: "David Heinemeier Hansson revisita a evolução e as críticas ao Rails, adianta recursos do Rails 3 e resume a produtividade à aplicação consistente de princípios ágeis básicos."
 tags:
 - railsconf2009
-- traduzido
 draft: false
 ---
 

@@ -5,10 +5,9 @@ slug: entrevista-com-jan-lehnardt-e-chris-anderson-do-couchdb
 translationKey: qcon-jan-chris-couchdb
 aliases:
 - /2008/11/19/rails-podcast-brasil-qcon-special-jan-lenhardt-and-chris-anderson-from-couchdb/
+description: "Fabio conversa com Jan Lehnardt e Chris Anderson sobre CouchDB e CouchRest. Ele defende bancos orientados a documentos para casos específicos de escala, sem abandonar SQL, e considera o CouchDB pronto para produção."
 tags:
 - qcon2008
-- interview
-- traduzido
 draft: false
 ---
 

@@ -2,11 +2,11 @@
 title: Seu Windows pode estar Capado sem Você Saber. Cheque isto!!
 date: '2025-05-21T17:15:00-03:00'
 slug: seu-windows-pode-estar-capado-sem-voce-saber-cheque-isto
+description: "Descobri que o Windows recém-instalado estava em Power Saver e limitava meu Core i7 a 0,5 GHz, causando travamentos. Ao mudar para Ultimate Performance, a CPU voltou a passar de 4 GHz."
 tags:
-- windows
-- power saver
-- hanging event
-- slow down
+- microsoft
+- performance
+- hardware
 draft: false
 translationKey: windows-might-be-crippled
 ---

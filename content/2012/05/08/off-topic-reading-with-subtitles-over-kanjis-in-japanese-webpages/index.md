@@ -5,11 +5,11 @@ slug: lendo-com-legendas-sobre-kanjis-em-paginas-japonesas
 translationKey: kanji-subtitles-japanese-webpages
 aliases:
 - /2012/05/08/off-topic-reading-with-subtitles-over-kanjis-in-japanese-webpages/
+description: "Rikaichan, Furigana Inserter, HTML Ruby e Mecab podem adicionar leituras em hiragana ou katakana a páginas japonesas. A combinação facilita a leitura, mas exige desativar o Furigana para usar o Rikaichan."
 tags:
+- aprendizado
+- ferramentas-de-desenvolvimento
 - off-topic
-- learning
-- mac
-- traduzido
 draft: false
 ---
 

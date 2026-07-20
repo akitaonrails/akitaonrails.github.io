@@ -2,16 +2,12 @@
 title: RANT - LLMs são LOOT BOXES!
 date: '2025-05-02T19:20:00-03:00'
 slug: rant-llms-sao-loot-boxes
+description: "Depois de gastar quase USD 150 em testes, concluí que LLMs ajudam em tarefas pequenas, mas programação real continua parecendo uma loot box cara: mais tokens e agentes não garantem código correto."
 tags:
+- llms
+- agentes-de-codigo
+- engenharia-de-software
 - off-topic
-- llm
-- openai
-- microsoft
-- google
-- meta
-- nvidia
-- mcp
-  - AI
 draft: false
 translationKey: rant-llms-are-loot-boxes
 ---

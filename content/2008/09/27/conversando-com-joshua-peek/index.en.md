@@ -2,8 +2,11 @@
 title: Chatting with Joshua Peek
 date: '2008-09-26T02:32:00-03:00'
 slug: chatting-with-joshua-peek
+description: "Joshua Peek explains how he joined Rails Core after making Rails 2.2 thread-safe during Google Summer of Code. The interview covers modest MRI gains, JRuby improvements, and caches preloaded at boot."
 tags:
-- interview
+- interviews
+- rails
+- performance
 draft: false
 translationKey: chatting-joshua-peek
 ---

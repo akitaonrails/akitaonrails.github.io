@@ -3,9 +3,11 @@ title: Welcome
 date: '2006-04-05T01:59:00-03:00'
 slug: bem-vindos
 translationKey: bem-vindos
+description: "Brazil’s Ruby on Rails community begins organizing to learn the platform despite the lack of Portuguese material and resistance from the market. The transition from Java will be gradual."
 tags:
-- narrative
-- first-post
+- rails
+- ruby
+- learning
 draft: false
 ---
 

@@ -4,11 +4,12 @@ slug: "ai-agents-locking-down-your-system"
 date: 2026-01-10T11:50:36-0300
 draft: false
 translationKey: ai-agents-protecting-your-system
+description: "I show how to isolate coding agents with Bubblewrap: the jail leaves only the project writable, hides the rest of the system, and mounts only what is needed, reducing the risk of destructive commands."
 tags:
-- AI
-- Linux
-- Bubblewrap
-- Sandbox
+- ai-jail
+- coding-agents
+- security
+- linux
 ---
 
 These days we have dozens of AI coding agents — Cursor, Claude Code, Windsurf, Copilot, OpenCode, Crush and more. But there's a problem that's already turned into a meme: the risk of them trashing your system or shipping your private data off to someone on the internet (malware-style behavior).

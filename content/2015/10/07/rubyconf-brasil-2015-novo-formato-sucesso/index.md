@@ -2,6 +2,7 @@
 title: Rubyconf Brasil 2015 "Novo Formato" - Sucesso!
 date: '2015-10-07T17:38:00-03:00'
 slug: rubyconf-brasil-2015-novo-formato-sucesso
+description: "A Rubyconf Brasil 2015 estreou um formato maior, com mais de 1.000 participantes, 75 palestrantes, cinco trilhas e um Andar Aberto para outras tecnologias. O evento foi um sucesso e terminou sem incidentes."
 tags:
 - rubyconfbr2015
 draft: false

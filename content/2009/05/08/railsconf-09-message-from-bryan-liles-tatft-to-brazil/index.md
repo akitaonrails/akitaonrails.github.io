@@ -5,10 +5,9 @@ slug: railsconf-09-mensagem-do-bryan-liles-tatft-para-o-brasil
 translationKey: railsconf-2009-bryan-liles-tatft
 aliases:
 - /2009/05/08/railsconf-09-message-from-bryan-liles-tatft-to-brazil/
+description: "Bryan Liles apresenta o lema Test All The Fucking Time, que virou bordão na RailsConf, e grava uma mensagem direta para os programadores brasileiros."
 tags:
 - railsconf2009
-- interview
-- traduzido
 draft: false
 ---
 

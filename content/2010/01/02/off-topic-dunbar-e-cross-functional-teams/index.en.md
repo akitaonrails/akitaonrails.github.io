@@ -2,9 +2,11 @@
 title: "[Off Topic] Dunbar and Cross Functional Teams"
 date: '2010-01-02T23:35:00-02:00'
 slug: off-topic-dunbar-e-cross-functional-teams
+description: "In Dunbar's experiments, a multidisciplinary lab solved in 10 minutes a problem that E. coli specialists had spent weeks trying to overcome. Debate and metaphors make new ideas emerge."
 tags:
-- off-topic
 - management
+- software-engineering
+- off-topic
 draft: false
 ---
 

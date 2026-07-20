@@ -2,9 +2,9 @@
 title: "[Rails Summit 2010] Commence Planning"
 date: '2009-10-30T00:39:14-02:00'
 slug: rails-summit-2010-commence-planning
+description: "Anuncio o Rails Summit 2010 após uma edição latino-americana com mais de 550 pessoas, com mudança para o Frei Caneca, duas trilhas, tradução simultânea e inscrições perto de US$ 140."
 tags:
 - railssummit2010
-- english
 draft: false
 ---
 

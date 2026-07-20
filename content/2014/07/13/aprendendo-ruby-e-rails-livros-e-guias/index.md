@@ -2,12 +2,11 @@
 title: Aprendendo Ruby e Rails, Livros e Guias
 date: '2014-07-13T15:18:00-03:00'
 slug: aprendendo-ruby-e-rails-livros-e-guias
+description: "O autor revisa Conhecendo Rails, elogia sua introdução prática e aponta lacunas e defasagens em Rails 4.1. Depois, reúne livros e cursos para avançar de Ruby e Rails básicos até internals e deploy."
 tags:
-- learning
-- beginner
+- aprendizado
 - ruby
 - rails
-- book
 draft: false
 ---
 

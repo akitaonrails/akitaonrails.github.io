@@ -2,11 +2,11 @@
 title: 'Off-Topic: Método Científico vs Cargo Cult'
 date: '2008-12-16T13:51:00-02:00'
 slug: off-topic-m-todo-cient-fico-vs-cargo-cult
+description: "Fabio critica o cargo cult na programação e propõe testar hipóteses com pesquisa, protótipos descartáveis e experimentos. Na YellowPages, quatro meses de preparação evitaram transformar quatro meses de implementação em vinte."
 tags:
+- ciencia
+- engenharia-de-software
 - off-topic
-- principles
-- science
-- career
 draft: false
 ---
 

@@ -1,0 +1,426 @@
+tags:
+  artificial_intelligence:
+    pt: inteligencia-artificial
+    en: artificial-intelligence
+    description: AI beyond a specific model or coding workflow.
+    aliases: [ai, ia, inteligencia-artificial, inteligencias-artificiais, artificial-intelligence]
+  llms:
+    pt: llms
+    en: llms
+    description: Large language models, prompting, context, and model behavior.
+    aliases: [llm, llms, modelos-de-linguagem, large-language-models]
+  coding_agents:
+    pt: agentes-de-codigo
+    en: coding-agents
+    description: Agent harnesses and autonomous or interactive AI programming tools.
+  vibe_coding:
+    pt: vibe-coding
+    en: vibe-coding
+    description: Building software through sustained AI-assisted development workflows.
+  llm_benchmarks:
+    pt: benchmarks-de-llm
+    en: llm-benchmarks
+    description: Comparative tests, rankings, cost, speed, and quality of LLMs.
+    kind: series
+    aliases: [llm-benchmark, llm-benchmarks, benchmarks-de-llm, benchmark-de-llm]
+  local_models:
+    pt: modelos-locais
+    en: local-models
+    description: Running open weights or local AI inference on owned hardware.
+  generative_media:
+    pt: midia-generativa
+    en: generative-media
+    description: AI image, audio, speech, music, or video generation and editing.
+  machine_learning:
+    pt: machine-learning
+    en: machine-learning
+    description: Machine learning outside the narrower LLM and generative media topics.
+  programming:
+    pt: programacao
+    en: programming
+    description: General programming practice when no narrower engineering topic dominates.
+  software_engineering:
+    pt: engenharia-de-software
+    en: software-engineering
+    description: Maintainability, code quality, process, and engineering discipline.
+  software_architecture:
+    pt: arquitetura-de-software
+    en: software-architecture
+    description: System design, modeling, boundaries, patterns, and architecture decisions.
+  computer_science:
+    pt: ciencia-da-computacao
+    en: computer-science
+    description: Computing theory, fundamentals, and formal concepts.
+  algorithms_data_structures:
+    pt: algoritmos-e-estruturas-de-dados
+    en: algorithms-and-data-structures
+    description: Algorithms, complexity, data structures, and their implementation.
+  programming_languages:
+    pt: linguagens-de-programacao
+    en: programming-languages
+    description: Language design, compilers, runtimes, paradigms, or language comparisons.
+  web_development:
+    pt: desenvolvimento-web
+    en: web-development
+    description: Web applications and web platform development across stacks.
+  frontend:
+    pt: frontend
+    en: frontend
+    description: Browser UI, CSS, JavaScript UI architecture, and client-side web work.
+  backend:
+    pt: backend
+    en: backend
+    description: Servers, APIs, jobs, application backends, and service implementation.
+  mobile:
+    pt: mobile
+    en: mobile
+    description: Android, iOS, and cross-platform mobile development.
+  testing:
+    pt: testes
+    en: testing
+    description: Automated tests, TDD, QA, verification, and test infrastructure.
+  performance:
+    pt: performance
+    en: performance
+    description: Profiling, optimization, benchmarks, latency, throughput, or memory use.
+  databases:
+    pt: bancos-de-dados
+    en: databases
+    description: SQL, NoSQL, data modeling, persistence, and database operation.
+  distributed_systems:
+    pt: sistemas-distribuidos
+    en: distributed-systems
+    description: Concurrency, queues, messaging, scaling, and distributed coordination.
+  networking:
+    pt: redes
+    en: networking
+    description: Network protocols, internet infrastructure, VPNs, DNS, and connectivity.
+  security:
+    pt: seguranca
+    en: security
+    description: Application or system security, privacy, cryptography, and threat analysis.
+  devops:
+    pt: devops
+    en: devops
+    description: CI/CD, deployment, observability, infrastructure, and operations.
+  cloud:
+    pt: cloud
+    en: cloud
+    description: Public cloud services, hosting platforms, and cloud architecture.
+  containers:
+    pt: containers
+    en: containers
+    description: Docker, Podman, Kubernetes, images, and containerized environments.
+  version_control:
+    pt: controle-de-versao
+    en: version-control
+    description: Git and other version control systems and workflows.
+  open_source:
+    pt: open-source
+    en: open-source
+    description: Open source projects, communities, licensing, and contribution practices.
+  linux:
+    pt: linux
+    en: linux
+    description: Linux distributions, administration, kernels, desktops, and workflows.
+  homelab:
+    pt: homelab
+    en: homelab
+    description: Self-hosting, home servers, NAS systems, and personal infrastructure.
+  storage_backups:
+    pt: armazenamento-e-backup
+    en: storage-and-backup
+    description: Filesystems, storage, RAID, snapshots, replication, and backups.
+  hardware:
+    pt: hardware
+    en: hardware
+    description: PCs, components, devices, GPUs, and hardware configuration or reviews.
+  developer_tools:
+    pt: ferramentas-de-desenvolvimento
+    en: developer-tools
+    description: Editors, terminals, shells, CLIs, and development environment tooling.
+  automation:
+    pt: automacao
+    en: automation
+    description: Scripts, agents, workflows, and tools that automate repeatable work.
+  ruby:
+    pt: ruby
+    en: ruby
+    description: The Ruby language, ecosystem, runtimes, and community.
+  rails:
+    pt: rails
+    en: rails
+    description: Ruby on Rails applications, framework internals, and ecosystem.
+  javascript:
+    pt: javascript
+    en: javascript
+    description: JavaScript, Node.js, browser runtimes, and their ecosystems.
+  elixir_erlang:
+    pt: elixir-e-erlang
+    en: elixir-and-erlang
+    description: Elixir, Erlang, BEAM, Phoenix, and OTP.
+  java:
+    pt: java
+    en: java
+    description: Java, JVM languages, runtimes, and ecosystems.
+  python:
+    pt: python
+    en: python
+    description: Python language, applications, and ecosystem.
+  rust:
+    pt: rust
+    en: rust
+    description: Rust language, ownership, tooling, and applications.
+  go:
+    pt: go
+    en: go
+    description: Go language, concurrency model, tooling, and applications.
+  crystal:
+    pt: crystal
+    en: crystal
+    description: Crystal language and applications.
+  zig:
+    pt: zig
+    en: zig
+    description: Zig language, comptime, memory management, and applications.
+  apple:
+    pt: apple
+    en: apple
+    description: Apple platforms, products, operating systems, and development.
+  microsoft:
+    pt: microsoft
+    en: microsoft
+    description: Microsoft platforms, products, operating systems, and development.
+  omarchy:
+    pt: omarchy
+    en: omarchy
+    description: Omarchy installation, customization, tools, and related Linux workflows.
+    kind: series
+    aliases: [omarchy, nw-omarchy]
+    auto_match: [title]
+  ai_memory:
+    pt: ai-memory
+    en: ai-memory
+    description: The recurring ai-memory project, its architecture, use, and evolution.
+    kind: project
+    aliases: [ai-memory, ai_memory, "ai memory"]
+    auto_match: [title, description]
+  ai_jail:
+    pt: ai-jail
+    en: ai-jail
+    description: The recurring ai-jail sandbox project and its use with coding agents.
+    kind: project
+    aliases: [ai-jail, ai_jail, "ai jail"]
+    auto_match: [title, description]
+    paths:
+      - content/2026/01/10/ai-agents-garantindo-a-protecao-do-seu-sistema/index.md
+      - content/2026/07/11/como-me-precaver-pros-meus-agentes-nao-apagarem-minhas-coisas/index.md
+  ai_usagebar:
+    pt: ai-usagebar
+    en: ai-usagebar
+    description: The recurring ai-usagebar project for monitoring LLM subscription and API usage.
+    kind: project
+    aliases: [ai-usagebar, ai_usagebar, "ai usagebar"]
+    auto_match: [title, description]
+  ghpending:
+    pt: ghpending
+    en: ghpending
+    description: The recurring ghpending CLI project for reviewing pending GitHub work.
+    kind: project
+    aliases: [ghpending, gh-pending]
+    auto_match: [title, description]
+  frank_projects:
+    pt: frank
+    en: frank
+    description: The recurring Frank family of AI-assisted software projects.
+    kind: series
+    aliases: [frank, frank-projects, projetos-frank]
+  frankmd:
+    pt: frankmd
+    en: frankmd
+    description: The recurring FrankMD Markdown editor project.
+    kind: project
+    aliases: [frankmd, frank-md]
+    auto_match: [title]
+  frank_yomik:
+    pt: frank-yomik
+    en: frank-yomik
+    description: The recurring Frank Yomik manga reader and restoration project.
+    kind: project
+    aliases: [frank-yomik, frankyomik, "frank yomik"]
+    auto_match: [title]
+  computing_history:
+    pt: historia-da-computacao
+    en: computing-history
+    description: Historical computers, software, people, and evolution of computing.
+  retrocomputing:
+    pt: retrocomputacao
+    en: retrocomputing
+    description: Restoring, using, or programming older computer platforms.
+  emulation:
+    pt: emulacao
+    en: emulation
+    description: Console or computer emulators, compatibility, and configuration.
+  gaming:
+    pt: games
+    en: gaming
+    description: Games, gaming platforms, simulation, and game-related projects.
+  keyboards:
+    pt: teclados
+    en: keyboards
+    description: Mechanical and ergonomic keyboards, layouts, and input devices.
+  audio_video:
+    pt: audio-e-video
+    en: audio-and-video
+    description: Recording, encoding, editing, streaming, and media production technology.
+  quantum_computing:
+    pt: computacao-quantica
+    en: quantum-computing
+    description: Quantum computing concepts, algorithms, hardware, and claims.
+  bitcoin_crypto:
+    pt: bitcoin-e-criptomoedas
+    en: bitcoin-and-cryptocurrency
+    description: Bitcoin, cryptocurrency, blockchain systems, custody, and markets.
+  anime_manga:
+    pt: anime-e-manga
+    en: anime-and-manga
+    description: Anime, manga, readers, restoration, and related software projects.
+  cinema_pop_culture:
+    pt: cinema-e-cultura-pop
+    en: film-and-pop-culture
+    description: Film, television, comics, and pop culture criticism or projects.
+  career:
+    pt: carreira
+    en: career
+    description: Software careers, hiring, interviews, salaries, and professional growth.
+  learning:
+    pt: aprendizado
+    en: learning
+    description: Learning methods, education, practice, and becoming a better developer.
+  management:
+    pt: gestao
+    en: management
+    description: Teams, leadership, organizations, planning, and project management.
+  agile:
+    pt: agile
+    en: agile
+    description: Agile methods, XP, Scrum, Lean, and iterative software delivery.
+  startups:
+    pt: startups
+    en: startups
+    description: Startup building, funding, growth, and startup ecosystems.
+  business:
+    pt: negocios
+    en: business
+    description: Business models, companies, consulting, sales, and commercial decisions.
+  tech_market:
+    pt: mercado-de-tecnologia
+    en: tech-market
+    description: Industry cycles, employment markets, vendors, and technology economics.
+  philosophy:
+    pt: filosofia
+    en: philosophy
+    description: Philosophical arguments, ethics, reason, and worldviews.
+  psychology:
+    pt: psicologia
+    en: psychology
+    description: Psychology, cognition, mental health, motivation, and behavior.
+  science:
+    pt: ciencia
+    en: science
+    description: Scientific reasoning, physics, mathematics, and scientific claims.
+  politics:
+    pt: politica
+    en: politics
+    description: Government, elections, ideology, and political institutions.
+  economics:
+    pt: economia
+    en: economics
+    description: Economics, financial systems, crises, incentives, and monetary policy.
+  law_regulation:
+    pt: leis-e-regulacao
+    en: law-and-regulation
+    description: Law, regulation, copyright, taxation, and compliance.
+  personal:
+    pt: pessoal
+    en: personal
+    description: Personal history, life updates, retrospectives, and autobiographical posts.
+  productivity:
+    pt: produtividade
+    en: productivity
+    description: Personal workflows, focus, organization, and getting work done.
+  communication:
+    pt: comunicacao
+    en: communication
+    description: Writing, speaking, presentations, media, and professional communication.
+  travel:
+    pt: viagens
+    en: travel
+    description: Travel, cities, countries, and cultural observations.
+  blogging:
+    pt: blog
+    en: blogging
+    description: Blogging platforms, publishing workflows, and the history of this blog.
+  interviews:
+    pt: entrevistas
+    en: interviews
+    description: Interviews and long-form conversations.
+  tutorials:
+    pt: tutoriais
+    en: tutorials
+    description: Step-by-step guides whose primary purpose is instruction.
+  reviews:
+    pt: reviews
+    en: reviews
+    description: Hands-on evaluations of products, software, hardware, or services.
+  biographies:
+    pt: biografias
+    en: biographies
+    description: Profiles and biographies of notable people.
+  the_m_akita_chronicles:
+    pt: the-m-akita-chronicles
+    en: the-m-akita-chronicles
+    description: The M.Akita Chronicles build and production series.
+    kind: series
+    aliases: [the-m-akita-chronicles, "the m.akita chronicles"]
+    auto_match: [title]
+
+event_series:
+  railsconf2008:
+    aliases: [railsconf2008]
+  railsconf2009:
+    aliases: [railsconf2009]
+  railsconf2010:
+    aliases: [railsconf2010]
+  railssummit2008:
+    aliases: [railssummit2008]
+  railssummit2009:
+    aliases: [railssummit2009]
+  railssummit2010:
+    aliases: [railssummit2010]
+  rubyconfbr2010:
+    aliases: [rubyconfbr2010]
+  rubyconfbr2011:
+    aliases: [rubyconfbr2011]
+  rubyconfbr2012:
+    aliases: [rubyconfbr2012]
+  rubyconfbr2013:
+    aliases: [rubyconfbr2013]
+  rubyconfbr2014:
+    aliases: [rubyconfbr2014]
+  rubyconfbr2015:
+    aliases: [rubyconfbr2015]
+  qcon2008:
+    aliases: [qcon2008]
+  rubykaigi2011:
+    aliases: [rubykaigi2011]
+  theconf:
+    aliases: [theconf, "the conf"]
+
+special_tags:
+  akitando:
+    pt: akitando
+    en: akitando
+  off_topic:
+    pt: off-topic
+    en: off-topic

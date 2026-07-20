@@ -4,14 +4,11 @@ slug: "ai-memory-emergent-architecture-malleable-software"
 date: '2026-06-14T14:00:00-03:00'
 draft: false
 translationKey: ai-memory-emergent-architecture-malleable-software
+description: "In 24 days, contributors took ai-memory from a personal MVP to a cross-platform, multi-user system. The architecture emerged from use and was only consolidated afterward."
 tags:
-  - ai-memory
-  - rust
-  - opensource
-  - architecture
-  - agile
-  - ai
-  - vibecoding
+- ai-memory
+- software-architecture
+- agile
 ---
 
 About three weeks ago I published the [post explaining ai-memory](/en/2026/05/23/i-built-memory-system-for-coding-agents-ai-memory/), my long-term memory system for coding agents. The core idea, for anyone who missed it: give Claude Code, Codex, OpenCode and the rest a shared brain that persists across sessions, a git-versioned wiki with FTS search, cross-agent handoff, and optional LLM consolidation. Every project isolated, running locally or self-hosted, without shipping your context to anybody's cloud.

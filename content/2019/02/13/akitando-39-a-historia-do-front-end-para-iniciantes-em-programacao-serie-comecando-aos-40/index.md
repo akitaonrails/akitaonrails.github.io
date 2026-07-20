@@ -3,27 +3,11 @@ title: '[Akitando] #39 - A História do Front-End para Iniciantes em Programaç�
   Série "Começando aos 40"'
 date: '2019-02-13T17:00:00-02:00'
 slug: akitando-39-a-historia-do-front-end-para-iniciantes-em-programacao-serie-comecando-aos-40
+description: "Akita reconstitui a evolução do front-end, de HTML, CSS e CGI a AJAX, smartphones, pipelines e SPAs, explicando que cada sopa de letrinhas surgiu para resolver problemas concretos."
 tags:
-- front-end
-- programação
-- usabilidade
-- UX
-- design responsivo
-- flash
+- frontend
+- desenvolvimento-web
 - javascript
-- coffeescript
-- sass
-- css
-- bootstrap
-- navegadores
-- internet explorer
-- netscape
-- java
-- webpack
-- npm
-- asset pipeline
-- tcp/ip
-- http
 - akitando
 draft: false
 ---

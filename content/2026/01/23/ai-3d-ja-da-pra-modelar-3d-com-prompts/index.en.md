@@ -4,11 +4,8 @@ slug: "ai-3d-can-you-actually-model-3d-with-prompts-now"
 date: 2026-01-23T12:13:58-0300
 draft: false
 tags:
-- hunyuan
-- hitem3d
-- blender
-- bambulab
-  - AI
+- generative-media
+- hardware
 translationKey: ai-3d-modeling-prompts
 description: "A practical walkthrough of generating high-quality 3D models from prompts and images using Nano Banana, Hunyuan, Hitem3D, and Blender, all the way to a physical Bambulab print."
 ---

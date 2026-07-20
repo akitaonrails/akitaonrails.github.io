@@ -3,11 +3,9 @@ title: Omarchy 2.0 - LazyVim Basics
 date: "2025-09-12T15:00:00-03:00"
 slug: omarchy-2-0-lazyvim-basics
 tags:
-  - omarchy
-  - neovim
-  - lazyvim
-  - primeagen
-  - taq
+- omarchy
+- developer-tools
+- tutorials
 draft: false
 translationKey: omarchy-lazyvim-basics
 description: A hands-on introduction to LazyVim for people coming from VS Code or Sublime Text, covering the essential Vim navigation, editing, and block commands to get productive fast.

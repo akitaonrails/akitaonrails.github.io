@@ -2,10 +2,10 @@
 title: 'Tradução: Tipagem Dinâmica vs Linguagem Dinâmica Explicado'
 date: '2008-02-22T19:38:00-03:00'
 slug: tradu-o-tipagem-din-mica-vs-linguagem-din-mica-explicado
+description: "A tradução distingue tipagem dinâmica de linguagem dinâmica com Ruby, Python e Groovy. O caso Groovy mostra que tipos estáticos não garantem detectar chamadas dinamicamente despachadas na compilação."
 tags:
-- learning
-- beginner
-- translation
+- linguagens-de-programacao
+- aprendizado
 draft: false
 ---
 

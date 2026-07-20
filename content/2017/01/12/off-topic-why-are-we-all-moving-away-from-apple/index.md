@@ -5,12 +5,12 @@ slug: off-topic-por-que-estamos-todos-migrando-para-longe-da-apple
 translationKey: moving-away-from-apple
 aliases:
 - /2017/01/12/off-topic-why-are-we-all-moving-away-from-apple/
+description: "A retrospectiva argumenta que iPhone, nuvem e apps web tornaram a troca de sistema simples, enquanto a Apple parou de avançar depois de Steve Jobs. Para o autor, a tecnologia está parada desde 2010."
 tags:
-- off-topic
 - apple
-- microsoft
-- future
-- traduzido
+- mercado-de-tecnologia
+- pessoal
+- off-topic
 draft: false
 ---
 

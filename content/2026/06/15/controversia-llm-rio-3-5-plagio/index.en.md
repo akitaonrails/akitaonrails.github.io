@@ -4,15 +4,11 @@ slug: "rio-3-5-llm-controversy-plagiarism"
 date: '2026-06-15T16:00:00-03:00'
 draft: false
 translationKey: rio-3-5-llm-controversy-plagiarism
+description: "Public evidence indicates that Rio 3.5’s initial checkpoint was a blend of Nex-N2-Pro and Qwen, without credit to Nex. The case points to an attribution failure, not legal plagiarism."
 tags:
-  - ai
-  - llm
-  - open-source
-  - rio-3-5
-  - nex-agi
-  - qwen
-  - benchmark
-  - license
+- llms
+- open-source
+- law-and-regulation
 ---
 
 <figure>

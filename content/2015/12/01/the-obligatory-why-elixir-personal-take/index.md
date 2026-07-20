@@ -5,11 +5,11 @@ slug: o-obrigatorio-por-que-elixir-visao-pessoal
 translationKey: obligatory-why-elixir
 aliases:
 - /2015/12/01/the-obligatory-why-elixir-personal-take/
+description: "O autor explica por que pretende combinar Rails e Phoenix e defende Elixir para sistemas concorrentes e distribuídos. Imutabilidade, schedulers e supervisores tornam a tolerância a falhas mais acessível."
 tags:
-- learning
-- beginner
-- elixir
-- traduzido
+- elixir-e-erlang
+- sistemas-distribuidos
+- arquitetura-de-software
 draft: false
 ---
 

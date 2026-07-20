@@ -2,10 +2,10 @@
 title: "[Akitando] #1 - Akitando em Seoul - Parte 1"
 date: '2018-08-10T17:00:00-03:00'
 slug: akitando-1-akitando-em-seoul-parte-1
+description: "No episódio piloto, Akita relata sua primeira viagem a Seoul: metrô, Myeongdong, museus geek, lojas de mechas e a subida à Namsan Tower sob quase 40 graus, antes das conferências de blockchain."
 tags:
-- seoul
-- coréia do sul
-- turismo
+- viagens
+- pessoal
 - akitando
 draft: false
 ---

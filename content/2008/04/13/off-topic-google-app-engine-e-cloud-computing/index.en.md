@@ -2,10 +2,11 @@
 title: 'Off-Topic: Google App Engine and Cloud Computing'
 date: '2008-04-13T01:27:00-03:00'
 slug: off-topic-google-app-engine-e-cloud-computing
+description: "The author compares hosting, VPS, AWS, and Google App Engine, showing the appeal of elastic, on-demand resources. The tradeoff is adapting the application to its own paradigms and making future migration harder."
 tags:
+- cloud
+- software-architecture
 - off-topic
-- cloud-computing
-- google
 draft: false
 ---
 

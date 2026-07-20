@@ -2,9 +2,12 @@
 title: "[Off-Topic] Talking with a University Professor"
 date: '2014-12-08T19:56:00-02:00'
 slug: off-topic-conversando-com-um-professor-universitario
+description: "In response to a professor, the author argues for selective UML, Design Patterns as reference material, XP, and multiple paradigms. Java remains useful, but universities should prioritize fundamentals."
 tags:
-- off-topic
+- learning
+- programming-languages
 - career
+- off-topic
 draft: false
 ---
 

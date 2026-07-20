@@ -2,9 +2,11 @@
 title: 'Off Topic: "I am Legend" - HORRÍVEL!'
 date: '2008-01-19T02:46:00-02:00'
 slug: off-topic-i-am-legend-horrvel
+description: "A crítica considera forte o início de I Am Legend, mas rejeita os monstros, a adaptação superficial de Richard Matheson e o terceiro ato religioso. Para o autor, o filme desanda completamente."
 tags:
+- cinema-e-cultura-pop
+- reviews
 - off-topic
-- leisure
 draft: false
 ---
 

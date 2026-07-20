@@ -5,12 +5,9 @@ date: '2026-04-15T13:00:00-03:00'
 draft: false
 translationKey: how-to-talk-to-claude-code-effectively
 tags:
-  - ai
-  - claude-code
-  - vibe-coding
-  - agile
-  - xp
-  - communication
+- llms
+- agentes-de-codigo
+- comunicacao
 description: "Toda semana alguém me diz 'cancelei o Claude, não performa tanto quanto o GPT'. Eu estou com 500+ horas no Claude Code e no Codex, 400 mil linhas geradas, e os dois entregam. A diferença não é o modelo. É como a pessoa está conversando com ele."
 ---
 

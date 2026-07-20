@@ -2,16 +2,11 @@
 title: "[Akitando] #111 - RANT: Média Salarial NÃO Existe | Entendendo Power Laws"
 date: '2021-12-20T11:18:00-03:00'
 slug: akitando-111-rant-media-salarial-nao-existe-entendendo-power-laws
+description: "Fabio Akita questiona a utilidade da média salarial e usa power laws, redes e sistemas não lineares para explicar por que carreiras podem crescer de forma desigual e não linear."
 tags:
-- power law
-- normal
-- gaussiana
-- estatística
-- linked
-- redes
-- grafos
-- salário
-- mercado
+- carreira
+- economia
+- ciencia
 - akitando
 draft: false
 ---

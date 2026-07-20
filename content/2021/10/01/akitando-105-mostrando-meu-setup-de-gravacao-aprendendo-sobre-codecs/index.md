@@ -2,16 +2,10 @@
 title: "[Akitando] #105 - Mostrando meu Setup de Gravação | Aprendendo sobre CODECs"
 date: '2021-10-01T11:12:00-03:00'
 slug: akitando-105-mostrando-meu-setup-de-gravacao-aprendendo-sobre-codecs
+description: "Akita mostra seu setup com Sony a7III, áudio, teleprompter e Atomos Ninja V e explica containers, codecs, compressão e chroma subsampling. O Ninja V simplifica a gravação."
 tags:
-- atomos ninja v
-- sony a7iii
-- h.264
-- h.265
-- prores
-- dnxhr
-- codec
-- setup
-- estúdio
+- audio-e-video
+- hardware
 - akitando
 draft: false
 ---

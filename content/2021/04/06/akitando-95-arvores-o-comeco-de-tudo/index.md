@@ -2,17 +2,11 @@
 title: "[Akitando] #95 - Árvores: O Começo de TUDO | Estruturas de Dados e Algoritmos"
 date: '2021-04-06T10:30:00-03:00'
 slug: akitando-95-arvores-o-comeco-de-tudo
+description: "Akita constrói uma árvore de procura binária e mostra como balanceamento, Red Black, AVL, B-Tree e B+ Tree sustentam índices, bancos e filesystems, trocando buscas lineares por operações logarítmicas."
 tags:
-- árvore
-- tree
-- BST
-- AVL
-- Red Black Tree
-- RBTree
-- Big O
-- Algoritmos
-- Estrutura de Dados
-- Ciência da Computação
+- algoritmos-e-estruturas-de-dados
+- ciencia-da-computacao
+- bancos-de-dados
 - akitando
 draft: false
 ---

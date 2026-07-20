@@ -2,12 +2,11 @@
 title: Dissecando um Modelfile de Ollama - Ajustando Qwen3 pra código
 date: '2025-04-29T02:30:00-03:00'
 slug: dissecando-um-modelfile-de-ollama-ajustando-qwen3-pra-codigo
+description: "Expliquei como temperature, top_p, top_k, min_p e repeat_penalty mudam a geração de tokens e criei um Modelfile para o Qwen3. Com temperatura baixa, o 14B gerou código rápido e utilizável."
 tags:
-- ollama
-- modelfile
-- qwen3
-- llm
-  - AI
+- llms
+- modelos-locais
+- tutoriais
 draft: false
 translationKey: dissecting-ollama-modelfile-qwen3
 ---

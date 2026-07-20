@@ -2,11 +2,11 @@
 title: Destruindo a "Personalidade" do ChatGPT 4o
 date: '2025-04-28T11:30:00-03:00'
 slug: destruindo-a-personalidade-do-chatgpt-4o
+description: "Mostrei como configurar o ChatGPT 4o para abandonar elogios, conversa fiada e trejeitos pseudo-humanos. Com as instruções certas, ele passa a responder de forma curta, direta e sem fingir consciência."
 tags:
-- chatgpt
-- openai
-- llm
-  - AI
+- llms
+- inteligencia-artificial
+- comunicacao
 draft: false
 translationKey: destroying-chatgpt-4o-personality
 ---

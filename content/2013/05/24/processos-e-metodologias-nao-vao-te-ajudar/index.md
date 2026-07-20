@@ -2,12 +2,12 @@
 title: Processos e Metodologias não vão te Ajudar
 date: '2013-05-24T19:29:00-03:00'
 slug: processos-e-metodologias-nao-vao-te-ajudar
+description: "Processos e metodologias não criam bons desenvolvedores. O texto defende prática contínua e profissionais competentes primeiro, para só então usar técnicas e processos capazes de ampliar seu trabalho."
 tags:
+- engenharia-de-software
+- aprendizado
+- gestao
 - off-topic
-- principles
-- management
-- agile
-- carreira
 draft: false
 ---
 

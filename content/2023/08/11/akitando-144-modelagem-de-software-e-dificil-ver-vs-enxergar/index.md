@@ -2,21 +2,11 @@
 title: '[Akitando] #144 - Modelagem de Software é Difícil? | "Ver" vs "Enxergar"'
 date: '2023-08-11T15:57:00-03:00'
 slug: akitando-144-modelagem-de-software-e-dificil-ver-vs-enxergar
+description: "Modelagem e arquitetura não seguem uma receita pronta: nascem da experiência com problemas e código real. Livros, open source e mentoria ajudam a desenvolver o olhar para tomar decisões melhores."
 tags:
-- ddd
-- domain driven development
-- design patterns
-- martin fowler
-- bob martin
-- uncle bob
-- eric evans
-- gang of four
-- software design
-- software modelling
-- modelagem
-- arquitetura
-- magento
-- ecommerce
+- arquitetura-de-software
+- engenharia-de-software
+- aprendizado
 - akitando
 draft: false
 ---

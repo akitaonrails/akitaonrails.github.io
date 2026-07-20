@@ -2,11 +2,11 @@
 title: Aumentando Resolução de Anime velho pra 4K com I.A.
 date: '2025-04-19T15:30:00-03:00'
 slug: aumentando-resolucao-de-anime-velho-pra-4k-com-i-a
+description: "Usei Video2X com Real-ESRGAN em Docker CUDA para levar anime antigo de DVD a 4K, a cerca de 13 fps. O modelo 6B foi quatro vezes mais lento sem melhorar claramente o resultado."
 tags:
-- ersgan
-- docker
-- video2k
-  - AI
+- midia-generativa
+- performance
+- containers
 draft: false
 translationKey: ai-anime-upscale-4k
 ---

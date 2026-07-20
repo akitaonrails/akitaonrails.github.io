@@ -3,18 +3,10 @@ title: "[Akitando #141] Conversando sobre TDAH, Autismo, Ansiedade e Depressão 
   a Camisa de Força"
 date: '2023-04-25T09:00:00-03:00'
 slug: akitando-141-conversando-sobre-tdah-autismo-ansiedade-e-depressao-tirando-a-camisa-de-forca
+description: "Akita explica como TDAH, TEA, ansiedade e depressão afetam a vida sem diagnósticos binários. Relata seu diagnóstico de autismo e defende informação, terapia e tratamento profissional, sem fórmulas mágicas."
 tags:
-- tdah
-- adhd
-- asd
-- tea
-- autismo
-- ansiedade
-- depressão
-- rejeição
 - psicologia
-- neurologia
-- cérebro
+- pessoal
 - akitando
 draft: false
 ---

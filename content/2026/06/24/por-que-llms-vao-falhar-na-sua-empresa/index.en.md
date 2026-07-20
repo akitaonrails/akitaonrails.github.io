@@ -4,15 +4,11 @@ slug: "why-llms-will-fail-at-your-company"
 date: '2026-06-24T12:00:00-03:00'
 draft: false
 translationKey: why-llms-will-fail-at-your-company
+description: "The deliberately speculative thesis is that LLMs amplify processes where people outsource decisions. The proposed alternative is daily cycles of decision, implementation, testing, and review close to the outcome."
 tags:
-  - ai
-  - llm
-  - agents
-  - agile
-  - scrum
-  - productivity
-  - programming
-  - vibecoding
+- llms
+- vibe-coding
+- software-engineering
 ---
 
 This post is more speculation than a finished thesis. I am thinking out loud. It may be incomplete. It may be wrong. If you disagree, even better: reply in the comments. I am not trying to sell a new methodology. I want to poke a wound that many people are pretending is not there.

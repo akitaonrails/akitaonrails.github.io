@@ -2,6 +2,7 @@
 title: 'Rubyconf Brasil 2013: Conheça Carlos Galdino'
 date: '2013-08-26T09:20:00-03:00'
 slug: rubyconf-brasil-2013-conheca-carlos-galdino
+description: "Carlos Galdino apresenta Rubinius para explicar como uma implementação de Ruby processa código por baixo dos panos. Ele também defende programação funcional para lidar melhor com concorrência e paralelismo."
 tags:
 - rubyconfbr2013
 draft: false

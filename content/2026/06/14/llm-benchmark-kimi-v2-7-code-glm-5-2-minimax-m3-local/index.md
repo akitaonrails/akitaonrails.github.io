@@ -4,15 +4,11 @@ slug: "llm-benchmark-kimi-v2-7-code-glm-5-2-minimax-m3-local"
 date: '2026-06-14T13:00:00-03:00'
 draft: false
 translationKey: llm-benchmark-kimi-2-7-glm-5-2-minimax-m3-local
+description: "No benchmark, GLM 5.2 marcou 87 e Kimi K2.7 Code, 86. O MiniMax M3 aberto não cabe em 128 GB, enquanto programação séria ainda pede Opus 4.8 ou GPT 5.5."
 tags:
-  - llm
-  - benchmark
-  - kimi
-  - glm
-  - minimax
-  - opensource
-  - ai
-  - vibecoding
+- benchmarks-de-llm
+- llms
+- modelos-locais
 ---
 
 Mais uma rodada do meu benchmark de coding. Dessa vez são três entradas open source: o **Kimi K2.7 Code**, o **GLM 5.2**, e o **MiniMax M3** que ganhou pesos abertos mas que eu não consigo rodar em casa nem espremendo. Antes de chegar nos números, vale o contexto de sempre pra quem caiu aqui de paraquedas, e vale uma atualização da novela dos data centers, porque tem coisa nova.

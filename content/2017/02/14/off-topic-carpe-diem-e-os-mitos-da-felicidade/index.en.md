@@ -2,10 +2,12 @@
 title: "[Off-Topic] Carpe Diem and the Myths of Happiness"
 date: '2017-02-14T15:44:00-02:00'
 slug: off-topic-carpe-diem-e-os-mitos-da-felicidade
+description: "I take apart the myths of constant happiness, motivation, and “do what you love.” Hedonic adaptation explains the frustration, while learning and enjoying the present restore agency."
 tags:
+- psychology
+- personal
+- philosophy
 - off-topic
-- happiness
-- career
 draft: false
 ---
 

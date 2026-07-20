@@ -2,11 +2,11 @@
 title: "[Screencast] Começando com Git"
 date: '2010-08-17T00:21:00-03:00'
 slug: screencast-comecando-com-git
+description: "Em um screencast de 3h17, o autor ensina Git do nível iniciante ao intermediário em Linux, Mac e Windows e acrescenta correções para HTTPS no Windows, proxy e certificados do msysGit."
 tags:
-- learning
-- beginner
-- git
-- screencast
+- controle-de-versao
+- ferramentas-de-desenvolvimento
+- tutoriais
 draft: false
 ---
 

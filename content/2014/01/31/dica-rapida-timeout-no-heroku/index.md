@@ -2,10 +2,11 @@
 title: "[Dica Rápida] Timeout no Heroku"
 date: '2014-01-31T21:14:00-02:00'
 slug: dica-rapida-timeout-no-heroku
+description: "No Heroku, configure o Rack Timeout abaixo do limite do Unicorn e dos 30 segundos do Router para receber um stacktrace antes do erro genérico. A informação revela o gargalo e orienta a correção."
 tags:
-- learning
+- devops
+- performance
 - rails
-- heroku
 draft: false
 ---
 

@@ -5,12 +5,10 @@ slug: a-comunidade-ruby-e-a-reputacao
 translationKey: ruby-community-reputation
 aliases:
 - /2016/08/19/the-ruby-community-and-reputation/
+description: "Defendo o Rails como uma stack opinativa que reduz complexidade e acelera a entrega. Alternativas fine-grained são válidas, mas precisam provar seu valor com código, adoção e resultados."
 tags:
-- community
 - rails
 - ruby
-- ranting
-- traduzido
 draft: false
 ---
 

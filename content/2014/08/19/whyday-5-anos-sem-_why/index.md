@@ -2,8 +2,11 @@
 title: "[#WhyDay] 5 Anos Sem _Why"
 date: '2014-08-19T00:01:00-03:00'
 slug: whyday-5-anos-sem-_why
+description: "Um ano após a exibição beta na Rubyconf Brasil, Kevin Triplett lança Two Cartoon Foxes, documentário sobre Why the Lucky Stiff, ainda planejando contexto para não-programadores e o CLOSURE."
 tags:
-- why
+- biografias
+- ruby
+- cinema-e-cultura-pop
 draft: false
 ---
 

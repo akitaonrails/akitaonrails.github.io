@@ -2,6 +2,7 @@
 title: RubyConf Brasil 2012 - Call for Papers
 date: '2012-04-10T17:05:00-03:00'
 slug: rubyconf-brasil-2012-call-for-papers
+description: "RubyConf Brazil 2012 extended its Call for Papers to April 27, with a unique link for updating proposals. The conference will take place in São Paulo on August 30 and 31."
 tags:
 - rubyconfbr2012
 draft: false

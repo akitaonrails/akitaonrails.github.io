@@ -2,15 +2,11 @@
 title: "[Akitando] #142 - Entendendo COMO ChatGPT Funciona - Rodando sua Própria IA "
 date: '2023-06-19T17:47:00-03:00'
 slug: akitando-142-entendendo-como-chatgpt-funciona-rodando-sua-propria-ia
+description: "Rodei um Vicuna 30B localmente e mostro como transformers geram texto por probabilidades, com limites de contexto, custo e escala. Hoje, servem como auxílio, mas não são AGI nem substituem programadores."
 tags:
-- chatgpt
-- openai
-- vicuna
-- llama
-- GPT
-- transformers
-- pytorch
-- tensorflow
+- llms
+- modelos-locais
+- machine-learning
 - akitando
 draft: false
 ---

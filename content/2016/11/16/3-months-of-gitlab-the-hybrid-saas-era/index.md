@@ -5,11 +5,11 @@ slug: 3-meses-de-gitlab-a-era-do-saas-hibrido
 translationKey: 3-months-gitlab-hybrid-saas
 aliases:
 - /2016/11/16/3-months-of-gitlab-the-hybrid-saas-era/
+description: "Depois de rodar quase 200 repositórios e 80 usuários no GitLab próprio, o autor defende o SaaS Híbrido: serviços hospedados com versões OSS para recuperar controle sem reconstruir tudo."
 tags:
-- gitlab
-- saas
-- business
-- traduzido
+- controle-de-versao
+- open-source
+- negocios
 draft: false
 ---
 

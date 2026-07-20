@@ -2,9 +2,11 @@
 title: "[Off-Topic] Visão do Passado sobre a Internet"
 date: '2013-05-26T19:56:00-03:00'
 slug: off-topic-visao-do-passado-sobre-a-internet--2
+description: "Resgatado de um arquivo Word de 1996, o texto revela como a Internet era entendida na época, das pesquisas demográficas e anúncios online às compras digitais e à promessa da realidade virtual."
 tags:
+- historia-da-computacao
+- redes
 - off-topic
-- biography
 draft: false
 ---
 

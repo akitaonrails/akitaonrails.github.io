@@ -3,12 +3,9 @@ title: Teaching the Latest Zig to Your LLM - Training LoRAs (Sort Of)
 date: '2025-05-03T02:30:00-03:00'
 slug: teaching-recent-zig-to-your-llm-training-loras-sort-of
 tags:
+- llms
+- machine-learning
 - zig
-- qwen3
-- ollama
-- vllm
-- llm
-  - AI
 draft: false
 translationKey: teaching-zig-to-llm-loras
 description: A hands-on walkthrough of training a LoRA adapter on Qwen3-8B to teach it about Zig 0.14, covering datasets, fine-tuning, vLLM serving, and the limits of the experiment.

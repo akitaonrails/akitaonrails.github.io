@@ -2,15 +2,11 @@
 title: "[Akitando] #127 - Como Funciona o Boot de um Linux? | O que tem num LiveCD?"
 date: '2022-09-12T18:05:00-03:00'
 slug: akitando-127-como-funciona-o-boot-de-um-linux-o-que-tem-num-livecd
+description: "Akita acompanha o boot Linux do UEFI ao GRUB, kernel, initramfs e processo 1, comparando SysV e systemd. Também mostra como usar modo texto e runlevels para diagnosticar uma máquina que não inicia."
 tags:
-- ubuntu
-- calamares
-- livecd
-- fstab
-- systemd
-- sysv
-- distro
 - linux
+- tutoriais
+- ciencia-da-computacao
 - akitando
 draft: false
 ---

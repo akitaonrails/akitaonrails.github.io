@@ -3,19 +3,11 @@ title: "[Akitando] #149 - Configurando Docker Compose, Postgres, com Testes de C
   - Parte Final da Rinha de Backend"
 date: '2023-12-16T09:30:00-03:00'
 slug: akitando-149-configurando-docker-compose-postgres-com-testes-de-carga-parte-final-da-rinha-de-backend
+description: "Na parte final da Rinha de Backend, configuro Docker Compose, NGINX, Gatling e PostgreSQL. O network mode host reduziu quase todos os erros, e os testes não apontaram o Postgres como gargalo."
 tags:
-- rinhabackend
-- docker
-- podman
-- gatling
-- pgadmin
-- postgres
-- portainer
-- nginx
-- php
-- node.js
-- java
-- sql
+- performance
+- containers
+- bancos-de-dados
 - akitando
 draft: false
 ---

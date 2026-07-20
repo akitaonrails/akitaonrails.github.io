@@ -2,11 +2,10 @@
 title: "[Akitando] #109 - Programa de Trainee CodeMiner 42 | Sua Primeira Oportunidade"
 date: '2021-11-12T11:32:00-03:00'
 slug: akitando-109-programa-de-trainee-codeminer-42-sua-primeira-oportunidade
+description: "A CodeMiner 42 apresenta um programa remunerado de 90 dias para recém-formados, com estudo, mentoria e avaliações. Quem evoluir pode seguir para trainee, júnior e projetos reais."
 tags:
-- codeminer42
-- trainee
-- estágio
 - carreira
+- aprendizado
 - akitando
 draft: false
 ---

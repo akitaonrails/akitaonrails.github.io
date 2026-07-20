@@ -2,11 +2,11 @@
 title: "[Tradução] Três Contextos Implícitos em Ruby"
 date: '2009-11-16T15:28:00-02:00'
 slug: traducao-tres-contextos-implicitos-em-ruby
+description: "A tradução explica os três contextos implícitos de Ruby, self, definidor padrão e cref, e compara class_eval com instance_eval para mostrar onde métodos e constantes são resolvidos."
 tags:
-- learning
-- beginner
 - ruby
-- translation
+- linguagens-de-programacao
+- tutoriais
 draft: false
 ---
 

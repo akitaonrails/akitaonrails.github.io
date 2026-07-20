@@ -2,11 +2,11 @@
 title: 'Translation: Counting Is a Waste of Time'
 date: '2007-09-01T13:08:00-03:00'
 slug: traduo-contar-perda-de-tempo
+description: "The translation criticizes counting tasks, estimates, and hours when those numbers do not guide decisions. A case involving 20 to 25 tasks a day exposes the waste of measurement."
 tags:
-- off-topic
-- career
-- management
 - agile
+- management
+- off-topic
 draft: false
 ---
 

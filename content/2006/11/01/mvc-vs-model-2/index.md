@@ -2,9 +2,11 @@
 title: MVC vs Model 2
 date: '2006-11-01T08:30:05-03:00'
 slug: mvc-vs-model-2
+description: "A tradução diferencia o MVC original, a variação da NeXT e o Model 2 adotado na web, situando Rails academicamente mais perto deste último. A recomendação é escolher o design conforme a interface."
 tags:
-- principles
-- mvc
+- arquitetura-de-software
+- desenvolvimento-web
+- rails
 draft: false
 ---
 

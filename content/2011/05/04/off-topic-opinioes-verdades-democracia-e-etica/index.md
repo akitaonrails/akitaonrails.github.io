@@ -2,12 +2,11 @@
 title: "[Off-Topic] Opiniões, Verdades, Democracia e Ética"
 date: '2011-05-04T03:18:00-03:00'
 slug: off-topic-opinioes-verdades-democracia-e-etica
+description: "Akita separa opinião de verdade e democracia de anarquia: equipes podem decidir como implementar uma estratégia, mas devem respeitar princípios invioláveis, ética profissional e o resultado do cliente."
 tags:
+- gestao
+- filosofia
 - off-topic
-- principles
-- management
-- agile
-- career
 draft: false
 ---
 

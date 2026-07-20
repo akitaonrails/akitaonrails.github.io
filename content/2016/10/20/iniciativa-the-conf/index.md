@@ -2,9 +2,9 @@
 title: Iniciativa THE CONF
 date: '2016-10-20T12:00:00-02:00'
 slug: iniciativa-the-conf
+description: "Proponho a THE CONF, uma conferência brasileira toda em inglês e focada em código, para dar a desenvolvedores latino-americanos um palco internacional e alcançar público além do Brasil."
 tags:
 - theconf
-- conference
 draft: false
 translationKey: theconf-initiative-2016
 aliases:

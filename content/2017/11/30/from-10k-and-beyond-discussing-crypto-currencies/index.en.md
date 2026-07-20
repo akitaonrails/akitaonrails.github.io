@@ -3,11 +3,11 @@ title: 'From 10k and Beyond: Discussing Crypto Currencies'
 date: '2017-11-30T17:04:00-02:00'
 slug: from-10k-and-beyond-discussing-crypto-currencies
 translationKey: from-10k-discussing-crypto
+description: "The author responds to criticism about the bubble, energy, centralization, scale, and social role of cryptocurrencies. His conclusion is to avoid hype, study the fundamentals, and personally accept the risk of investing."
 tags:
-- cryptocurrency
-- bitcoin
-- blockchain
-- english
+- bitcoin-and-cryptocurrency
+- economics
+- personal
 draft: false
 ---
 

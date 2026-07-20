@@ -4,13 +4,9 @@ slug: "integration-tests-in-a-monorepo-behind-the-m-akita-chronicles"
 date: 2026-02-20T12:48:45+00:00
 draft: false
 tags:
-- themakitachronicles
-- rubyonrails
-- tdd
-- integration
-- monorepo
-- vibecode
-  - AI
+- the-m-akita-chronicles
+- testing
+- software-engineering
 translationKey: integration-tests-monorepo
 description: "How a monorepo running three apps that share a filesystem uses a dedicated integration environment, DevCache, rsynced production data, and preflight checks to catch the bugs unit tests never see."
 ---

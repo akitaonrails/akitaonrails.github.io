@@ -3,16 +3,11 @@ title: "[Beginner] Long live PhantomJS, let's use Chrome Headless now"
 date: '2017-10-31T19:48:00-02:00'
 slug: beginner-long-live-phantomjs-let-s-use-chrome-headless-now
 translationKey: beginner-chrome-headless
+description: "Fabio shows how to replace Poltergeist and PhantomJS with Selenium WebDriver and Chrome Headless in RSpec and Capybara. The setup changed, but the existing feature specs ran without alterations."
 tags:
-- beginner
-- rubyonrails
-- rails51
-- nodejs
-- selenium
-- phantomjs
-- chromium
-- chromedriver
-- english
+- rails
+- testing
+- tutorials
 draft: false
 ---
 

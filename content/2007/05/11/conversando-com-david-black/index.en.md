@@ -2,8 +2,11 @@
 title: Chatting with David Black
 date: '2007-05-11T18:14:00-03:00'
 slug: chatting-with-david-black
+description: "David Black tells how he stumbled across Ruby, helped create Ruby Central, and left academia for training and consulting. To him, Rails requires truly understanding Ruby."
 tags:
-- interview
+- interviews
+- ruby
+- career
 draft: false
 translationKey: chatting-david-black
 ---

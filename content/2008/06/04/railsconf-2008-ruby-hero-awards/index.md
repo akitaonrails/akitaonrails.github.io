@@ -2,9 +2,9 @@
 title: RailsConf 2008 - Ruby Heroes Awards
 date: '2008-06-04T18:10:00-03:00'
 slug: railsconf-2008-ruby-hero-awards
+description: "O Ruby Hero Awards premiou seis pessoas por contribuições diferentes, de código e infraestrutura a artigos, livros e screencasts. A cerimônia reforçou que toda forma de compartilhar conhecimento fortalece a comunidade."
 tags:
 - railsconf2008
-- english
 draft: false
 ---
 

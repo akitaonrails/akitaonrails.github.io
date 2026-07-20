@@ -4,14 +4,12 @@ date: '2026-04-05T12:00:00-03:00'
 draft: false
 slug: turning-youtube-into-a-karaoke-app-frank-karaoke
 translationKey: frank-karaoke-youtube-app
+description: "I built a Flutter Android app that overlays live scores on YouTube karaoke videos, using audio filtering and YIN in four modes. It’s fun, but scoring is still experimental."
 tags:
-  - flutter
-  - android
-  - karaoke
-  - audio
-  - pitch-detection
-  - AI
-  - open-source
+- frank
+- llms
+- artificial-intelligence
+- audio-and-video
 ---
 
 Project on GitHub: [github.com/akitaonrails/frank_karaoke](https://github.com/akitaonrails/frank_karaoke)

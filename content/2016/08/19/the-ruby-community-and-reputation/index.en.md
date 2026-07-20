@@ -3,11 +3,10 @@ title: The Ruby Community and Reputation
 date: '2016-08-19T11:02:00-03:00'
 slug: the-ruby-community-and-reputation
 translationKey: ruby-community-reputation
+description: "I defend Rails as an opinionated stack that reduces complexity and speeds delivery. Fine-grained alternatives are valid, but they must prove their value through code, adoption, and results."
 tags:
-- community
 - rails
 - ruby
-- ranting
 draft: false
 ---
 

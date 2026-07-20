@@ -2,12 +2,11 @@
 title: "[Off-Topic] Mea Culpa: Democratic Organizations Don't Work"
 date: '2011-04-25T04:12:00-03:00'
 slug: off-topic-mea-culpa-organizacoes-democraticas-nao-funcionam
+description: "After revisiting his defense of democratic organizations, Akita concludes that companies belong to owners and shareholders, while teams help implement strategy within defined limits."
 tags:
-- off-topic
-- principles
 - management
-- agile
-- career
+- business
+- off-topic
 draft: false
 ---
 

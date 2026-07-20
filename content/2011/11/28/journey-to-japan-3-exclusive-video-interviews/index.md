@@ -5,9 +5,9 @@ slug: jornada-ao-japao-3-entrevistas-exclusivas-em-video
 translationKey: journey-to-japan-3
 aliases:
 - /2011/11/28/journey-to-japan-3-exclusive-video-interviews/
+description: "Fabio edita e publica cinco entrevistas feitas na RubyKaigi 2011 com nomes centrais do Ruby japonês, incluindo Matz. A conversa com Matz tem áudio prejudicado pelo barulho do bar."
 tags:
 - rubykaigi2011
-- traduzido
 draft: false
 ---
 

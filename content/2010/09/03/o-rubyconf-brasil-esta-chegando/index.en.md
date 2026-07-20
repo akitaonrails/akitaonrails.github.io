@@ -2,6 +2,7 @@
 title: RubyConf Brazil is Coming up!
 date: '2010-09-03T02:34:00-03:00'
 slug: rubyconf-brazil-is-coming-up
+description: "The author announces RubyConf Brazil 2010 at Frei Caneca, with tickets starting at R$150, a free introductory class from Caelum, and 24 speakers, as organizers aim for over 700 attendees."
 tags:
 - rubyconfbr2010
 draft: false

@@ -2,14 +2,10 @@
 title: "[Akitando] #91 - Qual a REAL diferença entre Arquivos Binário e Texto?? \U0001F914"
 date: '2021-01-20T10:00:00-03:00'
 slug: akitando-91-qual-a-real-diferenca-entre-arquivos-binario-e-texto
+description: "Com hello.c, ELF, JPEG, ASCII, shells e shebangs, Akita mostra como o sistema interpreta sequências de bytes. Texto e executáveis são binários, mas seguem formatos diferentes."
 tags:
-- ascii
-- unicode
-- elf
-- executável
-- shell
-- zsh
-- bash
+- ciencia-da-computacao
+- programacao
 - akitando
 draft: false
 ---

@@ -2,16 +2,11 @@
 title: "[Akitando] #98 - A Longa História de CPUs e GPUs | Jogos de Windows em Linux??"
 date: '2021-05-26T12:26:00-03:00'
 slug: akitando-98-a-longa-historia-de-cpus-e-gpus-jogos-de-windows-em-linux
+description: "Akita roda jogos de Windows nativamente no Linux com Steam, Wine, DXVK e Proton, com desempenho semelhante ou até melhor. Também explica a evolução das GPUs e por que NVIDIA Optimus ainda dá trabalho."
 tags:
-- CUDA
-- Shaders
-- OpenGL
-- OpenCL
-- Vulkan
-- DXVK
-- DirectX
-- Steam
-- Games
+- linux
+- games
+- hardware
 - akitando
 draft: false
 ---

@@ -3,11 +3,11 @@ title: The Obligatory "Why Elixir?" Personal Take
 date: '2015-12-01T13:26:00-02:00'
 slug: the-obligatory-why-elixir-personal-take
 translationKey: obligatory-why-elixir
+description: "The author explains why he plans to combine Rails and Phoenix and argues for Elixir in concurrent, distributed systems. Immutability, schedulers, and supervisors make fault tolerance more approachable."
 tags:
-- learning
-- beginner
-- elixir
-- english
+- elixir-and-erlang
+- distributed-systems
+- software-architecture
 draft: false
 ---
 

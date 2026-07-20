@@ -3,18 +3,11 @@ title: "[Akitando] #122 - Detecção e Correção de Erros | Introdução a Rede
   2"
 date: '2022-07-13T10:50:00-03:00'
 slug: akitando-122-detecao-e-correcao-de-erros-introducao-a-redes-parte-2
+description: "Mostro como Hamming e Reed-Solomon lidam com bits corrompidos, por que redes preferem retransmitir pacotes e como checksums, RAID e data scrubbing protegem dados armazenados."
 tags:
-- hamming
-- reed-solomon
-- checksum
-- burst error
-- raio cósmico
-- cosmic ray
-- eleição
-- votos
-- NAS
-- RAID
-- redundância
+- algoritmos-e-estruturas-de-dados
+- redes
+- armazenamento-e-backup
 - akitando
 draft: false
 ---

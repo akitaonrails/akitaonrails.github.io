@@ -5,9 +5,9 @@ translationKey: rant-akita-caved-to-ai
 date: 2026-02-24T11:54:26+00:00
 draft: false
 tags:
-- vibecode
-- rant
-  - AI
+- artificial-intelligence
+- llms
+- vibe-coding
 description: "I have been 'bending over' for AI since 2023. If you only watch out-of-context podcast clips, let me spell it out for you."
 ---
 

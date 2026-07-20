@@ -3,13 +3,10 @@ title: 'Cryptocurrencies: Is it a Bubble? Does it Matter?'
 date: '2017-12-05T10:36:00-02:00'
 slug: cryptocurrencies-is-it-a-bubble-does-it-matter
 translationKey: cryptocurrencies-bubble
+description: "The bubble may burst and Bitcoin may plunge, but that does not end the story: the author compares it to the dot-com bubble and argues for an antifragile bet limited to what one can afford to lose."
 tags:
-- cryptocurrency
-- bitcoin
-- blockchain
-- bubble
-- dot-com
-- english
+- bitcoin-and-cryptocurrency
+- economics
 draft: false
 ---
 

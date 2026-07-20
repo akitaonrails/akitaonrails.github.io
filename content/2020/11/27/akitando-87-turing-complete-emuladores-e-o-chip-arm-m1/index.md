@@ -2,13 +2,11 @@
 title: "[Akitando] #87 Turing Complete, Emuladores e o Chip ARM M1"
 date: '2020-11-27T20:00:00-03:00'
 slug: akitando-87-turing-complete-emuladores-e-o-chip-arm-m1
+description: "Akita conecta máquinas de Turing, Doom em dispositivos improváveis e emulação à transição de x86 para ARM. O M1 se destaca ao rodar binários x86 com desempenho surpreendente via Rosetta 2."
 tags:
-- apple
-- m1
-- arm
-- x86
-- emulador
-- turing complete
+- ciencia-da-computacao
+- emulacao
+- hardware
 - akitando
 draft: false
 ---

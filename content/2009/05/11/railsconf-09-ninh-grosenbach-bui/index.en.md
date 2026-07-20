@@ -3,10 +3,9 @@ title: "RailsConf 09 - Ninh Grosenbach Bui"
 date: '2009-05-11T00:12:00-03:00'
 slug: railsconf-09-ninh-grosenbach-bui
 translationKey: railsconf-2009-ninh-grosenbach-bui
+description: "RailsConf 09 mixes technology and fun, featuring Ruby and Rails community names and Rubystein, a Ruby game Phusion used to show the language was fast enough."
 tags:
 - railsconf2009
-- interview
-- english
 draft: false
 ---
 

@@ -2,12 +2,10 @@
 title: '[Akitando] #62 - Aprendendo "Fotografês" | Brinquedos de Miami'
 date: '2019-09-26T11:00:00-03:00'
 slug: akitando-62-aprendendo-fotografes-brinquedos-de-miami
+description: "Akita usa os upgrades de câmera, luz e áudio para explicar exposição, difusão e workflow. O Godox e o Rode Wireless Go mudam o visual e reduzem etapas, mas tornam a configuração mais complexa."
 tags:
-- fotografia
-- canon
-- godox
-- aputure
-- rode
+- audio-e-video
+- hardware
 - akitando
 draft: false
 ---

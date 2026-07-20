@@ -4,17 +4,12 @@ slug: "akita-ai-tips-toolkit-ai-jail-ai-memory-ai-usagebar"
 date: '2026-05-24T10:30:00-03:00'
 draft: false
 translationKey: dicas-e-toolkit-de-ia-do-akita-ai-jail-ai-memory-ai-usagebar
+description: "After more than 600 hours with coding agents, Akita brings together tools like ai-jail, ai-memory, ai-usagebar, and ghpending, and argues for testing, backups, refactoring, and disciplined engineering."
 tags:
-  - ai
-  - agents
-  - claude-code
-  - codex
-  - opencode
-  - ai-jail
-  - ai-memory
-  - ai-usagebar
-  - ghpending
-  - vibecoding
+- ai-jail
+- ai-memory
+- ai-usagebar
+- ghpending
 ---
 
 In last week's post, ["Wrapping Up My AI Marathon: Success or Failure?"](/en/2026/05/14/wrapping-up-my-ai-marathon-success-or-failure/), I closed the first phase of my marathon. More than 600 hours of heavy coding-agent use, dozens of projects, hundreds of thousands of lines of code and documentation, and a pile of practical conclusions. Not marketing. Practical.

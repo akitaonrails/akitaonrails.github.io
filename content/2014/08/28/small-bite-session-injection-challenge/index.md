@@ -2,9 +2,11 @@
 title: "[Small Bite] Session Injection Challenge"
 date: '2014-08-28T12:00:00-03:00'
 slug: small-bite-session-injection-challenge
+description: "Mostro como o Session Injection Challenge permite redefinir a senha do admin ao usar uma chave da session controlada pela URL e a conversão de strings do ActiveRecord. A falha nasce da confiança indevida nos parâmetros."
 tags:
-- metasploit
-- security
+- seguranca
+- rails
+- tutoriais
 draft: false
 ---
 

@@ -2,6 +2,7 @@
 title: 'Rubyconf Brasil 2013: Meet Danilo Sato'
 date: '2013-08-22T12:08:00-03:00'
 slug: rubyconf-brasil-2013-meet-danilo-sato
+description: "Danilo Sato explains why software design remains valuable even as languages and frameworks change. To escape obsolescence, he says, you must keep learning and study the past."
 tags:
 - rubyconfbr2013
 draft: false

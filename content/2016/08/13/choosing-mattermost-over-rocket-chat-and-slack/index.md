@@ -5,13 +5,10 @@ slug: escolhendo-mattermost-no-lugar-de-rocket-chat-e-slack
 translationKey: choosing-mattermost
 aliases:
 - /2016/08/13/choosing-mattermost-over-rocket-chat-and-slack/
+description: "Testei Slack, Rocket.chat e Mattermost com quase 50 pessoas e acabamos no Mattermost: a interface era mais rápida e responsiva, embora a instalação exigisse Docker, Go e alguns hacks."
 tags:
-- mattermost
-- docker
-- golang
-- rocket.chat
-- slack
-- traduzido
+- reviews
+- containers
 draft: false
 ---
 

@@ -3,10 +3,11 @@ title: "[SmallTips] Running GitLab CI Runner Locally"
 date: '2018-04-28T18:35:00-03:00'
 slug: smalltips-running-gitlab-ci-runner-locally
 translationKey: gitlab-ci-runner-locally
+description: "GitLab CI Runner uses `.gitlab-ci.yml` to reproduce failing server jobs locally through Docker, speeding up diagnosis. The tradeoff is starting over without cache or artifacts."
 tags:
-- smalltips
-- gitlab
-- english
+- devops
+- containers
+- testing
 draft: false
 ---
 

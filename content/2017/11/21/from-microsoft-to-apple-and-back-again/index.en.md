@@ -3,15 +3,11 @@ title: From Microsoft to Apple, and Back Again
 date: '2017-11-21T21:51:00-02:00'
 slug: from-microsoft-to-apple-and-back-again
 translationKey: microsoft-to-apple-and-back
+description: "Comparing Windows 10, macOS, Linux, and premium laptops, the author concludes Windows deserves another chance, uses Manjaro in VirtualBox, and prefers a Dell XPS for development and a Surface Book 2 for design."
 tags:
-- mac
-- macos
 - apple
-- windows
 - microsoft
-- surface
-- dell
-- english
+- hardware
 draft: false
 ---
 

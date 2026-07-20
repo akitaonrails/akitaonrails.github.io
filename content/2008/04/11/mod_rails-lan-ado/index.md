@@ -2,8 +2,11 @@
 title: MOD_RAILS LANÇADO!!
 date: '2008-04-11T15:59:00-03:00'
 slug: mod_rails-lan-ado
+description: "O Phusion Passenger é lançado prometendo deploy Rails quase tão simples quanto mod_php, isolamento entre usuários no Apache e bloqueio de aplicações como root. A edição Enterprise alegava reduzir memória em até 33%."
 tags:
-- passenger
+- rails
+- devops
+- performance
 draft: false
 ---
 

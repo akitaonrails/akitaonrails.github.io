@@ -3,14 +3,11 @@ title: "Meus Retrogames de Corrida Favoritos Rodando no Meu Distrobox"
 date: '2026-04-19T20:00:00-03:00'
 draft: false
 translationKey: retrogames-de-corrida-favoritos-no-distrobox
+description: "Consolidei no Linux uma coleção de corridas clássicas em Distrobox. Driveclub roda a 30 FPS com um fork do shadPS4, e FM4 funciona no Xenia após muito ajuste."
 tags:
-  - gaming
-  - emulation
-  - linux
-  - distrobox
-  - racing
-  - gran-turismo
-  - forza
+- games
+- emulacao
+- linux
 ---
 
 Eu passei o domingo inteiro nisso, e foi um dos domingos mais produtivos que eu tive em tempos. A missão foi específica: fechar os jogos de corrida simcade mais difíceis de emular, que eu quero rodar há anos, e só agora consegui chegar num estado confiável.

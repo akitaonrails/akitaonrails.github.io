@@ -3,12 +3,11 @@ title: "LLM Benchmarks: Is It Worth ($$) Mixing 2 Models? (Planner + Executor)"
 date: '2026-04-25T13:00:00-03:00'
 draft: false
 translationKey: llm-benchmarks-mixing-2-models-planner-executor
+description: "Three rounds show multi-agent doesn’t beat solo Opus 4.7 in opencode, which scored 97/100 in 18 minutes for about $4. GPT 5.4 xHigh with a medium executor saves money but loses 3 points."
 tags:
-  - llm
-  - benchmark
-  - claude
-  - ai
-  - vibecoding
+- llm-benchmarks
+- coding-agents
+- llms
 ---
 
 **TL;DR:** No. Across all three rounds of experiments I ran, mixing "strong frontier planner + cheap executor" loses to just using Opus 4.7 alone in a mature harness. **Solo Opus 4.7 in opencode delivers Tier A (97/100) in 18 minutes for ~$4 pay-as-you-go.** No multi-agent combination beats that on quality, and no combination is cheaper at the same time. The exception is Codex GPT 5.4 xHigh + `medium` executor, which drops from ~$16/run to ~$1-3/run while losing 3 quality points. Useful if you only have GPT in your provider stack. For everything else, **let the frontier model decide when to delegate on its own**, especially if you're on a Plus/Pro/Max subscription.

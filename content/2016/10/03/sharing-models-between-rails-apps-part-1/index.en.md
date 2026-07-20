@@ -3,9 +3,11 @@ title: Sharing models between Rails Apps - Part 1
 date: '2016-10-03T15:00:00-03:00'
 slug: sharing-models-between-rails-apps-part-1
 translationKey: sharing-models-between-rails-apps-1
+description: "I extracted stable Central model logic into Concerns in a testable RubyGem, moved the specs with almost no changes, and concluded it works well for secondary read-only apps."
 tags:
 - rails
-- database
+- software-architecture
+- testing
 draft: false
 ---
 

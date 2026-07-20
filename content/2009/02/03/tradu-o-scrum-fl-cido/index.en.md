@@ -2,10 +2,12 @@
 title: 'Translation: Flaccid Scrum'
 date: '2009-02-03T03:32:00-02:00'
 slug: tradu-o-scrum-fl-cido
+description: "Martin Fowler's translation shows how adopting Scrum without technical practices can leave code flaccid. Fabio emphasizes testing, refactoring, frequent integration, and collective ownership."
 tags:
-- off-topic
 - agile
-- management
+- software-engineering
+- testing
+- off-topic
 draft: false
 ---
 

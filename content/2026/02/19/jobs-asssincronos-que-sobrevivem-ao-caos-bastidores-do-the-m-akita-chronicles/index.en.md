@@ -4,10 +4,9 @@ slug: "async-jobs-that-survive-chaos-behind-the-m-akita-chronicles"
 date: 2026-02-19T01:10:08+00:00
 draft: false
 tags:
-- themakitachronicles
-- rubyonrails
-- activejob
-  - AI
+- the-m-akita-chronicles
+- rails
+- distributed-systems
 translationKey: async-jobs-chaos-survival
 description: "Production-grade patterns for Rails 8 ActiveJob and SolidQueue: retries, distributed locks, atomic email claiming, orchestrators, cron safety nets, and status notifications."
 ---

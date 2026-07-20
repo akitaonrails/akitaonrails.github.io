@@ -2,8 +2,9 @@
 title: Configuração da BIOS do meu PC - X670E Aorus Xtreme
 date: '2025-04-17T18:50:00-03:00'
 slug: configuracao-da-bios-do-meu-pc-x670e-aorus-xtreme
+description: "Registrei os ajustes da BIOS da minha X670E Aorus Xtreme com Ryzen 9 7950X3D: PBO 90 Level 2 estável, EXPO ativo, C-States desabilitados, kernel Zen e checagem semanal de BIOS."
 tags:
-- amd
+- hardware
 - performance
 - linux
 draft: false

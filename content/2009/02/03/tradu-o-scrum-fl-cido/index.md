@@ -2,11 +2,12 @@
 title: 'Tradução: Scrum Flácido'
 date: '2009-02-03T03:32:00-02:00'
 slug: tradu-o-scrum-fl-cido
+description: "A tradução de Martin Fowler mostra como adotar Scrum sem práticas técnicas pode deixar o código flácido. Fabio reforça testes, refatoração, integração frequente e propriedade coletiva."
 tags:
-- off-topic
 - agile
-- management
-- translation
+- engenharia-de-software
+- testes
+- off-topic
 draft: false
 ---
 

@@ -4,7 +4,11 @@ slug: "my-first-vibe-code-failure-frank-yomik"
 date: 2026-03-05T08:00:00-03:00
 draft: false
 translationKey: frank-yomik-vibe-code-failure
-tags: ["ai", "vibe-coding", "manga", "flutter", "python", "opencv", "machine-learning", "FrankYomik"]
+tags:
+- frank-yomik
+- frank
+- llms
+- artificial-intelligence
 description: "How I spent days building a manga speech bubble detection system with OpenCV, threw it all out and rebuilt it in hours with a pretrained model. Lessons on vibe coding, productive failure, and knowing when to change course."
 ---
 

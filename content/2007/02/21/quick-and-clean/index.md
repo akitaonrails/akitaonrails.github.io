@@ -2,8 +2,11 @@
 title: Quick and Clean
 date: '2007-02-21T04:50:38-02:00'
 slug: quick-and-clean
+description: "A palestra de Chad Fowler sustenta que Ruby e Rails aceleram bons programadores, mas não corrigem código ruim. O caso da armadilha 1 + N mostra por que entender SQL e Active Record importa."
 tags:
-- career
+- rails
+- ruby
+- bancos-de-dados
 draft: false
 ---
 

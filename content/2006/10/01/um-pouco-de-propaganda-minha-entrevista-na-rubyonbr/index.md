@@ -2,8 +2,11 @@
 title: 'Um pouco de propaganda: Minha entrevista na Rubyonbr'
 date: '2006-10-01T11:15:00-03:00'
 slug: um-pouco-de-propaganda-minha-entrevista-na-rubyonbr
+description: "O autor fala sobre sua trajetória e o livro Repensando a Web com Rails em uma entrevista à Rubyonbr, anuncia novas colunas e divulga o evento de lançamento na FNAC Paulista."
 tags:
-- rubyonbr
+- entrevistas
+- carreira
+- rails
 draft: false
 ---
 

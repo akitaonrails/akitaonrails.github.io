@@ -2,6 +2,7 @@
 title: 'Rubyconf Brasil 2013: Conheça Eduardo Shiota'
 date: '2013-08-19T12:45:00-03:00'
 slug: rubyconf-brasil-2013-conheca-eduardo-shiota
+description: "Eduardo Shiota apresenta arquitetura modular e orientada a eventos em JavaScript e defende fundamentos, código reutilizável e testes, sem ficar preso à moda dos frameworks ou a uma biblioteca específica."
 tags:
 - rubyconfbr2013
 draft: false

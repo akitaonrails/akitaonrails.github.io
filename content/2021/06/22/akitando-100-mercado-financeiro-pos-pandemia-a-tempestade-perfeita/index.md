@@ -2,12 +2,11 @@
 title: "[Akitando] #100 - Mercado Financeiro Pós-Pandemia: A Tempestade Perfeita?"
 date: '2021-06-22T12:07:00-03:00'
 slug: akitando-100-mercado-financeiro-pos-pandemia-a-tempestade-perfeita
+description: "Akita analisa a economia pós-pandemia e argumenta que estímulos e juros baixos inflaram mercados, venture capital e SPACs, enquanto inflação e promessas de riqueza fácil ampliaram os riscos."
 tags:
 - economia
-- venture capital
-- spac
-- fintech
-- softbank
+- mercado-de-tecnologia
+- startups
 - akitando
 draft: false
 ---

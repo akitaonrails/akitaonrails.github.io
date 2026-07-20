@@ -2,11 +2,11 @@
 title: "[Small Bites] Trocando de SASS para SASSC e colocando no Heroku"
 date: '2015-05-15T13:07:00-03:00'
 slug: small-bites-trocando-de-sass-para-sassc-e-colocando-no-heroku
+description: "Trocar sass-rails por sassc-rails usa libsass para acelerar deployments Rails no Heroku com múltiplas buildpacks. A compatibilidade ainda não era total, então o resultado precisava ser testado."
 tags:
-- learning
 - rails
-- heroku
-- front-end
+- frontend
+- performance
 draft: false
 ---
 

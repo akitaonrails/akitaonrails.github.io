@@ -2,6 +2,7 @@
 title: 'Rubyconf Brasil 2013: Vinheta de Abertura'
 date: '2013-08-19T09:52:00-03:00'
 slug: rubyconf-brasil-2013-vinheta-de-abertura
+description: "Para deixar de fazer apenas vídeos caseiros, o autor criou uma vinheta profissional para a Rubyconf Brasil com a The Kumite, equipe da FLAG conhecida por trabalhos para a Globo e comerciais da Samsung."
 tags:
 - rubyconfbr2013
 draft: false

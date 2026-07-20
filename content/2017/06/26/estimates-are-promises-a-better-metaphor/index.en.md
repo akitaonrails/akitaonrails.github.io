@@ -3,12 +3,12 @@ title: Estimates are Promises - A Better Metaphor
 date: '2017-06-26T17:44:00-03:00'
 slug: estimates-are-promises-a-better-metaphor
 translationKey: estimates-are-promises
+description: "Estimates can become promises when risk is managed: lock in time and cost, prioritize the first 20% of the scope, and use staging deliveries and velocity as gauges for adjusting course."
 tags:
-- off-topic
-- principles
-- management
 - agile
-- english
+- management
+- software-engineering
+- off-topic
 draft: false
 ---
 

@@ -2,15 +2,11 @@
 title: "[Akitando] #135 - ChatGPT Consegue te Substituir? | Entendendo Jobs Assíncronos"
 date: '2023-01-05T11:00:00-03:00'
 slug: akitando-135-chatgpt-consegue-te-substituir-entendendo-jobs-assincronos
+description: "Akita usa uploads de imagens para mostrar por que Promises não substituem jobs assíncronos com Bull ou Kafka. O ChatGPT acelera código simples, mas ainda depende de experiência para funcionar em produção."
 tags:
-- chatgpt
-- node.js
-- bull
-- kafka
-- spring boot
-- promises
-- async
-- aws
+- sistemas-distribuidos
+- backend
+- llms
 - akitando
 draft: false
 ---

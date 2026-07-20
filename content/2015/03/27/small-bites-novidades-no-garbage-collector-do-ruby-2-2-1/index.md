@@ -2,9 +2,11 @@
 title: "[Small Bites] Novidades no Garbage Collector do Ruby 2.2.1"
 date: '2015-03-27T13:06:00-03:00'
 slug: small-bites-novidades-no-garbage-collector-do-ruby-2-2-1
+description: "O Ruby 2.2.1 passou a usar mais gerações e GC incremental, reduzindo pausas longas e tornando as respostas mais previsíveis. Nos testes descritos, isso custou cerca de 30% mais memória por processo."
 tags:
-- learning
 - ruby
+- performance
+- linguagens-de-programacao
 draft: false
 ---
 

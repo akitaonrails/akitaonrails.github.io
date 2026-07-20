@@ -3,17 +3,11 @@ title: "[Akitando] #46 - Gerenciamento de Memória (Parte 2) | Entendendo Back-e
   para Iniciantes (Parte 6)"
 date: '2019-04-03T17:01:00-03:00'
 slug: akitando-46-gerenciamento-de-memoria-parte-2-entendendo-back-end-para-iniciantes-parte-6
+description: "Fabio explica como garbage collectors funcionam e compara reference counting, mark and sweep, gerações e compactação, mostrando o preço de cada escolha em memória, CPU e pausas."
 tags:
-- ptmalloc2
-- tcmalloc
-- jemalloc
-- ruby
-- java
-- jvm
-- garbage collector
-- python
-- golang
-- memory
+- performance
+- linguagens-de-programacao
+- ciencia-da-computacao
 - akitando
 draft: false
 ---

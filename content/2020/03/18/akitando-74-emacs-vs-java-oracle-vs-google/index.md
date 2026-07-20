@@ -2,16 +2,11 @@
 title: "[Akitando] #74 - Emacs vs Java | Oracle vs Google"
 date: '2020-03-18T10:30:00-03:00'
 slug: akitando-74-emacs-vs-java-oracle-vs-google
+description: "A trajetória do Emacs, o conflito entre Stallman e Gosling e a história do Java ajudam a entender Oracle vs. Google. Akita vê um caso ambíguo sobre APIs e código reutilizado e recomenda OpenJDK."
 tags:
-- emacs
-- richard stallman
+- historia-da-computacao
 - java
-- james gosling
-- gpl
-- oracle
-- google
-- android
-- openjdk
+- leis-e-regulacao
 - akitando
 draft: false
 ---

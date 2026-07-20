@@ -2,15 +2,10 @@
 title: "[Akitando] #75 - O que vem DEPOIS do COVID-19?"
 date: '2020-03-24T20:00:00-03:00'
 slug: akitando-75-o-que-vem-depois-do-covid-19
+description: "Akita explica como a pandemia agravou uma recessão que já se aproximava, usando liquidez, alavancagem, dívida e ações do FED para projetar riscos. A preparação passa por caixa e fundamentos sólidos."
 tags:
-- covid-19
-- corona virus
-- escola austriaca
-- fed
-- bacen
-- quantitative easing
-- crise financeira 2008
-- grande depressão 1929
+- economia
+- negocios
 - akitando
 draft: false
 ---

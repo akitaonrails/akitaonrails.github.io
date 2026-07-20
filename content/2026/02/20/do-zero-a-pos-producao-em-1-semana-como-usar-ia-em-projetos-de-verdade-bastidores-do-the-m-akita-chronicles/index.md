@@ -3,14 +3,12 @@ title: "Do Zero à Pós-Produção em 1 Semana - Como usar IA em Projetos de Ver
 slug: "do-zero-a-pos-producao-em-1-semana-como-usar-ia-em-projetos-de-verdade-bastidores-do-the-m-akita-chronicles"
 date: 2026-02-20T12:49:58+00:00
 draft: false
+description: "Em oito dias, coloquei newsletter, podcast, blog e bot Discord em produção com 274 commits e 1.323 testes. Comparado ao FrankMD, XP, TDD, CI e refatoração contínua entregaram mais com menos dívida."
 tags:
-- themakitachronicles
-- rubyonrails
-- xp
-- extremeprogramming
-- agile
-- frankmd
-  - AI
+- frank
+- llms
+- inteligencia-artificial
+- the-m-akita-chronicles
 translationKey: zero-to-post-production-1-week
 ---
 

@@ -2,11 +2,12 @@
 title: '[Off-Topic] Desmistificando a Microsoft do "Mal"'
 date: '2011-02-20T17:53:00-03:00'
 slug: off-topic-desmistificando-a-microsoft-do-mal
+description: "Ao traduzir uma defesa libertária da Microsoft no caso antitruste, o autor argumenta que leis vagas dão poder arbitrário ao governo e que a posição dominante da empresa resultou de competição, não de coerção."
 tags:
+- leis-e-regulacao
+- microsoft
+- filosofia
 - off-topic
-- principles
-- philosophy
-- translation
 draft: false
 ---
 

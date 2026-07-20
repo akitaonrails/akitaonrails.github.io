@@ -2,6 +2,7 @@
 title: Rails Summit na Linux Magazine!
 date: '2008-08-06T12:03:00-03:00'
 slug: rails-summit-na-linux-magazine
+description: "O primeiro anúncio impresso do Rails Summit Latin America saiu na Linux Magazine. O post mostra a propaganda e convida a comunidade a participar do evento."
 tags:
 - railssummit2008
 draft: false

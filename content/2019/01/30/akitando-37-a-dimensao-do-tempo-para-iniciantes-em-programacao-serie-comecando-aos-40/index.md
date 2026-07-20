@@ -3,14 +3,11 @@ title: '[Akitando] #37 - A Dimensão do TEMPO para Iniciantes em Programação |
   "Começando aos 40"'
 date: '2019-01-30T17:00:00-02:00'
 slug: akitando-37-a-dimensao-do-tempo-para-iniciantes-em-programacao-serie-comecando-aos-40
+description: "Saltos entre 1985 e 2015 mostram a velocidade das mudanças em linguagens, empresas e plataformas. Akita recomenda planejar a carreira sem transformar metas atuais em dogmas."
 tags:
-- mercado de TI
-- história da computação
-- apple
-- sun
-- java
-- microsoft
-- iphone
+- historia-da-computacao
+- mercado-de-tecnologia
+- carreira
 - akitando
 draft: false
 ---

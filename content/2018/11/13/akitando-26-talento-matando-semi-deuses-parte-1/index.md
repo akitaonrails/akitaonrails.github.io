@@ -2,16 +2,11 @@
 title: "[Akitando] #26 - Talento: Matando Semi-Deuses (Parte 1)"
 date: '2018-11-13T17:00:00-02:00'
 slug: akitando-26-talento-matando-semi-deuses-parte-1
+description: "Einstein e Darwin não foram gênios isolados: pesquisas paralelas e décadas de trabalho tornariam suas ideias possíveis. Akita usa esses casos para questionar a mitologia do talento natural."
 tags:
-- einstein
-- darwin
-- relatividade
-- evolução
-- seleção natural
-- física
-- poincare
-- lorentz
-- wallace
+- ciencia
+- aprendizado
+- biografias
 - akitando
 draft: false
 ---

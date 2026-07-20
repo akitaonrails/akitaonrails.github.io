@@ -4,11 +4,9 @@ slug: "serving-ai-in-the-cloud-my-personal-tts-behind-the-m-akita-chronicles"
 date: 2026-02-18T15:28:46+00:00
 draft: false
 tags:
-- themakitachronicles
-- runpod
-- vibecode
-- qwen3-tts
-  - AI
+- the-m-akita-chronicles
+- generative-media
+- cloud
 translationKey: serving-ai-cloud-personal-tts
 description: "Behind the scenes of putting Qwen3-TTS in production on a serverless GPU to auto-generate a weekly podcast: cold starts, voice cloning, sampling, loudness, and prompt engineering."
 ---

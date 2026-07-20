@@ -5,10 +5,11 @@ slug: por-que-falar-mal-do-ruby-on-rails-e-simplesmente-preguica
 translationKey: lazy-to-bad-mouth-rails
 aliases:
 - /2017/08/03/why-is-it-just-lazy-to-bad-mouth-ruby-on-rails/
+description: "Ruby on Rails não morreu nem lidera mais o mercado. Seu legado ajudou a definir o status quo da web, de Git e testes contínuos à nuvem, deploy contínuo e métricas."
 tags:
-- ruby
 - rails
-- traduzido
+- desenvolvimento-web
+- engenharia-de-software
 draft: false
 ---
 

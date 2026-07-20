@@ -3,8 +3,11 @@ title: Chatting with Blaine Cook (Twitter)
 date: '2008-06-17T00:29:00-03:00'
 slug: chatting-with-blaine-cook-twitter
 translationKey: chatting-blaine-cook
+description: "Blaine Cook separates performance from scalability, explains Twitter’s asynchronous architecture and the cost of sharding. In his view, scaling problems are rarely Rails’ fault."
 tags:
-- interview
+- interviews
+- performance
+- distributed-systems
 draft: false
 ---
 

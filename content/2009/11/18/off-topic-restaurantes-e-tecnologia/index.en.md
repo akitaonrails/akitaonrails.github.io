@@ -2,9 +2,12 @@
 title: "[Off-Topic] Restaurants and Technology"
 date: '2009-11-18T16:51:00-02:00'
 slug: off-topic-restaurantes-e-tecnologia
+description: "The restaurant analogy separates companies whose core business is technology from those that merely use it for support. In the former, programmers should experiment and create tools, as at GitHub."
 tags:
-- off-topic
 - management
+- software-engineering
+- business
+- off-topic
 draft: false
 ---
 

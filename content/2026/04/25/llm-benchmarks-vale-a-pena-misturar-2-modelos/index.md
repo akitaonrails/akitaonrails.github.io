@@ -3,12 +3,11 @@ title: "LLM Benchmarks: Vale a Pena ($$) Misturar 2 Modelos? (Planner + Executor
 date: '2026-04-25T13:00:00-03:00'
 draft: false
 translationKey: llm-benchmarks-mixing-2-models-planner-executor
+description: "Três rodadas mostram que multi-agente não supera o Opus 4.7 solo no opencode, que fez 97/100 em 18 minutos por cerca de $4. GPT 5.4 xHigh com executor medium economiza, mas perde 3 pontos."
 tags:
-  - llm
-  - benchmark
-  - claude
-  - ai
-  - vibecoding
+- benchmarks-de-llm
+- agentes-de-codigo
+- llms
 ---
 
 **TL;DR:** Não. Em todas as três rodadas de experimentos que rodei, mistura de "modelo forte planejador + modelo barato executor" perde pra simplesmente usar Opus 4.7 sozinho num harness maduro. **Solo Opus 4.7 em opencode entrega Tier A (97/100) em 18 minutos por ~$4 pay-as-you-go.** Nenhuma combinação multi-agente bate isso em qualidade, e nenhuma combinação é mais barata simultaneamente. A exceção é Codex GPT 5.4 xHigh + executor `medium`, que cai de ~$16/run pra ~$1-3/run perdendo 3 pontos de qualidade. Útil se você só tem GPT no provedor. Pra todo o resto, **deixa o frontier model decidir quando delegar sozinho**, especialmente se você tá numa assinatura mensal de Plus/Pro/Max.

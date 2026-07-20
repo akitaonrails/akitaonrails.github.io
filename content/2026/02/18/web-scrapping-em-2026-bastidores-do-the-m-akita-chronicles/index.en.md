@@ -4,12 +4,9 @@ slug: "web-scraping-in-2026-behind-the-m-akita-chronicles"
 date: 2026-02-18T14:57:22+00:00
 draft: false
 tags:
-- themakitachronicles
-- rubyonrails
-- webscrapping
-- chromium
-- datadome
-  - AI
+- the-m-akita-chronicles
+- web-development
+- automation
 translationKey: web-scraping-in-2026
 description: "How I went from a four-line HTTP GET to packing a full Chromium into Docker just to read the news for my newsletter in 2026."
 ---

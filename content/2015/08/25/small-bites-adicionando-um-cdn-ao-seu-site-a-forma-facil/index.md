@@ -2,10 +2,11 @@
 title: "[Small Bites] Adicionando um CDN ao seu site (a forma fácil!)"
 date: '2015-08-25T16:37:00-03:00'
 slug: small-bites-adicionando-um-cdn-ao-seu-site-a-forma-facil
+description: "Com o Asset Pipeline, adicionar CloudFront a uma aplicação Rails exige criar a distribuição, apontar a origem e liberar o header Origin. Os fingerprints mantêm o cache dos assets correto e reduzem requisições ao app."
 tags:
-- learning
 - rails
-- heroku
+- cloud
+- performance
 draft: false
 ---
 

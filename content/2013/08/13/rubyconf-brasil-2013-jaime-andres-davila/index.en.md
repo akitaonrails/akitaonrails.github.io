@@ -2,6 +2,7 @@
 title: 'Rubyconf Brasil 2013: Jaime Andrés Dávila'
 date: '2013-08-13T18:58:00-03:00'
 slug: rubyconf-brasil-2013-jaime-andres-davila
+description: "Jaime Andrés Dávila uses semiotics to introduce DCI from scratch and explain why design patterns exist, without treating them as universal solutions. He also bets on OWAs and hypermedia APIs."
 tags:
 - rubyconfbr2013
 draft: false

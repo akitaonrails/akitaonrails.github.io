@@ -4,14 +4,12 @@ slug: "bypassing-github-api-block-brazil"
 date: '2026-06-11T20:00:00-03:00'
 draft: false
 translationKey: burlando-bloqueio-api-github-brasil
+description: "I tested GitHub’s API block in Brazil: changing DNS didn’t fix it on my connection, but a SOCKS5h wrapper with Tor made gh and ghpending work. It’s a workaround for an opaque block."
 tags:
-  - github
-  - brazil
-  - censorship
-  - anatel
-  - networking
-  - linux
-  - opensource
+- ghpending
+- networking
+- security
+- linux
 ---
 
 This is a Brazil problem today. It may be your problem tomorrow if you live under a government that likes silent network blocks, copyright panic, opaque court orders, or any other flavor of "trust us, we know what we are doing." The concrete symptom here is simple: `api.github.com` started timing out in Brazil. The main `github.com` site opens. SSH clones may keep working. But tools that depend on the GitHub API, like `gh`, CI automations, personal scripts, bots, CLIs, dashboards, and anything that queries issues and pull requests, start hanging.

@@ -2,13 +2,12 @@
 title: '[Off-Topic] NÃO Faça o que Você ("ACHA") que Ama'
 date: '2014-09-13T17:04:00-03:00'
 slug: off-topic-nao-faca-o-que-voce-acha-que-ama
+description: "Questiono o conselho “faça o que ama” e mostro como perseguir apenas o que você acha que ama ignora responsabilidades e paixões instáveis. Minha conclusão é buscar Kaizen: melhorar sempre o modo de produzir algo útil."
 tags:
-- off-topic
-- principles
-- career
-- insights
-- startups
 - carreira
+- filosofia
+- pessoal
+- off-topic
 draft: false
 ---
 

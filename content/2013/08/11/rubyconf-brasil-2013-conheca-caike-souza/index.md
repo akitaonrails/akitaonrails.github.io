@@ -2,6 +2,7 @@
 title: 'Rubyconf Brasil 2013: Conheça Caike Souza'
 date: '2013-08-11T10:00:00-03:00'
 slug: rubyconf-brasil-2013-conheca-caike-souza
+description: "Caike Souza mostra como reduzir o atrito ao entrar em um projeto Rails existente, dos problemas de ambiente ao primeiro deploy. Ele também recomenda ler bom código e acompanhar a EdTech."
 tags:
 - rubyconfbr2013
 draft: false

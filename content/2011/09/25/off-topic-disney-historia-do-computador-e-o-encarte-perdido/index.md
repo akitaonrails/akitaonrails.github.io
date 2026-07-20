@@ -2,10 +2,12 @@
 title: "[Off-Topic] Disney, História do Computador e o Encarte Perdido"
 date: '2011-09-25T02:41:00-03:00'
 slug: off-topic-disney-historia-do-computador-e-o-encarte-perdido
+description: "Fabio digitaliza uma revista Disney de 1984 sobre a história dos computadores e o Macintosh, mas procura quem ainda tenha o encarte central de 32 páginas que se perdeu."
 tags:
+- historia-da-computacao
+- retrocomputacao
+- apple
 - off-topic
-- biography
-- career
 draft: false
 ---
 

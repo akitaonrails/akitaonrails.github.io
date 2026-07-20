@@ -4,15 +4,10 @@ slug: "llm-benchmark-fable-5-e-a-novela-da-anthropic"
 date: '2026-06-11T14:00:00-03:00'
 draft: false
 translationKey: llm-benchmark-fable-5-anthropic-soap-opera
+description: "Fable 5 marcou 94/100, praticamente empatado com o Opus 4.8, mas custa dez vezes mais e redireciona tarefas sensíveis. Como o Mythos não é auditável, fico no 4.8."
 tags:
-  - llm
-  - benchmark
-  - claude
-  - anthropic
-  - fable
-  - mythos
-  - ai
-  - vibecoding
+- benchmarks-de-llm
+- llms
 ---
 
 A Anthropic lançou o **Claude Fable 5** essa semana, e antes de chegar nos números do meu benchmark (spoiler: empate técnico com Opus), vale recontar a novela inteira, porque o contexto importa mais que o modelo. E é uma novela mexicana das boas, com modelo secreto "perigoso demais", consórcio fechado de big techs, IPO à vista e marketing agressivo.

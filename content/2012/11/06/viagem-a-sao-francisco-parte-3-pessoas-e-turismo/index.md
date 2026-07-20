@@ -2,9 +2,10 @@
 title: Viagem a São Francisco (Parte 3) - Pessoas e Turismo
 date: '2012-11-06T16:10:00-02:00'
 slug: viagem-a-sao-francisco-parte-3-pessoas-e-turismo
+description: "Entre encontros, festas, turismo e uma longa pedalada até Tiburon, o autor explora São Francisco e sua comunidade de tecnologia. A cidade é prática e agradável, mas ele não se imagina morando ali por muito tempo."
 tags:
-- sanfrancisco2012
-- tourism
+- viagens
+- pessoal
 draft: false
 ---
 

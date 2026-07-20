@@ -3,24 +3,10 @@ title: '[Akitando] #47 - Entendendo "Devops" para Iniciantes em Programação (P
   1) | Série "Começando aos 40"'
 date: '2019-04-10T17:00:00-03:00'
 slug: akitando-47-entendendo-devops-para-iniciantes-em-programacao-parte-1-serie-comecando-aos-40
+description: "Fabio percorre a evolução da infraestrutura, dos servidores compartilhados e jails aos VPS, hypervisors e ferramentas como Chef, Puppet e Ansible, mostrando como configuração virou código."
 tags:
-- chef
-- puppet
-- cfengine
-- cpanel
-- freebsd
-- linux
-- hypervisor
-- virtualbox
-- vmware
-- hyper-v
-- microsoft
-- google
-- vps
-- xen
-- citrix
 - devops
-- sysadmin
+- automacao
 - cloud
 - akitando
 draft: false

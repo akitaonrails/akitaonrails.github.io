@@ -2,6 +2,7 @@
 title: Rubyconf Brasil 2013 - Fechamento
 date: '2013-09-08T18:50:00-03:00'
 slug: rubyconf-brasil-2013-fechamento
+description: "O fechamento da Rubyconf Brasil 2013 revela os bastidores de um evento com 24 palestras e cerca de 900 participantes, marcado por problemas de logística, internet, traduções e cancelamentos. O crescimento trouxe novos desafios."
 tags:
 - rubyconfbr2013
 draft: false

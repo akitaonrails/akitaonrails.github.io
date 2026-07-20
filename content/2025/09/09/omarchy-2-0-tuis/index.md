@@ -2,15 +2,11 @@
 title: Omarchy 2.0 - TUIs (Terminal User Interface Apps)
 date: "2025-09-09T01:00:00-03:00"
 slug: omarchy-2-0-tuis
+description: "Defendo TUIs como alternativas leves a GUIs e webapps Electron e apresento ferramentas como LazyDocker, dblab, Posting, gdu e sc-im. No Omarchy, elas também podem ser lançadas como apps."
 tags:
-  - arch
-  - omarchy
-  - TUI
-  - lazydocker
-  - bubbletea
-  - gum
-  - posting
-  - caligula
+- omarchy
+- ferramentas-de-desenvolvimento
+- linux
 draft: false
 translationKey: omarchy-tuis
 ---

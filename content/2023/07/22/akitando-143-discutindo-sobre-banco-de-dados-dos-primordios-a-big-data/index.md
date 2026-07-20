@@ -2,28 +2,11 @@
 title: "[Akitando] #143 - Discutindo sobre Banco de Dados - Dos primórdios a Big Data"
 date: '2023-07-22T08:00:00-03:00'
 slug: akitando-143-discutindo-sobre-banco-de-dados-dos-primordios-a-big-data
+description: "A evolução dos bancos de dados explica por que SQL, NoSQL e serviços cloud fazem escolhas diferentes. Para começar, RDS com Postgres ou MariaDB, cache e jobs assíncronos resolvem a maior parte dos casos."
 tags:
-- dbase
-- clipper
-- xbase
-- harbour
-- foxpro
-- dbf
-- database
-- b-tree
-- btrfs
-- sql server
-- oracle
-- postgresql
-- mariadb
-- mysql
-- sqlite3
-- amazon
-- aws
-- dynamodb
-- cassandra
-- datastax
-- scilladb
+- bancos-de-dados
+- sistemas-distribuidos
+- cloud
 - akitando
 draft: false
 ---

@@ -5,14 +5,11 @@ slug: iniciante-experimentando-o-rails-5-1-x
 translationKey: beginner-trying-rails-51
 aliases:
 - /2017/10/24/beginner-trying-out-rails-5-1-x/
+description: "Fabio experimenta o Rails 5.1 com novas flags, Webpacker, Yarn, webpack-dev-server e React, enquanto defende upgrades graduais. Sua conclusão é que o release é uma boa base para projetos novos."
 tags:
-- beginner
-- rubyonrails
-- rails51
-- nodejs
-- webpack
-- reactjs
-- traduzido
+- rails
+- javascript
+- frontend
 draft: false
 ---
 

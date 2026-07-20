@@ -2,8 +2,10 @@
 title: Jeff Bezos + 37signals
 date: '2006-09-27T14:50:30-03:00'
 slug: jeff-bezos-37signals
+description: "A 37signals aceita investimento da Bezos Expeditions, aproximando Jeff Bezos dos criadores do Rails. O autor vê uma parceria promissora, mas lembra que capital de risco também impõe controle."
 tags:
-- 37signals
+- negocios
+- startups
 draft: false
 ---
 

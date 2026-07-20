@@ -2,11 +2,11 @@
 title: 'Off Topic: Never Trust TIOBE'
 date: '2008-04-13T14:40:00-03:00'
 slug: off-topic-nunca-confie-no-tiobe
+description: "Examining TIOBE’s formula, the author shows how search-engine hits, duplicates, and noise distort the measurement. The index therefore cannot support reliable conclusions about language growth."
 tags:
+- programming-languages
+- science
 - off-topic
-- principles
-- fallacies
-- tiobe
 draft: false
 ---
 

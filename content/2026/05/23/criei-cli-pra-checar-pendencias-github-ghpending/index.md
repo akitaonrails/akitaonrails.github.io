@@ -4,12 +4,12 @@ slug: "criei-cli-pra-checar-pendencias-github-ghpending"
 date: '2026-05-23T22:00:00-03:00'
 draft: false
 translationKey: criei-cli-pra-checar-pendencias-github-ghpending
+description: "Akita criou o ghpending para consultar issues e PRs de vários repositórios num digest Rust, buscando tudo em paralelo e elevando o limite do GitHub de 60 para 5.000 req/h com token."
 tags:
-  - cli
-  - github
-  - rust
-  - ghpending
-  - opensource
+- ghpending
+- automacao
+- ferramentas-de-desenvolvimento
+- controle-de-versao
 ---
 
 Depois da minha [maratona de IA](/2026/05/14/terminando-maratona-ia-sucesso-ou-fracasso/), fiquei com dezenas de repositórios públicos no GitHub pra cuidar. Vários deles têm contribuidores postando issues e mandando pull requests. O problema é que abrir o navegador, entrar em cada repo, ver se tem alguma coisa nova esperando, vira um ritual cansativo que eu acabo evitando. E quando evito, fico semanas sem responder os colaboradores.

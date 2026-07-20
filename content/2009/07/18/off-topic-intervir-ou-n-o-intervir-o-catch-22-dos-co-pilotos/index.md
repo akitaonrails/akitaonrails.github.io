@@ -2,11 +2,12 @@
 title: '[Off-Topic] Intervir ou não Intervir? O "Catch-22" dos Co-Pilotos'
 date: '2009-07-18T10:57:00-03:00'
 slug: off-topic-intervir-ou-n-o-intervir-o-catch-22-dos-co-pilotos
+description: "A partir de acidentes aéreos, o autor adapta o protocolo PACE a equipes de software: perguntar, alertar, desafiar e intervir quando um gerente ignora riscos graves."
 tags:
+- gestao
+- engenharia-de-software
+- comunicacao
 - off-topic
-- principles
-- management
-- career
 draft: false
 ---
 

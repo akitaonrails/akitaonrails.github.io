@@ -2,12 +2,12 @@
 title: Processos, Metodologias e o Cérebro Humano
 date: '2013-06-21T20:00:00-03:00'
 slug: processos-metodologias-e-o-cerebro-humano
+description: "O autor explica como emoção, aleatoriedade e busca por padrões criam superstições e falsas receitas de sucesso. Em projetos, metodologias devem ser testadas e adaptadas, não tratadas como verdades universais."
 tags:
+- psicologia
+- agile
+- gestao
 - off-topic
-- principles
-- management
-- science
-- psychology
 draft: false
 ---
 

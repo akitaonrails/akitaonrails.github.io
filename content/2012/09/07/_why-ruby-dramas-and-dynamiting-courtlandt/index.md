@@ -5,11 +5,11 @@ slug: why-dramas-do-ruby-e-dinamitando-courtlandt
 translationKey: why-ruby-dramas-courtlandt
 aliases:
 - /2012/09/07/_why-ruby-dramas-and-dynamiting-courtlandt/
+description: "Ao comparar _Why a Howard Roark, o autor defende a criação independente e interpreta o desaparecimento do programador como uma reação a quem tentou controlar seu trabalho."
 tags:
-- philosophy
+- filosofia
 - ruby
-- why
-- traduzido
+- biografias
 draft: false
 ---
 

@@ -2,11 +2,11 @@
 title: "[Objective-C] Entendendo NSAutoreleasePool"
 date: '2010-11-25T01:13:00-02:00'
 slug: objective-c-entendendo-nsautoreleasepool
+description: "Ao criar milhares de Strings dentro de um loop, o autor mostra como o NSAutoreleasePool principal ultrapassa 1 MB e reduz o pico para pouco mais de 100 KB ao liberar pools menores a cada mil iterações."
 tags:
-- learning
-- beginner
+- performance
 - apple
-- objective-c
+- programacao
 draft: false
 ---
 

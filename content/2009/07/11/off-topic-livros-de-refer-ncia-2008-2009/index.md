@@ -2,11 +2,12 @@
 title: "[Off-Topic] Livros de Referência 2008-2009"
 date: '2009-07-11T01:06:00-03:00'
 slug: off-topic-livros-de-refer-ncia-2008-2009
+description: "Uma lista de leituras sobre Lean, Agile, gestão, complexidade e ciência revela a trilha que levou o autor a relacionar auto-organização, aprendizado contínuo e organizações democráticas."
 tags:
+- aprendizado
+- gestao
+- agile
 - off-topic
-- management
-- career
-- carreira
 draft: false
 ---
 

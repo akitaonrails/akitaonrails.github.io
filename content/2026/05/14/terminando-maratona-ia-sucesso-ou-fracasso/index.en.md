@@ -4,11 +4,11 @@ date: '2026-05-14T14:00:00-03:00'
 draft: false
 translationKey: terminando-maratona-ia-sucesso-ou-fracasso
 slug: wrapping-up-my-ai-marathon-success-or-failure
+description: "After more than 500 hours across 24 repositories, Akita ranks his experiments and concludes Codex and Claude Code support daily coding, but without review and XP, productivity turns into slop."
 tags:
-  - opinion
-  - ai
-  - vibecoding
-  - github
+- vibe-coding
+- coding-agents
+- software-engineering
 ---
 
 I think I'm finally out of my AI hyperfocus. When I started ramping up in February and kept going until almost May, the goal was to answer one simple question: can you actually use this new generation of frontier LLMs from Anthropic and OpenAI to code 100% of the time? Short answer: yes.

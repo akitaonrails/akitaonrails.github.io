@@ -2,22 +2,10 @@
 title: "[Akitando] #117 - Linguagem Compilada vs Interpretada | Qual é melhor?"
 date: '2022-04-15T17:34:00-03:00'
 slug: akitando-117-linguagem-compilada-vs-interpretada-qual-e-melhor
+description: "Akita desmonta a falsa disputa entre compiladas e interpretadas: C gera binário antes da execução, enquanto Java e JavaScript usam máquinas virtuais e JIT para gerar código nativo durante o uso."
 tags:
-- compilador
-- interpretador
-- máquina virtual
-- llvm
-- gcc
-- java
-- javascript
-- v8
-- lexer
-- parser
-- chomski
-- backus
-- naur
-- bnf
-- algol
+- linguagens-de-programacao
+- ciencia-da-computacao
 - akitando
 draft: false
 ---

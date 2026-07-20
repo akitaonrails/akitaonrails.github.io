@@ -2,9 +2,10 @@
 title: CodeClimate, Qualidade de Código e os Rubistas Sádicos
 date: '2014-01-30T19:59:00-02:00'
 slug: codeclimate-qualidade-de-codigo-e-os-rubistas-sadicos
+description: "Code Climate transforma métricas de complexidade, duplicação, segurança e testes em uma nota contínua para projetos Ruby. Ela ajuda a localizar code smells, mas não substitui a avaliação humana do código."
 tags:
-- learning
-- beginner
+- engenharia-de-software
+- testes
 - ruby
 draft: false
 ---

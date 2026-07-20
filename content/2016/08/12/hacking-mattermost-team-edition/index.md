@@ -5,12 +5,10 @@ slug: hackeando-o-mattermost-team-edition
 translationKey: hacking-mattermost-team-edition
 aliases:
 - /2016/08/12/hacking-mattermost-team-edition/
+description: "Usei um trigger do PostgreSQL para restaurar automaticamente canais privados apagados por usuários comuns no Mattermost Team Edition, contornando a falta de permissões sem alterar o código-fonte."
 tags:
-- mattermost
-- postgresql
-- rocket.chat
-- slack
-- traduzido
+- bancos-de-dados
+- automacao
 draft: false
 ---
 

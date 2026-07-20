@@ -2,11 +2,11 @@
 title: Micro-Tutorial de Ruby - Parte III
 date: '2008-11-10T01:43:00-02:00'
 slug: micro-tutorial-de-ruby-parte-iii
+description: "A Parte III mostra strings multilinha, Symbols, parâmetros opcionais, splat, reflexão, meta-programação e nil. Também alerta para SQL Injection e defende escrever Ruby à maneira Ruby."
 tags:
-- learning
-- beginner
+- tutoriais
 - ruby
-- tutorial
+- seguranca
 draft: false
 ---
 

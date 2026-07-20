@@ -2,10 +2,11 @@
 title: "[Off-Topic] Who's the Idiot?"
 date: '2010-01-08T19:14:00-02:00'
 slug: off-topic-quem-e-o-burro
+description: "India's failed birth-control effort came from a misunderstood cause: without retirement, sons served as insurance for old age. Understanding why changes the solution."
 tags:
-- off-topic
-- principles
 - psychology
+- economics
+- off-topic
 draft: false
 ---
 

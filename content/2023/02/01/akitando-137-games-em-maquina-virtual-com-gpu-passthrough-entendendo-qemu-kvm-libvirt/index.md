@@ -3,21 +3,11 @@ title: "[Akitando] #137 - Games em Máquina Virtual com GPU Passthrough | Entend
   QEMU, KVM, Libvirt"
 date: '2023-02-01T08:00:00-03:00'
 slug: akitando-137-games-em-maquina-virtual-com-gpu-passthrough-entendendo-qemu-kvm-libvirt
+description: "Após meses de testes, Akita passa uma RTX 3090 para um Windows virtualizado com QEMU, KVM e Libvirt e roda games quase como nativos. Anti-cheat online ainda exige dual boot, e a configuração é trabalhosa."
 tags:
-- qemu
-- kvm
-- libvirt
-- virt-manager
-- virtio
-- nvidia
-- passthrough
-- evdev
-- ddcutil
-- iommu
-- spice
-- virtualização
-- virtualization
-- virtual machine
+- games
+- hardware
+- performance
 - akitando
 draft: false
 ---

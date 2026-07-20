@@ -2,12 +2,11 @@
 title: "[Akitando] #80 - O Guia +Hardcore de Introdução à COMPUTAÇÃO"
 date: '2020-06-04T09:44:00-03:00'
 slug: akitando-80-o-guia-hardcore-de-introducao-a-computacao
+description: "A partir de um computador 6502 inspirado em Ben Eater, Akita explica binário, hexadecimal, ROM, RAM, Assembly, LCD e pilha. A montagem mostra o que linguagens modernas escondem por trás das abstrações."
 tags:
-- Nintendo
-- nes
-- '6502'
-- assembly
-- breadboard
+- ciencia-da-computacao
+- retrocomputacao
+- tutoriais
 - akitando
 draft: false
 ---

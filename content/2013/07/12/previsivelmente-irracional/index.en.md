@@ -2,10 +2,12 @@
 title: Predictably Irrational
 date: '2013-07-12T20:44:00-03:00'
 slug: previsivelmente-irracional
+description: "Drawing on Dan Ariely, the author introduces Behavioral Economics to show how prices, dishonesty, and placebos expose predictably irrational decisions, something essential for anyone who manages people."
 tags:
-- off-topic
-- principles
 - psychology
+- economics
+- management
+- off-topic
 draft: false
 ---
 

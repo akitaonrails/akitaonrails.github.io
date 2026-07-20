@@ -2,12 +2,11 @@
 title: Testando o Recém Lançado LLM Open Source - Qwen3 (com Aider e Ollama)
 date: '2025-04-28T20:30:00-03:00'
 slug: testando-o-recem-lancado-llm-open-source-qwen3-com-aider-e-ollama
+description: "Testei o Qwen3 com Aider, localmente e via OpenRouter, em refatorações e testes. O 14B foi muito mais rápido e competente que o Qwen2.5, embora o Gemini ainda tenha levado vantagem."
 tags:
-- qwen3
-- ollama
-- aider
-- llm
-  - AI
+- benchmarks-de-llm
+- llms
+- agentes-de-codigo
 draft: false
 translationKey: testing-qwen3-first-aider-ollama
 ---

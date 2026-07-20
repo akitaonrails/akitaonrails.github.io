@@ -5,9 +5,9 @@ slug: the-conf-2017-todas-as-gravacoes
 translationKey: the-conf-2017-recordings
 aliases:
 - /2017/11/13/the-conf-2017-all-the-recordings/
+description: "As 32 palestras da The Conf 2017 estão grátis numa playlist do InfoQ Brasil, com as melhores também no site americano. O evento reuniu 31 brasileiros que apresentaram em inglês para um público global."
 tags:
 - theconf
-- traduzido
 draft: false
 ---
 

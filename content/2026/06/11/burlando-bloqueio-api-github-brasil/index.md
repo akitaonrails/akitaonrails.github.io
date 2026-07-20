@@ -3,14 +3,12 @@ title: "Burlando o bloqueio à API do GitHub no Brasil"
 date: '2026-06-11T20:00:00-03:00'
 draft: false
 translationKey: burlando-bloqueio-api-github-brasil
+description: "Testei o bloqueio da API do GitHub no Brasil: trocar DNS não resolveu no meu link, mas um wrapper SOCKS5h com Tor fez `gh` e ghpending funcionarem. É um workaround para um bloqueio opaco."
 tags:
-  - github
-  - brasil
-  - censura
-  - anatel
-  - redes
-  - linux
-  - opensource
+- ghpending
+- redes
+- seguranca
+- linux
 ---
 
 Hoje apareceu um problema daqueles que parecem piada, mas não são: `api.github.com` começou a dar timeout no Brasil. O site `github.com` abre. Clonar via SSH pode continuar funcionando. Mas as ferramentas que dependem da API do GitHub, como `gh`, automações de CI, scripts pessoais, bots, CLIs, dashboards e tudo que consulta issues e pull requests, começam a travar.

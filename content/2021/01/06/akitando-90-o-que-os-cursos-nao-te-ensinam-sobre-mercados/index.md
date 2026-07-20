@@ -2,8 +2,11 @@
 title: "[Akitando] #90 - O que os Cursos NÃO te Ensinam sobre Mercados"
 date: '2021-01-06T10:30:00-03:00'
 slug: akitando-90-o-que-os-cursos-nao-te-ensinam-sobre-mercados
+description: "Akita relaciona ciclos de oferta e procura, matemática, fundamentos e segurança ao mercado de programação. Ferramentas envelhecem, mas aprender a raciocinar e estudar sozinho sustenta a carreira."
 tags:
-- dowhile
+- carreira
+- aprendizado
+- mercado-de-tecnologia
 - akitando
 draft: false
 ---

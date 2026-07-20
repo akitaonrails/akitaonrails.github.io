@@ -6,13 +6,8 @@ draft: false
 translationKey: quantum-news-majorana-2-and-understanding-shor
 description: "A Microsoft anunciou o Majorana 2 com qubits de 20 segundos e físicos respondendo que nada foi resolvido. Aproveito pra explicar direito o algoritmo de Shor, por que fatoração vira busca de período, e no que computador quântico é bom de verdade."
 tags:
-  - quantum
-  - computacao-quantica
-  - shor
-  - microsoft
-  - majorana
-  - criptografia
-  - rsa
+- computacao-quantica
+- ciencia
 ---
 
 Computação quântica voltou ao noticiário e, como sempre, com mais hype do que substância. Antes de entrar no assunto: se você nunca estudou o básico, eu já fiz um vídeo inteiro no canal explicando os fundamentos, o [Akitando #66 sobre supremacia quântica](/2019/11/06/akitando-66-entendendo-supremacia-quantica/), e falei mais um pouco neste podcast:

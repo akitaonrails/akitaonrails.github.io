@@ -2,10 +2,11 @@
 title: "[Off-Topic] Atlas Shrugged: Is Money the Root of All Evil?"
 date: '2011-02-03T22:17:00-02:00'
 slug: off-topic-a-revolta-de-atlas-dinheiro-e-a-raiz-de-todo-o-mal
+description: "Drawing on Francisco D'Anconia's speech in Atlas Shrugged, the author presents money as the result of production and reason, while condemning wealth gained through coercion, fraud, and favors."
 tags:
-- off-topic
-- principles
 - philosophy
+- economics
+- off-topic
 draft: false
 ---
 

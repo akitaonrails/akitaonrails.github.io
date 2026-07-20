@@ -5,9 +5,9 @@ slug: rubyconf-brasil-2014-datas-confirmadas
 translationKey: rubyconf-brasil-2014-dates
 aliases:
 - /2013/10/07/rubyconf-brasil-2014-dates-are-set/
+description: "A Rubyconf Brasil 2014 já tem data e local: 28 e 29 de agosto, no Teatro Frei Caneca, com espaço para mais de 800 pessoas. O Call for Papers abriria em março ou abril."
 tags:
 - rubyconfbr2014
-- traduzido
 draft: false
 ---
 

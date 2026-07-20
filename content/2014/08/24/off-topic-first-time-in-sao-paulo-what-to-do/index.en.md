@@ -3,10 +3,11 @@ title: "[Off-Topic] First Time in São Paulo, What to do?"
 date: '2014-08-24T17:17:00-03:00'
 slug: off-topic-first-time-in-sao-paulo-what-to-do
 translationKey: first-time-sao-paulo-what-to-do
+description: "A personal guide organizes São Paulo’s restaurants, nightlife, museums, markets, parks, and neighborhoods by subway station, with a layered map for people short on time."
 tags:
+- travel
+- personal
 - off-topic
-- tourism
-- english
 draft: false
 ---
 

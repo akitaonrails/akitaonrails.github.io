@@ -2,10 +2,11 @@
 title: "[Off-Topic] Adendo à controvérsia HAML, SASS, Coffeescript: Tamanho do Documento"
 date: '2011-04-19T19:25:00-03:00'
 slug: off-topic-adendo-a-controversia-haml-sass-coffeescript-tamanho-do-documento
+description: "Akita argumenta que escolher HAML, SASS ou CoffeeScript exige mais que gosto pessoal: manutenção, contrato, fornecedores e contexto do cliente também definem se a troca vale a pena."
 tags:
+- engenharia-de-software
+- negocios
 - off-topic
-- javascript
-- fud
 draft: false
 ---
 

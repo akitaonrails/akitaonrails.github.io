@@ -2,10 +2,11 @@
 title: "[Off-Topic] Quem é o Burro?"
 date: '2010-01-08T19:14:00-02:00'
 slug: off-topic-quem-e-o-burro
+description: "O fracasso do controle de natalidade na Índia veio de uma causa mal compreendida: sem aposentadoria, filhos homens funcionavam como seguro para a velhice. Entender o porquê muda a solução."
 tags:
+- psicologia
+- economia
 - off-topic
-- principles
-- psychology
 draft: false
 ---
 

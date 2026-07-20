@@ -3,10 +3,11 @@ title: Ruby on Rails implementation of a (proper) Ranking/Popularity system
 date: '2016-10-31T16:51:00-02:00'
 slug: ruby-on-rails-implementation-of-a-proper-ranking-popularity-system
 translationKey: rails-ranking-popularity
+description: "A Rails popularity implementation replaces fragile counts and averages with the Wilson lower bound, balancing vote proportion and uncertainty in an indexable score."
 tags:
+- algorithms-and-data-structures
+- rails
 - ruby
-- ranking
-- algorithm
 draft: false
 ---
 

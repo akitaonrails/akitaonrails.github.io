@@ -2,11 +2,12 @@
 title: "[Off-Topic] Agility, Chaos, Self-Organization"
 date: '2009-07-08T02:15:00-03:00'
 slug: off-topic-agilidade-caos-auto-organizacao
+description: "The text connects Agile with complex systems, chaos, emergence, and power laws. The thesis is that organizations learn and innovate best at the edge of chaos, though provoking disorder carries risks."
 tags:
-- off-topic
-- management
 - agile
-- chaos
+- management
+- science
+- off-topic
 draft: false
 ---
 

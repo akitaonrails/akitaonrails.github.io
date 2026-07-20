@@ -2,9 +2,10 @@
 title: A Controvérsia CoffeeScript
 date: '2011-04-16T18:31:00-03:00'
 slug: a-controversia-coffeescript
+description: "Akita explica como SASS, HAML e CoffeeScript transformam código antes da execução e distingue ganhos reais de manutenção no SASS de escolhas estéticas, com custo extra para quem dará suporte."
 tags:
 - javascript
-- fud
+- engenharia-de-software
 draft: false
 ---
 

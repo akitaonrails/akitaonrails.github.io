@@ -3,6 +3,7 @@ title: "[Journey to Japan #1] Exploring Tokyo City"
 date: '2011-07-26T02:54:00-03:00'
 slug: journey-to-japan-1-exploring-tokyo-city
 translationKey: journey-to-japan-1
+description: "On his first trip to Japan, Akita describes Tokyo through a Brazilian nikkei's experience: punctual transit, safety, urban spaces, customs, pop culture, and the clash between expectation and reality."
 tags:
 - rubykaigi2011
 draft: false

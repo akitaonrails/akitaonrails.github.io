@@ -2,8 +2,11 @@
 title: Conversando com Chad Fowler
 date: '2007-05-07T14:20:00-03:00'
 slug: conversando-com-chad-fowler
+description: "Chad Fowler narra a passagem da música para Ruby, a criação da Ruby Central e os livros que escreveu. Ele vê Rails chegando a empresas tradicionais, mas alerta contra uma comunidade fechada e defensiva."
 tags:
-- interview
+- entrevistas
+- ruby
+- open-source
 draft: false
 translationKey: chatting-chad-fowler
 aliases:

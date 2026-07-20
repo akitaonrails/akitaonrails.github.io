@@ -2,11 +2,11 @@
 title: Algumas Dicas da Linguagem Ruby
 date: '2012-06-29T18:35:00-03:00'
 slug: algumas-dicas-da-linguagem-ruby
+description: "Com exemplos práticos, o autor reúne formas mais idiomáticas de escrever Ruby usando atribuição múltipla, interpolação, condicionais, ranges, hashes, arrays e o operador splat."
 tags:
-- learning
-- beginner
 - ruby
-- tutorial
+- tutoriais
+- aprendizado
 draft: false
 ---
 

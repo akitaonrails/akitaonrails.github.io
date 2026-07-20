@@ -2,9 +2,12 @@
 title: "[Off-Topic] Negotiable Scope Contract"
 date: '2009-07-05T16:59:00-03:00'
 slug: off-topic-contrato-de-escopo-negoci-vel
+description: "The author contrasts fixed- and negotiable-scope contracts: trying to freeze uncertainty turns problems into disputes and losses, while prioritized deliveries and collaboration reduce risk."
 tags:
-- off-topic
 - management
+- agile
+- business
+- off-topic
 draft: false
 ---
 

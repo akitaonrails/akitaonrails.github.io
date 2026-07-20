@@ -2,11 +2,12 @@
 title: '[Small Bites/Off-Topic] "People over Processes", o que são "People"?'
 date: '2014-11-21T16:06:00-02:00'
 slug: small-bites-off-topic-people-over-processes-o-que-sao-people
+description: "O autor explica que Agile exige processos e melhoria contínua, enquanto lidar melhor com pessoas pede noções de psicologia, economia comportamental e redes. Nosso comportamento é menos racional do que parece."
 tags:
-- off-topic
-- principles
-- management
 - agile
+- psicologia
+- gestao
+- off-topic
 draft: false
 ---
 

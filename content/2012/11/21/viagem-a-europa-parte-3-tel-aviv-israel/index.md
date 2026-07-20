@@ -2,9 +2,10 @@
 title: Viagem à Europa (Parte 3) - Tel Aviv, Israel
 date: '2012-11-21T01:57:00-02:00'
 slug: viagem-a-europa-parte-3-tel-aviv-israel
+description: "Em Tel Aviv e Jerusalém, o autor relata a segurança de Ben Gurion, o impacto de Yad Vashem e visitas a startups e grupos Ruby. Para ele, IDF, imigração e foco global ajudam a explicar Israel."
 tags:
-- europe2012
-- israel
+- viagens
+- startups
 draft: false
 ---
 

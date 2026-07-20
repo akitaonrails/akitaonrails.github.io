@@ -2,6 +2,7 @@
 title: RubyConf Brasil 2012 - Falta só 10 dias!
 date: '2012-08-20T15:50:00-03:00'
 slug: rubyconf-brasil-2012-falta-so-10-dias
+description: "A dez dias da RubyConf Brasil 2012, o autor anuncia o evento de 30 e 31 de agosto e republica vídeos da edição anterior para ajudar na divulgação."
 tags:
 - rubyconfbr2012
 draft: false

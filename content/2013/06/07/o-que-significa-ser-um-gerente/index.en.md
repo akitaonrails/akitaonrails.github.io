@@ -2,12 +2,12 @@
 title: What Does It Mean to Be a Manager?
 date: '2013-06-07T19:40:00-03:00'
 slug: o-que-significa-ser-um-gerente
+description: "Henry Mintzberg treats management as a practice, not a science or profession: good managers combine art, craft, technique, and experience to act according to the context."
 tags:
-- off-topic
-- principles
 - management
-- agile
-- career
+- psychology
+- learning
+- off-topic
 draft: false
 ---
 

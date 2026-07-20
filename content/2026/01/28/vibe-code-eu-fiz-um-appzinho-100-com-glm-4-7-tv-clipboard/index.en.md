@@ -3,12 +3,8 @@ title: "Vibe Code: I Built a Little App 100% with GLM 4.7 (TV Clipboard)"
 slug: "vibe-code-built-a-little-app-fully-with-glm-4-7-tv-clipboard"
 date: 2026-01-28T08:41:52-0300
 tags:
-- vibecode
-- openrouter
-- crush
-- glm
-- golang
-  - AI
+- vibe-coding
+- software-engineering
 translationKey: tv-clipboard-glm-4-7
 description: "A full walkthrough of vibe coding a tiny Go WebSocket app with GLM 4.7, showing in practice what the 80/20 rule really costs in time, tokens and intervention."
 ---

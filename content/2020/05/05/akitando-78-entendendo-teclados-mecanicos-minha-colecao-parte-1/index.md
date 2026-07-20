@@ -2,23 +2,11 @@
 title: "[Akitando #78] - Entendendo Teclados Mecânicos | Minha coleção - Parte 1"
 date: '2020-05-05T18:00:00-03:00'
 slug: akitando-78-entendendo-teclados-mecanicos-minha-colecao-parte-1
+description: "Akita compara switches Cherry, Razer, Logitech, Matias e Topre, além de keycaps e layouts, e critica os butterfly da Apple. A conclusão é simples: treino e ergonomia importam mais que um teclado caro."
 tags:
-- corsair
-- razer
-- logitech
-- matias
-- realforce
-- cherry
-- kaihua
-- gateron
-- topre
 - teclados
-- keyboards
-- apple
-- butterfly switch
-- scissor switch
-- thinkpad
-- surface
+- hardware
+- reviews
 - akitando
 draft: false
 ---

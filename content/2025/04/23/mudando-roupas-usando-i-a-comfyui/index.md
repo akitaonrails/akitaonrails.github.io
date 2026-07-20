@@ -2,11 +2,10 @@
 title: Mudando roupas usando I.A. (ComfyUI)
 date: '2025-04-23T17:45:00-03:00'
 slug: mudando-roupas-usando-i-a-comfyui
+description: "Montei um workflow ComfyUI com IDM-VTON e IPAdapter para trocar roupas mantendo rosto e pose. Funciona melhor com peças parecidas, mas exige mais de 20 GB de VRAM e ainda tem glitches."
 tags:
-- comfyui
-- idm-vton
-- docker
-  - AI
+- midia-generativa
+- modelos-locais
 draft: false
 translationKey: ai-clothes-swap-comfyui
 ---

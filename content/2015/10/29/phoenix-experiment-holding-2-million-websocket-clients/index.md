@@ -2,11 +2,11 @@
 title: 'Phoenix Experiment: Holding 2 Million Websocket clients!'
 date: '2015-10-29T11:28:00-02:00'
 slug: phoenix-experiment-holding-2-million-websocket-clients
+description: "Um benchmark de Chris McCord levou o Phoenix a 2 milhões de clientes WebSocket em uma máquina de 40 cores e 128 GB. Broadcasts para um tópico levavam de 1 a 3 segundos, com o limite em ulimit."
 tags:
-- learning
-- elixir
-- phoenix
-- english
+- performance
+- elixir-e-erlang
+- sistemas-distribuidos
 draft: false
 ---
 

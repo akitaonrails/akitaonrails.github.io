@@ -5,10 +5,9 @@ slug: railsconf-09-tio-bob-martin
 translationKey: railsconf-2009-uncle-bob-martin
 aliases:
 - /2009/05/06/railsconf-09-uncle-bob-martin/
+description: "Robert Martin encerra o dia da RailsConf com uma keynote, e Akita grava parte da palestra antes de pedir a Uncle Bob um conselho rápido para brasileiros que ainda não entenderam TDD."
 tags:
 - railsconf2009
-- interview
-- traduzido
 draft: false
 ---
 

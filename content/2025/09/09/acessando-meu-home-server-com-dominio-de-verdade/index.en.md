@@ -3,13 +3,9 @@ title: Accessing My Home Server With a Real Domain
 date: "2025-09-09T17:00:00-03:00"
 slug: accessing-my-home-server-with-a-real-domain
 tags:
-  - ubuntu
-  - servarr
-  - docker
-  - cloudflare
-  - tunnel
-  - ssl
-  - homeserver
+- homelab
+- networking
+- containers
 draft: false
 translationKey: home-server-real-domain
 description: An advanced guide to exposing a Docker-based home server through Cloudflare Tunnels with a real domain and proper HTTPS.

@@ -2,11 +2,11 @@
 title: "[Off-Topic] Dicas de Mac para Palestrantes"
 date: '2010-10-31T00:32:00-02:00'
 slug: off-topic-dicas-de-mac-para-palestrantes
+description: "Para evitar problemas no palco, o autor recomenda testar projetor, cores, slides, áudio e bateria, usar um controle USB confiável, desligar redes e gravar demos em vez de depender da internet."
 tags:
+- comunicacao
+- apple
 - off-topic
-- learning
-- beginner
-- mac
 draft: false
 ---
 

@@ -2,9 +2,11 @@
 title: Lembrando os Heróis Ruby que se foram em 2014
 date: '2015-01-02T12:48:00-02:00'
 slug: lembrando-os-herois-ruby-que-se-foram-em-2014
+description: "O autor relembra Jim Weirich, Ezra Zygmuntowicz e James Golick, três colaboradores queridos do Ruby e do open source, e registra o impacto pessoal de suas mortes em 2014."
 tags:
+- biografias
 - ruby
-- heroes
+- open-source
 draft: false
 ---
 

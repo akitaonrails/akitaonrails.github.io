@@ -2,12 +2,10 @@
 title: "AI 3D: Já dá pra modelar 3D com prompts?"
 slug: "ai-3d-ja-da-pra-modelar-3d-com-prompts"
 date: 2026-01-23T12:13:58-0300
+description: "A partir de ilustrações limpas e vistas consistentes geradas pelo Nano Banana, criei um modelo 3D no Hunyuan, ajustei-o no Blender e consegui uma impressão surpreendentemente boa na Bambulab X1C."
 tags:
-- hunyuan
-- hitem3d
-- blender
-- bambulab
-  - AI
+- midia-generativa
+- hardware
 translationKey: ai-3d-modeling-prompts
 ---
 

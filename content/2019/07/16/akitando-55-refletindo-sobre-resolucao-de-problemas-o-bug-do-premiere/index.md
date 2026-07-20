@@ -2,17 +2,10 @@
 title: "[Akitando] #55 - Refletindo sobre RESOLUÇÃO de Problemas | O bug do Premiere"
 date: '2019-07-16T17:00:00-03:00'
 slug: akitando-55-refletindo-sobre-resolucao-de-problemas-o-bug-do-premiere
+description: "Depois de travar o Premiere durante uma edição pesada, Fabio investiga o problema e encontra uma saída sem trocar de hardware, sistema ou ferramenta. A lição é testar hipóteses e reconhecer o que ainda não se sabe."
 tags:
-- Adobe
-- Adobe Premiere
-- Final Cut
-- Da Vinci Resolve
-- Problemas
-- Resolução
-- Processo Investigativo
-- Método Socrático
-- Sócrates
-- Sherlock
+- audio-e-video
+- engenharia-de-software
 - akitando
 draft: false
 ---

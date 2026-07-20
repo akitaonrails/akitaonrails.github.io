@@ -2,10 +2,11 @@
 title: Examinando o Vazamento do Twitch
 date: '2021-10-21T11:18:00-03:00'
 slug: examinando-o-vazamento-do-twitch
+description: "Akita usa scripts e SQLite para organizar e limpar parte do vazamento do Twitch, examinando sua infraestrutura e evolução de Rails para Go, Python e serviços da AWS, sem usar o código."
 tags:
-- twitch
-- vazamento
-- leak
+- seguranca
+- bancos-de-dados
+- arquitetura-de-software
 - akitando
 draft: false
 ---

@@ -5,12 +5,12 @@ slug: off-topic-desmontando-o-noestimates
 translationKey: noestimates-debunked
 aliases:
 - /2013/10/07/off-topic-noestimates-debunked/
+description: "O autor separa projetos de operações contínuas para defender estimativas, objetivos e restrições em projetos. Para ele, restrições impulsionam inovação, mas execução competente pesa mais que qualquer metodologia."
 tags:
-- off-topic
-- principles
-- management
 - agile
-- traduzido
+- gestao
+- engenharia-de-software
+- off-topic
 draft: false
 ---
 

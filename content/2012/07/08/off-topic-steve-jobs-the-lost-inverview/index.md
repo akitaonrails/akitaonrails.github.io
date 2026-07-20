@@ -2,9 +2,11 @@
 title: "[Off-Topic] Steve Jobs, The Lost Inverview"
 date: '2012-07-08T20:43:00-03:00'
 slug: off-topic-steve-jobs-the-lost-inverview
+description: "Ao comentar a entrevista perdida de Steve Jobs, o autor reforça que uma ideia só ganha valor com execução, refinamento e equipes talentosas, capazes de discutir, errar e melhorar o trabalho."
 tags:
+- apple
+- engenharia-de-software
 - off-topic
-- steve-jobs
 draft: false
 ---
 

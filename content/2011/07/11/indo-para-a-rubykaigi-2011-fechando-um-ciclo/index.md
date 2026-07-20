@@ -2,9 +2,9 @@
 title: Indo para a RubyKaigi 2011 - Fechando um Ciclo
 date: '2011-07-11T00:26:00-03:00'
 slug: indo-para-a-rubykaigi-2011-fechando-um-ciclo
+description: "A Gonow envia Akita de última hora à RubyKaigi 2011, onde ele visita o Japão pela primeira vez, representa a América do Sul e prepara uma palestra sobre seus seis anos na comunidade Ruby."
 tags:
 - rubykaigi2011
-- biography
 draft: false
 ---
 

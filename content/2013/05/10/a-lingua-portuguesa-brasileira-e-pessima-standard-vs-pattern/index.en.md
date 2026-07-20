@@ -2,10 +2,11 @@
 title: 'Brazilian Portuguese Can Confuse Us: Standard vs Pattern'
 date: '2013-05-10T19:18:00-03:00'
 slug: a-lingua-portuguesa-brasileira-e-pessima-standard-vs-pattern
+description: "In programming, default, pattern, and standard can all become “padrão” in Portuguese, but they mean different things: a preselected choice, a recurring solution, and a norm used as a reference."
 tags:
+- programming
+- communication
 - off-topic
-- career
-- insights
 draft: false
 ---
 

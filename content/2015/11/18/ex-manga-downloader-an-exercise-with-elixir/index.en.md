@@ -3,12 +3,11 @@ title: Ex Manga Downloader, an exercise with Elixir
 date: '2015-11-18T17:26:00-02:00'
 slug: ex-manga-downloader-an-exercise-with-elixir
 translationKey: ex-manga-downloadr-exercise
+description: "I built an Elixir scraper that parses MangaReader, downloads images with parallel Tasks, and creates 250-page PDFs for Kindle. The pipeline works, but timeouts limit it to about 80 requests."
 tags:
-- learning
-- beginner
-- elixir
-- exmangadownloadr
-- english
+- elixir-and-erlang
+- anime-and-manga
+- automation
 draft: false
 ---
 

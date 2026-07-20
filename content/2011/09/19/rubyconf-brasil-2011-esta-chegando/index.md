@@ -2,6 +2,7 @@
 title: RubyConf Brasil 2011 está chegando!
 date: '2011-09-19T01:41:00-03:00'
 slug: rubyconf-brasil-2011-esta-chegando
+description: "Fabio lança o beta do site da RubyConf Brasil 2011, marcada para dois dias em São Paulo, e abre seu código no GitHub para forks, contribuições e comentários da comunidade."
 tags:
 - rubyconfbr2011
 draft: false

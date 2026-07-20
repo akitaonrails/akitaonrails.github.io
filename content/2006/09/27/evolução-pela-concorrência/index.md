@@ -2,10 +2,12 @@
 title: Evolução pela Concorrência
 date: '2006-09-27T16:13:00-03:00'
 slug: evolução-pela-concorrência
+description: "O autor defende que críticas e concorrência fazem tecnologias evoluírem. Em Rails, limitações como internacionalização, legado e tarefas assíncronas já estimularam soluções da comunidade."
 tags:
+- rails
+- engenharia-de-software
+- economia
 - off-topic
-- principles
-- markets
 draft: false
 ---
 

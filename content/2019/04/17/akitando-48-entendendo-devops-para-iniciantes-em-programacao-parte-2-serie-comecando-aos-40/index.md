@@ -3,15 +3,11 @@ title: '[Akitando] #48 - Entendendo "Devops" para Iniciantes em Programação (P
   2) | Série "Começando aos 40"'
 date: '2019-04-17T17:00:00-03:00'
 slug: akitando-48-entendendo-devops-para-iniciantes-em-programacao-parte-2-serie-comecando-aos-40
+description: "A história da infraestrutura chega à AWS, Heroku, Docker e Kubernetes. Fabio explica como containers simplificam recursos do Linux e por que orquestração só faz sentido em cenários maiores."
 tags:
-- heroku
-- docker
-- kubernetes
-- cgroups
-- linux
 - devops
+- containers
 - cloud
-- aws
 - akitando
 draft: false
 ---

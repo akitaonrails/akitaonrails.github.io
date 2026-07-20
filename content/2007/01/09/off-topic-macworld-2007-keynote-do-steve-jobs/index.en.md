@@ -2,10 +2,11 @@
 title: 'Off-topic: MacWorld 2007 - Steve Jobs Keynote'
 date: '2007-01-09T08:18:13-02:00'
 slug: off-topic-macworld-2007-keynote-do-steve-jobs
+description: "Before the 2007 MacWorld keynote, rumors about the iPhone, Leopard, new Macs, and Apple TV heighten an unusual level of anticipation around Steve Jobs and Apple."
 tags:
-- off-topic
 - apple
-- iphone
+- computing-history
+- off-topic
 draft: false
 ---
 

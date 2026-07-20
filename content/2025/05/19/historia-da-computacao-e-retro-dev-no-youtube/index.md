@@ -2,12 +2,12 @@
 title: História da Computação e Retro Dev no YouTube
 date: '2025-05-19T15:19:00-03:00'
 slug: historia-da-computacao-e-retro-dev-no-youtube
+description: "Reuni canais e playlists que acompanho sobre história da computação, hardware antigo, emulação, desenvolvimento de jogos e programação, com recomendações como Ben Eater, javidx9 e 3Blue1Brown."
 tags:
+- historia-da-computacao
+- retrocomputacao
+- emulacao
 - off-topic
-- história
-- youtube
-- links
-- recomendações
 draft: false
 translationKey: computing-history-retro-dev-youtube
 ---

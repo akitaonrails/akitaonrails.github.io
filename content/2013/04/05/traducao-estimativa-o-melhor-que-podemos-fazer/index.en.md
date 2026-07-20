@@ -2,12 +2,12 @@
 title: "[Translation] Estimation — The Best We Can Do"
 date: '2013-04-05T16:47:00-03:00'
 slug: traducao-estimativa-o-melhor-que-podemos-fazer
+description: "Ron Jeffries argues for estimates as ranges of cost and velocity, used to test risks, make decisions every two weeks, and guide the product without becoming a promise or negotiation."
 tags:
-- off-topic
-- principles
-- career
-- management
 - agile
+- management
+- software-engineering
+- off-topic
 draft: false
 ---
 

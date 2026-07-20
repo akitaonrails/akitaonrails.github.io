@@ -2,10 +2,11 @@
 title: Você já está usando ETAGs, certo?
 date: '2010-05-25T10:15:00-03:00'
 slug: voce-ja-esta-usando-etags-certo
+description: "ETAGs fizeram um teste Rails cair de 9ms para 5ms ao evitar a renderização repetida, mas o autor ressalta o custo de consultar o banco e relata um teste frustrante com ActiveResource."
 tags:
-- learning
-- beginner
 - rails
+- performance
+- desenvolvimento-web
 draft: false
 ---
 

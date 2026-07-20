@@ -5,10 +5,11 @@ slug: compartilhando-models-entre-apps-rails-parte-2
 translationKey: sharing-models-between-rails-apps-2
 aliases:
 - /2016/10/03/sharing-models-between-rails-apps-part-2/
+description: "Evoluo o gem central-support para distribuir migrations, testo dois bancos Rails isolados e conecto a aplicação secundária a uma réplica read-only do Central em produção."
 tags:
 - rails
-- database
-- traduzido
+- bancos-de-dados
+- arquitetura-de-software
 draft: false
 ---
 

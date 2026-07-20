@@ -3,12 +3,10 @@ title: "Clean Code pra Agentes de IA"
 date: '2026-04-20T12:00:00-03:00'
 draft: false
 translationKey: clean-code-for-ai-agents
+description: "Clean Code muda de peso quando o leitor primário é um agente: código pequeno, nomes greppáveis, contexto de proveniência, testes headless e regras explícitas reduzem navegação, custo e erros."
 tags:
-  - clean-code
-  - AI
-  - claude-code
-  - vibecoding
-  - software-engineering
+- engenharia-de-software
+- agentes-de-codigo
 ---
 
 Em 2008, Robert C. Martin (Uncle Bob) lançou **Clean Code: A Handbook of Agile Software Craftsmanship**. É um dos livros mais influentes da engenharia de software das últimas décadas. Pra quem não sabe, Uncle Bob começou a programar profissionalmente aos 17 anos, fundou a Object Mentor, assinou o Agile Manifesto, foi o primeiro chairman da Agile Alliance, é o criador do acrônimo SOLID. Ele escreveu uma dúzia de livros de design, arquitetura e prática, e influenciou gerações inteiras de desenvolvedores.

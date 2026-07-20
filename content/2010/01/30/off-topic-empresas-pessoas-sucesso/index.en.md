@@ -2,9 +2,11 @@
 title: "[Off-Topic] Companies, People, Success"
 date: '2010-01-30T14:22:00-02:00'
 slug: off-topic-empresas-pessoas-sucesso
+description: "Apple, Buffett, and Niederhoffer show how luck and context distort success stories. For the author, retrospective recipes cannot be replicated, and companies should make money sustainably."
 tags:
+- business
+- economics
 - off-topic
-- career
 draft: false
 ---
 

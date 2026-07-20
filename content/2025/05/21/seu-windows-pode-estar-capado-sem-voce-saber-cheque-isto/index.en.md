@@ -3,10 +3,9 @@ title: Your Windows May Be Crippled Without You Knowing. Check This!!
 date: '2025-05-21T17:15:00-03:00'
 slug: your-windows-may-be-crippled-without-you-knowing-check-this
 tags:
-- windows
-- power saver
-- hanging event
-- slow down
+- microsoft
+- performance
+- hardware
 draft: false
 translationKey: windows-might-be-crippled
 description: How a hidden Windows Power Saver profile was silently throttling a high-end desktop to a fraction of its real speed, and how to fix it.

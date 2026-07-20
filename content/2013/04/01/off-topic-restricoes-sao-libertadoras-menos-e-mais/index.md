@@ -2,13 +2,11 @@
 title: "[Off-Topic] Restrições são libertadoras: menos é mais"
 date: '2013-04-01T06:19:00-03:00'
 slug: off-topic-restricoes-sao-libertadoras-menos-e-mais
+description: "Restrições forçam escolhas, priorização e criatividade, enquanto a abundância pode acomodar e dispersar. Do alfabeto ao design e ao binário, o autor mostra como menos recursos geram inovação."
 tags:
+- filosofia
+- produtividade
 - off-topic
-- off-topic principles management
-- market
-- insights
-- startups
-- carreira
 draft: false
 ---
 

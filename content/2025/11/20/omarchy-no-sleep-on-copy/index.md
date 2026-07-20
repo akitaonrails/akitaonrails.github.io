@@ -2,11 +2,11 @@
 title: Omarchy - Não entrar em Sleep enquanto Copia
 date: "2025-11-20T14:00:00-03:00"
 slug: omarchy-no-sleep-on-copy
+description: "Um script consulta o uso de I/O com iostat e usa systemd-inhibit para impedir que o Hypridle suspenda o Arch durante cópias longas, como transferências do NAS para um cartão microSD."
 tags:
-  - omarchy
-  - sleep
-  - systemd-inhibit
-  - archlinux
+- omarchy
+- linux
+- automacao
 draft: false
 ---
 Esta dica não é específica de Omarchy mas de Linux em geral, mas coloquei na categoria de Omarchy só pra ficar consistente no meu blog.

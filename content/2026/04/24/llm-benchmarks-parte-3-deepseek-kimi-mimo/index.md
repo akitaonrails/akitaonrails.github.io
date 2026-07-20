@@ -3,14 +3,11 @@ title: "Benchmark de LLMs pra Coding (Maio 2026): DeepSeek v4, Kimi v2.6, Grok 4
 date: '2026-04-24T13:00:00-03:00'
 draft: false
 translationKey: llm-coding-benchmark-canonical-2026-04
+description: "Reauditei 24 LLMs na mesma aplicação Rails com RubyLLM: Opus 4.7 e GPT 5.4 empatam em 97, GPT 5.5 chega a 96, Kimi e Gemini viram Tier A, e DeepSeek V4 Pro só atinge Tier A via DeepClaude."
 tags:
-  - llm
-  - benchmark
-  - claude
-  - ai
-  - vibecoding
-  - open-source
-  - self-hosting
+- benchmarks-de-llm
+- llms
+- agentes-de-codigo
 ---
 
 > **Atualização (6 de maio de 2026)**: dois ajustes pós-publicação que reorganizam o ranking. **DeepSeek V4 Pro destravou** — o que figurava aqui como "não-mensurável em opencode" subiu pra **Tier A com 89/100** rodando via DeepClaude, um shim que troca o endpoint que o Claude Code consulta. Detalhes técnicos no [post dedicado de 4 de maio](/2026/05/04/llm-benchmarks-deepseek-unlocked-deepclaude/). E **Grok 4.3 entrou no benchmark** com 72/100 Tier B, salto grande sobre o 25/100 do Grok 4.20 (que continua no fim da lista). Tabela, comparações e seções dedicadas do DeepSeek e do Grok foram atualizadas abaixo.

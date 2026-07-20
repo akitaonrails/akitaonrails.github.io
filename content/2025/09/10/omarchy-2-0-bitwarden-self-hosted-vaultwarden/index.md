@@ -2,15 +2,12 @@
 title: Omarchy 2.0 - Bitwarden Self-Hosted / VaultWarden
 date: "2025-09-10T20:00:00-03:00"
 slug: omarchy-2-0-bitwarden-self-hosted-vaultwarden
+description: "Instalei o VaultWarden no home server com Docker Compose, publiquei o acesso por túnel Cloudflare, migrei o cofre do Bitwarden e deixei o 2FA da conta principal no Aegis antes de apagar a conta na nuvem."
 tags:
-  - homeserver
-  - omarchy
-  - bitwarden
-  - vaultwarden 
-  - aegis
-  - docker
-  - cloudflare
-  - segurança
+- omarchy
+- homelab
+- containers
+- seguranca
 draft: false
 translationKey: omarchy-vaultwarden-self-hosted
 ---

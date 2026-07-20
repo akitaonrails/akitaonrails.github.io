@@ -2,9 +2,10 @@
 title: 'Off-Topic: Bleeding for Rails!'
 date: '2008-05-07T18:34:00-03:00'
 slug: off-topic-dando-o-sangue-pelo-rails
+description: "With no passport appointments available in São Paulo, the author traveled to Niterói, donated blood in an anti-dengue campaign, and got an appointment with the Federal Police. RailsConf became possible again, but in a rush."
 tags:
+- railsconf2008
 - off-topic
-- biography
 draft: false
 ---
 

@@ -2,9 +2,11 @@
 title: "[Off-Topic] Autoridade vs Responsabilidade"
 date: '2009-07-05T15:10:00-03:00'
 slug: off-topic-autoridade-vs-responsabilidade
+description: "O autor argumenta que separar autoridade e responsabilidade condena processos ao fracasso. Equipes que respondem pelos resultados devem decidir seu próprio trabalho, com especialistas atuando como consultores."
 tags:
+- gestao
+- engenharia-de-software
 - off-topic
-- management
 draft: false
 ---
 

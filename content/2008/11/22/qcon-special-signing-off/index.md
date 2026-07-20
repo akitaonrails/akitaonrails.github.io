@@ -5,9 +5,9 @@ slug: qcon-special-encerrando-os-trabalhos
 translationKey: qcon-special-signing-off-2008
 aliases:
 - /2008/11/22/qcon-special-signing-off/
+description: "Ao encerrar a QCon, Fabio aponta programação funcional, bancos não relacionais e Agile como tendências fortes e conhece o serviço escalável que a Engine Yard planejava lançar para Rails e Merb."
 tags:
 - qcon2008
-- traduzido
 draft: false
 ---
 

@@ -2,10 +2,11 @@
 title: A Falácia do Custo Perdido
 date: '2007-08-19T00:16:00-03:00'
 slug: a-falcia-do-custo-perdido
+description: "O ingresso de cinema ilustra a falácia do custo perdido: dinheiro já gasto não deve decidir o próximo passo, seja ao avaliar um filme, uma licença de software ou uma arquitetura."
 tags:
+- psicologia
+- arquitetura-de-software
 - off-topic
-- management
-- carreira
 draft: false
 ---
 

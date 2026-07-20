@@ -2,9 +2,11 @@
 title: Machucando Código por Diversão e Lucro
 date: '2008-06-14T18:54:00-03:00'
 slug: machucando-c-digo-por-divers-o-e-lucro
+description: "Traduzi o keynote de Ryan Davis e gravei um screencast em português sobre cuidar, refatorar e até “machucar” código para evoluir como programador. Os slides também estão disponíveis em PDF."
 tags:
-- presentation
-- screencast
+- aprendizado
+- engenharia-de-software
+- programacao
 draft: false
 ---
 

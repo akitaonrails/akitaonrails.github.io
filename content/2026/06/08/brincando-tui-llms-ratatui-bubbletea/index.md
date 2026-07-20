@@ -3,14 +3,12 @@ title: "Brincando de TUI com LLMs - Ratatui+Bubbletea"
 date: '2026-06-08T16:00:00-03:00'
 draft: false
 translationKey: brincando-tui-llms-ratatui-bubbletea
+description: "Criei o ratatui-bubbletea para dar ao Ratatui temas e componentes inspirados no Bubble Tea, usando Rust e LLMs. O toolkit já alimenta TUIs reais como o ai-usagebar sem substituir a biblioteca base."
 tags:
-  - tui
-  - rust
-  - ratatui
-  - bubbletea
-  - llm
-  - opensource
-  - omarchy
+- ai-usagebar
+- ferramentas-de-desenvolvimento
+- rust
+- open-source
 ---
 
 Antes de falar do brinquedo novo, um lembrete rápido: [ai-jail](https://github.com/akitaonrails/ai-jail) e [ai-memory](https://github.com/akitaonrails/ai-memory) continuam recebendo bastante atenção. Issues, pull requests, pequenas correções, melhorias de empacotamento, bugs de ambiente, ajustes de documentação. Aquelas coisas que ninguém vê num post de lançamento, mas que transformam experimento em ferramenta que dá pra usar todo dia.

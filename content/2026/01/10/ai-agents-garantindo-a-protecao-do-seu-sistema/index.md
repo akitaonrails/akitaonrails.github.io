@@ -4,11 +4,12 @@ slug: "ai-agents-garantindo-a-protecao-do-seu-sistema"
 date: 2026-01-10T11:50:36-0300
 draft: false
 translationKey: ai-agents-protecting-your-system
+description: "Mostro como isolar agentes de programação com Bubblewrap: o jail deixa apenas o projeto gravável, oculta o restante do sistema e monta só os diretórios necessários, reduzindo riscos de comandos destrutivos."
 tags:
-- AI
-- Linux
-- Bubblewrap
-- Sandbox
+- ai-jail
+- agentes-de-codigo
+- seguranca
+- linux
 ---
 
 Hoje em dia temos dezenas de Agentes de IA pra programação, seja Cursor, Claude Code, Windsurf, Copilot, OpenCode, Crush e mais. Mas tem um problema que já virou até meme: o risco deles danificarem seu sistema ou enviar seus dados privados pra alguém na Internet (comportamento de malware).

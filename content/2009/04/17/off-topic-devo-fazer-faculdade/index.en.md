@@ -2,9 +2,11 @@
 title: 'Off-Topic: Should I Go to College?'
 date: '2009-04-17T20:41:00-03:00'
 slug: off-topic-devo-fazer-faculdade
+description: "Fabio concludes that a good college can accelerate learning and shape talent, but does not determine success: disciplined people can learn on their own too."
 tags:
-- off-topic
 - career
+- learning
+- off-topic
 draft: false
 ---
 

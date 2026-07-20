@@ -2,11 +2,10 @@
 title: "[Akitando] #65 - A Dor de Aprender | Que Cursos/Livros?"
 date: '2019-10-23T11:00:00-03:00'
 slug: akitando-65-a-dor-de-aprender-que-cursos-livros
+description: "Akita defende prática deliberada e fundamentos: cursos e livros ajudam, mas não substituem copiar, quebrar e ler código. Algoritmos e estruturas de dados vêm antes de Design Patterns."
 tags:
-- cursos
-- livros
-- design patterns
-- DDD
+- aprendizado
+- algoritmos-e-estruturas-de-dados
 - akitando
 draft: false
 ---

@@ -2,9 +2,11 @@
 title: "[Off-Topic] Cell Phones and Airplanes"
 date: '2009-11-08T16:05:00-02:00'
 slug: off-topic-celulares-e-avioes
+description: "I argue that cell phones do not bring down airplanes and interpret the warning to turn off electronics as a way to keep passengers attentive during critical moments of the flight."
 tags:
+- travel
+- psychology
 - off-topic
-- principles
 draft: false
 ---
 

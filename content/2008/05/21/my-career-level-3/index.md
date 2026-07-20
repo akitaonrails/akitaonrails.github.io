@@ -2,10 +2,11 @@
 title: My Career - Level 3
 date: '2008-05-21T11:15:00-03:00'
 slug: my-career-level-3
+description: "Locaweb invested in Ruby on Rails, launched a mod_rails shared-hosting trial, and hired the author as Rails Product Manager. He left Surgeworks to help expand the company and Brazil’s Rails community."
 tags:
-- biography
-- locaweb
-- english
+- carreira
+- rails
+- pessoal
 draft: false
 ---
 

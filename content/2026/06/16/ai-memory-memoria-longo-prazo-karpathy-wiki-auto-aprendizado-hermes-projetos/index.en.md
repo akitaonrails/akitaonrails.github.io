@@ -4,19 +4,11 @@ slug: "ai-memory-long-term-memory-karpathy-wiki-self-improvement-hermes-projects
 date: '2026-06-16T10:00:00-03:00'
 draft: false
 translationKey: ai-memory-long-term-memory-karpathy-wiki-hermes
+description: "ai-memory turns agent sessions into a searchable Markdown wiki with hooks, MCP, and handoffs between tools. A Hermes-inspired loop promotes memories with validation, evidence, and optional review."
 tags:
-  - ai-memory
-  - ai
-  - agents
-  - memory
-  - karpathy-llm-wiki
-  - hermes
-  - opencode
-  - claude-code
-  - codex
-  - mcp
-  - rust
-  - vibecoding
+- ai-memory
+- coding-agents
+- llms
 ---
 
 Yesterday I published a post about how [ai-memory became a living example of emergent architecture](/en/2026/06/14/ai-memory-emergent-architecture-malleable-software/). That one was more about process: how a small tool I built for myself grew, through real contributions, into a multi-user, multi-platform system with support for several agents and a bunch of edge cases that only appear when real people start using it.

@@ -3,12 +3,11 @@ title: Último Tentativa de Treinar uma LLM com LoRa. Tiro de canhão, mas erran
   mosca.
 date: '2025-05-03T21:15:00-03:00'
 slug: ultimo-tentativa-de-treinar-uma-llm-com-lora-tiro-de-canhao-mas-errando-a-mosca
+description: "Aluguei uma H100 para treinar Qwen3-32B com LoRA, mas o modelo consumiu quase toda a VRAM, ficou lento e, no fim, não conseguiu gerar código utilizável."
 tags:
-- qwen3
-- vllm
-- runpod
-- llm
-  - AI
+- llms
+- machine-learning
+- performance
 draft: false
 translationKey: last-lora-training-attempt
 ---

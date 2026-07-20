@@ -2,9 +2,11 @@
 title: "[#IF] Rotação de Logs em Apps Rails"
 date: '2013-06-28T14:57:00-03:00'
 slug: if-rotacao-de-logs-em-apps-rails
+description: "No Rails 3, o Logger pode rotacionar logs automaticamente, mantendo até cinco arquivos de 100 MB e evitando discos cheios. A solução é simples, mas não substitui todos os recursos do logrotate."
 tags:
-- learning
 - rails
+- devops
+- tutoriais
 draft: false
 ---
 

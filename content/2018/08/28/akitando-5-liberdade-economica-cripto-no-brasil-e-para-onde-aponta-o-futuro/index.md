@@ -3,17 +3,11 @@ title: "[Akitando] #5 - Liberdade Econômica, Cripto no Brasil, e para onde apon
   o futuro?"
 date: '2018-08-28T17:00:00-03:00'
 slug: akitando-5-liberdade-economica-cripto-no-brasil-e-para-onde-aponta-o-futuro
+description: "Akita relaciona criptomoedas à liberdade econômica, à tokenização de ativos e à redução de barreiras geopolíticas. Ao comparar Brasil, Ásia e EUA, vê um mercado global ainda no começo."
 tags:
-- criptomoedas
-- ico
-- seoul
-- beyond blocks
-- blockchain partners
-- kakao
-- brasil
-- real
-- spotniks
-- hans rosling
+- bitcoin-e-criptomoedas
+- economia
+- mercado-de-tecnologia
 - akitando
 draft: false
 ---

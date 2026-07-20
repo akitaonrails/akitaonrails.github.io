@@ -2,13 +2,12 @@
 title: 'Off-Topic: The Agile Manifesto, or How to Become Google'
 date: '2008-10-07T03:39:00-03:00'
 slug: off-topic-o-manifesto-gil-ou-como-se-tornar-o-google
+description: "The author argues that agility depends on philosophy, trust, and self-organizing teams, not procedures alone. Through Conway, open source, and Google, he advocates a culture that supports innovation and adaptation."
 tags:
-- off-topic
-- principles
 - agile
-- career
 - management
-- chaos
+- software-engineering
+- off-topic
 draft: false
 ---
 

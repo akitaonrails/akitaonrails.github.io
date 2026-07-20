@@ -2,9 +2,12 @@
 title: "[Off-Topic] Contrato de Escopo Negociável"
 date: '2009-07-05T16:59:00-03:00'
 slug: off-topic-contrato-de-escopo-negoci-vel
+description: "O autor contrapõe contratos de escopo fixo e negociável: tentar congelar a incerteza transforma problemas em disputa e prejuízo, enquanto entregas prioritárias e colaboração reduzem riscos."
 tags:
+- gestao
+- agile
+- negocios
 - off-topic
-- management
 draft: false
 ---
 

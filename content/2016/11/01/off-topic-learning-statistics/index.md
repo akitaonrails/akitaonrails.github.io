@@ -5,12 +5,11 @@ slug: off-topic-aprendendo-estatistica
 translationKey: learning-statistics-off-topic
 aliases:
 - /2016/11/01/off-topic-learning-statistics/
+description: "Ao estudar estatística com R e o livro de Daniel Navarro, o autor usa o paradoxo de Simpson para mostrar como dados agregados podem esconder padrões e por que estatística exige cuidado."
 tags:
+- ciencia
+- aprendizado
 - off-topic
-- statistics
-- R
-- carreira
-- traduzido
 draft: false
 ---
 

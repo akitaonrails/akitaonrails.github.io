@@ -2,11 +2,11 @@
 title: "[Off-Topic] Blogs are Obsolete. What's Next?"
 date: '2013-05-04T14:46:00-03:00'
 slug: off-topic-blogs-are-obsolete-what-s-next
+description: "After nearly 900 posts, the author argues that chronological blogs bury useful older work. Tags, categories and featured posts still fail at discoverability, leaving the blog structure in need of a new model."
 tags:
-- off-topic
-- insights
-- english
 - blog
+- arquitetura-de-software
+- off-topic
 draft: false
 ---
 

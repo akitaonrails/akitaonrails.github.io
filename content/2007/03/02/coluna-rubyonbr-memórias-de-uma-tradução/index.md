@@ -2,8 +2,11 @@
 title: 'Coluna RubyOnbr: Memórias de uma Tradução'
 date: '2007-03-02T04:43:00-03:00'
 slug: coluna-rubyonbr-memórias-de-uma-tradução
+description: "Enquanto concilia trabalho e revisão, o autor registra os bastidores da tradução brasileira de Getting Real. A coluna remete ao relato completo do processo publicado pela RubyOnBr."
 tags:
-- rubyonbr
+- pessoal
+- comunicacao
+- blog
 draft: false
 ---
 

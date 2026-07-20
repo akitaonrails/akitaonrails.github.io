@@ -6,13 +6,9 @@ draft: false
 translationKey: using-ai-to-solve-my-little-day-to-day-problems
 description: "A roundup of my small open source projects: a desk clock with widgets, manga readers, decent email, typing practice, YouTube karaoke, ComfyUI in Docker and more. All born from real little problems in my day-to-day."
 tags:
-  - ai
-  - llm
-  - vibecoding
-  - opensource
-  - rust
-  - linux
-  - manga
+- vibe-coding
+- open-source
+- artificial-intelligence
 ---
 
 I wasn't going to write an article for every little open source project I make. Most of them solve a very specific little problem in MY day-to-day, and a dedicated article would be out of proportion. But the little projects kept piling up, and looking back I realized there are already several that never showed up here. So I decided to do it differently: a single article, mentioning most of them at once.

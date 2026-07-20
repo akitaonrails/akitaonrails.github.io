@@ -3,17 +3,11 @@ title: "[Akitando] #45 - Gerenciamento de Memória (Parte 1) | Entendendo Back-e
   para Iniciantes  (Parte 5)"
 date: '2019-03-27T17:01:00-03:00'
 slug: akitando-45-gerenciamento-de-memoria-parte-1-entendendo-back-end-para-iniciantes-parte-5
+description: "Fabio revisa memória binária, endereços virtuais, fragmentação, arenas e heaps, comparando ptmalloc2, tcmalloc, jemalloc e o alocador próprio do Go para revelar os custos do gerenciamento."
 tags:
-- tcmalloc
-- jemalloc
-- ptmalloc2
-- linux
-- rust
-- golang
-- memory
-- RAM
-- intel
-- threadripper
+- performance
+- ciencia-da-computacao
+- programacao
 - akitando
 draft: false
 ---

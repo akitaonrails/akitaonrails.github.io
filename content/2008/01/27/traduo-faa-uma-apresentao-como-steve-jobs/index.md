@@ -2,10 +2,10 @@
 title: 'Tradução: Faça uma Apresentação como Steve Jobs'
 date: '2008-01-27T21:00:00-02:00'
 slug: traduo-faa-uma-apresentao-como-steve-jobs
+description: "A tradução transforma as apresentações de Steve Jobs em dez práticas concretas: definir um tema, contextualizar números, usar slides visuais, demonstrar benefícios e ensaiar até tudo fluir."
 tags:
-- steve-jobs
-- career
-- presentation
+- comunicacao
+- carreira
 draft: false
 ---
 

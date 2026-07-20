@@ -2,9 +2,11 @@
 title: "[Off-Topic] Programmers Are Terrible Communicators (UDP vs TCP)"
 date: '2013-11-02T13:49:00-02:00'
 slug: off-topic-programadores-sao-pessimos-comunicadores-udp-vs-tcp
+description: "Using UDP and TCP as a metaphor, the text says programmers confuse informing with communicating. Real projects require confirming connection, context, order, understanding, and message delivery."
 tags:
-- off-topic
+- communication
 - career
+- off-topic
 draft: false
 ---
 

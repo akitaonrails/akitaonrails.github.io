@@ -2,12 +2,12 @@
 title: "[Off-Topic] Obediência à Autoridade"
 date: '2009-11-08T18:50:00-02:00'
 slug: off-topic-obediencia-a-autoridade
+description: "A partir de Asch e Milgram, argumento que conformidade e obediência enfraquecem equipes ágeis e defendo organizações descentralizadas, com líderes e arquitetos reconhecidos por mérito."
 tags:
+- psicologia
+- gestao
+- agile
 - off-topic
-- principles
-- career
-- management
-- psychology
 draft: false
 ---
 

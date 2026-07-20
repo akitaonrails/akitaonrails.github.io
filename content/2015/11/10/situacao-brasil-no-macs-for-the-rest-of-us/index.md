@@ -2,11 +2,12 @@
 title: 'Situação Brasil: No Macs for the Rest of Us'
 date: '2015-11-10T16:54:00-02:00'
 slug: situacao-brasil-no-macs-for-the-rest-of-us
+description: "Testei um Dell Inspiron com Ubuntu depois que um MacBook Pro ficou caro demais para o orçamento brasileiro. Linux cobre cerca de 80% do meu uso, mas software proprietário ainda exige Mac ou Windows."
 tags:
-- off-topic
 - linux
-- beginner
-- learning
+- apple
+- hardware
+- off-topic
 draft: false
 ---
 

@@ -2,10 +2,10 @@
 title: Anatomia de Ruby Blocks/Closures
 date: '2007-11-30T10:59:00-02:00'
 slug: anatomia-de-ruby-blocks-closures
+description: "A explicação mostra como blocos, Proc, lambda, yield, &, escopo e closures funcionam em Ruby, com exemplos de iteradores, transações e abertura segura de arquivos."
 tags:
-- learning
-- beginner
 - ruby
+- tutoriais
 draft: false
 ---
 

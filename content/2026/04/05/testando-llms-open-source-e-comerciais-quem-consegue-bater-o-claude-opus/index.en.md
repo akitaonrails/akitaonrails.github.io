@@ -4,13 +4,11 @@ date: '2026-04-05T18:00:00-03:00'
 draft: false
 slug: testing-llms-open-source-and-commercial-can-anyone-beat-claude-opus
 translationKey: testing-llms-open-source-and-commercial
+description: "This historical benchmark compared 33 LLMs on a Rails app: Opus, Sonnet, and GLM 5 worked, while Qwen 3.6 35B came close on an RTX 5090 after a fix. The rankings were later revised."
 tags:
-  - llm
-  - benchmark
-  - open-source
-  - claude
-  - ai
-  - self-hosting
+- llm-benchmarks
+- llms
+- local-models
 ---
 
 > ⚠️ **Obsolete article (updated 2026-04-24).** The conclusions and rankings in this post were superseded after I re-audited the benchmark against the `ruby_llm` gem source and restructured the evaluation criteria. Several "hallucinations" I had cataloged were actually valid API. Kimi K2.6 and Gemini 3.1 Pro moved up to Tier A. GLM 5.1 dropped to Tier C. MiMo V2.5 Pro fell from "first non-Anthropic Tier 1" to Tier B. **The canonical version lives at [LLM Coding Benchmark (April 2026)](/en/2026/04/24/llm-benchmarks-parte-3-deepseek-kimi-mimo/).** This post stays as a historical record of what I concluded before the re-audit.

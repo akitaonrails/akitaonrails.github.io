@@ -2,8 +2,11 @@
 title: Conversando com Dr. Nic
 date: '2007-04-16T15:48:00-03:00'
 slug: conversando-com-dr-nic
+description: "Dr. Nic explica como criou Magic Models, Newgem e Magic Multi Connection para resolver problemas reais. Ele defende extrair funcionalidades do núcleo do Rails e compartilhar soluções em open source."
 tags:
-- interview
+- entrevistas
+- rails
+- open-source
 draft: false
 translationKey: chatting-dr-nic
 aliases:

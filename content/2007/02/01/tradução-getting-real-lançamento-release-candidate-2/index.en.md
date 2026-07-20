@@ -2,10 +2,12 @@
 title: 'Getting Real Translation - Release Candidate 2 Launch'
 date: '2007-02-01T12:58:25-02:00'
 slug: tradução-getting-real-lançamento-release-candidate-2
+description: "The Brazilian Portuguese translation of Getting Real reaches Release Candidate 2 with all 16 chapters translated and half the review complete. The public version comes before the final launch attempt."
 tags:
+- personal
+- communication
+- blogging
 - off-topic
-- 37signals
-- getting-real
 draft: false
 ---
 

@@ -4,14 +4,10 @@ slug: "rant-nao-tenha-esperanca-com-politica-como-se-tornar-imune"
 date: '2026-07-01T11:00:00-03:00'
 draft: false
 translationKey: rant-politics-immune
+description: "Defendo tratar política como risco ambiental, não como religião: eleição não é plano de vida. A estratégia proposta é ampliar renda em moeda forte, entender impostos e organizar patrimônio dentro da lei."
 tags:
-  - rant
-  - politica
-  - brasil
-  - economia
-  - carreira
-  - offshore
-  - impostos
+- politica
+- pessoal
 ---
 
 > **Aviso antes que alguém finja que não entendeu:** isto é opinião pessoal. Não é conselho financeiro, jurídico, tributário, eleitoral, matrimonial, espiritual, nem receita de bolo. Se for mexer com empresa, patrimônio, imposto, casamento, herança, residência fiscal ou qualquer coisa que possa ferrar sua vida, fale com contador e advogado de verdade. Não comigo. Não com influencer. Não com thread de Twitter.

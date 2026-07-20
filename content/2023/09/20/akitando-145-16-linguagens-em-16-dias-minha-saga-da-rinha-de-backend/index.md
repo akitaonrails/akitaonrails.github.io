@@ -2,25 +2,11 @@
 title: "[Akitando] #145 - 16 Linguagens em 16 Dias: Minha Saga da Rinha de Backend"
 date: '2023-09-20T15:35:00-03:00'
 slug: akitando-145-16-linguagens-em-16-dias-minha-saga-da-rinha-de-backend
+description: "Em 16 dias, explorei 16 linguagens e otimizei projetos da Rinha de Backend. Os resultados mostram que técnicas podem aproximar desempenhos, não que uma linguagem seja sempre superior."
 tags:
-- rinha
-- docker
-- gatling
-- csharp
-- rust
-- go lang
-- nim lang
-- v lang
-- bun
-- javascript
-- php
-- swoole
-- python
-- sanic
-- hyperf
-- ruby on rails
-- ruby
-- node.js
+- performance
+- linguagens-de-programacao
+- backend
 - akitando
 draft: false
 ---

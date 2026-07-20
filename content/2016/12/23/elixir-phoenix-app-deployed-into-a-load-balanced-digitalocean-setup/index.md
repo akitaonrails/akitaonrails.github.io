@@ -2,14 +2,12 @@
 title: "Aplicativo Elixir Phoenix em Deploy num Setup com Balanceamento de Carga no DigitalOcean"
 date: '2016-12-23T15:07:00-02:00'
 slug: aplicativo-elixir-phoenix-deploy-balanceamento-carga-digitalocean
+description: "O autor monta no DigitalOcean um cluster Phoenix com dois nós, HAProxy e PostgreSQL, e consegue operar WebSockets distribuídos com Erlang. O sistema funciona, mas o edeliver é lento e o login ainda falha de forma intermitente."
 tags:
-- elixir
-- phoenix
-- deployment
-- edeliver
-- digitalocean
-- websockets
-- traduzido
+- elixir-e-erlang
+- devops
+- cloud
+- sistemas-distribuidos
 translationKey: elixir-phoenix-digitalocean-lb
 aliases:
 - /2016/12/23/elixir-phoenix-app-deployed-into-a-load-balanced-digitalocean-setup/

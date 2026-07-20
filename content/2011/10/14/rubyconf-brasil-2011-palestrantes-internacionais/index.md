@@ -2,6 +2,7 @@
 title: RubyConf Brasil 2011 - Palestrantes Internacionais
 date: '2011-10-14T03:28:00-03:00'
 slug: rubyconf-brasil-2011-palestrantes-internacionais
+description: "Os palestrantes internacionais da RubyConf Brasil 2011 trazem experiências de Rails, Agile, Sinatra, Pusher, escala, NoSQL, SAML e front-end, com casos reais de várias comunidades."
 tags:
 - rubyconfbr2011
 draft: false

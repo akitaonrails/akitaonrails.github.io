@@ -2,10 +2,11 @@
 title: "[Heroku Tips] Problemas iniciais com Rails 4 no Heroku"
 date: '2013-09-11T17:25:00-03:00'
 slug: heroku-tips-problemas-iniciais-com-rails-4-no-heroku
+description: "Ao migrar um app Rails 4 para o Heroku, o autor enfrenta falhas de gems no assets:precompile e usa user-env-compile como paliativo. Ele também explica a migração de MySQL para PostgreSQL, sequences e backups."
 tags:
-- learning
 - rails
-- heroku
+- bancos-de-dados
+- devops
 draft: false
 ---
 

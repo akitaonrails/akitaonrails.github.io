@@ -2,22 +2,11 @@
 title: "[Akitando] #133 - Tornando sua App Web Mais Rápida! | 4 Técnicas de Otimização"
 date: '2022-12-12T09:30:00-03:00'
 slug: akitando-133-tornando-sua-app-web-mais-rapida-4-tecnicas-de-otimizacao
+description: "Akita explica como NGINX, pools, cache, réplicas, filas, métricas e CDNs ajudam uma aplicação web a escalar. O caminho é medir gargalos e aliviar recursos, não trocar de stack."
 tags:
-- otimização
-- frameworks
-- caching
-- cdn
-- database
-- banco de dados
-- nosql
-- aws
-- azure
-- heroku
-- rds
-- sqs
-- redis
-- memcache
-- new relic
+- performance
+- desenvolvimento-web
+- sistemas-distribuidos
 - akitando
 draft: false
 ---

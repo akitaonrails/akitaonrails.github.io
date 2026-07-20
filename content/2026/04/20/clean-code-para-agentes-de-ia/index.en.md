@@ -4,12 +4,10 @@ date: '2026-04-20T12:00:00-03:00'
 draft: false
 slug: clean-code-for-ai-agents
 translationKey: clean-code-for-ai-agents
+description: "Clean Code carries different weight when an agent is the primary reader: small code, greppable names, provenance context, headless tests, and explicit rules reduce navigation, cost, and errors."
 tags:
-  - clean-code
-  - AI
-  - claude-code
-  - vibecoding
-  - software-engineering
+- software-engineering
+- coding-agents
 ---
 
 In 2008, Robert C. Martin (Uncle Bob) published **Clean Code: A Handbook of Agile Software Craftsmanship**. It's one of the most influential software engineering books of the last couple of decades. For those who don't know, Uncle Bob started programming professionally at 17, founded Object Mentor, signed the Agile Manifesto, served as the first chairman of the Agile Alliance, coined the SOLID acronym. He's written a dozen books on design, architecture, and practice, and influenced entire generations of developers.

@@ -2,13 +2,11 @@
 title: Quando LLMs não Funcionam pra Programar? Um caso de uso mais real.
 date: '2025-05-01T17:20:00-03:00'
 slug: quando-llms-nao-funcionam-pra-programar-um-caso-de-uso-mais-real
+description: "Tentei criar um chat em Zig com llama.cpp, CUDA e Qwen3 usando o Gemini 2.5 Pro. Ele resolveu scripts comuns, mas travou na API C++ e consumiu mais de USD 50 em tentativas."
 tags:
+- llms
+- agentes-de-codigo
 - zig
-- llama.cpp
-- aider
-- openrouter
-- llm
-  - AI
 draft: false
 translationKey: when-llms-dont-work-for-coding
 ---

@@ -2,11 +2,12 @@
 title: "[Off-Topic] O dilema da Nova Geração: empreender ou arranjar um emprego?"
 date: '2014-02-20T06:00:00-03:00'
 slug: off-topic-o-dilema-da-nova-geracao-empreender-ou-arranjar-um-emprego
+description: "Um chefe ruim não torna o empreendedorismo a única saída. Um emprego oferece salário, aprendizado e resultados para construir carreira, enquanto abrir uma empresa sem experiência pode apenas reproduzir o mesmo problema."
 tags:
-- off-topic
-- career
-- startups
 - carreira
+- startups
+- negocios
+- off-topic
 draft: false
 ---
 

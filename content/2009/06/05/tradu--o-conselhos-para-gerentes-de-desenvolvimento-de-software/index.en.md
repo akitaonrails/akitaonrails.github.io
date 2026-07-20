@@ -2,9 +2,12 @@
 title: "[Translation] Advice for Software Development Managers"
 date: '2009-06-05T00:35:00-03:00'
 slug: tradu--o-conselhos-para-gerentes-de-desenvolvimento-de-software
+description: "Gerald Weinberg shows how blame culture and incongruent communication sabotage projects, while congruence improves problem-solving. Change happens through six stages."
 tags:
-- off-topic
 - management
+- communication
+- software-engineering
+- off-topic
 draft: false
 ---
 

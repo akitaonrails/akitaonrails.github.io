@@ -2,9 +2,9 @@
 title: "[RailsConf 2010] - Video Entrevistas - Parte 2"
 date: '2010-06-17T15:03:00-03:00'
 slug: railsconf-2010-video-entrevistas-parte-2
+description: "A segunda parte apresenta quatro Ruby Heroes e suas contribuições: Aaron Patterson nos parsers, Gregory Brown no Prawn, Nick Quaranto no Gemcutter e Wayne Seguin no RVM."
 tags:
 - railsconf2010
-- interview
 draft: false
 translationKey: railsconf-2010-interviews-part-2
 aliases:

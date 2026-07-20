@@ -2,12 +2,11 @@
 title: "[Off-Topic] You Don't Understand Anything About Scrum"
 date: '2009-12-10T23:23:00-02:00'
 slug: off-topic-voce-nao-entende-nada-de-scrum
+description: "Scrum's origins lie in complex adaptive systems, self-organization, and the studies of Takeuchi and Nonaka. Scrum, XP, and Lean share roots and should be understood through their principles."
 tags:
-- off-topic
-- principles
-- career
-- management
 - agile
+- management
+- off-topic
 draft: false
 ---
 

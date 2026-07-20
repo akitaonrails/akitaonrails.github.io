@@ -2,12 +2,11 @@
 title: "[Off-Topic] Opinions, Truths, Democracy and Ethics"
 date: '2011-05-04T03:18:00-03:00'
 slug: off-topic-opinioes-verdades-democracia-e-etica
+description: "Akita separates opinion from truth and democracy from anarchy: teams can decide how to implement a strategy, but must respect inviolable principles, professional ethics, and the client's outcome."
 tags:
-- off-topic
-- principles
 - management
-- agile
-- career
+- philosophy
+- off-topic
 draft: false
 ---
 

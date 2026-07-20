@@ -2,26 +2,11 @@
 title: "[Akitando] #34 - Você não sabe nada de Enterprise. Conhecendo a SAP!"
 date: '2018-12-26T17:00:00-02:00'
 slug: akitando-34-voce-nao-sabe-nada-de-enterprise-conhecendo-a-sap
+description: "A partir de cinco anos com SAP, Akita explica R/3, ABAP, localização brasileira, NetWeaver, HANA e S/4HANA, defendendo que o enterprise ensina regras de negócio difíceis de aprender fora dele."
 tags:
-- sap
-- netweaver
-- hana
-- s/4
-- r/3
-- hasso platner
-- larry ellison
-- oracle
-- adabas
-- ibm
-- accenture
-- pwc
-- capgemini
-- xerox parc
-- mainframe
-- erp
-- enterprise
-- corporations
-- consultor
+- negocios
+- arquitetura-de-software
+- programacao
 - akitando
 draft: false
 ---

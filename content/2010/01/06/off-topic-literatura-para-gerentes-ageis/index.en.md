@@ -2,11 +2,12 @@
 title: 'Off-Topic: Literature for Agile Managers'
 date: '2010-01-06T03:24:00-02:00'
 slug: off-topic-literatura-para-gerentes-ageis
+description: "Reading for Agile managers includes complex systems, chaos, and evolution. The thesis is that Agility requires studying principles and context, not copying recipes from Lean, Scrum, or manufacturing."
 tags:
-- off-topic
-- career
+- agile
 - management
 - learning
+- off-topic
 draft: false
 ---
 

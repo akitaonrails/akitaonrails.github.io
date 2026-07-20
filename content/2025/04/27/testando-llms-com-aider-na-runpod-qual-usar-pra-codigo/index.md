@@ -2,15 +2,11 @@
 title: Testando LLMs com Aider na RunPod - qual usar pra código?
 date: '2025-04-27T11:30:00-03:00'
 slug: testando-llms-com-aider-na-runpod-qual-usar-pra-codigo
+description: "Comparei modelos de código com Aider na RTX 4090, A40 e H100. O Qwen2.5-Coder 32B foi lento e frustrante, enquanto o 7B se saiu melhor, mas Claude e Gemini venceram."
 tags:
-- runpod
-- aider
-- gemini
-- qwen
-- deepseek
-- ollama
-- llm
-  - AI
+- benchmarks-de-llm
+- llms
+- agentes-de-codigo
 draft: false
 translationKey: aider-runpod-which-llm-for-code
 ---

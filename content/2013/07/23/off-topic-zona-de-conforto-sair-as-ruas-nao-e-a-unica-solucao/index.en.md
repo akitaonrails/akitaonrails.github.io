@@ -2,12 +2,12 @@
 title: "[Off-Topic] Comfort Zone: Taking to the Streets Isn't the Only Solution"
 date: '2013-07-23T14:20:00-03:00'
 slug: off-topic-zona-de-conforto-sair-as-ruas-nao-e-a-unica-solucao
+description: "The author criticizes turning complaints about pay, conditions, or investment into a strategy and argues for taking on hard problems, because personal effort can create room for innovation there."
 tags:
-- off-topic
 - career
-- market
-- insights
 - startups
+- tech-market
+- off-topic
 draft: false
 ---
 

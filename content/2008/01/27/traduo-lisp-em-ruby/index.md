@@ -2,11 +2,11 @@
 title: 'Tradução: Lisp em Ruby'
 date: '2008-01-27T05:42:00-02:00'
 slug: traduo-lisp-em-ruby
+description: "Jim Weirich converte as funções eval e apply do Manual do Programador de Lisp 1.5 em um interpretador mínimo escrito em Ruby. O exemplo executa reverse sem parser Lisp nem REPL."
 tags:
-- learning
-- beginner
+- linguagens-de-programacao
 - ruby
-- lisp
+- aprendizado
 draft: false
 ---
 

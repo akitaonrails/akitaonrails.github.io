@@ -4,13 +4,10 @@ slug: "zero-to-post-production-in-1-week-using-ai-on-real-projects-behind-the-m-
 date: 2026-02-20T12:49:58+00:00
 draft: false
 tags:
-- themakitachronicles
-- rubyonrails
-- xp
-- extremeprogramming
-- agile
-- frankmd
-  - AI
+- frank
+- llms
+- artificial-intelligence
+- the-m-akita-chronicles
 translationKey: zero-to-post-production-1-week
 description: "How 274 commits in 8 days shipped a full newsletter, podcast, blog, and Discord bot to production using Extreme Programming with Claude Code as the pair."
 ---

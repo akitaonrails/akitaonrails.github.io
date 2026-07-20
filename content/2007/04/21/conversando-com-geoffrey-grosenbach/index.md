@@ -2,8 +2,11 @@
 title: Conversando com Geoffrey Grosenbach
 date: '2007-04-21T22:00:00-03:00'
 slug: conversando-com-geoffrey-grosenbach
+description: "Geoffrey Grosenbach relata como chegou ao Rails, assumiu o Rails Podcast e criou o PeepCode. A conversa passa por autodidatismo, open source, aprendizado contínuo e pequenos negócios de software."
 tags:
-- interview
+- entrevistas
+- rails
+- open-source
 draft: false
 translationKey: chatting-geoffrey-grosenbach
 aliases:

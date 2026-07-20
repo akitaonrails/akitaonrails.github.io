@@ -3,11 +3,10 @@ title: "_Why Documentary at Rubyconf 2012, Denver"
 date: '2012-09-03T00:54:00-03:00'
 slug: why-documentary-at-rubyconf-2012-denver
 translationKey: why-documentary-rubyconf-2012
+description: "The author presents the trailer for a documentary about _Why, recalls his influence on the first Ruby generation and virtual disappearance, and shares an unexpected email he received from him."
 tags:
-- philosophy
 - ruby
-- why
-- english
+- biographies
 draft: false
 ---
 

@@ -5,10 +5,11 @@ slug: operador-pipe-do-elixir-para-ruby-chainable-methods
 translationKey: elixir-pipe-for-ruby-chainable
 aliases:
 - /2016/02/18/elixir-pipe-operator-for-ruby-chainable-methods/
+description: "A gem Chainable Methods passa o retorno de cada chamada como primeiro argumento da próxima, deixando transformações Ruby mais legíveis e testáveis. O experimento usa method_missing e prioriza expressividade, não velocidade."
 tags:
 - ruby
-- elixir
-- traduzido
+- elixir-e-erlang
+- linguagens-de-programacao
 draft: false
 ---
 

@@ -2,10 +2,10 @@
 title: '100% pure Object-Oriented: The Fallacy'
 date: '2007-09-04T16:22:00-03:00'
 slug: 100-pure-object-oriented-the-fallacy
+description: "O texto questiona a ideia de que mais pureza orientada a objetos torna uma linguagem melhor e defende escolher a tecnologia pelos requisitos concretos de cada projeto."
 tags:
-- principles
-- career
-- paradigms
+- linguagens-de-programacao
+- engenharia-de-software
 draft: false
 ---
 

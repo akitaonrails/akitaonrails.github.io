@@ -2,6 +2,7 @@
 title: 'Rubyconf Brasil 2013: Meet Eduardo Shiota'
 date: '2013-08-19T12:45:00-03:00'
 slug: rubyconf-brasil-2013-meet-eduardo-shiota
+description: "Eduardo Shiota presents modular, event-driven architecture in JavaScript and argues for fundamentals, reusable code, and testing, without getting stuck on framework trends or a specific library."
 tags:
 - rubyconfbr2013
 draft: false

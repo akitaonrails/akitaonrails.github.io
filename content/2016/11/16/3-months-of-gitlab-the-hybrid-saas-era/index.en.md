@@ -3,11 +3,11 @@ title: "3 Months of GitLab. The Hybrid-SaaS Era"
 date: '2016-11-16T16:44:00-02:00'
 slug: 3-months-of-gitlab-the-hybrid-saas-era
 translationKey: 3-months-gitlab-hybrid-saas
+description: "After running nearly 200 repositories and 80 users on a self-hosted GitLab, the author argues for Hybrid SaaS: hosted services with OSS versions that restore control without rebuilding everything."
 tags:
-- gitlab
-- saas
+- version-control
+- open-source
 - business
-- english
 draft: false
 ---
 

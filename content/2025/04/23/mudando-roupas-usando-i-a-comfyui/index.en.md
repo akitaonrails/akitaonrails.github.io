@@ -3,10 +3,8 @@ title: "Changing Clothes Using A.I. (ComfyUI)"
 date: '2025-04-23T17:45:00-03:00'
 slug: changing-clothes-using-ai-comfyui
 tags:
-- comfyui
-- idm-vton
-- docker
-  - AI
+- generative-media
+- local-models
 draft: false
 translationKey: ai-clothes-swap-comfyui
 description: "A walkthrough of a ComfyUI workflow using IDM-VTON and IPAdapter to swap clothing on photos while preserving the original face and pose."

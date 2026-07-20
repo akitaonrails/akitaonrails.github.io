@@ -2,17 +2,10 @@
 title: "[Akitando] #4 - Blockchain Week Seoul: Entendendo ICOs"
 date: '2018-08-23T17:00:00-03:00'
 slug: akitando-4-blockchain-week-seoul-entendendo-icos
+description: "Akita explica as diferenças entre security e utility tokens, o Teste de Howey, stablecoins e reverse ICOs a partir de conferências em Seoul. A regulamentação empurra projetos para jurisdições mais abertas."
 tags:
-- beyond blocks
-- blockchain partners summit
-- seoul
-- ico
-- reverse ico
-- security tokens
-- utility tokens
-- kakao
-- ground x
-- tmon
+- bitcoin-e-criptomoedas
+- leis-e-regulacao
 - akitando
 draft: false
 ---

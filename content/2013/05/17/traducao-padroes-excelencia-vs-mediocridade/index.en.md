@@ -2,12 +2,12 @@
 title: "[Translation] Standards: excellence vs. mediocrity"
 date: '2013-05-17T19:25:00-03:00'
 slug: traducao-padroes-excelencia-vs-mediocridade
+description: "Reporting on an exercise at Toyota, Jason Yip shows that the standard was the champion’s time: four seconds. The text contrasts standards that limit with those that drive excellence."
 tags:
-- off-topic
-- management
+- software-engineering
 - agile
-- translation
-- career
+- management
+- off-topic
 draft: false
 ---
 

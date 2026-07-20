@@ -2,10 +2,12 @@
 title: Evolution Through Competition
 date: '2006-09-27T16:13:00-03:00'
 slug: evolução-pela-concorrência
+description: "The author argues that criticism and competition drive technology forward. In Rails, limitations around internationalization, legacy systems, and asynchronous tasks have already encouraged community solutions."
 tags:
+- rails
+- software-engineering
+- economics
 - off-topic
-- principles
-- markets
 draft: false
 ---
 

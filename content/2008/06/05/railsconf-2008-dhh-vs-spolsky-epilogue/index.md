@@ -2,9 +2,9 @@
 title: RailsConf 2008 - DHH vs Spolsky, epilogue
 date: '2008-06-05T14:31:00-03:00'
 slug: railsconf-2008-dhh-vs-spolsky-epilogue
+description: "Joel Spolsky falou sobre produtos bem-sucedidos sem mencionar Rails, enquanto David Hansson defendeu escolhas, descanso e aprendizado. O convite de David ao palco encerrou a antiga rixa entre os dois."
 tags:
 - railsconf2008
-- english
 draft: false
 ---
 

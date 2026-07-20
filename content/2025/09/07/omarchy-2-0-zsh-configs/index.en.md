@@ -3,12 +3,9 @@ title: Omarchy 2.0 - ZSH Configs
 date: "2025-09-07T15:00:00-03:00"
 slug: omarchy-2-0-zsh-configs
 tags:
-  - arch
-  - omarchy
-  - atuin
-  - secrets
-  - starship
-  - zsh
+- omarchy
+- developer-tools
+- automation
 draft: false
 translationKey: omarchy-zsh-configs
 description: How I swapped Omarchy's default Bash for ZSH and wired up Atuin, Starship, secrets, and handy aliases to match my workflow.

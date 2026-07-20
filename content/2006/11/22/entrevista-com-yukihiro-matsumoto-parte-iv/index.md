@@ -2,10 +2,11 @@
 title: 'Entrevista com Yukihiro Matsumoto: parte IV'
 date: '2006-11-22T05:22:03-02:00'
 slug: entrevista-com-yukihiro-matsumoto-parte-iv
+description: "Na entrevista, Matz recomenda ler código, aprender linguagens diferentes e priorizar fundamentos. Ele também defende reduzir o trabalho e tratar interfaces de usuário e de máquinas como parte central do sistema."
 tags:
-- interview
-- matz
-- translation
+- entrevistas
+- ruby
+- aprendizado
 draft: false
 ---
 

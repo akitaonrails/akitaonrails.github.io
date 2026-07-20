@@ -4,12 +4,12 @@ slug: "i-built-a-cli-to-check-my-github-pending-stuff-ghpending"
 date: '2026-05-23T22:00:00-03:00'
 draft: false
 translationKey: criei-cli-pra-checar-pendencias-github-ghpending
+description: "Akita built ghpending to query issues and PRs across multiple repositories in a Rust digest, fetching everything in parallel and raising GitHub’s limit from 60 to 5,000 requests per hour with a token."
 tags:
-  - cli
-  - github
-  - rust
-  - ghpending
-  - opensource
+- ghpending
+- automation
+- developer-tools
+- version-control
 ---
 
 After my [AI marathon](/en/2026/05/14/wrapping-up-my-ai-marathon-success-or-failure/), I'm sitting on dozens of public GitHub repos to look after. A bunch of them have contributors filing issues and sending pull requests. The problem is, opening a browser, walking into each repo, checking whether anything new is waiting, becomes a chore I end up dodging. And when I dodge it, I go weeks without responding to collaborators.

@@ -2,11 +2,11 @@
 title: "[Akitando] #24 - Sua Linguagem É Especial? Parte 1 em 2001"
 date: '2018-11-06T17:00:00-02:00'
 slug: akitando-24-sua-linguagem-e-especial-parte-1-em-2001
+description: "Em 2001, Akita criou um framework em ASP clássico com componentes, sessões em banco, validadores e upload. O projeto não foi usado, mas revelou os limites da plataforma e preparou sua migração."
 tags:
-- asp
-- asp.net
-- web frameworks
-- arquitetura web
+- desenvolvimento-web
+- arquitetura-de-software
+- programacao
 - akitando
 draft: false
 ---

@@ -3,10 +3,11 @@ title: "RANT: o Akita abriu as pernas pra IA??"
 slug: "rant-o-akita-abriu-as-pernas-pra-ia"
 date: 2026-02-24T11:54:26+00:00
 draft: false
+description: "Uso LLMs para programar desde 2023, mas isso não mudou minha rejeição à AGI com a tecnologia atual nem à substituição total de programadores. Para mim, elas removem tarefas mundanas quando há experiência para revisar, decidir e testar."
 tags:
-- vibecode
-- rant
-  - AI
+- inteligencia-artificial
+- llms
+- vibe-coding
 translationKey: rant-akita-caved-to-ai
 ---
 

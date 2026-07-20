@@ -2,10 +2,11 @@
 title: Moving away from Slack into Rocket.chat. Good Enough.
 date: '2016-08-09T16:21:00-03:00'
 slug: moving-away-from-slack-into-rocket-chat-good-enough
+description: "I chose Rocket.chat to replace Slack and built a production setup with MongoDB in a replica set, multiple Node.js instances, NGINX, SSL, and monitoring. It works, but it’s not for beginners."
 tags:
-- slack
-- rocket.chat
-- group chats
+- reviews
+- devops
+- databases
 draft: false
 ---
 

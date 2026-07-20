@@ -3,15 +3,12 @@ title: "Atacando fraudes via email | Frank FBI"
 date: '2026-03-09T13:00:00-03:00'
 draft: false
 translationKey: frank-fbi-email-fraud
+description: "Construí o Frank FBI para analisar emails encaminhados em seis camadas, combinando autenticação, reputação, OSINT e três LLMs. O resultado é um relatório de risco self-hosted, com os dados sob seu controle."
 tags:
-  - ruby
-  - rails
-  - security
-  - email
-  - fraud-detection
-  - open-source
-  - AI
-  - vibe-coding
+- frank
+- llms
+- inteligencia-artificial
+- seguranca
 ---
 
 Esse fim de semana eu trabalhei em 3 projetos. Dois deles eu já publiquei: o [easy-ffmpeg](/2026/03/07/crystal-e-um-wrapper-inteligente-pro-ffmpeg-feito-em-3-horas-easy-ffmpeg/), um wrapper inteligente pro FFmpeg em Crystal, e o [easy-subtitle](/2026/03/07/portando-10-mil-linhas-de-python-pra-crystal-com-claude-easy-subtitle/), um port de 10 mil linhas de Python pra Crystal em menos de 40 minutos. Continuo melhorando os dois, adicionando features e corrigindo edge cases conforme uso no dia-a-dia.

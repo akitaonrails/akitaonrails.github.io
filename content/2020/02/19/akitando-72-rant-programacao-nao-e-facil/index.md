@@ -2,7 +2,11 @@
 title: "[Akitando] #72 - RANT: Programação NÃO É Fácil"
 date: '2020-02-19T10:30:00-03:00'
 slug: akitando-72-rant-programacao-nao-e-facil
+description: "Akita desmonta a ideia de que programação é fácil ao ligar a corrida por profissionais à abundância artificial do mercado. Sobreviver exige interesse genuíno, prática prolongada e fundamentos para resolver problemas reais."
 tags:
+- programacao
+- aprendizado
+- carreira
 - akitando
 draft: false
 ---

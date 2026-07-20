@@ -3,9 +3,11 @@ title: Bem Vindos
 date: '2006-04-05T01:59:00-03:00'
 slug: bem-vindos
 translationKey: bem-vindos
+description: "A comunidade brasileira de Ruby on Rails começa a se organizar para aprender a plataforma, apesar da falta de material em português e da resistência do mercado. A transição a partir do Java será gradual."
 tags:
-- narrative
-- first-post
+- rails
+- ruby
+- aprendizado
 draft: false
 ---
 

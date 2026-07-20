@@ -2,9 +2,11 @@
 title: Rails serve para grandes aplicações?
 date: '2008-03-12T02:17:00-03:00'
 slug: rails-serve-para-grandes-aplica-es
+description: "Rails não substitui um ERP corporativo como SAP, mas pode atender mini-ERPs ou funcionar como front-end de SAP e Java. Isso exige processos maduros, bons programadores, integração e objetivos realistas."
 tags:
 - rails
-- pitch
+- arquitetura-de-software
+- negocios
 draft: false
 ---
 

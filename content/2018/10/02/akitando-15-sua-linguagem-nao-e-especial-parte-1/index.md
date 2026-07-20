@@ -2,18 +2,11 @@
 title: "[Akitando] #15 - Sua Linguagem NÃO É Especial! (Parte 1)"
 date: '2018-10-02T17:00:00-03:00'
 slug: akitando-15-sua-linguagem-nao-e-especial-parte-1
+description: "Da Speedcoding ao C, Pascal, shells e ALGOL, Akita monta uma genealogia das linguagens para mostrar que nenhuma surgiu isolada. Programadores ganham mais ao tratá-las como ferramentas do que como identidade."
 tags:
-- programação
-- carreira
-- computação
-- algol
-- fortran
-- knuth
-- pascal
-- bash
-- delphi
-- backus
-- BNF
+- linguagens-de-programacao
+- ciencia-da-computacao
+- programacao
 - akitando
 draft: false
 ---

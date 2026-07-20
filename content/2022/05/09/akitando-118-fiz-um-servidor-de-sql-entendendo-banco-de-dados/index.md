@@ -2,16 +2,11 @@
 title: '[Akitando] #118 - Fiz um servidor de "SQL"?? | Entendendo Banco de Dados'
 date: '2022-05-09T11:20:00-03:00'
 slug: akitando-118-fiz-um-servidor-de-sql-entendendo-banco-de-dados
+description: "Akita monta em JavaScript um banco de dados de estudo com SQL falso, parser, índice AVL, log de transações e cliente-servidor para mostrar por que bancos reais exigem muito mais."
 tags:
-- database
-- sqlite3
-- btree
-- avltree
-- cormen
-- antlr4
-- transpiler
+- bancos-de-dados
+- algoritmos-e-estruturas-de-dados
 - javascript
-- postgres
 - akitando
 draft: false
 ---

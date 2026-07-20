@@ -2,6 +2,7 @@
 title: Rubistas.com.br
 date: '2009-11-10T15:22:00-02:00'
 slug: rubistas-com-br
+description: "I launched rubistas.com.br as a Portuguese fork of Rubyists.eu, then took it down after missing Creative Commons attribution and upsetting collaborators with an unfortunate description of the original site."
 tags:
 - railssummit2010
 draft: false

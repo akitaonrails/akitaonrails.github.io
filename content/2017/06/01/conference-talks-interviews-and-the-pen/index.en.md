@@ -3,10 +3,11 @@ title: Conference Talks, Interviews, and the Pen!
 date: '2017-06-01T13:24:00-03:00'
 slug: conference-talks-interviews-and-the-pen
 translationKey: conference-talks-interviews
+description: "Talks, interviews, and blog posts lose their audience when they focus on what and how instead of why. Persuasion starts with understanding each audience’s priorities."
 tags:
+- communication
+- blogging
 - off-topic
-- conferences
-- english
 draft: false
 ---
 

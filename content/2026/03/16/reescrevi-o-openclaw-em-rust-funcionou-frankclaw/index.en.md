@@ -4,12 +4,12 @@ date: '2026-03-16T08:00:00-03:00'
 draft: false
 slug: rewrote-openclaw-in-rust-frankclaw
 translationKey: openclaw-rust-rewrite-frankclaw
+description: "I rewrote OpenClaw’s core in Rust as FrankClaw, with 56,586 lines, 7 channels, and fixes for the 7 audited critical vulnerabilities. It handles simple conversations, but complex workflows remain untested."
 tags:
-  - rust
-  - security
-  - ai
-  - open-source
-  - vibe-coding
+- frank
+- llms
+- artificial-intelligence
+- rust
 ---
 
 Before anything else: FrankClaw is still in heavy alpha. It works for simple tasks, but I haven't tested complex workflows. If you want to help, open Issues on [GitHub](https://github.com/akitaonrails/frankclaw) with whatever you find. There's a lot to test.

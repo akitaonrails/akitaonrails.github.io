@@ -2,16 +2,11 @@
 title: "[Akitando] #6 - 33 exemplos de projetos de ICOs e blockchains"
 date: '2018-08-30T17:00:00-03:00'
 slug: akitando-6-33-exemplos-de-projetos-de-icos-e-blockchains
+description: "Akita apresenta 33 projetos de blockchain e ICOs em sete áreas, de novas arquiteturas a games e energia. O panorama reúne propostas interessantes, promessas exageradas e um mercado ainda imaturo."
 tags:
-- blockchain
-- criptomoedas
-- ICO
-- ethereum
-- erc20
-- smart contract
-- token
+- bitcoin-e-criptomoedas
 - startups
-- seoul
+- negocios
 - akitando
 draft: false
 ---

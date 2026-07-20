@@ -4,14 +4,9 @@ date: "2025-09-09T01:00:00-03:00"
 slug: omarchy-2-0-tuis
 translationKey: omarchy-tuis
 tags:
-  - arch
-  - omarchy
-  - TUI
-  - lazydocker
-  - bubbletea
-  - gum
-  - posting
-  - caligula
+- omarchy
+- developer-tools
+- linux
 draft: false
 description: Why TUIs deserve a spot on your desktop in 2025, plus a tour of my favorite terminal apps and how Omarchy makes them feel native.
 ---

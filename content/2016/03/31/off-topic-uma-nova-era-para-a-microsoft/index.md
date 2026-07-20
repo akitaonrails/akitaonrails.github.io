@@ -2,9 +2,12 @@
 title: "[Off-Topic] Uma Nova Era para a Microsoft"
 date: '2016-03-31T16:10:00-03:00'
 slug: off-topic-uma-nova-era-para-a-microsoft
+description: "O Bash no Windows e as ferramentas Xamarin gratuitas e open source podem tornar o Windows atraente para desenvolvedores não-.NET. O autor vê uma saída plausível do OS X, mas só se a Microsoft cumprir a promessa."
 tags:
-- off-topic
 - microsoft
+- ferramentas-de-desenvolvimento
+- mercado-de-tecnologia
+- off-topic
 draft: false
 translationKey: nova-era-microsoft-2016
 aliases:

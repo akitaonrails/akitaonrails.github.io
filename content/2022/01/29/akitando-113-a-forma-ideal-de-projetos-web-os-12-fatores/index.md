@@ -2,14 +2,11 @@
 title: "[Akitando] #113 - A Forma Ideal de Projetos Web | Os 12 Fatores"
 date: '2022-01-29T16:59:00-03:00'
 slug: akitando-113-a-forma-ideal-de-projetos-web-os-12-fatores
+description: "Os 12 fatores organizam apps web para deploys reproduzíveis e contínuos, mas não escalam tudo sozinhos: Akita mostra como arquitetura e gargalos do banco ainda podem derrubar o sistema."
 tags:
-- heroku
-- 12 fatores
-- testes
-- continuous integration
-- continuous deployment
-- arquitetura
-- agilidade
+- arquitetura-de-software
+- devops
+- desenvolvimento-web
 - akitando
 draft: false
 ---

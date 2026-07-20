@@ -2,12 +2,10 @@
 title: Segurança em Rails
 date: '2014-05-22T11:39:00-03:00'
 slug: seguranca-em-rails
+description: "O post apresenta o Bundler Audit, que cruza gems do Gemfile.lock com o Ruby Advisory DB, e o Rack::Attack, middleware para limitar scrapers, força bruta e IPs indesejados."
 tags:
-- learning
-- beginner
+- seguranca
 - rails
-- security
-- segurança
 draft: false
 ---
 

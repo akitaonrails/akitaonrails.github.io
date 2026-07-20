@@ -2,11 +2,12 @@
 title: "[Off-Topic] Agile Done Wrong"
 date: '2013-11-01T10:48:00-02:00'
 slug: off-topic-agile-feito-errado
+description: "The text argues that Agile cannot save teams without technical ability and commitment. Planning, pair programming, quality, and responsibility become a performance, and bad professionals need replacing."
 tags:
-- off-topic
-- career
-- management
 - agile
+- software-engineering
+- management
+- off-topic
 draft: false
 ---
 

@@ -2,12 +2,11 @@
 title: "[Akitando] #99 - Quebrei 3 HDs: Entendendo Armazenamento"
 date: '2021-06-09T13:21:00-03:00'
 slug: akitando-99-quebrei-3-hds-entendendo-armazenamento
+description: "Depois de três HDs sinalizarem falha, Akita mostra clonagem raw, RAID-5, os riscos do RAID-0 e a evolução de CHS para LBA. O Synology DS420j atende backups, mas limita arquivos grandes."
 tags:
-- drobo
-- synology
-- raid
-- CHS
-- LBA
+- armazenamento-e-backup
+- homelab
+- hardware
 - akitando
 draft: false
 ---

@@ -2,10 +2,12 @@
 title: 'Off Topic: Steve Jobs, Discurso em Stanford, 2005'
 date: '2007-06-13T21:51:03-03:00'
 slug: off-topic-steve-jobs-discurso-em-stanford-2005
+description: "Na tradução do discurso em Stanford, Steve Jobs conta como conectou acaso, demissão e doença às escolhas da vida. A mensagem é seguir a curiosidade, o trabalho amado e a própria intuição."
 tags:
-- off-topic
 - apple
-- steve-jobs
+- filosofia
+- pessoal
+- off-topic
 draft: false
 ---
 

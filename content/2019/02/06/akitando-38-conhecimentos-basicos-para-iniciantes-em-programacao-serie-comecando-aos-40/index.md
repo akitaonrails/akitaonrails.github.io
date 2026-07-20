@@ -3,18 +3,11 @@ title: '[Akitando] #38 - Conhecimentos Básicos para Iniciantes em Programação
   "Começando aos 40"'
 date: '2019-02-06T17:00:00-02:00'
 slug: akitando-38-conhecimentos-basicos-para-iniciantes-em-programacao-serie-comecando-aos-40
+description: "Akita usa o Developer Roadmap para priorizar Git, GitHub, terminal, SSH e Linux, defendendo treino prático e contato com erros para aprender a controlar a própria máquina."
 tags:
-- git
-- linus torvalds
-- github
+- aprendizado
+- controle-de-versao
 - linux
-- ubuntu
-- mint
-- fedora
-- manjaro
-- arch
-- programação
-- developer
 - akitando
 draft: false
 ---

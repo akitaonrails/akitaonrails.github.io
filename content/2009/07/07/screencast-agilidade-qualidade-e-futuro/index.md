@@ -2,9 +2,11 @@
 title: 'Screencast: Agilidade, Qualidade e Futuro'
 date: '2009-07-07T12:18:00-03:00'
 slug: screencast-agilidade-qualidade-e-futuro
+description: "Em um screencast de uma hora e meia, o autor revisa sua sexta palestra sobre desenvolvimento de software, Agile, Lean e a evolução da gestão rumo às organizações democráticas."
 tags:
-- screencast
 - agile
+- gestao
+- aprendizado
 draft: false
 ---
 

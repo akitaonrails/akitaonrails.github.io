@@ -2,12 +2,12 @@
 title: 'Off Topic: Enemies of Reason'
 date: '2007-08-23T17:37:00-03:00'
 slug: off-topic-inimigos-da-razo
+description: "Inspired by Richard Dawkins and Carl Sagan, the author argues for evidence, skepticism, and personal responsibility against dogma, superstition, and irrational disputes between technologies."
 tags:
-- off-topic
-- principles
-- career
-- management
+- philosophy
 - science
+- psychology
+- off-topic
 draft: false
 ---
 

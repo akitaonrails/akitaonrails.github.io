@@ -3,11 +3,11 @@ title: "Jobs Assíncronos que sobrevivem ao Caos | Bastidores do The M.Akita Chr
 slug: "jobs-asssincronos-que-sobrevivem-ao-caos-bastidores-do-the-m-akita-chronicles"
 date: 2026-02-19T01:10:08+00:00
 draft: false
+description: "Jobs Rails 8 precisam sobreviver a crashes, retries e concorrência. Locks com TTL, claiming atômico, estados ambíguos, crons de segurança e notificações fazem o processamento continuar sem duplicar emails."
 tags:
-- themakitachronicles
-- rubyonrails
-- activejob
-  - AI
+- the-m-akita-chronicles
+- rails
+- sistemas-distribuidos
 translationKey: async-jobs-chaos-survival
 ---
 

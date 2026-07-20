@@ -3,12 +3,11 @@ title: "LLM Benchmarks Parte 2: Vale Combinar Múltiplos Modelos no Mesmo Projet
 date: '2026-04-18T14:00:00-03:00'
 draft: false
 translationKey: llm-benchmarks-part-2-multi-model
+description: "Testei sete combinações em Claude Code, opencode e Codex, mas nenhum sub-agente foi chamado. A variância entre runs e harnesses mantém Opus sozinho como padrão para projetos greenfield."
 tags:
-  - llm
-  - benchmark
-  - claude
-  - ai
-  - vibecoding
+- benchmarks-de-llm
+- agentes-de-codigo
+- llms
 ---
 
 > ⚠️ **Artigo obsoleto (atualização de 2026-04-24).** As conclusões e rankings desse artigo foram superados depois do re-audit contra o gem `ruby_llm`. A descoberta principal (multi-model não vale pra coding greenfield) se mantém e foi integrada no post canônico. **A versão canônica está em [Benchmark de LLMs pra Coding (Abril 2026)](/2026/04/24/llm-benchmarks-parte-3-deepseek-kimi-mimo/).** Esse artigo fica aqui como registro histórico.

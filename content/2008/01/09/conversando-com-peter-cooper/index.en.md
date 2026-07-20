@@ -2,8 +2,11 @@
 title: Chatting with Peter Cooper
 date: '2008-01-04T09:30:00-02:00'
 slug: chatting-with-peter-cooper
+description: "Peter Cooper tells how he created Ruby Inside, sold Code Snippets and Feed Digest, and wrote Beginning Ruby. He argues for the right tool for each job and sees truth in Zed Shaw’s criticism."
 tags:
-- interview
+- interviews
+- ruby
+- blogging
 draft: false
 translationKey: chatting-peter-cooper
 ---

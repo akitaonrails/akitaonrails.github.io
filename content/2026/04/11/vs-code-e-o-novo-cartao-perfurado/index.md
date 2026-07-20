@@ -5,10 +5,8 @@ draft: false
 slug: vs-code-e-o-novo-cartao-perfurado
 translationKey: vs-code-is-the-new-punch-card
 tags:
-  - ai
-  - llm
-  - opinion
-  - programming
+- agentes-de-codigo
+- programacao
 description: "Na era dos agentes de código, digitar tudo manualmente no VS Code virou o equivalente moderno do cartão perfurado. O que não virou legado foi fundamento."
 ---
 

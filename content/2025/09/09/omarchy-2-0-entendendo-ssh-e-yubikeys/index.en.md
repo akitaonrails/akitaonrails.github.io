@@ -3,13 +3,9 @@ title: Omarchy 2.0 - Understanding SSH and Yubikeys
 date: "2025-09-09T12:00:00-03:00"
 slug: omarchy-2-0-understanding-ssh-and-yubikeys
 tags:
-  - arch
-  - omarchy
-  - ssh
-  - openssh
-  - yubikey
-  - ssh-agent
-  - segurança
+- omarchy
+- security
+- linux
 draft: false
 translationKey: omarchy-ssh-yubikeys
 description: A practical guide to SSH keys, Yubikey 5 hardware-backed keys, and ssh-agent on Arch Linux and Omarchy.

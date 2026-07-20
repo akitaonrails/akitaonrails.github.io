@@ -5,9 +5,9 @@ slug: indo-para-a-railsconf-2009
 translationKey: railsconf-2009-going
 aliases:
 - /2009/05/02/going-to-railsconf-2009/
+description: "Akita viaja do Brasil a Las Vegas para a RailsConf 2009, enfrentando hotel distante e um possível conserto do MacBook. Seu foco é conversar, entrevistar e conhecer o máximo de pessoas possível."
 tags:
 - railsconf2009
-- traduzido
 draft: false
 ---
 

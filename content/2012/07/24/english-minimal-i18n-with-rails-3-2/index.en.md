@@ -3,11 +3,10 @@ title: "[English] Minimal I18n with Rails 3.2"
 date: '2012-07-24T13:42:00-03:00'
 slug: english-minimal-i18n-with-rails-3-2
 translationKey: minimal-i18n-rails-3-2-rubylearning
+description: "The author adapts his two-part tutorial on minimal i18n with Rails 3.2 into English, using a demo application hosted on Heroku and code published on GitHub."
 tags:
-- learning
 - rails
-- tutorial
-- i18n
+- tutorials
 draft: false
 ---
 

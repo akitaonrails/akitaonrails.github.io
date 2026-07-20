@@ -3,14 +3,12 @@ title: "Migrando meu Home Server com Claude Code | openSUSE MicroOS"
 date: '2026-03-31T16:00:00-03:00'
 draft: false
 translationKey: home-server-migration-claude-code
+description: "Migrei 49 containers de Ubuntu para openSUSE MicroOS com ajuda do Claude Code, reorganizando Docker, NFS, ROCm, backups e SELinux. A automação acelerou o trabalho, mas arquitetura e validação continuaram humanas."
 tags:
-  - homeserver
-  - docker
-  - opensuse
-  - microos
-  - claude-code
-  - AI
-  - vibe-coding
+- homelab
+- containers
+- devops
+- seguranca
 ---
 
 Meu home server antigo era uma bagunça. Um Intel NUC com Ubuntu Server que eu fui remendando ao longo de dois anos. Containers com caminhos hardcoded, volumes montados em locais aleatórios (`/home/akitaonrails/docker/`, `/home/akitaonrails/sonarr/`, `/mnt/terachad/`), docker-compose files espalhados sem padrão nenhum. Funcionava, mas se eu perdesse o disco, levaria dias pra reconstruir tudo de memória.

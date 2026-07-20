@@ -3,11 +3,11 @@ title: "Vibe Code: Do Zero à Produção em 6 DIAS | The M.Akita Chronicles"
 slug: "vibe-code-do-zero-a-producao-em-6-dias-the-m-akita-chronicles"
 date: 2026-02-16T14:19:56+00:00
 draft: false
+description: "Em seis dias, coloquei newsletter, blog, podcast e bot Discord em produção com 201 commits. O resultado só ficou confiável após deploy, testes, integração e refatorações, seguindo disciplina de Extreme Programming."
 tags:
-- vibecode
-- themakitachronicles
-- rubyonrails
-  - AI
+- the-m-akita-chronicles
+- vibe-coding
+- agile
 translationKey: vibe-code-zero-to-prod-6-days
 ---
 

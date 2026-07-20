@@ -3,10 +3,9 @@ title: "RailsConf 09 - Message from Bryan Liles (TATFT) to Brazil"
 date: '2009-05-08T05:26:00-03:00'
 slug: railsconf-09-message-from-bryan-liles-tatft-to-brazil
 translationKey: railsconf-2009-bryan-liles-tatft
+description: "Bryan Liles presents Test All The Fucking Time, the motto that became a RailsConf catchphrase, and records a direct message for Brazilian programmers."
 tags:
 - railsconf2009
-- interview
-- english
 draft: false
 ---
 

@@ -2,10 +2,10 @@
 title: Ruby Symbols
 date: '2007-11-26T11:33:00-02:00'
 slug: ruby-symbols
+description: "Símbolos Ruby funcionam bem como identificadores reutilizáveis, evitando duplicação de strings. O texto explica sua notação e seu uso em Hashes e no Rails."
 tags:
-- learning
-- beginner
 - ruby
+- linguagens-de-programacao
 draft: false
 ---
 

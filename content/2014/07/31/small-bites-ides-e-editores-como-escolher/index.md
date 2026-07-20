@@ -2,9 +2,10 @@
 title: "[Small Bites] IDEs e Editores, como escolher?"
 date: '2014-07-31T19:54:00-03:00'
 slug: small-bites-ides-e-editores-como-escolher
+description: "O autor compara Vim, Atom, Sublime Text, TextMate e RubyMine, recomenda cada um conforme o perfil e defende foco, regex, splits e busca rápida. No Ag, a pesquisa cai de 11 para 1 segundo."
 tags:
-- learning
-- ide
+- ferramentas-de-desenvolvimento
+- produtividade
 draft: false
 ---
 

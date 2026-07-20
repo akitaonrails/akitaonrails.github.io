@@ -3,11 +3,10 @@ title: "[Discussion] Can we protect our work from DNS providers suffering DDoS a
 date: '2016-10-31T15:00:00-02:00'
 slug: discussion-can-we-protect-our-work-from-dns-providers-suffering-ddos-attacks
 translationKey: protecting-from-dns-ddos
+description: "To test a defense against future DNS outages, the author configures Unbound as a local recursive resolver and extends the cache to 172,800 seconds, while admitting the experimental solution violates TTLs."
 tags:
 - security
-- ddos
-- devops
-- whitehat
+- networking
 draft: false
 ---
 

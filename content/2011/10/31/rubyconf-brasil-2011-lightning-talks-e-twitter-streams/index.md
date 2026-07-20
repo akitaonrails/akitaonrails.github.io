@@ -2,6 +2,7 @@
 title: RubyConf Brasil 2011 - Lightning Talks e Twitter Streams
 date: '2011-10-31T10:25:00-02:00'
 slug: rubyconf-brasil-2011-lightning-talks-e-twitter-streams
+description: "A RubyConf Brasil 2011 terá Lightning Talks de cerca de cinco minutos e hashtags próprias para cada sala, permitindo acompanhar as duas trilhas e comentar as palestras pelo Twitter."
 tags:
 - rubyconfbr2011
 draft: false

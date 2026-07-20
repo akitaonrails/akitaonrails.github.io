@@ -5,12 +5,11 @@ slug: ruby-e-belo-o-que-e-beleza
 translationKey: ruby-is-beautiful-what-is-beauty
 aliases:
 - /2012/09/02/ruby-is-beautiful-what-is-beauty/
+description: "A partir de uma palestra de Richard Seymour, o autor argumenta que beleza não é uma escolha entre forma e função: ela é sentida e depende de conhecimento e experiência."
 tags:
+- filosofia
+- ruby
 - off-topic
-- principles
-- career
-- philosophy
-- traduzido
 draft: false
 ---
 

@@ -2,14 +2,10 @@
 title: '[Akitando] #32 - Como eu aprendi Inglês? E entendendo "padrões"!'
 date: '2018-12-11T17:00:00-02:00'
 slug: akitando-32-como-eu-aprendi-ingles-e-entendendo-padroes
+description: "Akita conta como aprendeu inglês por imersão deliberada em livros, filmes e ferramentas, e diferencia standard, default e pattern para mostrar por que padrões não são regras universais."
 tags:
-- inglês
-- english
-- patterns
-- padrões
 - aprendizado
-- cursos
-- intercâmbio
+- comunicacao
 - akitando
 draft: false
 ---

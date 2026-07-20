@@ -5,13 +5,11 @@ slug: a-obrigatoria-flame-war-phoenix-vs-nodejs
 translationKey: phoenix-vs-nodejs-flame
 aliases:
 - /2015/12/03/the-obligatory-flame-war-phoenix-vs-node-js/
+description: "Num benchmark assumidamente injusto com Siege, Node.js leva vantagem no aquecimento I/O, mas Phoenix suporta melhor as requisições que bloqueiam por um segundo conforme a concorrência aumenta."
 tags:
-- learning
-- beginner
-- elixir
-- phoenix
-- node
-- traduzido
+- performance
+- elixir-e-erlang
+- javascript
 draft: false
 ---
 

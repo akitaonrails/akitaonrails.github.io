@@ -2,15 +2,10 @@
 title: "[Akitando] #31 - Manifesto Anti-Parasita: Seja um Criador"
 date: '2018-12-05T17:00:00-02:00'
 slug: akitando-31-manifesto-anti-parasita-seja-um-criador
+description: "A partir do discurso de Howard Roark, Akita contrapõe o criador, movido por trabalho e independência, ao parasita que vive dos outros e usa o altruísmo como arma."
 tags:
-- ayn rand
-- the virtue of selfishness
-- the fountainhead
-- a nascente
-- a virtude do egoísmo
-- objetivismo
-- individualismo
-- coletivismo
+- filosofia
+- pessoal
 - akitando
 draft: false
 ---

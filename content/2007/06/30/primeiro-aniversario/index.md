@@ -2,8 +2,11 @@
 title: Primeiro Aniversário
 date: '2007-06-30T15:35:00-03:00'
 slug: primeiro-aniversario
+description: "Após um mês na Surgeworks, o autor contrasta a confiança da equipe remota com cinco anos de consultoria e relata como a liberdade do home office trouxe dispersão e exigiu recuperar a disciplina."
 tags:
-- surgeworks
+- pessoal
+- carreira
+- produtividade
 draft: false
 ---
 

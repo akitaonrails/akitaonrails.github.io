@@ -3,16 +3,10 @@ title: "[Akitando] #88 - RANT: Selo de Segurança é Marketing | Entendendo o Fa
   Humano"
 date: '2020-12-08T09:30:00-03:00'
 slug: akitando-88-rant-selo-de-seguranca-e-marketing-entendendo-o-fator-humano
+description: "Casos de vazamento, phishing e engenharia social mostram que pessoas continuam sendo o elo mais explorado. Processos, auditorias e frameworks ajudam a reduzir riscos, mas não criam segurança absoluta."
 tags:
-- segurança
-- infosec
-- itil
-- cobit
-- togaf
-- sarbanes-oxley
-- hacker
-- phishing
-- engenharia social
+- seguranca
+- engenharia-de-software
 - akitando
 draft: false
 ---

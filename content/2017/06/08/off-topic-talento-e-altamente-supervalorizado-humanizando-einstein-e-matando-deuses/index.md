@@ -3,11 +3,11 @@ title: "[Off-Topic] Talento é Altamente Supervalorizado: Humanizando Einstein e
   Deuses"
 date: '2017-06-08T21:23:00-03:00'
 slug: off-topic-talento-e-altamente-supervalorizado-humanizando-einstein-e-matando-deuses
+description: "O texto questiona o mito do talento natural e humaniza Einstein ao destacar prática deliberada, acaso e sistemas complexos. Sucesso não segue uma receita: depende de esforço e circunstâncias."
 tags:
+- psicologia
+- aprendizado
 - off-topic
-- science
-- religion
-- principles
 draft: false
 ---
 

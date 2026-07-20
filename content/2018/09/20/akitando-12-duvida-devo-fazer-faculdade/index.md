@@ -2,10 +2,10 @@
 title: "[Akitando] #12 - Dúvida! Devo Fazer Faculdade?"
 date: '2018-09-20T17:00:00-03:00'
 slug: akitando-12-duvida-devo-fazer-faculdade
+description: "Para quem já escolheu programação, Akita defende a faculdade pelo acesso a fundamentos, matemática, professores e contatos, não pelo diploma ou pelas ferramentas do momento. Linguagens novas vêm depois."
 tags:
-- faculdade
-- universidade
-- matemática
+- aprendizado
+- carreira
 - akitando
 draft: false
 ---

@@ -2,9 +2,10 @@
 title: 'Aguri: A Estrutura de Dados mais Legal que Você Nunca Ouviu Falar'
 date: '2008-02-21T22:03:00-03:00'
 slug: aguri-a-estrutura-de-dados-mais-legal-que-voc-nunca-ouviu-falar
+description: "A tradução explica como binary radix tries buscam por bits e prefixos, depois apresenta Aguri: uma trie limitada com LRU que infere netmasks a partir do tráfego observado."
 tags:
-- learning
-- algorithm
+- algoritmos-e-estruturas-de-dados
+- redes
 draft: false
 ---
 

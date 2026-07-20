@@ -3,11 +3,11 @@ title: "Observing Processes in Elixir - The Little Elixir & OTP Guidebook"
 date: '2015-11-22T14:57:00-02:00'
 slug: observing-processes-in-elixir-the-little-elixir-otp-guidebook
 translationKey: observing-processes-elixir
+description: "Using GenServer, Supervisor, and Observer, I show a worker being restarted, a pool of five processes being replenished, and the runtime staying active, though the worker’s state is lost."
 tags:
-- learning
-- beginner
-- elixir
-- english
+- elixir-and-erlang
+- distributed-systems
+- software-engineering
 draft: false
 ---
 

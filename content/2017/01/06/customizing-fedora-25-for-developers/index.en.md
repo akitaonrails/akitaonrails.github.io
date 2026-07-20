@@ -3,10 +3,10 @@ title: Customizing Fedora 25 for Developers
 date: '2017-01-06T17:11:00-02:00'
 slug: customizing-fedora-25-for-developers
 translationKey: customizing-fedora-25
+description: "The author turns Fedora 25 into a development workstation with Crystal, Ruby, Node, Elixir, Go, Docker, and desktop tools. Even on old hardware, he considers it a capable alternative to macOS."
 tags:
 - linux
-- fedora
-- english
+- developer-tools
 draft: false
 ---
 

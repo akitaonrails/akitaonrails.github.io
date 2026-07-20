@@ -2,11 +2,12 @@
 title: "[Off-Topic] Free Software: An Exercise in CAPITALISM"
 date: '2016-04-22T15:30:00-03:00'
 slug: off-topic-software-livre-exercicio-de-capitalismo
+description: "The author argues that free software remains private property under usage licenses, with voluntary exchanges and competition. That’s why projects can fail, be forked, or disappear."
 tags:
+- open-source
+- economics
+- philosophy
 - off-topic
-- open source
-- free software
-- career
 draft: false
 ---
 

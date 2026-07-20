@@ -2,17 +2,11 @@
 title: "[Akitando] #59 - A História de Ruby on Rails | Por que deu certo?"
 date: '2019-08-21T17:00:00-03:00'
 slug: akitando-59-a-historia-de-ruby-on-rails-por-que-deu-certo
+description: "Fabio reconta a origem do Ruby on Rails e argumenta que seu sucesso veio da combinação de Ruby, convenções, testes, opinião forte e um ecossistema coeso, numa janela histórica difícil de repetir."
 tags:
+- rails
 - ruby
-- ruby on rails
-- rubyconf
-- railsconf
-- dhh
-- ruby central
-- why the lucky stiff
-- smalltalk
-- agile
-- apple
+- historia-da-computacao
 - akitando
 draft: false
 ---

@@ -3,12 +3,11 @@ title: "[Objective-C] Distributing your Static Library"
 date: '2011-04-24T00:46:00-03:00'
 slug: objective-c-distributing-your-static-library
 translationKey: objc-distributing-static-lib
+description: "Akita shows how to configure targets in Xcode 4, use lipo to combine ARM and i386 binaries into a Universal Binary, and distribute a static library with headers in a reusable ZIP for iOS apps."
 tags:
-- learning
-- beginner
 - apple
-- objective-c
-- english
+- programming
+- tutorials
 draft: false
 ---
 

@@ -3,6 +3,7 @@ title: "[Journey to Japan #3] Exclusive Video Interviews"
 date: '2011-11-28T02:40:00-02:00'
 slug: journey-to-japan-3-exclusive-video-interviews
 translationKey: journey-to-japan-3
+description: "Fabio edits and publishes five interviews from RubyKaigi 2011 with central figures in Japanese Ruby, including Matz. The interview with Matz has impaired audio because of bar noise."
 tags:
 - rubykaigi2011
 draft: false

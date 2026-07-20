@@ -5,12 +5,11 @@ slug: ex-pusher-lite-parte-3-uma-solucao-completa
 translationKey: ex-pusher-lite-3
 aliases:
 - /2016/12/30/ex-pusher-lite-part-3-a-complete-solution/
+description: "Montei um serviço inspirado no Pusher com Phoenix e Elixir, conectando uma aplicação Rails por WebSockets e API e distribuindo mensagens entre nós. A solução cobre muitos casos, mas ainda não é segura para produção."
 tags:
-- expusherlite
-- elixir
-- phoenix
-- websockets
-- traduzido
+- elixir-e-erlang
+- sistemas-distribuidos
+- backend
 draft: false
 ---
 

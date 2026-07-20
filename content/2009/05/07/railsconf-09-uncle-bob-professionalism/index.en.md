@@ -3,9 +3,9 @@ title: "RailsConf 09 - Uncle Bob - Professionalism"
 date: '2009-05-07T04:34:00-03:00'
 slug: railsconf-09-uncle-bob-professionalism
 translationKey: railsconf-2009-professionalism
+description: "Robert Martin answers whether it is possible to be too professional and turns the question into a simple explanation of professionalism. The post also points to the full keynote."
 tags:
 - railsconf2009
-- english
 draft: false
 ---
 

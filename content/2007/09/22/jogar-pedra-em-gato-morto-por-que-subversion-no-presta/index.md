@@ -2,9 +2,10 @@
 title: 'Jogar Pedra em Gato Morto: por que Subversion não presta'
 date: '2007-09-22T01:03:00-03:00'
 slug: jogar-pedra-em-gato-morto-por-que-subversion-no-presta
+description: "O autor critica os merges difíceis do Subversion e recomenda testar o GIT, mas mostra que o git-svn permite trabalhar localmente sem abandonar servidores SVN."
 tags:
-- subversion
-- git
+- controle-de-versao
+- ferramentas-de-desenvolvimento
 draft: false
 ---
 

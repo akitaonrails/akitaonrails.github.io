@@ -3,30 +3,11 @@ title: "[Akitando] #138 - Meu Começo de Carreira Durante a Bolha - 1997 a 2002,
   do Milênio, Crash"
 date: '2023-02-14T09:00:00-03:00'
 slug: akitando-138-meu-comeco-de-carreira-durante-a-bolha-1997-a-2002-bug-do-milenio-crash
+description: "Akita relembra os empregos entre 1997 e 2002, da agência de CD-ROMs à Web, ASP, PHP, Y2K e às pontocom. A carreira atravessou o crash porque ele aprendeu a resolver problemas, não a depender de uma tecnologia."
 tags:
-- kropki
-- fnazca
-- psinet
-- sti
-- bbs
-- erp
-- sap
-- psn
-- corinthians
-- macromedia
-- director
-- flash
-- asp
-- sqlserver
-- zope
-- php
-- apache
-- hpg
-- geocities
-- bolha
-- crash
-- pontocom
-- startup
+- carreira
+- pessoal
+- mercado-de-tecnologia
 - akitando
 draft: false
 ---

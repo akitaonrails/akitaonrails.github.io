@@ -4,13 +4,12 @@ date: '2026-03-31T15:00:00-03:00'
 draft: false
 slug: minisforum-ms-s1-max-amd-ai-max-395-review
 translationKey: minisforum-ms-s1-max-review
+description: "In my tests, the RTX 5090 was up to 7 times faster on models that fit within 32GB. The Minisforum, however, ran 50-to-81GB models the card can’t handle."
 tags:
-  - hardware
-  - llm
-  - homeserver
-  - amd
-  - AI
-  - review
+- hardware
+- local-models
+- performance
+- reviews
 ---
 
 If you've been following my [home server posts](/2024/04/03/meu-netflix-pessoal-com-docker-compose/), you know I used to run everything on an Intel NUC Core i7 with 32GB of RAM. It worked. But as open source AI models grew, the NUC became the bottleneck. Without a dedicated GPU, any LLM inference would fall back to the CPU and turn unusable.

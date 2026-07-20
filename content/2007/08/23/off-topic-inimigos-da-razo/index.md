@@ -2,12 +2,12 @@
 title: 'Off Topic: Inimigos da Razão'
 date: '2007-08-23T17:37:00-03:00'
 slug: off-topic-inimigos-da-razo
+description: "Inspirado por Richard Dawkins e Carl Sagan, o autor defende evidências, ceticismo e responsabilidade pessoal contra dogmas, superstições e disputas irracionais entre tecnologias."
 tags:
+- filosofia
+- ciencia
+- psicologia
 - off-topic
-- principles
-- career
-- management
-- science
 draft: false
 ---
 

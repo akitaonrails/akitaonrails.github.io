@@ -2,16 +2,11 @@
 title: Entendendo o Básico de ComfyUI pra gerar imagens com I.A.
 date: '2025-04-20T19:30:00-03:00'
 slug: entendendo-o-basico-de-comfyui-pra-gerar-imagens-com-i-a
+description: "Explico os principais componentes do ComfyUI usando um workflow que transforma uma foto em anime. Modelos, mapas e parâmetros mudam bastante o resultado, então é preciso experimentar."
 tags:
-- comfyui
-- unet
-- stable diffusion
-- flux
-- latent
-- diffusion models
-- controlnet
-- loras
-  - AI
+- midia-generativa
+- machine-learning
+- tutoriais
 draft: false
 translationKey: comfyui-basics-ai-images
 ---

@@ -3,12 +3,11 @@ title: Phoenix "15 Minute Blog" comparison to Ruby on Rails
 date: '2015-11-20T17:52:00-02:00'
 slug: phoenix-15-minute-blog-comparison-to-ruby-on-rails
 translationKey: phoenix-15-minute-blog-vs-rails
+description: "I compare a blog with nested resources in Phoenix and Rails, from Mix through ExUnit. Phoenix is more explicit and promising for concurrent microservices, but still doesn’t replace the Rails ecosystem."
 tags:
-- learning
-- beginner
-- elixir
-- phoenix
-- english
+- elixir-and-erlang
+- rails
+- web-development
 draft: false
 ---
 

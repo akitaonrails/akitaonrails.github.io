@@ -4,10 +4,9 @@ slug: "vibe-code-zero-to-production-in-6-days-the-m-akita-chronicles"
 date: 2026-02-16T14:19:56+00:00
 draft: false
 tags:
-- vibecode
-- themakitachronicles
-- rubyonrails
-  - AI
+- the-m-akita-chronicles
+- vibe-coding
+- agile
 translationKey: vibe-code-zero-to-prod-6-days
 description: "How I shipped a full newsletter, blog, podcast, and Discord bot to production in six days using vibe coding the right way."
 ---

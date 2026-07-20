@@ -2,9 +2,11 @@
 title: '[Off-Topic] If You Need "Validation," You''re Probably Wrong'
 date: '2016-04-20T15:49:00-03:00'
 slug: off-topic-se-voce-precisa-de-validacao-provavelmente-esta-errado
+description: "Drawing on his Rails journey, the author argues for producing on your own terms and rejecting moral authorities and dogmas. To him, critical thinking, falsifiable ideas, and personal responsibility are the antidote."
 tags:
+- philosophy
+- personal
 - off-topic
-- career
 draft: false
 ---
 

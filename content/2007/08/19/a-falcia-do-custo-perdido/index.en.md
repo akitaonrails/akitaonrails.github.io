@@ -2,10 +2,11 @@
 title: The Sunk Cost Fallacy
 date: '2007-08-19T00:16:00-03:00'
 slug: a-falcia-do-custo-perdido
+description: "A movie ticket illustrates the sunk cost fallacy: money already spent should not decide the next step, whether you are judging a movie, a software license, or an architecture."
 tags:
+- psychology
+- software-architecture
 - off-topic
-- management
-- carreira
 draft: false
 ---
 

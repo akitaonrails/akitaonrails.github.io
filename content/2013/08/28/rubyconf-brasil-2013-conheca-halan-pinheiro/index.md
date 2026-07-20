@@ -2,6 +2,7 @@
 title: 'Rubyconf Brasil 2013: Conheça Halan Pinheiro'
 date: '2013-08-28T16:50:00-03:00'
 slug: rubyconf-brasil-2013-conheca-halan-pinheiro
+description: "Halan Pinheiro apresenta testes automatizados com JavaScript e diz que RSpec ajuda, mas não é pré-requisito. Ele também aponta novos padrões de navegadores e ferramentas de teste, integração contínua e qualidade."
 tags:
 - rubyconfbr2013
 draft: false

@@ -5,12 +5,11 @@ slug: ex-manga-downloadr-um-exercicio-com-elixir
 translationKey: ex-manga-downloadr-exercise
 aliases:
 - /2015/11/18/ex-manga-downloader-an-exercise-with-elixir/
+description: "Construí um scraper em Elixir que parseia o MangaReader, baixa imagens com Tasks paralelas e gera PDFs de 250 páginas para o Kindle. O pipeline funciona, mas timeouts limitam o volume a cerca de 80 requisições."
 tags:
-- learning
-- beginner
-- elixir
-- exmangadownloadr
-- traduzido
+- elixir-e-erlang
+- anime-e-manga
+- automacao
 draft: false
 ---
 

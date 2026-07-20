@@ -2,12 +2,11 @@
 title: Instalando Omarchy 2.0 do Zero - Anotações Pessoais
 date: "2025-08-29T16:00:00-03:00"
 slug: new-omarchy-2-0-install
+description: "Reinstalei meu desktop com Arch Linux e Omarchy, separando o HOME, configurando BTRFS, Timeshift e NFS para o NAS. Depois dos backups, cerca de 95% do setup já estava pronto."
 tags:
-  - arch
-  - omarchy
-  - btrfs
-  - timeshift
-  - lazyvim
+- omarchy
+- linux
+- armazenamento-e-backup
 draft: false
 translationKey: new-omarchy-2-install
 ---

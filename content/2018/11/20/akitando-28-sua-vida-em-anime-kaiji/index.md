@@ -2,15 +2,11 @@
 title: "[Akitando] #28 - Sua Vida em Anime: KAIJI"
 date: '2018-11-20T17:00:00-02:00'
 slug: akitando-28-sua-vida-em-anime-kaiji
+description: "Kaiji vira uma alegoria da vida real: prática deliberada é disciplina contínua, decisões têm consequências e cada pessoa precisa atravessar sua própria ponte, sem esperar que a realidade seja justa."
 tags:
-- kaiji
-- tonegawa
-- mad house
-- anime
-- prática deliberada
-- vida real
-- empreendedorismo
-- startup
+- anime-e-manga
+- aprendizado
+- psicologia
 - akitando
 draft: false
 ---

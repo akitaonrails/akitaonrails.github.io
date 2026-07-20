@@ -4,15 +4,10 @@ slug: "software-is-never-done-4-projects-life-after-deploy-one-shot-prompt-myth"
 date: 2026-03-01T12:00:00-03:00
 draft: false
 tags:
+- frank
+- llms
+- software-engineering
 - off-topic
-- themakitachronicles
-- frankmd
-- franksherlock
-- frankmega
-- agile
-- xp
-- extremeprogramming
-  - AI
 translationKey: software-never-done
 description: "125 post-production commits across 4 projects in 10 days. Real bugs, real users, real iteration. Why one-shot prompting is a myth and software is never 'done'."
 ---

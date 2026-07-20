@@ -2,11 +2,10 @@
 title: "[Akitando] #71 - Usando Git Direito | Limpando seus Commits!"
 date: '2020-02-12T10:30:00-03:00'
 slug: akitando-71-usando-git-direito-limpando-seus-commits
+description: "Um guia avançado mostra como corrigir mensagens, separar ou reescrever commits e remover binários pesados com Git LFS e BFG. Akita também explica por que monorepos e o fluxo do Linux são exceções."
 tags:
-- git
-- github
-- linux
-- monorepo
+- controle-de-versao
+- tutoriais
 - akitando
 draft: false
 ---

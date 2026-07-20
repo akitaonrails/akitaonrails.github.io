@@ -2,10 +2,11 @@
 title: "[Primeiros Passos] Elixir 1.0 + Phoenix Framework 0.13"
 date: '2015-06-02T16:14:00-03:00'
 slug: primeiros-passos-elixir-1-0-phoenix-framework-0-13
+description: "O primeiro CRUD com Elixir 1.0, Phoenix 0.13 e PostgreSQL mostra um framework parecido com Rails, mas ainda imaturo. APIs concorrentes e recursos real-time eram promissores, não prontos para produção."
 tags:
-- learning
-- elixir
-- erlang
+- elixir-e-erlang
+- rails
+- desenvolvimento-web
 draft: false
 ---
 

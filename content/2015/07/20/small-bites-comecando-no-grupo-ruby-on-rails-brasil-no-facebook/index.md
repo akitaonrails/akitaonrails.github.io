@@ -2,8 +2,11 @@
 title: '[Small Bites] Começando no Grupo "Ruby on Rails Brasil" no Facebook'
 date: '2015-07-20T15:36:00-03:00'
 slug: small-bites-comecando-no-grupo-ruby-on-rails-brasil-no-facebook
+description: "As regras do grupo Ruby on Rails Brasil exigem informar salário e contratação nos anúncios e pesquisar antes de repetir dúvidas. Iniciantes também precisam respeitar a convivência."
 tags:
-- facebook
+- ruby
+- rails
+- comunicacao
 draft: false
 ---
 

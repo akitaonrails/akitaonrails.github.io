@@ -2,16 +2,10 @@
 title: "[Akitando] #129 - Apanhando do Gentoo | Melhor Linux???"
 date: '2022-10-11T09:47:00-03:00'
 slug: akitando-129-apanhando-do-gentoo-melhor-linux
+description: "Akita instala Gentoo numa máquina virtual, compila o sistema e enfrenta erros causados pela configuração e pela falta de RAM. O processo ensina muito, mas raramente compensa no uso diário de hardware potente."
 tags:
 - linux
-- gentoo
-- systemd
-- openrc
-- kernel
-- distro
-- gnome
-- webkit
-- segurança
+- reviews
 - akitando
 draft: false
 ---

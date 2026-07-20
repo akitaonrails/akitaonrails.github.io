@@ -2,14 +2,11 @@
 title: "[Akitando] #132 - Rant: A Bolha de Startups Estourou?"
 date: '2022-11-22T10:15:00-03:00'
 slug: akitando-132-rant-a-bolha-de-startups-estourou
+description: "Akita liga juros baixos, dinheiro fácil e pandemia à bolha de tecnologia e às demissões que vieram depois. Para programadores, recomenda estudo consistente e avaliar empresas pelo fluxo de caixa livre."
 tags:
-- bolha
+- mercado-de-tecnologia
+- economia
 - startups
-- ftx
-- criptomoeda
-- demissões
-- layoffs
-- binance
 - akitando
 draft: false
 ---

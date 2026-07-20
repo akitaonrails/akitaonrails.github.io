@@ -3,8 +3,11 @@ title: Programmers Guild - Religion and Sports
 date: '2017-05-14T13:45:00-03:00'
 slug: programmers-guild-religion-and-sports
 translationKey: programmers-guild-religion
+description: "Technology communities resemble religions and sports teams, with identity and confirmation bias distorting technical choices. Professionals accept trade-offs and take ownership of their decisions."
 tags:
-- english
+- psychology
+- philosophy
+- software-engineering
 draft: false
 ---
 

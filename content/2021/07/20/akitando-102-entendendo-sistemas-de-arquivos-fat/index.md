@@ -2,12 +2,11 @@
 title: "[Akitando] #102 - Entendendo Sistemas de Arquivos: FAT"
 date: '2021-07-20T11:37:00-03:00'
 slug: akitando-102-entendendo-sistemas-de-arquivos-fat
+description: "Akita explica como FAT12, FAT16, VFAT e FAT32 organizam arquivos em clusters, diretórios e bit vectors, e conecta essa evolução ao uso de B+Trees em sistemas como HFS, HPFS e NTFS."
 tags:
-- FAT
-- Windows 95
-- MS-DOS
-- OS/2
-- B-Tree
+- armazenamento-e-backup
+- algoritmos-e-estruturas-de-dados
+- ciencia-da-computacao
 - akitando
 draft: false
 ---

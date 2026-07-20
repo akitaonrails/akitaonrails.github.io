@@ -2,13 +2,11 @@
 title: "[Akitando] #11 - Projetos: Aprendendo a Priorizar"
 date: '2018-09-18T17:00:00-03:00'
 slug: akitando-11-projetos-aprendendo-a-priorizar
+description: "Akita explica gestão de projetos pela priorização: limite tempo e custo, estime por ordens de grandeza, itere para corrigir a rota e corte escopo. Se a meta não couber, abandone cedo."
 tags:
+- gestao
 - agile
-- priorização
-- stephen covey
-- estimar
-- planejar
-- projetos
+- produtividade
 - akitando
 draft: false
 ---

@@ -2,12 +2,12 @@
 title: "[Off-Topic] Estimativas são Promessas. Promessas devem ser cumpridas."
 date: '2013-08-23T16:15:00-03:00'
 slug: off-topic-estimativas-sao-promessas-promessas-devem-ser-cumpridas
+description: "O autor argumenta que estimativas de software são promessas, não previsões, e que cumpri-las exige responsabilidade por comunicação, negociação, tempo e obstáculos, além de código."
 tags:
-- off-topic
-- principles
-- career
-- management
 - carreira
+- gestao
+- engenharia-de-software
+- off-topic
 draft: false
 ---
 

@@ -5,11 +5,9 @@ draft: false
 slug: 20-years-of-blogging-ai-finally-translated-everything
 translationKey: 20-years-of-blog-ai-finally-translated-everything
 tags:
-  - blog
-  - ai
-  - llm
-  - themakitachronicles
-  - off-topic
+- blogging
+- personal
+- off-topic
 description: "Four days ago I hit 20 years of blogging. When I sat down to write the anniversary post, I ended up doing something I never had the bandwidth for: translating the whole blog to English. With Claude Code, over a weekend."
 ---
 

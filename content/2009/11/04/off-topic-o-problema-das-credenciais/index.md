@@ -2,11 +2,11 @@
 title: "[Off-Topic] O problema das credenciais"
 date: '2009-11-04T19:21:00-02:00'
 slug: off-topic-o-problema-das-credenciais
+description: "Questiono o uso de certificações, cargos e celebridades como atalhos para validar ideias, mostro falácias comuns na tomada de decisões e defendo testar argumentos com ceticismo."
 tags:
-- off-topic
-- principles
-- career
+- filosofia
 - carreira
+- off-topic
 draft: false
 ---
 

@@ -2,19 +2,11 @@
 title: "[Akitando] #54 - O Guia DEFINITIVO de UBUNTU para Devs Iniciantes"
 date: '2019-07-12T17:00:00-03:00'
 slug: akitando-54-o-guia-definitivo-de-ubuntu-para-devs-iniciantes
+description: "Fabio parte de um Ubuntu recém-instalado e monta um ambiente Web completo, com ASDF, bancos, Docker, SSH, Tmux e Vim. No caminho, explica conceitos essenciais de Linux e suas próprias escolhas de configuração."
 tags:
 - linux
-- ubuntu
-- asdf
-- tmux
-- vim
-- docker
-- bash
-- zsh
-- yadr
-- systemd
-- debian
-- flat-remix
+- ferramentas-de-desenvolvimento
+- tutoriais
 - akitando
 draft: false
 ---

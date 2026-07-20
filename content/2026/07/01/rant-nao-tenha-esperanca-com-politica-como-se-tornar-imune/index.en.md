@@ -4,14 +4,10 @@ slug: "rant-do-not-put-hope-in-politics-how-to-become-immune"
 date: '2026-07-01T11:00:00-03:00'
 draft: false
 translationKey: "rant-politics-immune"
+description: "I argue for treating politics as environmental risk, not religion: an election isn’t a life plan. The proposed strategy is to increase income in hard currency, understand taxes, and organize assets within the law."
 tags:
-  - rant
-  - politics
-  - brazil
-  - economy
-  - career
-  - offshore
-  - taxes
+- politics
+- personal
 ---
 
 > **Warning before someone pretends not to understand:** this is personal opinion. This is not financial, legal, tax, electoral, marital, spiritual advice, or a recipe. The details here are Brazil-specific. If you are going to touch companies, assets, taxes, marriage, inheritance, tax residency, or anything that can wreck your life, talk to a real accountant and a real lawyer. Not me. Not an influencer. Not a Twitter thread.

@@ -3,13 +3,12 @@ title: "Vibe Code: Fiz um Editor de Markdown do zero com Claude Code (FrankMD) P
 slug: "vibe-code-fiz-um-editor-de-markdown-do-zero-com-claude-code-frankmd-part-1"
 date: 2026-02-01T10:40:43-0300
 draft: false
+description: "Criei o FrankMD, um editor Markdown self-hosted em Rails 8 para meu workflow de blog, com preview, uploads, Hugo, temas e revisão por IA. Em três dias, chegou perto do ideal para meu uso."
 tags:
-- vibecode
-- omarchy
-- codemirror
-- hugo
-- obsidian
-  - AI
+- frankmd
+- frank
+- llms
+- inteligencia-artificial
 translationKey: frankmd-part-1
 ---
 

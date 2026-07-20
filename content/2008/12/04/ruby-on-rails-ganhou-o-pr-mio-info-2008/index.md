@@ -2,8 +2,10 @@
 title: Ruby on Rails ganhou o Prêmio Info 2008
 date: '2008-12-04T01:50:00-02:00'
 slug: ruby-on-rails-ganhou-o-pr-mio-info-2008
+description: "Ruby on Rails venceu o Prêmio Info 2008 por votação popular, derrotando o Adobe Air por 41% a 40%. Fabio também registra o segundo prêmio consecutivo do Firefox no Brasil."
 tags:
-- award
+- rails
+- negocios
 draft: false
 ---
 

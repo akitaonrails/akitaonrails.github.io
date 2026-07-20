@@ -3,12 +3,10 @@ title: "Hacking Mattermost Team Edition"
 date: '2016-08-12T14:43:00-03:00'
 slug: hacking-mattermost-team-edition
 translationKey: hacking-mattermost-team-edition
+description: "I used a PostgreSQL trigger to automatically restore private channels deleted by regular users in Mattermost Team Edition, bypassing the missing permissions without changing the source code."
 tags:
-- mattermost
-- postgresql
-- rocket.chat
-- slack
-- english
+- databases
+- automation
 draft: false
 ---
 

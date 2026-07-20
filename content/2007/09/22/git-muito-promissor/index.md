@@ -2,8 +2,10 @@
 title: 'GIT: Muito Promissor'
 date: '2007-09-22T05:44:00-03:00'
 slug: git-muito-promissor
+description: "Em um teste com git-svn e Google Code, o autor trabalha offline com commits, branches e merges. O GIT preserva mudanças após renomes e supera suas expectativas."
 tags:
-- git
+- controle-de-versao
+- ferramentas-de-desenvolvimento
 draft: false
 ---
 

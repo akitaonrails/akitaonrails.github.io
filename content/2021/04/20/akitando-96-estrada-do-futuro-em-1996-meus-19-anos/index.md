@@ -2,13 +2,10 @@
 title: "[Akitando] #96 - Estrada do Futuro em 1996 | Meus 19 Anos"
 date: '2021-04-20T11:57:00-03:00'
 slug: akitando-96-estrada-do-futuro-em-1996-meus-19-anos
+description: "Aos 19 anos, Akita resumiu The Road Ahead, de Bill Gates. Ao revisitar o texto, compara suas previsões com smartphones, cloud e serviços atuais, mostrando que várias ideias se realizaram por caminhos inesperados."
 tags:
-- bill gates
-- estrada do futuro
-- the road ahead
-- video on demand
-- streaming
-- smartphone
+- historia-da-computacao
+- pessoal
 - akitando
 draft: false
 ---

@@ -2,12 +2,12 @@
 title: Processes and Methodologies Won't Help You
 date: '2013-05-24T19:29:00-03:00'
 slug: processos-e-metodologias-nao-vao-te-ajudar
+description: "Processes and methodologies don’t create good developers. The text argues for continuous practice and competent professionals first, then techniques and processes that can extend their work."
 tags:
-- off-topic
-- principles
+- software-engineering
+- learning
 - management
-- agile
-- career
+- off-topic
 draft: false
 ---
 

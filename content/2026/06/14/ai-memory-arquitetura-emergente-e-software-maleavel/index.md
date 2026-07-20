@@ -4,14 +4,11 @@ slug: "ai-memory-arquitetura-emergente-e-software-maleavel"
 date: '2026-06-14T14:00:00-03:00'
 draft: false
 translationKey: ai-memory-emergent-architecture-malleable-software
+description: "Em 24 dias, contribuidores levaram o ai-memory de um MVP pessoal a um sistema multiplataforma e multiusuário. A arquitetura nasceu do uso e só depois foi consolidada."
 tags:
-  - ai-memory
-  - rust
-  - opensource
-  - arquitetura
-  - agile
-  - ai
-  - vibecoding
+- ai-memory
+- arquitetura-de-software
+- agile
 ---
 
 Há umas três semanas eu publiquei o [post explicando o ai-memory](/2026/05/23/criei-sistema-memoria-agentes-codigo-ai-memory/), meu sistema de memória de longo prazo pra agentes de código. A ideia central, pra quem não leu: dar pro Claude Code, Codex, OpenCode e companhia um cérebro compartilhado que persiste entre sessões, uma wiki versionada em git com busca FTS, handoff entre agentes, e consolidação opcional via LLM. Cada projeto isolado, rodando local ou self-hosted, sem mandar seu contexto pra nuvem de ninguém.

@@ -4,15 +4,11 @@ slug: "open-source-best-practices-llm-the-minimum"
 date: '2026-05-30T13:00:00-03:00'
 draft: false
 translationKey: open-source-best-practices-llm-the-minimum
+description: "Open source projects built with LLMs are only ready with simple installation, reliable tests and CI, and documentation focused on the problem. Standardizing releases and deployments makes automation predictable."
 tags:
-  - opensource
-  - github-actions
-  - ci-cd
-  - docker
-  - deploy
-  - rust
-  - AI
-  - vibe-coding
+- open-source
+- software-engineering
+- devops
 ---
 
 Over the last few months I've pushed a pile of personal projects to GitHub. [Frank FBI](https://github.com/akitaonrails/frank_fbi), [Frank Mega](https://github.com/akitaonrails/FrankMega), [Frank Yomik](https://github.com/akitaonrails/FrankYomik), [Frank Sherlock](https://github.com/akitaonrails/FrankSherlock), [Frank Investigator](https://github.com/akitaonrails/frank_investigator), [ai-jail](https://github.com/akitaonrails/ai-jail), [ai-memory](https://github.com/akitaonrails/ai-memory), [ai-usagebar](https://github.com/akitaonrails/ai-usagebar), [ghpending](https://github.com/akitaonrails/ghpending), and so on. Some in Ruby on Rails, most in Rust, one or two in Flutter. Coded mostly with Claude Code and Codex, riding the wave of my [vibe coding marathon](/en/2026/05/14/wrapping-up-my-ai-marathon-success-or-failure/).

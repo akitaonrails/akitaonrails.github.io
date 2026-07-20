@@ -2,10 +2,11 @@
 title: "[Small Bite] Brincando com Metasploit"
 date: '2014-08-27T14:03:00-03:00'
 slug: small-bite-brincando-com-metasploit
+description: "Apresento o Metasploit, sua instalação e o uso do msfconsole para carregar módulos, configurar alvos e executar testes. Ao explorar o desafio Rails, mostro como ler exploits em Ruby ajuda a estudar segurança."
 tags:
-- metasploit
-- security
-- segurança
+- seguranca
+- ruby
+- tutoriais
 draft: false
 ---
 

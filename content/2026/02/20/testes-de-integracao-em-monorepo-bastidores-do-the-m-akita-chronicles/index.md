@@ -3,14 +3,11 @@ title: "Testes de Integração em MonoRepo | Bastidores do The M.Akita Chronicle
 slug: "testes-de-integracao-em-monorepo-bastidores-do-the-m-akita-chronicles"
 date: 2026-02-20T12:48:45+00:00
 draft: false
+description: "Testes unitários não bastavam para três apps que compartilham Markdown. Um ambiente de integração com cache, dados reais via rsync, pipeline paralelo e preflight encontrou bugs que mocks escondiam."
 tags:
-- themakitachronicles
-- rubyonrails
-- tdd
-- integration
-- monorepo
-- vibecode
-  - AI
+- the-m-akita-chronicles
+- testes
+- engenharia-de-software
 translationKey: integration-tests-monorepo
 ---
 

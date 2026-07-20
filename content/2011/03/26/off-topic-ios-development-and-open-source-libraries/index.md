@@ -2,13 +2,12 @@
 title: "[Off-Topic] iOS Development and Open Source Libraries"
 date: '2011-03-26T15:59:00-03:00'
 slug: off-topic-ios-development-and-open-source-libraries
+description: "O autor apresenta bibliotecas para acelerar o desenvolvimento de apps iOS, cobrindo analytics, HTTP, JSON, compartilhamento, jogos, realidade aumentada e testes, mas ressalva que o processamento de imagens está desatualizado."
 tags:
-- off-topic
-- learning
-- beginner
+- mobile
 - apple
-- objective-c
-- english
+- programacao
+- off-topic
 draft: false
 ---
 

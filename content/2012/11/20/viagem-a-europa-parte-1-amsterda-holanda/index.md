@@ -2,9 +2,9 @@
 title: Viagem à Europa (Parte 1) - Amsterdã, Holanda
 date: '2012-11-20T14:22:00-02:00'
 slug: viagem-a-europa-parte-1-amsterda-holanda
+description: "Na primeira visita à Europa, o autor explora Amsterdã, participa da BubbleConf, visita a FingerTips e percorre museus e pontos turísticos numa cidade compacta, acolhedora e fácil de explorar em inglês."
 tags:
-- europe2012
-- amsterdam
+- viagens
 draft: false
 ---
 

@@ -5,13 +5,11 @@ slug: como-nao-zerar-sua-cota-de-desenvolvimento-no-pusher
 translationKey: how-not-to-zero-pusher
 aliases:
 - /2017/10/27/how-not-to-zero-out-your-pusher-development-quota/
+description: "O Pusher Fake mantém desenvolvimento e testes Rails conectados a um servidor local, sem consumir a cota gratuita do Pusher. Fabio explica o setup com Foreman, variáveis alinhadas e RSpec."
 tags:
-- beginner
-- rubyonrails
-- rails51
-- pusher
-- rspec
-- traduzido
+- rails
+- testes
+- tutoriais
 draft: false
 ---
 

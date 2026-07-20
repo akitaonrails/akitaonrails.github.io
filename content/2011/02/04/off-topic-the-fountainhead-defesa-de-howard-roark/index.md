@@ -2,10 +2,11 @@
 title: "[Off-Topic] The Fountainhead: Defesa de Howard Roark"
 date: '2011-02-04T02:40:00-02:00'
 slug: off-topic-the-fountainhead-defesa-de-howard-roark
+description: "Depois de assistir à adaptação de 1949, o autor publica legendado o discurso final de Howard Roark, uma defesa do individualismo de Ayn Rand contra altruísmo, conformismo e servilidade."
 tags:
+- cinema-e-cultura-pop
+- filosofia
 - off-topic
-- principles
-- philosophy
 draft: false
 ---
 

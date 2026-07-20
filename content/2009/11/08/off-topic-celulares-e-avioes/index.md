@@ -2,9 +2,11 @@
 title: "[Off-Topic] Celulares e Aviões"
 date: '2009-11-08T16:05:00-02:00'
 slug: off-topic-celulares-e-avioes
+description: "Defendo que celulares não derrubam aviões e interpreto o aviso para desligar eletrônicos como uma forma de garantir a atenção dos passageiros nos momentos críticos do voo."
 tags:
+- viagens
+- psicologia
 - off-topic
-- principles
 draft: false
 ---
 

@@ -2,9 +2,11 @@
 title: "[Off-Topic] Authority vs. Responsibility"
 date: '2009-07-05T15:10:00-03:00'
 slug: off-topic-autoridade-vs-responsabilidade
+description: "The author argues that separating authority from responsibility dooms processes to failure. Teams accountable for results should decide how they work, with specialists serving as consultants."
 tags:
-- off-topic
 - management
+- software-engineering
+- off-topic
 draft: false
 ---
 

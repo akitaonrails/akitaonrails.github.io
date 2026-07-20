@@ -3,13 +3,12 @@ title: The Economics of Software Development
 date: '2017-06-22T10:56:00-03:00'
 slug: the-economics-of-software-development
 translationKey: economics-software-development
+description: "For small teams, software economics starts with the smallest product that works, accounting for time while avoiding technical debt, premature microservices, and unnecessary performance optimizations."
 tags:
-- off-topic
+- software-engineering
 - agile
-- lean
-- methodologies
-- startup
-- english
+- software-architecture
+- off-topic
 draft: false
 ---
 

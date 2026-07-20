@@ -2,9 +2,9 @@
 title: RailsConf 2008 - Memories
 date: '2008-06-05T21:33:00-03:00'
 slug: railsconf-2008-memories
+description: "O autor narra a viagem de São Paulo a Portland para a RailsConf 2008: foram pelo menos 16 horas de deslocamento e quatro dias intensos de sessões, entrevistas e encontros que compensaram o esforço."
 tags:
 - railsconf2008
-- english
 draft: false
 ---
 

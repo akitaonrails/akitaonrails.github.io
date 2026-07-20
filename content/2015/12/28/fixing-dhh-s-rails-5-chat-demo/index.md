@@ -5,12 +5,11 @@ slug: consertando-o-demo-de-chat-do-dhh-no-rails-5
 translationKey: fixing-dhh-rails-5-chat
 aliases:
 - /2015/12/28/fixing-dhh-s-rails-5-chat-demo/
+description: "Ao revisar o chat de Action Cable de DHH, o autor move a gravação para um background job e remove o callback do model. O código retorna mais rápido, mas a vantagem de concorrência não foi medida."
 tags:
-- pusher
-- rails5
-- actioncable
-- websocket
-- traduzido
+- rails
+- backend
+- sistemas-distribuidos
 draft: false
 ---
 

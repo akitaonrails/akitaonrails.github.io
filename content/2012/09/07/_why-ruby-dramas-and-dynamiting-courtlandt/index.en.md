@@ -3,11 +3,11 @@ title: "_Why, Ruby Dramas, and Dynamiting Courtlandt"
 date: '2012-09-07T14:37:00-03:00'
 slug: _why-ruby-dramas-and-dynamiting-courtlandt
 translationKey: why-ruby-dramas-courtlandt
+description: "Comparing _Why to Howard Roark, the author defends independent creation and interprets the programmer’s disappearance as a reaction to people who tried to control his work."
 tags:
 - philosophy
 - ruby
-- why
-- english
+- biographies
 draft: false
 ---
 

@@ -4,13 +4,11 @@ date: '2026-03-27T10:00:00-03:00'
 draft: false
 slug: teaching-people-to-question-the-news-frank-investigator
 translationKey: frank-investigator-questioning-news
+description: "I built Frank Investigator to compare coverage, track omitted sources, and analyze news in 15 stages with three LLMs. The report flags omissions and reframing, but doesn’t issue final verdicts."
 tags:
-  - ruby
-  - rails
-  - ai
-  - fact-checking
-  - open-source
-  - vibe-coding
+- frank
+- llms
+- artificial-intelligence
 ---
 
 Heads up: [Frank Investigator](https://github.com/akitaonrails/frank_investigator) is an experimental project, in active development, and isn't meant to be the final word on any article it analyzes. It doesn't tell you what's true or false. What it does is ask the questions the article refused to ask, identify known rhetorical patterns, and search for external sources the author left out. If you want to help, contribute on [GitHub](https://github.com/akitaonrails/frank_investigator) or send feedback. If you want to follow the results, [The Makita Chronicles](https://themakitachronicles.com/) newsletter is going to have a new section called "Notícias Duvidosas" (Dubious News) where I'll publish the investigator's summary and a link to the full report.

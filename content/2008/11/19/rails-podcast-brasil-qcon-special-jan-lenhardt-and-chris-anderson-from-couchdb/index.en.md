@@ -3,10 +3,9 @@ title: Rails Podcast Brasil, QCon Special - Jan Lehnardt and Chris Anderson from
 date: '2008-11-19T22:59:00-02:00'
 slug: rails-podcast-brasil-qcon-special-jan-lenhardt-and-chris-anderson-from-couchdb
 translationKey: qcon-jan-chris-couchdb
+description: "Fabio talks with Jan Lehnardt and Chris Anderson about CouchDB and CouchRest. He argues for document-oriented databases in specific scaling cases without abandoning SQL, and considers CouchDB production-ready."
 tags:
 - qcon2008
-- interview
-- english
 draft: false
 ---
 

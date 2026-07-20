@@ -2,14 +2,10 @@
 title: "[Akitando] #70 - Entendendo GIT | (não é um tutorial!)"
 date: '2020-02-05T10:30:00-03:00'
 slug: akitando-70-entendendo-git-nao-e-um-tutorial
+description: "Akita conta por que trocou CVS e Subversion pelo Git e revela como objetos, hashes, DAGs, branches, merge e rebase formam seu modelo distribuído. A ideia é entender a ferramenta, não decorar comandos."
 tags:
-- git
-- linux
-- linus torvalds
-- subversion
-- cvs
-- sourcesafe
-- TFS
+- controle-de-versao
+- ciencia-da-computacao
 - akitando
 draft: false
 ---

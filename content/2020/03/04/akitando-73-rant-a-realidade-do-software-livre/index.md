@@ -2,16 +2,11 @@
 title: '[Akitando] #73 - RANT: A Realidade do "Software Livre"'
 date: '2020-03-04T10:30:00-03:00'
 slug: akitando-73-rant-a-realidade-do-software-livre
+description: "Akita distingue software livre de open source, expõe como o SaaS explora brechas da GPL e critica o uso corporativo do discurso aberto. A saída é tratar licenças, contribuições e aprendizado com pragmatismo."
 tags:
-- software livre
-- free software
-- open source
-- richard stallman
-- GPL
-- AGPL
-- BSD
-- fair use
-- copyright
+- open-source
+- leis-e-regulacao
+- negocios
 - akitando
 draft: false
 ---

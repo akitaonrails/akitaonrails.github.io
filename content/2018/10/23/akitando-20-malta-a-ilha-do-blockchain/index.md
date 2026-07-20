@@ -2,16 +2,10 @@
 title: "[Akitando] #20 - Malta: A Ilha do Blockchain"
 date: '2018-10-23T17:00:00-03:00'
 slug: akitando-20-malta-a-ilha-do-blockchain
+description: "No Delta Summit, Akita examina a nova regulamentação maltesa para blockchain, seus custos e riscos, e vê estabilidade para empresas estabelecidas, mas um ambiente mais parecido com Las Vegas que Silicon Valley."
 tags:
-- malta
-- criptomoedas
-- blockchain
-- mdia
-- mga
-- msfa
-- joseph muscat
-- silvio schembri
-- abdalla kablan
+- bitcoin-e-criptomoedas
+- leis-e-regulacao
 - akitando
 draft: false
 ---

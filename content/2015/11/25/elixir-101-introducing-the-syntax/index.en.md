@@ -3,11 +3,11 @@ title: Elixir 101 - Introducing the Syntax
 date: '2015-11-25T17:25:00-02:00'
 slug: elixir-101-introducing-the-syntax
 translationKey: elixir-101-syntax
+description: "Using ExMangaDownloadr examples, I introduce pattern matching, recursion, Lists, Tuples, Keyword Lists, and the pipe operator to show how Elixir makes Erlang primitives accessible."
 tags:
-- learning
-- beginner
-- elixir
-- english
+- tutorials
+- elixir-and-erlang
+- programming
 draft: false
 ---
 

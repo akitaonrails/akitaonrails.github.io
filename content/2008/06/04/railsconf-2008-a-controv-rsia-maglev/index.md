@@ -2,9 +2,9 @@
 title: 'RailsConf 2008: A Controvérsia MagLev'
 date: '2008-06-04T12:13:00-03:00'
 slug: railsconf-2008-a-controv-rsia-maglev
+description: "O MagLev impressionou com memória compartilhada, transações ACID e micro-benchmarks até 100 vezes superiores ao MRI, mas ainda era uma prova de conceito, com compatibilidade e suporte a Rails incompletos."
 tags:
 - railsconf2008
-- smalltalk
 draft: false
 ---
 

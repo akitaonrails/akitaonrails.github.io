@@ -3,13 +3,10 @@ title: Arch Linux - Best distro ever?
 date: '2017-01-10T14:25:00-02:00'
 slug: arch-linux-best-distro-ever
 translationKey: arch-linux-best-distro
+description: "After getting frustrated with Fedora, the author installs Arch with GNOME 3.22 and finds more polished defaults, rolling upgrades, and a practical AUR. He ends convinced it is the best Linux distro he has used."
 tags:
 - linux
-- archlinux
-- pacman
-- pacaur
-- asdf
-- english
+- reviews
 draft: false
 ---
 

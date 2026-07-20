@@ -2,10 +2,11 @@
 title: "[Small Bites] Direct Upload para S3: a Solução Definitiva!"
 date: '2014-12-18T14:28:00-02:00'
 slug: small-bites-direct-upload-para-s3-a-solucao-definitiva
+description: "O autor mostra como o Refile envia imagens do navegador direto ao S3, reduzindo a carga no Rails, e integra cache e CloudFront. Ele ressalva que recomendações posteriores mudaram."
 tags:
-- learning
 - rails
-- heroku
+- cloud
+- tutoriais
 draft: false
 ---
 

@@ -2,24 +2,11 @@
 title: Meus Teclados Modernos Favoritos
 date: '2024-10-24T11:05:00-03:00'
 slug: meus-teclados-modernos-favoritos
+description: "Testei Moonlander, Corne, GK6, Q15 e Voyager para comparar layouts, QMK e ergonomia. Depois de muito treino, o Voyager virou meu teclado diário por ser split, fino e customizável."
 tags:
-- zsa
-- keychron
-- gizmo
-- corne
-- hillside
-- qmk
-- zmk
-- moonlander
-- voyager
-- gk6
-- q15
-- teclado
-- ortolinear
-- colunar
-- staggered
-- teclas
-- switches
+- teclados
+- hardware
+- reviews
 draft: false
 ---
 

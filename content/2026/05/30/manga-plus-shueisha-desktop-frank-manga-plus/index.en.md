@@ -4,13 +4,12 @@ slug: "manga-plus-shueisha-on-the-desktop-frank-manga-plus"
 date: '2026-05-30T09:00:00-03:00'
 draft: false
 translationKey: manga-plus-shueisha-desktop-frank-manga-plus
+description: "Frank Manga+ brings the MANGA Plus catalog to the desktop, while Prettify improves reading on websites and Kindle, and Frank Yomik adds furigana or translation to Japanese and Korean pages."
 tags:
-  - rust
-  - tauri
-  - manga
-  - desktop
-  - opensource
-  - shueisha
+- frank-yomik
+- frank
+- llms
+- artificial-intelligence
 ---
 
 ![Frank Manga+ logo: the name stylized in red and white over a black background.](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/05/30/manga-plus/logo.png)

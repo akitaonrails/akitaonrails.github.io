@@ -2,9 +2,10 @@
 title: Design Patterns representam defeitos nas Linguagens
 date: '2006-10-30T08:27:00-03:00'
 slug: design-patterns-representam-defeitos-nas-linguagens
+description: "O texto argumenta que muitos Design Patterns expõem deficiências das linguagens e deveriam ser absorvidos por elas, até se tornarem invisíveis. Ruby on Rails aparece como exemplo ao integrar MVC em uma DSL web."
 tags:
-- principles
-- design-patterns
+- linguagens-de-programacao
+- arquitetura-de-software
 draft: false
 ---
 

@@ -2,12 +2,11 @@
 title: Instalando Grafana no meu Home Server
 date: "2025-09-10T16:00:00-03:00"
 slug: instalando-grafana-no-meu-home-server
+description: "Montei Grafana, Prometheus e cAdvisor com Docker Compose para acompanhar o Intel NUC por dashboards. Os IDs 1860, 13484 e 3662 cobrem métricas do sistema, containers e saúde geral sem pesar no servidor."
 tags:
-  - homeserver
-  - grafana
-  - prometheus
-  - cadvisor
-  - docker
+- homelab
+- containers
+- devops
 draft: false
 translationKey: grafana-home-server
 ---

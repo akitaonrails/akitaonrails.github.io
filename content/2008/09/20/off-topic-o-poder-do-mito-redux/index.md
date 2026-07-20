@@ -2,11 +2,12 @@
 title: 'Off-Topic: O Poder do Mito, Redux'
 date: '2008-09-20T05:56:00-03:00'
 slug: off-topic-o-poder-do-mito-redux
+description: "Akita critica a promessa de fabricar líderes com autoajuda, certificações e metodologias prontas. Para ele, liderança exige autodidatismo, mérito e desafios reais, não receitas que atribuem todo sucesso ao método."
 tags:
+- filosofia
+- carreira
+- aprendizado
 - off-topic
-- principles
-- philosophy
-- career
 draft: false
 ---
 

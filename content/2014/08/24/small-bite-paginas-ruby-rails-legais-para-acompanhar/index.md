@@ -2,9 +2,9 @@
 title: "[Small Bite] Páginas Ruby/Rails Legais para Acompanhar!"
 date: '2014-08-24T19:34:00-03:00'
 slug: small-bite-paginas-ruby-rails-legais-para-acompanhar
+description: "Ruby Toolbox, listas Awesome, guias de estilo e Better Specs formam um roteiro prático para encontrar projetos, consultar referências e escrever Ruby e Rails com mais consistência."
 tags:
-- learning
-- beginner
+- aprendizado
 - ruby
 - rails
 draft: false

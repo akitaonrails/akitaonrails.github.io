@@ -3,12 +3,11 @@ title: 'Ex Manga Downloadr - Part 2: Poolboy to the rescue!'
 date: '2015-11-19T14:35:00-02:00'
 slug: ex-manga-downloadr-part-2-poolboy-to-the-rescue
 translationKey: ex-manga-downloadr-part-2
+description: "I replaced manual batches of 80 requests with a GenServer Worker using Poolboy and a Supervisor, backed by a pool of 50 processes. Akira’s roughly 2,200 pages took under 50 seconds, limited by MangaReader."
 tags:
-- learning
-- beginner
-- elixir
-- exmangadownloadr
-- english
+- elixir-and-erlang
+- performance
+- distributed-systems
 draft: false
 ---
 

@@ -2,17 +2,11 @@
 title: "[Akitando] #7 - A Controvérsia da Lerna vs ICE"
 date: '2018-09-04T11:00:00-03:00'
 slug: akitando-7-a-controversia-da-lerna-vs-ice
+description: "Akita analisa a tentativa de alterar a licença MIT da Lerna para excluir empresas ligadas à ICE. A mudança foi revertida porque open source não deve discriminar grupos nem retirar direitos retroativamente."
 tags:
-- lerna
+- open-source
+- leis-e-regulacao
 - javascript
-- ice
-- palantir
-- gpl
-- agpl
-- mit
-- bsd
-- copyright
-- copyleft
 - akitando
 draft: false
 ---

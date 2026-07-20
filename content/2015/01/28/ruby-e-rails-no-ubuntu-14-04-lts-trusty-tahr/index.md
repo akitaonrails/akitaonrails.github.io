@@ -2,9 +2,10 @@
 title: Ruby e Rails no Ubuntu 14.04 LTS Trusty Tahr
 date: '2015-01-28T17:04:00-02:00'
 slug: ruby-e-rails-no-ubuntu-14-04-lts-trusty-tahr
+description: "O autor atualiza seu ambiente Rails no Ubuntu 14.04 com Ruby via RVM, PostgreSQL, Redis, Memcached, Vim, Nginx e Passenger, cobrindo desenvolvimento e deploy."
 tags:
-- learning
 - rails
+- ruby
 - linux
 draft: false
 ---

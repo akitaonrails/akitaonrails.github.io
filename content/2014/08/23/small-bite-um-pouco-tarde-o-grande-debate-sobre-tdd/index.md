@@ -2,9 +2,10 @@
 title: "[Small Bite] Um pouco tarde: O Grande Debate Sobre TDD"
 date: '2014-08-23T17:21:00-03:00'
 slug: small-bite-um-pouco-tarde-o-grande-debate-sobre-tdd
+description: "Depois de assistir ao keynote de DHH e ao debate com Martin Fowler e Kent Beck, o autor considera a disputa secundária: seja Test-First ou Test-After, o essencial é escrever testes."
 tags:
-- learning
-- tests
+- testes
+- engenharia-de-software
 draft: false
 ---
 

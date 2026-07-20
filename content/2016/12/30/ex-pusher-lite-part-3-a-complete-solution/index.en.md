@@ -3,12 +3,11 @@ title: Ex Pusher Lite - Part 3 - A Complete Solution
 date: '2016-12-30T17:38:00-02:00'
 slug: ex-pusher-lite-part-3-a-complete-solution
 translationKey: ex-pusher-lite-3
+description: "I built a Pusher-inspired service with Phoenix and Elixir, connecting a Rails application through WebSockets and an API and distributing messages across nodes. It covers many cases, but is not production-safe yet."
 tags:
-- expusherlite
-- elixir
-- phoenix
-- websockets
-- english
+- elixir-and-erlang
+- distributed-systems
+- backend
 draft: false
 ---
 

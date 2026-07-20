@@ -2,14 +2,11 @@
 title: '[Akitando #83] "Akita, quais Cursos você recomenda? E o Low-Code? E o GPT-3?"'
 date: '2020-08-28T10:00:00-03:00'
 slug: akitando-83-akita-quais-cursos-voce-recomenda-e-o-low-code-e-o-gpt-3
+description: "Akita responde sobre cursos, low-code e GPT-3 e liga tudo à ansiedade profissional. Ferramentas mudam, mas carreira se sustenta em fundamentos e na capacidade de aprender por conta própria."
 tags:
-- cursos
-- ead
-- gpt-3
-- deepmind
-- low-code
-- no-code
-- ansiedade
+- carreira
+- aprendizado
+- llms
 - akitando
 draft: false
 ---

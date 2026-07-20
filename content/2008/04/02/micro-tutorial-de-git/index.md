@@ -2,9 +2,10 @@
 title: Micro Tutorial de Git
 date: '2008-04-02T23:57:00-03:00'
 slug: micro-tutorial-de-git
+description: "Com exemplos práticos, o autor percorre o fluxo diário do Git, de clones e branches a merges, rebases, stash, conflitos e resets. O histórico local torna tudo rápido, flexível e fácil de sincronizar."
 tags:
-- git
-- tutorial
+- tutoriais
+- controle-de-versao
 draft: false
 ---
 

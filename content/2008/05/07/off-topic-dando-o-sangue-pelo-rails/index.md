@@ -2,9 +2,10 @@
 title: 'Off-Topic: Dando o Sangue pelo Rails!'
 date: '2008-05-07T18:34:00-03:00'
 slug: off-topic-dando-o-sangue-pelo-rails
+description: "Sem vagas para agendar o passaporte em São Paulo, o autor viajou a Niterói, doou sangue numa campanha contra a dengue e conseguiu atendimento na Polícia Federal. A viagem à RailsConf voltou a ser possível, mas na correria."
 tags:
+- railsconf2008
 - off-topic
-- biography
 draft: false
 ---
 

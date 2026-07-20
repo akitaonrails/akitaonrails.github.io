@@ -2,12 +2,11 @@
 title: 'Tradução: Contar é Perda de Tempo'
 date: '2007-09-01T13:08:00-03:00'
 slug: traduo-contar-perda-de-tempo
+description: "A tradução critica a contagem de tarefas, estimativas e horas quando ela não orienta decisões. Um caso com 20 a 25 tarefas por dia expõe o desperdício da medição."
 tags:
-- off-topic
-- career
-- management
 - agile
-- translation
+- gestao
+- off-topic
 draft: false
 ---
 

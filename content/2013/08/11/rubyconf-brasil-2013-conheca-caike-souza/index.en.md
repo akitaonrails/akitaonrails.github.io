@@ -2,6 +2,7 @@
 title: 'Rubyconf Brasil 2013: Meet Caike Souza'
 date: '2013-08-11T10:00:00-03:00'
 slug: rubyconf-brasil-2013-meet-caike-souza
+description: "Caike Souza shows how to reduce the friction of joining an existing Rails project, from environment problems through the first deploy. He also recommends reading good code and following EdTech."
 tags:
 - rubyconfbr2013
 draft: false

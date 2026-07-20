@@ -2,10 +2,11 @@
 title: "[#IF] ActiveAdmin + Editor HTML 5"
 date: '2013-05-13T14:24:00-03:00'
 slug: if-activeadmin-editor-html-5
+description: "O tutorial estende o ActiveAdmin com WYSIHTML5 e Dragonfly para criar um CRUD de páginas HTML com editor, galeria e upload de imagens, incorporando recursos de CMS à aplicação Rails."
 tags:
-- learning
 - rails
-- activeadmin
+- tutoriais
+- desenvolvimento-web
 draft: false
 ---
 

@@ -3,15 +3,10 @@ title: Ubuntu 16.04 LTS Xenial on Vagrant on Vmware Fusion
 date: '2016-09-21T18:08:00-03:00'
 slug: ubuntu-16-04-lts-xenial-on-vagrant-on-vmware-fusion
 translationKey: ubuntu-xenial-vagrant-vmware
+description: "I build an Ubuntu 16.04 box in Vagrant with VMware Fusion and configure the development environment, from locale and PostgreSQL to Ruby, Java, Elasticsearch, Clojure, Rust, Go, and Elixir."
 tags:
 - linux
-- install
-- learning
-- elixir
-- crystal
-- clojure
-- ruby on rails
-- postgresql
+- developer-tools
 draft: false
 ---
 

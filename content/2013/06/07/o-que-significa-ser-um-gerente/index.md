@@ -2,12 +2,12 @@
 title: O que significa ser um Gerente?
 date: '2013-06-07T19:40:00-03:00'
 slug: o-que-significa-ser-um-gerente
+description: "Henry Mintzberg trata o gerenciamento como uma prática, não como ciência ou profissão: bons gerentes combinam arte, ofício, técnica e experiência para agir conforme o contexto."
 tags:
+- gestao
+- psicologia
+- aprendizado
 - off-topic
-- principles
-- management
-- agile
-- carreira
 draft: false
 ---
 

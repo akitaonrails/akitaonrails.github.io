@@ -2,9 +2,11 @@
 title: Quais são algumas das piores práticas para aplicações Ruby on Rails?
 date: '2013-03-24T12:45:00-03:00'
 slug: quais-sao-algumas-das-piores-praticas-para-aplicacoes-ruby-on-rails--2
+description: "Ao revisar projetos Rails problemáticos, o autor aponta falta de testes, SQL manual, N+1, NoSQL sem justificativa e código sem documentação, mostrando como o ActiveRecord reduz 11 queries a 2."
 tags:
-- learning
 - rails
+- engenharia-de-software
+- bancos-de-dados
 draft: false
 ---
 

@@ -3,16 +3,12 @@ title: "Software Nunca Está 'Pronto' — 4 Projetos, a Vida Pós-Deploy, e Por 
 slug: "software-nunca-esta-pronto-4-projetos-a-vida-pos-deploy-e-por-que-one-shot-prompt-e-mito"
 date: 2026-03-01T12:00:00-03:00
 draft: false
+description: "Depois de 125 commits pós-publicação em quatro projetos, bugs reais, novas features, releases e contribuições externas reforçaram minha conclusão: one-shot serve para demo. Produção exige iteração, testes, CI e decisões humanas."
 tags:
+- frank
+- llms
+- engenharia-de-software
 - off-topic
-- themakitachronicles
-- frankmd
-- franksherlock
-- frankmega
-- agile
-- xp
-- extremeprogramming
-  - AI
 translationKey: software-never-done
 ---
 

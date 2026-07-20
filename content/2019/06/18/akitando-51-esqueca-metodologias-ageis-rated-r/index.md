@@ -2,20 +2,10 @@
 title: '[Akitando] #51 - Esqueça Metodologias "Ágeis" | [Rated R]'
 date: '2019-06-18T17:00:00-03:00'
 slug: akitando-51-esqueca-metodologias-ageis-rated-r
+description: "Fabio critica o Ágil vendido como processo, métrica ou cerimônia e recupera a ideia central: profissionais responsáveis devem usar práticas como XP para entregar valor e tomar decisões reais."
 tags:
 - agile
-- agile manifesto
-- ágil
-- manifesto ágil
-- dave thomas
-- robert martin
-- scrum
-- extreme programming
-- xp
-- kent beck
-- kanban
-- lean
-- safe
+- engenharia-de-software
 - akitando
 draft: false
 ---

@@ -5,12 +5,12 @@ slug: estimativas-sao-promessas-uma-metafora-melhor
 translationKey: estimates-are-promises
 aliases:
 - /2017/06/26/estimates-are-promises-a-better-metaphor/
+description: "Estimativas podem virar promessas quando há gestão de risco: trave tempo e custo, priorize os primeiros 20% do escopo e use entregas em staging e velocidade como termômetros para ajustar o rumo."
 tags:
-- off-topic
-- principles
-- management
 - agile
-- traduzido
+- gestao
+- engenharia-de-software
+- off-topic
 draft: false
 ---
 

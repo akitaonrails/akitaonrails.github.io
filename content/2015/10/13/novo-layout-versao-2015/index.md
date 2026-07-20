@@ -2,8 +2,10 @@
 title: Novo Layout (versão 2015)
 date: '2015-10-13T15:16:00-03:00'
 slug: novo-layout-versao-2015
+description: "Para reorganizar o blog, revisei manualmente 1.025 posts e marquei 613 como obsoletos. Os 412 restantes passaram a aparecer juntos na homepage, em um layout bare-essentials com apenas 250 KB de HTML."
 tags:
 - blog
+- produtividade
 draft: false
 ---
 

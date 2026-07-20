@@ -2,9 +2,9 @@
 title: A Controvérsia Test::Unit vs RSpec/Cucumber
 date: '2011-04-17T15:26:00-03:00'
 slug: a-controversia-test-unit-vs-rspec-cucumber
+description: "Ao revisar a história de TDD e BDD, Akita compara Test::Unit, RSpec e Cucumber e conclui que conceitos importam mais que sintaxe, recomendando começar pelo framework padrão do Ruby."
 tags:
-- fud
-- rspec
+- testes
 - ruby
 draft: false
 ---

@@ -2,8 +2,11 @@
 title: 'Minha Coluna na RubyOnBr: Rails, Sucesso pela Arrogância?'
 date: '2006-12-06T09:41:00-02:00'
 slug: minha-coluna-na-rubyonbr-rails-sucesso-pela-arrogância
+description: "A coluna explica como o Opinionated Software orienta as escolhas do Rails e relaciona essa abordagem à tendência de criar aplicações web focadas, em vez de sites que tentam fazer tudo."
 tags:
-- rubyonbr
+- rails
+- arquitetura-de-software
+- desenvolvimento-web
 draft: false
 ---
 

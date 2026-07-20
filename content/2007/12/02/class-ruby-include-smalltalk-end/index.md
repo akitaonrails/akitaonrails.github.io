@@ -2,11 +2,11 @@
 title: class Ruby; include Smalltalk; end
 date: '2007-12-02T15:15:00-02:00'
 slug: class-ruby-include-smalltalk-end
+description: "Um exercício de metaprogramação recria em Ruby a sintaxe de condicionais do Smalltalk, mas o teste mostra que o envio de métodos fica de 2 a 4 vezes mais lento."
 tags:
-- learning
-- beginner
 - ruby
-- smalltalk
+- linguagens-de-programacao
+- performance
 draft: false
 ---
 

@@ -2,19 +2,11 @@
 title: "[Akitando] #16 - Sua Linguagem NÃO É Especial! (Parte 2)"
 date: '2018-10-04T17:00:00-03:00'
 slug: akitando-16-sua-linguagem-nao-e-especial-parte-2
+description: "Akita percorre CLU, SNOBOL, Prolog, Erlang, ML, Go e REBOL para mostrar de onde vieram recursos atuais, como pattern matching, concorrência e inferência de tipos. Sua linguagem favorita é só mais uma herdeira."
 tags:
-- grace hopper
-- cobol
-- barbara liskov
-- occam
-- haskell
-- elixir
-- erlang
-- golang
-- python
-- scipy
-- programação
-- computação
+- linguagens-de-programacao
+- ciencia-da-computacao
+- programacao
 - akitando
 draft: false
 ---

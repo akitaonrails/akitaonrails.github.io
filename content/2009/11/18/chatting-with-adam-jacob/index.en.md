@@ -3,8 +3,11 @@ title: Chatting with Adam Jacob
 date: '2009-11-18T11:46:00-02:00'
 slug: chatting-with-adam-jacob
 translationKey: chatting-adam-jacob
+description: "Adam Jacob and Jesse Robbins explain how Chef began, defend its Ruby-based flexibility, and show how the tool balances automation, scalability, and agility in Web Ops."
 tags:
-- interview
+- interviews
+- devops
+- automation
 draft: false
 ---
 

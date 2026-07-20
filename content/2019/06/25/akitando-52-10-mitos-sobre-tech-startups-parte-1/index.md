@@ -2,17 +2,11 @@
 title: "[Akitando] #52 - 10 Mitos sobre Tech Startups | Parte 1"
 date: '2019-06-25T17:00:00-03:00'
 slug: akitando-52-10-mitos-sobre-tech-startups-parte-1
+description: "Fabio questiona os cinco primeiros mitos de startups: boas ideias e produtos não bastam, programadores “ninja” não existem, empreender não é ser o próprio chefe e horas extras não criam eficiência."
 tags:
 - startups
-- incubadoras
-- aceleradoras
-- investimentos
-- venture capital
-- mitos
-- ninja
-- invenção
-- inovação
-- Agile
+- negocios
+- mercado-de-tecnologia
 - akitando
 draft: false
 ---

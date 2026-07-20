@@ -3,15 +3,11 @@ title: Windows Subsystem for Linux is good, but not enough yet
 date: '2017-09-20T14:43:00-03:00'
 slug: windows-subsystem-for-linux-is-good-but-not-enough-yet
 translationKey: windows-subsystem-linux
+description: "I tested WSL with Rails, RSpec, PhantomJS, and Ruby and compared it with Linux and VirtualBox. Filesystem emulation was at least four times slower, so I stuck with virtualized Linux."
 tags:
-- windows
-- wsl
-- manjaro
-- nvidia
-- mac
+- linux
 - microsoft
-- apple
-- english
+- performance
 draft: false
 ---
 

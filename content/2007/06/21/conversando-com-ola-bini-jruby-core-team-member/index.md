@@ -2,9 +2,11 @@
 title: Conversando com Ola Bini (JRuby Core Team Member)
 date: '2007-06-21T20:42:00-03:00'
 slug: conversando-com-ola-bini-jruby-core-team-member
+description: "Ola Bini explica sua chegada ao JRuby Core Team, os desafios de compatibilidade com MRI e extensões C, o uso de JRuby em Rails e Mingle e por que aprender linguagens diferentes melhora o programador."
 tags:
-- interview
-- jruby
+- entrevistas
+- ruby
+- linguagens-de-programacao
 draft: false
 translationKey: chatting-ola-bini
 aliases:

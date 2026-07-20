@@ -2,12 +2,12 @@
 title: "[Off-Topic] Breaking Bad foi uma startup de muito sucesso"
 date: '2014-03-28T06:00:00-03:00'
 slug: off-topic-breaking-bad-foi-uma-startup-de-muito-sucesso
+description: "Lendo Breaking Bad como uma startup, o autor interpreta Walt como um empreendedor obcecado por qualidade, escala e território. Para ele, assumir a responsabilidade exige sacrifícios e bons parceiros."
 tags:
-- off-topic
-- management
-- insights
-- leisure
 - startups
+- gestao
+- cinema-e-cultura-pop
+- off-topic
 draft: false
 ---
 

@@ -3,14 +3,10 @@ title: Replacing RVM/Rbenv/Nvm/etc for ASDF
 date: '2017-10-24T14:19:00-02:00'
 slug: replacing-rvm-rbenv-nvm-etc-for-asdf
 translationKey: replacing-rvm-with-asdf
+description: "Fabio replaces RVM, Rbenv, NVM, and virtualenv with ASDF, which manages Ruby, Node.js, Python, and other languages through one set of commands. He covers plugins, local and global versions, and reshim."
 tags:
-- rvm
-- rbenv
-- nvm
-- ruby
-- nodejs
-- elixir
-- english
+- developer-tools
+- automation
 draft: false
 ---
 

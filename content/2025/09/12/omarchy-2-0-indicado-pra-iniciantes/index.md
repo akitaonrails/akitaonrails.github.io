@@ -2,12 +2,11 @@
 title: Omarchy 2.0 - Indicado pra Iniciantes?
 date: "2025-09-12T12:00:00-03:00"
 slug: omarchy-2-0-indicado-pra-iniciantes
+description: "Omarchy é meu Linux diário, mas não existe uma distro universal para iniciantes. Como o hardware muda tudo, mostro como testar ISOs com Ventoy e ambientes de desenvolvimento com Distrobox antes de escolher."
 tags:
-  - omarchy
-  - distrobox
-  - ventoy
-  - balena
-  - arch
+- omarchy
+- linux
+- tutoriais
 draft: false
 translationKey: omarchy-for-beginners
 ---

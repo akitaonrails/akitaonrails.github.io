@@ -2,9 +2,11 @@
 title: 'Off Topic: "I Am Legend" - TERRIBLE!'
 date: '2008-01-19T02:46:00-02:00'
 slug: off-topic-i-am-legend-horrvel
+description: "The review considers I Am Legend’s opening strong, but rejects the monsters, Richard Matheson’s shallow adaptation, and the religious third act. For the author, the movie completely falls apart."
 tags:
+- film-and-pop-culture
+- reviews
 - off-topic
-- leisure
 draft: false
 ---
 

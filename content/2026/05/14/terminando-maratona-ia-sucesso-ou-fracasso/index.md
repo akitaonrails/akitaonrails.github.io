@@ -3,11 +3,11 @@ title: "Terminando Minha Maratona de IA: Sucesso ou Fracasso?"
 date: '2026-05-14T14:00:00-03:00'
 draft: false
 translationKey: terminando-maratona-ia-sucesso-ou-fracasso
+description: "Após mais de 500 horas em 24 repositórios, Akita ranqueia seus experimentos e conclui que Codex e Claude Code sustentam programação diária, mas sem revisão e XP a produtividade vira slop."
 tags:
-  - opiniao
-  - ia
-  - vibecoding
-  - github
+- vibe-coding
+- agentes-de-codigo
+- engenharia-de-software
 ---
 
 Acho que finalmente saí do meu hiperfoco em IA. Quando comecei a acelerar em fevereiro e fui até quase maio, o objetivo era responder uma pergunta simples: dá ou não dá pra usar a nova geração de frontier LLMs da Anthropic e da OpenAI pra codar 100% do tempo? Resposta curta: dá.

@@ -2,11 +2,12 @@
 title: '[Off-Topic] The Myth of the "Legacy"'
 date: '2012-08-15T12:28:00-03:00'
 slug: off-topic-o-mito-do-legado
+description: "The author criticizes automatically rewriting legacy systems and tells how he fixed an ASP with DCOM in two weeks, preserving the code and winning the client a new project."
 tags:
+- software-engineering
+- software-architecture
+- business
 - off-topic
-- principles
-- career
-- management
 draft: false
 ---
 

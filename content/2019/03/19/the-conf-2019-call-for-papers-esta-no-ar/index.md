@@ -2,10 +2,9 @@
 title: THE CONF 2019 - Call for Papers está no Ar!
 date: '2019-03-19T13:52:00-03:00'
 slug: the-conf-2019-call-for-papers-esta-no-ar
+description: "A THE CONF 2019 recebe propostas de palestras em inglês sobre código e tecnologia até o fim de abril. O evento será em agosto e destinará toda a receita dos ingressos a duas organizações."
 tags:
 - theconf
-- codeminer
-- infoqbrasil
 draft: false
 ---
 

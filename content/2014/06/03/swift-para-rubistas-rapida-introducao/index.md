@@ -2,12 +2,11 @@
 title: Swift para Rubistas, Rápida Introdução
 date: '2014-06-03T17:01:00-03:00'
 slug: swift-para-rubistas-rapida-introducao
+description: "Um tour de Swift para rubistas compara ranges, opcionais, extensions, coleções, tuples e closures com Ruby. A sintaxe fica mais simples, mas as extensas APIs Cocoa continuam sendo o desafio."
 tags:
-- learning
-- beginner
+- linguagens-de-programacao
 - apple
-- swift
-- objective-c
+- aprendizado
 draft: false
 ---
 

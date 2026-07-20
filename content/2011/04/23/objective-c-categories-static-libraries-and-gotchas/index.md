@@ -5,12 +5,11 @@ slug: objective-c-categories-static-libraries-e-pegadinhas
 translationKey: objc-categories-static-libs
 aliases:
 - /2011/04/23/objective-c-categories-static-libraries-and-gotchas/
+description: "Ao testar uma static library Objective-C, Akita encontra categories ausentes em runtime e resolve o problema do linker com -all_load nos targets que dependem da biblioteca."
 tags:
-- learning
-- beginner
 - apple
-- objective-c
-- traduzido
+- programacao
+- tutoriais
 draft: false
 ---
 

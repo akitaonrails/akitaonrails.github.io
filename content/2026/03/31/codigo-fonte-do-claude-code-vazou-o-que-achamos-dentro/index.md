@@ -3,12 +3,11 @@ title: "O código fonte do Claude Code vazou. O que achamos dentro."
 date: '2026-03-31T17:00:00-03:00'
 draft: false
 translationKey: claude-code-source-leak
+description: "Analisei o source map que vazou do Claude Code e encontrei features escondidas, memória em camadas, multiagentes e um DRM baseado em xxHash64. O código também expôs um produto difícil de manter."
 tags:
-  - ai
-  - security
-  - claude-code
-  - vibe-coding
-  - open-source
+- agentes-de-codigo
+- seguranca
+- engenharia-de-software
 ---
 
 > Atualizado em 2 de abril de 2026: se você já tinha lido este texto ontem, vale pular direto para a [nova seção de atualização](#update-2026-04-02).

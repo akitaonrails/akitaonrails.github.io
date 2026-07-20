@@ -2,6 +2,7 @@
 title: Primeiro Dia de RubyConf Brasil 2011
 date: '2011-11-03T07:03:00-02:00'
 slug: primeiro-dia-de-rubyconf-brasil-2011
+description: "Fabio anuncia a RubyConf Brasil 2011 e propõe testar hashtags separadas por sala, exibindo tweets nos projetores para perguntas e comentários em tempo real durante as palestras."
 tags:
 - rubyconfbr2011
 draft: false

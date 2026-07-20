@@ -2,9 +2,11 @@
 title: Viagem à Europa (Parte 2) - Berlim, Alemanha
 date: '2012-11-20T19:21:00-02:00'
 slug: viagem-a-europa-parte-2-berlim-alemanha
+description: "Em um dia intenso, o autor percorre Berlim de transporte público e visita Groupon, SponsorPay, Travis-CI e SoundCloud. Imóveis acessíveis atraem startups, mas encontrar bons profissionais continua difícil."
 tags:
-- europe2012
-- berlim
+- viagens
+- startups
+- carreira
 draft: false
 ---
 

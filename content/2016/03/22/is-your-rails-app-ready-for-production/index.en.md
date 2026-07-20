@@ -3,14 +3,11 @@ title: Is your Rails app ready for Production?
 date: '2016-03-22T15:11:00-03:00'
 slug: is-your-rails-app-ready-for-production
 translationKey: rails-app-ready-for-production
+description: "A Rails production checklist covers deployment, web servers, monitoring, dependencies, databases, queues, CDNs, and access. The final recommendation is to optimize with metrics before rewriting everything."
 tags:
-- learning
+- tutorials
+- devops
 - rails
-- heroku
-- deployment
-- optimization
-- security
-- performance
 draft: false
 ---
 

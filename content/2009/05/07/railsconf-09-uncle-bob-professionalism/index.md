@@ -5,9 +5,9 @@ slug: railsconf-09-tio-bob-profissionalismo
 translationKey: railsconf-2009-professionalism
 aliases:
 - /2009/05/07/railsconf-09-uncle-bob-professionalism/
+description: "Robert Martin responde se é possível ser profissional demais e transforma a pergunta em uma explicação simples sobre profissionalismo. O post também aponta para a keynote completa."
 tags:
 - railsconf2009
-- traduzido
 draft: false
 ---
 

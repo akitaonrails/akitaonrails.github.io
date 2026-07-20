@@ -2,21 +2,11 @@
 title: "[Akitando #79] Teclados Mecânicos Exóticos | Minha coleção - Parte 2"
 date: '2020-05-12T17:55:00-03:00'
 slug: akitando-79-teclados-mecanicos-exoticos-minha-colecao-parte-2
+description: "Akita apresenta Keychron K2, Drop Ctrl, UHK, QwerkyWriter e Model M, além de ergonomia, UNIX e TTY. O K2 vence em custo-benefício, enquanto teclados caros aparecem mais como luxo que produtividade."
 tags:
-- keychron
-- drop ctrl
-- ultimate hacking keyboard
-- qwerkywriter
-- olivetti
-- IBM
-- telex
-- UNIX
-- baudot
-- ascii
-- unicode
-- ergonomia
-- sculpt
-- kinesis
+- teclados
+- hardware
+- reviews
 - akitando
 draft: false
 ---

@@ -4,11 +4,9 @@ slug: "sqlite-kamal-rails-deploy-without-drama-behind-the-m-akita-chronicles"
 date: 2026-02-20T03:18:55+00:00
 draft: false
 tags:
-- sqlite
-- kamel
-- rubyonrails
-- themakitachronicles
-  - AI
+- the-m-akita-chronicles
+- rails
+- devops
 translationKey: sqlite-kamal-rails-deploy
 description: "How Rails 8 with SQLite and Kamal lets you run a full production app on a $12/month VPS with zero external services."
 ---

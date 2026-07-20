@@ -4,12 +4,10 @@ slug: "vibe-code-built-a-smart-image-indexer-with-ai-in-2-days-frank-sherlock"
 date: 2026-02-23T18:34:34+00:00
 draft: false
 tags:
-- franksherlock
-- vibecode
-- rust
-- tauri
-- qwen
-  - AI
+- frank
+- llms
+- artificial-intelligence
+- vibe-coding
 translationKey: frank-sherlock-image-indexer
 description: "How I built Frank Sherlock, a local AI-powered image catalog desktop app, in a weekend using Agile Vibe Coding with Claude Code."
 ---

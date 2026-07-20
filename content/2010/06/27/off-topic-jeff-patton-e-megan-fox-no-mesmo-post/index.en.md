@@ -2,11 +2,11 @@
 title: "[Off-Topic] Jeff Patton and Megan Fox in the same post?"
 date: '2010-06-27T09:30:00-03:00'
 slug: off-topic-jeff-patton-e-megan-fox-no-mesmo-post
+description: "For his talk at Wire 2010, the author recreated Jeff Patton's iteration-and-increment example on video, replacing the article's pixelated image with a more polished version."
 tags:
-- off-topic
-- principles
-- management
 - agile
+- management
+- off-topic
 draft: false
 ---
 

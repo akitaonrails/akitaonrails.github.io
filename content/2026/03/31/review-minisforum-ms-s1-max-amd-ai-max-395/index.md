@@ -3,13 +3,12 @@ title: "Review: Minisforum MS-S1 Max | AMD AI Max+ 395 com 96GB de VRAM"
 date: '2026-03-31T15:00:00-03:00'
 draft: false
 translationKey: minisforum-ms-s1-max-review
+description: "Nos meus testes, a RTX 5090 foi até 7 vezes mais rápida nos modelos que cabem em 32GB. O Minisforum, porém, rodou modelos de 50 a 81GB que a placa não comporta."
 tags:
-  - hardware
-  - llm
-  - homeserver
-  - amd
-  - AI
-  - review
+- hardware
+- modelos-locais
+- performance
+- reviews
 ---
 
 Quem acompanha meus posts sobre [home server](/2024/04/03/meu-netflix-pessoal-com-docker-compose/) sabe que eu rodava tudo num Intel NUC Core i7 com 32GB de RAM. Funcionava. Mas com o crescimento dos modelos de IA open source, o NUC virou um gargalo. Sem GPU dedicada, qualquer inferência de LLM ia pra CPU e ficava inutilizável.

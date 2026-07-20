@@ -2,6 +2,7 @@
 title: Largada para o Maior Evento de Rails da América Latina!
 date: '2008-08-01T18:41:00-03:00'
 slug: largada-para-o-maior-evento-de-rails-da-am-rica-latina
+description: "O Rails Summit Latin America terá dois dias de palestras, tradução e sessões para diferentes comunidades, com ingresso promocional de R$ 300 e vagas estudantis limitadas."
 tags:
 - railssummit2008
 draft: false

@@ -2,14 +2,11 @@
 title: "[Akitando #139] - Entendendo Como Containers Funcionam"
 date: '2023-03-02T09:00:00-03:00'
 slug: akitando-139-entendendo-como-containers-funcionam
+description: "Akita explica como cgroups, namespaces e runC isolam containers Linux sem criar outro kernel. Docker Compose atende ao desenvolvimento, enquanto Kubernetes e Terraform cuidam de infraestrutura elástica e produção."
 tags:
-- container
-- docker
-- runc
-- podman
-- kubernetes
-- terraform
-- segurança
+- containers
+- linux
+- devops
 - akitando
 draft: false
 ---

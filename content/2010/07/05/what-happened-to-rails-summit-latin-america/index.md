@@ -2,9 +2,9 @@
 title: What happened to Rails Summit Latin America?
 date: '2010-07-05T11:04:00-03:00'
 slug: what-happened-to-rails-summit-latin-america
+description: "O Rails Summit Latin America dará lugar à primeira RubyConf Latin America, em São Paulo, com dois dias de evento, tradução simultânea, ingresso de BRL 150 e chamada para propostas aberta."
 tags:
 - rubyconfbr2010
-- english
 draft: false
 ---
 

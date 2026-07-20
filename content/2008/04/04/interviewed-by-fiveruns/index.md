@@ -2,10 +2,11 @@
 title: Interviewed by FiveRuns
 date: '2008-04-04T13:31:00-03:00'
 slug: interviewed-by-fiveruns
+description: "Em entrevista, Fabio Akita relembra como Rails mudou sua carreira e discute comunidade, Rubinius e JRuby. Ele defende escolhas pragmáticas, comunicação com o cliente e a ideia de que Rails não é uma bala de prata."
 tags:
-- biography
-- interview
-- english
+- entrevistas
+- carreira
+- rails
 draft: false
 ---
 

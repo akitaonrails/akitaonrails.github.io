@@ -2,9 +2,11 @@
 title: 'Tradução: Regras de Otimização'
 date: '2008-07-21T19:25:00-03:00'
 slug: tradu-o-regras-de-otimiza-o
+description: "As regras de otimização são simples: escreva código claro, meça antes de mexer e concentre o esforço nos gargalos comprovados, preservando a manutenção do restante."
 tags:
-- career
-- translation
+- performance
+- engenharia-de-software
+- programacao
 draft: false
 ---
 

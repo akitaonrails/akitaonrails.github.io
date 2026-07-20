@@ -2,6 +2,7 @@
 title: 'Rails Summit: Semana que vem! (fotos)'
 date: '2008-10-06T18:55:00-03:00'
 slug: rails-summit-semana-que-vem
+description: "O Rails Summit Latin America terá Wi-Fi aberto, tomadas e um espaço Birds of a Feather no fim do primeiro dia, com micro-palestras de cerca de 20 minutos. O post também mostra a estrutura do evento."
 tags:
 - railssummit2008
 draft: false

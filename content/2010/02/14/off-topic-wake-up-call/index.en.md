@@ -2,9 +2,11 @@
 title: "[Off-Topic] Wake up Call"
 date: '2010-02-14T09:38:00-02:00'
 slug: off-topic-wake-up-call
+description: "Starting with Up in the Air, the author recalls that jobs are not permanent: do good work without accepting abuse, stay loyal to yourself, and find a purpose."
 tags:
-- off-topic
 - career
+- film-and-pop-culture
+- off-topic
 draft: false
 ---
 

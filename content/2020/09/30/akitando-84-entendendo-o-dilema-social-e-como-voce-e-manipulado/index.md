@@ -2,16 +2,11 @@
 title: '[Akitando #84] Entendendo "O Dilema Social" e Como Você é Manipulado'
 date: '2020-09-30T19:15:00-03:00'
 slug: akitando-84-entendendo-o-dilema-social-e-como-voce-e-manipulado
+description: "Akita disseca The Social Dilemma, explica machine learning, manipulação e Bayes, e dá nota 5/10 ao documentário. Para ele, pensamento crítico importa mais que culpar as ferramentas."
 tags:
-- o dilema social
-- redes sociais
-- machine learning
-- Bayes
-- Asch
-- Milgram
-- Dan Ariely
-- Philip Zimbardo
-- Paul Graham
+- machine-learning
+- psicologia
+- cinema-e-cultura-pop
 - akitando
 draft: false
 ---

@@ -2,6 +2,7 @@
 title: 'Rubyconf Brasil 2013: Meet William PotHix'
 date: '2013-08-23T12:20:00-03:00'
 slug: rubyconf-brasil-2013-meet-william-pothix
+description: "William Molinari explains how Locaweb built its cloud with Ruby and Rails to handle hypervisors, firewalls, and DHCP, and sees Docker as a promising foundation for tools like flynn.io."
 tags:
 - rubyconfbr2013
 draft: false

@@ -5,12 +5,11 @@ slug: objective-c-e-um-sistema-unix-eu-sei-mexer-nisso
 translationKey: objc-its-a-unix-system
 aliases:
 - /2011/04/23/objective-c-its-a-unix-system-i-know-this/
+description: "Akita usa strftime e CocoaOniguruma no iOS para criar helpers de data e regex com uma sintaxe próxima de Ruby, mostrando como integrar bibliotecas C ao Objective-C sem uma ponte complexa."
 tags:
-- learning
-- beginner
 - apple
-- objective-c
-- traduzido
+- programacao
+- tutoriais
 draft: false
 ---
 

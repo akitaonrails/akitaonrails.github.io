@@ -2,12 +2,10 @@
 title: 'Tradução: De quem é essa variável, afinal?'
 date: '2008-02-11T01:13:00-02:00'
 slug: tradu-o-de-quem-essa-vari-vel-afinal
+description: "A tradução compara a ligação de variáveis de instância em Java, Smalltalk e Ruby, do compilador aos bytecodes. No Ruby, a resolução dinâmica simplifica Observer e controllers RESTful."
 tags:
-- learning
+- linguagens-de-programacao
 - ruby
-- smalltalk
-- java
-- beginner
 draft: false
 ---
 

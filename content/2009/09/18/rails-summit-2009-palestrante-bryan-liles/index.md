@@ -2,6 +2,7 @@
 title: "[Rails Summit 2009] Palestrante Bryan Liles"
 date: '2009-09-18T10:29:00-03:00'
 slug: rails-summit-2009-palestrante-bryan-liles
+description: "Bryan Liles apresenta sua série sobre boas práticas de programação e mostra como enviar logs do Rails por syslog para um servidor remoto, recomendando o Splunk."
 tags:
 - railssummit2009
 draft: false

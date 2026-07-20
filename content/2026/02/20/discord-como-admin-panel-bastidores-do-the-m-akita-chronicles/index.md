@@ -3,11 +3,11 @@ title: "Discord como Admin Panel | Bastidores do The M.Akita Chronicles"
 slug: "discord-como-admin-panel-bastidores-do-the-m-akita-chronicles"
 date: 2026-02-20T03:18:24+00:00
 draft: false
+description: "Um bot Discord substituiu o admin web para curadoria, jobs, custos e perguntas à IA. Parser, dispatcher, jobs e notificações mantêm a operação solo produtiva, desde que erros nunca sejam silenciados."
 tags:
-- themakitachronicles
-- rubyonrails
-- discord
-  - AI
+- the-m-akita-chronicles
+- automacao
+- backend
 translationKey: discord-as-admin-panel
 ---
 

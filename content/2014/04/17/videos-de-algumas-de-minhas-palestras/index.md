@@ -2,9 +2,10 @@
 title: Vídeos de algumas de minhas Palestras
 date: '2014-04-17T18:02:00-03:00'
 slug: videos-de-algumas-de-minhas-palestras
+description: "Uma coleção cronológica reúne vídeos de palestras sobre Ruby, Rails, agilidade, startups, software e pesquisa, gravadas entre 2007 e 2013, com a intenção de incluir novos registros."
 tags:
-- biography
-- presentation
+- comunicacao
+- pessoal
 draft: false
 ---
 

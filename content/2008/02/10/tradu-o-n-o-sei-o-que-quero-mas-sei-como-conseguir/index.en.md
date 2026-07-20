@@ -2,12 +2,11 @@
 title: "Translation: I Don't Know What I Want, But I Know How to Get It"
 date: '2008-02-10T17:18:00-02:00'
 slug: tradu-o-n-o-sei-o-que-quero-mas-sei-como-conseguir
+description: "The translation separates iterative development, which expects a solution to be validated and changed, from incremental development, which adds functionality. The point is to plan room to discover, refine, and discard."
 tags:
-- off-topic
-- principles
 - agile
-- management
-- career
+- software-engineering
+- off-topic
 draft: false
 ---
 

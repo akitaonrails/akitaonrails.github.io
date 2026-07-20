@@ -2,10 +2,12 @@
 title: Tradução Getting Real - Lançamento Release Candidate 2
 date: '2007-02-01T12:58:25-02:00'
 slug: tradução-getting-real-lançamento-release-candidate-2
+description: "A tradução brasileira de Getting Real chega ao Release Candidate 2 com os 16 capítulos traduzidos e metade da revisão concluída. A versão pública antecede a tentativa de lançamento final."
 tags:
+- pessoal
+- comunicacao
+- blog
 - off-topic
-- 37signals
-- getting-real
 draft: false
 ---
 

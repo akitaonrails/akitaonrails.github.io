@@ -5,10 +5,11 @@ slug: smalltips-rodando-o-gitlab-ci-runner-localmente
 translationKey: gitlab-ci-runner-locally
 aliases:
 - /2018/04/28/smalltips-running-gitlab-ci-runner-locally/
+description: "O GitLab CI Runner usa o `.gitlab-ci.yml` para reproduzir localmente, via Docker, os jobs que falham no servidor, acelerando o diagnóstico. O preço é recomeçar sem cache ou artefatos."
 tags:
-- smalltips
-- gitlab
-- traduzido
+- devops
+- containers
+- testes
 draft: false
 ---
 

@@ -2,12 +2,12 @@
 title: "[Off-Topic] Agile feito Errado"
 date: '2013-11-01T10:48:00-02:00'
 slug: off-topic-agile-feito-errado
+description: "O texto argumenta que Agile não salva equipes sem capacidade técnica e comprometimento. Planning, pair programming, qualidade e responsabilidade viram encenação, e maus profissionais precisam ser substituídos."
 tags:
-- off-topic
-- career
-- management
 - agile
-- carreira
+- engenharia-de-software
+- gestao
+- off-topic
 draft: false
 ---
 

@@ -2,15 +2,11 @@
 title: "[Akitando] #148 - O que IAs podem fazer? | Exemplos de Ferramentas"
 date: '2023-11-29T09:00:00-03:00'
 slug: akitando-148-o-que-ias-podem-fazer-exemplos-de-ferramentas
+description: "Usei HeyGen e ElevenLabs para gerar um episódio inteiro com avatar e voz artificiais. O resultado impressiona, mas clipes curtos, movimentos robóticos, custo de quase US$ 40 e geração lenta ainda não poupam trabalho."
 tags:
-- ia
-- chatgpt
-- openai
-- elevenlabs
-- heygen
-- davinci
-- adobe
-- blackmagic
+- midia-generativa
+- inteligencia-artificial
+- audio-e-video
 - akitando
 draft: false
 ---

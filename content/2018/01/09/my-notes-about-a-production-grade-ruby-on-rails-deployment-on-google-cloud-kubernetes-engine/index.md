@@ -2,13 +2,12 @@
 title: "Minhas Notas sobre Deploy Produção do Ruby on Rails no Google Cloud Kubernetes Engine"
 date: '2018-01-09T20:13:00-02:00'
 slug: minhas-notas-deploy-producao-ruby-on-rails-google-cloud-kubernetes
+description: "Depois de levar o Google Cloud Kubernetes Engine do zero à produção, o autor reúne notas sobre Rails, Docker, Cloud SQL, secrets, NGINX Ingress e rolling updates. A plataforma funciona, mas exige experiência em infraestrutura."
 tags:
-- googlecloud
-- kubernetes
-- rubyonrails
-- linux
-- nginx
-- traduzido
+- rails
+- cloud
+- containers
+- devops
 translationKey: rails-kubernetes-gke
 aliases:
 - /2018/01/09/my-notes-about-a-production-grade-ruby-on-rails-deployment-on-google-cloud-kubernetes-engine/

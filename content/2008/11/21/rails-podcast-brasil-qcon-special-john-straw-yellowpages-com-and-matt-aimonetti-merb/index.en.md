@@ -3,10 +3,9 @@ title: Rails Podcast Brasil, QCon Special - John Straw (YellowPages.com) and Mat
 date: '2008-11-21T04:06:00-02:00'
 slug: rails-podcast-brasil-qcon-special-john-straw-yellowpages-com-and-matt-aimonetti-merb
 translationKey: qcon2008-john-straw-matt-aimonetti
+description: "John Straw recounts rewriting 150,000 lines of untested Java into about 13,000 lines of Rails with nearly 100% coverage, after four months of preparation. Matt Aimonetti presents Merb and its Hello World benchmark."
 tags:
 - qcon2008
-- interview
-- english
 draft: false
 ---
 

@@ -2,10 +2,11 @@
 title: "[Off-Topic] A Revolta de Atlas: Dinheiro é a raíz de todo o mal?"
 date: '2011-02-03T22:17:00-02:00'
 slug: off-topic-a-revolta-de-atlas-dinheiro-e-a-raiz-de-todo-o-mal
+description: "A partir do discurso de Francisco D’Anconia em A Revolta de Atlas, o autor apresenta o dinheiro como resultado da produção e da razão, enquanto condena riqueza obtida por coerção, fraude e favores."
 tags:
+- filosofia
+- economia
 - off-topic
-- principles
-- philosophy
 draft: false
 ---
 

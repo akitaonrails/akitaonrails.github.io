@@ -4,13 +4,11 @@ date: '2026-03-07T22:00:00-03:00'
 draft: false
 slug: porting-10k-lines-of-python-to-crystal-with-claude-easy-subtitle
 translationKey: easy-subtitle-python-to-crystal
+description: "I asked Claude to port Subservient to Crystal with feature parity and got easy-subtitle in under 40 minutes: 2,516 lines, 76 tests, and a 6 MB static binary with no Python runtime."
 tags:
-  - crystal
-  - python
-  - claude
-  - vibe-coding
-  - AI
-  - subtitle
+- crystal
+- programming-languages
+- vibe-coding
 ---
 
 In the [previous article](/en/2026/03/07/easy-ffmpeg-smart-wrapper-in-crystal/) I showed why I picked Crystal for command-line CLIs. In this one I want to show a more ambitious case. It isn't a tool from scratch anymore — it's a feature-parity port of a 10,000-line Python open source project.

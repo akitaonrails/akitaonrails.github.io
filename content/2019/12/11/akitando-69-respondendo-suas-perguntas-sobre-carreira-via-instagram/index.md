@@ -2,11 +2,11 @@
 title: "[Akitando] #69 - Respondendo suas Perguntas sobre Carreira | via Instagram"
 date: '2019-12-11T11:00:00-03:00'
 slug: akitando-69-respondendo-suas-perguntas-sobre-carreira-via-instagram
+description: "Akita responde 10 dúvidas de iniciantes sobre carreira, do trabalho com tecnologias legadas no interior ao inglês, prática, níveis de experiência e os riscos de empreender cedo."
 tags:
 - carreira
-- javascript
-- mercado
-- empreendedorismo
+- aprendizado
+- startups
 - akitando
 draft: false
 ---

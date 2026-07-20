@@ -2,18 +2,11 @@
 title: "[Akitando] #23 - The MM-M: O Melhor Livro de Software?"
 date: '2018-11-01T17:00:00-03:00'
 slug: akitando-23-the-mm-m-o-melhor-livro-de-software
+description: "Akita revisita The Mythical Man-Month, de 1975, para mostrar que comunicação, equipes pequenas, integridade conceitual, testes e construção incremental continuam resolvendo problemas atuais."
 tags:
-- Fred Brooks
-- Harlan Mills
-- David Parnas
-- Tom DeMarco
-- Mythical Man-Month
-- No Silver Bullet
-- Engenharia de Software
-- Agile
-- Gerenciamento
-- Projetos
-- Software
+- engenharia-de-software
+- gestao
+- agile
 - akitando
 draft: false
 ---

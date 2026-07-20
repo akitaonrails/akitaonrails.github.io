@@ -2,10 +2,11 @@
 title: "[Iniciante] Configurações de ambiente com Dotenv"
 date: '2013-10-19T16:14:00-03:00'
 slug: iniciante-configuracoes-de-ambiente-com-dotenv
+description: "O autor mostra como usar dotenv-rails para separar configurações por ambiente no Rails, manter secrets fora do Git e configurar tokens diferentes para desenvolvimento e Heroku."
 tags:
-- learning
-- beginner
 - rails
+- seguranca
+- tutoriais
 draft: false
 ---
 

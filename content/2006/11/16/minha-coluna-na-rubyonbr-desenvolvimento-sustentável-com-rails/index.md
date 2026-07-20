@@ -2,8 +2,11 @@
 title: 'Minha Coluna na RubyOnBr: Desenvolvimento Sustentável com Rails'
 date: '2006-11-16T09:34:00-02:00'
 slug: minha-coluna-na-rubyonbr-desenvolvimento-sustentável-com-rails
+description: "A coluna percorre processos, metodologias e ferramentas para discutir desenvolvimento sustentável com Rails. A conclusão é que todo projeto precisa de algum controle, inclusive no open source, onde mantenedores organizam o trabalho."
 tags:
-- rubyonbr
+- rails
+- engenharia-de-software
+- gestao
 draft: false
 ---
 

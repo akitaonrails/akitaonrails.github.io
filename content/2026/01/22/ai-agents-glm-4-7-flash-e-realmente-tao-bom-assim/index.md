@@ -2,11 +2,11 @@
 title: "AI Agents: GLM 4.7 Flash é realmente tão bom assim?"
 slug: "ai-agents-glm-4-7-flash-e-realmente-tao-bom-assim"
 date: 2026-01-22T13:41:05-0300
+description: "Rodei o GLM 4.7 Flash localmente numa RTX 5090 e ele foi o único modelo open source a compilar o desafio de Zig. O comportamento foi bom, mas ampliar o contexto o deixou até 20 vezes mais lento."
 tags:
-- crush
-- zai
-- glm
-  - AI
+- benchmarks-de-llm
+- modelos-locais
+- agentes-de-codigo
 translationKey: glm-4-7-flash-review
 ---
 

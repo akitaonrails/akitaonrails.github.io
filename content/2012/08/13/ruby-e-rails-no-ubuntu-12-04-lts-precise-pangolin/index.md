@@ -2,10 +2,12 @@
 title: Ruby e Rails no Ubuntu 12.04 LTS Precise Pangolin
 date: '2012-08-13T21:28:00-03:00'
 slug: ruby-e-rails-no-ubuntu-12-04-lts-precise-pangolin
+description: "Guia para configurar no Ubuntu 12.04 LTS um ambiente Ruby e Rails com RVM, bancos de dados, Redis, Memcache, Vim, Git e Nginx com Passenger."
 tags:
-- learning
 - linux
-- tutorial
+- ruby
+- rails
+- tutoriais
 draft: false
 ---
 

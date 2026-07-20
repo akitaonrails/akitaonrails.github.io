@@ -3,11 +3,11 @@ title: "AI Agents: Qual seria a melhor Linguagem de Programação para LLMs?"
 slug: "ai-agents-qual-seria-a-melhor-linguagem-de-programacao-para-llms"
 date: 2026-02-09T20:20:30+00:00
 draft: false
+description: "Claude e GPT imaginaram uma linguagem mais adequada a LLMs, com AST tipada, efeitos e proveniência. A partir da ideia, Claude gerou em Rust o protótipo PACT, ainda não testado."
 tags:
-- claude
-- gpt
-- vibecode
-  - AI
+- linguagens-de-programacao
+- llms
+- agentes-de-codigo
 translationKey: best-language-for-llms
 ---
 

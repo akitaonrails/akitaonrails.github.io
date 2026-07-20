@@ -2,8 +2,11 @@
 title: Chatting with Dr. Nic
 date: '2007-04-16T13:01:00-03:00'
 slug: chatting-with-dr-nic
+description: "Dr. Nic explains how he created Magic Models, Newgem, and Magic Multi Connection to solve real problems. He argues for extracting features from Rails core and sharing solutions through open source."
 tags:
-- interview
+- interviews
+- rails
+- open-source
 draft: false
 translationKey: chatting-dr-nic
 ---

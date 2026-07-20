@@ -2,9 +2,12 @@
 title: War is Over, or is it? A New Dawn for Microsoft
 date: '2016-03-31T18:02:00-03:00'
 slug: war-is-over-or-is-it-a-new-dawn-for-microsoft
+description: "Bash on Windows and free, open-source Xamarin tools could make Windows attractive to non-.NET developers. The author sees a plausible way out of OS X, but only if Microsoft delivers on its promise."
 tags:
-- off-topic
 - microsoft
+- developer-tools
+- tech-market
+- off-topic
 draft: false
 translationKey: nova-era-microsoft-2016
 ---

@@ -2,6 +2,7 @@
 title: "[Rails Summit 2009] Palestrante Leonardo Borges"
 date: '2009-09-17T16:51:00-03:00'
 slug: rails-summit-2009-palestrante-leonardo-borges
+description: "Leonardo Borges mostra como o JRuby on Rails integra Ruby à JVM e pode dar nova vida a sistemas Java legados, tema especialmente útil para equipes corporativas."
 tags:
 - railssummit2009
 draft: false

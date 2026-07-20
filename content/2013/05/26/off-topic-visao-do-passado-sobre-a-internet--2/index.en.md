@@ -2,9 +2,11 @@
 title: "[Off-Topic] A View from the Past About the Internet"
 date: '2013-05-26T19:56:00-03:00'
 slug: off-topic-visao-do-passado-sobre-a-internet--2
+description: "Recovered from a 1996 Word file, the text reveals how the Internet was understood at the time, from demographic research and online ads to digital shopping and the promise of virtual reality."
 tags:
+- computing-history
+- networking
 - off-topic
-- biography
 draft: false
 ---
 

@@ -4,16 +4,11 @@ slug: "llm-benchmark-sonnet-5-gemini-3-5-flash-sakana-fugu-ultra"
 date: '2026-07-01T15:00:00-03:00'
 draft: false
 translationKey: llm-benchmark-sonnet-5-gemini-3-5-flash-sakana-fugu-ultra
+description: "No benchmark de coding, Sonnet 5 marcou 58/100 porque chamou uma API inexistente, enquanto Gemini 3.5 Flash fez 93/100. Sakana Fugu Ultra ficou em 79/100, perto do Tier A."
 tags:
-  - llm
-  - benchmark
-  - claude
-  - sonnet
-  - gemini
-  - qwen
-  - sakana
-  - ai
-  - vibecoding
+- benchmarks-de-llm
+- llms
+- agentes-de-codigo
 ---
 
 Mais uma rodada do meu benchmark de coding. E desta vez tem aquele tipo de resultado que incomoda marketing.

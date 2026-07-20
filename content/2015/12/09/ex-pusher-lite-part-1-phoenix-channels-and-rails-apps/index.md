@@ -5,12 +5,11 @@ slug: ex-pusher-lite-parte-1-phoenix-channels-e-aplicacoes-rails
 translationKey: ex-pusher-lite-part-1
 aliases:
 - /2015/12/09/ex-pusher-lite-part-1-phoenix-channels-and-rails-apps/
+description: "A Parte 1 substitui o Pusher por um servidor Phoenix com Channels, WebSockets e Basic Auth, mantendo o cliente Rails e o SuckerPunch. O clone funciona sob controle próprio, mas ainda é incompleto."
 tags:
-- elixir
-- phoenix
-- pusher
-- expusherlite
-- traduzido
+- elixir-e-erlang
+- rails
+- sistemas-distribuidos
 draft: false
 ---
 

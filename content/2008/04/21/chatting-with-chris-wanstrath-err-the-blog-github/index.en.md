@@ -3,8 +3,11 @@ title: Chatting with Chris Wanstrath (Err the Blog/Github)
 date: '2008-04-21T19:12:00-03:00'
 slug: chatting-with-chris-wanstrath-err-the-blog-github
 translationKey: chatting-chris-wanstrath
+description: "Chris Wanstrath explains why he created GitHub to make open source contributions easier and reveals the platform’s architecture, with Git, SSH, memcached, background jobs, and a feed of nearly 1 million lines."
 tags:
-- interview
+- interviews
+- open-source
+- software-architecture
 draft: false
 ---
 

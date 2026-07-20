@@ -4,17 +4,11 @@ slug: "i-built-memory-system-for-coding-agents-ai-memory"
 date: '2026-05-23T16:30:00-03:00'
 draft: false
 translationKey: criei-sistema-memoria-agentes-codigo-ai-memory
+description: "After finding reindexing, data loss, and broken hooks in agentmemory, Akita built ai-memory in Rust with Markdown, SQLite/FTS5, automatic capture, and agent handoff. It’s still beta."
 tags:
-  - ai
-  - agents
-  - claude-code
-  - codex
-  - opencode
-  - mcp
-  - memory
-  - karpathy-llm-wiki
-  - ai-memory
-  - rust
+- ai-memory
+- coding-agents
+- rust
 ---
 
 ![ai-memory project logo: circular pictogram with a stylized chip opening "wings" like books/pages on each side, next to the ai-memory wordmark in italics.](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/05/23/ai-memory/ai-memory-logo.png)

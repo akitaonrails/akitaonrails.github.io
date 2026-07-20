@@ -5,11 +5,11 @@ slug: minha-primeira-semana-aprendendo-elixir
 translationKey: my-first-week-elixir
 aliases:
 - /2015/11/03/my-first-week-learning-elixir/
+description: "Em uma semana e cerca de 42 horas, aprendi os fundamentos de Elixir, processos e OTP, embora ainda não me sentisse totalmente confortável. Minha trilha passa por Programming Elixir, Elixir Sips e exercícios antes do Phoenix."
 tags:
-- beginner
-- learning
-- elixir
-- traduzido
+- aprendizado
+- elixir-e-erlang
+- programacao
 draft: false
 ---
 

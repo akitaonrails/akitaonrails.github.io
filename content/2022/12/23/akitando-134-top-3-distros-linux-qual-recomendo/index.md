@@ -2,23 +2,11 @@
 title: "[Akitando] #134 - Top 3 Distros Linux | Qual Recomendo?"
 date: '2022-12-23T09:18:00-03:00'
 slug: akitando-134-top-3-distros-linux-qual-recomendo
+description: "Akita escolhe Mandrake, Alpine e Batocera por razões bem diferentes e separa distros para containers, retrogames e desktop. Para iniciantes, recomenda Manjaro, PopOS ou Ubuntu."
 tags:
+- linux
+- reviews
 - akitando
-- mandrake
-- mandriva
-- conectiva
-- garuda
-- manjaro
-- archlinux
-- ubuntu
-- debian
-- redhat
-- opensuse
-- fedora
-- centos
-- batocera
-- ambernic
-- ayaneo
 draft: false
 ---
 

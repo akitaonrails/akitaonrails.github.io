@@ -3,12 +3,11 @@ title: "[Objective-C] It's a Unix System! I know this!"
 date: '2011-04-23T22:47:00-03:00'
 slug: objective-c-its-a-unix-system-i-know-this
 translationKey: objc-its-a-unix-system
+description: "Akita uses strftime and CocoaOniguruma on iOS to create date and regex helpers with Ruby-like syntax, showing how to integrate C libraries into Objective-C without a complex bridge."
 tags:
-- learning
-- beginner
 - apple
-- objective-c
-- english
+- programming
+- tutorials
 draft: false
 ---
 

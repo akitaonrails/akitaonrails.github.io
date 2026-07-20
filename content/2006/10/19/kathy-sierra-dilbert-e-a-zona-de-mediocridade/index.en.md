@@ -2,10 +2,12 @@
 title: 'Kathy Sierra: Dilbert and the Zone of Mediocrity'
 date: '2006-10-19T09:53:34-03:00'
 slug: kathy-sierra-dilbert-e-a-zona-de-mediocridade
+description: "Kathy Sierra describes the zone of mediocrity as the space of safe products nobody loves, and argues for accepting the risk of provoking passion. Escaping it means silencing the voice that blocks ideas before they’re tested."
 tags:
+- psychology
+- business
+- philosophy
 - off-topic
-- principles
-- mediocrity
 draft: false
 ---
 

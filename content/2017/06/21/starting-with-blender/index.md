@@ -5,10 +5,12 @@ slug: comecando-com-blender
 translationKey: starting-with-blender
 aliases:
 - /2017/06/21/starting-with-blender/
+description: "Meu guia de entrada no Blender passa pelos primeiros ajustes, como Cycles, Filmic e CUDA, e chega a fotografia, composição e materiais PBR. O aprendizado depende de estudo, prática e atalhos."
 tags:
+- tutoriais
+- aprendizado
+- audio-e-video
 - off-topic
-- blender
-- traduzido
 draft: false
 ---
 

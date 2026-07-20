@@ -2,8 +2,10 @@
 title: Chatting with Carl Youngblood
 date: '2007-07-20T14:36:00-03:00'
 slug: chatting-with-carl-youngblood
+description: "Carl Youngblood discusses his time in Brazil, BBSes, multiple languages, and arrival at Rails, showing how SBN, RailsConf, and Confreaks brought his work closer to the Ruby community."
 tags:
-- interview
+- interviews
+- ruby
 draft: false
 translationKey: chatting-carl-youngblood
 ---

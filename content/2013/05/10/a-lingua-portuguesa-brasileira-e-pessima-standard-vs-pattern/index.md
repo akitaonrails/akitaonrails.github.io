@@ -2,10 +2,11 @@
 title: 'A Língua Portuguesa-Brasileira Pode Nos Confundir: Standard vs Pattern'
 date: '2013-05-10T19:18:00-03:00'
 slug: a-lingua-portuguesa-brasileira-e-pessima-standard-vs-pattern
+description: "Em programação, default, pattern e standard podem virar “padrão” em português, mas significam coisas distintas: escolha pré-selecionada, solução recorrente e norma usada como referência."
 tags:
+- programacao
+- comunicacao
 - off-topic
-- career
-- insights
 draft: false
 ---
 

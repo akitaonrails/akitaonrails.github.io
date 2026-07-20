@@ -2,10 +2,11 @@
 title: "[Off-Topic] Mensagem de Ano Novo - Filosofia"
 date: '2011-12-31T21:29:00-02:00'
 slug: off-topic-mensagem-de-ano-novo-filosofia
+description: "Com base em Ayn Rand e Leonard Peikoff, o autor defende o capitalismo como uma questão moral: empreendedores devem julgar ideias racionalmente, não enganar o público e reconhecer seus aliados e inimigos."
 tags:
+- filosofia
+- negocios
 - off-topic
-- principles
-- philosophy
 draft: false
 ---
 

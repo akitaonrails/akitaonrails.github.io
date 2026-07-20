@@ -4,13 +4,11 @@ date: '2026-04-01T19:00:00-03:00'
 draft: false
 slug: bitcoin-on-the-home-server-sovereignty-with-coldcard-sparrow-fulcrum
 translationKey: bitcoin-home-server-sovereignty
+description: "I built a home Bitcoin stack with Coldcard, Sparrow, Fulcrum, and bitcoind: offline keys, private queries, and my own broadcast. It takes work, but gives me more control over custody and operations."
 tags:
-  - bitcoin
-  - homeserver
-  - self-hosting
-  - privacy
-  - security
-  - lightning
+- bitcoin-and-cryptocurrency
+- homelab
+- security
 ---
 
 This post is a direct follow-up to my recent articles about the [new home server with openSUSE MicroOS](/en/2026/03/31/migrating-my-home-server-with-claude-code/) and the [Minisforum MS-S1 Max](/en/2026/03/31/minisforum-ms-s1-max-amd-ai-max-395-review/). Those covered the foundation. Here I want to show one concrete use for it: putting together a decent Bitcoin stack at home, focused on privacy, operational sovereignty and safe transactions on my side.

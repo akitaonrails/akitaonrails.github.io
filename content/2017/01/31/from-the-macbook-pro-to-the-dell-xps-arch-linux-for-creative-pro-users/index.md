@@ -5,14 +5,11 @@ slug: do-macbook-pro-para-o-dell-xps-arch-linux-para-usuarios-criativos
 translationKey: macbook-to-dell-xps
 aliases:
 - /2017/01/31/from-the-macbook-pro-to-the-dell-xps-arch-linux-for-creative-pro-users/
+description: "Akita migra do MacBook Pro para um Dell XPS 9550 e configura o Manjaro, Bumblebee e drivers NVIDIA para ferramentas criativas. O Linux funciona bem, mas a Apple ainda leva vantagem em fluxos Pro móveis."
 tags:
 - linux
-- archlinux
-- nvidia
-- blender
-- darktable
-- bumblebee
-- traduzido
+- apple
+- hardware
 draft: false
 ---
 

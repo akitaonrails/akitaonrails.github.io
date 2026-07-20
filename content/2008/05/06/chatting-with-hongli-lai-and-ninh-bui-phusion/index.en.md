@@ -3,8 +3,11 @@ title: Chatting with Hongli Lai and Ninh Bui (Phusion)
 date: '2008-05-06T21:39:00-03:00'
 slug: chatting-with-hongli-lai-and-ninh-bui-phusion
 translationKey: chatting-hongli-lai-ninh-bui
+description: "Hongli Lai and Ninh Bui explain how Phusion Passenger simplifies Rails deployment, shuts down idle processes, and matches or outperforms Mongrel clusters. Ruby Enterprise Edition saved 33% of memory on average."
 tags:
-- interview
+- interviews
+- rails
+- devops
 draft: false
 ---
 

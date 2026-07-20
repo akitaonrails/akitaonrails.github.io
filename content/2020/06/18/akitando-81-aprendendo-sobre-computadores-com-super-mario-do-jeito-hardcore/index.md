@@ -2,25 +2,11 @@
 title: "[Akitando] #81 - Aprendendo sobre Computadores com Super Mario (do jeito Hardcore++)"
 date: '2020-06-18T10:00:00-03:00'
 slug: akitando-81-aprendendo-sobre-computadores-com-super-mario-do-jeito-hardcore
+description: "Com um NES e Super Mario, Akita percorre 6502, lógica binária, emulação, mappers e memória até explicar um bug de speedrun. As restrições do hardware revelam como surgem soluções criativas."
 tags:
-- nintendo
-- nes
-- famicom
-- '6502'
-- assembly
-- cc65
-- game genie
-- micro mages
-- morphcat
-- dotemu
-- wonderboy
-- tectoy
-- fceux
-- mesen
-- tasvideos
-- speedrun
-- super mario
-- steam
+- retrocomputacao
+- games
+- emulacao
 - akitando
 draft: false
 ---

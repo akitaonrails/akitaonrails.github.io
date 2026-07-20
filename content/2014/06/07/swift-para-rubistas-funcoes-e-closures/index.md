@@ -2,12 +2,11 @@
 title: Swift para Rubistas, Funções e Closures
 date: '2014-06-07T12:38:00-03:00'
 slug: swift-para-rubistas-funcoes-e-closures
+description: "Ao comparar funções e closures de Swift com métodos e blocos de Ruby, o autor mostra que Swift é mais verboso, porém muito mais legível que Objective-C e viável para DSLs."
 tags:
-- learning
-- beginner
+- linguagens-de-programacao
 - apple
-- swift
-- objective-c
+- aprendizado
 draft: false
 ---
 

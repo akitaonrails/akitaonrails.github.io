@@ -4,12 +4,11 @@ date: '2026-03-31T17:00:00-03:00'
 draft: false
 slug: claude-code-source-code-leaked-what-we-found-inside
 translationKey: claude-code-source-leak
+description: "I analyzed Claude Code’s leaked source map and found hidden features, layered memory, multi-agents, and DRM based on xxHash64. The code also exposed a product that’s difficult to maintain."
 tags:
-  - ai
-  - security
-  - claude-code
-  - vibe-coding
-  - open-source
+- coding-agents
+- security
+- software-engineering
 ---
 
 > Updated April 2, 2026: if you already read this yesterday, jump straight to the [new update section](#update-2026-04-02).

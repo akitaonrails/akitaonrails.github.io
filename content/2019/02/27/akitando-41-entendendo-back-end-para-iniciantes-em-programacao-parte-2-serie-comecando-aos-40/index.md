@@ -3,26 +3,11 @@ title: '[Akitando] #41 - Entendendo Back-End para Iniciantes em Programação (P
   2) | Série "Começando aos 40"'
 date: '2019-02-27T17:00:00-03:00'
 slug: akitando-41-entendendo-back-end-para-iniciantes-em-programacao-parte-2-serie-comecando-aos-40
+description: "Akita explica por que dependências exigem gerenciadores próprios e critica o Go por trocar avanços de linguagens modernas por simplicidade, embora reconheça sua adoção no back-end."
 tags:
-- groovy
-- scala
-- grails
-- ruby
-- ruby on rails
-- python
-- java
-- ".net"
-- lambda
-- lambda calculus
-- alan turing
-- alonzo church
-- JVM
-- componentização
-- OOP
-- programação orientada a objetos
-- programação funcional
-- haskell
-- ocaml
+- linguagens-de-programacao
+- backend
+- programacao
 - akitando
 draft: false
 ---

@@ -3,10 +3,9 @@ title: Destroying the ChatGPT 4o "Personality"
 date: '2025-04-28T11:30:00-03:00'
 slug: destroying-the-chatgpt-4o-personality
 tags:
-- chatgpt
-- openai
-- llm
-  - AI
+- llms
+- artificial-intelligence
+- communication
 draft: false
 translationKey: destroying-chatgpt-4o-personality
 description: How to disable ChatGPT's pseudo-human chatter and get straight, dry technical answers by tweaking the custom traits settings.

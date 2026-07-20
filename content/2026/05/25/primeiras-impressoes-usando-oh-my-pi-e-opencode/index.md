@@ -4,15 +4,10 @@ slug: "primeiras-impressoes-usando-oh-my-pi-e-opencode"
 date: '2026-05-25T01:00:00-03:00'
 draft: false
 translationKey: primeiras-impressoes-usando-oh-my-pi-e-opencode
+description: "Oh-My-Pi é mais flexível para projetos com arquivos e artefatos variados, enquanto OpenCode é mais polido no código comum. O teste mostrou que nenhum harness audita tudo, e Codex segue atrás."
 tags:
-  - ia
-  - agentes
-  - claude-code
-  - codex
-  - opencode
-  - oh-my-pi
-  - pi
-  - vibecoding
+- agentes-de-codigo
+- reviews
 ---
 
 ![Imagem oficial do Oh-My-Pi: "A coding agent with the IDE wired in", com o logo Pi em gradiente roxo e azul.](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/05/26/oh-my-pi-opencode/omp-hero.webp)

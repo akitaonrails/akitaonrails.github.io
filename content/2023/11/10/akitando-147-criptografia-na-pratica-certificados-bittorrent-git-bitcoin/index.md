@@ -3,17 +3,11 @@ title: "[Akitando] #147 - Criptografia na Prática - Certificados, BitTorrent, G
   Bitcoin"
 date: '2023-11-10T10:00:00-03:00'
 slug: akitando-147-criptografia-na-pratica-certificados-bittorrent-git-bitcoin
+description: "Com OpenSSL, mostro na prática criptografia simétrica, chaves RSA, certificados TLS, hashes e assinaturas digitais. Depois explico como esses conceitos sustentam BitTorrent, Git, bancos distribuídos e Bitcoin."
 tags:
-- openssl
-- certbot
-- letsencrypt
-- linux
-- manjaro
-- arch
-- bittorrent
-- git
-- bitcoin
-- segurança
+- seguranca
+- bitcoin-e-criptomoedas
+- controle-de-versao
 - akitando
 draft: false
 ---

@@ -2,19 +2,11 @@
 title: "[Akitando] #89 - Introdução a Videogames e Emuladores"
 date: '2020-12-22T10:30:00-03:00'
 slug: akitando-89-introducao-a-videogames-e-emuladores
+description: "Akita revisita gerações de consoles e explica como emuladores reproduzem CPU, vídeo, áudio e memória. A compatibilidade depende das peculiaridades de cada hardware e da potência disponível."
 tags:
-- videogame
-- emulador
-- retroarch
-- ultrahle
-- cemu
-- citra
-- nintendo
-- sega
-- sony
-- playstation
-- xbox
-- saturn
+- emulacao
+- games
+- retrocomputacao
 - akitando
 draft: false
 ---

@@ -3,11 +3,9 @@ title: Colorizing Black and White Images with A.I.
 date: '2025-04-19T01:40:00-03:00'
 slug: colorizing-black-and-white-images-with-ai
 tags:
-- ddcolor
-- I.A.
-- github
-- docker
-  - AI
+- generative-media
+- containers
+- tutorials
 draft: false
 translationKey: ai-colorize-black-white
 description: Using DDColor inside Docker to colorize old black and white photos, plus a Reinhard global color transfer hack to bias the result toward a reference image.

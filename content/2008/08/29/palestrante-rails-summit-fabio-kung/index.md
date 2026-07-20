@@ -2,6 +2,7 @@
 title: 'Palestrante Rails Summit: Fabio Kung'
 date: '2008-08-29T17:21:00-03:00'
 slug: palestrante-rails-summit-fabio-kung
+description: "Fabio Kung mostra que Java, Ruby e Rails podem coexistir e relata experiências com automação, compiladores, open source e Jetty Rails. Sua palestra discutirá ganhos, perdas e deployment de Rails sobre a JVM."
 tags:
 - railssummit2008
 draft: false

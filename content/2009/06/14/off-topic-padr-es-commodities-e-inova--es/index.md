@@ -2,9 +2,11 @@
 title: "[Off-Topic] Padrões, Commodities e Inovações"
 date: '2009-06-14T19:17:00-03:00'
 slug: off-topic-padr-es-commodities-e-inova--es
+description: "Apple e Zara ilustram uma visão Lean: repensar padrões, reduzir desperdícios e produzir conforme a demanda pode aumentar o valor entregue e diminuir estoques encalhados."
 tags:
+- gestao
+- negocios
 - off-topic
-- management
 draft: false
 ---
 

@@ -2,15 +2,12 @@
 title: AGI ou Skynet não vão chegar tão cedo
 date: '2025-06-18T15:00:00-03:00'
 slug: agi-ou-skynet-nao-vai-chegar-tao-cedo
+description: "Questiono previsões de AGI e alarmismo de CEOs e especialistas. O argumento central é que LLMs, com a arquitetura atual, chegaram a um limite e exigem uma nova descoberta para avançar."
 tags:
+- inteligencia-artificial
+- llms
+- filosofia
 - off-topic
-- agi
-- geoffrey hinton
-- yann lecun
-- sundar pichai
-- satya nadella
-- openai
-  - AI
 draft: false
 translationKey: agi-skynet-not-coming-soon
 ---

@@ -4,13 +4,12 @@ slug: "criei-widget-waybar-omarchy-monitorar-uso-llms-ai-usagebar"
 date: '2026-05-24T00:01:00-03:00'
 draft: false
 translationKey: criei-widget-waybar-omarchy-monitorar-uso-llms-ai-usagebar
+description: "O ai-usagebar, port do claudebar para Rust, reúne Claude, Codex, Z.AI e OpenRouter num widget Waybar ou numa TUI standalone que funciona em qualquer terminal, inclusive via SSH."
 tags:
-  - omarchy
-  - waybar
-  - rust
-  - llm
-  - ai-usagebar
-  - opensource
+- ai-usagebar
+- omarchy
+- ferramentas-de-desenvolvimento
+- llms
 ---
 
 Quem acompanha o blog já sabe que eu uso um monte de vendor de LLM diferente. Os principais são Claude e GPT, via Claude Code e Codex. Eu uso o harness de cada um porque estou preso aos planos de assinatura deles (Pro, Plus, Max), que saem muito mais baratos do que pagar crédito por token tipo OpenRouter. Mesmo assim, também uso OpenRouter pra acessar outros modelos pra teste, e tenho até uma assinatura Z.AI GLM pra coisas pequenas.

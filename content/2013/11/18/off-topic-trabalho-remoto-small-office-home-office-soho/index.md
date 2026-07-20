@@ -2,10 +2,11 @@
 title: "[Off-Topic] Trabalho Remoto - Small Office, Home Office (SoHo)"
 date: '2013-11-18T19:11:00-02:00'
 slug: off-topic-trabalho-remoto-small-office-home-office-soho
+description: "Trabalho remoto pode funcionar, mas não é uma solução universal. O texto aponta que estruturas intermediárias entre centralização e isolamento favorecem colaboração, mentoria e evolução de carreira."
 tags:
+- carreira
+- gestao
 - off-topic
-- career
-- insights
 draft: false
 ---
 

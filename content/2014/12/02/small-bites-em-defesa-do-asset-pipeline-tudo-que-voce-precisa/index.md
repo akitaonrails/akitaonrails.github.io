@@ -2,11 +2,11 @@
 title: "[Small-Bites] Em defesa do Asset Pipeline: tudo que você precisa"
 date: '2014-12-02T17:26:00-02:00'
 slug: small-bites-em-defesa-do-asset-pipeline-tudo-que-voce-precisa
+description: "O autor defende manter o Asset Pipeline do Rails e mostra como modularizar JavaScript com ModuleJS e Rails Assets, usando Bundler para controlar dependências sem RequireJS."
 tags:
-- learning
 - rails
 - javascript
-- front-end
+- frontend
 draft: false
 ---
 

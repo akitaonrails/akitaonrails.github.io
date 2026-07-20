@@ -2,11 +2,11 @@
 title: "[Off-Topic] Great Artists Steal"
 date: '2012-05-13T11:00:00-03:00'
 slug: off-topic-grandes-artistas-roubam
+description: "Starting from Picasso's phrase, the author argues that artists and developers begin by copying techniques, advancing only when practice helps them adapt, refine, and make them their own."
 tags:
-- off-topic
-- principles
-- career
 - philosophy
+- learning
+- off-topic
 draft: false
 ---
 

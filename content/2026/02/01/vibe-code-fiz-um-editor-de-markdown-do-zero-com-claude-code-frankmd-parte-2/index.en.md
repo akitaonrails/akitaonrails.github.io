@@ -4,12 +4,10 @@ slug: "frankmd-markdown-editor-vibe-code-part-2"
 date: 2026-02-01T19:29:18+00:00
 draft: false
 tags:
-- omarchy
-- vibecode
-- claude
-- gpt
-- crush
-  - AI
+- frankmd
+- frank
+- llms
+- artificial-intelligence
 translationKey: frankmd-part-2
 description: "Part 2 of the FrankMD story: refactoring, i18n, syntax highlighting, tests, and the hard-earned lessons from 30 hours of vibe coding with Claude."
 ---

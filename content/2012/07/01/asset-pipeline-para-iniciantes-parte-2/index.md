@@ -2,11 +2,11 @@
 title: Asset Pipeline para Iniciantes - Parte 2
 date: '2012-07-01T23:35:00-03:00'
 slug: asset-pipeline-para-iniciantes-parte-2
+description: "A Parte 2 mostra como separar desenvolvimento e produção no Asset Pipeline, incluir assets extras, gerar sprites com Compass e Sass e configurar URLs, cache e gzip no NGINX."
 tags:
-- learning
 - rails
-- tutorial
-- front-end
+- frontend
+- tutoriais
 draft: false
 ---
 

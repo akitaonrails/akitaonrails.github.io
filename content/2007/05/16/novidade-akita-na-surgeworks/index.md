@@ -2,8 +2,11 @@
 title: Novidade! Akita na Surgeworks
 date: '2007-05-16T21:03:26-03:00'
 slug: novidade-akita-na-surgeworks
+description: "Ao sair da Balance, o autor troca um emprego CLT por uma contratação remota da Surgeworks para trabalhar com Ruby e Rails. Ele vê a oportunidade como resultado de anos de estudo e dedicação."
 tags:
-- surgeworks
+- carreira
+- ruby
+- rails
 draft: false
 ---
 

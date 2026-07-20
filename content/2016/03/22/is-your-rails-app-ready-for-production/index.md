@@ -5,15 +5,11 @@ slug: sua-aplicacao-rails-esta-pronta-para-producao
 translationKey: rails-app-ready-for-production
 aliases:
 - /2016/03/22/is-your-rails-app-ready-for-production/
+description: "Um checklist de produção para Rails cobre deploy, servidor web, monitoramento, dependências, banco, filas, CDN e acessos. A recomendação final é otimizar com métricas antes de reescrever tudo."
 tags:
-- learning
+- tutoriais
+- devops
 - rails
-- heroku
-- deployment
-- optimization
-- security
-- performance
-- traduzido
 draft: false
 ---
 

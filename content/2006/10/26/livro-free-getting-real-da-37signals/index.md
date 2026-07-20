@@ -2,9 +2,11 @@
 title: 'Livro Free: Getting Real, da 37signals'
 date: '2006-10-26T06:20:18-03:00'
 slug: livro-free-getting-real-da-37signals
+description: "A 37signals libera Getting Real para leitura online, defendendo software simples, telas reais e decisões baseadas no produto que o usuário vê. A abordagem combina especialmente com web apps que evoluem continuamente."
 tags:
-- 37signals
-- getting-real
+- negocios
+- engenharia-de-software
+- desenvolvimento-web
 draft: false
 ---
 

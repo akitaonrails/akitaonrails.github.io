@@ -3,15 +3,9 @@ title: Understanding the Basics of ComfyUI to Generate AI Images
 date: '2025-04-20T19:30:00-03:00'
 slug: understanding-the-basics-of-comfyui-to-generate-ai-images
 tags:
-- comfyui
-- unet
-- stable diffusion
-- flux
-- latent
-- diffusion models
-- controlnet
-- loras
-  - AI
+- generative-media
+- machine-learning
+- tutorials
 draft: false
 translationKey: comfyui-basics-ai-images
 description: A hands-on, no-nonsense walkthrough of ComfyUI's core concepts (checkpoints, LoRAs, ControlNet, VAEs, samplers) and a real workflow for turning a photo into anime-style art.

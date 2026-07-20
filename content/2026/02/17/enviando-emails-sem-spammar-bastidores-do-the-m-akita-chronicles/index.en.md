@@ -4,13 +4,9 @@ slug: "sending-emails-without-getting-flagged-as-spam-behind-the-m-akita-chronic
 date: 2026-02-17T20:59:48+00:00
 draft: false
 tags:
-- themakitachronicles
-- vibecode
-- rubyonrails
-- amazon
-- ses
-- email
-  - AI
+- the-m-akita-chronicles
+- security
+- backend
 translationKey: sending-emails-without-spam
 description: "How to build a reliable newsletter sending pipeline on Amazon SES, covering atomic claiming, terminal states, DKIM/SPF/DMARC, List-Unsubscribe and the silent SES suppression list."
 ---

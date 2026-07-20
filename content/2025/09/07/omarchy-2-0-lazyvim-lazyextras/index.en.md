@@ -3,10 +3,9 @@ title: Omarchy 2.0 - LazyVim - LazyExtras
 date: "2025-09-07T16:00:00-03:00"
 slug: omarchy-2-0-lazyvim-lazyextras
 tags:
-  - arch
-  - omarchy
-  - lazyvim
-  - lazyextras
+- omarchy
+- developer-tools
+- tutorials
 draft: false
 translationKey: omarchy-lazyvim-lazyextras
 description: A practical walkthrough of LazyVim and the :LazyExtras command that ships pre-installed with Omarchy, covering the basic hotkeys and how to enable language support.

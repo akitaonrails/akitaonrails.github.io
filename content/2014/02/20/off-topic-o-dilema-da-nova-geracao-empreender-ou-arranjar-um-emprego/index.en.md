@@ -2,10 +2,12 @@
 title: "[Off-Topic] The New Generation's Dilemma: start a company or get a job?"
 date: '2014-02-20T06:00:00-03:00'
 slug: off-topic-o-dilema-da-nova-geracao-empreender-ou-arranjar-um-emprego
+description: "A bad boss does not make entrepreneurship the only way out. A job offers pay, learning, and results for building a career, while starting a company without experience may just reproduce the same problem."
 tags:
-- off-topic
 - career
 - startups
+- business
+- off-topic
 draft: false
 ---
 

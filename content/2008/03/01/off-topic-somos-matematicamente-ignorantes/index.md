@@ -2,11 +2,11 @@
 title: 'Off Topic: Somos Matematicamente Ignorantes'
 date: '2008-03-01T14:18:00-03:00'
 slug: off-topic-somos-matematicamente-ignorantes
+description: "Ao traduzir Bruce Martin, o autor usa aniversários, presidentes, esportes, cartas e dígitos de π para mostrar que padrões surgem naturalmente em dados aleatórios e não provam causas sobrenaturais."
 tags:
+- ciencia
+- filosofia
 - off-topic
-- principles
-- science
-- fallacies
 draft: false
 ---
 

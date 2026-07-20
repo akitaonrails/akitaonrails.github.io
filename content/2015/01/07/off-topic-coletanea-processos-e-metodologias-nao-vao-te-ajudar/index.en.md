@@ -2,10 +2,12 @@
 title: '[Off-Topic] Compilation: "Processes and Methodologies Won''t Help You!"'
 date: '2015-01-07T14:33:00-02:00'
 slug: off-topic-coletanea-processos-e-metodologias-nao-vao-te-ajudar
+description: "The collection criticizes ready-made recipes such as Agile, Kanban, and #noEstimates and argues for the scientific method, skepticism, and continuous study to make better decisions."
 tags:
-- off-topic
+- agile
 - management
-- insights
+- philosophy
+- off-topic
 draft: false
 ---
 

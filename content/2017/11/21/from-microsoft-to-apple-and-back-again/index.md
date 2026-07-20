@@ -5,15 +5,11 @@ slug: da-microsoft-para-a-apple-e-de-volta
 translationKey: microsoft-to-apple-and-back
 aliases:
 - /2017/11/21/from-microsoft-to-apple-and-back-again/
+description: "Ao comparar Windows 10, macOS, Linux e notebooks premium, o autor conclui que o Windows merece outra chance, usa Manjaro no VirtualBox e prefere Dell XPS para desenvolvimento e Surface Book 2 para design."
 tags:
-- mac
-- macos
 - apple
-- windows
 - microsoft
-- surface
-- dell
-- traduzido
+- hardware
 draft: false
 ---
 

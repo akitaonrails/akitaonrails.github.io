@@ -5,11 +5,11 @@ slug: implementacao-ruby-on-rails-sistema-ranking-popularidade-correto
 translationKey: rails-ranking-popularity
 aliases:
 - /2016/10/31/ruby-on-rails-implementation-of-a-proper-ranking-popularity-system/
+description: "Uma implementação Rails de popularidade substitui contagens e médias frágeis pelo limite inferior de Wilson, equilibrando proporção de votos e incerteza num score indexável."
 tags:
+- algoritmos-e-estruturas-de-dados
+- rails
 - ruby
-- ranking
-- algoritmo
-- traduzido
 draft: false
 ---
 

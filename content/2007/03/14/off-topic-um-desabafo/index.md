@@ -2,9 +2,12 @@
 title: 'Off Topic: Um Desabafo'
 date: '2007-03-14T03:02:00-03:00'
 slug: off-topic-um-desabafo
+description: "O autor critica carreiras presas a cadastros, reclamações e tecnologias escolhidas só pelo salário. Sua resposta é aprender continuamente, explorar sistemas e contribuir com projetos open source."
 tags:
+- carreira
+- aprendizado
+- open-source
 - off-topic
-- career
 draft: false
 ---
 

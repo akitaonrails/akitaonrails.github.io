@@ -2,11 +2,12 @@
 title: "[Off-Topic] Software Livre: Exercício de CAPITALISMO"
 date: '2016-04-22T15:30:00-03:00'
 slug: off-topic-software-livre-exercicio-de-capitalismo
+description: "O autor argumenta que software livre continua sendo propriedade privada sob licenças de uso, com trocas voluntárias e competição. Por isso, projetos podem falhar, sofrer forks ou desaparecer."
 tags:
+- open-source
+- economia
+- filosofia
 - off-topic
-- open source
-- free software
-- carreira
 draft: false
 ---
 

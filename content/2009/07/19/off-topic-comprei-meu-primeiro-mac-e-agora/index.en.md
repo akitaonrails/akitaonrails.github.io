@@ -2,12 +2,12 @@
 title: "[Off-Topic] Bought My First Mac — Now What?"
 date: '2009-07-19T22:01:00-03:00'
 slug: off-topic-comprei-meu-primeiro-mac-e-agora
+description: "The author offers guidance for first-time Mac owners, covering shortcuts and Finder, apps, security, virtualization, and development. Adapting means leaving Windows habits behind."
 tags:
-- off-topic
-- mac
 - apple
+- developer-tools
 - learning
-- beginner
+- off-topic
 draft: false
 ---
 

@@ -2,10 +2,11 @@
 title: Soluções para um Mundo Assíncrono/Concorrente
 date: '2013-12-23T14:34:00-02:00'
 slug: solucoes-para-um-mundo-assincrono-concorrente
+description: "CPU-bound e I/O-bound são problemas conhecidos, não motivos automáticos para trocar Rails. O texto recomenda jobs em background, serviços prontos e migração de runtime apenas quando o caso realmente exigir."
 tags:
-- learning
+- sistemas-distribuidos
+- performance
 - rails
-- presentation
 draft: false
 ---
 

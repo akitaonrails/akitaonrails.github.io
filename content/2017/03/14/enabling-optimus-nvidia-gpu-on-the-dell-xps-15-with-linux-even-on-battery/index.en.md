@@ -2,8 +2,10 @@
 title: Enabling Optimus NVIDIA GPU on the Dell XPS 15 with Linux, even on Battery
 date: '2017-03-14T14:21:00-03:00'
 slug: enabling-optimus-nvidia-gpu-on-the-dell-xps-15-with-linux-even-on-battery
+description: "I fix a TLP and Bumblebee conflict on Manjaro running on a Dell XPS 15 by blacklisting the NVIDIA PCI device, restoring GPU use after suspend and while on battery."
 tags:
-  - english
+- linux
+- hardware
 translationKey: enabling-optimus-nvidia
 draft: false
 ---

@@ -4,10 +4,9 @@ slug: "ai-agents-best-programming-language-for-llms"
 date: 2026-02-09T20:20:30+00:00
 draft: false
 tags:
-- claude
-- gpt
-- vibecode
-  - AI
+- programming-languages
+- llms
+- coding-agents
 translationKey: best-language-for-llms
 description: "A thought experiment on what a programming language designed for LLM coding agents, rather than human programmers, would look like."
 ---

@@ -2,6 +2,7 @@
 title: "[Rails Summit 2009] Teaser Trailer"
 date: '2009-09-16T06:35:00-03:00'
 slug: rails-summit-2009-teaser-trailer
+description: "Tapajós conta como publicou uma foto em um repositório do GitHub e acabou vendo o projeto receber pull requests, ganhar vida própria e continuar sendo forkado."
 tags:
 - railssummit2009
 draft: false

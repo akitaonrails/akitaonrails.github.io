@@ -4,12 +4,11 @@ date: '2026-04-18T14:00:00-03:00'
 draft: false
 slug: llm-benchmarks-part-2-multi-model
 translationKey: llm-benchmarks-part-2-multi-model
+description: "I tested seven combinations in Claude Code, opencode, and Codex, but no sub-agent was called. Variance across runs and harnesses keeps solo Opus as the default for greenfield projects."
 tags:
-  - llm
-  - benchmark
-  - claude
-  - ai
-  - vibecoding
+- llm-benchmarks
+- coding-agents
+- llms
 ---
 
 > ⚠️ **Obsolete article (updated 2026-04-24).** The conclusions and rankings in this post were superseded after I re-audited the benchmark against the `ruby_llm` gem source. The core finding (multi-model is not worth it for greenfield coding) still holds and has been folded into the canonical post. **The canonical version lives at [LLM Coding Benchmark (April 2026)](/en/2026/04/24/llm-benchmarks-parte-3-deepseek-kimi-mimo/).** This post stays as a historical record.

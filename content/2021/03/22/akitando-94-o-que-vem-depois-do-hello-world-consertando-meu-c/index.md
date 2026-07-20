@@ -2,15 +2,11 @@
 title: "[Akitando] #94 - O que vem DEPOIS do Hello World | Consertando meu C"
 date: '2021-03-22T15:12:00-03:00'
 slug: akitando-94-o-que-vem-depois-do-hello-world-consertando-meu-c
+description: "Akita corrige erros do episódio anterior e usa C para introduzir memória virtual, arrays, listas, hashtables, ordenação e Big O, mostrando por que complexidade pesa na escolha."
 tags:
-- algoritmos
-- estruturas de dados
-- complexidade
-- Big O
-- hashtable
-- lista ligada
-- array
-- memória virtual
+- algoritmos-e-estruturas-de-dados
+- ciencia-da-computacao
+- programacao
 - akitando
 draft: false
 ---

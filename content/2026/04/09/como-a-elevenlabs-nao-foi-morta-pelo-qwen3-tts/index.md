@@ -4,12 +4,9 @@ date: '2026-04-09T08:30:00-03:00'
 draft: false
 translationKey: how-elevenlabs-was-not-killed-by-qwen3-tts
 tags:
-  - ai
-  - llm
-  - tts
-  - elevenlabs
-  - qwen
-  - themakitachronicles
+- midia-generativa
+- modelos-locais
+- reviews
 description: "Quando o Qwen3 TTS saiu, meio mundo disse que era 'ElevenLabs killer'. Passei semanas tentando rodar o Qwen3 em produção no meu podcast. Ontem finalmente troquei pra ElevenLabs v3. Quase um dia depois, posso dizer: o open source ainda tá muito longe."
 ---
 

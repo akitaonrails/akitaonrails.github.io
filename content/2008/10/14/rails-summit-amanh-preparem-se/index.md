@@ -2,6 +2,7 @@
 title: 'Rails Summit: é amanhã, preparem-se!'
 date: '2008-10-14T10:02:00-03:00'
 slug: rails-summit-amanh-preparem-se
+description: "Na véspera do Rails Summit, o autor atualiza a programação, confirma a chegada de palestrantes e anuncia um Q&A online com David Heinemeier Hansson. Ele também fará uma introdução a Ruby e Rails."
 tags:
 - railssummit2008
 draft: false

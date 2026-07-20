@@ -3,12 +3,12 @@ title: "[Off-Topic] #noEstimates Debunked"
 date: '2013-10-07T11:35:00-03:00'
 slug: off-topic-noestimates-debunked
 translationKey: noestimates-debunked
+description: "The author separates projects from ongoing operations to defend estimates, objectives, and constraints in projects. To him, constraints drive innovation, but competent execution matters more than any methodology."
 tags:
-- off-topic
-- principles
-- management
 - agile
-- english
+- management
+- software-engineering
+- off-topic
 draft: false
 ---
 

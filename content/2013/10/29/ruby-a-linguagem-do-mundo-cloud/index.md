@@ -2,10 +2,12 @@
 title: Ruby, a linguagem do mundo Cloud
 date: '2013-10-29T10:49:00-02:00'
 slug: ruby-a-linguagem-do-mundo-cloud
+description: "O texto apresenta Ruby como um ecossistema vertical que cobre Rails, testes, front-end, deploy e infraestrutura Cloud. A recomendação é tratar Rails e automação como base e avançar em Chef e Vagrant."
 tags:
+- ruby
 - rails
-- pitch
-- cloud-computing
+- cloud
+- devops
 draft: false
 ---
 

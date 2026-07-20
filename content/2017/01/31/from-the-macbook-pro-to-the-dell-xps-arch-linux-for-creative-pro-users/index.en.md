@@ -3,14 +3,11 @@ title: From the Macbook Pro to the Dell XPS. Arch Linux for Creative Pro Users
 date: '2017-01-31T18:26:00-02:00'
 slug: from-the-macbook-pro-to-the-dell-xps-arch-linux-for-creative-pro-users
 translationKey: macbook-to-dell-xps
+description: "I move from a MacBook Pro to a Dell XPS 9550 and configure Manjaro, Bumblebee, and NVIDIA drivers for creative tools. Linux works well, but Apple still has the edge for mobile Pro workflows."
 tags:
 - linux
-- archlinux
-- nvidia
-- blender
-- darktable
-- bumblebee
-- english
+- apple
+- hardware
 draft: false
 ---
 

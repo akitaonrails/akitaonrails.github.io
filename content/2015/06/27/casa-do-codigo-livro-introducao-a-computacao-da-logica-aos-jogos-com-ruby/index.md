@@ -2,10 +2,11 @@
 title: "[Casa do Código] Livro: Introdução à Computação: Da Lógica aos jogos com Ruby"
 date: '2015-06-27T11:23:00-03:00'
 slug: casa-do-codigo-livro-introducao-a-computacao-da-logica-aos-jogos-com-ruby
+description: "Guilherme Silveira ensina fundamentos de programação com Ruby usando jogos que crescem em dificuldade. O livro prioriza raciocínio, algoritmos e estruturas de dados em vez de copiar código."
 tags:
-- learning
-- beginner
-- book
+- aprendizado
+- algoritmos-e-estruturas-de-dados
+- ruby
 draft: false
 ---
 

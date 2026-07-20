@@ -3,11 +3,11 @@ title: '"Yocto Services"! And My First Month with Elixir!'
 date: '2015-11-25T18:04:00-02:00'
 slug: yocto-services-and-my-first-month-with-elixir
 translationKey: yocto-services-first-month-elixir
+description: "After an intense month studying Elixir, the author suggests thinking of BEAM processes as “Yocto Services”: supervised GenServers that fail independently, exchange messages, and talk across nodes."
 tags:
-- learning
-- beginner
-- elixir
-- english
+- elixir-and-erlang
+- distributed-systems
+- software-architecture
 draft: false
 ---
 

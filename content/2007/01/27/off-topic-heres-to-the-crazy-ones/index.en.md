@@ -2,10 +2,12 @@
 title: 'Off Topic: "Here''s to the crazy ones ..."'
 date: '2007-01-27T16:02:14-02:00'
 slug: off-topic-heres-to-the-crazy-ones
+description: "The Think Different ad marked Apple and Steve Jobs’ comeback, celebrating people who challenge rules and change the world. The author links that defense of creatives to a possible Rails and 37signals manifesto."
 tags:
-- off-topic
 - apple
-- marketing
+- philosophy
+- business
+- off-topic
 draft: false
 ---
 

@@ -2,6 +2,7 @@
 title: Rails Summit Latin America 2009
 date: '2009-07-30T00:59:00-03:00'
 slug: rails-summit-latin-america-2009
+description: "O Rails Summit Latin America reuniria em São Paulo nomes conhecidos de Ruby e Rails em dois dias de palestras, com duas trilhas, tradução simultânea, Wi-Fi e espaço para networking."
 tags:
 - railssummit2009
 draft: false

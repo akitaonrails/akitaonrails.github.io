@@ -2,9 +2,11 @@
 title: "[Akitando] #58 - Aniversário de UM ANO!! | Bastidores do Canal"
 date: '2019-08-07T17:00:00-03:00'
 slug: akitando-58-aniversario-de-um-ano-bastidores-do-canal
+description: "No aniversário do Akitando, Fabio revela como escreve, grava e edita os episódios, do teleprompter ao áudio e à workstation. O formato longo e denso é uma escolha consciente para preservar conteúdo."
 tags:
-- bastidores
-- Fabio Akita
+- blog
+- audio-e-video
+- pessoal
 - akitando
 draft: false
 ---

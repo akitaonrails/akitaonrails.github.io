@@ -3,20 +3,11 @@ title: "[Akitando] #124 - Como Funciona Sockets, Cliente, Servidor e a Web? | In
   a Redes Parte 4"
 date: '2022-08-04T10:21:00-03:00'
 slug: akitando-124-como-funciona-sockets-cliente-servidor-e-a-web-introducao-a-redes-parte-4
+description: "Explico sockets como comunicação entre processos, construo um servidor HTTP em Node.js e uso telnet e DevTools para mostrar como portas, protocolos, clientes e servidores se conectam."
 tags:
-- IPC
-- socket
-- node.js
-- http
-- https
-- tls
-- ftp
-- sftp
-- telnet
-- ssh
-- port
-- browser
-- segurança
+- redes
+- backend
+- javascript
 - akitando
 draft: false
 ---

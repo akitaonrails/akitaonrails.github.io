@@ -5,11 +5,11 @@ slug: rails-venceu-o-elefante-na-sala
 translationKey: rails-has-won
 aliases:
 - /2016/05/23/rails-has-won-the-elephant-in-the-room/
+description: "A defesa de Rails admite seus anti-padrões e o monopólio no Ruby, mas sustenta que foco, adoção e custo-benefício ainda fazem dele a escolha pragmática para a maioria dos projetos pequenos e médios."
 tags:
+- rails
+- ruby
 - off-topic
-- open source
-- rants
-- traduzido
 draft: false
 ---
 

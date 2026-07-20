@@ -5,10 +5,9 @@ slug: railsconf-09-ninh-grosenbach-e-bui
 translationKey: railsconf-2009-ninh-grosenbach-bui
 aliases:
 - /2009/05/11/railsconf-09-ninh-grosenbach-bui/
+description: "A RailsConf 09 mistura tecnologia e diversão, com nomes da comunidade Ruby e Rails e o Rubystein, jogo feito em Ruby que a Phusion usou para mostrar que a linguagem era rápida o bastante."
 tags:
 - railsconf2009
-- interview
-- traduzido
 draft: false
 ---
 

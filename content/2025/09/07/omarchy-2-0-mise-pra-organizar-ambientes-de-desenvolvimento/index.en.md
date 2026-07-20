@@ -3,10 +3,9 @@ title: Omarchy 2.0 - Mise for Organizing Development Environments
 date: "2025-09-07T16:40:00-03:00"
 slug: omarchy-2-0-mise-for-organizing-dev-environments
 tags:
-  - arch
-  - omarchy
-  - mise
-  - docker
+- omarchy
+- developer-tools
+- containers
 draft: false
 translationKey: omarchy-mise-dev-environments
 description: How to use Mise on Omarchy (or any Linux distro) to pin language versions per project and stop breaking your apps on every system update.

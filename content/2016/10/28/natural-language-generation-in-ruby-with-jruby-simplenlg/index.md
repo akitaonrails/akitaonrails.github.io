@@ -5,9 +5,11 @@ slug: geracao-de-linguagem-natural-em-ruby-com-jruby-simplenlg
 translationKey: nlg-jruby-simplenlg
 aliases:
 - /2016/10/28/natural-language-generation-in-ruby-with-jruby-simplenlg/
+description: "O autor envolve o SimpleNLG Java num serviço Rails-API com JRuby e cria uma DSL Ruby para simplificar seu XML. O resultado ajusta plural, verbos e determinantes em frases inglesas."
 tags:
-- jruby
-- traduzido
+- ruby
+- java
+- rails
 draft: false
 ---
 

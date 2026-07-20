@@ -2,10 +2,12 @@
 title: 'Off-topic: MacWorld 2007 - Steve Jobs Announces the Long-Awaited iPhone!'
 date: '2007-01-09T11:34:34-02:00'
 slug: off-topic-macworld-2007-steve-jobs-anuncia-o-esperado-iphone
+description: "At MacWorld 2007, Steve Jobs introduces the iPhone as an iPod, phone, and internet communicator in one device, with a multitouch screen, OS X, Safari, Wi-Fi, and a camera. The US launch is planned for June."
 tags:
-- off-topic
 - apple
-- iphone
+- mobile
+- computing-history
+- off-topic
 draft: false
 ---
 

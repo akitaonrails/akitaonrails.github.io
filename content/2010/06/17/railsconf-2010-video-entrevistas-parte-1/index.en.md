@@ -2,9 +2,9 @@
 title: "[RailsConf 2010] - Video Interviews - Part 1"
 date: '2010-06-17T15:03:00-03:00'
 slug: railsconf-2010-video-interviews-part-1
+description: "With the Flip Mino HD battery dying along the way, the author recorded 11 interviews at RailsConf 2010, starting with Ben Scofield, James Golick, Carl Lerche, and Santiago Pastorino."
 tags:
 - railsconf2010
-- interview
 draft: false
 translationKey: railsconf-2010-interviews-part-1
 ---

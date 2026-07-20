@@ -3,10 +3,11 @@ title: Small Experiment with Rails over JRuby 9.x on Heroku
 date: '2016-06-03T18:12:00-03:00'
 slug: small-experiment-with-rails-over-jruby-9-x-on-heroku
 translationKey: rails-jruby-9x-heroku-experiment
+description: "Comparing the same Rails app on MRI and JRuby 9.1 on Heroku, the author finds similar performance but higher memory use and unstable boot on JRuby. For this case, MRI remains preferable."
 tags:
-- jruby
-- heroku
-- english
+- rails
+- performance
+- ruby
 draft: false
 ---
 

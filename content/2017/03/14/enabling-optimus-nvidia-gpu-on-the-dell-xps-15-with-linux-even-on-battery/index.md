@@ -2,8 +2,10 @@
 title: "Habilitando a GPU Optimus NVIDIA no Dell XPS 15 com Linux (até na Bateria)"
 date: '2017-03-14T14:21:00-03:00'
 slug: habilitando-a-gpu-optimus-nvidia-no-dell-xps-15-com-linux
+description: "Akita fixes a TLP and Bumblebee conflict on Manjaro running on a Dell XPS 15 by blacklisting the NVIDIA PCI device, restoring GPU use after suspend and while on battery."
 tags:
-  - traduzido
+- linux
+- hardware
 translationKey: enabling-optimus-nvidia
 aliases:
   - /2017/03/14/enabling-optimus-nvidia-gpu-on-the-dell-xps-15-with-linux-even-on-battery/

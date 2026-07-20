@@ -5,13 +5,10 @@ slug: criptomoedas-e-uma-bolha-isso-importa
 translationKey: cryptocurrencies-bubble
 aliases:
 - /2017/12/05/cryptocurrencies-is-it-a-bubble-does-it-matter/
+description: "A bolha pode estourar e o Bitcoin pode despencar, mas isso não encerra a história: o autor compara o cenário à bolha pontocom e defende uma aposta antifrágil, limitada ao que se pode perder."
 tags:
-- cryptocurrency
-- bitcoin
-- blockchain
-- bubble
-- dot-com
-- traduzido
+- bitcoin-e-criptomoedas
+- economia
 draft: false
 ---
 

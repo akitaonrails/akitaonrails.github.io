@@ -2,17 +2,11 @@
 title: "[Akitando] #112 - Subindo Aplicações Web em Produção | Aprendendo HEROKU"
 date: '2022-01-10T12:15:00-03:00'
 slug: akitando-112-subindo-aplicacoes-web-em-producao-aprendendo-heroku
+description: "Fabio Akita apresenta o fluxo básico de deploy no Heroku com Git, dynos, logs, Procfile, variáveis de ambiente, addons e Postgres, incluindo releases e rollback."
 tags:
-- heroku
-- web
-- deployment
-- php
-- kubernetes
-- docker
-- dokku
-- 12 factors
-- continous deployment
-- continuous integration
+- devops
+- cloud
+- desenvolvimento-web
 - akitando
 draft: false
 ---

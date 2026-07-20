@@ -2,10 +2,11 @@
 title: "[Akitando] #93 - Hello World Como Você Nunca Viu! | Entendendo C"
 date: '2021-03-06T10:00:00-03:00'
 slug: akitando-93-hello-world-como-voce-nunca-viu-entendendo-c
+description: "A partir de um Hello World em C, Akita explica tipos, memória, ponteiros, structs e callbacks, depois simula objetos e métodos para mostrar o que linguagens de alto nível escondem."
 tags:
-- Linguagem C
-- Estrutura de Dados
-- GCC
+- linguagens-de-programacao
+- ciencia-da-computacao
+- programacao
 - akitando
 draft: false
 ---

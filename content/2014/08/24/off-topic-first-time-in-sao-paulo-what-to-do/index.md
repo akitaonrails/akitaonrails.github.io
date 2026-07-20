@@ -5,10 +5,11 @@ slug: off-topic-primeira-vez-em-sao-paulo-o-que-fazer
 translationKey: first-time-sao-paulo-what-to-do
 aliases:
 - /2014/08/24/off-topic-first-time-in-sao-paulo-what-to-do/
+description: "Um guia pessoal organiza restaurantes, baladas, museus, mercados, parques e bairros de São Paulo por estações de metrô, com um mapa em camadas para quem tem pouco tempo."
 tags:
+- viagens
+- pessoal
 - off-topic
-- tourism
-- traduzido
 draft: false
 ---
 

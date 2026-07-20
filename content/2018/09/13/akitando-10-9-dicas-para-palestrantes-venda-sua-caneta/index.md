@@ -2,20 +2,9 @@
 title: "[Akitando] #10 - 9 Dicas para Palestrantes: Venda sua Caneta!"
 date: '2018-09-13T17:00:00-03:00'
 slug: akitando-10-9-dicas-para-palestrantes-venda-sua-caneta
+description: "Depois de mais de 200 palestras, Akita reúne oito cuidados práticos sobre slides, código, ensaio e backups. A regra decisiva vem no fim: uma apresentação precisa vender uma solução para um problema real da audiência."
 tags:
-- the conf
-- garr reynolds
-- zig ziglar
-- sales
-- vendas
-- palestra
-- slides
-- apresentação
-- caneta
-- powerpoint
-- keynote
-- wolf of wall street
-- jordan belfort
+- theconf
 - akitando
 draft: false
 ---

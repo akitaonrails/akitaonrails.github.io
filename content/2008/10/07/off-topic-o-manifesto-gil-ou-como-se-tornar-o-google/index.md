@@ -2,13 +2,12 @@
 title: 'Off-Topic: O Manifesto Ágil, ou Como se Tornar o Google'
 date: '2008-10-07T03:39:00-03:00'
 slug: off-topic-o-manifesto-gil-ou-como-se-tornar-o-google
+description: "O autor argumenta que agilidade depende de filosofia, confiança e equipes auto-organizadas, não só de procedimentos. Com Conway, open source e Google, defende uma cultura que favoreça inovação e adaptação."
 tags:
-- off-topic
-- principles
 - agile
-- career
-- management
-- chaos
+- gestao
+- engenharia-de-software
+- off-topic
 draft: false
 ---
 

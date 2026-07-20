@@ -4,14 +4,10 @@ slug: "rant-ai-killed-programmers"
 date: 2026-02-08T14:29:18+00:00
 draft: false
 tags:
+- artificial-intelligence
+- llms
+- career
 - off-topic
-- vibecode
-- claude
-- gpt
-- openai
-- anthropic
-- bolha
-  - AI
 translationKey: rant-ai-killed-programmers
 description: "Akita's rant on why AI won't replace real programmers, why the programming bubble already popped, the S-curve ceiling of current LLM architecture, and what actually changes for engineers in the LLM era."
 ---

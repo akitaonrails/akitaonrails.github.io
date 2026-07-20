@@ -2,9 +2,9 @@
 title: RailsConf 2008 - Rails 2.1 Released!
 date: '2008-06-04T19:44:00-03:00'
 slug: railsconf-2008-rails-2-1-released
+description: "Jeremy Kemper apresentou o Rails 2.1 e mostrou como contribuições da comunidade, como o jetty-rails de Fabio Kung, chegam ao projeto. Depois, o Core Team precisou resolver um problema no empacotamento das Gems."
 tags:
 - railsconf2008
-- english
 draft: false
 ---
 

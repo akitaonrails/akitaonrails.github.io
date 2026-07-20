@@ -2,12 +2,12 @@
 title: "[Off-Topic] Impressão 3D, a lenda?"
 date: '2014-10-07T14:39:00-03:00'
 slug: off-topic-impressao-3d-a-lenda
+description: "Ao analisar Print the Legend, mostro como a MakerBot passou de uma startup aberta de 12 pessoas à aquisição pela Stratasys. O documentário retrata o preço de transformar rebeldia em sistema."
 tags:
-- off-topic
-- insights
-- leisure
-- market
 - startups
+- negocios
+- cinema-e-cultura-pop
+- off-topic
 draft: false
 ---
 

@@ -2,17 +2,12 @@
 title: Rant - LLMs vão evoluir pra sempre? Desmistificando LLMs na programação
 date: '2025-05-01T02:30:00-03:00'
 slug: rant-llms-vao-evoluir-pra-sempre-desmistificando-llms-na-programacao
+description: "Após testar Claude, Gemini, Qwen e outros em refatorações reais, questiono benchmarks, evolução exponencial e Vibe Coding. LLMs ajudam, mas ainda dependem de programadores atentos para revisar e corrigir."
 tags:
+- llms
+- vibe-coding
+- benchmarks-de-llm
 - off-topic
-- aider
-- gpt
-- gemini
-- claude
-- imagenet
-- mcp
-- benchmark
-- llm
-  - AI
 draft: false
 translationKey: rant-llms-evolve-forever
 ---

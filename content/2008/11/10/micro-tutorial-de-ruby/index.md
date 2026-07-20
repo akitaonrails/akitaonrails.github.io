@@ -2,11 +2,11 @@
 title: Micro-Tutorial de Ruby
 date: '2008-11-10T01:48:00-02:00'
 slug: micro-tutorial-de-ruby
+description: "Preparei um micro-tutorial prático de Ruby em três partes, voltado a quem vem de linguagens tradicionais. A série destaca diferenças da linguagem e ainda aguarda revisão."
 tags:
-- learning
-- beginner
+- tutoriais
 - ruby
-- tutorial
+- aprendizado
 draft: false
 ---
 

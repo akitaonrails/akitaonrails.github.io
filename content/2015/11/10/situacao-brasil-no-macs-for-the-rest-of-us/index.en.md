@@ -2,11 +2,12 @@
 title: 'Brazil Situation: No Macs for the Rest of Us'
 date: '2015-11-10T16:54:00-02:00'
 slug: situacao-brasil-no-macs-for-the-rest-of-us
+description: "I tested a Dell Inspiron with Ubuntu after a MacBook Pro became too expensive for a Brazilian budget. Linux covers about 80% of my use, but proprietary software still requires Mac or Windows."
 tags:
-- off-topic
 - linux
-- beginner
-- learning
+- apple
+- hardware
+- off-topic
 draft: false
 ---
 

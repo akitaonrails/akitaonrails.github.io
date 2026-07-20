@@ -2,11 +2,11 @@
 title: "[Off-Topic] Blockchain e Criptomoedas no Brasil"
 date: '2017-08-28T13:07:00-03:00'
 slug: off-topic-blockchain-e-criptomoedas-no-brasil
+description: "Compartilhei indicações de empresas brasileiras ligadas a blockchain e criptomoedas, ainda como investidor sem projeto próprio. Também procurei profissionais com experiência prática para falar na THE CONF."
 tags:
+- bitcoin-e-criptomoedas
+- negocios
 - off-topic
-- blockchain
-- cryptocurrency
-- bitcoin
 draft: false
 ---
 

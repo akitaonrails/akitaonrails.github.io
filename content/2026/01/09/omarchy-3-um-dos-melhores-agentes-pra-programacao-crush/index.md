@@ -4,9 +4,11 @@ slug: "omarchy-3-um-dos-melhores-agentes-pra-programacao-crush"
 date: 2026-01-09T20:01:04-0300
 draft: false
 translationKey: omarchy-3-crush
+description: "Usei o Crush com Claude Opus 4.5 num blog Hugo e num chat em Zig com llama.cpp, CUDA e Qwen3. Ele refatorou scripts, atualizou APIs, corrigiu um segmentation fault e entregou um binário funcional por quase US$ 8."
 tags:
 - omarchy
-- AI
+- agentes-de-codigo
+- llms
 ---
 
 Ano passado eu estava recomendando o [Aider](https://aider.chat/) como agente pra auxiliar programação. Mas sinto que ele meio que parou no tempo. Comparado com os Cursor ou Windsurf da vida, ficou bem pra trás.

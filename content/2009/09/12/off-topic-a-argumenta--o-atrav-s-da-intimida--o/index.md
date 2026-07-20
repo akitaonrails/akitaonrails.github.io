@@ -2,10 +2,11 @@
 title: "[Off-Topic] A Argumentação através da Intimidação "
 date: '2009-09-12T09:40:00-03:00'
 slug: off-topic-a-argumenta--o-atrav-s-da-intimida--o
+description: "A tradução de Ayn Rand identifica a argumentação através da intimidação como uma falácia que substitui razões por medo e culpa, defendendo evidências e premissas bem examinadas."
 tags:
+- filosofia
+- aprendizado
 - off-topic
-- principles
-- fallacies
 draft: false
 ---
 

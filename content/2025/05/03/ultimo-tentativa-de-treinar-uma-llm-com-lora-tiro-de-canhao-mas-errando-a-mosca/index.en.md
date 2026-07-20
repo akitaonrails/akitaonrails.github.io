@@ -3,11 +3,9 @@ title: "Final Attempt to Train an LLM with LoRA. Cannon Shot, But Missing the Fl
 date: '2025-05-03T21:15:00-03:00'
 slug: final-attempt-to-train-an-llm-with-lora-cannon-shot-missing-the-fly
 tags:
-- qwen3
-- vllm
-- runpod
-- llm
-  - AI
+- llms
+- machine-learning
+- performance
 draft: false
 translationKey: last-lora-training-attempt
 description: Renting an 80GB H100 on RunPod to fine-tune Qwen3-32B with a LoRA on Zig 0.14, and discovering that even cannon-class hardware can still miss the target.

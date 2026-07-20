@@ -3,17 +3,9 @@ title: Using A.I. (ComfyUI) to Generate NPCs in Game Development
 date: '2025-04-23T16:25:00-03:00'
 slug: using-ai-comfyui-to-generate-npcs-for-game-development
 tags:
-- docker
-- games
-- mickmumpitz
-- workflow
-- npc
-- florence
-- ic-light
-- ipadapter
-- flux
-- comfyui
-  - AI
+- generative-media
+- gaming
+- local-models
 draft: false
 translationKey: ai-comfyui-npcs-game-dev
 description: A walkthrough of Mickmumpitz's ComfyUI workflow for generating coherent NPC character sheets from scratch, running on my Docker Compose setup.

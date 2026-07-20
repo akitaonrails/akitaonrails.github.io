@@ -4,14 +4,10 @@ slug: "ai-agents-qual-e-o-melhor-opencode-crush-claude-code-gpt-codex-copilot-cu
 aliases:
   - /2026/01/24/ai-agents-qual-e-o-melhor-opencode-crush-claude-code-gpt-codex-gopilot-cursor-windsurf-antigravity/
 date: 2026-01-24T09:00:31-0300
+description: "Comparei agentes como Crush, OpenCode, Claude Code e Codex e concluí que os harnesses proprietários ainda influenciam o resultado. Mesmo assim, continuo preferindo o Crush e uso Claude Code pontualmente."
 tags:
-- agents
-- claude
-- gpt
-- codex
-- opencode
-- crush
-  - AI
+- agentes-de-codigo
+- benchmarks-de-llm
 translationKey: ai-agents-which-is-best
 ---
 

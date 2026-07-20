@@ -2,9 +2,11 @@
 title: "[Off-Topic] Wake up Call"
 date: '2010-02-14T09:38:00-02:00'
 slug: off-topic-wake-up-call
+description: "A partir de Up in the Air, o autor lembra que empregos não são permanentes: faça um bom trabalho sem aceitar abusos, mantenha lealdade a si mesmo e encontre um objetivo."
 tags:
+- carreira
+- cinema-e-cultura-pop
 - off-topic
-- career
 draft: false
 ---
 

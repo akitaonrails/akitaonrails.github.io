@@ -2,12 +2,11 @@
 title: Como Contribuir no Blog do AkitaOnRails usando Docker
 date: "2025-08-29T22:37:16-03:00"
 slug: como-contribuir-no-blog-do-akitaonrails-usando-docker
+description: "Mostro como contribuir com o blog usando apenas Docker e Docker Compose, sem instalar Hugo, Go ou Ruby localmente. Scripts criam posts e volumes permitem hot reload durante a edição."
 tags:
-  - docker
-  - hugo
-  - desenvolvimento
-  - contribuição
-  - open-source
+- open-source
+- containers
+- tutoriais
 draft: false
 translationKey: contributing-to-blog-with-docker
 ---

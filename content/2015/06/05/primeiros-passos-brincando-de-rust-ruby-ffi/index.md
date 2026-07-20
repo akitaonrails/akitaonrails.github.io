@@ -2,9 +2,11 @@
 title: "[Primeiros Passos] Brincando de Rust + Ruby/FFI"
 date: '2015-06-05T16:05:00-03:00'
 slug: primeiros-passos-brincando-de-rust-ruby-ffi
+description: "Um exercício compara Ruby e Rust lendo arquivos grandes e usando regex via FFI. A crate inicial deixou Rust mais lento, mas trocar por PCRE tornou a implementação 3,7 vezes mais rápida."
 tags:
-- learning
 - rust
+- ruby
+- performance
 draft: false
 ---
 

@@ -2,12 +2,12 @@
 title: "[Off-Topic] Agile: the Truth Behind the Method"
 date: '2014-09-28T23:18:00-03:00'
 slug: off-topic-agile-a-verdade-por-tras-do-metodo
+description: "I argue that Scrum, XP, and other Agile practices cannot save bad teams. They expose risks and problems quickly. Agility depends on committed people, continuous practice, and concrete behavior changes."
 tags:
-- off-topic
-- principles
-- management
-- career
 - agile
+- management
+- software-engineering
+- off-topic
 draft: false
 ---
 

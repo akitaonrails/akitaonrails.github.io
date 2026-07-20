@@ -3,8 +3,11 @@ title: Natural Language Generation in Ruby (with JRuby + SimpleNLG)
 date: '2016-10-28T17:53:00-02:00'
 slug: natural-language-generation-in-ruby-with-jruby-simplenlg
 translationKey: nlg-jruby-simplenlg
+description: "The author wraps the Java SimpleNLG library in a Rails API service with JRuby and creates a Ruby DSL to simplify its XML. The result adjusts plurals, verbs, and determiners in English sentences."
 tags:
-- jruby
+- ruby
+- java
+- rails
 draft: false
 ---
 

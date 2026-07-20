@@ -2,6 +2,7 @@
 title: 'Rubyconf Brasil 2013: Meet Pablo Astigarraga'
 date: '2013-08-09T09:00:00-03:00'
 slug: rubyconf-brasil-2013-meet-pablo-astigarraga
+description: "Pablo Astigarraga revisits MVC’s history, the problems it solves, and its current limits. He also shows how Docker and Dokku enable your own PaaS with deploys through git push."
 tags:
 - rubyconfbr2013
 draft: false

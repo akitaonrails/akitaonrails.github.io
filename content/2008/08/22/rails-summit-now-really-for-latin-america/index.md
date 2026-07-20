@@ -2,9 +2,9 @@
 title: 'Rails Summit: now really for Latin America!'
 date: '2008-08-22T12:15:00-03:00'
 slug: rails-summit-now-really-for-latin-america
+description: "Rails Summit Latin America opens international registration for the October 15-16 event in São Paulo, accepting foreign credit cards and offering real-time English-to-Spanish translation. Tickets are BRL 300 until September 9, then BRL 400."
 tags:
 - railssummit2008
-- english
 draft: false
 ---
 

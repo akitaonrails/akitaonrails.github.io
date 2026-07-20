@@ -2,6 +2,7 @@
 title: 'Rubyconf Brasil 2013: Conheça Hongli Lai'
 date: '2013-08-14T17:39:00-03:00'
 slug: rubyconf-brasil-2013-conheca-hongli-lai
+description: "Hongli Lai apresenta o Passenger 4 e defende que prática, fundamentos formais e curiosidade importam mais que talento. Testes, CI e automação operacional são práticas duradouras."
 tags:
 - rubyconfbr2013
 draft: false

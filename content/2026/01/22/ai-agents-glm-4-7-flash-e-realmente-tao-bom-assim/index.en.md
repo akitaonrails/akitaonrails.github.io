@@ -4,10 +4,9 @@ slug: "ai-agents-is-glm-4-7-flash-really-that-good"
 date: 2026-01-22T13:41:05-0300
 draft: false
 tags:
-- crush
-- zai
-- glm
-  - AI
+- llm-benchmarks
+- local-models
+- coding-agents
 translationKey: glm-4-7-flash-review
 description: "Running GLM 4.7 Flash locally on an RTX 5090 via Ollama to see if it can finally match commercial LLMs on a hard coding challenge."
 ---

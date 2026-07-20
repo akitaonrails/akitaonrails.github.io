@@ -2,10 +2,12 @@
 title: Previsivelmente Irracional
 date: '2013-07-12T20:44:00-03:00'
 slug: previsivelmente-irracional
+description: "A partir de Dan Ariely, o autor apresenta a Economia Comportamental para mostrar como preços, desonestidade e placebo expõem decisões previsivelmente irracionais, algo essencial para quem gerencia pessoas."
 tags:
+- psicologia
+- economia
+- gestao
 - off-topic
-- principles
-- psychology
 draft: false
 ---
 

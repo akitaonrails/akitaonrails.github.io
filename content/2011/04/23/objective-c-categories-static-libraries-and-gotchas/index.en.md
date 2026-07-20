@@ -3,12 +3,11 @@ title: "[Objective-C] Categories, Static Libraries and Gotchas"
 date: '2011-04-23T23:44:00-03:00'
 slug: objective-c-categories-static-libraries-and-gotchas
 translationKey: objc-categories-static-libs
+description: "While testing an Objective-C static library, Akita finds categories missing at runtime and fixes the linker problem with -all_load on targets that depend on the library."
 tags:
-- learning
-- beginner
 - apple
-- objective-c
-- english
+- programming
+- tutorials
 draft: false
 ---
 

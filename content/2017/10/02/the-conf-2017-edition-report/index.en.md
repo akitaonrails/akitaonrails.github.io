@@ -3,9 +3,9 @@ title: THE CONF - 2017 Edition Report
 date: '2017-10-02T13:40:00-03:00'
 slug: the-conf-2017-edition-report
 translationKey: the-conf-2017-report
+description: "THE CONF 2017 cost R$103,637.02, brought in R$53,000, and left Fabio with at least R$50,000 in losses. Still, more than 300 paying attendees confirmed that an English-language event works."
 tags:
 - theconf
-- english
 draft: false
 ---
 

@@ -2,6 +2,7 @@
 title: 'Rubyconf Brasil 2013: Meet Carlos Galdino'
 date: '2013-08-26T09:20:00-03:00'
 slug: rubyconf-brasil-2013-meet-carlos-galdino
+description: "Carlos Galdino presents Rubinius to explain how a Ruby implementation processes code under the hood. He also advocates functional programming for handling concurrency and parallelism more effectively."
 tags:
 - rubyconfbr2013
 draft: false

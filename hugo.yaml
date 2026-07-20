@@ -13,12 +13,6 @@ locale: "pt-BR"
 defaultContentLanguage: "pt-br"
 baseURL: "https://www.akitaonrails.com/"
 
-# The site has many one-off legacy tags. Rendering an HTML page for every
-# individual tag adds ~1.5k pages and dominates production builds. Keep tags in
-# frontmatter/search/list metadata, but do not generate /tags/<tag>/ term pages.
-disableKinds:
-- term
-
 languages:
   pt-br:
     label: "Português"

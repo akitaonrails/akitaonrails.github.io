@@ -2,26 +2,11 @@
 title: "[Akitando] #42 - Entendendo Apple, GPL e Compiladores"
 date: '2019-03-06T17:00:00-03:00'
 slug: akitando-42-entendendo-apple-gpl-e-compiladores
+description: "Akita conecta a trajetória da Apple às disputas de licenças e à evolução de GCC, LLVM e Clang, mostrando como interesses comerciais influenciaram Swift, Kotlin e WebAssembly."
 tags:
+- linguagens-de-programacao
 - apple
-- android
-- swift
-- objective-c
-- java
-- kotlin
-- mobile
-- llvm
-- clang
-- freebsd
-- compiladores
-- emscripten
-- webassembly
-- asm.js
-- v8
-- rust
-- software livre
-- GPL
-- GCC
+- open-source
 - akitando
 draft: false
 ---

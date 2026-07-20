@@ -2,11 +2,10 @@
 title: Dynamic Site as fast as a Static Generated One with Raptor
 date: '2015-05-20T11:51:00-03:00'
 slug: dynamic-site-as-fast-as-a-static-generated-one-with-raptor
+description: "Uma aplicação Rails dinâmica chegou a quase 7.300 requests em 60 segundos, com média de 20 ms no Heroku usando Etags, Memcached e Passenger 5. Puma com Rack::Cache falhou no mesmo teste."
 tags:
-- learning
-- passenger
+- performance
 - rails
-- english
 draft: false
 ---
 

@@ -2,13 +2,12 @@
 title: "[Off-Topic] Net Negative Producing Programmer"
 date: '2009-03-30T01:25:00-03:00'
 slug: off-topic-net-negative-producing-programmer
+description: "Fabio apresenta o conceito de NNPP, o programador que produz prejuízo acumulando dívida técnica ou virando ponto único de falha, e distingue esse perfil de juniores dispostos a aprender."
 tags:
-- off-topic
-- principles
-- career
-- management
-- translation
+- engenharia-de-software
 - carreira
+- gestao
+- off-topic
 draft: false
 ---
 

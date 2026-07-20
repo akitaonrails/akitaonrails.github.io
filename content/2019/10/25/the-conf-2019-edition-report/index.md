@@ -2,6 +2,7 @@
 title: The Conf 2019 Edition Report
 date: '2019-10-25T11:27:00-03:00'
 slug: the-conf-2019-edition-report
+description: "The Conf 2019 nearly doubled attendance to 575 people while Codeminer 42 and OmniTrade covered most of the R$133,891.77 cost. All ticket revenue went to two social institutions."
 tags:
 - theconf
 draft: false

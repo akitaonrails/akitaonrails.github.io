@@ -2,11 +2,11 @@
 title: Personal Thoughts on the Current Functional Programming Bandwagon
 date: '2015-10-28T17:14:00-02:00'
 slug: personal-thoughts-on-the-current-functional-programming-bandwagon
+description: "Programação funcional ajuda a raciocinar sobre transformações imutáveis e concorrência, mas não é o fim dos paradigmas. Elixir é a aposta pessoal do autor, enquanto linguagens híbridas devem dominar o mainstream."
 tags:
-- learning
-- career
-- elixir
-- english
+- linguagens-de-programacao
+- elixir-e-erlang
+- aprendizado
 draft: false
 ---
 

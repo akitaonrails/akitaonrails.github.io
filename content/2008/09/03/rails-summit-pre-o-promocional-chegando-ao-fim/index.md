@@ -2,6 +2,7 @@
 title: 'Rails Summit: Preço Promocional chegando ao fim'
 date: '2008-09-03T00:00:00-03:00'
 slug: rails-summit-pre-o-promocional-chegando-ao-fim
+description: "O Rails Summit mantém o ingresso promocional por R$ 300 até 9 de setembro. A partir do dia seguinte, o preço passa a R$ 400, encerrando a primeira faixa de inscrição do evento."
 tags:
 - railssummit2008
 draft: false

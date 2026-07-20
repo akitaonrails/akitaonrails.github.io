@@ -3,16 +3,10 @@ title: "Rant - Will LLMs Evolve Forever? Demystifying LLMs in Programming"
 date: '2025-05-01T02:30:00-03:00'
 slug: rant-llms-will-evolve-forever-demystifying-llms-in-programming
 tags:
+- llms
+- vibe-coding
+- llm-benchmarks
 - off-topic
-- aider
-- gpt
-- gemini
-- claude
-- imagenet
-- mcp
-- benchmark
-- llm
-  - AI
 draft: false
 translationKey: rant-llms-evolve-forever
 description: A hype-busting rant on LLM benchmarks, the myth of exponential AI progress, and my hands-on experience showing why Vibe Coding does not work.

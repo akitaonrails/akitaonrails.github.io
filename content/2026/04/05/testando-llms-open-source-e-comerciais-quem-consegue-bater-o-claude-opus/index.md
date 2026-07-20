@@ -3,13 +3,11 @@ title: "Testando LLMs Open Source e Comerciais - Quem Consegue Bater o Claude Op
 date: '2026-04-05T18:00:00-03:00'
 draft: false
 translationKey: testing-llms-open-source-and-commercial
+description: "Este benchmark histórico comparou 33 LLMs num app Rails: Opus, Sonnet e GLM 5 funcionaram, enquanto Qwen 3.6 35B chegou perto na RTX 5090 após uma correção. Os rankings foram depois revisados."
 tags:
-  - llm
-  - benchmark
-  - open-source
-  - claude
-  - ai
-  - self-hosting
+- benchmarks-de-llm
+- llms
+- modelos-locais
 ---
 
 > ⚠️ **Artigo obsoleto (atualização de 2026-04-24).** As conclusões e rankings desse artigo foram superados depois que eu re-auditei o benchmark contra o código-fonte do gem `ruby_llm` e reestruturei o critério de avaliação. Várias "hallucinations" que eu catalogava eram API válida. Kimi K2.6 e Gemini 3.1 Pro subiram pra Tier A. GLM 5.1 caiu pra Tier C. MiMo V2.5 Pro caiu de "primeiro Tier 1 não-Anthropic" pra Tier B. **A versão canônica está em [Benchmark de LLMs pra Coding (Abril 2026)](/2026/04/24/llm-benchmarks-parte-3-deepseek-kimi-mimo/).** Esse artigo fica aqui como registro histórico do que eu concluí antes do re-audit.

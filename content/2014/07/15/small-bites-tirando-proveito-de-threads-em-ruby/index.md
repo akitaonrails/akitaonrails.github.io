@@ -2,9 +2,11 @@
 title: "[Small Bites] Tirando Proveito de Threads em Ruby"
 date: '2014-07-15T14:03:00-03:00'
 slug: small-bites-tirando-proveito-de-threads-em-ruby
+description: "Para buscar títulos de links do blog, o autor troca chamadas sequenciais por Threads Ruby e reduz o tempo de mais de 19 segundos para 1,6. O ganho vem da concorrência durante operações de I/O."
 tags:
-- learning
 - ruby
+- performance
+- sistemas-distribuidos
 draft: false
 ---
 

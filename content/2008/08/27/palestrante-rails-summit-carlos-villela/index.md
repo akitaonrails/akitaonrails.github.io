@@ -2,6 +2,7 @@
 title: 'Palestrante Rails Summit: Carlos Villela'
 date: '2008-08-27T22:27:00-03:00'
 slug: palestrante-rails-summit-carlos-villela
+description: "Carlos Villela apresenta uma arquitetura que usa a web para guardar e manipular documentos, mesmo fora de aplicações documentais. Com REST e decisões pouco convencionais, seus projetos ganharam produtividade, testabilidade e escala."
 tags:
 - railssummit2008
 draft: false

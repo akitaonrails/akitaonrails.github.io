@@ -5,7 +5,10 @@ slug: os-proximos-10-anos
 translationKey: next-10-years
 aliases:
   - /2016/09/26/the-next-10-years/
-tags: [traduzido]
+description: "Anuncio que deixarei de organizar conferências presas a uma linguagem ou plataforma, sem abandonar Ruby. A próxima fase é defender liberdade, pensamento crítico e código que entregue valor."
+tags:
+- pessoal
+- filosofia
 draft: false
 ---
 

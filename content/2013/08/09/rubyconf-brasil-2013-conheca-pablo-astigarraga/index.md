@@ -2,6 +2,7 @@
 title: 'Rubyconf Brasil 2013: Conheça Pablo Astigarraga'
 date: '2013-08-09T09:00:00-03:00'
 slug: rubyconf-brasil-2013-conheca-pablo-astigarraga
+description: "Pablo Astigarraga revisita a história do MVC, os problemas que o padrão resolve e seus limites atuais. Ele também mostra como Docker e Dokku permitem um PaaS próprio com deploy via git push."
 tags:
 - rubyconfbr2013
 draft: false

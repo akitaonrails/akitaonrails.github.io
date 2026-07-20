@@ -3,10 +3,9 @@ title: "Rails Podcast Brasil, QCon Special - Ola Bini (JRuby, Ioke)"
 date: '2008-11-22T07:03:00-02:00'
 slug: rails-podcast-brasil-qcon-special-ola-bini-jruby-ioke
 translationKey: rpb-qcon-ola-bini
+description: "Fabio interviews Ola Bini in nearly two hours on many paradigms and languages. Before introducing Ioke, a prototype-based dynamic language for the JVM, they explore a world beyond Java and C#."
 tags:
 - qcon2008
-- interview
-- english
 draft: false
 ---
 

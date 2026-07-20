@@ -2,9 +2,11 @@
 title: Minha Carreira Rails - Fase 3
 date: '2008-05-20T12:30:00-03:00'
 slug: minha-carreira-rails-fase-3
+description: "A Locaweb decidiu investir em Rails e lançou um trial de hospedagem compartilhada com mod_rails. O autor saiu da Surgeworks para assumir a gerência de produtos Rails e ajudar a expandir a comunidade brasileira."
 tags:
-- biography
-- locaweb
+- carreira
+- rails
+- pessoal
 draft: false
 ---
 

@@ -2,10 +2,12 @@
 title: "[Off-Topic] A maioria disse que usaria meu produto. Vai dar certo? Não!"
 date: '2013-03-11T06:39:00-03:00'
 slug: off-topic-a-maioria-disse-que-usaria-meu-produto-vai-dar-certo-nao
+description: "Uma pesquisa online com 70% de respostas favoráveis não valida um produto: amostra enviesada, perguntas tendenciosas e análise superficial podem transformar números em conclusões sem sentido."
 tags:
-- off-topic
-- insights
 - startups
+- negocios
+- ciencia
+- off-topic
 draft: false
 ---
 

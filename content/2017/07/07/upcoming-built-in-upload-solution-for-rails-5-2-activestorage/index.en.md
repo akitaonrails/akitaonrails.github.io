@@ -3,15 +3,11 @@ title: Upcoming built-in Upload Solution for Rails 5.2 (ActiveStorage)
 date: '2017-07-07T14:40:00-03:00'
 slug: upcoming-built-in-upload-solution-for-rails-5-2-activestorage
 translationKey: upcoming-activestorage
+description: "ActiveStorage organizes file uploads, transformations, and delivery, but still requires infrastructure decisions. On Heroku, prefer Direct Upload. For simple images, Cloudinary makes things easier, with lock-in."
 tags:
-- heroku
-- uploads
-- carrierwave
-- cloudfront
-- cloudinary
-- cdn
-- activestorage
-- english
+- rails
+- backend
+- cloud
 draft: false
 ---
 

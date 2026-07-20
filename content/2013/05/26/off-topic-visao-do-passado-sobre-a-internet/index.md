@@ -2,9 +2,11 @@
 title: "[Off-Topic] Visão do Passado sobre a Internet"
 date: '2013-05-26T20:56:00-03:00'
 slug: off-topic-visao-do-passado-sobre-a-internet
+description: "Um texto de 1996 revisita a origem da Internet, seus usuários e serviços, e acompanha a chegada da publicidade, do comércio eletrônico e dos protocolos de segurança às compras online."
 tags:
+- historia-da-computacao
+- redes
 - off-topic
-- biography
 draft: false
 ---
 

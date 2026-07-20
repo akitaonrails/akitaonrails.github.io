@@ -5,12 +5,11 @@ slug: phoenix-15-minute-blog-comparacao-com-ruby-on-rails
 translationKey: phoenix-15-minute-blog-vs-rails
 aliases:
 - /2015/11/20/phoenix-15-minute-blog-comparison-to-ruby-on-rails/
+description: "Comparo um blog com nested resources em Phoenix e Rails, de Mix a ExUnit. Phoenix é mais explícito e promissor para microserviços concorrentes, mas ainda não substitui o ecossistema Rails."
 tags:
-- learning
-- beginner
-- elixir
-- phoenix
-- traduzido
+- elixir-e-erlang
+- rails
+- desenvolvimento-web
 draft: false
 ---
 

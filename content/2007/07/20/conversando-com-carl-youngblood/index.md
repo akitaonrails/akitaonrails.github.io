@@ -2,8 +2,10 @@
 title: Conversando com Carl Youngblood
 date: '2007-07-20T11:53:00-03:00'
 slug: conversando-com-carl-youngblood
+description: "Carl Youngblood fala sobre sua passagem pelo Brasil, BBS, múltiplas linguagens e chegada ao Rails, mostrando como o SBN, a RailsConf e a Confreaks aproximaram seu trabalho da comunidade Ruby."
 tags:
-- interview
+- entrevistas
+- ruby
 draft: false
 translationKey: chatting-carl-youngblood
 aliases:

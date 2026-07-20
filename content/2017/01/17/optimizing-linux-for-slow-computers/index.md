@@ -5,11 +5,11 @@ slug: otimizando-o-linux-para-computadores-lentos
 translationKey: optimizing-linux-slow-computers
 aliases:
 - /2017/01/17/optimizing-linux-for-slow-computers/
+description: "Akita melhora a responsividade do Linux em um Lenovo antigo ajustando swap, schedulers, Dropbox e Tracker. Os ganhos maiores continuam vindo de mais RAM e de um SSD rápido."
 tags:
 - linux
-- kernel
-- arch
-- traduzido
+- performance
+- hardware
 draft: false
 ---
 

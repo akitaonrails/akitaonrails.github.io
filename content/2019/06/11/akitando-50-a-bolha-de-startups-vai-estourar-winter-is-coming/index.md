@@ -2,17 +2,11 @@
 title: "[Akitando] #50 - A Bolha de Startups vai Estourar? | Winter is Coming"
 date: '2019-06-11T17:00:00-03:00'
 slug: akitando-50-a-bolha-de-startups-vai-estourar-winter-is-coming
+description: "Fabio analisa sinais de uma possível correção na bolha de startups, como valuations inflados, IPOs fracos e negócios sem lucro, e defende programação, prática e visão de longo prazo."
 tags:
-- carreira
-- nasdaq
-- stock-option
 - startups
-- lean startup
-- bolha
-- uber
-- pareto
-- salário
-- profissional
+- mercado-de-tecnologia
+- carreira
 - akitando
 draft: false
 ---

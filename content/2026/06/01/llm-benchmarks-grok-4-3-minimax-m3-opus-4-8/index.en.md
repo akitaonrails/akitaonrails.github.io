@@ -4,14 +4,11 @@ slug: "llm-benchmarks-grok-4-3-minimax-m3-opus-4-8"
 date: '2026-06-01T13:00:00-03:00'
 draft: false
 translationKey: llm-benchmarks-grok-minimax-opus-update
+description: "In the Rails 8 benchmark, Opus 4.8 keeps the lead at 95/100, while Grok 4.3 and MiniMax M3 finally become usable but remain in Tier B, behind GPT and Opus."
 tags:
-  - llm
-  - benchmark
-  - claude
-  - grok
-  - minimax
-  - ai
-  - vibecoding
+- llm-benchmarks
+- llms
+- coding-agents
 ---
 
 This one's a routine update, sitting on top of the [canonical May benchmark (Part 3)](/en/2026/04/24/llm-benchmarks-parte-3-deepseek-kimi-mimo/) and the [DeepSeek-unlocked-with-DeepClaude post](/en/2026/05/04/llm-benchmarks-deepseek-unlocked-deepclaude/). Three new models landed in the test since then, and I'm logging them here just for completeness: Opus 4.8, Grok 4.3, and MiniMax M3 (MiniMax's v3). Spoiler: none of it moves the main conclusion. But data is data, and I like to keep the ranking honest and current.

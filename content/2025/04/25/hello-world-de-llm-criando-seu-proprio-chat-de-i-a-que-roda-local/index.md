@@ -2,19 +2,11 @@
 title: 'Hello World de LLM: criando seu próprio chat de I.A. que roda local'
 date: '2025-04-25T00:20:00-03:00'
 slug: hello-world-de-llm-criando-seu-proprio-chat-de-i-a-que-roda-local
+description: "Construí o Tiny Qwen CLI para explicar, na prática, como um LLM tokeniza contexto, gera o próximo token e usa parsers e scripts externos para ler arquivos e buscar páginas, formando agentes."
 tags:
-- llm
-- qwen
-- cursor
-- windsurf
-- aider
-- gemini
-- chatgpt
-- claude
-- python
-- docker
-- pytorch
-  - AI
+- llms
+- modelos-locais
+- agentes-de-codigo
 draft: false
 translationKey: llm-hello-world-local-chat
 ---

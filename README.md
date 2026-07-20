@@ -8,11 +8,11 @@ I will accept some pull requests, but do not make any massive changes, only twea
 
 ### Pré-requisitos
 
-**Docker (Recomendado)**
+#### Docker (Recomendado)
 
 - Docker e Docker Compose
 
-**Instalação Local**
+#### Dependências locais
 
 - Hugo (Extended version)
 - Go
@@ -28,17 +28,17 @@ git clone https://github.com/akitaonrails/akitaonrails.github.io.git
 cd akitaonrails.github.io
 ```
 
-2. **Inicie o ambiente:**
+1. **Inicie o ambiente:**
 
 ```shell
 ./scripts/dev.sh start
 ```
 
-3. **Acesse o blog:**
+1. **Acesse o blog:**
 
 - <http://localhost:1313>
 
-4. **Comandos úteis:**
+1. **Comandos úteis:**
 
 ```shell
 ./scripts/dev.sh logs           # Ver logs
@@ -46,6 +46,8 @@ cd akitaonrails.github.io
 ./scripts/dev.sh new-post       # Criar novo post
 ./scripts/dev.sh generate-index # Gerar índice
 ./scripts/dev.sh help           # Ver todos os comandos
+./scripts/tag_catalog.rb --search "assuntos centrais" # Procurar tags canônicas
+./scripts/tag_catalog.rb --check                      # Validar tags PT/EN
 ```
 
 ### Instalação Local
@@ -58,7 +60,7 @@ cd akitaonrails.github.io
 # adicionar conteúdo
 nvim content/2025/08/29/hello/index.md
 
-# gerar índice (gera _index.md + archives/_index.md)
+# gerar índices PT/EN da home, arquivo e seções
 ./scripts/generate_index.rb
 
 # build completo (produção) — sem --gc para não invalidar o cache do Netlify
@@ -77,6 +79,28 @@ hugo server --renderToMemory -p 1313
 > frio; os seguintes reusam imagens processadas, SCSS compilado e módulos
 > remotos (~50–80% mais rápido). Por isso o build command não usa `--gc`:
 > isso limparia exatamente o que queremos cachear.
+
+## Homepage, descrições e tags
+
+A homepage preserva a lista cronológica como visualização padrão e oferece
+uma grade responsiva de cards. A escolha fica salva no navegador. Destaques,
+posts mensais e cards usam o `description` do frontmatter como TL;DR; ao passar
+o mouse sobre o link principal da lista ou sobre um card, o navegador mostra a
+descrição completa.
+
+Todo post publicado precisa de uma descrição concreta em cada idioma
+disponível. A descrição é escrita uma vez a partir do artigo PT-BR final e
+traduzida para o sibling `index.en.md`. Tags também são definidas primeiro em
+PT-BR e mapeadas para os nomes EN pela taxonomia controlada em
+`data/tag_taxonomy.yml`. Consulte `TAGGING.md` e procure antes de criar uma tag:
+
+```shell
+./scripts/tag_catalog.rb --search "título e assuntos centrais"
+./scripts/tag_catalog.rb --check
+```
+
+As tags aparecem abaixo dos títulos na lista, nos cards e dentro dos artigos,
+e levam às páginas de agrupamento do Hugo.
 
 ## Como Contribuir
 
@@ -113,11 +137,12 @@ nvim content/2025/01/15/meu-post/index.md
 ```markdown
 ---
 title: "Título do Post"
-date: 2025-01-15T10:00:00-03:00
+date: '2025-01-15T10:00:00-03:00'
+description: "TL;DR concreto do artigo final."
+tags:
+- tag-canonica
+- outra-tag
 draft: false
-description: "Descrição do post"
-tags: [tag1, tag2]
-categories: [categoria]
 ---
 
 Conteúdo do post aqui...
@@ -131,18 +156,23 @@ Conteúdo do post aqui...
 
 ## Estrutura do Projeto
 
-```
+```text
 akitaonrails.github.io/
-├── content/              # Posts e páginas (Markdown)
-│   ├── _index.md         # Homepage (auto-gerado, posts recentes)
+├── content/              # Posts PT-BR e siblings index.en.md
+│   ├── _index.md         # Homepage PT-BR (auto-gerada)
+│   ├── _index.en.md      # Homepage EN (auto-gerada)
 │   └── archives/
-│       └── _index.md     # Arquivo completo (auto-gerado, posts antigos)
-├── layouts/              # Templates HTML
+│       └── _index*.md    # Arquivos PT/EN (auto-gerados)
+├── data/
+│   └── tag_taxonomy.yml  # Tags canônicas e mapeamento PT/EN
+├── layouts/              # Templates, tags e lista/grade da homepage
 ├── assets/               # CSS, JS, imagens
 ├── hugo.yaml             # Configuração do Hugo (inclui render segments)
 ├── go.mod                # Dependências Go
 ├── scripts/
-│   └── generate_index.rb # Gera _index.md + archives/_index.md
+│   ├── generate_index.rb # Gera home, arquivos e índices de seções
+│   └── tag_catalog.rb    # Busca, documenta e valida tags
+├── TAGGING.md            # Catálogo gerado da taxonomia
 ├── Dockerfile            # Imagem Docker
 └── docker-compose.yml    # Orquestração Docker (usa --renderSegments recent)
 ```
@@ -150,7 +180,11 @@ akitaonrails.github.io/
 ## Checklist para Contribuições
 
 - [ ] Testei localmente com Docker ou instalação local
+- [ ] Adicionei/revisei a descrição final em cada idioma publicado
+- [ ] Reusei tags existentes após consultar `TAGGING.md`
+- [ ] Validei a taxonomia (`./scripts/tag_catalog.rb --check`)
 - [ ] Gerei o índice de posts (`./scripts/dev.sh generate-index` ou `./scripts/generate_index.rb`)
+- [ ] Rodei o build completo (`hugo --minify`)
 - [ ] Verifiquei se o site funciona corretamente
 - [ ] Segui as convenções de nomenclatura do projeto
 - [ ] Documentei mudanças significativas

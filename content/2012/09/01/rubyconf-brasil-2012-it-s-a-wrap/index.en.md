@@ -3,6 +3,7 @@ title: RubyConf Brasil 2012 - It's a Wrap!
 date: '2012-09-01T22:00:00-03:00'
 slug: rubyconf-brasil-2012-it-s-a-wrap
 translationKey: rubyconf-brasil-2012-wrap
+description: "The closing celebrates five years of RubyConf Brazil and records its largest edition yet, with 750 attendees in person, 500 online, 31 talks, and 36 speakers."
 tags:
 - rubyconfbr2012
 draft: false

@@ -2,8 +2,11 @@
 title: Conversando com David Black
 date: '2007-05-11T21:19:00-03:00'
 slug: conversando-com-david-black
+description: "David Black conta como encontrou Ruby por acaso, ajudou a criar a Ruby Central e trocou a universidade por treinamento e consultoria. Para ele, Rails exige entender Ruby de verdade."
 tags:
-- interview
+- entrevistas
+- ruby
+- carreira
 draft: false
 translationKey: chatting-david-black
 aliases:

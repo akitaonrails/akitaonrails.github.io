@@ -5,10 +5,11 @@ slug: compartilhando-models-entre-aplicacoes-rails-parte-1
 translationKey: sharing-models-between-rails-apps-1
 aliases:
 - /2016/10/03/sharing-models-between-rails-apps-part-1/
+description: "Extraí a lógica estável dos models do Central para Concerns numa Rubygem testável, movi os specs quase sem alterações e concluí que a solução funciona bem para apps secundárias read-only."
 tags:
 - rails
-- database
-- traduzido
+- arquitetura-de-software
+- testes
 draft: false
 ---
 

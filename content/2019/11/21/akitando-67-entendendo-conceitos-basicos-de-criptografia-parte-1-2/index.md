@@ -2,21 +2,10 @@
 title: "[Akitando] #67 - Entendendo Conceitos Básicos de CRIPTOGRAFIA | Parte 1/2"
 date: '2019-11-21T11:00:00-03:00'
 slug: akitando-67-entendendo-conceitos-basicos-de-criptografia-parte-1-2
+description: "A primeira parte apresenta encriptação simétrica, DES, AES e hashes, explica colisões, extensão de comprimento e ataques de dicionário, e mostra por que não se deve criar criptografia à mão."
 tags:
-- aes
-- des
-- tripledes
-- encriptação
-- criptografia
-- segurança
-- md5
-- sha1
-- hmac
-- hacker
-- hashing
-- enigma
-- Alan Turing
-- segurança
+- seguranca
+- ciencia-da-computacao
 - akitando
 draft: false
 ---

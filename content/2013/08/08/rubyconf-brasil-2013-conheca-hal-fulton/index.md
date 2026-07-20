@@ -2,6 +2,7 @@
 title: 'Rubyconf Brasil 2013: Conheça Hal Fulton'
 date: '2013-08-08T09:00:00-03:00'
 slug: rubyconf-brasil-2013-conheca-hal-fulton
+description: "Hal Fulton presents External DSLs and parsing as especially useful for library, tool, and plugin authors, then shares practical advice on learning Ruby through books, code, pairing, and experimentation."
 tags:
 - rubyconfbr2013
 draft: false

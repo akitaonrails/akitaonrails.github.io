@@ -3,12 +3,10 @@ title: 'Ex Manga Downloadr - Part 7: Properly dealing with large Collections'
 date: '2017-06-16T15:10:00-03:00'
 slug: ex-manga-downloadr-part-7-properly-dealing-with-large-collections
 translationKey: ex-manga-downloadr-7
+description: "After Flow took over 3 minutes, I replaced it with Task.async_stream and got the old timings back. The solution simplifies the code, but reduces control and leaves downloads without retry."
 tags:
-- beginner
-- learning
-- elixir
-- english
-- exmangadownloadr
+- elixir-and-erlang
+- performance
 draft: false
 ---
 

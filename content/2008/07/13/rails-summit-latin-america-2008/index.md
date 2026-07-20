@@ -2,6 +2,7 @@
 title: RAILS SUMMIT LATIN AMERICA 2008
 date: '2008-07-13T13:05:00-03:00'
 slug: rails-summit-latin-america-2008
+description: "O Rails Summit Brazil pode se tornar Rails Summit Latin America, com tradução simultânea para espanhol e palestrantes como DHH, Charles Nutter e Luis Lavena. Uma enquete mede o interesse regional."
 tags:
 - railssummit2008
 draft: false

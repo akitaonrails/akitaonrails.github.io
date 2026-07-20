@@ -2,10 +2,12 @@
 title: 'Off Topic: "Here''s to the crazy ones ..."'
 date: '2007-01-27T16:02:14-02:00'
 slug: off-topic-heres-to-the-crazy-ones
+description: "O comercial Think Different marcou a volta da Apple e de Steve Jobs, celebrando quem desafia regras e muda o mundo. O autor aproxima essa defesa dos criativos de um possível manifesto para Rails e 37signals."
 tags:
-- off-topic
 - apple
-- marketing
+- filosofia
+- negocios
+- off-topic
 draft: false
 ---
 

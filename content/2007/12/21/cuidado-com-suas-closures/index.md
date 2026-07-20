@@ -2,10 +2,11 @@
 title: Cuidado com suas Closures
 date: '2007-12-21T14:52:00-02:00'
 slug: cuidado-com-suas-closures
+description: "Closures Ruby podem manter vivos objetos e variáveis capturados sem necessidade. O texto explica o problema e sugere criar blocos no menor escopo possível."
 tags:
-- learning
-- beginner
+- linguagens-de-programacao
 - ruby
+- engenharia-de-software
 draft: false
 ---
 

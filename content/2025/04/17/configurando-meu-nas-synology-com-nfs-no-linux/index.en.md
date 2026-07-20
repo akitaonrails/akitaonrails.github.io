@@ -3,11 +3,9 @@ title: Configuring My Synology NAS with NFS on Linux
 date: '2025-04-17T20:40:00-03:00'
 slug: configuring-my-synology-nas-with-nfs-on-linux
 tags:
-- synology
-- nas
-- raid
-- btrfs
-- autofs
+- homelab
+- linux
+- networking
 draft: false
 translationKey: synology-nas-nfs-linux
 description: How I switched from SMB to NFS to mount my Synology DS1821+ shares on Linux with proper ownership and permissions, plus the UID/GID gotcha along the way.

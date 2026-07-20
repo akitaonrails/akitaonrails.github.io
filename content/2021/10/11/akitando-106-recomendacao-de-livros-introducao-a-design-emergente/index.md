@@ -2,20 +2,11 @@
 title: "[Akitando] #106 - Recomendação de Livros - Introdução à Design Emergente"
 date: '2021-10-11T12:31:00-03:00'
 slug: akitando-106-recomendacao-de-livros-introducao-a-design-emergente
+description: "Akita recomenda livros de algoritmos, compiladores, código limpo, agilidade, padrões e DDD, defendendo que eles oferecem fundamentos e vocabulário, mas que o design emerge do código em uso."
 tags:
-- design patterns
-- domain driven design
-- UML
-- pragmatic programmer
-- clean code
-- robert martin
-- martin fowler
-- dave thomas
-- andy hunt
-- kent beck
-- extreme programming
-- agile
-- rup
+- arquitetura-de-software
+- engenharia-de-software
+- aprendizado
 - akitando
 draft: false
 ---

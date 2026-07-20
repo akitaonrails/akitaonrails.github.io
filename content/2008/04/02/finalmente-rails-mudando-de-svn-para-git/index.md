@@ -2,10 +2,11 @@
 title: Finalmente! Rails mudando de SVN para Git!!
 date: '2008-04-02T21:29:00-03:00'
 slug: finalmente-rails-mudando-de-svn-para-git
+description: "O Rails Core anuncia a migração do Subversion para o GitHub e do Trac para o Lighthouse. SVN e Trac seriam congelados, e acompanhar o Edge Rails passaria a exigir Git."
 tags:
-- subversion
-- git
 - rails
+- controle-de-versao
+- open-source
 draft: false
 ---
 

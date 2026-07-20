@@ -2,12 +2,11 @@
 title: "[Off-Topic] Reading the Agile Principles"
 date: '2010-01-30T19:32:00-02:00'
 slug: off-topic-lendo-os-principios-ageis
+description: "The 12 Agile principles need to be read together: delivering value quickly does not excuse quality, simplicity, collaboration, or continuous improvement. The Manifesto is not a ready-made recipe."
 tags:
-- off-topic
-- principles
-- career
-- management
 - agile
+- software-engineering
+- off-topic
 draft: false
 ---
 

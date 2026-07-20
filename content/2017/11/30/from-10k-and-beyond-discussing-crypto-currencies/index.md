@@ -5,11 +5,11 @@ slug: de-10-mil-e-alem-discutindo-criptomoedas
 translationKey: from-10k-discussing-crypto
 aliases:
 - /2017/11/30/from-10k-and-beyond-discussing-crypto-currencies/
+description: "O autor responde às críticas sobre bolha, energia, centralização, escala e função social das criptomoedas. Sua conclusão é evitar hype, estudar os fundamentos e assumir pessoalmente o risco de investir."
 tags:
-- cryptocurrency
-- bitcoin
-- blockchain
-- traduzido
+- bitcoin-e-criptomoedas
+- economia
+- pessoal
 draft: false
 ---
 

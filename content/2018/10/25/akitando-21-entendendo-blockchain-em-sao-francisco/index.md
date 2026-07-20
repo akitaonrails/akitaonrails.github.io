@@ -2,14 +2,11 @@
 title: "[Akitando] #21 - Entendendo Blockchain em São Francisco"
 date: '2018-10-25T17:00:00-03:00'
 slug: akitando-21-entendendo-blockchain-em-sao-francisco
+description: "Após a SF Blockchain Week, Akita contrasta investidores ocidentais e asiáticos, explica os limites de PoW, PoS e layer 2 e conclui que blockchains ainda estão na fase de early adopters."
 tags:
-- blockchain
-- criptomoedas
-- bitcoin
-- ethereum
-- vitalik
-- sfblockchainweek
-- binance
+- bitcoin-e-criptomoedas
+- economia
+- mercado-de-tecnologia
 - akitando
 draft: false
 ---

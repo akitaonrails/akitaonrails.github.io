@@ -3,11 +3,11 @@ title: 'ExMessenger Exercise: Understanding Nodes in Elixir'
 date: '2015-11-25T13:19:00-02:00'
 slug: exmessenger-exercise-understanding-nodes-in-elixir
 translationKey: exmessenger-nodes-elixir
+description: "I refactored a pre-1.0 terminal chat into an Umbrella app and explored Nodes, names, cookies, and remote GenServers. The result is closer to distributed peers than a traditional TCP client and server."
 tags:
-- learning
-- beginner
-- elixir
-- english
+- elixir-and-erlang
+- distributed-systems
+- software-architecture
 draft: false
 ---
 

@@ -2,6 +2,7 @@
 title: "[Rails Summit 2009] Palestrante Arthur Zapparoli"
 date: '2009-10-06T09:03:00-03:00'
 slug: rails-summit-2009-palestrante-arthur-zapparoli
+description: "Arthur Zapparoli relembra como o Rails 0.13 o levou do Python ao Ruby e apresenta uma palestra sobre Git, workflows e controle de versões no trabalho diário."
 tags:
 - railssummit2009
 draft: false

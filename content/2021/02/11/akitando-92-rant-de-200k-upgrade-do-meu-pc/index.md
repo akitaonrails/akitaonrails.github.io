@@ -2,14 +2,10 @@
 title: "[Akitando] #92 - RANT de 200K! | Upgrade do meu PC"
 date: '2021-02-11T17:00:00-03:00'
 slug: akitando-92-rant-de-200k-upgrade-do-meu-pc
+description: "Akita mostra os bastidores do canal e um upgrade de PC que reduziu a renderização de cerca de 30 para 5 minutos. A RTX 3080, o i9 e 64 GB de RAM são luxo, não necessidade."
 tags:
-- nvidia
-- amd
-- RTX 3080
-- PS5
-- Xbox Series X
-- Intel
-- Gainward
+- hardware
+- performance
 - akitando
 draft: false
 ---

@@ -3,14 +3,11 @@ title: '[Akitando] #36 - O Mercado de TI para Iniciantes em Programação | Sér
   aos 40"'
 date: '2019-01-23T17:00:00-02:00'
 slug: akitando-36-o-mercado-de-ti-para-iniciantes-em-programacao-serie-comecando-aos-40
+description: "Akita mapeia empresas públicas, grandes corporações, produtos, agências, body-shops e consultorias, e aconselha iniciantes a buscar bons pares e experiência antes de perseguir salário."
 tags:
 - carreira
-- empresas de TI
-- mercado de TI
-- remuneração
-- profissão de TI
-- programador
-- 40 anos
+- mercado-de-tecnologia
+- negocios
 - akitando
 draft: false
 ---

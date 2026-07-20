@@ -2,14 +2,10 @@
 title: NVIDIA e Wayland - Problemas pra PCI Passthrough em VMs
 date: '2025-04-17T19:35:00-03:00'
 slug: nvidia-e-wayland-problemas-pra-pci-passthrough-em-vms
+description: "No GNOME com Wayland, a RTX 4090 fica presa ao descarregar o driver para PCI passthrough. A solução foi matar o GDM por outro TTY e automatizar a troca com scripts."
 tags:
-- nvidia
-- wayland
-- manjaro
-- arch
-- gnome
-- libvirt
-- qemu
+- linux
+- hardware
 draft: false
 translationKey: nvidia-wayland-pci-passthrough
 ---

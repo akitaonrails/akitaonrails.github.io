@@ -2,6 +2,7 @@
 title: 'Rails Summit: Blogosfera'
 date: '2008-11-12T02:17:00-02:00'
 slug: rails-summit-blogosfera
+description: "Reuni reviews, transcrições, fotos e vídeos sobre o Rails Summit Latin America 2008. Como os vídeos oficiais foram perdidos por problemas técnicos, a comunidade registrou o evento."
 tags:
 - railssummit2008
 draft: false

@@ -2,13 +2,12 @@
 title: "[Off-Topic] Zona de conforto: sair às ruas não é a única solução"
 date: '2013-07-23T14:20:00-03:00'
 slug: off-topic-zona-de-conforto-sair-as-ruas-nao-e-a-unica-solucao
+description: "O autor critica quem transforma reclamações por salários, condições ou investimento em estratégia e defende assumir problemas difíceis, porque é neles que esforço próprio pode abrir espaço para inovação."
 tags:
-- off-topic
-- career
-- market
-- insights
-- startups
 - carreira
+- startups
+- mercado-de-tecnologia
+- off-topic
 draft: false
 ---
 

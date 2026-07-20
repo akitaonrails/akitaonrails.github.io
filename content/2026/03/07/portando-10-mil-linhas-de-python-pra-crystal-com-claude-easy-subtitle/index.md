@@ -3,13 +3,11 @@ title: "Portando 10 Mil Linhas de Python pra Crystal com Claude: easy-subtitle"
 date: '2026-03-07T22:00:00-03:00'
 draft: false
 translationKey: easy-subtitle-python-to-crystal
+description: "Pedi ao Claude um port feature-parity do Subservient para Crystal e obtive o easy-subtitle em menos de 40 minutos: 2.516 linhas, 76 testes e um binário estático de 6 MB, sem runtime Python."
 tags:
-  - crystal
-  - python
-  - claude
-  - vibe-coding
-  - AI
-  - subtitle
+- crystal
+- linguagens-de-programacao
+- vibe-coding
 ---
 
 No [artigo anterior](/2026/03/07/crystal-e-um-wrapper-inteligente-pro-ffmpeg-feito-em-3-horas-easy-ffmpeg/) eu mostrei por que escolhi Crystal pra CLIs de linha de comando. Nesse artigo eu quero mostrar um caso mais ambicioso. Não é mais uma ferramenta do zero -- é um port feature-parity de um projeto open source de 10 mil linhas de Python.

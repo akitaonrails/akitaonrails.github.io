@@ -3,7 +3,12 @@ title: "Vibe Code: Fiz um clone do Mega em Rails em 1 dia pro meu Home Server"
 slug: "vibe-code-fiz-um-clone-do-mega-em-rails-em-1-dia-pro-meu-home-server"
 date: 2026-02-21T18:48:25+00:00
 draft: false
-tags: ["rails", "ruby", "docker", "cloudflare", "security", "vibe-coding", "homeserver", "claude", "AI"]
+description: "Em três horas, construí o FrankMega, um clone self-hosted do Mega em Rails 8, SQLite e Docker. A iteração corrigiu 22 falhas de segurança e fechou com 210 testes e deploy via Cloudflare Tunnel."
+tags:
+- vibe-coding
+- rails
+- homelab
+- seguranca
 translationKey: frankmega-mega-clone-1-day
 ---
 

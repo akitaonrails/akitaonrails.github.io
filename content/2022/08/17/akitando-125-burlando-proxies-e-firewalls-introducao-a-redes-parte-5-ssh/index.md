@@ -3,15 +3,11 @@ title: "[Akitando] #125 - Burlando Proxies e Firewalls | Introdução a Redes Pa
   5 - SSH"
 date: '2022-08-17T10:32:00-03:00'
 slug: akitando-125-burlando-proxies-e-firewalls-introducao-a-redes-parte-5-ssh
+description: "Mostro como um app Node.js pode permitir injeção de comandos e como túneis SSH atravessam firewalls e proxies. Depois sanitizo a entrada e fecho essa brecha."
 tags:
-- segurança
-- ssh
-- firewall
-- ufw
-- digitalocean
-- proxy
-- http
-- segurança
+- seguranca
+- redes
+- backend
 - akitando
 draft: false
 ---

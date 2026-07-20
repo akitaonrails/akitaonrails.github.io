@@ -2,12 +2,11 @@
 title: Asset Pipeline para Iniciantes
 date: '2012-07-01T05:34:00-03:00'
 slug: asset-pipeline-para-iniciantes
+description: "O guia apresenta o Asset Pipeline no Rails 3.2 com exemplos de manifestos, pré-compilação, concatenação, minificação, gzip e fingerprints, mostrando como o deploy resolve problemas de cache."
 tags:
-- learning
-- beginner
 - rails
-- tutorial
-- front-end
+- frontend
+- tutoriais
 draft: false
 ---
 

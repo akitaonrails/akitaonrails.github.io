@@ -2,9 +2,11 @@
 title: '[Off-Topic] Se Você Precisa de "Validação", Provavelmente está Errado'
 date: '2016-04-20T15:49:00-03:00'
 slug: off-topic-se-voce-precisa-de-validacao-provavelmente-esta-errado
+description: "A partir de sua trajetória com Rails, o autor defende produzir nos próprios termos e rejeitar autoridades morais e dogmas. Para ele, pensamento crítico, ideias refutáveis e responsabilidade pessoal são o antídoto."
 tags:
+- filosofia
+- pessoal
 - off-topic
-- carreira
 draft: false
 ---
 

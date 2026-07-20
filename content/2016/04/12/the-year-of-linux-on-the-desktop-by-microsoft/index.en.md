@@ -3,11 +3,12 @@ title: "The Year of Linux on the Desktop, by Microsoft??"
 date: '2016-04-12T18:33:00-03:00'
 slug: the-year-of-linux-on-the-desktop-by-microsoft
 translationKey: year-linux-desktop-microsoft
+description: "I tested Bash on Windows in Preview 14316: Ruby, Redis, and Memcached work, but memory, shared memory, symlinks, and pseudo-terminals still fail. The promise is good, but it isn’t ready."
 tags:
-- off-topic
 - microsoft
-- ubuntu
-- english
+- linux
+- developer-tools
+- off-topic
 draft: false
 ---
 

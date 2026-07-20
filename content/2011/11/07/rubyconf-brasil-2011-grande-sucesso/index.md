@@ -2,6 +2,7 @@
 title: RubyConf Brasil 2011 - Grande Sucesso!
 date: '2011-11-07T00:17:00-02:00'
 slug: rubyconf-brasil-2011-grande-sucesso
+description: "A RubyConf Brasil 2011 reuniu mais de 700 pessoas presencialmente e 500 online em dois dias, com mais de 30 palestras, duas salas, tradução e transmissão ao vivo."
 tags:
 - rubyconfbr2011
 draft: false

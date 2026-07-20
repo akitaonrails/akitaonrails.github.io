@@ -3,12 +3,11 @@ title: Coherence and ExAdmin - Devise and ActiveAdmin for Phoenix
 date: '2016-12-06T18:18:00-02:00'
 slug: coherence-and-exadmin-devise-and-activeadmin-for-phoenix
 translationKey: coherence-exadmin-phoenix
+description: "Coherence and ExAdmin bring Phoenix closer to Devise and ActiveAdmin, while a simple Plug adds authorization for the admin area. They ease the start, but do not remove OTP and distributed-systems’ learning curve."
 tags:
-- elixir
-- phoenix
-- activeadmin
-- devise
-- english
+- elixir-and-erlang
+- backend
+- security
 draft: false
 ---
 

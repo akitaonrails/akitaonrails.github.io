@@ -2,15 +2,11 @@
 title: "[Akitando] #35 - Pequena retrospectiva 2018 e previsões 2019"
 date: '2019-01-04T10:00:00-02:00'
 slug: akitando-35-pequena-retrospectiva-2018-e-previsoes-2019
+description: "Akita vê 2018 como um período de consolidação, com quedas em cripto e mercados e aquisições como GitHub e Red Hat. Sua aposta para uma possível crise é estudar e preservar recursos."
 tags:
-- '2018'
-- '2019'
-- microsoft
-- github
-- mercados
-- recessão
-- redhat
-- ibm
+- mercado-de-tecnologia
+- economia
+- negocios
 - akitando
 draft: false
 ---

@@ -4,17 +4,9 @@ slug: 'ai-agents-comparing-top-llms-on-the-zig-challenge'
 date: 2026-01-11T19:22:37-0300
 draft: false
 tags:
-- ai
-- Agents
-- crush
-- GPT
-- Gemini
-- Codex
-- Claude
-- Opus
-- Qwen3
-- MiniMax
-- openrouter
+- llm-benchmarks
+- coding-agents
+- llms
 translationKey: llms-zig-challenge
 description: "I put the top commercial and open source LLMs of early 2026 through a nasty Zig + llama.cpp migration challenge to see which ones actually deliver."
 ---

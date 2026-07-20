@@ -2,13 +2,12 @@
 title: "[Tradução] Estimativa - O Melhor que Podemos Fazer"
 date: '2013-04-05T16:47:00-03:00'
 slug: traducao-estimativa-o-melhor-que-podemos-fazer
+description: "Ron Jeffries defende estimativas como intervalos de custo e velocidade, usados para testar riscos, decidir a cada duas semanas e orientar o produto sem virar promessa ou negociação."
 tags:
-- off-topic
-- principles
-- career
-- management
 - agile
-- carreira
+- gestao
+- engenharia-de-software
+- off-topic
 draft: false
 ---
 

@@ -2,11 +2,11 @@
 title: 'Off-Topic: Scientific Method vs Cargo Cult'
 date: '2008-12-16T13:51:00-02:00'
 slug: off-topic-m-todo-cient-fico-vs-cargo-cult
+description: "Fabio criticizes cargo cult programming and proposes testing hypotheses through research, throwaway prototypes, and experiments. At YellowPages, four months of preparation kept four months of implementation from becoming twenty."
 tags:
-- off-topic
-- principles
 - science
-- career
+- software-engineering
+- off-topic
 draft: false
 ---
 

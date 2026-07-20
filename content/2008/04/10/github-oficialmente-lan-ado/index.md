@@ -2,8 +2,10 @@
 title: GitHub Oficialmente Lançado!!
 date: '2008-04-10T18:02:00-03:00'
 slug: github-oficialmente-lan-ado
+description: "O GitHub deixa oficialmente o beta, dispensando convites para criar contas. A partir daí, qualquer pessoa pode abrir forks e começar a contribuir com os projetos hospedados na plataforma."
 tags:
-- github
+- open-source
+- controle-de-versao
 draft: false
 ---
 

@@ -2,6 +2,7 @@
 title: RailsConf 2008 - Video Interview with Phusion
 date: '2008-06-24T11:46:00-03:00'
 slug: railsconf-2008-video-interview-with-phusion
+description: "Na RailsConf 2008, entrevisto Hongli Lai, Ninh Bui e Tinko Andringa sobre o Phusion Passenger 2.0 e o Ruby Enterprise Edition, ferramentas da Phusion para publicar aplicações Rails."
 tags:
 - railsconf2008
 draft: false

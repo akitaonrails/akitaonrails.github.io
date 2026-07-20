@@ -4,15 +4,11 @@ slug: "por-que-llms-vao-falhar-na-sua-empresa"
 date: '2026-06-24T12:00:00-03:00'
 draft: false
 translationKey: why-llms-will-fail-at-your-company
+description: "A tese, assumidamente especulativa, é que LLMs amplificam processos onde pessoas terceirizam decisões. A alternativa proposta são ciclos diários de decisão, implementação, teste e revisão próximos do resultado."
 tags:
-  - ia
-  - llm
-  - agentes
-  - agile
-  - scrum
-  - produtividade
-  - programacao
-  - vibecoding
+- llms
+- vibe-coding
+- engenharia-de-software
 ---
 
 Este post é mais especulação do que tese fechada. Estou pensando alto. Pode estar incompleto, pode estar errado. Se você discordar, melhor ainda: responde nos comentários. Não estou tentando vender metodologia nova. Quero cutucar uma ferida que muita gente finge que não existe.

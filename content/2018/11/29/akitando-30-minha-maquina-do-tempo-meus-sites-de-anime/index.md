@@ -2,14 +2,11 @@
 title: "[Akitando] #30 - Minha Máquina do Tempo | Meus Sites de Anime"
 date: '2018-11-29T17:00:00-02:00'
 slug: akitando-30-minha-maquina-do-tempo-meus-sites-de-anime
+description: "Akita abre seus backups de 1997 a 2006, revive sites de anime feitos com HTML, FrontPage e JavaScript e percebe como esse trabalho moldou sua escrita e sua carreira."
 tags:
-- backup
-- animax
-- revista Herói
-- Cavaleiros do Zodíaco
-- Evangelion
-- Windows 98
-- VMWare
+- retrocomputacao
+- anime-e-manga
+- pessoal
 - akitando
 draft: false
 ---

@@ -2,11 +2,12 @@
 title: "[Off-Topic] Lean está Morto, longa vida à Eficiência"
 date: '2014-03-27T15:03:00-03:00'
 slug: off-topic-lean-esta-morto-longa-vida-a-eficiencia
+description: "Agile e Lean viraram uma indústria de cursos, certificações e ferramentas que obscurece seus princípios. O texto defende voltar ao básico: entregar valor, evitar desperdício, aprender e questionar."
 tags:
-- off-topic
-- management
 - agile
-- insights
+- gestao
+- engenharia-de-software
+- off-topic
 draft: false
 ---
 

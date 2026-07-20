@@ -2,9 +2,11 @@
 title: Participando em Podcasts
 date: '2017-06-02T10:34:00-03:00'
 slug: participando-em-podcasts
+description: "Reúno seis participações em podcasts sobre a comunidade Ruby, carreira em tecnologia, Rails e minha trajetória profissional, das origens nos anos 90 a conversas que chegam a quase duas horas."
 tags:
-- podcasts
-- interviews
+- entrevistas
+- carreira
+- pessoal
 draft: false
 ---
 

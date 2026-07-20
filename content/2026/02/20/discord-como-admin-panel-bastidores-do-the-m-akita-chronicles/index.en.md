@@ -4,10 +4,9 @@ slug: "discord-as-an-admin-panel-behind-the-m-akita-chronicles"
 date: 2026-02-20T03:18:24+00:00
 draft: false
 tags:
-- themakitachronicles
-- rubyonrails
-- discord
-  - AI
+- the-m-akita-chronicles
+- automation
+- backend
 translationKey: discord-as-admin-panel
 description: "How I replaced the classic Rails admin panel with a Discord bot: parser/dispatcher patterns, embeds, reactions, tool-calling LLMs, and the lessons from failing silently in production."
 ---

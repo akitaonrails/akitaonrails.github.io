@@ -3,11 +3,11 @@ title: "Frontend Sem Framework | Bastidores do The M.Akita Chronicles"
 slug: "frontend-sem-framework-bastidores-do-the-m-akita-chronicles"
 date: 2026-02-19T01:08:23+00:00
 draft: false
+description: "Sem framework JavaScript, combinei Tailwind v4, Hugo, ERB e CSS inline para servir web, blog, RSS e emails. O resultado cobre dark mode, acessibilidade e compatibilidade com clientes como Outlook 2016."
 tags:
-- themakitachronicles
-- tailwind
-- hugo
-  - AI
+- the-m-akita-chronicles
+- frontend
+- desenvolvimento-web
 translationKey: frontend-without-framework
 ---
 

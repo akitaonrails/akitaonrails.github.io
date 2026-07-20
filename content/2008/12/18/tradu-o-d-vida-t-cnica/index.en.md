@@ -2,11 +2,11 @@
 title: 'Translation: Technical Debt'
 date: '2008-12-18T01:55:00-02:00'
 slug: tradu-o-d-vida-t-cnica
+description: "Steve McConnell's translation separates accidental from strategic technical debt, explains its interest, and suggests tracking it in the backlog. Shortcuts can make sense when traceable and repayable."
 tags:
-- off-topic
-- principles
-- career
+- software-engineering
 - management
+- off-topic
 draft: false
 ---
 

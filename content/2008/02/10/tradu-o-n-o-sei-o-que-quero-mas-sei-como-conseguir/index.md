@@ -2,12 +2,11 @@
 title: 'Tradução: Não sei o que quero, mas sei como conseguir'
 date: '2008-02-10T17:18:00-02:00'
 slug: tradu-o-n-o-sei-o-que-quero-mas-sei-como-conseguir
+description: "A tradução separa desenvolvimento iterativo, que espera validar e mudar uma solução, de incremental, que adiciona funcionalidade. O argumento é planejar espaço para descobrir, refinar e descartar."
 tags:
-- off-topic
-- principles
 - agile
-- management
-- career
+- engenharia-de-software
+- off-topic
 draft: false
 ---
 

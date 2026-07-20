@@ -3,11 +3,11 @@ title: 'Off Topic: Vamos todos impedir a regulamentação da profissão de anali
   sistema'
 date: '2008-04-19T20:22:00-03:00'
 slug: off-topic-vamos-todos-impedir-a-regulamenta-o-da-profiss-o-de-analista-de-sistema
+description: "O autor critica a regulamentação de analistas de sistemas por comparar software a profissões de risco. Para ele, diploma, conselhos e burocracia não garantem qualidade e ainda podem barrar bons profissionais."
 tags:
+- leis-e-regulacao
+- carreira
 - off-topic
-- principles
-- market
-- regulation
 draft: false
 ---
 

@@ -3,18 +3,9 @@ title: 'LLM Hello World: Building Your Own Local AI Chat'
 date: '2025-04-25T00:20:00-03:00'
 slug: llm-hello-world-building-your-own-local-ai-chat
 tags:
-- llm
-- qwen
-- cursor
-- windsurf
-- aider
-- gemini
-- chatgpt
-- claude
-- python
-- docker
-- pytorch
-  - AI
+- llms
+- local-models
+- coding-agents
 draft: false
 translationKey: llm-hello-world-local-chat
 description: A hands-on Hello World experiment explaining how LLMs actually work under the hood, building a tiny local chat CLI with Qwen 2.5 Coder running on a single GPU.

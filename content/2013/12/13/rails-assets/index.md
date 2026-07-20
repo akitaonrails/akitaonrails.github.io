@@ -2,11 +2,10 @@
 title: Rails Assets
 date: '2013-12-13T19:49:00-02:00'
 slug: rails-assets
+description: "Rails Assets tenta transformar pacotes Bower em gems rails-assets, mantendo dependências front-end e back-end no Bundler. A proposta simplifica o workflow, mas ainda precisa lidar com paths e ajustes manuais."
 tags:
-- learning
-- beginner
 - rails
-- front-end
+- frontend
 - javascript
 draft: false
 ---

@@ -2,8 +2,10 @@
 title: Conversando com Adrian Holovaty
 date: '2008-01-01T16:47:00-02:00'
 slug: conversando-com-adrian-holovaty
+description: "Adrian Holovaty explica como as demandas de sites jornalísticos deram origem ao Django e às suas abstrações de alto nível, como site admin e Databrowse, além de discutir dados e EveryBlock."
 tags:
-- interview
+- entrevistas
+- desenvolvimento-web
 draft: false
 translationKey: chatting-adrian-holovaty
 aliases:

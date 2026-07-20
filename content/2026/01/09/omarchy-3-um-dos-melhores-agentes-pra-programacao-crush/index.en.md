@@ -4,9 +4,11 @@ slug: "omarchy-3-one-of-the-best-coding-agents-crush"
 date: 2026-01-09T20:01:04-0300
 draft: false
 translationKey: omarchy-3-crush
+description: "I used Crush with Claude Opus 4.5 on a Hugo blog and a Zig chat using llama.cpp, CUDA, and Qwen3. It refactored scripts, updated APIs, fixed a segmentation fault, and delivered a working binary for nearly $8."
 tags:
 - omarchy
-- AI
+- coding-agents
+- llms
 ---
 
 Last year I was recommending [Aider](https://aider.chat/) as the go-to coding agent. But it kind of stopped in time. Compared to the Cursors and Windsurfs of the world, it fell pretty far behind.

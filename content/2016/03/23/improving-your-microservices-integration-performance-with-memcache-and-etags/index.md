@@ -5,14 +5,11 @@ slug: melhorando-performance-integracao-microservices-memcache-etags
 translationKey: microservices-memcache-etags
 aliases:
 - /2016/03/23/improving-your-microservices-integration-performance-with-memcache-and-etags/
+description: "Usando ETAGs, If-None-Match e Memcached entre duas APIs Rails, o autor reduz respostas de 26ms para 12ms e de 62ms para 24ms. A técnica é simples e rende mais em dados que mudam pouco."
 tags:
-- learning
-- rails
-- otimization
 - performance
-- heroku
-- memcached
-- traduzido
+- rails
+- sistemas-distribuidos
 draft: false
 ---
 

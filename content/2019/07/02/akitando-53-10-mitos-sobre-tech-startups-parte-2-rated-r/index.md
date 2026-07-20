@@ -2,17 +2,11 @@
 title: "[Akitando] #53 - 10 Mitos sobre Tech Startups | Parte 2 [Rated R]"
 date: '2019-07-02T17:00:00-03:00'
 slug: akitando-53-10-mitos-sobre-tech-startups-parte-2-rated-r
+description: "Fabio desmonta os cinco últimos mitos sobre startups, de faculdade e planos de negócio a networking e riqueza rápida, defendendo experiência, relações de confiança, execução e sorte."
 tags:
+- startups
+- negocios
 - akitando
-- Bill Gates
-- networking
-- business plan
-- business model
-- Charles Darwin
-- Harvard
-- Dan Ariely
-- Nassim Taleb
-- Akitando
 draft: false
 ---
 

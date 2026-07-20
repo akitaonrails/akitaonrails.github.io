@@ -2,11 +2,12 @@
 title: 'Off-Topic: The Power of Myth, Redux'
 date: '2008-09-20T05:56:00-03:00'
 slug: off-topic-o-poder-do-mito-redux
+description: "Akita criticizes the promise of manufacturing leaders through self-help, certifications, and ready-made methodologies. To him, leadership requires self-teaching, merit, and real challenges, not formulas crediting every success to the method"
 tags:
-- off-topic
-- principles
 - philosophy
 - career
+- learning
+- off-topic
 draft: false
 ---
 

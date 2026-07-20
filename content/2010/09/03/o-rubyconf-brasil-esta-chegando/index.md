@@ -2,6 +2,7 @@
 title: O RubyConf Brasil está Chegando!
 date: '2010-09-03T02:33:00-03:00'
 slug: o-rubyconf-brasil-esta-chegando
+description: "O autor anuncia a RubyConf Brasil 2010 no Frei Caneca, com ingressos a partir de R$ 150, aula introdutória gratuita da Caelum e 24 palestrantes, enquanto a organização mira mais de 700 participantes."
 tags:
 - rubyconfbr2010
 draft: false

@@ -5,9 +5,11 @@ slug: flertando-com-crystal-perspectiva-de-um-rubyista
 translationKey: flirting-with-crystal-rubyist
 aliases:
 - /2016/05/31/flirting-with-crystal-a-rubyist-perspective/
+description: "Avaliando Crystal pela ótica de um Rubyista, o autor destaca sua sintaxe familiar, binários nativos rápidos e concorrência cooperativa para I/O, mas deixa claro que a linguagem não substitui Ruby ou Rails."
 tags:
 - crystal
-- traduzido
+- ruby
+- linguagens-de-programacao
 draft: false
 ---
 

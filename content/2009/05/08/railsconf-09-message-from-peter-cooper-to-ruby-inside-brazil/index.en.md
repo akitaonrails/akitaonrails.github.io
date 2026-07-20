@@ -3,10 +3,9 @@ title: "RailsConf 09 - Message from Peter Cooper to Ruby Inside Brazil"
 date: '2009-05-08T04:11:00-03:00'
 slug: railsconf-09-message-from-peter-cooper-to-ruby-inside-brazil
 translationKey: railsconf-2009-peter-cooper-msg
+description: "Peter Cooper sends a message about Ruby Inside Brasil, a branch created by Railers to cover Ruby and Rails news in the country and abroad."
 tags:
 - railsconf2009
-- interview
-- english
 draft: false
 ---
 

@@ -2,13 +2,11 @@
 title: "[Off-Topic] Lendo os Princípios Ágeis"
 date: '2010-01-30T19:32:00-02:00'
 slug: off-topic-lendo-os-principios-ageis
+description: "Os 12 princípios ágeis precisam ser lidos em conjunto: entregar valor rapidamente não dispensa qualidade, simplicidade, colaboração e melhoria contínua. Manifesto não é receita pronta."
 tags:
-- off-topic
-- principles
-- career
-- management
 - agile
-- carreira
+- engenharia-de-software
+- off-topic
 draft: false
 ---
 

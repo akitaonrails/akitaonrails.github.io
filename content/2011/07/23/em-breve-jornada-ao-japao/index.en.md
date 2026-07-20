@@ -2,6 +2,7 @@
 title: 'Upcoming: Journey to Japan'
 date: '2011-07-23T21:30:00-03:00'
 slug: upcoming-journey-to-japan
+description: "Akita announces accounts of his first visit to Japan, his grandparents' homeland, where he attended RubyKaigi 2011 and became the event's first South American speaker."
 tags:
 - rubykaigi2011
 draft: false

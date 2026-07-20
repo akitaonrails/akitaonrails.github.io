@@ -2,8 +2,11 @@
 title: Chatting with Avi Bryant - Part 2
 date: '2007-12-22T20:36:00-02:00'
 slug: chatting-with-avi-bryant-part-2
+description: "Avi Bryant defends Smalltalk’s pragmatic simplicity, estimates that Ruby could be up to 25 times faster, and explains how Seaside uses continuations and components."
 tags:
-- interview
+- interviews
+- programming-languages
+- software-architecture
 draft: false
 translationKey: chatting-avi-bryant-part-2
 ---

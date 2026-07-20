@@ -2,12 +2,12 @@
 title: '[Off-Topic] O Mito do "Legado"'
 date: '2012-08-15T12:28:00-03:00'
 slug: off-topic-o-mito-do-legado
+description: "O autor critica a reescrita automática de sistemas legados e conta como consertou, em duas semanas, um ASP com DCOM, preservando o código e conquistando um novo projeto do cliente."
 tags:
+- engenharia-de-software
+- arquitetura-de-software
+- negocios
 - off-topic
-- principles
-- career
-- management
-- carreira
 draft: false
 ---
 

@@ -2,10 +2,12 @@
 title: "[Off-Topic] Comentando o Marco Civil Aprovado"
 date: '2014-03-30T09:46:00-03:00'
 slug: off-topic-comentando-o-marco-civil-aprovado
+description: "Ao comentar o texto aprovado do Marco Civil, o autor considera válida a neutralidade de rede, mas critica custos, órgãos reguladores e mecanismos que ampliariam o acesso estatal a dados privados."
 tags:
+- leis-e-regulacao
+- redes
+- seguranca
 - off-topic
-- market
-- regulation
 draft: false
 ---
 

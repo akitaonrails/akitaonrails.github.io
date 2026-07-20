@@ -2,13 +2,11 @@
 title: Omarchy 2.0 - ZSH Configs
 date: "2025-09-07T15:00:00-03:00"
 slug: omarchy-2-0-zsh-configs
+description: "Troquei o Bash do Omarchy por ZSH e organizei aliases, variáveis secretas, Atuin, Starship e SGPT. O resultado é um shell ajustado ao meu workflow, com histórico sincronizado e busca no terminal."
 tags:
-  - arch
-  - omarchy
-  - atuin
-  - secrets
-  - starship
-  - zsh
+- omarchy
+- ferramentas-de-desenvolvimento
+- automacao
 draft: false
 translationKey: omarchy-zsh-configs
 ---

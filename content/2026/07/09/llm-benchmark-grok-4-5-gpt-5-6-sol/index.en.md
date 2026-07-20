@@ -4,15 +4,10 @@ slug: "llm-benchmark-grok-4-5-gpt-5-6-sol"
 date: '2026-07-09T15:00:00-03:00'
 draft: false
 translationKey: llm-benchmark-grok-4-5-gpt-5-6-sol
+description: "Grok 4.5 entered Tier A with 87, and GPT 5.6 Sol scored 92. Sol beat GPT 5.5 by 92 to 81 in the blind A/B test, but re-auditing brought it down to 85. With cache-read fixed, Opus 4.8 remains the best API balance."
 tags:
-  - llm
-  - benchmark
-  - grok
-  - gpt
-  - openai
-  - pricing
-  - ai
-  - vibecoding
+- llm-benchmarks
+- llms
 ---
 
 Another round of my coding benchmark. In the [previous post](/en/2026/07/01/llm-benchmark-sonnet-5-fails-gemini-flash-surprises-sakana-fugu-almost-tier-a/), Sonnet 5 showed up with a big name and finished at 58/100 Tier C (hype doesn't compile), while Gemini 3.5 Flash surprised everyone with 93/100 Tier A and Sakana Fugu Ultra stalled right at the Tier B ceiling. The practical recommendation stayed the same as always: for serious work, Opus or GPT via Claude Code, Codex, or OpenCode.

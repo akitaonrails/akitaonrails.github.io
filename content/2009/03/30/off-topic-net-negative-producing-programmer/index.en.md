@@ -2,11 +2,12 @@
 title: "[Off-Topic] Net Negative Producing Programmer"
 date: '2009-03-30T01:25:00-03:00'
 slug: off-topic-net-negative-producing-programmer
+description: "Fabio introduces NNPP, the programmer who creates losses by accumulating technical debt or becoming a single point of failure, and distinguishes this profile from juniors willing to learn."
 tags:
-- off-topic
-- principles
+- software-engineering
 - career
 - management
+- off-topic
 draft: false
 ---
 

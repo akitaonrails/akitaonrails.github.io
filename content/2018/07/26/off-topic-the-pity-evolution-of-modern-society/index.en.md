@@ -3,12 +3,12 @@ title: "[Off-Topic] The Pity Evolution of Modern Society"
 date: '2018-07-26T15:28:00-03:00'
 slug: off-topic-the-pity-evolution-of-modern-society
 translationKey: pity-evolution-modern-society
+description: "Akita criticizes online lynch mobs, echo chambers, and the idea of a right never to be offended. To him, social media turns outrage into public trials without dialogue or due process."
 tags:
+- politics
+- philosophy
+- psychology
 - off-topic
-- libertarianism
-- reason
-- freedom
-- english
 draft: false
 ---
 

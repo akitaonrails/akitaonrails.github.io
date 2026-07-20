@@ -3,6 +3,7 @@ title: "Rubyconf Brasil 2014 - Dates are Set!"
 date: '2013-10-07T18:27:00-03:00'
 slug: rubyconf-brasil-2014-dates-are-set
 translationKey: rubyconf-brasil-2014-dates
+description: "Rubyconf Brasil 2014 already has a date and venue: August 28 and 29 at Teatro Frei Caneca, with room for more than 800 people. The Call for Papers was to open in March or April."
 tags:
 - rubyconfbr2014
 draft: false

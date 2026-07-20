@@ -2,21 +2,10 @@
 title: "[Akitando] #103 - Todos os Sistemas de Arquivos: de FAT a ZFS"
 date: '2021-08-03T11:23:00-03:00'
 slug: akitando-103-todos-os-sistemas-de-arquivos-de-fat-a-zfs
+description: "Akita percorre a evolução dos sistemas de arquivos, de FAT e NTFS a ZFS, APFS e btrfs, explicando journaling, checksums e copy-on-write. Para trocar arquivos entre sistemas, exFAT vence pela simplicidade."
 tags:
-- VFS
-- ZFS
-- BTRFS
-- APFS
-- NTFS
-- ext4
-- JFS
-- XFS
-- ReiserFS
-- HFS
-- Macintosh
-- Windows
-- Linux
-- segurança
+- armazenamento-e-backup
+- ciencia-da-computacao
 - akitando
 draft: false
 ---

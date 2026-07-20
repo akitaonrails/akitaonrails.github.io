@@ -6,16 +6,10 @@ draft: false
 translationKey: how-to-protect-yourself-from-agents-deleting-your-stuff
 description: "LLMs deleting files from famous people made headlines this week. In five months of heavy use, in YOLO mode, it never happened to me. But I don't trust them either: BTRFS snapshots, restic backups, sandboxing and discipline."
 tags:
-  - ai
-  - llm
-  - vibecoding
-  - btrfs
-  - backup
-  - restic
-  - ansible
-  - kubernetes
-  - devops
-  - linux
+- ai-jail
+- coding-agents
+- security
+- storage-and-backup
 ---
 
 This week the talk on Twitter was LLMs deleting other people's files. [Matt Shumer posted](https://x.com/mattshumer_/status/2075657271401390161) that GPT-5.6-Sol accidentally deleted almost ALL the files on his Mac. A review subagent expanded the `$HOME` variable incorrectly and ran `rm -rf /Users/mattsdevbox`. He killed the process midway, but the damage was already done.

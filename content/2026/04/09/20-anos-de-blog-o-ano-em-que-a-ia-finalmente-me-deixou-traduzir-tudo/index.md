@@ -4,11 +4,9 @@ date: '2026-04-09T08:00:00-03:00'
 draft: false
 translationKey: 20-years-of-blog-ai-finally-translated-everything
 tags:
-  - blog
-  - ai
-  - llm
-  - themakitachronicles
-  - off-topic
+- blog
+- pessoal
+- off-topic
 description: "Quatro dias atrás completei 20 anos de blog. E por coincidência, quando eu ia escrever esse post, resolvi fazer algo que nunca tinha tido fôlego pra fazer: traduzir todo o blog pra inglês. Com Claude Code, num fim de semana."
 ---
 

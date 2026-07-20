@@ -2,10 +2,10 @@
 title: Screencasts Liberados Gratuitamente!
 date: '2012-04-09T00:41:00-03:00'
 slug: screencasts-liberados-gratuitamente
+description: "O autor liberou gratuitamente quatro screencasts antes vendidos, sobre software, Ruby, Vim e Git, ao encerrar a produção comercial. Os links podem ser compartilhados, mas os vídeos não podem ser editados."
 tags:
-- learning
-- beginner
-- screencasts
+- aprendizado
+- ferramentas-de-desenvolvimento
 draft: false
 ---
 

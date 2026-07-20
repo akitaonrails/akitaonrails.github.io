@@ -2,9 +2,10 @@
 title: '[Small Bite] Palestra "Ruby & GC" - QConSP 2014 (Nova Gravação!)'
 date: '2014-08-01T20:50:00-03:00'
 slug: small-bite-palestra-ruby-gc-qconsp-2014-nova-gravacao
+description: "Como a gravação original ficou difícil de acompanhar, o autor ressincroniza áudio, slides e animações de Ruby & GC, palestra sobre a evolução do Garbage Collector do Ruby e conceitos úteis em Java."
 tags:
-- presentation
 - ruby
+- performance
 draft: false
 ---
 

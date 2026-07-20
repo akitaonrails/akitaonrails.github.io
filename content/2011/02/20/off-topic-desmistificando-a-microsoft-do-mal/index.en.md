@@ -2,11 +2,12 @@
 title: '[Off-Topic] Demystifying the "Evil" Microsoft'
 date: '2011-02-20T17:53:00-03:00'
 slug: off-topic-desmistificando-a-microsoft-do-mal
+description: "While translating a libertarian defense of Microsoft in its antitrust case, the author argues that vague laws give government arbitrary power and that the company's dominance came from competition, not coercion."
 tags:
-- off-topic
-- principles
+- law-and-regulation
+- microsoft
 - philosophy
-- translation
+- off-topic
 draft: false
 ---
 

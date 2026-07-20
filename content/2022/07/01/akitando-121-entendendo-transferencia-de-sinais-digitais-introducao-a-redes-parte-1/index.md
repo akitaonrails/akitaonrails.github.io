@@ -2,18 +2,10 @@
 title: "[Akitando] #121 - Introdução a Redes: Como Dados viram Ondas? | Parte 1"
 date: '2022-07-01T18:09:00-03:00'
 slug: akitando-121-entendendo-transferencia-de-sinais-digitais-introducao-a-redes-parte-1
+description: "Parto do modem para explicar bits, bytes, Wi-Fi, 4G, 5G, modulação e multiplexação. A internet escalou ao trocar circuitos exclusivos por pacotes compartilhados."
 tags:
-- circuit switch
-- packet switch
-- ethernet
-- wifi
-- 5G
-- wifi 6
-- modem
-- mux
-- demux
-- rede
-- network
+- redes
+- ciencia-da-computacao
 - akitando
 draft: false
 ---

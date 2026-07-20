@@ -2,13 +2,10 @@
 title: "Vibe Code: Eu fiz um appzinho 100% com GLM 4.7 (TV Clipboard)"
 slug: "vibe-code-eu-fiz-um-appzinho-100-com-glm-4-7-tv-clipboard"
 date: 2026-01-28T08:41:52-0300
+description: "Usei o GLM 4.7 para criar o TV Clipboard, um app Go com WebSockets, QR Code e clipboard remoto. Após mais de 10 horas e 250 prompts, ainda precisei revisar segurança, testes e manutenção."
 tags:
-- vibecode
-- openrouter
-- crush
-- glm
-- golang
-  - AI
+- vibe-coding
+- engenharia-de-software
 translationKey: tv-clipboard-glm-4-7
 ---
 

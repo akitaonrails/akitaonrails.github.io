@@ -2,8 +2,11 @@
 title: Conversando com Evan Phoenix
 date: '2008-02-11T20:43:00-02:00'
 slug: conversando-com-evan-phoenix
+description: "Evan Phoenix apresenta o Rubinius, uma VM de Ruby inspirada em Smalltalk e escrita quase toda em Ruby. A entrevista cobre GC geracional, FFI, compatibilidade e o plano de múltiplas VMs."
 tags:
-- interview
+- entrevistas
+- ruby
+- linguagens-de-programacao
 draft: false
 translationKey: chatting-evan-phoenix
 aliases:

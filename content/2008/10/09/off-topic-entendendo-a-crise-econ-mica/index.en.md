@@ -2,11 +2,12 @@
 title: 'Off-Topic: Understanding the Economic Crisis'
 date: '2008-10-09T03:17:00-03:00'
 slug: off-topic-entendendo-a-crise-econ-mica
+description: "Drawing on Taleb and the financial crisis, the author explains why past data cannot prove theories. It can show an idea is false, while Black Swans expose its limits."
 tags:
-- off-topic
-- principles
 - economics
-- chaos
+- science
+- philosophy
+- off-topic
 draft: false
 ---
 

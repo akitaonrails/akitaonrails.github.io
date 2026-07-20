@@ -3,10 +3,11 @@ title: Why it is just lazy to bad-mouth Ruby on Rails
 date: '2017-08-03T18:01:00-03:00'
 slug: why-is-it-just-lazy-to-bad-mouth-ruby-on-rails
 translationKey: lazy-to-bad-mouth-rails
+description: "Ruby on Rails is neither dead nor the market leader anymore. Its legacy helped define the web's status quo, from Git and continuous testing to the cloud, continuous deployment, and metrics."
 tags:
-- ruby
 - rails
-- english
+- web-development
+- software-engineering
 draft: false
 ---
 

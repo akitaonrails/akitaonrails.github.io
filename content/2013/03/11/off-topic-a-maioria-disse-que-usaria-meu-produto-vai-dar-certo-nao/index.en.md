@@ -2,10 +2,12 @@
 title: "[Off-Topic] Most people said they'd use my product. Will it work? No!"
 date: '2013-03-11T06:39:00-03:00'
 slug: off-topic-a-maioria-disse-que-usaria-meu-produto-vai-dar-certo-nao
+description: "An online survey with 70% favorable responses doesn’t validate a product: a biased sample, leading questions, and shallow analysis can turn numbers into meaningless conclusions."
 tags:
-- off-topic
-- insights
 - startups
+- business
+- science
+- off-topic
 draft: false
 ---
 

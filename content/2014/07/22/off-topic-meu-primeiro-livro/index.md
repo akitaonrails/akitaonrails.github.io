@@ -2,10 +2,11 @@
 title: '[Off-Topic] Meu Primeiro "Livro"'
 date: '2014-07-22T20:14:00-03:00'
 slug: off-topic-meu-primeiro-livro
+description: "Um backup revela o “livro” de informática que o autor escreveu na USP em 1996. Ele publica os capítulos em PDF, preservando suas ideias sobre computadores, internet e tecnologia antes da Web onipresente."
 tags:
+- pessoal
+- historia-da-computacao
 - off-topic
-- biography
-- my-book
 draft: false
 ---
 

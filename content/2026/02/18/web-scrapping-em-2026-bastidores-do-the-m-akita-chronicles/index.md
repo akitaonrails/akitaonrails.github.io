@@ -3,13 +3,11 @@ title: "Web Scrapping em 2026 | Bastidores do The M.Akita Chronicles"
 slug: "web-scrapping-em-2026-bastidores-do-the-m-akita-chronicles"
 date: 2026-02-18T14:57:22+00:00
 draft: false
+description: "O scraping saiu de Net::HTTP e chegou ao Chromium com Ferrum e stealth patches para SPAs e sites protegidos. A regra final foi browser-first quando necessário, mantendo APIs e RSS como opções melhores."
 tags:
-- themakitachronicles
-- rubyonrails
-- webscrapping
-- chromium
-- datadome
-  - AI
+- the-m-akita-chronicles
+- desenvolvimento-web
+- automacao
 translationKey: web-scraping-in-2026
 ---
 

@@ -5,14 +5,9 @@ date: '2026-04-15T10:00:00-03:00'
 draft: false
 translationKey: seedance-2-0-public-launch-first-impressions
 tags:
-  - ai
-  - video
-  - seedance
-  - bytedance
-  - vfx
-  - blender
-  - deepfake
-  - themakitachronicles
+- generative-media
+- reviews
+- security
 description: "ByteDance opened Seedance 2.0 to the public today after months of restricted access. I tested audio-driven lip sync with my anime avatar, and a Blender render fed in as a video reference. There's real work you can do here, but it's nowhere near professional production yet. Also: deepfakes just stopped being hypothetical."
 ---
 

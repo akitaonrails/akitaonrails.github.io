@@ -2,6 +2,7 @@
 title: 'Rails Summit: Sucesso = Comunidade'
 date: '2008-10-20T21:52:00-02:00'
 slug: rails-summit-sucesso-comunidade
+description: "O Rails Summit reuniu mais de 500 pessoas em apenas quatro meses de preparação. Mesmo com falhas técnicas, calor e gravações perdidas, o autor atribui o sucesso à comunidade participativa."
 tags:
 - railssummit2008
 draft: false

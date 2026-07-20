@@ -2,6 +2,7 @@
 title: "[Rails Summit 2009] ThoughtWorks pousa no Brasil"
 date: '2009-10-08T15:55:34-03:00'
 slug: rails-summit-2009-thoughtworks-pousa-no-brasil
+description: "Anuncio a chegada da ThoughtWorks ao Brasil, com sede em Porto Alegre, patrocínio do Rails Summit 2009, metade do valor de 30 ingressos e recrutamento de desenvolvedores durante o evento."
 tags:
 - railssummit2009
 draft: false

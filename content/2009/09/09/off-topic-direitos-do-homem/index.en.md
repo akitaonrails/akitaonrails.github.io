@@ -2,10 +2,12 @@
 title: "[Off-Topic] Man's Rights"
 date: '2009-09-09T23:14:00-03:00'
 slug: off-topic-direitos-do-homem
+description: "Ayn Rand's translation defends individual rights as the foundation of freedom and capitalism, limits government to protection against force, and rejects economic rights requiring others' labor."
 tags:
-- off-topic
-- principles
 - philosophy
+- politics
+- economics
+- off-topic
 draft: false
 ---
 

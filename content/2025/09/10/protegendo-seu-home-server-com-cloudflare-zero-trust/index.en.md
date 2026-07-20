@@ -3,11 +3,9 @@ title: Protecting Your Home Server with Cloudflare Zero Trust
 date: "2025-09-10T02:00:00-03:00"
 slug: protecting-your-home-server-with-cloudflare-zero-trust
 tags:
-  - homeserver
-  - cloudflare
-  - zero trust
-  - google oauth
-  - segurança
+- homelab
+- security
+- cloud
 draft: false
 translationKey: cloudflare-zero-trust-home-server
 description: How I added a Cloudflare Zero Trust login layer on top of my home server services, using Google OAuth as the identity provider.

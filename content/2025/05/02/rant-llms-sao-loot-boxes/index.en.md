@@ -4,15 +4,10 @@ date: '2025-05-02T19:20:00-03:00'
 slug: rant-llms-are-loot-boxes
 translationKey: rant-llms-are-loot-boxes
 tags:
+- llms
+- coding-agents
+- software-engineering
 - off-topic
-- llm
-- openai
-- microsoft
-- google
-- meta
-- nvidia
-- mcp
-  - AI
 draft: false
 description: Why LLMs for real coding behave like gacha loot boxes, and why every incentive in the industry pushes you to burn more tokens.
 ---

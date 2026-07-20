@@ -2,9 +2,12 @@
 title: A Rant, Part II
 date: '2007-06-19T15:30:00-03:00'
 slug: um-desabafo-parte-ii
+description: "After leaving a consultancy that delayed payments, the author recommends staying liquid, learning continuously, and preparing an exit when signs of crisis appear, without trusting visionary bosses’ speeches."
 tags:
-- off-topic
 - career
+- personal
+- business
+- off-topic
 draft: false
 ---
 

@@ -5,9 +5,9 @@ slug: the-conf-2017-relatorio-da-edicao
 translationKey: the-conf-2017-report
 aliases:
 - /2017/10/02/the-conf-2017-edition-report/
+description: "THE CONF 2017 custou R$ 103.637,02, arrecadou R$ 53 mil e deixou pelo menos R$ 50 mil de prejuízo para Fabio. Ainda assim, mais de 300 pagantes confirmaram que o evento em inglês funciona."
 tags:
 - theconf
-- traduzido
 draft: false
 ---
 

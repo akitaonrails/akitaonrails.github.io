@@ -2,11 +2,12 @@
 title: "[Tradução] O que faz um bom programador?"
 date: '2009-07-23T10:35:00-03:00'
 slug: tradu--o-o-que-faz-um-bom-programador
+description: "Duas traduções defendem que bons programadores priorizam usabilidade, responsabilidade, colaboração e entrega. A segunda acrescenta a preguiça criativa e a humildade de fazer perguntas simples ao depurar."
 tags:
-- off-topic
-- career
-- translation
+- engenharia-de-software
 - carreira
+- aprendizado
+- off-topic
 draft: false
 ---
 

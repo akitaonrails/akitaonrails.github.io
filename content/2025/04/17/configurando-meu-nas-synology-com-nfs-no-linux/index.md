@@ -2,12 +2,11 @@
 title: Configurando meu NAS Synology com NFS no Linux
 date: '2025-04-17T20:40:00-03:00'
 slug: configurando-meu-nas-synology-com-nfs-no-linux
+description: "Troquei SMB por NFS no Synology para recuperar ownership, chmod e permissões nativas no Linux. Ajustar UID/GID para 1000 e corrigir terabytes com chown levou horas, mas resolveu o problema."
 tags:
-- synology
-- nas
-- raid
-- btrfs
-- autofs
+- homelab
+- linux
+- redes
 draft: false
 translationKey: synology-nas-nfs-linux
 ---

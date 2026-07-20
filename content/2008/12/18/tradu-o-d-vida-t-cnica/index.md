@@ -2,13 +2,11 @@
 title: 'Tradução: Dívida Técnica'
 date: '2008-12-18T01:55:00-02:00'
 slug: tradu-o-d-vida-t-cnica
+description: "A tradução de Steve McConnell separa dívidas técnicas acidentais das estratégicas, explica seus juros e sugere registrá-las no backlog. Atalhos podem fazer sentido quando são rastreáveis e pagáveis."
 tags:
+- engenharia-de-software
+- gestao
 - off-topic
-- principles
-- career
-- management
-- translation
-- carreira
 draft: false
 ---
 

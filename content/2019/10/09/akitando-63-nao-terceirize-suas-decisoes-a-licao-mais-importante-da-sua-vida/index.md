@@ -3,11 +3,10 @@ title: "[Akitando] #63 - Não Terceirize suas Decisões! | A Lição MAIS Import
   sua Vida"
 date: '2019-10-09T11:00:00-03:00'
 slug: akitando-63-nao-terceirize-suas-decisoes-a-licao-mais-importante-da-sua-vida
+description: "Akita defende assumir as próprias decisões, testar hipóteses e aceitar perdas pequenas. Soluções de Netflix, Google ou Spotify só fazem sentido quando combinam com seu contexto."
 tags:
-- autodidata
-- vida
+- pessoal
 - carreira
-- decisões
 - akitando
 draft: false
 ---

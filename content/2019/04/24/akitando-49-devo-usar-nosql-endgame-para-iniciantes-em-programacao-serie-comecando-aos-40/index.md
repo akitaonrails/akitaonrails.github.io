@@ -3,21 +3,11 @@ title: '[Akitando] #49 - Devo usar NOSQL? | "ENDGAME" para Iniciantes em Program
   | Série "Começando aos 40"'
 date: '2019-04-24T17:00:00-03:00'
 slug: akitando-49-devo-usar-nosql-endgame-para-iniciantes-em-programacao-serie-comecando-aos-40
+description: "Fabio compara bancos relacionais, NoSQL e FaaS, explica os custos de operar cada opção e alerta que cloud e serviços convenientes também podem prender aplicações em jardins fechados."
 tags:
-- faas
-- aws
-- google cloud
-- functions
-- function as a service
-- heroku
-- nosql
-- mongodb
-- postgresql
-- mysql
-- cassandra
-- database
-- endgame
-- devops
+- bancos-de-dados
+- cloud
+- arquitetura-de-software
 - akitando
 draft: false
 ---

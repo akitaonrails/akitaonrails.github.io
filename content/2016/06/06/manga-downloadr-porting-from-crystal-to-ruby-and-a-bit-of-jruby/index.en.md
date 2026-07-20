@@ -3,10 +3,11 @@ title: "[Manga-Downloadr] Porting from Crystal to Ruby (and a bit of JRuby)"
 date: '2016-06-06T18:06:00-03:00'
 slug: manga-downloadr-porting-from-crystal-to-ruby-and-a-bit-of-jruby
 translationKey: manga-downloadr-crystal-to-ruby
+description: "Porting Manga-Downloadr from Crystal to Ruby and JRuby, the author finds an almost direct translation, swaps Fibers and Channels for Threads, and shows why the test favored Elixir’s architecture."
 tags:
-- manga-downloadr
-- crystal
-- jruby
+- anime-and-manga
+- programming-languages
+- ruby
 draft: false
 ---
 

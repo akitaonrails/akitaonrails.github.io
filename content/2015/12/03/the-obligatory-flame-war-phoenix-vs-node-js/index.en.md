@@ -3,13 +3,11 @@ title: The Obligatory "Flame War" Phoenix vs Node.js
 date: '2015-12-03T12:01:00-02:00'
 slug: the-obligatory-flame-war-phoenix-vs-node-js
 translationKey: phoenix-vs-nodejs-flame
+description: "In an admittedly unfair Siege benchmark, Node.js leads during I/O warmup, but Phoenix handles requests that block for one second better as concurrency increases."
 tags:
-- learning
-- beginner
-- elixir
-- phoenix
-- node
-- english
+- performance
+- elixir-and-erlang
+- javascript
 draft: false
 ---
 

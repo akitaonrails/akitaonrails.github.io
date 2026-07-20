@@ -3,10 +3,11 @@ title: 'The New Kid on the Block for Ruby Servers: Raptor!'
 date: '2014-10-19T15:00:00-02:00'
 slug: the-new-kid-on-the-block-for-ruby-servers-raptor
 translationKey: raptor-new-ruby-server
+description: "I tested Raptor’s beta in synthetic Rack and Rails 4.1.6 benchmarks: it reached nearly four times the throughput in some scenarios, with slow-client protection and support for JRuby and Nginx."
 tags:
-- learning
-- passenger
-- english
+- performance
+- rails
+- ruby
 draft: false
 ---
 

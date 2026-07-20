@@ -3,11 +3,11 @@ title: Moving away from Pivotal Tracker to Fulcrum. Good Enough.
 date: '2016-08-10T18:30:00-03:00'
 slug: moving-away-from-pivotal-tracker-to-fulcrum-good-enough
 translationKey: pivotal-to-fulcrum
+description: "I switched from Pivotal Tracker to Central, a Rails fork of Fulcrum that already covers stories, estimates, sprints, and velocity. Still incomplete, it’s good enough for most of our projects."
 tags:
 - agile
-- pivotaltracker
-- fulcrum
-- projects
+- rails
+- reviews
 draft: false
 ---
 

@@ -2,11 +2,12 @@
 title: "[Off-Topic] Carreira em Programação - Codificar não é Programar"
 date: '2014-05-02T15:57:00-03:00'
 slug: off-topic-carreira-em-programacao-codificar-nao-e-programar
+description: "Programar não é apenas montar sites com frameworks: o autor defende estudar inglês, Ciência da Computação e fundamentos como álgebra, estatística, algoritmos e compiladores para criar soluções de valor."
 tags:
-- off-topic
-- career
-- insights
 - carreira
+- aprendizado
+- ciencia-da-computacao
+- off-topic
 draft: false
 ---
 

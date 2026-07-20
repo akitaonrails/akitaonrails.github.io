@@ -2,20 +2,11 @@
 title: Omakub pra Manjaro e ArchWSL
 date: '2024-10-30T12:41:00-03:00'
 slug: omakub-pra-manjaro-e-archwsl
+description: "Fiz um fork do Omakub para Manjaro e ArchWSL, trocando Apt por Yay e acrescentando Flatpak, LazyVim, Zellij, Mise e Atuin. É o setup que hoje uso no desktop e no notebook."
 tags:
-- omakub
-- basecamp
-- dhh
-- ubuntu
-- manjaro
-- arch
-- zsh
-- atuin
-- neovim
-- zellij
-- tmux
-- asdf
-- mise
+- linux
+- ferramentas-de-desenvolvimento
+- open-source
 draft: false
 ---
 

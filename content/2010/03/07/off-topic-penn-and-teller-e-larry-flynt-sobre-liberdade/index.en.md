@@ -2,10 +2,11 @@
 title: "[Off-Topic] Penn & Teller and Larry Flynt, on Freedom"
 date: '2010-03-07T02:21:00-03:00'
 slug: off-topic-penn-and-teller-e-larry-flynt-sobre-liberdade
+description: "Flag burning and Hustler v. Falwell show that free speech protects even offensive symbols and satire against the government. The author extends this principle to companies."
 tags:
-- off-topic
-- principles
 - philosophy
+- politics
+- off-topic
 draft: false
 ---
 

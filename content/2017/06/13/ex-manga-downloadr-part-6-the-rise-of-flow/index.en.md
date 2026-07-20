@@ -3,12 +3,11 @@ title: 'Ex Manga Downloadr - Part 6: The Rise of FLOW'
 date: '2017-06-13T15:59:00-03:00'
 slug: ex-manga-downloadr-part-6-the-rise-of-flow
 translationKey: ex-manga-downloadr-6
+description: "I replaced Poolboy and a custom GenServer with Flow to simplify parallel scraping. The code became more readable, but took over 3 minutes, versus less than half that in the previous version."
 tags:
-- beginner
-- learning
-- elixir
-- english
-- exmangadownloadr
+- elixir-and-erlang
+- performance
+- distributed-systems
 draft: false
 ---
 

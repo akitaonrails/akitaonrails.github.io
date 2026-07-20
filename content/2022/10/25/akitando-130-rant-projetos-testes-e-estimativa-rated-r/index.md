@@ -2,15 +2,11 @@
 title: "[Akitando] #130 - Rant: Projetos, TESTES e Estimativa??? | Rated-R"
 date: '2022-10-25T10:30:00-03:00'
 slug: akitando-130-rant-projetos-testes-e-estimativa-rated-r
+description: "Akita defende provas de conceito, testes, pull requests e integração contínua para errar cedo e evitar regressões. Estimativas servem como ordem de grandeza, não como previsões exatas."
 tags:
 - testes
-- tdd
-- gestão
-- projetos
-- equipes
-- estimativa
+- engenharia-de-software
 - agile
-- metodologia
 - akitando
 draft: false
 ---

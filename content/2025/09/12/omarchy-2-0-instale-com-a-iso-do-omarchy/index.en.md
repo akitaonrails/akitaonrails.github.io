@@ -3,12 +3,9 @@ title: Omarchy 2.0 - Install with the Omarchy ISO
 date: "2025-09-12T10:00:00-03:00"
 slug: omarchy-2-0-install-with-the-omarchy-iso
 tags:
-  - omarchy
-  - archinstall
-  - luks
-  - limine
-  - snapper
-  - sddm
+- omarchy
+- linux
+- tutorials
 draft: false
 translationKey: omarchy-install-with-iso
 description: Why the official Omarchy ISO is the easiest way to install Omarchy, with LUKS encryption, Limine+Snapper rollback, and Hyprland+UWSM auto-login out of the box.

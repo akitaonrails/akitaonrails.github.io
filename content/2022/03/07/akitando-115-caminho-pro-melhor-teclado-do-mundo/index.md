@@ -2,21 +2,11 @@
 title: "[Akitando] #115 - Caminho pro Melhor Teclado do Mundo!"
 date: '2022-03-07T12:39:00-03:00'
 slug: akitando-115-caminho-pro-melhor-teclado-do-mundo
+description: "Akita troca o teclado tradicional pelo Planck EZ e depois pelo Moonlander, usando layouts ortolineares, colunas e camadas QMK para buscar mais ergonomia sem depender de teclas espalhadas."
 tags:
-- keychron
-- planck
-- moonlander
-- ergodox
-- kinesis
-- ibm
-- máquina de escrever
-- typewriter
-- qwerty
-- dvorak
-- colemak
-- workman
-- ducky
-- anne pro
+- teclados
+- hardware
+- produtividade
 - akitando
 draft: false
 ---

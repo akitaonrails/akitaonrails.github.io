@@ -3,13 +3,12 @@ title: "ai-jail: Sandbox para Agentes de IA — De Shell Script a Ferramenta Rea
 slug: "ai-jail-sandbox-para-agentes-de-ia-de-shell-script-a-ferramenta-real"
 date: 2026-03-01T14:00:00-03:00
 draft: false
+description: "Transformei um script Bash de bubblewrap no ai-jail, uma ferramenta Rust com configuração TOML por projeto, lockdown e bootstrap de permissões. Ela cobre Linux e macOS, mas a paridade entre plataformas é aproximada."
 tags:
-- AI
-- Linux
-- Bubblewrap
-- Sandbox
-- Rust
-- Security
+- ai-jail
+- agentes-de-codigo
+- seguranca
+- rust
 translationKey: ai-jail-sandbox-tool
 ---
 

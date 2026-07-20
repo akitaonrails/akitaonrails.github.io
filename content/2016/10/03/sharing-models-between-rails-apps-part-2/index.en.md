@@ -3,9 +3,11 @@ title: Sharing models between Rails Apps - Part 2
 date: '2016-10-03T15:57:00-03:00'
 slug: sharing-models-between-rails-apps-part-2
 translationKey: sharing-models-between-rails-apps-2
+description: "I evolve the central-support gem to distribute migrations, test two isolated Rails databases, and connect the secondary app to a read-only replica of Central in production."
 tags:
 - rails
-- database
+- databases
+- software-architecture
 draft: false
 ---
 

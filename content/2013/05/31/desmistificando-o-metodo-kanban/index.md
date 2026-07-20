@@ -2,11 +2,11 @@
 title: Desmistificando o método Kanban
 date: '2013-05-31T19:31:00-03:00'
 slug: desmistificando-o-metodo-kanban
+description: "Kanban é uma técnica do Sistema Toyota de Produção, não seu sinônimo. O texto mostra por que copiar cartões no software não basta sem racionalização, Kaizen e melhoria contínua."
 tags:
-- of-topic
-- principles
-- management
 - agile
+- gestao
+- engenharia-de-software
 draft: false
 ---
 

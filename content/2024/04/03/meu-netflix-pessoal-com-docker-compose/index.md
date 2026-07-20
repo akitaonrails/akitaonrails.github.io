@@ -2,19 +2,11 @@
 title: Meu "Netflix Pessoal" com Docker Compose
 date: '2024-04-03T13:30:00-03:00'
 slug: meu-netflix-pessoal-com-docker-compose
+description: "Montei uma biblioteca pessoal com Docker Compose, MakeMKV, HandBrake, qBittorrent, Sonarr, Radarr, Prowlarr e Plex. O Plex é polido e prático, mas legendas PGS travaram a reprodução."
 tags:
-- nas
-- synology
-- plex
-- sonarr
-- radarr
-- prowlarr
-- qbittorrent
-- jackett
-- flaresolvrr
-- bluray
-- homeserver
-- segurança
+- homelab
+- containers
+- audio-e-video
 draft: false
 ---
 

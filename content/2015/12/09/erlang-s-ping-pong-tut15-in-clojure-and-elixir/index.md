@@ -5,11 +5,11 @@ slug: ping-pong-de-erlang-tut15-em-clojure-e-elixir
 translationKey: erlang-ping-pong-tut15
 aliases:
 - /2015/12/09/erlang-s-ping-pong-tut15-in-clojure-and-elixir/
+description: "Um exercício de Ping Pong aproxima Erlang, Clojure e Elixir, destacando pattern matching, macros e a AST da BEAM. O autor reconhece o poder das três linguagens, mas ainda prefere Erlang aos parênteses Lisp."
 tags:
-- learning
-- beginner
-- elixir
-- traduzido
+- linguagens-de-programacao
+- elixir-e-erlang
+- aprendizado
 draft: false
 ---
 

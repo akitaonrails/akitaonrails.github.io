@@ -5,13 +5,12 @@ slug: a-economia-do-desenvolvimento-de-software
 translationKey: economics-software-development
 aliases:
 - /2017/06/22/the-economics-of-software-development/
+description: "Para pequenas equipes, a economia do software começa pelo menor produto que funciona, levando o tempo em conta e evitando dívida técnica, microsserviços prematuros e otimizações de performance sem necessidade."
 tags:
-- off-topic
+- engenharia-de-software
 - agile
-- lean
-- methodologies
-- startup
-- traduzido
+- arquitetura-de-software
+- off-topic
 draft: false
 ---
 

@@ -2,11 +2,11 @@
 title: Omarchy 2.0 - LazyVim - LazyExtras
 date: "2025-09-07T16:00:00-03:00"
 slug: omarchy-2-0-lazyvim-lazyextras
+description: "Apresento os atalhos básicos do LazyVim, como buffers, busca de arquivos e NeoTree. Com :LazyExtras, habilito suporte às linguagens com LSP, linters, snippets e syntax highlighting."
 tags:
-  - arch
-  - omarchy
-  - lazyvim
-  - lazyextras
+- omarchy
+- ferramentas-de-desenvolvimento
+- tutoriais
 draft: false
 translationKey: omarchy-lazyvim-lazyextras
 ---

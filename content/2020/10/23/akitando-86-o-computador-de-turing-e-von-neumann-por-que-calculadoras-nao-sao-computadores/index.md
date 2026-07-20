@@ -3,17 +3,10 @@ title: "[Akitando] #86 - O Computador de Turing e Von Neumann | Por que calculad
   não são computadores?"
 date: '2020-10-23T10:00:00-03:00'
 slug: akitando-86-o-computador-de-turing-e-von-neumann-por-que-calculadoras-nao-sao-computadores
+description: "A história de Turing e von Neumann explica máquinas universais, Turing Completeness e a arquitetura de programa armazenado, distinguindo computadores modernos de simples calculadoras."
 tags:
-- alan turing
-- john von neumann
-- turing complete
-- turing machine
-- konrad zuse
-- charles babbage
-- edvac
-- princeton
-- göttinger
-- hilbert
+- ciencia-da-computacao
+- historia-da-computacao
 - akitando
 draft: false
 ---

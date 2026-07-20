@@ -2,19 +2,10 @@
 title: "[Akitando] #119 - Rant: Aprendizado na Beira do Caos | Rated R"
 date: '2022-05-30T10:33:00-03:00'
 slug: akitando-119-rant-aprendizado-na-beira-do-caos-rated-r
+description: "Cruzo caos, qualidade, Lean, Six Sigma e Agile para explicar por que não existe fórmula de sucesso. O caminho é assumir riscos controlados, testar cedo, errar barato e ajustar continuamente."
 tags:
-- deming
-- goldratt
-- lean
-- toyota
-- motorola
-- six sigma
-- jack welsh
-- shigeo shingo
-- taiichi ohno
-- beira do caos
-- edge of chaos
-- medo
+- agile
+- engenharia-de-software
 - akitando
 draft: false
 ---

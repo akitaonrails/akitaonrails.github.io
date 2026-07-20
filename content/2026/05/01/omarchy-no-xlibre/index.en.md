@@ -4,13 +4,10 @@ date: '2026-05-01T18:00:00-03:00'
 draft: false
 translationKey: nw-omarchy-xlibre-inaugural
 slug: nw-omarchy-xlibre-inaugural
+description: "I built NW-Omarchy as an X11 session alongside Omarchy, using XLibre, bspwm, and equivalents to preserve themes and 70-plus shortcuts. HDR and fractional scaling stay in Hyprland."
 tags:
-  - omarchy
-  - xlibre
-  - archlinux
-  - bspwm
-  - linux
-  - x11
+- omarchy
+- linux
 ---
 
 ![NW-Omarchy launcher: super+space opens rofi with every .desktop on the system, icons rendered through the Papirus theme](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/05/01/nw-omarchy/launcher-drun.png)

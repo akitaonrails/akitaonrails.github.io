@@ -3,11 +3,10 @@ title: "Moving to GitLab! Yes, it's worth it!"
 date: '2016-08-03T14:49:00-03:00'
 slug: moving-to-gitlab-yes-it-s-worth-it
 translationKey: moving-to-gitlab
+description: "While migrating hundreds of repositories from GitHub and Bitbucket to GitLab CE, I preserved important history, sped up builds with GitLab Runner, and cut costs by up to 11 times."
 tags:
-- gitlab
-- git
-- self-hosted
-- security
+- version-control
+- devops
 draft: false
 ---
 I [started evangelizing Git in 2007](http://www.akitaonrails.com/2007/9/22/jogar-pedra-em-gato-morto-por-que-subversion-no-presta). It was a very tough sell to make at the time.

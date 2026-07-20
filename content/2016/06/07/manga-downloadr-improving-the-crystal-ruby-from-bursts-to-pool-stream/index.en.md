@@ -3,10 +3,11 @@ title: "[Manga-Downloadr] Improving the Crystal/Ruby from bursts to pool stream"
 date: '2016-06-07T17:13:00-03:00'
 slug: manga-downloadr-improving-the-crystal-ruby-from-bursts-to-pool-stream
 translationKey: manga-downloadr-bursts-to-pool
+description: "Replacing request bursts with steady worker pools in Manga-Downloadr, the author cuts times to 27s in Ruby, 30s in JRuby, and 21s in Crystal, but Elixir finishes in 15s."
 tags:
-- manga-downloadr
-- crystal
-- jruby
+- anime-and-manga
+- performance
+- distributed-systems
 draft: false
 ---
 

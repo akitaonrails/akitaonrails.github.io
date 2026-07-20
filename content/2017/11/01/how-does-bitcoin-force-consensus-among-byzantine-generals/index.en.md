@@ -2,12 +2,11 @@
 title: How does Bitcoin force consensus among Byzantine generals?
 date: '2017-11-01T14:02:00-02:00'
 slug: how-does-bitcoin-force-consensus-among-byzantine-generals
+description: "Bitcoin combines hashes, Proof of Work, mining, and adjustable difficulty to reach consensus among unknown nodes. Even with $1.5 billion in hardware, the network would remain difficult to break."
 tags:
-- ruby
-- blockchain
-- cryptocurrency
-- bitcoin
-- english
+- bitcoin-and-cryptocurrency
+- computer-science
+- algorithms-and-data-structures
 translationKey: bitcoin-byzantine-consensus
 draft: false
 ---

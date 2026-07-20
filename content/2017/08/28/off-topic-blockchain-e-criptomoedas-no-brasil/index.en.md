@@ -2,11 +2,11 @@
 title: "[Off-Topic] Blockchain and Cryptocurrencies in Brazil"
 date: '2017-08-28T13:07:00-03:00'
 slug: off-topic-blockchain-e-criptomoedas-no-brasil
+description: "I shared recommendations for Brazilian companies connected to blockchain and cryptocurrencies, still as an investor without a project of my own. I also looked for professionals with hands-on experience to speak at THE CONF."
 tags:
+- bitcoin-and-cryptocurrency
+- business
 - off-topic
-- blockchain
-- cryptocurrency
-- bitcoin
 draft: false
 ---
 

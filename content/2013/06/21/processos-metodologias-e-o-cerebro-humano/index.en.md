@@ -2,12 +2,12 @@
 title: Processes, Methodologies, and the Human Brain
 date: '2013-06-21T20:00:00-03:00'
 slug: processos-metodologias-e-o-cerebro-humano
+description: "The author explains how emotion, randomness, and pattern-seeking create superstitions and false recipes for success. In projects, methodologies should be tested and adapted, not treated as universal truths."
 tags:
-- off-topic
-- principles
-- management
-- science
 - psychology
+- agile
+- management
+- off-topic
 draft: false
 ---
 

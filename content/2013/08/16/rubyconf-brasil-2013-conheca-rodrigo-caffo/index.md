@@ -2,6 +2,7 @@
 title: 'Rubyconf Brasil 2013: Conheça Rodrigo Caffo'
 date: '2013-08-16T16:53:00-03:00'
 slug: rubyconf-brasil-2013-conheca-rodrigo-caffo
+description: "Rodrigo Caffo relembra sua trajetória no Ruby, desde o Rails 0.7 até o trabalho remoto na LivingSocial, e recomenda mapas mentais, Elixir, Go e Docker."
 tags:
 - rubyconfbr2013
 draft: false

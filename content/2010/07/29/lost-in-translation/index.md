@@ -2,9 +2,10 @@
 title: Lost in Translation
 date: '2010-07-29T16:08:00-03:00'
 slug: lost-in-translation
+description: "Um backup antigo recuperou entrevistas perdidas na migração do blog de Mephisto para Enki, reunindo conversas com nomes como Dr. Nic, Chad Fowler, Jamis Buck e John Lam."
 tags:
-- interview
-- english
+- entrevistas
+- blog
 draft: false
 ---
 

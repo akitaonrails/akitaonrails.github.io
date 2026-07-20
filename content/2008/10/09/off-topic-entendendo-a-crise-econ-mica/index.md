@@ -2,11 +2,12 @@
 title: 'Off-Topic: Entendendo a Crise Econômica'
 date: '2008-10-09T03:17:00-03:00'
 slug: off-topic-entendendo-a-crise-econ-mica
+description: "A partir de Taleb e da crise financeira, o autor explica por que dados passados não provam teorias. Eles podem revelar que uma ideia é falsa, enquanto Cisnes Negros expõem seus limites."
 tags:
+- economia
+- ciencia
+- filosofia
 - off-topic
-- principles
-- economics
-- chaos
 draft: false
 ---
 

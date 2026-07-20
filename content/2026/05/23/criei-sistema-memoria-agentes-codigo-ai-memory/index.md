@@ -4,17 +4,11 @@ slug: "criei-sistema-memoria-agentes-codigo-ai-memory"
 date: '2026-05-23T16:30:00-03:00'
 draft: false
 translationKey: criei-sistema-memoria-agentes-codigo-ai-memory
+description: "Após encontrar reindexações, perda de dados e hooks defeituosos no agentmemory, Akita criou o ai-memory em Rust, com Markdown, SQLite/FTS5, captura automática e handoff entre agentes. O projeto ainda é beta."
 tags:
-  - ia
-  - agentes
-  - claude-code
-  - codex
-  - opencode
-  - mcp
-  - memoria
-  - karpathy-llm-wiki
-  - ai-memory
-  - rust
+- ai-memory
+- agentes-de-codigo
+- rust
 ---
 
 ![Logo do projeto ai-memory: pictograma circular com um chip estilizado abrindo "asas" tipo bibliotecas/páginas pra cada lado, ao lado do texto ai-memory em itálico.](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/05/23/ai-memory/ai-memory-logo.png)

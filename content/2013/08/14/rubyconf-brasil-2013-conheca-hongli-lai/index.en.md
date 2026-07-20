@@ -2,6 +2,7 @@
 title: 'Rubyconf Brasil 2013: Meet Hongli Lai'
 date: '2013-08-14T17:41:00-03:00'
 slug: rubyconf-brasil-2013-meet-hongli-lai
+description: "Hongli Lai presents Passenger 4 and argues that practice, formal fundamentals, and curiosity matter more than talent. Testing, CI, and operational automation are practices that last."
 tags:
 - rubyconfbr2013
 draft: false

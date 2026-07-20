@@ -2,18 +2,10 @@
 title: "[Akitando] #13 - Consertando Justice League"
 date: '2018-09-25T17:00:00-03:00'
 slug: akitando-13-consertando-justice-league
+description: "Akita reconstrói os problemas de Justice League e apresenta a reescrita de Nando v Movies, que reorganiza os três atos, aprofunda os vínculos da equipe e dá ao vilão uma função mais eficaz."
 tags:
-- dceu
-- wisecrack
-- dark knight returns
-- '300'
-- watchmen
-- zack snyder
-- superman
-- men of steel
-- justice league
-- warner bros
-- hitop films
+- cinema-e-cultura-pop
+- reviews
 - akitando
 draft: false
 ---

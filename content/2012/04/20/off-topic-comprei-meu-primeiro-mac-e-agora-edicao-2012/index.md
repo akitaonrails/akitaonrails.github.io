@@ -2,11 +2,12 @@
 title: "[Off-Topic] Comprei meu primeiro Mac, e agora? (Edição 2012)"
 date: '2012-04-20T19:15:46-03:00'
 slug: off-topic-comprei-meu-primeiro-mac-e-agora-edicao-2012
+description: "A edição 2012 reúne dicas para ajustar um Mac com Lion, ativar o FileVault 2, organizar Mission Control e Auto Save, instalar Homebrew e escolher apps para feeds, espaço em disco e arquivos."
 tags:
+- apple
+- produtividade
+- tutoriais
 - off-topic
-- learning
-- beginner
-- mac
 draft: false
 ---
 

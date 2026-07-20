@@ -2,12 +2,12 @@
 title: 'Off-Topic: Literatura para Gerentes Ágeis'
 date: '2010-01-06T03:24:00-02:00'
 slug: off-topic-literatura-para-gerentes-ageis
+description: "A leitura para gerentes ágeis passa por sistemas complexos, caos e evolução. A tese é que Agilidade exige estudar princípios e contexto, não copiar receitas de Lean, Scrum ou manufatura."
 tags:
+- agile
+- gestao
+- aprendizado
 - off-topic
-- career
-- management
-- learning
-- carreira
 draft: false
 ---
 

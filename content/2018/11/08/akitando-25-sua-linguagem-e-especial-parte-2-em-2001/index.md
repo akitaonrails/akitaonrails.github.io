@@ -2,14 +2,11 @@
 title: "[Akitando] #25 - Sua Linguagem É Especial? Parte 2 em 2001"
 date: '2018-11-08T17:00:00-02:00'
 slug: akitando-25-sua-linguagem-e-especial-parte-2-em-2001
+description: "Akita revisita um framework de 2001 em ASP, XML, XSLT e VBScript que antecipou técnicas parecidas com Ajax e NoSQL. Era overengineering, mas o projeto ensinou a testar limites e combinar ideias."
 tags:
-- asp
-- nosql
-- xml
-- xsl
-- psn
-- ajax
-- dhtml
+- desenvolvimento-web
+- arquitetura-de-software
+- linguagens-de-programacao
 - akitando
 draft: false
 ---

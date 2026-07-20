@@ -3,14 +3,11 @@ title: "Distrobox de Emulação com Claude Code"
 date: '2026-04-11T18:00:00-03:00'
 draft: false
 translationKey: distrobox-emulacao-claude-code
+description: "Criei um Distrobox Arch para 12 plataformas de emulação e Steam, organizado em 17 roles Ansible com ajuda do Claude Code. A automação torna o setup reproduzível e mantém as decisões visíveis."
 tags:
-  - gaming
-  - emulation
-  - linux
-  - distrobox
-  - ansible
-  - claude-code
-  - AI
+- emulacao
+- containers
+- automacao
 ---
 
 Eu gosto de videogame velho desde antes de muita gente aqui nascer. Meu primeiro contato foi ainda na era do Atari, no começo dos anos 80. Depois vieram os micros de 8 bits, os arcades dos anos 90, os consoles de 16, 32, 64 bits, e eu continuei acompanhando tudo. Nostalgia, pra mim, não é pasta bonitinha no Instagram. É acervo mesmo. ROM, BIOS, dumps, patches, DLC, firmware, save. Ao longo dos anos fui guardando tudo no meu NAS. Hoje tenho terabytes disso em `/mnt/terachad/Emulators`.

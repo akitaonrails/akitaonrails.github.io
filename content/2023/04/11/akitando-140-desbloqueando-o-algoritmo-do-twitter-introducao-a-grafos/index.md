@@ -2,32 +2,12 @@
 title: '[Akitando #140] Desbloqueando o "Algoritmo" do Twitter - Introdução a Grafos'
 date: '2023-04-11T08:00:00-03:00'
 slug: akitando-140-desbloqueando-o-algoritmo-do-twitter-introducao-a-grafos
+description: "Akita analisa o código aberto das recomendações do Twitter, passando por grafos, PageRank e GraphJet. O repositório é incompleto, não compila sem arquivos essenciais e mostra só parte do sistema em produção."
 tags:
+- algoritmos-e-estruturas-de-dados
+- machine-learning
+- ciencia-da-computacao
 - akitando
-- grafos
-- twitter
-- the-algorithm
-- machine learning
-- algebra
-- estatistica
-- probabilidade
-- ciencia da computação
-- hadoop
-- hdfs
-- spark
-- graphx
-- pinecone
-- salsa
-- pagerank
-- hits
-- graphjet
-- realgraph
-- lucene
-- elastic
-- protobuf
-- scala
-- ruby on rails
-- akitaonrails
 draft: false
 ---
 

@@ -4,15 +4,11 @@ slug: "controversia-ia-contribuicoes-projetos-codigo-aberto-minha-opiniao"
 date: '2026-06-05T11:00:00-03:00'
 draft: false
 translationKey: controversia-ia-contribuicoes-projetos-codigo-aberto-minha-opiniao
+description: "IA em contribuições open source veio para ficar, mesmo trazendo AI slop, regressões e falsos bugs. A saída prática é automatizar triagem e auditoria, sem tirar do humano a decisão final."
 tags:
-  - ia
-  - opensource
-  - vibe-coding
-  - llm
-  - github
-  - ai-memory
-  - ai-jail
-  - ai-usagebar
+- open-source
+- agentes-de-codigo
+- engenharia-de-software
 ---
 
 Nos últimos dias voltou a discussão sobre **AI slop** em projetos de código aberto. Mantenedor reclamando que PR gerado por IA é lixo. Projeto proibindo contribuição assistida por IA. Bug bounty sendo inundado por relatório falso. Usuário irritado porque um release que usou IA quebrou alguma coisa. E, claro, a internet fazendo o que a internet faz melhor: transformar caso específico em guerra santa.

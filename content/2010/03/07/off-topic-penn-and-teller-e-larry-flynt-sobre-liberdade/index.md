@@ -2,10 +2,11 @@
 title: "[Off-Topic] Penn & Teller e Larry Flynt, sobre Liberdade"
 date: '2010-03-07T02:21:00-03:00'
 slug: off-topic-penn-and-teller-e-larry-flynt-sobre-liberdade
+description: "A queima da bandeira e o caso Hustler contra Falwell mostram que a liberdade de expressão protege até símbolos e sátiras ofensivos contra o governo. O autor leva esse princípio às empresas."
 tags:
+- filosofia
+- politica
 - off-topic
-- principles
-- philosophy
 draft: false
 ---
 

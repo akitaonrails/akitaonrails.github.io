@@ -2,6 +2,7 @@
 title: "[Rails Summit 2009] Palestrante Matt Aimonetti"
 date: '2009-09-23T18:13:00-03:00'
 slug: rails-summit-2009-palestrante-matt-aimonetti
+description: "Matt Aimonetti fala sobre a expressividade do Ruby, as convenções do Rails e seus experimentos com MacRuby, jogos 2D e CouchDB antes de discutir o futuro da plataforma."
 tags:
 - railssummit2009
 draft: false

@@ -5,12 +5,11 @@ slug: ex-pusher-lite-parte-2-o-primeiro-core-funcional
 translationKey: ex-pusher-lite-part-2
 aliases:
 - /2015/12/14/ex-pusher-lite-part-2-first-working-core/
+description: "A Parte 2 transforma o ExPusherLite em um core Phoenix funcional, com apps, keys e secrets, autenticação, canais, broadcasts e deploy no Heroku. Os testes foram rápidos, mas a segurança ainda é frágil."
 tags:
-- elixir
-- phoenix
-- pusher
-- expusherlite
-- traduzido
+- elixir-e-erlang
+- sistemas-distribuidos
+- devops
 draft: false
 ---
 

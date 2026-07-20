@@ -2,6 +2,7 @@
 title: 'Rails Summit: Últimos Dias!'
 date: '2008-10-10T13:02:00-03:00'
 slug: rails-summit-ltimos-dias
+description: "Nos últimos dias antes do Rails Summit, Carlos Brando substitui Carlos Villela, Charles Nutter e Tom Enebo passam a participar por videoconferência, e David Hansson muda sua sessão para o dia 15."
 tags:
 - railssummit2008
 draft: false

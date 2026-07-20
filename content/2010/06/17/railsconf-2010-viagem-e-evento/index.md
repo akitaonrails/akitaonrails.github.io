@@ -2,6 +2,7 @@
 title: "[RailsConf 2010] - Viagem e Evento"
 date: '2010-06-17T03:21:00-03:00'
 slug: railsconf-2010-viagem-e-evento
+description: "A RailsConf 2010 combinou Rails 3, escalabilidade, NoSQL e uma comunidade latino-americana ativa. O autor também relata sua primeira palestra em inglês e a gravação de 11 entrevistas em meio dia."
 tags:
 - railsconf2010
 draft: false

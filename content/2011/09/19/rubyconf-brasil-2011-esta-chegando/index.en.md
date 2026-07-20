@@ -2,6 +2,7 @@
 title: RubyConf Brazil 2011 is coming!
 date: '2011-09-19T01:41:00-03:00'
 slug: rubyconf-brazil-2011-is-coming
+description: "Fabio releases the beta RubyConf Brazil 2011 site, scheduled for two days in São Paulo, and opens its code on GitHub for forks, contributions, and community comments."
 tags:
 - rubyconfbr2011
 draft: false

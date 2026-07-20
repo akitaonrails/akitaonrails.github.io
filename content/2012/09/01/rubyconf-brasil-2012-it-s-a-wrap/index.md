@@ -5,9 +5,9 @@ slug: rubyconf-brasil-2012-encerramento
 translationKey: rubyconf-brasil-2012-wrap
 aliases:
 - /2012/09/01/rubyconf-brasil-2012-it-s-a-wrap/
+description: "O encerramento celebra cinco anos da RubyConf Brasil e registra a maior edição até então, com 750 participantes presenciais, 500 online, 31 palestras e 36 palestrantes."
 tags:
 - rubyconfbr2012
-- traduzido
 draft: false
 ---
 

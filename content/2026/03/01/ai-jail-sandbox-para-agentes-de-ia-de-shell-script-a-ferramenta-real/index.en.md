@@ -4,12 +4,10 @@ slug: "ai-jail-sandbox-for-ai-agents-from-shell-script-to-real-tool"
 date: 2026-03-01T14:00:00-03:00
 draft: false
 tags:
-- AI
-- Linux
-- Bubblewrap
-- Sandbox
-- Rust
-- Security
+- ai-jail
+- coding-agents
+- security
+- rust
 translationKey: ai-jail-sandbox-tool
 description: "ai-jail is a Rust tool that wraps bubblewrap (Linux) and sandbox-exec (macOS) to safely run AI coding agents like Claude Code, Codex, OpenCode and Crush in a sandbox."
 ---

@@ -3,7 +3,10 @@ title: The Next 10 Years
 date: '2016-09-26T13:30:00-03:00'
 slug: the-next-10-years
 translationKey: next-10-years
-tags: [english]
+description: "I announce I’m stepping away from conferences tied to a language or platform, without abandoning Ruby. The next phase is defending freedom, critical thinking, and code that delivers value."
+tags:
+- personal
+- philosophy
 draft: false
 ---
 

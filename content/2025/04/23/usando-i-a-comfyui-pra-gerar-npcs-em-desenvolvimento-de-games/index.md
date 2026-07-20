@@ -2,18 +2,11 @@
 title: Usando I.A (ComfyUI) pra gerar NPCs em desenvolvimento de games
 date: '2025-04-23T16:25:00-03:00'
 slug: usando-i-a-comfyui-pra-gerar-npcs-em-desenvolvimento-de-games
+description: "Testei o workflow pago de Mickmumpitz no meu setup Docker: uma RTX 4090 leva cerca de 30 minutos para gerar character sheets coerentes, com 500 GB de espaço e ajustes manuais."
 tags:
-- docker
+- midia-generativa
 - games
-- mickmumpitz
-- workflow
-- npc
-- florence
-- ic-light
-- ipadapter
-- flux
-- comfyui
-  - AI
+- modelos-locais
 draft: false
 translationKey: ai-comfyui-npcs-game-dev
 ---

@@ -2,9 +2,12 @@
 title: Um Desabafo, parte II
 date: '2007-06-19T15:30:00-03:00'
 slug: um-desabafo-parte-ii
+description: "Depois de deixar uma consultoria que atrasava pagamentos, o autor recomenda manter liquidez, aprender continuamente e preparar a saída diante de sinais de crise, sem confiar em discursos de chefes visionários."
 tags:
+- carreira
+- pessoal
+- negocios
 - off-topic
-- career
 draft: false
 ---
 

@@ -3,11 +3,11 @@ title: "[Off-Topic] Learning Statistics"
 date: '2016-11-01T17:03:00-02:00'
 slug: off-topic-learning-statistics
 translationKey: learning-statistics-off-topic
+description: "While studying statistics with R and Daniel Navarro’s book, the author uses Simpson’s paradox to show how aggregated data can hide patterns and why statistics demands care."
 tags:
+- science
+- learning
 - off-topic
-- statistics
-- R
-- carreira
 draft: false
 ---
 

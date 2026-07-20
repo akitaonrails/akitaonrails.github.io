@@ -2,8 +2,11 @@
 title: 'Prêmio Info 2009: Personalidade do Ano'
 date: '2009-12-02T08:08:00-02:00'
 slug: premio-info-2009-personalidade-do-ano
+description: "Ao receber 45% dos votos para Personalidade do Ano da Info, o autor revisita como livros, eventos e o Rails Summit ajudaram a formar uma comunidade Ruby on Rails e Agile no Brasil."
 tags:
-- award
+- pessoal
+- ruby
+- rails
 draft: false
 ---
 

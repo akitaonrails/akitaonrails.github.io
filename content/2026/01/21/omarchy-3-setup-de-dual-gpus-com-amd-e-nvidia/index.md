@@ -5,10 +5,8 @@ date: 2026-01-21T15:29:35-0300
 description: "Descrição do post aqui"
 tags:
 - omarchy
-- amd
-- nvidia
-- wayland
-- hyprland
+- hardware
+- linux
 translationKey: omarchy-3-dual-gpu-setup
 ---
 

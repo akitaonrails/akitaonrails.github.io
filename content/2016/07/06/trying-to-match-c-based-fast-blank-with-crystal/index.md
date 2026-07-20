@@ -5,9 +5,11 @@ slug: tentando-igualar-fast-blank-em-c-usando-crystal
 translationKey: fast-blank-crystal-vs-c
 aliases:
 - /2016/07/06/trying-to-match-c-based-fast-blank-with-crystal/
+description: "Reescrevendo a Fast Blank em Crystal e comparando-a com C e Ruby, o autor encontra um custo alto na cópia de strings. Para esse algoritmo trivial, a versão em C continua sendo a melhor escolha."
 tags:
 - crystal
-- traduzido
+- performance
+- algoritmos-e-estruturas-de-dados
 draft: false
 ---
 

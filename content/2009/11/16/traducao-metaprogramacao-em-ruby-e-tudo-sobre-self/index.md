@@ -2,11 +2,11 @@
 title: "[Tradução] Metaprogramação em Ruby: é tudo sobre Self"
 date: '2009-11-16T14:56:00-02:00'
 slug: traducao-metaprogramacao-em-ruby-e-tudo-sobre-self
+description: "Yehuda Katz unifica a metaprogramação Ruby pelo conceito de self e mostra como class, class_eval e instance_eval definem métodos na classe ou na metaclass de cada objeto."
 tags:
-- learning
-- beginner
 - ruby
-- translation
+- linguagens-de-programacao
+- tutoriais
 draft: false
 ---
 

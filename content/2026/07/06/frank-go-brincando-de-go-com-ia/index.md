@@ -4,14 +4,12 @@ slug: "frank-go-brincando-de-go-com-ia"
 date: '2026-07-06T12:00:00-03:00'
 draft: false
 translationKey: frank-go-playing-go-with-ai
+description: "Criei o Frank GO como um fork do Sabaki com KataGo, reunindo mais de 4.700 tsumego, partidas históricas e 15 jogos de Hikaru no Go. Overlays tornam território e pontuação visíveis para iniciantes."
 tags:
-  - go
-  - baduk
-  - katago
-  - sabaki
-  - opensource
-  - ai
-  - vibecoding
+- frank
+- llms
+- inteligencia-artificial
+- games
 ---
 
 ![Arte oficial do anime Hikaru no Go: o Hikaru no centro estendendo uma pedra de Go pra câmera, com o fantasma Sai de trajes Heian e leque atrás dele, cercados pelo elenco (Akira, Waya, Isumi, Akari e companhia) e pelo logo da Shonen Jump.](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/07/06/frank-go/key-art-hikaru-no-go.webp)

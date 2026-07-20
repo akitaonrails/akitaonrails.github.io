@@ -2,10 +2,12 @@
 title: "[Off-Topic] Math, Trolls, Haters, and Internet Discussions"
 date: '2013-10-30T21:01:00-02:00'
 slug: off-topic-matematica-trolls-haters-e-discussoes-de-internet
+description: "The text uses mathematics and complex systems to question formulas without understanding and confusing correlation with causation, including Lean Startup. Self-help does not become science through cases or consensus."
 tags:
-- off-topic
+- science
 - psychology
-- insights
+- philosophy
+- off-topic
 draft: false
 ---
 

@@ -2,8 +2,11 @@
 title: "[Small Bites] Downloader para MangaReader (Kindle Edition)"
 date: '2014-12-17T21:24:00-02:00'
 slug: small-bites-downloader-para-mangareader-kindle-edition
+description: "O autor criou um downloader em Ruby para o MangaReader que baixa capítulos em paralelo, retoma interrupções e gera PDFs ajustados ao Kindle Paperwhite."
 tags:
+- anime-e-manga
 - ruby
+- automacao
 draft: false
 ---
 

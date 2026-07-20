@@ -2,9 +2,10 @@
 title: 'Off-Topic: Bleeding for Rails! Part 2'
 date: '2008-05-16T12:27:00-03:00'
 slug: off-topic-dando-o-sangue-pelo-rails-parte-2
+description: "After taking a bus to Niterói and enduring an exhausting day, the author picked up his passport at 7:05 a.m. With the paperwork in hand, he started scrambling for flights and lodging for RailsConf."
 tags:
+- railsconf2008
 - off-topic
-- biography
 draft: false
 ---
 

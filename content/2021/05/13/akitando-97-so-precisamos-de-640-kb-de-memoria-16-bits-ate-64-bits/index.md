@@ -2,18 +2,11 @@
 title: "[Akitando] #97 - Só Precisamos de 640 kB de Memória? | 16-bits até 64-bits!"
 date: '2021-05-13T10:41:00-03:00'
 slug: akitando-97-so-precisamos-de-640-kb-de-memoria-16-bits-ate-64-bits
+description: "Da barreira dos 640 kB no MS-DOS aos 64-bits, Akita percorre segmentação, memória virtual e técnicas históricas. A evolução também explica como otimização e proteções como DEP e ASLR se relacionam."
 tags:
-- ms-dos
-- RAM
-- ROM
-- NES
-- '6502'
-- PAE
-- DEP
-- ASLR
-- 32-bits
-- 64-bits
-- EMM386
+- ciencia-da-computacao
+- historia-da-computacao
+- seguranca
 - akitando
 draft: false
 ---

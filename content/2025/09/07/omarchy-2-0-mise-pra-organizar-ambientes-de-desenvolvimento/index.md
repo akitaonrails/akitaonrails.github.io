@@ -2,11 +2,11 @@
 title: Omarchy 2.0 - Mise pra organizar ambientes de desenvolvimento
 date: "2025-09-07T16:40:00-03:00"
 slug: omarchy-2-0-mise-pra-organizar-ambientes-de-desenvolvimento
+description: "Uso Mise para fixar versões de Ruby, Node e outras linguagens por projeto, evitando que atualizações do sistema quebrem o ambiente. Para bancos de dados, separo as versões com Docker Compose."
 tags:
-  - arch
-  - omarchy
-  - mise
-  - docker
+- omarchy
+- ferramentas-de-desenvolvimento
+- containers
 draft: false
 translationKey: omarchy-mise-dev-environments
 ---

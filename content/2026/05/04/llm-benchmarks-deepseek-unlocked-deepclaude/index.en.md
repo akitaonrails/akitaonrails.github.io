@@ -4,13 +4,11 @@ date: '2026-05-04T16:00:00-03:00'
 draft: false
 translationKey: llm-benchmarks-deepseek-unlocked-deepclaude
 slug: llm-benchmarks-deepseek-unlocked-deepclaude
+description: "I swapped opencode’s harness for Claude Code’s loop through DeepClaude, and DeepSeek V4 Pro rose from 69/B to 89/A in 18 minutes and $3.14. The controller’s multi-turn bug remains."
 tags:
-  - ai
-  - llm
-  - benchmark
-  - deepseek
-  - claudecode
-  - ruby
+- llm-benchmarks
+- coding-agents
+- llms
 ---
 
 > **Update (May 11, 2026)**: at least two more paths beyond DeepClaude are worth flagging.

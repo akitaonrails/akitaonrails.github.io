@@ -5,12 +5,12 @@ slug: off-topic-a-lamentavel-evolucao-da-sociedade-moderna
 translationKey: pity-evolution-modern-society
 aliases:
 - /2018/07/26/off-topic-the-pity-evolution-of-modern-society/
+description: "Akita critica linchamentos virtuais, câmaras de eco e a ideia de um direito a nunca ser ofendido. Para ele, redes sociais transformam indignação em julgamentos públicos sem diálogo nem devido processo."
 tags:
+- politica
+- filosofia
+- psicologia
 - off-topic
-- libertarianism
-- reason
-- freedom
-- traduzido
 draft: false
 ---
 

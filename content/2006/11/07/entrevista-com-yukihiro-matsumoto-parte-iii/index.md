@@ -2,10 +2,11 @@
 title: 'Entrevista com Yukihiro Matsumoto: parte III'
 date: '2006-11-07T14:03:24-02:00'
 slug: entrevista-com-yukihiro-matsumoto-parte-iii
+description: "Matz explica como blocos e fechamentos em Ruby abstraem os detalhes dos loops, permitem definir diferentes formas de iteração e customizar métodos, além de capturar e compartilhar variáveis do escopo."
 tags:
-- interview
-- matz
-- translation
+- entrevistas
+- ruby
+- linguagens-de-programacao
 draft: false
 ---
 

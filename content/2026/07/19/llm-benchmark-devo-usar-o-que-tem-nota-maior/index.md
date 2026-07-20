@@ -6,14 +6,8 @@ draft: false
 translationKey: llm-benchmark-devo-usar-o-que-tem-nota-maior
 description: "Por que o primeiro lugar num ranking de LLMs não é necessariamente o melhor modelo, por que 90+ é um cluster e como usar benchmarks sem terceirizar sua decisão técnica."
 tags:
-  - llm
-  - benchmark
-  - claude
-  - gpt
-  - openai
-  - anthropic
-  - ai
-  - vibecoding
+- benchmarks-de-llm
+- llms
 ---
 
 Toda vez que publico uma rodada do meu benchmark, alguém abre a tabela, olha as primeiras linhas e pergunta:

@@ -3,12 +3,11 @@ title: "SQLite + Kamal: Deploy de Rails sem Drama | Bastidores do The M.Akita Ch
 slug: "sqlite-kamal-deploy-de-rails-sem-drama-bastidores-do-the-m-akita-chronicles"
 date: 2026-02-20T03:18:55+00:00
 draft: false
+description: "Rails 8, SQLite, SolidQueue, SolidCache e Kamal colocaram uma aplicação completa num VPS de US$12 por mês. Volumes, VACUUM INTO, SSL automático e deploy sem downtime simplificaram a operação."
 tags:
-- sqlite
-- kamel
-- rubyonrails
-- themakitachronicles
-  - AI
+- the-m-akita-chronicles
+- rails
+- devops
 translationKey: sqlite-kamal-rails-deploy
 ---
 

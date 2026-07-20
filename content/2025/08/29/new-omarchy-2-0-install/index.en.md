@@ -3,11 +3,9 @@ title: Installing Omarchy 2.0 from Scratch - Personal Notes
 date: "2025-08-29T16:00:00-03:00"
 slug: new-omarchy-2-0-install
 tags:
-  - arch
-  - omarchy
-  - btrfs
-  - timeshift
-  - lazyvim
+- omarchy
+- linux
+- storage-and-backup
 draft: false
 translationKey: new-omarchy-2-install
 description: My personal notes walking through a clean install of Arch Linux with Omarchy 2.0, covering BTRFS, Timeshift snapshots, separate HOME, NFS, and Hyprland customization.

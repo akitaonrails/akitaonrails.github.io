@@ -3,10 +3,11 @@ title: IIS 8 finalmente ganha um módulo de Proxy-Reverso! E como executar Rails
   JRuby no Windows!
 date: '2015-02-16T12:29:00-02:00'
 slug: iis-8-finalmente-ganha-um-modulo-de-proxy-reverso-e-como-executar-rails-sobre-jruby-no-windows
+description: "JRuby permite rodar Rails no Windows com Puma, SQL Server e JDBC, enquanto o HttpPlatformHandler faz o proxy reverso no IIS 8. A configuração funciona, mas exige ajustes específicos no Java, IIS e Web.config."
 tags:
-- learning
 - rails
-- windows
+- java
+- microsoft
 draft: false
 ---
 

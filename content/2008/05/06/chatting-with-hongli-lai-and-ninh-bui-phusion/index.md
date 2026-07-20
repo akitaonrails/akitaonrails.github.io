@@ -3,9 +3,11 @@ title: Conversando com Hongli Lai e Ninh Bui (Phusion)
 date: '2008-05-06T21:39:00-03:00'
 slug: conversando-com-hongli-lai-e-ninh-bui-phusion
 translationKey: chatting-hongli-lai-ninh-bui
+description: "Hongli Lai e Ninh Bui explicam como o Phusion Passenger simplifica o deploy Rails, encerra processos ociosos e supera ou iguala clusters Mongrel. O Ruby Enterprise Edition economizava 33% de memória, em média."
 tags:
-- interview
-- traduzido
+- entrevistas
+- rails
+- devops
 aliases:
 - /2008/05/06/chatting-with-hongli-lai-and-ninh-bui-phusion/
 draft: false

@@ -2,6 +2,7 @@
 title: 'Rubyconf Brasil 2013: Conheça Tiago Bastos e Eduardo Gurgel'
 date: '2013-08-29T14:45:00-03:00'
 slug: rubyconf-brasil-2013-conheca-tiago-bastos-e-eduardo-gurgel
+description: "Tiago Bastos e Eduardo Gurgel falam sobre Erlang, Elixir e mensagens assíncronas, defendem leitura de código e experimentos e veem a programação funcional, especialmente Elixir, entrando em seus projetos."
 tags:
 - rubyconfbr2013
 draft: false

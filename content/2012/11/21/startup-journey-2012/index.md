@@ -5,9 +5,11 @@ slug: jornada-startup-2012
 translationKey: startup-journey-2012
 aliases:
 - /2012/11/21/startup-journey-2012/
+description: "Seis relatos registram uma viagem por São Francisco, Amsterdã, Berlim e Tel Aviv, feita para conhecer empresas, pessoas e diferentes ecossistemas de startups de tecnologia."
 tags:
+- viagens
 - startups
-- traduzido
+- negocios
 draft: false
 ---
 

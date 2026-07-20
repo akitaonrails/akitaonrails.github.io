@@ -2,9 +2,9 @@
 title: "[RailsConf 2010] - Video Entrevista - David Hansson"
 date: '2010-06-17T15:04:00-03:00'
 slug: railsconf-2010-video-entrevista-david-hansson
+description: "Em uma conversa descontraída de quase 24 minutos, David Hansson fala sobre Rails 3, sua passagem pelo Brasil, Rework, gestão de pessoas, empreendedorismo e Ricardo Semler."
 tags:
 - railsconf2010
-- interview
 draft: false
 translationKey: railsconf-2010-david-hansson
 aliases:

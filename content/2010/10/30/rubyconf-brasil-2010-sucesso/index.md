@@ -2,6 +2,7 @@
 title: RubyConf Brasil 2010 - Sucesso!
 date: '2010-10-30T19:45:14-02:00'
 slug: rubyconf-brasil-2010-sucesso
+description: "A primeira RubyConf Brasil reuniu mais de 700 pessoas no Frei Caneca, com palestras tecnicamente mais avançadas e ingressos acessíveis. O evento foi bem avaliado, mas a Wi-Fi falhou completamente."
 tags:
 - rubyconfbr2010
 draft: false

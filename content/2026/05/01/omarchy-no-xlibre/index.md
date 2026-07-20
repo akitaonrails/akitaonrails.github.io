@@ -3,13 +3,10 @@ title: "NW-Omarchy: Trazendo Omarchy pro X11 com XLibre"
 date: '2026-05-01T18:00:00-03:00'
 draft: false
 translationKey: nw-omarchy-xlibre-inaugural
+description: "Criei o NW-Omarchy como sessão X11 paralela ao Omarchy, com XLibre, bspwm e equivalentes para manter temas e mais de 70 atalhos. HDR e scaling fracionado ficam no Hyprland."
 tags:
-  - omarchy
-  - xlibre
-  - archlinux
-  - bspwm
-  - linux
-  - x11
+- omarchy
+- linux
 ---
 
 ![Launcher do NW-Omarchy: super+space abre rofi com todos os .desktop do sistema, ícones renderizados pelo tema Papirus](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/05/01/nw-omarchy/launcher-drun.png)

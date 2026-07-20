@@ -2,11 +2,11 @@
 title: Internationalização (I18n) Mínima em Rails 3.2 - Parte 2
 date: '2012-07-14T22:44:00-03:00'
 slug: internationalizacao-i18n-minima-em-rails-3-2-parte-2
+description: "A Parte 2 mostra como cachear o HTML gerado a partir de Markdown, estilizar a aplicação com Bootstrap, integrar ActiveAdmin ao Globalize 3 e criar rotas traduzidas."
 tags:
-- learning
 - rails
-- i18n
-- tutorial
+- tutoriais
+- frontend
 draft: false
 ---
 

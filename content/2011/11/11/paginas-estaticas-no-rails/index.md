@@ -2,10 +2,10 @@
 title: Páginas Estáticas no Rails
 date: '2011-11-11T01:38:00-02:00'
 slug: paginas-estaticas-no-rails
+description: "No Rails, uma rota dinâmica e uma única action eliminam matches repetidos no routes.rb e métodos vazios no controller, mapeando /page/hello diretamente para sua view."
 tags:
-- learning
-- beginner
 - rails
+- tutoriais
 draft: false
 ---
 

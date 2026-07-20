@@ -2,10 +2,12 @@
 title: "[Off-Topic] Career in Programming — Coding Isn't Programming"
 date: '2014-05-02T15:57:00-03:00'
 slug: off-topic-carreira-em-programacao-codificar-nao-e-programar
+description: "Programming is not just building websites with frameworks. The author argues for studying English, Computer Science, and fundamentals such as algebra, statistics, algorithms, and compilers to create valuable solutions."
 tags:
-- off-topic
 - career
-- insights
+- learning
+- computer-science
+- off-topic
 draft: false
 ---
 

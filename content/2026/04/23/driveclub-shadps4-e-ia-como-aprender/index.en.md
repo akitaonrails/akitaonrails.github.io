@@ -3,14 +3,11 @@ title: "How DriveClub and shadPS4 Almost Defeated AI and Me: How to Learn"
 date: '2026-04-23T12:00:00-03:00'
 draft: false
 translationKey: driveclub-shadps4-ai-how-to-learn
+description: "After 31 phases and 44 commits, I found DriveClub’s nighttime blackout in shadPS4 came from unsynchronized GPU→CPU feedback. `readbacks_mode: 2` fixed the bug, but the investigation taught me the path."
 tags:
-  - driveclub
-  - shadps4
-  - emulation
-  - ai-agents
-  - claude-code
-  - learning
-  - ps4
+- emulation
+- gaming
+- learning
 ---
 
 ## Where we were

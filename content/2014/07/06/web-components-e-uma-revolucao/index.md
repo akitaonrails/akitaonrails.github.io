@@ -2,10 +2,11 @@
 title: Web Components é uma Revolução?
 date: '2014-07-06T01:09:00-03:00'
 slug: web-components-e-uma-revolucao
+description: "Web Components combina Custom Elements, Shadow DOM, Templates e HTML Imports para organizar e isolar componentes. O autor vê uma evolução útil para desenvolvedores, mas não uma revolução."
 tags:
-- insights
+- frontend
 - javascript
-- front-end
+- desenvolvimento-web
 draft: false
 ---
 

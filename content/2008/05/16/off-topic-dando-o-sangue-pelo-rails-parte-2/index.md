@@ -2,9 +2,10 @@
 title: 'Off-Topic: Dando o Sangue pelo Rails! Parte 2'
 date: '2008-05-16T12:27:00-03:00'
 slug: off-topic-dando-o-sangue-pelo-rails-parte-2
+description: "Depois de viajar de ônibus a Niterói e enfrentar um dia exaustivo, o autor retirou o passaporte às 7h05. Com a documentação em mãos, começou a correr atrás de passagens e hospedagem para a RailsConf."
 tags:
+- railsconf2008
 - off-topic
-- biography
 draft: false
 ---
 

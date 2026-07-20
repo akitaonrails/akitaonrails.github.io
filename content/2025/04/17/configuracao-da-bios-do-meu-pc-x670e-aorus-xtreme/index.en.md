@@ -3,7 +3,7 @@ title: BIOS Configuration of My PC - X670E Aorus Xtreme
 date: '2025-04-17T18:50:00-03:00'
 slug: bios-config-my-pc-x670e-aorus-xtreme
 tags:
-- amd
+- hardware
 - performance
 - linux
 draft: false

@@ -2,17 +2,10 @@
 title: "[Akitando] #123 - Como sua Internet Funciona | Introdução a Redes Parte 3"
 date: '2022-07-23T11:54:00-03:00'
 slug: akitando-123-como-sua-internet-funciona-introducao-a-redes-parte-3
+description: "Acompanho um pacote pela rede doméstica, de DHCP, ARP e DNS ao NAT e CGNAT. IPv6 resolve a escassez de endereços, mas o sucesso do IPv4 atrasou sua adoção."
 tags:
-- internet
-- router
-- roteador
-- dhcp
-- dns
-- arp
-- ipv4
-- ipv6
-- nat
-- cgnat
+- redes
+- ciencia-da-computacao
 - akitando
 draft: false
 ---

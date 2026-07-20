@@ -5,15 +5,10 @@ slug: ubuntu-16-04-lts-xenial-no-vagrant-com-vmware-fusion
 translationKey: ubuntu-xenial-vagrant-vmware
 aliases:
 - /2016/09/21/ubuntu-16-04-lts-xenial-on-vagrant-on-vmware-fusion/
+description: "Monto uma box Ubuntu 16.04 no Vagrant com VMware Fusion e configuro o ambiente de desenvolvimento, do locale e PostgreSQL a Ruby, Java, Elasticsearch, Clojure, Rust, Go e Elixir."
 tags:
 - linux
-- aprendizado
-- elixir
-- crystal
-- clojure
-- ruby on rails
-- postgresql
-- traduzido
+- ferramentas-de-desenvolvimento
 draft: false
 ---
 

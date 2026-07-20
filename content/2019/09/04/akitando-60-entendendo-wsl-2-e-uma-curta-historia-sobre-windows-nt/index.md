@@ -2,17 +2,11 @@
 title: "[Akitando] #60 - Entendendo WSL 2 | E uma curta história sobre Windows NT"
 date: '2019-09-04T11:00:00-03:00'
 slug: akitando-60-entendendo-wsl-2-e-uma-curta-historia-sobre-windows-nt
+description: "Fabio explica a história do UNIX no Windows e mostra o WSL 2 na prática, com Ubuntu, Rails, Docker e VS Code. A integração melhora, mas ainda não serve para quem precisa de acesso direto à GPU."
 tags:
 - linux
-- sfu
-- wsl
-- bash
-- ubuntu
-- arch
-- cygwin
-- wine
-- proton
-- windows nt
+- microsoft
+- ferramentas-de-desenvolvimento
 - akitando
 draft: false
 ---

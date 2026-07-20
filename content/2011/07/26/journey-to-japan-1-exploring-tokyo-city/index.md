@@ -5,9 +5,9 @@ slug: jornada-ao-japao-1-explorando-a-cidade-de-toquio
 translationKey: journey-to-japan-1
 aliases:
 - /2011/07/26/journey-to-japan-1-exploring-tokyo-city/
+description: "Na primeira viagem ao Japão, Akita relata Tóquio pela experiência de um nikkei brasileiro: transporte pontual, segurança, espaços urbanos, costumes, cultura pop e o choque entre expectativa e realidade."
 tags:
 - rubykaigi2011
-- traduzido
 draft: false
 ---
 

@@ -3,12 +3,11 @@ title: "[Heroku] ActiveRecord::ConnectionTimeoutError: Problemas de Max Pool Siz
   Sidekiq e Octopus"
 date: '2015-10-08T15:41:00-03:00'
 slug: heroku-activerecord-connectiontimeouterror-problemas-de-max-pool-size-sidekiq-e-octopus
+description: "O ActiveRecord::ConnectionTimeoutError pode nascer de pools mal dimensionados, especialmente com Sidekiq e Octopus. O guia calcula as conexões e combina PgBouncer, followers read-only e pools separados para aliviar o PostgreSQL."
 tags:
-- learning
+- bancos-de-dados
 - rails
-- sidekiq
-- heroku
-- postgresql
+- performance
 draft: false
 ---
 

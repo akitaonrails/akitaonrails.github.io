@@ -3,12 +3,11 @@ title: 'Ex Manga Downloadr - Part 3: Mangafox Support!'
 date: '2015-12-02T16:27:00-02:00'
 slug: ex-manga-downloadr-part-3-mangafox-support
 translationKey: ex-manga-downloadr-part-3
+description: "Ex Manga Downloadr can now download from Mangafox using custom parsers, dynamic source selection, gzip decompression via zlib, and download resumption. Reducing the pool helps, but the site remains unstable."
 tags:
-- learning
-- beginner
-- elixir
-- exmangadownloadr
-- english
+- elixir-and-erlang
+- anime-and-manga
+- automation
 draft: false
 ---
 

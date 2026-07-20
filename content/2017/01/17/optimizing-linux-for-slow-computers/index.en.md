@@ -3,11 +3,11 @@ title: Optimizing Linux for Slow Computers
 date: '2017-01-17T18:15:00-02:00'
 slug: optimizing-linux-for-slow-computers
 translationKey: optimizing-linux-slow-computers
+description: "I improve Linux responsiveness on an old Lenovo by tuning swap, schedulers, Dropbox, and Tracker. The biggest gains still come from adding more RAM and using a fast SSD."
 tags:
 - linux
-- kernel
-- arch
-- english
+- performance
+- hardware
 draft: false
 ---
 

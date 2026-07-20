@@ -2,9 +2,12 @@
 title: "[Translation] What Makes a Good Programmer?"
 date: '2009-07-23T10:35:00-03:00'
 slug: tradu--o-o-que-faz-um-bom-programador
+description: "Two translations argue that good programmers prioritize usability, responsibility, collaboration, and delivery. The second adds creative laziness and the humility to ask simple questions while debugging."
 tags:
-- off-topic
+- software-engineering
 - career
+- learning
+- off-topic
 draft: false
 ---
 

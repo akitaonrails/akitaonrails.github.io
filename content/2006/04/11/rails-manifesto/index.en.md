@@ -3,10 +3,11 @@ title: Rails Manifesto
 date: '2006-04-11T12:09:00-03:00'
 slug: rails-manifesto
 translationKey: rails-manifesto
+description: "The author presents Rails as an agile alternative to J2EE’s complexity, built on DRY and Convention over Configuration. The idea is to make Web applications simple and easy to adapt."
 tags:
-- narrative
 - rails
-- pitch
+- web-development
+- software-engineering
 draft: false
 ---
 

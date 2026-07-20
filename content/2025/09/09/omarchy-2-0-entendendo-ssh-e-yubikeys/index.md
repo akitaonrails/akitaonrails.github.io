@@ -2,14 +2,11 @@
 title: Omarchy 2.0 - Entendendo SSH e Yubikeys
 date: "2025-09-09T12:00:00-03:00"
 slug: omarchy-2-0-entendendo-ssh-e-yubikeys
+description: "Mostro como criar chaves SSH ED25519, usar uma Yubikey 5 com PIV ou FIDO2 e desativar login por senha. Para chaves locais, configuro o ssh-agent com cache de 30 minutos."
 tags:
-  - arch
-  - omarchy
-  - ssh
-  - openssh
-  - yubikey
-  - ssh-agent
-  - segurança
+- omarchy
+- seguranca
+- linux
 draft: false
 translationKey: omarchy-ssh-yubikeys
 ---

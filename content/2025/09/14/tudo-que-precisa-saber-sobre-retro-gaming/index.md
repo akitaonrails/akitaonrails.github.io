@@ -2,16 +2,12 @@
 title: Tudo que Precisa Saber Sobre Retro-Gaming
 date: "2025-09-14T16:00:00-03:00"
 slug: tudo-que-precisa-saber-sobre-retro-gaming
+description: "Reuni minhas impressões sobre handhelds Linux, Android, FPGA e PC, de Miyoo Mini Plus a Analog Pocket e ROG Ally X, além de emuladores e front-ends. A melhor escolha depende do uso e do orçamento."
 tags:
-  - off-topic
-  - retro
-  - retroarch
-  - emulationstation
-  - ambernic
-  - ayaneo
-  - retroid
-  - nintendo
-  - gameboy
+- games
+- emulacao
+- retrocomputacao
+- off-topic
 draft: false
 translationKey: everything-about-retro-gaming
 ---

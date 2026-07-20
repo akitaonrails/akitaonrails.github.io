@@ -3,8 +3,11 @@ title: Flirting with Crystal, a Rubyist Perspective
 date: '2016-05-31T18:21:00-03:00'
 slug: flirting-with-crystal-a-rubyist-perspective
 translationKey: flirting-with-crystal-rubyist
+description: "Evaluating Crystal from a Rubyist’s perspective, the author highlights its familiar syntax, fast native binaries, and cooperative concurrency for I/O, while making clear it doesn’t replace Ruby or Rails."
 tags:
 - crystal
+- ruby
+- programming-languages
 draft: false
 ---
 

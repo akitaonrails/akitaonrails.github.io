@@ -3,14 +3,11 @@ title: "Meu Cockpit de Sim Racing - Formula FX1"
 date: '2026-04-01T17:00:00-03:00'
 draft: false
 translationKey: sim-racing-cockpit-formula-fx1
+description: "Troquei anos de suportes instáveis por um cockpit Formula FX1 com direct drive Fanatec, PS5, RTX 4090 e OLED 4K. A estrutura não balança e fica pronta em 30 segundos para meu uso single-player."
 tags:
-  - off-topic
-  - gaming
-  - sim-racing
-  - cockpit
-  - fanatec
-  - gran-turismo
-  - initial-d
+- games
+- hardware
+- off-topic
 ---
 
 Eu gosto de carros desde que me entendo por gente. Meu primeiro contato real com jogos de corrida foi nos fliperamas dos anos 80 e 90. E quando eu digo "real", eu digo sentar num cabinet com volante, pedal, banco de plástico duro e a tela curvando na sua frente. [OutRun](https://en.wikipedia.org/wiki/Out_Run) (1986), [Rad Mobile](https://en.wikipedia.org/wiki/Rad_Mobile) (1991), [Virtua Racing](https://en.wikipedia.org/wiki/Virtua_Racing) (1992), [Ridge Racer](https://en.wikipedia.org/wiki/Ridge_Racer) (1993), [Daytona USA](https://en.wikipedia.org/wiki/Daytona_USA_(video_game)) (1994), [Scud Race](https://en.wikipedia.org/wiki/Scud_Race) (1996). Cada um desses jogos me marcou. Mas o Daytona USA ficou gravado de outro jeito. Aquele cabinet twin, duas máquinas lado a lado, a música "DAYTONAAA, let's go away" estourando no fliperama, o volante vibrando na mão. Eu lembro disso até hoje.

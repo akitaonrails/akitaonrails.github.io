@@ -3,13 +3,12 @@ title: "Omarchy no Thinkpad T14 Gen 6: Mini-Review e Setup Completo"
 date: '2026-04-18T08:30:00-03:00'
 draft: false
 translationKey: omarchy-thinkpad-t14-gen-6
+description: "Instalei Omarchy num ThinkPad T14 Gen 6 e transformei o notebook num companion Linux para SSH, Claude Code e NAS. A tela é datada, mas portas, resistência e suporte compensam."
 tags:
-  - omarchy
-  - thinkpad
-  - archlinux
-  - hyprland
-  - linux
-  - homeserver
+- omarchy
+- linux
+- hardware
+- reviews
 ---
 
 ![Thinkpad T14 Gen 6 fechado ao lado do carregador USB-C](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/04/18/thinkpad/closed-lid.jpg)

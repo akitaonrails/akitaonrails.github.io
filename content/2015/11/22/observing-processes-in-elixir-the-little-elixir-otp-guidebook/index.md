@@ -5,11 +5,11 @@ slug: observando-processos-em-elixir-the-little-elixir-otp-guidebook
 translationKey: observing-processes-elixir
 aliases:
 - /2015/11/22/observing-processes-in-elixir-the-little-elixir-otp-guidebook/
+description: "Com GenServer, Supervisor e Observer, mostro um worker sendo reiniciado, um pool de 5 processos sendo reposto e o runtime permanecendo ativo, embora o estado do worker seja perdido."
 tags:
-- learning
-- beginner
-- elixir
-- traduzido
+- elixir-e-erlang
+- sistemas-distribuidos
+- engenharia-de-software
 draft: false
 ---
 

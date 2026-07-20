@@ -2,11 +2,11 @@
 title: "[Off-Topic] Procurar Raciocinar Faz Bem"
 date: '2009-09-26T16:17:00-03:00'
 slug: off-topic-procurar-raciocionar-faz-bem
+description: "Uma reflexão sobre programação em par, responsabilidade e as divergências entre Spolsky e Bob Martin defende testar práticas ágeis, entender seus motivos e rejeitar dogmas."
 tags:
-- off-topic
-- principles
-- career
+- engenharia-de-software
 - agile
+- off-topic
 draft: false
 ---
 

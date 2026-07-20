@@ -2,12 +2,12 @@
 title: '[Off-Topic] DO NOT Do What You ("THINK") You Love'
 date: '2014-09-13T17:04:00-03:00'
 slug: off-topic-nao-faca-o-que-voce-acha-que-ama
+description: "I question “do what you love” and show how pursuing only what you think you love ignores responsibilities and unstable passions. My conclusion: seek Kaizen by always improving how you produce something useful."
 tags:
-- off-topic
-- principles
 - career
-- insights
-- startups
+- philosophy
+- personal
+- off-topic
 draft: false
 ---
 

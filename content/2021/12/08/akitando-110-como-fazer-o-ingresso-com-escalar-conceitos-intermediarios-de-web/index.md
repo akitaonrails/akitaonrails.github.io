@@ -3,16 +3,11 @@ title: "[Akitando] #110 - Como fazer o Ingresso.com escalar? | Conceitos Interme
   de Web"
 date: '2021-12-08T11:33:00-03:00'
 slug: akitando-110-como-fazer-o-ingresso-com-escalar-conceitos-intermediarios-de-web
+description: "A partir da instabilidade do Ingresso.com, Akita explica CDNs, cache e jobs assíncronos e propõe uma sala de espera para controlar o acesso à escolha de assentos e serviços externos."
 tags:
-- ingresso
-- homem-aranha
-- cinema
-- escalabilidade
-- jobs
-- async/await
-- waiting room
-- cdn
-- caching
+- desenvolvimento-web
+- performance
+- sistemas-distribuidos
 - akitando
 draft: false
 ---

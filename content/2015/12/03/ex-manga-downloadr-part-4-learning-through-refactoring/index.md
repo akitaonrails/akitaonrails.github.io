@@ -5,12 +5,11 @@ slug: ex-manga-downloadr-parte-4-aprendendo-atraves-do-refactoring
 translationKey: ex-manga-downloadr-part-4
 aliases:
 - /2015/12/03/ex-manga-downloadr-part-4-learning-through-refactoring/
+description: "O refactoring do Ex Manga Downloadr troca seis blocos repetidos por macros, melhora o uso do Floki e usa testes online para validar parsers. O projeto chega à versão 1.0.0 com dois arquivos a menos."
 tags:
-- learning
-- beginner
-- elixir
-- exmangadownloadr
-- traduzido
+- elixir-e-erlang
+- engenharia-de-software
+- testes
 draft: false
 ---
 

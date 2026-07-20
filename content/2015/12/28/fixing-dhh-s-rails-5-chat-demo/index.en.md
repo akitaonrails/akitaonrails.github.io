@@ -3,11 +3,11 @@ title: Fixing DHH's Rails 5 Chat Demo
 date: '2015-12-28T16:11:00-02:00'
 slug: fixing-dhh-s-rails-5-chat-demo
 translationKey: fixing-dhh-rails-5-chat
+description: "While reviewing DHH’s Action Cable chat, the author moves persistence into a background job and removes the model callback. The code returns faster, but the concurrency benefit wasn’t measured."
 tags:
-- pusher
-- rails5
-- actioncable
-- websocket
+- rails
+- backend
+- distributed-systems
 draft: false
 ---
 

@@ -2,9 +2,12 @@
 title: 'Off Topic: A Rant'
 date: '2007-03-14T03:02:00-03:00'
 slug: off-topic-um-desabafo
+description: "The author criticizes careers stuck in forms, complaints, and technologies chosen only for salary. His answer is continuous learning, exploring systems, and contributing to open source projects."
 tags:
-- off-topic
 - career
+- learning
+- open-source
+- off-topic
 draft: false
 ---
 

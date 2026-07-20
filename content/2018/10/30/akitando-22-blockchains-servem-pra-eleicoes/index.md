@@ -2,13 +2,9 @@
 title: "[Akitando] #22 - Blockchains servem pra Eleições?"
 date: '2018-10-30T17:00:00-03:00'
 slug: akitando-22-blockchains-servem-pra-eleicoes
+description: "Akita explica que blockchain preserva a integridade do registro, mas não o sigilo do voto. Por isso, pode servir a eleições privadas com voto público, não a eleições públicas com voto secreto."
 tags:
-- blockchain
-- eleições
-- segurança
-- fraude
-- nosql
-- THE CONF
+- theconf
 - akitando
 draft: false
 ---

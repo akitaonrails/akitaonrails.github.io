@@ -2,9 +2,12 @@
 title: "[Off-Topic] The 5 Team Dysfunctions in Code"
 date: '2009-05-31T16:10:00-03:00'
 slug: off-topic-as-5-disfun--es-de-equipes-em-c-digo
+description: "Five team dysfunctions appear in anti-patterns such as null checks, duplication, untested code, and hard-to-understand solutions. Isolated techniques cannot fix a command-and-control organization."
 tags:
-- off-topic
+- software-engineering
+- testing
 - management
+- off-topic
 draft: false
 ---
 

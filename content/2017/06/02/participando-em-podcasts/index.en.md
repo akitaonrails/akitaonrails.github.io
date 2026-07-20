@@ -2,9 +2,11 @@
 title: Appearing on Podcasts
 date: '2017-06-02T10:34:00-03:00'
 slug: participando-em-podcasts
+description: "I collect six podcast appearances about the Ruby community, tech careers, Rails, and my professional path, from its beginnings in the 1990s to conversations lasting nearly two hours."
 tags:
-- podcasts
 - interviews
+- career
+- personal
 draft: false
 ---
 

@@ -2,8 +2,10 @@
 title: Chatting with Adrian Holovaty
 date: '2008-01-01T02:01:00-02:00'
 slug: chatting-with-adrian-holovaty
+description: "Adrian Holovaty explains how demands from news sites led to Django and its high-level abstractions, such as site admin and Databrowse, while also discussing data and EveryBlock."
 tags:
-- interview
+- interviews
+- web-development
 draft: false
 translationKey: chatting-adrian-holovaty
 ---

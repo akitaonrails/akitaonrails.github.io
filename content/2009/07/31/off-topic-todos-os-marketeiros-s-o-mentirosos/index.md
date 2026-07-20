@@ -2,9 +2,12 @@
 title: "[Off-Topic] Todos os Marketeiros são Mentirosos"
 date: '2009-07-31T09:54:00-03:00'
 slug: off-topic-todos-os-marketeiros-s-o-mentirosos
+description: "Seth Godin defende marketing baseado em histórias e produtos realmente diferentes, não em checklists. O autor aplica essa ideia à Apple, ao iPhone e à difusão do Rails no Brasil."
 tags:
+- negocios
+- apple
+- rails
 - off-topic
-- career
 draft: false
 ---
 

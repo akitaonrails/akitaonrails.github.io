@@ -3,13 +3,8 @@ title: NVIDIA and Wayland - Problems for PCI Passthrough in VMs
 date: '2025-04-17T19:35:00-03:00'
 slug: nvidia-and-wayland-problems-for-pci-passthrough-in-vms
 tags:
-- nvidia
-- wayland
-- manjaro
-- arch
-- gnome
-- libvirt
-- qemu
+- linux
+- hardware
 draft: false
 translationKey: nvidia-wayland-pci-passthrough
 description: How GNOME on Wayland breaks live NVIDIA GPU passthrough to QEMU/Libvirt VMs, and the workaround scripts I use to make it work again.

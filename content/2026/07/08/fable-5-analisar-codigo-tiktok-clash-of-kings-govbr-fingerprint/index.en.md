@@ -4,14 +4,10 @@ slug: "fable-5-analyze-tiktok-clash-of-kings-govbr-fingerprint"
 date: '2026-07-08T16:00:00-03:00'
 draft: false
 translationKey: fable-5-analyze-tiktok-clash-of-kings-govbr-fingerprint
+description: "A static analysis with Fable 5 compares TikTok’s opaque fingerprint, Clash of Kings’ persistent UUID, and gov.br’s privacy precautions, with caveats about the method."
 tags:
-  - security
-  - privacy
-  - android
-  - reverse-engineering
-  - fingerprint
-  - ai
-  - vibecoding
+- security
+- software-engineering
 ---
 
 Let me open with the most important disclaimer in the whole post, because it changes how you should read everything below: **none of this is 100% factual.** I asked Claude Fable 5 to do a full analysis of the code of three Android apps, but I have no way to guarantee how deep it actually went without re-auditing file by file myself, and that's hundreds of thousands of files per app. So treat this as a panorama, not a forensic report.

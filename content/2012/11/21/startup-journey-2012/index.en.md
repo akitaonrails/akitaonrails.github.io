@@ -3,8 +3,11 @@ title: "Startup Journey 2012"
 date: '2012-11-21T10:45:00-02:00'
 slug: startup-journey-2012
 translationKey: startup-journey-2012
+description: "Six accounts document a trip through San Francisco, Amsterdam, Berlin, and Tel Aviv to meet companies and people and explore different technology startup ecosystems."
 tags:
+- travel
 - startups
+- business
 draft: false
 ---
 

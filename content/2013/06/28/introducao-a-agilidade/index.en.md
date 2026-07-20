@@ -2,11 +2,12 @@
 title: Introduction to Agility
 date: '2013-06-28T20:08:00-03:00'
 slug: introducao-a-agilidade
+description: "Robert Martin recounts how XP, Scrum, and Crystal converged in the 2001 Agile Manifesto. The author warns against dogmatic processes and consultancies that put methods ahead of people and customer value."
 tags:
-- off-topic
-- principles
-- management
 - agile
+- management
+- software-engineering
+- off-topic
 draft: false
 ---
 

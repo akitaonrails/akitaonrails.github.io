@@ -2,13 +2,11 @@
 title: Ensinando Zig mais recente pra sua LLM - Treinando LoRas (quase)
 date: '2025-05-03T02:30:00-03:00'
 slug: ensinando-zig-mais-recente-pra-sua-llm-treinando-loras-quase
+description: "Treinei um LoRA para levar Zig 0.14 ao Qwen3-8B. O modelo passou a responder que conhecia a versão nova, mas continuou inventando detalhes e errando código, num semi-sucesso."
 tags:
+- llms
+- machine-learning
 - zig
-- qwen3
-- ollama
-- vllm
-- llm
-  - AI
 draft: false
 translationKey: teaching-zig-to-llm-loras
 ---

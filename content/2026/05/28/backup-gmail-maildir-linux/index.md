@@ -4,14 +4,11 @@ slug: "backup-gmail-maildir-linux"
 date: '2026-05-28T16:00:00-03:00'
 draft: false
 translationKey: backup-gmail-maildir-linux
+description: "Troquei o backup manual do Thunderbird por mbsync em modo pull, Maildir e timer do systemd. Restic replica o acervo no NAS e off-site, deixando os e-mails locais, abertos e acessíveis por vários clientes."
 tags:
-  - linux
-  - backup
-  - email
-  - gmail
-  - maildir
-  - mbsync
-  - restic
+- armazenamento-e-backup
+- linux
+- automacao
 ---
 
 A maioria das pessoas confia no Google e deixa tudo lá. Quem acompanha o blog sabe que eu não confio em ninguém: se tá na nuvem, não é meu. Por isso tenho um NAS em casa pra fazer backup de tudo que importa. Não confio em Google Drive, OneDrive, Dropbox, e nem em Gmail.

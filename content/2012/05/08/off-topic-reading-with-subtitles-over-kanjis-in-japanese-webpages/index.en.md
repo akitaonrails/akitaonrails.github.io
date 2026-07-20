@@ -3,11 +3,11 @@ title: "[Off-Topic] Reading with subtitles over Kanjis in Japanese webpages"
 date: '2012-05-08T10:36:00-03:00'
 slug: off-topic-reading-with-subtitles-over-kanjis-in-japanese-webpages
 translationKey: kanji-subtitles-japanese-webpages
+description: "Rikaichan, Furigana Inserter, HTML Ruby, and Mecab can add hiragana or katakana readings to Japanese webpages. The combination helps reading, but Furigana must be disabled to use Rikaichan."
 tags:
-- off-topic
 - learning
-- mac
-- english
+- developer-tools
+- off-topic
 draft: false
 ---
 

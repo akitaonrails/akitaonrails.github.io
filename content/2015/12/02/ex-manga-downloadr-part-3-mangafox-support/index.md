@@ -5,12 +5,11 @@ slug: ex-manga-downloadr-parte-3-suporte-ao-mangafox
 translationKey: ex-manga-downloadr-part-3
 aliases:
 - /2015/12/02/ex-manga-downloadr-part-3-mangafox-support/
+description: "O Ex Manga Downloadr passa a baixar do Mangafox com parsers próprios, seleção dinâmica da fonte, descompressão gzip via zlib e retomada de downloads. Reduzir o pool ajuda, mas o site segue instável."
 tags:
-- learning
-- beginner
-- elixir
-- exmangadownloadr
-- traduzido
+- elixir-e-erlang
+- anime-e-manga
+- automacao
 draft: false
 ---
 

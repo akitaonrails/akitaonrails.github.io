@@ -2,15 +2,11 @@
 title: "[Akitando] #64 - Começando na Carreira de TI | Faculdade? Níveis de Experiência?"
 date: '2019-10-16T11:00:00-03:00'
 slug: akitando-64-comecando-na-carreira-de-ti-faculdade-niveis-de-experiencia
+description: "Akita compara cursos de Computação, Engenharia de Software e Sistemas de Informação e explica que a senioridade depende de experiência, decisões confiáveis, orientação e revisão de código."
 tags:
-- faculdade
-- engenheria de software
-- ciências da computação
-- sistemas de informação
-- junior
-- pleno
-- senior
-- expert
+- carreira
+- aprendizado
+- engenharia-de-software
 - akitando
 draft: false
 ---

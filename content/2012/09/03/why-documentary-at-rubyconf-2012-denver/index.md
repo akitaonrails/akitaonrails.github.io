@@ -5,11 +5,10 @@ slug: documentario-do-why-na-rubyconf-2012-denver
 translationKey: why-documentary-rubyconf-2012
 aliases:
 - /2012/09/03/why-documentary-at-rubyconf-2012-denver/
+description: "O autor apresenta o trailer do documentário sobre _Why, relembra sua influência na primeira geração Ruby, o desaparecimento virtual e um e-mail inesperado que recebeu dele."
 tags:
-- philosophy
 - ruby
-- why
-- traduzido
+- biografias
 draft: false
 ---
 

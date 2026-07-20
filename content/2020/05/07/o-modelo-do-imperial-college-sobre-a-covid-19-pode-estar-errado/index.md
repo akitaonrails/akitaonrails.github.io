@@ -2,9 +2,11 @@
 title: O Resultado do Modelo do Imperial College sobre a COVID-19 pode estar ERRADO
 date: '2020-05-07T05:02:00-03:00'
 slug: o-modelo-do-imperial-college-sobre-a-covid-19-pode-estar-errado
+description: "Akita examina a implementação C++ do modelo de COVID-19 do Imperial College, aponta testes insuficientes e resultados divergentes com os mesmos seeds. Sem código histórico e inputs completos, as projeções não podem ser verificadas."
 tags:
-- covid-19
-- imperial college
+- ciencia
+- testes
+- engenharia-de-software
 draft: false
 ---
 

@@ -3,11 +3,9 @@ title: Dissecting an Ollama Modelfile - Tuning Qwen3 for Code
 date: '2025-04-29T02:30:00-03:00'
 slug: dissecting-an-ollama-modelfile-tuning-qwen3-for-code
 tags:
-- ollama
-- modelfile
-- qwen3
-- llm
-  - AI
+- llms
+- local-models
+- tutorials
 draft: false
 translationKey: dissecting-ollama-modelfile-qwen3
 description: A walkthrough of sampling parameters (temperature, top_p, top_k, min_p, repeat_penalty) and how to build a custom Ollama Modelfile to tune Qwen3 for software development tasks.

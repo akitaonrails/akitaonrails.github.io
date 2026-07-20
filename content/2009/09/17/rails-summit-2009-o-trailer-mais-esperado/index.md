@@ -2,6 +2,7 @@
 title: "[Rails Summit 2009] O Trailer mais Esperado! "
 date: '2009-09-17T09:06:55-03:00'
 slug: rails-summit-2009-o-trailer-mais-esperado
+description: "Depois do teaser exibido no Dev in Rio, o post apresenta a versão oficial do trailer do Rails Summit Latin America 2009 e retoma a divulgação do evento."
 tags:
 - railssummit2009
 draft: false

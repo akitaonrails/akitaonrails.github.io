@@ -2,9 +2,12 @@
 title: "[Off-Topic] Restaurantes e Tecnologia"
 date: '2009-11-18T16:51:00-02:00'
 slug: off-topic-restaurantes-e-tecnologia
+description: "A analogia com restaurantes separa empresas cujo negócio central é tecnologia das que apenas a usam como suporte. Nas primeiras, programadores devem experimentar e criar ferramentas, como no GitHub."
 tags:
+- gestao
+- engenharia-de-software
+- negocios
 - off-topic
-- management
 draft: false
 ---
 

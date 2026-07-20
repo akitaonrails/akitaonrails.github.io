@@ -3,25 +3,11 @@ title: '[Akitando] #40 - Entendendo Back-End para Iniciantes em Programação (P
   1) | Série "Começando aos 40"'
 date: '2019-02-20T17:00:00-03:00'
 slug: akitando-40-entendendo-back-end-para-iniciantes-em-programacao-parte-1-serie-comecando-aos-40
+description: "Akita apresenta os fundamentos do back-end, de Assembly e compiladores a processos, threads, JVM, JIT e .NET, e mostra os compromissos entre portabilidade, isolamento e desempenho."
 tags:
-- back-end
-- java
-- dotnet
-- csharp
-- CLR
-- JVM
-- Linux
-- UNIX
-- Windows
-- Assembly
-- compilador
-- interpretador
-- Ruby
-- Python
-- Perl
-- PHP
-- Apache
-- GoLang
+- backend
+- linguagens-de-programacao
+- performance
 - akitando
 draft: false
 ---

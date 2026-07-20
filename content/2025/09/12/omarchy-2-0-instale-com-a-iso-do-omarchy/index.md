@@ -2,13 +2,11 @@
 title: Omarchy 2.0 - Instale com a ISO do Omarchy
 date: "2025-09-12T10:00:00-03:00"
 slug: omarchy-2-0-instale-com-a-iso-do-omarchy
+description: "A ISO oficial do Omarchy instala Arch, Hyprland e UWSM em poucos minutos, com LUKS, Limine e Snapper já preparados para login automático e rollback. Depois de testar o caminho manual, eu escolheria a ISO."
 tags:
-  - omarchy
-  - archinstall
-  - luks
-  - limine
-  - snapper
-  - sddm
+- omarchy
+- linux
+- tutoriais
 draft: false
 translationKey: omarchy-install-with-iso
 ---

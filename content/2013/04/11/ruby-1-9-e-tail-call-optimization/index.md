@@ -2,9 +2,11 @@
 title: Ruby 1.9 e Tail Call Optimization
 date: '2013-04-11T00:25:00-03:00'
 slug: ruby-1-9-e-tail-call-optimization
+description: "Testando Ruby 1.9.3, o autor mostra que o MRI já suporta Tail Call Optimization, embora desativada por padrão. Com ela ligada, a recursão calcula fact1(100_000) sem estourar a pilha."
 tags:
-- learning
 - ruby
+- linguagens-de-programacao
+- performance
 draft: false
 ---
 

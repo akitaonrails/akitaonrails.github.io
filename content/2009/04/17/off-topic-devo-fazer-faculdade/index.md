@@ -2,9 +2,11 @@
 title: 'Off-Topic: Devo fazer faculdade?'
 date: '2009-04-17T20:41:00-03:00'
 slug: off-topic-devo-fazer-faculdade
+description: "Fabio conclui que uma boa faculdade pode acelerar o aprendizado e moldar talentos, mas não determina o sucesso: quem tem disciplina também pode aprender sozinho."
 tags:
+- carreira
+- aprendizado
 - off-topic
-- career
 draft: false
 ---
 

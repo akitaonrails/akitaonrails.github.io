@@ -2,13 +2,10 @@
 title: "[Akitando] #2 - Akitando em Seoul - Parte 2"
 date: '2018-08-16T17:00:00-03:00'
 slug: akitando-2-akitando-em-seoul-parte-2
+description: "Na segunda parte do passeio por Seoul, Akita visita Gangnam, lojas da Samsung, parques, palácios e mercados de eletrônicos, prova a comida local e resume a cidade como uma Tokyo menor e mais bagunçada."
 tags:
-- seoul
-- yongsam
-- technomart
-- kimchi
-- south korea
-- kakao
+- viagens
+- pessoal
 - akitando
 draft: false
 ---

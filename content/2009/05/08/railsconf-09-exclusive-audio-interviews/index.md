@@ -5,10 +5,9 @@ slug: railsconf-09-entrevistas-exclusivas-em-audio
 translationKey: railsconf-2009-exclusive-audio
 aliases:
 - /2009/05/08/railsconf-09-exclusive-audio-interviews/
+description: "Entrevistas da RailsConf apresentam Chef, Spree, Scout, Heroku, Maglev e PostRank, passando por configuração de sistemas, e-commerce, monitoramento, deploy, execução de Ruby e métricas sociais."
 tags:
 - railsconf2009
-- interview
-- traduzido
 draft: false
 ---
 

@@ -2,14 +2,10 @@
 title: Gerando Videos de até 2 min a partir de uma Foto com I.A.
 date: '2025-04-19T20:00:00-03:00'
 slug: gerando-videos-de-ate-2-min-a-partir-de-uma-foto-com-i-a
+description: "Rodei o FramePack com HunyuanVideo em Docker para animar fotos de action figures e desenhos. Ele promete vídeos de até dois minutos, mas movimentos curtos de 5 a 10 segundos são mais práticos."
 tags:
-- framepack
-- hunyuan
-- flux
-- docker
-- figures
-- 3d print
-  - AI
+- midia-generativa
+- containers
 draft: false
 translationKey: ai-photo-to-video-2min
 ---

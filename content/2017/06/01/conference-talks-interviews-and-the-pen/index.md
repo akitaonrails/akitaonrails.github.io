@@ -5,10 +5,11 @@ slug: palestras-em-conferencias-entrevistas-e-a-caneta
 translationKey: conference-talks-interviews
 aliases:
 - /2017/06/01/conference-talks-interviews-and-the-pen/
+description: "Akita argues that talks, interviews, and blog posts lose their audience when they focus on what and how instead of why. Persuasion starts with understanding each audience’s priorities."
 tags:
+- comunicacao
+- blog
 - off-topic
-- conferences
-- traduzido
 draft: false
 ---
 

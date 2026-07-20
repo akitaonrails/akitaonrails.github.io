@@ -2,6 +2,7 @@
 title: 'Em breve: Jornada ao Japão'
 date: '2011-07-23T21:33:00-03:00'
 slug: em-breve-jornada-ao-japao
+description: "Akita anuncia relatos sobre sua primeira visita ao Japão, país de origem dos avós, onde participou da RubyKaigi 2011 e se tornou o primeiro palestrante sul-americano do evento."
 tags:
 - rubykaigi2011
 draft: false

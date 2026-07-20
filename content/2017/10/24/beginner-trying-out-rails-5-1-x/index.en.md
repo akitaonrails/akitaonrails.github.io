@@ -3,14 +3,11 @@ title: "[Beginner] Trying out Rails 5.1.x"
 date: '2017-10-24T16:29:00-02:00'
 slug: beginner-trying-out-rails-5-1-x
 translationKey: beginner-trying-rails-51
+description: "Fabio tries Rails 5.1 with new flags, Webpacker, Yarn, webpack-dev-server, and React while arguing for gradual upgrades. His conclusion is that the release is a good foundation for new projects."
 tags:
-- beginner
-- rubyonrails
-- rails51
-- nodejs
-- webpack
-- reactjs
-- english
+- rails
+- javascript
+- frontend
 draft: false
 ---
 

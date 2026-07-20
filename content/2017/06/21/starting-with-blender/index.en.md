@@ -3,10 +3,12 @@ title: Starting with Blender
 date: '2017-06-21T17:32:00-03:00'
 slug: starting-with-blender
 translationKey: starting-with-blender
+description: "My guide to getting started with Blender covers initial settings like Cycles, Filmic, and CUDA, then moves into photography, composition, and PBR materials. Learning takes study, practice, and shortcuts."
 tags:
+- tutorials
+- learning
+- audio-and-video
 - off-topic
-- blender
-- english
 draft: false
 ---
 

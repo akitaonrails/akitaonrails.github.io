@@ -2,11 +2,12 @@
 title: "[Off-Topic] Agilidade, Caos, Auto-Organização"
 date: '2009-07-08T02:15:00-03:00'
 slug: off-topic-agilidade-caos-auto-organizacao
+description: "O texto relaciona Agile a sistemas complexos, caos, emergência e leis de potência. A tese é que organizações aprendem e inovam melhor no limite do caos, embora provocar desordem envolva riscos."
 tags:
-- off-topic
-- management
 - agile
-- chaos
+- gestao
+- ciencia
+- off-topic
 draft: false
 ---
 

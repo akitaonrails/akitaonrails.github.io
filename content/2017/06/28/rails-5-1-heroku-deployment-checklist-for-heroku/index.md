@@ -5,14 +5,11 @@ slug: checklist-de-deploy-do-rails-5-1-no-heroku
 translationKey: rails-51-heroku-checklist
 aliases:
 - /2017/06/28/rails-5-1-heroku-deployment-checklist-for-heroku/
+description: "Este checklist prepara um app pequeno Rails 5.1 para produção no Heroku, cobrindo PostgreSQL, Procfiles, Webpack, CDN com CORS, Memcached e SSL, sem pretender atender todo cenário."
 tags:
-- learning
 - rails
-- heroku
-- postgresql
-- letsencrypt
-- cdn
-- traduzido
+- devops
+- tutoriais
 draft: false
 ---
 

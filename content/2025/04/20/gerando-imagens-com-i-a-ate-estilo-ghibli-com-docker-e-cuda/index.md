@@ -2,15 +2,11 @@
 title: "Gerando Imagens com I.A - até estilo Ghibli \U0001F602 - com Docker e CUDA"
 date: '2025-04-20T17:30:00-03:00'
 slug: gerando-imagens-com-i-a-ate-estilo-ghibli-com-docker-e-cuda
+description: "Empacotei o ComfyUI em Docker Compose, com CUDA, downloads automáticos e extensões persistentes. O ambiente fica isolado e portátil, mas manter dependências Python continua trabalhoso."
 tags:
-- comfyui
-- stable diffusion
-- flux
-- chatgpt
-- dalle
-- docker
-- cuda
-  - AI
+- midia-generativa
+- containers
+- tutoriais
 draft: false
 translationKey: ai-images-ghibli-docker-cuda
 ---

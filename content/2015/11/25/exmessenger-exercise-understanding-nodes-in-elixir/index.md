@@ -5,11 +5,11 @@ slug: exercicio-exmessenger-entendendo-nodes-em-elixir
 translationKey: exmessenger-nodes-elixir
 aliases:
 - /2015/11/25/exmessenger-exercise-understanding-nodes-in-elixir/
+description: "Refatorei um chat de terminal pré-1.0 para um Umbrella app e explorei Nodes, nomes, cookies e GenServers remotos. O resultado se aproxima mais de peers distribuídos que de um cliente TCP e servidor tradicional."
 tags:
-- learning
-- beginner
-- elixir
-- traduzido
+- elixir-e-erlang
+- sistemas-distribuidos
+- arquitetura-de-software
 draft: false
 ---
 

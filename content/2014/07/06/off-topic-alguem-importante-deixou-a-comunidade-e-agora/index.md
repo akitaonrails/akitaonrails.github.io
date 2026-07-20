@@ -2,10 +2,12 @@
 title: "[Off-Topic] Alguém importante deixou a comunidade! E agora??"
 date: '2014-07-06T20:38:00-03:00'
 slug: off-topic-alguem-importante-deixou-a-comunidade-e-agora
+description: "A saída de TJ Holowaychuk não determina o futuro do Node.js. Comunidades resilientes se renovam quando referências deixam espaço para novos contribuidores, sem transformar pessoas em ídolos."
 tags:
+- open-source
+- filosofia
+- gestao
 - off-topic
-- philosophy
-- insights
 draft: false
 ---
 

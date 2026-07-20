@@ -2,6 +2,7 @@
 title: O que aconteceu com o Rails Summit?
 date: '2010-07-05T11:03:00-03:00'
 slug: o-que-aconteceu-com-o-rails-summit
+description: "Após duas edições bem-sucedidas, o Rails Summit será substituído pela RubyConf Latin America, organizada com Ruby Central e Locaweb, em dois dias no Frei Caneca por R$ 150."
 tags:
 - rubyconfbr2010
 draft: false

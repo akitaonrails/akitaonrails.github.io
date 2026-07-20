@@ -3,11 +3,10 @@ title: Computing History and Retro Dev on YouTube
 date: '2025-05-19T15:19:00-03:00'
 slug: computing-history-and-retro-dev-on-youtube
 tags:
+- computing-history
+- retrocomputing
+- emulation
 - off-topic
-- história
-- youtube
-- links
-- recomendações
 draft: false
 translationKey: computing-history-retro-dev-youtube
 description: A curated list of YouTube channels on computing history and retro development that every dev should watch.

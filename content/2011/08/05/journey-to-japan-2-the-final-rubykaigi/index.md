@@ -5,9 +5,9 @@ slug: jornada-ao-japao-2-a-rubykaigi-final
 translationKey: journey-to-japan-2
 aliases:
 - /2011/08/05/journey-to-japan-2-the-final-rubykaigi/
+description: "Fabio relata como a RubyKaigi 2011 superou suas expectativas com tradução comunitária, sessões e keynotes de Aaron Patterson e Matz, antes de uma pausa para reorganizar o evento."
 tags:
 - rubykaigi2011
-- traduzido
 draft: false
 ---
 

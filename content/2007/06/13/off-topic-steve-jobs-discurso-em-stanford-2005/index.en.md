@@ -2,10 +2,12 @@
 title: 'Off Topic: Steve Jobs, Stanford Commencement Speech, 2005'
 date: '2007-06-13T21:51:03-03:00'
 slug: off-topic-steve-jobs-discurso-em-stanford-2005
+description: "In his Stanford speech translation, Steve Jobs connects chance, being fired, and illness to life’s choices. The message is to follow curiosity, work you love, and your own intuition."
 tags:
-- off-topic
 - apple
-- steve-jobs
+- philosophy
+- personal
+- off-topic
 draft: false
 ---
 

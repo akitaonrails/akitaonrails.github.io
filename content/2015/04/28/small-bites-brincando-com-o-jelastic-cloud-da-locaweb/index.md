@@ -2,9 +2,11 @@
 title: "[Small Bites] Brincando com o Jelastic Cloud da Locaweb"
 date: '2015-04-28T12:00:00-03:00'
 slug: small-bites-brincando-com-o-jelastic-cloud-da-locaweb
+description: "O primeiro deployment Rails no Jelastic Cloud da Locaweb funcionou com Raptor, PostgreSQL, Memcached e balanceamento, mas exigiu SSH e ajustes manuais. A plataforma ainda não oferecia workers nem um pipeline completo."
 tags:
-- locaweb
-- cloud-computing
+- cloud
+- rails
+- devops
 draft: false
 ---
 

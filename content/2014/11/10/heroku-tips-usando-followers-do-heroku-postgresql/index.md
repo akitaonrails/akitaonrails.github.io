@@ -2,11 +2,11 @@
 title: "[Heroku Tips] Usando Followers do Heroku Postgresql"
 date: '2014-11-10T19:51:00-02:00'
 slug: heroku-tips-usando-followers-do-heroku-postgresql
+description: "Mostro como usar Followers do Heroku PostgreSQL e a gem Octopus para separar leituras pesadas das escritas no master. Como a réplica tem atraso, medir o ganho antes e depois é indispensável."
 tags:
-- learning
-- rails
-- heroku
-- postgresql
+- bancos-de-dados
+- sistemas-distribuidos
+- cloud
 draft: false
 ---
 

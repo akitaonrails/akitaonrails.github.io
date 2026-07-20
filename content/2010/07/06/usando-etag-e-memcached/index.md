@@ -2,10 +2,11 @@
 title: Usando ETAG e Memcached
 date: '2010-07-06T05:43:00-03:00'
 slug: usando-etag-e-memcached
+description: "ETAGs com Memcached reduziram requisições Rails de cerca de 50ms para 7ms a 1ms, mas exigiram invalidação após mudanças e chaves limitadas a 250 caracteres."
 tags:
-- learning
-- beginner
 - rails
+- performance
+- backend
 draft: false
 ---
 

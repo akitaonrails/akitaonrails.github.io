@@ -4,15 +4,10 @@ slug: "llm-benchmark-fable-5-anthropic-soap-opera"
 date: '2026-06-11T14:00:00-03:00'
 draft: false
 translationKey: llm-benchmark-fable-5-anthropic-soap-opera
+description: "Fable 5 scored 94/100, practically tied with Opus 4.8, but costs ten times more and redirects sensitive tasks. Since Mythos isn’t auditable, I’m sticking with 4.8."
 tags:
-  - llm
-  - benchmark
-  - claude
-  - anthropic
-  - fable
-  - mythos
-  - ai
-  - vibecoding
+- llm-benchmarks
+- llms
 ---
 
 Anthropic shipped **Claude Fable 5** this week, and before we get to my benchmark numbers (spoiler: a technical tie with Opus), the whole soap opera deserves a retelling, because the context matters more than the model. And it's a good one, the whole nine yards: a secret model "too dangerous to release," a closed consortium of big tech, an IPO on the horizon, and aggressive marketing.

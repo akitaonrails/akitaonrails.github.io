@@ -5,10 +5,11 @@ slug: o-novo-garoto-da-pesada-para-servidores-ruby-raptor
 translationKey: raptor-new-ruby-server
 aliases:
 - /2014/10/19/the-new-kid-on-the-block-for-ruby-servers-raptor/
+description: "Testei o beta do Raptor em benchmarks sintéticos com Rack e Rails 4.1.6: ele chegou a quase quatro vezes o throughput em alguns cenários, com proteção contra clientes lentos e suporte a JRuby e Nginx."
 tags:
-- learning
-- passenger
-- traduzido
+- performance
+- rails
+- ruby
 draft: false
 ---
 

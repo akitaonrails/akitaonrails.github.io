@@ -3,10 +3,10 @@ title: "Matches, Rankings, The Social Network, League of Legends, and Ruby?"
 date: '2016-11-01T10:20:00-02:00'
 slug: matches-rankings-the-social-network-league-of-legends-and-ruby
 translationKey: lol-rankings-social-network-ruby
+description: "With 2,000 matches, the author shows that wins minus losses produces absurd rankings. The Elo system accounts for opponents’ strength and responds better to unlikely results."
 tags:
-- ranking
-- elo
-- algorithm
+- algorithms-and-data-structures
+- gaming
 draft: false
 ---
 

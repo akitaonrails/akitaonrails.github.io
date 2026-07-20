@@ -2,9 +2,11 @@
 title: "[Small Bites] Brincando de Crawlers e algumas Dicas Úteis"
 date: '2015-05-15T09:10:00-03:00'
 slug: small-bites-brincando-de-crawlers-e-algumas-dicas-uteis
+description: "Um crawler Ruby para apagar imagens do Slack combina Faraday, Typhoeus, Oj e Parallel. Threads ajudam em I/O. Para processamento pesado, processos separados aproveitam melhor o paralelismo."
 tags:
-- learning
 - ruby
+- performance
+- programacao
 draft: false
 ---
 

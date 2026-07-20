@@ -2,11 +2,11 @@
 title: "Off Topic: Let's All Stop the Regulation of the Systems Analyst Profession"
 date: '2008-04-19T20:22:00-03:00'
 slug: off-topic-vamos-todos-impedir-a-regulamenta-o-da-profiss-o-de-analista-de-sistema
+description: "The author criticizes regulating systems analysts by comparing software with high-risk professions. To him, degrees, councils, and bureaucracy do not guarantee quality and may still block good professionals."
 tags:
+- law-and-regulation
+- career
 - off-topic
-- principles
-- market
-- regulation
 draft: false
 ---
 

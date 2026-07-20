@@ -5,10 +5,9 @@ draft: false
 slug: rag-is-dead-long-context
 translationKey: rag-esta-morto-contexto-longo
 tags:
-  - llm
-  - rag
-  - vibecoding
-  - ai
+- llms
+- software-architecture
+- databases
 description: "Frontier models went from 200k to 1M tokens of context. Does it still make sense to wire up a whole vector DB stack to do RAG, when you can just grep and dump the entire document into the window?"
 ---
 

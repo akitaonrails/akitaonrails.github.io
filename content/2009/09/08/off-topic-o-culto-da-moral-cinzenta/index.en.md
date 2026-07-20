@@ -2,10 +2,11 @@
 title: "[Off-Topic] The Cult of Gray Morality"
 date: '2009-09-08T11:27:00-03:00'
 slug: off-topic-o-culto-da-moral-cinzenta
+description: "Commenting on Ayn Rand's The Cult of Gray Morality, the author distinguishes honest error from deliberate omission and criticizes those who use ambiguity to evade moral judgment."
 tags:
-- off-topic
-- principles
 - philosophy
+- psychology
+- off-topic
 draft: false
 ---
 

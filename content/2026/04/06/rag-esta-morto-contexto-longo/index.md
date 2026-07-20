@@ -4,10 +4,9 @@ date: '2026-04-06T11:00:00-03:00'
 draft: false
 translationKey: rag-esta-morto-contexto-longo
 tags:
-  - llm
-  - rag
-  - vibecoding
-  - ai
+- llms
+- arquitetura-de-software
+- bancos-de-dados
 description: "Os modelos frontier passaram dos 200k pra 1M tokens de contexto. Será que ainda faz sentido montar uma stack inteira com vector DB pra fazer RAG, quando dá pra usar grep e jogar o documento inteiro na janela?"
 ---
 

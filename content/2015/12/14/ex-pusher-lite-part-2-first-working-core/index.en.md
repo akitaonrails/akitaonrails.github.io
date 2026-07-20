@@ -3,12 +3,11 @@ title: Ex Pusher Lite - Part 2 - First Working Core!
 date: '2015-12-14T15:04:00-02:00'
 slug: ex-pusher-lite-part-2-first-working-core
 translationKey: ex-pusher-lite-part-2
+description: "Part 2 turns ExPusherLite into a working Phoenix core with apps, keys and secrets, authentication, channels, broadcasts, and Heroku deployment. Tests were quick, but security remains fragile."
 tags:
-- elixir
-- phoenix
-- pusher
-- expusherlite
-- english
+- elixir-and-erlang
+- distributed-systems
+- devops
 draft: false
 ---
 

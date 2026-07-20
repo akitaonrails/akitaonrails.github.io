@@ -2,8 +2,11 @@
 title: Viagem a São Francisco (Parte 2) - Visitando Empresas
 date: '2012-11-05T22:45:00-02:00'
 slug: viagem-a-sao-francisco-parte-2-visitando-empresas
+description: "Visitando empresas como Twitter, Heroku, Stripe, Airbnb, Pivotal, GitHub, VMware, Google, Square, Yammer e Get Satisfaction, o autor observa como o crescimento transforma cultura, ambiente e autonomia."
 tags:
-- sanfrancisco2012
+- negocios
+- gestao
+- viagens
 draft: false
 ---
 

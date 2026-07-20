@@ -2,6 +2,7 @@
 title: Está chegando a hora! Rails Summit Brazil 2008!
 date: '2008-07-04T20:01:00-03:00'
 slug: est-chegando-a-hora-rails-summit-brazil-2008
+description: "A Locaweb anuncia o Rails Summit Brazil, em São Paulo, com dois dias, sessões paralelas, almoço e nomes importantes da comunidade, incluindo David Hansson por vídeo. O ingresso promocional custa R$ 300."
 tags:
 - railssummit2008
 draft: false

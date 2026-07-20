@@ -5,12 +5,11 @@ slug: ex-manga-downloadr-parte-5-deixando-mais-robusto
 translationKey: ex-manga-downloadr-part-5
 aliases:
 - /2015/12/06/ex-manga-downloadr-part-5-making-it-more-robust/
+description: "Timeouts do MangaFox expose a flaw in Ex Manga Downloadr’s Workflow. O autor usa Task.Supervisor e retries limitados para capturar erros do HTTPotion, deixando a refatoração com GenServer como dívida técnica."
 tags:
-- learning
-- beginner
-- elixir
-- exmangadownloadr
-- traduzido
+- elixir-e-erlang
+- engenharia-de-software
+- testes
 draft: false
 ---
 

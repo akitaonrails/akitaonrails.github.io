@@ -5,10 +5,8 @@ date: 2026-01-21T15:29:35-0300
 description: "How I configured Hyprland on Omarchy to use an AMD iGPU as primary and offload 3D apps to an NVIDIA RTX 5090 via Prime."
 tags:
 - omarchy
-- amd
-- nvidia
-- wayland
-- hyprland
+- hardware
+- linux
 translationKey: omarchy-3-dual-gpu-setup
 ---
 

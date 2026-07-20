@@ -2,10 +2,10 @@
 title: Refletindo Sobre Alcance de Redes Sociais
 date: '2024-12-14T16:48:00-03:00'
 slug: refletindo-sobre-alcance-de-redes-sociais-dff9d8fb-b54f-47f8-a013-4e37a54687e3
+description: "Depois de crescer organicamente em várias redes, defendo que alcance depende mais de engajamento do que de seguidores ou views. Conteúdo neutro e atrasado desaparece. Opinião com substância e timing circula."
 tags:
-- rede social
-- engajamento
-- alcance
+- comunicacao
+- negocios
 draft: false
 ---
 

@@ -2,12 +2,12 @@
 title: "[Off-Topic] Um Desabafo III, refletindo sobre 2007"
 date: '2012-12-30T21:30:00-02:00'
 slug: off-topic-um-desabafo-iii-refletindo-sobre-2007
+description: "Ao revisitar seus textos de 2007, o autor defende que consultoria exige aprendizado contínuo, autonomia, responsabilidade e saúde financeira. Os problemas de 2012 colocaram esse modelo à prova."
 tags:
+- carreira
+- pessoal
+- negocios
 - off-topic
-- principles
-- career
-- insights
-- biography
 draft: false
 ---
 

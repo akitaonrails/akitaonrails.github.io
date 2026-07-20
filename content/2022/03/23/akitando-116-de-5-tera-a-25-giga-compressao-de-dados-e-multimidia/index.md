@@ -2,18 +2,10 @@
 title: "[Akitando] #116 - De 5 Tera a 25 Giga | Compressão de Dados e Multimídia"
 date: '2022-03-23T14:28:00-03:00'
 slug: akitando-116-de-5-tera-a-25-giga-compressao-de-dados-e-multimidia
+description: "Um filme 4K cru de duas horas ocuparia cerca de 5 TB, mas codecs como H.264 o reduzem a 20–25 GB. A explicação também separa formatos de consumo dos ideais para edição."
 tags:
-- jpeg
-- h.264
-- h.265
-- hevc
-- fourier
-- lempel-ziv
-- zip
-- 7zip
-- rar
-- video
-- compressão
+- audio-e-video
+- algoritmos-e-estruturas-de-dados
 - akitando
 draft: false
 ---

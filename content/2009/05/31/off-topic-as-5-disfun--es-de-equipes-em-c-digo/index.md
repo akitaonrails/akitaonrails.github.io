@@ -2,10 +2,12 @@
 title: "[Off-Topic] As 5 disfunções de equipes em código"
 date: '2009-05-31T16:10:00-03:00'
 slug: off-topic-as-5-disfun--es-de-equipes-em-c-digo
+description: "Cinco disfunções de equipes aparecem em anti-padrões como null checks, duplicação, código sem testes e soluções difíceis de entender. Técnicas isoladas não resolvem uma organização baseada em comando e controle."
 tags:
+- engenharia-de-software
+- testes
+- gestao
 - off-topic
-- management
-- carreira
 draft: false
 ---
 

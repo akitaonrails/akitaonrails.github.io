@@ -5,10 +5,12 @@ slug: o-ano-do-linux-no-desktop-esta-usavel
 translationKey: year-linux-desktop-usable
 aliases:
 - /2016/07/26/the-year-of-linux-on-the-desktop-it-s-usable/
+description: "Testando o Bash on Ubuntu on Windows, o autor roda Rails, Ruby, Node, Crystal e Go com sucesso. PostgreSQL exige um servidor nativo do Windows, enquanto Elixir e Erlang ainda travam."
 tags:
 - microsoft
+- linux
+- ferramentas-de-desenvolvimento
 - off-topic
-- traduzido
 draft: false
 ---
 

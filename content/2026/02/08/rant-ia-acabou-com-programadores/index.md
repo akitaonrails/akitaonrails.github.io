@@ -3,15 +3,12 @@ title: "RANT: IA acabou com os programadores?"
 slug: "rant-ia-acabou-com-programadores"
 date: 2026-02-08T14:29:18+00:00
 draft: false
+description: "LLMs já ajudam a substituir trabalho braçal, mas não dispensam programadores experientes: o autor vê limites na arquitetura atual e defende revisão sênior, formação sólida e adaptação."
 tags:
+- inteligencia-artificial
+- llms
+- carreira
 - off-topic
-- vibecode
-- claude
-- gpt
-- openai
-- anthropic
-- bolha
-  - AI
 translationKey: rant-ai-killed-programmers
 ---
  

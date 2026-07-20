@@ -2,6 +2,7 @@
 title: 'Rails Summit: Pagamento por Boleto'
 date: '2008-08-20T12:16:00-03:00'
 slug: rails-summit-pagamento-por-boleto
+description: "O Rails Summit agora aceita boleto bancário, além de cartão. A inscrição custa R$ 300 até 9 de setembro e passa a R$ 400 depois disso."
 tags:
 - railssummit2008
 draft: false

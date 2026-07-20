@@ -2,6 +2,7 @@
 title: 'Palestrante Rails Summit: Danilo Sato'
 date: '2008-09-03T11:59:00-03:00'
 slug: palestrante-rails-summit-danilo-sato
+description: "Danilo Sato relembra a passagem de Java para Ruby e Rails e apresenta sua palestra sobre testes automatizados. Ele pretende discutir TDD, BDD, mocks, stubs e cobertura para melhorar a qualidade do código."
 tags:
 - railssummit2008
 draft: false

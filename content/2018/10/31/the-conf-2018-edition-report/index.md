@@ -5,9 +5,9 @@ slug: the-conf-2018-relatorio-da-edicao
 translationKey: the-conf-2018-report
 aliases:
 - /2018/10/31/the-conf-2018-edition-report/
+description: "A THE CONF 2018 recebeu mais de 100 propostas, selecionou 28 palestras e reuniu mais de 300 pessoas, mas teve déficit de pelo menos R$ 59.931. Ainda assim, segue como investimento numa conferência técnica em inglês no Brasil."
 tags:
 - theconf
-- traduzido
 draft: false
 ---
 

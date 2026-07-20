@@ -2,9 +2,11 @@
 title: 'Hanselminutes: Entrevista com David Hansson e Martin Fowler'
 date: '2007-07-08T00:20:09-03:00'
 slug: hanselminutes-entrevista-com-david-hansson-e-martin-fowler
+description: "David Hansson e Martin Fowler defendem HTML e CSS para a Web atual, protótipos em páginas reais, iterações curtas e testes, enquanto criticam telas em branco, Photoshop e firulas sem função."
 tags:
-- translation
-- hanselman
+- entrevistas
+- desenvolvimento-web
+- frontend
 draft: false
 ---
 

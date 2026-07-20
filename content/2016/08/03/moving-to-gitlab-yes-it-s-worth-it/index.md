@@ -5,12 +5,10 @@ slug: migrando-para-o-gitlab-sim-vale-a-pena
 translationKey: moving-to-gitlab
 aliases:
 - /2016/08/03/moving-to-gitlab-yes-it-s-worth-it/
+description: "Ao migrar centenas de repositórios do GitHub e Bitbucket para o GitLab CE, preservei o histórico importante, acelerei os builds com GitLab Runner e reduzi custos em até 11 vezes."
 tags:
-- gitlab
-- git
-- self-hosted
-- segurança
-- traduzido
+- controle-de-versao
+- devops
 draft: false
 ---
 

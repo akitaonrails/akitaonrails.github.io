@@ -5,11 +5,11 @@ slug: manga-downloadr-melhorando-o-crystal-ruby-de-rajadas-para-fluxo-de-pool
 translationKey: manga-downloadr-bursts-to-pool
 aliases:
 - /2016/06/07/manga-downloadr-improving-the-crystal-ruby-from-bursts-to-pool-stream/
+description: "Trocando rajadas de requisições por pools constantes de workers no Manga-Downloadr, o autor reduz os tempos para 27s no Ruby, 30s no JRuby e 21s no Crystal, mas Elixir termina em 15s."
 tags:
-- manga-downloadr
-- crystal
-- jruby
-- traduzido
+- anime-e-manga
+- performance
+- sistemas-distribuidos
 draft: false
 ---
 

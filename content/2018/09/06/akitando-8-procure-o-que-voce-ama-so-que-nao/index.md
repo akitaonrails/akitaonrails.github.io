@@ -2,15 +2,11 @@
 title: "[Akitando] #8 - Procure o que você Ama ... SÓ QUE NÃO!"
 date: '2018-09-06T17:00:00-03:00'
 slug: akitando-8-procure-o-que-voce-ama-so-que-nao
+description: "Akita questiona o conselho “faça o que ama” e defende melhorar o trabalho que você já tem, um pouco por dia. A experiência acumulada cria oportunidades mais concretas que esperar pela paixão."
 tags:
-- amor
 - carreira
-- empreendedorismo
-- startups
-- esforço
-- talento
-- procrastinação
-- antidepressão
+- produtividade
+- psicologia
 - akitando
 draft: false
 ---

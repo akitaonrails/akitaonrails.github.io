@@ -2,6 +2,7 @@
 title: 'Rubyconf Brasil 2013: Conheça Bruno AbstractJ'
 date: '2013-08-22T09:08:00-03:00'
 slug: rubyconf-brasil-2013-conheca-bruno-abstractj
+description: "Bruno Oliveira apresenta criptografia em Ruby para desenvolvedores comuns, abordando fundamentos, erros frequentes, APIs complexas e o Krypt, e recomenda acompanhar CVEs, NIST, libsodium e Blake2."
 tags:
 - rubyconfbr2013
 draft: false

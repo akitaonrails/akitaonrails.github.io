@@ -2,9 +2,11 @@
 title: 'Off Topic: Pale Blue Dot'
 date: '2007-08-29T02:59:00-03:00'
 slug: off-topic-plido-ponto-azul
+description: "An image of Earth captured by Voyager I inspires Carl Sagan to reflect on our fragility and responsibility, while the author recommends Cosmos as a legacy for raising curious children."
 tags:
-- off-topic
 - science
+- philosophy
+- off-topic
 draft: false
 ---
 

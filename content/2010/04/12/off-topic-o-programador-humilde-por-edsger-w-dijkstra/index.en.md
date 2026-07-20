@@ -2,10 +2,11 @@
 title: "[Off-Topic] The Humble Programmer, by Edsger W. Dijkstra"
 date: '2010-04-12T08:49:00-03:00'
 slug: off-topic-o-programador-humilde-por-edsger-w-dijkstra
+description: "Dijkstra argues for humility before the difficulty of programming: avoid bugs from the start, use abstractions and modest languages, because no tool eliminates complexity."
 tags:
+- software-engineering
+- programming-languages
 - off-topic
-- principles
-- career
 draft: false
 ---
 

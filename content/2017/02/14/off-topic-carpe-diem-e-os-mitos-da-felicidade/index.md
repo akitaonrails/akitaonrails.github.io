@@ -2,10 +2,12 @@
 title: "[Off-Topic] Carpe Diem e os Mitos da Felicidade"
 date: '2017-02-14T15:44:00-02:00'
 slug: off-topic-carpe-diem-e-os-mitos-da-felicidade
+description: "Akita desmonta os mitos da felicidade constante, da motivação e do “faça o que ama”. A adaptação hedônica explica a frustração, enquanto aprender e aproveitar o presente devolvem agência."
 tags:
+- psicologia
+- pessoal
+- filosofia
 - off-topic
-- felicidade
-- carreira
 draft: false
 ---
 

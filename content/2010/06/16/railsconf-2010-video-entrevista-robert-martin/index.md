@@ -2,9 +2,9 @@
 title: "[RailsConf 2010] - Video Entrevista - Robert Martin"
 date: '2010-06-16T17:26:00-03:00'
 slug: railsconf-2010-video-entrevista-robert-martin
+description: "Robert Martin discute linguagens, carreira, certificações e Agile em uma entrevista de 16 minutos, além de explicar por que o hardware avançou 25 ordens de grandeza sem evolução equivalente nas linguagens."
 tags:
 - railsconf2010
-- interview
 draft: false
 translationKey: railsconf-2010-robert-martin
 aliases:

@@ -2,10 +2,11 @@
 title: "[Off Topic] Cuidado com o Kanban-butt"
 date: '2009-12-16T23:22:00-02:00'
 slug: off-topic-cuidado-com-o-kanban-butt
+description: "Kanban é uma técnica do Toyota Production System, não sinônimo de Lean nem uma metodologia completa. Em software, que é não repetitivo, entender o porquê vem antes de aplicar a ferramenta."
 tags:
-- off-topic
-- management
 - agile
+- gestao
+- off-topic
 draft: false
 ---
 

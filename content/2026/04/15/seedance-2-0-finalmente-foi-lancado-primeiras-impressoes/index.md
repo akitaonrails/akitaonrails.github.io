@@ -5,14 +5,9 @@ date: '2026-04-15T10:00:00-03:00'
 draft: false
 translationKey: seedance-2-0-public-launch-first-impressions
 tags:
-  - ai
-  - video
-  - seedance
-  - bytedance
-  - vfx
-  - blender
-  - deepfake
-  - themakitachronicles
+- midia-generativa
+- reviews
+- seguranca
 description: "A ByteDance liberou pro grande público hoje o Seedance 2.0, o modelo de geração de vídeo que vinha em acesso restrito há meses. Testei sync de áudio com avatar e referência de vídeo via render do Blender. Dá pra fazer coisa séria, mas o caminho até produção profissional ainda é longo, e o problema do deepfake virou inevitável."
 ---
 

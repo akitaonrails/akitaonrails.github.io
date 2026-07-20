@@ -17,6 +17,15 @@ OFF_TOPIC_DIR = "#{CONTENT_DIR}/off-topic"
 OFF_TOPIC_FILE = "#{OFF_TOPIC_DIR}/_index.md"
 OFF_TOPIC_FILE_EN = "#{OFF_TOPIC_DIR}/_index.en.md"
 FRONTMATTER_DELIMITER = '---'
+TAG_TAXONOMY = YAML.safe_load_file('data/tag_taxonomy.yml')
+ALLOWED_TAGS = {
+  pt: TAG_TAXONOMY.fetch('tags').values.map { |values| values.fetch('pt') } +
+      TAG_TAXONOMY.fetch('event_series').keys +
+      TAG_TAXONOMY.fetch('special_tags').values.map { |values| values.fetch('pt') },
+  en: TAG_TAXONOMY.fetch('tags').values.map { |values| values.fetch('en') } +
+      TAG_TAXONOMY.fetch('event_series').keys +
+      TAG_TAXONOMY.fetch('special_tags').values.map { |values| values.fetch('en') }
+}.transform_values(&:freeze).freeze
 
 FEATURED_POSTS = [
   ['2026-07-19', 'LLM Benchmark: Devo usar o que tem nota maior?', '/2026/07/19/llm-benchmark-devo-usar-o-que-tem-nota-maior/'],
@@ -74,6 +83,20 @@ def escape_html(text)
   CGI.escapeHTML(text.to_s)
 end
 
+def tag_url(tag, lang: :pt)
+  prefix = lang == :en ? '/en' : ''
+  "#{prefix}/tags/#{CGI.escape(tag).gsub('+', '%20')}/"
+end
+
+def render_tag_links(tags, lang:, modifier:)
+  links = tags.map do |tag|
+    %(<a class="aor-tag-link" href="#{escape_html(tag_url(tag, lang: lang))}">##{escape_html(tag)}</a>)
+  end
+  return '' if links.empty?
+
+  %(<span class="aor-post-tags aor-post-tags--#{modifier}">#{links.join}</span>)
+end
+
 def extract_frontmatter(content)
   return nil unless content.start_with?("#{FRONTMATTER_DELIMITER}\n")
 
@@ -107,8 +130,20 @@ def parse_post(path, lang: :pt)
 
   has_en = File.exist?("#{base_path}/index.en.md")
   tags = Array(frontmatter['tags']).map(&:to_s)
+  unknown_tags = tags - ALLOWED_TAGS.fetch(lang)
+  unless unknown_tags.empty?
+    raise "#{path}: unknown #{lang.to_s.upcase} tag(s): #{unknown_tags.join(', ')}. Run scripts/tag_catalog.rb --search QUERY."
+  end
 
-  { title: frontmatter['title'], url: url, date: date, has_en: has_en, lang: lang, tags: tags }
+  {
+    title: frontmatter['title'],
+    description: frontmatter['description'].to_s,
+    url: url,
+    date: date,
+    has_en: has_en,
+    lang: lang,
+    tags: tags
+  }
 rescue ArgumentError, Psych::SyntaxError => e
   warn "Error parsing #{path}: #{e.message}"
   nil
@@ -191,7 +226,7 @@ end
 PT_MONTHNAMES = [nil, 'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho',
                  'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'].freeze
 
-def render_months(grouped_posts, lang: :pt)
+def render_months(grouped_posts, lang: :pt, show_tags: false)
   sorted_months = grouped_posts.keys.sort.reverse
   lines = []
 
@@ -200,7 +235,12 @@ def render_months(grouped_posts, lang: :pt)
     lines << "## #{year} - #{month_name}\n"
 
     grouped_posts[[year, month]].each do |post|
-      lines << "- [#{escape_markdown(post[:title])}](#{post[:url]})"
+      line = %(- <a class="aor-index-list__main-link" href="#{escape_html(post[:url])}" title="#{escape_html(post[:description])}">#{escape_html(post[:title])}</a>)
+      if show_tags
+        tags = render_tag_links(post[:tags], lang: lang, modifier: 'index-list')
+        line += "<br>#{tags}"
+      end
+      lines << line
     end
 
     lines << ''
@@ -209,28 +249,110 @@ def render_months(grouped_posts, lang: :pt)
   lines
 end
 
-def render_featured_posts
+def render_post_card(post, lang: :pt)
+  date_label = if lang == :pt
+                 post[:date].strftime('%d/%m/%Y')
+               else
+                 post[:date].strftime('%b %-d, %Y')
+               end
+
+  <<~HTML.chomp
+    <article class="aor-post-card" title="#{escape_html(post[:description])}">
+      <time class="aor-post-card__date" datetime="#{post[:date].to_date.iso8601}">#{escape_html(date_label)}</time>
+      <h3 class="aor-post-card__title"><a class="aor-post-card__title-link" href="#{escape_html(post[:url])}">#{escape_html(post[:title])}</a></h3>
+      #{render_tag_links(post[:tags], lang: lang, modifier: 'card')}
+      <p class="aor-post-card__description">#{escape_html(post[:description])}</p>
+    </article>
+  HTML
+end
+
+def render_grid_months(grouped_posts, lang: :pt)
+  sorted_months = grouped_posts.keys.sort.reverse
+  lines = ['<div id="aor-index-grid" class="aor-index-grid" data-index-view="grid">']
+
+  sorted_months.each do |(year, month)|
+    month_name = lang == :pt ? PT_MONTHNAMES[month] : Date::MONTHNAMES[month]
+    posts = grouped_posts[[year, month]]
+    count_label = "#{posts.length} #{posts.length == 1 ? 'post' : 'posts'}"
+    heading_id = "aor-grid-#{year}-#{format('%02d', month)}"
+
+    lines << <<~HTML.chomp
+      <section class="aor-index-month" aria-labelledby="#{heading_id}">
+        <div class="aor-index-month__header">
+          <h2 id="#{heading_id}">#{escape_html("#{year} - #{month_name}")}</h2>
+          <span>#{escape_html(count_label)}</span>
+        </div>
+        <div class="aor-post-grid">
+    HTML
+
+    posts.each { |post| lines << render_post_card(post, lang: lang) }
+
+    lines << <<~HTML.chomp
+        </div>
+      </section>
+    HTML
+  end
+
+  lines << '</div>'
+  lines << ''
+  lines
+end
+
+def index_view_labels(lang)
+  if lang == :pt
+    { list: 'Lista', grid: 'Grade', group: 'Visualização dos posts' }
+  else
+    { list: 'List', grid: 'Grid', group: 'Post view' }
+  end
+end
+
+def render_index_view_toggle(lang: :pt)
+  labels = index_view_labels(lang)
+
+  [
+    %({{< index-view-toggle list="#{labels[:list]}" grid="#{labels[:grid]}" label="#{labels[:group]}" >}}),
+    ''
+  ]
+end
+
+def render_index_views(grouped_posts, lang: :pt)
+  lines = []
+
+  lines << '{{% index-list %}}'
+  lines.concat(render_months(grouped_posts, lang: lang, show_tags: true))
+  lines << '{{% /index-list %}}'
+  lines << ''
+  lines.concat(render_grid_months(grouped_posts, lang: lang))
+  lines
+end
+
+def render_featured_posts(grouped_posts)
   render_featured_section(
     id: 'aor-featured-posts',
     title: 'Destaques',
     button_open: 'Esconder',
     button_closed: 'Mostrar',
-    posts: FEATURED_POSTS
+    posts: FEATURED_POSTS,
+    available_posts: grouped_posts.values.flatten,
+    lang: :pt
   )
 end
 
-def render_featured_posts_en
+def render_featured_posts_en(grouped_posts)
   render_featured_section(
     id: 'aor-featured-posts-en',
     title: 'Featured',
     button_open: 'Hide',
     button_closed: 'Show',
-    posts: FEATURED_POSTS_EN
+    posts: FEATURED_POSTS_EN,
+    available_posts: grouped_posts.values.flatten,
+    lang: :en
   )
 end
 
-def render_featured_section(id:, title:, button_open:, button_closed:, posts:)
+def render_featured_section(id:, title:, button_open:, button_closed:, posts:, available_posts:, lang:)
   lines = []
+  post_lookup = available_posts.to_h { |post| [post[:url], post] }
 
   lines << <<~HTML.chomp
     <section id="#{id}" class="aor-featured" data-button-open="#{button_open}" data-button-closed="#{button_closed}">
@@ -239,15 +361,35 @@ def render_featured_section(id:, title:, button_open:, button_closed:, posts:)
         <button class="aor-featured__toggle" type="button" aria-expanded="true" aria-controls="#{id}-body">#{button_open}</button>
       </div>
       <div id="#{id}-body" class="aor-featured__body">
-        <ul>
+        <div class="aor-featured__list" data-index-view="list">
+          <ul>
   HTML
 
   posts.each do |date, post_title, url|
-    lines << "          <li><code>#{escape_html(date)}</code> — <a href=\"#{escape_html(url)}\">#{escape_html(post_title)}</a></li>"
+    post = post_lookup[url]
+    tags = post ? render_tag_links(post[:tags], lang: lang, modifier: 'featured-list') : ''
+    description = post ? post[:description] : ''
+    lines << "            <li><code>#{escape_html(date)}</code> — <a href=\"#{escape_html(url)}\" title=\"#{escape_html(description)}\">#{escape_html(post_title)}</a><br>#{tags}</li>"
   end
 
   lines << <<~HTML.chomp
-        </ul>
+          </ul>
+        </div>
+        <div class="aor-featured__grid aor-post-grid" data-index-view="grid">
+  HTML
+
+  posts.each do |_date, _post_title, url|
+    post = post_lookup[url]
+    unless post
+      warn "Missing metadata for featured post #{url}"
+      next
+    end
+
+    lines << render_post_card(post, lang: lang)
+  end
+
+  lines << <<~HTML.chomp
+        </div>
       </div>
     </section>
 
@@ -284,15 +426,50 @@ def render_featured_section(id:, title:, button_open:, button_closed:, posts:)
       .aor-featured__body {
         overflow: hidden;
         transition: max-height 220ms ease, opacity 160ms ease, margin-top 220ms ease;
-        max-height: 40rem;
+        max-height: none;
         opacity: 1;
         margin-top: 0.75rem;
+      }
+
+      .aor-index-enhanced .aor-featured__body {
+        max-height: var(--aor-featured-body-height, 40rem);
       }
 
       .aor-featured.is-collapsed .aor-featured__body {
         max-height: 0;
         opacity: 0;
         margin-top: 0;
+      }
+
+      .aor-featured__grid {
+        display: none;
+      }
+
+      html[data-aor-index-view="grid"] .aor-featured {
+        padding: 0;
+        border: 0;
+      }
+
+      html[data-aor-index-view="grid"] .aor-featured__header {
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid color-mix(in srgb, currentColor 14%, transparent);
+      }
+
+      html[data-aor-index-view="grid"] .aor-featured__header h2 {
+        font-size: 1.35rem;
+        letter-spacing: 0;
+      }
+
+      html[data-aor-index-view="grid"] .aor-featured__list {
+        display: none;
+      }
+
+      html[data-aor-index-view="grid"] .aor-featured__grid {
+        display: grid;
+      }
+
+      html[data-aor-index-view="grid"] .aor-featured.is-collapsed .aor-featured__body {
+        max-height: 0;
       }
     </style>
 
@@ -302,6 +479,7 @@ def render_featured_section(id:, title:, button_open:, button_closed:, posts:)
         if (!box) return;
 
         var button = box.querySelector('.aor-featured__toggle');
+        var body = box.querySelector('.aor-featured__body');
         var interacted = false;
         var openLabel = box.getAttribute('data-button-open') || 'Hide';
         var closedLabel = box.getAttribute('data-button-closed') || 'Show';
@@ -310,12 +488,26 @@ def render_featured_section(id:, title:, button_open:, button_closed:, posts:)
           box.classList.toggle('is-collapsed', collapsed);
           button.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
           button.textContent = collapsed ? closedLabel : openLabel;
+          window.requestAnimationFrame(updateBodyHeight);
+        }
+
+        function updateBodyHeight() {
+          body.style.setProperty('--aor-featured-body-height', body.scrollHeight + 'px');
         }
 
         button.addEventListener('click', function () {
           interacted = true;
           setCollapsed(!box.classList.contains('is-collapsed'));
         });
+
+        window.addEventListener('aor:index-view-change', function () {
+          window.requestAnimationFrame(updateBodyHeight);
+        });
+        window.addEventListener('resize', function () {
+          window.requestAnimationFrame(updateBodyHeight);
+        });
+
+        updateBodyHeight();
 
         window.setTimeout(function () {
           if (interacted) return;
@@ -333,8 +525,9 @@ def generate_index(grouped_posts)
   lines = ["#{FRONTMATTER_DELIMITER}\ntitle: AkitaOnRails Blog\n#{FRONTMATTER_DELIMITER}\n"]
   lines << '{{< lang-toggle >}}'
   lines << ''
-  lines.concat(render_featured_posts)
-  lines.concat(render_months(grouped_posts, lang: :pt))
+  lines.concat(render_index_view_toggle(lang: :pt))
+  lines.concat(render_featured_posts(grouped_posts))
+  lines.concat(render_index_views(grouped_posts, lang: :pt))
   lines << "[Arquivo completo →](/archives/)\n"
   lines.join("\n")
 end
@@ -353,11 +546,12 @@ def generate_index_en(grouped_posts)
   lines = ["#{FRONTMATTER_DELIMITER}\ntitle: AkitaOnRails Blog\n#{FRONTMATTER_DELIMITER}\n"]
   lines << '{{< lang-toggle >}}'
   lines << ''
-  lines.concat(render_featured_posts_en)
   if grouped_posts.empty?
     lines << "_No posts translated to English yet. Check back soon._\n"
   else
-    lines.concat(render_months(grouped_posts, lang: :en))
+    lines.concat(render_index_view_toggle(lang: :en))
+    lines.concat(render_featured_posts_en(grouped_posts))
+    lines.concat(render_index_views(grouped_posts, lang: :en))
   end
   lines << "[Full archive →](/en/archives/)\n"
   lines.join("\n")

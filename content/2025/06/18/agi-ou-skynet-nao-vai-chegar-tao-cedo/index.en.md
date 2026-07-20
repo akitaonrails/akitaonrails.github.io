@@ -3,14 +3,10 @@ title: AGI or Skynet Isn't Coming Anytime Soon
 date: '2025-06-18T15:00:00-03:00'
 slug: agi-or-skynet-isnt-coming-anytime-soon
 tags:
+- artificial-intelligence
+- llms
+- philosophy
 - off-topic
-- agi
-- geoffrey hinton
-- yann lecun
-- sundar pichai
-- satya nadella
-- openai
-  - AI
 draft: false
 translationKey: agi-skynet-not-coming-soon
 description: Why the current LLM architecture cannot reach AGI, and why the hype from Big Tech CEOs and media-anointed experts is mostly backroom negotiation noise.

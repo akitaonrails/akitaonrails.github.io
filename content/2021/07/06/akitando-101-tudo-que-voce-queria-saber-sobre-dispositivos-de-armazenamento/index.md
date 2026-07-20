@@ -2,14 +2,11 @@
 title: "[Akitando #101] Tudo que Você Queria Saber Sobre Dispositivos de Armazenamento"
 date: '2021-07-06T11:08:00-03:00'
 slug: akitando-101-tudo-que-voce-queria-saber-sobre-dispositivos-de-armazenamento
+description: "Akita explica como boot, partições, RAID, SSD, interfaces e redes organizam o armazenamento. Entender essas camadas ajuda a localizar falhas sem depender de abstrações ou superstições."
 tags:
-- UEFI
-- SSD
-- NVME
-- NAS
-- Thunderbolt
-- USB
-- RAID
+- armazenamento-e-backup
+- hardware
+- redes
 - akitando
 draft: false
 ---

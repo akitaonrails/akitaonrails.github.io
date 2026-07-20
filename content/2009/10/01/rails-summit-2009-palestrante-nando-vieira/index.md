@@ -2,6 +2,7 @@
 title: "[Rails Summit 2009] Palestrante Nando Vieira"
 date: '2009-10-01T09:32:00-03:00'
 slug: rails-summit-2009-palestrante-nando-vieira
+description: "Nando Vieira conta como descobriu Rails 0.13 e criou seu blog, enquanto prepara uma palestra com exemplos sobre as mudanças do Ruby 1.9 em relação ao 1.8."
 tags:
 - railssummit2009
 draft: false

@@ -2,17 +2,10 @@
 title: "[Akitando] #18 - Motivação: O Diário de Henry Jones"
 date: '2018-10-16T17:00:00-03:00'
 slug: akitando-18-motivacao-o-diario-de-henry-jones
+description: "O diário de Henry Jones inspirou Akita a compilar conhecimento sobre computação, anime e programação em livros, palestras, blog e vídeos. A motivação sempre foi escrever primeiro para si, sem buscar validação."
 tags:
-- livro
-- enciclopédia
-- indiana jones
-- última cruzada
-- motivação
-- inspiração
-- computação
-- animax
-- evangelion
-- revista herói
+- pessoal
+- aprendizado
 - akitando
 draft: false
 ---

@@ -2,6 +2,7 @@
 title: 'Rubyconf Brasil 2013: Conheça Carlos (Chester) Nascimento'
 date: '2013-08-12T15:00:00-03:00'
 slug: rubyconf-brasil-2013-conheca-carlos-chester-nascimento
+description: "Carlos “Chester” Nascimento mostra como um emulador de Atari em Ruby introduz emulação e escovação de bits. Para lidar com escala, ele recomenda estudar arquitetura e acompanhar bancos NoSQL."
 tags:
 - rubyconfbr2013
 draft: false

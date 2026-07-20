@@ -5,10 +5,9 @@ slug: railsconf-09-recado-do-peter-cooper-para-o-ruby-inside-brasil
 translationKey: railsconf-2009-peter-cooper-msg
 aliases:
 - /2009/05/08/railsconf-09-message-from-peter-cooper-to-ruby-inside-brazil/
+description: "Peter Cooper manda um recado sobre o lançamento do Ruby Inside Brasil, filial criada por Railers para cobrir novidades de Ruby e Rails no país e no exterior."
 tags:
 - railsconf2009
-- interview
-- traduzido
 draft: false
 ---
 

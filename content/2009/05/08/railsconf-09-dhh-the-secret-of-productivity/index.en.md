@@ -3,9 +3,9 @@ title: "RailsConf 09 - DHH - The Secret of Productivity"
 date: '2009-05-08T04:07:00-03:00'
 slug: railsconf-09-dhh-the-secret-of-productivity
 translationKey: railsconf-2009-dhh-productivity
+description: "David Heinemeier Hansson revisits Rails' evolution and critics, previews Rails 3 features, and sums up productivity as the consistent application of basic Agile principles."
 tags:
 - railsconf2009
-- english
 draft: false
 ---
 

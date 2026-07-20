@@ -2,6 +2,7 @@
 title: RubyConf Brasil 2011 - Palestrantes Brasileiros
 date: '2011-10-26T04:03:00-02:00'
 slug: rubyconf-brasil-2011-palestrantes-brasileiros
+description: "Fabio apresenta os palestrantes brasileiros da RubyConf Brasil 2011 e uma programação baseada em experiências práticas, de escalabilidade e arquitetura Rails a Elixir, JRuby, front-end e cloud."
 tags:
 - rubyconfbr2011
 draft: false

@@ -2,10 +2,12 @@
 title: "[Off-Topic] Commenting on the Approved Marco Civil"
 date: '2014-03-30T09:46:00-03:00'
 slug: off-topic-comentando-o-marco-civil-aprovado
+description: "Commenting on the approved Marco Civil text, the author considers network neutrality valid but criticizes costs, regulatory agencies, and mechanisms that would expand state access to private data."
 tags:
+- law-and-regulation
+- networking
+- security
 - off-topic
-- market
-- regulation
 draft: false
 ---
 

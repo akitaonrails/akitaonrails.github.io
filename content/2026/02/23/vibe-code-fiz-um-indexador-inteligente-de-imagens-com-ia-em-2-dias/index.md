@@ -3,13 +3,12 @@ title: "Vibe Code: Fiz um Indexador Inteligente de Imagens com IA em 2 dias | Fr
 slug: "vibe-code-fiz-um-indexador-inteligente-de-imagens-com-ia-em-2-dias"
 date: 2026-02-23T18:34:34+00:00
 draft: false
+description: "Em 48 horas, criei o Frank Sherlock, um catálogo local de imagens com Rust, Tauri, Ollama e OCR, publicado em beta para três sistemas. O benchmark favoreceu o qwen2.5vl:7b."
 tags:
-- franksherlock
-- vibecode
-- rust
-- tauri
-- qwen
-  - AI
+- frank
+- llms
+- inteligencia-artificial
+- vibe-coding
 translationKey: frank-sherlock-image-indexer
 ---
 

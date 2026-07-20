@@ -2,11 +2,11 @@
 title: How Fast is Elixir/Phoenix?
 date: '2015-10-27T16:23:00-02:00'
 slug: how-fast-is-elixir-phoenix
+description: "Em um teste no Heroku gratuito, o Phoenix levou cerca de 17 a 25 ms para servir uma página simples, mas chegou a 15 segundos ao buscar 1.000 linhas sob carga. O gargalo estava no PostgreSQL."
 tags:
-- learning
-- beginner
-- elixir
-- english
+- performance
+- elixir-e-erlang
+- bancos-de-dados
 draft: false
 ---
 

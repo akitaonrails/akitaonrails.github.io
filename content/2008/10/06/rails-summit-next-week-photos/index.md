@@ -2,9 +2,9 @@
 title: 'Rails Summit: Next Week! (photos)'
 date: '2008-10-06T19:24:00-03:00'
 slug: rails-summit-next-week-photos
+description: "O Rails Summit Latin America acontece nos dias 15 e 16, com Wi-Fi, tomadas e uma sessão Birds of a Feather para lightning talks. O post também mostra renderizações 3D do Auditório Elis Regina."
 tags:
 - railssummit2008
-- english
 draft: false
 ---
 

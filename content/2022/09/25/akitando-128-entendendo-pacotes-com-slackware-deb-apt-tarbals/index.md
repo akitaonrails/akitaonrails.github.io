@@ -2,14 +2,10 @@
 title: "[Akitando] #128 - Entendendo Pacotes com Slackware | Deb, Apt, Tarbals"
 date: '2022-09-25T12:49:00-03:00'
 slug: akitando-128-entendendo-pacotes-com-slackware-deb-apt-tarbals
+description: "Ao instalar Slackware, Akita desmonta tarballs, pacotes DEB, APT e dependências para explicar a evolução do Linux. O sbopkg automatiza SlackBuilds e aproxima a distro da praticidade dos gerenciadores atuais."
 tags:
-- slackware
 - linux
-- apt
-- debian
-- tarball
-- cfdisk
-- segurança
+- tutoriais
 - akitando
 draft: false
 ---

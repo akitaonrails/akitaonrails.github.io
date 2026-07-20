@@ -5,16 +5,11 @@ slug: iniciante-longa-vida-ao-phantomjs-vamos-usar-chrome-headless-agora
 translationKey: beginner-chrome-headless
 aliases:
 - /2017/10/31/beginner-long-live-phantomjs-let-s-use-chrome-headless-now/
+description: "Fabio mostra como trocar Poltergeist e PhantomJS por Selenium WebDriver com Chrome Headless no RSpec e Capybara. O setup mudou, mas os feature specs existentes rodaram sem alterações."
 tags:
-- beginner
-- rubyonrails
-- rails51
-- nodejs
-- selenium
-- phantomjs
-- chromium
-- chromedriver
-- traduzido
+- rails
+- testes
+- tutoriais
 draft: false
 ---
 

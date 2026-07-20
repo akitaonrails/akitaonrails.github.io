@@ -3,19 +3,11 @@ title: "[Akitando] #57 - O Guia DEFINITIVO de Organizações | Desconstruindo o 
   Spotify [RATED R]"
 date: '2019-07-31T17:00:00-03:00'
 slug: akitando-57-o-guia-definitivo-de-organizacoes-desconstruindo-o-modelo-spotify-rated-r
+description: "Fabio desmonta a ideia de um “Modelo Spotify” copiável e argumenta que squads, tribes e chapters não resolvem organizações desalinhadas. O caminho passa por direção clara, bons profissionais e melhoria contínua."
 tags:
+- gestao
 - agile
-- spotify
-- squads
-- auto-organização
-- self-organization
-- Steven Strogatz
-- Daniel Pink
-- Chaos
-- Teoria do Caos
-- Non-Linear Dynamics
-- organizações
-- Teoria da Evolução
+- engenharia-de-software
 - akitando
 draft: false
 ---

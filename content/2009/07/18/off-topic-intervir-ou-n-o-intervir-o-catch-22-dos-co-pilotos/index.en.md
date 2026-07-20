@@ -2,11 +2,12 @@
 title: '[Off-Topic] Intervene or Not? The "Catch-22" of Co-Pilots'
 date: '2009-07-18T10:57:00-03:00'
 slug: off-topic-intervir-ou-n-o-intervir-o-catch-22-dos-co-pilotos
+description: "Drawing on airplane accidents, the author adapts the PACE protocol for software teams: ask, alert, challenge, and intervene when a manager ignores serious risks."
 tags:
-- off-topic
-- principles
 - management
-- career
+- software-engineering
+- communication
+- off-topic
 draft: false
 ---
 

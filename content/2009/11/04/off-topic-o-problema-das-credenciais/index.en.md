@@ -2,10 +2,11 @@
 title: "[Off-Topic] The Problem of Credentials"
 date: '2009-11-04T19:21:00-02:00'
 slug: off-topic-o-problema-das-credenciais
+description: "I question using certifications, titles, and celebrities as shortcuts for validating ideas, show common decision-making fallacies, and argue for testing arguments with skepticism."
 tags:
-- off-topic
-- principles
+- philosophy
 - career
+- off-topic
 draft: false
 ---
 

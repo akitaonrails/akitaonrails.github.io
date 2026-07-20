@@ -2,6 +2,7 @@
 title: "[Rails Summit 2009] Retrospectiva"
 date: '2009-10-17T17:06:00-03:00'
 slug: rails-summit-2009-retrospectiva
+description: "Faço a retrospectiva do Rails Summit 2009, que reuniu cerca de 550 pessoas e 20 palestrantes, corrigiu problemas de espaço e tradução, gastou menos e ampliou a diversidade da programação."
 tags:
 - railssummit2009
 draft: false

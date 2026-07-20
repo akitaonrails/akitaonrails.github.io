@@ -2,10 +2,12 @@
 title: '[Off-Topic] Coletânea "Processos e Metodologias Não Vão Te Ajudar!"'
 date: '2015-01-07T14:33:00-02:00'
 slug: off-topic-coletanea-processos-e-metodologias-nao-vao-te-ajudar
+description: "A coletânea critica receitas prontas como Agile, Kanban e #noEstimates e defende método científico, ceticismo e estudo contínuo para tomar decisões melhores."
 tags:
+- agile
+- gestao
+- filosofia
 - off-topic
-- management
-- insights
 draft: false
 ---
 

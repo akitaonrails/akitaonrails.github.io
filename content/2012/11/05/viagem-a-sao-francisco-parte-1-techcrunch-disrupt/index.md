@@ -2,9 +2,10 @@
 title: Viagem a São Francisco (Parte 1) - Techcrunch Disrupt
 date: '2012-11-05T18:10:00-02:00'
 slug: viagem-a-sao-francisco-parte-1-techcrunch-disrupt
+description: "Após percorrer o Startup Alley por três dias, o autor encontrou muitos clones e derivações, pouca inovação realmente disruptiva e apostaria em menos de 5% das startups."
 tags:
-- sanfrancisco2012
-- techcrunch
+- startups
+- negocios
 draft: false
 ---
 

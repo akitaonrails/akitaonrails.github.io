@@ -3,23 +3,10 @@ title: "[Akitando] #131 - Sua Segurança é uma DROGA | Gerenciadores de Senhas,
   Encriptação"
 date: '2022-11-08T10:20:00-03:00'
 slug: akitando-131-sua-seguranca-e-uma-droga-gerenciadores-de-senhas-2fa-encriptacao
+description: "Akita mostra como senhas previsíveis são quebradas e por que hash, gerenciador, TOTP e backup não bastam sozinhos. A proteção básica combina senhas aleatórias, 2FA, criptografia e cuidado com phishing."
 tags:
-- segurança
-- 2fa
-- two-factor
-- bitwarden
-- authy
-- veracrypt
-- bcrypt
-- pbkdf2
-- sha512
-- aes
-- bitlocker
-- filevault
-- luks
-- lastpass
-- 1password
-- kevin mitnick
+- seguranca
+- produtividade
 - akitando
 draft: false
 ---

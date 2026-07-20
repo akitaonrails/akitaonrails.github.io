@@ -2,11 +2,11 @@
 title: "[Akitando] #19 - Devo fazer Faculdade? (Eu, 22 anos depois)"
 date: '2018-10-18T17:00:00-03:00'
 slug: akitando-19-devo-fazer-faculdade-eu-22-anos-depois
+description: "Akita relembra por que abandonou Ciência da Computação em 1999 e como aprendeu trabalhando com Unix, web e ferramentas variadas. Sua defesa é simples: fundamentos, prática e aprender a aprender."
 tags:
-- faculdade
-- dunning-kruger
 - carreira
-- anos 90
+- aprendizado
+- pessoal
 - akitando
 draft: false
 ---

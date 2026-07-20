@@ -2,14 +2,11 @@
 title: Meu Novo Blog - Como Eu Fiz
 date: "2025-09-10T15:00:00-03:00"
 slug: meu-novo-blog-como-eu-fiz
+description: "Migrei o blog de Rails para Hugo com tema Hextra, Markdown, GitHub Actions e deploy gratuito na Netlify. Também automatizei o envio de screenshots ao S3 pelo Nautilus e deixei a manutenção bem mais simples."
 tags:
-  - blog
-  - hugo
-  - hextra
-  - ruby
-  - aws-cli
-  - grim
-  - omarchy
+- blog
+- devops
+- automacao
 draft: false
 translationKey: my-new-blog-how-i-built
 ---

@@ -2,15 +2,11 @@
 title: 'Seu Próprio Co-Pilot Gratuito Universal que funciona Local: AIDER-OLLAMA-QWEN'
 date: '2025-04-25T13:40:00-03:00'
 slug: seu-proprio-co-pilot-gratuito-universal-que-funciona-local-aider-ollama-qwen
+description: "Configurei o Aider com APIs comerciais e Ollama, mostrando watch-files, modo arquiteto e prompts. O fluxo local funciona bem para mudanças pequenas, desde que alguém revise tudo e evite commits automáticos."
 tags:
-- aider
-- ollama
-- qwen
-- python
-- docker
-- llm
-- sdpa
-  - AI
+- agentes-de-codigo
+- modelos-locais
+- llms
 draft: false
 translationKey: local-copilot-aider-ollama-qwen
 ---

@@ -2,16 +2,12 @@
 title: "[Akitando] #146 - Protegendo e Recuperando Dados Perdidos - Git, Backup, BTRFS"
 date: '2023-10-19T10:00:00-03:00'
 slug: akitando-146-protegendo-e-recuperando-dados-perdidos-git-backup-btrfs
+description: "Mostro como combinar Git, backups externos, TestDisk, BTRFS e Timeshift para recuperar acidentes e preservar dados. Snapshots ajudam contra ransomware, mas não substituem backups fora do disco."
 tags:
-- git
-- docker
-- btrfs
-- zfs
-- synology
-- manjaro
-- ubuntu
+- armazenamento-e-backup
+- controle-de-versao
+- seguranca
 - akitando
-- segurança
 draft: false
 ---
 

@@ -2,11 +2,11 @@
 title: "[Off-Topic] Thinking Makes You Better"
 date: '2009-09-26T16:17:00-03:00'
 slug: off-topic-procurar-raciocionar-faz-bem
+description: "A reflection on pair programming, responsibility, and disagreements between Spolsky and Bob Martin argues for testing Agile practices, understanding their reasons, and rejecting dogma."
 tags:
-- off-topic
-- principles
-- career
+- software-engineering
 - agile
+- off-topic
 draft: false
 ---
 

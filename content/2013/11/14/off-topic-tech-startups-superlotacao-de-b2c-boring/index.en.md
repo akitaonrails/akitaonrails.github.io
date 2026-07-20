@@ -2,10 +2,12 @@
 title: "[Off-Topic] Tech Startups, B2C overcrowding. Boring."
 date: '2013-11-14T14:29:00-02:00'
 slug: off-topic-tech-startups-superlotacao-de-b2c-boring
+description: "The text criticizes the race toward nearly identical B2C startups and argues that B2B innovation starts with understanding corporate processes. Without that experience, the shortcut can leave a generation years behind."
 tags:
-- off-topic
 - startups
-- career
+- business
+- tech-market
+- off-topic
 draft: false
 ---
 

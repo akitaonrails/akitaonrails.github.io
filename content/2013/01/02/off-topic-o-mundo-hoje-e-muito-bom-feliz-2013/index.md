@@ -2,11 +2,12 @@
 title: "[Off-Topic] O Mundo Hoje é Muito Bom! Feliz 2013!"
 date: '2013-01-02T02:05:00-02:00'
 slug: off-topic-o-mundo-hoje-e-muito-bom-feliz-2013
+description: "Com dados de Gapminder, Hans Rosling e Steven Pinker, o autor argumenta que o mundo melhorou em longevidade, pobreza e violência, e critica alarmismo e culpa associada a doações."
 tags:
+- ciencia
+- filosofia
+- economia
 - off-topic
-- principles
-- philosophy
-- insights
 draft: false
 ---
 

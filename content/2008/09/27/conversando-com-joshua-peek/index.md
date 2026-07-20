@@ -2,8 +2,11 @@
 title: Conversando com Joshua Peek
 date: '2008-09-27T21:54:00-03:00'
 slug: conversando-com-joshua-peek
+description: "Joshua Peek conta como entrou no Rails Core após tornar o Rails 2.2 thread-safe no Google Summer of Code. A entrevista aborda os ganhos modestos no MRI, as melhorias no JRuby e os caches pré-carregados no boot."
 tags:
-- interview
+- entrevistas
+- rails
+- performance
 draft: false
 translationKey: chatting-joshua-peek
 aliases:

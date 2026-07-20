@@ -5,10 +5,8 @@ draft: false
 slug: vs-code-is-the-new-punch-card
 translationKey: vs-code-is-the-new-punch-card
 tags:
-  - ai
-  - llm
-  - opinion
-  - programming
+- coding-agents
+- programming
 description: "In the era of coding agents, typing everything by hand in VS Code is becoming the modern equivalent of a punch card. Foundations did not become legacy."
 ---
 

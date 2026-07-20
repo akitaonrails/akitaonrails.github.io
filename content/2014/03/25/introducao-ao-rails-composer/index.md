@@ -2,10 +2,11 @@
 title: Introdução ao Rails Composer
 date: '2014-03-25T17:19:00-03:00'
 slug: introducao-ao-rails-composer
+description: "Rails Composer troca templates difíceis de manter por uma receita interativa para montar aplicações Rails. Você escolhe RSpec, PostgreSQL, gems, servidor, view engine e CSS, e já começa com uma base completa."
 tags:
-- learning
-- beginner
 - rails
+- ferramentas-de-desenvolvimento
+- tutoriais
 draft: false
 ---
 

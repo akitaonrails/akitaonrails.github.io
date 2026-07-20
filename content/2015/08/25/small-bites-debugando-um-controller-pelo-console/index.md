@@ -2,9 +2,11 @@
 title: "[Small Bites] Debugando um Controller pelo Console"
 date: '2015-08-25T15:48:00-03:00'
 slug: small-bites-debugando-um-controller-pelo-console
+description: "Para investigar um controller Rails complexo, o console pode simular login, CSRF, parâmetros e requests reais. O caso revelou um INSERT travado por timeout no PostgreSQL do Heroku."
 tags:
-- learning
 - rails
+- ferramentas-de-desenvolvimento
+- bancos-de-dados
 draft: false
 ---
 

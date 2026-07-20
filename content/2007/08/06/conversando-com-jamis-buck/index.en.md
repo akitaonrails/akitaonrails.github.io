@@ -2,8 +2,11 @@
 title: Chatting with Jamis Buck
 date: '2007-08-03T22:46:00-03:00'
 slug: chatting-with-jamis-buck
+description: "Jamis Buck tells how he moved from Java to Ruby, joined 37signals, and created Capistrano to run deployments across multiple servers. He also explains the name change and the limit for Windows destinations."
 tags:
-- interview
+- interviews
+- devops
+- ruby
 draft: false
 translationKey: chatting-jamis-buck
 ---

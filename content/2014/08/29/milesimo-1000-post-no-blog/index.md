@@ -2,9 +2,11 @@
 title: Milésimo (1000) Post no Blog!
 date: '2014-08-29T11:30:00-03:00'
 slug: milesimo-1000-post-no-blog
+description: "No milésimo post, celebro oito anos de blog e publico a reflexão de Rafael Rosa Fu sobre como compartilhar conhecimento reforça o aprendizado, preserva a memória, cria portfólio e fortalece comunidades. O importante é começar."
 tags:
-- celebration
 - blog
+- aprendizado
+- pessoal
 draft: false
 ---
 

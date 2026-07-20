@@ -4,15 +4,12 @@ date: '2026-03-09T13:00:00-03:00'
 draft: false
 slug: going-after-email-fraud-frank-fbi
 translationKey: frank-fbi-email-fraud
+description: "I built Frank FBI to analyze forwarded emails in six layers, combining authentication, reputation, OSINT, and three LLMs. The result is a self-hosted risk report, with the data under your control."
 tags:
-  - ruby
-  - rails
-  - security
-  - email
-  - fraud-detection
-  - open-source
-  - AI
-  - vibe-coding
+- frank
+- llms
+- artificial-intelligence
+- security
 ---
 
 This past weekend I worked on 3 projects. Two of them I already published: [easy-ffmpeg](/en/2026/03/07/easy-ffmpeg-smart-wrapper-in-crystal/), a smart wrapper for FFmpeg in Crystal, and [easy-subtitle](/en/2026/03/07/porting-10k-lines-of-python-to-crystal-with-claude-easy-subtitle/), a port of 10 thousand lines of Python to Crystal in less than 40 minutes. I keep improving both, adding features and fixing edge cases as I use them day to day.

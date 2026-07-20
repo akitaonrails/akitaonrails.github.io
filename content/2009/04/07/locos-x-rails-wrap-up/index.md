@@ -2,8 +2,10 @@
 title: Locos x Rails Wrap up
 date: '2009-04-07T13:55:00-03:00'
 slug: locos-x-rails-wrap-up
+description: "Fabio resume o Locos x Rails, encontro argentino com mais de 100 participantes estimados, palestras internacionais e uma organização elogiada que aproximou a comunidade Ruby e Rails."
 tags:
-- locosrails2009
+- ruby
+- rails
 draft: false
 ---
 

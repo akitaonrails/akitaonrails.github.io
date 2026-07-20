@@ -2,12 +2,12 @@
 title: "[Off-Topic] Maldita Lei de Regulamentação está de volta!"
 date: '2009-08-22T17:01:00-03:00'
 slug: off-topic-maldita-lei-de-regulamenta-o-est-de-volta
+description: "O autor critica o PLS 607/07 por restringir a profissão de analista de sistemas a diplomados, deixar a fiscalização em aberto e ameaçar autodidatas e o livre mercado."
 tags:
-- off-topic
-- principles
-- market
-- regulation
+- leis-e-regulacao
 - carreira
+- mercado-de-tecnologia
+- off-topic
 draft: false
 ---
 

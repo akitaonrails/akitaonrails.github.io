@@ -4,12 +4,10 @@ slug: "frankmd-markdown-editor-vibe-code-part-1"
 date: 2026-02-01T10:40:43-0300
 draft: false
 tags:
-- vibecode
-- omarchy
-- codemirror
-- hugo
-- obsidian
-  - AI
+- frankmd
+- frank
+- llms
+- artificial-intelligence
 translationKey: frankmd-part-1
 description: "How I vibe-coded FrankMD, a self-hosted Markdown editor tailored to my blogging workflow, in three days with Claude Code."
 ---

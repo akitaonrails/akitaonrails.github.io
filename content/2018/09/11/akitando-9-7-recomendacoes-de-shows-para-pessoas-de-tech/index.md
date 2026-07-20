@@ -2,16 +2,10 @@
 title: "[Akitando] #9 - 7 Recomendações de Shows para pessoas de Tech"
 date: '2018-09-11T17:00:00-03:00'
 slug: akitando-9-7-recomendacoes-de-shows-para-pessoas-de-tech
+description: "Fabio Akita recomenda sete filmes, séries e documentários sobre a história da computação, de Turing aos anos 2000, e alerta: entretenimento ajuda a despertar interesse, mas não substitui pesquisa."
 tags:
-- halt and catch fire
-- steve jobs
-- discovery channel
-- ipod
-- the immitation game
-- the social network
-- recomendações
-- filmes
-- documentários
+- cinema-e-cultura-pop
+- historia-da-computacao
 - akitando
 draft: false
 ---

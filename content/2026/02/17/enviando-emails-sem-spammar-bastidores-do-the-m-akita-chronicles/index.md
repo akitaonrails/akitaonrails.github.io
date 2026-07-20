@@ -3,14 +3,11 @@ title: "Enviando Emails sem Spammar | Bastidores do The M.Akita Chronicles"
 slug: "enviando-emails-sem-spammar-bastidores-do-the-m-akita-chronicles"
 date: 2026-02-17T20:59:48+00:00
 draft: false
+description: "Um pipeline de emails com SES evita duplicatas distinguindo rejeições de estados ambíguos: claiming atômico, estados terminais e status unknown. DKIM, SPF, DMARC, List-Unsubscribe e suppression list fecham o circuito."
 tags:
-- themakitachronicles
-- vibecode
-- rubyonrails
-- amazon
-- ses
-- email
-  - AI
+- the-m-akita-chronicles
+- seguranca
+- backend
 translationKey: sending-emails-without-spam
 ---
 

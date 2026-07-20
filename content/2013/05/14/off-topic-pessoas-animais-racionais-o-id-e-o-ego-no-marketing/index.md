@@ -2,12 +2,11 @@
 title: "[Off-Topic] Pessoas: Animais Racionais? O id e o ego no marketing"
 date: '2013-05-14T20:54:00-03:00'
 slug: off-topic-pessoas-animais-racionais-o-id-e-o-ego-no-marketing
+description: "A neurociência sugere que emoções influenciam decisões antes da racionalização. A partir disso, o texto argumenta que o marketing deve provocar o desejo e depois oferecer razões para justificá-lo."
 tags:
+- psicologia
+- negocios
 - off-topic
-- principles
-- science
-- psychology
-- startups
 draft: false
 ---
 

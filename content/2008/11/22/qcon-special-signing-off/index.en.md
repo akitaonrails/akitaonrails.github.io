@@ -3,9 +3,9 @@ title: "QCon Special - Signing Off"
 date: '2008-11-22T16:03:00-02:00'
 slug: qcon-special-signing-off
 translationKey: qcon-special-signing-off-2008
+description: "Wrapping up QCon, Fabio points to functional programming, non-relational databases, and Agile as strong trends, and learns about Engine Yard’s scalable service planned for Rails and Merb."
 tags:
 - qcon2008
-- english
 draft: false
 ---
 

@@ -5,11 +5,10 @@ slug: partidas-rankings-rede-social-league-of-legends-ruby
 translationKey: lol-rankings-social-network-ruby
 aliases:
 - /2016/11/01/matches-rankings-the-social-network-league-of-legends-and-ruby/
+description: "Com 2.000 partidas, o autor mostra que vitórias menos derrotas gera rankings absurdos. O sistema Elo considera a força dos adversários e reage melhor a resultados improváveis."
 tags:
-- ranking
-- elo
-- algoritmo
-- traduzido
+- algoritmos-e-estruturas-de-dados
+- games
 draft: false
 ---
 

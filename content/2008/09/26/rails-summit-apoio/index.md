@@ -2,6 +2,7 @@
 title: 'Rails Summit: Apoio'
 date: '2008-09-26T02:47:00-03:00'
 slug: rails-summit-apoio
+description: "Akita anuncia os primeiros apoiadores do Rails Summit Latin America e reúne os links para as páginas de inscrição em português, inglês e espanhol. É um breve convite para conhecer e divulgar o evento."
 tags:
 - railssummit2008
 draft: false

@@ -2,11 +2,10 @@
 title: ActiveAdmin + Best in Place
 date: '2012-07-23T19:36:00-03:00'
 slug: activeadmin-best-in-place
+description: "Para atualizar tags em mais de 860 posts, o autor combina BestInPlace, ActiveAdmin e ActsAsTaggableOn e passa a editar o tag_list diretamente na listagem, sem abrir cada registro."
 tags:
-- learning
 - rails
-- tutorial
-- activeadmin
+- tutoriais
 draft: false
 ---
 

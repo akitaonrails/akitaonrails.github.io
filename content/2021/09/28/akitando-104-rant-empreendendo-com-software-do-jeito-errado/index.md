@@ -2,11 +2,11 @@
 title: "[Akitando] #104 - RANT: Empreendendo com Software do JEITO ERRADO!"
 date: '2021-09-28T11:20:00-03:00'
 slug: akitando-104-rant-empreendendo-com-software-do-jeito-errado
+description: "Akita critica empreendedores que tentam especificar tudo, terceirizam o core e economizam na equipe. Sua proposta combina um sócio técnico, um MVP, equipe interna e evolução contínua."
 tags:
-- projetos
-- terceirização
-- startup
-- empreendedorismo
+- startups
+- engenharia-de-software
+- gestao
 - akitando
 draft: false
 ---

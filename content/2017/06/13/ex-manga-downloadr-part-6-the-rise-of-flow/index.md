@@ -5,12 +5,11 @@ slug: ex-manga-downloadr-parte-6-a-ascensao-do-flow
 translationKey: ex-manga-downloadr-6
 aliases:
 - /2017/06/13/ex-manga-downloadr-part-6-the-rise-of-flow/
+description: "Troquei Poolboy e um GenServer customizado por Flow para simplificar o scraping paralelo. O código ficou mais legível, mas levou mais de 3 minutos, contra menos da metade na versão anterior."
 tags:
-- beginner
-- learning
-- elixir
-- exmangadownloadr
-- traduzido
+- elixir-e-erlang
+- performance
+- sistemas-distribuidos
 draft: false
 ---
 

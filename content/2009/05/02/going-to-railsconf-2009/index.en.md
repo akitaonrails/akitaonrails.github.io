@@ -3,9 +3,9 @@ title: Going to RailsConf 2009
 date: '2009-05-02T10:02:00-03:00'
 slug: going-to-railsconf-2009
 translationKey: railsconf-2009-going
+description: "Akita travels from Brazil to Las Vegas for RailsConf 2009, dealing with a distant hotel and a possible MacBook repair. His focus is talking, interviewing, and meeting as many people as possible."
 tags:
 - railsconf2009
-- english
 draft: false
 ---
 

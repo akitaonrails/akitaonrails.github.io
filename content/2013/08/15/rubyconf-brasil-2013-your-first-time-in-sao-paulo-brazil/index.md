@@ -5,9 +5,9 @@ slug: rubyconf-brasil-2013-sua-primeira-vez-em-sao-paulo-brasil
 translationKey: rubyconf-2013-first-time-sao-paulo
 aliases:
 - /2013/08/15/rubyconf-brasil-2013-your-first-time-in-sao-paulo-brazil/
+description: "Um guia para estrangeiros na Rubyconf Brasil 2013 aborda clima, tomadas, chip pré-pago, táxis oficiais, segurança, trânsito e metrô. Ficar perto da Paulista facilita explorar São Paulo."
 tags:
 - rubyconfbr2013
-- traduzido
 draft: false
 ---
 

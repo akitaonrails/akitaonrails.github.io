@@ -3,9 +3,11 @@ title: 'Elixir Pipe Operator for Ruby: Chainable Methods'
 date: '2016-02-18T16:28:00-02:00'
 slug: elixir-pipe-operator-for-ruby-chainable-methods
 translationKey: elixir-pipe-for-ruby-chainable
+description: "The Chainable Methods gem passes each call’s return value as the next call’s first argument, making Ruby transformations more readable and testable. It uses method_missing for expressiveness, not speed."
 tags:
 - ruby
-- elixir
+- elixir-and-erlang
+- programming-languages
 draft: false
 ---
 

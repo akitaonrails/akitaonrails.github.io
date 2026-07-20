@@ -2,9 +2,12 @@
 title: "[Off-Topic] Minha Carreira - Fase 5 - Codeminer 42"
 date: '2011-09-19T01:27:00-03:00'
 slug: off-topic-minha-carreira-fase-5-codeminer-42
+description: "Após um ano ajudando a consolidar a Gonow, Fabio encerra essa fase e funda a Codeminer 42, uma pequena consultoria de software com equipe enxuta, menos overhead e mais foco."
 tags:
+- carreira
+- pessoal
+- negocios
 - off-topic
-- codeminer42
 draft: false
 ---
 

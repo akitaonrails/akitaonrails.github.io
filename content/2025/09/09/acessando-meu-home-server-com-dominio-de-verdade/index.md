@@ -2,14 +2,11 @@
 title: Acessando meu Home Server com Domínio de Verdade
 date: "2025-09-09T17:00:00-03:00"
 slug: acessando-meu-home-server-com-dominio-de-verdade
+description: "Configurei domínio próprio, HTTPS e Cloudflare Tunnels para acessar containers Docker remotamente sem abrir portas no roteador. Também criei uma ponte para o Plex, isolado em outra VLAN."
 tags:
-  - ubuntu
-  - servarr
-  - docker
-  - cloudflare
-  - tunnel
-  - ssl
-  - homeserver
+- homelab
+- redes
+- containers
 draft: false
 translationKey: home-server-real-domain
 ---

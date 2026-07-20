@@ -5,12 +5,11 @@ slug: objective-c-distribuindo-sua-static-library
 translationKey: objc-distributing-static-lib
 aliases:
 - /2011/04/24/objective-c-distributing-your-static-library/
+description: "Akita mostra como configurar targets no Xcode 4, usar lipo para unir binários ARM e i386 numa Universal Binary e distribuir a static library com headers em um ZIP reutilizável em apps iOS."
 tags:
-- learning
-- beginner
 - apple
-- objective-c
-- traduzido
+- programacao
+- tutoriais
 draft: false
 ---
 

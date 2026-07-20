@@ -2,11 +2,11 @@
 title: Twitter muda de Ruby para Java. Ruby é 3x mais lento que Java.
 date: '2011-04-16T01:57:00-03:00'
 slug: twitter-muda-de-ruby-para-java-ruby-e-3x-mais-lento-que-java
+description: "Akita contesta a ideia de que o Twitter provou Ruby inferior ao migrar para Java: o ganho veio de arquitetura assíncrona e escala, enquanto Rails segue valioso por produtividade e manutenção."
 tags:
-- twitter
+- arquitetura-de-software
+- rails
 - java
-- scala
-- fud
 draft: false
 ---
 

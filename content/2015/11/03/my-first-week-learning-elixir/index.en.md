@@ -3,11 +3,11 @@ title: "My first week learning Elixir"
 date: '2015-11-03T11:07:00-02:00'
 slug: my-first-week-learning-elixir
 translationKey: my-first-week-elixir
+description: "In one week and roughly 42 hours, I learned Elixir fundamentals, processes, and OTP, though I still didn’t feel fully comfortable. My path covers Programming Elixir, Elixir Sips, and exercises before Phoenix."
 tags:
-- beginner
 - learning
-- elixir
-- english
+- elixir-and-erlang
+- programming
 draft: false
 ---
 

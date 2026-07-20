@@ -4,13 +4,11 @@ slug: "the-bun-in-rust-response-andrew-kelly-should-have-written"
 date: '2026-07-09T17:00:00-03:00'
 draft: false
 translationKey: bun-rust-response-andrew-kelly-should-have-written
+description: "I used Claude Fable 5 and GPT 5.6 Sol as judges to compare Rust and Zig in Bun’s rewrite. Rust helps reduce ownership bugs and maintenance costs, but the agent-based method mattered just as much as the language."
 tags:
-  - zig
-  - rust
-  - bun
-  - languages
-  - ai
-  - vibecoding
+- programming-languages
+- rust
+- zig
 ---
 
 I read Jarred Sumner's official post, ["Rewriting Bun in Rust"](https://bun.com/blog/bun-in-rust). And I'll start by making my bias clear: I am completely in favor of Bun's decision to rewrite in Rust. Not because Rust won some tribal war against Zig. That's not it. I like Zig a lot. But, for Bun's context, the decision looks understandable, serious, and well executed.

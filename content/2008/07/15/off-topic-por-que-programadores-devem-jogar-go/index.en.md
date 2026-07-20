@@ -2,9 +2,12 @@
 title: 'Off Topic: Why Programmers Should Play Go'
 date: '2008-07-15T01:07:00-03:00'
 slug: off-topic-por-que-programadores-devem-jogar-go
+description: "The translation relates Go to software development: simple rules conceal enormous complexity, while patterns, principles, and practice help us make better decisions."
 tags:
+- learning
+- programming
+- gaming
 - off-topic
-- go
 draft: false
 ---
 

@@ -2,11 +2,11 @@
 title: Micro-Tutorial de Ruby - Parte II
 date: '2008-11-10T01:42:00-02:00'
 slug: micro-tutorial-de-ruby-parte-ii
+description: "A Parte II explica mensagens, send e method_missing, depois mostra como blocos, lambdas e closures permitem criar iteradores e funções de ordem superior com map, select e inject."
 tags:
-- learning
-- beginner
+- tutoriais
 - ruby
-- tutorial
+- aprendizado
 draft: false
 ---
 

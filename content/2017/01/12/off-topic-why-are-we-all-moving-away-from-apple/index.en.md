@@ -3,12 +3,12 @@ title: "[Off-Topic] Why are we all moving away from Apple?"
 date: '2017-01-12T11:37:00-02:00'
 slug: off-topic-why-are-we-all-moving-away-from-apple
 translationKey: moving-away-from-apple
+description: "This retrospective argues that the iPhone, cloud, and web apps made switching systems easy, while Apple stopped advancing after Steve Jobs. To the author, technology has been stuck since 2010."
 tags:
-- off-topic
 - apple
-- microsoft
-- future
-- english
+- tech-market
+- personal
+- off-topic
 draft: false
 ---
 

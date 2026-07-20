@@ -2,12 +2,11 @@
 title: Omarchy 2.0 - Básico de LazyVim
 date: "2025-09-12T15:00:00-03:00"
 slug: omarchy-2-0-basico-de-lazyvim
+description: "Um guia direto de LazyVim para quem vem do VS Code: buffers, modos, navegação com hjkl, comandos combinados, blocos verticais e busca e substituição formam o mínimo para começar no NeoVim."
 tags:
-  - omarchy
-  - neovim
-  - lazyvim
-  - primeagen
-  - taq
+- omarchy
+- ferramentas-de-desenvolvimento
+- tutoriais
 draft: false
 translationKey: omarchy-lazyvim-basics
 ---

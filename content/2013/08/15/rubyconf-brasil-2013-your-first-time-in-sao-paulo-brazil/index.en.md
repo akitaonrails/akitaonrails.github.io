@@ -3,6 +3,7 @@ title: 'Rubyconf Brasil 2013: Your first time in São Paulo, Brazil'
 date: '2013-08-15T17:00:00-03:00'
 slug: rubyconf-brasil-2013-your-first-time-in-sao-paulo-brazil
 translationKey: rubyconf-2013-first-time-sao-paulo
+description: "A guide for foreigners attending Rubyconf Brasil 2013 covers weather, outlets, prepaid SIM cards, official taxis, safety, traffic, and the subway. Staying near Paulista makes São Paulo easier to explore."
 tags:
 - rubyconfbr2013
 draft: false

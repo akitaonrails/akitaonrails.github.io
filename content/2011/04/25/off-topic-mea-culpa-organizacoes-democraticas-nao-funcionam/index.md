@@ -2,12 +2,11 @@
 title: "[Off-Topic] Mea Culpa: Organizações Democráticas não Funcionam"
 date: '2011-04-25T04:12:00-03:00'
 slug: off-topic-mea-culpa-organizacoes-democraticas-nao-funcionam
+description: "Ao revisar sua defesa de organizações democráticas, Akita conclui que empresas pertencem a donos e acionistas, enquanto equipes participam da implementação da estratégia dentro de limites definidos."
 tags:
+- gestao
+- negocios
 - off-topic
-- principles
-- management
-- agile
-- carreira
 draft: false
 ---
 

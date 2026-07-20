@@ -3,11 +3,9 @@ title: "Testing the Newly Released Open Source LLM - Qwen3 (with Aider and Ollam
 date: '2025-04-28T20:30:00-03:00'
 slug: testing-the-newly-released-qwen3-open-source-llm-with-aider-and-ollama
 tags:
-- qwen3
-- ollama
-- aider
-- llm
-  - AI
+- llm-benchmarks
+- llms
+- coding-agents
 draft: false
 translationKey: testing-qwen3-first-aider-ollama
 description: "First hands-on impressions of Qwen3 running locally via Ollama and remotely via OpenRouter, tested with Aider on real refactoring tasks."

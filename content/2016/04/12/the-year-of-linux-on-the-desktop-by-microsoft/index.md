@@ -5,11 +5,12 @@ slug: o-ano-do-linux-no-desktop-pela-microsoft
 translationKey: year-linux-desktop-microsoft
 aliases:
 - /2016/04/12/the-year-of-linux-on-the-desktop-by-microsoft/
+description: "Testei o Bash on Windows no Preview 14316: Ruby, Redis e Memcached funcionam, mas memória, memória compartilhada, symlinks e pseudo-terminais ainda falham. A promessa é boa, mas o ambiente não está pronto."
 tags:
-- off-topic
 - microsoft
-- ubuntu
-- traduzido
+- linux
+- ferramentas-de-desenvolvimento
+- off-topic
 draft: false
 ---
 

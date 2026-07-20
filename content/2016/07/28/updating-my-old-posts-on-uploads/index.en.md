@@ -3,13 +3,10 @@ title: Updating my Old Posts on Uploads
 date: '2016-07-28T11:56:00-03:00'
 slug: updating-my-old-posts-on-uploads
 translationKey: updating-old-posts-on-uploads
+description: "I updated my upload recommendations: Cloudinary with Attachinary simplifies direct upload and image processing, while a CDN like CloudFront should serve assets from S3."
 tags:
-- uploads
-- carrierwave
-- cdn
-- cloudfront
-- cloudinary
-- heroku
+- cloud
+- web-development
 draft: false
 ---
 

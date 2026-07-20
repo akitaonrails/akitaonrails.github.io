@@ -2,7 +2,10 @@
 title: "[Akitando] #82 - \"Os Rumores da Minha Morte foram Exageradas\" \U0001F923"
 date: '2020-08-13T10:00:00-03:00'
 slug: akitando-82-os-rumores-da-minha-morte-foram-exageradas
+description: "Depois de um acidente de uniciclo e de um burnout produzindo vídeos, Akita retoma o canal em ritmo sustentável. Ele confirma que o projeto continua, celebra 160 mil assinantes e anuncia vagas na Codeminer."
 tags:
+- pessoal
+- carreira
 - akitando
 draft: false
 ---

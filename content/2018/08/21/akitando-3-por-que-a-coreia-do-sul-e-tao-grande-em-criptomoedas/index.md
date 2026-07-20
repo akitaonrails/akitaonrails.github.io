@@ -2,12 +2,11 @@
 title: "[Akitando] #3 - Por que a Coréia do Sul é tão grande em Criptomoedas?"
 date: '2018-08-21T17:00:00-03:00'
 slug: akitando-3-por-que-a-coreia-do-sul-e-tao-grande-em-criptomoedas
+description: "Akita propõe que a hiperconectividade, a cultura dos games e um momento de distração política ajudaram a impulsionar as criptomoedas na Coreia do Sul, enquanto reconta o escândalo de Park Geun-hye."
 tags:
-- coréia do sul
-- seoul
-- beyond blocks
-- criptomoedas
-- hashed
+- bitcoin-e-criptomoedas
+- politica
+- games
 - akitando
 draft: false
 ---

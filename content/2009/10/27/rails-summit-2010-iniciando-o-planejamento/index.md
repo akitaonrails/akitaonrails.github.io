@@ -2,6 +2,7 @@
 title: "[Rails Summit 2010] Iniciando o Planejamento"
 date: '2009-10-27T19:36:00-02:00'
 slug: rails-summit-2010-iniciando-o-planejamento
+description: "Analiso a pesquisa para planejar o Rails Summit 2010 e comparo Elis Regina e Frei Caneca em acesso, custo e espaço. Também considero realizar o evento na quarta e quinta e abrir inscrições de palestras."
 tags:
 - railssummit2010
 draft: false

@@ -3,8 +3,11 @@ title: Chatting with Hal Fulton
 date: '2008-01-09T21:27:00-02:00'
 slug: chatting-with-hal-fulton
 translationKey: chatting-hal-fulton
+description: "Hal Fulton recalls how Ruby won him over with dynamic typing and consistency, discusses The Ruby Way, and recommends playing around and reading code. He also warns that metaprogramming can be misused."
 tags:
-- interview
+- interviews
+- ruby
+- learning
 draft: false
 ---
 

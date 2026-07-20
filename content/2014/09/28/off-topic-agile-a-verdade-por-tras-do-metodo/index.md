@@ -2,13 +2,12 @@
 title: "[Off-Topic] Agile: a Verdade por trás do Método"
 date: '2014-09-28T23:18:00-03:00'
 slug: off-topic-agile-a-verdade-por-tras-do-metodo
+description: "Defendo que Scrum, XP e outras práticas Ágeis não salvam equipes ruins: elas expõem riscos e problemas rapidamente. Agilidade depende de pessoas comprometidas, prática contínua e mudanças concretas de comportamento."
 tags:
-- off-topic
-- principles
-- management
-- career
 - agile
-- carreira
+- gestao
+- engenharia-de-software
+- off-topic
 draft: false
 ---
 

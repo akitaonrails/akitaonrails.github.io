@@ -2,21 +2,10 @@
 title: "[Akitando] #120 - Discutindo Gestão"
 date: '2022-06-13T10:47:00-03:00'
 slug: akitando-120-discutindo-gestao
+description: "Depois de décadas gerenciando projetos, defendo que gestão é decidir, priorizar e gerenciar expectativas com informação incompleta. Confiança, experiência e equipes bem formadas sustentam a entrega."
 tags:
-- gerenciamento
-- gestão
-- henry mintzberg
-- sun tzu
-- peter drucker
-- nonaka
-- takeuchi
-- scrum
-- schwaber
-- sutherland
+- gestao
 - agile
-- estimativa
-- priorizar
-- projetos
 - akitando
 draft: false
 ---

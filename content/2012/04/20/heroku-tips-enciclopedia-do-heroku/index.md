@@ -2,11 +2,11 @@
 title: "[Heroku Tips] Enciclopédia do Heroku"
 date: '2012-04-20T15:37:00-03:00'
 slug: heroku-tips-enciclopedia-do-heroku
+description: "A Enciclopédia do Heroku explica como publicar Rails com dynos, processos e filas Resque, usar Redis e enviar assets e uploads ao S3. Em produção, o autor recomenda escalar e monitorar."
 tags:
-- learning
-- beginner
 - rails
-- heroku
+- cloud
+- devops
 draft: false
 ---
 

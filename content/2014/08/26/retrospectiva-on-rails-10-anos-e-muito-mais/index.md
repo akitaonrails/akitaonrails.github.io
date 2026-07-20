@@ -2,8 +2,10 @@
 title: Retrospectiva on Rails - 10 Anos e Muito Mais!
 date: '2014-08-26T16:17:00-03:00'
 slug: retrospectiva-on-rails-10-anos-e-muito-mais
+description: "Uma retrospectiva percorre os marcos que moldaram Ruby, Rails e seu ecossistema, de Smalltalk-72 ao Rails 4.0, incluindo a comunidade brasileira e a trajetória do autor."
 tags:
-- retrospective
+- historia-da-computacao
+- ruby
 - rails
 draft: false
 ---

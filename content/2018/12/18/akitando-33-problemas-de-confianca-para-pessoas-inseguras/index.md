@@ -2,13 +2,11 @@
 title: "[Akitando] #33 - Problemas de Confiança para Pessoas inseguras"
 date: '2018-12-18T17:00:00-02:00'
 slug: akitando-33-problemas-de-confianca-para-pessoas-inseguras
+description: "Akita reflete sobre como insegurança, idealização e teorias de traição desgastam relações profissionais e pessoais. Comunicação direta e tempo para pensar ajudam a interromper a autossabotagem."
 tags:
-- autoajuda
-- confiança
-- insegurança
-- introversão
 - psicologia
-- relacionamentos
+- comunicacao
+- pessoal
 - akitando
 draft: false
 ---

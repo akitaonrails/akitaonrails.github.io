@@ -2,6 +2,7 @@
 title: 'Rubyconf Brasil 2013: Meet Luis Cipriani'
 date: '2013-08-27T10:00:00-03:00'
 slug: rubyconf-brasil-2013-meet-luis-cipriani
+description: "Luis Cipriani explains how Rails developers can gradually learn HTTP caching, starting with basic headers. For the future, he highlights the Semantic Web, machine learning, information retrieval, and distributed databases."
 tags:
 - rubyconfbr2013
 draft: false

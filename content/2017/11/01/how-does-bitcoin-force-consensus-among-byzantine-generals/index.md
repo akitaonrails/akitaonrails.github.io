@@ -2,12 +2,11 @@
 title: "Como o Bitcoin Força Consenso entre os Generais Bizantinos?"
 date: '2017-11-01T14:02:00-02:00'
 slug: como-o-bitcoin-forca-consenso-entre-os-generais-bizantinos
+description: "O Bitcoin combina hashes, Proof of Work, mineração e dificuldade ajustável para obter consenso entre nós desconhecidos. Mesmo com US$ 1,5 bilhão em hardware, a rede continuaria difícil de quebrar."
 tags:
-- ruby
-- blockchain
-- cryptocurrency
-- bitcoin
-- traduzido
+- bitcoin-e-criptomoedas
+- ciencia-da-computacao
+- algoritmos-e-estruturas-de-dados
 translationKey: bitcoin-byzantine-consensus
 aliases:
 - /2017/11/01/how-does-bitcoin-force-consensus-among-byzantine-generals/

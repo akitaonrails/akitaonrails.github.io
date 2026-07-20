@@ -2,20 +2,10 @@
 title: "[Akitando] #136 - Python? Java? Rust? Qual a Diferença? | Discutindo Linguagens"
 date: '2023-01-18T08:00:00-03:00'
 slug: akitando-136-python-java-rust-qual-a-diferenca-discutindo-linguagens
+description: "Akita mostra o que existe sob Python, JavaScript, Java e Rust, das bibliotecas em C e C++ ao FFI e aos custos de integração. Cada linguagem serve a um contexto, mas maturidade e produtividade pesam mais que novidade."
 tags:
-- python
-- javascript
-- java
-- erlang
-- elixir
-- golang
-- rust
-- csharp
-- php
-- ruby
-- apache
-- cassandra
-- kafka
+- linguagens-de-programacao
+- programacao
 - akitando
 draft: false
 ---

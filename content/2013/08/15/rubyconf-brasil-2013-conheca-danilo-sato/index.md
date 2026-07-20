@@ -2,6 +2,7 @@
 title: 'Rubyconf Brasil 2013: Conheça Danilo Sato'
 date: '2013-08-15T14:59:00-03:00'
 slug: rubyconf-brasil-2013-conheca-danilo-sato
+description: "Danilo Sato explica por que design de software continua valioso mesmo quando linguagens e frameworks mudam. Para ele, escapar da obsolescência exige aprender continuamente e estudar o passado."
 tags:
 - rubyconfbr2013
 draft: false

@@ -3,21 +3,11 @@ title: "[Akitando] #44 - Concorrência e Paralelismo (Parte 2) | Entendendo Back
   para Iniciantes (Parte 4)"
 date: '2019-03-20T17:00:00-03:00'
 slug: akitando-44-concorrencia-e-paralelismo-parte-2-entendendo-back-end-para-iniciantes-parte-4
+description: "Fabio compara processos, threads, fibers, pools, filas e promises em várias linguagens e conclui que escolher tecnologia pelo contexto e coordenar tarefas importa mais que perseguir escala abstrata."
 tags:
-- erlang
-- elixir
-- scala
-- clojure
-- golang
-- kotlin
-- ruby
-- python
-- javascript
-- node.js
-- reactor
-- green-threads
-- coroutines
-- goroutine
+- sistemas-distribuidos
+- linguagens-de-programacao
+- backend
 - akitando
 draft: false
 ---

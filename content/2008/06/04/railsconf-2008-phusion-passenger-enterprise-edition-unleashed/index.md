@@ -2,10 +2,9 @@
 title: RailsConf 2008 - Phusion Passenger Enterprise Edition Unleashed!
 date: '2008-06-04T15:01:00-03:00'
 slug: railsconf-2008-phusion-passenger-enterprise-edition-unleashed
+description: "A Phusion revelou o Passenger 2.0 com suporte a Rack, inicialização até 90% mais rápida e economia de memória com copy-on-write. O Enterprise Edition era uma brincadeira, mas o Passenger já rodava em produção."
 tags:
 - railsconf2008
-- passenger
-- english
 draft: false
 ---
 

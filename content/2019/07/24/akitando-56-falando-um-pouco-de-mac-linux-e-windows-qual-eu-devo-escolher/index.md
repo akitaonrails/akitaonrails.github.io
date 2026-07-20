@@ -2,24 +2,11 @@
 title: "[Akitando] #56 - Falando um pouco de MAC, LINUX e WINDOWS | Qual eu devo escolher?"
 date: '2019-07-24T17:00:00-03:00'
 slug: akitando-56-falando-um-pouco-de-mac-linux-e-windows-qual-eu-devo-escolher
+description: "Fabio compara Linux, macOS e Windows pela história e pela experiência de desenvolvimento. Para ele, PCs com Linux ou Windows são escolhas pragmáticas, enquanto o Mac continua obrigatório para desenvolver para iOS."
 tags:
-- mac
-- macos
-- windows
+- apple
 - microsoft
 - linux
-- ubuntu
-- manjaro
-- gentoo
-- slackware
-- debian
-- quartz
-- imac
-- nextstep
-- openstep
-- steve jobs
-- apple
-- adobe
 - akitando
 draft: false
 ---

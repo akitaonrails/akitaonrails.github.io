@@ -2,9 +2,11 @@
 title: David Hansson e Opinionated Software
 date: '2006-12-05T07:38:37-02:00'
 slug: david-hansson-e-opinionated-software
+description: "David Hansson defende concentrar a lógica de negócio no domain model, sem stored procedures ou constraints em bancos de aplicação. Akita ressalva que integração e processamento maciço exigem outra arquitetura."
 tags:
 - rails
-- pitch
+- arquitetura-de-software
+- bancos-de-dados
 draft: false
 ---
 
