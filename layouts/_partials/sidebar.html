@@ -8,9 +8,9 @@
   The upstream Hextra sidebar recursively walks site.Home for the mobile menu
   even when the desktop sidebar is disabled. This blog has thousands of pages
   and does not use a docs-style page tree, so that recursion dominates build
-  time. Keep the sidebar shell, search box, configured sidebar links, language
-  switcher, and theme toggle, but avoid rebuilding the full content tree for
-  every rendered page.
+  time. Keep the sidebar shell, search box, and configured sidebar links, but
+  avoid rebuilding the full content tree for every rendered page. Language
+  and theme controls already live in the navbar.
 */}}
 
 {{- if $context.Params.sidebar.hide -}}
@@ -61,7 +61,6 @@
 
     {{- if and $disableSidebar $displayPlaceholder -}}
       <div class="hx:max-xl:hidden hx:h-0 hx:w-64 hx:shrink-0"></div>
-      {{ $context.Store.Set "enableFooterSwitches" true }}
     {{- else if not $disableSidebar -}}
       <ul class="hx:flex hx:flex-col hx:gap-1 hx:max-md:hidden">
         {{- range site.Menus.sidebar -}}
@@ -88,18 +87,4 @@
     {{- end -}}
   </div>
 
-  {{- $switchesClass := cond $disableSidebar "hx:md:hidden" "" -}}
-  {{- $displayThemeToggle := (site.Params.theme.displayToggle | default true) -}}
-  {{- if or hugo.IsMultilingual $displayThemeToggle -}}
-    <div class="{{ $switchesClass }} {{ with hugo.IsMultilingual }}hx:justify-end{{ end }} hx:sticky hx:bottom-0 hx:max-h-(--menu-height) hx:bg-white hx:dark:bg-dark hx:mx-4 hx:py-4 hx:shadow-[0_-12px_16px_#fff] hx:flex hx:items-center hx:gap-2 hx:border-gray-200 hx:dark:border-neutral-800 hx:dark:shadow-[0_-12px_16px_#111] hx:contrast-more:border-neutral-400 hx:contrast-more:shadow-none hx:contrast-more:dark:shadow-none hx:border-t" data-toggle-animation="show">
-      {{- with hugo.IsMultilingual -}}
-        {{- partial "language-switch" (dict "context" $context "grow" true) -}}
-        {{- with $displayThemeToggle }}{{ partial "theme-toggle" (dict "hideLabel" true "location" "bottom-right") }}{{ end -}}
-      {{- else -}}
-        {{- with $displayThemeToggle -}}
-          <div class="hx:flex hx:grow hx:flex-col">{{ partial "theme-toggle" }}</div>
-        {{- end -}}
-      {{- end -}}
-    </div>
-  {{- end -}}
 </aside>

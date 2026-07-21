@@ -2,8 +2,6 @@
 title: Off-Topic
 ---
 
-{{< lang-toggle >}}
-
 Todos os posts Off-Topic do blog — filosofia, carreira, gerenciamento, e outros assuntos fora da programação do dia a dia.
 
 ## 2026 - Abril

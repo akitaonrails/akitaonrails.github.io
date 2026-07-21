@@ -28,14 +28,13 @@ ALLOWED_TAGS = {
 }.transform_values(&:freeze).freeze
 
 FEATURED_POSTS = [
+  ['2026-07-20', 'Novidades no meu AI-MEMORY: cada vez melhor pra usar com suas IAs', '/2026/07/20/novidades-no-meu-ai-memory-cada-vez-melhor-pra-usar-com-suas-ias/'],
   ['2026-07-19', 'LLM Benchmark: Devo usar o que tem nota maior?', '/2026/07/19/llm-benchmark-devo-usar-o-que-tem-nota-maior/'],
   ['2026-07-17', 'LLM Benchmark: Kimi K3 chegou no nível do Claude Opus?', '/2026/07/17/llm-benchmarks-kimi-k3/'],
   ['2026-07-12', 'Notícias Quânticas: Majorana 2 e entendendo Shor', '/2026/07/12/noticias-quanticas-majorana-2-e-entendendo-shor/'],
   ['2026-07-12', 'Usando IA pra resolver meus probleminhas do dia-a-dia', '/2026/07/12/usando-ia-pra-resolver-meus-probleminhas-do-dia-a-dia/'],
   ['2026-07-11', 'Como me precaver pros meus agentes não apagarem minhas coisas?', '/2026/07/11/como-me-precaver-pros-meus-agentes-nao-apagarem-minhas-coisas/'],
-  ['2026-07-09', 'LLM Benchmarks: Grok 4.5 e GPT 5.6 Sol', '/2026/07/09/llm-benchmark-grok-4-5-gpt-5-6-sol/'],
   ['2026-06-24', 'Por que LLMs vão falhar na Sua Empresa?', '/2026/06/24/por-que-llms-vao-falhar-na-sua-empresa/'],
-  ['2026-06-11', 'LLM Benchmark: Fable 5 e a novela da Anthropic', '/2026/06/11/llm-benchmark-fable-5-e-a-novela-da-anthropic/'],
   ['2026-06-05', 'Controvérsia de IA em contribuições de projetos de código aberto - minha opinião', '/2026/06/05/controversia-ia-contribuicoes-projetos-codigo-aberto-minha-opiniao/'],
   ['2026-05-30', 'Boas práticas de projetos de código aberto com LLM - O Mínimo', '/2026/05/30/boas-praticas-projetos-codigo-aberto-llm-o-minimo/'],
   ['2026-04-25', 'LLM Benchmarks: Vale a Pena ($$) Misturar 2 Modelos? (Planner + Executor)', '/2026/04/25/llm-benchmarks-vale-a-pena-misturar-2-modelos/'],
@@ -50,14 +49,13 @@ FEATURED_POSTS = [
 ].freeze
 
 FEATURED_POSTS_EN = [
+  ['2026-07-20', "What's New in My AI-MEMORY: Switch AI Agents Without Losing the Session", '/en/2026/07/20/whats-new-ai-memory-switch-agents-without-losing-session/'],
   ['2026-07-19', 'LLM Benchmark: Should I Use the Highest-Scoring Model?', '/en/2026/07/19/llm-benchmark-should-i-use-the-highest-scoring-model/'],
   ['2026-07-17', 'LLM Benchmark: Has Kimi K3 Reached Claude Opus Level?', '/en/2026/07/17/llm-benchmarks-kimi-k3/'],
   ['2026-07-12', 'Quantum News: Majorana 2 and Understanding Shor', '/en/2026/07/12/quantum-news-majorana-2-and-understanding-shor/'],
   ['2026-07-12', 'Using AI to Solve My Little Day-to-Day Problems', '/en/2026/07/12/using-ai-to-solve-my-little-day-to-day-problems/'],
   ['2026-07-11', 'How Do I Protect Myself From My Agents Deleting My Stuff?', '/en/2026/07/11/how-to-protect-yourself-from-agents-deleting-your-stuff/'],
-  ['2026-07-09', 'LLM Benchmarks: Grok 4.5 and GPT 5.6 Sol', '/en/2026/07/09/llm-benchmark-grok-4-5-gpt-5-6-sol/'],
   ['2026-06-24', 'Why LLMs Will Fail at Your Company', '/en/2026/06/24/why-llms-will-fail-at-your-company/'],
-  ['2026-06-11', 'LLM Benchmark: Fable 5 and the Anthropic Soap Opera', '/en/2026/06/11/llm-benchmark-fable-5-anthropic-soap-opera/'],
   ['2026-06-05', 'AI Controversy in Open Source Project Contributions - My Take', '/en/2026/06/05/ai-controversy-open-source-project-contributions-my-take/'],
   ['2026-05-30', 'Open Source Best Practices with LLMs - The Bare Minimum', '/en/2026/05/30/open-source-best-practices-llm-the-minimum/'],
   ['2026-04-25', 'LLM Benchmarks: Is It Worth ($$) Mixing 2 Models? (Planner + Executor)', '/en/2026/04/25/llm-benchmarks-vale-a-pena-misturar-2-modelos/'],
@@ -369,7 +367,8 @@ def render_featured_section(id:, title:, button_open:, button_closed:, posts:, a
     post = post_lookup[url]
     tags = post ? render_tag_links(post[:tags], lang: lang, modifier: 'featured-list') : ''
     description = post ? post[:description] : ''
-    lines << "            <li><code>#{escape_html(date)}</code> — <a href=\"#{escape_html(url)}\" title=\"#{escape_html(description)}\">#{escape_html(post_title)}</a><br>#{tags}</li>"
+    date_label = Date.iso8601(date).strftime('%b %d')
+    lines << "            <li><code>#{escape_html(date_label)}</code> — <a href=\"#{escape_html(url)}\" title=\"#{escape_html(description)}\">#{escape_html(post_title)}</a><br>#{tags}</li>"
   end
 
   lines << <<~HTML.chomp
@@ -523,8 +522,6 @@ end
 
 def generate_index(grouped_posts)
   lines = ["#{FRONTMATTER_DELIMITER}\ntitle: AkitaOnRails Blog\n#{FRONTMATTER_DELIMITER}\n"]
-  lines << '{{< lang-toggle >}}'
-  lines << ''
   lines.concat(render_index_view_toggle(lang: :pt))
   lines.concat(render_featured_posts(grouped_posts))
   lines.concat(render_index_views(grouped_posts, lang: :pt))
@@ -534,8 +531,6 @@ end
 
 def generate_archives(grouped_posts)
   lines = ["#{FRONTMATTER_DELIMITER}\ntitle: AkitaOnRails Blog - Arquivo\n#{FRONTMATTER_DELIMITER}\n"]
-  lines << '{{< lang-toggle >}}'
-  lines << ''
   lines << 'Quer ver as transcrições do Canal Akitando? [Clique aqui](/akitando/).'
   lines << "Quer ver só os posts Off-Topic? [Clique aqui](/off-topic/).\n"
   lines.concat(render_months(grouped_posts, lang: :pt))
@@ -544,8 +539,6 @@ end
 
 def generate_index_en(grouped_posts)
   lines = ["#{FRONTMATTER_DELIMITER}\ntitle: AkitaOnRails Blog\n#{FRONTMATTER_DELIMITER}\n"]
-  lines << '{{< lang-toggle >}}'
-  lines << ''
   if grouped_posts.empty?
     lines << "_No posts translated to English yet. Check back soon._\n"
   else
@@ -559,8 +552,6 @@ end
 
 def generate_archives_en(grouped_posts)
   lines = ["#{FRONTMATTER_DELIMITER}\ntitle: AkitaOnRails Blog - Archives\n#{FRONTMATTER_DELIMITER}\n"]
-  lines << '{{< lang-toggle >}}'
-  lines << ''
   lines << 'Want to see the Akitando Channel transcripts (Portuguese only)? [Click here](/akitando/).'
   lines << "Want to see only the Off-Topic posts? [Click here](/en/off-topic/).\n"
   if grouped_posts.empty?
@@ -582,8 +573,6 @@ end
 
 def generate_off_topic(grouped_posts)
   lines = ["#{FRONTMATTER_DELIMITER}\ntitle: Off-Topic\n#{FRONTMATTER_DELIMITER}\n"]
-  lines << '{{< lang-toggle >}}'
-  lines << ''
   lines << 'Todos os posts Off-Topic do blog — filosofia, carreira, gerenciamento, e outros assuntos fora da programação do dia a dia.'
   lines << ''
   lines.concat(render_months(grouped_posts, lang: :pt))
@@ -592,8 +581,6 @@ end
 
 def generate_off_topic_en(grouped_posts)
   lines = ["#{FRONTMATTER_DELIMITER}\ntitle: Off-Topic\n#{FRONTMATTER_DELIMITER}\n"]
-  lines << '{{< lang-toggle >}}'
-  lines << ''
   lines << "All Off-Topic posts from the blog — philosophy, career, management, and other topics outside of day-to-day programming."
   lines << ''
   if grouped_posts.empty?

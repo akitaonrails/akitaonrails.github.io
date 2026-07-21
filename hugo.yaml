@@ -41,6 +41,10 @@ languages:
           url: "/index.xml"
           params:
             icon: rss
+        - name: Idioma
+          weight: 5
+          params:
+            type: language-switch
       sidebar:
         - name: GitHub
           weight: 1
@@ -98,6 +102,10 @@ languages:
           url: "/en/index.xml"
           params:
             icon: rss
+        - name: Language
+          weight: 5
+          params:
+            type: language-switch
       sidebar:
         - name: GitHub
           weight: 1

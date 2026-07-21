@@ -14,6 +14,9 @@
 {{- $changeLanguage := (T "changeLanguage") | default "Change language" -}}
 
 {{- if hugo.IsMultilingual -}}
+  {{- if eq $location "top" -}}
+    {{- partial "custom/lang-toggle.html" (dict "context" $page "location" "navbar") -}}
+  {{- else -}}
   <div class="hx:flex hx:justify-items-start {{ if $grow }}hx:grow{{ end }}">
     <button
       title="{{ $changeLanguage }}"
@@ -50,4 +53,5 @@
       {{ end -}}
     </ul>
   </div>
+  {{- end -}}
 {{- end -}}

@@ -2,8 +2,6 @@
 title: AkitaOnRails Blog - Arquivo
 ---
 
-{{< lang-toggle >}}
-
 Quer ver as transcrições do Canal Akitando? [Clique aqui](/akitando/).
 Quer ver só os posts Off-Topic? [Clique aqui](/off-topic/).
 

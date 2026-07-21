@@ -66,8 +66,10 @@ Before choosing tags, run `./scripts/tag_catalog.rb --search "article title and 
 
 | File | Purpose |
 |------|---------|
+| `layouts/home.html` | Homepage template without the redundant visible site-title heading |
 | `layouts/single.html` | Post template: centered content (max-w-6xl), TOC enabled, sidebar disabled, Disqus comments |
 | `layouts/term.html` | Localized tag pages with the shared list/grid control, month groups, tags, and description cards |
+| `layouts/_partials/language-switch.html` | Hextra language-switch override that renders the compact navbar control |
 | `layouts/_partials/tags.html` | Clickable tags below article titles and in generated listings |
 | `layouts/_default/list.rss.xml` | RSS 2.0 feed, 20 most recent posts with full content |
 | `layouts/partials/custom/head-end.html` | Google Fonts, custom CSS (typography, code blocks, social icons, responsive embeds, dark mode) |
@@ -114,8 +116,8 @@ The site is bilingual with Portuguese as the canonical language. Hugo's native m
 
 - PT-BR posts stay at `/YYYY/MM/DD/slug/`
 - EN translations live at `/en/YYYY/MM/DD/slug/` (same slug)
-- The PT | EN toggle is rendered by `layouts/partials/custom/lang-toggle.html`
-- The toggle only appears on individual posts when an `index.en.md` sibling exists; on the homepage and archives it always appears
+- The global navbar renders the PT | EN control through `layouts/partials/custom/lang-toggle.html`
+- Exact article/page siblings and canonical localized tag pages link directly to each other; when no counterpart exists, that language is visibly disabled instead of linking back to an index
 - `scripts/generate_index.rb` generates both `_index.md` (PT) and `_index.en.md` (EN), with the EN index only including posts that have an `index.en.md` sibling
 - First-visit auto-redirect from `/` based on browser locale is in `layouts/partials/custom/head-end.html`; choice is persisted in the `lang_pref` cookie
 - Netlify deploy is in `netlify.toml`; the multilingual setup adds nothing to the build pipeline (Hugo handles it)

@@ -26,6 +26,70 @@
     color: #e8e2d6;
   }
 
+  .lang-toggle {
+    align-items: center;
+    color: #6b7280;
+    display: inline-flex;
+    flex: none;
+    font-family: "Source Sans 3", "Helvetica Neue", "Segoe UI", "Arial", sans-serif;
+    font-size: 0.8rem;
+    gap: 0.25rem;
+    letter-spacing: 0;
+    line-height: 1;
+    white-space: nowrap;
+  }
+  .lang-toggle-link {
+    color: inherit;
+    font-weight: 600;
+    padding: 0.4rem 0.1rem;
+    text-decoration: none;
+  }
+  .lang-toggle-link:hover {
+    color: var(--aor-accent, #b84a2f);
+  }
+  .lang-toggle-link:focus-visible {
+    border-radius: 2px;
+    outline: 2px solid var(--aor-accent, #b84a2f);
+    outline-offset: 2px;
+  }
+  .lang-toggle-active {
+    border-bottom: 1px solid currentColor;
+    color: #1f2937;
+    font-weight: 700;
+  }
+  .lang-toggle-unavailable {
+    cursor: not-allowed;
+    opacity: 0.38;
+  }
+  .dark .lang-toggle-active {
+    color: #f3f4f6;
+  }
+  .lang-toggle-separator {
+    opacity: 0.55;
+  }
+  .lang-toggle--content {
+    display: flex;
+    justify-content: center;
+    margin: 0.5rem 0 1rem;
+  }
+
+  @media (max-width: 47.99rem) {
+    .hextra-nav-container nav > a[title="GitHub ↗"],
+    .hextra-nav-container nav > a[title="RSS"] {
+      display: none;
+    }
+  }
+  @media (max-width: 23.75rem) {
+    .hextra-nav-container nav {
+      gap: 0.25rem;
+      padding-inline: 0.75rem;
+    }
+    .hextra-nav-container nav > a:first-child span {
+      font-size: 0.9rem;
+      margin-inline-end: 0;
+    }
+  }
+
   .embed-container {
     position: relative;
     width: 100%;

@@ -2,8 +2,6 @@
 title: AkitaOnRails Blog - Archives
 ---
 
-{{< lang-toggle >}}
-
 Want to see the Akitando Channel transcripts (Portuguese only)? [Click here](/akitando/).
 Want to see only the Off-Topic posts? [Click here](/en/off-topic/).
 
