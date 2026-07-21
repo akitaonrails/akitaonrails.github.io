@@ -121,13 +121,18 @@ ai-memory run --workstream investigar-race codex
 
 Uma lease impede duas janelas de escreverem ao mesmo tempo na mesma workstream. Em encerramento normal, o launcher importa o final da sessão e libera imediatamente. Se alguém matar o processo sem cleanup, a lease expira em até 90 segundos e a próxima execução retoma do último cursor confirmado, sem duplicar os eventos já importados.
 
-O modo sem nome também ficou mais esperto:
+Uma irritação besta que eu tinha o tempo todo: voltava pra um projeto depois de alguns dias e não lembrava se a sessão mais recente estava no Claude ou no Codex. Eu chutava um, abria, percebia que o contexto estava no outro, fechava e tentava de novo.
+
+Agora só rodo:
 
 ```bash
+ai-memory run
+
+# ou com a mesma seleção automática em YOLO mode
 ai-memory run --yolo
 ```
 
-Numa workstream vazia, ele procura sessões locais daquele checkout em Claude Code, Codex, OpenCode, Pi e Crush e escolhe a mais recente. Numa workstream já estabelecida, a memória do servidor vence o timestamp de arquivo: ele volta ao último harness ligado àquele trabalho, em vez de adotar por engano uma sessão velha que só recebeu uma gravação mais recente. OMP continua disponível quando escolhido explicitamente, mas ainda não participa da seleção automática.
+Numa workstream vazia, o ai-memory procura sessões locais daquele checkout em Claude Code, Codex, OpenCode, Pi e Crush, descobre qual é a mais recente e abre o harness certo pra mim. Numa workstream já estabelecida, a memória do servidor vence o timestamp de arquivo: ele volta ao último harness ligado àquele trabalho, em vez de adotar por engano uma sessão velha que só recebeu uma gravação mais recente. OMP continua disponível quando escolhido explicitamente, mas ainda não participa da seleção automática.
 
 Na primeira execução explícita, o launcher também pode oferecer sessões existentes do mesmo checkout pra adoção. Dá pra começar a usar sem abandonar o chat que já estava aberto antes de atualizar o ai-memory.
 

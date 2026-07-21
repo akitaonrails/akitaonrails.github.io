@@ -121,13 +121,18 @@ ai-memory run --workstream investigar-race codex
 
 A lease prevents two windows from writing to the same workstream at once. On a normal exit, the launcher imports the tail of the session and releases it immediately. If someone kills the process without cleanup, the lease expires within 90 seconds and the next run resumes from the last confirmed cursor without duplicating imported events.
 
-The unnamed mode got smarter too:
+One stupid annoyance kept coming back: I would reopen a project after a few days and have no idea whether the newest session was in Claude or Codex. I'd guess, open one, realize the context was in the other, close it, and try again.
+
+Now I just run:
 
 ```bash
+ai-memory run
+
+# or keep the same auto-selection in YOLO mode
 ai-memory run --yolo
 ```
 
-In an empty workstream, it looks for local sessions from that checkout in Claude Code, Codex, OpenCode, Pi, and Crush, then picks the most recent one. In an established workstream, server memory beats the file timestamp: it returns to the last harness attached to that work instead of accidentally adopting an old session that happened to receive a newer write. OMP remains available when selected explicitly, but it doesn't participate in auto-selection yet.
+In an empty workstream, ai-memory looks for local sessions from that checkout in Claude Code, Codex, OpenCode, Pi, and Crush, finds the newest one, and opens the right harness for me. In an established workstream, server memory beats the file timestamp: it returns to the last harness attached to that work instead of accidentally adopting an old session that happened to receive a newer write. OMP remains available when selected explicitly, but it doesn't participate in auto-selection yet.
 
 On the first explicit run, the launcher can also offer existing sessions from the same checkout for adoption. You can start using it without abandoning the chat that was already open before you updated ai-memory.
 
