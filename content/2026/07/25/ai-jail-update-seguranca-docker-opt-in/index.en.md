@@ -4,7 +4,7 @@ slug: "ai-jail-security-update-docker-opt-in"
 date: '2026-07-25T13:00:00-03:00'
 draft: false
 translationKey: ai-jail-update-seguranca-docker-opt-in
-description: "Issue #88 proved that the Docker socket, mounted by default inside ai-jail, gave any agent root on the host. In v1.16.0 it became opt-in. The flaw, a hands-on demo, and best practices."
+description: "Issue #88 proved the Docker socket inside ai-jail gave any agent root on the host. In v1.16.0 the passthrough went opt-in. The flaw, a hands-on demo, best practices, and why Podman was born from this criticism."
 tags:
 - ai-jail
 - containers
@@ -111,9 +111,34 @@ If everyone has known about this for over a decade, why hasn't anyone "fixed" it
 - The root daemon with an all-powerful API was the design that made Docker simple to operate. Granular per-request authorization exists in the form of [authorization plugins](https://docs.docker.com/engine/extend/plugins_authorization/), but it's opt-in, annoying to configure, and I can count on one hand the setups I've seen using it.
 - [userns-remap](https://docs.docker.com/engine/security/userns-remap/) has been around since Docker 1.10 and maps container root to an unprivileged user on the host. It ships turned off, because it breaks compatibility with images and volumes that assume uid 0.
 - [Rootless mode](https://docs.docker.com/engine/security/rootless/) runs the whole daemon as your user, with the socket at `$XDG_RUNTIME_DIR/docker.sock`. It works, but it has network and storage limitations, and the entire internet of tutorials assumes the root daemon at the classic path.
-- [Podman](https://podman.io/) was born rootless and daemonless precisely because of this criticism. If you can switch, switch.
+- [Podman](https://podman.io/) was born rootless and daemonless precisely because of this criticism. There's a whole section about it below.
 
 Bottom line: this is here to stay. Every tool that mounts `/var/run/docker.sock` into an environment "for convenience" opens the same hole, knowingly or not. CI mounting the socket for image builds, remote IDEs, code-server, AI agent sandboxes (hi, me), web dashboard plugins. The fix always lives on the side of whoever builds the environment.
+
+## Fun fact: this is anything but new
+
+If you've been following me for a while, this whole story should give you déjà vu. Back in 2023 I recorded [[Akitando #139] - Understanding How Containers Work](/2023/03/02/akitando-139-entendendo-como-containers-funcionam/), where I explain what a container actually is: an ordinary Linux process, throttled by cgroups, fooled by namespaces, with its capabilities trimmed. No magic and no virtual machine. And look at what was already sitting in that episode's link list: a walkthrough of [privilege escalation via Docker](https://flast101.github.io/docker-privesc/), demonstrating the exact `docker run -v /:/host` trick. The hole issue #88 exploited inside ai-jail is the same one I was already pointing at in a 2023 video, and it was old news long before that.
+
+Nobody knows this better than Red Hat. [Podman](https://podman.io/) was born there in 2018 as a direct answer to that architecture: no central daemon, rootless by default. Every container becomes a direct child of your user, via fork-exec, with no all-powerful process running as root brokering anything. The whole "docker.sock is root" problem doesn't exist in that model, because there's no docker.sock, no daemon, and no root.
+
+And before you ask: yes, I run Podman for some things and I recommend it. But it's no perfect solution either, and it's worth understanding why.
+
+What Podman does well:
+
+- **The right architecture.** Daemonless and rootless from day zero. The entire vulnerability class from this article stops making sense.
+- **CLI compatibility.** `alias docker=podman` covers the overwhelming majority of day-to-day commands. Build, run, push, pull: same commands, same flags.
+- **systemd integration.** [Quadlets](https://docs.podman.io/en/latest/markdown/podman-systemd.unit.5.html) are, in my opinion, the cleanest way to run a container as a service on Linux. Docker never came close.
+
+Where it stumbles:
+
+- **The compatibility socket isn't 100%.** Podman offers a socket compatible with the Docker API (`podman.socket`), and plenty of tools work on top of it. But "plenty" isn't "all": Testcontainers, some IDE plugins, more exotic CI tooling trip over behavioral differences. It works until the day it doesn't, and then you lose an afternoon debugging.
+- **Compose is a second-class citizen.** The official `docker compose` does talk to the Podman socket, and `podman-compose` exists, but neither has the polish of the original pairing. Projects with a complicated compose file are where migrations usually get stuck.
+- **Rootless has a price.** Rootless networking (slirp4netns, and pasta these days) has limits: no ping by default, weird source IPs, lower throughput. Images that assume uid 0 and volumes with wrong permissions need fiddling. Nothing fatal, but it's friction.
+- **Docker Desktop is a product.** On macOS and Windows, Docker Desktop delivers a polished experience that Podman Desktop is still catching up to. For a lot of people, that's the only contact with containers they'll ever have.
+
+Add it all up and you get the answer to why the world stays on Docker: ecosystem inertia. Every tutorial, every CI pipeline, every example image, every `docker run` pasted from Stack Overflow assumes the root daemon at the classic path. Docker became the name of the category, the Kleenex of containers. Moving to Podman is technically easy and politically expensive: it's you against the accumulated knowledge of the entire internet.
+
+One detail that matters for sandbox users: mounting the rootless Podman socket inside a jail is far less catastrophic than mounting the Docker one. The equivalent "daemon" runs as your user, so a malicious agent would gain your privileges, not root. Still bad (it could overwrite your `~/.ssh`, for one), but a whole different ballgame. Even so, ai-jail's default stands: don't mount any socket, from any runtime. Opt-in is opt-in.
 
 ## Best practices so this doesn't bite you
 
