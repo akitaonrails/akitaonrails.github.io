@@ -28,17 +28,14 @@ ALLOWED_TAGS = {
 }.transform_values(&:freeze).freeze
 
 FEATURED_POSTS = [
+  ['2026-07-25', 'LLM Benchmark: Opus 5 é bom?', '/2026/07/25/llm-benchmark-opus-5-e-bom/'],
   ['2026-07-20', 'Novidades no meu AI-MEMORY: cada vez melhor pra usar com suas IAs', '/2026/07/20/novidades-no-meu-ai-memory-cada-vez-melhor-pra-usar-com-suas-ias/'],
-  ['2026-07-19', 'LLM Benchmark: Devo usar o que tem nota maior?', '/2026/07/19/llm-benchmark-devo-usar-o-que-tem-nota-maior/'],
-  ['2026-07-17', 'LLM Benchmark: Kimi K3 chegou no nível do Claude Opus?', '/2026/07/17/llm-benchmarks-kimi-k3/'],
   ['2026-07-12', 'Notícias Quânticas: Majorana 2 e entendendo Shor', '/2026/07/12/noticias-quanticas-majorana-2-e-entendendo-shor/'],
   ['2026-07-12', 'Usando IA pra resolver meus probleminhas do dia-a-dia', '/2026/07/12/usando-ia-pra-resolver-meus-probleminhas-do-dia-a-dia/'],
   ['2026-07-11', 'Como me precaver pros meus agentes não apagarem minhas coisas?', '/2026/07/11/como-me-precaver-pros-meus-agentes-nao-apagarem-minhas-coisas/'],
   ['2026-06-24', 'Por que LLMs vão falhar na Sua Empresa?', '/2026/06/24/por-que-llms-vao-falhar-na-sua-empresa/'],
   ['2026-06-05', 'Controvérsia de IA em contribuições de projetos de código aberto - minha opinião', '/2026/06/05/controversia-ia-contribuicoes-projetos-codigo-aberto-minha-opiniao/'],
   ['2026-05-30', 'Boas práticas de projetos de código aberto com LLM - O Mínimo', '/2026/05/30/boas-praticas-projetos-codigo-aberto-llm-o-minimo/'],
-  ['2026-04-25', 'LLM Benchmarks: Vale a Pena ($$) Misturar 2 Modelos? (Planner + Executor)', '/2026/04/25/llm-benchmarks-vale-a-pena-misturar-2-modelos/'],
-  ['2026-04-24', 'Benchmark de LLMs pra Coding (Maio 2026): DeepSeek v4, Kimi v2.6, Grok 4.3, GPT 5.5', '/2026/04/24/llm-benchmarks-parte-3-deepseek-kimi-mimo/'],
   ['2026-04-20', 'Clean Code pra Agentes de IA', '/2026/04/20/clean-code-para-agentes-de-ia/'],
   ['2026-04-11', 'VS Code é o novo Cartão Perfurado', '/2026/04/11/vs-code-e-o-novo-cartao-perfurado/'],
   ['2026-02-24', 'RANT: o Akita abriu as pernas pra IA??', '/2026/02/24/rant-o-akita-abriu-as-pernas-pra-ia/'],
@@ -49,17 +46,14 @@ FEATURED_POSTS = [
 ].freeze
 
 FEATURED_POSTS_EN = [
+  ['2026-07-25', 'LLM Benchmark: Is Opus 5 Any Good?', '/en/2026/07/25/llm-benchmark-is-opus-5-any-good/'],
   ['2026-07-20', "What's New in My AI-MEMORY: Switch AI Agents Without Losing the Session", '/en/2026/07/20/whats-new-ai-memory-switch-agents-without-losing-session/'],
-  ['2026-07-19', 'LLM Benchmark: Should I Use the Highest-Scoring Model?', '/en/2026/07/19/llm-benchmark-should-i-use-the-highest-scoring-model/'],
-  ['2026-07-17', 'LLM Benchmark: Has Kimi K3 Reached Claude Opus Level?', '/en/2026/07/17/llm-benchmarks-kimi-k3/'],
   ['2026-07-12', 'Quantum News: Majorana 2 and Understanding Shor', '/en/2026/07/12/quantum-news-majorana-2-and-understanding-shor/'],
   ['2026-07-12', 'Using AI to Solve My Little Day-to-Day Problems', '/en/2026/07/12/using-ai-to-solve-my-little-day-to-day-problems/'],
   ['2026-07-11', 'How Do I Protect Myself From My Agents Deleting My Stuff?', '/en/2026/07/11/how-to-protect-yourself-from-agents-deleting-your-stuff/'],
   ['2026-06-24', 'Why LLMs Will Fail at Your Company', '/en/2026/06/24/why-llms-will-fail-at-your-company/'],
   ['2026-06-05', 'AI Controversy in Open Source Project Contributions - My Take', '/en/2026/06/05/ai-controversy-open-source-project-contributions-my-take/'],
   ['2026-05-30', 'Open Source Best Practices with LLMs - The Bare Minimum', '/en/2026/05/30/open-source-best-practices-llm-the-minimum/'],
-  ['2026-04-25', 'LLM Benchmarks: Is It Worth ($$) Mixing 2 Models? (Planner + Executor)', '/en/2026/04/25/llm-benchmarks-vale-a-pena-misturar-2-modelos/'],
-  ['2026-04-24', 'LLM Coding Benchmark (May 2026): DeepSeek v4, Kimi v2.6, Grok 4.3, GPT 5.5', '/en/2026/04/24/llm-benchmarks-parte-3-deepseek-kimi-mimo/'],
   ['2026-04-20', 'Clean Code for AI Agents', '/en/2026/04/20/clean-code-for-ai-agents/'],
   ['2026-04-11', 'VS Code Is the New Punch Card', '/en/2026/04/11/vs-code-is-the-new-punch-card/'],
   ['2026-02-24', 'RANT: Did Akita Bend Over for AI??', '/en/2026/02/24/rant-akita-caved-to-ai/'],
