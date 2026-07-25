@@ -271,6 +271,7 @@ title: AkitaOnRails Blog
 {{% index-list %}}
 ## 2026 - Julho
 
+- <a class="aor-index-list__main-link" href="/2026/07/25/llm-benchmark-opus-5-e-bom/" title="Opus 5 fez 95/100 no benchmark Rails, empatou com Opus 4.8 e passou o Fable 5 por um ponto. A tarifa é metade da do Fable, mas o teste estreito não define o melhor LLM.">LLM Benchmark: Opus 5 é bom?</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/tags/benchmarks-de-llm/">#benchmarks-de-llm</a><a class="aor-tag-link" href="/tags/llms/">#llms</a><a class="aor-tag-link" href="/tags/agentes-de-codigo/">#agentes-de-codigo</a></span>
 - <a class="aor-index-list__main-link" href="/2026/07/20/novidades-no-meu-ai-memory-cada-vez-melhor-pra-usar-com-suas-ias/" title="ai-memory run mantém a mesma sessão de programação ao alternar entre Claude Code, Codex e outros harnesses, com workstreams pesquisáveis e integração com ai-jail e ai-usagebar.">Novidades no meu AI-MEMORY: cada vez melhor pra usar com suas IAs</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/tags/ai-memory/">#ai-memory</a><a class="aor-tag-link" href="/tags/agentes-de-codigo/">#agentes-de-codigo</a><a class="aor-tag-link" href="/tags/ai-jail/">#ai-jail</a><a class="aor-tag-link" href="/tags/ai-usagebar/">#ai-usagebar</a></span>
 - <a class="aor-index-list__main-link" href="/2026/07/19/llm-benchmark-devo-usar-o-que-tem-nota-maior/" title="Por que o primeiro lugar num ranking de LLMs não é necessariamente o melhor modelo, por que 90+ é um cluster e como usar benchmarks sem terceirizar sua decisão técnica.">LLM Benchmark: Devo usar o que tem nota maior?</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/tags/benchmarks-de-llm/">#benchmarks-de-llm</a><a class="aor-tag-link" href="/tags/llms/">#llms</a></span>
 - <a class="aor-index-list__main-link" href="/2026/07/17/llm-benchmarks-kimi-k3/" title="Coloquei o Kimi K3 para criar sozinho um chat em Rails 8: fez 89/A, superou o Opus 4.6 e foi uma alternativa mais barata ao Opus 4.8. Ainda ficou atrás dele em arquitetura, hardening e testes.">LLM Benchmark: Kimi K3 chegou no nível do Claude Opus?</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/tags/benchmarks-de-llm/">#benchmarks-de-llm</a><a class="aor-tag-link" href="/tags/llms/">#llms</a><a class="aor-tag-link" href="/tags/agentes-de-codigo/">#agentes-de-codigo</a></span>
@@ -449,9 +450,15 @@ title: AkitaOnRails Blog
 <section class="aor-index-month" aria-labelledby="aor-grid-2026-07">
   <div class="aor-index-month__header">
     <h2 id="aor-grid-2026-07">2026 - Julho</h2>
-    <span>12 posts</span>
+    <span>13 posts</span>
   </div>
   <div class="aor-post-grid">
+<article class="aor-post-card" title="Opus 5 fez 95/100 no benchmark Rails, empatou com Opus 4.8 e passou o Fable 5 por um ponto. A tarifa é metade da do Fable, mas o teste estreito não define o melhor LLM.">
+  <time class="aor-post-card__date" datetime="2026-07-25">25/07/2026</time>
+  <h3 class="aor-post-card__title"><a class="aor-post-card__title-link" href="/2026/07/25/llm-benchmark-opus-5-e-bom/">LLM Benchmark: Opus 5 é bom?</a></h3>
+  <span class="aor-post-tags aor-post-tags--card"><a class="aor-tag-link" href="/tags/benchmarks-de-llm/">#benchmarks-de-llm</a><a class="aor-tag-link" href="/tags/llms/">#llms</a><a class="aor-tag-link" href="/tags/agentes-de-codigo/">#agentes-de-codigo</a></span>
+  <p class="aor-post-card__description">Opus 5 fez 95/100 no benchmark Rails, empatou com Opus 4.8 e passou o Fable 5 por um ponto. A tarifa é metade da do Fable, mas o teste estreito não define o melhor LLM.</p>
+</article>
 <article class="aor-post-card" title="ai-memory run mantém a mesma sessão de programação ao alternar entre Claude Code, Codex e outros harnesses, com workstreams pesquisáveis e integração com ai-jail e ai-usagebar.">
   <time class="aor-post-card__date" datetime="2026-07-20">20/07/2026</time>
   <h3 class="aor-post-card__title"><a class="aor-post-card__title-link" href="/2026/07/20/novidades-no-meu-ai-memory-cada-vez-melhor-pra-usar-com-suas-ias/">Novidades no meu AI-MEMORY: cada vez melhor pra usar com suas IAs</a></h3>

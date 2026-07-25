@@ -271,6 +271,7 @@ title: AkitaOnRails Blog
 {{% index-list %}}
 ## 2026 - July
 
+- <a class="aor-index-list__main-link" href="/en/2026/07/25/llm-benchmark-is-opus-5-any-good/" title="Opus 5 scored 95/100 on the Rails benchmark, tying Opus 4.8 and edging Fable 5 by one point. Its API rate is half Fable’s, but this narrow test does not define the best LLM.">LLM Benchmark: Is Opus 5 Any Good?</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/en/tags/llm-benchmarks/">#llm-benchmarks</a><a class="aor-tag-link" href="/en/tags/llms/">#llms</a><a class="aor-tag-link" href="/en/tags/coding-agents/">#coding-agents</a></span>
 - <a class="aor-index-list__main-link" href="/en/2026/07/20/whats-new-ai-memory-switch-agents-without-losing-session/" title="ai-memory run keeps the same programming session while switching among Claude Code, Codex, and other harnesses, with searchable workstreams and integration with ai-jail and ai-usagebar.">What&#39;s New in My AI-MEMORY: Switch AI Agents Without Losing the Session</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/en/tags/ai-memory/">#ai-memory</a><a class="aor-tag-link" href="/en/tags/coding-agents/">#coding-agents</a><a class="aor-tag-link" href="/en/tags/ai-jail/">#ai-jail</a><a class="aor-tag-link" href="/en/tags/ai-usagebar/">#ai-usagebar</a></span>
 - <a class="aor-index-list__main-link" href="/en/2026/07/19/llm-benchmark-should-i-use-the-highest-scoring-model/" title="Why the top entry in an LLM ranking is not necessarily the best model, why 90+ is a cluster, and how to use benchmarks without outsourcing your technical judgment.">LLM Benchmark: Should I Use the Highest-Scoring Model?</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/en/tags/llm-benchmarks/">#llm-benchmarks</a><a class="aor-tag-link" href="/en/tags/llms/">#llms</a></span>
 - <a class="aor-index-list__main-link" href="/en/2026/07/17/llm-benchmarks-kimi-k3/" title="I had Kimi K3 build a chat in Rails 8 on its own: it scored 89/A, beat Opus 4.6, and was a cheaper alternative to Opus 4.8. It still lagged behind in architecture, hardening, and tests.">LLM Benchmark: Has Kimi K3 Reached Claude Opus Level?</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/en/tags/llm-benchmarks/">#llm-benchmarks</a><a class="aor-tag-link" href="/en/tags/llms/">#llms</a><a class="aor-tag-link" href="/en/tags/coding-agents/">#coding-agents</a></span>
@@ -442,9 +443,15 @@ title: AkitaOnRails Blog
 <section class="aor-index-month" aria-labelledby="aor-grid-2026-07">
   <div class="aor-index-month__header">
     <h2 id="aor-grid-2026-07">2026 - July</h2>
-    <span>12 posts</span>
+    <span>13 posts</span>
   </div>
   <div class="aor-post-grid">
+<article class="aor-post-card" title="Opus 5 scored 95/100 on the Rails benchmark, tying Opus 4.8 and edging Fable 5 by one point. Its API rate is half Fable’s, but this narrow test does not define the best LLM.">
+  <time class="aor-post-card__date" datetime="2026-07-25">Jul 25, 2026</time>
+  <h3 class="aor-post-card__title"><a class="aor-post-card__title-link" href="/en/2026/07/25/llm-benchmark-is-opus-5-any-good/">LLM Benchmark: Is Opus 5 Any Good?</a></h3>
+  <span class="aor-post-tags aor-post-tags--card"><a class="aor-tag-link" href="/en/tags/llm-benchmarks/">#llm-benchmarks</a><a class="aor-tag-link" href="/en/tags/llms/">#llms</a><a class="aor-tag-link" href="/en/tags/coding-agents/">#coding-agents</a></span>
+  <p class="aor-post-card__description">Opus 5 scored 95/100 on the Rails benchmark, tying Opus 4.8 and edging Fable 5 by one point. Its API rate is half Fable’s, but this narrow test does not define the best LLM.</p>
+</article>
 <article class="aor-post-card" title="ai-memory run keeps the same programming session while switching among Claude Code, Codex, and other harnesses, with searchable workstreams and integration with ai-jail and ai-usagebar.">
   <time class="aor-post-card__date" datetime="2026-07-20">Jul 20, 2026</time>
   <h3 class="aor-post-card__title"><a class="aor-post-card__title-link" href="/en/2026/07/20/whats-new-ai-memory-switch-agents-without-losing-session/">What&#39;s New in My AI-MEMORY: Switch AI Agents Without Losing the Session</a></h3>
