@@ -250,6 +250,7 @@ title: AkitaOnRails Blog
 {{% index-list %}}
 ## 2026 - Julho
 
+- <a class="aor-index-list__main-link" href="/2026/07/30/removendo-drm-de-ebooks-de-kindle-em-2026/" title="Usei Calibre, DeDRM 10.0.28, KFX Input e o Kindle da Microsoft Store numa VM do Omarchy para arquivar 106 livros e validar a conversão pra EPUB sob meu controle.">Removendo DRM de ebooks de Kindle em 2026</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/tags/armazenamento-e-backup/">#armazenamento-e-backup</a><a class="aor-tag-link" href="/tags/linux/">#linux</a><a class="aor-tag-link" href="/tags/open-source/">#open-source</a></span>
 - <a class="aor-index-list__main-link" href="/2026/07/30/novo-llm-benchmark-refiz-todos-os-testes/" title="Refiz o LLM Coding Benchmark com uma prova mais difícil, três fases, harnesses nativos e tiers novos. Fable liderou, Kimi venceu no custo e 23 modelos ficaram aptos para programação.">Novo LLM Benchmark: refiz todos os testes!</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/tags/benchmarks-de-llm/">#benchmarks-de-llm</a><a class="aor-tag-link" href="/tags/llms/">#llms</a><a class="aor-tag-link" href="/tags/agentes-de-codigo/">#agentes-de-codigo</a></span>
 - <a class="aor-index-list__main-link" href="/2026/07/25/ai-jail-update-seguranca-docker-opt-in/" title="O issue #88 provou que o socket do Docker no ai-jail dava root no host a qualquer agente. Na v1.16.0 o passthrough virou opt-in. A falha, a demo, as boas práticas e por que o Podman nasceu dessa crítica.">AI-Jail: update de segurança, Docker vira opt-in</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/tags/ai-jail/">#ai-jail</a><a class="aor-tag-link" href="/tags/containers/">#containers</a><a class="aor-tag-link" href="/tags/seguranca/">#seguranca</a></span>
 - <a class="aor-index-list__main-link" href="/2026/07/25/llm-benchmark-opus-5-e-bom/" title="Opus 5 fez 95/100 no benchmark Rails, empatou com Opus 4.8 e passou o Fable 5 por um ponto. A tarifa é metade da do Fable, mas o teste estreito não define o melhor LLM.">LLM Benchmark: Opus 5 é bom?</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/tags/benchmarks-de-llm/">#benchmarks-de-llm</a><a class="aor-tag-link" href="/tags/llms/">#llms</a><a class="aor-tag-link" href="/tags/agentes-de-codigo/">#agentes-de-codigo</a></span>
@@ -431,9 +432,15 @@ title: AkitaOnRails Blog
 <section class="aor-index-month" aria-labelledby="aor-grid-2026-07">
   <div class="aor-index-month__header">
     <h2 id="aor-grid-2026-07">2026 - Julho</h2>
-    <span>15 posts</span>
+    <span>16 posts</span>
   </div>
   <div class="aor-post-grid">
+<article class="aor-post-card" title="Usei Calibre, DeDRM 10.0.28, KFX Input e o Kindle da Microsoft Store numa VM do Omarchy para arquivar 106 livros e validar a conversão pra EPUB sob meu controle.">
+  <time class="aor-post-card__date" datetime="2026-07-30">30/07/2026</time>
+  <h3 class="aor-post-card__title"><a class="aor-post-card__title-link" href="/2026/07/30/removendo-drm-de-ebooks-de-kindle-em-2026/">Removendo DRM de ebooks de Kindle em 2026</a></h3>
+  <span class="aor-post-tags aor-post-tags--card"><a class="aor-tag-link" href="/tags/armazenamento-e-backup/">#armazenamento-e-backup</a><a class="aor-tag-link" href="/tags/linux/">#linux</a><a class="aor-tag-link" href="/tags/open-source/">#open-source</a></span>
+  <p class="aor-post-card__description">Usei Calibre, DeDRM 10.0.28, KFX Input e o Kindle da Microsoft Store numa VM do Omarchy para arquivar 106 livros e validar a conversão pra EPUB sob meu controle.</p>
+</article>
 <article class="aor-post-card" title="Refiz o LLM Coding Benchmark com uma prova mais difícil, três fases, harnesses nativos e tiers novos. Fable liderou, Kimi venceu no custo e 23 modelos ficaram aptos para programação.">
   <time class="aor-post-card__date" datetime="2026-07-30">30/07/2026</time>
   <h3 class="aor-post-card__title"><a class="aor-post-card__title-link" href="/2026/07/30/novo-llm-benchmark-refiz-todos-os-testes/">Novo LLM Benchmark: refiz todos os testes!</a></h3>

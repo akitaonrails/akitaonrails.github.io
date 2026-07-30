@@ -250,6 +250,7 @@ title: AkitaOnRails Blog
 {{% index-list %}}
 ## 2026 - July
 
+- <a class="aor-index-list__main-link" href="/en/2026/07/30/removing-drm-from-kindle-ebooks-in-2026/" title="I used Calibre, DeDRM 10.0.28, KFX Input, and the Microsoft Store Kindle app in an Omarchy VM to archive 106 books and validate an EPUB conversion workflow I control.">Removing DRM from Kindle Ebooks in 2026</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/en/tags/storage-and-backup/">#storage-and-backup</a><a class="aor-tag-link" href="/en/tags/linux/">#linux</a><a class="aor-tag-link" href="/en/tags/open-source/">#open-source</a></span>
 - <a class="aor-index-list__main-link" href="/en/2026/07/30/new-llm-benchmark-i-reran-every-test/" title="I reran the LLM Coding Benchmark with a harder test, three phases, native harnesses, and new tiers. Fable led, Kimi won on cost, and 23 models proved suitable for programming.">New LLM Benchmark: I Reran Every Test!</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/en/tags/llm-benchmarks/">#llm-benchmarks</a><a class="aor-tag-link" href="/en/tags/llms/">#llms</a><a class="aor-tag-link" href="/en/tags/coding-agents/">#coding-agents</a></span>
 - <a class="aor-index-list__main-link" href="/en/2026/07/25/ai-jail-security-update-docker-opt-in/" title="Issue #88 proved the Docker socket inside ai-jail gave any agent root on the host. In v1.16.0 the passthrough went opt-in. The flaw, a hands-on demo, best practices, and why Podman was born from this criticism.">AI-Jail: Security Update, Docker Goes Opt-In</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/en/tags/ai-jail/">#ai-jail</a><a class="aor-tag-link" href="/en/tags/containers/">#containers</a><a class="aor-tag-link" href="/en/tags/security/">#security</a></span>
 - <a class="aor-index-list__main-link" href="/en/2026/07/25/llm-benchmark-is-opus-5-any-good/" title="Opus 5 scored 95/100 on the Rails benchmark, tying Opus 4.8 and edging Fable 5 by one point. Its API rate is half Fable’s, but this narrow test does not define the best LLM.">LLM Benchmark: Is Opus 5 Any Good?</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/en/tags/llm-benchmarks/">#llm-benchmarks</a><a class="aor-tag-link" href="/en/tags/llms/">#llms</a><a class="aor-tag-link" href="/en/tags/coding-agents/">#coding-agents</a></span>
@@ -424,9 +425,15 @@ title: AkitaOnRails Blog
 <section class="aor-index-month" aria-labelledby="aor-grid-2026-07">
   <div class="aor-index-month__header">
     <h2 id="aor-grid-2026-07">2026 - July</h2>
-    <span>15 posts</span>
+    <span>16 posts</span>
   </div>
   <div class="aor-post-grid">
+<article class="aor-post-card" title="I used Calibre, DeDRM 10.0.28, KFX Input, and the Microsoft Store Kindle app in an Omarchy VM to archive 106 books and validate an EPUB conversion workflow I control.">
+  <time class="aor-post-card__date" datetime="2026-07-30">Jul 30, 2026</time>
+  <h3 class="aor-post-card__title"><a class="aor-post-card__title-link" href="/en/2026/07/30/removing-drm-from-kindle-ebooks-in-2026/">Removing DRM from Kindle Ebooks in 2026</a></h3>
+  <span class="aor-post-tags aor-post-tags--card"><a class="aor-tag-link" href="/en/tags/storage-and-backup/">#storage-and-backup</a><a class="aor-tag-link" href="/en/tags/linux/">#linux</a><a class="aor-tag-link" href="/en/tags/open-source/">#open-source</a></span>
+  <p class="aor-post-card__description">I used Calibre, DeDRM 10.0.28, KFX Input, and the Microsoft Store Kindle app in an Omarchy VM to archive 106 books and validate an EPUB conversion workflow I control.</p>
+</article>
 <article class="aor-post-card" title="I reran the LLM Coding Benchmark with a harder test, three phases, native harnesses, and new tiers. Fable led, Kimi won on cost, and 23 models proved suitable for programming.">
   <time class="aor-post-card__date" datetime="2026-07-30">Jul 30, 2026</time>
   <h3 class="aor-post-card__title"><a class="aor-post-card__title-link" href="/en/2026/07/30/new-llm-benchmark-i-reran-every-test/">New LLM Benchmark: I Reran Every Test!</a></h3>
