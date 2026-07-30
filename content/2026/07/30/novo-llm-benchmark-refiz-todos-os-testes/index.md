@@ -80,29 +80,29 @@ Esta é a tabela consolidada do v2, com uma entrada por modelo no harness prefer
 
 | # | Modelo | Score | Tier | Harness |
 |---:|---|---:|:---:|---|
-| 1 | Claude Fable 5 | **96** | A | Claude Code |
-| 2 | Claude Sonnet 5 | **95** | A | Claude Code |
-| 2 | Claude Opus 5 | **95** | A | Claude Code |
-| 2 | Kimi K3 | **95** | A | Kimi CLI |
-| 5 | GPT 5.6 Sol | **93** | A | Codex |
-| 5 | Claude Opus 4.8 | **93** | A | Claude Code |
-| 7 | GLM 5.2 | **92** | A | OpenCode |
-| 7 | Kimi K2.5 | **92** | A | OpenCode |
-| 7 | Gemini 3.6 Flash @ high | **92** | A | Antigravity |
-| 10 | MiniMax M3 | **91** | A | OpenCode |
-| 10 | Kimi K2.6 | **91** | A | OpenCode |
-| 10 | Claude Opus 4.7 | **91** | A | Claude Code |
-| 10 | GPT 5.6 Luna | **91** | A | Codex |
-| 10 | Grok 4.5 | **91** | A | grok CLI |
-| 15 | Nex-N2-Pro | **88** | A | OpenCode |
-| 15 | GPT 5.5 | **88** | A | Codex |
-| 15 | Gemini 3.1 Pro @ high | **88** | A | Antigravity |
-| 18 | Claude Sonnet 4.6 | **87** | A | Claude Code |
-| 19 | GPT 5.4 | **86** | A | Codex |
-| 19 | Kimi K2.7-Coding | **86** | A | Kimi CLI |
-| 21 | Step 3.7 Flash | **84** | A | OpenCode |
-| 22 | Claude Opus 4.6 | **83** | A | Claude Code |
-| 22 | GLM 5 | **83** | A | OpenCode |
+| 1 | Claude Fable 5 | **96** | A.1 | Claude Code |
+| 2 | Claude Sonnet 5 | **95** | A.1 | Claude Code |
+| 2 | Claude Opus 5 | **95** | A.1 | Claude Code |
+| 2 | Kimi K3 | **95** | A.1 | Kimi CLI |
+| 5 | GPT 5.6 Sol | **93** | A.1 | Codex |
+| 5 | Claude Opus 4.8 | **93** | A.1 | Claude Code |
+| 7 | GLM 5.2 | **92** | A.1 | OpenCode |
+| 7 | Kimi K2.5 | **92** | A.1 | OpenCode |
+| 7 | Gemini 3.6 Flash @ high | **92** | A.1 | Antigravity |
+| 10 | MiniMax M3 | **91** | A.1 | OpenCode |
+| 10 | Kimi K2.6 | **91** | A.1 | OpenCode |
+| 10 | Claude Opus 4.7 | **91** | A.1 | Claude Code |
+| 10 | GPT 5.6 Luna | **91** | A.1 | Codex |
+| 10 | Grok 4.5 | **91** | A.1 | grok CLI |
+| 15 | Nex-N2-Pro | **88** | A.2 | OpenCode |
+| 15 | GPT 5.5 | **88** | A.2 | Codex |
+| 15 | Gemini 3.1 Pro @ high | **88** | A.2 | Antigravity |
+| 18 | Claude Sonnet 4.6 | **87** | A.2 | Claude Code |
+| 19 | GPT 5.4 | **86** | A.2 | Codex |
+| 19 | Kimi K2.7-Coding | **86** | A.2 | Kimi CLI |
+| 21 | Step 3.7 Flash | **84** | A.2 | OpenCode |
+| 22 | Claude Opus 4.6 | **83** | A.2 | Claude Code |
+| 22 | GLM 5 | **83** | A.2 | OpenCode |
 | 24 | DeepSeek V4 Pro | **82** | B | OpenCode |
 | 25 | DeepSeek V4 Flash | **80** | B | OpenCode |
 | 26 | Qwen 3.6 Plus | **76** | B | OpenCode |
@@ -119,14 +119,17 @@ O novo corte foi ancorado no Claude Opus 4.6, que fez 83 e mostrou o mínimo nec
 
 | Tier | Score | Como eu leio |
 |:---:|---:|---|
-| **A** | **83 ou mais** | Serve pra programação. Todos conseguem entregar o trabalho completo; a escolha passa a ser custo, tempo, harness e tipo de defeito. |
+| **A.1** | **90 ou mais** | Fronteira desta prova. Entrega mais completa e consistente; diferenças de um ou dois pontos dentro do grupo continuam sendo ruído. |
+| **A.2** | **83 a 89** | Serve pra programação e passou pelo mesmo piso de competência, mas deixou correções ou limitações mais visíveis. Ainda recomendo, com revisão mais atenta. |
 | **B** | **73 a 82** | Está perto, mas ainda exige limpeza humana em ponto importante. Não recomendo pra trabalho autônomo; mantenho no radar. |
 | **C** | **51 a 72** | Não recomendo pra programação. Ainda pode servir pra tradução, resumo, classificação e agentes simples. |
 | **D** | **50 ou menos** | Comportamento inconsistente, quebrado ou difícil de prever. Não me sinto seguro recomendando nem pra automação simples. |
 
-Temos **23 modelos no Tier A**. Isso não significa que todos são iguais. Significa que qualquer um deles já passou do piso de competência pra esse tipo de trabalho. Um pode ser melhor em refactor, outro em debugging, outro em frontend, outro no seu monolito de quinze anos. A prova não mede tudo isso.
+Temos **14 modelos no A.1** e **9 no A.2**. Os 23 passaram do piso de competência pra esse tipo de trabalho. A subdivisão ajuda a escolher por onde começar: A.1 concentra os resultados de fronteira; A.2 reúne modelos competentes que exigiram mais consertos, deixaram testes mais rasos ou carregaram limitações operacionais mais claras.
 
-Tier A é grupo de candidatos. Tier C e D são grupos que eu corto antes de começar.
+Isso não transforma 96 em uma inteligência universalmente maior que 91, nem torna um A.2 ruim. Um modelo A.2 pode ser melhor em refactor, debugging, frontend ou dentro do seu monolito de quinze anos. A prova não mede tudo isso. O corte só evita colocar 23 opções num balde grande demais.
+
+A.1 e A.2 formam o grupo de candidatos. Tier C e D são grupos que eu corto antes de começar.
 
 ## Afinal, qual é o melhor: Fable, Opus, Sol ou Kimi?
 
@@ -178,7 +181,7 @@ Do lado da OpenAI:
 | GPT 5.5 | 88 | 58 min | ~$53 |
 | GPT 5.4 | 86 | 67 min | ~$26 |
 
-Sol compra dois pontos sobre Luna, mas Luna termina onze minutos antes e custa pouco mais de um terço no cálculo que desconta cache hits. Ambos são Tier A. Pra maior rigor eu começaria com Sol; pra volume, Luna parece muito mais racional.
+Sol compra dois pontos sobre Luna, mas Luna termina onze minutos antes e custa pouco mais de um terço no cálculo que desconta cache hits. Ambos são A.1. Pra maior rigor eu começaria com Sol; pra volume, Luna parece muito mais racional.
 
 O detalhe importante é o cache. O evento novo do Codex expôs que 19,7 dos 20,4 milhões de tokens de input da Luna eram cache hits. Cobrar tudo como input novo daria $105,45. Com a tarifa de cache, cai pra $16,79. Qualquer tabela de custo que mistura CLIs sem entender o que cada uma reporta está comparando banana com JSON.
 
@@ -188,16 +191,16 @@ A conversa de que modelo chinês só serve como alternativa barata ficou velha.
 
 | Modelo | Score | Tier | Tempo | Custo reportado |
 |---|---:|:---:|---:|---:|
-| Kimi K3 | 95 | A | 65 min | $6,14 equivalente, assinatura |
-| Kimi K2.5 | 92 | A | 43 min | $0,0275, API |
-| Kimi K2.6 | 91 | A | 34 min | $0,0581, API |
-| Kimi K2.7-Coding | 86 | A | 54 min | $4,37 equivalente, assinatura |
-| MiniMax M3 | 91 | A | 113 min | $0,17, API |
-| GLM 5.2 | 92 | A | 155 min | $0 marginal, assinatura Z.ai |
+| Kimi K3 | 95 | A.1 | 65 min | $6,14 equivalente, assinatura |
+| Kimi K2.5 | 92 | A.1 | 43 min | $0,0275, API |
+| Kimi K2.6 | 91 | A.1 | 34 min | $0,0581, API |
+| Kimi K2.7-Coding | 86 | A.2 | 54 min | $4,37 equivalente, assinatura |
+| MiniMax M3 | 91 | A.1 | 113 min | $0,17, API |
+| GLM 5.2 | 92 | A.1 | 155 min | $0 marginal, assinatura Z.ai |
 | DeepSeek V4 Pro | 82 | B | 57 min | $0,0127, API |
 | DeepSeek V4 Flash | 80 | B | 36 min | $0,0054, API |
 
-Kimi K3 empatou com Opus 5. K2.5, K2.6, MiniMax M3 e GLM 5.2 ficaram no mesmo Tier A de Claude e GPT. O custo reportado dos três últimos é ridículo perto dos líderes americanos, embora as métricas de token não sejam perfeitamente comparáveis entre CLIs.
+Kimi K3 empatou com Opus 5. K2.5, K2.6, MiniMax M3 e GLM 5.2 ficaram no mesmo A.1 de Claude e GPT. O custo reportado dos três últimos é ridículo perto dos líderes americanos, embora as métricas de token não sejam perfeitamente comparáveis entre CLIs.
 
 O Kimi é a família mais fácil de recomendar hoje. K3 oferece qualidade de topo na assinatura barata. K2.5 e K2.6 foram absurdamente econômicos via API. K2.7 ficou abaixo dos irmãos, mas rodou em outro harness, então não vou inventar uma historinha de evolução linear com quatro pontos isolados.
 
@@ -223,7 +226,8 @@ Fable 5 ficou no topo com 96. Sonnet 5, Opus 5 e Kimi K3 empataram em 95. Sol ve
 
 Pra escolher o que usar, a leitura prática é outra:
 
-- qualquer Tier A já serve pra programação;
+- Tier A.1 reúne os 14 resultados de fronteira, todos com 90 ou mais;
+- Tier A.2 reúne 9 modelos competentes entre 83 e 89, ainda recomendáveis com revisão mais atenta;
 - Tier B está perto, mas ainda não recomendo pra trabalho autônomo;
 - Tier C fica pra tradução, resumo e agentes simples;
 - Tier D tem comportamento inconsistente demais pra eu recomendar;
