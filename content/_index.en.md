@@ -12,7 +12,7 @@ title: AkitaOnRails Blog
   <div id="aor-featured-posts-en-body" class="aor-featured__body">
     <div class="aor-featured__list" data-index-view="list">
       <ul>
-            <li><code>Jul 25</code> — <a href="/en/2026/07/25/llm-benchmark-is-opus-5-any-good/" title="Opus 5 scored 95/100 on the Rails benchmark, tying Opus 4.8 and edging Fable 5 by one point. Its API rate is half Fable’s, but this narrow test does not define the best LLM.">LLM Benchmark: Is Opus 5 Any Good?</a><br><span class="aor-post-tags aor-post-tags--featured-list"><a class="aor-tag-link" href="/en/tags/llm-benchmarks/">#llm-benchmarks</a><a class="aor-tag-link" href="/en/tags/llms/">#llms</a><a class="aor-tag-link" href="/en/tags/coding-agents/">#coding-agents</a></span></li>
+            <li><code>Jul 30</code> — <a href="/en/2026/07/30/new-llm-benchmark-i-reran-every-test/" title="I reran the LLM Coding Benchmark with a harder test, three phases, native harnesses, and new tiers. Fable led, Kimi won on cost, and 23 models proved suitable for programming.">New LLM Benchmark: I Reran Every Test!</a><br><span class="aor-post-tags aor-post-tags--featured-list"><a class="aor-tag-link" href="/en/tags/llm-benchmarks/">#llm-benchmarks</a><a class="aor-tag-link" href="/en/tags/llms/">#llms</a><a class="aor-tag-link" href="/en/tags/coding-agents/">#coding-agents</a></span></li>
             <li><code>Jul 20</code> — <a href="/en/2026/07/20/whats-new-ai-memory-switch-agents-without-losing-session/" title="ai-memory run keeps the same programming session while switching among Claude Code, Codex, and other harnesses, with searchable workstreams and integration with ai-jail and ai-usagebar.">What&#39;s New in My AI-MEMORY: Switch AI Agents Without Losing the Session</a><br><span class="aor-post-tags aor-post-tags--featured-list"><a class="aor-tag-link" href="/en/tags/ai-memory/">#ai-memory</a><a class="aor-tag-link" href="/en/tags/coding-agents/">#coding-agents</a><a class="aor-tag-link" href="/en/tags/ai-jail/">#ai-jail</a><a class="aor-tag-link" href="/en/tags/ai-usagebar/">#ai-usagebar</a></span></li>
             <li><code>Jul 12</code> — <a href="/en/2026/07/12/quantum-news-majorana-2-and-understanding-shor/" title="Microsoft announced Majorana 2 with 20-second qubits and physicists answering that nothing was resolved. I take the chance to properly explain Shor&#39;s algorithm, why factoring becomes period finding, and what quantum computers are actually good at.">Quantum News: Majorana 2 and Understanding Shor</a><br><span class="aor-post-tags aor-post-tags--featured-list"><a class="aor-tag-link" href="/en/tags/quantum-computing/">#quantum-computing</a><a class="aor-tag-link" href="/en/tags/science/">#science</a></span></li>
             <li><code>Jul 12</code> — <a href="/en/2026/07/12/using-ai-to-solve-my-little-day-to-day-problems/" title="A roundup of my small open source projects: a desk clock with widgets, manga readers, decent email, typing practice, YouTube karaoke, ComfyUI in Docker and more. All born from real little problems in my day-to-day.">Using AI to Solve My Little Day-to-Day Problems</a><br><span class="aor-post-tags aor-post-tags--featured-list"><a class="aor-tag-link" href="/en/tags/vibe-coding/">#vibe-coding</a><a class="aor-tag-link" href="/en/tags/open-source/">#open-source</a><a class="aor-tag-link" href="/en/tags/artificial-intelligence/">#artificial-intelligence</a></span></li>
@@ -30,11 +30,11 @@ title: AkitaOnRails Blog
   </ul>
 </div>
 <div class="aor-featured__grid aor-post-grid" data-index-view="grid">
-<article class="aor-post-card" title="Opus 5 scored 95/100 on the Rails benchmark, tying Opus 4.8 and edging Fable 5 by one point. Its API rate is half Fable’s, but this narrow test does not define the best LLM.">
-  <time class="aor-post-card__date" datetime="2026-07-25">Jul 25, 2026</time>
-  <h3 class="aor-post-card__title"><a class="aor-post-card__title-link" href="/en/2026/07/25/llm-benchmark-is-opus-5-any-good/">LLM Benchmark: Is Opus 5 Any Good?</a></h3>
+<article class="aor-post-card" title="I reran the LLM Coding Benchmark with a harder test, three phases, native harnesses, and new tiers. Fable led, Kimi won on cost, and 23 models proved suitable for programming.">
+  <time class="aor-post-card__date" datetime="2026-07-30">Jul 30, 2026</time>
+  <h3 class="aor-post-card__title"><a class="aor-post-card__title-link" href="/en/2026/07/30/new-llm-benchmark-i-reran-every-test/">New LLM Benchmark: I Reran Every Test!</a></h3>
   <span class="aor-post-tags aor-post-tags--card"><a class="aor-tag-link" href="/en/tags/llm-benchmarks/">#llm-benchmarks</a><a class="aor-tag-link" href="/en/tags/llms/">#llms</a><a class="aor-tag-link" href="/en/tags/coding-agents/">#coding-agents</a></span>
-  <p class="aor-post-card__description">Opus 5 scored 95/100 on the Rails benchmark, tying Opus 4.8 and edging Fable 5 by one point. Its API rate is half Fable’s, but this narrow test does not define the best LLM.</p>
+  <p class="aor-post-card__description">I reran the LLM Coding Benchmark with a harder test, three phases, native harnesses, and new tiers. Fable led, Kimi won on cost, and 23 models proved suitable for programming.</p>
 </article>
 <article class="aor-post-card" title="ai-memory run keeps the same programming session while switching among Claude Code, Codex, and other harnesses, with searchable workstreams and integration with ai-jail and ai-usagebar.">
   <time class="aor-post-card__date" datetime="2026-07-20">Jul 20, 2026</time>
@@ -250,6 +250,7 @@ title: AkitaOnRails Blog
 {{% index-list %}}
 ## 2026 - July
 
+- <a class="aor-index-list__main-link" href="/en/2026/07/30/new-llm-benchmark-i-reran-every-test/" title="I reran the LLM Coding Benchmark with a harder test, three phases, native harnesses, and new tiers. Fable led, Kimi won on cost, and 23 models proved suitable for programming.">New LLM Benchmark: I Reran Every Test!</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/en/tags/llm-benchmarks/">#llm-benchmarks</a><a class="aor-tag-link" href="/en/tags/llms/">#llms</a><a class="aor-tag-link" href="/en/tags/coding-agents/">#coding-agents</a></span>
 - <a class="aor-index-list__main-link" href="/en/2026/07/25/ai-jail-security-update-docker-opt-in/" title="Issue #88 proved the Docker socket inside ai-jail gave any agent root on the host. In v1.16.0 the passthrough went opt-in. The flaw, a hands-on demo, best practices, and why Podman was born from this criticism.">AI-Jail: Security Update, Docker Goes Opt-In</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/en/tags/ai-jail/">#ai-jail</a><a class="aor-tag-link" href="/en/tags/containers/">#containers</a><a class="aor-tag-link" href="/en/tags/security/">#security</a></span>
 - <a class="aor-index-list__main-link" href="/en/2026/07/25/llm-benchmark-is-opus-5-any-good/" title="Opus 5 scored 95/100 on the Rails benchmark, tying Opus 4.8 and edging Fable 5 by one point. Its API rate is half Fable’s, but this narrow test does not define the best LLM.">LLM Benchmark: Is Opus 5 Any Good?</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/en/tags/llm-benchmarks/">#llm-benchmarks</a><a class="aor-tag-link" href="/en/tags/llms/">#llms</a><a class="aor-tag-link" href="/en/tags/coding-agents/">#coding-agents</a></span>
 - <a class="aor-index-list__main-link" href="/en/2026/07/20/whats-new-ai-memory-switch-agents-without-losing-session/" title="ai-memory run keeps the same programming session while switching among Claude Code, Codex, and other harnesses, with searchable workstreams and integration with ai-jail and ai-usagebar.">What&#39;s New in My AI-MEMORY: Switch AI Agents Without Losing the Session</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/en/tags/ai-memory/">#ai-memory</a><a class="aor-tag-link" href="/en/tags/coding-agents/">#coding-agents</a><a class="aor-tag-link" href="/en/tags/ai-jail/">#ai-jail</a><a class="aor-tag-link" href="/en/tags/ai-usagebar/">#ai-usagebar</a></span>
@@ -423,9 +424,15 @@ title: AkitaOnRails Blog
 <section class="aor-index-month" aria-labelledby="aor-grid-2026-07">
   <div class="aor-index-month__header">
     <h2 id="aor-grid-2026-07">2026 - July</h2>
-    <span>14 posts</span>
+    <span>15 posts</span>
   </div>
   <div class="aor-post-grid">
+<article class="aor-post-card" title="I reran the LLM Coding Benchmark with a harder test, three phases, native harnesses, and new tiers. Fable led, Kimi won on cost, and 23 models proved suitable for programming.">
+  <time class="aor-post-card__date" datetime="2026-07-30">Jul 30, 2026</time>
+  <h3 class="aor-post-card__title"><a class="aor-post-card__title-link" href="/en/2026/07/30/new-llm-benchmark-i-reran-every-test/">New LLM Benchmark: I Reran Every Test!</a></h3>
+  <span class="aor-post-tags aor-post-tags--card"><a class="aor-tag-link" href="/en/tags/llm-benchmarks/">#llm-benchmarks</a><a class="aor-tag-link" href="/en/tags/llms/">#llms</a><a class="aor-tag-link" href="/en/tags/coding-agents/">#coding-agents</a></span>
+  <p class="aor-post-card__description">I reran the LLM Coding Benchmark with a harder test, three phases, native harnesses, and new tiers. Fable led, Kimi won on cost, and 23 models proved suitable for programming.</p>
+</article>
 <article class="aor-post-card" title="Issue #88 proved the Docker socket inside ai-jail gave any agent root on the host. In v1.16.0 the passthrough went opt-in. The flaw, a hands-on demo, best practices, and why Podman was born from this criticism.">
   <time class="aor-post-card__date" datetime="2026-07-25">Jul 25, 2026</time>
   <h3 class="aor-post-card__title"><a class="aor-post-card__title-link" href="/en/2026/07/25/ai-jail-security-update-docker-opt-in/">AI-Jail: Security Update, Docker Goes Opt-In</a></h3>

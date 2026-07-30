@@ -28,7 +28,7 @@ ALLOWED_TAGS = {
 }.transform_values(&:freeze).freeze
 
 FEATURED_POSTS = [
-  ['2026-07-25', 'LLM Benchmark: Opus 5 é bom?', '/2026/07/25/llm-benchmark-opus-5-e-bom/'],
+  ['2026-07-30', 'Novo LLM Benchmark: refiz todos os testes!', '/2026/07/30/novo-llm-benchmark-refiz-todos-os-testes/'],
   ['2026-07-20', 'Novidades no meu AI-MEMORY: cada vez melhor pra usar com suas IAs', '/2026/07/20/novidades-no-meu-ai-memory-cada-vez-melhor-pra-usar-com-suas-ias/'],
   ['2026-07-12', 'Notícias Quânticas: Majorana 2 e entendendo Shor', '/2026/07/12/noticias-quanticas-majorana-2-e-entendendo-shor/'],
   ['2026-07-12', 'Usando IA pra resolver meus probleminhas do dia-a-dia', '/2026/07/12/usando-ia-pra-resolver-meus-probleminhas-do-dia-a-dia/'],
@@ -46,7 +46,7 @@ FEATURED_POSTS = [
 ].freeze
 
 FEATURED_POSTS_EN = [
-  ['2026-07-25', 'LLM Benchmark: Is Opus 5 Any Good?', '/en/2026/07/25/llm-benchmark-is-opus-5-any-good/'],
+  ['2026-07-30', 'New LLM Benchmark: I Reran Every Test!', '/en/2026/07/30/new-llm-benchmark-i-reran-every-test/'],
   ['2026-07-20', "What's New in My AI-MEMORY: Switch AI Agents Without Losing the Session", '/en/2026/07/20/whats-new-ai-memory-switch-agents-without-losing-session/'],
   ['2026-07-12', 'Quantum News: Majorana 2 and Understanding Shor', '/en/2026/07/12/quantum-news-majorana-2-and-understanding-shor/'],
   ['2026-07-12', 'Using AI to Solve My Little Day-to-Day Problems', '/en/2026/07/12/using-ai-to-solve-my-little-day-to-day-problems/'],
