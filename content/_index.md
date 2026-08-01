@@ -248,6 +248,10 @@ title: AkitaOnRails Blog
 </script>
 
 {{% index-list %}}
+## 2026 - Agosto
+
+- <a class="aor-index-list__main-link" href="/2026/08/01/explorando-o-problema-escandaloso-do-rng-da-coinkite/" title="Como um atacante enumera o espaço reduzido de chaves da ColdCard, encontra wallets vulneráveis na blockchain pública e move os fundos. Dados reais do roubo em andamento e código didático passo a passo.">Explorando o problema escandaloso do RNG da Coinkite</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/tags/bitcoin-e-criptomoedas/">#bitcoin-e-criptomoedas</a><a class="aor-tag-link" href="/tags/seguranca/">#seguranca</a><a class="aor-tag-link" href="/tags/hardware/">#hardware</a></span>
+
 ## 2026 - Julho
 
 - <a class="aor-index-list__main-link" href="/2026/07/31/urgente-se-voce-guarda-bitcoins-em-coldcard-mova-tudo/" title="Uma falha de entropia deixou seeds geradas por firmwares da ColdCard muito abaixo da segurança prometida, com perdas estimadas acima de 1.000 BTC. Entenda o bug e migre sem repetir o erro.">URGENTE - Se você guarda Bitcoins em ColdCard: MOVA TUDO</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/tags/bitcoin-e-criptomoedas/">#bitcoin-e-criptomoedas</a><a class="aor-tag-link" href="/tags/seguranca/">#seguranca</a><a class="aor-tag-link" href="/tags/hardware/">#hardware</a></span>
@@ -430,6 +434,20 @@ title: AkitaOnRails Blog
 {{% /index-list %}}
 
 <div id="aor-index-grid" class="aor-index-grid" data-index-view="grid">
+<section class="aor-index-month" aria-labelledby="aor-grid-2026-08">
+  <div class="aor-index-month__header">
+    <h2 id="aor-grid-2026-08">2026 - Agosto</h2>
+    <span>1 post</span>
+  </div>
+  <div class="aor-post-grid">
+<article class="aor-post-card" title="Como um atacante enumera o espaço reduzido de chaves da ColdCard, encontra wallets vulneráveis na blockchain pública e move os fundos. Dados reais do roubo em andamento e código didático passo a passo.">
+  <time class="aor-post-card__date" datetime="2026-08-01">01/08/2026</time>
+  <h3 class="aor-post-card__title"><a class="aor-post-card__title-link" href="/2026/08/01/explorando-o-problema-escandaloso-do-rng-da-coinkite/">Explorando o problema escandaloso do RNG da Coinkite</a></h3>
+  <span class="aor-post-tags aor-post-tags--card"><a class="aor-tag-link" href="/tags/bitcoin-e-criptomoedas/">#bitcoin-e-criptomoedas</a><a class="aor-tag-link" href="/tags/seguranca/">#seguranca</a><a class="aor-tag-link" href="/tags/hardware/">#hardware</a></span>
+  <p class="aor-post-card__description">Como um atacante enumera o espaço reduzido de chaves da ColdCard, encontra wallets vulneráveis na blockchain pública e move os fundos. Dados reais do roubo em andamento e código didático passo a passo.</p>
+</article>
+  </div>
+</section>
 <section class="aor-index-month" aria-labelledby="aor-grid-2026-07">
   <div class="aor-index-month__header">
     <h2 id="aor-grid-2026-07">2026 - Julho</h2>
