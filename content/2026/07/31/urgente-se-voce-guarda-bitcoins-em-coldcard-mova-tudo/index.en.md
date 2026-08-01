@@ -42,6 +42,8 @@ There is one important exception: anyone who added at least **50 fair, independe
 
 A seed imported from another generator was not born from this defective RNG either. It may have other problems, of course, but not this one. Updating firmware now cannot travel back in time and repair any words. You must create a new seed and transfer the UTXOs to addresses derived from it.
 
+> **Restoring the same 24 words on a Trezor, Ledger, SeedSigner, or any other device is NOT a migration. You are still in danger.** The hardware changed; the root and the entire universe of derived private keys remain the same. Another derivation path may display different addresses, but it adds no entropy. If the ColdCard generated that wallet using the weak RNG, importing its seed into another signer merely teaches the new device to reproduce the same vulnerable keys. Create a completely new wallet with new entropy, then make an on-chain transaction that moves the funds from the old wallet to addresses in the new one.
+
 I would do this even with a strong passphrase. The passphrase may have placed an independent barrier in front of the attacker, but Coinkite itself recommends migrating. After a failure of this magnitude, calculating the minimum theoretically acceptable risk is saving money in the wrong place.
 
 ## The bug: `#ifndef` does not mean "if true"
@@ -172,9 +174,11 @@ BTC D00M Guy has [a visual Portuguese-language tutorial on BIP39, dice, and reco
 
 In BIP39, the mnemonic is the main input to PBKDF2-HMAC-SHA512. The salt is the string `mnemonic` concatenated with the passphrase, and the function runs 2,048 iterations. Every passphrase produces a valid wallet. One wrong character does not display "incorrect password"; it opens another, usually empty wallet.
 
-A long, random, independent passphrase can protect an exposed or weak mnemonic. But losing it is just as final as losing the words. A hardware wallet PIN does not replace a passphrase. The PIN protects the physical device; the passphrase participates in key derivation.
+A long, random, unique, and independent passphrase can protect an exposed or weak mnemonic. In the ColdCard case, it adds a secret that did not come from the defective RNG: the attacker must combine every mnemonic candidate with a passphrase attempt. If that passphrase has enough entropy and never leaked, the attack may become infeasible again.
 
-Do not use a movie quote, keyboard pattern, or reused password. Store it separately from the mnemonic and test a complete recovery before depositing a meaningful amount. Record the expected fingerprint and at least one address as well. During recovery, they tell you whether you opened the correct wallet.
+But a quote, human pattern, or reused password becomes an offline dictionary attack with no rate limit. BIP39's 2,048 iterations do not turn a weak passphrase into a strong one. And losing it is just as final as losing the words. A hardware wallet PIN does not replace a passphrase. The PIN protects the physical device; the passphrase participates in key derivation.
+
+Store the passphrase separately from the mnemonic and test a complete recovery before depositing a meaningful amount. Record the expected fingerprint and at least one address as well. During recovery, they tell you whether you opened the correct wallet.
 
 > In the ColdCard case, do not add a passphrase to the vulnerable seed now and call that a migration. Create a new root. The passphrase may be part of the new architecture, but the bitcoin must leave scripts derived from the old root.
 
@@ -242,7 +246,7 @@ Do not turn one emergency into a second accident. I would follow this order:
 
 1. **Take inventory.** List the model, firmware that generated the seed, accounts, passphrases, derivation paths, and every multisig in which that key participates. Do not post balances or addresses on social media.
 2. **Treat the seed as compromised.** Do not enter it into online software or accept any third-party "checker." Keep signing on the device only for as long as it takes to leave.
-3. **Choose the new architecture.** I would not generate the new seed on a ColdCard. Use another new signer bought directly from the manufacturer, a SeedSigner, or 2-of-3 with different implementations. If you insist on reusing your ColdCard, first install the corrected firmware for the proper model and release track.
+3. **Choose the new architecture.** I would not generate the new seed on a ColdCard. Use another new signer bought directly from the manufacturer, a SeedSigner, or 2-of-3 with different implementations. Do not import the old words into it. If you insist on reusing your ColdCard, first install the corrected firmware for the proper model and release track.
 4. **Generate new entropy.** Use independent sources and an audited mixer. For dice, use casino-grade material, multiple sources, and at least 99 rolls for a 24-word mnemonic. I would do more.
 5. **Back up before receiving.** Mnemonic, separate passphrase, fingerprints, and the descriptor for multisig. Never photograph any of them or store them in the cloud.
 6. **Test recovery.** Recreate the wallet and verify fingerprints and addresses. In multisig, prove that two keys can sign without depending on the third.

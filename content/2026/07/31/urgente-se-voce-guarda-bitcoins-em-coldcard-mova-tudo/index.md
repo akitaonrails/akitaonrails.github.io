@@ -42,6 +42,8 @@ Há uma exceção importante: quem acrescentou pelo menos **50 jogadas justas, i
 
 Seed importada de outro gerador também não nasceu desse RNG defeituoso. Ela pode ter outros problemas, claro, mas não este. E atualizar firmware agora não volta no tempo pra reparar palavra nenhuma. Você precisa criar uma seed nova e transferir os UTXOs pra endereços derivados dela.
 
+> **Restaurar as mesmas 24 palavras numa Trezor, Ledger, SeedSigner ou qualquer outro aparelho NÃO é uma migração. Você continua em perigo.** O hardware mudou; a raiz e todo o universo de private keys derivadas continuam os mesmos. Outro derivation path pode até mostrar endereços diferentes, mas não acrescenta entropia. Se a ColdCard gerou aquela wallet com o RNG fraco, importar a seed em outro signer apenas ensina o aparelho novo a reproduzir as mesmas chaves vulneráveis. Crie uma wallet completamente nova, com entropia nova, e faça uma transação on-chain movendo os fundos da wallet antiga pra endereços da nova.
+
 Eu faria isso mesmo tendo uma passphrase forte. A passphrase pode ter colocado uma barreira independente na frente do atacante, mas a própria Coinkite recomenda migrar. Depois de uma falha desta proporção, ficar calculando o mínimo teórico aceitável de risco é economizar no lugar errado.
 
 ## O bug: `#ifndef` não significa "se for verdadeiro"
@@ -172,9 +174,11 @@ O BTC D00M Guy tem [um tutorial visual em português sobre BIP39, dados e teste 
 
 No BIP39, a mnemonic é a entrada principal de PBKDF2-HMAC-SHA512. O salt é a string `mnemonic` concatenada com a passphrase, e a função roda 2.048 iterações. Toda passphrase produz uma wallet válida. Um caractere errado não mostra "senha incorreta"; abre outra wallet, normalmente vazia.
 
-Uma passphrase longa, aleatória e independente pode proteger uma mnemonic exposta ou fraca. Só que perdê-la é tão definitivo quanto perder as palavras. PIN da hardware wallet não substitui passphrase. PIN protege o aparelho físico; passphrase participa da derivação das chaves.
+Uma passphrase longa, aleatória, única e independente pode proteger uma mnemonic exposta ou fraca. No caso ColdCard, ela acrescenta um segredo que não veio do RNG defeituoso: o atacante precisa combinar cada candidata à mnemonic com uma tentativa de passphrase. Se essa passphrase tiver entropia suficiente e nunca tiver vazado, o ataque pode voltar a ser inviável.
 
-Não use citação de filme, padrão de teclado nem senha reaproveitada. Guarde separada da mnemonic e teste uma restauração completa antes de depositar valor relevante. Registre também o fingerprint esperado e pelo menos um endereço. Na restauração, eles dizem se você entrou na wallet certa.
+Mas citação, padrão humano ou senha reutilizada vira ataque de dicionário offline, sem rate limit. As 2.048 iterações do BIP39 não transformam uma passphrase fraca em forte. E perdê-la é tão definitivo quanto perder as palavras. PIN da hardware wallet não substitui passphrase. PIN protege o aparelho físico; passphrase participa da derivação das chaves.
+
+Guarde a passphrase separada da mnemonic e teste uma restauração completa antes de depositar valor relevante. Registre também o fingerprint esperado e pelo menos um endereço. Na restauração, eles dizem se você entrou na wallet certa.
 
 > No caso ColdCard, não acrescente uma passphrase agora à seed vulnerável e chame isso de migração. Crie raiz nova. A passphrase pode fazer parte da nova arquitetura, mas os bitcoins precisam sair dos scripts derivados da raiz antiga.
 
@@ -242,7 +246,7 @@ Não transforme uma emergência num segundo acidente. Eu seguiria esta ordem:
 
 1. **Faça o inventário.** Liste modelo, firmware que gerou a seed, contas, passphrases, derivation paths e multisigs onde aquela chave participa. Não publique saldo nem endereço em rede social.
 2. **Considere a seed comprometida.** Não a digite em software online e não aceite "checker" de terceiros. Continue assinando no aparelho apenas pelo tempo necessário pra sair.
-3. **Escolha a arquitetura nova.** Eu não geraria a nova seed numa ColdCard. Use outro signer novo, comprado diretamente do fabricante, um SeedSigner ou 2-de-3 com implementações diferentes. Se insistir em reutilizar a sua ColdCard, instale antes o firmware corrigido pro modelo e release track corretos.
+3. **Escolha a arquitetura nova.** Eu não geraria a nova seed numa ColdCard. Use outro signer novo, comprado diretamente do fabricante, um SeedSigner ou 2-de-3 com implementações diferentes. Não importe nele as palavras antigas. Se insistir em reutilizar a sua ColdCard, instale antes o firmware corrigido pro modelo e release track corretos.
 4. **Gere entropia nova.** Use fontes independentes e um mixer auditado. Pra dados, use material casino-grade, várias fontes e pelo menos 99 jogadas pra uma mnemonic de 24 palavras. Eu faria mais.
 5. **Faça backup antes de receber.** Mnemonic, passphrase separada, fingerprints e descriptor no caso de multisig. Nunca fotografe nem armazene em cloud.
 6. **Teste restauração.** Recrie a wallet, confira fingerprint e endereços. Em multisig, prove que duas chaves conseguem assinar sem depender da terceira.
