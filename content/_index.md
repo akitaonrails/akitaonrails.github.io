@@ -250,6 +250,7 @@ title: AkitaOnRails Blog
 {{% index-list %}}
 ## 2026 - Julho
 
+- <a class="aor-index-list__main-link" href="/2026/07/31/urgente-se-voce-guarda-bitcoins-em-coldcard-mova-tudo/" title="Uma falha de entropia deixou seeds geradas por firmwares da ColdCard muito abaixo da segurança prometida, com perdas estimadas acima de 1.000 BTC. Entenda o bug e migre sem repetir o erro.">URGENTE - Se você guarda Bitcoins em ColdCard: MOVA TUDO</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/tags/bitcoin-e-criptomoedas/">#bitcoin-e-criptomoedas</a><a class="aor-tag-link" href="/tags/seguranca/">#seguranca</a><a class="aor-tag-link" href="/tags/hardware/">#hardware</a></span>
 - <a class="aor-index-list__main-link" href="/2026/07/30/removendo-drm-de-ebooks-de-kindle-em-2026/" title="Usei Calibre, DeDRM 10.0.28, KFX Input e o Kindle da Microsoft Store numa VM do Omarchy para arquivar 106 livros e validar a conversão pra EPUB sob meu controle.">Removendo DRM de ebooks de Kindle em 2026</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/tags/armazenamento-e-backup/">#armazenamento-e-backup</a><a class="aor-tag-link" href="/tags/linux/">#linux</a><a class="aor-tag-link" href="/tags/open-source/">#open-source</a></span>
 - <a class="aor-index-list__main-link" href="/2026/07/30/novo-llm-benchmark-refiz-todos-os-testes/" title="Refiz o LLM Coding Benchmark com uma prova mais difícil, três fases, harnesses nativos e tiers novos. Fable liderou, Kimi venceu no custo e 23 modelos ficaram aptos para programação.">Novo LLM Benchmark: refiz todos os testes!</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/tags/benchmarks-de-llm/">#benchmarks-de-llm</a><a class="aor-tag-link" href="/tags/llms/">#llms</a><a class="aor-tag-link" href="/tags/agentes-de-codigo/">#agentes-de-codigo</a></span>
 - <a class="aor-index-list__main-link" href="/2026/07/25/ai-jail-update-seguranca-docker-opt-in/" title="O issue #88 provou que o socket do Docker no ai-jail dava root no host a qualquer agente. Na v1.16.0 o passthrough virou opt-in. A falha, a demo, as boas práticas e por que o Podman nasceu dessa crítica.">AI-Jail: update de segurança, Docker vira opt-in</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/tags/ai-jail/">#ai-jail</a><a class="aor-tag-link" href="/tags/containers/">#containers</a><a class="aor-tag-link" href="/tags/seguranca/">#seguranca</a></span>
@@ -432,9 +433,15 @@ title: AkitaOnRails Blog
 <section class="aor-index-month" aria-labelledby="aor-grid-2026-07">
   <div class="aor-index-month__header">
     <h2 id="aor-grid-2026-07">2026 - Julho</h2>
-    <span>16 posts</span>
+    <span>17 posts</span>
   </div>
   <div class="aor-post-grid">
+<article class="aor-post-card" title="Uma falha de entropia deixou seeds geradas por firmwares da ColdCard muito abaixo da segurança prometida, com perdas estimadas acima de 1.000 BTC. Entenda o bug e migre sem repetir o erro.">
+  <time class="aor-post-card__date" datetime="2026-07-31">31/07/2026</time>
+  <h3 class="aor-post-card__title"><a class="aor-post-card__title-link" href="/2026/07/31/urgente-se-voce-guarda-bitcoins-em-coldcard-mova-tudo/">URGENTE - Se você guarda Bitcoins em ColdCard: MOVA TUDO</a></h3>
+  <span class="aor-post-tags aor-post-tags--card"><a class="aor-tag-link" href="/tags/bitcoin-e-criptomoedas/">#bitcoin-e-criptomoedas</a><a class="aor-tag-link" href="/tags/seguranca/">#seguranca</a><a class="aor-tag-link" href="/tags/hardware/">#hardware</a></span>
+  <p class="aor-post-card__description">Uma falha de entropia deixou seeds geradas por firmwares da ColdCard muito abaixo da segurança prometida, com perdas estimadas acima de 1.000 BTC. Entenda o bug e migre sem repetir o erro.</p>
+</article>
 <article class="aor-post-card" title="Usei Calibre, DeDRM 10.0.28, KFX Input e o Kindle da Microsoft Store numa VM do Omarchy para arquivar 106 livros e validar a conversão pra EPUB sob meu controle.">
   <time class="aor-post-card__date" datetime="2026-07-30">30/07/2026</time>
   <h3 class="aor-post-card__title"><a class="aor-post-card__title-link" href="/2026/07/30/removendo-drm-de-ebooks-de-kindle-em-2026/">Removendo DRM de ebooks de Kindle em 2026</a></h3>
