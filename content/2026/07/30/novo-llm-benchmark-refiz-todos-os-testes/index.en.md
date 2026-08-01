@@ -4,7 +4,7 @@ slug: "new-llm-benchmark-i-reran-every-test"
 date: '2026-07-30T15:00:00-03:00'
 draft: false
 translationKey: novo-llm-benchmark-refiz-todos-os-testes
-description: "I reran the LLM Coding Benchmark with a harder test, three phases, native harnesses, and new tiers. Fable led, Kimi won on cost, and 23 models proved suitable for programming."
+description: "I reran the LLM Coding Benchmark with a harder test, three phases, native harnesses, and new tiers. Fable led, Kimi K3 had the best cost among the leaders, and 23 models proved suitable for programming."
 tags:
 - llm-benchmarks
 - llms
@@ -192,23 +192,23 @@ The line about Chinese models being useful only as cheaper alternatives is stale
 | Model | Score | Tier | Time | Reported cost |
 |---|---:|:---:|---:|---:|
 | Kimi K3 | 95 | A.1 | 65 min | $6.14 equivalent, subscription |
-| Kimi K2.5 | 92 | A.1 | 43 min | $0.0275, API |
-| Kimi K2.6 | 91 | A.1 | 34 min | $0.0581, API |
+| Kimi K2.5 | 92 | A.1 | 43 min | $1.50, API |
+| Kimi K2.6 | 91 | A.1 | 34 min | $2.64, API |
 | Kimi K2.7-Coding | 86 | A.2 | 54 min | $4.37 equivalent, subscription |
-| MiniMax M3 | 91 | A.1 | 113 min | $0.17, API |
-| GLM 5.2 | 92 | A.1 | 155 min | $0 marginal, Z.ai subscription |
-| DeepSeek V4 Pro | 82 | B | 57 min | $0.0127, API |
-| DeepSeek V4 Flash | 80 | B | 36 min | $0.0054, API |
+| MiniMax M3 | 91 | A.1 | 113 min | $7.72, API |
+| GLM 5.2 | 92 | A.1 | 155 min | $0 marginal on the subscription, $12.05 API equivalent |
+| DeepSeek V4 Pro | 82 | B | 57 min | $0.35, API |
+| DeepSeek V4 Flash | 80 | B | 36 min | $0.81, API |
 
-Kimi K3 tied Opus 5. K2.5, K2.6, MiniMax M3, and GLM 5.2 landed in the same A.1 as Claude and GPT. The reported cost of the latter three is ridiculous next to the American leaders, although token metrics are not perfectly comparable across CLIs.
+Kimi K3 tied Opus 5. K2.5, K2.6, MiniMax M3, and GLM 5.2 landed in the same A.1 as Claude and GPT. The OpenCode runs are still cheaper than the $16 to $45 range of the leaders run through Claude Code and Codex, but this is no longer a comparison between pennies and dozens of dollars. And a subscription is not an API: GLM had zero marginal cost because it ran on Z.ai's plan; the same usage would cost about $12.05 through the API.
 
-Kimi is the easiest family to recommend today. K3 offers top-tier quality through a cheap subscription. K2.5 and K2.6 were absurdly economical over the API. K2.7 landed below its siblings, but it ran in another harness, so I am not going to invent a tidy progression story from four isolated data points.
+Kimi is the easiest family to recommend today. K3 offers top-tier quality through a cheap subscription. K2.5 and K2.6 were economical over the API, costing $1.50 and $2.64. K2.7 landed below its siblings, but it ran in another harness, so I am not going to invent a tidy progression story from four isolated data points.
 
-MiniMax M3 deserves attention and caution in equal measure. It scored 91 for seventeen cents, but took almost two hours and was especially sensitive to harness scaffolding. Great value when it clicks; a terrible candidate to trust without watching.
+MiniMax M3 deserves attention and caution in equal measure. It scored 91 for $7.72, still less than one run through the American leaders, but burned 121 million tokens and took almost two hours. It was the most expensive and token-hungry OpenCode run. The score is good; the usage profile, not so much.
 
-GLM 5.2 scored 92 at zero marginal cost on Z.ai's plan. It took about two and a half hours. If wall-clock time does not matter, it is a very strong option. If you work in short cycles, Grok 4.5 delivered 91 in about 25 minutes through grok CLI, more than six times faster.
+GLM 5.2 scored 92 at zero marginal cost on Z.ai's plan, but consumed the equivalent of $12.05 through the API. It took about two and a half hours. If wall-clock time does not matter, it is a very strong option. If you work in short cycles, Grok 4.5 delivered 91 in about 25 minutes through grok CLI, more than six times faster.
 
-DeepSeek remains almost comically cheap, but stopped in Tier B. V4 Pro scored 82 and V4 Flash scored 80. They're close, and I want to repeat the test when a new version arrives. Today I still would not leave either one working alone as a coding agent in a codebase that matters. Saving pennies only to spend an hour reviewing a structural defect is lousy math.
+DeepSeek remains cheap, but stopped in Tier B. V4 Pro scored 82 for $0.35 and V4 Flash scored 80 for $0.81. They're close, and I want to repeat the test when a new version arrives. Today I still would not leave either one working alone as a coding agent in a codebase that matters. Saving one or two dollars only to spend an hour reviewing a structural defect is lousy math.
 
 ## Why I did not rerun the local models
 
@@ -234,7 +234,7 @@ Choosing what to use is a different reading:
 - inside Tier A, choose by subscription, speed, cost, and harness;
 - one or two points do not make anyone the universal champion of intelligence.
 
-My own choice remains concentrated on Claude Code and Codex because those are the harnesses I use every day. Kimi K3 has become a serious top-tier alternative. Grok 4.5 is the speed champion of this round. GLM and MiniMax offer nearly free runs if you can stand the wait. Sonnet 5 proved that reflexively paying for or selecting the "higher" tier can be a waste.
+My own choice remains concentrated on Claude Code and Codex because those are the harnesses I use every day. Kimi K3 has become a serious top-tier alternative. Grok 4.5 is the speed champion of this round. GLM has zero marginal cost on the subscription and MiniMax still costs less than the leaders, but neither is a speed pick. Sonnet 5 proved that reflexively paying for or selecting the "higher" tier can be a waste.
 
 All generated code, prompts, results, self-reviews, rubric details, and corrections are in [llm-coding-benchmark](https://github.com/akitaonrails/llm-coding-benchmark). The major code and test overhaul is already on `master`. Contributions are welcome, whether you want to add a model, improve a harness, dispute a deduction, or find another bug in the auditor.
 

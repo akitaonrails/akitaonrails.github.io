@@ -4,7 +4,7 @@ slug: "novo-llm-benchmark-refiz-todos-os-testes"
 date: '2026-07-30T15:00:00-03:00'
 draft: false
 translationKey: novo-llm-benchmark-refiz-todos-os-testes
-description: "Refiz o LLM Coding Benchmark com uma prova mais difícil, três fases, harnesses nativos e tiers novos. Fable liderou, Kimi venceu no custo e 23 modelos ficaram aptos para programação."
+description: "Refiz o LLM Coding Benchmark com uma prova mais difícil, três fases, harnesses nativos e tiers novos. Fable liderou, Kimi K3 teve o melhor custo entre os líderes e 23 modelos ficaram aptos para programação."
 tags:
 - benchmarks-de-llm
 - llms
@@ -192,23 +192,23 @@ A conversa de que modelo chinês só serve como alternativa barata ficou velha.
 | Modelo | Score | Tier | Tempo | Custo reportado |
 |---|---:|:---:|---:|---:|
 | Kimi K3 | 95 | A.1 | 65 min | $6,14 equivalente, assinatura |
-| Kimi K2.5 | 92 | A.1 | 43 min | $0,0275, API |
-| Kimi K2.6 | 91 | A.1 | 34 min | $0,0581, API |
+| Kimi K2.5 | 92 | A.1 | 43 min | $1,50, API |
+| Kimi K2.6 | 91 | A.1 | 34 min | $2,64, API |
 | Kimi K2.7-Coding | 86 | A.2 | 54 min | $4,37 equivalente, assinatura |
-| MiniMax M3 | 91 | A.1 | 113 min | $0,17, API |
-| GLM 5.2 | 92 | A.1 | 155 min | $0 marginal, assinatura Z.ai |
-| DeepSeek V4 Pro | 82 | B | 57 min | $0,0127, API |
-| DeepSeek V4 Flash | 80 | B | 36 min | $0,0054, API |
+| MiniMax M3 | 91 | A.1 | 113 min | $7,72, API |
+| GLM 5.2 | 92 | A.1 | 155 min | $0 marginal na assinatura, $12,05 equivalente em API |
+| DeepSeek V4 Pro | 82 | B | 57 min | $0,35, API |
+| DeepSeek V4 Flash | 80 | B | 36 min | $0,81, API |
 
-Kimi K3 empatou com Opus 5. K2.5, K2.6, MiniMax M3 e GLM 5.2 ficaram no mesmo A.1 de Claude e GPT. O custo reportado dos três últimos é ridículo perto dos líderes americanos, embora as métricas de token não sejam perfeitamente comparáveis entre CLIs.
+Kimi K3 empatou com Opus 5. K2.5, K2.6, MiniMax M3 e GLM 5.2 ficaram no mesmo A.1 de Claude e GPT. As execuções via OpenCode continuam mais baratas que a faixa de $16 a $45 dos líderes rodados em Claude Code e Codex, mas já não é uma comparação de centavos contra dezenas de dólares. E assinatura não é API: o GLM teve custo marginal zero porque rodou no plano da Z.ai; o mesmo consumo sairia por cerca de $12,05 via API.
 
-O Kimi é a família mais fácil de recomendar hoje. K3 oferece qualidade de topo na assinatura barata. K2.5 e K2.6 foram absurdamente econômicos via API. K2.7 ficou abaixo dos irmãos, mas rodou em outro harness, então não vou inventar uma historinha de evolução linear com quatro pontos isolados.
+O Kimi é a família mais fácil de recomendar hoje. K3 oferece qualidade de topo na assinatura barata. K2.5 e K2.6 foram econômicos via API, custando $1,50 e $2,64. K2.7 ficou abaixo dos irmãos, mas rodou em outro harness, então não vou inventar uma historinha de evolução linear com quatro pontos isolados.
 
-MiniMax M3 merece atenção e cautela na mesma medida. Fez 91 por dezessete centavos, mas levou quase duas horas e foi especialmente sensível ao scaffolding do harness. Ótimo valor quando encaixa; péssimo candidato pra confiar sem observar.
+MiniMax M3 merece atenção e cautela na mesma medida. Fez 91 por $7,72, ainda abaixo de uma rodada nos líderes americanos, mas gastou 121 milhões de tokens e levou quase duas horas. Foi a execução mais cara e mais voraz em tokens entre as rodadas de OpenCode. O score é bom; o perfil de uso, nem tanto.
 
-GLM 5.2 fez 92 com custo marginal zero no plano da Z.ai. Levou cerca de duas horas e meia. Se tempo de wall clock não importa, é uma opção muito forte. Se você trabalha em ciclos curtos, Grok 4.5 entregou 91 em cerca de 25 minutos no grok CLI, mais de seis vezes mais rápido.
+GLM 5.2 fez 92 com custo marginal zero no plano da Z.ai, mas consumiu o equivalente a $12,05 em API. Levou cerca de duas horas e meia. Se tempo de wall clock não importa, é uma opção muito forte. Se você trabalha em ciclos curtos, Grok 4.5 entregou 91 em cerca de 25 minutos no grok CLI, mais de seis vezes mais rápido.
 
-DeepSeek continua barato num nível quase cômico, mas parou no Tier B. V4 Pro fez 82 e V4 Flash 80. Estão perto e quero repetir quando vier uma versão nova. Hoje eu ainda não usaria nenhum dos dois pra deixar um coding agent trabalhando sozinho numa codebase que importa. Economizar centavos pra depois gastar uma hora revisando defeito estrutural é uma conta ruim.
+DeepSeek continua barato, mas parou no Tier B. V4 Pro fez 82 por $0,35 e V4 Flash fez 80 por $0,81. Estão perto e quero repetir quando vier uma versão nova. Hoje eu ainda não usaria nenhum dos dois pra deixar um coding agent trabalhando sozinho numa codebase que importa. Economizar um ou dois dólares pra depois gastar uma hora revisando defeito estrutural é uma conta ruim.
 
 ## Por que não refiz os modelos locais
 
@@ -234,7 +234,7 @@ Pra escolher o que usar, a leitura prática é outra:
 - dentro do Tier A, escolha por assinatura, velocidade, custo e harness;
 - um ou dois pontos não transformam ninguém no campeão universal de inteligência.
 
-Minha escolha pessoal continua concentrada em Claude Code e Codex porque são os harnesses que uso todo dia. Kimi K3 virou uma alternativa séria de topo. Grok 4.5 é o campeão de velocidade desta rodada. GLM e MiniMax oferecem custo quase zero se você tolerar esperar. Sonnet 5 provou que pagar ou selecionar a tier "maior" por reflexo pode ser desperdício.
+Minha escolha pessoal continua concentrada em Claude Code e Codex porque são os harnesses que uso todo dia. Kimi K3 virou uma alternativa séria de topo. Grok 4.5 é o campeão de velocidade desta rodada. GLM tem custo marginal zero na assinatura e MiniMax ainda custa menos que os líderes, mas nenhum dos dois é escolha de velocidade. Sonnet 5 provou que pagar ou selecionar a tier "maior" por reflexo pode ser desperdício.
 
 Todo o código gerado, prompts, resultados, self-reviews, rubrica e correções estão no [llm-coding-benchmark](https://github.com/akitaonrails/llm-coding-benchmark). A grande reforma de código e testes já está no `master`. Contribuições são bem-vindas, seja pra adicionar modelo, melhorar o harness, contestar uma dedução ou encontrar mais um bug no auditor.
 
