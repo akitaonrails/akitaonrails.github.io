@@ -496,6 +496,44 @@ O que isso significa, **se for confirmado**:
 
 Ou seja: a thread aponta para uma linha de investigação promissora, mas **é uma alegação em andamento**, não uma prova concluída. Capturar o operador depende de como ele se expôs nos serviços terceirizados, da qualidade dos logs, da jurisdição e da velocidade das autoridades. Recuperar os bitcoins depende de onde as moedas estiverem quando isso acontecer. As duas coisas estão relacionadas, mas não são a mesma coisa.
 
+## O que o atacante ainda não fez
+
+Até agora, a operação foi tecnicamente competente no ataque, mas amadora na fuga. Os ~1.128 BTC roubados estão parados em endereços de consolidação conhecidos, sem mixer, sem coinjoin, sem movimentação posterior. Isso é incomum para um roubo dessa magnitude e merece atenção, porque define o que ainda é recuperável.
+
+### O que seria um mixer, e por que ele não foi usado
+
+Um **mixer** (ou **tumbler**) é um serviço que recebe bitcoins de várias pessoas, embaralha os valores em uma única transação ou série de transações e devolve bitcoins equivalentes em endereços novos. A ideia é quebrar a cadeia pública de "de onde veio".
+
+O modelo clássico é o **CoinJoin**: vários participantes assinam juntos uma transação com muitos inputs e muitos outputs do mesmo tamanho. Observador externo vê que o dinheiro entrou, mas não consegue dizer qual output pertence a quem. Ferramentas como **Wasabi Wallet** e **Samourai Wallet** implementam CoinJoin de forma automatizada. O Samourai chegou a oferecer o serviço **Whirlpool**, onde os UTXOs passam por rodadas de remixagem que dificultam ainda mais o rastreamento.
+
+Outro modelo é o mixer centralizado, em que você envia bitcoins para um endereço do serviço e recebe de volta de um pool diferente, menos uma taxa. Historicamente serviços como **Bitcoin Fog** e **Helix** funcionavam assim. A diferença para o CoinJoin é que você precisa confiar no operador do mixer — e vários desses operadores foram presos exatamente porque os investigadores conseguiram ligar os depósitos aos saques.
+
+No caso do roubo da ColdCard, nenhuma dessas técnicas apareceu ainda. Os bitcoins saíram das wallets das vítimas, foram parar em três grandes clusters e, de lá, não se moveram. Isso pode significar várias coisas:
+
+1. **O atacante ainda está decolando.** Roubar 1.128 BTC em 41 minutos é uma coisa; lavar 1.128 BTC sem deixar rastros é outra. Configurar uma pipeline de anonimização leva tempo, custa dinheiro e exige contas pré-estabelecidas.
+2. **O atacante não esperava tanta visibilidade.** Quando a imprensa e os analistas de blockchain começam a acompanhar endereços em tempo real, qualquer movimentação imediata vira notícia. Parar os fundos é uma forma de esperar o burburinho baixar.
+3. **O atacante pode estar negociando uma recuperação.** Não é raro que grandes roubos terminem em acordo, com parte dos fundos devolvida em troca de anonimato do ladrão.
+
+### Como se esconde normalmente uma quantia dessas
+
+Se o operador quiser realmente dificultar o rastreamento, o playbook padrão envolve várias camadas:
+
+1. **CoinJoin em rodadas.** O atacante divide os fundos em valores padronizados e passa por múltiplas rodadas de CoinJoin. Depois de algumas rodadas, o grafo deixa de ser uma árvore e vira uma teia, dificultando a atribuição.
+2. **Peel chain.** Em vez de mandar tudo de uma vez, ele vai transferindo pequenas fatias por dezenas ou centenas de endereços intermediários, como descascar uma cebola. Cada endereço envia a maior parte para o próximo e uma pequena fração para um destino final.
+3. **Trocas instantâneas e bridges.** Trocar Bitcoin por Monero em uma exchange descentralizada ou bridge é um caminho comum: Monero oculta remetente, destinatário e valor. Depois de algumas transações em Monero, o atacante pode trocar de volta para Bitcoin em novos endereços.
+4. **Exchanges com KYC fraco ou nenhum.** Depositar em corretoras que não exigem identificação, ou que aceitam contas de terceiros, permite converter em stablecoins, fiat ou outras criptomoedas. Mesmo com KYC, contas compradas ou de laranjas ajudam a criar distância.
+5. **Fiat off-shore.** O estágio final é transformar o ativo em dinheiro real fora das jurisdições que cooperam com investigações. Casas de câmbio não reguladas, caixas eletrônicos de Bitcoin, cartões pré-pagos e contas em paraísos fiscais entram aqui.
+
+Cada uma dessas camadas não torna o rastreamento impossível, mas aumenta o custo. Uma investigação bem financiada ainda pode seguir pistas: taxas pagas por uma exchange, padrões de timing, endereços de troco, correspondência de valores. O problema é que, quanto mais camadas, mais tempo leva — e quanto mais tempo, menor a chance de congelar os fundos antes que sejam gastos.
+
+### Por que isso importa agora
+
+O fato de os bitcoins ainda estarem nos endereços de consolidação significa que a janela de recuperação ainda está aberta, em teoria. Autoridades e investigadores privados podem monitorar esses endereços, pedir congelamento em exchanges e pressionar provedores de serviços blockchain. Se o atacante enviar qualquer satoshi para um mixer conhecido, o alerta dispara.
+
+Mas essa janela se fecha assim que os fundos entrarem em um pipeline de anonimização. Depois de um CoinJoin bem feito, de uma troca por Monero e de uma rede de peel chains, a pergunta deixa de ser "onde está o dinheiro?" e passa a ser "quem conseguimos prender?". Recuperar o ativo se torna tecnicamente inviável para a maioria das vítimas.
+
+Ou seja, o atacante já venceu a primeira batalha — encontrar e roubar as chaves. A segunda batalha, de sair com o dinheiro de forma anônima, é a que normalmente separa ladrões de grandes carteiras de ladrões que acabam presos.
+
 ## Conclusão
 
 Se você ainda tem fundos em uma seed gerada por firmware ColdCard vulnerável, o risco não é teórico. A blockchain já mostra centenas de endereços sendo esvaziados por alguém que reproduziu o RNG defeituoso.

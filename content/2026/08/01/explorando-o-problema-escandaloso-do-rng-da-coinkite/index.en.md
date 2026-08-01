@@ -497,6 +497,44 @@ What this means, **if confirmed**:
 
 So the thread points to a promising line of investigation, but **it is an ongoing allegation**, not a concluded proof. Catching the operator depends on how much they exposed through third-party services, the quality of the logs, jurisdiction, and how fast authorities act. Recovering the bitcoins depends on where the coins are when that happens. The two are related, but they are not the same thing.
 
+## What the attacker has not done yet
+
+So far, the operation has been technically competent at the attack but amateurish at the escape. The ~1,128 BTC stolen are sitting in known consolidation addresses, with no mixer, no coinjoin, no follow-up movement. That is unusual for a theft of this size and worth attention, because it determines what is still recoverable.
+
+### What a mixer is, and why it has not been used
+
+A **mixer** (or **tumbler**) is a service that takes bitcoins from many people, shuffles the amounts inside a single transaction or a series of transactions, and returns equivalent bitcoins to fresh addresses. The goal is to break the public chain of "where it came from."
+
+The classic model is **CoinJoin**: several participants jointly sign a transaction with many inputs and many outputs of the same size. An outside observer sees the money go in but cannot tell which output belongs to whom. Tools like **Wasabi Wallet** and **Samourai Wallet** implement CoinJoin automatically. Samourai even offered a service called **Whirlpool**, where UTXOs go through remix rounds that make tracing even harder.
+
+Another model is the centralized mixer: you send bitcoins to a service address and receive them back from a different pool, minus a fee. Services like **Bitcoin Fog** and **Helix** historically worked this way. The difference from CoinJoin is that you must trust the mixer operator — and several of those operators were arrested precisely because investigators could link deposits to withdrawals.
+
+In the ColdCard theft, none of these techniques has appeared yet. The bitcoins moved from the victims' wallets into three large clusters and have not moved since. That can mean several things:
+
+1. **The attacker is still getting ready.** Stealing 1,128 BTC in 41 minutes is one thing; laundering 1,128 BTC without leaving a trace is another. Setting up an anonymization pipeline takes time, costs money, and requires pre-established accounts.
+2. **The attacker did not expect this much visibility.** Once the press and blockchain analysts start tracking addresses in real time, any immediate movement becomes news. Leaving the funds still is a way to wait for the noise to die down.
+3. **The attacker may be negotiating a recovery.** Large thefts sometimes end in settlements, with part of the funds returned in exchange for the thief's anonymity.
+
+### How one normally hides a haul like this
+
+If the operator really wants to make tracing difficult, the standard playbook involves several layers:
+
+1. **CoinJoin rounds.** The attacker splits the funds into standardized amounts and runs them through multiple CoinJoin rounds. After a few rounds the graph stops being a tree and becomes a web, making attribution hard.
+2. **Peel chain.** Instead of sending everything at once, the operator moves small slices across dozens or hundreds of intermediate addresses, like peeling an onion. Each address forwards most of the value to the next one and a tiny fraction to a final destination.
+3. **Instant swaps and bridges.** Swapping Bitcoin for Monero on a decentralized exchange or bridge is a common path: Monero hides sender, recipient, and amount. After a few Monero transactions, the attacker can swap back into Bitcoin at fresh addresses.
+4. **Weak-KYC or no-KYC exchanges.** Depositing into exchanges that do not require identification, or that accept third-party accounts, lets the attacker convert into stablecoins, fiat, or other cryptocurrencies. Even with KYC, bought accounts or money mules help create distance.
+5. **Offshore fiat.** The final stage is turning the asset into real cash outside jurisdictions that cooperate with investigations. Unregulated exchanges, Bitcoin ATMs, prepaid cards, and accounts in tax havens fit here.
+
+None of these layers makes tracing impossible, but each raises the cost. A well-funded investigation can still follow clues: fees paid by an exchange, timing patterns, change addresses, value matches. The problem is that the more layers there are, the more time it takes — and the more time passes, the lower the chance of freezing the funds before they are spent.
+
+### Why this matters now
+
+The fact that the bitcoins are still in the consolidation addresses means the recovery window is still theoretically open. Law enforcement and private investigators can monitor those addresses, request freezes at exchanges, and pressure blockchain-service providers. If the attacker sends even a single satoshi to a known mixer, alarms go off.
+
+But that window closes as soon as the funds enter an anonymization pipeline. After a proper CoinJoin, a Monero swap, and a network of peel chains, the question stops being "where is the money?" and becomes "who can we arrest?". Recovering the asset becomes technically infeasible for most victims.
+
+In other words, the attacker has already won the first battle — finding and stealing the keys. The second battle, cashing out anonymously, is the one that usually separates big-wallet thieves from thieves who end up in prison.
+
 ## Conclusion
 
 If you still have funds in a seed generated by vulnerable ColdCard firmware, the risk is not theoretical. The blockchain already shows hundreds of addresses being emptied by someone who reproduced the broken RNG.
