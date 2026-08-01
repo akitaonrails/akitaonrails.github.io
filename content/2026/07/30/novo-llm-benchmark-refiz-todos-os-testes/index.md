@@ -4,7 +4,7 @@ slug: "novo-llm-benchmark-refiz-todos-os-testes"
 date: '2026-07-30T15:00:00-03:00'
 draft: false
 translationKey: novo-llm-benchmark-refiz-todos-os-testes
-description: "Refiz o LLM Coding Benchmark com uma prova mais difícil, três fases, harnesses nativos e tiers novos. Fable liderou, Kimi K3 teve o melhor custo entre os líderes e 23 modelos ficaram aptos para programação."
+description: "Refiz o LLM Coding Benchmark com uma prova mais difícil, três fases, harnesses nativos e tiers novos. Fable liderou, Terra empatou com Sol como melhor GPT e 24 modelos ficaram aptos para programação."
 tags:
 - benchmarks-de-llm
 - llms
@@ -86,30 +86,31 @@ Esta é a tabela consolidada do v2, com uma entrada por modelo no harness prefer
 | 2 | Kimi K3 | **95** | A.1 | Kimi CLI |
 | 5 | GPT 5.6 Sol | **93** | A.1 | Codex |
 | 5 | Claude Opus 4.8 | **93** | A.1 | Claude Code |
-| 7 | GLM 5.2 | **92** | A.1 | OpenCode |
-| 7 | Kimi K2.5 | **92** | A.1 | OpenCode |
-| 7 | Gemini 3.6 Flash @ high | **92** | A.1 | Antigravity |
-| 10 | MiniMax M3 | **91** | A.1 | OpenCode |
-| 10 | Kimi K2.6 | **91** | A.1 | OpenCode |
-| 10 | Claude Opus 4.7 | **91** | A.1 | Claude Code |
-| 10 | GPT 5.6 Luna | **91** | A.1 | Codex |
-| 10 | Grok 4.5 | **91** | A.1 | grok CLI |
-| 15 | Nex-N2-Pro | **88** | A.2 | OpenCode |
-| 15 | GPT 5.5 | **88** | A.2 | Codex |
-| 15 | Gemini 3.1 Pro @ high | **88** | A.2 | Antigravity |
-| 18 | Claude Sonnet 4.6 | **87** | A.2 | Claude Code |
-| 19 | GPT 5.4 | **86** | A.2 | Codex |
-| 19 | Kimi K2.7-Coding | **86** | A.2 | Kimi CLI |
-| 21 | Step 3.7 Flash | **84** | A.2 | OpenCode |
-| 22 | Claude Opus 4.6 | **83** | A.2 | Claude Code |
-| 22 | GLM 5 | **83** | A.2 | OpenCode |
-| 24 | DeepSeek V4 Pro | **82** | B | OpenCode |
-| 25 | DeepSeek V4 Flash | **80** | B | OpenCode |
-| 26 | Qwen 3.6 Plus | **76** | B | OpenCode |
-| 27 | MiMo V2.5 Pro | **73** | B | OpenCode |
-| 28 | Grok 4.3 | **55** | C | grok CLI |
-| 29 | Qwen3.7 Max | **51** | C | OpenCode |
-| 30 | Step 3.5 Flash | **27** | D | OpenCode |
+| 5 | GPT 5.6 Terra | **93** | A.1 | Codex |
+| 8 | GLM 5.2 | **92** | A.1 | OpenCode |
+| 8 | Kimi K2.5 | **92** | A.1 | OpenCode |
+| 8 | Gemini 3.6 Flash @ high | **92** | A.1 | Antigravity |
+| 11 | MiniMax M3 | **91** | A.1 | OpenCode |
+| 11 | Kimi K2.6 | **91** | A.1 | OpenCode |
+| 11 | Claude Opus 4.7 | **91** | A.1 | Claude Code |
+| 11 | GPT 5.6 Luna | **91** | A.1 | Codex |
+| 11 | Grok 4.5 | **91** | A.1 | grok CLI |
+| 16 | Nex-N2-Pro | **88** | A.2 | OpenCode |
+| 16 | GPT 5.5 | **88** | A.2 | Codex |
+| 16 | Gemini 3.1 Pro @ high | **88** | A.2 | Antigravity |
+| 19 | Claude Sonnet 4.6 | **87** | A.2 | Claude Code |
+| 20 | GPT 5.4 | **86** | A.2 | Codex |
+| 20 | Kimi K2.7-Coding | **86** | A.2 | Kimi CLI |
+| 22 | Step 3.7 Flash | **84** | A.2 | OpenCode |
+| 23 | Claude Opus 4.6 | **83** | A.2 | Claude Code |
+| 23 | GLM 5 | **83** | A.2 | OpenCode |
+| 25 | DeepSeek V4 Pro | **82** | B | OpenCode |
+| 26 | DeepSeek V4 Flash | **80** | B | OpenCode |
+| 27 | Qwen 3.6 Plus | **76** | B | OpenCode |
+| 28 | MiMo V2.5 Pro | **73** | B | OpenCode |
+| 29 | Grok 4.3 | **55** | C | grok CLI |
+| 30 | Qwen3.7 Max | **51** | C | OpenCode |
+| 31 | Step 3.5 Flash | **27** | D | OpenCode |
 
 Os detalhes, artefatos e deduções estão no [relatório completo do v2](https://github.com/akitaonrails/llm-coding-benchmark/blob/master/docs/success_report.v2.md).
 
@@ -125,13 +126,13 @@ O novo corte foi ancorado no Claude Opus 4.6, que fez 83 e mostrou o mínimo nec
 | **C** | **51 a 72** | Não recomendo pra programação. Ainda pode servir pra tradução, resumo, classificação e agentes simples. |
 | **D** | **50 ou menos** | Comportamento inconsistente, quebrado ou difícil de prever. Não me sinto seguro recomendando nem pra automação simples. |
 
-Temos **14 modelos no A.1** e **9 no A.2**. Os 23 passaram do piso de competência pra esse tipo de trabalho. A subdivisão ajuda a escolher por onde começar: A.1 concentra os resultados de fronteira; A.2 reúne modelos competentes que exigiram mais consertos, deixaram testes mais rasos ou carregaram limitações operacionais mais claras.
+Temos **15 modelos no A.1** e **9 no A.2**. Os 24 passaram do piso de competência pra esse tipo de trabalho. A subdivisão ajuda a escolher por onde começar: A.1 concentra os resultados de fronteira; A.2 reúne modelos competentes que exigiram mais consertos, deixaram testes mais rasos ou carregaram limitações operacionais mais claras.
 
-Isso não transforma 96 em uma inteligência universalmente maior que 91, nem torna um A.2 ruim. Um modelo A.2 pode ser melhor em refactor, debugging, frontend ou dentro do seu monolito de quinze anos. A prova não mede tudo isso. O corte só evita colocar 23 opções num balde grande demais.
+Isso não transforma 96 em uma inteligência universalmente maior que 91, nem torna um A.2 ruim. Um modelo A.2 pode ser melhor em refactor, debugging, frontend ou dentro do seu monolito de quinze anos. A prova não mede tudo isso. O corte só evita colocar 24 opções num balde grande demais.
 
 A.1 e A.2 formam o grupo de candidatos. Tier C e D são grupos que eu corto antes de começar.
 
-## Afinal, qual é o melhor: Fable, Opus, Sol ou Kimi?
+## Afinal, qual é o melhor: Fable, Opus, Terra ou Kimi?
 
 Se você só quer uma resposta de uma linha, vai se decepcionar de novo.
 
@@ -140,11 +141,11 @@ Se você só quer uma resposta de uma linha, vai se decepcionar de novo.
 | Claude Fable 5 | 96 | 46 min | $26,03 | assinatura Claude Max |
 | Claude Opus 5 | 95 | 78 min | $38,91 | assinatura Claude Max |
 | Kimi K3 | 95 | 65 min | $6,14 | assinatura Moderato |
-| GPT 5.6 Sol | 93 | 57 min | ~$45 blended | créditos do ChatGPT |
+| GPT 5.6 Terra | 93 | 49 min | $16,92 blended | créditos do ChatGPT |
 
 No artefato final, **Fable ganhou**. Também foi o mais rápido entre esses quatro. Se eu estivesse pagando cada chamada de API dessa rodada, o **Kimi K3 ganhou de lavada no custo**, empatado com Opus em 95 e só um ponto abaixo de Fable.
 
-Opus 5 fez um projeto excelente, mas foi o mais lento e gastou 56,8 milhões de tokens somados pelo Claude Code. Nesta prova ele não comprou nada visível com os 33 minutos extras sobre Fable. Sol também entregou bem, porém ficou dois pontos abaixo de K3 com custo equivalente muito maior.
+Opus 5 fez um projeto excelente, mas foi o mais lento e gastou 56,8 milhões de tokens somados pelo Claude Code. Nesta prova ele não comprou nada visível com os 33 minutos extras sobre Fable. Terra também entregou bem, ficou dois pontos abaixo de K3 e custou menos que Fable e Opus no equivalente de API.
 
 Quem já paga Claude Max ou ChatGPT Pro tem custo marginal próximo de zero enquanto estiver dentro dos limites. Kimi Moderato também é assinatura, com janelas de quota próprias. Portanto, "$26 contra $6" não decide sozinho. A primeira pergunta é qual assinatura você já paga e quanto limite ainda tem. Pra pay-as-you-go e automação, aí sim o custo por execução volta pro centro.
 
@@ -153,11 +154,11 @@ Minha leitura desse run:
 - **Fable 5** entregou o melhor pacote de qualidade e tempo;
 - **Kimi K3** foi o melhor custo-benefício entre os líderes;
 - **Opus 5** foi competente e meticuloso, mas caro e lento nesta execução;
-- **GPT 5.6 Sol** continua forte pra quem vive no Codex e já paga os créditos do ecossistema OpenAI.
+- **GPT 5.6 Terra** entregou o melhor equilíbrio da família pra quem vive no Codex.
 
 É uma leitura deste projeto. Troque o workload e a ordem pode virar.
 
-## Opus contra Sonnet, Sol contra Luna
+## Opus contra Sonnet, Sol contra Terra
 
 Nome de tier não é benchmark. O Sonnet 5 provou isso de um jeito quase constrangedor:
 
@@ -177,13 +178,16 @@ Do lado da OpenAI:
 | GPT | Score | Tempo | Custo blended equivalente |
 |---|---:|---:|---:|
 | GPT 5.6 Sol | 93 | 57 min | ~$45 |
+| GPT 5.6 Terra | 93 | 49 min | $16,92 |
 | GPT 5.6 Luna | 91 | 46 min | $16,79 |
 | GPT 5.5 | 88 | 58 min | ~$53 |
 | GPT 5.4 | 86 | 67 min | ~$26 |
 
-Sol compra dois pontos sobre Luna, mas Luna termina onze minutos antes e custa pouco mais de um terço no cálculo que desconta cache hits. Ambos são A.1. Pra maior rigor eu começaria com Sol; pra volume, Luna parece muito mais racional.
+Terra empatou com Sol em 93, terminou oito minutos antes e custou pouco mais de um terço no cálculo blended. Também produziu a melhor proteção de concorrência de toda a rodada: Redis com `WATCH`/`MULTI`, lock distribuído por conversa e escolha forçada de tool. Nesta prova, pagar pelo Sol não comprou nenhum ponto nem economizou tempo. Terra é a escolha mais racional da família.
 
-O detalhe importante é o cache. O evento novo do Codex expôs que 19,7 dos 20,4 milhões de tokens de input da Luna eram cache hits. Cobrar tudo como input novo daria $105,45. Com a tarifa de cache, cai pra $16,79. Qualquer tabela de custo que mistura CLIs sem entender o que cada uma reporta está comparando banana com JSON.
+Luna continua na tabela porque fez 91 e ainda é um resultado A.1, mas perdeu o argumento de custo: Terra ficou dois pontos acima por apenas treze centavos a mais e levou cerca de três minutos extras.
+
+O detalhe importante continua sendo o cache. Dos 21,7 milhões de tokens de input do Terra, 21 milhões eram cache hits. Cobrar tudo como input novo daria um teto de $111,62. Com a tarifa de cache, cai pra $16,92. Qualquer tabela de custo que mistura CLIs sem entender o que cada uma reporta está comparando banana com JSON.
 
 ## E os modelos chineses?
 
@@ -214,19 +218,19 @@ DeepSeek continua barato, mas parou no Tier B. V4 Pro fez 82 por $0,35 e V4 Flas
 
 Não rodei Qwen 3.5 e os outros modelos locais no v2. A prioridade passou a ser mapear melhor o Tier A de programação, e cada execução completa dessa prova custa tempo de máquina, auditoria e sanidade.
 
-Os locals não são inúteis. Servem pra tradução, classificação, resumo, one-shot controlado e tarefas onde privacidade ou operação offline pesa mais que qualidade. Já pra coding agent autônomo, os testes do v1 ficaram muito abaixo do piso. A prova v2 é mais difícil. Não vejo motivo pra gastar vários dias confirmando de novo que um Qwen quantizado local não compete com Fable, Opus, Sol ou Kimi em engenharia de software.
+Os locals não são inúteis. Servem pra tradução, classificação, resumo, one-shot controlado e tarefas onde privacidade ou operação offline pesa mais que qualidade. Já pra coding agent autônomo, os testes do v1 ficaram muito abaixo do piso. A prova v2 é mais difícil. Não vejo motivo pra gastar vários dias confirmando de novo que um Qwen quantizado local não compete com Fable, Opus, GPT 5.6 ou Kimi em engenharia de software.
 
-Pra programação, hoje não vale a pena. Se surgir um modelo local novo com evidência forte, eu testo. Até lá, prefiro gastar tempo diferenciando os vinte e três modelos que já passaram do piso.
+Pra programação, hoje não vale a pena. Se surgir um modelo local novo com evidência forte, eu testo. Até lá, prefiro gastar tempo diferenciando os vinte e quatro modelos que já passaram do piso.
 
 ## Conclusão
 
 O v1 cumpriu seu papel e saturou. O v2 aperta onde os modelos atuais ainda escorregam: streaming de verdade, payload multi-turn, concorrência, persistência, tools, structured output, orçamento, segurança operacional, teste fiel e capacidade de admitir o próprio defeito.
 
-Fable 5 ficou no topo com 96. Sonnet 5, Opus 5 e Kimi K3 empataram em 95. Sol veio logo atrás com 93. Isso responde quem produziu os melhores projetos nesta prova.
+Fable 5 ficou no topo com 96. Sonnet 5, Opus 5 e Kimi K3 empataram em 95. Sol e Terra vieram logo atrás com 93. Isso responde quem produziu os melhores projetos nesta prova.
 
 Pra escolher o que usar, a leitura prática é outra:
 
-- Tier A.1 reúne os 14 resultados de fronteira, todos com 90 ou mais;
+- Tier A.1 reúne os 15 resultados de fronteira, todos com 90 ou mais;
 - Tier A.2 reúne 9 modelos competentes entre 83 e 89, ainda recomendáveis com revisão mais atenta;
 - Tier B está perto, mas ainda não recomendo pra trabalho autônomo;
 - Tier C fica pra tradução, resumo e agentes simples;
@@ -234,7 +238,7 @@ Pra escolher o que usar, a leitura prática é outra:
 - dentro do Tier A, escolha por assinatura, velocidade, custo e harness;
 - um ou dois pontos não transformam ninguém no campeão universal de inteligência.
 
-Minha escolha pessoal continua concentrada em Claude Code e Codex porque são os harnesses que uso todo dia. Kimi K3 virou uma alternativa séria de topo. Grok 4.5 é o campeão de velocidade desta rodada. GLM tem custo marginal zero na assinatura e MiniMax ainda custa menos que os líderes, mas nenhum dos dois é escolha de velocidade. Sonnet 5 provou que pagar ou selecionar a tier "maior" por reflexo pode ser desperdício.
+Minha escolha pessoal continua concentrada em Claude Code e Codex porque são os harnesses que uso todo dia. Dentro do Codex, Terra entregou o melhor equilíbrio entre score, tempo e custo. Kimi K3 virou uma alternativa séria de topo. Grok 4.5 é o campeão de velocidade desta rodada. GLM tem custo marginal zero na assinatura e MiniMax ainda custa menos que os líderes, mas nenhum dos dois é escolha de velocidade. Sonnet 5 provou que pagar ou selecionar a tier "maior" por reflexo pode ser desperdício.
 
 Todo o código gerado, prompts, resultados, self-reviews, rubrica e correções estão no [llm-coding-benchmark](https://github.com/akitaonrails/llm-coding-benchmark). A grande reforma de código e testes já está no `master`. Contribuições são bem-vindas, seja pra adicionar modelo, melhorar o harness, contestar uma dedução ou encontrar mais um bug no auditor.
 
