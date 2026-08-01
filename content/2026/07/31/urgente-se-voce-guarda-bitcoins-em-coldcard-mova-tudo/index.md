@@ -112,6 +112,12 @@ Portanto não foi azar de uma chance em um bilhão. Foi profecia autorrealizáve
 
 A Coinkite escreveu que, como o firmware era público, "temos que assumir" que alguém usou IA pra revisar versões antigas e encontrou o bug. Não apresentou evidência. No parágrafo seguinte admite que, semanas antes, usou um dos melhores modelos disponíveis pra revisar o mesmo código e ele não achou nada sério.
 
+Depois, NVK publicou [um pedido de desculpas em nome da Coinkite](https://x.com/nvk/status/2083216713693151552). Assumiu responsabilidade pelo bug, pediu que todo dono de ColdCard movesse os fundos, reconheceu que firmware novo não conserta seed antiga e disse que a confiança dos usuários terá que ser reconquistada. É o mínimo, mas é importante que tenha dito.
+
+O problema é que ele terminou tentando transformar o desastre numa "realidade sóbria do novo paradigma de IA", porque revisão assistida por IA agora encontraria bugs antigos mais rápido que especialistas. Não. Isso não tem porra nenhuma a ver com IA. O bug é básico, estava visível no código havia cinco anos e atingia a função mais importante de uma hardware wallet. NVK teve sorte de demorar tanto.
+
+Não desloque a culpa pra AI-assisted code review pra justificar código porco. IA pode ter ajudado alguém a localizar ou explorar a falha. IA não escreveu aquele `#ifndef`, não desligou o TRNG, não aprovou o rewrite de 120 arquivos e não passou cinco anos sem um teste end-to-end de geração de seed. Tudo isso foi responsabilidade da Coinkite.
+
 Depois da divulgação, pesquisadores reproduziram a falha com ajuda de modelos de fronteira. Ótimo. Isso mostra que IA acelera auditoria e exploração depois que alguém aponta onde cavar. Não significa que uma IA quebrou ECDSA, `secp256k1`, SHA-256, BIP39 ou Bitcoin.
 
 O atacante enumerou um espaço de chaves que um fabricante reduziu de pelo menos 128 bits pra algo na casa de 40. É força bruta contra números previsíveis. O protocolo Bitcoin fez exatamente o que deveria: aceitou assinaturas válidas produzidas pelas chaves privadas corretas.

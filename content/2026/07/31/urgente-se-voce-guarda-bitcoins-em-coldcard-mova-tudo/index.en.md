@@ -112,6 +112,12 @@ So this was not one-in-a-billion bad luck. It was a self-fulfilling prophecy. Ex
 
 Coinkite wrote that, because the firmware was public, "we have to assume" someone used AI to review old versions and found the bug. It provided no evidence. In the next paragraph, it admits that weeks earlier it had used one of the best available models to review the same code, and the model found nothing serious.
 
+NVK later published [an apology on Coinkite's behalf](https://x.com/nvk/status/2083216713693151552). He took responsibility for the bug, told every ColdCard owner to move their funds, acknowledged that new firmware cannot repair an old seed, and said the company would have to earn back its users' trust. That is the bare minimum, but it matters that he said it.
+
+The problem is that he ended by trying to turn the disaster into "a sober reality of the new AI paradigm," arguing that AI-assisted review can now find old bugs faster than seasoned experts. No. This has fuck all to do with AI. The bug was basic, visible in the code for five years, and sat in the most important function of a hardware wallet. NVK was lucky it took this long.
+
+Do not shift the blame to AI-assisted code review to justify piss-poor code. AI may have helped someone locate or exploit the flaw. AI did not write that `#ifndef`, disable the TRNG, approve the 120-file rewrite, or spend five years without an end-to-end test of seed generation. Coinkite did all of that.
+
 After disclosure, researchers reproduced the flaw with the help of frontier models. Great. That shows AI can accelerate auditing and exploitation after someone points to where they should dig. It does not mean an AI broke ECDSA, `secp256k1`, SHA-256, BIP39, or Bitcoin.
 
 The attacker enumerated a keyspace that a manufacturer had reduced from at least 128 bits to something around 40. This is brute force against predictable numbers. The Bitcoin protocol did exactly what it should: it accepted valid signatures produced by the correct private keys.
