@@ -1,0 +1,25 @@
+{{- $current := . -}}
+{{- $next := false -}}
+{{- $foundCurrent := false -}}
+
+{{- range .Site.RegularPages.ByDate -}}
+  {{- if and $foundCurrent (not $next) -}}
+    {{- $next = . -}}
+  {{- else if eq .RelPermalink $current.RelPermalink -}}
+    {{- $foundCurrent = true -}}
+  {{- end -}}
+{{- end -}}
+
+{{- with $next -}}
+  {{- $label := cond (eq $current.Language.Lang "en") "Next post" "Próximo post" -}}
+  <aside class="aor-next-post hx:print:hidden" aria-label="{{ $label }}">
+    <span class="aor-next-post__label">{{ $label }}</span>
+    <a class="aor-next-post__link" href="{{ .RelPermalink }}">
+      <span>{{ .Title }}</span>
+      {{- partial "utils/icon.html" (dict "name" "arrow-right" "attributes" "class=\"aor-next-post__icon\"") -}}
+    </a>
+    {{- with .Description }}
+      <p class="aor-next-post__description">{{ . }}</p>
+    {{- end }}
+  </aside>
+{{- end -}}
