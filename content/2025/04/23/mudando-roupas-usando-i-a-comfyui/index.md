@@ -10,6 +10,8 @@ draft: false
 translationKey: ai-clothes-swap-comfyui
 ---
 
+> **Atualização:** este post está obsoleto. Hoje uso [**akitaonrails/aitrepreneur-docker**](https://github.com/akitaonrails/aitrepreneur-docker), que roda as stacks do Aitrepreneur localmente em Docker com modelos e workflows pré-carregados. Veja o README para detalhes.
+
 No [post anterior](https://www.akitaonrails.com/2025/04/23/usando-i-a-comfyui-pra-gerar-npcs-em-desenvolvimento-de-games) mostrei como gerar character sheets pra desenvolvimento de games. Mas alguns me perguntaram "e se eu quiser roupas específicas?".
 
 **Hold my Beer**

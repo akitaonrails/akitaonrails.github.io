@@ -10,7 +10,9 @@ translationKey: ai-clothes-swap-comfyui
 description: "A walkthrough of a ComfyUI workflow using IDM-VTON and IPAdapter to swap clothing on photos while preserving the original face and pose."
 ---
 
-In the [previous post](https://www.akitaonrails.com/en/2025/04/23/usando-i-a-comfyui-pra-gerar-npcs-em-desenvolvimento-de-games) I showed how to generate character sheets for game development. But some folks asked me "what if I want specific clothes?".
+> **Update:** this post is now obsolete. I now use [**akitaonrails/aitrepreneur-docker**](https://github.com/akitaonrails/aitrepreneur-docker), which runs Aitrepreneur's stacks locally in Docker with pre-loaded models and workflows. Check the README for details.
+
+In the [previous post](https://www.akitaonrails.com/en/2025/04/23/using-ai-comfyui-to-generate-npcs-for-game-development/) I showed how to generate character sheets for game development. But some folks asked me "what if I want specific clothes?".
 
 **Hold my Beer**
 

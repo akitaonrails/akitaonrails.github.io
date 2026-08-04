@@ -11,7 +11,9 @@ translationKey: comfyui-basics-ai-images
 description: A hands-on, no-nonsense walkthrough of ComfyUI's core concepts (checkpoints, LoRAs, ControlNet, VAEs, samplers) and a real workflow for turning a photo into anime-style art.
 ---
 
-In the [previous post](https://www.akitaonrails.com/en/2025/04/20/gerando-imagens-com-i-a-ate-estilo-ghibli-com-docker-e-cuda) I explained my little project to spin up ComfyUI pre-configured and pre-loaded automatically using Docker Compose. Assuming you already have everything up and running, now it's time to actually understand this beast called ComfyUI a little.
+> **Update:** this post is now obsolete. I replaced the manual setup with a cleaner containerized project: [**akitaonrails/aitrepreneur-docker**](https://github.com/akitaonrails/aitrepreneur-docker). It runs Aitrepreneur's stacks locally in Docker, with pinned versions, persistent models, and pre-loaded workflows. Check the README for details.
+
+In the [previous post](https://www.akitaonrails.com/en/2025/04/20/generating-ai-images-even-ghibli-style-with-docker-and-cuda/) I explained my little project to spin up ComfyUI pre-configured and pre-loaded automatically using Docker Compose. Assuming you already have everything up and running, now it's time to actually understand this beast called ComfyUI a little.
 
 I'm no expert either, but I thought it would be cool to explain a few concepts that many people overlook.
 

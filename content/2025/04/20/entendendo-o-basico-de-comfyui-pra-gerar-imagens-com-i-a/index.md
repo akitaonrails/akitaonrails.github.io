@@ -11,6 +11,8 @@ draft: false
 translationKey: comfyui-basics-ai-images
 ---
 
+> **Atualização:** este post está obsoleto. Substitui a configuração manual por um projeto containerizado mais limpo: [**akitaonrails/aitrepreneur-docker**](https://github.com/akitaonrails/aitrepreneur-docker). Ele roda as stacks do Aitrepreneur localmente em Docker, com versões fixadas, modelos persistentes e workflows pré-carregados. Veja o README para detalhes.
+
 No [post anterior](https://www.akitaonrails.com/2025/04/20/gerando-imagens-com-i-a-ate-estilo-ghibli-com-docker-e-cuda) expliquei meu projetinho de como subir ComfyUI pré-configurado e pré-carregado automaticamente usando Docker Compose. Assumindo que você já tem tudo de pé, agora é entender essa desgraça do ComfyUI um pouco.
 
 Eu também não sou nenhum especialista, mas achei legal explicar alguns conceitos que muitos ignoram.
