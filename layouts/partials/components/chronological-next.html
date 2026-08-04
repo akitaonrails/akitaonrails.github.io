@@ -3,10 +3,13 @@
 {{- $foundCurrent := false -}}
 
 {{- range .Site.RegularPages.ByDate -}}
-  {{- if and $foundCurrent (not $next) -}}
-    {{- $next = . -}}
-  {{- else if eq .RelPermalink $current.RelPermalink -}}
-    {{- $foundCurrent = true -}}
+  {{- /* Só considera posts do blog (URLs com ano/mês/dia), excluindo páginas como /about/. */ -}}
+  {{- if findRE "^/(en/)?[0-9]{4}/" .RelPermalink -}}
+    {{- if and $foundCurrent (not $next) -}}
+      {{- $next = . -}}
+    {{- else if eq .RelPermalink $current.RelPermalink -}}
+      {{- $foundCurrent = true -}}
+    {{- end -}}
   {{- end -}}
 {{- end -}}
 
