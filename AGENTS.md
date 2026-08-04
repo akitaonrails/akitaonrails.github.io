@@ -12,6 +12,7 @@ This is a Hugo static site using the [Hextra](https://github.com/imfing/hextra) 
 | Generate index | `./scripts/generate_index.rb` |
 | Search canonical tags | `./scripts/tag_catalog.rb --search "title and central subjects"` |
 | Validate all tags | `./scripts/tag_catalog.rb --check` |
+| Test chronological next-post | `./scripts/dev.sh test-recommendations` |
 | Create new post | `./scripts/dev.sh new-post "Title"` |
 | View logs | `./scripts/dev.sh logs` |
 | Stop server | `./scripts/dev.sh stop` |

@@ -64,6 +64,11 @@ generate_index() {
     docker compose exec "$SERVICE_NAME" ruby scripts/generate_index.rb
 }
 
+test_recommendations() {
+    print_message "Testando recomendações cronológicas..."
+    docker compose run --rm "$SERVICE_NAME" ruby scripts/test_chronological_next.rb
+}
+
 slugify() {
     echo "$1" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9]/-/g; s/-\+/-/g; s/^-\|-$//g'
 }
@@ -114,6 +119,7 @@ show_help() {
     echo "  logs           - Mostra os logs"
     echo "  exec <cmd>     - Executa comando no container"
     echo "  generate-index - Gera o índice de posts"
+    echo "  test-recommendations - Testa as recomendações cronológicas"
     echo "  new-post <title> - Cria um novo post"
     echo "  help           - Mostra esta ajuda"
 }
@@ -144,6 +150,9 @@ main() {
             ;;
         generate-index)
             generate_index
+            ;;
+        test-recommendations)
+            test_recommendations
             ;;
         new-post)
             shift
