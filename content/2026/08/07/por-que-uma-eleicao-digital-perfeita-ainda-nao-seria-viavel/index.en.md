@@ -25,7 +25,7 @@ One thing worth emphasizing before we start: the system I'm about to describe wo
 
 ## The tweet that started this
 
-Last week I posted [this tweet](https://x.com/AkitaOnRails/status/2085550756837335483) about end-to-end verifiability (E2E-V). The gist of the idea:
+I recently posted [this tweet](https://x.com/AkitaOnRails/status/2085550756837335483) about end-to-end verifiability (E2E-V). The gist of the idea:
 
 1. Every voter gets a paper receipt with a unique identifier — a hash — that **identifies neither the person nor the vote**.
 2. Each precinct's votes go into a public structure you can only append to, never delete from (*append-only*): a Merkle tree (the same principle as a blockchain).

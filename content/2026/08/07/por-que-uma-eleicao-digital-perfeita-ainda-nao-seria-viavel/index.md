@@ -25,7 +25,7 @@ Uma coisa que vale enfatizar antes de começar: o sistema que vou descrever não
 
 ## O tweet que começou isso
 
-Semana passada eu postei [este tweet](https://x.com/AkitaOnRails/status/2085550756837335483) sobre verificabilidade ponta a ponta (E2E-V, *end-to-end verifiability*). O resumo da ideia:
+Recentemente eu postei [este tweet](https://x.com/AkitaOnRails/status/2085550756837335483) sobre verificabilidade ponta a ponta (E2E-V, *end-to-end verifiability*). O resumo da ideia:
 
 1. Cada eleitor recebe um recibo em papel com um identificador único — um hash — que **não identifica a pessoa nem o voto**.
 2. Os votos de cada urna entram numa estrutura pública onde só se acrescenta, nunca se apaga (*append-only*): uma Merkle tree (o mesmo princípio de uma blockchain).
