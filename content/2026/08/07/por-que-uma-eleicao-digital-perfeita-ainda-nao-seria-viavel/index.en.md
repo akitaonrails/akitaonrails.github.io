@@ -40,7 +40,7 @@ In the system I'm about to describe, the machine could be **plugged straight int
 
 Being online or not stops being the question. Security doesn't live in the absence of a network; it lives in public verification. "Trust us, the machine is locked in a room" becomes "don't trust anything, check the math." That inversion is the one thing the current model cannot offer.
 
-## The tweet that started this
+## The tweet that inspired this post
 
 I recently posted [this tweet](https://x.com/AkitaOnRails/status/2085550756837335483) about end-to-end verifiability (E2E-V). The gist of the idea:
 

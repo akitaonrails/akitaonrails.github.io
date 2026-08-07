@@ -40,7 +40,7 @@ No sistema que vou descrever, a urna poderia estar **ligada direto na internet**
 
 Estar ou não na internet deixa de ser a questão. A segurança não mora na ausência de rede; mora na verificação pública. "Confie, a máquina está trancada numa sala" vira "não confie em nada, confira a matemática". Essa inversão é a única coisa que o modelo atual não consegue oferecer.
 
-## O tweet que começou isso
+## O tweet que inspirou este post
 
 Recentemente eu postei [este tweet](https://x.com/AkitaOnRails/status/2085550756837335483) sobre verificabilidade ponta a ponta (E2E-V, *end-to-end verifiability*). O resumo da ideia:
 
