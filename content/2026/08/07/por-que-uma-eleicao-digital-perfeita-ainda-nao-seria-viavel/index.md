@@ -23,6 +23,23 @@ Uma coisa que vale enfatizar antes de começar: o sistema que vou descrever não
 
 > Sem paciência pra código e matemática no meio do caminho? [Pule direto pra parte em que explico por que isso não funcionaria](#e-por-que-isso-nunca-funcionaria).
 
+## "A urna é segura porque não está na internet"
+
+Todo defensor do sistema atual saca esse argumento mais cedo ou mais tarde: a urna não está conectada à internet, logo não pode ser hackeada de fora. Tecnicamente é verdade. E é completamente irrelevante.
+
+Primeiro, porque isolamento não diz nada sobre o que o software faz. Uma urna offline pode trocar votos do mesmo jeito — você só não tem como assistir ela fazendo isso. E malware não precisa de rede pra chegar: pode vir de fábrica, numa atualização, na cadeia de suprimentos, de um técnico com acesso físico. O Stuxnet, o worm mais famoso da história, atravessou o air gap das centrífugas iranianas via pendrive. Air gap é obstáculo, não é prova de honestidade. E repare: o dado da urna precisa sair dela de algum jeito no fim do dia, em mídia física transportada ou transmissão posterior. "Não está na internet" é uma meia-verdade logística.
+
+Segundo, e mais importante: esse argumento revela o modelo mental errado. A segurança do sistema atual nasce de **custódia física** — lacres, salas trancadas, credenciados, rituais. Ou seja, mais uma vez, de confiar em gente e em processo que você não vê.
+
+No sistema que vou descrever, a urna poderia estar **ligada direto na internet**, publicando cada voto na árvore pública em tempo real, e ainda assim seria impossível fraudar. Não porque a rede seja segura, mas porque ninguém precisa confiar na urna:
+
+- O que ela publica são compromissos opacos: mesmo transmitindo tudo ao vivo, não existe voto pra vazar nos dados publicados.
+- Cada compromisso carrega uma prova matemática de validade: a urna não consegue inventar voto inválido.
+- A árvore é pública e replicada por observadores independentes: nada do que foi publicado pode ser alterado depois sem quebrar os hashes.
+- E se a urna trocar seu voto na hora, o desafio de Benaloh pega (é a Peça 4, mais adiante): ela não sabe se você vai confirmar ou auditar.
+
+Estar ou não na internet deixa de ser a questão. A segurança não mora na ausência de rede; mora na verificação pública. "Confie, a máquina está trancada numa sala" vira "não confie em nada, confira a matemática". Essa inversão é a única coisa que o modelo atual não consegue oferecer.
+
 ## O tweet que começou isso
 
 Recentemente eu postei [este tweet](https://x.com/AkitaOnRails/status/2085550756837335483) sobre verificabilidade ponta a ponta (E2E-V, *end-to-end verifiability*). O resumo da ideia:

@@ -23,6 +23,23 @@ One thing worth emphasizing before we start: the system I'm about to describe wo
 
 > No patience for code and math along the way? [Skip straight to the part where I explain why this wouldn't work](#why-this-would-never-work).
 
+## "The machine is safe because it's not on the internet"
+
+Sooner or later, every defender of the current system plays this card: the voting machine isn't connected to the internet, so it can't be hacked from the outside. Technically true. And completely beside the point.
+
+First, because isolation says nothing about what the software does. An offline machine can flip votes just the same — you simply get no way to watch it happen. And malware doesn't need a network to get in: it can come from the factory, from an update, from the supply chain, from a technician with physical access. Stuxnet, the most famous worm in history, crossed the air gap into Iran's centrifuges on a USB stick. An air gap is an obstacle, not proof of honesty. And notice: the machine's data has to leave it somehow at the end of the day, on physical media carried around or through later transmission. "Not on the internet" is a logistical half-truth.
+
+Second, and more important: that argument exposes the wrong mental model. The current system's security comes from **physical custody** — seals, locked rooms, accredited observers, rituals. In other words, once again, from trusting people and processes you cannot see.
+
+In the system I'm about to describe, the machine could be **plugged straight into the internet**, publishing every vote to the public tree in real time, and fraud would still be impossible. Not because the network is safe, but because nobody needs to trust the machine:
+
+- What it publishes are opaque commitments: even broadcasting everything live, there is no vote to leak in the published data.
+- Every commitment carries a mathematical validity proof: the machine cannot mint an invalid vote.
+- The tree is public and replicated by independent observers: nothing published can be altered later without breaking the hashes.
+- And if the machine flips your vote at the booth, the Benaloh challenge catches it (that's Building block 4, further down): it cannot know whether you'll cast or audit.
+
+Being online or not stops being the question. Security doesn't live in the absence of a network; it lives in public verification. "Trust us, the machine is locked in a room" becomes "don't trust anything, check the math." That inversion is the one thing the current model cannot offer.
+
 ## The tweet that started this
 
 I recently posted [this tweet](https://x.com/AkitaOnRails/status/2085550756837335483) about end-to-end verifiability (E2E-V). The gist of the idea:
