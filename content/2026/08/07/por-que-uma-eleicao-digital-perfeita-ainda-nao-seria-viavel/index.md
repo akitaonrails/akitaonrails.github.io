@@ -48,7 +48,7 @@ Recentemente postei a resposta, ainda que só de passagem: **prova de conhecimen
 
 O fluxo seria assim: o eleitor escolhe o candidato na tela; a urna gera um número aleatório secreto, computa `ciphertext = Enc(chave_publica_da_eleicao, voto; aleatorio)`, gera uma prova ZK de que esse ciphertext contém um voto válido, e publica tudo numa Merkle tree pública. O eleitor leva pra casa só um número de série. O serial **não contém o voto**, mas permite provar que o voto existe na árvore e não foi adulterado.
 
-Agora vamos destrinchar isso pra programador, passo a passo, com valores reais. E no final eu explico por que, mesmo funcionando perfeitamente, isso não resolveria nada.
+Agora vamos destrinchar isso pra programador, passo a passo, com valores reais — e no final eu explico por que isso, mesmo funcionando perfeitamente, não resolveria nada.
 
 ## Peça 1: hash como compromisso
 
@@ -100,7 +100,7 @@ C(voto=1, n=9)  = 13
 C(voto=0, n=3)  = 6
 ```
 
-Mesmo voto, nonces diferentes, compromissos completamente diferentes. Agora vem a parte que importa. O Pedersen tem uma propriedade chamada **ocultação perfeita** (*perfectly hiding*): para qualquer compromisso `C`, **existe** um nonce que abre `C` como voto 0, e **existe** um nonce que abre `C` como voto 1. Com nosso primo de brinquedo dá pra provar por força bruta:
+Mesmo voto, nonces diferentes, compromissos completamente diferentes. O Pedersen tem uma propriedade chamada **ocultação perfeita** (*perfectly hiding*): para qualquer compromisso `C`, **existe** um nonce que abre `C` como voto 0, e **existe** um nonce que abre `C` como voto 1. Com nosso primo de brinquedo dá pra provar por força bruta:
 
 ```python
 C = 1  # o compromisso de cima, C(voto=1, n=3)
@@ -159,7 +159,7 @@ RAIZ PUBLICA: 48826b6481b574e37156f85e34d877105bc55073fb5a5b981239572a8e7c4b61
 
 A raiz é o "resumo" da eleição inteira: 32 bytes que representam todos os votos. Se **um único bit** de um único voto mudar, a raiz muda completamente. Publica-se a raiz e a árvore inteira. Qualquer cidadão, em casa, com código aberto, refaz a árvore e confere se a raiz publicada bate. Isso é a **verificabilidade universal**.
 
-Agora, a parte individual. Suponha que você é o eleitor 4. Seu recibo é o serial — a folha `fd6df9e3530cb74f1f0795b751a43454cab281a431d0558b413e33bba83a4100`, que é o hash do seu compromisso `C = 16` na posição 4 da árvore. Pra provar que ele está na árvore, você não precisa baixar e conferir todos os 8 votos — precisa de apenas `log2(8) = 3` hashes, o caminho dos "irmãos" até a raiz:
+Pra verificação individual, suponha que você é o eleitor 4. Seu recibo é o serial — a folha `fd6df9e3530cb74f1f0795b751a43454cab281a431d0558b413e33bba83a4100`, que é o hash do seu compromisso `C = 16` na posição 4 da árvore. Pra provar que ele está na árvore, você não precisa baixar e conferir todos os 8 votos — precisa de apenas `log2(8) = 3` hashes, o caminho dos "irmãos" até a raiz:
 
 ```python
 def merkle_verify(leaf, proof, root):
@@ -243,7 +243,7 @@ A eleição hipoteticamente perfeita ficaria assim:
 
 Repare no que mudou em relação ao sistema atual: **não é mais preciso confiar no TSE, na urna, nem em auditor nenhum.** Cada propriedade é verificável individualmente por qualquer pessoa com um computador. É o mesmo princípio que faz o Bitcoin funcionar sem banco central: don't trust, verify.
 
-Antes que alguém anime demais: isso é uma simplificação. Um sistema real precisa ainda resolver autenticação de eleitor sem permitir vincular a identidade ao voto, registro de quem já votou sem revelar pra quem, auditoria da honestidade da urna no momento da votação (o desafio de Benaloh: o eleitor pode exigir que a urna revele uma cédula de teste), disponibilidade da árvore, e uma porção de detalhes operacionais. O ponto aqui não é o projeto completo; é o mecanismo central.
+Antes que alguém anime demais: isso é uma simplificação. Um sistema real precisa ainda resolver autenticação de eleitor sem permitir vincular a identidade ao voto, registro de quem já votou sem revelar pra quem, auditoria da honestidade da urna no momento da votação (o desafio de Benaloh: o eleitor pode exigir que a urna revele uma cédula de teste), disponibilidade da árvore, e uma porção de detalhes operacionais. O ponto aqui é o mecanismo central, não o projeto completo.
 
 ## E por que isso nunca funcionaria
 
@@ -265,7 +265,7 @@ Antes de concluir, vale um desvio pra responder à pergunta que sempre aparece: 
 
 Primeiro, desfazendo um mal-entendido: **blockchain não é sinônimo de criptomoeda.** Como o próprio nome diz, é só uma cadeia de blocos. Cada bloco carrega uma Merkle tree de registros e o hash do bloco anterior. No Bitcoin, o cabeçalho do bloco guarda a raiz da árvore de transações, o hash do bloco anterior, um carimbo de tempo e um nonce — aqui, um contador de mineração — que os mineradores variam até o hash do bloco inteiro cair abaixo do alvo de dificuldade — a tal prova de trabalho. É a Peça 3 deste artigo, estendida no tempo: não uma árvore, mas uma cadeia de árvores, cada uma selando a anterior.
 
-O resultado prático é a garantia que interessa aqui: mexa em **uma transação** de um bloco antigo e a raiz da árvore muda, o hash do bloco muda, o elo com o bloco seguinte quebra, e pra esconder isso você precisaria refazer a prova de trabalho de todos os blocos até hoje — enquanto milhares de nós honestos continuam alongando a cadeia verdadeira. Depois que tudo está assinado e selado por hash, adulterar o passado é computacionalmente impossível. É exatamente por isso que o Bitcoin pode ser 100% público: a exposição não é o risco, é a proteção. Todo mundo tem cópia de tudo, então ninguém reescreve a história.
+O resultado prático é a garantia que interessa aqui: mexa em **uma transação** de um bloco antigo e a raiz da árvore muda, o hash do bloco muda, o elo com o bloco seguinte quebra, e pra esconder isso você precisaria refazer a prova de trabalho de todos os blocos até hoje — enquanto milhares de nós honestos continuam alongando a cadeia verdadeira. Depois que tudo está assinado e selado por hash, adulterar o passado é computacionalmente impossível. É exatamente por isso que o Bitcoin pode ser 100% público: a exposição funciona como proteção, não como risco. Todo mundo tem cópia de tudo, então ninguém reescreve a história.
 
 **Mas público não significa anônimo.** Essa é a parte que a maioria confunde. No Bitcoin, toda transação fica visível pra sempre: quais endereços alimentaram, quais receberam, quanto foi. Endereços são pseudônimos — apelidos, não anonimato. E existe uma indústria inteira de análise de cadeia (Chainalysis, Elliptic, TRM) que vive de grudar identidade nesses apelidos:
 
@@ -285,7 +285,7 @@ O Zcash segue a mesma filosofia com zk-SNARKs: você prova "eu sou dono de uma n
 
 E aqui o círculo se fecha. Olhe o que o esquema eleitoral deste artigo usa: uma estrutura pública e imutável que qualquer um verifica (a Merkle tree, primo mais simples da blockchain), compromissos Pedersen pra esconder o conteúdo (a mesma primitiva do Monero) e provas ZK pra garantir validade sem revelação (a mesma família do Monero e do Zcash). Nada disso é conjectura de laboratório: são sistemas em produção, auditados, atacados diariamente, protegendo dinheiro de verdade. Uma eleição é, se muito, um problema mais simples — janela curta, um publicador só, verificação offline.
 
-É por isso que eu disse lá no começo que a ideia é matematicamente sólida: ela não inventa nada, só compõe peças que já provaram aguentar o mundo real. Sabemos que um sistema de eleição digital verificável ponta a ponta **poderia** ser construído, porque todos os componentes dele já estão construídos e funcionando. O que nos leva de volta ao problema que não é técnico.
+Por isso eu disse lá no começo que a ideia é matematicamente sólida: ela não inventa nada, só compõe peças que já provaram aguentar o mundo real. Sabemos que um sistema de eleição digital verificável ponta a ponta **poderia** ser construído, porque todos os componentes dele já estão construídos e funcionando. O que nos leva de volta ao problema que não é técnico.
 
 ## Conclusão
 

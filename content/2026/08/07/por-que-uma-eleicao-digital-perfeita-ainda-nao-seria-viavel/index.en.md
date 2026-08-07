@@ -48,7 +48,7 @@ I recently posted the answer, albeit only in passing: **zero-knowledge proofs** 
 
 The flow would go like this: the voter picks the candidate on the screen; the machine generates a secret random number, computes `ciphertext = Enc(election_public_key, vote; random)`, produces a ZK proof that this ciphertext contains a valid vote, and publishes everything to a public Merkle tree. The voter takes home only a serial number. The serial **does not contain the vote**, but it lets you prove the vote exists in the tree and was not tampered with.
 
-Now let's unpack this for programmers, step by step, with real values. And at the end I'll explain why, even working perfectly, this would fix nothing.
+Here's what this looks like for programmers, step by step, with real values. And at the end I'll explain why, even working perfectly, this would fix nothing.
 
 ## Building block 1: hash as commitment
 
@@ -255,7 +255,7 @@ And that's not for lack of intelligence. It's because trusting this system requi
 
 And here we hit the fatal contradiction: if an electoral system requires the ordinary citizen to blindly believe a specialist they can't audit, it is **exactly as opaque as the TSE's current system**. The opacity just moved address: instead of trusting the court bureaucrat, you trust the cryptographer. For dona Maria, who sells pastel at the street market, it's all the same — both are "a bunch of mumbo-jumbo I don't understand". And a system the population cannot understand is a system whose legitimacy it will never accept. Today's skeptic saying "I don't trust the voting machine" would become tomorrow's skeptic saying "I don't trust this algebra".
 
-An election is not only an engineering problem; it's a **social trust** problem. The gold standard of transparency is not the most sophisticated system — it's the system **anyone can watch with their own eyes**: paper ballot, glass ballot box, public counting at the precinct, the tally posted on the door. Anyone understands paper being counted in public. Nobody has to believe anybody.
+An election is not only an engineering problem; it's a **social trust** problem. The gold standard of transparency is the system **anyone can watch with their own eyes**: paper ballot, glass ballot box, public counting at the precinct, the tally posted on the door. Anyone understands paper being counted in public. Nobody has to believe anybody.
 
 That's why countries far richer and more technological than Brazil — Germany, the Netherlands, France, most of the US — stick with paper or demand an auditable paper trail. That's not backwardness. It's the recognition that verifiability only specialists understand is not public verifiability.
 
@@ -265,7 +265,7 @@ Before wrapping up, a detour to answer the question that always comes up: "but d
 
 First, clearing up a misunderstanding: **blockchain is not synonymous with cryptocurrency.** As the name says, it's just a chain of blocks. Each block carries a Merkle tree of records and the previous block's hash. In Bitcoin, the block header holds the transaction tree's root, the previous block's hash, a timestamp, and a nonce — here, a mining counter — that miners vary until the hash of the entire block falls below the difficulty target: the famous proof of work. It's Building block 3 of this article, extended through time: not one tree, but a chain of trees, each sealing the one before.
 
-The practical result is the guarantee that matters here: tamper with **one transaction** in an old block and the tree's root changes, the block's hash changes, the link to the next block breaks, and to hide that you'd need to redo the proof of work of every block up to today — while thousands of honest nodes keep extending the true chain. Once everything is signed and sealed by hash, rewriting the past is computationally impossible. That's exactly why Bitcoin can be 100% public: exposure is not the risk, it's the protection. Everyone has a copy of everything, so nobody rewrites history.
+The practical result is the guarantee that matters here: tamper with **one transaction** in an old block and the tree's root changes, the block's hash changes, the link to the next block breaks, and to hide that you'd need to redo the proof of work of every block up to today — while thousands of honest nodes keep extending the true chain. Once everything is signed and sealed by hash, rewriting the past is computationally impossible. That's exactly why Bitcoin can be 100% public: the exposure itself is the protection. Everyone has a copy of everything, so nobody rewrites history.
 
 **But public does not mean anonymous.** That's the part most people get wrong. In Bitcoin, every transaction stays visible forever: which addresses fed it, which received, how much moved. Addresses are pseudonyms — pen names, not anonymity. And there's an entire chain-analysis industry (Chainalysis, Elliptic, TRM) making a living gluing identities to those pen names:
 
