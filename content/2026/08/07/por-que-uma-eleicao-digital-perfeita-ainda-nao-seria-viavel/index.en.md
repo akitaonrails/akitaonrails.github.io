@@ -19,6 +19,8 @@ And for the record: I'm not defending the current system, and I have zero expect
 
 Many people conclude from this that the answer is digital elections, but with a different system. This article is a computer science exercise: what would a hypothetically perfect system look like? And, more importantly, the final conclusion: **why even that perfect system would not be a viable option.**
 
+One thing worth emphasizing before we start: the system I'm about to describe would require **no** secrecy from the government. No secret components, no secret processes, no locked rooms with credentialed people standing guard. Everything — the code, the data, the whole structure — could be 100% open, accessible to anyone, no restrictions whatsoever. And it would still be possible to prove, mathematically, that fraud is impossible. It's the exact opposite of the current model, where trust is born out of secrecy.
+
 > No patience for code and math along the way? [Skip straight to the part where I explain why this wouldn't work](#why-this-would-never-work).
 
 ## The tweet that started this

@@ -19,6 +19,8 @@ E pra deixar claro: eu não defendo o sistema atual, nem tenho expectativa nenhu
 
 Muita gente conclui daí que o certo seria ter eleição digital, mas com um sistema diferente. Esse artigo é um exercício de ciência da computação: como seria um sistema hipoteticamente perfeito? E, mais importante, a conclusão final: **por que mesmo esse sistema perfeito não seria uma opção viável.**
 
+Uma coisa que vale enfatizar antes de começar: o sistema que vou descrever não exigiria **nenhum** segredo do governo. Nenhum componente secreto, nenhum processo secreto, nenhuma sala trancada com credenciado vigiando. Tudo — o código, os dados, a estrutura inteira — poderia ser 100% aberto, acessível pra qualquer pessoa, sem restrição nenhuma. E ainda assim seria possível provar, matematicamente, que fraudar é impossível. É exatamente o oposto do modelo atual, em que a confiança nasce do sigilo.
+
 > Sem paciência pra código e matemática no meio do caminho? [Pule direto pra parte em que explico por que isso não funcionaria](#e-por-que-isso-nunca-funcionaria).
 
 ## O tweet que começou isso
