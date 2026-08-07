@@ -15,6 +15,8 @@ Toda eleição no Brasil vira a mesma novela: metade do país não confia no res
 
 Recentemente o TSE fez um teatrinho: ["abriu a urna"](https://www.tse.jus.br/comunicacao/noticias/2026/Junho/eleicoes-2026-tse-abre-urna-eletronica-para-tecnicos-da-sociedade-brasileira-de-computacao) pra técnicos da Sociedade Brasileira de Computação verem os componentes. Isso é obviamente inútil. Mostrar placa-mãe, processador e memória não prova que não existe malware. Hardware é só o palco; a peça acontece no software. E auditar o software é justamente o que é difícil, restrito, cheio de ritual e janela curta — o que derrota completamente o propósito de transparência pública. Uma auditoria que só meia dúzia de credenciados consegue fazer, sob supervisão, por alguns dias, não é transparência. É encenação.
 
+E pra deixar claro: eu não defendo o sistema atual, nem tenho expectativa nenhuma nele. Como resumi [neste tweet](https://x.com/AkitaOnRails/status/2084669984555331706): a urna é só uma caixa, um PC velho. Mesmo que o software fosse perfeito, não faria diferença — os processos ao redor continuam secretos, feitos debaixo dos panos. A urna é cortina de fumaça. Com ou sem alternativa, eu não ligo pra ela.
+
 Muita gente conclui daí que o certo seria ter eleição digital, mas com um sistema diferente. Esse artigo é um exercício de ciência da computação: como seria um sistema hipoteticamente perfeito? E, mais importante, a conclusão final: **por que mesmo esse sistema perfeito não seria uma opção viável.**
 
 > Sem paciência pra código e matemática no meio do caminho? [Pule direto pra parte em que explico por que isso não funcionaria](#e-por-que-isso-nunca-funcionaria).
