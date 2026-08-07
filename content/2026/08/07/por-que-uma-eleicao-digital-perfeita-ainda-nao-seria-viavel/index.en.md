@@ -183,9 +183,32 @@ You take your serial, concatenate it with the 3 proof hashes in the right order,
 
 Notice what just happened: you proved that **a piece of information is in the public tree** and that **nobody messed with it**, carrying home only a 32-byte number that, by itself, says absolutely nothing about the content. That's what people mean by "zero knowledge" in this context: the verification happens without the knowledge (the vote) ever having to travel.
 
-## Building block 4: a real zero-knowledge proof — Schnorr
+## Building block 4: the Benaloh challenge — checking the machine on the spot
 
-One piece is missing. What guarantees that each commitment in the tree contains a **valid vote** — and not, say, `vote = 500`, which would inflate the result? The machine must prove the commitment opens to a legitimate value **without opening the commitment**. That's a zero-knowledge proof in the strict sense.
+There's one blind spot left. The machine shows "vote recorded" on the screen and prints your serial `C`. At home, you confirm that `C` sits in the tree. All good? Not quite. What if the machine **lied** and committed a different vote? The screen shows the candidate you picked, but under the hood it computed the commitment for another one. You would never notice, because the commitment is opaque by design. That's the hiding property working against you.
+
+The classic fix comes from cryptographer Josh Benaloh, and it goes by **Benaloh challenge** (or *cast-or-challenge*). The idea: after the machine shows the commitment `C` on screen, but **before** you confirm, you get two options:
+
+- **Cast**: the vote counts, enters the tree, and the nonce is destroyed forever.
+- **Challenge**: you declare that ballot a **test vote**. The machine must reveal the nonce and the vote it put inside the commitment, and you redo the math on the spot — in an independent app, on your own phone, not on the machine's software:
+
+```python
+# the machine showed on screen: C = 1
+# you challenged; the machine reveals: vote=1, nonce=3
+pedersen(1, 3) == 1   # True -> the machine committed exactly what you picked
+```
+
+If it matches, the machine was honest **on that ballot**. The test ballot is spoiled and never enters the tally — the revealed nonce would make it readable — and you vote again, for real this time.
+
+Now suppose a rigged machine that flips a fraction of the votes. You pick `vote=1`; it internally records `vote=0` and shows `C = 12` on screen (`pedersen(0, 7) = 12`). If you **cast**, the fraud sails through. But if you **challenge**, the machine is cornered: it has to reveal a `(vote, nonce)` pair that opens `C = 12`. The only one it knows is `(0, 7)` — and revealing that exposes the swap right in front of you: "I voted 1!". Opening it as `vote=1` would require finding a nonce `n` with `pedersen(1, n) = 12`, which is the discrete log problem all over again. With our toy prime a brute force search finds one (`n = 10` exists), but with 2048-bit primes a cheating machine flat out cannot produce the answer.
+
+And what springs the trap: the machine **cannot know in advance** whether you'll cast or challenge. The decision is yours, made after the commitment is already on screen. If a slice of the electorate tests a few ballots before voting for real, a machine that flips votes at scale gets caught with overwhelming probability. Real verifiable voting systems like Helios and ElectionGuard use exactly this mechanism.
+
+And notice this breaks nobody's secrecy: the revealed nonce belongs to a **spoiled** ballot that doesn't count. The vote that counts keeps its nonce destroyed and its commitment impenetrable.
+
+## Building block 5: a real zero-knowledge proof — Schnorr
+
+One last piece is missing. What guarantees that each commitment in the tree contains a **valid vote** — and not, say, `vote = 500`, which would inflate the result? The machine must prove the commitment opens to a legitimate value **without opening the commitment**. That's a zero-knowledge proof in the strict sense.
 
 The canonical example, and one you can demonstrate with small numbers, is the **Schnorr** protocol: proving you know a secret `s` such that `y = g^s mod p`, without revealing `s`. The intuition before the math: it's Ali Baba's cave. The cave has two passages that meet at a locked door. You prove you have the key by walking in one side and coming out whichever side the verifier calls — without ever showing the key. Without the key, you'd only guess the call right by luck, 50% of the time; after 20 rounds, the odds of fooling anyone are below one in a million.
 
@@ -234,7 +257,7 @@ In our hypothetical election, the machine publishes, alongside each vote, a proo
 The hypothetically perfect election would go like this:
 
 1. **Setup.** A group of independent authorities (the electoral court, the bar association, parties, civil society) jointly generates the election's public key. The corresponding private key stays fragmented: no single authority can decrypt anything; only a majority acting together can.
-2. **Voting.** The voter picks the candidate on the screen. The machine generates a random nonce, computes the Pedersen commitment (or an equivalent ElGamal ciphertext), produces the ZK validity proof, and discards the nonce.
+2. **Voting.** The voter picks the candidate on the screen. The machine generates a random nonce, computes the Pedersen commitment (or an equivalent ElGamal ciphertext), produces the ZK validity proof, and shows the commitment on screen. The voter then decides: cast, and the nonce is destroyed — or challenge, and the machine reveals the nonce for an on-the-spot check, the ballot is spoiled, and they vote again.
 3. **Publication.** The commitment goes into a public Merkle tree, replicated and signed by multiple independent observers.
 4. **Receipt.** The voter takes home a slip of paper with the serial. They **cannot** prove to anyone who they voted for — even if they want to, because they don't have the nonce.
 5. **Individual verification.** At home, the voter downloads the tree (or uses any independent website) and checks their serial is there, with the inclusion proof. If it isn't, they hold material proof of fraud.
@@ -243,13 +266,13 @@ The hypothetically perfect election would go like this:
 
 Notice what changed relative to the current system: **you no longer need to trust the electoral court, the voting machine, or any auditor.** Every property is individually verifiable by anyone with a computer. It's the same principle that lets Bitcoin work without a central bank: don't trust, verify.
 
-Before anyone gets too excited: this is a simplification. A real system still has to solve voter authentication without allowing identity-to-vote linkage, recording who already voted without revealing for whom, auditing the machine's honesty at voting time (the Benaloh challenge: the voter can demand the machine reveal a test ballot), tree availability, and a pile of operational details. The point here is not the complete design; it's the core mechanism.
+Before anyone gets too excited: this is a simplification. A real system still has to solve voter authentication without allowing identity-to-vote linkage, recording who already voted without revealing for whom, tree availability, and a pile of operational details. The point here is not the complete design; it's the core mechanism.
 
 ## Why this would never work
 
 Now for the part almost nobody proposing these systems wants to hear.
 
-Scroll back to the beginning of this article and notice what I had to explain to get here: hash functions, commitments, modular arithmetic, discrete logarithms, Merkle trees, zero-knowledge proofs, simulators. With code, with numbers, with step-by-step examples. And even so, I'd bet a good share of readers — programmers included — made it here without full certainty that they truly understand why the scheme is secure.
+Scroll back to the beginning of this article and notice what I had to explain to get here: hash functions, commitments, modular arithmetic, discrete logarithms, Merkle trees, the Benaloh challenge, zero-knowledge proofs, simulators. With code, with numbers, with step-by-step examples. And even so, I'd bet a good share of readers — programmers included — made it here without full certainty that they truly understand why the scheme is secure.
 
 And that's not for lack of intelligence. It's because trusting this system requires understanding math that the vast majority of the population will never understand. The only human being who can be **100% certain** this system is correct is the one who can verify the mathematical proofs on their own. Everyone else — 99.9% of the population — wouldn't be *verifying* anything. They'd be **believing** the mathematician who says it works.
 

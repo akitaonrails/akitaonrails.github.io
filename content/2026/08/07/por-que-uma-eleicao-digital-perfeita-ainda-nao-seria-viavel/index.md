@@ -183,9 +183,32 @@ Você pega seu serial, concatena com os 3 hashes da prova na ordem certa, hashei
 
 Repare no que acabou de acontecer: você provou que **uma informação está na árvore pública** e que **ninguém mexeu nela**, carregando pra casa apenas um número de 32 bytes que, sozinho, não diz absolutamente nada sobre o conteúdo. É isso que as pessoas querem dizer com "zero knowledge" nesse contexto: a verificação acontece sem que o conhecimento (o voto) precise circular.
 
-## Peça 4: prova de conhecimento zero de verdade — Schnorr
+## Peça 4: o desafio de Benaloh — conferindo a urna na hora
 
-Falta uma peça. Quem garante que cada compromisso na árvore contém um **voto válido** — e não, digamos, `voto = 500`, que inflaria o resultado? A urna precisa provar que o compromisso abre pra um valor legítimo **sem abrir o compromisso**. Isso é uma prova de conhecimento zero no sentido estrito.
+Sobrou um ponto cego. A urna mostra na tela "voto registrado" e imprime seu serial `C`. Em casa, você confere que `C` está na árvore. Tudo certo? Nem tanto. E se a urna tiver **mentido** e comprometido outro voto? Na tela ela mostra o candidato que você escolheu, mas por dentro calcula o compromisso de outro. Você jamais perceberia, porque o compromisso é opaco por design. É a propriedade de ocultação trabalhando contra você.
+
+A solução clássica é do criptógrafo Josh Benaloh, e ficou conhecida como **desafio de Benaloh** (ou *cast-or-challenge*). A ideia: depois que a urna mostra o compromisso `C` na tela, mas **antes** de você confirmar, existem duas opções:
+
+- **Confirmar**: o voto vale, entra na árvore e o nonce é descartado pra sempre.
+- **Desafiar**: você declara aquela cédula um **voto de teste**. A urna é obrigada a revelar o nonce e o voto que ela pôs dentro do compromisso, e você refaz a conta na hora — num app independente, no seu próprio celular, não no software da urna:
+
+```python
+# a urna mostrou na tela: C = 1
+# você desafiou; a urna revela: voto=1, nonce=3
+pedersen(1, 3) == 1   # True -> a urna comprometeu exatamente o que você escolheu
+```
+
+Se bate, a urna foi honesta **naquela cédula**. A cédula de teste é anulada, não entra na apuração — o nonce revelado a tornaria legível — e você vota de novo, agora pra valer.
+
+Agora suponha uma urna adulterada, que troca uma fração dos votos. Você escolhe `voto=1`; ela registra por dentro `voto=0` e mostra `C = 12` na tela (`pedersen(0, 7) = 12`). Se você **confirmar**, a fraude passa batida. Mas se você **desafiar**, a urna está encurralada: precisa revelar um par `(voto, nonce)` que abra `C = 12`. O único que ela conhece é `(0, 7)` — e revelar isso expõe a troca na sua frente: "eu votei 1!". Abrir como `voto=1` exigiria achar um nonce `n` com `pedersen(1, n) = 12`, que é o problema do logaritmo discreto de novo. Com nosso primo de brinquedo dá pra achar por força bruta (existe: `n = 10`), mas com primos de 2048 bits a urna trapaceira simplesmente não consegue produzir a resposta.
+
+E o que fecha a armadilha: a urna **não sabe de antemão** se você vai confirmar ou desafiar. A decisão é sua, tomada depois que o compromisso já foi mostrado. Se uma parcela dos eleitores testa algumas cédulas antes de votar pra valer, uma urna que adultera votos em escala é pega com probabilidade esmagadora. Sistemas reais de votação verificável, como o Helios e o ElectionGuard, usam exatamente esse mecanismo.
+
+E note que isso não fere o sigilo de nada: o nonce revelado é de uma cédula **anulada**, que não conta. O voto que vale continua com o nonce descartado e o compromisso impenetrável.
+
+## Peça 5: prova de conhecimento zero de verdade — Schnorr
+
+Falta uma última peça. Quem garante que cada compromisso na árvore contém um **voto válido** — e não, digamos, `voto = 500`, que inflaria o resultado? A urna precisa provar que o compromisso abre pra um valor legítimo **sem abrir o compromisso**. Isso é uma prova de conhecimento zero no sentido estrito.
 
 O exemplo canônico, e que dá pra demonstrar com números pequenos, é o protocolo de **Schnorr**: provar que você conhece um segredo `s` tal que `y = g^s mod p`, sem revelar `s`. A intuição antes da matemática: é a caverna de Ali Babá. A caverna tem duas passagens que se encontram numa porta trancada. Você prova que tem a chave entrando por um lado e saindo pelo que o verificador pedir — sem nunca mostrar a chave. Se não tivesse a chave, você só acertaria o pedido por sorte, 50% das vezes; depois de 20 rodadas, a chance de enganar é menor que uma em um milhão.
 
@@ -234,7 +257,7 @@ Na nossa eleição hipotética, a urna publica junto com cada voto uma prova des
 A eleição hipoteticamente perfeita ficaria assim:
 
 1. **Preparação.** Um grupo de autoridades independentes (TSE, OAB, partidos, sociedade civil) gera em conjunto a chave pública da eleição. A chave privada correspondente fica fragmentada: nenhuma autoridade sozinha consegue decriptar nada; só uma maioria agindo junta.
-2. **Votação.** O eleitor escolhe o candidato na tela. A urna gera um nonce aleatório, calcula o compromisso Pedersen (ou um ciphertext ElGamal equivalente), produz a prova ZK de validade e descarta o nonce.
+2. **Votação.** O eleitor escolhe o candidato na tela. A urna gera um nonce aleatório, calcula o compromisso Pedersen (ou um ciphertext ElGamal equivalente), produz a prova ZK de validade e mostra o compromisso na tela. O eleitor então decide: confirma, e o nonce é descartado — ou desafia, e a urna revela o nonce pra conferência imediata, a cédula é anulada e ele vota de novo.
 3. **Publicação.** O compromisso entra numa Merkle tree pública, replicada e assinada por múltiplos observadores independentes.
 4. **Recibo.** O eleitor leva pra casa um papel com o serial. Ele **não consegue** provar pra ninguém em quem votou — nem que queira, porque não tem o nonce.
 5. **Verificação individual.** Em casa, o eleitor baixa a árvore (ou usa qualquer site independente) e confere que seu serial está lá, com a prova de inclusão. Se não estiver, ele tem prova material da fraude.
@@ -243,13 +266,13 @@ A eleição hipoteticamente perfeita ficaria assim:
 
 Repare no que mudou em relação ao sistema atual: **não é mais preciso confiar no TSE, na urna, nem em auditor nenhum.** Cada propriedade é verificável individualmente por qualquer pessoa com um computador. É o mesmo princípio que faz o Bitcoin funcionar sem banco central: don't trust, verify.
 
-Antes que alguém anime demais: isso é uma simplificação. Um sistema real precisa ainda resolver autenticação de eleitor sem permitir vincular a identidade ao voto, registro de quem já votou sem revelar pra quem, auditoria da honestidade da urna no momento da votação (o desafio de Benaloh: o eleitor pode exigir que a urna revele uma cédula de teste), disponibilidade da árvore, e uma porção de detalhes operacionais. O ponto aqui é o mecanismo central, não o projeto completo.
+Antes que alguém anime demais: isso é uma simplificação. Um sistema real precisa ainda resolver autenticação de eleitor sem permitir vincular a identidade ao voto, registro de quem já votou sem revelar pra quem, disponibilidade da árvore, e uma porção de detalhes operacionais. O ponto aqui é o mecanismo central, não o projeto completo.
 
 ## E por que isso nunca funcionaria
 
 Agora a parte que quase ninguém que propõe esses sistemas quer ouvir.
 
-Volta pro começo do artigo e repara no que eu precisei explicar pra chegar até aqui: funções de hash, compromissos, aritmética modular, logaritmo discreto, árvores de Merkle, provas de conhecimento zero, simuladores. Com código, com números, com exemplos passo a passo. E mesmo assim eu aposto que uma parcela boa dos leitores — inclusive programadores — chegou até aqui sem ter certeza de que entendeu de verdade por que o esquema é seguro.
+Volta pro começo do artigo e repara no que eu precisei explicar pra chegar até aqui: funções de hash, compromissos, aritmética modular, logaritmo discreto, árvores de Merkle, o desafio de Benaloh, provas de conhecimento zero, simuladores. Com código, com números, com exemplos passo a passo. E mesmo assim eu aposto que uma parcela boa dos leitores — inclusive programadores — chegou até aqui sem ter certeza de que entendeu de verdade por que o esquema é seguro.
 
 E não é por falta de inteligência. É porque a confiança nesse sistema exige entender matemática que a imensa maioria da população nunca vai entender. O único ser humano que pode ter **100% de certeza** de que esse sistema é correto é aquele que consegue verificar as demonstrações matemáticas por conta própria. Todo o resto — 99,9% da população — não estaria *verificando* coisa nenhuma. Estaria **acreditando** no matemático que diz que funciona.
 
