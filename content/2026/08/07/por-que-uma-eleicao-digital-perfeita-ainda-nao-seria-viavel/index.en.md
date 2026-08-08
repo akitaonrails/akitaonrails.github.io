@@ -143,6 +143,8 @@ Read that again, because this is the heart of the article. The commitment `C = 1
 
 And the final detail that kills the halter vote: **the machine generates the nonce, not the voter.** The voter sees their choice on the screen, the machine makes the commitment internally, discards the nonce, and prints only the `C` — the serial. The voter leaves the booth with no way to open their own commitment, even if they want to.
 
+(One implementation detail I'll simplify from here on: Pedersen hides so well that **nobody** can decrypt it — not even the authorities at tally time. In practice, the machine also publishes an ElGamal ciphertext of the same vote: just as opaque to any outsider, but decryptable by the authorities at the tally, with a ZK proof that both carry the same vote. Our toy Pedersen plays both roles in this article, to keep the math on small numbers.)
+
 ## Building block 3: the Merkle tree — a ballot box anyone can audit
 
 Where do these commitments live? In a public structure anyone can download and verify: a Merkle tree. If you watched my video on [cryptography in practice — certificates, BitTorrent, Git, Bitcoin](/2023/11/10/akitando-147-criptografia-na-pratica-certificados-bittorrent-git-bitcoin/), you've seen this structure in action: it's the same one that scales BitTorrent, organizes Git commits, and packs the transactions of a Bitcoin block.
@@ -225,7 +227,7 @@ And notice this breaks nobody's secrecy: the revealed nonce belongs to a **spoil
 
 ## Building block 5: a real zero-knowledge proof — Schnorr
 
-One last piece is missing. What guarantees that each commitment in the tree contains a **valid vote** — and not, say, `vote = 500`, which would inflate the result? The machine must prove the commitment opens to a legitimate value **without opening the commitment**. That's a zero-knowledge proof in the strict sense.
+One more piece is missing. What guarantees that each commitment in the tree contains a **valid vote** — and not, say, `vote = 500`, which would inflate the result? The machine must prove the commitment opens to a legitimate value **without opening the commitment**. That's a zero-knowledge proof in the strict sense.
 
 The canonical example, and one you can demonstrate with small numbers, is the **Schnorr** protocol: proving you know a secret `s` such that `y = g^s mod p`, without revealing `s`. The intuition before the math: it's Ali Baba's cave. The cave has two passages that meet at a locked door. You prove you have the key by walking in one side and coming out whichever side the verifier calls — without ever showing the key. Without the key, you'd only guess the call right by luck, 50% of the time; after 20 rounds, the odds of fooling anyone are below one in a million.
 
@@ -269,27 +271,77 @@ The forged transcript `(t=8, c=5, z=9)` passes verification and is **indistingui
 
 In our hypothetical election, the machine publishes, alongside each vote, a proof of this kind — in practice, an OR-variant ("the vote is 0 **or** it is 1", without saying which) — and any auditor verifies that every vote in the tree is valid, without ever seeing a single one.
 
+## Building block 6: what stops phantom votes?
+
+One hole is left, and it's a favorite among digital-election skeptics: what stops the authority from **stuffing the tree with invented votes**? Every commitment in the Merkle tree carries a ZK proof that it contains a valid vote — but the proof only guarantees the value is 0 or 1. A thousand phantom votes would be a thousand perfectly valid commitments with perfectly correct proofs. The tree is public, anyone can count the leaves... but who says there should be 8 and not 8,000?
+
+The first answer is replication. The tree follows the transparency-log model — the same Certificate Transparency that protects the HTTPS certificates you use all day: one publisher writes, and dozens of independent observers (parties, the bar association, universities, the press, you) copy the tree, sign the root, and cross-check each other. Rewriting history would mean convincing all of them to accept a root different from the one they already signed.
+
+That protects what's already published. But **creating** phantom votes? That's where the most elegant piece of all comes in, from the same David Chaum who invented digital cash and mix-nets: the **blind signature** (1982).
+
+The flow: you authenticate at the registration desk like today — ID, biometrics. In the booth, the machine computes your commitment (Building block 2), but before publishing it needs a credential from the desk. The machine **blinds** the commitment with a random factor and sends the desk only the blinded value — and here being online is no problem at all, as we saw in the air-gap section. The desk, which already registered your authentication, signs exactly once, without seeing the content. The machine unblinds the signature and publishes the pair `(commitment, signature)`. In the end, the desk has no idea which commitment it signed — so it cannot link your identity to your vote. With toy RSA, you can watch the magic happen:
+
+```python
+# the desk's toy RSA: n=3233, e=17 (public), d=2753 (private)
+n, e, d = 3233, 17, 2753
+C = 16        # your Pedersen commitment, the same one from Building block 3
+
+# 1. the machine blinds the commitment with a random factor r
+r = 7
+cego = (C * pow(r, e, n)) % n       # 2341 -> this is all the desk sees
+
+# 2. the desk, which already logged your authentication, signs the BLIND value
+ass_cego = pow(cego, d, n) % n      # 216
+
+# 3. the machine removes the blind factor and publishes (C, s) to the tree
+s = (ass_cego * pow(r, -1, n)) % n  # 2802
+
+# any auditor checks: s^e mod n == C ?
+print(pow(s, e, n))   # 16 -> the commitment, with a valid signature!
+```
+
+Notice: the desk only saw the number 2341, which to them is noise. They signed 216 without knowing they were signing your `C = 16`. Yet the pair `(C, s)` passes any auditor's verification. It's a regular digital signature — `s` is exactly `C^d mod n` — just produced without the signer ever seeing the document. It looks like a magic trick, but it's plain RSA algebra: blinding multiplies by `r^e`; signing raises everything to `d`, and since `e·d ≡ 1`, what's left is `C^d · r`; unblinding divides by `r`, leaving `C^d`.
+
+Now assemble the full picture: **a leaf only enters the tree carrying two things — the ZK validity proof (Building block 5) and a credential signed by the desk (Building block 6).** The desk issues one credential per authentication, and authentication is a public event: there's a line at the precinct, poll workers, party watchers, the biometric log, the per-precinct attendance count published every election. At the end of the day, the equation anyone can check is:
+
+**number of leaves in the tree == number of authenticated voters.**
+
+A phantom vote is a leaf without a credential (doesn't get in) or a credential without a voter (inflates the count and shows). Removing a legitimate vote breaks the receipt's inclusion proof (Building block 3). Altering a published vote breaks the hashes on the observers' copies. Stealing credentials would mean fooling the biometrics in front of watchers. Every fraud path hits a different wall — and every wall is checkable by anyone, from home.
+
+## The weakest link: who proves you are you?
+
+Everything before this section is math. But there's one door no math can lock: authentication. No algorithm proves the human standing in front of you is who they claim to be. That is, honestly, the weakest link in the entire system — and it's worth facing head-on.
+
+The biometric path works technically. At registration, biometric deduplication (AFIS) guarantees one finger exists only once in the roll, no matter how many forged documents back it up. At the precinct, biometrics match the finger against the roll. Brazil already does much of this today. The problem is the price: to work, you must **catalog the entire population's biometrics under government control** — a gigantic, centralized, irresistible honeypot for any attacker. And leaked biometrics are irreversible: you can change a password, you can't change your fingerprints. This isn't hypothetical: Aadhaar, India's biometric registry, suffered incidents exposing data on over a billion people; the OPM, the US government's personnel office, lost 5.6 million fingerprints in a single 2015 breach. A national biometric database is a single point of catastrophic, permanent failure.
+
+Without biometrics, what's left is the ID card — and cards get forged. They probably get forged today. But notice what the architecture does to that problem: one forged authentication mints **one** credential, which yields **one** leaf in the tree. To fraud at scale, the criminal needs flesh-and-blood people showing up in person, in front of poll workers and watchers, once per fake vote. That's retail fraud: expensive, visible, slow. A thousand fake votes require a thousand bodies — and then it's not silent digital fraud anymore, it's chartered-bus logistics everyone sees rolling by. The system doesn't prevent forgery; it **caps the damage per forgery at exactly one vote** and pushes the cost into the physical world.
+
+And anomalies surface: the equation from Building block 6 — leaves == authentications — can be checked precinct by precinct. A precinct with 400 registered voters and 420 authentications raises eyebrows. Regional turnout above 100% raises eyebrows. And if paranoia runs high, the desk's signing key can be fragmented like the election key, requiring a quorum to issue credentials.
+
+The honest summary: no system, however perfect, eliminates this link. The best possible design does two things with it — shrinks the trust surface down to a single physical event (a human proving, once, in public, that they're on the roll) and makes that event's failures **visible** instead of silent. Mass biometrics would fix authentication while creating a privacy problem arguably bigger than the electoral one. Forgeable cards keep the problem small, physical, and auditable. There's no free lunch — and pretending there is one is exactly the kind of pitch this whole article refuses to make.
+
 ## Putting it all together: the full protocol
 
 The hypothetically perfect election would go like this:
 
 1. **Setup.** A group of independent authorities (the electoral court, the bar association, parties, civil society) jointly generates the election's public key. The corresponding private key stays fragmented: no single authority can decrypt anything; only a majority acting together can.
-2. **Voting.** The voter picks the candidate on the screen. The machine generates a random nonce, computes the Pedersen commitment (or an equivalent ElGamal ciphertext), produces the ZK validity proof, and shows the commitment on screen. The voter then decides: cast, and the nonce is destroyed — or challenge, and the machine reveals the nonce for an on-the-spot check, the ballot is spoiled, and they vote again.
-3. **Publication.** The commitment goes into a public Merkle tree, replicated and signed by multiple independent observers.
-4. **Receipt.** The voter takes home a slip of paper with the serial. They **cannot** prove to anyone who they voted for — even if they want to, because they don't have the nonce.
-5. **Individual verification.** At home, the voter downloads the tree (or uses any independent website) and checks their serial is there, with the inclusion proof. If it isn't, they hold material proof of fraud.
-6. **Universal verification.** Any citizen, university, or party rebuilds the entire tree, checks the root, and validates every ZK proof.
-7. **Tallying.** In the end, the encrypted votes go through a mix-net (they get re-shuffled and re-encrypted, severing the link to their original positions) and the authorities decrypt jointly, proving each step. The total matches the public root, or the fraud is evident.
+2. **Authentication.** The voter identifies at the registration desk — ID, biometrics, like today — and the desk logs the authentication. This authorizes the issuance of **one** credential: the blind signature on a commitment, without the desk seeing the content. No link between identity and vote.
+3. **Voting.** The voter picks the candidate on the screen. The machine generates a random nonce, computes the Pedersen commitment and the ElGamal ciphertext of the same vote (the commitment becomes the receipt's serial; the ciphertext is what gets tallied), produces the ZK validity proof, and shows the commitment on screen. The voter then decides: cast, and the nonce is destroyed — or challenge, and the machine reveals the nonce for an on-the-spot check, the ballot is spoiled, and they vote again. Once cast, the machine blinds the commitment, the desk signs it sight unseen, and the machine unblinds the signature.
+4. **Publication.** The commitment goes into a public Merkle tree, together with the ZK proof and the credential — replicated and signed by multiple independent observers. No credential, no entry.
+5. **Receipt.** The voter takes home a slip of paper with the serial. They **cannot** prove to anyone who they voted for — even if they want to, because they don't have the nonce.
+6. **Individual verification.** At home, the voter downloads the tree (or uses any independent website) and checks their serial is there, with the inclusion proof. If it isn't, they hold material proof of fraud.
+7. **Universal verification.** Any citizen, university, or party rebuilds the entire tree, checks the root, validates every ZK proof and credential, and confirms the leaf count matches the published per-precinct authentication totals.
+8. **Tallying.** In the end, the encrypted votes go through a mix-net (they get re-shuffled and re-encrypted, severing the link to their original positions) and the authorities decrypt jointly, proving each step. The total matches the public root, or the fraud is evident.
 
 Notice what changed relative to the current system: **you no longer need to trust the electoral court, the voting machine, or any auditor.** Every property is individually verifiable by anyone with a computer. It's the same principle that lets Bitcoin work without a central bank: don't trust, verify.
 
-Before anyone gets too excited: this is a simplification. A real system still has to solve voter authentication without allowing identity-to-vote linkage, recording who already voted without revealing for whom, tree availability, and a pile of operational details. The point here is not the complete design; it's the core mechanism.
+Before anyone gets too excited: this is a simplification. A real system still has to solve anonymous credentials more robust than our toy blind signature, tree availability, and a pile of operational details. The point here is not the complete design; it's the core mechanism.
 
 ## Why this would never work
 
 Now for the part almost nobody proposing these systems wants to hear.
 
-Scroll back to the beginning of this article and notice what I had to explain to get here: hash functions, commitments, modular arithmetic, discrete logarithms, Merkle trees, the Benaloh challenge, zero-knowledge proofs, simulators. With code, with numbers, with step-by-step examples. And even so, I'd bet a good share of readers — programmers included — made it here without full certainty that they truly understand why the scheme is secure.
+Scroll back to the beginning of this article and notice what I had to explain to get here: hash functions, commitments, modular arithmetic, discrete logarithms, Merkle trees, the Benaloh challenge, blind signatures, zero-knowledge proofs, simulators. With code, with numbers, with step-by-step examples. And even so, I'd bet a good share of readers — programmers included — made it here without full certainty that they truly understand why the scheme is secure.
 
 And that's not for lack of intelligence. It's because trusting this system requires understanding math that the vast majority of the population will never understand. The only human being who can be **100% certain** this system is correct is the one who can verify the mathematical proofs on their own. Everyone else — 99.9% of the population — wouldn't be *verifying* anything. They'd be **believing** the mathematician who says it works.
 
@@ -352,6 +404,16 @@ Now the "but" this whole article builds toward: **every layer on that list depen
 There's also the legal chapter: the attempt to create a voter-verifiable paper record, the "printed vote," was ruled unconstitutional by the Supreme Court in ADI 4543 over ballot-secrecy risks, and the attempt to revive it was struck down again in 2020 ([Conjur](https://conjur.com.br/2020-set-16/supremo-confirma-liminar-impede-volta-voto-impresso/)). The irony is that this article's scheme resolves exactly the conflict that killed the printed vote: a verifiable receipt **without** breaking secrecy, via commitments and ZK proofs. The math unlocks what paper couldn't. Everything else stays locked, as the previous sections explain.
 
 So the honest verdict: the Brazilian system is auditable in real digital and procedural ways, and no fraud altering an outcome has ever been proven in nearly 30 years of electronic voting. But there is no software-independent recount, because there is no voter-verified physical record. In the language of election-security research, a true *risk-limiting audit* is not possible. Trust stays deposited in the software, the pre-election inspections, and the custody of digital records — exactly what this article's hypothetical system tries to eliminate.
+
+## Bonus: skin in the game — rewarding those who verify
+
+One question hangs in the air after assembling the whole scheme: cryptocurrencies work because someone has something to lose. In Bitcoin, the miner burns real energy; in proof-of-stake, the validator deposits capital that gets confiscated if they cheat. And the voter? Voting costs nothing, and checking the receipt at home is work you do for free. The entire system depends on people verifying — and nobody has an incentive to verify. Can you put *skin in the game* on the voter?
+
+The first idea that comes to mind is a deposit: vote, deposit some money, get it back later through the income tax system. As mechanism design, it has logic — it prices fake identities: a million phantom votes would cost a hundred million reais. In practice, it dies in three places. It's a disguised poll tax, exclusionary and unconstitutional — the refund fixes the accounting, not the cash flow of someone who doesn't have the money to front. The "income tax" channel doesn't reach most poor Brazilians, who don't even file — so it excludes exactly who the system most needs to include. And it would build, at the tax authority, a database linking identity, bank account, and electoral participation — a surveillance regression bigger than the problem it solves. All that before the plutocratic detail: security priced in money is security buyable by those who have money. Elections are designed to be wealth-blind — one vote per person. Putting a price on the security layer invites the rich to be more equal than the others.
+
+The version that survives this scrutiny flips the sign: instead of charging to vote, **reward those who verify**. The scheme's real soft spot is the individual verification rate — if nobody checks their serial at home, the inclusion proof from Building block 3 becomes decoration. So: every verified receipt enters a public, auditable lottery, with the tree's own root serving as the randomness source (one more use for it). Checked your vote in the tree? You're in the drawing for a prize. The incentive points exactly at the behavior the system needs — millions of eyes checking the tree — without excluding anyone, charging anything, or building a new database, because the lottery runs on the anonymous serial, not on identity.
+
+It's Bitcoin's logic on the right side: there, the block reward pays thousands of machines to keep the ledger honest; here, the prize would pay millions of voters to keep the election honest. It's almost a *proof of verification*: the block reward pays for the hashing work that keeps Bitcoin going, and the prize would pay for the checking work that would keep the election going. It's not a proposal — like nothing in this article — but as an incentive-design exercise, it's the version I'd put on paper.
 
 ## Bonus: why "zero knowledge" is so hard to swallow
 

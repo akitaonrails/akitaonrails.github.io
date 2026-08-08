@@ -143,6 +143,8 @@ Leia de novo, porque este é o coração do artigo. O compromisso `C = 1` é com
 
 E o detalhe final que mata o cabresto: **quem gera o nonce é a urna, não o eleitor.** O eleitor vê seu voto na tela, a urna faz o compromisso internamente, descarta o nonce e imprime só o `C` — o serial. O eleitor sai da cabine sem ter como abrir o próprio compromisso, nem que queira.
 
+(Um detalhe de implementação que vou simplificar daqui pra frente: o Pedersen esconde tão bem que **ninguém** consegue decriptá-lo — nem as autoridades na hora de apurar. Na prática, a urna publica junto um ciphertext ElGamal do mesmo voto: igualmente opaco pra quem olha de fora, mas decriptável pelas autoridades na apuração, com uma prova ZK de que os dois carregam o mesmo voto. Nosso Pedersen de brinquedo faz o papel dos dois neste artigo, pra manter a matemática com números pequenos.)
+
 ## Peça 3: a Merkle tree — a urna que qualquer um audita
 
 Onde ficam esses compromissos? Numa estrutura pública que qualquer pessoa pode baixar e verificar: uma Merkle tree. Se você assistiu meu vídeo sobre [criptografia na prática — certificados, BitTorrent, Git, Bitcoin](/2023/11/10/akitando-147-criptografia-na-pratica-certificados-bittorrent-git-bitcoin/), já viu essa estrutura em ação: é a mesma que escala o BitTorrent, organiza os commits do Git e as transações de um bloco de Bitcoin.
@@ -225,7 +227,7 @@ E note que isso não fere o sigilo de nada: o nonce revelado é de uma cédula *
 
 ## Peça 5: prova de conhecimento zero de verdade — Schnorr
 
-Falta uma última peça. Quem garante que cada compromisso na árvore contém um **voto válido** — e não, digamos, `voto = 500`, que inflaria o resultado? A urna precisa provar que o compromisso abre pra um valor legítimo **sem abrir o compromisso**. Isso é uma prova de conhecimento zero no sentido estrito.
+Falta mais uma peça. Quem garante que cada compromisso na árvore contém um **voto válido** — e não, digamos, `voto = 500`, que inflaria o resultado? A urna precisa provar que o compromisso abre pra um valor legítimo **sem abrir o compromisso**. Isso é uma prova de conhecimento zero no sentido estrito.
 
 O exemplo canônico, e que dá pra demonstrar com números pequenos, é o protocolo de **Schnorr**: provar que você conhece um segredo `s` tal que `y = g^s mod p`, sem revelar `s`. A intuição antes da matemática: é a caverna de Ali Babá. A caverna tem duas passagens que se encontram numa porta trancada. Você prova que tem a chave entrando por um lado e saindo pelo que o verificador pedir — sem nunca mostrar a chave. Se não tivesse a chave, você só acertaria o pedido por sorte, 50% das vezes; depois de 20 rodadas, a chance de enganar é menor que uma em um milhão.
 
@@ -269,27 +271,77 @@ O transcrito forjado `(t=8, c=5, z=9)` passa na verificação e é **indistingu�
 
 Na nossa eleição hipotética, a urna publica junto com cada voto uma prova desse tipo — na prática, uma variante em disjunção ("o voto é 0 **ou** é 1", sem dizer qual) — e qualquer auditor verifica que todo voto na árvore é válido, sem nunca ver voto nenhum.
 
+## Peça 6: quem impede os votos fantasmas?
+
+Resta um furo, e é um dos favoritos de quem desconfia de eleição digital: o que impede a autoridade de **enfiar votos inventados na árvore**? Cada compromisso na Merkle tree carrega uma prova ZK de que contém um voto válido — mas a prova só garante que o valor é 0 ou 1. Mil votos fantasmas seriam mil compromissos perfeitamente válidos, com provas perfeitamente corretas. A árvore é pública, qualquer um pode contar as folhas... mas quem garante que deveriam ser 8 e não 8 mil?
+
+A primeira resposta é a replicação. A árvore segue o modelo das *transparency logs* — o mesmo Certificate Transparency que protege os certificados HTTPS que você usa o dia inteiro: um publicador escreve, e dezenas de observadores independentes (partidos, OAB, universidades, imprensa, você) copiam a árvore, assinam a raiz e conferem entre si. Reescrever o histórico exigiria convencer todos eles a aceitar uma raiz diferente da que já assinaram.
+
+Isso protege o que já foi publicado. Mas e a **criação** de votos fantasmas? Aí entra a peça mais elegante de todas, e ela é do mesmo David Chaum que inventou o dinheiro digital e as mix-nets: a **assinatura cega** (*blind signature*, 1982).
+
+O fluxo: você se autentica na mesa como hoje — documento, biometria. Na cabine, a urna calcula seu compromisso (Peça 2), mas antes de publicá-lo precisa de uma credencial da mesa. Ela **cega** o compromisso com um fator aleatório e manda pra mesa só o valor cego — e aqui estar online não é problema nenhum, como vimos na seção do air gap. A mesa, que já registrou sua autenticação, assina uma única vez, sem ver o conteúdo. A urna descega a assinatura e publica o par `(compromisso, assinatura)`. No fim, a mesa não faz ideia de qual compromisso assinou — logo, não consegue vincular sua identidade ao seu voto. Com RSA de brinquedo, dá pra ver a mágica acontecendo:
+
+```python
+# RSA de brinquedo da mesa: n=3233, e=17 (público), d=2753 (privado)
+n, e, d = 3233, 17, 2753
+C = 16        # seu compromisso Pedersen, o mesmo da Peça 3
+
+# 1. a urna cega o compromisso com um fator aleatório r
+r = 7
+cego = (C * pow(r, e, n)) % n       # 2341 -> só isso vai pra mesa
+
+# 2. a mesa, que já registrou sua autenticação, assina o valor CEGO
+ass_cego = pow(cego, d, n) % n      # 216
+
+# 3. a urna remove o fator cego e publica (C, s) na árvore
+s = (ass_cego * pow(r, -1, n)) % n  # 2802
+
+# qualquer auditor verifica: s^e mod n == C ?
+print(pow(s, e, n))   # 16 -> o compromisso, com assinatura válida!
+```
+
+Repare: a mesa só viu o número 2341, que pra ela é ruído. Ela assinou 216 sem saber que estava assinando o seu `C = 16`. Mesmo assim, o par `(C, s)` passa na verificação de qualquer auditor. É uma assinatura digital normal — `s` é exatamente `C^d mod n` — só que produzida sem que o signatário visse o documento. Parece truque de mágico, mas é só álgebra do RSA: cegar multiplica por `r^e`; assinar eleva tudo a `d`, e como `e·d ≡ 1`, sobra `C^d · r`; descegar divide por `r` e resta `C^d`.
+
+Agora monte o quadro completo: **uma folha só entra na árvore se vier com duas coisas — a prova ZK de validade (Peça 5) e uma credencial assinada pela mesa (Peça 6).** A mesa emite uma credencial por autenticação, e autenticação é evento público: tem fila na seção, mesário, fiscal de partido, log biométrico, contagem de comparecimento publicada por seção. No fim do dia, a conta que qualquer um confere é:
+
+**número de folhas na árvore == número de eleitores autenticados.**
+
+Voto fantasma é folha sem credencial (não entra) ou credencial sem eleitor (infla a contagem e aparece). Remover um voto legítimo quebra a prova de inclusão do recibo (Peça 3). Alterar um voto publicado quebra os hashes nas cópias dos observadores. Roubar credenciais exigiria fraudar a biometria na frente dos fiscais. Cada caminho de fraude bate numa parede diferente — e todas as paredes são verificáveis por qualquer um, de casa.
+
+## O elo mais fraco: quem prova que você é você?
+
+Tudo o que veio antes desta seção é matemática. Mas tem uma porta que nenhuma matemática tranca: a autenticação. Nenhum algoritmo prova que o ser humano parado na sua frente é quem diz ser. Esse é, honestamente, o elo mais fraco do sistema inteiro — e vale encarar de frente.
+
+O caminho biométrico funciona tecnicamente. Na inscrição, uma deduplicação biométrica (AFIS) garante que um mesmo dedo só existe uma vez no cadastro, por mais que venha acompanhado de dez documentos falsos. Na seção, a biometria confere o dedo com o cadastro. O Brasil já faz boa parte disso hoje. O problema é o preço: pra funcionar, é preciso **catalogar a biometria da população inteira sob controle do governo** — um honeypot gigantesco, centralizado, irresistível pra qualquer atacante. E biometria vazada é irreversível: senha você troca, sua digital não. Não é hipotético: o Aadhaar, o cadastro biométrico da Índia, teve incidentes que expuseram dados de mais de um bilhão de pessoas; a OPM, o escritório de gestão de pessoal do governo americano, perdeu 5,6 milhões de impressões digitais num único ataque, em 2015. Um banco de dados biométrico nacional é um ponto único de falha catastrófica e permanente.
+
+Sem biometria, sobra o documento de identidade — e documento se falsifica. Provavelmente se falsifica hoje. Mas repare no que a arquitetura faz com esse problema: uma autenticação forjada emite **uma** credencial, que gera **uma** folha na árvore. Pra fraudar em escala, o criminoso precisa de gente de carne e osso se apresentando pessoalmente, na frente de mesário e fiscal, uma vez por voto falso. É fraude de varejo: cara, visível, lenta. Mil votos falsos exigem mil corpos — e aí já não é fraude digital silenciosa, é logística de ônibus fretado que todo mundo vê passar. O sistema não impede a falsificação; ele **limita o estrago por falsificação a exatamente um voto** e empurra o custo pro mundo físico.
+
+E as anomalias aparecem: a equação da Peça 6 — folhas == autenticações — pode ser conferida seção por seção. Uma seção com 400 eleitores cadastrados e 420 autenticações chama atenção. Padrões regionais de comparecimento acima de 100% chamam atenção. E se a paranoia for grande, a chave de assinatura da mesa pode ser fragmentada como a chave da eleição, exigindo quorum pra emitir credencial.
+
+Resumindo com honestidade: nenhum sistema, por mais perfeito que seja, elimina esse elo. O melhor desenho possível faz duas coisas com ele — encolhe a superfície de confiança até um único evento físico (um humano provando, uma vez, em público, que está no cadastro) e torna as falhas desse evento **visíveis** em vez de silenciosas. Biometria em massa resolveria a autenticação e criaria um problema de privacidade talvez maior que o problema eleitoral. Documento falsificável mantém o problema pequeno, físico e auditável. Não tem almoço grátis — e fingir que tem é exatamente o tipo de discurso que este artigo inteiro se recusa a fazer.
+
 ## Juntando tudo: o protocolo completo
 
 A eleição hipoteticamente perfeita ficaria assim:
 
 1. **Preparação.** Um grupo de autoridades independentes (TSE, OAB, partidos, sociedade civil) gera em conjunto a chave pública da eleição. A chave privada correspondente fica fragmentada: nenhuma autoridade sozinha consegue decriptar nada; só uma maioria agindo junta.
-2. **Votação.** O eleitor escolhe o candidato na tela. A urna gera um nonce aleatório, calcula o compromisso Pedersen (ou um ciphertext ElGamal equivalente), produz a prova ZK de validade e mostra o compromisso na tela. O eleitor então decide: confirma, e o nonce é descartado — ou desafia, e a urna revela o nonce pra conferência imediata, a cédula é anulada e ele vota de novo.
-3. **Publicação.** O compromisso entra numa Merkle tree pública, replicada e assinada por múltiplos observadores independentes.
-4. **Recibo.** O eleitor leva pra casa um papel com o serial. Ele **não consegue** provar pra ninguém em quem votou — nem que queira, porque não tem o nonce.
-5. **Verificação individual.** Em casa, o eleitor baixa a árvore (ou usa qualquer site independente) e confere que seu serial está lá, com a prova de inclusão. Se não estiver, ele tem prova material da fraude.
-6. **Verificação universal.** Qualquer cidadão, universidade ou partido refaz a árvore inteira, confere a raiz e valida todas as provas ZK.
-7. **Apuração.** No fim, os votos encriptados passam por um mix-net (são re-embaralhados e re-encriptados, cortando o vínculo com a posição original) e as autoridades decriptam em conjunto, provando cada passo. O total bate com a raiz pública ou a fraude é evidente.
+2. **Autenticação.** O eleitor se identifica na mesa — documento, biometria, como hoje — e a mesa registra a autenticação. Isso autoriza a emissão de **uma** credencial: a assinatura cega de um compromisso, sem que a mesa veja o conteúdo. Nenhum vínculo entre identidade e voto.
+3. **Votação.** O eleitor escolhe o candidato na tela. A urna gera um nonce aleatório, calcula o compromisso Pedersen e o ciphertext ElGamal do mesmo voto (o compromisso vira o serial do recibo; o ciphertext é o que será apurado), produz a prova ZK de validade e mostra o compromisso na tela. O eleitor então decide: confirma, e o nonce é descartado — ou desafia, e a urna revela o nonce pra conferência imediata, a cédula é anulada e ele vota de novo. Confirmado, a urna cega o compromisso, a mesa assina sem vê-lo e a urna descega a assinatura.
+4. **Publicação.** O compromisso entra numa Merkle tree pública, junto com a prova ZK e a credencial — replicada e assinada por múltiplos observadores independentes. Sem credencial, não entra.
+5. **Recibo.** O eleitor leva pra casa um papel com o serial. Ele **não consegue** provar pra ninguém em quem votou — nem que queira, porque não tem o nonce.
+6. **Verificação individual.** Em casa, o eleitor baixa a árvore (ou usa qualquer site independente) e confere que seu serial está lá, com a prova de inclusão. Se não estiver, ele tem prova material da fraude.
+7. **Verificação universal.** Qualquer cidadão, universidade ou partido refaz a árvore inteira, confere a raiz, valida todas as provas ZK e credenciais, e confere se o número de folhas bate com o total de autenticações publicado por seção.
+8. **Apuração.** No fim, os votos encriptados passam por um mix-net (são re-embaralhados e re-encriptados, cortando o vínculo com a posição original) e as autoridades decriptam em conjunto, provando cada passo. O total bate com a raiz pública ou a fraude é evidente.
 
 Repare no que mudou em relação ao sistema atual: **não é mais preciso confiar no TSE, na urna, nem em auditor nenhum.** Cada propriedade é verificável individualmente por qualquer pessoa com um computador. É o mesmo princípio que faz o Bitcoin funcionar sem banco central: don't trust, verify.
 
-Antes que alguém anime demais: isso é uma simplificação. Um sistema real precisa ainda resolver autenticação de eleitor sem permitir vincular a identidade ao voto, registro de quem já votou sem revelar pra quem, disponibilidade da árvore, e uma porção de detalhes operacionais. O ponto aqui é o mecanismo central, não o projeto completo.
+Antes que alguém anime demais: isso é uma simplificação. Um sistema real precisa ainda resolver credenciais anônimas mais robustas que nossa assinatura cega de brinquedo, disponibilidade da árvore, e uma porção de detalhes operacionais. O ponto aqui é o mecanismo central, não o projeto completo.
 
 ## E por que isso nunca funcionaria
 
 Agora a parte que quase ninguém que propõe esses sistemas quer ouvir.
 
-Volta pro começo do artigo e repara no que eu precisei explicar pra chegar até aqui: funções de hash, compromissos, aritmética modular, logaritmo discreto, árvores de Merkle, o desafio de Benaloh, provas de conhecimento zero, simuladores. Com código, com números, com exemplos passo a passo. E mesmo assim eu aposto que uma parcela boa dos leitores — inclusive programadores — chegou até aqui sem ter certeza de que entendeu de verdade por que o esquema é seguro.
+Volta pro começo do artigo e repara no que eu precisei explicar pra chegar até aqui: funções de hash, compromissos, aritmética modular, logaritmo discreto, árvores de Merkle, o desafio de Benaloh, assinaturas cegas, provas de conhecimento zero, simuladores. Com código, com números, com exemplos passo a passo. E mesmo assim eu aposto que uma parcela boa dos leitores — inclusive programadores — chegou até aqui sem ter certeza de que entendeu de verdade por que o esquema é seguro.
 
 E não é por falta de inteligência. É porque a confiança nesse sistema exige entender matemática que a imensa maioria da população nunca vai entender. O único ser humano que pode ter **100% de certeza** de que esse sistema é correto é aquele que consegue verificar as demonstrações matemáticas por conta própria. Todo o resto — 99,9% da população — não estaria *verificando* coisa nenhuma. Estaria **acreditando** no matemático que diz que funciona.
 
@@ -352,6 +404,16 @@ Agora o "mas" que este artigo inteiro constrói: **toda camada dessa lista depen
 Tem ainda o capítulo jurídico: a tentativa de criar um registro em papel verificável pelo eleitor, o "voto impresso", foi declarada inconstitucional pelo STF na ADI 4543, por risco ao sigilo do voto, e a tentativa de ressuscitá-la foi barrada de novo em 2020 ([Conjur](https://conjur.com.br/2020-set-16/supremo-confirma-liminar-impede-volta-voto-impresso/)). A ironia é que o esquema deste artigo resolve exatamente o conflito que derrubou o voto impresso: recibo verificável **sem** quebrar o sigilo, via compromissos e provas ZK. A matemática destrava o que o papel não destravou. O que continua travado é todo o resto, como as seções anteriores explicam.
 
 O veredito honesto, então: o sistema brasileiro é auditável de formas digitais e procedurais reais, e nunca se provou fraude que alterasse um resultado em quase 30 anos de urna eletrônica. Mas não existe recontagem independente de software, porque não existe registro físico verificado pelo eleitor. Na linguagem da pesquisa de segurança eleitoral, uma *risk-limiting audit* de verdade não é possível. A confiança continua depositada no software, nas inspeções prévias e na custódia dos registros digitais — exatamente o que o sistema hipotético deste artigo tenta eliminar.
+
+## Bônus: skin in the game — recompensar quem verifica
+
+Uma pergunta que fica no ar depois de montar o esquema inteiro: criptomoedas funcionam porque alguém tem algo a perder. No Bitcoin, o minerador queima energia de verdade; no proof-of-stake, o validador deposita capital que é confiscado se trapacear. E o eleitor? Votar não custa nada, e conferir o recibo em casa dá trabalho de graça. O sistema inteiro depende de gente verificando — e ninguém tem incentivo pra verificar. Dá pra colocar *skin in the game* no eleitor?
+
+A primeira ideia que vem à cabeça é um depósito: vote, deposite uma quantia, receba de volta depois via imposto de renda. Como desenho de mecanismo, tem lógica — precifica identidade falsa: um milhão de votos fantasmas custaria cem milhões de reais. Na prática, morre em três lugares. É um imposto eleitoral disfarçado, censitário e inconstitucional — a devolução resolve a contabilidade, não o fluxo de caixa de quem não tem o dinheiro pra adiantar. A via "imposto de renda" não alcança a maioria dos brasileiros pobres, que nem declaram — ou seja, exclui exatamente quem o sistema mais precisa incluir. E criaria na Receita um banco de dados ligando identidade, conta bancária e participação eleitoral, um retrocesso de vigilância maior que o problema que resolve. Tudo isso antes do detalhe plutocrático: segurança precificada em dinheiro é segurança comprável por quem tem dinheiro. Eleição é desenhada pra ser cega a riqueza — um voto por pessoa. Colocar preço na camada de segurança é convidar o rico a ser mais igual que os outros.
+
+A versão que sobrevive a esse crivo inverte o sinal: em vez de cobrar pra votar, **recompensar quem verifica**. O ponto fraco real do esquema é a taxa de verificação individual — se ninguém confere o serial em casa, a prova de inclusão da Peça 3 vira decoração. Então: cada recibo verificado entra num sorteio público e auditável, com a raiz da própria árvore servindo de fonte de aleatoriedade (mais um uso pra ela). Conferiu seu voto na árvore? Concorre a um prêmio. O incentivo aponta exatamente pro comportamento que o sistema precisa — milhões de olhos conferindo a árvore — sem excluir ninguém, sem cobrar nada e sem banco de dados novo, porque o sorteio roda em cima do serial anônimo, não da identidade.
+
+É a lógica do Bitcoin do lado certo: lá, a recompensa por bloco paga pra milhares de máquinas manterem o ledger honesto; aqui, o prêmio pagaria pra milhões de eleitores manterem a eleição honesta. É quase uma *proof of verification*: a recompensa de bloco paga o trabalho de hashear que sustenta o Bitcoin, e o prêmio pagaria o trabalho de conferir que sustentaria a eleição. Não é proposta — como nada neste artigo —, mas como exercício de desenho de incentivos, é a versão que eu colocaria no papel.
 
 ## Bônus: por que "conhecimento zero" é tão difícil de engolir
 
