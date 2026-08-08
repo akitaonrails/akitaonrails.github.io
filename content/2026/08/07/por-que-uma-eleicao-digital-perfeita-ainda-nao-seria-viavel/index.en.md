@@ -21,7 +21,7 @@ Many people conclude from this that the answer is digital elections, but with a 
 
 One thing worth emphasizing before we start: the system I'm about to describe would require **no** secrecy from the government. No secret components, no secret processes, no locked rooms with credentialed people standing guard. Everything — the code, the data, the whole structure — could be 100% open, accessible to anyone, no restrictions whatsoever. And it would still be possible to prove, mathematically, that fraud is impossible. It's the exact opposite of the current model, where trust is born out of secrecy.
 
-> No patience for code and math along the way? [Skip straight to the part where I explain why this wouldn't work](#why-this-would-never-work).
+> No patience for code and math along the way? [Skip straight to the part where I explain why this wouldn't work](#why-this-would-never-work). And at the end of the article, three appendices: [is the current system auditable?](#appendix-1-so-is-the-current-system-auditable), [how to reward voters who verify their vote](#appendix-2-skin-in-the-game--rewarding-those-who-verify), and [why "zero knowledge" is so hard to swallow](#appendix-3-why-zero-knowledge-is-so-hard-to-swallow).
 
 ## "The machine is safe because it's not on the internet"
 
@@ -312,13 +312,15 @@ A phantom vote is a leaf without a credential (doesn't get in) or a credential w
 
 Everything before this section is math. But there's one door no math can lock: authentication. No algorithm proves the human standing in front of you is who they claim to be. That is, honestly, the weakest link in the entire system — and it's worth facing head-on.
 
-The biometric path works technically. At registration, biometric deduplication (AFIS) guarantees one finger exists only once in the roll, no matter how many forged documents back it up. At the precinct, biometrics match the finger against the roll. Brazil already does much of this today. The problem is the price: to work, you must **catalog the entire population's biometrics under government control** — a gigantic, centralized, irresistible honeypot for any attacker. And leaked biometrics are irreversible: you can change a password, you can't change your fingerprints. This isn't hypothetical: Aadhaar, India's biometric registry, suffered incidents exposing data on over a billion people; the OPM, the US government's personnel office, lost 5.6 million fingerprints in a single 2015 breach. A national biometric database is a single point of catastrophic, permanent failure.
+And here Brazil simplifies the problem, because it already paid the expensive part: the voter biometric registry exists and covers over 80% of the electorate — more than 124 million people, [per the electoral court](https://www.tse.jus.br/comunicacao/noticias/2024/Fevereiro/eleitores-sem-cadastro-biometrico-podem-votar-normalmente). National deduplication already ran: one finger exists only once in the roll, no matter how many forged documents back it up. And fingerprints already release the vote at the precinct — in 2026, in [every precinct in the country](https://www.tre-mg.jus.br/comunicacao/noticias/2026/Julho/manual-do-eleitor-entenda-como-vai-funcionar-a-biometria-nas-eleicoes-2026). For this article's hypothetical system, biometric authentication is free: reuse what's already standing.
 
-Without biometrics, what's left is the ID card — and cards get forged. They probably get forged today. But notice what the architecture does to that problem: one forged authentication mints **one** credential, which yields **one** leaf in the tree. To fraud at scale, the criminal needs flesh-and-blood people showing up in person, in front of poll workers and watchers, once per fake vote. That's retail fraud: expensive, visible, slow. A thousand fake votes require a thousand bodies — and then it's not silent digital fraud anymore, it's chartered-bus logistics everyone sees rolling by. The system doesn't prevent forgery; it **caps the damage per forgery at exactly one vote** and pushes the cost into the physical world.
+Of course, that registry existing is itself the privacy bet: biometrics are irrevocable data — you can change a password, not your fingerprints. Aadhaar, India's biometric registry, had incidents exposing data on over a billion people; the OPM, the US government's HR office, lost 5.6 million fingerprints in a single 2015 breach. A national biometric database is a single point of catastrophic, permanent failure — and Brazil already made that bet. The hypothetical system doesn't make it worse; it just inherits it.
+
+For anyone outside the biometric registry, the precinct falls back to the photo ID — and cards get forged. They probably get forged today. But notice what the architecture does to that problem: one forged authentication mints **one** credential, which yields **one** leaf in the tree. To fraud at scale, the criminal needs flesh-and-blood people showing up in person, in front of poll workers and watchers, once per fake vote. That's retail fraud: expensive, visible, slow. A thousand fake votes require a thousand bodies — and then it's not silent digital fraud anymore, it's chartered-bus logistics everyone sees rolling by. The system doesn't prevent forgery; it **caps the damage per forgery at exactly one vote** and pushes the cost into the physical world.
 
 And anomalies surface: the equation from Building block 6 — leaves == authentications — can be checked precinct by precinct. A precinct with 400 registered voters and 420 authentications raises eyebrows. Regional turnout above 100% raises eyebrows. And if paranoia runs high, the desk's signing key can be fragmented like the election key, requiring a quorum to issue credentials.
 
-The honest summary: no system, however perfect, eliminates this link. The best possible design does two things with it — shrinks the trust surface down to a single physical event (a human proving, once, in public, that they're on the roll) and makes that event's failures **visible** instead of silent. Mass biometrics would fix authentication while creating a privacy problem arguably bigger than the electoral one. Forgeable cards keep the problem small, physical, and auditable. There's no free lunch — and pretending there is one is exactly the kind of pitch this whole article refuses to make.
+The honest summary: the link stays physical and human — a human proving, once, in public, that they're on the roll — and no system, however perfect, eliminates it. The best possible design does two things with it: shrinks the trust surface down to that single event and makes its failures **visible** instead of silent. With biometrics valid at every precinct in 2026, identity forgery becomes the most expensive, least scalable path of all — which is exactly where a well-designed system wants it. There's no free lunch, and pretending there is one is the kind of pitch this whole article refuses to make.
 
 ## Putting it all together: the full protocol
 
@@ -387,7 +389,7 @@ But the exercise is worth it for two reasons. First, because it shows the techno
 
 If you understood every line of this article, congratulations: you're part of a minority far too small to carry a democracy on its back.
 
-## Bonus: so is the current system auditable?
+## Appendix 1: so is the current system auditable?
 
 A fair question hangs in the air: so the current system has no auditing at all? It does, and it's worth being honest about that. What doesn't exist is a specific kind of audit: one that doesn't depend on software. Let's take it piece by piece.
 
@@ -405,7 +407,7 @@ There's also the legal chapter: the attempt to create a voter-verifiable paper r
 
 So the honest verdict: the Brazilian system is auditable in real digital and procedural ways, and no fraud altering an outcome has ever been proven in nearly 30 years of electronic voting. But there is no software-independent recount, because there is no voter-verified physical record. In the language of election-security research, a true *risk-limiting audit* is not possible. Trust stays deposited in the software, the pre-election inspections, and the custody of digital records — exactly what this article's hypothetical system tries to eliminate.
 
-## Bonus: skin in the game — rewarding those who verify
+## Appendix 2: skin in the game — rewarding those who verify
 
 One question hangs in the air after assembling the whole scheme: cryptocurrencies work because someone has something to lose. In Bitcoin, the miner burns real energy; in proof-of-stake, the validator deposits capital that gets confiscated if they cheat. And the voter? Voting costs nothing, and checking the receipt at home is work you do for free. The entire system depends on people verifying — and nobody has an incentive to verify. Can you put *skin in the game* on the voter?
 
@@ -415,7 +417,7 @@ The version that survives this scrutiny flips the sign: instead of charging to v
 
 It's Bitcoin's logic on the right side: there, the block reward pays thousands of machines to keep the ledger honest; here, the prize would pay millions of voters to keep the election honest. It's almost a *proof of verification*: the block reward pays for the hashing work that keeps Bitcoin going, and the prize would pay for the checking work that would keep the election going. It's not a proposal — like nothing in this article — but as an incentive-design exercise, it's the version I'd put on paper.
 
-## Bonus: why "zero knowledge" is so hard to swallow
+## Appendix 3: why "zero knowledge" is so hard to swallow
 
 If you made it here feeling like you understood each piece individually but wouldn't swear you understood the whole thing, relax: you're in excellent company. When Goldwasser, Micali, and Rackoff formalized zero-knowledge proofs in the 1980s, the idea sounded paradoxical even to career cryptographers. Every proof we'd ever known worked by *showing* something. How can a proof transfer conviction while transferring no information at all?
 

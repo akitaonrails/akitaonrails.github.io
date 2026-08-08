@@ -21,7 +21,7 @@ Muita gente conclui daí que o certo seria ter eleição digital, mas com um sis
 
 Uma coisa que vale enfatizar antes de começar: o sistema que vou descrever não exigiria **nenhum** segredo do governo. Nenhum componente secreto, nenhum processo secreto, nenhuma sala trancada com credenciado vigiando. Tudo — o código, os dados, a estrutura inteira — poderia ser 100% aberto, acessível pra qualquer pessoa, sem restrição nenhuma. E ainda assim seria possível provar, matematicamente, que fraudar é impossível. É exatamente o oposto do modelo atual, em que a confiança nasce do sigilo.
 
-> Sem paciência pra código e matemática no meio do caminho? [Pule direto pra parte em que explico por que isso não funcionaria](#e-por-que-isso-nunca-funcionaria).
+> Sem paciência pra código e matemática no meio do caminho? [Pule direto pra parte em que explico por que isso não funcionaria](#e-por-que-isso-nunca-funcionaria). E no fim do artigo, três apêndices: [o sistema atual é auditável?](#apêndice-1-afinal-o-sistema-atual-é-auditável), [como dar incentivo pra quem verifica o voto](#apêndice-2-skin-in-the-game--recompensar-quem-verifica) e [por que "conhecimento zero" é tão difícil de engolir](#apêndice-3-por-que-conhecimento-zero-é-tão-difícil-de-engolir).
 
 ## "A urna é segura porque não está na internet"
 
@@ -312,13 +312,15 @@ Voto fantasma é folha sem credencial (não entra) ou credencial sem eleitor (in
 
 Tudo o que veio antes desta seção é matemática. Mas tem uma porta que nenhuma matemática tranca: a autenticação. Nenhum algoritmo prova que o ser humano parado na sua frente é quem diz ser. Esse é, honestamente, o elo mais fraco do sistema inteiro — e vale encarar de frente.
 
-O caminho biométrico funciona tecnicamente. Na inscrição, uma deduplicação biométrica (AFIS) garante que um mesmo dedo só existe uma vez no cadastro, por mais que venha acompanhado de dez documentos falsos. Na seção, a biometria confere o dedo com o cadastro. O Brasil já faz boa parte disso hoje. O problema é o preço: pra funcionar, é preciso **catalogar a biometria da população inteira sob controle do governo** — um honeypot gigantesco, centralizado, irresistível pra qualquer atacante. E biometria vazada é irreversível: senha você troca, sua digital não. Não é hipotético: o Aadhaar, o cadastro biométrico da Índia, teve incidentes que expuseram dados de mais de um bilhão de pessoas; a OPM, o escritório de gestão de pessoal do governo americano, perdeu 5,6 milhões de impressões digitais num único ataque, em 2015. Um banco de dados biométrico nacional é um ponto único de falha catastrófica e permanente.
+E aqui o Brasil simplifica o problema, porque já pagou a parte cara: o cadastro biométrico do eleitorado existe e cobre mais de 80% dos eleitores — mais de 124 milhões de pessoas, [segundo o TSE](https://www.tse.jus.br/comunicacao/noticias/2024/Fevereiro/eleitores-sem-cadastro-biometrico-podem-votar-normalmente). A deduplicação nacional já rodou: um mesmo dedo só existe uma vez no cadastro, por mais que venha acompanhado de dez documentos falsos. E na seção a digital já libera o voto — em 2026, [em todas as seções do país](https://www.tre-mg.jus.br/comunicacao/noticias/2026/Julho/manual-do-eleitor-entenda-como-vai-funcionar-a-biometria-nas-eleicoes-2026). Pro sistema hipotético deste artigo, a autenticação biométrica é de graça: é reusar o que já está de pé.
 
-Sem biometria, sobra o documento de identidade — e documento se falsifica. Provavelmente se falsifica hoje. Mas repare no que a arquitetura faz com esse problema: uma autenticação forjada emite **uma** credencial, que gera **uma** folha na árvore. Pra fraudar em escala, o criminoso precisa de gente de carne e osso se apresentando pessoalmente, na frente de mesário e fiscal, uma vez por voto falso. É fraude de varejo: cara, visível, lenta. Mil votos falsos exigem mil corpos — e aí já não é fraude digital silenciosa, é logística de ônibus fretado que todo mundo vê passar. O sistema não impede a falsificação; ele **limita o estrago por falsificação a exatamente um voto** e empurra o custo pro mundo físico.
+Claro que esse cadastro existir é, ele mesmo, a aposta de privacidade: biometria é dado irrevogável — senha você troca, sua digital não. O Aadhaar, o cadastro biométrico da Índia, teve incidentes que expuseram dados de mais de um bilhão de pessoas; a OPM, o RH do governo americano, perdeu 5,6 milhões de impressões digitais num único ataque, em 2015. Um banco de dados biométrico nacional é um ponto único de falha catastrófica e permanente — e o Brasil já fez essa aposta. O sistema hipotético não a piora; só herda.
+
+Pra quem está fora do cadastro biométrico, a seção cai pro documento com foto — e documento se falsifica. Provavelmente se falsifica hoje. Mas repare no que a arquitetura faz com esse problema: uma autenticação forjada emite **uma** credencial, que gera **uma** folha na árvore. Pra fraudar em escala, o criminoso precisa de gente de carne e osso se apresentando pessoalmente, na frente de mesário e fiscal, uma vez por voto falso. É fraude de varejo: cara, visível, lenta. Mil votos falsos exigem mil corpos — e aí já não é fraude digital silenciosa, é logística de ônibus fretado que todo mundo vê passar. O sistema não impede a falsificação; ele **limita o estrago por falsificação a exatamente um voto** e empurra o custo pro mundo físico.
 
 E as anomalias aparecem: a equação da Peça 6 — folhas == autenticações — pode ser conferida seção por seção. Uma seção com 400 eleitores cadastrados e 420 autenticações chama atenção. Padrões regionais de comparecimento acima de 100% chamam atenção. E se a paranoia for grande, a chave de assinatura da mesa pode ser fragmentada como a chave da eleição, exigindo quorum pra emitir credencial.
 
-Resumindo com honestidade: nenhum sistema, por mais perfeito que seja, elimina esse elo. O melhor desenho possível faz duas coisas com ele — encolhe a superfície de confiança até um único evento físico (um humano provando, uma vez, em público, que está no cadastro) e torna as falhas desse evento **visíveis** em vez de silenciosas. Biometria em massa resolveria a autenticação e criaria um problema de privacidade talvez maior que o problema eleitoral. Documento falsificável mantém o problema pequeno, físico e auditável. Não tem almoço grátis — e fingir que tem é exatamente o tipo de discurso que este artigo inteiro se recusa a fazer.
+Resumindo com honestidade: o elo continua físico e humano — um humano provando, uma vez, em público, que está no cadastro — e nenhum sistema, por mais perfeito que seja, o elimina. O melhor desenho possível faz duas coisas com ele: encolhe a superfície de confiança até esse evento único e torna as falhas dele **visíveis** em vez de silenciosas. Com a biometria valendo em todas as seções em 2026, a falsificação de identidade vira o caminho mais caro e menos escalável de todos — que é exatamente onde um sistema bem desenhado quer que ela esteja. Não tem almoço grátis, e fingir que tem é o tipo de discurso que este artigo inteiro se recusa a fazer.
 
 ## Juntando tudo: o protocolo completo
 
@@ -387,7 +389,7 @@ Mas o exercício vale por duas razões. Primeiro, porque mostra que a tecnologia
 
 Se você entendeu cada linha deste artigo, parabéns: você faz parte de uma minoria pequena demais pra carregar uma democracia nas costas.
 
-## Bônus: afinal, o sistema atual é auditável?
+## Apêndice 1: afinal, o sistema atual é auditável?
 
 Fica no ar uma pergunta justa: então o sistema atual não tem auditoria nenhuma? Tem sim, e vale ser honesto sobre isso. O que não existe é um tipo específico de auditoria: a que não depende de software. Vamos por partes.
 
@@ -405,7 +407,7 @@ Tem ainda o capítulo jurídico: a tentativa de criar um registro em papel verif
 
 O veredito honesto, então: o sistema brasileiro é auditável de formas digitais e procedurais reais, e nunca se provou fraude que alterasse um resultado em quase 30 anos de urna eletrônica. Mas não existe recontagem independente de software, porque não existe registro físico verificado pelo eleitor. Na linguagem da pesquisa de segurança eleitoral, uma *risk-limiting audit* de verdade não é possível. A confiança continua depositada no software, nas inspeções prévias e na custódia dos registros digitais — exatamente o que o sistema hipotético deste artigo tenta eliminar.
 
-## Bônus: skin in the game — recompensar quem verifica
+## Apêndice 2: skin in the game — recompensar quem verifica
 
 Uma pergunta que fica no ar depois de montar o esquema inteiro: criptomoedas funcionam porque alguém tem algo a perder. No Bitcoin, o minerador queima energia de verdade; no proof-of-stake, o validador deposita capital que é confiscado se trapacear. E o eleitor? Votar não custa nada, e conferir o recibo em casa dá trabalho de graça. O sistema inteiro depende de gente verificando — e ninguém tem incentivo pra verificar. Dá pra colocar *skin in the game* no eleitor?
 
@@ -415,7 +417,7 @@ A versão que sobrevive a esse crivo inverte o sinal: em vez de cobrar pra votar
 
 É a lógica do Bitcoin do lado certo: lá, a recompensa por bloco paga pra milhares de máquinas manterem o ledger honesto; aqui, o prêmio pagaria pra milhões de eleitores manterem a eleição honesta. É quase uma *proof of verification*: a recompensa de bloco paga o trabalho de hashear que sustenta o Bitcoin, e o prêmio pagaria o trabalho de conferir que sustentaria a eleição. Não é proposta — como nada neste artigo —, mas como exercício de desenho de incentivos, é a versão que eu colocaria no papel.
 
-## Bônus: por que "conhecimento zero" é tão difícil de engolir
+## Apêndice 3: por que "conhecimento zero" é tão difícil de engolir
 
 Se você chegou até aqui com a sensação de que entendeu cada peça individualmente, mas não juraria que entendeu o conjunto, relaxa: você está em ótima companhia. Quando Goldwasser, Micali e Rackoff formalizaram provas de conhecimento zero nos anos 80, a ideia soou paradoxal até pra criptógrafo de profissão. Toda prova que a gente conhece funciona *mostrando* alguma coisa. Como pode uma prova transferir convicção sem transferir informação nenhuma?
 
