@@ -250,6 +250,7 @@ title: AkitaOnRails Blog
 {{% index-list %}}
 ## 2026 - Agosto
 
+- <a class="aor-index-list__main-link" href="/2026/08/11/a-volta-da-intel-arm64-vs-x86-64-nao-e-como-voce-imagina/" title="Panther Lake já empata com o Apple M5 em multi-core e entrega bateria de MacBook em laptop x86. Minha tese: ISA não define eficiência desde os anos 90, e a crise da Intel foi gerencial, não arquitetural.">A Volta da Intel: ARM64 vs X86-64 não é como você imagina</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/tags/hardware/">#hardware</a><a class="aor-tag-link" href="/tags/reviews/">#reviews</a></span>
 - <a class="aor-index-list__main-link" href="/2026/08/07/por-que-uma-eleicao-digital-perfeita-ainda-nao-seria-viavel/" title="Um exercício de ciência da computação: como montar uma eleição digital com verificabilidade ponta a ponta usando compromissos, Merkle trees e provas de conhecimento zero, e por que mesmo esse sistema &#39;perfeito&#39; não serviria na prática.">Por que uma eleição digital perfeita ainda não seria viável?</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/tags/politica/">#politica</a><a class="aor-tag-link" href="/tags/seguranca/">#seguranca</a><a class="aor-tag-link" href="/tags/tutoriais/">#tutoriais</a></span>
 - <a class="aor-index-list__main-link" href="/2026/08/01/explorando-o-problema-escandaloso-do-rng-da-coinkite/" title="Como um atacante enumera o espaço reduzido de chaves da ColdCard, encontra wallets vulneráveis na blockchain pública e move os fundos. Dados reais do roubo em andamento e código didático passo a passo.">Explorando o problema escandaloso do RNG da Coinkite</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/tags/bitcoin-e-criptomoedas/">#bitcoin-e-criptomoedas</a><a class="aor-tag-link" href="/tags/seguranca/">#seguranca</a><a class="aor-tag-link" href="/tags/hardware/">#hardware</a></span>
 
@@ -438,9 +439,15 @@ title: AkitaOnRails Blog
 <section class="aor-index-month" aria-labelledby="aor-grid-2026-08">
   <div class="aor-index-month__header">
     <h2 id="aor-grid-2026-08">2026 - Agosto</h2>
-    <span>2 posts</span>
+    <span>3 posts</span>
   </div>
   <div class="aor-post-grid">
+<article class="aor-post-card" title="Panther Lake já empata com o Apple M5 em multi-core e entrega bateria de MacBook em laptop x86. Minha tese: ISA não define eficiência desde os anos 90, e a crise da Intel foi gerencial, não arquitetural.">
+  <time class="aor-post-card__date" datetime="2026-08-11">11/08/2026</time>
+  <h3 class="aor-post-card__title"><a class="aor-post-card__title-link" href="/2026/08/11/a-volta-da-intel-arm64-vs-x86-64-nao-e-como-voce-imagina/">A Volta da Intel: ARM64 vs X86-64 não é como você imagina</a></h3>
+  <span class="aor-post-tags aor-post-tags--card"><a class="aor-tag-link" href="/tags/hardware/">#hardware</a><a class="aor-tag-link" href="/tags/reviews/">#reviews</a></span>
+  <p class="aor-post-card__description">Panther Lake já empata com o Apple M5 em multi-core e entrega bateria de MacBook em laptop x86. Minha tese: ISA não define eficiência desde os anos 90, e a crise da Intel foi gerencial, não arquitetural.</p>
+</article>
 <article class="aor-post-card" title="Um exercício de ciência da computação: como montar uma eleição digital com verificabilidade ponta a ponta usando compromissos, Merkle trees e provas de conhecimento zero, e por que mesmo esse sistema &#39;perfeito&#39; não serviria na prática.">
   <time class="aor-post-card__date" datetime="2026-08-07">07/08/2026</time>
   <h3 class="aor-post-card__title"><a class="aor-post-card__title-link" href="/2026/08/07/por-que-uma-eleicao-digital-perfeita-ainda-nao-seria-viavel/">Por que uma eleição digital perfeita ainda não seria viável?</a></h3>
