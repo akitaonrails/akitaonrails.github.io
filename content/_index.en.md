@@ -250,6 +250,7 @@ title: AkitaOnRails Blog
 {{% index-list %}}
 ## 2026 - August
 
+- <a class="aor-index-list__main-link" href="/en/2026/08/12/digital-david-and-goliath-understanding-megalag-vs-honey-paypal/" title="Honey spent years skimming creators&#39; commissions with a defeat device written in plain JSON. I walk through the ssd.json line by line, the PayPal-era rewrite, and the class action PayPal failed to kill.">Digital David and Goliath: Understanding MegaLag vs Honey/PayPal</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/en/tags/security/">#security</a><a class="aor-tag-link" href="/en/tags/tech-market/">#tech-market</a></span>
 - <a class="aor-index-list__main-link" href="/en/2026/08/11/intels-comeback-arm64-vs-x86-64-is-not-what-you-think/" title="Panther Lake already ties the Apple M5 in multi-core and delivers MacBook-class battery life in an x86 laptop. My thesis: the ISA hasn&#39;t defined efficiency since the 90s, and Intel&#39;s crisis was managerial, not architectural.">Intel&#39;s Comeback: ARM64 vs X86-64 Is Not What You Think</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/en/tags/hardware/">#hardware</a><a class="aor-tag-link" href="/en/tags/reviews/">#reviews</a></span>
 - <a class="aor-index-list__main-link" href="/en/2026/08/07/why-a-perfect-digital-election-still-wouldnt-be-viable/" title="A computer science exercise: how to build a digital election with end-to-end verifiability using commitments, Merkle trees, and zero-knowledge proofs, and why even that &#39;perfect&#39; system still would not be viable in practice.">Why a Perfect Digital Election Still Wouldn&#39;t Be Viable?</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/en/tags/politics/">#politics</a><a class="aor-tag-link" href="/en/tags/security/">#security</a><a class="aor-tag-link" href="/en/tags/tutorials/">#tutorials</a></span>
 - <a class="aor-index-list__main-link" href="/en/2026/08/01/exploiting-coinkites-rng-egregious-problem/" title="How an attacker enumerates the ColdCard&#39;s reduced key space, finds vulnerable wallets on the public blockchain, and moves the funds. Real data from the ongoing theft and step-by-step didactic code.">Exploiting Coinkite&#39;s RNG Egregious Problem</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/en/tags/bitcoin-and-cryptocurrency/">#bitcoin-and-cryptocurrency</a><a class="aor-tag-link" href="/en/tags/security/">#security</a><a class="aor-tag-link" href="/en/tags/hardware/">#hardware</a></span>
@@ -432,9 +433,15 @@ title: AkitaOnRails Blog
 <section class="aor-index-month" aria-labelledby="aor-grid-2026-08">
   <div class="aor-index-month__header">
     <h2 id="aor-grid-2026-08">2026 - August</h2>
-    <span>3 posts</span>
+    <span>4 posts</span>
   </div>
   <div class="aor-post-grid">
+<article class="aor-post-card" title="Honey spent years skimming creators&#39; commissions with a defeat device written in plain JSON. I walk through the ssd.json line by line, the PayPal-era rewrite, and the class action PayPal failed to kill.">
+  <time class="aor-post-card__date" datetime="2026-08-12">Aug 12, 2026</time>
+  <h3 class="aor-post-card__title"><a class="aor-post-card__title-link" href="/en/2026/08/12/digital-david-and-goliath-understanding-megalag-vs-honey-paypal/">Digital David and Goliath: Understanding MegaLag vs Honey/PayPal</a></h3>
+  <span class="aor-post-tags aor-post-tags--card"><a class="aor-tag-link" href="/en/tags/security/">#security</a><a class="aor-tag-link" href="/en/tags/tech-market/">#tech-market</a></span>
+  <p class="aor-post-card__description">Honey spent years skimming creators&#39; commissions with a defeat device written in plain JSON. I walk through the ssd.json line by line, the PayPal-era rewrite, and the class action PayPal failed to kill.</p>
+</article>
 <article class="aor-post-card" title="Panther Lake already ties the Apple M5 in multi-core and delivers MacBook-class battery life in an x86 laptop. My thesis: the ISA hasn&#39;t defined efficiency since the 90s, and Intel&#39;s crisis was managerial, not architectural.">
   <time class="aor-post-card__date" datetime="2026-08-11">Aug 11, 2026</time>
   <h3 class="aor-post-card__title"><a class="aor-post-card__title-link" href="/en/2026/08/11/intels-comeback-arm64-vs-x86-64-is-not-what-you-think/">Intel&#39;s Comeback: ARM64 vs X86-64 Is Not What You Think</a></h3>
