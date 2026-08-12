@@ -92,7 +92,12 @@ Pra entender por que o peso da decodificação evaporou, olha a evolução:
 | 2007 | Penryn | 45nm | 410 milhões | primeiro high-k metal gate da indústria |
 | 2011 | Ivy Bridge | 22nm | 1,4 bilhão | FinFET 3D, -50% de potência na mesma performance |
 
-Em 2000, cada bloco de lógica era um orçamento apertado, e a bagunça do x86 custava caro. Conforme os transistores ficaram infinitos pra todo fim prático, o custo fixo do decodificador virou troco. No meio do caminho, duas coisas importantes. Primeiro: a escala de Dennard morreu por volta de 2005 — vazamento de corrente impediu que os clocks continuassem subindo, a Intel cancelou o Tejas em 2004 e o mundo virou multicore. Clock parou nos 1-4GHz e nunca mais saiu dali. Segundo: a lei de Moore virou economia, não física — o custo por transistor parou de cair no 28nm, uma fab de ponta hoje custa US$20 a 30 bilhões, e uma máquina High-NA EUV da ASML custa US$350 milhões. O que ocupa pastilha e consome energia num chip moderno são caches gigantes, branch predictors, dezenas de execution ports, GPU, NPU, motores de mídia. O decodificador de x86, na fila do pão, nem aparece.
+Em 2000, cada bloco de lógica era um orçamento apertado, e a bagunça do x86 custava caro. Conforme os transistores ficaram infinitos pra todo fim prático, o custo fixo do decodificador virou troco. No meio do caminho, duas mudanças importantes:
+
+- **A escala de Dennard morreu por volta de 2005.** Vazamento de corrente impediu que os clocks continuassem subindo, a Intel cancelou o Tejas em 2004 e o mundo virou multicore. Clock parou nos 1-4GHz e nunca mais saiu dali.
+- **A lei de Moore virou economia, não física.** O custo por transistor parou de cair no 28nm: uma fab de ponta hoje custa US$20 a 30 bilhões, e uma máquina High-NA EUV da ASML custa US$350 milhões.
+
+E o que ocupa pastilha e consome energia num chip moderno? Caches gigantes, branch predictors, dezenas de execution ports, GPU, NPU, motores de mídia. O decodificador de x86, na fila do pão, nem aparece.
 
 E a história dá a prova empírica perfeita: de 2015 a 2021, a Intel ficou presa em 14nm — Skylake e seus derivados, seis anos de processo estagnado por falha de fábrica. Mesmo assim, esses cores velhos em 14nm trocavam soco com o Zen 2 da AMD, fabricado em 7nm pela TSMC. Se o x86 fosse o problema, isso seria impossível. O gargalo era a fábrica. Era a fábrica o tempo todo.
 
@@ -116,7 +121,11 @@ Aliás, a recíproca também é verdadeira: dá pra fazer ARM ruim. O mercado es
 
 ## Suas instruções favoritas não são x86 nem ARM
 
-E tem outra coisa que quase ninguém menciona nesse debate: boa parte do que uma CPU moderna executa não pertence ao conjunto "clássico" de nenhum dos dois lados. Decodificação de vídeo? Na Intel é o Quick Sync, hardware de função fixa que existe desde Sandy Bridge — um bloco separado que nada tem a ver com o legado x86. É por causa dele, aliás, que a Frandroid mediu o Snapdragon X2 **58% mais lento** que o Panther Lake em exportação de vídeo. Criptografia: AES-NI existe desde 2010, extensões de SHA desde 2016 — instruções dedicadas, acrescentadas décadas depois do "x86 velho". IA e matrizes: AVX-512, depois AVX10, e o AMX, um acelerador de tiles de matriz. O lado ARM tem os equivalentes: NEON, SVE, SME.
+E tem outra coisa que quase ninguém menciona nesse debate: boa parte do que uma CPU moderna executa não pertence ao conjunto "clássico" de nenhum dos dois lados. Olha o que roda fora dele:
+
+- **Vídeo.** Na Intel, a decodificação fica no Quick Sync, hardware de função fixa que existe desde Sandy Bridge — um bloco separado que nada tem a ver com o legado x86. É por causa dele que a Frandroid mediu o Snapdragon X2 **58% mais lento** que o Panther Lake em exportação de vídeo.
+- **Criptografia.** AES-NI existe desde 2010, extensões de SHA desde 2016 — instruções dedicadas, acrescentadas décadas depois do "x86 velho".
+- **IA e matrizes.** AVX-512, depois AVX10, e o AMX, um acelerador de tiles de matriz. O lado ARM tem os equivalentes: NEON, SVE, SME.
 
 A Chips and Cheese fez o experimento perfeito: no mesmo encode HEVC 4K, um Ampere ARM levou **mais de doze vezes** o tempo de um Zen 2 com o ffmpeg padrão; usando assembly NEON, o tempo do ARM caiu mais de 60%. A diferença nunca foi ARM contra x86 — era extensão vetorial bem usada contra extensão vetorial ignorada. No mundo real, o trabalho pesado mora nas extensões e nos aceleradores, e esses são ortogonais ao ISA base.
 

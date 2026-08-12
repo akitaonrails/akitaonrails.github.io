@@ -92,7 +92,12 @@ To understand why the decode burden evaporated, look at the evolution:
 | 2007 | Penryn | 45nm | 410 million | industry's first high-k metal gate |
 | 2011 | Ivy Bridge | 22nm | 1.4 billion | 3D FinFET, -50% power at the same performance |
 
-In 2000, every block of logic was a tight budget, and x86's mess was expensive. As transistors became infinite for all practical purposes, the decoder's fixed cost became pocket change. Two important things happened along the way. First: Dennard scaling died around 2005 — leakage current stopped clocks from climbing, Intel canceled Tejas in 2004, and the world went multicore. Clocks stalled in the 1-4GHz range and never left. Second: Moore's law became economics, not physics — cost per transistor stopped falling at 28nm, a leading-edge fab today costs US$20 to 30 billion, and an ASML High-NA EUV machine costs US$350 million. What occupies die and consumes energy in a modern chip is giant caches, branch predictors, dozens of execution ports, GPU, NPU, media engines. The x86 decoder doesn't even show up in the bread line.
+In 2000, every block of logic was a tight budget, and x86's mess was expensive. As transistors became infinite for all practical purposes, the decoder's fixed cost became pocket change. Along the way, two important shifts:
+
+- **Dennard scaling died around 2005.** Leakage current stopped clocks from climbing, Intel canceled Tejas in 2004, and the world went multicore. Clocks stalled in the 1-4GHz range and never left.
+- **Moore's law became economics, not physics.** Cost per transistor stopped falling at 28nm: a leading-edge fab today costs US$20 to 30 billion, and an ASML High-NA EUV machine costs US$350 million.
+
+And what occupies die and consumes energy in a modern chip? Giant caches, branch predictors, dozens of execution ports, GPU, NPU, media engines. The x86 decoder doesn't even show up in the bread line.
 
 And history hands us the perfect empirical proof: from 2015 to 2021, Intel was stuck at 14nm — Skylake and its derivatives, six years of stagnant process from manufacturing failure. Even so, those old 14nm cores traded blows with AMD's Zen 2, built on TSMC 7nm. If x86 were the problem, that would be impossible. The bottleneck was the fab. It was the fab all along.
 
@@ -116,7 +121,11 @@ The reciprocal is also true, by the way: you can make bad ARM. The market is ful
 
 ## Your favorite instructions aren't x86 or ARM
 
-And there's something else almost nobody mentions in this debate: much of what a modern CPU executes doesn't belong to either side's "classic" instruction set. Video decoding? On Intel that's Quick Sync, fixed-function hardware that has existed since Sandy Bridge — a separate block with nothing to do with the x86 legacy. It's because of it, in fact, that Frandroid measured the Snapdragon X2 **58% slower** than Panther Lake in video export. Cryptography: AES-NI exists since 2010, SHA extensions since 2016 — dedicated instructions added decades after the "old x86." AI and matrices: AVX-512, then AVX10, and AMX, a matrix tile accelerator. The ARM side has the equivalents: NEON, SVE, SME.
+And there's something else almost nobody mentions in this debate: much of what a modern CPU executes doesn't belong to either side's "classic" instruction set. Look at what runs outside it:
+
+- **Video.** On Intel, decoding lives in Quick Sync, fixed-function hardware that has existed since Sandy Bridge — a separate block with nothing to do with the x86 legacy. It's because of it that Frandroid measured the Snapdragon X2 **58% slower** than Panther Lake in video export.
+- **Cryptography.** AES-NI exists since 2010, SHA extensions since 2016 — dedicated instructions added decades after the "old x86."
+- **AI and matrices.** AVX-512, then AVX10, and AMX, a matrix tile accelerator. The ARM side has the equivalents: NEON, SVE, SME.
 
 Chips and Cheese ran the perfect experiment: in the same 4K HEVC encode, an Ampere ARM took **more than twelve times** as long as a Zen 2 with stock ffmpeg; using NEON assembly cut the ARM time by more than 60%. The difference was never ARM versus x86 — it was well-used vector extensions versus ignored vector extensions. In the real world, the heavy lifting lives in the extensions and accelerators, and those are orthogonal to the base ISA.
 
