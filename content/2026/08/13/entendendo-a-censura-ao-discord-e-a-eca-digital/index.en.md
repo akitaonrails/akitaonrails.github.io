@@ -1,5 +1,5 @@
 ---
-title: "Understanding the Discord Censorship and Brazil's Digital ECA"
+title: "Understanding the Brazilian Censorship of Discord and the Digital ECA"
 slug: understanding-the-discord-censorship-and-brazils-digital-eca
 date: '2026-08-13T11:00:00-03:00'
 draft: false
@@ -10,6 +10,8 @@ tags:
 - law-and-regulation
 - politics
 ---
+
+If you didn't know: Brazil censored Discord's livestreams this week. One heads-up before we start — this story runs on Brazilian law and Brazilian reporting, so most of the sources linked below are in Portuguese. I'll translate everything that matters.
 
 In six days, Brazil went from a tragedy to a regulatory precedent that should worry anyone who understands technology. On July 22, a 13-year-old girl died in Naviraí, Mato Grosso do Sul, during a live broadcast on Discord, coerced by a group the police are investigating as a criminal organization. On August 12, the ANPD, Brazil's data protection authority, ordered Discord to suspend live broadcasting nationwide.
 
