@@ -250,6 +250,7 @@ title: AkitaOnRails Blog
 {{% index-list %}}
 ## 2026 - Agosto
 
+- <a class="aor-index-list__main-link" href="/2026/08/13/entendendo-a-censura-ao-discord-e-a-eca-digital/" title="A ANPD mandou o Discord desligar o Go Live no Brasil porque a criptografia impede a moderação. Explico o caso de Naviraí, a Lei Felca, o choque com a LGPD e o precedente perigoso que isso abre.">Entendendo a censura ao Discord e a ECA digital</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/tags/seguranca/">#seguranca</a><a class="aor-tag-link" href="/tags/leis-e-regulacao/">#leis-e-regulacao</a><a class="aor-tag-link" href="/tags/politica/">#politica</a></span>
 - <a class="aor-index-list__main-link" href="/2026/08/12/davi-e-golias-digital-entendendo-megalag-vs-honey-paypal/" title="O Honey roubou comissões de criadores por anos com um defeat device em JSON puro. Explico o ssd.json linha por linha, a reescrita sob o PayPal e a ação coletiva que o PayPal não conseguiu derrubar.">Davi e Golias digital: Entendendo MegaLag vs Honey/Paypal</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/tags/seguranca/">#seguranca</a><a class="aor-tag-link" href="/tags/mercado-de-tecnologia/">#mercado-de-tecnologia</a></span>
 - <a class="aor-index-list__main-link" href="/2026/08/11/a-volta-da-intel-arm64-vs-x86-64-nao-e-como-voce-imagina/" title="Panther Lake já empata com o Apple M5 em multi-core e entrega bateria de MacBook em laptop x86. Minha tese: ISA não define eficiência desde os anos 90, e a crise da Intel foi gerencial, não arquitetural.">A Volta da Intel: ARM64 vs X86-64 não é como você imagina</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/tags/hardware/">#hardware</a><a class="aor-tag-link" href="/tags/reviews/">#reviews</a></span>
 - <a class="aor-index-list__main-link" href="/2026/08/07/por-que-uma-eleicao-digital-perfeita-ainda-nao-seria-viavel/" title="Um exercício de ciência da computação: como montar uma eleição digital com verificabilidade ponta a ponta usando compromissos, Merkle trees e provas de conhecimento zero, e por que mesmo esse sistema &#39;perfeito&#39; não serviria na prática.">Por que uma eleição digital perfeita ainda não seria viável?</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/tags/politica/">#politica</a><a class="aor-tag-link" href="/tags/seguranca/">#seguranca</a><a class="aor-tag-link" href="/tags/tutoriais/">#tutoriais</a></span>
@@ -440,9 +441,15 @@ title: AkitaOnRails Blog
 <section class="aor-index-month" aria-labelledby="aor-grid-2026-08">
   <div class="aor-index-month__header">
     <h2 id="aor-grid-2026-08">2026 - Agosto</h2>
-    <span>4 posts</span>
+    <span>5 posts</span>
   </div>
   <div class="aor-post-grid">
+<article class="aor-post-card" title="A ANPD mandou o Discord desligar o Go Live no Brasil porque a criptografia impede a moderação. Explico o caso de Naviraí, a Lei Felca, o choque com a LGPD e o precedente perigoso que isso abre.">
+  <time class="aor-post-card__date" datetime="2026-08-13">13/08/2026</time>
+  <h3 class="aor-post-card__title"><a class="aor-post-card__title-link" href="/2026/08/13/entendendo-a-censura-ao-discord-e-a-eca-digital/">Entendendo a censura ao Discord e a ECA digital</a></h3>
+  <span class="aor-post-tags aor-post-tags--card"><a class="aor-tag-link" href="/tags/seguranca/">#seguranca</a><a class="aor-tag-link" href="/tags/leis-e-regulacao/">#leis-e-regulacao</a><a class="aor-tag-link" href="/tags/politica/">#politica</a></span>
+  <p class="aor-post-card__description">A ANPD mandou o Discord desligar o Go Live no Brasil porque a criptografia impede a moderação. Explico o caso de Naviraí, a Lei Felca, o choque com a LGPD e o precedente perigoso que isso abre.</p>
+</article>
 <article class="aor-post-card" title="O Honey roubou comissões de criadores por anos com um defeat device em JSON puro. Explico o ssd.json linha por linha, a reescrita sob o PayPal e a ação coletiva que o PayPal não conseguiu derrubar.">
   <time class="aor-post-card__date" datetime="2026-08-12">12/08/2026</time>
   <h3 class="aor-post-card__title"><a class="aor-post-card__title-link" href="/2026/08/12/davi-e-golias-digital-entendendo-megalag-vs-honey-paypal/">Davi e Golias digital: Entendendo MegaLag vs Honey/Paypal</a></h3>
