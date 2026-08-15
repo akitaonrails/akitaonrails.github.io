@@ -28,6 +28,7 @@ ALLOWED_TAGS = {
 }.transform_values(&:freeze).freeze
 
 FEATURED_POSTS = [
+  ['2026-08-15', 'LLM Benchmarks: Qwen 3.8, GLM 5.3, Gemini 3.7', '/2026/08/15/llm-benchmarks-qwen-3-8-glm-5-3-gemini-3-7/'],
   ['2026-07-30', 'Novo LLM Benchmark: refiz todos os testes!', '/2026/07/30/novo-llm-benchmark-refiz-todos-os-testes/'],
   ['2026-07-20', 'Novidades no meu AI-MEMORY: cada vez melhor pra usar com suas IAs', '/2026/07/20/novidades-no-meu-ai-memory-cada-vez-melhor-pra-usar-com-suas-ias/'],
   ['2026-07-12', 'Notícias Quânticas: Majorana 2 e entendendo Shor', '/2026/07/12/noticias-quanticas-majorana-2-e-entendendo-shor/'],
@@ -46,6 +47,7 @@ FEATURED_POSTS = [
 ].freeze
 
 FEATURED_POSTS_EN = [
+  ['2026-08-15', 'LLM Benchmarks: Qwen 3.8, GLM 5.3, Gemini 3.7', '/en/2026/08/15/llm-benchmarks-qwen-3-8-glm-5-3-gemini-3-7/'],
   ['2026-07-30', 'New LLM Benchmark: I Reran Every Test!', '/en/2026/07/30/new-llm-benchmark-i-reran-every-test/'],
   ['2026-07-20', "What's New in My AI-MEMORY: Switch AI Agents Without Losing the Session", '/en/2026/07/20/whats-new-ai-memory-switch-agents-without-losing-session/'],
   ['2026-07-12', 'Quantum News: Majorana 2 and Understanding Shor', '/en/2026/07/12/quantum-news-majorana-2-and-understanding-shor/'],
