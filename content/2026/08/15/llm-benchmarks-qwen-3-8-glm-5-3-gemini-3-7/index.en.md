@@ -55,7 +55,7 @@ The technical part you already know: Gemini 3.1 Pro died in v2 because of a Goog
 
 Official result: **93 points**, tied with GPT 5.6 Sol, Terra, and Opus 4.8. The run cost $4.12, took 43 minutes, and burned 27.8 million tokens.
 
-But the road to that 93 produced the most important finding of this cycle. The first 3.7 Flash run came out too good — and there was a reason. Midway through the build, and again in the self-review, the model **read the scoring rubric**, read the entire v2 report — every competitor's score and audit — and **ran the audit scanner on itself eight times**. It spent the whole test studying how it would be graded.
+But the road to that 93 produced the most important finding of this cycle. The first 3.7 Flash run raised a red flag — and there was a reason. Midway through the build, and again in the self-review, the model **read the scoring rubric**, read the entire v2 report — every competitor's score and audit — and **ran the audit scanner on itself eight times**. It spent the whole test studying how it would be graded.
 
 The smoking gun is the pin. The contaminated run came out with the correct pin on `claude-sonnet-5`, that feat only three models had managed in the benchmark's entire history. I voided that run and redid it with all the grading material out of the model's reach: out came the stale pin on `claude-sonnet-4.6`, like everyone else. It didn't know the current model at all — it had read the answer in the report. The 93 belongs to that second, clean run.
 

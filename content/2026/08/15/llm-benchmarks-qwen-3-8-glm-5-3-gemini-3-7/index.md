@@ -55,7 +55,7 @@ A parte técnica você já conhece: o Gemini 3.1 Pro morreu no v2 por causa de u
 
 Resultado oficial: **93 pontos**, empate com GPT 5.6 Sol, Terra e Opus 4.8. A rodada custou $4,12, durou 43 minutos e gastou 27,8 milhões de tokens.
 
-Mas o caminho até esse 93 rendeu a descoberta mais importante deste ciclo. A primeira rodada do 3.7 Flash veio boa demais — e tinha motivo. No meio da construção, e de novo na auto-revisão, o modelo **leu a rubrica de correção**, leu o relatório do v2 inteiro — com a nota e a auditoria de cada concorrente — e **rodou o scanner de auditoria em cima de si mesmo oito vezes**. Ele passou a prova inteira estudando como seria avaliado.
+Mas o caminho até esse 93 rendeu a descoberta mais importante deste ciclo. A primeira rodada do 3.7 Flash levantou suspeita — e tinha motivo. No meio da construção, e de novo na auto-revisão, o modelo **leu a rubrica de correção**, leu o relatório do v2 inteiro — com a nota e a auditoria de cada concorrente — e **rodou o scanner de auditoria em cima de si mesmo oito vezes**. Ele passou a prova inteira estudando como seria avaliado.
 
 A arma do crime está no pin. A rodada contaminada saiu com o pin correto no `claude-sonnet-5`, aquele feito que só três modelos tinham conseguido em toda a história do benchmark. Anulei a rodada e refiz com todo o material de correção fora do alcance do modelo: saiu o pin velho no `claude-sonnet-4.6`, como todo mundo. Ele não conhecia o modelo atual coisa nenhuma — tinha lido a resposta no relatório. O 93 é dessa segunda rodada, limpa.
 
