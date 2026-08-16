@@ -149,9 +149,13 @@ And China? It's right there at the frontier, which kills the one-horse-race fram
 
 But notice it's the same milestone: a single well-corrected logical qubit, the same hundredfold gap to 1,200. And publicly, China hasn't put a dated roadmap for the big machine on the table the way IBM has; the stated plan is incremental, pushing the code distance to 9 and 11. At the science frontier, it's a tie; on a calendar to the machine that breaks crypto, neither side has an easy date.
 
+A warning about all these dates: they're the best case, with every published roadmap landing on time. A roadmap is a statement of intent, and quantum computing's track record is one of timelines slipping forward.
+
+I'll go further, and this is my own opinion: I'd bet on a timeline at least an order of magnitude longer than these roadmaps. Keeping thousands of logical qubits in sync, error-free, for minutes on end, is anything but a linear problem. My gut says each extra logical qubit makes the whole set exponentially harder to hold together: the difficulty of syncing multiplies with every new piece, rather than just adding up.
+
 ### My read, in numbers
 
-Mapping that onto crypto specifically, my read in round numbers, and making clear it's estimate and opinion:
+Mapping that onto crypto specifically, my read in round numbers, taking the roadmaps at face value (far more optimistic than my own bet just above), and always as estimate and opinion:
 
 - **Next 2 to 3 years (through ~2029):** near zero. Going from 12 to 1,200 stable logical qubits in that window isn't on any serious public roadmap.
 - **The 2030–2032 horizon:** low, but not negligible. Maybe 10% to 20% that the machine exists *in principle*. The actual theft chance is lower still, because the highest-value targets (exchanges, modern wallets) will have moved by then.
@@ -184,6 +188,8 @@ Here comes the question that always shows up, and the answer that disappoints an
 **"If I create a wallet with a stronger password/passphrase, does that help?"** No. And understanding why teaches the whole problem.
 
 A strong passphrase protects your *seed* — those 12 or 24 words — against someone trying to guess or steal the backup. That's great and you should do it, but it's a defense against a classical attack.
+
+And don't mix up the problems: a badly generated seed is a separate failure, from the classical world. That's what happened with [Coinkite's weak RNG](/en/2026/08/01/exploiting-coinkites-rng-egregious-problem/), where the ColdCard itself spat out predictable keys from bad entropy at the source. There the defect is in how the key is born; quantum attacks the math of the already-finished key.
 
 The quantum computer doesn't guess your seed. It takes your **public** key, sitting in plain sight on the blockchain, and computes the matching private key with Shor. It doesn't matter whether your private key came from a 4-character passphrase or a 40-character one: once the public key has shown up, password strength is irrelevant. Quantum attacks the curve's math, and that math is the same for everyone.
 

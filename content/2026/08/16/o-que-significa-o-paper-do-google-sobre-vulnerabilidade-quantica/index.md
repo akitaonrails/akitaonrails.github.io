@@ -149,9 +149,13 @@ E a China? Ela está lado a lado na fronteira, o que derruba a ideia de corrida 
 
 Mas repare que é o mesmo marco: um único qubit lógico bem corrigido, o mesmo abismo de cem vezes até os 1.200. E, no público, a China ainda não colocou na mesa um roteiro datado pra máquina grande como o da IBM; o plano declarado é incremental, empurrar a distância do código pra 9 e 11. Na ciência de fronteira, empatam; num calendário até a máquina que quebra cripto, ninguém dos dois lados tem uma data fácil.
 
+Um aviso sobre todas essas datas: elas são o melhor cenário, com cada roteiro publicado entregando no prazo. Roteiro é declaração de intenção, e o histórico da computação quântica é de prazos que escorregam pra frente.
+
+Vou além, e aqui é opinião minha: eu aposto num prazo pelo menos uma ordem de grandeza maior que esses roteiros. Manter milhares de qubits lógicos em sincronia, sem erro, por minutos seguidos, é um problema tudo menos linear. Sinto que cada qubit lógico a mais deixa o conjunto exponencialmente mais difícil de segurar junto: a dificuldade de sincronizar multiplica a cada peça nova, em vez de só somar.
+
 ### Minha leitura, em números
 
-Colando isso na realidade específica da cripto, minha leitura em números redondos, e deixando claro que é estimativa e opinião:
+Colando isso na realidade específica da cripto, minha leitura em números redondos, tomando os roteiros pelo valor de face (bem mais otimista que a minha aposta ali de cima), e sempre como estimativa e opinião:
 
 - **Nos próximos 2 a 3 anos (até ~2029):** perto de zero. Sair de 12 pra 1.200 qubits lógicos estáveis nesse prazo não está em nenhum roteiro público sério.
 - **No horizonte 2030–2032:** baixo, mas não desprezível. Talvez 10% a 20% de a máquina existir *em princípio*. A chance de roubo de fato é ainda menor, porque os alvos de maior valor (exchanges, carteiras modernas) terão se mexido antes.
@@ -184,6 +188,8 @@ Aqui vem a pergunta que sempre aparece, e a resposta que decepciona quem esperav
 **"Se eu criar uma carteira com uma senha/passphrase mais forte, isso ajuda?"** Não. E entender o porquê ensina o problema inteiro.
 
 Uma passphrase forte protege a sua *seed* — aquelas 12 ou 24 palavras — contra alguém que tente adivinhar ou roubar o backup. É ótimo e você deve fazer, mas contra ataque clássico.
+
+E cuidado pra não misturar os problemas: seed mal gerada é uma falha separada, do mundo clássico. Foi o que rolou no [RNG fraco da Coinkite](/2026/08/01/explorando-o-problema-escandaloso-do-rng-da-coinkite/), em que a própria ColdCard cuspia chaves previsíveis por entropia ruim na origem. Lá o defeito está em como a chave nasce; o quântico ataca a matemática da chave já pronta.
 
 O computador quântico não adivinha sua seed. Ele pega a sua chave **pública**, que está na blockchain à vista, e calcula a chave privada correspondente com o Shor. Não importa se a sua chave privada nasceu de uma passphrase de 4 caracteres ou de 40: uma vez que a chave pública apareceu, a força da senha é irrelevante. O quântico ataca a matemática da curva, e essa matemática é a mesma pra todo mundo.
 
