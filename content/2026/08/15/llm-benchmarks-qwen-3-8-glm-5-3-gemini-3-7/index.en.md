@@ -123,6 +123,10 @@ What it delivered is solid and real. Correct RubyLLM API end to end, a hand-writ
 
 The deductions are honest, and it confessed them itself. The lock doesn't cover the read-modify-write window, so two simultaneous turns on the same conversation become a last-writer-wins race, the same hazard as GLM 5.2. Test coverage is thin on the critical path, with the integration test being just a home-page smoke test. And it kept the stale `claude-sonnet-4.6` pin, the house's default deduction. A self-review of 12 PASS and 2 PARTIAL, all verified by the auditor. No new brilliance: it's a good model repeating a good model.
 
+Then I ran the same Grok 4.6 on its native harness, the grok CLI, to see if anything changed. Not much did: **93 on the grok CLI against 92 on OpenCode**, one point apart, inside the noise. No harness effect. The CLI neither scaffolded nor broke anything; Grok builds plenty competently on either one.
+
+That extra point has a concrete, mundane explanation: by chance, the CLI run locked the store's entire read-modify-write window under a single `File::LOCK_EX`, so concurrency went to 9; the OpenCode run left that race open and stayed at 8. Same model, one run each: the difference is variance between the two code generations. The harness played no part in it. What actually changed was the cost: on the grok CLI the same test came in at **$1.19**, against OpenCode's $6.33, for the same ~11 million tokens, thanks to xAI's native caching.
+
 > **Remember this:** not every new generation buys a point. Grok 4.6 tied itself, and the good news was passing clean through the toughest shielding I've applied yet.
 
 ## Conclusion: how close did they get?
