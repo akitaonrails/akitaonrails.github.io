@@ -19,6 +19,15 @@ First things first: **read the paper directly**. It's long and dense, but writte
 
 I'll tip the spirit of it upfront: the sky isn't falling. But the "start moving now" message has real grounding, and the reason is subtler than "quantum is coming."
 
+The short version, for the impatient:
+
+- **The paper is serious and the math holds.** Google, the Ethereum Foundation, and Stanford show that breaking secp256k1 dropped to under 500,000 physical qubits and about 9 minutes, in a conditional scenario already confirmed by open, independent reproduction.
+- **This measures the machine's size; the date stays open.** Today's best hardware works with about 12 logical qubits, and the attack asks for more than 1,200. On IBM's roadmap, hardware of the right size shows up around 2033.
+- **Bitcoin isn't ending.** The risk hits whoever has an exposed public key, a subset of addresses (around 6.9 million BTC, much of it already lost). A modern no-reuse wallet stays safe at rest, and mining is at no risk at all.
+- **What you can do.** As a user, key hygiene: a fresh address per use, no reuse (a stronger password doesn't help against quantum). As an industry, start the post-quantum migration now, in layers, without throwing everything out.
+
+Below, each of these points in full: what the paper says, where I agree and disagree with the other models, the real odds with timelines, and what to do in practice.
+
 ## What the paper actually says, in plain engineer terms
 
 Let me get the jargon out of the way first. The security of Bitcoin, Ethereum, and almost all crypto rests on a math problem: given a public key, computing the matching private key is infeasible. Everyone sees your public key; nobody can walk back from it to your private key. That one-way street is what makes a digital signature worth anything.

@@ -19,6 +19,15 @@ Antes de qualquer coisa: **leia o paper direto**. Ele é longo, denso, mas escri
 
 Adianto o espírito da coisa: o céu não está caindo. Mas o recado de "comece a se mexer agora" tem fundamento, e a razão é mais sutil do que "o quântico vem aí".
 
+O resumo, pra quem tem pressa:
+
+- **O paper é sério e a conta fecha.** Google, Ethereum Foundation e Stanford mostram que quebrar a secp256k1 caiu pra menos de 500 mil qubits físicos e cerca de 9 minutos, num cenário condicional já confirmado por reprodução aberta e independente.
+- **Isso mede o tamanho da máquina; a data continua em aberto.** O melhor hardware de hoje trabalha com uns 12 qubits lógicos, e o ataque pede mais de 1.200. Pelo roteiro da IBM, o hardware do tamanho certo aparece lá por 2033.
+- **O Bitcoin não vai acabar.** O risco atinge quem tem a chave pública exposta, um subconjunto de endereços (uns 6,9 milhões de BTC, boa parte já perdida). Carteira moderna sem reuso fica segura em repouso, e a mineração não corre risco nenhum.
+- **O que dá pra fazer.** Como usuário, higiene de chave: endereço novo a cada uso, sem reuso (senha mais forte não ajuda contra o quântico). Como indústria, começar a migração pós-quântica agora, em camadas, sem jogar tudo fora.
+
+Abaixo, cada um desses pontos com calma: o que o paper diz, onde eu concordo e discordo dos outros modelos, a chance real com prazos, e o que fazer na prática.
+
 ## O que o paper realmente diz, em português de engenheiro
 
 Deixa eu tirar o jargão da frente primeiro. A segurança do Bitcoin, do Ethereum e de quase toda cripto se apoia num problema matemático: dado uma chave pública, é inviável calcular a chave privada correspondente. Todo mundo vê sua chave pública; ninguém consegue voltar dela pra sua chave privada. É essa mão única que faz uma assinatura digital valer alguma coisa.
