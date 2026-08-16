@@ -133,6 +133,10 @@ In physical qubits, the largest announced system is in the low thousands; the at
 
 > **Today's best hardware works with logical qubits in the dozen range. The attack needs more than a thousand. The gap is orders of magnitude.**
 
+There's also a bet that sidesteps this brute-force game: the topological one, from Microsoft. The idea is a hardware-protected qubit, naturally more error-resistant, which would slash the count of physical qubits per logical one. [Majorana 2](https://www.forbes.com/sites/moorinsights/2026/07/16/microsoft-doubles-down-on-topological-qubits-with-majorana-2-chip/), in 2026, swapped aluminum for lead and jumped coherence from milliseconds to 20 seconds, and Microsoft pulled its fault-tolerance target from 2033 to 2029.
+
+But it's the most disputed bet of them all. Much of the community doubts a real working topological qubit is even there; the latest paper shows only half the measurements that would prove the qubit. If it pans out, it's a shortcut for everyone; if not, it's a dead end. I broke this case down in [a separate article](/en/2026/07/12/quantum-news-majorana-2-and-understanding-shor/).
+
 ### The roadmaps and the timelines
 
 **The near future is where the real debate lives.** The honest way to talk about it is with estimates, because nobody has certainty here. The most-cited reference is the [Global Risk Institute's Quantum Threat Timeline](https://globalriskinstitute.org/publication/quantum-threat-timeline/), an annual survey of experts in the field.
@@ -143,7 +147,7 @@ On the manufacturing side, the most explicit roadmap is [IBM's](https://www.ibm.
 
 Notice that 200 still sits below the more than 1,200 the attack asks for. The machine of the right size only shows up on the next step, Blue Jay, slated for 2033, with 2,000 logical qubits and a billion operations.
 
-So even on the industry's own most aggressive roadmap, hardware with enough logical qubits to threaten secp256k1 arrives around 2033, with the usual caveat: quantum roadmaps slip. IBM is betting on qLDPC codes to get there, which cut the physical qubits behind each logical one by about 90% compared to Willow's surface code.
+So even on the industry's own most aggressive roadmap, hardware with enough logical qubits to threaten secp256k1 arrives around 2033, with the usual caveat: quantum roadmaps slip. IBM is betting on [qLDPC](https://errorcorrectionzoo.org/c/qldpc) codes to get there, which cut the physical qubits behind each logical one by about 90% compared to Willow's surface code.
 
 And China? It's right there at the frontier, which kills the one-horse-race framing. USTC's [Zuchongzhi 3.2](https://quantumzeitgeist.com/zuchongzhi-3-google-quantum-error-correction/) crossed the same error-correction threshold as Willow in 2025, with a distance-7 surface-code logical qubit, and it was the first team outside the US to get there.
 

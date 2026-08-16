@@ -133,6 +133,10 @@ Em qubits físicos, o maior sistema anunciado está na casa dos milhares; o ataq
 
 > **Hoje o melhor hardware trabalha com qubits lógicos na casa da dúzia. O ataque pede mais de mil. A distância é de ordens de grandeza.**
 
+Tem ainda uma aposta que foge desse jogo de força bruta: a topológica, da Microsoft. A ideia é um qubit protegido por hardware, naturalmente mais resistente a erro, o que reduziria muito a conta de qubits físicos por lógico. O [Majorana 2](https://www.forbes.com/sites/moorinsights/2026/07/16/microsoft-doubles-down-on-topological-qubits-with-majorana-2-chip/), de 2026, trocou o alumínio por chumbo e pulou a coerência de milissegundos pra 20 segundos, e a Microsoft antecipou a meta de tolerância a falhas de 2033 pra 2029.
+
+Só que é a aposta mais contestada de todas. Boa parte da comunidade duvida que exista um qubit topológico funcionando de verdade ali; o paper mais recente mostra só metade das medições que provariam o qubit. Se der certo, é atalho pra todo mundo; se não, é beco sem saída. Eu destrinchei esse caso [num artigo à parte](/2026/07/12/noticias-quanticas-majorana-2-e-entendendo-shor/).
+
 ### Os roteiros e os prazos
 
 **No futuro próximo, aí mora a discussão de verdade.** O jeito honesto de falar disso é por estimativa, porque certeza ninguém tem aqui. A referência mais citada é o [Quantum Threat Timeline do Global Risk Institute](https://globalriskinstitute.org/publication/quantum-threat-timeline/), uma pesquisa anual com especialistas da área.
@@ -143,7 +147,7 @@ Do lado de quem fabrica, o roteiro mais explícito é o [da IBM](https://www.ibm
 
 Repare que 200 ainda fica abaixo dos mais de 1.200 que o ataque pede. A máquina do tamanho certo só aparece no passo seguinte, o Blue Jay, marcado pra 2033, com 2.000 qubits lógicos e 1 bilhão de operações.
 
-Pelo próprio roteiro mais agressivo da indústria, então, o hardware com qubits lógicos suficientes pra ameaçar a secp256k1 chega lá por 2033, com a ressalva de sempre: roteiro de quântica escorrega. A IBM aposta em códigos qLDPC pra isso, que reduzem em cerca de 90% os qubits físicos por trás de cada lógico ante o surface code do Willow.
+Pelo próprio roteiro mais agressivo da indústria, então, o hardware com qubits lógicos suficientes pra ameaçar a secp256k1 chega lá por 2033, com a ressalva de sempre: roteiro de quântica escorrega. A IBM aposta em códigos [qLDPC](https://errorcorrectionzoo.org/c/qldpc) pra isso, que reduzem em cerca de 90% os qubits físicos por trás de cada lógico ante o surface code do Willow.
 
 E a China? Ela está lado a lado na fronteira, o que derruba a ideia de corrida de um cavalo só. O [Zuchongzhi 3.2](https://quantumzeitgeist.com/zuchongzhi-3-google-quantum-error-correction/), da USTC, cruzou em 2025 o mesmo limiar de correção de erro do Willow, com um qubit lógico de superfície na distância 7, e foi o primeiro time fora dos EUA a chegar lá.
 
