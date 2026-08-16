@@ -17,6 +17,33 @@ The top hasn't moved: **Fable 5 at 96**, the trio of **Sonnet 5, Opus 5, and Kim
 
 Since then I've run four models: Qwen 3.8 Max, GLM 5.3, Gemini 3.7 Flash, and a 27B Qwen 3.8 running locally on my RTX 5090. One of them closed in on the leading group. Another pulled off the biggest jump this test has ever recorded. A third got caught cheating mid-test. And the local one gave me the most laborious, and most instructive, run of the year.
 
+## Where they land in the ranking
+
+Before opening each one up, it's worth seeing where the newcomers fit. The table below is the **Tier A.1** slice of the [v2 ranking](/en/2026/07/30/new-llm-benchmark-i-reran-every-test/): the frontier of the test, everyone at 90 points or more. I cut it here on purpose. From A.2 down there are competent models, but the leadership race lives in this group, and that's what the question is about. The three cloud releases go in **bold**; the local 27B Qwen scored 51, Tier C, and shows up only in the table at the end.
+
+| # | Model | Score | Tier | Harness | Time | Cost |
+|---:|---|---:|:---:|---|---:|---:|
+| 1 | Claude Fable 5 | 96 | A.1 | Claude Code | 46 min | $26.03 |
+| 2 | Claude Sonnet 5 | 95 | A.1 | Claude Code | 59 min | $25.83 |
+| 2 | Claude Opus 5 | 95 | A.1 | Claude Code | 78 min | $38.91 |
+| 2 | Kimi K3 | 95 | A.1 | Kimi CLI | 65 min | $6.14 |
+| 5 | **GLM 5.3** | **94** | A.1 | OpenCode | 80 min | $0 (≈$2.59) |
+| 6 | GPT 5.6 Sol | 93 | A.1 | Codex | 57 min | ~$45 |
+| 6 | Claude Opus 4.8 | 93 | A.1 | Claude Code | 53 min | $21.82 |
+| 6 | GPT 5.6 Terra | 93 | A.1 | Codex | 48 min | $16.92 |
+| 6 | **Gemini 3.7 Flash** | **93** | A.1 | OpenCode | 43 min | $4.12 |
+| 10 | GLM 5.2 | 92 | A.1 | OpenCode | 155 min | $0 (≈$12.05) |
+| 10 | Kimi K2.5 | 92 | A.1 | OpenCode | 43 min | $1.50 |
+| 10 | Gemini 3.6 Flash @ high | 92 | A.1 | Antigravity | 15 min | — |
+| 10 | **Qwen 3.8 Max** | **92** | A.1 | OpenCode | 78 min | $9.16 |
+| 14 | MiniMax M3 | 91 | A.1 | OpenCode | 113 min | $7.72 |
+| 14 | Kimi K2.6 | 91 | A.1 | OpenCode | 34 min | $2.64 |
+| 14 | Claude Opus 4.7 | 91 | A.1 | Claude Code | 44 min | $44.28 |
+| 14 | GPT 5.6 Luna | 91 | A.1 | Codex | 46 min | $16.79 |
+| 14 | Grok 4.5 | 91 | A.1 | grok CLI | 25 min | $0 (≈$1.62) |
+
+*Time is wall clock across the three phases; cost is API-equivalent. On subscription plans (Z.ai, grok CLI) the marginal cost is $0 and the value in parentheses is the API-equivalent; the Antigravity runs were preview and were not metered. Same criterion as the previous article.*
+
 ## Qwen 3.8 Max: the biggest jump in benchmark history
 
 To measure the jump, first the size of the hole. Qwen 3.7 Max had scored **51 points, Tier C**, and the reason was ugly. When implementing the multi-turn chat, it decided it could replay history by calling `chat.ask(entire_history_array)`. Except RubyLLM's `ask` wraps its argument into a single user message: the entire conversation, assistant turns included, becomes one message with every role obliterated. Worse, the required test for that feature **mocked exactly that nonexistent API**. A test that mocks a fabricated API is worse than no test, because it certifies the hallucination.
@@ -29,7 +56,7 @@ Where it lost points is instructive: `config/puma.rb` shipped without the `worke
 
 > **Remember this:** the model swore concurrency worked — one missing line in `puma.rb` and the "two workers" ran as a single process. That's why phase 2 doesn't read READMEs: it boots the server and measures.
 
-On the table, those 92 points tie with Grok 4.5, GLM 5.2, and Kimi K2.5, **one point below Sol and Terra**. It cost $9.16 in API and 78 minutes — verbose: 25 million tokens.
+On the table, those 92 points tie with GLM 5.2 and Kimi K2.5, **one point below Sol and Terra**. It cost $9.16 in API and 78 minutes — verbose: 25 million tokens.
 
 ## GLM 5.3: the loneliest step on the table
 

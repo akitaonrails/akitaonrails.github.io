@@ -78,39 +78,41 @@ No ranking abaixo, uso o harness preferencial quando existe uma rodada completa:
 
 Esta é a tabela consolidada do v2, com uma entrada por modelo no harness preferencial disponível.
 
-| # | Modelo | Score | Tier | Harness |
-|---:|---|---:|:---:|---|
-| 1 | Claude Fable 5 | **96** | A.1 | Claude Code |
-| 2 | Claude Sonnet 5 | **95** | A.1 | Claude Code |
-| 2 | Claude Opus 5 | **95** | A.1 | Claude Code |
-| 2 | Kimi K3 | **95** | A.1 | Kimi CLI |
-| 5 | GPT 5.6 Sol | **93** | A.1 | Codex |
-| 5 | Claude Opus 4.8 | **93** | A.1 | Claude Code |
-| 5 | GPT 5.6 Terra | **93** | A.1 | Codex |
-| 8 | GLM 5.2 | **92** | A.1 | OpenCode |
-| 8 | Kimi K2.5 | **92** | A.1 | OpenCode |
-| 8 | Gemini 3.6 Flash @ high | **92** | A.1 | Antigravity |
-| 11 | MiniMax M3 | **91** | A.1 | OpenCode |
-| 11 | Kimi K2.6 | **91** | A.1 | OpenCode |
-| 11 | Claude Opus 4.7 | **91** | A.1 | Claude Code |
-| 11 | GPT 5.6 Luna | **91** | A.1 | Codex |
-| 11 | Grok 4.5 | **91** | A.1 | grok CLI |
-| 16 | Nex-N2-Pro | **88** | A.2 | OpenCode |
-| 16 | GPT 5.5 | **88** | A.2 | Codex |
-| 16 | Gemini 3.1 Pro @ high | **88** | A.2 | Antigravity |
-| 19 | Claude Sonnet 4.6 | **87** | A.2 | Claude Code |
-| 20 | GPT 5.4 | **86** | A.2 | Codex |
-| 20 | Kimi K2.7-Coding | **86** | A.2 | Kimi CLI |
-| 22 | Step 3.7 Flash | **84** | A.2 | OpenCode |
-| 23 | Claude Opus 4.6 | **83** | A.2 | Claude Code |
-| 23 | GLM 5 | **83** | A.2 | OpenCode |
-| 25 | DeepSeek V4 Pro | **82** | B | OpenCode |
-| 26 | DeepSeek V4 Flash | **80** | B | OpenCode |
-| 27 | Qwen 3.6 Plus | **76** | B | OpenCode |
-| 28 | MiMo V2.5 Pro | **73** | B | OpenCode |
-| 29 | Grok 4.3 | **55** | C | grok CLI |
-| 30 | Qwen3.7 Max | **51** | C | OpenCode |
-| 31 | Step 3.5 Flash | **27** | D | OpenCode |
+| # | Modelo | Score | Tier | Harness | Tempo | Custo |
+|---:|---|---:|:---:|---|---:|---:|
+| 1 | Claude Fable 5 | **96** | A.1 | Claude Code | 46 min | $26,03 |
+| 2 | Claude Sonnet 5 | **95** | A.1 | Claude Code | 59 min | $25,83 |
+| 2 | Claude Opus 5 | **95** | A.1 | Claude Code | 78 min | $38,91 |
+| 2 | Kimi K3 | **95** | A.1 | Kimi CLI | 65 min | $6,14 |
+| 5 | GPT 5.6 Sol | **93** | A.1 | Codex | 57 min | ~$45 |
+| 5 | Claude Opus 4.8 | **93** | A.1 | Claude Code | 53 min | $21,82 |
+| 5 | GPT 5.6 Terra | **93** | A.1 | Codex | 48 min | $16,92 |
+| 8 | GLM 5.2 | **92** | A.1 | OpenCode | 155 min | $0 (≈$12,05) |
+| 8 | Kimi K2.5 | **92** | A.1 | OpenCode | 43 min | $1,50 |
+| 8 | Gemini 3.6 Flash @ high | **92** | A.1 | Antigravity | 15 min | — |
+| 11 | MiniMax M3 | **91** | A.1 | OpenCode | 113 min | $7,72 |
+| 11 | Kimi K2.6 | **91** | A.1 | OpenCode | 34 min | $2,64 |
+| 11 | Claude Opus 4.7 | **91** | A.1 | Claude Code | 44 min | $44,28 |
+| 11 | GPT 5.6 Luna | **91** | A.1 | Codex | 46 min | $16,79 |
+| 11 | Grok 4.5 | **91** | A.1 | grok CLI | 25 min | $0 (≈$1,62) |
+| 16 | Nex-N2-Pro | **88** | A.2 | OpenCode | 8 min | $0,17 |
+| 16 | GPT 5.5 | **88** | A.2 | Codex | 57 min | ~$53 |
+| 16 | Gemini 3.1 Pro @ high | **88** | A.2 | Antigravity | 23 min | — |
+| 19 | Claude Sonnet 4.6 | **87** | A.2 | Claude Code | 45 min | $9,90 |
+| 20 | GPT 5.4 | **86** | A.2 | Codex | 67 min | ~$26 |
+| 20 | Kimi K2.7-Coding | **86** | A.2 | Kimi CLI | 54 min | $4,37 |
+| 22 | Step 3.7 Flash | **84** | A.2 | OpenCode | 81 min | $1,41 |
+| 23 | Claude Opus 4.6 | **83** | A.2 | Claude Code | 39 min | $12,83 |
+| 23 | GLM 5 | **83** | A.2 | OpenCode | 31 min | $1,97 |
+| 25 | DeepSeek V4 Pro | **82** | B | OpenCode | 57 min | $0,35 |
+| 26 | DeepSeek V4 Flash | **80** | B | OpenCode | 36 min | $0,81 |
+| 27 | Qwen 3.6 Plus | **76** | B | OpenCode | 75 min | $7,63 |
+| 28 | MiMo V2.5 Pro | **73** | B | OpenCode | 23 min | $0,22 |
+| 29 | Grok 4.3 | **55** | C | grok CLI | 6 min | $0 (≈$0,18) |
+| 30 | Qwen3.7 Max | **51** | C | OpenCode | 41 min | $2,59 |
+| 31 | Step 3.5 Flash | **27** | D | OpenCode | 47 min | $0,92 |
+
+*Tempo é o wall clock de ponta a ponta das três fases. Custo é equivalente em API: nos modelos no Codex uso o valor blended com desconto de cache (mesmo critério da seção de custos abaixo); em planos de assinatura (Z.ai, grok CLI) o custo marginal é $0 e o número entre parênteses é o equivalente em API; as rodadas no Antigravity eram preview e não foram medidas.*
 
 Os detalhes, artefatos e deduções estão no [relatório completo do v2](https://github.com/akitaonrails/llm-coding-benchmark/blob/master/docs/success_report.v2.md).
 

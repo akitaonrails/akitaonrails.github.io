@@ -17,6 +17,33 @@ O topo continua onde estava: **Fable 5 com 96**, o trio **Sonnet 5, Opus 5 e Kim
 
 Desde então rodei quatro modelos: Qwen 3.8 Max, GLM 5.3, Gemini 3.7 Flash e um Qwen 3.8 de 27B rodando local na minha RTX 5090. Um deles encostou no grupo de cima. Outro protagonizou o maior salto que esta prova já registrou. Um terceiro foi pego colando no meio da prova. E o local me deu a rodada mais trabalhosa — e mais instrutiva — do ano.
 
+## Onde eles caem no ranking
+
+Antes de abrir cada um, vale ver onde os novatos se encaixam. A tabela abaixo é o recorte **Tier A.1** do [ranking do v2](/2026/07/30/novo-llm-benchmark-refiz-todos-os-testes/): a fronteira da prova, todo mundo com 90 pontos ou mais. Cortei aqui de propósito. De A.2 pra baixo tem modelo competente, mas quem disputa a liderança está neste grupo, e é dele que a pergunta trata. Os três lançamentos de nuvem entram **em negrito**; o Qwen 27B local fez 51, Tier C, e aparece só na tabela do fim.
+
+| # | Modelo | Score | Tier | Harness | Tempo | Custo |
+|---:|---|---:|:---:|---|---:|---:|
+| 1 | Claude Fable 5 | 96 | A.1 | Claude Code | 46 min | $26,03 |
+| 2 | Claude Sonnet 5 | 95 | A.1 | Claude Code | 59 min | $25,83 |
+| 2 | Claude Opus 5 | 95 | A.1 | Claude Code | 78 min | $38,91 |
+| 2 | Kimi K3 | 95 | A.1 | Kimi CLI | 65 min | $6,14 |
+| 5 | **GLM 5.3** | **94** | A.1 | OpenCode | 80 min | $0 (≈$2,59) |
+| 6 | GPT 5.6 Sol | 93 | A.1 | Codex | 57 min | ~$45 |
+| 6 | Claude Opus 4.8 | 93 | A.1 | Claude Code | 53 min | $21,82 |
+| 6 | GPT 5.6 Terra | 93 | A.1 | Codex | 48 min | $16,92 |
+| 6 | **Gemini 3.7 Flash** | **93** | A.1 | OpenCode | 43 min | $4,12 |
+| 10 | GLM 5.2 | 92 | A.1 | OpenCode | 155 min | $0 (≈$12,05) |
+| 10 | Kimi K2.5 | 92 | A.1 | OpenCode | 43 min | $1,50 |
+| 10 | Gemini 3.6 Flash @ high | 92 | A.1 | Antigravity | 15 min | — |
+| 10 | **Qwen 3.8 Max** | **92** | A.1 | OpenCode | 78 min | $9,16 |
+| 14 | MiniMax M3 | 91 | A.1 | OpenCode | 113 min | $7,72 |
+| 14 | Kimi K2.6 | 91 | A.1 | OpenCode | 34 min | $2,64 |
+| 14 | Claude Opus 4.7 | 91 | A.1 | Claude Code | 44 min | $44,28 |
+| 14 | GPT 5.6 Luna | 91 | A.1 | Codex | 46 min | $16,79 |
+| 14 | Grok 4.5 | 91 | A.1 | grok CLI | 25 min | $0 (≈$1,62) |
+
+*Tempo é o wall clock das três fases; custo é equivalente em API. Em assinatura (Z.ai, grok CLI) o custo marginal é $0 e o valor entre parênteses é o equivalente em API; as rodadas no Antigravity eram preview e não foram medidas. O critério é o mesmo do artigo anterior.*
+
 ## Qwen 3.8 Max: o maior salto da história do benchmark
 
 Pra medir o salto, primeiro o tamanho do buraco. O Qwen3.7 Max tinha feito **51 pontos, Tier C**, e o motivo era feio. Na hora de implementar o chat multi-turn, ele decidiu que dava pra replayar o histórico chamando `chat.ask(array_com_o_histórico_inteiro)`. Só que o `ask` do RubyLLM empacota o argumento numa única mensagem de usuário — a conversa inteira, incluindo as respostas do assistente, virava uma mensagem só, com todos os papeis obliterados. Pior: o teste obrigatório dessa funcionalidade **mockava exatamente essa API inexistente**. Um teste que mocka uma API fabricada é pior que não ter teste, porque certifica a alucinação.
@@ -29,7 +56,7 @@ Onde ele perdeu ponto é instrutivo: o `config/puma.rb` saiu sem a diretiva `wor
 
 > **Pra guardar:** o modelo jurou que a concorrência funcionava — faltava uma linha no `puma.rb` e os "dois workers" rodavam num processo só. Por isso a fase 2 não lê README: ela sobe o servidor e mede.
 
-Na tabela, os 92 empatam com Grok 4.5, GLM 5.2 e Kimi K2.5, **um ponto abaixo de Sol e Terra**. Custou $9,16 em API e 78 minutos — verboso: 25 milhões de tokens.
+Na tabela, os 92 empatam com GLM 5.2 e Kimi K2.5, **um ponto abaixo de Sol e Terra**. Custou $9,16 em API e 78 minutos — verboso: 25 milhões de tokens.
 
 ## GLM 5.3: o degrau mais solitário da tabela
 
