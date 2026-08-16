@@ -52,7 +52,7 @@ It's the same trick behind the privacy of several cryptocurrencies: Zcash uses Z
 - **At-rest attack:** the public key is already exposed on the blockchain (a dormant wallet, a reused key). The attacker has days or months to work. Even a slow clock does the job.
 - **On-setup attack:** a single quantum computation extracts a secret from a cryptographic ceremony and becomes a reusable master key, which then runs on ordinary classical computers. This one's the most insidious, and it hits things like Ethereum's data-availability mechanism.
 
-**Fourth: the map of who bleeds.** On Bitcoin, the at-rest targets are the old P2PK scripts (about 1.7 million BTC, almost all Satoshi-era and probably lost), Taproot (P2TR, which exposes the key), and any reused address.
+**Fourth: the map of who bleeds.** On Bitcoin, the at-rest targets are the old [P2PK](https://en.bitcoin.it/wiki/Script) scripts (about 1.7 million BTC, almost all Satoshi-era and probably lost), [Taproot](https://bitcoinops.org/en/topics/taproot/) (P2TR, which exposes the key), and any reused address.
 
 All told, the paper estimates around 6.9 million BTC vulnerable today, of which some 2.3 million have been dormant for more than five years. Modern addresses that hide the key behind a hash and have never spent stay safe at rest.
 
@@ -60,9 +60,9 @@ And there's good news buried here: **Bitcoin mining is not at risk**. [Grover's 
 
 > **Bitcoin mining is not at risk. Quantum toppling Proof-of-Work is the myth this paper buries on purpose.**
 
-**Fifth: Ethereum has a much larger surface.** The account model exposes the public key permanently after the first transaction, unlike Bitcoin's UTXO model. Add to that contract admin keys (stablecoins, bridges, oracles), the BLS signatures holding up Proof-of-Stake consensus, and the KZG commitments in the data layer. More stuff exposed, and much of it you can't "change addresses" to escape.
+**Fifth: Ethereum has a much larger surface.** The account model exposes the public key permanently after the first transaction, unlike Bitcoin's UTXO model. Add to that contract admin keys (stablecoins, bridges, oracles), the [BLS signatures](https://en.wikipedia.org/wiki/BLS_digital_signature) holding up [Proof-of-Stake](https://en.wikipedia.org/wiki/Proof_of_stake) consensus, and the [KZG commitments](https://dankradfeist.de/ethereum/2020/06/16/kate-polynomial-commitments.html) in the data layer. More stuff exposed, and much of it you can't "change addresses" to escape.
 
-And how does the paper argue all this? Three legs: the resource estimates (with the zero-knowledge proof for credibility), real blockchain data (the BTC and ETH at-risk figures come from public BigQuery queries), and the honest framing that the goal is to sound the alarm to migrate, making clear the machine is still to come.
+And how does the paper argue all this? Three legs: the resource estimates (with the zero-knowledge proof for credibility), real blockchain data (the BTC and ETH at-risk figures come from public [BigQuery](https://en.wikipedia.org/wiki/BigQuery) queries), and the honest framing that the goal is to sound the alarm to migrate, making clear the machine is still to come.
 
 The paper, by the way, **gives no date**. It sizes the machine and stops there; the calendar stays open.
 
@@ -127,7 +127,7 @@ It's like keeping a thousand plates spinning at once, each plate made of a thous
 
 **In today's reality, we're far off.** Google itself helps measure the distance. [Willow](https://blog.google/innovation-and-ai/technology/research/google-willow-quantum-chip/), their flagship chip, demonstrated below-threshold error correction in 2024, a historic feat. But the result was **a single well-corrected logical qubit**, built from 101 physical ones, which outlived every one of them.
 
-If the ruler is the number of logical qubits running together, the public record today is around a dozen (Quantinuum reached 12). The paper asks for more than 1,200. On both rulers, quality and quantity, the distance runs to roughly a hundredfold, and each logical qubit still costs thousands of physical qubits with the stability we're missing.
+If the ruler is the number of logical qubits running together, the public record today is around a dozen ([Quantinuum](https://en.wikipedia.org/wiki/Quantinuum) reached 12). The paper asks for more than 1,200. On both rulers, quality and quantity, the distance runs to roughly a hundredfold, and each logical qubit still costs thousands of physical qubits with the stability we're missing.
 
 In physical qubits, the largest announced system is in the low thousands; the attack wants nearly half a million. Several orders of magnitude of distance, across several dimensions at once. Nothing a fine-tuning pass fixes.
 

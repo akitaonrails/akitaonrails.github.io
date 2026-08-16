@@ -52,7 +52,7 @@ Se "prova de conhecimento zero" soa esotérico, a ideia é simples e velha na cr
 - **Ataque em repouso (at-rest):** a chave pública já está exposta na blockchain (carteira parada, chave reusada). O atacante tem dias ou meses pra trabalhar. Serve até relógio lento.
 - **Ataque na configuração (on-setup):** uma única computação quântica extrai um segredo de uma cerimônia criptográfica e vira um gabarito reutilizável, que depois roda em computador clássico comum. Esse é o mais insidioso, e ataca coisas como o mecanismo de dados do Ethereum.
 
-**Quarto: o mapa de quem sangra.** No Bitcoin, os alvos em repouso são os scripts antigos P2PK (cerca de 1,7 milhão de BTC, quase tudo da era Satoshi e provavelmente perdido), o Taproot (P2TR, que expõe a chave), e qualquer endereço reusado.
+**Quarto: o mapa de quem sangra.** No Bitcoin, os alvos em repouso são os scripts antigos [P2PK](https://en.bitcoin.it/wiki/Script) (cerca de 1,7 milhão de BTC, quase tudo da era Satoshi e provavelmente perdido), o [Taproot](https://bitcoinops.org/en/topics/taproot/) (P2TR, que expõe a chave), e qualquer endereço reusado.
 
 Somando tudo, o paper estima cerca de 6,9 milhões de BTC vulneráveis hoje, dos quais uns 2,3 milhões estão dormentes há mais de cinco anos. Os endereços modernos que escondem a chave atrás de um hash e nunca gastaram continuam seguros em repouso.
 
@@ -60,9 +60,9 @@ E tem uma boa notícia enterrada aqui: **a mineração do Bitcoin não corre ris
 
 > **A mineração do Bitcoin não corre risco. O quântico derrubando o Proof-of-Work é o mito que este paper enterra de propósito.**
 
-**Quinto: o Ethereum tem uma superfície bem maior.** O modelo de contas expõe a chave pública permanentemente depois da primeira transação, ao contrário do modelo de UTXO do Bitcoin. Some a isso as chaves administrativas de contratos (stablecoins, pontes, oráculos), as assinaturas BLS que seguram o consenso Proof-of-Stake, e os compromissos KZG da camada de dados. É mais coisa exposta, e boa parte não dá pra "trocar de endereço" pra escapar.
+**Quinto: o Ethereum tem uma superfície bem maior.** O modelo de contas expõe a chave pública permanentemente depois da primeira transação, ao contrário do modelo de UTXO do Bitcoin. Some a isso as chaves administrativas de contratos (stablecoins, pontes, oráculos), as [assinaturas BLS](https://en.wikipedia.org/wiki/BLS_digital_signature) que seguram o consenso [Proof-of-Stake](https://pt.wikipedia.org/wiki/Prova_de_participa%C3%A7%C3%A3o), e os [compromissos KZG](https://dankradfeist.de/ethereum/2020/06/16/kate-polynomial-commitments.html) da camada de dados. É mais coisa exposta, e boa parte não dá pra "trocar de endereço" pra escapar.
 
-E como o paper argumenta tudo isso? Três pernas: as estimativas de recurso (com a prova de conhecimento zero pra dar credibilidade), dados reais da blockchain (as quantidades de BTC e ETH em risco vêm de consultas públicas ao BigQuery), e o enquadramento honesto de que o objetivo é acender o alerta pra migrar, deixando claro que a máquina ainda está por vir.
+E como o paper argumenta tudo isso? Três pernas: as estimativas de recurso (com a prova de conhecimento zero pra dar credibilidade), dados reais da blockchain (as quantidades de BTC e ETH em risco vêm de consultas públicas ao [BigQuery](https://en.wikipedia.org/wiki/BigQuery)), e o enquadramento honesto de que o objetivo é acender o alerta pra migrar, deixando claro que a máquina ainda está por vir.
 
 O paper, aliás, **não dá uma data**. Ele mede o tamanho da máquina e para aí; o calendário fica em aberto.
 
@@ -127,7 +127,7 @@ E é aí que a dificuldade se esconde atrás dos números. O ataque não pede s�
 
 **Na realidade de hoje, estamos longe.** O próprio Google ajuda a medir a distância. O [Willow](https://blog.google/innovation-and-ai/technology/research/google-willow-quantum-chip/), o chip de ponta deles, provou em 2024 correção de erro abaixo do limiar, um feito histórico. Só que o resultado foi **um único qubit lógico** bem corrigido, montado a partir de 101 físicos, que viveu mais que qualquer um deles.
 
-Se a régua for quantidade de qubits lógicos rodando juntos, o recorde público hoje anda perto de uma dúzia (a Quantinuum chegou a 12). O paper pede mais de 1.200. Nas duas réguas, qualidade e quantidade, a distância fica na casa das cem vezes, e cada qubit lógico ainda custa milhares de qubits físicos com a estabilidade que falta.
+Se a régua for quantidade de qubits lógicos rodando juntos, o recorde público hoje anda perto de uma dúzia (a [Quantinuum](https://en.wikipedia.org/wiki/Quantinuum) chegou a 12). O paper pede mais de 1.200. Nas duas réguas, qualidade e quantidade, a distância fica na casa das cem vezes, e cada qubit lógico ainda custa milhares de qubits físicos com a estabilidade que falta.
 
 Em qubits físicos, o maior sistema anunciado está na casa dos milhares; o ataque quer quase meio milhão. São várias ordens de grandeza de distância, em várias dimensões ao mesmo tempo. Nada que um ajuste fino resolva.
 
