@@ -1,5 +1,5 @@
 ---
-title: "LLM Benchmarks: Qwen 3.8, GLM 5.3, Gemini 3.7"
+title: "LLM Benchmarks: Qwen 3.8, GLM 5.3, Gemini 3.7, Grok 4.6"
 slug: llm-benchmarks-qwen-3-8-glm-5-3-gemini-3-7
 date: '2026-08-15T14:00:00-03:00'
 draft: false
@@ -15,7 +15,7 @@ Two weeks ago I published [version 2 of my LLM Coding Benchmark](/en/2026/07/30/
 
 The top hasn't moved: **Fable 5 at 96**, the trio of **Sonnet 5, Opus 5, and Kimi K3 at 95**, and right behind them **GPT 5.6 Sol, GPT 5.6 Terra, and Opus 4.8 at 93**. That's the cream of the crop in this test. The open question: how close do the newest releases get to that group?
 
-Since then I've run four models: Qwen 3.8 Max, GLM 5.3, Gemini 3.7 Flash, and a 27B Qwen 3.8 running locally on my RTX 5090. One of them closed in on the leading group. Another pulled off the biggest jump this test has ever recorded. A third got caught cheating mid-test. And the local one gave me the most laborious, and most instructive, run of the year.
+Since then I've run five models: Qwen 3.8 Max, GLM 5.3, Gemini 3.7 Flash, Grok 4.6, and a 27B Qwen 3.8 running locally on my RTX 5090. One of them closed in on the leading group. Another pulled off the biggest jump this test has ever recorded. A third got caught cheating mid-test. A fourth tied its own previous generation, without moving an inch. And the local one gave me the most laborious, and most instructive, run of the year.
 
 ## Where they land in the ranking
 
@@ -36,11 +36,12 @@ Before opening each one up, it's worth seeing where the newcomers fit. The table
 | 10 | Kimi K2.5 | 92 | A.1 | OpenCode | 43 min | $1.50 |
 | 10 | Gemini 3.6 Flash @ high | 92 | A.1 | Antigravity | 15 min | — |
 | 10 | **Qwen 3.8 Max** | **92** | A.1 | OpenCode | 78 min | $9.16 |
-| 14 | MiniMax M3 | 91 | A.1 | OpenCode | 113 min | $7.72 |
-| 14 | Kimi K2.6 | 91 | A.1 | OpenCode | 34 min | $2.64 |
-| 14 | Claude Opus 4.7 | 91 | A.1 | Claude Code | 44 min | $44.28 |
-| 14 | GPT 5.6 Luna | 91 | A.1 | Codex | 46 min | $16.79 |
-| 14 | Grok 4.5 | 91 | A.1 | grok CLI | 25 min | $0 (≈$1.62) |
+| 10 | **Grok 4.6** | **92** | A.1 | OpenCode | 34 min | $6.33 |
+| 15 | MiniMax M3 | 91 | A.1 | OpenCode | 113 min | $7.72 |
+| 15 | Kimi K2.6 | 91 | A.1 | OpenCode | 34 min | $2.64 |
+| 15 | Claude Opus 4.7 | 91 | A.1 | Claude Code | 44 min | $44.28 |
+| 15 | GPT 5.6 Luna | 91 | A.1 | Codex | 46 min | $16.79 |
+| 15 | Grok 4.5 | 91 | A.1 | grok CLI | 25 min | $0 (≈$1.62) |
 
 *Time is wall clock across the three phases; cost is API-equivalent. On subscription plans (Z.ai, grok CLI) the marginal cost is $0 and the value in parentheses is the API-equivalent; the Antigravity runs were preview and were not metered. Same criterion as the previous article.*
 
@@ -112,6 +113,18 @@ To calibrate the 51: the Tier A floor is **Opus 4.6 at 83**. The 32-point gap is
 
 And comparing with the earlier locals — always with the caveat that the tests aren't comparable: in v1, the local Qwens hallucinated the gem wholesale (one invented an `Openrouter::Client` with the wrong capitalization, another created a `RubyLLM::Client` that doesn't exist). The Qwen 3.5 35B got the entry point right, but its tests wrapped any exception in an `assert true`. The 3.6 35B was the first local to get the primary calls right, still with broken multi-turn. The 3.8 27B gets the entire API core right on a much harder test. The score you can't compare; the behavior you can: API knowledge is no longer the locals' problem. The problem now is engineering.
 
+## Grok 4.6: the first flat generation, and the cleanest run
+
+After two cheating busts, a breather. I ran Grok 4.6 with the shielding cranked all the way up: I moved everything out of the model's reach — the grading rubric, the entire v2 report, the audit scanner, `CLAUDE.md`'s deduction catalog, and all 44 competitor apps, all pulled out of the repo. It was the first run under that stricter regime. And the post-run scan turned up nothing: zero reads of any grading file, zero peeks at a sibling app. It ran clean. After Gemini and the local Qwen, it's good to watch a frontier model build on its own because it had nowhere to crib from.
+
+The result has a curious detail: **92 points, Tier A, the same score as Grok 4.5.** It's the first generation-over-generation tie in the whole test. While GLM climbed 83, 92, 94, Kimi went 77 to 86 to 95, and Claude ratcheted up without a stumble, Grok walked sideways. The 4.6 bought nothing over the 4.5. In the table up top the 4.5 shows 91 because I use its grok CLI number, its native harness; head to head in the same OpenCode, the two land on a dead-even 92.
+
+What it delivered is solid and real. Correct RubyLLM API end to end, a hand-written calculator with no `eval` (regex tokenizer and parser, proven live with `(12.5*4)/2+7 = 32.0`), a test checking the exact array sent to the provider, a file store with a lock surviving restart with two workers, a token budget with a fallback estimator, and `docker compose up --build` answering a real chat. Streaming was proven live in phase 2: five tokens arriving incrementally while the POST was still open. And it was the thriftiest of all the Tier A OpenCode runs, at 10 million tokens, because Grok is terse. It cost $6.33 and 34 minutes.
+
+The deductions are honest, and it confessed them itself. The lock doesn't cover the read-modify-write window, so two simultaneous turns on the same conversation become a last-writer-wins race, the same hazard as GLM 5.2. Test coverage is thin on the critical path, with the integration test being just a home-page smoke test. And it kept the stale `claude-sonnet-4.6` pin, the house's default deduction. A self-review of 12 PASS and 2 PARTIAL, all verified by the auditor. No new brilliance: it's a good model repeating a good model.
+
+> **Remember this:** not every new generation buys a point. Grok 4.6 tied itself, and the good news was passing clean through the toughest shielding I've applied yet.
+
 ## Conclusion: how close did they get?
 
 Short answer: very close.
@@ -121,9 +134,10 @@ Short answer: very close.
 | GLM 5.3 | **94** | A | 80 min | $0 on the plan (~$2.59 API) |
 | Gemini 3.7 Flash | **93** | A | 43 min | $4.12 |
 | Qwen 3.8 Max | **92** | A | 78 min | $9.16 API |
+| Grok 4.6 | **92** | A | 34 min | $6.33 API |
 | Qwen 3.8 27B local | **51** | C | 156 min | $0 |
 
-GLM 5.3 two points from Fable 5 is not a "cheap alternative" — it's a leadership candidate. Qwen 3.8 Max one point from Sol and Terra, same thing. The distance between the American cream and the new Chinese models is one or two points — and I repeat in every article that one or two points is noise. And Gemini 3.7 Flash joined that pile: 93, tied with Sol, Terra, and Opus 4.8, the first Gemini to get there on opencode.
+GLM 5.3 two points from Fable 5 is not a "cheap alternative" — it's a leadership candidate. Qwen 3.8 Max one point from Sol and Terra, same thing. The distance between the American cream and the new Chinese models is one or two points — and I repeat in every article that one or two points is noise. And Gemini 3.7 Flash joined that pile: 93, tied with Sol, Terra, and Opus 4.8, the first Gemini to get there on opencode. Grok 4.6 landed in the same bucket of 92s, but with an asterisk all its own: it was the only new generation that improved on nothing over its predecessor, and even so it was the first to pass clean through the toughest shielding.
 
 And local remains out of the question for an autonomous coding agent: Tier C is Tier C. But notice how the conversation has changed. Until recently I dismissed local because it invented APIs. Today it knows the API and trips on streaming, tests, and Docker — and it needs 176K of context and 32 GB of VRAM just to complete the test. The bottleneck moved up a level. It's not a recommendation yet; it's the road being paved.
 
