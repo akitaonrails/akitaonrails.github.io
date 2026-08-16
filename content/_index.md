@@ -257,6 +257,7 @@ title: AkitaOnRails Blog
 {{% index-list %}}
 ## 2026 - Agosto
 
+- <a class="aor-index-list__main-link" href="/2026/08/16/o-que-significa-o-paper-do-google-sobre-vulnerabilidade-quantica/" title="Google, Ethereum Foundation e Stanford estimam quebrar a secp256k1 com menos de 500 mil qubits. Comparo com GLM, Kimi e ChatGPT, calibro a chance real de roubo nos próximos anos e o que dá pra fazer hoje.">O que significa o Paper do Google sobre Vulnerabilidade Quântica</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/tags/computacao-quantica/">#computacao-quantica</a><a class="aor-tag-link" href="/tags/bitcoin-e-criptomoedas/">#bitcoin-e-criptomoedas</a><a class="aor-tag-link" href="/tags/seguranca/">#seguranca</a></span>
 - <a class="aor-index-list__main-link" href="/2026/08/15/llm-benchmarks-qwen-3-8-glm-5-3-gemini-3-7/" title="GLM 5.3 fez 94 e encostou no trio da liderança. Qwen 3.8 Max saltou de 51 pra 92 ao parar de alucinar a API do RubyLLM. Gemini 3.7 Flash fez 93 — depois de ter a primeira rodada anulada por cola. E o Qwen 27B local mostrou que o gargalo agora é contexto.">LLM Benchmarks: Qwen 3.8, GLM 5.3, Gemini 3.7, Grok 4.6</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/tags/benchmarks-de-llm/">#benchmarks-de-llm</a><a class="aor-tag-link" href="/tags/llms/">#llms</a><a class="aor-tag-link" href="/tags/agentes-de-codigo/">#agentes-de-codigo</a></span>
 - <a class="aor-index-list__main-link" href="/2026/08/13/entendendo-a-censura-ao-discord-e-a-eca-digital/" title="A ANPD mandou o Discord desligar o Go Live no Brasil porque a criptografia impede a moderação. Explico o caso de Naviraí, a Lei Felca, o choque com a LGPD, a nova majorante pra uso de VPN e o precedente perigoso que isso tudo abre.">Entendendo a censura ao Discord e a ECA digital</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/tags/seguranca/">#seguranca</a><a class="aor-tag-link" href="/tags/leis-e-regulacao/">#leis-e-regulacao</a><a class="aor-tag-link" href="/tags/politica/">#politica</a></span>
 - <a class="aor-index-list__main-link" href="/2026/08/12/davi-e-golias-digital-entendendo-megalag-vs-honey-paypal/" title="O Honey roubou comissões de criadores por anos com um defeat device em JSON puro. Explico o ssd.json linha por linha, a reescrita sob o PayPal e a ação coletiva que o PayPal não conseguiu derrubar.">Davi e Golias digital: Entendendo MegaLag vs Honey/Paypal</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/tags/seguranca/">#seguranca</a><a class="aor-tag-link" href="/tags/mercado-de-tecnologia/">#mercado-de-tecnologia</a></span>
@@ -449,9 +450,15 @@ title: AkitaOnRails Blog
 <section class="aor-index-month" aria-labelledby="aor-grid-2026-08">
   <div class="aor-index-month__header">
     <h2 id="aor-grid-2026-08">2026 - Agosto</h2>
-    <span>6 posts</span>
+    <span>7 posts</span>
   </div>
   <div class="aor-post-grid">
+<article class="aor-post-card" title="Google, Ethereum Foundation e Stanford estimam quebrar a secp256k1 com menos de 500 mil qubits. Comparo com GLM, Kimi e ChatGPT, calibro a chance real de roubo nos próximos anos e o que dá pra fazer hoje.">
+  <time class="aor-post-card__date" datetime="2026-08-16">16/08/2026</time>
+  <h3 class="aor-post-card__title"><a class="aor-post-card__title-link" href="/2026/08/16/o-que-significa-o-paper-do-google-sobre-vulnerabilidade-quantica/">O que significa o Paper do Google sobre Vulnerabilidade Quântica</a></h3>
+  <span class="aor-post-tags aor-post-tags--card"><a class="aor-tag-link" href="/tags/computacao-quantica/">#computacao-quantica</a><a class="aor-tag-link" href="/tags/bitcoin-e-criptomoedas/">#bitcoin-e-criptomoedas</a><a class="aor-tag-link" href="/tags/seguranca/">#seguranca</a></span>
+  <p class="aor-post-card__description">Google, Ethereum Foundation e Stanford estimam quebrar a secp256k1 com menos de 500 mil qubits. Comparo com GLM, Kimi e ChatGPT, calibro a chance real de roubo nos próximos anos e o que dá pra fazer hoje.</p>
+</article>
 <article class="aor-post-card" title="GLM 5.3 fez 94 e encostou no trio da liderança. Qwen 3.8 Max saltou de 51 pra 92 ao parar de alucinar a API do RubyLLM. Gemini 3.7 Flash fez 93 — depois de ter a primeira rodada anulada por cola. E o Qwen 27B local mostrou que o gargalo agora é contexto.">
   <time class="aor-post-card__date" datetime="2026-08-15">15/08/2026</time>
   <h3 class="aor-post-card__title"><a class="aor-post-card__title-link" href="/2026/08/15/llm-benchmarks-qwen-3-8-glm-5-3-gemini-3-7/">LLM Benchmarks: Qwen 3.8, GLM 5.3, Gemini 3.7, Grok 4.6</a></h3>

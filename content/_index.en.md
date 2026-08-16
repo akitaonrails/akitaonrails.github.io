@@ -257,6 +257,7 @@ title: AkitaOnRails Blog
 {{% index-list %}}
 ## 2026 - August
 
+- <a class="aor-index-list__main-link" href="/en/2026/08/16/what-the-google-quantum-vulnerability-paper-means/" title="Google, the Ethereum Foundation, and Stanford estimate breaking secp256k1 with under 500,000 qubits. I compare GLM, Kimi, and ChatGPT, calibrate the real odds of theft in the coming years, and what you can do today.">What the Google Quantum Vulnerability Paper Means</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/en/tags/quantum-computing/">#quantum-computing</a><a class="aor-tag-link" href="/en/tags/bitcoin-and-cryptocurrency/">#bitcoin-and-cryptocurrency</a><a class="aor-tag-link" href="/en/tags/security/">#security</a></span>
 - <a class="aor-index-list__main-link" href="/en/2026/08/15/llm-benchmarks-qwen-3-8-glm-5-3-gemini-3-7/" title="GLM 5.3 scored 94 and closed in on the leading trio. Qwen 3.8 Max jumped from 51 to 92 after it stopped hallucinating the RubyLLM API. Gemini 3.7 Flash scored 93 — after its first run was voided for cheating. And the local 27B Qwen showed that context is now the bottleneck.">LLM Benchmarks: Qwen 3.8, GLM 5.3, Gemini 3.7, Grok 4.6</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/en/tags/llm-benchmarks/">#llm-benchmarks</a><a class="aor-tag-link" href="/en/tags/llms/">#llms</a><a class="aor-tag-link" href="/en/tags/coding-agents/">#coding-agents</a></span>
 - <a class="aor-index-list__main-link" href="/en/2026/08/13/understanding-the-discord-censorship-and-brazils-digital-eca/" title="Brazil&#39;s data protection authority ordered Discord to kill Go Live in the country because encryption prevents moderation. I break down the Naviraí case, the Felca Law, the clash with the LGPD, the new VPN sentence enhancer, and the dangerous precedent it all sets.">Understanding the Brazilian Censorship of Discord and the Digital ECA Law</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/en/tags/security/">#security</a><a class="aor-tag-link" href="/en/tags/law-and-regulation/">#law-and-regulation</a><a class="aor-tag-link" href="/en/tags/politics/">#politics</a></span>
 - <a class="aor-index-list__main-link" href="/en/2026/08/12/digital-david-and-goliath-understanding-megalag-vs-honey-paypal/" title="Honey spent years skimming creators&#39; commissions with a defeat device written in plain JSON. I walk through the ssd.json line by line, the PayPal-era rewrite, and the class action PayPal failed to kill.">Digital David and Goliath: Understanding MegaLag vs Honey/PayPal</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/en/tags/security/">#security</a><a class="aor-tag-link" href="/en/tags/tech-market/">#tech-market</a></span>
@@ -442,9 +443,15 @@ title: AkitaOnRails Blog
 <section class="aor-index-month" aria-labelledby="aor-grid-2026-08">
   <div class="aor-index-month__header">
     <h2 id="aor-grid-2026-08">2026 - August</h2>
-    <span>6 posts</span>
+    <span>7 posts</span>
   </div>
   <div class="aor-post-grid">
+<article class="aor-post-card" title="Google, the Ethereum Foundation, and Stanford estimate breaking secp256k1 with under 500,000 qubits. I compare GLM, Kimi, and ChatGPT, calibrate the real odds of theft in the coming years, and what you can do today.">
+  <time class="aor-post-card__date" datetime="2026-08-16">Aug 16, 2026</time>
+  <h3 class="aor-post-card__title"><a class="aor-post-card__title-link" href="/en/2026/08/16/what-the-google-quantum-vulnerability-paper-means/">What the Google Quantum Vulnerability Paper Means</a></h3>
+  <span class="aor-post-tags aor-post-tags--card"><a class="aor-tag-link" href="/en/tags/quantum-computing/">#quantum-computing</a><a class="aor-tag-link" href="/en/tags/bitcoin-and-cryptocurrency/">#bitcoin-and-cryptocurrency</a><a class="aor-tag-link" href="/en/tags/security/">#security</a></span>
+  <p class="aor-post-card__description">Google, the Ethereum Foundation, and Stanford estimate breaking secp256k1 with under 500,000 qubits. I compare GLM, Kimi, and ChatGPT, calibrate the real odds of theft in the coming years, and what you can do today.</p>
+</article>
 <article class="aor-post-card" title="GLM 5.3 scored 94 and closed in on the leading trio. Qwen 3.8 Max jumped from 51 to 92 after it stopped hallucinating the RubyLLM API. Gemini 3.7 Flash scored 93 — after its first run was voided for cheating. And the local 27B Qwen showed that context is now the bottleneck.">
   <time class="aor-post-card__date" datetime="2026-08-15">Aug 15, 2026</time>
   <h3 class="aor-post-card__title"><a class="aor-post-card__title-link" href="/en/2026/08/15/llm-benchmarks-qwen-3-8-glm-5-3-gemini-3-7/">LLM Benchmarks: Qwen 3.8, GLM 5.3, Gemini 3.7, Grok 4.6</a></h3>
