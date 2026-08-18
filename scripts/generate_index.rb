@@ -107,6 +107,7 @@ def parse_post(path, lang: :pt)
   content = File.read(path)
   frontmatter = extract_frontmatter(content)
   return nil unless frontmatter&.dig('title') && frontmatter&.dig('date')
+  return nil if frontmatter['draft'] == true
 
   date = DateTime.parse(frontmatter['date'].to_s)
   base_path = path.sub(%r{/index(\.en)?\.md\z}, '')
