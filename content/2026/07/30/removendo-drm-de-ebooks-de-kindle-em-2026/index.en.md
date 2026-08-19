@@ -23,7 +23,7 @@ To be fair, on **January 20, 2026**, Amazon began allowing verified buyers to do
 
 I decided to try again now. The new DeDRM version can handle the current DRM, but the process has changed quite a bit. It takes work, requires Windows for one step, and relies on a community tool still in pre-release. It worked. I recovered **106 books I'd bought**, tested the EPUB conversion, and can now read them on whatever device I choose.
 
-This is the state of play on **July 30, 2026**. Amazon could change the encryption or the app tomorrow. Ignore old tutorials telling you to install Kindle for PC 1.17, disable updates, and enter the device serial number in Calibre. That world is gone.
+This is the state of play on **July 30, 2026** (updated August 19). Amazon could change the encryption or the app tomorrow. Ignore old tutorials telling you to install Kindle for PC 1.17, disable updates, and enter the device serial number in Calibre. That world is gone.
 
 And let's get the obvious out of the way: I'm talking about books **I bought**. I'm not talking about downloading Kindle Unlimited titles, library loans, or somebody else's books. Laws covering DRM circumvention vary by country. Check the law where you live and take responsibility for what you do.
 
@@ -79,6 +79,8 @@ Calibre alone does not remove DRM. We need two plugins:
 2. **KFX Input** understands Amazon's modern containers, gathers the pieces of a book, and makes EPUB conversion possible.
 
 At the time of writing, I'm using **DeDRM 10.0.28**, published on July 14 in the [fork maintained by Satsuoni](https://github.com/Satsuoni/DeDRM_tools/releases/tag/v10.0.28). It is a pre-release. Download the asset named `DeDRM_tools.zip`, never a standalone executable from some obscure mirror.
+
+**Update (August 2026):** the Kindle app on the Microsoft Store keeps moving, and each new app version requires a new version of the tool. Since this article was published, the app moved past 1.0.18632: [10.0.29](https://github.com/Satsuoni/DeDRM_tools/releases/tag/v10.0.29) added support for app 1.22326, and [10.0.30](https://github.com/Satsuoni/DeDRM_tools/releases/tag/v10.0.30) supports app 1.0.22920. The practical rule is a single one: the executable's name carries the app version it understands (`MSIXKFXArchiverMobi1_22920.exe` for Store app 1.0.22920, and so on). Before you start, always check the [releases page of Satsuoni's fork](https://github.com/Satsuoni/DeDRM_tools/releases) and grab the **newest** pre-release. Everything else in the process described here stays the same.
 
 I extracted everything into a directory that would later be shared with the Windows VM:
 
@@ -168,7 +170,7 @@ cd \\host.lan\Data\Kindle-DeDRM\v10.0.28
 .\MSIXKFXArchiverMobi1_18632.exe
 ```
 
-The banner may still mention an older `1.0.15230` build. The versioned executable above looks for Store app `1.0.18632`, and that's the one that worked for me.
+The banner may still mention an older `1.0.15230` build. The versioned executable above looks for Store app `1.0.18632`, and that's the one that worked for me. The number in the file name must match **your** app version: if the Store already delivered a newer one, download the matching release from the project's page (see the update in the plugins section).
 
 This executable finds the current Microsoft Store app's cache, gathers each book's components, and produces two things:
 
