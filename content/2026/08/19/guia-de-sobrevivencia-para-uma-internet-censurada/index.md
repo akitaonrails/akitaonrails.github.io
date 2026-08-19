@@ -37,6 +37,8 @@ Por isso a resposta honesta pra pergunta "dá pra burlar uma Muralha dessas sem 
 
 A boa notícia é que o Brasil não está nem perto desse ponto. Censura não é um interruptor, é uma escada, e cada degrau tem uma defesa correspondente. O resto deste guia é essa escada, degrau por degrau. A lógica de tudo que vem a seguir é uma só: **censura é uma questão de custo**. Nosso trabalho é deixar o bloqueio caro, tecnicamente e politicamente, até que massificar ele seja impraticável.
 
+> **Pra guardar:** contra um firewall estatal completo, nenhuma ferramenta te torna invisível, só caro demais pra perseguir em massa. O jogo é subir a sua escada antes que o censor suba a dele.
+
 ## Fase 1: VPN comercial, o mínimo que todo mundo deveria ter
 
 Comece pelo óbvio. Uma VPN (rede privada virtual) cria um túnel criptografado entre o seu dispositivo e um servidor do provedor. Seu provedor de internet passa a ver só um fluxo cifrado indo pra um endereço só; os sites que você acessa veem o IP da VPN, não o seu. Eu explico a fundo, com a teoria de redes por baixo, no [Akitando 126](https://akitaonrails.com/2022/08/29/akitando-126-criando-uma-rede-segura-introducao-a-redes-parte-6-vpn-e-nas/).
@@ -210,6 +212,8 @@ Vejo sempre os mesmos tropeços quando alguém monta a primeira VPN própria. To
 Até aqui, assumi que o censor bloqueia **endereços**. O próximo nível dele é bloquear **formatos**, e é aí que mora a inspeção profunda de pacotes (DPI).
 
 Mesmo criptografado, um túnel de VPN tem assinatura. O aperto de mão inicial do WireGuard e do OpenVPN tem tamanhos de pacote, sequências e tempos característicos. O conteúdo é ilegível, mas o formato grita "eu sou uma VPN". A China faz exatamente isso em escala nacional: não precisa ler seu tráfego, basta reconhecer o protocolo e derrubar a conexão.
+
+> **Pra guardar:** o censor não precisa ler o seu tráfego pra te bloquear. Basta reconhecer o formato do túnel. É por isso que a ofuscação existe.
 
 A resposta técnica é **ofuscação**: fazer o túnel parecer outra coisa.
 

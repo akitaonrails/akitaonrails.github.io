@@ -37,6 +37,8 @@ That is why the honest answer to "can you bypass a Firewall like that without be
 
 The good news is that Brazil is nowhere near that point. Censorship is not a switch, it is a staircase, and each step has a matching defense. The rest of this guide is that staircase, step by step. The logic behind everything that follows is a single one: **censorship is a matter of cost**. Our job is to make blocking expensive, technically and politically, until mass deployment becomes impractical.
 
+> **Keep this:** against a complete state firewall, no tool makes you invisible, only too expensive to persecute at scale. The game is climbing your staircase before the censor climbs his.
+
 ## Phase 1: Commercial VPN, the minimum everyone should have
 
 Start with the obvious. A VPN (virtual private network) creates an encrypted tunnel between your device and a provider's server. Your ISP (internet service provider) now sees only a scrambled flow going to a single address; the sites you visit see the VPN's IP, not yours. I explain it in depth, with the networking theory underneath, in [Akitando 126](https://akitaonrails.com/2022/08/29/akitando-126-criando-uma-rede-segura-introducao-a-redes-parte-6-vpn-e-nas/) (in Portuguese).
@@ -211,6 +213,8 @@ I keep seeing the same stumbles whenever someone sets up their first self-hosted
 So far I have assumed the censor blocks **addresses**. Their next level is blocking **formats**, and that is where deep packet inspection (DPI) lives.
 
 Even encrypted, a VPN tunnel has a signature. The initial handshake of WireGuard and OpenVPN has characteristic packet sizes, sequences and timings. The content is unreadable, but the shape screams "I am a VPN". China does exactly this at national scale: it does not need to read your traffic, it only needs to recognize the protocol and drop the connection.
+
+> **Keep this:** the censor does not need to read your traffic to block you. Recognizing the tunnel's shape is enough. That is why obfuscation exists.
 
 The technical answer is **obfuscation**: making the tunnel look like something else.
 
