@@ -13,7 +13,7 @@ tags:
 
 Last week I wrote about [the Discord censorship and Brazil's Digital ECA law](/en/2026/08/13/understanding-the-discord-censorship-and-brazils-digital-eca/), the Digital ECA ("Estatuto Digital da Criança e do Adolescente", the digital version of Brazil's Child and Adolescent Statute): the ANPD (Brazil's data protection authority, now also the country's de facto internet regulator) ordered the Go Live feature shut down nationwide because end-to-end encryption prevents content surveillance, and in the same package came the first sentence enhancement in Brazilian history for committing a crime "using a VPN". After that article, the question I got the most was the obvious one: *"OK, so what do I do?"*
 
-This article is the answer. It is not conspiracy theory or a style exercise: it is a practical guide, from easiest to hardest, to keep your communication channels standing as the siege tightens. Because the siege **is** tightening, and you should understand its pace before picking your tools.
+This article is the answer: a practical guide, from easiest to hardest, to keep your communication channels standing as the siege tightens. Because the siege **is** tightening, and you should understand its pace before picking your tools.
 
 ## The track record: none of this is new
 
@@ -25,17 +25,17 @@ Anyone surprised by the Discord case was not paying attention. The Brazilian jud
 
 Notice what happened there: for the first time, using a neutral privacy tool became, by itself, punishable conduct in Brazil. Nobody was fined in the end, but the infrastructure to fine people was built, tested and documented. And in 2026 Congress voted and the president signed a sentence enhancement for crimes committed with a VPN. The X precedent stopped being an exception and became repertoire.
 
-> **Keep this:** in the X case, the Brazilian state already treated VPN users as offenders, already tried to pull VPNs from app stores, and already requested reports on who bypassed the block. Not a hypothesis. A track record.
+> **Keep this:** in the X case, the Brazilian state already treated VPN users as offenders, already tried to pull VPNs from app stores, and already requested reports on who bypassed the block. All of it documented, in court orders and public reports.
 
 ## The endgame: the Chinese model
 
 I have little doubt that very well-positioned people in government look at [China's Great Firewall](https://freedomhouse.org/country/china/freedom-net/2024) with envy, not horror. And it is worth understanding what it is, because it defines the limit of the game.
 
-The Firewall is not a "website block". It is deep packet inspection (DPI) at national scale, running on the country's internet backbone: all traffic is classified in real time, known VPN protocols are identified by their handshake shape and dropped, Tor is blocked by default, and only **state-approved VPNs** (meaning, with a backdoor) operate legally. Ordinary citizens caught using unauthorized VPNs get fined. And even when the traffic cannot be read, the metadata gives the game away: who talks to whom, when, for how long.
+The Firewall goes far beyond blocking websites. It is deep packet inspection (DPI) at national scale, running on the country's internet backbone: all traffic is classified in real time, known VPN protocols are identified by their handshake shape and dropped, Tor is blocked by default, and only **state-approved VPNs** (meaning, with a backdoor) operate legally. Ordinary citizens caught using unauthorized VPNs get fined. And even when the traffic cannot be read, the metadata gives the game away: who talks to whom, when, for how long.
 
 That is why the honest answer to "can you bypass a Firewall like that without being noticed?" is: **no, not for an ordinary citizen**. Against a state-level firewall of that caliber, no consumer tool makes you invisible. At best it makes you too expensive to be worth persecuting at scale. Anyone selling you total invisibility is lying.
 
-The good news is that Brazil is nowhere near that point. Censorship is not a switch, it is a staircase, and each step has a matching defense. The rest of this guide is that staircase, step by step. The logic behind everything that follows is a single one: **censorship is a matter of cost**. Our job is to make blocking expensive, technically and politically, until mass deployment becomes impractical.
+The good news is that Brazil is nowhere near that point. Censorship rarely arrives all at once: it comes in steps, and each step has a matching defense. The rest of this guide is that staircase, step by step. The logic behind everything that follows is a single one: **censorship is a matter of cost**. Our job is to make blocking expensive, technically and politically, until mass deployment becomes impractical.
 
 > **Keep this:** against a complete state firewall, no tool makes you invisible, only too expensive to persecute at scale. The game is climbing your staircase before the censor climbs his.
 
@@ -249,7 +249,7 @@ If the scenario degrades to national DPI with protocol blocking, the game become
 
 And the usual honest notes: running your own server for personal use is legal; using it to commit crimes is not. And since 2026, with the new sentence enhancement, "using a VPN" weighs on the sentence of any crime you would commit anyway. Keep the surface small, test your connectivity from inside Brazil regularly (what works today can be fingerprinted tomorrow), have a plan B (a second VPS, a Tor profile with bridges) and keep offline copies of everything critical.
 
-**Realistic assessment:** no solution is permanent against a determined, well-funded censor. That is not the goal. The goal is to make mass blocking expensive until it becomes a bad deal, technically and politically. A country that needs to take down half of the legitimate internet to silence half a dozen voices has a public relations problem, not a technology one. That cost is where we place our bet.
+**Realistic assessment:** no solution is permanent against a determined, well-funded censor. The goal here is different: make mass blocking expensive until it becomes a bad deal, technically and politically. A country that needs to take down half of the legitimate internet to silence half a dozen voices has a public relations problem, not a technology one. That cost is where we place our bet.
 
 > **Keep this:** the staircase is commercial VPN, then your own VPN, then obfuscated protocol, then Tor with bridges, then satellite. Each step raises your cost a little and the censor's a lot. Start climbing before you need to.
 
@@ -257,7 +257,7 @@ And the usual honest notes: running your own server for personal use is legal; u
 
 The Brazilian pattern is what I called censorship by accumulation: no single step looks like the end of the world, and each comes with its little plaque of good intentions. But blocking infrastructure, once built, has no moral owner: it serves today's government and tomorrow's, against today's target and against you.
 
-Free communication infrastructure works exactly the same: also built by accumulation, also brick by brick. A commercial VPN configured today. Your own VPS tomorrow. An obfuscated protocol in the drawer for when it is needed. None of this is paranoia, it is the same logic as doing backups before the disk fails.
+Free communication infrastructure works exactly the same: also built by accumulation, also brick by brick. A commercial VPN configured today. Your own VPS tomorrow. An obfuscated protocol in the drawer for when it is needed. None of this is paranoia. It works like backups: you do not wait for the disk to fail before starting.
 
 And if you want to follow this frontier closely, a personal recommendation: follow [Ayub](https://x.com/ayubio). He is the best source on internet infrastructure and state censorship in Brazil today. He was the one who [sounded the alarm about the VPN criminalization in bill PL 3066/2025](https://x.com/ayubio/status/2058990595503509513) months before it became law. And in recent days he has been covering two things the mainstream press barely touched: the handover of over R$ 100 billion in public networks, ducts and federal properties to the carriers and BTG Pactual, and the technical apparatus of the new Marco Civil regulation, which according to him gave Anatel [remote access to ISPs' edge routers](https://rendageek.com.br/noticias/marco-civil-da-internet-novas-regras/). He posts in Portuguese, but your browser's translator handles it. Required reading to understand where the next step of the staircase comes from.
 

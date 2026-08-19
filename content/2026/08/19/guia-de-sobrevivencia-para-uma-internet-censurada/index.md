@@ -13,7 +13,7 @@ tags:
 
 Semana passada eu escrevi sobre [a censura ao Discord e a ECA Digital](/2026/08/13/entendendo-a-censura-ao-discord-e-a-eca-digital/): a ANPD mandou desligar o Go Live no país inteiro porque a criptografia de ponta a ponta impede a vigilância do conteúdo, e no mesmo pacote veio a primeira majorante de pena da história pra quem comete crime "usando VPN". Depois daquele artigo, a pergunta que mais recebi foi a óbvia: *"tá, e o que eu faço?"*
 
-Este artigo é a resposta. Não é teoria de conspiração nem exercício de estilo: é um guia prático, do mais fácil ao mais complicado, pra você manter seus canais de comunicação de pé conforme o cerco for fechando. Porque o cerco **está** fechando, e convém entender o ritmo dele antes de escolher suas ferramentas.
+Este artigo é a resposta: um guia prático, do mais fácil ao mais complicado, pra você manter seus canais de comunicação de pé conforme o cerco for fechando. Porque o cerco **está** fechando, e convém entender o ritmo dele antes de escolher suas ferramentas.
 
 ## O histórico: nada disso é novo
 
@@ -25,17 +25,17 @@ Quem se surpreendeu com o caso do Discord não estava prestando atenção. O Jud
 
 Repare no que aconteceu ali: pela primeira vez, usar uma ferramenta neutra de privacidade virou, por si só, conduta punível no Brasil. Ninguém foi multado no fim das contas, mas a infraestrutura pra multar foi montada, testada e documentada. E em 2026 o Congresso votou e o presidente sancionou a majorante de pena pra crimes cometidos com VPN. O precedente do X deixou de ser exceção e virou repertório.
 
-> **Pra guardar:** no caso do X, o Estado brasileiro já tratou usuário de VPN como infrator, já tentou tirar VPN da loja de apps e já pediu relatório de quem burlou. Não é hipótese. É histórico.
+> **Pra guardar:** no caso do X, o Estado brasileiro já tratou usuário de VPN como infrator, já tentou tirar VPN da loja de apps e já pediu relatório de quem burlou. Tudo documentado, em decisão judicial e relatório público.
 
 ## O destino final: o modelo chinês
 
 Não me resta dúvida de que gente muito bem posicionada no governo olha pra [Grande Muralha da China](https://freedomhouse.org/country/china/freedom-net/2024) com inveja, não com horror. E vale entender o que ela é, porque ela define o limite do jogo.
 
-A Muralha não é um "bloqueio de site". É inspeção profunda de pacotes (DPI) em escala nacional, rodando na espinha dorsal da internet do país: todo tráfego é classificado em tempo real, protocolos de VPN conhecidos são identificados pelo formato do aperto de mão e derrubados, o Tor é bloqueado por padrão, e só VPNs **homologadas pelo Estado** (ou seja, com porta dos fundos) operam legalmente. Cidadão comum pego usando VPN não autorizada toma multa. E mesmo quando o tráfego não pode ser lido, os metadados entregam o jogo: quem fala com quem, quando, por quanto tempo.
+A Muralha vai muito além de bloquear sites. É inspeção profunda de pacotes (DPI) em escala nacional, rodando na espinha dorsal da internet do país: todo tráfego é classificado em tempo real, protocolos de VPN conhecidos são identificados pelo formato do aperto de mão e derrubados, o Tor é bloqueado por padrão, e só VPNs **homologadas pelo Estado** (ou seja, com porta dos fundos) operam legalmente. Cidadão comum pego usando VPN não autorizada toma multa. E mesmo quando o tráfego não pode ser lido, os metadados entregam o jogo: quem fala com quem, quando, por quanto tempo.
 
 Por isso a resposta honesta pra pergunta "dá pra burlar uma Muralha dessas sem ser notado?" é: **não, não pra um cidadão comum**. Contra um firewall estatal desse nível, nenhuma ferramenta doméstica te torna invisível. No máximo te torna caro demais pra valer a pena perseguir em massa. Quem te vender invisibilidade total está mentindo.
 
-A boa notícia é que o Brasil não está nem perto desse ponto. Censura não é um interruptor, é uma escada, e cada degrau tem uma defesa correspondente. O resto deste guia é essa escada, degrau por degrau. A lógica de tudo que vem a seguir é uma só: **censura é uma questão de custo**. Nosso trabalho é deixar o bloqueio caro, tecnicamente e politicamente, até que massificar ele seja impraticável.
+A boa notícia é que o Brasil não está nem perto desse ponto. Censura raramente chega de uma vez: vem em degraus, e cada degrau tem uma defesa correspondente. O resto deste guia é essa escada, degrau por degrau. A lógica de tudo que vem a seguir é uma só: **censura é uma questão de custo**. Nosso trabalho é deixar o bloqueio caro, tecnicamente e politicamente, até que massificar ele seja impraticável.
 
 > **Pra guardar:** contra um firewall estatal completo, nenhuma ferramenta te torna invisível, só caro demais pra perseguir em massa. O jogo é subir a sua escada antes que o censor suba a dele.
 
@@ -248,7 +248,7 @@ Se o cenário degradar ao ponto de DPI nacional com bloqueio de protocolos, o jo
 
 E as notas honestas de sempre: rodar seu próprio servidor pra uso pessoal é legal; usá-lo pra cometer crime, não. E a partir de 2026, com a nova majorante, "usando VPN" pesa na pena de qualquer crime que você cometeria de qualquer forma. Mantenha a superfície pequena, teste sua conectividade de dentro do Brasil com regularidade (o que funciona hoje pode ser fingerprint amanhã), tenha plano B (uma segunda VPS, um perfil de Tor com pontes) e mantenha cópias offline de tudo que for crítico.
 
-**Avaliação realista:** nenhuma solução é permanente contra um censor determinado e bem financiado. Não é esse o objetivo. O objetivo é encarecer o bloqueio em massa até ele virar mau negócio, técnica e politicamente. Um país que precisa derrubar metade da internet legítima pra calar meia dúzia de vozes tem um problema de relações públicas, não de tecnologia. É nesse custo que a gente aposta.
+**Avaliação realista:** nenhuma solução é permanente contra um censor determinado e bem financiado. O objetivo aqui é outro: encarecer o bloqueio em massa até ele virar mau negócio, técnica e politicamente. Um país que precisa derrubar metade da internet legítima pra calar meia dúzia de vozes tem um problema de relações públicas, não de tecnologia. É nesse custo que a gente aposta.
 
 > **Pra guardar:** a escada é VPN comercial, depois VPN própria, depois protocolo ofuscado, depois Tor com pontes, depois satélite. Cada degrau sobe pouco o seu custo e muito o do censor. Comece a subir antes de precisar.
 
@@ -256,7 +256,7 @@ E as notas honestas de sempre: rodar seu próprio servidor pra uso pessoal é le
 
 O padrão brasileiro é o que eu chamei de censura por acumulado: nenhum degrau isolado parece o fim do mundo, e cada um vem com sua plaquinha de boa intenção. Mas a infraestrutura de bloqueio, uma vez montada, não tem dono moral: serve pro governo de hoje e pro de amanhã, contra o alvo de hoje e contra você.
 
-A infraestrutura de comunicação livre funciona igualzinho: também se constrói por acumulado, também tijolo por tijolo. Uma VPN comercial configurada hoje. Uma VPS sua amanhã. Um protocolo ofuscado na gaveta pra quando precisar. Nada disso é paranoia, é a mesma lógica de fazer backup antes do disco falhar.
+A infraestrutura de comunicação livre funciona igualzinho: também se constrói por acumulado, também tijolo por tijolo. Uma VPN comercial configurada hoje. Uma VPS sua amanhã. Um protocolo ofuscado na gaveta pra quando precisar. Nada disso é paranoia. Funciona como backup: você não espera o disco falhar pra começar.
 
 E se você quer acompanhar essa fronteira de perto, uma recomendação pessoal: siga o [Ayub](https://x.com/ayubio). É hoje a melhor fonte em português sobre infraestrutura de internet e censura estatal no Brasil. Foi ele quem [soou o alarme sobre a criminalização de VPNs no PL 3066/2025](https://x.com/ayubio/status/2058990595503509513) meses antes de virar lei. E nos últimos dias ele está cobrindo duas coisas que a grande imprensa mal tocou: a entrega de mais de R$ 100 bilhões em redes públicas, dutos e imóveis da União pras operadoras e pro BTG Pactual, e o aparato técnico da nova regulamentação do Marco Civil, que segundo ele deu à Anatel [acesso remoto aos roteadores de borda dos provedores](https://rendageek.com.br/noticias/marco-civil-da-internet-novas-regras/). Leitura obrigatória pra entender por onde vem o próximo degrau da escada.
 
