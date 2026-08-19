@@ -160,6 +160,10 @@ Dois detalhes que valem ouro aqui. O `PersistentKeepalive = 25` mantém o túnel
 
 Se você travou em algum passo, lembre que estamos em 2026: você não precisa mais dominar cada comando desse guia. Eu mesmo fui por esse caminho. Aluguei a VPS, entreguei o acesso SSH pro agente de IA e pedi a configuração completa; do outro lado, na minha máquina, ele importou o `.conf`, subiu o `wg-quick`, ativou no boot e conferiu vazamento no final. Hoje meu servidor é um playbook Ansible reproduzível (derrubou a VPS, sobe outra e roda um comando) e a config do meu notebook segue o mesmo padrão. Tudo em repositórios **privados**, e privados de propósito: configuração de VPN não é o tipo de coisa que eu quero que estranhos fiquem espiando.
 
+![Meu repositório privado no Gitea com o playbook Ansible do servidor: cadeado de "Private", roles, group_vars e um README de operação](gitea-my-vpnserver.png)
+
+*O meu, rodando no meu Gitea: privado, versionado, e o servidor inteiro sobe de novo com um comando.*
+
 E se for pedir pra IA configurar, pula o "me instala uma VPN" genérico e entrega os requisitos de verdade. Algo assim:
 
 ```text

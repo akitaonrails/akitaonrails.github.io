@@ -160,6 +160,10 @@ Two details worth their weight in gold here. `PersistentKeepalive = 25` keeps th
 
 If you got stuck on some step, remember it is 2026: you no longer need to master every command in this guide. I went down that path myself. I rented the VPS, handed the SSH access to the AI agent and asked for the full setup; on the other side, on my own machine, it imported the `.conf`, brought up `wg-quick`, enabled it at boot and checked for leaks at the end. Today my server is a reproducible Ansible playbook (kill the VPS, spin up another, run one command) and my laptop's config follows the same pattern. All in **private** repositories, private on purpose: VPN configuration is not the sort of thing I want strangers peeking at.
 
+![My private Gitea repository with the server's Ansible playbook: "Private" badge, roles, group_vars and an operations README](gitea-my-vpnserver.png)
+
+*Mine, running on my own Gitea: private, versioned, and the whole server comes back up with one command.*
+
 And if you are going to ask an AI to configure it, skip the generic "install me a VPN" and hand over the real requirements. Something like this:
 
 ```text
