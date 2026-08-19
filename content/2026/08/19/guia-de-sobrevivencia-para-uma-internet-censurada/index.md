@@ -133,11 +133,57 @@ O servidor é metade da história. No seu dispositivo, o ritual é esse:
 
 **No Linux:** copie o `.conf` pra `/etc/wireguard/wg0.conf` e suba com `sudo wg-quick up wg0` (e `sudo systemctl enable wg-quick@wg0` pra subir no boot). Ou importe o arquivo direto no NetworkManager pela interface gráfica, se preferir clicar em vez de digitar.
 
-**Conferindo se funcionou:** com o túnel ativado, rode `curl ifconfig.me` no terminal (ou abra `ipleak.net` no navegador). Tem que aparecer o IP da sua VPS, não o da sua casa. E visite `dnsleaktest.com`: o DNS também tem que sair pelo túnel. Se aparecer o servidor de DNS do seu provedor de internet, tem vazamento pra corrigir.
+Um `.conf` de cliente completo, pra referência, é assim:
+
+```ini
+[Interface]
+PrivateKey = <chave privada DESTE dispositivo>
+Address = 10.10.0.2/32
+DNS = 1.1.1.1
+
+[Peer]
+PublicKey = <chave pública do servidor>
+Endpoint = IP_DO_SERVIDOR:51820
+AllowedIPs = 0.0.0.0/0
+PersistentKeepalive = 25
+```
+
+Dois detalhes que valem ouro aqui. O `PersistentKeepalive = 25` mantém o túnel vivo quando você está atrás de NAT (rede doméstica, 4G), evitando que a conexão morra em silêncio. E o `AllowedIPs = 0.0.0.0/0` é o que faz **todo** o tráfego entrar no túnel; sem ele, só o tráfego pros IPs da própria VPN sai criptografado. (A linha `DNS =` funciona bem no Windows, macOS e celular; no Linux com systemd-resolved ela pode atrapalhar, como explico nos erros comuns mais abaixo.)
+
+**Conferindo se funcionou:** com o túnel ativado, rode `curl ifconfig.me` no terminal (ou abra `ipleak.net` no navegador). Tem que aparecer o IP da sua VPS, não o da sua casa. Se a sua rede tiver IPv6, confira separadamente com `curl -4 ifconfig.me` e `curl -6 ifconfig.me`: **os dois** precisam mostrar o servidor. E visite `dnsleaktest.com`: o DNS também tem que sair pelo túnel. Se aparecer o servidor de DNS do seu provedor de internet, tem vazamento pra corrigir.
 
 **Manutenção mínima:** ative `unattended-upgrades` pro sistema se atualizar sozinho, use chave SSH em vez de senha, e não instale mais nada nessa máquina. Superfície pequena, risco pequeno.
 
-**E se você travou em algum passo?** Uma dica de 2026: você não precisa mais dominar cada comando desse guia. Alugue a VPS, pegue o acesso SSH e entregue pro Claude Code (ou o harness de IA da sua preferência) com um pedido simples tipo "configura o wg-easy nessa máquina, com o painel acessível só por túnel SSH". Ele executa os comandos, lê os erros e itera até funcionar. O mesmo vale do outro lado: na sua máquina local, dá pra pedir pra ele importar o `.conf`, subir o `wg-quick`, ativar no boot e ainda conferir vazamento de DNS no final. Eu faço isso com frequência e funciona muito bem. A barreira técnica desse artigo inteiro, na prática, virou uma conversa.
+### O jeito 2026 de fazer isso: deixe a IA configurar
+
+Se você travou em algum passo, lembre que estamos em 2026: você não precisa mais dominar cada comando desse guia. Eu mesmo fui por esse caminho. Aluguei a VPS, entreguei o acesso SSH pro agente de IA e pedi a configuração completa; do outro lado, na minha máquina, ele importou o `.conf`, subiu o `wg-quick`, ativou no boot e conferiu vazamento no final. Hoje meu servidor é um playbook Ansible reproduzível (derrubou a VPS, sobe outra e roda um comando) e a config do meu notebook segue o mesmo padrão. Tudo em repositórios **privados**, e privados de propósito: configuração de VPN não é o tipo de coisa que eu quero que estranhos fiquem espiando.
+
+E se for pedir pra IA configurar, pula o "me instala uma VPN" genérico e entrega os requisitos de verdade. Algo assim:
+
+```text
+Transforme esta VPS Ubuntu 24.04 limpa em um servidor WireGuard robusto,
+de preferência via playbook Ansible idempotente (quero poder destruir a
+VPS e recriar tudo rodando um comando). Requisitos:
+
+- WireGuard gerenciado por wg-quick@wg0, chave do servidor gerada no
+  próprio servidor (permissão 0600), sem painel web exposto
+- Túnel dual-stack: IPv4 e IPv6 (subnet ULA fd00::/64 com NAT66), pra
+  nenhum tráfego vazar por fora em redes com IPv6 nativo
+- ufw negando tudo, exceto SSH e a porta UDP do WireGuard
+- sshd somente com chave (sem senha), fail2ban no sshd,
+  unattended-upgrades sem reboot automático
+- Peers declarados como dados num arquivo de configuração: adicionar
+  cliente = adicionar uma entrada e rodar o playbook de novo
+- Gere os .conf dos clientes com PersistentKeepalive=25, AllowedIPs em
+  full-tunnel e QR code via qrencode
+- Ao final, imprima os comandos de verificação (curl -4/-6 ifconfig.me,
+  wg show)
+
+No fim, me entregue um README curto de operação: como adicionar cliente,
+como atualizar, quando reiniciar.
+```
+
+A diferença entre um servidor "funcionando" e um servidor sólido está inteirinha nesses requisitos: dual-stack, firewall fechado, sshd sem senha, peers como dados, reprodutibilidade. A barreira técnica desse artigo inteiro, na prática, virou uma conversa.
 
 ### Erros comuns (e como evitar)
 
@@ -150,6 +196,10 @@ Vejo sempre os mesmos tropeços quando alguém monta a primeira VPN própria. To
 - **Distribuir acesso pra meio mundo.** Cada pessoa extra é um dispositivo a mais, um padrão de uso a mais, uma boca a mais. Família próxima, ok; grupo de 40 contatos, não. Quanto mais gente no mesmo IP, mais rápido ele entra em alguma lista.
 - **Usar a mesma máquina pra outras coisas.** Blog pessoal, bot de Telegram, seedbox: tudo isso aumenta a superfície de ataque e amarra identidades que você queria separadas. VPS da VPN é só da VPN.
 - **Confiar sem testar vazamento.** Depois de configurar, teste: `ipleak.net` ou `dnsleaktest.com` com a VPN ligada. Se aparecer seu IP real ou o DNS do seu provedor, algo está errado, e você só descobre assim.
+- **Esquecer o IPv6.** Esse pegou até eu: túnel só IPv4 numa rede com IPv6 nativo, e todo o tráfego v6 passa por fora da VPN, às claras, sem você perceber. Ou o túnel é dual-stack, ou metade do seu tráfego vaza. Teste com `curl -6 ifconfig.me`.
+- **A linha `DNS =` quebrando o cliente Linux.** Em sistemas com systemd-resolved (Ubuntu, Fedora e afins), o `wg-quick` chama o openresolv pra escrever o DNS, o openresolv se recusa a mexer no `/etc/resolv.conf` que pertence ao systemd-resolved (erro de "signature mismatch") e a interface inteira falha ao subir. Se o DNS do seu sistema já funciona bem, simplesmente remova a linha: as consultas vão pelo túnel de qualquer jeito.
+- **Perder a impressora, o NAS e a rede local.** Com `AllowedIPs = 0.0.0.0/0`, até o tráfego pra dentro da sua própria casa tenta ir pelo túnel. A correção é uma regra de policy routing avaliada antes das regras do próprio WireGuard: `PostUp = ip rule add to 192.168.0.0/16 lookup main priority 1000` (e o `PostDown` correspondente pra desfazer ao desligar).
+- **Encadear `wg-quick down && up`.** O `down` retorna erro quando a interface já está desligada, e com `&&` o `up` nunca executa. Rode o `up` sozinho.
 - **Instalar e abandonar.** Servidor sem atualização por um ano é servidor com vulnerabilidade conhecida. E teste a conexão de tempos em tempos: o que funciona hoje pode estar fingerprintado amanhã.
 - **Não ter backup da configuração.** O diretório `~/.wg-easy` guarda tudo (chaves, clientes). Guarde uma cópia criptografada local. Se a VPS morrer ou for desligada pelo provedor, você sobe outra em dez minutos em vez de recomeçar do zero.
 
