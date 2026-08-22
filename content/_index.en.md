@@ -264,6 +264,7 @@ title: AkitaOnRails Blog
 {{% index-list %}}
 ## 2026 - August
 
+- <a class="aor-index-list__main-link" href="/en/2026/08/22/llm-benchmarks-the-latest-deepseek-v4-stop-asking/" title="I ran the new Deepseek v4 snapshots through the benchmark: Flash jumped from 80 to 90 and Pro from 82 to 91, both Tier A, the cheapest in the pack. I still prefer Kimi K3 and GLM 5.3, and I explain why a close score does not mean an equivalent model.">LLM Benchmarks: The latest Deepseek v4, stop asking</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/en/tags/llm-benchmarks/">#llm-benchmarks</a><a class="aor-tag-link" href="/en/tags/llms/">#llms</a><a class="aor-tag-link" href="/en/tags/coding-agents/">#coding-agents</a></span>
 - <a class="aor-index-list__main-link" href="/en/2026/08/19/survival-guide-for-a-censored-internet/" title="From the X block to a sentence enhancement for using a VPN: Brazil is rehearsing real censorship. A three-phase guide (commercial VPN, step-by-step self-hosted VPN, and obfuscated protocols) to keep your communications alive while it is still possible.">Survival Guide for a Censored Internet</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/en/tags/networking/">#networking</a><a class="aor-tag-link" href="/en/tags/security/">#security</a><a class="aor-tag-link" href="/en/tags/law-and-regulation/">#law-and-regulation</a></span>
 - <a class="aor-index-list__main-link" href="/en/2026/08/18/hot-take-harness-loop-engineering-graph-engineering-are-bullshit/" title="I posted that Harness Engineering, Loop Engineering, and Graph Engineering are bullshit to sell consulting hours and courses. Here&#39;s my receipt: 30+ public repos, an AI marathon, and a whole benchmark — none of it using any of those &#39;disciplines&#39;.">Hot Take: Harness, Loop Engineering, Graph Engineering Are Bullshit</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/en/tags/artificial-intelligence/">#artificial-intelligence</a><a class="aor-tag-link" href="/en/tags/llms/">#llms</a><a class="aor-tag-link" href="/en/tags/vibe-coding/">#vibe-coding</a></span>
 - <a class="aor-index-list__main-link" href="/en/2026/08/16/anthropic-ai-watermark-how-to-beat-it/" title="Claude now stamps everything it writes with an invisible statistical watermark, a requirement of European AI law. How it works, what the AI Act demands, and the rewrite in another LLM that wipes the signal.">Understanding Anthropic&#39;s AI Watermark: How to Beat It</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/en/tags/llms/">#llms</a><a class="aor-tag-link" href="/en/tags/security/">#security</a><a class="aor-tag-link" href="/en/tags/law-and-regulation/">#law-and-regulation</a></span>
@@ -453,9 +454,15 @@ title: AkitaOnRails Blog
 <section class="aor-index-month" aria-labelledby="aor-grid-2026-08">
   <div class="aor-index-month__header">
     <h2 id="aor-grid-2026-08">2026 - August</h2>
-    <span>10 posts</span>
+    <span>11 posts</span>
   </div>
   <div class="aor-post-grid">
+<article class="aor-post-card" title="I ran the new Deepseek v4 snapshots through the benchmark: Flash jumped from 80 to 90 and Pro from 82 to 91, both Tier A, the cheapest in the pack. I still prefer Kimi K3 and GLM 5.3, and I explain why a close score does not mean an equivalent model.">
+  <time class="aor-post-card__date" datetime="2026-08-22">Aug 22, 2026</time>
+  <h3 class="aor-post-card__title"><a class="aor-post-card__title-link" href="/en/2026/08/22/llm-benchmarks-the-latest-deepseek-v4-stop-asking/">LLM Benchmarks: The latest Deepseek v4, stop asking</a></h3>
+  <span class="aor-post-tags aor-post-tags--card"><a class="aor-tag-link" href="/en/tags/llm-benchmarks/">#llm-benchmarks</a><a class="aor-tag-link" href="/en/tags/llms/">#llms</a><a class="aor-tag-link" href="/en/tags/coding-agents/">#coding-agents</a></span>
+  <p class="aor-post-card__description">I ran the new Deepseek v4 snapshots through the benchmark: Flash jumped from 80 to 90 and Pro from 82 to 91, both Tier A, the cheapest in the pack. I still prefer Kimi K3 and GLM 5.3, and I explain why a close score does not mean an equivalent model.</p>
+</article>
 <article class="aor-post-card" title="From the X block to a sentence enhancement for using a VPN: Brazil is rehearsing real censorship. A three-phase guide (commercial VPN, step-by-step self-hosted VPN, and obfuscated protocols) to keep your communications alive while it is still possible.">
   <time class="aor-post-card__date" datetime="2026-08-19">Aug 19, 2026</time>
   <h3 class="aor-post-card__title"><a class="aor-post-card__title-link" href="/en/2026/08/19/survival-guide-for-a-censored-internet/">Survival Guide for a Censored Internet</a></h3>
