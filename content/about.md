@@ -17,5 +17,3 @@ Vivo cutucando e ruminando sobre tecnologia no [X](https://x.com/AkitaOnRails). 
 Já viajei o mundo todo pra palestrar em conferência, podcast, essas coisas. Mas hoje estou aposentado de palestrar. Se quiser acompanhar o que ando fazendo, é por aqui no blog e pelo meu X.
 
 Nunca aceitei patrocínio nem fiz conteúdo pago. E continuo não aberto a ser pago pra falar de coisas em que eu não acredito. Não teste isso.
-
-Se tiver assunto sério pra tratar comigo, manda email pelo [contato da empresa](mailto:contact@codeminer42.com). Não respondo a menos que o assunto me interesse.
