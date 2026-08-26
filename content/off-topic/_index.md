@@ -70,7 +70,7 @@ Todos os posts Off-Topic do blog — filosofia, carreira, gerenciamento, e outro
 
 ## 2016 - Abril
 
-- <a class="aor-index-list__main-link" href="/2016/04/22/off-topic-software-livre-exercicio-de-capitalismo/" title="O autor argumenta que software livre continua sendo propriedade privada sob licenças de uso, com trocas voluntárias e competição. Por isso, projetos podem falhar, sofrer forks ou desaparecer.">[Off-Topic] Software Livre: Exercício de CAPITALISMO</a>
+- <a class="aor-index-list__main-link" href="/2016/04/22/off-topic-software-livre-exercicio-de-capitalismo/" title="Software livre é propriedade privada distribuída sob licença, com trocas voluntárias e competição sem regulador. Por isso projetos morrem, forks nascem e ninguém consegue decretar sucesso.">[Off-Topic] Software Livre: Exercício de CAPITALISMO</a>
 - <a class="aor-index-list__main-link" href="/2016/04/20/off-topic-se-voce-precisa-de-validacao-provavelmente-esta-errado/" title="A partir de sua trajetória com Rails, o autor defende produzir nos próprios termos e rejeitar autoridades morais e dogmas. Para ele, pensamento crítico, ideias refutáveis e responsabilidade pessoal são o antídoto.">[Off-Topic] Se Você Precisa de &quot;Validação&quot;, Provavelmente está Errado</a>
 - <a class="aor-index-list__main-link" href="/2016/04/12/o-ano-do-linux-no-desktop-pela-microsoft/" title="Testei o Bash on Windows no Preview 14316: Ruby, Redis e Memcached funcionam, mas memória, memória compartilhada, symlinks e pseudo-terminais ainda falham. A promessa é boa, mas o ambiente não está pronto.">O Ano do Linux no Desktop, pela Microsoft??</a>
 

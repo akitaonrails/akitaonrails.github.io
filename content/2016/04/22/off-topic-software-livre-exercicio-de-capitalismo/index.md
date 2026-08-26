@@ -2,7 +2,8 @@
 title: "[Off-Topic] Software Livre: Exercício de CAPITALISMO"
 date: '2016-04-22T15:30:00-03:00'
 slug: off-topic-software-livre-exercicio-de-capitalismo
-description: "O autor argumenta que software livre continua sendo propriedade privada sob licenças de uso, com trocas voluntárias e competição. Por isso, projetos podem falhar, sofrer forks ou desaparecer."
+translationKey: off-topic-software-livre-exercicio-de-capitalismo
+description: "Software livre é propriedade privada distribuída sob licença, com trocas voluntárias e competição sem regulador. Por isso projetos morrem, forks nascem e ninguém consegue decretar sucesso."
 tags:
 - open-source
 - economia
@@ -11,188 +12,120 @@ tags:
 draft: false
 ---
 
-Uma frase que eu disse no [meu artigo anterior](http://www.akitaonrails.com/2016/04/20/off-topic-se-voce-precisa-de-validacao-provavelmente-esta-errado) pode ter causado estranheza para algumas pessoas:
+Uma frase do [meu artigo anterior](http://www.akitaonrails.com/2016/04/20/off-topic-se-voce-precisa-de-validacao-provavelmente-esta-errado) causou estranheza em algumas pessoas:
 
-> "A base disso é o mundo open source - a maior experiência capitalista do mundo do software e um exemplo vivo para todos do que é um Mercado Livre Laissez-faire. O melhor lugar para manter e melhorar commodities de tecnologia."
+> "A base disso é o mundo open source: a maior experiência capitalista do mundo do software e um exemplo vivo para todos do que é um Mercado Livre Laissez-faire. O melhor lugar para manter e melhorar commodities de tecnologia."
 
-Pelos princípios de Liberdade de "Free" Software, muitos erroneamente atribuem o mundo de código aberto e livre como sendo uma grande experiência "socialista". E não é, ela é absolutamente capitalista, é um Laissez-Faire, Laissez-Passer, eu iria mais longe e diria mesmo que é quase um real Livre Mercado, a utopia capitalista - que **não existe hoje** e muitos acham que só existiu nos primeiros 20 anos do século XX nos EUA.
+A estranheza vem da palavra "free". Por causa dos princípios de liberdade do Free Software, muita gente associa o mundo do código aberto a uma grande experiência "socialista". Minha tese é o contrário: software livre é a experiência mais capitalista que existe no software. Nenhum governo regula, nenhuma agência protege projeto ruim, toda troca é voluntária e a competição decide quem sobrevive. Um mercado assim não existe em nenhum setor da economia real; o período histórico mais próximo dele foi o fim do século XIX nos EUA, antes do Federal Reserve e do imposto de renda federal.
 
-Como a C|NET reportou em ["Código Aberto: É sobre capitalismo, não brindes gratuitos"](http://www.cnet.com/news/open-source-its-about-capitalism-not-freebies/)
+Matt Asay escreveu na C|NET, em ["Código Aberto: É sobre capitalismo, não brindes gratuitos"](http://www.cnet.com/news/open-source-its-about-capitalism-not-freebies/):
 
-> "O segredo é usar software de código aberto como um meio para um fim, não o fim em si mesmo. Código aberto é um meio de distribuição barata, uma maneira de colocar software nas mãos de potenciais compradores por pouco ou nenhum custo. É uma maneira de tornar a experiência de software social e menos arriscada, porque os usuários podem experimentar antes de comprar e porque eles podem customizar (ou pagar alguém para customizar) o software para suas necessidades por um custo menor do que software proprietário."
+> "O segredo é usar software de código aberto como um meio para um fim, e não o fim em si mesmo. Código aberto é um meio de distribuição barata, uma maneira de colocar software nas mãos de potenciais compradores por pouco ou nenhum custo. É uma maneira de tornar a experiência de software social e menos arriscada, porque os usuários podem experimentar antes de comprar e porque eles podem customizar (ou pagar alguém para customizar) o software para suas necessidades por um custo menor do que software proprietário."
 
-Ou neste outro artigo da C|NET ["Desculpe, socialistas: Código Aberto é um jogo capitalista"](http://www.cnet.com/news/sorry-socialists-open-source-is-a-capitalists-game/)
+E foi mais direto ainda em ["Desculpe, socialistas: Código Aberto é um jogo capitalista"](http://web.archive.org/web/20211023100641/https://www.cnet.com/news/sorry-socialists-open-source-is-a-capitalists-game/):
 
 > "[Sarah] Grey escreve que 'existem alternativas ao capitalismo'. Ela está certa. Infelizmente, código aberto não é uma delas. Código aberto é a essência do Livre Mercado do Capitalismo."
 
-A maioria das pessoas tem idéias muito distorcidas de porque _"capitalismo é o império do mal dos tiranos"_ ou porque _"socialismo é justiça, igualdade e democracia para todos"_, quando na realidade é exatamente o oposto.
+### Definições, para ninguém brigar com espantalho
 
-Aliás, uma noção que muitos **não tem** é que ou você é defensor do socialismo ou você é defensor da liberdade. Ambos são diametralmente opostos.
+Antes de seguir, os termos que estou usando. Capitalismo é propriedade privada dos meios de produção, com trocas voluntárias entre os donos dessa propriedade. Livre Mercado é a condução dessas trocas sem coerção e sem regulador: oferta, procura e preços ficam nas mãos dos participantes.
 
-Vejamos como Livre Mercado e interesses individualistas é o único caminho que leva a um efeito colateral positivo: a possibilidade de realmente fazer a diferença em "causas sociais". Através de princípios capitalistas, não socialistas.
+Socialismo, no sentido clássico, é propriedade estatal ou coletiva dos meios de produção. Saúde pública e ensino gratuito num país de economia de mercado são políticas de bem-estar, e não socialismo. A crítica deste texto é ao modelo em que o Estado é o dono da produção.
 
-O princípio? Como eu disse no meu artigo anterior:
+Com essas definições, defender o socialismo clássico e defender a liberdade individual são posições opostas: o primeiro exige subordinar a propriedade e as escolhas de cada um a uma entidade central.
 
-> "Eu nunca vivo por causa de outra pessoa e eu nunca peço a qualquer pessoa para viver por minha causa. Eu aceito somente trocas voluntárias para mútuo benefício."
+### Software livre é propriedade privada sob licença
 
-### O que é Livre Mercado em Software Livre?
+Código aberto não é domínio público. Todo software tem dono: o copyright pertence aos autores, e usar, copiar ou modificar esse código só é possível porque o dono concedeu uma licença. Sem licença, ninguém tem direito algum sobre código alheio, como Jeff Atwood lembrou em ["Escolha uma Licença, qualquer Licença"](http://blog.codinghorror.com/pick-a-license-any-license/):
 
-Vamos entender:
+> "Porque eu não indiquei explicitamente uma licença, eu declarei implicitamente um copyright sem explicar como outros poderiam usar meu código. Já que o código está sem licença, eu poderia teoricamente forçar o copyright a qualquer momento e demandar que as pessoas parem de usá-lo. Desenvolvedores experientes não tocam em código sem licença, porque não têm direito legal para isso."
 
-Um "Livre Mercado" é a condução de transações sem coerção.
+Existe um teste prático para essa propriedade: o dono pode retirar o código da circulação quando quiser. Em março de 2016, Azer Koçulu despublicou seus pacotes do npm, incluindo o minúsculo left-pad, depois de uma disputa de nome com o aplicativo Kik. Milhares de builds quebraram no mesmo dia, como [a Ars Technica reportou](http://arstechnica.com/information-technology/2016/03/rage-quit-coder-unpublished-17-lines-of-javascript-and-broke-the-internet/). O código-fonte continuava no GitHub; o que ele removeu foi a distribuição no registro.
 
-Eu posso usar um software livre gratuitamente, é a licença que seu **proprietário** me deu. Eu posso contribuir com partes de código a esse software, sem a coerção, por minha própria escolha. O proprietário do software tem o direito de aceitar ou não minha contribuição, com base nos critérios que ele quiser.
+Concordar ou não com o Koçulu é irrelevante. O pacote era propriedade dele, e a decisão de remover era dele. O mais interessante veio depois: ninguém foi preso, nenhum regulador interveio. O npm restaurou o pacote quebrado e mudou sua [política de unpublish](http://blog.npmjs.org/post/141905368000/changes-to-npms-unpublish-policy). O mercado absorveu o choque e criou anticorpos, sem tirar de ninguém o direito de sair.
 
-Um software é propriedade privada, copyright, de seus autores. Ter o código "aberto" não o torna domínio público e você não pode clamar direitos se este software não tiver uma licença que lhe dê esse privilégio. Reforçar ou não esse copyright é um direito exclusivo de seu proprietário.
+A comunidade Ruby viveu uma versão menor disso em 2009, quando _why apagou seus projetos e desapareceu, [como contei aqui](http://www.akitaonrails.com/2012/09/07/why-dramas-do-ruby-e-dinamitando-courtlandt/).
 
-Laissez-Faire é a intervenção mínima ou quase inexistente de uma entidade governamental ou reguladora. Nenhuma entidade controlando a oferta e a procura. Deixando a dinâmica desse mercado - quem oferta, quem adquire, a moeda e os preços - totalmente na mão de seus participantes. As trocas são voluntárias, quem quer contribuir código deve **convencer** os demais de seus méritos baseados unicamente na moeda "competência técnica". Pelo menos esse é o "ideal", no mundo real existem obviamente pressões sociais e políticas em alguns casos.
+Quando o desacordo é interno, o mecanismo de saída é o fork: quem discorda clona o projeto e compete com o original. Foi o que aconteceu com o io.js, que nasceu como fork do Node.js em 2014 e se fundiu de volta em 2015, sob a recém-criada Node.js Foundation, quando a negociação fez sentido. A história tem vários forks que prosperaram: WebKit a partir do KHTML, LibreOffice a partir do OpenOffice.org, MariaDB a partir do MySQL, X.Org a partir do XFree86. E há derivados que ficaram maiores que a origem, como o Ubuntu a partir do Debian.
 
-Convencer os outros é sobre demonstrar, com resultados, porque sua ideia tem valor. A partir do momento em que você acha que os demais deveriam apoiar sua "causa" porque você tem certeza que ela tem valor e _"quem discorda é um imbecil e merece morrer"_, você acabou de desvalorizar e fazer um desserviço à sua causa. Se você não consegue convencer os demais do seu valor, não são os outros que são burros ou preconceituosos, provavelmente é você que foi incompetente.
+Fork é voto com os pés. Custa caro, porque exige manter um projeto inteiro, e é por isso que só prospera quando a motivação é real.
 
-> "Coerção é o domínio dos Tiranos."
+### Competição implica o direito de fracassar
 
-> "Tentar regular a propriedade dos outros via coerção é o domínio dos Tiranos."
+Num mercado sem regulador, ninguém mantém projeto ruim vivo artificialmente. Para cada PostgreSQL que existe, dezenas de bancos de dados tentaram e morreram. Para cada distro Linux relevante, centenas viraram nota de rodapé. Isso é sinal de saúde: a seleção está funcionando.
 
-"Preços" não se refere meramente a transações financeiras com moeda, como seria numa Economia Capitalista. "Valor", o termo mais geral, pode ser determinado por qualquer coisa que tenha oferta e procura. Quem configura esse "preço" é a **competição**.
+A justiça desse processo é cega. O código não carrega a biografia do autor, e o mercado não distribui medalha por boas intenções. Um projeto sobrevive se convence usuários e colaboradores de seu mérito técnico, e morre se não convence.
 
-Um Livre Mercado tem sua competição desregulamentada. Por causa disso, uma verdade muitas vezes não mencionada quando se fala de software livre é que para cada 1 (um) projeto famoso como PostgreSQL que existe, dezenas de outros tentaram e **morreram**, ou porque não eram tão bons quanto ou porque falharam em convencer os outros de seus méritos. Para cada uma distro Linux que dá certo, centenas de outras deram errado ou vivem meramente num pequeno nicho - o que por si só é valor suficiente pra muita gente.
+Abrir o código, aliás, não salva ninguém. A Nokia concluiu a abertura do código do Symbian em 2010, quando a plataforma já perdia terreno para iPhone e Android. O gesto não reverteu nada: muito pouco, muito tarde.
 
-Eles morrem, porque não há nenhuma "agência reguladora" tentando mantê-los vivos artificialmente, muito menos importa se existia alguma agenda social por trás. E isso é **justo**, porque ou a justiça é realmente cega, ou não é justiça, é apenas vigilantismo e coerção.
+Eu comparei esse processo à seleção natural num [screencast antigo](http://www.akitaonrails.com/2010/07/01/screencast-entenda-software-da-maneira-correta). O software que se adapta melhor às demandas do ambiente é o que mais se reproduz, na forma de usuários e contribuidores. O cemitério de projetos mortos prova que a seleção existe e funciona.
 
-E o preço não é o valor do código que entra, mas quanto vale para um  programador ter seu código envolvido num projeto famoso. É uma inversão de valores em relação a empresas comerciais: normalmente se paga em dinheiro a um programador para ele produzir um código proprietário. Num projeto de software livre é o programador que deve "pagar" - com seu tempo livre e sua capacidade - para ter seu código aceito num projeto famoso porque ele recebe algum valor como retorno.
+E a paisagem muda o tempo todo. O Apache HTTP cedeu espaço ao NGINX. O Firefox perdeu fatia enorme para o Chrome. O Perl cedeu para Python e para linguagens mais novas como Go. O MySQL perdeu prestígio entre desenvolvedores para o PostgreSQL, enfrentou a onda NoSQL e ainda ganhou um fork competidor, o MariaDB, depois da compra pela Oracle. Nenhum desses projetos tinha direito adquirido ao trono.
 
-### Software Livre = Propriedade Privada + Licença de Uso
+### O programador paga para participar
 
-Como bem lembrou Jeff Atwood, do Coding Horror em ["Escolha uma Licença, qualquer Licença"](http://blog.codinghorror.com/pick-a-license-any-license/):
+O mercado de software livre tem uma inversão curiosa de valores. Numa empresa, o programador recebe dinheiro para escrever código proprietário. Num projeto livre conhecido, é o programador quem "paga", com seu tempo e sua capacidade, para ter código aceito. Em troca ele recebe reputação, aprendizado, portfólio e, sim, um pouco de vaidade. É uma troca voluntária com benefício para os dois lados, como qualquer outra.
 
-> "Porque eu não indiquei explicitamente uma licença, eu declarei implicitamente um copyright sem explicar como outros poderiam usar meu código. Já que código está sem licença, eu poderia teoricamente forçar o copyright a qualquer momento e demandar que as pessoas parem de usar meu código. Desenvolvedores experientes não tocariam em código sem licença porque eles não tem direito legal para usá-lo."
+"Preço", aqui, não se mede só em dinheiro. Valor é qualquer coisa com oferta e procura, e quem define o preço é a competição. A moeda corrente desse mercado é a competência técnica demonstrada em público.
 
-Como testar a **propriedade privada** num mundo de software livre? Eu posso, a qualquer momento, apagar meu código de um repositório público que eu criei. Aconteceu recentemente com o controverso caso do [Leftpad](http://www.businessinsider.com/npm-left-pad-controversy-explained-2016-3) que quebrou o projeto de muita gente. ["Quebrou a Internet"](http://arstechnica.com/information-technology/2016/03/rage-quit-coder-unpublished-17-lines-of-javascript-and-broke-the-internet/) como muitos exageraram.
+Isso tem uma consequência dura: convencer os outros faz parte do jogo. Se a sua ideia tem valor e mesmo assim ninguém adere, a explicação mais provável está na ideia ou na forma como você a apresenta, e não na burrice da plateia. Culpar a plateia é o jeito mais rápido de desvalorizar a própria causa.
 
-Concordar ou discordar do Koçulu ou da Kik é irrelevante. Koçulu exerceu seu direito: ele destruiu sua própria propriedade e isso é legítimo. É sua propriedade, ele faz o que quiser com ela, não importa quem clame o contrário ou quanto prejuízo isso possa ter causado. A situação foi ruim? Então vamos aprender a criar um ambiente mais robusto **sem** retirar a propriedade privada de seu autor. E seguindo o exemplo, uma possível solução foi a mudança na [política de unpublish do NPM](http://blog.npmjs.org/post/141905368000/changes-to-npms-unpublish-policy).
+### O paradoxo do software livre "socialista"
 
-Na comunidade Ruby tivemos um episódio assim. Claro, foi muito menor, com muito menos consequências ou repercussão, em 2009, com o [sumiço de Why](http://www.akitaonrails.com/2012/09/07/why-dramas-do-ruby-e-dinamitando-courtlandt/). Aliás, notaram que antigamente qualquer "mimimi" na comunidade Ruby logo era chamado de "Ruby Drama"? Notaram que ninguém mais fala disso? Por que "dramas" se tornaram tão comuns e tão banais em todas as comunidades que deixou de ser percebido como exclusivo da comunidade Ruby. Como evidência, o último tweet da conta [@rubydramas](https://twitter.com/rubydramas) é de 2013.
+Imagine o modelo oposto: o mundo do software sob o socialismo clássico, com a produção controlada por uma entidade central.
 
-E quando existe conflito pode acontecer os famosos casos de "fork", onde um projeto pode ser clonado e uma segunda comunidade pode acabar se formando se os critérios fizerem sentido o suficiente e o resultado for realmente melhor. Exemplo recente foi o [fork do Node.js para IO.js](https://www.quora.com/Why-is-NodeJS-splitting-into-two-versions-io-js-and-node-js), o período de transição e negociação e o resultado de fazerem "merge" de volta sob a liderança da nova Node Foundation.
+Sem propriedade individual sobre os projetos, acaba a competição. Projeto ruim que atenda à agenda de quem controla se mantém vivo, mesmo que exista alternativa tecnicamente superior. A escolha sai das mãos de quem usa e vai para as mãos de quem controla. Não haveria acidentes como o left-pad, e o preço disso seria um catálogo imenso de software sucateado que ninguém quer usar.
 
-Existiram diversos [forks que deram certo](http://royal.pingdom.com/2008/09/11/10-interesting-open-source-software-forks-and-why-they-happened/), como o Webkit a partir do KHTML, o Ubuntu a partir do Debian, o próprio OS X a partir do BSD.
+Sem o benefício individual da troca, acaba o voluntariado. Nenhum programador competente doaria suas melhores horas sem reputação, aprendizado ou liberdade em troca. E se a contribuição virar cota obrigatória decretada em nome do "bem social", todos farão o mínimo para cumprir a cota. A produção soviética funcionou assim em praticamente todos os setores, com os resultados que conhecemos.
 
-### Projetos devem poder Fracassar. E nada pode forçar seu Sucesso.
+Sem competição, acaba a inovação. Inovação nasce de uma vontade individual de resolver o próprio problema do próprio jeito. Eric Raymond abriu ["A Catedral e o Bazar"](http://www.catb.org/~esr/writings/cathedral-bazaar/cathedral-bazaar/) com essa ideia:
 
-Num Livre Mercado não existem garantias de sucesso, só existem garantias de que você pode tentar.
+> "Todo bom trabalho de software começa coçando uma coceira pessoal de um desenvolvedor."
 
-Livre Mercado é "justo" (como em "justiça cega") e, por consequência, não é igualitário nem "moral" dependendo do seu ponto de vista pessoal. Aliás, "ponto de vista" é necessariamente tendencioso e pessoal, não objetivo, por isso não serve de parâmetro para justiça. Para entender isso assista [O Povo Contra Larry Flint](http://www.akitaonrails.com/2010/03/07/off-topic-penn-and-teller-e-larry-flynt-sobre-liberdade). Você pode discordar completamente de Larry Flint, mas nem por isso pode condená-lo. E ao não condená-lo, não significa que você apoie o que Flint diz ou faz.
+Inovação também é transgressora, porque torna profissões inteiras obsoletas. As agências de viagem quase sumiram quando comprar passagem pela internet ficou trivial. As locadoras de vídeo morreram com o streaming. O Uber apertou os taxistas, o Airbnb apertou os hotéis. Quem ficou preso ao modelo anterior sofreu, e o mundo seguiu em frente.
 
-Sucesso em código, no geral, independe de qualquer característica pessoal de seus autores, somente do mérito técnico do resultado do seu código. A beleza do código é que ele é anônimo desprovido de qualidades pessoais ou agendas políticas. Mesmo se temporariamente ele acabar desvalorizado por causa de vínculos políticos, quanto menos afiliações um projeto tiver, mais chances tem de sobreviver ao longo prazo.
+Em software foi igual. O pessoal do GNU Hurd não comemorou quando o Linux explodiu. A Nokia não achou graça no Android. O MySQL não torce pelo PostgreSQL. Quem resiste à dinâmica do mercado fica para trás. Duro, e absolutamente justo.
 
-Só porque você criou um projeto e abriu seu código, não quer dizer absolutamente nada. Muito menos que vai ter sucesso, não importa suas boas intenções, não importa sua história, não interessa suas afiliações.
+### A distopia do monopólio protegido
 
-Essa é justamente a melhor parte do mundo de Software Livre, porque a competição, os interesses individuais, garantem que haverá alguns poucos que darão muito certo, muitos que terão pouca ou nenhuma tração e a maioria que simplesmente vai desaparecer da existência e da memória das pessoas.
+Um software proprietário pode ser bom ou ruim; o problema aparece quando ele vira monopólio protegido. A Microsoft dos anos 90 era um monopólio de fato. Podemos discutir se o julgamento do Departamento de Justiça foi justo, mas o golpe decisivo no monopólio veio do mercado: o software livre, com GNU e Linux, e depois a internet comercial, que tirou do Windows o monopólio da plataforma.
 
-Um exemplo? Alguém se lembra do sistema operacional móvel [Symbian](https://gigaom.com/2010/10/28/symbian-a-lesson-on-the-wrong-way-to-use-open-source/) da Nokia, que era proprietário e nos seus últimos dias anunciaram que iam abrir seu código na tentativa de ver se ganhava alguma tração? [Muito pouco](http://www.symbianos.org/), muito tarde.
+Imagine um futuro alternativo em que a Microsoft convence o governo americano de que o Windows é essencial à segurança nacional e merece proteção permanente. Tudo teria parado. Até hoje usaríamos um Pentium de 100 MHz rodando um derivado de Windows 98, com internet discada, porque "ninguém precisa de mais que isso".
 
-Livre Mercado é a manifestação econômica da Natureza (Darwiniana) de Seleção Natural, que [eu já expliquei num screencast/palestra](http://www.akitaonrails.com/2010/07/01/screencast-entenda-software-da-maneira-correta). O software que tiver as melhores características e que continuar se mutando e adaptando às demandas do ambiente, é quem terá melhores chances de reproduzir (ser usado e distribuído) e ser selecionado para sobreviver. Existem mais projetos morrendo todos os dias do que prosperando. E isso não é uma falha ou fracasso do sistema, é a garantia de sua robustez.
+É essa a lógica de quem entrega as decisões do mercado a uma entidade central: não crie e-mail, vai prejudicar os carteiros; não crie sites, vai prejudicar as gráficas; não crie software livre, vai prejudicar os programadores do governo. Todo ditador usa o mesmo discurso, "para o bem da população", e todo discurso de "para o bem da população, não importam os meios" termina no mesmo lugar.
 
-Apache HTTP vem perdendo cada vez mais espaço para NGINX. MySQL veio perdendo espaço primeiro para outros RDBMS mais competentes como PostgreSQL e depois para NoSQL como MongoDB e agora até pra forks como MariaDB. Mozilla Firefox veio perdendo espaço drasticamente para Google Chrome. Perl perdeu espaço para Python e diversas novas linguagens como Go.
+### Tirania e o fim do software livre
 
-### Software Livre "Socialista" é um Paradoxo
- 
-Num mundo "socialista" teríamos necessariamente o **sucateamento** do software.
+O pior caso possível para um projeto livre começa assim. Um desenvolvedor cria um software para resolver um problema e abre o código. Por vinte anos, centenas de pessoas usam e contribuem.
 
-Como toda propriedade seria monopólio da entidade "governo", não haveria competição, apenas incentivo a conluio, cartel e monopólios. Todo projeto ruim - se atendesse à agenda política de alguém - se manteria vivo, a despeito de outro se provar tecnicamente melhor. A escolha não seria de quem usa, mas de quem controla. Não haveria acidentes como leftpad, mas seria pior: existiria tanto lixo que o mundo de software livre simplesmente perderia relevância.
+Então surge uma causa, qualquer uma, e alguém se autonomeia representante dela. Por pressão social e propaganda, os mantenedores viram párias. A mídia especializada amplifica, porque controvérsia atrai leitor. O código deixa de ser o assunto: o que passa a valer é a opinião pessoal, a aparência e o passado de cada colaborador.
 
-Sem benefícios aos voluntários como: propaganda em benefício próprio, exercitar suas capacidades técnicas em projetos desafiadores, distribuir seu software livremente, alimentar seu ego e suas métricas de vaidade; nenhum programador de real capacidade técnica perderia seu tempo se esforçando. Pior: se num governo socialista o governo decretasse arbitrariamente que todos deveriam contribuir para determinado projeto por causa de algum "bem social", ninguém daria o melhor de si, faria apenas o mínimo para cumprir determinada "cota".
+A partir daí, participar do projeto vira um risco. Ninguém recebe mais valor por contribuir; só recebe exposição. Um a um, os que realmente escreviam código vão embora, e o projeto definha. É uma forma perversa de tomar uma propriedade e destruir seu valor sem confiscar nada formalmente.
 
-Quando não há competição e não há oferta e procura derivada de valor, não existe mais inovação. Inovação surge de uma vontade individualista de resolver seu próprio problema do seu melhor jeito, independente do que os outros clamarem. Por isso mesmo o mundo de free software começa com a famosa frase:
+Ayn Rand dramatizou esse mecanismo no julgamento de Howard Roark, em "A Nascente", e [escrevi sobre isso em 2011](http://www.akitaonrails.com/2011/02/04/off-topic-the-fountainhead-defesa-de-howard-roark):
 
-> "Todo bom trabalho de software começa coçando uma coceira pessoal de um desenvolvedor." - Eric Raymond, [The Cathedral and the Bazaar](http://firstmonday.org/article/view/578/499)
+> "Eu vim aqui dizer que eu não reconheço o direito de qualquer um a um minuto da minha vida, ou a qualquer parte da minha energia, nem a qualquer conquista minha, não importa quem clame por isso!"
 
-Inovação é naturalmente transgressora. Inovação é naturalmente competitiva. Quando alguém inventa um robô de fábrica, está eliminando empregos, portanto para muitos a Inovação também é anti-social. Uber realmente acaba com o emprego de taxistas. Airbnb acaba com o emprego de corretores. Uma máquina para sacar dinheiro (ATM) acaba com o emprego de bancários.
-
-Em software, você acha que o cara de Hurd ficou muito contente com Linux? Acha que o cara de Symbian achou legal o Android? Acha que o cara de Clipper ficou feliz com Java? Acha que o cara de MySQL está contente com PostgreSQL? Se essas pessoas forem resistentes à dinâmica do mercado, fica para trás e, honestamente, está valendo menos e menos e provavelmente também vai perder seu emprego. Injusto? Não, absolutamente justo.
-
-Inovação é anti-socialista porque acaba com a necessidade de força bruta de trabalho e trabalho intelectual é necessariamente individual, porque não existe tal coisa como uma "mente coletiva", assim como não existe um "estômago coletivo".
-
-Um software proprietário não é necessariamente ruim porque não é livre. Ele é ruim quando representa um monopólio. Por exemplo, se o Windows tivesse sido mesmo a única opção, teríamos testemunhado o sucateamento da tecnologia. No longo prazo não teria sido bom nem pra própria Microsoft.
-
-A Microsoft era um monopólio de fato. Podemos discutir eternamente se era mesmo ou não, se seu julgamento foi justo ou não. Mas o advento do software livre, particularmente dos sistemas operacionais baseados em GNU e Linux e depois o advento da Internet comercial, que desvinculou a necessidade de softwares nativos instalados localmente, quebrou esse monopólio. Com ou sem o Departamento de Justiça, o monopólio teria sido derrubado por pura dinâmica do mercado. Não no curto prazo, mas no longo prazo.
-
-Imagine se, num futuro alternativo distópico, a Microsoft tivesse convencido o governo federal que o Windows era tão essencial à segurança nacional que seria do benefício da nação apoiar e manter seu monopólio?
-
-Tudo teria parado. Até hoje estaríamos usando Pentium 100Mhz (porque, quem precisa de mais velocidade?), rodando um derivado de Windows 98 (porque, pra que criar um NT ou 2000 se o 98 já atende?), com Internet discada (porque, quem precisa de banda larga?), onde somente alguns poucos consumidores profissionais estariam usando (porque, pra que a população em geral precisa de computadores?)
-
-Se alguém com a cabeça dos anos 80 e 90 tivesse sido decretado como a referência de "moral" e "necessidade social", pra que escolher evoluir qualquer coisa? Deixe as coisas como estão. Mudanças fazem a população sofrer, pessoas perdem seus empregos, perdem sua segurança e estabilidade - ora, Inovação é sobre insegurança e instabilidade.
-
-Não crie e-mail, isso pode prejudicar o emprego dos carteiros. Não crie websites, isso pode prejudicar quem trabalha nas fábricas de impressão de papel. Não crie software livre, isso pode prejudicar quem trabalha como programador do governo.
-
-É isso que acontece quando se deposita as decisões que deveriam ser do mercado às mãos de um indivíduo ou mesmo uma entidade. Ela naturalmente se torna tirânica e despótica, porque é a única postura popularmente aceita como "moralmente correta".
-
-Todo ditador, tirano, tem o mesmo discurso: "para o bem da população" e o inverso também é verdade: todos que têm o discurso de "para o bem da população, não importa os meios", quer se tornar um ditador tirânico.
-
-### Tirania e o Fim do Software Livre
-
-Uma situação que começou a se tornar comum é a tentativa de desapropriação de uma propriedade privada para benefícios tirânicos usando como desculpa quaisquer causas sociais. Novamente, para deixar claro, não há culpa nas causas sociais em si, na maioria legítimas, mas sim em quem se auto-entitulou seus representantes ilegítimos.
-
-É muito fácil pegar a conquista de outra pessoa e se apropriar dela em nome de uma "causa maior".
-
-Não se engane, isso é simplesmente **roubo**. E não importa quantos apoiem esse tipo de coisa - coisa que é muito fácil nesse mundo de redes sociais. **Roubo é errado**, sempre, não existem justificativas.
-
-Veja um cenário: você é um desenvolvedor que quis resolver um problema e criou um pedaço de software. Como achou que outros poderiam ajudar a evoluir sua solução, você disponibilizou como código aberto. Durante 20 anos muitos desenvolvedores se beneficiaram desses códigos e ajudaram a melhorá-lo. É a história de centenas de projetos de software livre.
-
-Agora, em nome de diversas causas, não importa quais, alguém intervém e, por pura pressão social e propaganda, etiquetam todos os que estão há anos trabalhando, como verdadeiras **párias anti-sociais**. A mídia especializada - sempre à espreita de controvérsias para atrair mais leitores - noticia exatamente dessa forma.
-
-E com o advento das Redes Sociais, por motivos que nada tem a ver com o mérito técnico e o valor que esse código aberto outrora tinha, vê seus colaboradores expostos e automaticamente julgados e condenados como criminosos perversos e anti-sociais.
-
-Os donos do projeto eventualmente cedem e, por um pequeno período de tempo o projeto é obrigado a rodar sob intervenção despótica, onde suas identidades, passados, carreiras, vida particular, estarão sob constante escrutínio. Não mais seu código, mas suas opiniões pessoais. Não mais seu código, mas suas atitudes. Não mais seu código, mas sua aparência.
-
-Consequentemente, se essa intervenção continuar, o valor do projeto decai drasticamente. Não há mais valor que o programador voluntário pode receber, pelo contrário, participar se tornou uma ["liability"](https://translate.google.com/#auto/pt/liability), portanto a reação correta é deixar de participar. Um a um quem realmente estava produzindo código começa a desaparecer. E essa é uma forma **perversa** de tomar uma propriedade e remover seu valor.
-
-Isso já começou a acontecer, ainda não tivemos casos que chegaram tão longe, mas é o que acontece quando você adiciona uma camada política sobre um projeto que era puramente livre. É assim que você destrói um Livre Mercado, dando poder político a quem não concorda com trocas voluntárias, apenas em remover propriedades de quem se "julga" que não merece para dar a quem se "julga" que merece.
-
-Eu [postei sobre isso em 2011](http://www.akitaonrails.com/2011/02/04/off-topic-the-fountainhead-defesa-de-howard-roark) se estiver interessado.
-
-> "Eu sou um arquiteto. Eu sei o que se resulta pelos princípios sobre os quais foi construído. Estamos nos aproximando de um mundo onde eu não posso me permitir viver. Minhas idéias são minha propriedade. Eles foram tirados de mim à força, por quebra de contrato. Nenhuma escolha me foi dada."
-
-> "Acreditaram que meu trabalho pertencia a outros, para fazerem com ele o que quisessem. Eles clamaram por mim sem meu consentimento - que era meu dever servir a eles sem escolha ou recompensa."
-
-> "Agora vocês sabem porque eu dinamitem Courtland [condomínio de baixo custo]. Eu desenhei Courtland. Eu tornei possível. Eu destruí. Eu concordei em desenhá-lo pelo propósito de vê-lo como eu queria. Esse foi o preço que dei pelo meu trabalho. Eu não fui pago. Meu prédio foi desfigurado pelo capricho de outros que tomaram todos os benefícios do meu trabalho e não me deram nada em retorno."
-
-> "Eu vim aqui dizer que eu não reconheço o direito de qualquer um a um minuto da minha vida, ou a qualquer parte da minha energia, nem a qualquer conquista minha - não importa quem clame por isso!"
-
-> "Tinha que ser dito: O mundo está perecendo em uma orgia de auto-sacrifício. Eu vim aqui ser ouvido em nome de todos os homens independentes que ainda existem no mundo. Eu queria ditar meus próprios termos. Eu não me importo de trabalhar ou viver por causa de outros."
-
-> "Meus termos são: os DIREITOS de uma pessoa de existir apenas por si mesmo."
-
-Isto é um aviso do pior caso que pode acontecer.
+Esse é o aviso. Uma camada política sobre um projeto livre destrói o mercado que sustentava o projeto.
 
 ### Conclusão
 
-Toda esta exposição é para tirar o falso verniz "social" tão comumente associado a software livre.
+Nada disso condena quem contribui por motivação social. Quem troca seu código pela sensação de estar ajudando faz uma troca voluntária como qualquer outra, e isso fora do software tem nome: doação e trabalho voluntário. O problema começa quando alguém decide que a propriedade alheia deve servir à causa que ele escolheu.
 
-Significa que se alguém contribui para software livre puramente porque acredita que isso vai trazer benefícios a causas sociais, é algo ruim? Claro que não, como eu disse, cada um se voluntaria porque obtém algum benefício nessa troca. Para alguns o pagamento é simplesmente a sensação de estar ajudando alguém. Alguns gostam de trocar seu código por consciência. Muitos fazem isso fora de software, chama-se "doação" ou "trabalho voluntário". E obviamente não existe nenhum problema justamente porque continua sendo uma troca voluntária.
+Resolver os problemas do mundo é muito mais difícil do que discutir sobre eles. Bill Gates deu esse recado em 2000, respondendo ao hype de que PCs acabariam com a pobreza:
 
-Agora, resolver os problemas do mundo é algo extremamente complicado. É extremamente complicado até de começar a explicar. Mesmo pessoas que estão nisso com muito afinco tem dificuldade em obter os resultados que gostaria.
+> "Ótimo, visite os centros da Infosys em Bangalore, mas saia do oásis e vá três milhas adiante, atrás do cara que vive sem privada, sem água encanada... O mundo não é plano, e PCs não estão, na hierarquia das necessidades humanas, entre as cinco primeiras posições."
 
-Bill Gates é notório por ter a visão de influenciar positivamente em realmente resolver os problemas do mundo e ele tem o melhor aviso à nossa geração de programadores que, independente de classe social, posse, raça, gênero, temos acesso à Internet e recursos suficientes para nos dar ao luxo de sermos "Drama Queens" em discussões irrelevantes em redes sociais sobre "salvar o mundo". E quem está fora desse circuito, [realmente executando](https://en.wikipedia.org/wiki/Computer_technology_for_developing_areas) em vez de só falar?
+Programadores, de qualquer classe social, têm internet e recursos de sobra para passar o dia em redes sociais discutindo como salvar o mundo. Quem trabalha de verdade nesses problemas está fora desse circuito, [executando em vez de falar](https://en.wikipedia.org/wiki/Computer_technology_for_developing_areas).
 
-> "Ótimo, vá até os centros da Infosys em Bangalore, mas saia do oásis e vá só 3 milhas um pouco mais pra fora e procure pelo cara que vive sem privada, sem água encanada ... O mundo não é plano e PCs não são, na hierarquia das necessidades humanas, entres os Top 5" - Bill Gates
+Termino com um caso real que me relataram, sem nomes:
 
-Você está empenhado em tentar transformar uma propriedade privada (projeto de software livre) numa plataforma política para uma suposta "causa social"? Pense de novo. Você provavelmente está desperdiçando seu tempo em mais maneiras do que imagina.
+> A: Puxa, ninguém dá chance à minha [minoria].
+>
+> B: Por que você não me ajuda a resolver estes problemas neste projeto open source? Daí você pode palestrar sobre isso.
+>
+> (A some. B espera, cansa, e chama C, que resolve os problemas e ganha o espaço de palestrar.)
+>
+> A: Tá vendo, B? Você é parte dos opressores que não dão espaço pra gente como eu, e preferiu dar a oportunidade pro C.
 
-Para fechar, vou dar um exemplo de um caso real que me foi relatado - mas removendo nomes e detalhes para proteger os envolvidos:
-
-> A: - Puxa vida, ninguém dá chance à minha [minoria].
-
-> B: - Não diga isso, porque você não me ajuda a resolver estes problemas neste projeto open source, daí você pode palestrar sobre isso.
-
-> (depois de algum tempo ... A some, B cansa de esperar e chama C, que ajuda a resolver os problemas e ganha o espaço de palestrar)
-
-> A: - tá vendo B, você é parte dos opressores que não dão espaço a gente como eu e preferiu dar a oportunidade pro C, que nem precisa e faz parte dos opressores.
-
-E antes que você discorde porque se trata de conceitos de Ayn Rand (tem muita gente que não gosta dela, não sei porque), não seja um idiota e avalie a ideia por causa de seu autor, avalie o argumento que foi dado pelo seu próprio mérito. Muitos me criticam porque acham que eu "sigo" Ayn Rand, e não poderiam estar mais enganados: Ayn Rand simplesmente foi a única que pôs por escrito exatamente o que eu sempre pensei e como sempre agi desde que me conheço por gente. Poderia ter sido qualquer outra pessoa.
-
-Aliás, da mesma forma, eu não sou "seguidor" de Bastiat, Friedman, Hayek, Menger ou qualquer outro. Eu sigo minha vida nos meus próprios termos, por princípios que eu mesmo defini anos atrás e essas referências são apenas isso: referências.
-
-Considero um insulto à minha inteligência simplesmente me taxarem de seguidor de alguém e eu não respondo bem a ["Ad Hominem"](https://en.wikipedia.org/wiki/Ad_hominem) ou outros tipos de falácias.
-
-> "Voilà! In view, a humble vaudevillian veteran cast vicariously as both victim and villain by the vicissitudes of Fate. This visage, no mere veneer of vanity, is a vestige of the vox populi, now vacant, vanished. However, this valorous visitation of a bygone vexation stands vivified and has vowed to vanquish these venal and virulent vermin vanguarding vice and vouchsafing the violently vicious and voracious violation of volition! The only verdict is vengeance; a vendetta held as a votive, not in vain, for the value and veracity of such shall one day vindicate the vigilant and the virtuous. Verily, this vichyssoise of verbiage veers most verbose, so let me simply add that it's my very good honor to meet you and you may call me V." - V for Revenge
+E uma nota pessoal para encerrar. Me taxam de "seguidor de Ayn Rand", e estão enganados: Rand apenas pôs por escrito, antes de mim, o que eu já pensava e praticava. O mesmo vale para Bastiat, Friedman, Hayek ou Menger. São referências, e referências não são donos. Julgar uma ideia pelo autor em vez de julgar o argumento pelo mérito é a definição de [ad hominem](https://pt.wikipedia.org/wiki/Argumento_ad_hominem), e eu não respondo bem a falácias.

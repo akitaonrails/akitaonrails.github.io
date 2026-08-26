@@ -140,7 +140,7 @@ Want to see only the Off-Topic posts? [Click here](/en/off-topic/).
 
 ## 2016 - April
 
-- <a class="aor-index-list__main-link" href="/en/2016/04/22/off-topic-software-livre-exercicio-de-capitalismo/" title="The author argues that free software remains private property under usage licenses, with voluntary exchanges and competition. That’s why projects can fail, be forked, or disappear.">[Off-Topic] Free Software: An Exercise in CAPITALISM</a>
+- <a class="aor-index-list__main-link" href="/en/2016/04/22/off-topic-free-software-an-exercise-in-capitalism/" title="Free software is private property distributed under a license, with voluntary exchange and competition free of any regulator. That&#39;s why projects die, forks get born, and nobody can decree success.">[Off-Topic] Free Software: An Exercise in CAPITALISM</a>
 - <a class="aor-index-list__main-link" href="/en/2016/04/20/off-topic-se-voce-precisa-de-validacao-provavelmente-esta-errado/" title="Drawing on his Rails journey, the author argues for producing on your own terms and rejecting moral authorities and dogmas. To him, critical thinking, falsifiable ideas, and personal responsibility are the antidote.">[Off-Topic] If You Need &quot;Validation,&quot; You&#39;re Probably Wrong</a>
 - <a class="aor-index-list__main-link" href="/en/2016/04/12/the-year-of-linux-on-the-desktop-by-microsoft/" title="I tested Bash on Windows in Preview 14316: Ruby, Redis, and Memcached work, but memory, shared memory, symlinks, and pseudo-terminals still fail. The promise is good, but it isn’t ready.">The Year of Linux on the Desktop, by Microsoft??</a>
 
