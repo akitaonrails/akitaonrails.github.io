@@ -24,7 +24,6 @@ Todos os códigos Ruby mostrados neste artigo podem ser testados no ambiente IRB
 
 Para começar, vejam este código:
 
-* * *
 
 ```ruby
 
@@ -45,7 +44,6 @@ Antes de mais nada, algumas explicações: o que outras linguagens chamam de fun
 
 Para colocar um método todo na mesma linha você poderia separar cada linha com “;” (ponto-e-vírgula):
 
-* * *
 
 ```ruby
 def nome; @nome; end—-
@@ -57,7 +55,6 @@ Para instanciar uma classe, basta chamar o método ‘new’ dela. Os parâmetro
 
 À primeira vista, o código acima não é diferente de algo semelhante em Java:
 
-* * *
 
   ```java
 
@@ -82,7 +79,6 @@ Nem mesmo em número de linhas de código temos algum ganho. Olhando apenas dess
 
 Bom, vejamos um outro exemplo – da mesma classe Ruby:
 
-* * *
 
 ```ruby
 
@@ -102,7 +98,6 @@ Ruby suporta herança simples de classes, assim como em Java ou C#. O caracter �
 
 Vamos a mais alguns exemplos simples:
 
-* * *
 
 ```ruby
 
@@ -142,7 +137,6 @@ Ruby foi muito influenciado por **Smalltalk** , a verdadeira linguagem que inspi
 
 O que muitos costumam reclamar em linguagens tradicionais é o seguinte:
 
-* * *
 
 ```java
 
@@ -155,7 +149,6 @@ class Teste {
 
 Muita coisa para fazer um simples “Hello World”. Agora vejamos o Hello World em Ruby:
 
-* * *
 
 ```ruby
 
@@ -164,7 +157,6 @@ puts “Hello World”
 
 _“Oras, mas Ruby não é OOP?? Cadê a classe!!?”_ Vamos entender o exemplo. Considerando que ainda estamos dentro do ambiente IRB, faça o seguinte:
 
-* * *
 
 ```ruby
 
@@ -182,7 +174,6 @@ Em Ruby, “self” é _mais ou menos_ parecido com a função do “this” em 
 
 Mas não é apenas isso, veja o seguinte:
 
-* * *
 
 ```ruby
 >> 1.class  
@@ -206,7 +197,6 @@ Uma coisa que não tem o que se fazer em muitas linguagens estáticas como Java 
 
 Quando precisamos de mais funcionalidades nesses casos, precisamos improvisar. Por exemplo:
 
-* * *
 
 ```java
 
@@ -226,7 +216,6 @@ Portanto a solução-gambiarra significa criar uma classe separada “StringUtil
 
 Em Ruby, podemos o mesmo problema resolver desta forma:
 
-* * *
 
 ```ruby
 class String  
@@ -247,7 +236,6 @@ Mas o mais importante: hoje estamos decidindo que a classe String deveria ter ma
 
 Vejamos outro exemplo de orientação a objetos mesclado com “eye candy”.
 
-* * *
 
 ```ruby
 
@@ -257,7 +245,6 @@ Vejamos outro exemplo de orientação a objetos mesclado com “eye candy”.
 
 Vamos lembrar do básico: números, em Ruby, são objetos, mais especificamente instâncias da classe Fixnum. Agora vejamos outra maneira de escrever a mesma coisa em Ruby, sem “eye candy”:
 
-* * *
 
   ```ruby
 
@@ -267,7 +254,6 @@ Vamos lembrar do básico: números, em Ruby, são objetos, mais especificamente 
 
 Espero que isso esteja claro: quando somamos dois números, na realidade estamos _chamando o método especial_ “+” do objeto “1” e passando como argumento o objeto “2”. E isso vale para todos os operadores matemáticos que conhecemos como “-”, “/”. Mas o que acontece quando tentamos somar dois objetos incompatíveis?
 
-* * *
 
 ```ruby
 
@@ -284,7 +270,6 @@ TypeError: String can’t be coerced into Fixnum
 
 Escrevi as duas maneiras novamente: passar um String como parâmetro ao método “+” de um Fixnum devolve uma exceção “TypeError” indicando que a operação é inválida. Mas digamos que, apenas por motivos didáticos, eu realmente queira que o Ruby reaja como Javascript ou Perl e que “1” seja convertido em String e depois concatenado ao parâmetro “2”, resultando em “12”.
 
-* * *
 
  ```ruby
 
@@ -309,7 +294,6 @@ Depois, mais uma novidade: o método ‘alias’. Esse é um método de classe q
 
 Outra coisa: quando uma classe é criada, reaberta ou ‘executada’ os métodos chamados dentro dela são executados. Ou seja, o comando ‘alias’, por exemplo, serve para reapontar um método com outro nome. No exemplo, já existia o método chamado “+” e com “alias” criamos um segundo método chamado “soma_velha” que aponta para a mesma implementação do método original. Ou seja, neste ponto as três chamadas a seguir se equivalem:
 
-* * *
 
 ```ruby
 
@@ -327,7 +311,6 @@ Mas fizemos mais: depois de criar o novo apontamento “soma_velha” reimplemen
 
 Note também que usamos o ‘if’ de uma forma um pouco diferente: no fim da expressão:
 
-* * *
 
 ```ruby
 
@@ -342,7 +325,6 @@ Esse conceito de reabrir uma classe e implementar uma nova funcionalidade ficou 
 
 O framework Ruby on Rails faz muito uso desse recurso. Um dos pacotes que compõe o Rails chama-se Active Support e uma de suas utilidades é justamente reabrir diversas classes padrão do Ruby para incorporar mais funcionalidades. Por exemplo:
 
-* * *
 
 ```ruby
 
@@ -373,7 +355,6 @@ O framework Ruby on Rails faz muito uso desse recurso. Um dos pacotes que compõ
 
 Como podem ver, podemos incrementar muito as funcionalidades de tudo que já existe. O Ruby on Rails começa exatamente assim: primeiro incorporando muitas coisas novas ao próprio Ruby e depois construindo sobre ela. Muitos são casos onde simplesmente depender de criar novas sub-classes não adiantaria muita coisa. Outro exemplo: em Java, se quisermos comparar o conteúdo de dois Strings, não devemos fazer isso:
 
-* * *
 
 ```java
 
@@ -389,7 +370,6 @@ if (a \> b) {
 
 O correto seria assim:
 
-* * *
 
 ```java
 if (a.equals(b)) {  
@@ -402,7 +382,6 @@ if (a.compareTo(b) \> 0) {
 
 Já, em Ruby, fazemos assim:
 
-* * *
 
 ```ruby
 
@@ -418,7 +397,6 @@ Exatamente como imaginaríamos que deveria ser. Isso porque “==” e “>” s
 
 No exemplo do Fixnum, reabrimos diretamente a classe para colocar novas funcionalidades. Mas podemos fazer diferente:
 
-* * *
 
 ```ruby
 Fixnum.class_eval do  
@@ -432,7 +410,6 @@ end
 
 Como a classe “Fixnum” é por si mesmo um objeto, podemos chamar métodos nela. Por exemplo, “new” é um método dessa instância de Class. O que fizemos acima é a mesma coisa que fizemos antes, mas esse código podemos colocar dentro um método, para ser executado somente quando quisermos. Ou seja, podemos alterar o comportamento de uma classe programaticamente. Mas podemos ser ainda mais seletivos:
 
-* * *
 
 ```ruby
 >> a = “teste”  
@@ -455,7 +432,6 @@ Veja agora: criamos um String na variável “a”. Então modificamos essa inst
 
 Agora vejamos um outro meio de injetar código em classes de maneiras mais organizadas:
 
-* * *
 
 ```ruby
 module MeusPatches  
@@ -478,7 +454,6 @@ end
 
 Módulos são como Classes que não podem ser instanciadas. No exemplo acima, organizamos dois métodos dentro de um módulo chamado “MeusPatches”. Em seguida reabrimos as classes “Fixnum” e “String”. No primeiro incluímos o módulo e no segundo extendemos o módulo. Para entender a diferença vamos usar isso:
 
-* * *
 
 ```ruby
 
@@ -497,7 +472,6 @@ O objeto “13” (que é instância de Fixnum) responde ao método do módulo. 
 
 No Ruby on Rails esse recurso é muito usado, principalmente para organizar códigos de classes muito longas. Por exemplo, o ActiveRecord tem centenas de funcionalidades. Colocar tudo numa única classe seria muito difícil de manter depois, por isso ele se organiza desta forma:
 
-* * *
 
 ```ruby
 
@@ -524,7 +498,6 @@ end
 
 Cada um dos includes acima tem um arquivo separado. Por exemplo ActiveRecord::QueryCache fica no arquivo “active_record/query_cache.rb”. É uma excelente maneira de organizar seus códigos. Mas existem alguns truques importantes de se conhecer. Uma delas é entender que módulos tem “eventos”. Ou seja, podemos instruir o módulo para executar alguma coisa toda vez que for incluso em alguma classe.
 
-* * *
 
 ```ruby
 
@@ -572,7 +545,6 @@ Você vai entender o que significa “send” na próxima seção. Apenas entend
 
 Se fôssemos reescrever a classe Pessoa sem o recurso de módulos, ela ficaria assim:
 
-* * *
 
 ```ruby
 
@@ -590,7 +562,6 @@ end
 
 Criar um método a partir de “self” significa que o método está disponível apenas à classe e não às suas instâncias. Novamente, para ser mais fácil de comparar, pense em métodos estáticos de classe como em Java. Mas entenda que não é a mesma coisa: em Java ou C# as classes são estruturas estáticas, em Ruby a própria classe é um objeto (pois ela é instância da classe “Class”). Outra maneira de escrever a mesma coisa seria:
 
-* * *
 
 ```ruby
 
@@ -608,7 +579,6 @@ end
 
 A diferença é que em vez de escrever “def self.” o tempo todo, podemos simplesmente reabrir a metaclasse da classe Pessoa e escrever todos os métodos “localmente” ali dentro. Em ambos os casos a classe vai se comportar da seguinte forma:
 
-* * *
 
   ```ruby
 

@@ -14,7 +14,6 @@ draft: false
 
 Uma das funcionalidades mais interessantes do Ruby é sem dúvida o famoso <tt>method_missing</tt>. Graças a ele podemos enviar mensagens arbitrárias a um objeto e ainda assim fazer com que responda como queremos. Por exemplo, o seguinte código dará uma exceção:
 
-* * *
 
 ```ruby
 
@@ -29,7 +28,6 @@ NoMethodError: undefined method `foo’ for #<object:0x0000010092ac60><br>
 
 Agora, podemos redefinir o método <tt>method_missing</tt> do <tt>Object</tt> e veja o que acontece:
 
-* * *
 
 ```ruby
 
@@ -48,7 +46,6 @@ Este foi um resumo rápido, recomendo que se ainda não estiver familiarizado co
 
 Um exemplo que gosto de usar é a classe Builder::XmlMarkup. Diferente de plataformas que fazem ou concatenação manual de Strings (péssimo) ou manipulação burocrática de nós (DOM), em Ruby temos essa excelente classe que minimiza a quantidade de código e ao mesmo tempo gera XML bem formatado e válido. Este é um exemplo:
 
-* * *
 
 ```ruby
 require ‘builder’  
@@ -83,7 +80,6 @@ Se nunca tinha visto isso, pare por um segundo e contemple a beleza desta API. A
 
 Pensando nisso, resolvi tentar fazer algo semelhante em Objective-C. A funcionalidade que permite esse tipo de API no Ruby é o <tt>method_missing</tt>, algo que imaginamos que somente linguagens dinâmicas conseguem ter. Porém, ao final deste artigo, quero fazer este código funcionar:
 
-* * *
 
 ```objc
 XmlBuilder* xml = [[XmlBuilder alloc] init];  
@@ -108,7 +104,6 @@ Antes de continuar, leia meu artigo sobre [Categorias e Blocos](/2010/11/28/obje
 
 Recapitulando, em Ruby, quando chamamos um método de um objeto, por exemplo:
 
-* * *
 
 ```ruby
 obj.foo(“Hello World”)
@@ -116,7 +111,6 @@ obj.foo(“Hello World”)
 
 Na realidade podemos dizer que estamos _“enviando a mensagem :foo ao objeto ‘obj’”_ ou seja, seria o mesmo que:
 
-* * *
 
 ```ruby
 
@@ -125,7 +119,6 @@ obj.send(:foo, “Hello World”)
 
 Em Obj-C temos algo semelhante. Quando fazemos:
 
-* * *
 
 ```objc
 
@@ -134,7 +127,6 @@ Em Obj-C temos algo semelhante. Quando fazemos:
 
 Seria o equivalente a fazer:
 
-* * *
 
 ```objc
 
@@ -143,7 +135,6 @@ Seria o equivalente a fazer:
 
 A diferença é que em Ruby temos Symbols e em Obj-C temos [Selectors](http://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/ObjectiveC/Articles/ocSelectors.html), que é semelhante, uma forma de não desperdiçar espaço com Strings. Porém, selectores são mais do que apenas métodos: eles representam o nome do método e seus atributos que em Obj-C são nomeados. Por exemplo, um método <tt>foo</tt>, com dois argumentos, poderia ser assim:
 
-* * *
 
 ```objc
 - (void) foo:(NSString*)bar value:(NSString*)xyz;  
@@ -151,7 +142,6 @@ A diferença é que em Ruby temos Symbols e em Obj-C temos [Selectors](http://de
 
 Esse método seria enviado ao objeto assim:
 
-* * *
 
 ```objc
 [obj foo:`"Hello" value:`“World”];  
@@ -159,7 +149,6 @@ Esse método seria enviado ao objeto assim:
 
 E seu seletor seria assim:
 
-* * *
 
 ```objc
 SEL t = @selector(foo:value:);  
@@ -173,7 +162,6 @@ Na realidade, em Obj-C essa técnica é chamada de [Message Forwarding](http://d
 
 O pseudo-código seria mais ou menos assim:
 
-* * *
 
 ```objc
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {  
@@ -195,7 +183,6 @@ O problema é que o padrão anterior pressupõe que o objeto de destino possui o
 
 Para começar, quero definir uma classe chamada <tt>XmlBuilder</tt> e as variáveis internas que vão acumular o XML e controlar o nível de indentação:
 
-* * *
 
 ```objc
 # import <Foundation/Foundation.h>
@@ -233,7 +220,6 @@ Até aqui nada de mais, apenas definição de interface, implementação, propri
 
 Agora a coisa começa a esquentar:
 
-* * *
 
 ```objc
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {  
@@ -258,7 +244,6 @@ Para começar, quero entender mensagens mais ou menos desse tipo:
 
 Ou seja, mensagens assim:
 
-* * *
 
 ```objc
 [xml p:@"Hello World"];  
@@ -267,7 +252,6 @@ Ou seja, mensagens assim:
 
 Agora, vamos definir o método principal:
 
-* * *
 
 ```objc
 
@@ -286,7 +270,6 @@ Vamos ver até a metade do método:
 2. Nesta primeira versão, por convenção, assumimos que se seletor terminar com “Block:” significa que receberemos um bloco como argumento. Em seguida limpamos isso no nome do seletor para ficar só o nome da tag. Por exemplo: “htmlBlock:” ficaria “html” apenas. Eu faço isso porque ainda não aprendi a identificar o tipo do argumento recebido, pois se eu puder identificar que recebi um bloco, não preciso da convenção (fica como um TODO).
 3. Aqui geramos uma String com espaços em branco representando o nível de identação atual do XML, para que o resultado final esteja bonito.
 
-* * *
 
 ```objc
 … if (hasBlock) { 
@@ -311,7 +294,6 @@ Continuando a partir da metade do código:
 
 Fazendo isso, podemos agora fazer chamadas assim:
 
-* * *
 
 ```objc
 int main (int argc, const char * argv[]) {  

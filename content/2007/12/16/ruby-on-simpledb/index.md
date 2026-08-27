@@ -45,7 +45,6 @@ Se quiser pesquisar um sistema parecido com o serviço SimpleDB, o CouchDB é um
 
 Copiando o exemplo do seu Wiki, eis como se criaria um banco de dados no CouchDb:
 
-* * *
 
 ```ruby
 
@@ -55,7 +54,6 @@ server.put(“/foo/”, "")
 
 Eis como se criaria um documento:
 
-* * *
 
 ```ruby
 server = Couch::Server.new(“localhost”, “5984”)  
@@ -67,7 +65,6 @@ server.put(“/foo/document_id”, doc)
 
 E finalmente, como se busca um documento:
 
-* * *
 
 ```ruby
 server = Couch::Server.new(“localhost”, “5984”)  

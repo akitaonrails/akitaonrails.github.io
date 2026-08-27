@@ -14,7 +14,6 @@ Continuando meus estudos com Objective-C, existem algumas funcionalidades que me
 
 Para facilitar, vamos ver um código Ruby para dar um exemplo do que quero fazer:
 
-* * *
 
 ```ruby
 class Array  
@@ -32,7 +31,6 @@ Em linguagens como Java isso não é possível porque as classes são fechadas, 
 
 No exemplo acima, reabri a classe padrão <tt>Array</tt> do Ruby e fiz minha própria versão do método <tt>each</tt>, que já existe, chamando-o de <tt>each_element</tt> somente com objetivos didáticos para este artigo. Agora podemos pegar um array normal e chamar esse método nele:
 
-* * *
 
 ```ruby
 
@@ -54,7 +52,6 @@ Na minha interpretação o Obj-C, assim como Ruby, são linguagens orientadas a 
 
 Uma convenção de nomenclatura que podemos usar é criar o arquivo header e a implementação usando o nome da classe a ser extendida, o símbolo “+”, e o nome da Categoria que queremos implementar. Por exemplo, digamos que eu queira a mesma funcionalidade do método <tt>each</tt> de Array do Ruby no equivalente <tt>NSArray</tt> do Obj-C, podemos fazer assim:
 
-* * *
 
 ```objc
 // NSArray+functional.h  
@@ -67,7 +64,6 @@ Uma convenção de nomenclatura que podemos usar é criar o arquivo header e a i
 
 E a implementação seria:
 
-* * *
 
 ```objc
 // NSArray+functional.m
@@ -99,7 +95,6 @@ O parâmetro que implementamos é <tt>(void (^) (id))block</tt>. “block” é 
 
 E como podemos usar essa nova categoria com o novo método? Vejamos:
 
-* * *
 
 ```objc
 # import “NSArray+functional.h”
@@ -122,7 +117,6 @@ Note que dentro do bloco o <tt>NSLog</tt> está usando a string <tt>msg</tt> que
 
 Em Ruby, eu posso capturar um bloco em uma variável, assim:
 
-* * *
 
 ```ruby
 
@@ -135,7 +129,6 @@ bloco.call(“bla”)
 
 No exemplo acima, criamos um bloco e em seguida executamos esse bloco usando o método <tt>call</tt>. Em Obj-C podemos fazer algo similar assim:
 
-* * *
 
 ```objc
 void (^bloco)(NSString*) = ^(NSString* msg) {  

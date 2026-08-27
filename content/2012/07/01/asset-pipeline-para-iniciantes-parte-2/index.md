@@ -23,7 +23,6 @@ Ou seja, se você pedir por <tt>http://localhost:3000/uploads/application.js</tt
 
 Por isso a recomendação, depois do último exercício com pré-compilação é apagar tudo:
 
-* * *
 
 ```
 rm -Rf public/uploads
@@ -37,7 +36,6 @@ A compilação em tempo real só acontece em desenvolvimento pois, obviamente, �
 
 Outra coisa importante, os arquivos de assets que se chamam “application”, são automaticamente compilados. Mas digamos que você tem um stylesheet que não vai carregar no layout principal, mas só em algumas outra seções, digamos que se chame <tt>special.css</tt>, ou seja, precisamos encontrá-lo em <tt>http://localhost:3000/uploads/special.css</tt>, criamos nesta estrutura:
 
-* * *
 
 ```
 app  
@@ -48,7 +46,6 @@ app
 
 Porém, se reexecutarmos o rake task <tt>assets:precompile</tt> novamente, verá que esse arquivo não aparece em <tt>public/uploads</tt>. Recapitulando, arquivos “application” são automaticamente usados na précompilação. Todo asset declarado nesses manifestos, será usado dentro dos arquivos minificados “application”. Agora, para adicionar arquivos extras, precisamos declará-los manualmente em <tt>config/application.rb</tt>, adicionado uma linha assim:
 
-* * *
 
 ```ruby
 config.assets.precompile += %w(special.css)  
@@ -58,7 +55,6 @@ Colocar tudo no “application” e carregar esse arquivo no layout principal pa
 
 Agora sim, se executar a task de precompile novamente, teremos algo como:
 
-* * *
 
 ```
 special-f7bf76f875ce5c9edd0075eaea3f6140.css  
@@ -71,7 +67,6 @@ special.css.gz
 
 Agora, por que adicionamos o Compass? Não vou fazer desta seção um tutorial de Compass, mas para que entendem o básico, podemos adicionar o seguinte CSS de exemplo em <tt>app/uploads/stylesheets/application.css.scss</tt>:
 
-* * *
 
 ```css
 @import “compass”;
@@ -92,7 +87,6 @@ Agora, por que adicionamos o Compass? Não vou fazer desta seção um tutorial d
 
 Na maior parte parece um CSS normal, mas a diferença maior está nos comandos <tt>@include</tt> do Sass, que serve para carregar “Mixins”. Pense em Mixin no Sass como “funções” que retornam CSS parametrizável e reusável. O Compass é uma biblioteca de Mixins que encapsulam alguns dos aspectos mais comuns de CSS. No exemplo, estamos chamando os mixins <tt>text-shadow</tt> e <tt>border-radius</tt>, cuja função deve ser bastante óbvia. Vamos ver o CSS que isso gera:
 
-* * *
 
 ```css
 ** line 3, ../../app/uploads/stylesheets/application.css.scss **/  
@@ -126,7 +120,6 @@ Isso é interessante, mas a principal função, para fechar todas as situações
 
 Primeiro, vamos adicionar duas novas imagens na pasta <tt>app/images/social-icons</tt>:
 
-* * *
 
 ```
 app  
@@ -139,7 +132,6 @@ app
 
 Agora, vamos adicionar o seguinte HTML em <tt>app/views/home/index.html.erb</tt>:
 
-* * *
 
 ```html
 
@@ -156,7 +148,6 @@ Agora, vamos adicionar o seguinte HTML em <tt>app/views/home/index.html.erb</tt>
 
 Nada demais, apenas o objetivo de adicionar ícones de redes sociais com links a eles. Para estilizá-los, vamos completar nosso SCSS assim:
 
-* * *
 
 ```css
 
@@ -188,7 +179,6 @@ Novamente, estude SASS para entender essa sintaxe e também note que novamente u
 
 Agora localize esta linha: <tt>@include social-icons_sprite(#{$network})</tt>. O nome da pasta, com o sufixo “_sprite” se torna um mixin, que recebe como parâmetro o nome da imagem/sprite. O que significa isso no CSS gerado ao final? Vejamos:
 
-* * *
 
 ```css
 
@@ -220,7 +210,6 @@ Para complementar, sempre que usarmos chamadas como <tt>background: url(/uploads
 
 Vejamos um exemplo mais concreto. Vamos adicionar o seguinte ao nosso <tt>application.css.scss</tt>:
 
-* * *
 
 ```css
 h1 {  
@@ -232,7 +221,6 @@ h1 {
 
 O que confunde é que isso de fato funciona. Porém, caímos nos problema mencionados no início do artigo: sem o número timestamp, se atualizarmos a imagem, os usuários ficarão travados na versão antiga em cache local. Se quisermos migrar para CDN vamos ter problemas de mudar todas essas URLs manualmente, etc. Portanto, no caso de SASS o correto é usar a função <tt>image-url</tt> e fazer desta forma:
 
-* * *
 
 ```css
 background: image-url(“rails.png”) no-repeat;
@@ -242,7 +230,6 @@ background: image-url(“rails.png”) no-repeat;
 
 Isto irá gerar a URL correta. Temos as seguinte variações:
 
-* * *
 
 ```ruby
 image-url(“rails.png”) # url(/uploads/rails.png)  
@@ -253,7 +240,6 @@ asset-path(“rails.png”, image) # “/uploads/rails.png”
 
 Agora, se for necessário URLs de assets dentro do Javascript, não há equivalente no <tt>application.js</tt> puro, por isso precisaríamos renomeá-lo para <tt>application.js.erb</tt> e então a mesma regra que usaríamos em views HTML ERB normais valem:
 
-* * *
 
 ```ruby
 var imagem = “<%= image_path(”rails.png") \>";  
@@ -270,7 +256,6 @@ Vejam a documentação do [ActionView::Helpers::AssetTagHelper](http://api.rubyo
 
 Não vou entrar em detalhes sobre como configurar um NGINX completo, mas fica um lembrete para não esquecer de adicionar à configuração do servidor o seguinte trecho:
 
-* * *
 
 ```conf
 location ~ ^/uploads/ {  
@@ -286,7 +271,6 @@ Isso garantirá que o browser do usuário guarde todos os assets no seu cache lo
 
 E para diminuir ainda mais a quantidade de bits transportado entre o servidor e o browser dos usuários, lembre de checar se o suporte a gzip está ativado:
 
-* * *
 
 ```conf
 

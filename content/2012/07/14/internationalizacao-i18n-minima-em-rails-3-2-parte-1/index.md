@@ -33,7 +33,6 @@ Não pretendo repetir a antiga discussão sobre encodings, UTF8, e o suporte no 
 
 Além disso, uma coisa a se lembrar se você gosta de criar seu banco de dados via linha de comando sem usar o <tt>rake db:create</tt> é adicionar o character set e collate corretos. No MySQL sempre faça:
 
-* * *
 
 ```sql
 CREATE DATABASE dbname   
@@ -43,7 +42,6 @@ COLLATE utf8_general_ci;
 
 E no PostgreSQL faça:
 
-* * *
 
 ```sql
 CREATE DATABASE dbname  
@@ -59,7 +57,6 @@ Sempre utilize um editor de texto decente que salve arquivos, por padrão, em UT
 
 Outra coisa que confunde muitas pessoas, alguns arquivos Ruby recebem um cabeçalho, logo na primeira linha, parecido com as linhas abaixo:
 
-* * *
 
 ```ruby
 1. encoding: UTF-8
@@ -74,7 +71,6 @@ Qualquer uma das opções acima tem o mesmo efeito. A regra é simples: se você
 
 Assumindo que estamos usando o Rails 3.2 (3.2.6, para ser mais preciso). Criamos uma aplicação normalmente:
 
-* * *
 
 ```bash
 rails new i18n_demo
@@ -82,7 +78,6 @@ rails new i18n_demo
 
 Agora vamos fazer algumas mudanças que você deveria fazer em toda aplicação:
 
-* * *
 
 ```bash
 rm public/index.HTML
@@ -92,7 +87,6 @@ rm public/index.HTML
 
 Adicione as seguintes gems no seu <tt>Gemfile</tt>:
 
-* * *
 
 ```ruby
 
@@ -110,7 +104,6 @@ end
 
 Modifique seu <tt>config/application.rb</tt>, aproximadamente na linha 28, para ficar como no trecho a seguinte:
 
-* * *
 
 ```ruby
 #1. Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
@@ -134,7 +127,6 @@ Eu particularmente prefiro utilizar arquivos YAML do que hashes em Ruby. Tecnica
 
 Um dos rubistas que há mais tempo vem auxiliando no suporte a i18n no Rails é [Sven Fuchs](http://svenfuchs.com), a grande maioria das técnicas, bibliotecas, e tudo mais que temos de I18n veio inicialmente dele, vale a pena conhecê-lo melhor. Além disso o suporte canônico a arquivos de localização está no seu projeto [rails-i18n](https://github.com/svenfuchs/rails-i18n). Você vai encontrar traduções de praticamente todas as linguagens do mundo que importa. No nosso caso, queremos puxar a localização em Português. Faça assim:
 
-* * *
 
 ```bash
 curl <https://raw.github.com/svenfuchs/rails-i18n/master/rails/locale/pt-BR.yml> \> config/locales/rails.pt-BR.yml  
@@ -143,7 +135,6 @@ curl <https://raw.github.com/svenfuchs/rails-i18n/master/rails/locale/pt-BR.yml>
 
 Somente isso já lhe vai traduzir a maioria dos helpers do Rails. Para testar, vamos criar uma página simples:
 
-* * *
 
 ```bash
 rails g controller welcome_index
@@ -151,7 +142,6 @@ rails g controller welcome_index
 
 Adicione no seu arquivo de rotas:
 
-* * *
 
 ```ruby
 I18nDemo::Application.routes.draw do  
@@ -162,7 +152,6 @@ end
 
 E coloque no seu arquivo <tt>app/views/welcome/index.html.erb</tt>
 
-* * *
 
 ```html
 <dl>
@@ -195,7 +184,6 @@ Praticamente todo aplicativo web precisa de autenticação. Não somente login, 
 
 Na prática, dado que já incluímos a gem no <tt>Gemfile</tt> anteriormente e já rodamos <tt>bundle</tt> para instalar as gems, o próximo passo é criar os arquivos que precisamos:
 
-* * *
 
 ```bash
 rails g devise:install  
@@ -204,7 +192,6 @@ rails g devise User
 
 Da mesma forma como fizemos antes, vamos baixar as traduções que precisamos. O primeiro lugar a procurar é no [Wiki oficial do Devise](https://github.com/plataformatec/devise/wiki/I18n) que, atualmente, sugere o projeto do [Christopher Dell](http://tigrish.com/) que tenta ser o [repositório centralizado](https://github.com/tigrish/devise-i18n) com todas as traduções em todas as linguagens para o Devise.
 
-* * *
 
 ```bash
 curl <https://raw.github.com/tigrish/devise-i18n/master/locales/en-US.yml> > config/locales/devise.en.yml  
@@ -213,7 +200,6 @@ curl <https://github.com/tigrish/devise-i18n/blob/master/locales/pt-BR.yml> > co
 
 Mas somente isso não é suficiente. Você pode utilizar as views que vem embutidas na Rails Engine do Devise ou pode precisar customizá-las e nesse caso precisa copiar essas views para dentro do seu projeto, desta forma:
 
-* * *
 
 ```bash
 rails g devise:views
@@ -265,7 +251,6 @@ Veja que ele copia muitos arquivos. Vamos abrir um deles:
 
 Note que todos os textos estão embutidos: exatamente o que eu disse que numa aplicação I18n não devemos fazer. Ou seja, para tornar essas views traduzíveis, precisamos extrair uma a uma. Sim, será bastante trabalho. Ou você pode usar o caminho mais fácil e procurar alguém que já tenha feito isso – como eu fiz neste aplicativo de exemplo.
 
-* * *
 
 ```bash
 wget <https://raw.github.com/akitaonrails/Rails-3-I18n-Demonstration/master/config/locales/devise.views.en.yml> \> config/locales/devise.views.en.yml  
@@ -274,7 +259,6 @@ wget <https://raw.github.com/akitaonrails/Rails-3-I18n-Demonstration/master/conf
 
 Isso vai copiar as traduções que você vai precisar. Agora faça um clone do meu projeto e copie sobre o seu (caso esteja fazendo este exercício enquanto lê o artigo):
 
-* * *
 
 ```bash
 cd ..  
@@ -287,7 +271,6 @@ cp -R ../akitaonrails-i18n_demo/app/views/devise/* app/views/devise/
 
 Isso deve sobrescrever as views criadas pelo gerador padrão do Devise pela minha versão já com as strings substituídas. Apenas como dica note que no arquivo de tradução temos trechos como este:
 
-* * *
 
 ```yaml
 
@@ -301,7 +284,6 @@ pt-BR:
 
 E para acesssar a tradução podemos fazer assim:
 
-* * *
 
 ```ruby
 I18n.locale = :“pt-BR”  
@@ -313,7 +295,6 @@ I18n.t(:title, scope: [:devise, :confirmations, :new])
 
 Qualquer dessas e outras variações funcionam igual e acham a string correta, mas na view que você baixou do meu projeto, temos o seguinte no arquivo <tt>app/views/devise/confirmations/new.html.erb</tt>:
 
-* * *
 
 ```html
 # <%= t(“.title”) %\>
@@ -325,7 +306,6 @@ O Rails automaticamente usa a convenção <tt>{namespace}/{controllers}/{action}
 
 Outra coisa importante é traduzir os nomes dos modelos e seus atributos. Eles são usados pelos helpers de formulários do Rails. No arquivo <tt>config/locales/rails.pt-BR.yml</tt> adicione ao final do arquivo:
 
-* * *
 
 ```yaml
 activemodel:  
@@ -354,7 +334,6 @@ O modelo <tt>User</tt> já foi criado pelo Devise. Ainda não criamos o modelo <
 
 > Sempre desenvolva todas as suas aplicações em inglês, é uma boa recomendação. E que seja português sempre a segunda linguagem. Usando essa convenção você não deve ter grandes problemas. Mas ao mesmo tempo não inclua no arquivo <tt>config/initializers/inflections.rb</tt> as regras de pluralização em português, pois isso vai causar problemas ao Rails para encontrar nomes de tabelas ao pluralizá-los usando a regra errada em português.
 
-* * *
 
 ```yaml
 en:  
@@ -373,7 +352,6 @@ en:
 
 O conceito é simples: queremos um suporte que me permita utilizar os mesmos nomes de atributos mas que devolvam valores diferntes dependendo da localização escolhida atualmente. Um código de teste seria assim:
 
-* * *
 
 ```ruby
 require ‘spec_helper’
@@ -401,7 +379,6 @@ end
 
 A opção que escolhi foi novamente um projeto do Sven Fuchs, o [Globalize 3](https://github.com/svenfuchs/globalize3). Esse projeto tem um longo histórico que volta desde, claro, [Globalize 2](https://github.com/joshmh/globalize2) e [Globalize](https://github.com/yannlugrin/globalize). Obviamente, não use as versões antigas, coloquei os links apenas para referência. Como sempre, adicione ao seu <tt>Gemfile</tt> e execute <tt>bundle</tt> em seguida:
 
-* * *
 
 ```ruby
 gem ‘globalize3’
@@ -409,7 +386,6 @@ gem ‘globalize3’
 
 Para demonstrar como funciona, vamos criar um novo model:
 
-* * *
 
 ```bash
 rails g model Article slug title body:text body_html:text  
@@ -417,7 +393,6 @@ rails g model Article slug title body:text body_html:text
 
 Preste atenção no arquivo de migration criado por esse generator. Abra no seu editor e modifique para que ele fique da seguinte forma:
 
-* * *
 
 ```ruby
 
@@ -438,7 +413,6 @@ end
 
 Não use o método <tt>change</tt> da migration. Feita a mudança execute <tt>rake db:migrate</tt> para criar as tabelas. Agora, vamos alterar o arquivo <tt>app/model/article.rb</tt>:
 
-* * *
 
 ```ruby
 
@@ -461,7 +435,6 @@ Uma das formas de esconder esses IDs numéricos é usar um [slug](http://en.wiki
 
 A gem que recomendo para gerenciar slugs é a [Friendly Id](https://github.com/norman/friendly_id/blob/master/lib/friendly_id/slugged.rb) do Norman Clark. A utilização é muito simples: primeiro garanta ter um campo <tt>slug</tt> no seu model, lembrando de adicionar também um índice que garanta sua unicidade no banco. Olhe novamente a migration anterior e vai encontrar esta linha:
 
-* * *
 
 ```ruby
 add_index :articles, :slug, unique: true  
@@ -469,7 +442,6 @@ add_index :articles, :slug, unique: true
 
 Feito isso adicione a gem no <tt>Gemfile</tt>:
 
-* * *
 
 ```ruby
 gem ‘friendly_id’
@@ -477,7 +449,6 @@ gem ‘friendly_id’
 
 Execute <tt>bundle</tt> para instalar e modifique seu modelo:
 
-* * *
 
 ```ruby
 class Article < ActiveRecord::Base  
@@ -494,7 +465,6 @@ def should_generate_new_friendly_id? new_record? end
 
 Se fizer tudo corretamente, o comportamento será de acordo com a seguinte spec:
 
-* * *
 
 ```ruby
 require ‘spec_helper’

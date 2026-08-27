@@ -24,7 +24,6 @@ Continuando com os tipos básicos de Ruby (no artigo anterior já falamos de Arr
 
 Novamente, nada de muito surpreendente aqui:
 
-* * *
 
 ```ruby
 
@@ -36,7 +35,6 @@ Novamente, nada de muito surpreendente aqui:
 
 A operação mais comum em string é a concatenação:
 
-* * *
 
 ```ruby
 >> nome = “Fabio”  
@@ -49,7 +47,6 @@ A operação mais comum em string é a concatenação:
 
 Porém, já vimos em seções anteriores outra maneira de fazer a mesma concatenação:
 
-* * *
 
 ```ruby
 
@@ -59,7 +56,6 @@ Porém, já vimos em seções anteriores outra maneira de fazer a mesma concaten
 
 Tudo que estiver dentro de “#{}” é executado e o resultado convertido em String e concatenado junto com o resto. Isso deve evitar aquele monte de “+” o tempo todo quando queremos concatenar as coisas. Um dos lugares onde mais usamos concatenação é quando queremos strings com quebras de linha. O jeito comum é fazer assim:
 
-* * *
 
 ```ruby
 
@@ -73,7 +69,6 @@ Tudo que estiver dentro de “#{}” é executado e o resultado convertido em St
 
 Ou algo parecido com isso, o que é bem feio e sabemos o quanto isso se torna impossível de dar manutenção no futuro. Mas em Ruby podemos fazer um pouco melhor que isso:
 
-* * *
 
 ```ruby
 >> nome = “F”<<-STR  
@@ -86,7 +81,6 @@ STR
 
 Onde está “STR” na realidade pode ser qualquer palavra em letras maiúsculas, tomando o cuidado para não ter espaços em branco nem antes nem depois do “STR” da última linha. Aproveitando os comentários do Tapajós e do Hugo, existem mais algumas maneiras e fazer isso:
 
-* * *
 
 ```ruby
 >> nome = “F”  
@@ -99,7 +93,6 @@ ORDER BY NOME}
 
 E também desta maneira:
 
-* * *
 
 ```ruby
 
@@ -113,7 +106,6 @@ ORDER BY NOME)
 
 Todas as maneiras acima são jeitos de se criar strings de múltiplas linhas com a possibilidade de execução e substituição in-place usando “#{}”. Eu particularmente prefiro fazer alguma coisa do tipo:
 
-* * *
 
 ```ruby
 >> nome = “F”  
@@ -137,7 +129,6 @@ A sintaxe de “%q()” também permite criar strings de múltiplas linhas mas n
 
 Note que na seção sobre Hashes, criamos um pequeno dicionário ligando uma palavra em inglês à sua tradução em português. Para isso usamos objetos String tanto para os valores quanto para as chaves, por exemplo:
 
-* * *
 
 ```ruby
 dic1 = { “leg” => “perna” }  
@@ -145,7 +136,6 @@ dic1 = { “leg” => “perna” }
 
 Mas você vai notar que em Ruby e principalmente no Rails, não costumamos usar Strings como chaves. Em vez disso usamos Symbols:
 
-* * *
 
 ```ruby
 dic2 = { :leg => “perna” }  
@@ -155,7 +145,6 @@ Quero dizer, não é proibido usar Strings, mas se não precisar, prefira usar S
 
 Em poucas palavras, um Symbol sempre gera um objeto Singleton imutável. Por exemplo:
 
-* * *
 
 ```ruby
 >> a = :leg  
@@ -170,7 +159,6 @@ Em poucas palavras, um Symbol sempre gera um objeto Singleton imutável. Por exe
 
 Note como atribuímos :leg às variáveis “a” e “b”. Chamando o método “object_id”, ambas respondem o mesmo ID, denotando que as duas variáveis estão apontando ao mesmo objeto Symbol. Vejamos o mesmo exemplo usando Strings:
 
-* * *
 
 ```ruby
 >> a = “leg”  
@@ -187,7 +175,6 @@ Note como os dois IDs vieram diferentes. Ou seja, apesar do conteúdo ser o mesm
 
 Existem vários outros objetos singleton em Ruby. Números é um deles, afinal não faz sentido existir mais de um número “1”. O mesmo vale para objetos booleanos. Por exemplo:
 
-* * *
 
 ```ruby
 >> a = 1  
@@ -207,7 +194,6 @@ Existem vários outros objetos singleton em Ruby. Números é um deles, afinal n
 
 Na prática, sempre use Symbols como chaves de Hash. É onde eles são mais usados. Em Ruby on Rails, o pacote ActiveSupport consegue traduzir Hashes com chaves em String para Symbols, desta forma:
 
-* * *
 
   ```ruby
 >> require ‘rubygems’  
@@ -228,7 +214,6 @@ Na prática, sempre use Symbols como chaves de Hash. É onde eles são mais usad
 
 Depois de tudo isso, podemos ir um pouco além. Em Ruby temos maneiras muito diferentes de se escrever métodos. Em linguagens estáticas, como Java, temos o conceito de [overloading](http://en.wikipedia.org/wiki/Method_overloading). Por exemplo:
 
-* * *
 
 ```java
 public class Pessoa {  
@@ -244,7 +229,6 @@ this(nome, "");
 
 Esse trecho define a classe “Pessoa” com dois construtores. Dessa forma podemos instanciar uma nova Pessoa da seguinte forma:
 
-* * *
 
 ```java
 
@@ -256,7 +240,6 @@ Ou seja, o parâmetro “email” é opcional. Dependendo se passamos ou não es
 
 Porém, esse tipo de construção pode começar a ficar extremamente tedioso quando temos muitos parâmetros opcionais. Em Ruby temos algumas maneiras diferentes de lidar com isso. Para começar vejamos uma maneira simples:
 
-* * *
 
 ```ruby
 class Pessoa  
@@ -270,7 +253,6 @@ Duas novidades: primeiro que um método suporta valores padrão. Dessa forma, se
 
 Outra maneira:
 
-* * *
 
 ```ruby
 class Pessoa  
@@ -293,7 +275,6 @@ end
 
 O que temos no contrutor acima, o “*”, é o “splat”. Pense nele como um buraco-negro: depois do parâmetro normal “nome”, tudo que vier depois será literalmente sugado para dentro da variável “args”. A resultante disso será um Array. Isso permite um método que tenha capacidade para infinitos argumentos. Outro exemplo de uso é este:
 
-* * *
 
 ```ruby
 
@@ -311,7 +292,6 @@ end
 
 Felizmente já explicamos para que serve o “inject”. Resumindo: esse método somará todos os elementos passados como parâmetros, independente de quantos forem. E ainda podemos fazer mais: passar um array expandindo seus elementos para serem parâmetros:
 
-* * *
 
 ```ruby
 
@@ -323,7 +303,6 @@ Felizmente já explicamos para que serve o “inject”. Resumindo: esse método
 
 Se passássemos o array “items” sem o splat para expandí-lo, o array inteiro seria considerado um único elemento do array “args” dentro do método, não dando o efeito esperado, veja:
 
-* * *
 
 ```ruby
 >> soma items  
@@ -339,7 +318,6 @@ TypeError: can’t convert Fixnum into Array
 
 Outra situação é quando temos métodos com um número muito grande de parâmetros opcionais. No Ruby on Rails temos exemplos como este:
 
-* * *
 
 ```ruby
 >> Person.find :first, :conditions => { :nome => “Fabio” }, :order => :nome  
@@ -350,7 +328,6 @@ Qualquer um que já tenha lidado com SQL sabe que montar consultas pode ser bast
 
 Vejamos como é definido o método “find” da classe “ActiveRecord::Base”
 
-* * *
 
 ```ruby
 
@@ -368,7 +345,6 @@ O método “find” por si só é somente um envelope que chama outros métodos
 
 Dependendo do primeiro argumento, ele repassa o Hash a métodos como “find_initial”, “find_last”, etc. No caso, o Hash em questão é o seguinte:
 
-* * *
 
 ```ruby
 options = { :conditions => { :nome => “Fabio” }, :order => :nome }
@@ -376,7 +352,6 @@ options = { :conditions => { :nome => “Fabio” }, :order => :nome }
 
 Vejamos um exemplo mais simples de um método com um parâmetro obrigatório e uma lista de parâmetros opcionais:
 
-* * *
 
 ```ruby
 class Pessoa  
@@ -403,7 +378,6 @@ end
 
 Caso não saiba, o método “attr_accessor” serve para criar métodos equivalentes a “getters” e “setters” de Java ou C#. Como já falamos em seções anteriores, classes Ruby podem ser modificadas em tempo de execução. Veremos isso depois, por enquanto vejamos o construtor novamente. Depois do primeiro parâmetro, temos o familiar uso do par chave e valor. O que pode parece estranho é que talvez alguém estivesse esperando algo assim:
 
-* * *
 
 ```ruby
 fabio = Pessoa.new(“Fabio”, {:sobrenome => “Akita”, :iniciais => "FMA"})  
@@ -413,7 +387,6 @@ fabio = Pessoa.new(“Fabio”, {:sobrenome => “Akita”, :iniciais => "FMA"})
 
 Novamente, as chaves “{}” são opcionais: os últimos parâmetros, sendo pares com a sintaxe de “rocket” (“=>”) são tratados como elementos do mesmo Hash e todos são “sugados” para o parâmetro “options” no método construtor. Retirando tudo que é opcional, a chamada poderia ficar simplesmente assim:
 
-* * *
 
 ```ruby
 fabio = Pessoa.new “Fabio”, :sobrenome => “Akita”, :iniciais => “FMA”
@@ -425,7 +398,6 @@ E assim temos algumas maneiras para criar métodos bastante flexíveis. Obviamen
 
 Vejamos mais sobre o método “attr_accessor”:
 
-* * *
 
 ```ruby
 
@@ -445,7 +417,6 @@ end
 
 Podemos reimplementar nossa própria versão simplificada de “attr_accessor” desta maneira:
 
-* * *
 
 ```ruby
 class Object  
@@ -471,7 +442,6 @@ end
 
 Abrindo a classe Object significa que nosso método “my_accessor” estará disponível a qualquer classe do Ruby, já que todos herdam de Object. Esse método recebe um array de symbols, como já descrevemos antes. Daí usamos “each” para iterar symbol a symbol, e para cada um chamamos “module_eval” que simplesmente executa qualquer String passado a ele, no caso criamos dinamicamente dois métodos, os equivalente a “getter” e “setter”. Para o exemplo :telefone, seria o mesmo que escrevêssemos:
 
-* * *
 
 ```ruby
 class Pessoa  
@@ -482,7 +452,6 @@ end
 
 Muita gente confunde “meta-programação” com “reflexão”. Reflexão é apenas perguntar a um objeto o que ele responde. Podemos fazer isso em Ruby de várias maneiras:
 
-* * *
 
 ```ruby
 >> a = “string”  
@@ -515,7 +484,6 @@ Como mais um exemplo da flexibilidade do Ruby, vamos analisar o bom o velho “n
 
 Em Ruby, estamos falando do ‘nil’. Porém, como quase tudo em Ruby é um objeto, assim também é ‘nil’:
 
-* * *
 
 ```ruby
 >> nil  
@@ -530,7 +498,6 @@ Ou seja, quando um método não devolve nada, ou seja, ‘nil’, ainda assim el
 
 Não é difícil cair em situações onde queremos chamar um método em um objeto onde ainda não sabemos se o objeto é nil ou não. Por isso costumamos fazer algo assim:
 
-* * *
 
 ```ruby
 unless obj.nil?  
@@ -542,7 +509,6 @@ end
 
 Aqui eu propositadamente fiz um código mais longo do que deveria, apenas para aproveitar e demonstrar o “unless”. Pense nele como o oposto de “if”. Em outras linguagens estamos acostumados a fazer algo assim:
 
-* * *
 
 ```ruby
 
@@ -551,7 +517,6 @@ if !obj.nil? …
 
 Ou seja, “se não for …”. Mas em vez disso, em Ruby preferimos dizer “a menos que …”. Fica menos poluído do que colocar “!” (“not”) o tempo todo. Além disso chamamos o método “nil?” que checa se o objeto atual é nulo ou não. Esse método “nil?” está presente direto da classe pai “Object”, portanto todos os objetos no Ruby respondem a esse método, em particular, como “nil” também é um objeto, ele também responde a esse método:
 
-* * *
 
 ```ruby
 
@@ -563,7 +528,6 @@ Ou seja, “se não for …”. Mas em vez disso, em Ruby preferimos dizer “a 
 
 E eu disse que o código acima era mais longo do que o necessário porque sempre podemos usar o operador ternário (que também existe em outras linguagens):
 
-* * *
 
 ```
 ```ruby
@@ -575,7 +539,6 @@ Ou seja, se “obj” devolver “true” (apenas “false” e “nil” respon
 
 Como em qualquer objeto, se tentarmos chamar um método em ‘nil’ que não existe, ele responderá normalmente com uma exceção:
 
-* * *
 
 ```ruby
 
@@ -586,7 +549,6 @@ NoMethodError: undefined method `size’ for nil:NilClass
 
 Um outro truque que [discutiu-se](http://ozmm.org/posts/try.html) algum tempo atrás é criar um novo método em Object chamado “try”:
 
-* * *
 
 ```ruby
 

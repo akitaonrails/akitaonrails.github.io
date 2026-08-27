@@ -28,7 +28,6 @@ Mas enquanto eu revia a página, percebi que com as linguagens modernas de hoje 
 
 Aqui vai o código fonte completo em Ruby do interpretador Lisp da página 13 do manual do programador de Lisp:
 
-* * *
 
 ```ruby
 class Object  
@@ -216,7 +215,6 @@ E para provar, aqui vai um exemplo de programa em Lisp. Eu não me incomodei em 
 
 Aqui vai o programa ruby usando o interpretador Lisp. O sistema Lisp é muito primitivo. A única maneira de definir uma função necessária é colocá-la em uma estrutura de ambiente, que é simplesmente uma lista de associação de chaves e valores.
 
-* * *
 
 ```ruby
 

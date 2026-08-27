@@ -33,7 +33,6 @@ Baixem [este vídeo](http://topfunky.com/clients/blog/autotest-tm.mov) gratuito 
 
 O [ZenTest](http://www.zenspider.com/ZSS/Products/ZenTest/) vem com o utilitário ‘autotest’. A partir da raíz do seu projeto Rails, apenas digite:
 
-* * *
 
 ```bash
 autotest rails  
@@ -51,7 +50,6 @@ Observando o seu console constantemente você terá rapidamente e em primeira m�
 
 Para sabe isso, instale também o [rCov](http://eigenclass.org/hiki.rb?rcov) que é o pacote de cobertura de código para Ruby. Basta fazer:
 
-* * *
 
 ```bash
 gem install rcov  
@@ -59,7 +57,6 @@ gem install rcov
 
 Depois instale o plugin [rails_rcov](http://blog.codahale.com/2006/05/26/rails-plugin-rails_rcov/) no seu projeto assim:
 
-* * *
 
 ```bash
 ./script/plugin install x <http://svn.codahale.com/rails_rcov>  
@@ -129,7 +126,6 @@ Poderia parecer que [humanos](http://en.wikipedia.org/wiki/Human) poderiam resol
 
 “Resolver” o Halting Problem significa ser capaz de olhar para qualquer programa e dizer se ele termina. Não é suficiente ser capaz de olhar para alguns programas e decidir. Humanos podem não se capazes de resolver halting problems por causa do tamanho da entrada (um programa com milhões de linhas de código). Mesmo para programas curtos, não é claro que humanos possam sempre dizer se um programa termina. Por exemplo, poderíamos nos perguntar se o seguinte programa em Ruby (que é um Turing Machine e é [Turing Complete](http://en.wikipedia.org/wiki/Turing-complete)), vai terminar:
 
-* * *
 
 ```ruby
 def procurar_por_numero_impar_perfeito  

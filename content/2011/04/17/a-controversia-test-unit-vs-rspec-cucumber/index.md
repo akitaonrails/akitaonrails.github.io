@@ -29,7 +29,6 @@ Só para adiantar a conclusão: se alguém estava levando a discussão para o n�
 
 É importante que as pessoas primeiro coloquem a imagem dos códigos na cabeça antes de continuarmos a discussão. Este é um exemplo pequeno de um teste unitário escrito com RSpec:
 
-* * *
 
 ```ruby
 
@@ -44,7 +43,6 @@ end
 
 Este é um pequeno trecho de um teste do arquivo <tt>cart_spec.rb</tt> do projeto [ror_ecommerce](https://github.com/drhenner/ror_ecommerce). O que uma DSL como RSpec fornece é uma descrição suscinta em “quase-inglês” que poderíamos ler assim:
 
-* * *
 
 ```ruby
 
@@ -70,7 +68,6 @@ Este trecho foi retirado do projeto [isitruby19](http://isitruby19.com/). Acho q
 
 Mas este arquivo de Cucumber, sozinho, não faz tudo. Ele precisa necessariamente de outro código que faz par com ele por baixo dos panos, este sim, escrito em Ruby:
 
-* * *
 
 ```ruby
 
@@ -121,7 +118,6 @@ O objetivo do Cucumber é que essas “User Stories” sejam escrita em inglês 
 
 Finalmente vejamos um teste no antigo Test::Unit (em particular com suporte do Rails):
 
-* * *
 
 ```ruby
 

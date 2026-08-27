@@ -18,7 +18,6 @@ Recordando, eu estou usando ETAGs para economizar processamento. Leia meu [artig
 
 Porém, eu gero o ETAG usando o campo ‘updated_at’, ou seja, eu preciso acabar indo ao banco e buscar essa informação. Algo parecido com isso:
 
-* * *
 
 ```ruby
 def show  
@@ -34,7 +33,6 @@ O método <tt>find_by_permalink</tt> é específico do meu blog (veja o código 
 
 A solução mais simples que eu pensei foi em colocar o memcached na frente disso. Num Ubuntu para instalar o daemon basta fazer:
 
-* * *
 
 ```bash
 sudo apt-get install memcached libsasl2-dev  
@@ -44,7 +42,6 @@ sudo apt-get install memcached libsasl2-dev
 
 E no Mac, se você estiver usando o [Homebrew](http://github.com/mxcl/homebrew), basta fazer:
 
-* * *
 
 ```bash
 brew install Memcached
@@ -52,7 +49,6 @@ brew install Memcached
 
 Daí precisa instalar a gem:
 
-* * *
 
 ```bash
 gem install memcached  
@@ -60,7 +56,6 @@ gem install memcached
 
 Agora no <tt>config/environment.rb</tt> coloque:
 
-* * *
 
 ```ruby
 
@@ -74,7 +69,6 @@ require ‘digest/sha1’
 
 E no seu <tt>config/environments/production.rb</tt> coloque:
 
-* * *
 
 ```ruby
 
@@ -86,7 +80,6 @@ Isso habilita o cache via Memcached. Em ambiente de desenvolvimento e teste, ele
 
 Agora, basta fazer algo assim no controller:
 
-* * *
 
 ```ruby
 def show
@@ -113,7 +106,6 @@ Na parte 2 ele checa <tt>request.fresh?(response)</tt>. Se voltar falso quer diz
 
 Um pequeno detalhe é a hash <tt>options</tt>. Logo na parte 1 notem que eu faço isto:
 
-* * *
 
 ```ruby
 options = { :public => true }  
@@ -125,7 +117,6 @@ end
 
 E mais abaixo eu faço isto:
 
-* * *
 
 ```ruby
 options.merge(:etag => etag, :last_modified => @page.updated_at.utc)  
@@ -133,7 +124,6 @@ options.merge(:etag => etag, :last_modified => @page.updated_at.utc)
 
 Isso porque na implementação do método <tt>fresh_when</tt> tem um trecho que é assim:
 
-* * *
 
 ```ruby
 
@@ -147,7 +137,6 @@ Ou seja, se eu chamar o método <tt>fresh_when</tt> múltiplas vezes com a opç�
 
 Finalmente, no administrador de posts, eu invalido o cache caso eu atualize ou apague um post. Assim:
 
-* * *
 
 ```ruby
 class Admin::PostsController < Admin::BaseController  

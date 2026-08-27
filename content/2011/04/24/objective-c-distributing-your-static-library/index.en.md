@@ -63,7 +63,6 @@ In the "Copy Files" phase I have just added all the public headers that I want t
 
 That's where we come to the previous "Run Script" phase that should have the following code:
 
-* * *
 
 ```bash
 # 1. make a new output folder
@@ -81,7 +80,6 @@ The first thing it does is create this new "Rubyfication" directory. The second 
 
 Finally, the last "Run Script", after the "Copy Files" phase described above, requires the following script:
 
-* * *
 
 ```bash
 ditto c -k --keepParent "${TARGET_BUILD_DIR}/../Rubyfication" "${TARGET_BUILD_DIR}/../Rubyfication.zip"
@@ -105,7 +103,6 @@ As you can see in the screenshot below, I just unzipped the ZIP within a "Depend
 
 This allows me to just use anything from this library in my project, in particular a piece of code that uses the Oniguruma regular expressions:
 
-* * *
 
 ```objc
 - (IBAction)runRegex:(id)sender {

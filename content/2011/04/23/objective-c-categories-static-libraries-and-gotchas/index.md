@@ -36,7 +36,6 @@ Eu também configuro o <tt>“Targeted Device Family”</tt> pra “iPhone/iPad�
 
 Por fim, eu também garanto que os <tt>“Framework Search Paths”</tt> apontem pra estas opções:
 
-* * *
 
 ```
 “$(SDKROOT)/Developer/Library/Frameworks”  
@@ -47,7 +46,6 @@ Tudo compila numa boa desse jeito. Aí eu posso apertar “Command-U” (ou ir n
 
 Mas aí eu estava recebendo:
 
-* * *
 
 ```
 Test Suite ‘/Users/akitaonrails/Library/Developer/Xcode/DerivedData/Rubyfication-gfqxbgyxicfpxugauehktilpmwzv/Build/Products/Debug-iphonesimulator/RubyficationTests.octest(Tests)’ started at 2011-04-24 02:16:27 +0000  
@@ -59,7 +57,6 @@ Test Case ‘-[CollectionSpec runSpec]’ started.
 
 Ele diz que uma instância de <tt>NSArray</tt> não está reconhecendo o selector <tt>each:</tt> enviado pra ela no arquivo <tt>CollectionSpec</tt>. Provavelmente é esse trecho:
 
-* * *
 
 ```objc
 # import “Kiwi.h”  

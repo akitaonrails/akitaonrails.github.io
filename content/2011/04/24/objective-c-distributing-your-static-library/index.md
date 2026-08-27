@@ -65,7 +65,6 @@ Na fase "Copy Files" eu adicionei todos os public headers que quero distribuir j
 
 E é aí que entra a fase "Run Script" anterior, que deve ter o seguinte código:
 
-* * *
 
 ```bash
 # 1. cria uma nova pasta de saída
@@ -83,7 +82,6 @@ A primeira coisa que ele faz é criar esse novo diretório "Rubyfication". O seg
 
 Por fim, o último "Run Script", depois da fase "Copy Files" descrita acima, precisa do seguinte script:
 
-* * *
 
 ```bash
 ditto c -k --keepParent "${TARGET_BUILD_DIR}/../Rubyfication" "${TARGET_BUILD_DIR}/../Rubyfication.zip"
@@ -107,7 +105,6 @@ Como dá para ver no screenshot abaixo, eu simplesmente descompactei o ZIP dentr
 
 Isso me permite usar qualquer coisa dessa biblioteca no meu projeto, em particular um trecho de código que usa as expressões regulares do Oniguruma:
 
-* * *
 
 ```objc
 - (IBAction)runRegex:(id)sender {

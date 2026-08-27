@@ -20,7 +20,6 @@ Na seção anterior vimos como podemos organizar nosso código em módulos e dur
 
 Outra noção que precisamos mudar aqui: _“nós chamamos métodos dos objetos.”_ Em orientação a objetos, na realidade deveria ser _“nós enviamos mensagens aos objetos.”_ Por exemplo:
 
-* * *
 
 ```ruby
 
@@ -33,7 +32,6 @@ O pensamento comum seria: _“tentamos chamar o método ‘hello’ que não exi
 
 Podemos reescrever o mesmo comportamento acima da seguinte forma:
 
-* * *
 
 ```ruby
 >> “teste”.send(:hello)  
@@ -44,7 +42,6 @@ NoMethodError: undefined method `hello’ for [teste](String)
 
 Outro exemplo de ‘envio de mensagens’:
 
-* * *
 
 ```ruby
 
@@ -64,7 +61,6 @@ Podemos resolver esse problema de duas formas: 1) reabrindo a classe String e de
 
 Nesse segundo caso, poderíamos fazer o seguinte:
 
-* * *
 
 ```ruby
 class String  
@@ -77,7 +73,6 @@ end
 
 Antes de explicar, vejamos agora como o String “teste” vai se comportar:
 
-* * *
 
 ```ruby
 
@@ -102,7 +97,6 @@ Se você pensar em _“chamar métodos”_ o que estamos fazendo acima parece mu
 
 Outra coisa que é meio polêmico são métodos privados. Em Ruby podemos fazer assim:
 
-* * *
 
 ```ruby
 class Teste  

@@ -23,7 +23,6 @@ Desde o começo da genealogia das linguagens de programação, saltamos de lingu
 
 Programadores de C tem um pattern que poderia ser chamado “classe orientada a objeto”. Nesse pattern, um objeto é uma instância de um struct C.
 
-* * *
 
 ```c
 struct st_employee_object *emp;  
@@ -31,7 +30,6 @@ struct st_employee_object *emp;
 
 Ou, dado um typedef apropriado:
 
-* * *
 
 ```c
 EMPLOYEE emp;  
@@ -39,7 +37,6 @@ EMPLOYEE emp;
 
 Alguns dos membros da struct são ponteiros de função. Se “emp” é um objeto, então podemos chamar um método do objeto procurando pelo ponteiro de função apropriado e chamando essa função:
 
-* * *
 
 ```c
 emp→method(emp, args…);
@@ -49,7 +46,6 @@ Cada struct define uma classe; objetos na mesma classe tem os mesmos dados como 
 
 Existem diversas variações em cima disso. Por exemplo, você pode ter uma implementação opaca definindo dois arquivos header para cada classe. Uma que define a implementação:
 
-* * *
 
 ```c
 struct st_employee_object {  
@@ -61,7 +57,6 @@ METHOD fire, transfer, competence;
 
 E outra que define a interface:
 
-* * *
 
 ```c
 struct st_employee_object {  
@@ -75,7 +70,6 @@ Então os arquivos incluem um ou outro conforme for apropriado. Aqui “boss” 
 
 Você consegue classes abstratas definindo uma função construtora que configura todos os métodos como NULL ou para:
 
-* * *
 
 ```c
 void _abstract() { abort(); }  
@@ -83,7 +77,6 @@ void _abstract() { abort(); }
 
 Se quiser herança, você faz uma das structs ser o prefixo de outra:
 
-* * *
 
 ```c
 struct st_manager_object; //Forward Declaration

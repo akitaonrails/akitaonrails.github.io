@@ -14,7 +14,6 @@ draft: false
 
 Não, não! Não é mais um daqueles artigos “Ruby vs Smalltalk”. Estava hoje lendo um fórum e caí nesse dilema novamente. Quando se fala que Smalltalk é _mais_ orientado a objetos que Ruby o exemplo mais usado é que em Ruby fazemos condicionais de maneira imperativa (uma das maneiras):
 
-* * *
 
 ```ruby
 

@@ -29,7 +29,6 @@ O quero dizer é que é impossível programar um framework HTML ou CSS escrito e
 
 Sabemos o benefício que existe em usar frameworks que abstraem muitas das repetições e coisas específicas de cada navegador numa linguagem mais genérica. Por exemplo, no caso do Javascript, em vez de fazer:
 
-* * *
 
 ```javascript
 var elm = null;  
@@ -53,7 +52,6 @@ else if (document.layers)
 
 Hoje podemos simplesmente fazer, com jQuery:
 
-* * *
 
 ```javascript
 var elm = $(“#” + id);
@@ -63,7 +61,6 @@ Outra alternativa seria mudar a especificação do HTML e CSS para serem mais en
 
 Agora, nós conhecemos técnicas que podem facilitar a vida do desenvolvedor. Quem programa em C conhece [pré-processadores](http://en.wikipedia.org/wiki/C_preprocessor). Ele permite escrever macros, que podem ser reusados por todo seu código. Daí antes de compilar em código nativo de máquina, o compilador do C vai fazer o equivalente a um grande “procurar e substituir”, trocando as macros por código, por exemplo:
 
-* * *
 
 ```c
 # define MYCASE  
@@ -79,7 +76,6 @@ MYCASE;
 
 Quando o pré-processador do C passar por esse código, ele será “reescrito” como:
 
-* * *
 
 ```c
 switch(x) {  
@@ -97,7 +93,6 @@ CSS em particular é um monstro complicado porque diferente de HTML ela não def
 
 Entra SASS. Ele é como um pré-processador de CSS, que adiciona diversas funcionalidades que muitos acreditam que já deveriam ter sido criadas desde o começo. Por exemplo, veja o seguinte código em SASS:
 
-* * *
 
 ```css
 
@@ -122,7 +117,6 @@ a {
 
 É transformado no seguinte CSS:
 
-* * *
 
 ```css
 
@@ -143,7 +137,6 @@ Notem que aqui o objetivo sequer é escrever “menos linhas de código”. Se o
 
 O autor do SASS é o grande Hampton Caitlin, que é contribuidor na comunidade Ruby há muitos anos. Antes do SASS, porém, ele havia criado outro tipo de pré-processador, mas para HTML chamado [HAML](haml-lang.com/). Vejamos o exemplo que ele mostra no site. Primeiro o código escrito em HAML:
 
-* * *
 
 ```haml
 # profile  
@@ -158,7 +151,6 @@ O autor do SASS é o grande Hampton Caitlin, que é contribuidor na comunidade R
 
 Esse HAML será transformado no seguinte HTML:
 
-* * *
 
 ```html
 
@@ -185,7 +177,6 @@ O problema é o objetivo do HAML: se ele me acrescentasse funcionalidades que me
 
 Ou seja, estou literamente trocando seis por meia dúzia em troca de “estética”. Sendo que essa estética não tem explicação lógica, apenas gosto pessoal. Ou seja, qual é mais “bonito” aos seus olhos, este HAML:
 
-* * *
 
 ```css
 %strong.code#message Hello, World!  
@@ -193,7 +184,6 @@ Ou seja, estou literamente trocando seis por meia dúzia em troca de “estétic
 
 Ou este HTML:
 
-* * *
 
 ```
 ```html
@@ -223,7 +213,6 @@ Também usamos o argumento que Ruby é mais elegante ou esteticamente mais bonit
 
 Mas não pensem que CoffeeScript é ruim por causa disso. De jeito nenhum, de fato Javascript tem uma sintaxe que está ficando velha muito rápido. O Coffee tem diversas ajudas de sintaxe que tornam mesmo muitas coisas menos complicado. Vejam alguns exemplos, primeiro em Coffee:
 
-* * *
 
 ```ruby
 switch day  
@@ -240,7 +229,6 @@ switch day
 
 Agora em Javascript:
 
-* * *
 
 ```javascript
 

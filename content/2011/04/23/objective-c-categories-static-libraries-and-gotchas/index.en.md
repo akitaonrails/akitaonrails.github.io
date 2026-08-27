@@ -34,7 +34,6 @@ I also set the <tt>"Targeted Device Family"</tt> to "iPhone/iPad" and I try to m
 
 Finally I also make sure that the <tt>"Framework Search Paths"</tt> are pointing to these options:
 
-* * *
 
 ```
 "$(SDKROOT)/Developer/Library/Frameworks"  
@@ -45,7 +44,6 @@ Everything compiles just fine that way. Then I can press "Command-U" (or go to t
 
 But then I was receiving:
 
-* * *
 
 ```
 Test Suite '/Users/akitaonrails/Library/Developer/Xcode/DerivedData/Rubyfication-gfqxbgyxicfpxugauehktilpmwzv/Build/Products/Debug-iphonesimulator/RubyficationTests.octest(Tests)' started at 2011-04-24 02:16:27 +0000  
@@ -57,7 +55,6 @@ Test Case '-[CollectionSpec runSpec]' started.
 
 It says that an instance of <tt>NSArray</tt> is not recognizing the selector <tt>each:</tt> sent to it in the <tt>CollectionSpec</tt> file. It is probably this snippet:
 
-* * *
 
 ```objc
 # import "Kiwi.h"  

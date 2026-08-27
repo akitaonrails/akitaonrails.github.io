@@ -20,7 +20,6 @@ Vamos dar uma olhada em alguns exemplos, dos mais triviais até alguns mais estr
 
 Alguma vez você já teve que trocar os valores de duas variáveis? Não é difícil encontrar código assim:
 
-* * *
 
 ```ruby
 sobrenome = “Fabio”  
@@ -37,7 +36,6 @@ puts “#{nome} #{sobrenome}”
 
 Ruby permite simplificar a mesma coisa da seguinte forma:
 
-* * *
 
 ```ruby
 sobrenome = “Fabio”  
@@ -54,7 +52,6 @@ puts “#{nome} #{sobrenome}”
 
 Aliás, quem está iniciando pode não entender a última linha dos exemplos anteriores. Como exemplo, digamos que temos duas variáveis e queremos concatená-las. Em algumas linguagens, o seguinte seria normal:
 
-* * *
 
 ```ruby
 nome, sobenome = “Fabio”, “Akita”  
@@ -65,7 +62,6 @@ puts nome + " " + sobrenome
 
 Porém em Ruby, preferimos usar interpolação de strings:
 
-* * *
 
 ```ruby
 nome, sobrenome = “Fabio”, “Akita”  
@@ -74,7 +70,6 @@ puts “#{nome} #{sobrenome}”
 
 Ou quem vem de linguagens como C pode querer [strings formatadas](http://ruby-doc.org/core-1.9.3/String.html#method-i-25), nesse caso podemos fazer:
 
-* * *
 
 ```ruby
 
@@ -84,7 +79,6 @@ puts “O %s custa R$ %0.2f” % [produto, valor]
 
 Falando em interpolação, você precisa usar necesariamente aspas duplas. Agora quando se tem aspas duplas dentro da string, precisa “escapar”, por exemplo:
 
-* * *
 
 ```ruby
 id, method, action, length, size = “search”, “get”, 140, 28  
@@ -99,7 +93,6 @@ id, method, action, length, size = “search”, “get”, 140, 28
 
 Isso é muito feio. Existe a opção de [heredocs](http://blog.jayfields.com/2006/12/ruby-multiline-strings-here-doc-or.html) mas outra forma melhor simplesmente assim:
 
-* * *
 
 ```ruby
 id, method, action, length, size = %w(search get 140 28)
@@ -116,7 +109,6 @@ html = %{
 
 Usar “%” com praticamente qualquer outro operador como “[]” ou “{}” costuma funcionar da mesma forma. Aproveitando, para quem não sabia, na primeira linha desse exemplo está outro jeito alternativo de declarar Arrays de strings, usando “%w()”. O exemplo abaixo, as duas linguas são equivalentes:
 
-* * *
 
 ```ruby
 array = [“foo”, “bar”, “hello”, “world”]  
@@ -129,7 +121,6 @@ Especialmente se forem muitos elementos diferentes pra inicializar, a segunda fo
 
 O exemplo a seguir deve ser fácil de entender pra qualquer programador:
 
-* * *
 
 ```ruby
 dinheiro = 600  
@@ -146,7 +137,6 @@ end
 
 Assumo que independente de qual linguagem você veio, esse trecho não deve ter nenhuma dúvida. Agora, algumas coisas que podemos fazer diferente. Primeiro uma dica simples. Números em Ruby podem ser delimitador no campo de milhar com “_”. As linhas seguintes são equivalentes:
 
-* * *
 
 ```ruby
 
@@ -159,7 +149,6 @@ a == b
 
 Mas vocês vão concordar que a segunda forma é bem mais legível. Então já podemos melhorar o exemplo anterior assim:
 
-* * *
 
 ```ruby
 
@@ -177,7 +166,6 @@ end
 
 Note outra diferença: normalmente dentro do resultados de uma condicional você atribui alguma valor à uma variável. Se o objetivo do bloco “if” e suas condicionais for preencher a mesma variável, podemos utilizar o fato que todas as construções de bloco no Ruby, como “if”, “while”, “case”, “for” e outros sempre devolvem o valor da última expressão executada. Então o “if” todo vai devolver um valor e podemos atribuí-la à variável que queremos. Lembrem também que em Ruby não precisamos usar “return” ao sair de métodos, pois também todo método sempre retorna o valor da última expressão executada. Assim, o exemplo acima equivale ao primeiro desta seção.
 
-* * *
 
 ```ruby
 dinheiro = 600  
@@ -194,7 +182,6 @@ Agora, 3 coisas. Primeiro, trocamos o “if” por um “case”, que nesse caso
 
 Falando sobre o “case”, os dois exemplos a seguir não são equivalentes, apesar do efeito ser o mesmo:
 
-* * *
 
 ```ruby
 
@@ -211,7 +198,6 @@ end
 
 O “when” na realidade não executa “==” mas sim “===”. No caso original, quando fazemos <tt>case dinheiro; when (0..500)</tt> o método “===” na realidade está fazendo <tt>(0..500).include?(dinheiro)</tt>. O exemplo a seguir ilustra essa funcionalidade mas deixo a cargo do leitor descobrir como esse código funciona:
 
-* * *
 
 ```ruby
 
@@ -232,7 +218,6 @@ end
 
 Caso tenha dado nó na cabeça, a dica pra entender é que as chamadas a seguir são equivalentes:
 
-* * *
 
 ```ruby
 multiplo_de(10).call(10)  
@@ -245,7 +230,6 @@ Divaguei um pouco em relação ao exemplo original da seção anterior. Lembrem 
 
 Vejamos alguns exemplos:
 
-* * *
 
 ```ruby
 for i in (5..100)  
@@ -263,7 +247,6 @@ end
 
 Os três exemplos acima são equivalentes. No caso do método <tt>upto</tt>, lembrar que existe o oposto:
 
-* * *
 
 ```ruby
 100.downto(5) do |i|  
@@ -273,7 +256,6 @@ end
 
 Agora, podemos expandir um Range em um Array. Duas formas para isso:
 
-* * *
 
 ```ruby
 array = (5..100).to_a  
@@ -284,7 +266,6 @@ O segundo exemplo é uma coerção usando splat, vamos ver splats mais abaixo.
 
 Como exercício, podemos ver um exemplo onde queremos somar todos os números entre 5 e 100. Todos os exemplos abaixo são equivalentes:
 
-* * *
 
 ```ruby
 
@@ -322,7 +303,6 @@ total
 
 Uma das estruturas de dados mais úteis do Ruby depois dos Arrays é sem dúvida o Hash. Ele é basicamente um dicionário, uma coleção de pares de chaves (key) ligando a valores. Ele pode ser inicializado de várias formas, mas as mais conhecidas são:
 
-* * *
 
 ```ruby
 
@@ -335,7 +315,6 @@ hash = { chave_a: “valor a”, chave_b: “valor b” }
 
 Uma coisa que normalmente não é tão lembrado é que posso utilizar um Array para popular um Hash, sendo que o Array contém elementos intercalados de chave e valor, por exemplo:
 
-* * *
 
 ```ruby
 array = [:chave_a, “valor a”, :chave_b, “valor b”]  
@@ -343,7 +322,6 @@ array = [:chave_a, “valor a”, :chave_b, “valor b”]
 
 Agora, podemos usar o [operador splat](http://www.jacopretorius.net/2012/01/splat-operator-in-ruby.html) com o método <tt>[]</tt> da class Hash:
 
-* * *
 
 ```ruby
 hash = Hash[*array]
@@ -353,7 +331,6 @@ hash = Hash[*array]
 
 Veja o artigo no link para mais exemplos de como usar o operador splat. Mas voltando ao assunto, vemos como é simples pegar um Array interpolado de chaves e valores e gerar um Hash. Não é tão comum, por outro lado, ter arrays nesse formato. Normalmente temos pelo menos dois arrays de mesma quantidade de elementos, um com chaves e outro com valores, e digamos que queremos gerar um Hash a partir delas. Eis alguns exemplos:
 
-* * *
 
 ```ruby
 
@@ -375,7 +352,6 @@ hash = Hash[chaves.zip(valores)]
 
 Para lembrar da utilidade do método <tt>zip</tt>, literalmente pensem num zíper de uma jaqueta. Além disso, falamos um pouco de coerção via operador splat, o oposto da operação que fizemos acima é o seguinte:
 
-* * *
 
 ```ruby
 hash = { chave_a: “valor a”, chave_b: “valor b” }  
@@ -392,7 +368,6 @@ array.flatten
 
 Recapitulando, vamos esquentar vendo formas diferentes de inicializar o mesmo tipo de Array:
 
-* * *
 
 ```ruby
 lista = [“foo”, “foo”, “foo”, “foo”, “foo”]
@@ -406,7 +381,6 @@ lista = [“foo”] * 5  
 
 Todos já estiveram numa situação onde cortaram uma string em diversos “tokens” e tiveram que atribuir cada token a uma variável diferente, certo? Vejamos primeiro o exemplo mais ingenuo disso:
 
-* * *
 
 ```ruby
 texto = “2012 Agosto 26 Hello World”
@@ -431,7 +405,6 @@ end
 
 Novamente, quem veio de outras linguagens provavelmente não achará nada estranho nesse trecho. Vejamos como poderíamos rubificá-lo:
 
-* * *
 
 ```ruby
 texto = “2012 Agosto 26 Hello World”
@@ -448,7 +421,6 @@ Pois é, já tínhamos visto que podemos atribuir múltiplas variáveis ao mesmo
 
 Outro exemplo para explorar isso, vejamos o seguinte:
 
-* * *
 
 ```ruby
 
@@ -463,7 +435,6 @@ end
 
 Temos uma função que recebe 3 parâmetros. Por acaso temos os 3 parâmetros num Array. Em outras linguagens, podemos atribuir parâmetro a parâmetro usando posição do Array. Ou podemos usar o splat para expandir o Array nos parâmetros do método diretamente, assim:
 
-* * *
 
 ```ruby
 args = [27, 8, 2012]
@@ -476,7 +447,6 @@ No link sobre splats que passei acima, esse e outros exemplos estão explicados 
 
 Existe uma situação que muitos já devem ter visto, vejamos:
 
-* * *
 
 ```ruby
 
@@ -490,7 +460,6 @@ end
 
 Não é o melhor exemplo, mas digamos que você acabe com uma variável que possa ser tanto uma string quanto um array e a sequência assume um array (por exemplo, vai iterar nela, como no exemplo), então se só tiver um elemento, primeiro precisa convertar ela num array. Ou podemos usar o splat assim:
 
-* * *
 
 ```ruby
 def algum_metodo(foo, bar, args)  
@@ -506,7 +475,6 @@ Se for um elemento só a coerção resulta nele mesmo. Se for um Array, em vez d
 
 Já precisaram juntar todos os elementos de um Array num String? Fácil, método <tt>join</tt>, certo? Vejamos:
 
-* * *
 
   ```ruby
 
@@ -521,7 +489,6 @@ Já precisaram juntar todos os elementos de um Array num String? Fácil, método
 
 Finalmente, a última dica, uma coisa que eu eventualmente me esqueço e me lembro de novo:
 
-* * *
 
 ```ruby
 
@@ -544,7 +511,6 @@ numero.to_s(36)
 
 E esta é a volta:
 
-* * *
 
 ```ruby
 

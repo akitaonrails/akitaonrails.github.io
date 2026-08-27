@@ -22,7 +22,6 @@ Uma das coisas que podem realmente causar alto uso de memória de forma não int
 
 Digamos que você tenha um objeto de algum tupo que tem um método que retorna um Proc. Esse proc será salvo em algum lugar e viverá por um longo período – talvez até se tornando um método com o define_method:
 
-* * *
 
 ```ruby
 
@@ -47,7 +46,6 @@ O interessante é que 1 e 2 são muito mais comuns do que 3. Eu imaginaria que i
 
 Então, se você está se vendo usando blocos que vivem demais e que podem vazar memória (memory leak), considere isolar a criação delas no menor escopo possível. A melhor maneira de fazer isso é algo assim:
 
-* * *
 
 ```ruby
 
@@ -66,7 +64,6 @@ Obviamente, isso é demais se você não sabe se o bloco vai viver muito ou não
 
 Claro, se você realmente precisa de valores de fora, pode ser seletivo e apenas colocar no escopo os valores que precisa – a menos que precise modificá-las, claro:
 
-* * *
 
 ```ruby
 

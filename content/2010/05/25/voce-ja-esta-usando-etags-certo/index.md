@@ -16,7 +16,6 @@ Essa dica é meio velha, mas como muita gente ainda desconhece vamos falar dela.
 
 Para entender, vamos ver a estrutura de uma action comum de ActionController:
 
-* * *
 
 ```ruby
 def index  
@@ -29,7 +28,6 @@ end
 
 Toda vez que você requisitar esta action, o Rails vai buscar os dados no banco, renderizar o template ERB e enviar tudo pro cliente, todas as vezes. Você pode colocar uma regra de expires para que o browser do usuário não peça a mesma página por X tempos, mas isso não é eficiente se você efetivamente quer que o conteúdo novo seja enviado assim que for atualizado. Agora veja esta outra forma:
 
-* * *
 
 ```ruby
 def index  
@@ -51,7 +49,6 @@ private
 
 Quando o Rails terminar de renderizar o template ERB, ele vai adicionar o seguinte cabeçalho na resposta ao navegador do usuário:
 
-* * *
 
 ```
 ETAG: e2b62c2507dd32e23af8e89f305cd864  
@@ -61,7 +58,6 @@ ETAG: e2b62c2507dd32e23af8e89f305cd864
 
 Isso juntamente com o código de status “200 OK”. Porém, se o usuário pedir a mesma página outra vez, o navegador vai enviar junto com a requisição o seguinte cabeçalho:
 
-* * *
 
 ```
 HTTP_IF_NONE_MATCH: e2b62c2507dd32e23af8e89f305cd864  
@@ -71,7 +67,6 @@ Ou seja, ele vai dizer ao servidor: _“não me mande nada se o ETAG do recurso 
 
 Existe uma variação que é assim:
 
-* * *
 
 ```ruby
 def show  
@@ -84,7 +79,6 @@ end
 
 O método [fresh_when](http://apidock.com/rails/ActionController/Base/fresh_when) é chamado por baixo pelo “stale?”. Você usar o fresh_when quando não precisa customizar nada como o “render”. Já com o “stale?”, se vier o “If-None-Match” no cabeçalho HTTP, ele não vai executar nada que estiver dentro do bloco “if stale?”, daí vem os ganhos de processamento, não só da renderização do template mas de quaisquer outros processamentos. Por exemplo:
 
-* * *
 
 ```ruby
 def show  
@@ -104,7 +98,6 @@ Neste exemplo, se vier o ETAG no “If-None-Match”, vamos economizar buscar os
 
 Outra coisa é que se você usar o método “fresh_when” precisa tomar cuidado para não cair em exceção de “Double Render Error”. Numa action Rails você não pode ter duas chamadas a “render” ou chamar “render” e “redirect_to” junto, por motivos óbvios. Por isso, esse código abaixo dará problemas:
 
-* * *
 
 ```ruby
 
@@ -117,7 +110,6 @@ end
 
 É necessário fazer uma checagem antes de chamar o “render” do exemplo acima:
 
-* * *
 
 ```ruby
 def show  

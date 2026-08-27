@@ -30,7 +30,6 @@ Outra coisa que quero demonstrar no caso de um aplicativo “estilo” gerenciad
 
 Uma boa engine para converter Markdown em HTML é o [RDiscount](https://github.com/rtomayko/rdiscount/) (olhe também a gem [Tilt](https://github.com/rtomayko/tilt), ambos do Ryan Tomayko). Novamente, apenas adicione a seguinte gem no <tt>Gemfile</tt>:
 
-* * *
 
 ```ruby
 gem ‘rdiscount’
@@ -38,7 +37,6 @@ gem ‘rdiscount’
 
 Usá-lo é muito simples:
 
-* * *
 
 ```ruby
 
@@ -47,7 +45,6 @@ RDiscount.new(“texto em **markdown**.”).to_html #=> **markdown**
 
 O erro mais comum é adicionar essa lógica no controller, algo como isso:
 
-* * *
 
 ```ruby
 class ArticleController < ApplicationController  
@@ -60,7 +57,6 @@ end
 
 Isso acarreta um processamento de conversão para **cada requisição de cada usuários à mesma página**. É exatamente o tipo de cenário que queremos otimizar o quanto antes. A melhor forma, nesse tipo de cenário de conversão, é gravar a versão convertida junto com a original. Por isso na migration do model <tt>Article</tt> já criamos com a coluna <tt>body</tt> e também <tt>body_html</tt>. Então só precisamos adicionar um simples callback no model:
 
-* * *
 
 ```ruby
 class Article < ActiveRecord::Base  
@@ -85,7 +81,6 @@ end
 
 Isso foi simples. Agora não precisa adicionar nada no controller e na view basta chamar diretamente o conteúdo cacheado:
 
-* * *
 
 ```html
 <%= raw @article.body_html %\>  
@@ -101,7 +96,6 @@ Para consertar isso, sobrescrevemos o método de assinalação em massa forçand
 
 Essa é completamente fora do escopo deste artigo, mas como meu código no Github está utilizando, vou apenas listar como instalei. Para quem não conhece, o Twitter Bootstrap é um conjunto de stylesheets e javascripts para estilizar rapidamente seu site, justamente para casos como este, onde o design não é importante, é basicamente um protótipo e eu queria algo menos feio do que não colocar nada. Existem diversas gems derivadas que utilizam o bootstrap, mas para o básico podemos começar adicionando as seguintes gems no <tt>Gemfile</tt>:
 
-* * *
 
 ```ruby
 group :assets do  
@@ -116,7 +110,6 @@ end
 
 Agora podemos começar a instalar os arquivos estáticos para a aplicação:
 
-* * *
 
 ```bash
 rails g bootstrap:install application fluid  
@@ -124,7 +117,6 @@ rails g bootstrap:install application fluid
 
 E depois podemos adicionar as views estilizadas para cada recurso da sua aplicação:
 
-* * *
 
 ```bash
 rails g bootstrap:themed Articles  
@@ -140,7 +132,6 @@ Note também que no meu Github todas as views de Devise que mencionamos anterior
 
 Um lembrete para menus é criar itens que saibam em que controller/action estamos e desabilitar o link da página atual, um exemplo é o que fiz de exemplo nesta aplicação. No arquivo <tt>app/helpers/application_helper.rb</tt> temos:
 
-* * *
 
 ```ruby
 
@@ -161,7 +152,6 @@ end
 
 E no layout em <tt>app/views/layouts/application.html.erb</tt> colocamos:
 
-* * *
 
 ```html
 <%= t(“site_name”) %\>](#)\<%= navigation_links %\>
@@ -173,7 +163,6 @@ E no layout em <tt>app/views/layouts/application.html.erb</tt> colocamos:
 
 O ActiveAdmin é um excelente projeto para termos rapidamente um módulo simples de administração que consegue expôr as operações de CRUD de um model, incluindo suas validações e até elementos como upload de imagens (caso esteja usando CarrierWave, por exemplo). Por usar por baixo formtastic, customizar seus formulários também não é complicado. Instalar é simples, coloque na <tt>Gemfile</tt>:
 
-* * *
 
 ```ruby
 …  
@@ -190,7 +179,6 @@ gem ‘ActiveAdmin-Globalize3-inputs’
 
 Execute o comando:
 
-* * *
 
 ```bash
 rails g active_admin:install  
@@ -198,7 +186,6 @@ rails g active_admin:install
 
 Uma dica para que o Assets Pipeline não falhe em produção. Precisamos declarar explicitamente os assets do ActiveAdmin. Adicione no <tt>config/application.rb</tt>:
 
-* * *
 
 ```ruby
 config.assets.precompile += %w(active_admin.js active_admin.css)  
@@ -206,7 +193,6 @@ config.assets.precompile += %w(active_admin.js active_admin.css)
 
 Agora adicione em <tt>app/admin</tt> quaisquer models que precise expor. Leia a [documentação](http://activeadmin.info/documentation.html) do ActiveAdmin no site deles mas como exemplo, para customizar a tabela de listagem do model <tt>Article</tt> (<tt>index</tt>) e também a página visualização de um único artigo (<tt>show</tt>), podemos escrever em <tt>app/admin/articles.rb</tt>:
 
-* * *
 
 ```ruby
 ActiveAdmin.register Article do  
@@ -238,7 +224,6 @@ Mas e para editar os conteúdos de ambas as localizações? Para isso colocamos 
 
 Esse módulo vai utilizar as funcionalidades do ActiveRecord de [accepts_nested_attributes_for](http://api.rubyonrails.org/classes/ActiveRecord/NestedAttributes/ClassMethods.html#method-i-accepts_nested_attributes_for) para receber no mesmo formulário HTML os atributos das associações. Para isso garanta que seu modelo <tt>app/models/article.rb</tt> tem o seguinte:
 
-* * *
 
 ```ruby
 class Article < ActiveRecord::Base  
@@ -263,7 +248,6 @@ Isso faz o modelo aceitar [mass assignment](http://guides.rubyonrails.org/securi
 
 Precisamos também adicionar o JQuery UI para o ActiveAdmin. Basta alterar o arquivo <tt>app/uploads/stylesheets/active_admin.css</tt>:
 
-* * *
 
 ```css
 // Active Admin CSS Styles  
@@ -274,7 +258,6 @@ Precisamos também adicionar o JQuery UI para o ActiveAdmin. Basta alterar o arq
 
 E também o arquivo <tt>app/uploads/javascripts/active_admin.js</tt>:
 
-* * *
 
 ```javascript
 //= require active_admin/base  
@@ -283,7 +266,6 @@ E também o arquivo <tt>app/uploads/javascripts/active_admin.js</tt>:
 
 Finalmente, precisamos alterar novamente o arquivo de configuração <tt>app/admin/articles.rb</tt> para adicionar o seguinte:
 
-* * *
 
 ```ruby
 ActiveAdmin.register Article do  
@@ -312,7 +294,6 @@ Finalmente, como explicamos na seção sobre Markdown, para que o ActiveAdmin co
 
 Deixei por último uma das coisas mais interessantes nesta aplicação. Para efeitos de SEO também queremos que as URLs sejam traduzidas. Ou seja, queremos que as seguintes URLs todas apontem para o mesmo lugar:
 
-* * *
 
 ```
 /users/sign_in  
@@ -322,7 +303,6 @@ Deixei por último uma das coisas mais interessantes nesta aplicação. Para efe
 
 Existem algumas gems que fazem isso, a primeira que esbarrei se chama “i18n_routing”, mas não consegui fazê-la funcionar, acredito que tenha bugs ainda. Se procurar mais vai acabar encontrando a [translate_routes](https://github.com/raul/translate_routes) mas ela está obsoleta e dois outros forks passaram a atualizá-la. Uma é a [route_translator](https://github.com/enriclluelles/route_translator), que eu não testei porque parecia ter pouca atividade. A que escolhi usar se chama [rails-translate-routes](https://github.com/francesc/rails-translate-routes). Para adicionar ao projeto, edite seu <tt>Gemfile</tt>:
 
-* * *
 
 ```ruby
 
@@ -331,7 +311,6 @@ gem ‘rails-translate-routes’
 
 Depois de executar o comando <tt>bundle</tt> precisamos editar o arquivo <tt>config/routes.rb</tt> que controla todas as rotas. Neste estágio, ele deve ter o seguinte conteúdo:
 
-* * *
 
 ```ruby
 
@@ -355,7 +334,6 @@ end
 
 O que queremos agora é traduzir todas as rotas públicas, incluindo as do Devise. Porém, como explicado antes, no caso do ActiveAdmin estamos no cenário onde não precisamos de telas de administração traduzidas. Então devemos modificar o arquivo para ficar assim:
 
-* * *
 
 ```ruby
 I18nDemo::Application.routes.draw do  
@@ -380,7 +358,6 @@ Uma dica é que o bloco de rotas depois do método <tt>#draw</tt> pode ser divid
 
 Este código diz que vamos colocar as traduções no arquivo <tt>config/locales/routes.yml</tt>. Então criamos esse arquivo com o seguinte conteúdo:
 
-* * *
 
 ```yaml
 
@@ -402,7 +379,6 @@ pt-BR:
 
 O bloco <tt>en.routes</tt> fica vazio porque como nossa aplicação está toda em inglês, por padrão, as rotas são em inglês. Agora no bloco <tt>pt-BR.routes</tt> basta colocarmos as palavras que queremos traduzir, seja ela nome de controller, de action, de resource, e a gem fará o resto. Se executarmos o comando <tt>rake routes</tt> depois de termos isso configurado, teremos:
 
-* * *
 
 ```ruby
 …  
@@ -426,7 +402,6 @@ Já se perguntou sobre a necessidade de usar rotas nomeadas como <tt>new_article
 
 Precisamos que a aplicação reconheça o parâmetro <tt>locale</tt> que virá dentro do hash <tt>params</tt> que já conhemos. Vamos colocar um <tt>before_filter</tt> no <tt>/app/controllers/application_controller.rb</tt>:
 
-* * *
 
 ```ruby
 class ApplicationController < ActionController::Base  
@@ -447,7 +422,6 @@ end
 
 Agora podemos ir em <tt>http://localhost:3000/en/articles</tt> ou <tt>http://localhost:3000/pt-BR/artigos</tt> e vamos chegar no mesmo local. Basta colocarmos na aplicação links para podemos trocar de linguagem em qualquer página que estivermos. Para isso usaremos o helper <tt>url_for</tt> que usará os parâmetros correntes para gerar o link correto da página atual. Precisamos adicionar em <tt>app/helpers/application_helper.rb</tt>:
 
-* * *
 
 ```ruby
 module ApplicationHelper  
@@ -469,7 +443,6 @@ end
 
 E podemos colocar, neste exemplo, na área de rodapé da aplicação. Então adicionamos ao <tt>app/views/layouts/application.html.erb</tt>:
 
-* * *
 
 ```html
 …

@@ -17,7 +17,6 @@ Ruby é muito similar a muitas outras linguagens orientadas a objeto. Podemos en
 
 Isso é mais óbvio quando se começa a aprender Ruby através de Rails. Muito do poder de Rails vem do fato dele usar muitos rubismos. Vejamos um exemplo:
 
-* * *
 
 ```ruby
 class Transact < ActiveRecord::Base  
@@ -37,7 +36,6 @@ end
 
 Isso pode ser bem confuso considerando que o jeito normal de inicializar um objeto é:
 
-* * *
 
 ```ruby
 rubySymbol.new
@@ -47,7 +45,6 @@ A chamada ‘new’ pede pelo método padrão ‘initialize’ definido dentro d
 
 Símbolos são usados como identificadores. Outras linguagens poderiam simplesmente usar Strings em vez de Símbolos. Em Ruby, ficaria parecido com isso:
 
-* * *
 
 ```ruby
 class Transact < ActiveRecord::Base  
@@ -62,7 +59,6 @@ end
 
 Visualmente não ficou tão diferente: nos livramos dos dois-pontos e voltamos às confortáveis aspas. Parece a mesma coisa mas o comportamenteo é diferente. Como Símbolos em Ruby, Strings também tem um construtor especial. Em vez de fazer:
 
-* * *
 
 ```ruby
 rubyString.new(“category”)
@@ -70,7 +66,6 @@ rubyString.new(“category”)
 
 Apenas fazemos:
 
-* * *
 
 ```ruby
 ruby"category"
@@ -92,7 +87,6 @@ Aqui instanciamos 2 strings com o mesmo conteúdo. Cada objeto em memória tem u
 
 Mas, isso não é um problema novo. Para isso, temos outra construção na maioria das linguagens chamada ‘constantes’, incluindo Ruby. Temos que planejar e pré-definir diversas constantes de ante-mão, de forma consciente. Então, nosso exemplo anterior, com uso de constantes ficaria assim:
 
-* * *
 
 ```ruby
 

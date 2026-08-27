@@ -16,7 +16,6 @@ Logo de cara uma coisa que confunde os que sempre trabalharam com plataformas co
 
 Uma coisa que confunde no início é o <tt>NSAutoreleasePool</tt>. Todo projeto Cocoa começa com algo parecido com isto, no <tt>main.m</tt>:
 
-* * *
 
 ```objc
 int main(int argc, char *argv[]) {   
@@ -31,7 +30,6 @@ O Obj-C trabalha com contagem de referência para limpar memória. Toda vez que 
 
 O sistema devolve memória liberado ao sistema ao final de uma execução, mas existe um caso em específico que pode dar picos de consumo de memória antes do sistema ter chance de limpá-la. Veja este trecho:
 
-* * *
 
 ```objc
 - (IBAction) onClick:(id)sender {  
@@ -57,7 +55,6 @@ Note quanto de memória está sendo usada somente por <tt>CFString</tt>, mais de
 
 Esse padrão é fácil de identificar, basta procurar por loops que podem ser muito longos (centenas ou milhares de interações). Para “consertar” isso, podemos fazer o seguinte:
 
-* * *
 
 ```objc
 - (IBAction) onClick:(id)sender {

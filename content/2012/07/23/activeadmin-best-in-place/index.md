@@ -27,7 +27,6 @@ Dada esta informação, encontrei esta a gem [BestInPlace](https://github.com/be
 
 Adicione ao seu <tt>Gemfile</tt> e rode <tt>bundle install</tt> depois:
 
-* * *
 
 ```ruby
 gem “best_in_place”
@@ -35,7 +34,6 @@ gem “best_in_place”
 
 Dado que você já tem o ActiveAdmin, edite o seu <tt>app/assets/javascripts/active_admin.js</tt> para ficar assim:
 
-* * *
 
 ```javascript
 //= require jquery  
@@ -51,7 +49,6 @@ $(document).ready(function() {
 
 Baixe o [jquery.purr](http://code.google.com/p/jquery-purr/) e copie o <tt>jquery.purr.js</tt> para a mesma pasta <tt>app/assets/javascripts</tt>. Não esqueça de alterar seu <tt>config/application.rb</tt> para declarar os JS e CSS do ActiveAdmin:
 
-* * *
 
 ```ruby
 config.assets.precompile += %w(active_admin.js active_admin.css)  
@@ -59,7 +56,6 @@ config.assets.precompile += %w(active_admin.js active_admin.css)
 
 Agora, no meu caso eu tenho o model <tt>Post</tt> registrado em <tt>app/assets/admin.rb</tt> modificando meu <tt>index</tt> para ficar assim:
 
-* * *
 
 ```ruby
 ActiveAdmin.register Post do  

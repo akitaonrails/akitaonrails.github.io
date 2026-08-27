@@ -16,7 +16,6 @@ A desenvolvedora japonês **@yugui** [escreveu um grande complemento](http://yug
 
 Yehuda Katz escreveu [um artigo sobre `self` e metaclass](http://www.akitaonrails.com/2009/11/16/traducao-metaprogramacao-em-ruby-e-tudo-sobre-self). Nesse artigo ele disse que `Person.instance_eval` associa a **metaclass de Person** para `self` para uma classe `Person`, mas isso é obviamente errado.
 
-* * *
 
 ```ruby
 
@@ -30,7 +29,6 @@ Como mencionei em um [artigo antigo](http://yugui.jp/articles/558), embora eu de
 
 `self` é o `self` que você conhece. É o receptor padrão de invocação de método. Sempre existe um `self`.
 
-* * *
 
 ```ruby
 
@@ -62,7 +60,6 @@ Ruby sempre segura a referência a uma classe assim como ao `self`. Mas não há
 
 No nível superior, `Object` é a classe. Então funções globais são igualmente métodos de instância na classe `Object` como você já sabe.
 
-* * *
 
 ```ruby
 def hoge; end
@@ -73,7 +70,6 @@ Aliás, “hoge”, “fuga”, “piyo” é japonês para “foo”, “bar”
 
 A sintaxe `class` muda ambos os `self` e o definidor padrão para a classe que está agora sendo definida.
 
-* * *
 
 ```ruby
 class T
@@ -84,7 +80,6 @@ T.instance_method(:hoge) #=\> #<UnboundMethod: T#hoge>
 
 Em um corpo normal de método, `self` é o receptor de invocação de métodos e o definidor padrão é a classe sintaticamente fora dela, agora ela é `T`.
 
-* * *
 
 ```ruby
 class T
@@ -119,7 +114,6 @@ O que o `instance_eval` faz é:
 - se o receptor não tiver um eigenclass ainda, cria um.
 - executa o bloco dado
 
-* * *
 
 ```ruby
 
@@ -141,7 +135,6 @@ Como o `instance_eval` muda o definidor padrão do eigenclass para `$o`, então 
 
 Oops, esqueci de mencionar que:
 
-* * *
 
 ```ruby
 RUBY_VERSION #=> “1.9.1”
@@ -149,7 +142,6 @@ RUBY_VERSION #=> “1.9.1”
 
 Ruby 1.8 age de maneira mais léxica, então você acabará tendo o contrário:
 
-* * *
 
 ```ruby
 $o.method(:fuga) # raises a NameError

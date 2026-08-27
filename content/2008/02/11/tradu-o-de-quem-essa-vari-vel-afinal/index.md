@@ -37,7 +37,6 @@ Por estático aqui, quero dizer que o código que acessa a variável de instânc
 
 Esse computador pode ser um computador real, como um processador Intel ou um computador virtual na forma de software implementando uma máquina virtual ou interpretador. No caso de uma máquina real ou virtual, existe um conjunto de instruções que dá o repertório da máquina. O programa é executado movendo passo-a-passo, instrução por instrução. Agora, se tivermos uma simples expressão em C como:
 
-* * *
 
 ```C
 int a = b; 
@@ -45,7 +44,6 @@ int a = b;
 
 Então a seqüência de instruções para um computador imaginário poderia ser como:
 
-* * *
 
 ```asm
 load reg2, 20(reg1)  
@@ -68,7 +66,6 @@ Agora vamos olhar a um código similar em Smalltalk. Nesse artigo, estou usando 
 
 Digamos que a e b aqui são variáveis de instância. O bytecode para o Smalltalk
 
-* * *
 
 ```smalltalk
 a := b  

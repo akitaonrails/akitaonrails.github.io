@@ -23,7 +23,6 @@ Não existe um Rubismo mais difícil de explicar do que um Closure (Fechamento).
 
 Começamos com um exemplo:
 
-* * *
 
 ```ruby
 for i in [1,2,3,4]  
@@ -40,7 +39,6 @@ end
 
 Esses são iteradores simples, similares com o que temos em várias linguagens. O primeiro usa ‘for’ e o segundo o familiar ‘while’. Nada demais aqui. Mas vejamos outra maneira de chegar ao mesmo resultado em Ruby:
 
-* * *
 
 ```ruby
 ruby { |i| puts i } do |i| puts i
@@ -50,7 +48,6 @@ end
 
 Nada mal, simples e elegante, mas é aqui que muitos engasgam. A notação de pipes (barra vertical) é particularmente ameaçadora para iniciantes. Ambas as notações de chaves e do..end definem um pedaço de código fechado que chamamos de ‘blocks’ (blocos) ou ‘closures’ (fechamentos). O que fica entre os pipes é como parâmetros de um método. Ele ‘parece’ como este pseudo-código:
 
-* * *
 
 ```ruby
 def unnamed_method(i)  
@@ -62,7 +59,6 @@ end
 
 Isto não é um código Ruby válido, claro. É similar com o que podemos fazer em C# com delegates. Temos algo similar em Javascript (usando a biblioteca [Prototype](http://www.prototypejs.org/api/enumerable/each) library):
 
-* * *
 
 ```js
 ) {  

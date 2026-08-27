@@ -16,7 +16,6 @@ Depois de escrever [meu último post](http://yehudakatz.com/2009/11/12/better-ru
 
 Tem a ver com o fato de que todo código Ruby é executado – não há separação entre fases de compilação e runtime, cada linha de código é executado contra um _self_ particular. Considere os próximos 5 trechos de código:
 
-* * *
 
 ```ruby
 class Person  
@@ -52,7 +51,6 @@ end
 
 Todos os 5 trechos definem um `Person.species` que retornam `Homo Sapiens`. Agora considere outro conjunto de trechos:
 
-* * *
 
 ```ruby
 class Person  
@@ -72,7 +70,6 @@ Todos esses trechos definem um método chamado `name` na classe Person. Então `
 
 Primeiro, é importante entender como a metaclasse de Ruby funciona. Quando você aprende Ruby, você aprende sobre o conceito de classe, e que cada objeto de Ruby tem um:
 
-* * *
 
 ```ruby
 
@@ -92,7 +89,6 @@ Person.loud_name #=\> “PERSON!”
 
 `Person` é uma instância de `Class`, então qualquer método adicionado a `Class` está disponível em `Person` também. O que não lhes é dito, entretanto, é que cada objeto em Ruby também tem seu próprio **metaclass** , uma `Class` que pode ter métodos, mas está anexado apenas ao objeto.
 
-* * *
 
 ```ruby
 matz = Object.new  
@@ -114,7 +110,6 @@ matz.class #=\> Object
 
 Na verdade, a “classe” de `matz` é sua metaclass invisível. Podemos ter acesso a essa metaclass assim:
 
-* * *
 
 ```ruby
 metaclass = class << matz; self; end  
@@ -125,7 +120,6 @@ Até este ponto, você provavelmente está tendo que se esforçar para ter tanto
 
 Acontece que todas essas regras esquisitas se resumem em um conceito simples: controle sobre o `self` em uma determinada parte do código. Vamos retornar à um dos trechos que já vimos antes:
 
-* * *
 
 ```ruby
 class Person  
@@ -139,7 +133,6 @@ end
 
 Aqui, estamos adicionando o método `nome` à classe `Person`. Quando dizemos `class Person`, o `self` até o fim do bloco é a própria classe `Person`.
 
-* * *
 
 ```ruby
 Person.class_eval do  
@@ -154,7 +147,6 @@ end
 
 Aqui, estamos fazendo exatamente a mesma coisa: adicionando o método `name` a instâncias da classe Person. Neste caso, `class_eval` deixa o `self` ser o `Person` até o fim do bloco. Isso é perfeitamento direto quando se lida com classes, e igualmente direto quando se lida com metaclasses:
 
-* * *
 
 ```ruby
 
@@ -167,7 +159,6 @@ Person.name #=\> “Person”
 
 Como no exemplo do `matz` anteriormente, estamos definindo o método `species` à metaclass de `Person`. Nós não manipulamos `self`, mas você pode ver o uso de `def` num objeto anexa o método à metaclass desse objeto.
 
-* * *
 
 ```ruby
 class Person  
@@ -182,7 +173,6 @@ end
 
 Aqui, abrimos a classe `Person`, fazendo o `self` ser `Person` pela duração do bloco, como no exemplo acima. Entretanto, estamos definindo um método à metaclasse de `Person` aqui, já que estamos definindo o método em um objeto (`self`). Você também pode ver que `self.name` enquanto dentro da classe Person é idêntico a `Person.name` enquanto fora dela.
 
-* * *
 
 ```ruby
 
@@ -198,7 +188,6 @@ end
 
 Ruby dá uma sintaxe para acessar a metaclass de um objeto diretamente. Fazendo `class << Person`, estamos fazendo o `self` ser a metaclass de `Person` pela duração do bloco. Como resultado, o método `species` é adicionado à metaclass de `Person`, em vez da classe propriamente dita.
 
-* * *
 
 ```ruby
 
@@ -215,7 +204,6 @@ end
 
 Aqui, combinamos diversas técnicas. Primeiro, abrimos `Person`, tornando `self` igual à classe `Person`. Em seguida, fazemos `class << self`, tornando `self` igual à metaclass de `Person`. Quando definimos o método `species`, ela é definida na metaclass de `Person`.
 
-* * *
 
 ```ruby
 

@@ -19,7 +19,6 @@ Na realidade eu promovo a tradução de software para Espanhol e outras linguage
 
 Pegue por exemplo este código em PHP do post [Construindo um forum em PHP e MySQL](http://www.codespanish.com/archives/softwaredevelopment/30)
 
-* * *
 
 ```php
 
@@ -66,7 +65,6 @@ Anos atrás, muitos desenvolvedores reclamaram do código fonte do Ruby porque m
 
 Outro caso notório é da SAP, com sua linguagem ABAP/4. Provavelmente, 30 anos atrás, os alemães não imaginavam que seu software seria usado no mundo todo. Veja este [pequeno trecho](http://www.abapcode.info/2007/05/purchase-order-history-mass-display.html) de código ABAP:
 
-* * *
 
 ```abap
 IF SUDATE = ‘X’.  

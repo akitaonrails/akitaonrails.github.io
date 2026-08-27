@@ -99,7 +99,6 @@ Se nenhum dos argumentos anteriores fez sentido para você, aqui vai uma última
 
 Este é um exemplo usando o framework web para C chamado [Raphters](https://github.com/DanielWaterworth/raphters). E este é um exemplo dele para um micro código à la “hello world”
 
-* * *
 
 ```c
 #include “raphters.h”

@@ -21,7 +21,6 @@ Eu acabei de ler [um post muito interessante sobre as virtudes de tipagem estát
 
 Entretanto a diferença é clara o suficiente. VB Script (Visual Basic Script) tem tipagem dinâmica e mesmo assim não é uma linguagem dinâmica. O código abaixo é VB Script válido (roda no Windows com cscript.exe):
 
-* * *
 
 ```vb
 
@@ -39,7 +38,6 @@ y = “XYZ”
 
 Ruby e Python usam tipagem dinâmica e eles também são linguagens dinâmicas. Aqui vai um trecho de código demonstrando o mecanismo de despacho dinâmico do Ruby:
 
-* * *
 
 ```ruby
 class Dummy
@@ -55,7 +53,6 @@ O método test() chamado na classe Dummy na última linha é despachado pelo Rub
 
 De volta ao post que mencionei no começo. O autor tenta provar que tipagem estática é superior à tipagem dinâmica. Para provar isso ele usa este código em Ruby (também há exemplos em Python, OCaml e Haskell):
 
-* * *
 
 ```ruby
 
@@ -76,7 +73,6 @@ Process.exit(main())
 
 Esse código funciona bem quando passamos 0, 1, 2 ou 3 argumentos na linha de comando:
 
-* * *
 
 ```bash
 
@@ -92,7 +88,6 @@ $ ruby -w -W2 t.rb 0 1 2; echo $?
 
 Entretanto, quando passamos 4 argumentos na linha de comando o script Ruby falha:
 
-* * *
 
 ```bash
 $ ruby w -W2 t.rb 0 1 2 3; echo $?  
@@ -117,7 +112,6 @@ E eis quando a confusão se firmou, misturando tipagem dinâmica com linguagem d
 
 Aqui vai um script tipado estaticamente em Groovy que vai falhar em tempo de compilação:
 
-* * *
 
 ```java
 int x = "test"
@@ -125,7 +119,6 @@ int x = "test"
 
 Este é o erro em runtime:
 
-* * *
 
 ```bash
 
@@ -136,7 +129,6 @@ at typesafe.main(typesafe.groovy)
 
 Hmm, Groovy sem sombra de dúvida tem tipagem estática (note, entretanto, que não há erro em tempo de compilação). Ainda assim ele também é uma linguagem dinâmica. Aqui vai o script Ruby anterior re-escrito em Groovy:
 
-* * *
 
 ```groovy
 
@@ -153,7 +145,6 @@ if (args.length \> 3) {
 
 Veja a declaração do método test() nas primeiras 3 linhas e seus argumentos tipados estaticamente. Esse script vai compilar? Sim. Esse script vai falhar quando 3 ou menos argumentos forem passados na linha de comando? Não. Aqui vão as saídas para 0 até 4 argumentos na linha de comando:
 
-* * *
 
 ```bash
 

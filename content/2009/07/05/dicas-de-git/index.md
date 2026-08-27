@@ -14,7 +14,6 @@ Se você ainda não aprendeu Git, um bom lugar para começar é meu [Micro Tutor
 
 Para começar, vamos criar um novo repositório para exemplo:
 
-* * *
 
 ```bash
 rails teste  
@@ -30,7 +29,6 @@ Agora vamos falar sobre como desfazer modificações, manipular commits, e muito
 
 Uma coisa que muitos perguntam e podem se confundir devido a comandos do git como ‘reset’ e ‘revert’. Por exemplo, digamos que você editou alguns arquivos e quer retornar apenas um deles ao estado original do último commit:
 
-* * *
 
 ```bash
 (master) $ git status
@@ -52,7 +50,6 @@ no changes added to commit (use “git add” and/or “git commit -a”)
 
 No exemplo, modificamos os arquivos ‘README’ e ‘Rakefile’. Agora digamos que você desistiu das mudanças no arquivo Rakefile e quer que ele volte ao estado original. Para isso apenas faça:
 
-* * *
 
 ```bash
 git checkout Rakefile
@@ -60,7 +57,6 @@ git checkout Rakefile
 
 Porém, digamos que você queira realmente desfazer todas as modificações que você fez, nesse caso você faz:
 
-* * *
 
 ```bash
 git reset -hard 
@@ -68,7 +64,6 @@ git reset -hard
 
 Isso retornará todos os arquivos modificados de volta ao estado original do último commit. Porém esse comando apenas afeta arquivos que já fazem parte do repositório. Se você criou diversos arquivos novos e que se livrar deles também, faça isto:
 
-* * *
 
 ```bash
 git clean d -f  
@@ -78,7 +73,6 @@ git clean d -f
 
 Uma coisa que muitos aprendem, decoram e fazem da forma errada é este comando:
 
-* * *
 
 ```bash
 git commit a -m “mensagem do commit”  
@@ -86,7 +80,6 @@ git commit a -m “mensagem do commit”
 
 A opção “-a” essencialmente significa o equivalente a fazer o seguinte: ‘adicione todos os arquivos modificados ao próximo commit’. Normalmente é isso mesmo que queremos fazer, mas nem sempre. Por exemplo, isso não adiciona arquivos que já não estavam no repositório, para esses você precisa adicionar manualmente antes de fazer o commit, por exemplo:
 
-* * *
 
 ```bash
 git add novo_arquivo.txt  
@@ -94,7 +87,6 @@ git add novo_arquivo.txt
 
 Digamos que você tem esta situação:
 
-* * *
 
 ```bash
 ./script/generate scaffold Post title:string
@@ -102,7 +94,6 @@ Digamos que você tem esta situação:
 
 Isso nos dá o seguinte:
 
-* * *
 
 ```bash
 (master) $ git status
@@ -144,7 +135,6 @@ Preste sempre atenção – as pessoas se acostumam a “não ler” as coisas. 
 
 Agora, façamos algumas operações:
 
-* * *
 
 ```bash
 git add app/models/  
@@ -153,7 +143,6 @@ git add config/routes.rb
 
 Vejam o resultado:
 
-* * *
 
 ```bash
 
@@ -191,7 +180,6 @@ Agora eu tenho um novo grupo de arquivos:
 
 - Changes to be committed – estes são arquivos modificados, que eu manualmente indiquei que serão inclusos no próximo commit, ou seja, eles estão numa região chamada “index”. Somente arquivos marcados no “index” entram no commit. Por exemplo:
 
-* * *
 
 ```bash
 git commit m “teste”
@@ -208,7 +196,6 @@ Notem que eu não precisei usar a opção “-a”. Na verdade, eu recomendaria 
 
 Como exemplo, digamos que esse último commit foi um engano, justamente porque “esquecemos” de adicionar os outros arquivos que estavam como “Untracked files”. Podemos desfazer um commit, sem perder as modificações que ela carrega fazendo isto:
 
-* * *
 
 ```bash
 git reset -soft HEAD~1  
@@ -216,7 +203,6 @@ git reset -soft HEAD~1
 
 Note a opção “—soft”, ela está indicando para desfazer o commit anterior (HEAD~1) mas sem perder seu conteúdo. Veja:
 
-* * *
 
 ```bash
 (master) $ git status
@@ -236,7 +222,6 @@ Note a opção “—soft”, ela está indicando para desfazer o commit anterio
 
 Agora, como adicionar os “Untracked files”? Uma forma que eu acabo fazendo é simplesmente copiando os paths indicados para um editor de texto, adicionar ‘git add’ e simplesmente colar os comandos no terminal. Outra forma é adicionar arquivo a arquivo de forma interativa, assim:
 
-* * *
 
 ```bash
 git add -i 
@@ -254,7 +239,6 @@ git add -i
 
 Ele nos dá um menu de comandos. Você pode usar a opção “4” para adicionar os novos arquivos. Ele nos levará à seguinte tela:
 
-* * *
 
 ```
 What now\> 4  
@@ -278,7 +262,6 @@ Agora você pode digitar o número do arquivo que quer adicionar e pressionar �
 
 Isso terminado, digite apenas ‘enter’ para retornar ao menu anterior e digite ‘q’ para sair do modo interativo. Agora, com os arquivos novos adicionados, temos isto:
 
-* * *
 
 ```bash
 git status
@@ -310,7 +293,6 @@ git status
 
 Pronto, agora todos os arquivos que queremos estão no “index”, marcados como “Changes to be committed”. A descrição é bastante explicativa: arquivos marcados como “new file” são os arquivos novos que adicionamos, e os “modified” são aqueles que já estavam no repositório e colocamos no index. Basta fazer o commit agora:
 
-* * *
 
 ```bash
 git commit m “adicionando scaffold de Post”  
@@ -326,7 +308,6 @@ A regra básica é a seguinte:
 
 Ou seja, não use comandos como ‘git reset —hard HEAD~1’ para apagar um commit, ou faça ‘rebase’ em cima de um branch que já exista no lado remoto. Se precisarmos reverter o que foi feito em um commit podemos primeiro fazer:
 
-* * *
 
 ```bash
 git log
@@ -350,7 +331,6 @@ initial commit
 
 Vamos reverter o commit mais recente. Para isso tomamos nota do seu identificados SHA1 e podemos executar este comando:
 
-* * *
 
 ```bash
 git revert -no-edit 89b53e7d0bfc4fdb4b5c389f5481dab5ddb2b83d  
@@ -360,7 +340,6 @@ git revert -no-edit 89b53e7d0bfc4fdb4b5c389f5481dab5ddb2b83d
 
 Agora teremos o seguinte log:
 
-* * *
 
 ```bash
 git log
@@ -396,7 +375,6 @@ Dissemos que commits remotos não devem ser modificados. Porém, digamos que voc
 
 Antes de mais nada, considere o cenário de um repositório remoto controlado, onde você conhece todas as pessoas da equipe envolvidas nela. Ou seja, não é um projeto open source no Github. Nesse caso faça as modificações locais que precisa e no final faça isto:
 
-* * *
 
 ```bash
 git push -force
@@ -406,7 +384,6 @@ git push -force
 
 A opção “—force” irá reescrever os commits no repositório remoto para refletir o que você fez localmente. Agora o truque: avise todos os membros da sua equipe para baixar as modificações da seguinte forma:
 
-* * *
 
 ```bash
 git pull -rebase
@@ -420,7 +397,6 @@ Isto irá reescrever o histórico local de cada um dos membros da equipe. Não �
 
 Depois de tanto manipular commits, digamos que você tenha feito alguma besteira. Vamos simular uma “besteira”, digamos que você tenha apagado um commit que não queria, por exemplo:
 
-* * *
 
 ```bash
 git log
@@ -440,7 +416,6 @@ Revert “adicionando scaffold de Post” This reverts commit 89b53e7d0bfc4fdb4b
 
 Para apagar “por engano” este commit mais recente, digamos que você “acidentalmente” tenha feito:
 
-* * *
 
 ```bash
 git reset -hard HEAD~1  
@@ -450,7 +425,6 @@ git reset -hard HEAD~1
 
 Agora seu log ficará assim:
 
-* * *
 
 ```bash
 git log
@@ -468,7 +442,6 @@ adicionando scaffold de Post
 
 Pronto, besteira feita, e agora? Faça de conta que esse commit representa todo o trabalho que você fez durante o dia todo. Será que agora você terá que fazer tudo de novo? Claro que não, o Git prevê esse tipo de coisa. Para começar, o ideal é que você tente recuperar um erro imediatamente quando o fez, não deixe para depois. Agora faça assim:
 
-* * *
 
 ```bash
 git reflog
@@ -486,7 +459,6 @@ bd69909 HEAD@{6}: commit: teste
 
 O comando ‘git reflog’ listará os commits inacessíveis. Podemos ver na segunda linha o commit que acabamos de ‘apagar’. Para recuperá-lo, faça o seguinte:
 
-* * *
 
 ```bash
 git merge 15bb972
@@ -498,7 +470,6 @@ Pronto, isso trás o commit perdido de volta ao histórico oficial e será como 
 
 Toda vez que queremos um novo branch usamos o seguinte comando:
 
-* * *
 
 ```bash
 git checkout b novo_branch  
@@ -508,7 +479,6 @@ git checkout b novo_branch
 
 Isso indica que criaremos o ‘novo_branch’ tendo como pai o branch onde estamos neste momento. Porém, digamos que queremos criar um branch a partir de um commit no passado. Podemos fazer desta forma:
 
-* * *
 
 ```bash
 git checkout b novo_branch d394bee7ec01b2d90f00f20fc698364e9d943352  
@@ -526,7 +496,6 @@ Use o comando ‘git log’ para identificar o SHA1 do commit que quer. Visualme
 
 Isso é simples, use o seguinte comando:
 
-* * *
 
 ```bash
 git blame base.rb
@@ -551,7 +520,6 @@ Com isso podemos saber quem mexeu em cada linha, quando mexeu e em que commit es
 
 Quantas vezes não fazemos um commit e nos damos conta que escrevemos a mensagem de commit com algum erro ortográfico, ou mesmo esquecemos de detalhar alguma coisa importante? Mas o Git nos ajuda nisso também. Em vez de desfazer o commit e refazê-lo, podemos usar este comando:
 
-* * *
 
 ```bash
 git commit -amend
@@ -566,7 +534,6 @@ Isso abrirá seu editor padrão (ex. Vim) e lhe dará a oportunidade de editar a
 
 Não se esqueça, para conhecer alguns dos principais comandos do Git use este comando:
 
-* * *
 
 ```bash
 git -help
@@ -576,7 +543,6 @@ git -help
 
 E para obter detalhes e instruções sobre como usar cada comando, faça assim:
 
-* * *
 
 ```bash
 git help commit

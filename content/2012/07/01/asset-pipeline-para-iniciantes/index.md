@@ -31,7 +31,6 @@ Tudo que será explicado neste artigo vale para o Rails 3.2 e superior, existem 
 
 Quando iniciamos um novo projeto com o comando <tt>rails new novo_projeto</tt>, o primeiro arquivo que você vai querer mexer é o <tt>Gemfile</tt>:
 
-* * *
 
 ```ruby
 #1. Original  
@@ -65,7 +64,6 @@ Aliás, se você ainda não conhece [SASS](http://sass-lang.com), faça a você 
 
 Ao modificar o arquivo <tt>Gemfile</tt>, lembre-se de executar os seguintes comandos no terminal:
 
-* * *
 
 ```bash
 bundle
@@ -73,7 +71,6 @@ bundle
 
 Para exercitar, vamos criar um simples controller com uma única página dinâmica para entender o que podemos fazer com isso. De volta ao terminal faça o seguinte:
 
-* * *
 
 ```bash
 rm public/index.html  
@@ -84,7 +81,6 @@ bundle exec rails g controller home index
 
 O resultado será:
 
-* * *
 
 ```
 create app/controllers/home_controller.rb 
@@ -104,7 +100,6 @@ invoke scss create app/uploads/stylesheets/home.css.scss
 
 E para combinar, já que estamos recomendando SCSS, vamos apagar o arquivo <tt>app/stylesheets/application.css</tt> e criar um novo:
 
-* * *
 
 ```bash
 rm app/stylesheets/application.css  
@@ -113,7 +108,6 @@ touch app/stylesheets/application.css.scss
 
 E nesse novo arquivo podemos colocar somente:
 
-* * *
 
 ```css
 
@@ -122,7 +116,6 @@ E nesse novo arquivo podemos colocar somente:
 
 Outra boa prática é ignorar o diretório <tt>public/uploads</tt> do repositório Git (você utilizar [Git](/2012/04/09/screencasts-liberados-gratuitamente), correto?). Faça o seguinte:
 
-* * *
 
 ```bash
 echo “public/uploads” >> .gitignore  
@@ -130,7 +123,6 @@ echo “public/uploads” >> .gitignore
 
 E agora já podemos iniciar o servidor local de Rails e examinar o que temos até agora:
 
-* * *
 
 ```bash
 bundle exec rails s  
@@ -140,7 +132,6 @@ bundle exec rails s
 
 Resumidamente, em termos de assets temos os seguintes principais elementos e estrutura:
 
-* * *
 
 ```
 app  
@@ -168,7 +159,6 @@ Gemfile.lock
 
 O código fonte do layout <tt>app/views/layouts/application.html.erb</tt> contém o seguinte:
 
-* * *
 
 ```html
 
@@ -187,7 +177,6 @@ O código fonte do layout <tt>app/views/layouts/application.html.erb</tt> conté
 
 Se você já tinha visto até o Rails 2.x, um layout padrão ERB não é tão diferente. Com o servidor de pé, em ambiente de desenvolvimento, vejamos o HTML gerado ao abrir <tt>http://localhost:3000/home/index</tt>:
 
-* * *
 
 ```html
 
@@ -213,7 +202,6 @@ Find me in app/views/home/index.html.erb
 
 No HTML gerado, note que os links para os assets apontam todos para <tt>/uploads</tt>. Além disso note que a chamada <tt>javascript_include_tag(“application”)</tt> expandiu para 4 javascripts diferentes. Para entender isso, precisamos examinar mais de perto o arquivo <tt>app/uploads/javascripts/application.js</tt>:
 
-* * *
 
 ```javascript
 
@@ -233,7 +221,6 @@ Normalmente usar o <tt>require_tree .</tt> não é exatamente ruim se os javascr
 
 Para explicar como tudo isso funciona é importante pararmos o servidor Rails que subimos antes e reexecutá-lo em modo produçao:
 
-* * *
 
 ```bash
 bundle exec rails s e production  
@@ -241,7 +228,6 @@ bundle exec rails s e production
 
 Agora, se tentarmos carregar a mesma URL <tt>http://localhost:3000/home/index</tt> no browser, receberemos um erro 500 com o seguinte backtrace:
 
-* * *
 
 ```
 Started GET “/home/index” for 127.0.0.1 at 2012-07-01 03:31:55 -0300  
@@ -265,7 +251,6 @@ ActionView::Template::Error (application.css isn’t precompiled):
 
 Este é o sinal que não realizamos um passo importante que deve ser executado toda vez que você realizar uma atualização em produção: pré-compilar os assets. É o processo que lê os arquivos manifesto e realiza a concatenação dos arquivos declarados e sua minificação (utilizando a gem [Uglifier](https://github.com/lautis/uglifier)). Portanto, precisamos executar o seguinte:
 
-* * *
 
 ```bash
 bundle exec rake assets:precompile
@@ -273,7 +258,6 @@ bundle exec rake assets:precompile
 
 Lembrando que antes disso o diretório <tt>public/uploads</tt> estava originalmente vazio (e em desenvolvimento, você deve garantir que esse diretório esteja sempre vazio, já explicamos porque). Após executar a a pré-compilação, esse diretório terá os seguintes arquivos:
 
-* * *
 
 ```
 application-363316399c9b02b9eb98cd1b13517abd.js  
@@ -291,7 +275,6 @@ rails.png
 
 E para entender vejamos o código-fonte do HTML gerado em produção:
 
-* * *
 
 ```html
 
@@ -316,7 +299,6 @@ Compare este HTML com o anterior que analisamos gerado em ambiente de desenvolvi
 
 Para entendermos melhor, vejamos o que tem no arquivo <tt>public/uploads/manifest.yml</tt>:
 
-* * *
 
 ```bash
 rails.png: rails-be8732dac73d845ac5b142c8fb5f9fb0.png  
@@ -332,7 +314,6 @@ Ou seja, o arquivo <tt>application.js</tt> é idêntico ao <tt>application-36331
 
 Para reforçar o ponto 2, vamos adicionar a seguinte função no arquivo <tt>app/uploads/javascripts/application.js</tt>:
 
-* * *
 
 ```javascript
 
@@ -343,7 +324,6 @@ function helloWorld() {
 
 Agora executamos a pré-compilação novamente:
 
-* * *
 
 ```bash
 bundle exec rake assets:precompile  
@@ -351,7 +331,6 @@ bundle exec rake assets:precompile
 
 O que temos no diretório <tt>public/uploads</tt> será:
 
-* * *
 
 ```
 application-363316399c9b02b9eb98cd1b13517abd.js  
@@ -373,7 +352,6 @@ rails.png
 
 Como não limpamos o diretório antes, temos a versão antiga e a recente. Compare, a anterior se chamava <tt>application-363316399c9b02b9eb98cd1b13517abd.js</tt> e a nova com a função de demonstração se chama <tt>application-4fee97e9e402a9816ab9b3edf7a4c08b.js</tt>. Reiniciando o servidor Rails no ambiente de produção e vendo o novo HTML gerado, verá este trecho:
 
-* * *
 
 ```html
 <script src="/uploads/application-4fee97e9e402a9816ab9b3edf7a4c08b.js" type="text/javascript"></script>

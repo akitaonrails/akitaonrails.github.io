@@ -17,7 +17,6 @@ The Cocoa framework has both implemented as [NSDateFormatter](http://developer.a
 
 You can format dates like this:
 
-* * *
 
 ```objc
 NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];  
@@ -33,7 +32,6 @@ NSLog(`"formattedDateString: %`", formattedDateString);
 
 And you can use Regular Expressions like this:
 
-* * *
 
 ```objc
 
@@ -49,7 +47,6 @@ NSUInteger numberOfMatches = [regex numberOfMatchesInString:string
 
 But I have issues with both of these. The Ruby equivalent for the date formatting example would be:
 
-* * *
 
 ```ruby
 require ‘activesupport’  
@@ -59,7 +56,6 @@ date.strftime(“%b %d, %Y”)
 
 And the regular expression example would be like this:
 
-* * *
 
 ```ruby
 
@@ -117,7 +113,6 @@ Now follow each line to understand it:
 
 Now this is too nice. I have added a few other helper methods that now allow me to use it like this:
 
-* * *
 
 ```objc
 it(`"should convert the date to the rfc822 format", ^{
@@ -149,7 +144,6 @@ With all this set, I recommend you to explore the <tt>OnigRegexp.m</tt> and <tt>
 
 I have wrapped those helpers in my own classes like this:
 
-* * *
 
 ```objc
 - (NSString*) gsub:(NSString*)pattern with:(id)replacement {  
@@ -173,7 +167,6 @@ Reference: [NSString+helpers.m](https://github.com/akitaonrails/ObjC_Rubyficatio
 
 Which now allows me to use this nicer syntax:
 
-* * *
 
 ```objc
 context(`"Regular Expressions", ^{
