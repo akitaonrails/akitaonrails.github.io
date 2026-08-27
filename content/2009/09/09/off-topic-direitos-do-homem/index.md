@@ -2,6 +2,7 @@
 title: "[Off-Topic] Direitos do Homem"
 date: '2009-09-09T23:14:00-03:00'
 slug: off-topic-direitos-do-homem
+translationKey: off-topic-direitos-do-homem
 description: "A tradução de Ayn Rand defende direitos individuais como base da liberdade e do capitalismo, limita o governo à proteção contra a força e rejeita direitos econômicos que exigem o trabalho alheio."
 tags:
 - filosofia
@@ -13,7 +14,13 @@ draft: false
 
  ![](http://s3.amazonaws.com/akitaonrails/assets/2009/9/8/The_Virtue_of_Selfishness_Ayn_Rand_unabridged_M_original.jpg)
 
-Normalmente eu não gosto de falar de política. Detesto. Sempre achei uma grande perda de tempo. Porém, diante das visões mais exacerbadas de populismo-esquerdismo, da ignorância quando se engrandece o socialismo-tirano cubano ou a ditadura totalitária venezuelana; diante do clamor por reestatização e os movimentos contra a privatização – todas calcadas na ideia de “o bem para o povo”, “pelo benefício da maioria”, “pela ajuda aos fracos” e outras baboseiras como essa, achei que poderia pelo menos oferecer uma pequena contribuição filosófica, traduzindo pelo menos mais um capítulo do livro de Ayn Rand, [The Virtue of Selfishness](http://www.aynrandbookstore2.com/prodinfo.asp?number=AR09B) que fala exatamente sobre esse tema, lembrando, claro, que ele foi escrito sobre o contexto dos anos 60. Mas é impressionante como as coisas não mudaram muito nesse sentido. Mas, antes, mais um trecho da introdução, a respeito da fundação do “egoísmo racional” do Objetivismo:
+Normalmente eu não gosto de falar de política. Detesto. Sempre achei uma grande perda de tempo.
+
+Mas diante das visões mais exacerbadas de populismo-esquerdismo, da ignorância que engrandece o socialismo-tirano cubano ou a ditadura totalitária venezuelana, do clamor por reestatização e dos movimentos contra a privatização, tudo calcado na ideia de “o bem para o povo”, “pelo benefício da maioria”, “pela ajuda aos fracos” e outras baboseiras do gênero, resolvi oferecer ao menos uma pequena contribuição filosófica.
+
+Traduzi mais um capítulo do livro de Ayn Rand, [The Virtue of Selfishness](http://web.archive.org/web/20090802051516/http://www.aynrandbookstore2.com/prodinfo.asp?number=AR09B), que trata exatamente desse tema. Vale lembrar que ele foi escrito no contexto dos anos 60. Ainda assim, é impressionante como as coisas mudaram pouco por aqui.
+
+Antes do capítulo, mais um trecho da introdução, sobre a fundação do “egoísmo racional” do Objetivismo:
 
 > Observem a indecência do que se passa por julgamentos morais hoje. Um industrial que produz uma fortuna, e um bandido que rouba um banco são considerados igualmente imorais, uma vez que ambos procuraram riqueza para seu próprio benefício “egoísta”. Um jovem que abandona sua carreira, a fim de sustentar os pais e nunca ultrapassa o posto de escriturário de mantimentos é considerado moralmente superior ao jovem que sofre um esforço excruciante e alcança a sua ambição pessoal. Um ditador é considerado como moral, uma vez que as atrocidades indescritíveis que foram cometidas foram para beneficiar “o povo”, e não a si mesmo.   
 >   
@@ -141,7 +148,7 @@ O processo consiste em atribuir a cidadãos particulares as violações específ
 
 É “censura”, dizem eles, se um patrocinador de TV se opõe a algum atentado perpetrado em um programa que está financiando, tais como o incidente de Alger Hiss sendo convidado a denunciar o ex-vice-presidente Nixon.
 
-E depois há Newton N. Minow que declara: “Existe censura de popularidade, pelos anunciantes, pelas redes, pelas filiais que rejeitam a programação oferecida às suas áreas.” É o mesmo Sr. Minow que ameaça revogar a licença de qualquer estação que não seguir com sua opinião sobre a programação – e que afirma que isso não é censura.
+E depois há Newton N. Minow que declara: “Existe censura por audiência, pelos anunciantes, pelas redes, pelas filiais que rejeitam a programação oferecida às suas áreas.” É o mesmo Sr. Minow que ameaça revogar a licença de qualquer estação que não seguir com sua opinião sobre a programação – e que afirma que isso não é censura.
 
 Considere as implicações de tal tendência.
 
