@@ -82,8 +82,6 @@ Foi aí que me caiu a ficha do óbvio: Objective-C nada mais é que um superset 
 
 Então, como eu pego o [strftime compatível com C](http://www.cplusplus.com/reference/clibrary/ctime/strftime/)? Fácil:
 
-* * *
-C
 
 ```objc
 # import “time.h”  
@@ -102,8 +100,6 @@ return output;
 }
 ```
 
--
-
 Referência: [NSDate+helpers.m](https://github.com/akitaonrails/ObjC_Rubyfication/blob/master/Rubyfication/NSDate+helpers.m#L71-80)
 
 Agora siga cada linha pra entender:
@@ -121,8 +117,6 @@ it(`"should convert the date to the rfc822 format", ^{
     [[[ref toFormattedString:`“rfc822”] should] equal:@"Fri, 01 Jan 2010 10:15:30"];  
 }); 
 ```
-
--
 
 Referência: [DateSpec.m](https://github.com/akitaonrails/ObjC_Rubyfication/blob/master/RubyficationTests/DateSpec.m#L69)
 

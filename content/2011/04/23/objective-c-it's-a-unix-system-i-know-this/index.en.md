@@ -80,8 +80,6 @@ That's when the obvious thing came to me: Objective-C is nothing more than a sup
 
 So, how do I get [C-compatible](http://www.cplusplus.com/reference/clibrary/ctime/strftime/) strftime? Easy:
 
-* * *
-C
 
 ```objc
 # import “time.h”  
@@ -100,8 +98,6 @@ return output;
 }
 ```
 
--
-
 Reference: [NSDate+helpers.m](https://github.com/akitaonrails/ObjC_Rubyfication/blob/master/Rubyfication/NSDate+helpers.m#L71-80)
 
 Now follow each line to understand it:
@@ -119,8 +115,6 @@ it(`"should convert the date to the rfc822 format", ^{
     [[[ref toFormattedString:`“rfc822”] should] equal:@"Fri, 01 Jan 2010 10:15:30"];  
 }); 
 ```
-
--
 
 Reference: [DateSpec.m](https://github.com/akitaonrails/ObjC_Rubyfication/blob/master/RubyficationTests/DateSpec.m#L69)
 
