@@ -46,7 +46,7 @@ Feito isso, entre no diretório ‘merb-core’. Digite:
 
 O asterisco indica em qual branch você está. Os outros branches eu não mexeria se fosse você, eles servem para puxar novas atualizações do repositório original.
 
-h1. Manipulando Branches Locais
+## Manipulando Branches Locais
 
 A primeira coisa que recomendo é criar um novo branch. Pode ser qualquer nome, no meu caso eu sempre crio um chamado ‘working’.
 
@@ -189,17 +189,17 @@ O último comando é um ‘ls’ (o equivalente de ‘dir’, para quem é de Wi
 Agora, vou fazer as correções que preciso.
 
 ```bash
->> git commit <del>a -m “minha correcao”
+>> git commit -a -m “minha correcao”
 ```
 
 ```
 Created commit 760873a: minha correcao
- 3 files changed, 6 insertions(+), 1 deletions(</del>)
+ 3 files changed, 6 insertions(+), 1 deletions(-)
 ```
 
 Pronto! Fiz minhas correções, fiz o commit e agora posso jogar em produção. Meu chefe me deixa em paz e eu posso voltar ao que estava fazendo antes.
 
-h1. Merges Triviais
+## Merges Triviais
 
 Espere um instante, e agora? Em que situação estou. Vamos ver:
 
@@ -289,12 +289,12 @@ Pense em ‘stash’ como uma pilha temporária de coisas. Eu não quis fazer co
 >> git rebase master
 ```
 
+```
 First, rewinding head to replay your work on top of it…
 HEAD is now at dee9e1f… minha correcao
 
 Applying meu primeiro commit
 
-```
 error: patch failed: CONFIG :1
 error: CONFIG: patch does not apply
 error: patch failed: TODO:0
@@ -389,15 +389,16 @@ git add CONFIG
 >> git rebase —continue
 ```
 
+```
 Applying meu primeiro commit
 
 Wrote tree ba231cbcbb1c61e67b4871e09be67b744559d28d
 Committed: d5d5def2e451acc55fbcceeb634efffb0164b431
-<del>-</del>
+```
 
 Agora sim, terminou sem nenhum erro! O que ele fez? Ele continuou a operação de ‘rebase’ que começamos lá em cima e foi até o fim. Quando os conflitos apareceram vocês devem ter notado que no git status que dei antes apareceu um cara estranho chamado .dotest/. Ele guardou o que faltava aplicar no nosso branch e o comando git rebase —continue segue a partir de onde parou usando o que ficou gravado em .dotest/. Agora que o rebase terminou, esse diretório também some.
 
-h1. Merge vs Rebase
+## Merge vs Rebase
 
 E por que antes eu fiz ‘merge’ e agora eu usei esse tal de ‘rebase’?
 
@@ -457,7 +458,7 @@ Created commit 69bc9a8: mais um commit
 
 O git add . (ponto) significa <em>“adicione todo novo arquivo que apareceu agora e que não estava no repositório antes.”</em> O segundo comando vocês já conhecem. Cuidado ao adicionar tudo de uma vez só, você pode acabar adicionando arquivos que não queria como logs e outras sujeiras. Use git status para se certificar do que está adicionando.
 
-h1. Rebaseando seu Branch
+## Rebaseando seu Branch
 
 ```bash
 >> git checkout master
@@ -502,29 +503,25 @@ Switched to branch “working”
 >> git rebase master
 ```
 
+```
 First, rewinding head to replay your work on top of it…
 
-```
 HEAD is now at 76969b2… Merge branch ‘master’ of git://github.com/wycats/merb-core
-```
 
 Applying meu primeiro commit
 
-```
 Wrote tree 0f9f0e2b72f45f14a7b941b8e064de8dba678566
 Committed: 9c35dc1cead3f50c8b96494b01cf2b7a29fdb2fa
-```
 
 Applying mais um commit
 
-```
 Wrote tree 104dd17852e815cfc4e23345ae123ea390c997e3
-Committed: c9a4f27905d47d57798ee2b3239eec1e162cb452—-
+Committed: c9a4f27905d47d57798ee2b3239eec1e162cb452
 ```
 
 Pronto. Agora meu branch ‘working’ está sincronizado com o ‘master’.
 
-h1. Reusando e Resincronizando seus Repositórios
+## Reusando e Resincronizando seus Repositórios
 
 Façamos de conta que eu acabei o código que estava trabalhando no ‘working’. Agora gostaria de utilizá-lo em outro projeto meu. Ou seja, em vez de usar o Merb original, quero usar o  customizado. Como fazer isso?
 
@@ -562,8 +559,7 @@ Initialized empty Git repository in /Users/akitaonrails/rails/sandbox/merb/proje
 
 Então, primeiro dou um cd .. para voltar para meu diretório-raíz. De lá faço o clone do <em>branch atual onde eu estava, no caso meu_merb</em>.
 
-```
-bash
+```bash
 >> cd projeto-merb
 ```
 
@@ -632,13 +628,13 @@ Writing 3 objects…
 Total 3 (delta 0), reused 0 (delta 0)
 Unpacking 3 objects…
  100% (3/3) done
-refs/heads/meu_merb: c9a4f27905d47d57798ee2b3239eec1e162cb452 <del>> a30a9698905fd6f9a933feca6777198bde2eb9e
+refs/heads/meu_merb: c9a4f27905d47d57798ee2b3239eec1e162cb452 -> a30a9698905fd6f9a933feca6777198bde2eb9e
 ```
 
 Ok, até o git commit todo mundo deve ter entendido. Mas e esse git push? Bom, se git pull trás tudo do repositório original, git push empurra as modificações de volta, se você tiver permissão de escrita nele, claro. Vamos voltar ao projeto original e checar isso:
 
 ```bash
->> cd ../merb-core/—-
+>> cd ../merb-core/
 ```
 
 <p style="text-align: center; margin: 3px"><img src="http://s3.amazonaws.com/akitaonrails/assets/2008/4/3/Picture_7.png" alt=""></p>
@@ -698,7 +694,7 @@ Esse comando serve para outra coisa também, digamos que fiz várias coisas biza
 
 Prestem atenção! Ele vai desfazer <strong>tudo</strong> que você fez! Inclusive, se você apagou diretórios e renomeou um monte de coisas, ele vai recuperar <strong>tudo</strong> para você. E isso sem precisar ir online uma única vez!
 
-h1. Golpe de Mestre!!
+## Golpe de Mestre!!
 
 Agora, apenas para demonstrar algumas das inteligências do Git, vou criar um novo branch a partir do master e fazer uma alteração que o Subversion provavelmente choraria:
 
@@ -746,7 +742,7 @@ no changes added to commit (use “git add” and/or “git commit -a”)
 Vejam: eu alterei o conteúdo do arquivo LICENSE</span> e ainda por cima renomeei para licenca.txt. No git status ele viu que eu <strong>apaguei</strong> o LICENSE</span> e que apareceu um novo arquivo licenca.txt. Só de curiosidade, eis o trecho que adicionei no topo do arquivo, agora licenca.txt:
 
 ```license
-<macro:code>Fabio Akita
+Fabio Akita
 <www.akitaonrails.com>
 
 Copyright © 2008 Ezra Zygmuntowicz
@@ -760,12 +756,12 @@ Vou fazer o commit (não esquecer da opção -a !):
 ```
 
 ```bash
->> git commit <del>a -m “Novo arquivo”
+>> git commit -a -m “Novo arquivo”
 ```
 
 ```
 Created commit a2e52ec: Novo arquivo
- 2 files changed, 23 insertions(+), 20 deletions(</del>)
+ 2 files changed, 23 insertions(+), 20 deletions(-)
  delete mode 100644 LICENSE</span>
  create mode 100644 licenca.txt
 ```
@@ -811,7 +807,7 @@ Eu acrescentei uma linha e apaguei um parágrafo. Agora é a hora da verdade. Fa
 Renamed LICENSE</span> => licenca.txt
 Auto-merged licenca.txt
 Merge made by recursive.
- LICENSE</span> => licenca.txt | 3 <ins>+</ins>
+ LICENSE</span> => licenca.txt | 3 +
  1 files changed, 3 insertions(+), 0 deletions(-)
  rename LICENSE</span> => licenca.txt (94%)
 ```
@@ -845,7 +841,7 @@ Estou vendo cara de espanto de alguém aí na platéia?? Entenderam o que aconte
 
 Estão vendo? São coisas como essas que fazem o Git tão popular.
 
-h1. Conclusão Arrebatadora
+## Conclusão Arrebatadora
 
 Percebam outra coisa: eu criei branches, apaguei commits, apaguei os branches e tudo isso sem sair do mesmo diretório. Nada de sub-diretórios bagunçando tudo. Posso trabalhar em branches paralelos sem nenhum problema. Mais do que isso: tudo muito rápido! Posso até apagar as coisas e recuperar com um reset ou de outro branch sem precisar tocar a minha rede! Está tudo dentro do único diretório de sistema que ele precisa, chamado .git.
 
