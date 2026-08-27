@@ -3,6 +3,7 @@ title: Previsivelmente Irracional
 date: '2013-07-12T20:44:00-03:00'
 slug: previsivelmente-irracional
 description: "A partir de Dan Ariely, o autor apresenta a Economia Comportamental para mostrar como preços, desonestidade e placebo expõem decisões previsivelmente irracionais, algo essencial para quem gerencia pessoas."
+translationKey: previsivelmente-irracional
 tags:
 - psicologia
 - economia
@@ -11,15 +12,15 @@ tags:
 draft: false
 ---
 
-**Original de 4/3/2010**: [Gestão 2.0](http://info.abril.com.br/noticias/rede/gestao20/gestao/previsivelmente-irracional/)
+**Original de 4/3/2010**: [Gestão 2.0](http://web.archive.org/web/20130724115712/http://info.abril.com.br/noticias/rede/gestao20/gestao/previsivelmente-irracional/)
 
-Existe um ramo de pesquisa conhecido como “Economia Comportamental”, uma vertente um pouco diferente da Economia tradicional. Enquanto esta última assume um mundo com pessoas racionais, que tomam decisões baseadas em análises de custo-benefício, o primeiro leva em consideração fatores sociais, cognitivos e emocionais que influenciam nossas decisões do dia-a-dia.
+Existe um ramo de pesquisa conhecido como “Economia Comportamental”, uma vertente diferente da Economia tradicional. A Economia clássica parte do princípio de que as pessoas são racionais e decidem com base em análise de custo-benefício. A Economia Comportamental leva em conta os fatores sociais, cognitivos e emocionais que influenciam nossas decisões do dia a dia.
 
-Nós acreditamos que todos os dias tomamos decisões racionais, mas a verdade é que na maior parte do tempo nós damos chutes, decidimos baseados em emoção, e isso traz resultados muito interessantes. Um dos pesquisadores mais famosos é o Prof. Dan Ariely, escritor do livro “Previsivelmente Irracional”.
+Gostamos de acreditar que tomamos decisões racionais o tempo todo, mas na maior parte das vezes damos chutes e decidimos na emoção. E isso produz resultados muito interessantes. Um dos pesquisadores mais conhecidos da área é o Prof. Dan Ariely, autor do livro “Previsivelmente Irracional”.
 
-Nesse livro ele analisa tópicos sobre como enxergamos preços, porque preços não são baseados em “oferta e procura”, por que somos desonestos, como funciona o efeito Placebo. Estamos falando de anos de experiência empírica.
+No livro ele analisa como enxergamos preços, por que o preço não é uma simples questão de “oferta e procura”, por que somos desonestos e como funciona o efeito placebo. É o resultado de anos de experimentação empírica.
 
-Assistam este trecho que legendei de sua palestra no TED sobre o assunto:
+Assista a este trecho que legendei da palestra dele no TED sobre o assunto:
 
 <div class="video-container">
     <video controls>
@@ -28,10 +29,10 @@ Assistam este trecho que legendei de sua palestra no TED sobre o assunto:
     </video>
 </div>
 
-Por que isso é relevante? Porque lidamos com pessoas todos os dias. Tomamos decisões influenciadas por pessoas ou, pior, que irão afetar outras pessoas. Dormimos com nossa consciência tranquila porque achamos que tomamos a melhor decisão racional baseada nos dados que tínhamos à disposição.
+Por que isso importa? Porque lidamos com pessoas todos os dias. Tomamos decisões influenciadas por outros ou, pior, que vão afetar outros. E dormimos de consciência tranquila, convencidos de que escolhemos a melhor opção racional com os dados que tínhamos em mãos.
 
-Mas e se nossas decisões não forem tão racionais quanto pensamos? E se somos facilmente influenciados por dados e circunstâncias? Melhor ainda: e se ser consciente desse fato nos ajudar a entender nossas limitações e nos ajudar a tomar decisões realmente melhores?
+Mas e se nossas decisões não forem tão racionais assim? E se somos facilmente influenciados por dados e circunstâncias? Melhor ainda: e se reconhecer esse fato nos ajudar a entender nossas limitações e a decidir melhor de verdade?
 
-Por isso mesmo vale a pena entender nossa própria psicologia. Especialmente alguém numa posição de gerência precisa tentar entender pessoas, pois o próprio trabalho significa “gerenciar pessoas”.
+Por isso vale a pena entender a própria psicologia. Quem ocupa uma posição de gerência precisa disso mais que todo mundo, porque o trabalho em si já é “gerenciar pessoas”.
 
-Nós somos irracionais, previsivelmente irracionais. Use isso a seu favor.
+Somos irracionais, previsivelmente irracionais. Use isso a seu favor.
