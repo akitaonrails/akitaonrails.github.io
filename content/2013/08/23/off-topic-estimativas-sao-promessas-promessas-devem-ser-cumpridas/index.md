@@ -2,6 +2,7 @@
 title: "[Off-Topic] Estimativas são Promessas. Promessas devem ser cumpridas."
 date: '2013-08-23T16:15:00-03:00'
 slug: off-topic-estimativas-sao-promessas-promessas-devem-ser-cumpridas
+translationKey: off-topic-estimativas-sao-promessas-promessas-devem-ser-cumpridas
 description: "O autor argumenta que estimativas de software são promessas, não previsões, e que cumpri-las exige responsabilidade por comunicação, negociação, tempo e obstáculos, além de código."
 tags:
 - carreira
@@ -11,52 +12,58 @@ tags:
 draft: false
 ---
 
-Navegando no Quora, encontrei uma pergunta simples mas interessante ["Engenharia de Software: Qual a coisa mais difícil para um engenheiro de software"](https://www.quora.com/Software-Engineering/What-is-the-hardest-thing-you-do-as-a-software-engineer/answer/Fabio-Akita?__snids__=168056923%2C168051293&__nsrc__=2). É um assunto que reflito a respeito há muitos anos, constantemente. Respondi em inglês mas acho que é importante eu republicar uma versão em português aqui também.
+Navegando no Quora, encontrei uma pergunta simples e interessante: ["Engenharia de Software: qual a coisa mais difícil para um engenheiro de software"](https://www.quora.com/Software-Engineering/What-is-the-hardest-thing-you-do-as-a-software-engineer/answer/Fabio-Akita). É um assunto sobre o qual reflito há muitos anos. Respondi lá em inglês, e vale republicar uma versão em português aqui também.
 
-Eu sou um engenheiro de software e o que eu vejo depois de 20 anos de experiência em diferentes empresas, mercados, equipes é que praticamente todo engenheiro de software que conheci começa com a premissa que "código" é o objetivo e a solução de todo problema.
+Sou engenheiro de software e, depois de vinte anos passando por empresas, mercados e equipes diferentes, vejo um padrão. Praticamente todo engenheiro que conheci começa com a premissa de que "código" é o objetivo e a solução de todo problema.
 
-A verdade é que no mercado em geral (não estou falando dos casos excepcionais de pesquisa e desenvolvimento ou acadêmico) problemas de software não encontram solução em software. Esta é a primeira e a mais difícil coisa que todo engenheiro de software sofre para entender e briga contra isso.
+A verdade é que, no mercado em geral, problemas de software não encontram solução em software. Não estou falando dos casos excepcionais de pesquisa e desenvolvimento ou do meio acadêmico. Essa é a primeira e mais difícil coisa que todo engenheiro sofre para entender, e briga contra ela.
 
 ![Francis Underwood](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/380/houseofcardskevinspacey.jpg)
 
-> Linda Vasquez: Eu sei que ele te fez uma promessa, mas as circunstâncias mudaram. 
+> Linda Vasquez: Eu sei que ele te fez uma promessa, mas as circunstâncias mudaram.
 
 > Francis Underwood: A natureza das promessas, Linda, é que elas se mantêm imunes a mudanças de circunstâncias.
 
 > -- House of Cards
 
-Um aspecto que acredito que muitos citem como a coisa mais difícil é "estimar", porque é tão difícil chegar em estimativas corretas. E esse é o problema: a frase em si é errada e confunde.
+Um aspecto que muita gente cita como o mais difícil é "estimar", porque é raro chegar a estimativas certas. E aí mora o problema: a própria frase confunde.
 
-Estimativas, por definição, nunca poderão ser "corretas", caso contrário diríamos "previsões". E é exatamente porque são duas palavras separadas. Numa previsão as variáveis são determinadas e conhecidas, o caminho é previsível e automático, é basicamente o cenário de laboratório: _"dadas as condições ideais de temperatura e pressão, no vácuo, considerando atrito zero, um carrinho de brinquedo se movimentando a uma velocidade constante de 10 metros por segundo, por 10 segundos, vai percorrer 100 metros."_ E estimativas?
+Estimativas, por definição, nunca serão "corretas". Se fossem, se chamariam "previsões", e são duas palavras separadas justamente por isso. Numa previsão as variáveis são conhecidas e determinadas, o caminho é previsível e automático. É o cenário de laboratório: _"dadas as condições ideais de temperatura e pressão, no vácuo, com atrito zero, um carrinho de brinquedo a uma velocidade constante de 10 metros por segundo, por 10 segundos, percorre 100 metros."_ E estimativas?
 
 Fora do laboratório, temos estimativas, e estimativas são **PROMESSAS**.
 
-Promessas são feitas para serem cumpridas. Uma promessa não se resolve sozinha. Você precisa se esforçar deliberadamente para atingi-la e manter sua palavra. Da mesma maneira, uma estimativa é a mesma coisa: você estima e então precisa trabalhar duro para cumprir essa promessa.
+Promessas são feitas para serem cumpridas. Uma promessa não se resolve sozinha. Você precisa se esforçar deliberadamente para alcançá-la e manter a sua palavra. Com estimativas é igual: você estima e depois trabalha duro para cumprir o que prometeu.
 
-_"Mas o gerente/cliente/investidor/chefe fica constantemente me pressionando para adicionar mais coisas, fazer mudanças o tempo todo, quebrando minha concentração com problemas irrelevantes o dia inteiro."_
+_"Mas o gerente/cliente/investidor/chefe fica me pressionando o tempo todo para adicionar mais coisas, fazer mudanças toda hora, quebrando minha concentração com problemas irrelevantes o dia inteiro."_
 
-Sim, eles fazem isso, e eles vão continuar fazendo isso, ontem, hoje e sempre. E a primeira coisa que a maioria das pessoas faz é se tornar defensiva, não querendo se comprometer, então eles apenas decidem não dar estimativas ou dar estimativas fora de proporção para ter certeza que qualquer coisa "extra" possa caber. Esse não é um bom comportamento padrão.
+Sim, eles fazem isso, e vão continuar fazendo, ontem, hoje e sempre. A reação mais comum é ficar na defensiva. Para não se comprometer, a pessoa decide não dar estimativa nenhuma, ou dá um número fora de proporção para garantir que qualquer "extra" caiba. É um péssimo comportamento padrão.
 
-Se você fizer uma promessa para sua filha de chegar na apresentação dela na escola, por exemplo, e você fracassa em cumprir essa promessa, chegando 2 horas depois de ter terminado. Esse fracasso é seu e unicamente seu. Não foi o trânsito, não foram reuniões inesperadas no trabalho, não foi o tempo ou qualquer outra coisa. Você fez a promessa, você não falhou em prever os acidentes de percurso, você fracassou em preemptivamente sair antes, se adiantar aos problemas, e deixar espaço para acidentes inesperados. Você deixou tudo para a última hora e saiu no último minuto e, claro, _shit happens._
+Imagine que você promete à sua filha estar na apresentação dela na escola. Você falha e chega duas horas depois de tudo terminar. Esse fracasso é seu, e só seu.
 
-Estimativas é a mesma coisa: você disse um número, sem comprometimento, sem senso de responsabilidade, e não fez nada para atingir esse objetivo além de sentar e fazer código. Você não encontrou explicações para os problemas. E dizer uma vez, do seu jeito, não implica que a outra ponta entendeu, quem inicia a comunicação tem a responsabilidade de encontrar o meio para a ponta final receber o recado, caso contrário a comunicação não aconteceu. Comunicação não é dizer, é ser entendido. E ser entendido é responsabilidade de quem comunica.
+Não foi o trânsito, não foram as reuniões inesperadas, não foi o tempo. Você fez a promessa e não se preparou para os acidentes de percurso: sair antes, adiantar-se aos problemas, deixar folga para o inesperado. Deixou tudo para a última hora, saiu no último minuto e, claro, _shit happens._
 
-Então você fracassou em se comunicar, em gerenciar seu próprio tempo, em auxiliar seus pares com os problemas. Era sua responsabilidade, fazer código era o menor dos problemas.
+Com estimativas acontece o mesmo. Você disse um número sem comprometimento, sem senso de responsabilidade, e não fez nada além de sentar e escrever código para chegar lá. Não foi atrás de explicar os problemas.
 
-Ter senso de responsabilidade é exatamente a segunda coisa mais difícil que todo engenheiro de software enfrenta, pois se a premissa inicial era que ele só era responsável por "escrever código", ele não enxerga como uma falha sua não ter sido entendido na comunicação falha. Portanto eles nunca assumem a responsabilidade pelo fracasso, principalmente porque é tão mais fácil culpar todo o resto menos ele mesmo. E isso é precisamente porque a primeira coisa mais difícil que mencionei acima é a premissa errada que seu único objetivo na vida é escrever código, que todos os problemas se resolvem com código.
+Dizer uma vez, do seu jeito, não significa que a outra ponta entendeu. Quem inicia a comunicação é responsável por encontrar o meio de a mensagem chegar do outro lado; sem isso, a comunicação não aconteceu. Comunicar é ser entendido, e ser entendido é responsabilidade de quem fala.
 
-Isso não é verdade em software e não é verdade em muitas outras áreas, seja você um músico, um cozinheiro, um construtor. Claro, como profissionais de prática, é esperado que você seja o melhor na sua arte. Mas isso é o mínimo do mínimo da fundação básica e não há nada excepcional em ser tecnicamente bom, não importa quão impressionante sua capacidade técnica possa parecer. Não é nem um pouco importante que você consiga escrever o código mais absolutamente perfeito e elegante se está escrevendo software para o problema errado. Ou se compôs a música clássica à la Beethoven mais perfeita para um trabalho que era uma música para uma festa de aniversário de crianças. Das duas uma, ou você não aceita trabalhos para festas infantis, ou você escreve a melhor música pop que puder. Se você fica, ou você finaliza seu trabalho com qualidade excepcional e atingindo as expectativas ou você assume a incapacidade e vai embora, não ficando no caminho de quem realmente pode resolver o problema que você não pôde.
+Então você fracassou em se comunicar, em gerenciar o próprio tempo, em ajudar seus pares com os problemas. Era tudo sua responsabilidade. Escrever código era o menor dos problemas.
 
-A única coisa que qualquer um que oferece um serviço para outras pessoas precisa entender é que o objetivo é implementar sim a melhor solução possível, mas para o conjunto correto de problemas. E o entendimento que a coisa mais difícil é justamente encontrar esse conjunto correto de problemas. Os clientes vêm até nós, profissionais, justamente porque não sabem também. E como profissionais é nossa responsabilidade ajudar a encontrar esses problemas, se estiver sob nossa capacidade realizar uma promessa, e manter essa promessa gerenciando qualquer obstáculo que apareça no caminho.
+Ter senso de responsabilidade é justamente a segunda coisa mais difícil que todo engenheiro enfrenta. Se a premissa inicial é que ele só responde por "escrever código", ele não enxerga a comunicação falha como falha dele. Por isso raramente assume o fracasso: é muito mais fácil culpar todo o resto. E isso vem direto da primeira dificuldade, a premissa errada de que seu único objetivo na vida é escrever código e de que todo problema se resolve com código.
 
-Parece simples dizer assim, mas mesmo os mais experientes engenheiros de software falham em entender essa simples verdade e muitos conseguem se safar quebrando promessas usando diversos truques para esconder a verdade.
+Isso não vale só para software. Vale para o músico, o cozinheiro, o construtor. Como profissional de ofício, espera-se que você seja ótimo na sua arte, claro. Mas isso é o mínimo da fundação, e não há nada de excepcional em ser tecnicamente bom, por mais impressionante que a habilidade pareça.
 
-Então aprendam a primeira e mais difícil verdade do mundo: Software normalmente não é resolvido com Software, é resolvido com capacidades Humanas. Numa distribuição de Pareto eu diria que 80% de todo problema de software somente é resolvido quando você investe aqueles 20% restantes em Comunicação, Articulação, Pensamento Claro e Racional, quebra Ambiguidades, Negociação, Compromisso.
+Não adianta escrever o código mais elegante e perfeito se ele resolve o problema errado. É como compor a peça clássica mais perfeita, à la Beethoven, para um trabalho que pedia música de festa de aniversário infantil. Das duas, uma: ou você não aceita a festa infantil, ou escreve a melhor música pop que conseguir. Se aceitou e ficou, ou entrega com qualidade excepcional, dentro da expectativa, ou reconhece a incapacidade e sai de cena, sem atrapalhar quem consegue resolver o que você não pôde.
 
-Complemento dizendo que parece, então, mais fácil nunca fazer promessas. Significa nunca se comprometer. Significa nunca ser um profissional pois é exatamente isso que diferencia um amador ou hobista de um profissional: fazer promessas e trabalhar para cumpri-las. Outra coisa que de fato acontece é você não cumprir seu lado da promessa porque ela dependia que o cliente, chefe, etc cumprisse primeiro o seu lado da promessa. Uma troca mútua de promessas é exatamente o motivo pelo qual existe um árbitro chamado Justiça Legal e o instrumento que define duas promessas tem um nome: chama-se contrato.
+Quem oferece um serviço precisa entender uma coisa: o objetivo é implementar a melhor solução possível, mas para o conjunto certo de problemas. E o mais difícil é encontrar esse conjunto certo. Os clientes procuram profissionais justamente porque também não sabem. Cabe a nós ajudar a achar esses problemas, avaliar se está ao nosso alcance cumprir a promessa, e depois mantê-la, gerenciando cada obstáculo que aparecer no caminho.
+
+Parece simples dito assim, mas até engenheiros experientes falham em entender essa verdade, e muitos se safam quebrando promessas com truques para esconder o rombo.
+
+Aprendam então a primeira e mais difícil verdade do mundo: software normalmente não é resolvido com software, é resolvido com capacidades humanas. Numa distribuição de Pareto, eu diria que 80% de todo problema de software só se resolve quando você investe os 20% restantes em comunicação, articulação, pensamento claro e racional, quebra de ambiguidades, negociação e compromisso.
+
+Diante disso, pode parecer mais fácil nunca prometer nada. Só que nunca prometer significa nunca se comprometer, e nunca se comprometer significa nunca ser profissional. É exatamente isso que separa o amador ou hobista do profissional: fazer promessas e trabalhar para cumpri-las. Também acontece de você não cumprir seu lado porque ele dependia de o cliente, o chefe ou quem seja cumprir o lado dele primeiro. Uma troca mútua de promessas é a razão de existir um árbitro chamado Justiça, e o instrumento que registra essas duas promessas tem nome: contrato.
 
 ![Promessas](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/381/Promise-Quotes.jpg)
 
-Dito tudo isso, é possível cumprir todas as promessas? Não, infelizmente não é. Mas é nossa responsabilidade como profissionais estar sempre em busca desse ideal, não criar maneiras de evitá-las.
+Dito tudo isso, dá para cumprir todas as promessas? Não, infelizmente não dá. Mas é nossa responsabilidade como profissionais buscar sempre esse ideal, em vez de inventar maneiras de fugir dele.
 
-Já falei mais sobre o assunto do que acredito ser um profissional num post de 2011 intitulado ["[Off-Topic] Opiniões, Verdades, Democracia e Ética"](http://www.akitaonrails.com/2011/05/04/off-topic-opinioes-verdades-democracia-e-etica#.UhexyWRgYqQ)
+Já falei mais sobre o que considero um profissional num post de 2011, ["[Off-Topic] Opiniões, Verdades, Democracia e Ética"](/2011/05/04/off-topic-opinioes-verdades-democracia-e-etica/).

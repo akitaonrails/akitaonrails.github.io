@@ -2,6 +2,7 @@
 title: "[Off-Topic] Estimates Are Promises. Promises Must Be Kept."
 date: '2013-08-23T16:15:00-03:00'
 slug: off-topic-estimativas-sao-promessas-promessas-devem-ser-cumpridas
+translationKey: off-topic-estimativas-sao-promessas-promessas-devem-ser-cumpridas
 description: "The author argues that software estimates are promises, not predictions, and that keeping them requires responsibility for communication, negotiation, time, and obstacles, as well as code."
 tags:
 - career
@@ -11,11 +12,11 @@ tags:
 draft: false
 ---
 
-Browsing Quora, I found a simple but interesting question: ["Software Engineering: What is the hardest thing for a software engineer"](https://www.quora.com/Software-Engineering/What-is-the-hardest-thing-you-do-as-a-software-engineer/answer/Fabio-Akita?__snids__=168056923%2C168051293&__nsrc__=2). It's a subject I've been reflecting on for many years, constantly. I answered in English but I think it's important to also republish a Portuguese version here.
+Browsing Quora, I found a simple but interesting question: ["Software Engineering: What is the hardest thing for a software engineer"](https://www.quora.com/Software-Engineering/What-is-the-hardest-thing-you-do-as-a-software-engineer/answer/Fabio-Akita). It's a subject I've been reflecting on for many years. I answered there in English, and it's worth republishing a Portuguese version here too.
 
-I'm a software engineer and what I see after 20 years of experience in different companies, markets, and teams is that practically every software engineer I've met starts with the premise that "code" is the goal and the solution to every problem.
+I'm a software engineer and, after twenty years across different companies, markets, and teams, I see a pattern. Practically every engineer I've met starts with the premise that "code" is the goal and the solution to every problem.
 
-The truth is that in the market in general (I'm not talking about exceptional cases of research and development or academia) software problems aren't solved with software. This is the first and the hardest thing every software engineer struggles to understand and fights against.
+The truth is that, in the market at large, software problems aren't solved with software. I'm not talking about the exceptional cases of research and development or academia. This is the first and hardest thing every engineer struggles to understand, and fights against.
 
 ![Francis Underwood](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/380/houseofcardskevinspacey.jpg)
 
@@ -25,38 +26,44 @@ The truth is that in the market in general (I'm not talking about exceptional ca
 
 > -- House of Cards
 
-One aspect I believe many cite as the hardest thing is "estimating," because it's so hard to arrive at correct estimates. And that's the problem: the phrase itself is wrong and confusing.
+One thing a lot of people cite as the hardest is "estimating," because you so rarely land on the right estimate. And that's where the problem lives: the phrase itself is confusing.
 
-Estimates, by definition, can never be "correct" — otherwise we'd say "predictions." And it's exactly because they're two separate words. In a prediction the variables are determined and known, the path is predictable and automatic, it's basically the lab scenario: _"given the ideal conditions of temperature and pressure, in a vacuum, considering zero friction, a toy car moving at a constant speed of 10 meters per second, for 10 seconds, will travel 100 meters."_ And estimates?
+Estimates, by definition, will never be "correct." If they were, we'd call them "predictions," and they're two separate words for exactly that reason. In a prediction the variables are known and fixed, the path is predictable and automatic. That's the lab scenario: _"given ideal conditions of temperature and pressure, in a vacuum, with zero friction, a toy car at a constant speed of 10 meters per second, for 10 seconds, travels 100 meters."_ And estimates?
 
 Outside the lab, we have estimates, and estimates are **PROMISES**.
 
-Promises are made to be kept. A promise doesn't resolve itself. You need to deliberately make an effort to reach it and keep your word. Likewise, an estimate is the same thing: you estimate and then you have to work hard to fulfill that promise.
+Promises are made to be kept. A promise doesn't resolve itself. You have to make a deliberate effort to reach it and keep your word. With estimates it's the same: you estimate and then you work hard to deliver what you promised.
 
-_"But the manager/client/investor/boss is constantly pressuring me to add more things, make changes all the time, breaking my concentration with irrelevant problems all day."_
+_"But the manager/client/investor/boss keeps pressuring me to add more things, make changes all the time, breaking my concentration with irrelevant problems all day long."_
 
-Yes, they do this, and they'll keep doing this, yesterday, today, and always. And the first thing most people do is become defensive, not wanting to commit, so they just decide not to give estimates or give estimates out of proportion to make sure any "extra" can fit. That isn't a good default behavior.
+Yes, they do this, and they'll keep doing it, yesterday, today, and always. The most common reaction is to get defensive. To avoid committing, people decide to give no estimate at all, or throw out a number so out of proportion that any "extra" is sure to fit. That's a terrible default.
 
-If you make a promise to your daughter to be at her presentation at school, for example, and you fail to keep that promise, arriving 2 hours after it ended. That failure is yours and only yours. It wasn't traffic, it wasn't unexpected meetings at work, it wasn't the weather or anything else. You made the promise, you didn't fail to predict accidents along the way — you failed to preemptively leave earlier, get ahead of problems, and leave room for unexpected accidents. You left everything to the last hour and left at the last minute and, of course, _shit happens._
+Say you promise your daughter you'll be at her school presentation. You blow it and show up two hours after the whole thing is over. That failure is yours, and yours alone.
 
-Estimates are the same thing: you said a number, without commitment, without a sense of responsibility, and you did nothing to reach that goal beyond sitting down and writing code. You didn't find explanations for the problems. And saying it once, your way, doesn't imply that the other end understood — whoever initiates the communication has the responsibility to find the means for the final end to receive the message, otherwise communication didn't happen. Communication isn't saying, it's being understood. And being understood is the responsibility of the one communicating.
+It wasn't traffic, it wasn't the surprise meetings, it wasn't the weather. You made the promise and didn't prepare for the bumps along the road: leaving earlier, getting ahead of the problems, building in slack for the unexpected. You left everything for the last hour, walked out at the last minute, and, of course, _shit happens._
 
-So you failed at communicating, at managing your own time, at helping your peers with the problems. It was your responsibility — writing code was the smallest of the problems.
+With estimates it's the same. You said a number with no commitment, no sense of responsibility, and did nothing to get there beyond sitting down and writing code. You never went digging to explain the problems.
 
-Having a sense of responsibility is exactly the second hardest thing every software engineer faces, because if the initial premise was that they were only responsible for "writing code," they don't see it as their failure not to have been understood in failed communication. So they never take responsibility for the failure, especially because it's so much easier to blame everything else but themselves. And that's precisely because the first hardest thing I mentioned above is the wrong premise that their only goal in life is to write code, that all problems are solved with code.
+Saying it once, your way, doesn't mean the other end understood. Whoever starts the communication is responsible for finding a way to get the message across; without that, communication didn't happen. To communicate is to be understood, and being understood is the responsibility of the person talking.
 
-This isn't true in software and isn't true in many other areas, whether you're a musician, a cook, a builder. Of course, as practicing professionals, you're expected to be the best at your art. But that's the bare minimum of the basic foundation, and there's nothing exceptional about being technically good, no matter how impressive your technical capability may seem. It's not a bit important that you can write the most absolutely perfect and elegant code if you're writing software for the wrong problem. Or if you composed the most perfect Beethoven-style classical piece for a job that was a song for a children's birthday party. Either you don't accept jobs for kids' parties, or you write the best pop music you can. If you stay, either you finish your job with exceptional quality, meeting expectations, or you accept the inability and walk away, not getting in the way of someone who can really solve the problem you couldn't.
+So you failed at communicating, at managing your own time, at helping your peers with the problems. All of it was your responsibility. Writing code was the smallest part.
 
-The only thing that anyone offering a service to other people needs to understand is that the goal is to implement the best possible solution, but for the correct set of problems. And the understanding that the hardest thing is precisely finding that correct set of problems. Clients come to us, professionals, precisely because they don't know either. And as professionals it's our responsibility to help find these problems, if it's within our capability to deliver on a promise, and to keep that promise by managing whatever obstacle appears along the way.
+Having a sense of responsibility is exactly the second hardest thing every engineer faces. If the starting premise is that they only answer for "writing code," they don't see the broken communication as their own failure. So they rarely own the outcome: it's much easier to blame everything else. And that comes straight from the first difficulty, the wrong premise that your only goal in life is to write code and that every problem is solved with code.
 
-It seems simple to say, but even the most experienced software engineers fail to understand this simple truth, and many manage to get by breaking promises using various tricks to hide the truth.
+This doesn't apply to software alone. It applies to the musician, the cook, the builder. As a working professional, sure, you're expected to be great at your craft. But that's the bare minimum of the foundation, and there's nothing exceptional about being technically good, however impressive the skill may look.
 
-So learn the first and hardest truth of the world: Software is normally not solved with Software, it's solved with Human capabilities. In a Pareto distribution I'd say 80% of every software problem is only solved when you invest those remaining 20% in Communication, Articulation, Clear and Rational Thinking, breaking Ambiguities, Negotiation, Commitment.
+There's no point writing the most elegant, perfect code if it solves the wrong problem. It's like composing the most perfect Beethoven-style classical piece for a job that called for music at a kids' birthday party. So one of two things: either you don't take the kids' party, or you write the best pop tune you can. If you took it and stayed, either you deliver with exceptional quality, within expectations, or you own the fact that you can't and step aside, without getting in the way of whoever can solve what you couldn't.
 
-I'll add by saying that it seems, then, easier to never make promises. It means never committing. It means never being a professional, because that's exactly what differentiates an amateur or hobbyist from a professional: making promises and working to fulfill them. Another thing that does happen is you not fulfilling your side of the promise because it depended on the client, boss, etc. fulfilling their side of the promise first. A mutual exchange of promises is exactly the reason why there's a referee called Legal Justice and the instrument that defines two promises has a name: it's called a contract.
+Anyone offering a service needs to understand one thing: the goal is to implement the best possible solution, but for the right set of problems. And the hardest part is finding that right set. Clients come to professionals precisely because they don't know either. It's on us to help find those problems, to judge whether keeping the promise is within our reach, and then to keep it, managing every obstacle that shows up along the way.
+
+It sounds simple put like this, but even experienced engineers fail to grasp this truth, and plenty get away with breaking promises using tricks to hide the hole they dug.
+
+So learn the first and hardest truth in the world: software is normally not solved with software, it's solved with human capabilities. On a Pareto distribution, I'd say 80% of every software problem only gets solved when you invest the remaining 20% in communication, articulation, clear and rational thinking, breaking ambiguities, negotiation, and commitment.
+
+Given all that, it can look easier to never promise anything. Except that never promising means never committing, and never committing means never being a professional. That's exactly what separates the amateur or hobbyist from the professional: making promises and working to keep them. It also happens that you don't hold up your side because it depended on the client, the boss, or whoever holding up their side first. A mutual exchange of promises is the whole reason there's a referee called Justice, and the instrument that records those two promises has a name: a contract.
 
 ![Promises](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/381/Promise-Quotes.jpg)
 
-All this said, is it possible to keep all promises? No, unfortunately it isn't. But it's our responsibility as professionals to always be in pursuit of this ideal, not to create ways to avoid them.
+All that said, can you keep every promise? No, unfortunately you can't. But it's our responsibility as professionals to always chase that ideal, instead of inventing ways to dodge it.
 
-I've talked more about the subject of what I believe a professional is in a 2011 post titled ["[Off-Topic] Opinions, Truths, Democracy, and Ethics"](http://www.akitaonrails.com/2011/05/04/off-topic-opinioes-verdades-democracia-e-etica#.UhexyWRgYqQ)
+I've said more about what I consider a professional to be in a 2011 post, ["[Off-Topic] Opinions, Truths, Democracy, and Ethics"](/en/2011/05/04/off-topic-opinioes-verdades-democracia-e-etica/).
