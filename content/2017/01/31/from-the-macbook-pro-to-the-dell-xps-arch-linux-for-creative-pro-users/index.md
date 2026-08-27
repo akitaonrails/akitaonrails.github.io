@@ -156,7 +156,7 @@ Por precaução, desinstalei o pacote `linux44` e todos os outros pacotes `linux
 ```
 sudo pacman -Ss linux44 | grep installed
 # sudo pacman -R linux44-(nome do pacote)
-```-
+```
 
 Agora tenho isso:
 
