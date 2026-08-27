@@ -15,9 +15,9 @@ draft: false
 
 ![Sell me this Pen](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/621/sell_me_this_pen.jpg)
 
-This is a very old tricky question used in interviews. And if you at least watched Scorcese's magnificent "Wolf of Wall Street", you will remember this phrase.
+This is a very old tricky question used in interviews. And if you at least watched Scorsese's magnificent "Wolf of Wall Street", you will remember this phrase.
 
-But how many of you actually thought through this tricky question?
+But how many of you actually thought it through?
 
 ### Introduction
 
@@ -30,13 +30,13 @@ I've seen this happen many times. Most tech talks I've seen, for example, have t
 1. Who is the ~~sales person~~ speaker. Achievements. Tour de force.
 2. What is being sold. The Pen.
 3. How good the Pen is or how easy it is to use.
-4. "Buy it" - end of story
+4. "Buy it." End of story.
 
 There is nothing wrong with those points. Sometimes the speaker goes as far as doing "flashy" and "gimmicky" things. Doing a live coding session to demonstrate how good he is (not the pen). Doing a tech demo demonstrating what the pen is. All fireworks and firecrackers. But those dissipate very quickly, and no one talks about it later. It doesn't **stick**.
 
 > And you **don't** sell the pen.
 
-Sometimes, brute force alone, the strength of the brand behind you, is enough to persuade a lot of people. But not most of them. Instead of selling the pen, the speaker sells the big brand, Microsoft, Google, Facebook. It was ["no one was ever fired for buying IBM"](https://en.wikipedia.org/wiki/Fear,_uncertainty_and_doubt) in 60's. The famous F.U.D. (the triforce of "Fear, Uncertainty, Doubt"). Now it is "no one - usually - gets fired for choosing Facebook or Google".
+Sometimes, brute force alone, the strength of the brand behind you, is enough to persuade a lot of people. But not most of them. Instead of selling the pen, the speaker sells the big brand, Microsoft, Google, Facebook. It was ["no one was ever fired for buying IBM"](https://en.wikipedia.org/wiki/Fear,_uncertainty_and_doubt) in 60's. The famous F.U.D. (the triforce of "Fear, Uncertainty, Doubt"). Now it is "no one, usually, gets fired for choosing Facebook or Google".
 
 Again, you're not selling the pen.
 
@@ -44,11 +44,11 @@ Again, you're not selling the pen.
 
 As any really good sales person will tell you, you're missing the most important point in the sequence above, between items 3 and 4. You wasted an insurmountable amount of time describing the "What". Most tech speakers waste a very long time explaining the "How", with code examples, live coding, trying to convince you how easy it may be.
 
-But they often forget to ask the question: "WHY the pen could be important for YOU". "YOU" being the audience. You're not connecting. You're lacking empathy. You're _telling_ them, not _persuading_ them. Telling and Persuading are worlds apart.
+But they often forget to ask the question: "WHY the pen could be important for YOU". "YOU" being the audience. You're not connecting. You're lacking empathy. You're just _telling_ them instead of _persuading_ them. Telling and Persuading are worlds apart.
 
 The WHY is the most important thing. And the difficult part in large audiences is that each person has a different "WHY" that needs a good answer.
 
-Whenever I see a speaker/writer/evangelist giving too much time for immaterial stuff like "benchmarks", "performance", "hyper-modularized architectures", I see them missing a large portion of the audience. Because while they have legitimate reasons for worrying about those points - because they experienced it inside Unicorns like Netflix, Facebook or Twitter - I will argue that more than 95% of the audience population will never have those problems.
+Whenever I see a speaker/writer/evangelist giving too much time for immaterial stuff like "benchmarks", "performance", "hyper-modularized architectures", I see them missing a large portion of the audience. They have legitimate reasons for worrying about those points, because they experienced it inside Unicorns like Netflix, Facebook or Twitter. Still, I will argue that more than 95% of the audience population will never have those problems.
 
 Therefore, you're trying to push a Lamborghini to people that not only can't afford it, but even if they could, it's not nearly at the top of their priority lists. Yes, the Lamborghini is obviously a fast and fine car. But WHY do I need it? WHY are you trying to push it to me? WHY is this pen even relevant to me?
 
@@ -58,13 +58,23 @@ I see an interview as a talk for an audience of one. And I see a blog post as a 
 
 But in a one-to-one interview we all have an extra very important advantage: you get to ask direct questions! Do you realize how important that is? In a talk with an audience you have to make assumptions on what they want to hear. In an interview you get to ask directly and give straightforward answers, closing the gap of assumptions.
 
-The irony is that most people don't ask questions on interviews. It's so much easier to make assumptions: "everybody wants to hear what I like to hear, because I know better". This is the utmost lack of empathy. Let's say that you're a top engineer working on performance sensitive tech in your unicorn startup. You tried everything and decided to write key real-time components near the bare bone metal, in C. And now you give talks about how important it is that everybody starts everything in C.
+The irony is that most people don't ask questions on interviews. It's so much easier to make assumptions: "everybody wants to hear what I like to hear, because I know better". This is the utmost lack of empathy.
 
-Now, communication is an art. Requires research, study, practice. You must understand your mother language very well, the grammar, the many subtle phrase constructions that better convey the message. There are several "design patterns" when it comes to [Argumentation Theory](https://en.wikipedia.org/wiki/Argumentation_theory), many [well known traps](https://en.wikipedia.org/wiki/List_of_fallacies), fallacies you want to avoid. Everything to create a rock solid, simple to grasp, and difficult to refute, line of thought.
+Let's say that you're a top engineer working on performance sensitive tech in your unicorn startup. You tried everything and decided to write key real-time components near the bare bone metal, in C. And now you give talks about how important it is that everybody starts everything in C.
 
-You don't want to be easily proven wrong. So each phrase you deliver is like a chess move: you must anticipate 10 different ways it can be refuted and have responses for each. Which is why you need to practice. Write, talk as much as possible, no matter the event. It's not about the size of the audience and your ego, it's the opportunity to get exposed to an audience with little risk. Only tackle a large audience once you're confident that you can defend your arguments. Calibrate your weapons before you use them. When you start tackling the **WHY** you may be provoking open wounds on the audience, so better be prepared.
+Now, communication is an art. Requires research, study, practice. You must understand your mother language very well, the grammar, the many subtle phrase constructions that better convey the message.
 
-But if you don't go for the WHYs, it's way worse: you're **FORGETTABLE**. You get applause at the end, and after an hour no one remembers your name. What is the purpose of a speaker no one remembers later? Or a speaker that is funny and people remember the jokes, but can't remember the content of the talk? So they sympathize with the speaker, but the message is irrelevant. If you want to be an actor or comedian, that's fine. If you want to convince people of a certain point of view though, that's **failure**.
+There are several "design patterns" when it comes to [Argumentation Theory](https://en.wikipedia.org/wiki/Argumentation_theory), many [well known traps](https://en.wikipedia.org/wiki/List_of_fallacies), fallacies you want to avoid. Everything to create a rock solid, simple to grasp, and difficult to refute, line of thought.
+
+You don't want to be easily proven wrong. So each phrase you deliver is like a chess move: you must anticipate 10 different ways it can be refuted and have responses for each.
+
+Which is why you need to practice. Write, talk as much as possible, no matter the event. The point is the opportunity to get exposed to an audience with little risk, regardless of the size of the audience or your ego. Only tackle a large audience once you're confident that you can defend your arguments.
+
+Calibrate your weapons before you use them. When you start tackling the **WHY**, you may be provoking open wounds on the audience, so better be prepared.
+
+But if you don't go for the WHYs, it's way worse: you're **FORGETTABLE**. You get applause at the end, and after an hour no one remembers your name. What is the purpose of a speaker no one remembers later? Or a speaker that is funny and people remember the jokes, but can't remember the content of the talk?
+
+So they sympathize with the speaker, but the message is irrelevant. If you want to be an actor or comedian, that's fine. If you want to convince people of a certain point of view though, that's **failure**.
 
 And the same goes for writing. You should've learned this in school. If you ever went through college and had to defend a thesis you SHOULD KNOW that the dissertation HAS to be divided in at least 3 sections: Introduction, Elaboration and Argumentation, and Conclusion. This is the WHAT, HOW, and WHY parts.
 
