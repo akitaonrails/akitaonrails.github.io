@@ -2,6 +2,7 @@
 title: "[Off-Topic] A Argumentação através da Intimidação "
 date: '2009-09-12T09:40:00-03:00'
 slug: off-topic-a-argumenta--o-atrav-s-da-intimida--o
+translationKey: off-topic-a-argumenta--o-atrav-s-da-intimida--o
 description: "A tradução de Ayn Rand identifica a argumentação através da intimidação como uma falácia que substitui razões por medo e culpa, defendendo evidências e premissas bem examinadas."
 tags:
 - filosofia
@@ -63,7 +64,7 @@ O arquétipo primordial desta argumentação é evidente (e assim são as razõe
 
 A fonte psicológica desse argumento é a metafísica social.
 
-Um metafísico social é aquele que trata a consciência dos outros homens como superiores aos seus próprios e e aos fatos da realidade. Para um metafísico social a avaliação moral de si próprio pelos outros é uma preocupação primária que substitui a verdade, fatos, razão lógica. A reprovação dos outros é tão terrível para ele que nada pode resistir ao seu impacto dentro da sua consciência, assim ele negaria a evidência de seus próprios olhos e invalidaria a sua própria consciência em prol da aprovação moral de qualquer charlatão vadio. Apenas um metafísico social poderia conceber tal coisa absurda como a esperança de ganhar um argumento intelectual insinuando: _“Mas as pessoas não vão gostar de você!”_
+Um metafísico social é aquele que trata a consciência dos outros homens como superiores aos seus próprios e aos fatos da realidade. Para um metafísico social a avaliação moral de si próprio pelos outros é uma preocupação primária que substitui a verdade, fatos, razão lógica. A reprovação dos outros é tão terrível para ele que nada pode resistir ao seu impacto dentro da sua consciência, assim ele negaria a evidência de seus próprios olhos e invalidaria a sua própria consciência em prol da aprovação moral de qualquer charlatão vadio. Apenas um metafísico social poderia conceber tal coisa absurda como a esperança de ganhar um argumento intelectual insinuando: _“Mas as pessoas não vão gostar de você!”_
 
 Estritamente falando, um metafísico social não percebe a sua argumentação em termos conscientes: ele acha isso “instintivamente”, pela introspecção, uma vez que representa a sua forma psico-epistemológica de vida. Todos nós já encontramos o tipo irritante de pessoa que não escuta o que alguém diz, mas às vibrações emocionais da voz do outro, ansiosamente traduzindo-os em aprovação ou reprovação para, em seguida, responder de acordo. Esta é uma espécie de argumentação auto-imposta através da intimidação, à qual um metafísico social se rende na maioria dos seus encontros humanos. E assim, quando ele encontra um adversário, quando suas premissas são contestadas, ele recorre automaticamente à arma que o assusta mais: a retirada da sua aprovação moral.
 
@@ -85,7 +86,7 @@ A argumentação através da intimidação não é nova, tem sido utilizada em t
 
 Como é que alguém pode resistir a esse argumento? Existe apenas uma arma contra ela: a certeza moral.
 
-Quando se entra em qualquer batalha intelectual, grande ou pequena, pública ou privada, não se pode buscar, desejar ou esperar aprovação do inimigo. Verdade ou mentira deve ser a preocupação exclusiva e o critério de julgamento – não a aprovação ou desaprovação de qualquer pessoa e, acima de tudo, não a aprovação dessas cujos padrões são o oposto dos seus próprios. (obs: já viram aquelas argumentações que começam “Eu respeito muito você, mas …” – claramente buscando uma aprovação).
+Quando se entra em qualquer batalha intelectual, grande ou pequena, pública ou privada, não se pode buscar, desejar ou esperar aprovação do inimigo. Verdade ou mentira deve ser a preocupação exclusiva e o critério de julgamento – não a aprovação ou desaprovação de qualquer pessoa e, acima de tudo, não a aprovação dessas cujos padrões são o oposto dos seus próprios. (obs: já viram aquelas argumentações que começam com “Eu respeito muito você, mas...”, claramente buscando aprovação?).
 
 Deixe-me enfatizar que o argumento da intimidação não consiste em colocar julgamento moral em questões intelectuais, mas de substituir o julgamento moral pelo argumento intelectual. Avaliações morais estão implícitas na maioria das questões intelectuais; não é meramente permitido, mas obrigatório colocar um juízo moral quando e onde necessário; suprimir tal julgamento é um ato de covardia moral. Mas um julgamento moral deve sempre seguir, e jamais anteceder (ou substituir), as razões em que se baseia.
 
