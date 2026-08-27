@@ -2,7 +2,8 @@
 title: 'Translation: Technical Debt'
 date: '2008-12-18T01:55:00-02:00'
 slug: tradu-o-d-vida-t-cnica
-description: "Steve McConnell's translation separates accidental from strategic technical debt, explains its interest, and suggests tracking it in the backlog. Shortcuts can make sense when traceable and repayable."
+translationKey: tradu-o-d-vida-t-cnica
+description: "Translation of Steve McConnell's classic article on technical debt: accidental vs. strategic debt, the interest that shortcuts charge, and why every debt belongs in the backlog."
 tags:
 - software-engineering
 - management
@@ -10,130 +11,130 @@ tags:
 draft: false
 ---
 
-I came to know **Steve McConnell** many years ago, first through the books [After the Gold Rush](http://www.stevemcconnell.com/gr.htm) and [Software Project Survival Guide](http://www.stevemcconnell.com/sg.htm). Many people know him more from [Code Complete](http://www.stevemcconnell.com/cc1.htm). Last year he wrote an excellent article on the subject of **Technical Debt**. While discussing this topic recently, I decided to revisit this text and translate it. Again, after years of experience I'm still surprised that this is yet another concept that few people discuss — and everyone keeps making the same mistakes over and over.
+I first came across **Steve McConnell** many years ago, through the books [After the Gold Rush](http://web.archive.org/web/20081223090527/http://www.stevemcconnell.com/gr.htm) and [Software Project Survival Guide](http://web.archive.org/web/20081220203840/http://www.stevemcconnell.com/sg.htm). Most people know him from [Code Complete](http://web.archive.org/web/20081220203824/http://www.stevemcconnell.com/cc1.htm). Last year he wrote an excellent article about **Technical Debt**. I was discussing the topic recently, went back to that text, and decided to translate it.
 
-First of all, the concept of "Technical Debt" is a metaphor indicating that every time you take a technical shortcut (the good old _"it doesn't matter if it comes out messy, what matters is shipping the product fast!"_), it doesn't come for free. Every time we do this, it's like taking out a loan at a bank — it's like taking on debt. And like all debt, this one also accrues interest and will one day be duly collected!
+Even after years of experience, it still surprises me: this is one more concept that few people discuss, and everyone keeps making the same mistake over and over.
 
-Extremists often say _"pay everything upfront, because credit cards are evil."_ That's not true either. Loans can be good and important. What merchant has never had a cash flow crunch where a small loan gave them some breathing room? The problem, as always, is excess — like the compulsive buyer who pays one credit card with another! Many companies behave exactly this way with software: they take on hundreds of debts and then after a few years are shocked by the accumulated amount owed.
+First things first: Technical Debt is a metaphor for what happens every time you take a technical shortcut, the good old _"who cares if it ships messy, what matters is getting the product out fast!"_. That doesn't come for free. It's like taking out a loan at the bank: you're taking on debt. And like every debt, this one also accrues interest and one day it will be duly collected.
 
-And you: have you taken on technical debt recently? Are you prepared to start paying it off? Here is my translation of the [original article](http://blogs.construx.com/blogs/stevemcc/archive/2007/11/01/technical-debt-2.aspx) by Steve:
+Extremists like to say _"pay everything upfront, because credit cards are evil."_ That isn't true either. Loans can be good and important. What merchant has never hit a cash flow crunch where a small loan bought some breathing room? The problem, as always, is excess, like the compulsive shopper who pays one credit card with another credit card. Plenty of companies treat software exactly like that: they take on hundreds of debts and, a few years later, panic at the accumulated amount to pay.
 
-_Note: this is Akita's adaptation and translation of Steve McConnell's original article._
+And you: have you taken on technical debt recently? Are you ready to start paying it off? Here is the translation of Steve's [original article](http://web.archive.org/web/20081222213832/http://blogs.construx.com/blogs/stevemcc/archive/2007/11/01/technical-debt-2.aspx):
 
 
 ## Technical Debt
 
-The term "technical debt" was coined by Ward Cunningham to describe the obligation that a software organization incurs when it chooses a design or construction approach that is expedient in the short term but which increases complexity and is more costly in the long term.
+The term "technical debt" was coined by Ward Cunningham to describe the obligation that a software organization incurs when it chooses a design or construction approach that's expedient in the short term but that increases complexity and is more costly in the long term.
 
-Ward didn't explain the metaphor very deeply. The few people who have discussed technical debt seem to use the metaphor mainly to communicate the concept to technical teams. I agree that it's a useful metaphor for communicating with technical teams, but I'm more interested in the metaphor's incredible and rich ability to explain a critical technical concept to non-technical project stakeholders.
+Ward didn't develop the metaphor in very much depth. The few other people who have discussed technical debt seem to use the metaphor mainly to communicate the concept to technical staff. I agree that it's a useful metaphor for communicating with technical staff, but I'm more interested in the metaphor's incredibly rich ability to explain a critical technical concept to non-technical project stakeholders.
 
-## What Is Technical Debt? Two Basic Types
+## What is Technical Debt? Two Basic Kinds
 
-_The first type of technical debt is the kind incurred unintentionally._ For example, a design approach turns out to be error-prone or a junior programmer simply writes bad code. This technical debt is the non-strategic result of **poor work**. In some cases this type of debt can be incurred unknowingly — for example, your company might acquire another that has accumulated significant technical debt that wasn't identified until after the acquisition. Sometimes, ironically, this debt can be created when a team stumbles in its efforts to **rewrite** an indebted platform and unintentionally creates more debt. Let's call this general category **Type I** debt.
+_The first kind of technical debt is the kind that is incurred unintentionally._ For example, a design approach just turns out to be error-prone or a junior programmer just writes bad code. This technical debt is the non-strategic result of doing a **poor job**. In some cases, this kind of debt can be incurred unknowingly, for example, your company might acquire a company that has accumulated significant technical debt that you don't identify until after the acquisition. Sometimes, ironically, this debt can be created when a team stumbles in its efforts to **rewrite** a debt-laden platform and inadvertently creates more debt. We'll call this general category of debt **Type I**.
 
-_The second type of technical debt is the kind incurred intentionally._ This typically happens when an organization makes a **conscious decision** to optimize for the present rather than the future. _"If we can't ship on time, there won't be a next release"_ is a common refrain — and usually a convincing one. This leads to decisions like _"We don't have time to reconcile these two databases, so we'll write some code to keep them in sync for now and reconcile after shipping."_ Or _"we have some code written by consultants who don't follow standards; we can clean it up later."_ Or _"we didn't have time to write all the unit tests for the code we wrote in the last 2 months of the project. We'll write them after the release."_ (We'll call this **Type II**.)
+_The second kind of technical debt is the kind that is incurred intentionally._ This commonly occurs when an organization makes a **conscious decision** to optimize for the present rather than for the future. _"If we don't get this release done on time, there won't be a next release"_ is a common refrain, and often a compelling one. This leads to decisions like, _"We don't have time to reconcile these two databases, so we'll write some glue code that keeps them synchronized for now and reconcile them after we ship."_ Or _"We have some code written by a contractor that doesn't follow our coding standards; we'll clean that up later."_ Or _"We didn't have time to write all the unit tests for the code we wrote the last 2 months of the project. We'll write those tests after the release."_ (We'll call this **Type II**.)
 
-The rest of my comments focus on the type of technical debt incurred for strategic reasons (Type II).
+The rest of my comments focus on the kind of technical debt that's incurred for strategic reasons (Type II).
 
-## Short-Term vs Long-Term Debt
+## Short-Term vs. Long-Term Debt
 
-With real debt, a company will maintain both short-term and long-term debt. You use short-term debt to cover things like gaps between your receivables (customer payments) and expenses (payroll). You take on short-term debt when you have the money, you just don't have it _now_. Short-term debt is expected to be paid off frequently. The technical equivalent seems fairly straightforward. Short-term technical debt is debt that is taken on _tactically and reactively_ — typically as a last resort to ship a product. (We'll call this **Type II.A**.)
+With real debt, a company will maintain both short-term and long-term debt. You use short-term debt to cover things like gaps between your receivables (payments from customers) and expenses (payroll). You take on short-term debt when you have the money, you just don't have it _now_. Short-term debt is expected to be paid off frequently. The technical equivalent seems straightforward. Short-term debt is the debt that's taken on _tactically and reactively_, usually as a late-stage measure to get a specific release out the door. (We'll call this **Type II.A**.)
 
-Long-term debt is debt that a company takes on _strategically and proactively_ — investment in new capital equipment, like a new factory, or a new corporate campus. Again, the technical equivalent seems straightforward: _"We don't think we'll need to support a second platform for at least 5 years, so this release can be built on the assumption that we'll be supporting only one platform."_ (We'll call this **Type II.B**.)
+Long-term debt is the debt a company takes on _strategically and proactively_: investing in new capital equipment, like a new factory, or a new corporate campus. Again, the technical equivalent seems straightforward: _"We don't think we're going to need to support a second platform for at least five years, so this release can be built on the assumption that we're supporting only one platform."_ (We'll call this **Type II.B**.)
 
-The implication is that short-term debt should be paid off quickly — perhaps as the first part of the next release cycle — while long-term debt can be carried for a few years or more.
+The implication is that short-term debt should be paid off quickly, perhaps as the first part of the next release cycle, whereas long-term debt can be carried for a few years or longer.
 
 ## Incurring Technical Debt
 
-When technical debt is incurred for strategic reasons, the underlying rationale is always that the cost of doing development work today is viewed as more expensive than it will be in the future. This can be true for any of several reasons.
+When technical debt is incurred for strategic reasons, the fundamental reason is always that the cost of development work today is seen as more expensive than the cost will be in the future. This can be true for any of several reasons.
 
-_Time to Market._ When time to market is critical, incurring $1 extra in development can equate to $10 in lost profit. Even if the cost of development for the same work rises to $5 later — that is, costs more later — incurring the $1 debt now is a sound business decision.
+_Time to Market._ When time to market is critical, incurring an extra $1 in development might equate to a loss of $10 in revenue. Even if the development cost for the same work rises to $5 later, incurring the $1 debt now is a good business decision.
 
-_Preserving Startup Capital._ In a startup environment you have a fixed amount of seed money, and every dollar counts. If you can defer an expense by a year or two, you can pay for that expense out of a larger pool of money later rather than paying it from precious startup funds now.
+_Preservation of Startup Capital._ In a startup environment you have a fixed amount of seed money, and every dollar counts. If you can delay an expense for a year or two you can pay for that expense out of a greater amount of money later rather than out of precious startup funds now.
 
-_Deferring Development Expense._ When a system is retired, all of a system's technical debt is retired at once along with it. Once a system is taken out of production, there's no difference between a "clean and correct" solution and a "quick and dirty" one. Unlike financial debt, when a system is retired all its technical debt is retired with it. Consequently, near the end of a system's life it becomes much harder to justify the cost of investing in anything other than the most expedient and immediate fix.
+_Delaying Development Expense._ When a system is retired, all of the system's technical debt is retired with it. Once a system has been taken out of production, there's no difference between a "clean and correct" solution and a "quick and dirty" solution. Unlike financial debt, when a system is retired all its technical debt is retired with it. Consequently near the end of a system's service life it becomes increasingly difficult to cost-justify investing in anything other than what's most expedient.
 
-## Ensure You're Incurring the Right Kind of Technical Debt
+## Be Sure You Are Incurring The Right Kind of Technical Debt
 
-Some debts are taken on in large chunks: _"We don't have time to implement this properly right now; just hack it and we'll fix it after we ship."_ Conceptually it's like buying a car — it's a large debt that can be tracked and managed. (We'll call this **Type II.A.1**.)
+Some debt is taken on in large chunks: _"We don't have time to implement this the right way; just hack it in and we'll fix it after we ship."_ Conceptually this is like buying a car: a large debt that can be tracked and managed. (We'll call this **Type II.A.1**.)
 
-Other debts accumulate by taking on hundreds or thousands of small shortcuts — generic variable names, sparse comments, creating one class where two should have been created, not following coding conventions, and so on. This type of debt is like credit card debt. It's easy to incur unintentionally, it accumulates faster than you expect, and it's difficult to track and manage once you've incurred it. (We'll call this **Type II.A.2**.)
+Other debt accumulates from taking hundreds or thousands of small shortcuts: generic variable names, sparse comments, creating one class in a case where you should create two, not following coding conventions, and so on. This kind of debt is like credit card debt. It's easy to incur unintentionally, it adds up faster than you think, and it's harder to track and manage after it has been incurred. (We'll call this **Type II.A.2**.)
 
-Both types of debt are commonly incurred in response to the directive to _"Ship as fast as possible."_ However, the second type (Type II.A.2) doesn't pay off in the short term of an initial release cycle and **must be avoided**.
+Both of these kinds of debt are commonly incurred in response to the directive to _"Get it out the door as quickly as possible."_ However, the second kind (II.A.2) doesn't pay off even in the short term of an initial development cycle and **should be avoided**.
 
-## Servicing the Debt
+## Debt Service
 
-An important implication of technical debt is that it must be _serviced_. That is, once debt is incurred there will be **interest charges**.
+One of the important implications of technical debt is that it must be _serviced_, i.e., once you incur a debt there will be **interest charges**.
 
-If the debt grows large enough, the company will eventually spend more on servicing the debt than on investing in growing the value of its assets. A common example is **legacy code** bases where so much work goes into keeping the system in production (that is, "servicing the debt") that little time is left to add new capabilities to the system. With financial debt, analysts speak of "debt ratio," which equals total debt divided by total assets. High debt ratios are viewed as riskier, which seems true for technical debt as well.
+If the debt grows large enough, eventually the company will spend more on servicing its debt than it invests in increasing the value of its other assets. A common example is a **legacy code** base in which so much work goes into keeping a production system running (i.e., "servicing the debt") that there is little time left over to add new capabilities to the system. With financial debt, analysts talk about the "debt ratio," which is equal to total debt divided by total assets. Higher debt ratios are seen as more risky, which seems true for technical debt, too.
 
 ## Attitudes Toward Technical Debt
 
-Like financial debt, different organizations have different philosophies about its utility. Some want to avoid taking on any debt; others see debt as useful tools and just want to know how to use them wisely.
+Like financial debt, different companies have different philosophies about the usefulness of debt. Some companies want to avoid taking on any debt at all; others see debt as a useful tool and just want to know how to use debt wisely.
 
-I've found that business teams generally seem to have a higher tolerance for technical debt than technical teams. Business executives tend to want to understand the tradeoffs involved, while some technical teams seem to believe the only correct amount of technical debt is zero.
+I've found that business staff generally seems to have a higher tolerance for technical debt than technical staff does. Business executives tend to want to understand the tradeoffs involved, whereas some technical staff seem to believe that the only correct amount of technical debt is zero.
 
-The reason typically cited by technical teams for avoiding debt entirely is the challenge of **communicating the existence of technical debt** to the business team and the challenge of helping them remember the implications of previously incurred technical debt. Everyone agrees that it's a good idea to incur debt late in a release cycle, but business teams can sometimes resist paying down the debt in the next release cycle. The main problem seems to be that, unlike financial debt, technical debt is much less visible, and so people find it easier to ignore.
+The reason most often cited by technical staff for avoiding debt altogether is the challenge of **communicating the existence of technical debt** to business staff and the challenge of helping business staff remember the implications of the technical debt that has previously been incurred. Everyone agrees that it's a good idea to incur debt late in a release cycle, but business staff can sometimes resist accounting for the time needed to pay off the debt on the next release cycle. The main issue seems to be that, unlike financial debt, technical debt is much less visible, and so people have an easier time ignoring it.
 
-## How Do You Make an Organization's Debt Load More Visible?
+## How do You Make an Organization's Debt Load More Visible?
 
-One organization we worked with maintains a debt list within its defect-tracking system. Every time debt is incurred, the tasks required to pay it off are entered into the system along with an effort estimate and a schedule. The debt backlog is then tracked, and any debt unpaid for more than 90 days is treated as critical.
+One organization we've worked with maintains a debt list within its defect tracking system. Each time a debt is incurred, the tasks needed to pay off that debt are entered into the system along with an estimated effort and schedule. The debt backlog is then tracked, and any unresolved debt more than 90 days old is treated as critical.
 
-Another organization maintains its debt list as part of Scrum's Product Backlog, with similar effort estimates for what it will take to pay down each debt.
+Another organization maintains its debt list as part of its Scrum product backlog, with similar estimates of effort required to pay off each debt.
 
-Either of these approaches can be used to increase the **visibility** of the debt load and the debt service work that must occur during future release cycles. Either one also provides a safeguard against accumulating "credit card debt" from a mountain of small shortcuts as mentioned earlier. You can simply tell the team: _"If the shortcut you're considering taking is too small to add to the debt service list/product backlog, it's too small to make a difference; don't take the shortcut. We only want shortcuts we can track and repair later."_
+Either of these approaches can be used to increase **visibility** into the debt load and into the debt service work that needs to occur within or across release cycles. Each also provides a useful safeguard against accumulating the "credit card debt" of a mountain of tiny shortcuts mentioned earlier. You can simply tell the team, _"If the shortcut you are considering taking is too minor to add to the debt-service defect list/product backlog, then it's too minor to make a difference; don't take that shortcut. We only want to take shortcuts that we can track and repair later."_
 
 ## Ability to Take on Debt Safely Varies
 
-Different teams will have different credit ratings for taking on debt. The credit rating reflects a team's ability to pay down technical debt after it's been incurred.
+Different teams will have different technical debt credit ratings. The credit rating reflects a team's ability to pay off technical debt after it has been incurred.
 
-A key factor in the ability to pay down technical debt is the level of debt a team incurs unintentionally — that is, how much is Type I? The less debt a team creates for itself through poor quality work, the more debt it can safely absorb for strategic reasons. This is true whether we're talking about taking on Type I vs. Type II debt or taking on Type II.A.1 vs. Type II.A.2 debt.
+A key factor in ability to pay off technical debt is the level of debt a team takes on unintentionally, i.e., how much of its debt is Type I? The less debt a team creates for itself through unintentional low-quality work, the more debt a team can safely absorb for strategic reasons. This is true regardless of whether we're talking about taking on Type I vs. Type II debt or whether we're talking about taking on Type II.A.1 vs. Type II.A.2 debt.
 
-One organization tracks debt vs. team velocity. Once team velocity starts to decline as a result of servicing technical debt, it focuses on reducing its debt until velocity recovers. Another approach is to track rework, and use that as a measure of how much debt a team is accumulating.
+One company tracks debt vs. team velocity. Once a team's velocity begins to drop as a result of servicing its technical debt, the team focuses on reducing its debt until its velocity recovers. Another approach is to track rework, and use that as a measure of how much debt a team is accumulating.
 
-## Retiring the Debt
+## Retiring Debt
 
-"Getting out of Debt" can be motivational and good for team morale. A good approach when short-term debt has been incurred is to take the first development iteration after a release and devote it to paying down the short-term technical debt.
+"Working off debt" can be motivational and good for team morale. A good approach when short-term debt has been incurred is to take the first development iteration after a release and devote that to paying off short-term technical debt.
 
-The ability to pay down debt depends at least in part on the type of software the team is working on. If a team incurs short-term debt in a web application, a new release can easily be installed after the team does the debt reduction work. If the team incurs short-term debt in aircraft firmware — the payoff, which requires replacing a box on the aircraft — that team will have a much higher bar for incurring any short-term debt. It's like minimum payment — if your minimum payment is 3% of your balance, no problem. If the minimum payment is $1,000 regardless of your balance, you'll need to think much harder before taking on any debt.
+The ability to pay off debt depends at least in part on the kind of software the team is working on. If a team incurs short-term debt on a web application, a new release can easily be rolled up after the team backfills its debt-reduction work. If a team incurs short-term debt in avionics firmware, the payoff of which requires replacing a box on an airplane, that team should have a higher bar for taking on any short-term debt. This is like a minimum payment: if your minimum payment is 3% of your balance, that's no problem. If the minimum payment is $1000 regardless of your balance, you'd think hard about taking on any debt at all.
 
-## Communicating About Technical Debt
+## Communicating about Technical Debt
 
-The vocabulary of technical debt provides a way to communicate with non-technical teams in an area that has traditionally suffered from a lack of **transparency**. Shifting the dialog from technical vocabulary to financial vocabulary provides a much clearer and more understandable framework for these discussions. Although technical debt terminology isn't yet in wide use, I've found that it immediately resonates with every executive I've presented it to, as well as other non-technical stakeholders. It also makes sense to technical teams that are usually very aware of the debt load their organization is carrying.
+The technical debt vocabulary provides a way to communicate with non-technical staff in an area that has traditionally suffered from a lack of **transparency**. Shifting the dialog from a technical vocabulary to a financial vocabulary provides a clearer, more understandable framework for these discussions. Although the technical debt terminology is not currently in widespread use, I've found that it resonates immediately with every executive I've presented it to as well as other non-technical stakeholders. It also makes sense to technical staff who are often all-too-aware of the debt load their organization is carrying.
 
 Here are some suggestions for communicating about debt with non-technical stakeholders:
 
-_Use the organization's maintenance budget as a rough proxy for its technical debt service._ However, you'll need to differentiate between maintenance that keeps the production system running vs. maintenance that extends the capabilities of the production system. Only the first category counts as technical debt service.
+_Use an organization's maintenance budget as a rough proxy for its technical debt service load._ However you will need to differentiate between maintenance that keeps a production system running vs. maintenance that extends the capabilities of a production system. Only the first category counts as technical debt.
 
-_Discuss debt in monetary rather than functionality terms._ For example, _"40% of our R&D budget goes to supporting prior releases"_ or _"we are currently spending $2.3 million per year servicing our technical debts."_
+_Discuss debt in terms of money rather than in terms of features._ For example, _"40% of our current R&D budget is going into supporting previous releases"_ or _"We're currently spending $2.3 million per year servicing our technical debt."_
 
-_"Ensure you're incurring the right kinds of debt."_ Not all debt is equal. Some debt is the result of good business decisions; other debt is the result of sloppy technical practices or poor communication about what debt the business intends to incur. The only types that are truly healthy are Types II.A.1 and II.B.
+_Be sure you're taking on the right kind of debt._ Not all debts are equal. Some debts are the result of good business decisions; others are the result of sloppy technical practices or bad communication about what debt the business intends to take on. The only kinds that are really healthy are Types II.A.1 and II.B.
 
-Treat the discussion of debt as an ongoing dialog rather than a one-time conversation. You may need several discussions before the nuances of the metaphor are truly absorbed.
+Treat the discussion about debt as an ongoing dialog rather than a single discussion. You might need several discussions before the nuances of the metaphor fully sink in.
 
 ## Technical Debt Taxonomy
 
-Here is a summary of the types of technical debt:
+Here's a summary of the kinds of technical debt:
 
-_No Debt_
+_Non Debt_
 
-Feature Backlog, deferred features, cut features, etc. Not all incomplete work is debt. It's not debt because it doesn't require interest payments.
+Feature backlog, deferred features, cut features, etc. Not all incomplete work is debt. These aren't debt, because they don't require interest payments.
 
 _Debt_
 
-- I. Debt incurred unintentionally due to poor quality work
+- I. Debt incurred unintentionally due to low quality work
 - II. Debt incurred intentionally
-- II.A. Short-term debt, typically incurred reactively, for tactical reasons
-- II.A.1. Individually identifiable shortcuts (like financing a car)
-- II.A.2. Numerous small shortcuts (like credit card debt)
-- II.B. Long-term debt, incurred proactively, for strategic reasons
+- II.A. Short-term debt, usually incurred reactively, for tactical reasons
+- II.A.1. Individually identifiable shortcuts (like a car loan)
+- II.A.2. Numerous tiny shortcuts (like credit card debt)
+- II.B. Long-term debt, usually incurred proactively, for strategic reasons
 
 ## Summary
 
-What do you think? Do you like the technical debt metaphor? Do you find it useful for communicating the implications of technical/business decisions to non-technical project stakeholders? What's your experience? I'd love to hear your thoughts.
+What do you think? Do you like the technical debt metaphor? Do you think it's a useful way to communicate the implications of technical/business decision making to non-technical project stakeholders? What's your experience? I look forward to your thoughts.
 
 ## Resources
 
-- [OOPSLA '92 Experience Report](http://c2.com/doc/oopsla92.html) by Ward Cunningham that first mentioned technical debt
-- Short [Bliki article](http://www.martinfowler.com/bliki/TechnicalDebt.html) by Martin Fowler on technical debt
-- Discussions on the c2 wiki on [Complexity as Debt](http://www.c2.com/cgi/wiki?ComplexityAsDebt) and [Technical Debt](http://www.c2.com/cgi/wiki?TechnicalDebt)
+- Ward Cunningham's [OOPSLA '92 Experience Report](http://c2.com/doc/oopsla92.html) that first mentions technical debt
+- Martin Fowler's brief [bliki entry](http://www.martinfowler.com/bliki/TechnicalDebt.html) about technical debt
+- c2 wiki discussions of [Complexity As Debt](http://www.c2.com/cgi/wiki?ComplexityAsDebt) and [Technical Debt](http://www.c2.com/cgi/wiki?TechnicalDebt)

@@ -2,7 +2,8 @@
 title: 'Tradução: Dívida Técnica'
 date: '2008-12-18T01:55:00-02:00'
 slug: tradu-o-d-vida-t-cnica
-description: "A tradução de Steve McConnell separa dívidas técnicas acidentais das estratégicas, explica seus juros e sugere registrá-las no backlog. Atalhos podem fazer sentido quando são rastreáveis e pagáveis."
+translationKey: tradu-o-d-vida-t-cnica
+description: "Tradução do artigo clássico de Steve McConnell sobre dívida técnica: a diferença entre dívida acidental e estratégica, os juros que atalhos cobram e por que registrar cada dívida no backlog."
 tags:
 - engenharia-de-software
 - gestao
@@ -10,13 +11,15 @@ tags:
 draft: false
 ---
 
-Conheci **Steve McConnell** há muitos anos, primeiro com os livros [After the Gold Rush](http://www.stevemcconnell.com/gr.htm) e [Software Project Survival Guide](http://www.stevemcconnell.com/sg.htm). Muitos o conhecem mais pelo [Code Complete](http://www.stevemcconnell.com/cc1.htm). Ano passado ele escreveu um excelente artigo sobre o assunto **Dívida Técnica**. Discutindo esse assunto recentemente, resolvi retornar a esse texto e traduzi-lo. Novamente, depois de anos de experiência eu ainda me surpreendo que este é mais um conceito que pouca gente discute e incorre no mesmo erro o tempo todo.
+Conheci **Steve McConnell** há muitos anos, primeiro pelos livros [After the Gold Rush](http://web.archive.org/web/20081223090527/http://www.stevemcconnell.com/gr.htm) e [Software Project Survival Guide](http://web.archive.org/web/20081220203840/http://www.stevemcconnell.com/sg.htm). A maioria conhece ele pelo [Code Complete](http://web.archive.org/web/20081220203824/http://www.stevemcconnell.com/cc1.htm). Ano passado ele escreveu um excelente artigo sobre **Dívida Técnica**. Discutindo esse assunto recentemente, resolvi voltar ao texto e traduzi-lo.
 
-Antes de mais nada, o conceito de “Dívida Técnica”, é uma metáfora para indicar que toda vez que você toma um atalho técnico (o bom e velho _“não importa que saia sujo, o importante é lançar o produto rápido!”_). Isso não sai de graça. Toda vez que fazemos isso, é como fazer um empréstimo num banco, ou seja, é como assumir uma dívida. E como toda dívida, essa também corre juros e um dia será devidamente cobrada!
+Mesmo depois de anos de experiência, ainda me surpreendo: este é mais um conceito que pouca gente discute, e todo mundo incorre no mesmo erro o tempo todo.
 
-Extremistas costumam dizer _“paguem tudo à vista, pois cartões de crédito são do mal.”_ Isso também não é verdade. Empréstimos podem ser bons e importantes. Que comerciante nunca teve um aperto de fluxo de caixa, onde um pequeno empréstimo não lhe deu um fôlego? O problema, como sempre, é o exagero, como o comprador compulsivo que inclusive paga um cartão de crédito com outro cartão de crédito! Muitas empresas agem exatamente assim com software: assumem centenas de dívidas e depois de alguns anos se assustam com o montante acumulado de dívidas a pagar.
+Antes de mais nada: Dívida Técnica é uma metáfora para o que acontece toda vez que você toma um atalho técnico, o bom e velho _“não importa que saia sujo, o importante é lançar o produto rápido!”_. Isso não sai de graça. É como fazer um empréstimo no banco: você assume uma dívida. E como toda dívida, essa também corre juros e um dia será devidamente cobrada.
 
-E você: assumiu dívidas técnicas recentemente? Está preparado para começar a quitá-las? Segue a tradução do [artigo original](http://blogs.construx.com/blogs/stevemcc/archive/2007/11/01/technical-debt-2.aspx) do Steve:
+Extremistas costumam dizer _“paguem tudo à vista, pois cartões de crédito são do mal.”_ Também não é verdade. Empréstimos podem ser bons e importantes. Que comerciante nunca teve um aperto de fluxo de caixa em que um pequeno empréstimo deu fôlego? O problema, como sempre, é o exagero, como o comprador compulsivo que paga um cartão de crédito com outro cartão de crédito. Muitas empresas agem exatamente assim com software: assumem centenas de dívidas e, alguns anos depois, se assustam com o montante acumulado a pagar.
+
+E você: assumiu dívidas técnicas recentemente? Está preparado para começar a quitá-las? Segue a tradução do [artigo original](http://web.archive.org/web/20081222213832/http://blogs.construx.com/blogs/stevemcc/archive/2007/11/01/technical-debt-2.aspx) do Steve:
 
 
 ## Dívida Técnica
@@ -29,15 +32,15 @@ Ward não explicou a metáfora muito a fundo. As poucas pessoas que discutiram d
 
 _O primeiro tipo de dívida técnica é o tipo em que se incorre sem intenções._ Por exemplo, um tipo de design se torna passível de erro ou um programador júnior simplesmente escreve código ruim. Essa dívida técnica é o resultado não-estratégico de um **trabalho ruim**. Em alguns casos, esse tipo de dívida pode ser incorrido sem conhecimento, por exemplo, sua empresa pode adquirir outra que acumulou dívida técnica significativa que não se identificou até depois da aquisição. Algumas vezes, ironicamente, essa dívida pode ser criada quando uma equipe tropeça em seus esforços de **reescrever** uma plataforma endividada e sem querer cria mais dívidas. Vamos chamar essa categoria geral de **Tipo I** de dívida.
 
-_O segundo tipo de dívida técnica é o tipo em que se incorre intencionalmente._ Isso acontece normalmente quando uma organização toma uma **decisão consciente** de otimizar para o presente do que para o futuro. _“Se não conseguirmos lançar à tempo, não haverá próximo lançamento”_ é um refrão comum – e normalmente um bem convincente. Isso leva a decisões como _“Não temos tempo para reconciliar esses dois bancos de dados, então vamos escrever alguma gambiarra que os mantenha sincronizados por agora e vamos reconciliar depois de lançar.”_ Ou _“nós temos algum código escrito por consultores que não seguem padrões; nós podemos limpar depois.”_ Ou _“não tivemos tempo para escrever todos os testes unitários para o código que escrevemos nos últimos 2 meses do projeto. Vamos escrever depois do lançamento.”_ (Chamaremos isso de **Tipo II** ).
+_O segundo tipo de dívida técnica é o tipo em que se incorre intencionalmente._ Isso acontece normalmente quando uma organização toma uma **decisão consciente** de otimizar para o presente em vez do futuro. _“Se não conseguirmos lançar a tempo, não haverá próximo lançamento”_ é um refrão comum, e normalmente bem convincente. Isso leva a decisões como _“Não temos tempo para reconciliar esses dois bancos de dados, então vamos escrever um código que os mantenha sincronizados por agora e vamos reconciliar depois de lançar.”_ Ou _“nós temos algum código escrito por consultores que não seguem padrões; nós podemos limpar depois.”_ Ou _“não tivemos tempo para escrever todos os testes unitários para o código que escrevemos nos últimos 2 meses do projeto. Vamos escrever depois do lançamento.”_ (Chamaremos isso de **Tipo II**).
 
-O resto dos meus comentários focam no tipo de dívida técnica incorrido por razões estratégicas (Tipo II).
+O resto dos meus comentários foca no tipo de dívida técnica incorrido por razões estratégicas (Tipo II).
 
 ## Dívidas de Curto prazo vs de Longo prazo
 
 Com dívidas reais, uma empresa manterá ambas dívidas de curto e longo prazos. Você usa dívida de curto prazo para cobrir coisas como _gaps_ entre seus recebíveis (pagamentos dos clientes) e despesas (folha de pagamento). Você assume uma dívida de curto prazo quando tem o dinheiro, você apenas não o tem _agora._ É esperado que dívidas de curto prazo sejam pagas frequentemente. O equivalente técnico parece bem direto. Dívida de curto prazo é a dívida que é tomada _taticamente e reativamente_ normalmente como medida de último caso para conseguir lançar um produto. (Chamaremos isso de **Tipo II.A**.)
 
-Dívida de longo prazo é a dívida que uma empresa assume _estrategicamente e proativamente_ – investimento em novos equipamentos de capital, como uma nova fábrica, ou um novo campus corporativo. Novamente, o equivalente técnico parece direto: _“Não achamos que precisaremos dar suporte a uma segunda plataforma por pelo menos 5 anos, então este lançamento pode ser construído na premissa que estaremos dando suporte a apenas uma plataforma.”_ (Chamaremos isso de **Tipo II.B**.)
+Dívida de longo prazo é a dívida que uma empresa assume _estrategicamente e proativamente_: investimento em novos equipamentos de capital, como uma nova fábrica, ou um novo campus corporativo. Novamente, o equivalente técnico parece direto: _“Não achamos que precisaremos dar suporte a uma segunda plataforma por pelo menos 5 anos, então este lançamento pode ser construído na premissa que estaremos dando suporte a apenas uma plataforma.”_ (Chamaremos isso de **Tipo II.B**.)
 
 A implicação é que dívida de curto prazo deve ser paga rapidamente, talvez como a primeira parte do próximo ciclo de lançamento, ao passo que dívida de longo prazo pode ser levada por alguns anos ou mais.
 
@@ -45,29 +48,29 @@ A implicação é que dívida de curto prazo deve ser paga rapidamente, talvez c
 
 Quando dívida técnica é incorrida por razões estratégicas, a razão fundamental é sempre que o custo do trabalho de desenvolvimento hoje é visto como mais caro do que irá custar no futuro. Isso pode ser verdade por uma de diversas razões.
 
-_Tempo de Mercado._ Quando tempo de mercado é fundamental, incorrer em $1 extra no desenvolvimento pode equivaler a um prejuízo de $10 no lucro. Mesmo que o custo de desenvolvimento para o mesmo trabalho suba para $5 depois, ou seja, seja mais caro depois, incorrer na dívida de $1 agora é uma boa decisão de negócios.
+_Tempo de Mercado._ Quando tempo de mercado é fundamental, incorrer em $1 extra no desenvolvimento pode equivaler a um prejuízo de $10 na receita. Mesmo que o custo de desenvolvimento do mesmo trabalho suba para $5 depois, incorrer na dívida de $1 agora é uma boa decisão de negócios.
 
 _Preservação do Capital de Startup._ Em um ambiente de startup você tem uma quantia fixa de dinheiro-semente, e cada dólar conta. Se você pode atrasar uma despesa por um ano ou dois, pode pagar por essa despesa a partir de uma quantia maior de dinheiro depois do que pagar com preciosos fundos de startup agora.
 
-_Atrasar Despesa de Desenvolvimento._ Quando um sistema é aposentado, toda a dívida técnica de um sistema é aposentada de uma só vez com ele. Uma vez que um sistema é retirado de produção, não existe diferença entre uma solução “limpa e correta” e outra “rápida e suja”. Ao contrário de dívida financeira, quando um sistema é aposentado toda sua dívida técnica é aposentada com ele. Consequentemente, perto do fim da vida de um sistema se torna muito mais difícil justificar o custo do investimento em qualquer coisa do que o que for mais prático e imediato.
+_Atrasar Despesa de Desenvolvimento._ Quando um sistema é aposentado, toda a dívida técnica de um sistema é aposentada junto com ele. Uma vez que um sistema é retirado de produção, não existe diferença entre uma solução “limpa e correta” e outra “rápida e suja”. Ao contrário de dívida financeira, quando um sistema é aposentado toda sua dívida técnica é aposentada com ele. Consequentemente, perto do fim da vida de um sistema se torna muito mais difícil justificar o custo do investimento em qualquer coisa do que o que for mais prático e imediato.
 
 ## Garanta que está Incorrendo no Tipo Certo de Dívida Técnica
 
-Algumas dívidas são tomadas em grandes pedaços: _“Não temos tempo de implementar isso agora mesmo; apenas faça um hack e vamos corrigir depois que lançarmos.”_ Conceitualmente é como comprar um carro – é uma dívida grande que pode ser acompanhada e gerenciada (Chamaremos de **Tipo II.A.1**.)
+Algumas dívidas são tomadas em grandes pedaços: _“Não temos tempo de implementar isso do jeito certo; apenas faça um hack e vamos corrigir depois que lançarmos.”_ Conceitualmente é como comprar um carro: uma dívida grande que pode ser acompanhada e gerenciada. (Chamaremos de **Tipo II.A.1**.)
 
-Outras dívidas acumulam por assumir centenas ou milhares de pequenos atalhos – nomes de variáveis genéricas, comentários escassos, criar uma classe onde deveria ter criado duas, não seguir convenções de código, e assim por diante. Esse tipo de dívida é como uma dívida de cartão de crédito. É fácil de incorrer sem intenção, ela se acumula mais rápido do que se imagina, e é difícil de rastrear e gerenciar depois que já se incorreu nelas. (Chamaremos de **Tipo II.A.2**.)
+Outras dívidas acumulam por assumir centenas ou milhares de pequenos atalhos: nomes de variáveis genéricas, comentários escassos, criar uma classe onde deveria ter criado duas, não seguir convenções de código, e assim por diante. Esse tipo de dívida é como uma dívida de cartão de crédito. É fácil de incorrer sem intenção, ela se acumula mais rápido do que se imagina, e é difícil de rastrear e gerenciar depois que já se incorreu nelas. (Chamaremos de **Tipo II.A.2**.)
 
-Ambos os tipos de dívidas são comumente incorridas em resposta à diretiva _“Lancem o mais rápido possível.”_ Entretanto, o segundo tipo (Tipo II.A.2) não se paga no curto prazo de um ciclo inicial de desenvolvimento e **deve ser evitado**.
+Ambos os tipos de dívidas são comumente incorridas em resposta à diretiva _“Lancem o mais rápido possível.”_ Entretanto, o segundo tipo (Tipo II.A.2) não se paga nem no curto prazo de um ciclo inicial de desenvolvimento e **deve ser evitado**.
 
 ## Serviço da Dívida
 
-Uma implicação importante de dívida técnica é que ela deve ser _servida._ isto é, uma vez que se incorre na dívida haverá **cobrança de juros**.
+Uma implicação importante de dívida técnica é que ela deve ser _servida_, isto é, uma vez incorrida a dívida haverá **cobrança de juros**.
 
-Se a dívida crescer o suficiente, eventualmente a empresa gastará mais em servir a dívida do que investir em crescer o valor de seus ativos. Um exemplo comum é base de **código legado** onde dá tanto trabalho manter o sistema em produção (isto é, “servir a dívida”) que sobra pouco tempo para adicionar novas capacidades ao sistema. Com dívida financeira, analistas falam de “taxa de dívida”, que é igual ao total do dívida dividido pelo total de ativos. Taxas de dívida altas são vistas como mais arriscadas, o que parece verdade para dívidas técnicas também.
+Se a dívida crescer o suficiente, eventualmente a empresa gastará mais em servir a dívida do que investir em crescer o valor de seus ativos. Um exemplo comum é base de **código legado** onde dá tanto trabalho manter o sistema em produção (isto é, “servir a dívida”) que sobra pouco tempo para adicionar novas capacidades ao sistema. Com dívida financeira, analistas falam de “taxa de dívida”, que é igual ao total da dívida dividido pelo total de ativos. Taxas de dívida altas são vistas como mais arriscadas, o que parece verdade para dívidas técnicas também.
 
 ## Atitudes Frente a Dívidas Técnicas
 
-Como dívidas financeiras, diferentes empresas têm diferentes filosofias sobre sua utilidade. Algumas querem evitar assumir qualquer tipo de dívida, outras vêem a dívida como ferramentas úteis e apenas querem saber como usá-las com sabedoria.
+Como dívidas financeiras, diferentes empresas têm diferentes filosofias sobre sua utilidade. Algumas querem evitar assumir qualquer tipo de dívida, outras veem a dívida como uma ferramenta útil e só querem saber como usá-la com sabedoria.
 
 Descobri que equipes de negócios geralmente parecem ter uma tolerância mais alta para dívida técnica do que equipes técnicas. Executivos de negócios tendem a querer entender as trocas (_tradeoffs_) envolvidas, enquanto algumas equipes técnicas parecem acreditar que a única quantidade correta de dívida técnica é zero.
 
@@ -75,9 +78,9 @@ A razão normalmente citada pela equipe técnica para evitar dívida totalmente 
 
 ## Como você torna a Carga da Dívida de uma Organização Mais Visível?
 
-Uma organização em que trabalhamos mantém uma lista de dívidas dentro de seu sistema de rastreamento de defeitos. Toda vez que se incorre numa dívida, as tarefas necessárias para pagá-la são registradas no sistema junto com uma estimativa de esforço e um cronograma. O backlog de dívida é então rastreada, e qualquer dívida não paga em mais do que 90 dias são tratadas como críticas.
+Uma organização em que trabalhamos mantém uma lista de dívidas dentro de seu sistema de rastreamento de defeitos. Toda vez que se incorre numa dívida, as tarefas necessárias para pagá-la são registradas no sistema junto com uma estimativa de esforço e um cronograma. O backlog de dívida é então rastreado, e qualquer dívida pendente há mais de 90 dias é tratada como crítica.
 
-Outra organização mantém sua lista de dívidas como parte do Product Backlog de Scrum, como estimativas similares de esforço necessário para pagar cada dívida.
+Outra organização mantém sua lista de dívidas como parte do Product Backlog de Scrum, com estimativas similares do esforço necessário para pagar cada dívida.
 
 Cada um desses jeitos pode ser utilizado para aumentar a **visibilidade** da carga da dívida e do trabalho do serviço da dívida que precisa ocorrer pelos próximos ciclos de lançamento. Cada um também dá uma segurança contra acumulação de “dívidas de cartão de crédito” de uma montanha de pequenos atalhos como mencionado antes. Você pode simplesmente dizer à equipe: _“se o atalho que estão considerando assumir é muito pequeno para adicionar à lista/product backlog de serviço de dívida, então é pequeno demais para fazer qualquer diferença; não tomem esse atalho. Queremos apenas atalhos que podemos rastrear e reparar depois.”_
 
@@ -91,23 +94,23 @@ Uma empresa rastreia dívidas vs. velocidade da equipe. Uma vez que a velocidade
 
 ## Aposentando a Dívida
 
-“Acabar com a Dívida” pode ser motivacional e bom para a moral da equipe. Um bom jeito quando dívida de curto-prazo foi incorrido é tomar a primeira iteração de desenvolvimento depois de um lançamento e devotar para pagar a dívida técnica de curto prazo.
+“Acabar com a Dívida” pode ser motivacional e bom para a moral da equipe. Um bom jeito quando dívida de curto-prazo foi incorrida é tomar a primeira iteração de desenvolvimento depois de um lançamento e devotar para pagar a dívida técnica de curto prazo.
 
-A habilidade de pagar dívidas depende pelo menos em parte do tipo de software que a equipe está trabalhando. Se uma equipe incorrer em dívida de curto prazo numa aplicação web, um novo lançamento pode facilmente ser instalado depois que a equipe fizer o trabalho de redução da dívida. Se a equipe incorrer em dívida de curto prazo em firmware de aviões – o pagamento, que requer substituir uma caixa no avião – essa equipe terá um critério muito maior para assumir _qualquer_ dívida de curto prazo. É como pagamento mínimo – se seu pagamento mínimo é 3% do seu balanço, não tem problema. Se o pagamento mínimo é $1000 independente do seu balanço, você terá que pensar muito mais antes de assumir qualquer dívida.
+A habilidade de pagar dívidas depende pelo menos em parte do tipo de software que a equipe está trabalhando. Se uma equipe incorrer em dívida de curto prazo numa aplicação web, um novo lançamento pode facilmente ser instalado depois que a equipe fizer o trabalho de redução da dívida. Se a equipe incorrer em dívida de curto prazo em firmware de avião, cujo pagamento requer trocar uma caixa no avião, essa equipe deveria ter um critério muito mais alto para assumir _qualquer_ dívida de curto prazo. É como o pagamento mínimo do cartão: se o mínimo é 3% do seu saldo, sem problema. Se o mínimo é $1000 independente do seu saldo, você vai pensar muito mais antes de assumir qualquer dívida.
 
 ## Comunicando sobre Dívidas Técnicas
 
 O vocabulário de dívida técnica fornece uma maneira de se comunicar com equipes não-técnicas em uma área que tem tradicionalmente sofrido pela falta de **transparência**. Mudar o diálogo de vocabulário técnico para financeiro fornece um framework muito mais claro e entendível para essas discussões. Embora a terminologia de dívida técnica ainda não esteja em muito uso, eu descobri que ela ressoa imediatamente com cada executivo para quem apresentei assim como para outros stakeholders não-técnicos. Também faz sentido para equipes técnicas que normalmente estão muito conscientes da carga da dívida que sua organização carrega.
 
-Aqui vão alguma sugestões para comunicar sobre dívida com stakeholders não-técnicos:
+Aqui vão algumas sugestões para comunicar sobre dívida com stakeholders não-técnicos:
 
-_Use o orçamento de manutenção da organização como um proxy aproximado para seu serviço de dívida técnica._ Entretanto você precisará diferenciar entre manutenção que mantém o sistema de produção rodando vs. manutenção que extende as capacidades do sistema de produção. Somente a primeira categoria conta como dívida técnica.
+_Use o orçamento de manutenção da organização como um proxy aproximado para seu serviço de dívida técnica._ Entretanto você precisará diferenciar entre manutenção que mantém o sistema de produção rodando vs. manutenção que estende as capacidades do sistema de produção. Somente a primeira categoria conta como dívida técnica.
 
-_Discutir dívida em termos monetários do que em termos de funcionalidade._ Por exemplo, _“40% de nosso orçamento em P&D vai para suportar lançamentos anteriores”_ ou _“estamos atualmente gastando $2.3 milhões por ano servindo nossas dívidas técnicas.”_
+_Discuta dívida em termos de dinheiro, não de funcionalidades._ Por exemplo, _“40% de nosso orçamento em P&D vai para suportar lançamentos anteriores”_ ou _“estamos atualmente gastando $2.3 milhões por ano servindo nossas dívidas técnicas.”_
 
-_“Garanta que está assumindo os tipos corretos de dívidas.”_ Nem todas as dívidas são iguais. Algumas dívidas são o resultado de boas decisões de negócios; outras são o resultado de práticas técnicas descuidadas ou má comunicação sobre qual dívida o negócio pretende assumir. Os únicos tipos que são realmente saudáveis são Tipos II.A.1 e II.B.
+_Garanta que está assumindo o tipo certo de dívida._ Nem todas as dívidas são iguais. Algumas dívidas são o resultado de boas decisões de negócios; outras são o resultado de práticas técnicas descuidadas ou má comunicação sobre qual dívida o negócio pretende assumir. Os únicos tipos que são realmente saudáveis são Tipos II.A.1 e II.B.
 
-Trate a discussão sobre dívida como um diálogo constante em vez de uma única vez. Você pode precisar de diversas discussões antes que as nuances da metáfora realmente sejam absorvidas.
+Trate a discussão sobre dívida como um diálogo contínuo, em vez de uma conversa única. Você pode precisar de diversas discussões antes que as nuances da metáfora realmente sejam absorvidas.
 
 ## Taxonomia de Dívida Técnica
 
@@ -115,7 +118,7 @@ Aqui vai um resumo dos tipos de dívidas técnicas:
 
 _Nenhuma Dívida_
 
-Backlog de Funcionalidade, funcionalidades deixadas para depois, cortar funcionalidades, etc. Nem todo trabalho incompleto é dívida. Elas não são dívidas porque não requerem pagamento de juros.
+Backlog de Funcionalidade, funcionalidades deixadas para depois, cortar funcionalidades, etc. Nem todo trabalho incompleto é dívida. Esses itens não são dívida, porque não exigem pagamento de juros.
 
 _Dívida_
 
@@ -135,4 +138,3 @@ O que você acha? Você gosta da metáfora de dívida técnica? Acha que ela é 
 - [OOPSLA’92 Experience Report](http://c2.com/doc/oopsla92.html) de Ward Cunningham que primeiro mencionou sobre dívida técnica
 - Curto [artigo do Bliki](http://www.martinfowler.com/bliki/TechnicalDebt.html) do Martin Fowler sobre dívida técnica
 - Discussões no wiki c2 sobre [Complexidade como Dívida](http://www.c2.com/cgi/wiki?ComplexityAsDebt) e [Dívida Técnica](http://www.c2.com/cgi/wiki?TechnicalDebt)
-
