@@ -3,6 +3,7 @@ title: "[Off-Topic] Talento é Altamente Supervalorizado: Humanizando Einstein e
   Deuses"
 date: '2017-06-08T21:23:00-03:00'
 slug: off-topic-talento-e-altamente-supervalorizado-humanizando-einstein-e-matando-deuses
+translationKey: off-topic-talento-e-altamente-supervalorizado-humanizando-einstein-e-matando-deuses
 description: "O texto questiona o mito do talento natural e humaniza Einstein ao destacar prática deliberada, acaso e sistemas complexos. Sucesso não segue uma receita: depende de esforço e circunstâncias."
 tags:
 - psicologia
@@ -13,7 +14,7 @@ draft: false
 
 Uma coisa que eu vivo repetindo é: não tenha ídolos, não acredite cegamente em gurus e, principalmente, não siga falsos-Deuses.
 
-Sou um [antigo proponente](http://www.akitaonrails.com/2007/8/23/off-topic-inimigos-da-razo) em matar deuses, é praticamente um hobby. Eles dão excelentes personagens de ficção em histórias para dormir, mas obviamente não existem. Como o bicho-papão ou papai-noel ou o coelhinho da Páscoa. E não, este não é mais um artigo focado em anti-religião, calma.
+Sou um [antigo proponente](http://www.akitaonrails.com/2007/08/23/off-topic-inimigos-da-razo) em matar deuses, é praticamente um hobby. Eles dão excelentes personagens de ficção em histórias para dormir, mas obviamente não existem. Como o bicho-papão ou papai-noel ou o coelhinho da Páscoa. E não, este não é mais um artigo focado em anti-religião, calma.
 
 Pelas mesmas razões, eu quero desmantelar o mito do "Talento" e trazer os semi-deuses de volta à humanidade.
 
@@ -23,7 +24,7 @@ Eu realmente detesto o uso da palavra "Talento". Ele deveria ser usado como um e
 
 Toda vez ele é usado para denotar algo do tipo _"eu nunca vou ser um Einstein, nem vou me incomodar em tentar"._ É a desculpa preferida das pessoas preguiçosas.
 
-Embora fatores ambientais, circunstanciais, tenham um papel crucial, não existe ABSOLUTAMENTE NADA, em nosso material biológico - como um gene - que, dadas as mesmas circunstâncias - não permitiria alguém atingir níveis similares de sucesso.
+Embora fatores ambientais e circunstanciais tenham um papel crucial, não existe ABSOLUTAMENTE NADA no nosso material biológico, como um gene, que impeça alguém de atingir níveis similares de sucesso dadas as mesmas circunstâncias.
 
 Sim, algumas pessoas acabam, aleatoriamente, por estar no lugar certo na hora certa. É como se ganha uma loteria. E infelizmente, é impossível recriar a mesma rede de circunstâncias para todo mundo e replicar níveis de sucesso (mais sobre isso no fim do artigo).
 
@@ -33,11 +34,11 @@ Hoje em dia vocês já devem ter ouvido falar do conceito das 10 mil horas de tr
 
 [![Outliers](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/622/big_outliers.jpeg)](https://www.amazon.com.br/dp/8575424483/ref=asc_df_85754244835020603?smid=A1ZZFT5FULY4LN&tag=goog0ef-20&linkCode=asn&creative=380341&creativeASIN=8575424483)
 
-De Bill Gates, a Oppenheimer, aos Beatles, o livro tenta descrever como o esforço continuado e focado - 10 mil horas (aproximadamente 5 anos em tempo integral) - dessas pessoas ajudam a explicar seus níveis de sucesso.
+De Bill Gates a Oppenheimer aos Beatles, o livro tenta descrever como o esforço continuado e focado dessas pessoas, as tais 10 mil horas (aproximadamente 5 anos em tempo integral), ajuda a explicar seus níveis de sucesso.
 
-Geoff Colvin, em seu livro ["Talento é Supervalorizado: O que realmente separa os empreendedores de classe mundial de todo mundo"](https://www.amazon.com.br/Talent-Overrated-Separates-World-Class-Performers/dp/1591842948) tenta ir além de Gladwell em explicar que - obviamente - somente 10 mil horas de treino não é suficiente, se ele não for um treinamento de "prática deliberada", ou seja, não somente repetir o mesmo treino, mas um treino obsessivo focado em melhoria contínua.
+Geoff Colvin, em seu livro ["Talento é Supervalorizado: O que realmente separa os empreendedores de classe mundial de todo mundo"](https://www.amazon.com.br/Talent-Overrated-Separates-World-Class-Performers/dp/1591842948) tenta ir além de Gladwell e explica que, obviamente, só 10 mil horas de treino não bastam se não forem de "prática deliberada": um treino obsessivo focado em melhoria contínua, acima da simples repetição da mesma rotina.
 
-Em resumo: quer (ter a chance de) se tornar um mestre em alguma coisa? Tenha a obsessão de realizar um treino excessivamente focado em melhorar milímetros, milissegundos, durante 10 mil horas, e não simplesmente treinar a mesma rotina durante esse período. Repetir a mesma coisa, sem focar em melhorar resultados, não leva ninguém a lugar nenhum, é somente passatempo.
+Em resumo: quer ter a chance de se tornar mestre em alguma coisa? Tenha a obsessão de treinar focado em melhorar milímetros e milissegundos ao longo de 10 mil horas. Repetir a mesma rotina, sem foco em melhorar resultados, não leva ninguém a lugar nenhum. É só passatempo.
 
 Esse tipo de treinamento deliberado que Gladwell e Colvin detalham em seus livros, é um possível fator de sucesso.
 
@@ -81,7 +82,7 @@ O físico Roger Schlafly, em seu livro ["How Einstein Ruined Physics: Motion, Sy
 
 Em resumo, sim Einstein realmente publicou muitas coisas muito interessantes, mas o super inflado mito criado ao redor de sua figura é muito mais danoso do que proveitoso para o futuro da física e seus sucessores. E continua a incentivar o mercado criador de mitos.
 
-> Einstein foi uma pessoa - e cheia de falhas, como todos nós -, não um semi-deus.
+> Einstein foi uma pessoa cheia de falhas, como todos nós. Bem longe de um semi-deus.
 
 Mark Green, em seu artigo ["New Book Says Einstein Highly-Overrated and Ruined Physics"](https://www.sott.net/article/251049-New-Book-Says-Einstein-Highly-Overrated-and-Ruined-Physics) descreve:
 
@@ -89,7 +90,7 @@ Mark Green, em seu artigo ["New Book Says Einstein Highly-Overrated and Ruined P
 
 É o que todos nós sabemos. E eu fortemente recomendo que leiam o artigo completo de Mark Green, mas vamos aos pontos que interessam.
 
-> E=MC2 - Não foi inventado por Einstein!
+> E=MC2: não foi inventado por Einstein!
 
 ![mind blow](https://media.giphy.com/media/DqSw5gyRQ5yPC/giphy.gif)
 
@@ -107,7 +108,7 @@ E, pra completar, também foi H.G. Wells que publicou primeiro sobre o conceito 
 
 [![H.G. Wells](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/627/wells.jpg)](http://www.bbc.com/news/magazine-33365776)
 
-Existiram muitos cientistas excepcionais, que trabalharam duro, antes e durante a era de Einstein. O nobel Henri Poincaré (que o filósofo britânico Bertrand Russell - lembram da [chaleira de Russell](http://rationalwiki.org/wiki/Russell's_Teapot)? - chamou de o maior homem que a França já produziu), o outro nobel e físico holandês Hendrik Lorentz; outro nobel e físico e matemático escocês James Clerk Maxwell.
+Existiram muitos cientistas excepcionais, que trabalharam duro, antes e durante a era de Einstein. O matemático e físico francês Henri Poincaré, que o filósofo britânico Bertrand Russell (lembram da [chaleira de Russell](http://rationalwiki.org/wiki/Russell's_Teapot)?) chamou de o maior homem que a França já produziu. O físico holandês e nobel Hendrik Lorentz. E o físico e matemático escocês James Clerk Maxwell.
 
 De acordo com Schlafly, Maxwell foi quem primeiro cunhou o termo "relatividade" e criou a primeira verdadeira teoria da relatividade de massa e energia. O Eletromagnetismo gerou as mais importantes equações na história da ciência.
 
@@ -123,7 +124,7 @@ Atenham-se a outro detalhe: e se Einstein não tivesse existido? Teríamos sido 
 
 > Talento, é relativo ...
 
-### Gênios não são indivíduos, são grupos!
+### Todo gênio é, na verdade, um grupo!
 
 Um fato importante é que a Teoria da Relatividade não foi uma invenção de uma pessoa. Um lobo solitário que teve um momento de "Eureka". Momentos de Eureka são muito diferentes do que você imagina.
 
@@ -139,7 +140,7 @@ Graças a isso saímos da era da subsistência para a agricultura. Para a Revolu
 
 "Talento" é uma forma de apontar momentos nessa história contínua e ininterrupta onde a sociedade como um todo vem subindo nos ombros de gigantes para dar passos mais largos ao futuro. Mas nenhum "um" indivíduo foi necessariamente pivotal. As conquistas seriam realizadas por alguém, mas de tempos em tempos, elegemos alguns indivíduos.
 
-É mais fácil contar a história dessa forma. Só isso, mas inovação é um trabalho de grupo, não individual.
+É mais fácil contar a história dessa forma. Só isso. Inovação é sempre um trabalho de grupo.
 
 {{< youtube id="LHYt2QeS8FM" >}}
 
@@ -151,11 +152,11 @@ Mais do que Einstein, o cientista que publicou o trabalho mais significativo par
 
 [![Darwin](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/635/big_darwin.jpg)](https://www.theguardian.com/books/2015/nov/10/on-the-origin-of-species-voted-most-influential-academic-book-charles-darwin)
 
-Eu escrevi em parte sobre isso no post ["Processos, Metodologias e o Cérebro Humano"](http://www.akitaonrails.com/2013/06/21/processos-metodologias-e-o-cerebro-humano) de 2013 e no post ["Somos Matematicamente Ignorantes"](http://www.akitaonrails.com/2008/3/1/off-topic-somos-matematicamente-ignorantes) de 2008. Vou tentar não me repetir muito.
+Eu escrevi em parte sobre isso no post ["Processos, Metodologias e o Cérebro Humano"](http://www.akitaonrails.com/2013/06/21/processos-metodologias-e-o-cerebro-humano) de 2013 e no post ["Somos Matematicamente Ignorantes"](http://www.akitaonrails.com/2008/03/01/off-topic-somos-matematicamente-ignorantes) de 2008. Vou tentar não me repetir muito.
 
 A própria história de como sobrevivemos e evoluímos neste mundo, até chegar à forma humanoide que temos hoje, é o resultado do que tivemos que enfrentar no meio ambiente natural, ou não estaríamos aqui.
 
-E um fator crucial no nosso cérebro primitivo é encontrar **padrões**, coisas que se repetem - muito rápido. Se na calada da noite, no meio de uma floresta, se virmos um pequeno par de círculos brilhantes se movimentando ao nosso redor, se não associarmos imediatamente com os olhos de um lobo à espreita e fugirmos o quanto antes, não estaríamos aqui.
+E um fator crucial no nosso cérebro primitivo é encontrar **padrões**, coisas que se repetem, e fazer isso muito rápido. Se, na calada da noite, no meio de uma floresta, virmos um pequeno par de círculos brilhantes se movimentando ao nosso redor e não associarmos aquilo na hora aos olhos de um lobo à espreita para fugir o quanto antes, não estaríamos aqui.
 
 ![Olhos de Tigre](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/634/tiger_eyes.jpg)
 
@@ -165,25 +166,25 @@ Esse é o motivo pelo qual eu escrevi tanto sobre "correlação não ser a mesma
 
 > ["cum hoc ergo propter hoc"](https://en.wikipedia.org/wiki/Correlation_does_not_imply_causation)
 
-O mundo real é "complexo", no sentido matemático, que descreve a exponencialidade de resultados dada uma rede de fatores. Não existe um caminho linear, passo-a-passo na biografia de ninguém. Nem mesmo em gêmeos que nasceram e viveram juntos, sob - teoricamente - o mesmo conjunto de fatores.
+O mundo real é "complexo", no sentido matemático, que descreve a exponencialidade de resultados dada uma rede de fatores. Não existe caminho linear, passo a passo, na biografia de ninguém. Nem mesmo em gêmeos que nasceram e viveram juntos, sob o mesmo conjunto de fatores, ao menos em teoria.
 
 [![Lorenz Attractor](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/629/lorenz.jpg)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2465602/)
 
 "Complexidade" não é o que estamos acostumados a imaginar que seja, e é o que nos impede de prever o tempo mais do que além do curto prazo. É o que leva à famosa borboleta de Lorenz, os fractais de Mandelbrot, e à Teoria do Caos. E mais recentemente à Teoria Moderna de Redes (incluindo Redes Sociais) publicada por autores como [Barabási](https://www.amazon.com/Albert-L%C3%A1szl%C3%B3-Barab%C3%A1si/e/B001IGQIYW), [Strogatz](https://www.amazon.com/Steven-H.-Strogatz/e/B001KHB290) ou [Duncan](https://www.amazon.com/Duncan-J.-Watts/e/B001ILHHR4).
 
-Quem me conhece sabe que faz uma década que sou fascinado por esse tema e já recomendei todos os livros desses autores, inclusive foi o tema da minha primeira palestra pública em 2008, ["Matando a Média"](http://www.akitaonrails.com/2008/09/13/off-topic-matando-a-m-dia)
+Quem me conhece sabe que faz uma década que sou fascinado por esse tema e já recomendei todos os livros desses autores. Foi inclusive o tema da minha primeira palestra pública em 2008, ["Matando a Média"](http://web.archive.org/web/20170623100119/http://www.akitaonrails.com/2008/09/13/off-topic-matando-a-m-dia).
 
 Além das tais 10 mil horas de treino deliberado obsessivo em direção à melhoria contínua, você ainda precisa estar exposto ao máximo de situações e pessoas possíveis para aumentar suas probabilidades de **"serendipidade"** que é a combinação do _"estar no lugar certo, na hora certa e com a capacidade para agarrar a oportunidade"_.
 
 ![Serendípede](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/630/serendipity.jpg)
 
-Isto é o que pode levar ao tal "sucesso". Não há receita simples, apenas trabalho árduo e uma boa dose de aleatoriedade. E, quando todos esses fatores são alinhados, os resultados podem realmente _parecer_ "milagrosos" ou "super-humanos" e - dada uma longa quantidade de tempo e a capacidade dos humanos de aumentar as histórias cada vez que são repetidas - e em alguns anos criamos novos Semi-Deuses.
+Isto é o que pode levar ao tal "sucesso". Não há receita simples, apenas trabalho árduo e uma boa dose de aleatoriedade. Quando todos esses fatores se alinham, os resultados podem realmente _parecer_ "milagrosos" ou "super-humanos". E, dada uma boa quantidade de tempo e a mania humana de aumentar as histórias a cada vez que são repetidas, em poucos anos criamos novos Semi-Deuses.
 
 ### Matando Deuses
 
 Em toda mitologia existem muitos deuses. Tanto manifestações populares sobre crenças ao redor dos fatos "inexplicáveis" da natureza (na época) como tempestades, vulcões, as estações, o clima.
 
-E também existem os semi-deuses, seres humanos que demonstraram algum tipo de superioridade ou feitos ditos "milagrosos" (na época) que nenhum outro humano jamais conseguiria atingir - e uma boa dose de criatividade ao contar a história.
+E também existem os semi-deuses, seres humanos que demonstraram algum tipo de superioridade ou feitos ditos "milagrosos" (na época) que nenhum outro humano jamais conseguiria atingir, com uma boa dose de criatividade ao contar a história.
 
 Ambos os casos são explicáveis. Infelizmente a explicação lógica é bem menos dramática e não dá uma história tão boa assim, na maior parte das vezes. Curar doenças e avançar a humanidade não é tão "sexy" quanto um feito dito "milagroso".
 
@@ -193,7 +194,9 @@ Porém nosso estilo de comunicação em massa na sociedade, jornais, revistas, t
 
 > "Diga uma mentira vezes suficiente e ela se torna verdade." - Joseph Goebbels
 
-Só porque você - você mesmo - não sabe a explicação de alguma coisa, não existe o argumento _"portanto existe a possibilidade de algo místico"_. Se eu não posso explicar que seu Deus não existe, tampouco você pode provar que ele existe. Portanto é uma argumentação falaciosa e não tem lugar numa discussão séria. E isso sendo bonzinho porque quem conta a história é quem tem o **ônus da prova**, não eu - que escuto - quem sou obrigado a lhe desprovar.
+Só porque você mesmo não sabe a explicação de alguma coisa, não se sustenta o argumento de que _"portanto existe a possibilidade de algo místico"_. Se eu não posso explicar que seu Deus não existe, tampouco você pode provar que ele existe. É uma argumentação falaciosa e não tem lugar numa discussão séria.
+
+E isso sendo bonzinho, porque quem conta a história é quem carrega o **ônus da prova**. Não sou eu, que escuto, o obrigado a lhe desprovar.
 
 Os últimos 200 anos foram fantásticos, porque viemos matando deuses em taxas nunca antes registradas na história da humanidade. É o reflexo de quanto avançamos em nosso conhecimento sobre a natureza e como ela funciona. Faltam poucos, não precisamos ficar criando mais.
 
@@ -203,7 +206,7 @@ Os últimos 200 anos foram fantásticos, porque viemos matando deuses em taxas n
 
 As circunstâncias de por que certos indivíduos são alçados ao status de semi-deuses não têm uma resposta fácil. Muito menos uma sequência linear de eventos. Muito menos um filme de entretenimento, com altas doses de ficção e drama, que clama ser "baseado em fatos reais".
 
-Todos nós vivemos num mundo complexo - quero dizer, onde tudo é entrelaçado numa rede infinita de possibilidades. Cada indivíduo tem circunstâncias muito diferentes.
+Todos nós vivemos num mundo complexo, onde tudo se entrelaça numa rede infinita de possibilidades. Cada indivíduo tem circunstâncias muito diferentes.
 
 ![Complex System](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/633/protein_network.gif)
 
