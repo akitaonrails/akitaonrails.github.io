@@ -2,6 +2,7 @@
 title: "[Off-Topic] A View from the Past About the Internet"
 date: '2013-05-26T20:56:00-03:00'
 slug: off-topic-visao-do-passado-sobre-a-internet
+translationKey: off-topic-visao-do-passado-sobre-a-internet
 description: "A 1996 text revisits the Internet’s origins, users, and services, while following the arrival of advertising, e-commerce, and security protocols for online shopping."
 tags:
 - computing-history

@@ -2,6 +2,7 @@
 title: "[Off-Topic] Visão do Passado sobre a Internet"
 date: '2013-05-26T20:56:00-03:00'
 slug: off-topic-visao-do-passado-sobre-a-internet
+translationKey: off-topic-visao-do-passado-sobre-a-internet
 description: "Um texto de 1996 revisita a origem da Internet, seus usuários e serviços, e acompanha a chegada da publicidade, do comércio eletrônico e dos protocolos de segurança às compras online."
 tags:
 - historia-da-computacao
@@ -10,12 +11,9 @@ tags:
 draft: false
 ---
 
-**
-****Vendas pela Internet**
+**Vendas pela Internet**
 
-
-**
-****Forewords**
+**Forewords**
 
 
 
@@ -33,8 +31,7 @@ Foi delegada à **ARPA **( Advanced Research Projects Agency ) e ao **DoD** ( De
 
 Alguns anos depois, a ARPA mudaria de nome para **DARPA **( Defense Advanced Research Projects Agency ) iniciando um plano denominado **Internetting Project**, para investigar as formas possíveis de conexão entre redes de pacotes comutados. Como resultado desse projeto e dos estudos do **INWG **( InterNetwork Working Group ), foram desenvolvidos e apresentados os dois protocolos básicos da Internet. Em _1974_, Vinton Cerf e Robert Kahn apresentaram o **IP **( Internet Protocol ) e o **TCP **( Transmission Control Protocol ). Estes dois protocolos especificavam a forma pela qual as mensagens ( arquivos ou comandos ) seriam transferidos entre os computadores na Internet.
 
-**
-****Números**
+**Números**
 
 
 
@@ -61,8 +58,7 @@ A pesquisa mais recente, para 1995, foi publicada em janeiro de 1996. Do univers
 Na pesquisa de 1995, Quarterman contou 45 mil máquinas conectadas à Internet. O número real de domínios registrados excedeu este número porque nem todos os domínios registrados são usados e alguns são domínios em outras redes, como a UUCP, onde você pode enviar correio, mas não pode usar serviços Internet interativos.
 
 
-_
-__O Web é quente, mas o FTP ainda supera a navegação_. Quarterman também percebe que o uso do sistema operacional Windows está caindo e que os Macintoshes ( apesar do uso do Internet Protocol e não do MacOS ) e as máquinas Unix estão aumentando sua fatia no controle de domínios.
+_O Web é quente, mas o FTP ainda supera a navegação_. Quarterman também percebe que o uso do sistema operacional Windows está caindo e que os Macintoshes ( apesar do uso do Internet Protocol e não do MacOS ) e as máquinas Unix estão aumentando sua fatia no controle de domínios.
 
 
 
@@ -73,8 +69,7 @@ Os resultados são anunciados e veiculados no site Web da **MIDS **( que publica
 Falando sobre o **Brasil**, o secretário de Política de Informática e Automação do Ministério da Ciência e Tecnologia, **Ivan Moura Campos**, diz que o Brasil ostenta um dos crescimentos mais espantosos rumo ao _cyberspace _- estamos crescendo 50% ao mês. Com isso chegamos à uma população de **260 mil cibernautas **no início do mês de maio deste ano. Para se ter uma idéia, se a taxa de adesão continuasse nessa velocidade, até o final do ano o número de cibernautas brasileiros seria de 16 milhões. Mas as previsões do Secretário, mais realistas, estimam **um milhão de usuários **na virada do ano.
 
 
-**
-****Publicidade**
+**Publicidade**
 
 
 
@@ -129,8 +124,7 @@ Tais serviços têm faturamentos muito altos principalmente por causa da empolga
 E falando em propaganda, alguém deve estar confeccionando tais pages e anúncios. Essas empresas estão se especializando em desenhar páginas específicas e criativas para um tipo de mídia que sai das limitações do papel e possibilita coisas como **Hypertext **( palavras dentro de um texto que levam a outras páginas ), **Marquees **( frases que se movimentam na linha ), músicas ( através de arquivos **WAVE **ou da nova tecnologia **Real Audio **), animações ( via imagens **GIF **animadas ou então utilizando recursos da linguagem **Java **) ou ainda ambientes totalmente tridimensionais ( utilizando a tecnologia **VRML - Virtual Reality Markup Language **) e muito mais. Nesse filão mercadológico estão empresas como a **Vivid Studio **( **http://www.vivid.com **) que tem como clientes as gigantes **Silicon Graphics **e Microsoft ou a **Razorfish **( **http://www.razorfish.com **) que desenha para a **Time-Warner **e a **Pepsi**.
 
 
-**
-****Comércio**
+**Comércio**
 
 
 
@@ -169,8 +163,7 @@ Se há alguém de mudança para os Estados Unidos ou precisando simplesmente com
 Pensando em viagens, a **Cruisin **( **http://www.cracker.com/cruisin **) é a primeira agência de turismo especializada em cruzeiros que atende exclusivamente pela Internet. Mas já existem muitos hotéis e agências na rede. Realmente há alternativas para todos os limites bancários: de castanhas do Ceará por menos de R$ 3,00 até uma casa na Flórida por US$ 329 mil. Hoje em dia é virtualmente possível se comprar de tudo na Internet.
 
 
-**
-****Afterwords**
+**Afterwords**
 
 
 
