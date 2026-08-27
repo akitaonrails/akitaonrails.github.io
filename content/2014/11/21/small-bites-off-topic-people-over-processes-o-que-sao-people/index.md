@@ -2,7 +2,8 @@
 title: '[Small Bites/Off-Topic] "People over Processes", o que são "People"?'
 date: '2014-11-21T16:06:00-02:00'
 slug: small-bites-off-topic-people-over-processes-o-que-sao-people
-description: "O autor explica que Agile exige processos e melhoria contínua, enquanto lidar melhor com pessoas pede noções de psicologia, economia comportamental e redes. Nosso comportamento é menos racional do que parece."
+translationKey: small-bites-off-topic-people-over-processes-o-que-sao-people
+description: "Agile herda do Lean a ênfase em processos e melhoria contínua, mas priorizar pessoas exige psicologia, economia comportamental e teoria de redes. Uma lista de livros para começar e a lembrança de que somos menos racionais do que gostaríamos."
 tags:
 - agile
 - psicologia
@@ -11,48 +12,50 @@ tags:
 draft: false
 ---
 
-Essa frase aparece bastante no mundo ágil. A interpretação correta para os 4 princípios do Manifesto Ágil é o que ele mesmo diz: "Embora saibamos que exista valor no item da direita, valorizamos mais o da esquerda".
+Essa frase aparece bastante no mundo ágil. A leitura correta dos 4 valores do Manifesto Ágil está no que ele mesmo diz: "Ainda que exista valor nos itens à direita, valorizamos mais os da esquerda".
 
-Mas essa frase é usada para justificar "não precisamos ter processos, basta deixar as pessoas escolherem" ou então "as pessoas escolhem, então vamos ter consenso pra tudo" - a falácia da [organização democrática](http://www.akitaonrails.com/2011/04/25/off-topic-mea-culpa-organizacoes-democraticas-nao-funcionam) -, enfim, desculpas para justificar o não entendimento do valor de se ter processos.
+O problema é usar a frase como desculpa. Ela vira "não precisamos de processos, basta deixar as pessoas escolherem", ou então "as pessoas escolhem, então vamos ter consenso pra tudo", a falácia da [organização democrática](http://www.akitaonrails.com/2011/04/25/off-topic-mea-culpa-organizacoes-democraticas-nao-funcionam). No fundo, é justificativa para não entender o valor de ter processos.
 
-Agile, derivado de Lean, é inteiramente baseado em processos. E o principal dos processos é o que o Lean original (não as derivações como Lean Startup ou Kanban) tem como pilar o ["Kaizen"](http://www.akitaonrails.com/2013/05/31/desmistificando-o-metodo-kanban#.VG9hxItHnxg), ou seja, ["melhoria contínua"](http://www.akitaonrails.com/2009/12/10/off-topic-voce-nao-entende-nada-de-scrum), onde o [hoje é pelo menos um pouco melhor do que ontem](http://www.akitaonrails.com/2009/06/14/off-topic-padr-es-commodities-e-inova--es#.VG9h0YtHnxg), onde o que fazemos é mensurável e por causa disso possível de dizer que hoje fizemos melhor do que ontem. O princípio é simples, a execução nem tanto. Se ainda não leu, veja os links deste parágrafo para entender esses princípios.
+Agile, derivado do Lean, é inteiramente baseado em processos. E o pilar do Lean original (não das derivações como Lean Startup ou Kanban) é o ["Kaizen"](http://www.akitaonrails.com/2013/05/31/desmistificando-o-metodo-kanban), ou seja, a ["melhoria contínua"](http://www.akitaonrails.com/2009/12/10/off-topic-voce-nao-entende-nada-de-scrum).
 
-Agora vem a parte ruim: como falar sobre pessoas? Ou mais especificamente, sobre comportamento de pessoas?
+A ideia é que [o hoje seja pelo menos um pouco melhor do que o ontem](http://www.akitaonrails.com/2009/06/14/off-topic-padr-es-commodities-e-inova--es). O que fazemos é mensurável, e por isso dá para afirmar que hoje ficou melhor do que ontem. O princípio é simples; a execução, nem tanto. Se ainda não leu, siga os links deste parágrafo para entender esses conceitos.
 
-Como nós todos somos "pessoas" temos a certeza que sabemos como pessoas pensam. E nada poderia estar mais longe da verdade. Temos ideias pré-concebidas falaciosas, supersticiosas, preconceituosas, há tempos ultrapassadas mas que de tanto serem repetidas como clichês ainda acreditamos que é verdade, da mesma forma como ainda muitos acreditam que só usamos [10% do nosso cérebro](http://en.wikipedia.org/wiki/Ten_percent_of_brain_myth) ou mesmo que [não podemos tomar manga com leite](http://www.akitaonrails.com/2008/12/16/off-topic-m-todo-cient-fico-vs-cargo-cult).
+Agora vem a parte ruim: como falar sobre pessoas? Ou, mais especificamente, sobre o comportamento das pessoas?
 
-E não precisamos adivinhar, assim como no caso de processos, existe sim uma longa literatura sobre pessoas. Você vai encontrar a psicologia, a sociologia (que evoluiu muito a partir dos anos 90 graças ao entendimento da área de redes), a economia comportamental, dentre outras. Claro, é impossível para nós, da área de tecnologia, nos tornarmos especialistas na área de Humanas, mas se temos como responsabilidade priorizar pessoas em vez de apenas processos, é melhor que nos equipemos o suficiente.
+Como todos nós somos "pessoas", temos a certeza de que sabemos como as pessoas pensam. E nada poderia estar mais distante da verdade. Carregamos ideias pré-concebidas, falaciosas, supersticiosas e preconceituosas, muitas ultrapassadas há tempos. De tanto serem repetidas como clichê, ainda acreditamos nelas, do mesmo jeito que muita gente acredita que só usamos [10% do cérebro](https://en.wikipedia.org/wiki/Ten_percent_of_brain_myth) ou que [não dá para tomar manga com leite](http://www.akitaonrails.com/2008/12/16/off-topic-m-todo-cient-fico-vs-cargo-cult).
 
-Este é um Small Bite porque não pretendo, desta vez, discorrer em detalhes sobre o assunto, mas sim deixar livros que gosto muito para dar um pouco de base.
+E não precisamos adivinhar. Assim como no caso dos processos, existe uma longa literatura sobre pessoas: psicologia, sociologia (que evoluiu muito a partir dos anos 90 graças ao estudo de redes), economia comportamental, entre outras. É impossível para quem vem da tecnologia virar especialista em Humanas, mas se a responsabilidade é priorizar pessoas, além dos processos, é melhor se equipar o suficiente.
 
-Dentro da própria área de tecnologia existem alguns livros clássicos que devem ser lidos:
+Este é um Small Bite porque não pretendo, desta vez, entrar em detalhes sobre o assunto. Prefiro deixar alguns livros de que gosto muito para dar uma base.
 
-* [Peopleware](http://en.wikipedia.org/wiki/Peopleware:_Productive_Projects_and_Teams) do Tom de Marco
-* [The Mythical Man Month](http://en.wikipedia.org/wiki/The_Mythical_Man-Month) do Fred Brooks
-* [The Psychology of Computer Programming](http://www.amazon.com/The-Psychology-Computer-Programming-Anniversary/dp/0932633420) do Gerard Weinberg
+Dentro da própria área de tecnologia existem alguns clássicos que valem a leitura:
 
-Daí podemos ir para Economia Comportamental, Psicologia:
+* [Peopleware](https://en.wikipedia.org/wiki/Peopleware:_Productive_Projects_and_Teams) do Tom DeMarco
+* [The Mythical Man Month](https://en.wikipedia.org/wiki/The_Mythical_Man-Month) do Fred Brooks
+* [The Psychology of Computer Programming](https://www.amazon.com/dp/0932633420) do Gerald Weinberg
 
-* [Thinking, Fast and Slow](http://en.wikipedia.org/wiki/Thinking,_Fast_and_Slow) do prêmio Nobel, Daniel Kahneman
-* [Predictably Irrational](http://en.wikipedia.org/wiki/Predictably_Irrational) do Dan Ariely
-* [The Upside of Irrationality: The Unexpected Benefits of Defying Logic](http://www.amazon.com/The-Upside-Irrationality-Unexpected-Benefits/dp/0061995045/ref=pd_sim_b_23?ie=UTF8&refRID=01PP6NAYRAERT8RE7N4J) do Dan Ariely
-* [The (Honest) Truth about Dishonesty](http://www.amazon.com/Honest-Truth-About-Dishonesty-Everyone-Especially/dp/0062183591/ref=pd_sim_b_58?ie=UTF8&refRID=01PP6NAYRAERT8RE7N4J) do Dan Ariely
-* [The Lucifer Effect](http://www.lucifereffect.com/) do Philip Zimbardo
-* [Talent Is Overrated](http://www.amazon.com/Talent-Overrated-Separates-World-Class-Performers-ebook/dp/B001HD8NZ8/ref=sr_1_1?s=digital-text&ie=UTF8&qid=1416586456&sr=1-1) do Geoffrey Colvin
-* [Descartes' Error: Emotion, Reason, and the Human Brain](http://www.amazon.com/Descartes-Error-Emotion-Reason-Human/dp/014303622X/ref=sr_1_3?s=books&ie=UTF8&qid=1416587465&sr=1-3&keywords=antonio+damasio) do Antonio Damasio
-* [The Black Swan](http://www.amazon.com/The-Black-Swan-Improbable-Robustness/dp/081297381X/ref=pd_sim_b_7?ie=UTF8&refRID=01PP6NAYRAERT8RE7N4J) do Nassim Taleb
-* [Fooled by Randomness](http://www.amazon.com/Fooled-Randomness-Hidden-Markets-Incerto/dp/0812975219/ref=pd_sim_b_20?ie=UTF8&refRID=01PP6NAYRAERT8RE7N4J) do Nassim Taleb
+Daí podemos ir para Economia Comportamental e Psicologia:
 
-E mais especificamente sobre o comportamento de diversos agentes em grupos (teoria de redes):
+* [Thinking, Fast and Slow](https://en.wikipedia.org/wiki/Thinking,_Fast_and_Slow) do prêmio Nobel Daniel Kahneman
+* [Predictably Irrational](https://en.wikipedia.org/wiki/Predictably_Irrational) do Dan Ariely
+* [The Upside of Irrationality: The Unexpected Benefits of Defying Logic](https://www.amazon.com/dp/0061995045) do Dan Ariely
+* [The (Honest) Truth about Dishonesty](https://www.amazon.com/dp/0062183591) do Dan Ariely
+* [The Lucifer Effect](http://web.archive.org/web/20141130023720/http://www.lucifereffect.com/) do Philip Zimbardo
+* [Talent Is Overrated](https://www.amazon.com/dp/B001HD8NZ8) do Geoffrey Colvin
+* [Descartes' Error: Emotion, Reason, and the Human Brain](https://www.amazon.com/dp/014303622X) do Antonio Damasio
+* [The Black Swan](https://www.amazon.com/dp/081297381X) do Nassim Taleb
+* [Fooled by Randomness](https://www.amazon.com/dp/0812975219) do Nassim Taleb
 
-* [Linked, the New Science of Networks](http://en.wikipedia.org/wiki/Linked:_The_New_Science_of_Networks) do Albert-László Barabási
-* [Six Degrees: The Science of a Connected Age](http://www.amazon.com/Six-Degrees-Science-Connected-Age/dp/0393325423/ref=asap_B001ILHHR4_1_2?s=books&ie=UTF8&qid=1416580003&sr=1-2) do Duncan Watts
-* [Everything Is Obvious: How Common Sense Fails Us](http://www.amazon.com/Everything-Is-Obvious-Common-Sense/dp/0307951790) do Duncan Watts
-* [Sync: How Order Emerges From Chaos In the Universe, Nature, and Daily Life](http://www.amazon.com/Sync-Order-Emerges-Universe-Nature/dp/0786887214/ref=pd_sim_b_12?ie=UTF8&refRID=1BY4FNS3D1HHTW775AKC) do Steven H. Strogatz
-* [Chaos: Making a New Science](http://www.amazon.com/Chaos-Making-Science-James-Gleick/dp/0143113453/ref=pd_sim_b_7?ie=UTF8&refRID=01W92C514YG6CEGP2V7N) do James Gleick
-* [Nonlinear Dynamics and Chaos](http://www.amazon.com/Nonlinear-Dynamics-Chaos-Applications-Nonlinearity/dp/0813349109/ref=pd_sim_b_44?ie=UTF8&refRID=01W92C514YG6CEGP2V7N) do  Steven H. Strogatz 
-* [The (Mis)behavior of Markets](http://www.amazon.com/The-Misbehavior-Markets-Financial-Turbulence/dp/0465043577/ref=pd_sim_b_21?ie=UTF8&refRID=0BE79B97AMBRV3C8J1Q9) do Benoit Mandelbrot
+E, mais especificamente, sobre o comportamento de diversos agentes em grupos (teoria de redes):
 
-Sim, muitos desses livros são bem superficiais (nenhum é técnico/especialista) mas o objetivo é só dar uma introdução mesmo às diversas áreas. E com o tempo eu eliminei alguns que são superficiais demais (já mais na categoria de entretenimento/auto-ajuda) como Malcolm Gladwell, Dan Pink, Clayton Christensen, Clay Shirky. Vale a pena ler alguns desses.
+* [Linked, the New Science of Networks](https://en.wikipedia.org/wiki/Linked:_The_New_Science_of_Networks) do Albert-László Barabási
+* [Six Degrees: The Science of a Connected Age](https://www.amazon.com/dp/0393325423) do Duncan Watts
+* [Everything Is Obvious: How Common Sense Fails Us](https://www.amazon.com/dp/0307951790) do Duncan Watts
+* [Sync: How Order Emerges From Chaos In the Universe, Nature, and Daily Life](https://www.amazon.com/dp/0786887214) do Steven H. Strogatz
+* [Chaos: Making a New Science](https://www.amazon.com/dp/0143113453) do James Gleick
+* [Nonlinear Dynamics and Chaos](https://www.amazon.com/dp/0813349109) do Steven H. Strogatz
+* [The (Mis)behavior of Markets](https://www.amazon.com/dp/0465043577) do Benoit Mandelbrot
 
-O principal é a conclusão que diferente do que comumente pensamos, nós, pessoas, não somos tão racionais quanto gostaríamos e nosso comportamento é extremamente influenciado por agentes externos e pelo ambiente.
+Sim, muitos desses livros são bem superficiais (nenhum é técnico ou de especialista), mas a intenção é só dar uma introdução às diversas áreas. Com o tempo, eliminei alguns superficiais demais, já na categoria de entretenimento e auto-ajuda, como Malcolm Gladwell, Dan Pink, Clayton Christensen e Clay Shirky. Ainda assim, vale a pena ler alguns deles.
+
+O principal é a conclusão: ao contrário do que costumamos pensar, nós, pessoas, não somos tão racionais quanto gostaríamos, e nosso comportamento é fortemente influenciado por agentes externos e pelo ambiente.
