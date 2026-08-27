@@ -2,6 +2,7 @@
 title: 'Off Topic: "Here''s to the crazy ones ..."'
 date: '2007-01-27T16:02:14-02:00'
 slug: off-topic-heres-to-the-crazy-ones
+translationKey: off-topic-heres-to-the-crazy-ones
 description: "O comercial Think Different marcou a volta da Apple e de Steve Jobs, celebrando quem desafia regras e muda o mundo. O autor aproxima essa defesa dos criativos de um possível manifesto para Rails e 37signals."
 tags:
 - apple
@@ -13,9 +14,9 @@ draft: false
 
 **Fonte: [Blog.MacMagazine.com](http://macmagazine.com.br/blog/page/54/)**
 
-Esse comercial marca a volta da Apple, das cinzas, a volta de Steve Jobs ao comando. A campanha “Think Different” já tem 10 anos, o post que me lembrou disso também é meio [antigo](http://macmagazine.com.br/blog/2006/06/15/think-different-apple/), mas a mensagem continua muito recente. Vale até mesmo para nós, Railers – seria um bom comercial de autoria de uma 37signals, por exemplo. Aproveitem.
+Esse comercial marca a volta da Apple, das cinzas, a volta de Steve Jobs ao comando. A campanha "Think Different" vai completar 10 anos, o post que me lembrou disso também é meio [antigo](http://macmagazine.com.br/blog/2006/06/15/think-different-apple/), mas a mensagem continua muito recente. Vale até mesmo para nós, Railers: seria um bom comercial de autoria de uma 37signals, por exemplo. Aproveitem.
 
-[![](/files/2006_06_15-thinkdifferent.png)](http://macmagazine.com.br/blog/wp-content/videos/2006_06_15-thinkdifferent.mov)
+![](/files/2006_06_15-thinkdifferent.png)
 
 Here’s to the crazy ones.
 
