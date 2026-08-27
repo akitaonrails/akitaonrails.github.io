@@ -26,7 +26,7 @@ What most people do very wrong is disregarding the variable of "Time".
 
 Everybody goes to tech conferences or read fancy blog posts, or watch flashy screencasts. Their wrong conclusion is: _"Netflix uses it, therefore it should be good for me, because I want to become Netflix"_.
 
-The wrong assumption is that Netflix - or Google, or Facebook, or Spotify - is a static system and they always functioned the way they advertise it.
+The wrong assumption is that Netflix, or Google, or Facebook, or Spotify, is a static system that always functioned the way they advertise it today.
 
 People forget that every unicorn company had a **day-1**. And on day-1 they did not use microservices. They did not have React.js. They did not have Go or Elixir. Some of them didn't even have good programmers to begin with. Netflix started as a VHS renting service, remember that? Google started off in a dorm-room with off-the-shelf hardware components assembled in a [Lego-based rack](http://www.complex.com/pop-culture/2013/02/50-things-you-didnt-know-about-google/lego-server-rack).
 
@@ -38,9 +38,9 @@ Stop envying the rich guy's Lamborghini.
 
 ### (Technical) Debt
 
-This is neither a new term nor a new theme. Every decision you make in programming is a **compromise** between what the "future-ideal" should be and what you can actually do right now. Loan to buy the equivalent Lamborghini too soon, and you will have to deal with an unpayable (Technical) Debt. And you will stale, you will stop, you will do nothing BUT pay that debt from now on.
+This is neither a new term nor a new theme. Every decision you make in programming is a **compromise** between what the "future-ideal" should be and what you can actually do right now. Loan to buy the equivalent Lamborghini too soon, and you will have to deal with an unpayable (Technical) Debt. You will stall, you will stop, and you will do nothing but pay that debt from now on.
 
-You want to "code faster" therefore you skip writing automated tests, because you assume it will slow you down. And you're right. Test-driven development is not about making you fast at first. It's about protecting your future self from your present self. It's about not accumulating Technical Debt.
+You want to "code faster" therefore you skip writing automated tests, because you assume it will slow you down. And you're right. Test-driven development doesn't make you fast at first, and it isn't supposed to. It protects your future self from your present self, and keeps you from piling up Technical Debt.
 
 Again, you forget the "Time" variable.
 
@@ -58,7 +58,7 @@ Philip Calçado writes very good posts and presentations about microservices in 
 
 He correctly remembers Fred Brooks' **The Mythical Man-Month**. I urge developers to read this small book. It's uncanny how the entire industry is still repeating the very same mistakes Brooks reports in his book from projects in the 60's!
 
-To me, microservices is a by-product of tech companies with too many developers. Once you break through the 5-developers team a "monolithic" system with poor organization and few automated tests can become cumbersome to deal with. So the consequence is the desire to break it down. You make 2 teams and 2 microservices and coordinate. And the teams start to isolate, and play the  finger-pointing when new bugs are reported (_"it's the other team's microservice's fault"_).
+To me, microservices is a by-product of tech companies with too many developers. Once you break through the 5-developers team a "monolithic" system with poor organization and few automated tests can become cumbersome to deal with. So the consequence is the desire to break it down. You make 2 teams and 2 microservices and coordinate. And the teams start to isolate, and play the finger-pointing game when new bugs are reported (_"it's the other team's microservice's fault"_).
 
 That's [Conway's Law](http://www.melconway.com/Home/Conways_Law.html) if you do it wrong:
 
@@ -84,7 +84,7 @@ Then, what happens? The CEO, the board, the investors, or whatever, start doing 
 
 Again, it's foregoing the sense of the "Time" variable. And confusing "debt" for "investment".
 
-First of all, do yourself a favor and [read the goddamn book](http://amzn.to/2sFbkWq) already, twice.
+First of all, do yourself a favor and [read the goddamn book](http://amzn.to/2sFbkWq), twice.
 
 ### Do Agile right! And no, it's not Kanban!
 
@@ -92,9 +92,9 @@ If there is one good thing the whole Lean noise generated is the notion of "Mini
 
 The cynical will say that any prototype that reaches production will never die. And they're not wrong.
 
-The balance is to not do the "quick and dirty" version. That's what we have Agile techniques for. Do the minimal, organize the minimal. That's why we have object-oriented design patterns, from GoF to DDD. You don't need to do EVERY pattern - that's what "overengineering" means. But you can do the minimal monolith that will allow you to evolve later.
+The balance is to not do the "quick and dirty" version. That's what we have Agile techniques for. Do the minimal, organize the minimal. That's why we have object-oriented design patterns, from GoF to DDD. You don't need to do EVERY pattern, and that's exactly what "overengineering" means. But you can do the minimal monolith that will allow you to evolve later.
 
-People criticize Ruby on Rails for not being organized "enough". [Nick Sutterer](https://apotonick.wordpress.com/2015/09/05/the-only-alternative-to-a-rails-monolith-are-micro-services-bullshit/), the creator of the high-level [Trailblazer](https://github.com/trailblazer/trailblazer) has a good point.
+People criticize Ruby on Rails for not being organized "enough". [Nick Sutterer](https://apotonick.wordpress.com/2015/09/05/the-only-alternative-to-a-rails-monolith-are-micro-services-bullshit/), the creator of [Trailblazer](https://github.com/trailblazer/trailblazer), has a good point.
 
 Rails done wrong is bad. The conclusion should NOT be: _"let's do microservices"_ though. That jump in faith is idiotic and makes no sense for all the reasons I mentioned above.
 
@@ -102,9 +102,9 @@ _"Let's do proper Agile stuff and proper object-oriented stuff"_ should be the i
 
 And by "Agile" forget about idiotic post-its, idiotic numerology-based estimation equations (this is a whole post in itself, because story points and velocity are useful, but adding Montecarlo and other Gaussian-based stuff are not). The only "Agile" things you should be concerned about are the [Extreme Programming (XP) techniques](http://www.extremeprogramming.org/), **including** Iteration-based timeboxes.
 
-You **MUST** do timeboxes. Stop, re-assess, change directions, and then keep going. The model of "Pull" is only reasonable when your direction is very, very clear, written in stone and unchangeable - like in a factory production line! (Where the concept of Pull - and Lean -- was actually born!)
+You **MUST** do timeboxes. Stop, re-assess, change directions, and then keep going. The model of "Pull" is only reasonable when your direction is very, very clear, written in stone and unchangeable, like in a factory production line! (Which is exactly where the concept of Pull, and Lean, was actually born!)
 
-Iterations, like automated tests, are like Insurance. You can never avoid all waste, but you can minimize it. You can afford to throw away an Iteration-worth of work. After the iteration you measure the results, and throw it way if necessary - changing direction in the process. Throwing useless stuff away is as important as adding new stuff. If you just add, you have a [hoarding disorder](https://en.wikipedia.org/wiki/Compulsive_hoarding)!
+Iterations, like automated tests, are like Insurance. You can never avoid all waste, but you can minimize it. You can afford to throw away an Iteration-worth of work. After the iteration you measure the results, and throw it away if necessary, changing direction in the process. Throwing useless stuff away is as important as adding new stuff. If you just add, you have a [hoarding disorder](https://en.wikipedia.org/wiki/Compulsive_hoarding)!
 
 If in doubt, do XP. Yes, it feels more "difficult", and Kanban is "simpler" to explain. Now, is that a good reason?
 
@@ -114,11 +114,11 @@ Another problem is choosing languages or framework because of performance.
 
 If you're in the web development business, this is a huge WASTE.
 
-Understand this truth: your servers will IDLE most of the time. And if you feel like using your web app is slow, it's not because of the language used, it's because of the POOR programming you did. And no good language will rescue a bad programmer. I always say that if performance was that important, we should all be doing C.
+Understand this truth: your servers will IDLE most of the time. And if you feel like using your web app is slow, the slowness comes from the POOR programming you did, not from the language. And no good language will rescue a bad programmer. I always say that if performance was that important, we should all be doing C.
 
 Most of what you serve in HTTP-based apps, be it user-readable content, be it API GET results, can be **CACHED**! If you're not using a [CDN](http://www.akitaonrails.com/2015/08/25/small-bites-adicionando-um-cdn-ao-seu-site-a-forma-facil), you're doing it wrong.
 
-Yeah, yeah, yeah, you think you're building the next Spotify. You're not, at least not 99% of you. And the 1% doing custom engineering, with custom techniques and custom stack,  successfully, you're the 1%. Actually I'd say you're a fraction of the 1%. Do not assume that what you do is good for the rest of the population.
+Yeah, yeah, yeah, you think you're building the next Spotify. You're not, at least not 99% of you. And the 1% doing custom engineering, with custom techniques and custom stack, successfully: you're the 1%. Actually I'd say you're a fraction of the 1%. Do not assume that what you do is good for the rest of the population.
 
 90% of what most small companies and solo web developers need is just a Shopify account and a vanilla Wordpress installation. And that's it.
 
@@ -142,14 +142,14 @@ You will always get Debt to pay. So be smart in which kind of debt you choose. B
 
 Again, read Brooks. He said it decades ago: [THERE IS NO SILVER BULLET](http://worrydream.com/refs/Brooks-NoSilverBullet.pdf). Don't bullshit yourself. A new language, a new framework, a new architecture. None of those will save you.
 
-In any tech endeavor, code is not the only thing to worry about. I would go as far as to say that in a tech startup, code is only 20% of the problem. A tech startup is just a company, like any other. If you're the founder or CEO, you have to deal with all the remaining 80%: marketing, accounting, human resources, legal, etc. It's already difficult enough without your tech team getting you unwanted Technical Debt - the unneeded Lamborghini - that you won't be able to pay.
+In any tech endeavor, code is not the only thing to worry about. I would go as far as to say that in a tech startup, code is only 20% of the problem. A tech startup is just a company, like any other. If you're the founder or CEO, you have to deal with all the remaining 80%: marketing, accounting, human resources, legal, etc. It's already difficult enough without your tech team getting you unwanted Technical Debt, the unneeded Lamborghini, that you won't be able to pay.
 
-You can start humble on day-1. Keep evolving, continuously - this is the core of any Agile or Lean process: [KAIZEN](https://www.graphicproducts.com/articles/what-is-kaizen/). Choose smart debts, pay them a small bit at a time, continuously. It's the same reasoning as getting a loan in the bank.
+You can start humble on day-1. Keep evolving, continuously. This is the core of any Agile or Lean process: [KAIZEN](https://www.graphicproducts.com/articles/what-is-kaizen/). Choose smart debts, pay them a small bit at a time, continuously. It's the same reasoning as getting a loan in the bank.
 
 > Netflix day-7,200 is NOT your day-1.
 
 > Facebook day-4,800 is NOT your day-1.
 
-> Google day-6,890 is NOT your day-1.
+> Google day-6,809 is NOT your day-1.
 
 > Be humble. Deliver fast. Pay your Debts. Keep evolving continuously. Stop believing in fairy tales and silver bullets.
