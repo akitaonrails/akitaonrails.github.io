@@ -151,7 +151,7 @@ Anyway, right now using VC6 build of Ruby requires man power to maintain those g
 **Luis Lavena:** For some projects I'm the only one maintaining gems for Windows, for others I only had contributed patches and other users manage the builds. There is no central repository for Windows gems since I want RubyForge to be the central one.  
 In any case, I'm pushing MinGW specific ones based on github forks here:
 
-<macro:code>
+
 <p>gem list <del>-remote —source http://gems.rubyinstaller.org<br>
 -</del>-</p>
 <p>The devkit is already available, but we are wrapping it into a good Windows Installer package. You can get your hands dirty and grab the sandbox project from <a href="http://github.com/luislavena/rubyinstaller">Github</a> to get your environment, or simply <a href="http://www.rubyinstaller.org/sandbox/">download the packages</a>.</p>
@@ -199,4 +199,4 @@ require 'some_gem'<br>
 <p>(PS: We are already including Enterprise patches for latest issues on MinGW build! :-)</p>
 <p><strong>AkitaOnRails:</strong> Haha, right. Well, I think this is it. I think this will reach a broader audience and call the attention of Windows developers out there. Thanks a lot!</p>
 <p><strong>Luis Lavena:</strong> Thanks to you Fabio.</p>
-<p style="text-align: center; margin: 5px"><a href="http://www.flickr.com/photos/diegal/325555121/"><img src="http://s3.amazonaws.com/akitaonrails/assets/2008/7/2/325555121_e6e22ea444.jpg" alt=""></a></p></macro:code>
+<p style="text-align: center; margin: 5px"><a href="http://www.flickr.com/photos/diegal/325555121/"><img src="http://s3.amazonaws.com/akitaonrails/assets/2008/7/2/325555121_e6e22ea444.jpg" alt=""></a></p>

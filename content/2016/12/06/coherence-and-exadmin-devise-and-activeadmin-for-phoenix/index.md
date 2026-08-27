@@ -54,7 +54,7 @@ E se você não for mexer no front-end, pode simplesmente adicionar os links de 
       <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li>
     </ul>
   </nav>
-  <span class="logo"></span>
+  
 </header>
 ...
 ```

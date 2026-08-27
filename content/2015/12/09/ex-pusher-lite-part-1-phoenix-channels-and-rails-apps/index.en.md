@@ -93,7 +93,7 @@ The HTML layout looks like this:
 <body>
 
 <div class="pure-menu pure-menu-horizontal">
-    <span class="pure-menu-heading">Pusher Client Demo</span>
+    Pusher Client Demo
 ...
 </div>
 

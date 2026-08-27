@@ -84,11 +84,11 @@ Esse comando cria o novo branch e já te muda para lá. Note como o asterisco mu
 
 # 
 
-# modified: CONFIG</span>
+# modified: CONFIG
 
-# modified: README</span>
+# modified: README
 
-# modified: TODO</span>
+# modified: TODO
 
 # 
 
@@ -119,9 +119,9 @@ Outra forma, caso você tenha vários novos arquivos é usar a seguinte linha:
 
 ```
 staged unstaged path
-  1: unchanged +3/-1 CONFIG</span>
-  2: unchanged +2/-0 README</span>
-  3: unchanged +1/-0 TODO</span>
+  1: unchanged +3/-1 CONFIG
+  2: unchanged +2/-0 README
+  3: unchanged +1/-0 TODO
 
 <b>*Commands*</b>
   1: status 2: update 3: revert 4: add untracked
@@ -594,7 +594,7 @@ Vamos modificar e fazer um commit nesse novo projeto:
 
 #
 
-# modified: README</span>
+# modified: README
 
 #
 
@@ -658,7 +658,7 @@ Already on branch “master”
 ```
 
 ```
-error: The branch ‘meu_merb’ is not a strict subset of your current HEAD</span>.
+error: The branch ‘meu_merb’ is not a strict subset of your current HEAD.
 If you are sure you want to delete it, run ‘git branch -D meu_merb’.
 ```
 
@@ -671,11 +671,11 @@ Deleted branch meu_merb.
 ```
 
 ```bash
->> git reset —hard HEAD</span>
+>> git reset —hard HEAD
 ```
 
 ```
-HEAD</span> is now at dee9e1f… minha correcao
+HEAD is now at dee9e1f… minha correcao
 ```
 
 ```bash
@@ -707,8 +707,8 @@ Switched to a new branch “working”
 ```
 
 ```bash
->> vi LICENSE</span>
->> mv LICENSE</span> licenca.txt
+>> vi LICENSE
+>> mv LICENSE licenca.txt
 ```
 
 ```bash
@@ -724,7 +724,7 @@ Switched to a new branch “working”
 
 #
 
-# deleted: LICENSE</span>
+# deleted: LICENSE
 
 #
 
@@ -762,7 +762,7 @@ Vou fazer o commit (não esquecer da opção -a !):
 ```
 Created commit a2e52ec: Novo arquivo
  2 files changed, 23 insertions(+), 20 deletions(-)
- delete mode 100644 LICENSE</span>
+ delete mode 100644 LICENSE
  create mode 100644 licenca.txt
 ```
 
@@ -804,12 +804,12 @@ Eu acrescentei uma linha e apaguei um parágrafo. Agora é a hora da verdade. Fa
 ```
 
 ```
-Renamed LICENSE</span> => licenca.txt
+Renamed LICENSE => licenca.txt
 Auto-merged licenca.txt
 Merge made by recursive.
- LICENSE</span> => licenca.txt | 3 +
+ LICENSE => licenca.txt | 3 +
  1 files changed, 3 insertions(+), 0 deletions(-)
- rename LICENSE</span> => licenca.txt (94%)
+ rename LICENSE => licenca.txt (94%)
 ```
 
 Prestem atenção ao que o comando git merge disse. Primeiro, vejamos se o arquivo LICENSE</span> ainda existe:
@@ -819,7 +819,7 @@ Prestem atenção ao que o comando git merge disse. Primeiro, vejamos se o arqui
 ```
 
 ```
-ls: LICENSE</span>: No such file or directory
+ls: LICENSE: No such file or directory
 ```
 
 Agora, vejamos o que tem no arquvo licenca.txt.

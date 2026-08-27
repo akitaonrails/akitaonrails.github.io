@@ -52,7 +52,7 @@ And if you're not tweaking the front-end, you can just add the proper sign up, s
       <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li>
     </ul>
   </nav>
-  <span class="logo"></span>
+  
 </header>
 ...
 ```
