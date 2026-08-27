@@ -2,6 +2,7 @@
 title: "[Tradução] O que faz um bom programador?"
 date: '2009-07-23T10:35:00-03:00'
 slug: tradu--o-o-que-faz-um-bom-programador
+translationKey: tradu--o-o-que-faz-um-bom-programador
 description: "Duas traduções defendem que bons programadores priorizam usabilidade, responsabilidade, colaboração e entrega. A segunda acrescenta a preguiça criativa e a humildade de fazer perguntas simples ao depurar."
 tags:
 - engenharia-de-software
@@ -13,7 +14,7 @@ draft: false
 
 Muita gente já me perguntou como se tornar um bom programador. Normalmente estão mais preocupados em qual linguagem aprender, qual curso fazer, quais livros técnicos ler. Porém, assim como os autores desses dois artigos que vou traduzir, eu diria que existem qualidades mais importantes a se levar em conta.
 
-O primeiro artigo é o [What makes a good programmer?](http://www.techfounder.net/2009/07/22/what-makes-a-good-programmer/)
+O primeiro artigo é o [What makes a good programmer?](http://web.archive.org/web/20090723103949/http://www.techfounder.net/2009/07/22/what-makes-a-good-programmer/)
 
 
 ### Um pensador analítico
@@ -62,7 +63,7 @@ Eu escrevi usabilidade aqui como um termo mais geral do que somente efetividade 
 > - são espertas e,
 > - que terminam as coisas. 
 > 
-> [Joel Spolsky](http://www.joelonsoftware.com/articles/GuerrillaInterviewing3.html)
+> [Joel Spolsky](http://web.archive.org/web/20090727035257/http://www.joelonsoftware.com/articles/GuerrillaInterviewing3.html)
 
 Talvez a coisa mais importante em um desenvolvedor. Você pode ser perfeito em todos os atributos anteriores e ainda ser um programador medíocre se você **não consegue terminar as coisas.** Um desenvolvedor mediano mas produtivo poderia facilmente substituir vários desenvolvedores altamente talentosos mas que se movem devagar, dependendo de suas responsabilidades.
 
@@ -108,7 +109,7 @@ Eu percebi, paradoxalmente o suficiente, que bons programadores precisam ser tan
 
 **Preguiçosos** , porque apenas programadores preguiçosos irão querer escrever os tipos de ferramentas que podem substituí-los no final. Preguiçosos, porque somente um programador preguiçoso vai evitar escrever código monótono e repetitivo – assim evitando redundância, o inimigo da mantenabilidade e flexibilidade de software. No mais, as ferramentas e processos que vêm disso, disparados pela _preguiça_, irão aumentar a produção.
 
-Claro, essa é apenas meia verdade. para um programador preguiçoso ser um bom programador, ele (ou ela) também deve ser extremamente _não-preguiçosos_ quando é hora de aprender como ser _preguiçoso_, ou seja, quais ferramentas de software tornam seu trabalho mais fácil, quais técnicas evitam redundância, e como ele pode fazer seu trabalho ter mais mantenabilidade e ser facilmente refatorado.
+Claro, essa é apenas meia verdade. Para um programador preguiçoso ser um bom programador, ele (ou ela) também deve ser extremamente _não-preguiçoso_ quando é hora de aprender como ser _preguiçoso_, ou seja, quais ferramentas de software tornam seu trabalho mais fácil, quais técnicas evitam redundância, e como ele pode fazer seu trabalho ter mais mantenabilidade e ser facilmente refatorado.
 
 Segundo (e vou elaborar mais sobre isso porque acho que esse conceito é menos conhecido que o primeiro) um bom programador precisa ser **idiota.** Por que? Porque se ele é esperto, e ele sabe que é esperto, ele vai:
 
@@ -141,7 +142,7 @@ Eu conheço do meu trabalho um bom programador, quando confrontado com um proble
 - “Ele também não viu outras imagens além do logo?”
 - “O que? Bem, vou perguntar a ele.”
 
-Apenas para a argumentação (isso foi inteiramente hipotético) vamos dizer que o cliente de fato desligou as imagens do seu browser. Ou seu filho desligou. Seja qual for o caso, essa resposta não seria encontrada se você trabalhasse com um programador em modo<sup class="footnote" id="fnr1"><a href="#fn1">1</a></sup> “esperto”. Nenhuma das perguntas perguntadas pelo programador requerem qualquer habilidade de programação. Não, simplesmente porque o problema é tão estúpido, apenas estupidez pode resolvê-lo.
+Apenas para a argumentação (isso foi inteiramente hipotético) vamos dizer que o cliente de fato desligou as imagens do seu browser. Ou seu filho desligou. Seja qual for o caso, essa resposta não seria encontrada se você trabalhasse em modo “esperto”<sup class="footnote" id="fnr1"><a href="#fn1">1</a></sup>. Nenhuma das perguntas perguntadas pelo programador requerem qualquer habilidade de programação. Não, simplesmente porque o problema é tão estúpido, apenas estupidez pode resolvê-lo.
 
 > <sup class="footnote" id="fnr1"><a href="#fn1">1</a></sup> alguns anos atrás, eu tive uma longa discussão no telefone sobre o web site ter quebrado desde minha última atualização … acabou que a pessoa desabilitou os stylesheets em seu browser. Na época eu teria suspeitado de tudo **menos** numa solução tão simples e fiquei escutando meia hora de reclamações sobre padrões de qualidade, etc. No final, a premissa que minha atualização foi culpada era apenas isso … uma premissa. Melhor você ouvir **apenas os fatos** se começar a debugar, e nunca no que as pessoas **acham** que pode ser a razão.
 
