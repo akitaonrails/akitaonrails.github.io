@@ -2,7 +2,8 @@
 title: 'Off-Topic: The Agile Manifesto, or How to Become Google'
 date: '2008-10-07T03:39:00-03:00'
 slug: off-topic-o-manifesto-gil-ou-como-se-tornar-o-google
-description: "The author argues that agility depends on philosophy, trust, and self-organizing teams, not procedures alone. Through Conway, open source, and Google, he advocates a culture that supports innovation and adaptation."
+translationKey: off-topic-o-manifesto-gil-ou-como-se-tornar-o-google
+description: "Agility comes from philosophy, trust, and self-organizing teams; methodology alone won't do. From the Agile Manifesto to Conway, Pareto, Wikipedia, and Google: why open source culture breeds innovation."
 tags:
 - agile
 - management
@@ -13,29 +14,28 @@ draft: false
 
 [![](http://s3.amazonaws.com/akitaonrails/assets/2008/8/1/468x60.gif)](http://www.locaweb.com.br/railssummit)
 
-I'm not one of the best students of Agile methodologies out there, not even close. So I'll allow myself the luxury of following perhaps a "naïve" view of what I personally see in this subject. And I know, I know — the word "Google" in the title is more for attention-grabbing. I'll explain at the end ;-)
+I'm nowhere near one of the best students of Agile methodologies out there. So I'll allow myself the luxury of a perhaps "naïve" view of what I personally see in this subject. And I know, I know, the word "Google" in the title is there to grab attention. I'll explain at the end ;-)
 
-First of all, I want to separate two things: **methodology** and **philosophy**. The most relevant part is always the philosophy. If a company or professional hasn't absorbed the **Agile philosophy**, they'll rarely be truly Agile no matter how many methodology procedures they implement. You can read recipes for French dishes, but until you understand how a real French chef thinks, until you absorb the French culture, you'll never have decent French cuisine — just low-quality mechanical copies.
+First of all, I want to separate two things: **methodology** and **philosophy**. The relevant part is always the philosophy. If a company or professional hasn't absorbed the **Agile philosophy**, they'll rarely be truly Agile, no matter how much methodology, meaning a series of procedures, they implement.
 
-What matters isn't the "how" but the "why." The [Agile Manifesto](http://agilemanifesto.org/) says this right in its **first** value. Let's recall the four Agile values:
+You can read recipes for French dishes all day, but until you understand how a real chef thinks, until you absorb French culture, you'll rarely cook decent French food. You'll produce low-quality mechanical copies.
+
+What matters isn't the "how" but the "why." The [Agile Manifesto](http://agilemanifesto.org/) says so right in its **first** value. Let's recall the four Agile values:
 
 > We are uncovering better ways of developing software by doing it and helping others do it. Through this work we have come to value:
-> 
+>
 > - Individuals and interactions over processes and tools
 > - Working software over comprehensive documentation
 > - Customer collaboration over contract negotiation
 > - Responding to change over following a plan
-> 
+>
 > That is, while there is value in the items on the right, we value the items on the left more.
 
-The first value already says it all: _individuals_ over _processes_.
-
-In this article I want to show why the vast majority of companies are not effectively Agile, even when they implement Agile "methodologies."
-
+The first value already says it all: _individuals_ over _processes_. In this article I want to show why the vast majority of companies are not effectively Agile, even when they implement Agile "methodologies."
 
 ## Principles Behind the Agile Manifesto
 
-To recap, it will be useful to cite the 12 Principles behind the Manifesto of Values. Many people have read all these items. But "reading" and "understanding" are two completely different things. For purposes of my explanation, I'll put some keywords in bold to refer back to later.
+To recap, it's worth citing the 12 Principles behind the Manifesto. Plenty of people have read all these items, but "reading" and "understanding" are two completely different things. For the purposes of my explanation, I'll put some keywords in bold so I can refer back to them later.
 
 We follow these principles:
 
@@ -43,7 +43,7 @@ We follow these principles:
 
 - Welcome **changing requirements**, even late in development. Agile processes harness change for the customer's competitive advantage.
 
-- Deliver working software frequently, from a couple of weeks to a couple of months, with a preference for the shorter timescale.
+- Deliver working software frequently, from a couple of weeks to a couple of months, with a preference to the shorter timescale.
 
 - Business people and developers must work together daily throughout the project.
 
@@ -57,270 +57,278 @@ We follow these principles:
 
 - Continuous attention to technical excellence and good design enhances agility.
 
-- Simplicity — the art of maximizing the amount of work not done — is essential.
+- Simplicity–the art of maximizing the amount of work not done–is essential.
 
 - The best architectures, requirements, and designs emerge from **self-organizing teams**.
 
-- At regular intervals, the team reflects on how to become more effective, then **adjusts** its behavior accordingly.
+- At regular intervals, the team reflects on how to become more effective, then tunes and **adjusts** its behavior accordingly.
 
 ## The Fifth Element
 
 > "Build projects around **motivated individuals**. Give them the **environment and support** they need, and **trust** them to get the job done."
 
-I honestly don't know how the Manifesto's founders arrived at these principles, but based on this point alone I imagine they must be truly very experienced. This element, for me, is the densest of all the Principles.
+I don't know how the Manifesto's founders arrived at these principles, but based on this point alone I imagine they're very experienced people. This element, for me, is the densest of all the Principles.
 
-Corollaries to the Fifth Element are the 11th and 12th Elements. I'll explain why.
+Corollaries to the Fifth Element are the 11th and 12th principles. I'll explain why.
 
 ## Scaling Agility
 
-Recently I cited a chapter from the book [Scaling Lean and Agile Development: Successful Large, Multisite and Offshore Products with Large-Scale Scrum](http://www.infoq.com/resource/articles/scaling-lean-agile-feature-teams/en/resources/Larman%20Vodde%20Feature%20Teams%20-%20InfoQ.pdf). I believe many people didn't have the patience to read it, so I'll summarize the part that interests me.
+I recently cited a chapter from the book [Scaling Lean and Agile Development](http://web.archive.org/web/20160405011957/http://www.infoq.com/resource/articles/scaling-lean-agile-feature-teams/en/resources/Larman%20Vodde%20Feature%20Teams%20-%20InfoQ.pdf), by Craig Larman and Bas Vodde. I believe many people didn't have the patience to read it, so I'll summarize the part that interests me.
 
-This PDF discusses the differences between **Feature Teams** and **Component Teams**. Simplified, an Agile team is necessarily a Feature Team — a team that is as independent as possible and takes ownership of a complete product or _feature_ of a product, from start to finish, from requirements to customer contact.
+The PDF discusses the differences between **Feature Teams** and **Component Teams**. Simplified, an Agile team is necessarily a Feature Team: a team as independent as possible, one that owns a whole product or a complete _feature_ of a product, from start to finish, from requirements to customer contact.
 
-A Component Team is the traditional, departmental style. Each team is responsible only for a segment of various products. Interface team, infrastructure team, architecture team, visual components team, database team, quality team, and so on.
+A Component Team is the traditional, departmental style. Each team answers for only a slice of several products: interface team, infrastructure team, architecture team, visual components team, database team, quality team, and so on.
 
-A Feature Team is a cross-functional team, typically formed by generalists. A Component Team is a limited team, typically formed by specialists. A **Scrum Team** is, **by definition**, a Feature Team capable of carrying out all work on a Product Backlog item.
+Feature Teams are cross-functional, usually made of generalists. Component Teams are narrow, usually made of specialists. A **Scrum Team** is, **by definition**, a Feature Team, capable of carrying out all the work on a Product Backlog item.
 
-As I said, forget the "how" for now.
+As I said before, forget the "how" for now.
 
 ## Conway's Law
 
-[Melvin Conway](http://en.wikipedia.org/wiki/Conway's_Law), in April 1968, wrote a paper where one excerpt would enter the annals of computing history:
+[Melvin Conway](http://en.wikipedia.org/wiki/Conway's_Law), in April 1968, wrote a paper in which one passage would enter the annals of computing history:
 
-> "Any organization that designs a system (broadly defined) will produce a design whose structure is a copy of the organization's communication structure."
+> "Any organization that designs a system (defined broadly) will produce a design whose structure is a copy of the organization's communication structure."
 
-As explained on [his site](http://www.melconway.com/law/index.html), the famous [Frederick Brooks](http://en.wikipedia.org/wiki/Fred_Brooks) cited this paper and its idea in the classic (that **every** tech professional should read) [The Mythical Man Month](http://www.amazon.com/Mythical-Man-Month-Software-Engineering-Anniversary/dp/0201835959), calling the idea **Conway's Law**. Brooks recognized that the law had important corollaries in management theory. Here's one of his statements:
+As explained on [his site](https://www.melconway.com/Home/Conways_Law.html), the famous [Frederick Brooks](http://en.wikipedia.org/wiki/Fred_Brooks) cited this idea in the classic [The Mythical Man Month](http://www.amazon.com/Mythical-Man-Month-Software-Engineering-Anniversary/dp/0201835959) (which **every** tech professional should read), naming it **Conway's Law**. Brooks recognized that the law had important corollaries in management theory. Here's one statement of his:
 
-> "Since the first design found is never the best, the system concept may need to change. Therefore, the flexibility of the organization is important to effective design."
+> "Because the design that occurs first is almost **never** the best possible, the prevailing system concept may need to **change**. Therefore, flexibility of organization is important to effective design."
 
-As I've already said in [Killing the Average](http://www.akitaonrails.com/2008/9/13/off-topic-matando-a-m-dia), we still apply Gaussian methodologies and processes today. I still haven't managed to write more complete material explaining this, so watch the video I recorded and read the reference materials I point to there. For now, just understand that the vast majority of what we know as uncontested truths of Organization Theory no longer applies.
+As I already said in [Killing the Average](http://web.archive.org/web/20231004031021/https://www.akitaonrails.com/2008/9/13/off-topic-matando-a-m-dia) (in Portuguese), to this day we still apply Gaussian methodologies and processes. I haven't managed to write a more complete piece about it yet, so watch the video I recorded and read the reference material I point to there. For now it's enough to understand that most of the "uncontested truths" of Organization Theory no longer apply.
 
-These outdated theories — which delineate rigid chains of command, various "feudal" departments, cultures based on position and political power — were essentially made to give great degrees of control to section heads in 19th-century factory assembly lines, where the maximum expected of a worker was tightening screws, not executing work requiring much brain activity.
+These outdated theories, with their rigid chains of command, "feudal" departments, and cultures of title and political power, were made to give control to section heads in 19th-century factories, where the most anyone expected from a worker was tightening screws.
 
-As Conway's Law says: teams tend to create structures that mirror the structure of the organization. The corollary: have a company that incentivizes mediocre work and your teams will be mediocre. As I was talking about the **Fifth Element**: _"...give them the environment and support they need..."_
+As Conway's Law says, teams create structures that mirror the structure of the organization. The corollary: a company that rewards mediocre work gets mediocre teams. Remember the **Fifth Element**: _"...give them the environment and support they need..."_
 
-The PDF from Larman mentions Brad Silverberg, Senior VP of Windows and Office, who emphasized:
+The Larman and Vodde PDF mentions Brad Silverberg, former senior VP of Windows and Office at Microsoft, who emphasized:
 
-> "Software tends to reflect the structure of the organization that built it. If you have a large, slow organization, you tend to build large, slow software."
+> "The software tends to mirror the structure of the organization that built it. If you have a big, slow organization, you tend to build big, slow software."
 
-An ironic statement, but true.
+An ironic statement, but a true one.
 
 ## Generalists vs Specialists
 
-Traditional companies that delude themselves thinking they can achieve total control over their teams only succeed in creating unproductive, attitude-less, perseverance-free, complacent, limited employees who will never learn anything new.
+Traditional companies that fool themselves into thinking they'll get total control over their teams only manage to create unproductive employees with no drive, complacent, limited, who will never learn anything new.
 
-This is because the Total Control style prefers division of labor, as in factory assembly lines, where each team does a part of the whole. In this management style, the incentive for **Specialists** reigns.
+That's because the Total Control style prefers factory-floor division of labor, where each team does one part of the whole. In this management style, the incentive for **Specialists** reigns.
 
-Specialists are those employees who typically started working on a certain piece of the system and only they know how that piece works. They don't feel very comfortable sharing that knowledge and feel even less comfortable accepting external changes. They tend to be treated as **heroes** because when there's urgency, there's no time for another person to learn about that piece and only they can solve the problem.
+A specialist is the employee who started a certain piece of the system and is the only one who knows how that piece works. He's not comfortable sharing that knowledge, and even less comfortable accepting outside changes. He usually gets treated as a **hero**: when there's an emergency, nobody else has time to learn that piece, and only he can fix the problem.
 
-If you have _heroes_ of this type in your company, they should be the first to be let go.
+If you have _heroes_ of this kind in your company, they should be the first ones fired.
 
-It's no coincidence that Scrum teams are, by definition, Feature Teams. Otherwise the first effect that emerges is this:
+There's a reason Scrum teams are, by definition, Feature Teams. Otherwise, the first effect that surfaces is this one:
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2008/10/7/Picture_1.png)
 
-Recognize this? Each Component Team does its Sprint, its iteration. Only when one team's iteration ends can the next one begin. Precisely because none of the teams controls the complete _Feature_ and depends on pieces from the previous ones.
+Recognize it? Each Component Team runs its Sprint, its iteration, and the next team's iteration only starts when the previous one ends. That's because no team owns the complete _feature_ and they all depend on pieces from the others.
 
-This has a name: welcome back to **Waterfall**! It doesn't matter if people call it a _mini-waterfall_ — a cascade is a cascade, regardless of its size.
+There's a name for this: welcome back to **Waterfall**! It doesn't matter that people call it _mini-waterfall_: a cascade is a cascade, whatever its size.
 
-Other major side effects of Component Teams: since nobody effectively owns the product, none of the teams feels responsible for the whole, only for their part. The behaviors of _"I did my part, the other team is at fault"_ naturally emerge.
+There's another serious side effect: since nobody effectively owns the product, no team feels responsible for the whole, only for its part. Naturally the behavior emerges: _"I did my part, it's the other team's fault."_
 
-Furthermore, Component Teams, by their very nature of dealing with only one type of problem, force their members to become specialists. And in doing so, force these professionals to limit their knowledge, giving absolutely **no motivation** to learn new things.
+And there's more. Component Teams deal with a single type of problem, which forces their members into becoming specialists. That professional narrows his own knowledge and gets absolutely no **motivation** to learn new things.
 
-Remember the **Fifth Element**? _"Build projects around **motivated individuals**..."_ Where are the motivated individuals in an organization that forces everyone toward mediocrity? Of course, this doesn't mean everyone needs to know everything about everything — there will always be one or more disciplines where each professional fits best. But all should be encouraged to know a little of everything else. That's exactly why Feature Teams are important: you have several specialists where each knows a little of the different things their colleague next to them knows how to do. And with this, **Pair Programming** takes on new meaning.
+Remember the **Fifth Element**? _"Build projects around **motivated individuals**..."_ Where are the motivated individuals in an organization that pushes everyone toward mediocrity? Of course nobody needs to know everything about everything: each professional will always have disciplines where they fit best. But everyone should be encouraged to know a bit of the rest.
 
-Furthermore, **Test Driven Development** starts making much more sense if the team is truly responsible for a product/feature that adds real value to the end customer. Once there's no interdependency between teams it becomes much clearer how to perform complete testing. But there's another question about testing I'll explain further below.
+That's why Feature Teams matter: you have several specialists, and each one knows a little of what the colleague next to them knows how to do. With that, **Pair Programming** gains new meaning.
+
+And **Test Driven Development** starts making much more sense when the team is truly responsible for a product or feature that adds value to the end customer. With no dependency between teams, it becomes clear how to run complete tests. But there's another question about testing that I'll explain further below.
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2008/10/7/charlie_chaplin02.jpg)
 
 ## Self-Organization
 
-This is the crucial point in the new organizational theories. Don Tapscott and Anthony D. Williams would call it [Wikinomics](http://www.wikinomics.com/book/) — the economics of collaboration.
+This is the crucial point of the new organizational theories. Don Tapscott and Anthony D. Williams would call it [Wikinomics](http://www.wikinomics.com/book/), the economics of collaboration.
 
-Traditional organizations are horrified by chaos and therefore pursue absolute control in a pathological way, sufficiently to be harmful.
+Traditional organizations are horrified by chaos and pursue absolute control in a pathological way, to the point of harm.
 
-And they should indeed be horrified by chaos. But what they need to understand is that there is the phenomenon of **order emerging from chaos**.
+And they should indeed be horrified by chaos. What they need to understand is that there's a phenomenon of **order emerging out of chaos**.
 
-We're accustomed to thinking of isolated events, of results based on the sum of independent events. Put a spoonful of sugar and the tea gets sweet. Put two spoonfuls of sugar and the tea gets twice as sweet.
+We're used to thinking in isolated events, in results that are the sum of independent events. Add one spoonful of sugar and the tea gets sweet. Add two and the tea gets twice as sweet.
 
-However, dynamic systems cannot be defined this way. Certain systems are very sensitive to initial conditions, giving [non-linear](http://en.wikipedia.org/wiki/Nonlinearity) results. In particular, natural phenomena like social relationships, food chains, economic events, are all non-linear systems.
+Dynamic systems don't work like that. Certain systems are very sensitive to initial conditions and produce [non-linear](http://en.wikipedia.org/wiki/Nonlinearity) results. Natural phenomena like social relationships, food chains, and economic events are all non-linear systems.
 
-This returns to my talk about [Power Law Distributions](http://en.wikipedia.org/wiki/Power_law), or [Pareto Distributions](http://en.wikipedia.org/wiki/Pareto_distribution). To recap: a Platonic and linear world can be modeled according to [Gauss](http://en.wikipedia.org/wiki/Normal_distribution). This type of distribution is extremely comfortable for analysts because it has a **defined mean** and **constant, stable standard deviation**. Power Laws, in turn, are characterized by the **absence** of a mean and standard deviation that tends toward infinity!
+This goes back to my talk about [Power Law Distributions](http://en.wikipedia.org/wiki/Power_law), or [Pareto Distributions](http://en.wikipedia.org/wiki/Pareto_distribution). Recapping: a Platonic, linear world can be modeled according to [Gauss](http://en.wikipedia.org/wiki/Normal_distribution). That kind of distribution is comfortable for analysts because it has a **defined mean** and a **stable standard deviation**. Power Laws are the opposite: characterized by the **absence** of a mean and by a standard deviation that tends to infinity.
 
-The most obvious point is that _"Bell Curves"_ (normal/Gaussian curves) require **independent**, **isolated** events, like rolling dice or flipping an unbiased coin. It's not hard to see, for example, that human behavior can be anything but independent: by definition, humans relate to each other, so we form highly dependent systems.
+The most obvious point: bell curves like the Normal require **independent**, **isolated** events, like rolling dice or flipping a fair coin. Human behavior can be many things, but independent is not one of them: by definition, humans relate to each other, so we form highly dependent systems.
 
-But something important about dynamic networks is that, contrary to what was imagined, they don't form networks with random connections — whose distribution would be Normal — but instead exhibit Pareto distribution. [Albert-László Barabási](http://www.nd.edu/~networks/Publication%20Categories/01%20Review%20Articles/ScaleFree_Scientific%20Ameri%20288,%2060-69%20(2003).pdf) explains in more detail the formation of [Scale-Free Networks](http://www.nd.edu/~networks/Publication%20Categories/01%20Review%20Articles/ScaleFree_Scientific%20Ameri%20288,%2060-69%20(2003).pdf).
+And here's the counterintuitive part. Dynamic networks don't form random connections, whose distribution would be Normal. They exhibit a Pareto distribution. [Albert-László Barabási](http://web.archive.org/web/20160409231523/http://www3.nd.edu/~networks/Publication%20Categories/01%20Review%20Articles/ScaleFree_Scientific%20Ameri%20288,%2060-69%20(2003).pdf) explains in detail how [scale-free networks](http://en.wikipedia.org/wiki/Scale-free_network) form.
 
-As I was saying, if someone thinks about us (people, animals, neurons, viruses) and connections (friendship, transmission, synapse), it's most natural to first imagine that nodes connect in a random and chaotic way. However, Barabási's studies and detailed observations of natural phenomena led to the conclusion that they tend to form scale-free networks, whose node distribution follows Pareto — meaning few nodes concentrate the vast majority of connections and many nodes share the few remaining connections, forming something like this:
+If we think of nodes (people, animals, neurons, viruses) and connections (friendship, transmission, synapse), the natural thing is to imagine nodes connecting in a random, chaotic way. Barabási's studies and detailed observation of natural phenomena showed the opposite: these networks tend to be scale-free, with a few nodes concentrating the vast majority of connections and many nodes splitting the few that remain, forming something like this:
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2008/10/7/Picture_2.png)
 
-For those of us in technology, this would look like a representation of the Internet, where the nodes are websites and the connections are, literally, the _links_ between them. And that's exactly right: the Internet follows a Pareto distribution.
+For those of us in tech, this looks like a map of the Internet, where the nodes are websites and the connections are, literally, the _links_ between them. And that's exactly right: the Internet follows a Pareto distribution.
 
-For those with socialist tendencies, forget Marx — he was obviously wrong to be inspired by the Gaussian curve and try to level all of society to the average. The thinking of _"taking from the rich to give to the poor"_ is completely anti-natural. The natural is exactly the opposite: a few people will always hold the vast majority of the world's wealth, while most people have less. The only way for the poor to become wealthy is to make the **entire system** wealthier, including the wealthy themselves. Nature always privileges **meritocracy**, never **mediocrity**.
+For those with socialist tendencies, forget Marx, who was obviously wrong to try dragging all of society down to the average. The idea of _"taking from the rich to give to the poor"_ is anti-natural. The natural thing is the opposite: a few people will always hold the vast majority of the world's wealth, while the majority has less. The only way for the poor to get richer is to make the **entire system** richer, including the rich themselves. Nature favors **meritocracy**, never **mediocrity**.
 
-Assuming everyone studies a little more about Barabási, Poincaré, Mandelbrot, Zipf, Pareto, Bak and subjects like scale-free networks, power laws, self-organized criticality, phase transition, chaos, fractals, we'll quickly conclude: order does indeed emerge from chaos, networks form as Barabási described, through mechanisms like [preferential attachment](http://en.wikipedia.org/wiki/Preferential_attachment), and in the end we'll have scale-free, **self-organized** networks.
+Assuming everyone studies a bit more about Barabási, Poincaré, Mandelbrot, Zipf, Pareto, Bak, and subjects like scale-free networks, power laws, self-organized criticality, phase transition, chaos, and fractals, we can conclude quickly: order does tend to emerge from chaos. Networks form as Barabási described, through mechanisms like [preferential attachment](http://en.wikipedia.org/wiki/Preferential_attachment), and in the end we get scale-free, **self-organized** networks.
 
 ## 80/20
 
-Pareto's famous 80/20 rule didn't come from nowhere. In a study in Italy many years ago, Wilfredo Pareto found that 80% of Italian territory was in the hands of no more than 20% of the population. Hence "80/20."
+The famous 80/20 rule didn't come out of nowhere. In a study in Italy, Vilfredo Pareto found that 80% of Italian land was in the hands of no more than 20% of the population. Hence "80/20."
 
-This division is exactly what a Pareto distribution shows, as in the figure below:
+That split is exactly what a Pareto distribution shows:
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2008/10/7/300px-Long_tail.svg.png)
 
-As **Chris Anderson** explains in his book [The Long Tail](http://www.changethis.com/pdf/10.01.LongTail.pdf), think about the famous [Wikipedia](http://wikipedia.org). At the time of his book's publication in 2006, Wikipedia already had 860,000 articles, versus 80,000 for the Encyclopædia Britannica.
+As **Chris Anderson** explains in [The Long Tail](http://web.archive.org/web/20091012083320/http://www.changethis.com/pdf/10.01.LongTail.pdf), think about [Wikipedia](http://wikipedia.org). By the time the book came out, in 2006, Wikipedia already had about a million articles, an order of magnitude above the Encyclopædia Britannica.
 
-[Jimmy Wales's](http://en.wikipedia.org/wiki/Jimmy_Wales) idea was bold and quite controversial, despite the good intention of providing a rich, extensive, free encyclopedia to all the world's people, including poor children in underdeveloped countries who would otherwise perhaps never have access to information.
+[Jimmy Wales's](http://en.wikipedia.org/wiki/Jimmy_Wales) idea was bold and controversial, despite the good intention: providing a rich, extensive, free encyclopedia to everyone in the world, including poor children in underdeveloped countries who might otherwise never have access to information.
 
-Wales started the Nupedia project in 2000, with only a few entries and an idea that had actually become popular before that, with Linus Torvalds and his Linux: create a totally open platform (free as in freedom) where anyone who wanted could contribute, review, refine.
+Wales started with the Nupedia project in 2000, with few entries and an idea that had already caught on with Linus Torvalds and his Linux: a totally open platform where anyone could contribute, review, refine.
 
-Looking back in 2008, everyone would say that Jimbo (as he's known) is a genius. But in the year 2000 he was considered crazy. When we see things in retrospect it's always much simpler to create a narrative that perfectly fits the events that already happened. As [Nassim Nicholas Taleb](http://www.fooledbyrandomness.com/ARTE.pdf) would say: after a **Black Swan** happens, it's easy to explain it, but before it happens it's impossible to predict it.
+Looking from 2008, everyone would say Jimbo (as he's known) is a genius. In 2000, he was considered crazy. In retrospect, it's always easy to build a narrative that fits perfectly into events that already happened. As [Nassim Nicholas Taleb](http://web.archive.org/web/20240619095330/http://fooledbyrandomness.com/ARTE.pdf) would say: after a **Black Swan** happens, explaining it is easy; before it happens, predicting it is impossible.
 
-Following Torvalds's example, Jimbo created an **environment** suitable for **collaborators**. He was able to **motivate** people and, most importantly, **trust** them, because unlike the traditional editorial system, there would be no editors or filters: everything anyone typed would be immediately available. His hope was that gross errors would be quickly corrected by the collaborators themselves, just as **Eric S. Raymond** describes in the classic [The Cathedral and the Bazaar](http://www.catb.org/~esr/writings/cathedral-bazaar/):
+Following Torvalds's example, Jimbo created an **environment** suited for **collaborators**. He knew how to **motivate** people and, most importantly, how to **trust** them: unlike the traditional editorial system, there would be no editors and no filters, and everything anyone typed would be available immediately. The hope was that gross errors would be quickly corrected by the collaborators themselves, as **Eric S. Raymond** describes in the classic [The Cathedral and the Bazaar](http://www.catb.org/~esr/writings/cathedral-bazaar/):
 
 > "Given enough eyeballs, all bugs are shallow."
 
-Eric called this statement "Linus's Law," which can also be explained as _"given enough beta-testers and co-developers, almost every problem will be found quickly and the fix will be obvious to someone."_
+Eric called this "Linus's Law," which can also be put this way: _"Given a large enough beta-tester and co-developer base, almost every problem will be characterized quickly and the fix obvious to someone."_
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2008/10/7/1139845442_1927.jpg)
 
-Wikipedia leveraged this same Law: in a dynamic, open system where collaborators begin participating slowly, evolving into a self-organized scale-free network, errors will happen, but most will be quickly corrected. The benefit of getting information from thousands of people spread across the world is orders of magnitude superior to the small defects that appear from time to time.
+Wikipedia leveraged this same law. In a dynamic, open system, where collaborators trickle in and evolve into a self-organized scale-free network, errors will happen, but most will be corrected fast. The benefit of gathering information from thousands of people around the world is orders of magnitude greater than the small defects that show up now and then.
 
-In a traditional control model, people tend to think like Britannica: fewer entries but all very accurate. Which is worth more: 80,000 entries with near-zero error rate, or nearly 1 million entries with a small error rate? Some retrograde critics still believe that 1 small error in Wikipedia invalidates 1 million major hits.
+In the traditional control model, people think like Britannica: few entries, all of them very accurate. Which is worth more: a smaller encyclopedia with a near-zero error rate, or one ten times larger with a small error rate? Some retrograde critics still believe one small error on Wikipedia invalidates a million hits.
 
 ## Software as Art
 
-Pete McBreen wrote in 2001 about [Software Craftsmanship](http://www.mcbreen.ab.ca/SoftwareCraftsmanship/) and I'm a defender of that definition.
+Pete McBreen wrote back in 2001 about [Software Craftsmanship](http://www.mcbreen.ab.ca/SoftwareCraftsmanship/), and I'm a defender of that definition.
 
-Many people think of Software, programming, as **Engineering**. I'm sorry to inform them it isn't. Software is music. Software development is very close to composing music.
+Many people think of software, of programming, as **Engineering**. Sorry to inform them: it isn't. Software is music: developing software is very close to composing a song.
 
-Software is painting. Developing Software is like painting a picture. Without wanting to diminish the field of engineering, which has already brought us incredible wonders around the world like the Great Wall of China and the Egyptian pyramids — in the specific case of software it's far simpler to think of it as Engineering than as Art.
+Software is also painting: developing is like painting a picture. No disrespect to engineering, which already brought us wonders like the Great Wall of China and the Egyptian pyramids, but in software's case many people find it simpler to think of it as engineering than as art.
 
-Again, the same reason: attempt at control, since engineering is predictable, controllable, measurable. Art is creative, rebellious, unpredictable, chaotic. I find it very interesting that many great figures of the past like Pythagoras and Da Vinci were great **generalists**, **artists** with much work in the fields of **science** and **mathematics**. That's exactly what a software developer needs to be: a Renaissance artist.
+The reason is the same as always: the attempt at control. Engineering is predictable, controllable, measurable. Art is creative, rebellious, unpredictable, chaotic. I find it very interesting that great figures of the past like Pythagoras and Da Vinci were great **generalists**, **artists** with a body of work in **science** and **mathematics**. That's exactly what a software developer needs to be: a Renaissance artist.
 
-As I said before, a member of a _Feature Team_ has some specialties, but has an absolutely open mind to trying new things, learning new crafts, exploring and creating.
+As I said before, a member of a _Feature Team_ has his specialties, but keeps an absolutely open mind to try new things, learn new crafts, explore and create.
 
-Art cannot be implemented just by reading procedures. And that's exactly what many of those who call themselves "developers" or "programmers" do: they learn one (or a few) ways of doing things and continue doing it as they were taught. Artists learn from mentors, train tirelessly in a long process of trial and error, draw inspiration from the works of other masters, understanding their techniques and trying to blend them with their own.
+Art can't be implemented by reading procedures. And that's exactly what many of those who call themselves "developers" or "programmers" do: they learn one or a few ways of doing things and repeat forever what they were taught. Artists learn from mentors, train tirelessly in a long process of trial and error, draw inspiration from the work of other masters, understand their techniques and try to blend them into their own.
 
-Although not an absolute truth, I tend to think that software developers who actively participate in Open Source projects, like Linux, are much more complete programmers than programmers who graduated from university and went on to integrate _"Component Teams"_ within traditional organizations — especially if they stayed too long in the same organization.
+Without claiming this as absolute truth, I tend to think that developers who actively participate in open source projects, like Linux, are far more complete programmers than those who left college straight into _Component Teams_ inside traditional organizations. Especially if they stayed too many years in the same organization.
 
-An expert programmer, member of a Component Team, in a traditional Gaussian organization, is exactly like a house painter: only knows how to roll the paint roller up and down, symmetrically, with no creativity whatsoever and absolutely no talent for learning and self-evolution.
+A specialist programmer, member of a Component Team in a traditional Gaussian organization, is like a house painter: he only knows how to run the whitewash roller up and down, symmetrically, without a drop of creativity and with no talent whatsoever for learning and self-evolution.
 
-80% of an employee's professional profile directly reflects the organization where they work — the other 20% is the employee's own fault for not accepting leaving their comfort zone. Both are 100% to blame for why only 29% of software projects are considered successes. Both are 100% to blame for the USD 55 billion spent on cancelled software projects. (source: [Standish Chaos Reports](http://www.galorath.com/wp/software-project-failure-costs-billions-better-estimation-planning-can-help.php))
+80% of an employee's professional profile is a direct reflection of the organization they work for. The other 20% is the employee's own fault, for refusing to leave the comfort zone. Both carry 100% of the blame for only 29% of software projects being considered successes, and for the USD 55 billion spent on cancelled projects. (source: [Standish Chaos Reports](http://web.archive.org/web/20150211100346/http://www.galorath.com/wp/software-project-failure-costs-billions-better-estimation-planning-can-help.php))
 
 ## The Open Source World
 
-I believe there's no need to explain much more about open source projects. There are no miracles: it doesn't mean that just because a project is open source it will automatically be as successful as Linux. Quite the contrary: hundreds of projects never see the light of day.
+I believe there's no need to explain much more about open source projects. There's no miracle: a project won't succeed automatically just because it's open code. Quite the contrary, hundreds of projects never see the light of day.
 
-Again, we're talking about Pareto — perhaps only 20% of open source projects truly succeed on a large scale. However, the other 80% are identified as failures much more quickly, some merge into larger projects, some simply stop. The stop decision is much faster and more effective than in traditional corporate projects that have already invested resources (time and money, plus the reputation of some of those involved).
+Again, we're talking about Pareto: maybe only 20% of open source projects achieve great success. However, the other 80% are identified as failures much faster: some merge into bigger projects, some simply stop. The decision to stop is much faster and more effective than in traditional corporate projects, which have already invested resources, time, money, and the reputation of those involved.
 
-With everything I explained above, it becomes easy to understand that Open Source projects begin with simple initial conditions: an idea, a small implementation, a few people. It also starts to make sense to understand how they evolve from _chaos_ to scale-free networks through **self-organization**.
+With everything I explained above, it's easy to understand that open source projects start with simple initial conditions: an idea, a small implementation, a few people. And it starts making sense how they evolve from _chaos_ to scale-free networks through **self-organization**.
 
-It's not hard to understand that these projects have no way of being implemented through very rigid prior consensus — they could only evolve into Feature Teams where collaborators typically have different and complementary skills.
+Rigid prior consensus doesn't exist in this environment: these projects could only evolve into Feature Teams, where collaborators have different and complementary skills.
 
-It's also not hard to understand that, as in Wikipedia, the most important and/or well-known entries are filled in first, then the more obscure ones are filled over time. In the best Pareto style, 20% of priorities happen first. In an environment where resources tend to be scarce (no physical presence, collaborators are volunteers, motivating people is even more important), the priorities — which deliver the most value to the group as a whole — are implemented first.
+It's also not hard to understand that, as on Wikipedia, the most important or best-known entries get filled in first, and the more obscure ones, over time. In the best Pareto style, 20% of the priorities happen first. In an environment of scarce resources, with no physical presence and volunteer collaborators, motivating people matters even more, and the priorities that deliver the most value to the group as a whole get implemented first.
 
-Understanding Software as Art also makes it simple to understand that developers who participate in various open source projects are automatically exposed to many different expressions of art, and as such to different ways of implementing software. A good developer will begin incorporating these differences into their own style, automatically greatly improving the quality of their work.
+Once you understand software as art, it's simple to see that developers who participate in several open source projects are automatically exposed to many different expressions of art and, with that, to different ways of implementing software. A good developer starts incorporating these differences into his own style, greatly improving the quality of his work.
 
-A developer, alone or in a familiar team, has very little motivation to create tests for their own code. But when they find themselves in a situation where they're collaborating in a community where any stranger can see their code and therefore assess their reputation, the motivation to create quality code, decently covered with tests, becomes more obvious. That's why I said earlier that Test-Driven Development not only starts making more sense but becomes a real necessity.
+A developer alone, or in a familiar team, has little reason to write tests for his own code. But when he collaborates in a community where any stranger can see his code and assess his reputation, the motivation to write quality code, decently covered by tests, becomes obvious. That's why I said earlier that Test Driven Development starts making even more sense and becomes a real necessity.
 
-The project's creator, the developer or group of programmers who started the project, will necessarily be forced to manage it. And in an open environment where people have no titles, no salaries, no bosses, no direct clients — any attempt to use Gaussian techniques of traditional project management will immediately fall flat. Now we're talking about real projects, without the comfort zone of a cubicle. The project's **maintainer** will find themselves in a position where they'll be forced to make decisions. They'll quickly understand that unanimity on every issue is impossible and will wear the hat of **benevolent dictator** — a dictator who, if too rigid and authoritarian, will drive away all their collaborators (who have no obligation to follow them), and if too flexible risks demonstrating insecurity, indecision, and sluggishness, potentially motivating a _coup_ — a type of "state coup" where the project gets forked and a more charismatic and effective maintainer may take their place. Or worse: the project may simply stop and cease to exist.
+The project's founder, the developer or group of programmers who started it, will be forced to manage it. In an open environment, with no titles, no salaries, no bosses and no direct clients, any attempt to use Gaussian techniques of traditional project management goes down the drain. Now we're talking about real projects, without the comfort zone of the cubicle.
 
-There is no more hostile but at the same time more rewarding environment for a true project manager than open source projects. Take away a Manager's title and power and only then can you assess whether they truly know what "managing" means.
+The project **maintainer** will find himself in a position where he's forced to make decisions. He'll quickly understand that unanimity is impossible and will put on the hat of **benevolent dictator**: if he's too rigid and authoritarian, he'll drive away all his collaborators, who have no obligation to follow him; if he's too flexible, he'll show insecurity, indecision, sluggishness, and may motivate a _coup_, a kind of state coup where the project gets forked and a more charismatic and effective maintainer takes his place. Or worse: the project may simply stall and cease to exist.
+
+There's no environment more hostile and at the same time more rewarding for a true project manager than open source. Take away a manager's title and power, and only then can you assess whether he knows what "managing" means.
 
 ## Agile Principles, Redux
 
-With all that said, I think we can revisit the 6th, 11th, and 12th principles again:
+With all that said, I think we can recap the 5th, 11th, and 12th principles:
 
 > - Build projects around **motivated individuals**. Give them the **environment and support** they need, and **trust** them to get the job done.
-> 
+>
 > - The **best architectures**, requirements, and designs emerge from **self-organizing teams**.
-> 
-> - At regular intervals, the team reflects on how to become more effective, then **adjusts** its behavior accordingly.
+>
+> - At regular intervals, the team reflects on how to become more effective, then tunes and **adjusts** its behavior accordingly.
 
-The other principles are consequences:
+The other principles are consequences.
 
-Given an adequate **environment**, with professionals effectively raised above average, **motivated**, we can truly **trust** their capacities for **self-organization**, where the organic, non-hierarchical structure will naturally lead its members to **readjust** their routines according to the problems faced, leading them to generate quality code, where only the essential is truly being produced, with high quality, attention to refactoring, testing, continuous integration — which naturally leads to the **best architectures** — and the system as a whole feeds itself in a continuous positive feedback loop, creating a **sustainable** environment, always productive, with professionals researching and implementing technological innovations that from time to time give quality and productivity leaps for the company as a whole.
+Given a proper **environment**, with professionals raised above the average and **motivated**, we can truly **trust** their capacity for **self-organization**. The organic, non-hierarchical structure will lead its members to **readjust** their routines according to the problems they face. That generates quality code, with only the essential being produced, attention to refactoring, testing, and continuous integration, which naturally leads to the **best architectures**.
 
-As a result, customers will be receiving products that add real value, **changing requirements** can effectively be accepted without major problems, since the organization is flexible and each member feels responsible for the whole. Furthermore, in this virtuous cycle, professionals are in constant learning, increasing their skills at an indefinite growing rate, generating an innovative company above the average, one that doesn't rely on the past to try futilely to predict the future: they no longer need to, because the professionals are finally prepared for whatever future arrives. Instead of trying to predict the future, people will be capable for any future, and this is fundamental: constant changes no longer frighten them — on the contrary, they want changes.
+The system as a whole feeds itself in a continuous positive feedback loop, creating a **sustainable**, always productive environment, with professionals researching and implementing innovations that, from time to time, deliver leaps in quality and productivity for the whole company.
+
+As a result, the customer receives products that add real value, and **changing requirements** can be accepted without much trouble, because the organization is flexible and each member feels responsible for the whole. In this virtuous cycle, professionals are in constant learning, growing their skills at an ever-increasing pace. The result is an innovative company, above average, that doesn't depend on the past to try to predict the future: its professionals are prepared for whatever future arrives. Constant change doesn't scare them anymore; on the contrary, they want change.
 
 ## How to Get There?
 
 It was no accident that I wrote about:
 
-- [Killing the Average](http://www.akitaonrails.com/2008/9/13/off-topic-matando-a-m-dia)
-- [The Power of Myth, Redux](http://www.akitaonrails.com/en/2008/9/20/off-topic-o-poder-do-mito-redux)
-- [Collaborating on Github](http://www.akitaonrails.com/2008/9/21/colaborando-no-github)
-- [Understanding Git and Installing Gitorious](http://www.akitaonrails.com/2008/10/2/entendendo-git-e-instalando-gitorious-git-via-web).
+- [Killing the Average](http://web.archive.org/web/20231004031021/https://www.akitaonrails.com/2008/9/13/off-topic-matando-a-m-dia) (in Portuguese)
+- [The Power of Myth, Redux](/en/2008/09/20/off-topic-o-poder-do-mito-redux)
+- [Collaborating on Github](http://web.archive.org/web/20221210044111/https://www.akitaonrails.com/2008/9/21/colaborando-no-github) (in Portuguese)
+- [Understanding Git and Installing Gitorious](http://web.archive.org/web/20241102214031/https://www.akitaonrails.com/2008/10/2/entendendo-git-e-instalando-gitorious-git-via-web) (in Portuguese).
 
-The first two articles focus on the professional figure: an attempt to wake up the clock-punching employees to the fact that the world isn't static, the future isn't stable, and the Gaussian world is an illusion.
+The first two articles focus on the professional: an attempt to wake up the clock-punching employees to the fact that the world isn't static, the future isn't stable, and the Gaussian world is an illusion.
 
-The last two articles talk specifically about a tool: Git. It's a hint for creating the **environment** that supports what a developer needs, as stated in the Fifth Principle. But tools, like methodologies, are useless if both company and employee don't internalize the Agile Values and Principles.
+The last two talk specifically about a tool: Git. It's a hint for creating the **environment** a developer needs, as stated in the Fifth Principle. But a tool, like a methodology, is useless if company and employee don't internalize the Agile Values and Principles.
 
 Hence this article.
 
-As I said at the start, I don't consider myself any great scholar of this philosophy, but for some reason I identify with its foundations and clearly observe their application in practice in Open Source projects. It's also clear that in Pareto's world this model has not only survived but has borne impressive fruit — like Wikipedia, like the fact that over 60% of the world's web servers run Apache, and so on.
+As I said at the start, I don't consider myself any great scholar of this philosophy, but for some reason I identify with its foundations and I clearly observe its practical application in open source projects. It's also clear that, in Pareto's world, this model survived and bore impressive fruit, like Wikipedia and the fact that most of the world's web servers run Apache.
 
-You're a company where software is part of your core business? Apply the "Open Source" model, or the "Bazaar" model, per Eric Raymond. Not necessarily opening your code to the general public on the internet, of course.
+Is software part of your company's core business? Apply the "open source" model, or the "bazaar" model, per Eric Raymond. Without necessarily opening your code to the public on the internet, of course.
 
-Create a simple repository that all employees have unrestricted access to, where the barrier to adoption is low. Encourage them to participate in projects outside their traditional departments. At first, poorly made code, low quality, no tests, and all kinds of defects will be revealed. But the objective isn't to point fingers — it's to break the vicious cycle that generates this kind of software.
+Create a simple repository, one all employees have unrestricted access to, with a low barrier to adoption. Encourage them to participate in projects outside their traditional departments. At first, badly written code, low quality, no tests, and every kind of defect will surface. But pointing fingers solves nothing: the goal is to break the vicious cycle that generates this kind of software.
 
-**"A bad programmer will write bad code, regardless of the language or tool you give them."** Therefore, the objective is to create excellent Programmers, not to change tools. Impressively, a good programmer will write good code even in ASP or Perl (again, without wanting to denigrate Perl, but just speaking to its reputation — created mainly by bad programmers).
+**"A bad programmer will write bad code, no matter what language or tool you give him."** So the goal is to create excellent programmers, not to swap tools. Impressively, a good programmer will write good code even in ASP or Perl (again, no offense to Perl, I'm only speaking to its reputation, created mainly by bad programmers).
 
-Like a sculpture, it's time to trim the rough edges, redo some pieces, reshape what doesn't look right, and bring this work to truly become a piece of art, collaboratively. It's the best way to avoid waste, since people with a little extra time in one team can help their colleagues who are more overloaded in another.
+Like a sculpture, it's time to trim the edges, redo some pieces, reshape what doesn't look right, and turn this work into a piece of art, collaboratively. It's the best way to avoid waste: whoever has spare time on one team can help their busier colleagues on the other.
 
-At first there will be disorder and signs of chaos. There will be duplication of work. Desynchronization and communication problems will happen (after all, nobody was accustomed to actually communicating). Skill and knowledge deficiencies will become obvious. All existing problems will come to the surface, and it will be ugly and uncomfortable.
+In the beginning there will be disorder and signs of chaos. There will be duplicated work, desynchronization, and communication problems, since nobody was used to actually communicating. Skill and knowledge gaps will become obvious. Every existing problem will come to the surface, and it will be ugly and uncomfortable.
 
-However, if there's just a bit of persistence and trust in people, you'll see the group as a whole emerge from the chaos. The true leaders will emerge as hubs in the scale-free network. The preferential attachment phenomenon will begin to outline the order. With enough time, people will self-organize organically.
+However, with a bit of persistence and trust in people, the group as a whole will come out of the chaos. The true leaders will emerge as hubs in the scale-free network. The preferential attachment phenomenon will start outlining the order. Given enough time, people will self-organize organically.
 
-From there, yes — we can truly start talking about **sustainable** growth with a constant or growing productivity pace.
+From there, yes, we can start talking about **sustainable** growth, with a constant or growing pace of productivity.
 
 ## A Day of Innovation
 
-At Google there's that old story about how all employees have the right to one day a week to do whatever they want.
+At Google there's that old story that every employee gets one day a week to do whatever they want.
 
-Put that way alone, the first thing that comes to mind is a bunch of kids riding bicycles, playing video games, sipping caipirinhas poolside on campus.
+Put that way, the first image that comes to mind is a bunch of kids riding bicycles, playing video games, and sipping caipirinhas by the campus pool.
 
-But assuming you've read my entire article, imagine **Orkut Büyükkökten** on one of those days. He has the right environment, the right culture, the right motivation, the right knowledge. He decides to start a personal project to experiment with social networking concepts.
+But assuming you read the whole article, picture **Orkut Büyükkökten** on one of those days. He has the right environment, the right culture, the right motivation, the right knowledge. He decides to start a personal project to experiment with social networking concepts.
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2008/10/7/orkut.jpg)
 
-He has a place to put his code. He also understands that he must detach himself from it. He naturally understands how collaboration in the "open source" style works. Because of this he knows how to communicate.
+He has a place to put his code, and he understands he must detach from it. He naturally understands how open source-style collaboration works and, because of that, he knows how to communicate.
 
-He shares his project internally. Team members — and members of other teams, all also tuned into the right culture of proactivity, innovation, acceptance of change, and collaboration — immediately understand the value of the idea. More than that: they know where to download the code and how to start collaborating.
+He announces the project internally. Members of his team and others, all tuned into the culture of proactivity, innovation, acceptance of change, and collaboration, immediately understand the value of the idea. More than that: they know where to download the code and how to start collaborating.
 
-I don't really know how Google works — I've never worked there and it probably has just as many problems as any normal company. Even so I fantasize that many of their products started this way: in a permissive environment, oriented toward innovation. It's not enough just to hire PhDs from MIT or Stanford if there isn't an adequate environment and culture to truly make them produce. Since Larry and Sergey had a beginning in this permissive open source world, I imagine they created an organization that follows exactly this model, even if it was instinctive.
+I don't know how Google really works, I never worked there, and it probably has as many problems as any normal company. Even so, I fantasize that many of their products started like this: in a permissive environment, oriented toward innovation. Hiring PhDs from MIT or Stanford is not enough if there's no proper environment and culture to make them truly produce. Since Larry and Sergey started out in this permissive open source world, I keep wondering whether they created an organization that follows exactly this model, even if by instinct.
 
-Many companies want to be the next Google. But I want to remind them that it takes much more than comfortable sofas, foosball tables, video game rooms, and Japanese food restaurants inside the company to become a Google. That's easy: just buy it.
+Many companies want to be the next Google. Worth remembering it takes much more than comfortable sofas, foosball tables, video game rooms, and a Japanese restaurant inside the company. That part is easy: just buy it.
 
-What's difficult is **cultivating** a culture. Many companies complain that high-quality professionals resign and look for other companies. Obvious: truly intelligent people don't accept a Gaussian culture for very long. We don't like the same old thing, we don't like retrograde thinking and lack of attitude. True artists need inspiring environments to be creative.
+The hard part is **cultivating** a culture. Many companies complain that good professionals resign and go elsewhere. Obvious: truly intelligent people don't put up with a Gaussian culture for long. We don't like sameness, retrograde thinking, and lack of attitude. True artists need environments that inspire creativity.
 
-Most companies' cubicles are a terrible place to create.
+The average company's cubicle is a terrible place to create.
 
 ## Bibliography
 
-Finally, once the **philosophy** is understood, we can return to the **methodology**. Now it makes sense to apply the tools that methodologies like XP or Scrum advocate: Pair Programming, Planning Game, Test Driven Development, Continuous Integration, Refactoring, Small Releases, Collective Code Ownership, Simple Design, Sustainable Pace, etc.
+Finally, once the **philosophy** is understood, we can go back to **methodology**. Now it makes sense to apply the tools that methodologies like XP or Scrum advocate: Pair Programming, Planning Game, Test Driven Development, Continuous Integration, Refactoring, Small Releases, Collective Code Ownership, Simple Design, Sustainable Pace, and so on.
 
-Read with fresh eyes my reading recommendations:
+Read my reading recommendations with fresh eyes:
 
 - Larman, Craig & Vodde, Bas – [Scaling Lean & Agile Development: Thinking and Organizational Tools for Large-Scale Scrum](http://www.amazon.com/Scaling-Lean-Agile-Development-Organizational/dp/0321480961)
 - Fowler, Chad – [My Job Went to India: 52 Ways to Save Your Job](http://www.amazon.com/Job-Went-India-Pragmatic-Programmers/dp/0976694018)
 - Christensen, Clayton M. – [The Innovator's Dilemma: The Revolutionary Book that Will Change the Way You Do Business](http://www.amazon.com/Innovators-Dilemma-Revolutionary-Business-Essentials/dp/0060521996)
 - Beck, Kent – [Extreme Programming Explained: Embrace Change](http://www.amazon.com/Extreme-Programming-Explained-Embrace-Change/dp/0201616416)
-- Poppendieck, Mary – [Lean Software Development: An Agile Toolkit](http://www.amazon.com/Lean-Software-Development-Agile-Toolkit/dp/0321150783/ref=sr_1_2?ie=UTF8&s=books&qid=1223360469&sr=1-2)
-- Brooks, Frederick P. – [The Mythical Man-Month: Essays on Software Engineering](http://www.amazon.com/Mythical-Man-Month-Software-Engineering-Anniversary/dp/0201835959/ref=sr_1_1?ie=UTF8&s=books&qid=1223360514&sr=1-1)
-- McBreen, Pete – [Software Craftsmanship: The New Imperative](http://www.amazon.com/Software-Craftsmanship-Imperative-Pete-McBreen/dp/0201733862/ref=sr_1_1?ie=UTF8&s=books&qid=1223360552&sr=1-1)
-- Raymond, Eric S. – [The Cathedral & the Bazaar: Musings on Linux and Open Source by an Accidental Revolutionary](http://www.amazon.com/Cathedral-Bazaar-Musings-Accidental-Revolutionary/dp/0596001088/ref=sr_1_1?ie=UTF8&s=books&qid=1223360585&sr=1-1)
-- Don, Taps & Williams, Anthony D. – [Wikinomics: How Mass Collaboration Changes Everything](http://www.amazon.com/Wikinomics-Mass-Collaboration-Changes-Everything/dp/1591841933/ref=sr_1_1?ie=UTF8&s=books&qid=1223360619&sr=1-1)
-- Anderson, Chris – [Long Tail, The, Revised and Updated Edition: Why the Future of Business is Selling Less of More](http://www.amazon.com/Long-Tail-Revised-Updated-Business/dp/1401309666/ref=sr_1_1?ie=UTF8&s=books&qid=1223360666&sr=1-1)
-- Gladwell, Malcolm – [The Tipping Point: How Little Things Can Make a Big Difference](http://www.amazon.com/Tipping-Point-Little-Things-Difference/dp/0316346624/ref=sr_1_2?ie=UTF8&s=books&qid=1223360700&sr=1-2)
-- Gladwell, Malcolm – [Blink: The Power of Thinking Without Thinking](http://www.amazon.com/Blink-Power-Thinking-Without/dp/0316010669/ref=sr_1_3?ie=UTF8&s=books&qid=1223360700&sr=1-3)
-- Taleb, Nassim Nicholas – [Fooled by Randomness: The Hidden Role of Chance in Life and in the Markets](http://www.amazon.com/Fooled-Randomness-Hidden-Chance-Markets/dp/1400067936/ref=sr_1_3?ie=UTF8&s=books&qid=1223360749&sr=1-3)
-- Taleb, Nassim Nicholas – [The Black Swan: The Impact of the Highly Improbable](http://www.amazon.com/Black-Swan-Impact-Highly-Improbable/dp/1400063515/ref=sr_1_1?ie=UTF8&s=books&qid=1223360749&sr=1-1)
-- Mandelbrot, Benoit – [The Misbehavior of Markets: A Fractal View of Risk, Ruin & Reward](http://www.amazon.com/Misbehavior-Markets-Fractal-View-Reward/dp/0465043577/ref=sr_1_1?ie=UTF8&s=books&qid=1223360793&sr=1-1)
-- Sagan, Carl – [The Demon-Haunted World: Science as a Candle in the Dark](http://www.amazon.com/Demon-Haunted-World-Science-Candle-Dark/dp/0345409469/ref=sr_1_1?ie=UTF8&s=books&qid=1223360832&sr=1-1)
-- Sagan, Carl – [Pale Blue Dot: A Vision of the Human Future in Space](http://www.amazon.com/Pale-Blue-Dot-Vision-Future/dp/0345376595/ref=sr_1_5?ie=UTF8&s=books&qid=1223360832&sr=1-5)
-- Dawkins, Richard – [The Selfish Gene](http://www.amazon.com/Selfish-Gene-Anniversary-Introduction/dp/0199291152/ref=sr_1_1?ie=UTF8&s=books&qid=1223360984&sr=1-1)
+- Poppendieck, Mary – [Lean Software Development: An Agile Toolkit](http://www.amazon.com/Lean-Software-Development-Agile-Toolkit/dp/0321150783)
+- Brooks, Frederick P. – [The Mythical Man-Month: Essays on Software Engineering](http://www.amazon.com/Mythical-Man-Month-Software-Engineering-Anniversary/dp/0201835959)
+- McBreen, Pete – [Software Craftsmanship: The New Imperative](http://www.amazon.com/Software-Craftsmanship-Imperative-Pete-McBreen/dp/0201733862)
+- Raymond, Eric S. – [The Cathedral & the Bazaar: Musings on Linux and Open Source by an Accidental Revolutionary](http://www.amazon.com/Cathedral-Bazaar-Musings-Accidental-Revolutionary/dp/0596001088)
+- Tapscott, Don & Williams, Anthony D. – [Wikinomics: How Mass Collaboration Changes Everything](http://www.amazon.com/Wikinomics-Mass-Collaboration-Changes-Everything/dp/1591841933)
+- Anderson, Chris – [The Long Tail, Revised and Updated Edition: Why the Future of Business is Selling Less of More](http://www.amazon.com/Long-Tail-Revised-Updated-Business/dp/1401309666)
+- Gladwell, Malcolm – [The Tipping Point: How Little Things Can Make a Big Difference](http://www.amazon.com/Tipping-Point-Little-Things-Difference/dp/0316346624)
+- Gladwell, Malcolm – [Blink: The Power of Thinking Without Thinking](http://www.amazon.com/Blink-Power-Thinking-Without/dp/0316010669)
+- Taleb, Nassim Nicholas – [Fooled by Randomness: The Hidden Role of Chance in Life and in the Markets](http://www.amazon.com/Fooled-Randomness-Hidden-Chance-Markets/dp/1400067936)
+- Taleb, Nassim Nicholas – [The Black Swan: The Impact of the Highly Improbable](http://www.amazon.com/Black-Swan-Impact-Highly-Improbable/dp/1400063515)
+- Mandelbrot, Benoit – [The Misbehavior of Markets: A Fractal View of Risk, Ruin & Reward](http://www.amazon.com/Misbehavior-Markets-Fractal-View-Reward/dp/0465043577)
+- Sagan, Carl – [The Demon-Haunted World: Science as a Candle in the Dark](http://www.amazon.com/Demon-Haunted-World-Science-Candle-Dark/dp/0345409469)
+- Sagan, Carl – [Pale Blue Dot: A Vision of the Human Future in Space](http://www.amazon.com/Pale-Blue-Dot-Vision-Future/dp/0345376595)
+- Dawkins, Richard – [The Selfish Gene](http://www.amazon.com/Selfish-Gene-Anniversary-Introduction/dp/0199291152)
 
-Tip: Most of these books have Portuguese translations.
+Tip: most of these books have translations into several languages.
+
+I know some of these books don't relate directly to this subject (like Carl Sagan's), but believe me: they make a huge difference in how we form our **ideas**.
