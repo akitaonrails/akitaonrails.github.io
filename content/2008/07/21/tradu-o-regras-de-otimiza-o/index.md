@@ -46,7 +46,7 @@ E não nos esqueçamos dessas citações famosas:
 
 > _“Não devemos pensar em pequenas eficiência, digamos por 97% do tempo; [Otimização Prematura](http://c2.com/cgi/wiki?PrematureOptimization) é a raíz de todo mal.”_ – [Don Knuth](http://c2.com/cgi/wiki?DonKnuth), que atribui a observação a [Car Hoare](http://c2.com/cgi/wiki?CarHoare)
 
-h3. Meça Antes de Otimizar
+### Meça Antes de Otimizar
 
 Todas as outras coisas sendo iguais, todos querem que seu código rode o mais rápido possível.
 
