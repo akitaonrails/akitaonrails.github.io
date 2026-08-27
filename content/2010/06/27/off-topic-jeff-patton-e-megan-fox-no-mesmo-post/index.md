@@ -2,6 +2,7 @@
 title: "[Off-Topic] Jeff Patton e Megan Fox no mesmo post?"
 date: '2010-06-27T09:30:00-03:00'
 slug: off-topic-jeff-patton-e-megan-fox-no-mesmo-post
+translationKey: off-topic-jeff-patton-e-megan-fox-no-mesmo-post
 description: "Para sua palestra na Wire 2010, o autor recriou em vídeo o exemplo de iteração e incremento de Jeff Patton, trocando a imagem pixelada do artigo por uma versão mais caprichada."
 tags:
 - agile
@@ -10,7 +11,7 @@ tags:
 draft: false
 ---
 
-Estou preparando minha palestra para amanhã, no evento da [Wire 2010](http://wire2010.rise.com.br/) (não deixem de ir, será no IME-USP pelas 13hrs). Enfim, pensando em alguns dos slides, resolvi usar novamente o exemplo de “Iteração e Incremento” que o Jeff Patton explica tão bem em seu artigo [Não sei o que quero, mas sei como conseguir](/2008/02/10/tradu-o-n-o-sei-o-que-quero-mas-sei-como-conseguir).
+Estou preparando minha palestra para amanhã, no evento da [Wire 2010](http://web.archive.org/web/20100328140238/http://wire2010.rise.com.br:80/) (não deixem de ir, será no IME-USP por volta das 13h). Pensando em alguns slides, resolvi usar de novo o exemplo de “Iteração e Incremento” que o Jeff Patton explica tão bem no artigo [Não sei o que quero, mas sei como conseguir](/2008/02/10/tradu-o-n-o-sei-o-que-quero-mas-sei-como-conseguir).
 
 Meu problema é a imagem que ele usa no artigo:
 
@@ -19,7 +20,7 @@ Meu problema é a imagem que ele usa no artigo:
 ![](http://s3.amazonaws.com/akitaonrails/assets/2008/2/10/iterating.jpg)
 
 
-É uma imagem de baixa resolução e fica muito ruim quando eu coloco num slide. Ele é super claro e legal de mostrar, mas desta vez resolvi preparar algo um pouco mais caprichado.
+É uma imagem de baixa resolução e fica muito ruim quando coloco num slide. O exemplo é claro e bom de mostrar, mas desta vez resolvi preparar algo mais caprichado.
 
 Então resolvi usar exatamente a mesma ideia da imagem anterior (leiam o [artigo original](/2008/02/10/tradu-o-n-o-sei-o-que-quero-mas-sei-como-conseguir) para saber do que se trata) e editei este vídeo. Vejam o que acham :-)
 
