@@ -32,7 +32,7 @@ Uma das mudanças é que o evento também migrou do Anhembi para o Centro de Con
 
 Outra novidade é uma parceria com a excelente [Caelum](http://www.caelum.com.br), reconhecido centro de treinamentos e uma das empresas que apóia a comunidade Ruby on Rails **desde o começo**. Para quem ainda está só começando com Ruby e Rails, a Caelum oferecerá uma aula gratuita em seu centro de treinamentos, um dia antes do evento!
 
-[![](http://rubyconf.locaweb.com.br/system/imgs/32/original/ruby2010_selo_caelum.jpg)](https://rubyconf.locaweb.com.br/pt-BR/users/new)
+<!-- broken image (event site offline, no archive): http://rubyconf.locaweb.com.br/system/imgs/32/original/ruby2010_selo_caelum.jpg -->
 
 Ao se inscrever para o RubyConf você receberá um e-mail com instruções para se registrar na aula gratuita. **As vagas são limitadas!** Por isso inscreva-se logo para conseguir uma vaga nesta aula e com isso já ir se aquecendo para aproveitar melhor o evento.
 

@@ -8,7 +8,7 @@ tags:
 draft: false
 ---
 
-![Carlos Nascimento](http://www.rubyconf.com.br/assets/speakers/Chester-e848b56e230bf0e7a1b89ce1eb2794eb.jpg)
+![Carlos Nascimento](http://web.archive.org/web/20131215033057/http://www.rubyconf.com.br/assets/speakers/Chester-e848b56e230bf0e7a1b89ce1eb2794eb.jpg)
 
 Se você ainda não se inscreveu, não perca a oportunidade. Vá ao [site oficial](http://www.rubyconf.com.br) para se cadastrar agora mesmo! A conferência inicia no dia 29 de Agosto.
 

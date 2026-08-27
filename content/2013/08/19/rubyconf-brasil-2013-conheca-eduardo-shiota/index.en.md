@@ -9,7 +9,7 @@ draft: false
 translationKey: rubyconf-2013-eduardo-shiota
 ---
 
-![Eduardo Shiota](http://www.rubyconf.com.br/assets/speakers/EduardoShiota-4c75335a678896e26b9548872cd6d7d4.jpg)
+![Eduardo Shiota](http://web.archive.org/web/20131215024317/http://www.rubyconf.com.br/assets/speakers/EduardoShiota-4c75335a678896e26b9548872cd6d7d4.jpg)
 
 If you didn't register yet, don't miss this opportunity. Go to [the official website](http://www.rubyconf.com.br) to register as soon as possible. The conference will commence on August 29th. The countdown begins, 10 days to launch!
 

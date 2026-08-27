@@ -8,7 +8,7 @@ tags:
 draft: false
 ---
 
-[![Rails Summit 2009](http://railssummit.com.br/imgs/43/original/728x90.gif)](http://www.railssummit.com.br?utm_campaign=Railssummit&utm_source=banner_parceiros&utm_medium=banner&utm_content=por_728x90)
+<!-- broken image (event site offline, no archive): http://railssummit.com.br/imgs/43/original/728x90.gif -->
 
 **English translation:** click [here](/2009/09/18/rails-summit-2009-palestrante-bryan-liles#en_bryan_liles)
 

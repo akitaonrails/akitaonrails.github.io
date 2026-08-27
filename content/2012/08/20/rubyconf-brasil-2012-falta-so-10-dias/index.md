@@ -10,7 +10,7 @@ draft: false
 
 Pessoal, [inscrevam-se](http://rubyconf.com.br/pt-BR/usuarios/cadastro/novo) já para o **RubyConf Brasil 2012**! O evento inicia quinta-feira da semana, dia 30 e vamos sem parar até o fim de sexta-feira, dia 31.
 
-![Rubyconf Brasil 2012](http://rubyconf.com.br/assets/logo/rubyconf-about-138426a0ee628331d7d4792ab0a573d9.png)
+![Rubyconf Brasil 2012](http://web.archive.org/web/20130114191527/http://rubyconf.com.br/assets/logo/rubyconf-about-138426a0ee628331d7d4792ab0a573d9.png)
 
 Para relembrar como foi a RubyConf Brasil do ano passado, resolvi postar novamente alguns dos vídeos que fizemos. Ajudem a divulgar!
 

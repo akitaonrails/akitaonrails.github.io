@@ -8,9 +8,9 @@ tags:
 draft: false
 ---
 
-![Tiago Bastos](http://www.rubyconf.com.br/assets/speakers/TiagoBastos-83311883be802ff1a068e7e4eea13d09.jpg)
+![Tiago Bastos](http://web.archive.org/web/20131215034613/http://www.rubyconf.com.br/assets/speakers/TiagoBastos-83311883be802ff1a068e7e4eea13d09.jpg)
 
-![Eduardo Gurgel](http://www.rubyconf.com.br/assets/speakers/EduardoGurgel-ea23c363beadd75311d16190a904a8e2.jpg)
+![Eduardo Gurgel](http://web.archive.org/web/20131215030025/http://www.rubyconf.com.br/assets/speakers/EduardoGurgel-ea23c363beadd75311d16190a904a8e2.jpg)
 
 As inscrições pelo [site](http://www.rubyconf.com.br) já se fecharam mas você ainda poderá se inscrever no local do evento. Estamos já no primeiro dia de evento! Cheguem cedo no segundo dia (amanhã)!
 

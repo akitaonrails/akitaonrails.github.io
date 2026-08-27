@@ -11,7 +11,7 @@ aliases:
 - "/2013/08/23/rubyconf-brasil-2013-meet-bruno-abstractj/"
 ---
 
-![Bruno Oliveira](http://www.rubyconf.com.br/assets/speakers/AbstractJ-14a848792b16fe6dcc881c45fcfcd370.jpg)
+![Bruno Oliveira](http://web.archive.org/web/20131215022933/http://www.rubyconf.com.br/assets/speakers/AbstractJ-14a848792b16fe6dcc881c45fcfcd370.jpg)
 
 Se você ainda não se inscreveu, não perca a oportunidade. Vá ao [site oficial](http://www.rubyconf.com.br) para se cadastrar agora mesmo! A conferência inicia no dia 29 de Agosto, estamos em contagem regressiva com apenas 7 dias para o grande dia!
 

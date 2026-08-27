@@ -9,7 +9,7 @@ draft: false
 translationKey: rubyconf-2013-hongli-lai
 ---
 
-![Hongli Lai](http://www.rubyconf.com.br/assets/speakers/hongli_lai-2cfc23d129a2a1f001d84df45863071a.jpg)
+![Hongli Lai](http://web.archive.org/web/20131215024035/http://www.rubyconf.com.br/assets/speakers/hongli_lai-2cfc23d129a2a1f001d84df45863071a.jpg)
 
 If you didn't register yet, don't miss this opportunity. Go to [the official website](http://www.rubyconf.com.br) to register as soon as possible. The conference will commence on August 29th.
 

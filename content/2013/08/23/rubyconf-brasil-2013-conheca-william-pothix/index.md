@@ -11,7 +11,7 @@ aliases:
 - "/2013/08/23/rubyconf-brasil-2013-meet-william-pothix/"
 ---
 
-![William Molinari](http://www.rubyconf.com.br/assets/speakers/Pothix-78c0f3a74dffcefe2dea4e9fe913e769.jpg)
+<!-- broken image (event site offline, no archive): http://www.rubyconf.com.br/assets/speakers/Pothix-78c0f3a74dffcefe2dea4e9fe913e769.jpg -->
 
 Se você ainda não se inscreveu, não perca a oportunidade. Vá ao [site oficial](http://www.rubyconf.com.br) para se cadastrar agora mesmo! A conferência inicia no dia 29 de Agosto, estamos em contagem regressiva com apenas 6 dias para o grande dia!
 

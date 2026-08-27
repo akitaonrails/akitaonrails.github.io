@@ -9,7 +9,7 @@ draft: false
 translationKey: rubyconf-2013-hal-fulton
 ---
 
-![Hal Fulton](http://www.rubyconf.com.br/assets/speakers/HalFulton-cdd3c55c77451379496ec2ce1e421c77.jpg)
+![Hal Fulton](http://web.archive.org/web/20131215023324/http://www.rubyconf.com.br/assets/speakers/HalFulton-cdd3c55c77451379496ec2ce1e421c77.jpg)
 
 If you didn't register yet, don't miss this opportunity. Go to [the official website](http://www.rubyconf.com.br) to register as soon as possible. The conference will commence on August 29th.
 

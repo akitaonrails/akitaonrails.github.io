@@ -9,7 +9,7 @@ draft: false
 translationKey: rubyconf-2013-jaime-davila
 ---
 
-![Jaime Andrés Dávila](http://www.rubyconf.com.br/assets/speakers/JaimeAndres-83096108e2cabc4a502ac161ce9429e6.jpg)
+![Jaime Andrés Dávila](http://web.archive.org/web/20131215032407/http://www.rubyconf.com.br/assets/speakers/JaimeAndres-83096108e2cabc4a502ac161ce9429e6.jpg)
 
 If you didn't register yet, don't miss this opportunity. Go to [the official website](http://www.rubyconf.com.br) to register as soon as possible. The conference will commence on August 29th.
 

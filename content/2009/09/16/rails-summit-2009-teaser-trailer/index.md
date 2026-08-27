@@ -10,7 +10,7 @@ draft: false
 
 
 
-[![Rails Summit 2009](http://railssummit.com.br/imgs/43/original/728x90.gif)](http://www.railssummit.com.br?utm_campaign=Railssummit&utm_source=banner_parceiros&utm_medium=banner&utm_content=por_728x90)
+<!-- broken image (event site offline, no archive): http://railssummit.com.br/imgs/43/original/728x90.gif -->
 
 Quem esteve no [Dev in Rio 2009](http://devinrio.com.br/) e quem participou do [Rails Summit 2008](http://akitaonrails.com/railssummit2008) sabe do que estou falando :-)
 

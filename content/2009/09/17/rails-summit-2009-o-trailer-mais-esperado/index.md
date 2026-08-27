@@ -10,7 +10,7 @@ draft: false
 
 
 
-[![Rails Summit 2009](http://railssummit.com.br/imgs/43/original/728x90.gif)](http://www.railssummit.com.br?utm_campaign=Railssummit&utm_source=banner_parceiros&utm_medium=banner&utm_content=por_728x90)
+<!-- broken image (event site offline, no archive): http://railssummit.com.br/imgs/43/original/728x90.gif -->
 
 Imagino que quem viu o [Teaser Trailer](http://www.akitaonrails.com/2009/09/16/rails-summit-2009-teaser-trailer) de ontem ficou curioso. O pessoal que participou do [Dev in Rio](http://www.devinrio.com.br/) viu uma versão “especial” em primeira mão alguns dias atrás, agora aí vai a versão oficial:
 

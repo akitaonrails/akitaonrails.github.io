@@ -11,7 +11,7 @@ aliases:
 - "/2013/08/22/rubyconf-brasil-2013-meet-danilo-sato/"
 ---
 
-![Danilo Sato](http://www.rubyconf.com.br/assets/speakers/DaniloSato-bbec5422aab078faa2305b0bb5dea1d5.jpg)
+![Danilo Sato](http://web.archive.org/web/20131215023150/http://www.rubyconf.com.br/assets/speakers/DaniloSato-bbec5422aab078faa2305b0bb5dea1d5.jpg)
 
 Se você ainda não se inscreveu, não perca a oportunidade. Vá ao [site oficial](http://www.rubyconf.com.br) para se cadastrar agora mesmo! A conferência inicia no dia 29 de Agosto.
 

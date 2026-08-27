@@ -11,7 +11,7 @@ aliases:
 - "/2013/08/27/rubyconf-brasil-2013-meet-luis-cipriani/"
 ---
 
-![Luis Cipriani](http://www.rubyconf.com.br/assets/speakers/LuisCipriani-9b354700619361729e26a739b096ae23.jpg)
+![Luis Cipriani](http://web.archive.org/web/20131215031949/http://www.rubyconf.com.br/assets/speakers/LuisCipriani-9b354700619361729e26a739b096ae23.jpg)
 
 Se você ainda não se inscreveu, não perca a oportunidade. Vá ao [site oficial](http://www.rubyconf.com.br) para se cadastrar agora mesmo! A conferência inicia no dia 29 de Agosto. A contagem regressiva está chegando ao fim! Já é depois de amanhã! Ainda dá tempo, inscreva-se agora!
 

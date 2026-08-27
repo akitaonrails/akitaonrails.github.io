@@ -9,7 +9,7 @@ draft: false
 translationKey: rubyconf-2013-pablo-astigarraga
 ---
 
-![Pablo Astigarraga](http://www.rubyconf.com.br/assets/speakers/PabloAstigarraga-719eb0412701f47d718e49f5b8142860.jpg)
+<!-- broken image (event site offline, no archive): http://www.rubyconf.com.br/assets/speakers/PabloAstigarraga-719eb0412701f47d718e49f5b8142860.jpg -->
 
 If you didn't register yet, don't miss this opportunity. Go to [the official website](http://www.rubyconf.com.br) to register as soon as possible. The conference will commence on August 29th.
 

@@ -11,7 +11,7 @@ aliases:
 - "/2013/08/13/rubyconf-brasil-2013-jaime-andres-davila--2/"
 ---
 
-![Jaime Andrés Dávila](http://www.rubyconf.com.br/assets/speakers/JaimeAndres-83096108e2cabc4a502ac161ce9429e6.jpg)
+![Jaime Andrés Dávila](http://web.archive.org/web/20131215032407/http://www.rubyconf.com.br/assets/speakers/JaimeAndres-83096108e2cabc4a502ac161ce9429e6.jpg)
 
 Se você ainda não se inscreveu, não perca a oportunidade. Vá ao [site oficial](http://www.rubyconf.com.br) para se cadastrar agora mesmo! A conferência inicia no dia 29 de Agosto.
 

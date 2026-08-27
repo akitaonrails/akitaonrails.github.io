@@ -8,11 +8,11 @@ tags:
 draft: false
 ---
 
-[![Rails Summit 2009](http://railssummit.com.br/imgs/43/original/728x90.gif)](http://www.railssummit.com.br?utm_campaign=Railssummit&utm_source=banner_parceiros&utm_medium=banner&utm_content=por_728x90)
+<!-- broken image (event site offline, no archive): http://railssummit.com.br/imgs/43/original/728x90.gif -->
 
 **English translation:** click [here](/2009/09/27/rails-summit-2009-palestrante-ilya-grigorik#ilya_english)
 
-[![](http://railssummit.locaweb.com.br/imgs/11/original/Ilya.jpg)](http://railssummit.locaweb.com.br/en/speakers#ilya_grigorik)
+<!-- broken image (event site offline, no archive): http://railssummit.locaweb.com.br/imgs/11/original/Ilya.jpg -->
 
 [Ilya Grigorik](http://railssummit.locaweb.com.br/en/speakers#ilya_grigorik) é um desenvolvedor Ruby bem conhecido, especialmente por causa do seu blog [Igvita.com](http://igvita.com) onde encontramos alguns dos artigos tecnicamente mais ricos e ainda assim de fácil compreensão, não só em torno de aplicações Rails, mas tudo que se relaciona com ele, incluindo drivers de banco de dados, análise de desempenho, integração de serviços e muito mais. Por causa disso ele foi premiado como [Ruby Hero](http://weblog.rubyonrails.org/2009/2/18/2009-ruby-hero-awards) na RailsConf 2008 em Portland.
 
@@ -39,7 +39,7 @@ Nesta palestra vou cobrir as tecnologias emergentes por trás da “Real-Time We
 
 ## Speaker Ilya Grigorik
 
-[![](http://railssummit.locaweb.com.br/imgs/11/original/Ilya.jpg)](http://railssummit.locaweb.com.br/en/speakers#ilya_grigorik)
+<!-- broken image (event site offline, no archive): http://railssummit.locaweb.com.br/imgs/11/original/Ilya.jpg -->
 
 [Ilya Grigorik](http://railssummit.locaweb.com.br/en/speakers#ilya_grigorik) is a very well known Ruby developer, specially from his blog [Igvita.com](http://igvita.com) where one can find some of the most technically rich yet easily understandable articles surrounding not only Rails apps but everything that goes with it, including database drivers, performance analysis, services integration and much more. Because of that he was awarded [Ruby Hero](http://weblog.rubyonrails.org/2009/2/18/2009-ruby-hero-awards) at RailsConf 2008 in Portland.
 

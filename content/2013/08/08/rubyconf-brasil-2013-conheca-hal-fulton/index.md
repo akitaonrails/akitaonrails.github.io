@@ -11,7 +11,7 @@ aliases:
 - "/2013/08/08/rubyconf-brasil-2013-meet-hal-fulton/"
 ---
 
-![Hal Fulton](http://www.rubyconf.com.br/assets/speakers/HalFulton-cdd3c55c77451379496ec2ce1e421c77.jpg)
+![Hal Fulton](http://web.archive.org/web/20131215023324/http://www.rubyconf.com.br/assets/speakers/HalFulton-cdd3c55c77451379496ec2ce1e421c77.jpg)
 
 Se você ainda não se inscreveu, não perca a oportunidade. Vá ao [site oficial](http://www.rubyconf.com.br) para se cadastrar agora mesmo! A conferência inicia no dia 29 de Agosto.
 

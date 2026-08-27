@@ -11,7 +11,7 @@ aliases:
 - "/2013/08/14/rubyconf-brasil-2013-meet-hongli-lai/"
 ---
 
-![Hongli Lai](http://www.rubyconf.com.br/assets/speakers/hongli_lai-2cfc23d129a2a1f001d84df45863071a.jpg)
+![Hongli Lai](http://web.archive.org/web/20131215024035/http://www.rubyconf.com.br/assets/speakers/hongli_lai-2cfc23d129a2a1f001d84df45863071a.jpg)
 
 Se você ainda não se inscreveu, não perca a oportunidade. Vá ao [site oficial](http://www.rubyconf.com.br) para se cadastrar agora mesmo! A conferência inicia no dia 29 de Agosto.
 

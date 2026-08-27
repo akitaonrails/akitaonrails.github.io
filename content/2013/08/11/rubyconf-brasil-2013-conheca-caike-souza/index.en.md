@@ -9,7 +9,7 @@ draft: false
 translationKey: rubyconf-2013-caike-souza
 ---
 
-![Caike Souza](http://www.rubyconf.com.br/assets/speakers/CaikeSouza-18e85bd3b733db5881634759f0b8d0ec.jpg)
+![Caike Souza](http://web.archive.org/web/20131215032546/http://www.rubyconf.com.br/assets/speakers/CaikeSouza-18e85bd3b733db5881634759f0b8d0ec.jpg)
 
 If you didn't register yet, don't miss this opportunity. Go to [the official website](http://www.rubyconf.com.br) to register as soon as possible. The conference will commence on August 29th.
 

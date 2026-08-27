@@ -8,7 +8,7 @@ tags:
 draft: false
 ---
 
-![Halan Pinheiro](http://www.rubyconf.com.br/assets/speakers/HalanPinheiro-d70c9d4996942986f1141789cfe72ccc.jpg)
+![Halan Pinheiro](http://web.archive.org/web/20131215032521/http://www.rubyconf.com.br/assets/speakers/HalanPinheiro-d70c9d4996942986f1141789cfe72ccc.jpg)
 
 As inscrições pelo [site](http://www.rubyconf.com.br) já se fecharam mas você ainda poderá se inscrever no local do evento. A contagem regressiva no fim! Já é amanhã, cheguem bem cedo! O evento começará pontualmente às 9h mas chegue antes para o cadastramento.
 

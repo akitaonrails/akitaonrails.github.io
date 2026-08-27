@@ -8,7 +8,7 @@ tags:
 draft: false
 ---
 
-[![](http://www.rubyconf.com.br/images/LogoRubyConf.jpg)](http://www.rubyconf.com.br/br)
+<!-- broken image (event site offline, no archive): http://www.rubyconf.com.br/images/LogoRubyConf.jpg -->
 
 Já [se inscreveu](http://www.rubyconf.com.br/br/registration.html) para o RubyConf Brasil 2011? Estamos nos **últimos dias**! Será esta semana, quinta-feira e sexta-feira logo depois do feriado, nos dias 3 e 4 de Novembro. Se ainda não se inscreveu, não perca tempo para não perder seu lugar!
 

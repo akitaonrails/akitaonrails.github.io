@@ -9,7 +9,7 @@ draft: false
 translationKey: rubyconf-2013-luis-cipriani
 ---
 
-![Luis Cipriani](http://www.rubyconf.com.br/assets/speakers/LuisCipriani-9b354700619361729e26a739b096ae23.jpg)
+![Luis Cipriani](http://web.archive.org/web/20131215031949/http://www.rubyconf.com.br/assets/speakers/LuisCipriani-9b354700619361729e26a739b096ae23.jpg)
 
 If you didn't register yet, don't miss this opportunity. Go to [the official website](http://www.rubyconf.com.br) to register as soon as possible. The conference will commence on August 29th. The countdown is reaching its end! Only 2 days to go! Register while there is still time!
 

@@ -8,7 +8,7 @@ tags:
 draft: false
 ---
 
-![Rodrigo Franco](http://www.rubyconf.com.br/assets/speakers/Caffo-7fce933eb6a379bca16319f84892e35e.jpg)
+![Rodrigo Franco](http://web.archive.org/web/20131215022345/http://www.rubyconf.com.br/assets/speakers/Caffo-7fce933eb6a379bca16319f84892e35e.jpg)
 
 Se você ainda não se inscreveu, não perca a oportunidade. Vá ao [site oficial](http://www.rubyconf.com.br) para se cadastrar agora mesmo! A conferência inicia no dia 29 de Agosto.
 

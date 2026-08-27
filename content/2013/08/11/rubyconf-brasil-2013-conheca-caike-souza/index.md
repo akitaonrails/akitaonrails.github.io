@@ -11,7 +11,7 @@ aliases:
 - "/2013/08/11/rubyconf-brasil-2013-meet-caike-souza/"
 ---
 
-![Caike Souza](http://www.rubyconf.com.br/assets/speakers/CaikeSouza-18e85bd3b733db5881634759f0b8d0ec.jpg)
+![Caike Souza](http://web.archive.org/web/20131215032546/http://www.rubyconf.com.br/assets/speakers/CaikeSouza-18e85bd3b733db5881634759f0b8d0ec.jpg)
 
 Se você ainda não se inscreveu, não perca a oportunidade. Vá ao [site oficial](http://www.rubyconf.com.br) para se cadastrar agora mesmo! A conferência inicia no dia 29 de Agosto.
 

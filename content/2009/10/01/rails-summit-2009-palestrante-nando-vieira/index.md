@@ -8,11 +8,11 @@ tags:
 draft: false
 ---
 
-[![Rails Summit 2009](http://railssummit.com.br/imgs/43/original/728x90.gif)](http://www.railssummit.com.br?utm_campaign=Railssummit&utm_source=banner_parceiros&utm_medium=banner&utm_content=por_728x90)
+<!-- broken image (event site offline, no archive): http://railssummit.com.br/imgs/43/original/728x90.gif -->
 
 **English translation:** click [here](/2009/10/01/rails-summit-2009-palestrante-nando-vieira#nando_english)
 
-[![](http://railssummit.locaweb.com.br/imgs/20/original/nando.jpg)](http://www.railssummit.com.br)
+![](http://web.archive.org/web/20110211080431/http://web.archive.org/web/20110211080431/http://railssummit.locaweb.com.br/imgs/20/original/nando.jpg)
 
 [Nando Vieira](http://railssummit.locaweb.com.br/pt-BR/speakers#nando_vieira) é um dos rubistas mais antigos da nossa comunidade. Ele bloga no [Simples Ideias](http://simplesideias.com.br/), um dos blogs mais conhecidos sobre Ruby on Rails do Brasil. Trabalha atualmente como desenvolvedor web na Abril Digital, utilizando Rails. É também o fundador do [Spesa](http://spesa.com.br/), além de manter dezenas de [projetos Open-source](http://github.com/fnando).
 
@@ -35,7 +35,7 @@ Irei abordar as mudanças do Ruby 1.9 em relação à versão 1.8, com exemplos 
 
 ## Speaker Nando Vieira
 
-[![](http://railssummit.locaweb.com.br/imgs/20/original/nando.jpg)](http://www.railssummit.com.br/en/home)
+![](http://web.archive.org/web/20110211080431/http://web.archive.org/web/20110211080431/http://railssummit.locaweb.com.br/imgs/20/original/nando.jpg)
 
 [Nando Vieira](http://railssummit.locaweb.com.br/en/speakers#nando_vieira) is one of the luminaries of the Brazilian Ruby Community. He blogs at [Simples Idéias](http://simplesideias.com.br/), one of the most popular blogs about Ruby on Rails in Brazil. He currently works as web developer for April Digital, using Rails. He’s also the founder of [Spesa](http://spesa.com.br/), and maintains dozens of [Open-source projects](http://github.com/fnando).
 

@@ -9,7 +9,7 @@ draft: false
 translationKey: rubyconf-2013-danilo-sato
 ---
 
-![Danilo Sato](http://www.rubyconf.com.br/assets/speakers/DaniloSato-bbec5422aab078faa2305b0bb5dea1d5.jpg)
+![Danilo Sato](http://web.archive.org/web/20131215023150/http://www.rubyconf.com.br/assets/speakers/DaniloSato-bbec5422aab078faa2305b0bb5dea1d5.jpg)
 
 If you didn't register yet, don't miss this opportunity. Go to [the official website](http://www.rubyconf.com.br) to register as soon as possible. The conference will commence on August 29th. The countdown continues, only 7 days to launch!
 

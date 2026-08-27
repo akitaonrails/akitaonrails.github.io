@@ -11,7 +11,7 @@ aliases:
 - "/2013/08/19/rubyconf-brasil-2013-meet-eduardo-shiota/"
 ---
 
-![Eduardo Shiota](http://www.rubyconf.com.br/assets/speakers/EduardoShiota-4c75335a678896e26b9548872cd6d7d4.jpg)
+![Eduardo Shiota](http://web.archive.org/web/20131215024317/http://www.rubyconf.com.br/assets/speakers/EduardoShiota-4c75335a678896e26b9548872cd6d7d4.jpg)
 
 Se você ainda não se inscreveu, não perca a oportunidade. Vá ao [site oficial](http://www.rubyconf.com.br) para se cadastrar agora mesmo! A conferência inicia no dia 29 de Agosto, estamos em contagem regressiva com apenas 10 dias para o grande dia!
 

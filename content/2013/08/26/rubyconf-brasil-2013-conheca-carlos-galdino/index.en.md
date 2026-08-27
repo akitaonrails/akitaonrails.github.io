@@ -9,7 +9,7 @@ draft: false
 translationKey: rubyconf-2013-carlos-galdino
 ---
 
-![Carlos Galdino](http://www.rubyconf.com.br/assets/speakers/CarlosGaldino-174f14e42c5fbe78ee47f63273f2c946.jpg)
+![Carlos Galdino](http://web.archive.org/web/20131215024944/http://www.rubyconf.com.br/assets/speakers/CarlosGaldino-174f14e42c5fbe78ee47f63273f2c946.jpg)
 
 If you didn't register yet, don't miss this opportunity. Go to [the official website](http://www.rubyconf.com.br) to register as soon as possible. The conference will commence on August 29th. The countdown is reaching its end! Only 3 days to go! Register while there is still time!
 

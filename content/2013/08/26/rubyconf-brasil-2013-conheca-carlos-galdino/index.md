@@ -11,7 +11,7 @@ aliases:
 - "/2013/08/26/rubyconf-brasil-2013-meet-carlos-galdino/"
 ---
 
-![Carlos Galdino](http://www.rubyconf.com.br/assets/speakers/CarlosGaldino-174f14e42c5fbe78ee47f63273f2c946.jpg)
+![Carlos Galdino](http://web.archive.org/web/20131215024944/http://www.rubyconf.com.br/assets/speakers/CarlosGaldino-174f14e42c5fbe78ee47f63273f2c946.jpg)
 
 Se você ainda não se inscreveu, não perca a oportunidade. Vá ao [site oficial](http://www.rubyconf.com.br) para se cadastrar agora mesmo! A conferência inicia no dia 29 de Agosto. A contagem regressiva está chegando ao fim! Só 3 dias! Ainda dá tempo, inscreva-se agora!
 
