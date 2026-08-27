@@ -13,7 +13,7 @@ tags:
 draft: false
 ---
 
-Como venho relatando em vários posts anteriores, estou migrando para Linux em tempo integral. Neste artigo quero mostrar como configurar o Arch Linux para que ele seja adequado para Usuários Criativos **Pro**, onde o acesso à GPU secundária é fundamental.
+Como venho relatando em posts anteriores, estou migrando para Linux em tempo integral. Aqui quero mostrar como configurar o Arch Linux para deixá-lo adequado a Usuários Criativos **Pro**, onde o acesso à GPU secundária é fundamental.
 
 Se você é um Usuário Criativo Pro, não dá para rodar Final Cut Pro X (com Motion e Compressor), Logic Pro, Photoshop da Adobe e afins. Então você vai precisar mudar seu fluxo de trabalho se quiser entrar no ecossistema Linux. Felizmente, para muitos fluxos os aplicativos Linux amadureceram bem e dá para trabalhar sem precisar se contentar com software de baixa qualidade ou gambiarra.
 
@@ -25,7 +25,9 @@ Depois de muita pesquisa (leia-se: [YouTube!](https://www.youtube.com/results?se
 
 Até hoje nada supera a coesão entre software e hardware da Apple. Isso não pode ser subestimado. O mundo PC/Windows melhorou bastante, mas ainda é assombrado por BIOS instável, drivers instáveis etc. No Linux, é ainda pior.
 
-Aqui vai o primeiro **protip**: evite modelos super novos — a maioria não tem drivers estáveis nem para Windows 10, quanto mais para Linux. Deixe o pessoal do Windows sofrer os primeiros meses; dê tempo à Dell, à [NVIDIA](http://windowsreport.com/nvidia-driver-crash-windows-10/) e à Intel para corrigir o caos com firmware de BIOS e drivers mais estáveis. Se você realmente quiser comprar um dos modelos Kaby Lake de 2017 que acabaram de sair, está numa roleta russa. Até os primeiros MacBooks costumam [dar problema](http://www.digitaltrends.com/computing/apple-releases-macos-sierra-10123-update/). Regra geral: não compre no dia do lançamento, espere pelo menos 3 meses. Você foi avisado.
+Aqui vai o primeiro **protip**: evite modelos super novos. A maioria não tem drivers estáveis nem para Windows 10, quanto mais para Linux. Deixe o pessoal do Windows sofrer os primeiros meses e dê tempo à Dell, à [NVIDIA](http://windowsreport.com/nvidia-driver-crash-windows-10/) e à Intel para corrigir o caos com firmware de BIOS e drivers mais estáveis.
+
+Se você realmente quiser comprar um dos modelos Kaby Lake de 2017 que acabaram de sair, está numa roleta russa. Até os primeiros MacBooks costumam [dar problema](http://www.digitaltrends.com/computing/apple-releases-macos-sierra-10123-update/). Regra geral: não compre no dia do lançamento, espere pelo menos 3 meses. Você foi avisado.
 
 Dentre as máquinas de início de 2016 que a maioria das distros Linux suporta razoavelmente bem, as séries [Dell XPS](http://www.anandtech.com/show/10116/the-dell-xps-15-9550-review), [Lenovo Thinkpad X1 Yoga](http://www.anandtech.com/show/10697/the-lenovo-thinkpad-x1-yoga-review) e possivelmente [Asus Zenbook Pro](http://www.digitaltrends.com/computing/dell-xps-15-vs-asus-zenbook-pro-ux501-battle-of-the-plus-sized-premiums/) e [HP ProBook](http://laptopmedia.com/review/hp-probook-450-g3-455-g3-review-what-a-budget-business-notebook-should-look-like/) estão bem.
 
@@ -39,11 +41,17 @@ O monitor é outra história: o deslumbrante display 4K IPS do XPS 15 é excelen
 
 ![Dell XPS Display](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/613/20170124_211855.jpg)
 
-Se você não quer mexer muito na configuração de hardware, a aposta mais segura costuma ser o Ubuntu — e mesmo assim [não vai ser perfeito](https://ubuntuforums.org/showthread.php?t=2317843).
+Se você não quer mexer muito na configuração de hardware, a aposta mais segura costuma ser o Ubuntu, e mesmo assim [não vai ser perfeito](http://web.archive.org/web/20160707232552/http://ubuntuforums.org:80/showthread.php?t=2317843).
 
-Especialmente com displays HiDPI (acima de Full-HD), o Linux ainda está atrás. GNOME e KDE até suportam, mas outros ambientes desktop têm resultados mistos, e aplicativos mais antigos ainda não se adaptaram direito. Em distros LTS com pacotes velhos, você vai encontrar aplicativos com HiDPI errado. [Libreoffice](https://bugs.documentfoundation.org/show_bug.cgi?id=99508) e [Spotify](https://community.spotify.com/t5/Desktop-Linux-Windows-Web-Player/Linux-client-barely-usable-on-HiDPI-displays/td-p/1067272) são exemplos. E se você for como eu, usando múltiplos monitores com DPIs diferentes, pode esquecer. Ou usa o notebook com a tampa fechada (aí só tem um monitor externo para se preocupar), ou o texto fica minúsculo no monitor HiDPI principal para o DPI ficar certo no segundo monitor externo. Uma saída é configurar o display 4K para escalar para Full-HD (1080p). Mas aí fica a pergunta: qual é o sentido de ter um display 4K se você não consegue usá-lo direito? Então, não compre o 4K sem entender isso.
+Especialmente com displays HiDPI (acima de Full-HD), o Linux ainda está atrás. GNOME e KDE até suportam, mas outros ambientes desktop têm resultados mistos, e aplicativos mais antigos ainda não se adaptaram direito. Em distros LTS com pacotes velhos, você vai encontrar aplicativos com HiDPI errado, como o [Libreoffice](https://bugs.documentfoundation.org/show_bug.cgi?id=99508) e o [Spotify](https://community.spotify.com/t5/Desktop-Linux-Windows-Web-Player/Linux-client-barely-usable-on-HiDPI-displays/td-p/1067272).
 
-MacOS e Windows lidam com essa situação muito melhor. No MacOS nunca tive nenhum problema de HiDPI. Nenhum. A Apple foi muito mais eficaz em empurrar um padrão mais alto do que o resto da indústria, e essa coesão — sem precisar fuçar drivers e configurações — tem um valor enorme. Com Mac, você liga e usa. Com Windows, provavelmente vai ficar bem, a menos que apareça algum problema de driver. Com Linux, espere um volume razoável de ajustes para colocar o básico em ordem.
+E se você for como eu, usando múltiplos monitores com DPIs diferentes, pode esquecer. Ou usa o notebook com a tampa fechada, aí só tem um monitor externo para se preocupar, ou o texto fica minúsculo no monitor HiDPI principal para o DPI ficar certo no segundo monitor externo.
+
+Uma saída é configurar o display 4K para escalar para Full-HD (1080p). Mas aí fica a pergunta: qual é o sentido de ter um display 4K se você não consegue usá-lo direito? Então não compre o 4K sem entender isso.
+
+MacOS e Windows lidam com essa situação muito melhor. No MacOS nunca tive nenhum problema de HiDPI. Nenhum. A Apple foi muito mais eficaz em empurrar um padrão mais alto do que o resto da indústria, e essa coesão, sem precisar fuçar drivers e configurações, tem um valor enorme.
+
+Com Mac, você liga e usa. Com Windows, provavelmente vai ficar bem, a menos que apareça algum problema de driver. Com Linux, espere um volume razoável de ajustes para colocar o básico em ordem.
 
 Notebooks PC novos também estão vindo com configurações esquisitas que fazem sentido no Windows, mas que dão trabalho para as distros Linux. Toda vez você começa desativando coisas no BIOS como Secure Boot, mudando para AHCI, etc. Então vamos direto ao ponto.
 
@@ -58,11 +66,11 @@ A primeira coisa a fazer é alterar as configurações do BIOS. Pressione F2 na 
 * Security - Secure Boot - Secure Boot Enable - Disabled
 * POST Behavior - Fastboot - Through (o padrão é minimal)
 
-Ao fazer essas mudanças, o Windows 10 pré-instalado não vai mais iniciar — então certifique-se de que não precisa dele antes de prosseguir.
+Ao fazer essas mudanças, o Windows 10 pré-instalado não vai mais iniciar, então certifique-se de que não precisa dele antes de prosseguir.
 
 ### Ajustes no Kernel
 
-Siga a página do [Wiki do Dell XPS (9550)](http://bit.ly/2jzVAxE).
+Siga a página do [Wiki do Dell XPS (9550)](https://wiki.archlinux.org/title/Dell_XPS_15_(9550)).
 
 O display 4K pode apresentar flickering, e para evitar isso edite o arquivo de configuração do Grub `/boot/grub/grub.cfg` e adicione os seguintes flags à linha existente:
 
@@ -70,7 +78,7 @@ O display 4K pode apresentar flickering, e para evitar isso edite o arquivo de c
 GRUB_CMDLINE_LINUX_DEFAULT="... i915.edp_vswing=2 i915.preliminary_hw_support=1 intel_idle.max_cstate=1 acpi_backlight=vendor acpi_osi=Linux"
 ```
 
-Essa linha já existe com alguns flags — não apague, apenas adicione os novos — e não se esqueça de rodar em seguida:
+Essa linha já existe com alguns flags. Não apague, apenas adicione os novos, e não se esqueça de rodar em seguida:
 
 ```
 sudo grub-mkconfig -o /boot/grub/grub.cfg
@@ -82,15 +90,15 @@ No mais, tudo deve funcionar bem, mas por precaução instalei também os pacote
 sudo pacman -S powertop acpid
 ```
 
-Fico feliz em reportar que consigo fechar a tampa do notebook e o sistema suspende corretamente, e ao abrir volta do sleep sem problemas — economizando bateria e me poupando de reiniciar todo dia.
+Fico feliz em reportar que consigo fechar a tampa do notebook e o sistema suspende corretamente. Ao abrir, ele volta do sleep sem problemas, economizando bateria e me poupando de reiniciar todo dia.
 
-### Distros Arch — Manjaro ao resgate
+### Distros Arch: Manjaro ao resgate
 
-Estou me tornando um entusiasta do Arch, mas configurá-lo para funcionar num notebook moderno dá um trabalho absurdo. Não recomendo tentar se você estiver com pressa. Testei o [Arch Anywhere](https://arch-anywhere.org/), mas ele nem consegue passar pelo particionamento do disco (não gosta da configuração de SSD ou SATA). Testei o [Antergos](https://antergos.com/), mas por algum motivo as Contas Online do Gnome não funcionaram lá, mesmo reinstalando. No final fui com o [Manjaro](https://manjaro.org/), que instalou e funcionou sem grandes problemas.
+Estou me tornando um entusiasta do Arch, mas configurá-lo para funcionar num notebook moderno dá um trabalho absurdo. Não recomendo tentar se você estiver com pressa. Testei o [Arch Anywhere](https://arch-anywhere.org/), mas ele nem consegue passar pelo particionamento do disco (não gosta da configuração de SSD ou SATA). Testei o [Antergos](http://web.archive.org/web/20170205034235/https://antergos.com/), mas por algum motivo as Contas Online do Gnome não funcionaram lá, mesmo reinstalando. No final fui com o [Manjaro](https://manjaro.org/), que instalou e funcionou sem grandes problemas.
 
-Existem várias distros baseadas em Arch. Arch Anywhere e Antergos são mais "instaladores" do Arch — os repositórios principais ainda são o Arch vanilla, e eles tentam tornar o processo de instalação mais fácil do que você ter de se virar num shell de linha de comando cru.
+Existem várias distros baseadas em Arch. Arch Anywhere e Antergos são mais "instaladores" do Arch: os repositórios principais ainda são o Arch vanilla, e eles tentam tornar o processo de instalação mais fácil do que você ter de se virar num shell de linha de comando cru.
 
-O Manjaro é mais uma distro independente, onde as fontes principais apontam para o Manjaro primeiro, para que possam testar os pacotes mais recentes e segurá-los por um tempo antes de liberar, evitando que pacotes problemáticos quebrem seu sistema com frequência. Mas você ainda tem acesso direto aos pacotes AUR. O grande diferencial é um instalador **muito** melhor, com software de particionamento automático mais sofisticado do que o Arch Anywhere, e o próprio software de detecção de hardware [MHWD](https://wiki.manjaro.org/index.php?title=Manjaro_Hardware_Detection_Overview).
+O Manjaro é mais uma distro independente. As fontes principais apontam para o Manjaro primeiro, então eles testam os pacotes mais recentes e os seguram por um tempo antes de liberar, evitando que pacotes problemáticos quebrem seu sistema com frequência. Mas você ainda tem acesso direto aos pacotes AUR. O grande diferencial é um instalador **muito** melhor, com particionamento automático mais sofisticado do que o Arch Anywhere, e o próprio software de detecção de hardware [MHWD](https://wiki.manjaro.org/index.php?title=Manjaro_Hardware_Detection_Overview).
 
 No geral funcionou bem, embora eu ainda tenha precisado ajustar a configuração gráfica, pois por padrão ele opta pelos drivers open source Nouveau. Confie em mim: vá para os binários proprietários.
 
@@ -114,7 +122,7 @@ Com tudo instalado, geralmente basta fazer:
 primusrun kdenlive
 ```
 
-Por exemplo, para carregar o editor de vídeo Kdenlive usando OpenGL pela GPU Nvidia. Ou para rodar o [Steam via Wine](https://forum.manjaro.org/t/newbie-questions-about-hybrid-nvidia-and-intel-gpu-drives-tutorial/2974/26):
+Por exemplo, para carregar o editor de vídeo Kdenlive usando OpenGL pela GPU Nvidia. Ou para rodar o [Steam via Wine](http://web.archive.org/web/20170220054700/https://forum.manjaro.org/t/newbie-questions-about-hybrid-nvidia-and-intel-gpu-drives-tutorial/2974/26):
 
 ```
 primusrun wine ~/.wine/drive_c/Program\ Files\ (x86)/Steam/Steam.exe
@@ -128,7 +136,7 @@ sudo mhwd -r pci video-hybrid-intel-nouveau-bumblebee
 sudo mhwd -i pci video-hybrid-intel-nvidia-bumblebee
 ```
 
-Lembrando que estou falando do XPS 9550 com configuração Optimus Intel-Nvidia. Leia a página [Configuring Graphics](https://wiki.manjaro.org/index.php/Configure_Graphics_Cards) do Manjaro sobre o assunto.
+Lembrando que estou falando do XPS 9550 com configuração Optimus Intel-Nvidia. Leia a página [Configuring Graphics](http://web.archive.org/web/20170517195417/https://wiki.manjaro.org/index.php/Configure_Graphics_Cards) do Manjaro sobre o assunto.
 
 Aqui me deparei com um problema estranho. Estou usando o kernel **Linux 4.9**:
 
@@ -242,7 +250,7 @@ OpenGL OpenGLES:  false
 
 Não tenho certeza absoluta, mas acredito que o Kdenlive usa OpenGL para mostrar previews em tempo real dos efeitos aplicados às faixas de vídeo, e isso provavelmente pode ser redirecionado via primus para a placa Nvidia secundária.
 
-Na verdade, o Kdenlive, assim como seu concorrente OpenShot, usa o [MLT Multimedia Framework](https://www.mltframework.org/) — o motor de edição de vídeo não-linear. Por sua vez, o MLT usa o [movit](https://movit.sesse.net/), que são filtros de vídeo de alta performance e qualidade para a GPU. O comando de instalação via `pacman` que mencionei já cuida de instalar esses pacotes opcionais.
+Na verdade, o Kdenlive, assim como seu concorrente OpenShot, usa o [MLT Multimedia Framework](https://www.mltframework.org/), o motor de edição de vídeo não-linear. Por sua vez, o MLT usa o [movit](https://movit.sesse.net/), que são filtros de vídeo de alta performance e qualidade para a GPU. O comando de instalação via `pacman` que mencionei já cuida de instalar esses pacotes opcionais.
 
 ![Kdenlive](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/616/Screenshot_from_2017-01-31_18-29-38.png)
 
@@ -258,7 +266,7 @@ Depois, você pode usar os plugins portados pelo menu `Tools - GEGL Operation`:
 
 E se você é fotógrafo profissional, vai querer instalar o [Darktable](http://www.darktable.org/), que é o mais próximo que você vai chegar do Apple Aperture ou Adobe Lightroom. Tem uma aparência bem cuidada e você consegue retocar suas fotos adequadamente.
 
-O Darktable detecta automaticamente o driver Nvidia — não precisa rodar via Primusrun nem passar nenhuma flag especial.
+O Darktable detecta automaticamente o driver Nvidia. Não precisa rodar via Primusrun nem passar nenhuma flag especial.
 
 ![Darktable](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/617/Screenshot_from_2017-01-31_18-31-04.png)
 
@@ -270,11 +278,11 @@ Você pode verificar se o aplicativo está usando a GPU monitorando com `nvidia-
 watch -n 0.5 nvidia-smi
 ```
 
-Isso mantém o monitoramento da GPU a cada meio segundo. O aplicativo aparece na lista de processos com um PID e você consegue ver o uso de memória (minha GPU tem 2GB de DRAM dedicada), uso de processamento e temperatura — pode chegar perto de 70 graus Celsius renderizando pelo Blender.
+Isso mantém o monitoramento da GPU a cada meio segundo. O aplicativo aparece na lista de processos com um PID e você consegue ver o uso de memória (minha GPU tem 2GB de DRAM dedicada), o uso de processamento e a temperatura, que pode chegar perto de 70 graus Celsius renderizando pelo Blender.
 
 Acredito que isso é o máximo que dá para extrair do hardware com aplicativos multimídia de nível profissional. Não sou profissional de Blender, Kdenlive, Darktable ou Gimp, mas é bom saber que posso usá-los para minhas necessidades pontuais. Usuários Pro vão conseguir aproveitar ainda mais essa máquina com essa configuração.
 
-Como disse no começo: se você é realmente um Usuário Pro, sempre em movimento e precisa fazer mudanças rápidas nos seus projetos multimídia on-the-go, provavelmente vai continuar melhor com o stack da Apple — um MacBook Pro com Final Cut Pro. Não esqueça que o Final Cut Pro e os outros softwares Pro da Apple são super otimizados para o hardware Mac, exportando vídeos em velocidades ordens de magnitude maiores do que o Premiere, por exemplo.
+Como disse no começo: se você é realmente um Usuário Pro, sempre em movimento e precisa fazer mudanças rápidas nos seus projetos multimídia on-the-go, provavelmente vai continuar melhor com o stack da Apple, um MacBook Pro com Final Cut Pro. Não esqueça que o Final Cut Pro e os outros softwares Pro da Apple são super otimizados para o hardware Mac, exportando vídeos em velocidades ordens de magnitude maiores do que o Premiere, por exemplo.
 
 Mas você pode ser um Usuário Criativo Pro na indústria de games, desenvolvimento mobile, animação 3D, pós-produção, ou trabalhando num time misto com engenheiros de software. E ter a capacidade de construir seus assets multimídia numa plataforma Linux pode abrir possibilidades interessantes para fluxos de trabalho integrados no futuro.
 

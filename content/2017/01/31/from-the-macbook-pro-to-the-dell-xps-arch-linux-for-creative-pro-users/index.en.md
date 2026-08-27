@@ -11,7 +11,7 @@ tags:
 draft: false
 ---
 
-As I've been reporting many posts ago, I'm switching to Linux full-time. In this article I'd like to show how to configure Arch Linux so it's suitable for Creative **Pro** Users, where the access to the secondary GPU is very important.
+As I've been reporting in previous posts, I'm switching to Linux full-time. Here I'd like to show how to configure Arch Linux so it's suitable for Creative **Pro** Users, where access to the secondary GPU is very important.
 
 If you're a Creative Pro User, you can't really run Final Cut Pro X (with Motion, Compressor), Logic Pro, Adobe's Photoshop and other apps. So you will have to change your workflow if you want to be in the Linux ecosystem. Fortunately, for many workflows Linux apps have matured quite nicely and you don't need to settle for low quality, "hack-ish" software.
 
@@ -23,7 +23,9 @@ After a lot of research (a.k.a. [YouTube!](https://www.youtube.com/results?searc
 
 To this day, nothing can beat the software+hardware cohesiveness of Apple. This can't be underestimated. The PC/Windows world is a lot better, but it's still plagued with unstable BIOS, unstable drivers, etc. If you're on Linux, it's even worse.
 
-Here's the first **protip**: avoid super brand new models, most of them won't have stable drivers even for Windows 10, let alone Linux. Let the Windows guys suffer the first couple of months; give Dell, [NVIDIA](http://windowsreport.com/nvidia-driver-crash-windows-10/) and Intel time to fix the mess releasing more stable BIOS firmware and drivers. If you really want to buy one of the 2017 brand new Kaby Lake models, you're in a Russian roulette situation. Even first generation Macbook models usually [present trouble](http://www.digitaltrends.com/computing/apple-releases-macos-sierra-10123-update/). As a rule of thumb, do not buy on day 1, wait at the very least 3 months. You are warned.
+Here's the first **protip**: avoid super brand new models. Most of them won't have stable drivers even for Windows 10, let alone Linux. Let the Windows guys suffer the first couple of months; give Dell, [NVIDIA](http://windowsreport.com/nvidia-driver-crash-windows-10/) and Intel time to fix the mess releasing more stable BIOS firmware and drivers.
+
+If you really want to buy one of the 2017 brand new Kaby Lake models, you're in a Russian roulette situation. Even first generation Macbook models usually [present trouble](http://www.digitaltrends.com/computing/apple-releases-macos-sierra-10123-update/). As a rule of thumb, do not buy on day 1, wait at the very least 3 months. You are warned.
 
 Out of all the early-2016 machines that most Linux distros can support reasonably well, I believe the [Dell XPS](http://www.anandtech.com/show/10116/the-dell-xps-15-9550-review) series, [Lenovo Thinkpad X1 Yoga](http://www.anandtech.com/show/10697/the-lenovo-thinkpad-x1-yoga-review), and possibly [Asus Zenbook Pro](http://www.digitaltrends.com/computing/dell-xps-15-vs-asus-zenbook-pro-ux501-battle-of-the-plus-sized-premiums/) and [HP ProBook](http://laptopmedia.com/review/hp-probook-450-g3-455-g3-review-what-a-budget-business-notebook-should-look-like/) are quite good nowadays.
 
@@ -37,11 +39,17 @@ Display monitor is a different story: the XPS 15's gorgeous 4K IPS display is su
 
 ![Dell XPS Display](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/613/20170124_211855.jpg)
 
-If you don't want to tinker with the hardware configuration too much, usually the safest bet is installing Ubuntu and even then [it's not](https://ubuntuforums.org/showthread.php?t=2317843) going to be perfect.
+If you don't want to tinker with the hardware configuration too much, usually the safest bet is installing Ubuntu and even then [it's not](http://web.archive.org/web/20160707232552/http://ubuntuforums.org:80/showthread.php?t=2317843) going to be perfect.
 
-Especially with HiDPI displays (over Full-HD) Linux is still lagging behind. GNOME, KDE kinda support it, but other desktop environments have mixed results, and old applications are still not supporting it as they should. If you're using LTS distros with old packages, you will find a few applications doing HiDPI wrong. [Libreoffice](https://bugs.documentfoundation.org/show_bug.cgi?id=99508) and [Spotify](https://community.spotify.com/t5/Desktop-Linux-Windows-Web-Player/Linux-client-barely-usable-on-HiDPI-displays/td-p/1067272) to name a few. And if you're like me, using a multi monitor with different DPIs, you're out of luck. Either you're using the notebook with the lid closed (so you only have one external monitor to worry about) or you will have the texts all super small in the HiDPI primary monitor in order to have the correct DPI in the second external monitor. One fallback is to configure the 4K display to downscale to Full-HD (1080p). And then again, what's the point of having a 4K display if you can't use it properly? So, do not buy the 4K unless you understand this.
+Especially with HiDPI displays (over Full-HD) Linux is still lagging behind. GNOME, KDE kinda support it, but other desktop environments have mixed results, and old applications are still not supporting it as they should. If you're using LTS distros with old packages, you will find a few applications doing HiDPI wrong, like [Libreoffice](https://bugs.documentfoundation.org/show_bug.cgi?id=99508) and [Spotify](https://community.spotify.com/t5/Desktop-Linux-Windows-Web-Player/Linux-client-barely-usable-on-HiDPI-displays/td-p/1067272).
 
-Both MacOS and Windows handle this situation far better. And in MacOS I never experienced any HiDPI problem. Not once. Apple was much better pushing a higher standard than the rest of the industry, and this cohesiveness and no need to tinker drivers and configuration is super valuable. With Macs, you can really just boot and use. With Windows, you're probably mostly ok unless there are driver issues. And with Linux, you must expect a fair amount of tinkering to have the basis covered.
+And if you're like me, using a multi monitor with different DPIs, you're out of luck. Either you're using the notebook with the lid closed (so you only have one external monitor to worry about) or you will have the texts all super small in the HiDPI primary monitor in order to have the correct DPI in the second external monitor.
+
+One fallback is to configure the 4K display to downscale to Full-HD (1080p). And then again, what's the point of having a 4K display if you can't use it properly? So, do not buy the 4K unless you understand this.
+
+Both MacOS and Windows handle this situation far better. And in MacOS I never experienced any HiDPI problem. Not once. Apple was much better pushing a higher standard than the rest of the industry, and this cohesiveness and no need to tinker drivers and configuration is super valuable.
+
+With Macs, you can really just boot and use. With Windows, you're probably mostly ok unless there are driver issues. And with Linux, you must expect a fair amount of tinkering to have the basis covered.
 
 New PC notebooks are also coming with several weird configurations that make sense for Windows, but that make Linux distros struggle a bit. Every time you must start by configuring the BIOS to disable stuff like Secure Boot, changing to AHCI issues, etc. So let's dive right into it.
 
@@ -60,7 +68,7 @@ By doing these changes, the pre-installed Windows 10 will not boot anymore, so m
 
 ### Kernel Tweaks
 
-You should follow the [Dell XPS (9550) Wiki](http://bit.ly/2jzVAxE) Page.
+You should follow the [Dell XPS (9550) Wiki](https://wiki.archlinux.org/title/Dell_XPS_15_(9550)) Page.
 
 The 4K Display may flicker a bit, and to avoid it you must edit Grub configuration file `/boot/grub/grub.cfg` and append the following line with the specific flags:
 
@@ -80,19 +88,19 @@ For the most part, all the rest will work just fine, but just to be safe I insta
 sudo pacman -S powertop acpid
 ```
 
-I am happy to report that I can close the notebook's lid and the OS will properly suspend, and when I open it up it comes back from sleep, saving battery and saving me the trouble of having to reboot every day.
+I am happy to report that I can close the notebook's lid and the OS will properly suspend. When I open it up it comes back from sleep, saving battery and saving me the trouble of having to reboot every day.
 
 ### Arch Distros - Manjaro to the rescue
 
-I am becoming an Arch enthusiast myself, but to tweak it to work on a modern notebook is just too much work. I don't recommend trying if you're in a hurry. I tried [Arch Anywhere](https://arch-anywhere.org/), but it can't even go through the disk partitioning stage (it doesn't like the SSD or SATA setup). I tried [Antergos](https://antergos.com/) but for some reason Gnome Online Accounts didn't work properly there, even if I try to reinstall it. Finally I settled for [Manjaro](https://manjaro.org/), which installed and worked without any major issues.
+I am becoming an Arch enthusiast myself, but to tweak it to work on a modern notebook is just too much work. I don't recommend trying if you're in a hurry. I tried [Arch Anywhere](https://arch-anywhere.org/), but it can't even go through the disk partitioning stage (it doesn't like the SSD or SATA setup). I tried [Antergos](http://web.archive.org/web/20170205034235/https://antergos.com/) but for some reason Gnome Online Accounts didn't work properly there, even if I try to reinstall it. Finally I settled for [Manjaro](https://manjaro.org/), which installed and worked without any major issues.
 
 There are several distros based on Arch. Arch Anywhere and Antergos are mostly Arch "installers" where the main repository sources are still vanilla Arch and they try to make the install process easier than you having to find your way through a bare bone command line shell.
 
-Manjaro is more of an independent distro, where the main sources point to Manjaro first, so they can test the most recent packages and hold on to them for a bit longer so rogue packages don't break your system too often. But you still have raw access to AUR packages. The main selling point being a **much** better installer with a more sophisticated auto-partitioning software than Arch Anywhere and their own Hardware Detection software [MHWD](https://wiki.manjaro.org/index.php?title=Manjaro_Hardware_Detection_Overview).
+Manjaro is more of an independent distro. The main sources point to Manjaro first, so they can test the most recent packages and hold on to them for a bit longer so rogue packages don't break your system too often. But you still have raw access to AUR packages. The main selling point being a **much** better installer with a more sophisticated auto-partitioning software than Arch Anywhere and their own Hardware Detection software [MHWD](https://wiki.manjaro.org/index.php?title=Manjaro_Hardware_Detection_Overview).
 
 For the most part it did work properly although I still had to tweak the Graphics configuration as it opts for the open source Nouveau drivers first. Trust me: opt for the proprietary binaries.
 
-If you're also a software developer, you will want to read my [previous post on Arch](http://www.akitaonrails.com/en/2017/01/10/arch-linux-a-melhor-distro-de-todas).
+If you're also a software developer, you will want to read my [previous post on Arch](http://www.akitaonrails.com/en/2017/01/10/arch-linux-best-distro-ever).
 
 ### Optimus Hybrid Graphics
 
@@ -112,7 +120,7 @@ After you have it all installed, it's usually a matter of doing:
 primusrun kdenlive
 ```
 
-For example, to load the video editor Kdenlive to use OpenGL through the Nvidia GPU. Or to run [Steam through Wine](https://forum.manjaro.org/t/newbie-questions-about-hybrid-nvidia-and-intel-gpu-drives-tutorial/2974/26):
+For example, to load the video editor Kdenlive to use OpenGL through the Nvidia GPU. Or to run [Steam through Wine](http://web.archive.org/web/20170220054700/https://forum.manjaro.org/t/newbie-questions-about-hybrid-nvidia-and-intel-gpu-drives-tutorial/2974/26):
 
 ```
 primusrun wine ~/.wine/drive_c/Program\ Files\ (x86)/Steam/Steam.exe
@@ -126,7 +134,7 @@ sudo mhwd -r pci video-hybrid-intel-nouveau-bumblebee
 sudo mhwd -i pci video-hybrid-intel-nvidia-bumblebee
 ```
 
-Again, I am considering the XPS 9550 which has the Intel-Nvidia Optimus/hybrid configuration. Read Manjaro's [Configuring Graphics](https://wiki.manjaro.org/index.php/Configure_Graphics_Cards) page on the subject.
+Again, I am considering the XPS 9550 which has the Intel-Nvidia Optimus/hybrid configuration. Read Manjaro's [Configuring Graphics](http://web.archive.org/web/20170517195417/https://wiki.manjaro.org/index.php/Configure_Graphics_Cards) page on the subject.
 
 I did however stumble upon a strange problem. I am using **Linux 4.9** kernel:
 
@@ -222,7 +230,7 @@ OpenGL ARG_SYNC:  true
 OpenGL OpenGLES:  false
 ```
 
-If I start it without Primerun, it will first detect the Intel graphics:
+If I start it without Primusrun, it will first detect the Intel graphics:
 
 ```
 $ kdenlive
@@ -240,7 +248,7 @@ OpenGL OpenGLES:  false
 
 I am not entirely sure, but I believe Kdenlive uses OpenGL to show you real-time previews of the effects you're applying to the video tracks, and that can probably be syphoned through primus into the secondary Nvidia card as well.
 
-Actually Kdenlive, like it's competitor OpenShot, both use the [MLT Multimedia Framework](https://www.mltframework.org/) - the engine for non-linear video editing. Finally, MLT uses [movit](https://movit.sesse.net/), which is a high-performance, high-quality video filters for the GPU. The `pacman` install command I mentioned before takes care of installing those optional packages.
+Actually Kdenlive, like its competitor OpenShot, both use the [MLT Multimedia Framework](https://www.mltframework.org/), the engine for non-linear video editing. Finally, MLT uses [movit](https://movit.sesse.net/), which is a high-performance, high-quality video filters for the GPU. The `pacman` install command I mentioned before takes care of installing those optional packages.
 
 ![Kdenlive](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/616/Screenshot_from_2017-01-31_18-29-38.png)
 
@@ -256,7 +264,7 @@ Then, you can use the ported plugins through the `Tools - GEGL Operation`:
 
 And if you're a professional photographer, you will want to install [Darktable](http://www.darktable.org/), which is the closest you will get to Apple Aperture or Adobe Lightroom. It's actually quite nice looking and you will be able to properly retouch your photos.
 
-Darktable automatically detects the Nvidia driver and you don't need to run it through Primerun or using any special flag.
+Darktable automatically detects the Nvidia driver. You don't need to run it through Primusrun or use any special flag.
 
 ![Darktable](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/617/Screenshot_from_2017-01-31_18-31-04.png)
 
