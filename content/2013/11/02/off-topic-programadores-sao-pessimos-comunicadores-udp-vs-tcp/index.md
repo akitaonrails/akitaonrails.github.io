@@ -2,6 +2,7 @@
 title: "[Off-Topic] Programadores são péssimos Comunicadores (UDP vs TCP)"
 date: '2013-11-02T13:49:00-02:00'
 slug: off-topic-programadores-sao-pessimos-comunicadores-udp-vs-tcp
+translationKey: off-topic-programadores-sao-pessimos-comunicadores-udp-vs-tcp
 description: "Usando UDP e TCP como metáfora, o texto diz que programadores confundem informar com comunicar. Projetos reais exigem confirmar conexão, contexto, ordem, entendimento e entrega da mensagem."
 tags:
 - comunicacao
@@ -10,43 +11,45 @@ tags:
 draft: false
 ---
 
-Nós, programadores, vivemos na Matrix: achamos que sabemos o que estamos fazendo e que o resto do mundo é idiota demais para nos entender. Afinal, todos sabemos ir num Github, ler código, discutir no Hacker News e no Reddit e o resto do mundo só sabe postar no Instagram e no Facebook. Portanto, _obviamente_ somos melhores e quem não nos entende é que deve se esforçar para mudar.
+Nós, programadores, vivemos na Matrix: achamos que sabemos o que estamos fazendo e que o resto do mundo é idiota demais para nos entender. Afinal, todos sabemos entrar num Github, ler código, discutir no Hacker News e no Reddit, enquanto o resto do mundo só sabe postar no Instagram e no Facebook. Portanto, _obviamente_ somos melhores, e quem não nos entende é que deve se esforçar para mudar.
 
-Tendo vivido em todos os lados por muito tempo tenho uma novidade para vocês: programadores são **péssimos** comunicadores. Existe uma impedância de comunicação que está se tornando seriamente uma incapacidade. A impressão que temos nas comunidades de programação é que o código é a única linguagem universal. Só que _"show me the code"_ não é tudo. Algum tempo atrás eu [respondi no Quora](https://www.quora.com/Software-Engineering/What-is-the-hardest-thing-you-do-as-a-software-engineer/answer/Fabio-Akita?share=1) que a coisa mais difícil para todo Engenheiro de Software entender é que 90% dos problemas de um projeto não se resolvem com código.
+Tendo vivido em todos os lados por muito tempo, tenho uma novidade para vocês: programadores são **péssimos** comunicadores. Existe uma impedância de comunicação que está virando uma incapacidade séria. A impressão dentro das comunidades de programação é que o código é a única linguagem universal.
 
-Sem querer generalizar, mas só para ilustrar: no mundo open source (para quem participa) dá a impressão que é o contrário, mas note que a grande maioria faz pequenas contribuições, esporadicamente, e mesmo quem participa mais ativamente, ainda assim é uma experiência fragmentada. De fato o software estará pronto só quando estiver pronto. E com isso a grande maioria dos projetos open source, na verdade, fracassa. 
+Só que _"show me the code"_ não é tudo. Algum tempo atrás eu [respondi no Quora](https://www.quora.com/Software-Engineering/What-is-the-hardest-thing-you-do-as-a-software-engineer/answer/Fabio-Akita?share=1) que a coisa mais difícil para todo Engenheiro de Software entender é que 90% dos problemas de um projeto não se resolvem com código.
 
-Para cada um JQuery que dá certo, dezenas de outras bibliotecas Javascript nem são reconhecidas - mesmo tendo alguns aspectos tecnicamente melhores. Os grandes e melhor coordenados, e que têm força bruta (colaboradores de sobra), costuma andar melhor. Mas não é eficiente, apenas aparenta ser. E os que são grandes demonstram uma organização bem diferenciada, com datas de lançamento, roadmap de features e começa a convergir para o que conhecemos como "projetos" de verdade.
+Sem querer generalizar, só para ilustrar: no mundo open source dá a impressão de que é o contrário. Mas note que a grande maioria faz pequenas contribuições, esporádicas, e mesmo quem participa mais ativamente ainda vive uma experiência fragmentada. O software fica pronto só quando fica pronto. E, no fim, a grande maioria dos projetos open source fracassa.
 
-No mundo real, não temos nem tanto tempo sobrando, nem tanta gente sobrando, os riscos diretos são muito maiores, e queremos ter mais controle sobre os resultados. Não vou nem entrar no mérito das melhores maneiras, mas fundamentalmente, no mundo real comunicação é a diferença entre fracasso e sucesso.
+Para cada jQuery que dá certo, dezenas de outras bibliotecas Javascript nem são reconhecidas, mesmo tendo alguns aspectos tecnicamente melhores. Os grandes e melhor coordenados, com força bruta e colaboradores de sobra, costumam andar melhor. Só que força bruta apenas aparenta eficiência. E os que crescem mostram uma organização bem diferente, com datas de lançamento e roadmap de features, começando a convergir para o que conhecemos como "projetos" de verdade.
+
+No mundo real, o tempo é curto, as pessoas são poucas, os riscos diretos são muito maiores e queremos mais controle sobre os resultados. Não vou entrar no mérito das melhores maneiras, mas, no fundo, no mundo real a comunicação é a diferença entre o fracasso e o sucesso.
 
 ## Informar não é Comunicar!
 
-A primeira coisa que você precisa entender é o seguinte: só porque a informação "existe" ou você colocou em algum lugar compartilhado, isso não é comunicar.
+A primeira coisa a entender é simples: só porque a informação "existe", ou você a colocou em algum lugar compartilhado, isso não significa que você comunicou.
 
-Comunicação tem 4 pontas: o comunicador, o recipiente, a mensagem e o meio de transmissão. Os programadores normalmente assumem 2: o comunicador (ele mesmo) e a mensagem, o resto é ignorado. Vamos definir isso melhor:
+A comunicação tem 4 pontas: o comunicador, o recipiente, a mensagem e o meio de transmissão. Os programadores normalmente assumem só 2, o comunicador (ele mesmo) e a mensagem, e ignoram o resto. Vamos definir isso melhor:
 
 <blockquote>
 "Comunicação só acontece quando o recipiente recebe e entende a mensagem. Se isso não aconteceu, não existiu comunicação."
 </blockquote>
 
-Vamos descer um nível e falar em "geek": existe um cliente, um servidor, um protocolo e um meio de transmissão. Se você empacotou a mensagem de acordo com o protocolo, abriu a conexão com o servidor, tentou enviar a mensagem, mas ele não terminou e voltou com erro, nós sabemos que a comunicação não existiu.
+Vamos descer um nível e falar em "geek": existe um cliente, um servidor, um protocolo e um meio de transmissão. Se você empacotou a mensagem conforme o protocolo, abriu a conexão com o servidor e tentou enviar, mas a transmissão não terminou e voltou com erro, sabemos que a comunicação não aconteceu.
 
-No mundo de [TCP/IP](http://packetlife.net/blog/2010/jun/7/understanding-tcp-sequence-acknowledgment-numbers/), primeiro mandamos um SYN (que inicia a comunicação), recebemos de volta um SYN-ACK (acknowledgement do servidor dizendo que recebeu o SYN) e enviamos um ACK para indicar conexão estabelecida. Realizamos esse handshake e conseguimos sequenciar o envio e recebimento de pacotes de forma que garantimos que o que foi enviado foi inteiramente recebido.
+No mundo do [TCP/IP](http://web.archive.org/web/20131105125105/http://packetlife.net:80/blog/2010/jun/7/understanding-tcp-sequence-acknowledgment-numbers/), primeiro mandamos um SYN, que inicia a comunicação. Recebemos de volta um SYN-ACK, o acknowledgement do servidor dizendo que recebeu o SYN, e enviamos um ACK para indicar que a conexão está estabelecida. Com esse handshake, conseguimos sequenciar o envio e o recebimento dos pacotes e garantir que tudo o que foi enviado foi inteiramente recebido.
 
-Nessa metáfora, eu diria que a maioria dos programadores entende melhor UDP, eles enviam datagramas de informação e não se preocupam se o recipiente recebeu todos os pacotes, simplesmente vai enviando. Dá mesmo a impressão que programadores pensam UDP, olhem só:
+Nessa metáfora, eu diria que a maioria dos programadores entende melhor o UDP. Eles enviam datagramas de informação e não se preocupam se o recipiente recebeu todos os pacotes, simplesmente vão enviando. Dá mesmo a impressão de que programadores pensam em UDP, olhem só:
 
 * não querem esperar um handshake pra garantir que a conexão foi estabelecida
 * mandam pacotes pequenos de informações fragmentadas, pouco overhead de protocolo
-* TCP se preocupa com [congestion control](http://en.wikipedia.org/wiki/TCP_congestion-avoidance_algorithm) e faz throttling, UDP vai mandando mesmo se o roteador dropar os pacotes
+* TCP se preocupa com [congestion control](https://en.wikipedia.org/wiki/TCP_congestion-avoidance_algorithm) e faz throttling, UDP vai mandando mesmo se o roteador dropar os pacotes
 * se um pacote se perde, UDP não se preocupa em reenviar
 * pensa que parece mais eficiente fazer broadcast e multicast
 
-Funciona bem para comunicação para grandes grupos, broadcast, onde se uma porcentagem receber a mensagem já é suficiente. Eu diria que UDP até que funciona bem no mundo fragmentado de open source, mas num mundo onde estabelecer uma conexão e garantir a entrega da mensagem é importante, vamos de TCP.
+Funciona bem para comunicação com grandes grupos, em broadcast, onde basta uma porcentagem receber a mensagem. Eu diria que o UDP funciona até bem no mundo fragmentado do open source. Mas num mundo onde estabelecer conexão e garantir a entrega da mensagem importa, vamos de TCP.
 
-TCP funciona porque mesmo com uma conexão ruim, mesmo com um servidor meia boca, você controla o stream de dados e garante que todos os dados foram recebidos, na sequência correta, e o 100% do que foi enviado foi recebido. Em UDP, se o meio de transmissão é ruim, se o servidor recebe a informação corrompida, ele não se importa, simplesmente vai enviando.
+O TCP funciona porque, mesmo com uma conexão ruim, mesmo com um servidor meia-boca, você controla o stream de dados e garante que tudo chegou, na sequência correta, com 100% do que foi enviado recebido. No UDP, se o meio de transmissão é ruim, se o servidor recebe a informação corrompida, ele não se importa e continua enviando.
 
-Ambos os protocolos têm utilidade, porém se precisamos ter certeza que a informação foi recebida corretamente e integralmente, precisamos usar TCP. Eu diria que no mundo open source, não tem problema você usar UDP pra se comunicar, diminuir a latência e ser mais "eficiente". Mas no mundo não-open source (e isso significa não só software, mas fora de software), precisamos ser mais TCP. As vantagens do TCP?
+Ambos os protocolos têm utilidade. Mas, se precisamos ter certeza de que a informação foi recebida certa e por inteiro, precisamos do TCP. No mundo open source, tudo bem usar UDP para se comunicar, baixar a latência e ser mais "eficiente". No mundo fora do open source, e isso vale para muito além de software, precisamos ser mais TCP. As vantagens do TCP?
 
 * garantir que a conexão foi estabelecida antes de mandar informações
 * garantir a ordem da informação, rearranjando pacotes se necessário
@@ -55,6 +58,6 @@ Ambos os protocolos têm utilidade, porém se precisamos ter certeza que a infor
 * checagem de erro, pra garantir que a informação não foi corrompida
 * "acknowledment", garantir que o outro lado recebeu e entendeu a informação
 
-Vêem a diferença? Parece que demora mais, mas é aquela velha história: entregar rápido mas ter que ficar entregando diversas vezes acaba ficando mais lento do que garantindo que na primeira vez foi entendido. É que nem fazer código sem testes, parece que é mais rápido, mas depois vêm as consequências.
+Veem a diferença? Parece que demora mais, mas é aquela velha história: entregar rápido e depois ter que reentregar várias vezes acaba saindo mais lento do que garantir que na primeira vez a mensagem foi entendida. É que nem escrever código sem testes, parece mais rápido, mas depois vêm as consequências.
 
-Portanto, programadores, ajustem seus protocolos, sejam mais TCP do que UDP.
+Portanto, programadores, ajustem seus protocolos. Sejam mais TCP do que UDP.
