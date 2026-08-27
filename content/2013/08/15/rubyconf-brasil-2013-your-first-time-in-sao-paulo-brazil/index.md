@@ -11,7 +11,7 @@ tags:
 draft: false
 ---
 
-*Atualização (24/08/2014):* Acabei de publicar um [artigo complementar](http://www.akitaonrails.com/en/2014/08/24/off-topic-primeira-vez-em-sao-paulo-o-que-fazer/) a este, destacando os pontos turísticos da cidade.
+*Atualização (24/08/2014):* Acabei de publicar um [artigo complementar](http://www.akitaonrails.com/2014/08/24/off-topic-primeira-vez-em-sao-paulo-o-que-fazer/) a este, destacando os pontos turísticos da cidade.
 
 *Atualização (02/2014):* Este artigo foi escrito para a Rubyconf Brasil 2013, então não se confunda com o contexto.
 
