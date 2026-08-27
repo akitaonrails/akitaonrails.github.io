@@ -2,6 +2,7 @@
 title: "[Off-Topic] Obediência à Autoridade"
 date: '2009-11-08T18:50:00-02:00'
 slug: off-topic-obediencia-a-autoridade
+translationKey: off-topic-obediencia-a-autoridade
 description: "A partir de Asch e Milgram, argumento que conformidade e obediência enfraquecem equipes ágeis e defendo organizações descentralizadas, com líderes e arquitetos reconhecidos por mérito."
 tags:
 - psicologia
@@ -15,7 +16,9 @@ draft: false
 
 **Atualização: 10/11** Acrescentei uma última seção sobre um assunto recente do Fred Brooks.
 
-Nas minhas últimas palestras sobre organizações eu mostro um vídeo do [experimento de Asch](http://en.wikipedia.org/wiki/Asch_conformity_experiments). Esse experimento demonstra como as pessoas entram em conformidade com um grupo, mesmo sabendo que o grupo pode estar errado. Mas por diversas razões, elas se conformam. Para nós agilistas, pense numa equipe realizando Planning Poker ou Retrospectiva. Quando a maior parte da equipe dá uma resposta, a minoria “tende” a ir com a opinião do grupo. Claro, alguns mantém sua posição mais firmemente, mas não é o normal. O normal é nos conformarmos, e isso deve ser levado em consideração. Assistam para entenderem:
+Nas minhas últimas palestras sobre organizações eu mostro um vídeo do [experimento de Asch](https://en.wikipedia.org/wiki/Asch_conformity_experiments). Ele demonstra como as pessoas entram em conformidade com um grupo, mesmo sabendo que o grupo pode estar errado. Por diversas razões, elas se conformam mesmo assim.
+
+Para nós, agilistas, pense numa equipe fazendo Planning Poker ou Retrospectiva. Quando a maior parte responde de um jeito, a minoria tende a ir com a opinião do grupo. Alguns mantêm a posição com mais firmeza, mas o padrão é a conformidade, e isso precisa ser levado em conta. Assistam para entender:
 
 <object width="600" height="338"><param name="allowfullscreen" value="true">
 <param name="allowscriptaccess" value="always">
@@ -24,12 +27,13 @@ Nas minhas últimas palestras sobre organizações eu mostro um vídeo do [exper
 
 [Experimento da Conformidade de Asch](http://vimeo.com/7592683) from [Fabio Akita](http://vimeo.com/akitaonrails) on [Vimeo](http://vimeo.com).
 
-Mais do que isso, nós funcionamos atualmente em organizações com estruturas antiquadas. Hierarquias, cargos, chefes, procedimentos, políticas. Tudo isso – como eu falo nas palestras – não funciona hoje em dia. Elas apenas limitam a organização como um todo. Traz resultados de curto prazo? Com certeza, por isso todos ainda usam. Em longo prazo, cria uma organização doente.
+Mais do que isso, funcionamos hoje em organizações com estruturas antiquadas. Hierarquias, cargos, chefes, procedimentos, políticas. Tudo isso, como eu falo nas palestras, não funciona mais e só limita a organização como um todo. Traz resultado de curto prazo? Com certeza, por isso todo mundo ainda usa. No longo prazo, cria uma organização doente.
 
+Um dos fatores tem a ver com autoridade. Nesse tipo de organização, quando existe um "chefe", o efeito é simples: a responsabilidade pela tarefa executada migra do subordinado para quem deu a ordem. É o que todo mundo já ouviu antes: _"eu só estava seguindo ordens"_, ou _"eu só trabalho aqui"_.
 
-Um dos fatores é a respeito de autoridade. Em organizações desse tipo, quando se tem um “chefe”, o efeito é: _“a responsabilidade das tarefas executadas não é do subordinado, mas do chefe que dá a ordem.”_ É o que todos nós já ouvimos antes: _“eu estava apenas seguindo ordens”_, ou _“eu só trabalho aqui”_. Mesmo quando se está executando tarefas hediondas (nazistas torturando judeus, por exemplo), uma teoria é que as pessoas em si poderiam até entender que o que estavam fazendo estava “errado” mas como a decisão da execução saiu de alguma autoridade, nós não sentimos o mesmo remorso ou pensamos melhor em alternativas ou mesmo de simplesmente parar a execução.
+Isso vale até para atrocidades (nazistas torturando judeus, por exemplo). Uma teoria diz que a pessoa até entende que aquilo está errado, mas como a decisão veio de uma autoridade, ela não sente o mesmo remorso, não pensa em alternativas, nem cogita simplesmente parar.
 
-Quem demonstrou isso foi [Stanley Milgram](http://en.wikipedia.org/wiki/Milgram_experiment), nos anos 60. A BBC refez o mesmo experimento e você pode assistir ao meu resumo legendado:
+Quem demonstrou isso foi [Stanley Milgram](https://en.wikipedia.org/wiki/Milgram_experiment), nos anos 60. A BBC refez o mesmo experimento e você pode assistir ao meu resumo legendado:
 
 <video controls>
 <source src="https://s3.us-east-2.amazonaws.com/blip.tv/Akitaonrails-StanleyMilgramAutoridade919.mp4">
@@ -42,23 +46,29 @@ Estes são todos perigos reais, que acontecem no nosso dia-a-dia:
 - as pessoas não gostam de parecer que estão erradas, portanto não arriscam
 - as pessoas obedecem autoridades, sejam chefes, sejam [pessoas com status maior](http://www.akitaonrails.com/2009/11/04/off-topic-o-problema-das-credenciais) de alguma forma
 
-Que é um dos motivos pelos quais muitos dos projetos de agilidade, em particular, falham. Não adianta simplesmente dizer: _“a equipe decide qual o melhor caminho”_, se ainda existe alguém com poder de veto. Se o veto for usado, apenas uma vez, ninguém mais da equipe vai levar qualquer coisa a sério. As organizações atuais limitam as pessoas, limitam seu possível potencial, limitam qualquer chance de motivação, limitam a individualização, enfim, transformam as pessoas em robôs. E quanto mais um indivíduo se conforma nessa estrutura, mais ele se torna amorfo, praticamente um pedaço de carne ambulante.
+Esse é um dos motivos pelos quais tantos projetos de agilidade falham. Não adianta dizer _"a equipe decide o melhor caminho"_ se ainda existe alguém com poder de veto. Basta o veto ser usado uma vez para ninguém mais levar nada a sério.
 
-Portanto, a única saída, é **eliminar** as hierarquias de poder. Assista minha introdução sobre essa idéia na palestra que dei no Rails Summit 2009 (créditos do vídeo para @agaelebe, obrigado por ter filmado):
+As organizações atuais limitam as pessoas, o potencial delas, qualquer chance de motivação, qualquer individualização, e no fim transformam gente em robô. Quanto mais o indivíduo se conforma a essa estrutura, mais ele fica amorfo, quase um pedaço de carne ambulante.
+
+Portanto, a única saída é **eliminar** as hierarquias de poder. Assista minha introdução sobre essa ideia na palestra que dei no Rails Summit 2009 (créditos do vídeo para @agaelebe, obrigado por ter filmado):
 
 <embed src="http://blip.tv/play/AYGn3UQC" type="application/x-shockwave-flash" width="480" height="390" allowscriptaccess="always" allowfullscreen="true"></embed>
 
-Organizações, enquanto sistemas clássicos, fechados, tendem sempre a estagnar e entrar em colapso. Pode levar 10 anos, mas é o que vai acontecer, naturalmente. Sistemas complexos adaptativos, por outro lado, tendem a continuar em evolução, aprendendo com as pequenas falhas, refinando seus processos naturalmente. Mas isso exige heterarquias, não hierarquias, grupos formados espontaneamente, com controle descentralizado. Difícil de engolir? Concordo plenamente, por isso mesmo quem hoje está em posições de autoridade deveriam ser um pouco mais letrados antes de executar as coisas. Aliás, este é outro ponto:
+Organizações, enquanto sistemas clássicos e fechados, tendem a estagnar e colapsar. Pode levar dez anos, mas é o que acontece, naturalmente. Sistemas complexos adaptativos, ao contrário, seguem em evolução, aprendem com as pequenas falhas e refinam os próprios processos.
 
-- as pessoas de hoje lidam com o conhecimento de forma superficial: elas preferem “fazer” em vez de “perder tempo” em aprender.
+Isso exige heterarquias no lugar de hierarquias, grupos formados espontaneamente, com controle descentralizado. Difícil de engolir? Concordo, e por isso mesmo quem está hoje em posição de autoridade deveria ser um pouco mais letrado antes de sair executando. Aliás, esse é outro ponto:
 
-Dan Pink apresentou no TED sobre motivação. Primeiro, relembrando: ninguém consegue motivar pessoas, por isso não tentem. Pessoas se motivam sozinhas ou não se motivam. O máximo que empresas e gerentes conseguem fazer é desmotivá-las. Por isso o principal é parar de atrapalhar. O que o Dan coloca é o óbvio: as empresas continuam usando técnicas arcaicas baseadas mais em folclore do que em ciência. O sistema de recompensas e punições não funciona. Entenda:
+- as pessoas de hoje lidam com o conhecimento de forma superficial: elas preferem "fazer" em vez de "perder tempo" aprendendo.
+
+Dan Pink deu uma palestra no TED sobre motivação. Relembrando o ponto de partida: ninguém consegue motivar outra pessoa, então nem tentem. As pessoas se motivam sozinhas ou não se motivam, e o máximo que empresa e gerente conseguem é desmotivar. O principal, portanto, é parar de atrapalhar.
+
+O que o Dan mostra é o óbvio: as empresas continuam usando técnicas arcaicas, baseadas mais em folclore do que em ciência. O sistema de recompensa e punição não funciona. Entenda:
 
 <embed src="http://blip.tv/play/AYHmwhMA" type="application/x-shockwave-flash" width="640" height="390" allowscriptaccess="always" allowfullscreen="true"></embed>
 
-Ele afirma que as pessoas precisam de 3 coisas para se motivarem: Autonomia – o desejo de controlar as próprias vidas -; Maestria – o desejo de se tornar cada vez melhor no que faz -; Propósito – fazer algo maior do que elas mesmas. O que ele descreve, na realidade, é nada mais nada menos do que Agentes dinâmicos, interativos em Sistemas Complexos Adaptativos. Agentes interagem entre si, cooperam e competem, evoluem ao redor de “Atratores Estranhos” que é o propósito ou identidade do grupo, empresa.
+Ele afirma que as pessoas precisam de três coisas para se motivar: Autonomia, o desejo de controlar a própria vida; Maestria, o desejo de ficar cada vez melhor no que faz; e Propósito, fazer parte de algo maior do que elas mesmas. O que ele descreve, no fundo, são Agentes dinâmicos e interativos de um Sistema Complexo Adaptativo. Esses agentes interagem entre si, cooperam e competem, e evoluem ao redor de "Atratores Estranhos", que são o propósito ou a identidade do grupo ou da empresa.
 
-Agilidade é uma evolução natural dos processos antigos de gestão. [Organizações Democráticas](http://www.worldblu.com/orgdemo/whatis.php) são o passo de mais longo e mais abrangente numa organização.
+Agilidade é uma evolução natural dos processos antigos de gestão. [Organizações Democráticas](https://web.archive.org/web/20091118002826/http://www.worldblu.com/orgdemo/whatis.php) são o passo mais longo e mais abrangente numa organização.
 
 <object width="425" height="344"><param name="movie" value="http://www.youtube.com/v/qFpk1B-DS38&hl=en&fs=1&">
 <param name="allowFullScreen" value="true">
@@ -71,27 +81,32 @@ Este artigo é apenas uma introdução. Releia meus artigos [off-topic](http://a
 
  ![](http://s3.amazonaws.com/akitaonrails/assets/2009/11/10/brooks_original.jpg)
 
-Tive o grande prazer de assistir o Fred Brooks no Latinoware deste ano. Devo colocar que fiquei um pouco frustrado pela platéia não-presente, pois a palestra do Fred, que deveria estar cheia, tinha muito pouca gente, demonstrando que a maioria nem sabe sobre ele ou não tem interesse no assunto, o que é bem triste.
+Tive o prazer de assistir ao Fred Brooks no Latinoware deste ano. Fiquei um pouco frustrado com a plateia rala: a palestra dele deveria estar cheia e tinha pouquíssima gente. Sinal de que a maioria nem sabe quem ele é ou não tem interesse no assunto, o que é bem triste.
 
-O Fred fez uma palestra a respeito de uns 2 capítulos do livro que está escrevendo. Portanto fica a ressalva que ele não apresentou o conteúdo completo e por isso muitas coisas que eu especular podem estar explicadas nos outros capítulos.
+O Fred falou sobre uns dois capítulos do livro que está escrevendo. Fica a ressalva de que ele não apresentou o conteúdo completo, então muita coisa que eu especular aqui pode estar explicada nos outros capítulos.
 
-O tema foi sobre a importância de “alguém” que seja a Guia-Mestra de um projeto. Ele afirma que projetos, especialmente os grandes, precisam de um Arquiteto-Chefe ou coisa parecida para manter a integridade do produto final. Ele deu exemplos como o da construção de um avião por equipes separadas, onde havia pessoas que se comunicavam com elas o tempo todo para garantir que o todo permaneceria integrado e consistente.
+O tema foi a importância de "alguém" que seja a Guia-Mestra de um projeto. Ele afirma que projetos, especialmente os grandes, precisam de um Arquiteto-Chefe ou algo parecido para manter a integridade do produto final. Deu exemplos como a construção de um avião por equipes separadas, com pessoas conversando com todas elas o tempo todo para garantir que o conjunto permanecesse íntegro e consistente.
 
-Eu concordo com essa explicação. Ela é satisfatória e de fato arquiteturas complexas de sistema não aparecem “do nada” de diversas pessoas ou equipes trabalhando separadas.
+Eu concordo com a explicação. Ela é satisfatória, e de fato arquiteturas complexas de sistema não aparecem "do nada" a partir de várias pessoas ou equipes trabalhando separadas.
 
-Porém, existe um **enorme** caveat aqui. Dependendo de como você interpretar essa explicação, se você tiver o cargo de “Arquiteto” ou for certificado em “Arquitetura de Sistemas”, pode se sentir altamente justificado por uma celebridade como Fred dizendo que arquitetos são vitais a um projeto. Bem, você está **errado**.
+Existe, porém, um **enorme** caveat aqui. Dependendo de como você interpretar essa explicação, se você tem o cargo de "Arquiteto" ou é certificado em "Arquitetura de Sistemas", pode se sentir muito justificado por uma celebridade como o Fred dizendo que arquitetos são vitais a um projeto. Pois você está **errado**.
 
-Um arquiteto é nada mais nada menos do que um líder. Isso não é um cargo. É uma condição ganha por mérito, não por posição, certificação, ordem ou coisa parecida. Um exemplo: a kernel do Linux. Ninguém assinalou o Linus Torvalds ao posto de “ditador benevolente” do projeto, ele simplesmente emergiu de uma necessidade, as pessoas aceitaram sua liderança e, se estivessem muito descontentes, poderiam apenas ter feito um fork e um novo líder assumiria.
+Um arquiteto é, no fim, um líder, uma condição conquistada por mérito. Posição, certificação ou ordem de alguém não entram nessa conta. Pega o exemplo do kernel do Linux. Ninguém nomeou o Linus Torvalds ao posto de "ditador benevolente" do projeto. Ele emergiu de uma necessidade, as pessoas aceitaram sua liderança e, se ficassem muito descontentes, bastaria fazer um fork para outro líder assumir.
 
-Líderes de verdade emergem, não são colocados. À medida que um projeto como esse cresce, outros líderes emergem naturalmente em cada parte do projeto. Surgem o que o Linus chama de seus “tenentes”, pessoas como Andrew Morton já foi.
+Líderes de verdade emergem por conta própria. Conforme um projeto assim cresce, outros líderes surgem naturalmente em cada parte dele. Aparecem os que o Linus chama de seus "tenentes", como o Andrew Morton já foi.
 
-Isso é importante: não é um posto de autoridade ditado de cima para baixo. É uma condição adquirida de baixo para cima. Mais do que isso, líderes evangelizam seus pontos de vista, convencem as pessoas, até certo ponto até podem obrigar certas posições, mas em última instância, em existindo **abuso** dessa posição a equipe ao redor pode e deve reforçar seus pontos, seus valores ou ao final de uma briga sem vencedores, escolher por sair do projeto – e não se conformar e continuar, como mostrei acima nos experimentos de Asch e Milgram.
+Esse ponto é importante: liderança se adquire de baixo para cima, e não é um posto de autoridade ditado de cima para baixo. Líderes evangelizam seu ponto de vista, convencem as pessoas e, até certo grau, chegam a impor algumas posições.
 
-Isso funciona extremamente bem no mundo open source porque justamente se trata de um ambiente distribuído, sem hierarquias fixas, sem cargos fixos, onde as pessoas podem se movimentar entre os diversos setores do projeto, onde existe discussão, onde opiniões são levadas em consideração, onde novas idéias são testadas e experimentadas. É o extremo oposto de como se faz software tradicionalmente numa empresa. Uma descrição mais densa está no clássico [The Cathedral and the Bazaar](http://catb.org/~esr/writings/homesteading/), de Eric Raymond.
+Mas quando existe **abuso** dessa posição, a equipe em volta pode e deve reforçar seus valores. E se a briga terminar sem vencedores, o caminho é sair do projeto, em vez de se conformar e seguir, como os experimentos de Asch e Milgram mostram.
 
-Alguém, que se considera capaz de começar a resolver um determinado problema, começa assumindo as rédeas. As pessoas ao redor começam a enxergar valor nisso e podem começar a colaborar. A arquitetura inicial vai sofrendo revisões, mudanças e ela evolui. O “líder” desse projeto, provavelmente o autor, continua garantindo que a visão inicial continua e que mudanças propostas – que podem ser melhores que as suas – sejam devidamente incorporadas, em vez da retrógrada posição _“não fui eu quem fiz, portanto não aprovo.”_
+Isso funciona muito bem no mundo open source porque ele é um ambiente distribuído, sem hierarquias nem cargos fixos. As pessoas circulam entre os vários setores do projeto, existe discussão, as opiniões contam e novas ideias são testadas na prática. É o extremo oposto de como se faz software numa empresa tradicional. Uma descrição mais densa está no clássico [The Cathedral and the Bazaar](http://www.catb.org/~esr/writings/cathedral-bazaar/cathedral-bazaar/), de Eric Raymond.
 
-Entender o mundo open source é a chave para entender sobre agilidade e sobre organizações democráticas. Elas nasceram assim por causa das limitações do ambiente (pessoas espalhadas pelo mundo, voluntários, falta de contato físico, necessidade de manter a integridade do código, etc). E mais, liderança não é chefia. Um líder não tem o direito de apenas gritar ordens. Um verdadeiro líder é um [líder servil](http://en.wikipedia.org/wiki/Servant_leadership). Ele colabora e ajuda a equipe, ao contrário de mandar e dizer como fazer. Ele influencia, ele evangeliza, ele tenta expor mais pontos de vista, tenta buscar consenso. Às vezes precisa tomar decisões mais difíceis, como ir contra a maioria para garantir a integridade do projeto. Mas faça isso muitas vezes da maneira errada e a equipe deve demovê-lo de sua posição. [Inteligência Emocional](http://en.wikipedia.org/wiki/Emotional_intelligence), nessa posição, é tão ou mais importante do que mero QI.
+Alguém que se acha capaz de resolver um problema começa a assumir as rédeas. As pessoas em volta enxergam valor nisso e passam a colaborar. A arquitetura inicial vai sofrendo revisões e evolui. Esse "líder", em geral o autor, continua garantindo a visão inicial e incorpora as mudanças propostas, mesmo quando elas são melhores que as ideias dele, em vez de cair na posição retrógrada do _"não fui eu quem fez, então não aprovo."_
 
-Portanto, sim, projetos precisam de visões de integração. Mas, não, isso não justifica pessoas “assinaladas” autocraticamente como os “arquitetos”. Nos melhores projetos, essa posição irá emergir. Se a equipe não tem condição de emergir um líder e é necessário assinalar um, ela já está fundamentalmente quebrada. Boa sorte com esse projeto.
+Entender o mundo open source é a chave para entender agilidade e organizações democráticas. Elas nasceram assim por causa das limitações do ambiente: gente espalhada pelo mundo, voluntários, ausência de contato físico, necessidade de manter a integridade do código.
 
+Liderar é diferente de chefiar. Um líder não tem o direito de só gritar ordem. Um líder de verdade é um [líder servil](https://en.wikipedia.org/wiki/Servant_leadership): colabora e ajuda a equipe em vez de mandar e dizer como fazer. Ele influencia, evangeliza, expõe outros pontos de vista e busca consenso.
+
+Às vezes ele precisa tomar decisões mais duras, como ir contra a maioria para preservar a integridade do projeto. Mas se fizer isso da maneira errada vezes demais, a equipe deve tirá-lo da posição. Aqui, [Inteligência Emocional](https://en.wikipedia.org/wiki/Emotional_intelligence) importa tanto quanto, ou mais que, o mero QI.
+
+Então sim, projetos precisam de uma visão de integração. Isso não justifica, porém, nomear alguém autocraticamente como o "arquiteto". Nos melhores projetos, essa posição emerge sozinha. Se a equipe não consegue fazer um líder emergir e alguém precisa ser nomeado, ela já está fundamentalmente quebrada. Boa sorte com esse projeto.
