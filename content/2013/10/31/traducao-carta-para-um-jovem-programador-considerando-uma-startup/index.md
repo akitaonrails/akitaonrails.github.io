@@ -2,6 +2,7 @@
 title: "[Tradução] Carta para um Jovem Programador Considerando uma Startup"
 date: '2013-10-31T15:25:00-02:00'
 slug: traducao-carta-para-um-jovem-programador-considerando-uma-startup
+translationKey: traducao-carta-para-um-jovem-programador-considerando-uma-startup
 description: "Nesta tradução de Alex Payne, startups aparecem como meio, não destino: a cultura se padroniza, o VC busca retornos e o trabalho pode cobrar um preço alto nas relações. Propósito deve orientar a escolha."
 tags:
 - startups
@@ -11,11 +12,13 @@ tags:
 draft: false
 ---
 
-Recentemente compartilhei um artigo [criticando Lean Startup](https://www.facebook.com/akitaonrails/posts/10151953794484837?comment_id=27965547&offset=0&total_comments=3&notif_t=share_comment) - isso está se tornando um hobby. O grande [Alexandre Porcelli](https://www.facebook.com/alexandre.porcelli) compartilhou uma [palestra de ninguém menos que Alex Payne](https://www.youtube.com/watch?v=4Wb0CGGhjE4#t=0). 
+Recentemente compartilhei um artigo [criticando Lean Startup](https://www.facebook.com/akitaonrails/posts/10151953794484837?comment_id=27965547&offset=0&total_comments=3&notif_t=share_comment), e isso já está virando um hobby. O grande [Alexandre Porcelli](https://www.facebook.com/alexandre.porcelli) compartilhou uma [palestra de ninguém menos que Alex Payne](https://www.youtube.com/watch?v=4Wb0CGGhjE4#t=0).
 
-Alex Payne foi um dos engenheiros mais antigos do Twitter, eu o conheço por causa de Scala e seus posts sobre NoSQL e outros assuntos de tecnologia. Mas além de programador, escritor de livros, ele também é um experiente investidor em startups. Sua visão sobre startups neste ponto é similar à minha. Recomendo assistir a palestra, que se originou a partir de um post que ele publicou em seu blog cujo título é o mesmo deste post e cujo conteúdo resolvi traduzir em português porque acho que os Brasileiros precisam ouvir mais outro lado da moeda.
+Alex Payne foi um dos engenheiros mais antigos do Twitter. Eu o conheço por causa de Scala e dos seus posts sobre NoSQL e outros assuntos de tecnologia. Além de programador e autor de livros, ele é um investidor experiente em startups.
 
-Sem mais delongas, a partir daqui seguem as palavras do Alex:
+A visão dele sobre startups é parecida com a minha. Recomendo assistir a palestra, que nasceu de um post no blog dele com o mesmo título deste artigo. Resolvi traduzir esse post para o português porque os brasileiros precisam ouvir mais o outro lado da moeda.
+
+A partir daqui seguem as palavras do Alex:
 
 _Eu regularmente recebo e-mails de jovens, normalmente daqueles com interesse em programação, que estão tentando tomar decisões sobre escola e/ou seus futuros profissionais. Este post é para esses jovens._
 

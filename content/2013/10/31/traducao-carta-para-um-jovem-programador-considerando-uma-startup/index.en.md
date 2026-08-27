@@ -2,6 +2,7 @@
 title: "[Translation] Letter to a Young Programmer Considering a Startup"
 date: '2013-10-31T15:25:00-02:00'
 slug: traducao-carta-para-um-jovem-programador-considerando-uma-startup
+translationKey: traducao-carta-para-um-jovem-programador-considerando-uma-startup
 description: "In this translation by Alex Payne, startups appear as a means, not a destination: culture standardizes, VC seeks returns, and work can take a high toll on relationships. Purpose should guide the choice."
 tags:
 - startups
@@ -11,11 +12,13 @@ tags:
 draft: false
 ---
 
-Recently I shared an article [criticizing Lean Startup](https://www.facebook.com/akitaonrails/posts/10151953794484837?comment_id=27965547&offset=0&total_comments=3&notif_t=share_comment) — this is becoming a hobby. The great [Alexandre Porcelli](https://www.facebook.com/alexandre.porcelli) shared a [talk by no less than Alex Payne](https://www.youtube.com/watch?v=4Wb0CGGhjE4#t=0).
+Recently I shared an article [criticizing Lean Startup](https://www.facebook.com/akitaonrails/posts/10151953794484837?comment_id=27965547&offset=0&total_comments=3&notif_t=share_comment), and by now this is turning into a hobby. The great [Alexandre Porcelli](https://www.facebook.com/alexandre.porcelli) shared a [talk by none other than Alex Payne](https://www.youtube.com/watch?v=4Wb0CGGhjE4#t=0).
 
-Alex Payne was one of the oldest engineers at Twitter. I know him because of Scala and his posts on NoSQL and other tech subjects. But besides being a programmer and book author, he's also an experienced startup investor. His view on startups at this point is similar to mine. I recommend watching the talk, which originated from a post he published on his blog whose title is the same as this post and whose content I decided to translate into Portuguese because I think Brazilians need to hear more of the other side of the coin.
+Alex Payne was one of the earliest engineers at Twitter. I know him from Scala and his posts on NoSQL and other tech topics. Beyond being a programmer and a book author, he's a seasoned startup investor.
 
-Without further ado, from here on follow Alex's words:
+His view on startups lines up with mine. I recommend watching the talk, which grew out of a post on his blog with the same title as this article. I decided to translate that post into Portuguese because Brazilians need to hear more of the other side of the coin.
+
+From here on, these are Alex's words:
 
 _I regularly receive emails from young people, usually those interested in programming, who are trying to make decisions about school and/or their professional futures. This post is for those young people._
 
