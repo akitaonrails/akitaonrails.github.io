@@ -11,13 +11,13 @@ tags:
 draft: false
 ---
 
-I always talk bits and pieces about statistics and as a heavy [skeptic myself](http://www.akitaonrails.com/science), I believe I can think beyond the "common sense" that most people rely on. I'm very familiar with biases, skewed data, wrong questions leading to wrong answers.
+I'm forever talking bits and pieces about statistics. As a committed [skeptic myself](https://web.archive.org/web/20161005211959/http://www.akitaonrails.com/science), I believe I can think beyond the "common sense" that most people rely on. I'm very familiar with biases, skewed data, and wrong questions leading to wrong answers.
 
 I can probably pinpoint why a certain argument is wrong. But I am very incompetent the other way around: given a proper data collection, how to do proper exploratory data analysis? What are the correct methodologies for any given scenario? And of course, all the math involved.
 
-For example, I just posted 2 articles to try to shed some light on exactly that: most developers' "common sense" on dealing with data is to do primitive aggregations such as sums and averages. Start talking about "standard deviation" and you lost half of the developer population. Start talking about binomial or poisson distributions and you lost the remaining half. Now get into linear regression, bayesian statistics and almost everybody left the room already.
+I just posted 2 articles to shed some light on exactly that. Most developers' "common sense" on dealing with data is primitive aggregations such as sums and averages. Start talking about "standard deviation" and you lost half of the developer population. Start talking about binomial or Poisson distributions and you lost the remaining half. Now get into linear regression and bayesian statistics, and almost everybody left the room already.
 
-We live in the 21st century. [Every 60 seconds](http://www.smartinsights.com/internet-marketing-statistics/happens-online-60-seconds/) Facebook receives an extra 3.3 million new posts; YouTube receives 400 hours of videos; Instagram receives 55,555 uploaded photos; WhatsApp exchanges 44.4 million messages; even e-mail, more than 206 million of them are being sent. By the time you finish reading this post, you can multiply that amount by 5 to 10!
+We live in the 21st century. [Every 60 seconds](https://web.archive.org/web/20161109180927/http://www.smartinsights.com/internet-marketing-statistics/happens-online-60-seconds/), Facebook receives an extra 3.3 million new posts, YouTube receives 400 hours of videos, Instagram receives 55,555 uploaded photos, and WhatsApp exchanges 44.4 million messages. Even e-mail: more than 206 million of them are fired off. By the time you finish reading this post, you can multiply that amount by 5 to 10.
 
 > "We are drowning in information,
 
@@ -25,9 +25,9 @@ We live in the 21st century. [Every 60 seconds](http://www.smartinsights.com/int
 
 > – Various authors, original probably John Naisbitt
 
-I will spend a few weeks diving into [R](https://www.r-project.org/). Yes, many people will talk about Julia, but we can't deny the amazing body of knowledge, the experience, and the robust and extensive set of packages available for R, including learning material. There's a great tool called [RStudio](https://blog.rstudio.org/2016/11/01/announcing-rstudio-v1-0/) which just saw its 1.0 release.
+I will spend a few weeks diving into [R](https://www.r-project.org/). Yes, many people will talk about Julia, but we can't deny the amazing body of knowledge, the experience, and the robust and extensive set of packages available for R, including learning material. There's a great tool called [RStudio](https://posit.co/blog/announcing-rstudio-v1-0), which just saw its 1.0 release.
 
-And within the many materials I gathered, one stood out just for its introduction (I still have to review the book as a whole). It's called ["Learning Statistics with R"](http://health.adelaide.edu.au/psychology/ccs/teaching/lsr/), by Daniel Navarro from the University of Adelaide, Australia. I find it interesting because it's a psychology professor teaching proper statistics through the basics of R, which is exactly what I wanted. You can purchase a hardcopy or download the free PDF.
+And within the many materials I gathered, one stood out just for its introduction, and I still have to review the book as a whole. It's called ["Learning Statistics with R"](https://web.archive.org/web/20161108174205/http://health.adelaide.edu.au/psychology/ccs/teaching/lsr/), by Daniel Navarro from the University of Adelaide, Australia. I find it interesting because it's a psychology professor teaching proper statistics through the basics of R, which is exactly what I wanted. You can purchase a hardcopy or download the free PDF.
 
 I like the introduction so much that I wanted to share a few paragraphs to motivate you to join me in learning better statistics. So let's dive right into it:
 
@@ -84,4 +84,4 @@ In short there are a lot of critical questions that you can't answer with statis
 
 ### Download the Book
 
-Did you get intrigued? So [download the book](http://health.adelaide.edu.au/psychology/ccs/teaching/lsr/) and let's study some statistics beyond the mere basics. I am not saying this is the best book, just one that seems interesting, and if you happen to know a good book teaching statistics for novices through the use of R without any prior knowledge, let me know in the comments section below.
+Did you get intrigued? So [download the book](https://web.archive.org/web/20161108174205/http://health.adelaide.edu.au/psychology/ccs/teaching/lsr/) and let's study some statistics beyond the mere basics. I am not saying this is the best book, just one that seems interesting, and if you happen to know a good book teaching statistics for novices through the use of R without any prior knowledge, let me know in the comments section below.
