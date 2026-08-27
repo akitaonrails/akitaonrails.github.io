@@ -2,6 +2,7 @@
 title: "[Off-Topic] Comentando o Marco Civil Aprovado"
 date: '2014-03-30T09:46:00-03:00'
 slug: off-topic-comentando-o-marco-civil-aprovado
+translationKey: off-topic-comentando-o-marco-civil-aprovado
 description: "Ao comentar o texto aprovado do Marco Civil, o autor considera válida a neutralidade de rede, mas critica custos, órgãos reguladores e mecanismos que ampliariam o acesso estatal a dados privados."
 tags:
 - leis-e-regulacao
@@ -11,9 +12,9 @@ tags:
 draft: false
 ---
 
-Como disse em redes sociais antes, estou bem em cima do muro quanto a este Marco Civil. Sendo um pouco cínico, claro, se vem do governo, de um governo petista e ainda com apoio da oposição, não pode cheirar bem. O timing e a urgência, claro, são para tirar vantagem dos recentes acontecimentos de escutas do governo norte-americano em território brasileiro e a controvérsia Snowden. O objetivo é aparecer como o salvador da pátria e ao mesmo tempo embutir salva-guardas que legalizem atividades governamentais que são, no mínimo, escusas.
+Como disse antes nas redes sociais, estou em cima do muro com este Marco Civil. Sendo um pouco cínico, se vem do governo, de um governo petista e ainda com apoio da oposição, já não cheira bem. O timing e a urgência servem para tirar proveito das escutas recentes do governo americano em território brasileiro e da controvérsia Snowden. O objetivo é aparecer como salvador da pátria e, ao mesmo tempo, embutir salvaguardas que legalizem atividades governamentais no mínimo escusas.
 
-Vou publicar o texto na íntegra e fazer alguns poucos comentários. Muita gente tem muita opinião sobre esse Marco Civil e meu palpite é que 99% sequer leram o texto antes de opinar. Então recomendo que leiam. A fonte de onde tirei o texto é [este PDF](http://estaticog1.globo.com/2014/03/25/marcocivilInternet-textofinalcamara-25mar2014.pdf). Se por acaso eu estiver com um texto defasado me avisem.
+Vou publicar o texto na íntegra e fazer alguns comentários. Muita gente opina sobre esse Marco Civil, e meu palpite é que 99% sequer leram a lei antes de dar palpite. Então recomendo a leitura. Tirei o texto [deste PDF](http://estaticog1.globo.com/2014/03/25/marcocivilInternet-textofinalcamara-25mar2014.pdf); se estiver defasado, me avisem.
 
 Não deixem de comentar.
 
@@ -44,7 +45,9 @@ V – a livre iniciativa, a livre concorrência e a defesa do consumidor; e
 
 VI – a finalidade social da rede.
 
-> Não tem como garantir "a finalidade social da rede". Logo abaixo fala-se em liberdade de expressão, livre concorrência. A finalidade não pode ser definida por decreto, ela será o que seus usuários fizerem dela. Para garantir uma "finalidade social" exige manipulação restritiva. A Internet só é o que é pela sua não-finalidade, todos fazem o que bem entenderem, o livre mercado faz os ajustes sozinho e não precisa haver nada definindo pseudo-finalidades. A Internet é um meio de transporte de dados, todos pagam por ela, seu uso é determinado por esse livre acesso. Ao definir objetivo, não importa quão bons sejam suas intenções, automaticamente está se criando restrições. E toda restrição precisa ser regulamentada. E toda regulamentação precisa de "alguém" para auditar.
+> Não tem como garantir "a finalidade social da rede". A finalidade não se define por decreto, ela é o que os usuários fizerem dela. Garantir uma "finalidade social" exige manipulação restritiva, e a Internet só é o que é justamente pela ausência de finalidade imposta. Cada um faz o que bem entende e o livre mercado ajusta sozinho.
+>
+> A Internet é um meio de transporte de dados, todos pagam por ela e seu uso decorre desse livre acesso. Ao definir um objetivo, por melhores que sejam as intenções, você cria restrições. Toda restrição precisa ser regulamentada, e toda regulamentação precisa de alguém para auditar.
 
 Art. 3o A disciplina do uso da Internet no Brasil tem os seguintes princípios:
 
@@ -64,11 +67,11 @@ VIII - a liberdade dos modelos de negócios promovidos na Internet, desde que n�
 
 Parágrafo único. Os princípios expressos nesta Lei não excluem outros previstos no ordenamento jurídico pátrio relacionados à matéria, ou nos tratados internacionais em que a República Federativa do Brasil seja parte.
 
-> Os parágrafos II e III são redundantes e a III na verdade restringe a II pois a primeira define privacidade e a III quebra a privacidade e dá o monopólio da quebra ao governo.
+> Os parágrafos II e III são redundantes, e o III na verdade restringe o II: o primeiro define privacidade, o segundo a quebra e entrega o monopólio dessa quebra ao governo.
 
-> O V deveria ser irrelevante. Seguir qualquer tipo de padrão, por decreto, não funciona. Pois fica a pergunta: quem define o que são "técnicas compatíveis com os padrões internacionais" ou "uso de boas práticas"? Significa que algum órgão do governo vai deter o monopólio dessa regulamentação.
+> O V deveria ser irrelevante. Seguir qualquer padrão por decreto não funciona, e fica a pergunta: quem define o que são "técnicas compatíveis com os padrões internacionais" ou "uso de boas práticas"? Na prática, algum órgão do governo vai deter o monopólio dessa regulamentação.
 
-> Novamente, o parágrafo VII não tem como definir. Quem define "natureza participativa"? Esses parágrafos garantem a necessidade de mais um cabide de empregos burocrático. Anatel ou similar. Para "garantir" esses "direitos". Todo "direito" não-fundamental significa a necessidade de um órgão regulador. E todo órgão regulador é prejudicial.
+> O VII também não tem como ser definido. Quem determina o que é "natureza participativa"? Esses trechos garantem mais um cabide de empregos burocrático, uma Anatel ou similar, para "garantir" esses "direitos". Todo "direito" não fundamental exige um órgão regulador, e todo órgão regulador é prejudicial.
 
 Art. 4o A disciplina do uso da Internet no Brasil tem os seguintes objetivos: 
 
@@ -80,11 +83,11 @@ III – promover a inovação e fomentar a ampla difusão de novas tecnologias e
 
 IV – promover a adesão a padrões tecnológicos abertos que permitam a comunicação, a acessibilidade e a interoperabilidade entre aplicações e bases de dados.
 
-> Este artigo inteiro é ruim. Não dá para "garantir" direito de acesso à Internet por todos. Da mesma forma que não dá para garantir comida, educação ou qualquer outra coisa a ninguém. A partir do momento que se define o direito de alguém, também está se decretando a subserviência de outro pois o Governo não tem os meios para garantir isso, nós cidadãos temos. E quando se define que alguém tem direito a algo que é nosso, infringe-se nossos direitos também.
+> Este artigo inteiro é ruim. Não dá para "garantir" acesso à Internet a todos, assim como não dá para garantir comida ou educação a ninguém. No momento em que se define o direito de alguém, decreta-se a subserviência de outro, porque o governo não tem os meios para garantir isso, nós cidadãos temos. E ao dizer que alguém tem direito a algo que é nosso, infringe-se também os nossos direitos.
 
-> Sinto muito, Internet não é de graça. Nem mesmo eletricidade, água e saneamento básico são de graça, temos que pagar. Coloque um órgão regulador governamental e vamos ter o mesmo nível de serviço da Sabesp, Eletropaulo. Falta de água. Blackouts e queda de luz quando chove. Porque sofremos isso? Regulamentação governamental.
+> Sinto muito, Internet não é de graça. Nem eletricidade, água e saneamento básico são de graça, alguém paga. Coloque um órgão regulador governamental e teremos o mesmo nível de serviço da Sabesp e da Eletropaulo: falta de água, blackouts e queda de luz quando chove. Por que sofremos isso? Regulamentação governamental.
 
-> Não é e nem deve ser atribuição do governo fomentar "inovação". Inovação é uma consequência natural de livre concorrência e livre mercado. Ao colocar inovação como uma atribuição do governo estamos dando permissão para gastar nosso dinheiro de impostos e jogar fora. Novamente, quem define o que é "inovação"? Outro órgão regulador governamental, outro cabide de burocratas.
+> Fomentar "inovação" não é nem deveria ser atribuição do governo. Inovação é consequência natural da livre concorrência e do livre mercado. Colocá-la como tarefa estatal dá permissão para gastar nosso dinheiro de impostos e jogar fora. E, de novo, quem define o que é "inovação"? Outro órgão regulador, outro cabide de burocratas.
 
 > Até aqui, a única coisa que os artigos garantem é a criação de órgãos reguladores.
 
@@ -106,7 +109,7 @@ VII – aplicações de Internet: conjunto de funcionalidades que podem ser aces
 
 VIII – registros de acesso a aplicações de Internet: conjunto de informações referentes à data e hora de uso de uma determinada aplicação de Internet a partir de um determinado endereço de IP.
 
-> Bom, pelo menos mostra que alguns políticos não são totalmente analfabetos. Esses parágrafos são apenas definições técnicas. Bem cruas, diga-se de passagem, mas acho que servem para os efeitos deste documento. Ênfase a "endereço IP", como se isso garantisse a identificação positiva de alguém. O que faltou foi definir que endereço IP não pode ser usado como base para se identificar ninguém.
+> Ao menos mostra que alguns políticos não são totalmente analfabetos. São apenas definições técnicas, bem cruas, mas que servem para os efeitos do documento. Chama atenção o "endereço IP", como se ele garantisse a identificação de alguém. Faltou dizer que endereço IP não pode ser usado como base para identificar ninguém.
 
 Art. 6o Na interpretação desta Lei serão levados em conta, além dos fundamentos, princípios e objetivos previstos, a natureza da Internet, seus usos e costumes particulares e sua importância para a promoção do desenvolvimento humano, econômico, social e cultural.
 
@@ -123,7 +126,7 @@ II – à inviolabilidade e ao sigilo do fluxo de suas comunicações pela Inter
 III – à inviolabilidade e ao sigilo de suas comunicações privadas armazenadas, salvo por ordem judicial;
 IV– à não suspensão da conexão à Internet, salvo por débito diretamente decorrente de sua utilização;
 
-> Defina "inviolabilidade" como sendo "o provedor de acesso não deve violar a menos que seja obrigado pelo Judiciário".
+> Traduzindo "inviolabilidade": o provedor de acesso não deve violar, a menos que o Judiciário obrigue.
 
 V – à manutenção da qualidade contratada da conexão à Internet;
 
@@ -151,9 +154,9 @@ XII - à acessibilidade, consideradas as características físico-motoras, perce
 
 XIII - à aplicação das normas de proteção e defesa do consumidor nas relações de consumo realizadas na Internet.
 
-> Os parágrafos desse artigo são todos redundantes. Em resumo: o provedor de serviço deve declarar explicitamente o uso dos dados coletados de usuários e, se não está claro, o governo tem monopólio sobre aquisição desses dados (já que todo parágrafo termina com "salvo por ordem judicial, na forma da lei"). Novamente, todo mundo já faz isso. Temos "Termos de Serviço" que ninguém lê e todo mundo aceita mas que, tecnicamente, está lá.
+> Os parágrafos desse artigo são todos redundantes. Em resumo: o provedor deve declarar o uso dos dados que coleta e, quando isso não fica claro, o governo detém o monopólio de acessá-los, já que cada parágrafo termina com "salvo por ordem judicial, na forma da lei". Todo mundo já faz isso. Temos os "Termos de Serviço" que ninguém lê e todo mundo aceita, mas que tecnicamente estão lá.
 
-> Não chega a ser um artigo totalmente ruim, ele ratifica alguns comportamentos que já são padrão em qualquer bom serviço. E todos sabemos que por ordem judicial qualquer um pode obter qualquer coisa neste país, já que não existe limitação de privacidade para o governo. E se o governo pode acessar qualquer coisa, qualquer um também pode. Portanto, Não existe garantia de privacidade em nenhum lugar neste documento.
+> Não chega a ser um artigo totalmente ruim: ele ratifica comportamentos que já são padrão em qualquer bom serviço. Mas todos sabemos que, por ordem judicial, qualquer um obtém qualquer coisa neste país, porque não existe limitação de privacidade para o governo. E se o governo acessa tudo, qualquer um acessa também. Não há garantia de privacidade em lugar nenhum deste documento.
 
 Art. 8o A garantia do direito à privacidade e à liberdade de expressão nas comunicações é condição para o pleno exercício do direito de acesso à Internet.
 
@@ -191,13 +194,13 @@ IV– oferecer serviços em condições comerciais não discriminatórias e abst
 
 § 3o Na provisão de conexão à Internet, onerosa ou gratuita, bem como na transmissão, comutação ou roteamento, é vedado bloquear, monitorar, filtrar ou analisar o conteúdo dos pacotes de dados, respeitado o disposto neste artigo.
 
-> Em resumo este é o artigo que deve impedir um provedor de internet de criar um plano "Facebook", onde o tráfego ao Facebook seria de alta prioridade e o acesso ao resto seria ou mais lento ou inexistente. Ou também impedir que, sem o usuário saber, exista "traffic shaping" onde o provedor monitora seu tráfego e torna o acesso a alguns lugares (como Pirate Bay) mais lentos.
+> Em resumo, este é o artigo que deve impedir um provedor de criar um plano "Facebook", em que o tráfego para o Facebook teria alta prioridade e o acesso ao resto ficaria mais lento ou inexistente. Também barra o "traffic shaping" silencioso, em que o provedor monitora seu tráfego e torna o acesso a certos lugares, como o Pirate Bay, mais lento.
 
-> O princípio é até válido, acho que ninguém em sã consciência seria contra uma "neutralidade" ou isonomia.
+> O princípio é até válido. Acho que ninguém em sã consciência seria contra uma "neutralidade" ou isonomia.
 
-> Só que isso levanta a pergunta: temos internet comercial no Brasil há mais de 20 anos. Antes da aprovação deste documento nada disso era ilegal. Por que você não vê uma Claro ou Net vendendo planos "YouTube"?
+> Só que isso levanta uma pergunta. Temos internet comercial no Brasil há quase 20 anos, e antes deste documento nada disso era ilegal. Então por que você não vê uma Claro ou uma Net vendendo planos "YouTube"?
 
-> Faça-se essa pergunta, e a resposta não é simples. Você vai começar a se perguntar qual o objetivo real desse artigo.
+> Faça essa pergunta a si mesmo. A resposta não é simples, e você vai começar a se perguntar qual é o objetivo real deste artigo.
 
 #### Seção II
 
@@ -213,7 +216,7 @@ Art. 10. A guarda e a disponibilização dos registros de conexão e de acesso a
 
 § 4o As medidas e procedimentos de segurança e sigilo devem ser informados pelo responsável pela provisão de serviços de forma clara e atender a padrões definidos em regulamento, respeitado seu direito de confidencialidade quanto a segredos empresariais.
 
-> Esse artigo explicita que todo dado está à disposição do Judiciário. Não existe privacidade, ela está quebrada por lei. E o governo detém o monopólio dessa quebra. Isso abre todo tipo de corrupção. Se só alguém do governo pode abrir as informações de alguém, espionagem corporativa ficou mais fácil: basta molhar a mão de um juiz, emitir um mandato e quem puder pagar vai ter acesso a qualquer informação.
+> Esse artigo deixa explícito que todo dado fica à disposição do Judiciário. A privacidade está quebrada por lei, e o governo detém o monopólio dessa quebra. Isso abre todo tipo de corrupção. Se só o governo pode abrir as informações de alguém, a espionagem corporativa fica mais fácil: basta molhar a mão de um juiz, emitir um mandado e quem puder pagar terá acesso a qualquer coisa.
 
 Art. 11. Em qualquer operação de coleta, armazenamento, guarda e tratamento de registros, dados pessoais ou de comunicações por provedores de conexão e de aplicações de Internet em que pelo menos um desses atos ocorram em território nacional, deverá ser obrigatoriamente respeitada a legislação brasileira, os direitos à privacidade, à proteção dos dados pessoais e ao sigilo das comunicações privadas e dos registros.
 
@@ -223,7 +226,7 @@ Art. 11. Em qualquer operação de coleta, armazenamento, guarda e tratamento de
 
 §3o Os provedores de conexão e de aplicações de Internet deverão prestar, na forma da regulamentação, informações que permitam a verificação quanto ao cumprimento da legislação brasileira referente à coleta, guarda, armazenamento ou tratamento de dados, bem como quanto ao respeito à privacidade e ao sigilo de comunicações.
 
-> Mais um mecanismo que garante a criação de um órgão regulador. E aqui diz explicitamente "na forma de regulamentação". Quem vai "verificar o cumprimento da legislação brasileira referente à coleta, guarda, armazenamento, etc"? Isso sempre foi desnecessário, continua sendo desnecessário, mas agora vamos pagar algum vagabundo auditor para não fazer nada, e ainda ser bully de serviços menores, restringindo a livre concorrência. Quer atrapalhar os negócios de alguém, chame essa "polícia" dizendo que empresa X não está cumprindo este parágrafo.
+> Mais um mecanismo que garante a criação de um órgão regulador, e aqui está escrito "na forma da regulamentação". Quem vai "verificar o cumprimento da legislação brasileira referente à coleta, guarda e armazenamento"? Isso sempre foi desnecessário e continua sendo, mas agora vamos pagar algum auditor vagabundo para não fazer nada e ainda intimidar serviços menores, restringindo a livre concorrência. Quer atrapalhar o negócio de alguém? Chame essa "polícia" dizendo que a empresa X não cumpre este parágrafo.
 
 §4o Decreto regulamentará o procedimento para apuração de infrações ao disposto neste artigo.
 
@@ -254,7 +257,7 @@ Art. 13. Na provisão de conexão à Internet, cabe ao administrador de sistema 
 
 § 6o Na aplicação de sanções pelo descumprimento ao disposto neste artigo, serão considerados a natureza e a gravidade da infração, os danos dela resultantes, eventual vantagem auferida pelo infrator, as circunstâncias agravantes, os antecedentes do infrator e a reincidência.
 
-> Entendo que este artigo se refere somente a provedores de acesso à internet. Isso é apenas justificativa para aumentar os custos e, novamente, quebrar a privacidade.
+> Entendo que este artigo se refere apenas aos provedores de acesso. É só uma justificativa para aumentar custos e, de novo, quebrar a privacidade.
 
 #### Subseção II
 
@@ -276,7 +279,7 @@ Art 15. O provedor de aplicações de Internet constituído na forma de pessoa j
 
 § 4o Na aplicação de sanções pelo descumprimento ao disposto neste artigo, serão considerados a natureza e a gravidade da infração, os danos dela resultantes, eventual vantagem auferida pelo infrator, as circunstâncias agravantes, os antecedentes do infrator e a reincidência.
 
-> Este artigo é mais [Orwelliano](http://pt.wikipedia.org/wiki/George_Orwell) ainda. Ela garante que o governo pode obrigar um provedor a rastrear mais informações, por período indeterminado, de forma indiscriminada. Veja bem, o governo já poderia fazer isso antes, por influência da Anatel e outros lobbys, mas agora assegura-se por lei.
+> Este é ainda mais [orwelliano](http://pt.wikipedia.org/wiki/George_Orwell). Ele permite que o governo obrigue um provedor a rastrear mais informações, por período indeterminado e de forma indiscriminada. O governo já conseguia isso antes, por influência da Anatel e de outros lobbies, mas agora fica assegurado por lei.
 
 Art. 16. Na provisão de aplicações de Internet, onerosa ou gratuita, é vedada a guarda:
 
@@ -302,9 +305,9 @@ Art. 19. Com o intuito de assegurar a liberdade de expressão e impedir a censur
 
 § 4o O Juiz, inclusive no procedimento previsto no § 3o, poderá antecipar, total ou parcialmente, os efeitos da tutela pretendida no pedido inicial, existindo prova inequívoca do fato e considerado o interesse da coletividade na disponibilização do conteúdo na Internet, desde que presentes os requisitos de verossimilhança da alegação do autor e de fundado receio de dano irreparável ou de difícil reparação.
 
-> Isso não parece totalmente ruim, já acontece hoje, mas é mais confuso. Na prática, se um usuário do seu site faz um comentário ofensivo e quem se sentiu ofensivo consiga uma ordem judicial, o site não é criminalmente responsável pelo conteúdo se ele retirar quando ordenado.
+> Isso não parece totalmente ruim, já acontece hoje, mas ficou mais confuso. Na prática, se um usuário do seu site faz um comentário ofensivo e o ofendido consegue uma ordem judicial, o site não responde criminalmente pelo conteúdo desde que o retire quando for ordenado.
 
-> As pessoas que mais usam esse recurso são os imbecis candidatos de cargos públicos que soltam ordens judiciais o tempo todo para tudo que é site que tem conteúdo político. O problema é que ofender um político é contra a lei. Nossa constituição em si, é um problema hoje em dia.
+> Quem mais usa esse recurso são os imbecis candidatos a cargos públicos, que soltam ordens judiciais o tempo todo contra qualquer site com conteúdo político. O problema é que ofender um político é contra a lei. A nossa Constituição, em si, virou um problema hoje em dia.
 
 Art. 20. Sempre que tiver informações de contato do usuário diretamente responsável pelo conteúdo a que se refere o art. 19, caberá ao provedor de aplicações de Internet comunicar-lhe os motivos e informações relativos à indisponibilização de conteúdo, com informações que permitam o contraditório e a ampla defesa em juízo, salvo expressa previsão legal ou salvo expressa determinação judicial fundamentada em contrário.
 
@@ -328,7 +331,7 @@ II – justificativa motivada da utilidade dos registros solicitados para fins d
 
 III – período ao qual se referem os registros.
 
-> Esse artigo estende o que já foi definido em artigos anteriores: o acesso irrestrito e indiscriminado de dados que deveria ter "privacidade" garantida.
+> Esse artigo estende o que os anteriores já definiram: o acesso irrestrito e indiscriminado a dados que deveriam ter "privacidade" garantida.
 
 Art. 23. Cabe ao juiz tomar as providências necessárias à garantia do sigilo das informações recebidas e à preservação da intimidade, vida privada, honra e imagem do usuário, podendo determinar segredo de justiça, inclusive quanto aos pedidos de guarda de registro.
 
@@ -358,9 +361,9 @@ VIII – desenvolvimento de ações e programas de capacitação para uso da Int
 
 X – prestação de serviços públicos de atendimento ao cidadão de forma integrada, eficiente, simplificada e por múltiplos canais de acesso, inclusive remotos.
 
-> Este artigo sanciona a parte Orwelliana: a criação de órgãos reguladores, a ["Thought Police"](http://en.wikipedia.org/wiki/Thought_Police). Vai ser responsável por "garantir" o que está nos parágrafos: estabelecer mecanismos de governança, racionalização da gestão, promoção da interoperabilidade, etc. Aqui você sancionou por lei a criação de um órgão de corrupção, reserva de mercado, quebra da livre concorrência e livre mercado e sucateamento do mercado de Internet.
+> Este artigo sanciona a parte orwelliana: a criação de órgãos reguladores, a ["Thought Police"](http://en.wikipedia.org/wiki/Thought_Police). Esse órgão seria responsável por "garantir" o que está nos parágrafos: estabelecer mecanismos de governança, racionalizar a gestão, promover a interoperabilidade e por aí vai. Você sancionou por lei a criação de uma máquina de corrupção, reserva de mercado, quebra da livre concorrência e sucateamento do mercado de Internet.
 
-> Entenda, não há como definir "governança multiparticipativa", "colaborativa", "racionalização", etc. Quem define o que é colaborativo ou não? Quem define o que é interoperável ou não? Quem define o que é eficiente ou não? Alguém precisa interpretar. E se está aberto à interpretação é um mecanismo que só traz benefício a quem tem o poder de fazer valer sua interpretação. Portanto, é um mau texto, por definição.
+> Entenda: não há como definir "governança multiparticipativa", "colaborativa" ou "racionalização". Quem decide o que é colaborativo, interoperável ou eficiente? Alguém precisa interpretar, e tudo que fica aberto à interpretação só beneficia quem tem poder para impor a sua leitura. Por definição, é um texto ruim.
 
 Art. 25. As aplicações de Internet de entes do Poder Público devem buscar:
 
@@ -374,7 +377,7 @@ IV – facilidade de uso dos serviços de governo eletrônico; e
 
 V – fortalecimento da participação social nas políticas públicas.
 
-> Isso não deveria estar aqui. São cláusulas técnicas para licitações de projetos de software que já existem. Não vejo a utilidade. Em alguns casos alguns desses itens são desnecessários e, novamente, criamos uma restrição desnecessária.
+> Isso não deveria estar aqui. São cláusulas técnicas de licitação de projetos de software, que já existem, e não vejo utilidade nelas. Em alguns casos os itens são dispensáveis e criam mais uma restrição desnecessária.
 
 Art. 26. O cumprimento do dever constitucional do Estado na prestação da educação, em todos os níveis de ensino, inclui a capacitação, integrada a outras práticas educacionais, para o uso seguro, consciente e responsável da Internet como ferramenta para o exercício da cidadania, a promoção de cultura e o desenvolvimento tecnológico.
 
@@ -390,7 +393,7 @@ III – fomentar a produção e circulação de conteúdo nacional.
 
 Art. 28. O Estado deve, periodicamente, formular e fomentar estudos, bem como fixar metas, estratégias, planos e cronogramas referentes ao uso e desenvolvimento da Internet no País.
 
-> Novamente, não é dever do estado. Este capítulo inteiro é restritivo e não deveria existir. Ela garante o uso irrestrito do nosso dinheiro para programas de governo. Como contribuinte e pagador de impostos, sou contra qualquer programa de governo que gaste meu dinheiro. E eis o exemplo: o direito de um quebrando o direito do outro. Por definição, isso não pode ser um direito garantido.
+> De novo, não é dever do Estado. Este capítulo inteiro é restritivo e não deveria existir, porque libera o uso irrestrito do nosso dinheiro em programas de governo. Como contribuinte, sou contra qualquer programa que gaste meu dinheiro assim. É o direito de um quebrando o direito do outro, e por definição isso não pode ser um direito garantido.
 
 ## CAPÍTULO V
 
@@ -409,4 +412,4 @@ Art. 32. Esta Lei entrará em vigor sessenta dias após a data de sua publicaç�
 Deputado ALESSANDRO MOLON.
 Relator
 
-> Sinceramente, não vejo a vantagem desse texto. Na parte que é relevante, a neutralidade, ela deveria ser regulada pelos Direitos do Consumidor. Todo o resto está sancionando a legalidade da quebra de privacidade e dando monopólio dessa quebra ao governo. E também está criando "direitos" que vão exigir mais gastos públicos e mais aparelhamento do estado a nossos custos e sem nenhum benefício aparente. Basicamente é um documento de propaganda para fazer o governo parecer bom, e às minhas custas e às suas custas. Parabéns.
+> Sinceramente, não vejo vantagem nesse texto. A parte relevante, a neutralidade, deveria ser regulada pelos Direitos do Consumidor. Todo o resto sanciona a legalidade da quebra de privacidade e entrega o monopólio dessa quebra ao governo. E ainda cria "direitos" que vão exigir mais gasto público e mais aparelhamento do Estado, às nossas custas e sem benefício aparente. No fundo é um documento de propaganda para fazer o governo parecer bom, às minhas custas e às suas. Parabéns.
