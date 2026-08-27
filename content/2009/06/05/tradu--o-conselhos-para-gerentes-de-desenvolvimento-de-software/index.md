@@ -2,6 +2,7 @@
 title: "[Tradução] Conselhos para Gerentes de Desenvolvimento de Software"
 date: '2009-06-05T00:35:00-03:00'
 slug: tradu--o-conselhos-para-gerentes-de-desenvolvimento-de-software
+translationKey: tradu--o-conselhos-para-gerentes-de-desenvolvimento-de-software
 description: "Gerald Weinberg mostra como a cultura de culpa e a comunicação incongruente sabotam projetos, enquanto a congruência melhora a resolução de problemas. A mudança passa por seis etapas."
 tags:
 - gestao
@@ -13,11 +14,11 @@ draft: false
 
 [![](http://s3.amazonaws.com/akitaonrails/assets/2009/6/5/shapeimage_1_original.png)](http://www.geraldmweinberg.com/Site/Home.html)
 
-**Obs:** alguns dias atrás eu [escrevi um desabafo](http://www.akitaonrails.com/2009/05/31/off-topic-as-5-disfun--es-de-equipes-em-c-digo) sobre o comportamento ruim de um gerente de projetos. Nesta tradução, vamos ver soluções e os cenários corretos. Vamos à tradução:
+**Obs:** alguns dias atrás eu [escrevi um desabafo](/2009/05/31/off-topic-as-5-disfun--es-de-equipes-em-c-digo) sobre o comportamento ruim de um gerente de projetos. Nesta tradução, o foco são as soluções e os cenários corretos. Vamos a ela:
 
-Em 2004, a revista ‘Software Development Magazine’ entrevistou [**Gerald Weinberg**](http://www.geraldmweinberg.com/). Aqui vão algumas de suas respostas (a entrevista completa está no [site dele](http://www.ayeconference.com/advice-for-software-development-managers/)):
+Em 2004, a revista ‘Software Development Magazine’ entrevistou [**Gerald Weinberg**](http://www.geraldmweinberg.com/). Aqui vão algumas de suas respostas (a entrevista completa está no [site dele](https://www.ayeconference.com/advice-for-software-development-managers.html)):
 
-Qual foi o melhor conselho relacionado a gerenciamento que você já deu?
+Qual foi o conselho de gestão mais importante que já lhe deram?
 
 > Se você culpa seus funcionários, você é um péssimo gerente. Você os contratou, os aceitou, os supervisionou, e dirigiu seu treinamento. Você é responsável. Se você não gosta do que está acontecendo, veja seu próprio comportamento. Mas, se há crédito a ser dado, é deles.
 
@@ -32,7 +33,7 @@ E se um funcionário começa a demonstrar mal comportamento depois que ele ou el
 
 ## O que é atribuir a Culpa?
 
-**Obs:** Leia o artigo completo [Beyond Blaming](http://www.ayeconference.com/beyondblaming/) no site oficial do Jerry.
+**Obs:** Leia o artigo completo [Beyond Blaming](https://www.ayeconference.com/beyondblaming.html) no site oficial do Jerry.
 
 Em uma organização congruente, seu gerente pergunta, _“Como anda seu projeto?”_ e sua resposta, _“Estou um pouco receoso que vou atrasar no cronograma.”_ Isso inicia uma discussão para resolver o problema, de onde vocês dois fazem novos planos para colocar o projeto de volta em dia. Em uma organização de culpa, entretanto, seu gerente pode lhe dizer que somente pessoas inferiores tem pouca confiança. Nesse caso, resolução de problema será substituída por evitar-a-culpa.
 
@@ -120,7 +121,9 @@ A maioria das pessoas que experimentaram uma organização congruente não vão 
 
 Se pudéssemos magicamente instalar congruência nos programas internos desses executivos que jogam culpa, o estilo deles mudaria dramaticamente. Por exemplo, se eles verdadeiramente considerassem os outros envolvidos em sua comunicação, possivelmente acreditariam nas intenções das pessoas de contribuir, de serem produtivos, de pertencer e de aprender – e interpretariam desvios desse ideal como evidência de gerenciamento não efetivo. Sua crença no valor inerente de todas as pessoas com respeito saudável pelas limitações do contexto do trabalho traria energia, esperança, agradecimento, compreensão e gratidão entre seus funcionários.
 
-Um executivo congruente que realmente não acreditasse nas boas intenções dos funcionários diria ‘Sem desculpas! Você terá isso pronto em Outubro.’ Mas, com funcionários cujas intenções são ruins, esse estilo (ou qualquer outro) não funcionaria mesmo.
+Um executivo que realmente não acredita nas boas intenções dos funcionários provavelmente diria: ‘Sem desculpas! Você vai entregar isso até primeiro de Outubro.’ Mas, com funcionários cujas intenções são ruins, esse estilo (ou qualquer outro) não vai funcionar mesmo.
+
+Já um executivo congruente que realmente acredita nas boas intenções dos funcionários provavelmente diria: ‘Precisamos muito disso até primeiro de Outubro. O que vocês precisam da gente para conseguir?’ Esse tipo de reciprocidade e apoio desperta um genuíno senso de ‘nós conseguimos’, que aumenta a chance do projeto atingir suas metas e de ninguém precisar fazer promessas falsas para escapar da cultura de culpa.
 
 Quando a alta gerência mantém seu compromisso com congruência, eles vêem que a maioria dos trabalhadores aprecia a oportunidade que o negócio lhes proporciona para desenvolver suas capacidades, sentido, relacionamentos e recompensas monetárias. Eles também sabem como agir quando o trabalhador ocasional não parece apreciar ou ser produtivo. Gerentes que sabem como usar seu poder de forma congruente geralmente conseguem os resultados que procuram – não perfeição, que eles sabem que não devem esperar.
 
