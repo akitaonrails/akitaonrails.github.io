@@ -2,6 +2,7 @@
 title: "[Tradução] Padrões: excelência vs. mediocridade"
 date: '2013-05-17T19:25:00-03:00'
 slug: traducao-padroes-excelencia-vs-mediocridade
+translationKey: traducao-padroes-excelencia-vs-mediocridade
 description: "Ao relatar um exercício na Toyota, Jason Yip mostra que o padrão era o tempo do campeão, quatro segundos. O texto contrapõe padrões que limitam a padrões que impulsionam a excelência."
 tags:
 - engenharia-de-software
@@ -11,13 +12,15 @@ tags:
 draft: false
 ---
 
-**Original de 24/4/2011**: [Gestão 2.0](http://info.abril.com.br/noticias/rede/gestao20/gestao/padroes-excelencia-vs-mediocridade/)
+**Original de 24/4/2011**: [Gestão 2.0](http://web.archive.org/web/20130414102405/http://info.abril.com.br/noticias/rede/gestao20/gestao/padroes-excelencia-vs-mediocridade/)
 
-O texto a seguir é uma tradução do excelente artigo Standards: excellence vs mediocrity, escrito por Jason Yip, consultor da Thoughtworks, que tive o prazer de conhecer pessoalmente ano passado.
+O texto a seguir é uma tradução do excelente artigo [Standards: excellence vs mediocrity](http://jchyip.blogspot.com/2011/04/standards-excellence-vs-mediocrity.html), escrito por Jason Yip, consultor da Thoughtworks que tive o prazer de conhecer pessoalmente ano passado.
 
-Antes de iniciar o texto traduzido, uma pequena introdução: todos sabemos como muitos conceitos que temos como fundação no mundo ocidental podem ser radicalmente diferentes no mundo oriental. Um desses conceitos difíceis de transpor do mundo oriental para o ocidental é justamente o de “padrões”. No mundo ocidental “padrão” é um denominador comum, estático, rígido, difícil de mudar, o status quo. No mundo oriental, a idéia de “padrão” é “o melhor”. Se amanhã aparece outro “melhor”, este deve ser considerado o novo padrão. Não é algo inatingível, que admiramos de baixo para cima sabendo que dificilmente vamos alcançar, como um “recorde”.
+Antes do texto traduzido, uma pequena introdução. Muitos conceitos que tratamos como fundação no mundo ocidental têm significado radicalmente diferente no mundo oriental. Um dos mais difíceis de transpor é justamente o de “padrão”.
 
-Imagine um mundo onde o “recorde” é o “padrão”. Eu falei sobre isso em outro artigo chamado Padrões, Commodities e Inovação, recomendo ler. Agora sim, segue a tradução do artigo do Jason:
+No mundo ocidental, “padrão” é um denominador comum: estático, rígido, difícil de mudar, o status quo. No mundo oriental, “padrão” quer dizer “o melhor”. Se amanhã aparece outro “melhor”, ele passa a ser o novo padrão. Não é algo inatingível que admiramos de baixo, sabendo que dificilmente vamos alcançar, como um “recorde”.
+
+Imagine um mundo onde o “recorde” é o “padrão”. Já falei sobre isso em outro artigo, [Padrões, Commodities e Inovações](/2009/06/14/off-topic-padr-es-commodities-e-inova--es), e recomendo a leitura. Segue a tradução do artigo do Jason:
 
 Alguns anos atrás, eu participei de um tour de estudos de Lean no Japão. Como esperado, fizemos uma visita a uma fábrica da Toyota. De forma não esperada, essa visita foi conduzida por um gerente da fábrica que também nos acompanhou no tour. Em um ponto, estávamos olhando para uma área de demonstração de treinamento de capacidades fundamentais – desenvolvendo capacidades básicas necessárias para ser um membro produtivo na linha de montagem. A maioria era sobre coordenação de mãos com olhos e capacidades motoras. Por exemplo, teve um exercício onde você pega uma corda fina e a conduz ao redor de pregos seguindo uma sequência conhecida na direção do relógio ou contra o relógio. Eu rascunhei um exemplo do que isso poderia parecer:
 
