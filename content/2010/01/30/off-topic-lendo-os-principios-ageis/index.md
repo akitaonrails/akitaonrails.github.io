@@ -2,6 +2,7 @@
 title: "[Off-Topic] Lendo os Princípios Ágeis"
 date: '2010-01-30T19:32:00-02:00'
 slug: off-topic-lendo-os-principios-ageis
+translationKey: off-topic-lendo-os-principios-ageis
 description: "Os 12 princípios ágeis precisam ser lidos em conjunto: entregar valor rapidamente não dispensa qualidade, simplicidade, colaboração e melhoria contínua. Manifesto não é receita pronta."
 tags:
 - agile
@@ -10,100 +11,119 @@ tags:
 draft: false
 ---
 
-O Manifesto Ágil é calcado em [4 valores](http://agilemanifesto.org/). Não sei quantas eu já repeti isso. Mais do que isso ele é calcado em [12 princípios](http://agilemanifesto.org/principles.html) importantes. Muitos os consideram como os 10 mandamentos. Eu sempre sou contra qualquer coisa dogmatizada, por outro lado se você prefere dogmatizar o Manifesto, nunca pegue apenas uma frase dele em isolado. Se for levar um deles ao pé-da-letra, leve todos ao pé-da-letra, senão seria o mesmo que dogmatizar os 10 mandamentos e dizer _“Eu obedeço os 10 mandamentos: eu já cometi adultério, mas não tem importância porque nunca matei ninguém, nunca roubei e não foi com a mulher do vizinho que cometi adultério.”_
+O Manifesto Ágil é calcado em [4 valores](http://agilemanifesto.org/). Já repeti isso não sei quantas vezes. Mais do que isso, ele é calcado em [12 princípios](http://agilemanifesto.org/principles.html) importantes, que muita gente trata como os dez mandamentos.
 
+Eu sou contra qualquer coisa dogmatizada. Mas se você prefere dogmatizar o Manifesto, nunca pegue uma frase dele isolada. Se for levar um princípio ao pé da letra, leve todos, senão é o mesmo que dogmatizar os dez mandamentos e dizer _"eu obedeço os dez mandamentos: já cometi adultério, mas não tem importância porque nunca matei ninguém, nunca roubei e não foi com a mulher do vizinho que cometi adultério."_
 
-Dentre alguns dos princípios temos:
+Alguns dos princípios:
 
-> “Nossa maior prioridade é satisfazer o cliente através da entrega rápida e contínua de software de valor.”
+> "Nossa maior prioridade é satisfazer o cliente através da entrega rápida e contínua de software de valor."
 
-Este único princípio já levou a várias discussões há anos. Em particular leia o artigo [Our Highest Priority](http://www.pavley.com/2009/10/08/our-highest-priority/) e [Why Satisfy de Customer?](http://stevebockman.com/blog/2010/01/27/why-satisfy-the-customer/).
+Esse único princípio já rendeu anos de discussão. Vale ler [Our Highest Priority](https://www.pavley.com/2009/10/08/our-highest-priority/) e [Why Satisfy the Customer?](http://web.archive.org/web/20100201014014/http://stevebockman.com:80/blog/2010/01/27/why-satisfy-the-customer/).
 
-Em particular eu gosto de pensar como [Eliyahu Goldratt](http://en.wikipedia.org/wiki/Theory_of_Constraints) onde ele diz – claro que simplificadamente – que a prioridade de qualquer empresa é _ganhar dinheiro._ Agora calma aos anti-capitalistas e populistas de plantão :-) Não estamos falando em _“ganhar dinheiro em prejuízo das pessoas, dos clientes e da sociedade”_ ou coisa parecida.
+Eu gosto de pensar como o [Eliyahu Goldratt](http://en.wikipedia.org/wiki/Theory_of_Constraints), que diz, de forma simplificada, que a prioridade de qualquer empresa é _ganhar dinheiro._ Calma, anti-capitalistas e populistas de plantão :-) Ninguém está falando em _"ganhar dinheiro em prejuízo das pessoas, dos clientes e da sociedade"_ ou coisa parecida.
 
-A prioridade não é criar inovação, não é criar produtos, não é gerar empregos, é ganhar dinheiro. E os meios para isso podem ser, criar inovação, criar produtos, gerar empregos, por exemplo. O que quero dizer é que confundimos os **meios** com os **objetivos**.
+A prioridade é ganhar dinheiro. Criar inovação, criar produtos e gerar empregos são meios para chegar lá, e a gente vive confundindo os **meios** com os **objetivos**.
 
-_“Entregar rápido e continuamente”_ é muito importante de se ter na cabeça. Muitas vezes isso não é possível, por exemplo, se você depende de fornecedores ou outros fatores externos. Mas deixe-me pegar outros princípios relacionados a este primeiro:
+_"Entregar rápido e continuamente"_ é importante manter na cabeça. Nem sempre é possível, por exemplo, quando você depende de fornecedores ou de fatores externos. Mas deixa eu pegar outros princípios ligados a esse primeiro:
 
-> “Entregue frequentemente software que funciona, de algumas semanas a alguns meses, com preferência para um período curto.”
+> "Entregue frequentemente software que funciona, de algumas semanas a alguns meses, com preferência para um período curto."
 
-O tempo nunca é fixo, porque todo profissional sabe que não dá para prever o futuro. Entregar valor rápido é um princípio, não uma regra. Significa que faremos tudo que for possível para tentar entregar algo que funciona, com qualidade, o mais breve possível. Para isso tentaremos retirar impedimentos, melhorar processos, otimizar procedimentos, melhorar a comunicação e tudo mais que for necessário para entregar alguma coisa. É um lembrete para todo agilista em todos os momentos que as entregas começarem a demorar mais que o normal.
+O tempo nunca é fixo, porque todo profissional sabe que não dá para prever o futuro. Entregar valor rápido é um princípio que orienta o trabalho, e ninguém deve tratá-lo como regra rígida. Significa fazer todo o possível para entregar algo que funciona, com qualidade, no menor prazo viável.
 
-> “Software que funciona é a medida primária de progresso.”
+Para isso a gente tenta remover impedimentos, melhorar processos, otimizar procedimentos e melhorar a comunicação. É um lembrete para o agilista sempre que as entregas começam a demorar mais que o normal.
 
-A mesma coisa dita com outras palavras: software que não está entregue é software que não serve para nada. Um agilista deve se sentir mal de estar trabalhando meses num software que ninguém está usando. Softwares são diferentes, às vezes leva 1 dia inteiro para descobrir uma solução que dá para resolver em 1 linha de código. Às vezes dá para escrever 100 linhas em 1 hora. É o velho dilema de produtividade que a indústria já tentou resolver com várias técnicas falidas como LOC (linhas de código), Pontos de Função e outras bobagens.
+> "Software que funciona é a medida primária de progresso."
 
-Não consigo deixar de imaginar que foi o Martin Fowler um dos que devem ter sugerido esse princípio, especialmente por causa do seu artigo [Cannot Measure Productivity](http://martinfowler.com/bliki/CannotMeasureProductivity.html). Software não se mede em função de produtividade, ele se mede em função de valor. E quem define o valor a ser atingido via desenvolvimento de software é o cliente/empresa. Se o software desenvolvido não trás valor, isso não é culpa do software, mas culpa da definição de valor do software. Uma ferramenta, por si só, não tem valor nenhum.
+É a mesma ideia com outras palavras: software que não foi entregue não serve para nada. Um agilista deveria se sentir mal trabalhando meses num software que ninguém usa.
 
-Por isso que eu disse que LOC e pontos de função não servem para nada. Posso ter uma equipe que entrega 10 mil pontos de função por Sprint. Não significa nada se o que foi pedido para ser desenvolvido não trás nenhum valor para o cliente. Essa é uma das funções de um Product Owner: garantir que o que está sendo priorizado para desenvolvimento é algo que efetivamente trará valor, seja no curto prazo, seja no longo prazo, dependendo da visão de futuro que ele tenha. Se o PO não tem visão, não tem estratégia e não tem direção clara, ele terá exatamente isso como resultado: muito software e pouco valor, e a culpa disso nunca é da equipe técnica, é da falta de visão e, consequentemente, problema do PO e/ou da empresa.
+Cada software é diferente. Às vezes leva um dia inteiro para descobrir uma solução de uma linha de código, e às vezes dá para escrever cem linhas em uma hora. É o velho dilema de produtividade que a indústria tentou resolver com técnicas falidas como LOC (linhas de código), Pontos de Função e outras bobagens.
 
-E falando em POs, não podemos deixar de falar de stakeholders em geral, os interessados no valor a ser gerado pelo projeto:
+Imagino que o Martin Fowler tenha sido um dos que sugeriram esse princípio, principalmente por causa do artigo dele [Cannot Measure Productivity](https://martinfowler.com/bliki/CannotMeasureProductivity.html). Software se mede por valor. Produtividade pura diz muito pouco, e quem define o valor a ser atingido no desenvolvimento é o cliente ou a empresa.
 
-> “Pessoas de negócio e os desenvolvedores devem trabalhar juntos diariamente durante o projeto.”
+Se o software entregue não traz valor, o problema está na definição desse valor. O software fez o que pediram. Uma ferramenta, por si só, não tem valor nenhum.
 
-Pessoalmente eu detestaria burocratas todos os dias num ambiente de desenvolvimento :-) Mas cinismos à parte este é outro lembrete de que quem está interessado no valor gerado por um projeto é quem deve procurar a equipe e ver se não precisam de nada. Um stakeholder que não se dirige à equipe técnica demonstra que não está interessado no resultado a ser gerado. E não estamos falando em fazer reuniões diárias com a equipe, mas de trocar idéias rapidamente, coisa de 5 ou 10 minutos por dia seriam suficientes. E não é necessário nenhum ritual como um Daily Scrum para isso. Um stakeholder interessado sai de sua cadeira e se dirige às equipes. Um stakeholder desinteressado fica na sua cadeira e espera as coisas acontecerem sozinhas. Adivinhe qual dos dois é mais eficiente? E se o stakeholder, que deveria ser o mais interessado, demonstra desinteresse no que se está produzindo, porque alguém das equipes deveria se mostrar interessado?
+Por isso digo que LOC e pontos de função não servem para nada. Posso ter uma equipe que entrega dez mil pontos de função por sprint, e isso não significa nada se o que foi pedido não traz valor para o cliente.
 
-Equipes são um reflexo da organização da empresa. Se as camadas mais altas são desorganizadas, indecisas, incomunicáveis e irresponsáveis, as equipes serão da mesma forma. O que são equipes se não sub-sistemas, cópias do sistema complexo adaptativo mais chamado “empresa”?
+Essa é uma das funções do Product Owner: garantir que o que entra na fila de desenvolvimento vai trazer valor de verdade, no curto ou no longo prazo, conforme a visão de futuro dele. Um PO sem visão, sem estratégia e sem direção clara colhe exatamente isso: muito software e pouco valor. A culpa aí é da falta de visão do PO e da empresa, e cai no colo deles, nunca da equipe técnica.
 
-Uma empresa pode contratar 100 Linus Torvalds, 100 Guido Von Rossum, 100 John Resig, mas não espere que eles sozinhos saiam com iPods, com iPhones e outros grandes produtos que venderão milhões. A Apple funciona porque – eu especulo – um Steve Jobs sai da sua cadeira e se envolve no dia a dia das equipes de pesquisa e desenvolvimento pessoalmente, mesmo sendo o CEO.
+E, falando em PO, não dá para deixar de fora os stakeholders em geral, os interessados no valor que o projeto vai gerar:
 
-Falando dessa forma parece que um lado se isenta da responsabilidade do outro. É claro que não, a melhor forma de trabalho é **colaborativa** , porém a responsabilidade de chegar com as melhores soluções tecnológicas, de qualidade técnica e eficiência, a equipe técnica é quem tem que se virar. Por outro lado os stakeholders são os responsáveis em fazer estudos mercadológicos, pesquisas de marketing, visão de produtos. Um lado pode e deve colaborar com o outro, mas infelizmente todo mundo não pode igualmente fazer tudo. Dado que os stakeholders tragam a visão, a equipe técnica vai fazer o possível para cumprir essa visão. Mas a visão não é autoritária, da mesma forma como algumas decisões tecnológicas não devem ser. A crítica fica porque normalmente as ordens vêm de uma direção só, sem discussão, e a equipe técnica, mesmo performando seu trabalho corretamente, pode estar seguindo uma direção errada e no final a crítica se volta a ela mesma pelo fracasso de uma visão que sequer foi discutida.
+> "Pessoas de negócio e os desenvolvedores devem trabalhar juntos diariamente durante o projeto."
 
-> “A maneira mais eficiente e efetiva de transmitir informação para uma equipe de desenvolvimento é via conversas cara-a-cara.”
+Pessoalmente, eu detestaria burocratas todos os dias num ambiente de desenvolvimento :-) Cinismo à parte, esse é outro lembrete de que quem está interessado no valor de um projeto é quem deve procurar a equipe e ver se falta alguma coisa. Um stakeholder que nunca se dirige à equipe técnica mostra que não liga para o resultado.
 
-Para mim esse é um corolário do princípio anterior. Esqueçam sistemas automatizados de comunicação, sistemas de fluxo de informações, ou qualquer dessas baboseiras. Todo mundo já viu filmes dos anos 80 e 90 ridicularizando os “memorandos”, que era uma técnica de espalhar informações. Até hoje as pessoas ainda tentam algo parecido com memorandos, só que agora são planilhas eletrônicas, e-mails, wikis, etc. O mais importante é: sente-se lado a lado com a pessoa que vai lhe entregar valor e diga claramente quais são as expectativas, o que mudou, o que se manteve e sai do caminho. Se um stakeholder não tem capacidade de conversar ao vivo com as equipes, novamente demonstra desinteresse com o resultado sendo gerado e, portanto, a mensagem é clara: o que está sendo desenvolvido não tem valor, por se tivesse o stakeholder demonstraria interesse por isso.
+E não estou falando em reunião diária. Bastam cinco ou dez minutos de conversa por dia, sem precisar de nenhum ritual como o Daily Scrum. Um stakeholder interessado levanta da cadeira e vai até as equipes. Um stakeholder desinteressado fica sentado esperando as coisas acontecerem sozinhas.
 
-Enquanto um stakeholder tiver a mentalidade antiquada de _“esse pessoal que trabalha para mim tem obrigação de adivinhar o que estou pensando e entregar o que quero, quando eu quero”_, jamais terá valor algum, e vai ficar se perguntando _“será que minhas equipes são todas tão incompetentes assim que não conseguem me entregar nada?”_ A conclusão óbvia que ele deveria ter é _“hm, talvez se eu simplesmente ‘disser’ o que estou pensando talvez eles consigam me entregar o que quero.”_
+Adivinhe qual dos dois é mais eficiente? Se o stakeholder, que deveria ser o mais interessado, demonstra desinteresse pelo que está sendo produzido, por que alguém da equipe deveria se interessar?
 
-Finalmente, não existe nada pior que um stakeholder ausente que só dá as caras quando alguma coisa dá errado, para bronquear, ameaçar, aterrorizar. Onde ele estava durante todo o processo que, por acaso, levou a esse acidente, em primeiro lugar?
+Equipes são um reflexo da organização da empresa. Se as camadas mais altas são desorganizadas, indecisas, incomunicáveis e irresponsáveis, as equipes vão ser iguais. O que são as equipes senão subsistemas, cópias do sistema complexo adaptativo maior chamado "empresa"?
 
-> “Em intervalos regulares, a equipe reflete sobre como se tornar mais efetiva, então refina e ajusta seu comportamento de acordo.”
+Uma empresa pode contratar cem Linus Torvalds, cem Guido van Rossum, cem John Resig, e mesmo assim não espere que eles sozinhos apareçam com iPods, iPhones e outros produtos que vendem milhões. A Apple funciona porque, especulo eu, um Steve Jobs levanta da cadeira e se envolve pessoalmente no dia a dia das equipes de pesquisa e desenvolvimento, mesmo sendo o CEO.
 
-Toda metodologia ágil possui uma fase de “Retrospectiva”, um dos rituais para equipes que não estavam acostumadas a conversar. Nenhum processo é uma bala de prata e ela precisa ser refinada constantemente. Aliás, o ideal é que toda retrospectiva ao final de todo sprint tenha algo a ser mudado. Não existe cenário perfeito, existe sim melhoria contínua e ininterrupta. Se nada muda depois de cada retrospectiva, se ninguém sugere mudanças ao final de cada sprint, alguma coisa está errada.
+Colocado assim, parece que um lado se isenta da responsabilidade do outro. Claro que não. A melhor forma de trabalho é **colaborativa**, mas chegar às melhores soluções tecnológicas, com qualidade técnica e eficiência, é papel da equipe técnica. Os stakeholders, por outro lado, respondem pelos estudos de mercado, pela pesquisa de marketing e pela visão de produto.
 
-Os outros princípios acho que falam por si só:
+Um lado pode e deve colaborar com o outro, mas nem todo mundo consegue fazer tudo igual. Os stakeholders trazem a visão e a equipe técnica faz o possível para cumpri-la. Só que a visão não é autoritária, assim como algumas decisões tecnológicas também não deveriam ser.
 
-> “Receba mudanças de requerimento, mesmo tarde no desenvolvimento. Processos Ágeis esperam mudanças que tragam mais vantagem competitiva ao cliente.”
+A crítica aparece quando as ordens vêm de uma direção só, sem discussão. A equipe técnica pode estar fazendo tudo certo e ainda assim seguir na direção errada, e no fim a crítica volta para ela pelo fracasso de uma visão que ninguém chegou a discutir.
 
-Mudanças são bem vindas, mas somente mudanças que tragam vantagens competitivas ao cliente, e não mudanças aleatórias baseadas no humor dos envolvidos.
+> "A maneira mais eficiente e efetiva de transmitir informação para uma equipe de desenvolvimento é via conversas cara-a-cara."
 
-> “Construa projetos ao redor de pessoas motivadas. Lhes dê o ambiente e suporte que precisam, e confie neles para realizar o trabalho.”
+Para mim, esse é um corolário do princípio anterior. Esqueça sistemas automatizados de comunicação, fluxos de informação e afins. Todo mundo já viu filme dos anos 80 e 90 ridicularizando os "memorandos", aquela técnica de espalhar informação. Até hoje as pessoas tentam algo parecido, só que agora chamam de planilha, e-mail, wiki e por aí vai.
 
-Novamente óbvio: ou você confia nas suas equipes e funcionários, ou não confia. Se não confia, demita. Se confia, não fique micro-gerenciando e cobrando relatórios o tempo todo. Simples assim. Se você não confia e acha que pode controlar via micro-gerenciamento, você é um péssimo gerente e deveria você mesmo se demitir primeiro.
+O que importa é sentar ao lado de quem vai te entregar valor, dizer com clareza quais são as expectativas, o que mudou, o que ficou, e sair do caminho. Um stakeholder que não consegue conversar ao vivo com as equipes mostra de novo o desinteresse pelo resultado. E a mensagem fica clara: o que está sendo desenvolvido não tem valor, porque, se tivesse, ele demonstraria interesse.
 
-Sobre ambiente, lembre-se da [Pirâmide das Necessidades de Maslow](http://en.wikipedia.org/wiki/Maslow's_hierarchy_of_needs). Se seu ambiente é apertado, quente, sujo, desorganizado, não espere que suas equipes sejam motivadas, pró-ativas, organizadas. Ninguém motiva ninguém, mas é muito fácil desmotivar. Não exija o topo da pirâmide quando nem a base está satisfeita ainda.
+Enquanto um stakeholder mantiver a mentalidade antiquada de _"esse pessoal que trabalha para mim tem a obrigação de adivinhar o que eu penso e entregar o que quero, quando eu quero"_, ele nunca vai ter valor nenhum, e vai ficar se perguntando _"será que minhas equipes são tão incompetentes assim que não me entregam nada?"_ A conclusão óbvia seria outra: _"talvez, se eu simplesmente 'disser' o que estou pensando, eles consigam me entregar o que quero."_
 
-> “Processos Ágeis promovem desenvolvimento sustentado. Os patrocinadores, desenvolvedores e usuários devem ser capazes de manter um ritmo constante indefinidamente.”
+E não existe nada pior que um stakeholder ausente, que só dá as caras quando algo dá errado, para brigar, ameaçar e aterrorizar. Onde ele estava durante todo o processo que levou a esse acidente, em primeiro lugar?
 
-Significa que todos os princípios acima estão sendo considerados, ou seja, existe um bom ambiente, os stakeholders estão envolvidos, a comunicação ao vivo e frequente acontece, as prioridades estão bem entendidas e, com isso, podemos ter entregas frequentes e em ritmo constante e, mais ainda, acelerando.
+> "Em intervalos regulares, a equipe reflete sobre como se tornar mais efetiva, então refina e ajusta seu comportamento de acordo."
 
-> “Atenção constante à excelência técnica e bom design aumenta a agilidade.”
+Toda metodologia ágil tem uma fase de "Retrospectiva", um dos rituais criados para equipes que não estavam acostumadas a conversar. Nenhum processo é bala de prata, e todo processo precisa ser refinado o tempo todo. O ideal é que cada retrospectiva, ao fim de cada sprint, aponte algo para mudar. Cenário perfeito não existe; o que existe é melhoria contínua e ininterrupta. Se nada muda depois de uma retrospectiva, se ninguém sugere ajustes ao fim do sprint, alguma coisa está errada.
 
-O primeiro princípio, isoladamente, às vezes transmite a falsa impressão que valor deve ser entregue a qualquer custo, inclusive sacrificando qualidade, mantenabilidade, bom design, etc. E isso é falso e é por isso que eu disse que não adianta não considerar todos os princípios de uma vez.
+Os outros princípios falam por si:
 
-Sim, software de valor deve ser entregue o mais depressa possível mas, não, nunca ao custo de sacrificar demais a mantenabilidade futura desse software, justamente quando estiver acontecendo o Retorno do Investimento. Cada caso é um caso e é por isso que os stakeholders e as equipes devem se comunicar com frequência e tomar decisões baseadas, por exemplo, em custo-benefício.
+> "Receba mudanças de requerimento, mesmo tarde no desenvolvimento. Processos Ágeis esperam mudanças que tragam mais vantagem competitiva ao cliente."
 
-> “Simplicidade – a arte de maximizar a quantidade de trabalho não feito – é essencial.”
+Mudanças são bem-vindas, desde que tragam vantagem competitiva ao cliente. Mudança aleatória, baseada no humor dos envolvidos, fica de fora.
 
-Em conjunto com o princípio anterior também significa não se preocupar demasiadamente com _“talvez precisem disso no futuro”_ e criar software “bloat”, gordo, arquiteturalmente pesado e complexo para tentar torná-lo _“à prova de futuro.”_ Isso também é impossível e leva a software que demora demais para ser entregue e com valor dúbio no final.
+> "Construa projetos ao redor de pessoas motivadas. Lhes dê o ambiente e suporte que precisam, e confie neles para realizar o trabalho."
 
-Novamente, é uma questão de comunicação, de negociação e de custo-benefício baseada no valor que o stakeholder comunicou que precisa.
+De novo, óbvio: ou você confia nas suas equipes, ou não confia. Se não confia, demita. Se confia, pare de microgerenciar e de cobrar relatório o tempo todo. Simples assim. Quem não confia e ainda acha que controla tudo por microgerenciamento é um péssimo gerente, e deveria se demitir primeiro.
 
-> “As melhores arquiteturas, requerimentos e designs emergem de equipes auto-organizadas.”
+Sobre ambiente, lembre da [Pirâmide das Necessidades de Maslow](http://en.wikipedia.org/wiki/Maslow's_hierarchy_of_needs). Se o ambiente é apertado, quente, sujo e desorganizado, não espere equipes motivadas, proativas e organizadas. Ninguém motiva ninguém, mas desmotivar é muito fácil. Não exija o topo da pirâmide enquanto nem a base está satisfeita.
 
-Esse tópico em particular eu já expliquei dezenas de vezes de diversas maneiras, mas recomendo ler este meu artigo anterior sobre [Agilidade, Caos, Auto-Organização](/2009/07/08/off-topic-agilidade-caos-auto-organizacao).
+> "Processos Ágeis promovem desenvolvimento sustentado. Os patrocinadores, desenvolvedores e usuários devem ser capazes de manter um ritmo constante indefinidamente."
 
-Se você não entende Emergência e Auto-Organização, você não entende de Agilidade. E isso, por acaso, também me remete ao meu artigo [Você não Entende nada de Scrum](/2009/12/10/off-topic-voce-nao-entende-nada-de-scrum) que também recomendo ler agora.
+Significa que todos os princípios acima estão sendo respeitados: existe um bom ambiente, os stakeholders estão envolvidos, a comunicação ao vivo e frequente acontece e as prioridades estão claras. Com isso dá para ter entregas frequentes, em ritmo constante e, melhor ainda, acelerando.
 
-Como podem ver, o mundo de Agilidade é fundado em cima de princípios muito importantes. Nenhum deles deve ser considerado em isolado, ou você os considera todos em conjunto ou nunca terá nenhum deles.
+> "Atenção constante à excelência técnica e bom design aumenta a agilidade."
 
-Mas cuidado, muitos confundem Agilidade, e os conceitos de Auto-Organização e Gestão Participativa com [Busca pelo Consenso](http://en.wikipedia.org/wiki/Consensus). Nada poderia estar mais longe do que isso. Estou demorando mais do que gostaria para terminar de ler o livro [Systems Thinking](http://www.amazon.com/Systems-Thinking-Second-Complexity-Architecture/dp/0750679735). Mas aqui vai um trecho que eu gosto:
+O primeiro princípio, isolado, às vezes passa a falsa impressão de que valor deve ser entregue a qualquer custo, sacrificando qualidade, manutenibilidade e bom design. Isso é falso, e é justamente por isso que insisto em considerar todos os princípios juntos.
 
-> “Finalmente, medo de rejeição e uma forte tendência em direção à conformidade entre membros de um sistema social e outros obstáculos a mudanças sociais. Um exemplo é o experimento em uma cidade com lei-seca (que não permite venda de álcool) cujos constituintes deveriam votar sobre a banição contra o álcool. Uma pesquisa pré-votação indicou que 75% dos eleitores eram a favor de abolir o banimento. Entretanto, cada um dos eleitores achavam que a maioria preferia a lei-seca. Quando os resultados foram tabulados, 60% dos eleitores votaram para manter a lei-seca. Não surpreendentemente, depois que a pesquisa foi publicada, a próxima eleição sobre o assunto produziu 65% de maioria em favor da abolição do banimento.”
+Software de valor deve ser entregue o mais rápido possível, mas nunca ao custo de detonar a manutenibilidade futura, justamente quando o Retorno do Investimento começa a acontecer. Cada caso é um caso, e é por isso que stakeholders e equipes precisam conversar com frequência e decidir com base em custo-benefício.
 
-Democracia baseada em [Tirania da Maioria](http://en.wikipedia.org/wiki/Tyranny_of_the_majority) não é útil. Esse assunto é bem mais complicado do que simplesmente fazer as pessoas votarem as opções e não deve ser tratado de forma leviana. Cientistas Políticos, Filósofos e diversos pesquisadores vêm estudando esse assunto e garanto que existe ampla literatura a respeito.
+> "Simplicidade – a arte de maximizar a quantidade de trabalho não feito – é essencial."
 
-Aliás, esse assunto todo é mais complexo do que meramente ler os 12 princípios. Um Engenheiro, um Médico, um Advogado, estudam anos e estão sempre longe de serem mestres nas suas áreas. Um Gerente, por outro lado, estuda muito pouco sobre o assunto, e por isso decidem baseados mais em folclore do que qualquer outra coisa. Isso é péssimo e, principalmente nesses casos, quando acertam é por sorte e quando erram é nada mais do que o esperado.
+Junto com o princípio anterior, isso significa não ficar preso ao _"talvez precisem disso no futuro"_ e sair criando software "bloat", gordo, pesado e complexo para tentar deixá-lo _"à prova de futuro"_. Isso é impossível e só leva a um software que demora demais para ser entregue e que chega com valor duvidoso.
+
+De novo, é uma questão de comunicação, de negociação e de custo-benefício, a partir do valor que o stakeholder disse que precisa.
+
+> "As melhores arquiteturas, requerimentos e designs emergem de equipes auto-organizadas."
+
+Esse tópico eu já expliquei dezenas de vezes, de várias formas, mas recomendo ler o meu artigo [Agilidade, Caos, Auto-Organização](/2009/07/08/off-topic-agilidade-caos-auto-organizacao).
+
+Quem não entende Emergência e Auto-Organização não entende de Agilidade. Isso me leva de volta ao meu artigo [Você não Entende nada de Scrum](/2009/12/10/off-topic-voce-nao-entende-nada-de-scrum), que também recomendo ler agora.
+
+Como dá para ver, o mundo da Agilidade se apoia em princípios importantes. Nenhum deles vale isolado: ou você considera todos em conjunto, ou não terá nenhum.
+
+Mas cuidado: muita gente confunde Agilidade, Auto-Organização e Gestão Participativa com [Busca pelo Consenso](http://en.wikipedia.org/wiki/Consensus). Nada poderia estar mais longe disso. Estou demorando mais do que queria para terminar o livro [Systems Thinking](https://www.amazon.com/Systems-Thinking-Second-Complexity-Architecture/dp/0750679735), mas aqui vai um trecho de que gosto:
+
+> "Finalmente, medo de rejeição e uma forte tendência em direção à conformidade entre membros de um sistema social e outros obstáculos a mudanças sociais. Um exemplo é o experimento em uma cidade com lei-seca (que não permite venda de álcool) cujos constituintes deveriam votar sobre a banição contra o álcool. Uma pesquisa pré-votação indicou que 75% dos eleitores eram a favor de abolir o banimento. Entretanto, cada um dos eleitores achavam que a maioria preferia a lei-seca. Quando os resultados foram tabulados, 60% dos eleitores votaram para manter a lei-seca. Não surpreendentemente, depois que a pesquisa foi publicada, a próxima eleição sobre o assunto produziu 65% de maioria em favor da abolição do banimento."
+
+Democracia baseada em [Tirania da Maioria](http://en.wikipedia.org/wiki/Tyranny_of_the_majority) não serve. O assunto é bem mais complicado do que fazer as pessoas votarem nas opções, e não dá para tratar de forma leviana. Cientistas políticos, filósofos e vários pesquisadores estudam isso há tempos, e garanto que existe literatura vasta a respeito.
+
+E esse assunto todo é mais complexo do que simplesmente ler os doze princípios. Um engenheiro, um médico ou um advogado estudam anos e continuam longe de serem mestres na área. Um gerente, por outro lado, estuda pouquíssimo, e por isso decide mais por folclore do que por qualquer outra coisa. É péssimo: nesses casos, quando acerta é por sorte, e quando erra é só o esperado.
 
 <video controls>
 <source src="https://s3.us-east-2.amazonaws.com/blip.tv/Akitaonrails-DanPinkMotivao160.mp4">

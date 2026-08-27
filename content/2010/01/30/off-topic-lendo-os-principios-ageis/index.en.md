@@ -2,6 +2,7 @@
 title: "[Off-Topic] Reading the Agile Principles"
 date: '2010-01-30T19:32:00-02:00'
 slug: off-topic-lendo-os-principios-ageis
+translationKey: off-topic-lendo-os-principios-ageis
 description: "The 12 Agile principles need to be read together: delivering value quickly does not excuse quality, simplicity, collaboration, or continuous improvement. The Manifesto is not a ready-made recipe."
 tags:
 - agile
@@ -10,99 +11,119 @@ tags:
 draft: false
 ---
 
-The Agile Manifesto is based on [4 values](http://agilemanifesto.org/). I don't know how many times I've repeated that. More than that, it's based on [12 important principles](http://agilemanifesto.org/principles.html). Many consider them as the 10 commandments. I'm always against anything dogmatized, but on the other hand, if you prefer to dogmatize the Manifesto, never pick just one sentence from it in isolation. If you're going to take one of them literally, take all of them literally — otherwise it would be the same as dogmatizing the 10 commandments and saying _"I obey the 10 commandments: I've committed adultery, but it doesn't matter because I never killed anyone, never stole, and it wasn't with the neighbor's wife that I committed adultery."_
+The Agile Manifesto rests on [4 values](http://agilemanifesto.org/). I've repeated that more times than I can count. On top of that, it rests on [12 important principles](http://agilemanifesto.org/principles.html) that a lot of people treat like the ten commandments.
 
-Among some of the principles we have:
+I'm against anything turned into dogma. But if you insist on dogmatizing the Manifesto, never pull a single sentence out of it in isolation. If you're going to take one principle literally, take all of them literally, otherwise it's the same as dogmatizing the ten commandments and saying _"I obey the ten commandments: I've committed adultery, but it doesn't matter because I never killed anyone, never stole, and it wasn't with the neighbor's wife that I committed adultery."_
+
+A few of the principles:
 
 > "Our highest priority is to satisfy the customer through early and continuous delivery of valuable software."
 
-This single principle has already led to several discussions for years. In particular, read the article [Our Highest Priority](http://www.pavley.com/2009/10/08/our-highest-priority/) and [Why Satisfy the Customer?](http://stevebockman.com/blog/2010/01/27/why-satisfy-the-customer/).
+This one principle alone has fueled years of debate. Worth reading [Our Highest Priority](https://www.pavley.com/2009/10/08/our-highest-priority/) and [Why Satisfy the Customer?](http://web.archive.org/web/20100201014014/http://stevebockman.com:80/blog/2010/01/27/why-satisfy-the-customer/).
 
-In particular, I like to think like [Eliyahu Goldratt](http://en.wikipedia.org/wiki/Theory_of_Constraints) where he says — simplified, of course — that the priority of any company is _to make money._ Now, calm down, anti-capitalists and on-duty populists :-) We're not talking about _"making money at the expense of people, customers, and society"_ or anything like that.
+I like to think like [Eliyahu Goldratt](http://en.wikipedia.org/wiki/Theory_of_Constraints), who says, in simplified terms, that the priority of any company is _to make money._ Now, calm down, anti-capitalists and on-duty populists :-) Nobody is talking about _"making money at the expense of people, customers, and society"_ or anything like that.
 
-The priority isn't to create innovation, isn't to create products, isn't to generate jobs — it's to make money. And the means for that can be creating innovation, creating products, generating jobs, for example. What I mean is that we confuse the **means** with the **goals**.
+The priority is to make money. Creating innovation, creating products, and generating jobs are means to get there, and we keep confusing the **means** with the **goals**.
 
-_"Delivering fast and continuously"_ is very important to keep in mind. Often this isn't possible, for example, if you depend on suppliers or other external factors. But let me pick other principles related to this first one:
+_"Delivering fast and continuously"_ is important to keep in mind. It isn't always possible, for example, when you depend on suppliers or other external factors. But let me pull in other principles tied to this first one:
 
-> "Deliver working software frequently, from a couple of weeks to a couple of months, with a preference for the shorter timescale."
+> "Deliver working software frequently, from a couple of weeks to a couple of months, with a preference to the shorter timescale."
 
-Time is never fixed, because every professional knows you can't predict the future. Delivering value quickly is a principle, not a rule. It means we'll do everything possible to try to deliver something that works, with quality, as quickly as possible. For that, we'll try to remove impediments, improve processes, optimize procedures, improve communication, and whatever else is necessary to deliver something. It's a reminder for every agilist at all moments when deliveries start to take longer than normal.
+Time is never fixed, because every professional knows you can't predict the future. Delivering value quickly is a principle that guides the work, and nobody should treat it as a rigid rule. It means doing everything possible to deliver something that works, with quality, in the shortest viable timeframe.
+
+For that, you try to remove impediments, improve processes, optimize procedures, and improve communication. It's a reminder for every agilist whenever deliveries start taking longer than normal.
 
 > "Working software is the primary measure of progress."
 
-The same thing said with different words: software that isn't delivered is useless software. An agilist should feel bad working for months on software that nobody is using. Softwares are different — sometimes it takes 1 whole day to discover a solution that can be solved in 1 line of code. Sometimes you can write 100 lines in 1 hour. It's the old productivity dilemma that the industry has already tried to solve with several failed techniques like LOC (lines of code), Function Points, and other nonsense.
+Same idea in different words: software that hasn't been delivered is useless. An agilist should feel bad working for months on software nobody uses.
 
-I can't help thinking that Martin Fowler was one of those who must have suggested this principle, especially because of his article [Cannot Measure Productivity](http://martinfowler.com/bliki/CannotMeasureProductivity.html). Software isn't measured by productivity — it's measured by value. And whoever defines the value to be reached via software development is the client/company. If the developed software doesn't bring value, that isn't the software's fault — it's the fault of the software's value definition. A tool, by itself, has no value.
+Every piece of software is different. Sometimes it takes a whole day to find a one-line solution, and sometimes you can write a hundred lines in an hour. It's the old productivity dilemma the industry tried to solve with failed techniques like LOC (lines of code), Function Points, and other nonsense.
 
-That's why I said LOC and function points aren't useful. I can have a team that delivers 10,000 function points per Sprint. It means nothing if what was asked to be developed doesn't bring any value to the client. This is one of a Product Owner's functions: ensuring that what's being prioritized for development is something that will actually bring value, whether in the short term or the long term, depending on the future vision they have. If the PO has no vision, no strategy, and no clear direction, they will have exactly this as a result: lots of software and little value, and the fault for this is never the technical team's — it's the lack of vision and, consequently, the PO's and/or the company's problem.
+I imagine Martin Fowler was one of the people who suggested this principle, mostly because of his article [Cannot Measure Productivity](https://martinfowler.com/bliki/CannotMeasureProductivity.html). Software is measured by value. Raw productivity says very little, and whoever defines the value to be reached in development is the client or the company.
 
-And speaking of POs, we can't fail to talk about stakeholders in general, those interested in the value to be generated by the project:
+If the delivered software brings no value, the problem is in the definition of that value. The software did what it was told. A tool, on its own, has no value.
+
+That's why I say LOC and function points are useless. I can have a team shipping ten thousand function points per sprint, and it means nothing if what was requested brings no value to the client.
+
+This is one of a Product Owner's jobs: making sure whatever enters the development queue will actually bring value, short or long term, depending on the future vision they have. A PO with no vision, no strategy, and no clear direction reaps exactly that: lots of software and little value. The blame there lands on the PO's and the company's lack of vision, never on the technical team.
+
+And speaking of POs, we can't leave out stakeholders in general, the people interested in the value the project will generate:
 
 > "Business people and developers must work together daily throughout the project."
 
-Personally I'd hate bureaucrats every day in a development environment :-) But cynicism aside, this is another reminder that whoever is interested in the value generated by a project is who should seek out the team and see if they need anything. A stakeholder who doesn't go to the technical team shows they aren't interested in the result to be generated. And we're not talking about having daily meetings with the team, but exchanging ideas quickly, something like 5 or 10 minutes a day would be enough. And no ritual like a Daily Scrum is necessary for that. An interested stakeholder gets up from their chair and goes to the teams. An uninterested stakeholder stays in their chair and waits for things to happen by themselves. Guess which of the two is more efficient? And if the stakeholder, who should be the most interested, shows disinterest in what's being produced, why should anyone on the teams show interest?
+Personally, I'd hate bureaucrats around a development environment every day :-) Cynicism aside, this is another reminder that whoever cares about the value of a project is the one who should seek out the team and check if anything is missing. A stakeholder who never approaches the technical team shows they don't care about the result.
 
-Teams are a reflection of the company's organization. If the upper layers are disorganized, indecisive, uncommunicative, and irresponsible, the teams will be the same way. What are teams but sub-systems, copies of the complex adaptive system called "company"?
+And I'm not talking about a daily meeting. Five or ten minutes of conversation a day are enough, no ritual like a Daily Scrum required. An interested stakeholder gets up from the chair and walks over to the teams. An uninterested stakeholder stays seated, waiting for things to happen on their own.
 
-A company can hire 100 Linus Torvalds, 100 Guido van Rossums, 100 John Resigs, but don't expect them alone to come up with iPods, iPhones, and other great products that will sell millions. Apple works because — I speculate — a Steve Jobs gets out of his chair and gets personally involved in the day-to-day of research and development teams, even being CEO.
+Guess which of the two is more efficient? If the stakeholder, who should be the most interested, shows no interest in what's being produced, why would anyone on the team bother?
 
-Talking this way, it seems one side is exempt from the other's responsibility. Of course not — the best way to work is **collaboratively**. But the responsibility of arriving at the best technological solutions, technical quality, and efficiency is the technical team's. On the other hand, stakeholders are responsible for market studies, marketing research, product vision. One side can and should collaborate with the other, but unfortunately not everyone can equally do everything. Given that stakeholders bring the vision, the technical team will do whatever possible to fulfill that vision. But the vision isn't authoritarian, just as some technological decisions shouldn't be. The criticism remains because normally orders come from only one direction, without discussion, and the technical team, even performing their work correctly, may be following a wrong direction, and in the end the criticism turns back on itself for the failure of a vision that wasn't even discussed.
+Teams are a reflection of the company's organization. If the upper layers are disorganized, indecisive, uncommunicative, and irresponsible, the teams will be the same. What are teams but sub-systems, copies of the larger complex adaptive system called "company"?
+
+A company can hire a hundred Linus Torvalds, a hundred Guido van Rossums, a hundred John Resigs, and even then don't expect them to come up with iPods, iPhones, and other products that sell millions all on their own. Apple works because, I speculate, a Steve Jobs gets out of his chair and gets personally involved in the day-to-day of the research and development teams, even as CEO.
+
+Put this way, it sounds like one side is off the hook for the other's responsibility. Of course not. The best way to work is **collaboratively**, but arriving at the best technological solutions, with technical quality and efficiency, is the technical team's job. Stakeholders, in turn, answer for market studies, marketing research, and product vision.
+
+One side can and should collaborate with the other, but not everyone can do everything equally. Stakeholders bring the vision and the technical team does what it can to fulfill it. Except the vision isn't authoritarian, just as some technological decisions shouldn't be either.
+
+The criticism shows up when orders come from a single direction, with no discussion. The technical team can be doing everything right and still head the wrong way, and in the end the criticism comes back on them for the failure of a vision nobody ever discussed.
 
 > "The most efficient and effective method of conveying information to and within a development team is face-to-face conversation."
 
-To me, this is a corollary of the previous principle. Forget automated communication systems, information flow systems, or any such nonsense. Everyone has seen films from the 80s and 90s ridiculing "memos," which were a technique for spreading information. To this day, people still try something similar to memos, only now they're spreadsheets, emails, wikis, etc. The most important thing is: sit side by side with the person who will deliver value to you and clearly say what the expectations are, what changed, what stayed the same, and get out of the way. If a stakeholder doesn't have the capacity to talk live with the teams, again they demonstrate disinterest in the result being generated, and therefore the message is clear: what's being developed has no value, because if it did the stakeholder would show interest in it.
+To me, this is a corollary of the previous principle. Forget automated communication systems, information-flow systems, and all that nonsense. Everyone has seen 80s and 90s movies mocking "memos," that technique for spreading information. To this day people still try something similar, only now they call it a spreadsheet, an email, a wiki, and so on.
 
-As long as a stakeholder has the old-fashioned mentality of _"these people who work for me have the obligation to guess what I'm thinking and deliver what I want, when I want it,"_ they will never have any value, and they will keep asking themselves _"are my teams all so incompetent that they can't deliver anything to me?"_ The obvious conclusion they should have is _"hm, maybe if I just 'tell' them what I'm thinking, maybe they can deliver what I want."_
+What matters is sitting next to the person who's going to deliver value to you, clearly stating the expectations, what changed, what stayed, and then getting out of the way. A stakeholder who can't talk live with the teams shows, again, no interest in the result. And the message is clear: what's being developed has no value, because if it did, they'd show interest.
 
-Finally, there's nothing worse than an absent stakeholder who only shows up when something goes wrong, to yell, threaten, terrorize. Where was he during the entire process that, by chance, led to this accident in the first place?
+As long as a stakeholder keeps the old-fashioned mentality of _"these people who work for me are obligated to guess what I'm thinking and deliver what I want, when I want it,"_ they'll never get any value, and they'll keep asking themselves _"are my teams so incompetent they can't deliver anything?"_ The obvious conclusion would be the other one: _"maybe if I just 'tell' them what I'm thinking, they can deliver what I want."_
+
+And there's nothing worse than an absent stakeholder who only shows up when something goes wrong, to yell, threaten, and terrorize. Where was he during the whole process that led to this accident in the first place?
 
 > "At regular intervals, the team reflects on how to become more effective, then tunes and adjusts its behavior accordingly."
 
-Every agile methodology has a "Retrospective" phase, one of the rituals for teams that weren't used to talking. No process is a silver bullet, and it needs to be refined constantly. In fact, the ideal is that every retrospective at the end of every sprint should have something to be changed. There is no perfect scenario — there is continuous and uninterrupted improvement. If nothing changes after each retrospective, if no one suggests changes at the end of each sprint, something is wrong.
+Every agile methodology has a "Retrospective" phase, one of the rituals created for teams that weren't used to talking. No process is a silver bullet, and every process needs constant refinement. Ideally, each retrospective, at the end of each sprint, points at something to change. There's no perfect scenario; what there is is continuous, uninterrupted improvement. If nothing changes after a retrospective, if nobody suggests adjustments at the end of the sprint, something is wrong.
 
-The other principles, I think, speak for themselves:
+The other principles speak for themselves:
 
 > "Welcome changing requirements, even late in development. Agile processes harness change for the customer's competitive advantage."
 
-Changes are welcome, but only changes that bring competitive advantages to the customer, not random changes based on the mood of those involved.
+Changes are welcome, as long as they bring competitive advantage to the customer. Random changes based on the mood of the people involved stay out.
 
 > "Build projects around motivated individuals. Give them the environment and support they need, and trust them to get the job done."
 
-Again obvious: either you trust your teams and employees, or you don't. If you don't trust them, fire them. If you trust them, don't keep micro-managing and demanding reports all the time. Simple as that. If you don't trust them and think you can control via micro-management, you're a terrible manager and should fire yourself first.
+Obvious again: either you trust your teams, or you don't. If you don't, fire them. If you do, stop micro-managing and demanding reports all the time. Simple as that. Anyone who doesn't trust them and still thinks they can control everything through micro-management is a terrible manager, and should fire themselves first.
 
-About environment, remember [Maslow's Hierarchy of Needs](http://en.wikipedia.org/wiki/Maslow's_hierarchy_of_needs). If your environment is cramped, hot, dirty, disorganized, don't expect your teams to be motivated, proactive, organized. Nobody motivates anybody, but it's very easy to demotivate. Don't demand the top of the pyramid when not even the base is satisfied yet.
+About the environment, remember [Maslow's Hierarchy of Needs](http://en.wikipedia.org/wiki/Maslow's_hierarchy_of_needs). If the environment is cramped, hot, dirty, and disorganized, don't expect motivated, proactive, organized teams. Nobody motivates anybody, but demotivating is very easy. Don't demand the top of the pyramid while not even the base is satisfied.
 
 > "Agile processes promote sustainable development. The sponsors, developers, and users should be able to maintain a constant pace indefinitely."
 
-It means that all the principles above are being considered, that is, there is a good environment, stakeholders are involved, live and frequent communication is happening, priorities are well understood, and with that, we can have frequent deliveries at a constant pace and, more than that, accelerating.
+It means all the principles above are being respected: there's a good environment, stakeholders are involved, live and frequent communication happens, and priorities are clear. With that, you can have frequent deliveries at a constant pace and, better still, accelerating.
 
 > "Continuous attention to technical excellence and good design enhances agility."
 
-The first principle, in isolation, sometimes conveys the false impression that value should be delivered at any cost, even sacrificing quality, maintainability, good design, etc. And that's false, and that's why I said there's no point in not considering all the principles at once.
+The first principle, in isolation, sometimes gives the false impression that value has to be delivered at any cost, sacrificing quality, maintainability, and good design. That's false, and that's exactly why I keep insisting on considering all the principles together.
 
-Yes, valuable software should be delivered as quickly as possible, but, no, never at the cost of sacrificing too much the future maintainability of that software, precisely when the Return on Investment is happening. Each case is a case, and that's why stakeholders and teams should communicate frequently and make decisions based, for example, on cost-benefit.
+Valuable software should be delivered as fast as possible, but never at the cost of wrecking future maintainability, right when the Return on Investment starts happening. Each case is its own case, and that's why stakeholders and teams need to talk often and decide based on cost-benefit.
 
-> "Simplicity — the art of maximizing the amount of work not done — is essential."
+> "Simplicity--the art of maximizing the amount of work not done--is essential."
 
-Together with the previous principle, it also means not worrying excessively about _"maybe they'll need this in the future"_ and creating "bloat" software, fat, architecturally heavy and complex to try to make it _"future-proof."_ That's also impossible and leads to software that takes too long to be delivered and with dubious value in the end.
+Together with the previous principle, this means not getting stuck on _"maybe they'll need this in the future"_ and cranking out "bloat" software, fat, heavy, and complex to try to make it _"future-proof"_. That's impossible and only leads to software that takes too long to deliver and shows up with dubious value.
 
-Again, it's a matter of communication, negotiation, and cost-benefit based on the value the stakeholder communicated they need.
+Again, it's a matter of communication, negotiation, and cost-benefit, starting from the value the stakeholder said they need.
 
 > "The best architectures, requirements, and designs emerge from self-organizing teams."
 
-This topic in particular I've already explained dozens of times in various ways, but I recommend reading this previous article of mine about [Agility, Chaos, Self-Organization](/en/2009/07/08/off-topic-agilidade-caos-auto-organizacao).
+This topic I've explained dozens of times, in all sorts of ways, but I recommend reading my article [Agility, Chaos, Self-Organization](/en/2009/07/08/off-topic-agilidade-caos-auto-organizacao).
 
-If you don't understand Emergence and Self-Organization, you don't understand Agility. And this, by the way, also brings me back to my article [You Don't Understand Anything About Scrum](/en/2009/12/10/off-topic-voce-nao-entende-nada-de-scrum) which I also recommend reading now.
+Anyone who doesn't understand Emergence and Self-Organization doesn't understand Agility. That brings me back to my article [You Don't Understand Anything About Scrum](/en/2009/12/10/off-topic-voce-nao-entende-nada-de-scrum), which I also recommend reading now.
 
-As you can see, the world of Agility is founded on very important principles. None of them should be considered in isolation — either you consider them all together or you will never have any of them.
+As you can see, the world of Agility rests on important principles. None of them holds up in isolation: either you consider them all together, or you'll have none of them.
 
-But be careful, many confuse Agility and the concepts of Self-Organization and Participatory Management with [the Search for Consensus](http://en.wikipedia.org/wiki/Consensus). Nothing could be further from that. I'm taking longer than I'd like to finish reading the book [Systems Thinking](http://www.amazon.com/Systems-Thinking-Second-Complexity-Architecture/dp/0750679735). But here's an excerpt I like:
+But be careful: a lot of people confuse Agility, Self-Organization, and Participatory Management with [the Search for Consensus](http://en.wikipedia.org/wiki/Consensus). Nothing could be further from that. I'm taking longer than I'd like to finish the book [Systems Thinking](https://www.amazon.com/Systems-Thinking-Second-Complexity-Architecture/dp/0750679735), but here's an excerpt I like:
 
 > "Finally, fear of rejection and a strong tendency toward conformity among members of a social system and others are obstacles to social changes. An example is the experiment in a city with a dry law (which doesn't allow the sale of alcohol) whose constituents were to vote on the ban against alcohol. A pre-voting poll indicated that 75% of voters were in favor of abolishing the ban. However, each of the voters thought that the majority preferred the dry law. When the results were tabulated, 60% of voters voted to keep the dry law. Not surprisingly, after the poll was published, the next election on the subject produced a 65% majority in favor of abolishing the ban."
 
-Democracy based on the [Tyranny of the Majority](http://en.wikipedia.org/wiki/Tyranny_of_the_majority) isn't useful. This subject is much more complicated than simply making people vote on the options, and it shouldn't be treated lightly. Political Scientists, Philosophers, and various researchers have been studying this subject, and I guarantee there is extensive literature about it.
+Democracy based on the [Tyranny of the Majority](http://en.wikipedia.org/wiki/Tyranny_of_the_majority) is useless. This subject is much more complicated than just having people vote on the options, and it can't be treated lightly. Political scientists, philosophers, and various researchers have been studying it for a long time, and I guarantee there's vast literature on it.
 
-By the way, this whole subject is more complex than merely reading the 12 principles. An Engineer, a Doctor, a Lawyer study for years and are always far from being masters in their fields. A Manager, on the other hand, studies very little about the subject, and therefore they decide based more on folklore than anything else. That's terrible and, especially in these cases, when they're right it's by luck, and when they're wrong it's nothing more than expected.
+And this whole subject is more complex than just reading the twelve principles. An engineer, a doctor, or a lawyer study for years and are still far from being masters of their fields. A manager, on the other hand, studies almost nothing, and so decides based more on folklore than anything else. It's terrible: in these cases, when they're right it's by luck, and when they're wrong it's just what you'd expect.
 
 <video controls>
 <source src="https://s3.us-east-2.amazonaws.com/blip.tv/Akitaonrails-DanPinkMotivao160.mp4">
