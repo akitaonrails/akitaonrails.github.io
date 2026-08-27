@@ -48,12 +48,12 @@ Símbolos são usados como identificadores. Outras linguagens poderiam simplesme
 
 ```ruby
 class Transact < ActiveRecord::Base  
- validates_presence_of “when”  
- validates_presence_of “category”, “account”  
- validates_presence_of “value”  
- validates_numericality_of “value”
+ validates_presence_of "when"  
+ validates_presence_of "category", "account"  
+ validates_presence_of "value"  
+ validates_numericality_of "value"
 
-belongs_to “category” belongs_to “account”
+belongs_to "category" belongs_to "account"
 end
 ```
 
@@ -61,7 +61,7 @@ Visualmente não ficou tão diferente: nos livramos dos dois-pontos e voltamos �
 
 
 ```ruby
-rubyString.new(“category”)
+rubyString.new("category")
 ```
 
 Apenas fazemos:
@@ -91,10 +91,10 @@ Mas, isso não é um problema novo. Para isso, temos outra construção na maior
 ```ruby
 
 class Transact < ActiveRecord::Base  
-ACCOUNT = “account”  
-CATEGORY = “category”  
-VALUE = “value”  
-WHEN = “when”
+ACCOUNT = "account"  
+CATEGORY = "category"  
+VALUE = "value"  
+WHEN = "when"
 
 validates_presence_of WHENvalidates_presence_of CATEGORY, ACCOUNTvalidates_presence_of VALUEvalidates_numericality_of VALUEbelongs_to CATEGORYbelongs_to ACCOUNT
 

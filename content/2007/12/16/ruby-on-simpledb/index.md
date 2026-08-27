@@ -48,27 +48,27 @@ Copiando o exemplo do seu Wiki, eis como se criaria um banco de dados no CouchDb
 
 ```ruby
 
-server = Couch::Server.new(“localhost”, “5984”)  
-server.put(“/foo/”, "")  
+server = Couch::Server.new("localhost", "5984")  
+server.put("/foo/", "")  
 ```
 
 Eis como se criaria um documento:
 
 
 ```ruby
-server = Couch::Server.new(“localhost”, “5984”)  
+server = Couch::Server.new("localhost", "5984")  
 doc = \<\<-JSON  
-{"type":“comment”,“body”:“First Post!”}  
+{"type":"comment","body":"First Post!"}  
 JSON  
-server.put(“/foo/document_id”, doc)  
+server.put("/foo/document_id", doc)  
 ```
 
 E finalmente, como se busca um documento:
 
 
 ```ruby
-server = Couch::Server.new(“localhost”, “5984”)  
-res = server.get(“/foo/document_id”)  
+server = Couch::Server.new("localhost", "5984")  
+res = server.get("/foo/document_id")  
 xml = res.body  
 ```
 

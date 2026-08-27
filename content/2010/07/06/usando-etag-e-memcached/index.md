@@ -59,11 +59,11 @@ Agora no <tt>config/environment.rb</tt> coloque:
 
 ```ruby
 
-ruby config.gem ‘memcached’
+ruby config.gem 'memcached'
 
 …  
 end  
-require ‘digest/sha1’  
+require 'digest/sha1'  
 
 ```
 
@@ -72,7 +72,7 @@ E no seu <tt>config/environments/production.rb</tt> coloque:
 
 ```ruby
 
-require ‘memcached’  
+require 'memcached'  
 config.cache_store = :mem_cache_store, Memcached::Rails.new  
 ```
 
@@ -83,7 +83,7 @@ Agora, basta fazer algo assim no controller:
 
 ```ruby
 def show
- cache_key = Digest::SHA1.hexdigest(“post_#{[:year, :month, :day, :slug].collect {|x| params[x] }.join(‘_’)}”)  
+ cache_key = Digest::SHA1.hexdigest("post_#{[:year, :month, :day, :slug].collect {|x| params[x] }.join('_')}")  
  etag = Rails.cache.read(cache_key)  
  options = { :public => true }  
  if etag  
@@ -129,7 +129,7 @@ Isso porque na implementação do método <tt>fresh_when</tt> tem um trecho que 
 
 if options[:public]  
  …  
- cache_control << “public”  
+ cache_control << "public"  
 end  
 ```
 
@@ -143,7 +143,7 @@ class Admin::PostsController < Admin::BaseController
  after_filter :clean_cache, :only => [:create, :update, :destroy]  
  …
 
-protected def clean_cache Rails.cache.delete(Digest::SHA1.hexdigest(“post_#{@post.permalink.gsub(”/", “_”)}")) Rails.cache.delete(“recent_posts_etag”) end
+protected def clean_cache Rails.cache.delete(Digest::SHA1.hexdigest("post_#{@post.permalink.gsub("/", "_")}")) Rails.cache.delete("recent_posts_etag") end
 
 end
 ```

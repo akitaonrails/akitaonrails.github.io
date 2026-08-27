@@ -32,7 +32,7 @@ Uma boa engine para converter Markdown em HTML é o [RDiscount](https://github.c
 
 
 ```ruby
-gem ‘rdiscount’
+gem 'rdiscount'
 ```
 
 Usá-lo é muito simples:
@@ -40,7 +40,7 @@ Usá-lo é muito simples:
 
 ```ruby
 
-RDiscount.new(“texto em **markdown**.”).to_html #=> **markdown**
+RDiscount.new("texto em **markdown**.").to_html #=> **markdown**
 ```
 
 O erro mais comum é adicionar essa lógica no controller, algo como isso:
@@ -66,8 +66,8 @@ class Article < ActiveRecord::Base
  …  
  def translations_attributes=(attributes)  
  new_translations = attributes.values.reduce({}) do |new_values, translation|  
- translation.merge!(“body_html” => RDiscount.new(translation[“body”] || "").to_html )  
- new_values.merge! translation.delete(“locale”) => translation  
+ translation.merge!("body_html" => RDiscount.new(translation["body"] || "").to_html )  
+ new_values.merge! translation.delete("locale") => translation  
  end  
  set_translations new_translations  
  end  
@@ -102,9 +102,9 @@ group :assets do
  …
 
 # See <https://github.com/sstephenson/execjs#readme> for more supported runtimes  
- gem ‘therubyracer’, :platforms => :ruby  
- gem ‘less-rails’  
- gem ‘twitter-bootstrap-rails’  
+ gem 'therubyracer', :platforms => :ruby  
+ gem 'less-rails'  
+ gem 'twitter-bootstrap-rails'  
 end  
 ```
 
@@ -139,12 +139,12 @@ module ApplicationHelper
  …  
  def navigation_links  
  links = []  
- options = params[:controller] == “welcome” ? { class: “active” } : {}  
- links << content_tag(:li, link_to(t(“hello”), welcome_path), options).html_safe
+ options = params[:controller] == "welcome" ? { class: "active" } : {}  
+ links << content_tag(:li, link_to(t("hello"), welcome_path), options).html_safe
 
-options = params[:controller] == “articles” ? { class: “active” } : {} 
-links << content_tag(:li, link_to(t(“articles.title”), articles_path), options).html_safe 
-links << content_tag(:li, link_to(t(“admin.title”), admin_dashboard_path)).html_safe content_tag(:ul, links.join(“\n”).html_safe, class: “nav”) 
+options = params[:controller] == "articles" ? { class: "active" } : {} 
+links << content_tag(:li, link_to(t("articles.title"), articles_path), options).html_safe 
+links << content_tag(:li, link_to(t("admin.title"), admin_dashboard_path)).html_safe content_tag(:ul, links.join("\n").html_safe, class: "nav") 
 end
 
 end  
@@ -154,7 +154,7 @@ E no layout em <tt>app/views/layouts/application.html.erb</tt> colocamos:
 
 
 ```html
-<%= t(“site_name”) %\>](#)\<%= navigation_links %\>
+<%= t("site_name") %\>](#)\<%= navigation_links %\>
 ```
 
 * * *
@@ -167,13 +167,13 @@ O ActiveAdmin é um excelente projeto para termos rapidamente um módulo simples
 ```ruby
 …  
 group :assets do  
- gem ‘jquery-ui-rails’  
+ gem 'jquery-ui-rails'  
  …  
 end  
 …  
-gem ‘jquery-rails’  
-gem ‘activeadmin’  
-gem ‘ActiveAdmin-Globalize3-inputs’  
+gem 'jquery-rails'  
+gem 'activeadmin'  
+gem 'ActiveAdmin-Globalize3-inputs'  
 …  
 ```
 
@@ -204,7 +204,7 @@ ActiveAdmin.register Article do
 default_actions end 
   show do |article| attributes_table do 
     row :slug I18n.available_locales.each do 
-      |locale| h3 I18n.t(locale, scope: [“translation”]) div do 
+      |locale| h3 I18n.t(locale, scope: ["translation"]) div do 
         h4 article.translations.where(locale: locale).first.title 
         end 
       div do 
@@ -238,8 +238,8 @@ class Article < ActiveRecord::Base
 
 def translations_attributes=(attributes) 
     new_translations = attributes.values.reduce({}) do 
-      |new_values, translation| translation.merge!(“body_html” => RDiscount.new(translation[“body”] || "").to_html ) 
-      new_values.merge! translation.delete(“locale”) => translation end 
+      |new_values, translation| translation.merge!("body_html" => RDiscount.new(translation["body"] || "").to_html ) 
+      new_values.merge! translation.delete("locale") => translation end 
       set_translations new_translations end …
 end
 ```
@@ -251,9 +251,9 @@ Precisamos também adicionar o JQuery UI para o ActiveAdmin. Basta alterar o arq
 
 ```css
 // Active Admin CSS Styles  
-@import “active_admin/mixins”;  
-@import “active_admin/base”;  
-@import “jquery.ui.tabs”;  
+@import "active_admin/mixins";  
+@import "active_admin/base";  
+@import "jquery.ui.tabs";  
 ```
 
 E também o arquivo <tt>app/uploads/javascripts/active_admin.js</tt>:
@@ -306,7 +306,7 @@ Existem algumas gems que fazem isso, a primeira que esbarrei se chama “i18n_ro
 
 ```ruby
 
-gem ‘rails-translate-routes’  
+gem 'rails-translate-routes'  
 ```
 
 Depois de executar o comando <tt>bundle</tt> precisamos editar o arquivo <tt>config/routes.rb</tt> que controla todas as rotas. Neste estágio, ele deve ter o seguinte conteúdo:
@@ -327,8 +327,8 @@ I18nDemo::Application.routes.draw do
  resources :articles
 
   #1. pagina principal  
- get “welcome/index”, as: “welcome”  
- root to: ‘welcome#index’  
+ get "welcome/index", as: "welcome"  
+ root to: 'welcome#index'  
 end  
 ```
 
@@ -339,12 +339,12 @@ O que queremos agora é traduzir todas as rotas públicas, incluindo as do Devis
 I18nDemo::Application.routes.draw do  
  devise_for :users  
  resources :articles  
- get “welcome/index”, as: “welcome”  
- root to: ‘welcome#index’  
+ get "welcome/index", as: "welcome"  
+ root to: 'welcome#index'  
 end
 
 ActionDispatch::Routing::Translator.translate_from_file(  
- ‘config/locales/routes.yml’, {  
+ 'config/locales/routes.yml', {  
  prefix_on_default_locale: true,  
  keep_untranslated_routes: true })
 
@@ -412,10 +412,10 @@ before_filter :set_locale before_filter :set_locale_from_url
 private 
 
 def set_locale 
-  if lang = request.env[‘HTTP_ACCEPT_LANGUAGE’] 
+  if lang = request.env['HTTP_ACCEPT_LANGUAGE'] 
       lang = lang[/^[a-z]{2}/] 
-      lang = :“pt-BR” 
-  if lang == “pt” end 
+      lang = :"pt-BR" 
+  if lang == "pt" end 
     I18n.locale = params[:locale] || lang || I18n.default_locale end
 end  
 ```
@@ -428,14 +428,14 @@ module ApplicationHelper
  def language_links  
  links = []  
  I18n.available_locales.each do |locale|  
- locale_key = “translation.#{locale}”  
+ locale_key = "translation.#{locale}"  
  if locale == I18n.locale  
- links << link_to(I18n.t(locale_key), “#”, class: “btn disabled”)  
+ links << link_to(I18n.t(locale_key), "#", class: "btn disabled")  
  else  
- links << link_to(I18n.t(locale_key), url_for(locale: locale.to_s), class: “btn”)  
+ links << link_to(I18n.t(locale_key), url_for(locale: locale.to_s), class: "btn")  
  end  
  end  
- links.join(“\n”).html_safe  
+ links.join("\n").html_safe  
  end  
  …  
 end  

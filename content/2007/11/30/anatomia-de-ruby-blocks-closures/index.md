@@ -73,14 +73,14 @@ Ruby não tem métodos como cidadãos de primeira-classe. Na realidade podemos e
 ```ruby
 class Test
   def initialize
-    @hello = “Hello!”
+    @hello = "Hello!"
   end
   def say
     @hello
   end
 end
 m = Test.new.method(:say)
-m.call # => “Hello!”<br>
+m.call # => "Hello!"<br>
 ```
 
 <p>Aqui, extraímos o método :say da instância de Test. Note que podemos manipular o método como um objeto normal. Toda vez que enviamos a mensagem ‘call’ ao objeto de método, ele roda como se estivesse sendo executado do contexto de seu object original (Test.new.say). No exemplo acima a última expressão imprimiria com sucesso “Hello!”, conforme armazenada na variável local de instância @hello.</p>
@@ -200,7 +200,7 @@ def foo(name, block1, block2)
   puts name
   block2.call
 end
-foo “Fabio”, lambda { puts “Hello” }, lambda { puts “World” }
+foo "Fabio", lambda { puts "Hello" }, lambda { puts "World" }
 ```
 
 <p>Este exemplo recebe um parâmetro normal e 2 blocos em vez de um. Podemos passar blocos enclausurados em objetos Proc na lista de parâmetros como faríamos com qualquer outro tipo de objeto. Normalmente não precisamos de tantos blocos diferentes dentro de um único método. O jeito mais comum é:</p>
@@ -252,11 +252,11 @@ c = proc { |i| puts i }<br>
 
 ```ruby
 def greetings_factory(prefix)
-  Proc.new { |name| “#{prefix}, #{name} !”}<br>
+  Proc.new { |name| "#{prefix}, #{name} !"}<br>
 end
-birthday = greetings_factory(“Happy Birthday”)
-xmas = greetings_factory(“Merry XMas”)
-birthday.call(“David”) # => “Happy Birthday, David !”<br>
+birthday = greetings_factory("Happy Birthday")
+xmas = greetings_factory("Merry XMas")
+birthday.call("David") # => "Happy Birthday, David !"<br>
 ```
 
 xmas.call(“Matz”) # => “Merry XMas, Matz !”<br>
@@ -281,7 +281,7 @@ puts list.inspect # => [2, 4, 6, 8]
 
 ```ruby
 User.transaction do
-  u = User.new(:login => ‘admin’)
+  u = User.new(:login => 'admin')
   u.save!
 end
 ```

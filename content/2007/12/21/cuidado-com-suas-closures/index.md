@@ -27,7 +27,7 @@ Digamos que você tenha um objeto de algum tupo que tem um método que retorna u
 
 class Factory  
  def create_something  
- proc { puts “Hello World” }  
+ proc { puts "Hello World" }  
  end  
 end
 
@@ -53,7 +53,7 @@ o = Object.new
 
 class << o  
  def create_something  
- proc { puts “Hello World” }  
+ proc { puts "Hello World" }  
  end  
 end
 
@@ -71,13 +71,13 @@ o = Object.new
 
 class << o  
  def create_something(v, v2)  
- proc { puts “#{v} #{v2}” }  
+ proc { puts "#{v} #{v2}" }  
  end  
 end
 
-v = “hello”  
-v2 = “world”  
-v3 = “foobar” # não será capturada pelo bloco
+v = "hello"  
+v2 = "world"  
+v3 = "foobar" # não será capturada pelo bloco
 
 block = o.create_something(v, v2)  
 ```

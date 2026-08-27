@@ -168,12 +168,12 @@ And this is what happens if I try to install the most recent version:
 akitaonrails@localhost:~/.nvm$ nvm install 5.10.1
 Downloading https://nodejs.org/dist/v5.10.1/node-v5.10.1-linux-x64.tar.xz...
 ######################################################################## 100.0%
-tar: bin/npm: Cannot create symlink to ‘../lib/node_modules/npm/bin/npm-cli.js’: Invalid argument
+tar: bin/npm: Cannot create symlink to '../lib/node_modules/npm/bin/npm-cli.js': Invalid argument
 tar: Exiting with failure status due to previous errors
 Binary download failed, trying source.
 ######################################################################## 100.0%
 Checksums empty
-tar: bin/npm: Cannot create symlink to ‘../lib/node_modules/npm/bin/npm-cli.js’: Invalid argument
+tar: bin/npm: Cannot create symlink to '../lib/node_modules/npm/bin/npm-cli.js': Invalid argument
 tar: Exiting with failure status due to previous errors
 Binary download failed, trying source.
 Detected that you have 1 CPU thread(s)

@@ -38,8 +38,8 @@ Por fim, eu também garanto que os <tt>“Framework Search Paths”</tt> apontem
 
 
 ```
-“$(SDKROOT)/Developer/Library/Frameworks”  
-“${DEVELOPER_LIBRARY_DIR}/Frameworks”  
+"$(SDKROOT)/Developer/Library/Frameworks"  
+"${DEVELOPER_LIBRARY_DIR}/Frameworks"  
 ```
 
 Tudo compila numa boa desse jeito. Aí eu posso apertar “Command-U” (ou ir no menu “Product”, opção “Test”) pra fazer o build do target “RubyficationTests”. Ele compila todas as dependências de target, linka tudo junto e roda o script final pra executar os testes (você precisa garantir que está selecionando o “Rubyfication – iPhone 4.3 Simulator” no menu de Schemes). Ele vai abrir o Simulator pra rodar as specs.
@@ -48,24 +48,24 @@ Mas aí eu estava recebendo:
 
 
 ```
-Test Suite ‘/Users/akitaonrails/Library/Developer/Xcode/DerivedData/Rubyfication-gfqxbgyxicfpxugauehktilpmwzv/Build/Products/Debug-iphonesimulator/RubyficationTests.octest(Tests)’ started at 2011-04-24 02:16:27 +0000  
-Test Suite ‘CollectionSpec’ started at 2011-04-24 02:16:27 +0000  
-Test Case ‘-[CollectionSpec runSpec]’ started.  
+Test Suite '/Users/akitaonrails/Library/Developer/Xcode/DerivedData/Rubyfication-gfqxbgyxicfpxugauehktilpmwzv/Build/Products/Debug-iphonesimulator/RubyficationTests.octest(Tests)' started at 2011-04-24 02:16:27 +0000  
+Test Suite 'CollectionSpec' started at 2011-04-24 02:16:27 +0000  
+Test Case '-[CollectionSpec runSpec]' started.  
 2011-04-23 23:16:27.506 otest[40298:903] [__NSArrayI each:]: unrecognized selector sent to instance 0xe51a30  
-2011-04-23 23:16:27.508 otest[40298:903] ***** Terminating app due to uncaught exception ‘NSInvalidArgumentException’, reason: ’[__NSArrayI each:]: unrecognized selector sent to instance 0xe51a30’  
+2011-04-23 23:16:27.508 otest[40298:903] ***** Terminating app due to uncaught exception 'NSInvalidArgumentException', reason: '[__NSArrayI each:]: unrecognized selector sent to instance 0xe51a30'  
 ```
 
 Ele diz que uma instância de <tt>NSArray</tt> não está reconhecendo o selector <tt>each:</tt> enviado pra ela no arquivo <tt>CollectionSpec</tt>. Provavelmente é esse trecho:
 
 
 ```objc
-# import “Kiwi.h”  
+# import "Kiwi.h"  
 
-# import “NSArray+functional.h”  
+# import "NSArray+functional.h"  
 
-# import “NSArray+helpers.h”  
+# import "NSArray+helpers.h"  
 
-# import “NSArray+activesupport.h”
+# import "NSArray+activesupport.h"
 
 SPEC_BEGIN(CollectionSpec)
 

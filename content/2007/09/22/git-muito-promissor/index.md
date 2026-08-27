@@ -59,7 +59,7 @@ Já podemos brincar. Posso alterar meu código localmente neste novo working cop
 <br>
 
 ```bash
-git commit -a -m “[seu comentário]”
+git commit -a -m "[seu comentário]"
 ```
 
 <br>

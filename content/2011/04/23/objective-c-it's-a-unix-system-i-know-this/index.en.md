@@ -27,7 +27,7 @@ NSDate *date = [NSDate dateWithTimeIntervalSinceReferenceDate:162000];
 
 NSString *formattedDateString = [dateFormatter stringFromDate:date];  
 NSLog(`"formattedDateString: %`", formattedDateString);  
-// Output for locale en_US: “formattedDateString: Jan 2, 2001”  
+// Output for locale en_US: "formattedDateString: Jan 2, 2001"  
 ```
 
 And you can use Regular Expressions like this:
@@ -49,9 +49,9 @@ But I have issues with both of these. The Ruby equivalent for the date formattin
 
 
 ```ruby
-require ‘activesupport’  
-date = Time.parse(“2001-01-01”) + 162000.seconds  
-date.strftime(“%b %d, %Y”)  
+require 'activesupport'  
+date = Time.parse("2001-01-01") + 162000.seconds  
+date.strftime("%b %d, %Y")  
 ```
 
 And the regular expression example would be like this:
@@ -82,7 +82,7 @@ So, how do I get [C-compatible](http://www.cplusplus.com/reference/clibrary/ctim
 
 
 ```objc
-# import “time.h”  
+# import "time.h"  
 
 …  
 
@@ -112,7 +112,7 @@ Now this is too nice. I have added a few other helper methods that now allow me 
 
 ```objc
 it(`"should convert the date to the rfc822 format", ^{
-    [[[ref toFormattedString:`“rfc822”] should] equal:@"Fri, 01 Jan 2010 10:15:30"];  
+    [[[ref toFormattedString:`"rfc822"] should] equal:@"Fri, 01 Jan 2010 10:15:30"];  
 }); 
 ```
 
@@ -164,11 +164,11 @@ Which now allows me to use this nicer syntax:
 
 ```objc
 context(`"Regular Expressions", ^{
-    it(`“should replace all substrings that match the pattern”, ^{  
- [[[`"hello world, heyho!" gsub:`“h\\w+” with:`"hi"] should] equal:`“hi world, hi!”];  
+    it(`"should replace all substrings that match the pattern", ^{  
+ [[[`"hello world, heyho!" gsub:`"h\\w+" with:`"hi"] should] equal:`"hi world, hi!"];  
  });
 
-it(@"should replace each substrings with one corresponding replacement in the array", ^{ NSArray* replacements = [NSArray arrayWithObjects:@"hi", @"everybody", nil]; [[[`"hello world, heyho!" gsub:`“h\\w+” with:replacements] should] equal:@"hi world, everybody!"]; }); it(@"should replace each substring with the return of the block", ^{ [[[`"hello world, heyho!" gsub:`“h\\w+” withBlock:^(OnigResult* obj) { return @"foo"; }] should] equal:@"foo world, foo!"]; });
+it(@"should replace each substrings with one corresponding replacement in the array", ^{ NSArray* replacements = [NSArray arrayWithObjects:@"hi", @"everybody", nil]; [[[`"hello world, heyho!" gsub:`"h\\w+" with:replacements] should] equal:@"hi world, everybody!"]; }); it(@"should replace each substring with the return of the block", ^{ [[[`"hello world, heyho!" gsub:`"h\\w+" withBlock:^(OnigResult* obj) { return @"foo"; }] should] equal:@"foo world, foo!"]; });
 });
 ```
 

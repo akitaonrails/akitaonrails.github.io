@@ -229,7 +229,7 @@ def build_system_prompt(tool_prompts: List[str]) -> str:
         "3. After a tool is used, continue the conversation as if you have direct access to the content.\n"
         "4. If a file fails to load, inform the user clearly.\n"
         "5. Do NOT ask for file/URL content directly; use tools.\n"
-        "6. Once you’ve executed [LOAD_FILE ...], you MUST immediately use the loaded content. "
+        "6. Once you've executed [LOAD_FILE ...], you MUST immediately use the loaded content. "
         "Never say you cannot read it — if you see [LOAD_FILE <path>] then you now *have* it.\n")
     return base + tools_section + rules_section
 ```

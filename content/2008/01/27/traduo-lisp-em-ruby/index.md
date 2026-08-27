@@ -38,7 +38,7 @@ end
 
 class NilClass  
  def lisp_string  
- “nil”   
+ "nil"   
  end  
 end
 
@@ -67,18 +67,18 @@ def initialize(head, tail) @head, @tail = head, tail end def (other) return fals
 #1. Convert the lisp expression to a string.  
  def lisp_string  
  e = self  
- result = “(”
+ result = "("
  while e  
  if e.class != Cons  
- result << ”. ” << e.lisp_string  
+ result << ". " << e.lisp_string  
  e = nil  
  else  
  result << car(e).lisp_string  
  e = cdr(e)  
- result << ” ” if e  
+ result << " " if e  
  end  
  end  
- result << “)”
+ result << ")"
  result  
  end  
 end
@@ -109,7 +109,7 @@ end
 #2. Apply and eval work together to interpret
 #3. the S-expression. These definitions are taken
 #4. directly from page 13 of the Lisp 1.5
-#5. Programmer’s Manual.
+#5. Programmer's Manual.
 
 def apply(fn, x, a)  
  if atom?(fn)  
@@ -149,7 +149,7 @@ end
 #1. And now some utility functions used
 #2. by apply and eval. These are
 #3. also given in the Lisp 1.5
-#4. Programmer’s Manual.
+#4. Programmer's Manual.
 
 def evcon(c,a)  
  if eval(caar©, a)  
@@ -169,7 +169,7 @@ end
 
 def assoc(a, e)  
  if e.nil?  
- fail “#{a.inspect} not bound”
+ fail "#{a.inspect} not bound"
  elsif a caar(e)  
  car(e)  
  else  
@@ -218,7 +218,7 @@ Aqui vai o programa ruby usando o interpretador Lisp. O sistema Lisp é muito pr
 
 ```ruby
 
-require ‘lisp’
+require 'lisp'
 
 #1. Create an environment where
 #2. the reverse, rev_shift and null
@@ -243,7 +243,7 @@ env = [
 
 exp = [:reverse, [:quote, [:a, :b, :c, :d, :e]]].sexp
 
-puts “EVAL: #{exp.lisp_string}”
+puts "EVAL: #{exp.lisp_string}"
 puts " =\> #{eval(exp,env).lisp_string}"  
 ```
 

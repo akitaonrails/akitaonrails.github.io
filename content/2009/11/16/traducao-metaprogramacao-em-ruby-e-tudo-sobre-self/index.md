@@ -20,32 +20,32 @@ Tem a ver com o fato de que todo código Ruby é executado – não há separaç
 ```ruby
 class Person  
  def self.species  
- “Homo Sapien”  
+ "Homo Sapien"  
  end  
 end
 
 class Person  
  class << self  
  def species  
- “Homo Sapien”  
+ "Homo Sapien"  
  end  
  end  
 end
 
 class << Person  
  def species  
- “Homo Sapien”  
+ "Homo Sapien"  
  end  
 end
 
 Person.instance_eval do  
  def species  
- “Homo Sapien”  
+ "Homo Sapien"  
  end  
 end
 
 def Person.species  
- “Homo Sapien”  
+ "Homo Sapien"  
 end  
 ```
 
@@ -55,13 +55,13 @@ Todos os 5 trechos definem um `Person.species` que retornam `Homo Sapiens`. Agor
 ```ruby
 class Person  
  def name  
- “Matz”  
+ "Matz"  
  end  
 end
 
 Person.class_eval do  
  def name  
- “Matz”  
+ "Matz"  
  end  
 end  
 ```
@@ -80,11 +80,11 @@ Person.class #=\> Class
 
 class Class  
  def loud_name  
- “#{name.upcase}!”  
+ "#{name.upcase}!"  
  end  
 end
 
-Person.loud_name #=\> “PERSON!”  
+Person.loud_name #=\> "PERSON!"  
 ```
 
 `Person` é uma instância de `Class`, então qualquer método adicionado a `Class` está disponível em `Person` também. O que não lhes é dito, entretanto, é que cada objeto em Ruby também tem seu próprio **metaclass** , uma `Class` que pode ter métodos, mas está anexado apenas ao objeto.
@@ -93,7 +93,7 @@ Person.loud_name #=\> “PERSON!”
 ```ruby
 matz = Object.new  
 def matz.speak  
- “Place your burden to machine’s shoulders”  
+ "Place your burden to machine's shoulders"  
 end  
 ```
 
@@ -102,7 +102,7 @@ O que está acontecendo é que estamos adicionando o método `speak` à **metacl
 ```ruby
 matz = Object.new  
 def matz.speak  
- “Place your burden to machine’s shoulders”  
+ "Place your burden to machine's shoulders"  
 end
 
 matz.class #=\> Object  
@@ -113,7 +113,7 @@ Na verdade, a “classe” de `matz` é sua metaclass invisível. Podemos ter ac
 
 ```ruby
 metaclass = class << matz; self; end  
-metaclass.instance_methods.grep(speak) #=\> [“speak”]  
+metaclass.instance_methods.grep(speak) #=\> ["speak"]  
 ```
 
 Até este ponto, você provavelmente está tendo que se esforçar para ter tantos detalhes na cabeça; parece que existem regras demais. E que diabos é isso de `class << matz`?
@@ -124,10 +124,10 @@ Acontece que todas essas regras esquisitas se resumem em um conceito simples: co
 ```ruby
 class Person  
  def name  
- “Matz”  
+ "Matz"  
  end
 
-self.name #=\> “Person”
+self.name #=\> "Person"
 end
 ```
 
@@ -137,10 +137,10 @@ Aqui, estamos adicionando o método `nome` à classe `Person`. Quando dizemos `c
 ```ruby
 Person.class_eval do  
  def name  
- “Matz”  
+ "Matz"  
  end
 
-self.name #=\> “Person”
+self.name #=\> "Person"
 
 end
 ```
@@ -151,10 +151,10 @@ Aqui, estamos fazendo exatamente a mesma coisa: adicionando o método `name` a i
 ```ruby
 
 def Person.species  
- “Homo Sapien”  
+ "Homo Sapien"  
 end
 
-Person.name #=\> “Person”  
+Person.name #=\> "Person"  
 ```
 
 Como no exemplo do `matz` anteriormente, estamos definindo o método `species` à metaclass de `Person`. Nós não manipulamos `self`, mas você pode ver o uso de `def` num objeto anexa o método à metaclass desse objeto.
@@ -163,10 +163,10 @@ Como no exemplo do `matz` anteriormente, estamos definindo o método `species` �
 ```ruby
 class Person  
  def self.species  
- “Homo Sapien”  
+ "Homo Sapien"  
  end
 
-self.name #=\> “Person”
+self.name #=\> "Person"
 
 end  
 ```
@@ -178,7 +178,7 @@ Aqui, abrimos a classe `Person`, fazendo o `self` ser `Person` pela duração do
 
 class << Person  
  def species  
- “Homo Sapien”  
+ "Homo Sapien"  
  end
 
 self.name #=\> ""
@@ -194,7 +194,7 @@ Ruby dá uma sintaxe para acessar a metaclass de um objeto diretamente. Fazendo 
 class Person  
  class << self  
  def species  
- “Homo Sapien”  
+ "Homo Sapien"  
  end
 
 self.name #=\> "" end
@@ -209,10 +209,10 @@ Aqui, combinamos diversas técnicas. Primeiro, abrimos `Person`, tornando `self`
 
 Person.instance_eval do  
  def species  
- “Homo Sapien”  
+ "Homo Sapien"  
  end
 
-self.name #=\> “Person”
+self.name #=\> "Person"
 
 end  
 ```

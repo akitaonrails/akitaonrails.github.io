@@ -34,7 +34,7 @@ No exemplo acima, reabri a classe padrão <tt>Array</tt> do Ruby e fiz minha pr�
 
 ```ruby
 
-list = [“a”, “b”, “c”]  
+list = ["a", "b", "c"]  
 list.each_element do |elem|  
  puts elem  
 end
@@ -68,7 +68,7 @@ E a implementação seria:
 ```objc
 // NSArray+functional.m
 
-# import “NSArray+functional.h”
+# import "NSArray+functional.h"
 
 @implementation NSArray (functional)  
 
@@ -97,7 +97,7 @@ E como podemos usar essa nova categoria com o novo método? Vejamos:
 
 
 ```objc
-# import “NSArray+functional.h”
+# import "NSArray+functional.h"
 
 - (IBAction) foo:(id)sender {
  NSMutableArray *list = [NSMutableArray arrayWithObjects:";  
@@ -121,9 +121,9 @@ Em Ruby, eu posso capturar um bloco em uma variável, assim:
 ```ruby
 
 bloco = lambda { |a| puts a }  
-bloco.call(“bla”)
+bloco.call("bla")
 
-1. => “bla”  
+1. => "bla"  
 
 ```
 

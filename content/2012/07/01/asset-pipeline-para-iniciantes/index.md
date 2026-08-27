@@ -35,25 +35,25 @@ Quando iniciamos um novo projeto com o comando <tt>rails new novo_projeto</tt>, 
 ```ruby
 #1. Original  
 group :assets do  
- gem ‘sass-rails’, ‘~\> 3.2.3’  
- gem ‘coffee-rails’, ‘~\> 3.2.1’
+ gem 'sass-rails', '~\> 3.2.3'  
+ gem 'coffee-rails', '~\> 3.2.1'
 
 #1. See https://github.com/sstephenson/execjs#readme for more supported runtimes
-#2. gem ‘therubyracer’, :platforms =\> :ruby
+#2. gem 'therubyracer', :platforms =\> :ruby
 
-gem ‘uglifier’, ‘\>= 1.0.3’
+gem 'uglifier', '\>= 1.0.3'
 
 end
 
 #1. Recomendado para iniciar  
 group :assets do  
- gem ‘sass-rails’  
- gem ‘compass-rails’
+ gem 'sass-rails'  
+ gem 'compass-rails'
 
   #1. See https://github.com/sstephenson/execjs#readme for more supported runtimes  
- gem ‘therubyracer’, :platforms => :ruby
+ gem 'therubyracer', :platforms => :ruby
 
-gem ‘uglifier’
+gem 'uglifier'
 
 end
 ```
@@ -84,7 +84,7 @@ O resultado será:
 
 ```
 create app/controllers/home_controller.rb 
-route get “home/index” 
+route get "home/index" 
 invoke erb create app/views/home 
 create app/views/home/index.html.erb 
 invoke test_unit create 
@@ -111,14 +111,14 @@ E nesse novo arquivo podemos colocar somente:
 
 ```css
 
-@import “compass”  
+@import "compass"  
 ```
 
 Outra boa prática é ignorar o diretório <tt>public/uploads</tt> do repositório Git (você utilizar [Git](/2012/04/09/screencasts-liberados-gratuitamente), correto?). Faça o seguinte:
 
 
 ```bash
-echo “public/uploads” >> .gitignore  
+echo "public/uploads" >> .gitignore  
 ```
 
 E agora já podemos iniciar o servidor local de Rails e examinar o que temos até agora:
@@ -166,8 +166,8 @@ O código fonte do layout <tt>app/views/layouts/application.html.erb</tt> conté
 
 <title>NovoProjeto</title>
   
- <%= stylesheet_link_tag “application”, :media => “all” \>  
- <= javascript_include_tag “application” \>  
+ <%= stylesheet_link_tag "application", :media => "all" \>  
+ <= javascript_include_tag "application" \>  
  <= csrf_meta_tags %\>
 
 <%= yield %\>
@@ -230,23 +230,23 @@ Agora, se tentarmos carregar a mesma URL <tt>http://localhost:3000/home/index</t
 
 
 ```
-Started GET “/home/index” for 127.0.0.1 at 2012-07-01 03:31:55 -0300  
+Started GET "/home/index" for 127.0.0.1 at 2012-07-01 03:31:55 -0300  
 Connecting to database specified by database.yml  
 Processing by HomeController#index as HTML  
  Rendered home/index.html.erb within layouts/application (12.0ms)  
 Completed 500 Internal Server Error in 155ms
 
-ActionView::Template::Error (application.css isn’t precompiled):  
+ActionView::Template::Error (application.css isn't precompiled):  
  2:
  3:
 
  4: <title>NovoProjeto</title>
 
-5: <%= stylesheet_link_tag “application”, :media => “all” \>  
- 6: <= javascript_include_tag “application” \>  
+5: <%= stylesheet_link_tag "application", :media => "all" \>  
+ 6: <= javascript_include_tag "application" \>  
  7: <= csrf_meta_tags %\>  
  8:
- app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb__408740569075721590_70099961775620’  
+ app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb__408740569075721590_70099961775620'  
 ```
 
 Este é o sinal que não realizamos um passo importante que deve ser executado toda vez que você realizar uma atualização em produção: pré-compilar os assets. É o processo que lê os arquivos manifesto e realiza a concatenação dos arquivos declarados e sua minificação (utilizando a gem [Uglifier](https://github.com/lautis/uglifier)). Portanto, precisamos executar o seguinte:
@@ -318,7 +318,7 @@ Para reforçar o ponto 2, vamos adicionar a seguinte função no arquivo <tt>app
 ```javascript
 
 function helloWorld() {  
- console.log(“Hello World”);  
+ console.log("Hello World");  
 }  
 ```
 

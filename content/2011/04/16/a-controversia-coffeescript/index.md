@@ -54,7 +54,7 @@ Hoje podemos simplesmente fazer, com jQuery:
 
 
 ```javascript
-var elm = $(“#” + id);
+var elm = $("#" + id);
 ```
 
 Outra alternativa seria mudar a especificação do HTML e CSS para serem mais enxutas e mais flexíveis. Mas isso seria praticamente impossível pois todos os navegadores do planeta precisaram ser atualizados para a mesma versão para que valesse a pena. É o dilema do HTML 5 vs Internet Explorer 6. Enquanto existir um cidadão usando o famigerado IE 6, vamos ter que criar código que trata versões e dá “fallback”, ou seja, escolhe uma versão não HTML 5.
@@ -215,14 +215,14 @@ Mas não pensem que CoffeeScript é ruim por causa disso. De jeito nenhum, de fa
 
 ```ruby
 switch day  
- when “Mon” then go work  
- when “Tue” then go relax  
- when “Thu” then go iceFishing  
- when “Fri”, “Sat”  
+ when "Mon" then go work  
+ when "Tue" then go relax  
+ when "Thu" then go iceFishing  
+ when "Fri", "Sat"  
  if day is bingoDay  
  go bingo  
  go dancing  
- when “Sun” then go church  
+ when "Sun" then go church  
  else go work  
 ```
 
@@ -232,23 +232,23 @@ Agora em Javascript:
 ```javascript
 
 switch (day) {  
- case “Mon”:  
+ case "Mon":  
  go(work);  
  break;  
- case “Tue”:  
+ case "Tue":  
  go(relax);  
  break;  
- case “Thu”:  
+ case "Thu":  
  go(iceFishing);  
  break;  
- case “Fri”:  
- case “Sat”:  
+ case "Fri":  
+ case "Sat":  
  if (day === bingoDay) {  
  go(bingo);  
  go(dancing);  
  }  
  break;  
- case “Sun”:  
+ case "Sun":  
  go(church);  
  break;  
  default:  

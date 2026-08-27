@@ -55,7 +55,7 @@ A primeira coisa que recomendo é criar um novo branch. Pode ser qualquer nome, 
 ```
 
 ```
-Switched to a new branch “working”
+Switched to a new branch "working"
 ```
 
 ```bash
@@ -80,7 +80,7 @@ Esse comando cria o novo branch e já te muda para lá. Note como o asterisco mu
 
 # Changed but not updated:
 
-# (use “git add <file>…” to update what will be committed)
+# (use "git add <file>…" to update what will be committed)
 
 # 
 
@@ -94,13 +94,13 @@ Esse comando cria o novo branch e já te muda para lá. Note como o asterisco mu
 
 # Untracked files:
 
-# (use “git add <file>…” to include in what will be committed)
+# (use "git add <file>…" to include in what will be committed)
 
 # 
 
 # akita.txt
 
-no changes added to commit (use “git add” and/or “git commit -a”)
+no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
 Os arquivos que já existiam no repositório e que você mexeu, aparecem como ‘modified’, ou ‘deleted’. Se você criou alguma arquivo novo, ele aparece em ‘Untracked files’.
@@ -144,7 +144,7 @@ added one path
 Pronto. Com os arquivos adicionados, basta fazer o commit:
 
 ```bash
->> git commit -a -m “meu primeiro commit”
+>> git commit -a -m "meu primeiro commit"
 Created commit 457f597: meu primeiro commit
  4 files changed, 7 insertions(+), 1 deletions
  create mode 100644 akita.txt
@@ -163,7 +163,7 @@ Vejamos como isso se parece:
 ```
 
 ```
-Switched to branch “master”
+Switched to branch "master"
 ```
 
 ```bash
@@ -171,7 +171,7 @@ Switched to branch “master”
 ```
 
 ```
-Switched to branch “meufix”
+Switched to branch "meufix"
 ```
 
 ```bash
@@ -189,7 +189,7 @@ O último comando é um ‘ls’ (o equivalente de ‘dir’, para quem é de Wi
 Agora, vou fazer as correções que preciso.
 
 ```bash
->> git commit -a -m “minha correcao”
+>> git commit -a -m "minha correcao"
 ```
 
 ```
@@ -219,7 +219,7 @@ Espere um instante, e agora? Em que situação estou. Vamos ver:
 ```
 
 ```
-Switched to branch “master”
+Switched to branch "master"
 ```
 
 ```bash
@@ -258,7 +258,7 @@ Bom, vamos voltar para nosso branch ‘working’ e continuar trabalhando nele.
 
 # Changed but not updated:
 
-# (use “git add <file>…” to update what will be committed)
+# (use "git add <file>…" to update what will be committed)
 
 # 
 
@@ -268,7 +268,7 @@ Bom, vamos voltar para nosso branch ‘working’ e continuar trabalhando nele.
 
 # 
 
-no changes added to commit (use “git add” and/or “git commit -a”)
+no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
 Pronto, estamos em ‘working’ e continuamos trabalhando. Veja como eu mexi em dois arquivos. Eis que me dou conta: <em>“As correções que acabei de dar merge no master!!”</em> Pois é, eu preciso trazer as correções do master para o working. Mas agora estou no meio de uma codificação e ainda não estou a fim de fazer commit. O que fazer? Eis a resposta:
@@ -278,7 +278,7 @@ Pronto, estamos em ‘working’ e continuamos trabalhando. Veja como eu mexi em
 ```
 
 ```
-Saved “WIP on working: 457f597… meu primeiro commit”
+Saved "WIP on working: 457f597… meu primeiro commit"
 HEAD is now at 457f597… meu primeiro commit
 
 ```
@@ -308,9 +308,9 @@ CONFLICT (content): Merge conflict in TODO
 Failed to merge in the changes.
 Patch failed at 0001.
 
-When you have resolved this problem run “git rebase —continue”.
-If you would prefer to skip this patch, instead run “git rebase —skip”.
-To restore the original branch and stop rebasing run “git rebase —abort”.
+When you have resolved this problem run "git rebase —continue".
+If you would prefer to skip this patch, instead run "git rebase —skip".
+To restore the original branch and stop rebasing run "git rebase —abort".
 ```
 
 Uau! Quanta coisa! Dois conflitos! <em>“Droga, mas não disseram que o Git faz merges inteligentes?”</em> Exatamente, ele fará o melhor merge possível. Já explico isso melhor. Mas de qualquer forma, ocasionalmente sempre haverá o caso onde o Git não tem como decidir, por exemplo, quando dois desenvolvedores modificam exatamente a mesma linha: qual dos dois tem prioridade? Então, vamos corrigir os erros na mão. Você pode usar qualquer ferramenta GUI</span> que manipula Diffs, é a mesma coisa:
@@ -342,7 +342,7 @@ git status
 
 # Changes to be committed:
 
-# (use “git reset HEAD <file>…” to unstage)
+# (use "git reset HEAD <file>…" to unstage)
 
 # 
 
@@ -354,7 +354,7 @@ git status
 
 # Changed but not updated:
 
-# (use “git add <file>…” to update what will be committed)
+# (use "git add <file>…" to update what will be committed)
 
 # 
 
@@ -370,7 +370,7 @@ git status
 
 # Untracked files:
 
-# (use “git add <file>…” to include in what will be committed)
+# (use "git add <file>…" to include in what will be committed)
 
 # 
 
@@ -421,7 +421,7 @@ Agora, faltou uma coisa: o stash!! Lembram dos dois arquivos que eu guardei no s
 
 # Changed but not updated:
 
-# (use “git add <file>…” to update what will be committed)
+# (use "git add <file>…" to update what will be committed)
 
 # 
 
@@ -431,7 +431,7 @@ Agora, faltou uma coisa: o stash!! Lembram dos dois arquivos que eu guardei no s
 
 # 
 
-no changes added to commit (use “git add” and/or “git commit -a”)
+no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
 ```bash
@@ -448,7 +448,7 @@ git add .
 ```
 
 ```bash
->> git commit -a -m “mais um commit”
+>> git commit -a -m "mais um commit"
 ```
 
 ```
@@ -465,7 +465,7 @@ O git add . (ponto) significa <em>“adicione todo novo arquivo que apareceu ago
 ```
 
 ```
-Switched to branch “master”
+Switched to branch "master"
 ```
 
 ```bash
@@ -496,7 +496,7 @@ Como eu ainda não terminei minha nova funcionalidade no branch ‘working’, q
 ```
 
 ```
-Switched to branch “working”
+Switched to branch "working"
 ```
 
 ```bash
@@ -506,7 +506,7 @@ Switched to branch “working”
 ```
 First, rewinding head to replay your work on top of it…
 
-HEAD is now at 76969b2… Merge branch ‘master’ of git://github.com/wycats/merb-core
+HEAD is now at 76969b2… Merge branch 'master' of git://github.com/wycats/merb-core
 
 Applying meu primeiro commit
 
@@ -590,7 +590,7 @@ Vamos modificar e fazer um commit nesse novo projeto:
 
 # Changed but not updated
 
-# (use “git add <file>…” to update what will be committed)
+# (use "git add <file>…" to update what will be committed)
 
 #
 
@@ -598,11 +598,11 @@ Vamos modificar e fazer um commit nesse novo projeto:
 
 #
 
-no changes added to commit (use “git add” and/or “git commit -a”)
+no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
 ```bash
->> git commit -a -m “modificacao no projeto”
+>> git commit -a -m "modificacao no projeto"
 ```
 
 ```
@@ -615,7 +615,7 @@ Created commit a730a96: modificacao no projeto
 ```
 
 ```
-updating ‘refs/heads/meu_merb’
+updating 'refs/heads/meu_merb'
   from c9a4f27905d47d57798ee2b3239eec1e162cb452
   to a730a9698905fd6f9a933feca6777198bde2eb9e
  Also local refs/remotes/origin/meu_merb
@@ -650,7 +650,7 @@ Ok, até o git commit todo mundo deve ter entendido. Mas e esse git push? Bom, s
 ```
 
 ```
-Already on branch “master”
+Already on branch "master"
 ```
 
 ```bash
@@ -658,8 +658,8 @@ Already on branch “master”
 ```
 
 ```
-error: The branch ‘meu_merb’ is not a strict subset of your current HEAD.
-If you are sure you want to delete it, run ‘git branch -D meu_merb’.
+error: The branch 'meu_merb' is not a strict subset of your current HEAD.
+If you are sure you want to delete it, run 'git branch -D meu_merb'.
 ```
 
 ```bash
@@ -703,7 +703,7 @@ Agora, apenas para demonstrar algumas das inteligências do Git, vou criar um no
 ```
 
 ```
-Switched to a new branch “working”
+Switched to a new branch "working"
 ```
 
 ```bash
@@ -720,7 +720,7 @@ Switched to a new branch “working”
 
 # Changed but not updated
 
-# (use “git add/rm <file>…” to update what will be committed)
+# (use "git add/rm <file>…" to update what will be committed)
 
 #
 
@@ -730,13 +730,13 @@ Switched to a new branch “working”
 
 # Untracked files
 
-# (use “git add <file>…” to include in what will be committed)
+# (use "git add <file>…" to include in what will be committed)
 
 #
 
 # licenca.txt
 
-no changes added to commit (use “git add” and/or “git commit -a”)
+no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
 Vejam: eu alterei o conteúdo do arquivo LICENSE</span> e ainda por cima renomeei para licenca.txt. No git status ele viu que eu <strong>apaguei</strong> o LICENSE</span> e que apareceu um novo arquivo licenca.txt. Só de curiosidade, eis o trecho que adicionei no topo do arquivo, agora licenca.txt:
@@ -756,7 +756,7 @@ Vou fazer o commit (não esquecer da opção -a !):
 ```
 
 ```bash
->> git commit -a -m “Novo arquivo”
+>> git commit -a -m "Novo arquivo"
 ```
 
 ```
@@ -773,12 +773,12 @@ Agora o golpe de misericórdia. Vou retornar ao branch master e modificar o <str
 ```
 
 ```
-Switched to branch “master”
+Switched to branch "master"
 ```
 
 ```bash
 >> vi LICENSE
->> git commit -a -m “modificando LICENSE”
+>> git commit -a -m "modificando LICENSE"
 Created commit 6c74941: modificando LICENSE
  1 files changed, 2 insertions(+), 8 deletions
 ```

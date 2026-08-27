@@ -36,7 +36,7 @@ O sistema devolve memória liberado ao sistema ao final de uma execução, mas e
  int i;  
  for (i = 0; i \< 50000; i++) {  
  NSString * teste = [NSString stringWithFormat:`"Teste %i", i];
-      NSLog(`“X: %@”, teste);  
+      NSLog(`"X: %@", teste);  
  }  
 }  
 ```
@@ -63,7 +63,7 @@ Esse padrão é fácil de identificar, basta procurar por loops que podem ser mu
  NSAutoreleasePool* pool = [[NSAutoreleasePool alloc] init];  
  for (i = 0; i \< 50000; i++) {  
  NSString * teste = [NSString stringWithFormat:`"Teste %i", i];
-        NSLog(`“X: %@”, teste);  
+        NSLog(`"X: %@", teste);  
  if (i % 1000 == 0) {  
  // limpa o pool a cada mil interações  
  [pool release];  

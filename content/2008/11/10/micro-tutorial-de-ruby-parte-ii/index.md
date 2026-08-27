@@ -23,8 +23,8 @@ Outra noção que precisamos mudar aqui: _“nós chamamos métodos dos objetos.
 
 ```ruby
 
->> “teste”.hello  
-NoMethodError: undefined method `hello’ for [teste](String)  
+>> "teste".hello  
+NoMethodError: undefined method `hello' for [teste](String)  
  from (irb):1  
 ```
 
@@ -34,9 +34,9 @@ Podemos reescrever o mesmo comportamento acima da seguinte forma:
 
 
 ```ruby
->> “teste”.send(:hello)  
-NoMethodError: undefined method `hello’ for [teste](String)  
- from (irb):22:in`send’  
+>> "teste".send(:hello)  
+NoMethodError: undefined method `hello' for [teste](String)  
+ from (irb):22:in`send'  
  from (irb):22  
 ```
 
@@ -45,13 +45,13 @@ Outro exemplo de ‘envio de mensagens’:
 
 ```ruby
 
->> “teste”.diga(“Fabio”)  
-NoMethodError: undefined method `diga’ for [teste](String)  
+>> "teste".diga("Fabio")  
+NoMethodError: undefined method `diga' for [teste](String)  
  from (irb):24
 
->> “teste”.send(:diga, “Fabio”)  
-NoMethodError: undefined method `diga’ for [teste](String)  
- from (irb):25:in`send’  
+>> "teste".send(:diga, "Fabio")  
+NoMethodError: undefined method `diga' for [teste](String)  
+ from (irb):25:in`send'  
  from (irb):25  
 ```
 
@@ -65,7 +65,7 @@ Nesse segundo caso, poderíamos fazer o seguinte:
 ```ruby
 class String  
  def method_missing(metodo, *args)  
- puts “Nao conheco o metodo #{metodo}. Os argumentos foram:”  
+ puts "Nao conheco o metodo #{metodo}. Os argumentos foram:"  
  args.each { |arg| puts arg }  
  end  
 end  
@@ -76,16 +76,16 @@ Antes de explicar, vejamos agora como o String “teste” vai se comportar:
 
 ```ruby
 
->> “teste”.hello  
+>> "teste".hello  
 Nao conheco o metodo hello. Os argumentos foram:  
 => []
 
->> “teste”.diga(“Fabio”)  
+>> "teste".diga("Fabio")  
 Nao conheco o metodo diga. Os argumentos foram:  
 Fabio  
-=> [“Fabio”]
+=> ["Fabio"]
 
->> “teste”.blabla(1,2,3)  
+>> "teste".blabla(1,2,3)  
 Nao conheco o metodo blabla. Os argumentos foram:  
 1  
 2  
@@ -102,16 +102,16 @@ Outra coisa que é meio polêmico são métodos privados. Em Ruby podemos fazer 
 class Teste  
  private  
  def alo  
- “alo”  
+ "alo"  
  end  
 end
 
 >> Teste.new.alo  
-NoMethodError: private method `alo’ called for #<teste:0x17d3b3c>
+NoMethodError: private method `alo' called for #<teste:0x17d3b3c>
  from (irb):47</teste:0x17d3b3c>
 
 >> Teste.new.send(:alo)  
-=> “alo”  
+=> "alo"  
 ```
 
 Essa classe ‘Foo’ tem um método privado (tudo que vem depois de ‘private’). A primeira tentativa de chamar o método “alo” falha, obviamente, por ser um método privado. Mas a segunda tentativa, usando “send” é bem sucedido! Na realidade “private” serve para indicar que não deveríamos estar acessando determinado método, mas Ruby não nos força a não conseguir. Se nós realmente quisermos, temos que explicitamente usar “send”, mas aí nós estamos conscientemente fazendo algo que “não deveríamos”. Ruby não é paternalista: é feita para quem sabe o que está fazendo.
@@ -128,21 +128,21 @@ Agora podemos usar no <span class="caps">IRB</span>:</p>
 <hr>
 
 ```ruby
-require ‘rubygems’
->> require ‘builder’
+require 'rubygems'
+>> require 'builder'
 => false
 >> x = Builder::XmlMarkup.new(:target => $stdout, :indent => 1)
 <inspect></inspect>
 => #<io:0x12b7cc>
 >> x.instruct!
-<?xml version=“1.0” encoding=“UTF-8”?>
+<?xml version="1.0" encoding="UTF-8"?>
 => #<io:0x12b7cc>
 >> x.pessoa do |p|
-?> p.nome “Fabio Akita”
->> p.email “fabioakita@gmail.com”
+?> p.nome "Fabio Akita"
+>> p.email "fabioakita@gmail.com"
 >> p.telefones do |t|
-?> t.casa “6666-8888”
->> t.trabalho “2222-3333”
+?> t.casa "6666-8888"
+>> t.trabalho "2222-3333"
 >> end
 >> end
 <pessoa>
@@ -171,15 +171,15 @@ class CreateDomXml
       DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
       DocumentBuilder docBuilder = factory.newDocumentBuilder();
       Document doc = docBuilder.newDocument();
-Element root = doc.createElement(“pessoa”);
+Element root = doc.createElement("pessoa");
 doc.appendChild(root);
 
-Element childElement = doc.createElement(“nome”);
-childElement.setValue(“Fabio Akita”);
+Element childElement = doc.createElement("nome");
+childElement.setValue("Fabio Akita");
 root.appendChild(childElement);
 
-childElement = doc.createElement(“email”);
-childElement.setValue(“<fabioakita@gmail.com>”);
+childElement = doc.createElement("email");
+childElement.setValue("<fabioakita@gmail.com>");
 root.appendChild(childElement);
 …..
 } catch(Exception e) {
@@ -211,7 +211,7 @@ class Button {
 Button myButton = new Button();
 myButton.setCommand(new Command() {
   public void execute() {
-    System.out.println(“Clicked!!”);
+    System.out.println("Clicked!!");
   }
 });
 ```
@@ -229,7 +229,7 @@ class Button
     @block.call
   end
 end
-my_button = Button.new { puts “Clicked!!” }
+my_button = Button.new { puts "Clicked!!" }
 my_button.click
 ```
 
@@ -244,10 +244,10 @@ Vejamos um exemplo mais simples:</p>
 >> yield(nome)
 >> end
 => nil</p>
->> diga_algo(“Fabio”) { |nome| puts “Hello, #{nome}” }
+>> diga_algo("Fabio") { |nome| puts "Hello, #{nome}" }
 Hello, Fabio
 => nil</p>
->> diga_algo(“Akita”) { |nome| puts “Hello, #{nome}” }
+>> diga_algo("Akita") { |nome| puts "Hello, #{nome}" }
 Hello, Akita
 => nil
 ```
@@ -257,7 +257,7 @@ Preste atenção neste trecho:</p>
 <hr>
 
 ```ruby
-{ |nome| puts “Hello, #{nome}” }—-
+{ |nome| puts "Hello, #{nome}" }—-
 ```
 
 Pense nisso como se fosse uma função anônima: o que está entre pipes “||” são parâmetros dessa função. O ‘yield’ irá executar esse bloco de código. Por acaso, ele passará o parâmetro ‘nome’ para dentro do bloco Vejamos outro exemplo:</p>
@@ -278,13 +278,13 @@ No Ruby 1.8, um bloco também é uma <strong>Closure</strong> (“Fechamento”)
 
 ```ruby
 >> def criar_bloco(nome)
->> lambda { puts “Hello #{nome}”}
+>> lambda { puts "Hello #{nome}"}
 >> end
 => nil
 >>
-?> fabio = criar_bloco(“Fabio”)
+?> fabio = criar_bloco("Fabio")
 => #<Proc:0×0124aae4@(irb):59>
->> akita = criar_bloco(“Akita”)
+>> akita = criar_bloco("Akita")
 => #<Proc:0×0124aae4@(irb):59>
 ```
 
@@ -319,7 +319,7 @@ try {
     while (( line = input.readLine()) != null){
       contents.append(line);
       contents.append(
-        System.getProperty(“line.separator”));
+        System.getProperty("line.separator"));
     }
   }
   finally {
@@ -337,11 +337,11 @@ Algo parecido, de forma literal, em Ruby, ficaria assim:</p>
 ```ruby
 contents = ""
 begin
-  input = File.open(aFile, “r”)
+  input = File.open(aFile, "r")
   begin
     while line = input.gets
       contents << line
-      contents << “\n”
+      contents << "\n"
     end
   ensure
     input.close
@@ -357,10 +357,10 @@ Felizmente o Ruby já implementa o método ‘open’ da classe ‘File’ dessa
 
 ```ruby
 contents = ""
-File.open(aFile, “r”) do |input|
+File.open(aFile, "r") do |input|
   while line = input.gets
     contents << line
-    contents << “\n”
+    contents << "\n"
   end
 end
 ```
@@ -471,7 +471,7 @@ class Array
   def [](indice)
     return seletor_antigo(indice) if indice.is_a? Fixnum
     return self.send(indice) if indice.is_a? Symbol
-    “Nada encontrado para #{indice}”
+    "Nada encontrado para #{indice}"
   end
 end
 >> lista = [1,2,3,4]
@@ -484,8 +484,8 @@ end
 => 4
 >> lista[:size]
 => 4
->> lista[“bla bla”]
-=> “Nada encontrado para bla bla”
+>> lista["bla bla"]
+=> "Nada encontrado para bla bla"
 ```
 
 Viram o que aconteceu? Usamos “alias” novamente para criar um novo atalho à antiga implementação de [], daí reimplementamos []. Ele se comporta assim: se o parâmetro passado entre colchetes for um inteiro, é para se comportar como antes, portanto chamando o atalho “seletor_antigo”. Se for um símbolo (vamos explicar isso depois mas por enquanto entenda que é uma palavra com dois pontos antes, como “:first”), ele deve enviar a mensagem ao objeto usando “send”, ou seja, deve executar como se fosse um método. Dessa forma “lista[:first]” deve se comportar igual a “lista.first”. Finalmente, se for qualquer outra coisa (como um String), apenas mostre uma mensagem dizendo que nada foi encontrado.</p>
@@ -495,39 +495,39 @@ Um Hash, em outras linguagens, também é chamado de Dicionário, ou seja, é um
 <hr>
 
 ```ruby
->> dic = { “car” => “carro”, “table” => “mesa”, “mouse” => “rato” }
-=> {"mouse"=>"rato", “table”=>"mesa", “car”=>"carro"}</p>
->> dic[“car”]
-=> “carro”</p>
->> dic[“mouse”]
-=> “rato”
+>> dic = { "car" => "carro", "table" => "mesa", "mouse" => "rato" }
+=> {"mouse"=>"rato", "table"=>"mesa", "car"=>"carro"}</p>
+>> dic["car"]
+=> "carro"</p>
+>> dic["mouse"]
+=> "rato"
 ```
 
 Novamente, é um comportamento parecido com um Array, mas em vez de passar índices numéricos ao operador “[]”, passamos uma chave e esperamos encontrar o valor correspondente. Para acrescentar mais elementos à lista, podemos fazer assim:</p>
 <hr>
 
 ```ruby
->> dic.merge!( {"book" => “livro”, “leg” => "perna"} )
-=> {"leg"=>"perna", “mouse”=>"rato", “table”=>"mesa", “book”=>"livro", “car”=>"carro"}
+>> dic.merge!( {"book" => "livro", "leg" => "perna"} )
+=> {"leg"=>"perna", "mouse"=>"rato", "table"=>"mesa", "book"=>"livro", "car"=>"carro"}
 ```
 
 Mais uma peculiaridade de Ruby. Um Hash tem dois métodos para mesclar novos elementos a uma lista já existente: “merge” e “merge!”. A diferença de um para outro é que o primeiro é um método não-destrutivo e o segundo é um método destrutivo, ou seja, o primeiro retorna a lista mesclada mas a original continua como antes, já o segundo método mescla os novos elementos diretamente na lista original. Ou seja, a linha anterior seria equivalente a fazer isso:</p>
 <hr>
 
 ```ruby
-dic = dic.merge( {"book" => “livro”, “leg” => "perna"} )
+dic = dic.merge( {"book" => "livro", "leg" => "perna"} )
 ```
 
 O resultado do merge é atribuído à mesma variável, ignorando a lista original, que é o que fazemos normalmente. Você também pode ter Hashes dentro de Hashes, assim:</p>
 <hr>
 
 ```ruby
->> fabio = { “emails” =>
-?> { “trabalho” => “fabio.akita@locaweb.com.br”,
-?> “normal” => “fabioakita@gmail.com” } }
-=> {"emails"=>{"normal"=>"fabioakita@gmail.com", “trabalho”=>"fabio.akita@locaweb.com.br"}}</p>
-?> fabio[“emails”][“normal”]
-=> “fabioakita@gmail.com”
+>> fabio = { "emails" =>
+?> { "trabalho" => "fabio.akita@locaweb.com.br",
+?> "normal" => "fabioakita@gmail.com" } }
+=> {"emails"=>{"normal"=>"fabioakita@gmail.com", "trabalho"=>"fabio.akita@locaweb.com.br"}}</p>
+?> fabio["emails"]["normal"]
+=> "fabioakita@gmail.com"
 ```
 
 Finalmente, podemos explorar o conteúdo de um Hash da seguinte maneira:</p>
@@ -535,13 +535,13 @@ Finalmente, podemos explorar o conteúdo de um Hash da seguinte maneira:</p>
 
 ```ruby
 >> dic.keys
-=> [“leg”, “mouse”, “table”, “book”, “car”]
+=> ["leg", "mouse", "table", "book", "car"]
 
 >> dic.values
-=> [“perna”, “rato”, “mesa”, “livro”, “carro”]
+=> ["perna", "rato", "mesa", "livro", "carro"]
 
 >> dic.keys.each do |chave|
-?> puts “#{chave} = #{dic[chave]}”
+?> puts "#{chave} = #{dic[chave]}"
 >> end
 
 leg = perna

@@ -99,7 +99,7 @@ module LibC
  attach_function nil, :puts, [:string], :void
 end
 
-LibC.puts “hello!”
+LibC.puts "hello!"
 ```
 
 The attach_function line is the primary interface into FFI. You simply indicate which library the function is in (in this case, nil is used because it’s included in the existing process), the name of the function (puts), the types of arguments it takes (just 1, a string), and finally, the type it returns (void, ie, nothing).

@@ -84,7 +84,7 @@ O método [fresh_when](http://apidock.com/rails/ActionController/Base/fresh_when
 def show  
  @post = Post.find(params[:id])  
  if stale?(:etag => @post.updated_at.to_i, :public => true)  
- @comments = Post.comments.all(:order => “updated_at DESC”, :conditions => { :spam => false })  
+ @comments = Post.comments.all(:order => "updated_at DESC", :conditions => { :spam => false })  
  @tags = Post.tags.all  
  respond_to do |format|  
  format.html  
@@ -104,7 +104,7 @@ Outra coisa é que se você usar o método “fresh_when” precisa tomar cuidad
 def show  
  @post = Post.find(params[:id])  
  fresh_when(:etag => @post.updated_at.to_i, :public => true)  
- render :action => “post”  
+ render :action => "post"  
 end  
 ```
 
@@ -116,7 +116,7 @@ def show
  @post = Post.find(params[:id])  
  fresh_when(:etag => @post.updated_at.to_i, :public => true)  
  if response.status == 200  
- render :action => “post”  
+ render :action => "post"  
  end  
 end  
 ```

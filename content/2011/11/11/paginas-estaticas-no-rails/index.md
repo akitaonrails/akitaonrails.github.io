@@ -22,8 +22,8 @@ O problema é que eu sempre vejo algo parecido com isto no <tt>config/routes.rb<
 
 
 ```ruby
-match “page/hello” => “page#hello” 
-match “page/help” => “page#help”
+match "page/hello" => "page#hello" 
+match "page/help" => "page#help"
 ```
 
 * * *
@@ -45,7 +45,7 @@ Em vez disso, uma das muitas formas de resolver esse problema é fazer simplesme
 
 
 ```ruby
-get “page/:id” => “page#index”, :as => :page
+get "page/:id" => "page#index", :as => :page
 ```
 
 * * *
@@ -69,9 +69,9 @@ Dá para melhorar mais isso, fazendo algumas checagens óbvias como validar se o
 
 ```ruby
 def index 
-  if params[:id] && template_exists?(params[:id], [“page”]) 
+  if params[:id] && template_exists?(params[:id], ["page"]) 
     render params[:id] 
-  else redirect_to ‘/404.html’, :status => 404 end 
+  else redirect_to '/404.html', :status => 404 end 
 end
 ```
 

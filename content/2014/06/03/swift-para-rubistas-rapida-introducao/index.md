@@ -28,7 +28,7 @@ if let actualNumber = possibleNumber.toInt() {
 } else {
     println("\(possibleNumber) could not be converted to an integer")
 }
-// prints "123 has an integer value of 123”
+// prints "123 has an integer value of 123"
 ```
 
 E em Ruby:
@@ -39,7 +39,7 @@ if actual_number = possible_number && possible_number.to_i
 else
   puts "#{possible_number} could not be converted to an integer"
 end
-# prints "123 has an integer value of 123”
+# prints "123 has an integer value of 123"
 ```
 
 Statements como "if" ou "for" não tem parênteses como em C, embora cada seção ainda seja separado por chaves "{}". Visualmente falando a diferença é bem pequena. Interpolação em strings tem uma sintaxe um pouco diferente mas no geral é muito semelhante. 
@@ -59,7 +59,7 @@ func alignRight(var string: String, count: Int, pad: Character) -> String {
 let originalString = "hello"
 let paddedString = alignRight(originalString, 10, "-")
 // paddedString is equal to "-----hello"
-// originalString is still equal to "hello”
+// originalString is still equal to "hello"
 ```
 
 E o equivalente em Ruby seria:
@@ -131,7 +131,7 @@ if let roomCount = john.residence?.numberOfRooms {
 } else {
     println("Unable to retrieve the number of rooms.")
 }
-// prints "Unable to retrieve the number of rooms.”
+// prints "Unable to retrieve the number of rooms."
 ```
 
 O "equivalente" em Ruby (se estivermos no Rails) seria:
@@ -161,7 +161,7 @@ println("One inch is \(oneInch) meters")
 // prints "One inch is 0.0254 meters"
 let threeFeet = 3.ft
 println("Three feet is \(threeFeet) meters")
-// prints "Three feet is 0.914399970739201 meters”
+// prints "Three feet is 0.914399970739201 meters"
 ```
 
 Em Ruby podemos facilmente fazer a mesma coisa diretamente porque classes são sempre abertas:
@@ -268,7 +268,7 @@ let (statusCode, statusMessage) = http404Error
 println("The status code is \(statusCode)")
 // prints "The status code is 404"
 println("The status message is \(statusMessage)")
-// prints "The status message is Not Found”
+// prints "The status message is Not Found"
 ```
 
 Veja que podemos decompor um Tuple de volta em variáveis de maneira similar em Ruby:

@@ -36,7 +36,7 @@ def nome @nome end def nome=(valor) @nome = valor end
 
 end
 
-fabio = Pessoa.new(“Fabio”)   
+fabio = Pessoa.new("Fabio")   
 puts fabio.nome  
 ```
 
@@ -71,7 +71,7 @@ class Pessoa {
  }  
 }
 
-Pessoa fabio = new Pessoa(“Fabio”);  
+Pessoa fabio = new Pessoa("Fabio");  
 System.out.println(fabio.getNome());  
 ```
 
@@ -82,13 +82,13 @@ Bom, vejamos um outro exemplo – da mesma classe Ruby:
 
 ```ruby
 
-require ‘ostruct’  
+require 'ostruct'  
 class Pessoa < OpenStruct; end
 
-fabio = Pessoa.new :nome = “Fabio”  
+fabio = Pessoa.new :nome = "Fabio"  
 puts fabio.nome
 
-fabio.email = ‘<akitaonrails@mac.com>’  
+fabio.email = '<akitaonrails@mac.com>'  
 puts fabio.email  
 ```
 
@@ -120,7 +120,7 @@ Vamos a mais alguns exemplos simples:
 4
 
 >> def hello  
->> “Hello World”  
+>> "Hello World"  
 >> end
 
 >> puts hello  
@@ -142,7 +142,7 @@ O que muitos costumam reclamar em linguagens tradicionais é o seguinte:
 
 class Teste {  
  public static void main(String[] args) {  
- System.out.println(“Hello World”);  
+ System.out.println("Hello World");  
  }  
 }  
 ```
@@ -152,7 +152,7 @@ Muita coisa para fazer um simples “Hello World”. Agora vejamos o Hello World
 
 ```ruby
 
-puts “Hello World”  
+puts "Hello World"  
 ```
 
 _“Oras, mas Ruby não é OOP?? Cadê a classe!!?”_ Vamos entender o exemplo. Considerando que ainda estamos dentro do ambiente IRB, faça o seguinte:
@@ -160,7 +160,7 @@ _“Oras, mas Ruby não é OOP?? Cadê a classe!!?”_ Vamos entender o exemplo.
 
 ```ruby
 
->> puts “Hello World”  
+>> puts "Hello World"  
 Hello World  
 => nil
 
@@ -206,7 +206,7 @@ class StringUtils {
  }  
 }
 
-String nome = “Fabio Akita”;  
+String nome = "Fabio Akita";  
 StringUtils.isEmpty(nome);  
 ```
 
@@ -224,7 +224,7 @@ class String
  end  
 end
 
-nome = “Fabio Akita”  
+nome = "Fabio Akita"  
 nome.empty?  
 ```
 
@@ -257,13 +257,13 @@ Espero que isso esteja claro: quando somamos dois números, na realidade estamos
 
 ```ruby
 
->> 1 + “2”  
-TypeError: String can’t be coerced into Fixnum  
- from (irb):35:in `+’  
+>> 1 + "2"  
+TypeError: String can't be coerced into Fixnum  
+ from (irb):35:in `+'  
  from (irb):35
 
->> 1.<ins>(“s”)
-TypeError: String can’t be coerced into Fixnum
+>> 1.<ins>("s")
+TypeError: String can't be coerced into Fixnum
  from (irb):36:in 
  from (irb):36  
 ```
@@ -284,8 +284,8 @@ Escrevi as duas maneiras novamente: passar um String como parâmetro ao método 
 
 >> 1 + 2  
 => 3  
->> 1 + “2”  
-=> “12”  
+>> 1 + "2"  
+=> "12"  
 ```
 
 Várias coisas acontecendo aqui. Vejamos os principais pontos: primeiro, estamos reabrindo a classe Fixnum, ou seja, todas as instâncias dessa classe serão afetadas automaticamente pelo que faremos a seguir.
@@ -329,8 +329,8 @@ O framework Ruby on Rails faz muito uso desse recurso. Um dos pacotes que compõ
 ```ruby
 
 #1. carrega o pacote activesupport  
->> require ‘rubygems’  
->> require ‘activesupport’  
+>> require 'rubygems'  
+>> require 'activesupport'  
 => true
 
 #1. horário atual  
@@ -349,8 +349,8 @@ O framework Ruby on Rails faz muito uso desse recurso. Um dos pacotes que compõ
 => 524288
 
 #1. transformando objetos em XML  
->> { :html => { :body => { :p => “teste” } } }.to_xml  
-=> “<?xml version=”1.0" encoding=“UTF-8”?\>\n  
+>> { :html => { :body => { :p => "teste" } } }.to_xml  
+=> "<?xml version="1.0" encoding="UTF-8"?\>\n  
 ```
 
 Como podem ver, podemos incrementar muito as funcionalidades de tudo que já existe. O Ruby on Rails começa exatamente assim: primeiro incorporando muitas coisas novas ao próprio Ruby e depois construindo sobre ela. Muitos são casos onde simplesmente depender de criar novas sub-classes não adiantaria muita coisa. Outro exemplo: em Java, se quisermos comparar o conteúdo de dois Strings, não devemos fazer isso:
@@ -358,13 +358,13 @@ Como podem ver, podemos incrementar muito as funcionalidades de tudo que já exi
 
 ```java
 
-String a = “foo”;  
-String b = “bla”;  
+String a = "foo";  
+String b = "bla";  
 if (a == b) {  
- System.out.println(“encontrado!”);  
+ System.out.println("encontrado!");  
 }  
 if (a \> b) {  
- System.out.println(“a maior do que b”);  
+ System.out.println("a maior do que b");  
 }  
 ```
 
@@ -373,10 +373,10 @@ O correto seria assim:
 
 ```java
 if (a.equals(b)) {  
- System.out.println(“encontrado!”);  
+ System.out.println("encontrado!");  
 }  
 if (a.compareTo(b) \> 0) {  
- System.out.println(“a maior do que b”);  
+ System.out.println("a maior do que b");  
 }  
 ```
 
@@ -385,10 +385,10 @@ Já, em Ruby, fazemos assim:
 
 ```ruby
 
-a = “foo”  
-b = “bla”  
-puts “encontrado!” if a == b  
-puts “a maior do que b” if a > b  
+a = "foo"  
+b = "bla"  
+puts "encontrado!" if a == b  
+puts "a maior do que b" if a > b  
 ```
 
 Exatamente como imaginaríamos que deveria ser. Isso porque “==” e “>” são ‘operadores’ mas são também nomes de métodos, como explicamos acima. Então fica fácil implementar o comportamento que precisamos da maneira mais clara e expressiva possível.
@@ -412,18 +412,18 @@ Como a classe “Fixnum” é por si mesmo um objeto, podemos chamar métodos ne
 
 
 ```ruby
->> a = “teste”  
-=> “teste”  
+>> a = "teste"  
+=> "teste"  
 >> a.instance_eval do  
 ?> def hello  
->> “hello from teste”  
+>> "hello from teste"  
 >> end  
 >> end  
 => nil  
 >> a.hello  
-=> “hello from teste”  
->> “foo”.hello  
-NoMethodError: undefined method `hello’ for [foo](String)  
+=> "hello from teste"  
+>> "foo".hello  
+NoMethodError: undefined method `hello' for [foo](String)  
  from (irb):17  
  from :0  
 ```
@@ -436,7 +436,7 @@ Agora vejamos um outro meio de injetar código em classes de maneiras mais organ
 ```ruby
 module MeusPatches  
  def say_hello  
- “Hello World!”  
+ "Hello World!"  
  end
 
 def say_time Time.now end
@@ -458,14 +458,14 @@ Módulos são como Classes que não podem ser instanciadas. No exemplo acima, or
 ```ruby
 
 >> 13.say_hello  
-=> “Hello World!”
+=> "Hello World!"
 
 >> "".say_hello  
-NoMethodError: undefined method `say_hello’ for "":String  
+NoMethodError: undefined method `say_hello' for "":String  
  from (irb):19
 
 >> String.say_hello  
-=> “Hello World!”  
+=> "Hello World!"  
 ```
 
 O objeto “13” (que é instância de Fixnum) responde ao método do módulo. A string vazia "" não responde. Eis a diferença entre “include” e “extend”: no segundo quem responde ao método do módulo é a própria classe. Na prática, pense que “include” serve para acrescentar métodos de instância e “extend” para acrescentar “métodos de classe” – esse não é o termo correto mas para a maioria dos casos serve.
@@ -504,14 +504,14 @@ Cada um dos includes acima tem um arquivo separado. Por exemplo ActiveRecord::Qu
 module MeusPatches
  def self.included(base)  
  base.send(:extend, ClassMethods)  
- puts “Module MeusPaches incluso na classe #{base.name}”  
+ puts "Module MeusPaches incluso na classe #{base.name}"  
  end
 
 def metodo_de_instancia 
-  “sou um metodo de instancia” 
+  "sou um metodo de instancia" 
 end 
 
-module ClassMethods def self.extended(base) puts “Module MeusPatches::ClassMethods extendido na classe #{base.name}” end def metodo_de_classe “sou um metodo de classe” end end
+module ClassMethods def self.extended(base) puts "Module MeusPatches::ClassMethods extendido na classe #{base.name}" end def metodo_de_classe "sou um metodo de classe" end end
 
 end
 
@@ -526,10 +526,10 @@ Module MeusPaches incluso na classe Pessoa
 ?> fabio = Pessoa.new  
 => #<pessoa:0x1789528>
 >> fabio.metodo_de_instancia
-=> “sou um metodo de instancia”
+=> "sou um metodo de instancia"
 >> 
 ?> Pessoa.metodo_de_classe
-=> “sou um metodo de classe”
+=> "sou um metodo de classe"
 </pessoa:0x1789528>
 ```
 
@@ -550,11 +550,11 @@ Se fôssemos reescrever a classe Pessoa sem o recurso de módulos, ela ficaria a
 
 class Pessoa  
  def metodo_de_instancia  
- “sou um metodo de instancia”  
+ "sou um metodo de instancia"  
  end
 
 def self.metodo_de_classe 
-    “sou um metodo de classe” 
+    "sou um metodo de classe" 
 end
 
 end  
@@ -567,11 +567,11 @@ Criar um método a partir de “self” significa que o método está disponíve
 
 class Pessoa  
  def metodo_de_instancia  
- “sou um metodo de instancia”  
+ "sou um metodo de instancia"  
  end
 
 class << self def metodo_de_classe 
-    “sou um metodo de classe” 
+    "sou um metodo de classe" 
 end end
 
 end  
@@ -586,18 +586,18 @@ A diferença é que em vez de escrever “def self.” o tempo todo, podemos sim
 => #<pessoa:0x1775370></pessoa:0x1775370>
 
 >> p.metodo_de_instancia  
-=> “sou um metodo de instancia”
+=> "sou um metodo de instancia"
 
 >> p.metodo_de_classe  
-NoMethodError: undefined method `metodo_de_classe’ for #<pessoa:0x1775370>
+NoMethodError: undefined method `metodo_de_classe' for #<pessoa:0x1775370>
  from (irb):94</pessoa:0x1775370>
 
 >> Pessoa.metodo_de_instancia  
-NoMethodError: undefined method `metodo_de_instancia’ for Pessoa:Class  
+NoMethodError: undefined method `metodo_de_instancia' for Pessoa:Class  
  from (irb):95
 
 >> Pessoa.metodo_de_classe  
-=> “sou um metodo de classe” 
+=> "sou um metodo de classe" 
 ```
 
 Não perca a Parte II deste artigo para entender o básico da linguagem Ruby. Espero que até aqui tenha ficado bastante claro que não devemos tentar codificar Ruby da mesma forma que codificamos em outras linguagens estáticas. Tirem proveito do dinamismo dessa linguagem, é assim que fazemos o “The Ruby Way”.

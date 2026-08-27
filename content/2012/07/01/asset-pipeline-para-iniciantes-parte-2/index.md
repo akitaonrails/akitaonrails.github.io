@@ -69,7 +69,7 @@ Agora, por que adicionamos o Compass? Não vou fazer desta seção um tutorial d
 
 
 ```css
-@import “compass”;
+@import "compass";
 
 .box {  
  font {  
@@ -151,8 +151,8 @@ Nada demais, apenas o objetivo de adicionar ícones de redes sociais com links a
 
 ```css
 
-@import “compass”;  
-@import “social-icons/*.png”;
+@import "compass";  
+@import "social-icons/*.png";
 
 …
 
@@ -215,7 +215,7 @@ Vejamos um exemplo mais concreto. Vamos adicionar o seguinte ao nosso <tt>applic
 h1 {  
  padding-left: 60px;  
  height: 70px;  
- background: url(“/uploads/rails.png”) no-repeat;  
+ background: url("/uploads/rails.png") no-repeat;  
 }  
 ```
 
@@ -223,7 +223,7 @@ O que confunde é que isso de fato funciona. Porém, caímos nos problema mencio
 
 
 ```css
-background: image-url(“rails.png”) no-repeat;
+background: image-url("rails.png") no-repeat;
 ```
 
 * * *
@@ -232,22 +232,22 @@ Isto irá gerar a URL correta. Temos as seguinte variações:
 
 
 ```ruby
-image-url(“rails.png”) # url(/uploads/rails.png)  
-image-path(“rails.png”) # “/uploads/rails.png”.  
-asset-url(“rails.png”, image) # url(/uploads/rails.png)  
-asset-path(“rails.png”, image) # “/uploads/rails.png”  
+image-url("rails.png") # url(/uploads/rails.png)  
+image-path("rails.png") # "/uploads/rails.png".  
+asset-url("rails.png", image) # url(/uploads/rails.png)  
+asset-path("rails.png", image) # "/uploads/rails.png"  
 ```
 
 Agora, se for necessário URLs de assets dentro do Javascript, não há equivalente no <tt>application.js</tt> puro, por isso precisaríamos renomeá-lo para <tt>application.js.erb</tt> e então a mesma regra que usaríamos em views HTML ERB normais valem:
 
 
 ```ruby
-var imagem = “<%= image_path(”rails.png") \>";  
-var tag_imagem = "<= image_tag(“rails.png”) \>";  
-var audio = "<= audio_path(“rails.mp3”) \>";  
-var tag_audio = "<= image_tag(“rails.mp3”) \>";  
-var video = "<= video_path(“rails.m4v”) \>";  
-var tag_video = "<= image_tag(“rails.m4v”) %\>";  
+var imagem = "<%= image_path("rails.png") \>";  
+var tag_imagem = "<= image_tag("rails.png") \>";  
+var audio = "<= audio_path("rails.mp3") \>";  
+var tag_audio = "<= image_tag("rails.mp3") \>";  
+var video = "<= video_path("rails.m4v") \>";  
+var tag_video = "<= image_tag("rails.m4v") %\>";  
 ```
 
 Vejam a documentação do [ActionView::Helpers::AssetTagHelper](http://api.rubyonrails.org/classes/ActionView/Helpers/AssetTagHelper.html) para entender melhor sobre estes helpers, mas o importante é: se estiver escrevendo a URL de um asset manualmente, como um string, você está fazendo errado.
@@ -277,7 +277,7 @@ E para diminuir ainda mais a quantidade de bits transportado entre o servidor e 
 # 1. Gzip Settings  
 
 gzip on;  
-gzip_disable “msie6”;
+gzip_disable "msie6";
 
 gzip_vary on;
 gzip_proxied any;

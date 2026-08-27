@@ -30,8 +30,8 @@ dim y
 x = 1  
 y = 2
 
-x = “ABC”  
-y = “XYZ”
+x = "ABC"  
+y = "XYZ"
 ```
 
 -
@@ -46,7 +46,7 @@ class Dummy
  end
 end
 
-raise “Error” unless Dummy.new.test(1, 2) == 3  
+raise "Error" unless Dummy.new.test(1, 2) == 3  
 ```
 
 O método test() chamado na classe Dummy na última linha é despachado pelo Ruby ao método method_missing(). ( **nota do Akita** : note que dizemos “despachado” – dispatched – e não “chamado”. Não ‘chamamos métodos’, mas sim ‘enviamos mensagens’, a diferença é muito grande.) Python e Groovy também suportam Despacho Dinâmico. Em geral, linguagens dinâmicas como Ruby, Python e Groovy tem um Protocolo de Meta-Objeto ou MOP (Meta-Object Protocol).
@@ -91,8 +91,8 @@ Entretanto, quando passamos 4 argumentos na linha de comando o script Ruby falha
 
 ```bash
 $ ruby w -W2 t.rb 0 1 2 3; echo $?  
-t.rb:7:in `test’: wrong number of arguments (0 for 2) (ArgumentError)  
- from t.rb:7:in`main’  
+t.rb:7:in `test': wrong number of arguments (0 for 2) (ArgumentError)  
+ from t.rb:7:in`main'  
  from t.rb:13  
 1
 $
@@ -122,7 +122,7 @@ Este é o erro em runtime:
 
 ```bash
 
-Caught: org.codehaus.groovy.runtime.typehandling.GroovyCastException: Cannot cast object ‘test’ with class ‘java.lang.String’ to class ‘java.lang.Integer’  
+Caught: org.codehaus.groovy.runtime.typehandling.GroovyCastException: Cannot cast object 'test' with class 'java.lang.String' to class 'java.lang.Integer'  
 at typesafe.run(typesafe.groovy:1)  
 at typesafe.main(typesafe.groovy)  
 ```
@@ -137,7 +137,7 @@ def test(int a, int b) {
 }
 
 if (args.length \> 3) {  
- println test(1, “test”)  
+ println test(1, "test")  
 } else {  
  println test(1, 2)  
 }  

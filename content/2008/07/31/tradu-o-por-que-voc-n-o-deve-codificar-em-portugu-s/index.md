@@ -22,25 +22,25 @@ Pegue por exemplo este código em PHP do post [Construindo um forum em PHP e MyS
 
 ```php
 
-require(’funciones.php’);  
-$id = $_GET[“id”];  
-$citar = $GET[“citar”];  
-$row = array(”id” =\> $id);  
+require('funciones.php');  
+$id = $_GET["id"];  
+$citar = $GET["citar"];  
+$row = array("id" =\> $id);  
 if($citar==1)  
 {  
- require(’configuracion.php’);  
- $sql = “SELECT titulo, mensaje, identificador AS id “;  
- $sql.= “FROM foro WHERE id=’$id’”;  
+ require('configuracion.php');  
+ $sql = "SELECT titulo, mensaje, identificador AS id ";  
+ $sql.= "FROM foro WHERE id='$id'";  
  $rs = mysql_query($sql, $con);  
  if(mysql_num_rows($rs)==1) $row = mysqlfetch_ assoc($rs);  
- $row[“titulo”] = “Re: “.$row[“titulo”];  
- $row[“mensaje”] = “[citar]“.$row[“mensaje”].”[/citar]“;  
- if($row[“id”]==0) $row[“id”]=$id;  
+ $row["titulo"] = "Re: ".$row["titulo"];  
+ $row["mensaje"] = "[citar]".$row["mensaje"]."[/citar]";  
+ if($row["id"]==0) $row["id"]=$id;  
 }  
-$template = implode(”", file(’formulario.html’));  
-include(’header.html’);  
+$template = implode("", file('formulario.html'));  
+include('header.html');  
 mostrarTemplate($template, $row);  
-include(’footer.html’);  
+include('footer.html');  
 ```
 
 Algumas palavras podem ser familiares para pessoas que entendem inglês já que têm pronúncias similares em inglês, por exemplo: _configuracion_ é _configuration_, mas e _mostrarTemplate_? Mesmo _formulario_ dará dores de cabeça a mais de um programador que não saiba Espanhol.
@@ -67,10 +67,10 @@ Outro caso notório é da SAP, com sua linguagem ABAP/4. Provavelmente, 30 anos 
 
 
 ```abap
-IF SUDATE = ‘X’.  
+IF SUDATE = 'X'.  
 SORT ITAB BY UDATE EKKEY-EBELN CHANGENR EKKEY-EBELP  
 EKKEY-ETENR.  
-ELSEIF SNAME = ‘X’.  
+ELSEIF SNAME = 'X'.  
 SORT ITAB BY USERNAME EKKEY-EBELN CHANGENR EKKEY-EBELP  
 EKKEY-ETENR.  
 ELSE.  

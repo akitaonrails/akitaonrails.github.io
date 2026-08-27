@@ -69,7 +69,7 @@ Depois instale o plugin [rails_rcov](http://blog.codahale.com/2006/05/26/rails-p
 Com este plugin você ganha os seguintes task rake:
 
 ```rake
-| doc:plugins:rails_rcov | Create plugin documentation for ‘rails_rcov’ |
+| doc:plugins:rails_rcov | Create plugin documentation for 'rails_rcov' |
 | test:functionals:clobber_rcov | Remove Rcov reports for functional tests |
 | test:functionals:rcov | Run all functional tests with Rcov to measure coverage |
 | test:integration:clobber_rcov | Remove Rcov reports for integration tests |

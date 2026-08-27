@@ -45,10 +45,10 @@ E no PostgreSQL faça:
 
 ```sql
 CREATE DATABASE dbname  
-WITH OWNER “postgres”  
-ENCODING ‘UTF8’  
- LC_COLLATE = ‘en_US.UTF-8’  
- LC_CTYPE = ‘en_US.UTF-8’;  
+WITH OWNER "postgres"  
+ENCODING 'UTF8'  
+ LC_COLLATE = 'en_US.UTF-8'  
+ LC_CTYPE = 'en_US.UTF-8';  
 ```
 
 Obviamente, troque <tt>dbname</tt> e <tt>postgres</tt> de acordo com sua aplicação. Não tem coisa que eu abomine mais do que um banco de dados e uma aplicação web desenvolvida em “Latin1” (iso-8859-1) ou pior ainda, em Windows 1252. Apenas para refrescar a memória, até o Ruby 1.8 todo string de texto era nada mais do que uma cadeia de bytes, como em C (justamente mantendo compatibilidade com C). A partir do Ruby 1.9 foi adicionado um complexo sistema para lidar com todo tipo de linguagem, encoding e com isso o suporte a UTF-8 se tornou bem melhor e deve ser o padrão. Agora um string é uma cadeia de caracteres, que pode se double-byte associado a uma tabela de encoding para garantir que todas as operações de string, incluindo regular expressions, atuem da forma correta sem corromper o texto. O Rails atual também leva isso em consideração e tudo é, por padrão, UTF8. Nunca misture.
@@ -91,13 +91,13 @@ Adicione as seguintes gems no seu <tt>Gemfile</tt>:
 ```ruby
 
 …  
-gem ‘devise’
+gem 'devise'
 
 group :development, :test do  
- gem ‘rspec-rails’  
- gem ‘pry-rails’
+ gem 'rspec-rails'  
+ gem 'pry-rails'
 
-gem ‘guard’ gem ‘guard-rspec’ gem ‘growl’
+gem 'guard' gem 'guard-rspec' gem 'growl'
 
 end
 ```
@@ -107,16 +107,16 @@ Modifique seu <tt>config/application.rb</tt>, aproximadamente na linha 28, para 
 
 ```ruby
 #1. Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
-#2. Run “rake -D time” for a list of tasks for finding time zone names. Default is UTC.  
-config.time_zone = ‘Brasilia’
+#2. Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.  
+config.time_zone = 'Brasilia'
 
 #3. The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
-config.i18n.load_path += Dir[Rails.root.join(‘my’, ‘locales’, ‘*.{rb,yml}’).to_s]  
-config.i18n.available_locales = [:en, :“pt-BR”]  
-config.i18n.default_locale = :“pt-BR”
+config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]  
+config.i18n.available_locales = [:en, :"pt-BR"]  
+config.i18n.default_locale = :"pt-BR"
 
 #4. Configure the default encoding used in templates for Ruby 1.9.  
-config.encoding = “utf-8”  
+config.encoding = "utf-8"  
 ```
 
 Neste exemplo considero que estou apenas suportanto Inglês (en) e Português (pt-BR). Por padrão o Rails sempre procurará por arquivos de tradução a partir do diretório <tt>config/locales</tt> e sempre com arquivos no formato <tt>#{locale}.yml</tt> ou <tt>#{locale}rb</tt>, por exemplo, <tt>devise.pt-BR.yml</tt>.
@@ -145,8 +145,8 @@ Adicione no seu arquivo de rotas:
 
 ```ruby
 I18nDemo::Application.routes.draw do  
- get “welcome/index”, as: “welcome”  
- root to: ‘welcome#index’  
+ get "welcome/index", as: "welcome"  
+ root to: 'welcome#index'  
 end
 ```
 
@@ -242,11 +242,11 @@ Veja que ele copia muitos arquivos. Vamos abrir um deles:
 <%= f.label :email >  
  <= f.email_field :email %\>
 
-<%= f.submit “Resend confirmation instructions” %\>
+<%= f.submit "Resend confirmation instructions" %\>
 
 <% end %\>
 
-<%= render “devise/shared/links” %\>  
+<%= render "devise/shared/links" %\>  
 ```
 
 Note que todos os textos estão embutidos: exatamente o que eu disse que numa aplicação I18n não devemos fazer. Ou seja, para tornar essas views traduzíveis, precisamos extrair uma a uma. Sim, será bastante trabalho. Ou você pode usar o caminho mais fácil e procurar alguém que já tenha feito isso – como eu fiz neste aplicativo de exemplo.
@@ -286,8 +286,8 @@ E para acesssar a tradução podemos fazer assim:
 
 
 ```ruby
-I18n.locale = :“pt-BR”  
-I18n.t(“devise.confirmations.new.title”)  
+I18n.locale = :"pt-BR"  
+I18n.t("devise.confirmations.new.title")  
 I18n.t(:title, scope: [:devise, :confirmations, :new])  
 ```
 
@@ -297,7 +297,7 @@ Qualquer dessas e outras variações funcionam igual e acham a string correta, m
 
 
 ```html
-# <%= t(“.title”) %\>
+# <%= t(".title") %\>
 
 …
 ```
@@ -315,19 +315,19 @@ activerecord:
  errors:  
  <<: *errors  
  models:  
- user: “Usuário”  
- article: “Artigo”  
+ user: "Usuário"  
+ article: "Artigo"  
  attributes:  
  user:  
- email: “E-mail”  
- password: “Senha”  
- password_confirmation: “Confirmar Senha”  
- current_password: “Senha Atual”  
- remember_me: “Lembre-se de mim”  
+ email: "E-mail"  
+ password: "Senha"  
+ password_confirmation: "Confirmar Senha"  
+ current_password: "Senha Atual"  
+ remember_me: "Lembre-se de mim"  
  article:  
- title: “Título”  
- body: “Conteúdo”  
- body_html: “Conteúdo em HTML”  
+ title: "Título"  
+ body: "Conteúdo"  
+ body_html: "Conteúdo em HTML"  
 ```
 
 O modelo <tt>User</tt> já foi criado pelo Devise. Ainda não criamos o modelo <tt>Article</tt> mas já fica aqui para referência. No arquivo <tt>config/locales/rails.en.yml</tt> podemos simplificar porque quando o Rails não encontra a tradução ele usa o próprio nome dos atributos.
@@ -337,15 +337,15 @@ O modelo <tt>User</tt> já foi criado pelo Devise. Ainda não criamos o modelo <
 
 ```yaml
 en:  
- hello: “Hello world”  
- site_name: “I18n Demonstration”  
+ hello: "Hello world"  
+ site_name: "I18n Demonstration"  
  translation:  
  en: English  
  pt-BR: Portuguese  
  admin:  
- title: “Administration”  
+ title: "Administration"  
  articles:  
- title: “Articles”  
+ title: "Articles"  
 ```
 
 ## Atributos Traduzidos de ActiveRecord com Globalize 3
@@ -354,24 +354,24 @@ O conceito é simples: queremos um suporte que me permita utilizar os mesmos nom
 
 
 ```ruby
-require ‘spec_helper’
+require 'spec_helper'
 
 describe Article do  
  before(:each) do  
  I18n.locale = :en  
- @article = Article.create title: “Hello World”, body: “ **Test** ”  
- I18n.locale = :“pt-BR”  
- @article.update_attributes(title: “Ola Mundo”, body: “_Teste_”)  
+ @article = Article.create title: "Hello World", body: " **Test** "  
+ I18n.locale = :"pt-BR"  
+ @article.update_attributes(title: "Ola Mundo", body: "_Teste_")  
  end
 
-context “translations” do 
-    it “should read the correct translation” do 
+context "translations" do 
+    it "should read the correct translation" do 
       @article = Article.last I18n.locale = :en 
-      @article.title.should == “Hello World” 
-      @article.body.should == “ **Test** ” 
-      I18n.locale = :“pt-BR” 
-      @article.title.should == “Ola Mundo” 
-      @article.body.should == “_Teste_” 
+      @article.title.should == "Hello World" 
+      @article.body.should == " **Test** " 
+      I18n.locale = :"pt-BR" 
+      @article.title.should == "Ola Mundo" 
+      @article.body.should == "_Teste_" 
     end 
   end
 end  
@@ -381,7 +381,7 @@ A opção que escolhi foi novamente um projeto do Sven Fuchs, o [Globalize 3](ht
 
 
 ```ruby
-gem ‘globalize3’
+gem 'globalize3'
 ```
 
 Para demonstrar como funciona, vamos criar um novo model:
@@ -444,7 +444,7 @@ Feito isso adicione a gem no <tt>Gemfile</tt>:
 
 
 ```ruby
-gem ‘friendly_id’
+gem 'friendly_id'
 ```
 
 Execute <tt>bundle</tt> para instalar e modifique seu modelo:
@@ -467,18 +467,18 @@ Se fizer tudo corretamente, o comportamento será de acordo com a seguinte spec:
 
 
 ```ruby
-require ‘spec_helper’
+require 'spec_helper'
 
 describe Article do  
  before(:each) do  
  I18n.locale = :en  
- @article = Article.create title: “Hello World”, body: “ **Test** ”  
+ @article = Article.create title: "Hello World", body: " **Test** "  
  …  
  end  
  …  
- context “slug” do  
- it “should generate a slug” do  
- @article.slug.should == “hello-world”  
+ context "slug" do  
+ it "should generate a slug" do  
+ @article.slug.should == "hello-world"  
  end  
  end  
 end  

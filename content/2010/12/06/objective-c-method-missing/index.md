@@ -20,9 +20,9 @@ Uma das funcionalidades mais interessantes do Ruby é sem dúvida o famoso <tt>m
 > obj = Object.new  
  => #<object:0x0000010092ac60>
 > obj.foo
-NoMethodError: undefined method `foo’ for #<object:0x0000010092ac60>
+NoMethodError: undefined method `foo' for #<object:0x0000010092ac60>
  from (irb):2
- from /Users/akitaonrails/.rvm/rubies/ruby-1.9.2-p0/bin/irb:17:in `<main>’
+ from /Users/akitaonrails/.rvm/rubies/ruby-1.9.2-p0/bin/irb:17:in `<main>'
 </object:0x0000010092ac60></object:0x0000010092ac60>
 ```
 
@@ -32,14 +32,14 @@ Agora, podemos redefinir o método <tt>method_missing</tt> do <tt>Object</tt> e 
 ```ruby
 
 > def method_missing(method, *args)  
-> “#{method}:#{args.size}”  
+> "#{method}:#{args.size}"  
 > end
 
 > obj.foo  
-=> “foo:0”
+=> "foo:0"
 
 > obj.foo(1,2,3)  
-=> “foo:3”  
+=> "foo:3"  
 ```
 
 Este foi um resumo rápido, recomendo que se ainda não estiver familiarizado com esse conceito leia meu [Micro-Tutorial de Ruby – Parte II](/2008/11/10/micro-tutorial-de-ruby-parte-ii) onde eu explico isso em mais detalhes.
@@ -48,15 +48,15 @@ Um exemplo que gosto de usar é a classe Builder::XmlMarkup. Diferente de plataf
 
 
 ```ruby
-require ‘builder’  
+require 'builder'  
 x = Builder::XmlMarkup.new(:target => $stdout, :indent => 1)  
 x.html do |h|  
  h.body do |b|  
- b.h1 “Hello World”  
- b.p “This is a paragraph.”  
+ b.h1 "Hello World"  
+ b.p "This is a paragraph."  
  b.table do |t|  
  t.tr do |tr|  
- tr.td “column”  
+ tr.td "column"  
  end  
  end  
  end  
@@ -85,7 +85,7 @@ XmlBuilder* xml = [[XmlBuilder alloc] init];
 [xml htmlBlock:^(XmlBuilder* h) {  
  [h bodyBlock:^(XmlBuilder* b) {  
  [b h1:`"Hello World"];
-        [b p:`“This is a paragraph.”];  
+        [b p:`"This is a paragraph."];  
  [b tableBlock:^(XmlBuilder* t) {  
  [t trBlock:^(XmlBuilder* tr) {  
  [tr td:@"column"];  
@@ -105,7 +105,7 @@ Recapitulando, em Ruby, quando chamamos um método de um objeto, por exemplo:
 
 
 ```ruby
-obj.foo(“Hello World”)
+obj.foo("Hello World")
 ```
 
 Na realidade podemos dizer que estamos _“enviando a mensagem :foo ao objeto ‘obj’”_ ou seja, seria o mesmo que:
@@ -113,7 +113,7 @@ Na realidade podemos dizer que estamos _“enviando a mensagem :foo ao objeto �
 
 ```ruby
 
-obj.send(:foo, “Hello World”)  
+obj.send(:foo, "Hello World")  
 ```
 
 Em Obj-C temos algo semelhante. Quando fazemos:
@@ -129,7 +129,7 @@ Seria o equivalente a fazer:
 
 ```objc
 
-[obj performSelector:`selector(foo:) withObject:`“Hello World”];  
+[obj performSelector:`selector(foo:) withObject:`"Hello World"];  
 ```
 
 A diferença é que em Ruby temos Symbols e em Obj-C temos [Selectors](http://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/ObjectiveC/Articles/ocSelectors.html), que é semelhante, uma forma de não desperdiçar espaço com Strings. Porém, selectores são mais do que apenas métodos: eles representam o nome do método e seus atributos que em Obj-C são nomeados. Por exemplo, um método <tt>foo</tt>, com dois argumentos, poderia ser assim:
@@ -143,7 +143,7 @@ Esse método seria enviado ao objeto assim:
 
 
 ```objc
-[obj foo:`"Hello" value:`“World”];  
+[obj foo:`"Hello" value:`"World"];  
 ```
 
 E seu seletor seria assim:
@@ -223,7 +223,7 @@ Agora a coisa começa a esquentar:
 ```objc
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {  
  // não importa o retorno porque não vamos usar essa assinatura  
- return [NSMethodSignature signatureWithObjCTypes:“v@:@”];  
+ return [NSMethodSignature signatureWithObjCTypes:"v@:@"];  
 }  
 ```
 

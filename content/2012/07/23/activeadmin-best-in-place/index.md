@@ -29,7 +29,7 @@ Adicione ao seu <tt>Gemfile</tt> e rode <tt>bundle install</tt> depois:
 
 
 ```ruby
-gem “best_in_place”
+gem "best_in_place"
 ```
 
 Dado que você já tem o ActiveAdmin, edite o seu <tt>app/assets/javascripts/active_admin.js</tt> para ficar assim:
@@ -43,7 +43,7 @@ Dado que você já tem o ActiveAdmin, edite o seu <tt>app/assets/javascripts/act
 //= require active_admin/base
 
 $(document).ready(function() {  
- jQuery(“.best_in_place”).best_in_place();  
+ jQuery(".best_in_place").best_in_place();  
 });  
 ```
 

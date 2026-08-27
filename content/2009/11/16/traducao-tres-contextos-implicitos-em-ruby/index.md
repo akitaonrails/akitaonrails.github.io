@@ -32,16 +32,16 @@ Como mencionei em um [artigo antigo](http://yugui.jp/articles/558), embora eu de
 
 ```ruby
 
-p self # mostra “main”
+p self # mostra "main"
 
 class Foo
  def bar(a = (p self)) end
 end
 foo = Foo.new
-foo.bar # mostra “#<foo:0x471004>”</foo:0x471004>
+foo.bar # mostra "#<foo:0x471004>"</foo:0x471004>
 
 class Foo
- class Baz < (p self; self) # mostra “Foo”
+ class Baz < (p self; self) # mostra "Foo"
  end
 end  
 ```
@@ -123,7 +123,7 @@ o.instance_eval do
   def hoge; end
 end
 o.method(:hoge) #=> #<Method: #<object:0x454f24>.hoge>
-Object.instance_method(:hoge) # raises a NameError “undefined method `hoge’ for class`Object’”
+Object.instance_method(:hoge) # raises a NameError "undefined method `hoge' for class`Object'"
 </object:0x454f24></object:0x454f24>
 ```
 
@@ -137,7 +137,7 @@ Oops, esqueci de mencionar que:
 
 
 ```ruby
-RUBY_VERSION #=> “1.9.1”
+RUBY_VERSION #=> "1.9.1"
 ```
 
 Ruby 1.8 age de maneira mais léxica, então você acabará tendo o contrário:

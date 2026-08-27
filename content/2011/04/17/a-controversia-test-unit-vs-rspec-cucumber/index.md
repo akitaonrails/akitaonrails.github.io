@@ -32,12 +32,12 @@ Só para adiantar a conclusão: se alguém estava levando a discussão para o n�
 
 ```ruby
 
-describe Cart, “.sub_total” do  
+describe Cart, ".sub_total" do  
  before(:each) do  
  @cart = Factory(:cart_with_two_5_dollar_items)  
  end
 
-it “should calculate subtotal correctly” do @cart.sub_total.should == 10.00 end
+it "should calculate subtotal correctly" do @cart.sub_total.should == 10.00 end
 end  
 ```
 
@@ -46,12 +46,12 @@ Este é um pequeno trecho de um teste do arquivo <tt>cart_spec.rb</tt> do projet
 
 ```ruby
 
-describe Cart, “.sub_total” do # descrevendo o sub total de um Cart  
+describe Cart, ".sub_total" do # descrevendo o sub total de um Cart  
  before(:each) do # antes de cada teste execute:  
  @cart = Factory(:cart_with_two_5_dollar_items) # faça @cart ser o resultado da Fábrica com 2 ítens de $5  
  end
 
-it “should calculate subtotal correctly” do # o cart deve calcular o subtotal corretamente @cart.sub_total.should == 10.00 # sub total do @cart deve ser igual a 10.00 end
+it "should calculate subtotal correctly" do # o cart deve calcular o subtotal corretamente @cart.sub_total.should == 10.00 # sub total do @cart deve ser igual a 10.00 end
 end  
 ```
 
@@ -77,38 +77,38 @@ Given an initialised database$ do
 end
 
 1. code_steps.rb  
-Given a gem called “(.*)”$ do | name |  
+Given a gem called "(.*)"$ do | name |  
  code = Code.find_by_name name  
  code.destroy unless code.nil?
  code = a_saved Code, :name => name  
 end
 
-When I visit the page for “(.*)”$ do | name |
- visit “/#{name}”  
+When I visit the page for "(.*)"$ do | name |
+ visit "/#{name}"  
 end
 
 1. comment_steps.rb  
 Then I see the comment form$ do  
- response.should have_tag(‘div#new-comment-form’)  
+ response.should have_tag('div#new-comment-form')  
 end
 
 When I add a comment$ do  
- fill_in “Name”, :with => ‘Henry the Tester’  
- fill_in “Email”, :with => ‘<henry@testing.com>’  
+ fill_in "Name", :with => 'Henry the Tester'  
+ fill_in "Email", :with => '<henry@testing.com>'  
  choose :comment_works_for_me_true  
- fill_in “Version”, :with => ‘1.0’  
- select ‘Mac OSX’, :from => ‘Platform’  
- fill_in :comment_body, :with => ‘Here is my test comment’ # have to request via ID rather than label because of the span around the optional, making it hard to find  
+ fill_in "Version", :with => '1.0'  
+ select 'Mac OSX', :from => 'Platform'  
+ fill_in :comment_body, :with => 'Here is my test comment' # have to request via ID rather than label because of the span around the optional, making it hard to find  
 end
 
 1. webrat_steps.rb  
-When I press “(.*)”$ do |button|  
+When I press "(.*)"$ do |button|  
  click_button(button)  
 end
 
 1. comment_steps.rb  
 Then I see my comment on the page$ do  
- response.should include_text(‘Here is my test comment’)  
+ response.should include_text('Here is my test comment')  
 end  
 ```
 
@@ -126,7 +126,7 @@ class Cart < ActiveModel::TestCase
  @cart = Factory(:cart_with_two_5_dollar_items)  
  end
 
-test “should calculate subtotal correctly” do assert_equal 10.00, @cart.sub_total end
+test "should calculate subtotal correctly" do assert_equal 10.00, @cart.sub_total end
 ```
 
 Este eu fiz de propósito. Se você comparar somente no escopo deste micro-teste, tanto a versão em Test::Unit quanto em RSpec não tem praticamente diferença nenhuma. Mas claro que não é só isso e existem dezenas de outras funcionalidades que o RSpec tem sobre o Test::Unit.

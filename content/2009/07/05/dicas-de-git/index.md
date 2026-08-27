@@ -20,7 +20,7 @@ rails teste
 cd teste  
 git init  
 git add .  
-git commit m “initial commit”
+git commit m "initial commit"
 ```
 
 Agora vamos falar sobre como desfazer modificações, manipular commits, e muito mais.
@@ -37,15 +37,15 @@ Uma coisa que muitos perguntam e podem se confundir devido a comandos do git com
 ```
 1. On branch master
 2. Changed but not updated:
-3. (use “git add <file>…” to update what will be committed)</file>
-4. (use “git checkout — <file>…” to discard changes in working directory)<br>
+3. (use "git add <file>…" to update what will be committed)</file>
+4. (use "git checkout — <file>…" to discard changes in working directory)<br>
 # </file>
 5. modified: README
 6. modified: Rakefile  
 
 # 
 
-no changes added to commit (use “git add” and/or “git commit -a”)  
+no changes added to commit (use "git add" and/or "git commit -a")  
 ```
 
 No exemplo, modificamos os arquivos ‘README’ e ‘Rakefile’. Agora digamos que você desistiu das mudanças no arquivo Rakefile e quer que ele volte ao estado original. Para isso apenas faça:
@@ -75,7 +75,7 @@ Uma coisa que muitos aprendem, decoram e fazem da forma errada é este comando:
 
 
 ```bash
-git commit a -m “mensagem do commit”  
+git commit a -m "mensagem do commit"  
 ```
 
 A opção “-a” essencialmente significa o equivalente a fazer o seguinte: ‘adicione todos os arquivos modificados ao próximo commit’. Normalmente é isso mesmo que queremos fazer, mas nem sempre. Por exemplo, isso não adiciona arquivos que já não estavam no repositório, para esses você precisa adicionar manualmente antes de fazer o commit, por exemplo:
@@ -102,8 +102,8 @@ Isso nos dá o seguinte:
 ```
 1. On branch master
 2. Changed but not updated:
-3. (use “git add <file>…” to update what will be committed)</file>
-4. (use “git checkout — <file>…” to discard changes in working directory)<br>
+3. (use "git add <file>…" to update what will be committed)</file>
+4. (use "git checkout — <file>…" to discard changes in working directory)<br>
 
 # </file>
 
@@ -112,7 +112,7 @@ Isso nos dá o seguinte:
 #
 
 6. Untracked files:
-7. (use “git add <file>…” to include in what will be committed)<br>
+7. (use "git add <file>…" to include in what will be committed)<br>
 
 # </file>
 
@@ -125,7 +125,7 @@ Isso nos dá o seguinte:
 14. test/fixtures/
 15. test/functional/
 16. test/unit/  
-no changes added to commit (use “git add” and/or “git commit -a”)  
+no changes added to commit (use "git add" and/or "git commit -a")  
 ```
 
 Preste sempre atenção – as pessoas se acostumam a “não ler” as coisas. Vejam que temos dois grupos de modificações:
@@ -152,7 +152,7 @@ Vejam o resultado:
 ```
 1. On branch master
 2. Changes to be committed:
-3. (use “git reset HEAD <file>…” to unstage)<br>
+3. (use "git reset HEAD <file>…" to unstage)<br>
 
 # </file>
 
@@ -162,7 +162,7 @@ Vejam o resultado:
 #
 
 6. Untracked files:
-7. (use “git add <file>…” to include in what will be committed)<br>
+7. (use "git add <file>…" to include in what will be committed)<br>
 
 # </file>
 
@@ -182,7 +182,7 @@ Agora eu tenho um novo grupo de arquivos:
 
 
 ```bash
-git commit m “teste”
+git commit m "teste"
 ```
 
 ```
@@ -211,7 +211,7 @@ Note a opção “—soft”, ela está indicando para desfazer o commit anterio
 ```
 1. On branch master
 2. Changes to be committed:
-3. (use “git reset HEAD <file>…” to unstage)<br>
+3. (use "git reset HEAD <file>…" to unstage)<br>
 
 # </file>
 
@@ -270,7 +270,7 @@ git status
 ```
 1. On branch master
 2. Changes to be committed:
-3. (use “git reset HEAD <file>…” to unstage)<br>
+3. (use "git reset HEAD <file>…" to unstage)<br>
 
 # </file>
 
@@ -295,7 +295,7 @@ Pronto, agora todos os arquivos que queremos estão no “index”, marcados com
 
 
 ```bash
-git commit m “adicionando scaffold de Post”  
+git commit m "adicionando scaffold de Post"  
 ```
 
 ### Revertendo commits
@@ -350,7 +350,7 @@ commit 15bb972393f7794892dbf5d6a3097c533a68fbea
 Author: AkitaOnRails <fabioakita@gmail.com>  
 Date: Sun Jul 5 15:13:03 2009 -0300
 
-Revert “adicionando scaffold de Post” This reverts commit 89b53e7d0bfc4fdb4b5c389f5481dab5ddb2b83d.
+Revert "adicionando scaffold de Post" This reverts commit 89b53e7d0bfc4fdb4b5c389f5481dab5ddb2b83d.
 
 commit 89b53e7d0bfc4fdb4b5c389f5481dab5ddb2b83d  
 Author: AkitaOnRails <fabioakita@gmail.com>  
@@ -407,7 +407,7 @@ commit 15bb972393f7794892dbf5d6a3097c533a68fbea
 Author: AkitaOnRails <fabioakita@gmail.com>  
 Date: Sun Jul 5 15:13:03 2009 -0300
 
-Revert “adicionando scaffold de Post” This reverts commit 89b53e7d0bfc4fdb4b5c389f5481dab5ddb2b83d.
+Revert "adicionando scaffold de Post" This reverts commit 89b53e7d0bfc4fdb4b5c389f5481dab5ddb2b83d.
 
 …
 ```
@@ -449,9 +449,9 @@ git reflog
 
 ```
 89b53e7 HEAD@{0}: HEAD~1: updating HEAD  
-15bb972 HEAD@{1}: commit: Revert “adicionando scaffold de Post”  
+15bb972 HEAD@{1}: commit: Revert "adicionando scaffold de Post"  
 89b53e7 HEAD@{2}: HEAD~1: updating HEAD  
-4a41f10 HEAD@{3}: commit: Revert “adicionando scaffold de Post”  
+4a41f10 HEAD@{3}: commit: Revert "adicionando scaffold de Post"  
 89b53e7 HEAD@{4}: commit: adicionando scaffold de Post  
 d394bee HEAD@{5}: HEAD~1: updating HEAD  
 bd69909 HEAD@{6}: commit: teste  

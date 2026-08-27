@@ -22,14 +22,14 @@ Alguma vez você já teve que trocar os valores de duas variáveis? Não é dif�
 
 
 ```ruby
-sobrenome = “Fabio”  
-nome = “Akita”
+sobrenome = "Fabio"  
+nome = "Akita"
 
 temporario = nome  
 nome = sobrenome  
 sobrenome = temporario
 
-puts “#{nome} #{sobrenome}”
+puts "#{nome} #{sobrenome}"
 
 # Fabio Akita
 ```
@@ -38,12 +38,12 @@ Ruby permite simplificar a mesma coisa da seguinte forma:
 
 
 ```ruby
-sobrenome = “Fabio”  
-nome = “Akita”
+sobrenome = "Fabio"  
+nome = "Akita"
 
 nome, sobrenome = sobrenome, nome
 
-puts “#{nome} #{sobrenome}”
+puts "#{nome} #{sobrenome}"
 
 # Fabio Akita  
 ```
@@ -54,7 +54,7 @@ Aliás, quem está iniciando pode não entender a última linha dos exemplos ant
 
 
 ```ruby
-nome, sobenome = “Fabio”, “Akita”  
+nome, sobenome = "Fabio", "Akita"  
 puts nome + " " + sobrenome
 
 #Fabio Akita  
@@ -64,8 +64,8 @@ Porém em Ruby, preferimos usar interpolação de strings:
 
 
 ```ruby
-nome, sobrenome = “Fabio”, “Akita”  
-puts “#{nome} #{sobrenome}”  
+nome, sobrenome = "Fabio", "Akita"  
+puts "#{nome} #{sobrenome}"  
 ```
 
 Ou quem vem de linguagens como C pode querer [strings formatadas](http://ruby-doc.org/core-1.9.3/String.html#method-i-25), nesse caso podemos fazer:
@@ -73,7 +73,7 @@ Ou quem vem de linguagens como C pode querer [strings formatadas](http://ruby-do
 
 ```ruby
 
-puts “O %s custa R$ %0.2f” % [produto, valor]
+puts "O %s custa R$ %0.2f" % [produto, valor]
 # O Livro custa R$ 35.99  
 ```
 
@@ -81,14 +81,14 @@ Falando em interpolação, você precisa usar necesariamente aspas duplas. Agora
 
 
 ```ruby
-id, method, action, length, size = “search”, “get”, 140, 28  
- html = ”hsearch“>
- ”#{search}" action=“#{action}” method=“#{method}”
- autocomplete=“off”>
+id, method, action, length, size = "search", "get", 140, 28  
+ html = "hsearch">
+ "#{search}" action="#{action}" method="#{method}"
+ autocomplete="off">
 
-<input autocomplete=“off” name=“q” class=“textbox”
- placeholder=“search” tabindex=“1” type=“text”
- maxlength=“#{length}” size=“#{size}” value=“\”>  
+<input autocomplete="off" name="q" class="textbox"
+ placeholder="search" tabindex="1" type="text"
+ maxlength="#{length}" size="#{size}" value="\">  
 ```
 
 Isso é muito feio. Existe a opção de [heredocs](http://blog.jayfields.com/2006/12/ruby-multiline-strings-here-doc-or.html) mas outra forma melhor simplesmente assim:
@@ -111,7 +111,7 @@ Usar “%” com praticamente qualquer outro operador como “[]” ou “{}” 
 
 
 ```ruby
-array = [“foo”, “bar”, “hello”, “world”]  
+array = ["foo", "bar", "hello", "world"]  
 array = %w(foo bar hello world)  
 ```
 
@@ -207,9 +207,9 @@ end
 
 numero = 10  
 case numero  
-when multiplo_de(3) then puts “múltiplo de 3”  
-when multiplo_de(5) then puts “múltiplo de 5”  
-when multiplo_de(7) then puts “múltiplo de 7”  
+when multiplo_de(3) then puts "múltiplo de 3"  
+when multiplo_de(5) then puts "múltiplo de 5"  
+when multiplo_de(7) then puts "múltiplo de 7"  
 end
 
 #  múltiplo de 5  
@@ -307,17 +307,17 @@ Uma das estruturas de dados mais úteis do Ruby depois dos Arrays é sem dúvida
 ```ruby
 
 #. versões 1.8 e 1.9  
-hash = { :chave_a => “valor a”, :chave_b => “valor b” }
+hash = { :chave_a => "valor a", :chave_b => "valor b" }
 
 #1. somente versão 1.9 e superior  
-hash = { chave_a: “valor a”, chave_b: “valor b” }  
+hash = { chave_a: "valor a", chave_b: "valor b" }  
 ```
 
 Uma coisa que normalmente não é tão lembrado é que posso utilizar um Array para popular um Hash, sendo que o Array contém elementos intercalados de chave e valor, por exemplo:
 
 
 ```ruby
-array = [:chave_a, “valor a”, :chave_b, “valor b”]  
+array = [:chave_a, "valor a", :chave_b, "valor b"]  
 ```
 
 Agora, podemos usar o [operador splat](http://www.jacopretorius.net/2012/01/splat-operator-in-ruby.html) com o método <tt>[]</tt> da class Hash:
@@ -335,7 +335,7 @@ Veja o artigo no link para mais exemplos de como usar o operador splat. Mas volt
 ```ruby
 
 chaves = [:chave_a, :chave_b]  
-valores = [“valor a”, “valor b”]
+valores = ["valor a", "valor b"]
 
 #1. jeito que a maioria começa fazendo: (feio)  
 hash = {}  
@@ -354,14 +354,14 @@ Para lembrar da utilidade do método <tt>zip</tt>, literalmente pensem num zípe
 
 
 ```ruby
-hash = { chave_a: “valor a”, chave_b: “valor b” }  
+hash = { chave_a: "valor a", chave_b: "valor b" }  
 array = *hash
 
-1. [[:chave_a, “valor a”], [:chave_b, “valor b”]]
+1. [[:chave_a, "valor a"], [:chave_b, "valor b"]]
 
 array.flatten
 
-1. [:chave_a, “valor a”, :chave_b, “valor b”]  
+1. [:chave_a, "valor a", :chave_b, "valor b"]  
 ```
 
 ## Arrays e Splat
@@ -370,20 +370,20 @@ Recapitulando, vamos esquentar vendo formas diferentes de inicializar o mesmo ti
 
 
 ```ruby
-lista = [“foo”, “foo”, “foo”, “foo”, “foo”]
+lista = ["foo", "foo", "foo", "foo", "foo"]
 lista = %w(foo foo foo foo foo)
-lista = Array.new(5, “foo”)
-lista = Array.new(5) { “foo” }
-lista = [“foo”] * 5  
+lista = Array.new(5, "foo")
+lista = Array.new(5) { "foo" }
+lista = ["foo"] * 5  
 
-# [“foo”, “foo”, “foo”, “foo”, “foo”]  
+# ["foo", "foo", "foo", "foo", "foo"]  
 ```
 
 Todos já estiveram numa situação onde cortaram uma string em diversos “tokens” e tiveram que atribuir cada token a uma variável diferente, certo? Vejamos primeiro o exemplo mais ingenuo disso:
 
 
 ```ruby
-texto = “2012 Agosto 26 Hello World”
+texto = "2012 Agosto 26 Hello World"
 palavras = texto.split(" ")  # cortando por espaço
 
 # atribuindo por posiçao no array  
@@ -391,7 +391,7 @@ ano = palavras[0]
 mes = palavras[1]
 dia = palavras[2]
 
-# acumulador, uma variável que vai conter todo o “restante”  
+# acumulador, uma variável que vai conter todo o "restante"  
 lixo = []
 i = 3  
  while i < palavras.size
@@ -400,21 +400,21 @@ i = 3
 end
 
  puts lixo.join(", ")  
-  #=> “Hello, World”  
+  #=> "Hello, World"  
 ```
 
 Novamente, quem veio de outras linguagens provavelmente não achará nada estranho nesse trecho. Vejamos como poderíamos rubificá-lo:
 
 
 ```ruby
-texto = “2012 Agosto 26 Hello World”
+texto = "2012 Agosto 26 Hello World"
 palavras = texto.split(" ")
 
 ano, mes, dia, *lixo = palavras
 
 puts lixo.join(", ")  
 
-# “Hello, World”  
+# "Hello, World"  
 ```
 
 Pois é, já tínhamos visto que podemos atribuir múltiplas variáveis ao mesmo tempo usando um Array, mas além disso usando um splat podemos pegar aquele “resto do Array” como gostaríamos, tudo de uma só vez.
@@ -425,7 +425,7 @@ Outro exemplo para explorar isso, vejamos o seguinte:
 ```ruby
 
 def formatar_data(dia, mes, ano)  
- “#{dia}/#{mes}/#{ano}”
+ "#{dia}/#{mes}/#{ano}"
 end
 
  args = [27, 8, 2012]  
@@ -480,11 +480,11 @@ Já precisaram juntar todos os elementos de um Array num String? Fácil, método
 
 [1, 2, 3, 4, 5].join(", ")
 
-1. “1, 2, 3, 4, 5”
+1. "1, 2, 3, 4, 5"
 
 [1, 2, 3, 4, 5] * ", "
 
-1. “1, 2, 3, 4, 5”  
+1. "1, 2, 3, 4, 5"  
   ```
 
 Finalmente, a última dica, uma coisa que eu eventualmente me esqueço e me lembro de novo:
@@ -515,7 +515,7 @@ E esta é a volta:
 ```ruby
 
 #. transformar da base 36 na base 10 de novo  
-“4hn4wt7”.to_i(36) #=> 9773914651  
+"4hn4wt7".to_i(36) #=> 9773914651  
 ```
 
 Gostaram das dicas? Evitei aqueles mais cabeludos que chegam a ser ilegíveis e mais parecidos com one-liners de Perl :-) Se lembrarem de outros truques de Ruby diferentes, não deixem de colocar nos comentários.
