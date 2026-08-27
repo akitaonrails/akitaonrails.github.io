@@ -18,6 +18,30 @@
   {{- $displayPlaceholder = true -}}
 {{- end -}}
 
+{{/*
+  Dynamic "top topics" tag list, computed from the taxonomy at build time so it
+  stays current on every rebuild and self-localizes (PT render gets PT tag slugs,
+  EN gets EN slugs). We take the most-used tags by post count, skipping
+  year-suffixed event editions (railssummit2008, rubyconfbr2013, ...) so the list
+  stays topical. Configure how many via site param `sidebarTopTags` (default 10).
+*/}}
+{{- $topTagsLimit := site.Params.sidebarTopTags | default 10 -}}
+{{/* Tags that already have their own sidebar section (or are too broad) are
+     skipped here to avoid redundancy; override via site param sidebarExcludeTags. */}}
+{{- $excludeTags := site.Params.sidebarExcludeTags | default (slice "akitando" "off-topic") -}}
+{{- $topTags := slice -}}
+{{- with site.Taxonomies.tags -}}
+  {{- range .ByCount -}}
+    {{- if and (lt (len $topTags) $topTagsLimit) (not (findRE `[0-9]{4}$` .Term)) (not (in $excludeTags .Term)) -}}
+      {{- $topTags = $topTags | append . -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- $isEN := eq site.Language.Lang "en" -}}
+{{- $topicsLabel := cond $isEN "Topics" "Temas" -}}
+{{- $allTagsLabel := cond $isEN "All tags →" "Todas as tags →" -}}
+{{- $tagLinkClass := "hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50" -}}
+
 <aside class="hextra-sidebar-container hx:flex hx:flex-col hx:print:hidden hx:md:top-16 hx:md:shrink-0 hx:md:w-64 hx:md:self-start hx:max-md:[transform:translate3d(0,-100%,0)] {{ $sidebarClass }}">
   <div class="hx:px-4 hx:pt-4 hx:md:hidden">
     {{ partial "search.html" }}
@@ -57,6 +81,21 @@
           </li>
         {{- end -}}
       {{- end -}}
+      {{- if $topTags -}}
+        <li class="[word-break:break-word] hx:mt-5 hx:mb-2 hx:px-2 hx:py-1.5 hx:text-sm hx:font-semibold hx:text-gray-900 hx:first:mt-0 hx:dark:text-gray-100">
+          <span class="hx:cursor-default">{{ $topicsLabel }}</span>
+        </li>
+        {{- range $topTags -}}
+          <li>
+            <a class="{{ $tagLinkClass }}" href="{{ .Page.RelPermalink }}">#{{ .Term }}</a>
+          </li>
+        {{- end -}}
+        {{- with site.GetPage "/tags" -}}
+          <li>
+            <a class="{{ $tagLinkClass }}" href="{{ .RelPermalink }}">{{ $allTagsLabel }}</a>
+          </li>
+        {{- end -}}
+      {{- end -}}
     </ul>
 
     {{- if and $disableSidebar $displayPlaceholder -}}
@@ -80,6 +119,21 @@
               <a class="hx:flex hx:items-center hx:justify-between hx:gap-2 hx:cursor-pointer hx:rounded-sm hx:px-2 hx:py-1.5 hx:text-sm hx:transition-colors [-webkit-tap-highlight-color:transparent] [-webkit-touch-callout:none] [word-break:break-word] hx:text-gray-500 hx:hover:bg-gray-100 hx:hover:text-gray-900 hx:contrast-more:border hx:contrast-more:border-transparent hx:contrast-more:text-gray-900 hx:contrast-more:hover:border-gray-900 hx:dark:text-neutral-400 hx:dark:hover:bg-primary-100/5 hx:dark:hover:text-gray-50 hx:contrast-more:dark:text-gray-50 hx:contrast-more:dark:hover:border-gray-50" href="{{ $link }}" {{ if strings.HasPrefix $link "http" }}target="_blank" rel="noreferrer"{{ end }}>
                 {{ $name }}
               </a>
+            </li>
+          {{- end -}}
+        {{- end -}}
+        {{- if $topTags -}}
+          <li class="[word-break:break-word] hx:mt-5 hx:mb-2 hx:px-2 hx:py-1.5 hx:text-sm hx:font-semibold hx:text-gray-900 hx:first:mt-0 hx:dark:text-gray-100">
+            <span class="hx:cursor-default">{{ $topicsLabel }}</span>
+          </li>
+          {{- range $topTags -}}
+            <li>
+              <a class="{{ $tagLinkClass }}" href="{{ .Page.RelPermalink }}">#{{ .Term }}</a>
+            </li>
+          {{- end -}}
+          {{- with site.GetPage "/tags" -}}
+            <li>
+              <a class="{{ $tagLinkClass }}" href="{{ .RelPermalink }}">{{ $allTagsLabel }}</a>
             </li>
           {{- end -}}
         {{- end -}}
