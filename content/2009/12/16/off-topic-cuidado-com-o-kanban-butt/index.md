@@ -2,6 +2,7 @@
 title: "[Off Topic] Cuidado com o Kanban-butt"
 date: '2009-12-16T23:22:00-02:00'
 slug: off-topic-cuidado-com-o-kanban-butt
+translationKey: off-topic-cuidado-com-o-kanban-butt
 description: "Kanban é uma técnica do Toyota Production System, não sinônimo de Lean nem uma metodologia completa. Em software, que é não repetitivo, entender o porquê vem antes de aplicar a ferramenta."
 tags:
 - agile
@@ -10,9 +11,9 @@ tags:
 draft: false
 ---
 
-Por alguma razão, recentemente muitos têm discutido e evangelizado sobre [Kanban](http://en.wikipedia.org/wiki/Kanban). Isso está ficando particularmente irritante pra mim. Muito cuidado: apenas aplicar a ferramenta Kanban, como se fosse uma metodologia, não é certo. Essa ferramenta foi criada e difundida pela Toyota, décadas atrás, dentro de uma metodologia maior conhecida como [Toyota Production System](http://en.wikipedia.org/wiki/Toyota_Production_System) (TPS), criado pelo grande [Taiichi Ohno](http://en.wikipedia.org/wiki/Taiichi_Ohno).
+Por alguma razão, muita gente anda discutindo e evangelizando [Kanban](http://en.wikipedia.org/wiki/Kanban) ultimamente, e isso começa a me irritar. Aplicar a ferramenta Kanban como se ela fosse uma metodologia inteira é um erro. Essa ferramenta foi criada e difundida pela Toyota, décadas atrás, dentro de uma metodologia bem maior: o [Toyota Production System](http://en.wikipedia.org/wiki/Toyota_Production_System) (TPS), do grande [Taiichi Ohno](http://en.wikipedia.org/wiki/Taiichi_Ohno).
 
-Como eu disse num [artigo anterior](/2009/12/11/off-topic-voce-nao-entende-nada-de-scrum), as metodologias ágeis têm a mesma fundação. Para entender o TPS é bom retornar à literatura original e uma dessas fontes é o livro [O Sistema Toyota de Produção, do Ponto de Vista da Engenharia de Produção](http://bit.ly/7wMwsg), de [Shigeo Shingo](http://en.wikipedia.org/wiki/Shigeo_Shingo), publicado em **1996**. No Prefácio ele diz:
+Como eu disse num [artigo anterior](/2009/12/10/off-topic-voce-nao-entende-nada-de-scrum), as metodologias ágeis têm a mesma fundação. Para entender o TPS vale voltar à literatura original, e uma dessas fontes é o livro O Sistema Toyota de Produção, do Ponto de Vista da Engenharia de Produção, de [Shigeo Shingo](http://en.wikipedia.org/wiki/Shigeo_Shingo), publicado em **1996**. No Prefácio ele diz:
 
 > Muitos acreditam que ao implementar um novo sistema, somente _“know-how”_ é necessário. No entanto, se você quer obter êxito, você deve entender, também, _“know-why”_  
 >   
@@ -34,13 +35,13 @@ Especificamente sobre Kanban ele diz:
 
 > Devo acrescentar que 90% do excelente desempenho gerencial da Toyota foi atribuído ao TPS em si, e apenas 10% ao método _Kanban_ – uma clara demonstração da maior importância do TPS.
 
-Relembrando: Shigeo escreveu isso em **1996**. Impressionante como mais de uma década depois ainda estamos cometendo os mesmos erros de interpretação.
+Vale repetir: Shigeo escreveu isso em **1996**. Impressiona que, mais de uma década depois, ainda cometamos os mesmos erros de interpretação.
 
-Assim como no [Manifesto Ágil](http://agilemanifesto.org), o Sistema Toyota também tem um conjunto de 14 princípios, conhecido no Ocidente como [The Toyota Way](http://en.wikipedia.org/wiki/The_Toyota_Way). Também assim como em Agilidade, não basta fazer Sprints, colocar post-its na parede e dizer que é Ágil. Para seguir o método Toyota, não basta usar Kanban.
+Assim como o [Manifesto Ágil](http://agilemanifesto.org), o Sistema Toyota tem um conjunto de 14 princípios, conhecido no Ocidente como [The Toyota Way](http://en.wikipedia.org/wiki/The_Toyota_Way). E, do mesmo jeito que em Agilidade, colocar post-its na parede e rodar Sprints não faz nada virar Ágil. Seguir o método Toyota exige muito mais do que usar Kanban.
 
-Para entender Toyota, é obrigatório entender o Toyota Way e um dos melhores livros para começar a entender isso é o [The Toyota Way](http://bit.ly/6UQ7xg), do Jeffrey Liker. Além disso, se você realmente está interessado e pretende levar a sério, precisa entender o que foi a revolução gerencial da Toyota narrado no livro clássico [The Machine that Changed the World](http://bit.ly/8BbyLw), de James Womack.
+Para entender a Toyota é obrigatório entender o Toyota Way, e um dos melhores livros para começar é o The Toyota Way, de Jeffrey Liker. Se você pretende levar isso a sério, precisa também entender a revolução gerencial da Toyota, narrada no clássico The Machine that Changed the World, de James Womack.
 
-Se ainda não está convencido, ainda no livro de Shigeo Shingo, na conclusão do capítulo sobre Kanban ele diz:
+Se ainda não está convencido, na conclusão do capítulo sobre Kanban, o próprio Shigeo Shingo diz:
 
 > Os sistemas Kanban podem ser aplicados somente em fábricas com produção repetitiva. (…)  
 >   
@@ -48,9 +49,9 @@ Se ainda não está convencido, ainda no livro de Shigeo Shingo, na conclusão d
 >   
 > O tipo de produção que com maior probabilidade se beneficiaria do Kanban, é aquele que utiliza processos comuns de transformação dos materiais.
 
-Como dica: desenvolvimento de software é uma tarefa não repetitiva. Ainda assim, os princípios do TPS ainda são muito aplicáveis se o _know-why_ for claramente entendido.
+Uma dica: desenvolvimento de software é uma tarefa não repetitiva. Mesmo assim, os princípios do TPS continuam muito aplicáveis quando o _know-why_ está claro.
 
-O método Toyota é mais genericamente conhecido como [Lean Manufacturing](http://en.wikipedia.org/wiki/Lean_production). O melhor trabalho adaptando Lean ao mundo de software é o livro [Lean Software Development](http://en.wikipedia.org/wiki/Lean_software_development), escrito pelo Tom e Mary Poppendieck. Antes de falar levianamente em Kanban, é obrigatório ler esses trabalhos, de outra forma será apenas mais uma ferramenta que vai falhar e teremos uma onda de Kanban-butts.
+O método Toyota é mais conhecido genericamente como [Lean Manufacturing](http://en.wikipedia.org/wiki/Lean_production). O melhor trabalho adaptando Lean ao mundo de software é o livro [Lean Software Development](http://en.wikipedia.org/wiki/Lean_software_development), de Tom e Mary Poppendieck. Antes de falar levianamente em Kanban, é obrigatório ler esses trabalhos; caso contrário, será só mais uma ferramenta fadada a falhar, e vamos acabar com uma onda de Kanban-butts.
 
-Tudo que vem fácil vai fácil. “Parece” fácil implementar Ágil. “Parece” fácil implementar Kanban. Não existe almoço de graça. Leve as coisas de forma superficial e não espere nada além de resultados medíocres. É assim que as coisas funcionam.
+Tudo que vem fácil, vai fácil. “Parece” fácil implementar Ágil. “Parece” fácil implementar Kanban. Não existe almoço grátis. Leve as coisas de forma superficial e não espere nada além de resultados medíocres. É assim que funciona.
 
