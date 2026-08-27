@@ -2,6 +2,7 @@
 title: "[Off-Topic] Mensagem de Ano Novo - Filosofia"
 date: '2011-12-31T21:29:00-02:00'
 slug: off-topic-mensagem-de-ano-novo-filosofia
+translationKey: off-topic-mensagem-de-ano-novo-filosofia
 description: "Com base em Ayn Rand e Leonard Peikoff, o autor defende o capitalismo como uma questão moral: empreendedores devem julgar ideias racionalmente, não enganar o público e reconhecer seus aliados e inimigos."
 tags:
 - filosofia
@@ -12,14 +13,18 @@ draft: false
 
 [![](http://s3.amazonaws.com/akitaonrails/assets/2011/12/31/ref=dp_image_0_original.jpeg?1325374073)](http://www.amazon.com/Why-Businessmen-Need-Philosophy-Rand/dp/0786117907)
 
-Este foi um longo ano, pessoalmente foi um dos piores e um dos melhores tudo ao mesmo tempo. Uma consequência foi que bloguei muito pouco, mas 2012 deve ser o ano do retorno. Para fechar o ano bem, acho que este ano com tantas novas startups e tantos novos interessados em explorar as oportunidades de serem empreendedores devem levar a sério e entender a verdadeira filosofia por trás de qualquer empreendimento capitalista (verdadeiramente capitalista e não este capitalismo-misto medíocre que a maioria pratica). Sem uma filosofia adequada, o mundo dos negócios não vai muito longe.
+Este foi um ano longo. Pessoalmente, um dos piores e um dos melhores ao mesmo tempo. Uma consequência foi que bloguei muito pouco, mas 2012 deve ser o ano do retorno.
 
-Obviamente, busco minha fonte nos artigos de Ayn Rand e Leonard Peikoff, como uma entrada _light_ vamos ver o artigo [Uma Resposta para Empresários](http://atlasshrugged.com/articles/an-answer-for-businessmen/), publicado em 15 de maio de 1962, em uma revista de notícias não identificada encontrada entre os documentos de Ayn Rand. Terminando esta introdução, veja o principal, [Por que Empresários Precisam de Filosofia](http://atlasshrugged.com/articles/why-businessmen-need-philosophy/), escrito por Leonard Peikoff, e é um trecho do [livro de mesmo nome](http://www.amazon.com/Why-Businessmen-Need-Philosophy-Rand/dp/0962533629) que todo interessado em empreender deveria ler.
+Para fechar o ano bem, fica uma reflexão. Foi um ano de muitas startups novas e muita gente disposta a explorar as oportunidades de empreender. Quem entra nesse mundo precisa levar a sério a filosofia por trás de qualquer empreendimento capitalista, o capitalismo de verdade, não este capitalismo-misto medíocre que a maioria pratica. Sem uma filosofia adequada, o mundo dos negócios não vai muito longe.
+
+Busco minha fonte nos artigos de Ayn Rand e Leonard Peikoff. Como entrada _light_, vamos ao artigo [Uma Resposta para Empresários](http://web.archive.org/web/20120311233344/http://atlasshrugged.com/articles/an-answer-for-businessmen/), publicado em 15 de maio de 1962, numa revista de notícias não identificada encontrada entre os documentos de Ayn Rand.
+
+Para fechar a introdução, fica a leitura principal: [Por que Empresários Precisam de Filosofia](http://web.archive.org/web/20120403073643/http://atlasshrugged.com/articles/why-businessmen-need-philosophy/), escrito por Leonard Peikoff, um trecho do [livro de mesmo nome](http://www.amazon.com/Why-Businessmen-Need-Philosophy-Rand/dp/0962533629) que todo interessado em empreender deveria ler.
 
 
 ## Uma Resposta para Empresários
 
-Se você quer salvar o capitalismo só existe um tipo de argumento que você deve adotar, o único que sempre ganhou em qualquer disputa moral: o argumento da auto-estima. Cheque suas premissas, se convença de que sua causa é correta, então lute pelo capitalismo com completa e certeira moral.
+Se você quer salvar o capitalismo só existe um tipo de argumento que você deve adotar, o único que sempre ganhou em qualquer disputa moral: o argumento da auto-estima. Cheque suas premissas, se convença de que sua causa é correta, então lute pelo capitalismo com plena certeza moral.
 
 A crise mundial de hoje é uma crise moral – e nada menos do que uma revolução moral pode resolvê-la: uma revolução moral para sancionar e completar a conquista política da revolução Americana. Devemos lutar pelo capitalismo, não como uma disputa prática, não como uma disputa econômica, mas, com o maior orgulho de justiça, como uma disputa moral. É isso que o capitalismo merece, e nada menos irá salvá-lo.
 
@@ -35,7 +40,7 @@ Você não contrata homens como cabeças dos seus departamentos de negócios, se
 
 ## Conheça seus amigos e seus inimigos
 
-Aprenda a diferenciar seus amigos de seus inimigos. Saiba quem dar suporte em disputas ideológicas e políticas. Se você não consegue dizer livremente, se estiver preso e engasgado pela desgraçada injustiça de tais maus como leis antitruste – no mínimo, não elogie, espalhe ou suporte a filosofia de seus próprios destruidores; não lhes dê a sanção das vítimas. Pense um pouco na possibilidade de estabelecer um sindicato de liberdades civis – para empresários.
+Aprenda a diferenciar seus amigos de seus inimigos. Saiba quem apoiar em disputas filosóficas e políticas. Se você não consegue dizer livremente, se estiver preso e engasgado pela desgraçada injustiça de tais maus como leis antitruste – no mínimo, não elogie, espalhe ou suporte a filosofia de seus próprios destruidores; não lhes dê a sanção das vítimas. Pense um pouco na possibilidade de estabelecer um sindicato de liberdades civis – para empresários.
 
 E se tem o desejo de ter uma missão ou propósito “social” – não existe serviço maior à humanidade do que lutar pelos seus próprios direitos e propriedades.
 
