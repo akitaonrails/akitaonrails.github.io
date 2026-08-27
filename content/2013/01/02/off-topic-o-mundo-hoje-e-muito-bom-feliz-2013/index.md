@@ -39,7 +39,7 @@ A violência também está diminuindo, como mostra [essa palestra do Steven Pink
 E mesmo o tão temido Aquecimento Global é [constantemente questionado](http://web.archive.org/web/20130109101134/http://www.globalclimatescam.com/). Muitos cientistas não estão convencidos com os dados que temos. E pouco importa se o Aquecimento Global é "real": claramente existe gente ganhando muito [dinheiro](http://www.akitaonrails.com/2011/02/03/off-topic-a-revolta-de-atlas-dinheiro-e-a-raiz-de-todo-o-mal) e notoriedade a partir do "medo" causado por esse possível fenômeno natural. Assista ao documentário [Cool It](http://web.archive.org/web/20130204054920/http://coolit-themovie.com/), onde o pesquisador Bjorn Lomborg desmistifica item a item o que você, leitor deste blog, certamente ainda não parou para pensar.
 
 <div class="embed-container">
-{{< youtube id="kQToxsLYm0M" >}}
+<!-- youtube video unavailable (deleted): kQToxsLYm0M -->
 </div>
 
 Exemplo: se o Protocolo de Kyoto tivesse tido sucesso como os lobistas queriam, ele diminuiria a temperatura do mundo em apenas 0.008 graus Fahrenheit até 2100. E a política climática da União Europeia baixaria a temperatura em só 0.1 graus Fahrenheit, ao custo ridículo de USD 250 bilhões por ano pelo próximo século. Com metade desse dinheiro daria para acabar com a pobreza, a fome e as doenças do mundo.
@@ -92,11 +92,11 @@ Todos usam os mesmos discursos, as mesmas formas pomposas e sem conteúdo. Mostr
 **BULLSHIT!**
 
 <div class="embed-container">
-{{< youtube id="2DX3lZ8peBU" >}}
+<!-- youtube video unavailable (deleted): 2DX3lZ8peBU (Penn & Teller Bullshit - Environmental Hysteria Part 1) -->
 </div>
 
 <div class="embed-container">
-{{< youtube id="_ELJt0vUBi4" >}}
+<!-- youtube video unavailable (deleted): _ELJt0vUBi4 (Penn & Teller Bullshit - Environmental Hysteria Part 2) -->
 </div>
 
 Qualquer um que diz muitos _"Precisamos"_, sempre na primeira pessoa do plural _"nós"_, claramente quer ser o ditador de um grupo. Alguém que sozinho tem pouca capacidade e por isso incita mais gente para ganhar a credibilidade das massas. E, a partir de um certo número de pessoas, tudo que ele disser parece ter alguma validade.
@@ -124,7 +124,7 @@ Só para constar, não estou falando de todos que são solidários. Muitos levam
 E elas estão preocupadas com as criancinhas? Veja o trauma que as estão fazendo passar contando falsas histórias de fim do mundo:
 
 <div class="embed-container">
-{{< youtube id="BpzpuTLRujg" >}}
+{{< youtube id="-rXSxB9wFJE" >}}
 </div>
 
 A existência de pessoas assim é, justamente, mais uma evidência de como nossos tempos são melhores. No começo do século XX ninguém daria atenção a "causas sociais" como hoje: muitos sequer tinham o que comer direito, não tinham roupas, morriam de doenças comuns.

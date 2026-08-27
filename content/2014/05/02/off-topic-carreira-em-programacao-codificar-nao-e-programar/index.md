@@ -62,7 +62,7 @@ Vamos a alguns exemplos. Se eu perguntar a um iniciante como procurar por palavr
 
 A maioria nem pensa na terceira solução. E quem pensa não sabe por quê. E se eu disser que, de forma absolutamente crua e resumida, a solução está em transformar o documento e os termos de busca em vetores e calcular a relevância entre eles por [similaridade de cosseno](http://en.wikipedia.org/wiki/Cosine_similarity)? É exatamente isso que significa [Vector Space Model](http://en.wikipedia.org/wiki/Vector_space_model) (VSM), que você encontra em diversas engines de procura.
 
-<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'>{{< youtube id="ZEkO8QSlynY" >}}</div>
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'>{{< youtube id="o5nflzfX5tw" >}}</div>
 
 O conhecimento por trás disso se chama [**Álgebra Linear**](http://en.wikipedia.org/wiki/Linear_algebra). Lembra dele, do PRIMEIRO ano de Ciência da Computação? Sobre esse assunto recomendo uma palestra que fiz, ["Como não fazer pesquisas usando LIKE"](https://www.eventials.com/akitaonrails/como-nao-fazer-pesquisas-usando-like/).
 
@@ -78,7 +78,7 @@ A ideia é que palavras isoladas não bastam para dizer se um conteúdo é impr�
 
 Se quiser experimentar uma forma simples [em Ruby, veja este blog](http://web.archive.org/web/20140423094927/http://blog.logankoester.com/bayesian-classification-on-rails). Se quiser aprender sobre classificadores mais avançados, veja o projeto [Apache Mahout](https://mahout.apache.org/).
 
-{{< youtube id="DdYSMwEWbd4" >}}
+{{< youtube id="OhLosjXM-Fg" >}}
 
 E o que é isso? É matéria de [**Estatística e Probabilidade**](https://www.khanacademy.org/math/probability). Os fundamentos para entender isso estão, de novo, no PRIMEIRO ano de Ciência da Computação.
 

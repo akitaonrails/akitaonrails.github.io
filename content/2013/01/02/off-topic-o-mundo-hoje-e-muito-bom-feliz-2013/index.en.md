@@ -39,7 +39,7 @@ Violence is dropping too, as [this TED talk by Steven Pinker](http://www.ted.com
 And even the dreaded Global Warming gets [constantly questioned](http://web.archive.org/web/20130109101134/http://www.globalclimatescam.com/). Plenty of scientists aren't convinced by the data we have. And it hardly matters whether Global Warming is "real": there are clearly people raking in [money](/en/2011/02/03/off-topic-a-revolta-de-atlas-dinheiro-e-a-raiz-de-todo-o-mal) and fame off the "fear" of this possible natural phenomenon. Watch the documentary [Cool It](http://web.archive.org/web/20130204054920/http://coolit-themovie.com/), where researcher Bjorn Lomborg debunks, one by one, the things you, a reader of this blog, probably never stopped to think about.
 
 <div class="embed-container">
-{{< youtube id="kQToxsLYm0M" >}}
+<!-- youtube video unavailable (deleted): kQToxsLYm0M -->
 </div>
 
 Example: if the Kyoto Protocol had succeeded the way the lobbyists wanted, it would have lowered the world's temperature by all of 0.008 degrees Fahrenheit by 2100. And the European Union's climate policy would drop the temperature by a mere 0.1 degrees Fahrenheit, at the ridiculous cost of USD 250 billion a year for the next century. With half that money you could wipe out poverty, hunger, and disease worldwide.
@@ -92,11 +92,11 @@ They all run the same speeches, the same pompous, contentless routine. They show
 **BULLSHIT!**
 
 <div class="embed-container">
-{{< youtube id="2DX3lZ8peBU" >}}
+<!-- youtube video unavailable (deleted): 2DX3lZ8peBU (Penn & Teller Bullshit - Environmental Hysteria Part 1) -->
 </div>
 
 <div class="embed-container">
-{{< youtube id="_ELJt0vUBi4" >}}
+<!-- youtube video unavailable (deleted): _ELJt0vUBi4 (Penn & Teller Bullshit - Environmental Hysteria Part 2) -->
 </div>
 
 Anyone who says a lot of _"We need to,"_ always in the first person plural _"we,"_ clearly wants to be the dictator of a group. Someone who on his own has little to offer, so he rallies more people to borrow the credibility of the masses. And past a certain headcount, whatever he says starts to seem valid.
@@ -124,7 +124,7 @@ Just to be clear, I'm not talking about everyone who's charitable. Plenty take i
 And they're worried about the little children? See the trauma they're putting them through by telling false stories of the end of the world:
 
 <div class="embed-container">
-{{< youtube id="BpzpuTLRujg" >}}
+{{< youtube id="-rXSxB9wFJE" >}}
 </div>
 
 The very existence of people like this is one more piece of evidence of how much better our times are. At the start of the 20th century, no one would spare a thought for "social causes" like today: many didn't even have enough to eat, had no clothes, died from common diseases.

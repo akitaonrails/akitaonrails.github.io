@@ -62,7 +62,7 @@ Let's run through a few examples. If I ask a beginner how to search for words in
 
 Most people wouldn't even think of the third solution. And whoever does doesn't know why. What if I told you that, in an absolutely raw and boiled-down way, the solution is to turn the document and the search terms into vectors and compute the relevance between them by [cosine similarity](http://en.wikipedia.org/wiki/Cosine_similarity)? That's exactly what the [Vector Space Model](http://en.wikipedia.org/wiki/Vector_space_model) (VSM) means, which you'll find in several search engines.
 
-<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'>{{< youtube id="ZEkO8QSlynY" >}}</div>
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'>{{< youtube id="o5nflzfX5tw" >}}</div>
 
 The knowledge behind that is called [**Linear Algebra**](http://en.wikipedia.org/wiki/Linear_algebra). Remember it, from the FIRST year of Computer Science? On this topic I recommend a talk I gave, ["How not to do searches using LIKE"](https://www.eventials.com/akitaonrails/como-nao-fazer-pesquisas-usando-like/).
 
@@ -78,7 +78,7 @@ The idea is that isolated words aren't enough to tell whether content is inappro
 
 If you want to try a simple version [in Ruby, see this blog](http://web.archive.org/web/20140423094927/http://blog.logankoester.com/bayesian-classification-on-rails). If you want to learn about more advanced classifiers, see the [Apache Mahout](https://mahout.apache.org/) project.
 
-{{< youtube id="DdYSMwEWbd4" >}}
+{{< youtube id="OhLosjXM-Fg" >}}
 
 And what is that? It's a subject of [**Statistics and Probability**](https://www.khanacademy.org/math/probability). The fundamentals for understanding it are, again, in the FIRST year of Computer Science.
 
