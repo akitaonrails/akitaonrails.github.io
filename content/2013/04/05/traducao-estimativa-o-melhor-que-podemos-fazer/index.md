@@ -2,6 +2,7 @@
 title: "[Tradução] Estimativa - O Melhor que Podemos Fazer"
 date: '2013-04-05T16:47:00-03:00'
 slug: traducao-estimativa-o-melhor-que-podemos-fazer
+translationKey: traducao-estimativa-o-melhor-que-podemos-fazer
 description: "Ron Jeffries defende estimativas como intervalos de custo e velocidade, usados para testar riscos, decidir a cada duas semanas e orientar o produto sem virar promessa ou negociação."
 tags:
 - agile
@@ -11,7 +12,9 @@ tags:
 draft: false
 ---
 
-<div style="float: right; margin: 10px"><img src="http://s3.amazonaws.com/akitaonrails/assets/image_asset/image/331/Ron_Jeffries-nobull.jpg"/></div><p><a href="http://en.wikipedia.org/wiki/Ron_Jeffries">Ron Jeffries</a> é um dos 17 signatários originais do Manifesto Ágil, um dos 3 fundadores do Extreme Programming. Ele publica artigos na <a href="http://pragprog.com/magazines">e-revista da Pragmatic Programmers</a> e na edição 46 de abril de 2013 ele publicou o artigo "Estimation". Pedi permissão ao editor Michael Swaine para traduzir o artigo para português porque é um assunto que eu já ia dissertar a respeito e o Ron, obviamente, já fez um trabalho melhor. Ainda há muito que quero dizer a respeito mas por agora vamos direto à tradução do artigo:</p>
+<div style="float: right; margin: 10px"><img src="http://s3.amazonaws.com/akitaonrails/assets/image_asset/image/331/Ron_Jeffries-nobull.jpg"/></div>
+
+[Ron Jeffries](http://en.wikipedia.org/wiki/Ron_Jeffries) é um dos 17 signatários originais do Manifesto Ágil e um dos 3 fundadores do Extreme Programming. Ele publica artigos na e-revista da Pragmatic Programmers, e na edição de abril de 2013 saiu o texto "Estimation: The Best We Can Do". Pedi permissão ao editor Michael Swaine para traduzir esse artigo para o português, já que era um assunto sobre o qual eu mesmo pretendia escrever e o Ron fez um trabalho melhor. Ainda tenho bastante coisa a dizer sobre estimativas, mas por ora vou direto à tradução:
 
 > Dois meses atrás nestas páginas, Ron Jeffries nos falou que estimativas são do mal. Agora ele está de volta para nos dizer que é um mal necessário e, feito da forma correta, não é nem mesmo mal.
 
@@ -25,7 +28,7 @@ O Manifesto Ágil diz, "as melhores arquiteturas, requerimentos e designs emerge
 
 ## Preocupações com Estimativas
 
-Realmente existem inúmeros problemas sérios relacionados a estimar um trabalho de software. Em um artigo anterior ["Estimativa é do Mal"](http://pragprog.com/magazines/2013-02/estimation-is-evil), eu descrevi alguns deles. Vamos revisá-los:
+Realmente existem inúmeros problemas sérios relacionados a estimar um trabalho de software. Em um artigo anterior ["Estimativa é do Mal"](http://web.archive.org/web/20130420092744/http://pragprog.com/magazines/2013-02/estimation-is-evil), eu descrevi alguns deles. Vamos revisá-los:
 
 * Backlogs pré-definidos de trabalho reduzem a criatividade e inibem ajustar o projeto para o sucesso.
 * Demandar entrega de "tudo" em alguma data fixa é um truque que nunca funciona.
@@ -147,4 +150,4 @@ A melhor coisa a fazer é desenvolver funcionalidades pequenas no melhor ritmo s
 
 > Ron Jeffries desenvolve software há mais tempo do que qualquer pessoa viva. Ele possui graduações avançadas em matemática e ciências da computação, ambas ganhas antes de inteiros negativos terem sido inventados. Suas equipes construíram sistemas operacionais, compiladores, sistemas de bancos de dados relacionais, e diversas aplicações grandes. Os produtos de software de Ron produziram faturamento de mais de meio bilhão de dólares, e ele se pergunta porque não ganhou nada disso.
 
-> Envie [feedback](mailto:michael@pragprog.com?subject=estimating) ao autor ou discuta o artigo no [fórum da revista](http://forums.pragprog.com/forums/134).
+> Envie [feedback](mailto:michael@pragprog.com?subject=estimating) ao autor ou discuta o artigo no fórum da revista.

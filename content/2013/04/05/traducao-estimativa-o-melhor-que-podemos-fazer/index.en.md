@@ -2,6 +2,7 @@
 title: "[Translation] Estimation — The Best We Can Do"
 date: '2013-04-05T16:47:00-03:00'
 slug: traducao-estimativa-o-melhor-que-podemos-fazer
+translationKey: traducao-estimativa-o-melhor-que-podemos-fazer
 description: "Ron Jeffries argues for estimates as ranges of cost and velocity, used to test risks, make decisions every two weeks, and guide the product without becoming a promise or negotiation."
 tags:
 - agile
@@ -11,7 +12,9 @@ tags:
 draft: false
 ---
 
-<div style="float: right; margin: 10px"><img src="http://s3.amazonaws.com/akitaonrails/assets/image_asset/image/331/Ron_Jeffries-nobull.jpg"/></div><p><a href="http://en.wikipedia.org/wiki/Ron_Jeffries">Ron Jeffries</a> is one of the 17 original signatories of the Agile Manifesto, one of the 3 founders of Extreme Programming. He publishes articles in the <a href="http://pragprog.com/magazines">Pragmatic Programmers e-magazine</a>, and in the April 2013 issue 46 he published the article "Estimation." I asked editor Michael Swaine for permission to translate the article into Portuguese because it's a subject I was going to write about, and Ron, obviously, has already done a better job. There's still much I want to say about it, but for now, straight to the translation of the article:</p>
+<div style="float: right; margin: 10px"><img src="http://s3.amazonaws.com/akitaonrails/assets/image_asset/image/331/Ron_Jeffries-nobull.jpg"/></div>
+
+[Ron Jeffries](http://en.wikipedia.org/wiki/Ron_Jeffries) is one of the 17 original signatories of the Agile Manifesto and one of the 3 founders of Extreme Programming. He publishes articles in the Pragmatic Programmers e-magazine, and the April 2013 issue ran "Estimation: The Best We Can Do." I asked editor Michael Swaine for permission to translate this article into Portuguese, since it was a subject I meant to write about myself and Ron did a better job of it. I still have plenty to say about estimates, but for now I'll go straight to the translation:
 
 > Two months ago in these pages, Ron Jeffries told us that estimates are evil. Now he's back to tell us they're a necessary evil and, done the right way, they aren't even evil.
 
@@ -19,13 +22,13 @@ Yes, there are many abuses perpetrated by organizations around the notion of est
 
 Unfortunately, this leads to the common naïve view among would-be agile practitioners who are still early in learning: they want to abolish estimates completely. That's probably not possible, and certainly not ideal. We have the ability to estimate how quickly we can do things, and companies can make better decisions if we share what we know.
 
-Software development isn't a perfect machine that spits out features quickly. I know it's comfortable to think we have no responsibility for business concerns like money, time, or dates. But that isn't true. What we build isn't isolated — it's only influenced by some Lord of the Products who decides what we're going to do and assumes all the risks. Executives are the ones with the final decision, but many of the decisions are better made by the team — and not only in how to do things, but what to do. We have the responsibility to help guide the projects, using our creativity and our special knowledge.
+Software development isn't a perfect machine that spits out features quickly. I know it's comfortable to think we have no responsibility for business concerns like money, time, or dates. But that isn't true. What we build isn't solely influenced by some Lord of the Products who decides what we're going to do and takes on all the risks. Executives are the ones with the final decision, but many of the decisions are better made by the team — and not only in how to do things, but what to do. We have the responsibility to help guide the projects, using our creativity and our special knowledge.
 
 The Agile Manifesto says, "the best architectures, requirements, and designs emerge from self-organizing teams," and that's what we meant (my emphasis). Agile developers usually have a good sense of how long things will take, and that's a valuable component of selecting and refining requirements. Developers need to have the attitude of talking about possible costs of what they're asked to do.
 
 ## Concerns About Estimates
 
-There really are several serious problems related to estimating a software job. In a previous article ["Estimation is Evil"](http://pragprog.com/magazines/2013-02/estimation-is-evil), I described some of them. Let's review them:
+There really are several serious problems related to estimating a software job. In a previous article ["Estimation is Evil"](http://web.archive.org/web/20130420092744/http://pragprog.com/magazines/2013-02/estimation-is-evil), I described some of them. Let's review them:
 
 * Pre-defined work backlogs reduce creativity and inhibit adjusting the project for success.
 * Demanding delivery of "everything" on some fixed date is a trick that never works.
@@ -147,4 +150,4 @@ The best thing to do is to develop small features at the best sustainable pace p
 
 > Ron Jeffries has been developing software longer than any living person. He holds advanced degrees in mathematics and computer science, both earned before negative integers had been invented. His teams built operating systems, compilers, relational database systems, and several large applications. Ron's software products generated more than half a billion dollars in revenue, and he wonders why he didn't earn any of it.
 
-> Send [feedback](mailto:michael@pragprog.com?subject=estimating) to the author or discuss the article on the [magazine forum](http://forums.pragprog.com/forums/134).
+> Send [feedback](mailto:michael@pragprog.com?subject=estimating) to the author or discuss the article on the magazine forum.
