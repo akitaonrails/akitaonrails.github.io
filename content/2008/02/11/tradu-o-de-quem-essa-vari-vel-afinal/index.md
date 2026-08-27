@@ -90,7 +90,7 @@ variável de instância nr. 6
 
 ```java
 public String employeeName() {
- return name;<br>
+ return name;
 }
 ```
 
@@ -145,7 +145,7 @@ observer.call(self)
 end
 end
 end
-  ```
+```
 
 <p>Esse é um bom exemplo do pattern em Ruby, onde os Observers podem ser blocos, ou qualquer objeto que responda ao método ‘call’ e que leve o Subject como seu argumento.</p>
 <p>Pouco antes de ver o livro, como resultado da conversa sobre GC, eu escrevi minha própria variação disso, que deixa qualquer objeto ser um subject, abrindo a classe Object:</p>
@@ -175,4 +175,4 @@ end
 <h3>Outro uso de variáveis de instância dinâmicas</h3>
 <p>Recentemente escrevi um <a href="http://www.infoq.com/news/2008/01/rails-resource-controller">artigo para a InfoQ</a> sobre <a href="http://jamesgolick.com/resource_controller">o plugin resource_controller de James Golick para Rails</a> que lhe permite escrever controllers de Rails para recursos Restful que podem automaticamente se adaptar a uso em diferentes contextos de aninhamento de recursos. Esse plugin faz bom uso da natureza dinâmica das variáveis de instância do Ruby, automaticamente definindo diferentes variáveis de instância no controller para corresponder ao recurso final e cada um de seus recursos pais.</p>
 <h3>Ufa!</h3>
-<p>Isso acabou virando um artigo bem longo, que eu queria escrever havia algum tempo. Espero que alguém ache isso útil, ou pelo menos interessante.</p></macro:code>
+<p>Isso acabou virando um artigo bem longo, que eu queria escrever havia algum tempo. Espero que alguém ache isso útil, ou pelo menos interessante.</p>

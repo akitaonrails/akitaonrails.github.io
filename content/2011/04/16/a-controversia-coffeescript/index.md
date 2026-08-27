@@ -185,7 +185,6 @@ Ou seja, estou literamente trocando seis por meia dúzia em troca de “estétic
 Ou este HTML:
 
 
-```
 ```html
 
 **Hello, World!**

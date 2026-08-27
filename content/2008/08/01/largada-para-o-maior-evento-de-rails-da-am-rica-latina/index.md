@@ -62,40 +62,36 @@ Em breve colocarei mais versões de banners, mas para começar acho que estes j�
 [  
  ![Rails Summit Latin America](http://s3.amazonaws.com/akitaonrails/assets/2008/8/1/120x240.gif "Rails Summit Latin America")](http://www.locaweb.com.br/railssummit)
 
-* * *
-html
+```html
 
 [  
  ![Rails Summit Latin America](http://s3.amazonaws.com/akitaonrails/assets/2008/8/1/120x240.gif "Rails Summit Latin America")](http://www.locaweb.com.br/railssummit)  
--
+```
 
 [  
  ![Rails Summit Latin America](http://s3.amazonaws.com/akitaonrails/assets/2008/8/1/468x60.gif "Rails Summit Latin America")](http://www.locaweb.com.br/railssummit)
 
-* * *
-html
+```html
 
 [  
  ![Rails Summit Latin America](http://s3.amazonaws.com/akitaonrails/assets/2008/8/1/468x60.gif "Rails Summit Latin America")](http://www.locaweb.com.br/railssummit)  
--
+```
 
 [  
  ![Rails Summit Latin America](http://s3.amazonaws.com/akitaonrails/assets/2008/8/1/728x90.jpg "Rails Summit Latin America")](http://www.locaweb.com.br/railssummit)
 
-* * *
-html
+```html
 
 [  
  ![Rails Summit Latin America](http://s3.amazonaws.com/akitaonrails/assets/2008/8/1/728x90.jpg "Rails Summit Latin America")](http://www.locaweb.com.br/railssummit)  
--
+```
 
 [  
  ![Rails Summit Latin America](http://s3.amazonaws.com/akitaonrails/assets/2008/8/1/120x600.jpg "Rails Summit Latin America")](http://www.locaweb.com.br/railssummit)
 
-* * *
-html
+```html
 
 [  
  ![Rails Summit Latin America](http://s3.amazonaws.com/akitaonrails/assets/2008/8/1/120x600.jpg "Rails Summit Latin America")](http://www.locaweb.com.br/railssummit)  
--
+```
 
