@@ -73,13 +73,13 @@ As we’ve enjoyed more success in our events, we’ve started to branch out int
 
 **Chad** : I do still encounter skeptics. Most of the skeptics are Rails skeptics—-not Ruby skeptics. Rails is over-hyped. That’s a fact. It’s also a really powerful tool, so the hype is a good thing. Hype always turns _some_ people off, but in this case it hasn’t turned enough people away that it is bad. I’m seeing more and more “uninteresting” uses of Rails and of just Ruby alone.
 
-By "uninterestingâ€, I mean that companies are using it for their intranet applications and other _unsexy_ non-Web 2.0 applications. That’s a sign of maturity and that we’re moving past the early adopters on the curve and into mainstream territory. Ruby and Rails are being used for large and small applications. The cool thing, from my perspective, is that it’s no longer news when a company decides to use Ruby. Back in 2004, it was a big deal anytime a company made the choice to go with Ruby.
+By "uninteresting", I mean that companies are using it for their intranet applications and other _unsexy_ non-Web 2.0 applications. That’s a sign of maturity and that we’re moving past the early adopters on the curve and into mainstream territory. Ruby and Rails are being used for large and small applications. The cool thing, from my perspective, is that it’s no longer news when a company decides to use Ruby. Back in 2004, it was a big deal anytime a company made the choice to go with Ruby.
 
 **AkitaOnRails** : I thought that the opposite was true: that Rails was used mainly as a startup resource to get to the market faster. Do you see traditional enterprises adopting Rails?
 
 **Chad** : The opposite was and is still true. Startups are using Rails to great effect. But, now I’m seeing a lot more traditional enterprise adoption. The profile of the companies I’ve been working with has been changing and getting more diverse. Topics like system integration are getting a lot more interesting to the customers I’m talking to.
 
-**AkitaOnRails** : At least here, I see that many IT managers and CIO’s still adopt the old IBM posture. If you asked a manager back in the 60’s: _“Why do you buy from IBM?â€_, he would answer: _“Because nobody gets fired buying from IBM”_. Now, we have another scenario: _“Why do you buy Java?â€_, _“Well, because nobody gets fired buying Java stuff”_. Do you think this scenario still holds true?
+**AkitaOnRails** : At least here, I see that many IT managers and CIO’s still adopt the old IBM posture. If you asked a manager back in the 60’s: _“Why do you buy from IBM?"_, he would answer: _“Because nobody gets fired buying from IBM”_. Now, we have another scenario: _“Why do you buy Java?"_, _“Well, because nobody gets fired buying Java stuff”_. Do you think this scenario still holds true?
 
 **Chad** : I think it will always hold true in big companies. Big companies make decisions based on fear. It’s not just true in IT. It’s true in HR, manufacturing, and other functions in big business. Fear-driven decision making comes from the way big companies are inherently organized and from the way promotion and success are measured.
 

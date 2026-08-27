@@ -262,7 +262,7 @@ TypeError: String can't be coerced into Fixnum
  from (irb):35:in `+'  
  from (irb):35
 
->> 1.<ins>("s")
+>> 1.+("s")
 TypeError: String can't be coerced into Fixnum
  from (irb):36:in 
  from (irb):36  

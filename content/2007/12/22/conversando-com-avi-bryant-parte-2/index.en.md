@@ -113,7 +113,7 @@ Anyway. There’s probably a lesson in there somewhere. Also, in a fight between
 
 **AkitaOnRails:** Finally, Brazil still has a young and growing community. Any closing regards for our audience??
 
-**Avi Bryant:** OlÃ¡ and good luck! I’ve been told Rio is even more beautiful than my home of Vancouver, and I hope to visit some day.
+**Avi Bryant:** Olá and good luck! I’ve been told Rio is even more beautiful than my home of Vancouver, and I hope to visit some day.
 
 [![](http://s3.amazonaws.com/akitaonrails/assets/2007/12/19/1057077803_3bd0155620.jpg)](http://twit.tv/floss21)   
 _Don’t miss the TWiT podcast interview with Avi!_

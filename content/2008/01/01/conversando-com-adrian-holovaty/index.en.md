@@ -10,7 +10,7 @@ draft: false
 translationKey: chatting-adrian-holovaty
 ---
 
-**TraducciÃ³n en [EspaÃ±ol](http://www.marcelor.com/2008/01/conversando-con-adrian-holovaty-creador-del-proyecto-django-traduccion.html)**
+**Traducción en [Español](http://www.marcelor.com/2008/01/conversando-con-adrian-holovaty-creador-del-proyecto-django-traduccion.html)**
 
 As I promised after the [Avi Bryant](http://www.akitaonrails.com/en/2007/12/15/conversando-com-avi-bryant-parte-1) interview, here’s a great conversation with [Adrian Holovaty](http://www.holovaty.com/), well known creator of the [Django](http://www.djangoproject.com/) web framework written in Python.
 
@@ -61,7 +61,7 @@ We were doing “Web 2.0” stuff back in 2002 and 2003, and we were building We
 
 So we were in this culture of _“Web development on journalism deadlines,”_ and we needed some tools that let us create Web applications quickly. We looked around at some existing Python libraries at the time (2003), and we ended up deciding to write our own stuff.
 
-We didn’t set about to make a framework – it was a very classic, clichÃ©d path, actually! What happened was, we built a site with Python. Then we built another one, and we realized the sites had a fair amount of code in common, so we did the right thing and extracted the common bits into a library.
+We didn’t set about to make a framework – it was a very classic, clichéd path, actually! What happened was, we built a site with Python. Then we built another one, and we realized the sites had a fair amount of code in common, so we did the right thing and extracted the common bits into a library.
 
 We kept doing this – extracting and extracting, based on each new Web application that we created – and eventually we had a framework.
 
@@ -96,7 +96,7 @@ A lot of people say Python code is easy to read/understand because of the consis
 
 **Adrian:** The answer to this one is obvious – clearly constructive discussion is more productive.
 
-At times, I’ve had my passion for Python/Django get the best of me, but I’ve gotten a lot better over the years. I’ve realized something: At the end of the day, what really matters is the sites people create with these tools, not the tools themselves. If youâ€™re going to judge someone, judge the sites that person makes, instead of the tools that person uses.
+At times, I’ve had my passion for Python/Django get the best of me, but I’ve gotten a lot better over the years. I’ve realized something: At the end of the day, what really matters is the sites people create with these tools, not the tools themselves. If you're going to judge someone, judge the sites that person makes, instead of the tools that person uses.
 
 These days, if I am involved in any sort of discussion like that, it’s usually to try to calm people down. ï¿¼
 
@@ -147,7 +147,7 @@ In retrospect, publishing the book online was a fantastic decision. Not only is 
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2007/12/31/adrian_oscon_2006.png)
 
-**AkitaOnRails:** haha, I live in SÃ£o Paulo. Can’t be worse ;-)
+**AkitaOnRails:** haha, I live in São Paulo. Can’t be worse ;-)
 
 **Adrian:** The idea for chicagocrime.org came when I was bumming around the official [Chicago Police Department](http://www.cityofchicago.org/police) Web site and found that they publish crime data – although in an interface that’s more suited for searching than for browsing. I thought, _“Wow, this is some great data!”_ and was writing a screen scraper within about 10 minutes.
 
