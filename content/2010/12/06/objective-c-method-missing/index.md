@@ -18,11 +18,11 @@ Uma das funcionalidades mais interessantes do Ruby é sem dúvida o famoso <tt>m
 ```ruby
 
 > obj = Object.new  
- => #<object:0x0000010092ac60> <br>
+ => #<object:0x0000010092ac60>
 > obj.foo
-NoMethodError: undefined method `foo’ for #<object:0x0000010092ac60><br>
- from (irb):2<br>
- from /Users/akitaonrails/.rvm/rubies/ruby-1.9.2-p0/bin/irb:17:in `<main>’<br>
+NoMethodError: undefined method `foo’ for #<object:0x0000010092ac60>
+ from (irb):2
+ from /Users/akitaonrails/.rvm/rubies/ruby-1.9.2-p0/bin/irb:17:in `<main>’
 </object:0x0000010092ac60></object:0x0000010092ac60>
 ```
 
@@ -65,8 +65,7 @@ end
 
 Esse código irá gerar diretamente este XML:
 
-* * *
-xml
+```xml
 
 # Hello World
 
@@ -74,7 +73,7 @@ This is a paragraph.
 
 | column |
 
-* * *
+```
 
 Se nunca tinha visto isso, pare por um segundo e contemple a beleza desta API. A partir do objeto XmlMarkup enviamos mensagens como <tt>html</tt> e ele vai acumulando as tags. Usamos blocos exatamente para blocos de XML, garantindo que eles terão as tags corretas de fechamento.
 
@@ -232,15 +231,12 @@ Esta primeira versão de implementação não precisa se preocupar com a assinat
 
 Para começar, quero entender mensagens mais ou menos desse tipo:
 
-* * *
  Convenção para métodos dinâmicos:
 
 ```objc
 
 - (id) entity:(NSString*)value; - (id) entityBlock:(id (^)(id))block; */
 ```
-
-* * *
 
 Ou seja, mensagens assim:
 
@@ -261,8 +257,6 @@ Agora, vamos definir o método principal:
 
 // #2BOOL hasBlock = [method hasSuffix:@"Block:"]; method = [method stringByReplacingOccurrencesOfString:@"Block" withString:@""]; method = [method stringByReplacingOccurrencesOfString:@":" withString:@""]; // #3 int tabsLength = self.indentationLevel * 2; NSMutableString* tabs = [NSMutableString stringWithCapacity:tabsLength]; int i; for ( i = 0 ; i \< tabsLength; i ++ ) { [tabs appendString:@" "]; } …
 ```
-
-* * *
 
 Vamos ver até a metade do método:
 
@@ -309,8 +303,7 @@ NSLog(`"%`", [xml buffer]); [pool drain]; return 0;
 
 Impressionantemente, se abrirmos o Console (Shift+Command+R) ao executar teremos exatamente esta saída do comando <tt>NSLog</tt>:
 
-* * *
-XML
+```xml
 
 # Hello World
 
@@ -318,7 +311,7 @@ This is a paragraph.
 
 | column |
 
-* * *
+```
 
 Que é o que queríamos e é semelhante ao gerado pelo equivalente Builder::XmlMarkup do Ruby. Claro, esta é uma versão hiper-simplificada, mas que pode ser o esqueleto para uma versão completa. O próximo passo é fazer a classe aceitar atributos de tags. E outra coisa é ver se é possível não precisar da convenção de “tableBlock:” para identificar se o argumento passado é um bloco e checar se é possível verificar o tipo do argumento passado em tempo de execução.
 
