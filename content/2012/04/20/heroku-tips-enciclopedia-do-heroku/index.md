@@ -33,28 +33,26 @@ Executar múltiplos Thins poderia ser possível mas se queremos mais processos r
 
 Substituir a gem <tt>thin</tt> pela <tt>passenger</tt> na sua Gemfile:
 
-* * *
-ruby
+```ruby
 
 group :production, :staging do  
  gem ‘passenger’  
  …  
 end  
--
+```
 
 O ideal é entre 3 e 4 processos, dependendo se sua dyno for a padrão [1X ou 2X](https://blog.heroku.com/archives/2013/4/5/2x-dynos-beta). A informação não-oficial que eu tenho é que cada dyno tem até 4 CPUs, o que justifica esse número de processos. Mais do que isso, chequem sempre quanto de memória cada processo consome (ferramentas como [NewRelic](http://newrelic.com/) ajudam nisso) pois a somatória precisa ser menor que 512Mb ou você terá problemas.
 
 Finalmente, a stack Cedar permite configurar perfis de dynos num arquivo chamado <tt>Procfile</tt> que fica na raíz do seu projeto. Para que a dyno levante com Unicorn coloque o seguinte:
 
-* * *
-ruby
+```bash
 
 web: bundle exec passenger start p $PORT —max-pool-size 3  
---
+```
 
 Seu projeto precisa obrigatoriamente estar em Git pois isso vai criar um repositório remoto chamado ‘heroku’ no seu arquivo <tt>.git/config</tt>:
 
-* * *
+```
 
 [core]  
  repositoryformatversion = 0  
@@ -71,7 +69,7 @@ Seu projeto precisa obrigatoriamente estar em Git pois isso vai criar um reposit
 [remote “heroku”]  
  url = git@heroku.com:test.git  
  fetch = +refs/heads/ **:refs/remotes/heroku/**  
--
+```
 
 Desta forma você faz o normal <tt>git push origin master</tt> para continuar subindo código para seu repositório de desenvolvimento e faz <tt>git push heroku master</tt> para realizar o deployment no Heroku. Isso reinicia sua Dyno, faz ela atualizar gems com <tt>bundle install</tt> executa a rake <tt>assets:precompile</tt>, caso esteja usando Rails 3.1 ou superior. Enfim, tudo que precisa para sua aplicação iniciar limpa.
 
@@ -81,10 +79,10 @@ Outra peculiaridade da [stack Cedar](https://devcenter.heroku.com/articles/cedar
 
 Para escolher basta adicionar a seguinte linha no arquivo Gemfile do seu projeto:
 
-* * *
+```ruby
 
 ruby “1.9.3”  
--
+```
 
 Obviamente, garanta que seu projeto em desenvolvimento e produção estão rodando com as mesmas versões!
 
@@ -94,35 +92,33 @@ Não vou chover no molhado explicando porque coisas como gerar relatórios pesad
 
 Como você precisa necessariamente de uma instância de Redis no Heroku, execute o seguinte a partir da raíz do seu projeto:
 
-* * *
+```bash
 
 heroku addons:add redistogo  
--
+```
 
 Pesquise na página de add-ons do Heroku sobre outras opções e planos para entender quanto o pacote padrão de Redis suporta. Importante além de capacidade (que não precisa ser muito), é a quantidade de conexões simultâneas que é a quantidade de processos Ruby web e processos Ruby Resque Workers que você tem ao mesmo tempo.
 
 Agora, adicione as gems que você precisa no arquivo <tt>Gemfile</tt>:
 
-* * *
-ruby
+```ruby
 1. mínimo:  
-gem ‘resque’, :require =\> ‘resque/server’
+gem ‘resque’, :require => ‘resque/server’
 
 1. alguns opcionais  
-gem ‘resque-scheduler’, :require =\> ‘resque_scheduler’  
+gem ‘resque-scheduler’, :require => ‘resque_scheduler’  
 gem ‘resque-lock’  
 gem ‘resque_mailer’  
--
+```
 
 Rode o Bundler para atualizar, depois vamos configurar as seguinte tasks Rake num arquivo <tt>lib/tasks/resque.rake</tt>:
 
-* * *
-ruby
+```ruby
 
 require ‘resque/tasks’  
 require ‘resque_scheduler/tasks’ # opcional se utilizar resque_scheduler
 
-task “resque:setup” =\> :environment do  
+task “resque:setup” => :environment do  
 ENV[‘QUEUE’] = ‘*’ if ENV[‘QUEUE’].blank?
 
 require ‘resque’ require ‘resque_scheduler’ require ‘resque/scheduler’ Resque.redis = ENV[“REDISTOGO_URL”] Resque.schedule = YAML.load_file(‘config/scheduler.yml’) # opcional se utilizar resque_scheduler Resque::Worker.all.each {|w| w.unregister_worker}
@@ -134,10 +130,10 @@ require ‘resque’ require ‘resque_scheduler’ require ‘resque/scheduler�
 end
 
 desc “EC2 instance name changes every time, so run this before a new deployment”  
-task “resque:clean_workers” =\> :environment do  
+task “resque:clean_workers” => :environment do  
  Resque::Worker.all.each {|w| w.unregister_worker}  
 end  
--
+```
 
 O Resque sobe workers realizando fork, cada worker se inicia subindo seu próprio ambiente Rails, incluindo coisas como se conectar com o banco de dados. Mas ao fazer fork, essas conexões precisam ser refeitas, por isso existe o bloco <tt>Resque.after_fork</tt>. Atenção a todo sistema que realiza forks (Passenger é um exemplo).
 
@@ -145,32 +141,30 @@ A gem [resque-heroku](https://github.com/simple10/resque-heroku) faz a mesma coi
 
 Agora, nos arquivos <tt>config/environments/development.rb</tt>, <tt>config/environments/test.rb</tt> e outras que não são a de produção para o Heroku, adicione no início do arquivo:
 
-* * *
-ruby
+```ruby
 
 ENV[“REDISTOGO_URL”] = ‘redis://localhost:6379’  
 TestApp::Application.configure do  
 …  
--
+```
 
 Também crie um arquivo <tt>config/initializers/resque.rb</tt> com:
 
-* * *
-ruby
+```ruby
 
 Resque.redis = ENV[“REDISTOGO_URL”]  
--
+```
 
 Se você sabe usar Resque, certamente tem um Redis instalado localmente na sua máquina de desenvolvimento e essa é a URL padrão. Modifique se precisar.
 
 Finalmente, adicione novas linhas ao arquivo <tt>Procfile</tt>:
 
-* * *
+```bash
 
 web: bundle exec unicorn p $PORT -c ./config/unicorn.rb  
 scheduler: bundle exec rake resque:scheduler  
 worker: bundle exec rake resque:workers QUEUE=* COUNT=2  
---
+```
 
 Estes são exemplos onde estou utilizando a gem [resque-scheduler](https://github.com/bvandenbos/resque-scheduler). Se você precisa de uma funcionalidade semelhante a um “crontab”, esta gem serve para isso. Mas está fora do escopo deste artigo falar sobre ela, então simplesmente ignorem quando menciono o scheduler se não precisar dela.
 
@@ -182,8 +176,7 @@ Mas imagine se por qualquer razão a tarefa levar 5 minutos. Significa que nesse
 
 Para isso serve a gem [resque-lock](https://github.com/defunkt/resque-lock) que declarei como opcional acima. Somente se existir tarefas que não podem ser executadas em paralelo e você tem a possibilidade disso acontecer. Normalmente você terá classes Ruby no PATH, por exemplo, em <tt>app/resque/example.rb</tt>:
 
-* * *
-ruby
+```ruby
 
 require ‘resque/plugins/lock’
 
@@ -194,14 +187,14 @@ def self.perform(repo_id)
 1. heavy_lifting  
  end  
 end  
--
+```
 
 É só o que você precisa fazer para garantir que esta tarefa não terá o perigo de ser executada em paralelo por acidente. Cuidado: nem toda tarefa em paralelo é ruim, por isso avalie cada situação. Agora, precisamos iniciar os dynos, para isso faça:
 
-* * *
+```bash
 
 heroku scale web=4 scheduler=1 worker=2  
--
+```
 
 Neste exemplo, estou subindo 4 dynos perfil “web”, o que significa capacidade para receber até 16 requisições _simultaneamente_ (neste exemplo, se cada requisição leva em média 100ms para responder, esse número de dynos pode responder até 160 requisições simultaneamente, o que é bastante). Em seguida estou subindo uma única instância do controlador de scheduler (novamente, se você não precisa, ignore). E finalmente subindo 2 dynos perfil “worker”, cada um com 2 workers Resque, totalizando 4 trabalhadores escutando a fila do Redis e podendo executar até 4 tarefas em paralelo. Para o Redis, significa que precisamos ter no mínimo capacidade para receber 16 + 1 + 4 = 21 conexões simultâneas. A mesma quantidade de conexões no banco de dados PostgreSQL (lembre-se sempre disso!)
 
@@ -213,18 +206,17 @@ Primeiro, obviamente, crie sua conta na [Amazon Web Services](http://aws.amazon.
 
 Se quiser, pode criá-los diretamente usando as APIs da Amazon, diretamente num console Ruby como IRB ou Pry, assim:
 
-* * *
-ruby
+```ruby
 
 require ‘aws/s3’  
 AWS::S3::Base.establish_connection!(  
- :access_key_id =\> ‘…’,  
- :secret_access_key =\> ‘…’  
+ :access_key_id => ‘…’,  
+ :secret_access_key => ‘…’  
 )  
-AWS::S3::Bucket.create(‘uploads.mysite’, :access =\> :public_read)  
-AWS::S3::Bucket.create(‘assets.mysite’, :access =\> :public_read)  
-AWS::S3::Bucket.create(‘staging.assets.mysite’, :access =\> :public_read)  
--
+AWS::S3::Bucket.create(‘uploads.mysite’, :access => :public_read)  
+AWS::S3::Bucket.create(‘assets.mysite’, :access => :public_read)  
+AWS::S3::Bucket.create(‘staging.assets.mysite’, :access => :public_read)  
+```
 
 Obviamente, instale primeiro a gem <tt>aws-s3</tt>. E claro, estou criando 3 buckets de exemplo, crie com quaisquer nomes (únicos, [válidos e compatíveis com formato de DNS](http://support.rightscale.com/06-FAQs/FAQ_0094_-_What_are_valid_S3_bucket_names%3F)).
 
@@ -232,7 +224,7 @@ Quando você cria sua conta, também ganha um **Access Key ID** e um **Secret Ac
 
 Uma policy tem mais ou menos este formato:
 
-* * *
+```json
 
 {  
  “Version”: “2008-10-17”,  
@@ -252,13 +244,13 @@ Uma policy tem mais ou menos este formato:
  }  
  ]  
 }  
--
+```
 
 Não mude a “Version” e coloque o nome correto da sua bucket em “Resource”. Isso vai garantir que quando qualquer assets gravado nessas buckets possam ser devidamente acessadas.
 
 Isso foi só para configurar a Amazon. Agora você precisa configurar sua aplicação para que contenha os dados corretos.
 
-* * *
+```bash
 
 1. para versões antigas da gem Heroku:  
 heroku plugins:install https://github.com/heroku/heroku-labs.git  
@@ -275,15 +267,14 @@ heroku config:add FOG_REGION=us-east-1
 heroku config:add ASSET_SYNC_GZIP_COMPRESSION=true  
 heroku config:add ASSET_SYNC_MANIFEST=false  
 heroku config:add ASSET_SYNC_EXISTING_REMOTE_FILES=keep  
--
+```
 
 Não deve ser difícil entender essas configurações. Agora, precisamos configurar o arquivo <tt>config/production.rb</tt> com o seguinte:
 
-* * *
-ruby
+```ruby
 
 config.action_controller.asset_host = “http://#{ENV[‘FOG_DIRECTORY’]}.s3.amazonaws.com”  
--
+```
 
 Aprenda mais sobre o Asset Pipeline no mínimo lendo o [guia oficial](http://guides.rubyonrails.org/asset_pipeline.html). Não me interessa quem gosta ou não gosta do Asset Pipeline (ou que não gosta porque não sabe usar). Mas vou assumir que independente da opinião, todos aqui sabem usar. Por exemplo, sabem que não pode haver tags HTML com a URL da imagem escrita manualmente, mas sim usando helpers como <tt>image_tag</tt> e mesmo no CSS, estar utilizando [SASS](http://sass-lang.com/) para ter acesso a helpers como <tt>image-uri</tt>. Não deve existir URLs do aplicativo, apontando para imagens, stylesheets, javascripts ou qualquer coisa, escritas manualmente sem usar esses helpers. Isso é obrigatório porque em desenvolvimento na sua máquina, ele vai apontar para URLs relativas na sua instância, mas em produção ele vai apontar para URLs externas na Amazon S3.
 
@@ -291,8 +282,7 @@ A grande vantagem é justamente porque quando os navegadores dos seus usuários 
 
 Queremos que os assets gerados pelo Asset Pipeline sejam sincronizados nos seus buckets na Amazon S3. Começamos adicionando as seguintes gems no <tt>Gemfile</tt>:
 
-* * *
-ruby
+```ruby
 
 group :assets do
 
@@ -306,12 +296,11 @@ group :assets do
  gem ‘compass’  
  gem ‘compass-rails’  
 end  
--
+```
 
 Lembrando que no Rails 4 não precisa do group “assets”. Continuando, precisamos criar um arquivo de configuração em <tt>config/initializers/asset_sync.rb</tt>:
 
-* * *
-ruby
+```ruby
 
 if (Rails.env.production? || Rails.env.staging?) && defined?(AssetSync)  
  AssetSync.configure do |config|  
@@ -337,12 +326,11 @@ if (Rails.env.production? || Rails.env.staging?) && defined?(AssetSync)
  config.fail_silently = true  
  end  
 end  
--
+```
 
 Entenda cada configuração e veja qual é a melhor para você, mas esta funciona o suficiente para mim. Não esqueça de configurar o arquivo principal <tt>config/application.rb</tt>:
 
-* * *
-ruby
+```ruby
 
 config.assets.initialize_on_precompile = false # Rails 4 não precisa disso  
 config.assets.precompile += %w(active_admin.css cross_browser.css active_admin.js)  
@@ -355,7 +343,7 @@ config.assets.initialize_on_precompile = false
 1. Version of your assets, change this if you want to expire all your assets  
 config.assets.version = ‘1.0’  
 config.assets.logger = false  
--
+```
 
 Se você usar o Asset Pipeline direito declarando seus assets nos arquivos de manifesto <tt>app/uploads/stylesheets/application.css.sass</tt> e <tt>app/uploads/javascripts/application.js.erb</tt> tudo corre normalmente, mas arquivos fora desses manifestos que você vai precisar (minimize o uso disso) e declare em <tt>config.assets.precompile</tt>.
 
@@ -367,10 +355,9 @@ Um adendo, é que não basta os assets estáticos da aplicação estarem no S3, 
 
 No caso do Carrierwave (eu particular não tenho preferência por nenhum, ambos servem adequadamente para mim), uma classe de uploader seria assim:
 
-* * *
-ruby
+```ruby
 
-class UserBackgroundImageUploader \< CarrierWave::Uploader::Base
+class UserBackgroundImageUploader < CarrierWave::Uploader::Base
 
 1. Include RMagick or MiniMagick support:  
  include CarrierWave::RMagick
@@ -384,42 +371,39 @@ class UserBackgroundImageUploader \< CarrierWave::Uploader::Base
  “uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{(model.id)}”  
  end  
 end  
--
+```
 
 Depois meu model de exemplo <tt>User</tt> contém:
 
-* * *
-ruby
+```ruby
 
-class User \< ActiveRecord::Base  
+class User < ActiveRecord::Base  
  …  
  mount_uploader :background_image, UserBackgroundImageUploader  
  …  
 end  
--
+```
 
 E nas views procuro a URL da imagem assim:
 
-* * *
-ruby
+```ruby
 
 @user.background_image_url  
--
+```
 
 Até aqui, absolutamente nada de novo. A novidade vem criando o arquivo <tt>config/initializer/carrierwave.rb</tt>:
 
-* * *
-ruby
+```ruby
 
 CarrierWave.configure do |config|  
  config.fog_credentials = {  
- :provider =\> ‘AWS’,  
- :aws_access_key_id =\> ENV[‘AWS_ACCESS_KEY_ID’],  
- :aws_secret_access_key =\> ENV[‘AWS_SECRET_ACCESS_KEY’],  
+ :provider => ‘AWS’,  
+ :aws_access_key_id => ENV[‘AWS_ACCESS_KEY_ID’],  
+ :aws_secret_access_key => ENV[‘AWS_SECRET_ACCESS_KEY’],  
  }  
  config.fog_directory = ‘uploads.mysite’  
 end  
--
+```
 
 Isso utilizará a configuração que você já fez acima, mas mudamos o nome do bucket para não confundir buckets de ‘assets’ de buckets de ‘uploads dos usuários’. Por isso criamos múltiplos buckets de exemplo, lembra? Inclusive, se criar dynos para ambiente de homologação/staging, lembre-se de criar buckets separados e configurá-los corretamente dependendo do ambiente neste arquivo de configuração.
 
@@ -431,39 +415,38 @@ Um pequeno truque se por acaso estiver usando Unicorn em vez de Thin ou Passenge
 
 Não vou re-explicar o que todo mundo já sabe sobre configurar NewRelic, a dica é apenas criar o seguinte arquivo em <tt>config/initializers/new_relic_unicorn.rb</tt>:
 
-* * *
-ruby
+```ruby
 
-NewRelic::Agent.after_fork(:force_reconnect =\> true) if defined? Unicorn  
--
+NewRelic::Agent.after_fork(:force_reconnect => true) if defined? Unicorn  
+```
 
 ## Finalmentes
 
 Para ambiente de testes, a versão grátis do Heroku é boa o suficiente, para produção não esqueça de subir múltiplos dynos (suba 3 ou 4 para começar, monitore e suba mais se precisar). Também faça upgrade dos seus serviços como Redis e PostgreSQL de acordo com o tamanho que precisar, por exemplo:
 
-* * *
+```bash
 
 heroku addons:upgrade redistogo:medium  
 heroku addons:add heroku-postgresql:fugu  
--
+```
 
 Quando você cria sua nova aplicação no Heroku, ele te dá um nome arbitrário que você mode mudar no dashboard web do Heroku e ele tem o formato <tt>mysite.herokuapp.com</tt>. No seu provedor de DNS (como Zerigo ou DNSimple) faça seu domínio (ex www.mysiteoficial.com) apontar para a URL ‘mysite.herokuapp.com’ (não há IPs fixos porque o EC2 não é feito para funcionar assim). Daí você pode configurar sua aplicação no Heroku para responder ao novo domínio assim:
 
-* * *
+```bash
 
 heroku addons:add custom_domains  
 heroku domains:add mysiteoficial.com  
 heroku domains:add mysiteoficial.com.br  
 heroku domains:add www.mysiteoficial.com  
 heroku domains:add www.mysiteoficial.com.br  
--
+```
 
 Registre a maior quantidade de domínios possíveis (dentro e fora do Brasil), nunca esqueça dos subdomínios. Se errar e precisar apagar:
 
-* * *
+```bash
 
 heroku domains:clear # to stop responding to domains  
--
+```
 
 O Heroku é extremamente eficiente para ambientes onde você ainda não tem como ter um administrador de sistemas sênior (caro e raridade no mercado) e uma equipe 24×7. Você pode começar pequeno e depois criar sua própria infraestrutura customizada em máquinas diretamente na Amazon EC2, Rackspace Cloud ou outro provedor de Cloud Servers. E sua aplicação, diferente de se fosse num Google App Engine, não precisa ser codificada de forma proprietária. A aplicação Rails continua executando normalmente, e sem grandes mudanças além das que você viu neste post, em qualquer outro servidor devidamente configurado.
 
