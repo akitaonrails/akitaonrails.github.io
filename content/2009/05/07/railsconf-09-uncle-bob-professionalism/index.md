@@ -22,6 +22,6 @@ Your browser does not support the video tag. [Direct Link](https://s3.us-east-2.
 
 E o vídeo oficial e completo da keynote já está disponível! Parabéns ao pessoal do RailsConf por liberar tão rápido.
 
-<embed src="http://blip.tv/play/AYGAlmaGvAQ" type="application/x-shockwave-flash" width="640" height="390" allowscriptaccess="always" allowfullscreen="true"></embed>
+<!-- dead Flash embed removed (service offline): http://blip.tv/play/AYGAlmaGvAQ -->
 
 Aproveitando, vejam a descrição da palestra [neste blog](http://tecblog.locaweb.com.br/2009/05/07/railsconf09-lave-as-maos-antes-de-programar/) também.

@@ -20,4 +20,4 @@ Seu navegador não suporta a tag de vídeo. [Link Direto](https://s3.us-east-2.a
 
 E não perca o keynote completo em [railsconf.blip.tv](http://railsconf.blip.tv/#2091808)
 
-<embed src="http://blip.tv/play/Af_XBIa8BA" type="application/x-shockwave-flash" width="640" height="390" allowscriptaccess="always" allowfullscreen="true"></embed>
+<!-- dead Flash embed removed (service offline): http://blip.tv/play/Af_XBIa8BA -->

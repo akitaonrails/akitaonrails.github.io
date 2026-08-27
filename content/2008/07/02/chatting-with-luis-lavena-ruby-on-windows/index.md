@@ -131,7 +131,7 @@ Este DevKit não vai apenas facilitar o trabalho com Ruby no Windows (e dar aces
 
 Outro é depender da existência de algumas ferramentas externas que às vezes não estão disponíveis ou os desenvolvedores/usuários não instalaram. E não estou falando de problemas de plataforma Linux-Windows — mesmo entre distribuições Linux isso é um problema.
 
-<object width="506" height="382">	<param name="allowfullscreen" value="true">	<param name="allowscriptaccess" value="always">	<param name="movie" value="http://www.vimeo.com/moogaloop.swf?clip_id=1266418&server=www.vimeo.com&show_title=1&show_byline=1&show_portrait=0&color=&fullscreen=1">	<embed src="http://www.vimeo.com/moogaloop.swf?clip_id=1266418&server=www.vimeo.com&show_title=1&show_byline=1&show_portrait=0&color=&fullscreen=1" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="506" height="382"></embed></object>  
+<!-- dead Flash embed removed (service offline): flash -->  
 [Instalando Gems no RubyInstaller](http://www.vimeo.com/1266418?pg=embed&sec=1266418) de [Luis Lavena](http://www.vimeo.com/luislavena?pg=embed&sec=1266418) no [Vimeo](http://vimeo.com?pg=embed&sec=1266418).
 
 **AkitaOnRails:** Então depende bastante da qualidade da Gem original, certo? Quanto mais limpo o código, mais fácil de portar, claro. Mas seu DevKit fornece alguns atalhos para isso? E quanto ao RubyInline, ele simplesmente quebra?

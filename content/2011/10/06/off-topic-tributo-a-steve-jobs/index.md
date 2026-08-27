@@ -61,7 +61,7 @@ Steve Jobs foi o exemplo moderno dos grandes exploradores: os navegantes que atr
 
 Steve Jobs foi um exemplo moderno de como a visão de um único indivíduo é capaz de moldar grandes porções de uma sociedade inteira, como [expliquei em fevereiro](http://www.akitaonrails.com/2011/02/04/off-topic-the-fountainhead-defesa-de-howard-roark). Ele foi um dos candidatos mais próximos de um [Howard Roark](http://fvdb.wordpress.com/2011/08/25/steve-jobs-the-howard-roark-in-business/) moderno.
 
-<embed src="http://blip.tv/play/AYKhnigA" type="application/x-shockwave-flash" width="640" height="453" allowscriptaccess="always" allowfullscreen="true"></embed>
+<!-- dead Flash embed removed (service offline): http://blip.tv/play/AYKhnigA -->
 
 Também coincidentemente, Steve trabalhou até perto de um mês antes de morrer, mais do que eu e mais do que você, tenha certeza. Trabalhou durante os sete anos em que enfrentou o câncer. Finalizou seu trabalho repassando o bastão a pessoas de confiança que entendem sua filosofia, como Tim Cook e Phil Schiller. Conseguiu até terminar sua biografia, e só tirou “férias”, forçadas, no último mês de vida.
 

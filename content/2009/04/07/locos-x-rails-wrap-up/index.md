@@ -42,10 +42,7 @@ To finish the event, Tom Aadland conducted a raffle of 10 books from O’Reilly.
 
 Este último fim de semana tive uma excelente estadia em Buenos Aires, Argentina, no evento [Locos x Rails](http://locosxrails.com) que eu acho que foi o primeiro grande encontro da comunidade Ruby e Rails de lá. Eles fizeram um trabalho extraordinário criando um evento interessante e empolgante que tenho certeza que as pessoas gostaram. Não tenho números oficiais mas acho que foram mais de 100 pessoas além de uma seleção internacional estelar incluindo Obie Fernandez, Desi McAdam, Yehuda Katz, Evan Phoenix, Evan Henshaw Plath.
 
-[Locos x Rails](http://www.slideshare.net/akitaonrails/locos-x-rails?type=presentation "Locos x Rails")<object style="margin:0px" width="425" height="355"><param name="movie" value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=locos-090407161915-phpapp02&stripped_title=locos-x-rails">
-<param name="allowFullScreen" value="true">
-<param name="allowScriptAccess" value="always">
-<embed src="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=locos-090407161915-phpapp02&stripped_title=locos-x-rails" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="355"></embed></object>
+[Locos x Rails](http://www.slideshare.net/akitaonrails/locos-x-rails?type=presentation "Locos x Rails")<!-- dead Flash embed removed (service offline): http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=locos-090407161915-phpapp02&stripped_title=locos-x-rails -->
 View more [presentations](http://www.slideshare.net/) from [Fabio Akita](http://www.slideshare.net/akitaonrails).
 
 No primeiro dia tivemos Obie Fernandez abrindo com a mesma palestra que ele fez no Rails Summit no Brasil, sobre os 4 princípios Ágeis e a “maneira Hashrocket” de implementá-las. Como sempre, uma palestra inspiradora. Então Fabián Ramírez, do Chile, falou sobre projetos reais de Ruby on Rails com suas experiências reais e porque empresas devem olhar seriamente em adotar Rails. Evan Henshaw Plath (Rabble), da ENTP, seguiu com uma explicação sobre problemas de privacidade na Web e a solução OAuth interoperabilidade de serviços web.

@@ -18,4 +18,4 @@ Your browser does not support the video tag. [Direct Link](https://s3.us-east-2.
 
 And don't miss the complete keynote at [railsconf.blip.tv](http://railsconf.blip.tv/#2091808)
 
-<embed src="http://blip.tv/play/Af_XBIa8BA" type="application/x-shockwave-flash" width="640" height="390" allowscriptaccess="always" allowfullscreen="true"></embed>
+<!-- dead Flash embed removed (service offline): http://blip.tv/play/Af_XBIa8BA -->

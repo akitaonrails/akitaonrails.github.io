@@ -25,7 +25,7 @@ I still didn’t finish compiling all the videos or even writing the main articl
 
 On Thursday, 10th, last day of RailsConf, Robert Martin delivered the “Twenty-Five Zeros” opening keynote. You can watch it, in its entirety, below:
 
-<embed src="http://blip.tv/play/AYHl5AoC" type="application/x-shockwave-flash" width="480" height="300" allowscriptaccess="always" allowfullscreen="true"></embed>
+<!-- dead Flash embed removed (service offline): http://blip.tv/play/AYHl5AoC -->
 
 In summary, he explains that since it was invented, computer hardware evolved by at least 25 orders of magnitude, while programming languages probably didn’t evolve at the same rate. Probably even not at all.
 

@@ -108,7 +108,7 @@ Fora isso, há muitas histórias e boas práticas, mas temo que isso seria um se
 
 **AkitaOnRails:** Já vi Andrew Shafer falar sobre [Agile Infrastructure](http://www.slideshare.net/littleidea/agile-infra-agileroots-2009) por alguns anos, mas ainda acho que a maioria das organizações de TI desconhece esse conceito. Você pode elaborar o que significa ser Ágil fora do campo de desenvolvimento?
 
-<embed src="http://agileroots2009.confreaks.com/player.swf" height="380" width="640" allowscriptaccess="always" allowfullscreen="true" flashvars="image=images%2F15-jun-2009-14-30-agile-infrastructure-andrew-shafer-preview.png&file=http%3A%2F%2Fagileroots2009.confreaks.com%2Fvideos%2F15-jun-2009-14-30-agile-infrastructure-andrew-shafer-small.mp4&plugins=viral-1"></embed>
+<!-- dead Flash embed removed (service offline): flash -->
 
 **Luke:** Acho que a Infraestrutura Ágil tem ainda menos adoção do que o Desenvolvimento Ágil. A grande maioria dos departamentos de TI não mudou as práticas significativamente em anos e está amplamente despreparada para o crescimento no número de servidores que estão experimentando. Eles tentam principalmente escalar adicionando mais pessoas, que chamamos de _meatcloud_, em vez de escalar suas ferramentas e práticas.
 

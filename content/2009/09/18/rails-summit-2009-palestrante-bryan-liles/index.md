@@ -21,10 +21,7 @@ Your browser does not support the video tag. [Direct Link](https://s3.us-east-2.
 
 Ele virá falar sobre boas práticas de programação, baseado numa séria que começou recentemente no seu blog [Smartic.us](http://smartic.us/), chamado [#yerdoinitwrong](http://smartic.us/category/yerdoinitwrong/) (literalmente, “voceestafazendoerrado”). Veja a apresentação da série:
 
-<object width="600" height="405"><param name="allowfullscreen" value="true">
-<param name="allowscriptaccess" value="always">
-<param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=6581783&server=vimeo.com&show_title=1&show_byline=1&show_portrait=0&color=00ADEF&fullscreen=1">
-<embed src="http://vimeo.com/moogaloop.swf?clip_id=6581783&server=vimeo.com&show_title=1&show_byline=1&show_portrait=0&color=00ADEF&fullscreen=1" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="600" height="405"></embed></object>
+<!-- dead Flash embed removed (service offline): flash -->
 
 [#yerdoinitwrong intro](http://vimeo.com/6581783) from [Bryan Liles](http://vimeo.com/bryanl) on [Vimeo](http://vimeo.com).
 
@@ -44,10 +41,7 @@ Your browser does not support the video tag. [Direct Link](https://s3.us-east-2.
 
 He’ll come to talk about best practices in software development, based on the series he recentely started at his blog [Smartic.us](http://smartic.us/) called [#yerdoinitwrong](http://smartic.us/category/yerdoinitwrong/). Watch his introduction to the series:
 
-<object width="600" height="405"><param name="allowfullscreen" value="true">
-<param name="allowscriptaccess" value="always">
-<param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=6581783&server=vimeo.com&show_title=1&show_byline=1&show_portrait=0&color=00ADEF&fullscreen=1">
-<embed src="http://vimeo.com/moogaloop.swf?clip_id=6581783&server=vimeo.com&show_title=1&show_byline=1&show_portrait=0&color=00ADEF&fullscreen=1" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="600" height="405"></embed></object>
+<!-- dead Flash embed removed (service offline): flash -->
 
 [#yerdoinitwrong intro](http://vimeo.com/6581783) from [Bryan Liles](http://vimeo.com/bryanl) on [Vimeo](http://vimeo.com).
 

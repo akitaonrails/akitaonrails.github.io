@@ -57,7 +57,7 @@ Ano passado algumas pessoas reclamaram porque as palestras focavam muito ou em t
 
 Tanto o Chad Fowler quanto o Obie Fernandez fizeram palestras especificamente direcionadas ao público brasileiro. O Chad levou em consideração que, diferente dos Estados Unidos, a adoção de Ruby on Rails está só começando aqui no Brasil. Por isso mesmo o tema foi sobre “Insurgência Rails”, ou seja, estratégias para tentar colocar Rails, gradualmente, dentro da sua empresa.
 
-<embed src="http://blip.tv/play/AYGohSwC" type="application/x-shockwave-flash" width="480" height="390" allowscriptaccess="always" allowfullscreen="true"></embed>
+<!-- dead Flash embed removed (service offline): http://blip.tv/play/AYGohSwC -->
 
 O Obie palestrou sobre um tema que eu particularmente gosto muito (e que palestrei bastante a respeito no começo do ano), que é sobre maestria. Em particular ele usou o tema do livro “Outliers” do Malcolm Gladwell, para explicar que talento é muito menos importante do que prática. Gladwell explica que, empiricamente, uma pessoa precisa de pelo menos 10 mil horas de prática antes de chegar ao estágio de mestre. Isso são 10 anos de esforço. Isso vai contra o “bom senso” de que “basta se formar” ou “basta se certificar” ou “basta ter um cargo de sênior” para se considerar bom em qualquer coisa. Novamente, um tema bastante comum atualmente para nós.
 
@@ -69,7 +69,7 @@ Especificamente sobre Ruby, tivemos Rich Kilmer dando uma introdução ao Macrub
 
 No primeiro dia ainda tivemos a famosa Desconferência, com várias boas palestras curtas. O pessoal do Guru-SP e RubyInside se apresentou. O pessoal da Plataforma Tec mostrou um plugin novo de autenticação, o Devise. O Cipriani deu um show técnico mostrando sistemas de comunicação em real-time usando Rails, AMPQ, etc. A galera do Rio, que veio em peso, falou de todas as atividades cariocas como o Dojo, o #horaextra, o Dev in Rio. O pessoal de Natal falou sobre eventos e do Oxente Rails 2010. Mas um dos pontos altos foi o Aldo Filho, irmão do Elomar, que fez uma palestra codificando ao vivo, com apenas 11 anos, demonstrando muito controle no que estava fazendo e falando tão bem quanto um profissional do palco. Dêem uma olhada:
 
-<embed src="http://blip.tv/play/AYGnlTEC" type="application/x-shockwave-flash" width="480" height="390" allowscriptaccess="always" allowfullscreen="true"></embed>
+<!-- dead Flash embed removed (service offline): http://blip.tv/play/AYGnlTEC -->
 
 Eu fiquei particularmente contente com a diversidade de assuntos e mais: como os brasileiros estão envolvidos em assuntos avançados. Espero que todos sigam os exemplos deles. Aliás, antes que eu me esqueça, dia 13, o primeiro dia do evento foi aniversário do José Valim e eu esqueci de dar os parabéns a ele! Sorry!!
 
@@ -87,10 +87,7 @@ Alguns recados importantes que eu queria passar: 1) nós estamos acostumados dem
 
 Nós, da organização do Rails Summit, gravamos todas as palestras. Eu ainda não sei como ficou porque o terceiro que ficou responsável por isso ainda não terminou de editar tudo. Assim que estiver tudo certo, vou publicar no site oficial do evento. Enquanto isso, alguns participantes gravaram algumas palestras, então vocês já podem se adiantar e assistir a minha por exemplo:
 
-<object width="600" height="450"><param name="allowfullscreen" value="true">
-<param name="allowscriptaccess" value="always">
-<param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=7099091&server=vimeo.com&show_title=1&show_byline=1&show_portrait=0&color=00ADEF&fullscreen=1">
-<embed src="http://vimeo.com/moogaloop.swf?clip_id=7099091&server=vimeo.com&show_title=1&show_byline=1&show_portrait=0&color=00ADEF&fullscreen=1" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="600" height="450"></embed></object>
+<!-- dead Flash embed removed (service offline): flash -->
 
 [Além do Caos – Pensamentos Aleatórios sobre Agilidade](http://vimeo.com/7099091) from [Locaweb](http://vimeo.com/locaweb) on [Vimeo](http://vimeo.com).
 

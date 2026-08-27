@@ -20,10 +20,7 @@ Nas minhas últimas palestras sobre organizações eu mostro um vídeo do [exper
 
 Para nós, agilistas, pense numa equipe fazendo Planning Poker ou Retrospectiva. Quando a maior parte responde de um jeito, a minoria tende a ir com a opinião do grupo. Alguns mantêm a posição com mais firmeza, mas o padrão é a conformidade, e isso precisa ser levado em conta. Assistam para entender:
 
-<object width="600" height="338"><param name="allowfullscreen" value="true">
-<param name="allowscriptaccess" value="always">
-<param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=7592683&server=vimeo.com&show_title=1&show_byline=1&show_portrait=0&color=00ADEF&fullscreen=1">
-<embed src="http://vimeo.com/moogaloop.swf?clip_id=7592683&server=vimeo.com&show_title=1&show_byline=1&show_portrait=0&color=00ADEF&fullscreen=1" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="600" height="338"></embed></object>
+<!-- dead Flash embed removed (service offline): flash -->
 
 [Experimento da Conformidade de Asch](http://vimeo.com/7592683) from [Fabio Akita](http://vimeo.com/akitaonrails) on [Vimeo](http://vimeo.com).
 
@@ -52,7 +49,7 @@ As organizações atuais limitam as pessoas, o potencial delas, qualquer chance 
 
 Portanto, a única saída é **eliminar** as hierarquias de poder. Assista minha introdução sobre essa ideia na palestra que dei no Rails Summit 2009 (créditos do vídeo para @agaelebe, obrigado por ter filmado):
 
-<embed src="http://blip.tv/play/AYGn3UQC" type="application/x-shockwave-flash" width="480" height="390" allowscriptaccess="always" allowfullscreen="true"></embed>
+<!-- dead Flash embed removed (service offline): http://blip.tv/play/AYGn3UQC -->
 
 Organizações, enquanto sistemas clássicos e fechados, tendem a estagnar e colapsar. Pode levar dez anos, mas é o que acontece, naturalmente. Sistemas complexos adaptativos, ao contrário, seguem em evolução, aprendem com as pequenas falhas e refinam os próprios processos.
 
@@ -64,7 +61,7 @@ Dan Pink deu uma palestra no TED sobre motivação. Relembrando o ponto de parti
 
 O que o Dan mostra é o óbvio: as empresas continuam usando técnicas arcaicas, baseadas mais em folclore do que em ciência. O sistema de recompensa e punição não funciona. Entenda:
 
-<embed src="http://blip.tv/play/AYHmwhMA" type="application/x-shockwave-flash" width="640" height="390" allowscriptaccess="always" allowfullscreen="true"></embed>
+<!-- dead Flash embed removed (service offline): http://blip.tv/play/AYHmwhMA -->
 
 Ele afirma que as pessoas precisam de três coisas para se motivar: Autonomia, o desejo de controlar a própria vida; Maestria, o desejo de ficar cada vez melhor no que faz; e Propósito, fazer parte de algo maior do que elas mesmas. O que ele descreve, no fundo, são Agentes dinâmicos e interativos de um Sistema Complexo Adaptativo. Esses agentes interagem entre si, cooperam e competem, e evoluem ao redor de "Atratores Estranhos", que são o propósito ou a identidade do grupo ou da empresa.
 

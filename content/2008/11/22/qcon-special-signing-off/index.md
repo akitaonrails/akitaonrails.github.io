@@ -13,10 +13,7 @@ draft: false
 
 
 
-<object width="500" height="350"><param name="allowfullscreen" value="true">
-<param name="allowscriptaccess" value="always">
-<param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=2312642&server=vimeo.com&show_title=1&show_byline=1&show_portrait=0&color=&fullscreen=1">
-<embed src="http://vimeo.com/moogaloop.swf?clip_id=2312642&server=vimeo.com&show_title=1&show_byline=1&show_portrait=0&color=&fullscreen=1" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="500" height="350"></embed></object>  
+<!-- dead Flash embed removed (service offline): flash -->  
 [Eu e a galera do Github](http://vimeo.com/2312642) por [Fabio Akita](http://vimeo.com/akitaonrails) no [Vimeo](http://vimeo.com).
 
 A QCon finalmente acabou. Foi um evento sensacional, com gente sensacional. Valeu ao Floyd, à InfoQ e a todos os organizadores e patrocinadores. Acho que o evento cumpriu direitinho o objetivo de discutir as novas tendências em tecnologia. Ficou claro pra mim que programação funcional, bancos de dados não-relacionais e a filosofia Agile são o caminho daqui pra frente.

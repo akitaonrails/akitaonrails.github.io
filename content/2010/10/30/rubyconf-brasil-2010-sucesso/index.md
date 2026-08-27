@@ -45,10 +45,7 @@ Enfim, de qualquer forma a qualidade dos palestrantes e da platéia elevou a qua
 
 Em termos de redes sociais, o pessoal da Vizir disponibilizou um [Livestream](http://mezura.com.br/locaweb/live_streams/rubyconf-brasil-2010) e em seguida soltou uma [relatório](http://www.slideshare.net/myvizir/vizir-de-olho-rubyconf-brasil-2010) de como foi o evento baseado nos tweets. Vale a pena conferir.
 
-**[Vizir de olho – RubyConf Brasil 2010](http://www.slideshare.net/myvizir/vizir-de-olho-rubyconf-brasil-2010 "Vizir de olho - RubyConf Brasil 2010")**<object id="__sse5589071" width="425" height="355"><param name="movie" value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=vizirdeolho-rubyconf-101027222312-phpapp02&stripped_title=vizir-de-olho-rubyconf-brasil-2010&userName=myvizir">
-<param name="allowFullScreen" value="true">
-<param name="allowScriptAccess" value="always">
-<embed name="__sse5589071" src="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=vizirdeolho-rubyconf-101027222312-phpapp02&stripped_title=vizir-de-olho-rubyconf-brasil-2010&userName=myvizir" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="355"></embed></object>
+**[Vizir de olho – RubyConf Brasil 2010](http://www.slideshare.net/myvizir/vizir-de-olho-rubyconf-brasil-2010 "Vizir de olho - RubyConf Brasil 2010")**<!-- dead Flash embed removed (service offline): http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=vizirdeolho-rubyconf-101027222312-phpapp02&stripped_title=vizir-de-olho-rubyconf-brasil-2010&userName=myvizir -->
 View more [presentations](http://www.slideshare.net/) from [Vizir](http://www.slideshare.net/myvizir).
 
 E esta foi uma semana para os rubistas da América Latina mesmo porque logo em seguida ao nosso evento, tivemos o [RubyConf Uruguay](http://rubyconfuruguay.org/en) onde alguns dos mesmos palestrantes foram participar. Foi mesmo uma semana para Rubistas, vamos fazer com que se repita todo ano!

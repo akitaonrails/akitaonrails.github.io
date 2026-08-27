@@ -42,4 +42,4 @@ The thing is, a factual list isn't enough. Rails is good enough, and excellent w
 
 Good ideas spread fast. All of us who try to spread ideas are, deep down, marketers. And to close, I'll hand the floor to Seth Godin on why marketing is too important to be left only to the marketing department:
 
-<embed src="http://blip.tv/play/Ad6xPAI" type="application/x-shockwave-flash" width="480" height="390" allowscriptaccess="always" allowfullscreen="true"></embed>
+<!-- dead Flash embed removed (service offline): http://blip.tv/play/Ad6xPAI -->

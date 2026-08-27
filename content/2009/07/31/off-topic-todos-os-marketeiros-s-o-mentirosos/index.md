@@ -42,5 +42,5 @@ Só que lista factual não basta. O Rails é bom o suficiente, e excelente onde 
 
 Boas ideias se espalham rápido. Todos nós, que tentamos difundir ideias, somos no fundo marketeiros. E para fechar, deixo a palavra com o Seth Godin explicando por que marketing é importante demais para ficar só nas mãos do departamento de marketing:
 
-<embed src="http://blip.tv/play/Ad6xPAI" type="application/x-shockwave-flash" width="480" height="390" allowscriptaccess="always" allowfullscreen="true"></embed>
+<!-- dead Flash embed removed (service offline): http://blip.tv/play/Ad6xPAI -->
 

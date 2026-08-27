@@ -27,7 +27,7 @@ Eu ainda nem terminei de compilar todos os vídeos e nem de escrever o artigo pr
 
 Na quinta-feira, dia 10, último dia da RailsConf, Robert Martin fez a abertura com a palestra “Vinte e Cinco Zeros”. Você pode assistir o vídeo, na íntegra, abaixo:
 
-<embed src="http://blip.tv/play/AYHl5AoC" type="application/x-shockwave-flash" width="480" height="300" allowscriptaccess="always" allowfullscreen="true"></embed>
+<!-- dead Flash embed removed (service offline): http://blip.tv/play/AYHl5AoC -->
 
 Em resumo ele explica como desde que foi inventado, o hardware evoluiu mais de 25 ordens de grandeza enquanto as linguagens de programação não evoluíram na mesma velocidade. Provavelmente não evoluíram nem um pouco.
 

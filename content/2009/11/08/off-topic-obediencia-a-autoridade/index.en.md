@@ -20,10 +20,7 @@ In my recent talks on organizations, I show a video of the [Asch experiment](htt
 
 For us agilists, think of a team doing Planning Poker or a Retrospective. When most of the team answers one way, the minority tends to go with the group. Some hold their ground more firmly, but the default is conformity, and that has to be taken into account. Watch to understand:
 
-<object width="600" height="338"><param name="allowfullscreen" value="true">
-<param name="allowscriptaccess" value="always">
-<param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=7592683&server=vimeo.com&show_title=1&show_byline=1&show_portrait=0&color=00ADEF&fullscreen=1">
-<embed src="http://vimeo.com/moogaloop.swf?clip_id=7592683&server=vimeo.com&show_title=1&show_byline=1&show_portrait=0&color=00ADEF&fullscreen=1" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="600" height="338"></embed></object>
+<!-- dead Flash embed removed (service offline): flash -->
 
 [Asch Conformity Experiment](http://vimeo.com/7592683) from [Fabio Akita](http://vimeo.com/akitaonrails) on [Vimeo](http://vimeo.com).
 
@@ -52,7 +49,7 @@ Current organizations limit people, their potential, any chance of motivation, a
 
 So the only way out is to **eliminate** power hierarchies. Watch my introduction to this idea in the talk I gave at Rails Summit 2009 (video credits to @agaelebe, thanks for filming):
 
-<embed src="http://blip.tv/play/AYGn3UQC" type="application/x-shockwave-flash" width="480" height="390" allowscriptaccess="always" allowfullscreen="true"></embed>
+<!-- dead Flash embed removed (service offline): http://blip.tv/play/AYGn3UQC -->
 
 Organizations, as classical, closed systems, tend to stagnate and collapse. It can take ten years, but that's what happens, naturally. Complex adaptive systems, on the other hand, keep evolving, learn from small failures, and refine their own processes.
 
@@ -64,7 +61,7 @@ Dan Pink gave a TED talk on motivation. To recap the starting point: no one can 
 
 What Dan shows is the obvious: companies keep using archaic techniques based more on folklore than on science. The system of rewards and punishments doesn't work. Take a look:
 
-<embed src="http://blip.tv/play/AYHmwhMA" type="application/x-shockwave-flash" width="640" height="390" allowscriptaccess="always" allowfullscreen="true"></embed>
+<!-- dead Flash embed removed (service offline): http://blip.tv/play/AYHmwhMA -->
 
 He says people need three things to motivate themselves: Autonomy, the desire to run their own lives; Mastery, the desire to get better and better at what they do; and Purpose, being part of something bigger than themselves. What he's describing, deep down, are dynamic, interactive Agents in a Complex Adaptive System. These agents interact with each other, cooperate and compete, and evolve around "Strange Attractors," which are the purpose or identity of the group or company.
 

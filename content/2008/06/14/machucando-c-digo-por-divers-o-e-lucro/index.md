@@ -25,10 +25,7 @@ Your browser does not support the video tag. [Direct Link](https://s3.us-east-2.
 
 E quem quiser os slides em PDF, também deixei disponível via [SlideShare](http://www.slideshare.net/akitaonrails/ruby-sadism-ryan-davis)
 
-<object style="margin:0px" width="425" height="355"><param name="movie" value="http://static.slideshare.net/swf/ssplayer2.swf?doc=rubysadismnyc-1213473930188407-9">
-<param name="allowFullScreen" value="true">
-<param name="allowScriptAccess" value="always">
-<embed src="http://static.slideshare.net/swf/ssplayer2.swf?doc=rubysadismnyc-1213473930188407-9" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="355"></embed></object>
+<!-- dead Flash embed removed (service offline): http://static.slideshare.net/swf/ssplayer2.swf?doc=rubysadismnyc-1213473930188407-9 -->
 
 [![SlideShare](http://static.slideshare.net/swf/logo_embd.png)](http://www.slideshare.net/?src=embed) | [View](http://www.slideshare.net/akitaonrails/ruby-sadism-ryan-davis?src=embed "View Ruby Sadism - Ryan Davis on SlideShare") | [Upload your own](http://www.slideshare.net/upload?src=embed)
 
