@@ -10,19 +10,19 @@ tags:
 draft: false
 ---
 
-Publicado pela 1a vez em [2013-04-01T09:19:10+00:00](http://startupi.com.br/2013/04/restricoes-sao-libertadoras-menos-e-mais/)
+Publicado pela 1a vez em [2013-04-01T09:19:10+00:00](http://web.archive.org/web/20150404175715/http://startupi.com.br/2013/04/restricoes-sao-libertadoras-menos-e-mais/)
 
-O título deste artigo é uma frase que já foi repetida inúmeras vezes, mas de tempos em tempos é importante recuperar seu significado, especialmente neste novo momento de excitação em torno de startups.
+O título deste artigo é uma frase repetida inúmeras vezes, mas de tempos em tempos vale recuperar seu significado, especialmente neste novo momento de excitação em torno de startups.
 
-Muitos acreditam que podem muito, mas por terem inúmeras restrições, elas estão fadadas ao fracasso. Caso tivessem “mais” dinheiro, “mais” tempo, “mais” reconhecimento, “mais” alguma coisa só então poderiam realizar seu “potencial escondido”. O fato de fracassarem seria, portanto, um defeito do mercado, da sociedade e de tudo ao redor que limita esse potencial.
+Muita gente acredita que poderia realizar muito, mas se convence de que as inúmeras restrições ao redor a condenam ao fracasso. Se tivesse “mais” dinheiro, “mais” tempo, “mais” reconhecimento, “mais” alguma coisa, só então realizaria seu “potencial escondido”. O fracasso passa a ser culpa do mercado, da sociedade e de tudo que limita esse potencial.
 
-Por isso mesmo existe um enorme rebanho de pessoas que gostariam de ser “empreendedores” e gastam seu tempo criando “sales pitches” para tentar seduzir e convencer fundos de investimento, investidores anjos ou qualquer um com recursos para lhe dar esse “mais”.
+Por isso existe um enorme rebanho de pessoas que gostariam de ser “empreendedores” e gastam o tempo criando “sales pitches” para seduzir fundos de investimento, investidores anjos ou qualquer um com recursos para lhe dar esse “mais”.
 
-E não digo somente quem quer ser empreendedor mas qualquer profissional em geral. Todos estão convencidos que se a empresa onde trabalham lhe pagasse “mais” ele por consequência seria motivado a realizar mais. Se o projeto tivesse “mais” tempo ele seria capaz de entregar a tempo. Se tivesse “mais” liberdade poderia entregar melhor.
+E não falo só de quem quer empreender, mas de qualquer profissional. Estão todos convencidos de que, se a empresa lhe pagasse “mais”, ele se sentiria motivado a produzir mais. Se o projeto tivesse “mais” tempo, ele entregaria dentro do prazo. Se tivesse “mais” liberdade, entregaria melhor.
 
 Em resumo: _“Se me dessem mais, eu faria mais, afinal liberdade é ter todas as escolhas possíveis”_.
 
-<blockquote>Quero argumentar que o oposto é a verdade. Até um certo limite são as restrições que levam às inovações e não a abundância. Abundância leva à zona de conforto, e não pode existir motivação para se tomar qualquer ação se você já está num estado de conforto.</blockquote>
+> Quero argumentar que o oposto é a verdade. Até certo limite, são as restrições que levam à inovação, e não a abundância. A abundância leva à zona de conforto, e não existe motivação para tomar qualquer ação quando você já está confortável.
 
 * Por que alguém inventaria maneiras mais eficientes quando se tem tempo infinito?
 * Por que alguém inventaria maneiras mais baratas quando se tem dinheiro infinito?
@@ -30,13 +30,15 @@ Em resumo: _“Se me dessem mais, eu faria mais, afinal liberdade é ter todas a
 
 {{< youtube id="EUXnJraKM3k" >}}
 
-E a resposta é simples: abundância significa ausência da necessidade de se fazer escolhas. E não ter que fazer escolhas significa incapacidade em priorizar. Priorização é a consequência de se viver sob restrições. E quando alguma coisa “não é possível” dentro dessas restrições, usando somente as “formas convencionais”, é quando alguém se vê literalmente “forçado” a ser criativo para sair dessas formas convencionais e criar a real “inovação”. Inovação é o que torna o impossível hoje possível amanhã.
+A resposta é simples. Abundância significa ausência da necessidade de fazer escolhas, e quem não precisa escolher também não precisa priorizar. A priorização é consequência de se viver sob restrições.
 
-* _“É impossível atravessar o mundo em 24 horas”_. Seria, mesmo antes do século XX se a forma mais eficiente de transporte que se conhece é por navio.
-* _“É impossível continuar alimentando todas as pessoas do planeta”_. Seria, se não conseguíssemos engenharias de agricultura e genética que possibilitam extrair o máximo da mínima área cultivável.
+Quando algo “não é possível” dentro dessas restrições pelas “formas convencionais”, é aí que alguém se vê forçado a ser criativo, a abandonar o caminho batido e produzir a real “inovação”. Inovar é o que torna o impossível de hoje possível amanhã.
+
+* _“É impossível atravessar o mundo em 24 horas”_. Seria, antes do século XX, quando a forma mais eficiente de transporte era o navio.
+* _“É impossível continuar alimentando todas as pessoas do planeta”_. Seria, se não tivéssemos avanços de agricultura e genética que permitem extrair o máximo de cada área cultivável.
 * _“É impossível ir até a Lua”_. Acho que vocês entenderam.
 
-Quando você tem zero reais no bolso e não tem onde captar dinheiro, a solução não é reclamar do mundo injusto que não lhe dá mais. A solução será por outros caminhos, com as próprias pernas. Você vai ter que convencer parceiros, priorizar, negociar, barganhar, tomar as escolhas difíceis. É assim que a restrição libera e força sua criatividade de inovar em outras direções.
+Quando você tem zero reais no bolso e nenhum lugar para captar dinheiro, reclamar do mundo injusto não muda nada. A saída vem por outros caminhos, com as próprias pernas. Você vai ter que convencer parceiros, priorizar, negociar, barganhar, tomar escolhas difíceis. É assim que a restrição libera e força a criatividade a inovar em outras direções.
 
 Se ainda não acredita vamos a alguns extremos:
 
@@ -48,14 +50,14 @@ Claro, um tweet tem apenas 140 caracteres. É uma restrição que se levarmos a 
 
 Em design falamos o tempo todo de minimalismo, de que “menos é mais”, onde os exemplos de excelência vêm dos reconhecidos designs industriais de Jony Ive na Apple.
 
-Falando em design temos outro nome reconhecido como John Maeda que diz que _“na área de design existe a crença de que com mais restrições, soluções melhores são reveladas”_ e que “urgência e espírito criativo andam de mãos dadas.”
+Ainda em design, outro nome reconhecido, John Maeda, diz que _“na área de design existe a crença de que com mais restrições, soluções melhores são reveladas”_ e que “urgência e espírito criativo andam de mãos dadas.”
 
-No mundo das apresentações, palestras e slides temos o famoso “Presentation Zen” de Garr Reynolds, que nos ensina a limitar nossas idéias no mínimo possível, até chegar à mínima narrativa e slides simples que no limite se restringem a uma única imagem ou uma única palavra por slide. Lembram das apresentações de Steve Jobs? Mesmo conceito. A abundância leva aos horríveis Powerpoints poluídos de informação mas que, paradoxalmente, transmitem pouco.
+No mundo das apresentações, palestras e slides temos o famoso “Presentation Zen” de Garr Reynolds. Ele ensina a limitar as ideias ao mínimo possível, até chegar à menor narrativa e a slides simples que, no limite, se restringem a uma única imagem ou uma única palavra por slide. Lembram das apresentações de Steve Jobs? Mesmo conceito. A abundância leva aos horríveis Powerpoints poluídos de informação que, paradoxalmente, transmitem pouco.
 
-Ou o que é possível fazer a partir de meros dois dígitos? Zero e Um? Um sistema binário que é o DNA por trás de todo o mundo digital e da Internet que conecta bilhões de pessoas no mundo todo.
+Ou o que dá para fazer a partir de meros dois dígitos, zero e um? Um sistema binário que é o DNA por trás de todo o mundo digital e da Internet que conecta bilhões de pessoas.
 
-Podemos extrapolar em diversos exemplos mas o mais importante é que a busca da abundância com o pretexto de possibilitar a execução de suas ideias é uma busca sem sentido. As soluções aparecem nas limitações, se perseguidas corretamente, quem souber encarar as restrições ao seu redor, buscando soluções criativas, é quem primeiro inovará de verdade.
+Podemos extrapolar em muitos outros exemplos, mas o ponto central é que buscar abundância com o pretexto de finalmente executar suas ideias é uma busca sem sentido. As soluções aparecem nas limitações. Quem souber encarar as restrições ao redor procurando saídas criativas é quem inova primeiro, de verdade.
 
 Você acha que precisa de “mais” para fazer “mais”? Minha conclusão é que se com pouco não se faz nada, com muito vai se fazer menos ainda.
 
-<blockquote>Inovar é a arte de priorizar e ser criativo sendo motivado pelas constantes restrições.</blockquote>
+> Inovar é a arte de priorizar e ser criativo, motivado pelas constantes restrições.
