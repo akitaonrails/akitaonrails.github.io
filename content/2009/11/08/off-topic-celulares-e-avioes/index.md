@@ -2,6 +2,7 @@
 title: "[Off-Topic] Celulares e Aviões"
 date: '2009-11-08T16:05:00-02:00'
 slug: off-topic-celulares-e-avioes
+translationKey: off-topic-celulares-e-avioes
 description: "Defendo que celulares não derrubam aviões e interpreto o aviso para desligar eletrônicos como uma forma de garantir a atenção dos passageiros nos momentos críticos do voo."
 tags:
 - viagens
@@ -10,32 +11,34 @@ tags:
 draft: false
 ---
 
-Eu estou para escrever sobre isso faz alguns meses. Por acaso surgiu no [Twitter](http://twitter.com/chemendonca/status/5538281845)
+Eu queria escrever sobre isso há alguns meses. O assunto acabou surgindo no Twitter:
 
 > @AkitaOnRails, se você derrubar o avião twittando com esse 3G ligado, vai envergonhar o país inteiro! Rsrsrs!!!
 
-É claro que foi uma piada :-) Mas de qualquer forma me motivou a finalmente escrever a respeito. Trata-se do comportamento das pessoas baseadas em premissas falsas.
+É claro que foi uma piada :-) Mas foi o empurrão que faltava para eu finalmente escrever sobre isso: o comportamento das pessoas baseado em premissas falsas.
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2009/11/8/plane_wideweb__470x316_0_original.jpg)
 
-Alguns meses atrás, enquanto estava indo para mais um evento, eu – de propósito, como sempre – mantenho meu iPhone ligado. Normalmente coloco em Air Mode enquanto no ar para economizar bateria, mas antes da decolagem eu estava assistindo um video podcast. Aí uma senhora do meu lado resolveu encrencar comigo mandando eu desligar. Obviamente eu ignorei ela. Daí o que ela fez? Chamou um comissário de vôo. Afe.
+Alguns meses atrás, a caminho de mais um evento, eu mantinha meu iPhone ligado de propósito, como sempre. Normalmente ligo o Air Mode enquanto estou no ar, para economizar bateria, mas antes da decolagem eu estava assistindo a um video podcast. Aí uma senhora do meu lado resolveu encrencar comigo e mandou eu desligar. Ignorei. E o que ela fez? Chamou um comissário de vôo. Afe.
 
-Ela ainda soltou o que muitos ignorantemente ainda acreditam: _“este ‘senhor’ está arriscando a minha vida!”_ Imaginem minha vontade de soltar um _“shut the fuck up!”_, claro não soltei :-)
+Ela ainda soltou o que muita gente ignorante acredita até hoje: _"este 'senhor' está arriscando a minha vida!"_ Imaginem minha vontade de mandar um _"shut the fuck up!"_. Claro que não mandei :-)
 
+Imagino que os leitores do meu blog não acreditem nisso, mas mesmo assim muitos talvez não saibam por que esse aviso existe. É só raciocinar. Se um eletrônico sem fio tivesse mesmo a mínima chance de interferir na comunicação do avião, a ponto de derrubá-lo, você, sendo dono da companhia aérea, deixaria alguém entrar com um celular no seu avião?
 
-Imagino que leitores do meu blog não acreditam nisso, mesmo assim muitos não devem saber porque esse aviso existe nos aviões. É só raciocinar. Se um eletrônico wireless pudesse realmente ter alguma mínima chance de interferir com a comunicação do avião, a ponto de derrubá-lo, você, se fosse o dono da companhia aérea, permitiria que alguém entrasse com um celular no seu avião??
+É a mesma coisa que deixar entrar alguém com uma bomba e pedir educadamente: _"pedimos aos passageiros que portam bombas que não as ativem enquanto dentro do avião."_ Duh. Poder entrar com eletrônicos já é a prova de que nenhum deles põe o avião em risco. Seria burrice. Se derrubasse de verdade, todo celular iria despachado num container de chumbo, do mesmo jeito que objetos pontiagudos não passam.
 
-É a mesma coisa que deixar alguém entrar com uma bomba e apenas pedir educadamente _“pedimos aos passageiros que carreguem bombas, para não ativá-las enquanto dentro do avião.”_ Duh! O fato de podermos entrar com eletrônicos no avião é prova de que nenhum desses equipamentos coloca o avião em risco. Seria burrice. Se realmente derrubasse, todos os celulares seriam obrigados a ir despachados num container de chumbo, assim como não permitem entrarmos com objetos pontiagudos ou coisas do tipo.
+Então, se não faz mal nenhum, por que essa maldita mensagem ainda toca antes de decolar e antes de aterrissar? Agora entra uma conclusão por indução. Quais são os dois momentos mais críticos de um vôo? Decolagem e aterrissagem.
 
-Portanto, se não faz mal nenhum, porque mesmo assim essa maldita mensagem ainda toca antes de decolarmos e antes de aterrissarmos? Agora é uma conclusão baseada em indução. Quais os dois momentos mais críticos de um vôo? Sim, decolagem e aterrissagem. São exatamente os momentos que a tripulação gostaria que os passageiros estejam mais prestando atenção a qualquer mensagem de emergência. Agora, se todo mundo estiver com fones de ouvido, jogando seus videogames, teclando nos seus laptops, uma mensagem de emergência demorará bastante até todos entenderem. Portanto, o objetivo principal de mandar desligar os equipamentos é única e exclusivamente para conseguir nossas atenções. Nada mais.
+São justamente os momentos em que a tripulação quer todo mundo atento a qualquer aviso de emergência. Se todos estiverem de fones de ouvido, jogando videogame, teclando no laptop, uma mensagem de emergência demora a chegar a todos. O objetivo de mandar desligar os aparelhos é único: conseguir a nossa atenção. Nada mais.
 
-Aí, minha teoria da conspiração é: se você apenas dissesse a verdade: _“para termos sua atenção em casos de emergência, pedimos para desligar seus equipamentos”_, ninguém desligaria. Por isso deve ser melhor usar a burrice coletiva a seu favor e dizer _“pedimos que desliguem seus celulares, videogames, mp3 players, computadores e não basta deixar em modo de avião.”_ Ou seja, implicitamente usando o medo da interferência de sinais para que os próprios passageiros perturbem os outros – como aconteceu comigo – gerando um peer pressure que obriga os outros a desligar, só para não se dar ao trabalho de discutir.
+Minha teoria da conspiração é a seguinte. Se dissessem a verdade, _"para termos sua atenção em caso de emergência, pedimos que desliguem seus aparelhos"_, ninguém desligaria. Então é melhor usar a burrice coletiva a favor e dizer _"pedimos que desliguem celulares, videogames, mp3 players e computadores, e não basta deixar no modo avião."_
 
-Aliás, se isso tudo fosse mesmo verdade, eu jamais entraria num avião. Pessoas com más intenções existem, porque confiar que elas desligariam? Aliás, eu não entenderia porque trabalhar num avião sabendo que os passageiros são um risco. Imaginem!
+Ou seja, usam implicitamente o medo da interferência de sinais para que os próprios passageiros perturbem os outros, como aconteceu comigo. Isso gera um peer pressure que obriga os demais a desligar, só para não ter o trabalho de discutir.
 
-Portanto, sim, se você acredita que sinais de celular podem derrubar um avião, você continua sofrendo de preguiça mental como falei no meu [artigo anterior](/2009/11/04/off-topic-o-problema-das-credenciais). Se ainda assim quiserem mais detalhes, por acaso achei hoje um episódio do [Mythbusters](http://kwc.org/mythbusters/2006/04/episode_49_cellphones_on_plane.html) exatamente sobre isso.
+Aliás, se tudo isso fosse mesmo verdade, eu jamais entraria num avião. Gente mal-intencionada existe, então por que confiar que ela desligaria? E eu não entenderia ninguém trabalhando num avião sabendo que os passageiros são um risco. Imaginem.
 
-Equipamentos eletrônicos **não** derrubam aviões. As companhias aéreas estão, espertamente, usando seu medo gerado pela ignorância coletiva. Estratégia inteligente.
+Portanto, se você acredita que sinal de celular derruba avião, continua sofrendo da preguiça mental que descrevi no meu [artigo anterior](/2009/11/04/off-topic-o-problema-das-credenciais). Se quiser mais detalhes, achei hoje um episódio do [Mythbusters](http://web.archive.org/web/20091118002824/http://kwc.org/mythbusters/2006/04/episode_49_cellphones_on_plane.html) exatamente sobre isso.
 
-Ah sim, e embora isso não sirva exatamente como prova, testei isso em quase todos os meus vôos e mantive meu iPhone e iPod ligados durante o vôo :-P Não vi o avião caindo em nenhuma dessas vezes, obviamente. Mas, claro, eu estou sempre prestando atenção na decolagem e aterrissagem, porque entendo o princípio, o resto é só pela experimentação.
+Equipamento eletrônico **não** derruba avião. As companhias aéreas usam com esperteza o medo criado pela ignorância coletiva. Estratégia inteligente.
 
+Ah, e embora isso não sirva exatamente como prova, testei em quase todos os meus vôos e mantive o iPhone e o iPod ligados o tempo todo :-P Nenhum avião caiu, obviamente. Mas claro, sempre presto atenção na decolagem e na aterrissagem, porque entendo o princípio. O resto é só experimentação.

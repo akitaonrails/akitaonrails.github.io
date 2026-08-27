@@ -2,6 +2,7 @@
 title: "[Off-Topic] Cell Phones and Airplanes"
 date: '2009-11-08T16:05:00-02:00'
 slug: off-topic-celulares-e-avioes
+translationKey: off-topic-celulares-e-avioes
 description: "I argue that cell phones do not bring down airplanes and interpret the warning to turn off electronics as a way to keep passengers attentive during critical moments of the flight."
 tags:
 - travel
@@ -10,30 +11,34 @@ tags:
 draft: false
 ---
 
-I've been meaning to write about this for a few months. It came up by chance on [Twitter](http://twitter.com/chemendonca/status/5538281845)
+I've been meaning to write about this for a few months. The subject finally came up on Twitter:
 
 > @AkitaOnRails, if you crash the plane tweeting with that 3G on, you'll embarrass the whole country! LOL!!!
 
-Of course it was a joke :-) But anyway, it motivated me to finally write about it. It's about people's behavior based on false premises.
+It was a joke, of course :-) But it was the push I needed to finally write about it: people acting on false premises.
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2009/11/8/plane_wideweb__470x316_0_original.jpg)
 
-A few months ago, while I was heading to yet another event, I — on purpose, as always — kept my iPhone on. Normally I put it on Airplane Mode while in the air to save battery, but before takeoff I was watching a video podcast. Then a lady next to me decided to pick a fight and tell me to turn it off. Obviously I ignored her. Then what did she do? She called a flight attendant. Ugh.
+A few months ago, on my way to yet another event, I kept my iPhone on, on purpose, as always. I usually flip on Airplane Mode once we're in the air to save battery, but before takeoff I was watching a video podcast. Then a lady next to me decided to pick a fight and told me to turn it off. I ignored her. So what did she do? She called a flight attendant. Ugh.
 
-She even blurted out what many ignorantly still believe: _"this 'gentleman' is risking my life!"_ Imagine my urge to let out a _"shut the fuck up!"_ — of course I didn't :-)
+She even blurted out what a lot of people still ignorantly believe: _"this 'gentleman' is risking my life!"_ Picture my urge to fire back a _"shut the fuck up!"_. Of course I didn't :-)
 
-I imagine readers of my blog don't believe this, but even so, many may not know why this warning exists on planes. Just think about it. If a wireless electronic could really have even the slightest chance of interfering with the plane's communication, to the point of bringing it down, would you, as the airline owner, allow anyone to board your plane with a cell phone??
+I figure readers of my blog don't buy this, but even so, plenty of people may not know why the warning exists in the first place. Just think it through. If a wireless gadget really had even the slightest chance of interfering with the plane's communications, enough to bring it down, would you, as the airline owner, let anyone board your plane with a cell phone?
 
-It's the same thing as letting someone board with a bomb and just politely asking _"we ask passengers carrying bombs not to activate them while inside the plane."_ Duh! The fact that we can board with electronics is proof that none of this equipment puts the plane at risk. It would be stupidity. If it really did bring it down, all cell phones would have to be checked in a lead container, just like pointy objects or similar things are not allowed.
+It's the same as letting someone board with a bomb and politely asking: _"we kindly ask passengers carrying bombs not to activate them while inside the plane."_ Duh. The fact that we can board with electronics is already proof that none of them put the plane at risk. That would be idiotic. If it actually brought planes down, every cell phone would go into the cargo hold in a lead container, the same way sharp objects never make it past security.
 
-So, if it does no harm, why does this damn message still play before we take off and land? Now it's a conclusion based on induction. Which are the two most critical moments of a flight? Yes, takeoff and landing. Those are exactly the moments the crew wants passengers to be paying most attention to any emergency message. Now, if everyone is wearing headphones, playing their video games, typing on their laptops, an emergency message will take a long time until everyone understands. So the main goal of telling you to turn off your equipment is solely and exclusively to get our attention. Nothing more.
+So if it does no harm, why does that damn message still play before takeoff and before landing? Now comes a conclusion by induction. What are the two most critical moments of a flight? Takeoff and landing.
 
-My conspiracy theory is: if they just told the truth: _"to get your attention in case of emergency, we ask you to turn off your equipment,"_ no one would turn it off. So they must figure it's better to use collective stupidity to their advantage and say _"we ask you to turn off your cell phones, video games, mp3 players, computers, and it isn't enough to leave it in airplane mode."_ That is, implicitly using fear of signal interference so that the passengers themselves bother others — as happened to me — generating peer pressure that forces others to turn off, just to avoid the trouble of arguing.
+Those are exactly the moments the crew wants everyone alert to any emergency announcement. If everyone's got headphones on, playing video games, typing on a laptop, an emergency message takes forever to reach the whole cabin. The only goal of telling you to shut off your gadgets is to get our attention. Nothing else.
 
-By the way, if all of that were really true, I would never board a plane. People with bad intentions exist, why trust that they'd turn theirs off? In fact, I wouldn't understand why anyone would work on a plane knowing that passengers are a risk. Imagine!
+Here's my conspiracy theory. If they told the truth, _"to have your attention in an emergency, we ask you to turn off your devices,"_ nobody would turn anything off. So they figure it's better to put collective stupidity to work and say _"please turn off your cell phones, video games, mp3 players and computers, and airplane mode isn't enough."_
 
-So yes, if you believe cell phone signals can bring down a plane, you're still suffering from mental laziness as I said in my [previous article](/en/2009/11/04/off-topic-o-problema-das-credenciais). If you still want more details, I happened to find today an episode of [Mythbusters](http://kwc.org/mythbusters/2006/04/episode_49_cellphones_on_plane.html) exactly about this.
+In other words, they quietly weaponize the fear of signal interference so that passengers police each other, the way that lady policed me. That builds peer pressure that forces everyone to comply, just to skip the argument.
 
-Electronic equipment does **not** bring down airplanes. Airlines are smartly using your fear generated by collective ignorance. Clever strategy.
+By the way, if any of this were actually true, I'd never board a plane. Bad actors exist, so why trust that they'd switch theirs off? And I wouldn't understand anyone working on a plane knowing the passengers are a hazard. Picture that.
 
-Oh, and although this doesn't exactly serve as proof, I've tested this on almost all my flights and kept my iPhone and iPod on during the flight :-P I didn't see the plane falling on any of those times, obviously. But of course, I'm always paying attention during takeoff and landing, because I understand the principle — the rest is just experimentation.
+So yes, if you believe a cell phone signal can bring down a plane, you're still stuck in the mental laziness I described in my [previous article](/en/2009/11/04/off-topic-o-problema-das-credenciais). If you want more detail, I stumbled on a [Mythbusters](http://web.archive.org/web/20091118002824/http://kwc.org/mythbusters/2006/04/episode_49_cellphones_on_plane.html) episode today about exactly this.
+
+Electronic gear does **not** bring down airplanes. Airlines are cleverly cashing in on the fear that collective ignorance produces. Smart strategy.
+
+Oh, and although this doesn't exactly count as proof, I've tested it on nearly all my flights and kept my iPhone and iPod on the whole time :-P No plane fell out of the sky, obviously. But sure, I always pay attention during takeoff and landing, because I get the principle. The rest is just experimentation.
