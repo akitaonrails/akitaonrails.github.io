@@ -12,94 +12,91 @@ draft: false
 translationKey: nova-era-microsoft-2016
 ---
 
-Update 04/07: [the preview is already out](http://thehackernews.com/2016/04/how-to-run-ubuntu-on-windows-10.html) ahead of the June release. If you're an Insider member, try it.
+Update 04/07: [the preview is already out](http://thehackernews.com/2016/04/how-to-run-ubuntu-on-windows-10.html) ahead of the June release. If you're an Insider member, try it. Leave your impressions in the comments.
 
-This is the translation of my [original post](http://www.akitaonrails.com/en/2016/03/31/off-topic-uma-nova-era-para-a-microsoft) in Brazilian Portuguese.
-
-Yesterday was a pretty remarkable and historical day for Microsoft, I even think it might be an Era dividing moment, at least from my personal perspective. Since then I was trying to figure out a way to register this moment for posterity.
+Yesterday was a historic day for Microsoft. From my personal perspective, it may have been a watershed. Ever since, I've been trying to figure out how to register the moment for posterity.
 
 ### Prologue - 1995 to 2005, the 1st Decade
 
-By Era dividing moment, I mean it for us, software developers. We have been through moments like this before. For example, the release of Turbo Pascal in 1983, the release of Visual Basic in 1991, the release of Java in 1995, the first Linux distros such as Slackware in 1993, the release of OS X in 2000 and its transition from PowerPC to Intel processors in 2005.
+I mean this for us, software developers. We've been through moments like this before: the release of Turbo Pascal in 1983, Visual Basic in 1991, Java in 1995, the first Linux distros like Slackware from 1993 on, the release of OS X in 2000, and the PowerPC-to-Intel transition in 2005.
 
-The 80's and 90's were convoluted, an era of real accelerated change and growth, everything became obsolete over night. In one single decade, from 1989 to 1999, I transitioned from Basic to dBase, to Clipper, to Fox Pro, to Visual Basic, to Delphi, to Java, to multimedia (Flash, Director/Shockwave), to the Internet (HTML, Javascript, ASP, PHP, Perl). I have never experienced so much change in such a short amount of time. I went from a 4Mhz XT PC to a Pentium III with 1Ghz in this same decade.
+The 80s and 90s were convoluted, an era of accelerated growth where everything went obsolete fast. In one decade, from 1989 to 1999, I went from Basic to dBase, Clipper, Fox Pro, Visual Basic, Delphi, Java, multimedia (Flash, Director/Shockwave), and the Internet (HTML, Javascript, ASP, PHP, Perl). I've never seen a decade move so fast. I went from a 4 MHz XT to a Pentium III at almost 1 GHz in those ten years.
 
-The new century opened with the apex of the Internet Bubble, we had 9/11 and the Bubble Crash. But the Internet came, stayed and blossomed. Personal devices were born with Palm and iPod. In 2001 Microsoft released its Windows XP and it would make it suffer the bitter sweet legacy for the next decade and half. On the opposite side, a year before, the still much smaller Apple would initiate its explosive come back with the brand new and highly desirable iMac, iBook and iPod. It would launch the BSD UNIX based OS X, creating the perfect system for both consumers and developers, the missed promise neither NEXT nor the earlier Apple never achieved.
+We reached the end of the century at the peak of the Internet Bubble, had 9/11 in 2001 and the crash. But the Internet came to stay, and personal devices started showing up with the Palms and iPods. In 2001 Microsoft launched Windows XP and would spend the next decade carrying that legacy on its back.
 
-2005 would reach its peak with the also explosive revelation of the love affair between Apple and Intel, traditionally married to Microsoft, and OS X would sing on Intel processors, allowing another giant leap for Apple marketshare growth. This revealed something else: OS X could sing on PowerPC, Intel and possibly something else, being built to be agnostic. It was a matter of time until it could run on smaller and more energy efficient ARM processors, which was what happened in 2007 with the launch of the iPhone. Arguably the most successful technology launch in history.
+A year earlier, the small Apple had started its comeback with the new iMac, iBook, and iPod, plus the BSD-UNIX-based OS X. One step at a time, it was building a system meant for both consumers and developers, the NeXT promise taking shape a decade after its inception.
+
+Then, in 2005, Apple forged an alliance with one of Microsoft's oldest partners, Intel, and Macs would finally run on the same processor as Windows, a stratospheric leap in adoption. And that opened another door: since OS X was built processor-agnostic, it was a matter of time before it ran on smaller, more efficient ARM chips. That's what happened in 2007 with the iPhone. The rest is history.
 
 ### 2005 to 2015 - 2nd Decade
 
-On the midst of all this, Microsoft ate dust from the competitors, miserably failed the Windows Vista promise, it had a dull albeit competent Windows 7, but again failed with Windows 8. Finally, with the release of Windows 10 by the end of 2014 things started to change. The effects of Steve Jobs passing by the end of 2011 are now obvious: Apple has stopped.
+Meanwhile, Microsoft fell behind. It failed the Windows Vista promise, shipped a competent Windows 7, and followed it with the controversial Windows 8. Only with Windows 10, unveiled at the end of 2014, did things start to change. And the effects of Steve Jobs's death, at the end of 2011, were getting more obvious: Apple had stopped.
 
-Since 2011 we had nothing but small incremental improvements. Nothing of significance, nothing new at all. I believe the last big iPhone launch was iPhone 5 in 2012. The last big feline release of OS X was Mountain Lion in 2011. In the meantime Google stepped ahead in the mobile front when KitKat was released in 2013, in my personal oppinion, the first time it stood on equal footing with iOS.
+From 2011 to today, all we got were new versions. Nothing significant, nothing new. The last big iPhone was the 5, from 2012. The last big OS X feline was Mountain Lion, from 2011. In the meantime Google pulled ahead in mobile when KitKat shipped in 2013, in my view the first Android release on equal footing with iOS.
 
-In summary, from 1999 until 2005, in general, we had 2 major mainstream options for software developers: Java and .NET. Yes, PHP had respectable adoption but it was never much more than customizing Wordpress or Magento most of the time, never the same league as Java or .NET, all the rest were niche groups. But from 2006 we saw a whole new generation of developers in the so called "Web 2.0", the post-Google, SEO, UX, quick iterations, Agility with capital "A". It was the dawn for Ruby, Python, then Node.
+From 1999 to 2005, broadly, the enterprise software developer had two options: Java and .NET. PHP had solid adoption, but mostly for customizing Wordpress and Magento, far from the same league as Java or .NET; the rest was niche. From 2006 on, a new generation of developers rose for the so-called Web 2.0, the post-Google world of SEO, UX, fast iterations, and Agility with a capital "A". That's where Ruby, Python, and then Node took off exponentially.
 
-2010 saw the mobile development world blossoming and speeding up, particularly a singular kind of application: the "Cloud" variety, where a native "app" connected to remote servers to offload data and processing, particularly to Amazon AWS services. AWS started in 2006, by the way.
+From 2010, the mobile world sped up, and one kind of integrated development in particular: the "Cloud" variety, where a native "app" talks to services on remote servers, mostly Amazon AWS, which had debuted not long before, in 2006.
 
-Microsoft played catch up all this time and stayed out of this tidal change, suffering the hungover of Vista. It kept its purely enterprise profit centers with SQL Server, Office licences, but out of the "cutting-edge".
+Microsoft stayed out of that move and spent the next ten years playing catch-up, nursing the Vista hangover. It kept its lead in purely enterprise markets, with SQL Server and Office licenses, but on the margins of cutting-edge software development.
 
-In fact, I'd state that the Era dividing moment came in 2013 when [Ballmer stepped out](http://olhardigital.uol.com.br/pro/noticia/mercado-reage-bem-a-saida-de-ballmer-da-microsoft/36992), closing the "Gates Extended Era" and allowing [Satya Nadella to step up](http://www.businessinsider.com/microsoft-year-in-review-2015-12) as the leader of the new dawn. There are obviously smart brains in Microsoft architecting all of what we are discussing now from many years back, but I say "era dividing moment" in symbolic ways, as the end of the Highlander-"there can only be one"-Culture.
+Actually, I'd say the watershed came in 2013, with [Ballmer's exit](http://web.archive.org/web/20160404073120/http://olhardigital.uol.com.br/pro/noticia/mercado-reage-bem-a-saida-de-ballmer-da-microsoft/36992) and the end of the "Extended Gates Era", opening the door for [Satya Nadella to step in](http://www.businessinsider.com/microsoft-year-in-review-2015-12). Microsoft is a giant, plenty of its brains had been researching this for years, and a lot of it only surfaced now. But I mean "Eras" in a symbolic sense: the end of Microsoft's Highlander culture, the "there can only be one".
 
-The [1995 Prophecy](http://1995blog.com/2015/05/24/the-internet-tidal-wave-20-years-on/) that the Internet would destroy the Windows hegemony actually came to be. And in the post-Moore Era computation became not only accessible but ubiquitous. Think about it: to have a cluster of "super" computers back in 1995 you needed serious investments that only universites and big corporations could afford. Today? Create your own cluster of EC2 instances right now and pay the equivalent of a popular videogame console for a month of serious computation.
+The [1995 prophecy](http://1995blog.com/2015/05/24/the-internet-tidal-wave-20-years-on/) that the Internet would destroy the Windows hegemony came true. And we reached the post-Moore world, where computing became accessible and ubiquitous. Think about it: in 1995, having a cluster of "super" computers for high-throughput distributed computing was for universities or big corporations. Today, you spin up a cluster of as many dozens of machines as you want on EC2 for a month at the price of a video game console.
 
-I was an MS-DOS user since 1988, I changed to Windows 95 since it was launched and I spent the next following 10 years primarily developing software on Windows in the enterprise (yes, I know my ways in the undergrounds of the dared Registry and Windows debugging). I did Visual Basic, ASP, .NET, Java, PHP. But I wanted to be able to use Perl, PHP, Python, Ruby, natively in Linux. But I also still wanted and needed Office and Photoshop.
+I was a DOS user from 1988, switched to Windows 95 as soon as it launched, and spent almost ten years developing primarily on Windows, in the corporate world. I went from Visual Basic to ASP to .NET while also doing Java and PHP. But I wanted to run Perl, PHP, Python, and Ruby native on Linux, without giving up Office and Photoshop.
 
-The answer was clearly OS X. With the release of Tiger it became serious. I started in a Mac Mini G4 in 2004. It had exceptional usability, far ahead of Windows XP, and access to all the UNIX I ever wanted in a single box.
+The answer we were waiting for was OS X. With the release of Tiger, things got serious. I tried it myself on a Mac Mini G4 in 2004. It was exceptional to have usability far better than Windows XP and access to all the UNIX I wanted on a single machine.
 
-The Core Duo and 64-bit Core 2 Duo was decisive for Intel and Apple. Tiger would sing on Intel in 2005, then it was a no-brainer: it was time to change. Now I would spend the following decade in OS X developing software in a different platform, with different tools and culture. It was my whole Ruby story that you know well if you have been following my blog since 2006.
+When Intel launched the Core Duo and then the 64-bit Core 2 Duo, and Tiger started running on Intel in 2005, there was nothing to think about: it was time to migrate. I'd spend the next decade in a pure OS X environment, developing on a different kind of platform, with different tools and a different culture. That was my whole story with Ruby and OS X over these ten years, which you know well if you follow this blog.
 
 ### 2015 on forward, Epilogue
 
-2015 arrived, almost 4 years after Jobs passing. An important gap which gave enough time for non-Mac platforms to finally catch up and surpass in many fronts. We are in the Software as Service Era. We don't "buy" software no more. We "subscribe" to services.
+2015 arrived, four years after Steve Jobs's death. It was an important gap, because it gave the non-Mac platforms time to catch up and surpass OS X in many areas. We're firmly in the Software as a Service Era. We don't "buy" anything anymore, we "subscribe" to services.
 
-We are passed the Post-PC Era. We are passed the Smartphone Era. We are in the Everything as a Service Era. Our very identity is but a Facebook profile. Our voice is Whatsapp or Snapchat. Everything we go create tons of data. We are in the Big Data Era. Volumes of useless information that no SQL Server could ever dream to manage.
+We're past the Post-PC Era. We're past the Smartphone Era. We're in the Services Era, where everything is a service. Our identity is a Facebook profile, our voice is WhatsApp, and everything we do generates data. We're in the Big Data Era, a pile of useless data that no SQL Server in the world can keep up with.
 
-We need new stuff to crack into this new paradigm: Cassandra, Riak, Hadoop, HBase, Spark, Elasticsearch, Go, Rust, Elixir. They all "run" on Windows. Someone has to port them, make patches, package into installers. And most - if not all - of the developers for all these technologies are using either a Linux distro or OS X. Virtually no cutting-edge developer is willingly on Windows.
+We need new things to handle this paradigm: Cassandra, Riak, Hadoop, HBase, Spark, Elasticsearch, Go, Rust, Elixir. They all "run" on Windows, but someone has to spend time doing ports, writing compatibility patches, and packaging installers. And the main thing: most of the developers behind these technologies are on Linux or OS X, almost nobody builds this new generation of tools inside Windows. They all use Emacs, Vim, or Sublime Text, hardly anyone wants Visual Studio.
 
-And this is the closing of my post opening: a New Dawn for Microsoft. It has suffered the last 10 years playing catch up and, for the first time since forever, it seems to have a real shot in making a real comeback, to become relevant to non-.NET developers.
+And this brings me back to the start of the post: it's a new Era for Microsoft. It spent the last ten years playing catch-up and, for the first time, it looks like it has a real shot at turning things around and becoming relevant to the non-.NET developer again.
 
-2 things happened yesterday that could allow for that.
+For that, two things happened yesterday.
 
-### 2016 - The Year for Linux on the Desktop
+### 2016 - The Year of Linux on the Desktop
 
-First up, the announcement that ["Bash is coming to Windows"](http://thehackernews.com/2016/03/ubuntu-on-windows-10.html). It's actually way more than simply Bash. It's a partnership with Canonical - which started a few months back since the announcement of [SQL Server running on Linux](https://www.microsoft.com/en/server-cloud/sql-server-on-linux.aspx), another shocker by the way. The reality is an entire [Linux subsystem](http://blog.dustinkirkland.com/2016/03/ubuntu-on-windows.html) running alongside the Windows kernel, a super thin translation of Linux syscalls into Windows syscalls. The original idea came from the desire of running unmodified Android apps on Windows, this is the already deceased Project Astoria or Windows Bridge for Android. Technically, Android is a flavor of Linux, so you can see how it evolved.
+First, the announcement that ["Bash is coming to Windows"](http://thehackernews.com/2016/03/ubuntu-on-windows-10.html). Which in practice is much more than Bash: it's a partnership with Canonical, one that had been taking shape since the announcement of [SQL Server running on Linux](http://web.archive.org/web/20160415160138/http://www.microsoft.com/en/server-cloud/sql-server-on-linux.aspx). In practice, it's a [Linux subsystem](http://blog.dustinkirkland.com/2016/03/ubuntu-on-windows.html) running alongside the Windows kernel, translating Linux syscalls into Windows syscalls.
 
-Therefore, one can theoretically get an unmodified ELF binary made to run under Ubuntu and run it nativelly on Windows, no patches, no recompilation, just works! Reminds me of the Rosetta component on OS X Tiger to allow unmodified PowerPC binaries to be emulated on Intel, but much more efficient as it's not a heavyweight processor emulation, and also much less convoluted than Universal Binaries, which required recompilation back in the days of migrating OS X to Intel.
+The original idea came from the deceased Project Astoria, or Windows Bridge for Android, which back then wanted to let Android apps run on Windows. Technically, Android is a flavor of Linux, so the jump to yesterday was a short one.
 
-Ever since we started learning Ruby, many wanted to use their Windows machines but couldn't. There is a [Windows distribution of Ruby](http://rubyinstaller.org/) but I can't quite recommend it despite the many efforts of highly competent developers such as Luis Lavena. Ruby, Python, PHP and everything built on Linux is meant to work just on Linux, period. To make them run elsewhere requires serious hours of testing, patching, wrapping around, adapting, cutting corners, and all this needs to be done in each new release, and they will never work quite the same. Moreover, dependencies such as rubygem libraries sometimes require a compilation step of native extensions, then you have a huge headache of trying to make a compiler such as GCC work.
+So it'll be possible to take a binary built for Ubuntu and run it on Windows without changing a thing.
 
-It's living hell, seriously.
+Ever since we started developing with Ruby, a lot of Windows users wanted to run Ruby natively. There's a [distribution](http://rubyinstaller.org/), but it's not good, and that's not the maintainers' fault. Ruby, like Python and PHP, was built to work on Linux.
 
-The recommendation is to emulate Linux itself under Virtual Box with the help of fancy tooling such as Vagrant and use native, pure Ruby under the environment where it was designed to work properly. But it's a hassle, because now you have a heavy OS on top of another heavy OS and a lot of emulation and virtualization on the way. We just got used to it.
+To port it to Windows you have to write "wrappers", and you still lack an environment with compilers like GCC to build extension packages. All of that is trivial on Linux and a headache on Windows. It wasn't worth the trouble, so the only way out was to run a virtual machine (like VirtualBox) with something like Vagrant to make it easier and use the real Linux Ruby.
 
-What Microsoft is promising with its Anniversary Update for Windows 10 is not virtualization, but a very very thin layer of translation in the kernel itself. Everything in user land will "think" that its running on top of a normal Linux kernel. It's the reverse of what the Wine project has been trying to do to run unmodified Windows binaries on top of Linux distros. And it's not the same as Cygwin, which requiries modifications and recompilation of all Linux tools to run on Windows.
+Everything from Linux that "works" on Windows, whether Python or PHP, never worked 100%, and we just got used to it.
 
-It will also probably not support a secondary Window manager right now, so no X, no GNOME, no KDE. And we don't need them, this is a Web world, if we can fire up a web server, we can have our GUI over any commodity web browser. And for stuff such as the native extension for Ruby gems, for example, we will have the full GCC toolchain working perfectly. And again: this does not require patches, recompilation, it's unmodified binary compatibility. Native execution with full performance.
+What Microsoft is shipping in the Anniversary Update is a very thin translation layer at the lowest level, and not a virtual machine or a hypervisor: from a "virtual" Linux kernel to the Windows kernel. Everything will think it's running on Linux. It's what the Wine project tries to do to run Windows applications on Linux, only in reverse. It's also different from Cygwin, which requires recompiling everything from Linux to get a semi-Linux environment on top of Windows.
 
-The second big announcement is [Xamarin's tools being released for free and as open source](http://techcrunch.com/2016/03/31/thanks-to-microsoft-small-teams-can-now-get-xamarins-ide-and-core-tools-for-free). Microsoft has acquired Xamarin recently, they spent almost a decade reimplementing all .NET as open source, pure and efficient reverse engineering of the proprietary tools and libraries, and they became a force to be reckoned with, specially in the games world with platforms as Unity built on top of Mono and the more recent set of tools for iOS and Android development using C#. So Microsoft played very smart, first by acquiring them, second by releasing their tools for free. It would be the last reason to stay on the Mac: the only platform with free tools to create native iOS apps. No more.
+There probably won't be a secondary graphical environment at first, so no X, no GNOME or KDE. And there's no need: we're in a Web world, our graphical environment now is HTML and Javascript, and Chrome and Firefox already run native on Windows. For things like compiling gems with native extensions, even GCC will work. It's the exact same binary, in the same environment, with everything we're used to on UNIX. Having Bash and SSH on Windows is just the tip of the iceberg.
 
-Therefore, the choice became much simpler now than ever before. Windows 10 is finally the first respectable Windows version if we disconsider the short life of Windows 7. Let's forget that Windows 8 ever existed the same way we already forgot the Vista fiasco. XP is finally dead. Internet Explorer 6 (and 7, and 8) are also finally as good as dead. Google made us all a favor by pushing Chrome and services such as Facebook forced users to upgrade quicker as well.
+The second announcement is the [release of the Xamarin tools for free and as open source](http://techcrunch.com/2016/03/31/thanks-to-microsoft-small-teams-can-now-get-xamarins-ide-and-core-tools-for-free)! Microsoft acquired Xamarin, Miguel de Icaza's company, not long ago. They built open-source .NET through pure reverse engineering, reimplementing everything as open source, and now Microsoft did the smart thing: on top of buying them, it opened the tools. The last thing still keeping a developer on the Mac was needing Xcode, which ships with OS X, to develop for iOS. Now you can do that on Windows for free.
 
-With [Windows 10 Anniversary Update](http://arstechnica.com/information-technology/2016/03/windows-10-270-million-users-binbash-supporting-anniversary-update-coming-summer/) we will **possibly** be able to natively do the following in a cmd.exe console:
+So the math got much simpler. Windows 10 is the first respectable Windows version since the brief window of 7. Let's forget Windows 8 existed, the same way we already forgot Vista. XP is finally dead, it took over a decade, along with the hideous Internet Explorer 6, 7, and 8. Google did us the favor of making Chrome ubiquitous, and services like Facebook forced users to migrate faster.
+
+With the [Windows 10 Anniversary Update](http://arstechnica.com/information-technology/2016/03/windows-10-270-million-users-binbash-supporting-anniversary-update-coming-summer/), we'll probably be able to do:
 
 ```
-bash
 apt-get install build-essential
 \curl -sSL https://get.rvm.io | bash
 rvm install 2.3.0
 bundle install
 ```
 
-And it should just work!
+And it should just work.
 
-In the very same environment we will be able to use Xamarin Studio and with some effort to remember C# from our muscle memory we should be able to create iOS and Android apps in no time. And we can use Office 365, alongside all the most recent versions of Adobe CS6 apps, and finally, we can play The Division over Steam, just for fun, on the very same machine!
+In the same environment, we'll still be able to use Xamarin Studio and, with a little effort to jog the C# muscle memory, build iOS and Android apps. We'll be able to use native Office 365, all the latest Adobe CS6 tools, and even play The Division, all on the same machine.
 
-In one single day, Microsoft has made Windows 10 the most compelling choice for developers. And with manufacturers finally nailing Macbook levels of machining and refinement with the incredible Surface Book or Razer Blade Stealth or even the Lenovo Yoga 3, the math is becoming more and more beneficial to Microsoft.
+In one shot, Windows 10 becomes the best value choice: convenience of use, development options, and competent hardware in the form of the Surface Book, Lenovo Yoga 3, and Razer Blade Stealth, which finally caught up to and passed the legendary finish of the MacBook.
 
-So, 2016 is finally the so ill-called "Year of Linux on the Desktop", just not as the Free Software folk idealized. But hey, we can't have everything. I think it's a good enough compromise. This is a very risky gambit, but if Microsoft actually deliver all this, I'm ready to leave OS X.
-
-<blockquote>
-"The Times They Are a-Changin"
-</blockquote>
+2016 is finally the infamous Year of Linux on the Desktop, just not the way the Free Software crowd wanted. You can't have everything.
