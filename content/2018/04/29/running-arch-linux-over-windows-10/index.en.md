@@ -23,7 +23,7 @@ Bear with me here, if you just want to see how the performance compares to my VM
 
 Anyway, in the case of distros. Serious Linux users would prefer better alternatives. Enter this GitHub repository:
 
-[![screenfetch of arch](https://raw.githubusercontent.com/wiki/yuk7/WSL-DistroLauncher/img/Arch_Alpine_Ubuntu.png)](https://github.com/yuk7/ArchWSL)
+[![screenfetch of arch](http://web.archive.org/web/20221226012212/https://raw.githubusercontent.com/wiki/yuk7/WSL-DistroLauncher/img/Arch_Alpine_Ubuntu.png)](https://github.com/yuk7/ArchWSL)
 
 You just download [this zip file](https://github.com/yuk7/ArchWSL/releases/latest), unzip it and run the included `Arch.exe`. And that's about it!
 

@@ -57,7 +57,7 @@ Even with this size, one thing you will notice right away is that our public tra
 
 It's important to understand the geographic map. The map below shows the Greater São Paulo metropolitan group:
 
-![Greater São Paulo](http://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Mapa-RMSP-subregions.svg/800px-Mapa-RMSP-subregions.svg.png)
+![Greater São Paulo](http://web.archive.org/web/20260504185733/https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Mapa-RMSP-subregions.svg/800px-Mapa-RMSP-subregions.svg.png)
 
 São Paulo City is the big grey area in the middle. When you land here, you will be at Guarulhos International Airport (GRU) in Guarulhos City, which is outside of São Paulo. It's one of the green cities in the north. You will have to go through a 40 to 50 minutes ride (without traffic) to go downtown.
 

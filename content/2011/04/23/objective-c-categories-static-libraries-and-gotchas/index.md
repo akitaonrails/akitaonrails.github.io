@@ -28,7 +28,7 @@ Eu venho brincando com formas de reorganizar o meu projeto e percebi que estava 
 
 Se você ficar criando novos targets manualmente, o XCode 4 também vai criar um monte de Schemes que você nem precisa. Eu mantenho os meus limpos com apenas o scheme Rubyfication. Você pode acessar o menu “Product” e a opção “Edit Scheme”. Aí o meu Scheme fica assim:
 
-![](http://s3.amazonaws.com/akitaonrails/assets/2011/4/23/Screen%20shot%202011-04-23%20at%2011.26.25%20PM_original.png?1303611943)
+<!-- broken image (host offline/expired): http://s3.amazonaws.com/akitaonrails/assets/2011/4/23/Screen%20shot%202011-04-23%20at%2011.26.25%20PM_original.png -->
 
 Eu costumo configurar todos os meus build settings pra usar “LLVM Compiler 2.0” pras configurações de Debug e “LLVM GCC 4.2” pras configurações de Release (na verdade, eu faço isso por precaução porque não sei se o pessoal está realmente fazendo deploy de binários em produção compilados com LLVM).
 
@@ -96,6 +96,6 @@ Levou algumas horas de pesquisa, mas finalmente descobri uma flag simples que mu
 
 Então todo target que depende de static libraries externas que carregam Categories tem que adicionar essa flag <tt>-all_load</tt> em “Other Linker Flags”, na categoria “Linking” dentro de “Build Settings” do target, assim:
 
-![](http://s3.amazonaws.com/akitaonrails/assets/2011/4/23/Screen%20shot%202011-04-23%20at%2011.41.27%20PM_original.png?1303613619)
+<!-- broken image (host offline/expired): http://s3.amazonaws.com/akitaonrails/assets/2011/4/23/Screen%20shot%202011-04-23%20at%2011.41.27%20PM_original.png -->
 
 Então tanto o meu target <tt>RubyficationTests</tt> quanto o <tt>Rubyfication</tt> tiveram que receber essa nova flag. E agora todos os testes passam sem problema!

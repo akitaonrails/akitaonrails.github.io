@@ -82,7 +82,7 @@ Of course, we had shortcomings. Unfortunately, we were not able to add breakfast
 
 If your company wants to sponsor those missing items, please [contact us](mailto:contact@theconf.com.br).
 
-![Centro de Convenções Rebouças](https://instagram.fcgh4-1.fna.fbcdn.net/t51.2885-15/e35/22157202_492261374479959_148029015679041536_n.jpg)
+<!-- broken image (host offline/expired): https://instagram.fcgh4-1.fna.fbcdn.net/t51.2885-15/e35/22157202_492261374479959_148029015679041536_n.jpg -->
 
 ### Did it work?
 
@@ -102,7 +102,7 @@ The website is called "theconf.club" because the idea is not to create a monopol
 
 This is already one immediate result that I hope more people copy: ["São Paulo Programming Meetup in English"](https://www.meetup.com/Sao-Paulo-Programming-Meetup-in-English/). It doesn't matter how you do it. If it's a 100 people event, or even if it's a 5 people gathering whether it's a public meetup or a private tech talk in your company or college. Just do it! Start practicing.
 
-![Unb](https://instagram.fcgh4-1.fna.fbcdn.net/t51.2885-15/e35/21985219_837480253092835_2227901374404755456_n.jpg)
+<!-- broken image (host offline/expired): https://instagram.fcgh4-1.fna.fbcdn.net/t51.2885-15/e35/21985219_837480253092835_2227901374404755456_n.jpg -->
 
 Why do I incur so much financial "loss" and hard work far exceeding my job description? Take a very close look at this photo. They are students from Brasilia University. They drove **15 hours** to come see this event. Those are the only kind of people I care about whenever I think it's too hard.
 

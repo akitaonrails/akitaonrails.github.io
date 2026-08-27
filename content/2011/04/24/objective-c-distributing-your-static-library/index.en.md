@@ -15,7 +15,7 @@ If you didn't read my [last](http://www.akitaonrails.com/2011/04/23/objective-c-
 
 Most of this was based on [Cocoanetics](http://www.cocoanetics.com/2010/04/universal-static-libraries/) article about universal static libraries. So, if you've paid attention to my [previous article](http://www.akitaonrails.com/en/2011/04/23/objective-c-categories-static-libraries-e-pegadinhas), you saw this screenshot:
 
-![](http://s3.amazonaws.com/akitaonrails/assets/2011/4/23/Screen%20shot%202011-04-23%20at%2011.41.27%20PM_original.png?1303613619)
+<!-- broken image (host offline/expired): http://s3.amazonaws.com/akitaonrails/assets/2011/4/23/Screen%20shot%202011-04-23%20at%2011.41.27%20PM_original.png -->
 
 I said that I only had these targets configured: CocoaOniguruma, Kiwi, Rubyfication and RubyficationTests. But there are 3 others: CocoaOniguruma SIM, Rubyfication SIM, and Build & Merge Libraries. The reason is simple:
 

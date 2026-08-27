@@ -13,7 +13,7 @@ draft: false
 
 
 
- ![](http://uploads.en.oreilly.com/1/event/24/rails2009_125x125.jpg)
+ <!-- broken image (host offline/expired): http://uploads.en.oreilly.com/1/event/24/rails2009_125x125.jpg -->
 
 Vou embarcar do Brasil às 22h55 no horário local e devo chegar em Las Vegas amanhã, domingo, por volta das 13h15. Vou ficar hospedado no [Stratosphere Hotel](http://stratospherehotel.com), um pouco longe do Hilton.
 

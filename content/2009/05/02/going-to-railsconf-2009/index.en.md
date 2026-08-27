@@ -11,7 +11,7 @@ draft: false
 
 
 
- ![](http://uploads.en.oreilly.com/1/event/24/rails2009_125x125.jpg)
+ <!-- broken image (host offline/expired): http://uploads.en.oreilly.com/1/event/24/rails2009_125x125.jpg -->
 
 I will depart from Brazil at 10:55PM local time and should be arriving in Las Vegas tomorrow, Sunday, around 1:15PM. I will be staying at the [Stratosphere Hotel](http://stratospherehotel.com), a little far from the Hilton.
 

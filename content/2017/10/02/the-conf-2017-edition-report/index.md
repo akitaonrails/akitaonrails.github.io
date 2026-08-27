@@ -84,7 +84,7 @@ Claro que tivemos limitações. Infelizmente não conseguimos oferecer café da 
 
 Se sua empresa quiser patrocinar esses itens que ficaram de fora, [entre em contato](mailto:contact@theconf.com.br).
 
-![Centro de Convenções Rebouças](https://instagram.fcgh4-1.fna.fbcdn.net/t51.2885-15/e35/22157202_492261374479959_148029015679041536_n.jpg)
+<!-- broken image (host offline/expired): https://instagram.fcgh4-1.fna.fbcdn.net/t51.2885-15/e35/22157202_492261374479959_148029015679041536_n.jpg -->
 
 ### Funcionou?
 
@@ -104,7 +104,7 @@ O site se chama "theconf.club" porque a ideia não é criar um monopólio de eve
 
 Esse já é um resultado imediato que espero que mais pessoas copiem: ["São Paulo Programming Meetup in English"](https://www.meetup.com/Sao-Paulo-Programming-Meetup-in-English/). Não importa como você faz. Seja um evento de 100 pessoas ou uma reunião de 5, um meetup público ou uma palestra técnica interna na sua empresa ou faculdade. Só faça! Comece a praticar.
 
-![UnB](https://instagram.fcgh4-1.fna.fbcdn.net/t51.2885-15/e35/21985219_837480253092835_2227901374404755456_n.jpg)
+<!-- broken image (host offline/expired): https://instagram.fcgh4-1.fna.fbcdn.net/t51.2885-15/e35/21985219_837480253092835_2227901374404755456_n.jpg -->
 
 Por que eu banco tanto "prejuízo" financeiro e trabalho muito além da minha descrição de cargo? Olhe bem para essa foto. São estudantes da Universidade de Brasília. Eles viajaram **15 horas** para ver esse evento. São exatamente essas pessoas que me vêm à cabeça sempre que acho que está difícil demais.
 

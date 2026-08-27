@@ -59,7 +59,7 @@ Mesmo com essa dimensão, uma coisa que você vai notar rapidamente é que o tra
 
 É importante entender o mapa geográfico. O mapa abaixo mostra o agrupamento metropolitano da Grande São Paulo:
 
-![Grande São Paulo](http://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Mapa-RMSP-subregions.svg/800px-Mapa-RMSP-subregions.svg.png)
+![Grande São Paulo](http://web.archive.org/web/20260504185733/https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Mapa-RMSP-subregions.svg/800px-Mapa-RMSP-subregions.svg.png)
 
 A cidade de São Paulo é a grande área cinza no centro. Quando você pousar aqui, chegará ao Aeroporto Internacional de Guarulhos (GRU), na cidade de Guarulhos, que fica fora de São Paulo. É uma das cidades verdes ao norte. Você precisará de 40 a 50 minutos de trajeto (sem trânsito) para chegar ao centro.
 

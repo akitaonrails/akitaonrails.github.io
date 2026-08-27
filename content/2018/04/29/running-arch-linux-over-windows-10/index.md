@@ -25,7 +25,7 @@ Mas se você quiser apenas ver como está a performance comparada ao meu setup c
 
 Voltando ao assunto das distros: usuários sérios de Linux preferem alternativas melhores. Eis o repositório no GitHub:
 
-[![screenfetch of arch](https://raw.githubusercontent.com/wiki/yuk7/WSL-DistroLauncher/img/Arch_Alpine_Ubuntu.png)](https://github.com/yuk7/ArchWSL)
+[![screenfetch of arch](http://web.archive.org/web/20221226012212/https://raw.githubusercontent.com/wiki/yuk7/WSL-DistroLauncher/img/Arch_Alpine_Ubuntu.png)](https://github.com/yuk7/ArchWSL)
 
 Você baixa [esse arquivo zip](https://github.com/yuk7/ArchWSL/releases/latest), descompacta e executa o `Arch.exe` incluso. Só isso!
 
