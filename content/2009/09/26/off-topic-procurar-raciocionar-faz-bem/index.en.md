@@ -2,7 +2,8 @@
 title: "[Off-Topic] Thinking Makes You Better"
 date: '2009-09-26T16:17:00-03:00'
 slug: off-topic-procurar-raciocionar-faz-bem
-description: "A reflection on pair programming, responsibility, and disagreements between Spolsky and Bob Martin argues for testing Agile practices, understanding their reasons, and rejecting dogma."
+translationKey: off-topic-procurar-raciocionar-faz-bem
+description: "Pair programming needs an active pilot and co-pilot, Agility is accountability, and the Spolsky versus Bob Martin spat becomes a case for testing Agile practices, grasping their reasons, and refusing dogma."
 tags:
 - software-engineering
 - agile
@@ -12,84 +13,123 @@ draft: false
 
 [![Rails Summit 2009](http://railssummit.com.br/imgs/43/original/728x90.gif)](http://www.railssummit.com.br?utm_campaign=Railssummit&utm_source=banner_parceiros&utm_medium=banner&utm_content=por_728x90)
 
-This week some interesting articles emerged, all related in some way to "Agile" software development thinking.
+A few interesting articles showed up this week, all tied in some way to "Agile" software development thinking.
 
  ![](http://s3.amazonaws.com/akitaonrails/assets/2009/9/26/Screen_shot_2009-09-26_at_6.51.42_PM_original.png)
 
-The first, which I thought was very good, was [10 Reasons Why Pair Programming Is Not for the Masses](http://blog.obiefernandez.com/content/2009/09/10-reasons-pair-programming-is-not-for-the-masses.html) that Obie Fernandez wrote about his own experience with pair programming and why it is difficult to implement in most places.
+The first, which I really liked, was [10 Reasons Pair Programming Is Not For the Masses](http://web.archive.org/web/20090927081120/http://blog.obiefernandez.com/content/2009/09/10-reasons-pair-programming-is-not-for-the-masses.html), where Obie Fernandez writes about his own experience with pairing and why it is hard to pull off in most shops.
 
-These points boil down to physical limitations (cubicles are so twentieth century...), corporate conventions still in vogue (interviews done by HR based on resume, prioritizing certification, for example). For me, two of the most important points are the 6th and the 2nd. As with any concept, interpreted the wrong way, it will give wrong results.
+The points boil down to physical limits (cubicles are so twentieth century...) and corporate conventions still in fashion, like HR interviews built around résumés and certifications. For me, the two most important are #2 and #6. Like any concept, read the wrong way, it gives you the wrong results.
 
-The first thing a programmer needs to understand about pair programming is that there are always pilot and co-pilot. There's the image that the pilot is the productive individual at that moment and the co-pilot just looks and follows, passive, silent. Far from it: this is the wrong way to pair and is the way that, correctly, non-programmers (managers, etc.) imagine they're paying for 2 people but getting only 1's service. In pair programming, **both** must necessarily be participating. The co-pilot must be alert to the pilot's errors. The co-pilot must be thinking ahead, already imagining better alternatives, they must both be engaged in finding the best solutions. More than that: the keyboard and mouse must be able to switch hands constantly. There is no pairing where the co-pilot spends the whole day just watching. If the co-pilot is passive and silent, the pilot is flying alone, it's as if he were alone, period.
+The first thing a programmer has to understand about pairing is that there is always a pilot and a co-pilot. The common picture has the pilot doing the work while the co-pilot just watches along, passive and silent. That is the wrong way to pair, and it is exactly the picture that lets a manager think he is paying for two people and getting the work of one.
+
+In pair programming, both are in it the whole time. The co-pilot watches for the pilot's mistakes, thinks ahead, and is already imagining better options. On top of that, the keyboard and mouse should keep changing hands. There is no such thing as pairing where the co-pilot spends the day just looking on. If he goes passive and quiet, the pilot is flying solo, period.
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2009/9/26/ying_eric_pair_programming_original.jpg)
 
-There are at least two types of pairs: where both are reasonably equivalent in terms of capabilities or where one of the two is less experienced or has somewhat different capabilities. In the first case, the dynamics must be more obvious, ideas will bounce off each other more, they will be able to decide things more quickly. In the second case, one of them has the goal of learning quickly. More than that, the one who knows less has the obligation to take more risks, always under the supervision of the more experienced. And he must never be passive, he must seek knowledge outside when they're not pairing, and he must never expect that everything he will learn is the pilot's obligation to teach. That's wrong: the one who knows less is the one who always has the obligation to chase after it, or else assume that he won't succeed and give up the position.
 
-Remembering that the fundamental value of Agility is called _"Accountability"_, I can't translate that literally to Portuguese, but it would be something beyond "responsible." An Agile team is a team that is consciously "accountable" for what they do. When they decide, together with the client, the product owner, about the Sprint Backlog, for example, they are not receiving "orders" like "_this sprint will have these 10 user stories because the boss ordered it._" No, the team that commits to 10 stories is actually "committing," that is, they are aware of their speed, their capabilities and their weaknesses and make a rational decision based on that. A team that later says "_we couldn't deliver because they asked too much,_" is shirking their responsibility. They should have said at the beginning, "_no, we'll only be able to do 8 of these user stories, 10 is too much._" Agreed doesn't get expensive. It's all about getting expectations right and negotiating, collaborating to find the best solution, not "any" solution.
+There are at least two kinds of pair: one where both have roughly the same skills, and one where a person is less experienced or simply brings something different. In the first case the dynamic is more obvious, ideas bounce around more, decisions come faster.
+
+In the second case, one of them is there to learn fast, and the one who knows less has an obligation to take more risks, always under the more experienced one's watch. He can never be passive: he has to go find knowledge on his own, away from the pairing sessions, and never expect the pilot to teach him everything. The one who knows less is the one who chases it down, or else admits it won't work and gives up the seat.
+
+Worth remembering that the core value of Agility is called _"accountability."_ It doesn't translate cleanly into Portuguese, but it is something beyond "responsible." An Agile team is consciously accountable for what it does.
+
+When it settles the Sprint Backlog together with the client and the product owner, it isn't taking orders like _"this sprint gets these 10 user stories because the boss said so."_ A team that commits to 10 stories is genuinely committing: it knows its own velocity, its strengths and its weaknesses, and decides based on that.
+
+A team that later says _"we couldn't deliver because they asked for too much"_ is dodging its responsibility. It should have said, up front, _"no, we can only do 8 of these stories, 10 is too many."_ A deal set in advance is cheap. It is all about setting expectations, negotiating, and working together toward the best solution, not just any solution.
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2009/9/26/pair_programming_original.jpg)
 
-The same applies in the reduced world between 2 programmers pairing. Both need to be committed to what they're producing and to their colleague. If one of them is less experienced, he should not be the dead weight. On the other hand, of course, if the more experienced sees that the other is trying, he should help him. There is a limit, of course, between "helping" and "carrying on one's back." Here honesty applies, and that's why there's a phase at the end of the Sprint called "Retrospective," it's exactly the moment to discuss this and leave everything open, out in the open. "_I don't like the fact that I'm producing alone, while my partner isn't helping._"
+The same holds in the smaller world of two programmers pairing. Both have to be committed to what they are producing and to each other. If one is less experienced, he can't be dead weight; and if the more experienced one sees the other is trying, he should help.
 
-Pair Programming, by itself, is just a technique. But remember that before that there are the values of the [Agile Manifesto](http://agilemanifesto.org/). Everyone always forgets: _"Individuals and Interactions over Processes and Tools."_ If you're still asking yourself "_which Agile techniques should I choose to use_," you still haven't gotten it. Above all: are you committed to your project? Is your team committed to the project and to their peers? What are the problems you want to solve? Agility, by itself, is not a magic recipe. It has purposes, if you're not aiming at these purposes, but just randomly choosing 2 or 3 practices, that doesn't make you Agile, that just makes you random.
+There is a line between helping and carrying someone on your back. This is where honesty comes in, and that is what the Retrospective at the end of the Sprint is for: the moment to put everything out in the open. _"I don't like producing on my own while my partner isn't helping."_
+
+Pair programming, on its own, is just a technique. Before it come the values of the [Agile Manifesto](http://agilemanifesto.org/), and everyone forgets the first one: _"Individuals and Interactions over Processes and Tools."_
+
+If you are still asking yourself "which Agile techniques should I pick," you still don't get it. First things first: are you committed to your project? Is your team committed to the project and to each other? What problems are you trying to solve?
+
+Agility is not a magic recipe. It has a purpose. If you aren't aiming at that purpose and just grab two or three practices at random, that doesn't make you Agile, only random.
 
  ![](http://s3.amazonaws.com/akitaonrails/assets/2009/9/26/493px-Joel_spolsky_on_20_sept_2007_original.jpg)
 
-Then comes Joel Spolsky's article on [The Duct Tape Programmer](http://www.joelonsoftware.com/items/2009/09/23.html). In this article he celebrates a programmer named Jamie Zawinski, indeed a great programmer, who worked at Netscape producing software that helped change the world, literally. Zawinski, according to Spolsky, is the type "_let's ship software as fast as possible, no matter how._" and also the type "_unit tests are beautiful, but when the deadline is tight, what matters is to ship fast, and tests get in the way._" Read the wrong way, it becomes an excuse for bad programmers to say: "_Yay! I'm confirmed! Joel Spolsky said it's beautiful to be a cowboy programmer!_" Worse still: "_Joel Spolsky said I don't need to worry about tests._"
+Then comes Joel Spolsky's piece, [The Duct Tape Programmer](http://www.joelonsoftware.com/items/2009/09/23.html). In it, Spolsky celebrates Jamie Zawinski, a great programmer who worked at Netscape shipping software that helped change the world, literally.
 
-Before jumping to any precipitate conclusion — damn "fast-food" generation — read the response to this post written by the good and old [Uncle Bob Martin](http://blog.objectmentor.com/articles/2009/09/24/the-duct-tape-programmer) where he refutes these arguments. In reality Spolsky and Bob have already "clashed" a few times in the past when in a podcast [Spolsky belittled TDD and SOLID principles](http://www.infoq.com/news/2009/02/spolsky-vs-uncle-bob).
+Zawinski, per Spolsky, is the _"let's ship as fast as possible, no matter how"_ type, and the _"unit tests are nice, but when the deadline bites what matters is shipping, and tests get in the way"_ type. Read the wrong way, that becomes a permission slip for the bad programmer to say: _"Yes! Joel Spolsky confirmed that being a cowboy is beautiful!"_ Or worse: _"Spolsky said I don't need to worry about tests."_
 
-Robert Martin, if you don't know him, was the one who originated the meeting of about 10 years ago, together with the main thinkers in software development like Kent Beck, Martin Fowler, Dave Thomas, Jeff Sutherland, among so many others, that gave rise to the Agile Manifesto. He is an active programmer since before any of us were even born and still programs today. And I'm not saying a senior who only programs in Cobol, quite the contrary, who has gone through the main technological platforms, understands object-oriented programming like no one else, programs in Java, and is a defender of [Clean Code](http://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882). In fact, if you are a Github user, you can find some of [Bob's projects](http://github.com/unclebob) there too.
+Before you jump to some rushed conclusion, and damn this fast-food generation, read the response written by good old [Uncle Bob Martin](http://blog.objectmentor.com/articles/2009/09/24/the-duct-tape-programmer), where he takes those arguments apart. Spolsky and Bob have gone at it before: on a podcast, [Spolsky belittled TDD and the SOLID principles](http://www.infoq.com/news/2009/02/spolsky-vs-uncle-bob).
 
-Some time ago, I would probably have been [cursing and cursing](/2006/9/27/flame-war-joel-spolsky-vs-rails) Spolsky, but I think I understand his position. Giving the context, Spolsky is indeed a great businessman, has a successful company, with successful niche products, doesn't fail to be an earlier generation 37signals. Ex-Microsoft employee, he was one of the people responsible for the existence of Visual Basic for Applications, which to this day is the heart of Excel and the darling of any accountant, analyst, etc. who basically can't live without Excel macros. Together with Jeff Atwood he maintains the famous site [StackOverflow](http://stackoverflow.com/). Besides that he has the excellent book [Joel on Software](http://www.amazon.com/Joel-Software-Occasionally-Developers-Designers/dp/1590593898).
+In case you don't know him, Robert Martin is the one who called the meeting, about eight years ago, that gave rise to the Agile Manifesto, alongside the field's biggest names, people like Kent Beck, Martin Fowler, Dave Thomas, and Jeff Sutherland. He has been programming since before a lot of us here were even born, and he is still at it today.
+
+And I don't mean some senior who only touches Cobol. He has been through the major platforms, understands object orientation like few others, programs in Java, and champions [Clean Code](http://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882). If you use GitHub, you'll find some of [Bob's projects](http://github.com/unclebob) there too.
+
+Some time ago I probably would have been [cursing and damning](http://web.archive.org/web/20091002042618/http://www.akitaonrails.com:80/2006/9/27/flame-war-joel-spolsky-vs-rails) Spolsky, but I think I get where he stands. Spolsky is a serious businessman, with a company and successful niche products, practically an earlier-generation 37signals.
+
+Ex-Microsoft, he was one of the people behind the existence of Visual Basic for Applications, which to this day is the heart of Excel and the apple of every accountant's and analyst's eye who can't live without those macros. With Jeff Atwood, he runs [StackOverflow](http://stackoverflow.com/). And he wrote the excellent [Joel on Software](http://www.amazon.com/Joel-Software-Occasionally-Developers-Designers/dp/1590593898).
 
  ![](http://s3.amazonaws.com/akitaonrails/assets/2009/9/26/photo_martin_r_original.jpg)
 
-At this point I'm assuming I don't need to explain to you what [Agility](http://en.wikipedia.org/wiki/Agile_software_development) is, nor what some of the main good practices of [Extreme Programming](http://www.extremeprogramming.org/) are, nor what the [SOLID principles](http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod) of Bob Martin are. I'm also assuming you've read at least some of [Spolsky's articles](http://www.joelonsoftware.com/) to get an idea of what he usually talks about.
+At this point I'll assume I don't have to explain what [Agility](http://en.wikipedia.org/wiki/Agile_software_development) is, nor the good practices of [Extreme Programming](http://www.extremeprogramming.org/), nor Bob Martin's [SOLID principles](http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod). I'll also assume you've read at least a few of Spolsky's [articles](http://www.joelonsoftware.com/) to get a sense of what he tends to say.
 
-Normally an agilist looks like he's in a position of "convincing" others of why being agile is better. More than that: that being "agile" and being "fast" are not synonyms. Being fast is a side effect of being agile. These interpretations are subtle.
+An agilist usually looks like he's trying to "convince" everyone that being agile is better. And that agility and speed are two different things: speed is a side effect of agility. The reading is subtle.
 
-That's why what I curse is the fast-food generation: a generation that got used to thinking that things are simple and superficial. That it's enough to buy a "lose weight in 7 days" book to actually lose weight. Surprise: if this kind of thing really worked, there would be no obese people in the world. Duh.
+What I do curse is the fast-food generation, used to thinking everything is simple and shallow. That buying a "lose weight in 7 days" book is enough to actually lose the weight. If that kind of thing worked, there would be no obese people in the world. Duh.
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2009/9/26/BurningTheWitch_original.jpg)
 
-This same generation reads what Spolsky says and, superficially, comes to the conclusions I mentioned above: "_Spolsky agrees I should be a cowboy._" And I think many of us, agilists, are victims of this too. In the haste to answer this superficiality, we even end up crossing the line. Bob Martin, for example, could have simply ignored this post instead of responding.
+That same generation reads Spolsky and, on the surface, lands on the conclusion I mentioned: _"Spolsky agrees I should be a cowboy."_ And we agilists fall for it too. In our rush to answer the shallowness, we sometimes go too far. Bob Martin, for instance, could have ignored the post instead of responding.
 
-Passive people, conformists, wait to be validated. They don't understand why they do what they do, they just do. Of course, they do what seems simplest to them, easiest, safest, and not what has a chance of being better, which could bring more benefits, or that is new. They want people to like them. It doesn't matter if they're doing the right things or not. It doesn't matter if there's a better way. That's why this thirst for validation. That's what I translated in the article [The Cult of Gray Morality](/2009/09/08/off-topic-o-culto-da-moral-cinzenta).
+Passive, conformist people wait to be validated. They don't understand why they do what they do, they just do it. They pick whatever seems simplest, easiest, safest, and not what stands a chance of being better or new.
 
-When someone of "caliber" — at least perceptible "caliber" — like Spolsky posts something like this, thousands of obviously bad programmers around the world feel validated, justified. It's a sad scenario.
+They want to be liked. It doesn't matter whether they're doing the right thing, or whether there's a better way. Hence the craving for validation. That is what I covered in the article [The Cult of Gray Morality](/en/2009/09/08/off-topic-o-culto-da-moral-cinzenta).
+
+When someone of Spolsky's perceived "caliber" posts something like this, thousands of plainly bad programmers around the world feel validated, justified. It's a sad picture.
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2009/9/26/BRILLIANT_original.jpg)
 
-And Spolsky is not wrong. What he puts in each of his articles are pieces of his own experience. Each piece, individually, means absolutely nothing. And it should not be taken literally. In fact, neither is what Bob Martin writes in an article. Nor even what I write in an article. The result of the sum of the parts is orders of magnitude greater than the simple sum of the individual values of each part. This is how chaos works.
+And Spolsky isn't wrong. Each of his articles carries a piece of his own experience. On its own, each piece means almost nothing, and shouldn't be taken literally. Neither should what Bob Martin writes. Neither should what I write.
 
-Both, Spolsky and Bob, are not antagonistic. What one says doesn't invalidate what the other says. That's the trick. Both are "pragmatic," at least according to William James's definition of Pragmatism, where something is true for a person if it has utility for her, regardless of whether that truth remains true for another person. (of course, there still exists Peirce and Dewey's interpretation of pragmatism, but that's another story). Both try to explain what they do that works for them. Within a context, within the understanding of the premises, within the understanding of the values, this might perhaps work for you too.
+The sum of the parts is orders of magnitude bigger than the sum of each one's individual value. That's how chaos works.
 
-What I mean is that what Spolsky says makes sense to him. What Bob Martin says makes sense to him. If what they say makes sense to me, or to you, that is **not** their problem, it's not their fault, it shouldn't even be in their interest. Likewise, don't use their names to justify what you do or say without understanding why you're saying it. "_I do TDD because Kent Beck said it's good_" is as bad to say as "_I do glue-code because Zawinski said it's better._"
+Spolsky and Bob aren't opposites. What one says doesn't invalidate the other, and that's the trick. Both are pragmatic, at least by William James's definition of pragmatism: something is true for a person if it is useful to her, whether or not it stays true for someone else. (There is still Peirce and Dewey's pragmatism, but that's another story.)
 
-You should say: "_I do TDD because I **know** what benefits it brings me._" Or, "_I do glue-code from time to time because I'm **aware** of the consequences this will bring me and accept paying the price for it._" Or, "_I don't do pair programming all the time because I've already **analyzed** and concluded that in my case it doesn't work very well._"
+Both are trying to explain what works for them. Within a context, understanding the premises and the values, it might work for you too.
 
-In fact, everything I say here — in my blog — are musing, personal reflections, that by chance find their way into written form. Some think I "_think I'm the owner of the truth._" Well, that's a problem for whoever thinks that, not mine.
+What Spolsky says makes sense to him. What Bob Martin says makes sense to him. If it makes sense to me, or to you, that's **not** their problem, not their fault, and shouldn't even be their concern. And don't use their names to justify what you do without understanding why. _"I do TDD because Kent Beck said it's good"_ is as bad as _"I write glue-code because Zawinski said it's better."_
 
-Truth be told: just as Bob says in his article, I don't do tests all the time, nor first tests as TDD dictates. I got to know Extreme Programming practices many years after I started as a programmer. I was an extremely cowboy programmer for most of my career. And, even understanding why all agile practices are good and why I should use them, I still reason where and when I should use what. Meaning, I understand the principles, the premises and the expected results. Otherwise this would be [dogmatization](http://en.wikipedia.org/wiki/Dogma) and, by definition, everything that is dogmatized is bad. **Dogmas are the source of all evil.** Everything must be questioned, tried, measured, analyzed and only then can some conclusion arise and, even then, it can be refuted in the future by new evidence. The opposite of Dogma or even Cargo Cult is the [Scientific Method](/2008/12/16/off-topic-m-todo-cient-fico-vs-cargo-cult) as I explained before.
+The right way to put it is: _"I do TDD because I **know** what it does for me."_ Or, _"I write glue-code now and then because I'm **aware** of the consequences and accept the price."_ Or, _"I don't pair all the time because I've **thought it through** and, in my case, it doesn't work well."_
+
+By the way, everything I write here on the blog is musing, personal reflection that happens to find its way into words. Some people think I "act like I own the truth." That's their problem, not mine.
+
+Truth be told: just like Bob says in his article, I don't test all the time either, much less test-first the way TDD dictates. I only learned Extreme Programming's practices many years after I started programming, and I was an extremely cowboy programmer for most of my career.
+
+Even knowing why the agile practices are good and why I should use them, I still reason about where and when to apply each one. I understand the principles, the premises, and the expected results. Otherwise it would turn into [dogmatization](http://en.wikipedia.org/wiki/Dogma), and every dogma is bad by definition. **Dogmas are the source of all evil.**
+
+Everything has to be questioned, tried, measured, and analyzed, and only then can a conclusion emerge, one that new evidence can still overturn. The opposite of dogma, or of cargo cult, is the [Scientific Method](/en/2008/12/16/off-topic-m-todo-cient-fico-vs-cargo-cult), as I explained before.
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2009/9/26/world-trade-center_original.jpg)
 
-Just because it was Martin Fowler who said it, doesn't make it an uncontested truth. Just because [Ward Cunningham](http://en.wikipedia.org/wiki/Ward_Cunningham) said it doesn't make it absolute truth. All of them, all of us, are human beings and, as such, we are very fallible. We fail, and we fail much more than we'd like.
+Just because Martin Fowler said it doesn't make it an uncontested truth. Just because [Ward Cunningham](http://en.wikipedia.org/wiki/Ward_Cunningham) said it doesn't make it absolute truth. All of them, all of us, are human, and humans fail. We fail far more than we'd like.
 
-In a world where people fail, what works best is collective knowledge, where one's possibility of error is compensated by the complementary intelligence of the other. That's why communities — only those that prioritize knowledge and evolution, of course — tend to be orders of magnitude less fallible than a single individual.
+In a world where people fail, what works best is collective knowledge, where one person's error is offset by another's complementary intelligence. That's why communities, at least the ones that prize knowledge and evolution, tend to be orders of magnitude less fallible than any single individual.
 
-If one individual has knowledge "A," if another individual has knowledge "B," neither of them has "total" knowledge, but the set of the two, the "community," has both knowledges. Alone they know only part of the information. However the "entity" called "community" is as close as we'll get to [omniscience](http://rubyurl.akitaonrails.com/SiAN).
+If one person holds knowledge "A" and another holds "B," neither has the whole, but the two together, the community, have both. Alone, each one knows only a slice. The entity we call a community is the closest we get to omniscience.
 
  ![](http://s3.amazonaws.com/akitaonrails/assets/2009/9/26/charles_darwin_l_original.jpg)
 
-By the way, sharing knowledge with others brings us benefits, and that's why we do it, not because we're purely altruistic. Giving without having anything to receive doesn't make sense, many give simply because it brings them "peace of mind" or "personal satisfaction." Very well, that's a kind of return, also works. People like Kent Beck, Martin Fowler, Ken Schwaber, are not "giving" anything. They're sharing, by helping to foster agile values, they receive back, either in the form of more knowledge, more recognition, more opportunities, etc. This leads us to good old Darwinian evolution, the only thing that effectively works for continuous improvement.
+Sharing knowledge brings us benefits, and that's why we do it, not out of pure altruism. Giving with nothing coming back doesn't hold up; plenty of people give because it brings them peace of mind or personal satisfaction, and that's already a kind of return.
 
-The goal is not to "sell" Agile. When I evangelize the Agile philosophy, I have no intention of convincing anyone to use it. I don't get dividends if more people use it. Some even charge me: "_if I use Agile, can you guarantee I'll get better results?_" And I answer, "_of course not, I guarantee nothing._" I share what works for me, if it's going to work for others is really not my problem. What I do hope, yes, is that whoever is using and discovers new things, share it so I can improve more too. And, of course, if someone gives me bad code, full of duct tape, with no tests, and expects me to live with that in silence, they're completely mistaken, because that doesn't work for me and I'm not going to stay quiet. Agreeing with Bob Martin, [Mess is Not Technical Debt, It's Just Mess](http://blog.objectmentor.com/articles/2009/09/22/a-mess-is-not-a-technical-debt)
+Kent Beck, Martin Fowler, and Ken Schwaber aren't "giving" anything. They're sharing: by fostering agile values, they get it back as knowledge, recognition, and opportunities. That's good old Darwinian evolution, the only thing that actually drives continuous improvement.
+
+The goal isn't to "sell" Agile. When I evangelize the agile philosophy, I have no intention of talking anyone into it, and I gain nothing if more people adopt it. People sometimes press me: _"if I use Agile, can you guarantee better results?"_ And I answer: _"of course not, I guarantee nothing."_
+
+I share what works for me; whether it works for others is really not my problem. What I do hope is that whoever uses it and discovers something new will share it back, so I can improve too.
+
+And of course, if someone hands me sloppy code, all duct tape and not a single test, and expects me to live with it in silence, they're dead wrong, because that doesn't work for me. Agreeing with Bob Martin: [A Mess Is Not Technical Debt, It's Just a Mess](http://blog.objectmentor.com/articles/2009/09/22/a-mess-is-not-a-technical-debt).
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2009/9/26/10commandments_original.jpg)
 
-Some tips: anything that is "_written in stone_," that is, something that one day was the summary of collective knowledge of a group, but that was immortalized in the form of a dogma, is bad. Because this, without a doubt, was useful for the people at the time it was written, but probably doesn't apply anymore today. For example, if we still follow 50-year-old software development dogmas, we're probably leaving things undone in the way that today's technology and knowledge allow. On the other hand, a body of knowledge that allows itself to evolve, refine, throw away what no longer works, add what we learn anew, has a much better chance of being right. The Agile community works more or less like this. The Open Source community works more or less like this. Neither is perfect, but it's the pursuit of perfection that makes the path more interesting.
+One tip: anything "written in stone," something that was once a group's collective knowledge but got frozen into a dogma, is bad. It was useful for the people of its time, but it probably doesn't hold up today. If we still followed the software development dogmas of 50 years ago, we'd be leaving on the table what today's technology and knowledge allow.
+
+A body of knowledge that lets itself evolve, refine, throw out what no longer works, and fold in what it learns has a far better shot at being right. The agile community works more or less like this. The open source community does too. Neither is perfect, but it's the pursuit of perfection that makes the road interesting.
 
 Be skeptical.
