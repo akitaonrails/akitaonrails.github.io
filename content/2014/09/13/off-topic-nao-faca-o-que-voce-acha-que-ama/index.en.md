@@ -2,6 +2,7 @@
 title: '[Off-Topic] DO NOT Do What You ("THINK") You Love'
 date: '2014-09-13T17:04:00-03:00'
 slug: off-topic-nao-faca-o-que-voce-acha-que-ama
+translationKey: off-topic-nao-faca-o-que-voce-acha-que-ama
 description: "I question “do what you love” and show how pursuing only what you think you love ignores responsibilities and unstable passions. My conclusion: seek Kaizen by always improving how you produce something useful."
 tags:
 - career
@@ -29,9 +30,9 @@ Apparently, the famous Confucius was the first to say the phrase that would beco
 "Do what you love and the money will follow."
 </blockquote>
 
-By the way, Confucius is kind of a generic for everything: don't know who said it? Say it's from Confucius. (And the usual disclaimer: just because I quoted people doesn't mean I agree with them or with everything they say — they're mere references!)
+By the way, Confucius is kind of a generic for everything: don't know who said it? Say it's from Confucius. (And the usual disclaimer: just because I quoted people doesn't mean I agree with them or with everything they say; they're mere references!)
 
-Besides Mark Cuban and Marc Andreessen, several others have raised the subject before — and I recommend you read ["Don't do what you love."](https://medium.com/@rachelnabors/dont-do-what-you-love-41312c943e2) by cartoonist Rachel Nabors, where she concludes with a new phrase:
+Besides Mark Cuban and Marc Andreessen, several others have raised the subject before, and I recommend you read ["Don't do what you love."](https://medium.com/@rachelnabors/dont-do-what-you-love-41312c943e2) by cartoonist Rachel Nabors, where she concludes with a new phrase:
 
 <blockquote>
 "Just don't do what you hate."
@@ -43,19 +44,19 @@ On the renowned site Slate, Miya Tokumitsu also wrote ["In the Name of Love"](ht
 Elites embrace the "do what you love" mantra. But it devalues work and hurts workers.
 </blockquote>
 
-I have to say I was even a little surprised that this subject is also in Brazil. In March 2014, Daniela Carasco wrote the article ["5 reasons why 'do what you love' is not the solution"](http://exame.abril.com.br/carreira/noticias/5-razoes-pelas-quais-o-faca-o-que-ama-nao-e-uma-solucao) that was published by EXAME.com, talking about Bárbara Castro, a sociologist specialized in work issues and professor of the sociopsychology course at the Fundação Escola de Sociologia e Política de São Paulo (FESPSP). And she also already identified the obvious that many still remain blind to:
+I have to say I was even a little surprised that this subject is also in Brazil. In March 2014, Daniela Carasco wrote the article "5 reasons why 'do what you love' is not the solution," published by EXAME.com, talking about Bárbara Castro, a sociologist specialized in work issues and professor of the sociopsychology course at the Fundação Escola de Sociologia e Política de São Paulo (FESPSP). And she also already identified the obvious that many still remain blind to:
 
 <blockquote>
 According to her, the big problem with the "love what you do" narrative is that it's tied to a discourse of happiness that means "being at the top of the rollercoaster all the time." As if a normal, day-to-day, routine life couldn't be a life of satisfaction. All of this makes this scenario worrying.
 </blockquote>
 
-Finally, blogger Dani Arrais analyzed the subject in February 2014 in her post ["THE TRAP OF 'DO WHAT YOU LOVE'"](http://contente.vc/blog/a-armadilha-do-faca-o-que-voce-ama/), who coincidentally is also a friend of the same sociologist Bárbara Castro (something tells me I should try to meet her), and she says:
+Finally, blogger Dani Arrais analyzed the subject in February 2014 in her post ["THE TRAP OF 'DO WHAT YOU LOVE'"](http://web.archive.org/web/20140707104721/http://contente.vc/blog/a-armadilha-do-faca-o-que-voce-ama/), who coincidentally is also a friend of the same sociologist Bárbara Castro (something tells me I should try to meet her), and she says:
 
 <blockquote>
 Do we need to be happy all the time with the work we do? Even if we love what we do? Can't we suffer with the contradictions that this work imposes on us? Why can't we admit that it doesn't make sense? Who does this interest?
 </blockquote>
 
-You may be confused reading all this. I imagine the vast majority of my readers have always identified with the "Do what you love" mantra. After all, if you're on a blog that talks about Ruby and — with less emphasis — technology in general and Entrepreneurship, it's probably because you "love" the subjects of Ruby, Technology or Entrepreneurship.
+You may be confused reading all this. I imagine the vast majority of my readers have always identified with the "Do what you love" mantra. After all, if you're on a blog that talks about Ruby and, with less emphasis, technology in general and Entrepreneurship, it's probably because you "love" the subjects of Ruby, Technology or Entrepreneurship.
 
 And you probably read what I post because you assume that I'm "passionate" about these subjects. And here comes the important part:
 
@@ -74,7 +75,7 @@ But if that's the case, you might want to ask me:
 * Why so much effort traveling the country to evangelize these subjects? (more than 100 talks!)
 * Why so much effort creating a company? (6 years in consulting, 3 years in my own!)
 
-I'll try to answer at the end. And there's nothing wrong with what you think you like, love, or are passionate about. The idea of the article isn't to say why that's "wrong" — it's just the way the phrase is used that I want to explore within my own personal context.
+I'll try to answer at the end. And there's nothing wrong with what you think you like, love, or are passionate about. The idea of the article isn't to say why that's "wrong"; it's just the way the phrase is used that I want to explore within my own personal context.
 
 First of all, don't follow advice blindly. The first time I understood this concept consciously was watching the famous viral video from the beginning of the century, [Everybody's Free to Wear Sunscreen](https://www.youtube.com/watch?v=xfq_A8nXMsQ), where one of the parts says:
 
@@ -83,7 +84,7 @@ Be careful whose advice you buy, but be patient with those who supply it.
 </blockquote>
 
 <blockquote>
-Advice is a form of nostalgy. Dispensing it is a way of fishing the past from the disposal, wiping it off, painting over the ugly parts, and recycling it for more than it's worth.
+Advice is a form of nostalgia. Dispensing it is a way of fishing the past from the disposal, wiping it off, painting over the ugly parts, and recycling it for more than it's worth.
 </blockquote>
 
 That said, I don't want to advise you on what to do, but I want to explain a few points that may go unnoticed.
@@ -108,7 +109,7 @@ Phrases like that naturally lead to other self-help fallacies. One of the most f
 
 The Secret states that the law of attraction is a natural law that determines the complete order of the universe and our personal lives through the process of "like attracts like." The author claims that the way we think and feel, a matching frequency is sent to the universe and that attracts back events and circumstances of the same frequency. (...) and if you think positively, you'll attract positive events and circumstances. The proponents claim that desirable results like health, wealth, and happiness can be attracted by changing your thoughts and feelings.
 
-The idea of "doing what you love" is unequivocally linked with "thinking positive to attract positive," even though rationally trying things like "dropping everything to pursue what you love" — to work out — has the same odds as winning the lottery. And whoever thinks this way should look at the child in the photo below and tell them:
+The idea of "doing what you love" is unequivocally linked with "thinking positive to attract positive," even though, rationally, trying things like "dropping everything to pursue what you love" has the same odds of working out as winning the lottery. And whoever thinks this way should look at the child in the photo below and tell them:
 
 <blockquote>"You certainly aren't thinking positive enough."</blockquote>
 
@@ -136,15 +137,19 @@ You are passionate about or love many things at the same time. And this changes 
 
 **ONLY** following something that changes all the time is a race without purpose. And the only guaranteed result is that you'll get frustrated in a worse way.
 
-But does that mean we should ignore our passions? Of course not. I'm just saying that a life where you think it should be filled only with what you're passionate about and ignoring the rest of the world is an absolutely childish stance. It's like any child, so excited about the Nintendo 64, who goes days without bathing, without sleeping, without talking to anyone, without wanting to go to school, because they're deeply passionate about it. And, as we all know, it's the typical case where most will get bored in a few days and, in a few weeks, the so-passionate object of desire will be in a corner of the closet gathering dust. And the child will be in search of what to love next, every children's day, birthday, and Christmas.
+But does that mean we should ignore our passions? Of course not. I'm just saying that thinking your life should be filled only with what you're passionate about, ignoring the rest of the world, is an absolutely childish stance.
+
+It's like any child excited about the Nintendo 64, who goes days without bathing, without sleeping, without talking to anyone, without wanting to go to school, because they're deeply passionate about it. And, as we all know, most get bored in a few days. Weeks later, the so-passionate object of desire is in a corner of the closet gathering dust, and the child is already looking for what to love next, every children's day, birthday, and Christmas.
 
 <div class='embed-container'>{{< youtube id="pFlcqWQVVuU" >}}</div>
 
-Doing "ONLY" what you "THINK" you "LOVE" (note the emphases in this phrase) means simply ignoring the real world. Ignoring brushing your teeth, ignoring going to school, ignoring working, ignoring responsibilities — which is what every adult would call "still being a child."
+Doing "ONLY" what you "THINK" you "LOVE" (note the emphases in this phrase) means simply ignoring the real world. Ignoring brushing your teeth, ignoring going to school, ignoring working, ignoring responsibilities, which is what every adult would call "still being a child."
 
 ## Third, What Do I Love?
 
-Talking this way sounds like another cliché: that an adult is a child who has set their passions aside. And that's perhaps why the later evolution, where 30-year-old "adults" still try to be the same children they were, and this usually means being irresponsible, egocentric, anti-social, since the so-called "adult world" demands responsibility, collaboration, interaction, and commitments. No one "loves" that kind of thing, no one loves "negotiating middle ground." Every child wants all or nothing.
+Talking this way sounds like another cliché: that an adult is a child who has set their passions aside. That's perhaps where the later evolution comes from, with 30-year-old "adults" still trying to be the same children they once were.
+
+This usually means being irresponsible, egocentric, and anti-social, since the so-called "adult world" demands responsibility, collaboration, interaction, and commitments. No one "loves" that kind of thing, no one loves "negotiating middle ground." Every child wants all or nothing.
 
 If you're a reader who has followed me for the last 8 years, up to this post 1001 (which my friends have affectionately pre-nicknamed as the "Bombril post, of 1,001 uses"), maybe you have an idea of what I want to say now.
 
@@ -182,7 +187,7 @@ In the end, Ruby, programming, technology, projects, entrepreneurship, talks, bl
 
 If you've at least once heard of Agile, Lean, Kanban, Toyota (recurring themes on this blog), you'll remember the Japanese concept of [Kaizen (改善)](http://en.wikipedia.org/wiki/Kaizen) or "continuous improvement." For me it's something conscious. I remember as a kid seeing a very simple thing in an allegory: how does a ninja jump so high and even over a tree (in cartoons)? Simple: he starts by jumping a little bush on the ground, then a small shrub, and so on.
 
-Perfection isn't an achievable goal — continuous improvement is the infinite process for an unreachable goal. And what I love is the challenge of improving one aspect at a time in each of the capabilities I have today (programming, communicating, teaching, producing).
+Perfection isn't an achievable goal; continuous improvement is the infinite process for an unreachable goal. And what I love is the challenge of improving one aspect at a time in each of the capabilities I have today (programming, communicating, teaching, producing).
 
 My foundation is that I'm passionate about producing, and everything I produce is nothing more than a draft of the knowledge I have today, and always worse than I can produce tomorrow. My only, true "passion" is the certainty that I will never really be "good" and that I am today a little better than I was yesterday. That's all. It doesn't matter now whether I'm doing a programming project or writing this post or if tomorrow I decide to paint paintings.
 

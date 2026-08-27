@@ -2,6 +2,7 @@
 title: '[Off-Topic] NÃO Faça o que Você ("ACHA") que Ama'
 date: '2014-09-13T17:04:00-03:00'
 slug: off-topic-nao-faca-o-que-voce-acha-que-ama
+translationKey: off-topic-nao-faca-o-que-voce-acha-que-ama
 description: "Questiono o conselho “faça o que ama” e mostro como perseguir apenas o que você acha que ama ignora responsabilidades e paixões instáveis. Minha conclusão é buscar Kaizen: melhorar sempre o modo de produzir algo útil."
 tags:
 - carreira
@@ -31,7 +32,7 @@ Ao que indica, o famoso Confúcio disse pela primeira vez a frase que se tornari
 
 Aliás, Confúcio é meio que um genérico pra tudo: não sabe quem disse? Diga que é de Confucius. (Aliás, o disclaimer de sempre: só porque eu citei pessoas não significa que concordo com elas ou com tudo que dizem, são meras referências!)
 
-Além de Mark Cuban, Marc Andreessen, diversos outros já levantaram o assunto antes - e recomendo que você leia o ["Don’t do what you love."](https://medium.com/@rachelnabors/dont-do-what-you-love-41312c943e2) da cartunista Rachel Nabors, onde ela conclui como uma nova frase:
+Além de Mark Cuban, Marc Andreessen, diversos outros já levantaram o assunto antes, e recomendo que você leia o ["Don’t do what you love."](https://medium.com/@rachelnabors/dont-do-what-you-love-41312c943e2) da cartunista Rachel Nabors, onde ela conclui como uma nova frase:
 
 <blockquote>
 "Apenas não faça o que você odeia."
@@ -43,19 +44,19 @@ No reconhecido site Slate, Miya Tokumitsu também escreveu ["In the Name of Love
 Elites abraçam o mantra "faça o que ama". Mas isso desvaloriza o trabalho e machuca os trabalhadores.
 </blockquote>
 
-Devo dizer que fiquei até um pouco surpreso de que este assunto também esteja no Brasil. Em março de 2014, Daniela Carasco escreveu o artigo "5 razões pelas quais o ["faça o que ama" não é a solução"](http://exame.abril.com.br/carreira/noticias/5-razoes-pelas-quais-o-faca-o-que-ama-nao-e-uma-solucao) que foi publicado pela EXAME.com, falando de Bárbara Castro, socióloga especialista em questões do trabalho e professora do curso de sociopsicologia da Fundação Escola de Sociologia e Política de São Paulo (FESPSP). E ela também já identificou o óbvio que muitos ainda se mantém cegos a respeito:
+Devo dizer que fiquei até um pouco surpreso de que este assunto também esteja no Brasil. Em março de 2014, Daniela Carasco escreveu o artigo "5 razões pelas quais o 'faça o que ama' não é a solução", publicado pela EXAME.com, falando de Bárbara Castro, socióloga especialista em questões do trabalho e professora do curso de sociopsicologia da Fundação Escola de Sociologia e Política de São Paulo (FESPSP). E ela também já identificou o óbvio que muitos ainda se mantém cegos a respeito:
 
 <blockquote>
 Segundo ela, o grande problema da narrativa do “ame o que você faz” é que ela está vinculada a um discurso de felicidade que é “estar no topo da montanha russa o tempo inteiro”. Como se uma vida normal, cotidiana, rotineira não pudesse ser uma vida de satisfação. Tudo isso torna esse cenário preocupante.
 </blockquote>
 
-Finalmente, a blogueira Dani Arrais analisou o assunto em Fevereiro de 2014 em seu post ["A ARMADILHA DO “FAÇA O QUE VOCÊ AMA”"](http://contente.vc/blog/a-armadilha-do-faca-o-que-voce-ama/) que coincidentemente também é amiga da mesma socióloga Bárbara Castro (algo me diz que eu deveria procurar conhecê-la), e ela diz:
+Finalmente, a blogueira Dani Arrais analisou o assunto em Fevereiro de 2014 em seu post ["A ARMADILHA DO “FAÇA O QUE VOCÊ AMA”"](http://web.archive.org/web/20140707104721/http://contente.vc/blog/a-armadilha-do-faca-o-que-voce-ama/) que coincidentemente também é amiga da mesma socióloga Bárbara Castro (algo me diz que eu deveria procurar conhecê-la), e ela diz:
 
 <blockquote>
 A gente precisa ser feliz o tempo todo com o trabalho que a gente faz? Ainda que a gente ame o que a gente faça? Não podemos sofrer com as contradições que esse trabalho nos impõe? Porque não podemos assumir que ele não faz sentido? A quem isso interessa? 
 </blockquote>
 
-Você pode estar confuso lendo tudo isso, imagino que a grande maioria dos meus leitores sempre se identificou com o mantra do "Faça o que Ama". Afinal se está num blog que fala de Ruby e - em menor ênfase - tecnologia em geral e Empreendedorismo provavelmente é porque "ama" os assuntos Ruby, Tecnologia ou Empreendedorismo.
+Você pode estar confuso lendo tudo isso, imagino que a grande maioria dos meus leitores sempre se identificou com o mantra do "Faça o que Ama". Afinal, se está num blog que fala de Ruby e, em menor ênfase, de tecnologia em geral e empreendedorismo, provavelmente é porque "ama" os assuntos Ruby, Tecnologia ou Empreendedorismo.
 
 E provavelmente lê o que posto porque assume que eu seja "apaixonado" por esses assuntos. E aqui vem a parte importante:
 
@@ -64,7 +65,7 @@ E provavelmente lê o que posto porque assume que eu seja "apaixonado" por esses
 * Eu não amo tecnologia ou os equipamentos que compro
 * Eu não amo escrever ou o tempo que gasto nisso
 
-E sendo sincero, ao longo dos anos, por causa desse mantra tão repetido, tantas tentativas de lavagem cerebral, por algumas vezes eu quase sucumbi e acreditei nessa idéia, mas felizmente eu sempre consegui me trazer de volta. E eu não tenho nenhum problema em dizer que eu não amo nenhuma dessas coisas.
+E sendo sincero, ao longo dos anos, por causa desse mantra tão repetido, tantas tentativas de lavagem cerebral, por algumas vezes eu quase sucumbi e acreditei nessa ideia, mas felizmente eu sempre consegui me trazer de volta. E eu não tenho nenhum problema em dizer que eu não amo nenhuma dessas coisas.
 
 Mas se for assim, você poderia querer me perguntar:
 
@@ -74,7 +75,7 @@ Mas se for assim, você poderia querer me perguntar:
 * Por que tanto esforço em viajar o país para evangelizar esses assuntos? (mais de 100 palestras!)
 * Por que tanto esforço em criar uma empresa? (6 anos em consultoria, 3 anos na minha própria!)
 
-Vou tentar responder no final. E não há nada de errado com o que você acha que gosta, ama ou está apaixonado. A idéia do artigo não é dizer porque isso é "errado", é apenas a forma como a frase é usada que quero explorar dentro do meu próprio contexto pessoal.
+Vou tentar responder no final. E não há nada de errado com o que você acha que gosta, ama ou está apaixonado. A ideia do artigo não é dizer porque isso é "errado", é apenas a forma como a frase é usada que quero explorar dentro do meu próprio contexto pessoal.
 
 Antes de mais nada, não siga conselhos cegamente. A primeira vez que entendi esse conceito de forma consciente foi assistindo o famoso vídeo viral do começo do século, [Everybody's Free to Wear Sunscreen](https://www.youtube.com/watch?v=xfq_A8nXMsQ) onde um dos trechos diz o seguinte:
 
@@ -108,13 +109,13 @@ Frases como essa levam naturalmente a outras falácias da auto-ajuda. Uma das ma
 
 The Secret afirma que a lei da atração é uma lei natural que determina a ordem completa do universo e de nossas vidas pessoais através do processo de "igual atrai igual". A autora afirma a forma como pensamos e sentimos, uma frequência correspondente é enviada ao universo e isso atrai de volta eventos e circunstâncias da mesma frequência. (...) e você pensar positivamente, vai atrair eventos e circunstâncias positivas. Os proponentes clamam que resultados desejáveis como saúde, riqueza e felicidade podem ser atraídos mudando seus pensamentos e sentimentos.
 
-A idéia de "fazer o que ama" está inequivocadamente interligada com o "pensar positivo para atrair positivo", mesmo que racionalmente tentar coisas como "largar tudo pra perseguir o que ama", pra dar certo, tem as mesmas chances de ganhar na loteria. E quem pensa desta forma, deveria olhar pra criança da foto abaixo e dizer a ela:
+A ideia de "fazer o que ama" está inequivocadamente interligada com o "pensar positivo para atrair positivo", mesmo que racionalmente tentar coisas como "largar tudo pra perseguir o que ama", pra dar certo, tem as mesmas chances de ganhar na loteria. E quem pensa desta forma, deveria olhar pra criança da foto abaixo e dizer a ela:
 
 <blockquote>"Você certamente não está pensando positivo o suficiente."</blockquote>
 
 ![Criança com Fome](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/472/29261592-CA3A-44F4-B812-BC70D802F154_cx0_cy5_cw0_mw1024_s_n.jpg)
 
-Exagero? Nem tanto, é o mesmo resultado: você acreditou cegamente numa idéia, sem pensar nela. Fazemos isso todos os dias, e eu sei que é necessário um esforço consciente, grande, para não ser vítima disso. Eu mesmo já quase acreditei nessas idéias.
+Exagero? Nem tanto, é o mesmo resultado: você acreditou cegamente numa ideia, sem pensar nela. Fazemos isso todos os dias, e eu sei que é necessário um esforço consciente, grande, para não ser vítima disso. Eu mesmo já quase acreditei nessas ideias.
 
 Segure o que você quer trolar nos comentários neste instante: eu não estou dizendo que pensar positivo é errado, que perseguir seus sonhos é errado ou que fazer o que gosta é errado! Acompanhem até o final.
 
@@ -136,7 +137,9 @@ Você é apaixonado ou ama muitas coisas ao mesmo tempo. E isso muda com o tempo
 
 **APENAS** seguir algo que muda o tempo todo é uma corrida sem propósito. E o único resultado garantido é que você vai se frustrar de maneira pior. 
 
-Mas isso significa que deveríamos ignorar nossas paixões? Claro que não. Apenas estou dizendo que uma vida onde você acha que deve ser preenchida somente pelo que está apaixonado e ignorar todo o resto do mundo, é uma postura absolutamente infantil. É como qualquer criança, tão empolgada pelo Nintendo 64, que passa dias sem tomar banho, sem dormir, sem falar com ninguém, sem querer ir pra escola, porque está profundamente apaixonado por isso. E, como todos sabemos, é o típico caso onde a maioria vai enjoar em alguns dias e, daqui algumas semanas, o tão apaixonante objeto de desejo estará num canto do armário pegando pó. E a criança estará em busca do que amar em seguida, em todo dia das crianças, aniversário e Natal.
+Mas isso significa que deveríamos ignorar nossas paixões? Claro que não. Só estou dizendo que achar que a vida deve ser preenchida somente pelo que te apaixona, ignorando todo o resto do mundo, é uma postura absolutamente infantil.
+
+É como qualquer criança empolgada com o Nintendo 64, que passa dias sem tomar banho, sem dormir, sem falar com ninguém e sem querer ir pra escola, porque está profundamente apaixonada por aquilo. E, como todos sabemos, a maioria enjoa em alguns dias. Semanas depois, o objeto de desejo tão apaixonante está num canto do armário pegando pó, e a criança já procura o que amar em seguida, em todo dia das crianças, aniversário e Natal.
 
 <div class='embed-container'>{{< youtube id="pFlcqWQVVuU" >}}</div>
 
@@ -144,9 +147,11 @@ Fazer "SOMENTE" o que "ACHA" que "AMA" (veja as ênfases nesta frase), significa
 
 ## Terceiro, o que Eu amo?
 
-Falando dessa forma parece outro clichê: de que um adulto é uma criança que deixou suas paixões de lado. E por isso talvez a evolução mais tardia, onde "adultos" de 30 anos ainda tentam ser as mesmas crianças que eram, e isso normalmente significa ser um irresponsável, egocêntrico, anti-social, já que o tal "mundo adulto" exige responsabilidade, colaboração, interação e compromissos. Ninguém "ama" esse tipo de coisa, ninguém ama "negociar meio termo". Toda criança quer tudo ou nada.
+Falando dessa forma parece outro clichê: o de que um adulto é uma criança que deixou suas paixões de lado. Daí talvez venha a evolução mais tardia, onde "adultos" de 30 anos ainda tentam ser as mesmas crianças que foram um dia.
 
-Se você é um leitor que me acompanhou nos últimos 8 anos, até este post 1001 (que meus amigos carinhosamente já pré-apelidaram que deveria ser o "post bombril, de 1.001 utilidades"), talvez tenha uma idéia sobre o que quero dizer agora.
+Isso normalmente significa ser irresponsável, egocêntrico e anti-social, já que o tal "mundo adulto" exige responsabilidade, colaboração, interação e compromissos. Ninguém "ama" esse tipo de coisa, ninguém ama "negociar meio termo". Toda criança quer tudo ou nada.
+
+Se você é um leitor que me acompanhou nos últimos 8 anos, até este post 1001 (que meus amigos carinhosamente já pré-apelidaram que deveria ser o "post bombril, de 1.001 utilidades"), talvez tenha uma ideia sobre o que quero dizer agora.
 
 E agora vem um disclaimer: não me citem dizendo que esta é a solução ou a resposta. O que vou dizer agora é absolutamente pessoal.
 
