@@ -2,6 +2,7 @@
 title: 'Brazil Situation: No Macs for the Rest of Us'
 date: '2015-11-10T16:54:00-02:00'
 slug: situacao-brasil-no-macs-for-the-rest-of-us
+translationKey: situacao-brasil-no-macs-for-the-rest-of-us
 description: "I tested a Dell Inspiron with Ubuntu after a MacBook Pro became too expensive for a Brazilian budget. Linux covers about 80% of my use, but proprietary software still requires Mac or Windows."
 tags:
 - linux
@@ -11,118 +12,132 @@ tags:
 draft: false
 ---
 
-This article aims to be practical, so I'll just say that with the **unquestionably** inept and corrupt government we have, one of the practical effects for us software developers is the inability to buy good machines to do our own work.
+This article aims to be practical, so I'll get right to the point. With the **unquestionably** inept and corrupt government we have, one of the concrete effects for us software developers is the inability to buy good machines to do our own work.
 
 ![Dollar rate 2015](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/523/cotacao_dolar.png)
 
-The Real went into free fall at the beginning of this year and is only now stabilizing a bit, but that still means we've moved farther from the ideal of buying a professional laptop.
+The Real went into free fall at the beginning of this year and is only now stabilizing a bit. Even so, we keep drifting farther from the ideal of buying a professional laptop.
 
-On the official Apple Brazil site, if we add the Real's devaluation and the **damned** Brazil Cost in taxes, an ideal development machine — the Macbook Pro 15" Retina with 16GB of RAM and 512GB SSD — will cost the impossible amount of R$ 23,499.00.
+On the official Apple Brazil site, once you add the Real's devaluation and the **damned** Brazil Cost in taxes, the ideal development machine, a Macbook Pro 15" Retina with 16GB of RAM and 512GB SSD, hits the impossible figure of R$ 23,499.00.
 
-In the United States, that same machine costs USD 2,499 plus (a little) tax. If we went through the gray market (which I recommend), with the dollar at the current R$ 3.80 plus about 30% to 40% of the "gray market cost," that still means we won't pay less than R$ 13,500.
+In the United States, that same machine costs USD 2,499 plus (a little) tax. If we went through the gray market (which I recommend), with the dollar at the current R$ 3.80 plus about 30% to 40% of the "gray market cost," even then we won't pay less than R$ 13,500.
 
-Even if we choose the 13" Retina version with 8GB of RAM, which costs USD 1,799 in the US, here it won't come out for less than R$ 9,700.
+Even if we go for the 13" Retina version with 8GB of RAM, which costs USD 1,799 in the US, it won't come out here for less than R$ 9,700.
 
-That is, it's more than double what most developers can afford, considering a budget of R$ 4,000, up to R$ 5,000 if we really stretch.
+That is more than double what most developers can afford, given a budget of R$ 4,000, up to R$ 5,000 if we really stretch.
 
-The TL;DR is simple: the best hardware (not only processor, but keyboard, trackpad, and overall build) continues to be the Macbook Pro. No other machine comes close, and to me the best operating system continues to be OS X (with Linux virtualization for development). Not being able to buy a Macbook, we have to choose a good PC and run Linux.
+The TL;DR is simple: the best hardware (not only the processor, but the keyboard, trackpad, and overall build) is still the Macbook Pro. No other machine comes close, and to me the best operating system is still OS X, with Linux virtualization for development. If you can't buy a Macbook, you're left picking a good PC and running Linux.
 
 ### Which Machine to Buy?
 
-Even buying a machine in Brazil, it won't be possible to buy the best configuration, which raises the price above R$ 8,000.
+Even buying a machine in Brazil, you can't get the best configuration, which pushes the price above R$ 8,000.
 
-In the R$ 5,000 range, forget SSD — it doesn't exist. What I found with the most reasonable cost-benefit was the [Dell Inspiron 15 Series 5000](http://www.dell.com/br/p/inspiron-15-5548-laptop/pd?oc=cai5548u1612656br052&model_id=inspiron-15-5548-laptop), which at the time of this article's publication was R$ 4,117. It's important to choose one with lots of RAM (more than 8GB preferably) to avoid as much as possible swapping to the slow disk (usually mechanical 5400 RPM).
+In the R$ 5,000 range, forget about SSD, it doesn't exist. The best value I found was the [Dell Inspiron 15 Series 5000](http://web.archive.org/web/20150625001142/http://www.dell.com/br/p/inspiron-15-5548-laptop/pd?oc=cai5548u1612656br052&model_id=inspiron-15-5548-laptop), which at the time of this article was R$ 4,117. It's worth choosing one with plenty of RAM, more than 8GB if possible, to avoid swapping to the slow disk as much as you can, usually a 5400 RPM mechanical one.
 
-If anyone has good options in this range for: at least Core i5 3rd generation, 8GB of RAM, 256GB SSD, feel free to share in the comments.
+If anyone has good options in this range, at least a 3rd-generation Core i5, 8GB of RAM, and a 256GB SSD, drop them in the comments.
 
-In terms of hardware, if you can buy a Lenovo Thinkpad or even a Sony Vaio (which should also be prohibitively expensive), I believe they have better hardware finish than Dell. Asus, Acer — I don't consider them good options that will last a long time, and the finish also isn't anything special.
+On the hardware front, a Lenovo Thinkpad or even a Sony Vaio (which is probably prohibitively expensive too) have better build quality than Dell. Asus and Acer I don't count as good options that will last, and the finish isn't much to write home about either.
 
-I'll say right away that PC keyboards and trackpads are terrible. If possible use an external Apple keyboard and trackpad. Especially the Dell model I'm testing has a horrible keyboard (aside from the Brazilian layout, which I hate), light plastic with very poor click feedback for fast typers, and a trackpad that interrupts typing all the time with any light touch, has difficulty properly registering multiple clicks, and generally gives more of a headache than it helps.
+I'll say it upfront: PC keyboards and trackpads are terrible. If you can, use an external Apple keyboard and trackpad. The Dell model I'm testing has a horrible keyboard, on top of the Brazilian layout I can't stand: light plastic, with awful click feedback for anyone who types fast. The trackpad interrupts typing at the slightest touch, struggles to register multiple clicks correctly, and mostly gets in the way instead of helping.
 
 ### Developer Profiles
 
-The intention is a machine for developers. And unless you're a .NET developer, definitely install a Linux distribution. Which distro depends on your profile — the more low-level you are, the closer you get to wanting to use Arch Linux. The more high-level you are, especially a web app developer, the more I recommend sticking with an Ubuntu LTS (and in this case it would really be Ubuntu 14.04).
+The idea is a machine for developers. Unless you're a .NET developer, definitely install a Linux distribution. Which distro depends on your profile: the more low-level you are, the closer you get to wanting Arch Linux. The more high-level you are, especially a web app developer, the more I'd steer you toward an Ubuntu LTS, which in this case would be Ubuntu 14.04.
 
-Windows is out of the question — sorry — I was a Windows user for almost 15 years before migrating to Macs in 2004. I'm very experienced with Windows, I know all my winding paths through the Registry and the mess that is the infamous C:\WINDOWS. I tried all the latest Windows (7, 8, 8.1, 10) and the conclusion is the same: I have no interest in going back. Again, if I had to develop in .NET, I wouldn't try to emulate the environment — I'd just use Windows itself, in a virtual machine. The only solution if your development environment requires a hybrid of .NET with open source is to run Linux with virtualization.
+Windows is off the table, sorry. I was a Windows user for almost 15 years before switching to Macs in 2004. I know Windows cold, I know all my winding paths through the Registry and the mess that is the infamous C:\WINDOWS. I tried every recent Windows (7, 8, 8.1, 10) and the conclusion is the same: I have zero interest in going back.
 
-The open-source development cycle on a Mac isn't exactly simple either. You need to understand XCode, need to understand that GCC hasn't been the default choice for a while (Apple migrated to LLVM-Clang long ago), and because of this much can break. Even so, the [Homebrew](http://brew.sh/) people did an excellent job of removing most of the problems. So, yes, you can develop comfortably if you're not a system/low-level developer.
+If I had to develop in .NET, I wouldn't even try to emulate the environment, I'd just run Windows itself, in a virtual machine. The only workaround, when your setup needs a hybrid of .NET and open source, is to run Linux with virtualization.
 
-For iOS development, you need XCode. There's no alternative. You can develop in other languages with relative ease, whether Python, Ruby, or newer ones like Rust, Elixir, or Go. Java is also more or less simple on Mac, so Java 8, Clojure, Scala, Groovy are available.
+The open-source development cycle on a Mac isn't exactly simple either. You need to understand XCode, and you need to know that GCC stopped being the default choice a while ago, since Apple moved to LLVM-Clang, and because of that plenty of things can break. Even so, the [Homebrew](https://brew.sh/) folks did a great job smoothing over most of the problems. So yes, you can develop comfortably, as long as you're not a system/low-level developer.
 
-Optionally, I recommend using a virtualized Linux environment inside the Mac. Either directly via Virtualbox (which isn't the most stable thing in the world on Mac) or with VMWare Fusion (via [Vagrant](https://www.vagrantup.com/vmware) to make it easier, but this option will cost you — USD 170).
+For iOS development, you need XCode. There's no alternative. For other languages you can work with relative ease, whether Python, Ruby, or the newer ones like Rust, Elixir, and Go. Java also runs reasonably well on Mac, so Java 8, Clojure, Scala, and Groovy are all on the table.
+
+Optionally, I recommend running a virtualized Linux environment inside the Mac. Either straight through Virtualbox, which isn't the most stable thing in the world on a Mac, or through VMWare Fusion, with [Vagrant](https://www.vagrantup.com/vmware) to make it easier. That second option will cost you, USD 170.
 
 ### Proprietary Software vs Open Source
 
-Yes, on Linux we have several options like Inkscape, Gimp, Blender. Yes, you "can" do a lot of things.
+Yes, on Linux we have plenty of options, like Inkscape, Gimp, and Blender. Yes, you "can" do a lot of things.
 
 In practice, usability counts.
 
-On OS X we have Keynote, iMovie, and GarageBand, which have no equals in terms of usability. For higher-end purposes, we have Aperture, Final Cut Pro, and Logic Pro. Again, unmatched in usability and flexibility.
+On OS X we have Keynote, iMovie, and Garageband, with no equals in usability. For higher-end work, we have Aperture, Final Cut Pro, and Logic Pro, again with no equals in usability and flexibility.
 
-On Windows, we can choose the Adobe package, which goes from Photoshop and Illustrator to Premiere Pro and After Effects — which also have Mac versions.
+On Windows, you can pick the Adobe suite, which runs from Photoshop and Illustrator to Premiere Pro and After Effects, all of which also have Mac versions.
 
-In the productivity world, forget LibreOffice or even Google Docs — the Microsoft Office package (especially Word, Excel) is still unbeatable and unmatched. You can do something similar, you can edit something similar — it's still not close to the same thing, especially in more complex spreadsheets full of formulas, pivot tables, etc.
+In the productivity world, forget LibreOffice or even Google Docs: the Microsoft Office suite, Word and Excel in particular, is still unbeatable. You can do something similar, you can edit something similar, but it still isn't close to the same thing, especially with more complex spreadsheets full of formulas, pivot tables, and the like.
 
-All of them cost, and they cost a lot. Obviously it's not fair to compare with open source options. But I would really like to have the option of paying to have it working on a Linux distro. The problem is that Linux distros aren't friendly to proprietary software. It will always be the dilemma of 100% open vs hybrid or 100% closed. Just ask the Ubuntu people.
+They all cost money, and they cost a lot. Obviously it isn't fair to compare them with open source options. But I'd love to have the option of paying to run them on a Linux distro. The problem is that Linux distros aren't friendly to proprietary software. It'll always be the dilemma of 100% open against hybrid or 100% closed. Just ask the Ubuntu crowd.
 
-A small example is 1Password, which I use on Mac, on Android, used on iOS (when I had an iPhone), and has a version for Windows. Everything except Linux. I was forced to use 1Password from Windows via Wine to be able to access my passwords again. "Serves you right for using proprietary software."
+A small example is 1Password, which I use on Mac, on Android, used on iOS (when I had an iPhone), and has a Windows version. Everything except Linux. I was forced to run the Windows 1Password through Wine just to get to my passwords again. "Serves you right for using proprietary software."
 
-For better or worse, the ideal of 100% open software has never been farther. Especially today when every app has an online component. There's now a lot of open source "client," but the back-end is totally closed-source. Worse: it isn't even a binary on your machine, it's in the "cloud." No one will ever adhere to the ideal of [Affero GPL](http://www.gnu.org/licenses/why-affero-gpl.en.html) where the code in the cloud should also be open. And even if it were, it wouldn't be practical for anyone to simulate the same cloud environment as everyone else.
+For better or worse, the ideal of 100% open software has never been farther away, especially now that every app has an online component. There's plenty of open source "client" these days, but the back-end is completely closed source. Worse: it isn't even a binary on your machine, it lives in the "cloud."
 
-Currently, the open source world isn't a world of absolute freedom. I usually summarize the open source world as being the best cost-benefit companies have ever had to maintain commoditized software.
+Nobody is going to sign up for the ideal of the [Affero GPL](http://www.gnu.org/licenses/why-affero-gpl.en.html), where the code running in the cloud should also be open. And even if it were, it wouldn't be practical for anyone to simulate everyone else's cloud environment.
 
-Languages, frameworks, toolkits, development tools, cryptography libraries are commoditized software.
+Today, the open source world isn't a world of absolute freedom. I usually put it this way: it's the best value companies have ever had for maintaining commoditized software.
 
-Adobe package, Office, etc., aren't commodities yet. They keep going full steam ahead, with new feature after new feature, every six months. It's impossible for an open source copy-cat, without resources, to reach the same level. There's no interest either.
+Languages, frameworks, toolkits, development tools, and cryptography libraries are commoditized software.
 
-For those who need proprietary software as a day-to-day tool, don't leave Windows, don't leave Mac.
+The Adobe suite, Office, and the rest aren't commodities yet. They keep going full steam, with new feature after new feature, every six months. It's impossible for an open source copy-cat, with no resources, to reach the same level. And there's no interest in doing so either.
 
-I occasionally need it. 80% of my needs depend on commoditized software or software that isn't the core business of any company that produces it. For Google, Chromium is worth being open source, but don't go anywhere near the Ad Sense code — which is the real core business. For everyone, it's worth the clients that consume their services being open source. You'll find a good client for Dropbox, for Google Drive, but don't even try to search: the core business still is and will continue to be closed. That's where the ideal of Free Software drifts farther and farther away.
+For anyone who needs proprietary software as a daily tool, the advice is blunt: don't leave Windows, don't leave Mac.
 
-I'm not an idealist, and for most developers, what we have is enough — it sustains itself and becomes viable in a hybrid world. It means that in the real world, 80% of what we need is available. The other 20% I'll need to solve through virtualization, and I'll have my Office running either via Wine or via Virtualbox. And maybe I can have my Apple Keynote via Hackintosh in a Virtualbox. Or I'll solve the last 5% with an outdated Macbook that runs what I need for the few hours when I need them.
+I need it once in a while. 80% of my needs depend on commoditized software, or on software that isn't the core business of any company that makes it. For Google, Chromium is worth being open source, but don't go anywhere near the Ad Sense code, which is the real core business.
 
-I tried to install a Hackintosh via Virtualbox, and although I managed to install it (after multiple attempts and many tutorials), it's absolutely unstable and slow, even giving it 2 of my 4 Core i7 and 4GB of RAM with 128MB of video memory. It's not usable — if I want to use Keynote it'll have to be a real Mac, there's no substitute.
+For everyone, it's worth having the clients that consume their services be open source. I'll find a good client for Dropbox, for Google Drive, but don't bother looking for the rest: the core business still is, and will stay, closed. That's where the ideal of Free Software keeps drifting farther and farther away.
+
+I'm not an idealist. For most developers, what we have is already enough, it sustains itself and becomes viable in a hybrid world. In the real world, 80% of what I need is available. The other 20% I solve through virtualization, with my Office running via Wine or via Virtualbox.
+
+Maybe I can get Apple Keynote running via Hackintosh in a Virtualbox. Or I solve the last 5% with an outdated Macbook that still runs what I need for the few hours when I need it.
+
+I tried installing a Hackintosh via Virtualbox and, even though I managed it after many attempts and many tutorials, it stays absolutely unstable and slow, even with 2 of my 4 Core i7, 4GB of RAM, and 128MB of video memory. It's not usable. If I want Keynote, it'll have to be a real Mac, there's no substitute.
 
 ### Why Ubuntu + Unity?
 
 If there's one thing everyone has an opinion about, it's how to use your Linux. It depends on who you are.
 
-If you're at least a more idealistic programmer, you'll hate Ubuntu for the reason that it uses what Debian does and adds the *argh* terrible layer of proprietary software on top.
+If you're a more idealistic programmer, you'll hate Ubuntu precisely for taking what Debian does and adding the *argh* terrible layer of proprietary software on top.
 
-If you're a more hardcore programmer, you'll want to understand every inch of your Linux, and for that you'll always think Arch Linux (or at least [Antergos](https://antergos.com/)) is a superior option. For these people, Pacman will always be infinitely superior to Apt-Get or Yum.
+If you're a more hardcore programmer, you'll want to understand every inch of your Linux, and for that you'll always find Arch Linux (or at least [Antergos](http://web.archive.org/web/20150913071621/http://antergos.com/)) a superior option. For these folks, Pacman will always be infinitely superior to Apt-Get or Yum.
 
-If you're the "be stable without messing with much but don't be common" style, you may end up going toward Fedora.
+If you're the "be stable without fiddling too much, but don't be ordinary" type, you may end up drifting toward Fedora.
 
-And regardless of the distro, there will always be the eternal fight between Window Managers. The KDE crowd with their Plasma speaking ill of the outdated Gnome, or XFCE asserting its "simple and stable" position, or a new distro like Elementary OS creating its new Pantheon. This has no end.
+And whatever the distro, there will always be the eternal fight between Window Managers. The KDE crowd with their Plasma trashing the outdated Gnome, XFCE asserting its "simple and stable" stance, or a new distro like Elementary OS building its own new Pantheon. This has no end.
 
-Most new programmers, who've used Linux for 5 years or less, can't understand how someone can use a Linux and not customize it totally to their taste. Editing every X11 file, editing every theme and icon pack to become a "Windows-alternative" or an "OS X-rebel."
+Most new programmers, who've used Linux for 5 years or less, can't grasp how anyone could use a Linux without customizing it entirely to their taste. Editing every X11 file, every theme and icon pack to become a "Windows-alternative," an "OS X-rebel."
 
-In my case, what many may not understand is that I'm an old-school Linux user. My first Linux was Slackware 1.0 in 1996. I installed RedHat pre 4. Then came distros like Mandrake, long before Kurumin. I installed the first versions of most distros that exist today. I already pulled nights and nights customizing my X. Nights and nights downloading themes, downloading widgets, customizing every part of my system. Then I'd do something wrong and decide to format everything and start all over. Lots of time checking kernel compile flags to make my kernel as customized as possible.
+In my case, what many may not get, is that I'm an old-school Linux user. My first Linux was Slackware 1.0 in 1996. I installed RedHat pre-4, and then came distros like Mandrake, long before a Kurumin. I installed the first versions of most of the distros around today.
 
-I stayed in this vibe from 1997 to maybe 2001. It's tiring. Seriously. If you're a programmer in your 20s and have never done this, I'd say you have a **moral** obligation to go through this process. Every programmer has to find it cool to have total control of their own environment.
+I pulled night after night customizing my X, downloading themes, downloading widgets, tweaking every part of the system. Then I'd do something wrong, decide to wipe everything, and start over from scratch. I spent a lot of time checking kernel compile flags to make mine as customized as possible.
 
-But it's not healthy to do this for more than 5 years. After that you really want to be productive. To produce and not customize. The number of hours necessary to make a distro 100% "mine" doesn't pay off.
+I stayed in that vibe from 1997 to maybe 2001. It's exhausting, seriously. If you're a programmer, in your 20s, and you've never done it, I'd say you have a **moral** obligation to go through this process. Every programmer needs to enjoy having total control over their own environment.
 
-That's why I like OS X: you don't need to customize anything. Everything is just right "out-of-the-box" — the best Window Manager, on top of one of the best traditional Unix flavors, and with reasonably simple access to both the open source world and the best of the closed source world. It's the best of both worlds.
+But it isn't healthy to do this for more than 5 years. After that, what you really want is to be productive, to produce instead of customize. The number of hours it takes to make a distro 100% "mine" simply doesn't pay off.
 
-In the Linux world you have to deal with the ideology of the GPL. I perfectly understand Stallman's arguments, I've read and reread the site countless times. How many times have you **really** read the entire [gnu.org](http://www.gnu.org/philosophy/philosophy.html)? Unfortunately there's no free lunch — staying in the ideology means giving up a lot of things I really don't have the willingness to give up.
+That's why I like OS X: I don't need to customize anything. It all comes right out-of-the-box, the best Window Manager, on top of one of the best traditional Unix flavors, with reasonably simple access to both the open source world and the best of the closed source world. It's the best of both worlds.
 
-In particular, the Dell I bought came with Ubuntu preinstalled. It's what it has support for, which means all the hardware works, has updated drivers. I intend to stay within the Ubuntu ecosystem, including Unity, which I know many don't like for ideological reasons or because they think XFCE or Gnome or KDE or XXX works better for their tastes.
+In the Linux world, you have to deal with the ideology of the GPL. I fully understand Stallman's arguments, I've read and reread the site countless times. How many times have you **really** read the whole [gnu.org](http://www.gnu.org/philosophy/philosophy.html)? Unfortunately there's no free lunch: staying in the ideology means giving up a lot of things I honestly don't have the willingness to give up.
 
-Again: the cost of customization simply doesn't pay off. Software isn't installed once and works forever. You have to update, have to have support, have to be consistent. The Canonical people are the only company seriously focused on usability and end consumers, and that's important. They're constantly slowed by ideology and by too many opinions that never reach consensus, and they're vilified every time they make a decision: half the community will always not get what they want and will complain. Canonical has to deal with a slow and bureaucratic process that an Apple simply decided to bypass completely. Except in Apple's case, they can bring Microsoft, Adobe, and generate profitable business models for hundreds of other software houses. Canonical still can't do this and depends a lot on the spare hours of volunteer programmers in the open source world, and this dependency is both a great strength and the biggest problem.
+As it happens, the Dell I bought came with Ubuntu preinstalled. It's what it's supported on, which means all the hardware works and the drivers are up to date. I plan to stay inside the Ubuntu ecosystem, Unity included, which I know many people don't like for ideological reasons or because they think XFCE, Gnome, KDE, or whatever works better for their taste.
 
-Last tip: I had problems keeping the default language (for menus and everything else) in English and using an external Mac USB keyboard with the English (US, alternative international) layout. The normal thing of accenting "c" to get the cedilla "ç" didn't work. Only after following [Kemel Zaidan's](http://linuxlegal.blogspot.com.br/2014/02/cedilha-no-ubuntu-1310-com-teclado.html) tutorial did it work.
+Again: the cost of customization simply doesn't pay off. Software isn't installed once and works forever. You have to update it, you have to have support, it has to be consistent. The Canonical folks are the only company seriously focused on usability and the end consumer, and that matters.
+
+Canonical gets slowed down constantly by ideology and by too many opinions that never reach a consensus, and it gets vilified every time it makes a decision: half the community will always miss out on what they want and gripe about it. It's a slow, bureaucratic process that an Apple simply decided to bypass entirely.
+
+Except Apple can bring in Microsoft, Adobe, and generate profitable business models for hundreds of other software houses. Canonical still can't do that and leans heavily on the spare hours of volunteer programmers in the open source world. That dependency is at once a great strength and its biggest problem.
+
+Last tip: I had trouble keeping the system in English (menus and everything else) while using an external Mac USB keyboard with the English (US, alternative international) layout. The usual way of accenting the "c" to get the cedilla "ç" didn't work. It only worked after I followed [Kemel Zaidan's](http://linuxlegal.blogspot.com/2014/02/cedilha-no-ubuntu-1310-com-teclado.html) tutorial.
 
 ### Conclusion
 
-Will I keep using Ubuntu as my main machine? I don't know yet. I'm keeping my options open for harder times when the dollar costs above R$ 2.50. Below that level, I'll definitely stick with a Mac.
+Will I keep using Ubuntu as my main machine? I don't know yet. I'm keeping my options open for harder times, with the dollar above R$ 2.50. Below that level, I'll stick with a Mac without thinking twice.
 
-For home users, a Linux works well — it's the idea of Chrome OS, which is a Linux basically running Web Apps like Google Docs, Gmail, etc. And at this level it doesn't matter which OS or which configuration. The advantage of a Linux for Web use for 90% of the population is not being vulnerable to the most obvious malware.
+For home users, a Linux works well. It's the Chrome OS idea, a Linux basically running Web Apps like Google Docs, Gmail, and the rest. At that level, it doesn't matter which OS or which configuration. The advantage of a Linux for the web use of 90% of the population is not being vulnerable to the most obvious malware.
 
-For office users, a Linux works reasonably well, but as I said, Office still can't be replaced. The only way is the entire company adopting a simpler document format and not doing anything too complex with Excel, for example. In general, Google Docs and Google Drive or Dropbox, Gmail Business, work well enough.
+For office users, a Linux works reasonably well, but, as I said, Office still can't be replaced. The way out is the whole company adopting a simpler document format and not doing anything too complex in Excel, for example. In general, Google Docs and Google Drive or Dropbox, with Gmail Business, work well enough.
 
 For .NET developers, stay on Windows.
 
-For open source developers, it doesn't matter if you stay on Linux or Mac. If it's high-end, choose a Mac if you can pay. If it's more low-level, stay in the pure Linux world. When in doubt: Ubuntu 14.04 LTS (with Unity!), install your choice of Sublime Text 3, and the rest works perfectly.
+For open source developers, it doesn't matter whether you stay on Linux or Mac. If it's high-end, choose a Mac if you can afford it. If it's more low-level, stay in the pure Linux world. When in doubt: Ubuntu 14.04 LTS (with Unity!), install your choice of Sublime Text 3, and the rest works perfectly.
 
-For hybrid users who are developers most of the time but also need proprietary software (my case), you can stay in Linux — most of the time it won't hurt that much, but in that 1 moment when you need to edit a video, edit a heavier Photoshop, make a more elaborate Keynote, have a Mac at hand. There are no alternatives for that case.
+For hybrid users, who are developers most of the time but also need proprietary software (my case), you can stay on Linux. Most of the time it won't hurt much. But in that one moment when you need to edit a video, work on a heavier Photoshop, or put together a more elaborate Keynote, have a Mac at hand. For that case, there's no alternative.
