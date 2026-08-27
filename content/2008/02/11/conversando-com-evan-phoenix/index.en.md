@@ -94,11 +94,13 @@ We aren’t currently working toward a common bytecode format between Rubinius a
 
 **Evan Phoenix:** We actually directly support a mechanism called FFI (Foreign Function Interface), which allows a developer to bind a C function directly as a method call. Here is a simple example:
 
-<macro:code lang="Ruby">module LibC<br>
- attach_function nil, :puts, [:string], :void<br>
-end<br>
-<br>
-LibC.puts “hello!”</macro:code>
+```ruby
+module LibC
+ attach_function nil, :puts, [:string], :void
+end
+
+LibC.puts “hello!”
+```
 
 The attach_function line is the primary interface into FFI. You simply indicate which library the function is in (in this case, nil is used because it’s included in the existing process), the name of the function (puts), the types of arguments it takes (just 1, a string), and finally, the type it returns (void, ie, nothing).
 
