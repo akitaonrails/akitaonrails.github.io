@@ -2,6 +2,7 @@
 title: "[Off-Topic] Livros de Referência 2008-2009"
 date: '2009-07-11T01:06:00-03:00'
 slug: off-topic-livros-de-refer-ncia-2008-2009
+translationKey: off-topic-livros-de-refer-ncia-2008-2009
 description: "Uma lista de leituras sobre Lean, Agile, gestão, complexidade e ciência revela a trilha que levou o autor a relacionar auto-organização, aprendizado contínuo e organizações democráticas."
 tags:
 - aprendizado
@@ -11,7 +12,7 @@ tags:
 draft: false
 ---
 
-Para quem se interessou pelos assuntos relacionados a gerenciamento, administração, processos, que tenho explorado nos meus posts e palestras, eis as minhas referências. São os livros que li recentemente (de uns 9 meses para cá) e os que estão na minha fila para começar ou terminar.
+Para quem se interessou pelos temas de gestão, administração e processos que venho explorando nos posts e palestras, aqui estão minhas referências. São os livros que li nos últimos nove meses e os que estão na fila para começar ou terminar.
 
 ## Lendo
 
@@ -22,7 +23,7 @@ Para quem se interessou pelos assuntos relacionados a gerenciamento, administra�
  [The Visible Ops Handbook: Starting ITIL in 4 Practical Steps](http://www.amazon.com/gp/product/0975568604/ref=s9_simx_gw_s3_p14_i1?pf_rd_m=ATVPDKIKX0DER&pf_rd_s=center-1&pf_rd_r=04KQFDC36R5X7NVFSH0M&pf_rd_t=101&pf_rd_p=470938131&pf_rd_i=507846)
 
  ![](/files/2009-livro-5.png)  
-[Sistema Toyota de Produção: do Ponto de Vista da Engenharia de Produção – antes de entender uma especialização – software – melhor entender produção em geral](http://www.submarino.com.br/produto/1/132873/sistema+toyota+de+producao:+do+ponto+de+vista+da+engenharia+de+produ..)
+[Sistema Toyota de Produção: do Ponto de Vista da Engenharia de Produção](http://web.archive.org/web/20090802092436/http://www.submarino.com.br/produto/1/132873/sistema+toyota+de+producao:+do+ponto+de+vista+da+engenharia+de+produ..) – antes de entender uma especialização como software, é melhor entender produção em geral
 
  ![](/files/2009-livro-7.png)  
 [The Elegant Universe: Superstrings, Hidden Dimensions, and the Quest for the Ultimate Theory](http://www.amazon.com/Elegant-Universe-Superstrings-Dimensions-Ultimate/dp/0393058581/ref=sr_1_3?ie=UTF8&s=books&qid=1247293142&sr=1-3)
@@ -46,13 +47,13 @@ Para quem se interessou pelos assuntos relacionados a gerenciamento, administra�
 [Blink: The Power of Thinking Without Thinking](http://www.amazon.com/Blink-Power-Thinking-Without/dp/0316010669/ref=sr_1_3?ie=UTF8&s=books&qid=1247293241&sr=1-3)
 
  ![](/files/2009-livro-15.png)  
-[Virando a Própria Mesa](http://www.submarino.com.br/produto/1/168336/virando+a+propria+mesa) – a semente de organizações democráticas, muito mais do que uma curiosidade, mas a única saída
+[Virando a Própria Mesa](http://web.archive.org/web/20090802092444/http://www.submarino.com.br/produto/1/168336/virando+a+propria+mesa) – a semente das organizações democráticas, muito mais do que curiosidade: é a única saída
 
  ![](/files/2009-livro-16.png)  
-[Você Está Louco!: uma Vida Administrada de Outra Forma](http://www.submarino.com.br/produto/1/1672779/voce+esta+louco!:+uma+vida+administrada+de+outra+forma)
+[Você Está Louco!: uma Vida Administrada de Outra Forma](http://web.archive.org/web/20090802092442/http://www.submarino.com.br/produto/1/1672779/voce+esta+louco!:+uma+vida+administrada+de+outra+forma)
 
  ![](/files/2009-livro-17.png)  
-[Escola sem Sala de Aula](http://www.submarino.com.br/produto/1/232885/escola+sem+sala+de+aula) – a educação atual não serve mais: a razão porque não temos trabalhadores motivados, pró-ativos, criativos.
+[Escola sem Sala de Aula](http://web.archive.org/web/20090802092440/http://www.submarino.com.br/produto/1/232885/escola+sem+sala+de+aula) – a educação atual já não serve: o motivo de não termos trabalhadores motivados, pró-ativos e criativos.
 
  ![](/files/2009-livro-19.png)  
 [Blue Ocean Strategy: How to Create Uncontested Market Space and Make Competition Irrelevant](http://www.amazon.com/Blue-Ocean-Strategy-Uncontested-Competition/dp/1591396190/ref=sr_1_1?ie=UTF8&s=books&qid=1247293564&sr=1-1) – mais uma definição de “think different”
@@ -93,7 +94,7 @@ Para quem se interessou pelos assuntos relacionados a gerenciamento, administra�
 ## A Ler
 
  ![](/files/2009-livro-29.png)  
-[The Great Game of Business](http://www.amazon.com/Great-Game-Business-Jack-Stack/dp/038547525X/ref=sr_1_1?ie=UTF8&s=books&qid=1247294936&sr=1-1) – um dos principais elementos para se criar organizações democráticas
+[The Great Game of Business](http://www.amazon.com/Great-Game-Business-Jack-Stack/dp/038547525X/ref=sr_1_1?ie=UTF8&s=books&qid=1247294936&sr=1-1) – um dos principais elementos para criar organizações democráticas
 
  ![](/files/2009-livro-33.png)  
 [Open-Book Management: Coming Business Revolution, The](http://www.amazon.com/gp/product/0887308023/ref=pd_luc_sbs_04_01)
@@ -111,16 +112,15 @@ Para quem se interessou pelos assuntos relacionados a gerenciamento, administra�
 [The Balanced Scorecard: Translating Strategy into Action](http://www.amazon.com/Balanced-Scorecard-Translating-Strategy-Action/dp/0875846513/ref=sr_1_5?ie=UTF8&s=books&qid=1247293979&sr=1-5) – ainda não sei se vale a pena
 
  ![](/files/2009-livro-26.png)  
-[Marketing Para o Século XXI](http://www.submarino.com.br/produto/1/21483534/marketing+para+o+seculo+xxi) – preciso ler pelo menos um Kotler
+[Marketing Para o Século XXI](http://web.archive.org/web/20090704130245/http://www.submarino.com.br:80/produto/1/21483534/marketing+para+o+seculo+xxi/?) – preciso ler pelo menos um Kotler
 
  ![](/files/2009-livro-27.png)  
-[The Six Sigma Way: How GE, Motorola, and Other Top Companies are Honing Their Performance](http://www.amazon.com/Six-Sigma-Way-Companies-Performance/dp/0071358064/ref=sr_1_7?ie=UTF8&s=books&qid=1247294099&sr=1-7) – certeza que não vale a pena, mas só para conhecer com mais argumentos
+[The Six Sigma Way: How GE, Motorola, and Other Top Companies are Honing Their Performance](http://www.amazon.com/Six-Sigma-Way-Companies-Performance/dp/0071358064/ref=sr_1_7?ie=UTF8&s=books&qid=1247294099&sr=1-7) – tenho certeza de que não vale a pena, mas quero conhecer com mais argumentos
 
 ## Conclusão
 
-Complementando: isso que eu li reconheço que é **muito pouco** ainda. Ainda tem outras pesquisas que quero fazer. E isso estou contando apenas livros, sem contar centenas e centenas de papers acadêmicos, artigos, páginas de wikipedia.
+Reconheço que ainda li **muito pouco**. Tenho outras pesquisas na fila, e aqui conto apenas livros, sem as centenas e centenas de papers acadêmicos, artigos e páginas de Wikipédia que também entraram na conta.
 
-Eu diria que as pessoas deveriam ler **no mínimo** perto do que tem nesta lista. Não estou contando livros e artigos técnicos nessa lista, apenas os de conhecimento geral.
+Mesmo assim, eu diria que todo mundo deveria ler **no mínimo** algo próximo do que está nesta lista, contando só os títulos de conhecimento geral, não os técnicos.
 
-Meu interesse em particular: começar a entender como a cultura Agile e Lean levam a conceitos como qualidade integrada, zero defeitos e o que se lê em The Goal. Especialmente [auto-organização](http://www.akitaonrails.com/2009/07/08/off-topic-agilidade-caos-auto-organizacao). Isso leva a Open Book Management e The Great Game que, por sua vez, leva ao End of Management e organizações democráticas. Tudo isso é fundamentado pelo que você lê em Linked e livros como The Fabric of Cosmos. A teoria completa se fecha de forma muito simples e elegante no final.
-
+Meu interesse específico é entender como a cultura Agile e Lean leva a conceitos como qualidade integrada, zero defeitos e o que se lê em The Goal. Especialmente [auto-organização](http://www.akitaonrails.com/2009/07/08/off-topic-agilidade-caos-auto-organizacao). Daí se chega a Open Book Management e The Great Game, que levam a The End of Management e às organizações democráticas. Tudo isso se apoia no que está em Linked e em livros como The Fabric of the Cosmos. No final, a teoria completa se fecha de forma simples e elegante.
