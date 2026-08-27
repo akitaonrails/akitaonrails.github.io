@@ -2,6 +2,7 @@
 title: 'Brazilian Portuguese Can Confuse Us: Standard vs Pattern'
 date: '2013-05-10T19:18:00-03:00'
 slug: a-lingua-portuguesa-brasileira-e-pessima-standard-vs-pattern
+translationKey: a-lingua-portuguesa-brasileira-e-pessima-standard-vs-pattern
 description: "In programming, default, pattern, and standard can all become “padrão” in Portuguese, but they mean different things: a preselected choice, a recurring solution, and a norm used as a reference."
 tags:
 - programming
@@ -10,13 +11,13 @@ tags:
 draft: false
 ---
 
-**Original from 4/27/2011**: [Gestão 2.0](http://info.abril.com.br/noticias/rede/gestao20/software/a-lingua-portuguesa-brasileira-e-pessima-standard-vs-pattern/)
+**Original from 4/27/2011**: [Gestão 2.0](http://web.archive.org/web/20160709143544/http://info.abril.com.br/noticias/rede/gestao20/software/a-lingua-portuguesa-brasileira-e-pessima-standard-vs-pattern/)
 
-My last translation article on "Standards: Excellence vs. Mediocrity" generated an interesting separate discussion specifically about "Design Patterns."
+My last translation article, on "Standards: Excellence vs. Mediocrity," spun off an interesting side discussion specifically about "Design Patterns."
 
-For those not in programming: in the 70s (and reinforced in the 90s by the "Gang of Four book") a term called "Design Pattern" emerged that, according to Wikipedia, in software engineering, is a general reusable solution to a commonly occurring problem in software design. A design pattern is not a finished design that can be transformed directly into code. It's a description or template for how to solve a problem that can be used in many different situations.
+For those not in programming: the term "Design Pattern" emerged in the 70s and was reinforced in the 90s by the "Gang of Four book." According to Wikipedia, in software engineering a design pattern is a general reusable solution to a commonly occurring problem in software design. A design pattern is not a finished design that can be transformed directly into code. It's a description or template for how to solve a problem that can be used in many different situations.
 
-For us in Brazil, there's a *huge* problem that only clicked for me because of the discussion in the comments of the article I mentioned above. The complaint was that I translated "Design Patterns Standards" as "Padrões de Design." Ronald, who made the complaint, raised the correct point: the English words _"default"_, _"standard"_ and _"pattern"_ all translate to the same word "padrão" in Portuguese.
+For us in Brazil there's a *huge* problem, and it only clicked for me because of the discussion in the comments of that article. The complaint was that I translated "Design Patterns Standards" as "Padrões de Design." Ronald, the one who raised it, made a correct point: the English words _"default"_, _"standard"_ and _"pattern"_ all translate to the same word "padrão" in Portuguese.
 
 But the 3 words have very different meanings:
 
@@ -36,12 +37,16 @@ In summary:
 
 The problem is that the word "padrão," in Portuguese, is used much more often with the sense of "standard." And many times what we're translating is the word "pattern."
 
-That is, when someone says "Design Pattern" we're only saying that there's a "form" used more frequently than others in solving software problems. It isn't necessarily the most correct one — there's no statement saying it's the conclusive form. Just the observation that it's frequent, regularly used. The image below shows padrões in the sense of "patterns" ("more patterns"):
+That is, when someone says "Design Pattern," they're only saying there's a "form" used more frequently than others in solving software problems. It isn't necessarily the most correct one, and there's no statement that it's the conclusive form. It's just the observation that it's frequent, regularly used. The image below shows padrões in the sense of "patterns" ("more patterns"):
 
 ![Pattern](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/350/complex-repeating-patterns-.jpg)
 
-But translating to "Padrões de Design" gives the impression of the Portuguese sense of the word "padrão" in the sense that it's the most correct or minimally correct form and that, being a "norm," it should be followed. The translation "padrão" comes across like _"obligation to follow standard Decree No. 288/2005,"_ in the sense of _"obligation to follow the norm or regulation Decree No. 288/2005,"_ and then "Design Patterns" gains the connotation of a norm or regulation, which is exactly the wrong meaning! Pattern is Pattern, Standard is Standard — they're completely different things.
+But translating to "Padrões de Design" brings in the Portuguese sense of "padrão" as the most correct, or minimally correct, form, and one that, being a "norm," should be followed. The word "padrão" comes across like _"obligation to follow standard Decree No. 288/2005,"_ that is, _"obligation to follow the norm or regulation Decree No. 288/2005."_
 
-And that's the problem many of us discuss in terms of understanding. Whoever correctly understood Design Patterns in the sense of "Pattern" complains about whoever understood it in the sense of "Standard." Both translate as "padrão." And then it becomes clear why a discussion between these two people seems like a crazy conversation: _"But this is just a padrão (pattern), it's not meant to be mandatorily followed."_ – _"No! This is a padrão (standard), so it must be mandatorily followed!"_
+Then "Design Patterns" gains the connotation of a norm or regulation, which is exactly the wrong meaning. Pattern is Pattern, Standard is Standard, they're completely different things.
 
-Note: I noticed that some people didn't really like the title, but I deliberately put it that way to really draw attention to the subject. Clearly I'm not stating that Portuguese is essentially bad and others are better — every language always has nuances and differences that depend on context, local culture, colloquialisms, neologisms, fashion, and so on. Precisely for that reason we always have to be alert not to understand things literally and to apply them without thinking, starting from false premises.
+And that's where the misunderstanding between so many people lives. Whoever understood Design Patterns in the sense of "Pattern" complains about whoever understood it in the sense of "Standard." Both translate as "padrão," and the discussion between these two people ends up sounding like a crazy conversation: _"But this is just a padrão (pattern), it doesn't have to be mandatorily followed."_ – _"No! This is a padrão (standard), so it must be mandatorily followed!"_
+
+Note: I noticed some people didn't really like the title, but I put it that way on purpose, to draw attention to the subject. I'm not claiming Portuguese is essentially bad and other languages are better. Every language has nuances and differences that depend on context, local culture, colloquialisms, neologisms, fashion, and so on.
+
+Precisely for that reason we always have to stay alert, so we don't take things literally and apply them without thinking, starting from false premises.
