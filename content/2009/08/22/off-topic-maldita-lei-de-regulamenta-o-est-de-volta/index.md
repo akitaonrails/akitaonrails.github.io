@@ -2,6 +2,7 @@
 title: "[Off-Topic] Maldita Lei de Regulamentação está de volta!"
 date: '2009-08-22T17:01:00-03:00'
 slug: off-topic-maldita-lei-de-regulamenta-o-est-de-volta
+translationKey: off-topic-maldita-lei-de-regulamenta-o-est-de-volta
 description: "O autor critica o PLS 607/07 por restringir a profissão de analista de sistemas a diplomados, deixar a fiscalização em aberto e ameaçar autodidatas e o livre mercado."
 tags:
 - leis-e-regulacao
@@ -11,30 +12,30 @@ tags:
 draft: false
 ---
 
- **Update 08/09/2009:** Pequena menção numa notícia do [Yahoo! Notícias](http://br.noticias.yahoo.com/s/02092009/25/tecnologia-projeto-quer-exigir-diploma-profissao.html) sobre este assunto.
+ **Update 08/09/2009:** Pequena menção numa notícia do [Yahoo! Notícias](http://web.archive.org/web/20090919011125/http://br.noticias.yahoo.com:80/s/02092009/25/tecnologia-projeto-quer-exigir-diploma-profissao.html) sobre este assunto.
 
-**Update 26/08/2009:** Excelente análise histórica sobre uma boa proposta de lei que já havia sido recusada uma vez, pelo [Gizmodo](http://www.gizmodo.com.br/conteudo/made-brazil-regulamentacao-de-analistas-de-sistemas-ja-foi-discutida-pelo-congresso-e-o-qu-0)
+**Update 26/08/2009:** Excelente análise histórica sobre uma boa proposta de lei que já havia sido recusada uma vez, pelo [Gizmodo](http://web.archive.org/web/20090828015946/http://www.gizmodo.com.br:80/conteudo/made-brazil-regulamentacao-de-analistas-de-sistemas-ja-foi-discutida-pelo-congresso-e-o-qu-0)
 
 **Update: 25/08/2009:** Acabei de colocar um longo texto de argumentação sobre a Lei neste artigo.
 
-Está nas [notícias](http://www.tiinside.com.br/News.aspx?ID=143390&C=265) :
+Está nas [notícias](http://web.archive.org/web/20090826104306/http://www.tiinside.com.br:80/News.aspx?ID=143390&C=265):
 
 > A proposta que regulamenta o exercício da profissão de analista de sistemas foi aprovada nesta quarta-feira, 19, pela Comissão de Constituição, Justiça e Cidadania (CCJ) do Senado. O projeto de lei ([PLS 607/07](http://www.senado.gov.br/sf/atividade/Materia/Detalhes.asp?p_cod_mate=82918)), de autoria do senador [Expedito Júnior](http://www1.folha.uol.com.br/folha/brasil/ult96u582101.shtml "PR-RO"), segue agora para análise da Comissão de Assuntos Sociais (CAS), em decisão terminativa.
 > 
 > Pelo substitutivo anteriormente aprovado pela Comissão de Ciência, Tecnologia, Inovação, Comunicação e Informática (CCT) e acolhido pelo relator na CCJ, senador [Marconi Perillo](http://g1.globo.com/Noticias/Politica/0,,MUL67360-5601,00.html "PSDB-GO"), somente profissionais com diploma superior em análise de sistemas, ciência da computação ou processamento de dados poderão exercer a profissão de analista de sistemas.
 
-Recomendo que todos releiam [meu artigo do ano passado](/2008/04/19/off-topic-vamos-todos-impedir-a-regulamenta-o-da-profiss-o-de-analista-de-sistema) sobre esse tema. Esta lei é uma grande palhaçada, criada pelo tal [Expedito Júnior](http://www1.folha.uol.com.br/folha/brasil/ult96u582101.shtml "PR-RO"), acolhido pelo tal [Marconi Perillo](http://g1.globo.com/Noticias/Politica/0,,MUL67360-5601,00.html "PSDG-GO").
+Recomendo que todos releiam [meu artigo do ano passado](/2008/04/19/off-topic-vamos-todos-impedir-a-regulamenta-o-da-profiss-o-de-analista-de-sistema) sobre esse tema. Essa lei é uma grande palhaçada, criada pelo tal [Expedito Júnior](http://www1.folha.uol.com.br/folha/brasil/ult96u582101.shtml "PR-RO") e acolhida pelo tal [Marconi Perillo](http://g1.globo.com/Noticias/Politica/0,,MUL67360-5601,00.html "PSDB-GO").
 
 
 ## Texto da Proposta de Lei
 
-Resolvi dar uma passada mais detalhada sobre o texto. A proposta original foi o fracassado Projeto de Lei no 1.947, de 2003 do Eduardo Paes que foi, felizmente, arquivada. Então, não contente, foi apresentada pelo Expedito Júnior o **desastroso** Projeto de Lei no 607, de 2007. Recomendo que todos leiam a versão original primeiro, que pode ser baixada em PDF [neste link](http://www.senado.gov.br/sf/atividade/Materia/getTexto.asp?t=11569&c=RTF).
+Resolvi analisar o texto com mais calma. A proposta original foi o fracassado Projeto de Lei nº 1.947, de 2003, do Eduardo Paes, felizmente arquivado. Não contente, o Expedito Júnior apresentou o **desastroso** Projeto de Lei nº 607, de 2007. Recomendo ler a versão original primeiro, disponível em PDF [neste link](http://www.senado.gov.br/sf/atividade/Materia/getTexto.asp?t=11569&c=RTF).
 
-A primeira instância de análise foi na Comissão de Ciência, Tecnologia, Inovação, Comunicação e Informática, publicado em **05/03/2008**. A análise não é totalmente ruim, mas tem vários pontos falhos de interpretação (vou reservar a opinião de má-fé ou preguiça em uma análise mais apurada), na minha opinião. Por exemplo, primeiro ele cita opinião do SBC – Sociedade Brasileira de Computação – que diz o seguinte:
+A primeira análise foi na Comissão de Ciência, Tecnologia, Inovação, Comunicação e Informática, publicada em **05/03/2008**. Não é totalmente ruim, mas tem vários pontos falhos de interpretação, e prefiro não julgar se por má-fé ou por preguiça. O relatório começa citando a SBC, a Sociedade Brasileira de Computação:
 
 > Segundo informação divulgada pela própria SBC, o importante na regulamentação da profissão é a observação de determinados princípios como o livre exercício dos ofícios relacionados à área de informática. Assim, nenhum conselho de profissão poderia criar qualquer impedimento ou restrição ao princípio acima, devendo a área ser auto-regulada.
 
-Está correto, acho que todos os profissionais da área concordam com isso, mas no parágrafo seguinte a interpretação é errada (obviamente feita por alguém de fora da área):
+Está correto, e acho que todos na área concordam com isso. Só que no parágrafo seguinte a interpretação já erra, obviamente feita por alguém de fora do ramo:
 
 > No caso em tela não se trata disso, pois o art. 2o estabelece que “poderão” exercer a profissão de Analista de Sistemas, Ciência da Computação ou Processamento de Dados, o que amplia sobremaneira as possibilidades de enquadramento profissional, abrangendo praticamente todos os cursos superiores na área de informática.
 
@@ -48,63 +49,71 @@ Para deixar claro, o art. 2o diz o seguinte:
 > 
 > III – os que, na data de entrada em vigor desta Lei, tenham exercido, comprovadamente, durante o período de, no mínimo cinco anos, a função de Analista de Sistemas
 
-Ou seja, a interpretação deixa completamente de fora autodidatas e estudiosos que tiveram a escolha de não se formar por diversos motivos (vide meu artigo [Devo fazer Faculdade?](/2009/04/17/off-topic-devo-fazer-faculdade)). Este artigo claramente exclui uma ampla quantidade de profissionais dos mais qualificados. Mesmo o inciso III não deixa claro o que significa exercício comprovado por 5 anos ou mais. Se refere a carteira assinada? Se refere a notas fiscais a clientes que adquiriram serviços de informática? Quais os critérios?
+Ou seja, a interpretação deixa de fora autodidatas e estudiosos que escolheram não se formar por vários motivos (vide meu artigo [Devo fazer Faculdade?](/2009/04/17/off-topic-devo-fazer-faculdade)). O artigo exclui boa parte dos profissionais mais qualificados.
+
+Mesmo o inciso III não deixa claro o que significa exercício comprovado por cinco anos ou mais. Vale carteira assinada? Vale nota fiscal de serviços de informática prestados a clientes? Quais são os critérios?
 
 A análise prossegue com a afirmação:
 
 > O art. 4o do projeto, ao estabelecer quais as suas atividades e atribuições, não restringe a atuação de outros profissionais. Também não é estabelecida nenhuma exclusividade ou fixado que determinada atividade ou atribuição será privativa do portador de diploma das profissões antes referidas.
 
-O Art. 4o define atividades como definição, gerenciamento, coordenação de projetos de software, incluindo explicitamente a “codificação”. Ou seja, todas as atividades de gerentes de projetos, arquitetos, programadores e afins. E no mesmo artigo temos o seguinte:
+O art. 4º define atividades como definição, gerenciamento e coordenação de projetos de software, incluindo explicitamente a “codificação”. Ou seja, tudo que fazem gerentes de projeto, arquitetos, programadores e afins. E o mesmo artigo traz:
 
 > Parágrafo único. É **privativa** do Analista de Sistemas a responsabilidade técnica por projetos e sistemas para processamento de dados, informática e automação, assim como a emissão de laudos, relatórios ou pareceres técnicos.
 
-Eu posso estar interpretando errado, mas me parece claramente que este parágrafo é exclusivo e, novamente, exclui a fatia dos programadores autodidatas. E a análise segue com um [FUD](http://en.wikipedia.org/wiki/Fear,_uncertainty_and_doubt):
+Posso estar interpretando errado, mas me parece claro que esse parágrafo é exclusivo e, de novo, deixa de fora os programadores autodidatas. A análise então recorre a um [FUD](http://en.wikipedia.org/wiki/Fear,_uncertainty_and_doubt):
 
 > Não se imagina que o centro de processamento de dados de um órgão público, de instituições do sistema financeiro ou mesmo de empresas privadas possa prescindir de responsabilidade técnica de caráter profissional, considerada a interface e a sinergia que se cria com os cidadãos, clientes e consumidores.
 
-Na minha opinião esta é justamente a justificativa errada sendo utilizada na grande maioria dos argumentos a favor da lei: a de que automaticamente um profissional formado é necessariamente muito superior que um profissional autodidata mais experiente. E esta é a toda a base da minha argumentação no [meu artigo do ano passado](/2008/04/19/off-topic-vamos-todos-impedir-a-regulamenta-o-da-profiss-o-de-analista-de-sistema) sobre o assunto. Recomendo a leitura cuidadosa disso.
+Essa é a justificativa errada que aparece na maioria dos argumentos a favor da lei: a de que um profissional formado é sempre muito superior a um autodidata mais experiente. É toda a base do que argumentei no [meu artigo do ano passado](/2008/04/19/off-topic-vamos-todos-impedir-a-regulamenta-o-da-profiss-o-de-analista-de-sistema). Recomendo a leitura com atenção.
 
-Para não dizer que a análise é totalmente ruim, pelo menos foi sugerida a retirada das partes mais ofensoras, no caso:
+Para não dizer que a análise só tem defeito, ela ao menos sugeriu retirar as partes mais graves:
 
 - supressão dos artigos 7o até o art. 33, que criam o Conselho Federal e os Conselhos Regionais de Informática;
 - exclusão, no inciso III do art. 2o, da oração “… e que requeiram o respectivo registro aos Conselhos Regionais de Informática”;
 - exclusão, no inciso II do art. 3o, da oração “… e que requeiram o respectivo registro aos Conselhos Regionais de Informática”;
 
-Então, o motivo de toda esta algazarra que foi a aprovação na Comissão de Constituição, Justiça e Cidadania, publicado no dia 19/08/2009. A proposta foi acatada com todas as modificações sugeridas pela Comissão de Ciência, Tecnologia, Inovação, Comunicação e Informática listadas acima.
+Chegamos então à confusão da vez: a aprovação na Comissão de Constituição, Justiça e Cidadania, publicada em 19/08/2009. A proposta passou com todas as modificações sugeridas pela Comissão de Ciência e Tecnologia listadas acima.
 
 Felizmente, a supressão dos artigos 7o. até o art. 33 foi mantida:
 
 > … há **inconstitucionalidade** de natureza formal nos dispositivos que versam sobre a fiscalização e o exercício da profissão, bem como sobre o registro dos profissionais e o pagamento de taxas … Dessa forma, os citados artigos estão marcados pela eiva de inconstitucionalidade, pois é vedada a iniciativa parlamentar para criar órgãos públicos e atribuir-lhes funções, por força do supramencionado preceito da Lei Maior …
 
-Para clarear, isso **retira** os capítulos que definem os órgãos fiscalizadores, o Conselho Federal de Informática, os Conselhos Regionais de Informática, sobre Registro e Fiscalização Profissional, sobre Anuidades, Emolumentos e Taxas e, finalmente, Infrações e Penalidades. Estas seriam as partes mais danosas caso implementadas. Espero que se mantenha assim.
+Traduzindo, isso **retira** os capítulos que criavam os órgãos fiscalizadores: o Conselho Federal de Informática, os Conselhos Regionais, o registro e a fiscalização profissional, as anuidades, os emolumentos e taxas e, por fim, as infrações e penalidades. Seriam as partes mais danosas se implementadas. Espero que fiquem de fora mesmo.
 
 ## O Sétimo Elemento
 
-Desde 20/08/2009 o substitutivo da proposta está em tramitação aguardando relator na Comissão de Assuntos Sociais, onde ela pode ser aprovada ou arquivada. Pelo andar da carruagem me parece que ela vai ser aprovada sem grandes problemas, o que é **péssimo**!
+Desde 20/08/2009 o substitutivo tramita aguardando relator na Comissão de Assuntos Sociais, onde pode ser aprovado ou arquivado. Pelo andar da carruagem, deve ser aprovado sem grandes problemas, o que é **péssimo**!
 
-Continua valendo meus argumentos no artigo [Vamos impedir a Regulamentação](http://www.akitaonrails.com/2008/04/19/off-topic-vamos-todos-impedir-a-regulamenta-o-da-profiss-o-de-analista-de-sistema) do ano passado. Apesar da desistência dos artigos que criam toda a mecânica burocrática governamental e as penalidades, ainda assim é uma lei muito ruim para todo o mercado. Pior, o tal art. 7o do substitutivo atual me deixa **muito** apreensivo:
+Continuam valendo meus argumentos no artigo [Vamos impedir a Regulamentação](http://www.akitaonrails.com/2008/04/19/off-topic-vamos-todos-impedir-a-regulamenta-o-da-profiss-o-de-analista-de-sistema) do ano passado. Mesmo abrindo mão dos artigos que criavam toda a máquina burocrática e as penalidades, ainda é uma lei péssima para o mercado. Pior: o art. 7º do substitutivo atual me deixa **muito** apreensivo:
 
 > **Art. 7o** O Poder Executivo responsabilizar-se-á pela fiscalização e supervisão do exercício da profissão de Analista de Sistemas, e pelo registro dos profissionais da Informática.
 
-Isso substitui os artigos 7o até o art. 33 em um único artigo que não define nada e deixa completamente em aberto e arbitrário o que o Executivo fará em termos de fiscalização e registro dos profissionais. Ou seja, no fundo tudo que foi retirado continua implicitamente válido.
+Esse único artigo substitui os artigos 7º ao 33 sem definir nada, deixando em aberto e arbitrário o que o Executivo fará quanto à fiscalização e ao registro dos profissionais. No fundo, tudo que foi retirado continua implicitamente válido.
 
-Este artigo não existia na versão da Comissão de Ciência, Tecnologia, Inovação, Comunicação e Informática de 2008. Ela foi a única coisa acrescentada na versão da Comissão de Constituição, Justiça e Cidadania aprovada em 19/08/2009 e é, na minha opinião, a coisa que mais regrediu este texto. No relatório se lê:
+Esse artigo não existia na versão de 2008 da Comissão de Ciência e Tecnologia. Foi a única coisa acrescentada na versão da CCJ aprovada em 19/08/2009 e, na minha opinião, é o que mais fez o texto regredir. No relatório se lê:
 
 > Por outro lado, para dar viabilidade ao objetivo da iniciativa, desejamos acrescentar também um artigo com vistas a remeter ao Poder Executivo função de deliberar sobre as questões tratadas nos artigos aqui suprimidos. Assim, acolhemos o Substitutivo oferecido pela Comissão de Ciência e Tecnologia, com acréscimo de um dispositivo.
 
 ## Conclusão
 
-Se a Comissão de Assuntos Sociais aprovar esta lei, será um enorme retrocesso no mercado nacional de informática. Esta lei tem o potencial de ser ainda mais destrutiva do que as leis de reserva de mercado de informática dos anos 80, que nos deixaram quase uma década atrás do Primeiro Mundo em termos de modernização.
+Se a Comissão de Assuntos Sociais aprovar essa lei, será um enorme retrocesso no mercado nacional de informática. Ela tem potencial para ser ainda mais destrutiva que as leis de reserva de mercado dos anos 80, que nos deixaram quase uma década atrás do Primeiro Mundo em modernização.
 
-Como o SBC já havia mencionado, este mercado deve ser livre e auto-regulado, o que ele já é de fato. Não há nenhuma necessidade de uma regulamentação desta natureza. Como eu já disse antes, podemos conversar sobre um texto mais realista. Porém este texto em particular é por demais danoso para ser considerado. Ele precisa ser completamente reescrito por profissionais experientes atuantes na área em conjunto com toda a nova geração de desenvolvedores.
+Como a própria SBC lembrou, esse mercado deve ser livre e autorregulado, o que ele já é na prática. Não existe necessidade de uma regulamentação dessas.
 
-Eu não conheço paralelo dessa lei em nenhum lugar do mundo (peço que se alguém souber, comente neste artigo). Ela efetivamente restringe a atividade, partindo da **premissa errada** de que profissionais formados são necessariamente melhores do que profissionais autodidatas, o que é, por experiência própria, muito falso. Na realidade, alguns dos melhores com quem eu já trabalhei nesses últimos 15 anos não eram formados.
+Já disse antes que podemos conversar sobre um texto mais realista. Mas esse texto específico é danoso demais para ser considerado. Ele precisaria ser reescrito do zero por profissionais experientes da área, junto com toda a nova geração de desenvolvedores.
 
-A grande maioria das pessoas a favor se divide em duas categorias: as que leram a proposta de lei e suas tramitações e as que não leram. As que não leram simplesmente não sabem do que estão falando.
+Não conheço paralelo dessa lei em lugar nenhum do mundo (se alguém conhecer, comente aqui). Ela restringe a atividade partindo da **premissa errada** de que profissionais formados são sempre melhores que autodidatas, o que, por experiência própria, é muito falso. Alguns dos melhores com quem trabalhei nesses últimos 15 anos não tinham diploma.
 
-As que leram e ainda assim concordam são justamente os maus profissionais que não conseguem competir com os autodidatas, querendo usar apenas a força das “credenciais” como critério. Este mercado se auto-regula à medida que os maus profissionais são naturalmente excluídos do mercado, indo cada vez mais para atividades de menor importância. Também se confunde as carreiras de “codificador” e “desenvolvedor”. O primeiro é um commodity que se aproxima muito de um datilógrafo, apenas tentando traduzir diagramas e requerimentos em formato de código, sem qualquer atenção à qualidade do mesmo. Um desenvolvedor, por outro lado, é um arquiteto nato, que tem total controle sobre sua criação. O primeiro é um commodity, o segundo é a “nata” da categoria, que sobe no mercado por pura meritocracia, e seleção natural baseada em networking. Apesar de algumas exceções, eu diria que é uma implementação razoável de [Laissez-faire](http://en.wikipedia.org/wiki/Laissez-faire).
+A maioria das pessoas a favor se divide em dois grupos: as que leram a proposta e suas tramitações e as que não leram. As que não leram simplesmente não sabem do que estão falando.
 
-Nossa área sequer tem uma metodologia de trabalho consolidada. Estamos ainda transitando entre o Taylorismo-Fordista da Engenharia Clássica de Software baseado em Waterfall, até o movimento Ágil pós-Toyotista de Lean, Scrum, XP e outros. Nossas ferramentas de hoje e de 10 anos atrás são bastante diferentes. A internet mudou completamente o rumo da profissão. São mudanças repentinas demais para se tentar regularizar. Neste tipo de circunstância, o livre mercado é a melhor forma de lidar com isso.
+As que leram e ainda assim concordam são justamente os maus profissionais que não competem com os autodidatas e querem usar só a força das “credenciais” como critério. Esse mercado se autorregula à medida que os maus profissionais são naturalmente empurrados para atividades de menor importância.
 
-Portanto, baseado em tudo isso, continuo veementemente contra essa proposta de lei e espero realmente que existam pessoas de boa educação na Comissão de Assuntos Sociais para terem o bom senso de perguntar à sociedade, e a nós, categoria afetada, para então arquivar esse texto de uma vez por todas.
+Também se confunde as carreiras de “codificador” e “desenvolvedor”. O codificador é um commodity, próximo de um datilógrafo, que apenas traduz diagramas e requisitos em código, sem qualquer atenção à qualidade. O desenvolvedor é um arquiteto nato, com controle total sobre a própria criação. Um é commodity; o outro é a “nata” da categoria, que sobe no mercado por pura meritocracia e seleção natural via networking. Com algumas exceções, eu diria que é uma implementação razoável de [Laissez-faire](http://en.wikipedia.org/wiki/Laissez-faire).
+
+Nossa área sequer tem uma metodologia de trabalho consolidada. Ainda estamos transitando do Taylorismo-Fordista da Engenharia Clássica de Software, baseada em Waterfall, para o movimento Ágil pós-Toyotista de Lean, Scrum, XP e outros. As ferramentas de hoje e as de dez anos atrás são bem diferentes, e a internet mudou completamente o rumo da profissão.
+
+São mudanças rápidas demais para tentar regular. Nesse tipo de cenário, o livre mercado é a melhor forma de lidar com o problema.
+
+Por tudo isso, continuo veementemente contra essa proposta e espero que haja gente sensata na Comissão de Assuntos Sociais, com o bom senso de ouvir a sociedade e a nós, a categoria afetada, para arquivar esse texto de uma vez por todas.
 
