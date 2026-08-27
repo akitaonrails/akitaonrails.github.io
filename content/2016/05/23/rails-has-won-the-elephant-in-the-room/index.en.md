@@ -11,7 +11,7 @@ tags:
 draft: false
 ---
 
-I just read a very [well written and important article](http://solnic.eu/2016/05/22/my-time-with-rails-is-up.html) from OSS contributor Solnic and I have to agree with him in almost every technical point.
+I just read a very [well written and important article](http://web.archive.org/web/20160523160801/http://solnic.eu/2016/05/22/my-time-with-rails-is-up.html) from OSS contributor Solnic and I have to agree with him in almost every technical point.
 
 First of all, it's inevitable but I still hate dramatic headlines, even though I write like this myself sometimes. "My time with Rails is up" like it's saying "And you should leave Rails now too if you're smart". I dismissed the article entirely because of that. I was about to post a counter-rant to that without reading it properly, but now that I have, I wrote this new article from scratch.
 
@@ -37,11 +37,11 @@ Fragmentation is no stranger to the Javascript world. But it's a different kind 
 
 Facebook came up with React. Google came up with Polymer and Angular. The Node guys went through a power struggle with Joyent which almost resulted in further fragmentation but they settled for the [Node Foundation](http://readwrite.com/2015/02/10/joyent-node-js-foundation/).
 
-Apple went all on war against Adobe's Flash and then only now Google is [turning them off in Chrome](http://www.theinquirer.net/inquirer/news/2458329/googles-chrome-browser-will-switch-off-flash-content-by-default), but they are all looting on the consequences for all the attention it brings in the Web Development communities.
+Apple went all on war against Adobe's Flash and then only now Google is [turning them off in Chrome](http://web.archive.org/web/20160520233349/http://www.theinquirer.net/inquirer/news/2458329/googles-chrome-browser-will-switch-off-flash-content-by-default), but they are all looting on the consequences for all the attention it brings in the Web Development communities.
 
 Apple wants native to succeed and Swift to be the one language to lead it all. Google has conflicting strategies because they want native [Instant Apps](http://techcrunch.com/2016/05/18/google-takes-a-new-approach-to-native-apps-with-instant-apps-for-android/) to succeed but if it fails, plan B continues to be for them to dominate HTML5/CSS3 based web apps with Angular. Facebook doesn't want to have its fate decided by the power struggle between Apple and Google.
 
-It's a complex power struggle unfolding, and you can see that it's not about technical prowess, it's not about value generation. It's about ego, influence and power. Very fitting for the YouTuber generation. And the web technologies are being held _hostage_ in this siege, if you haven't noticed.
+It's a complex power struggle unfolding, and you can see it has little to do with technical prowess or value generation. It's about ego, influence and power. Very fitting for the YouTuber generation. And the web technologies are being held _hostage_ in this siege, if you haven't noticed.
 
 Then there is the issue that Ruby's future is now tightly coupled with Rails. This is a reality and if you're a Rubyist who doesn't like Rails, I feel bad for you. But not so much. For example, if Hanami is interesting I believe at least one company invested on it. If no one is using it, then it doesn't matter how technically superior it is. If Rom.rb is great someone should be using it, otherwise what's the point? Why create a technical marvel that no one wants? But if there is at least one company using it, it's **enough reason** to keep going, regardless of what happens to Rails or what DHH says or does.
 
@@ -81,7 +81,7 @@ As I said before, I agree to almost every technical problem that Solnic outlined
 
 Rails is indeed the brainchild of David Hansson (DHH). DHH is a person, with a very big ego, and a business to run. You can't expect any person to be reasonable all the time, especially one who pushed something up from zero, both a business and a technology platform.
 
-When it started, people defected from Java, .NET, PHP even Python, in droves and they all acknowledged how interesting Rails was compared to J2EE, ASP.NET, Plone. It offered not only productivity but technical enjoyment. We were discussing the wondrous world of dynamic languages, open classes, injecting behavior on the fly (aka [monkey patching](https://m.signalvnoise.com/provide-sharp-knives-cc0a22bf7934#.zcxl5lbh8)), we all stood up and applauded dropping all unnecessary abstractions.
+When it started, people defected from Java, .NET, PHP even Python, in droves and they all acknowledged how interesting Rails was compared to J2EE, ASP.NET, Plone. It offered not only productivity but technical enjoyment. We were discussing the wondrous world of dynamic languages, open classes, injecting behavior on the fly (aka [monkey patching](https://m.signalvnoise.com/provide-sharp-knives-cc0a22bf7934)), we all stood up and applauded dropping all unnecessary abstractions.
 
 We could not have enough of our Ruby fix, spitting out all the Perl-like magic we would accomplish in a language that didn't feel ugly as PHP or bureaucratic like Java or C#. And they all laughed.
 
