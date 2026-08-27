@@ -2,7 +2,8 @@
 title: 'Off Topic: Pale Blue Dot'
 date: '2007-08-29T02:59:00-03:00'
 slug: off-topic-plido-ponto-azul
-description: "An image of Earth captured by Voyager I inspires Carl Sagan to reflect on our fragility and responsibility, while the author recommends Cosmos as a legacy for raising curious children."
+translationKey: off-topic-plido-ponto-azul
+description: "An image of Earth captured by Voyager 1 inspires Carl Sagan to reflect on our fragility and responsibility, while the author recommends Cosmos as a legacy for raising curious children."
 tags:
 - science
 - philosophy
@@ -10,13 +11,13 @@ tags:
 draft: false
 ---
 
-<object width="425" height="350"><param name="movie" value="http://www.youtube.com/v/FPJh3UeJDaA">
-<param name="wmode" value="transparent">
-<embed src="http://www.youtube.com/v/FPJh3UeJDaA" type="application/x-shockwave-flash" wmode="transparent" width="425" height="350"></embed></object>
+{{< youtube id="FPJh3UeJDaA" >}}
 
-Carl Sagan needs no introduction. I've always found this passage inspiring. It's good to give people the _right_ motivation — and it's another reason why I recommend [Cosmos](http://www.lojaabril.com.br/abril/productdetail.asp?CatId=28400&SubCatId=27807&ProdTypeID=14&ProdId=1888177) to all children: a legacy that transcends generations. (More recommended videos at the end of the article.)
+Carl Sagan needs no introduction. I've always found this passage inspiring. It's good to give people the _right_ motivation, and it's one more reason I recommend [Cosmos](http://web.archive.org/web/20071012170217/http://lojaabril.com.br/abril/productdetail.asp?CatId=28400&SubCatId=27807&ProdTypeID=14&ProdId=1888177) to every kid: a legacy that outlives generations. (More recommended videos at the end of the article.)
 
-This excerpt from [Pale Blue Dot](http://www.planetary.org/explore/topics/voyager/pale_blue_dot.html) was inspired by an image taken, at Sagan's suggestion, by Voyager I on February 14, 1990. As the spacecraft was leaving our planetary neighborhood for the fringes of the solar system, engineers turned it around for one last look at our planet. Voyager I was approximately 6.4 billion kilometers away, and approximately 32 degrees above the ecliptic plane, when it captured this portrait of our world. Caught in the center of scattered light rays (a result of taking the photo so close to the Sun), the Earth appears as a tiny point of light — a crescent of only 0.12 pixels in size.
+This excerpt from [Pale Blue Dot](http://web.archive.org/web/20071011093302/http://www.planetary.org/explore/topics/voyager/pale_blue_dot.html) was inspired by an image taken, at Sagan's suggestion, by Voyager 1 on February 14, 1990. As the spacecraft was leaving our planetary neighborhood for the fringes of the solar system, engineers turned it around for one last look at our planet.
+
+Voyager 1 was about 6.4 billion kilometers away, roughly 32 degrees above the ecliptic plane, when it captured this portrait of our world. Caught in the center of scattered light rays, an effect of shooting so close to the Sun, the Earth shows up as a tiny point of light: a crescent only 0.12 pixels in size.
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2007/8/29/voyager1-earth-pale_blue_dot.jpg)
 
@@ -38,20 +39,6 @@ _Carl Sagan, Pale Blue Dot, 1994_
 
 How to explain the Origins of the Universe …
 
-<object width="425" height="350"><param name="movie" value="http://www.youtube.com/v/GLsSLKigRzc">
-<param name="wmode" value="transparent">
-<embed src="http://www.youtube.com/v/GLsSLKigRzc" type="application/x-shockwave-flash" wmode="transparent" width="425" height="350"></embed></object>
+{{< youtube id="GLsSLKigRzc" >}}
 
-Why we need to motivate scientific research …
-
-<object width="425" height="350"><param name="movie" value="http://www.youtube.com/v/i03FgnaS-RI">
-<param name="wmode" value="transparent">
-<embed src="http://www.youtube.com/v/i03FgnaS-RI" type="application/x-shockwave-flash" wmode="transparent" width="425" height="350"></embed></object>
-
-Why religious fanaticism is dangerous for mankind …
-
-<object width="425" height="350"><param name="movie" value="http://www.youtube.com/v/kMsdEkGQL0U">
-<param name="wmode" value="transparent">
-<embed src="http://www.youtube.com/v/kMsdEkGQL0U" type="application/x-shockwave-flash" wmode="transparent" width="425" height="350"></embed></object>
-
-And, let us never forget Sagan's [legacy](http://www.youtube.com/v/_JX_-jaJOrU) …
+And, let us never forget Sagan's [legacy](https://www.youtube.com/watch?v=_JX_-jaJOrU) …

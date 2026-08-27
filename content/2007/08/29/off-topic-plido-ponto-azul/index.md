@@ -2,7 +2,8 @@
 title: 'Off Topic: Pálido Ponto Azul'
 date: '2007-08-29T02:59:00-03:00'
 slug: off-topic-plido-ponto-azul
-description: "A imagem da Terra capturada pela Voyager I inspira Carl Sagan a refletir sobre nossa fragilidade e responsabilidade, enquanto o autor recomenda Cosmos como legado para formar crianças curiosas."
+translationKey: off-topic-plido-ponto-azul
+description: "A imagem da Terra capturada pela Voyager 1 inspira Carl Sagan a refletir sobre nossa fragilidade e responsabilidade, enquanto o autor recomenda Cosmos como legado para formar crianças curiosas."
 tags:
 - ciencia
 - filosofia
@@ -10,16 +11,15 @@ tags:
 draft: false
 ---
 
-<object width="425" height="350"><param name="movie" value="http://www.youtube.com/v/FPJh3UeJDaA">
-<param name="wmode" value="transparent">
-<embed src="http://www.youtube.com/v/FPJh3UeJDaA" type="application/x-shockwave-flash" wmode="transparent" width="425" height="350"></embed></object>
+{{< youtube id="FPJh3UeJDaA" >}}
 
-Carl Sagan dispensa apresentações. Sempre achei este trecho inspirador. É bom dar a motivação _certa_ às pessoas e outra razão de porque recomendo [Cosmos](http://www.lojaabril.com.br/abril/productdetail.asp?CatId=28400&SubCatId=27807&ProdTypeID=14&ProdId=1888177) a todas as crianças: um legado que ultrapassa gerações. (Mais vídeos recomendados no final do artigo.)
+Carl Sagan dispensa apresentações. Sempre achei este trecho inspirador. É bom dar a motivação _certa_ às pessoas, e é mais uma razão para recomendar [Cosmos](http://web.archive.org/web/20071012170217/http://lojaabril.com.br/abril/productdetail.asp?CatId=28400&SubCatId=27807&ProdTypeID=14&ProdId=1888177) a todas as crianças: um legado que ultrapassa gerações. (Mais vídeos recomendados no final do artigo.)
 
+Este trecho de [Um Pálido Ponto Azul](http://web.archive.org/web/20071011093302/http://www.planetary.org/explore/topics/voyager/pale_blue_dot.html) foi inspirado por uma imagem tirada, à sugestão de Sagan, pela Voyager 1 em 14 de fevereiro de 1990. Quando a sonda deixava nossa vizinhança planetária rumo às bordas do sistema solar, os engenheiros a viraram para uma última olhada no nosso planeta.
 
-Este trecho de [Um Pálido Ponto Azul](http://www.planetary.org/explore/topics/voyager/pale_blue_dot.html) foi inspirado por uma imagem tirada, à sugestão de Sagan, pela Voyager I em 14 de Fevereiro de 1990. À medida que a espaçonave deixava nossa vizinhança planetária para as bordas do sistema solar, engenheiros a viraram para uma última olhada do nosso planeta. A Voyager I estava a cerca de 6,4 bilhões de quilômetros de distância, e aproximadamente 32 graus acima do plano elíptico, quando capturou este retrato de nosso mundo. Capturada no centro de raios de luz difusos (um resultado de tirar a foto tão próximo do Sol), a Terra parece um pequeno ponto de luz, um crescente de apenas 0,12 pixels de tamanho.
+A Voyager 1 estava a cerca de 6,4 bilhões de quilômetros de distância, aproximadamente 32 graus acima do plano da eclíptica, quando capturou este retrato do nosso mundo. Presa no centro de raios de luz difusos, um efeito de fotografar tão perto do Sol, a Terra aparece como um pequeno ponto de luz: um crescente de apenas 0,12 pixels de tamanho.
 
-_(AkitaOnRails: a seguir segue o texto original em inglês. A tradução está no vídeo acima.)_
+_(AkitaOnRails: a seguir, o texto original em inglês. A tradução está no vídeo acima.)_
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2007/8/29/voyager1-earth-pale_blue_dot.jpg)
 
@@ -41,21 +41,7 @@ _Carl Sagan, Pale Blue Dot, 1994_
 
 How to explain the Origins of the Universe …
 
-<object width="425" height="350"><param name="movie" value="http://www.youtube.com/v/GLsSLKigRzc">
-<param name="wmode" value="transparent">
-<embed src="http://www.youtube.com/v/GLsSLKigRzc" type="application/x-shockwave-flash" wmode="transparent" width="425" height="350"></embed></object>
+{{< youtube id="GLsSLKigRzc" >}}
 
-Why we need to motivate scientific research …
-
-<object width="425" height="350"><param name="movie" value="http://www.youtube.com/v/i03FgnaS-RI">
-<param name="wmode" value="transparent">
-<embed src="http://www.youtube.com/v/i03FgnaS-RI" type="application/x-shockwave-flash" wmode="transparent" width="425" height="350"></embed></object>
-
-Why religious fanaticism is dangerous for mankind …
-
-<object width="425" height="350"><param name="movie" value="http://www.youtube.com/v/kMsdEkGQL0U">
-<param name="wmode" value="transparent">
-<embed src="http://www.youtube.com/v/kMsdEkGQL0U" type="application/x-shockwave-flash" wmode="transparent" width="425" height="350"></embed></object>
-
-And, let us never forget Sagan’s [legacy](http://www.youtube.com/v/_JX_-jaJOrU) …
+And, let us never forget Sagan’s [legacy](https://www.youtube.com/watch?v=_JX_-jaJOrU) …
 
