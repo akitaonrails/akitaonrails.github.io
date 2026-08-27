@@ -12,7 +12,7 @@ tags:
 draft: false
 ---
 
-So, it's finally here. I wrote about the announcement at the Build event a few days ago [here](http://www.akitaonrails.com/en/2016/03/31/off-topic-uma-nova-era-para-a-microsoft). Now Microsoft is teasing us a bit more by [releasing the first Insider Build Preview](http://thehackernews.com/2016/04/how-to-run-ubuntu-on-windows-10.html). It is labeled "Build 14316.rs1_release.160402-2217" to be exact, be sure to have this one.
+So, it's finally here. I wrote about the announcement at the Build event a few days ago [here](/en/2016/03/31/war-is-over-or-is-it-a-new-dawn-for-microsoft). Now Microsoft is teasing us a bit more and [released the first Insider Build Preview](http://thehackernews.com/2016/04/how-to-run-ubuntu-on-windows-10.html). The label is "Build 14316.rs1_release.160402-2217"; make sure that's exactly the one you have before going further.
 
 To get it, you must have the following requirements:
 
@@ -28,11 +28,11 @@ Once it's installed, you must go to the Developer options in the "Update & Secur
 
 Once you have the Preview installed you must be able to fire up the old cmd.exe console (or any other better console such as [ConEmu](https://conemu.github.io/)) and type in "bash"; it will prompt you to install the userland Canonical packaged for Ubuntu. This takes another while. The whole process takes a lot of time, by the way, so make sure you reserve half a day at least. Don't do it at work :-)
 
-One problem I stumbled upon right away is that networking was not working properly. Someone [narrowed it down](https://github.com/Microsoft/BashOnWindows/issues/35) to DNS not being added to <tt>/etc/resolv.conf</tt> so you must add it manually. Just add the Google DNS (8.8.8.8 and 8.8.4.4) to the resolv.conf file and you're up.
+One problem I stumbled upon right away is that networking was not working properly. Someone [narrowed it down](https://github.com/microsoft/WSL/issues/35) to DNS not being added to <tt>/etc/resolv.conf</tt> so you must add it manually. Just add the Google DNS (8.8.8.8 and 8.8.4.4) to the resolv.conf file and you're up.
 
-Finally, you should be inside bash, as a root user. So, if you're a Windows user, you must know right now that it's insecure and an anti-practice to run as root, so don't do it.
+Finally, you land inside bash as the root user. If you're a Windows user, know right now that running as root is insecure and a bad practice. Don't do it.
 
-The very first thing you **must** do is manually create an unprivileged Linux user and add it to the sudo group as Andrew Malton [blogged](http://blog.greenarrow.me/elixir-with-ubuntu-for-windows/) first:
+The very first thing you **must** do is manually create an unprivileged Linux user and add it to the sudo group as Andrew Malton [blogged](https://web.archive.org/web/20160411063840/http://blog.greenarrow.me/elixir-with-ubuntu-for-windows/) first:
 
 ```
 useradd new_username -m -s /bin/bash 
@@ -110,7 +110,7 @@ LABEL=cloudimg-rootfs   /        ext4   defaults        0 0
 /swapfile       none    swap    sw      0 0
 ```
 
-So it sounds like memory is "hard-coded". Follow [this issue #92](https://github.com/Microsoft/BashOnWindows/issues/92) if you want to know how it develops.
+So it sounds like memory is "hard-coded". Follow [this issue #92](https://github.com/microsoft/WSL/issues/92) if you want to know how it develops.
 
 But worse than that, shared memory has very low limits and strange behavior. Postgresql will install but won't start up at all:
 
@@ -139,7 +139,7 @@ root@localhost:/mnt/c/Users/fabio# echo 134217728 >/proc/sys/kernel/shmmax
 bash: /proc/sys/kernel/shmmax: Operation not permitted
 ```
 
-So, no Postgresql for the time being. Some people who were able to complete the Go Lang installation (I gave up after a very, very long time waiting for apt-get to finish) complained that Go also crashed on shared memory requirements. Follow [Issue #32](https://github.com/Microsoft/BashOnWindows/issues/32) and [Issue #146](https://github.com/Microsoft/BashOnWindows/issues/146) to see if anyone can make it work.
+So, no Postgresql for the time being. Some people who were able to complete the Go Lang installation (I gave up after a very, very long time waiting for apt-get to finish) complained that Go also crashed on shared memory requirements. Follow [Issue #32](https://github.com/microsoft/WSL/issues/32) and [Issue #146](https://github.com/microsoft/WSL/issues/146) to see if anyone can make it work.
 
 I also tried to install Node.js. No luck with package installs:
 
@@ -181,9 +181,9 @@ Number of CPU thread(s) less or equal to 2 will have only one job a time for 'ma
 Installing node v1.0 and greater from source is not currently supported
 ```
 
-[Issue #9](https://github.com/Microsoft/BashOnWindows/issues/9) points to non-implemented symlink support.
+[Issue #9](https://github.com/microsoft/WSL/issues/9) points to non-implemented symlink support.
 
-Another very annoying thing is the lack of Pseudo-Terminals (/dev/pts), which is possibly one of the reasons ZSH won't work. Follow [Issue #80](https://github.com/Microsoft/BashOnWindows/issues/80).
+Another very annoying thing is the lack of Pseudo-Terminals (/dev/pts), which is possibly one of the reasons ZSH won't work. Follow [Issue #80](https://github.com/microsoft/WSL/issues/80).
 
 You should also be able to copy over your SSH private keys to ".ssh" and start git cloning from Github or git push-ing to Heroku in no time.
 
@@ -240,7 +240,7 @@ akitaonrails@localhost:~$ mix new ex_test
     (mix) lib/mix/cli.ex:58: Mix.CLI.run_task/2
 ```
 
-You will find more information on the pseudo-project Microsoft opened over Github to keep track of [Issues](https://github.com/Microsoft/BashOnWindows/issues?q=is%3Aissue+is%3Aclosed) from testers like me. You can follow the list of opened and closed issues there. You will see many things that work, but also many other things that won't work until a new release is available to fix everything I mentioned here.
+You will find more information on the pseudo-project Microsoft opened over Github to keep track of [Issues](https://github.com/microsoft/WSL/issues?q=is%3Aissue+is%3Aclosed) from testers like me. You can follow the list of opened and closed issues there. You will see many things that work, but also many other things that won't work until a new release is available to fix everything I mentioned here.
 
 ### Conclusion
 
@@ -248,7 +248,7 @@ So, is "Bash on Windows" a good development environment for Linux users to have 
 
 As far as Preview 14316, not yet. The keyword here is "yet". It's shaping up nicely, and if they can actually fix all the issues opened so far, it will be very usable very fast.
 
-We need proper memory controls, well implemented pseudo-terminal support, proper shared memory controls, proper symlinks, proper upstart from Ubuntu so the installed services such as Redis or Memcached (which I installed and run) can be properly restarted when I boot the environment (they don't come up if I boot the machine, for example).
+We still need decent memory controls, well-implemented pseudo-terminal support, configurable shared memory limits, and working symlinks. We also need Ubuntu's upstart, so services like Redis or Memcached (which I installed and run) come up on their own when I start the environment. Right now they don't come back after I reboot the machine.
 
 [Some people](http://www.neowin.net/news/bash-plus-windows-10-equals-linux-gui-apps-on-the-windows-desktop) went as far as being able to trick X11 and run GUI apps such as Firefox and even XFCE over this environment already, so it's really promising. This idea does work.
 
