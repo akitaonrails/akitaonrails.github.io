@@ -52,7 +52,7 @@ git checkout -track -b [qualquer_nome] git-svn
 
 ```bash
 git branch -a
-  ```
+```
 
 <br>
 Já podemos brincar. Posso alterar meu código localmente neste novo working copy. Toda vez que precisar fazer um commit, basta fazer:<br>

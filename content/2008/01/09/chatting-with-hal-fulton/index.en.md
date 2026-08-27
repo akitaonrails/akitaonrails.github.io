@@ -53,8 +53,9 @@ changes as we approached Ruby 2.0 – more radical changes than the core classes
 
 **Hal:** I think the conciseness is one really attractive feature. Take a look at this single line of Ruby, which creates two accessors for a class:
 
-* * *
-rubyattr_accessor :alpha, :beta—-
+```ruby
+attr_accessor :alpha, :beta
+```
 
 How would you do that in C++? Well, you would declare two attributes; then you would write a pair of "reader" functions and a pair of "writer" functions. What's that, at least seven lines of code right there? But then what if you want to be able to assign different  
 types to these? Now you have to get into overloading. It quickly becomes a nightmare. Meanwhile, in Ruby — it's still just one line of code.
@@ -75,20 +76,23 @@ For example, I've always wanted an "in" operator that would be syntax sugar for 
 
 Many times I've felt a need for a data structure that would be accessed like a hash, but would preserve the order specified in the code. For example, imagine a kind of "dynamic case statement" — we pass in possible matches and code to execute (as procs) for each of those matches. (It would have the advantage over a case statement that we can control the number of case limbs and their associated code at runtime.) Let's implement it as a method called "choose" that we call in this way:
 
-* * *
-rubychoose regex1 =\> proc { handle_case1 }, regex2 =\> proc { handle_case2}—-
+```ruby
+choose regex1 => proc { handle_case1 }, regex2 => proc { handle_case2}
+```
 
 Now, what's the problem here? The syntax fools us into thinking that regex1 somehow precedes regex2 – but when we iterate over a hash, the order is not guaranteed to be the same as in the code. (That is a property of hashes, of course, not a bug.) So we can't control or predict the order in which these are applied. And I have found several other cases where I wanted such a thing – an associative array, a set of tuples, that had a convenient syntax for literals and had an order.
 
 There are two usual responses to my desire for an "ordered hash." Some people say that I'm crazy, that a hash isn't ordered and that's that. Some people say I could always make my own class that behaved that way – which is true, except that I wouldn't have the convenience of representing it as a "first-class citizen" in Ruby syntax. After all, a hash "could" be represented as a second-class citizen as well – I could say
 
-* * *
-rubyHash["a",2,"b",4,"c",6]—-
+```ruby
+Hash["a",2,"b",4,"c",6]
+```
 
 instead of saying:
 
-* * *
-ruby{"a" =\> 2, "b" =\> 4, "c" =\> 6}—-
+```ruby
+{"a" => 2, "b" => 4, "c" => 6}
+```
 
 But I am glad for the expressiveness of the latter syntax.
 

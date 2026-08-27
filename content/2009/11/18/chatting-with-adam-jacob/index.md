@@ -146,30 +146,26 @@ Como queríamos que o Chef tivesse a máxima utilidade, ativamente tentamos remo
 
 Na prática, você precisa saber muito pouco de Ruby para usar o Chef. Aqui está um exemplo de instalação do programa "screen":
 
-* * *
-ruby
-
-package "screen" do   
- action :install  
-end  
--
+```ruby
+package "screen" do
+ action :install
+end
+```
 
 O mesmo em Puppet:
 
-* * *
-
-package { "screen":   
- ensure =\> present   
-}  
--
+```ruby
+package { "screen":
+ ensure => present
+}
+```
 
 E em Cfengine 2:
 
-* * *
-
-packages:  
- screen action=install  
--
+```ruby
+packages:
+ screen action=install
+```
 
 Embora todos esses sistemas exijam aprender a sintaxe, em um nível base não há muita diferença entre eles em termos de aprendizado bruto necessário. A diferença é que quando você atinge uma limitação no Chef, você tem a capacidade de inovar facilmente, e quando atinge as mesmas limitações em outras ferramentas, você não tem.
 

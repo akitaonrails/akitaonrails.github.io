@@ -53,8 +53,9 @@ A omissão mais gritante, na minha opinião, é a ausência de cobertura sobre c
 
 **Hal:** Acho que a concisão é um recurso muito atraente. Dê uma olhada nesta única linha de Ruby, que cria dois acessores para uma classe:
 
-* * *
-rubyattr_accessor :alpha, :beta—-
+```ruby
+attr_accessor :alpha, :beta
+```
 
 Como você faria isso em C++? Você declararia dois atributos; depois escreveria um par de funções "leitoras" e um par de funções "escritoras". Isso é pelo menos sete linhas de código ali. Mas aí, e se você quiser atribuir tipos diferentes a esses atributos? Aí você entra no overloading. Vira um pesadelo rapidinho. Enquanto isso, em Ruby — continua sendo uma única linha de código.
 
@@ -74,20 +75,23 @@ Por exemplo, sempre quis um operador "in" que fosse açúcar sintático para cha
 
 Várias vezes senti necessidade de uma estrutura de dados que fosse acessada como um hash, mas que preservasse a ordem especificada no código. Por exemplo, imagine um tipo de "case statement dinâmico" — passamos possíveis correspondências e código para executar (como procs) para cada uma delas. (Teria a vantagem sobre um case statement de podermos controlar o número de ramificações e o código associado em tempo de execução.) Vamos implementá-lo como um método chamado "choose" que chamamos assim:
 
-* * *
-rubychoose regex1 =\> proc { handle_case1 }, regex2 =\> proc { handle_case2}—-
+```ruby
+choose regex1 => proc { handle_case1 }, regex2 => proc { handle_case2}
+```
 
 Qual é o problema? A sintaxe nos engana a pensar que regex1 de alguma forma precede regex2 — mas quando iteramos sobre um hash, a ordem não é garantida como no código. (Isso é uma propriedade dos hashes, claro, não um bug.) Então não podemos controlar ou prever a ordem em que eles são aplicados. E encontrei vários outros casos onde queria algo assim — um array associativo, um conjunto de tuplas, com sintaxe conveniente para literais e com uma ordem.
 
 Há duas respostas usuais para meu desejo de um "hash ordenado". Alguns dizem que estou louco, que hash não é ordenado e pronto. Outros dizem que posso sempre criar minha própria classe que se comportasse assim — o que é verdade, exceto que não teria a conveniência de representá-lo como "cidadão de primeira classe" na sintaxe Ruby. Afinal, um hash "poderia" ser representado como cidadão de segunda classe também — eu poderia escrever:
 
-* * *
-rubyHash["a",2,"b",4,"c",6]—-
+```ruby
+Hash["a",2,"b",4,"c",6]
+```
 
 em vez de:
 
-* * *
-ruby{"a" =\> 2, "b" =\> 4, "c" =\> 6}—-
+```ruby
+{"a" => 2, "b" => 4, "c" => 6}
+```
 
 Mas sou grato pela expressividade desta última sintaxe.
 
