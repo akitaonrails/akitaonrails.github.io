@@ -12,7 +12,7 @@ draft: false
 
 Como [disse antes](http://www.akitaonrails.com/articles/2007/04/14/off-topic-seja-arrogante), eu ouço muitos podcasts. Todos os dias meu iTunes baixa mais e mais. Isso já me deixou com uma fila enorme de programas ainda a ouvir. Este [episódio](http://www.hanselman.com/blog/HanselminutesPodcast65MartinFowlerAndDavidHeinemeierHansson.aspx) do podcast **Hanselminutes** , em especial, está me esperando desde a RailsConf que aconteceu mês passado.
 
-[![](/files/Scott_Hanselman.jpg)](http://www.flickr.com/photos/computerzen/505364200/)
+[![](https://akitaonrails.s3.amazonaws.com/files/Scott_Hanselman.jpg)](http://www.flickr.com/photos/computerzen/505364200/)
 
 O host do programa é Scott Hanselman, que na realidade é do mundo .NET, Microsoft, mas que também cobre outras plataformas. Nesse episódio ele estava na RailsConf 2007, em sua cidade natal que é Portland, no Oregon. Ele teve a oportunidade de entrevistar David Heinemeier Hansson e Martin Fowler ao mesmo tempo. Vocês podem ler a transcrição literal da entrevista em [PDF](http://perseus.franklins.net/hanselminutes_0065.pdf).
 
@@ -35,7 +35,7 @@ Talvez amanhã, quando tivermos telas multi-touch ou coisas assim, alguém consi
 
 ## “Tela Branca”
 
- ![](/files/80160232_867ff0523b.jpg)
+ ![](https://akitaonrails.s3.amazonaws.com/files/80160232_867ff0523b.jpg)
 
 Outro excelente argumento de David é contra a “Tela Branca”, no sentido de um quadro em branco que você precisa pintar. A tese é que a maioria das pessoas não se dá bem com telas em branco. O problema é que você tem liberdade de fazer qualquer coisa. Nesse sentido, cada novo projeto seria mais uma tela em branco. Antes de Rails tínhamos que refazer as mesmas coisas o tempo todo. Reinventar a roda. Alguns gostam disso, mas não quer dizer que é a maneira correta.
 
@@ -51,7 +51,7 @@ Como nota à parte de mim mesmo, eu diria que o futuro próximo nas interfaces d
 
 ## Web Design
 
- ![](/files/224116549_c1f14e8480.jpg)
+ ![](https://akitaonrails.s3.amazonaws.com/files/224116549_c1f14e8480.jpg)
 
 Isso me leva a outro assunto interessante e que a maioria está cansado de saber mas continua fazendo errado. O bom e velho _“faça o que eu digo, mas não faça o que eu faço.”_ Nos processos de desenvolvimento padrão de aplicações Web, primeiro a ‘equipe de design’ faz os ‘protótipos’ da aplicação: fazem uma imagem em Photoshop de cada tipo de página. Dezenas de imagens. Depois disso pronto, passa para alguém recortar e montar em tabelinhas dentro do Dreamweaver.
 
@@ -69,7 +69,7 @@ E como evitar que os designers quebrem o código? Primeiro, temos que parar de c
 
 Como Martin bem lembrou, esse processo de designers e desenvolvedores trabalhando juntos levam a iterações muito curtas, coisa de poucas horas ou poucos dias. As decisões são tomadas e implementadas, num processo de integração contínua. Nesse sentido, não existe a burocracia de voltar atrás, buscar alguma especificação funcional e começar mudando de lá: a aplicação em desenvolvimento é a especificação, principalmente porque, como disse David, não existe nada de funcional em uma especificação. A única coisa que se pode chamar de ‘funcional’ é uma aplicação rodando. Não há necessidade de especular _“como será que vai ficar”_ ela literalmente já é, a questão agora é _“como melhorar?”_
 
-![](/files/443657782_c8632e2081.jpg)
+![](https://akitaonrails.s3.amazonaws.com/files/443657782_c8632e2081.jpg)
 
 São os primeiros passos para um desenvolvimento ágil. Em vez de se preocupar com a burocracia, com especificações, com protótipos, com Photoshops, toma-se uma direção ‘designer-primeiro’. Mas não no sentido que os designer vão se trancar durante três meses e sair do quartinho com dúzias de layouts para passar para os desenvolvedores. As iterações são muito mais curtas, o protótipo passa para uma tela real muito rápido. E, como disse antes, é preciso uma boa dose de disciplina e testes para manter tudo rodando e evoluindo ao mesmo tempo. Parte disso, como descreveu Martin, é que o Rails meio que nos força a criar uma aplicação modularizada, que incentiva a criação de testes.
 
@@ -87,7 +87,7 @@ HTML, CSS, Rails todas são tecnologias cujo objetivo é simplificar nossas vida
 
 Essa idéia do balanço, das convenções nos leva a outro assunto recorrente: ao senso de estética que parece que todos da comunidade Rails parecem compartilhar. Não basta cuspir código, é preciso saber codificar da mesma forma como um enólogo sabe apreciar um bom vinho.
 
-![](/files/383052026_da42ce322c.jpg)
+![](https://akitaonrails.s3.amazonaws.com/files/383052026_da42ce322c.jpg)
 
 David diz que uma das habilidades que todo bom programador deve ter é saber dar bons nomes. Veja o recurso de pluralização do Rails. Nós temos essa convenção onde o nome dos Models deve ser no singular e a dos Controllers no plural. Mas não somente acrescentando um “s” no final da palavra. Existe todo um sistema para cobrir praticamente todos os casos da língua inglesa. Houve até um caso famoso na época para ter o plural ‘Octopi’ da palavra singular ‘Octopus’.
 
@@ -105,7 +105,7 @@ Ruby e Rails cresceram por mérito próprio. Nenhuma grande empresa precisou inv
 
 E falando na ThoughtWorks, o que Martin nos revela é interessante. Ele mesmo diz que sua empresa não é nenhuma mega-corporação. Mesmo assim, quando .NET saiu, eles investiram pesado nele, fizeram diversos projetos. O que eles têm acompanhado é que a demanda pro projetos Java estagnou: não sobe nem desce. Porém as de .NET estão caindo mas Ruby já representa 40% dos projetos da empresa. Ele é o primeiro a dizer que ainda não sabe se isso é só algo momentâneo ou se estamos diante de uma tendência sólida. Mas é algo a se considerar.
 
-![](/files/49346772_0ee70562a6.jpg)
+![](https://akitaonrails.s3.amazonaws.com/files/49346772_0ee70562a6.jpg)
 
 Antes de falar na Microsoft, vamos falar dos Alpha Geeks. Claro, Ruby ainda é apenas um pequeno ponto comparado à larga escala de milhões de desenvolvedores Java e .NET o importante não é apenas o número absoluto de pessoas. O problema é que os chamados ‘Alpha Geeks’ são muito menos, e eles estão migrando de Java e .NET para Ruby e outras linguagens dinâmicas. Quem são esses Alpha Geeks? São os formadores e opinião, são os líderes, os cabeças das comunidades, aqueles que influenciarão as próximas grandes coisas.
 
@@ -119,7 +119,7 @@ E voltamos ao assunto Microsoft. Eles gastam algum tempo conjecturando. O maior 
 
 E o problema para ela é que uma ação má apaga todas as boas ações anteriores. Perdendo a reputação, mesmo tendo coisas realmente interessantes como LINQ, as novas ferramentas de Workflow e tudo mais, mesmo assim a comunidade vai começar a diminuir, os Alpha Geeks vão migrar para outras tecnologias. Talvez seja o que Paul Graham quis dizer quando afirmou que a [Microsoft estava morta](http://www.paulgraham.com/microsoft.html), no sentido de que ela não é mais perigosa porque perdeu a relevância. Quem sabe?
 
-![](/files/521201549_db11ff1e79.jpg)
+![](https://akitaonrails.s3.amazonaws.com/files/521201549_db11ff1e79.jpg)
 
 O problema da Microsoft em especial, é que ela é muito grande. Quem faz todas essas más ações? Todos concordam que não se pode colocar a culpa de tudo no Bill. Não é ele diretamente quem faz cada uma dessas coisas. O problema é que eles estão sem direção, estão sem líderes. E nesse sentido eles se parecem com uma Hidra. E é por isso que muita gente não confia neles: enquanto uma pessoa lá pode estar sorrindo, outra na mesma empresa o está apunhalando pelas costas.
 

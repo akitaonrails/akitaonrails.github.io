@@ -23,4 +23,4 @@ Eu tinha 2 objetivos em mente. Primeiro, apresentar muitos conceitos de programa
 
 O segundo objetivo foi mostrar às pessoas que existe um mundo enorme lá fora, fora dos comuns Java e C#. E outra coisa foi não mostrar desenvolvedores sêniores de barba branca como Kent Beck ou Tim Bray :-) Sem ofensas, mas é acidentalmente conveniente para mim que Ola seja tão jovem (perto dos 20), porque agora os estudantes de computação não têm a desculpa de "idade" por já não saber todos esses conceitos.
 
-Então, foi uma entrevista muito produtiva. Faça download do primeiro arquivo de áudio [daqui](/files/ola_bini_part_1.mp3) e a Parte 2 [daqui](/files/ola_bini_part_2.mp3).
+Então, foi uma entrevista muito produtiva. Faça download do primeiro arquivo de áudio [daqui](https://akitaonrails.s3.amazonaws.com/files/ola_bini_part_1.mp3) e a Parte 2 [daqui](https://akitaonrails.s3.amazonaws.com/files/ola_bini_part_2.mp3).

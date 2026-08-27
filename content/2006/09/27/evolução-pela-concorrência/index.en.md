@@ -12,7 +12,7 @@ tags:
 draft: false
 ---
 
- ![](/files/402px-AdamSmith.jpg)
+ ![](https://akitaonrails.s3.amazonaws.com/files/402px-AdamSmith.jpg)
 
 I don't remember whether I wrote about this in a post or in my book, but there's a piece of common sense I call **"Evolution Through Competition"**. Debates like _"Ruby VS Java"_ or _"Rails VS J2EE"_ are not exclusive to the Ruby on Rails crowd. Look at the other recent fights in computing:
 

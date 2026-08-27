@@ -10,7 +10,7 @@ tags:
 draft: false
 ---
 
- ![](/files/matz.png)
+ ![](https://akitaonrails.s3.amazonaws.com/files/matz.png)
 
 Calma! Esta não é a entrevista exclusiva que está disponível no meu livro. Esta foi feita pelo site [Artima](http://www.artima.com/intv/ruby1.html), entre Bill Venners e Yukihiro Matsumoto. Ela é bem antiga, de 2003. Porém a visão de Matz continua sendo muito relevante principalmente para aqueles que ainda não conhecem bem a linguagem. Se souberem ler em inglês, sigam o link anterior para o artigo original, senão acompanhem minha tradução.
 

@@ -15,7 +15,7 @@ translationKey: chatting-chad-fowler
 
 ## Chatting with Chad Fowler
 
- ![](/files/chadfowler.jpg)
+ ![](https://akitaonrails.s3.amazonaws.com/files/chadfowler.jpg)
 
 Last Tuesday (April, 24th) was a memorable day for me. I was able to have not only one, but two celebrities from the Ruby community. I interviewed Chad Fowler in the morning and then David Black in the evening. The original founders of the Ruby Central and two of the people most responsible for evangelizing Ruby back in 2001.
 
@@ -29,7 +29,7 @@ So, I will first present Chad Fowler’s interview, and next time I will publish
 
 **Chad** : You are right. I went to college to get a degree in music. I was a jazz saxophonist and “classical” composer. I got interested in computer programming, because I have always loved computer games, and I wanted to write my own. Now, many years later, I still haven’t written a computer game.
 
- ![](/files/197px-Richard_Matthew_Stallman.jpg)
+ <!-- broken image, not found in S3: /files/197px-Richard_Matthew_Stallman.jpg -->
 
 **AkitaOnRails** : No kidding. Would you mind to tell us when was it? Your appearance may be deceiving. When I see a picture of you, it reminds me of [Richard Stallman](http://en.wikipedia.org/wiki/Richard_Stallman). I hope I am not aiming for a long shot. Was it in the era of the [PDP-10](http://en.wikipedia.org/wiki/PDP_10) stuff or was it more recent?
 
@@ -41,7 +41,7 @@ So, I will first present Chad Fowler’s interview, and next time I will publish
 
 Ruby was a perfect blend of pragmatism and beauty/idealism for me. I haven’t found anything since which _feels_ as good as Ruby. For me, the feeling I get when programming is at least as important as other factors when selecting a language.
 
-[![](/files/software_craftsmanship.jpg)](http://www.mcbreen.ab.ca/SoftwareCraftsmanship/)
+[![](https://akitaonrails.s3.amazonaws.com/files/software_craftsmanship.jpg)](http://www.mcbreen.ab.ca/SoftwareCraftsmanship/)
 
 **AkitaOnRails** : I see. Have you ever read Pete McBreen’s [Software Craftsmanship](http://www.mcbreen.ab.ca/SoftwareCraftsmanship/)?
 
@@ -55,7 +55,7 @@ Ruby was a perfect blend of pragmatism and beauty/idealism for me. I haven’t f
 
 **Chad** : You’re right about the size (and pace) of the Ruby community before Rails. The first Ruby conference had 40 people at it. The 4th had 64 people. Not very fast growth. We sold out the 5th conference with 200 people and could have added more. There are certainly some growing pains with the explosion that happened with Rails, but I don’t think smart people in the Ruby community should complain. The explosion has brought us all into a situation in which we can work in our beloved language professionally. Until 2005, there were only a handful of Ruby programmers getting paid to work in Ruby full time outside of Japan.
 
-[![](/files/imp_summit_2.jpg)](http://on-ruby.blogspot.com/2006/10/rubyconf-2006-implementers-summit.html)
+[![](https://akitaonrails.s3.amazonaws.com/files/imp_summit_2.jpg)](http://on-ruby.blogspot.com/2006/10/rubyconf-2006-implementers-summit.html)
 
 **AkitaOnRails** : Right. RubyCentral is a very important institution in that matter. You’ve been responsible for many successful Conferences. How did you start it? And what are the values and ideas of RubyCentral?
 
@@ -87,7 +87,7 @@ I’m not sure there’s a way around it, other than perhaps treating big compan
 
 The funny thing about this kind of decision making is that it focuses on _not failing_ as opposed to _winning_. You’ll very rarely see a huge success in an environment like this.
 
-[![](/files/davemikechad.jpg)](http://pragmaticstudio.com/railsadvanced/)
+[![](https://akitaonrails.s3.amazonaws.com/files/davemikechad.jpg)](http://pragmaticstudio.com/railsadvanced/)
 
 **AkitaOnRails** : Yes, indeed. I suffer this daily. I like this subject so I will return to it again. But changing subjects a little bit. I believe your most recent published book is Pragmatic Programmers’ [Rails Recipes](http://www.pragmaticprogrammer.com/titles/fr_rr/). I bought it as soon as it was released and I can tell that it’s an amazingly useful resource. I like the Recipes kind of book. Was there anything in the process of making it that you think was challenging or curious? Any tales about its making of?
 
@@ -97,7 +97,7 @@ The equivalent in cooking would be to have recipes on topics like _“How to thr
 
 That was my focus. I tried to make recipes that were really compositions of many ingredients. The biggest challenge in writing the book was that Rails is a moving target. As you know, writing a book against something that’s constantly changing is not easy. I had to spend a _lot_ of time in the source of edge rails.
 
-[![](/files/advrailsrecipes.jpg)](http://www.pragmaticprogrammer.com/titles/fr_arr/index.html)
+[![](https://akitaonrails.s3.amazonaws.com/files/advrailsrecipes.jpg)](http://www.pragmaticprogrammer.com/titles/fr_arr/index.html)
 
 **AkitaOnRails** : I know that, I also wrote a book that is already lagging behind (it was for 1.1). And you’re already preparing the [Advanced Rails Recipes](http://www.pragmaticprogrammer.com/titles/fr_arr/). As you evolved since the first book, what do you think of the current Rails evolution? Is it happening too fast? Are people having time to grasp all the new stuff?  
   
@@ -115,7 +115,7 @@ The interesting thing will be to see how the release of Rails 2.0 impacts the le
   
 **Chad** : I think he still has that opinion, though he’s probably backing off to some extent, because we’re already becoming mainstream. I also happen to agree with him in some ways.
 
-[![](/files/avi_bryant.jpg)](http://dabbledb.com/blog/)
+[![](https://akitaonrails.s3.amazonaws.com/files/avi_bryant.jpg)](http://dabbledb.com/blog/)
 
 Matz gave a talk at OSCON 2005 called _“It’s cool to be minor”_, talking about the advantages of not being mainstream. Avi Bryant, of Seaside fame, also vocally enjoys the niche status of [Squeak](http://www.squeak.org/) and [Seaside](http://www.seaside.st/).
 
@@ -132,7 +132,7 @@ I believe Matz has organized the team the right way now and is making real progr
 
 The new language has been Matz’s interest and focus. Now that we have someone officially working on the new VM, Matz is freed to evolve the Ruby language.
 
-[![](/files/ko1-and-matz.jpg)](http://www.atdot.net/yarv/)
+[![](https://akitaonrails.s3.amazonaws.com/files/ko1-and-matz.jpg)](http://www.atdot.net/yarv/)
 
 **AkitaOnRails** : Sure, actually I feel that I saw both Ruby 2.0 and JRuby speeding up in the last year or so, more than in the previous years.
 
@@ -160,7 +160,7 @@ Truthfully, Europe is lagging far behind the US in terms of Ruby adoption. India
 
 We don’t in general spend time worrying about keeping our jobs compared to people in other countries, because we feel we can get another job whenever we like. In other countries, there’s more of an emphasis on employment being a service to the employer as opposed to the other way around. I think in terms of ethics, the position of the average US software developer is inferior to that of developers in other countries, but it fosters innovation.
 
-[![](/files/mjwti_medium.jpg)](http://www.pragmaticprogrammer.com/titles/mjwti/)
+[![](https://akitaonrails.s3.amazonaws.com/files/mjwti_medium.jpg)](http://www.pragmaticprogrammer.com/titles/mjwti/)
 
 **AkitaOnRails** : You’re right on that. I’ll think more about it. And speaking of India. You wrote many things, but my favorite book is [My Job Went to India](http://www.pragmaticprogrammer.com/titles/mjwti). I can totally see the motivation to write such a piece with all that overseas outsourcing stuff going on. I read it and I found myself at home because I already live up to many of your 52 ways, although I never did any of it to _“save my job”_. I just do the things I do because I enjoy it. When did you have the idea to jot down those ideas? Any particular motivation?
 

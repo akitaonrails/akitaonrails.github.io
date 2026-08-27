@@ -13,7 +13,7 @@ draft: false
 
 Depois de vários anos, percebo que um grande número de programadores simplesmente não entende o Método Científico. Hoje discutimos bastante agilidade e testes, e todo mundo repete que TDD é importante. Dentro de "testes" existe um passo que deveria ser **óbvio** e quase ninguém pratica: a **experimentação**.
 
-![](/files/20081216/42-17463681.jpg)
+![](https://akitaonrails.s3.amazonaws.com/files/20081216/42-17463681.jpg)
 
 A desculpa da "falta de tempo" que serve para não escrever testes serve também para não testar hipóteses. A maioria sequer entende que deveria estar experimentando. Falo aqui de criar provas de conceito, pedaços do que você quer desenvolver que potencialmente serão jogados fora.
 
@@ -27,7 +27,7 @@ Depois da Segunda Guerra, tribos nativas de ilhas do Pacífico Sul construíam r
 
 Ser modista tem má fama injusta; o que estraga é aplicar as coisas, novas ou velhas, sem entender a **razão**. A função principal da educação deveria ser ensinar a raciocinar, mas numa cultura de decoreba as pessoas aceitam tudo o que decoram sem saber por que decoraram: "alguém superior" disse que aquilo é verdade e, portanto, deve ser aplicado.
 
-![](/files/20081216/1217833732_d7fcaebe17.jpg)
+![](https://akitaonrails.s3.amazonaws.com/files/20081216/1217833732_d7fcaebe17.jpg)
 
 Lembram das discussões sobre por que certificações são nocivas? Este é um dos motivos. Para quem já raciocina, não faz diferença nenhuma. Para a grande massa que não raciocina, o resultado final é cargo cult puro.
 
@@ -67,7 +67,7 @@ Esse é o típico [What the F*ck!?](http://thedailywtf.com/)
 
 De novo, um código que "executa". Em algumas linguagens, compila sem problema nenhum. Quem não enxergou o problema **gravíssimo** desse código precisa voltar para o primeiro ano da faculdade.
 
-![](/files/20081216/will_code_for_food.jpg)
+![](https://akitaonrails.s3.amazonaws.com/files/20081216/will_code_for_food.jpg)
 
 ## Cegueira
 
@@ -93,7 +93,7 @@ Em tecnologia é igual:
 
 - Rails não escala (sério? quem ainda repete isso prova que é amador)
 
-![](/files/20081216/thestupiditburns.jpg)
+![](https://akitaonrails.s3.amazonaws.com/files/20081216/thestupiditburns.jpg)
 
 Todo mundo carrega centenas de ideias pré-concebidas como essas. Coisas ouvidas de alguém ou lidas em algum lugar, normalmente de reputação duvidosa, que a pessoa passa a repetir sem nenhum argumento que sustente a crença. Ou melhor: ela acha que a fonte duvidosa de onde tirou a ideia já é base suficiente para continuar repetindo.
 
@@ -109,7 +109,7 @@ Leia [esta definição da Wikipedia](http://en.wikipedia.org/wiki/Scientific_met
 
 Como todo bom processo, esse também é **iterativo**: prevê retorno de etapas para refinar o conhecimento.
 
-![](/files/20081216/dogma-jesus.jpg)
+![](https://akitaonrails.s3.amazonaws.com/files/20081216/dogma-jesus.jpg)
 
 Os passos são simples e podem ser rápidos ou mais demorados e detalhados. O importante é o seguinte: diante de uma questão, execute esses passos pelo menos mentalmente. É o mínimo do mínimo para uma decisão educada.
 
@@ -119,7 +119,7 @@ Os passos são simples e podem ser rápidos ou mais demorados e detalhados. O im
 
 - **Construa uma hipótese.** Quando você faz uma pergunta, normalmente já tem uma ou mais respostas possíveis. Ao formular a pergunta, não se apegue a ideias pré-concebidas. Considere que o que a maioria das pessoas chama de "verdade" é, na realidade, um conjunto de [hipóteses](http://en.wikipedia.org/wiki/Hypothesis). Uma hipótese é apenas a sugestão de uma explicação.
 
-[![](/files/20081216/overview_scientific_method2.gif)](http://web.archive.org/web/20081217012740/http://www.sciencebuddies.org:80/mentoring/project_scientific_method.shtml)
+[![](https://akitaonrails.s3.amazonaws.com/files/20081216/overview_scientific_method2.gif)](http://web.archive.org/web/20081217012740/http://www.sciencebuddies.org:80/mentoring/project_scientific_method.shtml)
 
 - **Teste com um experimento.** É a etapa mais importante. Experimentos precisam ser repetíveis e ter critérios muito bem definidos: se duas pessoas fizerem o mesmo experimento, para a hipótese continuar de pé os resultados têm que ser os mesmos. Note que eu disse "de pé", não "verdadeira". Verdade é palavra forte demais; eu raramente me considero perto de qualquer verdade. Na maioria das vezes, aceito apenas que minha hipótese ainda não foi falsificada. A parte crucial, em programação: crie provas de conceito, pedaços de código escritos só para testar a hipótese, que podem ser simplesmente jogados fora depois. Faça isso fora do código do projeto, num ambiente separado. Não misture as coisas.
 
@@ -137,7 +137,7 @@ A maioria das pessoas pode ser descrita assim:
 
 - **Não gostam de perder tempo.** E "perda de tempo" aqui é totalmente relativo. A maioria faz economia porca: testar e experimentar, ou seja, "não fazer nada imediatamente", é tratado como perda de tempo. Eu chamo isso de "economizar o tempo futuro": um pouco mais de cuidado agora para não precisar correr amanhã. É uma questão de balanço. Não faz sentido se preparar por 15 dias num projeto de 20. Mas faça o mínimo: pare um segundo, pense e, se tiver dúvida, experimente antes de prosseguir.
 
-![](/files/20081216/funny-dog-pictures-praying-dogma.jpg)
+![](https://akitaonrails.s3.amazonaws.com/files/20081216/funny-dog-pictures-praying-dogma.jpg)
 
 - **Não gostam de coisas novas.** Existe outro conceito errado de "custo" em jogo. Muita gente acha que, porque investiu tempo estudando um assunto, esse investimento não pode ser perdido e precisa insistir nele. É o que já escrevi uma vez em [A Falácia do Custo Perdido](http://www.akitaonrails.com/2007/08/19/a-falcia-do-custo-perdido). Se o prejuízo já existe, a maior burrice é insistir nele. Muito mais inteligente dar o custo por perdido, mudar de direção e seguir em frente.
 
@@ -153,7 +153,7 @@ E sempre que entrar num projeto novo, não assuma que você sabe o que precisa s
 
 Não desperdice o tempo dos outros!
 
-![](/files/20081216/2633591802_8498c58817_o.jpg)
+![](https://akitaonrails.s3.amazonaws.com/files/20081216/2633591802_8498c58817_o.jpg)
 
 Referências:
 
@@ -187,4 +187,4 @@ Como eu disse no ano passado: "Seja Arrogante, mas mereça ser arrogante!" Seja 
 
 Repetindo: não foi com ideias pré-concebidas que chegamos à Lua.
 
-![](/files/20081216/redneck_moon_landing_2.jpg)
+![](https://akitaonrails.s3.amazonaws.com/files/20081216/redneck_moon_landing_2.jpg)

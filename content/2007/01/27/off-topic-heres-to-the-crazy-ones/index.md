@@ -16,7 +16,7 @@ draft: false
 
 Esse comercial marca a volta da Apple, das cinzas, a volta de Steve Jobs ao comando. A campanha "Think Different" vai completar 10 anos, o post que me lembrou disso também é meio [antigo](http://macmagazine.com.br/blog/2006/06/15/think-different-apple/), mas a mensagem continua muito recente. Vale até mesmo para nós, Railers: seria um bom comercial de autoria de uma 37signals, por exemplo. Aproveitem.
 
-![](/files/2006_06_15-thinkdifferent.png)
+![](https://akitaonrails.s3.amazonaws.com/files/2006_06_15-thinkdifferent.png)
 
 Here’s to the crazy ones.
 

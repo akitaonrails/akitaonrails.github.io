@@ -15,7 +15,7 @@ translationKey: chatting-dr-nic
 
 ### Chatting with Dr. Nic
 
- ![](/files/130749539_89959dd059.jpg)
+ ![](https://akitaonrails.s3.amazonaws.com/files/130749539_89959dd059.jpg)
 
 Today Carlos Eduardo, from [e-Genial](http://www.egenial.com.br), proposed that I interview Dr. Nic Williams himself. The man of the hour. And I accepted right away and we started ‘skyping’ for a couple of hours. He is a nice guy and as educated and well informed as I expected. So, with no further ado, here it goes:
 

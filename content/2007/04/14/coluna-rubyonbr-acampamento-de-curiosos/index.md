@@ -13,7 +13,7 @@ draft: false
  **Atualização 13-10-2015:** como o rubyonbr não está mais ativo, agora só via [Webarchive](https://web.archive.org/web/20080905110047/http://rubyonbr.org/articles/2007/04/14/acampamento-de-curiosos/)
 
 
- ![](/files/rubyonbr-logo-site.gif)
+ ![](https://akitaonrails.s3.amazonaws.com/files/rubyonbr-logo-site.gif)
 
 Nesse fim de semana saiu minha última coluna na RubyOnBr: [Acampamento de Curiosos](http://forum.rubyonbr.org/forums/4/topics/1234).
 

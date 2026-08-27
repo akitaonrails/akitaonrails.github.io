@@ -10,11 +10,11 @@ tags:
 draft: false
 ---
 
- ![](/files/37slogo-trans.gif)
+ ![](https://akitaonrails.s3.amazonaws.com/files/37slogo-trans.gif)
 
 A 37signals disponibilizou para leitura online o excelente livro [Getting Real](http://gettingreal.37signals.com/). Ele se auto-entitula _“A maneira mais esperta, rápida e fácil de construir aplicativos de sucesso”_.
 
- ![](/files/blackbook.gif)
+ ![](https://akitaonrails.s3.amazonaws.com/files/blackbook.gif)
 
 Seth Godim fala sobre ser pragmático, descer direto ao ponto, deixar a burocracia de lado. Em vez de filosofar maneiras exóticas de resolver um problema, devemos ser realistas e práticos.
 

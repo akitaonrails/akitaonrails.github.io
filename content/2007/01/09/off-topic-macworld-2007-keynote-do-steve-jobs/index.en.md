@@ -13,7 +13,7 @@ draft: false
 
 
 
- ![](/files/welcome2007_20070101.jpg)
+ ![](https://akitaonrails.s3.amazonaws.com/files/welcome2007_20070101.jpg)
 
 In less than an hour, 3pm in Brasília, 9am Pacific time, Steve Jobs takes the stage at [MacWorld Conference & Expo 2007](http://web.archive.org/web/20070111001057/http://www.macworldexpo.com:80/live/20/) in San Francisco. The keynote can be followed live on several sites ([see the updated list](http://web.archive.org/web/20070111082621/http://www.glennwolsey.com:80/2007/01/09/where-to-watch-live-apple-keynote-updates/)).
 
@@ -21,7 +21,7 @@ This keynote has spawned dozens of rumors and articles across the industry. **Fo
 
 The enigmatic image above showed up on [Apple's site](http://www.apple.com/) a few days ago and fed a good share of that anticipation. What are they trying to say? A simple corporate "happy new year" message? From Apple? Probably not.
 
- ![](/files/wwdc-top-secret.png)
+ ![](https://akitaonrails.s3.amazonaws.com/files/wwdc-top-secret.png)
 
 At WWDC 2006, Steve announced some of the headline features of the next operating system, **Mac OS X 10.5 Leopard**, expected to ship this quarter. On that occasion he showed the famous "Top Secret" slide: there were new features they weren't going to reveal, so Microsoft couldn't copy them ahead of time. Has the moment come for us to finally learn those secrets?
 

@@ -21,4 +21,4 @@ I had 2 goals in mind with this. First, to introduce many programming concepts b
 
 The second goal was to show people that there is this whole world out there, outside of plain Java or C#. And another thing was to not show a white-bearded senior developer like Kent Beck or Tim Bray :-) No offense, but it is accidentally convenient for me that Ola is so young (early 20's), because now young CS students don't have the 'age' excuse for not knowing all of these concepts already.
 
-So, it was a very productive interview. Download the first audio file from [here](/files/ola_bini_part_1.mp3) and Part 2 from [here](/files/ola_bini_part_2.mp3).
+So, it was a very productive interview. Download the first audio file from [here](https://akitaonrails.s3.amazonaws.com/files/ola_bini_part_1.mp3) and Part 2 from [here](https://akitaonrails.s3.amazonaws.com/files/ola_bini_part_2.mp3).

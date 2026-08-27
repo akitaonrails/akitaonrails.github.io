@@ -13,7 +13,7 @@ draft: false
 
 After several years, I've noticed that a large number of programmers simply don't understand the Scientific Method. These days we talk a lot about agility and testing, and everyone repeats that TDD matters. Inside "testing" there is one step that should be **obvious** and almost nobody practices: **experimentation**.
 
-![](/files/20081216/42-17463681.jpg)
+![](https://akitaonrails.s3.amazonaws.com/files/20081216/42-17463681.jpg)
 
 The "no time" excuse people use to skip writing tests also serves to skip testing hypotheses. Most don't even realize they should be experimenting. I'm talking about building proofs of concept, pieces of what you want to develop that will potentially be thrown away.
 
@@ -27,7 +27,7 @@ After World War II, native tribes on South Pacific islands built replicas of air
 
 Following fashion gets an unfair bad rap; what ruins people is applying things, new or old, without understanding the **reason**. The main job of education should be teaching people to reason, but in a culture of rote memorization people accept everything they memorize without knowing why they memorized it: some "authority" said it was true and therefore it must be applied.
 
-![](/files/20081216/1217833732_d7fcaebe17.jpg)
+![](https://akitaonrails.s3.amazonaws.com/files/20081216/1217833732_d7fcaebe17.jpg)
 
 Remember the discussions about why certifications are harmful? This is one of the reasons. For those who already reason, it makes no difference at all. For the large mass who don't, the end result is pure cargo culting.
 
@@ -67,7 +67,7 @@ That's a textbook [What the F*ck!?](http://thedailywtf.com/)
 
 Again, code that "runs." In some languages it compiles with no complaint at all. Anyone who can't spot the **deadly** problem in this code needs to go back to their freshman year.
 
-![](/files/20081216/will_code_for_food.jpg)
+![](https://akitaonrails.s3.amazonaws.com/files/20081216/will_code_for_food.jpg)
 
 ## Blindness
 
@@ -93,7 +93,7 @@ In technology it's the same:
 
 - Rails doesn't scale (seriously? anyone still repeating that proves they're an amateur)
 
-![](/files/20081216/thestupiditburns.jpg)
+![](https://akitaonrails.s3.amazonaws.com/files/20081216/thestupiditburns.jpg)
 
 Everyone carries hundreds of preconceived ideas like these. Things heard from someone or read somewhere, usually from a source of dubious reputation, that the person now repeats with no argument to back the belief. Or rather: they think the dubious source they got it from is basis enough to keep repeating it.
 
@@ -109,7 +109,7 @@ Read [this Wikipedia definition](http://en.wikipedia.org/wiki/Scientific_method)
 
 Like any good process, this one is also **iterative**: it expects you to loop back through steps to refine what you know.
 
-![](/files/20081216/dogma-jesus.jpg)
+![](https://akitaonrails.s3.amazonaws.com/files/20081216/dogma-jesus.jpg)
 
 The steps are simple, and they can run fast or slow and detailed. What matters is this: faced with a question, run these steps at least mentally. It's the bare minimum for an educated decision.
 
@@ -119,7 +119,7 @@ The steps are simple, and they can run fast or slow and detailed. What matters i
 
 - **Build a hypothesis.** When you ask a question, you usually already have one or more possible answers. When you framed the question, don't cling to preconceived ideas. Consider that what most people call "truth" is, in reality, a set of [hypotheses](http://en.wikipedia.org/wiki/Hypothesis). A hypothesis is merely a suggested explanation.
 
-[![](/files/20081216/overview_scientific_method2.gif)](http://web.archive.org/web/20081217012740/http://www.sciencebuddies.org:80/mentoring/project_scientific_method.shtml)
+[![](https://akitaonrails.s3.amazonaws.com/files/20081216/overview_scientific_method2.gif)](http://web.archive.org/web/20081217012740/http://www.sciencebuddies.org:80/mentoring/project_scientific_method.shtml)
 
 - **Test with an experiment.** This is the most important step. Experiments must be repeatable and have very well-defined criteria: if two people run the same experiment, for the hypothesis to hold up the results have to match. Note that I said "hold up," not "be true." Truth is too strong a word; I rarely consider myself near any truth. Most of the time I just accept that my hypothesis hasn't been falsified yet. The crucial part, in programming: build proofs of concept, pieces of code written only to test the hypothesis, which can simply be thrown away afterward. Do it outside your project's codebase, in a separate environment. Don't mix the two.
 
@@ -137,7 +137,7 @@ Most people can be described like this:
 
 - **They hate wasting time.** And "wasting time" here is entirely relative. Most people practice lousy economics: testing and experimenting, in other words "not doing anything immediately," gets treated as wasted time. I call it "saving future time": a little more care now so I don't have to scramble tomorrow. It's a matter of balance. It makes no sense to prepare for 15 days on a 20-day project. But do the minimum: stop for a second, think, and if in doubt, experiment before you proceed.
 
-![](/files/20081216/funny-dog-pictures-praying-dogma.jpg)
+![](https://akitaonrails.s3.amazonaws.com/files/20081216/funny-dog-pictures-praying-dogma.jpg)
 
 - **They hate new things.** There's another wrong notion of "cost" at play. Many people think that because they invested time studying a subject, that investment can't be lost and they must stick with it. It's what I once wrote about in [The Sunk Cost Fallacy](http://www.akitaonrails.com/en/2007/08/19/a-falcia-do-custo-perdido). If the loss already exists, the dumbest move is to insist on it. Far smarter to write the cost off, change direction, and move on.
 
@@ -153,7 +153,7 @@ And whenever you join a new project, don't assume you know what needs to be done
 
 Don't waste other people's time!
 
-![](/files/20081216/2633591802_8498c58817_o.jpg)
+![](https://akitaonrails.s3.amazonaws.com/files/20081216/2633591802_8498c58817_o.jpg)
 
 References:
 
@@ -187,4 +187,4 @@ As I said last year: "Be arrogant, for real!" Be arrogant with yourself to the p
 
 Repeating: it wasn't preconceived ideas that got us to the Moon.
 
-![](/files/20081216/redneck_moon_landing_2.jpg)
+![](https://akitaonrails.s3.amazonaws.com/files/20081216/redneck_moon_landing_2.jpg)

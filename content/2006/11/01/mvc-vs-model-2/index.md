@@ -27,7 +27,7 @@ Primeiro, uma breve história de MVC e suas convoluções, para que eu possa apo
 
 Os Smalltalkers brigaram por anos sobre os detalhes do jeito certo de fazer isso, mas resumindo … UI (User Interface – View) intimamente conhece o Model. Ele pode observá-lo, e puxar quaisquer valores dele, mas não pode modificá-lo. A View também conhece intimamente o Controller. Ele o usa. É isso mesmo, o View é altamente acoplado com ambos o Controller e o Model.
 
- ![](/files/smalltalk-mvc.png)
+ ![](https://akitaonrails.s3.amazonaws.com/files/smalltalk-mvc.png)
 
 O Controller conhece o Model intimamente. No mundo Smalltalk o controller não era mais que um punhado de delegações opacas que redirecionavam mensagens para o Model. O Controller é altamente acoplado com o Model.
 
@@ -37,7 +37,7 @@ Implementar uma View tipicamente envolve fazer subclasses de classes de Views ex
 
 Implementar um Controller significa prover receptáculos para receber mensagens interessantes e mapeá-las diretamente para maçanetas interessantes no Model. O Controller é muito muito magro.
 
- ![](/files/nextstep-mvc.png)
+ ![](https://akitaonrails.s3.amazonaws.com/files/nextstep-mvc.png)
 
 Então chega a NeXT, Objective-C e uma variação no MVC. Esse pessoal da NeXT se cansou de ficar criando subclasses de componentes de View e decidiram que views realmente poderosas deveriam ser facilmente reusáveis. Por isso fizeram views padrão mais espertas, e adicionaram ganchos para empurrar dados à View em vez de fazer a View puxar os dados do Model. Mais ainda, eles fizeram a View apresentar as mensagens que podia disparar, tornando-a uma caixa preta. De fato, eles fizeram um formato de caixa preta encapsulada o suficiente para conseguir formar um mercado de terceiros fabricantes de componentes view, que podiam ser enganchados a controllers arbitrários.
 
@@ -47,7 +47,7 @@ O Model não é diferente, conceitualmente, do design do MVC do Smalltalk.
 
 Desenvolver o MVC da NeXT significa escrever controllers grandes e gordos, mas eles ainda são, na maior parte, encanamento. São apenas um encanamento mais complicado porque precisam entender a View e empurrar informações apropriadas a ela, alem de direcionar mensagens ao Model. Boas ferramentas (InterfaceBuilder no OS X é um descendente direto) foram criados para fazer disso algo trivial e, por sinal, funcionou tão bem que o NeXT ainda tem vários seguidores leais.
 
- ![](/files/model2-mvc.png)
+ ![](https://akitaonrails.s3.amazonaws.com/files/model2-mvc.png)
 
 Então, a Web aconteceu e a Sun começou a falar sobre o Model 2 em termos de MVC. Model2, basicamente, tenta recriar o MVC da NeXT para uma interface de usuário ruim (a web). Se pegarmos o sistema Model 2 canônico, Struts, a requisição Web vem para um Controller que é mapeada para uma Action. Esta precisa ser o encanamento como no controller NeXT — disparar a mensagem interessante para o Model (seu domain model), e disparar dados interessantes para a View (sua JSP, template velocity).
 
@@ -55,7 +55,7 @@ Como JSPs e templates não podem exatamente “receber” mensagens com os dados
 
 Isso seguiu em frente, mas as pessoas não gostavam muito disso. Existem muito poucos componentes de interface de usuário para web que são bem acabadas, bem encapsuladas, caixas pretas. Pior, não existem maneira para esses componentes guardarem seu estado (ou seja, não mudar até que seja necessário). Isso significa que toda iformação necessária para redesenhar a interface do usuário precisa ser passada ao sistema de template toda vez que a interface precisa ser atualizada (toda chamada de página). Você não pode realmente usar algo como o drag-and-drop de um InterfaceBuilder com JSP (sim, existem algumas coisas que podem, vamos chegar lá), e puxar os pedaços interessantes envolve construir um model que será quase a mesma coisa que o domain model. Então, as pessoas tendem a apenas usar diretamente o domain model nas suas Views. É _muito_ mais fácil do que criar uma camada separada de DTO (Data Transfer Objects).
 
- ![](/files/model2_5-mvc.png)
+ ![](https://akitaonrails.s3.amazonaws.com/files/model2_5-mvc.png)
 
 Então, o aplicativo que resulta disso, que é supostamente para se parecer, logicamente pelo menos, como o MVC da NeXT, de fato possui dependência da View até o Model. Isso é tão mais útil e poderoso do que adicionar outra camada de mapeamento para mapear da classe _Foo_ para _FooUmPoucoDireferente_ que os aplicativos fazem isso mesmo. É quase sempre mais fácil mudar o template da view quando o model muda do que criar as camadas de mapeamento, e mudar essa camada quando o model muda.
 

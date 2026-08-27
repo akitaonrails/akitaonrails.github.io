@@ -12,7 +12,7 @@ aliases:
 - "/2007/07/20/chatting-with-carl-youngblood/"
 ---
 
- ![](/files/carl.934570.jpeg)
+ ![](https://akitaonrails.s3.amazonaws.com/files/carl.934570.jpeg)
 
 Essa será uma entrevista interessante. Meu convidado desta vez é ninguém menos que meu chefe. Ele não somente é funcionário da Surgeworks mas também um contribuinte ativo na comunidade Ruby e participa principalmente do Grupo de Usuários de Utah (URUG). Muitos dos seus valores e idéias são parecidas com as minhas.
 
@@ -39,7 +39,7 @@ Depois de gastar quatro meses em Campinas como historiador da missão, fui chama
 
 Eu realmente não desenvolvi nenhum grande software para a missão, embora eu tenha ajudado a desenhar um banco de dados Access que imediatamente caiu em desuso depois que eu fui embora :-)
 
-![](/files/campinas_lds_mormon_temple.jpg)
+![](https://akitaonrails.s3.amazonaws.com/files/campinas_lds_mormon_temple.jpg)
 
 De maneira geral eu realmente gostei muito do meu tempo no Brasil. Eu descobri o quanto gosto de aprender outra língua, e essa fascinação recém-descoberta me levou a estudar essa língua mais tarde na universidade. As pessoas brasileiras que conheci foram na maior parte muito amigáveis. Não era incomum ser convidado às casas das pessoas para comer mesmo antes de nos conhecermos, e eles normalmente estavam dispostos a dar mais do que podiam oferecer. Eu também gosto muito de música Brasileira, especialmente [Música Popular Brasileira](http://en.wikipedia.org/wiki/M%C3%BAsica_Popular_Brasileira) (MPB). [Tom Jobim](http://en.wikipedia.org/wiki/Tom_Jobim) é meu herói, junto com outras lendas como [João Gilberto](http://en.wikipedia.org/wiki/Joao_Gilberto), [Luiz Bonfá](http://en.wikipedia.org/wiki/Luiz_Bonfa), [Vinícius de Moraes](http://en.wikipedia.org/wiki/Luiz_Bonfa), e outros artistas mais modernos como [Caetano Veloso](http://en.wikipedia.org/wiki/Caetano_Veloso), [Gilberto Gil](http://en.wikipedia.org/wiki/Gilberto_Gil) e [Djavan](http://en.wikipedia.org/wiki/Djavan). Foi maravilhoso descobrir um mundo completamente novo de música e literatura que se abriu para mim quando aprendi Português. A comida foi muito boa também, embora eu tenha sentido falta de alguns itens de casa, como milho frito e manteiga de amendoim, por mais estranho que pareça.
 
@@ -53,7 +53,7 @@ Um evento que eu me lembro bem foi o advento da internet pública e a [WWW](http
 
 Eu já tinha feito um ano de faculdade de música (performance de Clarinete) antes de ir para a missão. Depois da missão eu retornei à faculdade e mudei de cursos.
 
- ![](/files/carl.fidonet.jpg)
+ ![](https://akitaonrails.s3.amazonaws.com/files/carl.fidonet.jpg)
 
 Falando nisso, também estávamos conectados a uma rede mundial chamada [Fidonet](http://en.wikipedia.org/wiki/Fidonet), onde participávamos de grupos de notícias e tínhamos discussões offline. Toda noite nosso computador discava para um sistema em Nevada para baixar as novas mensagens.
 
@@ -65,14 +65,14 @@ Falando nisso, também estávamos conectados a uma rede mundial chamada [Fidonet
 
 **Carl Youngblood:** A Legato acabou fechando seus escritórios em Orem, Utah, e nesse ponto eu voltei para a escola para me graduar. Eu comecei pensando em fazer mestrado em Português e eventualmente trabalhar como um professor de uma universidade depois de pegar meu PhD. Entretanto, eu me via constantemente trabalhando com projetos de software, mesmo quando eu lecionava aulas de português e fazia meus estudos de graduação. Eventualmente decidi que deveria encarar o óbvio e continuar minha paixão por desenvolvimento de software. Então eu mudei para o departamento de Ciências da Computação e comecei a trabalhar na direção de um mestrado em Computação. Tudo isso foi na Universidade Brigham Young em Provo, Utah.
 
-![](/files/carl.provo.jpg)
+![](https://akitaonrails.s3.amazonaws.com/files/carl.provo.jpg)
 
 Primeiro eu aprendi [Pascal](http://en.wikipedia.org/wiki/Pascal_%28programming_language%29) e C++ no colégio. Minha primeira experiência profissional foi como programador C++ desenvolvendo aplicações Windows usando [MFC](http://en.wikipedia.org/wiki/Microsoft_Foundation_Class_Library). Então consegui um emprego fazendo desenvolvimento PHP/MySQL para a [Omniture](http://www.omniture.com). Depois disso eu estava fazendo drivers Windows em C mas também fazendo Ruby, Perl e PHP em paralelo. Drivers são bichos totalmente diferentes porque você não tem nem mesmo as bibliotecas comuns ANSI C disponíveis para você. Então a sintaxe C é a mesma, mas é só isso. Mais tarde consegui um trabalho na Boeing fazendo mais desenvolvimento C++ em plataforma Linux, e ao mesmo tempo aumentando minhas habilidades em Ruby/Rails com projetos paralelos. Eu também aprendi programação funcional com   
 [Scheme](http://en.wikipedia.org/wiki/Scheme_%28programming_language%29), assim como com algumas outras linguagens como [OCaml](http://en.wikipedia.org/wiki/OCaml), [Prolog](http://en.wikipedia.org/wiki/Prolog) e [ZPL](http://www.cs.washington.edu/research/zpl/home/index.html) durante meu mestrado. Eu não me chamaria mais que um amador na maioria dessas linguagens, mas eles definitivamente abriram minha mente para novos paradigmas de desenvolvimento.
 
 **AkitaOnRails:** Você tem seguido muito dos caminhos descritos pelos Pragmatic Programmers como David Thomas e Chad Fowler: aprender novas linguagens, especialmente as que tem paradigmas diferentes. Você já conhecia o trabalho deles sobre essas recomendações? Ou foi somente uma curiosidade natural que o levou a aprender tantas linguagens?
 
- ![](/files/thepragmaticprogrammer_thomas.jpg)
+ ![](https://akitaonrails.s3.amazonaws.com/files/thepragmaticprogrammer_thomas.jpg)
 
 **Carl Youngblood:** Bem, os programas de Ciências da Computação que estudei em (BYU e Universidade de Washington) fizeram um bom trabalho em nos dar pelo menos alguma exposição para uma gama grande de conceitos e linguagens. Eu certamente estou agradecido pela minha educação porque me apresentou a novas idéias e conceitos que eu provavelmente não teria estudado se não fosse por isso. Eu também tinha lido Pragmatic Programmer e tentei seguir os conselhos de sempre aprender novas coisas e me expor a novas linguagens. Eu também sou meio que um viciado em informação. Eu sou praticamente viciado no meu leitor de feeds RSS, e me sinto incrivelmente ansioso se começo a ficar para trás na minha leitura – quase como se eu estive sendo deixado para trás enquanto o mundo se reinventa. A verdade é que normalmente não perco qualquer coisa extremamente revolucionária por estar fora do computador por alguns dias, mas algumas vezes me sinto assim.
 
@@ -94,7 +94,7 @@ Em geral, parece que a sociedade está avançando em direção a níveis de cres
 
 **Carl Youngblood:** Sim, precisamos nos manter atualizados em novas tecnologias mas tentar não se tornar muito dogmáticos sobre eles. A [recente apresentação](http://mtnwestrubyconf2007.confreaks.com/keynote.html) de Chad Fowler na [MountainWest Ruby Conference](http://mtnwestruby.org) falou sobre isso.
 
-![](/files/carl.fullmtnwestlogo.png)
+![](https://akitaonrails.s3.amazonaws.com/files/carl.fullmtnwestlogo.png)
 
 **AkitaOnRails:** Ei, perdoe o trocadilho, mas vindo de alguém com tanta formação dogmática religiosa formal como você, é uma coisa muito interessante de ouvir: _‘não seja tão dogmático.’_ No fim é tudo uma questão de bom senso, mas mesmo bom senso tem que ser treinado. Daí a necessidade de se manter sempre bem informado, constantemente estudando e mantendo a mente aberta para coisas novas e não fechando os olhos para todo o resto.
 
@@ -112,7 +112,7 @@ Então decidi lançar alguns trabalhos anteriores meus como gem e dar uma aprese
 
 Alguns colegas e eu também estamos trabalhando em um negócio de gravação de conferências chamada [Confreaks](http://www.confreaks.com). Estamos esperando fazer uma trabalho melhor em gravar e disseminar conferências técnicas para motivos de posteridade. É uma vergonha que todas essas grandes conferências estão acontecendo e ninguém está gravando.
 
-![](/files/carl.DSC_0006.sized.jpg)
+![](https://akitaonrails.s3.amazonaws.com/files/carl.DSC_0006.sized.jpg)
 
 De qualquer forma, meu envolvimento crescente na comunidade tem me ajudado a acelerar minha carreira e me permitiu codificar em Ruby como um trabalho.
 
@@ -124,7 +124,7 @@ De qualquer forma, meu envolvimento crescente na comunidade tem me ajudado a ace
 
 **Carl Youngblood:** Sim, eu fiquei acordado muitas noites preparando [minha palestra](http://mtnwestrubyconf2007.confreaks.com/session03.html). De fato, a maior parte das minhas noites foram gastas deixando o código pronto para consumo humano. Saber que o mundo em geral vai usar seu código o faz querer refinar mais que o normal, escrever mais testes unitários, etc. Então eu gastei um mês ou dois antes da conferência trabalhando no código e só tive uma semana para preparar os slides. O material da minha apresentação era bem técnica, então eu acabei escrevendo minha palestra como anotações nos slides, só para garantir que eu não explicaria alguma coisa errada por causa da pressão do momento. Se eu tivesse mais tempo eu gostaria de ter memorizado os pontos chave para que a apresentação ter sido mais natural, mas no geral fiquei contente de como as coisas funcionaram. Eu também estava trabalhando no projeto da Confreaks de gravar a conferência, então eu estive ocupado em duas frentes, sem mencionar meu emprego.
 
-![](/files/carl.DSC_0017.sized.jpg)
+![](https://akitaonrails.s3.amazonaws.com/files/carl.DSC_0017.sized.jpg)
 
 **AkitaOnRails:** E nessa época você ainda estava na Boeing? Ou você já estava na Surgeworks? Como começou a trabalhar na Surgeworks em tempo integral?
 
@@ -148,7 +148,7 @@ Claro que temos muitos programadores aqui com a mesma mentalidade.
 
 **AkitaOnRails:** Falando em paixão, David sempre reafirma sobre o senso de estética da comunidade, seu senso essencial de beleza em relação à codificação. Você sentiu isso quando começou? Muitos dizem que essa é uma das razões para a comunidade Ruby e Rails ser tão focada em direção a Macs. O que acha disso?
 
-![](/files/carl_iphone.jpg)
+![](https://akitaonrails.s3.amazonaws.com/files/carl_iphone.jpg)
 
 **Carl Youngblood:** Eu concordo. Matz normalmente menciona o [provérbio Chines](http://oneproverb.net/bwfolder/chinesebw.html) que diz algo como _“o começo da sabedoria é dar nomes corretos às coisas”_. O pessoal de Ruby tende a gastar muito tempo focando na semântica e garantindo que o código não só é útil mas elegante. Acredito que quanto você procura maximizar seu nível de abstração e, por conseqüência, seu poder de programação, esses tipos de coisas são muito importantes e podem fornecer um enorme ganho de produtividade.
 
@@ -164,5 +164,5 @@ _“Nunca duvide que um pequeno grupo de cidadãos cuidadosos e dedicados possa 
 
 **Carl Youngblood:** Legal! Obrigado por seu tempo, Fabio.
 
-![](/files/carl.JamesAndJoseph11.sized.jpg)
+![](https://akitaonrails.s3.amazonaws.com/files/carl.JamesAndJoseph11.sized.jpg)
 

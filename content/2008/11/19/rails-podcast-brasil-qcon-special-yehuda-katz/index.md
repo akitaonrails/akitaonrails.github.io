@@ -21,8 +21,8 @@ Enquanto estou em São Francisco para a [QCon](http://qconsf.com/sf2008), eu pud
 
 Por outro lado tivemos algumas notícias tristes hoje também: a Engine Yard foi obrigada a demitir muitos desenvolvedores de Rubinius. Evan [explicou as razões](http://blog.fallingsnow.net/2008/11/18/a-sad-day/) em seu blog. Fora isso, eles anunciaram ontem que a EY terá uma [nova linha de serviços](http://brainspl.at/articles/2008/11/18/ruby-deployment-and-engine-yard-as-a-service) sobre o Amazon Web Services, provendo appliances tunadas para instalação otimizada de Rails no cloud.
 
-[![](http://s3.amazonaws.com/akitaonrails/assets/2008/11/19/podcast-icon-180x180.jpg)](/files/yehuda_katz.mp3)
+[![](http://s3.amazonaws.com/akitaonrails/assets/2008/11/19/podcast-icon-180x180.jpg)](https://akitaonrails.s3.amazonaws.com/files/yehuda_katz.mp3)
 
-Tenho todos os detalhes nesse episódio especial do [Ruby on Rails Podcast Brasil](http://podcast.rubyonrails.pro.br) (em inglês). Ainda não está no website oficial, mas aguardem ele aparecer nos feeds amanhã. Por enquanto, vocês podem fazer download diretamente [deste link](/files/yehuda_katz.mp3).
+Tenho todos os detalhes nesse episódio especial do [Ruby on Rails Podcast Brasil](http://podcast.rubyonrails.pro.br) (em inglês). Ainda não está no website oficial, mas aguardem ele aparecer nos feeds amanhã. Por enquanto, vocês podem fazer download diretamente [deste link](https://akitaonrails.s3.amazonaws.com/files/yehuda_katz.mp3).
 
 Terei mais informações da QCon durante esta semana, fiquem ligados.

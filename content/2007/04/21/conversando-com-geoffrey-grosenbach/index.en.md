@@ -15,7 +15,7 @@ translationKey: chatting-geoffrey-grosenbach
 
 ### Chatting with Geoffrey Grosenbach
 
- ![](/files/geoffrey.gif)
+ ![](https://akitaonrails.s3.amazonaws.com/files/geoffrey.gif)
 
 The [Dr Nic](/pages/drnic) interview was a huge success and getting to know and exchange ideas with people as smart and intelligent is very addicting. So, I was again very fortunate to get in touch with **Geoffrey Grosenbach** , from [Topfunky Corporation](http://www.topfunky.com/). He was very kind in accepting my invitation for this interview and sharing some of his experiences with us, Brazilians.
 
@@ -65,7 +65,7 @@ So I forget the exact series of events, but I started my [blog](http://nubyonrai
 
 ### The Rails Podcast
 
-[![](/files/railspodcast.png)](http://podcast.rubyonrails.org/)
+[![](https://akitaonrails.s3.amazonaws.com/files/railspodcast.png)](http://podcast.rubyonrails.org/)
 
 **AkitaOnRails** : You started it all together? The blog, the podcast, the screencasts?
 
@@ -87,7 +87,7 @@ I’ve always been interested in recording and audio. Then I ended up doing 43 m
 
 ### Rails Community
 
-[![](/files/railsconf.jpg)](http://conferences.oreillynet.com/rails/)
+[![](https://akitaonrails.s3.amazonaws.com/files/railsconf.jpg)](http://conferences.oreillynet.com/rails/)
 
 **AkitaOnRails** : And abruptly changing subjects, what about the conferences. RubyConf, RailsConf, US, EU, have you attended all of them?
 
@@ -111,7 +111,7 @@ I’ve always been interested in recording and audio. Then I ended up doing 43 m
 
 ### Learning Rails
 
-[![](/files/adrianholovaty.jpg)](http://www.holovaty.com/)
+[![](https://akitaonrails.s3.amazonaws.com/files/adrianholovaty.jpg)](http://www.holovaty.com/)
 
 **AkitaOnRails** : Having made several podcasts, blogs and the teaching material of PeepCode. Where do you feel people are having the most difficult times about Rails? Where are they getting stuck at? Many people I know are a little bit afraid about the terseness of the syntax (mostly are Java programmers) and the lack of compilation (static typing).
 
@@ -144,7 +144,7 @@ I’ve always been interested in recording and audio. Then I ended up doing 43 m
 
 **AkitaOnRails** : So, how’s your life with so many things to do, places to go and people to meet? Conferences, Topfunky, Peepcode, podcasts, interviews. How do you organize your many activities? Many people I know complain that they _“don’t have enough time to learn new things”_, as an excuse to not learn Rails or whatnot. Any tips for the audience?
 
-[![](/files/zedshaw.jpg)](http://www.zedshaw.com)
+[![](https://akitaonrails.s3.amazonaws.com/files/zedshaw.jpg)](http://www.zedshaw.com)
 
 **Geoffrey** : My model for personal organization and process refinement is Zed Shaw. I still need to interview him about it, but he keeps stats on how many bugs he writes, and then changes his workflow when it gets above a certain number. I’m not that smoothly engineered, but I do tweak my tools to get the most benefit. I use a few different to-do lists and project management systems (backpack, my own: [The Online CEO](http://theonlineceo.com/)). Mostly it’s trying to be aware of my own skills, needs, and mental stamina!
 
@@ -176,7 +176,7 @@ A problem I’m trying to figure out is how to maintain an open source project. 
 
 **Geoffrey** : I [interviewed](http://podcast.rubyonRails.org/programs/1/episodes/Railsconf_europe) Charles Nutter at RailsConf in London, a few days after they started working for Sun. I think it’s very exciting to see that project getting near to completion. The interoperability with Java will be a huge boost for existing Java projects. I’m also excited about the [Rubinius](http://rubini.us/) project, by Evan Phoenix here in Seattle.
 
-[![](/files/evanphoenix.jpg)](http://blog.fallingsnow.net/rubinius/)
+[![](https://akitaonrails.s3.amazonaws.com/files/evanphoenix.jpg)](http://blog.fallingsnow.net/rubinius/)
 
 The early culture around Ruby in Japan involved a lot of experimentation and hacking on the Ruby interpreter itself. I’m hoping that Rubinius will make that possible for people who want to hack in Ruby itself. And will probably be faster and more maintainable, too. It also has some great features for introspection. Even methods themselves are objects in Rubinius, with some more features than Ruby has now.
 
@@ -234,7 +234,7 @@ The early culture around Ruby in Japan involved a lot of experimentation and hac
 
 ### PeepCode
 
-[![](/files/peepcode.jpg)](http://www.peepcode.com)
+[![](https://akitaonrails.s3.amazonaws.com/files/peepcode.jpg)](http://www.peepcode.com)
 
 **AkitaOnRails** : Haha, yes, exactly. I personally like PeepCode, but I never heard of anyone else here buying it. Would you make translated versions?
 
@@ -270,7 +270,7 @@ The early culture around Ruby in Japan involved a lot of experimentation and hac
 
 **Geoffrey** : Exactly. And you don’t even have to beat out the existing players in the market. There are many small niches that can support a person if the business idea is good.
 
-[![](/files/next-small-thing-1.jpg)](http://valleywag.com/tech/jason-fried/jason-fried-expands-his-little-thing-189142.php)
+[![](https://akitaonrails.s3.amazonaws.com/files/next-small-thing-1.jpg)](http://valleywag.com/tech/jason-fried/jason-fried-expands-his-little-thing-189142.php)
 
 **AkitaOnRails** : Jason Fried’s motto: [underdoing instead of overdoing](http://www.37signals.com/svn/archives2/less_as_a_competitive_advantage_my_10_minutes_at_web_20.php).
 

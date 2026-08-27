@@ -29,4 +29,4 @@ E de acordo com Matt, Merb é muito mais rápido do que Rails – pelo menos no 
 
 [![](http://s3.amazonaws.com/akitaonrails/assets/2008/11/21/Picture_2.png)](http://www.slideshare.net/mattetti/merb-for-the-enterprise-presentation/v1)
 
-Faça o download do arquivo de áudio do John [aqui](/files/john_straw.mp3) e o do Matt [daqui](/files/matt_aimonetti.mp3).
+Faça o download do arquivo de áudio do John [aqui](https://akitaonrails.s3.amazonaws.com/files/john_straw.mp3) e o do Matt [daqui](https://akitaonrails.s3.amazonaws.com/files/matt_aimonetti.mp3).

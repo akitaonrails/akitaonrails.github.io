@@ -25,6 +25,6 @@ Somos bons já em escalar a camada Web. Nós entendemos HTTP, entendemos balance
 
 Escalabilidade de banco de dados não vem de graça, e uma solução pode ser deixar os bancos de dados relacionais completamente. Não estou defendendo acabar com SQL para tudo e ir para CouchDB, mas em vez disso existem Casos de Uso que podem ser melhor adequados com bancos de dados orientados a documentos.
 
-[![](http://s3.amazonaws.com/akitaonrails/assets/2008/11/19/podcast-icon-180x180.jpg)](/files/jan_chris_couchdb.mp3)
+[![](http://s3.amazonaws.com/akitaonrails/assets/2008/11/19/podcast-icon-180x180.jpg)](https://akitaonrails.s3.amazonaws.com/files/jan_chris_couchdb.mp3)
 
-Jan e Chris foram muito legais em me dar a oportunidade de entrevistá-los e falar sobre os detalhes do CouchDB. Em resumo: ele já está bom para uso em produção agora mesmo. Novas funcionalidades estão chegando, mas você pode tirar vantagem dele hoje. Novamente, o arquivo de áudio estará disponível no feed do [Ruby on Rails Brasil Podcast](http://podcast.rubyonrails.pro.br/) (em inglês), mas você pode fazer download diretamente [daqui](/files/jan_chris_couchdb.mp3).
+Jan e Chris foram muito legais em me dar a oportunidade de entrevistá-los e falar sobre os detalhes do CouchDB. Em resumo: ele já está bom para uso em produção agora mesmo. Novas funcionalidades estão chegando, mas você pode tirar vantagem dele hoje. Novamente, o arquivo de áudio estará disponível no feed do [Ruby on Rails Brasil Podcast](http://podcast.rubyonrails.pro.br/) (em inglês), mas você pode fazer download diretamente [daqui](https://akitaonrails.s3.amazonaws.com/files/jan_chris_couchdb.mp3).

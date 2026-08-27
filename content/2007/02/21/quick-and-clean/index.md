@@ -12,7 +12,7 @@ draft: false
 
 
 
- ![](/files/ror_eXchange_logo.jpg)
+ ![](https://akitaonrails.s3.amazonaws.com/files/ror_eXchange_logo.jpg)
 
 Dia 9 de fevereiro aconteceu o evento [RoR eXchange 2007](http://www.skillsmatter.com/rorexchange), da [Skills Matter](http://www.skillsmatter.com/), co-organizadora da última [RailsConf](http://www.akitaonrails.com/2007/01/18/rails-1-2-admira%C3%A7%C3%A3o-rest-festival-http-e-celebra%C3%A7%C3%B5es-utf-8). Foi um evento de um dia que reuniu alguns bons palestrantes para discutir os últimos desenvolvimentos no mundo RoR.
 
@@ -20,7 +20,7 @@ Neste [link](http://skillsmatter.com/menu/479) vocês podem assistir a todas as 
 
 Outra parte tem a ver com o que já mostramos sobre o suporte [REST](http://www.akitaonrails.com/category/rails-1-2) no novo Rails 1.2. Mas o ponto alto da palestra é um aviso (muitos não vão gostar, mas vamos lá): Ruby e Rails são anunciados como “linguagem simples”, “framework fácil”, “mais fácil e rápido que Java”, “mais simples de aprender”, etc. Tudo isso dá uma extrema falsa impressão de que qualquer peão (sem ser pejorativo, mas já sendo), que nunca programou na vida, estará desenvolvendo um Yahoo.com amanhã. Novamente, cuidado, essa é a falácia da [causa e efeito](http://www.skepdic.com/refuge/ctlessons/lesson1.html): porque RoR é fácil, _qualquer um_ aprende fácil.
 
-[![](/files/200px-Edgar_F_Codd.jpg)](http://en.wikipedia.org/wiki/Edgar_F._Codd)
+[![](https://akitaonrails.s3.amazonaws.com/files/200px-Edgar_F_Codd.jpg)](http://en.wikipedia.org/wiki/Edgar_F._Codd)
 
 Vamos consertar isso: _‘Ruby e Rails são tecnologias muito simples para todos que **JÁ SÃO** bons programadores hoje’_. Nos últimos tempos Chad teve a oportunidade de ver muitos códigos de terceiros, muitos deles códigos de novatos. O que ele viu deve horrorizar qualquer um: Rails não protege a aplicação de um mau programador.  
   
@@ -28,7 +28,7 @@ Como disse Chad, Java e C# são tecnologias que foram desenvolvidas para program
   
 Ruby não tem essas proteções. Linguagens como Ruby, Python, Haskell, O’Caml, foram feitas para bons programadores, aqueles que sabem exatamente o que estão fazendo. Rails é uma excelente ferramenta _apenas_, e _somente apenas_, àqueles que se deram ao trabalho de estudar como ela funciona internamente.
 
-[![](/files/kay-alan.jpg)](http://en.wikipedia.org/wiki/Alan_Kay)
+[![](https://akitaonrails.s3.amazonaws.com/files/kay-alan.jpg)](http://en.wikipedia.org/wiki/Alan_Kay)
 
 O exemplo de Chad é muito bom: em uma boa tecnologia de ORM como o Active Record do Rails ou mesmo um Hibernate em Java esconde boa parte do SQL que antes era feito manualmente. Agora imagine que você buscou uma lista de usuários do seu banco (find :all), colocou essa lista para iterar em um loop (.each) e está analisando as permissões de cada usuários para mostrar em uma tela. Você acabou de cair na armadilha conhecida como **1 + N** , ou seja, se sua lista de usuários tinha 200 usuários, você vai fazer pelo menos mais 200 queries no banco para buscar as permissões de cada um. Eu discuto isso no meu livro e mostro a diretiva :include dos finders, que é uma das possíveis soluções nesse caso.
 
@@ -36,7 +36,7 @@ Você só sabe onde, quando e como usar uma técnica como [:include](http://ruby
 
 Em outras palavras: nem Ruby nem Rails protegerá uma aplicação de um programador folgado. Quando um bom programador (que já tem experiência em bancos de dados, em otimização do modelo request-response do HTTP, em configuração de servidores web como Apache, em ORM, em MVC, em Design Patterns, etc) se encontra com Ruby on Rails, temos um excelente casamento. Quando um programador que não investiu o devido tempo a estudar todos esses assuntos se encontra com Ruby on Rails, temos um desastre. E isso não é só com Rails. Coloque um programador que não tem o costume de se auto atualizar como deveria em qualquer plataforma de desenvolvimento e sempre teremos um desastre.
 
-[![](/files/cernpeo4_5-04.jpg)](http://en.wikipedia.org/wiki/Niklaus_Wirth)
+[![](https://akitaonrails.s3.amazonaws.com/files/cernpeo4_5-04.jpg)](http://en.wikipedia.org/wiki/Niklaus_Wirth)
 
 Significa que não há salvação para os novatos? Claro que não, todo programador sênior já foi um júnior. A diferença é que o primeiro investiu cada hora livre de seu tempo em estudo. E eu quero dizer estudo com perspectiva, não um estudo míope de ferramentas, mas sim um estudo amplo de tecnologias. Por que o HTTP é como é? Por que SQL é como é? Por que o que chamamos de MVC atual é como é? Quais as melhores formas de usar todas essas tecnologias em conjunto? Inclusive essa é a linha mestra que guia meu livro: um livro que apenas o leva passo a passo do estágio 1 ao 2, não ensina nada. _“Para buscar todas as linhas da tabela, digite find(:all)”_. Esse é o tipo de ensinamento que torna possíveis bons programadores em programadores folgados. Ele não diz o principal: “por que”, “quais as alternativas”, “o que acontece por baixo”, “quais minhas opções”.
 
@@ -44,7 +44,7 @@ Por muito tempo associamos programação a dois estilos: _quick’n dirty_ (ráp
 
 Ninguém consegue ser quick’n clean em qualquer plataforma, linguagem ou tecnologia, mesmo tendo Q.I. de Einstein. Experiência não se herda nem se compra: se adquire, com esforço, treinamento contínuo e de qualidade. Para um jogador profissional de basquete, fazer cestas de três pontos é algo quase trivial. Para um principiante é a coisa mais difícil do mundo, a diferença é que o primeiro provavelmente treinou esse lance por várias horas, durantes vários dias, em vários anos a ponto disso se tornar trivial. É um conceito que vale para qualquer coisa, não apenas programação: quanto mais treinamos, mais as coisas difíceis se tornam simples e podemos partir para treinar algo mais difícil.
 
-[![](/files/donald_knuth7.jpg)](http://en.wikipedia.org/wiki/Donald_Knuth)
+[![](https://akitaonrails.s3.amazonaws.com/files/donald_knuth7.jpg)](http://en.wikipedia.org/wiki/Donald_Knuth)
 
 Lembre-se: David Hansson, Marcel Molina, Sam Stepherson, Miguel De Icasa, Guido van Rossum, Rasmus Lerdorf, Larry Wall, Anders Hejlsberg, Alan Cox e mesmos outros célebres como Bjarne Stroustrup, Dennis Ritchie, Alan Kay, Niklaus Wirth, Donald Knuth e centenas de outros. Acha que está nos genes? Um bom programador nasce geneticamente bem dotado? A diferença entre um programador ruim e estes nomes é a quantidade de esforço investido em estudo, pesquisa e experimentação. Não existe fórmula mágica, curso à jato de 6 meses, voodoo, que substitua o puro e simples suor.
 

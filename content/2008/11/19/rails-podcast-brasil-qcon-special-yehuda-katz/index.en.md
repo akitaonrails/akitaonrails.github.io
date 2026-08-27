@@ -9,7 +9,7 @@ tags:
 draft: false
 ---
 
-**Update 11/19:** Seems like the zip file was corrupted, I replaced it with the mp3 file itself. Please, try [downloading](/files/yehuda_katz.mp3) again.
+**Update 11/19:** Seems like the zip file was corrupted, I replaced it with the mp3 file itself. Please, try [downloading](https://akitaonrails.s3.amazonaws.com/files/yehuda_katz.mp3) again.
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2008/11/19/2607470367_71de8a30d3.jpg)
 
@@ -21,8 +21,8 @@ While in San Francisco for [QCon](http://qconsf.com/sf2008), I was able to inter
 
 On the other hand we had some sad news yesterday as well: Engine Yard was forced to lay off lots of Rubinius developers. Evan [explained the reasons](http://blog.fallingsnow.net/2008/11/18/a-sad-day/) in his blog, and Yehuda states again that Engine Yard is still committed to Rubinius. Besides that, they also announced yesterday that EY will have a [new line of services](http://brainspl.at/articles/2008/11/18/ruby-deployment-and-engine-yard-as-a-service) around Amazon Web Services, providing tuned appliances for optimal Rails deployments in the cloud.
 
-[![](http://s3.amazonaws.com/akitaonrails/assets/2008/11/19/podcast-icon-180x180.jpg)](/files/yehuda_katz.mp3)
+[![](http://s3.amazonaws.com/akitaonrails/assets/2008/11/19/podcast-icon-180x180.jpg)](https://akitaonrails.s3.amazonaws.com/files/yehuda_katz.mp3)
 
-I have all the details in this special episode of the [Ruby on Rails Podcast Brasil](http://podcast.rubyonrails.pro.br) (in English). It is not on the official website yet, but expect it to show up in the feeds by tomorrow. Meanwhile you can download it directly from [this link](/files/yehuda_katz.mp3)
+I have all the details in this special episode of the [Ruby on Rails Podcast Brasil](http://podcast.rubyonrails.pro.br) (in English). It is not on the official website yet, but expect it to show up in the feeds by tomorrow. Meanwhile you can download it directly from [this link](https://akitaonrails.s3.amazonaws.com/files/yehuda_katz.mp3)
 
 I'll have more insights from QCon later this week, stay tuned.

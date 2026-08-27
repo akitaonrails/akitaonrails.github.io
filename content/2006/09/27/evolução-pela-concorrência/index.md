@@ -12,7 +12,7 @@ tags:
 draft: false
 ---
 
- ![](/files/402px-AdamSmith.jpg)
+ ![](https://akitaonrails.s3.amazonaws.com/files/402px-AdamSmith.jpg)
 
 Não lembro se escrevi sobre isso em algum post ou se foi no meu livro, mas existe um senso comum que chamo de **"Evolução pela Concorrência"**. Discussões como _"Ruby VS Java"_ ou _"Rails VS J2EE"_ não são exclusividade da comunidade Ruby on Rails. Vejam outras brigas recentes do mundo da informática:
 

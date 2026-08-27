@@ -21,7 +21,7 @@ Conheçam **Ola Bini** , um jovem, dinâmico e importante colaborador desde incr
 
 Eu tive a oportunidade de conversar com ele por mais de uma hora. Então, outra grande entrevista para nosso site.
 
-![](/files/511173503_15ef7dc203.jpg)
+![](https://akitaonrails.s3.amazonaws.com/files/511173503_15ef7dc203.jpg)
 
 
  **AkitaOnRails** : Oi. Olá, você está pronto?
@@ -58,7 +58,7 @@ Eu tive a oportunidade de conversar com ele por mais de uma hora. Então, outra 
 
 **AkitaOnRails** : Então seu primeiro emprego foi na área de gráficos?
 
-![](/files/img1098574794.jpg)
+![](https://akitaonrails.s3.amazonaws.com/files/img1098574794.jpg)
 
 **Ola Bini** : Na realidade não. Foi programação para Web com Java, JSP, PHP, ASP e outras tecnologias assim, para um departamento da [Karolinska Institutet](http://ki.se/), fazendo sistemas web para aprendizado à distância.
 
@@ -86,7 +86,7 @@ Eu tive a oportunidade de conversar com ele por mais de uma hora. Então, outra 
 
 **Ola Bini** : Sim. E da maleabilidade. Sou muito fã de macros no [Common Lisp](http://en.wikipedia.org/wiki/Common_Lisp), e também gosto da estrutura muito direta de um programa Lisp. O fato que não existe divisão real entre dados e código. O aspecto funcional é prazeroso, mas não a principal razão de gostar dele.
 
-![](/files/510521311_e2ca389c3e.jpg)
+![](https://akitaonrails.s3.amazonaws.com/files/510521311_e2ca389c3e.jpg)
 
 **AkitaOnRails** : Voltando ao JRuby. Eu li do seu [blog](http://ola-bini.blogspot.com/2005/12/homegrown-dao-to-hibernate-to-rails.html) que está trabalhando com JRuby desde o começo de 2005? Como se tornou um membro do JRuby Core Team? Você já conhecia [Charles](http://headius.blogspot.com/) ou [Thomas](http://www.bloglines.com/blog/ThomasEEnebo) anteriormente?
 
@@ -98,7 +98,7 @@ Eu tive a oportunidade de conversar com ele por mais de uma hora. Então, outra 
 
 **AkitaOnRails** : Existe muita dúvida e medo na mente de programadores Java inexperientes aqui. Eles sentem “medo” de terem perdido tempo aprendendo Java. Eles “acham” que Ruby é uma linguagem menor, e assim por diante. Eu acho que o problema é que a maior parte deles acham que só precisam aprender uma única linguagem. Essa é uma questão dupla: primeiro, você mencionou que não gostava muito de Java. Poderia elaborar sobre isso? E segundo, o que você gosta sobre Ruby?
 
-![](/files/504012154_839b1be79a.jpg)
+![](https://akitaonrails.s3.amazonaws.com/files/504012154_839b1be79a.jpg)
 
 **Ola Bini** : Eu gostaria de começar dizendo isso: é muito difícil se tornar um bom programador sabendo apenas uma única linguagem. Saber diversas linguagens de programação de diferentes estilos é [imperativo](http://media.pragprog.com/titles/mjwti/generalist.pdf) para usar uma linguagem bem. Saber Lisp me torna um programador Java melhor. Meu antigo colega de trabalho Lars me disse que aprender Ruby o tornou um programador Java melhor. Então, aprender outra linguagem é de fato algo que você pode fazer, e deve fazer, para se tornar um programador melhor em Java, por exemplo.
 
@@ -116,7 +116,7 @@ O sistema de threading é perigoso já que ele dá às funcionalidades um sistem
 
 Então, um GC melhor, melhores maneiras de tuning, um sistema melhor de threading, sem global locking. Mas neste instante, as funcionalidades vão se provar. Se [Rubinius](http://blog.fallingsnow.net/rubinius/) fizer as escolhas certas para essas coisas, ela vai trazer mais usuários do que MRI/KRI no longo prazo. Eu concordo sobre um suporte melhor a UTF, claro. Qualquer um que não é de países com língua inglesa sabe disso.
 
- ![](/files/279242203_f1b6d306d9_m.jpg)
+ ![](https://akitaonrails.s3.amazonaws.com/files/279242203_f1b6d306d9_m.jpg)
 
 **AkitaOnRails** : Eu estava tentando contactar Evan Phoenix. Charles mencionou Rubinius também. Como você acha que ambos os projetos podem colaborar? Que brechas o Rubinius fecha para o JRuby, por exemplo?
 
@@ -129,7 +129,7 @@ o que é pura gambiarra. Mas isso normalmente não é difícil de entender, já 
 
 **AkitaOnRails** : A implementação do JRuby se provou de muito sucesso mas não sem seus problemas. [Unicode](http://headius.blogspot.com/2006/06/unicode-in-ruby-unicode-in-jruby.html), [SSL](http://ola-bini.blogspot.com/search/label/openssl), [Regex](http://jira.codehaus.org/browse/JRUBY-1046), [YAML](http://jira.codehaus.org/browse/JRUBY-561). Por exemplo, você descreveu diferenças na implementação de expressões regulares do Java e da versão do Ruby MRI no seu blog. Quais foram as partes mais difíceis no processo de portar, do seu ponto de vista? Onde estava a carga pesada?
 
- ![](/files/511173733_e5680a0442.jpg)
+ ![](https://akitaonrails.s3.amazonaws.com/files/511173733_e5680a0442.jpg)
 
 **Ola Bini** : Existem basicamente duas coisas que foram o “pior” em fazer as coisas funcionar. A primeira eram os casos periféricos. Comportamentos estranhos que não estão especificados, mas que apenas se comportam assim por causa da implementação.
 
@@ -159,7 +159,7 @@ Já tentou usar _super_ de dentro de um bloco, onde o método ao redor pega um *
 
 **Ola Bini** : Sim, ela fez. Foi ela também que colocou meu nome e número na telona. :-) Eu fui lá com ela, Roy e [Martin Fowler](http://www.martinfowler.com/bliki/), e alguns outros ThoughtWorkers.
 
-![](/files/cyndy.png)
+![](https://akitaonrails.s3.amazonaws.com/files/cyndy.png)
 
 Lá é uma estrutura plana, sim, o que significa que não tenho chefes explícitos, mas chefes que gerenciam áreas diferentes do meu tempo, assim por dizer. Então Chad Wathington cuida do meu trabalho na [RubyWorks](http://studios.thoughtworks.com/rubyworks), Cyndi lida com toda logística de contratação para a Studios, e Alexei Vorontsov é Gerente de Projetos para a [RubyWorks](http://rubyworks.rubyforge.org/). Todos eles meus chefes, por assim dizer.
 
@@ -185,7 +185,7 @@ Organização é dureza. Eu normalmente mantenho listas no [tadalist](http://www
 
 **Ola Bini** : Bem, é um [livro](http://ola-bini.blogspot.com/2007/06/book-update.html) sobre JRuby on Rails. O objetivo é ser bem prático, dando exemplos reais de como atingir as coisas. Existe muita informação de JRuby no meio, claro, mas não é um livro gerérico sobre JRuby.
 
- ![](/files/pat.jpg)
+ ![](https://akitaonrails.s3.amazonaws.com/files/pat.jpg)
 
 A [APress](http://www.apress.com/category.html?nID=155) vai publicar, e de acordo com a agenda atual, será lançado em Outubro. [Pat Eyler](http://on-ruby.blogspot.com/) será meu revisor técnico. E é isso. :-) Deve ficar com umas 250 páginas, contendo 4 projetos JRuby on Rails desenvolvidos do zero.
 
@@ -223,7 +223,7 @@ A [APress](http://www.apress.com/category.html?nID=155) vai publicar, e de acord
 
 **AkitaOnRails** : Bem dito. E como Steve Jobs diria _“e Tem Mais Uma Coisa™”_: eu tento trazer muitos conselhos de pessoas experientes como você para programadores em começo de carreira. Eles têm muitas questões. O que você recomendaria para essa nova geração de programadores? (Embora eu ache que você mesmo é bem jovem.)
 
-![](/files/515994249_5a5bc1b92d.jpg)
+![](https://akitaonrails.s3.amazonaws.com/files/515994249_5a5bc1b92d.jpg)
 
 **Ola Bini** : Isso não deve ser uma grande surpresa depois dessa entrevista: meu conselho seria aprender mais de uma linguagem. Bem simples. Alguma coisa funcional, ou com um modelo de concorrência desesperadamente diferente. Lisp, Smalltalk, Erlang e Ruby são todas boas escolhas para programadores Java/C/C++ aprender. E sim, eu acho que sou. Tenho 25 anos agora.
 

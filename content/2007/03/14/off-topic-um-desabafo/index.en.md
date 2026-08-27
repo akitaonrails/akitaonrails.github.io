@@ -18,7 +18,7 @@ One such data point is this survey: [Survey says 75% of IT professionals want to
 
 These articles need to be taken with a grain of salt, since most of them report on the American market. This other one, for instance, says [programmers are the highest paid in tech](http://web.archive.org/web/20100926130559/http://idgnow.uol.com.br:80/carreira/2006/08/15/idgnoticia.2006-08-15.9911074683/IDGNoticia_view/). In Brazil that's not necessarily true. Here the programmer earns "enough," and the bigger paychecks go to analysts (people with degrees in all sorts of fields who use technology as a work tool). And it's precisely those analysts and consultants, some making up to R$100,000 a year, who complain the most about their own salaries.
 
-[![](/files/neumannface_en.jpg)](http://en.wikipedia.org/wiki/Von_Neumann)
+[![](https://akitaonrails.s3.amazonaws.com/files/neumannface_en.jpg)](http://en.wikipedia.org/wiki/Von_Neumann)
 
 Another complaint I hear all the time: _"I'm not enjoying where I work anymore because it doesn't 'add' anything to me. I want to move to other projects to learn more."_ Wanting to change is admirable, but I believe most people are aiming at the wrong target. A colleague of ours put it well: _"the vast majority of projects are all the same: data entry screens and more data entry screens."_ That's exactly it. It's the descendant of the old field called _Data Processing_, which people now call _Information Systems_.
 
@@ -26,7 +26,7 @@ There should be more than that. Outside of programming you have Business Intelli
 
 In Brazil, the vast majority of "programmers" customize processes that already exist. One department wants to automate employee records: it buys or builds its own forms. Another wants a sales form that feeds the sales system and notifies an external partner to update inventory. Another needs screens to control a customer service workflow. Forms and more forms, always some variation of a form.
 
-[![](/files/zuse.jpg)](http://en.wikipedia.org/wiki/Konrad_Zuse)
+[![](https://akitaonrails.s3.amazonaws.com/files/zuse.jpg)](http://en.wikipedia.org/wiki/Konrad_Zuse)
 
 No wonder so many programmers are dissatisfied. Usually they can't say why, but they feel something is wrong. And please, _don't take anything here literally_. There are dozens of fascinating projects out there, with complex algorithms for medical technology, aerospace, engineering. I'm talking about the majority, not everyone.
 
@@ -36,7 +36,7 @@ Meanwhile, the market will keep needing "data entry programmers." It doesn't mat
 
 I started out building data entry screens in the late 80s, with dBase and Clipper. Most of the client-server era (2-tier) was exactly that: a database on the server and entry screens on the client. When the Web arrived, seductive applications showed up, search engines and webmail, and suddenly everyone wanted to build a website. Whoever invented TCP/IP, HTTP, HTML, SMTP, POP3 must have had a blast. For the rest of us, what was left was more data entry. An email screen is a form. An e-commerce screen is a form. Companies swapped their Visual Basic screens for browsers: data entry dressed up as web pages.
 
-[![](/files/hoppergrace_big.jpg)](http://en.wikipedia.org/wiki/Grace_Hopper)
+[![](https://akitaonrails.s3.amazonaws.com/files/hoppergrace_big.jpg)](http://en.wikipedia.org/wiki/Grace_Hopper)
 
 It's no coincidence that so many frameworks keep popping up: Struts, Velocity, Lucene, Jackrabbit, Spring, Guice. A real programmer loves the plumbing. We like understanding how this mesh of code works, how to optimize it, how to make it stable, how to wire things together. Plenty of people in Brazil think this way, but far fewer than in the United States. We have nothing even close to a repository like Apache Jakarta. Brazilians contribute to various open source projects, but it's a small fraction.
 
@@ -46,7 +46,7 @@ My book, "Repensando a Web com Rails," barely sold its first print run of 1,000 
 
 Fair enough: we went through a dark period of closed markets and years of lag. But today I see no reason for programmers, especially the younger ones, to be so apathetic about technology.
 
-[![](/files/Herman-Hollerith.gif)](http://en.wikipedia.org/wiki/Herman_Hollerith)
+[![](https://akitaonrails.s3.amazonaws.com/files/Herman-Hollerith.gif)](http://en.wikipedia.org/wiki/Herman_Hollerith)
 
 At times like this I miss the late 80s (that's the era I lived; older folks will feel the same about the late 70s). We were very few, and running into a programmer or even an enthusiast was rare. But we thought differently.
 
@@ -56,7 +56,7 @@ Then the Brazilian IT market exploded, for all sorts of reasons. Suddenly a lot 
 
 Now all I hear from today's "programmers" is _"which language do you think I should learn that will make the most money?"_ You can imagine how frustrating that is for someone who already feels like part of the _old guard_. I never thought about the cost-benefit of learning time. I always took learning as a constant; if I made money along the way, great, but that was never the point.
 
-[![](/files/150px-Marvin_Minsky.jpg)](http://en.wikipedia.org/wiki/Marvin_Minsky)
+[![](https://akitaonrails.s3.amazonaws.com/files/150px-Marvin_Minsky.jpg)](http://en.wikipedia.org/wiki/Marvin_Minsky)
 
 Because of the current state of absurdity in the market, I witness things that scare me. At one client, they "integrated" the sales system with the activation system for a piece of equipment. The logic is simple: once the sale goes through, the customer's equipment should be activated. Even without a two-phase commit solution (everyone knows what atomic transactions are, right?), the requirement called for safeguards to guarantee that.
 
@@ -70,7 +70,7 @@ I try to spread the culture I knew as a young programmer: learning. The excuses 
 
 It's human nature to resist leaving your comfort zone and, worse, to complain when you become obsolete. _"It's the government's fault"_, _"it's capitalism's fault"_, _"it's my boss's fault."_ More excuses.
 
-[![](/files/turing.jpg)](http://en.wikipedia.org/wiki/Alan_Turing)
+[![](https://akitaonrails.s3.amazonaws.com/files/turing.jpg)](http://en.wikipedia.org/wiki/Alan_Turing)
 
 When I wrote my book, I did it for two reasons: to learn something new and to help others learn along. **Learning** and **Teaching** are the two fundamental motivators of every good programmer. I understand that in Brazilian reality, ignoring money is not an option. I found a balance between the two, and I don't see why nobody else could. Standing still, sitting on the little you learned years ago, complaining nonstop, never got anyone anywhere.
 
@@ -92,7 +92,7 @@ If it's worth anything, here are some personal suggestions:
 
 - Forget courses and translated books: they're always outdated. In the 80s we had no certifications or games of that sort. We slept with an algorithms book on the nightstand and woke up to a new language spec over breakfast.
 
-[![](/files/charles-babbage.jpg)](http://en.wikipedia.org/wiki/Charles_Babbage)
+[![](https://akitaonrails.s3.amazonaws.com/files/charles-babbage.jpg)](http://en.wikipedia.org/wiki/Charles_Babbage)
 
 Good cooks appreciate good food on vacation. Good engineers analyze their own car on a road trip. Good artists sketch new ideas on a restaurant napkin. Good professionals **LOVE** what they do, and not only at work. Loving it here means appreciating, respecting, and wanting to learn more about the profession, which is very different from taking work home. Da Vinci didn't need courses. Mozart didn't need courses. A course only helps someone who is already on track and knows exactly what they want out of it.
 

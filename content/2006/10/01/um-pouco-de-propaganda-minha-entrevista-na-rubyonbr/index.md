@@ -13,7 +13,7 @@ draft: false
  **Atualização 13-10-2015:** como o rubyonbr não está mais ativo, agora só via [Webarchive](https://web.archive.org/web/20080725002423/http://www.rubyonbr.org/articles/2006/09/18/entrevista-com-o-akita/)
 
 
- ![](/files/rubyonbr-logo-site.gif)
+ ![](https://akitaonrails.s3.amazonaws.com/files/rubyonbr-logo-site.gif)
 
 O pessoal do **[Rubyonbr](http://www.rubyonbr.org)** fez a gentileza de me conceder espaço para falar um pouco sobre mim e também sobre o livro. Espero que gostem da [entrevista exclusiva](http://www.rubyonbr.org/articles/2006/09/18/entrevista-com-o-akita/) que foi ao ar hoje.
 

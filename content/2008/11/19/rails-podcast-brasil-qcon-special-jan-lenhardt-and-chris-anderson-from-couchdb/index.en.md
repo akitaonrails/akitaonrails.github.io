@@ -23,6 +23,6 @@ We've been good at scaling the Web tier. We understand HTTP, we know load balanc
 
 Database scalability does not come for free, and one solution may be to leave RDBMS completely. I am not advocating dropping SQL for everything and going CouchDB, but instead that some Use Cases may be better served with Document-Oriented Databases instead.
 
-[![](http://s3.amazonaws.com/akitaonrails/assets/2008/11/19/podcast-icon-180x180.jpg)](/files/jan_chris_couchdb.mp3)
+[![](http://s3.amazonaws.com/akitaonrails/assets/2008/11/19/podcast-icon-180x180.jpg)](https://akitaonrails.s3.amazonaws.com/files/jan_chris_couchdb.mp3)
 
-Jan and Chris were really nice to give me the opportunity to interview them on the ins and outs of CouchDB. Bottom line: it's ready for prime time right now. New features are coming, but you can take advantage of it today. Again, the audio file will be available in the feed for the [Ruby on Rails Brasil Podcast](http://podcast.rubyonrails.pro.br/) (in English), but you can download it directly from [here](/files/jan_chris_couchdb.mp3).
+Jan and Chris were really nice to give me the opportunity to interview them on the ins and outs of CouchDB. Bottom line: it's ready for prime time right now. New features are coming, but you can take advantage of it today. Again, the audio file will be available in the feed for the [Ruby on Rails Brasil Podcast](http://podcast.rubyonrails.pro.br/) (in English), but you can download it directly from [here](https://akitaonrails.s3.amazonaws.com/files/jan_chris_couchdb.mp3).

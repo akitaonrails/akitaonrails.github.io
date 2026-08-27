@@ -22,4 +22,4 @@ Foi interessante porque ambos Kent Beck e Tim Bray falaram sobre tendências fut
 
  ![](http://s3.amazonaws.com/akitaonrails/assets/2008/11/19/podcast-icon-180x180.jpg)
 
-Os arquivos de áudio vão aparecer no [Ruby on Rails Podcast Brasil](http://podcast.rubyonrails.pro.br/), mas antes que isso aconteça, você pode fazer download dos arquivos de áudio diretamente daqui. Clique [aqui](/files/nick_sieger.mp3) para o Nick e [aqui](/files/francesco_cesarini.mp3) para o Francesco.
+Os arquivos de áudio vão aparecer no [Ruby on Rails Podcast Brasil](http://podcast.rubyonrails.pro.br/), mas antes que isso aconteça, você pode fazer download dos arquivos de áudio diretamente daqui. Clique [aqui](https://akitaonrails.s3.amazonaws.com/files/nick_sieger.mp3) para o Nick e [aqui](https://akitaonrails.s3.amazonaws.com/files/francesco_cesarini.mp3) para o Francesco.

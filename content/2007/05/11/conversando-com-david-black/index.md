@@ -15,7 +15,7 @@ aliases:
 
 **English readers, click [here](/2007/5/11/chatting-with-david-black)**
 
- ![](/files/david.jpg)
+ ![](https://akitaonrails.s3.amazonaws.com/files/david.jpg)
 
 Como reportei no meu último [post](/articles/2007/05/07/conversando-com-chad-fowler), em 24 de Abril tive a oportunidade de entrevistar duas grandes celebridades do mundo Ruby: [Chad Fowler](/articles/2007/05/07/conversando-com-chad-fowler) e **David Black**. Eu adoro conversar com pessoas experientes porque eu aprendo muito.
 
@@ -32,7 +32,7 @@ Foi quando eu tinha 13 anos (isso em 1972). Minha escola tinha um [PDP-8](http:/
 
 **David** : É, não sei nem se ele era nascido quando eu comecei a programar.
 
- ![](/files/cello.preview.jpg)
+ ![](https://akitaonrails.s3.amazonaws.com/files/cello.preview.jpg)
 
 **AkitaOnRails** : Eu não era, nasci em 77. E na época que me interessei por computadores, o Macintosh original tinha acabado de ser lançado. Eu adoro ser jovem nesta era mas eu sempre quis mexer com PDPs, cartões perfurados. Eu adoro ‘arqueologia de tecnologia’.
 
@@ -40,7 +40,7 @@ Foi quando eu tinha 13 anos (isso em 1972). Minha escola tinha um [PDP-8](http:/
 
 **AkitaOnRails** : Estou assumindo que você, Chad, Dave Thomas são amigos próximos. São? Ou vocês apenas trabalham juntos organizando as conferências na Ruby Central? Entendo que começaram a Ruby Central lá para 2001? Ouvi dizer que herdaram isso. Vocês se conheceram nessa época ou já se conheciam de longa data?
 
-[![](/files/trwnew2.jpg)](http://rubyhacker.com/coralbook/)
+[![](https://akitaonrails.s3.amazonaws.com/files/trwnew2.jpg)](http://rubyhacker.com/coralbook/)
 
 **David** : Eu conheci ambos (online) por volta de 2000. Eu não os conhecia antes. O que aconteceu com a conferência de 2001 foi assim: havia um cara chamado **Guy Hurst** que veio com a idéia e fez a maior parte da organização do evento. Mas ele não pôde continuar (várias coisas relacionadas a trabalho tomaram precedência).
 
@@ -64,7 +64,7 @@ Então decidimos que deveríamos ter uma organização-pai para conferências fu
 
 **David** : Pergunta interessante. Acho que a maioria dos programadores que conheci sabem mais do que uma linguagem – porque muitas estão apenas começando com Ruby, e a maioria já programou antes. Realmente acho que é muito ruim que as pessoas achem que para cada linguagem que adoram, você tem que odiar dez. Em anos recentes, eu provavelmente me tornei muito especializado. Ruby me deu tanto para fazer!
 
- ![](/files/rubyforrailscover.png)
+ ![](https://akitaonrails.s3.amazonaws.com/files/rubyforrailscover.png)
 
 **AkitaOnRails** : Acho que você é mais famoso agora por causa do seu livro [Ruby for Rails](http://www.manning.com/black). Eu gosto do título porque ele sublinha o ponto que para se dar bem como desenvolvedor Rails, um conhecimento mais forte de Ruby pode ser crítico. Você pensa assim?
 
@@ -76,7 +76,7 @@ Então decidimos que deveríamos ter uma organização-pai para conferências fu
 
 **AkitaOnRails** : Eu li algum lugar que o DHH disse que você foi um importante mentor para ele, no começo das suas idéias sobre Rails. Então, se DHH é o pai do Rails, você seria o avô? Como acha que o teria influenciado? Como era sua relação com DHH?
 
-[![](/files/halfulton.jpg)](http://rubyhacker.com/)
+[![](https://akitaonrails.s3.amazonaws.com/files/halfulton.jpg)](http://rubyhacker.com/)
 
 **David** : Eu não acho que o influenciei antes do Rails. Definitivamente não fui tanta influência para Rails. Você já falou com **Hal Fulton**? Acho que lembro de DHH ter dado crédito ao [The Ruby way](http://rubyhacker.com/coralbook/) (o livro do Hal) por ter sido uma grande influência.
 
@@ -102,7 +102,7 @@ O que aconteceu foi o seguinte: no outono de 2005, eu começando um [_sabbatical
 
 **AkitaOnRails** : Mas sua empresa é uma consultoria? Serviços de treinamento? Desenvolvimento propriamente dito? Qual é seu principal ramo de atividade?
 
-[![](/files/rubypal_logo.gif)](http://www.rubypowerandlight.com)
+[![](https://akitaonrails.s3.amazonaws.com/files/rubypal_logo.gif)](http://www.rubypowerandlight.com)
 
 **David** : É treinamento e consultoria – e algumas vezes uma mistura, quando uma equipe de desenvolvimento quer aprender Ruby on Rails e também precisa de ajuda para começar em um projeto específico. E eu também faço treinamentos através de sub-contratação com empresas de ensino, assim como através de minha própria empresa.
 
@@ -122,7 +122,7 @@ O que aconteceu foi o seguinte: no outono de 2005, eu começando um [_sabbatical
 
 Falando nisso, você pode achar interessante dar uma olhada em algumas das palestras de [Rubyconfs anteriores](http://www.zenspider.com/Languages/Ruby/index.html). Não tem o de 2001 mas tem os outros. Você poderá dar uma boa olhada nos tipos de coisas que as pessoas faziam com Ruby nessa época.
 
- ![](/files/imp_summit_1.jpg)
+ ![](https://akitaonrails.s3.amazonaws.com/files/imp_summit_1.jpg)
 
 **AkitaOnRails** : Eu definitivamente darei uma olhada, e é uma ótima recomendação para nossos leitores. E você segue o desenvolvimento do 1.9 de perto? Quero dizer, os mailing lists oficiais e coisas assim? Você já esteve no Japão? Quão diferente é a cultura ao redor do Ruby e, por exemplo, ao redor do Rails?
 
@@ -142,7 +142,7 @@ Sobre o 1.9, eu não sigo tão de perto como deveria. Compilo de vez em quando p
 
 **David** : Sim, ficamos todos espantados! _“Então é realmente grande no Japão”_, eu imaginei.
 
- ![](/files/dhh-matz-babie.jpg)
+ ![](https://akitaonrails.s3.amazonaws.com/files/dhh-matz-babie.jpg)
 
 **AkitaOnRails** : Haha. Por mim, estou muito orgulhoso que pelo menos nos EUA, Ruby cresceu rápido e forte. Mas tenho um pequeno temor que isso seja outra bolha. Muitos dizem que o Ruby pode se tornar o próximo Smalltalk.
 
@@ -156,7 +156,7 @@ Sobre o 1.9, eu não sigo tão de perto como deveria. Compilo de vez em quando p
 
 **David** : Eu olhei para JRuby um pouco, e segui a história do Rubinius (dos seus dias como Sydney). Acho que são ambos projetos interessantes, e é ótimo ver esse tipo e trabalho acontecendo.
 
- ![](/files/stacks.jpg)
+ ![](https://akitaonrails.s3.amazonaws.com/files/stacks.jpg)
 
 **AkitaOnRails** : Ao menos por aqui, em meu país, Java é o pão-com-manteiga de cada programador profissional. As pessoas aprendem Java na faculdade. Para mim e para veteranos como você, havia um tempo quando apenas aprendíamos e hackeávamos as coisas. _“Ei, veja esse trecho de código, parece legal”_. Aprendi muitas linguagens, conceitos e tudo mais nos últimos 20 anos. Mas hoje vejo muitos garotos apenas pensando _“qual pode me dar uma carreira legal?”_. E só isso. Não estou tentando ser um idealista – como Chad disse, é sobre economia – mas você não acha que as pessoas da nossa área deveriam tentar aproveitar o que fazem um pouco mais? Como isso funciona para você?
 
@@ -170,7 +170,7 @@ Falando nisso, eu concordo a respeito dessa coisa de _‘o que pode me dar uma c
 
 **AkitaOnRails** : Então, o que podemos esperar da Ruby Central? Vocês já tem RailsConf US e EU. Ouvi falar de Índia? Talvez América Latina?
 
- ![](/files/top_diamond.png)
+ ![](https://akitaonrails.s3.amazonaws.com/files/top_diamond.png)
 
 **David** : Não tempo planos específicos ainda mas não acho impossível. Ano passado começamos nosso [Regional Conference Grant Program](http://www.rubycentral.org/html/rcg2006.pdf) e agora existem muitas conferências regionais embora nem todas tenham nossa permissão. Às vezes eles nos pedem, e nós concordamos, mas daí eles conseguem vários patrocínios e aí não precisam mais de nós. Mas certamente encorajamos a tentativa de suportar eventos regionais. É muito melhor do que ter uma ou duas que tentam fazer de tudo.
 

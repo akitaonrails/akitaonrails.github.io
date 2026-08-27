@@ -20,7 +20,7 @@ We all know Steve Jobs gives excellent speeches, but this one is particularly in
 
 I also recommend watching the video, available on [YouTube!](http://www.youtube.com/watch?v=D1R-jKKp3NA)
 
-![](/files/grad_jobswalks.jpg)
+![](https://akitaonrails.s3.amazonaws.com/files/grad_jobswalks.jpg)
 
 _I am honored to be with you today at your commencement from one of the finest universities in the world. I never graduated from college. Truth be told, this is the closest I've ever gotten to a college graduation. Today I want to tell you three stories from my life. That's it. No big deal. Just three stories._
 

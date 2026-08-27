@@ -20,7 +20,7 @@ Todos sabemos que Steve Jobs faz excelentes discursos, mas este é particularmen
 
 Recomendo também assistir ao vídeo, disponível no [YouTube!](http://www.youtube.com/watch?v=D1R-jKKp3NA)
 
-![](/files/grad_jobswalks.jpg)
+![](https://akitaonrails.s3.amazonaws.com/files/grad_jobswalks.jpg)
 
 _Estou honrado de estar com vocês hoje na sua graduação de uma das melhores universidades do mundo. Eu nunca me formei na faculdade. Verdade seja dita, isso é o mais perto que já estive de uma graduação de faculdade. Hoje eu quero lhes contar três histórias da minha vida. Só isso. Nada de mais. Apenas três histórias._
 

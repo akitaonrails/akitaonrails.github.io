@@ -19,7 +19,7 @@ Meet **Ola Bini** , a young, dynamic and important contributor to this amazing p
 
 I had the opportunity to chat for more than an hour with him. So, another great interview for our website.
 
-![](/files/511173503_15ef7dc203.jpg)
+![](https://akitaonrails.s3.amazonaws.com/files/511173503_15ef7dc203.jpg)
 
 **AkitaOnRails** : Hi. Ola, you’re ready?
 
@@ -55,7 +55,7 @@ I had the opportunity to chat for more than an hour with him. So, another great 
 
 **AkitaOnRails** : So your first job was around graphics?
 
-![](/files/img1098574794.jpg)
+![](https://akitaonrails.s3.amazonaws.com/files/img1098574794.jpg)
 
 **Ola Bini** : Actually not. It was web programming with Java, JSP, PHP, ASP and other such technologies, for a department of [Karolinska Institutet](http://ki.se/), doing web systems for distance learning.
 
@@ -83,7 +83,7 @@ I had the opportunity to chat for more than an hour with him. So, another great 
 
 **Ola Bini** : Yes. And the malleability. I’m very fond of the macros in [Common Lisp](http://en.wikipedia.org/wiki/Common_Lisp), and also like the very no-nonsense structure of a Lisp program. The fact that there is no real division between data and code. The functional aspects are pleasing, but not the main reason for my like of it.
 
-![](/files/510521311_e2ca389c3e.jpg)
+![](https://akitaonrails.s3.amazonaws.com/files/510521311_e2ca389c3e.jpg)
 
 **AkitaOnRails** : Coming back to JRuby. I read from your [blog](http://ola-bini.blogspot.com/2005/12/homegrown-dao-to-hibernate-to-rails.html) that you’re working on JRuby since early 2005? How did you become a JRuby Core Team member? Did you know [Charles](http://headius.blogspot.com/) or [Thomas](http://www.bloglines.com/blog/ThomasEEnebo) before?
 
@@ -95,7 +95,7 @@ I had the opportunity to chat for more than an hour with him. So, another great 
 
 **AkitaOnRails** : There are a lot of doubt and fear in the mind of inexperienced Java programmers here. They “fear” to have lost time learning Java. They “think” that Ruby is a lesser language, and so on and so forth. I think the problem is that most of them think that they only need to learn one language only. This is a two-fold question: first, you mentioned that you dislike Java. Can you elaborate on what exactly? And second, what do you like about Ruby?
 
-![](/files/504012154_839b1be79a.jpg)
+![](https://akitaonrails.s3.amazonaws.com/files/504012154_839b1be79a.jpg)
 
 **Ola Bini** : I would like to begin by saying this: it is very hard to be a good programmer while only knowing one language. Knowing several programming languages of different style is [imperative](http://media.pragprog.com/titles/mjwti/generalist.pdf) to use a language well. Knowing lisp makes me a better Java programmer. My former co-worker Lars have told me that learning Ruby makes him a better Java programmer. So, learning another language is in fact something you can do, and should do, to make you a better programmer in Java, for example.
 
@@ -113,7 +113,7 @@ The threading system is dangerous since it provides features a “real” thread
 
 So, a better GC, more tunability, a better threading system, no global locking. But right now, I feel that the fact that we have several implementations of Ruby coming up, the features will prove themselves. If [Rubinius](http://blog.fallingsnow.net/rubinius/) makes the right choices for these things, Rubinius will get more users than MRI/KRI in the long run. I agree about better UTF support, of course. Anyone who’s not from the English countries know this.
 
- ![](/files/279242203_f1b6d306d9_m.jpg)
+ ![](https://akitaonrails.s3.amazonaws.com/files/279242203_f1b6d306d9_m.jpg)
 
 **AkitaOnRails** : I was trying to reach Evan Phoenix. Charles mentioned Rubinius as well. How do you think both projects can collaborate? What gaps Rubinius close for JRuby, for example?
 
@@ -125,7 +125,7 @@ So, a better GC, more tunability, a better threading system, no global locking. 
 
 **AkitaOnRails** : The JRuby implementation proved to be very successful but not without its hassles. [Unicode](http://headius.blogspot.com/2006/06/unicode-in-ruby-unicode-in-jruby.html), [SSL](http://ola-bini.blogspot.com/search/label/openssl), [Regex](http://jira.codehaus.org/browse/JRUBY-1046), [YAML](http://jira.codehaus.org/browse/JRUBY-561). For example, you described differences in the Java’s regex implementation and the Ruby MRI’s version at your blog. What were the most difficult parts on the porting process, feature-wise, from your point of view? Where was the heavy-lifting?
 
- ![](/files/511173733_e5680a0442.jpg)
+ ![](https://akitaonrails.s3.amazonaws.com/files/511173733_e5680a0442.jpg)
 
 **Ola Bini** : There are basically two things that were the “worst” in getting something that works. The first was all the corner cases. Strange behaviors that isn’t really specified, but just behaves that way because of the implementation.
 
@@ -155,7 +155,7 @@ Have you tried using super within a block, where the surrounding method takes * 
 
 **Ola Bini** : Yep. She did. She was also the one who put my name and number on the big screen. =) I was there with her and Roy and [Martin Fowler](http://www.martinfowler.com/bliki/), and some other ThoughtWorkers.
 
-![](/files/cyndy.png)
+![](https://akitaonrails.s3.amazonaws.com/files/cyndy.png)
 
 There’s a flat structure, yes, which means I don’t have explicit bosses, but bosses that manage over different areas of my time, so to speak. So Chad Wathington takes care of my [RubyWorks](http://studios.thoughtworks.com/rubyworks) work, Cyndi handled all employee logistics for Studios, and Alexei Vorontsov is Project Manager for [RubyWorks](http://rubyworks.rubyforge.org/). All of them bosses to me, so to speak.
 
@@ -181,7 +181,7 @@ Organization is harder. I usually keep lists on [tadalist](http://www.tadalist.c
 
 **Ola Bini** : Well, it’s a [book](http://ola-bini.blogspot.com/2007/06/book-update.html) about JRuby on Rails. It’s aimed to be quite practical, giving concrete examples on how do achieve things. There is quite a lot of JRuby information buried in it, of course, but it’s not a general book about JRuby.
 
- ![](/files/pat.jpg)
+ ![](https://akitaonrails.s3.amazonaws.com/files/pat.jpg)
 
 [APress](http://www.apress.com/category.html?nID=155) will publish it, and according to the current schedule, it will be released in October. [Pat Eyler](http://on-ruby.blogspot.com/) is my tech reviewer. And that’s about it. =) It’s going to be about 250 pages long, containing 4 JRuby on Rails projects developed from scratch.
 
@@ -219,7 +219,7 @@ Organization is harder. I usually keep lists on [tadalist](http://www.tadalist.c
 
 **AkitaOnRails** : Good point. And as Steve Jobs would say _“there’s One More Thing™”_: I try to bring a lot of advise from experienced people like you to programmers beggining their careers. They have lots of questions. What would you recommend for this new generation of programmers? (Although I think you are very young yourself.)
 
-![](/files/515994249_5a5bc1b92d.jpg)
+![](https://akitaonrails.s3.amazonaws.com/files/515994249_5a5bc1b92d.jpg)
 
 **Ola Bini** : This shouldn’t come as a big surprise after this interview: my advice would be to learn more than one language. Simple enough. Something functional, or with a desperately different concurrency model. Lisp, Smalltalk, Erlang and Ruby are all good choices for a Java/C/C++ programmer to learn. And yeah, I guess I am. I’m 25 now.
 

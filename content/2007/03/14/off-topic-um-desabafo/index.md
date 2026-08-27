@@ -18,7 +18,7 @@ Um desses dados é esta pesquisa: [Pesquisa diz que 75% de profissionais de TI q
 
 Esses artigos pedem cuidado, porque a maioria traz dados do mercado americano. Este outro, por exemplo, diz que [programadores são os mais bem pagos da tecnologia](http://web.archive.org/web/20100926130559/http://idgnow.uol.com.br:80/carreira/2006/08/15/idgnoticia.2006-08-15.9911074683/IDGNoticia_view/). No Brasil isso não é necessariamente verdade. Aqui o programador ganha o “suficiente”, e quem fatura mais são os analistas (formados nas áreas mais diversas, usando a tecnologia como ferramenta de trabalho). E são justamente esses analistas e consultores, alguns fazendo até R$ 100 mil por ano, que mais reclamam do próprio salário.
 
-[![](/files/neumannface_en.jpg)](http://en.wikipedia.org/wiki/Von_Neumann)
+[![](https://akitaonrails.s3.amazonaws.com/files/neumannface_en.jpg)](http://en.wikipedia.org/wiki/Von_Neumann)
 
 Outra reclamação que ouço com frequência: _“não estou mais gostando de onde trabalho porque não me ‘agrega’ mais nada. Quero ir para outros projetos para aprender mais”_. A atitude de mudar é louvável, mas acredito que a maioria está mal direcionada. Um colega nosso resumiu bem: _“a grande maioria dos projetos é tudo igual: cadastros e mais cadastros”_. É isso mesmo. É o derivado da antiga área chamada _Processamento de Dados_, que hoje apelidaram de _Sistemas de Informação_.
 
@@ -26,7 +26,7 @@ Deveria haver mais do que isso. Fora da área de programação existem Business 
 
 No Brasil, a grande maioria dos “programadores” faz customizações em processos que já existem. Um departamento quer automatizar o cadastro de funcionários: compra ou cria cadastros próprios. Outro quer um formulário de vendas que alimente o sistema e notifique o parceiro externo para atualizar o inventário. Outro precisa de telas para controlar o fluxo de atendimento a clientes. Cadastros e mais cadastros, sempre alguma variação de cadastro.
 
-[![](/files/zuse.jpg)](http://en.wikipedia.org/wiki/Konrad_Zuse)
+[![](https://akitaonrails.s3.amazonaws.com/files/zuse.jpg)](http://en.wikipedia.org/wiki/Konrad_Zuse)
 
 Não é à toa que tantos programadores estejam insatisfeitos. Normalmente eles não sabem por quê, mas sentem que algo está errado. E, por favor, _não levem nada aqui ao pé da letra_. Existem dezenas de projetos interessantíssimos, com algoritmos complexos para tecnologia médica, aeroespacial, engenharia. Estou falando da maioria, não de todos.
 
@@ -36,7 +36,7 @@ Enquanto isso, o mercado vai continuar precisando dos “programadores de cadast
 
 Comecei fazendo cadastros no fim dos anos 80, com dBase e Clipper. Boa parte da era cliente-servidor (2-tier) era isso: um banco de dados no servidor e telas de cadastro no cliente. Quando a Web chegou, surgiram aplicações sedutoras como search engines e webmail, e todo mundo quis fazer um website. Quem inventou TCP/IP, HTTP, HTML, SMTP, POP3 deve ter se divertido muito. Para o resto de nós, sobraram mais cadastros. Tela de e-mail é cadastro. Tela de e-commerce é cadastro. As empresas trocaram as telas de Visual Basic por browsers: cadastros travestidos de páginas Web.
 
-[![](/files/hoppergrace_big.jpg)](http://en.wikipedia.org/wiki/Grace_Hopper)
+[![](https://akitaonrails.s3.amazonaws.com/files/hoppergrace_big.jpg)](http://en.wikipedia.org/wiki/Grace_Hopper)
 
 Não é à toa que aparecem tantos frameworks no mercado: Struts, Velocity, Lucene, Jackrabbit, Spring, Guice. Programador de verdade gosta do “plumbing”, do encanamento. A gente gosta de entender como essa malha de código funciona, como otimizar, como tornar estável, como ligar as coisas. Existem muitos no Brasil que pensam assim, mas muito menos do que nos Estados Unidos. Não temos nada sequer próximo de um repositório como o Apache Jakarta. Temos brasileiros colaborando em vários projetos open source, mas é uma fração pequena.
 
@@ -46,7 +46,7 @@ Meu livro, “Repensando a Web com Rails”, mal vendeu sua primeira edição de
 
 Tudo bem, tivemos um período negro de mercado fechado e anos de atraso. Mas hoje não vejo motivo para os programadores, principalmente os mais jovens, serem tão apáticos em relação à tecnologia.
 
-[![](/files/Herman-Hollerith.gif)](http://en.wikipedia.org/wiki/Herman_Hollerith)
+[![](https://akitaonrails.s3.amazonaws.com/files/Herman-Hollerith.gif)](http://en.wikipedia.org/wiki/Herman_Hollerith)
 
 Nessas horas sinto falta do fim dos anos 80 (é a época que eu vivi; quem é mais experiente vai sentir o mesmo sobre o fim dos anos 70). Éramos muito poucos, e era raro encontrar um programador ou pelo menos um entusiasta. Mas pensávamos diferente.
 
@@ -56,7 +56,7 @@ De repente, o mercado brasileiro de informática explodiu, por diversas razões.
 
 Agora, tudo que ouço dos atuais “programadores” é _“qual linguagem você acha que eu deveria aprender que vai dar mais dinheiro?”_ Dá para imaginar como isso é frustrante para mim, que já me sinto da _velha guarda_. Nunca pensei no custo-benefício do tempo de aprendizado. Sempre considerei que aprender era algo constante; se eu ganhasse dinheiro no processo, melhor, mas nunca foi o principal.
 
-[![](/files/150px-Marvin_Minsky.jpg)](http://en.wikipedia.org/wiki/Marvin_Minsky)
+[![](https://akitaonrails.s3.amazonaws.com/files/150px-Marvin_Minsky.jpg)](http://en.wikipedia.org/wiki/Marvin_Minsky)
 
 Por causa do atual estágio de aberração do mercado, presencio coisas que me dão medo. Num certo cliente, “integraram” o sistema de vendas com o de ativação de um equipamento. A lógica é simples: feita a venda, o equipamento do consumidor deveria ser ativado. Mesmo sem uma solução de two-phase commit (todos sabem o que são transações atômicas, certo?), o requisito pedia salvaguardas para garantir isso.
 
@@ -70,7 +70,7 @@ Eu tento disseminar a cultura que conheci quando era um jovem programador: apren
 
 Faz parte da natureza humana não querer sair da zona de conforto e, pior, reclamar quando se torna obsoleto. _“A culpa é do governo”_, _“a culpa é do capitalismo”_, _“a culpa é do meu chefe”_. Mais desculpas.
 
-[![](/files/turing.jpg)](http://en.wikipedia.org/wiki/Alan_Turing)
+[![](https://akitaonrails.s3.amazonaws.com/files/turing.jpg)](http://en.wikipedia.org/wiki/Alan_Turing)
 
 Quando escrevi meu livro, fiz por dois motivadores: aprender algo novo e ajudar outros a aprender junto. **Aprender** e **Ensinar** são os dois motivadores fundamentais de todo bom programador. Entendo que, na realidade brasileira, não pensar em dinheiro não é uma opção. Eu encontrei um equilíbrio entre as duas coisas, e não vejo por que mais ninguém conseguiria. Ficar parado, sentado no pouco que aprendeu tempos atrás, reclamando sem parar, nunca levou ninguém a lugar nenhum.
 
@@ -92,7 +92,7 @@ Se vale alguma coisa, aqui vão sugestões pessoais:
 
 - Esqueça cursos e livros traduzidos: estão sempre desatualizados. Nos anos 80 não existiam certificações e brincadeiras do tipo. Dormíamos com um livro de algoritmos na cabeceira e acordávamos com a especificação de uma linguagem nova no café da manhã.
 
-[![](/files/charles-babbage.jpg)](http://en.wikipedia.org/wiki/Charles_Babbage)
+[![](https://akitaonrails.s3.amazonaws.com/files/charles-babbage.jpg)](http://en.wikipedia.org/wiki/Charles_Babbage)
 
 Bons cozinheiros apreciam boa comida nas férias. Bons engenheiros analisam o próprio carro numa viagem de passeio. Bons artistas desenham ideias novas no guardanapo do restaurante. Bons profissionais **GOSTAM** do que fazem, e não só no ambiente de trabalho. Gostar aqui quer dizer apreciar, respeitar e querer aprender mais sobre a profissão, o que é bem diferente de levar trabalho para casa. Da Vinci não precisou fazer cursos. Mozart não precisou fazer cursos. Curso só ajuda quem já está encaminhado e tem consciência exata do que quer tirar dele.
 

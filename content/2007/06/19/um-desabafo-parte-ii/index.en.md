@@ -12,7 +12,7 @@ tags:
 draft: false
 ---
 
-![2006 08 28 Robber](/files/2006_08_28_robber.jpg)
+![2006 08 28 Robber](https://akitaonrails.s3.amazonaws.com/files/2006_08_28_robber.jpg)
 
 _"A consultant is like a hooker: paid by the hour, does what the client wants, when the client wants it, and the one who pockets the money is the pimp."_
 
@@ -30,7 +30,7 @@ For the consultant, the firm works like _insurance_: you outsource to them the h
 
 Do the homework and the firm always has a healthy reserve; cash flow is simple. It's a gold mine. Especially in a world like SAP, where consultants command artificially inflated rates thanks to the limited, pornographically expensive pipeline for certifying new consultants, of abysmal quality, I might add. Clients pay through the nose for lousy service and don't complain: the perfect racket.
 
-![Dilbert2061101070619](/files/dilbert2061101070619.gif)
+![Dilbert2061101070619](https://akitaonrails.s3.amazonaws.com/files/dilbert2061101070619.gif)
 
 When a consulting firm shows signs of financial trouble, that's the red flag: jump ship as fast as you can, no second thoughts. If the client throws a tantrum, delays an invoice, or stalls, that's the firm's problem. That is exactly what we pay that _insurance_ for: so the firm stands between the client and you. A consultant who works the hours logged correctly has the right to be paid on the dates in the contract.
 
@@ -40,7 +40,7 @@ When that doesn't happen, it's a sign of administrative incompetence and of deep
 
 The _"we're investing heavily in the company's future"_ excuse doesn't stick. Sacrificing payroll is stupid spending. You don't mess with the basics. Would you skip your home's electricity bill to buy a computer? I doubt it, because the power _will_ get cut, and then the computer is useless.
 
-![Dilbert2007024440615](/files/dilbert2007024440615.gif)
+![Dilbert2007024440615](https://akitaonrails.s3.amazonaws.com/files/dilbert2007024440615.gif)
 
 The curious trap I see so many people fall into is _believing_. When we're young, we sometimes think we've found the next Steve Jobs: the visionary who breaks every mold and will change the world. **BE CAREFUL**. It's the old con game: there has been exactly one Steve Jobs in the last 30 years. The math is clear: the far likelier bet is that he's just a starry-eyed narcissist.
 
@@ -52,7 +52,7 @@ Nothing wrong with that, as long as you put yourself in that position. You are N
 
 That doesn't give you a license to slack off. Give it your all, but do it for yourself. Treat the late nights as an investment in your own learning, one that happens to help the company along the way.
 
-![Dilbert2004073370613](/files/dilbert2004073370613.gif)
+![Dilbert2004073370613](https://akitaonrails.s3.amazonaws.com/files/dilbert2004073370613.gif)
 
 I've told a few people this story, but here it goes again. I wanted to put a down payment on an apartment last year. Since I didn't trust the firm's health, I didn't. I also traded in my car last year and could have paid cash. After an hour of number crunching (learn to use the HP-12C!), I chose to finance.
 
@@ -64,7 +64,7 @@ You can also shrink the worst case. That's where my earlier articles about being
 
 This warning matters. I've seen ugly scenarios, and they made me cautious. Never bite off more than you can chew, never depend on anyone. Never let anyone "take care" of you: own and know your own books, budgets, and taxes.
 
-![Dilbert2007062036616](/files/dilbert2007062036616.gif)
+![Dilbert2007062036616](https://akitaonrails.s3.amazonaws.com/files/dilbert2007062036616.gif)
 
 Even if you're a regular employee at a company that starts showing these symptoms, prepare your exit. Stop being dazzled and don't take on big debts you don't need. And above all: don't get swept up by speeches. When times are good, you're "highly regarded," they treat you well, and every now and then you even get a small raise or some trinket.
 
@@ -78,7 +78,7 @@ It didn't surprise me or frustrate me, because I practice what I preach: I plan 
 
 I left with over a month and a half of payments in arrears. I send collection emails, and you know what I hear back? _"I'll pay you R$ 1,000 a month, starting at the end of July."_ Amazing how low a company can sink. I feel like I'm begging change from a beggar. What can you do? _Almost nothing_ beats _nothing_. I just want what's mine, and that's another thing to remember: what's yours, you collect.
 
-![Dilbert2004887970523](/files/dilbert2004887970523.gif)
+![Dilbert2004887970523](https://akitaonrails.s3.amazonaws.com/files/dilbert2004887970523.gif)
 
 Five years delivering every project successfully, keeping every client happy, pulling all-nighters, working holidays, skipping family weekends, not taking my wife on a trip in the last 4 years, not even making it to my grandfather's funeral. In the end, that's how a "resource" gets treated: like just another "resource."
 

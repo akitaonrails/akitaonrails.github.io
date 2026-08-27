@@ -12,7 +12,7 @@ tags:
 draft: false
 ---
 
-![2006 08 28 Robber](/files/2006_08_28_robber.jpg)
+![2006 08 28 Robber](https://akitaonrails.s3.amazonaws.com/files/2006_08_28_robber.jpg)
 
 _“Consultor é como puta: recebe por hora, faz o que o cliente quer, na hora que quer e quem leva a grana é o cafetão.”_
 
@@ -30,7 +30,7 @@ Para o consultor, a consultoria funciona como um _seguro_: você terceiriza a el
 
 Fazendo a lição de casa, a consultoria sempre tem boa reserva e o fluxo de caixa é simples. É um negócio da China. Principalmente num mundo como o da SAP, onde os consultores têm taxas artificialmente elevadas graças à limitação e ao custo pornográfico da formação de consultores, de baixíssima qualidade, diga-se de passagem. O cliente paga caro por serviço ruim e não reclama: é o cenário ideal.
 
-![Dilbert2061101070619](/files/dilbert2061101070619.gif)
+![Dilbert2061101070619](https://akitaonrails.s3.amazonaws.com/files/dilbert2061101070619.gif)
 
 Quando uma consultoria dá sinais de problema financeiro, é o sinal vermelho: pule fora o quanto antes, sem pensar duas vezes. Se o cliente dá chilique, atrasa a fatura ou enrola, isso é problema da consultoria. É exatamente para isso que pagamos esse _seguro_: para que ela se coloque entre o cliente e você. O consultor que trabalha corretamente as horas apontadas tem o direito de receber nas datas do contrato.
 
@@ -40,7 +40,7 @@ Quando isso não acontece, é sinal de falta de tato administrativo e de extremo
 
 A desculpa do _“estamos investindo pesado para o futuro da empresa”_ não cola. Sacrificar a folha de pagamento é gasto burro. Não se compromete o básico. Você deixaria de pagar a conta de luz de casa para comprar um computador? Acho que não, porque a luz _vai_ ser cortada e aí o computador não serve para nada.
 
-![Dilbert2007024440615](/files/dilbert2007024440615.gif)
+![Dilbert2007024440615](https://akitaonrails.s3.amazonaws.com/files/dilbert2007024440615.gif)
 
 O fato curioso, em que vejo muita gente cair, é _acreditar_. Quando somos novos, às vezes achamos que encontramos o próximo Steve Jobs: o visionário que faz tudo fora dos padrões e vai mudar o mundo. **CUIDADO**. É como o golpe do vigário: só existiu um Steve Jobs nos últimos 30 anos. A estatística é clara: a chance maior é ele ser só um deslumbrado narcisista.
 
@@ -52,7 +52,7 @@ Não há problema nenhum nisso, contanto que você se coloque nessa posição. V
 
 Isso não é licença para corpo mole. Faça o máximo, mas faça por você. Encare as noites de trabalho como investimento no seu próprio aprendizado, que por acaso também ajuda a empresa.
 
-![Dilbert2004073370613](/files/dilbert2004073370613.gif)
+![Dilbert2004073370613](https://akitaonrails.s3.amazonaws.com/files/dilbert2004073370613.gif)
 
 Já contei isso para algumas pessoas, mas repito. Eu queria ter dado entrada num apartamento no ano passado. Como não confiava na saúde da consultoria, não dei. Também troquei de carro no ano passado e poderia ter pago à vista. Depois de uma hora de contas (aprendam a usar a HP-12C!), decidi financiar.
 
@@ -64,7 +64,7 @@ Também dá para minimizar o pior cenário. É aí que meus artigos anteriores s
 
 É um aviso importante. Já vi cenários feios e isso me deixou muito prudente. Nunca dar um passo maior que as pernas, nunca depender de ninguém. Nunca deixe ninguém “cuidar” de você: seja dono e conhecedor das suas próprias contas, orçamentos e impostos.
 
-![Dilbert2007062036616](/files/dilbert2007062036616.gif)
+![Dilbert2007062036616](https://akitaonrails.s3.amazonaws.com/files/dilbert2007062036616.gif)
 
 Mesmo que você seja empregado de uma empresa que comece a mostrar esses sintomas, prepare sua saída. Deixem de ser deslumbrados, não se endividem em grandes valores sem precisar. E o principal: não se deixem levar por discursos. Quando a situação está boa, você é “bem considerado”, te tratam bem e às vezes rola até um aumentozinho ou uma lambuja.
 
@@ -78,7 +78,7 @@ Não me surpreendeu nem me frustrou, porque eu sigo o que digo: considero os pio
 
 Saí com mais de um mês e meio de pagamentos atrasados. Mando e-mails de cobrança e sabe o que ouço? _“Te pago R$ 1.000 por mês, a partir do fim de julho.”_ Impressionante até onde uma empresa consegue chegar. Me sinto quase tirando esmola da mão de mendigo. Fazer o quê? Melhor _quase nada_ do que _nada_. Só quero o que é meu, e essa é outra coisa para lembrar: o que te pertence, você cobra.
 
-![Dilbert2004887970523](/files/dilbert2004887970523.gif)
+![Dilbert2004887970523](https://akitaonrails.s3.amazonaws.com/files/dilbert2004887970523.gif)
 
 Cinco anos entregando todos os projetos com sucesso, deixando todos os clientes satisfeitos, varando noites, trabalhando feriados, sem visitar os parentes nos fins de semana, sem levar a esposa para viajar nos últimos 4 anos, sem ir nem ao enterro do avô. No fim das contas, é assim que um “recurso” é tratado: como mais um “recurso”.
 

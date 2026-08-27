@@ -20,4 +20,4 @@ It was interesting because both Kent Beck and Tim Bray were talking about future
 
  ![](http://s3.amazonaws.com/akitaonrails/assets/2008/11/19/podcast-icon-180x180.jpg)
 
-The audio files will show up in the [Ruby on Rails Podcast Brasil](http://podcast.rubyonrails.pro.br/) feed soon enough, but before that happens, you can download the audio files directly from here. Click [here](/files/nick_sieger.mp3) for Nick and [here](/files/francesco_cesarini.mp3) for Francesco.
+The audio files will show up in the [Ruby on Rails Podcast Brasil](http://podcast.rubyonrails.pro.br/) feed soon enough, but before that happens, you can download the audio files directly from here. Click [here](https://akitaonrails.s3.amazonaws.com/files/nick_sieger.mp3) for Nick and [here](https://akitaonrails.s3.amazonaws.com/files/francesco_cesarini.mp3) for Francesco.

@@ -16,7 +16,7 @@ draft: false
 
 This commercial marks Apple's comeback from the ashes, Steve Jobs's return to the helm. The "Think Different" campaign turns 10 this year, the post that reminded me of it is also somewhat [old](http://macmagazine.com.br/blog/2006/06/15/think-different-apple/), but the message is still completely relevant. It even applies to us Railers: it would make a great ad from a company like 37signals. Enjoy.
 
-![](/files/2006_06_15-thinkdifferent.png)
+![](https://akitaonrails.s3.amazonaws.com/files/2006_06_15-thinkdifferent.png)
 
 Here's to the crazy ones.
 
