@@ -2,6 +2,8 @@
 title: AkitaOnRails Blog
 ---
 
+Looking for older posts? [Browse the full archive →](/en/archives/)
+
 {{< index-view-toggle list="List" grid="Grid" label="Post view" >}}
 
 <section id="aor-featured-posts-en" class="aor-featured" data-button-open="Hide" data-button-closed="Show">

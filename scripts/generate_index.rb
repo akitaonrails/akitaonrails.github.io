@@ -523,6 +523,7 @@ end
 
 def generate_index(grouped_posts)
   lines = ["#{FRONTMATTER_DELIMITER}\ntitle: AkitaOnRails Blog\n#{FRONTMATTER_DELIMITER}\n"]
+  lines << "Procurando posts mais antigos? [Veja o arquivo completo →](/archives/)\n"
   lines.concat(render_index_view_toggle(lang: :pt))
   lines.concat(render_featured_posts(grouped_posts))
   lines.concat(render_index_views(grouped_posts, lang: :pt))
@@ -540,6 +541,7 @@ end
 
 def generate_index_en(grouped_posts)
   lines = ["#{FRONTMATTER_DELIMITER}\ntitle: AkitaOnRails Blog\n#{FRONTMATTER_DELIMITER}\n"]
+  lines << "Looking for older posts? [Browse the full archive →](/en/archives/)\n"
   if grouped_posts.empty?
     lines << "_No posts translated to English yet. Check back soon._\n"
   else
