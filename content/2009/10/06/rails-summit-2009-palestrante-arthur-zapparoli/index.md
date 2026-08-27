@@ -12,7 +12,7 @@ draft: false
 
 **English translation:** click [here](/2009/10/06/rails-summit-2009-palestrante-arthur-zapparoli#arthur_english)
 
-![](http://web.archive.org/web/20110203115844/http://web.archive.org/web/20110203115844/http://railssummit.locaweb.com.br/imgs/19/original/arthur.jpg)
+![](http://web.archive.org/web/20110203115844/http://railssummit.locaweb.com.br/imgs/19/original/arthur.jpg)
 
 Arthur é Desenvolvedor de Softwares, trabalha com Ruby e Rails desde 2006. Atualmente trabalha para a startup brasileira [Spix](http://spix.info/). É conhecido como [@ArthurGeek](http://twitter.com/arthurgeek) na comunidade e publica artigos no seu [blog](http://arthurgeek.net/) no qual fala sobre assuntos relacionados à desenvolvimento.
 
@@ -33,7 +33,7 @@ A palestra se chama: “Git: Controle de versões do jeito certo” e abordará 
 
 ## Speaker Arthur Zapparoli
 
-![](http://web.archive.org/web/20110203115844/http://web.archive.org/web/20110203115844/http://railssummit.locaweb.com.br/imgs/19/original/arthur.jpg)
+![](http://web.archive.org/web/20110203115844/http://railssummit.locaweb.com.br/imgs/19/original/arthur.jpg)
 
 Arthur is a Software Developer, works with Ruby and Rails since 2006. He currently works for a Brazilian startup [Spix](http://spix.info/). He is known as [@ArthurGeek](http://twitter.com/arthurgeek) in the community and posts articles in his [blog](http://arthurgeek.net/), talking about topics related to software development.
 

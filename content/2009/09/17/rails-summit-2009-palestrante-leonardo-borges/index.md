@@ -14,7 +14,7 @@ draft: false
 
 A partir de hoje vou colocar alguns posts sobre alguns dos palestrantes do [Rails Summit Latin America 2009](http://www.railssummit.com.br). Não deixe de se inscrever! Dias 13 e 14 de Outubro, em São Paulo.
 
-![](http://web.archive.org/web/20110203115851/http://web.archive.org/web/20110203115851/http://railssummit.locaweb.com.br/imgs/5/original/leonardo.jpg)
+![](http://web.archive.org/web/20110203115851/http://railssummit.locaweb.com.br/imgs/5/original/leonardo.jpg)
 
 **Leonardo Borges** é desenvolvedor com 9 anos de experiência, já trabalhou em empresas de portes variados criando aplicações corporativas especialmente em Java. Atualmente vive em Madrid e trabalha com Ruby On Rails na [Mirai España](http://www.miraiespana.com/) onde, dentre outros projetos, participa da iniciativa JRuby de integrar código legado com Rails. Escreve no [seu blog](http://www.leonardoborges.com/) sobre desenvolvimento de software e temas relacionados.
 
@@ -52,7 +52,7 @@ AVISO: Você verá fontes Java e XML nessa sessão! :P
 
 Starting off today, I’ll post about some of the speakers for [Rails Summit Latin America 2009](http://www.railssummit.com.br). Register today! It’s gonna be at São Paulo, Brazil, October 13th and 14th.
 
-![](http://web.archive.org/web/20110203115851/http://web.archive.org/web/20110203115851/http://railssummit.locaweb.com.br/imgs/5/original/leonardo.jpg)
+![](http://web.archive.org/web/20110203115851/http://railssummit.locaweb.com.br/imgs/5/original/leonardo.jpg)
 
 **Leonardo Borges** is a developer with 9 years of experience. He’ve been working for several companies creating enterprise applications specially with Java. He currently lives in Madrid, where he works with Ruby on Rails at [Mirai España](http://www.miraiespana.com/) where, among other projects, colaborates in the JRuby initiative to integrate legacy code with Rails. He writes in [his blog](http://www.leonardoborges.com/) about software development and related subjects.
 

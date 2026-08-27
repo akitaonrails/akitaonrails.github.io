@@ -12,7 +12,7 @@ draft: false
 
 **English translation:** click [here](/2009/09/23/rails-summit-2009-palestrante-matt-aimonetti#matt_english)
 
-![](http://web.archive.org/web/20110203115905/http://web.archive.org/web/20110203115905/http://railssummit.locaweb.com.br/imgs/36/original/matt.jpg)
+![](http://web.archive.org/web/20110203115905/http://railssummit.locaweb.com.br/imgs/36/original/matt.jpg)
 
 [Matt Aimonetti](http://merbist.com/) é um ativista Rails, ele começou como evangelista de Merb e se envolveu na já famosa junção do Rails + Merb. Ele também é ativo na área de MacRuby e HotCocoa. Ele mora em San Diego, onde dirige sua própria [consultoria](http://ma-agile.com/), fazendo projetos e treinamentos relacionados com Ruby, e ele também é um palestrante conhecido em eventos. Nós nos encontramos pela primeira vez no ano passado, na QCon de São Francisco. Você pode ouvir a entrevista que gravamos naquela época [aqui](/2008/11/21/rails-podcast-brasil-especial-qcon-john-straw-yellowpages-com-e-matt-aimonetti-merb/)
 
@@ -43,7 +43,7 @@ Além disso, se você gosta de “futebol”, deveria vir assistir minha palestr
 
 ## Speaker Matt Aimonetti
 
-![](http://web.archive.org/web/20110203115905/http://web.archive.org/web/20110203115905/http://railssummit.locaweb.com.br/imgs/36/original/matt.jpg)
+![](http://web.archive.org/web/20110203115905/http://railssummit.locaweb.com.br/imgs/36/original/matt.jpg)
 
 [Matt Aimonetti](http://merbist.com/) is a Rails Activist, he started as a Merb evangelist and was involved in the now famous Rails + Merb merge. He is also active in the MacRuby arena with HotCocoa. He lives in San Diego where he runs his own [consultancy](http://ma-agile.com/), doing Ruby related projects and training, and he is also a well known speaker in events. We met for the first time at last year’s San Francisco QCon. You can listen to an interview we recorded back then [here](/en/2008/11/21/rails-podcast-brasil-especial-qcon-john-straw-yellowpages-com-e-matt-aimonetti-merb/)
 

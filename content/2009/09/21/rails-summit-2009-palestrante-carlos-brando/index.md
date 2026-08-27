@@ -12,7 +12,7 @@ draft: false
 
 **English translation:** click [here](/2009/09/21/rails-summit-2009-palestrante-carlos-brando#carlos-brando-english)
 
-![](http://web.archive.org/web/20110203115857/http://web.archive.org/web/20110203115857/http://railssummit.locaweb.com.br/imgs/21/original/brando.jpg)
+![](http://web.archive.org/web/20110203115857/http://railssummit.locaweb.com.br/imgs/21/original/brando.jpg)
 
 O **Carlos Brando** acho que dispensa apresentações :-) Todos já o conhecem pelo blog [Nome do Jogo](http://nomedojogo.com), pelo e-book [Rails 2.1](http://www.nomedojogo.com/2008/06/09/new-free-book-ruby-on-rails-21-whats-new/) e por [projetos open-source](http://github.com/carlosbrando/) como o [Remarkable](http://www.nomedojogo.com/2008/11/18/shoulda-for-rspec-is-remarkable/). Dentre suas colaborações mais recentes, está a tradução do excelente livro do _why, o [Poignant Guide to Ruby](http://why.nomedojogo.com/); e o lançamento da versão nacional do site britânico [Ruby Inside](http://www.rubyinside.com.br)
 
@@ -41,7 +41,7 @@ Minha palestra no Rails Summit tratará exatamente deste tema: o processo de con
 
 ## Speaker Carlos Brando
 
-![](http://web.archive.org/web/20110203115857/http://web.archive.org/web/20110203115857/http://railssummit.locaweb.com.br/imgs/21/original/brando.jpg)
+![](http://web.archive.org/web/20110203115857/http://railssummit.locaweb.com.br/imgs/21/original/brando.jpg)
 
 I think **Carlos Brando** needs no introduction :-) Everyone knows his blog [Nome do Jogo](http://nomedojogo.com), the e-book [Rails 2.1](http://www.nomedojogo.com/2008/06/09/new-free-book-ruby-on-rails-21-whats-new/), his [open-source projects](http://github.com/carlosbrando/) such as [Remarkable](http://www.nomedojogo.com/2008/11/18/shoulda-for-rspec-is-remarkable/). Among his most recent collaborations, there’s the translation of the excellent book from _why, the [Poignant Guide to Ruby](http://why.nomedojogo.com/); and the launch of the Brazilian version of the British website [Ruby Inside](http://www.rubyinside.com).
 
