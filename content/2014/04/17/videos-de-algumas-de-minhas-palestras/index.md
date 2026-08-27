@@ -39,7 +39,7 @@ Nov 14, 2013
 ### CPBR3 - Ecossistema. Cultura e Ruby on Rails
 Feb 15, 2010
 
-<div class='embed-container'>{{< youtube id="j3_UUaHmctQ" >}}</div>
+<!-- youtube video unavailable (deleted/blocked): j3_UUaHmctQ -->
 
 <div class='embed-container'>{{< youtube id="h_5HsmrdFUA" >}}</div>
 
@@ -56,7 +56,7 @@ Nov 14, 2013
 ### TDC 2011 | Discutindo Rails e Arquiteturas
 Jul 15, 2011
 
-<div class='embed-container'>{{< youtube id="82T-NzobWAg" >}}</div>
+<!-- youtube video unavailable (deleted/blocked): 82T-NzobWAg -->
 
 ### TDC 2013 SP | Ecossistema Ruby
 Oct 10, 2013
@@ -65,29 +65,29 @@ Oct 10, 2013
 
 ### DNAD 11 | Discutindo Rails e Arquiteturas
 
-<div class='embed-container'>{{< youtube id="712_zl3p-Kc" >}}</div>
+<!-- youtube video unavailable (deleted/blocked): 712_zl3p-Kc -->
 
-<div class='embed-container'>{{< youtube id="PtIL_J9zdhY" >}}</div>
+<!-- youtube video unavailable (deleted/blocked): PtIL_J9zdhY -->
 
-<div class='embed-container'>{{< youtube id="yZuAX6d-CY0" >}}</div>
+<!-- youtube video unavailable (deleted/blocked): yZuAX6d-CY0 -->
 
-<div class='embed-container'>{{< youtube id="wObvEP7VxQQ" >}}</div>
+<!-- youtube video unavailable (deleted/blocked): wObvEP7VxQQ -->
 
-<div class='embed-container'>{{< youtube id="9t8F_ExUj20" >}}</div>
+<!-- youtube video unavailable (deleted/blocked): 9t8F_ExUj20 -->
 
 ### Agile Vale 2011 | A semente não entendida de todas metodologias as ágeis
 Aug 23, 2011
 
-<div class='embed-container'>{{< youtube id="wvKHU7pA02c" >}}</div>
+<!-- youtube video unavailable (deleted/blocked): wvKHU7pA02c -->
 
 ### Campus Party 2011
 Jan 28, 2011
 
-<div class='embed-container'>{{< youtube id="9LjOwF4_LE8" >}}</div>
+<!-- youtube video unavailable (deleted/blocked): 9LjOwF4_LE8 -->
 
-<div class='embed-container'>{{< youtube id="lEQAROv9Dy8" >}}</div>
+<!-- youtube video unavailable (deleted/blocked): lEQAROv9Dy8 -->
 
-<div class='embed-container'>{{< youtube id="Fkx0UmUvkQ0" >}}</div>
+<!-- youtube video unavailable (deleted/blocked): Fkx0UmUvkQ0 -->
 
 ### Techtalk Klarna | The Origins of the Brazilian Rails Community What's New in Rails 4
 Nov 27, 2012
@@ -99,12 +99,12 @@ Nov 27, 2012
 ### Secot V 2013 | Startups & Softwares
 May 14, 2013
 
-<div class='embed-container'>{{< youtube id="CLWq5y2IBEI" >}}</div>
+<!-- youtube video unavailable (deleted/blocked): CLWq5y2IBEI -->
 
 ### TV O Povo | Programa Conectado l Fábio Akita
 Apr 18, 2013
 
-<div class='embed-container'>{{< youtube id="vFzhw293TTo" >}}</div>
+<!-- youtube video unavailable (deleted/blocked): vFzhw293TTo -->
 
 ### Startup Vale 2013 | Startup e Software por Fabio Akita
 Jul 19, 2013
