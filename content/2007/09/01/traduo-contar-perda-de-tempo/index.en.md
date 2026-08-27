@@ -2,6 +2,7 @@
 title: 'Translation: Counting Is a Waste of Time'
 date: '2007-09-01T13:08:00-03:00'
 slug: traduo-contar-perda-de-tempo
+translationKey: traduo-contar-perda-de-tempo
 description: "The translation criticizes counting tasks, estimates, and hours when those numbers do not guide decisions. A case involving 20 to 25 tasks a day exposes the waste of measurement."
 tags:
 - agile
@@ -10,72 +11,72 @@ tags:
 draft: false
 ---
 
-Fred George is a former IBMer who has been programming for nearly 40 years and has been in the field since before IBM created the **Waterfall** process (which he [emphasizes](http://processpeoplepods.blogspot.com/2007/08/lean-agile-management-process_27.html) works — and I agree). On his blog [Process, People, and Pods](http://processpeoplepods.blogspot.com/) he discusses the advantages of Agile methods from the perspective of someone who has **genuinely** gone through every process and has enough experience to discuss them intelligently. I found his latest post particularly funny. So here it is:
+Fred George is a former IBMer, has been programming for nearly 40 years, and has been in the field since before IBM created the **Waterfall** process (which he [emphasizes](http://processpeoplepods.blogspot.com/2007/08/lean-agile-management-process_27.html) works, and I agree). On his blog [Process, People, and Pods](http://processpeoplepods.blogspot.com/), he discusses the advantages of Agile methods from the perspective of someone who has **actually** been through all of those processes and has enough experience to discuss them. I found this latest post of his particularly funny. So here comes another **translation**:
 
-There it is. You see it. You have this uncontrollable urge to count. It's a moral obligation, a call to arms; your personal mission.
+It's there. You see it. You have this overwhelming urge to count it. It's a moral obligation, a call-to-arms; your personal mission.
 
-I'm talking about counting and measuring artifacts. I mean project managers and team leads, and sometimes programmers, testers, and analysts.
+I am referring to counting artifacts and measuring artifacts. I am talking about project managers and team leads, and sometimes programmers, testers, and analysts.
 
-And if you stop for a moment and think about it, it's a big waste of time. A better philosophy:
+And if you stop to think about it, it is a big time waster. A better core philosophy:
 
-**"Never count your money while you're sitting at the table. There'll be time enough for counting when the dealing's done."** — Kenny Rogers, from _The Gambler_
+**"Never count your money while you're sitting at the table. There'll be time enough for counting when the dealings done."** -- Kenny Rogers from _The Gambler_
 
-This thinking is based on [Lean](http://processpeoplepods.blogspot.com/2007/08/lean-agile-management-process_27.html), a process borrowed from manufacturing. One of the practices Lean supports is the identification and elimination of waste. Waste is broadly defined as anything that does not add value to the delivered product.
+This thinking is based in [Lean](http://processpeoplepods.blogspot.com/2007/08/lean-agile-management-process_27.html), a process borrowed from manufacturing. One of the practices Lean espouses is the identification and elimination of waste. Waste is broadly defined as anything that does not add value to the delivered product.
 
-Agile software development produces a mountain of artifacts — stories, tasks, test cases, and code. All of these artifacts have different useful lifespans. Code persists. Tasks are transient development artifacts. There is a time and place to count each one. But when the counting extends beyond those boundaries: **waste**!
+Agile software development produces loads of artifacts, like stories, tasks, test cases, and code. All of these artifacts have different useful lives. Code endures. Tasks are transient artifacts of development. There is a time and place for counting each. But if you count outside of those boundaries: **waste**!
 
-Here's a real example from an Agile project. It occurred between the client's project administrator (somewhere between an administrator and a project manager) and me, in my role as technical lead and process coach. The discussion was about task cards. A task is a small unit of development work identified by the programmer for a story; a story itself averages 10 or more tasks, with high variance.
+Here is a real life example from an Agile project. It occurred between the client project administrator (sort of a cross between a administrator and a project manager) and myself in my role as tech lead and process coach. The discussion was around task cards. A task is a small unit of development work identified by the programmer for a story, which itself has an average of 10 or so tasks, with a huge variance.
 
-Project Administrator (PA): "I need to track the task cards."
+Project Administrator (PA): "I need to track task cards."
 
 Me: "There are going to be a lot of them."
 
 PA: "I still want to track them."
 
-Me: "Couldn't you track just the stories? Development only takes a few days."
+Me: "Could you just track stories? Development only takes a couple of days."
 
 PA: "I still want to track them."
 
-Me (seeing a pattern here): "Well, if you really want to…"
+Me (seeing a pattern here): "Well, if you really want to..."
 
 PA: "Great. We need to number them."
 
-Me (starting to catch on): "So you can track them?"
+Me (I am beginning to catch on): "So that you can track them?"
 
 PA: "Yes."
 
-Me: "You can put whatever numbers you want on them. They're all on the wall." (Note the technique of delegating to the person who appears to have the most free time.)
+Me: "You are free to put any number on them you want. They're on the wall." (Note the technique of delegating to the person who seems to have all the extra time.)
 
-PA: "And I need the initials of the pair who worked on them."
+PA: "And I need the initials of the pair that worked on them."
 
-Me (unable to see an easier way out of this): "Ok. We'll mark the completed ones as we go. We'll put our initials on them."
+Me (can't see a quick way around that): "Okay. We mark the finished as we go. We'll put our initials on it then."
 
 PA: "I need an estimate for each task."
 
-Me: "Two to four hours."
+Me: "Two-to-four hours."
 
 PA: "No, I need an estimate for each task."
 
-Me: "Two to four hours. We split the story into 2 to 4 hour tasks. That is an estimate." [I repeated this several more times.]
+Me: "Two-to-four hours. We break the story down into 2-4 hour tasks. That is the estimate." [Repeat several more times.]
 
-PA: "Ok, I'll mark a range of 2–4 hours. Then I'll need the actuals."
+PA: "Okay, I will mark a range of 2-4 hours. Then I will need the actuals."
 
-Me: "No." (I really try not to use this word with clients, but sometimes there's no better word.)
+Me: "No." (I really try not to use this word with clients, but sometimes there isn't a better word.)
 
-PA: "But how will I track how long things actually took?"
+PA: "But how can I track how long it actually took?"
 
-Me (trying to use powerful Vulcan logic): "If I give you a number, it'll only be an estimate of the actual time. We have to estimate to account for meetings, distractions, bathroom breaks, and so on. Even we don't know the actual time it took."
+Me (trying to use powerful Vulcan logic): "If we gave you a number, it is only an estimate of the actuals. We have to estimate to accommodate meetings, distractions, bathroom breaks, and the like. Even we don't know how long it actually took."
 
-PA (after a long pause to process this): "But I need the actual time."
+PA (after long processing pause): "But I need actuals."
 
-Me (feeling a little guilty for suggesting this): "You could track how long it takes to complete a story, and just divide that."
+Me (feeling a little guilty suggesting it): "You can track how long it takes to do the story, and just divide it."
 
-PA: "Ok, I think that'll work."
+PA: "Okay, I guess that will work."
 
-I was being a little unfair to our project administrator. The whole conversation would have ended sooner once she saw the number of task cards that were created, started, and completed each day (around 20–25 on average, per day). The tracking only cost us one week.
+I was being a bit unfair to our project administrator. The whole conversation would be rendered moot as soon as she saw the number of tasks that were created, started, and completed each day (about 20-25 on an average day). The counting only lasted a week.
 
-Most consultants would cave (and do cave) to the pressure to count. Some even advocate for it. Frankly, I exploited my gray hairs and used my authority voice to carry the day in this case.
+Most consultants would (and do) succumb to the pressure to count. Some may even advocate it. Frankly, I exploited my gray hair and used my authority voice to carry the day in this case.
 
-Imagine the extra work if that process had been established? Even a few minutes per task adds up when there are 3,000 tasks in a project. And the killer question for all of this:
+Imagine the overhead if this process had been established? Even a few minutes per task add up when there are 3000 tasks on a project. And the killer question for this:
 
-_ **… And how will you use that information?** _
+_ **...And how will you use that information?** _

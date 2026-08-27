@@ -2,6 +2,7 @@
 title: 'Tradução: Contar é Perda de Tempo'
 date: '2007-09-01T13:08:00-03:00'
 slug: traduo-contar-perda-de-tempo
+translationKey: traduo-contar-perda-de-tempo
 description: "A tradução critica a contagem de tarefas, estimativas e horas quando ela não orienta decisões. Um caso com 20 a 25 tarefas por dia expõe o desperdício da medição."
 tags:
 - agile
@@ -10,7 +11,7 @@ tags:
 draft: false
 ---
 
-Fred George é um ex-IBM, é programador há quase 40 anos e está na área desde antes da IBM criar o processo **Waterfall** (que ele [enfatiza](http://processpeoplepods.blogspot.com/2007/08/lean-agile-management-process_27.html) e eu concordo: funciona). Em seu blog [Process, People, and Pods](http://processpeoplepods.blogspot.com/) ele discute as vantagens dos métodos Ágeis do ponto de vista de alguém que **realmente** passou por todos os processos e tem experiência suficiente para discuti-las. Este último post seu eu achei particularmente engraçado. Então, aqui vai mais uma **tradução** :
+Fred George é ex-IBM, programa há quase 40 anos e está na área desde antes da IBM criar o processo **Waterfall** (que ele [enfatiza](http://processpeoplepods.blogspot.com/2007/08/lean-agile-management-process_27.html) que funciona, e eu concordo). No blog [Process, People, and Pods](http://processpeoplepods.blogspot.com/), ele discute as vantagens dos métodos Ágeis do ponto de vista de alguém que **realmente** passou por todos os processos e tem experiência suficiente para discuti-las. Este último post dele eu achei particularmente engraçado. Então, aqui vai mais uma **tradução**:
 
 Está lá, você vê. Você tem essa urgência incontrolável de contar. É uma obrigação moral, uma chamada à guerra; sua missão pessoal.
 
@@ -25,7 +26,7 @@ Este pensamento é baseado em [Lean](http://processpeoplepods.blogspot.com/2007/
 
 Desenvolvimento Ágil de software produz uma montanha de artefatos, como stories, tarefas, casos de teste e código. Todos esses artefatos têm diferentes vidas úteis. Código permanece. Tarefas são artefatos transientes de desenvolvimento. Existe um tempo e lugar para contar cada um. Mas se a contagem ultrapassar essas barreiras: **desperdício**!
 
-Aqui vai um exemplo real de um projeto Ágil. Ocorreu entre a administradora de projetos do cliente (meio que uma mistura entre um administrador e um gerente de projetos) e eu, em meu papel como líder técnico e treinador de processo. A discussão foi sobre cartões de tarefa. Uma tarefa é uma pequena unidade de trabalho de desenvolvimento identificada pelo programador para uma story, que por si só tem uma média de 10 ou mais tarefas, com uma grande variância.
+Aqui vai um exemplo real de um projeto Ágil. Ocorreu entre a administradora de projetos do cliente (meio que uma mistura entre um administrador e um gerente de projetos) e eu, em meu papel como líder técnico e treinador de processo. A discussão foi sobre cartões de tarefa. Uma tarefa é uma pequena unidade de trabalho de desenvolvimento identificada pelo programador para uma story, que por si só tem uma média de umas 10 tarefas, com uma grande variância.
 
 Administradora de Projeto (AP): “Eu preciso rastrear os cartões de tarefa.”
 
@@ -73,7 +74,7 @@ Eu (sentindo um pouco culpado por sugerir isso): “Você pode rastrear quanto t
 
 AP: “Ok, acho que isso funcionará.”
 
-Eu estava sendo um pouco injusto com nossa administradora de projeto. A conversa toda acabaria incerta tão logo ela visse o número de tarefas que foram criadas, iniciadas e completadas a cada dia (cerca de 20-25 em média, por dia) a contagem custou somente uma semana.
+Eu estava sendo um pouco injusto com nossa administradora de projeto. A conversa toda ficaria sem sentido assim que ela visse o número de tarefas que foram criadas, iniciadas e completadas a cada dia (cerca de 20-25 em média, por dia). A contagem durou só uma semana.
 
 A maioria dos consultores iria sucumbir (e sucumbem) à pressão de contar. Alguns até defendem isso. Francamente, eu explorei meus cabelos brancos e usei minha voz de autoridade para levar o dia nesse caso.
 
