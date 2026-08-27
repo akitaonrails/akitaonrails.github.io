@@ -2,6 +2,7 @@
 title: 'Off-topic: MacWorld 2007 - Steve Jobs Announces the Long-Awaited iPhone!'
 date: '2007-01-09T11:34:34-02:00'
 slug: off-topic-macworld-2007-steve-jobs-anuncia-o-esperado-iphone
+translationKey: off-topic-macworld-2007-steve-jobs-anuncia-o-esperado-iphone
 description: "At MacWorld 2007, Steve Jobs introduces the iPhone as an iPod, phone, and internet communicator in one device, with a multitouch screen, OS X, Safari, Wi-Fi, and a camera. The US launch is planned for June."
 tags:
 - apple
@@ -11,17 +12,15 @@ tags:
 draft: false
 ---
 
-
-
- **This keynote will go down in history, no question about it!**
+**This keynote just went down in history. Period.**
 
  ![](/files/dsc_0159.jpg)
 
-Since I know every self-respecting Railer loves Apple, I'm sure everyone already knows that Steve Jobs's keynote in San Francisco at MacWorld 2007 just wrapped up (17:07). The rumors over the past few days were enormous, no keynote was more anticipated, and Steve Jobs did not disappoint. Check out the details, transcript, and photos in the [Engadget](http://www.engadget.com/2007/01/09/live-from-macworld-2007-steve-jobs-keynote/) live blog.
+Every self-respecting Railer loves Apple, so I'm sure everyone already knows: Steve Jobs's keynote at MacWorld 2007 in San Francisco just wrapped up (17:07). The rumors over the past few days were enormous, no keynote was ever this anticipated, and Jobs did not disappoint. Details, transcript, and photos in [Engadget's](http://www.engadget.com/2007/01/09/live-from-macworld-2007-steve-jobs-keynote/) live coverage.
 
  ![](/files/dsc_0182.jpg)
 
-Regardless of Apple TV's quality (the prototype was unveiled as _iTV_ at WWDC 2006), the star of the show was the **iPhone**: an iPod, a phone, and an internet communicator — as Steve Jobs put it: 3 in 1. The standards for cell phones and smartphones have been obliterated; Apple just raised the bar to stratospheric levels. Here's the list:
+Apple TV aside (the prototype, still called _iTV_ back then, was shown at a special event in September 2006), the star of the show was the **iPhone**: an iPod, a phone, and an internet communicator, as Jobs put it, 3 in 1. The standards for cell phones and smartphones just went down the drain; Apple raised the bar to stratospheric levels. The list:
 
  ![](/files/dsc_0184.jpg)
 
@@ -30,7 +29,7 @@ Regardless of Apple TV's quality (the prototype was unveiled as _iTV_ at WWDC 20
 
  ![](/files/dsc_0226.jpg)
 
-- Just **1** button — everything else is the widescreen display with 3 sensors (proximity, orientation, and acceleration). Want to zoom into a photo? Put two fingers on the screen and spread them apart!
+- Just **1** button; everything else is the multitouch widescreen display with 3 sensors (proximity, ambient light, accelerometer). Want to zoom into a photo? Put two fingers on the screen and spread them apart!
 
  ![](/files/dsc_0199.jpg)
 
@@ -43,21 +42,21 @@ Regardless of Apple TV's quality (the prototype was unveiled as _iTV_ at WWDC 20
 
  ![](/files/dsc_0210.jpg)
 
-- Runs OS X (!) — Safari was shown running as the web browser. Integration with Google Maps, Yahoo Mail, POP3, IMAP, etc. Goes well beyond BlackBerry
+- Runs OS X (!), and Safari was shown working as the browser. Integration with Google Maps, Yahoo Mail, POP3, IMAP. Goes well beyond BlackBerry
 
  ![](/files/dsc_0217.jpg)
 
 - 5 hours of battery life, 16 hours audio-only
-- Various accessories: earphones with an inline control (from what I gathered, you just give the cable a quick tug with both hands to answer a call), and the smallest and most elegant Bluetooth headset
+- Accessories: earphones with an inline microphone (a quick squeeze of the button answers a call) and the smallest, most elegant Bluetooth headset I've ever seen
 
  ![](/files/dsc_0228.jpg)
 
-The prices are steep, but that's the price of an exceptional device: US$400 for the 4GB model and US$599 for the 8GB. And from now on _Apple Computer, Inc._ becomes _Apple, Inc._ — which makes complete sense, since Apple products now live in our bedrooms (iMac), our offices (MacBook, Mac Pro), our cars (BMW, Audi, and others), our living rooms (Apple TV), and our pockets (iPod, iPhone). Remarkable, to say the least.
+The prices are steep, but they match an exceptional device: US$499 for the 4GB model and US$599 for the 8GB, with a two-year contract. And starting today _Apple Computer, Inc._ becomes _Apple, Inc._. Makes perfect sense: Apple products are already in our bedrooms (iMac), our offices (MacBook, Mac Pro), our cars (BMW, Audi and others), our living rooms (Apple TV), and our pockets (iPod, iPhone). Impressive, to say the least.
 
  ![](/files/dsc_0236.jpg)
 
-Apple shares were at US$6, climbed more than 5% during the presentation — and that's with Leopard not even being mentioned! They're going after at least 1% of a market of nearly 1 billion consumers by 2008. The product launches in the US in June 2007. I hope it gets here soon!
+Apple shares closed the day up more than 8%, and Leopard didn't even get a mention! The goal is 1% of a market of nearly 1 billion cell phones sold a year: something like 10 million iPhones by the end of 2008. The product launches in the US in June. I hope it gets here soon!
 
  ![](/files/dsc_0233.jpg)
 
-If anyone finds a download link for the keynote video (I'm hoping it'll hit BitTorrent soon), let me know!
+If anyone finds a download link for the keynote video (I'm hoping it hits BitTorrent soon), let me know!
