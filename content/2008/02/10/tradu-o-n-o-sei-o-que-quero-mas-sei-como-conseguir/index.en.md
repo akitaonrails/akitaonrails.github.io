@@ -166,9 +166,7 @@ The general ideas here are written in a [StickyMinds.com article](https://www.st
 
 ### Stay tuned
 
-<object width="425" height="373"><param name="movie" value="http://www.youtube.com/v/4bM_l443VV4&rel=1&border=1">
-<param name="wmode" value="transparent">
-<embed src="http://www.youtube.com/v/4bM_l443VV4&rel=1&border=1" type="application/x-shockwave-flash" wmode="transparent" width="425" height="373"></embed></object>
+{{< youtube id="4bM_l443VV4" >}}
 
 If you want to get more about specific strategies for iterating sensibly in Agile development, please visit me at a tutorial I'll be teaching at a conference. Also pay attention to this site and blog as I resurrect my long overdue book from its current purgatory.
 

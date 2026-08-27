@@ -26,11 +26,11 @@ Assim como Steve Jobs subiu nos ombros de gigantes como Robert Noyce, Hewlett-Pa
 
 Talvez a mensagem que melhor resume a filosofia que Steve Jobs popularizou com a Apple é o que foi ilustrado no icônico comercial de 1997 ([bloguei sobre isso em 2007](http://akitaonrails.com/2007/01/27/off-topic-heres-to-the-crazy-ones)):
 
-https://www.youtube.com/embed/eUMFt_OImjA?si=wml7rq7PgG5lUmFh
+{{< youtube id="eUMFt_OImjA" >}}
 
 Obviamente, a que mais chega próximo à filosofia de vida de Steve é seu agora lendário discurso em Stanford de 2005 ([bloguei sobre isso em 2007 também](http://akitaonrails.com/2007/06/13/off-topic-steve-jobs-discurso-em-stanford-2005)):
 
-https://www.youtube.com/embed/yw5fuDMblYg?si=kmU9vex5v_WCGD6s
+{{< youtube id="yw5fuDMblYg" >}}
 
 No começo do ano legendei o documentário da Discovery Channel que conta a história do retorno de Steve à Apple até o sucesso do iTunes + iPod ([foi em Janeiro deste ano](http://akitaonrails.com/2011/01/30/documentario-the-ipod-revolution)):
 

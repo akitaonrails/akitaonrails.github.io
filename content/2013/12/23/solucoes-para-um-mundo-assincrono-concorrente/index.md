@@ -43,7 +43,7 @@ Para a maioria de nós - isso já foi resolvido de forma mais simples, como serv
 Eu repito "para a maioria de nós" porque não estou considerando os casos excepcionais onde você trabalha com infraestrutura especial, que atende milhões ou dezenas de milhões de pessoas, onde estamos falando de centenas de milhares de conexões simultâneas, bilhões de requisições por mês. Se você não lida com esses números, faz parte da "maioria de nós". E a maioria de nós tem soluções simples hoje em dia. Olhe primeiro na Amazon AWS antes de sequer pensar em fazer algo do zero. Certamente seu problema se resolve com Elastic Beanstalk, OpsWorks, RDS, SQS, SES, DynamoDB, Elasticache, etc.
 
 <div class="embed-container">
-<iframe src="//www.youtube.com/embed/fOI3EjsUEww" frameborder="0" allowfullscreen></iframe>
+{{< youtube id="fOI3EjsUEww" >}}
 </div>
 
 E por isso mesmo, ecossistemas como o Rails continuam fortes e crescendo: porque o que muitos ainda estão batendo cabeça para resolver (Asset Pipeline, por exemplo), nós já temos resolvido faz tempo. Não temos mais muitas dúvidas quanto a [processos de deployment](https://devcenter.heroku.com/articles/git), [ciclo de vida](http://travis-ci.com) de projetos, melhores [padrões](https://www.codeschool.com/courses/rails-4-patterns) de desenvolvimento, melhores [boas práticas](http://codeclimate.com), etc.

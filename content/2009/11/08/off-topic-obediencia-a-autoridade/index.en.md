@@ -70,10 +70,7 @@ He says people need three things to motivate themselves: Autonomy, the desire to
 
 Agility is a natural evolution of the old management processes. [Democratic Organizations](https://web.archive.org/web/20091118002826/http://www.worldblu.com/orgdemo/whatis.php) are the longest and most far-reaching step for an organization.
 
-<object width="425" height="344"><param name="movie" value="http://www.youtube.com/v/qFpk1B-DS38&hl=en&fs=1&">
-<param name="allowFullScreen" value="true">
-<param name="allowscriptaccess" value="always">
-<embed src="http://www.youtube.com/v/qFpk1B-DS38&hl=en&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="344"></embed></object>
+{{< youtube id="qFpk1B-DS38" >}}
 
 This article is just an introduction. Reread my [off-topic](http://akitaonrails.com/off-topic) articles from the last few months to get more of the picture.
 

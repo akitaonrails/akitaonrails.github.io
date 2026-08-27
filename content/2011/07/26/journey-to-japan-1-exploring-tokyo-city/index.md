@@ -150,11 +150,11 @@ O AKB48 está no [Guinness World Records](http://www.guinnessworldrecords.com/Se
 
 Assista ao comercial de TV com a nova ídola:
 
-http://www.youtube.com/embed/Z0fU3O8ynTE
+{{< youtube id="Z0fU3O8ynTE" >}}
 
 Você conseguiu identificar qual era o modelo CG? Agora veja o making of:
 
-http://www.youtube.com/embed/slvXiVsbkmU
+{{< youtube id="slvXiVsbkmU" >}}
 
 ## De Volta ao Passeio
 
@@ -228,7 +228,7 @@ No 1º andar tem o Club 333, que toda quarta e quinta tem pequenos shows. Conseg
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2011/7/26/IMG_0537_original.JPG?1311657355)
 
-http://www.youtube.com/embed/nJUHDwghi0E
+{{< youtube id="nJUHDwghi0E" >}}
 
 Na base da torre tem um prédio de três andares com outra cafeteria, até um McDonald's, e várias lojas de souvenirs (os japoneses adoram souvenir — chamamos de "omiyage" e "meibutsu").
 

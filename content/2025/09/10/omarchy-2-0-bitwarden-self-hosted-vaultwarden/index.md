@@ -18,7 +18,7 @@ Mais importante: ter uma senha forte, aleatória, exclusiva e diferente para **C
 
 Assista meu video sobre segurança:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/s7ldn31OEFc?si=qRZe05yPPyhmS1U4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+{{< youtube id="s7ldn31OEFc" >}}
 
 Ter preguiça de usar um gerenciador de senhas é só uma desculpa idiota de gente preguiçosa. E um programador sequer tem direito de usar essa desculpa.
 

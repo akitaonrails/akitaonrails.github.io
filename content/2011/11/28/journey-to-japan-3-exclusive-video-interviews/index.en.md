@@ -20,22 +20,22 @@ The first three videos were recorded at the after-party on the first day of Ruby
 
 Shintaro Kakutani-san was the first one I've interviewed, and is one of the main organizers of the event and a long time Ruby evangelist in Japan. He is a very active community leader, helping maintain the Japanese Ruby ecosystem.
 
-http://www.youtube.com/embed/npkrGATZYi0
+{{< youtube id="npkrGATZYi0" >}}
 
 The second one was Gotou Yuzou-san, he is one of the oldest Ruby Core Committers and the author of both Webrick and OpenSSL. He wrote a few books about Ruby in Japan and he works for the Tokyo branch of Nacl, the company from Matsue that has been contributing to Ruby since the beginning, hiring Matz as a fellow researcher.
 
-http://www.youtube.com/embed/bpXIIFShCo0
+{{< youtube id="bpXIIFShCo0" >}}
 
 The third one was recorded when the party was over. I was able to reach the couple Yasuko and Koichiro Ohba. Yasuko-san is well known as the president of the consulting company EveryLeaf. She employs several Ruby developers and does Ruby related projects and now mobile development as well. She is an example of entrepreneurship in the community. Koichiro-san works for a Heroku-like company in Japan, managing Cloud based infrastructure using JRuby technology. He contributes and evangelizes JRuby, especially in terms of documentation, localization (internationalization, etc).
 
-http://www.youtube.com/embed/4tBSXYHGtk4
+{{< youtube id="4tBSXYHGtk4" >}}
 
 On the second day of the event I was able to catch up with Nobuyoshi Nakada-san. He is "the" oldest Ruby Core Contributor, and he probably touched every single part of Ruby. He is also known as "the patch monster" as he seems to be a coding machine, being more active throughout the last 15 years than Matz himself. He deserved to be the first one Matz chose to follow him at SalesForce.com.
 
-http://www.youtube.com/embed/6A9eq3aaDVw
+{{< youtube id="6A9eq3aaDVw" >}}
 
 Finally, at the Heroku Drink up on the last day of the event, I was finally able to grab Matz himself for an interview. Having been continuously and consistently on this road for the last few years, you can imagine how thrilled I was for having been able to interview Matz himself in person, in my homeland, Japan. But as I've warned before, the audio is not good because of all the noise. At least Matz can speak English so everybody will be able to get the most out of this one.
 
-http://www.youtube.com/embed/JBOWc7U2ed8
+{{< youtube id="JBOWc7U2ed8" >}}
 
 Enjoy them all. This is for all of my friends in Japan! Thanks again for the hospitality.

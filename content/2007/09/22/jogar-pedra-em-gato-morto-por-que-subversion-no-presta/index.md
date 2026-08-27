@@ -34,9 +34,7 @@ Subversion? Como disse, uso por motivos históricos. O slogan é _“um CVS bem 
 
 Interessado no GIT, acabei achando este vídeo com o próprio Linus Torvalds, criador do GIT, dando uma palestra no Google:
 
-<object width="425" height="350"><param name="movie" value="http://www.youtube.com/v/4XpnKHJAok8">
-<param name="wmode" value="transparent">
-<embed src="http://www.youtube.com/v/4XpnKHJAok8" type="application/x-shockwave-flash" wmode="transparent" width="425" height="350"></embed></object>
+{{< youtube id="4XpnKHJAok8" >}}
 
 É o que eu digo: todo bom projeto, open source ou não, precisa de caras como Linus. Ele vai direto ao ponto: _“os criadores do Subversion são idiotas!”_ E repete isso diversas vezes em mais de uma hora de palestra. _“É o projeto mais sem sentido que eu já vi”_. Hilário! Fugindo um pouco do ponto acho que todo bom projeto precisa de pessoas carismáticas na liderança. Não importa o que eles falam, são eles que vendem o produto. O Linus começou o GIT, é LÓGICO que ele acha os outros ruins – e não fará nenhuma tentativa de ser _policamente correto_ ou conciliador, o que eu acho ótimo. E mudando de assunto de novo: é por isso que eu gosto tanto da série [House M.D.](http://en.wikipedia.org/wiki/House_(TV_series)). Recomendo.
 

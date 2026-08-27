@@ -14,17 +14,11 @@ Em números, tivemos mais de 700 participantes no evento. É o terceiro ano que 
 
 Um dia antes do evento, eu fui conferir como estavam os preparativos para suportar este grande evento. Daí resolvi aproveitar que tinha acabado de instalar o novíssimo iLife’11 e fiz este teaser trailer:
 
-<object width="640" height="385"><param name="movie" value="http://www.youtube.com/v/9NurIbqq7AU?fs=1&hl=en_US">
-<param name="allowFullScreen" value="true">
-<param name="allowscriptaccess" value="always">
-<embed src="http://www.youtube.com/v/9NurIbqq7AU?fs=1&hl=en_US" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="640" height="385"></embed></object>
+{{< youtube id="9NurIbqq7AU" >}}
 
 Então, no segundo dia do evento, gravei alguns vídeos de todo o povo participando e montei este outro trailer que mostramos antes do keynote de fechamento do evento:
 
-<object width="640" height="385"><param name="movie" value="http://www.youtube.com/v/7tDjYOhdz8I?fs=1&hl=en_US">
-<param name="allowFullScreen" value="true">
-<param name="allowscriptaccess" value="always">
-<embed src="http://www.youtube.com/v/7tDjYOhdz8I?fs=1&hl=en_US" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="640" height="385"></embed></object>
+{{< youtube id="7tDjYOhdz8I" >}}
 
 
 Tivemos muitas diferenças em relação às Rails Summits. A mais óbvia foi a mudança de local, do antigo Elis Regina na Zona Norte de São Paulo para o Centro de Convenções Frei Caneca. Existem vantagens e desvantagens nas duas. No caso do Elis Regina, trata-se de um local bem mais amplo e bonito, com auditório de verdade. Porém, a localização é muito ruim por ser muito longe de tudo. Poucas opções de hotéis, poucas opções de restaurantes, enfim, é um lugar mais isolado. Já o Frei Caneca fica no centro de tudo, perto de metrô, de muitos hotéis, do lado da Av. Paulista. Por outro lado o local é um pouco menor. No geral acho que a escolha foi acertada para a maioria das pessoas. O que acham? Comentem no final.

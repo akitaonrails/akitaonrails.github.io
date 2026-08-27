@@ -166,9 +166,7 @@ As idéias gerais aqui estão escritas em um [artigo na StickyMinds.com](https:/
 
 ### Fiquem ligados
 
-<object width="425" height="373"><param name="movie" value="http://www.youtube.com/v/4bM_l443VV4&rel=1&border=1">
-<param name="wmode" value="transparent">
-<embed src="http://www.youtube.com/v/4bM_l443VV4&rel=1&border=1" type="application/x-shockwave-flash" wmode="transparent" width="425" height="373"></embed></object>
+{{< youtube id="4bM_l443VV4" >}}
 
 Se quiserem saber mais sobre estratégias específicas para iterar sensivelmente em desenvolvimento Ágil, por favor me visitem em um tutorial que estarei ensinando em uma conferência. Também prestem atenção a este site e bloguem enquanto ressuscito meu antigo livro do purgatório.
 

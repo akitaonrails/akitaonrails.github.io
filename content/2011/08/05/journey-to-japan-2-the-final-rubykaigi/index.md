@@ -183,7 +183,7 @@ Tem várias outras palestras interessantes que recomendo assistir. Algumas são 
 
 E como prometi aos meus novos e bons amigos da Austrália, [Andy Kitchen](http://twitter.com/#!/auastro) e [Jonathan Cheng](http://twitter.com/#!/jonochang), vou dar meu apoio à nova e revolucionária técnica de desenvolvimento de software deles, apresentada na YamiRubyKaigi, que faria até o Kent Beck repensar seus conceitos! :-) Eu apresento a vocês: **V.D.D.**
 
-http://www.youtube.com/embed/lW16ykQ-heg
+{{< youtube id="lW16ykQ-heg" >}}
 
 Agora sério — pensando bem nesse assunto, sempre me perguntei como é que vejo tanta gente na fila pra falar em conferências americanas como a RailsConf, e agora vi muita gente de novo na fila pra falar na RubyKaigi. Aqui no Brasil geralmente tenho dificuldade pra reunir palestras interessantes suficientes pra preencher uma única sessão.
 
@@ -231,7 +231,7 @@ Como já mencionei, esse grande evento é organizado pela vontade pura e esforç
 
 Depois da keynote de encerramento do Matz, o Takahashi-san fez um pequeno discurso final. Agradeceu a todos os patrocinadores, participantes e equipe voluntária. Foi muito bonito vê-los todos se reunindo no palco. Eu não tinha ideia de que o grupo de staff era tão grande. Me senti muito humilhado por aquele espetáculo, e eles mereciam cada aplauso.
 
-http://www.youtube.com/embed/vaKfDkU6i0g
+{{< youtube id="vaKfDkU6i0g" >}}
 
 Mas a conferência deste ano nasceu de uma semente plantada no ano passado. Não sei até onde o Takahashi-san e os outros líderes pensaram nisso, mas se for metade do que especulo, acho que é uma atitude corajosa.
 

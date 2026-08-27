@@ -21,7 +21,7 @@ E só neste ano finalmente sentei para encarar essa obra enorme que é o Atlas S
 
 E por acaso neste ano deve estrear a primeira parte da [versão para o cinema](http://www.imdb.com/title/tt0480239/), dirigida por Paul Johansson. Gostei das escolhas de Taylor Schilling como Dagny Taggart e Grant Bowler como Henry Rearden. Para mim, Bowler tem um ar de Gary Cooper no papel de Howard Roark em [The Fountainhead](http://www.imdb.com/title/tt0041386/), de 1949, que adapta o romance homônimo de Rand:
 
-http://www.youtube.com/embed/ooOfe_-5TlY
+{{< youtube id="ooOfe_-5TlY" >}}
 
 Eu estava justamente no trecho que chega ao casamento de James Taggart. Ali, Francisco D’Anconia, um industrial riquíssimo e conhecido na imprensa como playboy, é abordado por uma convidada na festa:
 

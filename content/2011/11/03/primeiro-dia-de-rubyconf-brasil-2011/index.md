@@ -10,7 +10,7 @@ draft: false
 
 
 
-http://www.youtube.com/embed/IJof8-e-5yg
+{{< youtube id="IJof8-e-5yg" >}}
 
 Hoje é o primeiro dia da RubyConf Brasil 2011 by Locaweb! Não deixem de chegar bem cedo pro credenciamento pois a abertura do evento começa logo mais às 9 da manhã! Também não deixem de conferir a [programação](http://www.rubyconf.com.br/br/schedule.html) para ter a grade mais atualizada.
 

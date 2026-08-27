@@ -78,7 +78,7 @@ Então, a solução ideal para mim seria:
 
 Foi aí que me caiu a ficha do óbvio: Objective-C nada mais é que um superset de C, então qualquer coisa compatível com C é automaticamente compatível com Objective-C. Mais que isso, o **iOS é um sistema Unix**! Ou seja, ele tem todas as gostosuras do suporte Posix.
 
-<http://www.youtube.com/embed/dFUlAQZB9Ng>
+{{< youtube id="dFUlAQZB9Ng" >}}
 
 Então, como eu pego o [strftime compatível com C](http://www.cplusplus.com/reference/clibrary/ctime/strftime/)? Fácil:
 

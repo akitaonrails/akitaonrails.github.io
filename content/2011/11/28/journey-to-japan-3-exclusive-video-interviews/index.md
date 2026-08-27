@@ -21,22 +21,22 @@ Os três primeiros vídeos foram gravados na festa do primeiro dia da RubyKaigi.
 
 Shintaro Kakutani-san foi o primeiro entrevistado — um dos principais organizadores do evento e um evangelista de Ruby de longa data no Japão. É um líder comunitário muito ativo, ajudando a manter o ecossistema Ruby japonês.
 
-http://www.youtube.com/embed/npkrGATZYi0
+{{< youtube id="npkrGATZYi0" >}}
 
 O segundo foi Gotou Yuzou-san, um dos mais antigos committers do Ruby Core e autor tanto do Webrick quanto do OpenSSL. Escreveu alguns livros sobre Ruby no Japão e trabalha na filial de Tóquio da Nacl, a empresa de Matsue que contribui com Ruby desde o início, contratando o Matz como pesquisador.
 
-http://www.youtube.com/embed/bpXIIFShCo0
+{{< youtube id="bpXIIFShCo0" >}}
 
 O terceiro foi gravado quando a festa já havia acabado. Consegui chegar até o casal Yasuko e Koichiro Ohba. Yasuko-san é conhecida por ser presidente da empresa de consultoria EveryLeaf. Ela emprega vários desenvolvedores Ruby e faz projetos relacionados à linguagem e agora também desenvolvimento mobile. É um exemplo de empreendedorismo na comunidade. Koichiro-san trabalha numa empresa estilo Heroku no Japão, gerenciando infraestrutura Cloud com tecnologia JRuby. Contribui e evangeliza o JRuby, especialmente em termos de documentação e localização.
 
-http://www.youtube.com/embed/4tBSXYHGtk4
+{{< youtube id="4tBSXYHGtk4" >}}
 
 No segundo dia do evento consegui encontrar Nobuyoshi Nakada-san. Ele é "o" contributor mais antigo do Ruby Core e provavelmente mexeu em todas as partes da linguagem. É conhecido como "o monstro de patches" pois parece uma máquina de código, sendo mais ativo nos últimos 15 anos do que o próprio Matz. Merecidamente foi o primeiro que Matz escolheu para segui-lo na Salesforce.com.
 
-http://www.youtube.com/embed/6A9eq3aaDVw
+{{< youtube id="6A9eq3aaDVw" >}}
 
 Por fim, no Heroku Drink Up no último dia do evento, finalmente consegui pegar o próprio Matz para uma entrevista. Depois de anos seguindo consistentemente essa jornada, podem imaginar o quanto estava entusiasmado por entrevistar o Matz pessoalmente, na terra natal dos meus avós. Mas como já avisei, o áudio não é bom por causa do barulho. Pelo menos o Matz fala inglês, então todo mundo vai conseguir aproveitar esta.
 
-http://www.youtube.com/embed/JBOWc7U2ed8
+{{< youtube id="JBOWc7U2ed8" >}}
 
 Aproveitem todas. Isto é para todos os meus amigos no Japão! Obrigado pela hospitalidade.

@@ -21,7 +21,7 @@ Only this year did I finally sit down to tackle this doorstop of a novel. I'm ab
 
 As it happens, the first part of the [film version](http://www.imdb.com/title/tt0480239/) directed by Paul Johansson is supposed to premiere this year. I liked the casting of Taylor Schilling as Dagny Taggart and Grant Bowler as Henry Rearden. To me, Bowler has a touch of Gary Cooper playing Howard Roark in [The Fountainhead](http://www.imdb.com/title/tt0041386/), the 1949 film that adapts Rand's novel of the same name:
 
-http://www.youtube.com/embed/ooOfe_-5TlY
+{{< youtube id="ooOfe_-5TlY" >}}
 
 I was right at the passage that reaches James Taggart's wedding, where Francisco D'Anconia, a filthy-rich industrialist known to the press as a playboy, gets cornered by a guest at the party:
 

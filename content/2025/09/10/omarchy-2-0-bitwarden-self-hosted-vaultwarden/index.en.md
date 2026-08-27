@@ -18,7 +18,7 @@ More important: having a strong, random, exclusive and different password for **
 
 Watch my video about security:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/s7ldn31OEFc?si=qRZe05yPPyhmS1U4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+{{< youtube id="s7ldn31OEFc" >}}
 
 Being too lazy to use a password manager is just a dumb excuse from lazy people. And a programmer has zero right to use that excuse.
 

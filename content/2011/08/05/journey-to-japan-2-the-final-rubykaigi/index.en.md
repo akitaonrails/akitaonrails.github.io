@@ -181,7 +181,7 @@ There are several other interesting talks that I recommend you to watch. Some ar
 
 And as I promised to my new good friends from Australia, [Andy Kitchen](http://twitter.com/#!/auastro) and [Jonathan Cheng](http://twitter.com/#!/jonochang), I will give my support to their brand new and revolutionary software development technique, introduced at YamiRubyKaigi, that would make even Kent Beck rethink his concepts! :-) I present to you: **V.D.D**
 
-http://www.youtube.com/embed/lW16ykQ-heg
+{{< youtube id="lW16ykQ-heg" >}}
 
 Now seriously, putting some thought in this subject, I always wondered how come I see lots of people lining up to talk at US conferences such as RailsConf and now I saw lots of people again lining up to talk at RubyKaigi. Here in Brazil I usually have a hard time coming up with enough interesting talks to fill one single session.
 
@@ -229,7 +229,7 @@ As I've mentioned before, this big event is all organized by the sheer will and 
 
 After Matz closing keynote, Takahashi-san made a small closing speech. He thanked all the sponsors, the attendees, and the volunteer staff. It was very nice to see all of them gathering on the stage. I had no idea that the staff group was so large. I felt very humbled by that sight and they deserved the applauses.
 
-http://www.youtube.com/embed/vaKfDkU6i0g
+{{< youtube id="vaKfDkU6i0g" >}}
 
 But this year's conference was born from a seed planted last year. I don't know how far Takahashi-san and the other leaders have thought about this, but if it's half of what I speculate, I think it's a bold move.
 

@@ -169,8 +169,5 @@ Such is the state of one of today's most crucial issues: political rights versus
 
 Those who advocate laissez-faire capitalism are the only advocates of man's rights.
 
-<object width="560" height="340"><param name="movie" value="http://www.youtube.com/v/qUNYbCOMp8k&hl=en&fs=1&">
-<param name="allowFullScreen" value="true">
-<param name="allowscriptaccess" value="always">
-<embed src="http://www.youtube.com/v/qUNYbCOMp8k&hl=en&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="560" height="340"></embed></object>
+{{< youtube id="qUNYbCOMp8k" >}}
 

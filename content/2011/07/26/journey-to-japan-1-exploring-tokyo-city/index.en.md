@@ -148,11 +148,11 @@ AKB48 is in the [Guinness World Records](http://www.guinnessworldrecords.com/Sea
 
 Watch the TV commercial featuring the new idol:
 
-http://www.youtube.com/embed/Z0fU3O8ynTE
+{{< youtube id="Z0fU3O8ynTE" >}}
 
 Were you able to identify which one was the CG model? Now take a look at the making of:
 
-http://www.youtube.com/embed/slvXiVsbkmU
+{{< youtube id="slvXiVsbkmU" >}}
 
 ## Back to the Tour
 
@@ -226,7 +226,7 @@ In the 1st floor there's this Club 333 where all Wednesdays and Thursdays they w
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2011/7/26/IMG_0537_original.JPG?1311657355)
 
-http://www.youtube.com/embed/nJUHDwghi0E
+{{< youtube id="nJUHDwghi0E" >}}
 
 At the base of the tower there is this three story building with another cafeteria, even a McDonald's, and several souvenir shops (Japanese love souvenirs, which we call "omiyage" and "meibutsu").
 

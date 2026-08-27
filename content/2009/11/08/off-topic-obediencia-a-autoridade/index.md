@@ -70,10 +70,7 @@ Ele afirma que as pessoas precisam de três coisas para se motivar: Autonomia, o
 
 Agilidade é uma evolução natural dos processos antigos de gestão. [Organizações Democráticas](https://web.archive.org/web/20091118002826/http://www.worldblu.com/orgdemo/whatis.php) são o passo mais longo e mais abrangente numa organização.
 
-<object width="425" height="344"><param name="movie" value="http://www.youtube.com/v/qFpk1B-DS38&hl=en&fs=1&">
-<param name="allowFullScreen" value="true">
-<param name="allowscriptaccess" value="always">
-<embed src="http://www.youtube.com/v/qFpk1B-DS38&hl=en&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="344"></embed></object>
+{{< youtube id="qFpk1B-DS38" >}}
 
 Este artigo é apenas uma introdução. Releia meus artigos [off-topic](http://akitaonrails.com/off-topic) dos últimos meses para entender mais aspectos disso.
 

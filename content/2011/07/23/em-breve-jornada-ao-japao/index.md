@@ -19,11 +19,11 @@ Retornei ao Brasil ontem e ainda estou me recuperando do cansaço da viagem. Ain
 
 Até lá, compilei 3 pequenos trailers para deixá-los imaginando o que vem a seguir:
 
-http://www.youtube.com/embed/VhVq0u5kvDY
+{{< youtube id="VhVq0u5kvDY" >}}
 
-http://www.youtube.com/embed/5mXgp7sehGc
+{{< youtube id="5mXgp7sehGc" >}}
 
-http://www.youtube.com/embed/qnDhyEhSwbA
+{{< youtube id="qnDhyEhSwbA" >}}
 
 Aproveitem!
 

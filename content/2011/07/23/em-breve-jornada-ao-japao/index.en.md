@@ -17,11 +17,11 @@ I came back to Brazil yesterday and I am still recovering from the burn out of t
 
 Until then, I’ve compiled 3 small trailers to get you wondering what’s to come:
 
-http://www.youtube.com/embed/VhVq0u5kvDY
+{{< youtube id="VhVq0u5kvDY" >}}
 
-http://www.youtube.com/embed/5mXgp7sehGc
+{{< youtube id="5mXgp7sehGc" >}}
 
-http://www.youtube.com/embed/qnDhyEhSwbA
+{{< youtube id="qnDhyEhSwbA" >}}
 
 Enjoy!
 
