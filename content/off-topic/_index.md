@@ -92,7 +92,7 @@ Todos os posts Off-Topic do blog — filosofia, carreira, gerenciamento, e outro
 
 ## 2014 - Novembro
 
-- <a class="aor-index-list__main-link" href="/2014/11/21/small-bites-off-topic-people-over-processes-o-que-sao-people/" title="O autor explica que Agile exige processos e melhoria contínua, enquanto lidar melhor com pessoas pede noções de psicologia, economia comportamental e redes. Nosso comportamento é menos racional do que parece.">[Small Bites/Off-Topic] &quot;People over Processes&quot;, o que são &quot;People&quot;?</a>
+- <a class="aor-index-list__main-link" href="/2014/11/21/small-bites-off-topic-people-over-processes-o-que-sao-people/" title="Agile herda do Lean a ênfase em processos e melhoria contínua, mas priorizar pessoas exige psicologia, economia comportamental e teoria de redes. Uma lista de livros para começar e a lembrança de que somos menos racionais do que gostaríamos.">[Small Bites/Off-Topic] &quot;People over Processes&quot;, o que são &quot;People&quot;?</a>
 
 ## 2014 - Outubro
 
@@ -128,7 +128,7 @@ Todos os posts Off-Topic do blog — filosofia, carreira, gerenciamento, e outro
 
 ## 2013 - Novembro
 
-- <a class="aor-index-list__main-link" href="/2013/11/18/off-topic-trabalho-remoto-small-office-home-office-soho/" title="Trabalho remoto pode funcionar, mas não é uma solução universal. O texto aponta que estruturas intermediárias entre centralização e isolamento favorecem colaboração, mentoria e evolução de carreira.">[Off-Topic] Trabalho Remoto - Small Office, Home Office (SoHo)</a>
+- <a class="aor-index-list__main-link" href="/2013/11/18/off-topic-trabalho-remoto-small-office-home-office-soho/" title="Trabalho remoto funciona, mas não é solução universal. Resenhando o livro Remote, da 37signals, o argumento é que estruturas entre a centralização total e o isolamento favorecem colaboração, mentoria e carreira.">[Off-Topic] Trabalho Remoto - Small Office, Home Office (SoHo)</a>
 - <a class="aor-index-list__main-link" href="/2013/11/14/off-topic-tech-startups-superlotacao-de-b2c-boring/" title="O texto critica a corrida por startups B2C quase idênticas e defende que inovação B2B começa por conhecer processos corporativos. Sem essa experiência, o atalho pode deixar uma geração anos atrasada.">[Off-Topic] Tech Startups, superlotação de B2C. Boring.</a>
 - <a class="aor-index-list__main-link" href="/2013/11/02/off-topic-programadores-sao-pessimos-comunicadores-udp-vs-tcp/" title="Usando UDP e TCP como metáfora, o texto diz que programadores confundem informar com comunicar. Projetos reais exigem confirmar conexão, contexto, ordem, entendimento e entrega da mensagem.">[Off-Topic] Programadores são péssimos Comunicadores (UDP vs TCP)</a>
 - <a class="aor-index-list__main-link" href="/2013/11/01/off-topic-agile-feito-errado/" title="O texto argumenta que Agile não salva equipes sem capacidade técnica e comprometimento. Planning, pair programming, qualidade e responsabilidade viram encenação, e maus profissionais precisam ser substituídos.">[Off-Topic] Agile feito Errado</a>
@@ -136,7 +136,7 @@ Todos os posts Off-Topic do blog — filosofia, carreira, gerenciamento, e outro
 ## 2013 - Outubro
 
 - <a class="aor-index-list__main-link" href="/2013/10/31/traducao-carta-para-um-jovem-programador-considerando-uma-startup/" title="Nesta tradução de Alex Payne, startups aparecem como meio, não destino: a cultura se padroniza, o VC busca retornos e o trabalho pode cobrar um preço alto nas relações. Propósito deve orientar a escolha.">[Tradução] Carta para um Jovem Programador Considerando uma Startup</a>
-- <a class="aor-index-list__main-link" href="/2013/10/30/off-topic-matematica-trolls-haters-e-discussoes-de-internet/" title="O texto usa matemática e sistemas complexos para questionar fórmulas sem domínio e confundir correlação com causalidade, incluindo o Lean Startup. Autoajuda não vira ciência por reunir casos ou consenso.">[Off-Topic] Matemática, Trolls, Haters e Discussões de Internet</a>
+- <a class="aor-index-list__main-link" href="/2013/10/30/off-topic-matematica-trolls-haters-e-discussoes-de-internet/" title="Uma fundação matemática contra as fórmulas mágicas da autoajuda: sem domínio definido elas dividem opiniões, correlação não é causalidade e casos isolados como o Lean Startup não provam nada. Consenso não faz verdade.">[Off-Topic] Matemática, Trolls, Haters e Discussões de Internet</a>
 - <a class="aor-index-list__main-link" href="/2013/10/07/off-topic-desmontando-o-noestimates/" title="O autor separa projetos de operações contínuas para defender estimativas, objetivos e restrições em projetos. Para ele, restrições impulsionam inovação, mas execução competente pesa mais que qualquer metodologia.">[Off-Topic] Desmontando o #noEstimates</a>
 
 ## 2013 - Agosto
@@ -150,8 +150,8 @@ Todos os posts Off-Topic do blog — filosofia, carreira, gerenciamento, e outro
 
 ## 2013 - Junho
 
-- <a class="aor-index-list__main-link" href="/2013/06/28/introducao-a-agilidade/" title="Robert Martin recounts how XP, Scrum, and Crystal converged in the 2001 Agile Manifesto. The author warns against dogmatic processes and consultancies that put methods ahead of people and customer value.">Introdução à Agilidade</a>
-- <a class="aor-index-list__main-link" href="/2013/06/21/processos-metodologias-e-o-cerebro-humano/" title="O autor explica como emoção, aleatoriedade e busca por padrões criam superstições e falsas receitas de sucesso. Em projetos, metodologias devem ser testadas e adaptadas, não tratadas como verdades universais.">Processos, Metodologias e o Cérebro Humano</a>
+- <a class="aor-index-list__main-link" href="/2013/06/28/introducao-a-agilidade/" title="Robert Martin conta como XP, Scrum e Crystal convergiram no Manifesto Ágil de 2001, em Snowbird. Akita critica o processo dogmático e as consultorias que colocam método acima de pessoas e do valor ao cliente.">Introdução à Agilidade</a>
+- <a class="aor-index-list__main-link" href="/2013/06/21/processos-metodologias-e-o-cerebro-humano/" title="O autor explica como emoção, aleatoriedade e busca por padrões criam superstições e falsas receitas de sucesso. Em projetos, metodologias são técnicas para testar e adaptar, e nenhuma delas vale como verdade universal.">Processos, Metodologias e o Cérebro Humano</a>
 - <a class="aor-index-list__main-link" href="/2013/06/07/o-que-significa-ser-um-gerente/" title="Henry Mintzberg trata o gerenciamento como uma prática, não como ciência ou profissão: bons gerentes combinam arte, ofício, técnica e experiência para agir conforme o contexto.">O que significa ser um Gerente?</a>
 
 ## 2013 - Maio
@@ -195,7 +195,7 @@ Todos os posts Off-Topic do blog — filosofia, carreira, gerenciamento, e outro
 
 ## 2012 - Maio
 
-- <a class="aor-index-list__main-link" href="/2012/05/13/off-topic-grandes-artistas-roubam/" title="A partir da frase de Picasso, o autor defende que artistas e desenvolvedores começam copiando técnicas, mas só avançam quando as adaptam, refinam e tornam suas por meio da prática.">[Off-Topic] Grandes Artistas Roubam</a>
+- <a class="aor-index-list__main-link" href="/2012/05/13/off-topic-grandes-artistas-roubam/" title="A partir de uma frase atribuída a Picasso, o autor defende que artistas e desenvolvedores começam copiando técnicas, mas só avançam quando as adaptam, refinam e tornam suas pela prática.">[Off-Topic] Grandes Artistas Roubam</a>
 - <a class="aor-index-list__main-link" href="/2012/05/08/lendo-com-legendas-sobre-kanjis-em-paginas-japonesas/" title="Rikaichan, Furigana Inserter, HTML Ruby e Mecab podem adicionar leituras em hiragana ou katakana a páginas japonesas. A combinação facilita a leitura, mas exige desativar o Furigana para usar o Rikaichan.">[Off-Topic] Lendo com legendas sobre Kanjis em páginas japonesas</a>
 
 ## 2012 - Abril
@@ -208,12 +208,12 @@ Todos os posts Off-Topic do blog — filosofia, carreira, gerenciamento, e outro
 
 ## 2011 - Outubro
 
-- <a class="aor-index-list__main-link" href="/2011/10/06/off-topic-tributo-a-steve-jobs/" title="Fabio homenageia Steve Jobs relembrando sua relação com o Macintosh e lendo sua trajetória como uma jornada do herói, da fundação da Apple ao retorno em 1997 e além.">[Off-Topic] Tributo a Steve Jobs</a>
+- <a class="aor-index-list__main-link" href="/2011/10/06/off-topic-tributo-a-steve-jobs/" title="Akita homenageia Steve Jobs relembrando sua relação com o Macintosh e lendo sua trajetória como uma jornada do herói, da fundação da Apple ao retorno em 1997 e além.">[Off-Topic] Tributo a Steve Jobs</a>
 
 ## 2011 - Setembro
 
-- <a class="aor-index-list__main-link" href="/2011/09/25/off-topic-disney-historia-do-computador-e-o-encarte-perdido/" title="Fabio digitaliza uma revista Disney de 1984 sobre a história dos computadores e o Macintosh, mas procura quem ainda tenha o encarte central de 32 páginas que se perdeu.">[Off-Topic] Disney, História do Computador e o Encarte Perdido</a>
-- <a class="aor-index-list__main-link" href="/2011/09/19/off-topic-minha-carreira-fase-5-codeminer-42/" title="Após um ano ajudando a consolidar a Gonow, Fabio encerra essa fase e funda a Codeminer 42, uma pequena consultoria de software com equipe enxuta, menos overhead e mais foco.">[Off-Topic] Minha Carreira - Fase 5 - Codeminer 42</a>
+- <a class="aor-index-list__main-link" href="/2011/09/25/off-topic-disney-historia-do-computador-e-o-encarte-perdido/" title="Digitalizei uma revista Disney de 1984 sobre a história dos computadores e o Macintosh, e procuro quem ainda tenha o encarte central de 32 páginas que se perdeu.">[Off-Topic] Disney, História do Computador e o Encarte Perdido</a>
+- <a class="aor-index-list__main-link" href="/2011/09/19/off-topic-minha-carreira-fase-5-codeminer-42/" title="Após um ano ajudando a consolidar a Gonow, Akita encerra essa fase e funda a Codeminer 42, uma pequena consultoria de software com equipe enxuta, menos overhead e mais foco.">[Off-Topic] Minha Carreira - Fase 5 - Codeminer 42</a>
 
 ## 2011 - Maio
 
@@ -280,7 +280,7 @@ Todos os posts Off-Topic do blog — filosofia, carreira, gerenciamento, e outro
 
 ## 2009 - Setembro
 
-- <a class="aor-index-list__main-link" href="/2009/09/26/off-topic-procurar-raciocionar-faz-bem/" title="Uma reflexão sobre programação em par, responsabilidade e as divergências entre Spolsky e Bob Martin defende testar práticas ágeis, entender seus motivos e rejeitar dogmas.">[Off-Topic] Procurar Raciocinar Faz Bem</a>
+- <a class="aor-index-list__main-link" href="/2009/09/26/off-topic-procurar-raciocionar-faz-bem/" title="Programação em par exige piloto e co-piloto ativos, agilidade é accountability, e a discórdia entre Spolsky e Bob Martin vira mote para testar práticas ágeis, entender seus motivos e recusar dogmas.">[Off-Topic] Procurar Raciocinar Faz Bem</a>
 - <a class="aor-index-list__main-link" href="/2009/09/12/off-topic-a-argumenta--o-atrav-s-da-intimida--o/" title="A tradução de Ayn Rand identifica a argumentação através da intimidação como uma falácia que substitui razões por medo e culpa, defendendo evidências e premissas bem examinadas.">[Off-Topic] A Argumentação através da Intimidação </a>
 - <a class="aor-index-list__main-link" href="/2009/09/09/off-topic-direitos-do-homem/" title="A tradução de Ayn Rand defende direitos individuais como base da liberdade e do capitalismo, limita o governo à proteção contra a força e rejeita direitos econômicos que exigem o trabalho alheio.">[Off-Topic] Direitos do Homem</a>
 - <a class="aor-index-list__main-link" href="/2009/09/08/off-topic-o-culto-da-moral-cinzenta/" title="Ao comentar O Culto da Moral Cinzenta, de Ayn Rand, o autor distingue erro honesto de omissão deliberada e critica quem usa a ambiguidade para fugir do julgamento moral.">[Off-Topic] O Culto da Moral Cinzenta</a>
@@ -319,36 +319,36 @@ Todos os posts Off-Topic do blog — filosofia, carreira, gerenciamento, e outro
 
 ## 2009 - Fevereiro
 
-- <a class="aor-index-list__main-link" href="/2009/02/03/tradu-o-scrum-fl-cido/" title="A tradução de Martin Fowler mostra como adotar Scrum sem práticas técnicas pode deixar o código flácido. Fabio reforça testes, refatoração, integração frequente e propriedade coletiva.">Tradução: Scrum Flácido</a>
+- <a class="aor-index-list__main-link" href="/2009/02/03/tradu-o-scrum-fl-cido/" title="Tradução do &#39;Flaccid Scrum&#39;, de Martin Fowler: adotar Scrum sem práticas técnicas afunda o time numa base de código bagunçada. Comento testes, refatoração, integração frequente e propriedade coletiva.">Tradução: Scrum Flácido</a>
 
 ## 2008 - Dezembro
 
-- <a class="aor-index-list__main-link" href="/2008/12/18/tradu-o-d-vida-t-cnica/" title="A tradução de Steve McConnell separa dívidas técnicas acidentais das estratégicas, explica seus juros e sugere registrá-las no backlog. Atalhos podem fazer sentido quando são rastreáveis e pagáveis.">Tradução: Dívida Técnica</a>
-- <a class="aor-index-list__main-link" href="/2008/12/16/off-topic-m-todo-cient-fico-vs-cargo-cult/" title="Fabio critica o cargo cult na programação e propõe testar hipóteses com pesquisa, protótipos descartáveis e experimentos. Na YellowPages, quatro meses de preparação evitaram transformar quatro meses de implementação em vinte.">Off-Topic: Método Científico vs Cargo Cult</a>
+- <a class="aor-index-list__main-link" href="/2008/12/18/tradu-o-d-vida-t-cnica/" title="Tradução do artigo clássico de Steve McConnell sobre dívida técnica: a diferença entre dívida acidental e estratégica, os juros que atalhos cobram e por que registrar cada dívida no backlog.">Tradução: Dívida Técnica</a>
+- <a class="aor-index-list__main-link" href="/2008/12/16/off-topic-m-todo-cient-fico-vs-cargo-cult/" title="Cargo cult é repetir estruturas sem entender a razão. A saída é testar hipóteses com protótipos descartáveis. Na YellowPages, quatro meses de preparação impediram que quatro de implementação virassem vinte.">Off-Topic: Método Científico vs Cargo Cult</a>
 
 ## 2008 - Outubro
 
 - <a class="aor-index-list__main-link" href="/2008/10/09/off-topic-entendendo-a-crise-econ-mica/" title="A partir de Taleb e da crise financeira, o autor explica por que dados passados não provam teorias. Eles podem revelar que uma ideia é falsa, enquanto Cisnes Negros expõem seus limites.">Off-Topic: Entendendo a Crise Econômica</a>
-- <a class="aor-index-list__main-link" href="/2008/10/07/off-topic-o-manifesto-gil-ou-como-se-tornar-o-google/" title="O autor argumenta que agilidade depende de filosofia, confiança e equipes auto-organizadas, não só de procedimentos. Com Conway, open source e Google, defende uma cultura que favoreça inovação e adaptação.">Off-Topic: O Manifesto Ágil, ou Como se Tornar o Google</a>
+- <a class="aor-index-list__main-link" href="/2008/10/07/off-topic-o-manifesto-gil-ou-como-se-tornar-o-google/" title="Agilidade de verdade nasce de filosofia, confiança e equipes auto-organizadas; metodologia sozinha não basta. Do Manifesto Ágil a Conway, Pareto, Wikipedia e Google: por que cultura open source produz inovação.">Off-Topic: O Manifesto Ágil, ou Como se Tornar o Google</a>
 
 ## 2008 - Setembro
 
-- <a class="aor-index-list__main-link" href="/2008/09/20/off-topic-o-poder-do-mito-redux/" title="Akita critica a promessa de fabricar líderes com autoajuda, certificações e metodologias prontas. Para ele, liderança exige autodidatismo, mérito e desafios reais, não receitas que atribuem todo sucesso ao método.">Off-Topic: O Poder do Mito, Redux</a>
+- <a class="aor-index-list__main-link" href="/2008/09/20/off-topic-o-poder-do-mito-redux/" title="Autoajuda, certificações e metodologias prontas prometem fabricar líderes. A tese: líderes se formam sozinhos, com autodidatismo, mérito e desafios reais, enquanto a receita mágica fica com o crédito.">Off-Topic: O Poder do Mito, Redux</a>
 
 ## 2008 - Julho
 
-- <a class="aor-index-list__main-link" href="/2008/07/15/off-topic-por-que-programadores-devem-jogar-go/" title="A tradução relaciona o Go ao desenvolvimento de software: regras simples escondem enorme complexidade, e padrões, princípios e prática ajudam a tomar decisões melhores.">Off Topic: Por que programadores devem jogar Go</a>
+- <a class="aor-index-list__main-link" href="/2008/07/15/off-topic-por-que-programadores-devem-jogar-go/" title="Tradução do Jon Dahl: o Go tem regras simples e complexidade quase infinita, e formas, provérbios e joseki espelham design patterns, princípios ágeis e exercícios de programação.">Off Topic: Por que programadores devem jogar Go</a>
 
 ## 2008 - Maio
 
 - <a class="aor-index-list__main-link" href="/2008/05/16/off-topic-dando-o-sangue-pelo-rails-parte-2/" title="Depois de viajar de ônibus a Niterói e enfrentar um dia exaustivo, o autor retirou o passaporte às 7h05. Com a documentação em mãos, começou a correr atrás de passagens e hospedagem para a RailsConf.">Off-Topic: Dando o Sangue pelo Rails! Parte 2</a>
-- <a class="aor-index-list__main-link" href="/2008/05/07/off-topic-dando-o-sangue-pelo-rails/" title="Sem vagas para agendar o passaporte em São Paulo, o autor viajou a Niterói, doou sangue numa campanha contra a dengue e conseguiu atendimento na Polícia Federal. A viagem à RailsConf voltou a ser possível, mas na correria.">Off-Topic: Dando o Sangue pelo Rails!</a>
+- <a class="aor-index-list__main-link" href="/2008/05/07/off-topic-dando-o-sangue-pelo-rails/" title="Sem vagas para o passaporte em São Paulo, o autor viajou a Niterói, doou sangue numa campanha contra a dengue e conseguiu atendimento na Polícia Federal. A RailsConf voltou a ser possível, na correria.">Off-Topic: Dando o Sangue pelo Rails!</a>
 
 ## 2008 - Abril
 
 - <a class="aor-index-list__main-link" href="/2008/04/19/off-topic-vamos-todos-impedir-a-regulamenta-o-da-profiss-o-de-analista-de-sistema/" title="O autor critica a regulamentação de analistas de sistemas por comparar software a profissões de risco. Para ele, diploma, conselhos e burocracia não garantem qualidade e ainda podem barrar bons profissionais.">Off Topic: Vamos todos impedir a regulamentação da profissão de analista de sistema</a>
 - <a class="aor-index-list__main-link" href="/2008/04/13/off-topic-nunca-confie-no-tiobe/" title="Ao examinar a fórmula do TIOBE, o autor mostra como hits de buscadores, duplicatas e ruído distorcem a medida. Por isso, o índice não sustenta conclusões confiáveis sobre o crescimento das linguagens.">Off Topic: Nunca confie no TIOBE</a>
-- <a class="aor-index-list__main-link" href="/2008/04/13/off-topic-google-app-engine-e-cloud-computing/" title="O autor compara hosting, VPS, AWS e Google App Engine e mostra o atrativo dos recursos elásticos sob demanda. A contrapartida é adaptar a aplicação a paradigmas próprios e dificultar uma migração futura.">Off-Topic: Google App Engine e Cloud Computing</a>
+- <a class="aor-index-list__main-link" href="/2008/04/13/off-topic-google-app-engine-e-cloud-computing/" title="De hosting próprio a co-location, VPS, AWS e Google App Engine: o atrativo dos recursos elásticos sob demanda e o preço de adaptar a aplicação a paradigmas que dificultam a migração futura.">Off-Topic: Google App Engine e Cloud Computing</a>
 
 ## 2008 - Março
 
@@ -368,7 +368,7 @@ Todos os posts Off-Topic do blog — filosofia, carreira, gerenciamento, e outro
 
 ## 2007 - Agosto
 
-- <a class="aor-index-list__main-link" href="/2007/08/29/off-topic-plido-ponto-azul/" title="A imagem da Terra capturada pela Voyager I inspira Carl Sagan a refletir sobre nossa fragilidade e responsabilidade, enquanto o autor recomenda Cosmos como legado para formar crianças curiosas.">Off Topic: Pálido Ponto Azul</a>
+- <a class="aor-index-list__main-link" href="/2007/08/29/off-topic-plido-ponto-azul/" title="A imagem da Terra capturada pela Voyager 1 inspira Carl Sagan a refletir sobre nossa fragilidade e responsabilidade, enquanto o autor recomenda Cosmos como legado para formar crianças curiosas.">Off Topic: Pálido Ponto Azul</a>
 - <a class="aor-index-list__main-link" href="/2007/08/23/off-topic-inimigos-da-razo/" title="Inspirado por Richard Dawkins e Carl Sagan, o autor defende evidências, ceticismo e responsabilidade pessoal contra dogmas, superstições e disputas irracionais entre tecnologias.">Off Topic: Inimigos da Razão</a>
 - <a class="aor-index-list__main-link" href="/2007/08/19/a-falcia-do-custo-perdido/" title="O ingresso de cinema ilustra a falácia do custo perdido: dinheiro já gasto não deve decidir o próximo passo, seja ao avaliar um filme, uma licença de software ou uma arquitetura.">A Falácia do Custo Perdido</a>
 - <a class="aor-index-list__main-link" href="/2007/08/12/akitaonrails-retrospectiva-1984-2007/" title="O autor revisita sua formação em computadores, linguagens e projetos até chegar ao Rails e trabalhar por conta própria, defendendo aprendizado contínuo, curiosidade e decisões sem dogmas.">AkitaOnRails, Retrospectiva 1985-2007</a>
@@ -398,7 +398,7 @@ Todos os posts Off-Topic do blog — filosofia, carreira, gerenciamento, e outro
 
 ## 2006 - Outubro
 
-- <a class="aor-index-list__main-link" href="/2006/10/19/kathy-sierra-dilbert-e-a-zona-de-mediocridade/" title="Kathy Sierra descreve a zona de mediocridade como o espaço dos produtos seguros que ninguém ama, e defende aceitar o risco de provocar paixão. Para sair dela, é preciso suspender a voz que bloqueia ideias antes de testá-las.">Kathy Sierra: Dilbert e a zona de mediocridade</a>
+- <a class="aor-index-list__main-link" href="/2006/10/19/kathy-sierra-dilbert-e-a-zona-de-mediocridade/" title="Kathy Sierra descreve a zona de mediocridade, o espaço dos produtos seguros que ninguém ama. Citando Scott Adams, defende arriscar paixão. Sair dela exige desligar a voz que mata ideias antes do teste.">Kathy Sierra: Dilbert e a zona de mediocridade</a>
 
 ## 2006 - Setembro
 

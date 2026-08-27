@@ -188,7 +188,7 @@ Want to see only the Off-Topic posts? [Click here](/en/off-topic/).
 
 ## 2014 - November
 
-- <a class="aor-index-list__main-link" href="/en/2014/11/21/small-bites-off-topic-people-over-processes-o-que-sao-people/" title="The author explains that Agile requires processes and continuous improvement, while dealing better with people calls for psychology, behavioral economics, and network concepts. Our behavior is less rational than it seems.">[Small Bites/Off-Topic] &quot;People over Processes&quot; — what are &quot;People&quot;?</a>
+- <a class="aor-index-list__main-link" href="/en/2014/11/21/small-bites-off-topic-people-over-processes-o-que-sao-people/" title="Agile inherits from Lean its emphasis on processes and continuous improvement, but prioritizing people takes psychology, behavioral economics, and network theory. A reading list to start with, and a reminder that we&#39;re less rational than we&#39;d like.">[Small Bites/Off-Topic] &quot;People over Processes&quot; — what are &quot;People&quot;?</a>
 
 ## 2014 - October
 
@@ -224,7 +224,7 @@ Want to see only the Off-Topic posts? [Click here](/en/off-topic/).
 
 ## 2013 - November
 
-- <a class="aor-index-list__main-link" href="/en/2013/11/18/off-topic-trabalho-remoto-small-office-home-office-soho/" title="Remote work can work, but it is not a universal solution. The text argues that structures between centralization and isolation support collaboration, mentoring, and career development.">[Off-Topic] Remote Work — Small Office, Home Office (SoHo)</a>
+- <a class="aor-index-list__main-link" href="/en/2013/11/18/off-topic-trabalho-remoto-small-office-home-office-soho/" title="Remote work works, but it is not a universal solution. Reviewing 37signals&#39; book Remote, the argument is that structures between full centralization and isolation favor collaboration, mentoring, and career growth.">[Off-Topic] Remote Work — Small Office, Home Office (SoHo)</a>
 - <a class="aor-index-list__main-link" href="/en/2013/11/14/off-topic-tech-startups-superlotacao-de-b2c-boring/" title="The text criticizes the race toward nearly identical B2C startups and argues that B2B innovation starts with understanding corporate processes. Without that experience, the shortcut can leave a generation years behind.">[Off-Topic] Tech Startups, B2C overcrowding. Boring.</a>
 - <a class="aor-index-list__main-link" href="/en/2013/11/02/off-topic-programadores-sao-pessimos-comunicadores-udp-vs-tcp/" title="Using UDP and TCP as a metaphor, the text says programmers confuse informing with communicating. Real projects require confirming connection, context, order, understanding, and message delivery.">[Off-Topic] Programmers Are Terrible Communicators (UDP vs TCP)</a>
 - <a class="aor-index-list__main-link" href="/en/2013/11/01/off-topic-agile-feito-errado/" title="The text argues that Agile cannot save teams without technical ability and commitment. Planning, pair programming, quality, and responsibility become a performance, and bad professionals need replacing.">[Off-Topic] Agile Done Wrong</a>
@@ -232,7 +232,7 @@ Want to see only the Off-Topic posts? [Click here](/en/off-topic/).
 ## 2013 - October
 
 - <a class="aor-index-list__main-link" href="/en/2013/10/31/traducao-carta-para-um-jovem-programador-considerando-uma-startup/" title="In this translation by Alex Payne, startups appear as a means, not a destination: culture standardizes, VC seeks returns, and work can take a high toll on relationships. Purpose should guide the choice.">[Translation] Letter to a Young Programmer Considering a Startup</a>
-- <a class="aor-index-list__main-link" href="/en/2013/10/30/off-topic-matematica-trolls-haters-e-discussoes-de-internet/" title="The text uses mathematics and complex systems to question formulas without understanding and confusing correlation with causation, including Lean Startup. Self-help does not become science through cases or consensus.">[Off-Topic] Math, Trolls, Haters, and Internet Discussions</a>
+- <a class="aor-index-list__main-link" href="/en/2013/10/30/off-topic-matematica-trolls-haters-e-discussoes-de-internet/" title="A mathematical foundation against self-help&#39;s magic formulas: with no defined domain they just split opinions, correlation isn&#39;t causation, and isolated cases like Lean Startup prove nothing. Consensus doesn&#39;t make truth.">[Off-Topic] Math, Trolls, Haters, and Internet Discussions</a>
 - <a class="aor-index-list__main-link" href="/en/2013/10/07/rubyconf-brasil-2014-dates-are-set/" title="Rubyconf Brasil 2014 already has a date and venue: August 28 and 29 at Teatro Frei Caneca, with room for more than 800 people. The Call for Papers was to open in March or April.">Rubyconf Brasil 2014 - Dates are Set!</a>
 - <a class="aor-index-list__main-link" href="/en/2013/10/07/off-topic-noestimates-debunked/" title="The author separates projects from ongoing operations to defend estimates, objectives, and constraints in projects. To him, constraints drive innovation, but competent execution matters more than any methodology.">[Off-Topic] #noEstimates Debunked</a>
 
@@ -259,8 +259,8 @@ Want to see only the Off-Topic posts? [Click here](/en/off-topic/).
 
 ## 2013 - June
 
-- <a class="aor-index-list__main-link" href="/en/2013/06/28/introducao-a-agilidade/" title="Robert Martin recounts how XP, Scrum, and Crystal converged in the 2001 Agile Manifesto. The author warns against dogmatic processes and consultancies that put methods ahead of people and customer value.">Introduction to Agility</a>
-- <a class="aor-index-list__main-link" href="/en/2013/06/21/processos-metodologias-e-o-cerebro-humano/" title="The author explains how emotion, randomness, and pattern-seeking create superstitions and false recipes for success. In projects, methodologies should be tested and adapted, not treated as universal truths.">Processes, Methodologies, and the Human Brain</a>
+- <a class="aor-index-list__main-link" href="/en/2013/06/28/introducao-a-agilidade/" title="Robert Martin recounts how XP, Scrum, and Crystal converged at the 2001 Snowbird meeting into the Agile Manifesto. Akita warns against dogmatic process and consultancies that put method ahead of people and customer value.">Introduction to Agility</a>
+- <a class="aor-index-list__main-link" href="/en/2013/06/21/processos-metodologias-e-o-cerebro-humano/" title="The author explains how emotion, randomness, and pattern-seeking create superstitions and false recipes for success. In projects, methodologies are techniques to test and adapt, and none of them holds as a universal truth.">Processes, Methodologies, and the Human Brain</a>
 - <a class="aor-index-list__main-link" href="/en/2013/06/07/o-que-significa-ser-um-gerente/" title="Henry Mintzberg treats management as a practice, not a science or profession: good managers combine art, craft, technique, and experience to act according to the context.">What Does It Mean to Be a Manager?</a>
 
 ## 2013 - May
@@ -310,7 +310,7 @@ Want to see only the Off-Topic posts? [Click here](/en/off-topic/).
 
 ## 2012 - May
 
-- <a class="aor-index-list__main-link" href="/en/2012/05/13/off-topic-grandes-artistas-roubam/" title="Starting from Picasso&#39;s phrase, the author argues that artists and developers begin by copying techniques, advancing only when practice helps them adapt, refine, and make them their own.">[Off-Topic] Great Artists Steal</a>
+- <a class="aor-index-list__main-link" href="/en/2012/05/13/off-topic-grandes-artistas-roubam/" title="Starting from a phrase attributed to Picasso, the author argues that artists and developers begin by copying techniques, advancing only when practice helps them adapt, refine, and make them their own.">[Off-Topic] Great Artists Steal</a>
 - <a class="aor-index-list__main-link" href="/en/2012/05/08/off-topic-reading-with-subtitles-over-kanjis-in-japanese-webpages/" title="Rikaichan, Furigana Inserter, HTML Ruby, and Mecab can add hiragana or katakana readings to Japanese webpages. The combination helps reading, but Furigana must be disabled to use Rikaichan.">[Off-Topic] Reading with subtitles over Kanjis in Japanese webpages</a>
 
 ## 2011 - December
@@ -403,7 +403,7 @@ Want to see only the Off-Topic posts? [Click here](/en/off-topic/).
 
 ## 2009 - September
 
-- <a class="aor-index-list__main-link" href="/en/2009/09/26/off-topic-procurar-raciocionar-faz-bem/" title="A reflection on pair programming, responsibility, and disagreements between Spolsky and Bob Martin argues for testing Agile practices, understanding their reasons, and rejecting dogma.">[Off-Topic] Thinking Makes You Better</a>
+- <a class="aor-index-list__main-link" href="/en/2009/09/26/off-topic-procurar-raciocionar-faz-bem/" title="Pair programming needs an active pilot and co-pilot, Agility is accountability, and the Spolsky versus Bob Martin spat becomes a case for testing Agile practices, grasping their reasons, and refusing dogma.">[Off-Topic] Thinking Makes You Better</a>
 - <a class="aor-index-list__main-link" href="/en/2009/09/12/off-topic-a-argumenta--o-atrav-s-da-intimida--o/" title="Ayn Rand&#39;s translation identifies argument from intimidation as a fallacy that replaces reasons with fear and guilt, defending evidence and carefully examined premises.">[Off-Topic] The Argument from Intimidation</a>
 - <a class="aor-index-list__main-link" href="/en/2009/09/09/off-topic-direitos-do-homem/" title="Ayn Rand&#39;s translation defends individual rights as the foundation of freedom and capitalism, limits government to protection against force, and rejects economic rights requiring others&#39; labor.">[Off-Topic] Man&#39;s Rights</a>
 - <a class="aor-index-list__main-link" href="/en/2009/09/08/off-topic-o-culto-da-moral-cinzenta/" title="Commenting on Ayn Rand&#39;s The Cult of Gray Morality, the author distinguishes honest error from deliberate omission and criticizes those who use ambiguity to evade moral judgment.">[Off-Topic] The Cult of Gray Morality</a>
@@ -450,12 +450,12 @@ Want to see only the Off-Topic posts? [Click here](/en/off-topic/).
 
 ## 2009 - February
 
-- <a class="aor-index-list__main-link" href="/en/2009/02/03/tradu-o-scrum-fl-cido/" title="Martin Fowler&#39;s translation shows how adopting Scrum without technical practices can leave code flaccid. Fabio emphasizes testing, refactoring, frequent integration, and collective ownership.">Translation: Flaccid Scrum</a>
+- <a class="aor-index-list__main-link" href="/en/2009/02/03/tradu-o-scrum-fl-cido/" title="A translation of Martin Fowler&#39;s &#39;Flaccid Scrum&#39;: adopting Scrum without technical practices sinks the team into a messy codebase. Notes on testing, refactoring, frequent integration, and collective ownership.">Translation: Flaccid Scrum</a>
 
 ## 2008 - December
 
-- <a class="aor-index-list__main-link" href="/en/2008/12/18/tradu-o-d-vida-t-cnica/" title="Steve McConnell&#39;s translation separates accidental from strategic technical debt, explains its interest, and suggests tracking it in the backlog. Shortcuts can make sense when traceable and repayable.">Translation: Technical Debt</a>
-- <a class="aor-index-list__main-link" href="/en/2008/12/16/off-topic-m-todo-cient-fico-vs-cargo-cult/" title="Fabio criticizes cargo cult programming and proposes testing hypotheses through research, throwaway prototypes, and experiments. At YellowPages, four months of preparation kept four months of implementation from becoming twenty.">Off-Topic: Scientific Method vs Cargo Cult</a>
+- <a class="aor-index-list__main-link" href="/en/2008/12/18/tradu-o-d-vida-t-cnica/" title="Translation of Steve McConnell&#39;s classic article on technical debt: accidental vs. strategic debt, the interest that shortcuts charge, and why every debt belongs in the backlog.">Translation: Technical Debt</a>
+- <a class="aor-index-list__main-link" href="/en/2008/12/16/off-topic-m-todo-cient-fico-vs-cargo-cult/" title="Cargo culting is repeating structures without understanding why. The fix is testing hypotheses with throwaway prototypes. At YellowPages, four months of prep kept four months of coding from becoming twenty.">Off-Topic: Scientific Method vs Cargo Cult</a>
 
 ## 2008 - November
 
@@ -469,16 +469,16 @@ Want to see only the Off-Topic posts? [Click here](/en/off-topic/).
 ## 2008 - October
 
 - <a class="aor-index-list__main-link" href="/en/2008/10/09/off-topic-entendendo-a-crise-econ-mica/" title="Drawing on Taleb and the financial crisis, the author explains why past data cannot prove theories. It can show an idea is false, while Black Swans expose its limits.">Off-Topic: Understanding the Economic Crisis</a>
-- <a class="aor-index-list__main-link" href="/en/2008/10/07/off-topic-o-manifesto-gil-ou-como-se-tornar-o-google/" title="The author argues that agility depends on philosophy, trust, and self-organizing teams, not procedures alone. Through Conway, open source, and Google, he advocates a culture that supports innovation and adaptation.">Off-Topic: The Agile Manifesto, or How to Become Google</a>
+- <a class="aor-index-list__main-link" href="/en/2008/10/07/off-topic-o-manifesto-gil-ou-como-se-tornar-o-google/" title="Agility comes from philosophy, trust, and self-organizing teams; methodology alone won&#39;t do. From the Agile Manifesto to Conway, Pareto, Wikipedia, and Google: why open source culture breeds innovation.">Off-Topic: The Agile Manifesto, or How to Become Google</a>
 
 ## 2008 - September
 
 - <a class="aor-index-list__main-link" href="/en/2008/09/27/chatting-with-joshua-peek/" title="Joshua Peek explains how he joined Rails Core after making Rails 2.2 thread-safe during Google Summer of Code. The interview covers modest MRI gains, JRuby improvements, and caches preloaded at boot.">Chatting with Joshua Peek</a>
-- <a class="aor-index-list__main-link" href="/en/2008/09/20/off-topic-o-poder-do-mito-redux/" title="Akita criticizes the promise of manufacturing leaders through self-help, certifications, and ready-made methodologies. To him, leadership requires self-teaching, merit, and real challenges, not formulas crediting every success to the method">Off-Topic: The Power of Myth, Redux</a>
+- <a class="aor-index-list__main-link" href="/en/2008/09/20/off-topic-o-poder-do-mito-redux/" title="Self-help, certifications, and canned methodologies promise to manufacture leaders. The argument: leaders make themselves through self-teaching, merit, and real challenges; the magic recipe takes the credit.">Off-Topic: The Power of Myth, Redux</a>
 
 ## 2008 - July
 
-- <a class="aor-index-list__main-link" href="/en/2008/07/15/off-topic-por-que-programadores-devem-jogar-go/" title="The translation relates Go to software development: simple rules conceal enormous complexity, while patterns, principles, and practice help us make better decisions.">Off Topic: Why Programmers Should Play Go</a>
+- <a class="aor-index-list__main-link" href="/en/2008/07/15/off-topic-por-que-programadores-devem-jogar-go/" title="A Jon Dahl translation: Go has simple rules and near-infinite complexity, and shapes, proverbs, and joseki mirror design patterns, agile principles, and programming exercises.">Off Topic: Why Programmers Should Play Go</a>
 - <a class="aor-index-list__main-link" href="/en/2008/07/02/chatting-with-luis-lavena-ruby-on-windows/" title="Luis Lavena explains why maintaining Ruby on Windows involves CRT, MinGW, C extensions, and RubySpecs. RubyInstaller already runs Rails, but the project needs more contributors.">Chatting with Luis Lavena (Ruby on Windows)</a>
 
 ## 2008 - June
@@ -488,7 +488,7 @@ Want to see only the Off-Topic posts? [Click here](/en/off-topic/).
 ## 2008 - May
 
 - <a class="aor-index-list__main-link" href="/en/2008/05/16/off-topic-dando-o-sangue-pelo-rails-parte-2/" title="After taking a bus to Niterói and enduring an exhausting day, the author picked up his passport at 7:05 a.m. With the paperwork in hand, he started scrambling for flights and lodging for RailsConf.">Off-Topic: Bleeding for Rails! Part 2</a>
-- <a class="aor-index-list__main-link" href="/en/2008/05/07/off-topic-dando-o-sangue-pelo-rails/" title="With no passport appointments available in São Paulo, the author traveled to Niterói, donated blood in an anti-dengue campaign, and got an appointment with the Federal Police. RailsConf became possible again, but in a rush.">Off-Topic: Bleeding for Rails!</a>
+- <a class="aor-index-list__main-link" href="/en/2008/05/07/off-topic-dando-o-sangue-pelo-rails/" title="With no passport slots in São Paulo, the author went to Niterói, donated blood in an anti-dengue campaign, and got an appointment with the Federal Police. RailsConf was possible again, in a rush.">Off-Topic: Bleeding for Rails!</a>
 - <a class="aor-index-list__main-link" href="/en/2008/05/06/chatting-with-hongli-lai-and-ninh-bui-phusion/" title="Hongli Lai and Ninh Bui explain how Phusion Passenger simplifies Rails deployment, shuts down idle processes, and matches or outperforms Mongrel clusters. Ruby Enterprise Edition saved 33% of memory on average.">Chatting with Hongli Lai and Ninh Bui (Phusion)</a>
 
 ## 2008 - April
@@ -496,7 +496,7 @@ Want to see only the Off-Topic posts? [Click here](/en/off-topic/).
 - <a class="aor-index-list__main-link" href="/en/2008/04/21/chatting-with-chris-wanstrath-err-the-blog-github/" title="Chris Wanstrath explains why he created GitHub to make open source contributions easier and reveals the platform’s architecture, with Git, SSH, memcached, background jobs, and a feed of nearly 1 million lines.">Chatting with Chris Wanstrath (Err the Blog/Github)</a>
 - <a class="aor-index-list__main-link" href="/en/2008/04/19/off-topic-vamos-todos-impedir-a-regulamenta-o-da-profiss-o-de-analista-de-sistema/" title="The author criticizes regulating systems analysts by comparing software with high-risk professions. To him, degrees, councils, and bureaucracy do not guarantee quality and may still block good professionals.">Off Topic: Let&#39;s All Stop the Regulation of the Systems Analyst Profession</a>
 - <a class="aor-index-list__main-link" href="/en/2008/04/13/off-topic-nunca-confie-no-tiobe/" title="Examining TIOBE’s formula, the author shows how search-engine hits, duplicates, and noise distort the measurement. The index therefore cannot support reliable conclusions about language growth.">Off Topic: Never Trust TIOBE</a>
-- <a class="aor-index-list__main-link" href="/en/2008/04/13/off-topic-google-app-engine-e-cloud-computing/" title="The author compares hosting, VPS, AWS, and Google App Engine, showing the appeal of elastic, on-demand resources. The tradeoff is adapting the application to its own paradigms and making future migration harder.">Off-Topic: Google App Engine and Cloud Computing</a>
+- <a class="aor-index-list__main-link" href="/en/2008/04/13/off-topic-google-app-engine-e-cloud-computing/" title="From self-hosting to co-location, VPS, AWS, and Google App Engine: the appeal of elastic on-demand resources and the price of adapting an application to paradigms that make future migration harder.">Off-Topic: Google App Engine and Cloud Computing</a>
 
 ## 2008 - March
 
@@ -530,7 +530,7 @@ Want to see only the Off-Topic posts? [Click here](/en/off-topic/).
 
 ## 2007 - August
 
-- <a class="aor-index-list__main-link" href="/en/2007/08/29/off-topic-plido-ponto-azul/" title="An image of Earth captured by Voyager I inspires Carl Sagan to reflect on our fragility and responsibility, while the author recommends Cosmos as a legacy for raising curious children.">Off Topic: Pale Blue Dot</a>
+- <a class="aor-index-list__main-link" href="/en/2007/08/29/off-topic-plido-ponto-azul/" title="An image of Earth captured by Voyager 1 inspires Carl Sagan to reflect on our fragility and responsibility, while the author recommends Cosmos as a legacy for raising curious children.">Off Topic: Pale Blue Dot</a>
 - <a class="aor-index-list__main-link" href="/en/2007/08/23/off-topic-inimigos-da-razo/" title="Inspired by Richard Dawkins and Carl Sagan, the author argues for evidence, skepticism, and personal responsibility against dogma, superstition, and irrational disputes between technologies.">Off Topic: Enemies of Reason</a>
 - <a class="aor-index-list__main-link" href="/en/2007/08/19/a-falcia-do-custo-perdido/" title="A movie ticket illustrates the sunk cost fallacy: money already spent should not decide the next step, whether you are judging a movie, a software license, or an architecture.">The Sunk Cost Fallacy</a>
 - <a class="aor-index-list__main-link" href="/en/2007/08/12/akitaonrails-retrospectiva-1984-2007/" title="The author revisits his path through computers, languages, and projects before reaching Rails and working for himself, arguing for continuous learning, curiosity, and non-dogmatic decisions.">AkitaOnRails, Retrospective 1985-2007</a>
@@ -573,7 +573,7 @@ Want to see only the Off-Topic posts? [Click here](/en/off-topic/).
 
 ## 2006 - October
 
-- <a class="aor-index-list__main-link" href="/en/2006/10/19/kathy-sierra-dilbert-e-a-zona-de-mediocridade/" title="Kathy Sierra describes the zone of mediocrity as the space of safe products nobody loves, and argues for accepting the risk of provoking passion. Escaping it means silencing the voice that blocks ideas before they’re tested.">Kathy Sierra: Dilbert and the Zone of Mediocrity</a>
+- <a class="aor-index-list__main-link" href="/en/2006/10/19/kathy-sierra-dilbert-e-a-zona-de-mediocridade/" title="Kathy Sierra describes the zone of mediocrity, the space of safe products nobody loves. Quoting Scott Adams, she argues for risking passion. Escaping means silencing the voice that kills ideas early.">Kathy Sierra: Dilbert and the Zone of Mediocrity</a>
 
 ## 2006 - September
 
