@@ -16,7 +16,9 @@ draft: false
 
 "Todo mundo que é alguém acompanhou a Apple nas últimas décadas. Ame ou odeie, a única coisa que você não pode fazer é ignorá-la." - esse sempre foi o consenso geral.
 
-Os profissionais "criativos" (como se "criativo" fosse restrito apenas a pintores e ilustradores) sempre foram os seguidores mais fiéis da Apple, e com razão. A plataforma foi o berço de ferramentas essenciais como Photoshop, QuarkXPress, PostScript e PDF, QuickTime. A Apple estabeleceu os padrões para criação de mídia. Qualquer um que era alguém usava essas ferramentas. A Microsoft focava no mercado corporativo, não nos criativos. O Linux engatinhava, e a maioria dos desenvolvedores nem sabia a diferença entre CMYK e RGB ainda — ficavam satisfeitos em ter um bitmap tosco na tela.
+Os profissionais "criativos" (como se "criativo" fosse restrito a pintores e ilustradores) sempre foram os seguidores mais fiéis da Apple, e com razão. A plataforma foi o berço de ferramentas essenciais como Photoshop, QuarkXPress, PostScript, PDF e QuickTime. A Apple estabeleceu os padrões da criação de mídia, e qualquer um que era alguém usava essas ferramentas.
+
+A Microsoft focava no mercado corporativo, não nos criativos. O Linux ainda engatinhava, e a maioria dos desenvolvedores nem sabia a diferença entre CMYK e RGB. Ficavam satisfeitos em ter um bitmap tosco na tela.
 
 ![Old Macintosh](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/587/918d80cb21131a7a62e6ccaf71229960.jpg)
 
@@ -26,11 +28,11 @@ Tenho uma teoria: achamos que dominávamos a tecnologia no final dos anos 90, qu
 
 A Apple teve a sorte de escapar da explosão. Ela já estava no fundo do poço desde 1997. A reorganização do portfólio de hardware e o lançamento do iPod criaram uma bolhinha própria. Steve Jobs havia voltado e trouxe bons desenvolvedores que fizeram do OS X um prazer de usar, não só para criativos, mas também para desenvolvedores.
 
-O processo antitruste contra a Microsoft em 2000, o estouro da Bolha da Internet em 2001, o lançamento do iPod em 2001, a transição do System 9 para o OS X/BSD em 1999, a troca do PowerPC para Intel em 2005, o lançamento do desejadíssimo Titanium MacBook Pro em 2004. Tudo isso junto deu à Apple uma vantagem enorme. E enquanto todo mundo estava em baixa, a Apple parecia maior do que realmente era.
+O processo antitruste contra a Microsoft em 2000, o estouro da Bolha da Internet em 2001, o lançamento do iPod em 2001, a transição do System 9 para o OS X/BSD em 1999, a troca do PowerPC para Intel em 2005, o lançamento do desejadíssimo Titanium PowerBook G4 em 2001. Tudo isso junto deu à Apple uma vantagem enorme. E enquanto todo mundo estava em baixa, a Apple parecia maior do que realmente era.
 
 [![Microsoft Antitrust](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/589/Microsoft.gif)](http://www.economist.com/node/2535519)
 
-Aí vieram 2007/2008 com um novo impulso: o iPhone, a App Store e a necessidade de usar o Xcode — disponível apenas em computadores Apple. Diferente de ser obrigado a ficar no Windows por causa do Visual Studio, usar o Xcode era um motivo a mais para comprar um Mac.
+Aí vieram 2007 e 2008 com um novo impulso: o iPhone, a App Store e a necessidade de usar o Xcode, disponível apenas em computadores Apple. Diferente de ficar preso ao Windows por causa do Visual Studio, usar o Xcode era um motivo a mais para comprar um Mac.
 
 ![iPhone announcement](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/590/SteveJobsUnveilsiPhone.jpg)
 
@@ -38,7 +40,7 @@ As distros Linux ainda sofriam. Até então, estávamos presos ao [maldito X11](
 
 ![Steve Ballmer](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/591/steve-ballmer.jpg)
 
-A Microsoft também sofreu depois que Bill Gates passou as rédeas para Steve Ballmer. A trajetória do XP até o Windows 10, passando pelos desastres do Vista, Windows 8, Windows Mobile e pelas inúmeras tentativas de ressuscitar o Internet Explorer — o maior Walking Dead da história da tecnologia — foi deprimente. A era Ballmer foi um desastre.
+A Microsoft também sofreu depois que Bill Gates passou as rédeas para Steve Ballmer. A trajetória do XP até o Windows 10 passou pelos desastres do Vista, do Windows 8 e do Windows Mobile, além das inúmeras tentativas de ressuscitar o Internet Explorer, o maior Walking Dead da história da tecnologia. A era Ballmer foi um desastre.
 
 Aí veio o iPad. E Steve Jobs morreu.
 
@@ -56,9 +58,9 @@ Ballmer passou o bastão para Satya Nadella. A Microsoft adquiriu a Xamarin, deu
 
 E os asiáticos. Samsung, LG, Huawei, sul-coreanos e chineses forçaram os norte-americanos a se mexerem mais.
 
-Um último legado da era Steve Jobs foi [matar o Adobe Flash](https://www.androidpit.com/adobe-flash-player-not-working) (finalmente!) e impulsionar as tecnologias HTML 5, comprimindo dez anos de evolução em cinco. Foi por causa do iPhone que a Web é o que é hoje.
+Um último legado da era Steve Jobs foi matar o Adobe Flash (finalmente!) e impulsionar as tecnologias HTML 5, comprimindo dez anos de evolução em cinco. Foi por causa do iPhone que a Web é o que é hoje.
 
-[![HTML 5 kills Flash](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/594/flash-dead.jpg)](http://www.apple.com/hotnews/thoughts-on-flash/)
+[![HTML 5 kills Flash](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/594/flash-dead.jpg)](https://web.archive.org/web/20170114150212/http://www.apple.com/hotnews/thoughts-on-flash/)
 
 O Google entrou em campo e assumiu o espaço deixado pelo Internet Explorer. O WebKit se tornou a referência obrigatória de navegadores. O JavaScript se transformou na nova plataforma de aplicações, impulsionado pelas redes sociais em constante evolução.
 
@@ -82,9 +84,9 @@ Depois que Jobs morreu, ainda tínhamos a expectativa de que a Apple continuaria
 
 Não aconteceu. Foram decisão ruim atrás de decisão ruim, e a sensação é de que voltamos ao início dos anos 90, na era de Scully, Spindler ou Amelio.
 
-[![Apple, Prey](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/595/wired_cover.jpg)](http://uk.businessinsider.com/wired-1997-save-apple-predictions-pray-2015-5)
+[![Apple, Prey](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/595/wired_cover.jpg)](https://web.archive.org/web/20170116083256/http://uk.businessinsider.com/wired-1997-save-apple-predictions-pray-2015-5)
 
-Mas agora existem alternativas sólidas disponíveis: o Windows 10 Anniversary Edition é finalmente um Windows competente, recuperando a glória dos meados dos anos 90. E as grandes distros Linux são coesas, exigindo pouco ou nenhum ajuste nerd em arquivos de configuração obscuros, empurradas pela Canonical — para o bem ou para o mal.
+Mas agora existem alternativas sólidas disponíveis: o Windows 10 Anniversary Edition é finalmente um Windows competente, recuperando a glória dos meados dos anos 90. E as grandes distros Linux são coesas, exigindo pouco ou nenhum ajuste nerd em arquivos de configuração obscuros, empurradas pela Canonical, para o bem ou para o mal.
 
 E a maioria dos apps que usamos no dia a dia está disponível. Dá até para encontrar um bom editor de texto multiplataforma baseado na web na forma do Atom.
 
@@ -102,9 +104,9 @@ As linguagens de programação pararam de evoluir em meados dos anos 90. Todas a
 
 Viu os produtos da CES 2017? Travesseiros e camas que monitoram seu sono e sincronizam com um app. Máquinas de lavar. Aspiradores de pó. Dispositivos fitness. Dispositivos de saúde. Assistentes pessoais como a Alexa. Tudo captura dados seus e sincroniza na nuvem.
 
-A nuvem também chegou ao pico. É ubíqua. Não é só acessível — é barata. A tecnologia em geral está absurdamente barata hoje em dia.
+A nuvem também chegou ao pico. É ubíqua, acessível e barata. A tecnologia em geral está absurdamente barata hoje em dia.
 
-Wearables e VR são boas novidades, mas mesmo que se tornem ubíquos, não é uma revolução — é apenas uma extensão dos casos de uso que a revolução do iPhone iniciou.
+Wearables e VR são boas novidades, mas mesmo que se tornem ubíquos, continuam sendo apenas uma extensão dos casos de uso que a revolução do iPhone iniciou.
 
 ![Baby monitor](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/600/3017180-inline-mg5205.jpg)
 

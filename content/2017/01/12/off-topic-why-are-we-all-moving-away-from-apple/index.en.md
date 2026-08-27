@@ -14,29 +14,31 @@ draft: false
 
 "Anyone that is someone has been following Apple for the past couple of decades. Love them, or hate them, the only thing you can't do is ignore them." - that was always the general thought.
 
-"Creative" Professionals (as if "creatives" were only restricted to painters and illustrators) have always been the most loyal Apple followers, for good reason. It was the cradle for important tools such as Photoshop, QuarkXPress, Postscript and PDF, Quicktime. They really set the standards for media creation. Anyone that was someone used those tools. Windows focused on the corporate, not the creatives. Linux was in its infancy, most developers didn't even know the difference between CMYK and RGB yet, they were content with having a crude bitmap on the screen.
+"Creative" professionals (as if "creative" were restricted to painters and illustrators) have always been the most loyal Apple followers, for good reason. It was the cradle of essential tools like Photoshop, QuarkXPress, PostScript, PDF, and QuickTime. Apple set the standards for media creation, and anyone that was someone used those tools.
+
+Microsoft focused on the corporate market, not on the creatives. Linux was still in its infancy, and most developers didn't even know the difference between CMYK and RGB. They were content with a crude bitmap on the screen.
 
 ![Old Macintosh](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/587/918d80cb21131a7a62e6ccaf71229960.jpg)
 
-I have this theory that we took technology for granted in the late 90's, we thought we were at the top of the world. That's because of the Dotcom Bubble of the late 90's, which burst together with 9/11. The depression made us waste the next 3 to 4 years trying to figure out what we would do next.
+I have this theory that we took technology for granted in the late 90's, thinking we were at the top of the world. That came from the Dotcom Bubble of the late 90's, which burst together with 9/11. The depression made us waste the next 3 to 4 years trying to figure out what we would do next.
 
 ![Dotcom burst](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/588/1dot.jpg)
 
 Apple had the luck to dodge the burst. They were already at the rock bottom since 1997. The cleaning up of their hardware lineup and the release of the iPod created their own small bubble. Steve Jobs was back and he brought good developers that made OS X a joy to use not only for creatives, but developers as well.
 
-The Microsoft Antitrust case of 2000, the Dotcom Bubble burst in 2001, the release of the iPod in 2001, the switch from System 9 to OS X/BSD in 1999, the switch from PowerPC to Intel in 2005, the release of the ultra desirable Titanium Macbook Pro in 2004. All of those contributed to give Apple the edge. And while everybody was down, it made them feel even larger than life.
+The Microsoft Antitrust case of 2000, the Dotcom Bubble burst in 2001, the release of the iPod in 2001, the switch from System 9 to OS X/BSD in 1999, the switch from PowerPC to Intel in 2005, the release of the ultra desirable Titanium PowerBook G4 in 2001. All of those contributed to give Apple the edge. And while everybody was down, it made them feel even larger than life.
 
 [![Microsoft Antitrust](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/589/Microsoft.gif)](http://www.economist.com/node/2535519)
 
-Then in 2007/2008 they had a new push: the iPhone, the App Store, and the need to use XCode - available only in Apple computers. Unlike being forced to stay on Windows because of Visual Studio, using XCode was actually an extra reason to buy a Mac.
+Then in 2007/2008 they had a new push: the iPhone, the App Store, and the need to use Xcode, available only on Apple computers. Unlike being forced onto Windows because of Visual Studio, using Xcode was actually an extra reason to buy a Mac.
 
 ![iPhone announcement](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/590/SteveJobsUnveilsiPhone.jpg)
 
-Linux distros were still struggling. To this day, we were stuck with the [stupid X11](https://www.youtube.com/watch?v=RIctzAQOe44). If a Linux-based OS was cutting edge, X11 was the worst possible OS on top of it. Apple was smart enough to not adopt it and instead create Quartz from scratch and improve it step by step on each OS X new release. It took them 5 years to fully stabilize. Only now, in 2017, we are finally moving away from X into Wayland/Weston.
+Linux distros were still struggling. Back then, we were stuck with the [stupid X11](https://www.youtube.com/watch?v=RIctzAQOe44). If a Linux-based OS was cutting edge, X11 on top of it was the worst of both worlds. Apple was smart enough not to adopt it and built Quartz from scratch, improving it with each new OS X release. It took five years to fully stabilize. Only now, in 2017, are we finally moving from X to Wayland/Weston.
 
 ![Steve Ballmer](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/591/steve-ballmer.jpg)
 
-Microsoft also struggled after Bill Gates left the reins to Steve Ballmer. The switch from XP all the way to the current Windows 10, going through the disastrous attempts at Windows Vista up to Windows 8, Windows Mobile, then the many attempts to bring new life to the dominant but defunct Internet Explorer - the largest Walking Dead ever in technology. The Ballmer era was a disaster.
+Microsoft also struggled after Bill Gates handed the reins to Steve Ballmer. The road from XP to Windows 10 ran through the disasters of Vista, Windows 8, and Windows Mobile, plus the endless attempts to revive the dominant but defunct Internet Explorer, the largest Walking Dead ever in technology. The Ballmer era was a disaster.
 
 Then the iPad got released and Steve Jobs died.
 
@@ -48,15 +50,15 @@ And so are we.
 
 Major Linux distros, Microsoft, PC hardware manufacturers, big industry turnarounds (Nokia, Blackberry, Motorola) the dawn of the GPU era, the end of Moore's Law speed clock wars into parallel computing, the dawn of ARM. It took 10 years for all the smoke to finally settle, and it took having Apple standing still for 6 years for everybody to finally catch up.
 
-Ballmer left the reins to Satya Nadella. Microsoft acquires Xamarin, makes huge strides into open source and even [Ubuntu now runs natively on top of Windows 10](http://www.akitaonrails.com/en/2016/07/26/o-ano-do-linux-no-desktop-esta-usavel).
+Ballmer left the reins to Satya Nadella. Microsoft acquired Xamarin, made huge strides into open source, and even [Ubuntu now runs natively on top of Windows 10](/en/2016/07/26/the-year-of-linux-on-the-desktop-it-s-usable/).
 
 ![Satya Nadella](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/593/THE_END_TIMES_ARE_HERE-399de53540c79757ac9af535579cdad9.jpg)
 
-Ah, and the Asians. Samsung, LG, Huawei, the South Koreans, the Chinese, are all forcing the North Americans to push harder.
+And the Asians. Samsung, LG, Huawei, the South Koreans and the Chinese all forced the North Americans to push harder.
 
-One last legacy of the Steve Jobs era was both [killing Adobe Flash](https://www.androidpit.com/adobe-flash-player-not-working) (finally!) and pushing HTML 5 technologies forward, an acceleration of 10 years in 5. It was because of the iPhone that we have the Web as it is.
+One last legacy of the Steve Jobs era was both killing Adobe Flash (finally!) and pushing HTML 5 technologies forward, an acceleration of 10 years in 5. It was because of the iPhone that we have the Web as it is.
 
-[![HTML 5 kills Flash](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/594/flash-dead.jpg)](http://www.apple.com/hotnews/thoughts-on-flash/)
+[![HTML 5 kills Flash](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/594/flash-dead.jpg)](https://web.archive.org/web/20170114150212/http://www.apple.com/hotnews/thoughts-on-flash/)
 
 Google jumped in, took over the ball that Internet Explorer left behind. WebKit became the quintessential web browser reference. Javascript became the new application platform, pushed by the many evolving Social Networks.
 
@@ -70,7 +72,7 @@ Why is it easy now to move between macOS or Windows or Linux distros? Or between
 
 Because there is at least a good Chrome browser in every platform.
 
-Because the apps we use are mostly web enabled: Gmail, Spotify, Slack, Hangout, Twitter, Facebook, Spotify, YouTube, Netflix, Amazon. The other half are all available natively under iOS or Android: Whatsapp, Waze, Swarm, Snapchat, Instagram.
+Because the apps we use are mostly web enabled: Gmail, Spotify, Slack, Hangout, Twitter, Facebook, YouTube, Netflix, Amazon. The other half are all available natively under iOS or Android: Whatsapp, Waze, Swarm, Snapchat, Instagram.
 
 10 years ago, with the release of the iPhone, the technology industry finally started to put their shit together.
 
@@ -80,13 +82,13 @@ After Jobs died we still had expectations that Apple would keep pushing forward,
 
 It didn't happen. They made bad decision after bad decision and we keep feeling that we are back in the early 90's, under Scully, Spindler or Amelio.
 
-[![Apple, Prey](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/595/wired_cover.jpg)](http://uk.businessinsider.com/wired-1997-save-apple-predictions-pray-2015-5)
+[![Apple, Prey](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/595/wired_cover.jpg)](https://web.archive.org/web/20170116083256/http://uk.businessinsider.com/wired-1997-save-apple-predictions-pray-2015-5)
 
-But now, there are fallbacks readily available: Windows 10 Anniversary Edition is finally a competent Windows, bringing back the glory days of the mid-90's. And major Linux distros are cohesive, requiring little to no nerdy tweaking into obscure config files, pushed by Canonical - for better or worse.
+But now, there are fallbacks readily available: Windows 10 Anniversary Edition is finally a competent Windows, bringing back the glory days of the mid-90's. And major Linux distros are cohesive, requiring little to no nerdy tweaking into obscure config files, pushed by Canonical, for better or worse.
 
 And most of the apps we use in our routines are available. Heck, you can find a good web-based cross platform text editor in the form of Atom nowadays.
 
-Apple also left the legacy of ubiquitous cross platform compilation readily available in the form of [LLVM](https://www.infoq.com/br/presentations/novas-linguagens-o-que-vem-depois-do-ruby). It served their own needs to have Objective-C available on PowerPC, Intel, ARM and Apple Ax processors. But LLVM is now the best backbone to enable languages such as Rust, RubyMotion, Crystal to exist and easily create fast binaries on multiple platforms.
+Apple also left the legacy of ubiquitous cross platform compilation readily available in the form of [LLVM](https://www.infoq.com/br/presentations/novas-linguagens-o-que-vem-depois-do-ruby) (in Portuguese). It served their own needs to have Objective-C available on PowerPC, Intel, ARM and Apple Ax processors. But LLVM is now the best backbone to enable languages such as Rust, RubyMotion, Crystal to exist and easily create fast binaries on multiple platforms.
 
 [![Chris Lattner leaves Apple to Tesla](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/596/11-1484116910-chris-lattner-01.jpg)](https://www.tesla.com/blog/welcome-chris-lattner)
 
@@ -100,9 +102,9 @@ Computer Languages stopped evolving in the mid-90's. All "new" languages are ama
 
 Did you see CES 2017 products? Pillows and beds that track your sleep and sync data to an app. Washing machines. Vacuum cleaners. Fitness devices. Health devices. Personal assistants such as Alexa. Everything takes data from you and syncs it into "the cloud".
 
-"The cloud" has also reached peak. It's ubiquitous. It's not only affordable but downright cheap. Technology in general is dirt cheap nowadays.
+"The cloud" has also peaked. It's ubiquitous, accessible, and downright cheap. Technology in general is dirt cheap nowadays.
 
-Wearables and VR are good gimmicks, but even if they become ubiquitous, it's not a revolution, just an extension of the use cases that the iPhone revolution bootstrapped.
+Wearables and VR are good gimmicks, but even if they become ubiquitous, they stay just an extension of the use cases that the iPhone revolution bootstrapped.
 
 ![Baby monitor](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/600/3017180-inline-mg5205.jpg)
 
@@ -110,13 +112,13 @@ Wearables and VR are good gimmicks, but even if they become ubiquitous, it's not
 
 ![mobile](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/602/6e752109eac4d37830078517b2aefd583d52722a.jpg)
 
-Mobile, wearables, social networks, only made people more anxious. Allowing everybody to have a "voice" online didn't improve things, just made people more anxious. Opinions are in such large supply that they are worth less and less.
+Mobile, wearables, and social networks only made people more anxious. Giving everyone a "voice" online didn't improve things, it just raised the overall anxiety. Opinions are in such large supply that they are worth less and less.
 
 Every person online is now a source of terabytes of useless information to generate pseudo-statistics that are useless for the most part. [Every person is now defined by a bunch of data in the cloud](http://www.techrepublic.com/article/the-dark-side-of-wearables-how-theyre-secretly-jeopardizing-your-security-and-privacy/).
 
 ![Trump](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/603/donald-trump-twitter-president.jpg)
 
-I have no idea where we are going from here, as a witness of history, I'd have to say that I miss the excitement of exploring new frontiers. We had that in the mid-90's onwards. We had a small break after the Dotcom burst but we got it back full blown in 2004. We lost it after 2010.
+I have no idea where we go from here. As a witness of history, I have to say I miss the excitement of exploring new frontiers. We had it from the mid-90's onward. We took a small break after the Dotcom burst, then got it back full blown in 2004. We lost it after 2010.
 
 ![Windows 95 launch](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/598/20150824-bill-gates-microsoft-windows-95-launch.0.jpg)
 
