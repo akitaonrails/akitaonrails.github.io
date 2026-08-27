@@ -2,6 +2,7 @@
 title: A Falácia do Custo Perdido
 date: '2007-08-19T00:16:00-03:00'
 slug: a-falcia-do-custo-perdido
+translationKey: a-falcia-do-custo-perdido
 description: "O ingresso de cinema ilustra a falácia do custo perdido: dinheiro já gasto não deve decidir o próximo passo, seja ao avaliar um filme, uma licença de software ou uma arquitetura."
 tags:
 - psicologia
@@ -10,15 +11,14 @@ tags:
 draft: false
 ---
 
- ![](http://s3.amazonaws.com/akitaonrails/assets/2007/8/19/donkey.jpg)
+![Close do focinho de um burro](http://s3.amazonaws.com/akitaonrails/assets/2007/8/19/donkey.jpg)
 
-Estou totalmente atolado de trabalho (são 2 da manhã de domingo) mas este pequeno pensamento me chamou a atenção porque é simples e, mesmo assim, a maioria das pessoas ainda cai nessa. O [post original](http://jchyip.blogspot.com/2007/08/sunk-cost-fallacy-for-architects.html) é _Custo Perdido para Arquitetos_, mas eu acho que deveria ser _Custo Perdido para Gerentes_. Segue a tradução:
+Estou atolado de trabalho (são 2 da manhã de domingo), mas este pequeno pensamento me chamou a atenção porque é simples e, mesmo assim, a maioria das pessoas ainda cai nessa. O [post original](http://jchyip.blogspot.com/2007/08/sunk-cost-fallacy-for-architects.html) é _Custo Perdido para Arquitetos_, mas eu acho que deveria ser _Custo Perdido para Gerentes_. Segue a tradução:
 
 Digamos que você comprou um ticket de cinema mas então percebe a partir de críticas da mídia que o filme é uma droga. Assumindo que você não tem nenhum amigo idiota que compraria seu ticket, você tem duas soluções:
 
 1. Já que você já pagou pelo ticket, talvez fosse bom sofrer o filme
 2. Jogar o ticket fora e fazer outra coisa
-
 
 E agora?
 
@@ -34,9 +34,8 @@ Então, em vez de um ticket de cinema, digamos que é a licença de algum softwa
 
 Será que existe alguma razão para considerar quanto foi pago pela licença ou hardware como tendo qualquer peso, por menor que seja, na decisão de qual é a melhor escolha arquitetural ou de projeto futuro?
 
-Bem, a menos que o sistema de gerenciamento em que você opera puna comportamento racional e recompensa comportamentos irracionais.
+Bem, a menos que o sistema de gerenciamento em que você opera puna comportamento racional e recompense comportamentos irracionais.
 
-Total bom senso. Economistas estão mais acostumados a estudar e catalogar comportamentos desse tipo. Recomendo ler sobre outros conceitos como o bom e velho [Custo da Oportunidade](http://en.wikipedia.org/wiki/Opportunity_Cost). A [Lei de Parkinson](http://en.wikipedia.org/wiki/Parkinson%27s_Law) para mim é o corolário da Lei de Expansão dos Gases e que todo desenvolvedor (eu incluso) já sofreu.
+Total bom senso. Economistas estão mais acostumados a estudar e catalogar comportamentos desse tipo. Recomendo ler sobre outros conceitos como o bom e velho [Custo da Oportunidade](http://en.wikipedia.org/wiki/Opportunity_Cost). A [Lei de Parkinson](http://en.wikipedia.org/wiki/Parkinson%27s_Law), para mim, é o corolário da lei de expansão dos gases, e todo desenvolvedor (eu incluso) já sofreu com ela.
 
-Ninguém pode acertar sempre, mas o exercício constante e diário de apenas pensar com lógica e ceticismo – em vez de andar sobre dogmas e preceitos – aumenta muito nossas chances. Talvez assim se assistirem [Uma Mente Brilhante](http://en.wikipedia.org/wiki/A_Beautiful_Mind_%28film%29) se lembrem um pouco mais do gênio por trás do [Equilíbrio Nash](http://en.wikipedia.org/wiki/Nash_equilibrium) do que apenas no melodrama.
-
+Ninguém acerta sempre, mas o exercício diário de pensar com lógica e ceticismo, em vez de andar sobre dogmas e preceitos, aumenta muito nossas chances. Talvez assim quem assistir a [Uma Mente Brilhante](http://en.wikipedia.org/wiki/A_Beautiful_Mind_%28film%29) se lembre mais do gênio por trás do [Equilíbrio de Nash](http://en.wikipedia.org/wiki/Nash_equilibrium) do que do melodrama.
