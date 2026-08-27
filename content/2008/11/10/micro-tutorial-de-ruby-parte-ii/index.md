@@ -450,7 +450,6 @@ Até aqui nada de novo, porém o Ruby tem alguns facilitadores, por exemplo:</p>
 => 400
 ```
 
-<del>-</del></p>
 Também já vimos que ele tem vários métodos que aceitam blocos para processar elemento a elemento, como “each”, “map”, “select”, “inject”. Já vimos anteriormente como operadores em Ruby nada mais são do que métodos. Vejamos como os Arrays se comportam:</p>
 <hr>
 

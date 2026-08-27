@@ -98,7 +98,7 @@ Enfim. Ao final fiz um teste mais interessante: no working copy do <span class="
 ```bash
 svn delete [arquivo antigo]
 svn add [arquivo novo]
-svn commit <del>m ""
+svn commit -m ""
 ```
 
 <br>

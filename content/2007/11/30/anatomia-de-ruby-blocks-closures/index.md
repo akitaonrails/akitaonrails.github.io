@@ -93,7 +93,6 @@ c.call(1) # => 1
 c.call(2) # => 2
 ```
 
-<del>-</del></p>
 <p>A palavra ‘lambda’ fecha o código entre chaves como um objeto, num bloco, uma instância da classe Proc. Este objeto responde ao método ‘call’. Nas duas últimas expressões passamos parâmetros ao método ‘call’ e eles vão à variável ‘i’ definida entre pipes dentro do bloco. Então, ele age como uma entidade independente, desconectada de qualquer classe em particular. Vejamos isso:</p>
 <hr>
 
@@ -107,7 +106,6 @@ c.call(self.class) # => Object
 Test.new.say© # => Test
 ```
 
-<del>-</del></p>
 <p>Estamos usando o mesmo bloco definido acima na variável ‘c’. Depois da definição da classe Test, chamamos o bloco passando ‘self.class’ e ele retorna ‘Object’ como resultado.</p>
 <p>Então, chamamos o método :say a partir de dentro de uma instância da classe Test. O método :say chama o bloco lhe dando o ‘self.class’ interno como parâmetro do bloco. Nesse caso ele imprime ‘Test’ em vez de ‘Object’, o que significa que o bloco se liga ao escopo que o cerca. Essa é uma diferença entre um bloco e um método desconectado de um objeto.</p>
 <p>De muitas maneiras, Blocks lembram funções anônimas do Javascript, delegates anônimos do C#, classes internas anônimas do Java. Essa é uma construção muito útil que foi criada primariamente para lidar melhor com iteradores. Por exemplo:</p>
@@ -119,7 +117,6 @@ Test.new.say© # => Test
 
 <ol>
  <li> => 4 3 2 1 <br>
-<del>-</del>
 </li>
 </ol>
 <p>Agora, isso é diferente do método ‘each’ do Array, que usamos antes. Este navega de trás para frente através dos elementos do Array. Ele pega um elemento e passa à variável ‘i’, configurado como parâmetro para o bloco definido entre chaves.</p>
@@ -206,7 +203,6 @@ end
 foo “Fabio”, lambda { puts “Hello” }, lambda { puts “World” }
 ```
 
-<del>-</del></p>
 <p>Este exemplo recebe um parâmetro normal e 2 blocos em vez de um. Podemos passar blocos enclausurados em objetos Proc na lista de parâmetros como faríamos com qualquer outro tipo de objeto. Normalmente não precisamos de tantos blocos diferentes dentro de um único método. O jeito mais comum é:</p>
 <hr>
 

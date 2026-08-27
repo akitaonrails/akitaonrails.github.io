@@ -154,8 +154,7 @@ De qualquer forma, agora usar o build VC6 do Ruby exige mão de obra para manter
 De qualquer forma, estou publicando as específicas do MinGW baseadas em forks do github aqui:
 
 
-<p>gem list <del>-remote —source http://gems.rubyinstaller.org<br>
--</del>-</p>
+<pre><code>gem list --remote --source http://gems.rubyinstaller.org</code></pre>
 <p>O devkit já está disponível, mas estamos embrulhando-o num bom pacote de instalação Windows. Você pode sujar as mãos e pegar o projeto sandbox do <a href="http://github.com/luislavena/rubyinstaller">Github</a> para ter seu ambiente, ou simplesmente <a href="http://www.rubyinstaller.org/sandbox/">baixar os pacotes</a>.</p>
 <p><strong>AkitaOnRails:</strong> Então, no que diz respeito a ferramentas e processos, você está fazendo um ótimo trabalho. Mas então há o código Ruby que, por si só, é um grande desafio pelo que ouço. Você me mencionou que nem parece C. Quais são os maiores problemas? Técnicos ou conseguir ajuda da lista ruby-core, ou ambos? E quanto aos test suites, como você está eliminando bugs de compatibilidade?</p>
 <p><strong>Luis Lavena:</strong> Para ser honesto, às vezes olhar para o código C do Ruby me dá dor de cabeça. Há muitas macros, definições e condições de macro que aparecem no meio de um bloco if..else... A parte mais difícil, além de rastrear o bug, é obter feedback do ruby-core. Várias vezes <a href="http://blog.mmediasys.com/2008/03/06/is-windows-a-supported-platform-for-ruby-i-guess-not/">expressei</a> minhas preocupações em listas de e-mail, IRC e no meu blog.</p>
@@ -176,10 +175,8 @@ De qualquer forma, estou publicando as específicas do MinGW baseadas em forks d
 <p><strong>Luis Lavena:</strong> <code>RUBYOPT=rubygems</code> é a parte da mágica que devemos evitar.<br>
 No Linux, se você começa a criar um script e precisa de uma gem, começa com:</p>
 <hr>
-ruby
-<p>require 'rubygems'<br>
-require 'some_gem'<br>
-<del>-</del></p>
+<pre><code>require 'rubygems'
+require 'some_gem'</code></pre>
 <p>O mesmo deveria ser feito para Windows. Não é doloroso, é boa prática. <span class="caps">RUBYOPT</span> é um atalho que não gosto — nunca vi uma distribuição Linux que ative isso por padrão e não gosto que seja configurado no Windows (é claro, esse é meu ponto de vista pessoal).</p>
 <p>Então, para evitar cair em procedimentos de teste padrão, continuo usando um solver de sudoku simples mas bom que exercita recursão, arrays e condições da VM em vez de ser I/O bound.</p>
 <p>Você pode ver isso, com resultados interessantes no <a href="http://blog.mmediasys.com/2008/04/24/contributions-speedup-and-less-quirks-for-us/">meu blog</a> (veja a seção <em>"Rubinius, RubySpecs, and speed."</em> do post).</p>
