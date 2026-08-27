@@ -2,6 +2,7 @@
 title: Evolution Through Competition
 date: '2006-09-27T16:13:00-03:00'
 slug: evolução-pela-concorrência
+translationKey: evolução-pela-concorrência
 description: "The author argues that criticism and competition drive technology forward. In Rails, limitations around internationalization, legacy systems, and asynchronous tasks have already encouraged community solutions."
 tags:
 - rails
@@ -13,73 +14,75 @@ draft: false
 
  ![](/files/402px-AdamSmith.jpg)
 
-I don't remember whether I wrote about this in a previous post or in my book, but there's a common sense principle I call **"Evolution Through Competition"**. Debates like _"Ruby VS Java"_, _"Rails VS J2EE"_ are not exclusive to the Ruby on Rails (RoR) community — not by a long shot. Let's list some recent discussions in the tech world:
+I don't remember whether I wrote about this in a post or in my book, but there's a piece of common sense I call **"Evolution Through Competition"**. Debates like _"Ruby VS Java"_ or _"Rails VS J2EE"_ are not exclusive to the Ruby on Rails crowd. Look at the other recent fights in computing:
 
 - Firefox VS Internet Explorer
 - Macs VS PCs
 - Windows VS Linux
 - C# VS Java
 
-Microsoft is the perennial villain. It operates in practically every segment of the computing market, so it will always be a target for criticism. _"Windows is bad"_, _"Office sucks"_, _"Internet Explorer is garbage"_, _"Visual Basic isn't a real professional language"_, etc. Some arguments are valid; others are just narrow-minded grudges.
+Microsoft is the favorite for the villain role. It plays in practically every computing market, so it will always take criticism: _"Windows is bad"_, _"Office is junk"_, _"Internet Explorer is worthless"_, _"Visual Basic is not a professional language"_. Some of those arguments are valid; others are just narrow-minded grumbling.
 
-Criticism is constructive when people actually do something about it. Radicals serve no purpose in this world. People who only rant and never act are irrelevant: **_"if you're not part of the solution, you're part of the problem"_**.
+Criticism is constructive when someone acts on it. Radicals are useless in this world. People who only curse and never do anything are irrelevant, as the saying goes: **_"if you're not part of the solution, you're part of the problem"_**.
 
-Kudos to everyone who channeled their dissatisfaction with the status quo into creating high-quality alternatives to Microsoft's criticized products. None of them are perfect, but the dedication deserves recognition. Today I use only Firefox (or [Camino](http://www.caminobrowser.org/) on Mac, which uses the same Gecko engine). Linux, thanks to technological backing from giants like IBM, gained advanced filesystems like AIX's JFS, Irix's XFS (Silicon Graphics), support for [NUMA](http://lse.sourceforge.net/numa), clusters, more advanced [thread](http://www.onlamp.com/pub/a/onlamp/2002/11/07/linux_threads.html) management, virtualization like [Xen](http://kerneltrap.org/node/4168), and much more — all of which made it a credible alternative for large servers.
+Hats off to everyone who turned their frustration with the status quo into high-quality alternatives to Microsoft's criticized products. None of them is perfect, but the dedication deserves recognition. These days I only use Firefox (or [Camino](http://www.caminobrowser.org/) on the Mac, which runs the same Gecko engine).
 
-Apple is no longer an intransigent company either. It learned to acknowledge its mistakes and make increasingly efficient transitions. From Motorola processors to IBM PowerPC, from the obsolete MacOS 9 to the advanced Unix-kernel-based MacOS X, and now moving from IBM PowerPC to Intel Core Duo and Core 2 Duo. Change in order to evolve.
+Linux, backed by technology giants like IBM and Silicon Graphics, gained advanced filesystems such as JFS and XFS, [NUMA](http://lse.sourceforge.net/numa) support, clusters, more advanced [thread](http://web.archive.org/web/20180415043221/http://www.onlamp.com/pub/a/onlamp/2002/11/07/linux_threads.html) management, virtualization like [Xen](http://web.archive.org/web/20111019173305/http://kerneltrap.org/node/4168), and much more. That made it a trustworthy choice for serious servers.
 
-Microsoft, for its part, isn't sitting still. Watching competitors rise against it, the company built a system to address most of the criticism: Windows Vista. Despite several stumbles and delays, it promises to be a robust and modern system. Better than Linux? Better than MacOS X? Who knows. But evolution is happening. Same story on the development platform front: threatened by Java, they created .NET as an alternative. Both have strengths and weaknesses, but .NET has fantastic features that cannot be ignored.
+Apple stopped being a stubborn company too. It learned to admit its mistakes and pull off ever cleaner transitions: from Motorola processors to IBM's PowerPC, from the obsolete MacOS 9 to MacOS X, built on a Unix core, and now from PowerPC to Intel's Core Duo and Core 2 Duo. Change in order to evolve.
 
-This isn't unique to IT. It's an inherent characteristic of [capitalism](http://en.wikipedia.org/wiki/Capitalism) — the intelligence built into the competition system is that it inevitably drives evolution. Companies today are better than they were ten or twenty years ago. That's the exact reason monopolies need to be broken up.
+Microsoft, for its part, is not sitting still. Watching competitors rise against it, the company built an answer to most of the criticism: Windows Vista. Despite the stumbles and delays, it promises to be a robust, modern system. Better than Linux? Better than MacOS X? Who knows. But evolution is happening. Same story on the development platform: under threat from Java, it created .NET. Both have strengths and weaknesses, but .NET has fantastic features nobody should ignore.
 
-Look at Brazil's telecommunications market. When we suffered under the inefficient state monopoly known as Telebrás, getting a phone line took months and cost obscene amounts of money. Today, with competitors like Telefonica and Embratel, a line can be acquired practically overnight at a reasonable price. The service is far from perfect (just check the Procon complaints), but it's undeniable that things only started improving after privatization.
+This phenomenon goes well beyond IT: it is built into [capitalism](http://en.wikipedia.org/wiki/Capitalism). The genius of competition is that it inevitably drives evolution. Companies today are better than they were ten or twenty years ago. That is exactly why monopolies need to be eradicated.
 
-So what does any of this have to do with Rails? A corollary of this pattern is that technologies that are rarely discussed, rarely criticized, tend to stagnate — or worse, get forgotten. It's the same effect as monopolies: if a company goes too long without competition, it experiences the opposite effect — it gets comfortable, deteriorates, destabilizes, until finally a competitor comes along to unseat it. That's why, in a healthy market, competition is essential.
+Take Brazil's telecom market. Back in the days of the inefficient state monopoly known as Telebrás, getting a phone line took months and cost an obscene amount of money. Today, with competitors like Telefonica and Embratel, a line is installed practically overnight at a reasonable price. The service is far from perfect (ask Procon), but things only started improving after privatization. That much is undeniable.
 
-Look up technologies like [BeOS](http://en.wikipedia.org/wiki/BeOS), languages like [Nemerle](http://nemerle.org/Main_Page), [Scheme](http://www-swiss.ai.mit.edu/projects/scheme/). Despite small niches, they were forgotten by the market at large. That doesn't mean they were bad — but for various reasons, they weren't criticized enough, weren't scrutinized enough.
+So what does any of this have to do with Rails? One corollary of this reasoning: technologies that are rarely discussed and rarely criticized tend to stagnate or, worse, to be forgotten. It is the monopoly effect again. A company that goes too long without competition gets comfortable, gets worse, falls apart, until someone finally shows up to dethrone it. In a healthy market, competition is a must.
 
-I've gone through all of that to get to this point: Ruby and Rails are under constant criticism, being observed with precision, being examined without ceremony. And that's excellent. All the gears of evolution are in motion. Thanks to all this attention — all the criticism, doubts, and skepticism — smart people from the community stepped up to fill the gaps, pushing RoR rapidly to levels it wouldn't have reached on its own. Let's look at some examples:
+Look at cases like [BeOS](http://en.wikipedia.org/wiki/BeOS), or languages like [Nemerle](http://web.archive.org/web/20130529032811/http://nemerle.org/Main_Page) and [Scheme](http://www-swiss.ai.mit.edu/projects/scheme/). They all keep small niches, but the market at large forgot them. That does not mean they were bad; for various reasons, they were never criticized or grilled enough.
+
+I explained all of that to get to this point: Ruby and Rails are under constant criticism, watched closely, grilled without ceremony. And that is excellent. Every gear of evolution is turning. Thanks to all this attention, smart people in the community stood up to fill the gaps, pushing RoR quickly to levels it would never reach alone. Some examples:
 
 ##### RoR doesn't support Internationalization
 
-For some, this is a serious shortcoming. Even more serious because the Ruby language itself isn't very Unicode-friendly. Remember that Ruby was built in Japan, for the Japanese, in the early 1990s. I went into detail on this in the book, but in short, today we have solutions like [Globalize](http://wiki.rubyonrails.org/rails/pages/Internationalization).
+For some, this is a serious flaw, made worse by the fact that Ruby itself is not very Unicode-friendly. Remember, Ruby was born in Japan, for the Japanese, in the early 90s. I covered the subject in the book; long story short, today we have solutions like [Globalize](http://web.archive.org/web/20120209000503/http://wiki.rubyonrails.org/rails/pages/Internationalization).
 
-##### RoR doesn't have an equivalent to EJBs
+##### RoR has no equivalent to EJBs
 
-True, despite being extremely bureaucratic, current EJB containers are quite robust. RoR is essentially equivalent to just the servlet container in a complete J2EE system. But thanks to **Ezra Zygmuntowicz** we now have [BackgrounDRb](http://www.infoq.com/articles/BackgrounDRb). It works somewhat like a Message Bean for executing asynchronous tasks. Not necessarily better, but it's a solution.
+True, despite being extremely bureaucratic, current EJB containers are quite robust. RoR amounts to just the servlet container of a full J2EE stack. But thanks to **Ezra Zygmuntowicz** we now have [BackgrounDRb](http://www.infoq.com/articles/BackgrounDRb). It works roughly like a Message Bean for running asynchronous tasks. Not necessarily better, but it is a solution.
 
-##### RoR is nothing but a template generator
+##### RoR is nothing more than a template generator
 
-It's the same old scaffolding conversation. Many newcomers or poorly informed critics believe Rails is just the scaffold method. Of course, they're completely wrong. We can't deny it's an incredible concept, difficult or impossible to achieve in static languages. However, Rails' default Scaffold is very basic. It lacks features like interpreting relationships between tables, for example. Several alternatives have emerged, but the most interesting are Streamlined and AjaxScaffold, as I [mentioned](http://www.akitaonrails.com/2006/09/27/snakes-vs-rubies-scaffold-on-steroids) in a few earlier posts.
+The same old scaffolding talk. Plenty of newcomers and ill-informed critics believe Rails is just the scaffold method. They are flat out wrong, though scaffolding is an incredible concept, difficult or impossible to pull off in static languages. Rails' default scaffold is too simple: it does not, for example, interpret the relationships between tables. Several alternatives showed up, and the most interesting are Streamlined and AjaxScaffold, as I [mentioned](http://web.archive.org/web/20240223172630/https://www.akitaonrails.com/2006/09/27/snakes-vs-rubies-scaffold-on-steroids) a few posts ago.
 
-##### RoR only works well for Green Field projects
+##### RoR only favors Green Field projects
 
-_"Green Field"_ is what we call projects started from scratch — no legacy, where we have the freedom to choose the implementation. Where we can start a project using Rails conventions. The problem arises when you try to implement a Rails module on top of an existing database that's completely outside of Rails conventions. In that case, you have work to do. To ease things, Robby Russell is writing the [Acts as Legacy](http://www.robbyonrails.com/articles/2006/04/14/sneaking-rails-through-the-legacy-system) plugin, an Active Record extension that should make things easier.
+_"Green Field"_ is what we call a project started from scratch, no legacy, where we get to pick the implementation and follow Rails conventions from day one. The problem is building a Rails module on top of a database that already exists, completely outside the conventions. That takes work. To make it easier, Robby Russell is writing the [Acts as Legacy](http://www.robbyonrails.com/articles/2006/04/14/sneaking-rails-through-the-legacy-system) plugin, an Active Record extension that promises to smooth things out.
 
-##### RoR uses scriptlets: code mixed with HTML — that's terrible
+##### RoR uses scriptlets: code mixed with HTML, and that is terrible
 
-This debate never ends. Rails' view rendering engine, ERb, does in fact use the equivalent of JSP or PHP scriptlets, where we mix raw Ruby code directly into HTML. In Rails' specific case, it's actually a great feature. But there are those who prefer something closer to taglibs: HTML free of programming logic, especially when you want to involve Web Designers. A great alternative is the [Liquid](http://home.leetsoft.com/liquid) project, which brings functionality similar to the Velocity framework from the Java world. That way we can keep everyone happy.
+A never-ending debate. Rails' view engine, Erb, does use the equivalent of JSP or PHP scriptlets, with raw Ruby code mixed into the HTML. In Rails' case, it is a great feature. But some people prefer something closer to taglibs: HTML free of programming, especially when Web Designers join the project. A great alternative is [Liquid](https://shopify.github.io/liquid/), which brings functionality similar to Velocity from the Java world. That way we can please Greeks and Trojans alike.
 
 ##### RoR alone is too raw. Python, for example, has Zope/Plone
 
-Rails is a framework. Some want to extend the fight by implying Rails loses to, say, Zope. For those unfamiliar, Zope is an excellent content management system (CMS) written in Python. Of course, a CMS and a framework is comparing apples and oranges. But several smart solutions are being written in Rails. In the CMS space (content, blogs) we have products like the well-known [Typo](http://typosphere.org/) or [Mephisto](http://mephistoblog.com/). As an eCommerce solution there's [Shopify](http://shopify.com/).
+Rails is a framework. Some people want to extend the fight and claim Rails loses to Zope. For the uninitiated, Zope is an excellent application server with a CMS, written in Python. Sure, comparing a CMS to a framework is apples and oranges. Even so, smart solutions are already being written in Rails. In the CMS space (content, blogs) we have the famous [Typo](http://typosphere.org/) and [Mephisto](http://mephistoblog.com/). For eCommerce, [Shopify](http://shopify.com/).
 
-##### RoR can use good Design Patterns but doesn't implement newer concepts like Rules Engines
+##### RoR uses good Design Patterns but doesn't implement newer concepts like Rules Engines
 
-A Rules Engine, or Business Rules Engine, is a layer of intelligence for managing business rules. It's a relatively recent concept still maturing, which means different vendors will implement it differently. In the Java world one of the most famous is JBoss Rules (Drools), but in the Ruby world we already have an alternative called [Rools](http://rools.rubyforge.org/).
+A Rules Engine, or Business Rules Engine, manages business rules. The concept gained traction recently and is still maturing, so every vendor implements it differently. In the Java world, one of the most famous is JBoss Rules (Drools). In the Ruby world, an alternative called [Rools](http://web.archive.org/web/20170203232526/http://rools.rubyforge.org/) already exists.
 
 ##### RoR doesn't have as many libraries as Java
 
-True. Despite the Ruby language being over 10 years old, despite Rails gaining new plugins all the time, it's undeniable that Java has an enormous library ecosystem — rivaled perhaps only by C/C++. A new development could change that: **[Sun recently hired the creators of JRuby](http://weblog.rubyonrails.com/2006/9/7/sun-hires-the-jruby-team)**, a way to run Ruby code directly on the JVM, opening the door for Ruby code to access all of Java's libraries. If Sun does its homework right, we'll soon have a version of Ruby running on the JVM with high performance, robustness, internationalization support, and access to an enormous library ecosystem.
+True. Even though Ruby is over 10 years old and Rails gains new plugins all the time, Java undeniably has a huge library collection, perhaps second only to C/C++. A new development could change that: **[Sun just hired the creators of JRuby](https://rubyonrails.org/2006/9/7/sun-hires-the-jruby-team)**, a way to run Ruby code directly on the JVM, opening the door for Ruby to reach every Java library out there. If Sun does its homework, we'll soon have a JVM Ruby with high performance, robustness, internationalization support, and access to an endless supply of libraries.
 
-##### Finally, why was Rails built in Ruby? Couldn't there be a "Jails" or something similar?
+##### Finally, why was Rails written in Ruby? Couldn't there be a "Jails"?
 
-Indeed, many question why Rails is written in Ruby. At first glance it seems like nothing more than a programmer's grudge against Java. But when you study the characteristics of the most popular languages, it becomes clear that Rails can only be Rails if it's in Ruby. To prove it, just look at the most recent frameworks (mostly still incomplete) written in other languages copying Rails' concepts. In Java/Groovy we have [Grails](http://grails.codehaus.org/), in PHP we have [CakePHP](http://www.cakephp.org/), in .NET we have [Castle](http://www.castleproject.org/index.php/Main_Page). Read their docs, try the code. After that you'll see that all of them try but none of them have the same "feel" as Ruby on Rails.
+Many people question the fact that Rails is written in Ruby. At first glance it looks like the programmer's grudge against Java. Study the most popular languages and it becomes clear that Rails is only Rails if it's Ruby. The proof is in the recent frameworks (most still unfinished) that copy the same concepts in other languages: [Grails](https://grails.org/) in Groovy/Java, [CakePHP](http://www.cakephp.org/) in PHP, [Castle](http://web.archive.org/web/20061024010829/http://www.castleproject.org/index.php/Main_Page) in .NET. Read the docs, try the code. They all try, but none of them has the same "feel" as Ruby on Rails.
 
-But that doesn't matter because, as I said before, it's part of the competition game. These alternatives need to exist. There are two reasons. First, competing frameworks force the Rails community to innovate and evolve faster, without getting complacent. Second, it helps justify the choice of Ruby for building Rails.
+And that is part of the game. Those alternatives need to exist, for two reasons. First, competing frameworks force the Rails community to innovate and evolve faster, never getting comfortable. Second, they help justify the choice of Ruby for building Rails.
 
-The message is simple: don't be bothered by criticism. Accept it, understand it, and evolve. In the real world there is no fantasy Highlander motto — _"there can only be one"_. Technologies that reign alone should be afraid: there's nowhere left to go but down. Evolution works in cycles, like everything in life: things are born, grow, and die.
+The message is simple: don't let criticism bother you. Accept it, understand it, evolve. The real world has no room for the Highlander fantasy, _"there can be only one"_. A technology that reigns alone should be afraid: there is nowhere left to go but down. Evolution works in cycles, like everything in life: born, grow, die.
 
-As a consultant, my job is precisely to choose the _"best of breed"_ — the best in each sector, at that moment. A solution that's good today may already be superseded tomorrow, which is why we, as systems professionals, must stay updated every minute. Making choices based purely on brand names, or out of ignorance of alternatives, is a recipe for inefficiency and obsolescence.
+As a consultant, my job is to pick the _"best of breed"_, the best of each sector at that moment. A solution that is good today may be replaced tomorrow, so we systems professionals need to stay current every single minute. Choosing by brand name, or out of ignorance of the alternatives, is a recipe for inefficiency and obsolescence.
 
 Open your eyes.
