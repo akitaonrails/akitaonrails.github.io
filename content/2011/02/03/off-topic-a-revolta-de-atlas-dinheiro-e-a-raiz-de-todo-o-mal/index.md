@@ -2,6 +2,7 @@
 title: "[Off-Topic] A Revolta de Atlas: Dinheiro é a raíz de todo o mal?"
 date: '2011-02-03T22:17:00-02:00'
 slug: off-topic-a-revolta-de-atlas-dinheiro-e-a-raiz-de-todo-o-mal
+translationKey: off-topic-a-revolta-de-atlas-dinheiro-e-a-raiz-de-todo-o-mal
 description: "A partir do discurso de Francisco D’Anconia em A Revolta de Atlas, o autor apresenta o dinheiro como resultado da produção e da razão, enquanto condena riqueza obtida por coerção, fraude e favores."
 tags:
 - filosofia
@@ -10,19 +11,19 @@ tags:
 draft: false
 ---
 
-Fui apresentado a [Atlas Shrugged](http://www.submarino.com.br/produto/1/21883535/revolta+de+atlas,+a) e Ayn Rand pela primeira vez em 2007, por ninguém menos que [Carl Youngblood](http://akitaonrails.com/2007/07/20/conversando-com-carl-youngblood). Até então não conhecia nem o livro e nem a filosofia do Objetivismo. Desde então, pouco a pouco fui estudando a respeito. Li livros como [The Virtue of Selfishness](http://www.amazon.com/Virtue-Selfishness-Signet-Ayn-Rand/dp/0451163931), um dos meus favoritos. Transcrevi 3 trechos da obra de Rand nos posts:
+Fui apresentado ao [Atlas Shrugged](http://web.archive.org/web/20110402053637/http://www.submarino.com.br:80/produto/1/21883535/revolta+de+atlas,+a) e a Ayn Rand em 2007, por ninguém menos que [Carl Youngblood](http://akitaonrails.com/2007/07/20/conversando-com-carl-youngblood). Até então eu não conhecia o livro nem a filosofia do Objetivismo. De lá pra cá, fui estudando o assunto aos poucos. Li obras como [The Virtue of Selfishness](http://www.amazon.com/Virtue-Selfishness-Signet-Ayn-Rand/dp/0451163931), uma das minhas favoritas, e já transcrevi três trechos de Rand aqui no blog:
 
 - [[Off-Topic] O Culto da Moral Cinzenta](http://akitaonrails.com/2009/09/08/off-topic-o-culto-da-moral-cinzenta)
 - [[Off-Topic] Direitos do Homem](http://akitaonrails.com/2009/09/09/off-topic-direitos-do-homem)
 - [[Off-Topic] A Argumentação através da Intimidação](http://akitaonrails.com/2009/09/12/off-topic-a-argumenta--o-atrav-s-da-intimida--o)
 
-E só este ano finalmente me coloquei para ler esta enorme obra que é Atlas Shrugged. Estou ainda chegando à metade e adorando a história e as ideias. [Objetivismo](http://pt.wikipedia.org/wiki/Objetivismo) é definitivamente a filosofia que melhor descreve a forma como gosto de pensar. Se tiverem interesse recomendo o livro [Egoísmo Racional: o Indivíduo de Ayn Rand](http://www.submarino.com.br/produto/1/1976616/egoismo+racional:+o+individuo+de+ayn+rand) do brasileiro [Rodrigo Constantino](http://rodrigoconstantino.blogspot.com/), um dos poucos pensadores/escritores nacionais que gosto de ler com frequência.
+E só neste ano finalmente sentei para encarar essa obra enorme que é o Atlas Shrugged. Estou chegando à metade, adorando a história e as ideias. O [Objetivismo](http://pt.wikipedia.org/wiki/Objetivismo) é a filosofia que melhor descreve a forma como gosto de pensar. Para quem tiver interesse, recomendo o livro [Egoísmo Racional: o Indivíduo de Ayn Rand](http://web.archive.org/web/20100515223252/http://www.submarino.com.br:80/produto/1/1976616/egoismo+racional:+o+individuo+de+ayn+rand), do brasileiro [Rodrigo Constantino](http://rodrigoconstantino.blogspot.com/), um dos poucos autores nacionais que leio com frequência.
 
-Por acaso finalmente este ano deve estrear a primeira parte da [versão cinematográfica](http://www.imdb.com/title/tt0480239/) dirigida por Paul Johansson. Particularmente gostei das escolhas de Taylor Schilling como Dagny Taggart e Grant Bowler como Henry Rearden, pra mim ele tem um ar meio Gary Cooper como Howard Roark no filme [The Fountainhead](http://www.imdb.com/title/tt0041386/), de 1949 que adapta o livro da Rand de mesmo nome:
+E por acaso neste ano deve estrear a primeira parte da [versão para o cinema](http://www.imdb.com/title/tt0480239/), dirigida por Paul Johansson. Gostei das escolhas de Taylor Schilling como Dagny Taggart e Grant Bowler como Henry Rearden. Para mim, Bowler tem um ar de Gary Cooper no papel de Howard Roark em [The Fountainhead](http://www.imdb.com/title/tt0041386/), de 1949, que adapta o romance homônimo de Rand:
 
 http://www.youtube.com/embed/ooOfe_-5TlY
 
-Estava justamente lendo o trecho do livro que chega ao casamento de James Taggart, onde o personagem de Francisco D’Anconia, industrialista muito rico e celebridade reconhecida como um playboy, é questionado por uma pessoa na festa:
+Eu estava justamente no trecho que chega ao casamento de James Taggart. Ali, Francisco D’Anconia, um industrial riquíssimo e conhecido na imprensa como playboy, é abordado por uma convidada na festa:
 
 > - Sr. D’Anconia, o que acha que vai acontecer com o mundo?  
 > - Exatamente o que ele merece.  
@@ -35,11 +36,11 @@ Estava justamente lendo o trecho do livro que chega ao casamento de James Taggar
 >   
 > Rearden achou que Francisco não deveria ter ouvido o comentário, porém o viu se virar para eles com um sorriso muito cortês.
 
-E aí se inicia um dos melhores discursos que eu já li. Francisco discorre a respeito do Dinheiro. Nós raramente paramos para contemplar coisas do nosso dia-a-dia e dinheiro é algo que todos temos, usamos, ganhamos e perdemos mas para o qual temos pouco entendimento consciente, e este discurso é praticamente uma Ode ao Dinheiro que achei legal compartilhar para deixá-los com mais vontade de ler o romance inteiro.
+E aí começa um dos melhores discursos que já li. Francisco disserta sobre o Dinheiro. Raramente paramos para pensar nas coisas triviais do dia a dia, e dinheiro é uma delas: todos temos, usamos, ganhamos e perdemos, mas entendemos pouco a respeito. O discurso é quase uma ode ao dinheiro, e resolvi compartilhar para dar vontade de ler o romance inteiro.
 
-Abaixo está a íntegra do discurso de Francisco D’Anconia. E lembrando que em inglês, quando se fala em “ganhar dinheiro” eles falam _“make money”_. É uma diferença que eu não tinha me dado conta, mas nós falamos em “ganhar” dinheiro, mas os americanos falam em “fazer” dinheiro. É uma diferença importante.
+Abaixo vai o discurso de Francisco D’Anconia. Antes, um detalhe de linguagem: em inglês, para “ganhar dinheiro” se diz _“make money”_, ou seja, “fazer dinheiro”. Nós falamos em ganhar, os americanos falam em fazer. A diferença é mais importante do que parece, e o próprio discurso volta a esse ponto no fim.
 
-Lembram daquela velha indagação: _“Dinheiro traz felicidade?”_ Este discurso é em parte uma resposta a isso também, junto com a outra indagação _“Dinheiro é a raiz de todo o mal?”_ Leiam:
+Lembram da velha pergunta _“dinheiro traz felicidade?”_ O discurso responde em parte a ela, e também àquela outra: _“dinheiro é a raiz de todo o mal?”_ Leiam:
 
 
 ## O Discurso do Dinheiro
@@ -53,7 +54,7 @@ Mas o senhor diz que o dinheiro é feito pelos fortes em detrimento dos fracos? 
 
 O dinheiro exige o reconhecimento de que os homens precisam trabalhar em benefício próprio, e não em detrimento de si próprio; para lucrar, não para perder; de que os homens não são bestas de carga, que não nascem para arcar com o ônus da miséria; de que é preciso oferecer-lhes valores, não dores; de que o vínculo comum entre os homens não é a troca de sofrimento, mas a troca de bens. O dinheiro exige que o senhor venda não a sua fraqueza à estupidez humana, mas o seu talento à razão humana; exige que o senhor compre não o pior que os outros oferecem, mas o melhor que o seu dinheiro pode comprar. E, quando os homens vivem do comércio – com a razão e não à força, como árbitro irrecorrível –, é o melhor produto que sai vencendo, o melhor desempenho, o homem de melhor juízo e maior capacidade – e o grau da produtividade de um homem é o grau de sua recompensa. Este é o código da existência cujo instrumento e símbolo é o dinheiro. É isto que o senhor considera mau?
 
-Mas o dinheiro é só um instrumento. Ele pode levá-lo aonde o senhor quiser, mas não pode substituir o motorista do carro. Ele lhe dá meios de satisfazer seus desejos, mas não lhe cria desejos. O dinheiro é o flagelo dos homens que tentam inverter a lei da causalidade – os homens que tentam substituir a mente pelo seqüestro dos produtos da mente. O dinheiro não compra felicidade para o homem que não sabe o que quer; não lhe dá um código de valores se ele não tem conhecimento a respeito de valores, e não lhe dá um objetivo, se ele não escolhe uma meta. O dinheiro não compra inteligência para o estúpido, nem admiração para o covarde, nem respeito para o incompetente. O homem que tenta comprar o cérebro de quem lhe é superior para servi-lo, usando dinheiro para substituir seu juízo, termina vítima dos que lhe são inferiores. Os homens inteligentes o abandonam, mas os trapaceiros e vigaristas correm a ele, atraídos por uma lei que ele não descobriu: o homem não pode ser menor do que o dinheiro que ele possui. É por isso que o senhor considera o dinheiro mau? Só o homem que não precisa da fortuna herdada merece herdá-la – aquele que faria sua fortuna de qualquer modo, mesmo sem herança. Se um herdeiro está à altura de sua herança, ela o serve; caso contrário, ela o destrói. Mas o senhor diz que o dinheiro corrompeu. Foi mesmo? Ou foi ele que corrompeu seu dinheiro? Não inveje um herdeiro que não vale nada; a riqueza dele não é sua, e o senhor não teria tirado melhor proveito dela. Não pense que ela deveria ser distribuída; criar cinqüenta parasitas em lugar de um só não reaviva a virtude morta que criou a fortuna.
+Mas o dinheiro é só um instrumento. Ele pode levá-lo aonde o senhor quiser, mas não pode substituir o motorista do carro. Ele lhe dá meios de satisfazer seus desejos, mas não lhe cria desejos. O dinheiro é o flagelo dos homens que tentam inverter a lei da causalidade – os homens que tentam substituir a mente pelo sequestro dos produtos da mente. O dinheiro não compra felicidade para o homem que não sabe o que quer; não lhe dá um código de valores se ele não tem conhecimento a respeito de valores, e não lhe dá um objetivo, se ele não escolhe uma meta. O dinheiro não compra inteligência para o estúpido, nem admiração para o covarde, nem respeito para o incompetente. O homem que tenta comprar o cérebro de quem lhe é superior para servi-lo, usando dinheiro para substituir seu juízo, termina vítima dos que lhe são inferiores. Os homens inteligentes o abandonam, mas os trapaceiros e vigaristas correm a ele, atraídos por uma lei que ele não descobriu: o homem não pode ser menor do que o dinheiro que ele possui. É por isso que o senhor considera o dinheiro mau? Só o homem que não precisa da fortuna herdada merece herdá-la – aquele que faria sua fortuna de qualquer modo, mesmo sem herança. Se um herdeiro está à altura de sua herança, ela o serve; caso contrário, ela o destrói. Mas o senhor diz que o dinheiro corrompeu. Foi mesmo? Ou foi ele que corrompeu seu dinheiro? Não inveje um herdeiro que não vale nada; a riqueza dele não é sua, e o senhor não teria tirado melhor proveito dela. Não pense que ela deveria ser distribuída; criar cinquenta parasitas em lugar de um só não reaviva a virtude morta que criou a fortuna.
 
 O dinheiro é um poder vivo que morre quando se afasta de sua origem. O dinheiro não serve à mente que não está a sua altura. É por isso que o senhor o considera mau? O dinheiro é o seu meio de sobrevivência. O veredicto que o senhor dá à fonte de seu sustento é o veredicto que o senhor dá à sua própria vida. Se a fonte é corrupta, o senhor condena a sua própria existência. O seu dinheiro provém da fraude? Da exploração dos vícios e da estupidez humana? O senhor o obteve servindo aos insensatos, na esperança de que eles lhe dessem mais do que sua capacidade merece? Baixando seus padrões de exigência? Fazendo um trabalho que o senhor despreza para compradores que o senhor não respeita? Neste caso, o seu dinheiro não lhe dará um momento sequer de felicidade. Todas as coisas que o senhor adquirir serão não um tributo ao senhor, mas uma acusação; não uma realização, mas um momento de vergonha. Então o senhor dirá que o dinheiro é mau. Mau porque ele não substitui seu amor-próprio? Mau porque ele não permite que o senhor aproveite e goze sua depravação? É este o motivo de seu ódio ao dinheiro? O dinheiro será sempre um efeito, e nada jamais o substituirá na posição de causa. O dinheiro é produto da virtude, mas não dá virtude nem redime vícios. O dinheiro não lhe dá o que o senhor não merece, nem em termos materiais nem em termos espirituais. É este o motivo de seu ódio ao dinheiro? Ou será que o senhor disse que é o amor ao dinheiro que é a origem de todo o mal?
 
@@ -69,7 +70,7 @@ O ideário dos saqueadores fez com que pessoas como o senhor passassem a encarar
 
 ## A Crítica
 
-Tenho certeza que muitos se sentem “estranhos” ao ler isso. A argumentação é sólida, mas a ideia parece “errada”. No livro, logo a seguir temos:
+Tenho certeza de que muita gente se sente estranha ao ler isso. A argumentação é sólida, mas a ideia soa “errada” à primeira vista. No livro, logo depois do discurso, vem esta cena:
 
 > Algumas pessoas haviam ouvido, mas agora se afastavam, e outras diziam: “é horrível!”; “Não é verdade!”; “Que egoísmo!”. Falavam ao mesmo tempo alto e discretamente, como se quisessem que aqueles que estavam ao lado ouvissem, mas não Francisco.  
 >   
@@ -80,15 +81,13 @@ Tenho certeza que muitos se sentem “estranhos” ao ler isso. A argumentação
 > - Eu _sinto_. Não me guio pela cabeça, mas pelo coração. Sua lógica pode estar certa, mas o senhor não tem coração.  
 > - Minha senhora, quando as pessoas estiverem morrendo de fome ao nosso redor, seu coração não vai ajudá-las em nada. E, já que não tenho coração, eu lhe digo: quando a senhora gritar “Mas eu não sabia!”, não terá perdão.
 
-Alguns podem imaginar que um personagem falando desta forma, valoriza “dinheiro” acima de tudo. Mas não é o caso desta história e o que vai acontecer adiante ainda é mais surpreendente. Daí recomendo que leiam a história inteira ;-)
+Dá para imaginar que um personagem que fala assim coloca o “dinheiro” acima de tudo. A história mostra o contrário, e o que vem adiante é ainda mais surpreendente. Por isso recomendo ler o romance até o fim ;-)
 
-E este discurso não é a história toda. Para entender onde isso vai chegar, complemente com o discurso de John Galt:
+E esse discurso não é a história toda. Para entender aonde tudo isso chega, o complemento é o discurso de John Galt.
 
 ## Bônus
 
-Na verdade o que provavelmente melhor resume o que Rand gostaria de deixar com Atlas Shrugged é o Discurso de John Galt ([transcrição em português](http://alexrosa.blogspot.com/2008/03/o-discurso-de-john-galt.html)). Segue – fora de contexto do romance – para assistir:
+O que provavelmente melhor resume o que Rand quis dizer com Atlas Shrugged é o Discurso de John Galt. Vale ler fora do contexto do romance, e existe uma [transcrição em português](http://alexrosa.blogspot.com/2008/03/o-discurso-de-john-galt.html).
 
-http://www.youtube.com/embed/U1JiAYJTZJA
-
-Existe outra versão deste conceito, no romance “The Fountainhead”. Meu [post seguinte](http://www.akitaonrails.com/2011/02/04/off-topic-the-fountainhead-defesa-de-howard-roark) coloca o discurso de Howard Roark, que tem a mesma ideia de John Galt.
+Existe outra versão dessa ideia no romance _The Fountainhead_. Meu [post seguinte](http://www.akitaonrails.com/2011/02/04/off-topic-the-fountainhead-defesa-de-howard-roark) traz o discurso de Howard Roark, que carrega a mesma tese de John Galt.
 
