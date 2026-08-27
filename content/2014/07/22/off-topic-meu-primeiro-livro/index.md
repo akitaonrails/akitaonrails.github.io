@@ -10,44 +10,50 @@ tags:
 draft: false
 ---
 
-Em 2007 escrevi meu primeiro livro "publicado", sobre Ruby on Rails. Em 2006, comecei este blog. Mas essas não foram minhas primeiras experiências escrevendo.
+Em 2007 escrevi meu primeiro livro "publicado", sobre Ruby on Rails. Em 2006, comecei este blog. Antes disso eu já escrevia, só que sem publicar.
 
-Se acompanha meu blog viu que ontem publiquei um artigo sobre [Segurança](http://www.akitaonrails.com/2014/07/20/small-bites-mantenha-seu-mac-seguro-e-protegido), onde falo sobre a importância do Backup. Imagine que minha rotina de backup vem de longa data. Eu já fazia backup quando tudo que eu tinha eram caixas de disquetes. E a cada nova geração de mídias eu transferia de uma para outra. Foi assim de disquetes para discos de zip drive, depois para CDs, daí para DVDs e finalmente para meu [Drobo, como publiquei em 2009](http://www.akitaonrails.com/2009/09/19/off-topic-meu-backup-pessoal-drobo-time-capsule#.U87uZ6hQZZs) e parte dele para Dropbox.
+Se acompanha o blog, viu que ontem saiu um artigo sobre [Segurança](http://www.akitaonrails.com/2014/07/20/small-bites-mantenha-seu-mac-seguro-e-protegido), onde falo da importância do backup. Minha rotina de backup vem de longa data. Eu já guardava tudo quando só tinha caixas de disquetes, e a cada geração de mídia migrava de uma para outra.
 
-De vez em quando dou uma fuçada nesse backup e acabei de esbarrar num "livro" que escrevi quando era estudante do 3o semestre de Ciências da Computação na USP, em **Maio de 1996**! Aliás, o backup é datado de Maio de 1996, provavelmente eu escrevi isso antes!
+Foi assim de disquetes para discos de zip drive, depois para CDs, daí para DVDs e finalmente para o meu [Drobo, como publiquei em 2009](http://www.akitaonrails.com/2009/09/19/off-topic-meu-backup-pessoal-drobo-time-capsule), com uma parte no Dropbox. De vez em quando dou uma fuçada nesse arquivo, e acabei de esbarrar num "livro" que escrevi quando era estudante do 3º semestre de Ciências da Computação na USP, em **Maio de 1996**. O backup é datado de Maio de 1996, então provavelmente escrevi isso antes.
 
 ![Trecho](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/439/Screenshot_7_22_14__20_38.png)
 
-Fonte: [The Road Ahead - Bill Gates](http://www.theatlantic.com/business/archive/2010/05/bill-gates-more-profit-than-prophet/56982/)
+Fonte: [The Road Ahead - Bill Gates](https://www.theatlantic.com/business/archive/2010/05/bill-gates-more-profit-than-prophet/56982/)
 
-Obviamente eu nunca escrevi esse livro para ser publicado, eu escrevi simplesmente porque eu sempre gostei de fazer pesquisa e de escrever, para mim mesmo. O motivo de porque gosto de escrever tem um momento muito específico: o filme [Indiana Jones e a Última Cruzada, de 1989](http://www.imdb.com/title/tt0097576/?ref_=nv_sr_1).
+Nunca escrevi esse livro para ser publicado. Escrevi porque sempre gostei de pesquisar e de organizar as coisas por escrito, para mim mesmo. E esse gosto tem um momento de origem bem específico: o filme [Indiana Jones e a Última Cruzada, de 1989](https://www.imdb.com/title/tt0097576/).
 
-Eu provavelmente tinha acabado de fazer um curso de datilografia (acho que foi em 1988, não tenho mais certeza). Tinha uma enciclopédia, e o filme tinha o diário do pai do Indiana. A "ideia" de um livro que contém toda sua pesquisa da vida se tornou uma "imagem" que me acompanha até hoje. E pior: eu acho que não gostava da ideia de um dia esquecer tudo que aprendi, e queria conseguir registrar o que eu sabia, num "único" lugar, para garantir que estaria acessível se um dia eu quisesse lembrar (como hoje!).
+Eu provavelmente tinha acabado de fazer um curso de datilografia (acho que foi em 1988, já não tenho certeza). Tinha uma enciclopédia em casa, e o filme trazia o diário do pai do Indiana. A ideia de um livro que reúne a pesquisa de uma vida inteira virou uma imagem que me acompanha até hoje.
+
+O medo por trás disso era esquecer o que eu tinha aprendido. Eu queria registrar o que sabia num único lugar, para garantir que estaria acessível se um dia eu quisesse lembrar. Como agora.
 
 ![Indiana Jones](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/437/big_Screen_Shot_2014-07-22_at_20.20.26.png)
 
-E desde então eu quis "escrever", como uma forma de destilar tudo que eu sabia sobre um assunto num único lugar (lembrem-se, isso foi muito antes da noção de Wikipédia ou ter qualquer informação acessível a qualquer momento como temos hoje!) E ainda é um dos motivos de porque eu escrevo: mesmo se ninguém lesse, eu escreveria pra mim mesmo, como faço faz mais de 2 décadas.
+Desde então eu quis escrever para destilar tudo que sabia sobre um assunto num único lugar. Lembrem-se que isso foi muito antes da Wikipédia, muito antes de ter qualquer informação acessível a qualquer momento como temos hoje. E continua sendo um dos motivos de eu escrever: mesmo que ninguém lesse, eu escreveria para mim mesmo, como faço há mais de duas décadas.
 
-Isso dito, boa parte desse material é um exercício de digitação. Para os meninos novos, vou explicar que antes de consultarmos tudo pela Web, existia uma mídia analógica quase extinta chamada "papel" :-) E antes de ser possível simplesmente dar "copy and paste" de textos, antigamente não havia essas fontes e éramos obrigados a datilografar ou digitar, transcrever do meio analógico para o digital. Tecnologias como OCR ainda não eram difundidas e nem todo mundo tinha um scanner (e os que existiam hoje seriam considerados de baixíssima resolução e baixíssima qualidade), portanto, tinha que gostar muito de transcrever e, por sinal, era um dos meus hobbies favoritos desde quando ganhei minha primeira máquina de datilografia.
+Boa parte desse material é puro exercício de digitação. Para os mais novos, vale explicar que antes de consultarmos tudo pela Web existia uma mídia analógica quase extinta chamada "papel". E antes do "copy and paste", a gente tinha que datilografar ou digitar cada texto, transcrevendo do analógico para o digital.
 
-Então, para a posteridade, segue a versão em PDF, capítulo a capítulo, caso tenham curiosidade de saber o que um estudante de 1996 sabia.
+OCR ainda não era difundido, e nem todo mundo tinha um scanner (os que existiam hoje seriam considerados de resolução e qualidade péssimas). Então tinha que gostar muito de transcrever, e esse por sinal era um dos meus hobbies favoritos desde que ganhei a minha primeira máquina de datilografia.
 
-* [Palavras do Autor : Introdução à Informática](http://bit.ly/1tx9UXm)
-* [CAPÍTULO I - /HISTÓRIA DA HUMANIDADE/](http://bit.ly/1txa4y4)
-* [CAPÍTULO II - /Anatomia - dos átomos à matéria orgânica/](http://bit.ly/1txa7tG)
-* [CAPÍTULO III - /Personal Computers - um pouco mais de história/](http://bit.ly/1txa7tG)
-* [CAPÍTULO IV - /Uma rápida apresentação das partes de um Corpo Humano/](http://bit.ly/1o7H7be)
-* [CAPÍTULO V - /Disco Básico/](http://bit.ly/1p8eVl7)
-* [CAPÍTULO VI - /Dando Ordens à Máquina/](http://bit.ly/1nchW7f)
-* [CAPÍTULO VII - /WINDOWS e EMS/](http://bit.ly/1r4GVZB)
-* [CAPÍTULO VIII - /16 ou 32 Bits: Isso importa para você?/](http://bit.ly/1A3nohX)
-* [CAPÍTULO IX - /RISC vs. CISC: a Verdadeira História/](http://bit.ly/1rIb6H9)
-* [CAPÍTULO X - /Teste de Crash em Sistemas Operacionais/](http://bit.ly/1A3ntSS)
-* [Últimas palavras : uma visão global](http://bit.ly/1wXHZQo)
-* [Vendas pela Internet](http://bit.ly/1nSlsze)
+Para a posteridade, segue a versão em PDF, capítulo a capítulo, caso tenham curiosidade de saber o que um estudante de 1996 sabia.
 
-Se tiver que escolher, você pode pular os capítulos II, IV, V, X. O VII é engraçado para ver o que era um Windows em 1996. O capítulo VIII é para lembrar que nessa época a migração de 16-bits para 32-bits era uma dor de cabeça (nada parecido com a facilidade que foi ir de 32 para 64-bits). O capítulo IX é para quem usava Mac nos anos 90, isso foi antes da era pós-RISC de hoje. Os mais curiosos provavelmente são a introdução e os dois últimos capítulos, que contém mais opiniões pessoais sobre o pouco que eu entendia de internet nessa época (a primeira vez que naveguei na Web foi em 1994!)
+* Palavras do Autor: Introdução à Informática
+* CAPÍTULO I - /HISTÓRIA DA HUMANIDADE/
+* CAPÍTULO II - /Anatomia - dos átomos à matéria orgânica/
+* CAPÍTULO III - /Personal Computers - um pouco mais de história/
+* CAPÍTULO IV - /Uma rápida apresentação das partes de um Corpo Humano/
+* CAPÍTULO V - /Disco Básico/
+* CAPÍTULO VI - /Dando Ordens à Máquina/
+* CAPÍTULO VII - /WINDOWS e EMS/
+* CAPÍTULO VIII - /16 ou 32 Bits: Isso importa para você?/
+* CAPÍTULO IX - /RISC vs. CISC: a Verdadeira História/
+* CAPÍTULO X - /Teste de Crash em Sistemas Operacionais/
+* Últimas palavras: uma visão global
+* Vendas pela Internet
 
-O que acharam? Não deixem de comentar :-)
+Se tiver que escolher, dá para pular os capítulos II, IV, V e X. O VII é engraçado para ver o que era um Windows em 1996. O VIII serve para lembrar que naquela época a migração de 16-bits para 32-bits era uma dor de cabeça, nada parecido com a facilidade de ir depois de 32 para 64-bits.
+
+O capítulo IX é para quem usava Mac nos anos 90, ainda na era anterior ao RISC de hoje. Os mais curiosos provavelmente são a introdução e os dois últimos capítulos, que trazem mais opiniões pessoais sobre o pouco que eu entendia de internet naquele momento. A primeira vez que naveguei na Web foi em 1994.
+
+O que acharam? Não deixem de comentar. :-)
 
 ![Backup](https://akitaonrails.s3.amazonaws.com/assets/image_asset/image/438/big_Screen_Shot_2014-07-22_at_19.43.16.png)
