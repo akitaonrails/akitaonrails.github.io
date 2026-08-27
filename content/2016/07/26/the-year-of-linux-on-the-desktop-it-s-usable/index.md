@@ -34,17 +34,17 @@ RVM agora funciona! Consegui instalar Ruby 2.3.1 via RVM sem nenhum problema.
 
 Consegui dar `git clone` num pequeno projeto Rails e rodar `bundle install` direitinho. Todas as gems foram baixadas, extensões nativas compilaram sem nenhuma falha.
 
-Algumas coisas ainda não funcionam. Por exemplo, você não vai conseguir terminar a instalação do Postgresql 9.3. Ele vai baixar e instalar, mas o setup do cluster falha, como você pode acompanhar nessa [thread de issue](https://github.com/Microsoft/BashOnWindows/issues/61).
+Algumas coisas ainda não funcionam. Por exemplo, você não vai conseguir terminar a instalação do Postgresql 9.3. Ele vai baixar e instalar, mas o setup do cluster falha, como você pode acompanhar nessa [thread de issue](https://github.com/microsoft/WSL/issues/61).
 
 Mas você não precisa ter **tudo** instalado sob o Ubuntu, dá pra usar o [Postgresql for Windows](https://www.postgresql.org/download/windows/) nativo e editar seu `config/database.yml` apontando pro server `127.0.0.1` e porta `5432`. No lado do Ubuntu, basta instalar o `libpq-dev` pra que a gem `pg` consiga compilar suas extensões nativas e pronto.
 
 Serviços menores como Memcached ou Redis instalam direitinho com `apt-get`, mas eles não vão dar auto-start via Upstart. Você pode iniciá-los manualmente e usar algo como [Foreman](https://github.com/ddollar/foreman) pra controlar os processos. Os dois sobem e funcionam bem o suficiente, então dá pra testar caching nos seus projetos Rails e também testar workers Sidekiq.
 
-Eu sei que ainda é Preview, então tem correções de bug e possivelmente algumas features novas que podem entrar no release final em agosto. Uma reclamação chata que eu tenho é que todo comando que eu rodo com `sudo` demora alguns segundos pra começar, então é irritante, mas funciona no final.
+Eu sei que ainda é um Preview, então ainda vêm correções de bug e possivelmente algumas features novas até o release final de agosto. O que mais me incomoda é que todo comando que rodo com `sudo` demora alguns segundos pra começar. É irritante, mas funciona no final.
 
 Node.js 6.3.1 instala e roda com sucesso. Consegui dar `npm i` e `node server.js` no [repositório de exemplo](https://github.com/openshift/nodejs-ex) Node do Openshift.
 
-Crystal 0.18.7 instala com sucesso e conseguiu compilar meu projeto [Manga Downloader](https://github.com/akitaonrails/cr_manga_downloadr) direitinho. Executou meu teste de performance embutido em 15 minutos. A performance não é estonteante, mas roda corretamente até o fim. (E sim, então, Crystal agora também roda no Windows!).
+Crystal 0.18.7 instala com sucesso e compilou meu projeto [Manga Downloader](https://github.com/akitaonrails/cr_manga_downloadr) direitinho. Rodou meu teste de performance embutido em 15 minutos. A performance é modesta, mas executa corretamente até o fim. (E sim, Crystal agora também roda no Windows!).
 
 Go 1.6 funciona. Só dei um `go get` pra instalar o Martini e rodei o simples server "Hello World". Compila, inicia e executa rapidíssimo como esperado.
 
@@ -56,13 +56,13 @@ Crash dump is being written to: erl_crash.dump...done
 erl_child_setup closed
 ```
 
-Na real, o próprio Erlang trava só de tentar rodar `erl`. Nenhuma das ferramentas Elixir funciona como consequência. Sem iex, sem mix. O engraçado é que estava funcionando no Preview inicial. Então ou é algo do novo Preview ou algo dos releases mais novos do Erlang. Existem [issues abertas](https://github.com/Microsoft/BashOnWindows/issues?utf8=✓&q=is%3Aissue%20elixir) sobre esse problema, então vamos torcer pra ser corrigido logo.
+Na real, o próprio Erlang trava só de tentar rodar `erl`. Nenhuma das ferramentas Elixir funciona como consequência. Sem iex, sem mix. O engraçado é que estava funcionando no Preview inicial. Então ou é algo do novo Preview ou algo dos releases mais novos do Erlang. Existem [issues abertas](https://github.com/microsoft/WSL/issues?utf8=✓&q=is%3Aissue%20elixir) sobre esse problema, então vamos torcer pra ser corrigido logo.
 
 <a name="best-windows-dev-env"></a>
 
 ### "O Melhor Ambiente para Rails no Windows"
 
-Eu tenho [esse post bem antigo de 2009](http://www.akitaonrails.com/2009/1/13/the-best-environment-for-rails-on-windows) pra guiar desenvolvedores presos no Windows que precisam implementar projetos Rails. O primeiro conselho é evitar Ruby for Windows. Eu realmente louvo os esforços de grandes desenvolvedores como o Luis Lavena, que investiu muito tempo pra fazer aquilo funcionar bem o suficiente. Mas, infelizmente, a realidade é que Ruby foi feito pra ambientes Linux, ele se conecta a extensões nativas em C que têm um monte de dependências difíceis de disponibilizar no Windows.
+Eu tenho [esse post bem antigo de 2009](https://web.archive.org/web/20160814041945/http://www.akitaonrails.com/2009/1/13/the-best-environment-for-rails-on-windows) pra guiar desenvolvedores presos no Windows que precisam implementar projetos Rails. O primeiro conselho é evitar Ruby for Windows. Eu realmente louvo os esforços de grandes desenvolvedores como o Luis Lavena, que investiu muito tempo pra fazer aquilo funcionar bem o suficiente. Mas, infelizmente, a realidade é que Ruby foi feito pra ambientes Linux, ele se conecta a extensões nativas em C que têm um monte de dependências difíceis de disponibilizar no Windows.
 
 Então a melhor opção até agora era instalar Vagrant (via Virtualbox ou, melhor ainda, VMWare) como runtime e usar editores disponíveis no Windows como Sublime Text 3 ou Atom.
 

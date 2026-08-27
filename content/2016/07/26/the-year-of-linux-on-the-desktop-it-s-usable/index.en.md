@@ -14,7 +14,7 @@ draft: false
 
 07/23/16: coincidentally I posted this review a day before the final release :-) So the final build is 14393 and [it's available](http://arstechnica.com/information-technology/2016/07/windows-10-anniversary-update-is-ready-to-go-and-free-for-just-a-few-more-days/) for free right now!
 
-It's been 3 months since I posted [my initial impressions](http://www.akitaonrails.com/en/2016/04/12/o-ano-do-linux-no-desktop-pela-microsoft) on Windows 10 Anniversary Edition's most important feature: Bash on Windows. My conclusion at the time was that it was not ready for prime time yet.
+It's been 3 months since I posted [my initial impressions](/en/2016/04/12/the-year-of-linux-on-the-desktop-by-microsoft) on Windows 10 Anniversary Edition's most important feature: Bash on Windows. My conclusion at the time was that it was not ready for prime time yet.
 
 My conclusion as of right now, on July 26th is that it's finally usable enough for web developers, particularly for Ruby developers who always suffered through lack of Windows support.
 
@@ -26,23 +26,23 @@ Installation process is the same. You must be signed up to the [Windows Insider]
 
 Once you do all that, you can start the "Bash on Ubuntu on Windows" (a mouthful). The first good surprise is that it prompts you to register a new username instead of just falling back to Root. As I said in my previous post, it's good practice to create a new user and add it to the sudoers group, and this is what it does. So you can install packages using "sudo apt-get install".
 
-You should follow my [previous post](http://www.akitaonrails.com/en/2016/04/12/o-ano-do-linux-no-desktop-pela-microsoft) for all the packages and configurations I normally do in a development Linux box.
+You should follow my [previous post](/en/2016/04/12/the-year-of-linux-on-the-desktop-by-microsoft) for all the packages and configurations I normally do in a development Linux box.
 
 RVM now works! I was able to install Ruby 2.3.1 through RVM without any problems whatsoever.
 
 I was able to `git clone` a small Rails project and properly `bundle install`. All gems were downloaded, native extensions compiled without any flaws.
 
-Some things still don't work. For example, you won't be able to finish the Postgresql 9.3 installation. It will download and install but the cluster setup fails as you can follow through [this issue](https://github.com/Microsoft/BashOnWindows/issues/61) thread.
+Some things still don't work. For example, you won't be able to finish the Postgresql 9.3 installation. It will download and install but the cluster setup fails as you can follow through [this issue](https://github.com/microsoft/WSL/issues/61) thread.
 
 But you don't need to have **everything** installed under Ubuntu, you can just fall back to the native [Postgresql for Windows](https://www.postgresql.org/download/windows/) and edit your `config/database.yml` to point to server `127.0.0.1` and port `5432`. On the Ubuntu side you just need to install `libpq-dev` so the `pg` gem can compile its native extensions and that's it.
 
 Smaller services such as Memcached or Redis install properly with `apt-get` but they won't auto-start through Upstart. But you can start them up manually and use something like [Foreman](https://github.com/ddollar/foreman) to control the processes. They both start and work well enough, so you can test caching in your Rails projects and also test Sidekiq workers.
 
-I know that this is still a Preview, so there are bug fixes and possibly some new features that might be included in the final release in August. One nitpick I have is that every command I run with `sudo` takes a few seconds to start, so it's annoying, but it works in the end.
+I know this is still a Preview, so more bug fixes and possibly new features are still coming before the final release in August. What bugs me the most is that every command I run with `sudo` takes a few seconds to start. It's annoying, but it works in the end.
 
 Node.js 6.3.1 successfully installs and runs. I was able to `npm i` and `node server.js` on Openshift's Node [example repository](https://github.com/openshift/nodejs-ex).
 
-Crystal 0.18.7 successfully installs and it was able to properly compile my [Manga Downloader](https://github.com/akitaonrails/cr_manga_downloadr) project. It executed my built-in performance test in 15 minutes. Not lightning fast performance but it runs correctly until the end. (And so, yes, Crystal runs on Windows as well now!).
+Crystal 0.18.7 installs successfully and properly compiled my [Manga Downloader](https://github.com/akitaonrails/cr_manga_downloadr) project. It ran my built-in performance test in 15 minutes. The performance is modest, but it runs correctly to the end. (And yes, Crystal runs on Windows now too!).
 
 Go 1.6 works. I just did a `go get` to install Martini and just ran the simple "Hello World" server. Compiles, starts and executes very fast as expected.
 
@@ -54,13 +54,13 @@ Crash dump is being written to: erl_crash.dump...done
 erl_child_setup closed
 ```
 
-Actually, Erlang itself crashes by just trying to run `erl`. None of the Elixir tools work as a result. No iex, no mix. The funny thing is that it was working in the initial Preview. So either it's something in the new Preview or something in the newest Erlang releases. There are [open issues](https://github.com/Microsoft/BashOnWindows/issues?utf8=✓&q=is%3Aissue%20elixir) regarding this problem, so let's hope it gets fixed soon.
+Actually, Erlang itself crashes by just trying to run `erl`. None of the Elixir tools work as a result. No iex, no mix. The funny thing is that it was working in the initial Preview. So either it's something in the new Preview or something in the newest Erlang releases. There are [open issues](https://github.com/microsoft/WSL/issues?utf8=✓&q=is%3Aissue%20elixir) regarding this problem, so let's hope it gets fixed soon.
 
 <a name="best-windows-dev-env"></a>
 
 ### "The Best Environment for Rails on Windows"
 
-I have [this very old 2009 post](http://www.akitaonrails.com/2009/1/13/the-best-environment-for-rails-on-windows) to guide developers that are locked on Windows to implement Rails projects. The first advice is to avoid Ruby for Windows. I really commend the efforts of great developers such as Luis Lavena, who invested a lot of time to make it work well enough. But unfortunately the reality is that Ruby is made for Linux environments, it binds to native extensions in C that have lots of dependencies that are not easy to make available on Windows.
+I have [this very old 2009 post](https://web.archive.org/web/20160814041945/http://www.akitaonrails.com/2009/1/13/the-best-environment-for-rails-on-windows) to guide developers that are locked on Windows to implement Rails projects. The first advice is to avoid Ruby for Windows. I really commend the efforts of great developers such as Luis Lavena, who invested a lot of time to make it work well enough. But unfortunately the reality is that Ruby is made for Linux environments, it binds to native extensions in C that have lots of dependencies that are not easy to make available on Windows.
 
 So the best option up until now was to install Vagrant (through Virtualbox or, even better, VMWare) as the runtime and use Windows-available editors such as Sublime Text 3 or Atom.
 
