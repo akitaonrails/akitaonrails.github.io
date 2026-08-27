@@ -8,10 +8,11 @@ tags:
 - engenharia-de-software
 - comunicacao
 - off-topic
+translationKey: off-topic-intervir-ou-n-o-intervir-o-catch-22-dos-co-pilotos
 draft: false
 ---
 
- **Update 07/20:** Por coincidência saiu na Revista Você S/A deste mês a matéria [Como lidar com Chefes Tóxicos](http://vocesa.abril.com.br/edicoes/0133/aberto/materia/mt_482359.shtml) que tem tudo a ver com este artigo.
+ **Update 07/20:** Por coincidência, saiu na Revista Você S/A deste mês a matéria [Como lidar com Chefes Tóxicos](http://web.archive.org/web/20090715101405/http://vocesa.abril.com.br:80/edicoes/0133/aberto/materia/mt_482359.shtml) que tem tudo a ver com este artigo.
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2009/7/18/40_Crash_Test_original.jpg)
 
@@ -37,7 +38,7 @@ Veja esta lista de acidentes fatais da aviação civil:
 Cada um desses acidentes é um exemplo de subordinados que sabiam que o Capitão estava ignorando sérios riscos e demonstrando comportamento contra-produtivo e não razoável. Esses subordinados todos sabiam que seus respectivos capitães estavam negando, descontando ou ignorantes aos perigos letais. Infelizmente, nenhum deles foi capaz de fazer qualquer coisa para mudar a performance, ações ou estratégias do Capitão; a maioria não conseguiu sequer fazer o Capitão se tocar do problema.
 
 
-Talvez isso não faça sentido, então vamos colocar em perspectiva. No mundo da aviação, a hierarquia é bastante rígida, o Piloto/Capitão é a autoridade máxima, o co-piloto e o resto da tripulação jamais devem discordar deles. Eis o “Catch-22” dos Co-Pilotos. Definindo, Catch-22 significa “dilema” :
+Talvez isso não faça sentido de imediato, então vamos por partes. No mundo da aviação a hierarquia é rígida: o Piloto/Capitão é a autoridade máxima, e o co-piloto e o resto da tripulação jamais devem discordar dele. Esse é o “Catch-22” dos co-pilotos, o dilema:
 
 - Você está ferrado se ignorar os erros do Capitão!
 - Você está ferrado se fizer ou disser qualquer coisa sobre isso!
@@ -61,24 +62,24 @@ Regras de Sobrevivência:
 - Não voe sob tempo ruim;
 - Não se meta com os botões vermelhos;
 - Nunca, jamais coma comida de avião no escuro;
-- Mantenha sua atitude barulhenta um segredo;
+- Mantenha sua péssima atitude em segredo;
 - Fale muito, muito levemente quando falar com seu Capitão;
 - Não faça aterrissagens melhor do que seu Capitão até a última viagem do mês.
 
-Com tudo isso, não estou brincando, as análises das caixas-pretas dos aviões acidentados nas últimas décadas demonstraram que os Capitães às vezes, sob stress, cansados, irritados, ou qualquer coisa assim, acabam ignorando situações de perigo. Os co-pilotos, sabendo da situação não tinham nenhuma ideia de como abordar o assunto, com medo de retaliações caso estivessem errados, por exemplo. Por alguma razão, nem o pior caso, que é literalmente cair para a morte, conseguiu quebrar a barreira da hierarquia.
+Não estou brincando. A análise das caixas-pretas de aviões acidentados nas últimas décadas mostrou que os capitães, sob stress, cansados ou irritados, às vezes acabam ignorando situações de perigo. Os co-pilotos percebiam o risco e não faziam ideia de como abordar o assunto, com medo de retaliação caso estivessem errados. Por alguma razão, nem o pior dos cenários, cair para a morte, conseguia quebrar a barreira da hierarquia.
 
-Por causa disso pesquisadores como [Dr. Robert O. Besco](http://www.crm-devel.org/resources/paper/PACE.PDF) chegaram a modelos de procedimento especificamente para esse Cockpit Resource Management (CRM), ou gestão das pessoas da aeronave. Um deles foi o P.A.C.E.
+Por causa disso, pesquisadores como o [Dr. Robert O. Besco](http://web.archive.org/web/20090802092433/http://www.crm-devel.org/resources/paper/PACE.PDF) criaram modelos de procedimento para o Cockpit Resource Management (CRM), a gestão das pessoas dentro da aeronave. Um deles foi o P.A.C.E.:
 
 - (P)robing
 - (A)lerting
-- ©hallenging
+- (C)hallenging
 - (E)mergency Warning
 
 ### PROBING
 
 _“Capitão, preciso entender porque estamos voando desta maneira.”_
 
-Essa é a fase onde o co-piloto, vislumbrando uma situação de perigo potencial precisa se certificar que o piloto sabe o que está fazendo, ou seja, às vezes é uma manobra calculada que o piloto tem total controle, então, não custa se certificar. A tradução mais clara para isso seria:
+É a fase em que o co-piloto, ao perceber um perigo em potencial, precisa confirmar se o piloto sabe o que está fazendo. Às vezes é uma manobra calculada, sob total controle, e não custa checar. A tradução mais direta seria:
 
 _“Capitão, você por acaso não está se colocando num canto e mirando para atirar no próprio pé?”_
 
@@ -86,7 +87,7 @@ _“Capitão, você por acaso não está se colocando num canto e mirando para a
 
 _“Capitão, parece para mim que estamos num curso que está drasticamente reduzindo nossas margens de segurança.”_
 
-No caso do Capitão não ter sido capaz de dar uma resposta satisfatória no PROBING, agora é hora de alertá-lo sobre os perigos iminentes. Mais diretamente:
+Se o capitão não deu uma resposta satisfatória no PROBING, é hora de alertá-lo sobre os perigos iminentes. Mais diretamente:
 
 _“Capitão, é minha função e responsabilidade proteger seus pontos cegos. Eu vejo que você está quase caindo no abismo.”_
 
@@ -94,7 +95,7 @@ _“Capitão, é minha função e responsabilidade proteger seus pontos cegos. E
 
 _“Capitão, você está colocando os passageiros e a aeronave em perigo imediato e irreversível. Você deve escolher imediatamente um curso de ação que irá reduzir nossos níveis inaceitáveis de alto risco.”_
 
-Você já tentou entender, já tentou avisar, agora é hora de desafiá-lo e confrontá-lo a enfrentar a realidade. Nessa penúltima etapa, o co-piloto deve ainda dar a chance do capitão cair em si e fazer a coisa certa.
+Você já tentou entender, já tentou avisar, agora é hora de desafiá-lo e confrontá-lo com a realidade. Nesta penúltima etapa, o co-piloto ainda dá ao capitão a chance de cair em si e fazer a coisa certa.
 
 _“Capitão você está prestes a se auto-destruir. Você tem literalmente uma arma apontada nas suas 6 horas. Estamos para receber o equivalente em aviação civil de um enema de 20 milímetros.”_
 
@@ -102,7 +103,7 @@ _“Capitão você está prestes a se auto-destruir. Você tem literalmente uma 
 
 _“Capitão, se você não aumentar nossas margens de segurança imediatamente, é meu dever e responsabilidade e tomar o controle da aeronave imediatamente.”_
 
-Estamos no ponto onde o capitão completamente ignora a realidade, ou está completamente incapacitado de tomar qualquer decisão. Estes são os últimos 30 segundos antes do ponto-de-não-retorno. Em bom português:
+Chegamos ao ponto em que o capitão ignora a realidade por completo, ou está incapacitado de tomar qualquer decisão. São os últimos 30 segundos antes do ponto de não retorno. Em bom português:
 
 _“Capitão, estamos prestes a virar presuntos. Eu escolho não me juntar a você. Se você não soltar o controle agora, eu vou tomar esta aeronave de você.”_
 
@@ -122,24 +123,26 @@ Quando o co-piloto já está pilotando a aeronave, os passos de intervenção do
 
 ## Conclusão
 
-Substitua “Capitão” por “Gerente” e “Co-Piloto” por “membro de uma equipe de projeto” e vocês imediatamente vão entender onde quero chegar.
+Substitua “Capitão” por “Gerente” e “Co-Piloto” por “membro de uma equipe de projeto” e você entende na hora onde quero chegar.
 
-Os arcaicos sistemas hierárquicos usados até hoje assumem que os ditos “Gerentes” são onipotentes, onipresentes e tem poder absoluto. A diretoria, RH, etc tem a ilusão que os gerentes conhecem cada um dos membros da equipe, sabem exatamente como eles se desenvolvem, como eles se comportam, o que eles desejam. A equipe, por outro lado, tem a ilusão que o gerente sabe o que precisa ser feito, quais são as coisas mais importantes. E o gerente realmente acaba acreditando que ele tem a capacidade de liderar sua equipe, de entregar os resultados exigidos pela diretoria, e que todos confiam nele.
+Os sistemas hierárquicos arcaicos que usamos até hoje partem do princípio de que os tais “gerentes” são onipotentes, onipresentes e têm poder absoluto. A diretoria e o RH vivem a ilusão de que o gerente conhece cada membro da equipe, sabe como cada um se desenvolve, como se comporta e o que deseja.
 
-Ou **pior** : o gerente é exatamente o tipo coercivo, que usa de medo, intimidação, literalmente “carteirada” para mandar e desmandar. _“Você trabalha para mim, cale sua boca e faça o que estou mandando!”_ Normalmente ninguém diz assim tão explicitamente, mas é o que acontece, especialmente a portas fechadas. Seu gerente é assim? Prepare-se, seu avião está prestes a cair.
+A equipe, do outro lado, vive a ilusão de que o gerente sabe o que precisa ser feito e quais são as prioridades. E o gerente acaba acreditando mesmo que dá conta de liderar o time, entregar os resultados que a diretoria cobra e que todos confiam nele.
 
-Diria que 99% dos gerentes da atualidade são os Capitães de voo que vão levar o avião ao fundo do Triângulo das Bermudas. As primeiras pessoas que devem evitar isso são a Equipe!
+Ou **pior**: o gerente é do tipo coercivo, que usa medo, intimidação e “carteirada” para mandar e desmandar. _“Você trabalha para mim, cale a boca e faça o que estou mandando!”_ Ninguém costuma dizer com essas palavras, mas é o que acontece, principalmente a portas fechadas. Seu gerente é assim? Prepare-se, seu avião está prestes a cair.
 
-Sim, você mesmo, membro acomodado e conformado de uma equipe de produtos ou projetos! Você é o co-piloto nessa história. Quando o projeto/produto falha, não pense apenas que é culpa do gerente, a culpa é sua! E se isso fosse um avião você estaria igualmente morto, um presunto. Portanto, faça a sua parte.
+Diria que 99% dos gerentes de hoje são os capitães que vão levar o avião ao fundo do Triângulo das Bermudas. As primeiras pessoas que precisam evitar isso são a própria Equipe.
 
-Os quatro passos do PACE são ideais para serem adotados por qualquer equipe. Não se trata de caos ou insubordinação. Você precisa prestar atenção para dar tempo de aplicar os quatro passos:
+Sim, você, membro acomodado e conformado de uma equipe de produtos ou projetos. Você é o co-piloto nessa história. Quando o projeto falha, não jogue a culpa só no gerente: a culpa é sua também. Se isso fosse um avião, você estaria igualmente morto, virado presunto. Faça a sua parte.
+
+Os quatro passos do PACE servem para qualquer equipe adotar. Não se trata de caos ou insubordinação. Você precisa prestar atenção cedo para ter tempo de aplicar os quatro passos:
 
 - (P) Quando nota algo estranho se desenrolando, peça esclarecimentos
 - (A) Se a explicação não for convincente, tente avisar dos riscos que você já viu
-- © Se nenhuma ação tomada, exija que algo seja feito
+- (C) Se nenhuma ação for tomada, exija que algo seja feito
 - (E) Se nada for feito, é hora de avisar que vai tomar o controle!
 
-A sorte, é que em projetos e produtos, especialmente na nossa área de software, não existe risco iminente de morte, literalmente falando. Porém, pense que cada projeto fracassado é um pedaço de você que está morrendo. Um profissional que só tem fracassos na sua carreira é, por definição, um fracassado.
+A sorte é que em projetos e produtos, principalmente na nossa área de software, não existe risco de morte, literalmente falando. Mas pense em cada projeto fracassado como um pedaço de você que morre. Um profissional que só acumula fracassos na carreira é, por definição, um fracassado.
 
-Última coisa: você por acaso trabalha no departamento de RH? Pense nisso que acabei de dizer como um treinamento a todos os novos contratados. Um protocolo que dá aos subordinados um caminho “oficial” de como agir para evitar a morte prematura da própria carreira. O problema é que hoje o caminho que existe é apenas de autoridade de cima para baixo. A maioria dos subordinados tem medo de retaliações de seus gerentes, já passou da hora de dar uma válvula de escape de baixo para cima que o gerente está ciente que existe.
+Última coisa: você trabalha no RH? Pense em tudo isso como um treinamento para os novos contratados, um protocolo que dá ao subordinado um caminho “oficial” para agir e evitar a morte prematura da própria carreira. Hoje o único caminho que existe é o da autoridade de cima para baixo. A maioria dos subordinados tem medo de retaliação do gerente. Já passou da hora de criar uma válvula de escape de baixo para cima, que o gerente saiba que existe.
 
