@@ -2,6 +2,7 @@
 title: 'Tradução: Não sei o que quero, mas sei como conseguir'
 date: '2008-02-10T17:18:00-02:00'
 slug: tradu-o-n-o-sei-o-que-quero-mas-sei-como-conseguir
+translationKey: tradu-o-n-o-sei-o-que-quero-mas-sei-como-conseguir
 description: "A tradução separa desenvolvimento iterativo, que espera validar e mudar uma solução, de incremental, que adiciona funcionalidade. O argumento é planejar espaço para descobrir, refinar e descartar."
 tags:
 - agile
@@ -10,22 +11,22 @@ tags:
 draft: false
 ---
 
- ![](http://s3.amazonaws.com/akitaonrails/assets/2008/2/10/patton_headshot_small.jpg)
+![](http://s3.amazonaws.com/akitaonrails/assets/2008/2/10/patton_headshot_small.jpg)
 
-Este [artigo](http://www.agileproductdesign.com/blog/dont_know_what_i_want.html) é muito interessante e me deixou intrigado porque eu – que sou um amador em técnicas Ágeis – pela primeira vez vi um enfoque diferente na explicação de certos termos Ágeis, em particular, “iteração” vs “incremental”.
+Este [artigo](https://web.archive.org/web/20151112195815/http://www.agileproductdesign.com/blog/dont_know_what_i_want.html) é muito interessante e me deixou intrigado. Eu sou um amador em técnicas Ágeis e foi a primeira vez que vi um enfoque diferente para explicar certos termos Ágeis, em particular “iteração” vs “incremental”.
 
-Segundo o perfil no site do autor: **Jeff Patton** tem focado em técnicas Ágeis desde 2000 e se especializou na aplicação de técnicas de design centradas no usuário para melhorar requirimentos Ágeis, planejamento e produtos. Alguns de seus artigos mais recentes podem ser encontrados na www.AgileProductDesign.com e na Crystal Clear de Alistair Cockburn. Seu próximo livro será lançado pela série de Desenvolvimento Ágil da Addison-Wesley que dará conselhos táticos para quem procura entregar software útil, usável e de valor.
+Segundo o perfil no site do autor: **Jeff Patton** trabalha com técnicas Ágeis desde 2000 e se especializou em aplicar técnicas de design centrado no usuário para melhorar requisitos, planejamento e produtos Ágeis. Alguns de seus artigos mais recentes estão na AgileProductDesign.com e no Crystal Clear, de Alistair Cockburn. O próximo livro dele sai pela série de Desenvolvimento Ágil da Addison-Wesley, com conselhos táticos para quem quer entregar software útil, usável e de valor.
 
-Atualmente ele trabalha como consultor independente, é o fundador e moderador da lista agile-usability no grupo de discussão do Yahoo, um colunista na StickyMinds.com e IEEE Software, e vencedor do Gordon Park Award 2007 da Agile Alliance por contribuições ao desenvolvimento Ágil.
+Hoje ele é consultor independente, fundador e moderador da lista agile-usability no Yahoo Groups, colunista da StickyMinds.com e da IEEE Software, e vencedor do Gordon Pask Award 2007 da Agile Alliance por contribuições ao desenvolvimento Ágil.
 
-E aqui vai minha tradução do artigo em questão:
+E aqui vai a minha tradução do artigo:
 
 
 ## Não sei o que quero, mas sei como conseguir
 
 [![](http://s3.amazonaws.com/akitaonrails/assets/2008/2/10/johnny_rotten.jpg)](http://en.wikipedia.org/wiki/John_Lydon)
 
-Tudo começou com um desses estranhos treinamentos de pensamento que vêm a você quando está na metade do caminho entre dormir e acordar. As primeiras linhas da música [Anarchy in the UK](http://www.lyricsfreak.com/s/sex+pistols/anarchy+in+the+uk_20123592.html), do Sex Pistols, estavam tocando na minha cabeça. (Isso pode ser uma dica tanto da minha idade, e do tipo e volume da música que ouço). Nessa manhã, as [palavras de Johnny Rotten](http://www.lyricsfreak.com/s/sex+pistols/anarchy+in+the+uk_20123592.html) pareciam particularmente sábias – e pareciam descrever perfeitamente um problema recorrente que tenho sofrido ajudando pessoas a realmente [entender](http://en.wikipedia.org/wiki/Grok) desenvolvimento Ágil. Brevemente, depois de se declarar um anti-cristo, Johnny diz:
+Tudo começou com um daqueles raciocínios estranhos que vêm de madrugada, quando você está no meio do caminho entre dormir e acordar. As primeiras linhas da música [Anarchy in the UK](https://web.archive.org/web/20090523133452/http://www.lyricsfreak.com/s/sex%20pistols/anarchy%20in%20the%20uk_20123592.html), do Sex Pistols, estavam tocando na minha cabeça. (Isso pode ser uma dica tanto da minha idade quanto do tipo e volume da música que ouço). Nessa manhã, as [palavras de Johnny Rotten](https://web.archive.org/web/20090523133452/http://www.lyricsfreak.com/s/sex%20pistols/anarchy%20in%20the%20uk_20123592.html) pareciam particularmente sábias – e pareciam descrever perfeitamente um problema recorrente que tenho sofrido ajudando pessoas a realmente [entender](http://en.wikipedia.org/wiki/Grok) desenvolvimento Ágil. Brevemente, depois de se declarar um anti-cristo, Johnny diz:
 
 **“Não sei o que quero, mas sei como conseguir.”**
 
@@ -61,7 +62,7 @@ Artistas de pintar-nos-números trabalham incrementalmente. Quando eu era crian�
 
 ### Nós iteramos por múltiplas razões
 
-Depois de falar sobre iteração durante a [XP Day 2007](http://www.xpday.org/) alguém corretamente apontou a mim que não era tão simples quanto “mudar as coisas” em cada iteração. Ele apontou que:
+Depois de falar sobre iteração durante a [XP Day 2007](https://web.archive.org/web/20080211214814/http://www.xpday.org/) alguém corretamente apontou a mim que não era tão simples quanto “mudar as coisas” em cada iteração. Ele apontou que:
 
 - nós iteramos para **encontrar a solução correta.**
 
@@ -77,7 +78,7 @@ Nós adicionamos incrementalmente a software por várias razões também.
 
 ### Nós combinamos iteração e incrementação
 
-Em desenvolvimento Ágil realmente combinamos as duas táticas. Durante uma “iteração” de desenvolvimento onde construímos vários [user stories](http://www.agileproductdesign.com/blog/the_shrinking_story.html) algumas podem estar adicionando novas funcionalidades incrementalmente, outras podem estar iterando para melhorar, mudar ou remover funcionalidades existentes.
+Em desenvolvimento Ágil realmente combinamos as duas táticas. Durante uma “iteração” de desenvolvimento onde construímos vários [user stories](https://web.archive.org/web/20071008161941/http://www.agileproductdesign.com/blog/the_shrinking_story.html) algumas podem estar adicionando novas funcionalidades incrementalmente, outras podem estar iterando para melhorar, mudar ou remover funcionalidades existentes.
 
 Onde as coisas realmente não dão certo em desenvolvimento Ágil é quando ninguém planeja iterar.
 
@@ -109,16 +110,16 @@ Existe uma pequena frase miserável que as pessoas Ágeis usam frequentemente. E
 
 | ![](http://s3.amazonaws.com/akitaonrails/assets/2008/2/10/scrum_snowman_model.gif) | ![](http://s3.amazonaws.com/akitaonrails/assets/2008/2/10/potentially_shippable_product.gif) |
 
-No filme “Princess Bribe” um dos vilões exclama “Inconcebível!” cada vez que um de seus planos é derrubado pelo herói. Isso acontece com tanta frequência que um de seus parceiros diz “Você sempre fala essa palavra. Eu acho que você não sabe o que isso significa.”
+No filme “Princess Bride” um dos vilões exclama “Inconcebível!” cada vez que um de seus planos é derrubado pelo herói. Isso acontece com tanta frequência que um de seus parceiros diz “Você sempre fala essa palavra. Eu acho que você não sabe o que isso significa.”
 
-![](http://www.agileproductdesign.com/blog/images/inigo.jpg)
+![](https://web.archive.org/web/20071010140455im_/http://www.agileproductdesign.com/blog/images/inigo.jpg)
 
 _“Entregável”. Você sempre fala essa palavra.   
 Eu não acho que isso significa o que você acha que significa._
 
 Para um cliente, alguém que pretende vender ou usar o software, ‘entregável’ significa que eles poderiam de fato vender ou usar o software. Isso significa que o número mínimo de funcionalidades está todo presente. O software precisa ser útil para os propósitos intencionados – pelo menos tão útil quanto o software antigo ou processo em papel que ele substitui. O software precisa parecer e se comportar bem – ter alta qualidade de acabamento – particularmente se isso é software comercial e você tem concorrentes baforando no seu cangote.
 
-Entregável significa finalizado. Completamente feito e limpo. Não há necessidade de iterar em algo pronto – realmente pronto e entregável.
+Entregável significa finalizado. Completamente pronto e acabado. Não há necessidade de iterar em algo pronto – realmente pronto e entregável.
 
 Dizer “entregável” para pessoas no papel de clientes significa lhes dizer que é bom que tenham os requerimentos certos porque é dessa forma que desenvolvimento Ágil funciona.
 
@@ -128,7 +129,7 @@ Agora, eu acredito que as pessoas Ágeis tinham outra coisa em mente quando diss
 
 Eu proponho que nós, da comunidade Ágil, sejamos claros sobre o que queremos dizer por iterativo e incremental. Precisamos explicar a esses clientes e donos de produtos que é importante escrever user stories que não têm a intenção de serem lançadas. Para escrever histórias que eles intencionam avaliar, aprender, melhorar ou jogar fora como experimentos falhos.
 
-Em conversas com meu amigo Alistair, ele propôs [escrever três cartões de user stories em vez de apenas um](http://alistair.cockburn.us/index.php/Three_cards_for_user_rights). O primeiro cartão tem a história de fato nela. O segundo é um espaço para as inevitáveis mudanças à história depois de a vermos. A terceira para os refinamentos depois de vermos as mudanças.
+Em conversas com meu amigo Alistair, ele propôs [escrever três cartões de user stories em vez de apenas um](https://web.archive.org/web/20080202055916/http://alistair.cockburn.us/index.php/Three_cards_for_user_rights). O primeiro cartão tem a história de fato nela. O segundo é um espaço para as inevitáveis mudanças à história depois de a vermos. A terceira para os refinamentos depois de vermos as mudanças.
 
 Esse é um exemplo de planejamento para iterar. Isso poderia tirar muito estresse das mãos trêmulas dos clientes apreensivos preocupados sobre fazer certo porque a história precisa ser “entregável”.
 
@@ -151,17 +152,17 @@ De fato, tente muito não ter tanta certeza sobre o que quer. Se alavancar itera
 
 ### Por favor alavanque a explicação se quiser
 
-Essa é uma história que contei durante a [palestra de Abrace a Incerteza na XP Day 2007](http://www.agileproductdesign.com/downloads/patton_embrace_uncertainty_preso_only.zip). É raro quando você precisa citar Johnny Rotten, Roger Waters, Paul Simon, Pete Townsend, John Lennon e as Spice Girls na mesma palestra.
+Essa é uma história que contei durante a [palestra de Abrace a Incerteza na XP Day 2007](https://web.archive.org/web/20101025085113/http://agileproductdesign.com/downloads/patton_embrace_uncertainty_preso_only.zip). É raro quando você precisa citar Johnny Rotten, Roger Waters, Paul Simon, Pete Townsend, John Lennon e as Spice Girls na mesma palestra.
 
-Sinta-se livre para [fazer download da palestra](http://www.agileproductdesign.com/downloads/patton_embrace_uncertainty_preso_only.zip)
+Sinta-se livre para [fazer download da palestra](https://web.archive.org/web/20101025085113/http://agileproductdesign.com/downloads/patton_embrace_uncertainty_preso_only.zip)
 
-Aqui está a palestra com [os clipes musicais](http://www.agileproductdesign.com/downloads/patton_embrace_uncertainty.zip).
+Aqui está a palestra com [os clipes musicais](https://web.archive.org/web/20101025085044/http://agileproductdesign.com/downloads/patton_embrace_uncertainty.zip).
 
 Sinta-se livre para usar os exemplos usando a creative commons license. Deixe as pessoas saberem que pegaram emprestado de mim.
 
-Se gostou dos [slides da Monalisa](http://www.agileproductdesign.com/downloads/patton_iterating_and_incrementing.ppt), pode [pegá-las daqui](http://www.agileproductdesign.com/downloads/patton_iterating_and_incrementing.ppt).
+Se gostou dos [slides da Monalisa](https://web.archive.org/web/20101025085108/http://agileproductdesign.com/downloads/patton_iterating_and_incrementing.ppt), pode [pegá-las daqui](https://web.archive.org/web/20101025085108/http://agileproductdesign.com/downloads/patton_iterating_and_incrementing.ppt).
 
-As idéias gerais aqui estão escritas em um [artigo na StickyMinds.com](http://www.stickyminds.com/sitewide.asp?ObjectId=13178&Function=DETAILBROWSE&ObjectType=COL&sqry=%2AZ%28SM%29%2AJ%28COL%29%2AR%28createdate%29%2AK%28colarchive%29%2AF%28%7E%29%2A&sidx=2&sopp=10&sitewide.asp?sid=1&sqry=%2AZ%28SM%29%2AJ%28COL%29%2AR%28createdate%29%2AK%28colarchive%29%2AF%28%7E%29%2A&sidx=2&sopp=10) com um pouco menos de reclamação. Você pode compartilhar essa versão com seu chefe.
+As idéias gerais aqui estão escritas em um [artigo na StickyMinds.com](https://www.stickyminds.com/article/neglected-practice-iteration) com um pouco menos de reclamação. Você pode compartilhar essa versão com seu chefe.
 
 ### Fiquem ligados
 
@@ -171,7 +172,6 @@ As idéias gerais aqui estão escritas em um [artigo na StickyMinds.com](http://
 
 Se quiserem saber mais sobre estratégias específicas para iterar sensivelmente em desenvolvimento Ágil, por favor me visitem em um tutorial que estarei ensinando em uma conferência. Também prestem atenção a este site e bloguem enquanto ressuscito meu antigo livro do purgatório.
 
-Finalmente, se leu este blog no [ThoughtBlogs](http://blogs.thoughtworks.com/) (e meu web analytics me diz que muitos de vocês vieram de lá) esta pode ser a última vez que meu blog aparece por lá. Por favor assinem diretamente, ou me procurem na [ThoughtWorks alumni blogs](http://blogs.thoughtworks.com/alumni/). Eu tive uma ótima estadia na ThoughtWorks pelos últimos anos, mas é hora de andar sozinho.
+Finalmente, se leu este blog no [ThoughtBlogs](https://web.archive.org/web/20080207054146/http://blogs.thoughtworks.com/) (e meu web analytics me diz que muitos de vocês vieram de lá) esta pode ser a última vez que meu blog aparece por lá. Por favor assinem diretamente, ou me procurem na [ThoughtWorks alumni blogs](https://web.archive.org/web/20080222074209/http://blogs.thoughtworks.com/alumni/). Eu tive uma ótima estadia na ThoughtWorks pelos últimos anos, mas é hora de andar sozinho.
 
 Obrigado por lerem.
-
