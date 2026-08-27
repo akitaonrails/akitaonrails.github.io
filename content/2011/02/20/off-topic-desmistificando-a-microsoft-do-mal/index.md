@@ -2,6 +2,7 @@
 title: '[Off-Topic] Desmistificando a Microsoft do "Mal"'
 date: '2011-02-20T17:53:00-03:00'
 slug: off-topic-desmistificando-a-microsoft-do-mal
+translationKey: off-topic-desmistificando-a-microsoft-do-mal
 description: "Ao traduzir uma defesa libertária da Microsoft no caso antitruste, o autor argumenta que leis vagas dão poder arbitrário ao governo e que a posição dominante da empresa resultou de competição, não de coerção."
 tags:
 - leis-e-regulacao
@@ -17,11 +18,17 @@ Talvez quem tenha entrado no mercado de tecnologia nesta década não acompanhou
 
 Ou quase, porque agora é a Apple que está crescendo demais, assim como o Google, que já tem milhares de detratores em vez de fãs. Em breve talvez estaremos vendo um novo caso antitruste: contra um iTunes Store da Apple, por suas práticas “injustas” e “anticompetitivas”. Se isso acontecer, é porque as pessoas não aprendem nada mesmo e estamos fadados a retroceder em vez de progredir.
 
-Em termos de gosto pessoal – garantido por liberdade individual de expressão – eu desgosto da maioria dos produtos da Microsoft e gosto da maioria dos produtos da Apple. Mas isso não significa que eu não entendo, respeito e admiro a capacidade da Microsoft, e da Apple, de saírem de uma garagem para o topo do mundo. É o que um mercado livre capitalista possibilita. E eu igualmente desgosto quando o sucesso passa a ser visto com o desdém da inveja dos incompetentes que, no fim, acham que têm “direito” a alguma coisa sem a mesma capacidade. Aliás, eu considerar um produto “tecnicamente” melhor ou não, é irrelevante. “Melhor” ou “pior” é questão de gosto. E o melhor termômetro no mercado é a demanda. Se houver alta demanda o produto pode ser considerado “bom” mesmo sendo “tecnicamente ruim”.
+Em termos de gosto pessoal, garantido pela liberdade individual de expressão, eu desgosto da maioria dos produtos da Microsoft e gosto da maioria dos produtos da Apple. Isso não me impede de entender, respeitar e admirar a capacidade das duas de saírem de uma garagem para o topo do mundo. É o que um mercado livre capitalista possibilita.
 
-Ninguém tem “direito” a nada além do que ele próprio produz. Mais do que isso, ninguém tem direito a nada dos outros de graça. Mas muitos acham que ninguém pode crescer demais, senão como ficam os competidores menores? Pensamentos estadistas como esse levam à Grande Depressão de 1929, levam às Guerras Mundiais, levam à Crise Financeira de 2008 … Eu particularmente acho desorientado juntar o fato de um software ser “aberto” ou de uma empresa apoiar “software livre” com movimentos sociais e populistas. Tecnologia não deve se misturar com ideologias socialistas fracassadas. Em outro artigo vou explicar por que Software de Código Aberto (open source) tem tudo a ver com Capitalismo e não tem nada a ver com movimentos sociais politizados.
+E me incomoda quando o sucesso passa a ser visto com o desdém e a inveja dos incompetentes, que no fim acham que têm “direito” a alguma coisa sem ter a mesma capacidade.
 
-O texto a seguir é antigo, traduzido do [artigo original](http://www.aynrand.org/site/News2?page=NewsArticle&id=5241&news_iv_ctrl=1021) de Ghate Onkar (Pittsburgh Tribune-Review, 17 de março de 2002) deve convencê-los do que quero dizer. Larguem os preconceitos (“Microsoft = Mal”) e leiam com cérebro e raciocínio porque todos os argumentos são lógicos. Claro, o contexto é de 2002, desde então a Microsoft decresceu bastante e as qualidades dela mudaram.
+Aliás, se eu considero um produto “tecnicamente” melhor ou não é irrelevante. “Melhor” e “pior” são questão de gosto, e o melhor termômetro do mercado é a demanda. Se a demanda é alta, o produto pode ser “bom” mesmo sendo “tecnicamente ruim”.
+
+Ninguém tem “direito” a nada além do que ele próprio produz, e muito menos a algo dos outros de graça. Mas muita gente acha que ninguém pode crescer demais, senão como ficam os competidores menores? Esse tipo de pensamento estatista levou à Grande Depressão de 1929, às Guerras Mundiais e à Crise Financeira de 2008.
+
+Eu acho desorientado juntar o fato de um software ser “aberto”, ou de uma empresa apoiar “software livre”, com movimentos sociais e populistas. Tecnologia não deve se misturar com ideologias socialistas fracassadas. Em outro artigo vou explicar por que Código Aberto (open source) tem tudo a ver com Capitalismo e nada a ver com movimentos sociais politizados.
+
+O texto a seguir é antigo, traduzido do [artigo original](https://ari.aynrand.org/issues/government-and-business/regulations/drop-the-antitrust-case-against-microsoft/) de Onkar Ghate (Pittsburgh Tribune-Review, 17 de março de 2002), e deve convencê-los do que quero dizer. Larguem os preconceitos (“Microsoft = Mal”) e leiam com raciocínio, porque os argumentos são lógicos. O contexto é de 2002; desde então a Microsoft decresceu bastante e suas qualidades mudaram.
 
 
 ## [TRADUÇÃO] Largue o caso antitruste contra Microsoft
@@ -62,19 +69,21 @@ E continua a ganhar: ela enfrenta concorrência constante, mesmo se não houver 
 
 Então mais uma vez, a Microsoft está sendo atacada por seu sucesso: na realidade ela não tem poder de monopólio, apenas gestão brilhante.
 
-Os únicos monopólios que podem de fato existir são os criados pelo governo. Somente um governo pode impedir alguém de entrar num mercado e, assim, eliminar a concorrência. Os Correios, por exemplo, são um monopólio. Há pouca dúvida de que a Federal Express (nos EUA) pode oferecer um serviço melhor, mais barato, e ainda obter lucro. Mas o governo forçadamente a impede de entrar nesse mercado. A posição dominante no mercado dos Correios é suja, oferece um serviço ruim, mas por causa da coerção do governo não enfrenta concorrência. A posição dominante de mercado da Microsoft, pelo contrário, é conquistada: ela enfrenta concorrência constante, que continua batendo. Novamente, não equiparem o voluntário com o forçado.
+Os únicos monopólios que podem de fato existir são os criados pelo governo. Somente um governo pode impedir alguém de entrar num mercado e, assim, eliminar a concorrência. Os Correios, por exemplo, são um monopólio. Há pouca dúvida de que a Federal Express (nos EUA) pode oferecer um serviço melhor, mais barato, e ainda obter lucro. Mas o governo forçadamente a impede de entrar nesse mercado. A posição dominante dos Correios no mercado não é conquistada: oferece um serviço ruim, mas por causa da coerção do governo não enfrenta concorrência. A posição dominante de mercado da Microsoft, pelo contrário, é conquistada: ela enfrenta concorrência constante, que continua batendo. Novamente, não equiparem o voluntário com o forçado.
 
 A Microsoft é o epítome do sucesso empresarial americano: ela produz uma enorme riqueza através da inteligência e trabalho duro. Imagine a riqueza que existiria – para cada empresa, para cada empregado, para todos os acionistas, para cada cliente – se todas as empresas na América fossem dirigidas por um Bill Gates. O fato de que não são não deve nos levar a destruir a criação de Bill Gates, mas, mais ainda, admirá-lo e defendê-lo.
 
 Por que a punição da Microsoft deveria ser tão tolerante quanto possível (supondo que o caso não pode ser jogado fora, nesta fase do processo)? Porque as leis antitruste são leis arbitrárias que penalizam a virtude por ser virtude – como as acusações específicas contra a Microsoft revelam claramente.
 
-Dr. [Onkar Ghate](http://www.aynrand.org/site/PageServer?pagename=media_OnkarGhate), PhD em filosofia, é um pesquisador sênior do Instituto Ayn Rand, em Irvine, na Califórnia. O Instituto promove o Objetivismo, a filosofia de Ayn Rand – autora de [Atlas Shrugged](http://www.aynrandbookstore.com/prodinfo.asp?number=AR91B) e [The Fountainhead](http://www.aynrandbookstore.com/prodinfo.asp?number=AR89B).
+Dr. [Onkar Ghate](https://ari.aynrand.org/experts/onkar-ghate/), PhD em filosofia, é um pesquisador sênior do Instituto Ayn Rand, em Irvine, na Califórnia. O Instituto promove o Objetivismo, a filosofia de Ayn Rand, autora de [Atlas Shrugged](http://web.archive.org/web/20070202073236/http://www.aynrandbookstore.com:80/prodinfo.asp?number=AR91B) e [The Fountainhead](http://web.archive.org/web/20070202073147/http://www.aynrandbookstore.com:80/prodinfo.asp?number=AR89B).
 
 ## Disclaimer
 
 Explicando, não é a intenção dizer que a Microsoft é inocente em tudo. Para isso existe o sistema judiciário e qualquer empresa que se sinta prejudicada ilegalmente tem todo o direito de processar, como já aconteceu inúmeras vezes. Vejam [esta lista](http://en.wikipedia.org/wiki/Microsoft_litigation) de processos.
 
-E isso é verdade para qualquer empresa. Uma das funções de um governo é garantir que contratos sejam cumpridos. Agora a discussão que me interessa no episódio acima em particular é o [Sherman Antitrust Act](http://en.wikipedia.org/wiki/Sherman_Antitrust_Act) que, em essência, dá carta branca ao governo de litigar qualquer empresa por qualquer motivo. Esse não foi o único processo contra a Microsoft mas foi um dos mais publicamente divulgados. A lei de antitruste em si é um mal, assim como regulamentações que dão privilégios que não se consegue no mercado.
+E isso é verdade para qualquer empresa. Uma das funções de um governo é garantir que contratos sejam cumpridos.
 
-E para quem está interessado em aprender mais, recomendo ler o [Findings of Facts](http://www.justice.gov/atr/cases/f3800/msjudge.pdf) completo sobre o caso que está no arquivo da justiça americana. E para entender porque a lei antitruste é um grave problema comece lendo [este artigo](http://wiki.objectivismonline.net/Antitrust) mas principalmente o livro [Capitalism: the Unknown Ideal](http://en.wikipedia.org/wiki/Capitalism:_The_Unknown_Ideal)
+A discussão que me interessa no episódio acima é o [Sherman Antitrust Act](http://en.wikipedia.org/wiki/Sherman_Antitrust_Act) que, em essência, dá carta branca ao governo para litigar qualquer empresa por qualquer motivo. Esse não foi o único processo contra a Microsoft, mas foi um dos mais divulgados. A lei antitruste em si é um mal, assim como regulamentações que dão privilégios que ninguém conseguiria no mercado.
+
+E para quem quer se aprofundar, recomendo ler o [Findings of Fact](https://www.justice.gov/sites/default/files/atr/legacy/2006/04/11/msjudge.pdf) completo sobre o caso, no arquivo da justiça americana. Para entender por que a lei antitruste é um grave problema, comece por [este artigo](http://wiki.objectivismonline.net/Antitrust), mas principalmente pelo livro [Capitalism: The Unknown Ideal](http://en.wikipedia.org/wiki/Capitalism:_The_Unknown_Ideal).
 
