@@ -2,7 +2,8 @@
 title: 'Off-Topic: Scientific Method vs Cargo Cult'
 date: '2008-12-16T13:51:00-02:00'
 slug: off-topic-m-todo-cient-fico-vs-cargo-cult
-description: "Fabio criticizes cargo cult programming and proposes testing hypotheses through research, throwaway prototypes, and experiments. At YellowPages, four months of preparation kept four months of implementation from becoming twenty."
+translationKey: off-topic-m-todo-cient-fico-vs-cargo-cult
+description: "Cargo culting is repeating structures without understanding why. The fix is testing hypotheses with throwaway prototypes. At YellowPages, four months of prep kept four months of coding from becoming twenty."
 tags:
 - science
 - software-engineering
@@ -10,27 +11,27 @@ tags:
 draft: false
 ---
 
-After several years I've noticed that a large number of programmers simply don't understand the Scientific Method. These days we discuss agility a great deal, how to write tests, why TDD matters. In "testing" there's something that should be **obvious** but apparently isn't. There's a step I consider very important: **experimentation**.
+After several years, I've noticed that a large number of programmers simply don't understand the Scientific Method. These days we talk a lot about agility and testing, and everyone repeats that TDD matters. Inside "testing" there is one step that should be **obvious** and almost nobody practices: **experimentation**.
 
 ![](/files/20081216/42-17463681.jpg)
 
-Just as many use "lack of time" as an excuse not to write tests, the same excuse is used to avoid testing hypotheses through experimentation (most don't even understand they should be experimenting with hypotheses). What I'm talking about here is creating proofs of concept — "pieces" of what you want to develop that will potentially be thrown away. The "throwing away" part is what makes programmers (and managers) bristle. _"But that's wasted time, work thrown away! Unacceptable!"_ This thinking leads people to believe that every line of code written necessarily needs to be in the application.
+The "no time" excuse people use to skip writing tests also serves to skip testing hypotheses. Most don't even realize they should be experimenting. I'm talking about building proofs of concept, pieces of what you want to develop that will potentially be thrown away.
 
-Again, it's the erroneous thinking that we need to get everything right the first time, the culture that trial-and-error is wrong. Well, I'm here saying that it's wrong to think we'll always get it right the first time. In most cases we'll get it wrong every first time.
+The "thrown away" part is what makes programmers and managers bristle. _"But that's wasted time, work down the drain! Unacceptable!"_ That thinking leads people to believe every line of code written must necessarily end up in the application.
+
+It's the old mistake of assuming we have to get everything right on the first try, the culture that treats trial and error as wrongdoing. My point is the opposite: the mistake is assuming we'll always nail it on the first try. In most cases, we'll get it wrong every single first time.
 
 ## Cargo Cult
 
-After World War II, religious Aboriginal tribes in the South Pacific built replicas of airplanes and military landing strips hoping to summon back the "god-planes" that had brought them so many wonderful supplies during the war. It's exactly what most programmers tend to do: as if in a ritual, they include various programming structures without understanding very well why they're doing it — they just know they "should." These are the programmers who try to force Design Patterns into unnecessary places, put comments in code that is already self-explanatory. More recently they're the types who practically bow before "Dependency Injection" without really understanding why. (source: [Wikipedia](http://en.wikipedia.org/wiki/Cargo_cult_programming))
+After World War II, native tribes on South Pacific islands built replicas of airplanes and military landing strips, hoping to summon back the "god planes" that had brought them so much wonderful cargo during the war. Most programmers do exactly that: as if in a ritual, they drop programming structures into the code without really understanding why, only because they "should." They're the ones who force Design Patterns where none are needed, who plaster comments over code that already explains itself and, more recently, who practically kneel before "Dependency Injection" without understanding the reason. (source: [Wikipedia](http://en.wikipedia.org/wiki/Cargo_cult_programming))
 
-Being fashionable isn't inherently bad, as many think. What's bad is simply applying things (new or old) without understanding the **reason**. What do schools teach today? The main function of education should be reasoning, but in an educational culture based on rote memorization, people simply accept everything they memorize and don't even know why they memorized it — just that some "authority" said it was true and therefore it "must" be applied.
+Following fashion gets an unfair bad rap; what ruins people is applying things, new or old, without understanding the **reason**. The main job of education should be teaching people to reason, but in a culture of rote memorization people accept everything they memorize without knowing why they memorized it: some "authority" said it was true and therefore it must be applied.
 
 ![](/files/20081216/1217833732_d7fcaebe17.jpg)
 
-Remember the discussions about why certifications are harmful? This is one of the reasons. For those who are already rational, of course it makes no difference. But for a large mass of people who don't reason, the end result is simply cargo culting.
+Remember the discussions about why certifications are harmful? This is one of the reasons. For those who already reason, it makes no difference at all. For the large mass who don't, the end result is pure cargo culting.
 
-Most people read tutorials, some books, attend some workshops, and already think they're ready to execute the task. In most cases they simply do the good old mental "copy and paste." They dump into the application all the code they learned. I've seen people write something like this:
-
-* * *
+Most people read tutorials, a few books, attend some workshops, and already consider themselves ready for the task. In practice they run the good old mental "copy and paste" and dump into the application every piece of code they ever learned. I've seen people write something like this:
 
 ```ruby
 if ( a == b ) {  
@@ -40,17 +41,13 @@ if ( a == b ) {
 }  
 ```
 
-Nothing wrong with that, but it's incredible how many people are surprised when you tell them this single line does the same thing:
-
-* * *
+Nothing wrong with that, but it's amazing how many people are surprised when I tell them this one line does the same thing:
 
 ```ruby
 return (a == b);  
 ```
 
-By itself, this small code is harmless. But notice the subtlety: the programmer doesn't know why they're doing it. They just know they have to do it. Want something worse? I've seen (in various languages) programmers who do the following:
-
-* * *
+The first snippet, on its own, is harmless. The subtlety is that the programmer doesn't know why he wrote it; he only knows he "has to." Want a worse case? I've seen, in several languages, programmers do the following:
 
 ```php
 $dbname="meu_banco";
@@ -66,93 +63,93 @@ while ($row = mysql_fetch_row($result)) {
 }
 ```
 
-This is the classic [What the F*ck!?](http://thedailywtf.com/)
+That's a textbook [What the F*ck!?](http://thedailywtf.com/)
 
-Again, code that "runs." In some languages this would be code that "compiles," with no problem. However, anyone who doesn't understand the **serious problem** with this code needs to go back to first year of university.
+Again, code that "runs." In some languages it compiles with no complaint at all. Anyone who can't spot the **deadly** problem in this code needs to go back to their freshman year.
 
 ![](/files/20081216/will_code_for_food.jpg)
 
 ## Blindness
 
-_"Repeat a lie long enough and it soon becomes truth."_
+_"Repeat a lie long enough and soon it becomes the truth."_
 
-There are many bad books, bad tutorials, bad teachers, and a whole crowd of bad elements spreading bad practices. But the greatest fault lies with those who let themselves be fooled. People who simply accept everything they're told, without the minimum of skepticism, are responsible for their own ignorance.
+There are plenty of bad books, bad tutorials, bad teachers, and a whole rabble of bad actors spreading bad practices. Even so, the greatest blame lies with those who let themselves be fooled. Whoever swallows everything they hear, without a shred of skepticism, is guilty of their own ignorance.
 
-It's exactly why we still have horoscopes printed in newspapers instead of a science column: because there are far more readers interested in being fooled than in knowing boring things, like reality.
+That's why newspapers still print horoscopes instead of a science column: there are far more readers interested in being fooled than in learning boring things, like reality.
 
 In technology it's the same:
 
-- Windows must be better because it's the market leader (ignoring that Apple, even with its "measly 8%" generates as much revenue as Microsoft, or things like a third of Brazil already uses Firefox)
+- Windows must be better because it's the market leader (ignoring that Apple, even with a "measly 8%" of the market, ranks among the most profitable companies in the industry, and that Firefox already has a huge share of users in Brazil)
 
-- Java must be better because it's the market leader, or PHP must be better because major websites use it (I don't even need to discuss this)
+- Java must be better because it's the market leader, or PHP must be better because big sites use it (no need to even discuss it)
 
-- Threads is the best way to write concurrent code (ignoring — out of laziness — the advantages of functional programming)
+- Threads are the best way to write concurrent code (ignoring, out of laziness, the advantages of functional programming)
 
-- The best way to manage data is with relational databases (ignoring — again out of laziness — the whole range of non-relational databases gaining ground)
+- The best way to manage data is a relational database (ignoring, again out of laziness, the whole range of non-relational databases gaining ground)
 
-- Static languages are better because you can compile them (ignoring — here, out of pure stupidity — the enormous productivity advantages of dynamic languages)
+- Static languages are better because you can compile them (ignoring, here out of pure stupidity, the enormous productivity advantages of dynamic languages)
 
-- Object-oriented programming is the pinnacle of programming techniques (ignoring that this is just one of dozens of paradigms that exist, like functional programming)
+- Object-oriented programming is the pinnacle of programming technique (ignoring that it's just one of dozens of paradigms, functional programming among them)
 
-- Rails doesn't scale (seriously? anyone still repeating this proves they're an amateur)
+- Rails doesn't scale (seriously? anyone still repeating that proves they're an amateur)
 
 ![](/files/20081216/thestupiditburns.jpg)
 
-Everyone has hundreds of preconceived ideas like these. Things they heard from someone or read somewhere (typically from a source of dubious reputation) and now simply repeat stupidly with absolutely no argument to sustain their beliefs. Or rather, these people think the source they got it from (the dubious source) is sufficient basis for continuing to repeat it.
+Everyone carries hundreds of preconceived ideas like these. Things heard from someone or read somewhere, usually from a source of dubious reputation, that the person now repeats with no argument to back the belief. Or rather: they think the dubious source they got it from is basis enough to keep repeating it.
 
-In programming or in any other social field: if you have **any** belief you can't argue for (and sustain the argument), research it better. If your belief doesn't hold up against counter-arguments, **throw it away** — it serves you no purpose. Everyone thinks they're "open-minded." I disagree — most people are quite closed. If you doubt this, rethink everything you believe and argue against yourself. If you do it right you'll notice that most things you believe simply have no foundation.
+In programming or in any other field: if you hold **any** belief you can't argue for and defend, research it better. If it doesn't survive counterarguments, **throw it out**, because it's useless to you. Everyone fancies themselves "open-minded"; I disagree, most people are quite closed. Doubt me? Rethink everything you believe and argue against yourself. Done properly, you'll notice most of what you believe has no foundation at all.
 
 ## Scientific Method
 
-A careful person needs to practice the basics of the scientific method daily. Our day-to-day life is a sequence of decision-making moments, some small, some enormous. Decisions should never be based on preconceived ideas. That's where mistakes happen.
+A careful person practices the basics of the scientific method every day. Our daily life is a sequence of decisions, some small, some huge, and decisions made on preconceived ideas are where mistakes live.
 
-This doesn't mean intuition shouldn't be used. But intuition is a rapid conclusion based on experience. If your daily experiences have been methodically rational for a long time, your intuition tends to be more solid. But if your daily experiences are based on superstitions, sympathies, pseudo-science, cargo culting, and preconceived ideas — sorry to say: your intuition is terrible.
+This doesn't rule out intuition. Intuition is a fast conclusion built on experience. If your daily experiences have been methodically rational for a long time, your intuition tends to be solid. If they were built on superstition, lucky charms, pseudoscience, cargo culting, and preconceived ideas, sorry to say: your intuition is garbage.
 
-Read [this Wikipedia definition](http://en.wikipedia.org/wiki/Scientific_method). It's extensive, complete, and requires a good deal of reflection. But what interests me most is summarized [here](http://www.sciencebuddies.org/mentoring/project_scientific_method.shtml).
+Read [this Wikipedia definition](http://en.wikipedia.org/wiki/Scientific_method). It's long, thorough, and asks for real reflection. What interests me most is summarized [here](http://web.archive.org/web/20081217012740/http://www.sciencebuddies.org:80/mentoring/project_scientific_method.shtml).
 
-Like any good process, this one is also **iterative** — meaning it foresees going back through steps to refine knowledge.
+Like any good process, this one is also **iterative**: it expects you to loop back through steps to refine what you know.
 
 ![](/files/20081216/dogma-jesus.jpg)
 
-The steps are quite simple and can be executed quickly or more slowly and in detail. What matters is: when faced with a question, execute these steps at least mentally. It's the absolute minimum to make an educated decision.
+The steps are simple, and they can run fast or slow and detailed. What matters is this: faced with a question, run these steps at least mentally. It's the bare minimum for an educated decision.
 
-- **Ask the Question** — this phase is important! Ask the wrong question and you'll find the wrong answer. It's been a long time since people have wasted time exploring answers that have no relevance because the question wasn't right. Think of the question as a User Story in an Agile Backlog: check whether it's a priority, check whether it's necessary. Don't waste time trying to answer irrelevant questions.
+- **Ask the question.** This phase matters: the wrong question leads to the wrong answer. People have been wasting time chasing irrelevant answers since forever because the question was wrong. Treat the question like a User Story in an agile backlog: check whether it's a priority, check whether it's needed. Don't spend time answering irrelevant questions.
 
-- **Do Research** — before anything else, research the subject. Don't spend days on it — sometimes a few minutes on Google can be enough. What's important in this step, for me, is the "stop, think, continue" part. Most people are too hasty. This is the stage to pause for a second and gain more knowledge before continuing.
+- **Do research.** Before anything else, research the subject. Don't burn days on it; sometimes a few minutes on Google is enough. For me, the value of this step is the "stop, think, continue." Most people rush too much; this is the moment to pause for a second and gain more knowledge before moving on.
 
-- **Construct a Hypothesis** — normally when you ask a question, you should already have one or more possible answers. What's important in the first step, when you formulated the question, is not to hold on to preconceived ideas. Consider that what most people think is "truth" is in reality nothing more than [hypotheses](http://en.wikipedia.org/wiki/Hypothesis). A hypothesis is nothing more, nothing less than the mere suggestion of an explanation.
+- **Build a hypothesis.** When you ask a question, you usually already have one or more possible answers. When you framed the question, don't cling to preconceived ideas. Consider that what most people call "truth" is, in reality, a set of [hypotheses](http://en.wikipedia.org/wiki/Hypothesis). A hypothesis is merely a suggested explanation.
 
-[![](/files/20081216/overview_scientific_method2.gif)](http://www.sciencebuddies.org/mentoring/project_scientific_method.shtml)
+[![](/files/20081216/overview_scientific_method2.gif)](http://web.archive.org/web/20081217012740/http://www.sciencebuddies.org:80/mentoring/project_scientific_method.shtml)
 
-- **Test with an Experiment** — this is the most important step. Experiments need to be repeatable and have very well-defined criteria. If two people perform the same experiment, for the hypothesis to be non-false, the results must be the same. Note that I said non-false, not true. Truth is something very strong. I normally don't consider myself close to any truth. Sometimes I merely accept that my hypothesis hasn't yet been falsified. This is the crucial part: in programming, create proofs of concept — pieces of code you write only to test your hypothesis but that can simply be thrown away afterwards. Don't even do this in your project's main code: create a separate environment for it. Don't mix things up.
+- **Test with an experiment.** This is the most important step. Experiments must be repeatable and have very well-defined criteria: if two people run the same experiment, for the hypothesis to hold up the results have to match. Note that I said "hold up," not "be true." Truth is too strong a word; I rarely consider myself near any truth. Most of the time I just accept that my hypothesis hasn't been falsified yet. The crucial part, in programming: build proofs of concept, pieces of code written only to test the hypothesis, which can simply be thrown away afterward. Do it outside your project's codebase, in a separate environment. Don't mix the two.
 
-- **Draw Conclusions** — based on everything you did above, you'll prove or disprove your hypothesis. Accept that you can certainly prove your own hypothesis was false. In that case return to step two, reformulate a new hypothesis, and try again! This is being open-minded: when you prove yourself wrong and immediately set out to find a new answer.
+- **Draw conclusions.** From everything you did above, you'll either confirm or demolish your hypothesis. Accept from the start that you may well prove your own hypothesis false. In that case, go back to step two, frame a new hypothesis, and try again. That's what open-minded means: proving yourself wrong and immediately setting out to find another answer.
 
-- **Communicate Your Results** — the type of application I'm talking about here is quite informal, just the minimum so that you at least have "some" (probably not complete) grounding in what you're doing. But if it's something more complex, where you truly invested more time and were more detailed, it may be a topic that interests others. Share your results with your colleagues at minimum. If you invested that much time, the answer is probably important — and in that case it's also important that other people have the chance to try to disprove your result. It's not so important that people reach the same conclusions (quantity of people means nothing). It's far more important if someone manages to disprove your conclusion. In that case, discard the hypothesis. Start again.
+- **Communicate your results.** The application I'm describing here is informal, the minimum for you to have some grounding, probably not all of it, in what you're doing. If the subject is more complex, with more time invested and more detail, it may interest more people. Share your results, at least with your colleagues. If you invested that much time, the answer is probably important, and then it's worth giving others the chance to try to demolish it. It hardly matters how many people reach the same conclusion; headcount means nothing. What matters far more is whether someone manages to demolish yours. In that case, throw the hypothesis out and start over.
 
 ## People
 
-Most people can be described as follows:
+Most people can be described like this:
 
-- **Have preconceived ideas** — heard from other people (who, they believe, have credibility). Just because a person has some credential, is a celebrity, speaks well, dresses well, or for whatever reason you think they "must" be listened to, doesn't mean they know the whole truth. On the contrary, that other person may have many preconceived ideas. Yes, listen to what they have to say, but store everything in a mental box labeled "to be verified" and move forward.
+- **They hold preconceived ideas.** Heard from other people who, they believe, have credibility. Just because someone has a credential, is a celebrity, speaks well, or dresses well doesn't mean they know the whole truth. Quite the opposite: that person may be stuffed with preconceived ideas. Do listen to what they have to say, but file it all in a mental box labeled "to verify" and move on.
 
-- **Don't like being disproven** — nobody likes admitting they're wrong. First it kills the ego, second it destroys self-esteem. So an ignorant person will hold onto their particular lie until the last consequences. These are people with weak foundations. Build your foundation on several half-truths, and when one falls, everything falls. This is the greatest risk.
+- **They hate being proven wrong.** Nobody likes admitting they're wrong: first it kills the ego, then it destroys self-esteem. So the ignorant person clings to their private lie to the bitter end. These are people with weak foundations. Build your foundation on half-truths and, when one falls, the whole thing falls. That's the biggest risk.
 
-- **Don't like wasting time** — and here "wasting time" is absolutely relative. Most people practice false economy. Testing and experimenting, or better said, "not doing anything immediately," is considered a waste of time. But I would call it "saving future time." Being a little more careful now so I don't have to rush tomorrow. It's a balance: it makes no sense to spend 15 days preparing for a project that only has 20 days. But do the minimum. Stop for a second, think, if in doubt experiment, then proceed.
+- **They hate wasting time.** And "wasting time" here is entirely relative. Most people practice lousy economics: testing and experimenting, in other words "not doing anything immediately," gets treated as wasted time. I call it "saving future time": a little more care now so I don't have to scramble tomorrow. It's a matter of balance. It makes no sense to prepare for 15 days on a 20-day project. But do the minimum: stop for a second, think, and if in doubt, experiment before you proceed.
 
 ![](/files/20081216/funny-dog-pictures-praying-dogma.jpg)
 
-- **Don't like new things** — there's another very wrong concept of "cost." Many think that because they invested time studying a particular subject, that invested time/money "cannot be lost" and therefore they need to persist with the same subject. This is what I've written about before as [The Sunk Cost Fallacy](http://www.akitaonrails.com/en/2007/08/19/a-falcia-do-custo-perdido). If you already have a loss, the biggest stupidity is persisting with the same loss. It's far more intelligent to write off that cost as lost and simply change direction and move forward.
+- **They hate new things.** There's another wrong notion of "cost" at play. Many people think that because they invested time studying a subject, that investment can't be lost and they must stick with it. It's what I once wrote about in [The Sunk Cost Fallacy](http://www.akitaonrails.com/en/2007/08/19/a-falcia-do-custo-perdido). If the loss already exists, the dumbest move is to insist on it. Far smarter to write the cost off, change direction, and move on.
 
-- **Only do what they're told to do** — if nobody orders testing, they don't test. If nobody orders a proof of concept, they don't create one. If nobody tells them to worry about security, the code ships full of holes. If nobody tells them to automate tests, nobody automates. The quantity of Lemmings we have on projects is impressive. First because everything that should be an obligation isn't done; second because if the boss tells them to shoot their own foot, they shoot! Again, lack of reasoning.
+- **They only do what they're told.** If nobody orders tests, nobody tests. If nobody orders a proof of concept, nobody builds one. If nobody tells them to care about security, the code ships full of holes. If nobody tells them to automate tests, nobody automates. The number of Lemmings on projects is staggering. First, because everything that should be mandatory goes undone; second, because if the boss orders them to shoot their own foot, they shoot. Once again, a failure to reason.
 
-- **Do the unnecessary** — even though it seems paradoxical, complementing the behavior above (not doing what's necessary), because of fixed preconceived ideas, people actually end up wasting time doing totally unnecessary things — because someone they consider "credible" said they should be done. It's a behavior I haven't fully understood yet, but I see it all the time, and it negates everything I said above: it's the case when someone decides to choose a completely idiotic technology for some inexplicable reason. They waste a good amount of time not doing what's actually a priority in the project. No proof of concept is made to test the hypothesis, and they start coding, "assuming" it will work. In the end, the project is late and full of code that will simply have to be thrown away because it's genuinely useless.
+- **They do the unnecessary.** Sounds like a paradox, but it complements the previous item. Because of fixed preconceived ideas, people waste time doing totally unnecessary things because someone they consider "credible" said it should be done. It's a behavior I still haven't figured out, I see it all the time, and it contradicts everything I said above: someone picks an idiotic technology for some inexplicable reason, burns ages away from the project's real priorities, builds no proof of concept at all, and starts coding on faith that it'll work. In the end, the project is late and full of code headed for the trash because it's good for nothing.
 
-I think all of this is actually a consequence of people's lack of practice in reasoning. It's irrational behavior, overly complicated, full of basic mistakes — but for some reason nobody thinks they're wrong.
+I think all of this comes down to people's lack of practice at reasoning. It's irrational behavior, needlessly complicated, full of basic mistakes, that nobody perceives as wrong.
 
-I remember a documentary by the great Richard Dawkins where he talks about a scientist who spent years studying a theory (I don't remember which). Then another young scientist proved him wrong. He looked at the young scientist and said something like "thank you very much." That's rational behavior. It's very difficult to prove something is true; it's simpler to prove it's **false**. If someone proves you wrong, thank them — it's effectively preventing you from wasting future time, which is enormously important!
+I remember a documentary by the great Richard Dawkins in which he tells the story of a scientist who spent years studying a theory, I don't recall which. A young scientist proved him wrong. The older man looked at the kid and said something like "thank you very much." That's rational behavior. Proving something true is very hard; proving it **false** is far simpler. If someone proves you wrong, say thanks: that person just saved you from wasting time down the road, and that's worth gold.
 
-And whenever you start a new project, don't assume you know what needs to be done, or even that you "need" to know what to do. Assume you don't know! Create hypotheses, discuss, experiment, gain real confidence, and only then do what needs to be done. There's nothing wrong with that. The problem is assuming you know what you're going to do, and then after wasting everyone's time, it finally becomes clear you were wrong the whole time!
+And whenever you join a new project, don't assume you know what needs to be done, or even that you "need" to know. Assume you don't know. Build hypotheses, discuss, experiment, gain real confidence, and only then do what needs to be done. There's nothing wrong with that. The problem is assuming you know what you're going to do and, after wasting everyone's time, finally making it obvious you were wrong all along.
 
 Don't waste other people's time!
 
@@ -161,7 +158,7 @@ Don't waste other people's time!
 References:
 
 - [Scientific method](http://en.wikipedia.org/wiki/Scientific_method)
-- [Steps of the Scientific Method](http://www.sciencebuddies.org/mentoring/project_scientific_method.shtml)
+- [Steps of the Scientific Method](http://web.archive.org/web/20081217012740/http://www.sciencebuddies.org:80/mentoring/project_scientific_method.shtml)
 - [Deductive Reasoning](http://en.wikipedia.org/wiki/Deductive_reasoning)
 - [Cargo Cult Programming](http://en.wikipedia.org/wiki/Cargo_cult_programming)
 - [Cargo Cult Science](http://en.wikipedia.org/wiki/Cargo_cult_science)
@@ -170,24 +167,24 @@ References:
 - [Prejudice](http://en.wikipedia.org/wiki/Prejudice)
 - [Hypothesis](http://en.wikipedia.org/wiki/Hypothesis)
 
-I repeat many times that I don't know what the truth is. I answer "I don't know" every time someone asks me a question expecting an absolute answer. _"Will Rails survive?"_ Forget that type of question: predicting the future is hard. If someone gives you a prediction about the future, ignore it! They most likely have no idea what they're talking about.
+I repeat over and over that I don't know what the truth is. I answer "I don't know" every time someone asks me a question expecting an absolute answer. _"Will Rails take off?"_ Forget that kind of question: predicting the future is hard. If someone hands you a prediction about the future, ignore it. Odds are the person has no idea what they're talking about.
 
-Part of this type of question is the behavior I mentioned above — that people think they need to always get it right and don't like being proven wrong. In the worst case, the path you took to prove yourself wrong gave you more knowledge and experience. That's more important than finding a truth.
+Behind that kind of question sits the behavior I described above: the person thinks they must always be right and hates being proven wrong. Worst case, the path you walked to prove yourself wrong gave you more knowledge and experience. That's worth more than finding a truth.
 
-I've talked about Reason in some other posts like:
+I've written about Reason in a few other posts:
 
-- [Be Arrogant](http://akitaonrails.com/en/2007/4/14/off-topic-seja-arrogante)
-- [Enemies of Reason](http://akitaonrails.com/en/2007/8/23/off-topic-inimigos-da-razo)
-- [100% pure Object-Oriented: The Fallacy](http://www.akitaonrails.com/2007/9/4/100-pure-object-oriented-the-fallacy)
+- [Be Arrogant](http://www.akitaonrails.com/en/2007/04/14/off-topic-seja-arrogante)
+- [Enemies of Reason](http://www.akitaonrails.com/en/2007/08/23/off-topic-inimigos-da-razo)
+- [100% pure Object-Oriented: The Fallacy](http://www.akitaonrails.com/2007/09/04/100-pure-object-oriented-the-fallacy)
 
 ## Conclusions
 
-My objective in this post is to try to reinforce the importance of experimentation. I don't know the truth — anyone can post a comment here with dozens of counter-arguments. That person will be losing focus (and certainly their "arguments" will be nothing but citations of preconceived ideas). It's irrelevant to try to pick at details in the text and demonstrate errors. What's important here is that the professional needs to understand that age, years in the field, certifications/credentials are completely irrelevant when solving problems. In the end we are all amateurs and, as such, we need to go back to zero and review our hypotheses.
+My goal in this post is to reinforce the importance of experimentation. I don't know what the truth is; anyone can post a comment here with dozens of counterarguments. Whoever does will be missing the point, and their "arguments" will be citations of preconceived ideas. Picking at details in the text to point out errors is beside the point. What matters is the professional understanding that age, years on the road, certifications, and waving credentials solve nothing. In the end we're all amateurs and, as such, we need to go back to zero and review our hypotheses.
 
-A practical example: when I spoke with [John Straw](http://akitaonrails.com/2008/11/21/rails-podcast-brasil-especial-qcon-john-straw-yellowpages-com-e-matt-aimonetti-merb) (YellowPages.com) in San Francisco, one thing they did that not every team does was extensive due diligence. They spent 22 months building the original YellowPages.com project in Java. They decided to stop for 4 months, create prototypes, proofs of concept, test hypotheses (Which framework to use — Rails, Django, or Seam? Which architecture — SOA, EJBs, etc.? How long does it take for the team to get comfortable with the new technology?) and only after they gained confidence in what they were doing did they begin implementing for real. Then it was only 4 more months to finish. Understand? The first 4 months weren't wasted time: they were "insurance," a way of preventing those 4 months from becoming 20.
+A practical example. When I spoke with [John Straw](http://www.akitaonrails.com/en/2008/11/21/rails-podcast-brasil-qcon-special-john-straw-yellowpages-com-and-matt-aimonetti-merb) (YellowPages.com) in San Francisco, he described something not every team does: extensive due diligence. They spent 22 months building the original YellowPages.com in Java. They decided to stop for 4 months to build prototypes, proofs of concept, and test hypotheses: which framework, Rails, Django, or Seam? Which architecture, SOA, EJBs? How long would the team take to get comfortable with the new technology? Only after they gained confidence in what they were doing did they start implementing for real. And it took just 4 more months to finish. See it? The first 4 months weren't wasted time: they were insurance, the thing that kept the following 4 months from turning into 20.
 
-As I said last year: "Be Arrogant, but deserve to be arrogant!" Be arrogant toward yourself to the point of questioning yourself and truly winning! You can fool others, but fooling yourself has little advantage. There is no better inquisitor for you than yourself. If you're wrong, excellent! One fewer wrong path — look for another and start again.
+As I said last year: "Be arrogant, for real!" Be arrogant with yourself to the point of genuinely questioning yourself and winning. You can fool others; fooling yourself buys you nothing. There is no better inquisitor for you than yourself. Wrong? Excellent: one less wrong path. Find another and start over.
 
-Repeating: it wasn't with preconceived ideas that we got to the Moon.
+Repeating: it wasn't preconceived ideas that got us to the Moon.
 
 ![](/files/20081216/redneck_moon_landing_2.jpg)
