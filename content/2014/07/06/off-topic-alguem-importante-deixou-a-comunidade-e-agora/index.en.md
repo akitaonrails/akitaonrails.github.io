@@ -76,7 +76,7 @@ If you take part in a community, you do it for yourself. Maybe because you under
 
 And to be crystal clear: voluntary work means work without <strong>financial pay</strong>, and not work without benefit or purely altruistic. If your work is paid, that's a different conversation, and the best advice there comes from Don Draper:
 
-<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'>{{< youtube id="LruKCZkWVZY" >}}</div>
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'>{{< youtube id="EnPHp4vwxGM" >}}</div>
 
 Back to the topic, I imagine the names I mentioned above, the ones who stepped back partially or quietly, get this. They went looking for personal satisfaction elsewhere. They owe nothing to anyone, and nobody owes anything to them.
 

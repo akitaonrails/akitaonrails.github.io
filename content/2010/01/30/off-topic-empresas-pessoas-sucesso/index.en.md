@@ -11,7 +11,7 @@ tags:
 draft: false
 ---
 
-{{< youtube id="ol2fN0bZCso" >}}
+{{< youtube id="sTJ7AzBIJoI" >}}
 
 I love the [Wear Sunscreen](http://en.wikipedia.org/wiki/Wear_Sunscreen) video. I think I first saw it in 2003 or 2004 and it stuck with me as a warning, something to remember once in a while. The parts I like most:
 

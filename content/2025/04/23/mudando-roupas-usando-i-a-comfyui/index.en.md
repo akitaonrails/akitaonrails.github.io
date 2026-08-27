@@ -45,7 +45,7 @@ Anyway. In this first group it's simple, just load an image as clean and clear a
 
 Heads up that the IDM-VTON models really weigh a **TON**. It alone downloads no less than **30GB** of models (already included in my setup) and will demand more than 20GB of VRAM, so anything below an RTX 3090 with 24GB just won't run. You can run it online, on the Hugging Face site. Watch this tutorial that shows how:
 
-{{< youtube id="WL59FqL0L-s" >}}
+<!-- youtube video unavailable (deleted/blocked): WL59FqL0L-s -->
 
 This is the **Aiconomist** channel. He shows how to run it online and how to set it up on your machine in [this other video](https://youtu.be/pFYqPf1Z7x8?si=Ryu5vxPmKGr4zhWx) which I used as reference to build my workflow. Subscribe to his channel, it's worth it. The tutorials are very well explained and have more details that I won't cover in this post.
 

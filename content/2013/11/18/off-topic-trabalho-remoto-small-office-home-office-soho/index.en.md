@@ -101,4 +101,4 @@ And again, there are exceptions: big names in the open source world who work as 
 
 Working from home is an experience worth trying. It is by no means automatically better than working inside a group, even counting the "wasted time" on the commute, which, by the way, is a lousy excuse. A lot depends on whether your region has options. If they're scarce, then remote becomes a good alternative. Just keep in mind there are always pros and cons.
 
-{{< youtube id="dW9ztSUGY_Q" >}}
+<!-- youtube video unavailable (deleted/blocked): dW9ztSUGY_Q -->

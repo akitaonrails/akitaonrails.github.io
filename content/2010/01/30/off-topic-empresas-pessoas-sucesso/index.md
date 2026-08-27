@@ -11,7 +11,7 @@ tags:
 draft: false
 ---
 
-{{< youtube id="ol2fN0bZCso" >}}
+{{< youtube id="sTJ7AzBIJoI" >}}
 
 Adoro o vídeo [Wear Sunscreen](http://en.wikipedia.org/wiki/Wear_Sunscreen). Vi pela primeira vez em 2003 ou 2004 e ele ficou comigo como um aviso, algo para lembrar de vez em quando. As partes que mais gosto:
 
