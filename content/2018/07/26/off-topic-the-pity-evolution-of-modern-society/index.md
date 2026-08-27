@@ -20,21 +20,21 @@ O pessoal do Wisecrack sempre consegue me arrancar um sorriso. Me dão esperanç
 
 {{< youtube id="Wp7f2ftkybI" >}}
 
-Como engenheiro, fico constantemente pasmo com o que somos capazes de criar. Ninguém imaginaria que uma das criações mais fantásticas da humanidade — a internet — e seus maiores sucessos — acesso móvel onipresente e redes sociais capazes de reunir um número absurdo de pessoas ao mesmo tempo — pudessem ser usadas como armas de destruição em massa.
+Como engenheiro, vivo pasmo com o que somos capazes de criar. Ninguém imaginaria que uma das invenções mais fantásticas da humanidade, a internet, junto dos seus maiores sucessos, pudesse virar arma de destruição em massa. Falo do acesso móvel onipresente e das redes sociais capazes de reunir um número absurdo de pessoas ao mesmo tempo.
 
-Esse caso está longe de ser o único, mas como exemplo: há poucos dias fui pego de surpresa por uma notícia aparentemente pequena. James Gunn, o querido diretor de dois dos maiores sucessos do MCU com seus Guardiões da Galáxia, foi demitido por causa de tweets que fez há 10 anos.
+Esse caso está longe de ser o único, mas serve de exemplo. Há poucos dias, fui pego de surpresa por uma notícia aparentemente pequena. James Gunn, o querido diretor de dois dos maiores sucessos do MCU com seus Guardiões da Galáxia, foi demitido por causa de tweets que escreveu havia dez anos.
 
 Não estou aqui para julgar o mérito dos tweets nem se o pedido de desculpas dele foi suficiente.
 
 Na verdade, só de dizer que sou neutro já sou automaticamente julgado como favorável. Esse é o problema.
 
-Nos últimos dias, vimos páginas e contas de direita sendo deletadas do Facebook — parte dos esforços contínuos da plataforma para combater "fake news", que de fato é um problema contemporâneo, já que portais de notícia viraram fábricas de clickbait, exatamente como o vídeo do Wisecrack descreve com precisão.
+Nos últimos dias, vimos páginas e contas de direita sendo deletadas do Facebook. Faz parte do esforço contínuo da plataforma para combater "fake news", que de fato é um problema contemporâneo. Portais de notícia viraram fábricas de clickbait, exatamente como o vídeo do Wisecrack descreve.
 
 Mas quem decide o que é "fake news"? O que "ofende" um grupo barulhento que gera cliques. Portanto, precisamos banir o outro lado.
 
 Isso me lembra uma frase clichê de O Senhor dos Anéis que sempre ressoou em mim. Quando a Sociedade tenta atravessar Moria, Frodo lamenta para Gandalf:
 
-> "Que pena que Bilbo não matou aquela criatura vil quando teve a chance!"
+> "Que pena que Bilbo não apunhalou aquela criatura vil quando teve a chance!"
 
 {{< youtube id="IrOqnZdvI6M" >}}
 
@@ -44,15 +44,15 @@ E Gandalf responde:
 
 E então conclui:
 
-> "Merece! Eu diria que sim. Muitos que vivem merecem a morte. E alguns que morrem merecem a vida. Você pode devolvê-la a eles? Então, não seja tão ansioso para lidar com a morte em julgamento.
+> "Merece! Eu diria que sim. Muitos que vivem merecem a morte. E alguns que morrem merecem a vida. Você pode devolvê-la a eles? Então não seja tão ansioso para distribuir a morte em julgamento.
 >
-> Pois mesmo os muito sábios não conseguem ver todos os fins. Não tenho esperança de que Gollum seja curado antes de morrer, mas existe uma chance. E ele está ligado ao destino do Anel. Meu coração me diz que ele ainda tem um papel a cumprir, para o bem ou para o mal, antes do fim; e quando isso acontecer, a pena de Bilbo poderá reger o destino de muitos — inclusive o seu."
+> Pois mesmo os muito sábios não conseguem ver todos os fins. Não tenho muita esperança de que Gollum seja curado antes de morrer, mas existe uma chance. E ele está ligado ao destino do Anel. Meu coração me diz que ele ainda tem um papel a cumprir, para o bem ou para o mal, antes do fim; e quando isso acontecer, a pena de Bilbo poderá reger o destino de muitos, inclusive o seu."
 
 Voltando ao Gunn: o que me surpreendeu não foi a republicação dos tweets nem a indignação pública (obviamente, nenhuma pessoa sã endossa literalmente o conteúdo específico). O que realmente me impressionou foi a velocidade absurda com que uma megacorporação do tamanho da Disney respondeu com uma guilhotina, destruindo uma grande carreira em questão de horas.
 
-Me lembra de sentenças públicas igualmente rápidas, sem julgamento, sem devido processo. De novo, não estou defendendo essas pessoas — mas lembro dos casos James Damore vs. Google, Brendan Eich vs. Netscape, e James Watson vs. Nobel.
+Me lembra sentenças públicas igualmente rápidas, sem julgamento, sem devido processo. De novo, não estou defendendo essas pessoas, mas lembro dos casos James Damore vs. Google, Brendan Eich vs. Mozilla e James Watson vs. Nobel.
 
-E a maioria de vocês — ou dos seus amigos — diria: _"claro que foram expulsos, são pessoas ruins, temos que nos policiar para remover esses vilões do nosso meio."_
+E a maioria de vocês, ou dos seus amigos, diria: _"claro que foram expulsos, são pessoas ruins, temos que nos policiar para remover esses vilões do nosso meio."_
 
 Será que devemos?
 
@@ -60,7 +60,7 @@ Você consegue devolver o futuro deles se estiver errado? O que te dá o direito
 
 Cuidado. Quando provocada, uma pessoa razoável e normal busca o diálogo em privado, como qualquer sociedade civilizada aprendeu a fazer. Mas as redes sociais motivam as pessoas a fazerem o pior: expor publicamente.
 
-Isso é formação de manada. Bullying puro e simples. Sofri bullying a vida inteira — sendo minoria japonesa num país ocidental — e sei exatamente o quanto dói. É por isso que jamais revido com bullying.
+Isso é formação de manada. Bullying puro e simples. Sofri bullying a vida inteira, sendo minoria japonesa num país ocidental, e sei exatamente o quanto dói. É por isso que jamais revido com bullying.
 
 Se você expõe alguém publicamente, não está praticando "justiça". Você é simplesmente um bully. Independente do assunto.
 
@@ -70,13 +70,13 @@ Você já leu o cabeçalho dos meus perfis no [Facebook](https://www.facebook.co
 
 E eu acredito nisso de verdade.
 
-Nunca vou humilhar alguém publicamente. Só covardes fazem isso. Envergonhar alguém em público tem um único propósito: mobilizar a massa, transformar o rebanho em tropa de choque para executar alguém publicamente — e assim fazer valer seu ponto sem precisar defendê-lo.
+Nunca vou humilhar alguém publicamente. Só covardes fazem isso. Envergonhar alguém em público tem um único propósito: mobilizar a massa, transformar o rebanho em tropa de choque para executar alguém em praça pública e, assim, fazer valer o próprio ponto sem precisar defendê-lo.
 
 _"Mas eu tenho o direito de não ser ofendido."_
 
 Não. Não tem.
 
-Outro filme que comentei anos atrás e do qual cortei um trecho para publicar aqui foi a obra-prima de Oliver Stone, Larry Flynt — O Rei do Escândalo.
+Outro filme que comentei anos atrás, e do qual cortei um trecho para publicar aqui, é a obra-prima de Miloš Forman, O Povo Contra Larry Flynt, produzida por Oliver Stone.
 
 <div class="video-container">
     <video controls>
@@ -87,7 +87,7 @@ Outro filme que comentei anos atrás e do qual cortei um trecho para publicar aq
 
 O filme conta a história do fundador da revista pornográfica Hustler. Um sujeito desprezível por praticamente qualquer critério.
 
-Mas esse é exatamente o ponto. Larry fez coisas que a maioria de vocês condenaria. Não apenas publicar pornografia, mas fazer sátira de figuras públicas, piadas de péssimo gosto — mas piadas, ainda assim. O trecho que mais me impactou foi o conceito de que as pessoas não têm o direito de não serem ofendidas. Isso é uma questão subjetiva que não tem lugar num tribunal, porque gosto não se define juridicamente.
+Mas esse é exatamente o ponto. Larry fez coisas que a maioria de vocês condenaria. Não só publicar pornografia, mas satirizar figuras públicas com piadas de péssimo gosto. Piadas, ainda assim. O trecho que mais me impactou foi a ideia de que ninguém tem o direito de não ser ofendido. É uma questão subjetiva, sem lugar num tribunal, porque gosto não se define juridicamente.
 
 > "Senhoras e senhores do júri, vocês ouviram muito hoje, e não vou revisitar tudo isso, mas precisam entrar naquela sala e tomar algumas decisões. Mas antes, há algo que precisam saber. Não estou tentando sugerir que vocês deveriam gostar do que Larry Flynt faz. Eu não gosto do que Larry Flynt faz. Mas gosto de viver num país onde você e eu podemos tomar essa decisão por conta própria. Gosto de viver num país onde posso pegar a revista Hustler, lê-la, ou jogá-la no lixo se for lá que acho que ela pertence."
 
@@ -97,15 +97,15 @@ Qualquer pessoa tem o direito de fazer e dizer o que quiser, desde que não caus
 
 Mas como isso não pode ser resolvido nos tribunais, pessoas radicais tomam a lei nas próprias mãos usando a arma mais poderosa já criada: as redes sociais. Elas conseguem reunir um júri enorme em minutos e decretar a execução pública. É como dar uma arma carregada para uma criança.
 
-Isso é território de Inquisição. Galileu foi julgado e condenado porque ofendeu a sociedade católica ao afirmar que a Terra e os planetas giram em torno do Sol, e não o contrário. Parece trivial hoje, mas era um escândalo monumental na época. Havia gente disposta a morrer a fim de não aceitar essa afirmação ofensiva. Isso estaria em alta no Twitter dos anos 1600, e a execução pública seria exigida em questão de minutos.
+Isso é território de Inquisição. Galileu foi julgado e condenado porque ofendeu a sociedade católica ao afirmar que a Terra e os planetas giram em torno do Sol, e não o contrário. Parece trivial hoje, mas era um escândalo monumental na época. Havia gente disposta a morrer para não aceitar essa afirmação ofensiva. O tema estaria em alta no Twitter dos anos 1600, e a execução pública seria exigida em minutos.
 
 Essa justificativa do _"estou ofendido"_ é o que levou, em última análise, a assassinatos como os de Luther King, JFK e Lennon, à prisão de Gandhi e ao genocídio dos judeus. Intolerância.
 
-Se não ser ofendido é o objetivo máximo, a intolerância é o único caminho — e o assassinato da Liberdade é a pior consequência.
+Se não ser ofendido é o objetivo máximo, a intolerância vira o único caminho, e o assassinato da Liberdade, a pior consequência.
 
 Toda atrocidade da humanidade começa com o comportamento de manada em torno do _"eu não deveria me sentir ofendido."_
 
-Essa é a história por trás de Fahrenheit 451, que o Wisecrack explica muito bem. Em dado momento, as pessoas simplesmente começaram a criar câmaras de eco. Cada feed do Twitter e cada linha do tempo do Facebook são, por definição, câmaras de eco. Você só recebe conteúdo meticulosamente curado por machine learning avançado, configurado com cuidado para cuspir posts que não vão te ofender e que jamais vão desafiar seus pontos de vista.
+Essa é a história por trás de Fahrenheit 451, que o Wisecrack explica bem. Em dado momento, as pessoas simplesmente começaram a criar câmaras de eco. Cada feed do Twitter e cada linha do tempo do Facebook são, por definição, câmaras de eco. Você só recebe conteúdo meticulosamente curado por machine learning, configurado para cuspir posts que não vão te ofender e jamais vão desafiar seus pontos de vista.
 
 Você cria e vive numa bolha, e fica indignado imediatamente quando sua realidade é desafiada por qualquer ideia que provoque reflexão. Você se limita ao seu status quo personalizado e estreito.
 
@@ -119,7 +119,7 @@ Inovação, por definição, é um desafio ao status quo. Você não consegue in
 
 A invenção do fogo desafiou a natureza, o heliocentrismo questionou Deus, a teoria da evolução por seleção natural desafiou a alma humana.
 
-As redes sociais pegaram uma internet livre e descentralizada e a colocaram numa coleira bem apertada, controlada por "Influencers" — pessoas com carisma, não com retidão, muito menos com sabedoria. Puro carisma. É o que atrai grandes quantidades de seguidores. O efeito de rede é perverso.
+As redes sociais pegaram uma internet livre e descentralizada e a colocaram numa coleira bem apertada, controlada por "Influencers". Gente de puro carisma, sem retidão e muito menos sabedoria. O carisma é o que atrai grandes quantidades de seguidores. O efeito de rede é perverso.
 
 Deveríamos estar todos **juntos**, colaborando para o bem da humanidade, independente de raça, geografia ou inclinações políticas.
 
@@ -134,27 +134,27 @@ Fique atento: você está caindo nas [Oito Etapas do Genocídio](https://en.wiki
 7. Extermínio: "É 'extermínio' para os assassinos porque eles não acreditam que suas vítimas sejam plenamente humanas."
 8. Negação: "Os perpetradores... negam que cometeram qualquer crime..."
 
-Esse é o modus operandi nazista original — e você está perpetuando essas etapas. Não sou judeu, mas admiro profundamente e respeito sua história e resiliência. Já fui ao [Instituto do Holocausto](http://www.akitaonrails.com/2012/11/21/viagem-a-europa-parte-3-tel-aviv-israel) oficial em Yad Vashem, Israel, e fui ao de Washington D.C., porque respeito as lições que deixaram para trás. Era nosso dever não deixar a história se repetir.
+Esse é o modus operandi nazista original, e você está perpetuando essas etapas. Não sou judeu, mas admiro e respeito profundamente sua história e resiliência. Já fui ao [Instituto do Holocausto](http://www.akitaonrails.com/2012/11/21/viagem-a-europa-parte-3-tel-aviv-israel) oficial em Yad Vashem, em Israel, e também ao de Washington D.C., porque respeito as lições que deixaram para trás. Era nosso dever não deixar a história se repetir.
 
 Mas tal é o poder da ideologia cega e da liderança de celebridades carismáticas.
 
-Tivemos líderes carismáticos fazendo coisas boas e ruins — mas carismáticos, de qualquer forma. Para cada Lincoln ou Churchill, tivemos um Stalin ou um Castro.
+Tivemos líderes carismáticos fazendo coisas boas e ruins, carismáticos de qualquer forma. Para cada Lincoln ou Churchill, tivemos um Stalin ou um Castro.
 
 O mais difícil é que só conseguimos saber, com clareza, que algo deu horrivelmente errado olhando para trás, pela História. Não existe um "bem" versus "mal" em preto e branco. Você sempre acha que está fazendo um excelente trabalho ao seguir pessoas carismáticas que parecem promover apenas o bem-estar de um grupo minoritário.
 
-Pergunte a si mesmo: você realmente está seguindo alguém altruísta, capaz de tratar outra pessoa com mais humanidade do que ela está sendo tratada? Ou isso soa mais como vingança egoísta e acerto de contas? O ódio é sempre a matéria do mal. Uma pessoa justa não imita aquilo contra o qual supostamente luta. Qualquer um que advogue "vamos fazer com eles o que fizeram conosco" é provavelmente o Mal. Você cita pessoas como Gandhi — e não aprendeu nada com o que ele ensinou a vida inteira?
+Pergunte a si mesmo: você está seguindo alguém altruísta, capaz de tratar o outro com mais humanidade do que recebeu? Ou isso soa mais como vingança egoísta e acerto de contas? O ódio é sempre a matéria do mal. Uma pessoa justa não imita aquilo contra o qual diz lutar. Qualquer um que defenda "vamos fazer com eles o que fizeram conosco" é provavelmente o Mal. Você cita gente como Gandhi. Não aprendeu nada com o que ele ensinou a vida inteira?
 
 Todo Fidel, todo Mussolini, todo Hitler realmente acreditava que estava lutando pelo bem-estar do seu povo. Todo nazista agiu acreditando que estava fazendo a coisa certa pelo futuro dos seus filhos e filhas, que os sacrifícios valeriam a pena. Que eram Nobres por matar pessoas.
 
 Nunca houve uma plataforma melhor para transformar pessoas em manadas irracionais do que agora. Há YouTubers com milhões de seguidores a mais do que qualquer Hitler jamais teve.
 
-E para piorar, formamos o consenso online de que as pessoas têm um direito mágico e inerente de "nunca serem ofendidas." Não podem ser ofendidas por tweets de 200 caracteres. Isso é pecado capital, e o perpetrador deve morrer. Pedido de desculpas não basta. A polícia do pensamento é tal que um único tweet fora de contexto já é suficiente para julgar e executar a vida de uma pessoa — sem recurso, sem liberdade condicional.
+E para piorar, formamos o consenso online de que as pessoas têm um direito mágico e inerente de "nunca serem ofendidas". Não podem ser ofendidas por tweets de 200 caracteres. Isso é pecado capital, e o perpetrador deve morrer. Pedido de desculpas não basta. A polícia do pensamento chegou a tal ponto que um único tweet fora de contexto basta para julgar e executar a vida de uma pessoa, sem recurso, sem liberdade condicional.
 
 É fascinante ver como uma série de tecnologias e inovações que deveriam ampliar a liberdade de todos acabou se tornando a arma de destruição em massa mais potente já criada. E não precisou de um novo Hitler para isso.
 
-O fim do mundo não precisa necessariamente ser um evento físico catastrófico como uma explosão nuclear. Acho que ainda pior é a destruição do tecido da própria sociedade. Não é um grande ditador malvado que vai matar a Liberdade — são as pessoas que não a merecem. É muito mais nefasto e pode ser ainda mais devastador.
+O fim do mundo não precisa ser um evento físico catastrófico, como uma explosão nuclear. Acho que a destruição do próprio tecido da sociedade é ainda pior. Não é um grande ditador malvado que vai matar a Liberdade, são as pessoas que não a merecem. É muito mais nefasto e pode ser ainda mais devastador.
 
-Essa é a lição: não é Omar Bashir, Bashar Al-Assad ou Nicolás Maduro que, sozinhos, serão responsáveis por destruir a sociedade.
+Essa é a lição: nenhum Omar Bashir, Bashar Al-Assad ou Nicolás Maduro será, sozinho, responsável por destruir a sociedade.
 
 Todo malfeitor da história fez o que fez _"em nome do povo."_
 
