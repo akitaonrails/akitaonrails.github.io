@@ -2,6 +2,7 @@
 title: '[Off-Topic] O Mito do "Legado"'
 date: '2012-08-15T12:28:00-03:00'
 slug: off-topic-o-mito-do-legado
+translationKey: off-topic-o-mito-do-legado
 description: "O autor critica a reescrita automática de sistemas legados e conta como consertou, em duas semanas, um ASP com DCOM, preservando o código e conquistando um novo projeto do cliente."
 tags:
 - engenharia-de-software
@@ -30,15 +31,21 @@ O jardim do vizinho sempre parece mais verde? Pois para programadores, o código
 
 Por que determinado projeto demorou _"mais tempo do que eu acho que deveria?"_ Dezenas de motivos: departamentos que não colaboraram, regras de negócio mal definidas que mudaram diversas vezes, e assim por diante. 
 
-Por que o código não está tão _"elegante"_ ou _"bem feito"_ como _"eu faria?"_ Por que ele foi desenvolvido com um objetivo em mente, o objetivo mudou - como sempre muda -, o código foi se acumulando, prazos foram apertando, refatoramentos não aconteceram como deveriam, débito técnico foi se acumulando - a despeito do aviso dos programadores envolvidos - e o código atual acabou ficando muito pior do que deveria.
+Por que o código não está tão _"elegante"_ ou _"bem feito"_ como _"eu faria?"_ Porque ele nasceu com um objetivo em mente, e esse objetivo mudou, como sempre muda. O código foi se acumulando, os prazos foram apertando, os refatoramentos não aconteceram como deveriam. O débito técnico cresceu a despeito do aviso dos programadores envolvidos, e o resultado acabou ficando muito pior do que deveria.
 
-Outra coisa que deveria ser óbvia: todo programador sempre vai encontrar algo que não gosta em qualquer código, seja ele efetivamente ruim e mal feito ou mesmo bem feito e bem estruturado. Software é tão complexo que você pode achar defeito em qualquer coisa. É como apontar defeitos num ser humano: todos são imperfeitos. A falácia de quem escuta é entender que só porque alguém apontou alguns defeitos não significa automaticamente que _tudo_ seja ruim. Isso é uma falácia comum: _"meu novo programador disse que achou esse defeito e essa outra coisa mal feita, portanto o sistema é ruim"_ Só que você não apontou as qualidades e não analisou se os defeitos de fato são em maior volume, criticidade e severidade do que as qualidades. Mais do que isso: qualquer novo código também vai ter pontos que outro programador não vai gostar, e esse ciclo é infinito.
+Outra coisa que deveria ser óbvia: todo programador sempre vai encontrar algo que não gosta em qualquer código, seja ele efetivamente ruim e mal feito ou mesmo bem feito e bem estruturado. Software é tão complexo que você acha defeito em qualquer coisa. É como apontar defeitos num ser humano: todos são imperfeitos.
+
+A falácia de quem escuta é achar que, só porque alguém apontou alguns defeitos, automaticamente _tudo_ é ruim. É o raciocínio do tipo: _"meu novo programador disse que achou esse defeito e essa outra coisa mal feita, portanto o sistema é ruim."_ Só que você não olhou as qualidades e não avaliou se os defeitos superam essas qualidades em volume, criticidade e severidade.
+
+Mais do que isso: qualquer código novo também vai ter pontos que outro programador não vai gostar. E esse ciclo é infinito.
 
 Agora a verdade: o programador que chegou depois e que questionou todos esses pontos, se estivesse exatamente no mesmo momento em que tudo começou teria entregue como resultado final o mesmo código ruim, ou até pior.
 
 ### O Medo
 
-Agora o desafio é entender o seguinte: na maioria dos casos, código "Legado", ou seja, código que está em produção, em uso atualmente, está gerando resultados: coisa que seu código "novo e elegante" não está. Outro tipo de história que muitos programadores preferem ignorar é justamente o caso do _"Big Rewrite"_ que nunca se concluiu e que nunca foi para o ar, especialmente se foi você quem fez. 
+Agora o desafio é entender o seguinte. Na maioria dos casos, código "Legado" é código que está em produção, em uso, gerando resultados. Coisa que o seu código "novo e elegante" ainda não está fazendo.
+
+Outra história que muitos programadores preferem ignorar é a do _"Big Rewrite"_ que nunca se concluiu e nunca foi para o ar. Especialmente quando foi você quem tocou. 
 
 O pior tipo de software é aquele que não gera valor. E um fator que diferencia um programador profissional de um amador é exatamente em como ele lida com código dos outros. Conversando ontem com o camarada [Rodrigo Yoshima](http://blog.aspercom.com.br) ele soltou uma pérola: lidar com legado é para adultos, "greenfield" (projeto feito do zero) qualquer criança faz.
 
@@ -74,4 +81,4 @@ Nesse caso, estava claro que o código foi feito de má-fé por um programador q
 
 Para mim, "legado" é software feito justamente por quem chama o software dos outros de "legado". Para mim, "legado" muitas vezes pode ser uma oportunidade - justamente porque poucos conseguem. E para mim, pessoas que julgam o código dos outros sem conhecimento do contexto todo, é só mais um amador querendo se mostrar.
 
-Claro, isto não é uma defesa de que todo software legado é justificado e bom. De jeito nenhum, meu ponto neste artigo é focado ao comportamento automático de programadores que usam isso como desculpa.
+Claro, isto não é uma defesa de que todo software legado é justificado e bom. De jeito nenhum. Meu ponto aqui está focado no comportamento automático de programadores que usam isso como desculpa.
