@@ -38,7 +38,7 @@ list = [“a”, “b”, “c”]
 list.each_element do |elem|  
  puts elem  
 end
-  ```
+```
 
 Mais do que extender classes, o Ruby possui outra funcionalidade muito flexível chamada blocos ou closures/fechamentos (eu já escrevi sobre [blocos e closures](http://rubylearning.com/blog/2007/11/30/akitaonrails-on-anatomy-of-ruby-blocksclosures/) antes pra RubyLearning. Sugiro ler para entender o conceito)
 

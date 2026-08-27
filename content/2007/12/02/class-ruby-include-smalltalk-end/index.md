@@ -86,7 +86,6 @@ Veiculo subclass: #Carro
 ```
 
 <p>Ok, ok, se realmente quisermos fazer assim em Ruby podemos usar mais metaprogramação:</p>
-```
 
 ```ruby
 class Object
@@ -116,4 +115,4 @@ n = 10
 puts ( n > 1 ).if( proc { “true” }, proc { “false” } )
 ```
 
-<p>Novamente, a performance decai. Comparei os tempos de 500 mil operações, na primeira vez com ‘if’ condicional e nesta versão via passagem de método e a diferença foi de 2 a 4 vezes mais devagar passando como métodos, portanto não se atenham a essas versões exóticas além de apenas servir como curiosidade acadêmica.</p></macro:code></macro:code>
+<p>Novamente, a performance decai. Comparei os tempos de 500 mil operações, na primeira vez com ‘if’ condicional e nesta versão via passagem de método e a diferença foi de 2 a 4 vezes mais devagar passando como métodos, portanto não se atenham a essas versões exóticas além de apenas servir como curiosidade acadêmica.</p>
