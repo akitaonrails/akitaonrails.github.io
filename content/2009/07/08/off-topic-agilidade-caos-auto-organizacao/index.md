@@ -2,6 +2,7 @@
 title: "[Off-Topic] Agilidade, Caos, Auto-Organização"
 date: '2009-07-08T02:15:00-03:00'
 slug: off-topic-agilidade-caos-auto-organizacao
+translationKey: off-topic-agilidade-caos-auto-organizacao
 description: "O texto relaciona Agile a sistemas complexos, caos, emergência e leis de potência. A tese é que organizações aprendem e inovam melhor no limite do caos, embora provocar desordem envolva riscos."
 tags:
 - agile
@@ -11,19 +12,19 @@ tags:
 draft: false
 ---
 
-Este artigo é um apanhado geral de diversos temas relacionados que compõem alguns dos conhecimentos necessários para entender o tema de **Auto-Organização**. Nesse caso é importante entender esse conceito também do ponto de vista da fundação física e matemática.
+Este artigo reúne vários temas que compõem parte do conhecimento necessário para entender **Auto-Organização**. E aqui vale entender o conceito também pela fundação física e matemática.
 
-A motivação toda é por causa do 11o princípio do Manifesto Ágil:
+A motivação vem do 11º princípio do Manifesto Ágil:
 
 > “As melhores arquiteturas, requerimentos e designs emergem a partir de equipes **auto-organizadas**.” – [Principles behind the Agile Manifesto](http://agilemanifesto.org/principles.html)
 
-Agilidade **requer** auto-organização. Mas esse conceito é alienígena para a maioria das pessoas e organizações. O 12o princípio ainda completa:
+Agilidade **requer** auto-organização. Mas esse conceito é alienígena para a maioria das pessoas e organizações. O 12º princípio ainda completa:
 
 > “A intervalos regulares, a equipe reflete em como se tornar mais efetiva, então refina e ajusta seu comportamento de acordo.” – [Principles behind the Agile Manifesto](http://agilemanifesto.org/principles.html)
 
-Nesse caso precisa entender o conceito de **Organização de Aprendizado** ou melhor ainda, entender o momento dinâmico de aprendizado e melhoria contínua que se chama **Limite do Caos** e como implementar Agilidade essencialmente significa, em termos de física:
+Para isso é preciso entender o conceito de **Organização de Aprendizado**. Ou melhor: entender o momento dinâmico de aprendizado e melhoria contínua que se chama **Limite do Caos**. Implementar Agilidade, em termos de física, significa o seguinte:
 
-> Retirar a organização – que é um sistema complexo – de seu estado de equilíbrio dinâmico, aumentando a entropia geral do sistema, forçando em direção ao caos. No ponto ideal, no limite do caos, a auto-organização acontece e a organização se torna uma organização de aprendizado.
+> Retirar a organização, que é um sistema complexo, de seu estado de equilíbrio dinâmico, aumentando a entropia geral do sistema, forçando em direção ao caos. No ponto ideal, no limite do caos, a auto-organização acontece e a organização se torna uma organização de aprendizado.
 
 Lembrem-se: “aprendizado” também inclui a exploração do desconhecido, incorporar novas informações. Fazendo o que sempre se faz não se está aprendendo nada, por definição. É preciso fazer diferente, errar e melhorar para aprender.
 
@@ -32,9 +33,9 @@ Vamos aos conceitos agora.
 
 ### Tradução: Teoria do Caos em Desenvolvimento de Organizações
 
-da [Wikipedia](http://en.wikipedia.org/wiki/Chaos_theory_in_organizational_development)
+da [Wikipedia](http://web.archive.org/web/20090802092443/http://en.wikipedia.org/wiki/Chaos_theory_in_organizational_development)
 
-[Auto-Organização](http://en.wikipedia.org/wiki/Chaos_theory_in_organizational_development#Self-organization), ao contrário de seleção natural ou social, é uma mudança dinâmica dentro da organização onde mudanças são feitas pelo recálculo, reinvenção e modificando sua estrutura para adaptar, sobreviver, crescer e desenvolver.
+[Auto-Organização](http://web.archive.org/web/20090802092443/http://en.wikipedia.org/wiki/Chaos_theory_in_organizational_development#Self-organization), ao contrário de seleção natural ou social, é uma mudança dinâmica dentro da organização onde mudanças são feitas pelo recálculo, reinvenção e modificando sua estrutura para adaptar, sobreviver, crescer e desenvolver.
 
 Auto-organização é o resultado da reinvenção e adaptação criativa por causa da introdução de – ou por estar em um constante estado de – equilíbrio perturbado. Um exemplo de uma organização que existe num estado constante de perturbação é uma [organização de aprendizado](http://en.wikipedia.org/wiki/Learning_organization), que é uma que “permite auto-organização, em vez de tentar controlar a bifurcação através de mudanças planejadas” (Dooley, 1995).
 
@@ -54,9 +55,9 @@ Enquanto organizações existindo no limite do caos são conhecidas por serem as
 
 Talvez a forma mais segura de se usar teoria do caos em D.O. não é instigar a organização a mudar, mas no uso de seus princípios para lidar com problemas que aparecem. Ao abraçar fenômenos organizacionais antes vistos como não-funcionais, como conflitos interpessoais, e usando-os como fonte para mudanças de transformação aplicando princípios encontrados em teoria do caos (Shelton, 2003), uma organização pode fazer “limonadas a partir de limões” e se tornar mais responsiva a agentes de mudança enquanto se move continuamente para frente e crescendo de dentro para fora sem medo de caos completo.
 
-## Como Negócios são muito parecidos com Vida – Os 4 Princípios
+## Como Negócios são muito parecidos com Vida: Os 4 Princípios
 
-Fast Company Magazine, Março de 2001. [How Business is a Lot Like Life](http://www.fastcompany.com/magazine/45/pascale.html?page=0%2C3)
+Fast Company Magazine, Março de 2001. [How Business is a Lot Like Life](http://web.archive.org/web/20090802092442/http://www.fastcompany.com/magazine/45/pascale.html?page=0%2C3)
 
 - Equilíbrio é um precursor para a morte. Quando um sistema vivo está em estado de equilíbrio, ele é menos responsivo às mudanças que estão ocorrendo ao seu redor. O risco é maior quanto mais se sente mais seguro.
 
@@ -80,13 +81,13 @@ Em matemática, um [sistema não-linear](http://en.wikipedia.org/wiki/Nonlinear_
 
 por [Chris Rollins](http://www.scientificblogging.com/welcome_my_moon_base/emergent_behavior_thriving_edge_chaos), Janeiro de 2009.
 
-A formiga de catedral, encontrada em partes da Austrália, é capaz de criar pilhas para a colônia muito acima de 3 metros. Uma única formiga de catedral tem aparência padrão de insetos – cabeça, tórax, abdômen, pernas e assim por diante, com cérebros minusculamente primitivos. Mas quando combinado com outros de sua espécie a formiga de catedral é capaz de construir um enorme complexo para a colônia. Ao contrário de projetos de construção humanos, entretanto, não existe mestre-de-obra, não tem plano, e não é improvável que a formiga sequer saiba o que está ajudando a construir.
+O cupim de catedral, encontrado em partes da Austrália, é capaz de criar montículos para a colônia muito acima de 3 metros. Um único cupim de catedral tem aparência padrão de inseto – cabeça, tórax, abdômen, pernas e assim por diante, com um cérebro minúsculo e primitivo. Mas quando combinado com outros de sua espécie, o cupim de catedral é capaz de construir um enorme complexo para a colônia. Ao contrário de projetos de construção humanos, entretanto, não existe mestre-de-obra, não tem plano, e é improvável que o cupim sequer saiba o que está ajudando a construir.
 
 Como isso é possível?
 
 A resposta está no fato de que algumas vezes, um sistema pode acabar com mais complexidade do que a soma de suas partes – levando ao que os cientistas chamam de “comportamento emergente”.
 
-[Comportamento Emergente](http://en.wikipedia.org/wiki/Emergence), ou criação espontânea de ordem, está presente em tudo ao nosso redor. Insetos são um bom exemplo porque eles nos são familiares e conseguem criar projetos massivos que podemos apreciar. Outras partes do reino animal também demonstram ordem autônoma – peixes se organizam em escolas que se movem em concerto; pássaros se juntam em bancos ou bandos de maneira similar. Existem muitos exemplos de não-linearidade – ímãs naturais se alinhando na orientação norte-sul e cristais que se formam a partir de líquidos, mostrando um aumento espontâneo de ordem mesmo apesar da falta de força “inteligente”.
+[Comportamento Emergente](http://en.wikipedia.org/wiki/Emergence), ou criação espontânea de ordem, está presente em tudo ao nosso redor. Insetos são um bom exemplo porque eles nos são familiares e conseguem criar projetos massivos que podemos apreciar. Outras partes do reino animal também demonstram ordem autônoma – peixes se organizam em cardumes que se movem em concerto; pássaros e animais de manada se juntam em bandos de maneira similar. E exemplos não-vivos também são abundantes – ímãs naturais se alinhando na orientação norte-sul e cristais que se formam a partir de líquidos, mostrando um aumento espontâneo de ordem mesmo apesar da falta de uma força mais “inteligente”.
 
 Existe um grande problema de termodinâmica com tudo isso, claro – entropia, uma medida de desordem, deveria continuar a decair. O universo tende ao caos.
 
@@ -98,11 +99,11 @@ Portanto, a porção cristalina da solução agora decaiu em entropia enquanto o
 
 ## Por que estatística Gaussiana é quase toda errada para Estratégias Organizacionais
 
-Fenômeno de Lei de Potência exibe distribuição de Pareto em vez de Gauss (normal). A diferença fundamental está na premissa sobre a correlação dos eventos. Em distribuição de Gauss se assume eventos *in*dependentes. Eventos independentes geram distribuições normais, que estão no coração da estatística moderna. Quando eventos são *inter*dependentes, normalidade em distribuições não é a norma. Em vez disso distribuição de Pareto domina porque eventos extremos ocorrem com mais frequência do que a distribuição normal, com curva em forma de sino de Gauss, nos levaria a esperar. Sistemas físicos, biológicos, ecológicos, sociais e industriais mostram uma impressionante variedade fractal (Kaye, 1993). Muitos estudiosos agora acreditam que leii de potência são o melhor framework analítico para descrever a origem e a forma da maioria dos objetos naturais. Dada a ubiquidade dessas descobertas e a natureza da teoria de livre escala, achamos que elas são desconhecidas, pouco apreciadas mas igualmente fenômenos ubíquitos em organizações (Andriani, 2003).
+Fenômeno de Lei de Potência exibe distribuição de Pareto em vez de Gauss (normal). A diferença fundamental está na premissa sobre a correlação dos eventos. Em distribuição de Gauss se assume eventos *in*dependentes. Eventos independentes geram distribuições normais, que estão no coração da estatística moderna. Quando eventos são *inter*dependentes, normalidade em distribuições não é a norma. Em vez disso distribuição de Pareto domina porque eventos extremos ocorrem com mais frequência do que a distribuição normal, com curva em forma de sino de Gauss, nos levaria a esperar. Sistemas físicos, biológicos, ecológicos, sociais e industriais mostram uma impressionante variedade fractal (Kaye, 1993). Muitos estudiosos hoje acreditam que leis de potência são o melhor framework analítico para descrever a origem e a forma da maioria dos objetos naturais. Dada a ubiquidade dessas descobertas e a natureza da teoria de livre escala, achamos que são fenômenos igualmente ubíquos em organizações, ainda que desconhecidos e pouco apreciados (Andriani, 2003).
 
 ### Extremos vs. Médias
 
-Pensamento Linear está incrustrado em nossa mentalidade. Modelos científicos e matemáticos são baseados nos conceitos de equilíbrio e linearidade. Linearidade significa duas coisas: proporcionalidade entre causa e efeito; e superposição, quer dizer, quando a dinâmica de um sistema pode ser reconstruída pela soma dos efeitos das causas simples agindo nos componentes simples (Nicolis e Prigogine, 1989), o que permite a operação eficiente de causalidade, solução de equações e modelos de previsão elaborados. Economia, por exemplo, é quase teísta na sua premissa que fenômenos econômicos tendem ao equilíbrio (Mirowski, 1989). Entretanto, essas premissas permitem equações lineares e analíticas simples.
+Pensamento Linear está incrustado em nossa mentalidade. Modelos científicos e matemáticos são baseados nos conceitos de equilíbrio e linearidade. Linearidade significa duas coisas: proporcionalidade entre causa e efeito; e superposição, quer dizer, quando a dinâmica de um sistema pode ser reconstruída pela soma dos efeitos das causas simples agindo nos componentes simples (Nicolis e Prigogine, 1989), o que permite a operação eficiente de causalidade, solução de equações e modelos de previsão elaborados. Economia, por exemplo, é quase teísta na sua premissa que fenômenos econômicos tendem ao equilíbrio (Mirowski, 1989). Entretanto, essas premissas permitem equações lineares e analíticas simples.
 
 Ao focar em sistemas em equilíbrio, estatísticos aceitam implicitamente que o número de estados possíveis que um sistema pode atingir é limitado (e computável) e que o tempo de procura seguindo o começo da instabilidade (isto é, um choque exógeno) é curto comparado com o tempo de equilíbrio. Para isso ser verdade, os muitos elementos que compõem um sistema precisam ser pontos de dados independentes por premissa; do contrário poderíamos ter interdependência, possíveis causalidades mútuas e a ocorrência de possíveis eventos extremos.
 
