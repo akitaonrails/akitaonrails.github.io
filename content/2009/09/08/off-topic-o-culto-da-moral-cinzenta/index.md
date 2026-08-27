@@ -2,6 +2,7 @@
 title: "[Off-Topic] O Culto da Moral Cinzenta"
 date: '2009-09-08T11:27:00-03:00'
 slug: off-topic-o-culto-da-moral-cinzenta
+translationKey: off-topic-o-culto-da-moral-cinzenta
 description: "Ao comentar O Culto da Moral Cinzenta, de Ayn Rand, o autor distingue erro honesto de omissão deliberada e critica quem usa a ambiguidade para fugir do julgamento moral."
 tags:
 - filosofia
@@ -12,7 +13,7 @@ draft: false
 
  ![](http://s3.amazonaws.com/akitaonrails/assets/2009/9/8/The_Virtue_of_Selfishness_Ayn_Rand_unabridged_M_original.jpg)
 
-Estou lendo o excelente livro [The Virtue of Selfishness](http://www.aynrandbookstore2.com/prodinfo.asp?number=AR09B) de [Ayn Rand](http://tinyurl.com/yrtpxf), publicado pela primeira vez em 1961 – se não me engano. E, antes que comece as menções sarcásticas sobre a palavra ‘egoísmo’, remeto à introdução do livro:
+Estou lendo o excelente [The Virtue of Selfishness](http://web.archive.org/web/20090802051516/http://www.aynrandbookstore2.com/prodinfo.asp?number=AR09B), coletânea de ensaios de [Ayn Rand](http://tinyurl.com/yrtpxf) publicada pela primeira vez em 1964. Antes que comecem as menções sarcásticas à palavra ‘egoísmo’, remeto à introdução do livro:
 
 > De uso popular, a palavra “egoísmo” é um sinônimo do mal; a imagem que ele conjura é de um brutamontes assassino que salta sobre pilhas de corpos para atingir seus próprios fins, que não se importa com nenhum ser vivo e persegue nada mas a gratificação dos impulsos impensados de qualquer momento imediato.
 > 
@@ -22,9 +23,9 @@ Estou lendo o excelente livro [The Virtue of Selfishness](http://www.aynrandbook
 > 
 > A ética do altruísmo criou a imagem do bruto, como sua resposta, de forma a fazer os homens aceitar dois princípios inumanos: (a) que qualquer preocupação com seus próprios interesses é mal, seja lá quais sejam esses interesses, e (b) que as atividades dos brutos são de fato para seus próprios interesses (o qual o altruísmo encoraja o homem a renunciar pelo seu próprio bem e a de seus vizinhos).
 
-Isso dito, não recomendo a leitura do livro, pois ela lida justamente com a quebra dos conceitos conhecidos como “senso comum” atualmente, coisa que a maioria das pessoas simplesmente não tem vontade de mudar :-D Mas falando sério, se você gosta de pensar, esta coletânea é muito interessante.
+Dito isso, não recomendo o livro para todo mundo. Ele lida justamente com a quebra do que hoje chamam de “senso comum”, e a maioria não tem a menor vontade de mudar isso :-D Falando sério: se você gosta de pensar, a coletânea é muito interessante.
 
-Só para dar um gosto – se você tiver mente aberta -, coloco vários trechos do capítulo 9, _O Culto da Moral Cinzenta_.
+Para dar um gosto, transcrevo vários trechos do capítulo 9, _O Culto da Moral Cinzenta_. Vale mais para quem chega de mente aberta.
 
 
 ## O Culto da Moral Cinzenta
