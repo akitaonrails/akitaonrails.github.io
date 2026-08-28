@@ -60,3 +60,50 @@
     });
   }());
 </script>
+
+<script>
+  /*
+    In Grid view the chronological List (which owns the date-nav / TOC anchor
+    targets) is display:none, so clicking a month in the right-hand date menu
+    can't scroll to a hidden element. This maps the clicked month to the visible
+    Grid month section (by its heading text) and scrolls there instead. List
+    view keeps its native anchor behavior.
+  */
+  (function () {
+    function ready(fn) {
+      if (document.readyState !== 'loading') { fn(); }
+      else { document.addEventListener('DOMContentLoaded', fn); }
+    }
+    ready(function () {
+      var root = document.documentElement;
+      var toc = document.querySelector('.hextra-toc');
+      var grid = document.getElementById('aor-index-grid');
+      if (!toc || !grid) return;
+
+      function norm(text) { return (text || '').replace(/\s+/g, ' ').trim(); }
+
+      function gridSectionByText(text) {
+        var headings = grid.querySelectorAll('h2');
+        for (var i = 0; i < headings.length; i++) {
+          if (norm(headings[i].textContent) === text) {
+            return headings[i].closest('.aor-index-month') || headings[i];
+          }
+        }
+        return null;
+      }
+
+      toc.addEventListener('click', function (event) {
+        if (root.getAttribute('data-aor-index-view') !== 'grid') return; // List scrolls natively
+        var link = event.target.closest('a[href^="#"]');
+        if (!link || !toc.contains(link)) return;
+        var section = gridSectionByText(norm(link.textContent));
+        if (!section) return;
+        event.preventDefault();
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (window.history && window.history.replaceState) {
+          window.history.replaceState(null, '', link.getAttribute('href'));
+        }
+      });
+    });
+  }());
+</script>

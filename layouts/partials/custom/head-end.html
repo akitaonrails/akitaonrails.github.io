@@ -839,6 +839,8 @@
 
   .aor-index-month {
     margin: 2rem 0 2.5rem;
+    /* Offset so date-nav (TOC) jumps clear the sticky navbar in Grid view. */
+    scroll-margin-top: calc(var(--navbar-height, 4rem) + 0.75rem);
   }
   .aor-index-month__header {
     display: flex;
