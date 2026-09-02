@@ -14,10 +14,10 @@ Looking for older posts? [Browse the full archive →](/en/archives/)
   <div id="aor-featured-posts-en-body" class="aor-featured__body">
     <div class="aor-featured__list" data-index-view="list">
       <ul>
+            <li><code>Sep 02</code> — <a href="/en/2026/09/02/ai-memory-2-0-best-memory-system-for-agents-and-teams/" title="ai-memory hit version 2.0 with the open OKF format, local embeddings on by default, and support for teams working in parallel. I compare it with the competition and show what only ai-memory delivers.">AI-MEMORY 2.0 - The Best Memory System for Agents and Teams</a><br><span class="aor-post-tags aor-post-tags--featured-list"><a class="aor-tag-link" href="/en/tags/ai-memory/">#ai-memory</a><a class="aor-tag-link" href="/en/tags/coding-agents/">#coding-agents</a><a class="aor-tag-link" href="/en/tags/open-source/">#open-source</a></span></li>
             <li><code>Aug 18</code> — <a href="/en/2026/08/18/hot-take-harness-loop-engineering-graph-engineering-are-bullshit/" title="I posted that Harness Engineering, Loop Engineering, and Graph Engineering are bullshit to sell consulting hours and courses. Here&#39;s my receipt: 30+ public repos, an AI marathon, and a whole benchmark — none of it using any of those &#39;disciplines&#39;.">Hot Take: Harness, Loop Engineering, Graph Engineering Are Bullshit</a><br><span class="aor-post-tags aor-post-tags--featured-list"><a class="aor-tag-link" href="/en/tags/artificial-intelligence/">#artificial-intelligence</a><a class="aor-tag-link" href="/en/tags/llms/">#llms</a><a class="aor-tag-link" href="/en/tags/vibe-coding/">#vibe-coding</a></span></li>
             <li><code>Aug 15</code> — <a href="/en/2026/08/15/llm-benchmarks-qwen-3-8-glm-5-3-gemini-3-7/" title="GLM 5.3 scored 94 and closed in on the leading trio. Qwen 3.8 Max jumped from 51 to 92 after it stopped hallucinating the RubyLLM API. Gemini 3.7 Flash scored 93 — after its first run was voided for cheating. And the local 27B Qwen showed that context is now the bottleneck.">LLM Benchmarks: Qwen 3.8, GLM 5.3, Gemini 3.7</a><br><span class="aor-post-tags aor-post-tags--featured-list"><a class="aor-tag-link" href="/en/tags/llm-benchmarks/">#llm-benchmarks</a><a class="aor-tag-link" href="/en/tags/llms/">#llms</a><a class="aor-tag-link" href="/en/tags/coding-agents/">#coding-agents</a></span></li>
             <li><code>Jul 30</code> — <a href="/en/2026/07/30/new-llm-benchmark-i-reran-every-test/" title="I reran the LLM Coding Benchmark with a harder test, three phases, native harnesses, and new tiers. Fable led, Terra tied Sol as the best GPT, and 24 models proved suitable for programming.">New LLM Benchmark: I Reran Every Test!</a><br><span class="aor-post-tags aor-post-tags--featured-list"><a class="aor-tag-link" href="/en/tags/llm-benchmarks/">#llm-benchmarks</a><a class="aor-tag-link" href="/en/tags/llms/">#llms</a><a class="aor-tag-link" href="/en/tags/coding-agents/">#coding-agents</a></span></li>
-            <li><code>Jul 20</code> — <a href="/en/2026/07/20/whats-new-ai-memory-switch-agents-without-losing-session/" title="ai-memory run keeps the same programming session while switching among Claude Code, Codex, and other harnesses, with searchable workstreams and integration with ai-jail and ai-usagebar.">What&#39;s New in My AI-MEMORY: Switch AI Agents Without Losing the Session</a><br><span class="aor-post-tags aor-post-tags--featured-list"><a class="aor-tag-link" href="/en/tags/ai-memory/">#ai-memory</a><a class="aor-tag-link" href="/en/tags/coding-agents/">#coding-agents</a><a class="aor-tag-link" href="/en/tags/ai-jail/">#ai-jail</a><a class="aor-tag-link" href="/en/tags/ai-usagebar/">#ai-usagebar</a></span></li>
             <li><code>Jul 12</code> — <a href="/en/2026/07/12/quantum-news-majorana-2-and-understanding-shor/" title="Microsoft announced Majorana 2 with 20-second qubits and physicists answering that nothing was resolved. I take the chance to properly explain Shor&#39;s algorithm, why factoring becomes period finding, and what quantum computers are actually good at.">Quantum News: Majorana 2 and Understanding Shor</a><br><span class="aor-post-tags aor-post-tags--featured-list"><a class="aor-tag-link" href="/en/tags/quantum-computing/">#quantum-computing</a><a class="aor-tag-link" href="/en/tags/science/">#science</a></span></li>
             <li><code>Jul 12</code> — <a href="/en/2026/07/12/using-ai-to-solve-my-little-day-to-day-problems/" title="A roundup of my small open source projects: a desk clock with widgets, manga readers, decent email, typing practice, YouTube karaoke, ComfyUI in Docker and more. All born from real little problems in my day-to-day.">Using AI to Solve My Little Day-to-Day Problems</a><br><span class="aor-post-tags aor-post-tags--featured-list"><a class="aor-tag-link" href="/en/tags/vibe-coding/">#vibe-coding</a><a class="aor-tag-link" href="/en/tags/open-source/">#open-source</a><a class="aor-tag-link" href="/en/tags/artificial-intelligence/">#artificial-intelligence</a></span></li>
             <li><code>Jul 11</code> — <a href="/en/2026/07/11/how-to-protect-yourself-from-agents-deleting-your-stuff/" title="LLMs deleting files from famous people made headlines this week. In five months of heavy use, in YOLO mode, it never happened to me. But I don&#39;t trust them either: BTRFS snapshots, restic backups, sandboxing and discipline.">How Do I Protect Myself From My Agents Deleting My Stuff?</a><br><span class="aor-post-tags aor-post-tags--featured-list"><a class="aor-tag-link" href="/en/tags/ai-jail/">#ai-jail</a><a class="aor-tag-link" href="/en/tags/coding-agents/">#coding-agents</a><a class="aor-tag-link" href="/en/tags/security/">#security</a><a class="aor-tag-link" href="/en/tags/storage-and-backup/">#storage-and-backup</a></span></li>
@@ -35,6 +35,12 @@ Looking for older posts? [Browse the full archive →](/en/archives/)
   </ul>
 </div>
 <div class="aor-featured__grid aor-post-grid" data-index-view="grid">
+<article class="aor-post-card" title="ai-memory hit version 2.0 with the open OKF format, local embeddings on by default, and support for teams working in parallel. I compare it with the competition and show what only ai-memory delivers.">
+  <time class="aor-post-card__date" datetime="2026-09-02">Sep 2, 2026</time>
+  <h3 class="aor-post-card__title"><a class="aor-post-card__title-link" href="/en/2026/09/02/ai-memory-2-0-best-memory-system-for-agents-and-teams/">AI-MEMORY 2.0 - The Best Memory System for Agents and Teams</a></h3>
+  <span class="aor-post-tags aor-post-tags--card"><a class="aor-tag-link" href="/en/tags/ai-memory/">#ai-memory</a><a class="aor-tag-link" href="/en/tags/coding-agents/">#coding-agents</a><a class="aor-tag-link" href="/en/tags/open-source/">#open-source</a></span>
+  <p class="aor-post-card__description">ai-memory hit version 2.0 with the open OKF format, local embeddings on by default, and support for teams working in parallel. I compare it with the competition and show what only ai-memory delivers.</p>
+</article>
 <article class="aor-post-card" title="I posted that Harness Engineering, Loop Engineering, and Graph Engineering are bullshit to sell consulting hours and courses. Here&#39;s my receipt: 30+ public repos, an AI marathon, and a whole benchmark — none of it using any of those &#39;disciplines&#39;.">
   <time class="aor-post-card__date" datetime="2026-08-18">Aug 18, 2026</time>
   <h3 class="aor-post-card__title"><a class="aor-post-card__title-link" href="/en/2026/08/18/hot-take-harness-loop-engineering-graph-engineering-are-bullshit/">Hot Take: Harness, Loop Engineering, Graph Engineering Are Bullshit</a></h3>
@@ -52,12 +58,6 @@ Looking for older posts? [Browse the full archive →](/en/archives/)
   <h3 class="aor-post-card__title"><a class="aor-post-card__title-link" href="/en/2026/07/30/new-llm-benchmark-i-reran-every-test/">New LLM Benchmark: I Reran Every Test!</a></h3>
   <span class="aor-post-tags aor-post-tags--card"><a class="aor-tag-link" href="/en/tags/llm-benchmarks/">#llm-benchmarks</a><a class="aor-tag-link" href="/en/tags/llms/">#llms</a><a class="aor-tag-link" href="/en/tags/coding-agents/">#coding-agents</a></span>
   <p class="aor-post-card__description">I reran the LLM Coding Benchmark with a harder test, three phases, native harnesses, and new tiers. Fable led, Terra tied Sol as the best GPT, and 24 models proved suitable for programming.</p>
-</article>
-<article class="aor-post-card" title="ai-memory run keeps the same programming session while switching among Claude Code, Codex, and other harnesses, with searchable workstreams and integration with ai-jail and ai-usagebar.">
-  <time class="aor-post-card__date" datetime="2026-07-20">Jul 20, 2026</time>
-  <h3 class="aor-post-card__title"><a class="aor-post-card__title-link" href="/en/2026/07/20/whats-new-ai-memory-switch-agents-without-losing-session/">What&#39;s New in My AI-MEMORY: Switch AI Agents Without Losing the Session</a></h3>
-  <span class="aor-post-tags aor-post-tags--card"><a class="aor-tag-link" href="/en/tags/ai-memory/">#ai-memory</a><a class="aor-tag-link" href="/en/tags/coding-agents/">#coding-agents</a><a class="aor-tag-link" href="/en/tags/ai-jail/">#ai-jail</a><a class="aor-tag-link" href="/en/tags/ai-usagebar/">#ai-usagebar</a></span>
-  <p class="aor-post-card__description">ai-memory run keeps the same programming session while switching among Claude Code, Codex, and other harnesses, with searchable workstreams and integration with ai-jail and ai-usagebar.</p>
 </article>
 <article class="aor-post-card" title="Microsoft announced Majorana 2 with 20-second qubits and physicists answering that nothing was resolved. I take the chance to properly explain Shor&#39;s algorithm, why factoring becomes period finding, and what quantum computers are actually good at.">
   <time class="aor-post-card__date" datetime="2026-07-12">Jul 12, 2026</time>
@@ -271,6 +271,10 @@ Looking for older posts? [Browse the full archive →](/en/archives/)
 </script>
 
 {{% index-list %}}
+## 2026 - September
+
+- <a class="aor-index-list__main-link" href="/en/2026/09/02/ai-memory-2-0-best-memory-system-for-agents-and-teams/" title="ai-memory hit version 2.0 with the open OKF format, local embeddings on by default, and support for teams working in parallel. I compare it with the competition and show what only ai-memory delivers.">AI-MEMORY 2.0 - The Best Memory System for Agents and Teams</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/en/tags/ai-memory/">#ai-memory</a><a class="aor-tag-link" href="/en/tags/coding-agents/">#coding-agents</a><a class="aor-tag-link" href="/en/tags/open-source/">#open-source</a></span>
+
 ## 2026 - August
 
 - <a class="aor-index-list__main-link" href="/en/2026/08/22/llm-benchmarks-the-latest-deepseek-v4-stop-asking/" title="I ran the new Deepseek v4 snapshots through the benchmark: Flash jumped from 80 to 90 and Pro from 82 to 91, both Tier A, the cheapest in the pack. I still prefer Kimi K3 and GLM 5.3, and I explain why a close score does not mean an equivalent model.">LLM Benchmarks: The latest Deepseek v4, stop asking</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/en/tags/llm-benchmarks/">#llm-benchmarks</a><a class="aor-tag-link" href="/en/tags/llms/">#llms</a><a class="aor-tag-link" href="/en/tags/coding-agents/">#coding-agents</a></span>
@@ -460,6 +464,20 @@ Looking for older posts? [Browse the full archive →](/en/archives/)
 {{% /index-list %}}
 
 <div id="aor-index-grid" class="aor-index-grid" data-index-view="grid">
+<section class="aor-index-month" aria-labelledby="aor-grid-2026-09">
+  <div class="aor-index-month__header">
+    <h2 id="aor-grid-2026-09">2026 - September</h2>
+    <span>1 post</span>
+  </div>
+  <div class="aor-post-grid">
+<article class="aor-post-card" title="ai-memory hit version 2.0 with the open OKF format, local embeddings on by default, and support for teams working in parallel. I compare it with the competition and show what only ai-memory delivers.">
+  <time class="aor-post-card__date" datetime="2026-09-02">Sep 2, 2026</time>
+  <h3 class="aor-post-card__title"><a class="aor-post-card__title-link" href="/en/2026/09/02/ai-memory-2-0-best-memory-system-for-agents-and-teams/">AI-MEMORY 2.0 - The Best Memory System for Agents and Teams</a></h3>
+  <span class="aor-post-tags aor-post-tags--card"><a class="aor-tag-link" href="/en/tags/ai-memory/">#ai-memory</a><a class="aor-tag-link" href="/en/tags/coding-agents/">#coding-agents</a><a class="aor-tag-link" href="/en/tags/open-source/">#open-source</a></span>
+  <p class="aor-post-card__description">ai-memory hit version 2.0 with the open OKF format, local embeddings on by default, and support for teams working in parallel. I compare it with the competition and show what only ai-memory delivers.</p>
+</article>
+  </div>
+</section>
 <section class="aor-index-month" aria-labelledby="aor-grid-2026-08">
   <div class="aor-index-month__header">
     <h2 id="aor-grid-2026-08">2026 - August</h2>
