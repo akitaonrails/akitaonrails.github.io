@@ -5,6 +5,10 @@ title: AkitaOnRails Blog - Archives
 Want to see the Akitando Channel transcripts (Portuguese only)? [Click here](/akitando/).
 Want to see only the Off-Topic posts? [Click here](/en/off-topic/).
 
+## 2024 - April
+
+- <a class="aor-index-list__main-link" href="/en/2024/04/03/my-personal-netflix-with-docker-compose/" title="I built a personal library with Docker Compose, MakeMKV, HandBrake, qBittorrent, Sonarr, Radarr, Prowlarr and Plex. Plex is polished and practical, but PGS subtitles broke playback.">My &quot;Personal Netflix&quot; with Docker Compose</a>
+
 ## 2018 - October
 
 - <a class="aor-index-list__main-link" href="/en/2018/10/31/the-conf-2018-edition-report/" title="THE CONF 2018 received over 100 proposals, selected 28 talks, and brought together more than 300 people, but ran a deficit of at least R$59,931. Still, it remains an investment in an English-language technical conference in Brazil.">THE CONF - 2018 Edition Report</a>

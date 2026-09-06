@@ -2,6 +2,7 @@
 title: Meu "Netflix Pessoal" com Docker Compose
 date: '2024-04-03T13:30:00-03:00'
 slug: meu-netflix-pessoal-com-docker-compose
+translationKey: meu-netflix-pessoal-com-docker-compose
 description: "Montei uma biblioteca pessoal com Docker Compose, MakeMKV, HandBrake, qBittorrent, Sonarr, Radarr, Prowlarr e Plex. O Plex é polido e prático, mas legendas PGS travaram a reprodução."
 tags:
 - homelab
@@ -38,7 +39,11 @@ De qualquer forma, resolvi compartilhar com vocês todos os arquivos de docker-c
 
 *AVISO 2:* existem muitos detalhes que não estou cobrindo neste artigo. Este [fórum do Reddit](https://www.reddit.com/r/pirataria/comments/18ch7bt/guia_do_streaming_dom%C3%A9stico_automatizado_sonarr/) tem mais detalhes e mais discussões. Dependendo se estiver com dúvidas ou problemas específicos, talvez esteja respondido lá.
 
-Deixa eu começar explicando um a um dos principais.
+Pra você não se perder no meio de tantos serviços, aqui está o desenho completo do que a gente vai montar, do pedido até assistir na TV, incluindo as camadas de proteção que impedem malware e download errado de entrar na sua biblioteca:
+
+![Arquitetura completa do home server pra Plex, do pedido até a reprodução](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/20260905220142_home-server-arquitetura-pt.png)
+
+A ideia é essa: você pede num lugar (Seerr), o sistema encontra (Prowlarr e os indexers), baixa com proteção (qBittorrent e SABnzbd, mais as camadas de segurança), organiza no NAS (com legendas do Bazarr) e você assiste em qualquer tela (Plex e Navidrome). Deixa eu começar explicando um a um dos principais.
 
 ## Portainer e Utilitários
 
@@ -166,6 +171,24 @@ Outro detalhe é pedir pro QBitTorrent re-anunciar os downloads para os trackers
 
 ![QBitTorrent Reannounce](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/yoo525n36cc08u6mijoxzwpgg79e)
 
+Agora o ajuste mais importante desta seção inteira, e que eu aprendi na marra: **bloquear executáveis no momento do download**. Um belo dia achei nove torrents "completos" na biblioteca cujo único conteúdo era um executável de Windows de quase 1 GB, sem video nenhum. E o pior, o nome do release era limpinho, coisa tipo `Reacher S04E07 1080p WEB H264-CAKES` ou `Rick and Morty S09E10 ... EDITH.scr`. Você olha o nome e jura que é o episódio. O `.exe` ou `.scr` estava escondido no arquivo lá dentro.
+
+Filtro por nome não pega isso, porque o nome está limpo. A defesa que realmente funciona é bloquear a extensão na hora de gravar. No QBitTorrent, vá em Options, Downloads, e habilite "Excluded file names" com esta lista:
+
+```
+*.exe
+*.scr
+*.bat
+*.cmd
+*.msi
+*.lnk
+*.com
+*.vbs
+*.pif
+```
+
+Com isso, o arquivo malicioso simplesmente nunca é escrito no disco. O torrent "completa" sem nada de útil, o Sonarr ou Radarr percebem que a importação falhou, jogam aquele release na blocklist e saem procurando outro sozinhos. O malware nem toca no disco, e você nem repassa a porcaria seedeando pra frente. Essa é a primeira camada de defesa, e a mais eficaz.
+
 Finalmente, como pesquiso coisas pra baixar? Posso manualmente ir no Google ou DuckDuckGo ou direto em sites como os do PirateBay da vida e buscar arquivos ".torrent" ou links magnéticos. Pra saber o que é isso, assista meu vídeo sobre [Criptografia na Prática](https://www.youtube.com/watch?v=iAA8NrfQtHo) onde explico tudo sobre Torrent também.
 
 O QBitTorrent tem suporte a plugins de pesquisa. Ele já vem com alguns habilitados. No canto inferior direito, tem o botão de "Search plugins". Queremos adicionar o plugin que engloba tudo: o serviço [Jackett](https://github.com/qbittorrent/search-plugins/wiki/How-to-configure-Jackett-plugin).
@@ -236,6 +259,16 @@ Eu não mostrei, mas nas configurações do QBitTorrent vai ter um lugar pra cad
 
 ![QBitTorrent Web UI](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/hx4xnogjlt7i4hjkpkrniqgboaui)
 
+Tem um ajuste no Radarr que eu recomendo fazer logo de cara, porque ele vem com um buraco bobo: por padrão, TODA definição de qualidade vem com tamanho mínimo zero. Isso deixa passar arquivo falso minúsculo se passando por 4K. Eu já fui vítima: um tal `Superman (2025) WEBDL-2160p.iso` de 598 MB entrou como se fosse o filme e ficou meses aparecendo no Plex. Por dentro da ISO tinha um `.exe` de 597 MB disfarçado.
+
+A correção é ir em Settings, Quality, e botar um piso de tamanho em cada definição de qualidade. Uso mais ou menos assim, em MB por minuto de video:
+
+- 720p (HDTV/WEBDL/WEBRip/Bluray): 3
+- 1080p (HDTV/WEBDL/WEBRip): 5, Bluray 1080p: 8, Remux 1080p: 25
+- 2160p (HDTV/WEBDL/WEBRip): 10, Bluray 2160p: 15, Remux 2160p: 50
+
+É baixo o suficiente pra aceitar um bom encode x265 enxuto, e alto o suficiente pra recusar um "4K" de menos de 1 GB, que só pode ser cilada. Um detalhe chato: o Radarr tem um bug em que salvar tudo de uma vez não persiste o tamanho mínimo, então tem que salvar qualidade por qualidade, uma de cada vez.
+
 ## Sonarr (Séries de TV)
 
 Mesma coisa que o Radarr, mas pra séries de TV, temos o serviço [Sonarr](https://sonarr.tv/):
@@ -272,11 +305,38 @@ E pra subir o serviço, no docker compose temos este trecho:
 
 Mesma coisa que o Radarr, eu mapeei pastas diferentes pra anime e não-anime, que é questão de preferência da sua organização.
 
+Tanto no Sonarr quanto no Radarr, tem uma configuração que virou obrigatória pra mim depois que comecei a levar cilada: um Release Profile que bloqueia nomes de release conhecidos por serem armadilha. Em Settings, Profiles, eu deixo uma lista de "Must Not Contain" com termos assim:
+
+```
+BROADCAST
+FULL HD
+.scr
+.exe
+SODAPOP
+REACHERSON
+```
+
+Cada um desses tem história. `BROADCAST`, `SODAPOP` e `REACHERSON` são grupos que empacotam RAR dividido com uma pasta `Sample/` que trava a importação (peguei quase 60 GB de lixo de um `Welcome to Derry` falso de uma vez). `FULL HD` é a assinatura de nome dos que carregam `.exe`. E `.scr`/`.exe` no nome é literal mesmo. Um aviso pra quem for copiar: o Radarr, por baixo, usa o mesmo campo `ignored` que o Sonarr, mesmo a interface chamando de "Must Not Contain", então configure a mesma lista nos dois.
+
+Ainda sobra uma classe que nenhum filtro pega sozinho: os fakes de pré-estreia. Aparece um `Reacher S04E07` com zero seeds pra um episódio que só vai ao ar semana que vem. O Sonarr não recusa release com data anterior à estreia, então esses eu limpo na mão mesmo. A boa notícia é que, com o bloqueio de executável do QBitTorrent lá de cima, mesmo quando um desses baixa, ele vem vazio e é descartado automaticamente.
+
+## Downloads que travam
+
+Um problema clássico do dia a dia: o torrent fica eternamente preso em "downloading metadata" ou "stalled", com zero peers, e o Sonarr nunca desiste dele sozinho. Já tive episódio parado cinco dias atrás de um magnet morto enquanto o release bom passava batido, esperando a vez que nunca chegava.
+
+A solução que montei é um script simples rodando uma vez por dia (um cron ou um systemd timer, tanto faz). Ele consulta a fila do Sonarr, do Radarr e do Lidarr pela API, acha os itens presos em "downloading metadata" ou "stalled with no connections" há mais de 72 horas, e manda remover com um comando só:
+
+```
+DELETE /api/v3/queue/{id}?removeFromClient=true&blocklist=true
+```
+
+Isso apaga o download morto, joga o release na blocklist pra não pegar de novo, e a aplicação sai atrás de outra fonte automaticamente. O pulo do gato é o cuidado pra ele NÃO mexer em download que só está lento (menos de 72h) nem em item esperando importação manual, senão você apaga coisa boa por engano. Na primeira vez que rodei, ele limpou dezenove downloads zumbis de uma vez só.
+
 ## Prowlarr (indexador)
 
 Pra tanto o Radarr e Sonarr saberem de onde puxar os torrents de séries e filmes, eles precisam pesquisar em indexadores ou trackers públicos (ou privados, se você tiver bons contatos - eu não tenho, nem pergunte). Pra isso temos [Prowlarr](https://prowlarr.com/). Esse é o serviço mais importante de todos, porque se esse não funcionar, nada vai baixar direito.
 
-Por outro lado, é o serviço que eu não sei dizer direito qual a melhor forma de configurar. Por enquanto é realmente gastar horas nele fazendo tentativa e erro e fuçando o quanto puder. Nunca fiquei 100% satisfeito com minha configuração. Se tiverem dicas sobre isso, mandem nos comentários abaixo.
+Levei um tempo pra chegar numa configuração boa, mas hoje tenho uma regra simples que resolve: o Prowlarr é o único lugar que gerencia indexer. Sonarr, Radarr e Lidarr NÃO devem ter indexer cadastrado direto, só os que o Prowlarr sincroniza. Todo indexer que eu tinha cadastrado na mão dentro do Radarr era fonte de dor de cabeça, inclusive um "Lime Torrents" que foi exatamente quem me serviu aquele malware da ISO do Superman. Apaguei todos e deixei só o Prowlarr alimentando os três.
 
 ![Prowlarr](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/a1xmx4qhm0i554d0vwsij051ivnz)
 
@@ -302,7 +362,7 @@ Também precisamos configurar acesso ao QBitTorrent:
 
 ![Prowlarr QBitTorrent](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/179tso31cnwvyxan9ltvgibeu8sm)
 
-Esse outro "Sabnzdb" é usando outro protocolo de downloads mais antigo, baseado em newsreader de USENET. Sim, aquela antiga Usenet mesmo. Quem sabe, sabe. Tem esse serviço no meu docker compose, mas nunca consegui fazer funcionar direito. Melhor até apagar essa entrada pra não confundir. Hoje eu deixo só torrent mesmo, mas é porque muito conteúdo parece que só existe nesses grupos mais antigos de newsreader.
+Esse outro **SABnzbd** usa outro protocolo de downloads mais antigo, baseado em newsreader de USENET. Sim, aquela Usenet mesmo. Quem sabe, sabe. Eu deixo o torrent como principal, mas mantenho o SABnzbd configurado como segunda fonte, porque muito conteúdo só existe nesses grupos mais antigos. Se for usar, aplique a mesma proteção de extensão do QBitTorrent: no arquivo `sabnzbd.ini`, na seção `[misc]`, coloque `unwanted_extensions = exe, scr, bat, cmd, msi, lnk, com, vbs, pif` e `action_on_unwanted_extensions = 2`, que manda abortar o download inteiro se aparecer um desses. Assim o Sonarr e o Radarr veem a falha e procuram outra fonte.
 
 Finalmente, muitos trackers hoje implementam algum tipo de proteção contra bots usando captcha da Cloudflare, sabe aquele troço que fica "você é um humano?". Pra passar por isso, precisamos do serviço Flaresolvrr, que podemos subir no docker compose assim:
 
@@ -316,11 +376,13 @@ Finalmente, muitos trackers hoje implementam algum tipo de proteção contra bot
       - '8191:8191'
 ```
 
-E no Prowlarr podemos configurar na seção de Indexers, assim:
+No Prowlarr ele entra como um "indexer proxy". Você cadastra o FlareSolverr apontando pra `http://flaresolverr:8191/`, cria uma tag pra ele, e marca com essa tag só os indexers que ficam atrás do Cloudflare. Aí esses passam a resolver o captcha por baixo dos panos, e os outros nem precisam passar por ele:
 
 ![Prowlarr FlareSolvrr](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/7949bp73gbb49994tynwuil9249h)
 
-Como eu disse, é um saco de configurar isso. Mas ainda não acabamos. Na tela principal, tem que sair habilitando todos os indexers que fazem sentido pra você. Não é bom habilitar tudo, porque vai ficar muito pesado depois. Veja os tags de cada um. Tem indexer que é só de pornô, por exemplo, eu pulei todos esses. Tem indexers específico só pra conteúdo em russo ou chinês, daí pula também.
+Ainda não acabamos. Na tela principal, é sair habilitando os indexers que fazem sentido pra você. Não habilite tudo: fica pesado e, pior, alguns indexers servem mais cilada do que conteúdo bom. Veja as tags de cada um. Tem indexer que é só de pornô, tem indexer só de conteúdo russo ou chinês, esses eu pulo.
+
+Os que me servem bem hoje são o **EZTV** e o **1337x** (os dois atrás do Cloudflare, então dependem do FlareSolverr), o **YTS** pra filme, e o **AnimeTosho** mais o **Nyaa** pra anime. No total sobra algo entre 18 e 21 indexers ativos por aplicação. E, mais importante do que habilitar os bons, é desabilitar os ruins: eu desliguei o **LimeTorrents** e o **TorrentDownload**, porque, somados, geraram mais de duzentos downloads e quase nenhuma importação aproveitável, além de serem fonte recorrente de malware e de fake. Menos indexer bom vale mais que um monte de indexer ruim.
 
 ![Add Indexer](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/cnl4yefcsvas84m6eslb3in7jmq9)
 
@@ -413,17 +475,17 @@ Mas PGS é diferente: ele tem capacidades gráficas! Estou chutando, mas se já 
 
 A solução: use o Plex pra pesquisar uma nova legenda, em formato SRT, e ignore a legenda PGS. Só de fazer isso, parou de engasgar na hora de tocar.
 
-## Overseerr
+## Seerr (o antigo Overseerr)
 
-Só com o Sonarr e Radarr, mais os indexers do Prowlarr, já é suficiente pra conseguir procurar e baixar tudo. Mas tem um outro app que tenta facilitar o processo de descobrir coisas novas pra baixar. Esse é o Overseerr:
+Só com o Sonarr e Radarr, mais os indexers do Prowlarr, já é suficiente pra procurar e baixar tudo. Mas tem um outro app que facilita muito a parte de descobrir coisa nova pra baixar. Ele se chama [Seerr](https://seerr.dev/), e é a evolução do que antes era o Overseerr. O projeto do Overseerr se juntou com o Jellyseerr, o fork que atendia Jellyfin, e os dois viraram um só: o Seerr, que agora serve Plex, Jellyfin e Emby no mesmo lugar. Se você ainda ouve falar em "Overseerr" por aí, é isso aqui.
 
-![Overseerr](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/scl2gpzjir3g0hga7p1ip50cs54w)
+![Seerr](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/scl2gpzjir3g0hga7p1ip50cs54w)
 
-Ele vai em bancos de dados online gratuitos (tipo os IMDB) da vida e fica de olho em tudo que sai de novo, tudo que está em "trending". Se eu quero achar alguma coisa nova, é uma boa. Mesmo coisas que já sei o que quero, basta pesquisar no Overseerr e clicar em "Request":
+Ele vai em bancos de dados online gratuitos (tipo os IMDB) da vida e fica de olho em tudo que sai de novo, tudo que está em "trending". Se eu quero achar alguma coisa nova, é uma boa. Mesmo coisas que já sei o que quero, basta pesquisar no Seerr e clicar em "Request":
 
-![Overseerr Request](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/4rcrqhxpooq14nip3zj3m7epo7p3)
+![Seerr Request](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/4rcrqhxpooq14nip3zj3m7epo7p3)
 
-Eu configuro integração com Sonarr e Radarr nas configurações, assim ele sabe pra quem mandar a requisição. Funciona tudo integrado. Só preciso usar a interface do Overseer pra requisitar as coisas e posso esquecer do Sonarr e Radarr em background.
+Eu configuro a integração com o Sonarr e o Radarr nas configurações, assim ele sabe pra quem mandar a requisição. Funciona tudo integrado. Só preciso usar a interface do Seerr pra pedir as coisas e posso esquecer do Sonarr e do Radarr rodando em background.
 
 ## Bazarr (legendas)
 
@@ -437,7 +499,7 @@ Existem dois jeitos de resolver isso. Um é pelo próprio Plex, que tem a opçã
 
 Outra forma é tentar baixar as legendas automaticamente antes. Isso não é perfeito porque existem diversas versões de legendas, algumas foram feitas pra DVD, outras pra BluRay, alguns até pra versões mais populares de "CAM" que são torrents de videos gravados direto no cinema com um smartphone, que é a versão mais porcaria de todas.
 
-É muito importante até renomear os arquivos de video no melhor formato, com os metadados bem organizados, como explicado no [fórum de Reddit](https://www.reddit.com/r/pirataria/comments/18ch7bt/guia_do_streaming_dom%C3%A9stico_automatizado_sonarr/) que mencionei no começo do artigo. Eu não configuro tanto porque como disse, não preciso tanto de legenda assim. Mas leia lá pra ter os detalhes de como configurar Sonarr e Radarr pra já baixar os arquivos pra facilitar achar legendas depois. E avisando também que Português do Brasil é uma das línguas que menos tem legendas. É mais fácil achar legenda em Francês, Italiano, Russo, menos em Português.
+É muito importante renomear os arquivos de video no formato certo, com os metadados bem organizados, como explicado no [fórum de Reddit](https://www.reddit.com/r/pirataria/comments/18ch7bt/guia_do_streaming_dom%C3%A9stico_automatizado_sonarr/) que mencionei no começo do artigo. Isso ajuda o Bazarr a casar a legenda certa com o arquivo certo. E já avisando: Português do Brasil é uma das línguas que menos tem legenda. É mais fácil achar em Francês, Italiano ou Russo do que em Português.
 
 Pra facilitar isso temos o serviço [Bazarr](https://www.bazarr.media/):
 
@@ -447,7 +509,7 @@ Na configuração do Bazarr, vamos apontar pros nossos serviços locais de Sonar
 
 ![Bazarr integração](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/rhiefnojwsullwi1m9swhxds6ocj)
 
-O principal é configurar os Providers, que são sites como o OpenSubtitles.org que mencionei antes, de onde baixávamos legendas manualmente. O Bazarr tem integração com vários deles, mas precisamos registrar manualmente, não é difícil. Quanto mais, melhor.
+O principal é configurar os Providers, que são os sites de onde vêm as legendas. É aqui que mora a diferença entre "não acha nada" e "acha quase tudo". Os cinco que me dão o melhor resultado são: **opensubtitlescom**, **tvsubtitles**, **yifysubtitles** (só filme), **animetosho** (pra anime, nem precisa de conta) e **gestdown** (um proxy do Addic7ed pra inglês, também sem conta). Uma pegadinha que me custou horas: o provider OpenSubtitles.com pede o seu **nome de usuário, não o email**. Se você botar o email, ele dá erro de "você não pode consumir este serviço", e ainda te deixa de castigo por 12 horas mesmo depois de corrigir.
 
 ![Bazarr Providers](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/8lzq8umwyjgg40abb1tlvtvt8nxu)
 
@@ -469,9 +531,49 @@ Pra subir o serviço, no docker compose, temos este trecho:
       - '6767:6767'
 ```
 
-Aqui precisamos mapear as pastas do radarr e sonarr pra ele saber onde gravar as legendas.
+Aqui precisamos mapear as pastas do radarr e sonarr pra ele saber onde gravar as legendas. Um detalhe que trava muita gente: mapeie exatamente as mesmas subpastas que o Radarr e o Sonarr usam (no meu caso, `/movies` e `/anime`), senão o Bazarr fica reclamando que "não acha o arquivo de video pra analisar" na biblioteca inteira.
 
-Pra mim o Bazarr é o serviço que menos tem sido útil, porque ele não acha a maioria das legendas. Eu acabo procurando manualmente pelo Plex toda vez. Pode ser porque eu não fiz a configuração de renomear os arquivos baixados pelo Sonarr e Radarr. Então leiam o fórum que mandei antes.
+O último passo, e o que fez o Bazarr finalmente virar útil pra mim, é o perfil de idioma. Criei um perfil "Português do Brasil com inglês de reserva": ele lista `pb` primeiro e `en` depois, com o corte (cutoff) no `pb`. Na prática, o Bazarr procura as duas, baixa a que aparecer primeiro, e considera o item resolvido assim que existe uma legenda em português. Se o pt-BR nunca aparecer, o inglês fica de backup.
+
+E o pulo do gato, que me custou caro: **todo item precisa ter um perfil de idioma atribuído**. O Bazarr ignora, calado, qualquer filme ou série sem perfil. Quando fui conferir, tinha 140 séries e 201 filmes sem perfil nenhum, sendo ignorados em silêncio desde que entraram na biblioteca. Marcar o perfil como padrão só cobre o que você adiciona dali pra frente; pra biblioteca que já existe, tem que atribuir o perfil em massa, de uma vez, pra tudo que já está lá.
+
+Tem ainda um problema irmão desse, só que do lado do áudio. De vez em quando o Sonarr ou o Radarr baixam um release cujo único áudio é uma dublagem estrangeira: um italiano, um francês, um russo. E nenhuma legenda salva áudio errado. Pra isso eu uso um Custom Format nos dois, o "foreign-language-only", que reconhece marcadores de dublagem estrangeira (ITALIAN, FRENCH, RUS, GERMAN e por aí vai) e dá uma pontuação de -500, o que faz o release ser recusado já na busca. Um detalhe que aprendi na marra: um release russo veio com o título todo em cirílico, sem nenhum "RUS" em letra latina, e passou batido. Então o filtro também precisa pegar qualquer caractere cirílico.
+
+Depois que arrumei os providers, passei a biblioteca inteira pra esse perfil e liguei esse filtro de áudio, o Bazarr deixou de ser o serviço mais inútil da minha stack e virou um que resolve a maioria dos casos sozinho. Quando ainda falta, aí sim eu caço na mão pelo Plex, mas hoje é exceção. Só lembrando o que já falei: legenda em português do Brasil é das mais escassas que existem, então mesmo com tudo certo, às vezes não tem mesmo.
+
+## Lidarr (Música)
+
+Eu não sou muito de música. Tenho uns MP3 que baixei décadas atrás e, no dia a dia, toco a playlist de Top 50 do Spotify e tá bom. Mas a mesma lógica do Sonarr e do Radarr vale pra música, então acabei montando também: o serviço se chama [Lidarr](https://lidarr.audio/).
+
+![Lidarr Web UI](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/20260905215028_lidarr-library.png)
+
+Ele cataloga seus artistas, cruza com bancos de dados de discografia e vai atrás dos álbuns que faltam, marcando cada artista como "Monitored" pra buscar lançamentos novos sozinho, do mesmo jeito que o Sonarr faz com episódio de série. No print acima dá pra ver minha biblioteca com tudo em "Lossless", que é o perfil de qualidade que eu configurei.
+
+No docker compose é o mesmo padrão dos outros:
+
+```yaml
+  lidarr:
+    image: ghcr.io/linuxserver/lidarr:latest
+    restart: unless-stopped
+    depends_on:
+      - qbittorrent
+    environment:
+      - TZ=America/Sao_Paulo
+      - PUID=1000
+      - PGID=1000
+    volumes:
+      - /home/akitaonrails/lidarr/appdata/config:/config
+      - /mnt/terachad/Music:/music
+      - /mnt/terachad/Downloads/torrents:/downloads
+    ports:
+      - '8686:8686'
+```
+
+A configuração é idêntica em espírito à do Radarr e Sonarr. Em Settings e Download Clients eu registro o mesmo QBitTorrent, mas usando uma categoria própria chamada `lidarr`, pra ele não misturar os downloads de música com os de filme e série. A pasta raiz da biblioteca aponta pra `/music`, e o perfil de qualidade dá pra deixar aberto (o "Any", que pega o que aparecer) ou travar em "Lossless" quando você só quer FLAC, que é o meu caso.
+
+E o melhor: os indexers eu não configuro na mão. O Prowlarr, que eu expliquei lá em cima, também cadastra o Lidarr como aplicação e sincroniza sozinho os indexers que têm categoria de música. É o mesmo "Sync App Indexers" que ele faz pro Sonarr e Radarr, agora pra música também.
+
+Pra ouvir, o próprio Plex já toca música: basta criar uma biblioteca do tipo Music apontando pra essa pasta, e no celular o app Plexamp é ótimo só pra isso. E, do mesmo jeito que tenho o Kavita como "Plex pra mangá", pra música ainda dá pra usar o [Navidrome](https://www.navidrome.org/), um servidor de streaming open source tipo um Spotify particular, que indexa a mesma pasta `/music` (só leitura) e tem vários apps de celular compatíveis. O Lidarr baixa e organiza, o Navidrome ou o Plex servem.
 
 ## Outros Serviços
 
@@ -496,8 +598,6 @@ Ainda não explorei muito esse serviço. Ou ainda tem coisas pra refinar nele, o
 ![Kavita Reader](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/bcrh2ifucs86fupzk8gqa38yx5iq)
 
 Pra ler em si, é bem parecido com um Kindle Web ou outros sites online de mangá. Dá pra ler página a página, ou "scrollar" o capítulo inteiro, ele vai lembrar onde você parou e coisas básicas assim. Pode ser um bom projeto pra contribuir, se tem vontade de treinar com código aberto.
-
-Finalmente, eu não sou muito de música, tenho músicas antigas que baixei em mp3 décadas atrás e não tenho muito apreço por música nova. Toco o que tem na playlist de Top 50 do Spotify e é isso. Mas pra quem é entendedor de música e quer algo similar a Sonarr e Radarr, ainda tem o serviço [Lidarr](https://github.com/Lidarr/Lidarr). Esse eu não testei, mas fica a dica pra quem quiser uma biblioteca offline de música.
 
 ## Conclusão
 
