@@ -222,6 +222,8 @@ Ele vai subir um serviço onde podemos acessar a interface web assim:
 
 Veja na coluna da direita que lista de onde puxou esses resultados: está vindo do serviço Jackett.
 
+Um aviso importante, porque isso mudou com o tempo: o Jackett aqui serve pra ISSO, a busca manual que você mesmo faz no QBitTorrent. Não caia na tentação de plugar o Jackett direto no Sonarr e no Radarr. A parte automática vai ser gerenciada pelo Prowlarr, que eu explico mais pra frente, e é ele que alimenta os indexers dos serviços. Eu mantenho o Jackett rodando só pra busca manual e, no máximo, como ponte pra algum tracker que o Prowlarr não suporta nativamente, tipo o RuTracker, que o Prowlarr consegue consumir através do Jackett.
+
 ## Radarr (Filmes)
 
 Procurar manualmente funciona, mas existem formas melhores: deixar um serviço fazer a procura e gerenciar o download pra você, e pra baixar filmes, podemos usar o serviço [Radarr](https://radarr.video/):

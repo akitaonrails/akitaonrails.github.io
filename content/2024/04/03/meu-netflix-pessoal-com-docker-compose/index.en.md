@@ -222,6 +222,8 @@ It's a service that consolidates dozens of torrent search sites in one place, ca
 
 Notice in the right column that lists where these results were pulled from: it's coming from the Jackett service.
 
+An important heads-up, because this changed over time: Jackett here is for THAT, the manual searches you do yourself in QBitTorrent. Don't fall for the temptation of wiring Jackett straight into Sonarr and Radarr. The automated part is going to be managed by Prowlarr, which I explain later, and it's Prowlarr that feeds the services' indexers. I keep Jackett running only for manual searches and, at most, as a bridge for some tracker Prowlarr doesn't support natively, like RuTracker, which Prowlarr can consume through Jackett.
+
 ## Radarr (Movies)
 
 Searching manually works, but there are better ways: let a service do the searching and manage the download for you, and to download movies, we can use the [Radarr](https://radarr.video/) service:
