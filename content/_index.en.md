@@ -14,6 +14,7 @@ Looking for older posts? [Browse the full archive →](/en/archives/)
   <div id="aor-featured-posts-en-body" class="aor-featured__body">
     <div class="aor-featured__list" data-index-view="list">
       <ul>
+            <li><code>Sep 07</code> — <a href="/en/2026/09/07/ai-challenge-converting-nes-roms-to-master-system-sms/" title="I tried using frontier LLMs to convert NES ROMs into Master System games. I explain the architecture, why translating 6502 to Z80 runs slow, the emulator as a feedback oracle, and where the mappers stall everything.">AI Challenge: Converting NES ROMs to the Master System/SMS</a><br><span class="aor-post-tags aor-post-tags--featured-list"><a class="aor-tag-link" href="/en/tags/retrocomputing/">#retrocomputing</a><a class="aor-tag-link" href="/en/tags/coding-agents/">#coding-agents</a><a class="aor-tag-link" href="/en/tags/gaming/">#gaming</a><a class="aor-tag-link" href="/en/tags/emulation/">#emulation</a></span></li>
             <li><code>Sep 02</code> — <a href="/en/2026/09/02/ai-memory-2-0-best-memory-system-for-agents-and-teams/" title="ai-memory hit version 2.0 with the open OKF format, local embeddings on by default, and support for teams working in parallel. I compare it with the competition and show what only ai-memory delivers.">AI-MEMORY 2.0 - The Best Memory System for Agents and Teams</a><br><span class="aor-post-tags aor-post-tags--featured-list"><a class="aor-tag-link" href="/en/tags/ai-memory/">#ai-memory</a><a class="aor-tag-link" href="/en/tags/coding-agents/">#coding-agents</a><a class="aor-tag-link" href="/en/tags/open-source/">#open-source</a></span></li>
             <li><code>Aug 18</code> — <a href="/en/2026/08/18/hot-take-harness-loop-engineering-graph-engineering-are-bullshit/" title="I posted that Harness Engineering, Loop Engineering, and Graph Engineering are bullshit to sell consulting hours and courses. Here&#39;s my receipt: 30+ public repos, an AI marathon, and a whole benchmark — none of it using any of those &#39;disciplines&#39;.">Hot Take: Harness, Loop Engineering, Graph Engineering Are Bullshit</a><br><span class="aor-post-tags aor-post-tags--featured-list"><a class="aor-tag-link" href="/en/tags/artificial-intelligence/">#artificial-intelligence</a><a class="aor-tag-link" href="/en/tags/llms/">#llms</a><a class="aor-tag-link" href="/en/tags/vibe-coding/">#vibe-coding</a></span></li>
             <li><code>Aug 15</code> — <a href="/en/2026/08/15/llm-benchmarks-qwen-3-8-glm-5-3-gemini-3-7/" title="GLM 5.3 scored 94 and closed in on the leading trio. Qwen 3.8 Max jumped from 51 to 92 after it stopped hallucinating the RubyLLM API. Gemini 3.7 Flash scored 93 — after its first run was voided for cheating. And the local 27B Qwen showed that context is now the bottleneck.">LLM Benchmarks: Qwen 3.8, GLM 5.3, Gemini 3.7</a><br><span class="aor-post-tags aor-post-tags--featured-list"><a class="aor-tag-link" href="/en/tags/llm-benchmarks/">#llm-benchmarks</a><a class="aor-tag-link" href="/en/tags/llms/">#llms</a><a class="aor-tag-link" href="/en/tags/coding-agents/">#coding-agents</a></span></li>
@@ -35,6 +36,12 @@ Looking for older posts? [Browse the full archive →](/en/archives/)
   </ul>
 </div>
 <div class="aor-featured__grid aor-post-grid" data-index-view="grid">
+<article class="aor-post-card" title="I tried using frontier LLMs to convert NES ROMs into Master System games. I explain the architecture, why translating 6502 to Z80 runs slow, the emulator as a feedback oracle, and where the mappers stall everything.">
+  <time class="aor-post-card__date" datetime="2026-09-07">Sep 7, 2026</time>
+  <h3 class="aor-post-card__title"><a class="aor-post-card__title-link" href="/en/2026/09/07/ai-challenge-converting-nes-roms-to-master-system-sms/">AI Challenge: Converting NES ROMs to the Master System/SMS</a></h3>
+  <span class="aor-post-tags aor-post-tags--card"><a class="aor-tag-link" href="/en/tags/retrocomputing/">#retrocomputing</a><a class="aor-tag-link" href="/en/tags/coding-agents/">#coding-agents</a><a class="aor-tag-link" href="/en/tags/gaming/">#gaming</a><a class="aor-tag-link" href="/en/tags/emulation/">#emulation</a></span>
+  <p class="aor-post-card__description">I tried using frontier LLMs to convert NES ROMs into Master System games. I explain the architecture, why translating 6502 to Z80 runs slow, the emulator as a feedback oracle, and where the mappers stall everything.</p>
+</article>
 <article class="aor-post-card" title="ai-memory hit version 2.0 with the open OKF format, local embeddings on by default, and support for teams working in parallel. I compare it with the competition and show what only ai-memory delivers.">
   <time class="aor-post-card__date" datetime="2026-09-02">Sep 2, 2026</time>
   <h3 class="aor-post-card__title"><a class="aor-post-card__title-link" href="/en/2026/09/02/ai-memory-2-0-best-memory-system-for-agents-and-teams/">AI-MEMORY 2.0 - The Best Memory System for Agents and Teams</a></h3>
@@ -273,6 +280,7 @@ Looking for older posts? [Browse the full archive →](/en/archives/)
 {{% index-list %}}
 ## 2026 - September
 
+- <a class="aor-index-list__main-link" href="/en/2026/09/07/ai-challenge-converting-nes-roms-to-master-system-sms/" title="I tried using frontier LLMs to convert NES ROMs into Master System games. I explain the architecture, why translating 6502 to Z80 runs slow, the emulator as a feedback oracle, and where the mappers stall everything.">AI Challenge: Converting NES ROMs to the Master System/SMS</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/en/tags/retrocomputing/">#retrocomputing</a><a class="aor-tag-link" href="/en/tags/coding-agents/">#coding-agents</a><a class="aor-tag-link" href="/en/tags/gaming/">#gaming</a><a class="aor-tag-link" href="/en/tags/emulation/">#emulation</a></span>
 - <a class="aor-index-list__main-link" href="/en/2026/09/02/ai-memory-2-0-best-memory-system-for-agents-and-teams/" title="ai-memory hit version 2.0 with the open OKF format, local embeddings on by default, and support for teams working in parallel. I compare it with the competition and show what only ai-memory delivers.">AI-MEMORY 2.0 - The Best Memory System for Agents and Teams</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/en/tags/ai-memory/">#ai-memory</a><a class="aor-tag-link" href="/en/tags/coding-agents/">#coding-agents</a><a class="aor-tag-link" href="/en/tags/open-source/">#open-source</a></span>
 
 ## 2026 - August
@@ -467,9 +475,15 @@ Looking for older posts? [Browse the full archive →](/en/archives/)
 <section class="aor-index-month" aria-labelledby="aor-grid-2026-09">
   <div class="aor-index-month__header">
     <h2 id="aor-grid-2026-09">2026 - September</h2>
-    <span>1 post</span>
+    <span>2 posts</span>
   </div>
   <div class="aor-post-grid">
+<article class="aor-post-card" title="I tried using frontier LLMs to convert NES ROMs into Master System games. I explain the architecture, why translating 6502 to Z80 runs slow, the emulator as a feedback oracle, and where the mappers stall everything.">
+  <time class="aor-post-card__date" datetime="2026-09-07">Sep 7, 2026</time>
+  <h3 class="aor-post-card__title"><a class="aor-post-card__title-link" href="/en/2026/09/07/ai-challenge-converting-nes-roms-to-master-system-sms/">AI Challenge: Converting NES ROMs to the Master System/SMS</a></h3>
+  <span class="aor-post-tags aor-post-tags--card"><a class="aor-tag-link" href="/en/tags/retrocomputing/">#retrocomputing</a><a class="aor-tag-link" href="/en/tags/coding-agents/">#coding-agents</a><a class="aor-tag-link" href="/en/tags/gaming/">#gaming</a><a class="aor-tag-link" href="/en/tags/emulation/">#emulation</a></span>
+  <p class="aor-post-card__description">I tried using frontier LLMs to convert NES ROMs into Master System games. I explain the architecture, why translating 6502 to Z80 runs slow, the emulator as a feedback oracle, and where the mappers stall everything.</p>
+</article>
 <article class="aor-post-card" title="ai-memory hit version 2.0 with the open OKF format, local embeddings on by default, and support for teams working in parallel. I compare it with the competition and show what only ai-memory delivers.">
   <time class="aor-post-card__date" datetime="2026-09-02">Sep 2, 2026</time>
   <h3 class="aor-post-card__title"><a class="aor-post-card__title-link" href="/en/2026/09/02/ai-memory-2-0-best-memory-system-for-agents-and-teams/">AI-MEMORY 2.0 - The Best Memory System for Agents and Teams</a></h3>
