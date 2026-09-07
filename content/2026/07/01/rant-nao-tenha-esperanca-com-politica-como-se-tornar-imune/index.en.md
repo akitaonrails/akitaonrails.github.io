@@ -4,7 +4,7 @@ slug: "rant-do-not-put-hope-in-politics-how-to-become-immune"
 date: '2026-07-01T11:00:00-03:00'
 draft: false
 translationKey: "rant-politics-immune"
-description: "I argue for treating politics as environmental risk, not religion: an election isn’t a life plan. The proposed strategy is to increase income in hard currency, understand taxes, and organize assets within the law."
+description: "I argue for treating politics as an environmental risk you manage, like rain and exchange rates, instead of cheering for it like a soccer team. The strategy: grow your income in hard currency, understand taxes, and organize your assets within the law."
 tags:
 - politics
 - personal
@@ -18,7 +18,7 @@ Red shirt on one side. Yellow shirt on the other. In the middle, adults behaving
 
 Big deal.
 
-After 50 years watching this movie, my recommendation is simple: stop cheering. Politics is not your father. A party is not your family. The State is not a shield. An election is not a life plan.
+After 50 years watching this movie, my recommendation is simple: stop cheering. Treat politics as a risk you manage, the same way you deal with rain, traffic, and exchange rates. A party is, at most, a supplier of public policy. An election is an event on the calendar. Your adult life has to stand on its own, without hanging any of it on the role of father, family, or shield.
 
 I am not telling you to become alienated. Read the news. Understand risk. Vote if you want to vote. I vote. Just do not hand your sanity to this. Your daily anxiety, your huge rant, your fight in the family group chat, and your individual vote will not fix a structure built over decades.
 
@@ -32,7 +32,7 @@ Brazilians understand team loyalty very well. Corinthians, Palmeiras, Flamengo, 
 
 The problem is carrying that brain into politics.
 
-In soccer, fine. It is entertainment. In politics, it becomes organized stupidity. The person does not defend a public policy. They defend a crest. They do not change their mind when bad numbers appear. They double down. They do not want to understand debt, taxes, inflation, exchange rate, pensions, productivity, education, legal certainty. They want to know whether "my side" won.
+In soccer, fine, it is entertainment. In politics, it becomes organized stupidity. The person defends a crest instead of a public policy. When bad numbers appear, they double down instead of revisiting the position. They ignore debt, taxes, inflation, exchange rate, pensions, productivity, education, legal certainty, and only want to know whether "my side" won.
 
 That is useless.
 
@@ -62,7 +62,7 @@ Populism is seductive because it promises a benefit now and sends the bill to la
 
 A common confusion: saying inflation is "caused by price increases." That reverses cause and consequence. The [Central Bank](https://www.bcb.gov.br/controleinflacao/oqueinflacao) defines inflation as an increase in prices and a loss of purchasing power. That is how inflation appears. The root, when inflation is persistent and spread through the economy, involves money, credit, demand, expectations, and fiscal conditions. The [Cleveland Fed](https://www.clevelandfed.org/-/media/project/clevelandfedtenant/clevelandfedsite/publications/economic-commentary/1999/ec-19990801-money-growth-and-inflation-how-long-is-the-long-run-pdf.pdf) explains the long-term relation between money growth and the price level. The IMF calls one extreme case [fiscal dominance](https://www.imf.org/-/media/files/publications/dp/2021/english/apdfea.pdf): when debt and deficits start bossing monetary policy around.
 
-Supermarket prices going up are a symptom. Not the root.
+Supermarket prices going up are the symptom, and most people confuse the symptom with the root.
 
 Of course one product can go up because of oil, bad harvest, war, exchange rate, tax, cartel, logistics. But localized abuse does not explain decades of generalized purchasing-power loss. Turning companies into scapegoats is convenient for politicians. Convenient does not mean true.
 
@@ -82,7 +82,7 @@ When the system fails, it fails on real people. G1 reported in June 2026 the cas
 
 Public education? If you have kids, be brutally honest: do you want to bet 15 years of their education waiting for an educational revolution that may never come?
 
-In [PISA 2022](https://agenciabrasil.ebc.com.br/en/educacao/noticia/2023-12/pisa-less-half-brazilian-students-know-basic-math-science), Brazil scored **379 in math**, **410 in reading**, and **403 in science**, against OECD averages of **472**, **476**, and **485**. That is not an ideological detail. That is weak foundation.
+In [PISA 2022](https://agenciabrasil.ebc.com.br/en/educacao/noticia/2023-12/pisa-less-half-brazilian-students-know-basic-math-science), Brazil scored **379 in math**, **410 in reading**, and **403 in science**, against OECD averages of **472**, **476**, and **485**. That is genuinely weak foundation, far from being just an ideological dispute.
 
 I know most people cannot pay for private health care and private school. That is exactly the problem. The country is expensive, public service is bad, and the private alternative is also expensive.
 
@@ -96,9 +96,9 @@ I grew up in the 80s. I saw hyperinflation. Prices changed the same day. Money m
 
 For young people, that sounds like ancient history. For me it is memory.
 
-Hyperinflation does not fall from the sky. It is not divine punishment. It usually starts with a government spending more than it can, debt nobody wants to face, and the temptation to cover the hole by printing money. Looks clever for five minutes. Then it becomes an invisible tax on everybody.
+Hyperinflation has a known, well-documented cause. It usually starts with a government spending more than it can, debt nobody wants to face, and the temptation to cover the hole by printing money. Looks clever for five minutes. Then it becomes an invisible tax on everybody.
 
-But even in chaos, some people make money. Not because they are more virtuous. Because they understand the mechanics.
+But even in chaos, some people make money, and they are the ones who understand the mechanics, not the ones who happen to be more virtuous than the rest.
 
 Think of a simple store. It receives cash today and pays the supplier in 30 days. If it buys **Cr$ 1 million** in inventory and only pays the supplier next month, with **30% monthly inflation**, that **Cr$ 1 million** paid later buys much less. Meanwhile, it sells the inventory at adjusted prices. The customer thinks the merchant got rich because "prices went up." Sometimes the merchant merely survived the interval. Sometimes he made a lot in the interval.
 
@@ -106,7 +106,7 @@ Now think about money sitting for a few days. A company receives payment slips o
 
 Banks did this at a much larger scale. They captured money paying one rate, lent or invested it charging another, and turned huge volumes every day. If the difference looked small, a few points per month, on billions it became a fortune. Spread and float. Ugly names for something simple: whoever received before paying, and knew where to park the money in the middle, won. Whoever received a salary at the end of the month and ran to the supermarket lost.
 
-And it did not have to be a bank. An organized individual could also play a better game. If he knows the currency is melting, he does not leave everything sitting in cruzeiros waiting for it to turn into dust. He buys dollars when he can. He buys shares of exporters that earn in dollars. He uses futures or options to hedge, not to play casino. Simple example: you have money you will only use in 30 days. If you leave it in rotten currency, you lose. If you buy dollar protection and the exchange rate explodes, you did not "get rich by luck." You understood the game earlier. Of course: options, forex, and leverage break amateurs faster than inflation. This is not a recommendation to play trader. It is just the obvious point: financial knowledge turns chaos into opportunity. Ignorance turns salary into dust.
+And it did not have to be a bank. An organized individual could also play a better game. If he knows the currency is melting, he does not leave everything sitting in cruzeiros waiting for it to turn into dust. He buys dollars when he can. He buys shares of exporters that earn in dollars. He uses futures or options to hedge, not to play casino. Simple example: you have money you will only use in 30 days. If you leave it in rotten currency, you lose. If you buy dollar protection and the exchange rate explodes, you understood the game before everyone else, and luck had nothing to do with it. Of course: options, forex, and leverage break amateurs faster than inflation. To be clear, this is not an invitation to play trader. The point is simpler: financial knowledge turns chaos into opportunity, while ignorance turns salary into dust.
 
 That is why inflation destroys the poor and the disorganized first. Whoever lives on a fixed salary arrives late to the race. Whoever understands payment terms, inventory, debt, cash, and currency plays another game.
 
@@ -137,7 +137,7 @@ It works better than hope.
 
 ## English and dollars are not fetishes
 
-English is not a differentiator. It is oxygen.
+English is oxygen in the global market. A lot of people still treat it as a fancy differentiator, when it has already become a basic survival requirement.
 
 There is a reason this was one of the first videos on my channel: [Akitando #32 - Como eu aprendi inglês e entendendo padrões](https://akitaonrails.com/2018/12/11/akitando-32-como-eu-aprendi-ingles-e-entendendo-padroes/).
 
@@ -145,19 +145,19 @@ Not every Brazilian profession is exportable. Programming is one of the ones tha
 
 You start local. Gain experience. Study more than the others. Learn to communicate. Improve your English. Apply abroad. Get rejected. Apply again. Continue.
 
-This is not a six-month plan. It is a decades-long plan.
+This is decades of work, not a six-month turnaround.
 
 The goal is simple: increase your chance of being paid in hard currency.
 
-Why dollars? Because the dollar is still the center of the international financial system. This is not cheering for the US. It is mechanics. After Bretton Woods, and even after the end of gold convertibility in 1971, the dollar remained the main currency for reserves, trade, debt, and liquidity. The [BIS](https://www.bis.org/publ/qtrpdf/r_qt2212x.htm) shows that the dollar is involved in almost **90%** of global FX transactions and appears in about half of global trade invoiced in foreign currency.
+Why dollars? Because the dollar is still the center of the international financial system, through pure mechanics, and not because I cheer for the US. After Bretton Woods, and even after the end of gold convertibility in 1971, the dollar remained the main currency for reserves, trade, debt, and liquidity. The [BIS](https://www.bis.org/publ/qtrpdf/r_qt2212x.htm) shows that the dollar is involved in almost **90%** of global FX transactions and appears in about half of global trade invoiced in foreign currency.
 
-In the 80s, the Plaza Accord coordinated a **devaluation of the dollar** against currencies like the yen and the Deutsche mark. [FOMC materials from 1985](https://www.federalreserve.gov/monetarypolicy/files/FOMC19851105material.pdf) already recorded the dollar roughly 14% lower against the yen weeks later. This is not a childish "US imperialism" story. It is currency, interest rates, trade, geopolitics, and debt.
+In the 80s, the Plaza Accord coordinated a **devaluation of the dollar** against currencies like the yen and the Deutsche mark. [FOMC materials from 1985](https://www.federalreserve.gov/monetarypolicy/files/FOMC19851105material.pdf) already recorded the dollar roughly 14% lower against the yen weeks later. The real story mixes currency, interest rates, trade, geopolitics, and debt, well beyond the simplistic "US imperialism" version.
 
 When a geopolitical crisis raises oil prices, importing countries need more dollars to buy energy. Reuters showed this during the Iran-US war: [the dollar rose on safe-haven demand, higher oil prices, and Strait of Hormuz risk](https://www.marketscreener.com/news/us-dollar-gains-as-iran-conflict-fuels-safe-haven-demand-higher-oil-ce7e5cdcdf81f324). Sanctions and alternatives exist, but that does not prove the end of the dollar. It proves the opposite: everyone needs to work around the dominant network precisely because it is dominant.
 
-You do not need to like it. You need to understand it.
+You do not need to like the dollar to understand that it runs the game.
 
-The Real is not a good long-term store of value. If you can keep part of your income, assets, or client base in hard currency, you become less vulnerable. Simple as that.
+The Real works poorly as a long-term store of value. If you can keep part of your income, assets, or client base in hard currency, you become less vulnerable. Simple as that.
 
 ## Taxes are part of adulthood
 
@@ -191,7 +191,7 @@ I am not saying every family needs a holding company. I am saying you need to kn
 
 This is where many people misunderstand on purpose.
 
-I am not saying to hide assets. I am not saying to evade taxes. I am not saying to defraud creditors. I am not saying to transfer assets after being sued to try to escape enforcement. That is illegal, voidable, and stupid.
+To be clear, I am not talking about hiding assets, evading taxes, defrauding creditors, or transferring assets after being sued to try to escape enforcement. That is illegal, voidable, and stupid.
 
 I am saying to study estate and asset planning before buying big things on impulse.
 
@@ -217,9 +217,9 @@ Brazil has property regimes. Partial community, universal community, conventiona
 
 I consider total separation of assets the most respectful way to marry.
 
-Not because you love less. The opposite: because you do not need to financially trap the other person to prove love. Each person keeps clarity about what is theirs, what belongs to the other, and what is built together by explicit decision.
+Separating assets is the opposite of loving less: it is trusting enough that you do not need to trap the other person's wallet to prove the feeling. Each person keeps clarity about what is theirs, what belongs to the other, and what is built together by explicit decision.
 
-This does not prevent generosity. It does not prevent buying things together. It does not prevent building a life in common. It only avoids pretending affection replaces accounting.
+This still allows generosity, buying things together, and building a life in common. It only avoids pretending affection replaces accounting.
 
 And children?
 
@@ -227,7 +227,7 @@ If you can choose, have children when you can pay for private health care and ed
 
 I know that sentence irritates people. Better to be irritated now than to discover too late that the State will not deliver what you imagined.
 
-A child is not an adult accessory. Not an Instagram project. Not "we will figure it out later."
+A child is a whole person who depends on you, not an adult accessory or an Instagram project to sort out in the "we will figure it out later."
 
 If you want children, plan. Health insurance, school, housing, savings, language, safety, time, family nearby. If you cannot yet, work so you can.
 
@@ -275,7 +275,7 @@ In Brazil, it is very useful to know at least one good accountant and one good l
 
 The environment is hostile. Here and outside here. Those who accumulate knowledge, tools, and reliable relationships survive better.
 
-That is survival of the fittest. Not the physically strongest. The best adapted.
+That is survival of the fittest in the real sense: the best adapted survives, the one who adjusts to the environment, not the physically strongest.
 
 ## Conclusion
 
