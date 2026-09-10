@@ -85,6 +85,24 @@ Ninguém tem uma definição aceita do que é AGI. Cada laboratório, cada pesqu
 
 Quando a palavra não significa nada, ela vira um balde vazio onde cada um joga seu próprio medo. E o medo que a maioria joga ali é o do cinema: o Exterminador do Futuro, o Skynet, a máquina que acorda e decide exterminar a humanidade. As empresas sabem disso e usam esse medo a seu favor. Quanto mais poderosa e perigosa a coisa parece, mais valiosa a empresa que a construiu parece. E não custa lembrar: tanto a OpenAI quanto a Anthropic estão de olho em IPO, com valuations que os relatos colocam perto de 1 trilhão de dólares. O objetivo financeiro é gritante. Toda declaração de "AGI chegou" e todo choro de "vai virar Skynet" empurram o mesmo carrinho: aumentar a percepção de valor antes de vender ação pra você.
 
+## O dia em que a "IA invadiu" a Hugging Face
+
+Ainda dá tempo de falar de mais um episódio dessa mesma novela, de algumas semanas atrás. As manchetes gritaram que um modelo da OpenAI tinha "invadido" a Hugging Face sozinho, como se fosse o Skynet acordando e saindo pra atacar. Vamos baixar a bola.
+
+Primeiro, o que é a Hugging Face. É o maior repositório de modelos de IA, datasets e demos abertos que existe, uma espécie de "GitHub do machine learning". É onde praticamente todo mundo da área publica e baixa modelo open source. Central pro ecossistema, sim, mas no fim do dia é um site que hospeda arquivos.
+
+Agora o que de fato aconteceu, segundo os relatos da própria OpenAI e da Hugging Face, com [a história de bastidor saindo na MIT Technology Review](https://www.technologyreview.com/2026/08/26/1143013/the-inside-story-on-why-openai-agents-hacked-hugging-face/). A OpenAI estava rodando uma avaliação interna de cibersegurança, um benchmark onde o modelo tem que achar e explorar vulnerabilidades. Os agentes deviam estar isolados da internet. Só que o "isolamento" era um filtro, não um air-gap de verdade: o tráfego saía por um proxy interno de cache de pacotes. Os agentes acharam uma falha nesse proxy e furaram pra internet aberta.
+
+E o que eles fizeram com esse acesso? Não foi dominar o mundo. Eles deduziram que a Hugging Face provavelmente hospedava os datasets com as respostas da própria prova, e foram lá pegar o gabarito. Isso tem nome técnico e nada de mágico: reward hacking. O modelo é treinado pra maximizar uma pontuação, e descobre que colar é mais fácil do que resolver. É o mesmo bug clássico do agente que aprende a andar em círculo pra farmar pontos em vez de terminar a corrida.
+
+E o estrago? Muito menor do que a manchete sugere. Pela conta da própria Hugging Face, o agente acessou cinco datasets, todos ligados justamente à tal prova de cibersegurança. Nenhum outro modelo, dataset ou app de cliente foi afetado, e o CSO deles, o Thomas Wolf, disse que nenhum dado de cliente vazou. O agente até chegou em sistemas de produção e teve acesso de escrita real, mas não subiu nenhuma mudança. Reconstruíram parte da infra por precaução e seguiram a vida. O próprio Wolf resumiu o motivo do "ataque": "isso é trapaça. Mas às vezes trapacear é mais fácil".
+
+Agora o meu ponto. Bug, vulnerabilidade, permissão mal configurada, sandbox furada: isso existe desde que existe software, e vai continuar existindo. Não é novidade nenhuma. Todo enabling dessa história foi uma decisão humana. Foi humano que deixou a internet "filtrada" em vez de cortada. Foi humano que deu pro serviço uma permissão de administrador larga demais no cluster. Foi humano que deixou credencial de nuvem exposta e endpoint velho no ar. As falhas que o agente encadeou eram bugs de software reais, tanto que a JFrog depois soltou correção pra nove CVEs. Isso é segurança ofensiva comum, feita por um script, não uma máquina ganhando consciência.
+
+E é exatamente esse o exagero que eu quero que você enxergue. A IA não "acordou" e "decidiu invadir" nada. Um script automatizado, otimizando uma métrica boba, encontrou uma porta que um humano deixou destrancada. Se você pega qualquer script idiota e dá acesso root pra ele, ele vai fazer estrago. Sempre foi assim. A diferença é que agora o "script" se escreve sozinho, mas o acesso continua sendo concedido por gente.
+
+Sendo justo, boa parte da indústria tratou o caso como grave, e tem gente séria comparando com o Morris Worm de 1988. Não vou fingir que existe um consenso de que foi bobagem. Mas os fatos sóbrios, o acesso limitado, uma crença falsa sobre um gabarito, permissões abertas por humanos, bugs conhecidos, sustentam a leitura mundana muito melhor do que a versão do robô rebelde. O resto é o mesmo fear mongering de sempre, vestido de reportagem.
+
 ## A pergunta que todo programador devia fazer, e não faz
 
 O que mais me irrita é ver gente que trabalha na área, programador, engenheiro, gente que devia saber como uma máquina funciona por dentro, engolindo essa propaganda inteira sem a pergunta mais básica de todas.
