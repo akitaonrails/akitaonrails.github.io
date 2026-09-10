@@ -1,5 +1,5 @@
 ---
-title: "You're an Idiot if You Believe the Misleading Ads from OpenAI, Anthropic, NVIDIA. Here's Why"
+title: "You're an Idiot if You Believe the Misleading Ads from OpenAI, Anthropic, NVIDIA, DeepSeek. Here's Why"
 slug: "propagandas-enganosas-da-openai-anthropic-nvidia"
 date: '2026-09-09T16:00:00-03:00'
 draft: false
@@ -84,6 +84,24 @@ Now the backdrop for all of it. This word, AGI, is the biggest marketing scam of
 Nobody has an accepted definition of what AGI is. Every lab, every researcher, defines it a different way. Brockman admitted this to your face. And the most blatant example of this emptiness is the contract between OpenAI and Microsoft, which, according to what was reported, defines AGI as the point at which OpenAI generates 100 billion dollars in profit. Read that again. The definition of "general intelligence" in the paper that's worth money is a revenue target. There's nothing cognitive in there. Gary Marcus has already pointed out how the companies kept moving the goalposts, going from "human-level flexibility" to "if it makes a certain amount of cash."
 
 When the word means nothing, it becomes an empty bucket where everyone throws their own fear. And the fear most people throw in there is the movie one: the Terminator, Skynet, the machine that wakes up and decides to exterminate humanity. The companies know this and use that fear to their advantage. The more powerful and dangerous the thing seems, the more valuable the company that built it seems. And it's worth remembering: both OpenAI and Anthropic have their eyes on an IPO, with valuations that the reports put near one trillion dollars. The financial goal is glaring. Every "AGI has arrived" declaration and every "it's going to become Skynet" wail push the same cart: raising the perception of value before selling you the stock.
+
+## The lesson DeepSeek and Kimi fanboys don't want to hear
+
+I need to pull one more thread, and this one is personal. For a long time I've been butting heads with the fan club of the Chinese models. You know the script: a DeepSeek or a Kimi comes out beating the American models on some benchmark for a fraction of the cost, and a legion shows up to call you a sellout or an ignoramus if you raise any doubt. The number on the chart became an article of faith.
+
+Well, on September 10 Anthropic put out a [threat intelligence report](https://www.anthropic.com/news/detecting-and-preventing-distillation-attacks) that throws a bucket of cold water on that faith. And look how interesting: it names Moonshot, the company behind Kimi, right alongside DeepSeek, Alibaba, and Xiaomi.
+
+The core accusation is serious. According to Anthropic, Moonshot was allegedly [routing user requests straight to Claude](https://www.bloomberg.com/news/articles/2026-09-10/moonshot-secretly-routed-user-requests-through-claude-anthropic-says) and serving the answer as if it came from Kimi, on top of using Claude's outputs to train its own model. This has a name: distillation, using a strong model to boost a weaker one. Since Anthropic blocks access from inside China, Moonshot allegedly did it behind a pile of fraudulent accounts, most of them faking a location in Singapore and Japan. The numbers wobble depending on the source (Anthropic itself talks about hundreds of accounts, the Bloomberg account says more than five thousand), but [TechCrunch](https://techcrunch.com/2026/09/10/anthropic-details-distillation-campaigns-from-alibaba-moonshot-ai-and-deepseek/) confirms the general shape: something like 300,000 requests sent mostly to Claude Opus over a window of a few days.
+
+There's also a detail that didn't come from Anthropic and is the most fun. Kimi K3, when you push it, [introduces itself as "Claude"](https://www.theregister.com/ai-and-ml/2026/07/27/impostor-chinese-models-pretend-theyre-claude/). Independent researcher Ryan Greenblatt measured this statistically: K3 calls itself Claude at a rate no other serious lab comes close to. One of the logs had the gem "I'm Claude, not Kimi."
+
+To be fair, and I insist on being fair: all of this is accusation, not verdict. Moonshot denies that Kimi K3 is a "distilled replica" and says it built the model with its own architecture and pretraining. And the model calling itself "Claude" is a strong sign, but not definitive proof, because a model can learn to call itself anything from web-data contamination, without anyone having live-proxied a thing. Hold on to that caveat.
+
+Now, the point that interests me is not banging the gavel on Moonshot's guilt. The point is the pattern, because it's an old one. In early 2025, OpenAI and Microsoft said they had evidence that DeepSeek R1 had been trained on ChatGPT outputs. In 2026, [OpenAI went to the US Congress](https://www.fdd.org/analysis/2026/02/13/openai-alleges-chinas-deepseek-stole-its-intellectual-property-to-train-its-own-models/) to say it had seen DeepSeek employees accessing US models through "obfuscated third-party routers" to distill them. Same script, same limits of proof, same absence of a confession.
+
+And this is where I want the fanboy to stop and think. You celebrated the benchmark. You cursed out anyone who doubted. But you skipped the most basic question of all: how was that number produced? Did you see the training log? Do you know what was running under that cheap little endpoint? You don't, and neither do I. The difference is that I didn't turn a marketing chart into a personal identity.
+
+It doesn't matter whether every one of these accusations sticks in the end. What is already proven, over and over, is that "miracle Chinese model that humiliates Silicon Valley for pennies" was always a story too good to swallow without chewing. It applies to OpenAI declaring AGI, and it applies to Kimi setting a record. Skepticism is basic hygiene, not rooting against anyone.
 
 ## The day "AI hacked" Hugging Face
 

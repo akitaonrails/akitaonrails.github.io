@@ -28,7 +28,7 @@ ALLOWED_TAGS = {
 }.transform_values(&:freeze).freeze
 
 FEATURED_POSTS = [
-  ['2026-09-09', 'Você é um idiota se acredita nas propagandas enganosas da OpenAI, Anthropic, NVIDIA. Entenda', '/2026/09/09/propagandas-enganosas-da-openai-anthropic-nvidia/'],
+  ['2026-09-09', 'Você é um idiota se acredita nas propagandas enganosas da OpenAI, Anthropic, NVIDIA, DeepSeek. Entenda', '/2026/09/09/propagandas-enganosas-da-openai-anthropic-nvidia/'],
   ['2026-09-07', 'Desafio pra IA: converter ROMs de NES pra Master System/SMS', '/2026/09/07/desafio-pra-ia-converter-roms-de-nes-pra-master-system-sms/'],
   ['2026-09-02', 'AI-MEMORY 2.0 - o melhor sistema de memória para agentes e times', '/2026/09/02/ai-memory-2-0-melhor-sistema-memoria-agentes-e-times/'],
   ['2026-08-18', 'Hot take: Harness, Loop Engineering, Graph Engineering são Bullshit', '/2026/08/18/hot-take-harness-loop-engineering-graph-engineering-sao-bullshit/'],
@@ -51,7 +51,7 @@ FEATURED_POSTS = [
 ].freeze
 
 FEATURED_POSTS_EN = [
-  ['2026-09-09', "You're an Idiot if You Believe the Misleading Ads from OpenAI, Anthropic, NVIDIA. Here's Why", '/en/2026/09/09/propagandas-enganosas-da-openai-anthropic-nvidia/'],
+  ['2026-09-09', "You're an Idiot if You Believe the Misleading Ads from OpenAI, Anthropic, NVIDIA, DeepSeek. Here's Why", '/en/2026/09/09/propagandas-enganosas-da-openai-anthropic-nvidia/'],
   ['2026-09-07', 'AI Challenge: Converting NES ROMs to the Master System/SMS', '/en/2026/09/07/ai-challenge-converting-nes-roms-to-master-system-sms/'],
   ['2026-09-02', 'AI-MEMORY 2.0 - The Best Memory System for Agents and Teams', '/en/2026/09/02/ai-memory-2-0-best-memory-system-for-agents-and-teams/'],
   ['2026-08-18', 'Hot Take: Harness, Loop Engineering, Graph Engineering Are Bullshit', '/en/2026/08/18/hot-take-harness-loop-engineering-graph-engineering-are-bullshit/'],
