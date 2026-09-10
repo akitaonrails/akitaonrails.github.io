@@ -10,11 +10,50 @@
   {{- end -}}
   {{- $encodedPrompt := querify "q" $prompt -}}
   {{- $claudeURL := printf "https://claude.ai/new?%s" $encodedPrompt -}}
+  {{- $chatgptURL := printf "https://chatgpt.com/?%s" $encodedPrompt -}}
+  {{- $grokURL := printf "https://grok.com/?%s" $encodedPrompt -}}
   <div class="hx:text-center hx:mt-2 hx:mb-0 hx:text-sm hx:text-gray-500 hx:dark:text-gray-400">
     {{- if eq $lang "en" -}}
-      <em>If you're lazy, click <a href="{{ $claudeURL }}" target="_blank" rel="noopener" class="hx:text-primary-600 hx:dark:text-primary-400 hx:underline">here</a> for the TL;DR</em>
+      <em>If you're lazy, click <a id="tldr-link" href="{{ $claudeURL }}" data-claude="{{ $claudeURL }}" data-chatgpt="{{ $chatgptURL }}" data-grok="{{ $grokURL }}" target="_blank" rel="noopener" title="Left click opens Claude. Right click to choose Claude or Grok." class="hx:text-primary-600 hx:dark:text-primary-400 hx:underline">here</a> for the TL;DR</em>
     {{- else -}}
-      <em>Se tem preguiça de ler, clique <a href="{{ $claudeURL }}" target="_blank" rel="noopener" class="hx:text-primary-600 hx:dark:text-primary-400 hx:underline">aqui</a> pro TL;DR</em>
+      <em>Se tem preguiça de ler, clique <a id="tldr-link" href="{{ $claudeURL }}" data-claude="{{ $claudeURL }}" data-chatgpt="{{ $chatgptURL }}" data-grok="{{ $grokURL }}" target="_blank" rel="noopener" title="Clique abre o Claude. Botão direito pra escolher Claude ou Grok." class="hx:text-primary-600 hx:dark:text-primary-400 hx:underline">aqui</a> pro TL;DR</em>
     {{- end -}}
   </div>
+  <div id="tldr-menu" class="tldr-menu" hidden role="menu" aria-label="{{ if eq $lang "en" }}Choose an AI{{ else }}Escolha uma IA{{ end }}">
+    <a href="#" data-provider="claude" role="menuitem" target="_blank" rel="noopener">Claude</a>
+    <a href="#" data-provider="chatgpt" role="menuitem" target="_blank" rel="noopener">ChatGPT</a>
+    <a href="#" data-provider="grok" role="menuitem" target="_blank" rel="noopener">Grok</a>
+  </div>
+  <style>
+  .tldr-menu{position:fixed;z-index:60;min-width:130px;background:#fff;border:1px solid #e5e7eb;border-radius:8px;box-shadow:0 6px 20px rgba(0,0,0,.15);padding:4px;font-style:normal;text-align:left;}
+  .tldr-menu[hidden]{display:none;}
+  .tldr-menu a{display:block;padding:6px 12px;border-radius:6px;color:#374151;text-decoration:none;font-size:.875rem;}
+  .tldr-menu a:hover{background:#f3f4f6;}
+  .dark .tldr-menu{background:#1f2937;border-color:#374151;box-shadow:0 6px 20px rgba(0,0,0,.5);}
+  .dark .tldr-menu a{color:#e5e7eb;}
+  .dark .tldr-menu a:hover{background:#374151;}
+  </style>
+  <script>
+  (function(){
+    var link = document.getElementById('tldr-link');
+    var menu = document.getElementById('tldr-menu');
+    if(!link || !menu){ return; }
+    menu.querySelector('[data-provider="claude"]').href = link.dataset.claude;
+    menu.querySelector('[data-provider="chatgpt"]').href = link.dataset.chatgpt;
+    menu.querySelector('[data-provider="grok"]').href = link.dataset.grok;
+    function hide(){ menu.hidden = true; }
+    function show(x, y){
+      menu.hidden = false;
+      var w = menu.offsetWidth, h = menu.offsetHeight;
+      menu.style.left = Math.max(8, Math.min(x, window.innerWidth - w - 8)) + 'px';
+      menu.style.top = Math.max(8, Math.min(y, window.innerHeight - h - 8)) + 'px';
+    }
+    link.addEventListener('contextmenu', function(e){ e.preventDefault(); show(e.clientX, e.clientY); });
+    menu.addEventListener('click', function(){ setTimeout(hide, 0); });
+    document.addEventListener('click', function(e){ if(!menu.hidden && !menu.contains(e.target)){ hide(); } });
+    document.addEventListener('keydown', function(e){ if(e.key === 'Escape'){ hide(); } });
+    window.addEventListener('resize', hide);
+    window.addEventListener('scroll', hide, true);
+  })();
+  </script>
 {{- end -}}
