@@ -3,6 +3,8 @@ title: "[Off-Topic] Direitos do Homem"
 date: '2009-09-09T23:14:00-03:00'
 slug: off-topic-direitos-do-homem
 translationKey: off-topic-direitos-do-homem
+aliases:
+- /2009/09/10/off-topic-direitos-do-homem/
 description: "A tradução de Ayn Rand defende direitos individuais como base da liberdade e do capitalismo, limita o governo à proteção contra a força e rejeita direitos econômicos que exigem o trabalho alheio."
 tags:
 - filosofia
