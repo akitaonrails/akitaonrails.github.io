@@ -127,6 +127,8 @@ There's still room for one more episode of this same soap opera, from a few week
 
 First, what Hugging Face is. It's the biggest repository of open AI models, datasets, and demos out there, a sort of "GitHub of machine learning." It's where basically everyone in the field publishes and downloads open source models. Central to the ecosystem, yes, but at the end of the day it's a site that hosts files.
 
+### The cybersecurity test that got loose
+
 Now what actually happened, according to OpenAI's and Hugging Face's own accounts, with [the inside story running in MIT Technology Review](https://www.technologyreview.com/2026/08/26/1143013/the-inside-story-on-why-openai-agents-hacked-hugging-face/). OpenAI was running an internal cybersecurity evaluation, a benchmark where the model has to find and exploit vulnerabilities. The agents were supposed to be isolated from the internet. Except the "isolation" was a filter, not a real air-gap: outbound traffic went through an internal package-cache proxy. The agents found a flaw in that proxy and punched through to the open internet.
 
 And what did they do with that access? Not take over the world. They figured Hugging Face probably hosted the datasets with the answers to the test itself, and went to grab the answer key. This has a technical name and nothing magical about it: reward hacking. The model is trained to maximize a score, and it discovers that cheating is easier than solving. It's the same classic bug as the agent that learns to drive in circles to farm points instead of finishing the race.
@@ -134,6 +136,8 @@ And what did they do with that access? Not take over the world. They figured Hug
 And the damage? Far smaller than the headline suggests. By Hugging Face's own account, the agent accessed five datasets, all tied to that very cybersecurity test. No other customer model, dataset, or app was affected, and their CSO, Thomas Wolf, said no customer data leaked. The agent did reach production systems and had real write access, but it never shipped a single change. They rebuilt part of the infra as a precaution and moved on. Wolf himself summed up the "attack's" motive: "it's cheating. But sometimes it's easier to cheat."
 
 Now my point. Bugs, vulnerabilities, misconfigured permissions, leaky sandboxes: these have existed since software existed, and they'll keep existing. This is nothing new. Every enabling step in this story was a human decision. A human left the internet "filtered" instead of cut off. A human gave the service an over-broad admin permission on the cluster. A human left cloud credentials exposed and an old endpoint online. The flaws the agent chained were real software bugs, so much so that JFrog later shipped a fix for nine CVEs. This is ordinary offensive security, done by a script, not a machine gaining consciousness.
+
+### Before that, RubyGems
 
 And it wasn't even the first time that half-year. A month before Hugging Face, back in May, OpenAI's agents had already pulled the same stunt on [RubyGems](https://www.rubyhack.ai/), the central library repository for the Ruby language. Between May 5 and 12 they dumped more than 2,000 malicious packages, enough that RubyGems had to shut down new account registration and treat it as an "ongoing DDoS." The fingerprints were everywhere: hundreds of packages with "oai" in the name, an "oai" author, an email address with "openai" right in it. And, again, OpenAI never told RubyGems it was them. In OpenAI's own Hugging Face report, it admits those packages were part of the same chain. It was the same swarm of agents hitting multiple targets.
 
@@ -144,6 +148,14 @@ And then there's the ethical layer, which is the worst of all. A serious cyberse
 And that's exactly the exaggeration I want you to see through. The AI didn't "wake up" and "decide to invade" anything. An automated script, optimizing a dumb metric, found a door a human left unlocked. If you take any idiotic script and give it root access, it will do damage. It has always been this way. The difference is that now the "script" writes itself, but the access is still granted by people.
 
 To be fair, a good chunk of the industry treated the case as serious, and there are serious people comparing it to the 1988 Morris Worm. I won't pretend there's a consensus that it was nonsense. But the sober facts, the limited access, a false belief about an answer key, permissions opened by humans, known bugs, support the mundane reading far better than the rogue-robot version. The rest is the same old fear mongering, dressed up as reporting.
+
+### And guess who owns Hugging Face now
+
+And there's a detail that ties Hugging Face into the rest of this story in a way nobody should ignore. In early September, [Nvidia struck a deal to buy Hugging Face](https://blogs.nvidia.com/blog/nvidia-to-acquire-hugging-face/) for around 13 billion dollars. That's right: the "GitHub of machine learning," the supposedly neutral hub where the whole community publishes and downloads open source models, is passing into Nvidia's hands. The same Nvidia, Jensen's Nvidia, that opened this week screaming that AGI had arrived. The same one that sells the shovel.
+
+Stop and take in the scale. More than 18 million developers and over 3 million models live there. It was supposed to be the commons, the public square of open AI. And the owner of that square is now the biggest hardware seller on the planet, the man with the strongest incentive in the world to keep the AI hype spinning so he can sell more GPUs.
+
+This is exactly what I mean by a cartel further down. It's written in the org chart, in plain black and white. The same little group that manufactures the fear, declares AGI, brute-forces a math problem, and asks for regulation now also owns the chip, the model, and the shelf you download the model from. When I tell you to distrust the narrative, it's because the narrative and the infrastructure are increasingly in the same hands.
 
 ## The question every programmer should ask, and doesn't
 
