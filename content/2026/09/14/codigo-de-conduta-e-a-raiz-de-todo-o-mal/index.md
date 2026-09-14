@@ -12,7 +12,9 @@ draft: false
 
 Todo projeto open source grande hoje vem com um `CODE_OF_CONDUCT.md` no repositório. Vendeu-se a ideia de que isso existia para "proteger minorias" e "criar espaços seguros". Na prática, o que eu vi acontecer na última década foi outra coisa: um instrumento para cancelar, perseguir e banir qualquer um que pensasse diferente de quem estava no controle. E quem puxava essas caçadas, via de regra, não era quem sustentava o código dos projetos.
 
-Essa é a minha tese, e eu sei que ela é impopular. E antes que algum espertinho tente essa: eu sei que boicote, doxxing e caça às bruxas existem sem CODE_OF_CONDUCT.md nenhum, sempre existiram. O título mira no que esse arquivo virou: o instrumento que pegou uma tática de turba de internet e carimbou ela como política oficial do projeto, com comitê, processo e verniz de legitimidade institucional. Um arquivo markdown de 500 linhas não assusta ninguém sozinho; o que ele virou, sim.
+Essa é a minha tese, e eu sei que ela é impopular. Levei dez anos de paciência pra poder escrever esse texto. Fiquei calado vendo esse teatro se repetir ano após ano, esperando o momento certo de documentar tudo o que testemunhei de perto, e hoje eu posso, com prazer, ver minhas próprias previsões se confirmando uma por uma.
+
+E antes que algum espertinho tente essa: eu sei que boicote, doxxing e caça às bruxas existem sem CODE_OF_CONDUCT.md nenhum, sempre existiram. O título mira no que esse arquivo virou: o instrumento que pegou uma tática de turba de internet e carimbou ela como política oficial do projeto, com comitê, processo e verniz de legitimidade institucional. Um arquivo markdown de 500 linhas não assusta ninguém sozinho; o que ele virou, sim.
 
 > Dinheiro fácil foi o combustível. Código de conduta foi a arma que essa gente construiu pra oficializar o que antes era só grito de rua.
 
