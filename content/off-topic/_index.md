@@ -4,6 +4,10 @@ title: Off-Topic
 
 Todos os posts Off-Topic do blog — filosofia, carreira, gerenciamento, e outros assuntos fora da programação do dia a dia.
 
+## 2026 - Setembro
+
+- <a class="aor-index-list__main-link" href="/2026/09/14/codigo-de-conduta-e-a-raiz-de-todo-o-mal/" title="Códigos de conduta venderam proteger minorias e serviram pra cancelar Eich, Stallman, Garfield e Torvalds. Dez anos depois, nenhum estudo mostra ganho de diversidade, e o mais recente mostra o documento afastando quem já estava dentro.">Códigos de Conduta são a Raiz de Todo Mal: Recuperando sua Liberdade</a>
+
 ## 2026 - Abril
 
 - <a class="aor-index-list__main-link" href="/2026/04/09/20-anos-de-blog-o-ano-em-que-a-ia-finalmente-me-deixou-traduzir-tudo/" title="Quatro dias atrás completei 20 anos de blog. E por coincidência, quando eu ia escrever esse post, resolvi fazer algo que nunca tinha tido fôlego pra fazer: traduzir todo o blog pra inglês. Com Claude Code, num fim de semana.">20 Anos de Blog: Traduzindo Tudo pra Inglês</a>
