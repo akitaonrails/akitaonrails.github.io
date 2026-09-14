@@ -214,7 +214,7 @@ E repara como essa era terminou.
 
 > A máquina não perdeu o debate, perdeu o financiamento.
 
-Foi só o dinheiro fácil acabar que os exércitos de gente sem trabalho real evaporaram, e quem sobrou foi quem estava lá pelo código. Enquanto isso, os builders seguiram construindo: o DHH perdeu o keynote e criou uma conferência maior, perdeu um terço da empresa e ajudou a levantar uma fundação de oito milhões. Eu saí da minha conferência e cresci muito mais no canal. Instituição, parasita toma. Capacidade de construir, não. Quem construiu uma vez, constrói de novo do zero.
+Foi só o dinheiro fácil acabar que os exércitos de gente sem trabalho real evaporaram, e quem sobrou foi quem estava lá pelo código. Enquanto isso, os builders seguiram construindo: o Brendan Eich foi expulso da Mozilla em 2014 e no ano seguinte fundou a Brave, hoje com mais de 100 milhões de usuários ativos por mês e valuation perto de 1 bilhão de dólares. O DHH perdeu o keynote e criou uma conferência maior, perdeu um terço da empresa e ajudou a levantar uma fundação de oito milhões. Eu saí da minha conferência e cresci muito mais no canal. Instituição, parasita toma. Capacidade de construir, não. Quem construiu uma vez, constrói de novo do zero.
 
 Open source recruta voluntários que querem contribuir código. Qualquer discussão que não envolve código é distração na melhor hipótese e sabotagem na pior. E a resposta para "o que colocar no lugar do código de conduta" cabe numa frase só, que o ESR já escreveu: se você é mais chato de trabalhar do que as suas contribuições justificam, você é ejetado. Sempre foi assim que funcionou. O único passaporte é o diff.
 
