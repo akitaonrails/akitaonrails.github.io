@@ -2,6 +2,7 @@
 title: "Códigos de Conduta são a Raiz de Todo Mal: Recuperando sua Liberdade"
 date: '2026-09-14T17:00:00-03:00'
 slug: codigo-de-conduta-e-a-raiz-de-todo-o-mal
+translationKey: codigo-de-conduta-e-a-raiz-de-todo-o-mal
 description: "Códigos de conduta venderam proteger minorias e serviram pra cancelar Eich, Stallman, Garfield e Torvalds. Dez anos depois, nenhum estudo mostra ganho de diversidade, e o mais recente mostra o documento afastando quem já estava dentro."
 tags:
 - off-topic

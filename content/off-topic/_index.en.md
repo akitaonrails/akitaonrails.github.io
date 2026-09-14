@@ -4,6 +4,10 @@ title: Off-Topic
 
 All Off-Topic posts from the blog — philosophy, career, management, and other topics outside of day-to-day programming.
 
+## 2026 - September
+
+- <a class="aor-index-list__main-link" href="/en/2026/09/14/codes-of-conduct-root-of-all-evil/" title="Codes of conduct were sold as protecting minorities and used to cancel Eich, Stallman, Garfield, and Torvalds. Ten years later, no study shows a diversity gain, and the newest one shows the document pushing out people already there.">Codes of Conduct Are the Root of All Evil: Reclaiming Your Freedom</a>
+
 ## 2026 - April
 
 - <a class="aor-index-list__main-link" href="/en/2026/04/09/20-years-of-blogging-ai-finally-translated-everything/" title="Four days ago I hit 20 years of blogging. When I sat down to write the anniversary post, I ended up doing something I never had the bandwidth for: translating the whole blog to English. With Claude Code, over a weekend.">20 Years of Blogging: Translating Everything to English</a>

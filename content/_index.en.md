@@ -287,6 +287,7 @@ Looking for older posts? [Browse the full archive →](/en/archives/)
 {{% index-list %}}
 ## 2026 - September
 
+- <a class="aor-index-list__main-link" href="/en/2026/09/14/codes-of-conduct-root-of-all-evil/" title="Codes of conduct were sold as protecting minorities and used to cancel Eich, Stallman, Garfield, and Torvalds. Ten years later, no study shows a diversity gain, and the newest one shows the document pushing out people already there.">Codes of Conduct Are the Root of All Evil: Reclaiming Your Freedom</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/en/tags/off-topic/">#off-topic</a><a class="aor-tag-link" href="/en/tags/open-source/">#open-source</a><a class="aor-tag-link" href="/en/tags/politics/">#politics</a></span>
 - <a class="aor-index-list__main-link" href="/en/2026/09/09/propagandas-enganosas-da-openai-anthropic-nvidia/" title="Nvidia and OpenAI declared that AGI has arrived, OpenAI brute-forced a Millennium Problem and threatened a mathematician&#39;s career, and an Anthropic employee quit crying Skynet. I take the propaganda apart.">You&#39;re an Idiot if You Believe the Misleading Ads from OpenAI, Anthropic, NVIDIA, DeepSeek. Here&#39;s Why</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/en/tags/artificial-intelligence/">#artificial-intelligence</a><a class="aor-tag-link" href="/en/tags/llms/">#llms</a><a class="aor-tag-link" href="/en/tags/business/">#business</a></span>
 - <a class="aor-index-list__main-link" href="/en/2026/09/07/ai-challenge-converting-nes-roms-to-master-system-sms/" title="I tried using frontier LLMs to convert NES ROMs into Master System games. I explain the architecture, why translating 6502 to Z80 runs slow, the emulator as a feedback oracle, and where the mappers stall everything.">AI Challenge: Converting NES ROMs to the Master System/SMS</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/en/tags/retrocomputing/">#retrocomputing</a><a class="aor-tag-link" href="/en/tags/coding-agents/">#coding-agents</a><a class="aor-tag-link" href="/en/tags/gaming/">#gaming</a><a class="aor-tag-link" href="/en/tags/emulation/">#emulation</a></span>
 - <a class="aor-index-list__main-link" href="/en/2026/09/02/ai-memory-2-0-best-memory-system-for-agents-and-teams/" title="ai-memory hit version 2.0 with the open OKF format, local embeddings on by default, and support for teams working in parallel. I compare it with the competition and show what only ai-memory delivers.">AI-MEMORY 2.0 - The Best Memory System for Agents and Teams</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/en/tags/ai-memory/">#ai-memory</a><a class="aor-tag-link" href="/en/tags/coding-agents/">#coding-agents</a><a class="aor-tag-link" href="/en/tags/open-source/">#open-source</a></span>
@@ -483,9 +484,15 @@ Looking for older posts? [Browse the full archive →](/en/archives/)
 <section class="aor-index-month" aria-labelledby="aor-grid-2026-09">
   <div class="aor-index-month__header">
     <h2 id="aor-grid-2026-09">2026 - September</h2>
-    <span>3 posts</span>
+    <span>4 posts</span>
   </div>
   <div class="aor-post-grid">
+<article class="aor-post-card" title="Codes of conduct were sold as protecting minorities and used to cancel Eich, Stallman, Garfield, and Torvalds. Ten years later, no study shows a diversity gain, and the newest one shows the document pushing out people already there.">
+  <time class="aor-post-card__date" datetime="2026-09-14">Sep 14, 2026</time>
+  <h3 class="aor-post-card__title"><a class="aor-post-card__title-link" href="/en/2026/09/14/codes-of-conduct-root-of-all-evil/">Codes of Conduct Are the Root of All Evil: Reclaiming Your Freedom</a></h3>
+  <span class="aor-post-tags aor-post-tags--card"><a class="aor-tag-link" href="/en/tags/off-topic/">#off-topic</a><a class="aor-tag-link" href="/en/tags/open-source/">#open-source</a><a class="aor-tag-link" href="/en/tags/politics/">#politics</a></span>
+  <p class="aor-post-card__description">Codes of conduct were sold as protecting minorities and used to cancel Eich, Stallman, Garfield, and Torvalds. Ten years later, no study shows a diversity gain, and the newest one shows the document pushing out people already there.</p>
+</article>
 <article class="aor-post-card" title="Nvidia and OpenAI declared that AGI has arrived, OpenAI brute-forced a Millennium Problem and threatened a mathematician&#39;s career, and an Anthropic employee quit crying Skynet. I take the propaganda apart.">
   <time class="aor-post-card__date" datetime="2026-09-09">Sep 9, 2026</time>
   <h3 class="aor-post-card__title"><a class="aor-post-card__title-link" href="/en/2026/09/09/propagandas-enganosas-da-openai-anthropic-nvidia/">You&#39;re an Idiot if You Believe the Misleading Ads from OpenAI, Anthropic, NVIDIA, DeepSeek. Here&#39;s Why</a></h3>
