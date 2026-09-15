@@ -1,7 +1,7 @@
 ---
 title: "New LLM Benchmark v4: Retesting 39 LLMs (Part 2)"
 slug: "new-llm-benchmark-v4-retesting-39-llms-part-2"
-date: '2026-09-15T18:00:00-03:00'
+date: '2026-09-15T20:00:00-03:00'
 draft: false
 translationKey: novo-llm-benchmark-v4-retestando-todos-llms-parte-2
 description: "The full v4 table, nearly forty models ranked by vigilance, not completeness: six ties at the top, a free model beating half of Claude, GLM winning on a flat-rate plan, and the test I ran to find out whether Kimi or DeepSeek are secretly hiding a connection to Claude under the hood."

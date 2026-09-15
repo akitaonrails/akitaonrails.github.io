@@ -1,7 +1,7 @@
 ---
 title: "Novo LLM Benchmark v4: retestando TODOS os principais LLMs (Parte 1)"
 slug: "novo-llm-benchmark-v4-retestando-todos-llms-parte-1"
-date: '2026-09-15T12:00:00-03:00'
+date: '2026-09-15T20:00:00-03:00'
 draft: false
 translationKey: novo-llm-benchmark-v4-retestando-todos-llms-parte-1
 description: "Refiz meu benchmark do zero pela terceira vez. Rejeitei uma versão inteira, construí um app Rails sabotado com CVEs reais e gastei mais de 4 mil dólares em 9 dias. Nesta Parte 1, o processo, o custo e o porquê."

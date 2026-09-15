@@ -1,7 +1,7 @@
 ---
 title: "New LLM Benchmark v4: Retesting ALL the Top LLMs (Part 1)"
 slug: "new-llm-benchmark-v4-retesting-all-top-llms-part-1"
-date: '2026-09-15T12:00:00-03:00'
+date: '2026-09-15T20:00:00-03:00'
 draft: false
 translationKey: novo-llm-benchmark-v4-retestando-todos-llms-parte-1
 description: "I rebuilt my benchmark from scratch for the third time. I threw out an entire version, built a Rails app sabotaged with real CVEs, and spent over $4,000 in 9 days. In this Part 1: the process, the cost, and the why."

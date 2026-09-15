@@ -1,7 +1,7 @@
 ---
 title: "Novo LLM Benchmark v4: retestando 39 LLMs (Parte 2)"
 slug: "novo-llm-benchmark-v4-retestando-todos-llms-parte-2"
-date: '2026-09-15T18:00:00-03:00'
+date: '2026-09-15T20:00:00-03:00'
 draft: false
 translationKey: novo-llm-benchmark-v4-retestando-todos-llms-parte-2
 description: "A tabela completa do v4, quase quarenta modelos ranqueados por vigilância, não por completude: seis empates no topo, um modelo de graça batendo metade do Claude, GLM ganhando num plano flat-rate, e o teste que fiz pra saber se Kimi ou DeepSeek escondem uma ligação secreta com Claude por baixo do capô."
