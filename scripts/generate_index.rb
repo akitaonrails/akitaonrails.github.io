@@ -28,12 +28,12 @@ ALLOWED_TAGS = {
 }.transform_values(&:freeze).freeze
 
 FEATURED_POSTS = [
+  ['2026-09-15', 'Novo LLM Benchmark v4: retestando TODOS os principais LLMs (Parte 1)', '/2026/09/15/novo-llm-benchmark-v4-retestando-todos-llms-parte-1/'],
+  ['2026-09-15', 'Novo LLM Benchmark v4: retestando 39 LLMs (Parte 2)', '/2026/09/15/novo-llm-benchmark-v4-retestando-todos-llms-parte-2/'],
   ['2026-09-09', 'Você é um idiota se acredita nas propagandas enganosas da OpenAI, Anthropic, NVIDIA, DeepSeek. Entenda', '/2026/09/09/propagandas-enganosas-da-openai-anthropic-nvidia/'],
   ['2026-09-07', 'Desafio pra IA: converter ROMs de NES pra Master System/SMS', '/2026/09/07/desafio-pra-ia-converter-roms-de-nes-pra-master-system-sms/'],
   ['2026-09-02', 'AI-MEMORY 2.0 - o melhor sistema de memória para agentes e times', '/2026/09/02/ai-memory-2-0-melhor-sistema-memoria-agentes-e-times/'],
   ['2026-08-18', 'Hot take: Harness, Loop Engineering, Graph Engineering são Bullshit', '/2026/08/18/hot-take-harness-loop-engineering-graph-engineering-sao-bullshit/'],
-  ['2026-08-15', 'LLM Benchmarks: Qwen 3.8, GLM 5.3, Gemini 3.7', '/2026/08/15/llm-benchmarks-qwen-3-8-glm-5-3-gemini-3-7/'],
-  ['2026-07-30', 'Novo LLM Benchmark: refiz todos os testes!', '/2026/07/30/novo-llm-benchmark-refiz-todos-os-testes/'],
   ['2026-07-12', 'Notícias Quânticas: Majorana 2 e entendendo Shor', '/2026/07/12/noticias-quanticas-majorana-2-e-entendendo-shor/'],
   ['2026-07-12', 'Usando IA pra resolver meus probleminhas do dia-a-dia', '/2026/07/12/usando-ia-pra-resolver-meus-probleminhas-do-dia-a-dia/'],
   ['2026-07-11', 'Como me precaver pros meus agentes não apagarem minhas coisas?', '/2026/07/11/como-me-precaver-pros-meus-agentes-nao-apagarem-minhas-coisas/'],
@@ -51,12 +51,12 @@ FEATURED_POSTS = [
 ].freeze
 
 FEATURED_POSTS_EN = [
+  ['2026-09-15', 'New LLM Benchmark v4: Retesting ALL the Top LLMs (Part 1)', '/en/2026/09/15/new-llm-benchmark-v4-retesting-all-top-llms-part-1/'],
+  ['2026-09-15', 'New LLM Benchmark v4: Retesting 39 LLMs (Part 2)', '/en/2026/09/15/new-llm-benchmark-v4-retesting-39-llms-part-2/'],
   ['2026-09-09', "You're an Idiot if You Believe the Misleading Ads from OpenAI, Anthropic, NVIDIA, DeepSeek. Here's Why", '/en/2026/09/09/propagandas-enganosas-da-openai-anthropic-nvidia/'],
   ['2026-09-07', 'AI Challenge: Converting NES ROMs to the Master System/SMS', '/en/2026/09/07/ai-challenge-converting-nes-roms-to-master-system-sms/'],
   ['2026-09-02', 'AI-MEMORY 2.0 - The Best Memory System for Agents and Teams', '/en/2026/09/02/ai-memory-2-0-best-memory-system-for-agents-and-teams/'],
   ['2026-08-18', 'Hot Take: Harness, Loop Engineering, Graph Engineering Are Bullshit', '/en/2026/08/18/hot-take-harness-loop-engineering-graph-engineering-are-bullshit/'],
-  ['2026-08-15', 'LLM Benchmarks: Qwen 3.8, GLM 5.3, Gemini 3.7', '/en/2026/08/15/llm-benchmarks-qwen-3-8-glm-5-3-gemini-3-7/'],
-  ['2026-07-30', 'New LLM Benchmark: I Reran Every Test!', '/en/2026/07/30/new-llm-benchmark-i-reran-every-test/'],
   ['2026-07-12', 'Quantum News: Majorana 2 and Understanding Shor', '/en/2026/07/12/quantum-news-majorana-2-and-understanding-shor/'],
   ['2026-07-12', 'Using AI to Solve My Little Day-to-Day Problems', '/en/2026/07/12/using-ai-to-solve-my-little-day-to-day-problems/'],
   ['2026-07-11', 'How Do I Protect Myself From My Agents Deleting My Stuff?', '/en/2026/07/11/how-to-protect-yourself-from-agents-deleting-your-stuff/'],
