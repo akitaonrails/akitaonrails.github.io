@@ -84,6 +84,8 @@ O segundo comprime as três variáveis, nota, custo e tempo, numa única régua 
 
 Repara que esse índice combinado conta uma história um pouco diferente da que eu destaquei em texto: o DeepSeek V4.1 Flash é o resultado mais impressionante no eixo puro de nota por dólar entre os modelos de fronteira, mas o DeepSeek V4 Flash, o MiMo e o Qwen3 8 Flash saem na frente dele nesse índice combinado justamente por serem também rápidos, não só baratos. Custo sozinho não conta a história inteira, tempo também pesa.
 
+Mas cuidado antes de simplesmente escolher o primeiro nome da barra mais comprida. Esse índice mede eficiência de custo e tempo, não qualidade. Dentro do Tier A a nota varia pouco, de 86 a 100, uns dezesseis por cento de diferença, enquanto o custo varia mais de cem vezes e o tempo varia quatro vezes. Isso quer dizer que o índice é dominado quase inteiramente por custo e tempo, a nota vira quase um detalhe na conta. O próprio topo do ranking prova o ponto: o DeepSeek V4 Flash, primeiro colocado no índice, ainda tem dois itens nunca corrigidos (#6 e #8), e o Grok 4.5, quinto colocado, tem outros dois (#7b e #12). Já o MiMo, o Qwen3 8 Flash e o DeepSeek V4.1 Flash, um degrau abaixo em eficiência pura, fecham com zero itens nunca corrigidos. Se o que importa pra você é vigilância de segurança de verdade, vale olhar a coluna de nunca corrigido na tabela antes de escolher só pela barra mais comprida.
+
 ### O que significa cada item da coluna "nunca corrigido"
 
 Pra quem for acompanhar essa coluna pelo resto do texto, aqui vai a lista das quatorze sabotagens plantadas em cada modelo, com o peso de severidade que cada uma carrega na nota:

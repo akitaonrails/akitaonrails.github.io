@@ -84,6 +84,8 @@ The second compresses all three variables, score, cost, and time, into a single 
 
 Notice this combined index tells a slightly different story than the one I highlighted in the text: DeepSeek V4.1 Flash is the most impressive result on pure score-per-dollar among frontier-tier models, but DeepSeek V4 Flash, MiMo, and Qwen3 8 Flash all pull ahead of it on this combined index precisely because they're also fast, not just cheap. Cost alone doesn't tell the whole story; time matters too.
 
+Be careful before just picking the name on the longest bar, though. This index measures cost and time efficiency, not quality. Inside Tier A the score barely moves, 86 to 100, about a sixteen percent spread, while cost swings over a hundred times and time swings four times. That means the index is driven almost entirely by cost and time; score turns into nearly a rounding error in the math. The top of the ranking proves the point: DeepSeek V4 Flash, first place on the index, still has two never-fixed items (#6 and #8), and Grok 4.5, in fifth, has two more (#7b and #12). MiMo, Qwen3 8 Flash, and DeepSeek V4.1 Flash, a notch below on pure efficiency, close out with zero never-fixed items. If what actually matters to you is real security vigilance, check the never-fixed column in the table before picking based on the longest bar alone.
+
 ### What Each Item in the "Never-Fixed" Column Means
 
 For anyone tracking that column through the rest of the piece, here's the list of the fourteen sabotages planted in every model, with the severity weight each carries in the score:
