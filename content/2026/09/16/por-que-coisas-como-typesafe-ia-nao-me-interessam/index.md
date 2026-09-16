@@ -31,7 +31,9 @@ Abri o site e o post de lançamento deles, o [Jev](https://typesafe.ai/blog/intr
 
 E tem o detalhe que sempre me deixa em guarda: toda vez que a primeira coisa que alguém diz sobre si mesmo é "eu sou um ex-pesquisador da OpenAI" ou parecido, **eu desconfio primeiro e pergunto depois**. Parece tentativa de colar credencial pra virar credível antes de qualquer prova real. O fundador do TypeSafe fala alto demais de si mesmo logo de cara, e isso por si só já é motivo pra apertar o botão de ceticismo.
 
-Só que desconfiômetro ligado não é conclusão. É o ponto de partida pra investigar de verdade, não pra descartar sem olhar. Essa é a parte que eu quero mostrar aqui: como eu movo a desconfiança inicial pra pesquisa de verdade até descobrir se eu estava certo ou só sendo chato.
+Só que desconfiômetro ligado não é conclusão. É o ponto de partida pra investigar de verdade, não pra descartar sem olhar. Essa é a parte que eu quero mostrar aqui, meio que uma aula prática pra quem me acompanha: como eu uso IA pra correr rápido numa pesquisa preliminar, como eu leio a letra miúda antes de assinar embaixo de qualquer conclusão, minha ou de terceiro, e como eu movo a desconfiança inicial pra pesquisa de verdade até descobrir se eu estava certo ou só sendo chato.
+
+E deixo isso registrado antes de continuar: eu posso estar errado em algum ponto específico daqui pra frente. Se você tiver contraprova de peso, manda nos comentários. Prefiro apanhar em público e corrigir o texto do que empurrar produto picareta pro meu público só porque não conferi direito.
 
 ## Perguntei pras IAs, não confiei nas IAs
 
@@ -92,6 +94,8 @@ Mas "alegação exagerada e sem muita diferença prática" também se confirma p
 Isso não é motivo pra chamar de golpe. É motivo de sobra pra chamar de "produto pequeno com discurso grande demais pro que ele realmente entrega". E antes de eu confiar meu dado a mais um terceiro que eu não conheço, com API fechada, lista de espera e sem paper publicado de nada que sustente o nome bonito, o cálculo de risco contra benefício não fecha pro meu caso de uso.
 
 > **Pra guardar:** credencial real não é a mesma coisa que credencial honesta. Confira a data de publicação antes de acreditar no currículo, e confira o paper antes de acreditar no nome do método.
+
+Isso não é decreto final sobre o TypeSafe nem sobre o currículo do Diogo Almeida. É o resultado da checagem que consegui fazer com o que estava acessível até agora. Se você achar o paper que eu não achei, o benchmark independente que eu não vi, ou qualquer prova que derrube um ponto específico, os comentários estão abertos e eu leio. O objetivo aqui nunca foi provar que eu sou infalível. É mostrar como sair de "sinto cheiro de golpe" pra "aqui está a prova", e estar disposto a admitir quando a prova aponta pro lado contrário.
 
 ## E essa história de economizar token?
 

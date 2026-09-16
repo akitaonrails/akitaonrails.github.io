@@ -31,7 +31,9 @@ I opened their site and their launch post, [Jev](https://typesafe.ai/blog/introd
 
 And there's a detail that always puts me on guard: any time the first thing someone says about themselves is "I'm a former OpenAI researcher" or something like it, **I get suspicious first and ask questions later**. It reads like an attempt to slap on a credential to look credible before any real proof. TypeSafe's founder talks himself up too loudly right out of the gate, and that alone is reason enough to hit the skepticism button.
 
-But a triggered skepticism meter isn't a conclusion. It's the starting point for actually investigating, not for dismissing something without a look. That's the part I want to show here: how I move from initial distrust to real research, until I find out whether I was right or just being difficult.
+But a triggered skepticism meter isn't a conclusion. It's the starting point for actually investigating, not for dismissing something without a look. That's the part I want to show here, kind of a practical lesson for anyone following along: how I use AI to speedrun preliminary research, how I read the fine print before signing off on any conclusion, mine or someone else's, and how I move from initial distrust to real research, until I find out whether I was right or just being difficult.
+
+And let me put this on record before going further: I could be wrong about some specific point ahead. If you've got strong counter-evidence, drop it in the comments. I'd rather get called out in public and correct the piece than push a scammy product on my audience just because I didn't check carefully enough.
 
 ## I Asked the AIs, I Didn't Trust the AIs
 
@@ -92,6 +94,8 @@ But "overblown claim without much practical difference" also holds up point by p
 That's not reason enough to call it a scam. It's plenty of reason to call it "a small product with a pitch way bigger than what it actually delivers." And before I hand my data to yet another third party I don't know, with a closed API, a waitlist, and no published paper backing up the fancy name, the risk-versus-benefit math doesn't close for my use case.
 
 > **Keep this:** a real credential isn't the same thing as an honest credential. Check the publication date before trusting the résumé, and check the paper before trusting the method's name.
+
+This isn't a final ruling on TypeSafe or on Diogo Almeida's résumé. It's the result of the checking I was able to do with what was accessible right now. If you find the paper I missed, the independent benchmark I didn't see, or any proof that knocks down a specific point, the comments are open and I read them. The goal here was never to prove I'm infallible. It's to show how to go from "this smells like a scam" to "here's the proof," and to be willing to admit it when the proof points the other way.
 
 ## And What About Saving Tokens?
 
