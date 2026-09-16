@@ -28,6 +28,7 @@ ALLOWED_TAGS = {
 }.transform_values(&:freeze).freeze
 
 FEATURED_POSTS = [
+  ['2026-09-16', 'Por que coisas como TypeSafe IA não me interessam', '/2026/09/16/por-que-coisas-como-typesafe-ia-nao-me-interessam/'],
   ['2026-09-15', 'Novo LLM Benchmark v4: retestando TODOS os principais LLMs (Parte 1)', '/2026/09/15/novo-llm-benchmark-v4-retestando-todos-llms-parte-1/'],
   ['2026-09-15', 'Novo LLM Benchmark v4: retestando 39 LLMs (Parte 2)', '/2026/09/15/novo-llm-benchmark-v4-retestando-todos-llms-parte-2/'],
   ['2026-09-09', 'Você é um idiota se acredita nas propagandas enganosas da OpenAI, Anthropic, NVIDIA, DeepSeek. Entenda', '/2026/09/09/propagandas-enganosas-da-openai-anthropic-nvidia/'],
@@ -51,6 +52,7 @@ FEATURED_POSTS = [
 ].freeze
 
 FEATURED_POSTS_EN = [
+  ['2026-09-16', "Why Things Like TypeSafe AI Don't Interest Me", '/en/2026/09/16/why-things-like-typesafe-ai-dont-interest-me/'],
   ['2026-09-15', 'New LLM Benchmark v4: Retesting ALL the Top LLMs (Part 1)', '/en/2026/09/15/new-llm-benchmark-v4-retesting-all-top-llms-part-1/'],
   ['2026-09-15', 'New LLM Benchmark v4: Retesting 39 LLMs (Part 2)', '/en/2026/09/15/new-llm-benchmark-v4-retesting-39-llms-part-2/'],
   ['2026-09-09', "You're an Idiot if You Believe the Misleading Ads from OpenAI, Anthropic, NVIDIA, DeepSeek. Here's Why", '/en/2026/09/09/propagandas-enganosas-da-openai-anthropic-nvidia/'],
