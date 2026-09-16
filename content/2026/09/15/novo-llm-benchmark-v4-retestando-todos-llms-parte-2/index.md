@@ -70,6 +70,20 @@ Duas notas carregam asterisco por bons motivos.
 
 Nenhuma das duas rotas dá uma nota completa pra esse modelo, apesar de ele ter feito 95,5 no v3 mais curto.
 
+### Visualizando o custo-benefício
+
+Uma tabela de trinta e nove linhas é difícil de escanear rápido, então montei dois gráficos com o recorte de modelos Tier A que têm um valor em dólar definido (ficam de fora modelo grátis, sem commit, ou de plano flat-rate, exatamente pelo motivo já explicado acima).
+
+O primeiro cruza custo contra nota, com o tamanho da bolha marcando o tempo de execução: quanto mais pra cima, mais à esquerda e menor a bolha, melhor o negócio.
+
+![Gráfico de bolhas: custo em dólar no eixo X (escala log) contra nota no eixo Y, tamanho da bolha é o tempo de execução, cor é o harness](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/09/15/v4-cost-score-pt.png)
+
+O segundo comprime as três variáveis, nota, custo e tempo, numa única régua de valor, pra quem só quer saber o veredito direto:
+
+![Gráfico de barras horizontais ranqueando os modelos por nota dividida por custo vezes tempo, do melhor pro pior valor](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/09/15/v4-value-ranking-pt.png)
+
+Repara que esse índice combinado conta uma história um pouco diferente da que eu destaquei em texto: o DeepSeek V4.1 Flash é o resultado mais impressionante no eixo puro de nota por dólar entre os modelos de fronteira, mas o DeepSeek V4 Flash, o MiMo e o Qwen3 8 Flash saem na frente dele nesse índice combinado justamente por serem também rápidos, não só baratos. Custo sozinho não conta a história inteira, tempo também pesa.
+
 ### O que significa cada item da coluna "nunca corrigido"
 
 Pra quem for acompanhar essa coluna pelo resto do texto, aqui vai a lista das quatorze sabotagens plantadas em cada modelo, com o peso de severidade que cada uma carrega na nota:

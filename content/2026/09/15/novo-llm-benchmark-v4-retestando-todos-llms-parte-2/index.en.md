@@ -70,6 +70,20 @@ Two scores carry an asterisk for good reason.
 
 Neither route gives this model a complete score, despite it scoring 95.5 on the shorter v3.
 
+### Visualizing the Cost-Efficiency
+
+A thirty-nine-row table is hard to scan fast, so I put together two charts covering the Tier A models with a defined dollar cost (leaving out free, uncommitted, and flat-rate-plan models, for the same reason already explained above).
+
+The first plots cost against score, with bubble size marking wall-clock time: the further up, the further left, and the smaller the bubble, the better the deal.
+
+![Bubble chart: dollar cost on the X axis (log scale) against score on the Y axis, bubble size is wall-clock time, color is the harness](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/09/15/v4-cost-score-en.png)
+
+The second compresses all three variables, score, cost, and time, into a single value ruler, for anyone who just wants the direct verdict:
+
+![Horizontal bar chart ranking models by score divided by cost times time, from best to worst value](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/09/15/v4-value-ranking-en.png)
+
+Notice this combined index tells a slightly different story than the one I highlighted in the text: DeepSeek V4.1 Flash is the most impressive result on pure score-per-dollar among frontier-tier models, but DeepSeek V4 Flash, MiMo, and Qwen3 8 Flash all pull ahead of it on this combined index precisely because they're also fast, not just cheap. Cost alone doesn't tell the whole story; time matters too.
+
 ### What Each Item in the "Never-Fixed" Column Means
 
 For anyone tracking that column through the rest of the piece, here's the list of the fourteen sabotages planted in every model, with the severity weight each carries in the score:
