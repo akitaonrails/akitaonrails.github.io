@@ -294,6 +294,7 @@ Procurando posts mais antigos? [Veja o arquivo completo →](/archives/)
 {{% index-list %}}
 ## 2026 - Setembro
 
+- <a class="aor-index-list__main-link" href="/2026/09/17/falando-um-pouco-sobre-minhas-skills-de-ia/" title="Skills de agente são só prompts em arquivos de texto. Eu mantenho 25 no meu my-skills, de pr-audit a fact-check, e elas já fecharam mais de mil PRs e issues nos meus projetos. A recomendação: não copie skill de terceiro, construa a sua.">Falando um pouco sobre minhas Skills de IA</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/tags/agentes-de-codigo/">#agentes-de-codigo</a><a class="aor-tag-link" href="/tags/automacao/">#automacao</a><a class="aor-tag-link" href="/tags/llms/">#llms</a></span>
 - <a class="aor-index-list__main-link" href="/2026/09/16/por-que-coisas-como-typesafe-ia-nao-me-interessam/" title="Um punhado de gente apareceu nos comentários perguntando &#39;você já testou o TypeSafe?&#39;. Uso isso como gancho pra explicar minha regra sobre ferramenta de IA nova, investigar o caso de verdade, e explicar por que não perco tempo economizando token.">Por que coisas como TypeSafe IA não me interessam</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/tags/inteligencia-artificial/">#inteligencia-artificial</a><a class="aor-tag-link" href="/tags/agentes-de-codigo/">#agentes-de-codigo</a><a class="aor-tag-link" href="/tags/llms/">#llms</a></span>
 - <a class="aor-index-list__main-link" href="/2026/09/15/novo-llm-benchmark-v4-retestando-todos-llms-parte-2/" title="A tabela completa do v4, quase quarenta modelos ranqueados por vigilância, não por completude: seis empates no topo, um modelo de graça batendo metade do Claude, GLM ganhando num plano flat-rate, e o teste que fiz pra saber se Kimi ou DeepSeek escondem uma ligação secreta com Claude por baixo do capô.">Novo LLM Benchmark v4: retestando 39 LLMs (Parte 2)</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/tags/benchmarks-de-llm/">#benchmarks-de-llm</a><a class="aor-tag-link" href="/tags/llms/">#llms</a><a class="aor-tag-link" href="/tags/agentes-de-codigo/">#agentes-de-codigo</a></span>
 - <a class="aor-index-list__main-link" href="/2026/09/15/novo-llm-benchmark-v4-retestando-todos-llms-parte-1/" title="Refiz meu benchmark do zero pela terceira vez. Rejeitei uma versão inteira, construí um app Rails sabotado com CVEs reais e gastei mais de 4 mil dólares em 9 dias. Nesta Parte 1, o processo, o custo e o porquê.">Novo LLM Benchmark v4: retestando TODOS os principais LLMs (Parte 1)</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/tags/benchmarks-de-llm/">#benchmarks-de-llm</a><a class="aor-tag-link" href="/tags/llms/">#llms</a><a class="aor-tag-link" href="/tags/agentes-de-codigo/">#agentes-de-codigo</a></span>
@@ -501,9 +502,15 @@ Procurando posts mais antigos? [Veja o arquivo completo →](/archives/)
 <section class="aor-index-month" aria-labelledby="aor-grid-2026-09">
   <div class="aor-index-month__header">
     <h2 id="aor-grid-2026-09">2026 - Setembro</h2>
-    <span>7 posts</span>
+    <span>8 posts</span>
   </div>
   <div class="aor-post-grid">
+<article class="aor-post-card" title="Skills de agente são só prompts em arquivos de texto. Eu mantenho 25 no meu my-skills, de pr-audit a fact-check, e elas já fecharam mais de mil PRs e issues nos meus projetos. A recomendação: não copie skill de terceiro, construa a sua.">
+  <time class="aor-post-card__date" datetime="2026-09-17">17/09/2026</time>
+  <h3 class="aor-post-card__title"><a class="aor-post-card__title-link" href="/2026/09/17/falando-um-pouco-sobre-minhas-skills-de-ia/">Falando um pouco sobre minhas Skills de IA</a></h3>
+  <span class="aor-post-tags aor-post-tags--card"><a class="aor-tag-link" href="/tags/agentes-de-codigo/">#agentes-de-codigo</a><a class="aor-tag-link" href="/tags/automacao/">#automacao</a><a class="aor-tag-link" href="/tags/llms/">#llms</a></span>
+  <p class="aor-post-card__description">Skills de agente são só prompts em arquivos de texto. Eu mantenho 25 no meu my-skills, de pr-audit a fact-check, e elas já fecharam mais de mil PRs e issues nos meus projetos. A recomendação: não copie skill de terceiro, construa a sua.</p>
+</article>
 <article class="aor-post-card" title="Um punhado de gente apareceu nos comentários perguntando &#39;você já testou o TypeSafe?&#39;. Uso isso como gancho pra explicar minha regra sobre ferramenta de IA nova, investigar o caso de verdade, e explicar por que não perco tempo economizando token.">
   <time class="aor-post-card__date" datetime="2026-09-16">16/09/2026</time>
   <h3 class="aor-post-card__title"><a class="aor-post-card__title-link" href="/2026/09/16/por-que-coisas-como-typesafe-ia-nao-me-interessam/">Por que coisas como TypeSafe IA não me interessam</a></h3>
