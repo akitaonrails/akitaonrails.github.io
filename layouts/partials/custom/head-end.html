@@ -645,7 +645,6 @@
     else syncSwitch();
 
     function showPopup() {
-      setCookie("lang_asked", "1", 0);
       var T = browserLang === "pt" ? {
         text: "Este blog é bilíngue: esta página tem uma versão em português. O seletor PT | EN fica no topo da página, e dá pra eu sempre te redirecionar pro seu idioma automaticamente.",
         once: "Ver em português",
@@ -692,9 +691,13 @@
       dismissBtn.className = "aor-lang-pop__btn aor-lang-pop__btn--ghost";
       dismissBtn.textContent = T.dismiss;
 
-      function teardown() { if (pop.parentNode) pop.parentNode.removeChild(pop); }
+      function teardown() {
+        setCookie("lang_asked", "1", 0);
+        if (pop.parentNode) pop.parentNode.removeChild(pop);
+      }
 
       onceBtn.addEventListener("click", function () {
+        setCookie("lang_asked", "1", 0);
         setCookie("lang_pref", browserLang, 31536000);
         window.location.href = altURL;
       });
