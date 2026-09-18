@@ -65,4 +65,17 @@
   {{- else -}}
   <span class="lang-toggle-link lang-toggle-unavailable" lang="en" aria-disabled="true">EN</span>
   {{- end -}}
+  {{- if eq $location "navbar" -}}
+  {{/* Auto-redirect on/off control. State lives in the lang_auto cookie and is
+       synced by the script in custom/head-end.html. */}}
+  {{- $autoLabel := cond (eq $currentLang "pt-br") "Redirecionar automaticamente para o seu idioma" "Automatically redirect to your language" -}}
+  <button type="button"
+          class="lang-auto-toggle"
+          aria-pressed="false"
+          title="{{ $autoLabel }}"
+          aria-label="{{ $autoLabel }}">
+    <span class="lang-auto-toggle__track" aria-hidden="true"><span class="lang-auto-toggle__knob"></span></span>
+    <span class="lang-auto-toggle__text" aria-hidden="true">auto</span>
+  </button>
+  {{- end -}}
 </div>

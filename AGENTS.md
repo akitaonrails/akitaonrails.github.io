@@ -157,7 +157,8 @@ This uses a custom shortcode at `layouts/shortcodes/youtube.html` that creates r
 
 This site uses the Hextra theme with customizations:
 
-- **`layouts/partials/custom/head-end.html`**: Custom CSS for embeds and typography
+- **`layouts/partials/custom/head-end.html`**: Custom CSS for embeds and typography, plus the language redirect/popup scripts (browser-locale mismatch nudge with `lang_auto`/`lang_asked` cookies, on top of the home-only `lang_pref`/`lang_session` redirect)
+- **`layouts/partials/custom/lang-toggle.html`**: Compact PT | EN navbar switch, including the `lang_auto` on/off control
 - **`layouts/partials/components/comments.html`**: Disqus integration
 - **`layouts/term.html`**: Tag pages using the shared list/grid post views
 - **`layouts/_default/list.rss.xml`**: Custom RSS feed (includes full content, limited to 20 items)

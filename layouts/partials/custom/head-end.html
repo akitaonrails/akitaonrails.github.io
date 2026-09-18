@@ -1,4 +1,39 @@
 <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }} RSS Feed" href="{{ "index.xml" | absURL }}" />
+{{/* Alternate-language meta tags consumed by the lang redirect/popup script
+     further below. Mirrors the URL resolution in custom/lang-toggle.html,
+     including the tag-taxonomy special case for localized tag slugs. */}}
+{{- $curLang := .Site.Language.Lang -}}
+{{- $ptURL := "" -}}
+{{- $enURL := "" -}}
+{{- range .AllTranslations -}}
+  {{- if eq .Lang "pt-br" -}}{{- $ptURL = .RelPermalink -}}{{- end -}}
+  {{- if eq .Lang "en" -}}{{- $enURL = .RelPermalink -}}{{- end -}}
+{{- end -}}
+{{- if eq $curLang "pt-br" -}}{{- $ptURL = .RelPermalink -}}{{- end -}}
+{{- if eq $curLang "en" -}}{{- $enURL = .RelPermalink -}}{{- end -}}
+{{- if and (eq .Kind "term") (eq .Data.Singular "tag") -}}
+  {{- $term := .Data.Term -}}
+  {{- $ptTag := $term -}}
+  {{- $enTag := $term -}}
+  {{- range hugo.Data.tag_taxonomy.tags -}}
+    {{- if or (eq .pt $term) (eq .en $term) -}}{{- $ptTag = .pt -}}{{- $enTag = .en -}}{{- end -}}
+  {{- end -}}
+  {{- range hugo.Data.tag_taxonomy.special_tags -}}
+    {{- if or (eq .pt $term) (eq .en $term) -}}{{- $ptTag = .pt -}}{{- $enTag = .en -}}{{- end -}}
+  {{- end -}}
+  {{- range hugo.Sites -}}
+    {{- if eq .Language.Lang "pt-br" -}}
+      {{- with .GetPage (printf "/tags/%s" $ptTag) -}}{{- $ptURL = .RelPermalink -}}{{- end -}}
+    {{- else if eq .Language.Lang "en" -}}
+      {{- with .GetPage (printf "/tags/%s" $enTag) -}}{{- $enURL = .RelPermalink -}}{{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+<meta name="aor-current-lang" content="{{ $curLang }}">
+{{- $altURL := cond (eq $curLang "pt-br") $enURL $ptURL -}}
+{{- if $altURL }}
+<meta name="aor-alt-lang" content="{{ cond (eq $curLang "pt-br") "en" "pt" }}" data-url="{{ $altURL }}">
+{{- end }}
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link
@@ -405,6 +440,285 @@
     }
   } catch (e) {
     // never break the page on a redirect failure
+  }
+})();
+</script>
+
+<style>
+  /* Navbar auto-redirect on/off switch (rendered by custom/lang-toggle.html). */
+  .lang-auto-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    margin-inline-start: 0.45rem;
+    padding: 0.3rem 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    line-height: 1;
+    cursor: pointer;
+  }
+  .lang-auto-toggle__track {
+    position: relative;
+    width: 1.5rem;
+    height: 0.85rem;
+    border-radius: 999px;
+    background: color-mix(in srgb, currentColor 28%, transparent);
+    transition: background 120ms ease;
+  }
+  .lang-auto-toggle__knob {
+    position: absolute;
+    top: 1px;
+    inset-inline-start: 1px;
+    width: calc(0.85rem - 2px);
+    height: calc(0.85rem - 2px);
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    transition: transform 120ms ease;
+  }
+  .lang-auto-toggle.is-on .lang-auto-toggle__track {
+    background: var(--aor-accent, #b84a2f);
+  }
+  .lang-auto-toggle.is-on .lang-auto-toggle__knob {
+    transform: translateX(calc(1.5rem - 0.85rem));
+  }
+  .lang-auto-toggle__text {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    opacity: 0.6;
+  }
+  .lang-auto-toggle:focus-visible {
+    border-radius: 3px;
+    outline: 2px solid var(--aor-accent, #b84a2f);
+    outline-offset: 2px;
+  }
+
+  /* Language mismatch popup: a quiet bottom-corner card, not a modal. */
+  .aor-lang-pop {
+    position: fixed;
+    inset-inline-end: 16px;
+    bottom: 16px;
+    z-index: 9999;
+    width: min(340px, calc(100vw - 32px));
+    box-sizing: border-box;
+    padding: 14px 16px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 10px;
+    background: #fff;
+    color: #2a2622;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
+    font-family: "Source Sans 3", "Helvetica Neue", "Segoe UI", "Arial", sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.45;
+  }
+  html.dark .aor-lang-pop {
+    background: #23201c;
+    color: #e8e2d6;
+    border-color: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+  }
+  .aor-lang-pop p {
+    margin: 0 0 10px;
+    padding-inline-end: 18px;
+  }
+  .aor-lang-pop__close {
+    position: absolute;
+    top: 6px;
+    inset-inline-end: 8px;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font-size: 1.05rem;
+    line-height: 1;
+    padding: 4px;
+    cursor: pointer;
+    opacity: 0.55;
+  }
+  .aor-lang-pop__close:hover {
+    opacity: 1;
+  }
+  .aor-lang-pop__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .aor-lang-pop__btn {
+    display: block;
+    width: 100%;
+    padding: 7px 10px;
+    border: 1px solid transparent;
+    border-radius: 7px;
+    background: transparent;
+    font: inherit;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    color: inherit;
+  }
+  .aor-lang-pop__btn--accent {
+    background: var(--aor-accent, #a63a1e);
+    color: #fff;
+  }
+  .aor-lang-pop__btn--accent:hover {
+    background: var(--aor-accent-strong, #7f2a12);
+  }
+  .aor-lang-pop__btn--primary {
+    border-color: color-mix(in srgb, var(--aor-accent, #a63a1e) 45%, transparent);
+    color: var(--aor-accent-strong, #7f2a12);
+  }
+  html.dark .aor-lang-pop__btn--primary {
+    color: var(--aor-accent, #e2a05a);
+  }
+  .aor-lang-pop__btn--ghost {
+    opacity: 0.65;
+    font-weight: 500;
+  }
+  .aor-lang-pop__btn--ghost:hover {
+    opacity: 1;
+  }
+</style>
+
+<script>
+// Cross-language nudge for article/pages (the home pages have their own
+// redirect script above). Two cookies, on top of the existing lang_pref:
+//   lang_auto   — persistent (1 year). "1" = always redirect to the visitor's
+//                 browser language when the page has a translation; "0" =
+//                 never ask, never redirect. Toggled by the navbar switch.
+//   lang_asked  — session-only. Set once the popup has been answered, so it
+//                 nags at most once per tab session.
+// The popup speaks the browser's language (the one the visitor reads), and
+// only fires when the current page actually has a translation (see the
+// aor-alt-lang meta tag emitted at the top of this file).
+(function () {
+  try {
+    if (/bot|crawler|spider|slurp|headless|lighthouse|preview/i.test(navigator.userAgent || "")) return;
+
+    var curMeta = document.querySelector('meta[name="aor-current-lang"]');
+    var altMeta = document.querySelector('meta[name="aor-alt-lang"]');
+    if (!curMeta || !altMeta) return;
+    var curLang = curMeta.getAttribute("content") === "pt-br" ? "pt" : "en";
+    var altURL = altMeta.getAttribute("data-url") || "";
+    if (!altURL) return;
+
+    var browserLang = ((navigator.language || "en").toLowerCase().indexOf("pt") === 0) ? "pt" : "en";
+    var mismatch = browserLang !== curLang;
+
+    function getCookie(name) {
+      var m = document.cookie.match(new RegExp("(?:^|;\\s*)" + name + "=([^;]+)"));
+      return m ? m[1] : null;
+    }
+    function setCookie(name, value, maxAge) {
+      document.cookie = name + "=" + value + "; path=/; samesite=lax" + (maxAge ? "; max-age=" + maxAge : "");
+    }
+    function syncSwitch() {
+      var on = getCookie("lang_auto") === "1";
+      var btns = document.querySelectorAll(".lang-auto-toggle");
+      for (var i = 0; i < btns.length; i++) {
+        btns[i].classList.toggle("is-on", on);
+        btns[i].setAttribute("aria-pressed", on ? "true" : "false");
+      }
+    }
+
+    // Navbar on/off control (delegated; works no matter when the navbar renders).
+    document.addEventListener("click", function (e) {
+      var b = e.target && e.target.closest ? e.target.closest(".lang-auto-toggle") : null;
+      if (!b) return;
+      var turnOn = getCookie("lang_auto") !== "1";
+      setCookie("lang_auto", turnOn ? "1" : "0", 31536000);
+      syncSwitch();
+      if (turnOn && mismatch) window.location.href = altURL;
+    });
+
+    if (mismatch) {
+      var auto = getCookie("lang_auto");
+      if (auto === "1") { window.location.replace(altURL); return; }
+      if (auto !== "0" && !getCookie("lang_asked")) {
+        if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", showPopup);
+        else showPopup();
+      }
+    }
+
+    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", syncSwitch);
+    else syncSwitch();
+
+    function showPopup() {
+      setCookie("lang_asked", "1", 0);
+      var T = browserLang === "pt" ? {
+        text: "Este blog é bilíngue: esta página tem uma versão em português. O seletor PT | EN fica no topo da página, e dá pra eu sempre te redirecionar pro seu idioma automaticamente.",
+        once: "Ver em português",
+        always: "Sempre redirecionar automaticamente",
+        dismiss: "Agora não",
+        close: "Fechar"
+      } : {
+        text: "This blog is bilingual: this page has an English version. The PT | EN toggle is at the top of the page, and I can always redirect you to your language automatically.",
+        once: "Read in English",
+        always: "Always redirect automatically",
+        dismiss: "Not now",
+        close: "Close"
+      };
+
+      var pop = document.createElement("div");
+      pop.className = "aor-lang-pop";
+      pop.setAttribute("role", "dialog");
+      pop.setAttribute("aria-label", T.text.slice(0, 60));
+
+      var close = document.createElement("button");
+      close.type = "button";
+      close.className = "aor-lang-pop__close";
+      close.setAttribute("aria-label", T.close);
+      close.textContent = "\u00d7";
+
+      var p = document.createElement("p");
+      p.textContent = T.text;
+
+      var actions = document.createElement("div");
+      actions.className = "aor-lang-pop__actions";
+
+      var onceBtn = document.createElement("button");
+      onceBtn.type = "button";
+      onceBtn.className = "aor-lang-pop__btn aor-lang-pop__btn--primary";
+      onceBtn.textContent = T.once;
+
+      var alwaysBtn = document.createElement("button");
+      alwaysBtn.type = "button";
+      alwaysBtn.className = "aor-lang-pop__btn aor-lang-pop__btn--accent";
+      alwaysBtn.textContent = T.always;
+
+      var dismissBtn = document.createElement("button");
+      dismissBtn.type = "button";
+      dismissBtn.className = "aor-lang-pop__btn aor-lang-pop__btn--ghost";
+      dismissBtn.textContent = T.dismiss;
+
+      function teardown() { if (pop.parentNode) pop.parentNode.removeChild(pop); }
+
+      onceBtn.addEventListener("click", function () {
+        setCookie("lang_pref", browserLang, 31536000);
+        window.location.href = altURL;
+      });
+      alwaysBtn.addEventListener("click", function () {
+        setCookie("lang_auto", "1", 31536000);
+        setCookie("lang_pref", browserLang, 31536000);
+        window.location.href = altURL;
+      });
+      dismissBtn.addEventListener("click", teardown);
+      close.addEventListener("click", teardown);
+      document.addEventListener("keydown", function onEsc(e) {
+        if (e.key === "Escape" && pop.parentNode) { teardown(); document.removeEventListener("keydown", onEsc); }
+      });
+
+      actions.appendChild(onceBtn);
+      actions.appendChild(alwaysBtn);
+      actions.appendChild(dismissBtn);
+      pop.appendChild(close);
+      pop.appendChild(p);
+      pop.appendChild(actions);
+      document.body.appendChild(pop);
+    }
+  } catch (e) {
+    // never break the page over a language nudge
   }
 })();
 </script>
