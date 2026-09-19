@@ -25,7 +25,7 @@ A interface principal é o "Photo Studio" da Dreamina, onde você escolhe o modo
 
 ## Teste 1: lip-sync com áudio do podcast
 
-Meu primeiro teste foi simples. Peguei alguns segundos do bumper de abertura do meu podcast [The M.Akita Chronicles](/tags/themakitachronicles), que é gerado com IA via [pipeline ElevenLabs v3](/2026/04/09/como-a-elevenlabs-nao-foi-morta-pelo-qwen3-tts/), passei o meu novo avatar em estilo anime como imagem de referência, e pedi pro Seedance fazer o personagem sincronizar boca e gesticular em cima daquele áudio.
+Meu primeiro teste foi simples. Peguei alguns segundos do bumper de abertura do meu podcast [The M.Akita Chronicles](/tags/the-m-akita-chronicles/), que é gerado com IA via [pipeline ElevenLabs v3](/2026/04/09/como-a-elevenlabs-nao-foi-morta-pelo-qwen3-tts/), passei o meu novo avatar em estilo anime como imagem de referência, e pedi pro Seedance fazer o personagem sincronizar boca e gesticular em cima daquele áudio.
 
 <div style="max-width: 100%; margin: 1em 0;">
   <video controls playsinline style="width: 100%; border-radius: 8px;">

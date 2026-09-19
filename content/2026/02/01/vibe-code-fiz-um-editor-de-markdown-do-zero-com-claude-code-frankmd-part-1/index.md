@@ -17,7 +17,7 @@ Nos últimos [dois](https://akitaonrails.com/2026/01/28/vibe-code-eu-fiz-um-appz
 
 Eu falo isso faz anos: eu GOSTO das LLMs, uso bastante desde que foram lançadas e nunca tive problemas com elas. Meu problema é só balizar as expectativas IRREAIS dos "normies", não-programadores: nunca vai sair um app como este com poucos prompts e sem saber exatamente os componentes e técnicas pra usar por baixo.
 
-Desta vez, decidi resolver outro probleminha que tava no meu todo-list faz tempo: ter um web app de anotações self-hosted (pra colocar no meu [home-server](/tags/home-server). Ao longo dos anos, já usei de tudo: Evernote, Notion, Obsidian, entre outros, mas nenhum deles realmente me agrada. Então, por que não fazer o meu próprio exatamente como eu quero?
+Desta vez, decidi resolver outro probleminha que tava no meu todo-list faz tempo: ter um web app de anotações self-hosted (pra colocar no meu [home-server](/tags/homelab/). Ao longo dos anos, já usei de tudo: Evernote, Notion, Obsidian, entre outros, mas nenhum deles realmente me agrada. Então, por que não fazer o meu próprio exatamente como eu quero?
 
 Vou dividir este tema em 2 artigos: neste primeiro, vou falar exclusivamente sobre o meu aplicativo; [no segundo](/2026/02/01/vibe-code-fiz-um-editor-de-markdown-do-zero-com-claude-code-frankmd-parte-2/), vou falar sobre o processo de vibe codar com o Claude. Spoilers: levou 3 dias inteiros (aproximadamente **30 horas**). 137 pull requests! Aguardem o post-mortem.
 

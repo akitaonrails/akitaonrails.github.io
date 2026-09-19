@@ -11,7 +11,7 @@ tags:
 translationKey: web-scraping-in-2026
 ---
 
-Este post vai fazer parte de uma série; acompanhe pela tag [/themakitachronicles](/tags/themakitachronicles). Esta é a parte 2.
+Este post vai fazer parte de uma série; acompanhe pela tag [/themakitachronicles](/tags/the-m-akita-chronicles/). Esta é a parte 2.
 
 E não deixe de assinar minha nova newsletter [The M.Akita Chronicles](https://themakitachronicles.com/)!
 

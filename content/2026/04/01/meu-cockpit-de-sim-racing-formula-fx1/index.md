@@ -130,7 +130,7 @@ Em janeiro de 2026, depois de anos de gambiarra, eu finalmente encomendei um coc
 
 O FX1 é muito diferente dos cockpits tradicionais. A estrutura inteira é de tubos de aço grossos, soldados. Quando eu digo que a coisa não balança, eu quero dizer que não balança nada. Zero wobble. É uma diferença brutal em relação ao suporte na frente do sofá. A posição de pilotagem é reclinada, tipo F1 — seus pés ficam na mesma altura ou mais altos que seu quadril. Parece que vai ser desconfortável, mas não é. Dá pra ficar horas ali sem reclamar. Vem com banco acolchoado e ajustável, suporte pra monitor com articulação, suporte pra pedais com inclinação ajustável, e suporte pra volante com altura regulável.
 
-Tive que esperar cerca de 1 mês pela entrega. No meio tempo, como quem acompanha meu blog sabe, eu mergulhei numa maratona de 16 horas por dia testando os novos agentes de IA da Anthropic e OpenAI — veja as tags [#vibecoding](/tags/vibe-coding/) e [#agents](/tags/ai/) pra ver tudo que eu fiz. Depois de uns 30 dias nessa maratona insana, minha lombar cedeu e eu comecei a desenvolver o que parece ser hérnia de disco. Tive que ir ao médico e tomar anti-inflamatórios pesados.
+Tive que esperar cerca de 1 mês pela entrega. No meio tempo, como quem acompanha meu blog sabe, eu mergulhei numa maratona de 16 horas por dia testando os novos agentes de IA da Anthropic e OpenAI — veja as tags [#vibecoding](/tags/vibe-coding/) e [#agents](/tags/inteligencia-artificial/) pra ver tudo que eu fiz. Depois de uns 30 dias nessa maratona insana, minha lombar cedeu e eu comecei a desenvolver o que parece ser hérnia de disco. Tive que ir ao médico e tomar anti-inflamatórios pesados.
 
 E exatamente nessa semana, o cockpit decidiu chegar.
 

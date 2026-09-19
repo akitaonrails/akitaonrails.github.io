@@ -17,7 +17,7 @@ In the last [two](https://akitaonrails.com/en/2026/01/28/vibe-code-built-a-littl
 
 I've been saying this for years: I LIKE LLMs, I use them a lot since they came out, and I've never had a problem with them. My problem is calibrating the UNREALISTIC expectations of "normies", non-programmers: you're never going to get an app like this with a handful of prompts without knowing exactly which components and techniques to use underneath.
 
-This time, I decided to tackle another little problem that had been sitting on my todo-list for a while: having a self-hosted note-taking web app (to put on my [home-server](/en/tags/homeserver/). Over the years I've used everything: Evernote, Notion, Obsidian, among others, but none of them really pleased me. So why not build my own exactly the way I want?
+This time, I decided to tackle another little problem that had been sitting on my todo-list for a while: having a self-hosted note-taking web app (to put on my [home-server](/en/tags/homelab/). Over the years I've used everything: Evernote, Notion, Obsidian, among others, but none of them really pleased me. So why not build my own exactly the way I want?
 
 I'm going to split this topic into 2 articles: in this first one, I'll talk exclusively about my application; [in the second one](/en/2026/02/01/frankmd-markdown-editor-vibe-code-part-2/), I'll talk about the process of vibe coding with Claude. Spoilers: it took 3 full days (roughly **30 hours**). 137 pull requests! Wait for the post-mortem.
 

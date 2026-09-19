@@ -24,7 +24,7 @@ Tem uma novidade nesse update: refiz a parte local do benchmark numa RTX 5090 (e
 
 ---
 
-Se você acompanhou meus [artigos anteriores sobre vibe coding](/tags/vibecoding/), sabe que passei os últimos dois meses numa maratona de mais de 500 horas usando Claude Opus como coding agent principal. Os resultados foram bons, como reportei na [conclusão sobre modelos de negócio](https://akitaonrails.com/2026/03/05/37-dias-de-imers%c3%a3o-em-vibe-coding-conclus%c3%a3o-quanto-a-modelos-de-neg%c3%b3cio/). Mas ficou uma coceira: será que eu estou preso num único modelo? Tem alternativa real ao Claude Opus pra uso diário em projetos de verdade?
+Se você acompanhou meus [artigos anteriores sobre vibe coding](/tags/vibe-coding/), sabe que passei os últimos dois meses numa maratona de mais de 500 horas usando Claude Opus como coding agent principal. Os resultados foram bons, como reportei na [conclusão sobre modelos de negócio](https://akitaonrails.com/2026/03/05/37-dias-de-imers%c3%a3o-em-vibe-coding-conclus%c3%a3o-quanto-a-modelos-de-neg%c3%b3cio/). Mas ficou uma coceira: será que eu estou preso num único modelo? Tem alternativa real ao Claude Opus pra uso diário em projetos de verdade?
 
 Tenho uma RTX 5090 com 32 GB de GDDR7. Sei que posso rodar os modelos open source mais recentes. Comprei um [Minisforum MS-S1](https://akitaonrails.com/2026/03/31/review-minisforum-ms-s1-max-amd-ai-max-395/) com AMD Ryzen AI Max 395 e 128 GB de memória unificada, e montei um [home server com Docker](https://akitaonrails.com/2026/03/31/migrando-meu-home-server-com-claude-code/) pra servir modelos locais. A infraestrutura estava pronta. Faltava testar de verdade.
 
