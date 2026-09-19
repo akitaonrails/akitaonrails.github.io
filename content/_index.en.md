@@ -308,6 +308,7 @@ Looking for older posts? [Browse the full archive →](/en/archives/)
 {{% index-list %}}
 ## 2026 - September
 
+- <a class="aor-index-list__main-link" href="/en/2026/09/19/new-ai-language-just-released-bend-2/" title="Bend 2, from Brazilian researcher Victor Taelin, arrived promising C speed, GPU parallelism, and formal proofs that block AI mistakes. I tested it by porting two of my Rust projects right at launch. Plenty of potential; stdlib and ecosystem are still toys.">New AI-Focused Language Just Released: Bend 2</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/en/tags/programming-languages/">#programming-languages</a><a class="aor-tag-link" href="/en/tags/artificial-intelligence/">#artificial-intelligence</a><a class="aor-tag-link" href="/en/tags/rust/">#rust</a></span>
 - <a class="aor-index-list__main-link" href="/en/2026/09/17/ai-unmasked-climate-hysteria/" title="AI&#39;s race for energy buried the climate agenda: big techs restarting nuclear plants, Germany admitting the mistake, datacenters already consuming double the global EV fleet. With Bjorn Lomborg&#39;s numbers, the climate apocalypse as a misallocation of trillions.">AI Unmasked the Climate Change Hysteria</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/en/tags/science/">#science</a><a class="aor-tag-link" href="/en/tags/politics/">#politics</a><a class="aor-tag-link" href="/en/tags/artificial-intelligence/">#artificial-intelligence</a></span>
 - <a class="aor-index-list__main-link" href="/en/2026/09/17/talking-about-my-ai-skills/" title="Agent skills are just prompts in text files. I keep 25 in my my-skills repo, from pr-audit to fact-check, and they have already closed over a thousand PRs and issues across my projects. The recommendation: don&#39;t copy somebody else&#39;s skill, build your own.">Talking a Bit About My AI Skills</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/en/tags/coding-agents/">#coding-agents</a><a class="aor-tag-link" href="/en/tags/automation/">#automation</a><a class="aor-tag-link" href="/en/tags/llms/">#llms</a></span>
 - <a class="aor-index-list__main-link" href="/en/2026/09/16/why-things-like-typesafe-ai-dont-interest-me/" title="A handful of people showed up in the comments asking &#39;have you tried TypeSafe?&#39;. I use that as a hook to lay out my rule about new AI tools, actually investigate the case, and explain why I don&#39;t waste time optimizing token spend.">Why Things Like TypeSafe AI Don&#39;t Interest Me</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/en/tags/artificial-intelligence/">#artificial-intelligence</a><a class="aor-tag-link" href="/en/tags/coding-agents/">#coding-agents</a><a class="aor-tag-link" href="/en/tags/llms/">#llms</a></span>
@@ -510,9 +511,15 @@ Looking for older posts? [Browse the full archive →](/en/archives/)
 <section class="aor-index-month" aria-labelledby="aor-grid-2026-09">
   <div class="aor-index-month__header">
     <h2 id="aor-grid-2026-09">2026 - September</h2>
-    <span>9 posts</span>
+    <span>10 posts</span>
   </div>
   <div class="aor-post-grid">
+<article class="aor-post-card" title="Bend 2, from Brazilian researcher Victor Taelin, arrived promising C speed, GPU parallelism, and formal proofs that block AI mistakes. I tested it by porting two of my Rust projects right at launch. Plenty of potential; stdlib and ecosystem are still toys.">
+  <time class="aor-post-card__date" datetime="2026-09-19">Sep 19, 2026</time>
+  <h3 class="aor-post-card__title"><a class="aor-post-card__title-link" href="/en/2026/09/19/new-ai-language-just-released-bend-2/">New AI-Focused Language Just Released: Bend 2</a></h3>
+  <span class="aor-post-tags aor-post-tags--card"><a class="aor-tag-link" href="/en/tags/programming-languages/">#programming-languages</a><a class="aor-tag-link" href="/en/tags/artificial-intelligence/">#artificial-intelligence</a><a class="aor-tag-link" href="/en/tags/rust/">#rust</a></span>
+  <p class="aor-post-card__description">Bend 2, from Brazilian researcher Victor Taelin, arrived promising C speed, GPU parallelism, and formal proofs that block AI mistakes. I tested it by porting two of my Rust projects right at launch. Plenty of potential; stdlib and ecosystem are still toys.</p>
+</article>
 <article class="aor-post-card" title="AI&#39;s race for energy buried the climate agenda: big techs restarting nuclear plants, Germany admitting the mistake, datacenters already consuming double the global EV fleet. With Bjorn Lomborg&#39;s numbers, the climate apocalypse as a misallocation of trillions.">
   <time class="aor-post-card__date" datetime="2026-09-17">Sep 17, 2026</time>
   <h3 class="aor-post-card__title"><a class="aor-post-card__title-link" href="/en/2026/09/17/ai-unmasked-climate-hysteria/">AI Unmasked the Climate Change Hysteria</a></h3>
