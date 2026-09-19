@@ -12,7 +12,7 @@ tags:
 translationKey: zero-to-post-production-1-week
 ---
 
-Este post vai fazer parte de uma série; acompanhe pela tag [/themakitachronicles](/tags/themakitachronicles). Esta é a parte 9 e Final!
+Este post vai fazer parte de uma série; acompanhe pela tag [the-m-akita-chronicles](/tags/the-m-akita-chronicles/). Esta é a parte 9 e Final!
 
 E não deixe de assinar minha nova newsletter [The M.Akita Chronicles](https://themakitachronicles.com/)!
 
