@@ -97,6 +97,36 @@ That's not reason enough to call it a scam. It's plenty of reason to call it "a 
 
 This isn't a final ruling on TypeSafe or on Diogo Almeida's résumé. It's the result of the checking I was able to do with what was accessible right now. If you find the paper I missed, the independent benchmark I didn't see, or any proof that knocks down a specific point, the comments are open and I read them. The goal here was never to prove I'm infallible. It's to show how to go from "this smells like a scam" to "here's the proof," and to be willing to admit it when the proof points the other way.
 
+## The "193x faster" is calling out a bad way of using LLMs
+
+Back to Jev: the shock of "193x faster than an LLM" only exists because the comparison is against one specific, and common, way of using an LLM. Send text to a chat model, ask it to return a label, wait for the model to write out a full natural-language answer, then have your code go fish that label out of a paragraph or a loose JSON blob in the response. That's slow, expensive, and full of chances for the schema to break.
+
+Jev exists precisely because that comparison is easy to beat. It doesn't generate free text, it only answers fixed-type questions: pick one option from a list, give a score on a scale, yes or no with a probability. That's [what the documentation itself calls its primitives](https://docs.typesafe.ai/primitives): `Choice`, `Score`, and `Noul`. Swapping "LLM writes a paragraph for you to extract a label from afterward" for "a call that already returns the finished label" is, yes, an engineering win. But that win doesn't come from inventing a new category of model. It comes from no longer using a chat LLM to do structured classification work.
+
+And this is where I think the widespread shock at Jev's number reveals the actual bad habit: **an LLM should never have been generating free text for a closed, repeated decision over the same kind of question**. If your product needs to constantly decide between a fixed handful of categories, the right answer isn't begging the LLM to "please answer with only the JSON" and hoping. It's building, or using, an actual classifier for that specific job.
+
+And that isn't a new idea, and it isn't exclusive to Jev. It's existed long before it:
+
+- a supervised classifier, a deterministic rule, or an encoder model, for a fixed, well-defined label;
+- [zero-shot classification](https://arxiv.org/abs/1909.00161), studied since 2019 and [available through Hugging Face's API](https://huggingface.co/docs/inference-providers/tasks/zero-shot-classification), for when the category list changes on every call;
+- [probability calibration](https://scikit-learn.org/1.8/modules/calibration.html), an established method for turning a classifier's confidence into a metric that actually means something;
+- [structured output / constrained decoding](https://developers.openai.com/api/docs/guides/structured-outputs) on any LLM that already supports it, which guarantees a valid schema without switching products or providers.
+
+Jev packages a slice of that into a paid, convenient API. It didn't invent the category. There's even an open alternative for the same pattern, [Laya](https://github.com/NandhaKishorM/laya) served by [Arbiter](https://github.com/0xBakeer/arbiter), running locally, with no third party in the loop at all.
+
+So, straight answer: my initial suspicion that "people have been using LLMs wrong" holds up, with one important caveat. It isn't true that an LLM can't classify. Zero-shot classification with an LLM works and has been documented since 2019. The specific mistake is narrower: using a generalist chat LLM, with no format constraint, to generate a free-form answer you then extract a label from by hand, when your problem is already a closed, repeated classification problem. That's the anti-pattern. The fix isn't necessarily buying Jev, it's either applying structured output to the LLM you already use, or training an actual classifier for that specific job, depending on the volume and precision you need.
+
+And "becoming a classifier" isn't a silver bullet against hallucination either, not even for Jev itself. **There are two different problems hiding behind the word "hallucinate,"** and switching products only fixes one of them:
+
+1. **Format hallucination**: the model invents a category that doesn't exist, or returns something outside the schema. Structured output fixes this, whether on Jev or on any LLM with constrained decoding.
+2. **Judgment error**: the model picks the wrong category, from among the valid options, with high confidence. That doesn't go away just because the output has a fixed type.
+
+[TypeSafe's own limitations document](https://docs.typesafe.ai/model-jaggedness/jev-1.13) admits literal interpretation issues, weak numeric counting, date-comparison errors, degradation with irrelevant context, and susceptibility to adversarial manipulation in Jev itself. And an [independent test with 2,000 phishing emails](https://github.com/anisselbd/jev-phishing-bench) found Jev's direct verdict at 62.6% accuracy against Claude Haiku 4.5's 81.3%, faster and cheaper, but **less accurate than the chat LLM it's pitched to replace**. A [separate 27-ticket test](https://github.com/WallerChen/jev-measured) found Jev tied with a cheap chat model, too small a sample to become a rule, but enough to make clear that "became a classifier" isn't automatically synonymous with "became more accurate."
+
+In fairness to that same phishing test: when, instead of asking for a single verdict, Jev answers five separate signal questions and code combines the five into a decision, accuracy climbs to 95%, beating even Claude's composed version on those same five signals (93.2%). That doesn't erase the earlier number, the single verdict's 62.6% is still 62.6%, but it reinforces exactly this section's argument: **breaking the decision into fixed-type questions and letting code compose the result beats an LLM answering everything in one shot**, whether that's done with Jev, with structured output, or with a classifier trained for that specific signal.
+
+> **Keep this:** if your problem is deciding the same thing, the same way, over and over, build or use an actual classifier for that specific job, with structured output or a dedicated model. The gain from making that swap is real. What isn't automatic is assuming any product that calls itself a "classifier" will be more accurate than the LLM it replaces, because sometimes it's less accurate.
+
 ## And What About Saving Tokens?
 
 The TypeSafe case reminded me of a separate gripe I already wanted to put on paper, and it isn't about them specifically: the promise of token and cost savings that practically every product of this type sells. It's about the whole category of tool that promises "save Nx by spending with us instead of spending directly with your provider," not one more accusation against TypeSafe.

@@ -97,6 +97,36 @@ Isso não é motivo pra chamar de golpe. É motivo de sobra pra chamar de "produ
 
 Isso não é decreto final sobre o TypeSafe nem sobre o currículo do Diogo Almeida. É o resultado da checagem que consegui fazer com o que estava acessível até agora. Se você achar o paper que eu não achei, o benchmark independente que eu não vi, ou qualquer prova que derrube um ponto específico, os comentários estão abertos e eu leio. O objetivo aqui nunca foi provar que eu sou infalível. É mostrar como sair de "sinto cheiro de golpe" pra "aqui está a prova", e estar disposto a admitir quando a prova aponta pro lado contrário.
 
+## O "193x mais rápido" denuncia um jeito errado de usar LLM
+
+Voltando pro Jev: o choque de "193x mais rápido que um LLM" só existe porque a comparação é contra um jeito específico, e comum, de usar LLM. Manda um texto pra um modelo de chat, pede pra ele devolver um rótulo, espera o modelo escrever uma resposta inteira em linguagem natural, e depois faz o seu código catar esse rótulo lá dentro de um parágrafo ou de um JSON solto na resposta. Isso é lento, caro, e cheio de chance de o schema quebrar.
+
+O Jev existe justamente porque essa comparação é fácil de vencer. Ele não gera texto livre, só responde perguntas de tipo fixo, uma opção de uma lista, uma nota numa régua, sim ou não com probabilidade. É [o que a própria documentação chama de primitivas](https://docs.typesafe.ai/primitives): `Choice`, `Score` e `Noul`. Trocar "LLM escrevendo um parágrafo pra você extrair um rótulo dele depois" por "chamada que já devolve o rótulo pronto" é, sim, uma vitória de engenharia. Só que essa vitória não vem de ter inventado uma categoria nova de modelo. Vem de parar de usar LLM de chat pra fazer um trabalho de classificação estruturada.
+
+E aqui é onde eu acho que a reação de espanto de muita gente com o número do Jev revela o hábito errado: **o LLM nunca devia estar gerando texto livre pra decisão fechada e repetida em cima do mesmo tipo de pergunta**. Se seu produto precisa, toda hora, decidir entre um punhado fixo de categorias, a resposta certa não é implorar pro LLM "responda só com o JSON, por favor" e torcer. É construir, ou usar, um classificador de verdade pra aquele trabalho específico.
+
+E isso não é ideia nova nem exclusividade do Jev. Existe desde muito antes dele:
+
+- classificador supervisionado, regra determinística ou modelo encoder, pra rótulo fixo e bem definido;
+- [classificação zero-shot](https://arxiv.org/abs/1909.00161), estudada desde 2019 e [disponível via API da Hugging Face](https://huggingface.co/docs/inference-providers/tasks/zero-shot-classification), pra quando a lista de categorias muda a cada chamada;
+- [calibração de probabilidade](https://scikit-learn.org/1.8/modules/calibration.html), método estabelecido pra transformar a confiança de um classificador numa métrica que realmente significa alguma coisa;
+- [saída estruturada / decodificação restrita](https://developers.openai.com/api/docs/guides/structured-outputs) em qualquer LLM que já suporte isso, que garante schema válido sem trocar de produto nem de fornecedor.
+
+O Jev empacota um pedaço disso numa API paga e conveniente. Não inventou a categoria. E tem até alternativa aberta pro mesmo padrão, o [Laya](https://github.com/NandhaKishorM/laya) servido pelo [Arbiter](https://github.com/0xBakeer/arbiter), rodando local, sem depender de terceiro nenhum.
+
+Então, respondendo direto: minha desconfiança inicial de que "gente estava usando LLM errado" tem fundamento real, mas com uma ressalva importante. Não é verdade que LLM é incapaz de classificar. Classificação zero-shot com LLM funciona e está documentada desde 2019. O erro específico é mais estreito: usar um LLM de chat generalista, sem restrição de formato, pra gerar uma resposta livre da qual você extrai um rótulo na mão, quando o seu problema já é um problema de classificação fechada e repetida. Esse é o antipadrão. A cura não é necessariamente comprar o Jev, é ou aplicar saída estruturada no LLM que você já usa, ou treinar um classificador de verdade pra aquele trabalho específico, dependendo do volume e da precisão que você precisa.
+
+E "virar classificador" também não é bala de prata contra alucinação, nem no próprio Jev. **Existem dois problemas diferentes escondidos atrás da palavra "alucinar"**, e trocar de produto só resolve um deles:
+
+1. **Alucinação de formato**: o modelo inventa uma categoria que não existe, ou devolve algo fora do schema. Saída estruturada resolve isso, seja no Jev, seja em qualquer LLM com decodificação restrita.
+2. **Erro de julgamento**: o modelo escolhe a categoria errada, dentro das opções válidas, com confiança alta. Isso não desaparece só porque a saída tem tipo fixo.
+
+O [próprio documento de limitações do TypeSafe](https://docs.typesafe.ai/model-jaggedness/jev-1.13) admite interpretação literal, contagem numérica fraca, erro de comparação de data, degradação com contexto irrelevante, e suscetibilidade a manipulação adversarial no próprio Jev. E o [teste independente com 2 mil e-mails de phishing](https://github.com/anisselbd/jev-phishing-bench) achou o veredito direto do Jev em 62,6% de acerto contra 81,3% do Claude Haiku 4.5, mais rápido e mais barato, só que **menos preciso que o LLM de chat que ele se propõe a substituir**. Um [teste separado com 27 tickets](https://github.com/WallerChen/jev-measured) achou o Jev empatado com um modelo de chat barato, amostra pequena demais pra virar regra, mas o suficiente pra deixar claro que "virou classificador" não é sinônimo automático de "ficou mais preciso".
+
+Justiça seja feita com o mesmo teste de phishing: quando em vez de pedir um veredito único, o Jev responde cinco perguntas de sinal separadas e o código combina as cinco numa decisão, a acurácia sobe pra 95%, batendo até a versão composta do Claude com os mesmos cinco sinais (93,2%). Isso não invalida o número anterior, o veredito único de 62,6% continua sendo o veredito único de 62,6%, mas reforça exatamente o argumento deste texto: **decompor a decisão em perguntas de tipo fixo e deixar o código compor o resultado bate um LLM respondendo tudo de uma vez**, seja isso feito com Jev, com saída estruturada, ou com um classificador treinado pra aquele sinal específico.
+
+> **Pra guardar:** se o seu problema é decidir a mesma coisa, do mesmo jeito, várias vezes, construa ou use um classificador de verdade pra esse trabalho específico, com saída estruturada ou modelo dedicado. O ganho de trocar isso é real. O que não é automático é achar que qualquer produto que se chama "classificador" vai acertar mais que o LLM que ele substitui, porque às vezes acerta menos.
+
 ## E essa história de economizar token?
 
 O caso do TypeSafe me lembrou de uma implicância separada que eu já queria colocar no papel, e não é sobre eles especificamente: a promessa de economia de token e de custo que praticamente todo produto desse tipo vende. É sobre a categoria inteira de ferramenta que promete "economize X vezes gastando com a gente em vez de gastar direto com seu provedor", não uma acusação a mais contra o TypeSafe.
