@@ -51,7 +51,7 @@ What I'm saying is simpler than that whole debate: whatever your testing rigor l
 
 ## This Isn't "Ship Anything"
 
-And here I need to be very direct, because this is the part that always gets lost: I'm not saying to deploy with zero engineering practice underneath. I'm saying the opposite. This is only safe **after** you already have basic software engineering working, which I document exhaustively on this blog for years: automated tests, CI running on every push, real revert capability, observability to know when something broke.
+This is the part that always gets lost: I'm not saying to deploy with zero engineering practice underneath. I'm saying the opposite. This is only safe **after** you already have basic software engineering working, which I document exhaustively on this blog for years: automated tests, CI running on every push, real revert capability, observability to know when something broke.
 
 > 80/20. Ask the LLM to do a minimal review and ship it. If it breaks, revert (that's what containers, git, etc. are for). If you can't revert, your infra sucks, go fix it yesterday.
 

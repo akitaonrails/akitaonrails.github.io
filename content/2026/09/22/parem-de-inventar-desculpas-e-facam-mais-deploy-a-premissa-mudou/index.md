@@ -51,7 +51,7 @@ O que eu estou dizendo é mais simples que essa discussão inteira: seja qual fo
 
 ## Não é "suba qualquer coisa"
 
-E aqui eu preciso ser bem direto, porque essa é a parte que sempre se perde: eu não estou dizendo pra deployar sem nenhuma prática de engenharia por baixo. Estou dizendo o oposto. Isso só é seguro **depois** que você já tem a engenharia de software básica funcionando, o que eu documento à exaustão neste blog há anos: teste automatizado, CI que roda em todo push, capacidade real de reverter, observabilidade pra saber quando algo quebrou.
+Essa é a parte que sempre se perde: eu não estou dizendo pra deployar sem nenhuma prática de engenharia por baixo. Estou dizendo o oposto. Isso só é seguro **depois** que você já tem a engenharia de software básica funcionando, o que eu documento à exaustão neste blog há anos: teste automatizado, CI que roda em todo push, capacidade real de reverter, observabilidade pra saber quando algo quebrou.
 
 > 80/20. Peça pra LLM fazer uma revisão mínima e sobe. Se quebrar, reverte (pra isso temos containers, git, etc etc). Se não dá pra reverter, sua infra é uma bosta - corrija ela pra ontem.
 
