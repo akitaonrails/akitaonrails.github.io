@@ -139,6 +139,14 @@ One `/publish-podcast 2` later, the episode is published and the transcript alre
 
 From finished text to published audio, the entire process is me typing a slash command in a Discord conversation. That's the effort bar I use to measure whether a process is good enough: if publishing takes more than one command, some step is still too manual.
 
+### Does the Quality of the Generated Code Hold Up?
+
+Every single day someone shows up worried that automating too much with LLMs is going to dump bad code, or worse, dangerous code, into production without anyone noticing. Given that the engineering underneath is the one I described in the previous section, automated tests, CI, feature flags, staging, fast rollback, my actual experience doesn't back up that fear.
+
+I've produced more than 1.6 million lines of code with LLMs since February. **I have never once seen an LLM do something randomly destructive that I didn't ask for.** Quite the opposite: in my [LLM Benchmark v4](/en/2026/09/15/new-llm-benchmark-v4-retesting-all-top-llms-part-1/), I deliberately built an adversarial scenario, a subagent planting fourteen real CVE-based sabotage items, hidden inside a project that grows across seven sprints. Most of the tested models found and fixed the sabotage on their own, without me having to point it out.
+
+That's anecdotal. It doesn't prove anything beyond what that specific benchmark measures. But after all that volume, the impression that sticks is consistent: today's LLMs produce stable code most of the time, comparable to what a decent human developer would produce, just a lot faster, and on average, more accurate.
+
 ## Cross-Platform CI/CD With Zero Effort
 
 I went and counted how many of my `ai-*` and `frank-*` projects (18 repositories total, among the ones with a README) already have automated build and deploy. Fourteen have CI configured, and most of them build and publish to multiple operating system platforms from a push made on a Linux machine.
