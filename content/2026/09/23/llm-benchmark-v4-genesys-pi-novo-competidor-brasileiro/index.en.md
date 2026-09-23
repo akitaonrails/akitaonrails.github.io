@@ -40,7 +40,7 @@ Genesys PI House ties Grok 4.7 exactly at 83.5, Tier A. Enterprise lands one ste
 
 ## Who LUA Vision is
 
-[LUA Vision Tecnologia Ltda.](https://lua.vision/empresa/) is a São Paulo company, founded in late 2025 after three years of doctoral research (2022 to 2025) by Paulo Câmara, co-founder and CTO, an FGV graduate with a PhD from Tel Aviv University. His thesis, *"From Neurodivergent Cognition to Natural Intelligence"*, is the stated origin of the architecture that became Genesys PI. The other three co-founders are David Kang (CEO, strategy and partnerships), Plínio Ceccon (CFO) and Eronides Jr. (CRO, sales and revenue).
+[LUA Vision Tecnologia Ltda.](https://lua.vision/empresa/) is a São Paulo company, founded in late 2025 after three years of doctoral research (2022 to 2025) by Paulo Câmara, co-founder and CTO, an FGV graduate with a PhD from Tel Aviv University. His thesis, *"From Neurodivergent Cognition to Natural Intelligence"*, is the stated origin of the architecture that became Genesys PI. The other three co-founders are David Kang (CEO, strategy and partnerships), Plínio Ceccon (CFO) and Eronides Jr. (CRO, commercial and revenue).
 
 The Genesys PI model family launched in April 2026. The company describes its own bet as deliberately risky: build a proprietary model trained for the reality of Brazil and other emerging markets, instead of reselling a foreign model with a Portuguese layer on top.
 
@@ -48,7 +48,7 @@ Their core argument is that a model trained abroad doesn't really understand the
 
 On the technical side, they call their architecture NCAS and talk about five training phases "inspired by neural development", plus a self-monitoring module called PI-Probe that abstains from answering when the model doesn't have enough grounding to respond. [They published two papers of their own on Zenodo](https://lua.vision/pesquisa/): *["The weight you didn't choose"](https://doi.org/10.5281/zenodo.22899767)*, on the cost of tokenization across 31 languages, and *["Maximum capacity is not maximum efficiency"](https://doi.org/10.5281/zenodo.22881788)*, which introduces their own metric called the Synaptic Efficiency Coefficient. Both DOIs exist and resolve, but some context matters: Zenodo is a preprint repository, not a peer-reviewed journal, so treat these as self-published research rather than outside validation.
 
-LUA Vision also [opened a public issue on the LiveBench repository](https://github.com/LiveBench/LiveBench/issues/370) asking for Genesys PI to be added to the official leaderboard, with a self-reported score climbing from 87.6% (November 2024, a thousand questions, with coding as the weak spot at 34.4%) to 98.2% (January 2026, 682 questions). The issue is still open, with no maintainer confirming or rejecting the number as of this writing. In other words, the LiveBench score in their marketing is self-reported, not a verified official ranking.
+LUA Vision also [opened a public issue on the LiveBench repository](https://github.com/LiveBench/LiveBench/issues/370) asking for their model to be added to the official leaderboard, with a self-reported score climbing from 87.6% (November 2024, a thousand questions, with coding as the weak spot at 34.4%) to 98.2% (January 2026, 682 questions). Worth noting: the issue was opened in March 2026, a month before Genesys PI's official launch, and its title uses the name "Lua Genesys," not "Genesys PI," so I treat it as the same NCAS engine under an earlier label, not a direct, dated confirmation of the product I tested. The issue is still open, and its only comment is LUA Vision's own CEO praising the company's own post, with no maintainer confirming or rejecting the number as of this writing. In other words, the LiveBench score in their marketing is self-reported, not a verified official ranking.
 
 ## How Genesys PI did against the frontier and the Chinese competition
 
@@ -61,7 +61,8 @@ For anyone who just wants to know where it sits on the scale: Genesys PI House t
 - Claude Sonnet 5 (91.0);
 - both Gemini 3.8 Flash routes (89.5 and 90.5);
 - both Kimis, K2.7 (87.25) and K3 (85.0);
-- the pack right above it: Step 3.7 Flash (83.75), DeepSeek V4 Pro 0813 (84.0) and GLM 5.3 Flash (84.25).
+- the pack right above it: Step 3.7 Flash (83.75), DeepSeek V4 Pro 0813 (84.0) and GLM 5.3 Flash (84.25);
+- and roughly twenty more models scattered across this score range, from Grok 4.6 (98.5) to Claude Sonnet 4.6 (85.75), including three Claude tiers (Opus 4.6, Opus 4.8, Sonnet 4.6). In total, House falls behind 34 of the table's 46 models.
 
 And it beats GLM 5.2 (77.0), the previous-generation Gemini 3.7 Flash, MiniMax M3, and the whole bottom of the table. Enterprise (82.5) lands one step below its own House sibling, in the same general range.
 
@@ -79,12 +80,12 @@ One reliability note worth recording: Enterprise's first attempt got stuck in a 
 
 ## Price and cost: where the math gets tight
 
-Here's the second disclaimer I promised: LUA Vision gave me a free evaluation key for both tests, so I personally paid nothing. But the whole benchmark compares cost for whoever actually pays, so I recalculated the notional price a paying customer would face, using their own public API price list (the `/v1/models` endpoint), converted from reais to dollars at the rate at the time (5.16 BRL/USD).
+Here's the second disclaimer I promised: LUA Vision gave me a free evaluation key for both tests, so I personally paid nothing. But the whole benchmark compares cost for whoever actually pays, so I recalculated the notional price a paying customer would face, using the price list their API exposes to anyone with an access key (the `/v1/models` endpoint), converted from reais to dollars at the rate at the time (5.16 BRL/USD).
 
 The per-million-token price of the two tiers is very different:
 
 - **House**: R$ 55 input / R$ 275 output per million tokens;
-- **Enterprise**: R$ 4 input / R$ 20 output per million tokens, about fourteen times cheaper than House per token.
+- **Enterprise**: R$ 4 input / R$ 20 output per million tokens, about 13.75 times cheaper than House per token.
 
 The House run's total cost came to about $460 notional, steep for an 83.5 score. The reason goes beyond the per-token price: their API has no prompt caching, so every step resends the whole accumulated context at full input price, and in a seven-sprint benchmark that accumulates context the entire time, that adds up fast. Enterprise, with a much lower per-token price, closed at about $19 notional for the same sabotage, going toe to toe with cheap options like Grok 4.5 ($6.19) or Claude Sonnet 4.6 ($18.64), only with a lower score than both.
 

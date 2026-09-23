@@ -48,7 +48,7 @@ O argumento central deles é que modelo treinado fora não entende bem estrutura
 
 Tecnicamente, eles batizam a própria arquitetura de NCAS e falam de cinco fases de treino "inspiradas em desenvolvimento neural", mais um módulo de automonitoramento chamado PI-Probe, que abstém resposta quando o modelo não tem base suficiente pra responder. [Publicaram dois artigos próprios no Zenodo](https://lua.vision/pesquisa/), *["O peso que você não escolheu"](https://doi.org/10.5281/zenodo.22899767)*, sobre o custo de tokenização em 31 línguas diferentes, e *["Capacidade máxima não é eficiência máxima"](https://doi.org/10.5281/zenodo.22881788)*, introduzindo uma métrica própria chamada Coeficiente de Eficiência Sináptica. Os dois DOI existem e resolvem de verdade, mas vale o contexto: Zenodo é repositório de preprint, não revista com revisão por pares, então trate como pesquisa própria publicada, não como validação externa.
 
-A LUA Vision também [abriu uma issue pública no repositório do LiveBench](https://github.com/LiveBench/LiveBench/issues/370) pedindo inclusão do Genesys PI no ranking oficial, com nota autodeclarada subindo de 87,6% (novembro de 2024, mil perguntas, com destaque negativo pra codificação, 34,4%) pra 98,2% (janeiro de 2026, 682 perguntas). A issue segue aberta, sem posição de mantenedor confirmando ou rejeitando o número até a data deste texto. Ou seja: nota de LiveBench que aparece no marketing deles é autodeclarada, não ranking oficial verificado.
+A LUA Vision também [abriu uma issue pública no repositório do LiveBench](https://github.com/LiveBench/LiveBench/issues/370) pedindo inclusão do modelo deles no ranking oficial, com nota autodeclarada subindo de 87,6% (novembro de 2024, mil perguntas, com destaque negativo pra codificação, 34,4%) pra 98,2% (janeiro de 2026, 682 perguntas). Vale o detalhe: a issue foi aberta em março de 2026, um mês antes do lançamento oficial do Genesys PI, e o título nela usa o nome "Lua Genesys", não "Genesys PI", então trato como o mesmo motor NCAS numa fase anterior de rótulo, não uma confirmação direta e datada do produto que testei. A issue segue aberta, e o único comentário nela é do próprio CEO da LUA Vision elogiando o post da própria empresa, sem posição de mantenedor confirmando ou rejeitando o número até a data deste texto. Ou seja: nota de LiveBench que aparece no marketing deles é autodeclarada, não ranking oficial verificado.
 
 ## Como o Genesys PI se saiu contra a fronteira e contra a concorrência chinesa
 
@@ -61,7 +61,8 @@ Direto ao ponto de quem só quer saber onde ele fica na régua: o Genesys PI Hou
 - Claude Sonnet 5 (91,0);
 - as duas rotas do Gemini 3.8 Flash (89,5 e 90,5);
 - os dois Kimi, K2.7 (87,25) e K3 (85,0);
-- o pelotão logo acima: Step 3.7 Flash (83,75), DeepSeek V4 Pro 0813 (84,0) e GLM 5.3 Flash (84,25).
+- o pelotão logo acima: Step 3.7 Flash (83,75), DeepSeek V4 Pro 0813 (84,0) e GLM 5.3 Flash (84,25);
+- e mais uns vinte modelos espalhados por essa faixa de nota, de Grok 4.6 (98,5) a Claude Sonnet 4.6 (85,75), incluindo três tiers Claude (Opus 4.6, Opus 4.8, Sonnet 4.6). No total, o House fica atrás de 34 dos 46 modelos da tabela.
 
 E fica à frente de GLM 5.2 (77,0), do Gemini 3.7 Flash da geração anterior, do MiniMax M3, e de todo o fundo de tabela. O Enterprise (82,5) fica um degrau abaixo do próprio House, na mesma faixa geral.
 
@@ -79,12 +80,12 @@ Vale registrar um ponto de confiabilidade: a primeira tentativa do Enterprise tr
 
 ## Preço e custo: onde a conta aperta
 
-Aqui vale o segundo disclaimer prometido: a LUA Vision me deu uma chave de avaliação sem custo pros dois testes, então eu pessoalmente não paguei nada. Mas o benchmark inteiro compara custo pra quem for pagar de verdade, então recalculei o preço nocional que um cliente pagante teria, usando a própria tabela pública de preço da API deles (endpoint `/v1/models`), convertida de real pra dólar na cotação da época (5,16 BRL/USD).
+Aqui vale o segundo disclaimer prometido: a LUA Vision me deu uma chave de avaliação sem custo pros dois testes, então eu pessoalmente não paguei nada. Mas o benchmark inteiro compara custo pra quem for pagar de verdade, então recalculei o preço nocional que um cliente pagante teria, usando a própria tabela de preço que a API deles expõe pra quem tem chave de acesso (endpoint `/v1/models`), convertida de real pra dólar na cotação da época (5,16 BRL/USD).
 
 O preço por milhão de token dos dois tiers é bem diferente:
 
 - **House**: R$ 55 de entrada / R$ 275 de saída por milhão de token;
-- **Enterprise**: R$ 4 de entrada / R$ 20 de saída por milhão de token, cerca de catorze vezes mais barato que o House por token.
+- **Enterprise**: R$ 4 de entrada / R$ 20 de saída por milhão de token, cerca de 13,75 vezes mais barato que o House por token.
 
 O custo total da rodada do House ficou em torno de $460 nocional, alto pra uma nota de 83,5. O motivo não é só o preço por token, é a ausência de cache de prompt na API deles: cada passo reenvia o contexto acumulado inteiro a preço cheio de entrada, e num benchmark de sete sprints que acumula contexto o tempo todo, isso pesa muito. O Enterprise, com preço por token bem mais baixo, fechou em torno de $19 nocional pela mesma sabotagem, competindo de igual pra igual com opção barata como o Grok 4.5 ($6,19) ou o Claude Sonnet 4.6 ($18,64), só que com nota mais baixa que os dois.
 
