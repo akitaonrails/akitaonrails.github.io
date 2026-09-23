@@ -28,6 +28,7 @@ ALLOWED_TAGS = {
 }.transform_values(&:freeze).freeze
 
 FEATURED_POSTS = [
+  ['2026-09-23', 'LLM Benchmark v4: Opus 5.5, GPT Sol/Luna 6, Mimo 2.6, Grok 4.7', '/2026/09/23/llm-benchmark-v4-opus-5-5-gpt-6-sol-luna-mimo-2-6-grok-4-7/'],
   ['2026-09-22', 'Cuidado! Pseudo-Techcrunch tentou me pegar em golpe! E Calendly é uma MERDA', '/2026/09/22/pseudo-techcrunch-tentou-me-pegar-em-golpe-calendly-e-uma-merda/'],
   ['2026-09-22', 'Parem de inventar desculpas e façam mais deploy! Com a IA, a premissa mudou. Entendam.', '/2026/09/22/parem-de-inventar-desculpas-e-facam-mais-deploy-a-premissa-mudou/'],
   ['2026-09-17', 'A IA desmascarou a histeria das mudanças climáticas', '/2026/09/17/ia-desmascarou-histeria-mudancas-climaticas/'],
@@ -56,6 +57,7 @@ FEATURED_POSTS = [
 ].freeze
 
 FEATURED_POSTS_EN = [
+  ['2026-09-23', 'LLM Benchmark v4: Opus 5.5, GPT Sol/Luna 6, Mimo 2.6, Grok 4.7', '/en/2026/09/23/llm-benchmark-v4-opus-5-5-gpt-6-sol-luna-mimo-2-6-grok-4-7/'],
   ['2026-09-22', 'Watch Out! A Pseudo-TechCrunch Tried to Scam Me! And Calendly Is SHIT', '/en/2026/09/22/pseudo-techcrunch-tried-to-scam-me-calendly-is-shit/'],
   ['2026-09-22', 'Stop Making Excuses and Ship More! With AI, the Premise Changed. Get It.', '/en/2026/09/22/stop-making-excuses-and-ship-more-the-premise-changed/'],
   ['2026-09-17', 'AI Unmasked the Climate Change Hysteria', '/en/2026/09/17/ai-unmasked-climate-hysteria/'],
@@ -119,11 +121,11 @@ def extract_frontmatter(content)
   YAML.safe_load(yaml_content, permitted_classes: [Date, Time])
 end
 
-def parse_post(path, lang: :pt)
+def parse_post(path, lang: :pt, include_drafts: false)
   content = File.read(path)
   frontmatter = extract_frontmatter(content)
   return nil unless frontmatter&.dig('title') && frontmatter&.dig('date')
-  return nil if frontmatter['draft'] == true
+  return nil if frontmatter['draft'] == true && !include_drafts
 
   date = DateTime.parse(frontmatter['date'].to_s)
   base_path = path.sub(%r{/index(\.en)?\.md\z}, '')
@@ -170,61 +172,61 @@ def off_topic_post?(post)
   post[:tags].include?('off-topic')
 end
 
-def collect_posts(include_future: false)
+def collect_posts(include_future: false, include_drafts: false)
   now = DateTime.now
   Dir.glob("#{CONTENT_DIR}/**/index.md")
      .reject { |path| path == "#{CONTENT_DIR}/index.md" || path == "#{CONTENT_DIR}/_index.md" }
      .reject { |path| path.start_with?("#{ARCHIVES_DIR}/") }
      .reject { |path| path.start_with?("#{AKITANDO_DIR}/") }
      .reject { |path| path.start_with?("#{OFF_TOPIC_DIR}/") }
-     .filter_map { |path| parse_post(path, lang: :pt) }
+     .filter_map { |path| parse_post(path, lang: :pt, include_drafts: include_drafts) }
      .reject { |post| akitando_post?(post) }
      .select { |post| include_future || post[:date] <= now }
 end
 
-def collect_posts_en(include_future: false)
+def collect_posts_en(include_future: false, include_drafts: false)
   now = DateTime.now
   Dir.glob("#{CONTENT_DIR}/**/index.en.md")
      .reject { |path| path.start_with?("#{ARCHIVES_DIR}/") }
      .reject { |path| path.start_with?("#{AKITANDO_DIR}/") }
      .reject { |path| path.start_with?("#{OFF_TOPIC_DIR}/") }
-     .filter_map { |path| parse_post(path, lang: :en) }
+     .filter_map { |path| parse_post(path, lang: :en, include_drafts: include_drafts) }
      .reject { |post| akitando_post?(post) }
      .select { |post| include_future || post[:date] <= now }
 end
 
-def collect_off_topic_posts(include_future: false)
+def collect_off_topic_posts(include_future: false, include_drafts: false)
   now = DateTime.now
   Dir.glob("#{CONTENT_DIR}/**/index.md")
      .reject { |path| path == "#{CONTENT_DIR}/index.md" || path == "#{CONTENT_DIR}/_index.md" }
      .reject { |path| path.start_with?("#{ARCHIVES_DIR}/") }
      .reject { |path| path.start_with?("#{AKITANDO_DIR}/") }
      .reject { |path| path.start_with?("#{OFF_TOPIC_DIR}/") }
-     .filter_map { |path| parse_post(path, lang: :pt) }
+     .filter_map { |path| parse_post(path, lang: :pt, include_drafts: include_drafts) }
      .reject { |post| akitando_post?(post) }
      .select { |post| off_topic_post?(post) }
      .select { |post| include_future || post[:date] <= now }
 end
 
-def collect_off_topic_posts_en(include_future: false)
+def collect_off_topic_posts_en(include_future: false, include_drafts: false)
   now = DateTime.now
   Dir.glob("#{CONTENT_DIR}/**/index.en.md")
      .reject { |path| path.start_with?("#{ARCHIVES_DIR}/") }
      .reject { |path| path.start_with?("#{AKITANDO_DIR}/") }
      .reject { |path| path.start_with?("#{OFF_TOPIC_DIR}/") }
-     .filter_map { |path| parse_post(path, lang: :en) }
+     .filter_map { |path| parse_post(path, lang: :en, include_drafts: include_drafts) }
      .reject { |post| akitando_post?(post) }
      .select { |post| off_topic_post?(post) }
      .select { |post| include_future || post[:date] <= now }
 end
 
-def collect_akitando_posts(include_future: false)
+def collect_akitando_posts(include_future: false, include_drafts: false)
   now = DateTime.now
   Dir.glob("#{CONTENT_DIR}/**/index.md")
      .reject { |path| path == "#{CONTENT_DIR}/index.md" || path == "#{CONTENT_DIR}/_index.md" }
      .reject { |path| path.start_with?("#{ARCHIVES_DIR}/") }
      .reject { |path| path.start_with?("#{OFF_TOPIC_DIR}/") }
-     .filter_map { |path| parse_post(path, lang: :pt) }
+     .filter_map { |path| parse_post(path, lang: :pt, include_drafts: include_drafts) }
      .select { |post| akitando_post?(post) }
      .select { |post| include_future || post[:date] <= now }
 end
@@ -609,7 +611,20 @@ def generate_off_topic_en(grouped_posts)
 end
 
 include_future = ARGV.include?('--future')
-posts = collect_posts(include_future: include_future)
+include_drafts = ARGV.include?('--drafts')
+suffix_parts = []
+suffix_parts << 'future posts' if include_future
+suffix_parts << 'drafts' if include_drafts
+suffix = suffix_parts.empty? ? '' : " (including #{suffix_parts.join(' + ')})"
+
+if include_drafts
+  warn '*** --drafts is a local preview flag only. Draft posts will appear in the generated'
+  warn '*** _index.md files below. Do NOT commit these files while --drafts is on — re-run'
+  warn '*** this script WITHOUT --drafts before committing, or you will leak unpublished'
+  warn '*** posts (title, URL, description) onto the live homepage/archive.'
+end
+
+posts = collect_posts(include_future: include_future, include_drafts: include_drafts)
 grouped = group_by_month(posts)
 
 recent = grouped.select { |(year, _month), _| year >= CUTOFF_YEAR }
@@ -619,41 +634,47 @@ Dir.mkdir(ARCHIVES_DIR) unless Dir.exist?(ARCHIVES_DIR)
 
 File.write(INDEX_FILE, generate_index(recent))
 recent_count = recent.values.flatten.size
-puts "Generated #{INDEX_FILE} with #{recent_count} posts (#{CUTOFF_YEAR}+).#{' (including future posts)' if include_future}"
+puts "Generated #{INDEX_FILE} with #{recent_count} posts (#{CUTOFF_YEAR}+).#{suffix}"
 
 File.write(ARCHIVES_FILE, generate_archives(archived))
 archived_count = archived.values.flatten.size
-puts "Generated #{ARCHIVES_FILE} with #{archived_count} posts (before #{CUTOFF_YEAR}).#{' (including future posts)' if include_future}"
+puts "Generated #{ARCHIVES_FILE} with #{archived_count} posts (before #{CUTOFF_YEAR}).#{suffix}"
 
 # English index — only posts with index.en.md siblings
-posts_en = collect_posts_en(include_future: include_future)
+posts_en = collect_posts_en(include_future: include_future, include_drafts: include_drafts)
 grouped_en = group_by_month(posts_en)
 recent_en = grouped_en.select { |(year, _month), _| year >= CUTOFF_YEAR }
 
 File.write(INDEX_FILE_EN, generate_index_en(recent_en))
 recent_en_count = recent_en.values.flatten.size
-puts "Generated #{INDEX_FILE_EN} with #{recent_en_count} posts."
+puts "Generated #{INDEX_FILE_EN} with #{recent_en_count} posts.#{suffix}"
 
 archived_en = grouped_en.select { |(year, _month), _| year < CUTOFF_YEAR }
 File.write(ARCHIVES_FILE_EN, generate_archives_en(archived_en))
 archived_en_count = archived_en.values.flatten.size
-puts "Generated #{ARCHIVES_FILE_EN} with #{archived_en_count} posts (before #{CUTOFF_YEAR})."
+puts "Generated #{ARCHIVES_FILE_EN} with #{archived_en_count} posts (before #{CUTOFF_YEAR}).#{suffix}"
 
 # Akitando transcripts page (PT only — no EN translation, EN sidebar links to /akitando/)
 Dir.mkdir(AKITANDO_DIR) unless Dir.exist?(AKITANDO_DIR)
-akitando_posts = collect_akitando_posts(include_future: include_future)
+akitando_posts = collect_akitando_posts(include_future: include_future, include_drafts: include_drafts)
 grouped_akitando = group_by_month(akitando_posts)
 File.write(AKITANDO_FILE, generate_akitando(grouped_akitando))
-puts "Generated #{AKITANDO_FILE} with #{akitando_posts.size} posts."
+puts "Generated #{AKITANDO_FILE} with #{akitando_posts.size} posts.#{suffix}"
 
 # Off-Topic page (PT + EN)
 Dir.mkdir(OFF_TOPIC_DIR) unless Dir.exist?(OFF_TOPIC_DIR)
-off_topic_posts = collect_off_topic_posts(include_future: include_future)
+off_topic_posts = collect_off_topic_posts(include_future: include_future, include_drafts: include_drafts)
 grouped_off_topic = group_by_month(off_topic_posts)
 File.write(OFF_TOPIC_FILE, generate_off_topic(grouped_off_topic))
-puts "Generated #{OFF_TOPIC_FILE} with #{off_topic_posts.size} posts."
+puts "Generated #{OFF_TOPIC_FILE} with #{off_topic_posts.size} posts.#{suffix}"
 
-off_topic_posts_en = collect_off_topic_posts_en(include_future: include_future)
+off_topic_posts_en = collect_off_topic_posts_en(include_future: include_future, include_drafts: include_drafts)
 grouped_off_topic_en = group_by_month(off_topic_posts_en)
 File.write(OFF_TOPIC_FILE_EN, generate_off_topic_en(grouped_off_topic_en))
-puts "Generated #{OFF_TOPIC_FILE_EN} with #{off_topic_posts_en.size} posts."
+puts "Generated #{OFF_TOPIC_FILE_EN} with #{off_topic_posts_en.size} posts.#{suffix}"
+
+if include_drafts
+  warn ''
+  warn "*** Reminder: #{[INDEX_FILE, ARCHIVES_FILE, INDEX_FILE_EN, ARCHIVES_FILE_EN, AKITANDO_FILE, OFF_TOPIC_FILE, OFF_TOPIC_FILE_EN].join(', ')}"
+  warn '*** were just regenerated WITH drafts. Re-run without --drafts before committing.'
+end
