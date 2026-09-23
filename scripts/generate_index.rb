@@ -28,6 +28,7 @@ ALLOWED_TAGS = {
 }.transform_values(&:freeze).freeze
 
 FEATURED_POSTS = [
+  ['2026-09-22', 'Cuidado! Pseudo-Techcrunch tentou me pegar em golpe! E Calendly é uma MERDA', '/2026/09/22/pseudo-techcrunch-tentou-me-pegar-em-golpe-calendly-e-uma-merda/'],
   ['2026-09-22', 'Parem de inventar desculpas e façam mais deploy! Com a IA, a premissa mudou. Entendam.', '/2026/09/22/parem-de-inventar-desculpas-e-facam-mais-deploy-a-premissa-mudou/'],
   ['2026-09-17', 'A IA desmascarou a histeria das mudanças climáticas', '/2026/09/17/ia-desmascarou-histeria-mudancas-climaticas/'],
   ['2026-09-17', 'Falando um pouco sobre minhas Skills de IA', '/2026/09/17/falando-um-pouco-sobre-minhas-skills-de-ia/'],
@@ -55,6 +56,7 @@ FEATURED_POSTS = [
 ].freeze
 
 FEATURED_POSTS_EN = [
+  ['2026-09-22', 'Watch Out! A Pseudo-TechCrunch Tried to Scam Me! And Calendly Is SHIT', '/en/2026/09/22/pseudo-techcrunch-tried-to-scam-me-calendly-is-shit/'],
   ['2026-09-22', 'Stop Making Excuses and Ship More! With AI, the Premise Changed. Get It.', '/en/2026/09/22/stop-making-excuses-and-ship-more-the-premise-changed/'],
   ['2026-09-17', 'AI Unmasked the Climate Change Hysteria', '/en/2026/09/17/ai-unmasked-climate-hysteria/'],
   ['2026-09-17', 'Talking a Bit About My AI Skills', '/en/2026/09/17/talking-about-my-ai-skills/'],
