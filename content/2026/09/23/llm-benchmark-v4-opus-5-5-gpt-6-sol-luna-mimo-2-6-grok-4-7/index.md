@@ -33,14 +33,14 @@ Mesma tabela da Parte 2, agora com 44 linhas. Os cinco modelos desta atualizaç�
 | 8 | Grok 4.6 ᶜ | 98,5 | A | — | $13,00 | 67min | opencode |
 | 9 | Claude Fable 5.1 | 95,5 | A | — | ~$51 | 133min | claude |
 | 9 | Sakana Fugu Ultra v2 ᴺ | 95,5 | A | — | $122,01 | 294min | opencode |
-| 9 | **GPT 6 luna** | 95,5 | A | — | $44,90 | 122min | codex |
+| 9 | **GPT 6 luna** | 95,5 | A | — | ~$0,84 ᵉ | 122min | codex |
 | 12 | GPT 5.6 luna | 95,0 | A | item #8 (2) | $10,04 | 123min | codex |
 | 13 | Nex N2.5 Pro ᴺ | 94,0 * | A | — (não commitado) | **$0 grátis** | 480min | opencode |
 | 13 | GLM 5.3 (zcode) ᴺ | 94,0 | A | — | plano flat-rate | 215min | zcode |
 | 15 | DeepSeek V4.1 Flash ᴺ | 92,5 | A | — | **$1,21** | 172min | opencode |
 | 16 | **Xiaomi MiMo V2.6 Pro** | 92,0 | A | item #12 (2) | **$1,22** | 308min | opencode |
 | 17 | Claude Sonnet 5 | 91,0 | A | — | ~$27 | 112min | claude |
-| 17 | **GPT 6 sol** | 91,0 | A | — | $22,06 | 73min | codex |
+| 17 | **GPT 6 sol** | 91,0 | A | — | ~$8,35 ᵉ | 73min | codex |
 | 19 | Gemini 3.8 Flash·high (OpenRouter) | 90,5 | A | item #12 (2) | $15,98 | 97min | opencode |
 | 20 | Gemini 3.8 Flash (Antigravity) ᴺ | 89,5 | A | — | $0 (OAuth) | 120min | agy |
 | 21 | Muse Spark 1.3 | 88,75 | A | — | $13,31 | 150min | opencode |
@@ -70,6 +70,8 @@ Mesma tabela da Parte 2, agora com 44 linhas. Os cinco modelos desta atualizaç�
 
 Custo não é comparável entre harnesses diferentes: codex/opencode/kimi cobram por token de verdade, Claude usa assinatura Max (custo nocional), Antigravity é OAuth do Google sem custo por token, zcode é plano flat-rate. Compare custo só dentro do mesmo harness.
 
+**Nota sobre o custo do GPT 6 sol e luna (ᵉ):** os dois rodam por assinatura ChatGPT, não API paga por token, então o custo na tabela é uma estimativa, preço por milhão de tokens publicado pela OpenAI ($2 de entrada / $10 de saída pro sol, $0,10 / $0,50 pro luna, o luna sai vinte vezes mais barato por token) aplicado à contagem real de token de cada sprint.
+
 ## As surpresas dessa rodada
 
 ### Grok 4.7 regrediu, e não só na nota
@@ -86,11 +88,13 @@ O Opus 5.5 entrou direto no clube dos 100 pontos, empatando com Astra, Opus 5, F
 
 O número que importa de verdade: **$16,63 e 64 minutos** contra **~$71 e 145 minutos** do Opus 5, pra chegar exatamente na mesma nota perfeita. Um quarto do custo, menos da metade do tempo, zero perda de qualidade nesse teste específico.
 
-### GPT 6 sol e luna: caro e, em vigilância, pior que o antecessor
+### GPT 6 sol regride em vigilância, GPT 6 luna acerta em cheio
 
-O GPT 6 sol fechou em 91,0, empatado com o Claude Sonnet 5, mas nove pontos abaixo do próprio GPT 5.6 sol (100,0), pagando um pouco mais, $22,06 contra $20,37, num tempo bem menor. O GPT 6 luna fez 95,5, tecnicamente empatando ou passando um pouco o GPT 5.6 luna (95,0), só que custando **quatro vezes e meia mais**, $44,90 contra $10,04, pra ganho de meio ponto.
+O GPT 6 sol fechou em 91,0, empatado com o Claude Sonnet 5, nove pontos abaixo do próprio GPT 5.6 sol (100,0), mas custando bem menos, ~$8,35 contra $20,37, em menos de um quarto do tempo. Regressão real em vigilância, ganho real em custo e velocidade.
 
-O padrão de erro do sol é o mesmo do Grok 4.7: pega o óbvio sozinho, empurra o disfarçado pra revelação. O luna se saiu bem melhor, só deixou o XSS armazenado escapar até a revelação, o resto pegou tudo sozinho, incluindo o item mais disfarçado do teste inteiro com uma correção que foi além do pedido, um índice único a nível de banco de dados. Entre os dois, luna é claramente o mais vigilante, mas nenhum dos dois justifica o preço mais alto olhando só pra essa métrica.
+O GPT 6 luna é o destaque positivo da dupla. Fez 95,5, empatando ou passando um pouco o GPT 5.6 luna (95,0), e custando ~$0,84 contra $10,04, cerca de doze vezes menos. Pegou sozinho praticamente tudo, só deixou o XSS armazenado escapar até a revelação, incluindo o item mais disfarçado do teste inteiro com uma correção que foi além do pedido, um índice único a nível de banco de dados. Nota igual ou melhor, custo desabando: a mesma classe de resultado que o Opus 5.5 entregou.
+
+O padrão de erro do sol é o mesmo do Grok 4.7: pega o óbvio sozinho, empurra o disfarçado pra revelação. O luna, de novo, é claramente o mais vigilante dos dois irmãos, e agora também o mais barato dos dois por uma margem enorme.
 
 ### MiMo V2.6 Pro: o salto geracional que se sustenta
 
@@ -112,8 +116,9 @@ Fui atrás de quem também testou esses cinco modelos, porque nenhum benchmark i
 Nota mais alta num benchmark, o meu ou qualquer outro, não é sinônimo automático de "troque agora". Aqui vai minha resposta direta, modelo por modelo, olhando qualidade contra custo, não só o número isolado.
 
 - **Você usa Grok 4.6 hoje?** Não migre pro 4.7 por causa de segurança. É pior, mais caro e mais lento nos três eixos que meço. Só vale a pena se alguma outra capacidade fora do meu teste justificar, e mesmo assim eu esperaria mais de uma rodada independente confirmando antes de trocar produção.
-- **Você usa GPT 5.6 sol ou terra?** Não tem motivo pra subir pro GPT 6 sol olhando só pra vigilância, você paga o mesmo ou mais e recebe nota pior. Se seu interesse é em outras capacidades do GPT 6, teste você mesmo antes de assumir que "mais novo" significa "melhor pro seu caso".
-- **Você usa Opus 5?** Esse é o caso raro onde a resposta é sim sem ressalva: Opus 5.5 entrega a mesma nota perfeita por um quarto do custo e metade do tempo. Ganho em todos os eixos que meço, ao mesmo tempo.
+- **Você usa GPT 5.6 sol?** Migrar pro GPT 6 sol custa bem menos, mas perde nove pontos de vigilância. Vale a troca se custo pesa mais que segurança no seu caso, não vale se você depende justamente dessa vigilância mais alta.
+- **Você usa GPT 5.6 luna?** Suba pro GPT 6 luna sem pensar duas vezes: nota igual ou melhor por uma fração pequena do custo anterior. Junto com o Opus 5.5, esse é o outro caso raro de vitória limpa em todos os eixos.
+- **Você usa Opus 5?** Esse é outro caso onde a resposta é sim sem ressalva: Opus 5.5 entrega a mesma nota perfeita por um quarto do custo e metade do tempo. Ganho em todos os eixos que meço, ao mesmo tempo.
 - **Você usa MiMo V2.5 Pro?** Vale subir pro V2.6 Pro, o salto de qualidade é real e o custo continua na casa de um dólar. Só não esqueça de revisar CORS manualmente, porque esse modelo especificamente ainda erra nisso mesmo depois de avisado.
 
 A régua de sempre continua valendo: teste dentro do seu próprio fluxo de trabalho antes de trocar modelo em produção só porque um benchmark, incluindo o meu, subiu ou desceu um número.
@@ -124,6 +129,8 @@ Faz onze dias que o Dario Amodei publicou o ensaio pedindo pra ["pacear a fronte
 
 Não escrevi essa coincidência, só reparei nela. Continua sendo exatamente o padrão sincronizado que eu já tinha apontado: o discurso público é "vamos desacelerar juntos", o calendário de lançamento continua andando junto também.
 
-Tem outro ângulo nessa ironia que vale registrar. Das duas empresas que prometeram desacelerar e ainda assim aceleraram o lançamento, OpenAI e xAI, nenhuma mostrou uma vitória limpa nesse teste específico: GPT 6 sol e Grok 4.7 regrediram contra o próprio antecessor, e GPT 6 luna ficou tecnicamente empatado custando quatro vezes e meia mais. Só a Anthropic, justamente a autora do ensaio pedindo pra pacear a fronteira, entregou melhoria de verdade em todos os eixos com o Opus 5.5. Acelerar o ritmo de lançamento e entregar modelo igual ou pior nessa medida específica, de propósito? Sei lá. Só reparei no padrão, de novo.
+Tem outro ângulo nessa ironia que vale registrar, e ficou menos limpo do que parecia numa primeira olhada. Dentro do mesmo lote acelerado, o resultado nem é uniforme dentro da mesma empresa: o Grok 4.7 da xAI regrediu feio, e o GPT 6 sol da OpenAI também regrediu em vigilância.
+
+O irmão do sol, o GPT 6 luna, saiu como vitória limpa, nota igual ou melhor por uma fração do custo, a mesma classe de resultado que a Anthropic entregou com o Opus 5.5. Acelerar o lançamento não virou sinônimo de piorar em bloco, virou loteria, a ponto de uma única empresa lançar um modelo pior e um melhor na mesma semana.
 
 E enquanto o trio americano assinava o pacto de desacelerar e entregava resultado misto fazendo isso, a Xiaomi, chinesa, sem assinar pacto nenhum, sem fazer discurso nenhum sobre "pacear a fronteira", simplesmente soltou o MiMo V2.6 Pro com um salto de qualidade real sobre o próprio antecessor. Ninguém do lado chinês prometeu desacelerar. E, pelo menos nessa amostra, ninguém do lado chinês desacelerou.
