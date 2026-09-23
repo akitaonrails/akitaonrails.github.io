@@ -2,6 +2,8 @@
 title: AkitaOnRails Blog
 ---
 
+**Novo:** publiquei o [Akita's AI Lair](https://ailair.akitaonrails.com/pt-br), a página central com as ferramentas, skills e o workflow que uso pra rodar agente de IA em mais de 40 repositórios: ai-usagebar, ghpending, tclock, ai-memory, ai-jail e o meu benchmark de LLM.
+
 Procurando posts mais antigos? [Veja o arquivo completo →](/archives/)
 
 {{< index-view-toggle list="Lista" grid="Grade" label="Visualização dos posts" >}}

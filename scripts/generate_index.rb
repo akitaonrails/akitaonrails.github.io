@@ -537,8 +537,16 @@ def render_featured_section(id:, title:, button_open:, button_closed:, posts:, a
   lines
 end
 
+AILAIR_ANNOUNCEMENT_PT = '**Novo:** publiquei o [Akita\'s AI Lair](https://ailair.akitaonrails.com/pt-br), ' \
+  'a página central com as ferramentas, skills e o workflow que uso pra rodar agente de IA em mais de 40 ' \
+  'repositórios: ai-usagebar, ghpending, tclock, ai-memory, ai-jail e o meu benchmark de LLM.'
+AILAIR_ANNOUNCEMENT_EN = '**New:** I published [Akita\'s AI Lair](https://ailair.akitaonrails.com), the ' \
+  'central page for the tools, skills, and workflow I use to run AI agents across 40+ repositories: ' \
+  'ai-usagebar, ghpending, tclock, ai-memory, ai-jail, and my LLM benchmark.'
+
 def generate_index(grouped_posts)
   lines = ["#{FRONTMATTER_DELIMITER}\ntitle: AkitaOnRails Blog\n#{FRONTMATTER_DELIMITER}\n"]
+  lines << "#{AILAIR_ANNOUNCEMENT_PT}\n"
   lines << "Procurando posts mais antigos? [Veja o arquivo completo →](/archives/)\n"
   lines.concat(render_index_view_toggle(lang: :pt))
   lines.concat(render_featured_posts(grouped_posts))
@@ -557,6 +565,7 @@ end
 
 def generate_index_en(grouped_posts)
   lines = ["#{FRONTMATTER_DELIMITER}\ntitle: AkitaOnRails Blog\n#{FRONTMATTER_DELIMITER}\n"]
+  lines << "#{AILAIR_ANNOUNCEMENT_EN}\n"
   lines << "Looking for older posts? [Browse the full archive →](/en/archives/)\n"
   if grouped_posts.empty?
     lines << "_No posts translated to English yet. Check back soon._\n"
