@@ -80,16 +80,20 @@ One reliability note worth recording: Enterprise's first attempt got stuck in a 
 
 ## Price and cost: where the math gets tight
 
-Here's the second disclaimer I promised: LUA Vision gave me a free evaluation key for both tests, so I personally paid nothing. But the whole benchmark compares cost for whoever actually pays, so I recalculated the notional price a paying customer would face, using the price list their API exposes to anyone with an access key (the `/v1/models` endpoint), converted from reais to dollars at the rate at the time (5.16 BRL/USD).
+Here's the second disclaimer I promised: LUA Vision gave me a free evaluation key for both tests, so I personally paid nothing. But the whole benchmark compares cost for whoever actually pays, so I recalculated the notional price a paying customer would face, using the price list their API exposed to anyone with an access key at the time (the `/v1/models` endpoint), converted from reais to dollars at the rate at the time (5.16 BRL/USD).
 
-The per-million-token price of the two tiers is very different:
+> **Update (2026-09-24):** after this went up, Eronides Jr., LUA Vision's co-founder and CRO, commented publicly on the numbers used in this post: "Wow, we're happy about the tests and the feedback. About the numbers: what we put in the API were just examples. Our commercial model, in practice, will be by usage license, not by tokens, since the solution will run on the customers' own infrastructure. In other words, token consumption doesn't change anything for us. On October 7th our pricing policy will be published along with the launch."
+
+In other words: the R$ 55/275 (House) and R$ 4/20 (Enterprise) per-million-token figures I used below were just placeholder examples in the test API, not the real market price. The actual commercial model will be a usage license running on the customer's own infrastructure, so token consumption doesn't factor into their billing. I'm keeping the notional analysis below because it's what I could measure with the key I got, and it still illustrates the impact of running without prompt caching, but treat it as an exercise, not an official price list. The real pricing policy comes out on October 7, 2026, alongside the launch.
+
+The per-million-token price of the two tiers, as it stood in the test API, was very different:
 
 - **House**: R$ 55 input / R$ 275 output per million tokens;
 - **Enterprise**: R$ 4 input / R$ 20 output per million tokens, about 13.75 times cheaper than House per token.
 
-The House run's total cost came to about $460 notional, steep for an 83.5 score. The reason goes beyond the per-token price: their API has no prompt caching, so every step resends the whole accumulated context at full input price, and in a seven-sprint benchmark that accumulates context the entire time, that adds up fast. Enterprise, with a much lower per-token price, closed at about $19 notional for the same sabotage, going toe to toe with cheap options like Grok 4.5 ($6.19) or Claude Sonnet 4.6 ($18.64), only with a lower score than both.
+At those example figures, the House run's total cost would come to about $460 notional, steep for an 83.5 score. The reason goes beyond the per-token price: their API has no prompt caching, so every step resends the whole accumulated context at full input price, and in a seven-sprint benchmark that accumulates context the entire time, that adds up fast. Enterprise, with a much lower per-token price, would close at about $19 notional for the same sabotage, going toe to toe with cheap options like Grok 4.5 ($6.19) or Claude Sonnet 4.6 ($18.64), only with a lower score than both. Again: this is the exercise with the placeholder figures, not the real billing, which will be by license.
 
-> **Keep in mind:** if you're an actual Genesys PI customer, ask explicitly about prompt caching before running a long, cumulative workload like a coding agent. Without it, the flagship tier gets expensive fast, because of the repeated context resending more than the per-token price.
+> **Keep in mind:** the per-token cost exercise above shows the effect of running without prompt caching, but don't use these numbers for a real budget. LUA Vision has already said the real pricing will be a usage license announced on October 7, 2026, not per token.
 
 ## Where Genesys PI fits in the Brazilian market
 
@@ -105,7 +109,7 @@ The real advantage for a Brazilian company choosing Genesys PI lies in what my b
 
 The downsides:
 
-- the flagship tier's price without prompt caching, which hurts on long, cumulative workloads;
+- final pricing is still unknown: the announced commercial model is a usage license, not per token, and only ships on October 7, 2026;
 - the still-inconsistent reliability I saw in Enterprise;
 - a self-reported LiveBench score that hasn't gone through any outside verification yet.
 

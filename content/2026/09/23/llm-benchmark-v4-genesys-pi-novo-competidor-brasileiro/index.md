@@ -80,16 +80,20 @@ Vale registrar um ponto de confiabilidade: a primeira tentativa do Enterprise tr
 
 ## Preço e custo: onde a conta aperta
 
-Aqui vale o segundo disclaimer prometido: a LUA Vision me deu uma chave de avaliação sem custo pros dois testes, então eu pessoalmente não paguei nada. Mas o benchmark inteiro compara custo pra quem for pagar de verdade, então recalculei o preço nocional que um cliente pagante teria, usando a própria tabela de preço que a API deles expõe pra quem tem chave de acesso (endpoint `/v1/models`), convertida de real pra dólar na cotação da época (5,16 BRL/USD).
+Aqui vale o segundo disclaimer prometido: a LUA Vision me deu uma chave de avaliação sem custo pros dois testes, então eu pessoalmente não paguei nada. Mas o benchmark inteiro compara custo pra quem for pagar de verdade, então recalculei o preço nocional que um cliente pagante teria, usando a tabela de preço que a API deles expunha pra quem tinha chave de acesso (endpoint `/v1/models`), convertida de real pra dólar na cotação da época (5,16 BRL/USD).
 
-O preço por milhão de token dos dois tiers é bem diferente:
+> **Atualização (24/09/2026):** depois de publicado, Eronides Jr., cofundador e CRO da LUA Vision, comentou publicamente sobre os valores usados neste texto: "Caraca, estamos felizes pelos testes e comentários. Sobre os valores: o que colocamos na API eram apenas exemplos. Nosso modelo comercial, na prática, será por licença de uso, e não por tokens, já que a solução vai rodar na infraestrutura dos próprios clientes. Ou seja, consumo de token não muda nada para nós. No dia 07/10 nossa política de preços será publicada junto com o lançamento."
+
+Ou seja: os valores de R$ 55/275 (House) e R$ 4/20 (Enterprise) por milhão de token que usei abaixo eram só exemplo na API de teste, não o preço final de mercado. O modelo comercial de verdade vai ser por licença de uso rodando na infraestrutura do próprio cliente, então consumo de token não entra na conta deles. Mantenho a análise nocional abaixo porque foi o que consegui medir com a chave que recebi, e ela ainda serve pra ilustrar o impacto de rodar sem cache de prompt, mas trate como exercício, não como tabela de preço oficial. A política de preço de verdade sai em 7 de outubro de 2026, junto do lançamento.
+
+O preço por milhão de token dos dois tiers, como estava na API de teste, era bem diferente:
 
 - **House**: R$ 55 de entrada / R$ 275 de saída por milhão de token;
 - **Enterprise**: R$ 4 de entrada / R$ 20 de saída por milhão de token, cerca de 13,75 vezes mais barato que o House por token.
 
-O custo total da rodada do House ficou em torno de $460 nocional, alto pra uma nota de 83,5. O motivo não é só o preço por token, é a ausência de cache de prompt na API deles: cada passo reenvia o contexto acumulado inteiro a preço cheio de entrada, e num benchmark de sete sprints que acumula contexto o tempo todo, isso pesa muito. O Enterprise, com preço por token bem mais baixo, fechou em torno de $19 nocional pela mesma sabotagem, competindo de igual pra igual com opção barata como o Grok 4.5 ($6,19) ou o Claude Sonnet 4.6 ($18,64), só que com nota mais baixa que os dois.
+Com esses valores de exemplo, o custo total da rodada do House ficaria em torno de $460 nocional, alto pra uma nota de 83,5. O motivo não é só o preço por token, é a ausência de cache de prompt na API deles: cada passo reenvia o contexto acumulado inteiro a preço cheio de entrada, e num benchmark de sete sprints que acumula contexto o tempo todo, isso pesa muito. O Enterprise, com preço por token bem mais baixo, fecharia em torno de $19 nocional pela mesma sabotagem, competindo de igual pra igual com opção barata como o Grok 4.5 ($6,19) ou o Claude Sonnet 4.6 ($18,64), só que com nota mais baixa que os dois. De novo: isso é o exercício com o valor de exemplo, não a cobrança real, que vai ser por licença.
 
-> **Pra guardar:** se você for cliente de verdade do Genesys PI, pergunte explicitamente sobre cache de prompt antes de rodar carga de trabalho longa e cumulativa como agente de código. Sem isso, o tier flagship fica caro rápido, não pelo preço por token, mas pelo reenvio de contexto repetido.
+> **Pra guardar:** o exercício de custo por token acima mostra o efeito de rodar sem cache de prompt, mas não use esses números pra orçamento real. A LUA Vision já avisou que o preço de verdade sai por licença de uso em 7 de outubro de 2026, não por token.
 
 ## Onde o Genesys PI se encaixa no mercado brasileiro
 
@@ -105,7 +109,7 @@ A vantagem real de uma empresa brasileira escolher o Genesys PI não está na no
 
 A desvantagem:
 
-- o preço do tier flagship sem cache de prompt, que pesa em carga de trabalho longa e cumulativa;
+- preço final ainda incógnito: o modelo comercial anunciado é por licença de uso, não por token, e só sai em 7 de outubro de 2026;
 - a confiabilidade ainda inconsistente que vi no Enterprise;
 - uma nota autodeclarada de LiveBench que ainda não passou por verificação externa nenhuma.
 
