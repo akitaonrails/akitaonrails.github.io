@@ -16,7 +16,7 @@ Everyone has noticed by now that LLMs write CRUD with their eyes closed. Forms, 
 
 I've been using LLMs for everything for almost two years, I've published dozens of projects with them, and my conclusion is different: what they do best is **reproduce what already exists**. And that covers a giant slice of corporate work, don't kid yourself. But there's a frontier they don't cross easily, and I spent the last few months bumping into it on purpose.
 
-This article shows where that frontier sits, with evidence from my own projects and from the research that exists on the subject.
+This article shows where that frontier sits, with evidence from my own projects and from the research that exists on the subject. And there's a hypothesis I'll put up front and defend along the way: if LLMs are so good at code, providers owe a huge debt to the decades of the open source community, which protected the freedom of code and published everything for free. Without that heritage, there would be no Copilot, no Cursor, no Claude Code, none of this.
 
 A disclaimer before we start: what I'm going to argue here is speculative, based on observation and on the public data that exists. Nobody outside the labs knows exactly how each provider trains their own models, and that varies from provider to provider and from version to version. What holds today may not hold in the next generation. Take it all with a grain of salt.
 
@@ -186,5 +186,9 @@ But the work that is genuinely new stays human:
 - the problem where you don't even know how to write the test that defines "right".
 
 All of that depends on what was never published: the invariant that exists in the head of whoever understands the problem, and not in the instruction stream.
+
+I confess there was a moment when I thought the bill would close on the legacy side: finally a tool capable of dealing with the COBOL that haunts banks and governments to this day. After these months, I think that problem will take much longer than it seemed. There's no giant COBOL open source community. Almost all of that code is private, and truly private: banks, insurers, governments. There's no training material, or very little of it. The model doesn't know what to do with code it has never seen, and production COBOL is almost entirely code it has never seen.
+
+To close the reasoning: **LLMs can replicate what's open, but they can't guess what's private.** And that brings back the hypothesis from the introduction. If these models are good at code, it's because decades of open source community fought to keep code free, public, and reusable, and providers trained on top of that heritage without paying a cent of licensing for it. The least the AI industry owes the world is to acknowledge that: its capability is, to a large extent, our generosity compiled.
 
 The final irony: the programmer who survives is precisely the one who knows how to build oracles, define tests, hunt down obscure references, and recognize when the agent started spinning. In other words, the skill the machine needs most from you is the one it can least learn from its training. For now, that's not a threatened job. It's a different job.

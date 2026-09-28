@@ -16,7 +16,7 @@ Todo mundo já percebeu que LLM escreve CRUD de olhos fechados. Formulário, rel
 
 Eu uso LLM pra tudo há quase dois anos, publiquei dezenas de projetos com elas, e minha conclusão é outra: o que elas fazem de melhor é **reproduzir o que já existe**. E isso cobre uma fatia gigante do trabalho corporativo, não se engane. Mas tem uma fronteira que elas não cruzam com facilidade, e eu passei os últimos meses esbarrando nela de propósito.
 
-Esse artigo mostra onde ela fica, com evidência dos meus próprios projetos e da pesquisa que existe sobre o assunto.
+Esse artigo mostra onde ela fica, com evidência dos meus próprios projetos e da pesquisa que existe sobre o assunto. E tem uma hipótese que eu já adianto aqui e defendo no decorrer do texto: se LLM é tão boa em código, os provedores têm muito a agradecer às décadas da comunidade open source, que protegeu a liberdade do código e publicou tudo de graça. Sem esse patrimônio, não existiria Copilot, Cursor, Claude Code, nada disso.
 
 Um disclaimer antes de começar: o que eu vou argumentar aqui é especulativo, baseado em observação e nos dados públicos que existem. Ninguém fora dos laboratórios sabe exatamente como cada provedor treina os próprios modelos, e isso varia de provedor pra provedor e de versão pra versão. O que vale hoje pode não valer na próxima geração. Leve tudo com um grão de sal.
 
@@ -186,5 +186,9 @@ Mas o trabalho que é de verdade novo continua humano:
 - o problema em que você não sabe nem escrever o teste que define "certo".
 
 Tudo isso depende do que nunca foi publicado: a invariante que existe na cabeça de quem entende o problema, e não no fluxo de instruções.
+
+Confesso que teve uma hora em que eu achei que a conta ia fechar pro lado do legado: finalmente uma ferramenta capaz de dar conta do COBOL que assombra banco e governo até hoje. Depois desses meses, acho que esse problema vai demorar muito mais do que parecia. Não existe uma comunidade open source gigante de COBOL. Quase todo esse código é privado, e privado de verdade: banco, seguradora, governo. Não tem material de treino, ou tem muito pouco. O modelo não sabe o que fazer com código que nunca viu, e COBOL de produção é quase tudo código que ele nunca viu.
+
+Fecha o raciocínio: **LLM consegue replicar o que é aberto, mas não adivinha o que é privado.** E aí volta a hipótese da introdução. Se esses modelos são bons em código, é porque décadas de comunidade open source lutaram pra manter código livre, público e reutilizável, e os provedores treinaram em cima desse patrimônio sem pagar um centavo de licença por ele. O mínimo que a indústria de IA deve ao mundo é reconhecer isso: a capacidade dela é, em grande parte, a nossa generosidade compilada.
 
 A ironia final: o programador que sobrevive é justamente o que sabe construir oráculo, definir teste, caçar referência obscura e reconhecer quando o agente começou a girar. Ou seja, a habilidade que a máquina mais precisa de você é a que ela menos consegue aprender com o treino dela. Por enquanto, isso não é um emprego ameaçado. É um emprego diferente.
