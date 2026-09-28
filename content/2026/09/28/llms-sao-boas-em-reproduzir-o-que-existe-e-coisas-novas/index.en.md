@@ -1,7 +1,7 @@
 ---
-title: "LLMs Are Good at Reproducing What Exists. What About New Things?"
+title: "The Limits of LLMs: Good at Reproducing What Exists. Expensive for What Doesn't"
 slug: "llms-are-good-at-reproducing-what-exists-what-about-new-things"
-date: '2026-09-28T10:00:00-03:00'
+date: '2026-09-28T01:00:00-03:00'
 draft: false
 description: "Every LLM was trained only on what's public, but 81.5% of GitHub activity happens in private repositories, and the source code of every proprietary software never made it into training. In my retrocomputing projects I felt firsthand where the machine stalls: with no reference and no oracle, it spins in directed brute force."
 tags:

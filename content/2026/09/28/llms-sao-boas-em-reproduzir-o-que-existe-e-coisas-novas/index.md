@@ -1,7 +1,7 @@
 ---
-title: "LLMs são boas em reproduzir o que existe, e coisas novas?"
+title: "Os Limites das LLMs: Boas em reproduzir o que existe. Caras pro que não existe"
 slug: "llms-sao-boas-em-reproduzir-o-que-existe-e-coisas-novas"
-date: '2026-09-28T10:00:00-03:00'
+date: '2026-09-28T01:00:00-03:00'
 draft: false
 description: "Todo LLM foi treinado só no que é público, mas 81,5% da atividade no GitHub acontece em repositórios privados e o código de todo software proprietário nunca entrou no treino. Nos meus projetos de retrocomputação senti na pele onde a máquina para: sem referência e sem oráculo, ela gira em força bruta direcionada."
 tags:
