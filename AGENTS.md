@@ -141,6 +141,13 @@ The homepage and section indexes are **auto-generated** by `scripts/generate_ind
 - Emits the default chronological list and responsive card-grid data
 - Rejects unknown tags before writing generated files
 
+By default only posts dated up to now are indexed. Two local preview flags exist:
+
+- `--future`: also index future-dated posts (e.g. a post scheduled for later today)
+- `--drafts`: also index `draft: true` posts
+
+Both are for local testing only. The generated `_index.md` files will contain unpublished posts, so re-run the script without the flags before committing.
+
 **IMPORTANT**: Run `./scripts/generate_index.rb` after adding new posts (Docker mode runs this automatically on startup).
 
 ## Custom Shortcodes

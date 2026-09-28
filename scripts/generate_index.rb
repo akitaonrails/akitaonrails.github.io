@@ -628,11 +628,17 @@ suffix_parts << 'future posts' if include_future
 suffix_parts << 'drafts' if include_drafts
 suffix = suffix_parts.empty? ? '' : " (including #{suffix_parts.join(' + ')})"
 
-if include_drafts
-  warn '*** --drafts is a local preview flag only. Draft posts will appear in the generated'
-  warn '*** _index.md files below. Do NOT commit these files while --drafts is on — re-run'
-  warn '*** this script WITHOUT --drafts before committing, or you will leak unpublished'
-  warn '*** posts (title, URL, description) onto the live homepage/archive.'
+if include_drafts || include_future
+  flags = []
+  flags << '--drafts' if include_drafts
+  flags << '--future' if include_future
+  verb = flags.one? ? 'is a' : 'are'
+  noun = flags.one? ? 'flag' : 'flags'
+  warn "*** #{flags.join(' and ')} #{verb} local preview #{noun} only. Unpublished posts will"
+  warn '*** appear in the generated _index.md files below. Do NOT commit these files'
+  warn "*** while #{flags.join('/')} is on — re-run this script WITHOUT them before"
+  warn '*** committing, or you will leak unpublished posts (title, URL, description)'
+  warn '*** onto the live homepage/archive.'
 end
 
 posts = collect_posts(include_future: include_future, include_drafts: include_drafts)
@@ -684,8 +690,9 @@ grouped_off_topic_en = group_by_month(off_topic_posts_en)
 File.write(OFF_TOPIC_FILE_EN, generate_off_topic_en(grouped_off_topic_en))
 puts "Generated #{OFF_TOPIC_FILE_EN} with #{off_topic_posts_en.size} posts.#{suffix}"
 
-if include_drafts
+if include_drafts || include_future
   warn ''
   warn "*** Reminder: #{[INDEX_FILE, ARCHIVES_FILE, INDEX_FILE_EN, ARCHIVES_FILE_EN, AKITANDO_FILE, OFF_TOPIC_FILE, OFF_TOPIC_FILE_EN].join(', ')}"
-  warn '*** were just regenerated WITH drafts. Re-run without --drafts before committing.'
+  warn '*** were just regenerated WITH unpublished posts. Re-run without the preview'
+  warn '*** flags before committing.'
 end
