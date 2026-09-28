@@ -202,6 +202,20 @@ Aquela maratona de 176 commits do nes-to-sms? Do ponto de vista do modelo, não 
 
 Essa é também a resposta pra quem acha que "é só deixar o agente rodando que ele aprende o domínio". Ele não aprende domínio nenhum: ele explora o espaço com o conhecimento congelado do dia do treino, e no dia seguinte acorda com amnésia. Se o domínio não estava no treino, cada sessão sua recomeça do zero absoluto, e toda a inteligência de navegação tem que vir de você de novo.
 
+### "Mas e se a IA treinar a IA?"
+
+Essa é a pergunta seguinte do amador, e ela parte de uma premissa errada: a de que isso seria novidade. IA treinando IA existe há décadas e tem nome: **aprendizado por reforço**. O AlphaGo já fazia isso em 2016, jogando milhões de partidas contra si mesmo. O [AlphaZero](https://arxiv.org/abs/1712.01815), em 2017, levou a ideia ao limite: aprendeu xadrez, shogi e Go partindo do zero absoluto, sabendo só as regras de cada jogo, e chegou a nível sobre-humano em questão de horas de self-play, sem ver uma única partida humana.
+
+LLMs também já usam reforço. O RLHF que transforma um modelo base em assistente é aprendizado por reforço, e a geração dos modelos de raciocínio levou isso adiante: o [DeepSeek-R1-Zero](https://arxiv.org/abs/2501.12948) mostrou em janeiro de 2025 que comportamento de raciocínio (auto-verificação, reflexão, cadeias longas de pensamento) emerge de RL puro, sem fine-tuning supervisionado. É o AlphaZero aplicado a matemática e código.
+
+Agora repare no que esses exemplos têm em comum: só funciona onde existe **recompensa verificável e barata**. Jogo tem placar, matemática tem prova, código tem teste. Fora desse território não tem de onde tirar o sinal de recompensa. É o mesmo oráculo do steelman, só que institucionalizado: eficaz, caríssimo e nichado. O AlphaZero joga Go melhor que qualquer humano que já existiu e não sabe fazer absolutamente mais nada.
+
+E tem o detalhe que derruba a pergunta por completo: todo esse aprendizado acontece **no laboratório, durante o treino**. O AlphaZero que o DeepMind mostrou pro mundo já era um artefato congelado. O R1 que você baixa é um arquivo estático igualzinho aos outros.
+
+> IA treinando IA produz um arquivo novo. O arquivo, uma vez lançado, continua sem aprender nada.
+
+Ou seja, a resposta mais sofisticada pra objeção não enfraquece a conclusão da seção: reforça. E o mercado já sabe disso. Desde o fim de 2024 os laboratórios admitem, em on e off the record, que os retornos de escala estão encolhendo: a [Reuters reportou em novembro de 2024](https://www.reuters.com/technology/artificial-intelligence/openai-others-seek-new-path-smarter-ai-current-methods-hit-limitations-2024-11-11/) que OpenAI, Google e Anthropic colhiam ganhos menores que o esperado no pre-training, com o Orion da OpenAI decepcionando a ponto de ser rebaixado de GPT-5 pra GPT-4.5. O Ilya Sutskever, o cara que basicamente inventou a tese do scaling, subiu no palco do [NeurIPS 2024](https://www.youtube.com/watch?v=WQQdd6qGxNs) pra declarar que "pre-training como conhecemos vai acabar": os dados públicos são combustível fóssil, e a gente já raspou o fundo. Os ganhos de RL pós-treino são reais, mas incrementais. A era do salto de ordem de grandeza a cada geração ficou pra trás.
+
 ## Onde isso deixa a profissão
 
 A pergunta que motivou esse artigo é a que eu ouço toda semana: "LLM vai substituir programador?" Minha resposta ficou mais precisa depois desses meses: **vai substituir a parte do trabalho que é reprodução**.

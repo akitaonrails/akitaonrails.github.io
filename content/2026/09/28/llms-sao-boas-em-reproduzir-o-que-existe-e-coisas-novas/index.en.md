@@ -202,6 +202,20 @@ That 176-commit marathon on nes-to-sms? From the model's point of view, it never
 
 This is also the answer to whoever thinks "just let the agent run and it'll learn the domain." It learns no domain at all: it explores the space with knowledge frozen on training day, and the next morning it wakes up with amnesia. If the domain wasn't in the training, every session of yours restarts from absolute zero, and all the navigation intelligence has to come from you again.
 
+### "But What If AI Trains AI?"
+
+That's the amateur's follow-up question, and it starts from a wrong premise: that this would be new. AI training AI has existed for decades and has a name: **reinforcement learning**. AlphaGo was already doing it in 2016, playing millions of matches against itself. [AlphaZero](https://arxiv.org/abs/1712.01815), in 2017, took the idea to the limit: it learned chess, shogi and Go starting from absolute zero, knowing only each game's rules, and reached superhuman level within hours of self-play, without seeing a single human match.
+
+LLMs already use reinforcement too. The RLHF that turns a base model into an assistant is reinforcement learning, and the reasoning model generation pushed it further: [DeepSeek-R1-Zero](https://arxiv.org/abs/2501.12948) showed in January 2025 that reasoning behavior (self-verification, reflection, long chains of thought) emerges from pure RL, with no supervised fine-tuning. It's AlphaZero applied to math and code.
+
+Now notice what these examples have in common: it only works where there's a **cheap, verifiable reward**. Games have a scoreboard, math has proofs, code has tests. Outside that territory there's nowhere to get the reward signal from. It's the same oracle from the steelman, only institutionalized: effective, brutally expensive, and niche. AlphaZero plays Go better than any human who ever lived and can't do absolutely anything else.
+
+And there's the detail that knocks the question down completely: all of that learning happens **in the lab, during training**. The AlphaZero DeepMind showed the world was already a frozen artifact. The R1 you download is a static file just like the others.
+
+> AI training AI produces a new file. The file, once released, still learns nothing.
+
+In other words, the most sophisticated version of the objection doesn't weaken this section's conclusion: it reinforces it. And the market already knows. Since late 2024 the labs admit, on and off the record, that scaling returns are shrinking: [Reuters reported in November 2024](https://www.reuters.com/technology/artificial-intelligence/openai-others-seek-new-path-smarter-ai-current-methods-hit-limitations-2024-11-11/) that OpenAI, Google and Anthropic were reaping smaller gains than expected from pre-training, with OpenAI's Orion disappointing enough to be demoted from GPT-5 to GPT-4.5. Ilya Sutskever, the guy who basically invented the scaling thesis, took the stage at [NeurIPS 2024](https://www.youtube.com/watch?v=WQQdd6qGxNs) to declare that "pre-training as we know it will end": public data is fossil fuel, and we've already scraped the bottom. Post-training RL gains are real, but incremental. The era of an order-of-magnitude leap per generation is behind us.
+
 ## Where This Leaves the Profession
 
 The question that motivated this article is the one I hear every week: "will LLMs replace programmers?" My answer got more precise after these months: **they will replace the part of the work that is reproduction**.
