@@ -22,7 +22,7 @@ Um disclaimer antes de começar: o que eu vou argumentar aqui é especulativo, b
 
 ## O ponto cego do treinamento
 
-Todo LLM foi treinado no que é público. A internet pública inteira, e no caso de código, o GitHub público. O dataset canônico de código aberto, o [The Stack v2](https://huggingface.co/datasets/bigcode/the-stack-v2) da BigCode, é explícito sobre isso: ele é derivado do Software Heritage, um arquivo de *"todo o código-fonte de software publicamente disponível"*. São 67,5 TB, 3,28 bilhões de arquivos, 104 milhões de repositórios. Gigantesco. E todo público.
+Todo LLM foi treinado no que é público. A internet pública inteira, e no caso de código, o GitHub público. O dataset canônico de código aberto, o [The Stack v2](https://huggingface.co/datasets/bigcode/the-stack-v2) da BigCode, é explícito sobre isso: ele é derivado do Software Heritage, um arquivo de *"todo o código-fonte de software publicamente disponível"*. São 67,5 TB, 3,28 bilhões de arquivos únicos, 104,2 milhões de repositórios. Gigantesco. E todo público.
 
 Agora olha o outro lado. O [Octoverse 2025](https://github.blog/news-insights/octoverse/octoverse-a-new-developer-joins-github-every-second-as-ai-leads-typescript-to-1/), relatório oficial do GitHub, diz que **81,5% das contribuições na plataforma aconteceram em repositórios privados**. Isso é só o GitHub. Fora dele tem:
 
@@ -45,7 +45,7 @@ O [nes-to-sms](https://github.com/akitaonrails/nes-to-sms) é um recompilador es
 
 Recompilador estático de NES existe, o [NESRecomp](https://github.com/mstan/nesrecomp) traduz pra C e roda nativo em PC, e eu estudei ele de perto. Mas cruzar de um console pra outro console de 8 bits, com orçamento de clock e de VDP totalmente diferente, ninguém nunca fez. Não existe referência pública, não existe paper, não existe projeto abandonado pra copiar.
 
-Os números do projeto: **349 commits, 31 dias ativos espalhados por quase 4 meses, ~110 mil linhas de engine em Rust e Z80, 668 testes passando**. E o resultado? Super Mario Bros. jogável (lento, com áudio limitado, mas jogável), com paridade byte a byte contra o NES em [rotas de 4.900 frames](https://github.com/akitaonrails/nes-to-sms/blob/master/docs/completion-plan.md). Castlevania jogável na fase 1. SMB3 renderizando. E uma fila de jogos que bootam três frames e morrem.
+Os números do projeto: **349 commits, 31 dias ativos espalhados por quase 4 meses, ~110 mil linhas de engine em Rust e Z80, 668 testes passando no último run registrado no README**. E o resultado? Super Mario Bros. jogável (lento, com áudio limitado, mas jogável), com a trajetória de RAM byte a byte igual à do NES numa [rota de ~4.900 frames](https://github.com/akitaonrails/nes-to-sms/blob/master/docs/completion-plan.md) (o diff deixa o áudio e parte do buffer de VRAM de fora). Castlevania jogável na fase 1. SMB3 renderizando. E uma fila de jogos que bootam três frames e morrem.
 
 E não foi por falta de empurrar os modelos. Só nesse projeto:
 
@@ -57,11 +57,11 @@ E não foi por falta de empurrar os modelos. Só nesse projeto:
 
 Tokens eu não medi de forma confiável nesse projeto, então não vou inventar número. Mas 349 commits com 668 testes segurando cada passo já dão uma ideia do custo.
 
-Repara no detalhe que importa: o único jogo que ficou realmente pronto é o Super Mario Bros. Por quê? Porque SMB é o jogo mais dissecado da história. Existe uma [disassembly completa e pública](https://gist.github.com/1wErt3r/4048722) que a comunidade usa desde 2012, com cada função nomeada e comentada. Eu alimentei isso no perfil do jogo e a LLM tinha um mapa completo pra trabalhar. Pros outros jogos, não existe mapa. E sem mapa, cada jogo novo morria alguns frames depois do boot por divergência de fluxo de controle, e cada um exigia uma caçada forense instrução por instrução que não rendia nada pro jogo seguinte.
+Repara no detalhe que importa: o único jogo que ficou realmente pronto é o Super Mario Bros. Por quê? Porque SMB é o jogo mais dissecado da história. Existe uma [disassembly completa e pública](https://gist.github.com/1wErt3r/4048722) que a comunidade usa desde 2007, com cada função nomeada e comentada. Eu alimentei isso no perfil do jogo e a LLM tinha um mapa completo pra trabalhar. Pros outros jogos, não existe mapa. E sem mapa, cada jogo novo morria alguns frames depois do boot por divergência de fluxo de controle, e cada um exigia uma caçada forense instrução por instrução que não rendia nada pro jogo seguinte.
 
 O próprio projeto documentou o padrão de giro. Teve uma campanha inteira de otimização que durou semanas tentando cortar o custo de emular flags do 6502 no Z80.
 
-Aí em setembro eu parei pra comparar com o [port manual que um hacker chamado lackoftrack27 fez de SMB pra Master System](https://github.com/lackoftrack27/Super-Mario-Bros.-SMS), escrito por um humano, rotina por rotina. Pela [análise que a gente fez do código dele](https://github.com/akitaonrails/nes-to-sms/blob/master/docs/handport-comparison.md), o port humano roda dentro do orçamento de frame com folga. A minha máquina, depois de meses de otimização, ainda precisava de overclock.
+Aí em setembro eu parei pra comparar com o [port manual que um hacker chamado lackoftrack27 fez de SMB pra Master System](https://github.com/lackoftrack27/Super-Mario-Bros.-SMS), escrito por um humano, rotina por rotina. Pela [análise que a gente fez do código dele](https://github.com/akitaonrails/nes-to-sms/blob/master/docs/handport-comparison.md), o port humano roda dentro do orçamento de frame, com uma folga que estimamos em ~90% de utilização. A minha máquina, depois de meses de otimização, ainda precisava de overclock.
 
 E o documento de análise cravou por quê: quando removemos 30% das chamadas de emulação de flag, o tempo mal se moveu.
 
@@ -133,13 +133,13 @@ O [GSM1k da Scale AI](https://arxiv.org/abs/2405.00332) criou um espelho do GSM8
 
 O [LiveCodeBench](https://arxiv.org/abs/2403.07974) fez o teste mais limpo de todos: avaliar em problemas de código publicados **depois** do corte de treinamento. Performance inflada em problema pré-corte e queda em problema pós-corte em vários modelos populares, o sinal clássico de contaminação.
 
-E tem o [ARC-AGI](https://arcprize.org/), o benchmark do François Chollet desenhado especificamente pra ser à prova de memorização: cada tarefa é inédita, nenhuma parecida existe no treino. No ARC-AGI-2, lançado em março de 2025, a tabela oficial diz: **LLMs puros marcam 0%**, sistemas de raciocínio ficam em dígito único, e toda tarefa foi resolvida por pelo menos dois humanos em menos de duas tentativas. O Chollet, aliás, resumiu minha tese melhor que eu, lá em fevereiro de 2024:
+E tem o [ARC-AGI](https://arcprize.org/), o benchmark do François Chollet desenhado especificamente pra ser à prova de memorização: cada tarefa é inédita, nenhuma parecida existe no treino. No ARC-AGI-2, lançado em março de 2025, a tabela oficial diz: **LLMs puros marcam 0%**, sistemas de raciocínio ficam em dígito único, e cada tarefa de avaliação foi resolvida por pelo menos dois humanos em até duas tentativas. O Chollet, aliás, resumiu minha tese melhor que eu, lá em fevereiro de 2024:
 
 > "LLMs não são AGI, são um grande ajuste de curva num dataset muito grande. Funcionam por memorização e interpolação. Mas essa curva interpolativa pode ser tremendamente útil, se você quer automatizar uma tarefa conhecida que casa com a distribuição do treino. Memorização funciona, desde que você não precise se adaptar ao novo."
 
 No mundo real, o estudo que mais me impressionou foi o [RCT da METR](https://arxiv.org/abs/2507.09089): 16 desenvolvedores experientes, 246 tarefas reais nos próprios repositórios maduros deles, randomizado com e sem IA. Os devs apostavam que IA ia acelerar 24%. Mediu-se: **ficou 19% mais lento**. Repara onde isso aconteceu: código maduro, privado, cheio de contexto que o modelo nunca viu. Exatamente o ponto cego.
 
-E o benchmark favorito da indústria pra dizer que "IA já faz engenharia de software", o SWE-bench, é 100% Python, 12 repositórios open source famosos, ou seja, a fatia mais coberta do treino. A métrica de sucesso da indústria mede o território com mapa.
+E o benchmark favorito da indústria pra dizer que "IA já faz engenharia de software", o SWE-bench, é só Python, 12 repositórios open source famosos, ou seja, a fatia mais coberta do treino. A métrica de sucesso da indústria mede o território com mapa.
 
 Até a literatura de código legado diz a mesma coisa: um [paper de 2026 sobre LLMs gerando COBOL](https://arxiv.org/abs/2604.03986) crava que, nessas linguagens legadas, *"a maior parte do código de produção está em sistemas corporativos e raramente é publicamente disponível"*. É a tese desse artigo, dita por outras pessoas.
 
@@ -149,7 +149,7 @@ Antes de fechar, vale encarar o argumento mais forte contra mim. Steelman é iss
 
 Em maio de 2025 o DeepMind publicou o [AlphaEvolve](https://deepmind.google/discover/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/): um sistema que achou um algoritmo de multiplicação de matrizes 4x4 complexas com 48 multiplicações escalares, melhorando o recorde do Strassen de 1969 nesse cenário específico. Numa lista de mais de 50 problemas abertos de matemática, ele redescobriu o estado da arte em ~75% dos casos e melhorou a melhor solução conhecida em 20%. Isso é novidade de verdade, não reprodução.
 
-O o3-preview da OpenAI saltou pra 75,7% no ARC-AGI-1 em dezembro de 2024, mais de 20 pontos acima do melhor resultado até então, e a configuração de compute alto chegou a 87,5% a um custo estimado de US$ 4.560 por tarefa.
+O o3-preview da OpenAI saltou pra 75,7% no ARC-AGI-1 em dezembro de 2024, 22 pontos acima do melhor resultado anterior no mesmo conjunto de avaliação, e a configuração de compute alto chegou a 87,5% a um custo estimado de US$ 4.560 por tarefa.
 
 E lá em 2016 o AlphaGo fez o lance 37 contra Lee Sedol, um lance que os dados do próprio DeepMind estimavam ter 1 chance em 10 mil de ser jogado por um humano, provando que busca sobre modelo pode transcender imitação.
 
@@ -161,7 +161,7 @@ Agora olha o mecanismo dos três:
 
 Se teve "insight" em algum deles, foi do sistema de busca ao redor do modelo: os três são **força bruta direcionada com um verificador barato**, o mesmo mecanismo que eu descrevi acontecendo nos meus projetos. A diferença é que o DeepMind tem oráculo perfeito e orçamento infinito: na configuração que chegou a 87,5%, o o3-preview gastava milhares de dólares por tarefa do ARC pra fazer o que um humano faz de graça. A própria ARC Prize escreveu a ressalva:
 
-> *"Busca de força bruta eventualmente resolveria o ARC-AGI, dado recurso e tempo ilimitados. Isso não representaria inteligência de verdade."*
+> *"Sabemos que uma busca de força bruta poderia acabar resolvendo o ARC-AGI, dados recursos e tempo de busca ilimitados. Isso não representaria inteligência de verdade."*
 
 Resumindo: novidade sai, mas sai por busca cara sobre um oráculo, à base de tentativa e erro guiada. Se o seu problema tem verificador barato e você tem tokens pra queimar, dá pra ir longe. Foi assim que o nes-to-sms chegou onde chegou: 668 testes e ground truth de emulador segurando cada passo. Mas quando não tem oráculo, não tem corpus e não tem referência, você está pagando força bruta em dólar, com regressões no caminho, e o teto aparece.
 

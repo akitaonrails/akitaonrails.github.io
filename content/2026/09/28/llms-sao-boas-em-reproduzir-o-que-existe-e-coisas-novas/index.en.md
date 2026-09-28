@@ -22,7 +22,7 @@ A disclaimer before we start: what I'm going to argue here is speculative, based
 
 ## The Training Blind Spot
 
-Every LLM was trained on what's public. The entire public internet, and for code, public GitHub. The canonical open code dataset, BigCode's [The Stack v2](https://huggingface.co/datasets/bigcode/the-stack-v2), is explicit about this: it's derived from Software Heritage, an archive of *"the source code of all publicly available software"*. That's 67.5 TB, 3.28 billion files, 104 million repositories. Huge. And all public.
+Every LLM was trained on what's public. The entire public internet, and for code, public GitHub. The canonical open code dataset, BigCode's [The Stack v2](https://huggingface.co/datasets/bigcode/the-stack-v2), is explicit about this: it's derived from Software Heritage, an archive of *"the source code of all publicly available software"*. That's 67.5 TB, 3.28 billion unique files, 104.2 million repositories. Huge. And all public.
 
 Now look at the other side. The [Octoverse 2025](https://github.blog/news-insights/octoverse/octoverse-a-new-developer-joins-github-every-second-as-ai-leads-typescript-to-1/), GitHub's official report, says **81.5% of contributions on the platform happened in private repositories**. That's just GitHub. Outside of it there's:
 
@@ -45,7 +45,7 @@ I'm not theorizing. Over the last few months I ran a marathon of retrocomputing 
 
 Static NES recompilers exist, [NESRecomp](https://github.com/mstan/nesrecomp) translates to C and runs natively on PC, and I studied it closely. But crossing from one console to another 8-bit console, with a completely different clock and VDP budget, nobody has ever done. There's no public reference, no paper, no abandoned project to copy.
 
-The project numbers: **349 commits, 31 active days spread over almost 4 months, ~110 thousand lines of engine in Rust and Z80, 668 tests passing**. And the result? Playable Super Mario Bros. (slow, limited audio, but playable), with byte-for-byte parity against the NES on [4,900-frame routes](https://github.com/akitaonrails/nes-to-sms/blob/master/docs/completion-plan.md). Castlevania playable on stage 1. SMB3 rendering. And a queue of games that boot three frames and die.
+The project numbers: **349 commits, 31 active days spread over almost 4 months, ~110 thousand lines of engine in Rust and Z80, 668 tests passing in the last run recorded in the README**. And the result? Playable Super Mario Bros. (slow, limited audio, but playable), with a byte-for-byte identical RAM trajectory to the NES on [one ~4,900-frame route](https://github.com/akitaonrails/nes-to-sms/blob/master/docs/completion-plan.md) (the diff leaves out audio and part of the VRAM buffer). Castlevania playable on stage 1. SMB3 rendering. And a queue of games that boot three frames and die.
 
 And it wasn't for lack of pushing the models. In this project alone:
 
@@ -57,11 +57,11 @@ And it wasn't for lack of pushing the models. In this project alone:
 
 I didn't measure tokens reliably in this project, so I won't make up a number. But 349 commits with 668 tests holding up every step already give an idea of the cost.
 
-Notice the detail that matters: the only game that actually got finished is Super Mario Bros. Why? Because SMB is the most dissected game in history. There's a [complete public disassembly](https://gist.github.com/1wErt3r/4048722) the community has used since 2012, with every function named and commented. I fed that into the game's profile and the LLM had a complete map to work with. For the other games, there's no map. And without a map, each new game died a few frames after boot from control flow divergence, and each one demanded an instruction-by-instruction forensic hunt that carried nothing over to the next game.
+Notice the detail that matters: the only game that actually got finished is Super Mario Bros. Why? Because SMB is the most dissected game in history. There's a [complete public disassembly](https://gist.github.com/1wErt3r/4048722) the community has used since 2007, with every function named and commented. I fed that into the game's profile and the LLM had a complete map to work with. For the other games, there's no map. And without a map, each new game died a few frames after boot from control flow divergence, and each one demanded an instruction-by-instruction forensic hunt that carried nothing over to the next game.
 
 The project itself documented the spinning pattern. There was an entire optimization campaign that lasted weeks trying to cut the cost of emulating 6502 flags on the Z80.
 
-Then in September I stopped to compare with the [manual port of SMB to Master System made by a hacker named lackoftrack27](https://github.com/lackoftrack27/Super-Mario-Bros.-SMS), written by a human, routine by routine. According to [the analysis we did of his code](https://github.com/akitaonrails/nes-to-sms/blob/master/docs/handport-comparison.md), the human port runs inside the frame budget with room to spare. My machine, after months of optimization, still needed overclocking.
+Then in September I stopped to compare with the [manual port of SMB to Master System made by a hacker named lackoftrack27](https://github.com/lackoftrack27/Super-Mario-Bros.-SMS), written by a human, routine by routine. According to [the analysis we did of his code](https://github.com/akitaonrails/nes-to-sms/blob/master/docs/handport-comparison.md), the human port runs inside the frame budget, with headroom we estimated at ~90% utilization. My machine, after months of optimization, still needed overclocking.
 
 And the analysis document pinned down why: when we removed 30% of the flag emulation calls, the timing barely moved.
 
@@ -133,13 +133,13 @@ Scale AI's [GSM1k](https://arxiv.org/abs/2405.00332) created a mirror of GSM8K w
 
 [LiveCodeBench](https://arxiv.org/abs/2403.07974) ran the cleanest test of all: evaluating on coding problems published **after** the training cutoff. Inflated performance on pre-cutoff problems and drops on post-cutoff problems across several popular models, the classic contamination signal.
 
-And there's [ARC-AGI](https://arcprize.org/), François Chollet's benchmark designed specifically to be memorization-proof: every task is unprecedented, nothing similar exists in training. On ARC-AGI-2, released in March 2025, the official leaderboard says: **pure LLMs score 0%**, reasoning systems sit in single digits, and every task was solved by at least two humans in under two attempts. Chollet, by the way, summed up my thesis better than I did, back in February 2024:
+And there's [ARC-AGI](https://arcprize.org/), François Chollet's benchmark designed specifically to be memorization-proof: every task is unprecedented, nothing similar exists in training. On ARC-AGI-2, released in March 2025, the official leaderboard says: **pure LLMs score 0%**, reasoning systems sit in single digits, and every evaluation task was solved by at least two humans within two attempts. Chollet, by the way, summed up my thesis better than I did, back in February 2024:
 
 > "Reality is that LLMs are not AGI — they're a big curve fit to a very large dataset. They work via memorization and interpolation. But that interpolative curve can be tremendously useful, if you want to automate a known task that's a match for its training data distribution. Memorization works, as long as you don't need to adapt to novelty."
 
 In the real world, the study that impressed me most was the [METR RCT](https://arxiv.org/abs/2507.09089): 16 experienced developers, 246 real tasks on their own mature repositories, randomized with and without AI. The devs bet AI would speed them up by 24%. Measured: **it was 19% slower**. Notice where this happened: mature, private code, full of context the model never saw. Exactly the blind spot.
 
-And the industry's favorite benchmark for saying "AI already does software engineering," SWE-bench, is 100% Python, 12 famous open source repositories, in other words the most covered slice of training. The industry's success metric measures mapped territory.
+And the industry's favorite benchmark for saying "AI already does software engineering," SWE-bench, is Python-only, 12 famous open source repositories, in other words the most covered slice of training. The industry's success metric measures mapped territory.
 
 Even the legacy code literature says the same thing: a [2026 paper on LLMs generating COBOL](https://arxiv.org/abs/2604.03986) states that, in these legacy languages, *"most production code resides in enterprise systems and is rarely publicly available"*. It's this article's thesis, said by other people.
 
@@ -149,7 +149,7 @@ Before wrapping up, it's worth facing the strongest argument against me. That's 
 
 In May 2025 DeepMind published [AlphaEvolve](https://deepmind.google/discover/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/): a system that found an algorithm for multiplying 4x4 complex matrices with 48 scalar multiplications, beating Strassen's 1969 record in that specific scenario. On a list of more than 50 open math problems, it rediscovered the state of the art in ~75% of cases and improved the best known solution in 20%. That's real novelty, not reproduction.
 
-OpenAI's o3-preview jumped to 75.7% on ARC-AGI-1 in December 2024, more than 20 points above the best result until then, and the high-compute configuration reached 87.5% at an estimated cost of $4,560 per task.
+OpenAI's o3-preview jumped to 75.7% on ARC-AGI-1 in December 2024, 22 points above the previous best result on the same evaluation set, and the high-compute configuration reached 87.5% at an estimated cost of $4,560 per task.
 
 And back in 2016 AlphaGo played move 37 against Lee Sedol, a move that DeepMind's own data estimated had a 1 in 10,000 chance of being played by a human, proving that search over a model can transcend imitation.
 
