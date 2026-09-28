@@ -186,6 +186,22 @@ E quando a força bruta vence, dá pra medir o tamanho da tentativa e erro. Dois
 
 É esse o tamanho da conta quando você força o modelo pra fora do território do treino: tentativa e erro em escala industrial, sem garantia nenhuma de que a busca acha o que você precisa. E quem pode assinar esse cheque é meia dúzia de empresa no mundo, nível OpenAI e Anthropic, com orçamento praticamente ilimitado de compute. Pro Zé da esquina, com cartão de crédito e uma API key, o teto chega muito, muito antes.
 
+## Mas tentativa e erro não é aprendizado novo?
+
+Aqui mora uma confusão que eu vejo toda hora, e vale desfazer porque ela contamina a interpretação de tudo que eu escrevi até agora.
+
+Quando você lê que a Anthropic tem data centers do tamanho de cidades, dá a sensação de que existe uma IA gigante usando aquelas máquinas todas ao mesmo tempo, pensando, acumulando experiência a cada interação. A realidade é bem mais medíocre que isso.
+
+Um modelo tipo Fable ou Astra é um arquivo de computador. Arquivo estático, nem banco de dados é: depois que o treinamento e o pós-alinhamento terminam, aquele arquivo é trancado e fica read-only. O que roda no data center são cópias desse arquivo. Cada usuário que consome o modelo está executando uma cópia dele num servidor diferente, isolada das demais, sem colaborar com nenhuma. A sua sessão não conversa com a sessão de ninguém, e nada do que acontece nela volta pro arquivo original.
+
+Aprendizado novo só entra num lugar: na próxima leva de treinamento. Quando a Anthropic tinha o Opus 4.7 e lançou o 4.8, foi ali que conhecimento novo foi assado no modelo, num processo que custa milhões e leva semanas. Fora disso, o arquivo não muda um byte.
+
+> Seu agente queimando milhões de tokens em tentativa e erro está contribuindo exatamente zero de aprendizado novo pro modelo que ele usa.
+
+Aquela maratona de 176 commits do nes-to-sms? Do ponto de vista do modelo, não aconteceu. O Opus que rodou o último commit sabia exatamente o mesmo tanto que o do primeiro. Quem aprendeu alguma coisa fui eu, não ele. E é por isso que a metáfora do "estagiário que aprende com o tempo" está errada: estagiário acumula. Modelo não. O que acumula na maratona é o seu contexto, suas notas, seu `CLAUDE.md`, seus testes. O ativo que você constrói é seu, e evapora se você não documentar.
+
+Essa é também a resposta pra quem acha que "é só deixar o agente rodando que ele aprende o domínio". Ele não aprende domínio nenhum: ele explora o espaço com o conhecimento congelado do dia do treino, e no dia seguinte acorda com amnésia. Se o domínio não estava no treino, cada sessão sua recomeça do zero absoluto, e toda a inteligência de navegação tem que vir de você de novo.
+
 ## Onde isso deixa a profissão
 
 A pergunta que motivou esse artigo é a que eu ouço toda semana: "LLM vai substituir programador?" Minha resposta ficou mais precisa depois desses meses: **vai substituir a parte do trabalho que é reprodução**.

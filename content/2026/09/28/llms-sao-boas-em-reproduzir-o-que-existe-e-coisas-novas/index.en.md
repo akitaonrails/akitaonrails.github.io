@@ -186,6 +186,22 @@ And when brute force wins, you can measure the size of the trial and error. Two 
 
 That's the size of the bill when you force the model outside training territory: trial and error at industrial scale, with no guarantee the search finds what you need. And who can sign that check is half a dozen companies in the world, OpenAI and Anthropic level, with a practically unlimited compute budget. For the average Joe, with a credit card and an API key, the ceiling arrives much, much earlier.
 
+## But Isn't Trial and Error New Learning?
+
+Here's a confusion I see all the time, and it's worth undoing because it contaminates how you read everything I've written so far.
+
+When you read that Anthropic has datacenters the size of cities, you get the feeling there's one giant AI using all those machines at the same time, thinking, accumulating experience with every interaction. Reality is far more mediocre than that.
+
+A model like Fable or Astra is a computer file. A static file, not even a database: once training and post-alignment are done, that file is locked and read-only. What runs in the datacenter are copies of that file. Every user consuming the model is running a copy of it on a different server, isolated from the others, collaborating with none. Your session doesn't talk to anyone else's session, and nothing that happens in it flows back to the original file.
+
+New learning only enters in one place: the next training batch. When Anthropic had Opus 4.7 and released 4.8, that's when new knowledge got baked into the model, in a process that costs millions and takes weeks. Outside of that, the file doesn't change a single byte.
+
+> Your agent burning millions of tokens on trial and error is contributing exactly zero new learning to the model it's using.
+
+That 176-commit marathon on nes-to-sms? From the model's point of view, it never happened. The Opus that ran the last commit knew exactly as much as the one that ran the first. I'm the one who learned something, not it. And that's why the "intern who learns over time" metaphor is wrong: interns accumulate. Models don't. What accumulates over the marathon is your context, your notes, your `CLAUDE.md`, your tests. The asset you build is yours, and it evaporates if you don't document it.
+
+This is also the answer to whoever thinks "just let the agent run and it'll learn the domain." It learns no domain at all: it explores the space with knowledge frozen on training day, and the next morning it wakes up with amnesia. If the domain wasn't in the training, every session of yours restarts from absolute zero, and all the navigation intelligence has to come from you again.
+
 ## Where This Leaves the Profession
 
 The question that motivated this article is the one I hear every week: "will LLMs replace programmers?" My answer got more precise after these months: **they will replace the part of the work that is reproduction**.
