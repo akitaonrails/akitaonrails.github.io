@@ -35,6 +35,20 @@ None of that ever went into training.
 
 Think about what this means: the model deeply knows what the world has already published, and it's blind to what the world keeps closed. When you ask for a React form, it's reproducing patterns it has seen millions of times. When you ask for something nobody has ever done in public, it's operating in territory where its map is blank.
 
+## Why Is Everyone Shipping So Much, So Fast?
+
+Before getting into the limits, it's worth recording the side that works, because it's what explains the feeling that everyone became an app factory.
+
+Look at what's popping up in the community: [Spotifast](https://github.com/crmne/spotifast) and [ZapFast](https://github.com/crmne/zapfast), native Spotify and WhatsApp clients written in Rust by a single person, running on Linux, macOS, and Windows. Nothing in them is new technology. It's the service that already existed, wrapped in a lean native app, on top of libraries that already existed, doing what the official teams always could have done but never wanted to spend their time on. That work got cheap, because an LLM trained on everything public is really good precisely at this: replicating.
+
+My own projects follow the same pattern. [FrankMD](https://github.com/akitaonrails/FrankMD) is a Markdown note-taking web app with a Visual Studio look and features that already existed in my other apps. [Frank Sherlock](https://github.com/akitaonrails/FrankSherlock) is a local image organizer that, deep down, is a file manager with thumbnails and search, something that exists by the dozen. Neither invents anything: they're mashups of known pieces, assembled the way I always wanted. The LLM does the boring part, and that's where the speed comes from.
+
+The most didactic example is my email client. I've used Geary for years, and two small gaps always annoyed me: the weak recipient autocomplete and a sidebar I wanted to hide. Trivial stuff, which never justified setting up a build environment, learning the project's toolchain, and studying the code just for two features. This year I finally solved both: an [autocomplete module](https://github.com/akitaonrails/geary-email-autocomplete), a [module to hide the sidebar](https://github.com/akitaonrails/geary-hide-sidebar-module), and a [whole fork with my patches](https://github.com/akitaonrails/frank_geary). I became the maintainer of improvements I had postponed for years, not because I got faster, but because the boring part got cheap.
+
+Notice what all these cases have in common: the problem had already been solved before, somewhere else, some other way. The map existed; what didn't exist was cheap labor to retrace the path. That's reproduction working in our favor, and it's why your feed is full of people shipping a new app every week.
+
+Now hold that thought. The rest of this article is about what happens when the map runs out.
+
 ## Four Home Experiments
 
 I'm not theorizing. Over the last few months I ran a marathon of retrocomputing projects that are exactly the pathological case: working with proprietary software from 30 or 40 years ago whose source code was never public. It's the perfect blind spot.
@@ -49,15 +63,15 @@ The project numbers: **349 commits, 31 active days spread over almost 4 months, 
 
 And it wasn't for lack of pushing the models. In this project alone:
 
-- **four generations of Claude** went through it (Opus 4.7, Opus 4.8, Fable 5, Fable 5.1), with 213 co-signed commits and 104 sessions linked in the history, plus Codex sessions in the stretches without co-authorship, complete with documented handoffs between agents;
+- **four generations of Claude** went through it (Opus 4.7, Fable 5, Opus 4.8, Fable 5.1), with 213 co-signed commits and 104 commits linked to sessions in the history, plus Codex sessions in the stretches without co-authorship, complete with documented handoffs between agents;
 - there was even cross-generation auditing: a new agent session [reviewed the previous 55 commits](https://github.com/akitaonrails/nes-to-sms/blob/master/docs/mapper-continuation-review.md) and reverted conclusions the previous generation had overclaimed;
-- the Castlevania crash hunt alone consumed 43 commits in 5 days;
+- the Castlevania crash hunt alone consumed 45 commits in 5 days;
 - the final September sprint was 176 commits in 17 days before I called the pause;
 - and the regressions are registered by name in the history: *"H.7 tried and reverted"*, *"record the reverted map-bank-hold attempt"*, *"correct-but-reverted result"*, plus three shared-lever hypotheses tested and rejected in the project's last three days.
 
 I didn't measure tokens reliably in this project, so I won't make up a number. But 349 commits with 668 tests holding up every step already give an idea of the cost.
 
-Notice the detail that matters: the only game that actually got finished is Super Mario Bros. Why? Because SMB is the most dissected game in history. There's a [complete public disassembly](https://gist.github.com/1wErt3r/4048722) the community has used since 2007, with every function named and commented. I fed that into the game's profile and the LLM had a complete map to work with. For the other games, there's no map. And without a map, each new game died a few frames after boot from control flow divergence, and each one demanded an instruction-by-instruction forensic hunt that carried nothing over to the next game.
+Notice the detail that matters: the only game that actually got finished is Super Mario Bros. Why? Because SMB is the most dissected game in history. There's a [complete public disassembly](https://gist.github.com/1wErt3r/4048722) the community has used for over a decade, with every function named and commented. I fed that into the game's profile and the LLM had a complete map to work with. For the other games, there's no map. And without a map, each new game died a few frames after boot from control flow divergence, and each one demanded an instruction-by-instruction forensic hunt that carried nothing over to the next game.
 
 The project itself documented the spinning pattern. There was an entire optimization campaign that lasted weeks trying to cut the cost of emulating 6502 flags on the Z80.
 
@@ -75,7 +89,7 @@ The pause banner I wrote in the README is blunt: real-hardware parity "may be fu
 
 ### gg-to-sms: the pivot to mapped territory
 
-The same day I paused nes-to-sms, I started gg-to-sms: converting Game Gear games to Master System with a widened screen. The difference that matters is that this problem **is not new**. The romhacking scene converted ~186 GG games to SMS by hand over twenty years. Meaning: there's a corpus, there's ground truth, there's a pattern to learn.
+The same day I paused nes-to-sms, I started gg-to-sms: converting Game Gear games to Master System with a widened screen. The difference that matters is that this problem **is not new**. The romhacking scene has been converting GG games to SMS by hand for twenty years, and the catalog I built in the project counted ~186 of them. Meaning: there's a corpus, there's ground truth, there's a pattern to learn.
 
 Result: in one day of work,
 
@@ -168,7 +182,7 @@ In short: novelty comes out, but it comes out through expensive search over an o
 And when brute force wins, you can measure the size of the trial and error. Two recent cases I already covered [in detail here on the blog](/en/2026/09/09/propagandas-enganosas-da-openai-anthropic-nvidia/):
 
 - **OpenAI's Navier-Stokes proof:** about 10 thousand agents running in parallel for 88 hours, burning around **130 billion output tokens** on a single problem. OpenAI's Noam Brown confirmed the result "cost millions," and [New Scientist estimated some $15 million at list price](https://www.newscientist.com/article/2588063-openai-has-solved-the-navier-stokes-millennium-problem-using-15m-of-ai-effort/). And even that mountain of compute didn't start from zero: the proof leaned on the machinery human mathematicians published over decades attacking the problem and its sibling problems. Without the humans' map and without OpenAI's budget, there's no proof.
-- **The Hugging Face incident:** the forensic reconstruction counted **~17,600 attacker actions** before the agents managed to execute code on 41 production servers, get root, and read 956 credentials. It wasn't one brilliant single-strike insight: it was a swarm executing attempt after attempt, with automatic verification saying what stuck. The headline's "intelligence" is volume.
+- **The Hugging Face incident:** the forensic reconstruction counted **~17,600 attacker actions** before the agents managed to execute code on 41 Hugging Face production servers and get root; on top of that, inside OpenAI's own environment, they read 956 secrets from the company's secrets manager. It wasn't one brilliant single-strike insight: it was a swarm executing attempt after attempt, with automatic verification saying what stuck. The headline's "intelligence" is volume.
 
 That's the size of the bill when you force the model outside training territory: trial and error at industrial scale, with no guarantee the search finds what you need. And who can sign that check is half a dozen companies in the world, OpenAI and Anthropic level, with a practically unlimited compute budget. For the average Joe, with a credit card and an API key, the ceiling arrives much, much earlier.
 
