@@ -45,13 +45,23 @@ O [nes-to-sms](https://github.com/akitaonrails/nes-to-sms) é um recompilador es
 
 Recompilador estático de NES existe, o [NESRecomp](https://github.com/mstan/nesrecomp) traduz pra C e roda nativo em PC, e eu estudei ele de perto. Mas cruzar de um console pra outro console de 8 bits, com orçamento de clock e de VDP totalmente diferente, ninguém nunca fez. Não existe referência pública, não existe paper, não existe projeto abandonado pra copiar.
 
-Os números do projeto: **349 commits, 31 dias ativos espalhados por quase 4 meses, ~110 mil linhas de engine em Rust e Z80, 668 testes passando**. E o resultado? Super Mario Bros. jogável (lento, com áudio limitado, mas jogável), com paridade byte a byte contra o NES em [rotas de 4.900 frames](https://github.com/akitaonrails/nes-to-sms/blob/main/docs/completion-plan.md). Castlevania jogável na fase 1. SMB3 renderizando. E uma fila de jogos que bootam três frames e morrem.
+Os números do projeto: **349 commits, 31 dias ativos espalhados por quase 4 meses, ~110 mil linhas de engine em Rust e Z80, 668 testes passando**. E o resultado? Super Mario Bros. jogável (lento, com áudio limitado, mas jogável), com paridade byte a byte contra o NES em [rotas de 4.900 frames](https://github.com/akitaonrails/nes-to-sms/blob/master/docs/completion-plan.md). Castlevania jogável na fase 1. SMB3 renderizando. E uma fila de jogos que bootam três frames e morrem.
+
+E não foi por falta de empurrar os modelos. Só nesse projeto:
+
+- passaram **quatro gerações de Claude** (Opus 4.7, Opus 4.8, Fable 5, Fable 5.1), com 213 commits co-assinados e 104 sessões linkadas no histórico, mais sessões de Codex nos trechos sem co-autoria, com direito a handoff documentado entre agentes;
+- teve até auditoria entre gerações: uma sessão nova de agente [revisou os 55 commits anteriores](https://github.com/akitaonrails/nes-to-sms/blob/master/docs/mapper-continuation-review.md) e reverteu conclusões que a geração anterior tinha exagerado;
+- só a caçada aos travamentos do Castlevania consumiu 43 commits em 5 dias;
+- o sprint final de setembro foram 176 commits em 17 dias antes de eu decretar a pausa;
+- e as regressões estão registradas pelo nome no histórico: *"H.7 tried and reverted"*, *"record the reverted map-bank-hold attempt"*, *"correct-but-reverted result"*, além de três hipóteses de alavanca compartilhada testadas e rejeitadas nos últimos três dias de projeto.
+
+Tokens eu não medi de forma confiável nesse projeto, então não vou inventar número. Mas 349 commits com 668 testes segurando cada passo já dão uma ideia do custo.
 
 Repara no detalhe que importa: o único jogo que ficou realmente pronto é o Super Mario Bros. Por quê? Porque SMB é o jogo mais dissecado da história. Existe uma [disassembly completa e pública](https://gist.github.com/1wErt3r/4048722) que a comunidade usa desde 2012, com cada função nomeada e comentada. Eu alimentei isso no perfil do jogo e a LLM tinha um mapa completo pra trabalhar. Pros outros jogos, não existe mapa. E sem mapa, cada jogo novo morria alguns frames depois do boot por divergência de fluxo de controle, e cada um exigia uma caçada forense instrução por instrução que não rendia nada pro jogo seguinte.
 
 O próprio projeto documentou o padrão de giro. Teve uma campanha inteira de otimização que durou semanas tentando cortar o custo de emular flags do 6502 no Z80.
 
-Aí em setembro eu parei pra comparar com o [port manual que um hacker chamado lackoftrack27 fez de SMB pra Master System](https://github.com/lackoftrack27/Super-Mario-Bros.-SMS), escrito por um humano, rotina por rotina. Pela [análise que a gente fez do código dele](https://github.com/akitaonrails/nes-to-sms/blob/main/docs/handport-comparison.md), o port humano roda dentro do orçamento de frame com folga. A minha máquina, depois de meses de otimização, ainda precisava de overclock.
+Aí em setembro eu parei pra comparar com o [port manual que um hacker chamado lackoftrack27 fez de SMB pra Master System](https://github.com/lackoftrack27/Super-Mario-Bros.-SMS), escrito por um humano, rotina por rotina. Pela [análise que a gente fez do código dele](https://github.com/akitaonrails/nes-to-sms/blob/master/docs/handport-comparison.md), o port humano roda dentro do orçamento de frame com folga. A minha máquina, depois de meses de otimização, ainda precisava de overclock.
 
 E o documento de análise cravou por quê: quando removemos 30% das chamadas de emulação de flag, o tempo mal se moveu.
 

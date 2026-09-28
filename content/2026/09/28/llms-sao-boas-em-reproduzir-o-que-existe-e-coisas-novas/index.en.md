@@ -45,13 +45,23 @@ I'm not theorizing. Over the last few months I ran a marathon of retrocomputing 
 
 Static NES recompilers exist, [NESRecomp](https://github.com/mstan/nesrecomp) translates to C and runs natively on PC, and I studied it closely. But crossing from one console to another 8-bit console, with a completely different clock and VDP budget, nobody has ever done. There's no public reference, no paper, no abandoned project to copy.
 
-The project numbers: **349 commits, 31 active days spread over almost 4 months, ~110 thousand lines of engine in Rust and Z80, 668 tests passing**. And the result? Playable Super Mario Bros. (slow, limited audio, but playable), with byte-for-byte parity against the NES on [4,900-frame routes](https://github.com/akitaonrails/nes-to-sms/blob/main/docs/completion-plan.md). Castlevania playable on stage 1. SMB3 rendering. And a queue of games that boot three frames and die.
+The project numbers: **349 commits, 31 active days spread over almost 4 months, ~110 thousand lines of engine in Rust and Z80, 668 tests passing**. And the result? Playable Super Mario Bros. (slow, limited audio, but playable), with byte-for-byte parity against the NES on [4,900-frame routes](https://github.com/akitaonrails/nes-to-sms/blob/master/docs/completion-plan.md). Castlevania playable on stage 1. SMB3 rendering. And a queue of games that boot three frames and die.
+
+And it wasn't for lack of pushing the models. In this project alone:
+
+- **four generations of Claude** went through it (Opus 4.7, Opus 4.8, Fable 5, Fable 5.1), with 213 co-signed commits and 104 sessions linked in the history, plus Codex sessions in the stretches without co-authorship, complete with documented handoffs between agents;
+- there was even cross-generation auditing: a new agent session [reviewed the previous 55 commits](https://github.com/akitaonrails/nes-to-sms/blob/master/docs/mapper-continuation-review.md) and reverted conclusions the previous generation had overclaimed;
+- the Castlevania crash hunt alone consumed 43 commits in 5 days;
+- the final September sprint was 176 commits in 17 days before I called the pause;
+- and the regressions are registered by name in the history: *"H.7 tried and reverted"*, *"record the reverted map-bank-hold attempt"*, *"correct-but-reverted result"*, plus three shared-lever hypotheses tested and rejected in the project's last three days.
+
+I didn't measure tokens reliably in this project, so I won't make up a number. But 349 commits with 668 tests holding up every step already give an idea of the cost.
 
 Notice the detail that matters: the only game that actually got finished is Super Mario Bros. Why? Because SMB is the most dissected game in history. There's a [complete public disassembly](https://gist.github.com/1wErt3r/4048722) the community has used since 2012, with every function named and commented. I fed that into the game's profile and the LLM had a complete map to work with. For the other games, there's no map. And without a map, each new game died a few frames after boot from control flow divergence, and each one demanded an instruction-by-instruction forensic hunt that carried nothing over to the next game.
 
 The project itself documented the spinning pattern. There was an entire optimization campaign that lasted weeks trying to cut the cost of emulating 6502 flags on the Z80.
 
-Then in September I stopped to compare with the [manual port of SMB to Master System made by a hacker named lackoftrack27](https://github.com/lackoftrack27/Super-Mario-Bros.-SMS), written by a human, routine by routine. According to [the analysis we did of his code](https://github.com/akitaonrails/nes-to-sms/blob/main/docs/handport-comparison.md), the human port runs inside the frame budget with room to spare. My machine, after months of optimization, still needed overclocking.
+Then in September I stopped to compare with the [manual port of SMB to Master System made by a hacker named lackoftrack27](https://github.com/lackoftrack27/Super-Mario-Bros.-SMS), written by a human, routine by routine. According to [the analysis we did of his code](https://github.com/akitaonrails/nes-to-sms/blob/master/docs/handport-comparison.md), the human port runs inside the frame budget with room to spare. My machine, after months of optimization, still needed overclocking.
 
 And the analysis document pinned down why: when we removed 30% of the flag emulation calls, the timing barely moved.
 
