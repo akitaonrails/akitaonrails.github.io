@@ -16,6 +16,8 @@ Everyone has noticed by now that LLMs write CRUD with their eyes closed. Forms, 
 
 This article shows where that frontier sits, with evidence from my own projects and from the research that exists on the subject.
 
+A disclaimer before we start: what I'm going to argue here is speculative, based on observation and on the public data that exists. Nobody outside the labs knows exactly how each provider trains their own models, and that varies from provider to provider and from version to version. What holds today may not hold in the next generation. Take it all with a grain of salt.
+
 ## The Training Blind Spot
 
 Every LLM was trained on what's public. The entire public internet, and for code, public GitHub. The canonical open code dataset, BigCode's [The Stack v2](https://huggingface.co/datasets/bigcode/the-stack-v2), is explicit about this: it's derived from Software Heritage, an archive of *"the source code of all publicly available software"*. That's 67.5 TB, 3.28 billion files, 104 million repositories. Huge. And all public.

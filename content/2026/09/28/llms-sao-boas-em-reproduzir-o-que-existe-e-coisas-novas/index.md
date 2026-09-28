@@ -16,6 +16,8 @@ Todo mundo já percebeu que LLM escreve CRUD de olhos fechados. Formulário, rel
 
 Esse artigo mostra onde ela fica, com evidência dos meus próprios projetos e da pesquisa que existe sobre o assunto.
 
+Um disclaimer antes de começar: o que eu vou argumentar aqui é especulativo, baseado em observação e nos dados públicos que existem. Ninguém fora dos laboratórios sabe exatamente como cada provedor treina os próprios modelos, e isso varia de provedor pra provedor e de versão pra versão. O que vale hoje pode não valer na próxima geração. Leve tudo com um grão de sal.
+
 ## O ponto cego do treinamento
 
 Todo LLM foi treinado no que é público. A internet pública inteira, e no caso de código, o GitHub público. O dataset canônico de código aberto, o [The Stack v2](https://huggingface.co/datasets/bigcode/the-stack-v2) da BigCode, é explícito sobre isso: ele é derivado do Software Heritage, um arquivo de *"todo o código-fonte de software publicamente disponível"*. São 67,5 TB, 3,28 bilhões de arquivos, 104 milhões de repositórios. Gigantesco. E todo público.
