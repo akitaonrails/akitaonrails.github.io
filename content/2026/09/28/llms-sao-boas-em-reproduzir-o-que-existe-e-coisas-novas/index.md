@@ -145,7 +145,7 @@ Até a literatura de código legado diz a mesma coisa: um [paper de 2026 sobre L
 
 ## O steelman: força bruta direcionada funciona, a preço de ouro
 
-Antes de fechar, vale encarar o argumento mais forte contra mim. Ele existe e é bom.
+Antes de fechar, vale encarar o argumento mais forte contra mim. Steelman é isso, pra quem não conhece o termo: o oposto de espantalho. Em vez de atacar a versão mais fraca do argumento contrário, você responde à versão mais forte que ele pode ter. E ela existe e é boa.
 
 Em maio de 2025 o DeepMind publicou o [AlphaEvolve](https://deepmind.google/discover/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/): um sistema que achou um algoritmo de multiplicação de matrizes 4x4 complexas com 48 multiplicações escalares, melhorando o recorde do Strassen de 1969 nesse cenário específico. Numa lista de mais de 50 problemas abertos de matemática, ele redescobriu o estado da arte em ~75% dos casos e melhorou a melhor solução conhecida em 20%. Isso é novidade de verdade, não reprodução.
 
@@ -164,6 +164,13 @@ Se teve "insight" em algum deles, foi do sistema de busca ao redor do modelo: os
 > *"Busca de força bruta eventualmente resolveria o ARC-AGI, dado recurso e tempo ilimitados. Isso não representaria inteligência de verdade."*
 
 Resumindo: novidade sai, mas sai por busca cara sobre um oráculo, à base de tentativa e erro guiada. Se o seu problema tem verificador barato e você tem tokens pra queimar, dá pra ir longe. Foi assim que o nes-to-sms chegou onde chegou: 668 testes e ground truth de emulador segurando cada passo. Mas quando não tem oráculo, não tem corpus e não tem referência, você está pagando força bruta em dólar, com regressões no caminho, e o teto aparece.
+
+E quando a força bruta vence, dá pra medir o tamanho da tentativa e erro. Dois casos recentes que eu já cobri [em detalhe aqui no blog](/2026/09/09/propagandas-enganosas-da-openai-anthropic-nvidia/):
+
+- **A prova de Navier-Stokes da OpenAI:** cerca de 10 mil agentes rodando em paralelo por 88 horas, queimando na casa de **130 bilhões de tokens** de saída num único problema. O Noam Brown, da OpenAI, confirmou que o resultado "custou milhões", e a [New Scientist estimou uns US$ 15 milhões a preço de tabela](https://www.newscientist.com/article/2588063-openai-has-solved-the-navier-stokes-millennium-problem-using-15m-of-ai-effort/). E nem essa montanha de compute partiu do zero: a prova se apoiou no maquinário que matemáticos humanos publicaram ao longo de décadas atacando o problema e os problemas irmãos. Sem o mapa dos humanos e sem o orçamento da OpenAI, não tem prova.
+- **O incidente da Hugging Face:** a reconstrução forense contou **~17.600 ações de atacante** até os agentes conseguirem executar código em 41 servidores de produção, pegar root e ler 956 credenciais. Não foi um insight brilhante de um lance só: foi um enxame executando tentativa atrás de tentativa, com verificação automática dizendo o que colou. A "inteligência" da manchete é volume.
+
+É esse o tamanho da conta quando você força o modelo pra fora do território do treino: tentativa e erro em escala industrial, sem garantia nenhuma de que a busca acha o que você precisa. E quem pode assinar esse cheque é meia dúzia de empresa no mundo, nível OpenAI e Anthropic, com orçamento praticamente ilimitado de compute. Pro Zé da esquina, com cartão de crédito e uma API key, o teto chega muito, muito antes.
 
 ## Onde isso deixa a profissão
 

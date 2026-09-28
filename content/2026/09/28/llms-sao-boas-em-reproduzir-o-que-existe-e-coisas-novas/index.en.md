@@ -145,7 +145,7 @@ Even the legacy code literature says the same thing: a [2026 paper on LLMs gener
 
 ## The Steelman: Directed Brute Force Works, at a Steep Price
 
-Before wrapping up, it's worth facing the strongest argument against me. It exists and it's a good one.
+Before wrapping up, it's worth facing the strongest argument against me. That's what steelman means, for anyone unfamiliar with the term: the opposite of a strawman. Instead of attacking the weakest version of the opposing argument, you answer the strongest version it can have. And it exists, and it's a good one.
 
 In May 2025 DeepMind published [AlphaEvolve](https://deepmind.google/discover/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/): a system that found an algorithm for multiplying 4x4 complex matrices with 48 scalar multiplications, beating Strassen's 1969 record in that specific scenario. On a list of more than 50 open math problems, it rediscovered the state of the art in ~75% of cases and improved the best known solution in 20%. That's real novelty, not reproduction.
 
@@ -164,6 +164,13 @@ If there was any "insight" in any of them, it came from the search system around
 > *"We know that brute-force search could eventually solve ARC-AGI (given unlimited resources and time to search). This would not represent true intelligence."*
 
 In short: novelty comes out, but it comes out through expensive search over an oracle, on the basis of guided trial and error. If your problem has a cheap verifier and you have tokens to burn, you can go far. That's how nes-to-sms got where it got: 668 tests and emulator ground truth holding up every step. But when there's no oracle, no corpus, and no reference, you're paying for brute force in dollars, with regressions along the way, and the ceiling shows up.
+
+And when brute force wins, you can measure the size of the trial and error. Two recent cases I already covered [in detail here on the blog](/en/2026/09/09/propagandas-enganosas-da-openai-anthropic-nvidia/):
+
+- **OpenAI's Navier-Stokes proof:** about 10 thousand agents running in parallel for 88 hours, burning around **130 billion output tokens** on a single problem. OpenAI's Noam Brown confirmed the result "cost millions," and [New Scientist estimated some $15 million at list price](https://www.newscientist.com/article/2588063-openai-has-solved-the-navier-stokes-millennium-problem-using-15m-of-ai-effort/). And even that mountain of compute didn't start from zero: the proof leaned on the machinery human mathematicians published over decades attacking the problem and its sibling problems. Without the humans' map and without OpenAI's budget, there's no proof.
+- **The Hugging Face incident:** the forensic reconstruction counted **~17,600 attacker actions** before the agents managed to execute code on 41 production servers, get root, and read 956 credentials. It wasn't one brilliant single-strike insight: it was a swarm executing attempt after attempt, with automatic verification saying what stuck. The headline's "intelligence" is volume.
+
+That's the size of the bill when you force the model outside training territory: trial and error at industrial scale, with no guarantee the search finds what you need. And who can sign that check is half a dozen companies in the world, OpenAI and Anthropic level, with a practically unlimited compute budget. For the average Joe, with a credit card and an API key, the ceiling arrives much, much earlier.
 
 ## Where This Leaves the Profession
 
