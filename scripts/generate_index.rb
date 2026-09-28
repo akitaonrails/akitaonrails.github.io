@@ -28,6 +28,7 @@ ALLOWED_TAGS = {
 }.transform_values(&:freeze).freeze
 
 FEATURED_POSTS = [
+  ['2026-09-28', 'Os Limites das LLMs: Boas em reproduzir o que existe. Caras pro que não existe', '/2026/09/28/llms-sao-boas-em-reproduzir-o-que-existe-e-coisas-novas/'],
   ['2026-09-23', 'LLM Benchmark v4: Genesys PI, novo competidor brasileiro!', '/2026/09/23/llm-benchmark-v4-genesys-pi-novo-competidor-brasileiro/'],
   ['2026-09-23', 'LLM Benchmark v4: Opus 5.5, GPT Sol/Luna 6, Mimo 2.6, Grok 4.7', '/2026/09/23/llm-benchmark-v4-opus-5-5-gpt-6-sol-luna-mimo-2-6-grok-4-7/'],
   ['2026-09-22', 'Cuidado! Pseudo-Techcrunch tentou me pegar em golpe! E Calendly é uma MERDA', '/2026/09/22/pseudo-techcrunch-tentou-me-pegar-em-golpe-calendly-e-uma-merda/'],
@@ -58,6 +59,7 @@ FEATURED_POSTS = [
 ].freeze
 
 FEATURED_POSTS_EN = [
+  ['2026-09-28', "The Limits of LLMs: Good at Reproducing What Exists. Expensive for What Doesn't", '/en/2026/09/28/llms-are-good-at-reproducing-what-exists-what-about-new-things/'],
   ['2026-09-23', 'LLM Benchmark v4: Genesys PI, a New Brazilian Contender!', '/en/2026/09/23/llm-benchmark-v4-genesys-pi-new-brazilian-contender/'],
   ['2026-09-23', 'LLM Benchmark v4: Opus 5.5, GPT Sol/Luna 6, Mimo 2.6, Grok 4.7', '/en/2026/09/23/llm-benchmark-v4-opus-5-5-gpt-6-sol-luna-mimo-2-6-grok-4-7/'],
   ['2026-09-22', 'Watch Out! A Pseudo-TechCrunch Tried to Scam Me! And Calendly Is SHIT', '/en/2026/09/22/pseudo-techcrunch-tried-to-scam-me-calendly-is-shit/'],
