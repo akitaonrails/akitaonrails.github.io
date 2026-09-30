@@ -42,6 +42,8 @@ Antes de rodar, confirmei que o cache existia mesmo. Um probe com prefixo repeti
 | **Genesys PI House** | 83,5 → **95,5** (+12,0) | #7b, #8 → **nenhum** | ~$460 → **~$70** (−85%) | 68min → 94min |
 | **Genesys PI Enterprise** | 82,5 → **82,0** (−0,5) | #7a, #7b, #9 → #7b, #8 | ~$19 → **~$2,40** (−87%) | 39min → 33min |
 
+Pra situar na tabela geral: na rodada original, o House empatava com o Grok 4.7 em 83,5. Com 95,5, ele passaria a empatar com o Claude Fable 5.1, o Sakana Fugu Ultra v2 e o GPT 6 luna, na posição 9 entre 46 modelos. O Enterprise, a 82,0, empataria com o DeepSeek V4 Pro (base). Digo "empataria" porque, como explico abaixo, mantive a rodada original como entrada oficial do ranking.
+
 O que melhorou de forma clara e reproduzível:
 
 - **Custo caiu 85% a 87%.** O volume de token foi o mesmo, uns 40 milhões no House e uns 20 milhões no Enterprise, mas agora o contexto repetido é cobrado na taxa de cache em vez do preço cheio de entrada. O House sai de rodada mais cara da tabela pra custo médio.

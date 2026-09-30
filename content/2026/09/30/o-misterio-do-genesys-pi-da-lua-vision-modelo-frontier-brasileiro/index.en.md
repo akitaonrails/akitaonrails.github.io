@@ -42,6 +42,8 @@ Before running, I confirmed the cache was really there. A repeated-prefix probe 
 | **Genesys PI House** | 83.5 → **95.5** (+12.0) | #7b, #8 → **none** | ~$460 → **~$70** (−85%) | 68m → 94m |
 | **Genesys PI Enterprise** | 82.5 → **82.0** (−0.5) | #7a, #7b, #9 → #7b, #8 | ~$19 → **~$2.40** (−87%) | 39m → 33m |
 
+To place it in the overall table: in the original round, House tied Grok 4.7 at 83.5. At 95.5, it would tie Claude Fable 5.1, Sakana Fugu Ultra v2 and GPT 6 luna, at rank 9 among 46 models. Enterprise, at 82.0, would tie DeepSeek V4 Pro (base). I say "would" because, as I explain below, I kept the original run as the official ranking entry.
+
 What clearly and reproducibly improved:
 
 - **Cost dropped 85% to 87%.** Token volume was the same, about 40 million on House and about 20 million on Enterprise, but repeated context is now billed at the cache rate instead of full input price. House goes from the most expensive run in the table to mid-cost.
