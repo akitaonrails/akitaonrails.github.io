@@ -77,7 +77,9 @@ The pricing policy, according to them, comes out on October 7, 2026.
 
 ## Extra experiment: Genesys PI auditing ai-jail
 
-A sabotage benchmark measures vigilance inside a small, controlled app. I wanted to see the model on a real problem, so I gave it my [ai-jail](https://github.com/akitaonrails/ai-jail), the operating-system sandbox that runs coding agents inside bubblewrap, Landlock and seccomp on Linux and `sandbox-exec` on macOS. It's a Rust project, with 776 unit tests, 70 dependency crates and a security surface I know well. The task: a full security audit of [version 2.3.0](https://github.com/akitaonrails/ai-jail/releases/tag/v2.3.0), at commit [`f62d576`](https://github.com/akitaonrails/ai-jail/commit/f62d5761b18b9d9765b4c88aacc4ad77ff0db5e4), read-only, with a threat model, line-level code evidence and reproduction where possible. Anyone who wants to check can open the repository at that commit and follow the reports' file and line references.
+A sabotage benchmark measures vigilance inside a small, controlled app. I wanted to see the model on a real problem, so I gave it my [ai-jail](https://github.com/akitaonrails/ai-jail), the operating-system sandbox that runs coding agents inside bubblewrap, Landlock and seccomp on Linux and `sandbox-exec` on macOS. It's a Rust project, with 776 unit tests, 70 dependency crates and a security surface I know well.
+
+The task: a full security audit of [version 2.3.0](https://github.com/akitaonrails/ai-jail/releases/tag/v2.3.0), at commit [`f62d576`](https://github.com/akitaonrails/ai-jail/commit/f62d5761b18b9d9765b4c88aacc4ad77ff0db5e4), read-only, with a threat model, line-level code evidence and reproduction where possible. Anyone who wants to check can open the repository at that commit and follow the reports' file and line references.
 
 For a yardstick, I ran a second independent audit, with another model, with no access to Genesys's report until its own candidate list was fixed. Then I cross-checked the two reports and also compared them against two security advisories that were open on GitHub, written by outsiders against earlier versions of the project.
 
@@ -131,11 +133,15 @@ The benchmark reinforces this in a way I liked. If LUA were a passthrough of GPT
 
 LUA fails exactly those two items, stably, across the four runs I did. A proxy doesn't come out consistently weaker than the model behind it on one specific trait. That's the picture of a model with its own weaknesses.
 
-Someone could ask whether I only compared against the OpenAI family. I didn't. I took the benchmark's most discriminating signature, the set of items each model never fixed, and compared LUA's against all roughly 44 models in the table. House's {#7b, #8} pair lands closest to the Qwen family (Qwen 3.7 Max and Qwen 3.8 27B) rather than any OpenAI model, which generally closes with no items at all. Except that's a score-tier artifact, not lineage: #7b and #8 are the two most disguised sabotages, and every model in the 80-point range misses both, from any family, while LUA's re-test at 95.5 left none.
+Someone could ask whether I only compared against the OpenAI family. I didn't. I took the benchmark's most discriminating signature, the set of items each model never fixed, and compared LUA's against all roughly 44 models in the table. House's {#7b, #8} pair lands closest to the Qwen family (Qwen 3.7 Max and Qwen 3.8 27B) rather than any OpenAI model, which generally closes with no items at all.
+
+Except that's a score-tier artifact, not lineage: #7b and #8 are the two most disguised sabotages, and every model in the 80-point range misses both, from any family, while LUA's re-test at 95.5 left none.
 
 The interesting result is that LUA's three behavioral signals point in three different directions: the error tail looks like Qwen, the rare #6 fix looks like GPT 6 luna, and the tokenizer and API shape look like OpenAI. A real proxy or clone resembles a single model on every axis at once. LUA resembles no model in the table on every axis.
 
-And there's the generation test. I ran GPT-4o and GPT-4.1, the best of the GPT-4 generation, with GPT-4o being precisely the model from the same tokenizer family and the most obvious candidate distillation teacher, on the same opencode harness. Neither completed v4: GPT-4o built the app in a nested subdirectory, spent whole sprints emitting a plan instead of using tools and never committed on its own; GPT-4.1 fell into a research loop and, even when pushed, delivered empty authentication. A GPT-4o passthrough would inherit that agentic fragility. LUA runs seven clean sprints and commits by itself. Agentically, it's current generation, not GPT-4 generation.
+And there's the generation test. I ran GPT-4o and GPT-4.1, the best of the GPT-4 generation, with GPT-4o being precisely the model from the same tokenizer family and the most obvious candidate distillation teacher, on the same opencode harness.
+
+Neither completed v4: GPT-4o built the app in a nested subdirectory, spent whole sprints emitting a plan instead of using tools and never committed on its own; GPT-4.1 fell into a research loop and, even when pushed, delivered empty authentication. A GPT-4o passthrough would inherit that agentic fragility. LUA runs seven clean sprints and commits by itself. Agentically, it's current generation, not GPT-4 generation.
 
 There was one coincidence worth recording: of the roughly 40 models whose fix I checked, only two added a unique `LOWER(email)` index in the database when fixing sabotage #6. They were LUA and GPT 6 luna.
 
