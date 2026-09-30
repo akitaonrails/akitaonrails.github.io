@@ -19,7 +19,7 @@ Muita coisa aconteceu desde então, e este texto é a continuação. Vou na orde
 
 O spoiler que justifica o texto: depois que a LUA corrigiu a API, o House refez o benchmark em 95,5. Na minha tabela, isso é empate com o Claude Fable 5.1 e o GPT 6 luna, e o custo da rodada caiu 85%. Não estou dizendo que é um Fable em todos os sentidos; estou dizendo que, neste cenário de teste, se saiu como um. Os detalhes, e as ressalvas de ruído, vêm logo abaixo.
 
-Antes disso, o pano de fundo que deixa tudo isso estranho: o consenso da indústria é que treinar modelo de fronteira custa dezenas ou centenas de milhões de dólares em GPU, e que, portanto, uma empresa pequena, sem rodada de investimento bilionária, não deveria chegar nem perto de um. O gpt-oss, o modelo aberto da própria OpenAI, com o laboratório mais bem financiado do mundo atrás, não conseguiu completar o meu benchmark no mesmo harness em que o Genesys PI rodou. O modelo brasileiro completou duas vezes por tier.
+Antes disso, o pano de fundo que deixa tudo isso estranho: o consenso da indústria é que treinar modelo de fronteira custa dezenas ou centenas de milhões de dólares em GPU, e que, portanto, uma empresa pequena, sem rodada de investimento bilionária, não deveria chegar nem perto de um. O gpt-oss, o modelo aberto da própria OpenAI, com o laboratório mais bem financiado do mundo atrás, não conseguiu completar o meu benchmark no mesmo harness em que o Genesys PI rodou. O GPT-4o e o GPT-4.1 também não. O modelo brasileiro completou duas vezes por tier.
 
 Este texto é organizado em cima dessa tensão. Primeiro, o que o modelo fez em experimentos que eu controlo. Depois, o que eu consegui e o que não consegui verificar sobre como ele existe.
 
@@ -131,6 +131,12 @@ O benchmark reforça isso de um jeito que gostei. Se a LUA fosse um passthrough 
 
 A LUA falha exatamente nesses dois itens, de forma estável, nas quatro rodadas que fiz. Um proxy não fica consistentemente mais fraco que o modelo que está por trás numa característica específica. Isso é o retrato de um modelo com fraquezas próprias.
 
+Alguém poderia perguntar se eu só comparei com a família OpenAI. Não. Peguei a assinatura mais discriminante do benchmark, o conjunto de itens que cada modelo nunca corrigiu, e comparei a da LUA contra todos os cerca de 44 modelos da tabela. O par {#7b, #8} do House aparece mais perto da família Qwen (Qwen 3.7 Max e Qwen 3.8 27B) do que de qualquer OpenAI, que em geral fecha sem item nenhum. Só que isso é artefato de faixa de nota, não de linhagem: #7b e #8 são as duas sabotagens mais disfarçadas, e todo modelo na faixa dos 80 pontos erra as duas, de qualquer família, enquanto o re-teste da LUA a 95,5 não deixou nenhuma.
+
+O resultado interessante é que os três sinais comportamentais da LUA apontam pra três direções diferentes: a cauda de erro parece Qwen, a correção rara do #6 parece GPT 6 luna, e o tokenizador e o formato da API parecem OpenAI. Um proxy ou clone de verdade parece com um único modelo em todos os eixos ao mesmo tempo. A LUA não parece com nenhum modelo da tabela em todos os eixos.
+
+E tem o teste de geração. Rodei o GPT-4o e o GPT-4.1, os melhores da geração GPT-4 e o GPT-4o sendo justamente o modelo da mesma família de tokenizador e o candidato mais óbvio a professor de destilação, no mesmo harness opencode. Nenhum dos dois completou o v4: o GPT-4o construiu o app num subdiretório aninhado, passou sprint inteiro emitindo plano em vez de usar ferramenta e nunca fez commit sozinho; o GPT-4.1 entrou em loop de pesquisa e, mesmo empurrado, entregou autenticação vazia. Um passthrough do GPT-4o herdaria essa fragilidade agêntica. A LUA roda sete sprints limpos e faz commit por conta própria. Agenticamente, ela é geração atual, não geração GPT-4.
+
 Teve uma coincidência que vale registrar: dos cerca de 40 modelos cuja correção eu verifiquei, só dois adicionaram um índice único `LOWER(email)` no banco ao corrigir a sabotagem #6. Foram a LUA e o GPT 6 luna.
 
 É uma convergência rara, mas é também a correção mais completa possível, o tipo de coisa que dois modelos cuidadosos podem chegar sozinhos. E os dois pegaram o item em momentos diferentes da rodada. Levanta uma sobrancelha, mas não chega a suspeita.
@@ -158,6 +164,8 @@ Ou seja, o produto que me deram usa um vocabulário otimizado pra inglês, não 
 | Peso do gpt-oss com Harmony arrancado + template próprio | Não excluído | — |
 | Proxy fino pra GPT ou Claude | Argumentado contra | Média |
 | Wrapper grosso sobre uma API de raciocínio | Não excluído | — |
+| Proxy ou clone comportamental de qualquer um dos ~44 modelos do v4 | Argumentado contra | Média |
+| Passthrough de GPT-4o ou gpt-oss (mesmo harness) | Argumentado contra | Média-alta |
 | Modelo novo, peso próprio, tokenizador o200k público | Consistente com tudo que medi | Média |
 | Treinado do zero versus destilado de modelo de fronteira | Não separável em caixa-preta | — |
 
@@ -165,7 +173,7 @@ Em uma frase: com confiança alta, o Genesys PI não é modelo chinês rebatizad
 
 ### Mais um disclaimer: só comparei com quem eu testei
 
-O painel de referência tem os tokenizadores da OpenAI, Qwen, DeepSeek, Llama e Mistral, e o painel de comportamento tem GPT-4o, gpt-oss, GPT-5, Claude, Qwen, DeepSeek, Llama e Gemini. É o que cobre a esmagadora maioria do que roda em produção hoje, mas existem dezenas de outros modelos abertos que eu não comparei. Sempre existe a chance de que o parente do Genesys PI seja um deles e eu tenha passado batido. "Não encontrei correlação" significa "não encontrei entre os que testei", e nada além disso.
+O painel de tokenizadores tem OpenAI, Qwen, DeepSeek, Llama e Mistral; o painel de comportamento da API tem GPT-4o, gpt-oss, GPT-5, Claude, Qwen, DeepSeek, Llama e Gemini; e o cruzamento comportamental do benchmark cobre os cerca de 44 modelos que já rodaram o v4. É o que cobre a esmagadora maioria do que roda em produção hoje, mas existem dezenas de outros modelos abertos que eu não comparei. Sempre existe a chance de que o parente do Genesys PI seja um deles e eu tenha passado batido. "Não encontrei correlação" significa "não encontrei entre os que testei", e nada além disso.
 
 Dito isso, repare no tamanho do esforço que seria necessário pra enganar essa análise. Alguém teria que adotar o tokenizador da OpenAI, mascarar a identidade do modelo no servidor de forma que resista a override de prompt, construir um gateway próprio que rejeite exatamente os parâmetros que um servidor de modelo aberto aceitaria, manter fraquezas estáveis e próprias ao longo de quatro rodadas, e ainda completar um benchmark de sete sprints em nível de fronteira. Se isso não for um modelo de verdade, o trabalho de fingir que é já seria extraordinário. A partir de certo ponto, a falsificação convincente de um modelo é indistinguível de ter um modelo.
 
@@ -195,7 +203,8 @@ Checado, por mim:
 - o bug de cache foi corrigido e o custo caiu 85%;
 - o tokenizador é o `o200k_base` público, o que exclui derivação de Qwen, DeepSeek, Llama e Mistral;
 - a API não se comporta como proxy transparente e o modelo tem fraquezas próprias e estáveis;
-- o gpt-oss de fábrica não explica o resultado.
+- o gpt-oss de fábrica não explica o resultado;
+- comparada contra todos os ~44 modelos do v4, a LUA não se parece com nenhum deles em todos os eixos, e completa um benchmark agêntico que o GPT-4o e o GPT-4.1 não completam no mesmo harness.
 
 Não checado, e é só a palavra deles:
 
