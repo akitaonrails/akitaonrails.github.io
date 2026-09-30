@@ -17,6 +17,8 @@ Both caught every loud sabotage; House let through the two silent items almost e
 
 A lot has happened since then, and this post is the continuation. I'll go in the order that matters: first the new numbers, then the question everyone asked me in comments and DMs ("isn't this just a Qwen with a sticker?"), and only at the end the speculative part about what the company says it built.
 
+The spoiler that justifies the post: after LUA fixed the API, House redid the benchmark at 95.5. In my table, that's a tie with Claude Fable 5.1 and GPT 6 luna, and the run's cost dropped 85%. I'm not saying it's a Fable in every way; I'm saying that, in this test scenario, it performed like one. The details, and the noise caveats, come right below.
+
 Before that, the backdrop that makes all of this strange: the industry consensus is that training a frontier model costs tens or hundreds of millions of dollars in GPU, and that, therefore, a small company with no billion-dollar funding round should not get anywhere near one. gpt-oss, OpenAI's own open model, with the best-funded lab in the world behind it, could not complete my benchmark on the same harness Genesys PI ran on. The Brazilian model completed it twice per tier.
 
 This post is organized around that tension. First, what the model did in experiments I control. Then, what I could and could not verify about how it exists.
