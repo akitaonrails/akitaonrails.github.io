@@ -19,7 +19,7 @@ Muita coisa aconteceu desde então, e este texto é a continuação. Vou na orde
 
 O spoiler que justifica o texto: depois que a LUA corrigiu a API, o House refez o benchmark em 95,5. Na minha tabela, isso é empate com o Claude Fable 5.1 e o GPT 6 luna, e o custo da rodada caiu 85%. Não estou dizendo que é um Fable em todos os sentidos; estou dizendo que, neste cenário de teste, se saiu como um. Os detalhes, e as ressalvas de ruído, vêm logo abaixo.
 
-Antes disso, o pano de fundo que deixa tudo isso estranho: o consenso da indústria é que treinar modelo de fronteira custa dezenas ou centenas de milhões de dólares em GPU, e que, portanto, uma empresa pequena, sem rodada de investimento bilionária, não deveria chegar nem perto de um. O gpt-oss, o modelo aberto da própria OpenAI, com o laboratório mais bem financiado do mundo atrás, não conseguiu completar o meu benchmark no mesmo harness em que o Genesys PI rodou. O GPT-4o e o GPT-4.1 também não. O modelo brasileiro completou duas vezes por tier.
+Antes disso, o pano de fundo que deixa tudo isso estranho: o consenso da indústria é que treinar modelo de fronteira custa dezenas ou centenas de milhões de dólares em GPU, e que, portanto, uma empresa pequena, sem rodada de investimento bilionária, não deveria chegar nem perto de um. O gpt-oss, o modelo aberto da própria OpenAI, com o laboratório mais bem financiado do mundo atrás, não conseguiu completar o meu benchmark no mesmo harness em que o Genesys PI rodou. O modelo brasileiro completou duas vezes por tier.
 
 Este texto é organizado em cima dessa tensão. Primeiro, o que o modelo fez em experimentos que eu controlo. Depois, o que eu consegui e o que não consegui verificar sobre como ele existe.
 
@@ -139,9 +139,6 @@ Só que isso é artefato de faixa de nota, não de linhagem: #7b e #8 são as du
 
 O resultado interessante é que os três sinais comportamentais da LUA apontam pra três direções diferentes: a cauda de erro parece Qwen, a correção rara do #6 parece GPT 6 luna, e o tokenizador e o formato da API parecem OpenAI. Um proxy ou clone de verdade parece com um único modelo em todos os eixos ao mesmo tempo. A LUA não parece com nenhum modelo da tabela em todos os eixos.
 
-E tem o teste de geração. Rodei o GPT-4o e o GPT-4.1, os melhores da geração GPT-4 e o GPT-4o sendo justamente o modelo da mesma família de tokenizador e o candidato mais óbvio a professor de destilação, no mesmo harness opencode.
-
-Nenhum dos dois completou o v4: o GPT-4o construiu o app num subdiretório aninhado, passou sprint inteiro emitindo plano em vez de usar ferramenta e nunca fez commit sozinho; o GPT-4.1 entrou em loop de pesquisa e, mesmo empurrado, entregou autenticação vazia. Um passthrough do GPT-4o herdaria essa fragilidade agêntica. A LUA roda sete sprints limpos e faz commit por conta própria. Agenticamente, ela é geração atual, não geração GPT-4.
 
 Teve uma coincidência que vale registrar: dos cerca de 40 modelos cuja correção eu verifiquei, só dois adicionaram um índice único `LOWER(email)` no banco ao corrigir a sabotagem #6. Foram a LUA e o GPT 6 luna.
 
@@ -171,7 +168,6 @@ Ou seja, o produto que me deram usa um vocabulário otimizado pra inglês, não 
 | Proxy fino pra GPT ou Claude | Argumentado contra | Média |
 | Wrapper grosso sobre uma API de raciocínio | Não excluído | — |
 | Proxy ou clone comportamental de qualquer um dos ~44 modelos do v4 | Argumentado contra | Média |
-| Passthrough de GPT-4o ou gpt-oss (mesmo harness) | Argumentado contra | Média-alta |
 | Modelo novo, peso próprio, tokenizador o200k público | Consistente com tudo que medi | Média |
 | Treinado do zero versus destilado de modelo de fronteira | Não separável em caixa-preta | — |
 
@@ -210,7 +206,7 @@ Checado, por mim:
 - o tokenizador é o `o200k_base` público, o que exclui derivação de Qwen, DeepSeek, Llama e Mistral;
 - a API não se comporta como proxy transparente e o modelo tem fraquezas próprias e estáveis;
 - o gpt-oss de fábrica não explica o resultado;
-- comparada contra todos os ~44 modelos do v4, a LUA não se parece com nenhum deles em todos os eixos, e completa um benchmark agêntico que o GPT-4o e o GPT-4.1 não completam no mesmo harness.
+- comparada contra todos os ~44 modelos do v4, a LUA não se parece com nenhum deles em todos os eixos.
 
 Não checado, e é só a palavra deles:
 

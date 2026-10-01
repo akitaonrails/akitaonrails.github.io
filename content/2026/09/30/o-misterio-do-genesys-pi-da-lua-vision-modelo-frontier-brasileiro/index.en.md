@@ -19,7 +19,7 @@ A lot has happened since then, and this post is the continuation. I'll go in the
 
 The spoiler that justifies the post: after LUA fixed the API, House redid the benchmark at 95.5. In my table, that's a tie with Claude Fable 5.1 and GPT 6 luna, and the run's cost dropped 85%. I'm not saying it's a Fable in every way; I'm saying that, in this test scenario, it performed like one. The details, and the noise caveats, come right below.
 
-Before that, the backdrop that makes all of this strange: the industry consensus is that training a frontier model costs tens or hundreds of millions of dollars in GPU, and that, therefore, a small company with no billion-dollar funding round should not get anywhere near one. gpt-oss, OpenAI's own open model, with the best-funded lab in the world behind it, could not complete my benchmark on the same harness Genesys PI ran on. Neither could GPT-4o or GPT-4.1. The Brazilian model completed it twice per tier.
+Before that, the backdrop that makes all of this strange: the industry consensus is that training a frontier model costs tens or hundreds of millions of dollars in GPU, and that, therefore, a small company with no billion-dollar funding round should not get anywhere near one. gpt-oss, OpenAI's own open model, with the best-funded lab in the world behind it, could not complete my benchmark on the same harness Genesys PI ran on. The Brazilian model completed it twice per tier.
 
 This post is organized around that tension. First, what the model did in experiments I control. Then, what I could and could not verify about how it exists.
 
@@ -139,9 +139,6 @@ Except that's a score-tier artifact, not lineage: #7b and #8 are the two most di
 
 The interesting result is that LUA's three behavioral signals point in three different directions: the error tail looks like Qwen, the rare #6 fix looks like GPT 6 luna, and the tokenizer and API shape look like OpenAI. A real proxy or clone resembles a single model on every axis at once. LUA resembles no model in the table on every axis.
 
-And there's the generation test. I ran GPT-4o and GPT-4.1, the best of the GPT-4 generation, with GPT-4o being precisely the model from the same tokenizer family and the most obvious candidate distillation teacher, on the same opencode harness.
-
-Neither completed v4: GPT-4o built the app in a nested subdirectory, spent whole sprints emitting a plan instead of using tools and never committed on its own; GPT-4.1 fell into a research loop and, even when pushed, delivered empty authentication. A GPT-4o passthrough would inherit that agentic fragility. LUA runs seven clean sprints and commits by itself. Agentically, it's current generation, not GPT-4 generation.
 
 There was one coincidence worth recording: of the roughly 40 models whose fix I checked, only two added a unique `LOWER(email)` index in the database when fixing sabotage #6. They were LUA and GPT 6 luna.
 
@@ -171,7 +168,6 @@ In other words, the product I was given uses an English-optimized vocabulary, no
 | Thin proxy to GPT or Claude | Argued against | Medium |
 | Thick wrapper over a reasoning API | Not excluded | — |
 | Behavioral proxy or clone of any of v4's ~44 models | Argued against | Medium |
-| GPT-4o or gpt-oss passthrough (same harness) | Argued against | Medium-high |
 | New model, own weights, public o200k tokenizer | Consistent with everything I measured | Medium |
 | Trained from scratch versus distilled from a frontier model | Not separable black-box | — |
 
@@ -210,7 +206,7 @@ Checked, by me:
 - the tokenizer is the public `o200k_base`, which rules out derivation from Qwen, DeepSeek, Llama and Mistral;
 - the API doesn't behave like a transparent proxy and the model has its own, stable weaknesses;
 - stock gpt-oss doesn't explain the result;
-- compared against all ~44 v4 models, LUA resembles none of them on every axis, and completes an agentic benchmark that GPT-4o and GPT-4.1 don't complete on the same harness.
+- compared against all ~44 v4 models, LUA resembles none of them on every axis.
 
 Not checked, and only their word:
 
