@@ -28,6 +28,7 @@ ALLOWED_TAGS = {
 }.transform_values(&:freeze).freeze
 
 FEATURED_POSTS = [
+  ['2026-10-03', 'Entendendo o Hype do Jev: pra que serve?', '/2026/10/03/entendendo-o-hype-do-jev-pra-que-serve/'],
   ['2026-09-30', 'O Mistério do Genesys PI da LUA Vision - Modelo Frontier Brasileiro??', '/2026/09/30/o-misterio-do-genesys-pi-da-lua-vision-modelo-frontier-brasileiro/'],
   ['2026-09-28', 'Os Limites das LLMs: Boas em reproduzir o que existe. Caras pro que não existe', '/2026/09/28/llms-sao-boas-em-reproduzir-o-que-existe-e-coisas-novas/'],
   ['2026-09-23', 'LLM Benchmark v4: Genesys PI, novo competidor brasileiro!', '/2026/09/23/llm-benchmark-v4-genesys-pi-novo-competidor-brasileiro/'],
@@ -36,7 +37,6 @@ FEATURED_POSTS = [
   ['2026-09-22', 'Parem de inventar desculpas e façam mais deploy! Com a IA, a premissa mudou. Entendam.', '/2026/09/22/parem-de-inventar-desculpas-e-facam-mais-deploy-a-premissa-mudou/'],
   ['2026-09-17', 'A IA desmascarou a histeria das mudanças climáticas', '/2026/09/17/ia-desmascarou-histeria-mudancas-climaticas/'],
   ['2026-09-17', 'Falando um pouco sobre minhas Skills de IA', '/2026/09/17/falando-um-pouco-sobre-minhas-skills-de-ia/'],
-  ['2026-09-16', 'Por que coisas como TypeSafe IA não me interessam', '/2026/09/16/por-que-coisas-como-typesafe-ia-nao-me-interessam/'],
   ['2026-09-15', 'Novo LLM Benchmark v4: retestando TODOS os principais LLMs (Parte 1)', '/2026/09/15/novo-llm-benchmark-v4-retestando-todos-llms-parte-1/'],
   ['2026-09-15', 'Novo LLM Benchmark v4: retestando 39 LLMs (Parte 2)', '/2026/09/15/novo-llm-benchmark-v4-retestando-todos-llms-parte-2/'],
   ['2026-09-09', 'Você é um idiota se acredita nas propagandas enganosas da OpenAI, Anthropic, NVIDIA. Entenda', '/2026/09/09/propagandas-enganosas-da-openai-anthropic-nvidia/'],
@@ -60,6 +60,7 @@ FEATURED_POSTS = [
 ].freeze
 
 FEATURED_POSTS_EN = [
+  ['2026-10-03', 'Understanding the Jev Hype: What Is It For?', '/en/2026/10/03/understanding-the-jev-hype-what-is-it-for/'],
   ['2026-09-30', 'The Mystery of LUA Vision\'s Genesys PI - A Brazilian Frontier Model??', '/en/2026/09/30/the-mystery-of-lua-vision-genesys-pi-brazilian-frontier-model/'],
   ['2026-09-28', "The Limits of LLMs: Good at Reproducing What Exists. Expensive for What Doesn't", '/en/2026/09/28/llms-are-good-at-reproducing-what-exists-what-about-new-things/'],
   ['2026-09-23', 'LLM Benchmark v4: Genesys PI, a New Brazilian Contender!', '/en/2026/09/23/llm-benchmark-v4-genesys-pi-new-brazilian-contender/'],
@@ -68,7 +69,6 @@ FEATURED_POSTS_EN = [
   ['2026-09-22', 'Stop Making Excuses and Ship More! With AI, the Premise Changed. Get It.', '/en/2026/09/22/stop-making-excuses-and-ship-more-the-premise-changed/'],
   ['2026-09-17', 'AI Unmasked the Climate Change Hysteria', '/en/2026/09/17/ai-unmasked-climate-hysteria/'],
   ['2026-09-17', 'Talking a Bit About My AI Skills', '/en/2026/09/17/talking-about-my-ai-skills/'],
-  ['2026-09-16', "Why Things Like TypeSafe AI Don't Interest Me", '/en/2026/09/16/why-things-like-typesafe-ai-dont-interest-me/'],
   ['2026-09-15', 'New LLM Benchmark v4: Retesting ALL the Top LLMs (Part 1)', '/en/2026/09/15/new-llm-benchmark-v4-retesting-all-top-llms-part-1/'],
   ['2026-09-15', 'New LLM Benchmark v4: Retesting 39 LLMs (Part 2)', '/en/2026/09/15/new-llm-benchmark-v4-retesting-39-llms-part-2/'],
   ['2026-09-09', "You're an Idiot if You Believe the Misleading Ads from OpenAI, Anthropic, NVIDIA. Here's Why", '/en/2026/09/09/propagandas-enganosas-da-openai-anthropic-nvidia/'],
