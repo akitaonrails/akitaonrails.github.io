@@ -352,6 +352,7 @@ Looking for older posts? [Browse the full archive →](/en/archives/)
 {{% index-list %}}
 ## 2026 - October
 
+- <a class="aor-index-list__main-link" href="/en/2026/10/06/disaster-on-my-nas-how-i-almost-lost-90-tb-of-data/" title="I swapped one drive in my Synology DS1821+ and woke up the next day with two critical drives in an array that only survives losing one. This is the post-mortem, still in progress: why SHR-1 wasn&#39;t enough, the warning DSM never sent, the R$ 185 thousand for a QNAP bought in a hurry in Brazil against about US$ 11.5 thousand in the US, the new RAID-6 setup on ZFS, and copying 90 TB at 400 MB/s.">Disaster on My NAS! How I Almost Lost 90 TB of Data</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/en/tags/storage-and-backup/">#storage-and-backup</a><a class="aor-tag-link" href="/en/tags/homelab/">#homelab</a><a class="aor-tag-link" href="/en/tags/hardware/">#hardware</a></span>
 - <a class="aor-index-list__main-link" href="/en/2026/10/03/understanding-the-jev-hype-what-is-it-for/" title="Jev is a hosted classifier, and the shock of &#39;193x faster&#39; only exists because so many people use a chat LLM as an expensive classifier. I publish Paulo Câmara&#39;s essay (LUA Vision) with his charts, explain what a classifier is and why it&#39;s the first thing a computer scientist reaches for, compare the open alternatives Clef and Laya, show the public Decision Index ranking, and close with how to think about this kind of tool in your own project.">Understanding the Jev Hype: What Is It For?</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/en/tags/artificial-intelligence/">#artificial-intelligence</a><a class="aor-tag-link" href="/en/tags/llms/">#llms</a><a class="aor-tag-link" href="/en/tags/software-engineering/">#software-engineering</a></span>
 
 ## 2026 - September
@@ -565,9 +566,15 @@ Looking for older posts? [Browse the full archive →](/en/archives/)
 <section class="aor-index-month" aria-labelledby="aor-grid-2026-10">
   <div class="aor-index-month__header">
     <h2 id="aor-grid-2026-10">2026 - October</h2>
-    <span>1 post</span>
+    <span>2 posts</span>
   </div>
   <div class="aor-post-grid">
+<article class="aor-post-card" title="I swapped one drive in my Synology DS1821+ and woke up the next day with two critical drives in an array that only survives losing one. This is the post-mortem, still in progress: why SHR-1 wasn&#39;t enough, the warning DSM never sent, the R$ 185 thousand for a QNAP bought in a hurry in Brazil against about US$ 11.5 thousand in the US, the new RAID-6 setup on ZFS, and copying 90 TB at 400 MB/s.">
+  <time class="aor-post-card__date" datetime="2026-10-06">Oct 6, 2026</time>
+  <h3 class="aor-post-card__title"><a class="aor-post-card__title-link" href="/en/2026/10/06/disaster-on-my-nas-how-i-almost-lost-90-tb-of-data/">Disaster on My NAS! How I Almost Lost 90 TB of Data</a></h3>
+  <span class="aor-post-tags aor-post-tags--card"><a class="aor-tag-link" href="/en/tags/storage-and-backup/">#storage-and-backup</a><a class="aor-tag-link" href="/en/tags/homelab/">#homelab</a><a class="aor-tag-link" href="/en/tags/hardware/">#hardware</a></span>
+  <p class="aor-post-card__description">I swapped one drive in my Synology DS1821+ and woke up the next day with two critical drives in an array that only survives losing one. This is the post-mortem, still in progress: why SHR-1 wasn&#39;t enough, the warning DSM never sent, the R$ 185 thousand for a QNAP bought in a hurry in Brazil against about US$ 11.5 thousand in the US, the new RAID-6 setup on ZFS, and copying 90 TB at 400 MB/s.</p>
+</article>
 <article class="aor-post-card" title="Jev is a hosted classifier, and the shock of &#39;193x faster&#39; only exists because so many people use a chat LLM as an expensive classifier. I publish Paulo Câmara&#39;s essay (LUA Vision) with his charts, explain what a classifier is and why it&#39;s the first thing a computer scientist reaches for, compare the open alternatives Clef and Laya, show the public Decision Index ranking, and close with how to think about this kind of tool in your own project.">
   <time class="aor-post-card__date" datetime="2026-10-03">Oct 3, 2026</time>
   <h3 class="aor-post-card__title"><a class="aor-post-card__title-link" href="/en/2026/10/03/understanding-the-jev-hype-what-is-it-for/">Understanding the Jev Hype: What Is It For?</a></h3>

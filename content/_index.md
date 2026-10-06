@@ -352,6 +352,7 @@ Procurando posts mais antigos? [Veja o arquivo completo →](/archives/)
 {{% index-list %}}
 ## 2026 - Outubro
 
+- <a class="aor-index-list__main-link" href="/2026/10/06/desastre-no-meu-nas-como-quase-perdi-90-tb-de-dados/" title="Troquei um disco do meu Synology DS1821+ e acordei no dia seguinte com dois discos críticos num array que só aguenta perder um. Conto o post-mortem ainda em andamento: por que SHR-1 não bastou, o aviso que o DSM nunca mandou, os R$ 185 mil de um QNAP comprado às pressas no Brasil contra uns US$ 11,5 mil nos EUA, a configuração nova em RAID-6 com ZFS e a cópia de 90 TB a 400 MB/s.">Desastre no meu NAS! Como quase perdi 90 TB de dados</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/tags/armazenamento-e-backup/">#armazenamento-e-backup</a><a class="aor-tag-link" href="/tags/homelab/">#homelab</a><a class="aor-tag-link" href="/tags/hardware/">#hardware</a></span>
 - <a class="aor-index-list__main-link" href="/2026/10/03/entendendo-o-hype-do-jev-pra-que-serve/" title="O Jev é um classificador hospedado, e o choque de &#39;193x mais rápido&#39; só existe porque muita gente usa LLM de chat como classificador caro. Reproduzo o ensaio do Paulo Câmara, da LUA Vision, com os gráficos dele, explico o que é um classificador e por que é a primeira coisa que um cientista da computação pensa, aponto onde o ensaio pede desconto, comparo com as alternativas abertas Clef e Laya, e fecho com como pensar em ferramenta desse tipo no seu projeto.">Entendendo o Hype do Jev: pra que serve?</a><br><span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/tags/inteligencia-artificial/">#inteligencia-artificial</a><a class="aor-tag-link" href="/tags/llms/">#llms</a><a class="aor-tag-link" href="/tags/engenharia-de-software/">#engenharia-de-software</a></span>
 
 ## 2026 - Setembro
@@ -572,9 +573,15 @@ Procurando posts mais antigos? [Veja o arquivo completo →](/archives/)
 <section class="aor-index-month" aria-labelledby="aor-grid-2026-10">
   <div class="aor-index-month__header">
     <h2 id="aor-grid-2026-10">2026 - Outubro</h2>
-    <span>1 post</span>
+    <span>2 posts</span>
   </div>
   <div class="aor-post-grid">
+<article class="aor-post-card" title="Troquei um disco do meu Synology DS1821+ e acordei no dia seguinte com dois discos críticos num array que só aguenta perder um. Conto o post-mortem ainda em andamento: por que SHR-1 não bastou, o aviso que o DSM nunca mandou, os R$ 185 mil de um QNAP comprado às pressas no Brasil contra uns US$ 11,5 mil nos EUA, a configuração nova em RAID-6 com ZFS e a cópia de 90 TB a 400 MB/s.">
+  <time class="aor-post-card__date" datetime="2026-10-06">06/10/2026</time>
+  <h3 class="aor-post-card__title"><a class="aor-post-card__title-link" href="/2026/10/06/desastre-no-meu-nas-como-quase-perdi-90-tb-de-dados/">Desastre no meu NAS! Como quase perdi 90 TB de dados</a></h3>
+  <span class="aor-post-tags aor-post-tags--card"><a class="aor-tag-link" href="/tags/armazenamento-e-backup/">#armazenamento-e-backup</a><a class="aor-tag-link" href="/tags/homelab/">#homelab</a><a class="aor-tag-link" href="/tags/hardware/">#hardware</a></span>
+  <p class="aor-post-card__description">Troquei um disco do meu Synology DS1821+ e acordei no dia seguinte com dois discos críticos num array que só aguenta perder um. Conto o post-mortem ainda em andamento: por que SHR-1 não bastou, o aviso que o DSM nunca mandou, os R$ 185 mil de um QNAP comprado às pressas no Brasil contra uns US$ 11,5 mil nos EUA, a configuração nova em RAID-6 com ZFS e a cópia de 90 TB a 400 MB/s.</p>
+</article>
 <article class="aor-post-card" title="O Jev é um classificador hospedado, e o choque de &#39;193x mais rápido&#39; só existe porque muita gente usa LLM de chat como classificador caro. Reproduzo o ensaio do Paulo Câmara, da LUA Vision, com os gráficos dele, explico o que é um classificador e por que é a primeira coisa que um cientista da computação pensa, aponto onde o ensaio pede desconto, comparo com as alternativas abertas Clef e Laya, e fecho com como pensar em ferramenta desse tipo no seu projeto.">
   <time class="aor-post-card__date" datetime="2026-10-03">03/10/2026</time>
   <h3 class="aor-post-card__title"><a class="aor-post-card__title-link" href="/2026/10/03/entendendo-o-hype-do-jev-pra-que-serve/">Entendendo o Hype do Jev: pra que serve?</a></h3>
