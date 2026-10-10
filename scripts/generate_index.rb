@@ -28,7 +28,7 @@ ALLOWED_TAGS = {
 }.transform_values(&:freeze).freeze
 
 FEATURED_POSTS = [
-  ['2026-10-03', 'Entendendo o Hype do Jev: pra que serve?', '/2026/10/03/entendendo-o-hype-do-jev-pra-que-serve/'],
+  ['2026-10-10', 'Qual modelo de decisão/classificador de IA tipo Jev é melhor?', '/2026/10/10/qual-modelo-de-decisao-classificador-de-ia-tipo-jev-e-melhor/'],
   ['2026-09-30', 'O Mistério do Genesys PI da LUA Vision - Modelo Frontier Brasileiro??', '/2026/09/30/o-misterio-do-genesys-pi-da-lua-vision-modelo-frontier-brasileiro/'],
   ['2026-09-28', 'Os Limites das LLMs: Boas em reproduzir o que existe. Caras pro que não existe', '/2026/09/28/llms-sao-boas-em-reproduzir-o-que-existe-e-coisas-novas/'],
   ['2026-09-23', 'LLM Benchmark v4: Genesys PI, novo competidor brasileiro!', '/2026/09/23/llm-benchmark-v4-genesys-pi-novo-competidor-brasileiro/'],
@@ -60,7 +60,7 @@ FEATURED_POSTS = [
 ].freeze
 
 FEATURED_POSTS_EN = [
-  ['2026-10-03', 'Understanding the Jev Hype: What Is It For?', '/en/2026/10/03/understanding-the-jev-hype-what-is-it-for/'],
+  ['2026-10-10', 'Which Jev-like AI Decision/Classifier Model Is Best?', '/en/2026/10/10/which-jev-like-ai-decision-classifier-model-is-best/'],
   ['2026-09-30', 'The Mystery of LUA Vision\'s Genesys PI - A Brazilian Frontier Model??', '/en/2026/09/30/the-mystery-of-lua-vision-genesys-pi-brazilian-frontier-model/'],
   ['2026-09-28', "The Limits of LLMs: Good at Reproducing What Exists. Expensive for What Doesn't", '/en/2026/09/28/llms-are-good-at-reproducing-what-exists-what-about-new-things/'],
   ['2026-09-23', 'LLM Benchmark v4: Genesys PI, a New Brazilian Contender!', '/en/2026/09/23/llm-benchmark-v4-genesys-pi-new-brazilian-contender/'],
