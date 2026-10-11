@@ -4,7 +4,7 @@ slug: "which-jev-like-ai-decision-classifier-model-is-best"
 date: '2026-10-10T12:00:00-03:00'
 draft: false
 translationKey: qual-modelo-de-decisao-classificador-de-ia-tipo-jev-e-melhor
-description: "I ran my own decision-model benchmark: Jev and Clef in the cloud, plus twelve open configurations (Clef-flash, Kev, Jebadiah, Mapika, Eikos, Laya, GLiNER, Simple-Jev) on my Strix Halo, across more than 15 thousand classifications with cases in English and Portuguese. Jev leads with 97.6% on the compact cases and 10 thousand decisions cost about 19 US cents. Jebadiah 4B is the best local one, Kev grows a lot from 0.8B to 4B and almost nothing to 9B, and Laya gets more than half wrong but answers in 19 ms and fits on any machine. Full table, cost in support emails, gotchas, and where the data converges."
+description: "I ran my own decision-model benchmark: Jev, Clef and OpenAI Decisions in the cloud, plus sixteen open configurations (Perplexity Decider 27B, Clef-flash, Kev, Jebadiah, Mapika, Eikos, Laya, Julia, GLiNER, Simple-Jev) on my Strix Halo, across more than 19 thousand classifications with cases in English and Portuguese. The overall leader is open-weights: Perplexity Decider 27B hit 99.4% on the compact cases, with 100% in Portuguese. Jev remains the best hosted one, at about 19 US cents per 10 thousand decisions. Full table, cost in support emails, gotchas, and where the data converges."
 tags:
 - llm-benchmarks
 - local-models
@@ -14,9 +14,9 @@ tags:
 
 Last week I published [a long post about Jev](/2026/10/03/entendendo-o-hype-do-jev-pra-que-serve/), TypeSafe's hosted classifier that became all the rage in September. The short version of that post: Jev is a classifier, something that has existed for decades, and the "193x faster" amazement only exists because too many people were using chat LLMs as expensive, slow classifiers. I reproduced Paulo Câmara's essay *The student who marks answer A*, introduced the open alternatives Clef and Laya, and to compare the models side by side I leaned on the [Decision Index](https://huggingface.co/spaces/multimodalart/jev-decision-index), a public ranking that already existed.
 
-Someone else's ranking is useful, but I wanted to get my hands dirty. So I built my own benchmark, with my own cases, half in Portuguese, and ran the open models on my [home server with Strix Halo](/2026/03/31/review-minisforum-ms-s1-max-amd-ai-max-395/), the same Ryzen AI Max+ 395 I use to test local LLMs. The hosted models (Jev and the two Clefs from Cloudflare) ran through their APIs. Everything, including the cases, the raw responses and the scoring scripts, is public in the [benchmark repository](https://github.com/akitaonrails/jev-docs-benchmarks).
+Someone else's ranking is useful, but I wanted to get my hands dirty. So I built my own benchmark, with my own cases, half in Portuguese, and ran the open models on my [home server with Strix Halo](/2026/03/31/review-minisforum-ms-s1-max-amd-ai-max-395/), the same Ryzen AI Max+ 395 I use to test local LLMs. The hosted ones (Jev, the two Clefs from Cloudflare and OpenAI Decisions) ran through their APIs. Everything, including the cases, the raw responses and the scoring scripts, is public in the [benchmark repository](https://github.com/akitaonrails/jev-docs-benchmarks).
 
-> **TL;DR:** **Jev** is the best classifier of the bunch, with 97.6% accuracy in English and in Portuguese on the compact cases, and 10 thousand decisions cost less than 20 US cents. The full **Clef** ties with it in English and is free within Cloudflare's daily allowance. To run locally, **Jebadiah 4B v2** was the best, closely followed by Mapika Decider 4B, Kev 4B and Clef-flash. **Laya**, the smallest of all, gets more than half wrong, but answers in 19 ms and fits on any machine. If your problem is accuracy, cross Laya off. If your problem is running offline on a weak device, it may be the only one that works. Jump to the [full table](#the-full-table), the [cost in support emails](#how-much-it-costs-in-support-emails), [which model for which situation](#which-model-for-which-situation), [how hard it is to run the best open ones locally](#how-hard-it-is-to-run-the-best-open-models-on-your-machine) or the [gotchas](#highlights-and-gotchas).
+> **TL;DR:** the overall leader is open-weights. **Perplexity Decider 1.1 27B** hit **99.4%** on the compact cases, with 100% in Portuguese and the best calibration of the bunch, running locally. The price: about 49 GB of weights and a second and a half per decision. In the cloud, **Jev** remains unbeatable on cost-quality, with 97.6% and 10 thousand decisions for less than 20 US cents. **OpenAI Decisions** debuted tied with the best local 4B, Jebadiah, and has the lowest hosted latency. **Julia-1**, the smallest and fastest of all (12 ms), scored at coin-flip level: fresh out of the factory, it's a no-go. Jump to the [full table](#the-full-table), the [cost in support emails](#how-much-it-costs-in-support-emails), [which model for which situation](#which-model-for-which-situation), [how hard it is to run the best open ones locally](#how-hard-it-is-to-run-the-best-open-models-on-your-machine) or the [gotchas](#highlights-and-gotchas).
 
 ## How I tested
 
@@ -64,15 +64,17 @@ That's 504 classifications per model.
 
 > The cases were written with AI help and reviewed against the policies, without independent human annotation. It's a small, synthetic benchmark: 130 scenario families in v1 and 84 in v2. The variants are correlated, so 520 responses are 130 scenarios seen four ways. Treat the numbers as a snapshot of these cases, and test with your own before deciding.
 
-### The 16 competitors
+### The 20 competitors
 
-Three ran in the cloud, through the official API: **Jev** (version 1.13.0, from TypeSafe), **Clef** (27B, Cloudflare Workers AI) and **Clef-flash** (9B, same). The other thirteen ran on the Strix Halo, via ROCm, with weights pinned by Hugging Face commit hash, inside a Docker container. The first three (Laya, Laya typed and Clef-flash) shared one container; the ten in the second wave ran one at a time. The server has 64 GiB of GPU-addressable memory.
+Four ran in the cloud, through the official API: **Jev** (version 1.13.0, from TypeSafe), **Clef** (27B, Cloudflare Workers AI), **Clef-flash** (9B, same) and **OpenAI Decisions** (the `gpt-6-luna` alias, in public beta). The other sixteen ran on the Strix Halo, via ROCm, with weights pinned by Hugging Face commit hash, inside a Docker container. The first three (Laya, Laya typed and Clef-flash) shared one container; the rest ran one at a time, with Julia-1 measured twice, on GPU and on CPU. The server has 64 GiB of GPU-addressable memory.
 
 | Model | Nominal size | Origin | Where it ran |
 | --- | ---: | --- | --- |
 | Jev 1.13.0 | undisclosed | TypeSafe, proprietary | API |
+| OpenAI Decisions (`gpt-6-luna`) | undisclosed | OpenAI, proprietary, beta | API |
 | Clef | 27B | Cloudflare, open weights | API |
 | Clef-flash | 9B | Cloudflare, open weights | API and local |
+| Perplexity Decider 1.1 27B | 27B | Perplexity, Apache 2.0 | local |
 | Jebadiah 4B v2 | 4B | Frontier Infra, Apache 2.0 | local |
 | Kev 0.8B / 4B / 9B | 0.8B / 4B / 9B | Jared Palmer, Apache 2.0 | local |
 | Mapika Decider 4B | 4.2B | Mapika, Apache 2.0 | local |
@@ -80,11 +82,14 @@ Three ran in the cloud, through the official API: **Jev** (version 1.13.0, from 
 | Simple-Jev + Qwen3.5 4B | 4B | Featherless, token-reading server over a stock model | local |
 | Laya / Laya typed-decisions | 421M | Convai Innovations, ModernBERT encoder | local |
 | Laya multilingual | 322M | Convai Innovations, mmBERT encoder | local |
+| Julia-1 | 144M | Supersonic Labs, Apache 2.0, mmBERT encoder | local, GPU and CPU |
 | GLiNER2.5-Decide / multi-Decide | 340M / 287M | Fastino, Apache 2.0 | local |
 
 Everyone received exactly the same text, the same instructions and the same options, with no per-model prompt tuning and no adjustments after seeing results (Simple-Jev uses its own server's fixed prompt policy). The exception is **GLiNER**, whose native API takes labels instead of probability distributions. It runs on a separate track, v2 only, with explicit mapping and no made-up calibration metrics.
 
 **Simple-Jev** deserves an explanation. It's a server that takes a stock LLM (here Qwen3.5 4B, with no decision training at all) and reads the probability of the answer tokens instead of generating text. It's the baseline: if a "decision" model loses to this, the specialized training bought nothing.
+
+Two protocol notes. **OpenAI Decisions** answers through a native typed-decisions endpoint, and the alias the API returned is not an immutable snapshot: OpenAI can swap the weights behind the name, like Cloudflare does with Clef-flash. And **Perplexity Decider** is not a stock chat LLM: it has a separate decision head, with non-causal attention and a calibration temperature saved in the weights. A generic chat server does not reproduce its behavior.
 
 ### What was measured
 
@@ -102,9 +107,11 @@ The main column is accuracy on the 168 compact v2 cases (84 in English, 84 in Po
 
 | Model | Compact EN / PT-BR | Compact combined | v1 originals | Median latency | 10 thousand decisions |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| Jev | 97.6% / 97.6% | **97.6%** | 96.2% | 255 ms (WAN) | US$ 0.19 |
+| Perplexity Decider 27B | 98.8% / 100.0% | **99.4%** | 99.2% | 1,547 ms (LAN) | not measured |
+| Jev | 97.6% / 97.6% | 97.6% | 96.2% | 255 ms (WAN) | US$ 0.19 |
 | Clef (27B) | 97.6% / 94.0% | 95.8% | 94.6% | 302 ms (WAN) | US$ 0.63 |
 | Jebadiah 4B v2 | 91.7% / 89.3% | 90.5% | 85.4% | 205 ms (LAN) | not measured |
+| OpenAI Decisions | 90.5% / 90.5% | 90.5% | 93.1% | 222 ms (WAN) | US$ 0.23 |
 | Kev 9B | 92.9% / 83.3% | 88.1% | 87.7% | 561 ms (LAN) | not measured |
 | Clef-flash (9B) hosted | 91.7% / 83.3% | 87.5% | 90.8% | 394 ms (WAN) | US$ 0.10 |
 | Clef-flash (9B) local | 89.3% / 85.7% | 87.5% | 90.8% | 618 ms (LAN) | not measured |
@@ -116,18 +123,20 @@ The main column is accuracy on the 168 compact v2 cases (84 in English, 84 in Po
 | GLiNER2.5-Decide (EN) | 54.8% / 50.0% | 52.4% | didn't run | 208 ms (LAN) | not measured |
 | Laya typed-decisions | 50.0% / 35.7% | 42.9% | 43.8% | 43 ms (LAN) | not measured |
 | Laya (EN) | 44.0% / 41.7% | 42.9% | 43.8% | 41 ms (LAN) | not measured |
-| Laya multilingual | 35.7% / 38.1% | 36.9% | 43.8% | **19 ms** (LAN) | not measured |
+| Laya multilingual | 35.7% / 38.1% | 36.9% | 43.8% | 19 ms (LAN) | not measured |
 | GLiNER2.5-multi-Decide | 32.1% / 35.7% | 33.9% | didn't run | 63 ms (LAN) | not measured |
+| Julia-1 (GPU) | 38.1% / 25.0% | 31.5% | 38.5% | **12 ms** (LAN) | not measured |
+| Julia-1 (CPU) | 38.1% / 25.0% | 31.5% | 36.9% | 71 ms (LAN) | not measured |
 
-To calibrate your reading: the tasks have three or four options, so a uniform guess gives about 31% on both sets. "Near 50%" here is already well above the coin, and "near 33%" is the coin.
+To calibrate your reading: the tasks have three or four options, so a uniform guess gives about 31% on both sets. "Near 50%" here is already well above the coin, and "near 33%" is the coin. Julia-1 landed at 31.5%: the pretty name hides a guy flipping a coin.
 
-The intervals matter. The difference between Jev and Clef on v2 is under 2 points and the bootstrap interval crosses zero: both are on the same tier, with Jev as the numeric leader. Jebadiah, on the other hand, sits 7 points behind Jev with an interval entirely below zero. From there down, every difference against Jev is clear.
+The intervals matter. Perplexity's edge over Jev on v2 is under 2 points and the bootstrap interval touches zero: it's the measured lead on this set, not a proven superiority forever. Jev and Clef also remain under 2 points apart, on the same tier. The 90% squad (Jebadiah, OpenAI) sits 7 points behind Jev, and from there down every difference is clear.
 
 Each task cell has only 12 scenarios per language, so one more correct answer moves the cell by more than 8 points. A tie on a specific task is a lead for a pilot. The per-task tables are in the [repository](https://github.com/akitaonrails/jev-docs-benchmarks/blob/master/benchmark/reports/next-wave-comparison-v2/results.md).
 
 ## How much it costs, in support emails
 
-Price per million tokens is a number nobody can feel. List prices on October 10 are US$ 0.042 per million input tokens on Jev, US$ 0.24 on Clef and US$ 0.038 on Clef-flash. Output is free on all three.
+Price per million tokens is a number nobody can feel. List prices on October 11 are US$ 0.042 per million input tokens on Jev, US$ 0.24 on Clef, US$ 0.038 on Clef-flash and US$ 0.10 on OpenAI Decisions. Output is free on all four.
 
 Clef-flash cost US$ 0.09 on the 9th: Cloudflare cut the price by more than half in the middle of my test. Jev reports considerably more tokens than Cloudflare for the same text, about 45% more on v2, and that's already in the math below.
 
@@ -137,6 +146,7 @@ Imagine an operation with **10 thousand support emails per month** to classify i
 | --- | ---: | ---: | ---: |
 | Clef-flash | US$ 0.10 | US$ 10 (about R$ 50) | ~1,250 |
 | Jev | US$ 0.19 | US$ 19 (about R$ 95) | ~240 |
+| OpenAI Decisions | US$ 0.23 | US$ 23 (about R$ 115) | ~950 |
 | Clef | US$ 0.63 | US$ 63 (about R$ 315) | ~420 |
 
 > In reais, at Friday's exchange rate (R$ 4.99), 10 thousand decisions on Jev cost one real. A million costs less than a hundred reais. For any company with a million emails to classify, that vanishes into the budget.
@@ -155,21 +165,35 @@ The real local cost is the machine, your hours configuring ROCm and containers, 
 
 ### You want accuracy and want to operate nothing: Jev
 
-Jev won or tied practically every cell. In English it was 100% on five of the seven v2 tasks, and in Portuguese it repeated 97.6% on the aggregate without losing anything in translation, something no other model above the coin managed. On v1 it kept its 96.2% on the original with the malicious "reviewer" comment injected; Clef even gained one case, and Kev 4B also stayed put, just at a much lower tier. The 255 ms latency over WAN was the lowest among the hosted ones, and it costs 19 US cents per 10 thousand decisions.
+In the cloud, Jev is still the name. It won or tied practically every cell among the hosted ones. In English it was 100% on five of the seven v2 tasks, and in Portuguese it repeated 97.6% on the aggregate without losing anything in translation, something no other model above the coin managed. On v1 it kept its 96.2% on the original with the malicious "reviewer" comment injected; Clef even gained one case, and Kev 4B also stayed put, just at a much lower tier. The 255 ms WAN latency came in 30 ms behind OpenAI's, and it costs 19 US cents per 10 thousand decisions, the second-lowest price on the market.
 
 The trade-off is the one I already discussed in the previous post: it's proprietary, hosted, of undisclosed size, and you depend on TypeSafe keeping the behavior underneath you. And it makes mistakes. It treated an invoice ID called "PASSWORD-523" as a usable credential, even with the record explicitly saying it doesn't authenticate anyone.
 
 ### You want the same level with open weights: Clef
 
-The full 27B Clef tied with Jev in English (82 of 84) and finished 3 cases behind in Portuguese. It beat Jev on sensitive data handling in English (12 of 12 versus 11). It's an open-weights model, so you can run it locally with about 54 GB of memory just for the weights in BF16, which I didn't test: the full Clef ran only through the API.
+The full 27B Clef tied with Jev in English (82 of 84) and finished 3 cases behind in Portuguese. It beat Jev on sensitive data handling in English (12 of 12 versus 11). It's an open-weights model, so you can run it locally with about 54 GB of memory just for the weights in BF16, which I didn't test: the full Clef ran only through the API. Among the open ones, it lost the crown to Perplexity, which scored higher with smaller weights.
 
-Through the API it's the most expensive of the three hosted ones, three times Jev, with no quality gain to justify it. The exception is the daily allowance: for small volume, it's the best classifier you can get for free.
+Through the API it's the most expensive of the four hosted ones, three times Jev, with no quality gain to justify it. The exception is the daily allowance: for small volume, it's the best classifier you can get for free.
 
 ### You want the cheapest in the cloud: Clef-flash
 
 At US$ 0.038 per million, Clef-flash is the lowest price in the hosted market and covers 9,400 decisions per day within the allowance. Quality drops: 92% in English and 83% in Portuguese on the compact cases, the biggest language drop among the hosted ones, with an interval entirely below zero. On sentiment in both languages, and on incident status in English, it tied with Jev. On intent and sensitive data in Portuguese, it lost badly.
 
 For sentiment tasks in either language, or for English classification where 1 error in 12 is acceptable, it does well. For Portuguese, measure first.
+
+### You already live in the OpenAI ecosystem: OpenAI Decisions
+
+OpenAI's debut in this market landed mid-table: 90.5% combined, an exact tie with Jebadiah, with the lowest hosted latency I measured (222 ms) and the same accuracy in both languages. It costs US$ 0.23 per 10 thousand decisions, between Jev and Clef. If your operation already speaks the OpenAI API and 9 out of 10 accuracy is enough, integration is trivial: a native decisions endpoint, no prompt at all.
+
+The weak spots are revealing. Its worst cell was precisely numeric-threshold policy (8 of 12 in English, 7 in Portuguese): it treated "at least 10" as satisfied by a range of 8 to 12 and failed the AND/OR short-circuit. The calibration is schizophrenic: on the predicate probes (yes/no) it was the most accurate of the bunch, with near-zero average error, and on the choice probes it returned 94%/6% on a fair coin. And on the v1 variants it flipped 2 correct answers in each presentation (reversed order, opaque label, malicious comment), something only Perplexity did not do: Jev kept its aggregate accuracy, but also flipped a few correct answers along the way. Oh, and the `gpt-6-luna` alias is not an immutable snapshot: reproducibility requires saving the responses.
+
+### You want the best open model, period: Perplexity Decider 27B
+
+Perplexity Decider 1.1 27B is the surprise of the benchmark. It led the table with 99.4% on the compact cases, was the only one that didn't lose a single task cell to Jev (3 wins, 11 ties), and hit 100% in Portuguese under all three conditions: compact, with examples, with distractors. Calibration is also the best measured, with a Brier of 0.012, and coverage is absurd: it answered with confidence above 0.9 on 96% of cases and got zero of them wrong. On v1, it didn't flip a single answer across the order, opaque-label and malicious-comment variants.
+
+Its only 3 errors on v2 were the same case in different clothing (it confused "notification sent to managers" with "mandatory approver"), and it made them with confidence below 0.9: the known error comes flagged. The weak spot is event-probability probes: asked about an event with a 1-in-4 chance, it answered 0.73. Strong classification does not imply reliable event probability.
+
+The cost is hardware: about 49 GB of weights in BF16, a second and a half per decision on my Strix Halo (with ROCm's reference kernels, no flash-attention; on a good NVIDIA it should be much faster, but that I didn't measure). It's Apache 2.0, public weights with no gate. If you have the machine and want the top of the table at home, this is the one.
 
 ### You need to run locally, with quality: Jebadiah 4B v2
 
@@ -181,7 +205,7 @@ Of the local ones, Jebadiah 4B v2 had the best compact accuracy, 90% combined, a
 
 Kev 9B has a curious profile. On the compact cases it ties with Kev 4B, half a point apart with the interval crossing zero, meaning more than double the parameters bought nothing. With one solved example per class, it opens almost 10 points over the 4B, and with distractors it holds 7 more points. Brier also improves by about 25%: the probability it returns is better calibrated.
 
-If your use is just the rule and the text, the 4B is enough and is more than twice as fast. If you're going to send examples or long context, the 9B is worth the memory. The warning is Portuguese: 83% compact in PT-BR, almost 10 points below its own English, the biggest language drop among the models above 80%. Only Laya typed drops more, 14 points.
+If your use is just the rule and the text, the 4B is enough and is more than twice as fast. If you're going to send examples or long context, the 9B is worth the memory. The warning is Portuguese: 83% compact in PT-BR, almost 10 points below its own English, the biggest language drop among the models above 80%. Only Laya typed (14 points) and Julia (13) drop more.
 
 ### You want Clef-flash behavior on your machine: local Clef-flash
 
@@ -189,17 +213,19 @@ On the v1 set, local Clef-flash reproduced the hosted one's 520 classifications,
 
 The gotcha is latency: 618 ms median on the Strix Halo, three times Jebadiah, for the same v2 accuracy. If you pick it, it's for the known behavior.
 
-### You need to run offline on weak hardware: Laya, with caveats
+### You need to run offline on weak hardware: Laya and Julia, with many caveats
 
-Laya multilingual was the worst in the benchmark for accuracy (37% combined, near the coin), and the fastest by far: 19 ms median, more than ten times faster than Jebadiah.
+Laya multilingual was the worst in the benchmark for accuracy (37% combined, near the coin), and the fastest by far among the ones that get anything right: 19 ms median, more than ten times faster than Jebadiah.
 
 The three Laya checkpoints have between 322 and 421 million parameters, fit in under 1 GB of BF16 weights by parameter math, and the project documents CPU execution and an ONNX runtime (which I didn't measure). PyTorch's peak GPU allocation for the multilingual one stayed under 2 GB. A 4B needs about 8 GB just for weights at the same precision.
 
-That's a design choice. Laya was made to be a small encoder, fine-tunable on your task, to run at the edge. What I tested was the factory checkpoint, with no tuning, applying rules it had never seen, on broad tasks. In that scenario it did badly, period.
+**Julia-1** goes one step lower: 144 million parameters, 550 MB of weights, 12 ms median on GPU and 71 ms on a 4-thread CPU. It's the fastest model I've ever measured here, and also the worst: 31.5% accuracy, glued to the 31% coin-flip line. In Portuguese it answered "cancellation" on all 12 intent scenarios, including the ones asking for a refund or access (the vendor's Portuguese evaluation was done in pt-PT, and it shows). The bigger disaster is confidence: of the 71 guesses it gave above 0.9, 48 were wrong. A confidence threshold won't save this model, because it's exactly on the confident guesses that it errs.
 
-One detail confirms the fragility. On v1, when the reviewer's malicious comment comes in, Laya drops from 44% to 19% and typed-decisions to 15%. It obeys the comment the instructions say to ignore, and confidently: 17 of the 28 guesses above 0.9 were wrong.
+That's a design choice. Laya and Julia were made to be small encoders, fine-tunable on your task, to run at the edge. What I tested were the factory checkpoints, with no tuning, applying rules they had never seen, on broad tasks. In that scenario they did badly, period.
 
-> If you want what Jev delivers, factory Laya is very far from it, and no small model (GLiNER included) came close. If your problem is "I need to classify short text into three buckets, on a device with no internet and no GPU, and I have a thousand labeled examples to fine-tune on," Laya is probably the only one on the list that fits. Fine-tuning is the part I didn't test. It's another question, and it needs another benchmark.
+One detail confirms the fragility. On v1, when the reviewer's malicious comment comes in, Laya drops from 44% to 19% and typed-decisions to 15%. It obeys the comment the instructions say to ignore, and confidently: 17 of the 28 guesses above 0.9 were wrong. Julia failed all 5 policy-counterfactual pairs: change the rule, it keeps the answer.
+
+> If you want what Jev delivers, factory Laya and Julia are very far from it, and no small model (GLiNER included) came close. If your problem is "I need to classify short text into three buckets, on a device with no internet and no GPU, and I have a thousand labeled examples to fine-tune on," these two are the only ones on the list that fit. Fine-tuning is the part I didn't test. It's another question, and it needs another benchmark.
 
 ### The baseline: Simple-Jev with a stock Qwen
 
@@ -209,7 +235,11 @@ The curious part is that on v1 Simple-Jev tied with Jebadiah (111 of 130 origina
 
 ## How hard it is to run the best open models on your machine
 
-All these models speak the same HTTP protocol, called SystemOne, which Jev popularized: you send a state (the text), one or more closed-answer questions, and get back the chosen option and the probability of each. Swapping models is swapping the port. What changes is how much work it takes to get each one standing, and there the difference between them is big.
+All these models speak the same HTTP protocol, called SystemOne, which Jev popularized: you send a state (the text), one or more closed-answer questions, and get back the chosen option and the probability of each. Swapping models is swapping the port. OpenAI Decisions breaks from the pattern with its own native endpoint, but the idea is the same. What changes is how much work it takes to get each one standing, and there the difference between them is big.
+
+### OpenAI: just an API key
+
+The easiest of all: create the key, load credit and call the endpoint. The benchmark's 1,048 requests ran in 4 minutes, without a single retry. The only hiccup was the first probe returning "balance exhausted" until I put US$ 20 in the account.
 
 ### Kev and Jebadiah: one pip and one command
 
@@ -249,9 +279,11 @@ curl -s http://localhost:8000/v1/systemone -H 'content-type: application/json' -
 
 The response carries the option and the probability distribution, and that's where you apply your threshold, log and decide whether to send it for human review. On an NVIDIA with CUDA and 16 GB of VRAM, a 4B in BF16 comes up without drama. The weights are about 8 GB.
 
-### Laya: even smaller
+### Laya and Julia: smaller still
 
 **Laya** is a Python package with an encoder inside. It installs with `pip install laya` and the project documents CPU execution, which is its whole point. The version pinned on my server was 0.4.1, and the multilingual one's peak GPU memory stayed under 2 GB. To run on a GPU-less laptop or a small container, it's the only one on the list that fits, no discussion.
+
+**Julia-1** is similar in spirit: its own Python runtime, one `predict(state=..., questions=...)` call and done, no standard Transformers pipeline. I ran the same container on GPU and on CPU, and both gave the same accuracy with the same responses in 97% of cases. On a 4-thread CPU it answers in 71 ms, which for an edge classifier is great. The problem is still that it scores at coin-flip level.
 
 ### Where it gets complicated: AMD, ROCm and the rest
 
@@ -262,10 +294,11 @@ In my case the hardware is AMD, and then "one command" turns into a day of work.
 - Mapika Decider forces CUDA graphs when it sees the "cuda" device, which on ROCm is also called "cuda." I had to turn it off by hand.
 - You need to export `HSA_OVERRIDE_GFX_VERSION=11.5.1` and `PYTORCH_ROCM_ARCH=gfx1151` and use a base image with ROCm torch already validated. Any random `pip install torch` overwrites it with the CUDA build and breaks everything. In my Dockerfile every package is installed with `--no-deps` and the build fails if torch stops being the ROCm one.
 - One model per container, one container at a time. The Strix Halo has memory shared between CPU and GPU, and three resident 4B models plus the Ollama that already runs there exhaust the 64 GiB the GPU can see.
+- Perplexity Decider was the most annoying of all. The release expects a specific CUDA torch (I swapped in the ROCm 7 torch 2.9), the flash-linear-attention kernels don't exist for it (I ran on PyTorch's reference kernels, slower), and the default loader blew past the host's 24 GiB RAM limit: I needed a custom loader that sends the 49 GiB of weights straight to the GPU. The model card still said "private" when I started, but the Hugging Face API confirmed it was public and gate-free, and the shards downloaded anonymously.
 
 None of this is impossible, and it's all documented, with Dockerfiles, compose and the hashes of each checkpoint, in the [repository's setup guide](https://github.com/akitaonrails/jev-docs-benchmarks/blob/master/docs/setup.md). But it's a real cost that the "local is free" spreadsheet never includes. If your machine is NVIDIA, most of this list disappears.
 
-> The full 27B Clef I didn't even try locally: it's about 54 GB of weights in BF16 before any activation. The 9B Clef-flash runs, with about 18 GB of weights. The 4Bs are the sweet spot for consumer hardware.
+> The full 27B Clef I didn't even try locally: it's about 54 GB of weights in BF16 before any activation. Perplexity, at 49 GB, proved a 27B runs on the Strix Halo, at the cost of a second and a half per decision with the reference kernels. The 9B Clef-flash runs, with about 18 GB of weights. The 4Bs are the sweet spot for consumer hardware.
 
 ## Highlights and gotchas
 
@@ -275,29 +308,31 @@ None of this is impossible, and it's all documented, with Dockerfiles, compose a
 
 **Does an example in the prompt save a weak model? It saves nothing.** One solved example per class left Laya the same or worse; several of its aggregates dropped. It helped Kev 9B (plus 4 points) and Clef in Portuguese (plus 3.6 points, reaching Jev's level), and almost nothing on Jev, one more case in Portuguese. Validate examples on real traffic before assuming they help.
 
-**Size correlates, and explains little.** Among the 14 competitors of known size, the Spearman correlation between parameters and compact accuracy was 0.92. The Kev series is more informative: 63% at 0.8B, 87% at 4B, 88% at 9B. The big jump is from 0.8B to 4B, about 24 points, with an interval between 16 and 33. From 4B to 9B the compact difference crosses zero, and several nominal 4Bs, with similar backbones, gave very different results.
+**Size correlates, and explains little.** Among the 16 competitors of known size, the Spearman correlation between parameters and compact accuracy was 0.95. The Kev series is more informative: 63% at 0.8B, 87% at 4B, 88% at 9B. The big jump is from 0.8B to 4B, about 24 points, with an interval between 16 and 33. From 4B to 9B the compact difference crosses zero, and several nominal 4Bs, with similar backbones, gave very different results. And the two 27Bs of the bunch, Clef and Perplexity, ended up 3.6 points apart at the same nominal size.
 
-**The 27B missed a critical ticket that two of the Layas got right.** On v1, one severity scenario says continuous data loss in production is critical, regardless of how many customers it affects. The record describes confirmed permanent loss, from a single customer. Jev, Clef-flash, Laya typed, Simple-Jev and Laya multilingual answered "critical." Full Clef, base Laya, Eikos, Jebadiah, Mapika, Kev 4B and Kev 9B answered "degraded."
+**The 27B Clef missed a critical ticket that two of the Layas got right.** On v1, one severity scenario says continuous data loss in production is critical, regardless of how many customers it affects. The record describes confirmed permanent loss, from a single customer. Jev, Clef-flash, Perplexity, Laya typed, Simple-Jev and Laya multilingual answered "critical." Full Clef, OpenAI, base Laya, Eikos, Jebadiah, Mapika, Kev 4B and Kev 9B answered "degraded."
 
 > It's a single case, and an error rate would require many more. But it shows that the average hides exactly the error that costs the most. When the impact facts are structured, the severity rule belongs in code, and the model comes in only to extract the facts from free text.
 
 **Hosted and local diverge over time.** Local Clef-flash reproduced the hosted one on v1's 520 classifications and diverged on 19 of v2's 504. Cloudflare keeps the weights version behind the hosted alias undisclosed. If reproducibility matters, pin the local hash.
 
-**High confidence and safety are different things.** On compact v2, Jev, Clef, both Clef-flashes, Eikos and Jebadiah got zero guesses above 0.9 wrong. Mapika missed 5% of the guesses at that level, Kev 4B 3% and Simple-Jev 14%. Coverage varied too: Jev answered above 0.9 on almost 90% of cases, Clef on almost 80%, Clef-flash on 40% and base Laya on 2 of 168. On v1 Jev missed 1% of the guesses above 0.9 and base Laya missed 61%. A confidence threshold only works after being validated on your distribution, and Laya typed's low ECE in Portuguese left it at the same 36% accuracy.
+**High confidence and safety are different things.** On compact v2, Jev, Clef, both Clef-flashes, Eikos, Jebadiah, OpenAI and Perplexity got zero guesses above 0.9 wrong. Perplexity is the extreme case: it answered at that level on 96% of cases without missing one, while OpenAI covered only half. Mapika missed 5% of the guesses at that level, Kev 4B 3% and Simple-Jev 14%. And Julia broke the pattern violently: 48 errors in 71 guesses above 0.9. Coverage varied too: Jev answered above 0.9 on almost 90% of cases, Clef on almost 80%, Clef-flash on 40% and base Laya on 2 of 168. On v1 Jev missed 1% of the guesses above 0.9 and base Laya missed 61%. A confidence threshold only works after being validated on your distribution, and Laya typed's low ECE in Portuguese left it at the same 36% accuracy.
+
+**Perplexity didn't fall for presentation traps.** Across the three v1 variants (reversed options, opaque labels, malicious comment), it kept the same answers as the original, without flipping a single one. OpenAI flipped 2 in each variant, and Laya collapsed to 19% under the comment. The price of that robustness is latency: a second and a half per decision on my machine, the worst median of the bunch.
 
 **Numeric thresholds are a code problem.** The threshold-triage task, with clear numbers and an explicit rule, gave 100% on Jev and both Clef-flashes and under 30% on both Layas in English. An `if` solves that with 100% and zero latency. The model only comes in when the number is buried in free text, and even then the right thing is to extract the number and leave the comparison to code.
 
-**Lottery probability is another skill.** On the 24 no-information probes (coin, die), Jev had the worst choice error among options and the best numeric-estimate error. Laya typed had the second-best choice error, behind only Kev 9B and neck-and-neck with Clef, and still classified badly. It's the "student who marks answer A" from Paulo's essay, now measured: calibration on lotteries and accuracy on classification are independent measures.
+**Lottery probability is another skill.** On the 24 no-information probes (coin, die), Jev had the worst choice error among options. The numeric-estimate crown changed hands with OpenAI's debut: its yes/no predicate got almost nothing wrong, while the choice probe returned 94% for heads on a fair coin. Perplexity, champion of everything else, answered 0.73 for an event with a 1-in-4 chance. Laya typed had the second-best choice error, behind only Kev 9B and neck-and-neck with Clef, and still classified badly. It's the "student who marks answer A" from Paulo's essay, now measured: calibration on lotteries and accuracy on classification are independent measures.
 
 ## Where the data converges
 
-1. **For those who just want to classify text with quality and want to operate nothing, Jev is the obvious choice.** The cost is so low that the competitor's price stops being an argument: 9 cents per 10 thousand decisions over Clef-flash buys a thousand fewer errors. Those who want open weights at the same level have Clef, free at small volume and expensive at large volume.
+1. **The overall leader is open-weights.** Perplexity Decider 27B hit 99.4% on the compact cases, 100% in Portuguese, the best calibration and zero confident errors, with Apache 2.0 weights running on my machine. Its edge over Jev is under 2 points and the interval touches zero, so treat it as a snapshot of this set. Its cost is hardware and latency, not API. For those who just want to classify text with quality and operate nothing, Jev remains the obvious choice: 9 cents per 10 thousand decisions over Clef-flash buys a thousand fewer errors, and OpenAI Decisions landed halfway in price and accuracy.
 
-2. **Running locally became viable at 4B.** Jebadiah, Mapika and Kev 4B deliver between 87 and 90% on the compact cases with 200 ms latency on a desktop machine, and in a pilot with your task any of the three can win. The financial math justifies using the machine that already exists, for data control or because of an obligation to stay offline. Buying a machine for this it stops justifying.
+2. **Running locally became viable at 4B.** Jebadiah, Mapika and Kev 4B deliver between 87 and 90% on the compact cases with 200 ms latency on a desktop machine, and in a pilot with your task any of the three can win. If your machine handles 49 GB of weights, Perplexity delivers the top of the table at home. The financial math justifies using the machine that already exists, for data control or because of an obligation to stay offline. Buying a machine for this it stops justifying.
 
-3. **Small models are another category.** Judging Laya by the accuracy column is reading the table wrong. It gets more than half wrong out of the factory and falls hard under a malicious comment, and it's the only one on the list that fits on a weak device and answers in under 20 ms. If Jev-like accuracy is a requirement, cross Laya off. If running offline on small hardware is a requirement, cross everything else off and start with fine-tuning Laya on your task, which is the missing measurement.
+3. **Small models are another category.** Judging Laya and Julia by the accuracy column is reading the table wrong. They get half or more wrong out of the factory, fall hard under a malicious comment, and they're the only ones on the list that fit on a weak device and answer in tens of milliseconds. If Jev-like accuracy is a requirement, cross both off. If running offline on small hardware is a requirement, cross everything else off and start with fine-tuning them on your task, which is the missing measurement. And be careful with Julia in particular: 48 errors in 71 confident guesses is the portrait of a model that doesn't know what it doesn't know.
 
-4. **Portuguese costs about 14% more tokens** and drops the models in the middle of the table by 1 to 10 points, with Kev 9B and Clef-flash in the worst case, while Jev loses nothing. For a Brazilian audience, that's the first column to look at, before price.
+4. **Portuguese costs about 14% more tokens** and drops the models in the middle of the table by 1 to 10 points, with Kev 9B and Clef-flash in the worst case. Jev loses nothing, OpenAI ties both languages, and Perplexity goes to 100% in Portuguese, better than its own English. Julia goes the other way and plummets 13 points. For a Brazilian audience, that's the first column to look at, before price.
 
 > And what holds for everyone: none of these models replaces the rule that's already in code. Numeric thresholds, severity policy with structured facts, tool permission, all of that stays in the `if`. The model comes in to turn free text into structured fact. And the test that matters is yours, with your tickets, because each cell in this table has 12 scenarios and your operation has thousands.
 
