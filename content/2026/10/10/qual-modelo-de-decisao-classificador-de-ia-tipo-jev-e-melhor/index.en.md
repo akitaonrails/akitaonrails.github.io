@@ -85,6 +85,8 @@ Four ran in the cloud, through the official API: **Jev** (version 1.13.0, from T
 | Julia-1 | 144M | Supersonic Labs, Apache 2.0, mmBERT encoder | local, GPU and CPU |
 | GLiNER2.5-Decide / multi-Decide | 340M / 287M | Fastino, Apache 2.0 | local |
 
+The order up there is just organizational, hosted first and locals by family. The actual ranking is in the [results table](#the-full-table).
+
 Everyone received exactly the same text, the same instructions and the same options, with no per-model prompt tuning and no adjustments after seeing results (Simple-Jev uses its own server's fixed prompt policy). The exception is **GLiNER**, whose native API takes labels instead of probability distributions. It runs on a separate track, v2 only, with explicit mapping and no made-up calibration metrics.
 
 **Simple-Jev** deserves an explanation. It's a server that takes a stock LLM (here Qwen3.5 4B, with no decision training at all) and reads the probability of the answer tokens instead of generating text. It's the baseline: if a "decision" model loses to this, the specialized training bought nothing.

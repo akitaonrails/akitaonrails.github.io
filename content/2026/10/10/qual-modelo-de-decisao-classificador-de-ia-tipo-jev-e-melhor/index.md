@@ -85,6 +85,8 @@ Quatro rodaram na nuvem, pela API oficial: o **Jev** (versão 1.13.0, da TypeSaf
 | Julia-1 | 144M | Supersonic Labs, Apache 2.0, encoder mmBERT | local, GPU e CPU |
 | GLiNER2.5-Decide / multi-Decide | 340M / 287M | Fastino, Apache 2.0 | local |
 
+A ordem aí em cima é só organizacional, hospedados primeiro e locais por família. O ranking de verdade está na [tabela de resultados](#a-tabela-completa).
+
 Todos receberam exatamente o mesmo texto, as mesmas instruções e as mesmas opções, sem prompt ajustado por modelo e sem nenhum ajuste depois de ver resultado (o Simple-Jev usa a política de prompt fixa do próprio servidor). A exceção é o **GLiNER**, cuja API nativa recebe rótulos em vez de distribuições de probabilidade. Ele entra numa trilha separada, só no v2, com mapeamento explícito e sem métricas de calibração inventadas.
 
 O **Simple-Jev** merece explicação. Ele é um servidor que pega um LLM comum (aqui o Qwen3.5 4B, sem nenhum treino de decisão) e lê a probabilidade dos tokens de resposta em vez de gerar texto. É a linha de base: se um modelo "de decisão" perde pra isso, o treino especializado não comprou nada.
