@@ -4,7 +4,7 @@ slug: "disaster-on-my-nas-how-i-almost-lost-90-tb-of-data"
 date: '2026-10-06T12:00:00-03:00'
 draft: false
 translationKey: desastre-no-meu-nas-como-quase-perdi-90-tb-de-dados
-description: "I swapped one drive in my Synology DS1821+ and woke up the next day with two critical drives in an array that only survives losing one. This is the post-mortem, still in progress: why SHR-1 wasn't enough, the warning DSM never sent, the R$ 185 thousand for a QNAP bought in a hurry in Brazil against about US$ 11.5 thousand in the US, the new RAID-6 setup on ZFS, and copying 90 TB at 400 MB/s."
+description: "I swapped one drive in my Synology DS1821+ and woke up the next day with two critical drives in an array that only survives losing one. Full post-mortem: why SHR-1 wasn't enough, the warning DSM never sent, the R$ 185 thousand for a QNAP bought in a hurry, and the recovery: parallel NAS-to-NAS rsync, the slow drive holding the array back, the verification of 5.9 million files, the thick provisioning scare, and both NASes healthy in RAID-6."
 tags:
 - storage-and-backup
 - homelab
@@ -15,7 +15,9 @@ Yesterday, Monday, I was woken up at 8 a.m. by a loud, insistent beep. I knew it
 
 ![Synology panel showing Storage Pool 1 in critical state, with drives 1 and 8 marked Critical](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/20261006120000_nas-synology-2-discos-criticos.png)
 
-At that moment I knew I was a hiccup away from losing everything. This post is the post-mortem of what happened, and it's still in progress: as I write, the rescue copy is still running.
+At that moment I knew I was a hiccup away from losing everything. This post is the post-mortem of what happened, and the first part was written in the heat of the disaster, with the rescue copy still running.
+
+> **Update of October 11:** the copy finished and the ending was a happy one. No file was lost, both NASes are healthy, each with its own RAID-6. The full recovery is in the [second half of this post](#six-days-later-the-end-of-the-story). The first part stays as it was published, untouched.
 
 ## I've been using a NAS for a long time
 
@@ -282,4 +284,132 @@ I was put in an impossible situation on a Monday morning, I acted right away as 
 5. **Have somewhere to copy to.** My way out cost R$ 185 thousand because I had no plan B. A second NAS, even a modest one, with what matters, would have bought me time to shop calmly.
 6. **RAID is not backup.** I know that, I teach that, and I still only had offsite for part of it.
 
-I'll update this post when the copy finishes and I know the real size of the damage.
+The copy is done and I already know the size of the damage: zero. The full recovery comes next.
+
+## Six days later: the end of the story
+
+When I published the first part, I had about 20 TB copied and no certainty. The outcome: I finished evacuating the ~91 TB, verified file by file, and lost nothing. Not even what was on the fallen RAID slice, because it stayed readable until the end.
+
+Who operated the recovery were my two agents. The desktop agent controls my PC and both NASes over SSH, and the homelab agent takes care of the server where my 57 containers run. The two coordinate by message: one leaves a report in the other's inbox, and I follow the conversation.
+
+![The desktop agent's terminal checking the ai-memory message inbox, where the homelab agent leaves its reports](nas-ai-memory-agentes.png)
+
+This part matters because nothing that follows was me typing commands. I made the decisions; they executed, measured and screwed up badly a few times, as you'll see.
+
+### HBS 3 was quietly betraying me
+
+In the first part I told how HBS 3, pulling the Synology shares over CIFS, reached 400 MB/s after the adjustments. What I didn't know: speed was the smallest of its problems.
+
+Two defects showed up when the agent checked the source inventory against what HBS reported:
+
+- **It didn't go where it had no permission, and told nobody.** HBS mounts the Synology as my user. The `Bitcoin/data` directory, 901 GB with my node's wallet and chainstate, belongs to uid 101 and is closed to anyone else. CIFS couldn't get in there, and HBS reported success without recording the omission. A "green" backup that leaves the entire Bitcoin node behind.
+- **It skipped files with "unsupported" names.** 113 files, recorded only on a detail screen nobody opens during a days-long copy.
+
+> A backup tool that reports success while omitting what it couldn't read is worse than one that fails screaming. Verify the backup against an independent inventory of the source, never against the tool's own log.
+
+We abandoned HBS. The agent opened SSH on both NASes, enabled the rsync server on the QNAP, and the Synology started pushing straight to its rsyncd, with nothing going through the PC. Each job's wrapper: `rsync -a --numeric-ids -W --partial --timeout=600`, attempts with retry, and **never `--delete`**. The `--numeric-ids` preserved the original uids with no chown afterwards, `--partial` turned any interruption into a continuation, and the absence of `--delete` made the destination always a superset: re-sharding or killing a job never cost data.
+
+### The bottleneck wasn't the broken drive
+
+Some context was missing from the first part. This Synology was born with eight consumer-line Seagate IronWolfs, and over the years I had been swapping them one by one for 20 TB IronWolf Pros. The disaster happened exactly during one of those upgrades: I swapped drive 1 for the new Pro and, during the rebuild, drive 8 failed. One single old drive was left in the array: drive 2.
+
+And it, not drive 8, was the evacuation bottleneck. Measured under load:
+
+- Drive 2 (the old consumer one, with 37 thousand hours of use): 91% utilization, delivering 27 MB/s, each I/O taking 4 to 15 times longer than its siblings.
+- The six Pros: between 34% and 45% utilization, sitting idle waiting for it.
+
+In RAID-5 (and in SHR), each read stripe only completes when the slowest member answers. One slow drive caps the whole array: because of it, the array couldn't go past about 200 MB/s while six good drives had room to spare. And its SMART was clean, zero reallocated sectors. Consumer drives have no ERC/TLER, so it retries a marginal sector for seconds, internally, without accounting for anything. The Synology's NVMe cache diverted part of the reads from the platters and helped mask the symptom.
+
+> The drive that fails and the drive that slows you down don't have to be the same, and SMART "PASSED" says nothing about latency. A slow array is diagnosed with per-drive utilization and response time, not with SMART.
+
+### Parallelizing rsync is science, not guesswork
+
+First instinct: more streams. Wrong, twice.
+
+The first time, a bug of ours: a "clean" job relaunch didn't kill anything, because the Synology's busybox `ps` truncates the command line and the verification grep didn't find the old processes. Result: 32 rsyncs running into 7 destinations, four to five writers per tree, the QNAP with its receive buffers clogged, and the cable transmitting 516 MB/s while the array read 140. After the cleanup (enumerating `/proc/*/cmdline`, never trusting `ps` again), useful throughput **rose** from 140 to 181 MB/s while total load collapsed.
+
+The second time, measurement inverted common sense: with large-file trees, fewer streams were faster, because the average size of each read request tripled and the array did long sequential runs instead of jumping around.
+
+But small-file trees are another sport. `TERACHAD/Emulators` has 21 TB in 3.4 million files averaging 6 MB: latency-bound work (stat, creation, metadata), not bandwidth-bound. And there aggressive parallelization worked, with one detail: the right shard is chosen by **file count**, not by size. A single directory, `ROMS_FINAL/xbox-hdd-ready`, held 995 thousand of the tree's 1.59 million files, averaging 1.7 MB per file. Isolating it from the multi-gigabyte ISOs:
+
+| Configuration | GB/hour |
+| --- | ---: |
+| single stream, 6-hour average | ~157 |
+| two shards | 272 |
+| **three shards** | **436 to 501** |
+
+More than three times the single stream's average throughput, on the same machine, on the same network. And there's a beautiful reason: with the array missing a member, reads of data that doesn't live on drive 2 don't need it, so the extra concurrency let the other drives work while it choked.
+
+> "More parallelism" and "less parallelism" are both wrong answers as a general rule. Bandwidth-bound work splits little; latency-bound work splits a lot, and by file count. Measure before choosing.
+
+### Copying is half the work; proving is the other half
+
+Every job that finished went through a dry-run of the same rsync, with the same excludes: zero files needing transfer means an identical destination by size and date. And even so it almost went wrong, because **the verification inherited the copy's excludes**: a tree excluded from the transfer stayed excluded from its own proof. Re-running the check without excludes turned up 952 files and 191 GB missing in Downloads (exactly the batches I had set aside as "only existing copy") and the old restic repositories, which a similar directory name on the QNAP pretended to cover: the repositories' internal ID proved they were different ones, not copies.
+
+There was source drift too: a tree verified as complete received 16 GB of new checkpoints on the Synology after the check, and only the final re-verification caught it. Verification has an expiration date.
+
+Closing the books: **17 rsync jobs, all exit 0, all verified, about 5.9 million byte-identical files**, and the Synology shutdown only happened after every tree was proven.
+
+![Recovery status table mid-process: the containers already released and the ones still held waiting for each tree's rsync verification](nas-homelab-containers-status.png)
+
+### Meanwhile, in the homelab
+
+On the other side of the house, the marvin server, which mounts the NAS over NFS and runs the 57 containers, almost died standing up. Dead NAS plus "hard" NFS mounts plus 57 containers restarting on their own made an infinite queue of uninterruptible I/O: the machine answered ping, but sshd couldn't complete a handshake. And every insistent SSH attempt only made it worse, because OpenSSH punishes a repetitive source by extending the ban. We knocked on the door and the door added a lock.
+
+The way out was to stop knocking: I paused the torrents through the qBittorrent API (which kept responding), went to the physical console, disabled Docker, rebooted, and the server came back. A watchdog I didn't even remember existed had, on its own, taken down the 14 NAS-dependent containers before any database corrupted: bitcoind's LevelDB opened clean on the first try.
+
+The migration itself was elegant: fstab pointed at the QNAP and the old mount points became symlinks into the new one. **No docker-compose changed.** Then came the QNAP NFS gotcha: permission is per client. The desktop was allowed without squash, but marvin's writes came in as uid 1001, blocking everything that writes to the NAS. The first fix attempt still flipped the mount to read-only in the middle of the first restic backup, which survived on retries. Final configuration: read and write, no squash for anyone, tested with `touch` and `ls -ln` from each client, because "it worked on the desktop" proves nothing about the server.
+
+![QNAP NFS permissions screen, with the per-host rule for the homelab server](nas-qnap-configurando-nfs.png)
+
+After that it was resurrection tree by tree: each service only came up when its tree was verified on the QNAP. In two days, 57 of 57 containers back, and a brand-new restic backup running daily to the QNAP.
+
+### The new kernel took down the NVMe
+
+In the middle of the recovery, a free scare from the server. Seven minutes after the nightly backup started, the NVMe controller vanished silently: every binary took SIGBUS, Docker and sshd died, and nothing was logged anywhere, because the log lives on the device that died. Not even a kernel panic: just silence.
+
+The same workload had run fine hours earlier on kernel 7.2.6 and died on 7.2.9. Disabling APST (the NVMe's power management) didn't fix it: a second identical crash, a 7.2.9 regression confirmed by elimination. MicroOS is transactional and snapshot-based, so the rollback was a reboot into the 7.2.6 lineage, not a reinstall. Automatic updates were deliberately left broken on that lineage so nobody goes back to 7.2.9 unsupervised, and testing 7.2.8 waits until I can sit next to it.
+
+> A transactional operating system turns a kernel regression into a reboot. Without system snapshots, that night would have cost a lot more.
+
+### The thick provisioning scare
+
+On the QNAP, the whole copy ran with no snapshots at all: in a bulk migration, snapshots are dead weight. With the copy done, I went to enable the ZFS snapshot schedule and got a dry error: "pool free space is not enough". With 20 TB free.
+
+![QNAP error when trying to create a snapshot: insufficient pool free space, even with terabytes free](nas-qnap-thick-thin-erro-snapshot.png)
+
+Both statements were true about different things. The CHAD folder had been created as **thick**: out of the 100 TB quota, ZFS reserves the full 100 TB, and to snapshot a dataset with a reservation, the pool has to guarantee space to overwrite every referenced block while the snapshot pins the old copies. The math: 80 TB written plus 100 TB reserved, against 126 TB usable in the pool. It doesn't close. And `df` lies on both sides, because it measures the folder against the quota, not against the pool.
+
+The fix was converting the folder to **thin**, which QuTS hero does in-place, hidden on the folder's Management screen, not in the edit dialog where "Thick" looks like static text. In thin, the number becomes a ceiling instead of a reservation: the 10 TB reservation evaporated, the pool gained 39 TB free, and the first snapshot came out consuming 334 KB over 79.9 TB referenced. ZFS needed almost nothing; the reservation was what demanded a 100 TB guarantee to authorize.
+
+![CHAD folder properties after the conversion, now as thin](nas-qnap-chad-properties.png)
+
+Now the QNAP has a snapshot schedule with a retention policy, as it should have had since day one:
+
+![CHAD folder snapshot schedule on the QNAP](nas-qnap-snapshot-schedule.png)
+
+![Snapshot retention policy: how many to keep per day, week and month](nas-qnap-snapshot-retention.png)
+
+Two footnotes for anyone building one of these. If your thin folder has an 80% alert, raise the quota for aesthetic slack, because the alert measures against the quota and not against the pool. And this QNAP's real bottleneck is RAM: 7 GB for a 174 TB pool, when QuTS hero wants 16 or more. The size of the ARC cache governs metadata speed, and that's why the whole-tree sweeps during the migration were slow. A RAM upgrade is worth more than any fine-tuning.
+
+### The Synology is born again
+
+With everything verified on the QNAP, the Synology could finally be operated on. I swapped drives 2 and 8 for new IronWolf Pros, deleted the wounded pool and recreated it from scratch, this time in **SHR-2**, the two-parity-drive mode, their RAID-6. The new pool came out with 100 TB, all drives healthy:
+
+![Synology Storage Manager showing the new SYNOCHAD pool in SHR with two-drive tolerance, 100 TB and all drives Healthy](nas-synology-pool-novo-saudavel.png)
+
+It goes back to work as a replica target, and no longer as a single point of failure. The QNAP stays as primary, in RAIDZ2, with 87 TB of the 126 TB used and snapshots scheduled:
+
+![QNAP Storage Manager with the RAID 6 Ready pool and the CHAD folder in thin with 79.9 TB of 95 TB](nas-qnap-storage-manager-final.png)
+
+### What I take from the second half
+
+1. **Distrust silent success.** HBS reported green while leaving 901 GB behind. A backup is verified against a source inventory.
+2. **SMART doesn't measure slowness.** The drive that nearly killed the evacuation was "healthy." Per-drive utilization and latency tell the truth.
+3. **Parallelism is calibrated by measuring.** Bandwidth-bound splits little, latency-bound splits a lot, and the shard is chosen by file count.
+4. **Verification doesn't inherit excludes.** If the proof uses the same filters as the copy, it only reaffirms the copy's assumptions. And verify again immediately before destroying the source.
+5. **NFS permission is per client.** Test writes from every machine that will use it.
+6. **Don't hammer a dying sshd.** Each attempt extends the ban. One patient attempt, or the physical console.
+7. **The dangerous repair comes last.** The array stayed degraded and slow until the last byte was proven somewhere else; only then did rebuilding stop costing anything.
+
+I came out of this better protected than I went in: two NASes, each with its own RAID-6, scheduled snapshots on the QNAP, daily restic, and Glacier for what's critical. The disaster cost me a QNAP, two drives and a week. It could have cost 90 TB.
