@@ -17,7 +17,7 @@ Ontem, segunda-feira, fui acordado às 8 da manhã por um bipe alto e insistente
 
 Naquele momento eu sabia que estava a um soluço de perder tudo. Este texto é o post-mortem do que aconteceu, e a primeira parte foi escrita no calor do desastre, com a cópia de salvamento ainda rodando.
 
-> **Atualização de 11 de outubro:** a cópia terminou e o final foi feliz. Nenhum arquivo se perdeu, os dois NAS estão saudáveis, cada um com seu RAID-6. A recuperação inteira está na [segunda metade deste texto](#seis-dias-depois-o-final-da-história). A primeira parte fica como foi publicada, sem retoques.
+> **Atualização de 11 de outubro:** a cópia terminou e o final foi feliz. Nenhum arquivo se perdeu por acidente, os dois NAS estão saudáveis, cada um com seu RAID-6. A recuperação inteira está na [segunda metade deste texto](#seis-dias-depois-o-final-da-história). A primeira parte fica como foi publicada, sem retoques.
 
 ## Eu uso NAS faz muito tempo
 
@@ -288,7 +288,7 @@ A cópia terminou e eu já sei o tamanho do estrago: zero. A recuperação compl
 
 ## Seis dias depois: o final da história
 
-Quando publiquei a primeira parte, eu tinha uns 20 TB copiados e nenhuma certeza. O desfecho: terminei de evacuar os ~91 TB, verifiquei arquivo por arquivo, e não perdi nada. Nem o que estava na fatia de RAID caída, porque ela continuou legível até o fim.
+Quando publiquei a primeira parte, eu tinha uns 20 TB copiados e nenhuma certeza. O desfecho: terminei de evacuar os ~91 TB, verifiquei arquivo por arquivo, e não perdi nada por acidente. Nem o que estava na fatia de RAID caída, porque ela continuou legível até o fim.
 
 Quem operou a recuperação foram os meus dois agentes. O agente do desktop controla meu PC e os dois NAS por SSH, e o agente do homelab cuida do servidor onde rodam meus 57 containers. Os dois se coordenam por mensagem: um deixa relatório na caixa do outro, e eu acompanho a conversa.
 
@@ -318,7 +318,7 @@ E foi ele, não o disco 8, o gargalo da evacuação. Medido sob carga:
 - Disco 2 (o consumidor antigo, com 37 mil horas de uso): 91% de utilização, entregando 27 MB/s, cada I/O demorando 4 a 15 vezes mais que os irmãos.
 - Os seis Pro: entre 34% e 45% de utilização, parados esperando ele.
 
-Em RAID-5 (e no SHR), cada stripe de leitura só completa quando o membro mais lento responde. Um disco lento limita o array inteiro: por causa dele, o array não passava de uns 200 MB/s enquanto seis discos bons sobravam. E o SMART dele estava limpo, zero setores realocados. Disco consumidor não tem ERC/TLER, então ele tenta reler setor marginal por segundos, internamente, sem contabilizar nada. O cache NVMe do Synology desviava parte da leitura dos pratos e ajudava a maquiar o sintoma.
+Em RAID-5 (e no SHR), uma leitura sequencial atravessa o stripe inteiro, e o stripe só completa quando o membro mais lento responde. Um disco lento limita o array inteiro: por causa dele, o array não passava de uns 200 MB/s enquanto seis discos bons sobravam. E o SMART dele estava limpo, zero setores realocados. Disco consumidor costuma vir sem limitação de tempo de recuperação de erro (ERC/TLER) ativa, então ele tenta reler setor marginal por segundos, internamente, sem contabilizar nada. O cache NVMe do Synology desviava parte da leitura dos pratos e ajudava a maquiar o sintoma.
 
 > O disco que falha e o disco que te atrasa não precisam ser o mesmo, e SMART "PASSED" não diz nada sobre latência. Array lento se diagnostica com utilização e tempo de resposta por disco, não com SMART.
 
@@ -330,7 +330,7 @@ Na primeira, um bug nosso: um relançamento "limpo" de jobs não matou nada, por
 
 Na segunda, a medida inverteu o senso comum: com árvores de arquivo grande, menos streams eram mais rápidos, porque o tamanho médio de cada requisição de leitura triplicava e o array fazia corridas sequenciais longas em vez de ficar pulando de posição.
 
-Só que árvore de arquivo pequeno é outro esporte. O `TERACHAD/Emulators` tem 21 TB em 3,4 milhões de arquivos com média de 6 MB: trabalho limitado por latência (stat, criação, metadados), não por banda. E ali a paralelização agressiva funcionou, com um detalhe: o shard certo se escolhe por **contagem de arquivos**, não por tamanho. Um único diretório, `ROMS_FINAL/xbox-hdd-ready`, segurava 995 mil dos 1,59 milhão de arquivos da árvore, com média de 1,7 MB por arquivo. Isolando ele dos ISOs multi-gigabyte:
+Só que árvore de arquivo pequeno é outro esporte. O `TERACHAD/Emulators` tem 21 TB em 3,4 milhões de arquivos com média de 6 MB: trabalho limitado por latência (stat, criação, metadados), não por banda. E ali a paralelização agressiva funcionou, com um detalhe: o shard certo se escolhe por **contagem de arquivos**, não por tamanho. Um único diretório, `ROMS_FINAL/xbox-hdd-ready`, segurava 995 mil dos 1,59 milhão de arquivos do ROMS_FINAL, com média de 1,7 MB por arquivo. Isolando ele dos ISOs multi-gigabyte:
 
 | Configuração | GB/hora |
 | --- | ---: |
@@ -338,7 +338,7 @@ Só que árvore de arquivo pequeno é outro esporte. O `TERACHAD/Emulators` tem 
 | dois shards | 272 |
 | **três shards** | **436 a 501** |
 
-Mais de três vezes a vazão média do stream único, na mesma máquina, na mesma rede. E tem um motivo bonito: com o array faltando um membro, leituras de dados que não moram no disco 2 não precisam dele, então a concorrência extra deixava os outros discos trabalharem enquanto ele engasgava.
+De 2,8 a 3,2 vezes a vazão média do stream único, na mesma máquina, na mesma rede. E tem um motivo bonito: com o array faltando um membro, leituras de dados que não moram no disco 2 não precisam dele, então a concorrência extra deixava os outros discos trabalharem enquanto ele engasgava.
 
 > "Mais paralelismo" e "menos paralelismo" são as duas respostas erradas como regra geral. Trabalho limitado por banda se divide pouco; trabalho limitado por latência se divide muito, e por contagem de arquivos. Meça antes de escolher.
 
@@ -347,6 +347,8 @@ Mais de três vezes a vazão média do stream único, na mesma máquina, na mesm
 Cada job que terminava passava por um dry-run do mesmo rsync, com os mesmos excludes: zero arquivos precisando transferência significa destino idêntico por tamanho e data. E mesmo assim quase deu errado, porque **a verificação herdava os excludes da cópia**: uma árvore excluída da transferência ficava excluída da própria prova. Refazendo a checagem sem excludes, apareceram 952 arquivos e 191 GB faltando no Downloads (exatamente os lotes que eu tinha separado como "única cópia existente") e os repositórios restic antigos, que um nome de diretório parecido no QNAP fingia cobrir: o ID interno dos repositórios provou que eram outros, não cópias.
 
 Teve também deriva de origem: uma árvore verificada como completa recebeu 16 GB de checkpoints novos no Synology depois da checagem, e só a re-verificação final pegou. Verificação tem prazo de validade.
+
+E uma decisão consciente, registrada pra ninguém me acusar de esconder: os históricos antigos de backup (uns 2 TB de snapshots restic e um set de duplicity de 2025) ficaram pra trás por escolha minha, porque os repositórios novos no QNAP já cobrem o mesmo conteúdo a partir de agora. Perda deliberada de histórico, não de dado.
 
 Fecho da conta: **17 jobs de rsync, todos exit 0, todos verificados, uns 5,9 milhões de arquivos byte-idênticos**, e o desligamento do Synology só aconteceu depois de cada árvore provada.
 
@@ -366,7 +368,7 @@ Depois disso foi ressurreição árvore por árvore: cada serviço só subia qua
 
 ### O kernel novo derrubou o NVMe
 
-No meio da recuperação, um susto de graça do servidor. Sete minutos depois do backup noturno começar, o controlador NVMe sumiu em silêncio: todo binário tomou SIGBUS, Docker e sshd morreram, e nada foi logado em lugar nenhum, porque o log mora no dispositivo que morreu. Nem kernel panic: só silêncio.
+No meio da recuperação, um susto de graça do servidor. Sete minutos depois do backup noturno começar, o controlador NVMe sumiu em silêncio: todo binário tomou SIGBUS, Docker e sshd morreram, e nada restou gravado em lugar nenhum, porque o log mora no dispositivo que morreu. Nem kernel panic: só silêncio.
 
 O mesmo workload tinha rodado bem horas antes no kernel 7.2.6 e morreu no 7.2.9. Desligar o APST (o gerenciamento de energia do NVMe) não resolveu: segunda queda idêntica, regressão do 7.2.9 confirmada por eliminação. O MicroOS é transacional e baseado em snapshot, então o rollback foi um reboot pra linhagem 7.2.6, não uma reinstalação. As atualizações automáticas ficaram propositalmente quebradas naquela linhagem pra ninguém voltar pro 7.2.9 sem supervisão, e o teste do 7.2.8 fica pra quando eu puder sentar do lado.
 
@@ -380,7 +382,7 @@ No QNAP, a cópia inteira rodou sem snapshot nenhum: numa migração em massa, s
 
 As duas afirmações eram verdade sobre coisas diferentes. A pasta CHAD tinha sido criada como **thick**: dos 100 TB de quota, o ZFS reserva os 100 TB, e pra tirar snapshot de um dataset com reserva, o pool precisa garantir espaço pra sobrescrever todos os blocos referenciados enquanto o snapshot prende as cópias velhas. Na conta: 80 TB escritos mais 100 TB reservados, contra 126 TB utilizáveis do pool. Não fecha. E o `df` mente dos dois lados, porque mede a pasta contra a quota, não contra o pool.
 
-A correção foi converter a pasta pra **thin**, que o QuTS hero faz in-place, escondido na tela de Management da pasta, não no diálogo de edição onde "Thick" parece texto estático. Em thin, o número vira teto em vez de reserva: a reserva de 10 TB evaporou, o pool ganhou 39 TB livres, e o primeiro snapshot saiu consumindo 334 KB sobre 79,9 TB referenciados. O ZFS não precisava de quase nada; a reserva é que exigia garantia de 100 TB pra autorizar.
+A correção foi converter a pasta pra **thin**, que o QuTS hero faz in-place, escondido na tela de Management da pasta, não no diálogo de edição onde "Thick" parece texto estático. Em thin, o número vira teto em vez de reserva: a reserva de 10 TB evaporou, o pool passou a ter 39 TB livres, e o primeiro snapshot saiu consumindo 334 KB sobre 79,9 TB referenciados. O ZFS não precisava de quase nada; a reserva é que exigia garantia de 100 TB pra autorizar.
 
 ![Propriedades da pasta CHAD depois da conversão, já como thin](nas-qnap-chad-properties.png)
 
@@ -390,7 +392,7 @@ Agora o QNAP tem agenda de snapshots com política de retenção, como devia ser
 
 ![Política de retenção dos snapshots: quantos guardar por dia, semana e mês](nas-qnap-snapshot-retention.png)
 
-Duas notas de rodapé pra quem montar um desses. Se a sua pasta thin tiver alerta de 80%, suba a quota pra folga estética, porque o alerta mede contra a quota e não contra o pool. E o gargalo real desse QNAP é RAM: 7 GB pra um pool de 174 TB, quando o QuTS hero quer 16 ou mais. O tamanho do cache ARC governa a velocidade de metadados, e foi por isso que as varreduras de árvore inteira durante a migração eram lentas. Upgrade de RAM vale mais que qualquer ajuste fino.
+Duas notas de rodapé pra quem montar um desses. Se a sua pasta thin tiver alerta de 80%, suba a quota pra folga estética, porque o alerta mede contra a quota e não contra o pool. E o gargalo real desse QNAP é RAM: 7 GB pra um pool de 174 TB. O mínimo oficial do QuTS hero é 8 GB, e a prática recomendada pra esse porte é 16 pra cima. O tamanho do cache ARC governa a velocidade de metadados, e foi por isso que as varreduras de árvore inteira durante a migração eram lentas. Upgrade de RAM vale mais que qualquer ajuste fino.
 
 ### O Synology nasce de novo
 
