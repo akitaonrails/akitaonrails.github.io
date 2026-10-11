@@ -4,7 +4,7 @@ slug: "qual-modelo-de-decisao-classificador-de-ia-tipo-jev-e-melhor"
 date: '2026-10-10T12:00:00-03:00'
 draft: false
 translationKey: qual-modelo-de-decisao-classificador-de-ia-tipo-jev-e-melhor
-description: "Rodei meu próprio benchmark de modelos de decisão: Jev, Clef e OpenAI Decisions na nuvem, mais dezesseis configurações abertas (Perplexity Decider 27B, Clef-flash, Kev, Jebadiah, Mapika, Eikos, Laya, Julia, GLiNER, Simple-Jev) no meu Strix Halo, em mais de 19 mil classificações com casos em inglês e português. O líder geral é de pesos abertos: o Perplexity Decider 27B fez 99,4% nos casos compactos, com 100% em português. O Jev segue o melhor hospedado, a uns 19 centavos de dólar por 10 mil decisões. Tabela completa, custo em e-mails de suporte, pegadinhas e onde os dados convergem."
+description: "Rodei meu próprio benchmark de modelos de decisão: Jev, Clef, OpenAI Decisions e Microsoft Decision-1 na nuvem, mais dezesseis configurações abertas (Perplexity Decider 27B, Clef-flash, Kev, Jebadiah, Mapika, Eikos, Laya, Julia, GLiNER, Simple-Jev) no meu Strix Halo, em mais de 20 mil classificações com casos em inglês e português. O líder geral é de pesos abertos: o Perplexity Decider 27B fez 99,4% nos casos compactos, com 100% em português. O Microsoft Decision-1 empatou com o Jev em 97,6% sendo o hospedado mais barato. Tabela completa, custo em e-mails de suporte, pegadinhas e onde os dados convergem."
 tags:
 - benchmarks-de-llm
 - modelos-locais
@@ -14,9 +14,9 @@ tags:
 
 Semana passada publiquei [um texto longo sobre o Jev](/2026/10/03/entendendo-o-hype-do-jev-pra-que-serve/), o classificador hospedado da TypeSafe que virou febre em setembro. O resumo daquele texto: o Jev é um classificador, coisa que existe há décadas, e o espanto de "193x mais rápido" só existe porque muita gente vinha usando LLM de chat como classificador caro e lento. Reproduzi o ensaio *O aluno que marca a letra A*, do Paulo Câmara, apresentei as alternativas abertas Clef e Laya, e pra comparar os modelos lado a lado me apoiei no [Decision Index](https://huggingface.co/spaces/multimodalart/jev-decision-index), um ranking público que já existia.
 
-Ranking de terceiro é útil, mas eu queria pôr a mão na massa. Então montei meu próprio benchmark, com casos meus, metade em português, e rodei os modelos abertos no meu [home server com Strix Halo](/2026/03/31/review-minisforum-ms-s1-max-amd-ai-max-395/), o mesmo Ryzen AI Max+ 395 que uso pra testar LLM local. Os hospedados (Jev, os dois Clef da Cloudflare e o OpenAI Decisions) rodaram pela API deles. Tudo, incluindo os casos, as respostas brutas e os scripts de pontuação, está público no [repositório do benchmark](https://github.com/akitaonrails/jev-docs-benchmarks).
+Ranking de terceiro é útil, mas eu queria pôr a mão na massa. Então montei meu próprio benchmark, com casos meus, metade em português, e rodei os modelos abertos no meu [home server com Strix Halo](/2026/03/31/review-minisforum-ms-s1-max-amd-ai-max-395/), o mesmo Ryzen AI Max+ 395 que uso pra testar LLM local. Os hospedados (Jev, os dois Clef da Cloudflare, o OpenAI Decisions e o Microsoft Decision-1 via OpenRouter) rodaram pela API deles. Tudo, incluindo os casos, as respostas brutas e os scripts de pontuação, está público no [repositório do benchmark](https://github.com/akitaonrails/jev-docs-benchmarks).
 
-> **TL;DR:** o líder geral é de pesos abertos. O **Perplexity Decider 1.1 27B** fez **99,4%** nos casos compactos, com 100% em português e a melhor calibração do lote, rodando local. O preço: uns 49 GB de pesos e um segundo e meio por decisão. Na nuvem, o **Jev** segue imbatível em custo-qualidade, com 97,6% e 10 mil decisões por menos de 20 centavos de dólar. O **OpenAI Decisions** estreou empatado com o melhor 4B local, o Jebadiah, e tem a menor latência hospedada. O **Julia-1**, o menor e mais rápido de todos (12 ms), acertou no nível da moeda: de fábrica, não serve. Pule pra [tabela](#a-tabela-completa), pro [custo em e-mails de suporte](#quanto-custa-em-e-mails-de-suporte), pra [qual usar em qual situação](#qual-modelo-em-qual-situação), pra [quão difícil é rodar local](#quão-difícil-é-rodar-os-melhores-abertos-na-sua-máquina) ou pras [pegadinhas](#destaques-e-pegadinhas).
+> **TL;DR:** o líder geral é de pesos abertos. O **Perplexity Decider 1.1 27B** fez **99,4%** nos casos compactos, com 100% em português e a melhor calibração do lote, rodando local. O preço: uns 49 GB de pesos e um segundo e meio por decisão. Na nuvem, o **Microsoft Decision-1** empatou com o **Jev** em 97,6% (com 100% em português) custando um terço: é o hospedado mais barato que eu medi, e o primeiro candidato a avaliar. O Jev responde mais rápido e erra diferente. O **OpenAI Decisions** estreou empatado com o melhor 4B local, o Jebadiah, e tem a menor latência hospedada. O **Julia-1**, o menor e mais rápido de todos (12 ms), acertou no nível da moeda: de fábrica, não serve. Pule pra [tabela](#a-tabela-completa), pro [custo em e-mails de suporte](#quanto-custa-em-e-mails-de-suporte), pra [qual usar em qual situação](#qual-modelo-em-qual-situação), pra [quão difícil é rodar local](#quão-difícil-é-rodar-os-melhores-abertos-na-sua-máquina) ou pras [pegadinhas](#destaques-e-pegadinhas).
 
 ## Como eu testei
 
@@ -64,14 +64,15 @@ Dá 504 classificações por modelo.
 
 > Os casos foram escritos com ajuda de IA e revisados contra as políticas, sem anotação humana independente. É um benchmark sintético e pequeno: 130 famílias de cenário no v1 e 84 no v2. As variantes são correlacionadas, então 520 respostas são 130 cenários vistos de quatro jeitos. Trate os números como fotografia desses casos, e teste com os seus antes de decidir.
 
-### Os 20 competidores
+### Os 21 competidores
 
-Quatro rodaram na nuvem, pela API oficial: o **Jev** (versão 1.13.0, da TypeSafe), o **Clef** (27B, Cloudflare Workers AI), o **Clef-flash** (9B, idem) e o **OpenAI Decisions** (o alias `gpt-6-luna`, em beta público). Os outros dezesseis rodaram no Strix Halo, via ROCm, com os pesos fixados por hash de commit no Hugging Face, dentro de container Docker. Os três da primeira leva (Laya, Laya typed e Clef-flash) dividiram um container; os demais rodaram um por vez, com o Julia-1 medido duas vezes, em GPU e em CPU. O servidor via 64 GiB de memória endereçável pela GPU.
+Cinco rodaram na nuvem, pela API oficial: o **Jev** (versão 1.13.0, da TypeSafe), o **Clef** (27B, Cloudflare Workers AI), o **Clef-flash** (9B, idem), o **OpenAI Decisions** (o alias `gpt-6-luna`, em beta público) e o **Microsoft Decision-1** (9B, pós-treinado do Qwen3.5-9B, servido via OpenRouter em Azure). Os outros dezesseis rodaram no Strix Halo, via ROCm, com os pesos fixados por hash de commit no Hugging Face, dentro de container Docker. Os três da primeira leva (Laya, Laya typed e Clef-flash) dividiram um container; os demais rodaram um por vez, com o Julia-1 medido duas vezes, em GPU e em CPU. O servidor via 64 GiB de memória endereçável pela GPU.
 
 | Modelo | Tamanho nominal | Origem | Onde rodou |
 | --- | ---: | --- | --- |
 | Jev 1.13.0 | não divulgado | TypeSafe, proprietário | API |
 | OpenAI Decisions (`gpt-6-luna`) | não divulgado | OpenAI, proprietário, beta | API |
+| Microsoft Decision-1 | 9B | Microsoft, proprietário | API (OpenRouter) |
 | Clef | 27B | Cloudflare, pesos abertos | API |
 | Clef-flash | 9B | Cloudflare, pesos abertos | API e local |
 | Perplexity Decider 1.1 27B | 27B | Perplexity, Apache 2.0 | local |
@@ -91,7 +92,7 @@ Todos receberam exatamente o mesmo texto, as mesmas instruções e as mesmas op�
 
 O **Simple-Jev** merece explicação. Ele é um servidor que pega um LLM comum (aqui o Qwen3.5 4B, sem nenhum treino de decisão) e lê a probabilidade dos tokens de resposta em vez de gerar texto. É a linha de base: se um modelo "de decisão" perde pra isso, o treino especializado não comprou nada.
 
-Duas observações de protocolo. O **OpenAI Decisions** responde por um endpoint nativo de decisões tipadas, e o alias que a API devolveu não é um snapshot imutável: a OpenAI pode trocar o peso por trás do nome, como a Cloudflare faz com o Clef-flash. E o **Perplexity Decider** não é um LLM de chat comum: ele tem uma cabeça de decisão separada, com atenção não-causal e uma temperatura de calibração salva nos pesos. Um servidor de chat genérico não reproduz o comportamento dele.
+Duas observações de protocolo. O **OpenAI Decisions** responde por um endpoint nativo de decisões tipadas, e o alias que a API devolveu não é um snapshot imutável: a OpenAI pode trocar o peso por trás do nome, como a Cloudflare faz com o Clef-flash. E o **Perplexity Decider** não é um LLM de chat comum: ele tem uma cabeça de decisão separada, com atenção não-causal e uma temperatura de calibração salva nos pesos. Um servidor de chat genérico não reproduz o comportamento dele. O **Microsoft Decision-1** fala SystemOne nativo pela API de decisões do OpenRouter, e o identificador servido é datado (`microsoft-decision-1-20261009`), ou seja, também não é peso imutável. Ele não aparece no catálogo de modelos de texto do OpenRouter: pra achar, tem que filtrar pela modalidade `decisions`.
 
 ### O que foi medido
 
@@ -111,6 +112,7 @@ A coluna principal é o acerto nos 168 casos compactos do v2 (84 em inglês, 84 
 | --- | ---: | ---: | ---: | ---: | ---: |
 | Perplexity Decider 27B | 98,8% / 100,0% | **99,4%** | 99,2% | 1.547 ms (LAN) | não medido |
 | Jev | 97,6% / 97,6% | 97,6% | 96,2% | 255 ms (WAN) | US$ 0,19 |
+| Microsoft Decision-1 | 95,2% / 100,0% | 97,6% | 95,4% | 422 ms (WAN) | US$ 0,065 |
 | Clef (27B) | 97,6% / 94,0% | 95,8% | 94,6% | 302 ms (WAN) | US$ 0,63 |
 | Jebadiah 4B v2 | 91,7% / 89,3% | 90,5% | 85,4% | 205 ms (LAN) | não medido |
 | OpenAI Decisions | 90,5% / 90,5% | 90,5% | 93,1% | 222 ms (WAN) | US$ 0,23 |
@@ -132,13 +134,13 @@ A coluna principal é o acerto nos 168 casos compactos do v2 (84 em inglês, 84 
 
 Pra calibrar a leitura: as tarefas têm três ou quatro opções, então chute uniforme dá uns 31% nos dois conjuntos. "Perto de 50%" aqui já é bem acima da moeda, e "perto de 33%" é a moeda. O Julia-1 ficou em 31,5%: o nome bonito esconde um cara jogando cara-ou-coroa.
 
-Os intervalos importam. A vantagem do Perplexity sobre o Jev no v2 é de menos de 2 pontos e o intervalo de bootstrap encosta no zero: é a liderança medida neste conjunto, não uma superioridade provada pra sempre. Jev e Clef também seguem separados por menos de 2 pontos, no mesmo patamar. Já o pelotão de 90% (Jebadiah, OpenAI) fica 7 pontos atrás do Jev, e daí pra baixo todas as diferenças são claras.
+Os intervalos importam. A vantagem do Perplexity sobre o Jev no v2 é de menos de 2 pontos e o intervalo de bootstrap encosta no zero: é a liderança medida neste conjunto, não uma superioridade provada pra sempre. O Microsoft empatou com o Jev no agregado, com intervalo centrado em zero, mas empate no agregado não é intercambiabilidade: eles erram casos diferentes, e o Microsoft inverte o padrão de língua, errando mais em inglês que em português. Jev e Clef também seguem separados por menos de 2 pontos, no mesmo patamar. Já o pelotão de 90% (Jebadiah, OpenAI) fica 7 pontos atrás do Jev, e daí pra baixo todas as diferenças são claras.
 
-Cada célula de tarefa tem só 12 cenários por língua, então um acerto a mais muda a célula em mais de 8 pontos. Empate em uma tarefa específica é pista pra um piloto. As tabelas por tarefa estão no [repositório](https://github.com/akitaonrails/jev-docs-benchmarks/blob/master/benchmark/reports/next-wave-comparison-v2/results.md).
+Cada célula de tarefa tem só 12 cenários por língua, então um acerto a mais muda a célula em mais de 8 pontos. Empate em uma tarefa específica é pista pra um piloto. As tabelas por tarefa estão no [repositório](https://github.com/akitaonrails/jev-docs-benchmarks/blob/master/benchmark/reports/microsoft-comparison-v2/results.md).
 
 ## Quanto custa, em e-mails de suporte
 
-Preço por milhão de tokens é um número que ninguém consegue sentir. Os preços de lista em 11 de outubro são US$ 0,042 por milhão de tokens de entrada no Jev, US$ 0,24 no Clef, US$ 0,038 no Clef-flash e US$ 0,10 no OpenAI Decisions. Saída é grátis nos quatro.
+Preço por milhão de tokens é um número que ninguém consegue sentir. Os preços de lista em 11 de outubro são US$ 0,042 por milhão de tokens de entrada no Jev, US$ 0,24 no Clef, US$ 0,038 no Clef-flash e US$ 0,10 no OpenAI Decisions. Saída é grátis nos cinco. O Microsoft Decision-1 cobra os mesmos US$ 0,042 do Jev por milhão, via OpenRouter, mas reportou um terço dos tokens de entrada pros mesmos textos (uns 26 mil contra uns 77 mil do Jev no v2 compacto), e ninguém sabe explicar a diferença de tokenização. Na prática medida, isso o torna o hospedado mais barato do lote.
 
 O Clef-flash custava US$ 0,09 no dia 9: a Cloudflare baixou o preço em mais da metade no meio do meu teste. O Jev reporta bem mais tokens que a Cloudflare pro mesmo texto, uns 45% a mais no v2, e isso já está na conta abaixo.
 
@@ -146,6 +148,7 @@ Imagine uma operação com **10 mil e-mails de suporte por mês** pra classifica
 
 | Modelo | 10 mil e-mails / mês | 1 milhão de e-mails | Erros esperados em 10 mil (pelo acerto compacto) |
 | --- | ---: | ---: | ---: |
+| Microsoft Decision-1 | US$ 0,065 | US$ 6,45 (uns R$ 32) | ~240 |
 | Clef-flash | US$ 0,10 | US$ 10 (uns R$ 50) | ~1.250 |
 | Jev | US$ 0,19 | US$ 19 (uns R$ 95) | ~240 |
 | OpenAI Decisions | US$ 0,23 | US$ 23 (uns R$ 115) | ~950 |
@@ -167,15 +170,25 @@ O custo local real é a máquina, a sua hora configurando ROCm e container, e ma
 
 ### Você quer precisão e quer operar nada: Jev
 
-Na nuvem, o Jev continua sendo o nome. Venceu ou empatou em praticamente todas as células entre os hospedados. Em inglês ele foi 100% em cinco das sete tarefas do v2, e em português repetiu 97,6% no agregado sem perder nada na tradução, coisa que nenhum outro modelo acima da moeda conseguiu. No v1 ele manteve os 96,2% do original com o comentário malicioso do "revisor" injetado; o Clef até subiu um caso, e o Kev 4B também ficou parado, só que num patamar bem mais baixo. A latência de 255 ms via WAN ficou a 30 ms do OpenAI, e custa 19 centavos de dólar a cada 10 mil decisões, o segundo preço mais baixo do mercado.
+Na nuvem, o Jev continua sendo o nome. Venceu ou empatou em praticamente todas as células entre os hospedados, e só o Microsoft empatou com ele no agregado. Em inglês ele foi 100% em cinco das sete tarefas do v2, e em português repetiu 97,6% no agregado sem perder nada na tradução, coisa que nenhum outro modelo acima da moeda conseguiu. No v1 ele manteve os 96,2% do original com o comentário malicioso do "revisor" injetado; o Clef até subiu um caso, e o Kev 4B também ficou parado, só que num patamar bem mais baixo. A latência de 255 ms via WAN ficou a 30 ms do OpenAI, e custa 19 centavos de dólar a cada 10 mil decisões.
 
 A contrapartida é a que já discuti no texto anterior: é proprietário, hospedado, de tamanho não divulgado, e você depende da TypeSafe manter o comportamento por baixo de você. E ele erra. Tratou um ID de fatura chamado "PASSWORD-523" como credencial utilizável, mesmo com o registro dizendo explicitamente que aquilo não autentica ninguém.
+
+### Você quer o nível do Jev pagando um terço: Microsoft Decision-1
+
+A Microsoft entrou nesse mercado quieto, e entrou bem. O Decision-1 é um 9B pós-treinado do Qwen3.5-9B, servido via OpenRouter, e foi o primeiro modelo a empatar com o Jev no agregado compacto: 97,6%, com o intervalo de bootstrap centrado no zero. O detalhe que me ganhou: **100% em português**, melhor que o inglês dele (95%), invertendo o padrão de todo o resto do lote. No v1, as variantes de ordem invertida e comentário malicioso não derrubaram uma única resposta, e ele acertou o ticket crítico que o Clef e o OpenAI erraram.
+
+E é o hospedado mais barato que eu medi: US$ 0,065 por 10 mil decisões, um terço do Jev, cobrando a mesma taxa por token mas reportando um terço dos tokens. A economia vem da contagem de tokens, e o mecanismo exato eu não sei explicar, então trate como medida, não como promessa.
+
+Os pontos fracos existem. A latência é a pior entre os hospedados (422 ms de mediana, contra 255 do Jev). Nos casos compactos ele é limpo de erro confiante, mas basta adicionar contexto pra aparecer erro em português com 99,5% de confiança: o padrão "português perfeito" não sobrevive a texto longo. E nas sondagens de probabilidade ele é fraco, dando 87% pra uma moeda honesta. A Microsoft anuncia probabilidades calibradas; minhas sondagens discordam. E como todo hospedado de ID datado, o peso por trás pode mudar sem aviso.
+
+Pra operação em português que quer qualidade de Jev pagando menos, é o primeiro candidato a rodar no seu piloto.
 
 ### Você quer o mesmo nível com pesos abertos: Clef
 
 O Clef completo de 27B empatou com o Jev em inglês (82 de 84) e ficou 3 casos atrás em português. Ganhou dele no tratamento de dados sensíveis em inglês (12 de 12 contra 11). É modelo de pesos abertos, então dá pra rodar local com uns 54 GB de memória só pros pesos em BF16, o que eu deixei de testar: o Clef completo rodou só pela API. Entre os abertos, ele perdeu a coroa pro Perplexity, que pontuou mais alto com pesos menores.
 
-Pela API ele é o mais caro dos quatro hospedados, três vezes o Jev, sem ganho de qualidade que justifique. A exceção é a franquia diária: pra volume pequeno, ele é o melhor classificador que você consegue de graça.
+Pela API ele é o mais caro dos cinco hospedados, três vezes o Jev, sem ganho de qualidade que justifique. A exceção é a franquia diária: pra volume pequeno, ele é o melhor classificador que você consegue de graça.
 
 ### Você quer o mais barato na nuvem: Clef-flash
 
@@ -242,6 +255,8 @@ Todos esses modelos falam o mesmo protocolo HTTP, chamado SystemOne, que o Jev p
 ### OpenAI: só uma API key
 
 O mais fácil de todos: cria a chave, carrega crédito e chama o endpoint. As 1.048 requisições do benchmark rodaram em 4 minutos, sem uma retentativa. O único soluço foi a primeira sonda devolver "saldo esgotado" até eu colocar US$ 20 na conta.
+
+O **Microsoft Decision-1** é quase tão simples: se você já tem conta no OpenRouter, é apontar o modelo e chamar o endpoint de decisões. Sem GPU, sem assinatura Azure, sem instalação. No meu teste, 10 das 504 chamadas do v2 tomaram um 429 e passaram na retentativa, então planeje retry.
 
 ### Kev e Jebadiah: um pip e um comando
 
@@ -310,31 +325,31 @@ Nada disso é impossível, e está tudo documentado, com Dockerfiles, compose e 
 
 **Exemplo no prompt salva modelo fraco? Salva nada.** Um exemplo resolvido por classe deixou o Laya igual ou pior; vários agregados dele caíram. Ajudou o Kev 9B (mais 4 pontos) e o Clef em português (mais 3,6 pontos, chegando ao nível do Jev), e quase nada no Jev, um caso a mais em português. Valide exemplo em tráfego real antes de assumir que ajuda.
 
-**Tamanho correlaciona, e explica pouco.** Entre os 16 competidores de tamanho conhecido, a correlação de Spearman entre parâmetros e acerto compacto foi 0,95. A série Kev é mais informativa: 63% em 0,8B, 87% em 4B, 88% em 9B. O salto grande é de 0,8B pra 4B, uns 24 pontos, com intervalo entre 16 e 33. De 4B pra 9B a diferença compacta cruza zero, e vários 4B nominais, com backbones parecidos, deram resultados bem diferentes. E os dois 27B do lote, Clef e Perplexity, ficaram 3,6 pontos apartados com o mesmo tamanho nominal.
+**Tamanho correlaciona, e explica pouco.** Entre os 17 competidores de tamanho conhecido, a correlação de Spearman entre parâmetros e acerto compacto foi 0,94. A série Kev é mais informativa: 63% em 0,8B, 87% em 4B, 88% em 9B. O salto grande é de 0,8B pra 4B, uns 24 pontos, com intervalo entre 16 e 33. De 4B pra 9B a diferença compacta cruza zero, e vários 4B nominais, com backbones parecidos, deram resultados bem diferentes. E agora tem um 9B, o Microsoft, empatado no topo dos hospedados com um modelo de tamanho não divulgado e acima de um 27B hospedado. Dois 27B do lote, Clef e Perplexity, ficaram 3,6 pontos apartados com o mesmo tamanho nominal. Tamanho ajuda até 4B; depois disso, a receita de treino manda mais.
 
-**O Clef de 27B errou um ticket crítico que dois dos Laya acertaram.** No v1, um cenário de severidade diz que perda contínua de dados em produção é crítica, independentemente de quantos clientes afeta. O registro descreve perda permanente confirmada, de um cliente só. Jev, Clef-flash, Perplexity, Laya typed, Simple-Jev e Laya multilingual responderam "crítico". Clef completo, OpenAI, Laya base, Eikos, Jebadiah, Mapika, Kev 4B e Kev 9B responderam "degradado".
+**O Clef de 27B errou um ticket crítico que dois dos Laya acertaram.** No v1, um cenário de severidade diz que perda contínua de dados em produção é crítica, independentemente de quantos clientes afeta. O registro descreve perda permanente confirmada, de um cliente só. Jev, Clef-flash, Perplexity, Microsoft, Laya typed, Simple-Jev e Laya multilingual responderam "crítico". Clef completo, OpenAI, Laya base, Eikos, Jebadiah, Mapika, Kev 4B e Kev 9B responderam "degradado".
 
 > É um caso só, e taxa de erro exigiria muito mais. Mas mostra que a média esconde exatamente o erro que mais custa. Quando os fatos de impacto são estruturados, a regra de severidade devia estar em código, e o modelo entra só pra extrair os fatos do texto livre.
 
 **Hospedado e local divergem com o tempo.** O Clef-flash local reproduziu o hospedado nas 520 classificações do v1 e divergiu em 19 das 504 do v2. A Cloudflare mantém a versão dos pesos por trás do alias hospedado em aberto. Se a reprodutibilidade importa, fixe o hash local.
 
-**Confiança alta e segurança são coisas diferentes.** No v2 compacto, Jev, Clef, os dois Clef-flash, Eikos, Jebadiah, OpenAI e Perplexity erraram zero palpites acima de 0,9. O Perplexity é o caso extremo: respondeu nesse nível em 96% dos casos sem errar um, enquanto o OpenAI cobriu só metade. O Mapika errou 5% dos palpites nesse nível, o Kev 4B 3% e o Simple-Jev 14%. E o Julia quebrou o padrão com violência: 48 erros em 71 palpites acima de 0,9. A cobertura também variou: o Jev respondeu acima de 0,9 em quase 90% dos casos, o Clef em quase 80%, o Clef-flash em 40% e o Laya base em 2 de 168. No v1 o Jev errou 1% dos palpites acima de 0,9 e o Laya base errou 61%. Um limiar de confiança só serve depois de validado na sua distribuição, e o ECE baixo do Laya typed em português deixou ele nos mesmos 36% de acerto.
+**Confiança alta e segurança são coisas diferentes.** No v2 compacto, Jev, Clef, os dois Clef-flash, Eikos, Jebadiah, OpenAI, Microsoft e Perplexity erraram zero palpites acima de 0,9. O Perplexity é o caso extremo: respondeu nesse nível em 96% dos casos sem errar um. O Microsoft cobriu 95% e o OpenAI só metade. A ressalva do Microsoft: o recorde limpo é só no compacto, porque com exemplos ou distratores ele erra em português com confiança acima de 99%. O Mapika errou 5% dos palpites nesse nível, o Kev 4B 3% e o Simple-Jev 14%. E o Julia quebrou o padrão com violência: 48 erros em 71 palpites acima de 0,9. A cobertura também variou: o Jev respondeu acima de 0,9 em quase 90% dos casos, o Clef em quase 80%, o Clef-flash em 40% e o Laya base em 2 de 168. No v1 o Jev errou 1% dos palpites acima de 0,9 e o Laya base errou 61%. Um limiar de confiança só serve depois de validado na sua distribuição, e o ECE baixo do Laya typed em português deixou ele nos mesmos 36% de acerto.
 
-**O Perplexity não caiu em armadilha de apresentação.** Nas três variantes do v1 (opções invertidas, rótulos opacos, comentário malicioso), ele manteve as mesmas respostas do original, sem virar uma única. O OpenAI virou 2 em cada variante, e o Laya desabou pra 19% com o comentário. O preço dessa robustez é latência: um segundo e meio por decisão na minha máquina, a pior mediana do lote.
+**O Perplexity não caiu em armadilha de apresentação.** Nas três variantes do v1 (opções invertidas, rótulos opacos, comentário malicioso), ele manteve as mesmas respostas do original, sem virar uma única. O Microsoft só tropeçou nos rótulos opacos (2 viradas, uma pra cada lado); ordem e comentário não mexeram nele. O OpenAI virou 2 em cada variante, e o Laya desabou pra 19% com o comentário. O preço dessa robustez é latência: um segundo e meio por decisão na minha máquina, a pior mediana do lote.
 
 **Limiar numérico é problema de código.** A tarefa de triagem por limiar, com números claros e regra explícita, deu 100% no Jev e nos dois Clef-flash e menos de 30% nos dois Laya em inglês. Um `if` resolve isso com 100% e zero latência. O modelo só entra quando o número está enterrado em texto livre, e mesmo assim o certo é extrair o número e deixar a comparação com o código.
 
-**Probabilidade de sorteio é outra habilidade.** Nas 24 sondagens sem informação (moeda, dado), o Jev teve o pior erro de escolha entre opções. A coroa da estimativa numérica mudou de dono com a estreia da OpenAI: o predicado de sim/não dela errou quase nada, enquanto a sonda de escolha devolveu 94% pra cara numa moeda honesta. O Perplexity, campeão de tudo o resto, respondeu 0,73 pra um evento de chance 1 em 4. O Laya typed teve o segundo melhor erro de escolha, atrás só do Kev 9B e colado no Clef, e mesmo assim classificou mal. É o "aluno que marca a letra A" do ensaio do Paulo, agora medido: calibração em sorteio e acerto em classificação são medidas independentes.
+**Probabilidade de sorteio é outra habilidade.** Nas 24 sondagens sem informação (moeda, dado), o Jev teve o pior erro de escolha entre opções. A coroa da estimativa numérica mudou de dono com a estreia da OpenAI: o predicado de sim/não dela errou quase nada, enquanto a sonda de escolha devolveu 94% pra cara numa moeda honesta. O Perplexity, campeão de tudo o resto, respondeu 0,73 pra um evento de chance 1 em 4, e o Microsoft foi no mesmo caminho, dando 87% pra moeda. O Laya typed teve o segundo melhor erro de escolha, atrás só do Kev 9B e colado no Clef, e mesmo assim classificou mal. É o "aluno que marca a letra A" do ensaio do Paulo, agora medido: calibração em sorteio e acerto em classificação são medidas independentes.
 
 ## Onde os dados convergem
 
-1. **O líder geral é de pesos abertos.** O Perplexity Decider 27B fez 99,4% nos compactos, 100% em português, a melhor calibração e zero erro confiante, com pesos Apache 2.0 rodando na minha máquina. A vantagem sobre o Jev é de menos de 2 pontos e o intervalo encosta no zero, então trate como fotografia deste conjunto. O custo dele é hardware e latência, não API. Pra quem só quer classificar texto com qualidade e operar nada, o Jev continua a escolha óbvia: 9 centavos a cada 10 mil decisões em relação ao Clef-flash compram mil erros a menos, e o OpenAI Decisions ficou no meio do caminho em preço e acerto.
+1. **O líder geral é de pesos abertos.** O Perplexity Decider 27B fez 99,4% nos compactos, 100% em português, a melhor calibração e zero erro confiante, com pesos Apache 2.0 rodando na minha máquina. A vantagem sobre o Jev é de menos de 2 pontos e o intervalo encosta no zero, então trate como fotografia deste conjunto. O custo dele é hardware e latência, não API. Na nuvem, a ordem de avaliação mudou: **comece pelo Microsoft Decision-1**, que empata com o Jev no agregado, fecha 100% em português compacto e custa um terço. O Jev entra em seguida, mais rápido e com erros diferentes, porque empate no agregado não é intercambiabilidade. O OpenAI Decisions ficou no meio do caminho em preço e acerto.
 
 2. **Rodar local ficou viável em 4B.** Jebadiah, Mapika e Kev 4B entregam entre 87 e 90% nos casos compactos com latência de 200 ms numa máquina de mesa, e num piloto com a sua tarefa qualquer um dos três pode ganhar. Se a sua máquina aguenta 49 GB de pesos, o Perplexity entrega o topo da tabela em casa. A conta financeira justifica usar a máquina que já existe, por controle de dado ou por obrigação de ficar offline. Comprar máquina pra isso ela deixa de justificar.
 
 3. **Modelo pequeno é outra categoria.** Julgar o Laya e o Julia pela coluna de acerto é ler a tabela errada. Eles erram da metade pra cima de fábrica, caem feio sob comentário malicioso, e são os únicos da lista que cabem num dispositivo fraco e respondem em dezenas de milissegundos. Se precisão tipo Jev é requisito, risque os dois. Se rodar offline em hardware pequeno é requisito, risque todo o resto e comece pelo ajuste fino deles na sua tarefa, que é a medição que falta. E cuidado com o Julia em particular: 48 erros em 71 palpites confiantes é o retrato de um modelo que não sabe o que não sabe.
 
-4. **Português custa uns 14% mais tokens** e derruba os modelos do meio da tabela entre 1 e 10 pontos, com Kev 9B e Clef-flash no pior caso. O Jev perde nada, o OpenAI empata as duas línguas, e o Perplexity vai a 100% em português, melhor que o inglês dele. O Julia faz o caminho contrário e despenca 13 pontos. Pra audiência brasileira, essa é a primeira coluna a olhar, antes do preço.
+4. **Português custa uns 14% mais tokens** e derruba os modelos do meio da tabela entre 1 e 10 pontos, com Kev 9B e Clef-flash no pior caso. O Jev perde nada, o OpenAI empata as duas línguas, e o Perplexity e o Microsoft fecham 100% em português compacto, melhor que o inglês deles, embora o Microsoft volte a errar em português quando o contexto cresce. O Julia faz o caminho contrário e despenca 13 pontos. Pra audiência brasileira, essa é a primeira coluna a olhar, antes do preço.
 
 > E o que vale pra todos: nenhum desses modelos substitui a regra que já está em código. Limiar numérico, política de severidade com fatos estruturados, permissão de ferramenta, tudo isso fica no `if`. O modelo entra pra transformar texto livre em fato estruturado. E o teste que importa é o seu, com os seus tickets, porque cada célula desta tabela tem 12 cenários e a sua operação tem milhares.
 
