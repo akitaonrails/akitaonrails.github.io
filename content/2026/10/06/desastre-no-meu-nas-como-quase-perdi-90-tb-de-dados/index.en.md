@@ -292,7 +292,7 @@ When I published the first part, I had about 20 TB copied and no certainty. The 
 
 Who operated the recovery were my two agents. The desktop agent controls my PC and both NASes over SSH, and the homelab agent takes care of the server where my 57 containers run. The two coordinate by message: one leaves a report in the other's inbox, and I follow the conversation.
 
-![The desktop agent's terminal checking the ai-memory message inbox, where the homelab agent leaves its reports](nas-ai-memory-agentes.png)
+![The desktop agent's terminal checking the ai-memory message inbox, where the homelab agent leaves its reports](/2026/10/06/desastre-no-meu-nas-como-quase-perdi-90-tb-de-dados/nas-ai-memory-agentes.png))
 
 This part matters because nothing that follows was me typing commands. I made the decisions; they executed, measured and screwed up badly a few times, as you'll see.
 
@@ -352,7 +352,7 @@ And a conscious decision, recorded so nobody accuses me of hiding it: the old ba
 
 Closing the books: **17 rsync jobs, all exit 0, all verified, about 5.9 million byte-identical files**, and the Synology shutdown only happened after every tree was proven.
 
-![Recovery status table mid-process: the containers already released and the ones still held waiting for each tree's rsync verification](nas-homelab-containers-status.png)
+![Recovery status table mid-process: the containers already released and the ones still held waiting for each tree's rsync verification](/2026/10/06/desastre-no-meu-nas-como-quase-perdi-90-tb-de-dados/nas-homelab-containers-status.png))
 
 ### Meanwhile, in the homelab
 
@@ -362,7 +362,7 @@ The way out was to stop knocking: I paused the torrents through the qBittorrent 
 
 The migration itself was elegant: fstab pointed at the QNAP and the old mount points became symlinks into the new one. **No docker-compose changed.** Then came the QNAP NFS gotcha: permission is per client. The desktop was allowed without squash, but marvin's writes came in as uid 1001, blocking everything that writes to the NAS. The first fix attempt still flipped the mount to read-only in the middle of the first restic backup, which survived on retries. Final configuration: read and write, no squash for anyone, tested with `touch` and `ls -ln` from each client, because "it worked on the desktop" proves nothing about the server.
 
-![QNAP NFS permissions screen, with the per-host rule for the homelab server](nas-qnap-configurando-nfs.png)
+![QNAP NFS permissions screen, with the per-host rule for the homelab server](/2026/10/06/desastre-no-meu-nas-como-quase-perdi-90-tb-de-dados/nas-qnap-configurando-nfs.png))
 
 After that it was resurrection tree by tree: each service only came up when its tree was verified on the QNAP. In two days, 57 of 57 containers back, and a brand-new restic backup running daily to the QNAP.
 
@@ -378,19 +378,19 @@ The same workload had run fine hours earlier on kernel 7.2.6 and died on 7.2.9. 
 
 On the QNAP, the whole copy ran with no snapshots at all: in a bulk migration, snapshots are dead weight. With the copy done, I went to enable the ZFS snapshot schedule and got a dry error: "pool free space is not enough". With 20 TB free.
 
-![QNAP error when trying to create a snapshot: insufficient pool free space, even with terabytes free](nas-qnap-thick-thin-erro-snapshot.png)
+![QNAP error when trying to create a snapshot: insufficient pool free space, even with terabytes free](/2026/10/06/desastre-no-meu-nas-como-quase-perdi-90-tb-de-dados/nas-qnap-thick-thin-erro-snapshot.png))
 
 Both statements were true about different things. The CHAD folder had been created as **thick**: out of the 100 TB quota, ZFS reserves the full 100 TB, and to snapshot a dataset with a reservation, the pool has to guarantee space to overwrite every referenced block while the snapshot pins the old copies. The math: 80 TB written plus 100 TB reserved, against 126 TB usable in the pool. It doesn't close. And `df` lies on both sides, because it measures the folder against the quota, not against the pool.
 
 The fix was converting the folder to **thin**, which QuTS hero does in-place, hidden on the folder's Management screen, not in the edit dialog where "Thick" looks like static text. In thin, the number becomes a ceiling instead of a reservation: the 10 TB reservation evaporated, the pool ended up with 39 TB free, and the first snapshot came out consuming 334 KB over 79.9 TB referenced. ZFS needed almost nothing; the reservation was what demanded a 100 TB guarantee to authorize.
 
-![CHAD folder properties after the conversion, now as thin](nas-qnap-chad-properties.png)
+![CHAD folder properties after the conversion, now as thin](/2026/10/06/desastre-no-meu-nas-como-quase-perdi-90-tb-de-dados/nas-qnap-chad-properties.png))
 
 Now the QNAP has a snapshot schedule with a retention policy, as it should have had since day one:
 
-![CHAD folder snapshot schedule on the QNAP](nas-qnap-snapshot-schedule.png)
+![CHAD folder snapshot schedule on the QNAP](/2026/10/06/desastre-no-meu-nas-como-quase-perdi-90-tb-de-dados/nas-qnap-snapshot-schedule.png))
 
-![Snapshot retention policy: how many to keep per day, week and month](nas-qnap-snapshot-retention.png)
+![Snapshot retention policy: how many to keep per day, week and month](/2026/10/06/desastre-no-meu-nas-como-quase-perdi-90-tb-de-dados/nas-qnap-snapshot-retention.png))
 
 Two footnotes for anyone building one of these. If your thin folder has an 80% alert, raise the quota for aesthetic slack, because the alert measures against the quota and not against the pool. And this QNAP's real bottleneck is RAM: 7 GB for a 174 TB pool. QuTS hero's official minimum is 8 GB, and sensible practice at this scale is 16 and up. The size of the ARC cache governs metadata speed, and that's why the whole-tree sweeps during the migration were slow. A RAM upgrade is worth more than any fine-tuning.
 
@@ -398,11 +398,11 @@ Two footnotes for anyone building one of these. If your thin folder has an 80% a
 
 With everything verified on the QNAP, the Synology could finally be operated on. I swapped drives 2 and 8 for new IronWolf Pros, deleted the wounded pool and recreated it from scratch, this time in **SHR-2**, the two-parity-drive mode, their RAID-6. The new pool came out with 100 TB, all drives healthy:
 
-![Synology Storage Manager showing the new SYNOCHAD pool in SHR with two-drive tolerance, 100 TB and all drives Healthy](nas-synology-pool-novo-saudavel.png)
+![Synology Storage Manager showing the new SYNOCHAD pool in SHR with two-drive tolerance, 100 TB and all drives Healthy](/2026/10/06/desastre-no-meu-nas-como-quase-perdi-90-tb-de-dados/nas-synology-pool-novo-saudavel.png))
 
 It goes back to work as a replica target, and no longer as a single point of failure. The QNAP stays as primary, in RAIDZ2, with 87 TB of the 126 TB used and snapshots scheduled:
 
-![QNAP Storage Manager with the RAID 6 Ready pool and the CHAD folder in thin with 79.9 TB of 95 TB](nas-qnap-storage-manager-final.png)
+![QNAP Storage Manager with the RAID 6 Ready pool and the CHAD folder in thin with 79.9 TB of 95 TB](/2026/10/06/desastre-no-meu-nas-como-quase-perdi-90-tb-de-dados/nas-qnap-storage-manager-final.png))
 
 ### What I take from the second half
 
