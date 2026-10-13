@@ -130,6 +130,8 @@ The interface resembles Photoshop, so the screenshot is shareable, and whoever s
 
 Look at the tasks: they're the simplest ones there are, nowhere near professional usage. Even so, everyone in the video struggles to finish, and you can see the prototype level in every freeze. With interest, time and contributions, part of this gets fixed. And then the contributors will discover something the N64 projects never faced.
 
+> PhotoCraft today is that Ferrari replica built on top of a VW Beetle: the body has the right shape, you take a photo and most people say "wow, a Ferrari". Then you turn the key and out comes the Beetle engine. If the photo got you hyped, that's on you.
+
 ## The target moves
 
 Decompiling 1998's Zelda is aiming at a stationary target. Nintendo isn't going to release Ocarina of Time 2026 with a new file format. Copying a live product is another conversation, and we've seen this movie before.
