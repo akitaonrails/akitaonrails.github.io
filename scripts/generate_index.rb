@@ -28,6 +28,7 @@ ALLOWED_TAGS = {
 }.transform_values(&:freeze).freeze
 
 FEATURED_POSTS = [
+  ['2026-10-13', 'Engenharia Reversa com IA: a Adobe morreu?', '/2026/10/13/engenharia-reversa-com-ia-a-adobe-morreu/'],
   ['2026-10-12', 'LLMs + Agentes = competente o suficiente', '/2026/10/12/llms-agentes-competente-o-suficiente/'],
   ['2026-10-11', 'Existem Linguagens Melhores pra programar com LLMs?', '/2026/10/11/existem-linguagens-melhores-pra-programar-com-llms/'],
   ['2026-10-10', 'Qual modelo de decisão/classificador de IA tipo Jev é melhor?', '/2026/10/10/qual-modelo-de-decisao-classificador-de-ia-tipo-jev-e-melhor/'],
@@ -62,6 +63,7 @@ FEATURED_POSTS = [
 ].freeze
 
 FEATURED_POSTS_EN = [
+  ['2026-10-13', 'AI Reverse Engineering: Is Adobe Dead?', '/en/2026/10/13/ai-reverse-engineering-is-adobe-dead/'],
   ['2026-10-12', 'LLMs + Agents = competent enough', '/en/2026/10/12/llms-agents-competent-enough/'],
   ['2026-10-11', 'Are There Better Languages for Programming with LLMs?', '/en/2026/10/11/are-there-better-languages-for-programming-with-llms/'],
   ['2026-10-10', 'Which Jev-like AI Decision/Classifier Model Is Best?', '/en/2026/10/10/which-jev-like-ai-decision-classifier-model-is-best/'],
