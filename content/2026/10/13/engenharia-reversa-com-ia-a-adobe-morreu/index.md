@@ -124,11 +124,7 @@ As issues contam a história técnica:
 - Quase cem issues abertas mencionam PSD. Camadas de matiz e saturação compõem diferente do Photoshop, e salvar por cima sobrescreve a imagem mesclada correta do arquivo original ([issue 4089](https://github.com/storytold/photocraft/issues/4089)).
 - Cinquenta issues abertas mencionam "crash".
 
-A interface lembra o Photoshop, então o print é compartilhável, e quem vê o print assume que é cópia carbono. Isso é esperado numa alpha de duas semanas. O Linus Tech Tips fez um vídeo tentando ser o mais otimista possível, colocando profissionais pra usar os clones:
-
-{{< youtube id="fr0WIIZxvx0" >}}
-
-Repare nas tarefas: são as mais simples que existem, nada perto de uso profissional. Mesmo assim todo mundo no vídeo sofre pra completar, e dá pra ver o nível de protótipo em cada travada. Com interesse, tempo e contribuição, parte disso vai sendo resolvida. E aí os contribuidores vão descobrir uma coisa que os projetos de N64 nunca enfrentaram.
+A interface lembra o Photoshop, então o print é compartilhável, e quem vê o print assume que é cópia carbono. Isso é esperado numa alpha de duas semanas. Com interesse, tempo e contribuição, parte disso vai sendo resolvida. E aí os contribuidores vão descobrir uma coisa que os projetos de N64 nunca enfrentaram.
 
 > O PhotoCraft hoje é aquela réplica de Ferrari montada em cima de um Fusca: a carroceria tem a forma certa, você tira uma foto e a maioria das pessoas diz "uau, uma Ferrari". Aí você liga e sai o motor de Fusca. Se você se empolgou com a foto, o problema foi seu.
 

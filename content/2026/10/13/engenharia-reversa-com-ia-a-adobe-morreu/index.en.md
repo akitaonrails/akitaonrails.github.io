@@ -124,11 +124,7 @@ The issues tell the technical story:
 - Almost a hundred open issues mention PSD. Hue/Saturation layers composite differently from Photoshop, and saving over the file overwrites the original's correct merged image ([issue 4089](https://github.com/storytold/photocraft/issues/4089)).
 - Fifty open issues mention "crash".
 
-The interface resembles Photoshop, so the screenshot is shareable, and whoever sees the screenshot assumes it's a carbon copy. That's expected in a two-week-old alpha. Linus Tech Tips made a video trying to be as optimistic as possible, putting professionals in front of the clones:
-
-{{< youtube id="fr0WIIZxvx0" >}}
-
-Look at the tasks: they're the simplest ones there are, nowhere near professional usage. Even so, everyone in the video struggles to finish, and you can see the prototype level in every freeze. With interest, time and contributions, part of this gets fixed. And then the contributors will discover something the N64 projects never faced.
+The interface resembles Photoshop, so the screenshot is shareable, and whoever sees the screenshot assumes it's a carbon copy. That's expected in a two-week-old alpha. With interest, time and contributions, part of this gets fixed. And then the contributors will discover something the N64 projects never faced.
 
 > PhotoCraft today is that Ferrari replica built on top of a VW Beetle: the body has the right shape, you take a photo and most people say "wow, a Ferrari". Then you turn the key and out comes the Beetle engine. If the photo got you hyped, that's on you.
 
