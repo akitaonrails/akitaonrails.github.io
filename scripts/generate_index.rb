@@ -551,10 +551,12 @@ end
 
 AILAIR_ANNOUNCEMENT_PT = '**Novo:** publiquei o [Akita\'s AI Lair](https://ailair.akitaonrails.com/pt-br), ' \
   'a página central com as ferramentas, skills e o workflow que uso pra rodar agente de IA em mais de 40 ' \
-  'repositórios: ai-usagebar, ghpending, tclock, ai-memory, ai-jail e o meu benchmark de LLM.'
+  'repositórios: ai-usagebar, ghpending, tclock, ai-memory, ai-jail e o meu benchmark de LLM. ' \
+  'E o meu livro, [Competente o Suficiente](https://ailair.akitaonrails.com/pt-br/book/), de graça em EPUB e PDF.'
 AILAIR_ANNOUNCEMENT_EN = '**New:** I published [Akita\'s AI Lair](https://ailair.akitaonrails.com), the ' \
   'central page for the tools, skills, and workflow I use to run AI agents across 40+ repositories: ' \
-  'ai-usagebar, ghpending, tclock, ai-memory, ai-jail, and my LLM benchmark.'
+  'ai-usagebar, ghpending, tclock, ai-memory, ai-jail, and my LLM benchmark. ' \
+  'And my book, [Competent Enough](https://ailair.akitaonrails.com/book/), free in EPUB and PDF.'
 
 def generate_index(grouped_posts)
   lines = ["#{FRONTMATTER_DELIMITER}\ntitle: AkitaOnRails Blog\n#{FRONTMATTER_DELIMITER}\n"]
