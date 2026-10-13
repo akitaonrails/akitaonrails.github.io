@@ -239,6 +239,10 @@ And the "exponential" premise died in 2024. Ilya Sutskever said at NeurIPS that 
 
 I've written about this three times in recent weeks: [the limits](/en/2026/09/28/llms-are-good-at-reproducing-what-exists-what-about-new-things/) of what the model reproduces, [the convergence](/en/2026/10/12/llms-agents-competent-enough/) of raw models with the gains coming from the harness, and [the languages benchmark](/en/2026/10/11/are-there-better-languages-for-programming-with-llms/) where the frontier models tied at the ceiling. The tool we have is the tool we'll have for a good while, with incremental improvement. Plan with it.
 
+Worth recalling the number that opens the limits post: per the [Octoverse 2025](https://github.blog/news-insights/octoverse/octoverse-a-new-developer-joins-github-every-second-as-ai-leads-typescript-to-1/), GitHub's official report, 81.5% of contributions on the platform happened in private repositories. That's the code that really matters, the code that pays salaries, and no LLM has seen a line of it. The model reproduces what was in the training data, and that code was never there.
+
+Now extend that to every SaaS product and every component it uses. The Adobe code that's actually worth something, the color engine, the profiles, the cloud filters, isn't available anywhere, not even as a binary. Anyone who wants to reproduce it will have to redo the research and development, expensive and slow, over the same years Adobe took. And at the end they still run into third-party licensed intellectual property, Pantone, camera SDKs, manufacturer profiles, that you will never be able to have.
+
 ## Answering the list from the top
 
 **Does PhotoCraft exist?** It does, it's a two-week-old alpha with more than 800 open issues, rudimentary color management, freezing above 8K and opening PSDs wrong. It looks like Photoshop in a screenshot. It can improve a lot, and it will discover that the target moves and that Photoshop's expensive parts live in the cloud or in manufacturer contracts.

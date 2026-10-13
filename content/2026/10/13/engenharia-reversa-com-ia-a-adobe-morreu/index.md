@@ -239,6 +239,10 @@ E a premissa do "exponencial" morreu em 2024. O Ilya Sutskever disse no NeurIPS 
 
 Eu já escrevi sobre isso três vezes nas últimas semanas: [os limites](/2026/09/28/llms-sao-boas-em-reproduzir-o-que-existe-e-coisas-novas/) do que o modelo reproduz, [a convergência](/2026/10/12/llms-agentes-competente-o-suficiente/) dos modelos crus com o ganho vindo do harness, e [o benchmark de linguagens](/2026/10/11/existem-linguagens-melhores-pra-programar-com-llms/) em que os modelos de fronteira empataram no teto. A ferramenta que temos é a ferramenta que vamos ter por um bom tempo, com melhoria incremental. Planeje com ela.
 
+Vale lembrar o número que abre o texto dos limites: pelo [Octoverse 2025](https://github.blog/news-insights/octoverse/octoverse-a-new-developer-joins-github-every-second-as-ai-leads-typescript-to-1/), relatório oficial do GitHub, 81,5% das contribuições na plataforma aconteceram em repositórios privados. É o código que importa de verdade, o que paga salário, e nenhum LLM viu uma linha dele. O modelo reproduz o que estava no treino, e esse código nunca esteve lá.
+
+Agora estenda isso pra todo produto SaaS e pra cada componente que ele usa. O código da Adobe que realmente vale, o motor de cor, os perfis, os filtros na nuvem, não está disponível em lugar nenhum, nem como binário. Quem quiser reproduzir vai ter que refazer a pesquisa e o desenvolvimento, caro e demorado, pelos mesmos anos que a Adobe levou. E no fim ainda esbarra na propriedade intelectual licenciada de terceiros, Pantone, SDK de câmera, perfil de fabricante, que você nunca vai conseguir ter.
+
 ## Respondendo a lista do começo
 
 **O PhotoCraft existe?** Existe, é uma alpha de duas semanas com mais de 800 issues abertas, gerenciamento de cor rudimentar, travando acima de 8K e abrindo PSD errado. Parece Photoshop no print. Pode melhorar muito, e vai descobrir que o alvo se move e que as partes caras do Photoshop estão na nuvem ou em contrato com fabricante.
