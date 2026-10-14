@@ -4,7 +4,7 @@ slug: "auto-publiquei-meu-proprio-livro-ebook-competente-o-suficiente"
 date: '2026-10-13T19:00:00-03:00'
 draft: false
 translationKey: auto-publiquei-meu-proprio-livro-ebook-competente-o-suficiente
-description: "Publiquei meu livro sobre IA, de graça, em EPUB e PDF: os 131 textos de 2026 do blog, quase meio milhão de palavras, reorganizados em 20 capítulos, 6 apêndices, glossário e quase 300 referências. Este texto é o bastidor técnico: o inventário com hash de cada post, o contrato que cada agente lia antes de escrever, os rascunhos em paralelo, a marca invisível por parágrafo que liga o livro ao blog, o verificador que reprova capítulo com erro, o que a conferência pegou de errado nos meus próprios posts, e a pipeline Quarto, Typst e Pandoc que gera tudo. É preview: abra uma issue se achar erro."
+description: "Publiquei meu livro sobre IA, de graça, em EPUB e PDF: os 131 textos de 2026 do blog, quase meio milhão de palavras, reorganizados em 20 capítulos, 10 apêndices, glossário e mais de 300 referências. Este texto é o bastidor técnico: o inventário com hash de cada post, o contrato que cada agente lia antes de escrever, os rascunhos em paralelo, a marca invisível por parágrafo que liga o livro ao blog, o verificador que reprova capítulo com erro, o que a conferência pegou de errado nos meus próprios posts, e a pipeline Quarto, Typst e Pandoc que gera tudo. É preview: abra uma issue se achar erro."
 tags:
 - inteligencia-artificial
 - agentes-de-codigo
@@ -31,7 +31,7 @@ Cinco partes, cada uma respondendo a uma pergunta que as pessoas vivem me fazend
 4. **Quem fica com as chaves.** É perigoso deixar ela mexer nas minhas coisas?
 5. **E o meu emprego?** Ela vai me substituir? O que vem depois?
 
-São 20 capítulos e dois interlúdios, mais prefácio, um "como ler", um "antes de começar" dizendo o que o livro deixa de explicar e onde aprender, epílogo e posfácio. Depois vêm seis apêndices (a máquina por dentro sem matemática, linha do tempo, kit mínimo pra usar agente com segurança, ai-memory, como ler um benchmark ou um anúncio, os projetos do ano), as fontes, os créditos de imagem, um glossário de 146 termos e quase 300 referências em ABNT. A edição impressa tem 467 páginas em 6 por 9 polegadas; a de tela, uns 445. São quase 50 figuras, todas com ficha de origem.
+São 20 capítulos e dois interlúdios, mais prefácio, um "como ler", um "antes de começar" dizendo o que o livro deixa de explicar e onde aprender, epílogo e posfácio. Depois vêm dez apêndices (a máquina por dentro sem matemática, leituras pra ir mais fundo, como estudar com a IA do lado, três bolhas, linha do tempo, kit mínimo pra usar agente com segurança, ai-memory, como ler um benchmark ou um anúncio, os projetos do ano, e os bastidores pra quem programa), as fontes, os créditos de imagem, um glossário de quase 150 termos e mais de 300 referências em ABNT. A edição impressa passa de 500 páginas em 6 por 9 polegadas; a de tela, uns 475. São mais de 50 figuras, todas com ficha de origem.
 
 O público é diferente do blog. O livro foi escrito pra quem está ansioso ou confuso com IA: o profissional com medo de ser substituído, o pai que leu que a AGI chega em dois anos, o gerente a quem estão vendendo uma "transformação por IA". A maioria não programa. Isso muda a voz, e eu volto nisso.
 
@@ -142,7 +142,7 @@ Por cima de tudo roda um verificador automático, o equivalente da integração 
 - o **epubcheck** valida o EPUB 3;
 - um **relatório de estilo** pra copidesque: trecho repetido entre capítulos (consequência inevitável de posts que repetem a mesma tese por ângulos diferentes), frase recorrente, palavra usada demais, variante de termo, comparativo mal formado em português.
 
-E os scripts têm teste. Uma suíte de mais de 140 testes monta um livro de mentira num diretório temporário, com cinco posts falsos num repositório git falso, e confere que cada ferramenta pega o problema que deveria pegar. Quando um bug é corrigido, entra o teste que teria pegado ele, com um comentário dizendo qual regressão protege. Roda no CI antes de cada build.
+E os scripts têm teste. Uma suíte de quase 170 testes monta um livro de mentira num diretório temporário, com cinco posts falsos num repositório git falso, e confere que cada ferramenta pega o problema que deveria pegar. Quando um bug é corrigido, entra o teste que teria pegado ele, com um comentário dizendo qual regressão protege. Roda no CI antes de cada build.
 
 ## A pipeline de montagem
 
@@ -214,7 +214,60 @@ Só chega em mim o que fonte nenhuma resolve: fato não publicado, intenção ("
 
 **Passo 3, a minha leitura.** A última e a mais valiosa. As notas entram no mesmo ciclo de aplicar, conferir e propagar pra edição em inglês.
 
-A primeira rodada desse copidesque é o que separa o preview 2 do preview 3, lançado hoje à noite. Entre o que ela pegou: contagem de commits agora diz o escopo, um "mais de mil" que na soma era 984, o exemplo de votação do Frank Investigator que não batia com o código (figura redesenhada), as citações do David Sacks e do Pirate Wires no capítulo 14 conferidas contra os originais e corrigidas, a foto do Sam Altman trocada por uma de 2025. E na edição em inglês, uma leitura própria depois da ressincronização: decalque de português reescrito, termos do glossário usados do mesmo jeito, pontuação americana de citação do começo ao fim.
+A primeira rodada desse copidesque é o que separa o preview 2 do preview 3. Entre o que ela pegou: contagem de commits agora diz o escopo, um "mais de mil" que na soma era 984, o exemplo de votação do Frank Investigator que não batia com o código (figura redesenhada), as citações do David Sacks e do Pirate Wires no capítulo 14 conferidas contra os originais e corrigidas, a foto do Sam Altman trocada por uma de 2025. E na edição em inglês, uma leitura própria depois da ressincronização: decalque de português reescrito, termos do glossário usados do mesmo jeito, pontuação americana de citação do começo ao fim.
+
+## Leitores de mentira, feedback de verdade
+
+Copidesque confere o texto. Ele deixa passar a pergunta que importa num livro pra leigo: a pessoa pra quem eu escrevi consegue ler isso até o fim, entende, e sai convencida? Pra responder, a passada seguinte foi uma revisão por leitores simulados.
+
+O prefácio do livro tem uma seção "Pra quem eu escrevi". Dela saíram cinco personas, cada uma com nome, idade, profissão e o medo que a trouxe ao livro:
+
+- **Marina**, 38, contadora em Belo Horizonte, leu que o emprego dela "acaba em dois anos", lê no celular à noite e quer saber o que fazer na segunda-feira;
+- **Roberto**, 52, dono de loja de ferragens, o filho de 15 anos viu um vídeo sobre superinteligência e perguntou se era verdade; desconfia de hype, de "especialista" e de autor que se exibe;
+- **Carla**, 44, gerente de operações numa empresa de logística, a diretoria contratou consultoria vendendo "transformação por IA"; quer uma decisão que ela possa tomar;
+- **Lucas**, 24, desenvolvedor júnior há um ano, com medo de ter escolhido a carreira errada;
+- **Helena**, 61, professora de história aposentada, sem medo nenhum, veio pelas histórias e perde a paciência com lista e manual.
+
+Um agente por persona, só de leitura, modelo mais barato, lê o livro inteiro em ordem como aquela pessoa leria. A instrução é explícita: você é leitor, editor fica de fora; erro de vírgula já foi tratado, reporte só o que muda a experiência de leitura. Cada um devolve uma nota de 1 a 5 por capítulo, um comentário na voz da persona ("finalmente entendi por que o chatbot concorda comigo", "me perdeu nas tabelas de benchmark"), no máximo 35 anotações classificadas em confuso, chato, reescrever ou lógica, e candidatos a corte. Custa uns 350 mil tokens por persona por leitura completa.
+
+Um editor consolida: a matriz de notas por capítulo e persona e o padrão por trás dela, o que os leitores adoraram (pra proteger em qualquer edição), os itens de lógica, conferidos contra o texto e os posts antes de entrar na lista e corrigidos independentemente de voto, e os itens de clareza ranqueados por quantas personas levantaram. Nota de gosto de uma persona só é descartada. Daí eu decido, e o padrão recorrente vira regra numerada num documento de regras editoriais, com a origem e como é fiscalizado.
+
+> A primeira leitura disse o que eu desconfiava e deu a medida: histórias e ferramentas práticas funcionam pra todo mundo; o miolo cheio de medição, os capítulos 11 a 13, perde quem não programa, com nota média entre 2,2 e 2,4. "Afiado quando conta o que aconteceu com ele, me perde quando conta o que mediu", resumiu a Helena, por todos os cinco.
+
+E os cinco pegaram as mesmas falhas de argumento. A conclusão do capítulo 20 ia além da evidência: dizia "os números dizem que ela não vai ficar mais inteligente" apoiada num benchmark de programação que o próprio capítulo chama de saturado. O capítulo 9 argumentava de um jeito que nunca perde: toda falha do agente era culpa do pedido. Quatro dos cinco foram mandados pro capítulo errado pelo "como ler".
+
+Isso virou as primeiras regras:
+
+- toda afirmação com o escopo do que foi medido;
+- nenhum argumento que não possa perder;
+- opinião marcada como opinião;
+- o lado contrário na forma mais forte antes de rebater;
+- o livro obedece às próprias lições.
+
+Uma rodada só é pouco, porque edição conserta o problema velho e cria o novo. Na segunda rodada, uma frase de desculpa colocada ao lado de uma contradição ("eu sei que isso parece bater de frente...") fez os cinco leitores notarem a contradição que antes três tinham deixado passar. Virou regra: conserta o desenho, e a desculpa fica fora. Então o processo é em rodadas: ler, editar, ler de novo com as mesmas personas e leitura nova, proibidas de abrir os relatórios anteriores pra evitar ancoragem, e um script compara as rodadas.
+
+| | rodada 1 | rodada 2 | rodada 3 |
+| --- | ---: | ---: | ---: |
+| nota média do livro | 3,32 | 3,38 | 3,41 |
+| anotações de lógica | 73 | 53 | 51 |
+
+A nota média é ruidosa (um capítulo intocado oscila 0,6 entre leituras), então o critério de parada é outro: os problemas apontados deixaram de voltar e nada novo chega a três leitores. Na terceira rodada a curva achatou e a revisão parou ali, com uma lista de pendências pra minha própria leitura. O que mudou no caminho: uns 8 mil palavras de caderno de laboratório saíram dos capítulos pra um apêndice novo, "Para quem programa: os bastidores", cada parágrafo levando a marca de origem junto; a lista de leituras virou apêndice; a seção sobre o Genesys PI foi estacionada, guardada fora do livro enquanto a verificação está pendente; o capítulo 19 ganhou o título que o argumento dele sustenta; cada capítulo abre orientando o leitor antes do primeiro jargão; e o epílogo ganhou uma lista do que fazer nesta semana, por tipo de leitor. Custo das três rodadas: uns 5 milhões de tokens de leitura mais uns 3 milhões de edição e ressincronização do inglês.
+
+## O narrador ganhou passado
+
+Com o argumento no lugar, faltava substância na primeira pessoa. O narrador do livro era o Akita de 2026, e eu tenho trinta anos de história que explicam por que eu penso o que penso: o estouro da bolha pontocom visto de dentro, cinco anos integrando SAP em empresa grande, os avisos sobre a bolha de contratação que eu dei em vídeo em 2019, 2020 e 2022, o "Não terceirize suas decisões". Tudo isso está nas transcrições dos 149 episódios do [Akitando](https://www.youtube.com/@Akitando), publicadas aqui no blog entre 2018 e 2023.
+
+O processo foi o mesmo do resto do livro, em miniatura. Agentes de extração leram 23 episódios na íntegra, com um formulário: fatos biográficos com a citação literal e o que os verificaria, fatos sobre o mundo, posições recorrentes nas minhas palavras, e ganchos, ou seja, o lugar exato do livro onde uma ou duas frases dessa história sustentam uma afirmação de 2026. Daí saiu um perfil do narrador, que eu confirmei linha a linha, e um plano com uns 30 toques, a maioria de uma a três frases.
+
+Antes de qualquer toque, mais de 140 afirmações tiradas dos episódios passaram pela checagem. Ela corrigiu o livro e corrigiu a mim: a bolha de contratação começou por volta de 2010, com o juro perto de zero, e o meu post de fevereiro dizia 2014; a pontocom estourou entre 2000 e 2002; as demissões de 2022 foram umas 165 mil. E achou erro em episódio antigo que o livro nem usa, que foi pra uma lista de errata do blog.
+
+Os toques entraram onde a experiência vira evidência: a semana de 2001 em que a minha pontocom fechou e um mentor me chamou pra uma consultoria SAP; os anos de SAP por trás da afirmação de que o modelo é cego pras regras privadas de uma empresa; os avisos datados da bolha ao lado do erro admitido, porque em 2022 eu esperava uma segunda perna de queda em 2023 que a onda de IA cancelou. Dois apêndices novos saíram daí: "Três bolhas", com os números verificados da pontocom, da bolha de juro zero e da onda de IA, e "Como estudar com a IA do lado", a partir do episódio mais assistido do canal.
+
+Esses episódios são fonte de fundo, e o `drift` passou a vigiá-los como vigia os posts de 2026. Depois veio uma checagem reduzida com as mesmas cinco personas, só nos capítulos tocados, com três perguntas a mais: a história do narrador deixa o argumento mais convincente, e onde? Alguma passagem parece exibição ou "eu avisei"? Alguma coisa sobre o narrador se contradiz?
+
+> Os cinco disseram sim pra credibilidade, com uma condição: a história convence quando é evidência que o leitor consegue checar, o aviso com data ao lado do erro admitido, e convence menos quando vira currículo, o que bate de frente com o próprio livro, que diz "currículo não é argumento". Virou a regra 21: a história do narrador entra como evidência, e credencial fica de fora.
+
+Três ou quatro leitores marcaram as mesmas linhas como exibição, e elas saíram: "Os avisos têm data", "mais de trinta repositórios públicos", "o mais visto do meu canal". As linhas de autodepreciação e os erros admitidos, todos contaram a favor. E a checagem achou contradições que eu mesmo não tinha visto: o prefácio dizia "fim dos anos 90" e o capítulo 18 dizia 1996; um capítulo falava em "oito meses" e outro em "um ano de uso diário", e foram consertadas uma a uma.
 
 ## O que continua sendo meu
 
@@ -228,12 +281,12 @@ E, mais uma vez: fazer um livro com IA não é um prompt de "escreva um livro pr
 
 ## Baixe, leia, e me diga onde errei
 
-As duas edições, em três formatos cada, direto do GitHub, sem cadastro. Esta é a versão 1.0.0-preview.3, de hoje:
+As duas edições, em três formatos cada, direto do GitHub, sem cadastro. A versão atual é a 1.0.0-preview.5, de 14 de outubro, com tudo que este texto descreve:
 
 | Edição | EPUB (Kindle, Kobo, Apple Books) | PDF pra tela | PDF pra impressão (6 × 9 pol.) |
 | --- | --- | --- | --- |
-| Competente o Suficiente (PT-BR) | [EPUB](https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0-preview.3/Competente-o-Suficiente.epub) | [PDF](https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0-preview.3/Competente-o-Suficiente-ebook.pdf) | [PDF](https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0-preview.3/Competente-o-Suficiente.pdf) |
-| Competent Enough (EN) | [EPUB](https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0-preview.3/Competent-Enough.epub) | [PDF](https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0-preview.3/Competent-Enough-ebook.pdf) | [PDF](https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0-preview.3/Competent-Enough.pdf) |
+| Competente o Suficiente (PT-BR) | [EPUB](https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0-preview.5/Competente-o-Suficiente.epub) | [PDF](https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0-preview.5/Competente-o-Suficiente-ebook.pdf) | [PDF](https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0-preview.5/Competente-o-Suficiente.pdf) |
+| Competent Enough (EN) | [EPUB](https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0-preview.5/Competent-Enough.epub) | [PDF](https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0-preview.5/Competent-Enough-ebook.pdf) | [PDF](https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0-preview.5/Competent-Enough.pdf) |
 
 A versão mais recente, sempre, fica na [página do livro](https://ailair.akitaonrails.com/pt-br/book/) e nas [releases do GitHub](https://github.com/akitaonrails/ai-book-2026/releases).
 

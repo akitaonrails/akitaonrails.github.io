@@ -4,7 +4,7 @@ slug: "i-self-published-my-own-book-ebook-competent-enough"
 date: '2026-10-13T19:00:00-03:00'
 draft: false
 translationKey: auto-publiquei-meu-proprio-livro-ebook-competente-o-suficiente
-description: "I published my book about AI, for free, in EPUB and PDF: the blog's 131 posts from 2026, almost half a million words, reorganized into 20 chapters, 6 appendices, a glossary and almost 300 references. This text is the technical backstage: the inventory with a hash per post, the contract every agent read before writing, the parallel drafts, the invisible per-paragraph marker that ties the book to the blog, the checker that fails a chapter with an error, what the fact-check caught wrong in my own posts, and the Quarto, Typst and Pandoc pipeline that generates everything. It's a preview: open an issue if you find a mistake."
+description: "I published my book about AI, for free, in EPUB and PDF: the blog's 131 posts from 2026, almost half a million words, reorganized into 20 chapters, 10 appendices, a glossary and more than 300 references. This text is the technical backstage: the inventory with a hash per post, the contract every agent read before writing, the parallel drafts, the invisible per-paragraph marker that ties the book to the blog, the checker that fails a chapter with an error, what the fact-check caught wrong in my own posts, and the Quarto, Typst and Pandoc pipeline that generates everything. It's a preview: open an issue if you find a mistake."
 tags:
 - artificial-intelligence
 - coding-agents
@@ -31,7 +31,7 @@ Five parts, each answering a question people keep asking me:
 4. **Who keeps the keys.** Is it dangerous to let it touch my things?
 5. **And my job?** Will it replace me? What comes next?
 
-That's 20 chapters and two interludes, plus a preface, a "how to read", a "before you start" saying what the book doesn't explain and where to learn it, an epilogue and an afterword. Then come six appendices (the machine inside without math, a timeline, a minimal kit for using agents safely, ai-memory, how to read a benchmark or an announcement, the year's projects), the sources, the image credits, a glossary of 146 terms and almost 300 references in ABNT style. The print edition has 467 pages at 6 by 9 inches; the screen edition, around 445. There are almost 50 figures, all with a provenance record.
+That's 20 chapters and two interludes, plus a preface, a "how to read", a "before you start" saying what the book doesn't explain and where to learn it, an epilogue and an afterword. Then come ten appendices (the machine inside without math, further reading, how to study with AI at your side, three bubbles, a timeline, a minimal kit for using agents safely, ai-memory, how to read a benchmark or an announcement, the year's projects, and the backstage for programmers), the sources, the image credits, a glossary of almost 150 terms and more than 300 references in ABNT style. The print edition passes 500 pages at 6 by 9 inches; the screen edition, around 475. There are more than 50 figures, all with a provenance record.
 
 The audience is different from the blog's. The book was written for people who are anxious or confused about AI: the professional afraid of being replaced, the parent who read that AGI is two years away, the manager being sold an "AI transformation". Most of them don't program. That changes the voice, and I'll come back to it.
 
@@ -142,7 +142,7 @@ On top of everything runs an automatic checker, the equivalent of continuous int
 - **epubcheck** validates the EPUB 3;
 - a **style report** for copyediting: passages repeated across chapters (an inevitable consequence of posts that repeat the same thesis from different angles), recurring phrases, overused words, term variants, badly formed comparatives in Portuguese.
 
-And the scripts have tests. A suite of more than 140 tests builds a fake book in a temporary directory, with five fake posts in a fake git repository, and checks that each tool catches the problem it should catch. When a bug is fixed, the test that would have caught it goes in, with a comment naming the regression it guards. It runs in CI before every build.
+And the scripts have tests. A suite of almost 170 tests builds a fake book in a temporary directory, with five fake posts in a fake git repository, and checks that each tool catches the problem it should catch. When a bug is fixed, the test that would have caught it goes in, with a comment naming the regression it guards. It runs in CI before every build.
 
 ## The assembly pipeline
 
@@ -214,7 +214,60 @@ Only what no source can settle reaches me: an unpublished fact, intent ("is this
 
 **Step 3, my own read.** The last and the most valuable. The notes go into the same cycle of apply, check and propagate to the English edition.
 
-The first round of that copyedit is what separates preview 2 from preview 3, released tonight. Among what it caught: commit counts now state their scope, a "more than a thousand" that summed to 984, the Frank Investigator voting example that didn't match the code (figure redrawn), the David Sacks and Pirate Wires quotes in chapter 14 verified against the originals and corrected, Sam Altman's photo swapped for one from 2025. And in the English edition, a reader pass of its own after the re-sync: Portuguese calques rewritten, glossary terms used consistently, American quotation punctuation throughout.
+The first round of that copyedit is what separates preview 2 from preview 3. Among what it caught: commit counts now state their scope, a "more than a thousand" that summed to 984, the Frank Investigator voting example that didn't match the code (figure redrawn), the David Sacks and Pirate Wires quotes in chapter 14 verified against the originals and corrected, Sam Altman's photo swapped for one from 2025. And in the English edition, a reader pass of its own after the re-sync: Portuguese calques rewritten, glossary terms used consistently, American quotation punctuation throughout.
+
+## Fake readers, real feedback
+
+Copyediting checks the text. It lets through the question that matters in a book for lay readers: can the person I wrote it for read it to the end, understand it, and come out convinced? To answer that, the next pass was a review by simulated readers.
+
+The book's preface has a section called "Who I wrote this for". From it came five personas, each with a name, an age, a job and the fear that brought them to the book:
+
+- **Marina**, 38, an accountant in Belo Horizonte, read that her job "ends in two years", reads on her phone at night and wants to know what to do on Monday;
+- **Roberto**, 52, owns a hardware store, his 15-year-old saw a video about superintelligence and asked if it was true; suspicious of hype, of "experts" and of an author who shows off;
+- **Carla**, 44, operations manager at a logistics company, the board hired consultants selling an "AI transformation"; she wants a decision she can take;
+- **Lucas**, 24, a junior developer a year into the job, afraid he chose the wrong career;
+- **Helena**, 61, a retired history teacher, no fear at all, came for the stories and loses patience with lists and manuals.
+
+One agent per persona, read-only, cheaper model, reads the whole book in order the way that person would. The instruction is explicit: you are a reader, the editor stays out of it; comma errors were already handled, report only what changes the reading experience. Each one returns a 1-to-5 score per chapter, a comment in the persona's voice ("I finally get why the chatbot agrees with me", "lost me in the benchmark tables"), at most 35 annotations classified as confusing, boring, rewrite or logic, and cut candidates. It costs about 350K tokens per persona per full read.
+
+An editor consolidates: the score matrix by chapter and persona and the pattern behind it, what readers loved (to protect in any edit), the logic items, checked against the text and the posts before making the list and fixed regardless of votes, and the clarity items ranked by how many personas raised them. A single persona's taste note is dropped. Then I decide, and recurring patterns become numbered rules in an editorial rules document, with their origin and how each is enforced.
+
+> The first read said what I suspected and gave it a measure: stories and practical tools work for everyone; the measurement-heavy middle, chapters 11 to 13, loses the non-programmers, averaging between 2.2 and 2.4. "Sharp when he tells what happened to him, loses me when he tells what he measured", Helena summed up, for all five.
+
+And all five caught the same argument flaws. Chapter 20's conclusion went beyond its evidence: it said "the numbers say it won't get smarter" resting on a programming benchmark the same chapter calls saturated. Chapter 9 argued in a way that can never lose: every agent failure was the request's fault. Four of the five were sent to the wrong chapter by "how to read".
+
+Those became the first rules:
+
+- every claim scoped to what was measured;
+- no argument that can't lose;
+- opinion marked as opinion;
+- the opposing side in its strongest form before rebutting;
+- the book obeys its own lessons.
+
+One round is not enough, because edits fix the old problem and create the new one. In round two, an apology placed next to a contradiction ("I know this seems to clash with...") made all five readers notice a contradiction that three had previously missed. It became a rule: fix the design, and leave the apology out. So the process runs in rounds: read, edit, read again with the same personas on a fresh read, forbidden from opening the previous reports to avoid anchoring, and a script compares the rounds.
+
+| | round 1 | round 2 | round 3 |
+| --- | ---: | ---: | ---: |
+| book average score | 3.32 | 3.38 | 3.41 |
+| logic annotations | 73 | 53 | 51 |
+
+The average score is noisy (an untouched chapter swings 0.6 between reads), so the stopping criterion is different: the problems flagged stopped coming back and nothing new reaches three readers. In round three the curve flattened and the review stopped there, with a backlog for my own read. What changed along the way: about 8,000 words of lab notebook left the chapters for a new appendix, "For programmers: the backstage", each paragraph carrying its provenance marker along; the reading list became an appendix; the Genesys PI section was parked, kept outside the book while verification is pending; chapter 19 got the title its argument supports; every chapter opens by orienting the reader before the first jargon; and the epilogue got a "this week" list per reader type. Cost of the three rounds: about 5 million tokens of reading plus about 3 million of editing and English re-sync.
+
+## The narrator got a past
+
+With the argument in place, the first person lacked substance. The book's narrator was the Akita of 2026, and I have thirty years of history that explain why I think what I think: the dot-com crash seen from inside, five years integrating SAP at large companies, the warnings about the hiring bubble I gave on video in 2019, 2020 and 2022, the "Don't outsource your decisions". All of it is in the transcripts of the 149 episodes of [Akitando](https://www.youtube.com/@Akitando), published on this blog between 2018 and 2023.
+
+The process was the same as the rest of the book, in miniature. Extraction agents read 23 episodes in full, with a form: biographical facts with the verbatim quote and what would verify them, facts about the world, recurring positions in my words, and hooks, meaning the exact place in the book where one or two sentences of that history back a 2026 claim. From that came a narrator profile, which I confirmed line by line, and a plan with about 30 touches, most of them one to three sentences.
+
+Before any touch, more than 140 claims taken from the episodes went through the fact-check. It corrected the book and corrected me: the hiring bubble started around 2010, with interest rates near zero, and my February post said 2014; the dot-com bubble burst between 2000 and 2002; the 2022 layoffs were around 165 thousand. And it found errors in old episodes the book doesn't even use, which went to a blog errata list.
+
+The touches went where experience becomes evidence: the week in 2001 when my dot-com closed and a mentor called me into an SAP consultancy; the SAP years behind the claim that the model is blind to a company's private rules; the dated bubble warnings next to the admitted mistake, because in 2022 I expected a second leg down in 2023 that the AI wave cancelled. Two new appendices came out of it: "Three bubbles", with the verified numbers of the dot-com crash, the zero-interest bubble and the AI wave, and "How to study with AI at your side", from the channel's most watched episode.
+
+Those episodes are background sources, and `drift` now watches them as it watches the 2026 posts. Then came a scoped check with the same five personas, only on the touched chapters, with three extra questions: does the narrator's history make the argument more convincing, and where? Does any passage read as showing off or "I told you so"? Does anything about the narrator contradict itself?
+
+> All five said yes to credibility, with a condition: the history convinces when it's evidence the reader can check, the dated warning next to the admitted mistake, and convinces less when it becomes a résumé, which clashes with the book itself, which says "a résumé is not an argument". It became rule 21: the narrator's history comes in as evidence, and credentials stay out.
+
+Three or four readers flagged the same lines as showing off, and they went: "The warnings have dates", "more than thirty public repositories", "the most watched on my channel". The self-deprecating lines and the admitted mistakes all counted in my favor. And the check found contradictions I hadn't seen myself: the preface said "late 90s" and chapter 18 said 1996; one chapter said "eight months" and another "a year of daily use", and they were fixed one by one.
 
 ## What remains mine
 
@@ -228,12 +281,12 @@ And, once again: making a book with AI isn't a "write me a book" prompt and done
 
 ## Download it, read it, and tell me where I was wrong
 
-Both editions, in three formats each, straight from GitHub, no sign-up. This is version 1.0.0-preview.3, from today:
+Both editions, in three formats each, straight from GitHub, no sign-up. The current version is 1.0.0-preview.5, from October 14, with everything this text describes:
 
 | Edition | EPUB (Kindle, Kobo, Apple Books) | Screen PDF | Print PDF (6 × 9 in) |
 | --- | --- | --- | --- |
-| Competent Enough (EN) | [EPUB](https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0-preview.3/Competent-Enough.epub) | [PDF](https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0-preview.3/Competent-Enough-ebook.pdf) | [PDF](https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0-preview.3/Competent-Enough.pdf) |
-| Competente o Suficiente (PT-BR) | [EPUB](https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0-preview.3/Competente-o-Suficiente.epub) | [PDF](https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0-preview.3/Competente-o-Suficiente-ebook.pdf) | [PDF](https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0-preview.3/Competente-o-Suficiente.pdf) |
+| Competent Enough (EN) | [EPUB](https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0-preview.5/Competent-Enough.epub) | [PDF](https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0-preview.5/Competent-Enough-ebook.pdf) | [PDF](https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0-preview.5/Competent-Enough.pdf) |
+| Competente o Suficiente (PT-BR) | [EPUB](https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0-preview.5/Competente-o-Suficiente.epub) | [PDF](https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0-preview.5/Competente-o-Suficiente-ebook.pdf) | [PDF](https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0-preview.5/Competente-o-Suficiente.pdf) |
 
 The latest version, always, lives on the [book page](https://ailair.akitaonrails.com/book/) and on the [GitHub releases](https://github.com/akitaonrails/ai-book-2026/releases).
 
