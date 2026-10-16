@@ -4,6 +4,7 @@
   <body>
     {{- partial "banner.html" . -}}
     {{- partial "navbar.html" . -}}
+    {{- partial "custom/site-notice.html" . -}}
     {{- block "main" . }}{{ end -}}
     {{- if or (eq .Site.Params.footer.enable nil) (.Site.Params.footer.enable) }}
       {{ partial "footer.html" . }}

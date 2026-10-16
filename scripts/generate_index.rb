@@ -263,17 +263,39 @@ def render_months(grouped_posts, lang: :pt, show_tags: false)
 
   sorted_months.each do |(year, month)|
     month_name = lang == :pt ? PT_MONTHNAMES[month] : Date::MONTHNAMES[month]
-    lines << "## #{year} - #{month_name}\n"
+    posts = grouped_posts[[year, month]]
+    count_word = if lang == :pt
+                   posts.length == 1 ? 'artigo' : 'artigos'
+                 else
+                   posts.length == 1 ? 'article' : 'articles'
+                 end
+    heading_id = "aor-list-#{year}-#{format('%02d', month)}"
+    lines << <<~HTML.chomp
+      <section class="aor-index-month" aria-labelledby="#{heading_id}">
+        <div class="aor-index-month__header">
+          <h2 id="#{heading_id}">#{escape_html("#{month_name} #{year}")}</h2>
+          <span>#{posts.length} #{count_word}</span>
+        </div>
+        <div class="aor-index-list-group">
+    HTML
 
-    grouped_posts[[year, month]].each do |post|
-      line = %(- <a class="aor-index-list__main-link" href="#{escape_html(post[:url])}" title="#{escape_html(post[:description])}">#{escape_html(post[:title])}</a>)
-      if show_tags
-        tags = render_tag_links(post[:tags], lang: lang, modifier: 'index-list')
-        line += "<br>#{tags}"
-      end
-      lines << line
+    posts.each do |post|
+      date_label = post[:date].strftime('%b %d')
+      tags = show_tags ? render_tag_links(post[:tags], lang: lang, modifier: 'index-list') : ''
+      lines << <<~HTML.chomp
+        <article class="aor-index-row" title="#{escape_html(post[:description])}">
+          <time datetime="#{post[:date].to_date.iso8601}">#{escape_html(date_label)}</time>
+          <div class="aor-index-row__body">
+            <h3><a class="aor-index-list__main-link" href="#{escape_html(post[:url])}">#{escape_html(post[:title])}</a></h3>
+            <p>#{escape_html(post[:description])}</p>
+          </div>
+          #{tags}
+        </article>
+      HTML
     end
 
+    lines << '  </div>'
+    lines << '</section>'
     lines << ''
   end
 
@@ -352,8 +374,6 @@ def render_index_views(grouped_posts, lang: :pt)
   lines << '{{% index-list %}}'
   lines.concat(render_months(grouped_posts, lang: lang, show_tags: true))
   lines << '{{% /index-list %}}'
-  lines << ''
-  lines.concat(render_grid_months(grouped_posts, lang: lang))
   lines
 end
 
@@ -384,226 +404,89 @@ end
 def render_featured_section(id:, title:, button_open:, button_closed:, posts:, available_posts:, lang:)
   lines = []
   post_lookup = available_posts.to_h { |post| [post[:url], post] }
+  featured = posts.filter_map { |_date, _post_title, url| post_lookup[url] }
+  total = featured.length
+  visible = [3, total].min
+  counter = lang == :pt ? "1–#{visible} de #{total}" : "1–#{visible} of #{total}"
 
   lines << <<~HTML.chomp
-    <section id="#{id}" class="aor-featured" data-button-open="#{button_open}" data-button-closed="#{button_closed}">
+    <section id="#{id}" class="aor-featured" data-featured-carousel data-featured-lang="#{lang}">
       <div class="aor-featured__header">
         <h2>#{title}</h2>
-        <button class="aor-featured__toggle" type="button" aria-expanded="true" aria-controls="#{id}-body">#{button_open}</button>
+        <div class="aor-featured__controls">
+          <span class="aor-featured__counter" aria-live="polite">#{counter}</span>
+          <div class="aor-featured__buttons">
+            <button type="button" data-featured-prev aria-label="#{lang == :pt ? 'Destaques anteriores' : 'Previous featured posts'}">&#8249;</button>
+            <button type="button" data-featured-next aria-label="#{lang == :pt ? 'Próximos destaques' : 'Next featured posts'}">&#8250;</button>
+          </div>
+        </div>
       </div>
-      <div id="#{id}-body" class="aor-featured__body">
-        <div class="aor-featured__list" data-index-view="list">
-          <ul>
+      <div class="aor-featured__track">
   HTML
 
-  posts.each do |date, post_title, url|
-    post = post_lookup[url]
-    tags = post ? render_tag_links(post[:tags], lang: lang, modifier: 'featured-list') : ''
-    description = post ? post[:description] : ''
-    date_label = Date.iso8601(date).strftime('%b %d')
-    lines << "            <li><code>#{escape_html(date_label)}</code> — <a href=\"#{escape_html(url)}\" title=\"#{escape_html(description)}\">#{escape_html(post_title)}</a><br>#{tags}</li>"
+  featured.each_with_index do |post, index|
+    date_label = post[:date].strftime('%b %d, %Y')
+    lines << <<~HTML.chomp
+      <article class="aor-featured-card" data-featured-item data-featured-index="#{index}">
+        <time datetime="#{post[:date].to_date.iso8601}">#{escape_html(date_label)}</time>
+        <h3><a href="#{escape_html(post[:url])}">#{escape_html(post[:title])}</a></h3>
+        <p>#{escape_html(post[:description])}</p>
+        #{render_tag_links(post[:tags], lang: lang, modifier: 'featured-card')}
+      </article>
+    HTML
   end
 
   lines << <<~HTML.chomp
-          </ul>
-        </div>
-        <div class="aor-featured__grid aor-post-grid" data-index-view="grid">
-  HTML
-
-  posts.each do |_date, _post_title, url|
-    post = post_lookup[url]
-    unless post
-      warn "Missing metadata for featured post #{url}"
-      next
-    end
-
-    lines << render_post_card(post, lang: lang)
-  end
-
-  lines << <<~HTML.chomp
-        </div>
       </div>
     </section>
-
-    <style>
-      .aor-featured {
-        margin: 1.5rem 0;
-        padding: 0.75rem 1rem;
-        border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
-        border-radius: 0.75rem;
-      }
-
-      .aor-featured__header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1rem;
-      }
-
-      .aor-featured__header h2 {
-        margin: 0;
-      }
-
-      .aor-featured__toggle {
-        cursor: pointer;
-        border: 1px solid color-mix(in srgb, currentColor 25%, transparent);
-        border-radius: 999px;
-        padding: 0.25rem 0.7rem;
-        background: transparent;
-        color: inherit;
-        font: inherit;
-        font-size: 0.9rem;
-      }
-
-      .aor-featured__body {
-        overflow: hidden;
-        transition: max-height 220ms ease, opacity 160ms ease, margin-top 220ms ease;
-        max-height: none;
-        opacity: 1;
-        margin-top: 0.75rem;
-      }
-
-      .aor-index-enhanced .aor-featured__body {
-        max-height: var(--aor-featured-body-height, 40rem);
-      }
-
-      .aor-featured.is-collapsed .aor-featured__body {
-        max-height: 0;
-        opacity: 0;
-        margin-top: 0;
-      }
-
-      .aor-featured__grid {
-        display: none;
-      }
-
-      html[data-aor-index-view="grid"] .aor-featured {
-        padding: 0;
-        border: 0;
-      }
-
-      html[data-aor-index-view="grid"] .aor-featured__header {
-        padding-bottom: 0.5rem;
-        border-bottom: 1px solid color-mix(in srgb, currentColor 14%, transparent);
-      }
-
-      html[data-aor-index-view="grid"] .aor-featured__header h2 {
-        font-size: 1.35rem;
-        letter-spacing: 0;
-      }
-
-      html[data-aor-index-view="grid"] .aor-featured__list {
-        display: none;
-      }
-
-      html[data-aor-index-view="grid"] .aor-featured__grid {
-        display: grid;
-      }
-
-      html[data-aor-index-view="grid"] .aor-featured.is-collapsed .aor-featured__body {
-        max-height: 0;
-      }
-    </style>
-
-    <script>
-      (function () {
-        var box = document.getElementById('#{id}');
-        if (!box) return;
-
-        var button = box.querySelector('.aor-featured__toggle');
-        var body = box.querySelector('.aor-featured__body');
-        var interacted = false;
-        var openLabel = box.getAttribute('data-button-open') || 'Hide';
-        var closedLabel = box.getAttribute('data-button-closed') || 'Show';
-
-        function setCollapsed(collapsed) {
-          box.classList.toggle('is-collapsed', collapsed);
-          button.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
-          button.textContent = collapsed ? closedLabel : openLabel;
-          window.requestAnimationFrame(updateBodyHeight);
-        }
-
-        function updateBodyHeight() {
-          body.style.setProperty('--aor-featured-body-height', body.scrollHeight + 'px');
-        }
-
-        button.addEventListener('click', function () {
-          interacted = true;
-          setCollapsed(!box.classList.contains('is-collapsed'));
-        });
-
-        window.addEventListener('aor:index-view-change', function () {
-          window.requestAnimationFrame(updateBodyHeight);
-        });
-        window.addEventListener('resize', function () {
-          window.requestAnimationFrame(updateBodyHeight);
-        });
-
-        updateBodyHeight();
-
-        window.setTimeout(function () {
-          if (interacted) return;
-          setCollapsed(true);
-        }, 1000);
-      }());
-    </script>
   HTML
 
   lines << ''
   lines
 end
 
-AILAIR_ANNOUNCEMENT_PT = '**Novo:** publiquei o [Akita\'s AI Lair](https://ailair.akitaonrails.com/pt-br), ' \
-  'a página central com as ferramentas, skills e o workflow que uso pra rodar agente de IA em mais de 40 ' \
-  'repositórios: ai-usagebar, ghpending, tclock, ai-memory, ai-jail e o meu benchmark de LLM. ' \
-  'E o meu livro, [Competente o Suficiente](https://ailair.akitaonrails.com/pt-br/book/), de graça em EPUB e PDF.'
-AILAIR_ANNOUNCEMENT_EN = '**New:** I published [Akita\'s AI Lair](https://ailair.akitaonrails.com), the ' \
-  'central page for the tools, skills, and workflow I use to run AI agents across 40+ repositories: ' \
-  'ai-usagebar, ghpending, tclock, ai-memory, ai-jail, and my LLM benchmark. ' \
-  'And my book, [Competent Enough](https://ailair.akitaonrails.com/book/), free in EPUB and PDF.'
-
 def generate_index(grouped_posts)
   lines = ["#{FRONTMATTER_DELIMITER}\ntitle: AkitaOnRails Blog\n#{FRONTMATTER_DELIMITER}\n"]
-  lines << "#{AILAIR_ANNOUNCEMENT_PT}\n"
-  lines << "Procurando posts mais antigos? [Veja o arquivo completo →](/archives/)\n"
-  lines.concat(render_index_view_toggle(lang: :pt))
   lines.concat(render_featured_posts(grouped_posts))
+  lines << '<div class="aor-recent-header">'
+  lines << '<h2>Artigos recentes</h2>'
+  lines.concat(render_index_view_toggle(lang: :pt))
+  lines << '</div>'
   lines.concat(render_index_views(grouped_posts, lang: :pt))
-  lines << "[Arquivo completo →](/archives/)\n"
+  lines << '<div class="aor-archive-link"><span>2006–2026</span><a href="/archives/">Ver arquivo completo →</a></div>'
   lines.join("\n")
 end
 
 def generate_archives(grouped_posts)
-  lines = ["#{FRONTMATTER_DELIMITER}\ntitle: AkitaOnRails Blog - Arquivo\n#{FRONTMATTER_DELIMITER}\n"]
-  lines << 'Quer ver as transcrições do Canal Akitando? [Clique aqui](/akitando/).'
-  lines << "Quer ver só os posts Off-Topic? [Clique aqui](/off-topic/).\n"
-  lines.concat(render_months(grouped_posts, lang: :pt))
+  lines = ["#{FRONTMATTER_DELIMITER}\ntitle: Arquivo\n#{FRONTMATTER_DELIMITER}\n"]
+  lines << '<p class="aor-listing-intro">Posts anteriores a 2026. Veja também <a href="/akitando/">Akitando</a> e <a href="/off-topic/">Off-Topic</a>.</p>'
+  lines.concat(render_index_views(grouped_posts, lang: :pt))
   lines.join("\n")
 end
 
 def generate_index_en(grouped_posts)
   lines = ["#{FRONTMATTER_DELIMITER}\ntitle: AkitaOnRails Blog\n#{FRONTMATTER_DELIMITER}\n"]
-  lines << "#{AILAIR_ANNOUNCEMENT_EN}\n"
-  lines << "Looking for older posts? [Browse the full archive →](/en/archives/)\n"
   if grouped_posts.empty?
     lines << "_No posts translated to English yet. Check back soon._\n"
   else
-    lines.concat(render_index_view_toggle(lang: :en))
     lines.concat(render_featured_posts_en(grouped_posts))
+    lines << '<div class="aor-recent-header">'
+    lines << '<h2>Recent articles</h2>'
+    lines.concat(render_index_view_toggle(lang: :en))
+    lines << '</div>'
     lines.concat(render_index_views(grouped_posts, lang: :en))
   end
-  lines << "[Full archive →](/en/archives/)\n"
+  lines << '<div class="aor-archive-link"><span>2006–2026</span><a href="/en/archives/">Browse the full archive →</a></div>'
   lines.join("\n")
 end
 
 def generate_archives_en(grouped_posts)
-  lines = ["#{FRONTMATTER_DELIMITER}\ntitle: AkitaOnRails Blog - Archives\n#{FRONTMATTER_DELIMITER}\n"]
-  lines << 'Want to see the Akitando Channel transcripts (Portuguese only)? [Click here](/akitando/).'
-  lines << "Want to see only the Off-Topic posts? [Click here](/en/off-topic/).\n"
+  lines = ["#{FRONTMATTER_DELIMITER}\ntitle: Archives\n#{FRONTMATTER_DELIMITER}\n"]
+  lines << '<p class="aor-listing-intro">Posts before 2026. See also <a href="/akitando/">Akitando</a> and <a href="/en/off-topic/">Off-Topic</a>.</p>'
   if grouped_posts.empty?
     lines << "_Older posts are only available in Portuguese. Visit the [Portuguese archive](/archives/) to browse them._\n"
   else
-    lines.concat(render_months(grouped_posts, lang: :en))
+    lines.concat(render_index_views(grouped_posts, lang: :en))
   end
   lines.join("\n")
 end
@@ -613,7 +496,7 @@ def generate_akitando(grouped_posts)
   lines << ''
   lines << 'Transcrições dos episódios do canal [Akitando](https://www.youtube.com/c/akitando) no YouTube.'
   lines << ''
-  lines.concat(render_months(grouped_posts, lang: :pt))
+  lines.concat(render_index_views(grouped_posts, lang: :pt))
   lines.join("\n")
 end
 
@@ -621,7 +504,7 @@ def generate_off_topic(grouped_posts)
   lines = ["#{FRONTMATTER_DELIMITER}\ntitle: Off-Topic\n#{FRONTMATTER_DELIMITER}\n"]
   lines << 'Todos os posts Off-Topic do blog — filosofia, carreira, gerenciamento, e outros assuntos fora da programação do dia a dia.'
   lines << ''
-  lines.concat(render_months(grouped_posts, lang: :pt))
+  lines.concat(render_index_views(grouped_posts, lang: :pt))
   lines.join("\n")
 end
 
@@ -632,7 +515,7 @@ def generate_off_topic_en(grouped_posts)
   if grouped_posts.empty?
     lines << "_No Off-Topic posts translated to English yet. Visit the [Portuguese Off-Topic page](/off-topic/) to browse them._\n"
   else
-    lines.concat(render_months(grouped_posts, lang: :en))
+    lines.concat(render_index_views(grouped_posts, lang: :en))
   end
   lines.join("\n")
 end

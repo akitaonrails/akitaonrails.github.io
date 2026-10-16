@@ -1,0 +1,42 @@
+{{- $isEN := eq .Site.Language.Lang "en" -}}
+{{- $darkLabel := cond $isEN "Switch to dark theme" "Ativar tema escuro" -}}
+{{- $lightLabel := cond $isEN "Switch to light theme" "Ativar tema claro" -}}
+<button
+  type="button"
+  class="aor-theme-toggle"
+  data-aor-theme-toggle
+  data-dark-label="{{ $darkLabel }}"
+  data-light-label="{{ $lightLabel }}"
+  aria-label="{{ $darkLabel }}"
+  title="{{ $darkLabel }}"
+>
+  <span class="aor-theme-icon aor-theme-icon--light" aria-hidden="true">
+    {{ partial "utils/icon.html" (dict "name" "moon" "attributes" `height="18" width="18"`) }}
+  </span>
+  <span class="aor-theme-icon aor-theme-icon--dark" aria-hidden="true">
+    {{ partial "utils/icon.html" (dict "name" "sun" "attributes" `height="18" width="18"`) }}
+  </span>
+</button>
+<script>
+  (function () {
+    var button = document.querySelector('[data-aor-theme-toggle]');
+    if (!button) return;
+
+    function syncLabel() {
+      var label = document.documentElement.classList.contains('dark')
+        ? button.dataset.lightLabel
+        : button.dataset.darkLabel;
+      button.setAttribute('aria-label', label);
+      button.setAttribute('title', label);
+    }
+
+    button.addEventListener('click', function () {
+      var theme = document.documentElement.classList.contains('dark') ? 'light' : 'dark';
+      localStorage.setItem('color-theme', theme);
+      setTheme(theme);
+      syncLabel();
+    });
+
+    syncLabel();
+  }());
+</script>

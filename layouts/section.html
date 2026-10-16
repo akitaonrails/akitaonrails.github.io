@@ -1,0 +1,20 @@
+{{ define "main" }}
+  <div class="aor-page-shell">
+    {{ partial "sidebar.html" (dict "context" . "disableSidebar" true) }}
+    <article class="aor-page">
+      <main class="aor-shell aor-listing-page">
+        <header class="aor-listing-header">
+          <h1>{{ .Title }}</h1>
+          {{ partial "index-view-toggle.html" (dict
+            "listLabel" (i18n "listView")
+            "gridLabel" (i18n "gridView")
+            "groupLabel" (i18n "postView")
+          ) }}
+        </header>
+        <div class="content aor-listing-content">
+          {{ .Content }}
+        </div>
+      </main>
+    </article>
+  </div>
+{{ end }}

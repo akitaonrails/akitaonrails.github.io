@@ -1,0 +1,40 @@
+{{- $isEN := eq .Site.Language.Lang "en" -}}
+{{- $homeURL := cond $isEN "/en/" "/" -}}
+{{- $aboutURL := cond $isEN "/en/about/" "/about/" -}}
+{{- $archiveURL := cond $isEN "/en/archives/" "/archives/" -}}
+{{- $akitandoURL := "/akitando/" -}}
+{{- $offTopicURL := cond $isEN "/en/off-topic/" "/off-topic/" -}}
+{{- $path := .RelPermalink -}}
+<header class="hextra-nav-container aor-site-header hx:print:hidden">
+  <nav class="aor-shell aor-site-header__inner" aria-label="{{ cond $isEN "Main navigation" "Navegação principal" }}">
+    <a class="aor-wordmark" href="{{ $homeURL }}">AkitaOnRails</a>
+
+    <div class="aor-site-header__links">
+      <a href="{{ $homeURL }}"{{ if eq $path $homeURL }} aria-current="page"{{ end }}>{{ cond $isEN "Blog" "Blog" }}</a>
+      <a href="{{ $aboutURL }}"{{ if hasPrefix $path $aboutURL }} aria-current="page"{{ end }}>{{ cond $isEN "About" "Sobre" }}</a>
+      <a href="{{ $archiveURL }}"{{ if hasPrefix $path $archiveURL }} aria-current="page"{{ end }}>{{ cond $isEN "Archive" "Arquivo" }}</a>
+      <a href="{{ $akitandoURL }}"{{ if hasPrefix $path $akitandoURL }} aria-current="page"{{ end }}>Akitando</a>
+      <a href="{{ $offTopicURL }}"{{ if hasPrefix $path $offTopicURL }} aria-current="page"{{ end }}>Off-Topic</a>
+    </div>
+
+    <div class="aor-site-header__actions">
+      <div class="hextra-search-wrapper aor-header-search">
+        {{ partial "utils/icon.html" (dict "name" "search" "attributes" `height="15" width="15" aria-hidden="true"`) }}
+        <input
+          type="search"
+          class="hextra-search-input"
+          spellcheck="false"
+          autocomplete="off"
+          aria-label="{{ cond $isEN "Search the site" "Buscar no site" }}"
+          placeholder="{{ cond $isEN "Search the site..." "Consultar o Oráculo..." }}"
+        >
+        <kbd>/</kbd>
+      </div>
+      {{ partial "language-switch.html" (dict "context" . "location" "top") }}
+      {{ partial "custom/theme-toggle.html" . }}
+      <button type="button" aria-label="Menu" class="hextra-hamburger-menu aor-menu-button">
+        {{ partial "utils/icon.html" (dict "name" "hamburger-menu" "attributes" `height="20" width="20" aria-hidden="true"`) }}
+      </button>
+    </div>
+  </nav>
+</header>

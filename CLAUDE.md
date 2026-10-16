@@ -56,8 +56,8 @@ Before choosing tags, run `./scripts/tag_catalog.rb --search "article title and 
 
 - **Theme**: Hextra v0.11.1 (via Hugo modules in `go.mod`, vendored in `_vendor/`)
 - **Base URL**: `https://www.akitaonrails.com/`
-- **Fonts**: Source Serif 4 (body), Source Sans 3 (headings) — loaded in `layouts/partials/custom/head-end.html`
-- **Index generation**: `scripts/generate_index.rb` generates PT/EN homepage, archive, Akitando, and Off-Topic indexes. The homepage preserves the chronological list as its default and emits a responsive card grid using each post's description and controlled tags. Cutoff is `Date.today.year - 1`.
+- **Fonts**: Newsreader (editorial headings and article body), Inter (interface text), and JetBrains Mono (metadata) — loaded in `layouts/partials/custom/head-end.html`
+- **Index generation**: `scripts/generate_index.rb` generates PT/EN homepage, archive, Akitando, and Off-Topic indexes. The homepage uses a featured carousel followed by one semantic chronological collection that CSS presents as a persisted list or responsive card grid. Cutoff is `Date.today.year - 1`.
 - **Dev performance**: `hugo.yaml` defines a `recent` render segment (2025+ content + `/about` + `/archives`). Dev server uses `--renderSegments recent --renderToMemory` and leaves Fast Render Mode on (default). With segments + fast-render + in-memory serving, reloads are near-instant.
 - **Deployment**: Netlify (`netlify.toml`) with `netlify-plugin-cache` persisting `resources/_gen` and `/opt/build/cache/hugo_cache` across builds. First deploy after enabling cache is cold; subsequent builds reuse resized images, compiled SCSS, and fetched modules (~50–80% faster). The build command intentionally omits `--gc` so the cache isn't wiped. GitHub Pages workflow also exists (`.github/workflows/pages.yaml`) but Netlify is the primary deployment.
 - **Docker**: Ubuntu 22.04 base, architecture-aware Hugo install (arm64/amd64). `docker-compose.yml` mounts content, layouts, assets, scripts, config for live editing.
@@ -66,19 +66,24 @@ Before choosing tags, run `./scripts/tag_catalog.rb --search "article title and 
 
 | File | Purpose |
 |------|---------|
-| `layouts/home.html` | Homepage template without the redundant visible site-title heading |
-| `layouts/single.html` | Post template: centered content (max-w-6xl), TOC enabled, sidebar disabled, Disqus comments |
+| `layouts/home.html` | Editorial homepage shell without the redundant visible site-title heading |
+| `layouts/section.html` | Shared archive, Akitando, and Off-Topic listing shell |
+| `layouts/taxonomy.html` | Compact all-tags directory |
+| `layouts/single.html` | Editorial article template with desktop TOC, tags, metadata, chronological navigation, and comments |
 | `layouts/term.html` | Localized tag pages with the shared list/grid control, month groups, tags, and description cards |
-| `layouts/_partials/language-switch.html` | Hextra language-switch override that renders the compact navbar control |
+| `layouts/_partials/navbar.html` | Responsive global navigation, search, language switch, and theme control |
+| `layouts/_partials/footer.html` | Compact global footer |
 | `layouts/_partials/tags.html` | Clickable tags below article titles and in generated listings |
 | `layouts/_default/list.rss.xml` | RSS 2.0 feed, 20 most recent posts with full content |
-| `layouts/partials/custom/head-end.html` | Google Fonts, custom CSS (typography, code blocks, social icons, responsive embeds, dark mode) |
+| `layouts/partials/custom/head-end.html` | Google Fonts, legacy content styling, and language preference scripts |
+| `layouts/partials/custom/editorial-styles.html` | Shared light/dark editorial design system and featured-carousel behavior |
+| `layouts/partials/custom/site-notice.html` | Site-wide AI Lair and free-book utility strip |
 | `layouts/partials/components/comments.html` | Disqus in sandboxed iframe with auto-height adjustment (500ms interval) |
 | `layouts/partials/schema.html` | Schema.org JSON-LD (BlogPosting for posts, WebSite for pages) |
 | `layouts/partials/twitter_cards.html` | Twitter/X summary_large_image cards, @AkitaOnRails |
 | `layouts/shortcodes/youtube.html` | Custom YouTube embed, required `id` param, 16:9 responsive |
 | `layouts/shortcodes/index-list.html` | Default chronological homepage view wrapper |
-| `layouts/shortcodes/index-view-toggle.html` | Accessible persisted list/grid view control |
+| `layouts/_partials/index-view-toggle.html` | Accessible persisted list/grid view control |
 
 ## Key Configuration
 

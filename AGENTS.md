@@ -164,10 +164,15 @@ This uses a custom shortcode at `layouts/shortcodes/youtube.html` that creates r
 
 This site uses the Hextra theme with customizations:
 
-- **`layouts/partials/custom/head-end.html`**: Custom CSS for embeds and typography, plus the language redirect/popup scripts (browser-locale mismatch nudge with `lang_auto`/`lang_asked` cookies, on top of the home-only `lang_pref`/`lang_session` redirect)
-- **`layouts/partials/custom/lang-toggle.html`**: Compact PT | EN navbar switch, including the `lang_auto` on/off control
+- **`layouts/partials/custom/head-end.html`**: Legacy content styles plus the language redirect/popup scripts (browser-locale mismatch nudge with `lang_auto`/`lang_asked` cookies, on top of the home-only `lang_pref`/`lang_session` redirect)
+- **`layouts/partials/custom/editorial-styles.html`**: Shared editorial tokens and responsive layouts for home, articles, sections, tags, dark mode, and the featured carousel
+- **`layouts/_partials/navbar.html`**: Responsive global navigation, search, language, and theme controls
+- **`layouts/_partials/footer.html`**: Compact site-wide footer
+- **`layouts/partials/custom/lang-toggle.html`**: Compact PT | EN navbar switch
 - **`layouts/partials/components/comments.html`**: Disqus integration
+- **`layouts/section.html`**: Archive, Akitando, and Off-Topic pages using the shared listing shell
 - **`layouts/term.html`**: Tag pages using the shared list/grid post views
+- **`layouts/taxonomy.html`**: All-tags directory
 - **`layouts/_default/list.rss.xml`**: Custom RSS feed (includes full content, limited to 20 items)
 
 Hextra provides hooks in `layouts/_partials/custom/` for safe customization.

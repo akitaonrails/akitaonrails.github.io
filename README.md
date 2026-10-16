@@ -82,11 +82,12 @@ hugo server --renderToMemory -p 1313
 
 ## Homepage, descrições e tags
 
-A homepage preserva a lista cronológica como visualização padrão e oferece
-uma grade responsiva de cards. A escolha fica salva no navegador. Destaques,
-posts mensais e cards usam o `description` do frontmatter como TL;DR; ao passar
-o mouse sobre o link principal da lista ou sobre um card, o navegador mostra a
-descrição completa.
+A homepage abre com um carrossel de destaques e mantém a lista cronológica como
+visualização padrão. A mesma coleção semântica vira uma grade responsiva de
+cards por CSS, e a escolha fica salva no navegador. Destaques, posts mensais e
+cards usam o `description` do frontmatter como TL;DR; ao passar o mouse sobre o
+link principal da lista ou sobre um card, o navegador mostra a descrição
+completa. Arquivo, Akitando, Off-Topic e páginas de tag usam o mesmo sistema.
 
 Todo post publicado precisa de uma descrição concreta em cada idioma
 disponível. A descrição é escrita uma vez a partir do artigo PT-BR final e
@@ -166,7 +167,7 @@ akitaonrails.github.io/
 │       └── _index*.md    # Arquivos PT/EN (auto-gerados)
 ├── data/
 │   └── tag_taxonomy.yml  # Tags canônicas e mapeamento PT/EN
-├── layouts/              # Templates, tags e lista/grade da homepage
+├── layouts/              # Design editorial compartilhado, artigos e índices
 ├── assets/               # CSS, JS, imagens
 ├── hugo.yaml             # Configuração do Hugo (inclui render segments)
 ├── go.mod                # Dependências Go

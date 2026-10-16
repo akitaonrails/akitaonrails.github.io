@@ -1,65 +1,47 @@
 {{ define "main" }}
   {{- $pages := .Pages.ByDate.Reverse -}}
   {{- $groups := $pages.GroupByDate "2006 - January" -}}
-  <div class='hx:mx-auto hx:flex hextra-max-page-width'>
-    {{ partial "sidebar.html" (dict "context" . "disableSidebar" true "displayPlaceholder" true) }}
-    {{ partial "toc.html" (dict "Params" (dict "toc" false)) }}
-    <article class="hx:w-full hx:break-words hx:flex hx:min-h-[calc(100vh-var(--navbar-height))] hx:min-w-0 hx:justify-center hx:pb-8 hx:pr-[calc(env(safe-area-inset-right)-1.5rem)]">
-      <main class="hx:w-full hx:min-w-0 hx:max-w-6xl hx:px-6 hx:pt-4 hx:md:px-12">
-        <br class="hx:mt-1.5 hx:text-sm" />
-        <h1 class="aor-tag-page__title hx:text-center hx:mt-2 hx:font-bold hx:tracking-tight hx:text-slate-900 hx:dark:text-slate-100">#{{ .Data.Term }}</h1>
-        <p class="aor-tag-page__count hx:text-center hx:mt-2">{{ i18n "postCount" (dict "Count" (len $pages)) }}</p>
-        <div class="content aor-tag-page__content">
+  <div class="aor-page-shell">
+    {{ partial "sidebar.html" (dict "context" . "disableSidebar" true) }}
+    <article class="aor-page">
+      <main class="aor-shell aor-listing-page">
+        <header class="aor-listing-header">
+          <div>
+            <h1 class="aor-tag-page__title">#{{ .Data.Term }}</h1>
+            <p class="aor-tag-page__count">{{ i18n "postCount" (dict "Count" (len $pages)) }}</p>
+          </div>
           {{ partial "index-view-toggle.html" (dict
             "listLabel" (i18n "listView")
             "gridLabel" (i18n "gridView")
             "groupLabel" (i18n "postView")
           ) }}
+        </header>
+
+        <div class="content aor-tag-page__content aor-listing-content">
 
           {{ with .Content }}
             <div class="aor-tag-page__intro">{{ . }}</div>
           {{ end }}
 
-          <div id="aor-index-list" class="aor-index-list aor-tag-index-list" data-index-view="list">
+          <div id="aor-index-list" class="aor-index-list aor-tag-index-list">
             {{- range $groupIndex, $group := $groups -}}
               <section class="aor-index-month" aria-labelledby="aor-tag-list-group-{{ $groupIndex }}">
                 <div class="aor-index-month__header">
                   <h2 id="aor-tag-list-group-{{ $groupIndex }}">{{ $group.Key }}</h2>
                   <span>{{ i18n "postCount" (dict "Count" (len $group.Pages)) }}</span>
                 </div>
-                <ul>
+                <div class="aor-index-list-group">
                   {{- range $group.Pages -}}
                     {{- $description := .Params.description | default (.Summary | plainify) -}}
-                    <li>
-                      <a class="aor-index-list__main-link" href="{{ .RelPermalink }}" title="{{ $description }}">{{ .Title }}</a>
+                    <article class="aor-index-row" title="{{ $description }}">
+                      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ if eq .Site.Language.Lang "pt-br" }}{{ .Date.Format "02 Jan" }}{{ else }}{{ .Date.Format "Jan 02" }}{{ end }}</time>
+                      <div class="aor-index-row__body">
+                        <h3><a class="aor-index-list__main-link" href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+                        <p>{{ $description }}</p>
+                      </div>
                       {{- if .Params.tags -}}
-                        <br><span class="aor-post-tags aor-post-tags--index-list">{{ partial "tags.html" (dict "context" .) }}</span>
+                        <span class="aor-post-tags aor-post-tags--index-list">{{ partial "tags.html" (dict "context" .) }}</span>
                       {{- end -}}
-                    </li>
-                  {{- end -}}
-                </ul>
-              </section>
-            {{- end -}}
-          </div>
-
-          <div id="aor-index-grid" class="aor-index-grid" data-index-view="grid">
-            {{- range $groupIndex, $group := $groups -}}
-              <section class="aor-index-month" aria-labelledby="aor-tag-grid-group-{{ $groupIndex }}">
-                <div class="aor-index-month__header">
-                  <h2 id="aor-tag-grid-group-{{ $groupIndex }}">{{ $group.Key }}</h2>
-                  <span>{{ i18n "postCount" (dict "Count" (len $group.Pages)) }}</span>
-                </div>
-                <div class="aor-post-grid">
-                  {{- range $group.Pages -}}
-                    {{- $description := .Params.description | default (.Summary | plainify) -}}
-                    {{- $dateLabel := cond (eq .Site.Language.Lang "pt-br") (.Date.Format "02/01/2006") (.Date.Format "Jan 2, 2006") -}}
-                    <article class="aor-post-card" title="{{ $description }}">
-                      <time class="aor-post-card__date" datetime="{{ .Date.Format "2006-01-02" }}">{{ $dateLabel }}</time>
-                      <h3 class="aor-post-card__title"><a class="aor-post-card__title-link" href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-                      {{- if .Params.tags -}}
-                        <span class="aor-post-tags aor-post-tags--card">{{ partial "tags.html" (dict "context" .) }}</span>
-                      {{- end -}}
-                      <p class="aor-post-card__description">{{ $description }}</p>
                     </article>
                   {{- end -}}
                 </div>

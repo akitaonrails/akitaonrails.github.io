@@ -1,50 +1,27 @@
-{{- /* Override of the Hextra 404 page so it picks up i18n strings.
-       The default vendored version hardcodes "This page could not be found." */ -}}
 <!doctype html>
 <html lang="{{ site.Language.Lang }}">
-  <body
-    style='font-family:system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji"; height:100vh; text-align:center; display:flex; flex-direction:column; align-items:center; justify-content:center'
-  >
-    <div>
-      <style>
-        body {
-          color: #000;
-          background: #fff;
-          margin: 0;
-        }
-
-        .hextra-error-h1 {
-          border-right: 1px solid rgba(0, 0, 0, 0.3);
-        }
-
-        @media (prefers-color-scheme: dark) {
-          body {
-            color: #fff;
-            background: #000;
-          }
-
-          .hextra-error-h1 {
-            border-right: 1px solid rgba(255, 255, 255, 0.3);
-          }
-        }
-
-        a {
-          color: inherit;
-          text-decoration: underline;
-        }
-      </style>
-      <h1
-        class="hextra-error-h1"
-        style='display: inline-block; margin: 0 20px 0 0; padding-right: 23px; font-size: 24px; font-weight: 500; vertical-align: top; line-height: 49px; font-feature-settings: "rlig" 1,"calt" 1,"ss01" 1,"ss06" 1 !important;'
-      >
-        404
-      </h1>
-      <div style="display: inline-block; text-align: left">
-        <h2 style="font-size: 14px; font-weight: 400; line-height: 49px; margin: 0">{{ T "pageNotFound" }}</h2>
-        <p style="font-size: 13px; margin: 0; opacity: 0.7;">
-          <a href="{{ if eq site.Language.Lang "en" }}/en/{{ else }}/{{ end }}">{{ T "backToHome" }}</a>
-        </p>
-      </div>
-    </div>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>404 · {{ site.Title }}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Newsreader:wght@500;600&display=swap" rel="stylesheet">
+    <style>
+      :root { color-scheme: light dark; }
+      body { min-height: 100vh; margin: 0; display: grid; place-items: center; background: #fbf9f4; color: #1c211e; font-family: Inter, sans-serif; }
+      main { width: min(100% - 2rem, 42rem); border-block: 1px solid #d6cfc2; padding: 2rem 0; }
+      h1 { margin: 0; color: #1d4836; font: 600 clamp(3rem, 12vw, 6rem)/1 Newsreader, serif; }
+      p { color: #525b54; }
+      a { color: #1d4836; text-underline-offset: 3px; }
+      @media (prefers-color-scheme: dark) { body { background: #121312; color: #f2efe9; } main { border-color: #41453f; } h1, a { color: #d8e9df; } p { color: #aaa69d; } }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>404</h1>
+      <p>{{ T "pageNotFound" }}</p>
+      <a href="{{ if eq site.Language.Lang "en" }}/en/{{ else }}/{{ end }}">{{ T "backToHome" }} →</a>
+    </main>
   </body>
 </html>

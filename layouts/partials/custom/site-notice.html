@@ -1,0 +1,22 @@
+{{- $isEN := eq .Site.Language.Lang "en" -}}
+{{- $lairURL := cond $isEN "https://ailair.akitaonrails.com" "https://ailair.akitaonrails.com/pt-br" -}}
+{{- $bookURL := cond $isEN "https://ailair.akitaonrails.com/book/" "https://ailair.akitaonrails.com/pt-br/book/" -}}
+<aside class="aor-site-notice" aria-label="{{ cond $isEN "Site notice" "Aviso do site" }}">
+  <div class="aor-shell aor-site-notice__inner">
+    <p>
+      <span>
+        <a href="{{ $lairURL }}">Akita's AI Lair</a>
+        <span aria-hidden="true">&middot;</span>
+        {{ if $isEN }}Free book:{{ else }}Livro gratuito:{{ end }}
+        <a href="{{ $bookURL }}"><em>{{ cond $isEN "Competent Enough" "Competente o Suficiente" }}</em></a>
+      </span>
+      <span class="aor-site-notice__download">
+        <span aria-hidden="true">&middot;</span>
+        <a class="aor-site-notice__action" href="{{ $bookURL }}">
+          {{ cond $isEN "Download PDF/ePub" "Baixar PDF/ePub" }}
+          <span aria-hidden="true">&#8599;</span>
+        </a>
+      </span>
+    </p>
+  </div>
+</aside>

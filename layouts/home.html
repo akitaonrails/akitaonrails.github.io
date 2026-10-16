@@ -1,11 +1,10 @@
 {{ define "main" }}
-  <div class='hx:mx-auto hx:flex hextra-max-page-width'>
-    {{ partial "sidebar.html" (dict "context" . "disableSidebar" true "displayPlaceholder" true) }}
-    {{ partial "toc.html" . }}
-    <article class="hx:w-full hx:break-words hx:flex hx:min-h-[calc(100vh-var(--navbar-height))] hx:min-w-0 hx:justify-center hx:pb-8 hx:pr-[calc(env(safe-area-inset-right)-1.5rem)]">
-      <main class="hx:w-full hx:min-w-0 hx:max-w-6xl hx:px-6 hx:pt-4 hx:md:px-12">
+  <div class="aor-page-shell">
+    {{ partial "sidebar.html" (dict "context" . "disableSidebar" true) }}
+    <article class="aor-page aor-home-page">
+      <main class="aor-shell aor-home">
         {{ if .Title }}<h1 class="hx:sr-only">{{ .Title }}</h1>{{ end }}
-        <div class="content">
+        <div class="content aor-listing-content">
           {{ .Content }}
         </div>
       </main>
