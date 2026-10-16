@@ -12,12 +12,14 @@
   {{- $claudeURL := printf "https://claude.ai/new?%s" $encodedPrompt -}}
   {{- $chatgptURL := printf "https://chatgpt.com/?%s" $encodedPrompt -}}
   {{- $grokURL := printf "https://grok.com/?%s" $encodedPrompt -}}
-  <div class="hx:text-center hx:mt-2 hx:mb-0 hx:text-sm hx:text-gray-500 hx:dark:text-gray-400">
-    {{- if eq $lang "en" -}}
-      <em>If you're lazy, click <a id="tldr-link" href="{{ $claudeURL }}" data-claude="{{ $claudeURL }}" data-chatgpt="{{ $chatgptURL }}" data-grok="{{ $grokURL }}" target="_blank" rel="noopener" title="Left click opens Claude. Right click to choose Claude or Grok." class="hx:text-primary-600 hx:dark:text-primary-400 hx:underline">here</a> for the TL;DR</em>
-    {{- else -}}
-      <em>Se tem preguiça de ler, clique <a id="tldr-link" href="{{ $claudeURL }}" data-claude="{{ $claudeURL }}" data-chatgpt="{{ $chatgptURL }}" data-grok="{{ $grokURL }}" target="_blank" rel="noopener" title="Clique abre o Claude. Botão direito pra escolher Claude ou Grok." class="hx:text-primary-600 hx:dark:text-primary-400 hx:underline">aqui</a> pro TL;DR</em>
-    {{- end -}}
+  <div class="aor-tldr">
+    <a id="tldr-link" class="aor-tldr__link" href="{{ $claudeURL }}" data-claude="{{ $claudeURL }}" data-chatgpt="{{ $chatgptURL }}" data-grok="{{ $grokURL }}" target="_blank" rel="noopener" title="{{ if eq $lang "en" }}Left click opens Claude. Right click to choose Claude, ChatGPT, or Grok.{{ else }}Clique abre o Claude. Botão direito pra escolher Claude, ChatGPT ou Grok.{{ end }}">
+      <img class="aor-tldr__marvin" src="/marvin.jpg" alt="" width="40" height="40">
+      <span class="aor-tldr__copy">
+        <strong>{{ if eq $lang "en" }}AI TL;DR{{ else }}TL;DR com IA{{ end }}</strong>
+        <span>{{ if eq $lang "en" }}Too lazy to read? Click here.{{ else }}Se tem preguiça de ler, clique aqui.{{ end }}</span>
+      </span>
+    </a>
   </div>
   <div id="tldr-menu" class="tldr-menu" hidden role="menu" aria-label="{{ if eq $lang "en" }}Choose an AI{{ else }}Escolha uma IA{{ end }}">
     <a href="#" data-provider="claude" role="menuitem" target="_blank" rel="noopener">Claude</a>
