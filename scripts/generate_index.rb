@@ -28,6 +28,7 @@ ALLOWED_TAGS = {
 }.transform_values(&:freeze).freeze
 
 FEATURED_POSTS = [
+  ['2026-10-16', 'Estamos no Futuro: Carros voam e não temos mais que fazer HTML/CSS', '/2026/10/16/estamos-no-futuro-carros-voam-e-nao-temos-mais-que-fazer-html-css/'],
   ['2026-10-14', 'Treinei meu próprio modelo de IA (Spoiler: é só pra estudo)', '/2026/10/14/treinei-meu-proprio-modelo-de-ia-spoiler-e-so-pra-estudo/'],
   ['2026-10-13', 'Auto-publiquei meu próprio Livro/e-book: Competente o Suficiente', '/2026/10/13/auto-publiquei-meu-proprio-livro-ebook-competente-o-suficiente/'],
   ['2026-10-13', 'Engenharia Reversa com IA: a Adobe morreu?', '/2026/10/13/engenharia-reversa-com-ia-a-adobe-morreu/'],
@@ -65,6 +66,7 @@ FEATURED_POSTS = [
 ].freeze
 
 FEATURED_POSTS_EN = [
+  ['2026-10-16', "We're Living in the Future: Cars Fly and We Don't Have to Write HTML/CSS Anymore", '/en/2026/10/16/living-in-the-future-cars-fly-no-more-html-css/'],
   ['2026-10-14', "I Trained My Own AI Model (Spoiler: It's Just for Study)", '/en/2026/10/14/i-trained-my-own-ai-model-spoiler-its-just-for-study/'],
   ['2026-10-13', 'I Self-Published My Own Book/e-book: Competent Enough', '/en/2026/10/13/i-self-published-my-own-book-ebook-competent-enough/'],
   ['2026-10-13', 'AI Reverse Engineering: Is Adobe Dead?', '/en/2026/10/13/ai-reverse-engineering-is-adobe-dead/'],
