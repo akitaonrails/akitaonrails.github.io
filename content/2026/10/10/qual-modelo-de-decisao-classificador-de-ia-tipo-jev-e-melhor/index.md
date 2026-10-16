@@ -4,7 +4,7 @@ slug: "qual-modelo-de-decisao-classificador-de-ia-tipo-jev-e-melhor"
 date: '2026-10-10T12:00:00-03:00'
 draft: false
 translationKey: qual-modelo-de-decisao-classificador-de-ia-tipo-jev-e-melhor
-description: "Rodei meu próprio benchmark de modelos de decisão: Jev, Clef, OpenAI Decisions e Microsoft Decision-1 na nuvem, mais dezoito configurações abertas (Perplexity Decider 27B, Decision 3.0 e Edge, Clef-flash, Kev, Jebadiah, Mapika, Eikos, Laya, Julia, GLiNER, Simple-Jev) no meu Strix Halo, em mais de 22 mil classificações com casos em inglês e português. O topo agora tem dois de pesos abertos: Perplexity e Decision 3.0 empataram em 99,4%, com rótulos idênticos nas 1.024 classificações e 100% em português. O Microsoft Decision-1 empatou com o Jev em 97,6% sendo o hospedado mais barato. Tabela completa, custo em e-mails de suporte, pegadinhas e onde os dados convergem."
+description: "Rodei meu próprio benchmark de modelos de decisão: Jev, Clef, OpenAI Decisions e Microsoft Decision-1 na nuvem, mais dezoito configurações abertas (Perplexity Decider 27B, Decision 3.0 e Edge, Clef-flash, Kev, Jebadiah, Mapika, Eikos, Laya, Julia, GLiNER, Simple-Jev) no meu Strix Halo via ROCm e numa RTX 5090 via CUDA, em mais de 22 mil classificações com casos em inglês e português. O topo agora tem dois de pesos abertos: Perplexity e Decision 3.0 empataram em 99,4%, com rótulos idênticos nas 1.024 classificações e 100% em português. O Microsoft Decision-1 empatou com o Jev em 97,6% sendo o hospedado mais barato. Na 5090 os 4B caem pra 39-91 ms, mais rápidos que qualquer hospedado, e os campeões de 27B nem cabem nos 32 GB da placa. Tabela completa, custo em e-mails de suporte, pegadinhas e onde os dados convergem."
 tags:
 - benchmarks-de-llm
 - modelos-locais
@@ -14,9 +14,9 @@ tags:
 
 Semana passada publiquei [um texto longo sobre o Jev](/2026/10/03/entendendo-o-hype-do-jev-pra-que-serve/), o classificador hospedado da TypeSafe que virou febre em setembro. O resumo daquele texto: o Jev é um classificador, coisa que existe há décadas, e o espanto de "193x mais rápido" só existe porque muita gente vinha usando LLM de chat como classificador caro e lento. Reproduzi o ensaio *O aluno que marca a letra A*, do Paulo Câmara, apresentei as alternativas abertas Clef e Laya, e pra comparar os modelos lado a lado me apoiei no [Decision Index](https://huggingface.co/spaces/multimodalart/jev-decision-index), um ranking público que já existia.
 
-Ranking de terceiro é útil, mas eu queria pôr a mão na massa. Então montei meu próprio benchmark, com casos meus, metade em português, e rodei os modelos abertos no meu [home server com Strix Halo](/2026/03/31/review-minisforum-ms-s1-max-amd-ai-max-395/), o mesmo Ryzen AI Max+ 395 que uso pra testar LLM local. Os hospedados (Jev, os dois Clef da Cloudflare, o OpenAI Decisions e o Microsoft Decision-1 via OpenRouter) rodaram pela API deles. Tudo, incluindo os casos, as respostas brutas e os scripts de pontuação, está público no [repositório do benchmark](https://github.com/akitaonrails/jev-docs-benchmarks).
+Ranking de terceiro é útil, mas eu queria pôr a mão na massa. Então montei meu próprio benchmark, com casos meus, metade em português, e rodei os modelos abertos duas vezes: no meu [home server com Strix Halo](/2026/03/31/review-minisforum-ms-s1-max-amd-ai-max-395/), o mesmo Ryzen AI Max+ 395 que uso pra testar LLM local, via ROCm, e de novo numa RTX 5090 via CUDA. Os hospedados (Jev, os dois Clef da Cloudflare, o OpenAI Decisions e o Microsoft Decision-1 via OpenRouter) rodaram pela API deles. Tudo, incluindo os casos, as respostas brutas e os scripts de pontuação, está público no [repositório do benchmark](https://github.com/akitaonrails/jev-docs-benchmarks).
 
-> **TL;DR:** o topo agora tem dois, ambos de pesos abertos. O **Perplexity Decider 1.1 27B** e o recém-lançado **Decision 3.0** (vLLM Semantic Router) empataram em **99,4%** nos casos compactos, com 100% em português, e rótulos idênticos em todas as 1.024 classificações do benchmark. O preço: uns 49 GB de pesos e mais de um segundo por decisão. Na nuvem, o **Microsoft Decision-1** empatou com o **Jev** em 97,6% custando um terço: é o hospedado mais barato que eu medi, e o primeiro candidato a avaliar. O Jev responde mais rápido e erra diferente. O **OpenAI Decisions** estreou empatado com o melhor 4B local, o Jebadiah, e tem a menor latência hospedada. O **Julia-1**, o menor e mais rápido de todos (12 ms), acertou no nível da moeda: de fábrica, não serve. Pule pra [tabela](#a-tabela-completa), pro [custo em e-mails de suporte](#quanto-custa-em-e-mails-de-suporte), pra [qual usar em qual situação](#qual-modelo-em-qual-situação), pra [quão difícil é rodar local](#quão-difícil-é-rodar-os-melhores-abertos-na-sua-máquina) ou pras [pegadinhas](#destaques-e-pegadinhas).
+> **TL;DR:** o topo agora tem dois, ambos de pesos abertos. O **Perplexity Decider 1.1 27B** e o recém-lançado **Decision 3.0** (vLLM Semantic Router) empataram em **99,4%** nos casos compactos, com 100% em português, e rótulos idênticos em todas as 1.024 classificações do benchmark. O preço: uns 49 GB de pesos e mais de um segundo por decisão. Na nuvem, o **Microsoft Decision-1** empatou com o **Jev** em 97,6% custando um terço: é o hospedado mais barato que eu medi, e o primeiro candidato a avaliar. O Jev responde mais rápido e erra diferente. O **OpenAI Decisions** estreou empatado com o melhor 4B local, o Jebadiah, e tem a menor latência hospedada. O **Julia-1**, o menor e mais rápido de todos (12 ms), acertou no nível da moeda: de fábrica, não serve. E a segunda passada, agora numa **RTX 5090**: os modelos até 9B aceleram de 2× a 10×, o Jebadiah 4B cai pra 39 ms, mais rápido que qualquer hospedado, e os dois campeões de 27B, com uns 49 GB de pesos, nem cabem nos 32 GB da placa. Pule pra [tabela](#a-tabela-completa), pro [custo em e-mails de suporte](#quanto-custa-em-e-mails-de-suporte), pra [qual usar em qual situação](#qual-modelo-em-qual-situação), pra [quão difícil é rodar local](#quão-difícil-é-rodar-os-melhores-abertos-na-sua-máquina), pras [pegadinhas](#destaques-e-pegadinhas) ou pras duas cozinhas do [ROCm x CUDA](#rocm-x-cuda-a-mesma-receita-em-duas-cozinhas).
 
 ## Como eu testei
 
@@ -66,7 +66,7 @@ Dá 504 classificações por modelo.
 
 ### Os 23 competidores
 
-Cinco rodaram na nuvem, pela API oficial: o **Jev** (versão 1.13.0, da TypeSafe), o **Clef** (27B, Cloudflare Workers AI), o **Clef-flash** (9B, idem), o **OpenAI Decisions** (o alias `gpt-6-luna`, em beta público) e o **Microsoft Decision-1** (9B, pós-treinado do Qwen3.5-9B, servido via OpenRouter em Azure). Os outros dezoito rodaram no Strix Halo, via ROCm, com os pesos fixados por hash de commit no Hugging Face, dentro de container Docker. Os três da primeira leva (Laya, Laya typed e Clef-flash) dividiram um container; os demais rodaram um por vez, com o Julia-1 medido duas vezes, em GPU e em CPU. O servidor via 64 GiB de memória endereçável pela GPU.
+Cinco rodaram na nuvem, pela API oficial: o **Jev** (versão 1.13.0, da TypeSafe), o **Clef** (27B, Cloudflare Workers AI), o **Clef-flash** (9B, idem), o **OpenAI Decisions** (o alias `gpt-6-luna`, em beta público) e o **Microsoft Decision-1** (9B, pós-treinado do Qwen3.5-9B, servido via OpenRouter em Azure). Os outros dezoito rodaram no Strix Halo, via ROCm, e depois de novo numa RTX 5090, via CUDA, com os pesos fixados por hash de commit no Hugging Face, dentro de container Docker. Os três da primeira leva (Laya, Laya typed e Clef-flash) dividiram um container; os demais rodaram um por vez, com o Julia-1 medido duas vezes, em GPU e em CPU. O servidor via 64 GiB de memória endereçável pela GPU.
 
 | Modelo | Tamanho nominal | Origem | Onde rodou |
 | --- | ---: | --- | --- |
@@ -100,7 +100,7 @@ Duas observações de protocolo. O **OpenAI Decisions** responde por um endpoint
 
 - Acerto por tarefa, por língua e por condição, sempre em cima das probabilidades por opção que o modelo devolve, ignorando o campo de "confiança" do fornecedor.
 - Brier e ECE pra calibração.
-- Latência mediana e p95 vista pelo cliente, incluindo a rede: WAN pros hospedados, LAN pros locais. São observações de implantação, e comparar hardware exigiria outro teste.
+- Latência mediana e p95 vista pelo cliente, incluindo a rede: WAN pros hospedados, LAN pros locais. Os locais foram medidos nas duas implantações, Strix com ROCm e 5090 com CUDA. São observações de implantação completa, máquina inteira de cada lado; a comparação entre elas não isola o efeito de trocar só o backend.
 - Tokens de entrada reportados pela API, valorados pela tabela de preços de 10 de outubro, antes de qualquer franquia.
 - Intervalos de confiança por bootstrap sobre famílias de cenário, em vez de respostas individuais.
 
@@ -108,33 +108,35 @@ Custo local eu deixei de medir. Energia, amortização do hardware e manutençã
 
 ## A tabela completa
 
-A coluna principal é o acerto nos 168 casos compactos do v2 (84 em inglês, 84 em português). A coluna do v1 usa os 130 cenários originais. Latência é a mediana vista pelo cliente ao longo das 504 chamadas do v2. O custo é o valor de lista por 10 mil decisões compactas, calculado pelos tokens que a API reportou.
+A coluna principal é o acerto nos 168 casos compactos do v2 (84 em inglês, 84 em português). A coluna do v1 usa os 130 cenários originais. Latências são medianas vistas pelo cliente ao longo das 504 chamadas do v2, nas duas implantações locais: ROCm no Strix Halo, CUDA na RTX 5090. Os hospedados não têm hardware meu pra trocar, e os dois 27B não cabem nos 32 GB da 5090. O custo é o valor de lista por 10 mil decisões compactas, calculado pelos tokens que a API reportou.
 
-| Modelo | Compacto EN / PT-BR | Compacto combinado | v1 originais | Latência mediana | 10 mil decisões |
-| --- | ---: | ---: | ---: | ---: | ---: |
-| Perplexity Decider 27B | 98,8% / 100,0% | **99,4%** | 99,2% | 1.547 ms (LAN) | não medido |
-| Decision 3.0 (27B) | 98,8% / 100,0% | **99,4%** | 99,2% | 1.420 ms (LAN) | não medido |
-| Jev | 97,6% / 97,6% | 97,6% | 96,2% | 255 ms (WAN) | US$ 0,19 |
-| Microsoft Decision-1 | 95,2% / 100,0% | 97,6% | 95,4% | 422 ms (WAN) | US$ 0,065 |
-| Clef (27B) | 97,6% / 94,0% | 95,8% | 94,6% | 302 ms (WAN) | US$ 0,63 |
-| Jebadiah 4B v2 | 91,7% / 89,3% | 90,5% | 85,4% | 205 ms (LAN) | não medido |
-| OpenAI Decisions | 90,5% / 90,5% | 90,5% | 93,1% | 222 ms (WAN) | US$ 0,23 |
-| Kev 9B | 92,9% / 83,3% | 88,1% | 87,7% | 561 ms (LAN) | não medido |
-| Clef-flash (9B) hospedado | 91,7% / 83,3% | 87,5% | 90,8% | 394 ms (WAN) | US$ 0,10 |
-| Clef-flash (9B) local | 89,3% / 85,7% | 87,5% | 90,8% | 618 ms (LAN) | não medido |
-| Mapika Decider 4B | 89,3% / 85,7% | 87,5% | 86,9% | 186 ms (LAN) | não medido |
-| Kev 4B | 88,1% / 86,9% | 87,5% | 82,3% | 246 ms (LAN) | não medido |
-| Eikos 4B | 85,7% / 79,8% | 82,7% | 87,7% | 235 ms (LAN) | não medido |
-| Simple-Jev + Qwen3.5 4B | 77,4% / 71,4% | 74,4% | 85,4% | 1.349 ms (LAN) | não medido |
-| Kev 0.8B | 64,3% / 61,9% | 63,1% | 63,1% | 86 ms (LAN) | não medido |
-| Decision 3.0 Edge (0,6B) | 67,9% / 53,6% | 60,7% | 65,4% | 45 ms (LAN) | não medido |
-| GLiNER2.5-Decide (EN) | 54,8% / 50,0% | 52,4% | não rodou | 208 ms (LAN) | não medido |
-| Laya typed-decisions | 50,0% / 35,7% | 42,9% | 43,8% | 43 ms (LAN) | não medido |
-| Laya (EN) | 44,0% / 41,7% | 42,9% | 43,8% | 41 ms (LAN) | não medido |
-| Laya multilingual | 35,7% / 38,1% | 36,9% | 43,8% | 19 ms (LAN) | não medido |
-| GLiNER2.5-multi-Decide | 32,1% / 35,7% | 33,9% | não rodou | 63 ms (LAN) | não medido |
-| Julia-1 (GPU) | 38,1% / 25,0% | 31,5% | 38,5% | **12 ms** (LAN) | não medido |
-| Julia-1 (CPU) | 38,1% / 25,0% | 31,5% | 36,9% | 71 ms (LAN) | não medido |
+| Modelo | Compacto EN / PT-BR | Compacto combinado | v1 originais | Latência ROCm (Strix) | Latência CUDA (5090) | 10 mil decisões |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Perplexity Decider 27B | 98,8% / 100,0% | **99,4%** | 99,2% | 1.547 ms (LAN) | não cabe (49 GB) | não medido |
+| Decision 3.0 (27B) | 98,8% / 100,0% | **99,4%** | 99,2% | 1.420 ms (LAN) | não cabe (48,6 GB) | não medido |
+| Jev | 97,6% / 97,6% | 97,6% | 96,2% | 255 ms (WAN) | – | US$ 0,19 |
+| Microsoft Decision-1 | 95,2% / 100,0% | 97,6% | 95,4% | 422 ms (WAN) | – | US$ 0,065 |
+| Clef (27B) | 97,6% / 94,0% | 95,8% | 94,6% | 302 ms (WAN) | – | US$ 0,63 |
+| Jebadiah 4B v2 | 91,7% / 89,3% | 90,5% | 85,4% | 205 ms (LAN) | **39 ms** | não medido |
+| OpenAI Decisions | 90,5% / 90,5% | 90,5% | 93,1% | 222 ms (WAN) | – | US$ 0,23 |
+| Kev 9B | 92,9% / 83,3% | 88,1% | 87,7% | 561 ms (LAN) | 69 ms | não medido |
+| Clef-flash (9B) hospedado | 91,7% / 83,3% | 87,5% | 90,8% | 394 ms (WAN) | – | US$ 0,10 |
+| Clef-flash (9B) local | 89,3% / 85,7% | 87,5% | 90,8% | 618 ms (LAN) | 86 ms | não medido |
+| Mapika Decider 4B | 89,3% / 85,7% | 87,5% | 86,9% | 186 ms (LAN) | 91 ms | não medido |
+| Kev 4B | 88,1% / 86,9% | 87,5% | 82,3% | 246 ms (LAN) | 67 ms | não medido |
+| Eikos 4B | 85,7% / 79,8% | 82,7% | 87,7% | 235 ms (LAN) | 42 ms | não medido |
+| Simple-Jev + Qwen3.5 4B | 77,4% / 71,4% | 74,4% | 85,4% | 1.349 ms (LAN) | 161 ms | não medido |
+| Kev 0.8B | 64,3% / 61,9% | 63,1% | 63,1% | 86 ms (LAN) | 49 ms | não medido |
+| Decision 3.0 Edge (0,6B) | 67,9% / 53,6% | 60,7% | 65,4% | 45 ms (LAN) | 13 ms | não medido |
+| GLiNER2.5-Decide (EN) | 54,8% / 50,0% | 52,4% | não rodou | 208 ms (LAN) | 20 ms | não medido |
+| Laya typed-decisions | 50,0% / 35,7% | 42,9% | 43,8% | 43 ms (LAN) | 14 ms | não medido |
+| Laya (EN) | 44,0% / 41,7% | 42,9% | 43,8% | 41 ms (LAN) | 13 ms | não medido |
+| Laya multilingual | 35,7% / 38,1% | 36,9% | 43,8% | 19 ms (LAN) | 10 ms | não medido |
+| GLiNER2.5-multi-Decide | 32,1% / 35,7% | 33,9% | não rodou | 63 ms (LAN) | 10 ms | não medido |
+| Julia-1 (GPU) | 38,1% / 25,0% | 31,5% | 38,5% | **12 ms** (LAN) | 7,3 ms | não medido |
+| Julia-1 (CPU) | 38,1% / 25,0% | 31,5% | 36,9% | 71 ms (LAN) | – | não medido |
+
+Sobre a coluna CUDA: os pesos são os mesmos, então o acerto veio igual ou a até dois casos de distância no compacto em todos os modelos. Rótulos individuais viraram em alguns (12 de 504 no pior caso, o Julia; 11 no Simple-Jev), diferença de aritmética de kernel que não mudou placar nenhum, e as probabilidades diferem na terceira casa decimal em média. A tabela fica pelo acerto do Strix; a coluna CUDA só traz latência. O relatório pareado completo, caso a caso, está no [repositório](https://github.com/akitaonrails/jev-docs-benchmarks/blob/master/benchmark/reports/cuda-comparison/results.md).
 
 Pra calibrar a leitura: as tarefas têm três ou quatro opções, então chute uniforme dá uns 31% nos dois conjuntos. "Perto de 50%" aqui já é bem acima da moeda, e "perto de 33%" é a moeda. O Julia-1 ficou em 31,5%: o nome bonito esconde um cara jogando cara-ou-coroa.
 
@@ -212,7 +214,7 @@ O Perplexity Decider 1.1 27B é a surpresa do benchmark. Liderou a tabela com 99
 
 Os únicos 3 erros dele no v2 foram o mesmo caso em traje diferente (confundiu "notificação enviada a gerentes" com "aprovador obrigatório"), e ele os cometeu com confiança abaixo de 0,9: o erro conhecido vem sinalizado. O ponto fraco são as sondagens de probabilidade de evento: perguntado sobre um evento de chance 1 em 4, ele respondeu 0,73. Classificação forte não implica probabilidade de evento confiável.
 
-O custo é hardware: uns 49 GB de pesos em BF16, um segundo e meio por decisão no meu Strix Halo (com os kernels de referência do ROCm, sem flash-attention; num NVIDIA bom deve ser bem mais rápido, mas isso eu não medi). É Apache 2.0, pesos públicos sem gate. Se você tem a máquina e quer o topo da tabela em casa, é ele.
+O custo é hardware: uns 49 GB de pesos em BF16, um segundo e meio por decisão no meu Strix Halo (com os kernels de referência do ROCm, sem flash-attention). E antes de sonhar com "numa NVIDIA deve voar": eu testei, e ele nem cabe numa RTX 5090 de 32 GB. É Apache 2.0, pesos públicos sem gate. Se você tem a máquina e quer o topo da tabela em casa, é ele.
 
 ### Você quer o outro topo aberto: Decision 3.0 (e cuidado com o Edge)
 
@@ -224,7 +226,7 @@ O irmão pequeno é outra história. O **Decision 3.0 Edge** (0,6B) responde em 
 
 ### Você precisa rodar local, com qualidade: Jebadiah 4B v2
 
-Dos locais, o Jebadiah 4B v2 teve o melhor acerto compacto, 90% combinado, respondendo em uns 200 ms. Empatou com o Jev em seis das catorze células de tarefa, incluindo intenção, implicação e status em inglês e intenção em português. O ponto fraco é política por limiar numérico, 9 de 12 nas duas línguas, e ele perde terreno quando o contexto enche de distratores (76% em português nessa condição, contra 82% do Mapika).
+Dos locais, o Jebadiah 4B v2 teve o melhor acerto compacto, 90% combinado, respondendo em uns 200 ms no Strix Halo e **39 ms na RTX 5090**. Numa 5090, ele fica mais rápido que qualquer hospedado do benchmark, Jev incluso (255 ms de WAN): com o hardware certo, o local deixou de ser o lado lento da tabela. Empatou com o Jev em seis das catorze células de tarefa, incluindo intenção, implicação e status em inglês e intenção em português. O ponto fraco é política por limiar numérico, 9 de 12 nas duas línguas, e ele perde terreno quando o contexto enche de distratores (76% em português nessa condição, contra 82% do Mapika).
 
 O **Mapika Decider 4B** (o mais rápido dos 4B) e o **Kev 4B** ficam logo atrás, ambos com uns 87%, e a diferença de 3 pontos entre os três cabe dentro do intervalo de erro. São três receitas de treino diferentes em cima de backbones de 4B, com erros em tarefas diferentes. A escolha entre eles depende da sua tarefa, e eu rodaria os três num piloto.
 
@@ -238,7 +240,7 @@ Se o seu uso é só a regra e o texto, o 4B basta e é mais que o dobro mais rá
 
 No conjunto v1, o Clef-flash local reproduziu as 520 classificações do hospedado, acerto por acerto e erro por erro. No v2 a história mudou: mesmo total (439 de 504), mas 19 rótulos diferentes, com forças trocadas (o local acerta mais intenção em português, o hospedado acerta mais relevância). Entre os locais ele continua o melhor no conjunto v1 de políticas operacionais (90,8%), à frente de todos os 4B.
 
-A pegadinha é a latência: 618 ms de mediana no Strix Halo, três vezes o Jebadiah, pelo mesmo acerto no v2. Se você escolher ele, é pelo comportamento conhecido.
+A pegadinha é a latência: 618 ms de mediana no Strix Halo (86 ms na 5090), três vezes o Jebadiah, pelo mesmo acerto no v2. Se você escolher ele, é pelo comportamento conhecido.
 
 ### Você precisa rodar offline em hardware fraco: Laya e Julia, com muitas ressalvas
 
@@ -246,7 +248,7 @@ O Laya multilingual foi o pior do benchmark em acerto (37% combinado, perto da m
 
 Os três checkpoints do Laya têm entre 322 e 421 milhões de parâmetros, cabem em menos de 1 GB de pesos em BF16 na conta de parâmetros, e o projeto documenta execução em CPU e runtime ONNX (que eu deixei de medir). O pico de alocação do PyTorch na GPU, pro multilingual, ficou abaixo de 2 GB. Um 4B precisa de uns 8 GB só de pesos na mesma precisão.
 
-O **Julia-1** desce mais um degrau: 144 milhões de parâmetros, 550 MB de pesos, 12 ms de mediana na GPU e 71 ms numa CPU de 4 threads. É o modelo mais rápido que eu já medi aqui, e também o pior: 31,5% de acerto, colado na linha da moeda de 31%. Em português ele respondeu "cancelamento" nos 12 cenários de intenção, inclusive nos que pediam reembolso ou acesso (a avaliação de português do fabricante foi feita em pt-PT, e se nota). O desastre maior é a confiança: dos 71 palpites que ele deu acima de 0,9, 48 estavam errados. Um limiar de confiança não salva esse modelo, porque é justamente nos palpites confiantes que ele erra.
+O **Julia-1** desce mais um degrau: 144 milhões de parâmetros, 550 MB de pesos, 12 ms de mediana na GPU do Strix, 7 ms na 5090 e 71 ms numa CPU de 4 threads. É o modelo mais rápido que eu já medi aqui, e também o pior: 31,5% de acerto, colado na linha da moeda de 31%. Em português ele respondeu "cancelamento" nos 12 cenários de intenção, inclusive nos que pediam reembolso ou acesso (a avaliação de português do fabricante foi feita em pt-PT, e se nota). O desastre maior é a confiança: dos 71 palpites que ele deu acima de 0,9, 48 estavam errados. Um limiar de confiança não salva esse modelo, porque é justamente nos palpites confiantes que ele erra.
 
 Isso é escolha de projeto. O Laya e o Julia foram feitos pra ser encoders pequenos, afináveis na sua tarefa, pra rodar na borda. O que eu testei foram os checkpoints de fábrica, sem nenhum ajuste, aplicando regras que eles nunca viram, em tarefas amplas. Nesse cenário eles foram mal e ponto.
 
@@ -258,7 +260,7 @@ Um detalhe confirma a fragilidade. No v1, quando o comentário malicioso do revi
 
 O Simple-Jev lendo tokens do Qwen3.5 4B, sem treino de decisão nenhum, tirou 74% no v2 compacto. Isso é a régua de "quanto o treino especializado compra": Jebadiah, Mapika e Kev, todos em cima de backbones de tamanho parecido, ficaram 13 a 16 pontos acima. O treino compra bastante.
 
-O curioso é que no v1 o Simple-Jev empatou com o Jebadiah (111 de 130 originais) e acertou os dois tickets críticos sem ambiguidade, que vários modelos melhores erraram. Ele também é o mais lento do lote, quase um segundo e meio por decisão, porque está rodando um LLM inteiro.
+O curioso é que no v1 o Simple-Jev empatou com o Jebadiah (111 de 130 originais) e acertou os dois tickets críticos sem ambiguidade, que vários modelos melhores erraram. Ele também é o mais lento do lote no Strix Halo, quase um segundo e meio por decisão, porque está rodando um LLM inteiro. Na 5090 o mesmo LLM inteiro cai pra 161 ms: a linha de base acelera junto com a máquina, que é o que ela deveria fazer.
 
 ## Quão difícil é rodar os melhores abertos na sua máquina
 
@@ -306,7 +308,7 @@ curl -s http://localhost:8000/v1/systemone -H 'content-type: application/json' -
 }'
 ```
 
-A resposta traz a opção e a distribuição de probabilidade, e é nela que você aplica o seu limiar, loga e decide se manda pra revisão humana. Num NVIDIA com CUDA e 16 GB de VRAM, um 4B em BF16 sobe sem drama. Os pesos pesam uns 8 GB.
+A resposta traz a opção e a distribuição de probabilidade, e é nela que você aplica o seu limiar, loga e decide se manda pra revisão humana. Num NVIDIA com CUDA e 16 GB de VRAM, um 4B em BF16 sobe sem drama. Os pesos pesam uns 8 GB. Na 5090, os 4B que testei respondem em 39 a 91 ms.
 
 ### Laya e Julia: menores ainda
 
@@ -319,7 +321,7 @@ O **Julia-1** é parecido em espírito: um runtime Python próprio, uma chamada 
 No meu caso o hardware é AMD, e aí o "um comando" vira um dia de trabalho. Os pontos que me custaram tempo, pra você economizar o seu:
 
 - Nenhum desses projetos testa em ROCm. O Kev tinha um segfault específico do gfx1151 por causa de CUDA graphs ([issue 170](https://github.com/jaredpalmer/kev/issues/170)), corrigido só depois da tag 1.0, então a versão fixada é um commit do main e a tag oficial crasha.
-- Os kernels Triton de flash-linear-attention que o Qwen3.5 usa nas camadas DeltaNet são sem suporte testado no gfx1151. Tudo rodou no caminho de PyTorch puro, mais lento que a latência publicada em CUDA. Os 200 ms do Jebadiah que aparecem na tabela são com esse freio de mão puxado.
+- Os kernels Triton de flash-linear-attention que o Qwen3.5 usa nas camadas DeltaNet são sem suporte testado no gfx1151. Tudo rodou no caminho de PyTorch puro, mais lento que a latência publicada em CUDA. Os 200 ms do Jebadiah que aparecem na tabela são com esse freio de mão puxado; na 5090, com o mesmo protocolo e os mesmos pesos, o freio some e ele faz 39 ms.
 - O Mapika Decider força CUDA graphs quando vê o device "cuda", que no ROCm também se chama "cuda". Precisei desligar na mão.
 - Precisa exportar `HSA_OVERRIDE_GFX_VERSION=11.5.1` e `PYTORCH_ROCM_ARCH=gfx1151` e usar uma imagem base com o torch de ROCm já validado. Um `pip install torch` qualquer sobrescreve com a build de CUDA e quebra tudo. No meu Dockerfile cada pacote é instalado com `--no-deps` e o build falha se o torch deixar de ser o de ROCm.
 - Um modelo por container, um container por vez. O Strix Halo tem memória compartilhada entre CPU e GPU, e três modelos de 4B residentes mais o Ollama que já roda ali esgotam os 64 GiB que a GPU enxerga.
@@ -327,7 +329,36 @@ No meu caso o hardware é AMD, e aí o "um comando" vira um dia de trabalho. Os 
 
 Nada disso é impossível, e está tudo documentado, com Dockerfiles, compose e os hashes de cada checkpoint, no [guia de setup do repositório](https://github.com/akitaonrails/jev-docs-benchmarks/blob/master/docs/setup.md). Só que é um custo real que a planilha de "local é de graça" nunca inclui. Se a sua máquina é NVIDIA, a maior parte dessa lista some.
 
-> O Clef completo de 27B eu nem tentei local: são uns 54 GB de pesos em BF16 antes de qualquer ativação. O Perplexity, com 49 GB, provou que um 27B sobe no Strix Halo, ao custo de um segundo e meio por decisão com os kernels de referência. O Clef-flash de 9B roda, com uns 18 GB de pesos. Os de 4B são o ponto doce pra hardware de consumidor.
+> O Clef completo de 27B eu nem tentei local: são uns 54 GB de pesos em BF16 antes de qualquer ativação. O Perplexity, com 49 GB, provou que um 27B sobe no Strix Halo, ao custo de um segundo e meio por decisão com os kernels de referência. E nem cabe na RTX 5090: 49 GB não entram em 32. O Clef-flash de 9B roda, com uns 18 GB de pesos. Os de 4B são o ponto doce pra hardware de consumidor.
+
+### ROCm x CUDA: a mesma receita em duas cozinhas
+
+Todos os modelos locais acima rodaram duas vezes, em duas máquinas minhas. De um lado, o minisforum MS-S1 Max com Strix Halo: Ryzen AI Max+ 395, 64 GiB endereçáveis pela GPU, via ROCm. Do outro, um PC com RTX 5090 (32 GB GDDR7) num Ryzen 7950X3D com 92 GB de RAM, via CUDA. Mesmos checkpoints por hash, mesmos requests, PyTorch 2.9.1 dos dois lados (build ROCm do fornecedor num, cu128 oficial no outro), kernels de referência, sem CUDA graphs, sem quantização, um modelo por vez, protocolo congelado em git antes de qualquer inferência.
+
+Honestidade antes dos números: **isso não é comparação de maçã com maçã.** São duas implantações inteiras, com GPU, CPU, build e rede diferentes. A 5090 é uma placa absurdamente mais poderosa que a iGPU do Strix. O Strix é uma máquina completa (CPU, RAM, disco, fonte) que custa o que custa só a placa da NVIDIA. O que a comparação mede é a escolha real: qual máquina pra qual modelo.
+
+| | RTX 5090 | Strix Halo (MS-S1 Max) |
+| --- | --- | --- |
+| Preço de referência | US$ 1.999 de MSRP, só a placa (no varejo, quase sempre mais) | ~US$ 1.500-2.000 a máquina completa, dependendo da RAM |
+| Memória | 32 GB GDDR7 dedicados, 1.792 GB/s | 64 GiB unificada endereçável pela GPU |
+| Faixa de modelo | tudo até 9B em BF16, voando | tudo até 27B em BF16, devagar |
+| Os campeões de 27B | **não cabem** | 1,4-1,5 s por decisão |
+
+O resultado em uma linha: a 5090 foi de 1,7× a 10,3× mais rápida em tudo que coube nela, e os campeões do benchmark não couberam. Os detalhes que valem:
+
+**O placar de acerto não mudou.** Mesmos pesos, mesma pontuação até dois casos de distância por modelo. Alguns rótulos individuais viraram (12 de 504 no pior caso, o Julia; 11 no Simple-Jev), diferença de aritmética de kernel, e as probabilidades diferem na terceira casa decimal em média. Toda conclusão de qualidade da tabela vale pras duas máquinas.
+
+**Os campeões de 27B não cabem na 5090.** O d3 pesa 48,6 GB e o Perplexity 49 GB em BF16, contra 31,8 GB de VRAM. A placa de consumo mais rápida do mercado não roda os melhores modelos abertos na mesma precisão. Quem quer os 99,4% em casa hoje compra memória, e memória unificada é exatamente o que o Strix vende. Fazer offload pra RAM do PC é outro experimento, que eu não medi e não conto como vitória de ninguém.
+
+**O Jebadiah a 39 ms é o resultado prático mais importante.** 90,5% de acerto, mais rápido que qualquer hospedado, Jev incluso. Na faixa de até 9B, a 5090 transforma modelos locais na opção mais rápida e mais barata de todas, e a diferença pro Strix (205 ms) é de mundo inteiro: 5,3×.
+
+**Modelo pequeno nem sente.** Os três minúsculos (Julia, Laya multilingual, Kev 0.8B) melhoraram só 1,7× a 1,8×. Eles já eram limitados por overhead de runtime, com um pé na CPU, não por falta de GPU. Comprar uma 5090 pra servir encoder de 300M é comprar foguete pra buscar pão na padaria.
+
+**O maior ganho foi do pior modelo.** O GLiNER2.5-Decide acelerou 10,3× (208 pra 20 ms). Continua errando igual, só que rápido. A correlação entre "quanto o modelo melhora na 5090" e "quanto o modelo presta" é negativa nesta amostra, porque os modelos maiores e mais úteis são justamente os que mais tinham pra destravar.
+
+**A linha de base escala junto.** O Simple-Jev, que é um LLM de 4B inteiro lendo token, foi de 1.349 pra 161 ms (8,4×), chegando perto do Kev 9B no Strix. E o Mapika decepcionou comparado aos irmãos: 2× (186 pra 91 ms), o menor ganho dos 4B, sinal de que o runtime dele já era enxuto no Strix.
+
+Fechando a conta de custo-benefício: pelo preço de só a placa 5090 você leva o minisforum inteiro. Se o seu trabalho é modelo de até 9B com latência de dezenas de milissegundos, a 5090 justifica cada dólar e o ROCm nem entra na discussão. Se o seu alvo é o topo de 27B rodando em casa, hoje a memória do Strix é o único caminho das duas máquinas, e um segundo e meio por decisão é o pedágio. A pergunta certa não é "CUDA ou ROCm". É "velocidade ou capacidade".
 
 ## Destaques e pegadinhas
 
@@ -357,7 +388,7 @@ Nada disso é impossível, e está tudo documentado, com Dockerfiles, compose e 
 
 1. **O topo geral é de pesos abertos, e agora são dois.** O Perplexity Decider 27B e o Decision 3.0 empataram em 99,4% nos compactos, com 100% em português e rótulos idênticos nas 1.024 classificações, os dois com pesos Apache 2.0 rodando na minha máquina. A vantagem deles sobre o Jev é de menos de 2 pontos e o intervalo encosta no zero, então trate como fotografia deste conjunto. O custo deles é hardware e latência, não API. Na nuvem, a ordem de avaliação mudou: **comece pelo Microsoft Decision-1**, que empata com o Jev no agregado, fecha 100% em português compacto e custa um terço. O Jev entra em seguida, mais rápido e com erros diferentes, porque empate no agregado não é intercambiabilidade. O OpenAI Decisions ficou no meio do caminho em preço e acerto.
 
-2. **Rodar local ficou viável em 4B.** Jebadiah, Mapika e Kev 4B entregam entre 87 e 90% nos casos compactos com latência de 200 ms numa máquina de mesa, e num piloto com a sua tarefa qualquer um dos três pode ganhar. Se a sua máquina aguenta 49 GB de pesos, o Perplexity entrega o topo da tabela em casa. A conta financeira justifica usar a máquina que já existe, por controle de dado ou por obrigação de ficar offline. Comprar máquina pra isso ela deixa de justificar.
+2. **Rodar local ficou viável em 4B.** Jebadiah, Mapika e Kev 4B entregam entre 87 e 90% nos casos compactos com latência de 200 ms no Strix Halo e 40 a 91 ms na RTX 5090, e num piloto com a sua tarefa qualquer um dos três pode ganhar. Se a sua máquina aguenta 49 GB de pesos, o Perplexity entrega o topo da tabela em casa. A conta financeira justifica usar a máquina que já existe, por controle de dado ou por obrigação de ficar offline. Comprar máquina pra isso ela deixa de justificar.
 
 3. **Modelo pequeno é outra categoria.** Julgar o Laya e o Julia pela coluna de acerto é ler a tabela errada. Eles erram da metade pra cima de fábrica, caem feio sob comentário malicioso, e junto com o d3-edge são os únicos da lista que cabem num dispositivo fraco e respondem em dezenas de milissegundos. O Edge é o melhor dos três em acerto (61%), mas despenca em português e erra um em cada cinco palpites confiantes. Se precisão tipo Jev é requisito, risque os três. Se rodar offline em hardware pequeno é requisito, risque todo o resto e comece pelo ajuste fino deles na sua tarefa, que é a medição que falta. E cuidado com o Julia e o Edge em particular: 48 erros em 71 e 14 em 68 palpites confiantes são o retrato de modelos que não sabem o que não sabem.
 
