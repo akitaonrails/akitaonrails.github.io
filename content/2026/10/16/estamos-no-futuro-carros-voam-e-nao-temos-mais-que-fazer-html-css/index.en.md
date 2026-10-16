@@ -57,6 +57,8 @@ The result won't win a design award. A professional designer would still find hu
 
 Six existing sites redesigned, responsive, with SEO, image generation and replacement, HTML, CSS, and JavaScript adjustments, testing, and production deployment. One person. About a day. A year ago, that package would have taken weeks or months.
 
+Keep the scale in perspective: these are small sites, mostly landing pages and content pages. Nobody is rebuilding Amazon.com's entire collection of pages and systems in a day. The experiment shows how much repetitive work has already moved out of the way within a scope that one experienced person can understand and review. Large projects remain large, full of private rules, old integrations, strange states, and decisions that do not fit in a prompt.
+
 ## Even the first proofreading pass can be automated
 
 As part of the same process, I had agents review the sites as different readers. This wasn't grammar correction. I wanted to know what someone would understand in the first few seconds, where they would get lost, which promise would sound suspicious, and whether they could complete a task without already knowing the product.
@@ -148,6 +150,10 @@ Now I describe the intention, show references, evaluate the result, and tell the
 
 Today, every Tier A model I test, from Claude to Kimi, can reliably execute the mechanical front-end work that appeared in these six projects. I can say without hesitation that any front-end task that merely turns an already-made decision into code is automatable. They needed direction to create the six designs. None required me to hand-write the flexbox, breakpoint, or component I had already explained.
 
+That covers an enormous share of the work while leaving the most valuable part. Someone still has to know the framework's tradeoffs, understand the browser, choose the architecture, notice when a library is being forced against its design, and find out why an apparently correct solution breaks under a particular combination of device, language, state, and real data. The agent writes the code; an experienced professional provides direction, limits the damage, and owns the result.
+
+Front-end still exists. The excess mechanical work and the people hired only to follow a finished recipe lose value. A great front-end professional can direct agents and deliver far more than they could alone. A mediocre professional who spent years mistaking component typing for engineering will compete for fewer openings. The market gets smaller and more selective, with its best professionals producing more. The goal remains what it always was: get close to the top, where judgment and experience still make a difference.
+
 And it doesn't stop at the browser. [Pick the framework](/en/2026/10/11/are-there-better-languages-for-programming-with-llms/): Android with Flutter or Kotlin, iOS with Swift and SwiftUI, desktop with Rust/Tauri, Flutter, C#, or Electron. Modern agents generally know the components, build tools, tests, and peculiarities of these platforms. They still need direction, feedback, and verification, just as they do on the web front-end. The mechanical part is already automatable.
 
 I tested this in my own small open-source projects. [FrankYomik](https://github.com/akitaonrails/FrankYomik) has a Flutter client for Android and Linux, plus the server and extension. [Frank Sherlock](https://github.com/akitaonrails/FrankSherlock) is a Rust/Tauri desktop app that produces an AppImage for Linux, a DMG for macOS, and a `.exe` installer for Windows. I also built [Frank Karaoke](https://github.com/akitaonrails/frank_karaoke) in Flutter for Android and [FRANK MANGA+](https://github.com/akitaonrails/frank_mangaplus) in Rust/Tauri for desktop. There are several others on [my GitHub](https://github.com/akitaonrails?tab=repositories).
@@ -178,6 +184,14 @@ The real story is messier than the caricature. The [ILO shows that technology te
 
 Compare 2026 with 1926, three years before the crash of 1929. It looks like another planet, even though a century is very little on history's scale. No contract guarantees that your current function will survive the next ten years, much less the next forty.
 
+## How does a junior gain experience now?
+
+It will get harder. The old ladder began with someone paying a beginner to assemble simple screens, fix CSS, and copy components. An agent does much of that faster and cheaper. No company has an obligation to preserve inefficient work as a training program.
+
+Beginners will have to build their own ladder with real projects and problems they are responsible for. That includes reading the code the agent generated, breaking and repairing it, studying documentation and source code, writing tests, and contributing to open projects. An agent gives any student access to an amount of practice that once required a team. Anyone who uses that access only to generate code they do not understand will remain a junior for a long time.
+
+The market will reward people who make that extra effort. It always has. When someone asks how a junior can gain experience without the easy tasks, the hidden question is often different: "how do I get a better salary without doing the hard work of getting good?" The easy position, with rising pay and little pressure, was a distortion of the bubble. Adapting includes accepting that entry has become more competitive.
+
 ## My career never stayed in one place
 
 [I started with multimedia and static websites](/2023/02/14/akitando-138-meu-comeco-de-carreira-durante-a-bolha-1997-a-2002-bug-do-milenio-crash/). Then I worked in a digital agency, enterprise consulting, SAP integration, startups, video, education, and now AI. In my [Akitando episode about SAP](/2018/12/26/akitando-34-voce-nao-sabe-nada-de-enterprise-conhecendo-a-sap/), I tell part of that phase when I had to learn a world completely different from what I had done before.
@@ -194,7 +208,7 @@ I spent years talking about this on Akitando. Revisit the [**I Warned You**](htt
 
 The world has no shortage of opportunity. Most people feel they never get one because they are always unprepared when it appears. Once the opportunity lands in front of you, it is too late to start preparing.
 
-So I won't mourn the fact that work that used to take months fit into about a day. I'm happy as hell. I gained time to think about what to build, experiment more, and throw away bad versions without wasting weeks of my life.
+So I won't mourn the fact that this package of six small sites, which used to take weeks or months, fit into about a day. I'm happy as hell. I gained time to think about what to build, experiment more, and throw away bad versions without wasting weeks of my life.
 
 Today I watched a car spin in midair and land. In about a day, I put six sites with new designs into production without writing most of the HTML and CSS. The future I wanted did not arrive perfect, cheap, or evenly distributed. It arrived far enough for me to work with it.
 

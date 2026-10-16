@@ -57,6 +57,8 @@ O resultado não vai ganhar prêmio de design. Um designer profissional ainda en
 
 Seis sites existentes redesenhados, responsivos, com SEO, geração e substituição de imagens, ajustes de HTML, CSS e JavaScript, teste e deploy em produção. Uma pessoa. Cerca de um dia. Um ano atrás, esse pacote seria trabalho de semanas ou meses.
 
+Vamos manter a proporção: são sites pequenos, a maioria landing pages e páginas de conteúdo. Ninguém vai recriar o conjunto inteiro de páginas e sistemas da Amazon.com em um dia. O experimento mostra quanto trabalho repetitivo já saiu da frente, dentro de um escopo que uma pessoa experiente consegue entender e revisar. Projetos grandes continuam grandes, cheios de regras privadas, integrações antigas, estados estranhos e decisões que não cabem num prompt.
+
 ## Até o primeiro proofreading pode ser automatizado
 
 No mesmo processo eu mandei agentes revisarem os sites como leitores diferentes. Não era correção gramatical. Eu queria saber o que uma pessoa entenderia nos primeiros segundos, onde ficaria perdida, qual promessa pareceria suspeita e se conseguiria completar uma tarefa sem já conhecer o produto.
@@ -148,6 +150,10 @@ Agora eu descrevo a intenção, mostro referências, avalio o resultado e mando 
 
 Hoje, todos os modelos Tier A que eu testo, de Claude a Kimi, conseguem executar com confiabilidade o trabalho mecânico de front-end que apareceu nesses seis projetos. Eu consigo afirmar, sem hesitar, que qualquer tarefa de front-end que só transforma uma decisão já tomada em código é automatizável. Eles não inventaram seis designs brilhantes sozinhos, porém nenhum precisou que eu escrevesse manualmente o flexbox, o breakpoint ou o componente que já expliquei.
 
+Isso cobre uma parcela enorme do trabalho, mas deixa justamente a parte de maior valor. Alguém ainda precisa conhecer os prós e contras do framework, entender o browser, escolher a arquitetura, perceber quando a biblioteca está sendo usada contra o seu desenho e descobrir por que uma solução aparentemente correta quebra numa combinação específica de aparelho, idioma, estado e dado real. O agente escreve o código; um profissional experiente dá direção, limita o estrago e assume o resultado.
+
+Front-end continua existindo. O excesso de trabalho mecânico e de gente contratada só pra executar receita pronta é que perde valor. Um ótimo profissional de front-end consegue dirigir agentes e entregar muito mais do que entregava sozinho. Um profissional mediano que passou anos confundindo digitação de componente com engenharia vai disputar menos vagas. O mercado fica menor e mais seletivo, com os melhores profissionais produzindo mais. A meta continua a mesma de sempre: chegar perto do topo, onde julgamento e experiência ainda fazem diferença.
+
 E isso não para no browser. [Escolha o framework](/2026/10/11/existem-linguagens-melhores-pra-programar-com-llms/): Android com Flutter ou Kotlin, iOS com Swift e SwiftUI, desktop com Rust/Tauri, Flutter, C# ou Electron. Em geral, agentes modernos conhecem os componentes, as ferramentas de build, os testes e as peculiaridades dessas plataformas. Ainda precisam de direção, feedback e verificação, exatamente como no front-end web. A parte mecânica já é automatizável.
 
 Eu testei isso nos meus próprios projetos pequenos e abertos. O [FrankYomik](https://github.com/akitaonrails/FrankYomik) tem um cliente Flutter pra Android e Linux, além do servidor e da extensão. O [Frank Sherlock](https://github.com/akitaonrails/FrankSherlock) é um app desktop em Rust/Tauri que gera AppImage pra Linux, DMG pra macOS e instalador `.exe` pra Windows. Também fiz o [Frank Karaoke](https://github.com/akitaonrails/frank_karaoke) em Flutter pra Android e o [FRANK MANGA+](https://github.com/akitaonrails/frank_mangaplus) em Rust/Tauri pra desktop. Há vários outros no [meu GitHub](https://github.com/akitaonrails?tab=repositories).
@@ -178,6 +184,14 @@ A história real é menos limpa do que a caricatura. A [OIT mostra que a tecnolo
 
 Compare 2026 com 1926, três anos antes do crash de 1929. Parece outro planeta, embora um século seja muito pouco na escala da história. Não existe contrato garantindo que a sua função atual sobreviva aos próximos dez anos, muito menos aos próximos quarenta.
 
+## E como um júnior ganha experiência agora?
+
+Vai ficar mais difícil. A escada antiga começava com alguém pagando um iniciante pra montar tela simples, corrigir CSS e copiar componente. O agente faz boa parte disso mais rápido e barato. Empresa nenhuma tem obrigação de preservar trabalho ineficiente como programa de treinamento.
+
+O iniciante vai ter que construir a própria escada com projetos reais e problemas pelos quais ele seja responsável. Isso inclui ler o código que o agente gerou, quebrar e consertar, estudar documentação e código-fonte, escrever testes e contribuir com projetos abertos. O agente dá a qualquer estudante acesso a uma quantidade de prática que antes exigia uma equipe. Quem usar isso só pra gerar código que não entende vai continuar júnior por muito tempo.
+
+O mercado vai premiar quem fizer esse esforço extra. Sempre premiou. Quando alguém pergunta como o júnior vai ganhar experiência sem as tarefas fáceis, muitas vezes a pergunta escondida é outra: "como eu consigo um salário melhor sem passar pelo trabalho difícil de ficar bom?" A vaga fácil, com salário crescente e pouca cobrança, foi uma distorção da bolha. Adaptar-se inclui aceitar que a entrada ficou mais competitiva.
+
 ## Minha carreira nunca ficou no mesmo lugar
 
 [Comecei com multimídia e sites estáticos](/2023/02/14/akitando-138-meu-comeco-de-carreira-durante-a-bolha-1997-a-2002-bug-do-milenio-crash/). Depois trabalhei em agência digital, consultoria enterprise, integração de SAP, startups, vídeo, educação e, agora, IA. No [Akitando sobre SAP](/2018/12/26/akitando-34-voce-nao-sabe-nada-de-enterprise-conhecendo-a-sap/), eu conto parte dessa fase em que precisei aprender um mundo completamente diferente do que fazia antes.
@@ -194,7 +208,7 @@ Eu passei anos falando disso no Akitando. Reveja as playlists [**Eu Avisei**](ht
 
 O mundo não tem falta de oportunidade. A maioria das pessoas sente que nunca recebe uma porque está sempre despreparada quando ela aparece. Quando a oportunidade pousa na sua frente, já é tarde pra começar a preparação.
 
-Portanto, eu não vou lamentar que o trabalho que levava meses coube em um dia. Estou feliz pra cacete. Ganhei tempo pra pensar no que construir, experimentar mais e jogar fora versões ruins sem desperdiçar semanas de vida.
+Portanto, eu não vou lamentar que o pacote desses seis sites pequenos, que antes tomaria semanas ou meses, tenha cabido em cerca de um dia. Estou feliz pra cacete. Ganhei tempo pra pensar no que construir, experimentar mais e jogar fora versões ruins sem desperdiçar semanas de vida.
 
 Hoje eu vi um carro girar no ar e pousar. Em cerca de um dia, coloquei seis sites com visual novo em produção sem escrever a maior parte do HTML e CSS. O futuro que eu queria não chegou perfeito, barato nem distribuído igualmente. Mas chegou o bastante pra eu trabalhar com ele.
 
