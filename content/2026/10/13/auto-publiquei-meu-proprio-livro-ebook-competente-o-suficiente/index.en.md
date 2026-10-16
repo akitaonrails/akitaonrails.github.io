@@ -269,6 +269,16 @@ Those episodes are background sources, and `drift` now watches them as it watche
 
 Three or four readers flagged the same lines as showing off, and they went: "The warnings have dates", "more than thirty public repositories", "the most watched on my channel". The self-deprecating lines and the admitted mistakes all counted in my favor. And the check found contradictions I hadn't seen myself: the preface said "late 90s" and chapter 18 said 1996; one chapter said "eight months" and another "a year of daily use", and they were fixed one by one.
 
+## Accessibility is part of the build too
+
+An EPUB opening on a Kindle does not make it accessible. This book has dozens of diagrams, charts and tables. Without additional work, much of the argument simply disappears for anyone using a screen reader.
+
+The pipeline now treats accessibility as a publishing contract. Each of the 55 figures, in both languages, has a short alternative text and a complete description of what the image communicates. In HTML and EPUB, the detailed description appears with the figure; in PDF, it becomes its semantic replacement without changing the layout. Tables have captions, and the EPUB now identifies where the main text, glossary, references and image credits begin in its semantic navigation. The authoring contract is [documented in the repository](https://github.com/akitaonrails/ai-book-2026/blob/main/docs/ACCESSIBILITY.md).
+
+This doesn't depend on my memory either. `rake check` rejects figures without both descriptions or with overly long alternative text. Every build validates both EPUBs with EPUBCheck, DAISY Ace and the project's own checks. The Kindle edition also goes through a cleanup of CSS and embedded icons that tend to cause problems in Amazon's readers, but the script refuses to remove any rule the content has come to depend on.
+
+No automated tool can certify WCAG conformance or guarantee how every reader on the market will behave. Manual review remains mandatory. The difference is that accessibility is now part of the build, and every change has to preserve that contract.
+
 ## What remains mine
 
 The repository records the first commit and the draft of every chapter on the same day, October 13. Those are the first ten percent, the ones that impress and say almost nothing about the rest. The other ninety percent are reading, cutting and correcting, and that part is mine. No chapter goes in without me reading and approving it, and what I send back to be redone goes through the same process.
@@ -281,12 +291,12 @@ And, once again: making a book with AI isn't a "write me a book" prompt and done
 
 ## Download it, read it, and tell me where I was wrong
 
-Both editions, in three formats each, straight from GitHub, no sign-up. The current version is 1.0.0-preview.5, from October 14, with everything this text describes:
+Both editions, in three formats each, straight from GitHub, no sign-up. The current version is 1.0.0-preview.8, from October 15, with everything this text describes:
 
 | Edition | EPUB (Kindle, Kobo, Apple Books) | Screen PDF | Print PDF (6 × 9 in) |
 | --- | --- | --- | --- |
-| Competent Enough (EN) | [EPUB](https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0-preview.5/Competent-Enough.epub) | [PDF](https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0-preview.5/Competent-Enough-ebook.pdf) | [PDF](https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0-preview.5/Competent-Enough.pdf) |
-| Competente o Suficiente (PT-BR) | [EPUB](https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0-preview.5/Competente-o-Suficiente.epub) | [PDF](https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0-preview.5/Competente-o-Suficiente-ebook.pdf) | [PDF](https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0-preview.5/Competente-o-Suficiente.pdf) |
+| Competent Enough (EN) | [EPUB](https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0-preview.8/Competent-Enough.epub) | [PDF](https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0-preview.8/Competent-Enough-ebook.pdf) | [PDF](https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0-preview.8/Competent-Enough.pdf) |
+| Competente o Suficiente (PT-BR) | [EPUB](https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0-preview.8/Competente-o-Suficiente.epub) | [PDF](https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0-preview.8/Competente-o-Suficiente-ebook.pdf) | [PDF](https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0-preview.8/Competente-o-Suficiente.pdf) |
 
 The latest version, always, lives on the [book page](https://ailair.akitaonrails.com/book/) and on the [GitHub releases](https://github.com/akitaonrails/ai-book-2026/releases).
 
