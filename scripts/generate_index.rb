@@ -496,7 +496,7 @@ end
 def generate_akitando(grouped_posts)
   lines = ["#{FRONTMATTER_DELIMITER}\ntitle: Akitando - Transcrições\n#{FRONTMATTER_DELIMITER}\n"]
   lines << ''
-  lines << 'Transcrições dos episódios do canal [Akitando](https://www.youtube.com/c/akitando) no YouTube.'
+  lines << 'Transcrições dos episódios do canal [Akitando](https://www.youtube.com/@Akitando/) no YouTube.'
   lines << ''
   lines.concat(render_index_views(grouped_posts, lang: :pt))
   lines.join("\n")

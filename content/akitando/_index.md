@@ -3,7 +3,7 @@ title: Akitando - Transcrições
 ---
 
 
-Transcrições dos episódios do canal [Akitando](https://www.youtube.com/c/akitando) no YouTube.
+Transcrições dos episódios do canal [Akitando](https://www.youtube.com/@Akitando/) no YouTube.
 
 {{% index-list %}}
 <section class="aor-index-month" aria-labelledby="aor-list-2023-12">
