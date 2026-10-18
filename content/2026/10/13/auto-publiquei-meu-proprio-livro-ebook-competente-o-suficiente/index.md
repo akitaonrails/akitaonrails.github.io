@@ -291,15 +291,15 @@ E, mais uma vez: fazer um livro com IA não é um prompt de "escreva um livro pr
 
 ## Baixe, leia, e me diga onde errei
 
-As duas edições, em três formatos cada, direto do GitHub, sem cadastro. A versão atual é a 1.0.0-preview.8, de 15 de outubro, com tudo que este texto descreve:
+As duas edições, em três formatos cada, direto do GitHub, sem cadastro. A versão atual é a 1.0.0 final, de 17 de outubro, com tudo que este texto descreve:
 
 <table>
   <thead>
     <tr><th>Edição</th><th>EPUB (Kindle, Kobo, Apple Books)</th><th>PDF pra tela</th><th>PDF pra impressão (6 × 9 pol.)</th></tr>
   </thead>
   <tbody>
-    <tr><td>Competente o Suficiente (PT-BR)</td><td><a href="https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0-preview.8/Competente-o-Suficiente.epub">EPUB</a></td><td><a href="https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0-preview.8/Competente-o-Suficiente-ebook.pdf">PDF</a></td><td><a href="https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0-preview.8/Competente-o-Suficiente.pdf">PDF</a></td></tr>
-    <tr><td>Competent Enough (EN)</td><td><a href="https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0-preview.8/Competent-Enough.epub">EPUB</a></td><td><a href="https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0-preview.8/Competent-Enough-ebook.pdf">PDF</a></td><td><a href="https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0-preview.8/Competent-Enough.pdf">PDF</a></td></tr>
+    <tr><td>Competente o Suficiente (PT-BR)</td><td><a href="https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0/Competente-o-Suficiente.epub">EPUB</a></td><td><a href="https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0/Competente-o-Suficiente-ebook.pdf">PDF</a></td><td><a href="https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0/Competente-o-Suficiente.pdf">PDF capa dura</a> · <a href="https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0/Competente-o-Suficiente-paperback.pdf">PDF brochura</a></td></tr>
+    <tr><td>Competent Enough (EN)</td><td><a href="https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0/Competent-Enough.epub">EPUB</a></td><td><a href="https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0/Competent-Enough-ebook.pdf">PDF</a></td><td><a href="https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0/Competent-Enough.pdf">PDF</a></td></tr>
   </tbody>
 </table>
 

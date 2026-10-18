@@ -291,15 +291,15 @@ And, once again: making a book with AI isn't a "write me a book" prompt and done
 
 ## Download it, read it, and tell me where I was wrong
 
-Both editions, in three formats each, straight from GitHub, no sign-up. The current version is 1.0.0-preview.8, from October 15, with everything this text describes:
+Both editions, straight from GitHub, no sign-up. The current version is the final 1.0.0, from October 17, with everything this text describes:
 
 <table>
   <thead>
     <tr><th>Edition</th><th>EPUB (Kindle, Kobo, Apple Books)</th><th>Screen PDF</th><th>Print PDF (6 × 9 in)</th></tr>
   </thead>
   <tbody>
-    <tr><td>Competent Enough (EN)</td><td><a href="https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0-preview.8/Competent-Enough.epub">EPUB</a></td><td><a href="https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0-preview.8/Competent-Enough-ebook.pdf">PDF</a></td><td><a href="https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0-preview.8/Competent-Enough.pdf">PDF</a></td></tr>
-    <tr><td>Competente o Suficiente (PT-BR)</td><td><a href="https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0-preview.8/Competente-o-Suficiente.epub">EPUB</a></td><td><a href="https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0-preview.8/Competente-o-Suficiente-ebook.pdf">PDF</a></td><td><a href="https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0-preview.8/Competente-o-Suficiente.pdf">PDF</a></td></tr>
+    <tr><td>Competent Enough (EN)</td><td><a href="https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0/Competent-Enough.epub">EPUB</a></td><td><a href="https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0/Competent-Enough-ebook.pdf">PDF</a></td><td><a href="https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0/Competent-Enough.pdf">PDF</a></td></tr>
+    <tr><td>Competente o Suficiente (PT-BR)</td><td><a href="https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0/Competente-o-Suficiente.epub">EPUB</a></td><td><a href="https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0/Competente-o-Suficiente-ebook.pdf">PDF</a></td><td><a href="https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0/Competente-o-Suficiente.pdf">PDF</a></td></tr>
   </tbody>
 </table>
 
