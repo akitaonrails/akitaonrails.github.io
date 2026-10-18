@@ -293,10 +293,15 @@ E, mais uma vez: fazer um livro com IA não é um prompt de "escreva um livro pr
 
 As duas edições, em três formatos cada, direto do GitHub, sem cadastro. A versão atual é a 1.0.0-preview.8, de 15 de outubro, com tudo que este texto descreve:
 
-| Edição | EPUB (Kindle, Kobo, Apple Books) | PDF pra tela | PDF pra impressão (6 × 9 pol.) |
-| --- | --- | --- | --- |
-| Competente o Suficiente (PT-BR) | [EPUB](https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0-preview.8/Competente-o-Suficiente.epub) | [PDF](https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0-preview.8/Competente-o-Suficiente-ebook.pdf) | [PDF](https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0-preview.8/Competente-o-Suficiente.pdf) |
-| Competent Enough (EN) | [EPUB](https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0-preview.8/Competent-Enough.epub) | [PDF](https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0-preview.8/Competent-Enough-ebook.pdf) | [PDF](https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0-preview.8/Competent-Enough.pdf) |
+<table>
+  <thead>
+    <tr><th>Edição</th><th>EPUB (Kindle, Kobo, Apple Books)</th><th>PDF pra tela</th><th>PDF pra impressão (6 × 9 pol.)</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Competente o Suficiente (PT-BR)</td><td><a href="https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0-preview.8/Competente-o-Suficiente.epub">EPUB</a></td><td><a href="https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0-preview.8/Competente-o-Suficiente-ebook.pdf">PDF</a></td><td><a href="https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0-preview.8/Competente-o-Suficiente.pdf">PDF</a></td></tr>
+    <tr><td>Competent Enough (EN)</td><td><a href="https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0-preview.8/Competent-Enough.epub">EPUB</a></td><td><a href="https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0-preview.8/Competent-Enough-ebook.pdf">PDF</a></td><td><a href="https://github.com/akitaonrails/ai-book-2026/releases/download/v1.0.0-preview.8/Competent-Enough.pdf">PDF</a></td></tr>
+  </tbody>
+</table>
 
 A versão mais recente, sempre, fica na [página do livro](https://ailair.akitaonrails.com/pt-br/book/) e nas [releases do GitHub](https://github.com/akitaonrails/ai-book-2026/releases).
 
