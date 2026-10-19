@@ -13,7 +13,7 @@ aliases:
 - "/2007/04/16/chatting-with-dr-nic/"
 ---
 
-**English readers, click [here](/2007/4/16/chatting-with-dr-nic)**
+**English readers, click [here](/2007/04/16/chatting-with-dr-nic/)**
 
 Hoje, Carlos Eduardo, da [e-Genial](http://www.egenial.com.br), me propôs uma entrevista com o próprio Dr. Nic Williams. O homem do momento. Eu aceitei imediatamente e começamos um chat via Skype por mais de uma hora. Ele é um cara legal e tão educado e bem informado como eu esperava.
 

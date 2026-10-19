@@ -78,7 +78,7 @@ Minha avaliação: o Índice TIOBE presume muita coisa e deixa passar muito erro
 
 Quer uma metodologia igualmente ridícula? Vamos "assumir" que uma pessoa que recebe um panfleto de candidato político e não o joga na rua gosta dele. Poderíamos eleger um presidente contando os panfletos jogados na rua: quem tiver menos panfletos no chão é o mais querido e, portanto, o vencedor.
 
-Eu já falei disso em outro artigo: [Somos matematicamente ignorantes](/2008/3/1/off-topic-somos-matematicamente-ignorantes). Infelizmente, diferente de álgebra de primeiro grau, estatística ainda é uma área muito pouco esclarecida. Eu estudei estatística no Instituto de Matemática e **Estatística** da USP e ainda assim sei muito pouco a respeito. As pessoas são constantemente obrigadas a "engolir" os números que a TV mostra, sem saber como julgar, minimamente, se os critérios são adequados.
+Eu já falei disso em outro artigo: [Somos matematicamente ignorantes](/2008/03/01/off-topic-somos-matematicamente-ignorantes/). Infelizmente, diferente de álgebra de primeiro grau, estatística ainda é uma área muito pouco esclarecida. Eu estudei estatística no Instituto de Matemática e **Estatística** da USP e ainda assim sei muito pouco a respeito. As pessoas são constantemente obrigadas a "engolir" os números que a TV mostra, sem saber como julgar, minimamente, se os critérios são adequados.
 
 Minha recomendação: na dúvida, ignore os índices. Não sou Dijkstra, mas eu diria _"Statistics Considered Harmful"_. Enquanto as pessoas não entenderem o que é estatística, mostrar índices para elas é apenas tentar mentir com mais substância. No artigo que linkei lá em cima, Tim cita Mark Twain:
 

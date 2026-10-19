@@ -25,7 +25,7 @@ As “regras” de otimização são dispositivos retóricos feitos com a inten�
 
 1. Primeira Regra da Otimização: **Não faça**
 2. Segunda Regra da Otimização: **Não faça .. ainda**
-3. [Meça Antes de Otimizar](/2008/7/21/tradu-o-regras-de-otimiza-o#meca_antes_de_otimizar)
+3. [Meça Antes de Otimizar](#me%C3%A7a-antes-de-otimizar)
 
 É incerto até o presente momento, se dispositivos simpáticos como esses mudam, ou se algum dia mudarão quaisquer atitudes.
 

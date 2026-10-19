@@ -13,7 +13,7 @@ aliases:
 - "/2007/04/19/chatting-with-geoffrey-grosenbach/"
 ---
 
-**English readers, click [here](/2007/4/19/chatting-with-geoffrey-grosenbach)**
+**English readers, click [here](/2007/04/19/chatting-with-geoffrey-grosenbach/)**
 
  ![](https://akitaonrails.s3.amazonaws.com/files/geoffrey.gif)
 

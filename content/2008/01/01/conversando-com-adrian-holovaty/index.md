@@ -12,7 +12,7 @@ aliases:
 - "/2008/01/01/chatting-with-adrian-holovaty/"
 ---
 
-**English readers, click [here](http://www.akitaonrails.com/2008/1/1/chatting-with-adrian-holovaty)**
+**English readers, click [here](/2008/01/01/chatting-with-adrian-holovaty/)**
 
 **Traducción en [Español](http://www.marcelor.com/2008/01/conversando-con-adrian-holovaty-creador-del-proyecto-django-traduccion.html)**
 

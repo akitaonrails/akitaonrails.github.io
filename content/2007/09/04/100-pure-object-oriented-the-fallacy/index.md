@@ -19,7 +19,7 @@ Ela parte de dois princípios argumentativos igualmente falaciosos:
 2. _“A quantidade de funcionalidades OO que uma linguagem suporta é diretamente proporcial à sua capacidade.”_
 
 
-A primeira não pode ser considerada um axioma, porque possui muitos falsos positivos. A segunda é derivada da primeira e não podemos [provar uma negativa](http://en.wikipedia.org/wiki/Negative_proof) baseada em outra negativa. Foi o que eu expliquei no artigo [Inimigos da Razão](http://www.akitaonrails.com/2007/8/23/off-topic-inimigos-da-razo). Aliás, nenhum dos criadores de linguagens costuma usar esse tipo de afirmação.
+A primeira não pode ser considerada um axioma, porque possui muitos falsos positivos. A segunda é derivada da primeira e não podemos [provar uma negativa](http://en.wikipedia.org/wiki/Negative_proof) baseada em outra negativa. Foi o que eu expliquei no artigo [Inimigos da Razão](/2007/08/23/off-topic-inimigos-da-razo/). Aliás, nenhum dos criadores de linguagens costuma usar esse tipo de afirmação.
 
 Basta lembrar que orientação a objetos é apenas **uma** de dezenas de características que moldam uma linguagem e nenhuma implementa 100% delas (porque não seria prático). No [wikipedia](http://en.wikipedia.org/wiki/Categorical_list_of_programming_languages) há mais detalhes mas só como exemplos. Temos linguagens orientadas a aspectos (Java, Common Lisp), linguagens compiláveis (Ada, Algol, C), linguagens concorrentes – que enviam mensagens (Concurrent Pascal, Clik, E, Erlang), linguagens orientadas a dados (SQL, ABAP, Clipper), linguagens declarativas (Prolog), linguagens funcionais (Lisp, F#). E por aí vai. Isso sem contar as que tem tipagem forte/fraca ou estática/dinâmica.
 

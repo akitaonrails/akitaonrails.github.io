@@ -81,7 +81,7 @@ And in the parallel to software development, design patterns aren't just structu
 
 What Jon was getting at makes a lot of sense. Just like a Go player, a software developer needs to be an artist. Playing is a creative activity. Strategy is a creative activity. Given a set of constraints, what's the best path forward?
 
-More than that: the only way to learn Go is by playing, hundreds of thousands of times over many, many years. Go professionals are formed around age 10 and climb from there into old age. The only way to learn is by failing, failing, and failing again. Which circles back to what Ryan said about [Hurting Code](http://www.akitaonrails.com/2008/6/14/machucando-c-digo-por-divers-o-e-lucro).
+More than that: the only way to learn Go is by playing, hundreds of thousands of times over many, many years. Go professionals are formed around age 10 and climb from there into old age. The only way to learn is by failing, failing, and failing again. Which circles back to what Ryan said about [Hurting Code](/2008/06/14/machucando-c-digo-por-divers-o-e-lucro/).
 
 Refactoring is something similar to this: conquest and expansion. Only a good developer understands the real reasons for refactoring. Nobody refactors because someone told them to, just as an artist doesn't make a certain stroke because someone told them to.
 

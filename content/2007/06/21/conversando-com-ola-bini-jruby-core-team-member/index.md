@@ -13,7 +13,7 @@ aliases:
 - "/2007/06/21/chatting-with-ola-bini-jruby-core-team-member/"
 ---
 
-**English readers, click [here](/2007/6/21/chatting-with-ola-bini-jruby-core-team-member)**
+**English readers, click [here](/2007/06/21/chatting-with-ola-bini-jruby-core-team-member/)**
 
 Já faz alguns dias desde o histórico lançamento do JRuby 1.0, a primeira implementação estável de um interpretador Ruby alternativo. E que outra plataforma além de Java para suportar o poder de Ruby?
 

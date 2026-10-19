@@ -10,7 +10,7 @@ draft: false
 
 
 
- **Atualização:** Não deixem de ver o post [mais recente](http://www.akitaonrails.com/2008/7/13/rails-summit-latin-america-2008). Importante: agora somos **Rails Summit LATIN AMERICA**! :-)
+ **Atualização:** Não deixem de ver o post [mais recente](/2008/07/13/rails-summit-latin-america-2008/). Importante: agora somos **Rails Summit LATIN AMERICA**! :-)
 
 Galera, eu prometi que **grandes** coisas estavam a caminho e finalmente vou divulgar uma das maiores: nossa própria conferência de Rails, aos moldes da famosa RailsConf!
 

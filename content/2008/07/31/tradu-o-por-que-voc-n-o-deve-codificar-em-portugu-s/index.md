@@ -11,7 +11,7 @@ draft: false
 
 Achei esse artigo interessante, o título original é [Why you shouldn’t code in Spanish](http://www.codespanish.com/archives/softwaredevelopment/43). E como o autor mesmo fala, a parte engraçada é que ele publicou esse artigo no site chamado [CodeSpanish](http://www.codespanish.com). Eu coloquei “Português” no título porque senão ninguém iria ler :-) Mas vou traduzir o artigo original. Seja português, seja espanhol, a noção é a mesma, então lá vai:
 
-[![](http://s3.amazonaws.com/akitaonrails/files/america-790957.jpg)](http://www.akitaonrails.com/2007/4/14/off-topic-seja-arrogante)
+[![](http://s3.amazonaws.com/akitaonrails/files/america-790957.jpg)](/2007/04/14/off-topic-seja-arrogante/)
 
 ### Por que você não deve codificar em Espanhol
 
@@ -59,7 +59,7 @@ Não me entenda mal, sou um forte defensor da minha língua materna, Espanhol, m
 
 Goste ou não, Inglês é o Esperanto da tecnologia e dos negócios dos tempos modernos. Você deveria escrever seu código em Inglês.
 
-**Nota do Akita:** novamente, sou um [antigo defensor](http://www.akitaonrails.com/2007/4/14/off-topic-seja-arrogante) da melhoria da educação pessoal de cada profissional. Cada um é responsável por sua própria capacitação, e ninguém mais. Como disse o autor, aprender – e realmente usar – inglês diariamente não é uma opção, é uma obrigação.
+**Nota do Akita:** novamente, sou um [antigo defensor](/2007/04/14/off-topic-seja-arrogante/) da melhoria da educação pessoal de cada profissional. Cada um é responsável por sua própria capacitação, e ninguém mais. Como disse o autor, aprender – e realmente usar – inglês diariamente não é uma opção, é uma obrigação.
 
 Anos atrás, muitos desenvolvedores reclamaram do código fonte do Ruby porque muita coisa estava documentada em Japonês (!) Imagino que isso deva ter sido um dos motivos que dificulta revoluções maiores no interpretador e a busca por novas alternativas.
 

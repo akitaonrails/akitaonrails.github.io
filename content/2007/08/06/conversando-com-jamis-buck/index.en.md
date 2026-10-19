@@ -99,7 +99,7 @@ When I first released Capistrano, a year and a half ago or so, it was called Swi
 
 **Jamis Buck:** I know who they are, and I’ve met Charles at a few conferences, but I’ve never really had a chance to talk to them in depth. JRuby definitely sounds exciting. I’m very curious, in fact, to know whether it can support Net::SSH or not since that would mean you could run Capistrano under it. But I’ve not had a chance to actually try it out.
 
-**AkitaOnRails:** Insisting on the Java subject, I posted a while back about some discussions about Design Patterns pointing to [flaws in languages](/2007/7/30/gof-design-patterns-sobreviveu-ao-teste-do-tempo), and I just read [a post](http://weblog.jamisbuck.org/2007/7/29/net-ssh-revisited) you wrote about Dependency Injection and your Net::SSH library. What do you think about Design Patterns now that you’re a full-time Ruby programmer?
+**AkitaOnRails:** Insisting on the Java subject, I posted a while back about some discussions about Design Patterns pointing to [flaws in languages](/2007/07/30/gof-design-patterns-sobreviveu-ao-teste-do-tempo/), and I just read [a post](http://weblog.jamisbuck.org/2007/7/29/net-ssh-revisited) you wrote about Dependency Injection and your Net::SSH library. What do you think about Design Patterns now that you’re a full-time Ruby programmer?
 
 **Jamis Buck:** Design Patterns are wonderful. They give us a language to talk more concisely about programming. It is so much easier to say “use a factory method” than to circumlocate and confuse each other. As for specific design patterns, some are more useful than others in different environments. As I wrote in my post, Dependency Injection is just not something you need in Ruby, but in environments like Java, it can be a life-saver.
 

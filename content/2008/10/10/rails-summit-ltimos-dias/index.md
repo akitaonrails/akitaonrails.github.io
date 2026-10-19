@@ -14,7 +14,7 @@ draft: false
 
 Pessoal, não se esqueçam: as [inscrições](http://www.locaweb.com.br/railssummit) se **encerram** nesta segunda-feira. Quem não se inscrever online até lá e mudar de idéia ainda poderá participar mas precisará pagar na entrada no dia do evento.
 
-Aconteceram alguns pequenos [Cisnes Negros](http://www.akitaonrails.com/2008/10/9/off-topic-entendendo-a-crise-econ-mica) nos últimos dias :-)
+Aconteceram alguns pequenos [Cisnes Negros](/2008/10/09/off-topic-entendendo-a-crise-econ-mica/) nos últimos dias :-)
 
 Primeiro, o Carlos Villela não poderá vir. Ele ficou preso em projeto na ThoughtWorks e acabou tendo que declinar. Mas não se preocupem, em seu lugar palestrará o [Carlos Brando](http://www.nomedojogo.com/2008/10/09/rails-summit-meu-emprego-foi-para-os-eua/), nome mais do que conhecido na comunidade Rails. E pelo que ele me disse, não apenas ele mas o pessoal da Surgeworks estará participando do evento e da palestra numa sessão de perguntas e respostas também. Não deixem de participar.
 

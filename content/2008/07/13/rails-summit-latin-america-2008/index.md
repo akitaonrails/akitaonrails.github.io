@@ -18,9 +18,9 @@ Pero queremos ir un paso más lejos y talvez renombrar el evento y llamarlo **�
 
 [**Diego Algorta**](http://www.oboxodo.com/) ha colaborado creando una [encuesta](http://railssummit2008.questionform.com/public/encuesta) para intentar tener una mejor idea de cuántos railers de habla hispana vendrían al evento. Así que si eres de Argentina, Chile, Mexico, Uruguay o cualquier otro país de América Latina, por favor, ayúdanos a divulgar el evento y la encuesta. Escribe un post, escribe en tus listas de correo regionales. Esta es la oportunidad para realmente lograr tener la 3er gran conferencia tipo RailsConf en el mundo!
 
-E una novedad: [**Luis Lavena**](http://www.akitaonrails.com/2008/7/2/chatting-with-luis-lavena-ruby-on-windows) aceptó la invitación para ser uno de oradores del evento también! Así que ahora tenemos una excelente representante de América Latina y también un representante de desarrolladores Ruby de Windows!
+E una novedad: [**Luis Lavena**](/2008/07/02/chatting-with-luis-lavena-ruby-on-windows/) aceptó la invitación para ser uno de oradores del evento también! Así que ahora tenemos una excelente representante de América Latina y también un representante de desarrolladores Ruby de Windows!
 
-**Tradução em [português](http://www.akitaonrails.com/2008/7/13/rails-summit-latin-america-2008) and [English](http://www.akitaonrails.com/2008/7/13/rails-summit-latin-america-2008) translation**
+**Tradução em [português](/2008/07/13/rails-summit-latin-america-2008/) and [English](/2008/07/13/rails-summit-latin-america-2008/) translation**
 
 
 ### English
@@ -31,7 +31,7 @@ But we want to go one step further and actually call it **“Rails Summit LATIN 
 
 [**Diego Algorta**](http://www.oboxodo.com/) was very kind to create a [poll](http://railssummit2008.questionform.com/public/encuesta) to better understand how many latin american railers would come to our event. If you are from Argentina, Chile, Mexico, Uruguay or any other country in Latin America, please, help us spread the word, blog about it, post in your regional mailing lists. This is the chance to actually have the 3rd big RailsConf-like event in the world!
 
-And one more news: [**Luis Lavena**](http://www.akitaonrails.com/2008/7/2/chatting-with-luis-lavena-ruby-on-windows) accepted the invitation to be one of the speakers in the event! Now we have an excellent reference for Latin America as well as a great reference for Ruby developers on Windows!
+And one more news: [**Luis Lavena**](/2008/07/02/chatting-with-luis-lavena-ruby-on-windows/) accepted the invitation to be one of the speakers in the event! Now we have an excellent reference for Latin America as well as a great reference for Ruby developers on Windows!
 
 ### Português
 
@@ -41,5 +41,5 @@ Mas queremos dar uma passo a mais e chamar este evento de **“Rails Summit LATI
 
 [**Diego Algorta**](http://www.oboxodo.com/) foi muito gentil em criar uma [enquete](http://railssummit2008.questionform.com/public/encuesta) para melhor entendermos quantos latino americanos viriam ao nosso evento. Se você for da Argentina, Chile, México, Uruguai ou qualquer outro país da América Latina, por favor, nos ajudem a espalhar a palavra, bloguem sobre isso, publiquem em suas listas de discussão regionais. Esta é a chance de realmente termos o 3o. evento à la RailsConf no mundo!
 
-E mais uma novidade: [**Luis Lavena**](http://www.akitaonrails.com/2008/7/2/chatting-with-luis-lavena-ruby-on-windows) aceitou o convite de ser um dos palestrantes no evento! Agora temos uma excelente referência para a América Latina assim como uma grande referência para desenvolvedores Ruby de Windows!
+E mais uma novidade: [**Luis Lavena**](/2008/07/02/chatting-with-luis-lavena-ruby-on-windows/) aceitou o convite de ser um dos palestrantes no evento! Agora temos uma excelente referência para a América Latina assim como uma grande referência para desenvolvedores Ruby de Windows!
 

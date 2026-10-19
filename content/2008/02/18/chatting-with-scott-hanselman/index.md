@@ -13,7 +13,7 @@ aliases:
 draft: false
 ---
 
-Esta semana entrevistei mais uma pessoa do campo Microsoft, [Scott Hanselman](http://www.hanselman.com/). Eu o conheço pelo seu podcast [Hanselminutes](http://www.hanselminutes.com/). Em um episódio ele [entrevistou](http://www.akitaonrails.com/2007/7/8/hanselminutes-entrevista-com-david-hansson-e-martin-fowler) tanto Martin Fowler quanto David Hansson na RailsConf do ano passado — uma conversa realmente notável.
+Esta semana entrevistei mais uma pessoa do campo Microsoft, [Scott Hanselman](http://www.hanselman.com/). Eu o conheço pelo seu podcast [Hanselminutes](http://www.hanselminutes.com/). Em um episódio ele [entrevistou](/2007/07/08/hanselminutes-entrevista-com-david-hansson-e-martin-fowler/) tanto Martin Fowler quanto David Hansson na RailsConf do ano passado — uma conversa realmente notável.
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2008/2/18/1370206727_84d760de06.jpg)
 

@@ -9,7 +9,7 @@ tags:
 - devops
 draft: false
 ---
-I [started evangelizing Git in 2007](http://www.akitaonrails.com/2007/9/22/jogar-pedra-em-gato-morto-por-que-subversion-no-presta). It was a very tough sell to make at the time.
+I [started evangelizing Git in 2007](/2007/09/22/jogar-pedra-em-gato-morto-por-que-subversion-no-presta/). It was a very tough sell to make at the time.
 
 Outside of the kernel development almost no one wanted to learn it and we had very worthy competitors, from Subversion, to Mercurial, to Bazaar, to Darcs, to Perforce, and so on. But those of us who dug deeper knew that Git had the edge and it was a matter of time.
 

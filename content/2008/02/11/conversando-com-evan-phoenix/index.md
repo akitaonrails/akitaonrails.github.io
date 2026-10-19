@@ -15,7 +15,7 @@ aliases:
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2008/2/11/524655980_8e68a871a0.jpg)
 
-**English Readers:** click [here](/2008/2/11/chatting-with-evan-phoenix)
+**English Readers:** click [here](/2008/02/11/chatting-with-evan-phoenix/)
 
 Foi [Avi](/2007/12/15/conversando-com-avi-bryant-parte-1) [Bryant](/2007/12/22/conversando-com-avi-bryant-parte-2) que evangelizou a idéia de “tartarugas o caminho todo”, querendo dizer que para uma linguagem se considerar ‘completa’ ela deveria ser capaz de estender a si própria. Então, o mundo ideal teria Ruby sendo estendido por Ruby, não em C. JRuby vai tão longe quanto pode construindo um sandbox para código Ruby rodar sobre a JVM. Por mais legal que seja, ainda precisamos de Java para podermos estendê-la.
 
@@ -58,7 +58,7 @@ Além disso, o modelo de execução do Rubinius é quase idêntico ao Squeak. Um
 
 **AkitaOnRails:** Hoje vocês tem o Shotgun. Li em algum lugar que você considera isso ‘trapaça’ porque não é um interpretador para Ruby escrito em Ruby, e isso nos levaria a Cuby. É mais um tipo de facilidade para o desenvolvimento. Qual o estado atual do shotgun, podemos usá-lo fora de seu propósito de desenvolvimento do Rubinius?
 
-**Evan Phoenix:** Shotgun é uma virtual machine escrita em C que fornece instruções e operações primitivas para rodar uma linguagem parecida com Ruby. O Shotgun por si próprio não tem conhecimento sobre parsing, compilação, etc. Ele tem uma maneira muito simples de carregar código nele, e uma maneira de executá-la. Você poderia facilmente desenvolver uma linguagem para o shotgun, de fato, [Ola Bini](/2007/6/21/chatting-with-ola-bini-jruby-core-team-member) e eu falamos algumas vezes sobre escrever uma linguagem simples no estilo de Lisp que rodaria diretamente no shotgun.
+**Evan Phoenix:** Shotgun é uma virtual machine escrita em C que fornece instruções e operações primitivas para rodar uma linguagem parecida com Ruby. O Shotgun por si próprio não tem conhecimento sobre parsing, compilação, etc. Ele tem uma maneira muito simples de carregar código nele, e uma maneira de executá-la. Você poderia facilmente desenvolver uma linguagem para o shotgun, de fato, [Ola Bini](/2007/06/21/chatting-with-ola-bini-jruby-core-team-member/) e eu falamos algumas vezes sobre escrever uma linguagem simples no estilo de Lisp que rodaria diretamente no shotgun.
 
 As operações primitivas que ele fornece são meio parecidas com syscalls em um sistema unix. Ele fornece operações bem de baixo nível. Por exemplo, existe uma primitiva de adição que adiciona objetos Fixnum juntos e coloca o resultado na pilha.
 

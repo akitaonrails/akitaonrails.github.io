@@ -15,7 +15,7 @@ aliases:
 
  ![](http://s3.amazonaws.com/akitaonrails/assets/2007/8/3/245186199_71f55cc3c7.jpg)
 
-**English Original:** [here](/2007/8/3/chatting-with-jamis-buck)
+**English Original:** [here](/2007/08/03/chatting-with-jamis-buck/)
 
 Esta é outra grande entrevista. Desta vez com Jamis Buck, o programador que ajudou o próprio David Hansson bem no começo da Era Rails, na 37signals.
 
@@ -82,7 +82,7 @@ Quando lancei Capistrano da primeira vez, um ano e meio atrás mais ou menos, el
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2007/8/3/building_djd.jpg)
 
-**AkitaOnRails:** Ouvi que você é de Provo, em Utah? É uma coincidência porque meu chefe atual, [Carl Youngblood](/2007/7/20/conversando-com-carl-youngblood), também é de lá e também estudou na BYU :-) Por acaso vocês não se conhecem?
+**AkitaOnRails:** Ouvi que você é de Provo, em Utah? É uma coincidência porque meu chefe atual, [Carl Youngblood](/2007/07/20/conversando-com-carl-youngblood/), também é de lá e também estudou na BYU :-) Por acaso vocês não se conhecem?
 
 **Jamis Buck:** Na realidade moro em Caldwell, em Idaho, mas eu fui de Provo por cerca de 8 anos e sim, eu conheço Carl! Ambos participávamos do [Utah Ruby Users Group](http://groups.google.com/group/urug?hl=en). Ele é um grande cara.
 
@@ -102,7 +102,7 @@ Quando lancei Capistrano da primeira vez, um ano e meio atrás mais ou menos, el
 
 **Jamis Buck:** Sei quem são, e eu encontrei Charles em algumas conferências, mas nunca tive a chance de conversar com ele mais a fundo. JRuby definitivamente soa empolgante. Estou muito curioso, de fato, de saber se ele pode suportar Net::SSH ou não já que isso significa que você poderia rodar Capistrano sobre ele. Mas não tive a chance de realmente tentar isso.
 
-**AkitaOnRails:** Insistindo no assunto de Java, eu postei algum tempo atrás sobre algumas discussões sobre Design Patterns apontarem [defeitos nas linguagens](/2007/7/30/gof-design-patterns-sobreviveu-ao-teste-do-tempo), e eu acabei de ler [um post](http://weblog.jamisbuck.org/2007/7/29/net-ssh-revisited) que você escreveu sobre Dependency Injection e sua biblioteca Net::SSH. O que acha de Design Patterns agora que é um programador Ruby em tempo integral?
+**AkitaOnRails:** Insistindo no assunto de Java, eu postei algum tempo atrás sobre algumas discussões sobre Design Patterns apontarem [defeitos nas linguagens](/2007/07/30/gof-design-patterns-sobreviveu-ao-teste-do-tempo/), e eu acabei de ler [um post](http://weblog.jamisbuck.org/2007/7/29/net-ssh-revisited) que você escreveu sobre Dependency Injection e sua biblioteca Net::SSH. O que acha de Design Patterns agora que é um programador Ruby em tempo integral?
 
 **Jamis Buck:** Design Patterns são maravilhosos. Eles nos dão uma linguagem para falar mais concisamente sobre programação. É muito mais fácil dizer “use um método factory” do que dizer muitas palavras e confundir uns aos outros. Sobre design patterns específicos, alguns são mais úteis que outros em diferentes ambientes. Como escrevi no meu post, Dependency Injection é uma das coisas que você não precisa em Ruby, mas em ambientes como Java, pode ser um salva-vidas.
 
