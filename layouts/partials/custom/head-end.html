@@ -564,7 +564,15 @@
     }
     if (mismatch) {
       var auto = getCookie("lang_auto");
-      if (auto === "1") { window.location.replace(altURL); return; }
+      if (auto === "1") {
+        // An explicit lang_pref matching the CURRENT page means the visitor
+        // chose this language (the PT|EN toggle sets it on click). A manual
+        // switch must win over browser-locale auto-redirect, otherwise the
+        // toggle bounces the visitor right back (user-reported bug).
+        var manual = getCookie("lang_pref");
+        if (manual === curLang) return;
+        window.location.replace(altURL); return;
+      }
       if (auto !== "0" && !getCookie("lang_asked")) {
         if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", showPopup);
         else showPopup();

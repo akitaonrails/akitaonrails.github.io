@@ -49,7 +49,7 @@
      lang="pt-BR"
      hreflang="pt-BR"
      {{ if eq $currentLang "pt-br" }}aria-current="page"{{ end }}
-     onclick="document.cookie='lang_pref=pt; path=/; max-age=31536000; samesite=lax';">PT</a>
+     onclick="document.cookie='lang_auto=0; path=/; max-age=31536000; samesite=lax';document.cookie='lang_pref=pt; path=/; max-age=31536000; samesite=lax';">PT</a>
   {{- else -}}
   <span class="lang-toggle-link lang-toggle-unavailable" lang="pt-BR" aria-disabled="true">PT</span>
   {{- end -}}
@@ -61,7 +61,7 @@
      lang="en"
      hreflang="en"
      {{ if eq $currentLang "en" }}aria-current="page"{{ end }}
-     onclick="document.cookie='lang_pref=en; path=/; max-age=31536000; samesite=lax';">EN</a>
+     onclick="document.cookie='lang_auto=0; path=/; max-age=31536000; samesite=lax';document.cookie='lang_pref=en; path=/; max-age=31536000; samesite=lax';">EN</a>
   {{- else -}}
   <span class="lang-toggle-link lang-toggle-unavailable" lang="en" aria-disabled="true">EN</span>
   {{- end -}}
