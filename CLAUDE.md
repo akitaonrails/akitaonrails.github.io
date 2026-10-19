@@ -110,6 +110,11 @@ Before choosing tags, run `./scripts/tag_catalog.rb --search "article title and 
 | `scripts/fix_html_entities.rb` | Migration: converts HTML entities to Unicode in markdown files |
 | `scripts/fix-old-code-blocks.rb` | Migration: converts old `---lang` to fenced code blocks |
 | `scripts/fix-s3-params.rb` | Migration: strips query params from S3 URLs |
+| `scripts/test_chronological_next.rb` | Test: chronological next/previous article navigation over the full build |
+| `scripts/test_rss_dates.rb` | Test: RSS `pubDate`/`lastBuildDate` keep the articles' timezone offsets (run with `TZ=UTC` and `TZ=America/Fortaleza`) |
+| `scripts/test_rss_scope.rb` | Test: tag feeds contain only that tag, `atom:link rel="self"` and `<link rel="alternate">` point at the real feed |
+| `scripts/test_language_redirects.cjs` | Test (`node --test`): home/article language redirects honor `lang_pref` over the browser locale |
+| `scripts/test_search_keyboard.cjs` | Test (`node --test`): home search filter Esc/Tab/Shift+Tab handling and focus restore |
 
 ## Writing Blog Posts
 

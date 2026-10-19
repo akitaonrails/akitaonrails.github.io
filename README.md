@@ -187,6 +187,7 @@ akitaonrails.github.io/
 - [ ] Validei a taxonomia (`./scripts/tag_catalog.rb --check`)
 - [ ] Gerei o índice de posts (`./scripts/dev.sh generate-index` ou `./scripts/generate_index.rb`)
 - [ ] Rodei o build completo (`hugo --minify`)
+- [ ] Rodei os testes automatizados (ver seção abaixo) quando mexi em layouts, scripts ou RSS
 - [ ] Verifiquei se o site funciona corretamente
 - [ ] Segui as convenções de nomenclatura do projeto
 - [ ] Documentei mudanças significativas
@@ -198,6 +199,28 @@ akitaonrails.github.io/
 - Use mensagens de commit descritivas
 - Respeite o estilo de código existente
 - Para mudanças grandes, abra uma issue primeiro
+
+## Testes automatizados
+
+Sem dependências extras além de Hugo Extended, Ruby e Node.js 18+:
+
+```bash
+ruby scripts/test_chronological_next.rb        # navegação cronológica entre artigos
+ruby scripts/test_rss_dates.rb                 # datas do RSS preservam o fuso dos artigos
+ruby scripts/test_rss_scope.rb                 # feeds por tag, self links e descoberta do RSS
+node --test scripts/test_language_redirects.cjs  # redirecionamento e preferência de idioma
+node --test scripts/test_search_keyboard.cjs     # teclado (Esc/Tab) no filtro da home
+```
+
+Os testes Ruby geram o site em um diretório temporário e comparam o resultado
+com os metadados dos artigos. Para o RSS vale conferir também com `TZ=UTC` e
+`TZ=America/Fortaleza`. Os testes Node executam os scripts inline de
+`layouts/partials/custom/head-end.html` em um DOM mínimo.
+
+Regras cobertas pelos testes de idioma: a escolha explícita no seletor PT | EN
+tem prioridade sobre o idioma do navegador; o redirecionamento de artigos
+respeita essa preferência; a home só redireciona na primeira visita da sessão
+(issue #36).
 
 ## Licença
 
@@ -212,21 +235,3 @@ This work is licensed under a
 [cc-by-nc-sa-image]: https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png
 [cc-by-nc-sa-shield]: https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg
 
-### Testes das datas do RSS
-
-Com Hugo no PATH, execute `ruby scripts/test_rss_dates.rb`. O teste gera o site
-em um diretório temporário e compara as datas do RSS com os metadados dos artigos.
-Para verificar também o horário de geração em diferentes fusos, execute com
-`TZ=UTC` e `TZ=America/Fortaleza`.
-
-### Testes de redirecionamento de idioma
-
-Com Node.js 18+ (sem instalar dependências):
-
-```bash
-node --test scripts/test_language_redirects.cjs
-```
-
-A escolha explícita no seletor PT | EN tem prioridade sobre o idioma do navegador.
-O redirecionamento de artigos respeita essa preferência; a home mantém sua regra
-de redirecionar somente na primeira visita da sessão (issue #36).
