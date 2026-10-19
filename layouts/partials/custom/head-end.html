@@ -534,16 +534,20 @@
 // Cross-language nudge for article/pages (the home pages have their own
 // redirect script above). Two cookies, on top of the existing lang_pref:
 //   lang_auto   — persistent (1 year). "1" = always redirect to the visitor's
-//                 browser language when the page has a translation; "0" =
+//                 preferred language when the page has a translation; "0" =
 //                 never ask, never redirect. Set through the mismatch popup.
 //   lang_asked  — session-only. Set once the popup has been answered, so it
 //                 nags at most once per tab session.
-// The popup speaks the browser's language (the one the visitor reads), and
+// Explicit lang_pref takes precedence over the browser locale. The popup
+// speaks that preferred language and
 // only fires when the current page actually has a translation (see the
 // aor-alt-lang meta tag emitted at the top of this file).
 (function () {
   try {
     if (/bot|crawler|spider|slurp|headless|lighthouse|preview/i.test(navigator.userAgent || "")) return;
+
+    // The home script owns session-based redirects (see issue #36).
+    if (/^\/(?:en\/)?(?:index\.html)?$/.test(window.location.pathname)) return;
 
     var curMeta = document.querySelector('meta[name="aor-current-lang"]');
     var altMeta = document.querySelector('meta[name="aor-alt-lang"]');
@@ -553,7 +557,9 @@
     if (!altURL) return;
 
     var browserLang = ((navigator.language || "en").toLowerCase().indexOf("pt") === 0) ? "pt" : "en";
-    var mismatch = browserLang !== curLang;
+    var pref = getCookie("lang_pref");
+    var preferredLang = pref === "pt" || pref === "en" ? pref : browserLang;
+    var mismatch = preferredLang !== curLang;
 
     function getCookie(name) {
       var m = document.cookie.match(new RegExp("(?:^|;\\s*)" + name + "=([^;]+)"));
@@ -572,7 +578,7 @@
     }
 
     function showPopup() {
-      var T = browserLang === "pt" ? {
+      var T = preferredLang === "pt" ? {
         text: "Este blog é bilíngue: esta página tem uma versão em português. O seletor PT | EN fica no topo da página, e dá pra eu sempre te redirecionar pro seu idioma automaticamente.",
         once: "Ver em português",
         always: "Sempre redirecionar automaticamente",
@@ -625,12 +631,12 @@
 
       onceBtn.addEventListener("click", function () {
         setCookie("lang_asked", "1", 0);
-        setCookie("lang_pref", browserLang, 31536000);
+        setCookie("lang_pref", preferredLang, 31536000);
         window.location.href = altURL;
       });
       alwaysBtn.addEventListener("click", function () {
         setCookie("lang_auto", "1", 31536000);
-        setCookie("lang_pref", browserLang, 31536000);
+        setCookie("lang_pref", preferredLang, 31536000);
         window.location.href = altURL;
       });
       dismissBtn.addEventListener("click", teardown);
