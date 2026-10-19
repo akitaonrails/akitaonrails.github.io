@@ -218,3 +218,15 @@ Com Hugo no PATH, execute `ruby scripts/test_rss_dates.rb`. O teste gera o site
 em um diretório temporário e compara as datas do RSS com os metadados dos artigos.
 Para verificar também o horário de geração em diferentes fusos, execute com
 `TZ=UTC` e `TZ=America/Fortaleza`.
+
+### Testes de redirecionamento de idioma
+
+Com Node.js 18+ (sem instalar dependências):
+
+```bash
+node --test scripts/test_language_redirects.cjs
+```
+
+A escolha explícita no seletor PT | EN tem prioridade sobre o idioma do navegador.
+O redirecionamento de artigos respeita essa preferência; a home mantém sua regra
+de redirecionar somente na primeira visita da sessão (issue #36).
