@@ -1,4 +1,10 @@
-<link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }} RSS Feed" href="{{ "index.xml" | absURL }}" />
+{{- $rss := .OutputFormats.Get "RSS" -}}
+{{- if not $rss -}}
+  {{- $rss = .Site.Home.OutputFormats.Get "RSS" -}}
+{{- end -}}
+{{- with $rss }}
+<link rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }} RSS Feed" href="{{ .Permalink }}" />
+{{- end }}
 {{/* Alternate-language meta tags consumed by the lang redirect/popup script
      further below. Mirrors the URL resolution in custom/lang-toggle.html,
      including the tag-taxonomy special case for localized tag slugs. */}}
