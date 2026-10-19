@@ -81,7 +81,7 @@ E no paralelo a desenvolvimento de software, design patterns não são apenas es
 
 O que o Jon quis dizer faz muito sentido. Assim como um jogador de Go, um desenvolvedor de software precisa ser um artista. Jogar é uma atividade criativa. Estratégia é uma atividade criativa. Dada uma série de limitações, qual o melhor caminho a seguir?
 
-Mais do que isso: a única maneira de aprender Go é jogando, centenas de milhares de vezes durante muitos e muitos anos. Profissionais de Go se formam lá entre os 10 anos de idade e sobem dali até a velhice. A única forma de aprender é errando, errando e errando. O que volta ao que o Ryan falou sobre [Machucar Código](http://www.akitaonrails.com/2008/6/14/machucando-c-digo-por-divers-o-e-lucro).
+Mais do que isso: a única maneira de aprender Go é jogando, centenas de milhares de vezes durante muitos e muitos anos. Profissionais de Go se formam lá entre os 10 anos de idade e sobem dali até a velhice. A única forma de aprender é errando, errando e errando. O que volta ao que o Ryan falou sobre [Machucar Código](/2008/06/14/machucando-c-digo-por-divers-o-e-lucro/).
 
 Refatoramento é algo parecido com isso: conquista e expansão. Somente um bom desenvolvedor entende os reais motivos de refatoramento. Ninguém refatora porque alguém mandou refatorar, da mesma forma que um artista não faz um certo traço porque alguém mandou fazer.
 

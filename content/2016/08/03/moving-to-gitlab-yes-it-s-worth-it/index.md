@@ -12,7 +12,7 @@ tags:
 draft: false
 ---
 
-Eu [comecei a evangelizar Git em 2007](http://www.akitaonrails.com/2007/9/22/jogar-pedra-em-gato-morto-por-que-subversion-no-presta). Foi uma venda dificílima de fazer naquela época.
+Eu [comecei a evangelizar Git em 2007](/2007/09/22/jogar-pedra-em-gato-morto-por-que-subversion-no-presta/). Foi uma venda dificílima de fazer naquela época.
 
 Fora do desenvolvimento do kernel quase ninguém queria aprender e tínhamos concorrentes bem dignos, de Subversion, Mercurial, Bazaar, Darcs, Perforce, e por aí vai. Mas quem cavou mais fundo sabia que o Git tinha a vantagem e era só uma questão de tempo.
 

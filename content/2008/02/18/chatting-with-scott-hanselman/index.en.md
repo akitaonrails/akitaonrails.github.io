@@ -11,7 +11,7 @@ tags:
 draft: false
 ---
 
-This week I interviewed another person from the Microsoft camp, [Scott Hanselman](http://www.hanselman.com/). I know him from his podcast [Hanselminutes](http://www.hanselminutes.com/). In one episode he [interviewed](http://www.akitaonrails.com/2007/7/8/hanselminutes-entrevista-com-david-hansson-e-martin-fowler) both Martin Fowler and David Hansson at last year's RailsConf, a truly remarkable conversation.
+This week I interviewed another person from the Microsoft camp, [Scott Hanselman](http://www.hanselman.com/). I know him from his podcast [Hanselminutes](http://www.hanselminutes.com/). In one episode he [interviewed](/2007/07/08/hanselminutes-entrevista-com-david-hansson-e-martin-fowler/) both Martin Fowler and David Hansson at last year's RailsConf, a truly remarkable conversation.
 
 ![](http://s3.amazonaws.com/akitaonrails/assets/2008/2/18/1370206727_84d760de06.jpg)
 

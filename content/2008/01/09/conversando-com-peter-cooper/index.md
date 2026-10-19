@@ -13,7 +13,7 @@ aliases:
 - "/2008/01/04/chatting-with-peter-cooper/"
 ---
 
-**English readers, click [here](http://www.akitaonrails.com/2008/1/4/chatting-with-peter-cooper)**
+**English readers, click [here](/2008/01/04/chatting-with-peter-cooper/)**
 
 O [Ruby Inside](http://www.rubyinside.com/) é um dos maiores websites de Ruby/Rails disponível e uma grande fonte de notícias. Seu criador é o empreendedor britânico [**Peter Cooper**](http://www.petercooper.co.uk/), também autor do livro recentemente publicado [Beginning Ruby, from Novice to Professional](http://www.apress.com/book/view/9781590597668), uma excelente fonte para qualquer um querendo aprender a linguagem Ruby.
 

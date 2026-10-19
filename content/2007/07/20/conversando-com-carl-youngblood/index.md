@@ -18,7 +18,7 @@ Essa será uma entrevista interessante. Meu convidado desta vez é ninguém meno
 
 Carl Youngblood trabalhou profissionalmente como engenheiro de software por mais de 10 anos e atualmente é Rails Practice Manager na [Surgeworks](http://surgeworks.com), uma consultoria de engenharia de software (onde, por acaso, eu também estou :-). Além disso Carl também é dono da [Confreaks](http://confreaks.com), uma empresa que grava conferência, seminários e grupos de trabalho, e também é diretor da [Mormon Transhumanist Association](http://transfigurism.org). Ele se formou bacharel em Língua Portuguesa pela [Universidade Brigham Young](http://www.byu.edu) e também em Ciências da Computação pela [Universidade de Washington](http://www.washington.edu).
 
-**Original English Version:** [Chatting with Carl Youngblood](/2007/7/20/chatting-with-carl-youngblood)
+**Original English Version:** [Chatting with Carl Youngblood](/2007/07/20/chatting-with-carl-youngblood/)
 
 
  **AkitaOnRails:** Então, vamos começar. É bem estranho entrevistar alguém que já se conhece. Mas vamos tentar. Antes de falarmos sobre Ruby, a primeira coisa que muitos dos meus leitores ficam intrigados é sobre suas excelentes habilidades com o Português. Pode nos dizer o que levou a isso?

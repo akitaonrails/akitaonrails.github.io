@@ -8,7 +8,7 @@ tags:
 draft: false
 ---
 
-Esta viagem foi fantástica. Eu estava consolado de que nem iria mais viajar. De repente, tive a oportunidade de [dar o sangue](/2008/5/7/off-topic-dando-o-sangue-pelo-rails) por essa viagem. Graças ao apoio do Vinicius, e muito vai e vêm daqui até Niterói, finalmente consegui meu passaporte!
+Esta viagem foi fantástica. Eu estava consolado de que nem iria mais viajar. De repente, tive a oportunidade de [dar o sangue](/2008/05/07/off-topic-dando-o-sangue-pelo-rails/) por essa viagem. Graças ao apoio do Vinicius, e muito vai e vêm daqui até Niterói, finalmente consegui meu passaporte!
 
 [![](http://s3.amazonaws.com/akitaonrails/assets/2008/6/5/DSC06065.JPG)](http://gallery.mac.com/akitaonrails#100097/DSC06065&bgcolor=black)   
 Portland é uma cidade muito bonita

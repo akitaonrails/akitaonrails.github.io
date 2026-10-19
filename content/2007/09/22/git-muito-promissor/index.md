@@ -9,7 +9,7 @@ tags:
 draft: false
 ---
 
-No [artigo anterior](http://www.akitaonrails.com/2007/9/22/jogar-pedra-em-gato-morto-por-que-subversion-no-presta) falei um pouco sobre [**GIT**](http://git.or.cz/) e ele parece mesmo promissor. Meu objetivo é não fazer uma migração big-bang. Não me interessa neste momento ter todo o trabalho de retirar meu Subversion do ar, instalar um servidor GIT, etc. Meu objetivo é ter um repositório local que seja: rápido, estável, confiável, que faça o arroz-com-feijão com competência. Só o tempo dirá. Mas os primeiros testes foram muito satisfatórios!
+No [artigo anterior](/2007/09/22/jogar-pedra-em-gato-morto-por-que-subversion-no-presta/) falei um pouco sobre [**GIT**](http://git.or.cz/) e ele parece mesmo promissor. Meu objetivo é não fazer uma migração big-bang. Não me interessa neste momento ter todo o trabalho de retirar meu Subversion do ar, instalar um servidor GIT, etc. Meu objetivo é ter um repositório local que seja: rápido, estável, confiável, que faça o arroz-com-feijão com competência. Só o tempo dirá. Mas os primeiros testes foram muito satisfatórios!
 
 Instalar o GIT varia. Em Windows: não faço idéia. Em Linux: Google – ao que parece existem tarballs, pacotes para Yum, pacotes para Apt-get. Deve ser bem simples, façam sua lição de casa. Para Mac: MacPorts. Foi um pouco estranho, porque o **git-svn** parece que usa Perl5, e meu SVK que já estava instalado também. Acabei desinstalando o SVK e suas dependências e instalando novamente – deve ser o sono, já é bem tarde. Resumindo, acredito que a receita (para começar em um MacPorts limpo), seja algo assim:
 

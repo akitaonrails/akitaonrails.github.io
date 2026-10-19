@@ -24,7 +24,7 @@ Veja este trecho do livro [The Black Swan](http://www.amazon.com/Black-Swan-Impa
 >
 > A instituição patrocinada pelo governo, [Fannie Mae](http://en.wikipedia.org/wiki/Fannie_Mae), quando eu olho seus riscos, parece estar montada num barril de dinamite, vulnerável ao menor soluço. Mas não se preocupem: eles têm grandes equipes de cientistas que consideram esses eventos “improváveis”.
 
-Não, Nassim não é profeta, adivinho, bidu ou guru. Aliás, ele odiaria ser chamado de guru. Ele só fez uma observação baseada no que todos nós ignoramos: nossa máquina humana é muito ruim para lidar com abstrações, como a [Aleatoriedade](http://www.akitaonrails.com/2008/3/1/off-topic-somos-matematicamente-ignorantes).
+Não, Nassim não é profeta, adivinho, bidu ou guru. Aliás, ele odiaria ser chamado de guru. Ele só fez uma observação baseada no que todos nós ignoramos: nossa máquina humana é muito ruim para lidar com abstrações, como a [Aleatoriedade](/2008/03/01/off-topic-somos-matematicamente-ignorantes/).
 
 Não confundam: isso não é argumento contra a globalização nem baboseira pseudo-socialista. O ponto importante é o segundo parágrafo da citação.
 
@@ -141,6 +141,6 @@ Não deixe sua decisão ser viciada por teorias não-científicas: pseudo-ciênc
 
 Novamente, leiam Taleb: o que ele diz é **óbvio**, mas por alguma razão todos nós ignoramos. Pouca gente de fato entende o que é aleatoriedade. Parem de assistir freneticamente à Bloomberg e de atualizar o navegador a cada 5 segundos para ver os índices financeiros. Nada disso vai te ajudar: você já ignorou o Cisne Negro, você já perdeu.
 
-Só uma _pontinha_ sobre filosofia Ágil: sempre achei inteligente o motivo de as metodologias Ágeis insistirem tanto em Sprints e iterações **curtas**. Eles sabem que é impossível prever o futuro de longo prazo, então priorizam o que é realmente importante e planejam só o curto prazo, o que é efetivamente possível. As metodologias Ágeis me parecem feitas sob medida para se defender dos Cisnes Negros que ainda assombram as equipes _tradicionais_ de desenvolvimento de software, como expliquei no meu artigo [anterior](http://www.akitaonrails.com/2008/10/7/off-topic-o-manifesto-gil-ou-como-se-tornar-o-google).
+Só uma _pontinha_ sobre filosofia Ágil: sempre achei inteligente o motivo de as metodologias Ágeis insistirem tanto em Sprints e iterações **curtas**. Eles sabem que é impossível prever o futuro de longo prazo, então priorizam o que é realmente importante e planejam só o curto prazo, o que é efetivamente possível. As metodologias Ágeis me parecem feitas sob medida para se defender dos Cisnes Negros que ainda assombram as equipes _tradicionais_ de desenvolvimento de software, como expliquei no meu artigo [anterior](/2008/10/07/off-topic-o-manifesto-gil-ou-como-se-tornar-o-google/).
 
 Todo mundo conheceu apenas cisnes brancos no passado e induz que Cisnes Negros não existem. Eis onde mora o perigo!

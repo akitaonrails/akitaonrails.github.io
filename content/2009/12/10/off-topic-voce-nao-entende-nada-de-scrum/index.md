@@ -67,7 +67,7 @@ Your browser does not support the video tag. [Direct Link](https://s3.us-east-2.
 
 Esse trecho é da palestra [Auto-Organização: o tempero secreto para melhorar sua equipe Scrum](http://jeffsutherland.com/scrum/2009/04/self-organization-secret-sauce-for.html), que ele apresentou recentemente no Google Tech Talk.
 
-Confesso que foi muito estranho ouvir essa reação, porque estou falando de gente que, teoricamente, deveria ser agilista, já que clama saber implementar Scrum. Por isso publiquei o artigo [O Manifesto Ágil, ou como se tornar o Google](/2008/10/7/off-topic-o-manifesto-gil-ou-como-se-tornar-o-google), onde comecei a interpretar o que todos já deveriam ter memorizado: o [Manifesto Ágil](http://agilemanifesto.org/):
+Confesso que foi muito estranho ouvir essa reação, porque estou falando de gente que, teoricamente, deveria ser agilista, já que clama saber implementar Scrum. Por isso publiquei o artigo [O Manifesto Ágil, ou como se tornar o Google](/2008/10/07/off-topic-o-manifesto-gil-ou-como-se-tornar-o-google/), onde comecei a interpretar o que todos já deveriam ter memorizado: o [Manifesto Ágil](http://agilemanifesto.org/):
 
 > “As melhores arquiteturas, requerimentos, e designs **emergem** de equipes **auto-organizadas**.”
 

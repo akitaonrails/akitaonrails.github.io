@@ -54,7 +54,7 @@ In addition, the execution model of Rubinius is almost identical to Squeak. A go
 
 **AkitaOnRails:** Today you have shotgun. I read somewhere that you consider it ‘cheating’ because this is not an interpreter for Ruby written in Ruby, which will lead to Cuby. It’s more kind of a bootstrapping to ease development. What’s the current state of shotgun, can we use it outside its purpose of developing Rubinius?
 
-**Evan Phoenix:** Shotgun is a virtual machine written in C that provides instructions and primitive operations for running a Ruby-like language. Shotgun itself actually has no knowledge of parsing, compiling etc. It has a very simple way to load code in, and a way to execute it. You could easily write a new language which targets shotgun, in fact, [Ola Bini](/2007/6/21/chatting-with-ola-bini-jRuby-core-team-member) and I have talked a few times about writing a simple lisp-style language that would run directly on shotgun.
+**Evan Phoenix:** Shotgun is a virtual machine written in C that provides instructions and primitive operations for running a Ruby-like language. Shotgun itself actually has no knowledge of parsing, compiling etc. It has a very simple way to load code in, and a way to execute it. You could easily write a new language which targets shotgun, in fact, [Ola Bini](/2007/06/21/chatting-with-ola-bini-jRuby-core-team-member/) and I have talked a few times about writing a simple lisp-style language that would run directly on shotgun.
 
 The primitive operations it provides are kinda like syscalls in a unix system. They provide very low level operations which are built on. For example, there is an add primitive which adds two Fixnum objects together and puts the result on the stack.
 

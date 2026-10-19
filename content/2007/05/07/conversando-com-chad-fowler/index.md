@@ -13,7 +13,7 @@ aliases:
 - "/2007/05/04/chatting-with-chad-fowler/"
 ---
 
-**English readers, click [here](/2007/5/4/chatting-with-chad-fowler)**
+**English readers, click [here](/2007/05/04/chatting-with-chad-fowler/)**
 
  ![](https://akitaonrails.s3.amazonaws.com/files/chadfowler.jpg)
 

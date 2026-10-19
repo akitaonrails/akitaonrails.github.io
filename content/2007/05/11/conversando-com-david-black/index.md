@@ -13,7 +13,7 @@ aliases:
 - "/2007/05/11/chatting-with-david-black/"
 ---
 
-**English readers, click [here](/2007/5/11/chatting-with-david-black)**
+**English readers, click [here](/2007/05/11/chatting-with-david-black/)**
 
  ![](https://akitaonrails.s3.amazonaws.com/files/david.jpg)
 
