@@ -736,6 +736,7 @@
     var el = {};        // dom refs
     var results = [];
     var active = 0;
+    var previousFocus = null;
 
     function normalize(s) {
       return (s || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
@@ -757,6 +758,8 @@
       var back = document.createElement("div");
       back.className = "aor-omni-backdrop"; back.hidden = true;
       back.setAttribute("role", "dialog"); back.setAttribute("aria-label", L.ph);
+      back.setAttribute("aria-modal", "true");
+      back.addEventListener("keydown", onDialogKey);
       var box = document.createElement("div"); box.className = "aor-omni";
       var input = document.createElement("input");
       input.className = "aor-omni__input"; input.type = "text";
@@ -778,6 +781,7 @@
 
     function open(seed) {
       if (!el.back) buildDom();
+      previousFocus = document.activeElement;
       el.back.hidden = false;
       el.input.value = seed || "";
       el.input.focus();
@@ -787,6 +791,20 @@
     function close() {
       if (el.back) { el.back.hidden = true; el.input.value = ""; el.list.innerHTML = ""; }
       results = []; active = 0;
+      if (previousFocus && previousFocus.isConnected) previousFocus.focus();
+      previousFocus = null;
+    }
+
+    function onDialogKey(e) {
+      if (e.key === "Escape") { e.preventDefault(); close(); return; }
+      if (e.key !== "Tab") return;
+      var rows = el.list.querySelectorAll(".aor-omni__row");
+      var last = rows.length ? rows[rows.length - 1] : el.input;
+      if (e.shiftKey && document.activeElement === el.input) {
+        e.preventDefault(); last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault(); el.input.focus();
+      }
     }
 
     function ensureData() {
@@ -856,7 +874,6 @@
     }
 
     function onInputKey(e) {
-      if (e.key === "Escape") { e.preventDefault(); close(); return; }
       if (e.key === "Enter") {
         var rows = el.list.querySelectorAll(".aor-omni__row");
         if (rows[active]) { e.preventDefault(); window.location.href = rows[active].href; }
