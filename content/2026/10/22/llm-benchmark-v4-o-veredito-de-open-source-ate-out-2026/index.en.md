@@ -321,7 +321,7 @@ This is what runs on a PC: an RTX 5090 with 32 GB or a Strix Halo with 128 GB un
 | Ornith 1.5 35B (Q8_0, Strata) | RTX 5090 | 64.5 | ~80 |
 | GLM-4.7-Flash (Q5_K_M) | RTX 5090 | 24.0 | — |
 
-There's only one winner: **Qwen3.8 Flash-Next on the RTX 5090 with Strata**. It's a 125-billion MoE with 6 billion active per token, and Strata keeps the most-used experts on the card and the rest in RAM. It landed 1.5 points from the datacenter version, at interactive speed.
+There's only one winner: **Qwen3.8 Flash-Next on the RTX 5090 with Strata**. It's a 125-billion MoE with 6 billion active per token, and Strata keeps the most-used experts on the card and the rest in RAM. It landed 1.5 points from the datacenter version, at interactive speed. I covered it in detail, with installation, an auto-loading service and the OpenCode setup, in [Best Open Source LLM: Strata with Qwen 3.8 Flash Next](/en/2026/10/22/best-open-source-llm-strata-with-qwen-3-8-flash-next/).
 
 The Strix Halo fits big models, but its memory bandwidth is seven times lower than the 5090's, and a 27B dense model crawls at under 10 tokens per second in Q8, about 13 in Q4. It's fine for background tasks that can wait.
 

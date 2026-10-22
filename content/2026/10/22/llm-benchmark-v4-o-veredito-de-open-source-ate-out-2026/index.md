@@ -321,7 +321,7 @@ Aqui entra o que roda num PC: RTX 5090 de 32 GB ou Strix Halo de 128 GB unificad
 | Ornith 1.5 35B (Q8_0, Strata) | RTX 5090 | 64,5 | ~80 |
 | GLM-4.7-Flash (Q5_K_M) | RTX 5090 | 24,0 | — |
 
-Só tem um vencedor: o **Qwen3.8 Flash-Next na RTX 5090 com o Strata**. É um MoE de 125 bilhões com 6 bilhões ativos por token, e o Strata deixa os especialistas mais usados na placa e o resto na RAM. Ficou a 1,5 ponto da versão de datacenter, em velocidade interativa.
+Só tem um vencedor: o **Qwen3.8 Flash-Next na RTX 5090 com o Strata**. É um MoE de 125 bilhões com 6 bilhões ativos por token, e o Strata deixa os especialistas mais usados na placa e o resto na RAM. Ficou a 1,5 ponto da versão de datacenter, em velocidade interativa. Eu detalhei ele, com instalação, serviço de carga automática e configuração do OpenCode, em [Melhor LLM Open Source: Strata com Qwen 3.8 Flash Next](/2026/10/22/melhor-llm-open-source-strata-com-qwen-3-8-flash-next/).
 
 O Strix Halo cabe modelo grande, mas a banda de memória dele é sete vezes menor que a da 5090, e um modelo denso de 27B anda a menos de 10 tokens por segundo em Q8, uns 13 em Q4. Serve pra tarefa de fundo, que pode esperar.
 
