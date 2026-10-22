@@ -4,14 +4,14 @@ slug: "llm-benchmark-v4-consumer-open-source-rtx5090-strix-halo-strata"
 date: '2026-10-22T11:30:00-03:00'
 draft: false
 translationKey: llm-benchmark-v4-open-source-nivel-consumidor-rtx5090-strix-halo-strata
-description: "After testing the big models in the datacenter, I went back to consumer hardware: RTX 5090 and Strix Halo. Qwen3.8 Flash-Next scored 91.0 on the 5090 with the new Strata engine, 1.5 points behind the B300. Strix Halo shows that big memory is not speed: 80.0 on the same task, but 7.7 tokens per second. I compare specs, explain the tuning that makes a model run well on a PC, and answer whether consumer hardware is already good enough to work with AI day to day."
+description: "I went back to consumer hardware after the datacenter tests. Qwen3.8 Flash-Next scored 91.0, Tier A, on an RTX 5090 with the Strata engine, 1.5 points behind the B300 and at 159 tokens per second. It is a different model from the Qwen 3.8 27B I had called too slow: a MoE with 6B active per token, served with the most-used experts on the card. The Strix Halo scored 80.0 with the 27B, but at 7.7 tokens per second. It is the first local model to make Tier A on v4 that is worth testing for day-to-day programming, if you can find a 5090: NVIDIA denies ending production, but admits supply is tight."
 tags:
 - llm-benchmarks
 - local-models
 - llms
 - hardware
 images:
-- /2026/10/22/llm-benchmark-v4-open-source-nivel-consumidor-rtx5090-strix-halo-strata/dgx-spark-box.jpeg
+- /2026/10/22/llm-benchmark-v4-can-my-team-fit-in-a-4x-b300-h200/dgx-spark-box.jpeg
 ---
 
 In the last two articles I covered the [big-model benchmark on 4x B300](/en/2026/10/22/llm-benchmark-v4-open-source-that-only-fits-in-4x-b300/) and the [team-size and per-user cost math on B300 and H200](/en/2026/10/22/llm-benchmark-v4-can-my-team-fit-in-a-4x-b300-h200/). Now the question every developer without a Runpod pod has: **is consumer hardware already good enough to work with AI for real?**
@@ -27,7 +27,7 @@ Before any scores, understand the physical difference of what I'm comparing:
 | NVIDIA B300 | 288 GB HBM3e | ~8 TB/s | Blackwell Ultra, FP8 and FP4 | US$ 9/hour (Runpod) |
 | NVIDIA H200 | 141 GB HBM3e | ~4.8 TB/s | Hopper, FP8 | US$ 3.59/hour |
 | DGX Spark | 128 GB unified | 273 GB/s | GB10, FP4 | ~US$ 6,950 |
-| RTX 5090 | 32 GB GDDR7 | ~1.8 TB/s | Blackwell sm_120, FP8/FP4 | ~US$ 2,000 |
+| RTX 5090 | 32 GB GDDR7 | ~1.8 TB/s | Blackwell sm_120, FP8/FP4 | US$ 1,999 MSRP (~5x at retail) |
 | Strix Halo (Ryzen AI Max+ 395) | 128 GB unified | ~256 GB/s | gfx1151, ROCm | ~US$ 2,000 |
 
 The B300 has over 30 times the Strix Halo's memory bandwidth. The 5090 has 7 times. That explains why the same model flies on one machine and crawls on the other, and why quantization stops being a detail and becomes a design decision.
@@ -57,17 +57,51 @@ Consumer hardware doesn't forgive lazy configuration. What I learned in practice
 - **KV cache in q8_0.** Halves KV memory with no measurable quality cost. Flash-attention on by default, but GLM 4.7 Flash needs it off, because its deepseek2 architecture is incompatible.
 - **Hybrid reasoning is work.** Qwen3.8-27B, with the SSM/Mamba architecture, needed a fresh llama.cpp/Ollama build because of `ssm_conv1d`. And "no reasoning" mode didn't prevent a coherence loop in one of the attempts; the way out was resuming on the Strix with Q8_0 and `--reasoning off`. It wasn't extra memory that fixed it, it was turning off the thinking.
 - **On the Strix, the adjustment is ROCm, not magic.** `HSA_OVERRIDE_GFX_VERSION`, `GGML_HIP_NO_VMM`, `-dio`. Its trump is capacity (128 GB), not speed (~256 GB/s). Q4_K_M gave 12.6 tok/s and Q8_0 gave 7.7 tok/s, below my 30 tok/s cutoff for interactive use. That's why the Strix became an escape hatch for big models, not a fast chat box.
-- **The engine matters more than the "AMD is no good" argument.** The same card that looked slow serves big models well when the engine is optimized for its architecture. Draft-head speculation is still a fraud if acceptance is low: in a llama.cpp test with n-gram and no draft model, only 5 of 64 drafts were accepted and throughput dropped 2.3%.
+- **Speculation only helps with high acceptance.** In a [test by Mihai Farcas](https://mihai.ltd/blog/beating-llamacpp-from-scratch-consumer-amd) on an RX 7900 XTX, llama.cpp's n-gram speculation with no draft model had only 5 of 64 tokens accepted, and throughput stayed flat in one run and dropped about 2% in the other. The gain shows up with a drafter built for the model, like the helper Strata uses for Flash-Next.
 
 ## What is this Strata thing
 
-[Strata](https://mihai.ltd/blog/beating-llamacpp-from-scratch-consumer-amd) is a new inference engine, written from scratch in Rust with custom AMD HIP kernels, by Mihai Farcas. It's not a llama.cpp wrapper: it's another engine, with builds for CUDA 12/13 and for HIP-ROCm (the 5090 run used CUDA 13).
+[Strata](https://github.com/Niko1221/Strata) is an open source inference engine, MIT licensed, built around one model: **Qwen3.8 Flash-Next**, a 125-billion-parameter MoE that normally needs a server. It also runs smaller MoEs, like the Ornith-35B I tested here. The code is C++ and CUDA and reuses parts of llama.cpp/ggml. It has builds for NVIDIA (CUDA 12 and 13), AMD (Strix Halo included), Intel Arc and Apple Silicon, and it serves an OpenAI- and Anthropic-compatible API on localhost that plugs straight into Claude Code, Codex CLI or OpenCode.
 
-The problem it attacks is the big MoE on a small machine. The strategy is **expert-offload**: the hot experts stay in VRAM, the rest stay in RAM, and the index stays on SSD. With 125B and 24,576 experts, only about 10 active per token, you don't need 288 GB of VRAM to serve the model. You need at least ~32 GB between RAM and VRAM and ~80 GB of disk. It's the difference between "doesn't run" and "runs well".
+Watch out for the name. Mihai Farcas published [another engine called Strata](https://mihai.ltd/blog/beating-llamacpp-from-scratch-consumer-amd), in Rust with HIP kernels, for small dense Qwen 3.5 models on an RX 7900 XTX. They are different projects, and the one that ran here is the first.
 
-In the author's experiment with Qwen 3.5 4B on an RX 7900 XTX, the optimizations are the same ones I covered in the previous article: batched prefill instead of thousands of kernels (from ~3,300 to 280), HIP Graph Replay on decode, argmax on the GPU, split-KV attention with four workers so it doesn't decay with context, and immediate flush of every token over HTTP (TTFT from 410 ms to 48.5 ms). All of that on an OpenAI-compatible API on port 8080.
+The problem it attacks is the big MoE on a small machine. The strategy is **expert-offload**, in tiers:
 
-What made me believe in it was the result, not the marketing: **Qwen3.8 Flash-Next on the 5090 with Strata scored 91.0, with zero nudges and all 14 items solved**, 1.5 points behind the 92.5 the same model scored on the B300 with vLLM. The report itself calls that "within the noise". In this benchmark, an engine written by one person landed 1.5 points behind the same variant served in a datacenter.
+- the model has 24,576 experts, 512 in each of its 48 layers, and each token uses only 10 per layer;
+- the GPU holds about 4 thousand experts, the most-used ones;
+- system RAM holds all of them;
+- a lookup table of about 29 GB sits on the SSD, and the model reads a few rows of it per token.
+
+On top of that, a small helper guesses the next words and the big model checks all of them at once. The README promises the same answer 1.6 to 1.8 times sooner. The minimum is 32 GB of RAM and VRAM combined, plus about 80 GB of disk, and the IQ3_S variant I used is about 55 GB.
+
+What made me believe in it was the result: **Qwen3.8 Flash-Next on the 5090 with Strata scored 91.0, with zero nudges and all 14 items solved**, 1.5 points behind the 92.5 the same model scored on the B300 with vLLM. The report itself calls that "within the noise". A community project, on a consumer card, landed right next to the same model served in a datacenter in NVFP4.
+
+## Wasn't Qwen 3.8 too slow?
+
+It was, and I wrote that. In the [v4 ranking](/en/2026/09/15/new-llm-benchmark-v4-retesting-39-llms-part-2/), Qwen 3.8 27B running locally took almost 12 hours to finish the seven sprints. In the [B300 article](/en/2026/10/19/llm-benchmark-v4-the-top-open-source-llms-on-a-b300/) I summed it up: it scored 80, took 706 minutes, "so don't even try".
+
+Except that one is a different Qwen 3.8. The family has both, and they behave in opposite ways at home:
+
+| | Qwen 3.8 27B | Qwen3.8 Flash-Next |
+| --- | --- | --- |
+| Architecture | dense, 27B | MoE, 125B total, 6B active per token |
+| Where it finished v4 | Strix Halo, Q8_0 | RTX 5090, IQ3_S, Strata |
+| Speed | 7.7 tok/s | **159.2 tok/s** |
+| v4 score | 80.0 (B) | **91.0 (A)** |
+
+### Why the bigger one runs faster
+
+When generating tokens, a local machine is limited by memory bandwidth: every token has to read all the active weights. The dense 27B reads all 27 billion on every token, about 29 GB in Q8. The Strix moves about 256 GB/s, so the ceiling sits near 9 tokens per second, and I measured 7.7.
+
+On the 5090 the same 27B would be fast, but in Q8 it doesn't fit in 32 GB together with the context that seven sprints pile up. In Q5_K_M it fit, but it got stuck in a reasoning loop on sprint 3. It finished on the Strix, in Q8_0 with reasoning turned off (`--reasoning off`), which is what broke the loop.
+
+Flash-Next has almost five times as many parameters in total, but only about 6 billion work on each token. At 3 bits, that's roughly a tenth of what the 27B in Q8 has to read. The hot experts sit in the 5090's GDDR7, with seven times the Strix's bandwidth, and the speculation helper gets tokens ahead. The result: about 20 times the speed of the 27B on the Strix, with a higher score.
+
+> The turn came from switching model and engine: a MoE with few active parameters, served by an expert-offload engine built for it. No configuration flag would get that out of the dense 27B on the Strix.
+
+### Tuning still charges its price
+
+The cost of running at home changes from model to model. Flash-Next at 3 bits lost only 1.5 points against the B300's NVFP4 version. Ornith-35B, on the same engine and the same card, lost 16.5 against its own BF16 version on the B300. Measure your model before you trust it.
 
 ## What each model did that's interesting
 
@@ -101,8 +135,22 @@ The reading is that the consumer top is **9 points below the absolute commercial
 
 ## So, is consumer hardware good enough to work with?
 
-**Yes, with the right model and engine.** An RTX 5090 with Strata delivers Tier A code-review vigilance, at 159 tokens per second, without paying a cent per token once the hardware exists. For anyone doing code review, testing coding agents and keeping private data at home, that changes the game: it's not "almost as good as", it's genuinely good.
+**Yes, with the right model and engine.** An RTX 5090 with Strata delivers Tier A code-review vigilance, at 159 tokens per second, without paying a cent per token once the hardware exists. For anyone doing code review, testing coding agents and keeping private data at home, that changes the game.
+
+For the first time in this benchmark I have a tested model, on consumer hardware, that deserves to go to work every day. I've already set Flash-Next up in OpenCode pointing at the 5090. The next step is to use it for real programming, outside the sabotage yardstick, and see whether the score holds.
 
 What doesn't work is thinking any configuration works. The Strix Halo is great for having 128 GB and mounting a big model, but its speed doesn't pay for interactivity; Ornith runs fast and reviews badly; GLM-4.7-Flash completes the protocol and detects nothing unannounced. And there's the invisible price: aggressive quantization can charge score, depending on the model and the configuration, and waiting time charges patience.
 
 If I were building a box for a dev today, it would be a 5090 with Strata and Flash-Next, and I'd use the Strix for background tasks that accept being slow. The commercial frontier keeps winning for whoever needs the maximum. But consumer stopped being a consolation prize: there's already Tier A on the home shelf.
+
+### The problem now is finding a 5090
+
+In October, leakers claimed NVIDIA would stop producing the RTX 5090 and reserve the GB202 chips for its professional and datacenter lines. The card even vanished from NVIDIA's official US store. On October 16, at an event in Taipei, **Jeff Fisher**, NVIDIA's senior vice president, [denied the discontinuation](https://www.guru3d.com/story/nvidia-says-geforce-rtx-5090-production-is-continuing/) and said the company will keep shipping, but admitted production capacity is tight.
+
+In practice:
+
+- the suggested price is still US$ 1,999, and most listings on Newegg in the US [go above US$ 9,300, almost five times that](https://www.techspot.com/news/114254-nvidia-rtx-5090-production-but-absence-company-us.html);
+- in Brazil, each unit retails for around [R$ 35 thousand](https://www.baguete.com.br/noticias/carga-milionaria-de-gpus-some-de-guarulhos);
+- and two pallets of Zotac RTX 5090s, imported by the distributor Oderço and valued at about R$ 2.5 million, [disappeared at Guarulhos airport](https://www.terra.com.br/noticias/misterio-em-guarulhos-r-25-milhoes-em-placas-de-video-desaparecem,a7596d7874eddfb490f96345b4be1b09z4eix4rc.html) in São Paulo. GRU Airport reported it to the authorities, and the case is still under investigation, with no confirmed theft.
+
+> The first local Tier A model on v4 runs precisely on the hardest card to buy right now. The home shelf already has Tier A. What's missing is getting the shelf.

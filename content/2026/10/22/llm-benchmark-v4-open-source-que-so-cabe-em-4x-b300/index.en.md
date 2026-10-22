@@ -99,6 +99,7 @@ But three warnings before you cancel your Claude subscription:
 1. **More parameters doesn't mean more competence.** The full GLM 5.3, at ~700B, scored 76 against its own Flash's 92.5. Kimi K2 Thinking, at 1 trillion, scored 46. And Nex N2.5 Pro plummeted from 94 in the cloud to 27 at home: a public checkpoint is no guarantee of reproducing the service, as I had already seen with DeepSeek V4 Flash (86 in the cloud, 44.5 at home).
 
 2. **My yardstick is vigilance, not general programming.** Here I measure who notices sabotage. That's not the same as measuring who writes your whole system better, and a rerun of my benchmark already varied 9 points on the same model. The 1.5-point distance between models may be noise.
+
 3. **Cost changes the answer.** If the idea is frontier quality day to day, DeepSeek V4.1's cloud API cost US$ 1.21 per full benchmark round. The 4x B300 pod costs US$ 36 per hour before you even press the button. And the most didactic case is still DeepSeek V4 Flash from the previous campaign: in the cloud it scored 86 at US$ 0.97 per round; at home, 44.5 and on top of that more expensive per inference. Sometimes the cloud is better **and** cheaper.
 
 ## Is renting 4x B300 worth it?

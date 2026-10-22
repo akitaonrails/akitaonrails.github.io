@@ -99,6 +99,7 @@ Mas três avisos antes de você cancelar a assinatura do Claude:
 1. **Mais parâmetros não significa mais competência.** O GLM 5.3 full, com ~700B, fez 76 contra 92,5 do Flash dele mesmo. O Kimi K2 Thinking, com 1 trilhão, fez 46. E o Nex N2.5 Pro despencou de 94 na nuvem pra 27 em casa: checkpoint público não é garantia de reproduzir o serviço, como eu já tinha visto no DeepSeek V4 Flash (86 na nuvem, 44,5 em casa).
 
 2. **Minha régua é vigilância, não programação geral.** Aqui eu meço quem percebe sabotagem. Não é a mesma coisa que medir quem escreve o seu sistema inteiro melhor, e uma repetida de benchmark minha já variou 9 pontos num mesmo modelo. A distância de 1,5 ponto entre modelos pode ser barulho.
+
 3. **Custo muda a resposta.** Se a ideia é ter qualidade de frontier no dia a dia, a API em nuvem do DeepSeek V4.1 custou US$ 1,21 por rodada de benchmark completa. O pod de 4x B300 custa US$ 36 por hora antes mesmo de você apertar o botão. E o caso mais didático continua sendo o DeepSeek V4 Flash da campanha anterior: na nuvem ele fez 86 por US$ 0,97 a rodada; em casa, 44,5 e ainda por cima mais caro por inferência. Às vezes a nuvem é melhor **e** mais barata.
 
 ## Vale alugar 4x B300?
