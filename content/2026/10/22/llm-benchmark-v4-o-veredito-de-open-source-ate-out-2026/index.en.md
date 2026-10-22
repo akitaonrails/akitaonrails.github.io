@@ -331,6 +331,23 @@ On a 5090 they'd fit in Q4 or Q5, but quantized, the best case is matching the B
 
 > If those two already fell behind Flash-Next at full precision, they won't get better on a 5090. I saw no reason to test them: for a PC, Flash-Next is clearly the pick.
 
+### What about GPUs worse than the 5090?
+
+It's the question that always comes up: what about people with an 8, 12 or 16 GB card? From my data, the path of a small model that fits entirely on the card still doesn't deliver anything worth the effort for programming.
+
+On a card like that, in Q4, a dense model of up to about 20 billion fits; a 30-billion MoE with few active parameters only runs with part of it in RAM. And that range did badly in v4:
+
+- GLM-4.7-Flash, a 30B MoE with 3B active, scored 24 on the 5090 and 33.5 on the B300 at full precision, Tier D on both;
+- Ornith-35B, another MoE with 3B active, scored 81 on the B300 and fell to 64.5 on the 5090;
+- gpt-oss-20b didn't even complete the protocol;
+- the best mid-size model was Qwen 3.8 27B, with 80, but it already needs about 16 GB in Q4 alone, stalled on the 5090, and only finished at 8 tokens per second on the Strix.
+
+The exception is precisely Flash-Next. Strata was built to run it on a 12 GB card, holding most of the experts in RAM: the [project's README](https://github.com/Niko1221/Strata) publishes 53 tokens per second in IQ3_S on a 12 GB RTX 5070 with 64 GB of RAM, and the stated minimum is 32 GB of RAM and VRAM combined. With the same weights and the same engine, the score in theory shouldn't change, only the speed, which drops to a third of the 5090's. I didn't measure this; it's the author's number.
+
+The catch is RAM. With DRAM [nearly doubling in price](https://www.trendforce.com/presscenter/news/20260601-13070.html) in a single quarter this year, 64 GB stopped being the cheap upgrade it used to be.
+
+> Below the 5090, I wouldn't waste time on small models for programming. If you're going to try something, make it Flash-Next with Strata and plenty of RAM, and measure it on your own work before trusting it.
+
 And there's the problem I covered in the [previous article](/en/2026/10/22/llm-benchmark-v4-consumer-open-source-rtx5090-strix-halo-strata/): finding a 5090 today is hard, and when you do, the price runs between two and a half and almost five times MSRP.
 
 ## What I learned in v4

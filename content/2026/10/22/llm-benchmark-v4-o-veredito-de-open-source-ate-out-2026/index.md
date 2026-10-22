@@ -331,6 +331,23 @@ Numa 5090 eles caberiam em Q4 ou Q5, mas quantizado o melhor cenário é repetir
 
 > Se os dois já ficaram atrás do Flash-Next com precisão cheia, numa 5090 eles não vão ficar melhores. Não vi motivo pra testar: pra PC, o Flash-Next é claramente a escolha.
 
+### E placa pior que a 5090?
+
+É a pergunta que sempre aparece: e quem tem uma placa de 8, 12 ou 16 GB? Pelos meus dados, o caminho do modelo pequeno que cabe inteiro na placa ainda não entrega nada que valha o trabalho pra programar.
+
+Numa placa dessas, em Q4, cabe modelo denso de até uns 20 bilhões; um MoE de 30 bilhões com poucos ativos só roda com parte na RAM. E essa faixa foi mal no v4:
+
+- o GLM-4.7-Flash, um MoE de 30B com 3B ativos, fez 24 na 5090 e 33,5 na B300 com precisão cheia, Tier D nas duas;
+- a Ornith-35B, outro MoE com 3B ativos, fez 81 na B300 e caiu pra 64,5 na 5090;
+- o gpt-oss-20b nem completou o protocolo;
+- o melhor modelo médio foi o Qwen 3.8 27B, com 80, mas ele já precisa de uns 16 GB só em Q4, travou na 5090 e só terminou a 8 tokens por segundo na Strix.
+
+A exceção é justamente o Flash-Next. O Strata foi feito pra rodar ele em placa de 12 GB, segurando a maioria dos especialistas na RAM: o [README do projeto](https://github.com/Niko1221/Strata) publica 53 tokens por segundo em IQ3_S numa RTX 5070 de 12 GB com 64 GB de RAM, e o mínimo declarado é 32 GB somando RAM e VRAM. Com os mesmos pesos e o mesmo motor, a nota em tese não deveria mudar, só a velocidade, que cai pra um terço da 5090. Eu não medi isso; é número do autor.
+
+O porém é a RAM. Com a DRAM quase [dobrando de preço](https://www.trendforce.com/presscenter/news/20260601-13070.html) num único trimestre deste ano, 64 GB deixaram de ser o upgrade barato que eram.
+
+> Abaixo da 5090, eu não perderia tempo com modelo pequeno pra programar. Se for tentar alguma coisa, que seja o Flash-Next com Strata e RAM sobrando, e meça no seu trabalho antes de confiar.
+
 E tem o problema que eu contei no [artigo anterior](/2026/10/22/llm-benchmark-v4-open-source-nivel-consumidor-rtx5090-strix-halo-strata/): achar uma 5090 hoje é difícil, e quando acha, o preço fica entre duas vezes e meia e quase cinco vezes o sugerido.
 
 ## O que eu aprendi no v4
