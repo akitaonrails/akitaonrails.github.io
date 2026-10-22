@@ -242,25 +242,9 @@ title: AkitaOnRails Blog
 <section class="aor-index-month" aria-labelledby="aor-list-2026-10">
   <div class="aor-index-month__header">
     <h2 id="aor-list-2026-10">October 2026</h2>
-    <span>13 articles</span>
+    <span>11 articles</span>
   </div>
   <div class="aor-index-list-group">
-<article class="aor-index-row" title="After ranking the big models, the leftover question: how many developers fit on a 4x B300 or 4x H200 pod? We measured real concurrency, with a latency SLO, and the answer changes everything: DeepSeek V4.1 Flash holds 32 comfortable users on B300 and only 8 on H200. Cost per comfortable user: US$ 1.13/hour on B300 versus US$ 1.80 on H200. When your own infra closes the math against a frontier subscription, and when it&#39;s just expensive vanity.">
-  <time datetime="2026-10-22">Oct 22</time>
-  <div class="aor-index-row__body">
-    <h3><a class="aor-index-list__main-link" href="/en/2026/10/22/llm-benchmark-v4-can-my-team-fit-in-a-4x-b300-h200/">LLM Benchmark v4: can my team fit in a 4x b300/h200?</a></h3>
-    <p>After ranking the big models, the leftover question: how many developers fit on a 4x B300 or 4x H200 pod? We measured real concurrency, with a latency SLO, and the answer changes everything: DeepSeek V4.1 Flash holds 32 comfortable users on B300 and only 8 on H200. Cost per comfortable user: US$ 1.13/hour on B300 versus US$ 1.80 on H200. When your own infra closes the math against a frontier subscription, and when it&#39;s just expensive vanity.</p>
-  </div>
-  <span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/en/tags/llm-benchmarks/">#llm-benchmarks</a><a class="aor-tag-link" href="/en/tags/local-models/">#local-models</a><a class="aor-tag-link" href="/en/tags/llms/">#llms</a><a class="aor-tag-link" href="/en/tags/hardware/">#hardware</a></span>
-</article>
-<article class="aor-index-row" title="I rented 4x NVIDIA B300 on Runpod and ran my v4 sabotage benchmark on the open models that don&#39;t fit on a single card. DeepSeek V4.1 Flash, at 748B, tied the leaders at 92.5, on the level of hosted GLM 5.3 and GPT-6 Sol. GLM 5.3 full fell behind, the 1T Kimi K2 Thinking disappointed, and a 397B model plummeted from 94 in the cloud to 27 at home. The math: US$ 36 per pod hour, US$ 864 per day. When owning your own infra makes sense, and whether a big open model is already enough for your day-to-day programming.">
-  <time datetime="2026-10-22">Oct 22</time>
-  <div class="aor-index-row__body">
-    <h3><a class="aor-index-list__main-link" href="/en/2026/10/22/llm-benchmark-v4-open-source-that-only-fits-in-4x-b300/">LLM Benchmark v4: open source that only fits in 4x B300!!</a></h3>
-    <p>I rented 4x NVIDIA B300 on Runpod and ran my v4 sabotage benchmark on the open models that don&#39;t fit on a single card. DeepSeek V4.1 Flash, at 748B, tied the leaders at 92.5, on the level of hosted GLM 5.3 and GPT-6 Sol. GLM 5.3 full fell behind, the 1T Kimi K2 Thinking disappointed, and a 397B model plummeted from 94 in the cloud to 27 at home. The math: US$ 36 per pod hour, US$ 864 per day. When owning your own infra makes sense, and whether a big open model is already enough for your day-to-day programming.</p>
-  </div>
-  <span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/en/tags/llm-benchmarks/">#llm-benchmarks</a><a class="aor-tag-link" href="/en/tags/local-models/">#local-models</a><a class="aor-tag-link" href="/en/tags/llms/">#llms</a><a class="aor-tag-link" href="/en/tags/hardware/">#hardware</a></span>
-</article>
 <article class="aor-index-row" title="I rented a 288 GB NVIDIA B300 on Runpod and ran my v4 sabotage benchmark on 14 open-weight models that don&#39;t fit at home. None of them serves fast the way it ships: GLM 5.3 Flash went from 10 to 141 tokens per second on configuration alone. Two open models reached 92.5, Sonnet 5 level, and a 27B fine-tune scored 88. A 397B flagship let an admin backdoor through, DeepSeek V4 Flash scored 86 in the cloud and 44.5 at home, and Nemotron cheated on a test. The math: the cloud API of the same model costs a dollar per run and the pod costs 218 a day. When owning your own infra is worth it, and whether a team fits on one card.">
   <time datetime="2026-10-19">Oct 19</time>
   <div class="aor-index-row__body">

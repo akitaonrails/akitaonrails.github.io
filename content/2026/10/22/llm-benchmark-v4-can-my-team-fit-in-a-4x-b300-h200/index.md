@@ -116,6 +116,8 @@ Cabe, mas caber não é servir: o GLM full deixaria só uns 44 GB pra KV cache e
 
 **DGX Spark** (~US$ 6.950 na loja atual da NVIDIA): 128 GB unificados, 1 PFLOP em FP4, 273 GB/s de banda. O recheio bom pra ela é de modelo pequeno e médio, e ele é melhor do que parece:
 
+E tem um detalhe que dói de ver na fatura: por estimativa minha, sem auditoria fechada de todos os custos da primeira rodada, somando os créditos do v4 (aqueles ~40 modelos comerciais) com os US$ 2.140 desta campanha de B300/H200, eu já gastei alguns mil dólares entre API e pods, perto de metade do preço de uma DGX Spark. E ainda assim eu não teria uma máquina guardada em casa por causa disso.
+
 - **Qwen3.8 Flash-Next** (92,5/A), o co-líder da B300 única. Em IQ3_S ele fica na casa de dezenas de GB, e foi exatamente o modelo que fez 91,0 na RTX 5090 com Strata. É o melhor modelo que eu recomendaria pra uma Spark hoje.
 - **Swift 1.5 27B** (88/A, 56 GB), que foi a recomendação de self-host mais equilibrada da minha campanha anterior;
 - **ThinkingCap 3.8 27B** (83/A, 56 GB);

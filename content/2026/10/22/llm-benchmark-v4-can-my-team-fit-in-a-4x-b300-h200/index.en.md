@@ -116,6 +116,8 @@ It fits, but fitting is not serving: the full GLM would leave only about 44 GB f
 
 **DGX Spark** (~US$ 6,950 on NVIDIA's current store): 128 GB unified, 1 PFLOP in FP4, 273 GB/s of bandwidth. The good filling for it is small and medium models, and it's better than it looks:
 
+And there's a detail that hurts to see on the bill: by my own estimate, without a closed audit of all the first round's costs, adding the v4 credits (those ~40 commercial models) to this B300/H200 campaign's US$ 2,140, I've already spent a few thousand dollars between API and pods, close to half the price of a DGX Spark. And even so, I wouldn't have a machine sitting at home because of it.
+
 - **Qwen3.8 Flash-Next** (92.5/A), the single-B300 co-leader. In IQ3_S it lands in the tens of GB range, and it's exactly the model that scored 91.0 on the RTX 5090 with Strata. It's the best model I'd recommend for a Spark today.
 - **Swift 1.5 27B** (88/A, 56 GB), which was the most balanced self-host recommendation of my previous campaign;
 - **ThinkingCap 3.8 27B** (83/A, 56 GB);
