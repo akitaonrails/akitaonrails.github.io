@@ -125,7 +125,7 @@ Cabe, mas caber não é servir: o GLM full deixaria só uns 44 GB pra KV cache e
 
 O DeepSeek V4.1, com 510 GB, não cabe de jeito nenhum. A banda é quase 30 vezes menor que a da B300, então a interatividade sofre, e a concorrência prática fica pra medir: eu espero pouco mais que uso solo. Pra modelo pequeno é uma caixinha simpática; pra monstro, é peso de papel.
 
-![DGX Spark, o desktop de 128 GB de memória unificada e 1 PFLOP em FP4](dgx-spark.png)
+![DGX Spark, o desktop de 128 GB de memória unificada e 1 PFLOP em FP4](dgx-spark-box.jpeg)
 
 ### TCO, ROI e depreciação
 

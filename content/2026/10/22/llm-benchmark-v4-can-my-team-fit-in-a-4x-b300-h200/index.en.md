@@ -125,7 +125,7 @@ It fits, but fitting is not serving: the full GLM would leave only about 44 GB f
 
 The DeepSeek V4.1, at 510 GB, doesn't fit at all. The bandwidth is almost 30 times smaller than the B300's, so interactivity suffers, and practical concurrency remains to be measured: I expect little more than solo use. For small models it's a nice little box; for a monster, it's a paperweight.
 
-![DGX Spark, the desktop with 128 GB of unified memory and 1 PFLOP in FP4](/2026/10/22/llm-benchmark-v4-can-my-team-fit-in-a-4x-b300-h200/dgx-spark.png)
+![DGX Spark, the desktop with 128 GB of unified memory and 1 PFLOP in FP4](/2026/10/22/llm-benchmark-v4-can-my-team-fit-in-a-4x-b300-h200/dgx-spark-box.jpeg)
 
 ### TCO, ROI and depreciation
 
