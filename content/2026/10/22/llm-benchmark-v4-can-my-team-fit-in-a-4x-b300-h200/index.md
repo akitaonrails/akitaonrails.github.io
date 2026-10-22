@@ -73,27 +73,74 @@ A B300 ganha por pessoa mesmo custando 2,5x mais o pod. A H200 só viraria mais 
 Dá pra montar a mesma infra nos hiperescalares, mas o preço muda de categoria. Os valores de tabela que eu conferi, por GPU-hora:
 
 | Provedor | Configuração | Preço por GPU-hora | Contra Runpod |
-| --- | ---: | ---: |
+| --- | --- | ---: | ---: |
 | Runpod, 4x B300 (minha campanha) | B300 | US$ 9,00 | 1x |
 | Runpod, 4x H200 (Community Cloud) | H200 | [US$ 3,59](https://www.runpod.io/pricing) | 0,4x |
-| [AWS, p6-b300.48xlarge](https://themodelpress.com/gpu-prices) | 8x B300, capacity block | US$ 14,04 | 1,6x |
-| AWS, p6-b200.48xlarge | 8x B200, capacity block | US$ 12,36 | 1,4x |
+| [AWS, p6-b300.48xlarge](https://themodelpress.com/gpu-prices) | 8x B300, capacity block | US$ 16,15 | 1,8x |
+| AWS, p6-b200.48xlarge | 8x B200, capacity block | US$ 14,21 | 1,6x |
 | [Azure, ND96isr_H200_v5](https://themodelpress.com/gpu-prices/azure-nd-h200-v5-on-demand) | 8x H200, East US 2 | US$ 10,60 | 3,0x |
 
-A B300 na AWS custa 1,6x o que eu paguei na Runpod, e a H200 na Azure custa quase 3x a da Runpod. A conclusão de capacidade não muda (a física do tensor parallelism e do KV cache é a mesma), mas a conta de "vale a pena" piora bem: se na Runpod a B300 empata com a assinatura na faixa de 30 usuários, na AWS ela passa a perder por uma margem confortável.
+A B300 na AWS custa 1,8x o que eu paguei na Runpod, e a H200 na Azure custa quase 3x a da Runpod. A conclusão de capacidade não muda (a física do tensor parallelism e do KV cache é a mesma), mas a conta de "vale a pena" piora bem: se na Runpod a B300 empata com a assinatura na faixa de 30 usuários, na AWS ela passa a perder por uma margem confortável.
 
-E na prática, quanto sai por desenvolvedor, desligando o pod à noite como nas outras contas (8 horas por dia útil, 176 horas/mês)?
+E na prática, quanto sai por desenvolvedor, desligando o pod à noite como nas outras contas (8 horas por dia útil, 176 horas/mês)? As linhas de AWS e Azure são aritmética normalizada pra 4 GPUs, porque os SKUs citados vêm com 8 e eu não medi TP=8:
 
 | Setup | Custo mensal do pod | Streams confortáveis (1 por dev) | Custo por dev/mês |
-| --- | ---: | ---: | ---: |
+| --- | --- | ---: | ---: |
 | Runpod 4x B300 (US$ 36/h) | US$ 6.336 | 32 | US$ 198 |
-| AWS 4x B300 (US$ 56,16/h) | US$ 9.884 | 32 | US$ 309 |
+| AWS 4x B300 (US$ 64,58/h, normalizado) | US$ 11.367 | 32 | US$ 355 |
 | Runpod 4x H200 (US$ 14,36/h) | US$ 2.527 | 8 | US$ 316 |
-| Azure 4x H200 (US$ 42,40/h) | US$ 7.462 | 8 | US$ 933 |
+| Azure 4x H200 (US$ 42,40/h, normalizado) | US$ 7.462 | 8 | US$ 933 |
 
-A diferença é brutal: o mesmo desenvolvedor confortável sai por US$ 198 na Runpod e por US$ 933 na Azure, quase cinco vezes mais caro que a assinatura de frontier mais forte. Só a AWS fica numa faixa onde a conversa ainda existe, e mesmo assim 50% acima da Runpod.
+A diferença é brutal: o mesmo desenvolvedor confortável sai por US$ 198 na Runpod e por US$ 933 na Azure, quase cinco vezes mais caro que a assinatura de frontier mais forte. A AWS fica quase 80% acima da Runpod, então mesmo ela só faz sentido se a sua exigência for outra coisa que não custo.
 
-Os modelos comerciais também são diferentes: capacity block na AWS não é on-demand, e a Community Cloud da Runpod não é SLA de produção. E um detalhe de empacotamento: os SKUs de 8 GPUs são o padrão nos hiperescalares, então se você não puder alugar só 4, a conta dobra pro mesmo TP=4 (ou você sobe pra TP=8 e mede de novo). Leia essa tabela como ordem de grandeza de preço, não como cotação de contrato. Se a sua exigência é compliance, procurement ou residência em região específica, o hiperescalar pode ser inevitável, e aí você paga o prêmio. Se a exigência é custo, as neoclouds continuam imbatíveis.
+E se você pegar a instância inteira de 8 GPUs, como elas são vendidas? A AWS sai por US$ 22.734/mês e a Azure por US$ 14.925/mês, e aí você tem que medir TP=8 pra saber quantos usuários aproveita, porque com TP=4 você paga o dobro pela mesma capacidade.
+
+Os modelos comerciais também são diferentes: capacity block na AWS não é on-demand, e a Community Cloud da Runpod não é SLA de produção. Leia essa tabela como ordem de grandeza de preço, não como cotação de contrato. Se a sua exigência é compliance, procurement ou residência em região específica, o hiperescalar pode ser inevitável, e aí você paga o prêmio. Se a exigência é só preço, as neoclouds ganham nessas configurações.
+
+## E se em vez de alugar, eu comprar a máquina?
+
+Quando a conta de aluguel dói, a pergunta natural é comprar o hardware. Dois candidatos da prateleira atual:
+
+**DGX Station GB300** (~US$ 130 mil, com configurações começando em torno de US$ 95 mil): 748 GB de memória unificada (252 GB de HBM3e a 7,1 TB/s e 496 GB de LPDDR5X a 396 GB/s), 20 PFLOPS em FP4. Os pesos de todos os modelos que eu testei cabem nela, e os melhores pra colocar nela seriam:
+
+- **DeepSeek V4.1 Flash** (92,5/A, 510 GB em FP8), o campeão do benchmark;
+- **Muse Spark Open** (69,5/C, 533 GB em NVFP4);
+- **Step-5-Preview** (72,5/C, 368 GB em NVFP4);
+- **GLM 5.3 full** (76/B, 704 GB em FP8).
+
+Cabe, mas caber não é servir: o GLM full deixaria só uns 44 GB pra KV cache e sistema, então a concorrência plena com contexto longo fica por medir. A estimativa de conforto é de um dígito, na linha da H200, e não os 32 do pod de quatro. A diferença é que você não precisa de TP=4: tudo mora num chip só.
+
+![Render da DGX Station GB300, o desktop com superchip Grace Blackwell Ultra e 748 GB de memória unificada](dgx-station-gb300.jpg)
+
+**DGX Spark** (~US$ 6.950 na loja atual da NVIDIA): 128 GB unificados, 1 PFLOP em FP4, 273 GB/s de banda. O recheio bom pra ela é de modelo pequeno e médio, e ele é melhor do que parece:
+
+- **Qwen3.8 Flash-Next** (92,5/A), o co-líder da B300 única. Em IQ3_S ele fica na casa de dezenas de GB, e foi exatamente o modelo que fez 91,0 na RTX 5090 com Strata. É o melhor modelo que eu recomendaria pra uma Spark hoje.
+- **Swift 1.5 27B** (88/A, 56 GB), que foi a recomendação de self-host mais equilibrada da minha campanha anterior;
+- **ThinkingCap 3.8 27B** (83/A, 56 GB);
+- **Ornith-1.5-35B-A3B** (81/B, ~70 GB em BF16);
+- **Laguna-S-2.1** (65,5/C, 99,7 GB em NVFP4);
+- e os classificadores pequenos do benchmark de decisão (Jebadiah 4B, Laya, Julia), que são o caso de uso ideal de uma caixa dessas.
+
+O DeepSeek V4.1, com 510 GB, não cabe de jeito nenhum. A banda é quase 30 vezes menor que a da B300, então a interatividade sofre, e a concorrência prática fica pra medir: eu espero pouco mais que uso solo. Pra modelo pequeno é uma caixinha simpática; pra monstro, é peso de papel.
+
+![DGX Spark, o desktop de 128 GB de memória unificada e 1 PFLOP em FP4](dgx-spark.png)
+
+### TCO, ROI e depreciação
+
+A conta de ter versus alugar, usando 3 anos de depreciação e o mesmo padrão de uso (8 horas por dia útil, 176 horas/mês):
+
+| Cenário | Custo de alugar/mês | Custo de comprar (depreciação/mês) | Break-even |
+| --- | --- | ---: | ---: |
+| GB300 vs Runpod 4x B300 (US$ 36/h) | US$ 6.336 | US$ 3.611 (130 mil / 36) | **~20 meses** |
+| GB300 vs Runpod 24/7 | US$ 25.920 | US$ 3.611 | ~5 meses |
+| Spark vs 1x B300 (US$ 9,09/h) | US$ 1.600 | US$ 193 (6.950 / 36) | **~4 meses e meio** |
+| Spark vs assinatura de US$ 200 | US$ 200 | US$ 193 | ~3 anos |
+
+Leitura: se você roda modelo grande todo dia útil por dois anos ou mais, o GB300 se paga em menos de dois anos, e em 24/7 ele se paga em cinco meses. Se a sua necessidade é uma campanha de duas semanas como a minha, alugar custou US$ 2.140 e pronto, sem ativo parado depois. E o Spark só faz sentido se a sua carga for modelo pequeno: nesse caso ele se paga em menos de um semestre contra aluguel e em três anos contra assinatura, mas se a sua necessidade é um 748B, ele é inútil desde a caixa.
+
+Duas ressalvas pra não comprar errado. Primeiro, a tabela compara cenários de dólar, não ROI de carga equivalente: se a sua concorrência real no GB300 for de um dígito, a comparação honesta seria com um pod menor que o de 4x B300. Segundo, energia e administração mudam o resultado, principalmente no Spark, onde a diferença pra assinatura fica em poucos dólares por mês. Ignorei revenda no fim dos três anos; se ela existir, o break-even melhora.
+
+**Nota pra quem compra no Brasil:** esses preços são em dólar. Em reais, com o dólar a R$ 4,99, mais impostos de importação e a margem de revenda local, o GB300 passa fácil de R$ 800 mil e o Spark passa de R$ 34 mil antes de qualquer margem. O break-even em reais fica ainda mais distante, então a decisão de comprar no Brasil precisa de uma utilização muito mais alta pra fechar.
 
 E comparando com assinatura de frontier? Um plano forte de Claude/Codex custa uns US$ 200 por mês por desenvolvedor. Pra transformar stream em gente eu preciso de uma premissa: um desenvolvedor com uma requisição ativa o tempo inteiro durante o expediente, o que é otimista pra capacidade e conservador pra custo. Com essa premissa, e sem contar minha hora de sysadmin nem o setup, o pod rodando 8 horas por dia útil (176 horas/mês) fica assim:
 

@@ -50,6 +50,8 @@ The score alone hides the behavior, and the behavior is the fun part.
 
 **Step-5 left three defects even with the map in hand.** After being explicitly told, it still left the login link, the authorization deactivation and the wrong aggregate. Not every model takes the second chance.
 
+**Muse Spark Open almost didn't get off the ground, but recovered.** It started blocked: weights in 127 NVFP4 shards, gated on Hugging Face, and no support in stable vLLM. It only ran when I compiled a PR branch still in draft, with nvcc 12.9 and 12.8 libraries mixed, and capped the multimodal to text. Then it delivered 69.5: weak base unannounced (21 of 40), but 6 of 7 items fixed when pointed. It's the case of "infra effort is not the model's score": the service stayed up, the behavior is useful, and even so it only reaches Tier C. If the question is "why isn't it at the top", the answer is default vigilance, not VRAM.
+
 **And Nex was the complete disaster.** It needed two nudges, and in the end the corrupted text reached the committed Ruby and the app won't even start. In the cloud, the same Nex N2.5 Pro had scored 94. At home, 27. I wouldn't trust a vendor benchmark after seeing this twice.
 
 ## Running on 4 GPUs is not trivial
@@ -99,5 +101,7 @@ For a company that needs truly private data (code that can't leave the VPN), a p
 What I wouldn't buy again without measuring first is the "bigger is better" premise. I started this campaign thinking the jump past 92.5 would come from a bigger model. It came from the right model running properly. The rest is burned VRAM and a good story to tell.
 
 And there's another chapter coming, on non-datacenter hardware: local model tests on the RTX 5090 and the Strix Halo, with a new inference engine called Strata. Once the protocol is done, the third article comes out.
+
+And there's one more chapter coming, of non-datacenter hardware: the tests with local models on the RTX 5090 and the Strix Halo, with a new inference engine called Strata. When the protocol is done, the third article comes out.
 
 And the "is it worth it" question has an irritatingly obvious answer: it depends on how many people will use it at the same time. That's the one I answer in the next article: [LLM Benchmark v4: can my team fit in a 4x b300/h200?](/en/2026/10/22/llm-benchmark-v4-can-my-team-fit-in-a-4x-b300-h200/).

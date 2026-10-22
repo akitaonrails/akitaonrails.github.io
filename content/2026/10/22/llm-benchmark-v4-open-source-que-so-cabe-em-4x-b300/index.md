@@ -50,6 +50,8 @@ A nota sozinha esconde o comportamento, e o comportamento é a parte divertida.
 
 **O Step-5 deixou três defeitos mesmo com o mapa na mão.** Depois de revelar explicitamente, ele ainda deixou o link de login, a desativação de autorização e o agregado incorreto. Nem todo modelo aproveita a segunda chance.
 
+**O Muse Spark Open quase não saiu do chão, mas se recuperou.** Ele começou bloqueado: pesos em 127 shards de NVFP4, gated no Hugging Face, e sem suporte no vLLM estável. Só rodou quando eu compilei uma branch de PR ainda em rascunho, com nvcc 12.9 e bibliotecas 12.8 misturadas, e limitei o multimodal a texto. Aí ele entregou 69,5: base fraca sem aviso (21 de 40), mas 6 de 7 itens consertados quando apontado. É o caso de "o esforço de infra não se confunde com a nota do modelo": o serviço ficou de pé, o comportamento é útil, e mesmo assim ele só vai até Tier C. Se a pergunta é "por que ele não tá no topo", a resposta é vigilância por padrão, não VRAM.
+
 **E o Nex foi o desastre completo.** Precisou de dois nudges, e no fim o texto corrompido chegou ao Ruby commitado e o app nem inicializa. Na nuvem, o mesmo Nex N2.5 Pro tinha feito 94. Em casa, 27. Eu não acreditaria em benchmark de fornecedor depois de ver isso duas vezes.
 
 ## Rodar em 4 GPUs não é trivial
