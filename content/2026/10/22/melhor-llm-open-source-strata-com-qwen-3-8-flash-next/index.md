@@ -142,7 +142,7 @@ Deixar uns 50 GB de RAM e a placa inteira presos o dia todo, só pra ter o model
 - responde a lista de modelos sozinho, então o OpenCode enxerga o modelo sem acordar nada;
 - na primeira requisição de chat, sobe o Strata numa porta interna e espera ficar pronto, uns 40 segundos;
 - repassa as respostas em streaming;
-- depois de 10 minutos sem tráfego, derruba o Strata e devolve a placa e a RAM pro sistema.
+- depois de 10 minutos sem tráfego, derruba o Strata e devolve a placa e a RAM pro sistema; nunca no meio de uma requisição.
 
 O miolo é este:
 
@@ -165,6 +165,10 @@ def idle_watch():
     while True:
         time.sleep(30)
         if time.time() - _last > IDLE_TTL:
+            # nunca derrube o motor com requisição em voo (ver abaixo),
+            # mas com teto: requisição vazando não prende a GPU pra sempre
+            if _active > 0 and (time.time() - _last) < ACTIVE_HARD_CAP_S:
+                continue
             stop_up()                # libera GPU e ~50 GB de RAM
 ```
 
@@ -193,6 +197,16 @@ WantedBy=default.target
 systemctl --user daemon-reload
 systemctl --user enable --now qwen-strata.service
 ```
+
+### O bug do "parou do nada"
+
+A primeira versão desse vigilante de idle tinha um bug maldoso, e vale contar porque ele ensina uma coisa sobre modelos que pensam sempre. O Flash-Next raciocina antes de responder, e numa fase longa de raciocínio ele pode ficar **mais de 10 minutos sem emitir um único byte**. Para o relógio de idle, aquilo era "ninguém usando": o proxy derrubava o Strata no meio da própria requisição, engolia a truncagem do stream, e o OpenCode recebia um turno vazio, sem conteúdo e sem erro. O modelo parecia ter parado do nada.
+
+Três correções, todas no proxy:
+
+- **Contador de requisições em voo** (`_active`, o `if` novo do trecho acima): enquanto houver uma requisição em andamento, o motor não cai. Com teto: depois de `QWEN_ACTIVE_HARD_CAP_S` (1 hora por padrão, seis vezes o TTL normal), até uma requisição vazando por bug não consegue prender a GPU e a RAM pra sempre.
+- **Relógio atualizado por byte**: o contador de idle agora zera no início de cada requisição e a cada pedaço repassado no streaming. Geração em curso nunca conta como inatividade; o período sem byte nenhum, que é o raciocínio puro, fica coberto pelo `_active`.
+- **Falha honesta no meio do stream**: se o motor morrer mesmo assim, o proxy agora emite um evento de erro no stream (`"upstream engine died mid-stream"`) em vez de fechar calado. O agente vê que a resposta morreu e tenta de novo, em vez de ficar olhando um turno vazio parecendo travado.
 
 O preço é a espera na primeira mensagem depois de um tempo parado. Em troca, quando eu não estou programando, a máquina volta a ser minha.
 
