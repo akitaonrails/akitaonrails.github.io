@@ -50,6 +50,8 @@ The score alone hides the behavior, and the behavior is the fun part.
 
 **Step-5 left three defects even with the map in hand.** After being explicitly told, it still left the login link, the authorization deactivation and the wrong aggregate. Not every model takes the second chance.
 
+**And there's the case of the 397B that became a ready-made joke.** A 397B model, too big to fit in the head of whoever defends size, let the backdoor `admin? => admin || email.end_with?("@internal.example")` through even after the security-audit warning. Worse: it added a passing test that codified the backdoor as intended behavior, and the commit still bragged "Brakeman: 0 warnings". If you want an example of why I test vigilance and not marketing benchmarks, there it is.
+
 **Muse Spark Open almost didn't get off the ground, but recovered.** It started blocked: weights in 127 NVFP4 shards, gated on Hugging Face, and no support in stable vLLM. It only ran when I compiled a PR branch still in draft, with nvcc 12.9 and 12.8 libraries mixed, and capped the multimodal to text. Then it delivered 69.5: weak base unannounced (21 of 40), but 6 of 7 items fixed when pointed. It's the case of "infra effort is not the model's score": the service stayed up, the behavior is useful, and even so it only reaches Tier C. If the question is "why isn't it at the top", the answer is default vigilance, not VRAM.
 
 **And Nex was the complete disaster.** It needed two nudges, and in the end the corrupted text reached the committed Ruby and the app won't even start. In the cloud, the same Nex N2.5 Pro had scored 94. At home, 27. I wouldn't trust a vendor benchmark after seeing this twice.
@@ -60,7 +62,7 @@ Four cards are not four models: it's one model sliced into four, with tensor par
 
 The cares that repeated on almost all of them:
 
-- **Bleeding-edge toolchain.** B300 (`sm_103a`) requires CUDA 12.9 to compile the kernels on the fly, so the default image wasn't enough: standalone toolkit with nvcc 12.9 and the right headers, and even then each family needed a DeepGEMM, FlashInfer or cudart-link patch.
+- **Bleeding-edge toolchain.** B300 (`sm_103a`) requires CUDA 12.9 to compile the kernels on the fly, so the default image wasn't enough: standalone toolkit with nvcc 12.9 and the right headers, and even then each family needed a DeepGEMM, FlashInfer or cudart-link patch. When the compilation gets it right, the prize is big: GLM 5.3 Flash went from 10.35 to 141.40 tokens per second from configuration alone (removing `--enforce-eager` and enabling compiled mode with CUDA graphs), without changing checkpoint, context or KV precision.
 - **Startup is not download.** DeepSeek took 15 to 30 minutes to initialize, so be prepared to wait for the model to load before measuring anything.
 - **Each family has its parser and its quirks.** Nex only talked after switching the parser to `qwen3_xml`, getting one more nudge and ignoring the `tmp/log` artifacts. Step-5 didn't exist in stable vLLM 0.32 and needed a nightly with a specific PR. Muse required compiling a PR branch still in draft, with CUDA 12.9 nvcc and 12.8 libraries mixed, and weights in 127 NVFP4 shards. MiMo asked for `--trust-remote-code`. Laguna decided, out of nowhere, to flood the output with reasoning text, and one sprint had to be redone from the injection base.
 - **Context is expensive.** Kimi K2 Instruct's FP8 checkpoint (1,029 GB) would leave 9 GB for KV cache on the 4 cards, so the 594 GB INT4 Thinking went in its place. Speculating with a draft head (MTP) only worked on Step-5, with a 2.24x gain and 73.7% token acceptance, because I verified the tools' correctness first.
@@ -90,7 +92,7 @@ But three warnings before you cancel your Claude subscription:
 
 By the way, Nex's case is the perfect example of a bad base choice. When Rio 3.5 blew up in June, [I covered the controversy here](/en/2026/06/15/rio-3-5-llm-controversy-plagiarism/): its checkpoint was a blend of Nex-N2-Pro with Qwen. The Rio folks could have chosen much better bases, like DeepSeek V4.1 or GLM 5.3 Flash, and went exactly for the lineage that, on my current yardstick, was the worst of the bunch. Picking a model by its pretty name costs dearly.
 2. **My yardstick is vigilance, not general programming.** Here I measure who notices sabotage. That's not the same as measuring who writes your whole system better, and a rerun of my benchmark already varied 9 points on the same model. The 1.5-point distance between models may be noise.
-3. **Cost changes the answer.** If the idea is frontier quality day to day, DeepSeek V4.1's cloud API cost US$ 1.21 per full benchmark round. The 4x B300 pod costs US$ 36 per hour before you even press the button.
+3. **Cost changes the answer.** If the idea is frontier quality day to day, DeepSeek V4.1's cloud API cost US$ 1.21 per full benchmark round. The 4x B300 pod costs US$ 36 per hour before you even press the button. And the most didactic case is still DeepSeek V4 Flash from the previous campaign: in the cloud it scored 86 at US$ 0.97 per round; at home, 44.5 and on top of that more expensive per inference. Sometimes the cloud is better **and** cheaper.
 
 ## Is renting 4x B300 worth it?
 

@@ -55,6 +55,8 @@ Leia com calma, porque tem três histórias aqui.
 
 **A B300 atende quatro vezes mais gente no conforto.** Mesmo modelo, mesmo FP8, mesmo TP4: 32 usuários confortáveis contra 8. O agregado da H200 até impressiona (2.506 tok/s), mas isso é fila de prefill: o p99 de TTFT chega a cerca de 51 segundos em N=256, então o usuário espera um minuto antes de ver qualquer coisa. Throughput alto não é capacidade interativa.
 
+O penhasco é tão íngreme que vale olhar os números de perto. Em N=16, o p99 de TTFT era 1,17 s na B300 e 3,19 s na H200, com 100% e 92,7% das requisições boas. Em N=32, a B300 ainda segurava 97,4% dentro do SLO (2,23 s), enquanto a H200 desabou pra 8,3% (6,58 s). E em N=48 a B300 caiu pra 92%, abaixo do meu corte de 95%: por isso o confortável é 32 e não 48. A diferença entre "funciona" e "funciona pra todo mundo" mora nesses últimos 2 pontos percentuais.
+
 **Modelo pesado e leve empatam na H200.** O DeepSeek de 510 GB e o GLM menor sustentam os mesmos 8 confortáveis, por motivos diferentes: o DeepSeek tem KV eficiente via MLA e morre de compute/prefill; o GLM estoura o KV cache (97% de uso). Escolher hardware por contagem de parâmetros é olhar pro lugar errado: a arquitetura do KV é que manda na concorrência.
 
 **A porta solta engana.** Se você olhar só a mediana, dá pra dizer 48 na B300 e 16 na H200. Só que a cauda do p99 destrói a experiência de quem está do outro lado. Pra dimensionar time, uso o número confortável e pronto.
@@ -142,7 +144,7 @@ Duas ressalvas pra não comprar errado. Primeiro, a tabela compara cenários de 
 
 **Nota pra quem compra no Brasil:** esses preços são em dólar. Em reais, com o dólar a R$ 4,99, mais impostos de importação e a margem de revenda local, o GB300 passa fácil de R$ 800 mil e o Spark passa de R$ 34 mil antes de qualquer margem. O break-even em reais fica ainda mais distante, então a decisão de comprar no Brasil precisa de uma utilização muito mais alta pra fechar.
 
-E comparando com assinatura de frontier? Um plano forte de Claude/Codex custa uns US$ 200 por mês por desenvolvedor. Pra transformar stream em gente eu preciso de uma premissa: um desenvolvedor com uma requisição ativa o tempo inteiro durante o expediente, o que é otimista pra capacidade e conservador pra custo. Com essa premissa, e sem contar minha hora de sysadmin nem o setup, o pod rodando 8 horas por dia útil (176 horas/mês) fica assim:
+E comparando com assinatura de frontier? Um plano forte de Claude/Codex custa uns US$ 200 por mês por desenvolvedor. Com duas ressalvas importantes: esses planos não são ilimitados (o Codex mede por crédito e o Claude tem janelas de uso por sessão e por semana), e automação/CI não cabe em plano de consumidor. A comparação abaixo é de preço, não de carga equivalente. Pra transformar stream em gente eu preciso de uma premissa: um desenvolvedor com uma requisição ativa o tempo inteiro durante o expediente, o que é otimista pra capacidade e conservador pra custo. Com essa premissa, e sem contar minha hora de sysadmin nem o setup, o pod rodando 8 horas por dia útil (176 horas/mês) fica assim:
 
 | Setup | Custo mensal do pod | Streams confortáveis (1 por dev) | Custo por dev/mês |
 | --- | ---: | ---: | ---: |

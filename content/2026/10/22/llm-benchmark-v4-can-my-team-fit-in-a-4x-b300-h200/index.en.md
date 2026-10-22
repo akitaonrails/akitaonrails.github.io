@@ -55,6 +55,8 @@ Read carefully, because there are three stories here.
 
 **The B300 serves four times more people in comfort.** Same model, same FP8, same TP4: 32 comfortable users against 8. The H200's aggregate is even impressive (2,506 tok/s), but that's a prefill queue: p99 TTFT reaches about 51 seconds at N=256, so the user waits a minute before seeing anything. High throughput is not interactive capacity.
 
+The cliff is so steep it's worth looking at the numbers up close. At N=16, p99 TTFT was 1.17 s on B300 and 3.19 s on H200, with 100% and 92.7% of requests good. At N=32, the B300 still held 97.4% inside the SLO (2.23 s), while the H200 collapsed to 8.3% (6.58 s). And at N=48 the B300 fell to 92%, below my 95% gate: that's why comfortable is 32 and not 48. The difference between "works" and "works for everyone" lives in those last 2 percentage points.
+
 **Heavy and light models tie on the H200.** The 510 GB DeepSeek and the smaller GLM sustain the same 8 comfortable users, for different reasons: DeepSeek has efficient KV via MLA and dies of compute/prefill; GLM blows the KV cache (97% usage). Choosing hardware by parameter count is looking at the wrong place: the KV architecture is what rules concurrency.
 
 **The loose gate deceives.** If you only look at the median, you could say 48 on B300 and 16 on H200. Except the p99 tail destroys the experience of whoever is on the other side. To size a team, I use the comfortable number and that's it.
@@ -142,7 +144,7 @@ Two caveats so you don't buy wrong. First, the table compares dollar scenarios, 
 
 **Note for those buying in Brazil:** these prices are in dollars. In reais, with the dollar at R$ 4.99, plus import taxes and the local reseller margin, the GB300 easily passes R$ 800 thousand and the Spark passes R$ 34 thousand before any margin. The break-even in reais gets even further away, so the decision to buy in Brazil needs much higher utilization to close.
 
-And comparing with a frontier subscription? A strong Claude/Codex plan costs about US$ 200 per month per developer. To turn streams into people I need a premise: one developer with one active request the whole workday, which is optimistic for capacity and conservative for cost. With that premise, and not counting my sysadmin hours or setup, the pod running 8 hours per workday (176 hours/month) looks like this:
+And comparing with a frontier subscription? A strong Claude/Codex plan costs about US$ 200 per month per developer. Two important caveats: those plans aren't unlimited (Codex meters by credit and Claude has per-session and per-week usage windows), and automation/CI doesn't fit consumer plans. The comparison below is price-only, not equivalent workload. To turn streams into people I need a premise: one developer with one active request the whole workday, which is optimistic for capacity and conservative for cost. With that premise, and not counting my sysadmin hours or setup, the pod running 8 hours per workday (176 hours/month) looks like this:
 
 | Setup | Monthly pod cost | Comfortable streams (1 per dev) | Cost per dev/month |
 | --- | ---: | ---: | ---: |
