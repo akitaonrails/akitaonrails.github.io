@@ -17,7 +17,7 @@ title: AkitaOnRails Blog
 <article class="aor-featured-card" data-featured-item data-featured-index="0">
   <time datetime="2026-10-22">Oct 22, 2026</time>
   <h3><a href="/en/2026/10/22/llm-benchmark-v4-the-open-source-verdict-as-of-oct-2026/">LLM Benchmark v4: the open source verdict (as of Oct 2026)</a></h3>
-  <p>The wrap-up of benchmark v4: almost 70 runs, almost 60 models, across cloud, B300, 4x B300, RTX 5090 and Strix Halo, and more than 6 thousand dollars spent. In a single table, 42 runs made Tier A, and the best open models I served myself (DeepSeek V4.1 Flash, GLM 5.3 Flash, Qwen3.8 Flash-Next) sit 7.5 points from the ceiling, right on Sonnet 5&#39;s heels. The Chinese labs climb 5.5 to 17 points per generation while the Western top is stalled in programming and spending its showcase on math. I recommend the best commercial models, the best open models for companies and for PCs, along with what I learned, and I close with my hypothesis on why expensive hardware holds open source back.</p>
+  <p>Almost 70 runs put the best open models close to Sonnet 5. Even so, 159 tok/s on an RTX 5090 is still slow for my work, while faster options already cost as much as a server.</p>
   <span class="aor-post-tags aor-post-tags--featured-card"><a class="aor-tag-link" href="/en/tags/llm-benchmarks/">#llm-benchmarks</a><a class="aor-tag-link" href="/en/tags/local-models/">#local-models</a><a class="aor-tag-link" href="/en/tags/llms/">#llms</a><a class="aor-tag-link" href="/en/tags/open-source/">#open-source</a></span>
 </article>
 <article class="aor-featured-card" data-featured-item data-featured-index="1">
@@ -197,11 +197,11 @@ title: AkitaOnRails Blog
     <span>16 articles</span>
   </div>
   <div class="aor-index-list-group">
-<article class="aor-index-row" title="The wrap-up of benchmark v4: almost 70 runs, almost 60 models, across cloud, B300, 4x B300, RTX 5090 and Strix Halo, and more than 6 thousand dollars spent. In a single table, 42 runs made Tier A, and the best open models I served myself (DeepSeek V4.1 Flash, GLM 5.3 Flash, Qwen3.8 Flash-Next) sit 7.5 points from the ceiling, right on Sonnet 5&#39;s heels. The Chinese labs climb 5.5 to 17 points per generation while the Western top is stalled in programming and spending its showcase on math. I recommend the best commercial models, the best open models for companies and for PCs, along with what I learned, and I close with my hypothesis on why expensive hardware holds open source back.">
+<article class="aor-index-row" title="Almost 70 runs put the best open models close to Sonnet 5. Even so, 159 tok/s on an RTX 5090 is still slow for my work, while faster options already cost as much as a server.">
   <time datetime="2026-10-22">Oct 22</time>
   <div class="aor-index-row__body">
     <h3><a class="aor-index-list__main-link" href="/en/2026/10/22/llm-benchmark-v4-the-open-source-verdict-as-of-oct-2026/">LLM Benchmark v4: the open source verdict (as of Oct 2026)</a></h3>
-    <p>The wrap-up of benchmark v4: almost 70 runs, almost 60 models, across cloud, B300, 4x B300, RTX 5090 and Strix Halo, and more than 6 thousand dollars spent. In a single table, 42 runs made Tier A, and the best open models I served myself (DeepSeek V4.1 Flash, GLM 5.3 Flash, Qwen3.8 Flash-Next) sit 7.5 points from the ceiling, right on Sonnet 5&#39;s heels. The Chinese labs climb 5.5 to 17 points per generation while the Western top is stalled in programming and spending its showcase on math. I recommend the best commercial models, the best open models for companies and for PCs, along with what I learned, and I close with my hypothesis on why expensive hardware holds open source back.</p>
+    <p>Almost 70 runs put the best open models close to Sonnet 5. Even so, 159 tok/s on an RTX 5090 is still slow for my work, while faster options already cost as much as a server.</p>
   </div>
   <span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/en/tags/llm-benchmarks/">#llm-benchmarks</a><a class="aor-tag-link" href="/en/tags/local-models/">#local-models</a><a class="aor-tag-link" href="/en/tags/llms/">#llms</a><a class="aor-tag-link" href="/en/tags/open-source/">#open-source</a></span>
 </article>

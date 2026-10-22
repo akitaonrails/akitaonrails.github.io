@@ -4,7 +4,7 @@ slug: "llm-benchmark-v4-o-veredito-de-open-source-ate-out-2026"
 date: '2026-10-22T12:00:00-03:00'
 draft: false
 translationKey: llm-benchmark-v4-o-veredito-de-open-source-ate-out-2026
-description: "O fechamento do benchmark v4: quase 70 rodadas, quase 60 modelos, entre nuvem, B300, 4x B300, RTX 5090 e Strix Halo, e mais de 6 mil dólares gastos. Numa tabela só, 42 rodadas fizeram Tier A, e os melhores abertos que eu mesmo servi (DeepSeek V4.1 Flash, GLM 5.3 Flash, Qwen3.8 Flash-Next) ficam a 7,5 pontos do teto, colados no Sonnet 5. Os chineses sobem de 5,5 a 17 pontos por geração enquanto o topo ocidental está parado em programação e gastando a vitrine em matemática. Recomendo os melhores comerciais, os melhores abertos pra empresa e pra PC, junto o que aprendi, e termino com a minha hipótese sobre por que o hardware caro trava o open source."
+description: "Quase 70 rodadas mostram os melhores modelos abertos encostando no Sonnet 5. Mesmo assim, 159 tok/s numa RTX 5090 ainda é lento pro meu trabalho, e as opções mais rápidas já custam como servidor."
 tags:
 - benchmarks-de-llm
 - modelos-locais
@@ -349,6 +349,44 @@ O porém é a RAM. Com a DRAM quase [dobrando de preço](https://www.trendforce.
 > Abaixo da 5090, eu não perderia tempo com modelo pequeno pra programar. Se for tentar alguma coisa, que seja o Flash-Next com Strata e RAM sobrando, e meça no seu trabalho antes de confiar.
 
 E tem o problema que eu contei no [artigo anterior](/2026/10/22/llm-benchmark-v4-open-source-nivel-consumidor-rtx5090-strix-halo-strata/): achar uma 5090 hoje é difícil, e quando acha, o preço fica entre duas vezes e meia e quase cinco vezes o sugerido.
+
+### Quanto custa sair dos 150 tokens por segundo?
+
+Depois de algumas horas usando o Qwen local, [resumi o problema no X](https://x.com/AkitaOnRails/status/2113386101293428812). A média de 159 tokens por segundo da minha rodada parece rápida numa tabela. Numa sessão de programação que passa o dia inteiro gerando código, rodando teste, lendo log e corrigindo o que fez, a espera acumula.
+
+Eu já fico impaciente. Abaixo disso, nem considero pra trabalho diário.
+
+A própria 5090 tem limites além da velocidade. A NVIDIA especifica [32 GB de GDDR7 e 1.792 GB/s de banda](https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5090/) e [lançou a placa por US$ 1.999](https://nvidianews.nvidia.com/news/nvidia-blackwell-geforce-rtx-50-series-opens-new-world-of-ai-computer-graphics). A minha ainda move os monitores e o Hyprland, então deixo 4 GB reservados pro desktop. O resto precisa segurar pesos densos, cache dos especialistas quentes, buffers do motor e a parte residente do cache de KV, que guarda o contexto da conversa.
+
+Minha configuração do Strata oferece 256 mil tokens de contexto com KV em int8 e mantém 32 mil residentes na VRAM; o restante pode ir pra RAM. Isso evita estourar a placa, mas RAM continua muito mais lenta. Enquanto [modelos de fronteira do Claude já oferecem janela de 1 milhão de tokens](https://docs.anthropic.com/en/api/claude-on-amazon-bedrock), localmente eu preciso vigiar o que entra na sessão. Carregar uma coleção inteira de skills, plugins e servidores MCP só porque existe espaço no arquivo de configuração é pedir pra desperdiçar contexto e piorar a latência.
+
+> Em hardware local, contexto também custa memória e tempo. Eu carrego só o que aquela sessão vai usar.
+
+E se eu colocar mais hardware? A comparação fica assim:
+
+| Opção | Memória | Banda | Velocidade observada | Preço de referência |
+| --- | ---: | ---: | ---: | ---: |
+| RTX 5090 | 32 GB GDDR7 | 1.792 GB/s | **159,2 tok/s**, medido por mim | US$ 1.999 sugerido |
+| 2x RTX 5090 | 64 GB físicos, divididos entre as placas | 2x 1.792 GB/s, sem virar um pool plano | sem teste equivalente meu | US$ 3.998 sugeridos |
+| Mac Studio M5 Ultra | 96 ou 256 GB unificados; 512 GB prometidos pro fim de outubro | 1.200 GB/s | ainda não medido no Strata | a partir de US$ 5.499 |
+| DGX Spark | 128 GB unificados | 273 GB/s | cerca de 22 a 75 tok/s por sessão em receitas públicas | US$ 6.950 na loja da NVIDIA |
+| RTX PRO 6000 Blackwell | 96 GB GDDR7 ECC | 1.792 GB/s | 187,4 tok/s no chat curto; 174,3 na sessão de agente | US$ 16 mil; R$ 123 mil no Pix no Brasil |
+
+Eu escrevi no post que o Strata só subiria duas instâncias numa máquina com duas 5090. Essa parte ficou desatualizada: o Strata atual [divide as camadas entre duas ou mais GPUs](https://github.com/Niko1221/Strata/blob/main/docs/MULTI_GPU.md). É *pipeline parallelism*, sem transformar duas placas num bloco simples de 64 GB e sem tensor parallelism maduro.
+
+O ganho por sessão fica longe de 2x. Um [teste comunitário com duas 5090](https://github.com/Niko1221/Strata/issues/642) mediu cerca de 22% de ganho na média geométrica de decode e 40% no braço de código. Ajuda na capacidade e dá pra usar as placas como duas instâncias independentes pra dobrar concorrência. Pra mim sozinho, comprar outra 5090 pra cortar uma fração da espera não fecha a conta.
+
+O **Mac Studio M5 Ultra** começa em [US$ 5.499](https://www.apple.com/newsroom/2026/08/apple-introduces-new-mac-studio-with-m5-max-and-m5-ultra/), tem 1,2 TB/s de banda e vai de 96 a 256 GB; a opção de 512 GB foi prometida pro fim de outubro. Ainda não existe benchmark publicado do Strata no Ultra. No [M5 Max de 128 GB](https://github.com/Niko1221/Strata/blob/main/docs/MAC.md), o mesmo Flash-Next ficou entre 97 e 119,5 tokens por segundo, dependendo da quantização e do prompt. Meu palpite original de menos de 100 no Ultra não está comprovado, e eu não compraria uma máquina dessas baseado em palpite.
+
+A **DGX Spark** coloca 128 GB numa caixa compacta, com o GB10 de TDP 140 W e uma fonte de 240 W. A memória entrega só [273 GB/s](https://www.nvidia.com/en-us/products/workstations/dgx-spark/), quase sete vezes menos que a 5090. A NVIDIA agora pede [US$ 6.950](https://marketplace.nvidia.com/en-us/enterprise/personal-ai-supercomputers/dgx-spark/).
+
+Receitas reproduzíveis do Flash-Next variam de [22 a 75 tokens por segundo por sessão](https://github.com/ursuciprian/qwen3.8-flash-next-1x-dgx-spark), dependendo de concorrência, stack, amostragem e modo de raciocínio. Cabe muita coisa. Pra minha tolerância, anda pouco.
+
+Sobra a **RTX PRO 6000 Blackwell**. Ela tem [96 GB GDDR7 ECC, 1.792 GB/s e potência total de 600 watts](https://www.nvidia.com/content/dam/en-zz/Solutions/data-center/rtx-pro-6000-blackwell-workstation-edition/workstation-blackwell-rtx-pro-6000-workstation-edition-nvidia-us-3519208-web.pdf). A banda é exatamente a mesma da 5090. Os 96 GB resolvem o aperto de VRAM, permitem mais cache e contexto, mas não compram três vezes a velocidade.
+
+Um [benchmark comunitário do Strata](https://github.com/Niko1221/Strata/issues/2268) mediu 187,4 tokens por segundo no chat curto e 174,3 numa sessão de agente, com bastante variação entre rodadas. É melhor que meus 159,2, só que a NVIDIA lista a placa por [US$ 16 mil](https://marketplace.nvidia.com/en-us/enterprise/laptops-workstations/nvidia-rtx-pro-6000-blackwell-workstation-edition/). Em 22 de outubro, a WAZ [mostrava a PNY por R$ 123.299,99 no Pix ou R$ 145.058,81 no preço regular](https://www.waz.com.br/placa-de-video-nvidia-quadro-rtx-pro-6000-blackwell-workstation-edition-pny-vcnrtxpro6000b-pb-96gb-gddr7-pcie-5-0-x16-131172-html/p). Já entramos em orçamento de workstation profissional ou servidor.
+
+> Hoje não existe, pra mim, uma opção doméstica com modelo bom, resposta realmente rápida e custo razoável. A 5090 funciona, mas 150 tokens por segundo já me cansam. Abaixo dela vira brinquedo; acima dela o preço explode antes da velocidade.
 
 ## O que eu aprendi no v4
 

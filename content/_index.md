@@ -17,7 +17,7 @@ title: AkitaOnRails Blog
 <article class="aor-featured-card" data-featured-item data-featured-index="0">
   <time datetime="2026-10-22">Oct 22, 2026</time>
   <h3><a href="/2026/10/22/llm-benchmark-v4-o-veredito-de-open-source-ate-out-2026/">LLM Benchmark v4: o veredito de open source (até out/2026)</a></h3>
-  <p>O fechamento do benchmark v4: quase 70 rodadas, quase 60 modelos, entre nuvem, B300, 4x B300, RTX 5090 e Strix Halo, e mais de 6 mil dólares gastos. Numa tabela só, 42 rodadas fizeram Tier A, e os melhores abertos que eu mesmo servi (DeepSeek V4.1 Flash, GLM 5.3 Flash, Qwen3.8 Flash-Next) ficam a 7,5 pontos do teto, colados no Sonnet 5. Os chineses sobem de 5,5 a 17 pontos por geração enquanto o topo ocidental está parado em programação e gastando a vitrine em matemática. Recomendo os melhores comerciais, os melhores abertos pra empresa e pra PC, junto o que aprendi, e termino com a minha hipótese sobre por que o hardware caro trava o open source.</p>
+  <p>Quase 70 rodadas mostram os melhores modelos abertos encostando no Sonnet 5. Mesmo assim, 159 tok/s numa RTX 5090 ainda é lento pro meu trabalho, e as opções mais rápidas já custam como servidor.</p>
   <span class="aor-post-tags aor-post-tags--featured-card"><a class="aor-tag-link" href="/tags/benchmarks-de-llm/">#benchmarks-de-llm</a><a class="aor-tag-link" href="/tags/modelos-locais/">#modelos-locais</a><a class="aor-tag-link" href="/tags/llms/">#llms</a><a class="aor-tag-link" href="/tags/open-source/">#open-source</a></span>
 </article>
 <article class="aor-featured-card" data-featured-item data-featured-index="1">
@@ -197,11 +197,11 @@ title: AkitaOnRails Blog
     <span>16 artigos</span>
   </div>
   <div class="aor-index-list-group">
-<article class="aor-index-row" title="O fechamento do benchmark v4: quase 70 rodadas, quase 60 modelos, entre nuvem, B300, 4x B300, RTX 5090 e Strix Halo, e mais de 6 mil dólares gastos. Numa tabela só, 42 rodadas fizeram Tier A, e os melhores abertos que eu mesmo servi (DeepSeek V4.1 Flash, GLM 5.3 Flash, Qwen3.8 Flash-Next) ficam a 7,5 pontos do teto, colados no Sonnet 5. Os chineses sobem de 5,5 a 17 pontos por geração enquanto o topo ocidental está parado em programação e gastando a vitrine em matemática. Recomendo os melhores comerciais, os melhores abertos pra empresa e pra PC, junto o que aprendi, e termino com a minha hipótese sobre por que o hardware caro trava o open source.">
+<article class="aor-index-row" title="Quase 70 rodadas mostram os melhores modelos abertos encostando no Sonnet 5. Mesmo assim, 159 tok/s numa RTX 5090 ainda é lento pro meu trabalho, e as opções mais rápidas já custam como servidor.">
   <time datetime="2026-10-22">Oct 22</time>
   <div class="aor-index-row__body">
     <h3><a class="aor-index-list__main-link" href="/2026/10/22/llm-benchmark-v4-o-veredito-de-open-source-ate-out-2026/">LLM Benchmark v4: o veredito de open source (até out/2026)</a></h3>
-    <p>O fechamento do benchmark v4: quase 70 rodadas, quase 60 modelos, entre nuvem, B300, 4x B300, RTX 5090 e Strix Halo, e mais de 6 mil dólares gastos. Numa tabela só, 42 rodadas fizeram Tier A, e os melhores abertos que eu mesmo servi (DeepSeek V4.1 Flash, GLM 5.3 Flash, Qwen3.8 Flash-Next) ficam a 7,5 pontos do teto, colados no Sonnet 5. Os chineses sobem de 5,5 a 17 pontos por geração enquanto o topo ocidental está parado em programação e gastando a vitrine em matemática. Recomendo os melhores comerciais, os melhores abertos pra empresa e pra PC, junto o que aprendi, e termino com a minha hipótese sobre por que o hardware caro trava o open source.</p>
+    <p>Quase 70 rodadas mostram os melhores modelos abertos encostando no Sonnet 5. Mesmo assim, 159 tok/s numa RTX 5090 ainda é lento pro meu trabalho, e as opções mais rápidas já custam como servidor.</p>
   </div>
   <span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/tags/benchmarks-de-llm/">#benchmarks-de-llm</a><a class="aor-tag-link" href="/tags/modelos-locais/">#modelos-locais</a><a class="aor-tag-link" href="/tags/llms/">#llms</a><a class="aor-tag-link" href="/tags/open-source/">#open-source</a></span>
 </article>
