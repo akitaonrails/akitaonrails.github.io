@@ -6,7 +6,7 @@ title: AkitaOnRails Blog
   <div class="aor-featured__header">
     <h2>Featured</h2>
     <div class="aor-featured__controls">
-      <span class="aor-featured__counter" aria-live="polite">1–3 of 36</span>
+      <span class="aor-featured__counter" aria-live="polite">1–3 of 28</span>
       <div class="aor-featured__buttons">
         <button type="button" data-featured-prev aria-label="Previous featured posts">&#8249;</button>
         <button type="button" data-featured-next aria-label="Next featured posts">&#8250;</button>
@@ -15,10 +15,10 @@ title: AkitaOnRails Blog
   </div>
   <div class="aor-featured__track">
 <article class="aor-featured-card" data-featured-item data-featured-index="0">
-  <time datetime="2026-10-19">Oct 19, 2026</time>
-  <h3><a href="/en/2026/10/19/llm-benchmark-v4-the-top-open-source-llms-on-a-b300/">LLM Benchmark v4: the top open source LLMs on a B300</a></h3>
-  <p>I rented a 288 GB NVIDIA B300 on Runpod and ran my v4 sabotage benchmark on 14 open-weight models that don&#39;t fit at home. None of them serves fast the way it ships: GLM 5.3 Flash went from 10 to 141 tokens per second on configuration alone. Two open models reached 92.5, Sonnet 5 level, and a 27B fine-tune scored 88. A 397B flagship let an admin backdoor through, DeepSeek V4 Flash scored 86 in the cloud and 44.5 at home, and Nemotron cheated on a test. The math: the cloud API of the same model costs a dollar per run and the pod costs 218 a day. When owning your own infra is worth it, and whether a team fits on one card.</p>
-  <span class="aor-post-tags aor-post-tags--featured-card"><a class="aor-tag-link" href="/en/tags/llm-benchmarks/">#llm-benchmarks</a><a class="aor-tag-link" href="/en/tags/local-models/">#local-models</a><a class="aor-tag-link" href="/en/tags/llms/">#llms</a><a class="aor-tag-link" href="/en/tags/hardware/">#hardware</a></span>
+  <time datetime="2026-10-22">Oct 22, 2026</time>
+  <h3><a href="/en/2026/10/22/llm-benchmark-v4-the-open-source-verdict-as-of-oct-2026/">LLM Benchmark v4: the open source verdict (as of Oct 2026)</a></h3>
+  <p>The wrap-up of benchmark v4: almost 70 runs, almost 60 models, across cloud, B300, 4x B300, RTX 5090 and Strix Halo, and more than 6 thousand dollars spent. In a single table, 42 runs made Tier A, and the best open models I served myself (DeepSeek V4.1 Flash, GLM 5.3 Flash, Qwen3.8 Flash-Next) sit 7.5 points from the ceiling, right on Sonnet 5&#39;s heels. The Chinese labs climb 5.5 to 17 points per generation while the Western top is stalled in programming and spending its showcase on math. I recommend the best commercial models, the best open models for companies and for PCs, along with what I learned, and I close with my hypothesis on why expensive hardware holds open source back.</p>
+  <span class="aor-post-tags aor-post-tags--featured-card"><a class="aor-tag-link" href="/en/tags/llm-benchmarks/">#llm-benchmarks</a><a class="aor-tag-link" href="/en/tags/local-models/">#local-models</a><a class="aor-tag-link" href="/en/tags/llms/">#llms</a><a class="aor-tag-link" href="/en/tags/open-source/">#open-source</a></span>
 </article>
 <article class="aor-featured-card" data-featured-item data-featured-index="1">
   <time datetime="2026-10-16">Oct 16, 2026</time>
@@ -51,180 +51,132 @@ title: AkitaOnRails Blog
   <span class="aor-post-tags aor-post-tags--featured-card"><a class="aor-tag-link" href="/en/tags/llms/">#llms</a><a class="aor-tag-link" href="/en/tags/artificial-intelligence/">#artificial-intelligence</a><a class="aor-tag-link" href="/en/tags/coding-agents/">#coding-agents</a><a class="aor-tag-link" href="/en/tags/software-engineering/">#software-engineering</a></span>
 </article>
 <article class="aor-featured-card" data-featured-item data-featured-index="6">
-  <time datetime="2026-10-11">Oct 11, 2026</time>
-  <h3><a href="/en/2026/10/11/are-there-better-languages-for-programming-with-llms/">Are There Better Languages for Programming with LLMs?</a></h3>
-  <p>DHH converted his Campfire to several languages with AI and started posting that Rust won. Instead of fighting on X, I built a reproducible benchmark: 7 languages, 4 LLM configurations, 112 implementation attempts, and a queue-under-pressure test with Elixir, Rust, Rails and plain Ruby. Result: no language ranking holds up, concise Ruby cost more tokens than Rust, strong typing spared no repair at all, and under load the four stacks tied on throughput. What matters is testing and discipline, not language.</p>
-  <span class="aor-post-tags aor-post-tags--featured-card"><a class="aor-tag-link" href="/en/tags/llm-benchmarks/">#llm-benchmarks</a><a class="aor-tag-link" href="/en/tags/programming-languages/">#programming-languages</a><a class="aor-tag-link" href="/en/tags/llms/">#llms</a><a class="aor-tag-link" href="/en/tags/elixir-and-erlang/">#elixir-and-erlang</a></span>
-</article>
-<article class="aor-featured-card" data-featured-item data-featured-index="7">
-  <time datetime="2026-10-10">Oct 10, 2026</time>
-  <h3><a href="/en/2026/10/10/which-jev-like-ai-decision-classifier-model-is-best/">Which Jev-like AI Decision/Classifier Model Is Best?</a></h3>
-  <p>I ran my own decision-model benchmark: Jev, Clef, OpenAI Decisions and Microsoft Decision-1 in the cloud, plus eighteen open configurations (Perplexity Decider 27B, Decision 3.0 and Edge, Clef-flash, Kev, Jebadiah, Mapika, Eikos, Laya, Julia, GLiNER, Simple-Jev) on my Strix Halo, across more than 22 thousand classifications with cases in English and Portuguese. The top now has two open-weights models: Perplexity and Decision 3.0 tied at 99.4%, with identical labels on the 1,024 classifications and 100% in Portuguese. Microsoft Decision-1 tied Jev at 97.6% while being the cheapest hosted one. Full table, cost in support emails, gotchas, and where the data converges.</p>
-  <span class="aor-post-tags aor-post-tags--featured-card"><a class="aor-tag-link" href="/en/tags/llm-benchmarks/">#llm-benchmarks</a><a class="aor-tag-link" href="/en/tags/local-models/">#local-models</a><a class="aor-tag-link" href="/en/tags/artificial-intelligence/">#artificial-intelligence</a><a class="aor-tag-link" href="/en/tags/llms/">#llms</a></span>
-</article>
-<article class="aor-featured-card" data-featured-item data-featured-index="8">
-  <time datetime="2026-09-30">Sep 30, 2026</time>
-  <h3><a href="/en/2026/09/30/the-mystery-of-lua-vision-genesys-pi-brazilian-frontier-model/">The Mystery of LUA Vision&#39;s Genesys PI - A Brazilian Frontier Model??</a></h3>
-  <p>After the first Genesys PI test, LUA Vision fixed bugs in the API and I ran everything again: cost dropped 85%, House climbed to 95.5 and Enterprise stayed flat. I also ran a black-box forensic analysis to answer whether the model is a rebadged Qwen, a disguised gpt-oss or an API proxy. I separate what is checked from what is still only their word.</p>
-  <span class="aor-post-tags aor-post-tags--featured-card"><a class="aor-tag-link" href="/en/tags/llm-benchmarks/">#llm-benchmarks</a><a class="aor-tag-link" href="/en/tags/llms/">#llms</a><a class="aor-tag-link" href="/en/tags/artificial-intelligence/">#artificial-intelligence</a></span>
-</article>
-<article class="aor-featured-card" data-featured-item data-featured-index="9">
   <time datetime="2026-09-28">Sep 28, 2026</time>
   <h3><a href="/en/2026/09/28/llms-are-good-at-reproducing-what-exists-what-about-new-things/">The Limits of LLMs: Good at Reproducing What Exists. Expensive for What Doesn&#39;t</a></h3>
   <p>Every LLM was trained only on what&#39;s public, but 81.5% of GitHub activity happens in private repositories, and the source code of every proprietary software never made it into training. In my retrocomputing projects I felt firsthand where the machine stalls: with no reference and no oracle, it spins in directed brute force.</p>
   <span class="aor-post-tags aor-post-tags--featured-card"><a class="aor-tag-link" href="/en/tags/llms/">#llms</a><a class="aor-tag-link" href="/en/tags/coding-agents/">#coding-agents</a><a class="aor-tag-link" href="/en/tags/retrocomputing/">#retrocomputing</a><a class="aor-tag-link" href="/en/tags/software-engineering/">#software-engineering</a></span>
 </article>
-<article class="aor-featured-card" data-featured-item data-featured-index="10">
-  <time datetime="2026-09-23">Sep 23, 2026</time>
-  <h3><a href="/en/2026/09/23/llm-benchmark-v4-genesys-pi-new-brazilian-contender/">LLM Benchmark v4: Genesys PI, a New Brazilian Contender!</a></h3>
-  <p>LUA Vision reached out on LinkedIn offering test access to Genesys PI, a Brazilian model trained from scratch. I ran both tiers, House and Enterprise, through my v4 sabotage benchmark, compared them against Opus, GPT-6, Grok and the Chinese competition, and looked at price, advantages and where it makes sense in the Brazilian market.</p>
-  <span class="aor-post-tags aor-post-tags--featured-card"><a class="aor-tag-link" href="/en/tags/llm-benchmarks/">#llm-benchmarks</a><a class="aor-tag-link" href="/en/tags/llms/">#llms</a><a class="aor-tag-link" href="/en/tags/coding-agents/">#coding-agents</a></span>
-</article>
-<article class="aor-featured-card" data-featured-item data-featured-index="11">
-  <time datetime="2026-09-23">Sep 23, 2026</time>
-  <h3><a href="/en/2026/09/23/llm-benchmark-v4-opus-5-5-gpt-6-sol-luna-mimo-2-6-grok-4-7/">LLM Benchmark v4: Opus 5.5, GPT Sol/Luna 6, Mimo 2.6, Grok 4.7</a></h3>
-  <p>Five new models entered my v4 sabotage benchmark: Opus 5.5, GPT 6 sol and luna, MiMo V2.6 Pro, and Grok 4.7. I compare against external benchmarks, answer whether upgrading is worth it, and Grok 4.7 regresses badly against its own predecessor.</p>
-  <span class="aor-post-tags aor-post-tags--featured-card"><a class="aor-tag-link" href="/en/tags/llm-benchmarks/">#llm-benchmarks</a><a class="aor-tag-link" href="/en/tags/llms/">#llms</a><a class="aor-tag-link" href="/en/tags/coding-agents/">#coding-agents</a></span>
-</article>
-<article class="aor-featured-card" data-featured-item data-featured-index="12">
+<article class="aor-featured-card" data-featured-item data-featured-index="7">
   <time datetime="2026-09-22">Sep 22, 2026</time>
   <h3><a href="/en/2026/09/22/pseudo-techcrunch-tried-to-scam-me-calendly-is-shit/">Watch Out! A Pseudo-TechCrunch Tried to Scam Me! And Calendly Is SHIT</a></h3>
   <p>An account posing as a TechCrunch journalist DMed me today asking for a meeting, with a Calendly link that redirects to an X OAuth authorization screen. It&#39;s the same scam that already caught José Valim, Elixir&#39;s creator. I document the scam step by step, with technical proof.</p>
   <span class="aor-post-tags aor-post-tags--featured-card"><a class="aor-tag-link" href="/en/tags/security/">#security</a><a class="aor-tag-link" href="/en/tags/artificial-intelligence/">#artificial-intelligence</a></span>
 </article>
-<article class="aor-featured-card" data-featured-item data-featured-index="13">
+<article class="aor-featured-card" data-featured-item data-featured-index="8">
   <time datetime="2026-09-22">Sep 22, 2026</time>
   <h3><a href="/en/2026/09/22/stop-making-excuses-and-ship-more-the-premise-changed/">Stop Making Excuses and Ship More! With AI, the Premise Changed. Get It.</a></h3>
   <p>With frontier LLMs making fewer mistakes than most human devs, the only real excuse left for holding back a deploy is your own review process&#39;s bureaucracy. I use my open source projects, cross-platform CI/CD, and real contribution numbers to show how I&#39;ve been doing this since February.</p>
   <span class="aor-post-tags aor-post-tags--featured-card"><a class="aor-tag-link" href="/en/tags/devops/">#devops</a><a class="aor-tag-link" href="/en/tags/software-engineering/">#software-engineering</a><a class="aor-tag-link" href="/en/tags/coding-agents/">#coding-agents</a><a class="aor-tag-link" href="/en/tags/vibe-coding/">#vibe-coding</a></span>
 </article>
-<article class="aor-featured-card" data-featured-item data-featured-index="14">
+<article class="aor-featured-card" data-featured-item data-featured-index="9">
   <time datetime="2026-09-17">Sep 17, 2026</time>
   <h3><a href="/en/2026/09/17/ai-unmasked-climate-hysteria/">AI Unmasked the Climate Change Hysteria</a></h3>
   <p>AI&#39;s race for energy buried the climate agenda: big techs restarting nuclear plants, Germany admitting the mistake, datacenters already consuming double the global EV fleet. With Bjorn Lomborg&#39;s numbers, the climate apocalypse as a misallocation of trillions.</p>
   <span class="aor-post-tags aor-post-tags--featured-card"><a class="aor-tag-link" href="/en/tags/science/">#science</a><a class="aor-tag-link" href="/en/tags/politics/">#politics</a><a class="aor-tag-link" href="/en/tags/artificial-intelligence/">#artificial-intelligence</a></span>
 </article>
-<article class="aor-featured-card" data-featured-item data-featured-index="15">
+<article class="aor-featured-card" data-featured-item data-featured-index="10">
   <time datetime="2026-09-17">Sep 17, 2026</time>
   <h3><a href="/en/2026/09/17/talking-about-my-ai-skills/">Talking a Bit About My AI Skills</a></h3>
   <p>Agent skills are just prompts in text files. I keep 25 in my my-skills repo, from pr-audit to fact-check, and they have already closed over a thousand PRs and issues across my projects. The recommendation: don&#39;t copy somebody else&#39;s skill, build your own.</p>
   <span class="aor-post-tags aor-post-tags--featured-card"><a class="aor-tag-link" href="/en/tags/coding-agents/">#coding-agents</a><a class="aor-tag-link" href="/en/tags/automation/">#automation</a><a class="aor-tag-link" href="/en/tags/llms/">#llms</a></span>
 </article>
-<article class="aor-featured-card" data-featured-item data-featured-index="16">
-  <time datetime="2026-09-15">Sep 15, 2026</time>
-  <h3><a href="/en/2026/09/15/new-llm-benchmark-v4-retesting-all-top-llms-part-1/">New LLM Benchmark v4: Retesting ALL the Top LLMs (Part 1)</a></h3>
-  <p>I rebuilt my benchmark from scratch for the third time. I threw out an entire version, built a Rails app sabotaged with real CVEs, and spent over $4,000 in 9 days. In this Part 1: the process, the cost, and the why.</p>
-  <span class="aor-post-tags aor-post-tags--featured-card"><a class="aor-tag-link" href="/en/tags/llm-benchmarks/">#llm-benchmarks</a><a class="aor-tag-link" href="/en/tags/llms/">#llms</a><a class="aor-tag-link" href="/en/tags/coding-agents/">#coding-agents</a></span>
-</article>
-<article class="aor-featured-card" data-featured-item data-featured-index="17">
-  <time datetime="2026-09-15">Sep 15, 2026</time>
-  <h3><a href="/en/2026/09/15/new-llm-benchmark-v4-retesting-39-llms-part-2/">New LLM Benchmark v4: Retesting 39 LLMs (Part 2)</a></h3>
-  <p>The full v4 table, nearly forty models ranked by vigilance, not completeness: six ties at the top, a free model beating half of Claude, GLM winning on a flat-rate plan, and the test I ran to find out whether Kimi or DeepSeek are secretly hiding a connection to Claude under the hood.</p>
-  <span class="aor-post-tags aor-post-tags--featured-card"><a class="aor-tag-link" href="/en/tags/llm-benchmarks/">#llm-benchmarks</a><a class="aor-tag-link" href="/en/tags/llms/">#llms</a><a class="aor-tag-link" href="/en/tags/coding-agents/">#coding-agents</a></span>
-</article>
-<article class="aor-featured-card" data-featured-item data-featured-index="18">
+<article class="aor-featured-card" data-featured-item data-featured-index="11">
   <time datetime="2026-09-09">Sep 09, 2026</time>
   <h3><a href="/en/2026/09/09/propagandas-enganosas-da-openai-anthropic-nvidia/">You&#39;re an Idiot if You Believe the Misleading Ads from OpenAI, Anthropic, NVIDIA. Here&#39;s Why</a></h3>
   <p>Nvidia and OpenAI declared that AGI has arrived, OpenAI brute-forced a Millennium Problem and threatened a mathematician&#39;s career, and an Anthropic employee quit crying Skynet. I take the propaganda apart.</p>
   <span class="aor-post-tags aor-post-tags--featured-card"><a class="aor-tag-link" href="/en/tags/artificial-intelligence/">#artificial-intelligence</a><a class="aor-tag-link" href="/en/tags/llms/">#llms</a><a class="aor-tag-link" href="/en/tags/business/">#business</a></span>
 </article>
-<article class="aor-featured-card" data-featured-item data-featured-index="19">
+<article class="aor-featured-card" data-featured-item data-featured-index="12">
   <time datetime="2026-09-07">Sep 07, 2026</time>
   <h3><a href="/en/2026/09/07/ai-challenge-converting-nes-roms-to-master-system-sms/">AI Challenge: Converting NES ROMs to the Master System/SMS</a></h3>
   <p>I tried using frontier LLMs to convert NES ROMs into Master System games. I explain the architecture, why translating 6502 to Z80 runs slow, the emulator as a feedback oracle, and where the mappers stall everything.</p>
   <span class="aor-post-tags aor-post-tags--featured-card"><a class="aor-tag-link" href="/en/tags/retrocomputing/">#retrocomputing</a><a class="aor-tag-link" href="/en/tags/coding-agents/">#coding-agents</a><a class="aor-tag-link" href="/en/tags/gaming/">#gaming</a><a class="aor-tag-link" href="/en/tags/emulation/">#emulation</a></span>
 </article>
-<article class="aor-featured-card" data-featured-item data-featured-index="20">
+<article class="aor-featured-card" data-featured-item data-featured-index="13">
   <time datetime="2026-09-02">Sep 02, 2026</time>
   <h3><a href="/en/2026/09/02/ai-memory-2-0-best-memory-system-for-agents-and-teams/">AI-MEMORY 2.0 - The Best Memory System for Agents and Teams</a></h3>
   <p>ai-memory hit version 2.0 with the open OKF format, local embeddings on by default, and support for teams working in parallel. I compare it with the competition and show what only ai-memory delivers.</p>
   <span class="aor-post-tags aor-post-tags--featured-card"><a class="aor-tag-link" href="/en/tags/ai-memory/">#ai-memory</a><a class="aor-tag-link" href="/en/tags/coding-agents/">#coding-agents</a><a class="aor-tag-link" href="/en/tags/open-source/">#open-source</a></span>
 </article>
-<article class="aor-featured-card" data-featured-item data-featured-index="21">
+<article class="aor-featured-card" data-featured-item data-featured-index="14">
   <time datetime="2026-08-18">Aug 18, 2026</time>
   <h3><a href="/en/2026/08/18/hot-take-harness-loop-engineering-graph-engineering-are-bullshit/">Hot Take: Harness, Loop Engineering, Graph Engineering Are Bullshit</a></h3>
   <p>I posted that Harness Engineering, Loop Engineering, and Graph Engineering are bullshit to sell consulting hours and courses. Here&#39;s my receipt: 30+ public repos, an AI marathon, and a whole benchmark — none of it using any of those &#39;disciplines&#39;.</p>
   <span class="aor-post-tags aor-post-tags--featured-card"><a class="aor-tag-link" href="/en/tags/artificial-intelligence/">#artificial-intelligence</a><a class="aor-tag-link" href="/en/tags/llms/">#llms</a><a class="aor-tag-link" href="/en/tags/vibe-coding/">#vibe-coding</a></span>
 </article>
-<article class="aor-featured-card" data-featured-item data-featured-index="22">
+<article class="aor-featured-card" data-featured-item data-featured-index="15">
   <time datetime="2026-07-12">Jul 12, 2026</time>
   <h3><a href="/en/2026/07/12/quantum-news-majorana-2-and-understanding-shor/">Quantum News: Majorana 2 and Understanding Shor</a></h3>
   <p>Microsoft announced Majorana 2 with 20-second qubits and physicists answering that nothing was resolved. I take the chance to properly explain Shor&#39;s algorithm, why factoring becomes period finding, and what quantum computers are actually good at.</p>
   <span class="aor-post-tags aor-post-tags--featured-card"><a class="aor-tag-link" href="/en/tags/quantum-computing/">#quantum-computing</a><a class="aor-tag-link" href="/en/tags/science/">#science</a></span>
 </article>
-<article class="aor-featured-card" data-featured-item data-featured-index="23">
+<article class="aor-featured-card" data-featured-item data-featured-index="16">
   <time datetime="2026-07-12">Jul 12, 2026</time>
   <h3><a href="/en/2026/07/12/using-ai-to-solve-my-little-day-to-day-problems/">Using AI to Solve My Little Day-to-Day Problems</a></h3>
   <p>A roundup of my small open source projects: a desk clock with widgets, manga readers, decent email, typing practice, YouTube karaoke, ComfyUI in Docker and more. All born from real little problems in my day-to-day.</p>
   <span class="aor-post-tags aor-post-tags--featured-card"><a class="aor-tag-link" href="/en/tags/vibe-coding/">#vibe-coding</a><a class="aor-tag-link" href="/en/tags/open-source/">#open-source</a><a class="aor-tag-link" href="/en/tags/artificial-intelligence/">#artificial-intelligence</a></span>
 </article>
-<article class="aor-featured-card" data-featured-item data-featured-index="24">
+<article class="aor-featured-card" data-featured-item data-featured-index="17">
   <time datetime="2026-07-11">Jul 11, 2026</time>
   <h3><a href="/en/2026/07/11/how-to-protect-yourself-from-agents-deleting-your-stuff/">How Do I Protect Myself From My Agents Deleting My Stuff?</a></h3>
   <p>LLMs deleting files from famous people made headlines this week. In five months of heavy use, in YOLO mode, it never happened to me. But I don&#39;t trust them either: BTRFS snapshots, restic backups, sandboxing and discipline.</p>
   <span class="aor-post-tags aor-post-tags--featured-card"><a class="aor-tag-link" href="/en/tags/ai-jail/">#ai-jail</a><a class="aor-tag-link" href="/en/tags/coding-agents/">#coding-agents</a><a class="aor-tag-link" href="/en/tags/security/">#security</a><a class="aor-tag-link" href="/en/tags/storage-and-backup/">#storage-and-backup</a></span>
 </article>
-<article class="aor-featured-card" data-featured-item data-featured-index="25">
+<article class="aor-featured-card" data-featured-item data-featured-index="18">
   <time datetime="2026-06-24">Jun 24, 2026</time>
   <h3><a href="/en/2026/06/24/why-llms-will-fail-at-your-company/">Why LLMs Will Fail at Your Company</a></h3>
   <p>The deliberately speculative thesis is that LLMs amplify processes where people outsource decisions. The proposed alternative is daily cycles of decision, implementation, testing, and review close to the outcome.</p>
   <span class="aor-post-tags aor-post-tags--featured-card"><a class="aor-tag-link" href="/en/tags/llms/">#llms</a><a class="aor-tag-link" href="/en/tags/vibe-coding/">#vibe-coding</a><a class="aor-tag-link" href="/en/tags/software-engineering/">#software-engineering</a></span>
 </article>
-<article class="aor-featured-card" data-featured-item data-featured-index="26">
+<article class="aor-featured-card" data-featured-item data-featured-index="19">
   <time datetime="2026-06-05">Jun 05, 2026</time>
   <h3><a href="/en/2026/06/05/ai-controversy-open-source-project-contributions-my-take/">AI Controversy in Open Source Project Contributions - My Take</a></h3>
   <p>AI in open source contributions is here to stay, even with AI slop, regressions, and false bugs. The practical answer is to automate triage and auditing without taking the final decision away from humans.</p>
   <span class="aor-post-tags aor-post-tags--featured-card"><a class="aor-tag-link" href="/en/tags/open-source/">#open-source</a><a class="aor-tag-link" href="/en/tags/coding-agents/">#coding-agents</a><a class="aor-tag-link" href="/en/tags/software-engineering/">#software-engineering</a></span>
 </article>
-<article class="aor-featured-card" data-featured-item data-featured-index="27">
+<article class="aor-featured-card" data-featured-item data-featured-index="20">
   <time datetime="2026-05-30">May 30, 2026</time>
   <h3><a href="/en/2026/05/30/open-source-best-practices-llm-the-minimum/">Open Source Best Practices with LLMs - The Bare Minimum</a></h3>
   <p>Open source projects built with LLMs are only ready with simple installation, reliable tests and CI, and documentation focused on the problem. Standardizing releases and deployments makes automation predictable.</p>
   <span class="aor-post-tags aor-post-tags--featured-card"><a class="aor-tag-link" href="/en/tags/open-source/">#open-source</a><a class="aor-tag-link" href="/en/tags/software-engineering/">#software-engineering</a><a class="aor-tag-link" href="/en/tags/devops/">#devops</a></span>
 </article>
-<article class="aor-featured-card" data-featured-item data-featured-index="28">
+<article class="aor-featured-card" data-featured-item data-featured-index="21">
   <time datetime="2026-04-20">Apr 20, 2026</time>
   <h3><a href="/en/2026/04/20/clean-code-for-ai-agents/">Clean Code for AI Agents</a></h3>
   <p>Clean Code carries different weight when an agent is the primary reader: small code, greppable names, provenance context, headless tests, and explicit rules reduce navigation, cost, and errors.</p>
   <span class="aor-post-tags aor-post-tags--featured-card"><a class="aor-tag-link" href="/en/tags/software-engineering/">#software-engineering</a><a class="aor-tag-link" href="/en/tags/coding-agents/">#coding-agents</a></span>
 </article>
-<article class="aor-featured-card" data-featured-item data-featured-index="29">
-  <time datetime="2026-04-18">Apr 18, 2026</time>
-  <h3><a href="/en/2026/04/18/llm-benchmarks-part-2-multi-model/">LLM Benchmarks Part 2: Is It Worth Combining Multiple Models in the Same Project? Claude + GLM??</a></h3>
-  <p>I tested seven combinations in Claude Code, opencode, and Codex, but no sub-agent was called. Variance across runs and harnesses keeps solo Opus as the default for greenfield projects.</p>
-  <span class="aor-post-tags aor-post-tags--featured-card"><a class="aor-tag-link" href="/en/tags/llm-benchmarks/">#llm-benchmarks</a><a class="aor-tag-link" href="/en/tags/coding-agents/">#coding-agents</a><a class="aor-tag-link" href="/en/tags/llms/">#llms</a></span>
-</article>
-<article class="aor-featured-card" data-featured-item data-featured-index="30">
+<article class="aor-featured-card" data-featured-item data-featured-index="22">
   <time datetime="2026-04-11">Apr 11, 2026</time>
   <h3><a href="/en/2026/04/11/vs-code-is-the-new-punch-card/">VS Code Is the New Punch Card</a></h3>
   <p>In the era of coding agents, typing everything by hand in VS Code is becoming the modern equivalent of a punch card. Foundations did not become legacy.</p>
   <span class="aor-post-tags aor-post-tags--featured-card"><a class="aor-tag-link" href="/en/tags/coding-agents/">#coding-agents</a><a class="aor-tag-link" href="/en/tags/programming/">#programming</a></span>
 </article>
-<article class="aor-featured-card" data-featured-item data-featured-index="31">
+<article class="aor-featured-card" data-featured-item data-featured-index="23">
   <time datetime="2026-02-24">Feb 24, 2026</time>
   <h3><a href="/en/2026/02/24/rant-akita-caved-to-ai/">RANT: Did Akita Bend Over for AI??</a></h3>
   <p>I have been &#39;bending over&#39; for AI since 2023. If you only watch out-of-context podcast clips, let me spell it out for you.</p>
   <span class="aor-post-tags aor-post-tags--featured-card"><a class="aor-tag-link" href="/en/tags/artificial-intelligence/">#artificial-intelligence</a><a class="aor-tag-link" href="/en/tags/llms/">#llms</a><a class="aor-tag-link" href="/en/tags/vibe-coding/">#vibe-coding</a></span>
 </article>
-<article class="aor-featured-card" data-featured-item data-featured-index="32">
+<article class="aor-featured-card" data-featured-item data-featured-index="24">
   <time datetime="2026-02-16">Feb 16, 2026</time>
   <h3><a href="/en/2026/02/16/vibe-code-zero-to-production-in-6-days-the-m-akita-chronicles/">Vibe Code: From Zero to Production in 6 DAYS | The M.Akita Chronicles</a></h3>
   <p>How I shipped a full newsletter, blog, podcast, and Discord bot to production in six days using vibe coding the right way.</p>
   <span class="aor-post-tags aor-post-tags--featured-card"><a class="aor-tag-link" href="/en/tags/the-m-akita-chronicles/">#the-m-akita-chronicles</a><a class="aor-tag-link" href="/en/tags/vibe-coding/">#vibe-coding</a><a class="aor-tag-link" href="/en/tags/agile/">#agile</a></span>
 </article>
-<article class="aor-featured-card" data-featured-item data-featured-index="33">
+<article class="aor-featured-card" data-featured-item data-featured-index="25">
   <time datetime="2026-02-08">Feb 08, 2026</time>
   <h3><a href="/en/2026/02/08/rant-ai-killed-programmers/">RANT: Did AI Kill Programmers?</a></h3>
   <p>Akita&#39;s rant on why AI won&#39;t replace real programmers, why the programming bubble already popped, the S-curve ceiling of current LLM architecture, and what actually changes for engineers in the LLM era.</p>
   <span class="aor-post-tags aor-post-tags--featured-card"><a class="aor-tag-link" href="/en/tags/artificial-intelligence/">#artificial-intelligence</a><a class="aor-tag-link" href="/en/tags/llms/">#llms</a><a class="aor-tag-link" href="/en/tags/career/">#career</a><a class="aor-tag-link" href="/en/tags/off-topic/">#off-topic</a></span>
 </article>
-<article class="aor-featured-card" data-featured-item data-featured-index="34">
+<article class="aor-featured-card" data-featured-item data-featured-index="26">
   <time datetime="2025-06-18">Jun 18, 2025</time>
   <h3><a href="/en/2025/06/18/agi-or-skynet-isnt-coming-anytime-soon/">AGI or Skynet Isn&#39;t Coming Anytime Soon</a></h3>
   <p>Why the current LLM architecture cannot reach AGI, and why the hype from Big Tech CEOs and media-anointed experts is mostly backroom negotiation noise.</p>
   <span class="aor-post-tags aor-post-tags--featured-card"><a class="aor-tag-link" href="/en/tags/artificial-intelligence/">#artificial-intelligence</a><a class="aor-tag-link" href="/en/tags/llms/">#llms</a><a class="aor-tag-link" href="/en/tags/philosophy/">#philosophy</a><a class="aor-tag-link" href="/en/tags/off-topic/">#off-topic</a></span>
 </article>
-<article class="aor-featured-card" data-featured-item data-featured-index="35">
+<article class="aor-featured-card" data-featured-item data-featured-index="27">
   <time datetime="2025-05-02">May 02, 2025</time>
   <h3><a href="/en/2025/05/02/rant-llms-are-loot-boxes/">RANT - LLMs are LOOT BOXES!</a></h3>
   <p>Why LLMs for real coding behave like gacha loot boxes, and why every incentive in the industry pushes you to burn more tokens.</p>
@@ -242,9 +194,41 @@ title: AkitaOnRails Blog
 <section class="aor-index-month" aria-labelledby="aor-list-2026-10">
   <div class="aor-index-month__header">
     <h2 id="aor-list-2026-10">October 2026</h2>
-    <span>11 articles</span>
+    <span>15 articles</span>
   </div>
   <div class="aor-index-list-group">
+<article class="aor-index-row" title="The wrap-up of benchmark v4: almost 70 runs, almost 60 models, across cloud, B300, 4x B300, RTX 5090 and Strix Halo, and more than 6 thousand dollars spent. In a single table, 42 runs made Tier A, and the best open models I served myself (DeepSeek V4.1 Flash, GLM 5.3 Flash, Qwen3.8 Flash-Next) sit 7.5 points from the ceiling, right on Sonnet 5&#39;s heels. The Chinese labs climb 5.5 to 17 points per generation while the Western top is stalled in programming and spending its showcase on math. I recommend the best commercial models, the best open models for companies and for PCs, along with what I learned, and I close with my hypothesis on why expensive hardware holds open source back.">
+  <time datetime="2026-10-22">Oct 22</time>
+  <div class="aor-index-row__body">
+    <h3><a class="aor-index-list__main-link" href="/en/2026/10/22/llm-benchmark-v4-the-open-source-verdict-as-of-oct-2026/">LLM Benchmark v4: the open source verdict (as of Oct 2026)</a></h3>
+    <p>The wrap-up of benchmark v4: almost 70 runs, almost 60 models, across cloud, B300, 4x B300, RTX 5090 and Strix Halo, and more than 6 thousand dollars spent. In a single table, 42 runs made Tier A, and the best open models I served myself (DeepSeek V4.1 Flash, GLM 5.3 Flash, Qwen3.8 Flash-Next) sit 7.5 points from the ceiling, right on Sonnet 5&#39;s heels. The Chinese labs climb 5.5 to 17 points per generation while the Western top is stalled in programming and spending its showcase on math. I recommend the best commercial models, the best open models for companies and for PCs, along with what I learned, and I close with my hypothesis on why expensive hardware holds open source back.</p>
+  </div>
+  <span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/en/tags/llm-benchmarks/">#llm-benchmarks</a><a class="aor-tag-link" href="/en/tags/local-models/">#local-models</a><a class="aor-tag-link" href="/en/tags/llms/">#llms</a><a class="aor-tag-link" href="/en/tags/open-source/">#open-source</a></span>
+</article>
+<article class="aor-index-row" title="I went back to consumer hardware after the datacenter tests. Qwen3.8 Flash-Next scored 91.0, Tier A, on an RTX 5090 with the Strata engine, 1.5 points behind the B300 and at 159 tokens per second. It is a different model from the Qwen 3.8 27B I had called too slow: a MoE with 6B active per token, served with the most-used experts on the card. The Strix Halo scored 80.0 with the 27B, but at 7.7 tokens per second. It is the first local model to make Tier A on v4 that is worth testing for day-to-day programming, if you can find a 5090: NVIDIA denies ending production, but admits supply is tight.">
+  <time datetime="2026-10-22">Oct 22</time>
+  <div class="aor-index-row__body">
+    <h3><a class="aor-index-list__main-link" href="/en/2026/10/22/llm-benchmark-v4-consumer-open-source-rtx5090-strix-halo-strata/">LLM Benchmark v4: consumer-grade open source on RTX 5090 or Strix Halo. And Strata?</a></h3>
+    <p>I went back to consumer hardware after the datacenter tests. Qwen3.8 Flash-Next scored 91.0, Tier A, on an RTX 5090 with the Strata engine, 1.5 points behind the B300 and at 159 tokens per second. It is a different model from the Qwen 3.8 27B I had called too slow: a MoE with 6B active per token, served with the most-used experts on the card. The Strix Halo scored 80.0 with the 27B, but at 7.7 tokens per second. It is the first local model to make Tier A on v4 that is worth testing for day-to-day programming, if you can find a 5090: NVIDIA denies ending production, but admits supply is tight.</p>
+  </div>
+  <span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/en/tags/llm-benchmarks/">#llm-benchmarks</a><a class="aor-tag-link" href="/en/tags/local-models/">#local-models</a><a class="aor-tag-link" href="/en/tags/llms/">#llms</a><a class="aor-tag-link" href="/en/tags/hardware/">#hardware</a></span>
+</article>
+<article class="aor-index-row" title="After ranking the big models, the leftover question: how many developers fit on a 4x B300 or 4x H200 pod? We measured real concurrency, with a latency SLO, and the answer changes everything: DeepSeek V4.1 Flash holds 32 comfortable users on B300 and only 8 on H200. Cost per comfortable user: US$ 1.13/hour on B300 versus US$ 1.80 on H200. When your own infra closes the math against a frontier subscription, and when it&#39;s just expensive vanity.">
+  <time datetime="2026-10-22">Oct 22</time>
+  <div class="aor-index-row__body">
+    <h3><a class="aor-index-list__main-link" href="/en/2026/10/22/llm-benchmark-v4-can-my-team-fit-in-a-4x-b300-h200/">LLM Benchmark v4: can my team fit in a 4x b300/h200?</a></h3>
+    <p>After ranking the big models, the leftover question: how many developers fit on a 4x B300 or 4x H200 pod? We measured real concurrency, with a latency SLO, and the answer changes everything: DeepSeek V4.1 Flash holds 32 comfortable users on B300 and only 8 on H200. Cost per comfortable user: US$ 1.13/hour on B300 versus US$ 1.80 on H200. When your own infra closes the math against a frontier subscription, and when it&#39;s just expensive vanity.</p>
+  </div>
+  <span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/en/tags/llm-benchmarks/">#llm-benchmarks</a><a class="aor-tag-link" href="/en/tags/local-models/">#local-models</a><a class="aor-tag-link" href="/en/tags/llms/">#llms</a><a class="aor-tag-link" href="/en/tags/hardware/">#hardware</a></span>
+</article>
+<article class="aor-index-row" title="I rented 4x NVIDIA B300 on Runpod and ran my v4 sabotage benchmark on the open models that don&#39;t fit on a single card. DeepSeek V4.1 Flash, at 748B, tied the leaders at 92.5, on the level of hosted GLM 5.3 and GPT-6 Sol. GLM 5.3 full fell behind, the 1T Kimi K2 Thinking disappointed, and a 397B model plummeted from 94 in the cloud to 27 at home. The math: US$ 36 per pod hour, US$ 864 per day. When owning your own infra makes sense, and whether a big open model is already enough for your day-to-day programming.">
+  <time datetime="2026-10-22">Oct 22</time>
+  <div class="aor-index-row__body">
+    <h3><a class="aor-index-list__main-link" href="/en/2026/10/22/llm-benchmark-v4-open-source-that-only-fits-in-4x-b300/">LLM Benchmark v4: open source that only fits in 4x B300!!</a></h3>
+    <p>I rented 4x NVIDIA B300 on Runpod and ran my v4 sabotage benchmark on the open models that don&#39;t fit on a single card. DeepSeek V4.1 Flash, at 748B, tied the leaders at 92.5, on the level of hosted GLM 5.3 and GPT-6 Sol. GLM 5.3 full fell behind, the 1T Kimi K2 Thinking disappointed, and a 397B model plummeted from 94 in the cloud to 27 at home. The math: US$ 36 per pod hour, US$ 864 per day. When owning your own infra makes sense, and whether a big open model is already enough for your day-to-day programming.</p>
+  </div>
+  <span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/en/tags/llm-benchmarks/">#llm-benchmarks</a><a class="aor-tag-link" href="/en/tags/local-models/">#local-models</a><a class="aor-tag-link" href="/en/tags/llms/">#llms</a><a class="aor-tag-link" href="/en/tags/hardware/">#hardware</a></span>
+</article>
 <article class="aor-index-row" title="I rented a 288 GB NVIDIA B300 on Runpod and ran my v4 sabotage benchmark on 14 open-weight models that don&#39;t fit at home. None of them serves fast the way it ships: GLM 5.3 Flash went from 10 to 141 tokens per second on configuration alone. Two open models reached 92.5, Sonnet 5 level, and a 27B fine-tune scored 88. A 397B flagship let an admin backdoor through, DeepSeek V4 Flash scored 86 in the cloud and 44.5 at home, and Nemotron cheated on a test. The math: the cloud API of the same model costs a dollar per run and the pod costs 218 a day. When owning your own infra is worth it, and whether a team fits on one card.">
   <time datetime="2026-10-19">Oct 19</time>
   <div class="aor-index-row__body">
