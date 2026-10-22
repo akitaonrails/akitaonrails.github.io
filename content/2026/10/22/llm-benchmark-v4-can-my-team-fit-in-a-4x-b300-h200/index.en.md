@@ -68,6 +68,33 @@ Now the deciding arithmetic:
 
 The B300 wins per person even with the pod costing 2.5x more. The H200 would only become cheaper per user below US$ 9/hour for the whole pod, and on the current table it costs US$ 14.36. The cut-off point isn't the machine's price, it's its capacity.
 
+## What if your company already lives on AWS or Azure?
+
+You can build the same infra on the hyperscalers, but the price changes category. The list values I checked, per GPU-hour:
+
+| Provider | Configuration | Price per GPU-hour | Against Runpod |
+| --- | ---: | ---: |
+| Runpod, 4x B300 (my campaign) | B300 | US$ 9.00 | 1x |
+| Runpod, 4x H200 (Community Cloud) | H200 | [US$ 3.59](https://www.runpod.io/pricing) | 0.4x |
+| [AWS, p6-b300.48xlarge](https://themodelpress.com/gpu-prices) | 8x B300, capacity block | US$ 14.04 | 1.6x |
+| AWS, p6-b200.48xlarge | 8x B200, capacity block | US$ 12.36 | 1.4x |
+| [Azure, ND96isr_H200_v5](https://themodelpress.com/gpu-prices/azure-nd-h200-v5-on-demand) | 8x H200, East US 2 | US$ 10.60 | 3.0x |
+
+B300 on AWS costs 1.6x what I paid on Runpod, and H200 on Azure costs almost 3x Runpod's. The capacity conclusion doesn't change (the physics of tensor parallelism and KV cache is the same), but the "worth it" math gets considerably worse: if on Runpod the B300 ties the subscription around 30 users, on AWS it starts losing by a comfortable margin.
+
+And in practice, how much does it come out to per developer, turning the pod off at night like in the other calculations (8 hours per business day, 176 hours/month)?
+
+| Setup | Monthly pod cost | Comfortable streams (1 per dev) | Cost per dev/month |
+| --- | ---: | ---: | ---: |
+| Runpod 4x B300 (US$ 36/h) | US$ 6,336 | 32 | US$ 198 |
+| AWS 4x B300 (US$ 56.16/h) | US$ 9,884 | 32 | US$ 309 |
+| Runpod 4x H200 (US$ 14.36/h) | US$ 2,527 | 8 | US$ 316 |
+| Azure 4x H200 (US$ 42.40/h) | US$ 7,462 | 8 | US$ 933 |
+
+The difference is brutal: the same comfortable developer costs US$ 198 on Runpod and US$ 933 on Azure, almost five times the price of the strongest frontier subscription. Only AWS stays in a range where the conversation still exists, and even then 50% above Runpod.
+
+The commercial models differ too: capacity block on AWS is not on-demand, and Runpod's Community Cloud is not production SLA. And one packaging detail: the 8-GPU SKUs are the standard on the hyperscalers, so if you can't rent just 4, the bill doubles for the same TP=4 (or you go up to TP=8 and measure again). So read this table as an order of magnitude of price, not a contract quote. If your requirement is compliance, procurement or residency in a specific region, the hyperscaler may be unavoidable, and then you pay the premium. If the requirement is cost, the neoclouds remain unbeatable.
+
 And comparing with a frontier subscription? A strong Claude/Codex plan costs about US$ 200 per month per developer. To turn streams into people I need a premise: one developer with one active request the whole workday, which is optimistic for capacity and conservative for cost. With that premise, and not counting my sysadmin hours or setup, the pod running 8 hours per workday (176 hours/month) looks like this:
 
 | Setup | Monthly pod cost | Comfortable streams (1 per dev) | Cost per dev/month |
