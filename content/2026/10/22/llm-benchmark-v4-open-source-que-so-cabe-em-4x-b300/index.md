@@ -98,4 +98,6 @@ Pra uma empresa que precisa de dado privado de verdade (código que não pode sa
 
 O que eu não compraria de novo sem medir antes é a premissa "maior é melhor". Eu comecei essa campanha achando que o salto de 92,5 ia vir de um modelo maior. Veio do modelo certo rodando direito. O resto é VRAM queimada e uma história boa pra contar.
 
+E tem mais um capítulo vindo, de hardware que não é datacenter: os testes com modelos locais na RTX 5090 e no Strix Halo, com um motor de inferência novo chamado Strata. Quando o protocolo terminar, sai o terceiro artigo.
+
 E a pergunta de "vale a pena" tem uma resposta irritante de óbvia: depende de quantas pessoas vão usar ao mesmo tempo. É ela que eu respondo no próximo artigo: [LLM Benchmark v4: can my team fit in a 4x b300/h200?](/2026/10/22/llm-benchmark-v4-can-my-team-fit-in-a-4x-b300-h200/).

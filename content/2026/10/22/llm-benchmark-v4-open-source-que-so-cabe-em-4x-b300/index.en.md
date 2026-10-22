@@ -98,4 +98,6 @@ For a company that needs truly private data (code that can't leave the VPN), a p
 
 What I wouldn't buy again without measuring first is the "bigger is better" premise. I started this campaign thinking the jump past 92.5 would come from a bigger model. It came from the right model running properly. The rest is burned VRAM and a good story to tell.
 
+And there's another chapter coming, on non-datacenter hardware: local model tests on the RTX 5090 and the Strix Halo, with a new inference engine called Strata. Once the protocol is done, the third article comes out.
+
 And the "is it worth it" question has an irritatingly obvious answer: it depends on how many people will use it at the same time. That's the one I answer in the next article: [LLM Benchmark v4: can my team fit in a 4x b300/h200?](/en/2026/10/22/llm-benchmark-v4-can-my-team-fit-in-a-4x-b300-h200/).
