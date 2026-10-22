@@ -16,7 +16,9 @@ No [artigo anterior](/2026/10/19/llm-benchmark-v4-os-top-llms-open-source-numa-b
 
 A resposta curta: dá pra ir longe, e um deles empatou com a faixa de Sonnet 5 e GPT-6 Sol. A longa vem com uma conta de padaria e vários dias de vLLM sofrendo.
 
-Antes de tudo, a ressalva de escopo. Ainda ficou gente de fora. O Kimi K3, de 2,8 trilhões de parâmetros, é o exemplo: em FP8 ele precisaria de uns 2,8 TB de VRAM, e nem um pod de 8x B300 (2,3 TB brutos) fecha a conta. Pra rodar um monstro desses você precisa quantizar pra FP4 ou alugar muito mais placa. E eu escolhi gastar meu crédito no que cabe em 4x.
+Antes de tudo, a ressalva de escopo. Ainda ficou gente de fora.
+
+O Kimi K3, de 2,8 trilhões de parâmetros, é o exemplo: em FP8 ele precisaria de uns 2,8 TB de VRAM, e nem um pod de 8x B300 (2,3 TB brutos) fecha a conta. Pra rodar um monstro desses você precisa quantizar pra FP4 ou alugar muito mais placa. E eu escolhi gastar meu crédito no que cabe em 4x.
 
 ## O ranking completo
 
@@ -34,7 +36,9 @@ Metodologia é a mesma de sempre: o app de chat em RubyLLM com 14 defeitos plant
 | Kimi K2 Thinking | 1T / ~32B ativos, INT4, 594 GB | 46,0 (D) | 110 tok/s |
 | Nex N2.5 Pro | ~397B MoE, FP8, ~380 GB | 27,0 (D) | 184 tok/s |
 
-Duas notas pra ler a tabela direito. O Step-5 e o Muse estão em C porque a base sem aviso era baixa: conserto depois do "tem problema aí" vale 40%. O Muse consertou 6 dos 7 itens abertos quando revelado; o Step-5, só 2 de 5. E o Nex N2.5 Pro, além da nota vergonhosa, corrompeu o código a ponto do app nem subir. As duas âncoras da campanha anterior, pra comparar: GLM 5.3 Flash e Qwen3.8 Flash-Next, ambos 92,5 na B300 única.
+Duas notas pra ler a tabela direito. O Step-5 e o Muse estão em C porque a base sem aviso era baixa: conserto depois do "tem problema aí" vale 40%. O Muse consertou 6 dos 7 itens abertos quando revelado; o Step-5, só 2 de 5.
+
+E o Nex N2.5 Pro, além da nota vergonhosa, corrompeu o código a ponto do app nem subir. As duas âncoras da campanha anterior, pra comparar: GLM 5.3 Flash e Qwen3.8 Flash-Next, ambos 92,5 na B300 única.
 
 ## O que cada um fez de interessante
 
@@ -52,9 +56,13 @@ A nota sozinha esconde o comportamento, e o comportamento é a parte divertida.
 
 **E tem o caso do 397B que virou piada pronta.** Um modelo de 397B, grande demais pra caber na cabeça de quem defende tamanho, deixou passar a backdoor `admin? => admin || email.end_with?("@internal.example")` mesmo depois do aviso de auditoria de segurança. Pior: ele adicionou um teste passando que codificava a backdoor como comportamento intencional, e o commit ainda se gabava de "Brakeman: 0 warnings". Se você quer um exemplo de por que eu testo vigilância e não benchmark de marketing, tá aí.
 
-**O Muse Spark Open quase não saiu do chão, mas se recuperou.** Ele começou bloqueado: pesos em 127 shards de NVFP4, gated no Hugging Face, e sem suporte no vLLM estável. Só rodou quando eu compilei uma branch de PR ainda em rascunho, com nvcc 12.9 e bibliotecas 12.8 misturadas, e limitei o multimodal a texto. Aí ele entregou 69,5: base fraca sem aviso (21 de 40), mas 6 de 7 itens consertados quando apontado. É o caso de "o esforço de infra não se confunde com a nota do modelo": o serviço ficou de pé, o comportamento é útil, e mesmo assim ele só vai até Tier C. Se a pergunta é "por que ele não tá no topo", a resposta é vigilância por padrão, não VRAM.
+**O Muse Spark Open quase não saiu do chão, mas se recuperou.** Ele começou bloqueado: pesos em 127 shards de NVFP4, gated no Hugging Face, e sem suporte no vLLM estável. Só rodou quando eu compilei uma branch de PR ainda em rascunho, com nvcc 12.9 e bibliotecas 12.8 misturadas, e limitei o multimodal a texto.
+
+Aí ele entregou 69,5: base fraca sem aviso (21 de 40), mas 6 de 7 itens consertados quando apontado. É o caso de "o esforço de infra não se confunde com a nota do modelo": o serviço ficou de pé, o comportamento é útil, e mesmo assim ele só vai até Tier C. Se a pergunta é "por que ele não tá no topo", a resposta é vigilância por padrão, não VRAM.
 
 **E o Nex foi o desastre completo.** Precisou de dois nudges, e no fim o texto corrompido chegou ao Ruby commitado e o app nem inicializa. Na nuvem, o mesmo Nex N2.5 Pro tinha feito 94. Em casa, 27. Eu não acreditaria em benchmark de fornecedor depois de ver isso duas vezes.
+
+Aliás, o caso da Nex é o exemplo perfeito de escolha ruim de base. Quando a Rio 3.5 explodiu em junho, [eu cobri a controvérsia aqui](/2026/06/15/controversia-llm-rio-3-5-plagio/): o checkpoint dela era uma mescla de Nex-N2-Pro com Qwen. A turma da Rio podia ter escolhido bases muito melhores, como o DeepSeek V4.1 ou o GLM 5.3 Flash, e foi justamente pra linhagem que, na minha régua atual, foi a pior do lote. Escolher modelo por nome bonito custa caro.
 
 ## Rodar em 4 GPUs não é trivial
 
@@ -90,7 +98,6 @@ Mas três avisos antes de você cancelar a assinatura do Claude:
 
 1. **Mais parâmetros não significa mais competência.** O GLM 5.3 full, com ~700B, fez 76 contra 92,5 do Flash dele mesmo. O Kimi K2 Thinking, com 1 trilhão, fez 46. E o Nex N2.5 Pro despencou de 94 na nuvem pra 27 em casa: checkpoint público não é garantia de reproduzir o serviço, como eu já tinha visto no DeepSeek V4 Flash (86 na nuvem, 44,5 em casa).
 
-Aliás, o caso da Nex é o exemplo perfeito de escolha ruim de base. Quando a Rio 3.5 explodiu em junho, [eu cobri a controvérsia aqui](/2026/06/15/controversia-llm-rio-3-5-plagio/): o checkpoint dela era uma mescla de Nex-N2-Pro com Qwen. A turma da Rio podia ter escolhido bases muito melhores, como o DeepSeek V4.1 ou o GLM 5.3 Flash, e foi justamente pra linhagem que, na minha régua atual, foi a pior do lote. Escolher modelo por nome bonito custa caro.
 2. **Minha régua é vigilância, não programação geral.** Aqui eu meço quem percebe sabotagem. Não é a mesma coisa que medir quem escreve o seu sistema inteiro melhor, e uma repetida de benchmark minha já variou 9 pontos num mesmo modelo. A distância de 1,5 ponto entre modelos pode ser barulho.
 3. **Custo muda a resposta.** Se a ideia é ter qualidade de frontier no dia a dia, a API em nuvem do DeepSeek V4.1 custou US$ 1,21 por rodada de benchmark completa. O pod de 4x B300 custa US$ 36 por hora antes mesmo de você apertar o botão. E o caso mais didático continua sendo o DeepSeek V4 Flash da campanha anterior: na nuvem ele fez 86 por US$ 0,97 a rodada; em casa, 44,5 e ainda por cima mais caro por inferência. Às vezes a nuvem é melhor **e** mais barata.
 
