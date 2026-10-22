@@ -98,6 +98,29 @@ The cost is that the 610M is weak for games and NVIDIA multi-GPU on Wayland has 
 
 The general lesson: **do not let an inference engine take 100% of a GPU that also draws your screen.** In this setup I have no hard driver-level VRAM reserve for the display client. I had to solve it on the engine side: reserve a few GB, reapply it after every cold start, and measure again with the desktop open.
 
+### The same 32 GB also limits the session
+
+The 5090 budget is tight from every side. The same 32 GB has to hold the model's dense weights and fixed buffers, the hot-expert cache, the resident portion of the KV cache, and the 4 GiB reserve for Hyprland, the browser and the terminal. Giving memory to one takes it from another.
+
+The KV cache is the conversation's memory. Every token in the prompt, previous responses and files read creates state the model needs for the tokens that follow. My Strata setup uses `int8` KV with 32K cells per layer resident on the GPU.
+
+The rest can stream from system RAM, which is why raising the window from 128K to 256K did not increase VRAM use or reduce speed in my synthetic test. Streaming prevents the immediate blowup while still consuming memory. It does not turn a 5090 into an unlimited server.
+
+The configured ceiling here is **262,144 tokens, or 256K**. Several commercial models I tested, including the newer Claude models, already operate in the 1-million-token class. A window almost four times larger changes how you work: Claude Code can accumulate much more history before compaction; with local Qwen I have to treat context as a budget from the first prompt.
+
+The conversation visible in the terminal is only one part of the context. Depending on the harness, it can also include the system prompt, `AGENTS.md` and `CLAUDE.md`, skill catalogs and loaded skill contents, tool descriptions and schemas, MCP servers, plugin instructions, command output, files, and the room reserved for the answer. A well-built skill loads its full text only when invoked, but its catalog entry may still reach the prompt. A plugin that registers twenty tools also sends twenty schemas before you ask for anything.
+
+That is why the benchmark did not use my regular OpenCode setup. The runner [generates an isolated configuration](https://github.com/akitaonrails/llm-coding-benchmark#local-opencode-benchmark-config), without global plugins or MCP servers, containing only the providers and agents needed for the test. It also pins the real 262,144-token limit instead of pretending the model accepts the context advertised by some other backend.
+
+For daily work with this Qwen, I would apply the same discipline:
+
+- start with the thinnest possible harness and enable plugins or MCP servers only when the project needs them;
+- keep heavy skills on demand instead of dumping whole manuals at the beginning of the session;
+- compact or open a fresh session before hitting the ceiling, recording important decisions in project files;
+- leave room for model output. A window packed with input is useless when the model has no tokens left to think, call tools and answer.
+
+> With 256K, context is a hardware resource. Installing too many integrations and loading everything in every session consumes window and memory before the work begins.
+
 ## Wasn't Qwen 3.8 too slow?
 
 It was, and I wrote that. In the [v4 ranking](/en/2026/09/15/new-llm-benchmark-v4-retesting-39-llms-part-2/), Qwen 3.8 27B running locally took almost 12 hours to finish the seven sprints. In the [B300 article](/en/2026/10/19/llm-benchmark-v4-the-top-open-source-llms-on-a-b300/) I summed it up: it scored 80, took 706 minutes, "so don't even try".

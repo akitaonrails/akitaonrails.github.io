@@ -98,6 +98,29 @@ O custo é que a 610M é fraca pra jogos e o multi-GPU da NVIDIA no Wayland tem 
 
 A lição geral: **não deixe motor de inferência tomar 100% de uma GPU que também desenha sua tela.** Nesta configuração não tenho uma reserva rígida de VRAM no driver pro cliente de display. Precisei resolver do lado do motor: reservar alguns GB, reafirmar depois de cada cold start e medir de novo com a área de trabalho aberta.
 
+### Os mesmos 32 GB também limitam a sessão
+
+A conta da 5090 é apertada por todos os lados. Os mesmos 32 GB precisam acomodar os pesos densos e buffers fixos do modelo, o cache dos especialistas quentes, a parte residente do KV cache e ainda a reserva de 4 GiB pro Hyprland, navegador e terminal. O que sobra pra uma coisa sai de outra.
+
+KV cache é a memória da conversa. Cada token do prompt, das respostas anteriores e dos arquivos lidos cria estado que o modelo precisa consultar nos próximos tokens. No meu Strata ele está em `int8`, com 32K células por camada residentes na GPU.
+
+O restante pode ser transmitido da RAM, por isso aumentar a janela de 128K pra 256K não aumentou a VRAM nem derrubou a velocidade no meu teste sintético. Esse streaming evita o estouro imediato, mas continua usando memória e não transforma uma 5090 num servidor sem limite.
+
+O teto configurado aqui é **262.144 tokens, ou 256K**. Vários modelos comerciais que testei, inclusive os Claude mais novos, já trabalham na classe de 1 milhão de tokens. Quase quatro vezes a janela muda o jeito de trabalhar: no Claude Code dá pra acumular muito mais histórico antes da compactação; no Qwen local eu preciso tratar contexto como orçamento desde o primeiro prompt.
+
+A conversa que aparece no terminal é só uma parte do contexto. Dependendo do harness, também entram o system prompt, `AGENTS.md` e `CLAUDE.md`, catálogo e conteúdo carregado de skills, descrições e schemas de ferramentas, servidores MCP, instruções de plugins, saídas de comandos, arquivos e o espaço reservado pra resposta. Uma skill bem implementada carrega o texto completo só quando é chamada, mas o catálogo dela ainda pode entrar no prompt. Plugin que registra vinte ferramentas também manda vinte schemas antes de você pedir qualquer coisa.
+
+Foi por isso que o benchmark não usou meu OpenCode normal. O runner [gera uma configuração isolada](https://github.com/akitaonrails/llm-coding-benchmark#local-opencode-benchmark-config), sem os plugins e MCPs globais, com apenas os providers e agentes necessários pro teste. Também fixa o limite real de 262.144 tokens em vez de fingir que o modelo aceita o contexto anunciado por outro backend.
+
+Pra usar esse Qwen no dia a dia, eu faria a mesma limpeza:
+
+- começar com o harness mais enxuto possível e ativar plugins ou MCPs quando o projeto realmente precisar;
+- deixar skills pesadas sob demanda, sem despejar manuais inteiros no começo da sessão;
+- compactar ou abrir uma sessão nova antes de encostar no teto, registrando decisões importantes em arquivos do projeto;
+- reservar espaço pra saída do modelo. Uma janela lotada de entrada não serve se não sobra token pra ele pensar, chamar ferramentas e responder.
+
+> Com 256K, contexto é recurso de hardware. Instalar integração demais e carregar tudo em toda sessão consome janela e memória antes do trabalho começar.
+
 ## Mas o Qwen 3.8 não era lento demais?
 
 Era, e eu escrevi isso. No [ranking do v4](/2026/09/15/novo-llm-benchmark-v4-retestando-todos-llms-parte-2/), o Qwen 3.8 27B rodando local levou quase 12 horas pra fechar as sete sprints. No [artigo da B300](/2026/10/19/llm-benchmark-v4-os-top-llms-open-source-numa-b300/) eu resumi: fez 80, levou 706 minutos, "então nem tente".
