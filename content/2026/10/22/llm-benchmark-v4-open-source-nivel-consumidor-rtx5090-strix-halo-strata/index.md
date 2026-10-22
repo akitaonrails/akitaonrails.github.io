@@ -76,6 +76,28 @@ Em cima disso, um ajudante pequeno chuta as próximas palavras e o modelo grande
 
 O que me fez acreditar nele foi o resultado: o **Qwen3.8 Flash-Next na 5090 com Strata fez 91,0, com zero nudges e os 14 itens resolvidos**, a 1,5 ponto do 92,5 que o mesmo modelo fez na B300 com vLLM. O próprio relatório chama isso de "dentro do ruído". Um projeto de comunidade, numa placa de consumidor, ficou colado no mesmo modelo servido em datacenter em NVFP4.
 
+## Cuidado: o Strata come a GPU toda, e o desktop morre
+
+Tem um custo que não aparece em benchmark: rodar o Strata na mesma GPU que desenha a sua área de trabalho. Ele foi feito pra encher a placa, e enche mesmo.
+
+No meu caso, o motor alocou 32.085 dos 32.607 MiB da 5090, 98,4% da VRAM. O Hyprland ficou com uns 500 MiB pra si, as alocações do desktop falharam, e até o terminal parou de responder. Só resolveu com hard reset.
+
+Foram duas falhas em sequência. A reserva que eu tinha configurado era de 2.560 MiB, mas o proxy disparava uma única vez, engolia a exceção e nunca tentava de novo. O endpoint `/v1/vram` ainda não estava no ar naquele instante, então a reserva não foi aplicada. E 2.560 MiB já era pouco pra Hyprland, navegador e terminal juntos.
+
+A correção, validada em teste de carga:
+
+- Reserva de **4.096 MiB** (4 GiB), com retry por até alguns minutos, verificação da resposta do motor e log de confirmação. Nada de fire-and-forget.
+- Reafirmação da reserva a cada 30 segundos enquanto o motor está carregado, pra fechar qualquer deriva de rebalanceamento.
+- No primeiro teste de carga, com a GPU a 99%, ficaram **3.629 a 3.888 MiB livres durante toda a geração**. No teste seguinte, uma geração longa e outras três requisições concorrentes terminaram com sucesso; a menor folga observada foi 3.949 MiB. O desktop continuou vivo.
+
+O preço aparece na vazão. O cache de especialistas caiu de uns 11.700 slots pra 9.700, então mais especialistas viajam por PCIe. Na medição inicial, saiu de ~200 pra ~150 tokens por segundo. Eu pago isso feliz: um desktop que não congela vale mais que aqueles 25% de velocidade naquele teste.
+
+Tem uma alternativa estrutural: essa máquina tem uma Radeon 610M integrada, e dá pra mover o Hyprland pra ela. A 5090 ficaria dedicada à inferência.
+
+O custo é que a 610M é fraca pra jogos e o multi-GPU da NVIDIA no Wayland tem suas manias. Eu preferi a reserva elástica, porque o modelo também descarrega quando fica ocioso.
+
+A lição geral: **não deixe motor de inferência tomar 100% de uma GPU que também desenha sua tela.** Nesta configuração não tenho uma reserva rígida de VRAM no driver pro cliente de display. Precisei resolver do lado do motor: reservar alguns GB, reafirmar depois de cada cold start e medir de novo com a área de trabalho aberta.
+
 ## Mas o Qwen 3.8 não era lento demais?
 
 Era, e eu escrevi isso. No [ranking do v4](/2026/09/15/novo-llm-benchmark-v4-retestando-todos-llms-parte-2/), o Qwen 3.8 27B rodando local levou quase 12 horas pra fechar as sete sprints. No [artigo da B300](/2026/10/19/llm-benchmark-v4-os-top-llms-open-source-numa-b300/) eu resumi: fez 80, levou 706 minutos, "então nem tente".
