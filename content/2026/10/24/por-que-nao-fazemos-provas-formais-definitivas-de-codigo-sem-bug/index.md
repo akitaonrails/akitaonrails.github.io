@@ -45,7 +45,7 @@ E tem a família que mais cresce na prática, a **verificação assistida por ti
 
 ## O problema da especificação é o problema todo
 
-A Anthropic foi explícita nisso, e é a parte que quase nenhum entusiasta de prova formal gosta de encarar: *"a dificuldade de obter uma especificação compreensível e sem ambiguidade é um obstáculo significativo para verificar software em escala maior"*.
+A Anthropic foi explícita nisso, e é a parte que quase nenhum entusiasta de prova formal gosta de encarar: *"a dificuldade de obter uma especificação abrangente e sem ambiguidade é um obstáculo significativo para verificar software em escala maior"*.
 
 Pense no que significaria "estar correto" para um editor de texto. Ou para um browser. Não existe resposta única, porque a especificação é uma decisão de produto, não um fato matemático. Para um decoder de PNG a coisa é fácil: a RFC 2083 define tudo. Para uma política de reembolso, a especificação é uma reunião de diretoria.
 
@@ -176,7 +176,7 @@ Mas repare: prova não teria resolvido o problema real. O bug existia em código
 
 ### GitLab: CVE-2026-110264, CVSS 10.0
 
-Integer overflow no compilador de expressões regulares do CI/CD, permitindo RCE sem autenticação num servidor GitLab self-managed. CVSS 10.0, o máximo. E o alcance: **todas as versões desde a 7.0, de 2014**, ou seja, doze anos de releases. Corrigido em 21 de outubro nas [19.5.1, 19.4.3, 19.3.6, 19.2.9, 19.1.9, 19.0.10 e 18.11.13](https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-5-1-released). Nove dias antes, outra falha também CVSS 10.0 no mesmo componente tinha sido corrigida (CVE-2026-97229). Quem patchou em 12 de outubro precisou patch de novo em 21.
+Integer overflow no Onigmo, o motor de expressões regulares que o Ruby embute, alcançável pelo renderizador de arquivos Org-mode do GitLab: a gem `org-ruby` pega a palavra-chave crua de uma linha `#+TODO:` e joga dentro de `Regexp.new`. Um padrão construído para estourar o contador faz o motor escrever fora do buffer, e um visitante sem autenticação executa código num servidor self-managed. CVSS 10.0, o máximo. E o alcance: **todas as versões desde a 7.0, de 2014**, ou seja, doze anos de releases. Corrigido em 21 de outubro nas [19.5.1, 19.4.3, 19.3.6, 19.2.9, 19.1.9, 19.0.10 e 18.11.13](https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-5-1-released). Nove dias antes, o CVE-2026-97229, também CVSS 10.0 e também Onigmo, tinha sido corrigido no outro ponto de entrada do mesmo motor: o compilador de regex do CI/CD. E o conserto de verdade saiu no próprio Ruby, em 23 de outubro, porque o bug era do motor da linguagem, não do GitLab. Quem patchou em 12 de outubro precisou patch de novo em 21.
 
 **Prova formal teria salvado?** Parcialmente, e o caso é instrutivo. Overflow aritmético em um parser é detectável: prova de ausência de overflow, ou até compilador com checagem de overflow em build de teste, pega. Mas o GitLab disse que o ataque funciona "sob certas condições" que não divulgou, o que sugere que a parte difícil é a lógica, não a aritmética. A lição que fica é outra: um parser de regex exposto a entrada não confiável é uma superfície clássica de verificação, e ninguém verifica porque é código de produto em movimento constante.
 
@@ -190,7 +190,7 @@ O [relatório preliminar](https://blog.railway.com/p/preliminary-report-october-
 
 ### PS5: o kernel caindo firmware após firmware
 
-Em 29 de setembro, o exploit [Relapse](https://github.com/ntfargo/Relapse-Exploit) foi publicado, funcionando em qualquer PS5 e PS5 Pro do firmware 7.00 até o 13.60. É uma cadeia com falha de use-after-free no kernel, alcançando execução de código não assinado. A Sony respondeu com 14.00, 14.10 e 14.20. O 14.10 foi quebrado poucos dias depois, e um pesquisador alegou exploit para o 14.20 **horas depois do lançamento**.
+Em 29 de setembro, o exploit [Relapse](https://github.com/ntfargo/Relapse-Exploit) foi publicado, funcionando em qualquer PS5 e PS5 Pro do firmware 7.00 até o 13.60. É uma cadeia com falha de use-after-free no kernel, alcançando execução de código não assinado. O firmware 14.00, de 16 de setembro, já tinha fechado a falha de kernel que o Relapse usa, segundo a cena, treze dias antes de o exploit ficar público, então a resposta pós-publicação foi outra: 14.10 em 1º de outubro e 14.20 em 21 de outubro. O 14.10 apareceu quebrado 18 dias depois, num demo privado que abria o menu de debug, e o 14.20 ganhou um entry point de userland **oito horas depois do lançamento**.
 
 **Prova formal teria salvado?** Em princípio, sim: use-after-free é precisamente o que uma prova de segurança de memória elimina. O seL4 provou isso para um microkernel. Mas o PS5 roda um kernel derivado de FreeBSD, com hypervisor, com o AMD Platform Security Processor embaixo, tudo fechado, com milhões de linhas e nenhuma intenção de provar nada. Verificar essa pilha inteira não é caro, é impraticável. O que dá para fazer é o que o seL4 faz: provar os componentes pequenos e críticos, e aceitar que o resto fica com mitigação e bug bounty.
 
