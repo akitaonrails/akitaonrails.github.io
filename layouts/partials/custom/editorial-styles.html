@@ -1005,6 +1005,62 @@
     }
   }
 
+  /* ===== Mobile/tablet refinement (scoped: desktop is untouched) ===== */
+  @media (max-width: 48rem) {
+    /* Wide tables: the render hook wraps them in .aor-table-scroll; here we
+       let the table grow to its content width and scroll inside the wrapper
+       instead of squeezing 4-6 columns into ~60px each. */
+    .aor-table-scroll {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior-x: contain;
+    }
+    .aor-table-scroll > table {
+      width: max-content;
+      min-width: 100%;
+      max-width: none;
+    }
+    .aor-table-scroll th {
+      white-space: nowrap;
+    }
+
+    /* Touch targets: 44px minimum on interactive chrome. */
+    .aor-wordmark,
+    .aor-site-header__links a,
+    .aor-site-footer__links a,
+    .aor-archive-link {
+      display: inline-flex;
+      align-items: center;
+      min-height: 2.75rem;
+    }
+    .lang-toggle-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 2.75rem;
+      min-width: 2.75rem;
+      padding-inline: 0.35rem;
+    }
+    .aor-post-tags a,
+    .aor-post-tags .aor-tag-link {
+      min-height: 1.9rem;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    /* Long slash-joined tokens in titles must wrap on narrow screens. */
+    .aor-article-header h1,
+    .aor-article-content :where(h2, h3, p, li) {
+      overflow-wrap: break-word;
+    }
+
+    /* Footer link rows breathe instead of collapsing into 13px targets. */
+    .aor-site-footer__links {
+      gap: 0.1rem 1.1rem;
+      flex-wrap: wrap;
+    }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
       scroll-behavior: auto !important;

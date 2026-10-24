@@ -1343,3 +1343,49 @@
   .content ol > li::marker { color: var(--aor-accent); font-weight: 600; }
 </style>
 {{ partial "custom/editorial-styles.html" . }}
+
+{{/* ===== SEO: language alternates + social/article metadata =====
+     Hextra already emits description, canonical, robots, OG basics, Twitter
+     cards and a BlogPosting JSON-LD. This block adds only what was missing:
+     hreflang pairs (bilingual site), a default social image, OG locale/site
+     name, and article timestamps/tags. Head-only; no visual change. */}}
+{{- $ogImage := "" -}}
+{{- with .Params.images -}}
+  {{- $ogImage = index . 0 | absURL -}}
+{{- else -}}
+  {{- $ogImage = "og-default.png" | absURL -}}
+{{- end -}}
+{{- $locale := cond (eq .Site.Language.Lang "en") "en_US" "pt_BR" -}}
+
+{{- /* hreflang: self + every translation, plus x-default pointing at PT. */ -}}
+{{- $ptURL := "" -}}
+{{- $enURL := "" -}}
+{{- range .AllTranslations -}}
+  {{- if eq .Language.Lang "pt-br" -}}{{- $ptURL = .Permalink -}}{{- end -}}
+  {{- if eq .Language.Lang "en" -}}{{- $enURL = .Permalink -}}{{- end -}}
+{{- end -}}
+{{- if eq .Site.Language.Lang "pt-br" -}}{{- $ptURL = .Permalink -}}{{- end -}}
+{{- if eq .Site.Language.Lang "en" -}}{{- $enURL = .Permalink -}}{{- end -}}
+{{- if $ptURL }}
+<link rel="alternate" hreflang="pt-BR" href="{{ $ptURL }}">
+<link rel="alternate" hreflang="x-default" href="{{ $ptURL }}">
+{{- end }}
+{{- if $enURL }}
+<link rel="alternate" hreflang="en" href="{{ $enURL }}">
+{{- end }}
+
+<meta property="og:image" content="{{ $ogImage }}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="{{ $locale }}">
+{{- if and $ptURL $enURL }}
+<meta property="og:locale:alternate" content="{{ cond (eq $locale "en_US") "pt_BR" "en_US" }}">
+{{- end }}
+<meta property="og:site_name" content="{{ .Site.Title }}">
+{{- if .IsPage }}
+{{- with .Params.tags }}
+{{- range first 6 . }}
+<meta property="article:tag" content="{{ . }}">
+{{- end }}
+{{- end }}
+{{- end }}

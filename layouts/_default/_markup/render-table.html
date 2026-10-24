@@ -1,0 +1,35 @@
+{{- /*
+  Wraps every markdown table in a scroll container.
+
+  Desktop: the wrapper is a plain block, so rendering is byte-identical to
+  goldmark's default table output (no width, no overflow, no styling).
+
+  Mobile/tablet: CSS gives the wrapper `overflow-x: auto` and lets the table
+  grow to its content width instead of squeezing 4-6 columns into ~60px each.
+*/ -}}
+<div class="aor-table-scroll">
+  <table>
+    {{- with .THead }}
+    <thead>
+      {{- range . }}
+      <tr>
+        {{- range . }}
+        <th{{ with .Alignment }} style="text-align: {{ . }}"{{ end }}>{{ .Text }}</th>
+        {{- end }}
+      </tr>
+      {{- end }}
+    </thead>
+    {{- end }}
+    {{- with .TBody }}
+    <tbody>
+      {{- range . }}
+      <tr>
+        {{- range . }}
+        <td{{ with .Alignment }} style="text-align: {{ . }}"{{ end }}>{{ .Text }}</td>
+        {{- end }}
+      </tr>
+      {{- end }}
+    </tbody>
+    {{- end }}
+  </table>
+</div>

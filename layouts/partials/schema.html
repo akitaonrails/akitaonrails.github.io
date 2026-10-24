@@ -12,9 +12,12 @@
   "author" (dict "@type" "Person" "name" .Site.Params.author.name "url" .Site.BaseURL)
   "publisher" (dict "@type" "Organization" "name" .Site.Title "url" .Site.BaseURL)
   "mainEntityOfPage" (dict "@type" "WebPage" "@id" .Permalink)
+  "inLanguage" (cond (eq .Site.Language.Lang "en") "en" "pt-BR")
 -}}
 {{- with $.Params.images -}}
   {{- $schema = merge $schema (dict "image" (index . 0 | absURL)) -}}
+{{- else -}}
+  {{- $schema = merge $schema (dict "image" ("og-default.png" | absURL)) -}}
 {{- end -}}
 {{- with $.Params.tags -}}
   {{- $schema = merge $schema (dict "keywords" .) -}}
@@ -27,7 +30,13 @@
   "name" .Site.Title
   "description" $description
   "url" .Site.BaseURL
+  "inLanguage" (cond (eq .Site.Language.Lang "en") "en" "pt-BR")
   "author" (dict "@type" "Person" "name" .Site.Params.author.name)
+  "potentialAction" (dict
+    "@type" "SearchAction"
+    "target" (dict "@type" "EntryPoint" "urlTemplate" (printf "%s?q={search_term_string}" .Site.BaseURL))
+    "query-input" "required name=search_term_string"
+  )
 -}}
 {{ printf `<script type="application/ld+json">%s</script>` ($schema | jsonify) | safeHTML }}
 {{- end -}}
