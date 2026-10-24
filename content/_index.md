@@ -194,9 +194,17 @@ title: AkitaOnRails Blog
 <section class="aor-index-month" aria-labelledby="aor-list-2026-10">
   <div class="aor-index-month__header">
     <h2 id="aor-list-2026-10">Outubro 2026</h2>
-    <span>16 artigos</span>
+    <span>17 artigos</span>
   </div>
   <div class="aor-index-list-group">
+<article class="aor-index-row" title="A Anthropic provou que 123 bibliotecas open source nunca dão crash, com 180 milhões de linhas de prova geradas por IA. Explico o que é prova formal, por que o seL4 custou 20 anos-pessoa, por que o Bend 2 muda a conversa, e o que a semana do PHP2Shell, do Node2Shell, do GitLab e do Railway ensina sobre dívida técnica vencendo.">
+  <time datetime="2026-10-24">Oct 24</time>
+  <div class="aor-index-row__body">
+    <h3><a class="aor-index-list__main-link" href="/2026/10/24/por-que-nao-fazemos-provas-formais-definitivas-de-codigo-sem-bug/">Por que não fazemos provas formais definitivas de código sem bug?</a></h3>
+    <p>A Anthropic provou que 123 bibliotecas open source nunca dão crash, com 180 milhões de linhas de prova geradas por IA. Explico o que é prova formal, por que o seL4 custou 20 anos-pessoa, por que o Bend 2 muda a conversa, e o que a semana do PHP2Shell, do Node2Shell, do GitLab e do Railway ensina sobre dívida técnica vencendo.</p>
+  </div>
+  <span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/tags/seguranca/">#seguranca</a><a class="aor-tag-link" href="/tags/engenharia-de-software/">#engenharia-de-software</a><a class="aor-tag-link" href="/tags/inteligencia-artificial/">#inteligencia-artificial</a><a class="aor-tag-link" href="/tags/linguagens-de-programacao/">#linguagens-de-programacao</a></span>
+</article>
 <article class="aor-index-row" title="Quase 70 rodadas mostram os melhores modelos abertos encostando no Sonnet 5. Mesmo assim, 159 tok/s numa RTX 5090 ainda é lento pro meu trabalho, e as opções mais rápidas já custam como servidor.">
   <time datetime="2026-10-22">Oct 22</time>
   <div class="aor-index-row__body">
