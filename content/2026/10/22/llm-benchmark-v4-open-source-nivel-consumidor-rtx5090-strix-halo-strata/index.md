@@ -76,6 +76,14 @@ Em cima disso, um ajudante pequeno chuta as próximas palavras e o modelo grande
 
 O que me fez acreditar nele foi o resultado: o **Qwen3.8 Flash-Next na 5090 com Strata fez 91,0, com zero nudges e os 14 itens resolvidos**, a 1,5 ponto do 92,5 que o mesmo modelo fez na B300 com vLLM. O próprio relatório chama isso de "dentro do ruído". Um projeto de comunidade, numa placa de consumidor, ficou colado no mesmo modelo servido em datacenter em NVFP4.
 
+### E agora ele enxerga
+
+Até ontem, o meu Strata era cego: mandar imagem devolvia "this server was started without the vision encoder". Habilitei a visão na mão, e foi mais simples do que parecia.
+
+O projetor de visão (o `mmproj`) eu já tinha arquivado no NAS dentro da variante uncensored do Flash-Next. Conferi o sha256 dele contra o manifesto do arquivo e contra o hash que o Strata pinou pro encoder BF16, e subi uma cópia pro diretório de modelos. A configuração ganhou o flag `--vision` e uma seção `vision` apontando pro componente `strata-vision` e pro mmproj, com backup do lado.
+
+A verificação foi de ponta a ponta: o encoder carrega em meio segundo, aquece 1.024 tokens de imagem em menos de dois segundos, e respondeu "Red" pra um quadrado vermelho de teste. E o detalhe que me importa mais: com o encoder residente, sobraram 3,65 GB de VRAM, então a reserva de 4 GB do desktop segue valendo. A única pegadinha: o carregamento preguiçoso não convive com a seção de visão nessa configuração, então ele fica desligado aqui.
+
 ## Cuidado: o Strata come a GPU toda, e o desktop morre
 
 Tem um custo que não aparece em benchmark: rodar o Strata na mesma GPU que desenha a sua área de trabalho. Ele foi feito pra encher a placa, e enche mesmo.

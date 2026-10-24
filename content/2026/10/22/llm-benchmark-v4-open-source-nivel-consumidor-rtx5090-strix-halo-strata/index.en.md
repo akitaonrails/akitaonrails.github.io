@@ -4,7 +4,7 @@ slug: "llm-benchmark-v4-consumer-open-source-rtx5090-strix-halo-strata"
 date: '2026-10-22T11:30:00-03:00'
 draft: false
 translationKey: llm-benchmark-v4-open-source-nivel-consumidor-rtx5090-strix-halo-strata
-description: "I went back to consumer hardware after the datacenter tests. Qwen3.8 Flash-Next scored 91.0, Tier A, on an RTX 5090 with the Strata engine, 1.5 points behind the B300 and at 159 tokens per second. It is a different model from the Qwen 3.8 27B I had called too slow: a MoE with 6B active per token, served with the most-used experts on the card. The Strix Halo scored 80.0 with the 27B, but at 7.7 tokens per second. It is the first local model to make Tier A on v4 that is worth testing for day-to-day programming, if you can find a 5090: NVIDIA denies ending production, but admits supply is tight."
+description: "I went back to consumer hardware after the datacenter tests. Qwen3.8 Flash-Next scored 91.0, Tier A, on an RTX 5090 with the Strata engine, 1.5 points behind the B300 at 159 tokens per second. It's a different model from the Qwen 3.8 27B I had called slow: a MoE with 6B active per token, served with the hottest experts on the card. Strix Halo scored 80.0 with the 27B, but at 7.7 tokens per second. It's the first local model to make Tier A on the v4, and it's worth testing in day-to-day programming, if you can find a 5090: NVIDIA denies the end of production but admits tight supply."
 tags:
 - llm-benchmarks
 - local-models
@@ -27,7 +27,7 @@ Before any scores, understand the physical difference of what I'm comparing:
 | NVIDIA B300 | 288 GB HBM3e | ~8 TB/s | Blackwell Ultra, FP8 and FP4 | US$ 9/hour (Runpod) |
 | NVIDIA H200 | 141 GB HBM3e | ~4.8 TB/s | Hopper, FP8 | US$ 3.59/hour |
 | DGX Spark | 128 GB unified | 273 GB/s | GB10, FP4 | ~US$ 6,950 |
-| RTX 5090 | 32 GB GDDR7 | ~1.8 TB/s | Blackwell sm_120, FP8/FP4 | US$ 1,999 MSRP (~5x at retail) |
+| RTX 5090 | 32 GB GDDR7 | ~1.8 TB/s | Blackwell sm_120, FP8/FP4 | US$ 1,999 suggested (~5x at retail) |
 | Strix Halo (Ryzen AI Max+ 395) | 128 GB unified | ~256 GB/s | gfx1151, ROCm | ~US$ 2,000 |
 
 The B300 has over 30 times the Strix Halo's memory bandwidth. The 5090 has 7 times. That explains why the same model flies on one machine and crawls on the other, and why quantization stops being a detail and becomes a design decision.
@@ -57,96 +57,104 @@ Consumer hardware doesn't forgive lazy configuration. What I learned in practice
 - **KV cache in q8_0.** Halves KV memory with no measurable quality cost. Flash-attention on by default, but GLM 4.7 Flash needs it off, because its deepseek2 architecture is incompatible.
 - **Hybrid reasoning is work.** Qwen3.8-27B, with the SSM/Mamba architecture, needed a fresh llama.cpp/Ollama build because of `ssm_conv1d`. And "no reasoning" mode didn't prevent a coherence loop in one of the attempts; the way out was resuming on the Strix with Q8_0 and `--reasoning off`. It wasn't extra memory that fixed it, it was turning off the thinking.
 - **On the Strix, the adjustment is ROCm, not magic.** `HSA_OVERRIDE_GFX_VERSION`, `GGML_HIP_NO_VMM`, `-dio`. Its trump is capacity (128 GB), not speed (~256 GB/s). Q4_K_M gave 12.6 tok/s and Q8_0 gave 7.7 tok/s, below my 30 tok/s cutoff for interactive use. That's why the Strix became an escape hatch for big models, not a fast chat box.
-- **Speculation only helps with high acceptance.** In a [test by Mihai Farcas](https://mihai.ltd/blog/beating-llamacpp-from-scratch-consumer-amd) on an RX 7900 XTX, llama.cpp's n-gram speculation with no draft model had only 5 of 64 tokens accepted, and throughput stayed flat in one run and dropped about 2% in the other. The gain shows up with a drafter built for the model, like the helper Strata uses for Flash-Next.
+- **Speculation only helps with high acceptance.** In a [test by Mihai Farcas](https://mihai.ltd/blog/beating-llamacpp-from-scratch-consumer-amd) on an RX 7900 XTX, llama.cpp's n-gram speculation, with no draft model, had only 5 of 64 tokens accepted, and throughput stayed flat in one run and dropped about 2% in the other. The gain shows up with a drafter made for the model, like the helper Strata uses on Flash-Next.
 
 ## What is this Strata thing
 
-[Strata](https://github.com/Niko1221/Strata) is an open source inference engine, MIT licensed, built around one model: **Qwen3.8 Flash-Next**, a 125-billion-parameter MoE that normally needs a server. It also runs smaller MoEs, like the Ornith-35B I tested here. The code is C++ and CUDA and reuses parts of llama.cpp/ggml. It has builds for NVIDIA (CUDA 12 and 13), AMD (Strix Halo included), Intel Arc and Apple Silicon, and it serves an OpenAI- and Anthropic-compatible API on localhost that plugs straight into Claude Code, Codex CLI or OpenCode.
+[Strata](https://github.com/Niko1221/Strata) is an open source inference engine, MIT license, built around one model: **Qwen3.8 Flash-Next**, a 125-billion-parameter MoE that normally asks for a server. It also runs smaller MoEs, like the Ornith-35B I tested here. The code is C++ and CUDA and reuses parts of llama.cpp/ggml. It has builds for NVIDIA (CUDA 12 and 13), AMD (including Strix Halo), Intel Arc and Apple Silicon, and brings up an OpenAI- and Anthropic-compatible API on localhost, which plugs straight into Claude Code, Codex CLI or OpenCode.
 
-Watch out for the name. Mihai Farcas published [another engine called Strata](https://mihai.ltd/blog/beating-llamacpp-from-scratch-consumer-amd), in Rust with HIP kernels, for small dense Qwen 3.5 models on an RX 7900 XTX. They are different projects, and the one that ran here is the first.
+Careful with the name. Mihai Farcas published [another engine called Strata](https://mihai.ltd/blog/beating-llamacpp-from-scratch-consumer-amd), in Rust with HIP kernels, for small dense Qwen 3.5 models on an RX 7900 XTX. They're different projects, and the one that ran here was the first.
 
-The problem it attacks is the big MoE on a small machine. The strategy is **expert-offload**, in tiers:
+The problem it attacks is the big MoE on a small machine. The strategy is **expert-offload**, in layers:
 
-- the model has 24,576 experts, 512 in each of its 48 layers, and each token uses only 10 per layer;
-- the GPU holds about 4 thousand experts, the most-used ones;
-- system RAM holds all of them;
-- a lookup table of about 29 GB sits on the SSD, and the model reads a few rows of it per token.
+- the model has 24,576 experts, 512 in each of the 48 layers, and each token uses only 10 per layer;
+- the GPU holds about 4 thousand experts, the most used ones;
+- the system RAM holds all of them;
+- a lookup table of about 29 GB stays on the SSD, and the model reads a few rows of it per token.
 
-On top of that, a small helper guesses the next words and the big model checks all of them at once. The README promises the same answer 1.6 to 1.8 times sooner. The minimum is 32 GB of RAM and VRAM combined, plus about 80 GB of disk, and the IQ3_S variant I used is about 55 GB.
+On top of that, a small helper guesses the next words and the big model checks them all at once. The README promises the same answer 1.6 to 1.8 times faster. The minimum is 32 GB adding RAM and VRAM, plus about 80 GB of disk, and the IQ3_S variant I used is about 55 GB.
 
-What made me believe in it was the result: **Qwen3.8 Flash-Next on the 5090 with Strata scored 91.0, with zero nudges and all 14 items solved**, 1.5 points behind the 92.5 the same model scored on the B300 with vLLM. The report itself calls that "within the noise". A community project, on a consumer card, landed right next to the same model served in a datacenter in NVFP4.
+What made me believe in it was the result: **Qwen3.8 Flash-Next on the 5090 with Strata scored 91.0, with zero nudges and all 14 items solved**, 1.5 points behind the 92.5 the same model scored on the B300 with vLLM. The report itself calls that "within the noise". A community project, on a consumer card, sat glued to the same model served in a datacenter in NVFP4.
+
+### And now it can see
+
+Until yesterday, my Strata was blind: sending an image got back "this server was started without the vision encoder". I enabled vision by hand, and it was simpler than it looked.
+
+The vision projector (the `mmproj`) I had already archived on the NAS inside the uncensored Flash-Next variant. I checked its sha256 against the archive's manifest and against the hash Strata pinned for the BF16 encoder, and copied it into the models directory. The configuration gained the `--vision` flag and a `vision` section pointing to the `strata-vision` component and the mmproj, with a backup beside it.
+
+The verification was end-to-end: the encoder loads in half a second, warms up 1,024 image tokens in under two seconds, and answered "Red" to a red test square. And the detail that matters most to me: with the encoder resident, 3.65 GB of VRAM remained free, so the desktop's 4 GB reserve still holds. The only gotcha: lazy loading doesn't coexist with the vision section in this configuration, so it stays off here.
 
 ## Careful: Strata eats the whole GPU, and the desktop dies
 
-There is a cost that does not show up in the benchmark: running Strata on the same GPU that draws your desktop. It was built to fill the card, and it does.
+There's a cost that doesn't show up in benchmarks: running Strata on the same GPU that draws your desktop. It was designed to fill the card, and it does.
 
-On my machine, the engine allocated 32,085 of the 5090's 32,607 MiB, or 98.4% of its VRAM. Hyprland was left with about 500 MiB, desktop allocations failed, and even the terminal stopped responding. Only a hard reset brought it back.
+In my case, the engine allocated 32,085 of the 32,607 MiB on the 5090, 98.4% of the VRAM. Hyprland was left with about 500 MiB, desktop allocations failed, and even the terminal stopped responding. Only a hard reset solved it.
 
-Two failures happened in sequence. I had configured a 2,560 MiB reserve, but the proxy fired once, swallowed the exception and never tried again. The engine's `/v1/vram` endpoint was not up yet, so the reserve was never applied. And 2,560 MiB was already too little for Hyprland, the browser and the terminal together.
+It was two failures in sequence. The reserve I had configured was 2,560 MiB, but the proxy fired only once, swallowed the exception and never tried again. The engine's `/v1/vram` endpoint wasn't up at that moment, so the reserve was never applied. And 2,560 MiB was already too little for Hyprland, browser and terminal together.
 
 The fix, validated under load:
 
-- A **4,096 MiB** (4 GiB) reserve, with retries for up to a few minutes, response verification and a confirmation log. No fire-and-forget.
-- Reapply the reserve every 30 seconds while the engine is loaded, closing any rebalance drift.
-- In the first load test, with the GPU at 99%, **3,629 to 3,888 MiB stayed free throughout generation**. In the next test, one long generation and three concurrent requests all succeeded; the lowest observed headroom was 3,949 MiB. The desktop stayed alive.
+- **4,096 MiB** (4 GiB) reserve, with retry for up to a few minutes, engine-response verification and a confirmation log. No fire-and-forget.
+- Re-assertion of the reserve every 30 seconds while the engine is loaded, to close any rebalancing drift.
+- In the first load test, with the GPU at 99%, **3,629 to 3,888 MiB stayed free during the whole generation**. In the following test, one long generation and three other concurrent requests finished successfully; the smallest slack observed was 3,949 MiB. The desktop stayed alive.
 
-The price shows up in throughput. The expert cache dropped from about 11,700 slots to 9,700, so more experts travel over PCIe. In the initial measurement, throughput went from ~200 to ~150 tokens per second. I will happily pay that: a desktop that does not freeze is worth those 25% in that test.
+The price shows up in throughput. The expert cache dropped from about 11,700 slots to 9,700, so more experts travel over PCIe. In the initial measurement, it went from ~200 to ~150 tokens per second. I happily pay that: a desktop that doesn't freeze is worth more than those 25% of speed in that test.
 
-There is a structural alternative: this machine has an integrated Radeon 610M, and I could move Hyprland to it. The 5090 would be dedicated to inference.
+There's a structural alternative: this machine has an integrated Radeon 610M, and Hyprland can be moved to it. The 5090 would be dedicated to inference.
 
-The cost is that the 610M is weak for games and NVIDIA multi-GPU on Wayland has its quirks. I chose the elastic reserve because the model also unloads when idle.
+The cost is that the 610M is weak for gaming and NVIDIA multi-GPU on Wayland has its quirks. I preferred the elastic reserve, because the model also unloads when idle.
 
-The general lesson: **do not let an inference engine take 100% of a GPU that also draws your screen.** In this setup I have no hard driver-level VRAM reserve for the display client. I had to solve it on the engine side: reserve a few GB, reapply it after every cold start, and measure again with the desktop open.
+The general lesson: **never let an inference engine take 100% of a GPU that also draws your screen.** In this configuration I don't have a rigid driver-level VRAM reservation for display clients. I had to solve it on the engine side: reserve a few GB, re-assert after every cold start, and measure again with the desktop open.
 
-### The same 32 GB also limits the session
+### The same 32 GB also limit the session
 
-The 5090 budget is tight from every side. The same 32 GB has to hold the model's dense weights and fixed buffers, the hot-expert cache, the resident portion of the KV cache, and the 4 GiB reserve for Hyprland, the browser and the terminal. Giving memory to one takes it from another.
+The 5090's math is tight on all sides. The same 32 GB have to accommodate the model's dense weights and fixed buffers, the hot-expert cache, the resident part of the KV cache and also the 4 GiB reserve for Hyprland, browser and terminal. What's left for one thing comes out of another.
 
-The KV cache is the conversation's memory. Every token in the prompt, previous responses and files read creates state the model needs for the tokens that follow. My Strata setup uses `int8` KV with 32K cells per layer resident on the GPU.
+KV cache is the conversation's memory. Every token of the prompt, of the previous answers and of the files read creates state that the model needs to consult in the next tokens. In my Strata it's in `int8`, with 32K cells per layer resident on the GPU.
 
-The rest can stream from system RAM, which is why raising the window from 128K to 256K did not increase VRAM use or reduce speed in my synthetic test. Streaming prevents the immediate blowup while still consuming memory. It does not turn a 5090 into an unlimited server.
+The rest can be streamed from RAM, which is why raising the window from 128K to 256K didn't increase VRAM or drop speed in my synthetic test. That streaming avoids the immediate blow-up, but it still uses memory and doesn't turn a 5090 into a limit-free server.
 
-The configured ceiling here is **262,144 tokens, or 256K**. Several commercial models I tested, including the newer Claude models, already operate in the 1-million-token class. A window almost four times larger changes how you work: Claude Code can accumulate much more history before compaction; with local Qwen I have to treat context as a budget from the first prompt.
+The ceiling configured here is **262,144 tokens, or 256K**. Several commercial models I tested, including the newest Claudes, already work in the 1-million-token class. Almost four times the window changes how you work: in Claude Code you can accumulate much more history before compaction; in the local Qwen I have to treat context as a budget from the first prompt.
 
-The conversation visible in the terminal is only one part of the context. Depending on the harness, it can also include the system prompt, `AGENTS.md` and `CLAUDE.md`, skill catalogs and loaded skill contents, tool descriptions and schemas, MCP servers, plugin instructions, command output, files, and the room reserved for the answer. A well-built skill loads its full text only when invoked, but its catalog entry may still reach the prompt. A plugin that registers twenty tools also sends twenty schemas before you ask for anything.
+The conversation that shows up in the terminal is only part of the context. Depending on the harness, the system prompt, `AGENTS.md` and `CLAUDE.md`, skill catalogs and loaded content, tool descriptions and schemas, MCP servers, plugin instructions, command outputs, files and the space reserved for the answer also go in. A well-implemented skill loads its full text only when called, but its catalog can still enter the prompt. A plugin that registers twenty tools also sends twenty schemas before you ask for anything.
 
-That is why the benchmark did not use my regular OpenCode setup. The runner [generates an isolated configuration](https://github.com/akitaonrails/llm-coding-benchmark#local-opencode-benchmark-config), without global plugins or MCP servers, containing only the providers and agents needed for the test. It also pins the real 262,144-token limit instead of pretending the model accepts the context advertised by some other backend.
+That's why the benchmark didn't use my normal OpenCode. The runner [generates an isolated configuration](https://github.com/akitaonrails/llm-coding-benchmark#local-opencode-benchmark-config), without the global plugins and MCPs, with only the providers and agents needed for the test. It also pins the real 262,144-token limit instead of pretending the model accepts the context advertised by another backend.
 
-For daily work with this Qwen, I would apply the same discipline:
+To use this Qwen day to day, I'd do the same cleanup:
 
-- start with the thinnest possible harness and enable plugins or MCP servers only when the project needs them;
-- keep heavy skills on demand instead of dumping whole manuals at the beginning of the session;
-- compact or open a fresh session before hitting the ceiling, recording important decisions in project files;
-- leave room for model output. A window packed with input is useless when the model has no tokens left to think, call tools and answer.
+- start with the leanest possible harness and activate plugins or MCPs when the project really needs them;
+- keep heavy skills on demand, without dumping whole manuals at the start of the session;
+- compact or open a new session before touching the ceiling, recording important decisions in project files;
+- reserve space for the model's output. A window stuffed with input is useless if there's no token left for it to think, call tools and answer.
 
-> With 256K, context is a hardware resource. Installing too many integrations and loading everything in every session consumes window and memory before the work begins.
+> With 256K, context is a hardware resource. Installing too many integrations and loading everything into every session consumes window and memory before the work starts.
 
 ## Wasn't Qwen 3.8 too slow?
 
-It was, and I wrote that. In the [v4 ranking](/en/2026/09/15/new-llm-benchmark-v4-retesting-39-llms-part-2/), Qwen 3.8 27B running locally took almost 12 hours to finish the seven sprints. In the [B300 article](/en/2026/10/19/llm-benchmark-v4-the-top-open-source-llms-on-a-b300/) I summed it up: it scored 80, took 706 minutes, "so don't even try".
+It was, and I wrote that. In the [v4 ranking](/en/2026/09/15/new-llm-benchmark-v4-retesting-39-llms-part-2/), the local Qwen 3.8 27B took almost 12 hours to close the seven sprints. In the [B300 article](/en/2026/10/19/llm-benchmark-v4-the-top-open-source-llms-on-a-b300/) I summarized: scored 80, took 706 minutes, "so don't even try".
 
-Except that one is a different Qwen 3.8. The family has both, and they behave in opposite ways at home:
+Except that's another Qwen 3.8. The family has both, and they behave in opposite ways at home:
 
 | | Qwen 3.8 27B | Qwen3.8 Flash-Next |
 | --- | --- | --- |
 | Architecture | dense, 27B | MoE, 125B total, 6B active per token |
-| Where it finished v4 | Strix Halo, Q8_0 | RTX 5090, IQ3_S, Strata |
+| Where v4 finished | Strix Halo, Q8_0 | RTX 5090, IQ3_S, Strata |
 | Speed | 7.7 tok/s | **159.2 tok/s** |
 | v4 score | 80.0 (B) | **91.0 (A)** |
 
 ### Why the bigger one runs faster
 
-When generating tokens, a local machine is limited by memory bandwidth: every token has to read all the active weights. The dense 27B reads all 27 billion on every token, about 29 GB in Q8. The Strix moves about 256 GB/s, so the ceiling sits near 9 tokens per second, and I measured 7.7.
+In token generation, a local machine is memory-bandwidth-bound: each token needs to read all the active weights. The dense 27B reads its 27 billion every token, about 29 GB in Q8. The Strix moves about 256 GB/s, so the ceiling sits near 9 tokens per second, and I measured 7.7.
 
-On the 5090 the same 27B would be fast, but in Q8 it doesn't fit in 32 GB together with the context that seven sprints pile up. In Q5_K_M it fit, but it got stuck in a reasoning loop on sprint 3. It finished on the Strix, in Q8_0 with reasoning turned off (`--reasoning off`), which is what broke the loop.
+On the 5090 the same 27B would be fast, but in Q8 it doesn't fit in the 32 GB along with the context that seven sprints accumulate. In Q5_K_M it fit, but got stuck in a reasoning loop on sprint 3. It finished on the Strix, in Q8_0 with reasoning off (`--reasoning off`), which is what unlocked the loop.
 
-Flash-Next has almost five times as many parameters in total, but only about 6 billion work on each token. At 3 bits, that's roughly a tenth of what the 27B in Q8 has to read. The hot experts sit in the 5090's GDDR7, with seven times the Strix's bandwidth, and the speculation helper gets tokens ahead. The result: about 20 times the speed of the 27B on the Strix, with a higher score.
+Flash-Next has almost five times more parameters in total, but only about 6 billion work per token. In 3 bits, that's around a tenth of what the 27B in Q8 needs to read. The hot experts stay on the 5090's GDDR7, with seven times the Strix's bandwidth, and the speculation helper gets tokens ahead. Result: about 20 times the 27B's speed on the Strix, with a higher score.
 
-> The turn came from switching model and engine: a MoE with few active parameters, served by an expert-offload engine built for it. No configuration flag would get that out of the dense 27B on the Strix.
+> The turnaround came from the model and engine swap: a MoE with few active parameters, served by an expert-offload engine made to measure for it. No configuration flag would pull this out of the dense 27B on the Strix.
 
-### Tuning still charges its price
+### The tuning still charges
 
-The cost of running at home changes from model to model. Flash-Next at 3 bits lost only 1.5 points against the B300's NVFP4 version. Ornith-35B, on the same engine and the same card, lost 16.5 against its own BF16 version on the B300. Measure your model before you trust it.
+The price of running at home changes from model to model. Flash-Next in 3 bits lost only 1.5 points against the B300's NVFP4 version. Ornith-35B, on the same engine and the same card, lost 16.5 against its BF16 version on the B300. Measure your model before trusting it.
 
 ## What each model did that's interesting
 
@@ -182,7 +190,7 @@ The reading is that the consumer top is **9 points below the absolute commercial
 
 **Yes, with the right model and engine.** An RTX 5090 with Strata delivers Tier A code-review vigilance, at 159 tokens per second, without paying a cent per token once the hardware exists. For anyone doing code review, testing coding agents and keeping private data at home, that changes the game.
 
-For the first time in this benchmark I have a tested model, on consumer hardware, that deserves to go to work every day. I've already set Flash-Next up in OpenCode pointing at the 5090. The next step is to use it for real programming, outside the sabotage yardstick, and see whether the score holds.
+For the first time in this benchmark I have a tested model, on consumer hardware, that deserves to go into everyday work. I've already configured Flash-Next in OpenCode pointing at the 5090. The next step is using it in real programming, outside the sabotage yardstick, and seeing whether the score holds.
 
 What doesn't work is thinking any configuration works. The Strix Halo is great for having 128 GB and mounting a big model, but its speed doesn't pay for interactivity; Ornith runs fast and reviews badly; GLM-4.7-Flash completes the protocol and detects nothing unannounced. And there's the invisible price: aggressive quantization can charge score, depending on the model and the configuration, and waiting time charges patience.
 
@@ -190,12 +198,12 @@ If I were building a box for a dev today, it would be a 5090 with Strata and Fla
 
 ### The problem now is finding a 5090
 
-In October, leakers claimed NVIDIA would stop producing the RTX 5090 and reserve the GB202 chips for its professional and datacenter lines. The card even vanished from NVIDIA's official US store. On October 16, at an event in Taipei, **Jeff Fisher**, NVIDIA's senior vice president, [denied the discontinuation](https://www.guru3d.com/story/nvidia-says-geforce-rtx-5090-production-is-continuing/) and said the company will keep shipping, but admitted production capacity is tight.
+In October, leakers claimed NVIDIA would stop producing the RTX 5090 and reserve the GB202 chips for the professional and datacenter lines. The card even disappeared from NVIDIA's official US store. On October 16, at an event in Taipei, **Jeff Fisher**, NVIDIA's senior vice president, [denied the discontinuation](https://www.guru3d.com/story/nvidia-says-geforce-rtx-5090-production-is-continuing/) and said the company will keep delivering, but admitted production capacity is tight.
 
 In practice:
 
-- the suggested price is still US$ 1,999, and most listings on Newegg in the US [go above US$ 9,300, almost five times that](https://www.techspot.com/news/114254-nvidia-rtx-5090-production-but-absence-company-us.html);
-- in Brazil, each unit retails for around [R$ 35 thousand](https://www.baguete.com.br/noticias/carga-milionaria-de-gpus-some-de-guarulhos);
-- and two pallets of Zotac RTX 5090s, imported by the distributor Oderço and valued at about R$ 2.5 million, [disappeared at Guarulhos airport](https://www.terra.com.br/noticias/misterio-em-guarulhos-r-25-milhoes-em-placas-de-video-desaparecem,a7596d7874eddfb490f96345b4be1b09z4eix4rc.html) in São Paulo. GRU Airport reported it to the authorities, and the case is still under investigation, with no confirmed theft.
+- the suggested price is still US$ 1,999, and most listings on American Newegg [go past US$ 9,300, almost five times that](https://www.techspot.com/news/114254-nvidia-rtx-5090-production-but-absence-company-us.html);
+- in Brazil, each unit goes for around [R$ 35 thousand at retail](https://www.baguete.com.br/noticias/carga-milionaria-de-gpus-some-de-guarulhos);
+- and two pallets of Zotac RTX 5090s, imported by the Oderço distributor and valued at about R$ 2.5 million, [disappeared at Guarulhos airport](https://www.terra.com.br/noticias/misterio-em-guarulhos-r-25-milhoes-em-placas-de-video-desaparecem,a7596d7874eddfb490f96345b4be1b09z4eix4rc.html). GRU Airport notified the authorities, and the case remains under investigation, with no theft confirmation.
 
-> The first local Tier A model on v4 runs precisely on the hardest card to buy right now. The home shelf already has Tier A. What's missing is getting the shelf.
+> The v4's first local Tier A model runs precisely on the hardest card to buy right now. The home shelf already has Tier A. Getting the shelf is what's missing.
