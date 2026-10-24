@@ -200,7 +200,7 @@ title: AkitaOnRails Blog
 <article class="aor-index-row" title="Anthropic proved 123 open-source libraries never crash, using 180 million lines of AI-written proof. What formal verification is, why seL4 cost 20 person-years, why Bend 2 changes the game, and what PHP2Shell, GitLab and Railway say about technical debt coming due.">
   <time datetime="2026-10-24">Oct 24</time>
   <div class="aor-index-row__body">
-    <h3><a class="aor-index-list__main-link" href="/en/2026/10/24/why-dont-we-write-definitive-formal-proofs-of-bug-free-code/">Why Don&#39;t We Write Definitive Formal Proofs of Bug-Free Code?</a></h3>
+    <h3><a class="aor-index-list__main-link" href="/en/2026/10/24/why-dont-we-write-definitive-formal-proofs-of-bug-free-code/">Why Don&#39;t We Write Definitive Formal Proofs to Get Bug-Free Code?</a></h3>
     <p>Anthropic proved 123 open-source libraries never crash, using 180 million lines of AI-written proof. What formal verification is, why seL4 cost 20 person-years, why Bend 2 changes the game, and what PHP2Shell, GitLab and Railway say about technical debt coming due.</p>
   </div>
   <span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/en/tags/security/">#security</a><a class="aor-tag-link" href="/en/tags/software-engineering/">#software-engineering</a><a class="aor-tag-link" href="/en/tags/artificial-intelligence/">#artificial-intelligence</a><a class="aor-tag-link" href="/en/tags/programming-languages/">#programming-languages</a></span>

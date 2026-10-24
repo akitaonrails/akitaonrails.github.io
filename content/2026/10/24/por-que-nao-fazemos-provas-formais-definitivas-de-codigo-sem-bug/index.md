@@ -1,5 +1,5 @@
 ---
-title: "Por que não fazemos provas formais definitivas de código sem bug?"
+title: "Por que não fazemos provas formais definitivas pra ter código sem bug?"
 slug: por-que-nao-fazemos-provas-formais-definitivas-de-codigo-sem-bug
 date: '2026-10-24T15:00:00-03:00'
 draft: false

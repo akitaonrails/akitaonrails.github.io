@@ -1,5 +1,5 @@
 ---
-title: "Why Don't We Write Definitive Formal Proofs of Bug-Free Code?"
+title: "Why Don't We Write Definitive Formal Proofs to Get Bug-Free Code?"
 slug: why-dont-we-write-definitive-formal-proofs-of-bug-free-code
 date: '2026-10-24T15:00:00-03:00'
 draft: false
