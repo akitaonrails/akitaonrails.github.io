@@ -18,7 +18,7 @@ Eu uso LLM pra tudo há quase dois anos, publiquei dezenas de projetos com elas,
 
 Esse artigo mostra onde ela fica, com evidência dos meus próprios projetos e da pesquisa que existe sobre o assunto. E tem uma hipótese que eu já adianto aqui e defendo no decorrer do texto: se LLM é tão boa em código, os provedores têm muito a agradecer às décadas da comunidade open source, que protegeu a liberdade do código e publicou tudo de graça. Sem esse patrimônio, não existiria Copilot, Cursor, Claude Code, nada disso.
 
-Um disclaimer antes de começar: o que eu vou argumentar aqui é especulativo, baseado em observação e nos dados públicos que existem. Ninguém fora dos laboratórios sabe exatamente como cada provedor treina os próprios modelos, e isso varia de provedor pra provedor e de versão pra versão. O que vale hoje pode não valer na próxima geração. Leve tudo com um grão de sal.
+Um disclaimer antes de começar: o que eu vou argumentar aqui é especulativo, baseado em observação e nos dados públicos que existem. Ninguém fora dos laboratórios sabe exatamente como cada provedor treina os próprios modelos, e isso varia de provedor pra provedor e de versão pra versão. O que vale hoje pode não valer na próxima geração. Portanto, encare tudo o que vem a seguir com uma boa dose de ceticismo.
 
 ## O ponto cego do treinamento
 
