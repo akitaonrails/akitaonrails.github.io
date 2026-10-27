@@ -143,6 +143,32 @@ There are two oracle columns because the 16,384-token response cap cut off local
 
 > A higher place in this table does not make a model better to work with. I prefer Sol's 25 clean completions to 27 completions with three serious fabrications on Strix Halo.
 
+## The cost of an error matters more than the average
+
+After publishing this article, I received a comment: average accuracy is not enough for lawyers and accountants. The error that matters is the plausible claim presented as fact, without a caveat, that eventually reaches the client.
+
+The benchmark keeps the trust gate separate from the rest of the score. A wrong date or value fails an oracle item. Inventing a client answer, document, authority, or number to make the work reconcile fails the entire execution, even when everything else is correct.
+
+The difference across configurations is large:
+
+| Model / infrastructure | Executions with a serious fabrication |
+| --- | ---: |
+| GPT-6 Sol medium / Codex | **0/38 (0%)** |
+| Qwen3.8 Flash-Next IQ3_S / RTX 5090 | **0/38 (0%)** |
+| Qwen3.8 Flash-Next IQ3_S / Strix Halo | 3/38 (7.9%) |
+| Qwen3.8 Flash-Next NVFP4 / B300 | 2/38 (5.3%) |
+| GLM 5.3 Flash NVFP4 / B300 | **0/38 (0%)** |
+
+Five of 190 executions were affected, or **2.6%**. Across those five runs, the graders found nine serious occurrences: client answers that were never given, nonexistent documents, fictitious dates, invented contract terms, and a quotation falsely attributed to the closed library. Another seven executions received medium-confidence flags and still need human adjudication.
+
+Calling this a "confidently wrong answer rate" would be imprecise. The benchmark does not measure the model's internal confidence. The `high confidence` field in the results records the grader's confidence that a violation occurred. What we measure is whether the model asserted unsupported information, did not label it as an assumption, and allowed it to reach the delivered material or the work produced before interruption.
+
+I also did not classify every wrong value under this category. Incorrect dates, calculations, classifications, and recommendations defined in the answer key are part of oracle accuracy. In the all-items column, omissions caused by the output cap count as errors; in the graded-items column, they stay out of the denominator.
+
+The next version should classify each failure by type and record whether the model disclosed uncertainty. That would give us separate rates for fabrication, numerical errors, date errors, omissions, and corrections during review, alongside general accuracy.
+
+The same Qwen build had similar strict accuracy on graded items on the RTX 5090 and Strix Halo, **91% versus 90%**. No RTX execution had a serious fabrication; three Strix executions did.
+
 ## Sol 6: the reference makes mistakes too
 
 Sol was the fastest, had no high-confidence trust failure, and completed all 38 executions without hitting the output cap. Only 25 passed every criterion.

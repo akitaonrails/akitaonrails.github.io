@@ -142,6 +142,32 @@ Também há duas colunas de oráculo porque o limite de 16.384 tokens cortou res
 
 > Uma colocação acima na tabela não torna um modelo melhor para trabalhar. Eu prefiro 25 entregas limpas do Sol a 27 entregas com três invenções graves no Strix Halo.
 
+## O custo do erro pesa mais que a média
+
+Depois que publiquei este artigo, recebi um comentário: para advogado e contador, a média de acertos não basta. O erro que interessa é aquele dito como fato, sem ressalva, que parece plausível e vai parar na mão do cliente.
+
+O benchmark separa o filtro de confiança do restante da nota. Uma data ou um valor errado reprova o item do oráculo. Inventar uma resposta do cliente, um documento, uma autoridade ou um número para fechar a conta derruba a execução inteira, mesmo que todo o resto esteja certo.
+
+A diferença por configuração é grande:
+
+| Modelo / infraestrutura | Execuções com invenção grave |
+| --- | ---: |
+| GPT-6 Sol médio / Codex | **0/38 (0%)** |
+| Qwen3.8 Flash-Next IQ3_S / RTX 5090 | **0/38 (0%)** |
+| Qwen3.8 Flash-Next IQ3_S / Strix Halo | 3/38 (7,9%) |
+| Qwen3.8 Flash-Next NVFP4 / B300 | 2/38 (5,3%) |
+| GLM 5.3 Flash NVFP4 / B300 | **0/38 (0%)** |
+
+Foram cinco execuções afetadas entre 190, ou **2,6%**. Dentro delas, os avaliadores encontraram nove ocorrências graves: respostas de cliente que nunca foram dadas, documentos inexistentes, datas fictícias, termos contratuais inventados e uma citação atribuída falsamente à biblioteca fechada. Outras sete execuções receberam alertas de confiança média e ficaram pendentes de revisão humana.
+
+Chamar isso de "taxa de respostas confiantes e erradas" seria impreciso. O benchmark não mede a confiança interna do modelo. O `high confidence` registrado nos resultados é a confiança do avaliador de que houve uma violação. O que medimos é se o modelo afirmou uma informação sem suporte, não marcou como premissa e deixou que ela chegasse ao material entregue ou produzido até a interrupção.
+
+Também ainda não separei todo valor errado nessa categoria. Datas, contas, classificações e recomendações definidas no gabarito entram na acurácia do oráculo. Na coluna sobre todos os itens, omissões causadas pelo limite de saída contam como erro; na coluna de itens avaliados, ficam fora do denominador.
+
+Na próxima versão, vale classificar cada erro por tipo e registrar se o modelo avisou que estava em dúvida. Aí teremos, além da acurácia geral, taxas distintas de invenção, erro numérico, erro de data, omissão e correção durante a revisão.
+
+O mesmo Qwen teve acurácia estrita parecida nos itens avaliados da RTX 5090 e do Strix Halo, **91% contra 90%**. Na RTX, nenhuma execução teve invenção grave; no Strix, foram três.
+
 ## Sol 6: a referência também erra
 
 O Sol foi o mais rápido, não teve falha grave de confiança e concluiu todas as 38 execuções sem estourar a saída. Mesmo assim, só 25 passaram por todos os critérios.
