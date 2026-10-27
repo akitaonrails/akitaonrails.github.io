@@ -28,6 +28,7 @@ ALLOWED_TAGS = {
 }.transform_values(&:freeze).freeze
 
 FEATURED_POSTS = [
+  ['2026-10-27', 'LLM Benchmark para Contadores e Advogados (Experimental - LLMs Open Source)', '/2026/10/27/llm-benchmark-para-contadores-e-advogados-experimental/'],
   ['2026-10-22', 'LLM Benchmark v4: o veredito de open source (até out/2026)', '/2026/10/22/llm-benchmark-v4-o-veredito-de-open-source-ate-out-2026/'],
   ['2026-10-16', 'Estamos no Futuro: Carros voam e não temos mais que fazer HTML/CSS', '/2026/10/16/estamos-no-futuro-carros-voam-e-nao-temos-mais-que-fazer-html-css/'],
   ['2026-10-14', 'Treinei meu próprio modelo de IA (Spoiler: é só pra estudo)', '/2026/10/14/treinei-meu-proprio-modelo-de-ia-spoiler-e-so-pra-estudo/'],
@@ -59,6 +60,7 @@ FEATURED_POSTS = [
 ].freeze
 
 FEATURED_POSTS_EN = [
+  ['2026-10-27', 'LLM Benchmark for Accountants and Lawyers (Experimental - Open Source LLMs)', '/en/2026/10/27/llm-benchmark-for-accountants-and-lawyers-experimental/'],
   ['2026-10-22', 'LLM Benchmark v4: the open source verdict (as of Oct 2026)', '/en/2026/10/22/llm-benchmark-v4-the-open-source-verdict-as-of-oct-2026/'],
   ['2026-10-16', "We're Living in the Future: Cars Fly and We Don't Have to Write HTML/CSS Anymore", '/en/2026/10/16/living-in-the-future-cars-fly-no-more-html-css/'],
   ['2026-10-14', "I Trained My Own AI Model (Spoiler: It's Just for Study)", '/en/2026/10/14/i-trained-my-own-ai-model-spoiler-its-just-for-study/'],
