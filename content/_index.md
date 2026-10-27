@@ -17,7 +17,7 @@ title: AkitaOnRails Blog
 <article class="aor-featured-card" data-featured-item data-featured-index="0">
   <time datetime="2026-10-27">Oct 27, 2026</time>
   <h3><a href="/2026/10/27/llm-benchmark-melhores-llms-open-source-hardware-caseiro/">LLM Benchmark: Quais as melhores LLMs open source pra hardware caseiro?</a></h3>
-  <p>Testei quatro quantizações do Qwen3.8 Flash-Next numa RTX 5090 e num Strix Halo. A Q2_0 venceu: fez 100 e terminou o teste difícil em 7,2 minutos, contra 12,1 da IQ3_S.</p>
+  <p>Comparei Basalt e Strata servindo o Qwen3.8 Flash-Next na RTX 5090. O Q2_0 fez 100 nas seis rodadas difíceis e chegou a 400 tok/s no Basalt, contra 259 no Strata.</p>
   <span class="aor-post-tags aor-post-tags--featured-card"><a class="aor-tag-link" href="/tags/benchmarks-de-llm/">#benchmarks-de-llm</a><a class="aor-tag-link" href="/tags/modelos-locais/">#modelos-locais</a><a class="aor-tag-link" href="/tags/llms/">#llms</a><a class="aor-tag-link" href="/tags/hardware/">#hardware</a></span>
 </article>
 <article class="aor-featured-card" data-featured-item data-featured-index="1">
@@ -209,11 +209,11 @@ title: AkitaOnRails Blog
     <span>19 artigos</span>
   </div>
   <div class="aor-index-list-group">
-<article class="aor-index-row" title="Testei quatro quantizações do Qwen3.8 Flash-Next numa RTX 5090 e num Strix Halo. A Q2_0 venceu: fez 100 e terminou o teste difícil em 7,2 minutos, contra 12,1 da IQ3_S.">
+<article class="aor-index-row" title="Comparei Basalt e Strata servindo o Qwen3.8 Flash-Next na RTX 5090. O Q2_0 fez 100 nas seis rodadas difíceis e chegou a 400 tok/s no Basalt, contra 259 no Strata.">
   <time datetime="2026-10-27">Oct 27</time>
   <div class="aor-index-row__body">
     <h3><a class="aor-index-list__main-link" href="/2026/10/27/llm-benchmark-melhores-llms-open-source-hardware-caseiro/">LLM Benchmark: Quais as melhores LLMs open source pra hardware caseiro?</a></h3>
-    <p>Testei quatro quantizações do Qwen3.8 Flash-Next numa RTX 5090 e num Strix Halo. A Q2_0 venceu: fez 100 e terminou o teste difícil em 7,2 minutos, contra 12,1 da IQ3_S.</p>
+    <p>Comparei Basalt e Strata servindo o Qwen3.8 Flash-Next na RTX 5090. O Q2_0 fez 100 nas seis rodadas difíceis e chegou a 400 tok/s no Basalt, contra 259 no Strata.</p>
   </div>
   <span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/tags/benchmarks-de-llm/">#benchmarks-de-llm</a><a class="aor-tag-link" href="/tags/modelos-locais/">#modelos-locais</a><a class="aor-tag-link" href="/tags/llms/">#llms</a><a class="aor-tag-link" href="/tags/hardware/">#hardware</a></span>
 </article>

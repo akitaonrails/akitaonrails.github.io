@@ -3,7 +3,7 @@ title: "LLM Benchmark: What Are the Best Open Source LLMs for Home Hardware?"
 slug: llm-benchmark-best-open-source-llms-for-home-hardware
 date: '2026-10-27T13:00:00-03:00'
 translationKey: llm-benchmark-melhores-llms-open-source-hardware-caseiro
-description: "I tested four Qwen3.8 Flash-Next quantizations on an RTX 5090 and a Strix Halo. Q2_0 won: it scored 100 and finished the hard test in 7.2 minutes, versus 12.1 for IQ3_S."
+description: "I compared Basalt and Strata serving Qwen3.8 Flash-Next on an RTX 5090. Q2_0 scored 100 in all six hard runs and reached 400 tok/s on Basalt, versus 259 on Strata."
 tags:
 - llm-benchmarks
 - local-models
@@ -18,7 +18,7 @@ The machine remained the problem. A 510 GB model that needs four B300s may be op
 
 I went back to my RTX 5090 and Strix Halo. Instead of repeating the full v4 benchmark on dozens of models that we already know will not fit or run fast enough, I took the most promising candidate and compared **its quantizations**. Which version preserves enough quality without turning every interaction into a wait of several minutes?
 
-The result surprised me: **the 2-bit version won**.
+The result surprised me: **the 2-bit version won**. I then repeated the test with [Basalt](https://github.com/jesdga95/basalt), a Strata fork specialized for Blackwell GPUs. The model kept getting everything right, while generation reached **400 tokens per second**. The quantization did not change; the engine changed the result substantially.
 
 ## The RTX 3090 and 4090 got a second wind
 
@@ -26,24 +26,24 @@ Before my results, the community found a limitation that could be removed. On Ge
 
 The hardware is there. Two internal registers select the speed, and the normal driver does not have enough privilege to change them.
 
-The [gpu-unlock](https://github.com/Zagitta/gpu-unlock) project found a way to change those registers before the NVIDIA driver takes over the card. On Ampere, it exploits a buffer overflow in the signed Booter that authenticates and loads GSP-RM. The change lasts for that boot: a reboot resets everything, and nothing is written to the VBIOS.
+The [gpu-unlock](https://github.com/Zagitta/gpu-unlock) project found a way to change those registers before the NVIDIA driver takes over the card. On Ampere, it exploits a buffer overflow in the signed Booter that authenticates and loads GSP-RM. Nothing is written to the VBIOS. To restore stock behavior, remove the activation parameter and fully power the machine off, because the selectors reset when the card loses power. If the parameter remains active, the module reapplies the unlock on the next boot.
 
 It also requires Linux, initramfs, and a lot of care. I would not install this on a production workstation without reading the code and understanding the risk.
 
 This is a community hack with no official NVIDIA support. You install it at your own risk. Its value for LLMs is faster prefill when the engine uses this exact Tensor Core path. Other compute applications, including some image-generation pipelines, may also change in performance. Games depend on different GPU paths and bottlenecks, so do not expect higher frame rates from it.
 
-On an RTX 3090, FP16 with FP32 accumulation went from 70.95 to 122.49 TFLOPS; BF16 went from 70.29 to 127.30. On the 4090, an implementation that is still experimental measured roughly twice the FP16 and BF16 instruction issue rate.
+On an RTX 3090 at 420 W, [a controlled test](https://github.com/Zagitta/gpu-unlock/issues/85) measured FP16 with FP32 accumulation going from 76.396 to 125.006 TFLOPS; BF16 went from 76.994 to 127.923. On the 4090, an implementation that is still experimental measured roughly twice the FP16 and BF16 instruction issue rate.
 
 Doubling TFLOPS does not double your LLM. The [test that prompted this discussion](https://dev.to/orca_forge/why-gpu-unlock-speeds-up-rtx-3090-prefill-but-barely-changes-decode-4572) separated the two phases:
 
-- **Prefill** is when the model reads the whole prompt. Many tokens are available at once, so the engine can build large parallel matrix operations. The unlock improved some 3090 tests by 8% to 13%.
+- **Prefill** is when the model reads the whole prompt. Many tokens are available at once, so the engine can build large parallel matrix operations. [One 3090 gained 14.4%](https://github.com/Zagitta/gpu-unlock/issues/33) on a 16K-token workload, while two modified 3080s gained [33% to 36% with vLLM](https://github.com/Zagitta/gpu-unlock/issues/15).
 - **Decode** is when the model generates one token after another. With a quantized LLM using expert offload, this phase is constrained mainly by memory bandwidth, RAM, PCIe, and the expert cache. The measured change stayed within noise.
 
-On the heavier Qwen quantization, the prefill gain nearly vanished too. A test on a modified 48 GB 4090 measured 0.983x, essentially nothing. The computation path used by a quantization may never touch the FP16/BF16 path that was unlocked.
+The gain varies substantially with the engine, quantization, and prompt size. On the dual 3080 setup, Qwen3.8 Flash-Next Q4_K_XL gained only 0.5% to 0.8% at 8K, but reached 12% or 13% at 32K and 128K. On a 3090 running an IQ3_S MoE, a workload near 32K did not change. The computation path used by a quantization may never touch the FP16/BF16 path that was unlocked.
 
 > gpu-unlock accelerates a specific Tensor Core path. It may reduce the wait when reading large prompts, but it does not turn 24 GB into 96 GB or create memory bandwidth.
 
-Even with that caveat, the 3090 and 4090 became more interesting for local inference. A used [RTX 3090](https://www.nvidia.com/en-us/geforce/graphics-cards/30-series/rtx-3090-3090ti/) still has 24 GB of VRAM, NVLink in its generation, and 936 GB/s of bandwidth. The community is already running Qwen3.8 Flash-Next on one 3090 at 43 to 51 tokens per second, and on two cards at 84 to 111 tokens per second depending on the configuration. Those are community results, not measurements from this round.
+Even with that caveat, the 3090 and 4090 became more interesting for local inference. A used [RTX 3090](https://www.nvidia.com/en-us/geforce/graphics-cards/30-series/rtx-3090-3090ti/) still has 24 GB of VRAM, NVLink in its generation, and 936 GB/s of bandwidth. The community measured Qwen3.8 Flash-Next at roughly [75 tok/s with IQ3_S and 100 tok/s with Q2_0](https://github.com/sybil-solutions/local-ai-registry/pull/212) on one 3090. With two cards, reports range from [90 to 120 tok/s](https://github.com/ruashots/flashnext-2x3090), depending on the configuration and context size. Those are community results, not measurements from this round.
 
 ## Why I chose Qwen3.8 Flash-Next
 
@@ -58,7 +58,7 @@ In v4, the open candidates that really interested me were:
 
 The three tied within the noise margin. Only Qwen repeated that quality on consumer hardware. Its main model is a 125-billion-parameter MoE with roughly 6 billion active parameters per token, plus 51 billion parameters in n-gram embeddings and a 4-billion-parameter MTP head. [Strata](https://github.com/Niko1221/Strata) keeps the most frequently used experts on the GPU, keeps the rest in RAM for the CPU to compute, reads the n-gram table from the SSD, and uses the model's own MTP layer to speculate the next tokens.
 
-DeepSeek V4.1 has about 748 billion parameters in total: 552 billion in the backbone and 196 billion in Engram. I served its native mixed FP4/FP8 checkpoint, about 510 GB, on the four-B300 pod.
+DeepSeek V4.1's backbone and Engram add up to about 748 billion parameters: 552 billion in the backbone and 196 billion in Engram. The published checkpoint has roughly 763 billion parameters in total. I served its native mixed FP4/FP8 version, about 510 GB, on the four-B300 pod.
 
 I also managed to start a 2-bit version on the 5090 using Strata's dedicated engine. It generated around **17 tokens per second**. It runs. It is out of the race for a programming agent.
 
@@ -77,18 +77,20 @@ All the code, prompts, hidden tests, and results are in [llm-opensource-benchmar
 | IQ3_S | ~78 GiB | 3 bits, more precision |
 | UD-Q4_K_XL | ~104 GiB | 4 bits, preserves more of the weights |
 
-The files include a shared PLE component, so the full size does not fit directly in VRAM. Strata handles loading and unloading experts.
+The Strata files include a shared PLE component, so the full size does not fit directly in VRAM. The engine distributes experts between the GPU and RAM. On Basalt, I used the project's own packs: one 64.9 GiB `.basalt` file for Q2_0 and an 81.0 GiB file for IQ3_S. Each file already includes the weights, tokenizer, MTP, expert profile, and vision projector.
 
-On the RTX 5090, I used Strata's CUDA backend with:
+For the first RTX 5090 round, I used Strata's CUDA backend with:
 
 - 4 GiB of VRAM reserved for Hyprland, the browser, and the terminal;
 - `int8` KV cache, a 128K maximum context, and 32K resident on the GPU;
 - an elastic expert cache;
 - four-token speculation with the model's MTP.
 
+I then ran Q2_0 and IQ3_S on Basalt, on the same 5090 and with the same 131,072-token maximum context and `int8` KV. I reserved 4,608 MiB because Basalt counts its working buffers against that margin. Free VRAM stayed between 3.6 and 4.4 GB during the tests.
+
 On the Strix Halo, I used the `hip-halo` backend. That machine has 64 GB reserved for the GPU and 31 GB of GTT mapped over system RAM; the engine's RAM limit was 61.9 GiB. Since it is headless, I gave the entire GPU to the model and kept 8 GiB of headroom for the conversation cache.
 
-Underneath, these are two different backends, CUDA on NVIDIA and HIP/ROCm on AMD, with the same engine and the same OpenAI-compatible API. That removes one important variable: I am not comparing Ollama on one side with vLLM and a different template on the other.
+The Strata measurements use two different backends underneath, CUDA on NVIDIA and HIP/ROCm on AMD, with the same engine and the same OpenAI-compatible API. Basalt adds an engine comparison on the 5090, using the same OpenCode, prompts, and grading.
 
 ## Methodology
 
@@ -120,7 +122,7 @@ The **KV cache** stores intermediate states for tokens that have already been pr
 
 The KV cache also grows with the conversation and competes with weights, experts, and buffers for memory. Here it uses `int8`, with 32K resident on the 5090. Advertised maximum context, context that fits, and context that stays fast are three different numbers.
 
-**Speculative decoding** uses a draft layer to propose several tokens and lets the main model verify the batch. Output tok/s goes up when the acceptance rate is good. The benefit vanishes when the draft misses too often. The speeds in this round already include MTP with four-token speculation.
+**Speculative decoding** uses a draft layer to propose several tokens and lets the main model verify the batch. Output tok/s goes up when the acceptance rate is good. The benefit vanishes when the draft misses too often. The Strata speeds already include MTP with four-token speculation. Basalt also uses the MTP included in its pack, with its own speculation mechanism and defaults.
 
 One metric is missing because I did not measure it here: **concurrency**. Every number in this article comes from a single stream. A server can handle several sessions and raise aggregate throughput, while each user will usually receive fewer tokens per second.
 
@@ -130,7 +132,7 @@ Then came two programming tests using OpenCode 2.1.4. The model receives a small
 
 The first canary has three turns and 9 hidden tests. The model must implement a log analyzer, fix bugs, and handle changed requirements.
 
-The hard canary has four turns and 36 hidden tests. It is a payment reconciler with decisions buried inside a 64K-token history, one decision corrected later, rejected proposals used as distractions, money that requires exact decimals, and new rules that interact with earlier ones. With OpenCode's system prompt, the first turn approaches 83K tokens.
+The hard canary has four turns and 36 hidden tests. It is a payment reconciler with decisions buried inside a roughly 79K-token history, one decision corrected later, rejected proposals used as distractions, money that requires exact decimals, and new rules that interact with earlier ones. With OpenCode's system prompt, the first turn approaches 83K tokens.
 
 ### A separate yardstick from benchmark v4
 
@@ -144,7 +146,7 @@ A score of 100 in this article belongs to a different scale, with no equivalence
 
 ## Speed ranking
 
-### RTX 5090, with 4 GiB reserved for the desktop
+### RTX 5090 with Strata, 4 GiB reserved for the desktop
 
 | Quantization | Generation | Long-input processing | First token |
 | --- | ---: | ---: | ---: |
@@ -152,6 +154,13 @@ A score of 100 in this article belongs to a different scale, with no equivalence
 | IQ3_XXS | 196 to 241 tok/s | 5,084 tok/s | 8.3 s |
 | IQ3_S | 158 to 208 tok/s | 6,233 tok/s | 6.8 s |
 | UD-Q4_K_XL | 44 to 52 tok/s | 2,300 tok/s | 19 s |
+
+### RTX 5090 with Basalt
+
+| Quantization | Generation | Long-input processing | First token |
+| --- | ---: | ---: | ---: |
+| **Q2_0** | **377 to 400 tok/s** | **8,573 tok/s** | **4.9 s** |
+| IQ3_S | 223 to 231 tok/s | 8,196 tok/s | 5.2 s |
 
 ### Strix Halo, using the whole GPU
 
@@ -162,9 +171,21 @@ A score of 100 in this article belongs to a different scale, with no equivalence
 | IQ3_S | 47 to 50 tok/s | 338 tok/s | 125 s |
 | UD-Q4_K_XL | 17 tok/s on one 4K prompt | 137 tok/s | did not finish |
 
-The 5090 has 32 GB of GDDR7 and [1,792 GB/s of bandwidth](https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5090/). The Strix has more total capacity, but its roughly 256 GB/s must serve the entire system. The difference shows up mainly in prefill: 6.9 seconds versus almost 2 minutes to start answering the 42,400-token workload.
+The 5090 has 32 GB of GDDR7 and [1,792 GB/s of bandwidth](https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5090/). The Strix has more total capacity, but its roughly 256 GB/s must serve the entire system. Even with Strata on both machines, the difference appears mainly in prefill: 6.9 seconds versus almost 2 minutes to start answering the 42,400-token workload. Basalt cut the 5090 wait to 4.9 seconds.
 
 Q4 gave me the worst of both worlds. On the 5090 it ran slowly, and `systemd-oomd` killed the quality test. On the Strix, it exhausted VRAM, started paging, and froze the machine until a reboot. More bits preserve more information, but they also use more memory and shrink the hot cache that makes this MoE move.
+
+## Basalt versus Strata
+
+[Basalt](https://github.com/jesdga95/basalt) started as a Strata fork and took a narrower direction: Linux or Windows, CUDA 13, and an NVIDIA Blackwell GPU with compute capability 12.0. The 5090 is exactly its target. Strata remains much broader and is what allowed the same Qwen to run on the AMD Strix Halo.
+
+Both engines solve the same central problem. In the tested configuration, experts that do not fit in VRAM stay in RAM while the GPU holds a hot subset. Basalt and Strata expose OpenAI- and Anthropic-compatible APIs and accelerate generation with their MTP drafters. Basalt stores everything in one file and has kernels, memory management, and speculative execution developed specifically for Blackwell.
+
+This was a practical A/B between complete serving stacks, without isolating one optimization. Each engine has its own packs, their defaults are not identical, and Basalt reserved 4,608 MiB of VRAM versus Strata's 4,096 MiB. I kept the same RTX 5090, the same quantizations, a 131K maximum context, `int8` KV, the same OpenCode, and the same tests.
+
+Basalt won every speed metric in this A/B and tied on functional coding results. Q2_0 moved from a range of 223 to 259 tokens per second to 377 to 400. Long-input processing rose from 6,158 to 8,573 tokens per second, and the wait for the first token fell from 6.9 to 4.9 seconds. IQ3_S moved from 158 to 208 to a range of 223 to 231 tokens per second.
+
+Platform scope decides the choice. On an RTX 5090, I would start with Basalt. On the Strix, pre-Blackwell NVIDIA, or other supported hardware, Strata remains the path. Strata covers the platforms where Basalt does not run.
 
 ## Quality ranking
 
@@ -178,7 +199,7 @@ The simple test separated nothing:
 
 All three passed the 9 hidden tests, preserved the requirements, and finished with the visible suite green. I had to make the test harder.
 
-In the hard canary, I ran Q2_0 and IQ3_S three times each on the 5090:
+In the hard canary, I ran Q2_0 and IQ3_S three times each on the 5090 with Strata:
 
 | Run | Score | Hidden tests | Time for 4 turns | Output tokens |
 | --- | ---: | ---: | ---: | ---: |
@@ -193,13 +214,28 @@ Both versions got everything right in all three runs. They found the decisions i
 
 The difference was on the clock. **Q2_0 took 7.2 minutes on average. IQ3_S took 12.1.** The 2-bit model delivered the same result in roughly 60% of the time.
 
-The evidence covers small Python codebases, contexts up to roughly 85K tokens, and only three repetitions of the hard canary. A 2-bit quantization will usually lose quality first on contexts above 100K and on larger codebases. Within the use I measured, spending more bits bought no quality.
+I then repeated all six runs on Basalt:
+
+| Run | Score | Hidden tests | Time for 4 turns |
+| --- | ---: | ---: | ---: |
+| Q2_0 r1 | 100 | 36/36 | 5.9 min |
+| Q2_0 r2 | 100 | 36/36 | 4.2 min |
+| Q2_0 r3 | 100 | 36/36 | 6.3 min |
+| IQ3_S r1 | 100 | 36/36 | 5.8 min |
+| IQ3_S r2 | 96* | 36/36 | 11.3 min |
+| IQ3_S r3 | 100 | 36/36 | 10.1 min |
+
+The penalty that dropped the second IQ3_S run to 96 was a known harness false positive. The model executed `ps aux` inside the sandbox, and the command showed the `bwrap` process itself, whose command line contains host paths. The detector treated that as an attempt to access the hidden tests and removed four points. The model did not use those paths, the hidden tests are only mounted later during grading, and all 36 passed.
+
+On Basalt, Q2_0 took **5.4 minutes on average**, compared with 7.2 on Strata. IQ3_S fell from 12.1 to **9.0 minutes**. The end-to-end gain is smaller than the jump in tokens per second because the session also spends time running tools and tests, and each run generated a different amount of text.
+
+The evidence covers small Python codebases, contexts up to roughly 85K tokens, and only three repetitions per engine and quantization combination in the hard canary. A 2-bit quantization will usually lose quality first on contexts above 100K and on larger codebases. Within the use I measured, spending more bits bought no quality.
 
 ## What each version showed
 
 ### Q2_0: the current recommendation
 
-It was the fastest on both machines and finished every test with a perfect score. On the 5090, 223 to 259 tokens per second is already comfortable for an agent. On the Strix, 55 to 65 tokens per second is usable, although long prefill costs almost two minutes before the first answer.
+It generated tokens faster in all three machine-and-engine combinations and finished all six hard runs with a perfect score. IQ3_S won the long-prompt prefill measurement on Strata and the 5090 by a tiny margin. With Basalt, Q2_0 reached 400 tokens per second. On the Strix, 55 to 65 tokens per second is usable, although long prefill costs almost two minutes before the first answer.
 
 I would use this version every day and keep the context caveat in mind. Large project, session approaching 100K, or strange behavior? I repeat the same work with IQ3_S before blaming the model.
 
@@ -209,7 +245,9 @@ It passed the simple canary and ran quickly, but Q2_0 was faster and uses less s
 
 ### IQ3_S: the conservative option
 
-This is still the version I would use to validate a suspicious Q2_0 result. It had already scored 91 in benchmark v4 on the 5090, only 1.5 points below its NVFP4 version on the B300. In this round, though, it took almost 70% longer than Q2_0 and found nothing that the smaller version had missed.
+This is still the version I would use to validate a suspicious Q2_0 result. It had already scored 91 in benchmark v4 on the 5090, only 1.5 points below its NVFP4 version on the B300. On Basalt, it ran at 223 to 231 tokens per second, roughly the range Q2_0 reached on Strata, while processing prompts faster.
+
+Basalt also measures each quantization against Q8_0. Across its 100-chunk test, IQ3_S kept the same top token in 87.16% of positions. That is a different yardstick from my canaries, but it supports IQ3_S's role as the conservative option. In my coding tests, that extra precision still found nothing Q2_0 had missed.
 
 ### UD-Q4_K_XL: quality that does not fit is useless
 
@@ -223,7 +261,7 @@ The largest quantization that fits on paper can be the worst real configuration.
 
 Both have 24 GB, which limits the expert cache. gpu-unlock improves prefill in workloads that use the unlocked path, while decode remains constrained by memory and offload. A used 3090, especially two of them with NVLink, can make an interesting local machine. I would not buy a new 4090 today just for this: it still has 24 GB, costs a lot, and the Ada unlock remains experimental.
 
-For either one, I would start with **Qwen3.8 Flash-Next Q2_0** and measure my workload. The community's 43 to 51 tokens per second on a single 3090 already clears the tolerable range. Two 3090s provide a much better experience, provided you accept the power draw, heat, PSU requirements, and 128 GB of RAM.
+For either one, I would start with **Qwen3.8 Flash-Next Q2_0** and measure my workload. The roughly 100 tokens per second published by the community on one 3090 already puts the card in a practical range. Two 3090s add capacity and may land between 90 and 120 tokens per second, but they do not automatically double throughput. The bill includes power draw, heat, a suitable PSU, and at least 128 GB of RAM.
 
 ### Strix Halo: plenty of capacity, little bandwidth
 
@@ -235,7 +273,7 @@ The problem appears every time the agent reads a large context. Almost two minut
 
 The [RTX 5090](https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5090/) has 32 GB, 21,760 CUDA cores, and the same nominal 1,792 GB/s bandwidth as the RTX PRO 6000. Capacity is the missing piece: I must reserve 4 GiB for the desktop and use RAM and SSD for the experts that do not fit.
 
-Even so, it pushed Q2_0 to 223 to 259 tokens per second and read the long workload at 6,158 tokens per second. This is the first local configuration that does not make me feel like I am waiting for the machine at every step. It is also a card I can use for gaming, image generation, video, and everything else in the workstation.
+With Strata, it pushed Q2_0 to 223 to 259 tokens per second and read the long workload at 6,158 tokens per second. With Basalt, those numbers reached 400 and 8,573, respectively. This is the first local configuration that does not make me feel like I am waiting for the machine at every step. It is also a card I can use for gaming, image generation, video, and everything else in the workstation.
 
 ### RTX PRO 6000: three times the VRAM, server-class price
 
@@ -251,13 +289,13 @@ For individual use, the 5090 makes more financial sense. The PRO 6000 starts to 
 | --- | --- | --- |
 | 1x RTX 3090/4090, 24 GB | Qwen3.8 Flash-Next Q2_0 | Viable with offload; check prefill and decode on your stack |
 | Strix Halo | Qwen3.8 Flash-Next Q2_0 | 55 to 65 tok/s; long prompts take time |
-| RTX 5090 | **Qwen3.8 Flash-Next Q2_0** | 223 to 259 tok/s; best balance I measured |
+| RTX 5090 | **Qwen3.8 Flash-Next Q2_0 on Basalt** | 377 to 400 tok/s; best balance I measured |
 | RTX PRO 6000 | Probably IQ3_S or larger | Excellent capacity, unmeasured in this round |
 
-Local open source models have finally entered a practical range. A single 5090 runs a model that reached Tier A in my v4 benchmark and, with Q2_0, reached 259 tokens per second in the canary. The Strix also did far better than the 7.7 tokens per second from the dense Qwen I had tested before.
+Local open source models have finally entered a practical range. A single 5090 runs a model that reached Tier A in my v4 benchmark and, with Q2_0 on Basalt, reached 400 tokens per second in the canary. The Strix also did far better than the 7.7 tokens per second from the dense Qwen I had tested before.
 
 The limits remain clear. Context consumes memory, the desktop needs the same VRAM, and every expert outside the card travels over PCIe or falls back to RAM. DeepSeek at 17 tokens per second shows how useless "it runs" can be as a metric. If every iteration takes several hours, model quality stops mattering because nobody can work that way.
 
-> For home hardware, the best model preserves enough quality at a speed that lets you iterate. In this round, that was Qwen3.8 Flash-Next Q2_0 on the RTX 5090.
+> For home hardware, the best model preserves enough quality at a speed that lets you iterate. In this round, that was Qwen3.8 Flash-Next Q2_0 on Basalt, running on an RTX 5090.
 
 The [benchmark repository](https://github.com/akitaonrails/llm-opensource-benchmark) has the runners, configurations, raw results, and hidden tests. Repeat it on your machine and send results. Hardware, engine, quantization, and context change the answer. A ready-made ranking is a starting point; the final decision is still measured against your own work.
