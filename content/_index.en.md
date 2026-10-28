@@ -17,7 +17,7 @@ title: AkitaOnRails Blog
 <article class="aor-featured-card" data-featured-item data-featured-index="0">
   <time datetime="2026-10-28">Oct 28, 2026</time>
   <h3><a href="/en/2026/10/28/llm-benchmark-v4-gemini-4-argon-gpt-6-1-sol-terra-kimi-k3-1-pro-claude-sonnet-5-5/">LLM Benchmark v4: Gemini 4 Argon, GPT-6.1 Sol and Terra, Kimi K3.1 Pro, Claude Sonnet 5.5</a></h3>
-  <p>Argon, Sol 6.1, Terra, Kimi K3.1 Pro, and Sonnet 5.5 enter v4. Combining SWE-bench Pro and Terminal-Bench puts six leaders between 93.2 and 96.6.</p>
+  <p>Muse Wonder closes out v4 at 97.0 with excellent vigilance, but quotas and hangs turned 126 productive minutes into nearly 15 days. The leaders remain very close.</p>
   <span class="aor-post-tags aor-post-tags--featured-card"><a class="aor-tag-link" href="/en/tags/llm-benchmarks/">#llm-benchmarks</a><a class="aor-tag-link" href="/en/tags/llms/">#llms</a><a class="aor-tag-link" href="/en/tags/coding-agents/">#coding-agents</a><a class="aor-tag-link" href="/en/tags/ai-memory/">#ai-memory</a></span>
 </article>
 <article class="aor-featured-card" data-featured-item data-featured-index="1">
@@ -215,11 +215,11 @@ title: AkitaOnRails Blog
     <span>20 articles</span>
   </div>
   <div class="aor-index-list-group">
-<article class="aor-index-row" title="Argon, Sol 6.1, Terra, Kimi K3.1 Pro, and Sonnet 5.5 enter v4. Combining SWE-bench Pro and Terminal-Bench puts six leaders between 93.2 and 96.6.">
+<article class="aor-index-row" title="Muse Wonder closes out v4 at 97.0 with excellent vigilance, but quotas and hangs turned 126 productive minutes into nearly 15 days. The leaders remain very close.">
   <time datetime="2026-10-28">Oct 28</time>
   <div class="aor-index-row__body">
     <h3><a class="aor-index-list__main-link" href="/en/2026/10/28/llm-benchmark-v4-gemini-4-argon-gpt-6-1-sol-terra-kimi-k3-1-pro-claude-sonnet-5-5/">LLM Benchmark v4: Gemini 4 Argon, GPT-6.1 Sol and Terra, Kimi K3.1 Pro, Claude Sonnet 5.5</a></h3>
-    <p>Argon, Sol 6.1, Terra, Kimi K3.1 Pro, and Sonnet 5.5 enter v4. Combining SWE-bench Pro and Terminal-Bench puts six leaders between 93.2 and 96.6.</p>
+    <p>Muse Wonder closes out v4 at 97.0 with excellent vigilance, but quotas and hangs turned 126 productive minutes into nearly 15 days. The leaders remain very close.</p>
   </div>
   <span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/en/tags/llm-benchmarks/">#llm-benchmarks</a><a class="aor-tag-link" href="/en/tags/llms/">#llms</a><a class="aor-tag-link" href="/en/tags/coding-agents/">#coding-agents</a><a class="aor-tag-link" href="/en/tags/ai-memory/">#ai-memory</a></span>
 </article>

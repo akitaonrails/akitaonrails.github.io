@@ -3,7 +3,7 @@ title: "LLM Benchmark v4: Gemini 4 Argon, GPT-6.1 Sol and Terra, Kimi K3.1 Pro, 
 slug: llm-benchmark-v4-gemini-4-argon-gpt-6-1-sol-terra-kimi-k3-1-pro-claude-sonnet-5-5
 date: '2026-10-28T10:00:00-03:00'
 translationKey: llm-benchmark-v4-gemini-4-argon-gpt-sol-6-1-terra-kimi-k3-1-pro-claude-sonnet-5-5
-description: "Argon, Sol 6.1, Terra, Kimi K3.1 Pro, and Sonnet 5.5 enter v4. Combining SWE-bench Pro and Terminal-Bench puts six leaders between 93.2 and 96.6."
+description: "Muse Wonder closes out v4 at 97.0 with excellent vigilance, but quotas and hangs turned 126 productive minutes into nearly 15 days. The leaders remain very close."
 tags:
 - llm-benchmarks
 - llms
@@ -16,7 +16,7 @@ I spent the last few weeks talking quite a bit about open source LLMs, local har
 
 The [last commercial ranking update](/en/2026/09/23/llm-benchmark-v4-opus-5-5-gpt-6-sol-luna-mimo-2-6-grok-4-7/) added Opus 5.5, GPT 6 Sol and Luna, MiMo 2.6 Pro, and Grok 4.7. The pattern was already showing: new releases were improving mostly on cost and speed. Quality had become a fight over a few points, with models from the same family swapping positions from one run to the next.
 
-Now **Gemini 4 Argon, GPT-6.1 Sol, GPT-6.1 Terra, Kimi K3.1 Pro, and Claude Sonnet 5.5** have joined the ranking. All five landed in Tier A.
+Now **Gemini 4 Argon, GPT-6.1 Sol, GPT-6.1 Terra, Kimi K3.1 Pro, Claude Sonnet 5.5, and Muse Wonder** have joined the ranking. All six landed in Tier A.
 
 I suspect this will be my last commercial ranking update, or close to it. The models have become too similar.
 
@@ -60,6 +60,7 @@ Models from this round are in **bold**. I kept Tier A only, because that is wher
 | GPT 5.5 | 100.0 | $34.69 | 117 min | Codex |
 | Grok 4.6 | 98.5 | $13.00 | 67 min | OpenCode |
 | **GPT-6.1 Sol** | **97.0** | **~$8.12** | **65 min** | Codex |
+| **Muse Wonder 1.0** | **97.0** | **Power plan (flat rate)** | **126 productive min / nearly 15 days** | Muse Code |
 | **GPT-6.1 Terra** | **96.8** | **~$1.69** | **21 min** | Codex |
 | Claude Fable 5.1 | 95.5 | ~$51 | 133 min | Claude Code |
 | Sakana Fugu Ultra v2 | 95.5 | $122.01 | 294 min | OpenCode |
@@ -92,7 +93,7 @@ Models from this round are in **bold**. I kept Tier A only, because that is wher
 | Grok 4.7 | 83.5 | $27.94 | 120 min | OpenCode |
 | Genesys PI House | 83.5 | ~$460 | 68 min | OpenCode |
 
-Costs marked with `~` are equivalents calculated from token counts and public pricing, not the bill I received. Claude Code and Codex run through subscriptions; Antigravity uses OAuth; zcode charges a flat-rate plan. Compare cost carefully, especially across different harnesses.
+Costs marked with `~` are equivalents calculated from token counts and public pricing, not the bill I received. Claude Code, Codex, and Muse Code run through subscriptions; Antigravity uses OAuth; zcode charges a flat-rate plan. For Wonder, 126 minutes count only the seven completed runs. Stalled attempts and quota waits are excluded. Compare cost and time carefully, especially across different harnesses.
 
 Terra and Kimi had item #8 marked not applicable because the exact state of that test did not permit a fair evaluation. Their denominator became 38 instead of 40, and the score was normalized. Nex retains its old caveat: it found the problems but left the work uncommitted.
 
@@ -113,6 +114,26 @@ Sol scored **97.0**. It found 13 of the 14 sabotages on its own and fixed the la
 According to [OpenAI's official pricing](https://developers.openai.com/api/docs/changelog?mw_entry=2026-10-20-c57e1ddc3363933d), it costs $2 per million input tokens and $10 for output. Applied to the run's token counts, that comes to an equivalent cost of about $8.12.
 
 It did not score 100. There is also no demonstrated practical difference between 97 and 100 in a methodology where the same model has already swung by nine points. The useful result is that Sol remains strong and has become fast.
+
+### Muse Wonder: Excellent Model, Terrible Experience
+
+Muse Wonder also scored **97.0**. It found 13 of the 14 sabotages without help and finished with nothing unresolved. The only deduction came from the compound performance item: it fixed the N+1 by itself, but restored the `messages(role, created_at)` index only after the reveal. That produced the same arithmetic as Sol, with 38 points found spontaneously and two points entering at 40% weight.
+
+The technical result was strong. Wonder independently caught authorization failures, SQL injection, XSS, open CORS, a vulnerable dependency, and a hard-coded secret. It added regression tests as well. Judged solely by the delivered code, it belongs near the top of Tier A.
+
+#### Fifteen Days to Finish a Two-Hour Test
+
+I started the run on **October 13**. The first attempt worked for about 33 minutes before hitting an HTTP 429 quota error. I upgraded to the **Power** plan, [advertised by Meta at $50 per month with 20 times the basic plan's usage](https://dev.meta.ai/products/muse-code), and still hit the limit again. By October 14, six sprints were complete, but the weekly quota blocked the reveal until the 19th.
+
+I left the benchmark alone for several days after that and ran the final sprint only today, October 28. My own pause is part of that nearly 15-day span. The comparable number in the table is **126 minutes of successful runs**. The actual experience included several attempts where Muse Code went silent for up to an hour while running RSpec and system tests, plus the quota waits.
+
+> **The model scored 97. The product experience was the worst in the entire v4 benchmark.**
+
+Meta saw the problem as well. On October 12, Alexandr Wang [acknowledged a bug](https://x.com/alexandr_wang/status/2109714291062620560) that made Wonder and Wonder Full consume quota too quickly; Meta fixed it and reset the limits. On October 14, version 1.4.8 [received more efficiency fixes](https://x.com/mjdouglas/status/2110466975474319865), including a bug that routed some Contributor mode users to full-priced models. Another reset followed the next day.
+
+There is an important caveat in my environment. The benchmark isolates `HOME` and `XDG_CONFIG_HOME` so no personal skill or plugin can contaminate the test. [Meta's current documentation](https://dev.meta.ai/docs/muse-code/subscriptions) says `muse exec` without a saved settings file starts with Contributor mode off, which provides less usage in exchange for keeping the code out of training. That detail may have reduced my quota. Even so, the Power plan could not sustain one complete v4 run, and the vendor itself confirmed accounting problems during the same week.
+
+My conclusion stays within what I measured: **Muse Wonder is highly competent, but I would not currently trust the subscription and harness to carry a long session without interruption**. Another user, with a different configuration and after the fixes, may have a better experience.
 
 ### GPT-6.1 Terra: The Most Interesting Balance of Cost, Speed, and Quality
 
@@ -274,6 +295,7 @@ I wanted at least 20 models, but the honest intersection ends here. SWE-bench Pr
 | GPT-6 Sol | 91.0 | n/a | 44.44 | SWE Pro V2 |
 | DeepSeek V4.1 Flash 1017 (B300) | 92.5 | n/a | 31.82 | SWE Pro V2 |
 | GLM 5.3 Flash | 84.25 | n/a | 37.37 | SWE Pro V2 |
+| Muse Wonder 1.0 | 97.0 | 96.73 | n/a | Terminal 4.0 |
 | Claude Haiku 5.5 | n/a | 87.23 | 36.36 | Akita v4 |
 | Inkling | n/a | 89.88 | 0.51 | Akita v4 |
 
