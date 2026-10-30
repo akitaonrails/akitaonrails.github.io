@@ -77,6 +77,10 @@ I treated it like any engineering spike: I learned what I needed, recognized tha
 
 On the 28th, I changed the plan. The original executable already handled physics, rendering, audio, menus, and all the game logic. The shorter route was to preserve that core and fix only the boundaries broken by time. That is where the launcher came from.
 
+This strategy applies to many old Windows games. When the x86 executable still runs and Wine or Proton can supply the basic APIs, the job often shrinks to rebuilding its connection to the current system while keeping the original decisions inside the binary. That is enough when the goal is to play it again on a modern computer.
+
+The expected LLM token cost drops sharply. A full decomp makes the agent read, explain, reconstruct, and test physics, audio, rendering, menus, file formats, and every intermediate state. The launcher reduced the problem to a bounded list: Registry, CD and Windows checks, video mode, controls, resolution, projection, HUD, and draw distance. When the goal is to play the game, this kind of rewiring delivers much more per token.
+
 ## A Thin Launcher Around the Original
 
 The [project is on GitHub](https://github.com/akitaonrails/rea-colin-mcrae). The architecture became much smaller: a Rust launcher prepares a private environment, validates the game version, configures the runtime, and applies in-memory fixes to `Rally.exe`. A small DLL intercepts the points where resolution and HUD handling need additional context.

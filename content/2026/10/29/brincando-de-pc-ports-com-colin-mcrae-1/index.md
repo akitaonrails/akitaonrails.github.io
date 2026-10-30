@@ -76,6 +76,10 @@ Eu tratei aquilo como qualquer spike de engenharia: aprendi o que precisava, rec
 
 No dia 28, mudei o plano. O executável original já resolvia física, renderização, áudio, menus e toda a lógica do jogo. A opção mais curta era preservar esse núcleo e corrigir apenas as fronteiras quebradas pelo tempo. Foi daí que nasceu o launcher.
 
+Essa estratégia serve pra muitos jogos antigos de Windows. Se o executável x86 ainda roda e Wine ou Proton conseguem fornecer as APIs básicas, a tarefa muitas vezes se resume a refazer a ligação com o sistema atual, mantendo dentro do binário as decisões originais. Isso já basta pro objetivo de voltar a jogar num computador moderno.
+
+O custo esperado em tokens de LLM cai muito. Um decomp completo obriga o agente a ler, explicar, reconstruir e testar física, áudio, renderização, menus, formatos de arquivos e cada estado intermediário. O launcher reduziu o problema a uma lista fechada: Registry, checagem de CD e Windows, modo de vídeo, controles, resolução, projeção, HUD e distância de desenho. Quando a meta é jogar, esse tipo de *rewiring* entrega muito mais por token.
+
 ## Um launcher fino em volta do original
 
 O [projeto está no GitHub](https://github.com/akitaonrails/rea-colin-mcrae). A arquitetura ficou bem menor: um launcher em Rust prepara um ambiente privado, valida a versão do jogo, configura o runtime e aplica correções em memória no `Rally.exe`. Uma DLL pequena intercepta os pontos em que resolução e HUD precisam de contexto extra.
