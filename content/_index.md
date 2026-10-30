@@ -212,9 +212,17 @@ title: AkitaOnRails Blog
 <section class="aor-index-month" aria-labelledby="aor-list-2026-10">
   <div class="aor-index-month__header">
     <h2 id="aor-list-2026-10">Outubro 2026</h2>
-    <span>20 artigos</span>
+    <span>21 artigos</span>
   </div>
   <div class="aor-index-list-group">
+<article class="aor-index-row" title="Usei REA para adaptar o Colin McRae Rally de 1998: um launcher roda a versão original em 4K, widescreen e 60 fps, sem exigir a novela de configuração antiga.">
+  <time datetime="2026-10-29">Oct 29</time>
+  <div class="aor-index-row__body">
+    <h3><a class="aor-index-list__main-link" href="/2026/10/29/brincando-de-pc-ports-com-colin-mcrae-1/">Brincando de PC Ports com Colin McRae 1</a></h3>
+    <p>Usei REA para adaptar o Colin McRae Rally de 1998: um launcher roda a versão original em 4K, widescreen e 60 fps, sem exigir a novela de configuração antiga.</p>
+  </div>
+  <span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/tags/games/">#games</a><a class="aor-tag-link" href="/tags/retrocomputacao/">#retrocomputacao</a><a class="aor-tag-link" href="/tags/linux/">#linux</a><a class="aor-tag-link" href="/tags/engenharia-de-software/">#engenharia-de-software</a></span>
+</article>
 <article class="aor-index-row" title="Muse Wonder fecha o v4 com 97,0 e ótima vigilância, mas quotas e travamentos fizeram 126 minutos úteis virarem quase 15 dias. Os líderes continuam muito próximos.">
   <time datetime="2026-10-28">Oct 28</time>
   <div class="aor-index-row__body">
