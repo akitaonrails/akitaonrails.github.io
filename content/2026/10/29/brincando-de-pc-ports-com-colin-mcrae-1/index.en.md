@@ -38,7 +38,7 @@ Yes, I built a modern launcher for the first Colin McRae Rally on PC.
 
 Most people remember Colin McRae Rally from the PlayStation. It was a low-resolution 4:3 game built around the cadence of PAL and NTSC televisions. In 2026, you can still play it in an emulator and raise the internal resolution, but the result retains the console's visual and presentation limits.
 
-Codemasters also released a [native Windows version in 1998](https://www.pcgamingwiki.com/wiki/Colin_McRae_Rally). One correction matters here: this was never a "Windows XP version." The original targets were Windows 95 and 98, using a 32-bit x86 executable with Direct3D 5 and DirectX 6.
+Codemasters also released a [native Windows version in 1998](https://www.pcgamingwiki.com/wiki/Colin_McRae_Rally). It was built for Windows 95 and 98, using a 32-bit x86 executable with Direct3D 5 and DirectX 6.
 
 The game is out of print today and treated as abandonware by the community. That label describes the preservation reality; it does not grant anyone a license to redistribute it. My launcher carries no Codemasters executable, stage, car, music, or other asset. You need your own installed copy from the CD or an old backup, updated to patch 1.5.
 
