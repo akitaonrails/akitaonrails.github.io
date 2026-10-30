@@ -25,7 +25,7 @@ Agora assista a isto:
 
 Esse é o **Colin McRae Rally original de 1998** rodando uma etapa inteira da Nova Zelândia. A captura está em 1080p, mas o jogo chega a 4K, em 16:9 real, mostrando mais cenário nas laterais. O HUD foi reposicionado nos cantos, a distância de desenho aumentou e aquele pop-in constante quase desapareceu.
 
-A imagem é apresentada a 60 fps nessa configuração. A física original continua no tick fixo de 25 Hz. O jogo já separava atualização e renderização e interpolava os frames; bastou fazer a velha cadeia de DirectDraw/Direct3D 5 chegar corretamente ao display moderno. Eu não acelerei a física nem inventei movimento intermediário.
+A imagem é apresentada a 60 fps nessa configuração, com a física original no tick fixo de 25 Hz. O jogo já separava atualização e renderização e interpolava os frames. A velha cadeia de DirectDraw/Direct3D 5 só precisava chegar corretamente ao display moderno.
 
 E abaixo está o launcher que fiz pra isso:
 
@@ -128,7 +128,7 @@ Esta parte me surpreendeu. A simulação roda em 25 Hz e existe um modo escondid
 
 No modo normal, uma thread de timer atualiza a simulação e o loop principal renderiza tão rápido quanto o `Flip` permite. O código calcula um alpha pelo tempo desde o último tick e interpola carro, câmera e objetos. Em gamescope sem vsync, medi cerca de 190 frames apresentados por segundo em 1080p. Em 4K, o renderer por software ficou perto de 60 fps.
 
-Portanto, não existe um "patch de 60 fps" alterando a lógica. Num display real, o jogo apresenta no refresh do monitor, limitado pelo vsync da camada que o hospeda. A física continua a mesma de 1998.
+Os 60 fps vêm desse pipeline original de renderização interpolada. Num display real, o jogo apresenta no refresh do monitor, limitado pelo vsync da camada que o hospeda. A física continua a mesma de 1998.
 
 ## Como instalar
 
