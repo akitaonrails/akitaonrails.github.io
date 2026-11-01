@@ -215,11 +215,11 @@ title: AkitaOnRails Blog
     <span>21 articles</span>
   </div>
   <div class="aor-index-list-group">
-<article class="aor-index-row" title="I used REA to adapt 1998&#39;s Colin McRae Rally: a launcher runs the original version at 4K, widescreen, and 60 fps without repeating the old setup ordeal.">
+<article class="aor-index-row" title="I used REA to adapt 1998&#39;s Colin McRae Rally: the launcher runs at 4K and widescreen, while the Rust recomp is already playable, though its physics still needs work.">
   <time datetime="2026-10-29">Oct 29</time>
   <div class="aor-index-row__body">
     <h3><a class="aor-index-list__main-link" href="/en/2026/10/29/playing-with-pc-ports-colin-mcrae-rally-1/">Playing with PC Ports: Colin McRae Rally 1</a></h3>
-    <p>I used REA to adapt 1998&#39;s Colin McRae Rally: a launcher runs the original version at 4K, widescreen, and 60 fps without repeating the old setup ordeal.</p>
+    <p>I used REA to adapt 1998&#39;s Colin McRae Rally: the launcher runs at 4K and widescreen, while the Rust recomp is already playable, though its physics still needs work.</p>
   </div>
   <span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/en/tags/gaming/">#gaming</a><a class="aor-tag-link" href="/en/tags/retrocomputing/">#retrocomputing</a><a class="aor-tag-link" href="/en/tags/linux/">#linux</a><a class="aor-tag-link" href="/en/tags/software-engineering/">#software-engineering</a></span>
 </article>

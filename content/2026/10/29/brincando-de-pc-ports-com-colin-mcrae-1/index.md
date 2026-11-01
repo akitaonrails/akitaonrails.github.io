@@ -2,7 +2,7 @@
 title: "Brincando de PC Ports com Colin McRae 1"
 date: '2026-10-29T22:00:00-03:00'
 translationKey: brincando-de-pc-ports-com-colin-mcrae-1
-description: "Usei REA para adaptar o Colin McRae Rally de 1998: um launcher roda a versão original em 4K, widescreen e 60 fps, sem exigir a novela de configuração antiga."
+description: "Usei REA para adaptar o Colin McRae Rally de 1998: o launcher roda em 4K e widescreen, enquanto o recomp em Rust já está jogável, embora a física ainda precise de trabalho."
 tags:
 - games
 - retrocomputacao
@@ -133,6 +133,30 @@ Esta parte me surpreendeu. A simulação roda em 25 Hz e existe um modo escondid
 No modo normal, uma thread de timer atualiza a simulação e o loop principal renderiza tão rápido quanto o `Flip` permite. O código calcula um alpha pelo tempo desde o último tick e interpola carro, câmera e objetos. Em gamescope sem vsync, medi cerca de 190 frames apresentados por segundo em 1080p. Em 4K, o renderer por software ficou perto de 60 fps.
 
 Os 60 fps vêm desse pipeline original de renderização interpolada. Num display real, o jogo apresenta no refresh do monitor, limitado pelo vsync da camada que o hospeda. A física continua a mesma de 1998.
+
+## Atualização: voltei pro recomp
+
+Com a primeira versão jogável do launcher publicada, voltei ao [repositório do recomp](https://github.com/akitaonrails/rea-colin-mcrae-recomp), enquanto os dois continuaram evoluindo em paralelo. O primeiro novo commit entrou na madrugada do dia 30, poucas horas depois do vídeo do launcher. Eu já tinha aprendido quais partes do executável realmente importavam em runtime, e agora também tinha uma forma muito mais simples de abrir o original e comparar o comportamento.
+
+Na primeira madrugada de volta, fechamos os dois itens que restavam e o mapa de reconstrução chegou a **119 de 119 itens completos**, com mais de 2.900 testes automatizados. Esse número significa que cobrimos o escopo que estava mapeado. Fidelidade perfeita exige outra etapa: jogar, observar, comparar com o original e ajustar as diferenças que só aparecem quando todos os subsistemas rodam juntos.
+
+O estado atual já merece o rótulo de **mostly playable**. O front-end funciona com teclado e gamepad, dá pra escolher Championship, Rally, Time Trial e Rally School, passar pela tela de boas-vindas e Service Area, escolher carro e correr as 52 etapas dos oito países. O jogo carrega a pista e o carro escolhidos, toca as pace notes do Nicky Grist, anima rodas e suspensão, reproduz som de motor e superfícies, desenha HUD, processa checkpoints, splits e ranking, detecta a chegada e volta pros menus.
+
+Também reconstruímos a órbita de câmera antes da largada, a contagem 5-4-3-2-1-GO! com áudio, objetos móveis, luzes noturnas, faróis, colisão com cenário e dano visível. Os commits mais recentes corrigiram o eixo longitudinal usado pela física, o término prematuro no Split 7 e os parâmetros de setup usados pra derivar as tabelas de câmbio e as constantes de cada carro. Já parece e soa como o Colin McRae original.
+
+Ainda falta trabalho na sensação de dirigir. Nos meus testes desta build, o carro escorrega muito mais do que deveria e demora demais pra recuperar aderência. Esse tipo de diferença não aparece numa checklist de funções recuperadas. Ela aparece quando você entra numa curva, corrige o volante e percebe que o carro continua atravessado. Agora a prioridade é calibrar essas interações contra o original até o handling ficar convincente.
+
+Também não coloquei nenhuma melhoria gráfica do launcher no recomp. O renderer moderno usa `wgpu`, mas continua apresentando a estética original em **640x480**, com os assets, HUD e enquadramento antigos. Resolução alta, widescreen, draw distance maior, filtros modernos e outros confortos ficam pra depois. Primeiro quero acertar o jogo; embelezar uma física errada só produz um erro mais bonito.
+
+Este é o estado do recomp na noite de 31 de outubro:
+
+{{< html5video src="https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/10/31/colin-mcrae-rally-recomp/showcase-h264.mp4" poster="https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/10/31/colin-mcrae-rally-recomp/showcase-poster.jpg" >}}
+
+O vídeo mostra a tela de boas-vindas, largada, câmera, HUD, checkpoints e uma etapa dirigível, com áudio; a facilidade com que o carro entra e permanece numa derrapagem ainda denuncia a diferença de física. É um resultado muito além daquele harness aproximado de três dias atrás, porém continua sendo uma reconstrução em desenvolvimento.
+
+Agora já existe base suficiente pra convidar mais gente. O repositório não inclui executáveis nem assets da Codemasters; cada pessoa importa os dados da própria cópia europeia do jogo. Quem quiser contribuir pode testar outras etapas, carros, controles, distribuições e Windows, abrir [issues detalhadas](https://github.com/akitaonrails/rea-colin-mcrae-recomp/issues), comparar o handling com o original ou trabalhar diretamente nos subsistemas. O README tem as instruções de importação, compilação e execução.
+
+O launcher continua sendo a opção prática pra jogar hoje com melhorias modernas. O recomp voltou a ser interessante porque cruzou outra linha: já dá pra jogar, sentir onde ele diverge e substituir aproximações por evidência. Agora cada contribuição consegue atacar uma diferença visível em vez de trabalhar meses até aparecer o primeiro frame.
 
 ## Como instalar
 

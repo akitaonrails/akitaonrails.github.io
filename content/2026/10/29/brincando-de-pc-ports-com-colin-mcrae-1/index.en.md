@@ -3,7 +3,7 @@ title: "Playing with PC Ports: Colin McRae Rally 1"
 slug: playing-with-pc-ports-colin-mcrae-rally-1
 date: '2026-10-29T22:00:00-03:00'
 translationKey: brincando-de-pc-ports-com-colin-mcrae-1
-description: "I used REA to adapt 1998's Colin McRae Rally: a launcher runs the original version at 4K, widescreen, and 60 fps without repeating the old setup ordeal."
+description: "I used REA to adapt 1998's Colin McRae Rally: the launcher runs at 4K and widescreen, while the Rust recomp is already playable, though its physics still needs work."
 tags:
 - gaming
 - retrocomputing
@@ -134,6 +134,30 @@ This part surprised me. The simulation runs at 25 Hz, and a hidden 50 Hz mode ch
 In normal mode, a timer thread updates the simulation while the main loop renders as quickly as `Flip` permits. The code calculates an alpha from the time since the previous tick and interpolates the car, camera, and objects. Under gamescope without vsync, I measured about 190 presented frames per second at 1080p. At 4K, the software renderer stayed close to 60 fps.
 
 The 60 fps presentation comes from that original interpolated rendering pipeline. On a real display, the game presents at the monitor's refresh rate, limited by the vsync behavior of its host layer. The physics remains the same as it was in 1998.
+
+## Update: I Went Back to the Recomp
+
+With the first playable launcher version published, I went back to the [recomp repository](https://github.com/akitaonrails/rea-colin-mcrae-recomp) while both projects continued evolving in parallel. The first new commit landed early on the 30th, only a few hours after the launcher video. I had learned which parts of the executable really mattered at runtime, and I now had a much easier way to open the original and compare behavior.
+
+During the first night back, we closed the two remaining items and the reconstruction map reached **119 of 119 completed items**, backed by more than 2,900 automated tests. That number means we covered the mapped scope. Perfect fidelity takes another stage: play, observe, compare against the original, and tune the differences that only appear when every subsystem runs together.
+
+The current state deserves the label **mostly playable**. The frontend works with keyboard and gamepad, and you can choose Championship, Rally, Time Trial, or Rally School, go through the welcome screen and Service Area, select a car, and drive all 52 stages across eight countries. The game loads the selected stage and car, plays Nicky Grist's pace notes, animates wheels and suspension, produces engine and surface audio, draws the HUD, processes checkpoints, splits, and rankings, detects the finish, and returns to the menus.
+
+We also reconstructed the pre-start camera orbit, the 5-4-3-2-1-GO! countdown with audio, moving objects, night lighting, headlights, scenery collision, and visible damage. The latest commits corrected the longitudinal axis used by physics, the premature finish at Split 7, and the setup parameters used to derive each car's gearbox tables and constants. It already looks and sounds like the original Colin McRae.
+
+The driving feel still needs work. In my tests of this build, the car slips far more than it should and takes too long to regain grip. That kind of difference does not show up on a checklist of recovered functions. It appears when you enter a corner, correct the steering, and watch the car remain sideways. The priority now is to calibrate those interactions against the original until the handling feels convincing.
+
+I also brought none of the launcher's graphical improvements into the recomp. The modern renderer uses `wgpu`, but it still presents the original aesthetic at **640x480**, with the old assets, HUD, and framing. Higher resolution, widescreen, longer draw distance, modern filtering, and other comforts come later. I want to get the game right first; polishing incorrect physics only produces a prettier mistake.
+
+This is the state of the recomp on the night of October 31:
+
+{{< html5video src="https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/10/31/colin-mcrae-rally-recomp/showcase-h264.mp4" poster="https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/10/31/colin-mcrae-rally-recomp/showcase-poster.jpg" >}}
+
+The video shows the welcome screen, start sequence, camera, HUD, checkpoints, and a drivable stage with audio; the ease with which the car enters and remains in a slide still exposes the physics difference. This is far beyond the approximate harness from three days earlier, while remaining a reconstruction under active development.
+
+There is enough foundation now to invite more people in. The repository includes no Codemasters executables or assets; every contributor imports data from their own European copy of the game. Anyone interested can test other stages, cars, controllers, distributions, and Windows, open [detailed issues](https://github.com/akitaonrails/rea-colin-mcrae-recomp/issues), compare handling with the original, or work directly on the subsystems. The README covers importing, building, and running it.
+
+The launcher remains the practical option for playing today with modern improvements. The recomp became interesting again because it crossed another line: you can play it, feel where it diverges, and replace approximations with evidence. Each contribution can now attack a visible difference instead of working for months before the first frame appears.
 
 ## How to Install It
 
