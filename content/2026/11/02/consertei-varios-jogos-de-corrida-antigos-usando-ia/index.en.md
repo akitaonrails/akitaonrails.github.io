@@ -202,7 +202,7 @@ chmod +x CMR4Launcher-*-x86_64.AppImage
 
 ### Colin McRae Rally (1998)
 
-[Release v0.7.0](https://github.com/akitaonrails/rea-colin-mcrae/releases/tag/v0.7.0) · needs the CD version, updated to EU v1.5.
+[Release v0.8.0](https://github.com/akitaonrails/rea-colin-mcrae/releases/tag/v0.8.0) · needs the CD version, updated to EU v1.5.
 
 {{< html5video src="https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/11/01/colin-mcrae-rally/showcase-h264.mp4" poster="https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/11/01/colin-mcrae-rally/showcase-poster.jpg" >}}
 
@@ -240,12 +240,13 @@ chmod +x CMR4Launcher-*-x86_64.AppImage
 
 ### Colin McRae: DiRT (2007)
 
-[Release v0.1.1](https://github.com/akitaonrails/rea-dirt/releases/tag/v0.1.1) · needs the official 1.22 version.
+[Release v0.2.0](https://github.com/akitaonrails/rea-dirt/releases/tag/v0.2.0) · needs the official 1.22 version.
 
 {{< html5video src="https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/11/02/dirt-launcher/showcase-h264.mp4" poster="https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/11/02/dirt-launcher/showcase-poster.jpg" >}}
 
-- its own fix for the crash on processors with many threads, without resetting settings;
-- Large Address Aware flag on the copy's executable, so it can use more than 2 GB of memory;
+- its own fix for the crash on processors with many threads, applied automatically (up to 12 threads) without resetting settings;
+- Large Address Aware flag on the copy's executable, so it can use more than 2 GB of memory, checked byte by byte;
+- a private copy that hard-links the roughly 9 GB of static data when it's on the same drive as the game, so it doesn't duplicate space;
 - Ultra preset at 4K, the game's native 16:9 and native XInput.
 
 ![Colin McRae DiRT launcher detecting version 1.22](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/11/02/jogos-corrida-ia/dirt-launcher.png)
@@ -326,7 +327,7 @@ Several were done in parallel: CMR04 and DiRT in the same afternoon, OutRun and 
 
 ## The recipe became an SDK
 
-After the first batch, the code repeated across the five newest launchers (Colin McRae 3, 04, OutRun, Sega Rally and Screamer) moved out of each repository into a shared base, [rea-launcher-sdk](https://github.com/akitaonrails/rea-launcher-sdk). It holds the settings window, the game's private copy, executable identification by SHA-256, binary patches, the window-close hook, AppImage packaging with Wine, and CI. Colin McRae 1 and DiRT haven't migrated yet.
+After the first batch, the code repeated across all seven launchers moved out of each repository into a shared base, [rea-launcher-sdk](https://github.com/akitaonrails/rea-launcher-sdk). It holds the settings window, the game's private copy, executable identification by SHA-256, binary patches, the window-close hook, AppImage packaging with Wine, and CI.
 
 With that, every launcher got at once:
 

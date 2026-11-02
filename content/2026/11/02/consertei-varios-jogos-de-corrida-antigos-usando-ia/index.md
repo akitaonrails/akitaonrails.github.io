@@ -202,7 +202,7 @@ chmod +x CMR4Launcher-*-x86_64.AppImage
 
 ### Colin McRae Rally (1998)
 
-[Release v0.7.0](https://github.com/akitaonrails/rea-colin-mcrae/releases/tag/v0.7.0) · precisa da versão em CD, atualizada pra EU v1.5.
+[Release v0.8.0](https://github.com/akitaonrails/rea-colin-mcrae/releases/tag/v0.8.0) · precisa da versão em CD, atualizada pra EU v1.5.
 
 {{< html5video src="https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/11/01/colin-mcrae-rally/showcase-h264.mp4" poster="https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/11/01/colin-mcrae-rally/showcase-poster.jpg" >}}
 
@@ -240,12 +240,13 @@ chmod +x CMR4Launcher-*-x86_64.AppImage
 
 ### Colin McRae: DiRT (2007)
 
-[Release v0.1.1](https://github.com/akitaonrails/rea-dirt/releases/tag/v0.1.1) · precisa da versão oficial 1.22.
+[Release v0.2.0](https://github.com/akitaonrails/rea-dirt/releases/tag/v0.2.0) · precisa da versão oficial 1.22.
 
 {{< html5video src="https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/11/02/dirt-launcher/showcase-h264.mp4" poster="https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/11/02/dirt-launcher/showcase-poster.jpg" >}}
 
-- correção própria do crash em processador com muitas threads, sem resetar as configurações;
-- flag Large Address Aware no executável da cópia, pra ele usar mais de 2 GB de memória;
+- correção própria do crash em processador com muitas threads, aplicada sozinha (até 12 threads) e sem resetar as configurações;
+- flag Large Address Aware no executável da cópia, pra ele usar mais de 2 GB de memória, conferida byte a byte;
+- cópia privada com hard links pros cerca de 9 GB de dados estáticos, quando está no mesmo disco do jogo, sem duplicar espaço;
 - preset Ultra em 4K, 16:9 nativo do jogo e XInput nativo.
 
 ![Launcher do Colin McRae DiRT detectando a versão 1.22](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/11/02/jogos-corrida-ia/dirt-launcher.png)
@@ -326,7 +327,7 @@ Vários foram feitos em paralelo: o CMR04 e o DiRT na mesma tarde, o OutRun e o 
 
 ## A receita virou SDK
 
-Depois da primeira leva, o código que se repetia nos cinco launchers mais novos (Colin McRae 3, 04, OutRun, Sega Rally e Screamer) saiu de cada repositório e foi pra uma base comum, o [rea-launcher-sdk](https://github.com/akitaonrails/rea-launcher-sdk). Ali ficam a janela de configurações, a cópia privada do jogo, a identificação do executável por SHA-256, os patches binários, o hook de fechar a janela, o empacotamento em AppImage com Wine e a CI. O Colin McRae 1 e o DiRT ainda não migraram.
+Depois da primeira leva, o código que se repetia nos sete launchers saiu de cada repositório e foi pra uma base comum, o [rea-launcher-sdk](https://github.com/akitaonrails/rea-launcher-sdk). Ali ficam a janela de configurações, a cópia privada do jogo, a identificação do executável por SHA-256, os patches binários, o hook de fechar a janela, o empacotamento em AppImage com Wine e a CI.
 
 Com isso, cada launcher ganhou de uma vez:
 
