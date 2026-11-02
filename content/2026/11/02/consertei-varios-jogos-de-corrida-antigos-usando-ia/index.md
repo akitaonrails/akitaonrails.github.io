@@ -50,7 +50,6 @@ O **Sega Rally Revo** de 2007 tinha outra lista:
 - um microstutter permanente em toda corrida, causado por dois bugs de tempo empilhados que o patch 4.060 introduziu;
 - uma chave de registro obrigatória, sem a qual o jogo não abre;
 - um configurador em .NET que não funciona direito no Wine;
-- o menu principal crashando se dois arquivos de save não existirem;
 - vídeos de logo que faziam a inicialização parecer travada;
 - tela cheia exclusiva falhando em monitor de 240 Hz, e tela preta em PC com duas GPUs, a integrada e a dedicada.
 
@@ -108,13 +107,15 @@ E teve detalhe de todo tipo:
 
 ### Sega Rally Revo: corrigindo o stutter em Rust
 
-O stutter do Sega Rally tem uma correção da comunidade, mas ela é um patch binário pronto. Em vez de distribuir os bytes de terceiros, o launcher reimplementa a mesma correção em Rust, com um montador de x86 minúsculo que escreve três "code caves" no executável da cópia privada:
+O stutter do Sega Rally tem uma correção da comunidade, de um desenvolvedor chamado stuken, mas o script dele não tem licença. Por isso a correção do launcher é uma implementação **clean room**: foi escrita a partir de uma especificação do que ela precisa fazer e do código do próprio jogo, lido pelo REA, por um agente que nunca viu o patch original. O stuken fica com o crédito por achar os bugs e mostrar que dava pra corrigir.
+
+O resultado são "code caves" escritas no executável da cópia privada:
 
 - uma trava que impede o jogo de criar a thread de ritmo duplicada a partir da segunda etapa;
-- um relógio de corrida que lê o relógio mestre em vez do valor truncado em milissegundos;
-- uma atualização desse relógio a cada frame.
+- uma rotina única que todas as escritas no relógio de corrida passam a chamar, que lê o relógio mestre e nunca deixa o tempo andar pra trás;
+- uma atualização desse relógio a cada quadro, na thread principal.
 
-Cada ponto de hook é conferido byte a byte antes de escrever, e o resultado reproduz exatamente o hash do executável corrigido de referência. O mesmo esquema aplica o patch de aspecto pra 21:9 e 32:9, achando as tabelas por padrão de bytes.
+Medido no jogo, o relógio de corrida fica a menos de 1 ms do tempo real em 99,9% dos quadros, a 60 fps, a 120 fps e sem limite. Cada ponto de hook é conferido byte a byte antes de escrever, e o executável resultante é conferido pelo hash. O mesmo esquema aplica o patch de aspecto pra 21:9 e 32:9, achando as tabelas por padrão de bytes.
 
 O resto foi lidar com o Wine: o jogo roda sempre num desktop virtual isolado, o launcher fixa a GPU NVIDIA em máquina com duas placas, e configura o driver de controle do Wine pra o XInput nativo do jogo funcionar.
 
@@ -214,7 +215,7 @@ chmod +x CMR4Launcher-*-x86_64.AppImage
 
 ### Colin McRae Rally 3 (2003)
 
-[Release v0.1.2](https://github.com/akitaonrails/rea-colin-mcrae-3/releases/tag/v0.1.2) · precisa da versão oficial 1.1.
+[Release v0.2.1](https://github.com/akitaonrails/rea-colin-mcrae-3/releases/tag/v0.2.1) · precisa da versão oficial 1.1.
 
 {{< html5video src="https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/11/02/rea-colin-mcrae-3-demo-v012.mp4" poster="https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/11/02/rea-colin-mcrae-3-demo-v012-poster.jpg" >}}
 
@@ -228,11 +229,11 @@ chmod +x CMR4Launcher-*-x86_64.AppImage
 
 ### Colin McRae Rally 04 (2004)
 
-[Release v0.2.0](https://github.com/akitaonrails/rea-colin-mcrae-4/releases/tag/v0.2.0) · precisa da sua instalação do jogo, com o `cmr4.exe` original.
+[Release v0.3.1](https://github.com/akitaonrails/rea-colin-mcrae-4/releases/tag/v0.3.1) · precisa da sua instalação do jogo, com o `cmr4.exe` original.
 
 {{< html5video src="https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/11/02/colin-mcrae-rally-04/showcase-h264.mp4" poster="https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/11/02/colin-mcrae-rally-04/showcase-poster.jpg" >}}
 
-- 16:9 com a geometria correta, via dgVoodoo;
+- 16:9 com a geometria correta, via dgVoodoo, ligado sozinho quando a resolução escolhida é 16:9;
 - escolha automática do monitor em paisagem e fechar a janela funcionando;
 - gatilhos analógicos como pedal combinado e perfil do controle pré-configurado;
 - limite de fps e vsync opcionais.
@@ -251,7 +252,7 @@ chmod +x CMR4Launcher-*-x86_64.AppImage
 
 ### OutRun 2006: Coast 2 Coast (2006)
 
-[Release v0.1.0](https://github.com/akitaonrails/rea-outrun-2006/releases/tag/v0.1.0) · precisa da sua cópia de PC do jogo.
+[Release v0.2.1](https://github.com/akitaonrails/rea-outrun-2006/releases/tag/v0.2.1) · precisa da sua cópia de PC do jogo.
 
 {{< html5video src="https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/11/02/outrun-2006/showcase-h264.mp4" poster="https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/11/02/outrun-2006/showcase-poster.jpg" >}}
 
@@ -265,11 +266,11 @@ chmod +x CMR4Launcher-*-x86_64.AppImage
 
 ### Sega Rally Revo (2007)
 
-[Release v0.1.1](https://github.com/akitaonrails/rea-sega-rally-revo/releases/tag/v0.1.1) · precisa da versão 4.0.6.0 de PC.
+[Release v0.2.0](https://github.com/akitaonrails/rea-sega-rally-revo/releases/tag/v0.2.0) · precisa da versão 4.0.6.0 de PC.
 
 {{< html5video src="https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/11/02/sega-rally-revo-launcher.mp4" poster="https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/11/02/sega-rally-revo-launcher-poster.jpg" >}}
 
-- correção do stutter reimplementada e conferida byte a byte;
+- correção do stutter própria, feita em clean room;
 - 4K, qualidade Ultra e ultrawide 21:9 e 32:9;
 - limite de 60 ou 120 fps, controle XInput nativo e teste de rumble.
 
@@ -277,7 +278,7 @@ chmod +x CMR4Launcher-*-x86_64.AppImage
 
 ### Trilogia Screamer (1995 a 1997)
 
-[Release v0.6.0](https://github.com/akitaonrails/rea-screamer-trilogy/releases/tag/v0.6.0) · precisa do Screamer e do Screamer 2 da GOG ou dos CDs originais; o Screamer Rally só existe em CD.
+[Release v0.7.0](https://github.com/akitaonrails/rea-screamer-trilogy/releases/tag/v0.7.0) · precisa do Screamer e do Screamer 2 da GOG ou dos CDs originais; o Screamer Rally só existe em CD.
 
 {{< html5video src="https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/11/02/rea-screamer-trilogy/showcase-h264.mp4" poster="https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/11/02/rea-screamer-trilogy/showcase-poster.jpg" >}}
 
@@ -295,7 +296,7 @@ Fazer o mesmo launcher funcionar nos dois sistemas exige algumas escolhas:
 - **o gráfico muda por sistema.** No Windows o jogo usa o Direct3D nativo; no Linux, o DXVK traduz pra Vulkan, e o Colin McRae 1 usa o wined3d do próprio Wine;
 - **o Screamer é nativo nos dois**, porque o dosbox-staging compila pra Linux e Windows.
 
-Teve pegadinha nisso também. O linker do GNU binutils 2.47 descartava parte da tabela de importação do executável de Windows, e o launcher crashava logo ao abrir. A correção foi trocar pro linker do LLVM no OutRun e no Sega Rally, e a CI do Sega Rally passou a conferir as importações.
+Teve pegadinha nisso também. O linker do GNU binutils 2.47 descartava parte da tabela de importação do executável de Windows, e o launcher crashava logo ao abrir. A correção foi trocar pro linker do LLVM, o lld. Hoje todos os launchers do SDK (abaixo) linkam com ele, e a CI confere as importações de cada executável.
 
 > Todos os launchers foram testados de ponta a ponta no Linux (com Wine 11, ou com o dosbox no caso do Screamer), numa RTX 5090 e com controle estilo Xbox. **No Windows nativo eles ainda não foram testados.** Se você tem algum desses jogos e um PC com Windows, teste e abra uma issue no repositório, com o SHA-256 do executável e o log. Contribuições são muito bem-vindas.
 
@@ -322,6 +323,19 @@ Vários foram feitos em paralelo: o CMR04 e o DiRT na mesma tarde, o OutRun e o 
 - **Código que parece morto pode estar vivo.** No Screamer, uma área de "preenchimento com zeros" usada pra um patch era código alcançável, e o jogo fechava no meio da corrida.
 - **Diagnóstico errado custa caro.** No CMR3, um controle virtual criado por outro script na minha máquina me fez caçar um bug de mapeamento que não existia.
 - **O Wine tem as suas manias.** O EGL do Wine 11 caía pra renderização por software na NVIDIA, a tela cheia escolhia o monitor em retrato, e um crash do player de vídeo travava o jogo atrás de um depurador invisível.
+
+## A receita virou SDK
+
+Depois da primeira leva, o código que se repetia nos cinco launchers mais novos (Colin McRae 3, 04, OutRun, Sega Rally e Screamer) saiu de cada repositório e foi pra uma base comum, o [rea-launcher-sdk](https://github.com/akitaonrails/rea-launcher-sdk). Ali ficam a janela de configurações, a cópia privada do jogo, a identificação do executável por SHA-256, os patches binários, o hook de fechar a janela, o empacotamento em AppImage com Wine e a CI. O Colin McRae 1 e o DiRT ainda não migraram.
+
+Com isso, cada launcher ganhou de uma vez:
+
+- **uma instância por vez**: abrir o launcher de novo traz a janela aberta pra frente, e com o jogo rodando ele avisa em vez de abrir uma segunda cópia;
+- **uma tabela única de opções**, de onde saem a janela, o `--help` e o `launcher.cfg`, com um teste que falha se a janela e a linha de comando divergirem;
+- **lld e checagem de importações** na CI de todos;
+- **formulários de issue padronizados**, pra bug e pra versão desconhecida do jogo, pedindo o SHA-256 do executável e o log.
+
+O SDK foi escrito pra ser usado por um agente de código. O README tem o passo a passo: instalar o REA, apontar o agente pro SDK e pra pasta do seu jogo, e pedir um launcher novo. O agente pesquisa os fixes da comunidade, faz a engenharia reversa e escreve o código, e você revisa nos pontos de checagem que o playbook define.
 
 ## Ferramentas velhas, velocidade nova
 
