@@ -209,6 +209,23 @@ title: AkitaOnRails Blog
 
 </div>
 {{% index-list %}}
+<section class="aor-index-month" aria-labelledby="aor-list-2026-11">
+  <div class="aor-index-month__header">
+    <h2 id="aor-list-2026-11">Novembro 2026</h2>
+    <span>1 artigo</span>
+  </div>
+  <div class="aor-index-list-group">
+<article class="aor-index-row" title="O launcher do Colin McRae 1 deu tão certo que repeti a receita: em pouco mais de um dia saíram mais seis launchers, pro Colin McRae Rally 3, 04 e DiRT, OutRun 2006, Sega Rally Revo e a trilogia Screamer. Explico por que esses jogos abandonados não rodam mais sem gambiarra, como cada launcher religa gráfico, controle e tela usando Wine, DXVK, dgVoodoo e um dosbox modificado, e o que dá pra melhorar depois: 4K, widescreen Hor+, fps, filtragem anisotrópica, escaladores, correção de cor no CMR3 e texturas HD geradas por IA no CMR1. Tem os links, vídeos, instruções pra Linux e Windows, e quanto tempo cada um levou.">
+  <time datetime="2026-11-02">Nov 02</time>
+  <div class="aor-index-row__body">
+    <h3><a class="aor-index-list__main-link" href="/2026/11/02/consertei-varios-jogos-de-corrida-antigos-usando-ia/">Consertei vários jogos de corrida antigos usando IA: Colin McRae 1, 3, 4, Sega Rally Revo e Outrun 2006, até a trilogia Screamer</a></h3>
+    <p>O launcher do Colin McRae 1 deu tão certo que repeti a receita: em pouco mais de um dia saíram mais seis launchers, pro Colin McRae Rally 3, 04 e DiRT, OutRun 2006, Sega Rally Revo e a trilogia Screamer. Explico por que esses jogos abandonados não rodam mais sem gambiarra, como cada launcher religa gráfico, controle e tela usando Wine, DXVK, dgVoodoo e um dosbox modificado, e o que dá pra melhorar depois: 4K, widescreen Hor+, fps, filtragem anisotrópica, escaladores, correção de cor no CMR3 e texturas HD geradas por IA no CMR1. Tem os links, vídeos, instruções pra Linux e Windows, e quanto tempo cada um levou.</p>
+  </div>
+  <span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/tags/games/">#games</a><a class="aor-tag-link" href="/tags/retrocomputacao/">#retrocomputacao</a><a class="aor-tag-link" href="/tags/emulacao/">#emulacao</a><a class="aor-tag-link" href="/tags/linux/">#linux</a></span>
+</article>
+  </div>
+</section>
+
 <section class="aor-index-month" aria-labelledby="aor-list-2026-10">
   <div class="aor-index-month__header">
     <h2 id="aor-list-2026-10">Outubro 2026</h2>
