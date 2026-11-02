@@ -12,6 +12,8 @@ tags:
 - linux
 ---
 
+> **TL;DR:** I built launchers that install and run Colin McRae Rally 1, 3, 04 and DiRT, OutRun 2006, Sega Rally Revo and the Screamer trilogy on a modern PC, with 4K, widescreen and Xbox controller support, on Linux and Windows. If you just want to download and play, jump straight to the [games list](#the-games), with release links, videos and instructions.
+
 In the [previous article](/en/2026/10/29/playing-with-pc-ports-colin-mcrae-rally-1/) I showed my two projects built around 1998's Colin McRae Rally: the **recomp** in Rust, which tries to rebuild the game from scratch, and the **launcher**, a thin layer around the original executable that makes it run at 4K, widescreen and 60 fps on a modern PC.
 
 I liked the launcher's result a lot, and the most interesting part was realizing how easy the recipe was to repeat. So I decided to bring more abandonware back into the modern era. Between the night of October 31 and the early hours of November 2, six more launchers came out, covering eight racing games:
