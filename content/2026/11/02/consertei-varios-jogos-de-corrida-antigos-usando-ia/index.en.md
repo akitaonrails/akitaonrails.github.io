@@ -4,7 +4,7 @@ slug: "i-fixed-several-old-racing-games-using-ai"
 date: '2026-11-02T09:00:00-03:00'
 draft: false
 translationKey: consertei-varios-jogos-de-corrida-antigos-usando-ia
-description: "The Colin McRae 1 launcher worked so well that I repeated the recipe: in a little over a day I shipped six more launchers, for Colin McRae Rally 3, 04 and DiRT, OutRun 2006, Sega Rally Revo and the Screamer trilogy. I explain why these abandoned games no longer run without hacks, how each launcher rewires graphics, controls and display using Wine, DXVK, dgVoodoo and a modified dosbox, and what can be improved afterwards: 4K, Hor+ widescreen, fps, anisotropic filtering, scalers, color correction in CMR3 and AI-generated HD textures in CMR1. Includes the links, videos, Linux and Windows instructions, and how long each one took."
+description: "The Colin McRae 1 launcher worked so well that I repeated the recipe: in a little over a day I shipped six more launchers, for Colin McRae Rally 3, 04 and DiRT, OutRun 2006, Sega Rally Revo and the Screamer trilogy, and then a seventh, for Colin McRae Rally 2005, the first one built straight from a shared SDK. I explain why these abandoned games no longer run without hacks, how each launcher rewires graphics, controls and display using Wine, DXVK, dgVoodoo and a modified dosbox, and what can be improved afterwards: 4K, Hor+ widescreen, fps, anisotropic filtering, scalers, color correction in CMR3 and AI-generated HD textures in CMR1. Includes the links, videos, Linux and Windows instructions, and how long each one took."
 tags:
 - gaming
 - retrocomputing
@@ -12,7 +12,7 @@ tags:
 - linux
 ---
 
-> **TL;DR:** I built launchers that install and run Colin McRae Rally 1, 3, 04 and DiRT, OutRun 2006, Sega Rally Revo and the Screamer trilogy on a modern PC, with 4K, widescreen and Xbox controller support, on Linux and Windows. If you just want to download and play, jump straight to the [games list](#the-games), with release links, videos and instructions.
+> **TL;DR:** I built launchers that install and run Colin McRae Rally 1, 3, 04, 2005 and DiRT, OutRun 2006, Sega Rally Revo and the Screamer trilogy on a modern PC, with 4K, widescreen and Xbox controller support, on Linux and Windows. If you just want to download and play, jump straight to the [games list](#the-games), with release links, videos and instructions.
 
 In the [previous article](/en/2026/10/29/playing-with-pc-ports-colin-mcrae-rally-1/) I showed my two projects built around 1998's Colin McRae Rally: the **recomp** in Rust, which tries to rebuild the game from scratch, and the **launcher**, a thin layer around the original executable that makes it run at 4K, widescreen and 60 fps on a modern PC.
 
@@ -26,6 +26,8 @@ I liked the launcher's result a lot, and the most interesting part was realizing
 - the **Screamer** trilogy (1995 to 1997), from the MS-DOS era
 
 All of them replaced the manual installs I used to maintain in my [distrobox-gaming](/en/2026/04/19/my-favorite-retro-racing-games-on-distrobox/) project. For now the goal was just one: an easy, reproducible install, with the game running well.
+
+On the night of November 2, after the first version of this article, one more came out: **Colin McRae Rally 2005** (2004), the first launcher created straight from the SDK I explain at the end.
 
 ## The abandonware problem
 
@@ -238,6 +240,20 @@ chmod +x CMR4Launcher-*-x86_64.AppImage
 - analog triggers as a combined pedal and a preconfigured controller profile;
 - optional fps cap and vsync.
 
+### Colin McRae Rally 2005 (2004)
+
+[Release v0.1.0](https://github.com/akitaonrails/rea-colin-mcrae-2005/releases/tag/v0.1.0) · needs GOG version 1.1, installed or just the three installer files; the DVD versions use StarForce copy protection and aren't supported.
+
+{{< html5video src="https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/11/02/colin-mcrae-rally-2005/showcase-h264.mp4" poster="https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/11/02/colin-mcrae-rally-2005/showcase-poster.jpg" >}}
+
+- fixes the crash right at startup under Wine: the game finds its files through registry keys its installer writes, and the launcher writes those keys on every start;
+- installs straight from GOG's installer files, which hang under Wine, unpacking everything with innoextract;
+- 16:9 widescreen with the game's own widescreen view, at the largest size that fits the screen;
+- DXVK on Linux: a stage that ran at about 20 fps went past 1000 fps, with configurable fps cap and vsync;
+- saves in their own folder and a working window close.
+
+![Colin McRae Rally 2005 launcher](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/11/02/jogos-corrida-ia/cmr2005-launcher-play.jpg)
+
 ### Colin McRae: DiRT (2007)
 
 [Release v0.2.0](https://github.com/akitaonrails/rea-dirt/releases/tag/v0.2.0) · needs the official 1.22 version.
@@ -314,8 +330,9 @@ From the git history, adding up the work sessions, and counting the work before 
 | Colin McRae: DiRT | 3 | ~4.5 h |
 | OutRun 2006 | 17 | ~4.5 h |
 | Sega Rally Revo | 6 | ~4.5 h |
+| Colin McRae Rally 2005 (later, on the SDK) | 15 | ~4.5 h |
 
-Several were done in parallel: CMR04 and DiRT in the same afternoon, OutRun and Sega Rally in the same night. Added up, that's about 38 hours of work sessions on the six new launchers, but since they ran in parallel, it all fit in a little over one calendar day.
+Several were done in parallel: CMR04 and DiRT in the same afternoon, OutRun and Sega Rally in the same night. Added up, that's about 38 hours of work sessions on the six new launchers, but since they ran in parallel, it all fit in a little over one calendar day. Colin McRae Rally 2005 came later, in a single afternoon and evening.
 
 ### What went wrong along the way
 
@@ -337,6 +354,8 @@ With that, every launcher got at once:
 - **standard issue forms**, for bugs and for unknown game versions, asking for the executable's SHA-256 and the log.
 
 The SDK was written to be driven by a coding agent. The README has the step by step: install REA, point the agent at the SDK and at your game folder, and ask for a new launcher. The agent researches the community fixes, does the reverse engineering and writes the code, and you review at the checkpoints the playbook defines.
+
+Colin McRae Rally 2005 was the first one born that way, from the SDK's `new-launcher` script: from the first research to the release took about four and a half hours.
 
 ## Old tools, new speed
 
