@@ -218,9 +218,17 @@ title: AkitaOnRails Blog
 <section class="aor-index-month" aria-labelledby="aor-list-2026-11">
   <div class="aor-index-month__header">
     <h2 id="aor-list-2026-11">November 2026</h2>
-    <span>2 articles</span>
+    <span>3 articles</span>
   </div>
   <div class="aor-index-list-group">
+<article class="aor-index-row" title="I analyzed TikTok version 47.7.1 with REA: the app doesn&#39;t spy on the rest of your phone, but it builds a persistent, encrypted fingerprint of the device, re-sends your identifiers, measures how you touch and hold the phone, and logs everything you do inside it. I explain why DNS blocking or modifying the app doesn&#39;t solve it, why the only way out today is isolating TikTok on a secondary phone or a separate profile, how the app gives the US and Europe a treatment Brazil doesn&#39;t get, and where it clashes with Brazil&#39;s LGPD and the Lei Felca, with the ANPD having already fined ByteDance.">
+  <time datetime="2026-11-04">Nov 04</time>
+  <div class="aor-index-row__body">
+    <h3><a class="aor-index-list__main-link" href="/en/2026/11/04/tiktok-technically-does-not-comply-with-brazilian-law-lgpd-felca/">TikTok Technically Doesn&#39;t Comply with Brazilian Law (LGPD/Felca). Here&#39;s Why</a></h3>
+    <p>I analyzed TikTok version 47.7.1 with REA: the app doesn&#39;t spy on the rest of your phone, but it builds a persistent, encrypted fingerprint of the device, re-sends your identifiers, measures how you touch and hold the phone, and logs everything you do inside it. I explain why DNS blocking or modifying the app doesn&#39;t solve it, why the only way out today is isolating TikTok on a secondary phone or a separate profile, how the app gives the US and Europe a treatment Brazil doesn&#39;t get, and where it clashes with Brazil&#39;s LGPD and the Lei Felca, with the ANPD having already fined ByteDance.</p>
+  </div>
+  <span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/en/tags/security/">#security</a><a class="aor-tag-link" href="/en/tags/law-and-regulation/">#law-and-regulation</a></span>
+</article>
 <article class="aor-index-row" title="After building seven launchers with AI agents to modernize old racing games, I extracted what they had in common into a framework, rea-launcher-sdk. I explain why a framework is extracted from several projects and never designed up front, how migrating the launchers found bugs in the SDK and in the launchers themselves, the built-in techniques (a test before every fix, snapshots, headless tests, CI, agents that run the game and debug crash dumps), the test and coverage numbers for each project, the two new launchers built straight from the SDK, and the step by step for anyone to build a launcher for their favorite game with the agent of their choice.">
   <time datetime="2026-11-02">Nov 02</time>
   <div class="aor-index-row__body">

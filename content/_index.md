@@ -218,9 +218,17 @@ title: AkitaOnRails Blog
 <section class="aor-index-month" aria-labelledby="aor-list-2026-11">
   <div class="aor-index-month__header">
     <h2 id="aor-list-2026-11">Novembro 2026</h2>
-    <span>2 artigos</span>
+    <span>3 artigos</span>
   </div>
   <div class="aor-index-list-group">
+<article class="aor-index-row" title="Analisei a versão 47.7.1 do TikTok com o REA: o app não espiona o resto do celular, mas monta um fingerprint persistente e criptografado do aparelho, reenvia seus identificadores, mede como você toca e segura o celular e registra tudo o que você faz dentro dele. Explico por que bloquear no DNS ou modificar o app não resolve, por que a única saída hoje é isolar o TikTok num celular secundário ou perfil separado, como o app dá aos EUA e à Europa um tratamento que o Brasil não recebe, e onde ele bate de frente com a LGPD e a Lei Felca, com a ANPD já tendo multado a ByteDance.">
+  <time datetime="2026-11-04">Nov 04</time>
+  <div class="aor-index-row__body">
+    <h3><a class="aor-index-list__main-link" href="/2026/11/04/tiktok-tecnicamente-nao-se-enquadra-nas-leis-brasileiras-lgpd-felca/">TikTok tecnicamente não se enquadra nas leis Brasileiras (LGPD/Felca). Entenda</a></h3>
+    <p>Analisei a versão 47.7.1 do TikTok com o REA: o app não espiona o resto do celular, mas monta um fingerprint persistente e criptografado do aparelho, reenvia seus identificadores, mede como você toca e segura o celular e registra tudo o que você faz dentro dele. Explico por que bloquear no DNS ou modificar o app não resolve, por que a única saída hoje é isolar o TikTok num celular secundário ou perfil separado, como o app dá aos EUA e à Europa um tratamento que o Brasil não recebe, e onde ele bate de frente com a LGPD e a Lei Felca, com a ANPD já tendo multado a ByteDance.</p>
+  </div>
+  <span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/tags/seguranca/">#seguranca</a><a class="aor-tag-link" href="/tags/leis-e-regulacao/">#leis-e-regulacao</a></span>
+</article>
 <article class="aor-index-row" title="Depois de fazer sete launchers pra modernizar jogos de corrida antigos com agentes de IA, extraí o que eles tinham em comum num framework, o rea-launcher-sdk. Conto por que framework se extrai de vários projetos e nunca se desenha antes, como a migração dos launchers achou bugs no SDK e neles mesmos, as técnicas embutidas (teste antes da correção, snapshots, testes headless, CI, agentes que rodam o jogo e depuram crash dumps), os números de teste e cobertura de cada projeto, os dois launchers novos feitos direto do SDK, e o passo a passo pra qualquer um criar o launcher do seu jogo favorito com o agente que preferir.">
   <time datetime="2026-11-02">Nov 02</time>
   <div class="aor-index-row__body">
