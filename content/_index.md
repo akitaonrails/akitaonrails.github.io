@@ -218,9 +218,17 @@ title: AkitaOnRails Blog
 <section class="aor-index-month" aria-labelledby="aor-list-2026-11">
   <div class="aor-index-month__header">
     <h2 id="aor-list-2026-11">Novembro 2026</h2>
-    <span>3 artigos</span>
+    <span>4 artigos</span>
   </div>
   <div class="aor-index-list-group">
+<article class="aor-index-row" title="Favoritar vídeos aleatórios não apaga seu perfil. Fingerprint, telemetria e recomendações ligam aparelhos, hábitos e conteúdo; achar que você enganou o feed aumenta o risco de cair em desinformação.">
+  <time datetime="2026-11-04">Nov 04</time>
+  <div class="aor-index-row__body">
+    <h3><a class="aor-index-list__main-link" href="/2026/11/04/fingerprinting-voce-nao-consegue-enganar-o-algoritmo-como-pensa/">Fingerprinting: você não consegue enganar o &#39;algoritmo&#39; como pensa</a></h3>
+    <p>Favoritar vídeos aleatórios não apaga seu perfil. Fingerprint, telemetria e recomendações ligam aparelhos, hábitos e conteúdo; achar que você enganou o feed aumenta o risco de cair em desinformação.</p>
+  </div>
+  <span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/tags/seguranca/">#seguranca</a><a class="aor-tag-link" href="/tags/machine-learning/">#machine-learning</a></span>
+</article>
 <article class="aor-index-row" title="Analisei a versão 47.7.1 do TikTok com o REA: o app não espiona o resto do celular, mas monta um fingerprint persistente e criptografado do aparelho, reenvia seus identificadores, mede como você toca e segura o celular e registra tudo o que você faz dentro dele. Explico por que bloquear no DNS ou modificar o app não resolve, por que a única saída hoje é isolar o TikTok num celular secundário ou perfil separado, como o app dá aos EUA e à Europa um tratamento que o Brasil não recebe, e onde ele bate de frente com a LGPD e a Lei Felca, com a ANPD já tendo multado a ByteDance.">
   <time datetime="2026-11-04">Nov 04</time>
   <div class="aor-index-row__body">

@@ -218,9 +218,17 @@ title: AkitaOnRails Blog
 <section class="aor-index-month" aria-labelledby="aor-list-2026-11">
   <div class="aor-index-month__header">
     <h2 id="aor-list-2026-11">November 2026</h2>
-    <span>3 articles</span>
+    <span>4 articles</span>
   </div>
   <div class="aor-index-list-group">
+<article class="aor-index-row" title="Favoriting random videos doesn&#39;t erase your profile. Fingerprinting, telemetry, and recommendations link devices, habits, and content; thinking you fooled the feed makes you more vulnerable to misinformation.">
+  <time datetime="2026-11-04">Nov 04</time>
+  <div class="aor-index-row__body">
+    <h3><a class="aor-index-list__main-link" href="/en/2026/11/04/fingerprinting-you-cant-fool-the-algorithm-the-way-you-think/">Fingerprinting: You Can&#39;t Fool the &#39;Algorithm&#39; the Way You Think</a></h3>
+    <p>Favoriting random videos doesn&#39;t erase your profile. Fingerprinting, telemetry, and recommendations link devices, habits, and content; thinking you fooled the feed makes you more vulnerable to misinformation.</p>
+  </div>
+  <span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/en/tags/security/">#security</a><a class="aor-tag-link" href="/en/tags/machine-learning/">#machine-learning</a></span>
+</article>
 <article class="aor-index-row" title="I analyzed TikTok version 47.7.1 with REA: the app doesn&#39;t spy on the rest of your phone, but it builds a persistent, encrypted fingerprint of the device, re-sends your identifiers, measures how you touch and hold the phone, and logs everything you do inside it. I explain why DNS blocking or modifying the app doesn&#39;t solve it, why the only way out today is isolating TikTok on a secondary phone or a separate profile, how the app gives the US and Europe a treatment Brazil doesn&#39;t get, and where it clashes with Brazil&#39;s LGPD and the Lei Felca, with the ANPD having already fined ByteDance.">
   <time datetime="2026-11-04">Nov 04</time>
   <div class="aor-index-row__body">
