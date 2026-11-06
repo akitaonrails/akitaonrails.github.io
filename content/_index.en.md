@@ -218,9 +218,17 @@ title: AkitaOnRails Blog
 <section class="aor-index-month" aria-labelledby="aor-list-2026-11">
   <div class="aor-index-month__header">
     <h2 id="aor-list-2026-11">November 2026</h2>
-    <span>4 articles</span>
+    <span>5 articles</span>
   </div>
   <div class="aor-index-list-group">
+<article class="aor-index-row" title="Step-by-step guide to adding SQLCipher encryption, a TPM2-sealed key via Polkit, a Bubblewrap browser sandbox, and verified backups to a local financial app.">
+  <time datetime="2026-11-06">Nov 06</time>
+  <div class="aor-index-row__body">
+    <h3><a class="aor-index-list__main-link" href="/en/2026/11/06/adding-proper-security-to-your-vibecoded-linux-gui-apps/">Adding proper security to your vibecoded Linux GUI apps</a></h3>
+    <p>Step-by-step guide to adding SQLCipher encryption, a TPM2-sealed key via Polkit, a Bubblewrap browser sandbox, and verified backups to a local financial app.</p>
+  </div>
+  <span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/en/tags/security/">#security</a><a class="aor-tag-link" href="/en/tags/linux/">#linux</a><a class="aor-tag-link" href="/en/tags/rust/">#rust</a><a class="aor-tag-link" href="/en/tags/artificial-intelligence/">#artificial-intelligence</a></span>
+</article>
 <article class="aor-index-row" title="Favoriting random videos doesn&#39;t erase your profile. Fingerprinting, telemetry, and recommendations link devices, habits, and content; thinking you fooled the feed makes you more vulnerable to misinformation.">
   <time datetime="2026-11-04">Nov 04</time>
   <div class="aor-index-row__body">

@@ -218,9 +218,17 @@ title: AkitaOnRails Blog
 <section class="aor-index-month" aria-labelledby="aor-list-2026-11">
   <div class="aor-index-month__header">
     <h2 id="aor-list-2026-11">Novembro 2026</h2>
-    <span>4 artigos</span>
+    <span>5 artigos</span>
   </div>
   <div class="aor-index-list-group">
+<article class="aor-index-row" title="Passo a passo de como adicionei criptografia SQLCipher, chave selada no TPM2 via Polkit, navegador em sandbox com Bubblewrap e backups verificados a um app financeiro local.">
+  <time datetime="2026-11-06">Nov 06</time>
+  <div class="aor-index-row__body">
+    <h3><a class="aor-index-list__main-link" href="/2026/11/06/adicionando-seguranca-de-verdade-nos-seus-apps-gui-linux-vibecoded/">Adicionando segurança de verdade nos seus apps GUI de Linux vibecoded</a></h3>
+    <p>Passo a passo de como adicionei criptografia SQLCipher, chave selada no TPM2 via Polkit, navegador em sandbox com Bubblewrap e backups verificados a um app financeiro local.</p>
+  </div>
+  <span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/tags/seguranca/">#seguranca</a><a class="aor-tag-link" href="/tags/linux/">#linux</a><a class="aor-tag-link" href="/tags/rust/">#rust</a><a class="aor-tag-link" href="/tags/inteligencia-artificial/">#inteligencia-artificial</a></span>
+</article>
 <article class="aor-index-row" title="Favoritar vídeos aleatórios não apaga seu perfil. Fingerprint, telemetria e recomendações ligam aparelhos, hábitos e conteúdo; achar que você enganou o feed aumenta o risco de cair em desinformação.">
   <time datetime="2026-11-04">Nov 04</time>
   <div class="aor-index-row__body">
