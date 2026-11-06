@@ -12,7 +12,7 @@ tags:
 draft: false
 ---
 
-Over the past few weeks we have been seeing a flood of vulnerabilities exposed left and right with the help of artificial intelligence. I already talked about this in my article on [formal proofs and AI cybersecurity](/en/2026/10/24/why-dont-we-use-formal-proofs-everywhere-ai-cybersecurity/), when entire projects started falling under automated audits.
+Over the past few weeks we have been seeing a flood of vulnerabilities exposed left and right with the help of artificial intelligence. I already talked about this in my article on [why we don't write definitive formal proofs to get bug-free code](/en/2026/10/24/why-dont-we-write-definitive-formal-proofs-of-bug-free-code/), when entire projects started falling under automated audits.
 
 I think this is a great thing. The vast majority of those flaws came from risks that have been known for decades, sitting in production only because developers assumed nobody would bother poking around that corner of the codebase.
 

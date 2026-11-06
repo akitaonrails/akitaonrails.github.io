@@ -12,7 +12,7 @@ tags:
 draft: false
 ---
 
-Nas últimas semanas temos visto uma enxurrada de vulnerabilidades sendo expostas a torto e a direito com a ajuda de inteligência artificial. Eu já comentei sobre isso no artigo de [provas formais e segurança cibernética com IA](/2026/10/24/por-que-nao-fazemos-provas-formais-em-tudo-seguranca-cibernetica-com-ia/), quando projetos inteiros começaram a cair sob auditorias automatizadas.
+Nas últimas semanas temos visto uma enxurrada de vulnerabilidades sendo expostas a torto e a direito com a ajuda de inteligência artificial. Eu já comentei sobre isso no artigo sobre [por que não fazemos provas formais definitivas pra ter código sem bug](/2026/10/24/por-que-nao-fazemos-provas-formais-definitivas-de-codigo-sem-bug/), quando projetos inteiros começaram a cair sob auditorias automatizadas.
 
 Eu acho excelente que isso esteja acontecendo. A maioria esmagadora dessas falhas vinha de riscos conhecidos há décadas, que continuavam em produção porque os desenvolvedores assumiam que ninguém perderia tempo vasculhando aquele canto do código.
 
