@@ -249,9 +249,52 @@ fn drop_privileges_permanently(target_uid: u32, target_gid: u32) -> Result<()> {
 
 Repare nos detalhes no final dessa função:
 
-* `PR_SET_DUMPABLE = 0` e `RLIMIT_CORE = 0` proíbem o kernel de gerar arquivos de *core dump* no disco (que conteriam a chave do banco em memória) e impedem que outros processos do mesmo usuário anexem um `gdb` ou `ptrace` para inspecionar a RAM. Como o kernel Linux reseta o atributo `dumpable` para `1` após um `execve` em binários normais, o `session-backend` reaplica `PR_SET_DUMPABLE = 0` logo na primeira linha do `main` (enquanto `RLIMIT_CORE = 0` e `PR_SET_NO_NEW_PRIVS` já vêm herdados do launcher).
+* `PR_SET_DUMPABLE = 0` e `RLIMIT_CORE = 0` proíbem o kernel de gerar arquivos de *core dump* no disco (que conteriam a chave do banco em memória) e impedem que outros processos do mesmo usuário anexem um `gdb` ou `ptrace` para inspecionar a RAM. Como o kernel Linux reseta o atributo `dumpable` para `1` após um `execve` em binários normais, tanto o `session-backend` quanto os binários auxiliares do navegador e do parser reaplicam `PR_SET_DUMPABLE = 0` logo na primeira linha do `main` (enquanto `RLIMIT_CORE = 0` e `PR_SET_NO_NEW_PRIVS` já vêm herdados do launcher).
 * Passar segredos por `--key=...` ou variáveis de ambiente expõe o valor em `/proc/<pid>/cmdline` e `/proc/<pid>/environ`. Passando via um *pipe* anônimo no `FD 3` que é lido uma única vez e fechado imediatamente no boot do `session-backend`, o segredo jamais aparece no `/proc`.
 * A interface gráfica em QML conversa com o `session-backend` apenas por mensagens JSON delimitadas por linha (NDJSON com limite de 64 KiB). A UI nunca recebe a chave criptográfica e nem toca no arquivo SQLite diretamente.
+
+### Blindando a chave na memória RAM (`mlock`, `MADV_DONTDUMP`) e auto-lock por inatividade
+
+Mesmo depois que o `session-backend` lê os 32 bytes do `FD 3` e fecha o descritor, a chave precisa viver na memória RAM enquanto o cofre estiver aberto. Isso levanta dois riscos clássicos que muita gente esquece: e se o kernel do Linux resolver paginar aquela região de memória para uma partição de *swap* não criptografada no SSD (ou imagem de hibernação)? E se eu destravar o aplicativo de manhã, minimizar a janela e esquecer o cofre aberto pelo resto do dia?
+
+Para resolver o primeiro problema, o tipo `DatabaseKey` guarda os 32 bytes dentro de um `Box<[u8; 32]>` na heap e trava a página física na RAM com `mlock`:
+
+```rust
+pub struct DatabaseKey(Box<[u8; KEY_BYTES]>);
+
+impl DatabaseKey {
+    pub fn from_bytes(mut bytes: [u8; KEY_BYTES]) -> Self {
+        let mut boxed = Box::new(bytes);
+        bytes.zeroize();
+        lock_key_page(&mut boxed[..]);
+        Self(boxed)
+    }
+}
+
+impl Drop for DatabaseKey {
+    fn drop(&mut self) {
+        let ptr = self.0[..].as_mut_ptr().cast::<core::ffi::c_void>();
+        self.0.zeroize();
+        let _ = unsafe { rustix::mm::munlock(ptr, KEY_BYTES) };
+    }
+}
+
+fn lock_key_page(buffer: &mut [u8]) {
+    let ptr = buffer.as_mut_ptr().cast::<core::ffi::c_void>();
+    let len = buffer.len();
+    unsafe {
+        let _ = rustix::mm::mlock(ptr, len);
+        #[cfg(target_os = "linux")]
+        let _ = rustix::mm::madvise(ptr, len, rustix::mm::Advice::LinuxDontDump);
+    }
+}
+```
+
+Um detalhe sutil de Rust aqui: por que usar `Box<[u8; 32]>` em vez de um array inline `[u8; 32]` dentro da struct? Porque a syscall `mlock(2)` trava um intervalo de endereços virtuais específicos, e qualquer *move* de um array na stack mudaria o endereço dos bytes, deixando o endereço antigo travado à toa e o novo desprotegido.
+
+Com `Box`, o endereço na heap permanece estável do nascimento até o `Drop`, onde limpamos os bytes com `zeroize()` antes de chamar `munlock`. De quebra, `MADV_DONTDUMP` marca aquela página específica para jamais entrar em um dump de memória.
+
+Já para não deixar o cofre aberto indefinidamente quando esqueço a janela aberta em outro workspace, o loop principal do `session-backend` roda com um timer de inatividade (`IDLE_LOCK_TIMEOUT` de 15 minutos). Se passarem 15 minutos sem nenhuma requisição da UI e sem nenhuma coleta bancária em andamento, o backend fecha a conexão do SQLCipher, destrói a `DatabaseKey` (disparando o `zeroize` + `munlock`), avisa a UI que a sessão expirou (`idle_locked`) e encerra o próprio processo. Para voltar a usar o app, sou obrigado a passar novamente pelo prompt do Polkit e pelo TPM.
 
 ## Passo 3: colocando o navegador e o parser de PDFs em uma prisão (sandbox)
 
@@ -335,6 +378,40 @@ Olha que elegante o efeito dessas cinco linhas de `nftables`:
 3. IPs privados (RFC 1918), loopback, link-local e endpoints de metadados (`169.254.169.254`) são rejeitados na hora, anulando ataques de *DNS rebinding*.
 4. Como o Chromium roda dentro do `bwrap` com um namespace de usuário mapeado adequadamente, **nós mantemos o sandbox interno do próprio Chromium ligado** (sem `--no-sandbox`), e o CDP escuta em uma porta efêmera (`--remote-debugging-port=0`) acessível apenas dentro do namespace isolado.
 
+### Ponte de área de transferência unidirecional e de uso único (`--paste-once --sensitive`)
+
+Isolar o navegador em um compositor Wayland próprio (`cage`) com um diretório `XDG_RUNTIME_DIR` separado cria um problema prático imediato: como eu colo uma senha aleatória de 30 caracteres vinda do meu gerenciador de senhas do desktop para dentro do navegador isolado?
+
+Se você compartilhar o socket Wayland principal só para fazer o Ctrl+V funcionar, você joga fora todo o isolamento gráfico e permite que uma página maliciosa leia ou sobrescreva a sua área de transferência do host.
+
+A solução foi construir uma ponte de clipboard **estritamente unidirecional** (do host para o `cage`) usando `wl-paste` e `wl-copy`:
+
+```rust
+fn nested_clipboard_offer_command(wl_copy: &Path, runtime: &Path, nested_display: &str) -> Command {
+    let mut command = Command::new(wl_copy);
+    command
+        .args([
+            "--foreground",
+            "--paste-once",
+            "--trim-newline",
+            "--type",
+            "text/plain;charset=utf-8",
+            "--sensitive",
+        ])
+        .env_clear()
+        .env("PATH", "/usr/bin")
+        .env("XDG_RUNTIME_DIR", runtime)
+        .env("WAYLAND_DISPLAY", nested_display)
+        .stdout(Stdio::null())
+        .stderr(Stdio::inherit());
+    command
+}
+```
+
+Funciona assim: o processo supervisor fora do `bwrap` observa apenas texto puro copiado no host e o injeta no socket Wayland aninhado (`wayland-bank`) com as flags `--paste-once` e `--sensitive`.
+
+O navegador dentro do sandbox consegue receber um único Ctrl+V da senha que acabei de copiar no gerenciador de senhas; imediatamente após essa colagem, o `wl-copy` destrói a oferta dentro do sandbox e encerra. E como não existe ponte no sentido inverso, o navegador jamais consegue escrever nada de volta na área de transferência do meu desktop.
+
 ### O segundo estágio: fazendo parsing de PDFs e Excel sem rede
 
 Depois que eu faço o login no banco, clico em *"Take over"* e o worker baixa os extratos ou notas de corretagem para a pasta `/handoff`, o supervisor mata imediatamente todo o grupo de processos do navegador e da rede.
@@ -415,6 +492,8 @@ Quão seguro tudo isso deixa o meu aplicativo? Ele é **seguro o suficiente para
 No próprio documento de arquitetura do projeto (ADR 0001), eu deixei registrado explicitamente os riscos residuais que escolhi aceitar:
 
 * Eu mantenho o *Secure Boot* desabilitado na minha estação por conta do meu fluxo de boot e drivers no Linux; logo, o selo do TPM protege contra roubo de disco e processos desprivilegiados, enquanto ataques físicos ao bootloader antes do sistema subir ficam fora desse escopo.
+* O compositor Wayland aninhado (`cage`) isola o navegador em `wayland-bank`, mas o próprio `cage` ainda é um cliente do compositor principal da sessão (Hyprland/wlroots). Um processo malicioso rodando com o meu UID no host ainda poderia usar protocolos de captura de tela do compositor (`zwlr_screencopy_v1` / `ext_image_copy_capture_v1`, como o `grim`) enquanto a janela do banco está visível, ou ler a senha no clipboard do host antes de ela ser limpa após o Ctrl+V.
+* O `key-launcher` garante em tempo de execução (via `O_NOFOLLOW`) que os binários instalados em `/usr/lib/...` pertencem a `root:root`, impedindo que um processo do meu usuário troque o executável instalado. Porém, como eu desenvolvo o projeto na mesma máquina com o meu UID normal, um malware no meu usuário poderia tentar alterar o código-fonte ou scripts de build (`cargo`/`makepkg`) esperando a próxima vez que eu compilar e instalar um pacote atualizado com `pacman -U`, o que exige revisar `git status` e o diff antes de empacotar.
 * Apagar o banco antigo em texto puro em um SSD moderno com sistema de arquivos *Copy-on-Write* (como Btrfs) desvincula o arquivo do sistema operacional, mas o *wear leveling* da controladora flash física pode reter blocos antigos até serem sobrescritos.
 * Enquanto o cofre está aberto e desbloqueado na minha sessão, um malware que já tenha conseguido execução de código como `root` no meu kernel ativo pode fazer o que quiser.
 

@@ -249,9 +249,52 @@ fn drop_privileges_permanently(target_uid: u32, target_gid: u32) -> Result<()> {
 
 Notice the details at the bottom of that function:
 
-* `PR_SET_DUMPABLE = 0` and `RLIMIT_CORE = 0` forbid the kernel from writing core dumps to disk (which would spill the database key onto the filesystem) and block other processes under the same user UID from attaching `gdb` or `ptrace` to inspect the backend's RAM. Because the Linux kernel resets `dumpable` to `1` when `execve` runs a normal binary, `session-backend` re-applies `PR_SET_DUMPABLE = 0` on its very first line of `main` (while `RLIMIT_CORE = 0` and `PR_SET_NO_NEW_PRIVS` remain inherited from the launcher).
+* `PR_SET_DUMPABLE = 0` and `RLIMIT_CORE = 0` forbid the kernel from writing core dumps to disk (which would spill the database key onto the filesystem) and block other processes under the same user UID from attaching `gdb` or `ptrace` to inspect the backend's RAM. Because the Linux kernel resets `dumpable` to `1` when `execve` runs a normal binary, `session-backend` as well as the browser-session and parser helper binaries re-apply `PR_SET_DUMPABLE = 0` on the very first line of `main` (while `RLIMIT_CORE = 0` and `PR_SET_NO_NEW_PRIVS` remain inherited from the launcher).
 * Passing secrets via `--key=...` or environment variables exposes them in `/proc/<pid>/cmdline` and `/proc/<pid>/environ`. Passing the 32 bytes through an anonymous pipe on `FD 3` that is read once and closed immediately at startup ensures the secret never touches `/proc`.
 * The QML graphical shell talks to `session-backend` strictly over newline-delimited JSON (NDJSON capped at 64 KiB per line). The UI never receives the encryption key and never touches the SQLite file directly.
+
+### Hardening the key in RAM (`mlock`, `MADV_DONTDUMP`) and inactivity auto-lock
+
+Even after `session-backend` reads the 32 bytes from `FD 3` and closes the descriptor, the key has to live in RAM while the vault is unlocked. That brings up two classic risks people often overlook: what if the Linux kernel pages that memory region out to an unencrypted swap partition on the SSD (or a hibernation image)? And what if I unlock the app in the morning, minimize the window, and leave the vault sitting open for the rest of the day?
+
+To close the first gap, `DatabaseKey` stores the 32 bytes inside a heap-allocated `Box<[u8; 32]>` and pins that physical memory page in RAM with `mlock`:
+
+```rust
+pub struct DatabaseKey(Box<[u8; KEY_BYTES]>);
+
+impl DatabaseKey {
+    pub fn from_bytes(mut bytes: [u8; KEY_BYTES]) -> Self {
+        let mut boxed = Box::new(bytes);
+        bytes.zeroize();
+        lock_key_page(&mut boxed[..]);
+        Self(boxed)
+    }
+}
+
+impl Drop for DatabaseKey {
+    fn drop(&mut self) {
+        let ptr = self.0[..].as_mut_ptr().cast::<core::ffi::c_void>();
+        self.0.zeroize();
+        let _ = unsafe { rustix::mm::munlock(ptr, KEY_BYTES) };
+    }
+}
+
+fn lock_key_page(buffer: &mut [u8]) {
+    let ptr = buffer.as_mut_ptr().cast::<core::ffi::c_void>();
+    let len = buffer.len();
+    unsafe {
+        let _ = rustix::mm::mlock(ptr, len);
+        #[cfg(target_os = "linux")]
+        let _ = rustix::mm::madvise(ptr, len, rustix::mm::Advice::LinuxDontDump);
+    }
+}
+```
+
+Notice a subtle Rust detail here: why use `Box<[u8; 32]>` instead of an inline `[u8; 32]` array inside the struct? Because the `mlock(2)` syscall locks a specific virtual address range, and moving an inline stack array by value would shift the bytes to a new address, leaving the old address locked for nothing and the new one unlocked.
+
+Putting the array behind a `Box` keeps its heap address stable from creation until `Drop`, where we wipe the bytes with `zeroize()` before calling `munlock`. On top of that, `MADV_DONTDUMP` marks that page so it is excluded from any memory dump.
+
+To prevent the vault from staying open forever when left idle on a background workspace, the main loop of `session-backend` enforces an inactivity timer (`IDLE_LOCK_TIMEOUT` set to 15 minutes). If 15 minutes pass without a UI request and without an active bank handoff running, the backend closes the SQLCipher connection, drops `DatabaseKey` (triggering `zeroize` + `munlock`), notifies the UI that the session expired (`idle_locked`), and terminates its own process. Resuming requires going through a fresh Polkit prompt and TPM unseal.
 
 ## Step 3: putting the browser and PDF parser into a prison (sandbox)
 
@@ -335,6 +378,40 @@ Look at what those five `nftables` rules enforce:
 3. Private ranges (RFC 1918), loopback, link-local, and cloud metadata endpoints (`169.254.169.254`) are rejected outright, defeating DNS rebinding attacks.
 4. Because Chromium runs inside `bwrap` with properly mapped user namespaces, **we keep Chromium's own internal sandbox enabled** (no `--no-sandbox`), and CDP binds to an ephemeral port (`--remote-debugging-port=0`) reachable only inside the isolated namespace.
 
+### One-way, single-use clipboard bridge (`--paste-once --sensitive`)
+
+Isolating the browser inside its own nested Wayland compositor (`cage`) with a separate `XDG_RUNTIME_DIR` immediately raises a practical usability problem: how do I paste a 30-character random password from my desktop password manager into the isolated browser?
+
+Sharing the host Wayland socket just to make Ctrl+V work would defeat display isolation and let an untrusted page read or overwrite the host clipboard at will.
+
+Instead, the supervisor runs a **strictly one-way** clipboard bridge (from the host into `cage`) using `wl-paste` and `wl-copy`:
+
+```rust
+fn nested_clipboard_offer_command(wl_copy: &Path, runtime: &Path, nested_display: &str) -> Command {
+    let mut command = Command::new(wl_copy);
+    command
+        .args([
+            "--foreground",
+            "--paste-once",
+            "--trim-newline",
+            "--type",
+            "text/plain;charset=utf-8",
+            "--sensitive",
+        ])
+        .env_clear()
+        .env("PATH", "/usr/bin")
+        .env("XDG_RUNTIME_DIR", runtime)
+        .env("WAYLAND_DISPLAY", nested_display)
+        .stdout(Stdio::null())
+        .stderr(Stdio::inherit());
+    command
+}
+```
+
+Here is how it works: the supervisor outside `bwrap` watches plain text copied on the host and pipes it into the nested Wayland socket (`wayland-bank`) with `--paste-once` and `--sensitive`.
+
+The sandboxed browser can receive a single Ctrl+V of the password I just copied from my password manager; the instant it is pasted once, `wl-copy` destroys the clipboard offer inside the sandbox and exits. And because there is no reverse path, the untrusted browser can never write anything back to my host desktop clipboard.
+
 ### Stage two: parsing PDFs and Excel files with zero network access
 
 Once I finish logging into the bank, click *"Take over"*, and the worker downloads the statements or trade notes into `/handoff`, the supervisor immediately kills the entire browser and network process group.
@@ -415,6 +492,8 @@ How secure does all of this make my app? It makes it **secure enough for my thre
 In the project's own architecture decision record (ADR 0001), I explicitly documented the residual risks I chose to accept:
 
 * I keep *Secure Boot* disabled on my workstation because of my custom Linux boot and driver workflow; as a result, TPM sealing protects against disk theft and unprivileged user processes, while leaving physical evil-maid tampering of the unverified boot chain outside the protection boundary.
+* The nested Wayland compositor (`cage`) isolates the browser on `wayland-bank`, yet `cage` itself is still a client of the host session compositor (Hyprland/wlroots). A malicious process running under my UID on the host could still invoke compositor screencopy protocols (`zwlr_screencopy_v1` / `ext_image_copy_capture_v1`, such as `grim`) while the bank window is visible, or read a password from the host clipboard before it is cleared after pasting.
+* At runtime, `key-launcher` verifies (via `O_NOFOLLOW`) that the installed binaries under `/usr/lib/...` are owned by `root:root`, preventing a user-UID process from swapping out the installed executable. Because I develop the app on the same workstation under my normal UID, however, malware running as my user could attempt to tamper with the git working tree or build wrappers (`cargo`/`makepkg`) ahead of the next `pacman -U` upgrade, which requires reviewing `git status` and the diff before packaging.
 * Deleting the old plaintext database on a modern SSD with a Copy-on-Write filesystem (like Btrfs) unlinks the file from the OS namespace, whereas flash controller wear-leveling may retain old physical blocks until they are eventually overwritten.
 * While the vault is unlocked during an active session, malware that has already achieved root or kernel code execution on my live host can bypass userspace controls.
 
