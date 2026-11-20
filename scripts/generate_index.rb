@@ -28,6 +28,7 @@ ALLOWED_TAGS = {
 }.transform_values(&:freeze).freeze
 
 FEATURED_POSTS = [
+  ['2026-11-20', 'LLM Benchmark v5: Quanto Custa ser Competente o Suficiente?', '/2026/11/20/llm-benchmark-v5-quanto-custa-ser-competente-o-suficiente/'],
   ['2026-11-06', 'Adicionando segurança de verdade nos seus apps GUI de Linux vibecoded', '/2026/11/06/adicionando-seguranca-de-verdade-nos-seus-apps-gui-linux-vibecoded/'],
   ['2026-11-02', 'Criando um framework para IA com IA: REA Launcher SDK', '/2026/11/02/criando-um-framework-para-ia-com-ia-rea-launcher-sdk/'],
   ['2026-10-28', 'LLM Benchmark v4: Gemini 4 Argon, GPT Sol 6.1 Terra, Kimi K3.1 Pro, Claude Sonnet 5.5', '/2026/10/28/llm-benchmark-v4-gemini-4-argon-gpt-sol-6-1-terra-kimi-k3-1-pro-claude-sonnet-5-5/'],
@@ -64,6 +65,7 @@ FEATURED_POSTS = [
 ].freeze
 
 FEATURED_POSTS_EN = [
+  ['2026-11-20', 'LLM Benchmark v5: How Much Does It Cost to Be Competent Enough?', '/en/2026/11/20/llm-benchmark-v5-how-much-does-it-cost-to-be-competent-enough/'],
   ['2026-11-06', 'Adding proper security to your vibecoded Linux GUI apps', '/en/2026/11/06/adding-proper-security-to-your-vibecoded-linux-gui-apps/'],
   ['2026-11-02', 'Creating a Framework for AI with AI: REA Launcher SDK', '/en/2026/11/02/creating-a-framework-for-ai-with-ai-rea-launcher-sdk/'],
   ['2026-10-28', 'LLM Benchmark v4: Gemini 4 Argon, GPT-6.1 Sol and Terra, Kimi K3.1 Pro, Claude Sonnet 5.5', '/en/2026/10/28/llm-benchmark-v4-gemini-4-argon-gpt-6-1-sol-terra-kimi-k3-1-pro-claude-sonnet-5-5/'],
