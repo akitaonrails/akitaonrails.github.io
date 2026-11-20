@@ -67,6 +67,8 @@ The table below ranks all 16 passing models by actual official API-equivalent co
 * ⁶ **GLM-5.3**: $6.08 on Z.ai's official API; drops to **$1.58** on discounted OpenRouter providers.
 * ⁷ **Grok 4.7**: Phase 2 exited on a background-wait timeout after logging all 87 usage events ($9.51 Phase 1 + $4.68 recovered Phase 2).
 
+![Bar chart comparing actual cached API cost in LLM Benchmark v5, from $0.15 on GPT-6 Luna to $14.19 on Grok 4.7](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/11/20/llm-benchmark-v5/ranking-chart.png)
+
 ## The real math behind the bill: prompt caching and verbosity
 
 The first number that jumps off the page is the spread from top to bottom: a **95x price gap** ($0.15 vs. $14.19) to ship the exact same passing Rails app. Wall-clock time stretched nearly 12x, from 7.4 minutes on GPT-6.1 Terra to 87.4 minutes on Grok 4.7.

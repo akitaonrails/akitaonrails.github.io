@@ -67,6 +67,8 @@ A tabela abaixo ordena os 16 modelos aprovados pelo custo real equivalente em AP
 * ⁶ **GLM-5.3**: US$ 6,08 na API oficial da Z.ai; via provedores com desconto no OpenRouter cai para **US$ 1,58**.
 * ⁷ **Grok 4.7**: a Fase 2 encerrou por timeout de espera em background depois de registrar todos os 87 eventos de uso (US$ 9,51 da Fase 1 + US$ 4,68 recuperados da Fase 2).
 
+![Gráfico comparativo de custo real de API com cache no LLM Benchmark v5, de US$ 0,15 no GPT-6 Luna a US$ 14,19 no Grok 4.7](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/11/20/llm-benchmark-v5/ranking-chart.png)
+
 ## A conta real por trás dos números: prompt caching e verbosidade
 
 O primeiro número que salta aos olhos nessa tabela é a distância entre o primeiro e o último lugar: **95 vezes de diferença de preço** (US$ 0,15 contra US$ 14,19) para entregar a mesma aplicação Rails aprovada nos mesmos testes. Em tempo de relógio, a variação foi de quase 12 vezes (7,4 minutos no GPT-6.1 Terra contra 87,4 minutos no Grok 4.7).
