@@ -112,11 +112,13 @@ What `anyGeometry := fun _ _ _ => True` actually exposes is the opposite of a ke
 
 ## The real problem: compiled code still has to be understood
 
-Even with Nielsen's fraud argument collapsing at the kernel level, skeptics still have a serious point that no AI hype can wave away.
+Even with Nielsen's fraud argument collapsing at the kernel level, it helps to separate two distinct questions: **does this Lean proof establish that the Riemann Hypothesis is true beyond reasonable doubt?**
 
-Alpöge himself admitted in `remark.pdf` that he handed the world a complete formal argument before mastering a huge neighborhood of the mathematics Claude assembled. And his social-media antics, joking about "250,000 pages" while dumping 17.4 million lines littered with `mdlJunk` onto the community, only poisoned the well further.
+On the purely mechanical level, almost certainly yes. For the proved theorem to be false, one of only two extraordinary things would have to hold: either there is a subtle bug inside Mathlib's own definition of `RiemannHypothesis` (or its upstream dependencies such as `riemannZeta` and analytic continuation), or Lean's default kernel, Lean's paranoid kernel, `nanoda`, `con-leche`, `con-ron`, and `lean4lean` all share the same soundness flaw at once. The odds of either scenario are tiny, though never literally zero, because Mathlib's definition chain is still human-written code.
 
-In mathematics, a green checkmark from a proof assistant guarantees mechanical soundness, while the actual goal of science goes far beyond shipping a 61 GB binary that passes CI. That is why researchers like **Manvir Jaswal** immediately started writing reading guides ([The Riemann hypothesis for Dirichlet L-functions [after Levent Alpöge]](https://hexagonmath.org/pdf/2611.00799v1)) and figures like **Kevin Buzzard** and **Terence Tao** point out that the real work now is reverse-engineering this black box, pruning millions of lines of bloat, and distilling a clean proof that humans can actually read, grasp, and build on.
+On the scientific and mathematical level, however, the work is far from done. Alpöge himself admitted in `remark.pdf` that he handed the world a complete formal argument before mastering a huge neighborhood of the mathematics Claude assembled. And his social-media antics, joking about "250,000 pages" while dumping 17.4 million lines littered with `mdlJunk` onto the community, only poisoned the well further.
+
+On top of that, the Clay Mathematics Institute Millennium Prize rules explicitly require publication in a refereed mathematics journal and a two-year waiting period of worldwide community acceptance; a 61 GB `.tar.gz` archive does not clear that bar yet. That is why researchers like **Manvir Jaswal** immediately started writing reading guides ([The Riemann hypothesis for Dirichlet L-functions [after Levent Alpöge]](https://hexagonmath.org/pdf/2611.00799v1)) and figures like **Kevin Buzzard** and **Terence Tao** point out that the real work now is reverse-engineering this black box, pruning millions of lines of bloat, and distilling a clean proof that humans can actually read, grasp, and build on.
 
 ## Science is not a popularity contest
 
