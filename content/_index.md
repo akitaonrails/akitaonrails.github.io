@@ -230,9 +230,17 @@ title: AkitaOnRails Blog
 <section class="aor-index-month" aria-labelledby="aor-list-2026-11">
   <div class="aor-index-month__header">
     <h2 id="aor-list-2026-11">Novembro 2026</h2>
-    <span>6 artigos</span>
+    <span>7 artigos</span>
   </div>
   <div class="aor-index-list-group">
+<article class="aor-index-row" title="Levent Alpöge (Anthropic) anunciou uma prova da Hipótese de Riemann em 17 milhões de linhas de Lean feitas com Claude, fez piada com 250 mil páginas e gerou acusação de fraude por causa de anyGeometry := True. Explico o que é verdade nisso tudo.">
+  <time datetime="2026-11-25">Nov 25</time>
+  <div class="aor-index-row__body">
+    <h3><a class="aor-index-list__main-link" href="/2026/11/25/entendendo-a-suposta-prova-da-hipotese-de-riemann/">Entendendo a suposta prova da hipótese de Riemann</a></h3>
+    <p>Levent Alpöge (Anthropic) anunciou uma prova da Hipótese de Riemann em 17 milhões de linhas de Lean feitas com Claude, fez piada com 250 mil páginas e gerou acusação de fraude por causa de anyGeometry := True. Explico o que é verdade nisso tudo.</p>
+  </div>
+  <span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/tags/inteligencia-artificial/">#inteligencia-artificial</a><a class="aor-tag-link" href="/tags/ciencia-da-computacao/">#ciencia-da-computacao</a><a class="aor-tag-link" href="/tags/llms/">#llms</a></span>
+</article>
 <article class="aor-index-row" title="Testei 16 modelos comerciais Tier-A na mesma app Rails: todos passaram sem nenhum empurrão, mas o custo variou 95x (US$ 0,15 no GPT-6 Luna a US$ 14,19 no Grok 4.7) e o cache de prompt virou quem manda na conta.">
   <time datetime="2026-11-20">Nov 20</time>
   <div class="aor-index-row__body">

@@ -230,9 +230,17 @@ title: AkitaOnRails Blog
 <section class="aor-index-month" aria-labelledby="aor-list-2026-11">
   <div class="aor-index-month__header">
     <h2 id="aor-list-2026-11">November 2026</h2>
-    <span>6 articles</span>
+    <span>7 articles</span>
   </div>
   <div class="aor-index-list-group">
+<article class="aor-index-row" title="Anthropic&#39;s Levent Alpöge announced a 17-million-line Lean proof of the Riemann Hypothesis built with Claude, joked about 250,000 pages, and drew fraud claims over anyGeometry := True. Here is what holds up.">
+  <time datetime="2026-11-25">Nov 25</time>
+  <div class="aor-index-row__body">
+    <h3><a class="aor-index-list__main-link" href="/en/2026/11/25/understanding-the-alleged-proof-of-the-riemann-hypothesis/">Understanding the Alleged Proof of the Riemann Hypothesis</a></h3>
+    <p>Anthropic&#39;s Levent Alpöge announced a 17-million-line Lean proof of the Riemann Hypothesis built with Claude, joked about 250,000 pages, and drew fraud claims over anyGeometry := True. Here is what holds up.</p>
+  </div>
+  <span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/en/tags/artificial-intelligence/">#artificial-intelligence</a><a class="aor-tag-link" href="/en/tags/computer-science/">#computer-science</a><a class="aor-tag-link" href="/en/tags/llms/">#llms</a></span>
+</article>
 <article class="aor-index-row" title="I ran 16 Tier-A commercial models on the same greenfield Rails app: all passed with zero nudges, yet costs spanned 95x ($0.15 on GPT-6 Luna to $14.19 on Grok 4.7) with prompt caching driving the bill.">
   <time datetime="2026-11-20">Nov 20</time>
   <div class="aor-index-row__body">
