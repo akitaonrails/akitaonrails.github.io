@@ -17,7 +17,7 @@ title: AkitaOnRails Blog
 <article class="aor-featured-card" data-featured-item data-featured-index="0">
   <time datetime="2026-11-27">Nov 27, 2026</time>
   <h3><a href="/en/2026/11/27/a-new-challenger-to-qwen-3-8-27b-inkling-2-mini/">A New Challenger to Qwen 3.8 27B: Inkling 2 Mini</a></h3>
-  <p>I benchmarked Thinking Machines Lab&#39;s Inkling 2 Mini against Qwen3.8 Flash-Next on an RTX 5090 (Strata and Basalt) and an AMD Strix Halo: 100/100 on the hard canary, zero RAM offload, 2.1 s TTFT, and the real trade-offs of its looped architecture.</p>
+  <p>I benchmarked Inkling 2 Mini against Qwen3.8 Flash-Next on an RTX 5090 (Strata and Basalt) and an AMD Strix Halo, including 18 adversarial multi-language tasks from benchmark-v3: Qwen wins on depth (98.4 vs 94.3), while Inkling is a close second, 2.2x faster, and fits 100% in VRAM.</p>
   <span class="aor-post-tags aor-post-tags--featured-card"><a class="aor-tag-link" href="/en/tags/llm-benchmarks/">#llm-benchmarks</a><a class="aor-tag-link" href="/en/tags/local-models/">#local-models</a><a class="aor-tag-link" href="/en/tags/llms/">#llms</a><a class="aor-tag-link" href="/en/tags/hardware/">#hardware</a></span>
 </article>
 <article class="aor-featured-card" data-featured-item data-featured-index="1">
@@ -245,11 +245,11 @@ title: AkitaOnRails Blog
     <span>9 articles</span>
   </div>
   <div class="aor-index-list-group">
-<article class="aor-index-row" title="I benchmarked Thinking Machines Lab&#39;s Inkling 2 Mini against Qwen3.8 Flash-Next on an RTX 5090 (Strata and Basalt) and an AMD Strix Halo: 100/100 on the hard canary, zero RAM offload, 2.1 s TTFT, and the real trade-offs of its looped architecture.">
+<article class="aor-index-row" title="I benchmarked Inkling 2 Mini against Qwen3.8 Flash-Next on an RTX 5090 (Strata and Basalt) and an AMD Strix Halo, including 18 adversarial multi-language tasks from benchmark-v3: Qwen wins on depth (98.4 vs 94.3), while Inkling is a close second, 2.2x faster, and fits 100% in VRAM.">
   <time datetime="2026-11-27">Nov 27</time>
   <div class="aor-index-row__body">
     <h3><a class="aor-index-list__main-link" href="/en/2026/11/27/a-new-challenger-to-qwen-3-8-27b-inkling-2-mini/">A New Challenger to Qwen 3.8 27B: Inkling 2 Mini</a></h3>
-    <p>I benchmarked Thinking Machines Lab&#39;s Inkling 2 Mini against Qwen3.8 Flash-Next on an RTX 5090 (Strata and Basalt) and an AMD Strix Halo: 100/100 on the hard canary, zero RAM offload, 2.1 s TTFT, and the real trade-offs of its looped architecture.</p>
+    <p>I benchmarked Inkling 2 Mini against Qwen3.8 Flash-Next on an RTX 5090 (Strata and Basalt) and an AMD Strix Halo, including 18 adversarial multi-language tasks from benchmark-v3: Qwen wins on depth (98.4 vs 94.3), while Inkling is a close second, 2.2x faster, and fits 100% in VRAM.</p>
   </div>
   <span class="aor-post-tags aor-post-tags--index-list"><a class="aor-tag-link" href="/en/tags/llm-benchmarks/">#llm-benchmarks</a><a class="aor-tag-link" href="/en/tags/local-models/">#local-models</a><a class="aor-tag-link" href="/en/tags/llms/">#llms</a><a class="aor-tag-link" href="/en/tags/hardware/">#hardware</a></span>
 </article>

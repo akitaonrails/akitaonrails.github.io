@@ -3,7 +3,7 @@ title: "Novo competidor do Qwen 3.8 27bi: Inkling 2 Mini"
 date: '2026-11-27T13:00:00-03:00'
 slug: novo-competidor-do-qwen-3-8-27bi-inkling-2-mini
 translationKey: novo-competidor-do-qwen-3-8-27bi-inkling-2-mini
-description: "Testei o Inkling 2 Mini da Thinking Machines Lab contra o Qwen3.8 Flash-Next na RTX 5090 (Strata e Basalt) e no Strix Halo: 100/100 no hard canary, zero offload de RAM, 2,1 s de TTFT e os trade-offs reais da arquitetura em loop."
+description: "Testei o Inkling 2 Mini contra o Qwen3.8 Flash-Next na RTX 5090 (Strata e Basalt) e no Strix Halo, incluindo 18 tarefas adversariais multi-linguagem do benchmark-v3: Qwen vence em profundidade (98,4 vs 94,3), enquanto o Inkling chega perto, roda 2,2x mais rápido e cabe inteiro na VRAM."
 tags:
 - benchmarks-de-llm
 - modelos-locais
@@ -69,6 +69,8 @@ Os números abaixo vêm do *speed canary* (prompts frios de 4k e 32k tokens + co
 | Strata `0.1.50` | Qwen3.8 Flash-Next (`IQ3_S`) | 160 a 210 | 6.200 | 7,0 s | ~42 GB | ~4,0 GiB |
 | Strata `0.1.50` | Qwen3.8 Flash-Next (`UD-Q4_K_XL`) | 44 a 52 | 2.300 | 19,0 s | ~75+ GB | OOM no quality |
 
+![Painel ao vivo do Basalt servindo o Inkling 2 Mini na RTX 5090: 100% dos especialistas na VRAM (0% na RAM), média de 274,5 tok/s em decode (picos acima de 306 a 318 tok/s) e prefill chegando a 17.407 tok/s](https://new-uploads-akitaonrails.s3.us-east-2.amazonaws.com/2026/11/27/inkling-2-mini/basalt-inkling-2-mini-toks.png)
+
 ### Velocidade no AMD Strix Halo (Strata HIP)
 
 | Modelo / Versão | Geração (tok/s) | Prefill 32k (tok/s) | TTFT 32k | VRAM livre mín. | Quality Canary |
@@ -91,24 +93,69 @@ No *quality canary* (3 turnos, 9 testes escondidos), todo mundo tirou 100 (o Ink
 
 *\* Na rodada 2 do IQ3_S, todos os 36 testes escondidos passaram. Os 4 pontos descontados foram um alarme falso do detector de vazamento do sandbox quando o modelo rodou `ps aux` (bug já corrigido no harness).*
 
-## Os quatro insights que realmente importam
+## O teste que realmente separou os dois: Benchmark v3 (18 tarefas multi-linguagem)
 
-Olhando essas tabelas com calma, saem quatro lições bem mais interessantes do que um simples "modelo A ganhou do modelo B":
+Como tanto o Inkling 2 Mini quanto o Qwen3.8 Flash-Next saturaram o *hard canary* em **100 / 100 / 100**, eu precisava de uma régua bem mais cruel pra descobrir onde cada modelo realmente começa a rachar. Subi o nível rodando o **`benchmark-v3`** (do meu repositório [llm-coding-benchmark](https://github.com/akitaonrails/llm-coding-benchmark)) dentro do mesmo sandbox `bubblewrap` sem rede, com toolchains de **Python, Ruby, Go e Rust** montados em modo somente leitura, limite de **15 minutos (900 s) por tarefa** e ambos os modelos servidos pelo **Basalt** na RTX 5090: **Inkling 2 Mini (`NVFP4-MX8`)** contra **Qwen3.8 Flash-Next (`IQ3_S`)**.
 
-1. **O engine faz tanta diferença quanto o modelo.** Se eu tivesse parado no Strata (`0.1.69`), minha conclusão teria sido que o Inkling 2 Mini era meio travado na 5090 (110 a 154 tok/s). Quando subi o mesmo modelo no **Basalt `v0.5.7`**, ele saltou **2,3x** para **250 a 346 tok/s** e derrubou o TTFT de 5,1 s para **2,1 s**, porque o Basalt explora de verdade os Tensor Cores FP4 nativos da arquitetura Blackwell.
-2. **A arquitetura em loop tem um preço claro em hardware com menos banda de memória.** Olhe o que aconteceu no **AMD Strix Halo**: o Inkling 2 Mini sobrou em memória (41,9 GiB livres!) e leu o prompt de 32k **1,7x mais rápido** que o Qwen3.8 (51 s contra 114 a 126 s). Na hora de gerar texto, porém, despencou pra **14 a 25 tok/s**, enquanto o Qwen3.8 seguiu firme em **47 a 65 tok/s**. O motivo é física pura: passar pelas 12 camadas do meio três vezes por token estoura a banda de memória da LPDDR5X durante o decode. Na RTX 5090 (GDDR7 com banda absurda), o loop voa; no Strix Halo, o gargalo de banda cobra a conta.
-3. **Velocidade bruta vs tempo de relógio (a taxa de verbosidade).** Mesmo no Basalt, o Qwen3.8 `Q2_0` terminou o hard canary quase duas vezes mais rápido em tempo real (**5,5 min** contra **9,8 min**). Além de gerar mais rápido (377 a 400 tok/s contra 250 a 346), o Inkling 2 Mini pensa muito mais alto: ele produziu entre **140k e 204k tokens** por sessão, contra **61k a 121k** do Qwen3.8. Em sessões longas de agente, raciocínio verboso vira minutos extras no relógio.
-4. **Precisão nativa e zero offload de RAM mudam o jogo.** O Qwen3.8 Flash-Next `Q2_0` é uma quantização agressiva de 2 bits (~78% de concordância top-1 contra BF16; o `IQ3_S` fica em ~87%) e ainda precisa despejar **30 GB a 42 GB de especialistas na RAM do sistema**. O Inkling 2 Mini roda na sua **precisão nativa de lançamento (~97,8% top-1 contra BF16)**, cabe **100% dentro da VRAM da 5090 com 6,6 GiB livres**, lê prompts longos **1,8x mais rápido** e traz janela de **1 milhão de tokens** (exatamente o território acima de 100k tokens onde quantizações de 2 bits costumam começar a degradar primeiro).
+O `benchmark-v3` mede **profundidade de correção**, onde os testes que o próprio modelo escreve valem zero na nota. A avaliação inteira vem de suítes **escondidas e adversariais** que o agente nunca vê, com peso maior pra casos de borda (*empty*, *overflow*, *unicode*, concorrência, entradas malformadas) e travas rígidas (*gates*) de causa raiz, regressão e performance. As **18 entregas** cobrem:
 
-## Conclusão: é melhor que o Qwen 3.8? É o novo rei do hardware doméstico?
+* **Depuração de causa raiz e refatoração segura em Ruby:** `01-debug-paginator` e `05-refactor-pricing`.
+* **Casos de borda em Go e performance em Rust:** `02-edge-csv` e `04-perf-intervals`.
+* **Invariantes, ambiguidade, performance e recuperação em Python:** `03-invariant-eventlog`, `06-ambiguity-emails`, `08-perf-rangesum`, `09-sabotage-recover` e `14-edge-semver`.
+* **Segurança e bugs latentes em código existente:** `07-security-safebox`, `10-latent-cve-restore`, `11-latent-nplus1`, `12-latent-antipatterns` e `13-latent-sql`.
+* **Algoritmos e projetos multi-arquivo:** `15-observation-median`, `16-repo-order-service`, `17-marketplace-app` (simulação completa de aplicação) e `18-resolver-backtrack`.
 
-**Para quem tem uma RTX 5090 (ou uma GPU de 32 GB) rodando Basalt, sim: o Inkling 2 Mini é o novo melhor modelo open-weight geral pra hardware doméstico até a 5090.**
+Aqui está o placar final consolidado das **18 tarefas**:
 
-Ele resolve as duas maiores dores de cabeça que o Qwen3.8 Flash-Next deixava na mesa: você não precisa esmagar o modelo em 2 ou 3 bits perdendo fidelidade, e você não precisa de 64 GB ou 128 GB de RAM no desktop pra segurar offload de especialistas. Ele mora inteiro na VRAM, sobra espaço pro desktop, engole 32k tokens de contexto em 2,1 segundos e cravou **100 / 100 / 100** no meu teste difícil de programação.
+| Métrica (Basalt na RTX 5090) | Qwen3.8 Flash-Next (`IQ3_S`) | Inkling 2 Mini (`NVFP4-MX8`) |
+|---|---:|---:|
+| **Nota média final (v3)** | **98,4** (18/18) | **94,3** (18/18) |
+| **Notas 100 perfeitas** | **15 de 18** | **13 de 18** |
+| **Tempo total (wall time)** | **76,3 min** | **34,1 min** (2,2x mais rápido) |
+| **Tokens de saída gerados** | **679,7k** | **771,5k** |
+| **Offload na RAM do sistema** | ~42 GB | **0 GB** |
 
-A resposta só tem dois asteriscos práticos:
+E olhe exatamente onde os dois se separaram nas tarefas mais marcantes (nas outras 9 tarefas, ambos cravaram **100,0** sem drama):
 
-* **Se você tem RAM sobrando na 5090 e quer velocidade máxima de relógio** em sessões curtas e médias de código, o **Qwen3.8 Flash-Next `Q2_0`** no Basalt ainda termina mais rápido (5,5 min contra 9,8 min) por ser bem menos verboso. Na prática, no meu desktop eu mantenho o Inkling 2 Mini como padrão e deixo o Qwen3.8 ao lado no roteador multi-modelo do Basalt.
-* **Se você roda num AMD Strix Halo ou outra máquina de memória unificada com banda mais modesta**, o Qwen3.8 Flash-Next ainda entrega uma experiência bem mais fluida na geração de tokens (47 a 65 tok/s contra 14 a 25), apesar do prefill bem mais lento, pelo menos até aparecerem kernels HIP mais maduros pro loop do Inkling 2.
+| Tarefa (Linguagem) | Inkling 2 Mini (Nota / Tempo / Reqs) | Qwen3.8 `IQ3_S` (Nota / Tempo / Reqs) | O que aconteceu |
+|---|---:|---:|---|
+| `02-edge-csv` (Go) | **100,0** / 900s (TO) / 377,5k tok | **100,0** / 101s / 19,0k tok | Inkling entrou em loop longo, estourou timeout e ainda gabaritou |
+| `07-security-safebox` (Python) | 89,1 / 31,7s / 14 reqs | **100,0** / 243,4s / 30 reqs | Qwen cavou o dobro de passos e fechou todas as brechas |
+| `08-perf-rangesum` (Python) | **100,0** / 4,2s / 1,4k tok | **100,0** / 900s (TO) / 46,8k tok | Inkling resolveu em 4 s; Qwen travou até o timeout |
+| `10-latent-cve-restore` (Python) | 37,5 / 13,0s / 5 reqs | **75,0** / 212,8s / 53 reqs | Maior diferença do teste: Inkling parou cedo demais |
+| `14-edge-semver` (Python) | **100,0** / 796,3s / 261,3k tok | **100,0** / 847,6s / 157,1k tok | Empate pesado nos casos extremos de semver |
+| `15-observation-median` (Python) | 78,7 / 65,9s / 7 reqs | **100,0** / 71,3s / 11 reqs | Qwen acertou o algoritmo completo na mesma janela |
+| `16-repo-order-service` (Python) | **98,3** / 17,3s / 7,3k tok | **98,3** / 220,7s / 43,1k tok | Empate técnico com o Inkling 12,7x mais rápido |
+| `17-marketplace-app` (Python) | 93,1 / 117,9s / 25 reqs | **98,6** / 498,3s / 91 reqs | Qwen rodou 91 passos metódicos e quase zerou erros |
+| `18-resolver-backtrack` (Python) | **100,0** / 16,2s / 6,5k tok | **100,0** / 900s (TO) / 55 reqs | Inkling resolveu em 16 s; Qwen levou 15 min, mas também gabaritou |
 
-A barra do que dá pra rodar localmente sem pagar um centavo de API acabou de subir de novo. Todos os configs, logs e relatórios completos dessa bateria estão abertos no [llm-opensource-benchmark](https://github.com/akitaonrails/llm-opensource-benchmark).
+Os números de **requisições por tarefa** contam a história inteira. O **Qwen3.8 Flash-Next `IQ3_S`** (com 125B de parâmetros totais por baixo) é mais lento, mas é muito mais **metódico e persistente** quando o problema envolve segurança, CVEs latentes ou sistemas multi-arquivo: em `10-latent-cve-restore`, o Inkling declarou vitória em 13 segundos e 5 chamadas (tirando 37,5), enquanto o Qwen investigou por 53 chamadas e dobrou a nota pra 75,0. Em `17-marketplace-app`, foram 91 chamadas do Qwen (98,6) contra 25 do Inkling (93,1).
+
+Por outro lado, a velocidade do Inkling 2 Mini impressiona: **28,3 dos seus 34,1 minutos** foram gastos em apenas duas tarefas (`02-edge-csv` e `14-edge-semver`). Nas **outras 16 tarefas somadas**, ele liquidou tudo em **5,8 minutos totais**, chegando a entregar exatamente a mesma nota do Qwen em `16-repo-order-service` (98,3) sendo **12,7x mais rápido** (17,3 s contra 220,7 s).
+
+## Os cinco insights que realmente importam
+
+Olhando a bateria inteira (velocidade, *hard canary* e *benchmark-v3*), saem cinco lições práticas:
+
+1. **O engine faz tanta diferença quanto o modelo.** No Strata (`0.1.69`), o Inkling 2 Mini parecia travado na 5090 (110 a 154 tok/s). No **Basalt `v0.5.7`**, saltou **2,3x** para **250 a 346 tok/s** e derrubou o TTFT de 5,1 s para **2,1 s**, explorando os Tensor Cores FP4 nativos da arquitetura Blackwell.
+2. **A arquitetura em loop cobra caro em banda de memória limitada.** No **AMD Strix Halo**, o Inkling 2 Mini sobrou em memória (41,9 GiB livres!) e leu o prompt de 32k **1,7x mais rápido** que o Qwen3.8 (51 s contra 114 a 126 s). Na hora de gerar texto, porém, despencou pra **14 a 25 tok/s**, contra **47 a 65 tok/s** do Qwen3.8, porque passar pelas 12 camadas do meio três vezes por token estoura a banda da LPDDR5X no decode.
+3. **Parâmetros totais ainda pesam em julgamento de segurança e bugs latentes.** O truque do loop faz o Inkling 2 Mini (26,4B) empatar com um MoE de 125B em 13 de 18 tarefas difíceis, mas quando a tarefa exige farejar vulnerabilidades sutis ou manter consistência numa aplicação grande, o Qwen3.8 `IQ3_S` insiste mais, erra menos e vence no placar geral (**98,4 vs 94,3**, com 15 notas 100 contra 13).
+4. **Cuidado com loops de raciocínio nos casos de borda.** O Inkling 2 Mini pode ser absurdamente rápido (16 tarefas em 5,8 min) ou disparar centenas de milhares de tokens quando cisma com um caso de borda (`377,5k` tokens em `02-edge-csv`, `261,3k` em `14-edge-semver`, `140k a 204k` no hard canary). Mesmo com esses picos, terminou as 18 tarefas do v3 **2,2x mais rápido** que o Qwen3.8 `IQ3_S` (**34,1 min** contra **76,3 min**).
+5. **Requisitos reais de hardware decidem qual modelo cabe na sua mesa.** Use a tabela abaixo pra julgar o que roda no seu setup:
+
+| Perfil de Hardware | Modelo Recomendado | Memória Necessária | Velocidade Esperada | O que dá pra fazer bem |
+|---|---|---|---|---|
+| **RTX 5090 (32 GB) + 64 GB+ RAM** | **Qwen3.8 Flash-Next (`IQ3_S` no Basalt)** | 28 GB VRAM + ~42 GB RAM | 223 a 231 tok/s, TTFT 5,2 s | Melhor qualidade geral (98,4 no v3), segurança, refatoração e apps complexos |
+| **GPU menor que 5090 (24 a 32 GB) ou só 32 GB RAM** | **Inkling 2 Mini (`NVFP4-MX8` / GGUF)** | ~20 a 25 GB VRAM, **0 GB RAM** | 250 a 346 tok/s na 5090 (TTFT 2,1 s) | Excelente segundo lugar (94,3 no v3), agente rápido e 100% na VRAM |
+| **MacBook / Apple Silicon 32 GB+ unificada** | **Inkling 2 Mini (MLX / Ollama)** | ~20 GB unificados | Fluido pra sessões locais | Melhor relação qualidade/espaço sem depender de 64 GB+ de RAM |
+| **AMD Strix Halo (64 GB VRAM + GTT)** | **Qwen3.8 Flash-Next (`Q2_0` / `IQ3_S`)** | ~42 a 58 GB VRAM | 47 a 65 tok/s (prefill lento) | Decode 2,5x a 3x mais fluido que o Inkling na LPDDR5X |
+
+## Conclusão: é melhor que o Qwen 3.8? Qual escolher pro seu hardware?
+
+**No placar geral de qualidade de engenharia, não: o Qwen3.8 Flash-Next (`IQ3_S`) continua sendo o melhor modelo geral, mesmo sendo bem mais lento.**
+
+Na minha **RTX 5090** (com RAM de sobra no desktop pra segurar o offload do Basalt), eu continuo preferindo o **Qwen3.8 Flash-Next** como modelo principal pra trabalho pesado de programação. A diferença final de **98,4 contra 94,3** nas 18 tarefas adversariais multi-linguagem (com **15 notas 100** contra 13) aparece exatamente onde mais dói em produção: segurança, vulnerabilidades latentes e disciplina em projetos multi-arquivo.
+
+**O Inkling 2 Mini, porém, é um segundo lugar muito próximo e 2,2x mais rápido** (34,1 min contra 76,3 min no v3), e muda completamente o jogo pra quem **não** tem uma RTX 5090 com 64 GB ou 128 GB de RAM no desktop. Para setups menores que uma 5090 (GPUs de 24 a 32 GB sem folga de RAM pro offload, ou notebooks de 32 GB de memória unificada), o **Inkling 2 Mini é a minha recomendação direta**: roda em precisão nativa (~97,8% vs BF16), ocupa ~20 GB com zero offload, entrega **2,1 s de TTFT**, suporta contexto de 1 milhão de tokens e cravou **94,3** num benchmark adversarial em quatro linguagens.
+
+Na prática, no meu desktop com a 5090, o cenário ideal é manter o **Qwen3.8 Flash-Next** como titular pra tarefas críticas e deixar o **Inkling 2 Mini** ao lado no roteador multi-modelo do Basalt pra iterações rápidas. Todos os configs, logs e relatórios dessa bateria ficam abertos no [llm-opensource-benchmark](https://github.com/akitaonrails/llm-opensource-benchmark).
